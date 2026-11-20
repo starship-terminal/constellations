@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build components.md for the ASOS design reference.
+"""Build components.md for the B150 design reference.
 
 Reads raw/components-computed.json (every component and state, measured), raw/layout.json,
 tokens.json, screenshots/ and icons/INDEX.tsv, and writes components.md next to them. Every value
@@ -410,7 +410,8 @@ for g in groups:
         if desc and not desc.endswith((".", ")", '"')):
             desc += "."
         where = PAGE_NAME.get(c.get("page") or "?", c.get("page") or "the")
-        W(f"{desc + ' ' if desc else ''}Read as `{k}` on the {where} page{' at 390 wide' if g.startswith('Mobile') else ''}.")
+        # PAGE_NAME already reads "the home page", "the shop grid" or bare "the"
+        W(f"{desc + ' ' if desc else ''}Read as `{k}` on {where}{'' if where.endswith(' page') else ' page'}{' at 390 wide' if g.startswith('Mobile') else ''}.")
         W()
         if c.get("missing"):
             W("Not on the page when it was captured.")
@@ -472,12 +473,12 @@ W("- **Fragment Mono** carries the chrome (nav/buttons/footer at 10px) and **Gei
 W()
 W("### Screenshots")
 W()
-W("- Winning-site thumbnails, nominee artwork and the Awwwards wordmark in the screenshots are third-party/site content. The site detail captured is whichever `/websites/` card first had open voting at run time (recorded as `site_url` in components-computed.json); another run may land on a different entry.")
+W("- Photography, partner logos and event artwork in the screenshots are B150's and its partners' content.")
 W("- Screenshots are stored as 256-colour PNGs; read exact colours from the tokens or the raw files.")
 W()
 W("### Content left out")
 W()
-W("- Winning-site thumbnails and nominee artwork are the entrants' content; only the frames and components were measured.")
+W("- Photography, partner logos and event artwork are the site's content; only the frames and components were measured.")
 
 Path("components.md").write_text("\n".join(L) + "\n")
 print("components.md:", len(L), "lines")

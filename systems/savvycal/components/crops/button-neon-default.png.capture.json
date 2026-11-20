@@ -1,0 +1,24 @@
+{
+  "capturedAt": "2026-11-18T18:29:15.898Z",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 2,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1,
+    "offsetLeft": 0,
+    "offsetTop": 0
+  },
+  "scrollHeight": 8310,
+  "htmlClass": "",
+  "url": "https://savvycal.com/",
+  "png": "/tmp/ds-sparse/savvycal/systems/savvycal/components/crops/button-neon-default.png",
+  "clip": {
+    "x": 112,
+    "y": 461.140625,
+    "width": 161.796875,
+    "height": 62
+  },
+  "note": "256-colour sRGB PNG. Viewport fields measured in the page. PNG dimensions checked by the writer."
+}

@@ -1,0 +1,112 @@
+{
+  "slug": "airtable",
+  "signed_in": true,
+  "account_name": "Wenlong Chen",
+  "when": "2026-11-20",
+  "host": "T3 in-app preview, default profile",
+  "theme": "light",
+  "viewports": {
+    "desktop": {
+      "requested": "1440x900",
+      "measured": "viewport: 1440x900 CSS px, devicePixelRatio: 2",
+      "png": "2880x1800",
+      "label": "measured on the account page via visualViewport; other desktop shots share that resize and PNG size"
+    },
+    "phone": {
+      "requested": "390x844",
+      "measured": "viewport: 390x844 CSS px, devicePixelRatio: 2",
+      "png": "780x1688",
+      "label": "measured via innerWidth, innerHeight and visualViewport before the phone-home shot"
+    }
+  },
+  "offered": {
+    "nav": [
+      "Home",
+      "Starred",
+      "Shared",
+      "Workspaces",
+      "Templates and apps",
+      "Marketplace",
+      "Import",
+      "Create",
+      "Search",
+      "What's new",
+      "Help",
+      "Notifications",
+      "Account",
+      "Data",
+      "Automations",
+      "Interfaces",
+      "Forms",
+      "Omni"
+    ],
+    "settings": [
+      "Account overview",
+      "Referral credits",
+      "Recent activity",
+      "Workspace settings (My First Workspace)",
+      "Notification preferences",
+      "Language preferences",
+      "Appearance",
+      "Integrations",
+      "Builder hub",
+      "Trash"
+    ],
+    "create": {
+      "items": [
+        "Create a workspace",
+        "Create (workspace)",
+        "Start from scratch",
+        "Build with Omni",
+        "New table",
+        "New table with web data",
+        "Airtable base",
+        "CSV file",
+        "Google Calendar",
+        "Google Sheets",
+        "Microsoft Excel",
+        "Salesforce",
+        "26 more sources",
+        "Create new view"
+      ],
+      "reached": [
+        "Add or import menu opened on Study Guides; nothing created"
+      ]
+    }
+  },
+  "screens": [
+    {"name": "workspaces home, desktop, appearance menu open", "file": "screenshots/app/desktop-home.png"},
+    {"name": "account menu, desktop, open", "file": "screenshots/app/desktop-account-menu.png"},
+    {"name": "base grid, desktop, onboarding card in front", "file": "screenshots/app/desktop-base-grid.png"},
+    {"name": "add or import menu, desktop, open", "file": "screenshots/app/desktop-create-menu.png"},
+    {"name": "account overview, desktop", "file": "screenshots/app/desktop-account.png"},
+    {"name": "workspaces home, phone", "file": "screenshots/app/phone-home.png"}
+  ],
+  "gaps": [
+    "Phone base grid was loaded at 390x844 CSS, then the preview stopped producing screenshot frames. No phone-base shot.",
+    "Phone account menu was not opened. The preview window stopped producing frames before that step.",
+    "Account page at 390 CSS does not reflow: the 300px account sidebar fills the viewport and the overview overflows. That shot was not filed.",
+    "Automations, Interfaces, and Forms were visible in the base nav and not opened.",
+    "Onboarding tour was not started. Skip was not confirmed. The Welcome card is still in desktop-base-grid.png.",
+    "Billing, Upgrade, workspace plans, and checkout were not entered.",
+    "Google Drive was not linked. Developer hub was not opened. No invite was sent. No table, view, or record was created.",
+    "Calendar view was not opened. The views list shows Main View and Not yet memorized.",
+    "Dark theme was offered (Appearance, beta) and not switched.",
+    "catalog.json, the root README, and webapps-manifest.json were left for a later PR."
+  ],
+  "not_submitted": [
+    "Create a workspace",
+    "Create a table or import",
+    "Create a view",
+    "Add a record",
+    "Share or invite",
+    "Upgrade or checkout",
+    "Link Google Drive",
+    "NPS submit",
+    "Onboarding Let's go",
+    "Add password",
+    "Edit name or email",
+    "Delete account",
+    "Cookie Agree or Reject"
+  ]
+}

@@ -1,0 +1,321 @@
+{
+  "captured": "2026-11-19",
+  "product": "Nomad Goods",
+  "url": "https://nomadgoods.com/",
+  "redirect": "https://nomadgoods.com/sg/",
+  "route": "public marketing, signed out",
+  "harness": "T3 Code preview browser, live computed styles",
+  "viewportDesktop": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {"width": 1440, "height": 900, "scale": 1}
+  },
+  "viewportPhone": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {"width": 390, "height": 844, "scale": 1},
+    "page": "https://nomadgoods.com/sg/pages/about"
+  },
+  "stylesheets": [
+    "https://cdn.shopify.com/oxygen-v2/26993/12109/24871/5098571/build/_assets/app-2ORX6XKU.css",
+    "https://cdn.shopify.com/oxygen-v2/26993/12109/24871/5098571/build/_assets/type-FYZIUN55.css",
+    "https://cdn.shopify.com/oxygen-v2/26993/12109/24871/5098571/build/_assets/buttons-QAFLV5XX.css",
+    "https://cdn.shopify.com/oxygen-v2/26993/12109/24871/5098571/build/_assets/fields-KSARKHWD.css",
+    "https://cdn.shopify.com/oxygen-v2/26993/12109/24871/5098571/build/_assets/surfaces-6Y34DVJD.css",
+    "https://cdn.shopify.com/oxygen-v2/26993/12109/24871/5098571/build/_assets/links-3GSF7UCI.css",
+    "https://cdn.shopify.com/oxygen-v2/26993/12109/24871/5098571/build/_assets/labels-BF32K4NE.css",
+    "https://cdn.shopify.com/oxygen-v2/26993/12109/24871/5098571/build/css-bundle-3KKJMJBP.css"
+  ],
+  "note": "Cross-origin Shopify stylesheets were not readable from the CSSOM (9 sheet errors). Class rules were fetched from the same stylesheet URLs the page linked, then confirmed with getComputedStyle on live elements. Screenshot frames failed: Preview automation snapshot failed: The browser is not producing screenshot frames.",
+  "pages": [
+    "https://nomadgoods.com/sg/",
+    "https://nomadgoods.com/sg/collections/phone-cases",
+    "https://nomadgoods.com/sg/products/leather-mag-wallet-with-find-my-tracking-black-camino-leather",
+    "https://nomadgoods.com/sg/pages/about",
+    "https://nomadgoods.com/sg/products/modern-leather-case-black-camino-leather (404)"
+  ],
+  "computed": {
+    "body": {
+      "backgroundColor": "rgb(243, 243, 243)",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "Aleo, HelveticaNeue, \"Helvetica Neue\", sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "source": "getComputedStyle(body) on https://nomadgoods.com/sg/ at 1440x900"
+    },
+    "h1Home": {
+      "class": "title type-title-lg",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "Gotham-Bold, sans-serif",
+      "fontSize": "77px",
+      "fontWeight": "700",
+      "lineHeight": "73.15px",
+      "letterSpacing": "-3.08px",
+      "text": "35% Off Tracking Card Pro",
+      "source": "getComputedStyle(h1) on https://nomadgoods.com/sg/ at 1440"
+    },
+    "h1AboutPhone": {
+      "fontSize": "47px",
+      "lineHeight": "44.65px",
+      "letterSpacing": "-1.88px",
+      "color": "rgb(255, 255, 255)",
+      "source": "getComputedStyle(h1.type-title-lg) on https://nomadgoods.com/sg/pages/about at 390"
+    },
+    "h2Section": {
+      "class": "type-title-section",
+      "fontFamily": "Gotham-Bold, sans-serif",
+      "fontSize": "56px",
+      "lineHeight": "53.2px",
+      "letterSpacing": "-2.24px",
+      "fontWeight": "700",
+      "color": "rgb(0, 0, 0)",
+      "source": "getComputedStyle(h2) Featured Deals on home at 1440"
+    },
+    "pageTitle": {
+      "class": "type-page-title",
+      "fontSize": "36px",
+      "lineHeight": "39.96px",
+      "letterSpacing": "-1.44px",
+      "fontWeight": "700",
+      "fontFamily": "Gotham-Bold, sans-serif",
+      "color": "rgb(0, 0, 0)",
+      "source": "product h1 Leather Mag Wallet at 1440"
+    },
+    "price": {
+      "class": "type-price",
+      "fontSize": "32px",
+      "lineHeight": "32px",
+      "letterSpacing": "-1.28px",
+      "fontWeight": "700",
+      "color": "rgb(0, 0, 0)",
+      "text": "$99",
+      "source": "product page .type-price at 1440"
+    },
+    "bodyLg": {
+      "fontFamily": "Aleo, serif",
+      "fontSize": "23px",
+      "lineHeight": "34.5px",
+      "fontWeight": "400",
+      "color": "rgb(0, 0, 0)",
+      "source": "about page paragraph at 1440, class type-body-lg"
+    },
+    "headingSm": {
+      "class": "type-heading-sm",
+      "fontSize": "16px",
+      "fontFamily": "Gotham-Bold, sans-serif",
+      "fontWeight": "700",
+      "letterSpacing": "-0.64px",
+      "lineHeight": "17.76px",
+      "source": "footer h3 About at 1440"
+    },
+    "detailSm": {
+      "fontFamily": "Gotham-Book, sans-serif",
+      "fontSize": "12px",
+      "lineHeight": "15px",
+      "letterSpacing": "-0.24px",
+      "fontWeight": "400",
+      "source": "collection card caption at 1440"
+    },
+    "buttonLightMd": {
+      "class": "button-light button-md type-button-md",
+      "height": "48px",
+      "padding": "0px 24px",
+      "borderRadius": "100px",
+      "color": "rgb(0, 0, 0)",
+      "backgroundImage": "linear-gradient(rgb(255, 255, 255) 15%, rgb(241, 241, 241))",
+      "fontSize": "16px",
+      "letterSpacing": "-0.64px",
+      "lineHeight": "17.76px",
+      "fontWeight": "700",
+      "text": "Shop Now",
+      "source": "home CTA at 1440"
+    },
+    "buttonDarkMd": {
+      "class": "button-dark button-md",
+      "height": "48px",
+      "padding": "0px 24px",
+      "borderRadius": "100px",
+      "color": "rgb(255, 255, 255)",
+      "backgroundImage": "linear-gradient(rgb(47, 47, 47), rgb(47, 47, 47))",
+      "border": "1px solid rgb(0, 0, 0)",
+      "boxShadow": "rgb(14, 14, 14) 0px -10px 15px 1px inset, rgb(103, 103, 103) 0px 0px 0px 1px inset",
+      "text": "Sold Out | Join the Waitlist",
+      "source": "product page at 1440. Not clicked."
+    },
+    "buttonSm": {
+      "height": "40px",
+      "padding": "0px 20px",
+      "fontSize": "14px",
+      "letterSpacing": "-0.56px",
+      "lineHeight": "15.54px",
+      "source": "footer Submit button-light button-sm, and skip link button-dark button-sm"
+    },
+    "buttonCompact": {
+      "height": "44px",
+      "padding": "0px 20px",
+      "source": "Learn About Horween Leather, button-compact button-light"
+    },
+    "iconButtonSm": {
+      "class": "button-light button-icon-sm",
+      "width": "28px",
+      "height": "28px",
+      "borderRadius": "50%",
+      "source": "add to cart icon on a recommendation card. CSS class declares 1.75rem (28px)."
+    },
+    "fieldMd": {
+      "class": "field field-md type-field",
+      "height": "48px",
+      "padding": "0px 20px",
+      "borderRadius": "100px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "Gotham-Book, sans-serif",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "letterSpacing": "-0.32px",
+      "boxShadow": "rgba(0, 0, 0, 0.1) 0px 0px 0px 1px inset",
+      "source": "search input and product search field"
+    },
+    "fieldSm": {
+      "height": "40px",
+      "padding": "0px 16px",
+      "borderRadius": "100px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "placeholder": "Email",
+      "source": "footer newsletter input. Not submitted."
+    },
+    "surfaceCard": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderRadius": "25px",
+      "padding": "30px 40px 15px",
+      "source": "product buy card .surface-card at 1440"
+    },
+    "surfacePopover": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderRadius": "20px",
+      "padding": "10px",
+      "display": "none",
+      "source": "search popover mounted, not opened"
+    },
+    "pillNew": {
+      "backgroundColor": "rgb(0, 91, 211)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "11px",
+      "padding": "5.5px 9px",
+      "borderRadius": "100px",
+      "letterSpacing": "-0.44px",
+      "lineHeight": "11px",
+      "textTransform": "uppercase",
+      "text": "NEW",
+      "source": ".type-pill on home and product"
+    },
+    "pillSale": {
+      "backgroundColor": "rgb(203, 121, 76)",
+      "color": "rgb(255, 255, 255)",
+      "text": "Black Friday and HOT",
+      "source": ".type-pill on home featured deals and collection cards"
+    },
+    "announcement": {
+      "height": "50px",
+      "minHeight": "38px",
+      "padding": "12px 30px 20px",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "14px",
+      "backgroundImage": "linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6))",
+      "source": "header first child on home at 1440"
+    },
+    "navLink": {
+      "height": "70px",
+      "padding": "0px 30px",
+      "fontSize": "16px",
+      "color": "rgb(0, 0, 0)",
+      "source": "a.BHf7R Best Sellers on home at 1440"
+    },
+    "logo": {
+      "desktop": {"width": "136px", "height": "25px"},
+      "phone": {"width": "67px", "height": "25px"},
+      "source": "header svg at 1440 and at 390"
+    },
+    "footer": {
+      "backgroundColor": "rgb(243, 243, 243)",
+      "padding": "70px 0px",
+      "borderTopWidth": "50px",
+      "borderTopColor": "rgb(243, 243, 243)",
+      "source": "footer on home at 1440"
+    },
+    "klaviyoModal": {
+      "width": "1000px",
+      "height": "690px",
+      "borderRadius": "40px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "scrim": "rgba(0, 0, 0, 0.5)",
+      "inputHeight": "50px",
+      "inputRadius": "100px",
+      "inputPadding": "0px 0px 0px 16px",
+      "buttonBackground": "rgb(5, 5, 5)",
+      "buttonColor": "rgb(255, 255, 255)",
+      "buttonHeight": "50px",
+      "buttonRadius": "100px",
+      "closeSize": "35px",
+      "source": "Klaviyo signup dialog on home. Closed with Close dialog. Email not entered."
+    },
+    "phoneMenu": {
+      "cardBackground": "rgb(243, 243, 243)",
+      "cardRadius": "25px",
+      "cardWidth": "380px",
+      "scrim": "rgba(0, 0, 0, 0.6)",
+      "titleSize": "16px",
+      "titleFont": "Gotham-Bold, sans-serif",
+      "source": "Open menu on about page at 390. Not a purchase."
+    },
+    "colorSwatch": {
+      "width": "30px",
+      "height": "30px",
+      "borderRadius": "1000px",
+      "source": "product colour link labelled Brown"
+    },
+    "focusVisible": {
+      "outline": "2px solid #000",
+      "outlineOffset": "2px",
+      "also": "outline-offset: -2px on .UvH-w and .e0laB",
+      "source": "css-bundle focus-visible rules, fetched stylesheet"
+    },
+    "rootVars": {
+      "gridEdge": "10px",
+      "gridEdge1200": "20px",
+      "gridGutter": "25px",
+      "gridGutter480": "40px",
+      "frameWidth": "8px",
+      "frameWidth768": "12px",
+      "universalMaxWidth": "1600px",
+      "desktopContainerHeight": "700px",
+      "textCardEdge1024": "100px",
+      "source": ":root in app.css"
+    }
+  },
+  "authored": {
+    "typeCss": "type-FYZIUN55.css",
+    "buttonsCss": "buttons-QAFLV5XX.css",
+    "fieldsCss": "fields-KSARKHWD.css",
+    "surfacesCss": "surfaces-6Y34DVJD.css",
+    "linksCss": "links-3GSF7UCI.css",
+    "appCss": "app-2ORX6XKU.css"
+  },
+  "fonts": {
+    "gothamBold": "Gotham-Bold, local Gotham Bold, woff2 from cdn.shopify.com shop files",
+    "gothamBook": "Gotham-Book, local Gotham Book, same shop files",
+    "aleo": "Aleo, Aleo-Regular.ttf from the same shop files",
+    "klaviyoFace": "NomadGothamBold, Helvetica, Arial, sans-serif on the signup dialog headings"
+  },
+  "notEntered": [
+    "No email submitted on the footer form or the Klaviyo signup dialog",
+    "No account created",
+    "No cart item added",
+    "No checkout, payment, phone, or address entered",
+    "Waitlist button was focused for outline measurement and not clicked"
+  ]
+}

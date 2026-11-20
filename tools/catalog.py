@@ -76,7 +76,8 @@ def atomic_write(path: Path, text: str) -> None:
         # web server reading the result as another user (the design-systems
         # deploy serves `site/` through a containerised nginx) would answer 403.
         os.fchmod(fd, 0o644)
-        with os.fdopen(fd, "w") as f:
+        # UTF-8 whatever the locale: generated files hold non-ASCII text ("café").
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
             f.write(text)
         os.replace(tmp, path)
     except BaseException:
@@ -85,7 +86,55 @@ def atomic_write(path: Path, text: str) -> None:
 
 
 def load_catalog() -> dict:
-    return json.loads((ROOT / "catalog.json").read_text())
+    return json.loads((ROOT / "catalog.json").read_text(encoding="utf-8"))
+
+
+# ---------------------------------------------------------------- generated files on a pull request
+
+
+def _catalog_at(ref: str, root: Path) -> dict | None:
+    try:
+        raw = subprocess.run(["git", "show", f"{ref}:catalog.json"], cwd=root, check=True,
+                             capture_output=True, text=True, encoding="utf-8").stdout
+        found = json.loads(raw)
+    except (OSError, subprocess.CalledProcessError, json.JSONDecodeError):
+        return None
+    rows = {s["slug"]: s for s in found.get("systems") or [] if isinstance(s, dict) and isinstance(s.get("slug"), str)}
+    return rows or None
+
+
+def pull_request_catalogs(root: Path | None = None) -> tuple[dict, dict] | None:
+    """(base rows, branch rows), each keyed by slug, when GitHub is checking a pull
+    request: the base branch's catalog and the pull request head's. None outside a pull
+    request or when either cannot be read, and the caller then demands an exact match.
+    The Check and Research app workflows fetch both refs."""
+    base_ref, head = os.environ.get("GITHUB_BASE_REF"), os.environ.get("GITHUB_HEAD_SHA")
+    if not base_ref or not head:
+        return None
+    base = _catalog_at(f"origin/{base_ref}", root or ROOT)
+    branch = _catalog_at(head, root or ROOT)
+    return (base, branch) if base and branch else None
+
+
+def lagging_subset(named: set, head_rows: dict, root: Path | None = None) -> list[dict] | None:
+    """The catalog rows a generated file may be derived from on a pull request, or None.
+
+    GitHub checks the merge result, which can hold packages the file never saw: the ones
+    this pull request adds, and the ones main gained after the branch started. The file
+    may leave those out and nothing else. So `named`, the packages the committed file
+    covers, must sit inside the merge's catalog (a removed package still listed fails)
+    and hold every package that is on the base, on the branch and in the merge. The
+    caller then derives the file from the returned rows, in catalog order, and demands
+    an exact match, so a hand edit, a stale row or a wrong total still fails."""
+    catalogs = pull_request_catalogs(root)
+    if catalogs is None or not named:
+        return None
+    base, branch = catalogs
+    if not named <= set(head_rows):
+        return None
+    if (set(head_rows) & set(base) & set(branch)) - named:
+        return None
+    return [row for slug, row in head_rows.items() if slug in named]
 
 
 # ---------------------------------------------------------------- tokens
@@ -193,7 +242,7 @@ def resolver_for(tokens_path: str) -> Resolver:
 
 @functools.lru_cache(maxsize=256)
 def _resolver(tokens_path: str, mtime_ns: int, size: int) -> Resolver:
-    return Resolver(json.loads((ROOT / tokens_path).read_text()))
+    return Resolver(json.loads((ROOT / tokens_path).read_text(encoding="utf-8")))
 
 
 resolver_for.cache_clear = _resolver.cache_clear
@@ -453,17 +502,47 @@ def signed_url_pattern(spec: dict) -> re.Pattern:
     return re.compile(r"(?:[?&#]|%3F|%26|%23)(?:amp;)?(" + "|".join(names) + r")(?:=|%3D)", re.I)
 
 
-SIGNED_URL = signed_url_pattern(json.loads(SIGNED_PARAMS.read_text()))
+SIGNED_URL = signed_url_pattern(json.loads(SIGNED_PARAMS.read_text(encoding="utf-8")))
+
+
+def input_error(message: str):
+    """A bad input file: one `error:` line on stderr and exit 2, argparse's code for bad usage.
+    Exit 1 stays what `scan` returns for found private text, so a caller can tell the two apart."""
+    print(f"error: {message}", file=sys.stderr)
+    raise SystemExit(2)
+
+
+def read_json_object(path, what: str) -> dict:
+    """The JSON object in `path` (`what` names the file's role in the error), or `input_error`
+    when it is missing, unreadable, not valid JSON or not an object."""
+    path = Path(path).expanduser()
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        input_error(f"{what} {path} not found")
+    except (OSError, UnicodeDecodeError) as e:
+        input_error(f"{what} {path} cannot be read: {getattr(e, 'strerror', None) or e}")
+    except json.JSONDecodeError as e:
+        input_error(f"{what} {path} is not valid JSON: {e.msg} (line {e.lineno}, column {e.colno})")
+    if not isinstance(data, dict):
+        input_error(f"{what} {path} has the wrong shape: expected a JSON object, got {type(data).__name__}")
+    return data
 
 
 def read_redaction(paths) -> dict:
     """One or more redaction files ({"replace": [[pattern, flags, replacement], ...],
-    "email_allow": [...]}) merged, in order. The one reader for scan and redact_images.py."""
+    "email_allow": [...]}) merged, in order. The one reader for scan and redact_images.py.
+    A missing, non-JSON or wrongly shaped file exits 2 with a one-line error naming it."""
     merged = {"replace": [], "email_allow": []}
     for path in ([paths] if isinstance(paths, (str, Path)) else paths or []):
-        data = json.loads(Path(path).expanduser().read_text())
-        merged["replace"] += data.get("replace", [])
-        merged["email_allow"] += data.get("email_allow", [])
+        data = read_json_object(path, "redaction file")
+        replace, allow = data.get("replace", []), data.get("email_allow", [])
+        if not (isinstance(replace, list) and all(isinstance(r, list) and r and isinstance(r[0], str) for r in replace)):
+            input_error(f"redaction file {path} has the wrong shape: \"replace\" must be a list of [pattern, flags, replacement] rows")
+        if not (isinstance(allow, list) and all(isinstance(a, str) for a in allow)):
+            input_error(f"redaction file {path} has the wrong shape: \"email_allow\" must be a list of strings")
+        merged["replace"] += replace
+        merged["email_allow"] += allow
     return merged
 
 
@@ -514,11 +593,13 @@ def scan(folder: Path, redact: dict) -> list[str]:
     return hits
 
 
-def find(words: list[str]) -> list[dict]:
+def find(words: list[str], catalog: dict | None = None) -> list[dict]:
     """Packages ranked by how many query words they match; a tag hit outranks a name hit,
     which outranks a goodFor/category/theme hit. Substring matching means "ios" can live
-    inside a slug like acnestudios, so name and tag hits are scored separately."""
-    catalog = load_catalog()
+    inside a slug like acnestudios, so name and tag hits are scored separately. `catalog`
+    is an already-parsed catalog.json (server/library.py passes its cached copy); omitted,
+    the file is read."""
+    catalog = load_catalog() if catalog is None else catalog
     ranked = []
     for s in catalog["systems"]:
         name = " ".join([s["slug"], s["name"]]).lower()
@@ -655,8 +736,17 @@ def md_typography(style: dict) -> dict:
 
 
 def design_md_theme(system: dict) -> str:
-    """The first light theme, or the first theme when a package has no light one."""
-    return next((t for t in system["themes"] if t.startswith("light")), system["themes"][0])
+    """The theme the file actually exports. `themes` names the surfaces a
+    capture saw, not the palettes the token file ships, so the preferred light
+    theme can have no swatch set (Framer's /login is a captured light surface
+    while tokens.json only carries `dark`): the label is the swatch set the
+    export falls back to, not the preference. A catalog `defaultTheme` names the
+    theme the product paints by default (Leonardo's app is dark; its only light
+    surface is the docs site) and wins over the light preference."""
+    swatch_sets = system.get("preview", {}).get("swatches", {})
+    wanted = system.get("defaultTheme") or next((t for t in system["themes"] if t.startswith("light")),
+                                                system["themes"][0])
+    return wanted if wanted in swatch_sets else next(iter(swatch_sets), wanted)
 
 
 def _roles(system: dict) -> dict:
@@ -773,6 +863,13 @@ def design_md_tokens(system: dict, res: Resolver | None = None) -> dict:
         if css and css != "none" and not md_colour(css):
             shadows.append((path, css))
 
+    theme_sets: list[str] = []
+    for path in res.flat:
+        set_name = path.split(".")[0]
+        if set_name.startswith("$") or set_name == "core" or set_name in theme_sets:
+            continue
+        theme_sets.append(set_name)
+
     front = {"version": DESIGN_MD_SPEC, "name": system["name"], "description": system["goodFor"]}
     omitted = []
     for group, data in (("typography", typography), ("rounded", rounded), ("spacing", spacing),
@@ -787,7 +884,8 @@ def design_md_tokens(system: dict, res: Resolver | None = None) -> dict:
     front.update({k: v for k, v in (("colors", colors), ("typography", typography), ("rounded", rounded),
                                     ("spacing", spacing), ("components", components)) if v})
     return {"front": front, "theme": design_md_theme(system), "sources": sources,
-            "roleFrom": role_from, "shadows": shadows, "skipped": skipped}
+            "roleFrom": role_from, "shadows": shadows, "skipped": skipped,
+            "sets": theme_sets}
 
 
 def _yaml_key(key: str) -> str:
@@ -870,9 +968,13 @@ def design_md(system: dict) -> str:
     front, theme, sources = data["front"], data["theme"], data["sources"]
     pkg = ROOT / "systems" / system["slug"]
     tokens_rel = Path(system["tokens"]).relative_to(f"systems/{system['slug']}").as_posix()
-    intro, parts = readme_parts((pkg / "README.md").read_text())
+    intro, parts = readme_parts((pkg / "README.md").read_text(encoding="utf-8"))
     src = lambda group: " and ".join(f"`{p.rstrip('.')}`" for p in sources[group])
-    other_themes = [t for t in system["themes"] if t != theme]
+    # The themes the token file holds beyond the exported one — the catalog's
+    # `themes` can name captured surfaces that never became a token set
+    # (Framer's light /login shell), so keep only names that are token sets.
+    token_sets = set(data["sets"])
+    other_themes = [t for t in system["themes"] if t != theme and t in token_sets]
 
     body = [f"# {system['name']}", "",
             f"Generated from [{tokens_rel}]({tokens_rel}) and [README.md](README.md) by the "
@@ -989,7 +1091,8 @@ def lint_design_md(paths: list[Path]) -> tuple[list[str], dict]:
     with tempfile.TemporaryDirectory() as tmp:
         for path in paths:
             done = subprocess.run(["npx", "--yes", DESIGN_MD_LINTER, "lint", "--format", "json",
-                                   str(path.resolve())], cwd=tmp, capture_output=True, text=True, env=tool_env())
+                                   str(path.resolve())], cwd=tmp, capture_output=True, text=True,
+                                  encoding="utf-8", env=tool_env())
             rel = path.resolve().relative_to(ROOT).as_posix()
             try:
                 report = json.loads(done.stdout)
@@ -1215,7 +1318,12 @@ def check() -> list[str]:
         if not cover or not (ROOT / cover).exists():
             problems.append(f"{slug}: preview.cover {cover} does not exist")
         icon = s["preview"].get("icon")
-        if not icon or not (ROOT / icon).exists():
+        # A package that declares icon.png under layoutGaps (the product publishes no icon)
+        # has no icon to point at; layout_problems holds the declaration to the folder.
+        icon_gap = isinstance(s.get("layoutGaps"), dict) and "icon.png" in s["layoutGaps"]
+        if icon_gap and not icon:
+            pass
+        elif not icon or not (ROOT / icon).exists():
             problems.append(f"{slug}: preview.icon {icon} does not exist; run `python3 tools/fetch_icon.py {slug}`")
         problems += palette_problems(slug, s["preview"], s.get("themes", []))
         try:
@@ -1232,6 +1340,56 @@ def check() -> list[str]:
             if not isinstance(resolver_for(s["tokens"]).lookup(path), str):
                 problems.append(f"{slug}: font token {path} does not resolve")
         problems += design_md_problems(s)
+    manifest = ROOT / "webapps-manifest.json"
+    if manifest.is_file():
+        problems += manifest_problems(json.loads(manifest.read_text(encoding="utf-8")), catalog["systems"])
+    return problems
+
+
+@functools.lru_cache(maxsize=1)
+def _coverage_module():
+    spec = importlib.util.spec_from_file_location(
+        "refero_coverage", Path(__file__).resolve().parent / "refero" / "coverage.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def _root_domain(url_or_host: str | None) -> str:
+    """tools/refero/coverage.py's matching rule, so the queue and the coverage file agree."""
+    coverage = _coverage_module()
+    return coverage.root_domain(coverage.host_of(url_or_host))
+
+
+def manifest_problems(manifest: dict, systems: list[dict]) -> list[str]:
+    """webapps-manifest.json against catalog.json, so the capture queue cannot drift:
+    a captured app names a package the catalog has, an app that is not captured names
+    none and has no package on its domain, and the totals match the rows."""
+    problems = []
+    apps = manifest.get("apps") if isinstance(manifest.get("apps"), list) else []
+    slugs = {s.get("slug") for s in systems}
+    domains: dict[str, list[str]] = {}
+    for s in systems:
+        domains.setdefault(_root_domain(s.get("url")), []).append(s.get("slug"))
+    for app in apps:
+        where = f"webapps-manifest.json {app.get('domain')}"
+        package, status = app.get("package"), app.get("status")
+        if status == "captured":
+            if package not in {f"systems/{s}" for s in slugs}:
+                problems.append(f"{where}: captured, but its package {package!r} is not a systems/<slug> in catalog.json")
+            continue
+        if package:
+            problems.append(f"{where}: status {status!r} with package {package!r}; a package means captured")
+        taken = domains.get(_root_domain(app.get("domain")))
+        if taken:
+            problems.append(f"{where}: status {status!r}, but catalog.json already has "
+                            f"{', '.join('systems/' + s for s in taken)} on that domain; mark it captured")
+    totals = manifest.get("totals") or {}
+    if totals.get("apps") != len(apps):
+        problems.append(f"webapps-manifest.json: totals.apps is {totals.get('apps')}, the file lists {len(apps)}")
+    batches = max((a.get("batch") for a in apps if isinstance(a.get("batch"), int)), default=0)
+    if totals.get("batches") != batches:
+        problems.append(f"webapps-manifest.json: totals.batches is {totals.get('batches')}, the highest batch is {batches}")
     return problems
 
 
@@ -1252,17 +1410,18 @@ def file_table(readme: str) -> list[str]:
 
 def git_ignored(paths: list[Path]) -> set[Path]:
     """The paths git ignores here (a package's local fonts/, say). Outside a git checkout,
-    or without git, nothing counts as ignored."""
+    or without git, nothing counts as ignored. NUL-separated both ways: without `-z` git
+    quotes a non-ASCII name in its answer, which then matches no path asked about."""
     if not paths:
         return set()
     try:
-        out = subprocess.run(["git", "-C", str(ROOT), "check-ignore", "--stdin"], capture_output=True, text=True,
-                             input="\n".join(str(p) for p in paths), timeout=30)
+        out = subprocess.run(["git", "-C", str(ROOT), "check-ignore", "-z", "--stdin"], capture_output=True,
+                             input=b"\0".join(os.fsencode(p) for p in paths), timeout=30)
     except (OSError, subprocess.SubprocessError):
         return set()
     if out.returncode not in (0, 1):
         return set()
-    return {Path(line) for line in out.stdout.splitlines() if line}
+    return {Path(os.fsdecode(p)) for p in out.stdout.split(b"\0") if p}
 
 
 def layout_gaps(slug: str) -> tuple[list[str], list[str]]:
@@ -1280,7 +1439,7 @@ def layout_gaps(slug: str) -> tuple[list[str], list[str]]:
         if not path.exists() or path.is_dir() != part.endswith("/") or path in ignored:
             missing.append(part)
     readme = folder / "README.md"
-    rows = file_table(readme.read_text()) if readme.is_file() else []
+    rows = file_table(readme.read_text(encoding="utf-8")) if readme.is_file() else []
     unlisted = []
     for entry in sorted(folder.iterdir()):
         if entry.name.startswith(".") or entry.name == "README.md" or entry in ignored:
@@ -1344,7 +1503,7 @@ def design_md_problems(system: dict) -> list[str]:
         fresh = design_md(system)
     except Exception as e:  # report, so the rest of the catalog is still checked
         return [f"{slug}: DESIGN.md generation failed: {type(e).__name__}: {e}"]
-    if path.read_text() != fresh:
+    if path.read_text(encoding="utf-8") != fresh:
         return [f"{slug}: systems/{slug}/DESIGN.md is out of date or hand-edited; run `make design-md`"]
     return []
 
@@ -1418,8 +1577,8 @@ def section_data(system: dict) -> dict:
 # are where a separate fetch job puts each remote file; both sides are emitted so a
 # card can fall back to the remote while its file is missing.
 
-# The /refero-media/<kind>/<slug>.<ext> contract and the gstatic favicon URL are
-# shared with tools/refero/mirror_media.py (which downloads those files) through
+# The /refero-media/<kind>/<slug>.<ext> contract is shared with
+# tools/refero/mirror_media.py (which downloads those files) through
 # tools/refero/refero_media.py, imported by location so tools/refero/ stays off
 # sys.path.
 _spec = importlib.util.spec_from_file_location(
@@ -1455,8 +1614,10 @@ def _refero_asset(kind: str, slug: str, remote) -> dict | None:
 
 
 # Entity media key -> (refero_media kind, meta.json field the remote URL lives
-# in). `favicon` has no meta field; its remote is the gstatic faviconV2 URL for
-# source_url, the same URL mirror_media.py downloads the file from.
+# in). `favicon` has no meta field: mirror_media.py fetches it from a favicon
+# service host-side, and the emitted pair keeps only the mirrored local path,
+# since a browser asking that service for a style's host would tell it which
+# styles are browsed.
 REFERO_MEDIA = {
     "shot": ("shots", "screenshot_url"),
     "poster": ("posters", "video_poster_url"),
@@ -1491,8 +1652,8 @@ def load_refero() -> list[tuple[Path, dict, dict]]:
                   file=sys.stderr)
             continue
         try:
-            meta = json.loads(meta_path.read_text())
-            ds = json.loads(ds_path.read_text())
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            ds = json.loads(ds_path.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError) as e:
             print(f"warning: skipping refero/{folder.name}: {e}", file=sys.stderr)
             continue
@@ -1524,13 +1685,14 @@ def refero_entry(folder: Path, meta: dict, ds: dict, slug_of: dict) -> dict:
     design-system keys the page renders (REFERO_DS_KEYS), and `similar` with each
     business name resolved to a refero slug where one matches."""
     slug = meta.get("slug") or folder.name
-    text = lambda name: (folder / name).read_text() if (folder / name).is_file() else None
+    text = lambda name: (folder / name).read_text(encoding="utf-8") if (folder / name).is_file() else None
     media = {
-        key: _refero_asset(kind, slug,
-                           refero_media.favicon_url(meta.get("source_url"))
-                           if field is None else meta.get(field))
-        for key, (kind, field) in REFERO_MEDIA.items()
+        key: _refero_asset(kind, slug, meta.get(field))
+        for key, (kind, field) in REFERO_MEDIA.items() if field is not None
     }
+    # The favicon exists in the mirror only when its source host does.
+    media["favicon"] = ({"local": refero_media.local_path("favicons", slug), "remote": None}
+                        if refero_media.favicon_url(meta.get("source_url")) else None)
     similar = [{"slug": slug_of.get(str(s.get("business") or "").lower()),
                 "name": s.get("business"), "why": s.get("why")}
                for s in ds.get("similar") or [] if isinstance(s, dict)]
@@ -1629,7 +1791,7 @@ def build() -> Path:
             "cover": cover,
             "icon": s["preview"].get("icon"),
             "swatches": swatches(s),
-            "tokenGroups": [k for k in json.loads((ROOT / s["tokens"]).read_text())
+            "tokenGroups": [k for k in json.loads((ROOT / s["tokens"]).read_text(encoding="utf-8"))
                             if not k.startswith("$")],
             "fonts": fonts(s),
             "score": scores.get(s["slug"]),
@@ -1659,7 +1821,7 @@ def build_exports(systems: list[dict]) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     written = set()
     for s in systems:
-        tokens = json.loads((ROOT / s["tokens"]).read_text())
+        tokens = json.loads((ROOT / s["tokens"]).read_text(encoding="utf-8"))
         exported = export_tokens(tokens, s["themes"])
         atomic_write(out_dir / f"{s['slug']}.css", export_css(exported) + "\n")
         atomic_write(out_dir / f"{s['slug']}.json", json.dumps(exported, indent=2) + "\n")
@@ -1671,7 +1833,7 @@ def build_exports(systems: list[dict]) -> None:
 
 # Repository paths the media route answers from the checkout: the gallery's
 # screenshots and package files, and the files docs link to. They are never
-# part of the published site. server/library.py bounds package file reads
+# part of the docs site. server/library.py bounds package file reads
 # through repo_file the same way web/lib/repo.ts does. /example/ holds only
 # gitignored clones, so it is not served.
 REPO_PATHS = ("/systems/", "/tools/", "/catalog.json", "/README.md")
@@ -1764,7 +1926,7 @@ def main() -> None:
         print("\n".join(hits) if hits else f"no private text found in {args.folder}")
         sys.exit(1 if hits else 0)
     if args.cmd == "contrast":
-        rows = contrast(json.loads(args.file.read_text()), args.theme, args.pairs, args.over)
+        rows = contrast(json.loads(args.file.read_text(encoding="utf-8")), args.theme, args.pairs, args.over)
         for r in rows:
             ratio = f"{r['ratio']:5.2f}:1" if r["ratio"] is not None else "   -   "
             note = {"missing": "a token does not resolve to a colour",
@@ -1807,7 +1969,7 @@ def main() -> None:
             if not system:
                 sys.exit(f"no package {args.slug}; run `find` to list them, or pass --file")
             tokens_path, themes = ROOT / system["tokens"], system["themes"]
-        exported = export_tokens(json.loads(Path(tokens_path).read_text()), themes)
+        exported = export_tokens(json.loads(Path(tokens_path).read_text(encoding="utf-8")), themes)
         print(export_css(exported) if args.format == "css" else json.dumps(exported, indent=2))
         if exported["unresolved"]:
             print(f"warning: {len(exported['unresolved'])} tokens have a reference that points at nothing "

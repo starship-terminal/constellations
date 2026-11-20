@@ -20,9 +20,11 @@
   padding: 10px 0; border-bottom: 1px solid var(--line); align-items: baseline;
 }
 .pd-sc-row:last-child { border-bottom: 0; }
+/* Evidence can hold a long path or URL with no break point. */
+.pd-sc-row > div { min-width: 0; overflow-wrap: anywhere; }
 .pd-sc-row .sc-badge { font-size: 14px; }
 .pd-sc-row b { font-size: 13px; font-weight: 550; }
-.pd-sc-row .id { color: var(--faint); font-family: var(--mono); font-size: 11px; margin-right: 7px; }
+.pd-sc-row .id { color: var(--faint); font-variant-numeric: tabular-nums; font-size: 11px; margin-right: 7px; }
 .pd-sc-row p { margin: 3px 0 0; color: var(--muted); font-size: 12.5px; }
 
 /* files section: one collapsible group per top-level dir */
@@ -32,7 +34,7 @@
   color: var(--muted); list-style-position: inside;
 }
 .pd-files summary:hover { color: var(--text); }
-.pd-files summary .n { color: var(--faint); margin-left: 6px; }
+.pd-files summary .n { color: var(--faint); margin-left: 6px; font-family: var(--sans); font-variant-numeric: tabular-nums; }
 .pd-files ul { list-style: none; margin: 0; padding: 2px 13px 10px; }
 .pd-files li { display: flex; justify-content: space-between; gap: 14px; padding: 4.5px 0; border-top: 1px solid var(--line); font-size: 13px; }
 .pd-files li a {
@@ -40,7 +42,7 @@
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 .pd-files li a:hover { text-decoration: underline; text-underline-offset: 2px; }
-.pd-size { color: var(--faint); font-size: 11.5px; font-family: var(--mono); flex: none; }
+.pd-size { color: var(--faint); font-size: 11.5px; font-variant-numeric: tabular-nums; flex: none; }
 
 /* file viewer */
 .pd-doc { max-width: 780px; }

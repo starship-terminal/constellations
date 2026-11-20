@@ -1,0 +1,876 @@
+{
+ "core": {
+  "palette": {
+   "p888888": {
+    "type": "color",
+    "value": "#888888",
+    "source": "literal in httpie.io's stylesheets (raw/css-vars.json palette, 10 declarations; e.g. .ͼ1 .cm-placeholder; .ͼ1 .cm-highlightSpace::before; .ͼ2 .cm-button)"
+   },
+   "p6b7280": {
+    "type": "color",
+    "value": "#6b7280",
+    "source": "literal in httpie.io's stylesheets (raw/css-vars.json palette, 9 declarations; e.g. [multiple], [type=\"date\"], [type=\"datetime-local\"], [type=\"email\"], [type=\"month\"], [type=\"number\"], [type=\"pa; [multiple], [type=\"date\"], [type=\"datetime-local\"], [type=\"email\"], [type=\"month\"], [type=\"number\"], [type=\"pa; [multiple], [type=\"date\"], [type=\"datetime-local\"], [type=\"email\"], [type=\"month\"], [type=\"number\"], [type=\"pa)"
+   },
+   "pd9d9d9": {
+    "type": "color",
+    "value": "#d9d9d9",
+    "source": "literal in httpie.io's stylesheets (raw/css-vars.json palette, 7 declarations; e.g. .algolia-autocomplete .ds-dropdown-menu::before; .algolia-autocomplete .ds-dropdown-menu::before; .algolia-autocomplete .ds-dropdown-menu [class^=\"ds-dataset-\"])"
+   },
+   "pdddddd": {
+    "type": "color",
+    "value": "#dddddd",
+    "source": "literal in httpie.io's stylesheets (raw/css-vars.json palette, 6 declarations; e.g. .algolia-autocomplete .algolia-docsearch-suggestion--content::before; .algolia-autocomplete .algolia-docsearch-suggestion--category-header; .algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column::before)"
+   },
+   "p426bd1": {
+    "type": "color",
+    "value": "#426bd1",
+    "source": "literal in httpie.io's stylesheets (raw/css-vars.json palette, 5 declarations; e.g. [multiple]:focus, [type=\"date\"]:focus, [type=\"datetime-local\"]:focus, [type=\"email\"]:focus, [type=\"month\"]:foc; [multiple]:focus, [type=\"date\"]:focus, [type=\"datetime-local\"]:focus, [type=\"email\"]:focus, [type=\"month\"]:foc; [multiple]:focus, [type=\"date\"]:focus, [type=\"datetime-local\"]:focus, [type=\"email\"]:focus, [type=\"month\"]:foc)"
+   },
+   "pba2452": {
+    "type": "color",
+    "value": "rgba(245, 245, 240, 0.05)",
+    "source": "literal in httpie.io's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .border-white\\/5; .border-white\\/5; .border-white\\/5)"
+   },
+   "pink": {
+    "type": "color",
+    "value": "rgba(250, 155, 250, 0.25)",
+    "source": "literal in httpie.io's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .hover\\:border-pink\\/25:hover; .hover\\:border-pink\\/25:hover; .hover\\:border-pink\\/25:hover)"
+   },
+   "p555555": {
+    "type": "color",
+    "value": "#555555",
+    "source": "literal in httpie.io's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .ͼ3 .cm-textfield; .ͼ3 .cm-textfield; .ͼ3 .cm-textfield)"
+   },
+   "paaaaaa": {
+    "type": "color",
+    "value": "#aaaaaa",
+    "source": "literal in httpie.io's stylesheets (raw/css-vars.json palette, 3 declarations; e.g. .searchbox__input:active, .searchbox__input:focus; .searchbox__input::-webkit-input-placeholder; .searchbox__input::placeholder)"
+   },
+   "p02060c": {
+    "type": "color",
+    "value": "#02060c",
+    "source": "literal in httpie.io's stylesheets (raw/css-vars.json palette, 3 declarations; e.g. .algolia-autocomplete .algolia-docsearch-suggestion; .algolia-autocomplete .algolia-docsearch-suggestion--title; .algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--subcategory-column)"
+   },
+   "p55aa69": {
+    "type": "color",
+    "value": "#55aa69",
+    "source": "literal in httpie.io's stylesheets (raw/css-vars.json palette, 3 declarations; e.g. .cm-editor .cm-content; .cm-cursor, .cm-dropCursor, .cm-editor .cm-cursor; .Input_input__jKmAa)"
+   },
+   "pcccccc": {
+    "type": "color",
+    "value": "#cccccc",
+    "source": "literal in httpie.io's stylesheets (raw/css-vars.json palette, 2 declarations; e.g. .searchbox__input; .ͼ3 .cm-gutters)"
+   },
+   "p222222": {
+    "type": "color",
+    "value": "#222222",
+    "source": "literal in httpie.io's stylesheets (raw/css-vars.json palette, 2 declarations; e.g. .algolia-autocomplete .algolia-docsearch-suggestion code; .ͼ3 .cm-selectionBackground)"
+   },
+   "p458ee1": {
+    "type": "color",
+    "value": "#458ee1",
+    "source": "literal in httpie.io's stylesheets (raw/css-vars.json palette, 2 declarations; e.g. .algolia-autocomplete .suggestion-layout-simple .algolia-docsearch-suggestion--title; .algolia-autocomplete .suggestion-layout-simple .algolia-docsearch-suggestion--title::before)"
+   },
+   "p282425": {
+    "type": "color",
+    "value": "#282425",
+    "source": "literal in httpie.io's stylesheets (raw/css-vars.json palette, 2 declarations; e.g. .dark .NewsletterForm_form__ophzl .NewsletterForm_textInput__CWjAF.NewsletterForm_ai__pJNzd; .dark .NewsletterForm_form__ophzl .NewsletterForm_textInput__CWjAF.NewsletterForm_ai__pJNzd)"
+   },
+   "pba7512": {
+    "type": "color",
+    "value": "rgba(75, 120, 230, 0.25)",
+    "source": "literal in httpie.io's stylesheets (raw/css-vars.json palette, 2 declarations; e.g. .cm-editor .cm-searchMatch; .dark .cm-editor .cm-searchMatch-selected, .dark .cm-editor.cm-focused .cm-searchMatch-selected)"
+   },
+   "p3b82f6": {
+    "type": "color",
+    "value": "#3b82f6",
+    "source": "literal in httpie.io's stylesheets (raw/css-vars.json palette, 2 declarations; e.g. .cm-editor .cm-searchMatch-selected, .cm-editor.cm-focused .cm-searchMatch-selected; .cm-editor .cm-searchMatch-selected, .cm-editor.cm-focused .cm-searchMatch-selected)"
+   },
+   "pba2552": {
+    "type": "color",
+    "value": "rgba(255, 255, 255, 0.5)",
+    "source": "literal in httpie.io's stylesheets (raw/css-vars.json palette, 2 declarations; e.g. .PromptState_promptState__LqXTb; .StackedRequest_container__fQedQ)"
+   },
+   "pf5f5f5": {
+    "type": "color",
+    "value": "#f5f5f5",
+    "source": "literal in httpie.io's stylesheets (raw/css-vars.json palette, 2 declarations; e.g. .ͼ2 .cm-gutters; .ͼ2 .cm-panels)"
+   },
+   "p333338": {
+    "type": "color",
+    "value": "#333338",
+    "source": "literal in httpie.io's stylesheets (raw/css-vars.json palette, 2 declarations; e.g. .ͼ3 .cm-gutters; .ͼ3 .cm-panels)"
+   }
+  },
+  "typography": {
+   "hero": {
+    "$value": {
+     "fontFamily": "\"Pie Headline\", Impact",
+     "fontSize": "109px",
+     "fontWeight": 400,
+     "lineHeight": "87.2px",
+     "letterSpacing": "1.308px"
+    },
+    "$type": "typography",
+    "$description": "the home hero display — Pie Headline (FK Screamer)",
+    "$extensions": {
+     "source": "measured hero-headline on / (default state)"
+    }
+   },
+   "sectionTitle": {
+    "$value": {
+     "fontFamily": "\"Pie Body\", sans-serif",
+     "fontSize": "30px",
+     "fontWeight": 600,
+     "lineHeight": "42px",
+     "letterSpacing": "0.33px"
+    },
+    "$type": "typography",
+    "$description": "a home section heading",
+    "$extensions": {
+     "source": "measured section-heading on / (default state)"
+    }
+   },
+   "articleTitle": {
+    "$value": {
+     "fontFamily": "\"Pie Body\", sans-serif",
+     "fontSize": "30px",
+     "fontWeight": 600,
+     "lineHeight": "42px",
+     "letterSpacing": "0.33px"
+    },
+    "$type": "typography",
+    "$description": "the changelog article title",
+    "$extensions": {
+     "source": "measured prose-h1 on /blog/changelog-0027 (default state)"
+    }
+   },
+   "body": {
+    "$value": {
+     "fontFamily": "\"Pie Body\", sans-serif",
+     "fontSize": "18px",
+     "fontWeight": 300,
+     "lineHeight": "25.2px",
+     "letterSpacing": "0.198px"
+    },
+    "$type": "typography",
+    "$description": "article body text — Pie Body (PolyPie)",
+    "$extensions": {
+     "source": "measured prose-p on /blog/changelog-0027 (default state)"
+    }
+   },
+   "bodyLink": {
+    "$value": {
+     "fontFamily": "\"Pie Body\", sans-serif",
+     "fontSize": "18px",
+     "fontWeight": 400,
+     "lineHeight": "30px",
+     "letterSpacing": "0.198px"
+    },
+    "$type": "typography",
+    "$description": "a body-text link inside the article",
+    "$extensions": {
+     "source": "measured prose-link on /blog/changelog-0027 (default state)"
+    }
+   },
+   "navLink": {
+    "$value": {
+     "fontFamily": "\"Pie Body\", sans-serif",
+     "fontSize": "18px",
+     "fontWeight": 400,
+     "lineHeight": "30px",
+     "letterSpacing": "0.198px"
+    },
+    "$type": "typography",
+    "$description": "a nav link",
+    "$extensions": {
+     "source": "measured nav-link on / (default state)"
+    }
+   },
+   "button": {
+    "$value": {
+     "fontFamily": "\"Pie Body\", sans-serif",
+     "fontSize": "15px",
+     "fontWeight": 400,
+     "lineHeight": "21px",
+     "letterSpacing": "0.165px"
+    },
+    "$type": "typography",
+    "$description": "the primary button label",
+    "$extensions": {
+     "source": "measured nav-cta on / (default state)"
+    }
+   },
+   "urlField": {
+    "$value": {
+     "fontFamily": "PolySansMono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+     "fontSize": "14.2px",
+     "fontWeight": 400,
+     "lineHeight": "24px"
+    },
+    "$type": "typography",
+    "$description": "the request URL field — Pie Monospace",
+    "$extensions": {
+     "source": "measured app-url-field on /app (default state)"
+    }
+   },
+   "tabLabel": {
+    "$value": {
+     "fontFamily": "PolySansMono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+     "fontSize": "8.5px",
+     "fontWeight": 400,
+     "lineHeight": "16px"
+    },
+    "$type": "typography",
+    "$description": "a request tab label",
+    "$extensions": {
+     "source": "measured app-request-tab on /app (default state)"
+    }
+   },
+   "input": {
+    "$value": {
+     "fontFamily": "\"Pie Body\", sans-serif",
+     "fontSize": "16px",
+     "fontWeight": 400,
+     "lineHeight": "24px"
+    },
+    "$type": "typography",
+    "$description": "the newsletter email field",
+    "$extensions": {
+     "source": "measured newsletter-input on / (default state)"
+    }
+   }
+  },
+  "font": {
+   "family": {
+    "headline": {
+     "type": "fontFamily",
+     "value": "\"Pie Headline\", Impact",
+     "source": "computed fontFamily of hero-headline default on / (raw/components-computed.json); Pie Headline is declared by @font-face in httpie.io's sheets, a licensed face (the name is evidence, the font file is not shipped)",
+     "description": "the display face — hero and section headlines (FK Screamer)"
+    },
+    "body": {
+     "type": "fontFamily",
+     "value": "\"Pie Body\", sans-serif",
+     "source": "computed fontFamily of prose-p default on /blog/changelog-0027 (raw/components-computed.json); Pie Body is declared by @font-face in httpie.io's sheets, a licensed face (the name is evidence, the font file is not shipped)",
+     "description": "the body/UI face (PolyPie)"
+    },
+    "mono": {
+     "type": "fontFamily",
+     "value": "\"Pie Monospace\", monospace",
+     "source": "computed fontFamily of cli-code-block default on /cli (raw/components-computed.json); Pie Monospace is declared by @font-face in httpie.io's sheets, a licensed face (the name is evidence, the font file is not shipped)",
+     "description": "the code face — terminal blocks, the URL field, JSON"
+    },
+    "symbols": {
+     "type": "fontFamily",
+     "value": "\"Pie Symbols\"",
+     "source": "@font-face in httpie.io's sheets (raw/css-vars.json fonts): 'Pie Symbols', licensed icon face — the name is evidence, the font file is not shipped",
+     "description": "the icon/symbol face"
+    }
+   }
+  }
+ },
+ "light": {
+  "bg": {
+   "z0": {
+    "type": "color",
+    "var": "--color-bg-z0"
+   },
+   "z1": {
+    "type": "color",
+    "var": "--color-bg-z1"
+   },
+   "z2": {
+    "type": "color",
+    "var": "--color-bg-z2"
+   },
+   "z3": {
+    "type": "color",
+    "var": "--color-bg-z3"
+   }
+  },
+  "text": {
+   "invertedPrimary": {
+    "type": "color",
+    "var": "--color-inverted-primary"
+   },
+   "placeholders": {
+    "type": "color",
+    "var": "--color-placeholders"
+   },
+   "primary": {
+    "type": "color",
+    "var": "--color-primary"
+   },
+   "secondary": {
+    "type": "color",
+    "var": "--color-secondary"
+   },
+   "tertiary": {
+    "type": "color",
+    "var": "--color-tertiary"
+   }
+  },
+  "accent": {
+   "default": {
+    "type": "color",
+    "var": "--color-accent"
+   },
+   "hover": {
+    "type": "color",
+    "var": "--color-hover"
+   }
+  },
+  "altAccent": {
+   "default": {
+    "type": "color",
+    "var": "--color-alt-accent"
+   },
+   "hover": {
+    "type": "color",
+    "var": "--color-alt-accent-hover"
+   }
+  },
+  "warning": {
+   "default": {
+    "type": "color",
+    "var": "--color-warning"
+   },
+   "hover": {
+    "type": "color",
+    "var": "--color-warning-hover"
+   }
+  },
+  "focus": {
+   "ring": {
+    "type": "color",
+    "var": "--color-focus"
+   }
+  },
+  "border": {
+   "default": {
+    "type": "color",
+    "var": "--color-borders"
+   },
+   "subtle": {
+    "type": "color",
+    "var": "--color-borders-subtle"
+   }
+  },
+  "header": {
+   "hover": {
+    "type": "color",
+    "var": "--color-header-hover"
+   }
+  },
+  "item": {
+   "hover": {
+    "type": "color",
+    "var": "--color-item-hover"
+   },
+   "selected": {
+    "type": "color",
+    "var": "--color-item-selected"
+   },
+   "selectedHover": {
+    "type": "color",
+    "var": "--color-item-selected-hover"
+   }
+  },
+  "selection": {
+   "default": {
+    "type": "color",
+    "var": "--color-selection"
+   }
+  },
+  "drag": {
+   "draggable": {
+    "type": "color",
+    "var": "--color-draggable"
+   },
+   "droppable": {
+    "type": "color",
+    "var": "--color-droppable"
+   }
+  },
+  "backdrop": {
+   "default": {
+    "type": "color",
+    "var": "--color-backdrop"
+   }
+  },
+  "shadow": {
+   "color": {
+    "type": "color",
+    "var": "--color-shadows"
+   }
+  },
+  "code": {
+   "aqua": {
+    "type": "color",
+    "var": "--color-code-aqua"
+   },
+   "blue": {
+    "type": "color",
+    "var": "--color-code-blue"
+   },
+   "gray": {
+    "type": "color",
+    "var": "--color-code-gray"
+   },
+   "green": {
+    "type": "color",
+    "var": "--color-code-green"
+   },
+   "orange": {
+    "type": "color",
+    "var": "--color-code-orange"
+   },
+   "pink": {
+    "type": "color",
+    "var": "--color-code-pink"
+   },
+   "primary": {
+    "type": "color",
+    "var": "--color-code-primary"
+   },
+   "purple": {
+    "type": "color",
+    "var": "--color-code-purple"
+   },
+   "red": {
+    "type": "color",
+    "var": "--color-code-red"
+   },
+   "yellow": {
+    "type": "color",
+    "var": "--color-code-yellow"
+   }
+  },
+  "misc": {
+   "appCursor": {
+    "type": "other",
+    "var": "--app-cursor"
+   },
+   "appCursorLink": {
+    "type": "fontFamily",
+    "var": "--app-cursor-link"
+   },
+   "appCursorTiny": {
+    "type": "fontFamily",
+    "var": "--app-cursor-tiny"
+   }
+  },
+  "component": {
+   "button": {
+    "cta": {
+     "bg": {
+      "type": "color",
+      "value": "#73dc8c",
+      "source": "measured nav-cta light on / (primary button fill) — the class hard-codes this green in both themes; it is not the themed accent role",
+      "description": "primary button fill"
+     }
+    }
+   }
+  }
+ },
+ "dark": {
+  "bg": {
+   "z0": {
+    "type": "color",
+    "var": "--color-bg-z0"
+   },
+   "z1": {
+    "type": "color",
+    "var": "--color-bg-z1"
+   },
+   "z2": {
+    "type": "color",
+    "var": "--color-bg-z2"
+   },
+   "z3": {
+    "type": "color",
+    "var": "--color-bg-z3"
+   }
+  },
+  "text": {
+   "invertedPrimary": {
+    "type": "color",
+    "var": "--color-inverted-primary"
+   },
+   "placeholders": {
+    "type": "color",
+    "var": "--color-placeholders"
+   },
+   "primary": {
+    "type": "color",
+    "var": "--color-primary"
+   },
+   "secondary": {
+    "type": "color",
+    "var": "--color-secondary"
+   },
+   "tertiary": {
+    "type": "color",
+    "var": "--color-tertiary"
+   }
+  },
+  "accent": {
+   "default": {
+    "type": "color",
+    "var": "--color-accent"
+   },
+   "hover": {
+    "type": "color",
+    "var": "--color-hover"
+   }
+  },
+  "altAccent": {
+   "default": {
+    "type": "color",
+    "var": "--color-alt-accent"
+   },
+   "hover": {
+    "type": "color",
+    "var": "--color-alt-accent-hover"
+   }
+  },
+  "warning": {
+   "default": {
+    "type": "color",
+    "var": "--color-warning"
+   },
+   "hover": {
+    "type": "color",
+    "var": "--color-warning-hover"
+   }
+  },
+  "focus": {
+   "ring": {
+    "type": "color",
+    "var": "--color-focus"
+   }
+  },
+  "border": {
+   "default": {
+    "type": "color",
+    "var": "--color-borders"
+   },
+   "subtle": {
+    "type": "color",
+    "var": "--color-borders-subtle"
+   }
+  },
+  "header": {
+   "hover": {
+    "type": "color",
+    "var": "--color-header-hover"
+   }
+  },
+  "item": {
+   "hover": {
+    "type": "color",
+    "var": "--color-item-hover"
+   },
+   "selected": {
+    "type": "color",
+    "var": "--color-item-selected"
+   },
+   "selectedHover": {
+    "type": "color",
+    "var": "--color-item-selected-hover"
+   }
+  },
+  "selection": {
+   "default": {
+    "type": "color",
+    "var": "--color-selection"
+   }
+  },
+  "drag": {
+   "draggable": {
+    "type": "color",
+    "var": "--color-draggable"
+   },
+   "droppable": {
+    "type": "color",
+    "var": "--color-droppable"
+   }
+  },
+  "backdrop": {
+   "default": {
+    "type": "color",
+    "var": "--color-backdrop"
+   }
+  },
+  "shadow": {
+   "color": {
+    "type": "color",
+    "var": "--color-shadows"
+   }
+  },
+  "code": {
+   "aqua": {
+    "type": "color",
+    "var": "--color-code-aqua"
+   },
+   "blue": {
+    "type": "color",
+    "var": "--color-code-blue"
+   },
+   "gray": {
+    "type": "color",
+    "var": "--color-code-gray"
+   },
+   "green": {
+    "type": "color",
+    "var": "--color-code-green"
+   },
+   "orange": {
+    "type": "color",
+    "var": "--color-code-orange"
+   },
+   "pink": {
+    "type": "color",
+    "var": "--color-code-pink"
+   },
+   "primary": {
+    "type": "color",
+    "var": "--color-code-primary"
+   },
+   "purple": {
+    "type": "color",
+    "var": "--color-code-purple"
+   },
+   "red": {
+    "type": "color",
+    "var": "--color-code-red"
+   },
+   "yellow": {
+    "type": "color",
+    "var": "--color-code-yellow"
+   }
+  },
+  "misc": {
+   "appCursor": {
+    "type": "other",
+    "var": "--app-cursor"
+   },
+   "appCursorLink": {
+    "type": "fontFamily",
+    "var": "--app-cursor-link"
+   },
+   "appCursorTiny": {
+    "type": "fontFamily",
+    "var": "--app-cursor-tiny"
+   }
+  },
+  "component": {
+   "button": {
+    "cta": {
+     "bg": {
+      "type": "color",
+      "value": "#73dc8c",
+      "source": "measured nav-cta default on / (primary button fill) — the class hard-codes this green in both themes; it is not the themed accent role",
+      "description": "primary button fill"
+     }
+    }
+   },
+   "sendButton": {
+    "bg": {
+     "type": "color",
+     "value": "{accent.default}",
+     "source": "measured app-send-button default on /app (Send fill) — the element's class paints the accent.default role",
+     "description": "Send fill"
+    }
+   }
+  }
+ },
+ "component": {
+  "nav": {
+   "height": {
+    "type": "dimension",
+    "value": "130px",
+    "source": "measured site-nav default on / (top navigation bar)"
+   }
+  },
+  "button": {
+   "cta": {
+    "height": {
+     "type": "dimension",
+     "value": "51px",
+     "source": "measured nav-cta default on / ('Go to App' button)"
+    },
+    "radius": {
+     "type": "dimension",
+     "value": "9999px",
+     "source": "measured nav-cta default on / (CTA corner)",
+     "description": "all four corners measure the full-radius clamp — a pill"
+    }
+   },
+   "secondary": {
+    "radius": {
+     "type": "dimension",
+     "value": "9999px",
+     "source": "measured button-secondary default on / (secondary button corner)",
+     "description": "all four corners measure the full-radius clamp — a pill"
+    }
+   }
+  },
+  "navLink": {
+   "height": {
+    "type": "dimension",
+    "value": "30px",
+    "source": "measured nav-link default on / (nav link row)"
+   }
+  },
+  "appSidebar": {
+   "width": {
+    "type": "dimension",
+    "value": "49px",
+    "source": "measured app-sidebar default on /app (/app left rail)"
+   }
+  },
+  "tabCard": {
+   "height": {
+    "type": "dimension",
+    "value": "28px",
+    "source": "measured app-request-tab default on /app (request tab card)"
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "6px",
+    "source": "measured app-request-tab default on /app (request tab corner)"
+   }
+  },
+  "urlField": {
+   "height": {
+    "type": "dimension",
+    "value": "44px",
+    "source": "measured app-url-field default on /app (the URL field)"
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "0px",
+    "source": "measured app-url-field default on /app (URL field corner)"
+   }
+  },
+  "sendButton": {
+   "height": {
+    "type": "dimension",
+    "value": "28px",
+    "source": "measured app-send-button default on /app (the Send button)"
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "6px",
+    "source": "measured app-send-button default on /app (Send corner)"
+   }
+  },
+  "panelTabs": {
+   "height": {
+    "type": "dimension",
+    "value": "28px",
+    "source": "measured app-panel-tabs default on /app (request panel tablist)"
+   }
+  },
+  "methodButton": {
+   "height": {
+    "type": "dimension",
+    "value": "28px",
+    "source": "measured app-method-button default on /app (method select)"
+   }
+  },
+  "testimonialCard": {
+   "height": {
+    "type": "dimension",
+    "value": "238px",
+    "source": "measured testimonial-card default on / (tweet card)"
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "10px",
+    "source": "measured testimonial-card default on / (tweet card corner)"
+   }
+  },
+  "input": {
+   "height": {
+    "type": "dimension",
+    "value": "44px",
+    "source": "measured newsletter-input default on / (newsletter field)"
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "9999px",
+    "source": "measured newsletter-input default on / (newsletter field corner)",
+    "description": "all four corners measure the full-radius clamp — a pill"
+   }
+  },
+  "postCard": {
+   "height": {
+    "type": "dimension",
+    "value": "398.2px",
+    "source": "measured post-card default on /blog (blog index card)"
+   }
+  },
+  "docsToc": {
+   "width": {
+    "type": "dimension",
+    "value": "314.5px",
+    "source": "measured docs-toc default on /docs/desktop (docs table of contents)"
+   }
+  },
+  "mobileNav": {
+   "height": {
+    "type": "dimension",
+    "value": "85px",
+    "source": "measured m-nav default on / (mobile top bar)"
+   }
+  },
+  "badge": {
+   "radius": {
+    "type": "dimension",
+    "value": "9999px",
+    "source": "measured early-access-badge default on / (beta pill corner)",
+    "description": "all four corners measure the full-radius clamp — a pill"
+   }
+  },
+  "themeToggle": {
+   "radius": {
+    "type": "dimension",
+    "value": "0px",
+    "source": "measured theme-toggle default on / (theme control corner)"
+   }
+  },
+  "type": {
+   "navLinkHover": {
+    "color": {
+     "type": "color",
+     "value": "rgb(115, 220, 140)",
+     "source": "measured nav-link hover on / (nav link on hover)"
+    }
+   },
+   "linkHover": {
+    "color": {
+     "type": "color",
+     "value": "rgb(245, 245, 240)",
+     "source": "measured post-title-link hover on /blog (post title on hover)"
+    }
+   },
+   "articleTitle": {
+    "size": {
+     "type": "other",
+     "value": "30px",
+     "source": "measured prose-h1 default on /blog/changelog-0027 (article h1)"
+    }
+   },
+   "hero": {
+    "tracking": {
+     "type": "other",
+     "value": "1.308px",
+     "source": "measured hero-headline default on / (hero headline tracking)"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,25 @@
+{
+  "inner": [
+    390,
+    844
+  ],
+  "dpr": 2,
+  "vv": {
+    "w": 390,
+    "h": 844,
+    "scale": 1
+  },
+  "h1": {
+    "size": "40px",
+    "lh": "44px",
+    "ls": "-1.2px",
+    "text": "Fastest AI website builder for simple ma"
+  },
+  "navH": 56,
+  "navBg": "rgba(0, 0, 0, 0)",
+  "menu": {
+    "cls": "p-navbar_menu-button w-nav-button",
+    "w": 44
+  },
+  "bodyBg": "rgb(241, 240, 238)"
+}

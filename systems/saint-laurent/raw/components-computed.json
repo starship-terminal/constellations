@@ -1,0 +1,189 @@
+{
+  "source": "computed style, T3 preview, signed out, 2026-11-19, ysl.com/en-sg",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2
+  },
+  "headerOnHero": {
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "height": 72,
+    "fontSize": "12px",
+    "fontFamily": "Helvetica_Reg, Helvetica, Arial, sans-serif",
+    "textTransform": "uppercase"
+  },
+  "headerOnListing": {
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "height": 72
+  },
+  "navLink": {
+    "fontSize": "12px",
+    "lineHeight": "16px",
+    "fontWeight": 400,
+    "padding": "0px 12px",
+    "colorOnHero": "rgb(255, 255, 255)"
+  },
+  "navHover": {
+    "color": "rgb(102, 102, 102)",
+    "after": {
+      "height": "2px",
+      "border": "1px solid rgb(153, 153, 153)"
+    }
+  },
+  "logo": {
+    "width": 122,
+    "height": 13.5,
+    "fillOnHero": "rgb(255, 255, 255)"
+  },
+  "primaryButton": {
+    "examples": [
+      "GO TO SINGAPORE",
+      "APPLY (220)",
+      "ADD TO CART"
+    ],
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "height": 36,
+    "padding": "10px 20px",
+    "borderRadius": "0px",
+    "fontSize": "12px",
+    "fontWeight": 400,
+    "lineHeight": "16px",
+    "textTransform": "uppercase",
+    "fontFamily": "Helvetica_Reg, Helvetica, Arial, sans-serif"
+  },
+  "addToCartFocus": {
+    "outline": "rgb(153, 153, 153) solid 2px",
+    "outlineOffset": "0px"
+  },
+  "addToCartHoverSynthetic": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "note": "mouseover did not change fill"
+  },
+  "textButton": {
+    "example": "CONTINUE TO SINGAPORE",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "height": 36,
+    "padding": "10px 20px",
+    "borderRadius": "0px"
+  },
+  "disabledButton": {
+    "example": "SEND",
+    "backgroundColor": "rgb(242, 242, 242)",
+    "color": "rgb(153, 153, 153)",
+    "height": 36,
+    "padding": "10px 20px",
+    "disabled": true
+  },
+  "clearButton": {
+    "backgroundColor": "rgb(230, 230, 230)",
+    "color": "rgb(153, 153, 153)",
+    "border": "1px solid rgb(153, 153, 153)",
+    "height": 36,
+    "padding": "9px 19px"
+  },
+  "searchInput": {
+    "height": 44,
+    "fontSize": "12px",
+    "placeholder": "SEARCH",
+    "textTransform": "uppercase",
+    "border": "0",
+    "formBorder": "1px solid rgb(0, 0, 0)",
+    "width": 473
+  },
+  "textField": {
+    "examples": [
+      "firstName",
+      "lastName",
+      "email"
+    ],
+    "height": 41,
+    "padding": "12px 0px",
+    "borderBottom": "1px solid rgb(0, 0, 0)",
+    "borderRadius": "0px",
+    "fontSize": "12px",
+    "backgroundColor": "rgba(0, 0, 0, 0)"
+  },
+  "select": {
+    "example": "stores country",
+    "height": 41,
+    "borderBottom": "1px solid rgb(0, 0, 0)",
+    "fontSize": "12px",
+    "padding": "12px 32px 12px 0px"
+  },
+  "sizeRow": {
+    "height": 32,
+    "padding": "8px 20px",
+    "fontSize": "12px",
+    "border": "0",
+    "backgroundColor": "rgba(0, 0, 0, 0)"
+  },
+  "sizeTrigger": {
+    "borderBottom": "1px solid rgb(0, 0, 0)",
+    "height": 41,
+    "padding": "8px 0px"
+  },
+  "radio": {
+    "width": "12px",
+    "height": "12px",
+    "borderRadius": "12px",
+    "border": "1px solid rgb(0, 0, 0)",
+    "uncheckedBackground": "rgb(255, 255, 255)",
+    "checkedBackground": "rgb(0, 0, 0)"
+  },
+  "filterPanel": {
+    "width": 390,
+    "backgroundColor": "rgba(255, 255, 255, 0.9)",
+    "role": "dialog"
+  },
+  "searchPanel": {
+    "width": 585,
+    "backgroundColor": "rgba(255, 255, 255, 0.9)"
+  },
+  "scrim": {
+    "backgroundColor": "rgba(239, 239, 239, 0.6)"
+  },
+  "regionBar": {
+    "backgroundColor": "rgba(255, 255, 255, 0.9)",
+    "height": 76,
+    "position": "fixed"
+  },
+  "cookieAccept": {
+    "backgroundColor": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "height": 36,
+    "padding": "10px 30px",
+    "borderRadius": "2px",
+    "fontFamily": "Helvetica_Regular, Arial, sans-serif",
+    "letterSpacing": "0.12px",
+    "note": "OneTrust, not the storefront button"
+  },
+  "productCard": {
+    "image": {
+      "width": 387,
+      "height": 484
+    },
+    "titleSize": "12px",
+    "priceSize": "12px"
+  },
+  "h1Product": {
+    "fontSize": "12px",
+    "fontWeight": 700,
+    "lineHeight": "16px",
+    "textTransform": "uppercase"
+  },
+  "body": {
+    "fontSize": "12px",
+    "lineHeight": "12px",
+    "fontWeight": 400,
+    "textTransform": "uppercase",
+    "color": "rgb(0, 0, 0)",
+    "fontFamily": "Helvetica_Reg, Helvetica, Arial, sans-serif"
+  },
+  "htmlFontSize": "16px",
+  "colorScheme": "normal"
+}

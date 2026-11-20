@@ -1,0 +1,841 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. kit.com's declared custom-property layer is a Tailwind v4 theme ramp plus Kit's own soft-black, warm-white and brand blue. Declared scales land under core.* as {var} leaves. Measured component geometry lands as literals. The site is light-only: the dark set stays empty.",
+ "core": {
+  "color": {
+   "black": {
+    "var": "--color-black",
+    "type": "color"
+   },
+   "blue": {
+    "100": {
+     "var": "--color-blue-100",
+     "type": "color"
+    },
+    "1000": {
+     "var": "--color-blue-1000",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-blue-200",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-blue-400",
+     "type": "color"
+    },
+    "50": {
+     "var": "--color-blue-50",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-blue-500",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-blue-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-blue-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-blue-900",
+     "type": "color"
+    }
+   },
+   "gray": {
+    "100": {
+     "var": "--color-gray-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-gray-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-gray-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-gray-400",
+     "type": "color"
+    },
+    "50": {
+     "var": "--color-gray-50",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-gray-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-gray-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-gray-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-gray-800",
+     "type": "color"
+    }
+   },
+   "green": {
+    "1000": {
+     "var": "--color-green-1000",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-green-200",
+     "type": "color"
+    },
+    "50": {
+     "var": "--color-green-50",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-green-500",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-green-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-green-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-green-900",
+     "type": "color"
+    }
+   },
+   "orange": {
+    "100": {
+     "var": "--color-orange-100",
+     "type": "color"
+    },
+    "1000": {
+     "var": "--color-orange-1000",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-orange-200",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-orange-500",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-orange-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-orange-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-orange-900",
+     "type": "color"
+    }
+   },
+   "purple": {
+    "100": {
+     "var": "--color-purple-100",
+     "type": "color"
+    },
+    "1000": {
+     "var": "--color-purple-1000",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-purple-200",
+     "type": "color"
+    },
+    "50": {
+     "var": "--color-purple-50",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-purple-500",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-purple-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-purple-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-purple-900",
+     "type": "color"
+    }
+   },
+   "red": {
+    "500": {
+     "var": "--color-red-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-red-600",
+     "type": "color"
+    }
+   },
+   "soft": {
+    "black": {
+     "var": "--color-soft-black",
+     "type": "color"
+    }
+   },
+   "twitter": {
+    "var": "--color-twitter",
+    "type": "color"
+   },
+   "warm": {
+    "white": {
+     "var": "--color-warm-white",
+     "type": "color"
+    },
+    "white-100": {
+     "var": "--color-warm-white-100",
+     "type": "color"
+    },
+    "white-300": {
+     "var": "--color-warm-white-300",
+     "type": "color"
+    }
+   },
+   "white": {
+    "var": "--color-white",
+    "type": "color"
+   },
+   "yellow": {
+    "100": {
+     "var": "--color-yellow-100",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-yellow-500",
+     "type": "color"
+    }
+   },
+   "youtube": {
+    "var": "--color-youtube",
+    "type": "color"
+   }
+  },
+  "font": {
+   "family": {
+    "display": {
+     "var": "--font-kit-sans",
+     "type": "fontFamily",
+     "description": "KitSansFont, the display face on marketing headlines."
+    },
+    "sans": {
+     "var": "--font-libre-franklin",
+     "type": "fontFamily",
+     "description": "Libre Franklin, the UI and body face on kit.com."
+    },
+    "mono": {
+     "var": "--font-mono",
+     "type": "fontFamily",
+     "description": "The declared mono stack."
+    },
+    "app": {
+     "value": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of login-email default on app.kit.com/users/login",
+     "description": "The log-in card's Inter stack. A different font layer from the marketing site."
+    }
+   },
+   "weight": {
+    "black": {
+     "value": 900,
+     "type": "fontWeight",
+     "source": "declared custom property in the site's css bundle (raw/css-vars.json): --font-weight-black",
+     "description": "The declared `--font-weight-black`."
+    },
+    "bold": {
+     "value": 700,
+     "type": "fontWeight",
+     "source": "declared custom property in the site's css bundle (raw/css-vars.json): --font-weight-bold",
+     "description": "The declared `--font-weight-bold`."
+    },
+    "extrabold": {
+     "value": 800,
+     "type": "fontWeight",
+     "source": "declared custom property in the site's css bundle (raw/css-vars.json): --font-weight-extrabold",
+     "description": "The declared `--font-weight-extrabold`."
+    },
+    "medium": {
+     "value": 500,
+     "type": "fontWeight",
+     "source": "declared custom property in the site's css bundle (raw/css-vars.json): --font-weight-medium",
+     "description": "The declared `--font-weight-medium`."
+    },
+    "normal": {
+     "value": 400,
+     "type": "fontWeight",
+     "source": "declared custom property in the site's css bundle (raw/css-vars.json): --font-weight-normal",
+     "description": "The declared `--font-weight-normal`."
+    },
+    "semibold": {
+     "value": 600,
+     "type": "fontWeight",
+     "source": "declared custom property in the site's css bundle (raw/css-vars.json): --font-weight-semibold",
+     "description": "The declared `--font-weight-semibold`."
+    }
+   },
+   "size": {
+    "10": {
+     "var": "--text-10",
+     "type": "dimension"
+    },
+    "11": {
+     "var": "--text-11",
+     "type": "dimension"
+    },
+    "12": {
+     "var": "--text-12",
+     "type": "dimension"
+    },
+    "14": {
+     "var": "--text-14",
+     "type": "dimension"
+    },
+    "16": {
+     "var": "--text-16",
+     "type": "dimension"
+    },
+    "18": {
+     "var": "--text-18",
+     "type": "dimension"
+    },
+    "20": {
+     "var": "--text-20",
+     "type": "dimension"
+    },
+    "24": {
+     "var": "--text-24",
+     "type": "dimension"
+    },
+    "25": {
+     "var": "--text-25",
+     "type": "dimension"
+    },
+    "28": {
+     "var": "--text-28",
+     "type": "dimension"
+    },
+    "2xl": {
+     "var": "--text-2xl",
+     "type": "dimension"
+    },
+    "3": {
+     "var": "--text-3",
+     "type": "dimension"
+    },
+    "30": {
+     "var": "--text-30",
+     "type": "dimension"
+    },
+    "32": {
+     "var": "--text-32",
+     "type": "dimension"
+    },
+    "35": {
+     "var": "--text-35",
+     "type": "dimension"
+    },
+    "36": {
+     "var": "--text-36",
+     "type": "dimension"
+    },
+    "37": {
+     "var": "--text-37",
+     "type": "dimension"
+    },
+    "3xl": {
+     "var": "--text-3xl",
+     "type": "dimension"
+    },
+    "4": {
+     "var": "--text-4",
+     "type": "dimension"
+    },
+    "40": {
+     "var": "--text-40",
+     "type": "dimension"
+    },
+    "44": {
+     "var": "--text-44",
+     "type": "dimension"
+    },
+    "48": {
+     "var": "--text-48",
+     "type": "dimension"
+    },
+    "4xl": {
+     "var": "--text-4xl",
+     "type": "dimension"
+    },
+    "5": {
+     "var": "--text-5",
+     "type": "dimension"
+    },
+    "50": {
+     "var": "--text-50",
+     "type": "dimension"
+    },
+    "5xl": {
+     "var": "--text-5xl",
+     "type": "dimension"
+    },
+    "6": {
+     "var": "--text-6",
+     "type": "dimension"
+    },
+    "7": {
+     "var": "--text-7",
+     "type": "dimension"
+    },
+    "8": {
+     "var": "--text-8",
+     "type": "dimension"
+    },
+    "9": {
+     "var": "--text-9",
+     "type": "dimension"
+    },
+    "base": {
+     "var": "--text-base",
+     "type": "dimension"
+    },
+    "lg": {
+     "var": "--text-lg",
+     "type": "dimension"
+    },
+    "sm": {
+     "var": "--text-sm",
+     "type": "dimension"
+    },
+    "xl": {
+     "var": "--text-xl",
+     "type": "dimension"
+    },
+    "xs": {
+     "var": "--text-xs",
+     "type": "dimension"
+    },
+    "measured": {
+     "hero": {
+      "value": "80px",
+      "type": "dimension",
+      "source": "computed fontSize of hero-h1 default",
+      "description": "The home hero masthead, KitSansFont."
+     },
+     "pricing": {
+      "value": "64px",
+      "type": "dimension",
+      "source": "computed fontSize of price-h1 default",
+      "description": "The pricing masthead."
+     },
+     "features": {
+      "value": "64px",
+      "type": "dimension",
+      "source": "computed fontSize of feat-h1 default",
+      "description": "The features masthead."
+     },
+     "mobileHero": {
+      "value": "48px",
+      "type": "dimension",
+      "source": "computed fontSize of m-hero default",
+      "description": "The home masthead at 390 wide."
+     },
+     "nav": {
+      "value": "14px",
+      "type": "dimension",
+      "source": "computed fontSize of nav-link default",
+      "description": "The nav link size."
+     },
+     "cta": {
+      "value": "14px",
+      "type": "dimension",
+      "source": "computed fontSize of nav-trial default",
+      "description": "The Start free trial pill size."
+     },
+     "body": {
+      "value": "14px",
+      "type": "dimension",
+      "source": "computed fontSize of footer-link default",
+      "description": "A footer link size."
+     }
+    }
+   },
+   "lineHeight": {
+    "tight": {
+     "value": 1.25,
+     "type": "number",
+     "source": "declared custom property in the site's css bundle (raw/css-vars.json): --leading-tight",
+     "description": "The declared `--leading-tight`."
+    },
+    "snug": {
+     "value": 1.375,
+     "type": "number",
+     "source": "declared custom property in the site's css bundle (raw/css-vars.json): --leading-snug",
+     "description": "The declared `--leading-snug`."
+    },
+    "normal": {
+     "value": 1.5,
+     "type": "number",
+     "source": "declared custom property in the site's css bundle (raw/css-vars.json): --leading-normal",
+     "description": "The declared `--leading-normal`."
+    }
+   }
+  },
+  "spacing": {
+   "base": {
+    "value": "4px",
+    "type": "dimension",
+    "source": "declared custom property in the site's css bundle (raw/css-vars.json): --spacing",
+    "description": "The declared `--spacing`."
+   },
+   "s1": {
+    "value": "4px",
+    "type": "dimension",
+    "source": "Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps",
+    "description": "Step 1 on the 4px base."
+   },
+   "s2": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps",
+    "description": "Step 2 on the 4px base."
+   },
+   "s3": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps",
+    "description": "Step 3 on the 4px base."
+   },
+   "s4": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps",
+    "description": "Step 4 on the 4px base."
+   },
+   "s5": {
+    "value": "24px",
+    "type": "dimension",
+    "source": "Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps",
+    "description": "Step 5 on the 4px base."
+   },
+   "s6": {
+    "value": "32px",
+    "type": "dimension",
+    "source": "Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps",
+    "description": "Step 6 on the 4px base."
+   },
+   "s7": {
+    "value": "48px",
+    "type": "dimension",
+    "source": "Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps",
+    "description": "Step 7 on the 4px base."
+   },
+   "s8": {
+    "value": "64px",
+    "type": "dimension",
+    "source": "Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps",
+    "description": "Step 8 on the 4px base."
+   },
+   "s9": {
+    "value": "80px",
+    "type": "dimension",
+    "source": "Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps",
+    "description": "Step 9 on the 4px base."
+   }
+  },
+  "radius": {
+   "1": {
+    "var": "--radius-1",
+    "type": "dimension"
+   },
+   "2xl": {
+    "var": "--radius-2xl",
+    "type": "dimension"
+   },
+   "3": {
+    "var": "--radius-3",
+    "type": "dimension"
+   },
+   "3xl": {
+    "var": "--radius-3xl",
+    "type": "dimension"
+   },
+   "5": {
+    "var": "--radius-5",
+    "type": "dimension"
+   },
+   "lg": {
+    "var": "--radius-lg",
+    "type": "dimension"
+   },
+   "md": {
+    "var": "--radius-md",
+    "type": "dimension"
+   },
+   "sm": {
+    "var": "--radius-sm",
+    "type": "dimension"
+   },
+   "xl": {
+    "var": "--radius-xl",
+    "type": "dimension"
+   },
+   "xs": {
+    "var": "--radius-xs",
+    "type": "dimension"
+   }
+  },
+  "duration": {
+   "default": {
+    "value": "0.15s",
+    "type": "duration",
+    "source": "declared custom property in the site's css bundle (raw/css-vars.json): --default-transition-duration",
+    "description": "The declared `--default-transition-duration`."
+   }
+  },
+  "easing": {
+   "out": {
+    "value": "cubic-bezier(0,0,.2,1)",
+    "type": "cubicBezier",
+    "source": "declared custom property in the site's css bundle (raw/css-vars.json): --ease-out",
+    "description": "The declared `--ease-out`."
+   },
+   "in": {
+    "value": "cubic-bezier(.4,0,1,1)",
+    "type": "cubicBezier",
+    "source": "declared custom property in the site's css bundle (raw/css-vars.json): --ease-in",
+    "description": "The declared `--ease-in`."
+   },
+   "inOut": {
+    "value": "cubic-bezier(.4,0,.2,1)",
+    "type": "cubicBezier",
+    "source": "declared custom property in the site's css bundle (raw/css-vars.json): --ease-in-out",
+    "description": "The declared `--ease-in-out`."
+   },
+   "default": {
+    "value": "cubic-bezier(.4,0,.2,1)",
+    "type": "cubicBezier",
+    "source": "declared custom property in the site's css bundle (raw/css-vars.json): --default-transition-timing-function",
+    "description": "The declared `--default-transition-timing-function`."
+   }
+  },
+  "container": {
+   "2xl": {
+    "var": "--container-2xl",
+    "type": "dimension"
+   },
+   "3xl": {
+    "var": "--container-3xl",
+    "type": "dimension"
+   },
+   "4xl": {
+    "var": "--container-4xl",
+    "type": "dimension"
+   },
+   "5xl": {
+    "var": "--container-5xl",
+    "type": "dimension"
+   },
+   "7xl": {
+    "var": "--container-7xl",
+    "type": "dimension"
+   },
+   "lg": {
+    "var": "--container-lg",
+    "type": "dimension"
+   },
+   "md": {
+    "var": "--container-md",
+    "type": "dimension"
+   },
+   "sm": {
+    "var": "--container-sm",
+    "type": "dimension"
+   },
+   "xl": {
+    "var": "--container-xl",
+    "type": "dimension"
+   },
+   "xs": {
+    "var": "--container-xs",
+    "type": "dimension"
+   }
+  }
+ },
+ "light": {
+  "background": {
+   "page": {
+    "var": "--color-white",
+    "type": "color",
+    "description": "The marketing page field."
+   },
+   "ink": {
+    "var": "--color-soft-black",
+    "type": "color",
+    "description": "The dark hero and footer band."
+   },
+   "warm": {
+    "var": "--color-warm-white",
+    "type": "color",
+    "description": "Warm white, used as on-ink text and the log-in page field."
+   },
+   "warm100": {
+    "var": "--color-warm-white-100",
+    "type": "color",
+    "description": "The lighter warm surface."
+   },
+   "warm300": {
+    "var": "--color-warm-white-300",
+    "type": "color",
+    "description": "The deeper warm surface."
+   }
+  },
+  "text": {
+   "primary": {
+    "var": "--color-soft-black",
+    "type": "color",
+    "description": "Primary ink."
+   },
+   "onInk": {
+    "var": "--color-warm-white",
+    "type": "color",
+    "description": "Text on the soft-black bands."
+   },
+   "onAccent": {
+    "var": "--color-soft-black",
+    "type": "color",
+    "description": "Text on the blue trial pill."
+   },
+   "muted": {
+    "var": "--color-gray-700",
+    "type": "color",
+    "description": "Secondary gray text."
+   },
+   "disabled": {
+    "var": "--color-gray-500",
+    "type": "color",
+    "description": "The lightest gray that still reads as disabled text."
+   },
+   "link": {
+    "var": "--color-soft-black",
+    "type": "color",
+    "description": "Links share the ink. Underline carries the link role."
+   }
+  },
+  "border": {
+   "default": {
+    "var": "--color-gray-300",
+    "type": "color",
+    "description": "The default hairline."
+   },
+   "strong": {
+    "var": "--color-gray-800",
+    "type": "color",
+    "description": "The strong border."
+   },
+   "focus": {
+    "var": "--color-blue-500",
+    "type": "color",
+    "description": "focus-visible:ring-blue-500 on the wordmark and controls."
+   }
+  },
+  "action": {
+   "fill": {
+    "var": "--color-blue-500",
+    "type": "color",
+    "description": "The Start free trial fill."
+   },
+   "ink": {
+    "var": "--color-soft-black",
+    "type": "color",
+    "description": "The ink fill on Request demo and the log-in submit."
+   },
+   "hover": {
+    "var": "--color-blue-200",
+    "type": "color",
+    "source": "the measured fill of nav-trial hover (#a2d1f1, computed backgroundColor)",
+    "description": "The Start free trial fill on hover, as measured on the live pill."
+   }
+  },
+  "status": {
+   "danger": {
+    "var": "--color-red-500",
+    "type": "color"
+   },
+   "warning": {
+    "var": "--color-yellow-500",
+    "type": "color"
+   },
+   "success": {
+    "var": "--color-green-500",
+    "type": "color"
+   },
+   "info": {
+    "var": "--color-blue-500",
+    "type": "color"
+   }
+  }
+ },
+ "dark": {},
+ "component": {
+  "navHeight": {
+   "value": "58px",
+   "type": "dimension",
+   "source": "measured height of mega-nav default",
+   "description": "The fixed #mega-nav height."
+  },
+  "announceHeight": {
+   "value": "48px",
+   "type": "dimension",
+   "source": "measured height of announce-bar default",
+   "description": "The announcement strip height."
+  },
+  "trialHeight": {
+   "value": "32px",
+   "type": "dimension",
+   "source": "measured height of nav-trial default",
+   "description": "The Start free trial pill height."
+  },
+  "heroSize": {
+   "value": "152px",
+   "type": "dimension",
+   "source": "measured height of hero-h1 default",
+   "description": "The hero headline box height."
+  },
+  "loginSubmitHeight": {
+   "value": "48px",
+   "type": "dimension",
+   "source": "measured height of login-submit default",
+   "description": "The log-in submit height."
+  },
+  "trialRadius": {
+   "value": "8px",
+   "type": "dimension",
+   "source": "computed border radius of nav-trial default",
+   "description": "The trial pill radius."
+  },
+  "loginRadius": {
+   "value": "12px",
+   "type": "dimension",
+   "source": "computed border radius of login-submit default",
+   "description": "The log-in submit radius."
+  }
+ }
+}

@@ -1,0 +1,675 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. clipchamp.com declares TWO token layers: its own --color-* marketing ramps and a full Fluent v9 set on fui-FluentProvider (raw/css-vars.json). The core ramps below are the marketing layer's declared values; the Fluent layer's brand colour is the same purple. Semantic roles are measured on the painted chrome in raw/components-computed.json and alias the core when the value matches. One theme exists (light); dark content bands live inside it.",
+ "core": {
+  "color": {
+   "purple": {
+    "60": {
+     "value": "#433ac7",
+     "type": "color",
+     "source": "declared --color-purple-60 (raw/css-vars.json)",
+     "description": "Declared purple-60 (#433ac7) — brand-dark, the pressed/hover-deep step and hover link colour."
+    },
+    "70": {
+     "value": "#4d43de",
+     "type": "color",
+     "source": "declared --color-purple-70 (raw/css-vars.json)",
+     "description": "Declared purple-70 (#4d43de) — brand-light, the hover step and inactive link colour."
+    },
+    "80": {
+     "value": "#6453e4",
+     "type": "color",
+     "source": "declared --color-purple-80 (raw/css-vars.json)",
+     "description": "Declared purple-80 (#6453e4) — the brand purple: primary CTAs, logo mark, Fluent colorBrandBackground."
+    },
+    "160": {
+     "value": "#f3f0ff",
+     "type": "color",
+     "source": "declared --color-purple-160 (raw/css-vars.json)",
+     "description": "Declared purple-160 (#f3f0ff) — brand-background, the purple tint wash."
+    }
+   },
+   "blue": {
+    "50": {
+     "value": "#242da0",
+     "type": "color",
+     "source": "declared --color-blue-50 (raw/css-vars.json)",
+     "description": "Declared blue-50 (#242da0) — accent-2 dark."
+    },
+    "80": {
+     "value": "#3a5af4",
+     "type": "color",
+     "source": "declared --color-blue-80 (raw/css-vars.json)",
+     "description": "Declared blue-80 (#3a5af4) — accent-2 standard, the second brand family."
+    },
+    "110": {
+     "value": "#8893ff",
+     "type": "color",
+     "source": "declared --color-blue-110 (raw/css-vars.json)",
+     "description": "Declared blue-110 (#8893ff) — accent-2 light."
+    },
+    "150": {
+     "value": "#dee2ff",
+     "type": "color",
+     "source": "declared --color-blue-150 (raw/css-vars.json)",
+     "description": "Declared blue-150 (#dee2ff) — accent-2 background tint."
+    }
+   },
+   "pink": {
+    "50": {
+     "value": "#6e006c",
+     "type": "color",
+     "source": "declared --color-pink-50 (raw/css-vars.json)",
+     "description": "Declared pink-50 (#6e006c) — accent-1 dark."
+    },
+    "80": {
+     "value": "#b50ac1",
+     "type": "color",
+     "source": "declared --color-pink-80 (raw/css-vars.json)",
+     "description": "Declared pink-80 (#b50ac1) — accent-1 standard."
+    },
+    "110": {
+     "value": "#e560ff",
+     "type": "color",
+     "source": "declared --color-pink-110 (raw/css-vars.json)",
+     "description": "Declared pink-110 (#e560ff) — accent-1 light."
+    },
+    "150": {
+     "value": "#f6d9ff",
+     "type": "color",
+     "source": "declared --color-pink-150 (raw/css-vars.json)",
+     "description": "Declared pink-150 (#f6d9ff) — accent-1 background tint."
+    }
+   },
+   "grey": {
+    "18": {
+     "value": "#2c2d3c",
+     "type": "color",
+     "source": "declared --color-grey-18 (raw/css-vars.json)",
+     "description": "Declared grey-18 (#2c2d3c) — the deepest ink."
+    },
+    "20": {
+     "value": "#313242",
+     "type": "color",
+     "source": "declared --color-grey-20 (raw/css-vars.json)",
+     "description": "Declared grey-20 (#313242) — color-text-dark, the primary ink."
+    },
+    "40": {
+     "value": "#64647c",
+     "type": "color",
+     "source": "declared --color-grey-40 (raw/css-vars.json)",
+     "description": "Declared grey-40 (#64647c) — color-text-light, muted text."
+    },
+    "44": {
+     "value": "#6e6e86",
+     "type": "color",
+     "source": "declared --color-grey-44 (raw/css-vars.json)",
+     "description": "Declared grey-44 (#6e6e86) — the lightest grey step."
+    }
+   },
+   "offWhite": {
+    "value": "#fbfbfc",
+    "type": "color",
+    "source": "declared --color-background-off-white (raw/css-vars.json)",
+    "description": "Declared off-white (#fbfbfc) — the secondary page ground."
+   },
+   "collapsible": {
+    "header": {
+     "value": "#5d6276",
+     "type": "color",
+     "source": "declared --color-collapsible-header (raw/css-vars.json)",
+     "description": "Declared collapsible-header (#5d6276) — FAQ header ink."
+    },
+    "content": {
+     "value": "rgba(28, 28, 38, 0.7)",
+     "type": "color",
+     "source": "declared --color-collapsible-content (raw/css-vars.json)",
+     "description": "Declared collapsible-content (#1c1c26b3) — FAQ body ink at alpha."
+    }
+   }
+  },
+  "sampled": {
+   "surfaceDark": {
+    "type": "color",
+    "value": "{color.grey.20}",
+    "source": "Sampled: a screenshot pixel of the full-colour home capture (kept outside the repo) at (720, 3520), not a reading of any element; the band's own element is transparent and the section wrapper that paints it was not measured; the sample equals declared --color-grey-20",
+    "description": "The dark content band's fill inside the single light theme (#313242 = grey-20), from a pixel sample."
+   }
+  },
+  "measured": {},
+  "radius": {
+   "small": {
+    "value": "2px",
+    "type": "dimension",
+    "source": "declared --borderRadiusSmall (raw/css-vars.json)",
+    "description": "Fluent borderRadiusSmall (2px)."
+   },
+   "medium": {
+    "value": "4px",
+    "type": "dimension",
+    "source": "declared --borderRadiusMedium (raw/css-vars.json)",
+    "description": "Fluent borderRadiusMedium (4px) — buttons, cards."
+   },
+   "large": {
+    "value": "6px",
+    "type": "dimension",
+    "source": "declared --borderRadiusLarge (raw/css-vars.json)",
+    "description": "Fluent borderRadiusLarge (6px)."
+   },
+   "xlarge": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "declared --borderRadiusXLarge (raw/css-vars.json)",
+    "description": "Fluent borderRadiusXLarge (8px)."
+   },
+   "circular": {
+    "value": "10000px",
+    "type": "dimension",
+    "source": "declared --borderRadiusCircular (raw/css-vars.json)",
+    "description": "Fluent borderRadiusCircular (10000px) — the pill cap."
+   }
+  },
+  "motion": {
+   "duration": {
+    "ultraFast": {
+     "value": "50ms",
+     "type": "duration",
+     "source": "declared --durationUltraFast (raw/css-vars.json)",
+     "description": "Fluent durationUltraFast."
+    },
+    "faster": {
+     "value": "100ms",
+     "type": "duration",
+     "source": "declared --durationFaster (raw/css-vars.json)",
+     "description": "Fluent durationFaster."
+    },
+    "fast": {
+     "value": "150ms",
+     "type": "duration",
+     "source": "declared --durationFast (raw/css-vars.json)",
+     "description": "Fluent durationFast."
+    },
+    "normal": {
+     "value": "200ms",
+     "type": "duration",
+     "source": "declared --durationNormal (raw/css-vars.json)",
+     "description": "Fluent durationNormal."
+    },
+    "gentle": {
+     "value": "250ms",
+     "type": "duration",
+     "source": "declared --durationGentle (raw/css-vars.json)",
+     "description": "Fluent durationGentle."
+    },
+    "slow": {
+     "value": "300ms",
+     "type": "duration",
+     "source": "declared --durationSlow (raw/css-vars.json)",
+     "description": "Fluent durationSlow."
+    },
+    "slower": {
+     "value": "400ms",
+     "type": "duration",
+     "source": "declared --durationSlower (raw/css-vars.json)",
+     "description": "Fluent durationSlower."
+    },
+    "ultraSlow": {
+     "value": "500ms",
+     "type": "duration",
+     "source": "declared --durationUltraSlow (raw/css-vars.json)",
+     "description": "Fluent durationUltraSlow."
+    }
+   },
+   "curve": {
+    "linear": {
+     "value": "cubic-bezier(0,0,1,1)",
+     "type": "cubicBezier",
+     "source": "declared --curveLinear (raw/css-vars.json)",
+     "description": "Fluent curveLinear."
+    },
+    "easyEase": {
+     "value": "cubic-bezier(0.33,0,0.67,1)",
+     "type": "cubicBezier",
+     "source": "declared --curveEasyEase (raw/css-vars.json)",
+     "description": "Fluent curveEasyEase."
+    },
+    "easyEaseMax": {
+     "value": "cubic-bezier(0.8,0,0.2,1)",
+     "type": "cubicBezier",
+     "source": "declared --curveEasyEaseMax (raw/css-vars.json)",
+     "description": "Fluent curveEasyEaseMax."
+    },
+    "accelerateMin": {
+     "value": "cubic-bezier(0.8,0,0.78,1)",
+     "type": "cubicBezier",
+     "source": "declared --curveAccelerateMin (raw/css-vars.json)",
+     "description": "Fluent curveAccelerateMin."
+    },
+    "accelerateMid": {
+     "value": "cubic-bezier(1,0,1,1)",
+     "type": "cubicBezier",
+     "source": "declared --curveAccelerateMid (raw/css-vars.json)",
+     "description": "Fluent curveAccelerateMid."
+    },
+    "accelerateMax": {
+     "value": "cubic-bezier(0.9,0.1,1,0.2)",
+     "type": "cubicBezier",
+     "source": "declared --curveAccelerateMax (raw/css-vars.json)",
+     "description": "Fluent curveAccelerateMax."
+    },
+    "decelerateMin": {
+     "value": "cubic-bezier(0.33,0,0.1,1)",
+     "type": "cubicBezier",
+     "source": "declared --curveDecelerateMin (raw/css-vars.json)",
+     "description": "Fluent curveDecelerateMin."
+    },
+    "decelerateMid": {
+     "value": "cubic-bezier(0,0,0,1)",
+     "type": "cubicBezier",
+     "source": "declared --curveDecelerateMid (raw/css-vars.json)",
+     "description": "Fluent curveDecelerateMid."
+    },
+    "decelerateMax": {
+     "value": "cubic-bezier(0.1,0.9,0.2,1)",
+     "type": "cubicBezier",
+     "source": "declared --curveDecelerateMax (raw/css-vars.json)",
+     "description": "Fluent curveDecelerateMax."
+    }
+   }
+  },
+  "spacing": {
+   "none": {
+    "value": "0",
+    "type": "dimension",
+    "source": "declared --spacingHorizontalNone (raw/css-vars.json)",
+    "description": "Fluent spacingHorizontalNone (the horizontal ladder; the vertical ladder matches)."
+   },
+   "xxs": {
+    "value": "2px",
+    "type": "dimension",
+    "source": "declared --spacingHorizontalXXS (raw/css-vars.json)",
+    "description": "Fluent spacingHorizontalXXS (the horizontal ladder; the vertical ladder matches)."
+   },
+   "xs": {
+    "value": "4px",
+    "type": "dimension",
+    "source": "declared --spacingHorizontalXS (raw/css-vars.json)",
+    "description": "Fluent spacingHorizontalXS (the horizontal ladder; the vertical ladder matches)."
+   },
+   "snudge": {
+    "value": "6px",
+    "type": "dimension",
+    "source": "declared --spacingHorizontalSNudge (raw/css-vars.json)",
+    "description": "Fluent spacingHorizontalSNudge (the horizontal ladder; the vertical ladder matches)."
+   },
+   "s": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "declared --spacingHorizontalS (raw/css-vars.json)",
+    "description": "Fluent spacingHorizontalS (the horizontal ladder; the vertical ladder matches)."
+   },
+   "mnudge": {
+    "value": "10px",
+    "type": "dimension",
+    "source": "declared --spacingHorizontalMNudge (raw/css-vars.json)",
+    "description": "Fluent spacingHorizontalMNudge (the horizontal ladder; the vertical ladder matches)."
+   },
+   "m": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "declared --spacingHorizontalM (raw/css-vars.json)",
+    "description": "Fluent spacingHorizontalM (the horizontal ladder; the vertical ladder matches)."
+   },
+   "l": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "declared --spacingHorizontalL (raw/css-vars.json)",
+    "description": "Fluent spacingHorizontalL (the horizontal ladder; the vertical ladder matches)."
+   },
+   "xl": {
+    "value": "20px",
+    "type": "dimension",
+    "source": "declared --spacingHorizontalXL (raw/css-vars.json)",
+    "description": "Fluent spacingHorizontalXL (the horizontal ladder; the vertical ladder matches)."
+   },
+   "xxl": {
+    "value": "24px",
+    "type": "dimension",
+    "source": "declared --spacingHorizontalXXL (raw/css-vars.json)",
+    "description": "Fluent spacingHorizontalXXL (the horizontal ladder; the vertical ladder matches)."
+   },
+   "xxxl": {
+    "value": "32px",
+    "type": "dimension",
+    "source": "declared --spacingHorizontalXXXL (raw/css-vars.json)",
+    "description": "Fluent spacingHorizontalXXXL (the horizontal ladder; the vertical ladder matches)."
+   }
+  },
+  "fontSize": {
+   "100": {
+    "value": "10px",
+    "type": "dimension",
+    "source": "declared --fontSizeBase100 (raw/css-vars.json)",
+    "description": "Fluent fontSizeBase100."
+   },
+   "200": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "declared --fontSizeBase200 (raw/css-vars.json)",
+    "description": "Fluent fontSizeBase200."
+   },
+   "300": {
+    "value": "1rem",
+    "type": "dimension",
+    "source": "declared --fontSizeBase300 (raw/css-vars.json)",
+    "description": "Fluent fontSizeBase300."
+   },
+   "400": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "declared --fontSizeBase400 (raw/css-vars.json)",
+    "description": "Fluent fontSizeBase400."
+   },
+   "500": {
+    "value": "1.25rem",
+    "type": "dimension",
+    "source": "declared --fontSizeBase500 (raw/css-vars.json)",
+    "description": "Fluent fontSizeBase500."
+   },
+   "600": {
+    "value": "24px",
+    "type": "dimension",
+    "source": "declared --fontSizeBase600 (raw/css-vars.json)",
+    "description": "Fluent fontSizeBase600."
+   },
+   "h700": {
+    "value": "28px",
+    "type": "dimension",
+    "source": "declared --fontSizeHero700 (raw/css-vars.json)",
+    "description": "Fluent fontSizeHero700."
+   },
+   "h800": {
+    "value": "32px",
+    "type": "dimension",
+    "source": "declared --fontSizeHero800 (raw/css-vars.json)",
+    "description": "Fluent fontSizeHero800."
+   },
+   "h900": {
+    "value": "2.25rem",
+    "type": "dimension",
+    "source": "declared --fontSizeHero900 (raw/css-vars.json)",
+    "description": "Fluent fontSizeHero900."
+   },
+   "h1000": {
+    "value": "2.5rem",
+    "type": "dimension",
+    "source": "declared --fontSizeHero1000 (raw/css-vars.json)",
+    "description": "Fluent fontSizeHero1000."
+   }
+  },
+  "fontWeight": {
+   "regular": {
+    "value": 400,
+    "type": "fontWeight",
+    "source": "declared --fontWeightRegular (raw/css-vars.json)",
+    "description": "Fluent fontWeightRegular."
+   },
+   "medium": {
+    "value": 600,
+    "type": "fontWeight",
+    "source": "declared --fontWeightMedium (raw/css-vars.json)",
+    "description": "Fluent fontWeightMedium."
+   },
+   "semibold": {
+    "value": 700,
+    "type": "fontWeight",
+    "source": "declared --fontWeightSemibold (raw/css-vars.json)",
+    "description": "Fluent fontWeightSemibold."
+   },
+   "bold": {
+    "value": 700,
+    "type": "fontWeight",
+    "source": "declared --fontWeightBold (raw/css-vars.json)",
+    "description": "Fluent fontWeightBold."
+   }
+  },
+  "font": {
+   "family": {
+    "ui": {
+     "type": "fontFamily",
+     "value": "\"Segoe UI\", \"Segoe UI Web (West European)\", -apple-system, BlinkMacSystemFont, Roboto, \"Helvetica Neue\", sans-serif",
+     "source": "declared --fontFamilyBase (raw/css-vars.json)",
+     "description": "Segoe UI stack — the declared Fluent base family."
+    },
+    "display": {
+     "type": "fontFamily",
+     "value": "segoeVariableFont, \"segoeVariableFont Fallback\", segoeFont, \"segoeFont Fallback\", sans-serif",
+     "source": "computed fontFamily of hero-title default (raw/components-computed.json)",
+     "description": "The display face on the hero headline."
+    }
+   },
+   "size": {
+    "hero": {
+     "type": "dimension",
+     "value": "40px",
+     "source": "computed fontSize of hero-title default (raw/components-computed.json)",
+     "description": "The hero display headline at 1440px."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "36px",
+     "source": "computed fontSize of section-title default (raw/components-computed.json)",
+     "description": "Section headings."
+    },
+    "mHero": {
+     "type": "dimension",
+     "value": "28px",
+     "source": "computed fontSize of m-hero default (raw/components-computed.json)",
+     "description": "The hero headline at 390px."
+    },
+    "nav": {
+     "type": "dimension",
+     "value": "18px",
+     "source": "computed fontSize of nav-item default (raw/components-computed.json)",
+     "description": "Nav labels and buttons."
+    },
+    "footer": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of footer-link default (raw/components-computed.json)",
+     "description": "Footer links."
+    },
+    "subtitle": {
+     "type": "dimension",
+     "value": "20px",
+     "source": "computed fontSize of hero-subtitle default (raw/components-computed.json)",
+     "description": "The hero subline."
+    }
+   }
+  }
+ },
+ "light": {
+  "surface": {
+   "page": {
+    "type": "color",
+    "description": "The page ground — painted by the body.",
+    "value": "#ffffff",
+    "source": "computed backgroundColor of page-ground default (raw/components-computed.json)"
+   },
+   "offWhite": {
+    "type": "color",
+    "value": "{color.offWhite}",
+    "source": "declared --color-background-off-white (raw/css-vars.json); the secondary band ground — sections only, no component's bg reads it",
+    "description": "The off-white secondary band ground (#fbfbfc)."
+   }
+  },
+  "text": {
+   "primary": {
+    "type": "color",
+    "description": "The primary ink (declared --color-text-dark = grey-20 #313242).",
+    "value": "{color.grey.20}",
+    "source": "computed color of section-title default (raw/components-computed.json); same value as core.color.grey.20"
+   },
+   "muted": {
+    "type": "color",
+    "description": "Muted text (declared --color-text-light = grey-40 #64647c).",
+    "value": "{color.grey.40}",
+    "source": "computed color of feature-cell default (raw/components-computed.json); same value as core.color.grey.40"
+   },
+   "nav": {
+    "type": "color",
+    "description": "The nav-item ink at rest — lighter than body ink.",
+    "value": "#545472",
+    "source": "computed color of nav-item default (raw/components-computed.json)"
+   },
+   "onAccent": {
+    "type": "color",
+    "description": "White text on the purple controls.",
+    "value": "#ffffff",
+    "source": "computed color of nav-cta default (raw/components-computed.json)"
+   },
+   "link": {
+    "type": "color",
+    "description": "Link ink at rest (declared --color-inactive-links = purple-70).",
+    "value": "{color.purple.70}",
+    "source": "computed color of inline-link default (raw/components-computed.json); same value as core.color.purple.70"
+   },
+   "linkHover": {
+    "type": "color",
+    "description": "Link ink on hover (declared --color-hover-links = purple-60).",
+    "value": "{color.purple.60}",
+    "source": "computed color of inline-link hover (raw/components-computed.json); same value as core.color.purple.60"
+   }
+  },
+  "accent": {
+   "type": "color",
+   "description": "The brand purple where a solid fill shows (declared --color-brand-standard = purple-80 #6453e4 = Fluent colorBrandBackground).",
+   "value": "{color.purple.80}",
+   "source": "computed backgroundColor of nav-cta default (raw/components-computed.json); same value as core.color.purple.80"
+  },
+  "accentHover": {
+   "type": "color",
+   "description": "The hover fill on the solid-purple controls (#4d43de = purple-70).",
+   "value": "{color.purple.70}",
+   "source": "computed backgroundColor of cta-secondary hover (raw/components-computed.json); same value as core.color.purple.70"
+  },
+  "border": {
+   "outlineCta": {
+    "type": "color",
+    "description": "The outline button's border colour.",
+    "value": "{color.purple.80}",
+    "source": "computed borderTopColor of cta-secondary default (raw/components-computed.json); same value as core.color.purple.80"
+   }
+  },
+  "focus": {
+   "type": "color",
+   "description": "The focus ring on the surface's controls (Fluent colorStrokeFocus2 = #000000).",
+   "value": "#000000",
+   "source": "computed outlineColor of nav-cta focus-visible (raw/components-computed.json)"
+  },
+  "shadow": {
+   "card": {
+    "type": "shadow",
+    "value": [
+     {
+      "color": "rgba(28, 28, 40, 0.1)",
+      "offsetX": "0px",
+      "offsetY": "4px",
+      "blur": "8px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(28, 28, 40, 0.1)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "2px",
+      "spread": "0px"
+     }
+    ],
+    "source": "computed boxShadow of feature-card default (raw/components-computed.json)",
+    "description": "The feature-card's drop shadow — the surface's painted elevation."
+   }
+  }
+ },
+ "component": {
+  "control": {
+   "heightNavCta": {
+    "type": "dimension",
+    "value": "42px",
+    "source": "computed height of nav-cta default (raw/components-computed.json)",
+    "description": "The nav Try-for-free button."
+   },
+   "heightNavItem": {
+    "type": "dimension",
+    "value": "44px",
+    "source": "computed height of nav-item default (raw/components-computed.json)",
+    "description": "Nav menu triggers."
+   },
+   "heightHeroCta": {
+    "type": "dimension",
+    "value": "42px",
+    "source": "computed height of hero-cta default (raw/components-computed.json)",
+    "description": "The hero Create-a-video button."
+   },
+   "heightOutlineCta": {
+    "type": "dimension",
+    "value": "42px",
+    "source": "computed height of cta-secondary default (raw/components-computed.json)",
+    "description": "The outline secondary button."
+   },
+   "radiusCta": {
+    "type": "dimension",
+    "value": "10px",
+    "source": "computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)",
+    "description": "Button corner radius."
+   }
+  },
+  "card": {
+   "radiusLink": {
+    "type": "dimension",
+    "value": "12px",
+    "source": "computed borderTopLeftRadius of feature-card default (raw/components-computed.json)",
+    "description": "Feature link-card corners."
+   }
+  },
+  "nav": {
+   "height": {
+    "type": "dimension",
+    "value": "62px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The sticky nav bar at 1440px (declared --header-height 3.75rem = 60px)."
+   }
+  },
+  "footer": {
+   "height": {
+    "type": "dimension",
+    "value": "1062.41px",
+    "source": "computed height of footer default (raw/components-computed.json)",
+    "description": "The footer block at 1440px."
+   }
+  },
+  "drawer": {
+   "width": {
+    "type": "dimension",
+    "value": "390px",
+    "source": "computed width of m-menu-open default (raw/components-computed.json)",
+    "description": "The mobile side-bar drawer at 390px."
+   }
+  },
+  "heroTitle": {
+   "width": {
+    "type": "dimension",
+    "value": "359px",
+    "source": "computed width of hero-title default (raw/components-computed.json)",
+    "description": "The hero headline's measure."
+   }
+  },
+  "table": {
+   "width": {
+    "type": "dimension",
+    "value": "1280px",
+    "source": "computed width of plan-table default (raw/components-computed.json)",
+    "description": "The pricing comparison table at 1440px."
+   }
+  }
+ }
+}

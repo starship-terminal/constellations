@@ -1,0 +1,12 @@
+{
+  "_note": "Rules for systems/homerun. Public signed-out capture of www.homerun.co, jobs.homerun.co, app.homerun.co/login and app.homerun.hr/Account/Logon: no surface paints machine-private data - nothing was signed into, typed, uploaded or submitted, and the sign-in fields stayed empty. Customer logos, testimonial names and staff photos on the marketing pages are published content and are kept. homerun.co publishes its own public contact addresses on the contact/legal pages; @homerun.co is the product's public domain, allowed.",
+  "families": [],
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@homerun\\.co$",
+      "@homerun\\.hr$",
+      "@example\\.com$"
+    ]
+  }
+}

@@ -1,0 +1,2258 @@
+{
+ "home@1440": {
+  "vw": 1440,
+  "vh": 900,
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1440px",
+    "x": 24,
+    "y": 30,
+    "w": 1392,
+    "h": 68
+   }
+  ],
+  "main": {
+   "x": 24,
+   "w": 1392
+  },
+  "grids": [
+   {
+    "el": "div",
+    "cols": "571.5px 201px 571.5px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 42,
+    "w": 1392,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "1098px 270px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 98,
+    "w": 1392,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "44px 226px 0px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 1146,
+    "y": 98,
+    "w": 270,
+    "h": 44
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 0,
+    "y": 30,
+    "w": 1440,
+    "h": 124
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "body": {
+   "font": "\"Farfetch Basis\", \"Helvetica Neue\", Arial, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(34, 34, 34)"
+  },
+  "header": {
+   "x": 0,
+   "y": 30,
+   "w": 1440,
+   "h": 124
+  },
+  "searchForm": {
+   "x": 1146,
+   "y": 98,
+   "w": 270,
+   "h": 44
+  },
+  "resultCard": null,
+  "productGrid": null
+ },
+ "home@1920": {
+  "vw": 1920,
+  "vh": 900,
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1440px",
+    "x": 240,
+    "y": 30,
+    "w": 1440,
+    "h": 68
+   }
+  ],
+  "main": {
+   "x": 240,
+   "w": 1440
+  },
+  "grids": [
+   {
+    "el": "div",
+    "cols": "595.5px 201px 595.5px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 240,
+    "y": 42,
+    "w": 1440,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "1146px 270px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 240,
+    "y": 98,
+    "w": 1440,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "44px 226px 0px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 1410,
+    "y": 98,
+    "w": 270,
+    "h": 44
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 0,
+    "y": 30,
+    "w": 1920,
+    "h": 124
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "body": {
+   "font": "\"Farfetch Basis\", \"Helvetica Neue\", Arial, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(34, 34, 34)"
+  },
+  "header": {
+   "x": 0,
+   "y": 30,
+   "w": 1920,
+   "h": 124
+  },
+  "searchForm": {
+   "x": 1410,
+   "y": 98,
+   "w": 270,
+   "h": 44
+  },
+  "resultCard": null,
+  "productGrid": null
+ },
+ "home@1024": {
+  "vw": 1024,
+  "vh": 900,
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1440px",
+    "x": 24,
+    "y": 30,
+    "w": 976,
+    "h": 68
+   }
+  ],
+  "main": {
+   "x": 24,
+   "w": 976
+  },
+  "grids": [
+   {
+    "el": "div",
+    "cols": "363.5px 201px 363.5px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 42,
+    "w": 976,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "682px 270px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 98,
+    "w": 976,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "44px 226px 0px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 730,
+    "y": 98,
+    "w": 270,
+    "h": 44
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 0,
+    "y": 30,
+    "w": 1024,
+    "h": 124
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "body": {
+   "font": "\"Farfetch Basis\", \"Helvetica Neue\", Arial, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(34, 34, 34)"
+  },
+  "header": {
+   "x": 0,
+   "y": 30,
+   "w": 1024,
+   "h": 124
+  },
+  "searchForm": {
+   "x": 730,
+   "y": 98,
+   "w": 270,
+   "h": 44
+  },
+  "resultCard": null,
+  "productGrid": null
+ },
+ "home@390": {
+  "vw": 399,
+  "vh": 864,
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1440px",
+    "x": 16,
+    "y": 30,
+    "w": 358,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "max": "1440px",
+    "x": 0,
+    "y": 182,
+    "w": 390,
+    "h": 206.3
+   }
+  ],
+  "main": {
+   "x": 0,
+   "w": 390
+  },
+  "grids": [
+   {
+    "el": "div",
+    "cols": "50px 124px 176px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "x": 16,
+    "y": 30,
+    "w": 382,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "64px 270px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 16,
+    "y": 74,
+    "w": 358,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "44px 226px 0px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 104,
+    "y": 74,
+    "w": 270,
+    "h": 44
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 0,
+    "y": 30,
+    "w": 390,
+    "h": 100
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "body": {
+   "font": "\"Farfetch Basis\", \"Helvetica Neue\", Arial, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(34, 34, 34)"
+  },
+  "header": {
+   "x": 0,
+   "y": 30,
+   "w": 390,
+   "h": 100
+  },
+  "searchForm": {
+   "x": 104,
+   "y": 74,
+   "w": 270,
+   "h": 44
+  },
+  "resultCard": null,
+  "productGrid": null
+ },
+ "plp-women@1440": {
+  "vw": 1440,
+  "vh": 900,
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1440px",
+    "x": 24,
+    "y": 30,
+    "w": 1392,
+    "h": 68
+   }
+  ],
+  "main": {
+   "x": 24,
+   "w": 1392
+  },
+  "grids": [
+   {
+    "el": "div",
+    "cols": "571.5px 201px 571.5px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 42,
+    "w": 1392,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "1098px 270px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 98,
+    "w": 1392,
+    "h": 44
+   },
+   {
+    "el": "ul",
+    "cols": "68px 72px 82px 67px 58px 104px 74px 80px 99px 53px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 12,
+    "y": 98,
+    "w": 757,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "44px 226px 0px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 1146,
+    "y": 98,
+    "w": 270,
+    "h": 44
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 0,
+    "y": 30,
+    "w": 1440,
+    "h": 124
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "body": {
+   "font": "\"Farfetch Basis\", \"Helvetica Neue\", Arial, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(34, 34, 34)"
+  },
+  "header": {
+   "x": 0,
+   "y": 30,
+   "w": 1440,
+   "h": 124
+  },
+  "searchForm": {
+   "x": 1146,
+   "y": 98,
+   "w": 270,
+   "h": 44
+  },
+  "resultCard": {
+   "x": 24,
+   "y": 1253.6,
+   "w": 336,
+   "h": 557
+  },
+  "productGrid": {
+   "x": 24,
+   "y": 1161.6,
+   "w": 1392,
+   "h": 673
+  }
+ },
+ "plp-women@1920": {
+  "vw": 1920,
+  "vh": 900,
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1440px",
+    "x": 240,
+    "y": 30,
+    "w": 1440,
+    "h": 68
+   }
+  ],
+  "main": {
+   "x": 240,
+   "w": 1440
+  },
+  "grids": [
+   {
+    "el": "div",
+    "cols": "595.5px 201px 595.5px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 240,
+    "y": 42,
+    "w": 1440,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "1146px 270px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 240,
+    "y": 98,
+    "w": 1440,
+    "h": 44
+   },
+   {
+    "el": "ul",
+    "cols": "68px 72px 82px 67px 58px 104px 74px 80px 99px 53px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 228,
+    "y": 98,
+    "w": 757,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "44px 226px 0px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 1410,
+    "y": 98,
+    "w": 270,
+    "h": 44
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 0,
+    "y": 30,
+    "w": 1920,
+    "h": 124
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "body": {
+   "font": "\"Farfetch Basis\", \"Helvetica Neue\", Arial, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(34, 34, 34)"
+  },
+  "header": {
+   "x": 0,
+   "y": 30,
+   "w": 1920,
+   "h": 124
+  },
+  "searchForm": {
+   "x": 1410,
+   "y": 98,
+   "w": 270,
+   "h": 44
+  },
+  "resultCard": {
+   "x": 240,
+   "y": 1285.6,
+   "w": 348,
+   "h": 573
+  },
+  "productGrid": {
+   "x": 240,
+   "y": 1193.6,
+   "w": 1440,
+   "h": 689
+  }
+ },
+ "plp-women@1024": {
+  "vw": 1024,
+  "vh": 900,
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1440px",
+    "x": 24,
+    "y": 30,
+    "w": 976,
+    "h": 68
+   }
+  ],
+  "main": {
+   "x": 24,
+   "w": 976
+  },
+  "grids": [
+   {
+    "el": "div",
+    "cols": "363.5px 201px 363.5px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 42,
+    "w": 976,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "682px 270px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 98,
+    "w": 976,
+    "h": 44
+   },
+   {
+    "el": "ul",
+    "cols": "68px 72px 82px 67px 58px 104px 74px 80px 99px 53px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 12,
+    "y": 98,
+    "w": 757,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "44px 226px 0px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 730,
+    "y": 98,
+    "w": 270,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "858px 106px",
+    "colGap": "12px",
+    "rowGap": "12px",
+    "x": 24,
+    "y": 884.4,
+    "w": 976,
+    "h": 462.3
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 0,
+    "y": 30,
+    "w": 1024,
+    "h": 124
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "body": {
+   "font": "\"Farfetch Basis\", \"Helvetica Neue\", Arial, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(34, 34, 34)"
+  },
+  "header": {
+   "x": 0,
+   "y": 30,
+   "w": 1024,
+   "h": 124
+  },
+  "searchForm": {
+   "x": 730,
+   "y": 98,
+   "w": 270,
+   "h": 44
+  },
+  "resultCard": {
+   "x": 24,
+   "y": 928.4,
+   "w": 232,
+   "h": 418.3
+  },
+  "productGrid": {
+   "x": 24,
+   "y": 836.4,
+   "w": 976,
+   "h": 534.3
+  }
+ },
+ "plp-women@390": {
+  "vw": 399,
+  "vh": 864,
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1440px",
+    "x": 16,
+    "y": 30,
+    "w": 358,
+    "h": 44
+   }
+  ],
+  "main": {
+   "x": 16,
+   "w": 358
+  },
+  "grids": [
+   {
+    "el": "div",
+    "cols": "50px 124px 176px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "x": 16,
+    "y": 30,
+    "w": 382,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "64px 270px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 16,
+    "y": 74,
+    "w": 358,
+    "h": 44
+   },
+   {
+    "el": "ul",
+    "cols": "68px 72px 82px 67px 58px 104px 74px 80px 99px 53px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 4,
+    "y": 74,
+    "w": 757,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "44px 226px 0px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 104,
+    "y": 74,
+    "w": 270,
+    "h": 44
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 0,
+    "y": 30,
+    "w": 390,
+    "h": 100
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "body": {
+   "font": "\"Farfetch Basis\", \"Helvetica Neue\", Arial, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(34, 34, 34)"
+  },
+  "header": {
+   "x": 0,
+   "y": 30,
+   "w": 390,
+   "h": 100
+  },
+  "searchForm": {
+   "x": 104,
+   "y": 74,
+   "w": 270,
+   "h": 44
+  },
+  "resultCard": {
+   "x": 16,
+   "y": 959.3,
+   "w": 173,
+   "h": 339.6
+  },
+  "productGrid": {
+   "x": 16,
+   "y": 867.3,
+   "w": 358,
+   "h": 875.3
+  }
+ },
+ "plp-men@1440": {
+  "vw": 1440,
+  "vh": 900,
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1440px",
+    "x": 24,
+    "y": 30,
+    "w": 1392,
+    "h": 68
+   }
+  ],
+  "main": {
+   "x": 24,
+   "w": 1392
+  },
+  "grids": [
+   {
+    "el": "div",
+    "cols": "571.5px 201px 571.5px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 42,
+    "w": 1392,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "1098px 270px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 98,
+    "w": 1392,
+    "h": 44
+   },
+   {
+    "el": "ul",
+    "cols": "53px 68px 72px 82px 67px 58px 104px 83px 80px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 12,
+    "y": 98,
+    "w": 667,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "44px 226px 0px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 1146,
+    "y": 98,
+    "w": 270,
+    "h": 44
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 0,
+    "y": 30,
+    "w": 1440,
+    "h": 124
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "body": {
+   "font": "\"Farfetch Basis\", \"Helvetica Neue\", Arial, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(34, 34, 34)"
+  },
+  "header": {
+   "x": 0,
+   "y": 30,
+   "w": 1440,
+   "h": 124
+  },
+  "searchForm": {
+   "x": 1146,
+   "y": 98,
+   "w": 270,
+   "h": 44
+  },
+  "resultCard": {
+   "x": 24,
+   "y": 1253.6,
+   "w": 336,
+   "h": 557
+  },
+  "productGrid": {
+   "x": 24,
+   "y": 1161.6,
+   "w": 1392,
+   "h": 673
+  }
+ },
+ "plp-men@1920": {
+  "vw": 1920,
+  "vh": 900,
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1440px",
+    "x": 240,
+    "y": 30,
+    "w": 1440,
+    "h": 68
+   }
+  ],
+  "main": {
+   "x": 240,
+   "w": 1440
+  },
+  "grids": [
+   {
+    "el": "div",
+    "cols": "595.5px 201px 595.5px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 240,
+    "y": 42,
+    "w": 1440,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "1146px 270px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 240,
+    "y": 98,
+    "w": 1440,
+    "h": 44
+   },
+   {
+    "el": "ul",
+    "cols": "53px 68px 72px 82px 67px 58px 104px 83px 80px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 228,
+    "y": 98,
+    "w": 667,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "44px 226px 0px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 1410,
+    "y": 98,
+    "w": 270,
+    "h": 44
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 0,
+    "y": 30,
+    "w": 1920,
+    "h": 124
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "body": {
+   "font": "\"Farfetch Basis\", \"Helvetica Neue\", Arial, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(34, 34, 34)"
+  },
+  "header": {
+   "x": 0,
+   "y": 30,
+   "w": 1920,
+   "h": 124
+  },
+  "searchForm": {
+   "x": 1410,
+   "y": 98,
+   "w": 270,
+   "h": 44
+  },
+  "resultCard": {
+   "x": 240,
+   "y": 1285.6,
+   "w": 348,
+   "h": 573
+  },
+  "productGrid": {
+   "x": 240,
+   "y": 1193.6,
+   "w": 1440,
+   "h": 689
+  }
+ },
+ "plp-men@1024": {
+  "vw": 1024,
+  "vh": 900,
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1440px",
+    "x": 24,
+    "y": 30,
+    "w": 976,
+    "h": 68
+   }
+  ],
+  "main": {
+   "x": 24,
+   "w": 976
+  },
+  "grids": [
+   {
+    "el": "div",
+    "cols": "363.5px 201px 363.5px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 42,
+    "w": 976,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "682px 270px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 98,
+    "w": 976,
+    "h": 44
+   },
+   {
+    "el": "ul",
+    "cols": "53px 68px 72px 82px 67px 58px 104px 83px 80px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 12,
+    "y": 98,
+    "w": 667,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "44px 226px 0px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 730,
+    "y": 98,
+    "w": 270,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "858px 106px",
+    "colGap": "12px",
+    "rowGap": "12px",
+    "x": 24,
+    "y": 884.4,
+    "w": 976,
+    "h": 462.3
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 0,
+    "y": 30,
+    "w": 1024,
+    "h": 124
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "body": {
+   "font": "\"Farfetch Basis\", \"Helvetica Neue\", Arial, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(34, 34, 34)"
+  },
+  "header": {
+   "x": 0,
+   "y": 30,
+   "w": 1024,
+   "h": 124
+  },
+  "searchForm": {
+   "x": 730,
+   "y": 98,
+   "w": 270,
+   "h": 44
+  },
+  "resultCard": {
+   "x": 24,
+   "y": 928.4,
+   "w": 232,
+   "h": 418.3
+  },
+  "productGrid": {
+   "x": 24,
+   "y": 836.4,
+   "w": 976,
+   "h": 534.3
+  }
+ },
+ "plp-men@390": {
+  "vw": 399,
+  "vh": 864,
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1440px",
+    "x": 16,
+    "y": 30,
+    "w": 358,
+    "h": 44
+   }
+  ],
+  "main": {
+   "x": 16,
+   "w": 358
+  },
+  "grids": [
+   {
+    "el": "div",
+    "cols": "50px 124px 176px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "x": 16,
+    "y": 30,
+    "w": 382,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "64px 270px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 16,
+    "y": 74,
+    "w": 358,
+    "h": 44
+   },
+   {
+    "el": "ul",
+    "cols": "53px 68px 72px 82px 67px 58px 104px 83px 80px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 4,
+    "y": 74,
+    "w": 667,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "44px 226px 0px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 104,
+    "y": 74,
+    "w": 270,
+    "h": 44
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 0,
+    "y": 30,
+    "w": 390,
+    "h": 100
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "body": {
+   "font": "\"Farfetch Basis\", \"Helvetica Neue\", Arial, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(34, 34, 34)"
+  },
+  "header": {
+   "x": 0,
+   "y": 30,
+   "w": 390,
+   "h": 100
+  },
+  "searchForm": {
+   "x": 104,
+   "y": 74,
+   "w": 270,
+   "h": 44
+  },
+  "resultCard": {
+   "x": 16,
+   "y": 983.3,
+   "w": 173,
+   "h": 339.6
+  },
+  "productGrid": {
+   "x": 16,
+   "y": 891.3,
+   "w": 358,
+   "h": 875.3
+  }
+ },
+ "set-women@1440": {
+  "vw": 1440,
+  "vh": 900,
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1440px",
+    "x": 24,
+    "y": 30,
+    "w": 1392,
+    "h": 68
+   }
+  ],
+  "main": {
+   "x": 24,
+   "w": 1392
+  },
+  "grids": [
+   {
+    "el": "div",
+    "cols": "571.5px 201px 571.5px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 42,
+    "w": 1392,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "1098px 270px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 98,
+    "w": 1392,
+    "h": 44
+   },
+   {
+    "el": "ul",
+    "cols": "53px 68px 72px 82px 67px 58px 104px 74px 80px 99px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 12,
+    "y": 98,
+    "w": 757,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "44px 226px 0px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 1146,
+    "y": 98,
+    "w": 270,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "129px 1119px 120px",
+    "colGap": "12px",
+    "rowGap": "12px",
+    "x": 24,
+    "y": 337,
+    "w": 1392,
+    "h": 76
+   },
+   {
+    "el": "ul",
+    "cols": "321px 321px 321px 321px",
+    "colGap": "36px",
+    "rowGap": "36px",
+    "x": 24,
+    "y": 449,
+    "w": 1392,
+    "h": 13715.6
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 0,
+    "y": 30,
+    "w": 1440,
+    "h": 124
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "124px",
+    "x": 24,
+    "y": 337,
+    "w": 1392,
+    "h": 76
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "auto",
+    "x": 24,
+    "y": 844,
+    "w": 1392,
+    "h": 44
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "body": {
+   "font": "\"Farfetch Basis\", \"Helvetica Neue\", Arial, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(34, 34, 34)"
+  },
+  "header": {
+   "x": 0,
+   "y": 30,
+   "w": 1440,
+   "h": 124
+  },
+  "searchForm": {
+   "x": 1146,
+   "y": 98,
+   "w": 270,
+   "h": 44
+  },
+  "resultCard": {
+   "x": 24,
+   "y": 449,
+   "w": 321,
+   "h": 537
+  },
+  "productGrid": {
+   "x": 24,
+   "y": 14365.6,
+   "w": 1392,
+   "h": 573.8
+  }
+ },
+ "set-women@1920": {
+  "vw": 1920,
+  "vh": 900,
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1440px",
+    "x": 240,
+    "y": 30,
+    "w": 1440,
+    "h": 68
+   }
+  ],
+  "main": {
+   "x": 240,
+   "w": 1440
+  },
+  "grids": [
+   {
+    "el": "div",
+    "cols": "595.5px 201px 595.5px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 240,
+    "y": 42,
+    "w": 1440,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "1146px 270px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 240,
+    "y": 98,
+    "w": 1440,
+    "h": 44
+   },
+   {
+    "el": "ul",
+    "cols": "53px 68px 72px 82px 67px 58px 104px 74px 80px 99px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 228,
+    "y": 98,
+    "w": 757,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "44px 226px 0px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 1410,
+    "y": 98,
+    "w": 270,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "129px 1167px 120px",
+    "colGap": "12px",
+    "rowGap": "12px",
+    "x": 240,
+    "y": 337,
+    "w": 1440,
+    "h": 76
+   },
+   {
+    "el": "ul",
+    "cols": "333px 333px 333px 333px",
+    "colGap": "36px",
+    "rowGap": "36px",
+    "x": 240,
+    "y": 449,
+    "w": 1440,
+    "h": 14099.6
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 0,
+    "y": 30,
+    "w": 1920,
+    "h": 124
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "124px",
+    "x": 240,
+    "y": 337,
+    "w": 1440,
+    "h": 76
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "auto",
+    "x": 240,
+    "y": 844,
+    "w": 1440,
+    "h": 44
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "body": {
+   "font": "\"Farfetch Basis\", \"Helvetica Neue\", Arial, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(34, 34, 34)"
+  },
+  "header": {
+   "x": 0,
+   "y": 30,
+   "w": 1920,
+   "h": 124
+  },
+  "searchForm": {
+   "x": 1410,
+   "y": 98,
+   "w": 270,
+   "h": 44
+  },
+  "resultCard": {
+   "x": 240,
+   "y": 449,
+   "w": 333,
+   "h": 553
+  },
+  "productGrid": {
+   "x": 240,
+   "y": 14749.6,
+   "w": 1440,
+   "h": 588
+  }
+ },
+ "set-women@1024": {
+  "vw": 1024,
+  "vh": 900,
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1440px",
+    "x": 24,
+    "y": 30,
+    "w": 976,
+    "h": 68
+   }
+  ],
+  "main": {
+   "x": 24,
+   "w": 976
+  },
+  "grids": [
+   {
+    "el": "div",
+    "cols": "363.5px 201px 363.5px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 42,
+    "w": 976,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "682px 270px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 98,
+    "w": 976,
+    "h": 44
+   },
+   {
+    "el": "ul",
+    "cols": "53px 68px 72px 82px 67px 58px 104px 74px 80px 99px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 12,
+    "y": 98,
+    "w": 757,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "44px 226px 0px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 730,
+    "y": 98,
+    "w": 270,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "129px 703px 120px",
+    "colGap": "12px",
+    "rowGap": "12px",
+    "x": 24,
+    "y": 337,
+    "w": 976,
+    "h": 76
+   },
+   {
+    "el": "ul",
+    "cols": "226px 226px 226px 226px",
+    "colGap": "24px",
+    "rowGap": "36px",
+    "x": 24,
+    "y": 449,
+    "w": 976,
+    "h": 10675.5
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 0,
+    "y": 30,
+    "w": 1024,
+    "h": 124
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "124px",
+    "x": 24,
+    "y": 337,
+    "w": 976,
+    "h": 76
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "auto",
+    "x": 24,
+    "y": 844,
+    "w": 976,
+    "h": 44
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "body": {
+   "font": "\"Farfetch Basis\", \"Helvetica Neue\", Arial, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(34, 34, 34)"
+  },
+  "header": {
+   "x": 0,
+   "y": 30,
+   "w": 1024,
+   "h": 124
+  },
+  "searchForm": {
+   "x": 730,
+   "y": 98,
+   "w": 270,
+   "h": 44
+  },
+  "resultCard": {
+   "x": 24,
+   "y": 449,
+   "w": 226,
+   "h": 410.3
+  },
+  "productGrid": {
+   "x": 24,
+   "y": 11325.5,
+   "w": 976,
+   "h": 450.6
+  }
+ },
+ "set-women@390": {
+  "vw": 399,
+  "vh": 864,
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1440px",
+    "x": 16,
+    "y": 30,
+    "w": 358,
+    "h": 44
+   }
+  ],
+  "main": {
+   "x": 16,
+   "w": 358
+  },
+  "grids": [
+   {
+    "el": "div",
+    "cols": "50px 124px 176px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "x": 16,
+    "y": 30,
+    "w": 382,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "64px 270px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 16,
+    "y": 74,
+    "w": 358,
+    "h": 44
+   },
+   {
+    "el": "ul",
+    "cols": "53px 68px 72px 82px 67px 58px 104px 74px 80px 99px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 4,
+    "y": 74,
+    "w": 757,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "44px 226px 0px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 104,
+    "y": 74,
+    "w": 270,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "129px 85px 120px",
+    "colGap": "12px",
+    "rowGap": "12px",
+    "x": 16,
+    "y": 265,
+    "w": 358,
+    "h": 76
+   },
+   {
+    "el": "ul",
+    "cols": "173px 173px",
+    "colGap": "12px",
+    "rowGap": "16px",
+    "x": 16,
+    "y": 357,
+    "w": 358,
+    "h": 17054.8
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 0,
+    "y": 30,
+    "w": 390,
+    "h": 100
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "124px",
+    "x": 16,
+    "y": 265,
+    "w": 358,
+    "h": 76
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "auto",
+    "x": 22,
+    "y": 748,
+    "w": 358,
+    "h": 44
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "body": {
+   "font": "\"Farfetch Basis\", \"Helvetica Neue\", Arial, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(34, 34, 34)"
+  },
+  "header": {
+   "x": 0,
+   "y": 30,
+   "w": 390,
+   "h": 100
+  },
+  "searchForm": {
+   "x": 104,
+   "y": 74,
+   "w": 270,
+   "h": 44
+  },
+  "resultCard": {
+   "x": 16,
+   "y": 357,
+   "w": 173,
+   "h": 339.6
+  },
+  "productGrid": {
+   "x": 16,
+   "y": 17592.7,
+   "w": 358,
+   "h": 426.1
+  }
+ },
+ "pdp@1440": {
+  "vw": 1440,
+  "vh": 900,
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1440px",
+    "x": 24,
+    "y": 30,
+    "w": 1392,
+    "h": 68
+   }
+  ],
+  "main": {
+   "x": 24,
+   "w": 1392
+  },
+  "grids": [
+   {
+    "el": "div",
+    "cols": "571.5px 201px 571.5px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 42,
+    "w": 1392,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "1098px 270px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 98,
+    "w": 1392,
+    "h": 44
+   },
+   {
+    "el": "ul",
+    "cols": "53px 68px 126px 72px 82px 67px 58px 104px 74px 80px 99px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 12,
+    "y": 98,
+    "w": 883,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "44px 226px 0px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 1146,
+    "y": 98,
+    "w": 270,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "904px 452px",
+    "colGap": "36px",
+    "rowGap": "normal",
+    "x": 24,
+    "y": 190,
+    "w": 1392,
+    "h": 1201.3
+   },
+   {
+    "el": "div",
+    "cols": "64.3281px 64.3281px 64.3281px 64.3281px 64.3281px 64.3281px 64.3281px 64.3281px 64.3281px 64.3281px 64.3281px 64.3281px",
+    "colGap": "12px",
+    "rowGap": "12px",
+    "x": 24,
+    "y": 190,
+    "w": 904,
+    "h": 1201.3
+   },
+   {
+    "el": "div",
+    "cols": "71px 345px",
+    "colGap": "6px",
+    "rowGap": "6px",
+    "x": 964,
+    "y": 365.9,
+    "w": 452,
+    "h": 44
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 0,
+    "y": 30,
+    "w": 1440,
+    "h": 124
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 964,
+    "y": 190,
+    "w": 452,
+    "h": 323.9
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "body": {
+   "font": "\"Farfetch Basis\", \"Helvetica Neue\", Arial, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(34, 34, 34)"
+  },
+  "header": {
+   "x": 0,
+   "y": 30,
+   "w": 1440,
+   "h": 124
+  },
+  "searchForm": {
+   "x": 1146,
+   "y": 98,
+   "w": 270,
+   "h": 44
+  },
+  "resultCard": null,
+  "productGrid": null
+ },
+ "pdp@1920": {
+  "vw": 1920,
+  "vh": 900,
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1440px",
+    "x": 240,
+    "y": 30,
+    "w": 1440,
+    "h": 68
+   }
+  ],
+  "main": {
+   "x": 240,
+   "w": 1440
+  },
+  "grids": [
+   {
+    "el": "div",
+    "cols": "595.5px 201px 595.5px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 240,
+    "y": 42,
+    "w": 1440,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "1146px 270px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 240,
+    "y": 98,
+    "w": 1440,
+    "h": 44
+   },
+   {
+    "el": "ul",
+    "cols": "53px 68px 126px 72px 82px 67px 58px 104px 74px 80px 99px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 228,
+    "y": 98,
+    "w": 883,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "44px 226px 0px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 1410,
+    "y": 98,
+    "w": 270,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "936px 468px",
+    "colGap": "36px",
+    "rowGap": "normal",
+    "x": 240,
+    "y": 190,
+    "w": 1440,
+    "h": 1244
+   },
+   {
+    "el": "div",
+    "cols": "67px 67px 67px 67px 67px 67px 67px 67px 67px 67px 67px 67px",
+    "colGap": "12px",
+    "rowGap": "12px",
+    "x": 240,
+    "y": 190,
+    "w": 936,
+    "h": 1244
+   },
+   {
+    "el": "div",
+    "cols": "71px 361px",
+    "colGap": "6px",
+    "rowGap": "6px",
+    "x": 1212,
+    "y": 365.9,
+    "w": 468,
+    "h": 44
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 0,
+    "y": 30,
+    "w": 1920,
+    "h": 124
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 1212,
+    "y": 190,
+    "w": 468,
+    "h": 323.9
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "body": {
+   "font": "\"Farfetch Basis\", \"Helvetica Neue\", Arial, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(34, 34, 34)"
+  },
+  "header": {
+   "x": 0,
+   "y": 30,
+   "w": 1920,
+   "h": 124
+  },
+  "searchForm": {
+   "x": 1410,
+   "y": 98,
+   "w": 270,
+   "h": 44
+  },
+  "resultCard": null,
+  "productGrid": null
+ },
+ "pdp@1024": {
+  "vw": 1024,
+  "vh": 900,
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1440px",
+    "x": 24,
+    "y": 30,
+    "w": 976,
+    "h": 68
+   }
+  ],
+  "main": {
+   "x": 24,
+   "w": 976
+  },
+  "grids": [
+   {
+    "el": "div",
+    "cols": "363.5px 201px 363.5px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 42,
+    "w": 976,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "682px 270px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 24,
+    "y": 98,
+    "w": 976,
+    "h": 44
+   },
+   {
+    "el": "ul",
+    "cols": "53px 68px 126px 72px 82px 67px 58px 104px 74px 80px 99px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 12,
+    "y": 98,
+    "w": 883,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "44px 226px 0px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 730,
+    "y": 98,
+    "w": 270,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "634.656px 317.344px",
+    "colGap": "24px",
+    "rowGap": "normal",
+    "x": 24,
+    "y": 190,
+    "w": 976,
+    "h": 842.2
+   },
+   {
+    "el": "div",
+    "cols": "41.875px 41.875px 41.875px 41.875px 41.875px 41.875px 41.875px 41.875px 41.875px 41.875px 41.875px 41.875px",
+    "colGap": "12px",
+    "rowGap": "12px",
+    "x": 24,
+    "y": 190,
+    "w": 634.7,
+    "h": 842.2
+   },
+   {
+    "el": "div",
+    "cols": "71px 210.344px",
+    "colGap": "6px",
+    "rowGap": "6px",
+    "x": 682.7,
+    "y": 365.9,
+    "w": 317.3,
+    "h": 44
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 0,
+    "y": 30,
+    "w": 1024,
+    "h": 124
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 682.7,
+    "y": 190,
+    "w": 317.3,
+    "h": 323.9
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "body": {
+   "font": "\"Farfetch Basis\", \"Helvetica Neue\", Arial, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(34, 34, 34)"
+  },
+  "header": {
+   "x": 0,
+   "y": 30,
+   "w": 1024,
+   "h": 124
+  },
+  "searchForm": {
+   "x": 730,
+   "y": 98,
+   "w": 270,
+   "h": 44
+  },
+  "resultCard": null,
+  "productGrid": null
+ },
+ "pdp@390": {
+  "vw": 632,
+  "vh": 1368,
+  "maxWidths": [
+   {
+    "el": "div",
+    "max": "1440px",
+    "x": 16,
+    "y": 30,
+    "w": 358,
+    "h": 44
+   }
+  ],
+  "main": {
+   "x": 16,
+   "w": 358
+  },
+  "grids": [
+   {
+    "el": "div",
+    "cols": "50px 124px 176px",
+    "colGap": "16px",
+    "rowGap": "16px",
+    "x": 16,
+    "y": 30,
+    "w": 382,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "64px 270px",
+    "colGap": "24px",
+    "rowGap": "24px",
+    "x": 16,
+    "y": 74,
+    "w": 358,
+    "h": 44
+   },
+   {
+    "el": "ul",
+    "cols": "53px 68px 126px 72px 82px 67px 58px 104px 74px 80px 99px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 4,
+    "y": 74,
+    "w": 883,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "44px 226px 0px",
+    "colGap": "normal",
+    "rowGap": "normal",
+    "x": 104,
+    "y": 74,
+    "w": 270,
+    "h": 44
+   },
+   {
+    "el": "div",
+    "cols": "199.5px 142.5px",
+    "colGap": "16px",
+    "rowGap": "normal",
+    "x": 16,
+    "y": 146,
+    "w": 358,
+    "h": 357.9
+   }
+  ],
+  "fixed": [
+   {
+    "el": "header",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 0,
+    "y": 30,
+    "w": 390,
+    "h": 100
+   },
+   {
+    "el": "div",
+    "pos": "sticky",
+    "top": "0px",
+    "x": 231.5,
+    "y": 146,
+    "w": 142.5,
+    "h": 357.9
+   }
+  ],
+  "dialogs": [],
+  "menus": [],
+  "body": {
+   "font": "\"Farfetch Basis\", \"Helvetica Neue\", Arial, sans-serif",
+   "size": "15px",
+   "bg": "rgb(255, 255, 255)",
+   "color": "rgb(34, 34, 34)"
+  },
+  "header": {
+   "x": 0,
+   "y": 30,
+   "w": 390,
+   "h": 100
+  },
+  "searchForm": {
+   "x": 104,
+   "y": 74,
+   "w": 270,
+   "h": 44
+  },
+  "resultCard": null,
+  "productGrid": null
+ }
+}

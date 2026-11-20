@@ -5,6 +5,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 
+import { clearChallenge, loadOnce } from './gate.mjs';
+
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 export const { chromium } = pw.default ?? pw;
 
@@ -29,14 +31,14 @@ export const RAW = path.join(REF, 'raw');
 // banner. Selectors key off the semantic classes and roles, not hashed names.
 export const M = (name) => `.${name}`;
 
-// The per-context patches every page gets: the webdriver mask, and the
+// The per-context patches every page gets (no webdriver mask: a bot check is a boundary), and the
 // OneTrust consent SDK aborted at request level. The SDK re-mounts its banner
 // if it is hidden after the fact and the hide/remount loop pins the renderer;
 // aborting it is the same remove-only outcome (no consent buttons clicked, no
 // consent record POSTed).
 export async function patch(context) {
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
   });
   await context.route(/cookielaw\.org|onetrust\.com|cookiepro\.com/, (r) => r.abort());
 }
@@ -50,21 +52,10 @@ export async function launch({ width = 1440, height = 900, mobile = false } = {}
   return { browser, context };
 }
 
-// Waits out any bot interstitial (up to ~tries*step) and reports whether
-// the real document arrived. Demandware does not challenge this client.
-export async function clearChallenge(page, { tries = 12, step = 2000 } = {}) {
-  for (let i = 0; i < tries; i++) {
-    const s = await page.evaluate(() => ({
-      title: document.title,
-      body: (document.body && document.body.innerText || '').slice(0, 400),
-    })).catch(() => ({ title: '', body: '' }));
-    const challenging = /just a moment/i.test(s.title)
-      || /performing security verification|verify you are human|verifying you are human|checking your browser/i.test(s.body);
-    if (!challenging && s.body.length > 40) return true;
-    await page.waitForTimeout(step);
-  }
-  return false;
-}
+// The bot-check boundary lives in gate.mjs (browser-free, so test_gate.mjs can
+// drive it with a stub page): one load per page, and a challenge is recorded,
+// never got past.
+export { clearChallenge };
 
 // Every page mounts a OneTrust cookie banner (#onetrust-consent-sdk,
 // .otFlat bottom at z-index 2147483646). REMOVE-ONLY: hiding the overlay
@@ -172,12 +163,16 @@ export async function domClick(page, reText, sel = 'button, a') {
   );
 }
 
+// Loads `url` once through gate.mjs's loadOnce and resolves its result:
+// { ok: true }, or { ok: false, reason } with the tab left on about:blank.
+// A caller records a blocked page and moves on; it never reloads it.
 export async function open(page, url, { wait = 6000, promo = 'close' } = {}) {
   if (url.startsWith(BASE)) await seedConsent(page);
-  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
-  await clearChallenge(page);
+  const r = await loadOnce(page, url);
+  if (!r.ok) { console.log(`BLOCKED ${url}: ${r.reason}`); return r; }
   await page.waitForTimeout(wait);
   if (promo === 'close') await closePromo(page);
+  return r;
 }
 
 // A PDP is reached the way a visitor reaches it: the first product tile on a

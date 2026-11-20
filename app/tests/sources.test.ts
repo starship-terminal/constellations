@@ -318,6 +318,58 @@ describe("real library normalization", () => {
     );
     expect(await readExport("systems:linear", "../../.env")).toBeNull();
   });
+  it("never takes a favicon service URL from generated style media", async () => {
+    const dir = await fixture();
+    vi.stubEnv("DESIGN_SYSTEMS_REPO", dir);
+    await fs.mkdir(path.join(dir, "refero/real-style"), { recursive: true });
+    await fs.mkdir(path.join(dir, "web/data/refero/style"), {
+      recursive: true,
+    });
+    await fs.writeFile(
+      path.join(dir, "catalog.json"),
+      JSON.stringify({ systems: [] }),
+    );
+    await fs.writeFile(
+      path.join(dir, "refero/catalog.json"),
+      JSON.stringify({
+        styles: [
+          {
+            slug: "real-style",
+            name: "Real",
+            source_url: "https://example.com",
+          },
+        ],
+      }),
+    );
+    await fs.writeFile(
+      path.join(dir, "refero/real-style/meta.json"),
+      JSON.stringify({
+        screenshot_url: "https://example.com/actual.jpg",
+        source_url: "https://example.com",
+      }),
+    );
+    // What tools/catalog.py writes: the favicon's remote is the gstatic URL.
+    const gstatic =
+      "https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&url=https%3A%2F%2Fexample.com";
+    await fs.writeFile(
+      path.join(dir, "web/data/refero/style/real-style.json"),
+      JSON.stringify({
+        media: {
+          shot: {
+            local: "/refero-media/shots/real-style.jpg",
+            remote: "https://example.com/actual.jpg",
+          },
+          favicon: {
+            local: "/refero-media/favicons/real-style.png",
+            remote: gstatic,
+          },
+        },
+      }),
+    );
+    const detail = await getReference("refero:real-style");
+    expect(detail?.media.map((item) => item.id)).toEqual(["shot"]);
+    expect(JSON.stringify(detail)).not.toContain("gstatic");
+  });
   it("uses canonical Refero artifacts when generated files are absent", async () => {
     const dir = await fixture();
     vi.stubEnv("DESIGN_SYSTEMS_REPO", dir);
@@ -370,5 +422,9 @@ describe("real library normalization", () => {
       "# Stored reference",
     );
     expect(detail?.exports).not.toHaveProperty("variables.css");
+    // No favicon service learns which entries are browsed: with no recorded
+    // favicon there is no remote fallback at all.
+    expect(items[0].iconFallback).toBeNull();
+    expect(JSON.stringify([items, detail])).not.toContain("gstatic");
   });
 });

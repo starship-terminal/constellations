@@ -142,6 +142,71 @@ class WriteTest(unittest.TestCase):
             root = (pkg.root / "README.md").read_text()
         self.assertIn("| [x](systems/x/README.md) | Tests \\| pipes | 2026-10-10 | light | 2 of 3 met, 1 partly, 0 missing |", root)
 
+    def test_an_add_only_slug_keeps_the_base_catalog_table(self):
+        """The check CI runs, including on main after the pull request merges.
+        A new ungraded slug whose own Health matches is accepted when the
+        root table still lists only the graded package. No pull request base
+        is set. Editing the graded package's Health, or hand-editing the new
+        section, still fails."""
+        snap = audit({"slug": "x", "name": "X", "grades": grades(F1="meets", F2="partly", C1="meets", V1="na")})
+        added = {"slug": "clay", "captured": "2026-11-19", "goodFor": "CRM", "themes": ["light"], "category": "productivity",
+                 "layoutGaps": {"icons/": "No standalone SVG icon set was lifted."}}
+        with Package() as pkg:
+            health.write(CRITERIA, snap, [SYSTEM])
+            self.assertEqual(health.problems(CRITERIA, snap, [SYSTEM]), [])
+            clay = pkg.root / "systems" / "clay"
+            clay.mkdir()
+            (clay / "README.md").write_text("# Clay\n\n## Fonts\n\nInter.\n")
+            (clay / "tokens.json").write_text("")
+            section = health.package_section(CRITERIA, snap, added)
+            (clay / "README.md").write_text("# Clay\n\n" + section)
+            # No GITHUB_BASE_REF and no base catalog: this is the main push.
+            self.assertEqual(health.problems(CRITERIA, snap, [SYSTEM, added]), [])
+            # A layoutGaps reason that still has its closing period is the same section.
+            (clay / "README.md").write_text("# Clay\n\n" + section.replace(").", ".)."))
+            self.assertEqual(health.problems(CRITERIA, snap, [SYSTEM, added]), [])
+            (clay / "README.md").write_text("# Clay\n\n" + section)
+            # A hand-edited Health section on the new package still fails.
+            (clay / "README.md").write_text("# Clay\n\n" + section.replace("Not graded yet", "Graded by hand"))
+            stale = health.problems(CRITERIA, snap, [SYSTEM, added])
+            self.assertTrue(any("systems/clay/README.md" in line for line in stale))
+            (clay / "README.md").write_text("# Clay\n\n" + section)
+            # An edit to the package the table already lists still fails.
+            (pkg.root / "systems" / "x" / "README.md").write_text(
+                pkg.readme().replace("Partly", "Meets"))
+            edited = health.problems(CRITERIA, snap, [SYSTEM, added])
+            self.assertTrue(any("systems/x/README.md" in line for line in edited))
+
+    def test_the_root_table_may_omit_only_ungraded_packages(self):
+        """root_omits_only_ungraded: each way the root table can be wrong while a
+        package's own Health is current still fails."""
+        snap = audit({"slug": "x", "name": "X", "grades": grades(F1="meets", F2="partly", C1="meets", V1="na")})
+        y = {"slug": "y", "captured": "2026-10-11", "goodFor": "Other", "themes": ["dark"]}
+        stale = "README.md: Health is stale; run `python3 tools/health.py`"
+        with Package() as pkg:
+            (pkg.root / "systems" / "y").mkdir()
+            (pkg.root / "systems" / "y" / "README.md").write_text(README)
+            health.write(CRITERIA, snap, [SYSTEM, y])
+            root = pkg.root / "README.md"
+            current = root.read_text()
+
+            def table(systems):
+                return health.TABLE.sub(lambda _: health.catalog_table(snap, systems), current, count=1)
+
+            # Leaving out ungraded y is accepted; that is the exemption.
+            root.write_text(table([SYSTEM]))
+            self.assertEqual(health.problems(CRITERIA, snap, [SYSTEM, y]), [])
+            # Leaving out graded x is not.
+            root.write_text(table([y]))
+            self.assertIn(stale, health.problems(CRITERIA, snap, [SYSTEM, y]))
+            # A row for a package not in the catalog is not.
+            ghost = {"slug": "ghost", "captured": "2026-10-01", "goodFor": "Gone", "themes": ["light"]}
+            root.write_text(table([SYSTEM, y, ghost]))
+            self.assertIn(stale, health.problems(CRITERIA, snap, [SYSTEM, y]))
+            # A stale row for a listed package is not.
+            root.write_text(table([{**SYSTEM, "goodFor": "Old words"}]))
+            self.assertIn(stale, health.problems(CRITERIA, snap, [SYSTEM, y]))
+
     def test_catalog_table_ranks_by_the_scorecard(self):
         snap = audit({"slug": "a", "name": "A", "grades": grades(F1="partly", F2="partly", C1="meets", V1="na")},
                      {"slug": "b", "name": "B", "grades": grades(F1="meets", F2="meets", C1="meets", V1="na")})
@@ -151,6 +216,17 @@ class WriteTest(unittest.TestCase):
         rows = [line for line in table.splitlines() if "README.md)" in line]
         self.assertEqual([r.split("]")[0].split("[")[-1] for r in rows], ["b", "a", "c"])
         self.assertIn("not graded yet", rows[2])
+
+    def test_catalog_table_shows_no_icon_for_a_declared_icon_gap(self):
+        # A package with the icon.png layout gap has no preview.icon: its row must not
+        # point at an icon.png that does not exist.
+        systems = [{"slug": "a", "preview": {"icon": "systems/a/icon.png"}},
+                   {"slug": "b", "preview": {}, "layoutGaps": {"icon.png": "no icon published"}}]
+        with Package():
+            table = health.catalog_table(audit(), systems)
+        rows = [line for line in table.splitlines() if "README.md)" in line]
+        self.assertTrue(rows[0].startswith('| <img src="systems/a/icon.png" width="20" alt="a"> |'))
+        self.assertTrue(rows[1].startswith("|  | [b](systems/b/README.md)"))
 
 
 if __name__ == "__main__":

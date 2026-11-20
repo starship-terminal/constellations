@@ -1,0 +1,555 @@
+{
+  "_about": "The token tree build_tokens.py turns into tokens.json. hitchd.com declares almost no custom properties, so the layer is measured: every value is a computed style or bounding-box reading from a signed-out public page (raw/components-computed.json), with the measurement named in each leaf's source. One light theme exists; no dark variant or theme control was found on any surface, so no dark set ships.",
+  "core": {
+    "palette": {
+      "ink": {
+        "value": "#111212",
+        "type": "color",
+        "source": "computed color of announcement-banner text (raw/components-computed.json)",
+        "description": "The near-black ink of the closure strip and body copy."
+      },
+      "cream": {
+        "value": "#f6f3ef",
+        "type": "color",
+        "source": "computed backgroundColor of announcement-banner banner (raw/components-computed.json)",
+        "description": "The warm paper of the closure strip."
+      },
+      "heroInk": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "computed color of hero h1 (raw/components-computed.json)",
+        "description": "The white of the hero display type over the video/photo."
+      },
+      "muted": {
+        "value": "#575a5d",
+        "type": "color",
+        "source": "computed color of auth-link muted (raw/components-computed.json)",
+        "description": "The grey of helper and secondary copy."
+      },
+      "paper": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "computed backgroundColor of auth-layout page (raw/components-computed.json)",
+        "description": "The page field behind the auth card and content."
+      },
+      "fieldLine": {
+        "value": "#d2d2d7",
+        "type": "color",
+        "source": "computed borderTopColor of auth-field input (raw/components-computed.json)",
+        "description": "The input border grey."
+      },
+      "disabled": {
+        "value": "#cdcfd0",
+        "type": "color",
+        "source": "computed backgroundColor of auth-button button (raw/components-computed.json)",
+        "description": "The disabled Continue fill."
+      },
+      "registryInk": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "computed color of registry-hero heading (raw/components-computed.json)",
+        "description": "The registry display ink."
+      },
+      "menuBg": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "computed backgroundColor of mobile-menu menu (raw/components-computed.json)",
+        "description": "The phone drawer fill."
+      }
+    },
+    "font": {
+      "family": {
+        "display": {
+          "value": "DDNR",
+          "type": "fontFamily",
+          "source": "computed fontFamily of hero h1 (raw/components-computed.json)",
+          "description": "The hairline display serif (DDNR) of the hero and marketing display type."
+        },
+        "text": {
+          "value": "\"Inter Variable\", \"SF Pro Text\", \"SF Pro Icons\", -apple-system, BlinkMacSystemFont, Inter, system-ui, \"Segoe UI\", Roboto, Helvetica, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+          "type": "fontFamily",
+          "source": "computed fontFamily of announcement-banner text (raw/components-computed.json)",
+          "description": "The UI/body face (Inter Variable)."
+        },
+        "auth": {
+          "value": "\"Inter Variable\", \"SF Pro Display\", \"SF Pro Icons\", -apple-system, BlinkMacSystemFont, system-ui, \"Segoe UI\", Roboto, Helvetica, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+          "type": "fontFamily",
+          "source": "computed fontFamily of auth-layout h1 (raw/components-computed.json)",
+          "description": "The couple app's UI stack."
+        },
+        "registry": {
+          "value": "classic",
+          "type": "fontFamily",
+          "source": "computed fontFamily of registry-hero heading (raw/components-computed.json)",
+          "description": "The guest registry's display stack."
+        },
+        "article": {
+          "value": "\"Inter Variable\", \"SF Pro Text\", \"SF Pro Icons\", -apple-system, BlinkMacSystemFont, Inter, system-ui, \"Segoe UI\", Roboto, Helvetica, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+          "type": "fontFamily",
+          "source": "computed fontFamily of article-type body (raw/components-computed.json)",
+          "description": "Longform body copy."
+        }
+      },
+      "size": {
+        "display": {
+          "hero": {
+            "value": "88px",
+            "type": "dimension",
+            "source": "computed fontSize of hero h1 (raw/components-computed.json)",
+            "description": "The home hero display size."
+          },
+          "registry": {
+            "value": "96px",
+            "type": "dimension",
+            "source": "computed fontSize of registry-hero heading (raw/components-computed.json)",
+            "description": "The registry couple-name size."
+          }
+        },
+        "h2": {
+          "value": "56px",
+          "type": "dimension",
+          "source": "computed fontSize of marketing-h2 h2 (raw/components-computed.json)",
+          "description": "Marketing section heading."
+        },
+        "h3": {
+          "value": "36px",
+          "type": "dimension",
+          "source": "computed fontSize of gift-card title (raw/components-computed.json)",
+          "description": "A gift tile title."
+        },
+        "authH1": {
+          "value": "28px",
+          "type": "dimension",
+          "source": "computed fontSize of auth-layout h1 (raw/components-computed.json)",
+          "description": "The auth card heading."
+        },
+        "lead": {
+          "value": "21px",
+          "type": "dimension",
+          "source": "computed fontSize of hero lead (raw/components-computed.json)",
+          "description": "The hero supporting paragraph."
+        },
+        "body": {
+          "value": "19px",
+          "type": "dimension",
+          "source": "computed fontSize of article-type body (raw/components-computed.json)",
+          "description": "Longform body."
+        },
+        "ui": {
+          "value": "20px",
+          "type": "dimension",
+          "source": "computed fontSize of announcement-banner text (raw/components-computed.json)",
+          "description": "UI and strip copy."
+        },
+        "small": {
+          "value": "14px",
+          "type": "dimension",
+          "source": "computed fontSize of auth-link muted (raw/components-computed.json)",
+          "description": "Helper and footer small copy."
+        },
+        "navLink": {
+          "value": "16px",
+          "type": "dimension",
+          "source": "computed fontSize of marketing-nav loginLink (raw/components-computed.json)",
+          "description": "Header link size."
+        }
+      },
+      "height": {
+        "display": {
+          "hero": {
+            "value": "92.4px",
+            "type": "dimension",
+            "source": "computed lineHeight of hero h1 (raw/components-computed.json)",
+            "description": "The hero display line-height."
+          },
+          "registry": {
+            "value": "96px",
+            "type": "dimension",
+            "source": "computed lineHeight of registry-hero heading (raw/components-computed.json)",
+            "description": "The registry display line-height."
+          }
+        },
+        "h2": {
+          "value": "60px",
+          "type": "dimension",
+          "source": "computed lineHeight of marketing-h2 h2 (raw/components-computed.json)",
+          "description": "Section heading line-height."
+        },
+        "authH1": {
+          "value": "32px",
+          "type": "dimension",
+          "source": "computed lineHeight of auth-layout h1 (raw/components-computed.json)",
+          "description": "Auth heading line-height."
+        },
+        "lead": {
+          "value": "29.4px",
+          "type": "dimension",
+          "source": "computed lineHeight of hero lead (raw/components-computed.json)",
+          "description": "Hero paragraph line-height."
+        },
+        "body": {
+          "value": "27.0009px",
+          "type": "dimension",
+          "source": "computed lineHeight of article-type body (raw/components-computed.json)",
+          "description": "Longform line-height."
+        },
+        "ui": {
+          "value": "30px",
+          "type": "dimension",
+          "source": "computed lineHeight of announcement-banner text (raw/components-computed.json)",
+          "description": "UI copy line-height."
+        }
+      },
+      "weight": {
+        "display": {
+          "value": "100",
+          "type": "fontWeight",
+          "source": "computed fontWeight of hero h1 (raw/components-computed.json)",
+          "description": "The hairline display weight."
+        },
+        "registry": {
+          "value": "400",
+          "type": "fontWeight",
+          "source": "computed fontWeight of registry-hero heading (raw/components-computed.json)",
+          "description": "The registry display weight."
+        },
+        "h2": {
+          "value": "600",
+          "type": "fontWeight",
+          "source": "computed fontWeight of marketing-h2 h2 (raw/components-computed.json)",
+          "description": "Section heading weight."
+        },
+        "authH1": {
+          "value": "600",
+          "type": "fontWeight",
+          "source": "computed fontWeight of auth-layout h1 (raw/components-computed.json)",
+          "description": "Auth heading weight."
+        },
+        "body": {
+          "value": "400",
+          "type": "fontWeight",
+          "source": "computed fontWeight of article-type body (raw/components-computed.json)",
+          "description": "Body weight."
+        },
+        "link": {
+          "value": "400",
+          "type": "fontWeight",
+          "source": "computed fontWeight of marketing-nav loginLink (raw/components-computed.json)",
+          "description": "Header link weight."
+        },
+        "button": {
+          "value": "500",
+          "type": "fontWeight",
+          "source": "computed fontWeight of auth-button button (raw/components-computed.json)",
+          "description": "Button label weight."
+        }
+      }
+    },
+    "radius": {
+      "field": {
+        "value": "8px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of auth-field input (raw/components-computed.json)",
+        "description": "Text field corners."
+      },
+      "pill": {
+        "value": "50px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of auth-button button (raw/components-computed.json)",
+        "description": "The auth submit pill."
+      },
+      "card": {
+        "value": "0px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of gift-card card (raw/components-computed.json)",
+        "description": "Gift tile corners."
+      },
+      "modal": {
+        "value": "0px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of gift-modal modal (raw/components-computed.json)",
+        "description": "The gift modal corners."
+      },
+      "cta": {
+        "value": "100px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of registry-nav cta (raw/components-computed.json)",
+        "description": "The Try It Free pill's corners."
+      },
+      "give": {
+        "value": "0px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of gift-modal give (raw/components-computed.json)",
+        "description": "The Give pill's corners."
+      }
+    },
+    "spacing": {
+      "strip": {
+        "y": {
+          "value": "20px",
+          "type": "dimension",
+          "source": "computed paddingTop of announcement-banner banner (raw/components-computed.json)",
+          "description": "The announcement strip's vertical padding."
+        }
+      },
+      "field": {
+        "x": {
+          "value": "16px",
+          "type": "dimension",
+          "source": "computed paddingLeft of auth-field input (raw/components-computed.json)",
+          "description": "Text field side padding."
+        }
+      },
+      "button": {
+        "x": {
+          "value": "0px",
+          "type": "dimension",
+          "source": "computed paddingLeft of auth-button button (raw/components-computed.json)",
+          "description": "Submit button side padding."
+        }
+      },
+      "card": {
+        "pad": {
+          "value": "0px",
+          "type": "dimension",
+          "source": "computed paddingTop of gift-card card (raw/components-computed.json)",
+          "description": "Gift tile padding."
+        }
+      },
+      "modal": {
+        "pad": {
+          "value": "0px",
+          "type": "dimension",
+          "source": "computed paddingTop of gift-modal modal (raw/components-computed.json)",
+          "description": "Gift modal padding."
+        }
+      }
+    },
+    "border": {
+      "field": {
+        "value": {
+          "color": "#d2d2d7",
+          "width": "1px",
+          "style": "solid"
+        },
+        "type": "border",
+        "source": "computed borderTopWidth/style/color of auth-field input (raw/components-computed.json)",
+        "description": "The 1px field border."
+      }
+    }
+  },
+  "light": {
+    "color": {
+      "surface": {
+        "page": {
+          "value": "{palette.heroInk}",
+          "type": "color",
+          "source": "computed backgroundColor of auth-layout page (raw/components-computed.json); matches palette.heroInk",
+          "description": "The field every page paints behind content."
+        },
+        "cream": {
+          "value": "{palette.cream}",
+          "type": "color",
+          "source": "computed backgroundColor of announcement-banner banner (raw/components-computed.json); matches palette.cream",
+          "description": "The announcement strip fill."
+        },
+        "modal": {
+          "value": "{palette.heroInk}",
+          "type": "color",
+          "source": "computed backgroundColor of gift-modal modal (raw/components-computed.json); matches palette.heroInk",
+          "description": "The gift modal fill."
+        },
+        "menu": {
+          "value": "{palette.heroInk}",
+          "type": "color",
+          "source": "computed backgroundColor of mobile-menu menu (raw/components-computed.json); matches palette.heroInk",
+          "description": "The phone menu drawer fill."
+        },
+        "footer": {
+          "value": "{palette.heroInk}",
+          "type": "color",
+          "source": "computed backgroundColor of marketing-footer footer (raw/components-computed.json); matches palette.heroInk",
+          "description": "The footer fill."
+        }
+      },
+      "text": {
+        "ink": {
+          "value": "{palette.ink}",
+          "type": "color",
+          "source": "computed color of announcement-banner text (raw/components-computed.json); matches palette.ink",
+          "description": "Primary ink."
+        },
+        "muted": {
+          "value": "{palette.muted}",
+          "type": "color",
+          "source": "computed color of auth-link muted (raw/components-computed.json); matches palette.muted",
+          "description": "Secondary and helper copy."
+        },
+        "inverse": {
+          "value": "{palette.heroInk}",
+          "type": "color",
+          "source": "computed color of hero h1 (raw/components-computed.json); matches palette.heroInk",
+          "description": "Type over photography/video."
+        },
+        "link": {
+          "value": "{palette.ink}",
+          "type": "color",
+          "source": "computed color of marketing-footer link (raw/components-computed.json); matches palette.ink",
+          "description": "Inline links."
+        },
+        "hashtag": {
+          "value": "{palette.heroInk}",
+          "type": "color",
+          "source": "computed color of registry-nav hashtag (raw/components-computed.json); matches palette.heroInk",
+          "description": "The registry #hashtag link."
+        },
+        "lead": {
+          "value": "{palette.heroInk}",
+          "type": "color",
+          "source": "computed color of hero lead (raw/components-computed.json); matches palette.heroInk",
+          "description": "The hero supporting paragraph."
+        }
+      },
+      "border": {
+        "field": {
+          "value": "{palette.fieldLine}",
+          "type": "color",
+          "source": "computed borderTopColor of auth-field input (raw/components-computed.json); matches palette.fieldLine",
+          "description": "Text field borders."
+        }
+      },
+      "action": {
+        "ctaInk": {
+          "value": "{palette.heroInk}",
+          "type": "color",
+          "source": "computed color of registry-nav cta (raw/components-computed.json); matches palette.heroInk",
+          "description": "The 'Try It Free' pill's label ink on the sample banner (the painted desktop link — the hidden phone variant is never measured)."
+        },
+        "ctaFill": {
+          "value": "{palette.ink}",
+          "type": "color",
+          "source": "computed backgroundColor of registry-nav cta (raw/components-computed.json); matches palette.ink",
+          "description": "The 'Try It Free' pill's fill."
+        },
+        "giveInk": {
+          "value": "{palette.heroInk}",
+          "type": "color",
+          "source": "computed color of gift-modal give (raw/components-computed.json); matches palette.heroInk",
+          "description": "The Give button label."
+        },
+        "giveFill": {
+          "value": "#c5c8ca",
+          "type": "color",
+          "source": "computed backgroundColor of gift-modal giveWrap (raw/components-computed.json)",
+          "description": "The Give pill's fill, painted on its .pay wrapper (disabled at rest until an amount exists)."
+        },
+        "disabledFill": {
+          "value": "{palette.disabled}",
+          "type": "color",
+          "source": "computed backgroundColor of auth-button button (raw/components-computed.json); matches palette.disabled",
+          "description": "A disabled submit fill."
+        },
+        "disabledInk": {
+          "value": "{palette.heroInk}",
+          "type": "color",
+          "source": "computed color of auth-button button (raw/components-computed.json); matches palette.heroInk",
+          "description": "A disabled submit label."
+        }
+      },
+      "nav": {
+        "ink": {
+          "value": "{palette.heroInk}",
+          "type": "color",
+          "source": "computed color of marketing-nav loginLink (raw/components-computed.json); matches palette.heroInk",
+          "description": "The Log In link on the hero header."
+        },
+        "bar": {
+          "value": "rgba(255, 255, 255, 0.92)",
+          "type": "color",
+          "source": "computed backgroundColor of registry-nav bar (raw/components-computed.json)",
+          "description": "The registry sample banner fill."
+        }
+      }
+    }
+  },
+  "component": {
+    "closure-header-height": {
+      "value": "96px",
+      "type": "dimension",
+      "source": "measured rect h of marketing-nav header (raw/components-computed.json)",
+      "description": "The closure header bar height."
+    },
+    "announcement-height": {
+      "value": "98px",
+      "type": "dimension",
+      "source": "measured rect h of announcement-banner banner (raw/components-computed.json)",
+      "description": "The closure announcement strip height."
+    },
+    "auth-card-width": {
+      "value": "450px",
+      "type": "dimension",
+      "source": "measured rect w of auth-layout card (raw/components-computed.json)",
+      "description": "The auth form card width."
+    },
+    "field-height": {
+      "value": "48px",
+      "type": "dimension",
+      "source": "measured rect h of auth-field input (raw/components-computed.json)",
+      "description": "Auth text field height."
+    },
+    "field-width": {
+      "value": "450px",
+      "type": "dimension",
+      "source": "measured rect w of auth-field input (raw/components-computed.json)",
+      "description": "Auth text field width."
+    },
+    "button-height": {
+      "value": "48px",
+      "type": "dimension",
+      "source": "measured rect h of auth-button button (raw/components-computed.json)",
+      "description": "Auth submit button height."
+    },
+    "login-link-height": {
+      "value": "48px",
+      "type": "dimension",
+      "source": "measured rect h of marketing-nav loginLink (raw/components-computed.json)",
+      "description": "The header Log In hit height."
+    },
+    "gift-card-width": {
+      "value": "1416px",
+      "type": "dimension",
+      "source": "measured rect w of gift-card card (raw/components-computed.json)",
+      "description": "A gift tile width at 1440."
+    },
+    "gift-card-height": {
+      "value": "472px",
+      "type": "dimension",
+      "source": "measured rect h of gift-card card (raw/components-computed.json)",
+      "description": "A gift tile height at 1440."
+    },
+    "modal-width": {
+      "value": "1440px",
+      "type": "dimension",
+      "source": "measured rect w of gift-modal modal (raw/components-computed.json)",
+      "description": "The gift modal width."
+    },
+    "registry-banner-height": {
+      "value": "80px",
+      "type": "dimension",
+      "source": "measured rect h of registry-nav bar (raw/components-computed.json)",
+      "description": "The registry sample banner height."
+    },
+    "mobile-menu-height": {
+      "value": "844px",
+      "type": "dimension",
+      "source": "measured rect h of mobile-menu menu (raw/components-computed.json)",
+      "description": "The phone menu drawer height."
+    },
+    "mobile-gift-card-width": {
+      "value": "370px",
+      "type": "dimension",
+      "source": "measured rect w of mobile-gift-card card (raw/components-computed.json)",
+      "description": "A gift tile width at 390."
+    }
+  }
+}

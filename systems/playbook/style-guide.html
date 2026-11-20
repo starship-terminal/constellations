@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Playbook style guide</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #fff; color: #222; font: 500 16px/1.5 system-ui, -apple-system, sans-serif; }
+  header { padding: 28px 32px; background: #0d0e10; color: #fff; }
+  header h1 { margin: 0; font: 600 40px/1.1 system-ui, sans-serif; letter-spacing: -0.04em; }
+  header p { margin: 8px 0 0; max-width: 68ch; color: rgba(255,255,255,.72); }
+  main { padding: 32px; max-width: 1080px; }
+  h2 { font: 600 28px/1.2 system-ui, sans-serif; letter-spacing: -0.02em; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .sw { border-radius: 12px; overflow: hidden; border: 0.5px solid #dadbdf; }
+  .sw i { display: block; height: 64px; }
+  .sw span { display: block; padding: 8px 10px; font-size: 12px; color: #585e71; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 16px 0; }
+  .dark { background: #0d0e10; color: rgba(255,255,255,.85); border-radius: 18px; padding: 20px; }
+  button { font: 600 15px/22.5px system-ui, sans-serif; letter-spacing: -0.32px; cursor: default; }
+  .demo { background: #1a1a1a; color: #fafafa; border: 0.5px solid transparent; border-radius: 10px; padding: 8px 16px 10px; }
+  .start { background: #fafafa; color: #434140; border: 0.5px solid #dadbdf; border-radius: 10px; padding: 8px 16px 10px; }
+  .solid { background: #1a1a1a; color: #fafafa; border: 0.5px solid transparent; border-radius: 10px; padding: 10px 16px 12px; font-size: 14px; letter-spacing: 0; }
+  .ghost { background: #fafafa; color: #222; border: 0.5px solid #dadbdf; border-radius: 10px; padding: 10px 16px 12px; font-size: 14px; letter-spacing: 0; }
+  .disabled { background: #f5f6f7; color: #c4c8d1; border: 1px solid transparent; border-radius: 14px; padding: 12px 20px; font: 600 16px/22px system-ui, sans-serif; letter-spacing: -0.16px; }
+  .social { background: #fff; color: #262626; border: 1px solid #ebecef; border-radius: 14px; padding: 12px 20px; font: 600 16px/22px system-ui, sans-serif; letter-spacing: -0.16px; }
+  .chip { background: rgba(24,25,29,.94); color: #d9dbe1; border: 0; border-radius: 999px; padding: 6px 11px 8px; font-weight: 400; font-size: 14px; letter-spacing: 0; }
+  .field { width: 350px; height: 50px; border-radius: 10px; border: 1px solid #262626; padding: 0 6px 0 10px; font: 400 17px/20px system-ui, sans-serif; }
+  .card { width: 260px; background: #fff; border: 0.5px solid #dadbdf; border-radius: 17.535px; padding: 6px; }
+  .card .top { background: #f9f9f9; border-radius: 11.535px; padding: 20px; }
+  .card h3 { margin: 0; font: 600 24px/31.2px system-ui, sans-serif; letter-spacing: -0.72px; }
+  .card p { margin: 8px 0; color: #979797; font-size: 12px; }
+  .card .price { font: 600 40px/40px system-ui, sans-serif; letter-spacing: -1.2px; }
+  .note { color: #585e71; max-width: 70ch; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Playbook</h1>
+  <p>Public marketing and the signed-out sign-in page. Stabil Grotesk and Akkurat are not loaded here, so the samples fall back to the system sans. Values are the measured tokens.</p>
+</header>
+<main>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:#0d0e10"></i><span>page dark #0d0e10</span></div>
+    <div class="sw"><i style="background:#ffffff"></i><span>page light #ffffff</span></div>
+    <div class="sw"><i style="background:#1a1a1a"></i><span>ink #1a1a1a</span></div>
+    <div class="sw"><i style="background:#222222"></i><span>heading #222222</span></div>
+    <div class="sw"><i style="background:#585e71"></i><span>muted #585e71</span></div>
+    <div class="sw"><i style="background:#599ffe"></i><span>blue #599ffe</span></div>
+    <div class="sw"><i style="background:#ff5d64"></i><span>auth primary #ff5d64</span></div>
+    <div class="sw"><i style="background:#fafafa"></i><span>paper #fafafa</span></div>
+    <div class="sw"><i style="background:#dadbdf"></i><span>border #dadbdf</span></div>
+  </div>
+  <h2>Marketing buttons</h2>
+  <div class="dark">
+    <div class="row">
+      <button class="demo">Schedule a demo</button>
+      <button class="start">Get started</button>
+      <button class="chip">Build a review portal</button>
+    </div>
+  </div>
+  <h2>Pricing</h2>
+  <div class="row">
+    <div class="card"><div class="top"><h3>Free</h3><p>Organize personal files and try out Playbook for free.</p><div class="price">$0</div><button class="ghost">Sign up</button></div></div>
+    <div class="card"><div class="top"><h3>Enterprise</h3><p>For orgs that need SSO and custom workflows.</p><div class="price" style="font-size:32px">Custom</div><button class="solid">Request a trial</button></div></div>
+  </div>
+  <h2>Sign in</h2>
+  <div class="row" style="flex-direction:column;align-items:flex-start">
+    <button class="social">Continue with Google</button>
+    <input class="field" placeholder="name@email.com">
+    <button class="disabled">Continue with email</button>
+  </div>
+  <p class="note">Continue with email is shown disabled, the state on the page. The declared primary is #ff5d64. It was not painted on this control.</p>
+</main>
+</body>
+</html>

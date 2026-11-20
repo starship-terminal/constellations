@@ -1,0 +1,19 @@
+{
+  "capturedAt": "2026-11-19T03:05:00Z",
+  "source": "headless Chromium (Playwright). T3 preview_snapshot failed: The browser is not producing screenshot frames.",
+  "sanitizedSourceUrl": "https://www.threads.com/",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "deviceScaleFactor": 2,
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "theme": "dark",
+  "page": "home",
+  "state": "app-dialog",
+  "png": [
+    780,
+    1688
+  ]
+}

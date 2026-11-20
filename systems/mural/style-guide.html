@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mural style guide</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #fff; color: #000; font: 400 16px/24px Arial, sans-serif; }
+header { padding: 24px 32px; border-bottom: 1px solid #dce1e5; display: flex; justify-content: space-between; align-items: baseline; }
+h1 { margin: 0; font: 300 32px/1.1 "Times New Roman", serif; letter-spacing: -0.8px; }
+header p { margin: 0; color: #828c92; font-size: 14px; }
+main { max-width: 1080px; margin: 0 auto; padding: 32px; }
+h2 { font: 300 28px/1.2 "Times New Roman", serif; margin: 40px 0 12px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: center; }
+.sw i { width: 44px; height: 44px; border-radius: 8px; box-shadow: inset 0 0 0 1px #dce1e5; display: block; }
+.sw b, .ty b { display: block; font-size: 13px; }
+code { font: 12px/1.4 ui-monospace, Menlo, monospace; color: #4f5457; }
+.ty { display: grid; grid-template-columns: 180px 1fr; gap: 16px; align-items: baseline; border-bottom: 1px solid #dce1e5; padding: 10px 0; }
+.ty p { margin: 0; }
+.sp { display: flex; align-items: center; gap: 12px; margin: 6px 0; }
+.sp i { height: 12px; background: #00c27a; display: block; }
+.radii { display: flex; gap: 16px; flex-wrap: wrap; }
+.rd { width: 96px; height: 64px; border: 2px solid #dce1e5; display: flex; align-items: end; padding: 6px; }
+.spec { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; background: #000; padding: 24px; border-radius: 16px; }
+.spec.light { background: #f9fafa; }
+.btn { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: 8px; font: 500 16px/24px Arial, sans-serif; text-decoration: none; }
+.btn.jade { background: #00c27a; color: #000; }
+.btn.outline { background: transparent; color: #000; border: 2px solid #dce1e5; }
+.btn.dark { background: #000; color: #fff; }
+.btn.red { background: #e02935; color: #fff; font-weight: 700; font-size: 14px; }
+.field { height: 40px; border-radius: 8px; border: 2px solid #282e34; padding: 8px 10px; font: 400 14px/20px Arial, sans-serif; width: 280px; }
+.nav { height: 64px; background: #fff; border-radius: 16px; box-shadow: 0 0 1px rgba(11,41,70,.32), 0 24px 20px rgba(42,82,121,.08); display: flex; align-items: center; gap: 16px; padding: 0 16px; }
+.card { background: #fff; border-radius: 20px; padding: 32px 24px; width: 240px; border: 3px solid #fff; }
+.card b { font: 300 28px/1 "Times New Roman", serif; }
+.note { color: #4f5457; font-size: 14px; max-width: 70ch; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Mural</h1>
+  <p>Public site and signed-out login. Light only. Measured 2026-11-19.</p>
+</header>
+<main>
+  <h2>Roles</h2>
+  <div class="grid"><div class="sw"><i style="background:#ffffff"></i><div><b>page</b><code>#ffffff</code></div></div><div class="sw"><i style="background:#000000"></i><div><b>pageInverse</b><code>#000000</code></div></div><div class="sw"><i style="background:#ffffff"></i><div><b>surface</b><code>#ffffff</code></div></div><div class="sw"><i style="background:#f9fafa"></i><div><b>surfaceMuted</b><code>#f9fafa</code></div></div><div class="sw"><i style="background:#000000"></i><div><b>text</b><code>#000000</code></div></div><div class="sw"><i style="background:#8c8c8c"></i><div><b>textBody</b><code>#8c8c8c</code></div></div><div class="sw"><i style="background:#ffffff"></i><div><b>textInverse</b><code>#ffffff</code></div></div><div class="sw"><i style="background:#828c92"></i><div><b>textMuted</b><code>#828c92</code></div></div><div class="sw"><i style="background:#00c27a"></i><div><b>accent</b><code>#00c27a</code></div></div><div class="sw"><i style="background:#dce1e5"></i><div><b>border</b><code>#dce1e5</code></div></div><div class="sw"><i style="background:#b8c1cc"></i><div><b>borderHover</b><code>#b8c1cc</code></div></div><div class="sw"><i style="background:#306ae3"></i><div><b>focus</b><code>#306ae3</code></div></div><div class="sw"><i style="background:#e02935"></i><div><b>danger</b><code>#e02935</code></div></div></div>
+  <h2>Palette</h2>
+  <div class="grid"><div class="sw"><i style="background:#000000"></i><div><b>black</b><code>#000000</code></div></div><div class="sw"><i style="background:#ffffff"></i><div><b>white</b><code>#ffffff</code></div></div><div class="sw"><i style="background:#dce1e5"></i><div><b>grey100</b><code>#dce1e5</code></div></div><div class="sw"><i style="background:#b8c1cc"></i><div><b>grey200</b><code>#b8c1cc</code></div></div><div class="sw"><i style="background:#828c92"></i><div><b>grey500</b><code>#828c92</code></div></div><div class="sw"><i style="background:#4f5457"></i><div><b>grey700</b><code>#4f5457</code></div></div><div class="sw"><i style="background:#232628"></i><div><b>grey900</b><code>#232628</code></div></div><div class="sw"><i style="background:#b4f5c0"></i><div><b>mint</b><code>#b4f5c0</code></div></div><div class="sw"><i style="background:#00c27a"></i><div><b>jade</b><code>#00c27a</code></div></div><div class="sw"><i style="background:#9fec7f"></i><div><b>spring</b><code>#9fec7f</code></div></div><div class="sw"><i style="background:#5887ff"></i><div><b>muralBlue</b><code>#5887ff</code></div></div><div class="sw"><i style="background:#00843f"></i><div><b>muralGreen</b><code>#00843f</code></div></div><div class="sw"><i style="background:#fc83ff"></i><div><b>muralPink</b><code>#fc83ff</code></div></div><div class="sw"><i style="background:#ffe146"></i><div><b>lemon</b><code>#ffe146</code></div></div><div class="sw"><i style="background:#ededdb"></i><div><b>natural</b><code>#ededdb</code></div></div><div class="sw"><i style="background:#e6bfff"></i><div><b>lavender</b><code>#e6bfff</code></div></div><div class="sw"><i style="background:#bed7ff"></i><div><b>ice</b><code>#bed7ff</code></div></div><div class="sw"><i style="background:#79c1ff"></i><div><b>sky</b><code>#79c1ff</code></div></div><div class="sw"><i style="background:#195ad7"></i><div><b>indigo</b><code>#195ad7</code></div></div><div class="sw"><i style="background:#8728e6"></i><div><b>violet</b><code>#8728e6</code></div></div><div class="sw"><i style="background:#be53ff"></i><div><b>grape</b><code>#be53ff</code></div></div><div class="sw"><i style="background:#ffcee0"></i><div><b>blush</b><code>#ffcee0</code></div></div><div class="sw"><i style="background:#ff98b4"></i><div><b>flamingo</b><code>#ff98b4</code></div></div><div class="sw"><i style="background:#c8056e"></i><div><b>burgundy</b><code>#c8056e</code></div></div><div class="sw"><i style="background:#ed6000"></i><div><b>orange</b><code>#ed6000</code></div></div><div class="sw"><i style="background:#ffed87"></i><div><b>canary</b><code>#ffed87</code></div></div><div class="sw"><i style="background:#ff4b4b"></i><div><b>muralRed</b><code>#ff4b4b</code></div></div><div class="sw"><i style="background:#ffaa00"></i><div><b>muralYellow</b><code>#ffaa00</code></div></div><div class="sw"><i style="background:#f0f0f0"></i><div><b>lightGrey</b><code>#f0f0f0</code></div></div><div class="sw"><i style="background:#8c8c8c"></i><div><b>grey</b><code>#8c8c8c</code></div></div><div class="sw"><i style="background:#8c8c8c"></i><div><b>heroMuted</b><code>#8c8c8c</code></div></div><div class="sw"><i style="background:#1b1f22"></i><div><b>authText</b><code>#1b1f22</code></div></div><div class="sw"><i style="background:#63707e"></i><div><b>authPlaceholder</b><code>#63707e</code></div></div><div class="sw"><i style="background:#282e34"></i><div><b>authBorder</b><code>#282e34</code></div></div><div class="sw"><i style="background:#f9fafa"></i><div><b>authPage</b><code>#f9fafa</code></div></div><div class="sw"><i style="background:#e02935"></i><div><b>authRed</b><code>#e02935</code></div></div><div class="sw"><i style="background:#b3212a"></i><div><b>authRedHover</b><code>#b3212a</code></div></div><div class="sw"><i style="background:#306ae3"></i><div><b>authFocus</b><code>#306ae3</code></div></div><div class="sw"><i style="background:#48525b"></i><div><b>authLink</b><code>#48525b</code></div></div><div class="sw"><i style="background:#4f5457"></i><div><b>heroFieldBorder</b><code>#4f5457</code></div></div></div>
+  <h2>Type</h2>
+  <p class="note">STK Bureau and ABC Social are proprietary. These specimens use Times New Roman and Arial, the fallbacks named in the stylesheets.</p>
+  <div class="ty"><div><b>display</b><code>80px / 88px 300</code></div><p style="font-family:Times New Roman, serif;font-size:80px;font-weight:300;line-height:88px;letter-spacing:-4px">Sync up. Speed up.</p></div><div class="ty"><div><b>pageTitle</b><code>64px / 70.4px 300</code></div><p style="font-family:Times New Roman, serif;font-size:64px;font-weight:300;line-height:70.4px;letter-spacing:-3.2px">Sync up. Speed up.</p></div><div class="ty"><div><b>cardTitle</b><code>28px / 28px 300</code></div><p style="font-family:Times New Roman, serif;font-size:28px;font-weight:300;line-height:28px;letter-spacing:-0.56px">Sync up. Speed up.</p></div><div class="ty"><div><b>body</b><code>16px / 24px 300</code></div><p style="font-family:Arial, sans-serif;font-size:16px;font-weight:300;line-height:24px;letter-spacing:0px">The visual workspace for a team.</p></div><div class="ty"><div><b>lede</b><code>18px / 27px 300</code></div><p style="font-family:Arial, sans-serif;font-size:18px;font-weight:300;line-height:27px;letter-spacing:0px">The visual workspace for a team.</p></div><div class="ty"><div><b>ui</b><code>16px / 24px 500</code></div><p style="font-family:Arial, sans-serif;font-size:16px;font-weight:500;line-height:24px;letter-spacing:0px">The visual workspace for a team.</p></div><div class="ty"><div><b>eyebrow</b><code>14px / 15.4px 300</code></div><p style="font-family:Arial, sans-serif;font-size:14px;font-weight:300;line-height:15.4px;letter-spacing:3.5px">The visual workspace for a team.</p></div><div class="ty"><div><b>field</b><code>14px / 20px 400</code></div><p style="font-family:Arial, sans-serif;font-size:14px;font-weight:400;line-height:20px;letter-spacing:0px">The visual workspace for a team.</p></div><div class="ty"><div><b>buttonAuth</b><code>14px / 20px 700</code></div><p style="font-family:Arial, sans-serif;font-size:14px;font-weight:700;line-height:20px;letter-spacing:0px">The visual workspace for a team.</p></div>
+  <h2>Spacing</h2>
+  <div class="sp"><i style="width:0px"></i><code>0 0px</code></div><div class="sp"><i style="width:4px"></i><code>4 4px</code></div><div class="sp"><i style="width:8px"></i><code>8 8px</code></div><div class="sp"><i style="width:12px"></i><code>12 12px</code></div><div class="sp"><i style="width:16px"></i><code>16 16px</code></div><div class="sp"><i style="width:20px"></i><code>20 20px</code></div><div class="sp"><i style="width:24px"></i><code>24 24px</code></div><div class="sp"><i style="width:28px"></i><code>28 28px</code></div><div class="sp"><i style="width:32px"></i><code>32 32px</code></div><div class="sp"><i style="width:40px"></i><code>40 40px</code></div><div class="sp"><i style="width:48px"></i><code>48 48px</code></div><div class="sp"><i style="width:64px"></i><code>64 64px</code></div><div class="sp"><i style="width:80px"></i><code>80 80px</code></div><div class="sp"><i style="width:96px"></i><code>96 96px</code></div>
+  <h2>Radius</h2>
+  <div class="radii"><div class="rd" style="border-radius:4px"><code>sm 4px</code></div><div class="rd" style="border-radius:8px"><code>button 8px</code></div><div class="rd" style="border-radius:12px"><code>md 12px</code></div><div class="rd" style="border-radius:16px"><code>nav 16px</code></div><div class="rd" style="border-radius:20px"><code>card 20px</code></div><div class="rd" style="border-radius:999px"><code>pill 999px</code></div></div>
+  <h2>Controls</h2>
+  <p class="note">Drawn from the token values. The marketing hero sits on black. The auth form sits on the measured page grey.</p>
+  <div class="nav" style="margin-bottom:16px"><b>Mural</b><span>Product</span><span>Pricing</span><span style="margin-left:auto">Login</span><a class="btn outline" href="#demo">Book a demo</a><a class="btn dark" href="#signup">Sign up free</a></div>
+  <div class="spec">
+    <input class="field" style="background:#000;color:#fff;border-color:#4f5457" placeholder="Enter your email" aria-label="Email">
+    <a class="btn jade" href="#start">Get started free</a>
+  </div>
+  <div class="spec light" style="margin-top:16px">
+    <input class="field" placeholder="Enter your work email" aria-label="Work email">
+    <a class="btn red" href="#login">Log in</a>
+  </div>
+  <div class="card" style="margin-top:16px"><b>Business</b><p>$17.99</p><p class="note">Pricing card, 20px radius, 32px 24px padding.</p></div>
+</main>
+</body>
+</html>

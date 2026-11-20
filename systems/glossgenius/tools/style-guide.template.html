@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GlossGenius style guide</title>
+<meta name="description" content="GlossGenius design tokens and the public marketing, auth and booking surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "baselGrotesk", "Basel Grotesk", "Inter", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "baselClassic", "Basel Classic", "Fraunces", Georgia, serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+.app {
+/*APP*/
+}
+.booking {
+/*BOOKING*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-ink, #17150e); background: var(--background-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 38px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 600 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-ink, #17150e); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-primary-gray-200, #e4e2dd); }
+.lead { max-width: 62ch; color: var(--text-ink, #17150e); opacity: .8; }
+.note { font-size: 13px; color: var(--text-ink, #17150e); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 600 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-ink, #17150e); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+/* A non-light strip's values only read on its own field. */
+.pal.app { background: var(--surface-primary, #fff); color: var(--content-primary, #17150e); padding: 12px; border-radius: 10px; }
+.pal.booking { background: var(--bg-primary-default, #2c2e32); color: var(--text-active-default, #fff); padding: 12px; border-radius: 10px; }
+.pal.booking .vl { color: var(--text-active-default, #fff); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-primary-gray-200, #e4e2dd); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-ink, #17150e); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-primary-gray-200, #e4e2dd); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-ink, #17150e); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-primary-gray-200, #e4e2dd); overflow: hidden; background: var(--color-primary-gloss-white, #fff); }
+/* The header and hero sit on the dark photographic masthead — gloss-black
+   stands in for the photo field, matching the measured white nav ink. */
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 72px); padding: 0 12px 0 22px; font-size: 15px; font-weight: 600; color: var(--action-nav-ink, #f0f7f6); background: var(--color-primary-gloss-black, #17150e); }
+.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; font-family: var(--sg-serif); }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-nav-pill-height, 44px); padding: 0 18px; font-size: var(--font-size-body, 16px); font-weight: 600; border-radius: var(--radius-pill, 999px); border: 1px solid transparent; }
+/* The nav "Book a demo" is an outlined pill on the dark masthead: the
+   measured control paints a 1px gloss-white border, transparent fill and
+   gloss-white ink — never a filled button. */
+.navbar .btn.primary { background: var(--action-nav-fill, transparent); color: var(--action-nav-ink, #f0f7f6); border-color: var(--color-primary-gloss-white, #f0f7f6); }
+/* The "Start free trial" pill (nav and hero alike) is the measured white
+   fill with gloss-black ink — the dark plan CTA's inverse. */
+.btn.accent { background: var(--action-hero-fill, #fff); color: var(--action-hero-ink, #17150e); border-radius: var(--radius-pill, 999px); height: var(--component-hero-cta-height, 56px); padding: 0 28px; font-size: var(--font-size-button, 18px); font-weight: 600; }
+.btn.dark { background: var(--action-cta-fill, #17150e); color: var(--action-cta-ink, #f0f7f6); }
+.app .btn.primary { background: var(--action-primary-fill, #17150e); color: var(--action-primary-ink, #fff); border-radius: var(--radius-pill, 999px); }
+.booking .btn.primary { background: var(--action-book-fill, #17150e); color: var(--action-book-ink, #fff); border-radius: var(--radius-pill, 999px); }
+/* The booking Select buttons paint the measured accent gradient, not a flat fill. */
+.booking .btn.select { background: var(--accent-primary-default, #505718); color: var(--action-select-ink, #fff); border-radius: var(--radius-pill, 999px); }
+.btn.ghost { border-color: var(--color-primary-gray-200, #e4e2dd); color: var(--text-ink, #17150e); }
+.btn.small { height: var(--component-nav-pill-height, 44px); font-size: 14px; }
+/* The hero masthead paints gloss-white text over a dark photograph;
+   gloss-black stands in for the photo field. */
+.hero { color: var(--color-primary-gloss-white, #f0f7f6); padding: 64px 40px; font: var(--font-weight-medium, 500) var(--font-size-hero, 72px)/var(--font-line-height-hero, 1) var(--sg-serif); letter-spacing: -0.02em; text-align: center; background: var(--color-primary-gloss-black, #17150e); }
+.hero small { display: block; font: 500 var(--font-size-eyebrow, 12px)/1.4 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-primary-gloss-white, #f0f7f6); opacity: .8; margin: 0 0 18px; }
+.tag { display: inline-block; padding: 4px 14px; border-radius: var(--radius-pill, 999px); background: var(--surface-card, #fff); border: 1px solid var(--color-primary-gray-200, #e4e2dd); font-size: var(--font-size-eyebrow, 12px); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted, #647874); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-primary-gray-200, #e4e2dd); padding: 24px; font-size: 13px; background: var(--surface-card, #fff); border-radius: var(--radius-card, 24px); }
+.tile .img { height: 140px; background: var(--color-primary-gloss-white, #f0f7f6); border: 1px solid var(--color-primary-gray-200, #e4e2dd); border-radius: 16px; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted, #647874); }
+.tile b { display: block; font: 400 var(--font-size-plan-name, 36px)/1.1 var(--sg-serif); margin-bottom: 4px; color: var(--text-ink, #17150e); }
+.tile .sub { opacity: .65; font-size: 12px; color: var(--text-muted, #647874); }
+/* The 'Most popular' card is a measured white panel with ink text; the
+   super-amber flag pill is what marks it. */
+.tile.popular { background: var(--surface-card-popular, #fff); color: var(--text-ink, #17150e); border: 2px solid var(--color-super-amber, #e89c2a); position: relative; }
+.tile.popular b, .tile.popular .sub { color: var(--text-ink, #17150e); }
+.tile.popular .sub { color: var(--text-muted, #647874); }
+.popflag { position: absolute; top: 14px; right: 14px; padding: 4px 14px; border-radius: var(--radius-pill, 999px); background: var(--color-super-amber, #e89c2a); color: var(--text-ink, #17150e); font-size: 12px; font-weight: 600; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-primary-gray-200, #e4e2dd); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-primary-gray-200, #e4e2dd); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--text-ink, #17150e); opacity: .65; font-family: var(--sg-mono); }
+.field { width: var(--component-app-field-width, 360px); height: var(--component-app-field-height, 56px); border: 1px solid var(--border-field-border, #e4e2dd); border-radius: var(--radius-app-field, 12px); background: var(--surface-field-bg, #fff); color: var(--text-muted, #647874); padding: 0 16px; font-size: 16px; }
+/* The booking mock sits on the dark-themed field the site declares
+   (--bg-primary-default); the service card's inner panel paints a measured
+   white, and the booking vocabulary's --text-secondary-default (#000) is its
+   on-light ink. */
+.mock.booking { background: var(--bg-primary-default, #2c2e32); color: var(--text-primary-default, #fff); }
+.svc { display: inline-block; width: var(--component-booking-service-card-width, 300px); border: 1px solid var(--color-primary-gray-200, #e4e2dd); border-radius: var(--radius-service-card, 16px); background: #fff; color: var(--text-secondary-default, #0f0f11); padding: 14px; font-size: 14px; }
+.svc b { display: block; font-weight: 600; margin-bottom: 2px; }
+.stepdot { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<main>
+  <h1>GlossGenius style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">GlossGenius, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the marketing site's Webflow variable layer (<code>--_color---primary--gloss-black</code> #17150e, <code>--_color---primary--gloss-white</code> #f0f7f6, the gray ramp and the 16-hue <code>--_color---super--*</code> accent family — amber, cerulean, coral, fuchsia, gold, jade, mauve, midnight, opal, orchid, pine, sage, sienna, smoke, sunset, violet — plus the <code>--_size---*px</code>, <code>--_typography---*</code>, <code>--_layout---*</code> and <code>--_components---*</code> collections), the app's glossDS layer (<code>--content-*</code>, <code>--surface-*</code>, <code>--brand-*</code>, <code>--space-*x</code>, <code>--radius-*</code>, <code>--font-*</code>, <code>--button-*</code>) and the published booking site's own <code>.tokens_glossDS__*</code> family, plus the measured type ramp, radius ladder and component sizes. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from glossgenius.com, app.glossgenius.com and honeyhivesalon.glossgenius.com (a real published booking website), signed out, in headless Chromium. Everything post-login is a documented boundary; the sign-in, sign-up, restore and demo forms were measured and typed into then cleared, never submitted; the booking flow was browsed to its public date-picker step, never booked. The Basel Grotesk/Classic faces are served faces and are not loaded here: samples fall back to system sans. No dark theme exists signed out — the app's <code>.dark</code> class and the marketing sheet's <code>[data-theme="dark"]</code> block are declared evidence nothing switches to.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The header pairs the serif wordmark with the 'How it works' mega-menu, Businesses, Pricing, Resources, a plain 'Log in', an outlined 'Book a demo' pill and the white 'Start free trial' pill — all over the dark photographic masthead the mock paints as gloss-black. The hero runs a display masthead over the 'Scheduling, payments, and admin. Handled.' line; the CTAs are fully-round pills.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">GlossGenius</span><span>How it works</span><span>Businesses</span><span>Pricing</span><span class="sp"></span><span style="font-weight:400">Log in</span><span class="btn small primary">Book a demo</span><span class="btn small accent">Start free trial</span></div>
+    <div class="hero"><small>For beauty &amp; wellness businesses</small>Scheduling, payments,<br>and admin. Handled.<br><br><span class="btn accent">Start free trial</span></div>
+  </div>
+
+  <h2 class="sh">Pricing cards</h2>
+  <p class="lead">The billing switch is a Monthly/Annual toggle ('save up to 14%') beside a Beauty &amp; Wellness / Medspa &amp; Aesthetics tier picker; plan cards are white rounded panels and the 'Most popular' Gold card stays white and carries the super-amber flag pill.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile"><b>Standard</b><span class="sub">$28/mo monthly, $24/mo annual — essential tools for businesses just starting out.</span></div>
+      <div class="tile popular"><span class="popflag">Most popular</span><b>Gold</b><span class="sub">$56/mo monthly — the flagged card carries the super-amber 'Most popular' pill.</span></div>
+      <div class="tile"><b>Platinum</b><span class="sub">A higher tier for growing teams.</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The app surface</h2>
+  <p class="lead">app.glossgenius.com declares the glossDS layer (<code>--content-primary</code>, <code>--surface-*</code>, the <code>--brand-*</code> ramps, <code>--space-*x</code>, 1000px <code>--button-*-radius</code> pills); the signed-out /login, /signup and /forgot-password forms paint it. The 'Log in' submit was measured in every state, never clicked. The swatches in this scope carry the app set.</p>
+  <div class="mock app" style="padding:24px;max-width:460px">
+    <b style="font-size:20px;font-weight:600">Welcome back!</b>
+    <p class="sub" style="color:var(--content-secondary,#647874);font-size:14px;margin:4px 0 16px">Log in to your GlossGenius account</p>
+    <input class="field" placeholder="Email"><br><br>
+    <input class="field" placeholder="Password"><br><br>
+    <span class="btn primary" style="width:var(--component-app-field-width,360px);height:var(--component-app-submit-height,48px)">Log in</span>
+  </div>
+
+  <h2 class="sh">The booking surface</h2>
+  <p class="lead">Every GlossGenius business gets a public booking website at <code>&lt;name&gt;.glossgenius.com</code> with its own token family and layout variants (Organic, Playful, Billboard, Canvas…): a service list with a 'Select a Professional' react-select, per-service Select buttons and a 'BOOK n SERVICE' bar that leads to the /book date-picker — SELECT SERVICE / DATE &amp; TIME / YOUR DETAILS. The swatches in this scope carry the booking set.</p>
+  <div class="mock booking" style="padding:24px">
+    <div class="stepdot">Select service &nbsp;→&nbsp; Date &amp; time &nbsp;→&nbsp; Your details</div>
+    <div style="margin:14px 0">
+      <span class="svc"><b>Signature Facial</b><span style="opacity:.65">60 min · $120</span><br><br><span class="btn select" style="height:36px;padding:0 16px">Select</span></span>
+      <span class="svc"><b>Gel Manicure</b><span style="opacity:.65">45 min · $55</span><br><br><span class="btn select" style="height:36px;padding:0 16px">Select</span></span>
+    </div>
+    <span class="btn primary" style="height:var(--component-booking-book-bar-height,48px);padding:0 24px">BOOK 1 SERVICE</span>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">Three vocabularies stay separate: the marketing Webflow layer under <code>core</code> (color.primary.*, color.super.*, the flat bg.* names and the stock apps.* collections — the <code>[data-theme="dark"]</code> declarations are evidence, never painted), the app's glossDS layer under <code>app</code> and the booking site's family under <code>booking</code>. Measured roles alias the declared values they match, inside their own set.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Radius and motion</h2>
+  <p class="lead">Radii run from small control radii through card radii to the fully-round 1000px/999px pill the surfaces put on every button (the app declares it: <code>--button-default-radius: 1000px</code>). The control transition is the measured value on nav links and buttons.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Basel Grotesk carries UI text (<code>--font-family-ui</code>), Basel Classic the display face (<code>--font-family-display</code>), Inter the base stack (<code>--font-family-base</code>) and Fraunces/Beau Rivage the editorial faces (<code>--font-fraunces</code>, <code>--font-beau-rivage</code>); the marketing sizes are measured on real components. Samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared palette variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, focused, filled and selected states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  // The marketing vocabulary lives at the set roots (color.*, bg.*,
+  // apps.*…): collect the colour leaves wherever they live, grouped by
+  // first path segment.
+  const groups = {};
+  for (const [n, t] of flat(TOK.core, '')) {
+    if (t.t !== 'color' || n.startsWith('component')) continue;
+    (groups[n.split('.')[0]] ??= []).push([n, t]);
+  }
+  for (const g of Object.keys(groups).sort()) {
+    h += `<div class="pal-h">${esc(g)} (marketing vocabulary — the apps.* branch is the declared Webflow layer)</div><div class="pal">`;
+    for (const [n, t] of groups[g]) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label, scope] of [['light', 'light roles', ''], ['app', 'app vocabulary + roles', ' app'], ['booking', 'booking vocabulary + roles', ' booking']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color');
+    if (!roles.length) continue;
+    // A non-core set's custom properties only resolve inside its own scope.
+    h += `<div class="pal-h">${label}</div><div class="pal${scope}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const setname of ['light', 'app', 'booking']) {
+    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Aliases are set-relative: the palette scales live under TOK.core,
+  // surface roles under TOK.light / TOK.app / TOK.booking. Try each root.
+  for (const root of [TOK.core, TOK.light, TOK.app, TOK.booking, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.app || {}).fs || {}, 'app.fs.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">app ${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — GlossGenius</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

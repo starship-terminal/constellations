@@ -1,0 +1,1234 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. cakeequity.com declares a --blackberry/--plum/--berry/--lemon/--lime/--tangerine design-token layer in its Webflow bundle (raw/css-vars.json); the light set is built from those declared variables plus measured computed styles, and the dark set from measured computed styles on the page's two dark surfaces — the #18161a footer and the #0e0d12 Cake-MCP band (raw/components-computed.json).",
+ "core": {
+  "font": {
+   "family": {
+    "display": {
+     "value": "\"Exposure Light\", \"Times New Roman\", sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-title default (raw/components-computed.json)",
+     "description": "The display serif face (Exposure Light first) on every h1/h2 — served from the Webflow CDN, falls back to Times New Roman."
+    },
+    "body": {
+     "value": "Inter, Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of nav-link default (raw/components-computed.json)",
+     "description": "The UI/body stack (Inter first) on nav, buttons, copy and cards — served alongside Exposure."
+    },
+    "auth": {
+     "value": "Inter, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of login-card default (raw/components-computed.json)",
+     "description": "The Kinde hosted-auth stack (Inter, then system-ui) — a different, older toolchain than the marketing pages."
+    },
+    "served-display-bold": {
+     "value": "Exposure Bold",
+     "type": "fontFamily",
+     "source": "@font-face declaration in the served stylesheets (raw/css-vars.json fonts); declared, not observed painting",
+     "description": "Served @font-face (plus italic) in the Webflow bundle; not painted on any measured component on this pass."
+    },
+    "served-youth": {
+     "value": "Youth",
+     "type": "fontFamily",
+     "source": "@font-face declaration in the served stylesheets (raw/css-vars.json fonts); declared, not observed painting",
+     "description": "Served @font-face in the Webflow bundle; not painted on any measured component on this pass."
+    },
+    "served-mono": {
+     "value": "Inconsolata",
+     "type": "fontFamily",
+     "source": "@font-face declaration in the served stylesheets (raw/css-vars.json fonts); declared, not observed painting",
+     "description": "Served via fonts.googleapis.com (the mono face); not painted on any measured component on this pass."
+    },
+    "served-jakarta": {
+     "value": "Plus Jakarta Sans",
+     "type": "fontFamily",
+     "source": "@font-face declaration in the served stylesheets (raw/css-vars.json fonts); declared, not observed painting",
+     "description": "Served via fonts.googleapis.com; not painted on any measured component on this pass."
+    }
+   },
+   "size": {
+    "display": {
+     "type": "dimension",
+     "value": "60px",
+     "source": "computed fontSize of hero-title default (raw/components-computed.json)",
+     "description": "The Exposure display size on every marketing h1 (pricing, feature, blog and demo heads share it)."
+    },
+    "display-mobile": {
+     "type": "dimension",
+     "value": "52px",
+     "source": "computed fontSize of m-hero default (raw/components-computed.json)",
+     "description": "The display size at 390px."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "44px",
+     "source": "computed fontSize of section-h2 default (raw/components-computed.json)",
+     "description": "The Exposure section-heading size (also the blog card title)."
+    },
+    "price": {
+     "type": "dimension",
+     "value": "40px",
+     "source": "computed fontSize of plan-price default (raw/components-computed.json)",
+     "description": "The plan-card price figure."
+    },
+    "auth-heading": {
+     "type": "dimension",
+     "value": "24px",
+     "source": "computed fontSize of login-title default (raw/components-computed.json)",
+     "description": "The Kinde Welcome-back heading."
+    },
+    "faq-question": {
+     "type": "dimension",
+     "value": "22.4px",
+     "source": "computed fontSize of faq-item default (raw/components-computed.json)",
+     "description": "The FAQ question size."
+    },
+    "lede": {
+     "type": "dimension",
+     "value": "20px",
+     "source": "computed fontSize of hero-sub default (raw/components-computed.json)",
+     "description": "The hero sub-copy size."
+    },
+    "plan-name": {
+     "type": "dimension",
+     "value": "20px",
+     "source": "computed fontSize of plan-card default (raw/components-computed.json)",
+     "description": "The plan name (Growth)."
+    },
+    "story": {
+     "type": "dimension",
+     "value": "18px",
+     "source": "computed fontSize of story-card default (raw/components-computed.json)",
+     "description": "The story-card quote size."
+    },
+    "menu-link": {
+     "type": "dimension",
+     "value": "16.8px",
+     "source": "computed fontSize of menu-link default (raw/components-computed.json)",
+     "description": "The mega-nav link size."
+    },
+    "eyebrow": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of eyebrow default (raw/components-computed.json)",
+     "description": "The section eyebrow size."
+    },
+    "body": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of collection-card default (raw/components-computed.json)",
+     "description": "The base body size."
+    },
+    "footer-link": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of footer-link default (raw/components-computed.json)",
+     "description": "The footer link size."
+    },
+    "pill": {
+     "type": "dimension",
+     "value": "15px",
+     "source": "computed fontSize of announce-pill default (raw/components-computed.json)",
+     "description": "The announcement-chip size."
+    },
+    "plan-cta": {
+     "type": "dimension",
+     "value": "15px",
+     "source": "computed fontSize of plan-cta default (raw/components-computed.json)",
+     "description": "The plan CTA label size."
+    },
+    "nav": {
+     "type": "dimension",
+     "value": "14px",
+     "source": "computed fontSize of nav-link default (raw/components-computed.json)",
+     "description": "The nav link / small button size."
+    },
+    "badge": {
+     "type": "dimension",
+     "value": "13px",
+     "source": "computed fontSize of plan-badge default (raw/components-computed.json)",
+     "description": "The most-popular badge size."
+    }
+   },
+   "lineHeight": {
+    "display": {
+     "type": "dimension",
+     "value": "66px",
+     "source": "computed lineHeight of hero-title default (raw/components-computed.json)",
+     "description": "Display leading (1.1x)."
+    },
+    "display-mobile": {
+     "type": "dimension",
+     "value": "57.2px",
+     "source": "computed lineHeight of m-hero default (raw/components-computed.json)",
+     "description": "Mobile display leading."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "44px",
+     "source": "computed lineHeight of section-h2 default (raw/components-computed.json)",
+     "description": "Heading leading (1x)."
+    },
+    "lede": {
+     "type": "dimension",
+     "value": "32px",
+     "source": "computed lineHeight of hero-sub default (raw/components-computed.json)",
+     "description": "Lede leading (1.6x)."
+    },
+    "faq-question": {
+     "type": "dimension",
+     "value": "26.88px",
+     "source": "computed lineHeight of faq-item default (raw/components-computed.json)",
+     "description": "FAQ-question leading."
+    },
+    "menu-link": {
+     "type": "dimension",
+     "value": "26.88px",
+     "source": "computed lineHeight of menu-link default (raw/components-computed.json)",
+     "description": "Mega-nav link leading."
+    },
+    "nav": {
+     "type": "dimension",
+     "value": "18.2px",
+     "source": "computed lineHeight of nav-link default (raw/components-computed.json)",
+     "description": "Nav link leading."
+    },
+    "body": {
+     "type": "dimension",
+     "value": "16.8px",
+     "source": "computed lineHeight of collection-card default (raw/components-computed.json)",
+     "description": "Body leading."
+    }
+   },
+   "weight": {
+    "display": {
+     "type": "fontWeight",
+     "value": "400",
+     "source": "computed fontWeight of hero-title default (raw/components-computed.json)",
+     "description": "Exposure renders its light face at 400 on h1s."
+    },
+    "heading": {
+     "type": "fontWeight",
+     "value": "300",
+     "source": "computed fontWeight of section-h2 default (raw/components-computed.json)",
+     "description": "The 300 of section headings (Exposure Light)."
+    },
+    "lede": {
+     "type": "fontWeight",
+     "value": "300",
+     "source": "computed fontWeight of hero-sub default (raw/components-computed.json)",
+     "description": "The 300 lede."
+    },
+    "menu-link": {
+     "type": "fontWeight",
+     "value": "600",
+     "source": "computed fontWeight of menu-link default (raw/components-computed.json)",
+     "description": "The 600 mega-nav link."
+    },
+    "eyebrow": {
+     "type": "fontWeight",
+     "value": "600",
+     "source": "computed fontWeight of eyebrow default (raw/components-computed.json)",
+     "description": "The 600 eyebrow."
+    },
+    "body": {
+     "type": "fontWeight",
+     "value": "400",
+     "source": "computed fontWeight of collection-card default (raw/components-computed.json)",
+     "description": "The 400 base."
+    },
+    "pill": {
+     "type": "fontWeight",
+     "value": "500",
+     "source": "computed fontWeight of announce-pill default (raw/components-computed.json)",
+     "description": "The 500 chip label."
+    },
+    "badge": {
+     "type": "fontWeight",
+     "value": "500",
+     "source": "computed fontWeight of plan-badge default (raw/components-computed.json)",
+     "description": "The 500 badge."
+    },
+    "footer-link": {
+     "type": "fontWeight",
+     "value": "300",
+     "source": "computed fontWeight of footer-link default (raw/components-computed.json)",
+     "description": "The 300 footer link."
+    }
+   },
+   "letterSpacing": {
+    "display": {
+     "type": "dimension",
+     "value": "-2px",
+     "source": "computed letterSpacing of hero-title default (raw/components-computed.json)",
+     "description": "The -2px display tracking."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "-1px",
+     "source": "computed letterSpacing of section-h2 default (raw/components-computed.json)",
+     "description": "The -1px heading tracking."
+    },
+    "lede": {
+     "type": "dimension",
+     "value": "-0.3px",
+     "source": "computed letterSpacing of hero-sub default (raw/components-computed.json)",
+     "description": "The -0.3px lede tracking."
+    },
+    "eyebrow": {
+     "type": "dimension",
+     "value": "0.8px",
+     "source": "computed letterSpacing of eyebrow default (raw/components-computed.json)",
+     "description": "The +0.8px eyebrow tracking."
+    },
+    "price": {
+     "type": "dimension",
+     "value": "-1.6px",
+     "source": "computed letterSpacing of plan-price default (raw/components-computed.json)",
+     "description": "The -1.6px price tracking."
+    },
+    "footer-link": {
+     "type": "dimension",
+     "value": "-0.16px",
+     "source": "computed letterSpacing of footer-link default (raw/components-computed.json)",
+     "description": "The -0.16px footer link tracking."
+    }
+   }
+  },
+  "color": {
+   "ink": {
+    "100": {
+     "var": "--blackberry--100",
+     "type": "color",
+     "description": "The near-black ink #18161a: headings, hero text, the footer field and the billing toggle's active pill."
+    },
+    "75": {
+     "var": "--blackberry--75",
+     "type": "color",
+     "description": "The 75% ink alpha."
+    },
+    "50": {
+     "var": "--blackberry--50",
+     "type": "color",
+     "description": "The 50% ink alpha — the muted eyebrow and secondary copy tone."
+    },
+    "25": {
+     "var": "--blackberry--25",
+     "type": "color",
+     "description": "The 25% ink alpha."
+    },
+    "10": {
+     "var": "--blackberry--10",
+     "type": "color",
+     "description": "The 10% ink hairline under FAQ cards, plan-card headers and pricing rows."
+    }
+   },
+   "neutral": {
+    "white": {
+     "var": "--white",
+     "type": "color",
+     "description": "The page field and card fill."
+    },
+    "warm-white": {
+     "var": "--warm-white",
+     "type": "color",
+     "description": "The declared warm white #fafaf8 (sections that opt into it; the page itself paints pure white)."
+    },
+    "grey": {
+     "var": "--grey",
+     "type": "color",
+     "description": "The light grey #ececf0 field of tinted sections and pills."
+    },
+    "dark-grey": {
+     "var": "--dark-grey",
+     "type": "color",
+     "description": "The declared navy-leaning #161640."
+    },
+    "black": {
+     "var": "--black",
+     "type": "color",
+     "description": "The declared black, the same #18161a as blackberry--100."
+    },
+    "white-50": {
+     "var": "--50-white",
+     "type": "color",
+     "description": "Half-alpha white for muted text on dark surfaces."
+    },
+    "white-25": {
+     "var": "--25-white",
+     "type": "color",
+     "description": "Quarter-alpha white."
+    },
+    "white-90": {
+     "var": "--90-white",
+     "type": "color",
+     "description": "The 70% #fafafa white."
+    },
+    "grey-50": {
+     "var": "--50-grey",
+     "type": "color",
+     "description": "Half-alpha #ececf0."
+    }
+   },
+   "plum": {
+    "bright": {
+     "var": "--plum--bright-plum",
+     "type": "color",
+     "description": "The brand violet #4823ff: every primary button fill, link hover and icon accent."
+    },
+    "dark": {
+     "var": "--plum--dark-plum",
+     "type": "color",
+     "description": "The pressed/hover violet #2b1599 every primary control darkens to."
+    },
+    "new": {
+     "var": "--plum--new-plum",
+     "type": "color",
+     "description": "The declared mid violet #6d67fb."
+    },
+    "100": {
+     "var": "--plum--100",
+     "type": "color",
+     "description": "The declared plum #7e78ff: footer-link hover, FAQ +/- icon bars, the top nav accent line."
+    },
+    "light": {
+     "var": "--plum--light-plum",
+     "type": "color",
+     "description": "The declared light plum #b2aeff."
+    },
+    "lighter": {
+     "var": "--plum--lighter-plum",
+     "type": "color",
+     "description": "The #ede9ff most-popular-pill and tint fill."
+    },
+    "lightest": {
+     "var": "--plum--lightest-plum",
+     "type": "color",
+     "description": "The #f5f4fb plum-tinted section field."
+    },
+    "contrast": {
+     "var": "--plum--contrast",
+     "type": "color",
+     "description": "The declared magenta-plum #932a74 accent."
+    },
+    "5": {
+     "var": "--plum--5",
+     "type": "color",
+     "description": "The 5% plum wash."
+    },
+    "10": {
+     "var": "--plum--10",
+     "type": "color",
+     "description": "The 10% plum wash a mega-nav link paints on hover."
+    },
+    "25": {
+     "var": "--plum--25",
+     "type": "color",
+     "description": "The 25% plum — the featured plan card's border."
+    },
+    "50": {
+     "var": "--plum--50",
+     "type": "color",
+     "description": "The 50% plum alpha."
+    },
+    "75": {
+     "var": "--plum--75",
+     "type": "color",
+     "description": "The 75% plum alpha."
+    }
+   },
+   "berry": {
+    "100": {
+     "var": "--berry--100",
+     "type": "color",
+     "description": "The sky #99cefe accent."
+    },
+    "highlight": {
+     "var": "--berry--highlight-berry",
+     "type": "color",
+     "description": "The strong sky #0e87d7."
+    },
+    "light": {
+     "var": "--berry--light-berry",
+     "type": "color",
+     "description": "The pale sky #ebf5ff."
+    },
+    "15": {
+     "var": "--berry--15",
+     "type": "color",
+     "description": "The 15% sky wash."
+    },
+    "25": {
+     "var": "--berry--25",
+     "type": "color",
+     "description": "The 25% sky wash."
+    },
+    "50": {
+     "var": "--berry--50",
+     "type": "color",
+     "description": "The 50% sky."
+    }
+   },
+   "lemon": {
+    "100": {
+     "var": "--lemon--100",
+     "type": "color",
+     "description": "The acid lemon #e7ff6e — the dark band's eyebrow and highlight text."
+    },
+    "highlight": {
+     "var": "--lemon--highlight-lemon",
+     "type": "color",
+     "description": "The dark lemon #556309 (lemon on light)."
+    },
+    "light": {
+     "var": "--lemon--light-lemon",
+     "type": "color",
+     "description": "The pale lemon #f6fdd1."
+    },
+    "25": {
+     "var": "--lemon--25",
+     "type": "color",
+     "description": "The 25% lemon wash."
+    },
+    "50": {
+     "var": "--lemon--50",
+     "type": "color",
+     "description": "The 50% lemon."
+    }
+   },
+   "lime": {
+    "100": {
+     "var": "--lime--100",
+     "type": "color",
+     "description": "The lime #9aff91 accent."
+    },
+    "highlight": {
+     "var": "--lime--highlight-lime",
+     "type": "color",
+     "description": "The green #078f00."
+    },
+    "go-green": {
+     "var": "--lime--go-green",
+     "type": "color",
+     "description": "The declared #e3f9c9 green tint."
+    },
+    "light": {
+     "var": "--lime--light-lime",
+     "type": "color",
+     "description": "The pale lime #ebffe9 — the now-live pill fill."
+    },
+    "25": {
+     "var": "--lime--25",
+     "type": "color",
+     "description": "The 15% lime wash (declared as --lime--25)."
+    },
+    "50": {
+     "var": "--lime--50",
+     "type": "color",
+     "description": "The 50% lime."
+    }
+   },
+   "tangerine": {
+    "100": {
+     "var": "--tangerine--100",
+     "type": "color",
+     "description": "The tangerine #ffa360 accent."
+    },
+    "highlight": {
+     "var": "--tangerine--highlight-tangerine",
+     "type": "color",
+     "description": "The deep tangerine #e27500."
+    },
+    "light": {
+     "var": "--tangerine--light-tangerine",
+     "type": "color",
+     "description": "The pale tangerine #ffeddf."
+    },
+    "25": {
+     "var": "--tangerine--25",
+     "type": "color",
+     "description": "The 25% tangerine wash."
+    },
+    "50": {
+     "var": "--tangerine--50",
+     "type": "color",
+     "description": "The 50% tangerine."
+    }
+   },
+   "measured": {
+    "nav-text": {
+     "value": "#222222",
+     "type": "color",
+     "source": "computed color of nav-link default (raw/components-computed.json)",
+     "description": "The rgb(34,34,34) nav-link ink — the bundle's base body colour, lighter than the #18161a heading ink."
+    },
+    "dark-band": {
+     "value": "#0e0d12",
+     "type": "color",
+     "source": "computed backgroundColor of dark-section default (raw/components-computed.json)",
+     "description": "The #0e0d12 near-black of the Cake-MCP band — the site's darkest painted surface, darker than the footer ink."
+    },
+    "plan-top": {
+     "value": "#faf9ff",
+     "type": "color",
+     "source": "computed paint-bg:.pricing-card-top of plan-card default (raw/components-computed.json)",
+     "description": "The #faf9ff violet-tinted header of a plan card."
+    },
+    "save-pill": {
+     "value": "#c6f0dc",
+     "type": "color",
+     "source": "computed paint-bg:.save-pill-div of billing-toggle default (raw/components-computed.json)",
+     "description": "The #c6f0dc mint of the '-20% save' pills — between the declared lime tints."
+    },
+    "chip-border": {
+     "value": "#ebe8f2",
+     "type": "color",
+     "source": "computed borderTopColor of announce-pill default (raw/components-computed.json)",
+     "description": "The #ebe8f2 border on the announcement chip."
+    },
+    "field-border": {
+     "value": "#d9d9e0",
+     "type": "color",
+     "source": "computed borderTopColor of country-select default (raw/components-computed.json)",
+     "description": "The #d9d9e0 border on the region select and the billing-toggle shell."
+    },
+    "field-focus": {
+     "value": "#3898ec",
+     "type": "color",
+     "source": "computed borderTopColor of country-select focused (raw/components-computed.json)",
+     "description": "The #3898ec blue the select border gains on focus."
+    },
+    "focus": {
+     "value": "#005fcc",
+     "type": "color",
+     "source": "computed outlineColor of nav-cta focus-visible (raw/components-computed.json)",
+     "description": "The #005fcc of the 1px auto focus ring (the Webflow/UA ring) every focused control draws."
+    },
+    "dark-hairline": {
+     "value": "rgba(244, 244, 244, 0.18)",
+     "type": "color",
+     "source": "computed paint-border:.hp26-acc of dark-section default (raw/components-computed.json)",
+     "description": "The rgba(244,244,244,0.18) hairline between the dark band's rows."
+    }
+   },
+   "auth": {
+    "primary": {
+     "value": "#5a38fd",
+     "type": "color",
+     "source": "computed backgroundColor of login-cta default (raw/components-computed.json)",
+     "description": "The Kinde primary #5a38fd on Continue — close to but not the marketing #4823ff."
+    },
+    "oauth": {
+     "value": "#f5f5f5",
+     "type": "color",
+     "source": "computed backgroundColor of login-oauth default (raw/components-computed.json)",
+     "description": "The #f5f5f5 OAuth-button fill."
+    },
+    "oauth-hover": {
+     "value": "#ebebeb",
+     "type": "color",
+     "source": "computed backgroundColor of login-oauth hover (raw/components-computed.json)",
+     "description": "The #ebebeb the OAuth fill darkens to on hover."
+    },
+    "oauth-pressed": {
+     "value": "#dbdbdb",
+     "type": "color",
+     "source": "computed backgroundColor of login-oauth pressed (raw/components-computed.json)",
+     "description": "The #dbdbdb the OAuth fill darkens to when pressed."
+    },
+    "text": {
+     "value": "#0f0f0f",
+     "type": "color",
+     "source": "computed color of login-title default (raw/components-computed.json)",
+     "description": "The #0f0f0f auth heading ink."
+    },
+    "muted": {
+     "value": "#2b2b2b",
+     "type": "color",
+     "source": "computed color of login-card default (raw/components-computed.json)",
+     "description": "The #2b2b2b auth body ink."
+    },
+    "link": {
+     "value": "#1c029d",
+     "type": "color",
+     "source": "computed color of login-link default (raw/components-computed.json)",
+     "description": "The #1c029d of the Create-one link — Kinde's link hue."
+    },
+    "field-border": {
+     "value": "#ababab",
+     "type": "color",
+     "source": "computed paint-border:input of login-field default (raw/components-computed.json)",
+     "description": "The #ababab border on the auth email field."
+    },
+    "focus": {
+     "value": "#0054f0",
+     "type": "color",
+     "source": "computed outlineColor of login-cta focus-visible (raw/components-computed.json)",
+     "description": "The #0054f0 of the 2px solid auth focus ring, offset 2px."
+    }
+   }
+  },
+  "radius": {
+   "pill": {
+    "value": "100px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)",
+    "description": "The 100px pill on every button and the region select."
+   },
+   "toggle": {
+    "value": "999px",
+    "type": "dimension",
+    "source": "painted layer radius under billing-toggle default (raw/components-computed.json)",
+    "description": "The 999px billing-toggle shell."
+   },
+   "nav-login": {
+    "value": "50px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of nav-login default (raw/components-computed.json)",
+    "description": "The 50px Login pill — half the standard pill."
+   },
+   "dropdown": {
+    "value": "20px",
+    "type": "dimension",
+    "source": "painted layer radius under header default (raw/components-computed.json)",
+    "description": "The 20px mega-nav panel."
+   },
+   "dark-band": {
+    "value": "28px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of dark-section default (raw/components-computed.json)",
+    "description": "The 28px dark band."
+   },
+   "card": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of story-card default (raw/components-computed.json)",
+    "description": "The 16px card radius (story card, plan card top, Kinde card)."
+   },
+   "auth": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of login-field default (raw/components-computed.json)",
+    "description": "The 8px Kinde control radius."
+   },
+   "menu-button": {
+    "value": "4px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of m-menu-button default (raw/components-computed.json)",
+    "description": "The 4px hamburger radius."
+   }
+  },
+  "shadow": {
+   "nav": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "20px",
+      "spread": "-19px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of header default (raw/components-computed.json)",
+    "description": "The navbar's rgba(0,0,0,0.2) 0 2px 20px -19px drop (plus a second 0 1px 30px rgba(0,0,0,0.1) layer)."
+   },
+   "dropdown": {
+    "value": [
+     {
+      "color": "rgba(24, 22, 26, 0.25)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "20px",
+      "spread": "-5px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of header default (raw/components-computed.json)",
+    "description": "The mega-nav panel's rgba(24,22,26,0.25) 0 0 20px -5px."
+   },
+   "card": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "5px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of story-card default (raw/components-computed.json)",
+    "description": "The story/tooltip card's rgba(0,0,0,0.2) 0 2px 5px."
+   },
+   "faq-open": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "10px",
+      "spread": "-8px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of faq-item opened (raw/components-computed.json)",
+    "description": "The rgba(0,0,0,0.2) 0 2px 10px -8px an opened FAQ card draws, with its -2px lift."
+   }
+  },
+  "gradient": {
+   "pulley-tag": {
+    "value": [
+     {
+      "color": "#616d3b",
+      "position": 0.0
+     },
+     {
+      "color": "#616d3b",
+      "position": 0.55
+     },
+     {
+      "color": "#906a37",
+      "position": 0.78
+     },
+     {
+      "color": "#c96733",
+      "position": 1.0
+     }
+    ],
+    "type": "gradient",
+    "source": "computed backgroundImage of the pm-pulley-tag layer under announce-pill (raw/components-computed.json)",
+    "angle": "180deg",
+    "description": "The olive-to-rust gradient on the Pulley tag inside the announcement chip."
+   }
+  },
+  "duration": {
+   "button": {
+    "value": "0.2s",
+    "type": "duration",
+    "source": "computed transition of nav-cta default (raw/components-computed.json)",
+    "description": "The 0.2s all transition on every button and link. (all)"
+   },
+   "ghost": {
+    "value": "0.4s",
+    "type": "duration",
+    "source": "computed transition of hero-demo default (raw/components-computed.json)",
+    "description": "The 0.4s all transition on the ghost CTA. (all)"
+   },
+   "faq": {
+    "value": "0.3s",
+    "type": "duration",
+    "source": "computed transition of faq-item default (raw/components-computed.json)",
+    "description": "The 0.3s transform transition on the FAQ card (the opened lift). (transform)"
+   },
+   "story": {
+    "value": "0.2s",
+    "type": "duration",
+    "source": "computed transition of story-card default (raw/components-computed.json)",
+    "description": "The 0.2s opacity fade of the hover quote cards. (opacity)"
+   },
+   "auth": {
+    "value": "0.15s",
+    "type": "duration",
+    "source": "computed transition of login-cta default (raw/components-computed.json)",
+    "description": "The 0.15s transition on Kinde controls. (outline-offset)"
+   },
+   "mega-nav": {
+    "value": "0.5s",
+    "type": "duration",
+    "source": ".nav-dropdown-grid transition in the home stylesheets (raw/components-computed.json _meta.sheets: '0.5s')",
+    "description": "The mega-nav grid's open animation."
+   },
+   "nav-panel": {
+    "value": "0.3s",
+    "type": "duration",
+    "source": ".nav-container.for-dropdown transition in the home stylesheets (raw/components-computed.json _meta.sheets: '0.3s')",
+    "description": "The mega-nav panel's transition."
+   }
+  },
+  "measured": {
+   "focus-outline": {
+    "value": "1px auto #005fcc",
+    "type": "other",
+    "source": "computed outline of nav-cta focus-visible (raw/components-computed.json)",
+    "description": "The 1px auto #005fcc focus ring, ~1px offset, on every focused marketing control."
+   },
+   "auth-focus-outline": {
+    "value": "2px solid #0054f0 offset 2px",
+    "type": "other",
+    "source": "computed outline of login-cta focus-visible (raw/components-computed.json)",
+    "description": "The 2px solid #0054f0 ring, 2px offset, on Kinde controls."
+   },
+   "faq-open-lift": {
+    "value": "matrix(1, 0, 0, 1, 0, -2)",
+    "type": "other",
+    "source": "computed transform of faq-item opened (raw/components-computed.json)",
+    "description": "The translateY(-2px) an opened FAQ card takes, over the faq-open shadow."
+   },
+   "mobile-layout-width": {
+    "value": 745,
+    "type": "number",
+    "source": "m-header default rect width (raw/components-computed.json)",
+    "description": "The ~745px layout viewport the page forces at 390 visual width — .comparison-grid{min-width:700px} plus navbar chrome; phones pan horizontally."
+   }
+  }
+ },
+ "light": {
+  "text": {
+   "primary": {
+    "value": "{color.ink.100}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Heading and body ink."
+   },
+   "secondary": {
+    "value": "{color.measured.nav-text}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Nav-link and base text, one step softer than the ink."
+   },
+   "muted": {
+    "value": "{color.ink.50}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Muted eyebrow/secondary copy (50% ink)."
+   },
+   "link": {
+    "value": "{color.plum.bright}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Link and hover violet."
+   },
+   "on": {
+    "accent": {
+     "value": "{color.neutral.white}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "Label on the violet fills."
+    },
+    "dark": {
+     "value": "{color.neutral.white}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "Text on the dark surfaces."
+    }
+   }
+  },
+  "surface": {
+   "dark": {
+    "value": "{color.ink.100}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The footer field — a dark surface painted on the light page."
+   },
+   "page": {
+    "value": "{color.neutral.white}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The white page field (body paints white)."
+   },
+   "card": {
+    "value": "{color.neutral.white}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Card and panel fill."
+   },
+   "warm": {
+    "value": "{color.neutral.warm-white}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The declared warm-white field."
+   },
+   "muted": {
+    "value": "{color.neutral.grey}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The light grey tinted field."
+   },
+   "tint": {
+    "value": "{color.plum.lightest}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The plum-tinted section field."
+   },
+   "plan": {
+    "top": {
+     "value": "{color.measured.plan-top}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The plan card's violet header."
+    }
+   }
+  },
+  "action": {
+   "primary": {
+    "default": {
+     "value": "{color.plum.bright}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "Every primary button fill."
+    },
+    "hover": {
+     "value": "{color.plum.dark}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The violet a primary control darkens to on hover/press."
+    }
+   },
+   "ghost": {
+    "border": {
+     "value": "{color.plum.bright}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The ghost button's border and label violet."
+    }
+   }
+  },
+  "accent": {
+   "subtle": {
+    "value": "{color.plum.lighter}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The most-popular pill / badge fill."
+   },
+   "success": {
+    "value": "{color.measured.save-pill}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The mint save-pill fill."
+   }
+  },
+  "border": {
+   "field": {
+    "default": {
+     "value": "{color.measured.field-border}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The #d9d9e0 field/select border."
+    },
+    "focus": {
+     "value": "{color.measured.field-focus}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The #3898ec the select border gains on focus."
+    }
+   },
+   "subtle": {
+    "value": "{color.ink.10}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The 10% ink hairline."
+   },
+   "chip": {
+    "value": "{color.measured.chip-border}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The chip border."
+   },
+   "plan": {
+    "value": "{color.plum.25}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The featured plan card's 25% plum border."
+   }
+  },
+  "focus": {
+   "ring": {
+    "value": "{color.measured.focus}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The 1px auto focus ring (the Webflow/UA ring)."
+   }
+  },
+  "state": {
+   "hover": {
+    "wash": {
+     "value": "{color.plum.10}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The 10% plum wash a mega-nav link paints on hover."
+    }
+   }
+  },
+  "auth": {
+   "action": {
+    "primary": {
+     "value": "{color.auth.primary}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The hosted-auth primary fill."
+    }
+   },
+   "surface": {
+    "secondary": {
+     "value": "{color.auth.oauth}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The OAuth button fill."
+    }
+   },
+   "border": {
+    "field": {
+     "value": "{color.auth.field-border}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The auth field border."
+    }
+   },
+   "text": {
+    "link": {
+     "value": "{color.auth.link}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The auth link hue."
+    }
+   },
+   "focus": {
+    "ring": {
+     "value": "{color.auth.focus}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The 2px auth focus ring."
+    }
+   }
+  }
+ },
+ "dark": {
+  "surface": {
+   "band": {
+    "value": "{color.measured.dark-band}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The Cake-MCP band — the darkest painted surface."
+   },
+   "page": {
+    "value": "{color.ink.100}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The footer field."
+   }
+  },
+  "text": {
+   "primary": {
+    "value": "{color.neutral.white}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Text on the dark surfaces."
+   },
+   "muted": {
+    "value": "{color.neutral.white-50}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Muted text on dark."
+   },
+   "link": {
+    "hover": {
+     "value": "{color.plum.100}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The #7e78ff a footer link turns on hover."
+    }
+   },
+   "eyebrow": {
+    "value": "{color.lemon.100}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The lemon eyebrow on the dark band."
+   }
+  },
+  "border": {
+   "hairline": {
+    "value": "{color.measured.dark-hairline}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The 18% white hairline inside the dark band."
+   },
+   "accent": {
+    "value": "{color.plum.10}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Reserved plum-10 accent border on dark."
+   }
+  }
+ },
+ "component": {
+  "control": {
+   "height": {
+    "type": "dimension",
+    "value": "58.7969px",
+    "source": "computed height of hero-cta default (raw/components-computed.json)",
+    "description": "The hero CTA height."
+   }
+  },
+  "button": {
+   "height": {
+    "type": "dimension",
+    "value": "44.1875px",
+    "source": "computed height of nav-cta default (raw/components-computed.json)",
+    "description": "The header Get-started-free height."
+   }
+  },
+  "plan-cta": {
+   "height": {
+    "type": "dimension",
+    "value": "49px",
+    "source": "computed height of plan-cta default (raw/components-computed.json)",
+    "description": "The plan-card Start-free height."
+   }
+  },
+  "field": {
+   "height": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of country-select default (raw/components-computed.json)",
+    "description": "The region select height (the Kinde field shares it)."
+   }
+  },
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "74.1875px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The marketing header height."
+   },
+   "height-mobile": {
+    "type": "dimension",
+    "value": "68px",
+    "source": "computed height of m-header default (raw/components-computed.json)",
+    "description": "The marketing header at 390 visual width (745 layout)."
+   }
+  },
+  "plan-card": {
+   "width": {
+    "type": "dimension",
+    "value": "312px",
+    "source": "computed width of plan-card default (raw/components-computed.json)",
+    "description": "A plan card's width."
+   }
+  },
+  "login-card": {
+   "width": {
+    "type": "dimension",
+    "value": "496px",
+    "source": "computed width of login-card default (raw/components-computed.json)",
+    "description": "The Kinde auth card width."
+   }
+  },
+  "nav-dropdown": {
+   "width": {
+    "type": "dimension",
+    "value": "1008px",
+    "source": "computed width of nav-dropdown default (raw/components-computed.json)",
+    "description": "The Product mega-nav panel width."
+   }
+  },
+  "menu-button": {
+   "size": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed width of m-menu-button default (raw/components-computed.json)",
+    "description": "The hamburger hit area."
+   }
+  }
+ }
+}

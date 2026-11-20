@@ -1,0 +1,1190 @@
+{
+  "source": "stylesheet text from cdn.prod.website-files.com on https://www.synthesia.io/ plus getComputedStyle resolution, headless Chromium 1440x900 @2x, 2026-11-19",
+  "sheets": [
+    "https://cdn.prod.website-files.com/65e89895c5a4b8d764c0d710/css/synthesia-staging-eaffee4c3a254eec5b5e4.shared.e67a092b3.min.css",
+    "https://cdn.prod.website-files.com/65e89895c5a4b8d764c0d710/css/synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+  ],
+  "declared": {
+    "--w-backdrop-animation": {
+      "value": "initial",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.shared.e67a092b3.min.css"
+    },
+    "--large": {
+      "value": "before{border-width:5px",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.shared.e67a092b3.min.css"
+    },
+    "--vertical": {
+      "value": "before,.w-widget-twitter-count-shim.w--vertical:after{content:\" \"",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.shared.e67a092b3.min.css"
+    },
+    "--_semantic---text-secondary": {
+      "value": "var(--grey-700)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-medium-font-size": {
+      "value": "2.5rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-medium-line-height": {
+      "value": "2.75rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-medium-letter-spacing": {
+      "value": "-.1rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-small-font-size": {
+      "value": "2rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-small-line-height": {
+      "value": "2.375rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-small-letter-spacing": {
+      "value": "-.08rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-xsmall-font-size": {
+      "value": "1.75rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-xsmall-line-height": {
+      "value": "2.125rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-xsmall-letter-spacing": {
+      "value": "-.06125rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-tiny-font-size": {
+      "value": "1.5rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-tiny-line-height": {
+      "value": "1.75rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-tiny-letter-spacing": {
+      "value": "-.045rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---paragraph-xlarge-font-size": {
+      "value": "1.25rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---paragraph-xlarge-line-height": {
+      "value": "1.75rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---paragraph-xlarge-letter-spacing": {
+      "value": "-.0125rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---paragraph-large-font-size": {
+      "value": "1.125rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---paragraph-large-line-height": {
+      "value": "1.625rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---paragraph-large-letter-spacing": {
+      "value": "-.009rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---caption-medium-font-size": {
+      "value": ".875rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---caption-medium-line-height": {
+      "value": "1.25rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---caption-medium-letter-spacing": {
+      "value": ".035rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---caption-small-font-size": {
+      "value": ".75rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---caption-small-line-height": {
+      "value": "1.125rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---caption-small-letter-spacing": {
+      "value": ".03rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---paragraph-medium-font-size": {
+      "value": "1rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---paragraph-medium-line-height": {
+      "value": "1.5rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---paragraph-medium-letter-spacing": {
+      "value": "-.004rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--indigo-500-main": {
+      "value": "#3e57da",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-dark": {
+      "value": "#0d0f2c",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-spacing-0": {
+      "value": "0rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-spacing-xtiny": {
+      "value": ".125rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-spacing-tiny": {
+      "value": ".25rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-spacing-xsmall": {
+      "value": "1rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-spacing-xxsmall": {
+      "value": ".75rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-spacing-xxxsmall": {
+      "value": ".5rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--fluid-spacing-small": {
+      "value": "var(--base-spacing-small)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--fluid-spacing-medium": {
+      "value": "var(--base-spacing-medium)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--fluid-spacing-large": {
+      "value": "var(--base-spacing-large)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-spacing-large": {
+      "value": "2.5rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--fluid-spacing-xlarge": {
+      "value": "var(--base-spacing-xlarge)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--fluid-spacing-xxlarge": {
+      "value": "var(--base-spacing-xxlarge)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--fluid-spacing-xxxlarge": {
+      "value": "var(--base-spacing-xxxlarge)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--fluid-spacing-huge": {
+      "value": "var(--base-spacing-huge)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--fluid-spacing-xhuge": {
+      "value": "var(--base-spacing-xhuge)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--fluid-spacing-xxhuge": {
+      "value": "var(--base-spacing-xxhuge)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---bg-default": {
+      "value": "var(--base-white)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-spacing-xlarge": {
+      "value": "3rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-spacing-small": {
+      "value": "1.5rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-spacing-medium": {
+      "value": "2rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-spacing-xxxlarge": {
+      "value": "4rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-spacing-huge": {
+      "value": "5rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-spacing-xxhuge": {
+      "value": "7.5rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-inverted": {
+      "value": "var(--base-white)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-white": {
+      "value": "white",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--grey-100": {
+      "value": "#f2f4fd",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--border-radius-base": {
+      "value": ".75rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--shadow": {
+      "value": "#10182814",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--grey-200": {
+      "value": "#e6eaf4",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--transparent": {
+      "value": "transparent",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-white-opacity-20": {
+      "value": "#fff3",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--indigo-200": {
+      "value": "#e3ebff",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--indigo-700": {
+      "value": "#1f235b",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-brand": {
+      "value": "var(--indigo-500-main)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--border-radius-full": {
+      "value": "999rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--border-radius-large": {
+      "value": "1rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--border-radius-small": {
+      "value": ".625rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--border-radius-xsmall": {
+      "value": ".5rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--border-radius-xxsmall": {
+      "value": ".375rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--indigo-100": {
+      "value": "#f5f8ff",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--indigo-300": {
+      "value": "#c6d7fe",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--error-600-main": {
+      "value": "#d92d20",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---paragraph-small-font-size": {
+      "value": ".875rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---paragraph-small-line-height": {
+      "value": "1.375rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---paragraph-small-letter-spacing": {
+      "value": "-.00175rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-primary": {
+      "value": "var(--base-dark)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---label-font-size": {
+      "value": ".75rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---label-line-height": {
+      "value": "1.125rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-large-font-size": {
+      "value": "3.5rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-large-line-height": {
+      "value": "3.625rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-large-letter-spacing": {
+      "value": "-.14rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--grey-300": {
+      "value": "#d1d6e5",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--indigo-400": {
+      "value": "#8098f9",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--grey-600-main": {
+      "value": "#656c86",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--teal-200": {
+      "value": "#d6fbff",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--teal-700": {
+      "value": "#164c63",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--lime-200": {
+      "value": "#ebf6df",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--lime-700": {
+      "value": "#2b4212",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--yellow-200": {
+      "value": "#fffadb",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--yellow-700": {
+      "value": "#713b12",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--pink-200": {
+      "value": "#ffebfc",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--pink-700": {
+      "value": "#751b68",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--orange-200": {
+      "value": "#ffe7e0",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--orange-700": {
+      "value": "#771a0d",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--grey-500": {
+      "value": "#969bb5",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--grey-700": {
+      "value": "#333b52",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--indigo-600": {
+      "value": "#2c43b8",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--error-300": {
+      "value": "#fee4e2",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--error-800": {
+      "value": "#55160c",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--teal-600": {
+      "value": "#008eae",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--pink-600": {
+      "value": "#a73b98",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--lime-600": {
+      "value": "#4f7a21",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--grey-800": {
+      "value": "#0d0f2c",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---border-default": {
+      "value": "var(--grey-300)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---border-brand": {
+      "value": "var(--indigo-500-main)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---border-brand-subtle": {
+      "value": "var(--indigo-200)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--error-200": {
+      "value": "#feeceb",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--success-600-main": {
+      "value": "#15a261",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---border-subtle": {
+      "value": "var(--grey-200)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---bg-subtle": {
+      "value": "var(--grey-100)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--border-radius-xxxsmall": {
+      "value": ".25rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---bg-subtle-hover": {
+      "value": "var(--grey-200)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---bg-brand": {
+      "value": "var(--indigo-500-main)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---bg-brand-subtle": {
+      "value": "var(--indigo-200)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--error-100": {
+      "value": "#fef3f2",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--border-radius-xlarge": {
+      "value": "1.5rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--error-700": {
+      "value": "#912018",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--border-radius-huge": {
+      "value": "6.25rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-spacing-xxlarge": {
+      "value": "3.5rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--pink-300": {
+      "value": "#ffd7f9",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--pink-500-main": {
+      "value": "#e585d7",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--lime-500-main": {
+      "value": "#86cb3c",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--orange-500-main": {
+      "value": "#ff6a42",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--orange-600": {
+      "value": "#cb3711",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--yellow-500-main": {
+      "value": "#ffc814",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--yellow-600": {
+      "value": "#ca8504",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--teal-100": {
+      "value": "#ebfbff",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--success-100": {
+      "value": "#f1fdf6",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--pink-100": {
+      "value": "#fef6fb",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-x-huge-font-size": {
+      "value": "7.25rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-xhuge-line-height": {
+      "value": "7.25rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-xhuge-letter-spacing": {
+      "value": "-.3625rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-huge-font-size": {
+      "value": "5.5rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-huge-line-height": {
+      "value": "5.5rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-huge-letter-spacing": {
+      "value": "-.275rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-xlarge-font-size": {
+      "value": "4.5rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-xlarge-line-height": {
+      "value": "4.625rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---heading-xlarge-letter-spacing": {
+      "value": "-.225rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--success-700": {
+      "value": "#067647",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--warning-400": {
+      "value": "#fedf89",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--warning-700": {
+      "value": "#b54708",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--indigo-800": {
+      "value": "#0d0f2c",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--teal-300": {
+      "value": "#c8faff",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---border-caption": {
+      "value": "var(--indigo-300)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--border-radius-xxlarge": {
+      "value": "5rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-tertiary": {
+      "value": "var(--grey-600-main)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---bg-inverted": {
+      "value": "var(--base-dark)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--success-400": {
+      "value": "#a9efc5",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--success-200": {
+      "value": "#e9fcef",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--error-500": {
+      "value": "#f04438",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---border-accent-teal": {
+      "value": "var(--teal-700)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---border-accent-pink": {
+      "value": "var(--pink-700)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---border-accent-lime": {
+      "value": "var(--lime-700)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-disabled": {
+      "value": "var(--grey-500)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-placeholder": {
+      "value": "var(--grey-500)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-warning": {
+      "value": "var(--warning-600-main)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-error": {
+      "value": "var(--error-600-main)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-success": {
+      "value": "var(--success-600-main)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-accent-teal": {
+      "value": "var(--teal-700)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-accent-lime": {
+      "value": "var(--lime-700)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-accent-pink": {
+      "value": "var(--pink-700)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-accent-orange": {
+      "value": "var(--orange-700)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-accent-yellow": {
+      "value": "var(--yellow-700)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-link-primary": {
+      "value": "var(--indigo-500-main)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-link-primary-hover": {
+      "value": "var(--indigo-600)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-link-primary-active": {
+      "value": "var(--indigo-500-main)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---bg-disabled": {
+      "value": "var(--grey-300)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---bg-disabled-subtle": {
+      "value": "var(--grey-100)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---bg-brand-hover": {
+      "value": "var(--indigo-600)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---bg-warning": {
+      "value": "var(--warning-200)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---bg-error": {
+      "value": "var(--error-200)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---bg-success": {
+      "value": "var(--success-200)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---bg-accent-teal": {
+      "value": "var(--teal-200)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---bg-accent-lime": {
+      "value": "var(--lime-200)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---bg-accent-pink": {
+      "value": "var(--pink-200)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---bg-accent-orange": {
+      "value": "var(--orange-200)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---bg-accent-yellow": {
+      "value": "var(--yellow-200)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---border-strong": {
+      "value": "var(--base-dark)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---border-disabled": {
+      "value": "var(--grey-200)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---border-warning": {
+      "value": "var(--warning-600-main)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---border-error": {
+      "value": "var(--error-600-main)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---border-success": {
+      "value": "var(--success-600-main)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---border-accent-orange": {
+      "value": "var(--orange-700)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---border-accent-yellow": {
+      "value": "var(--yellow-700)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-link-secondary": {
+      "value": "var(--grey-700)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-link-secondary-hover": {
+      "value": "var(--base-dark)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-link-secondary-active": {
+      "value": "var(--grey-700)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-link-tertiary": {
+      "value": "var(--grey-600-main)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-link-tertiary-hover": {
+      "value": "var(--grey-700)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---text-link-tertiary-active": {
+      "value": "var(--grey-600-main)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-dark-opacity-40": {
+      "value": "#0d0f2c66",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-white-opacity-80": {
+      "value": "#fffc",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---bg-strong": {
+      "value": "var(--grey-200)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_typography---basier": {
+      "value": "\"Basiersquare Webfont\",sans-serif",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-dark-opacity-80": {
+      "value": "#0d0f2ccc",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-dark-opacity-60": {
+      "value": "#0d0f2c99",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-dark-opacity-20": {
+      "value": "#0d0f2c33",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-dark-opacity-10": {
+      "value": "#0d0f2c1a",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-white-opacity-60": {
+      "value": "#fff9",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-white-opacity-40": {
+      "value": "#fff6",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-white-opacity-10": {
+      "value": "#ffffff1a",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--grey-400": {
+      "value": "#c8cbda",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---bg-strong-hover": {
+      "value": "var(--grey-300)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--success-300": {
+      "value": "#dcfae6",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--success-500": {
+      "value": "#47cd89",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--success-800": {
+      "value": "#053321",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--error-400": {
+      "value": "#fda29b",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--warning-100": {
+      "value": "#fffaeb",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--warning-200": {
+      "value": "#fff5dc",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--warning-300": {
+      "value": "#fef0c7",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--warning-500": {
+      "value": "#fec84b",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--warning-600-main": {
+      "value": "#f79009",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--warning-800": {
+      "value": "#4e1d09",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--_semantic---focus-border-primary": {
+      "value": "var(--base-white)",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--yellow-100": {
+      "value": "#fefdf0",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--yellow-300": {
+      "value": "#fff4b6",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--yellow-400": {
+      "value": "#ffdb65",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--yellow-800": {
+      "value": "#42230a",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--orange-100": {
+      "value": "#fff9f5",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--orange-300": {
+      "value": "#ffcbbe",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--orange-400": {
+      "value": "#ff9478",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--orange-800": {
+      "value": "#470800",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--pink-400": {
+      "value": "#f6b2ec",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--pink-800": {
+      "value": "#26042f",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--lime-100": {
+      "value": "#fafdf7",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--lime-300": {
+      "value": "#ceeab0",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--lime-400": {
+      "value": "#acdb79",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--lime-800": {
+      "value": "#1a280b",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--teal-400": {
+      "value": "#66e3ee",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--teal-500-main": {
+      "value": "#00cee0",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--teal-800": {
+      "value": "#09202a",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--base-spacing-xhuge": {
+      "value": "6rem",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    },
+    "--basier": {
+      "value": "\"Basiersquare Webfont\",sans-serif",
+      "href": "synthesia-staging-eaffee4c3a254eec5b5e4.65e89895c5a4b8d764c0d712.3c37e8c33.opt.min.css"
+    }
+  },
+  "resolved": {
+    "--_semantic---text-secondary": "#363636",
+    "--_typography---heading-medium-font-size": "2.75rem",
+    "--_typography---heading-medium-line-height": "2.875rem",
+    "--_typography---heading-medium-letter-spacing": "-0.1375rem",
+    "--_typography---heading-small-font-size": "2.125rem",
+    "--_typography---heading-small-line-height": "2.375rem",
+    "--_typography---heading-small-letter-spacing": "-0.095625rem",
+    "--_typography---heading-xsmall-font-size": "1.625rem",
+    "--_typography---heading-xsmall-line-height": "1.875rem",
+    "--_typography---heading-xsmall-letter-spacing": "-0.065rem",
+    "--_typography---heading-tiny-font-size": "1.25rem",
+    "--_typography---heading-tiny-line-height": "1.375rem",
+    "--_typography---heading-tiny-letter-spacing": "-0.04375rem",
+    "--_typography---paragraph-xlarge-font-size": "1.25rem",
+    "--_typography---paragraph-xlarge-line-height": "1.625rem",
+    "--_typography---paragraph-xlarge-letter-spacing": "-0.025rem",
+    "--_typography---paragraph-large-font-size": "1.125rem",
+    "--_typography---paragraph-large-line-height": "1.5rem",
+    "--_typography---paragraph-large-letter-spacing": "-0.016875rem",
+    "--_typography---caption-medium-font-size": "0.875rem",
+    "--_typography---caption-medium-line-height": "1.125rem",
+    "--_typography---caption-medium-letter-spacing": "0rem",
+    "--_typography---caption-small-font-size": "0.75rem",
+    "--_typography---caption-small-line-height": "1.125rem",
+    "--_typography---caption-small-letter-spacing": "0rem",
+    "--_typography---paragraph-medium-font-size": "1rem",
+    "--_typography---paragraph-medium-line-height": "1.375rem",
+    "--_typography---paragraph-medium-letter-spacing": "-0.01rem",
+    "--indigo-500-main": "#3e57da",
+    "--base-dark": "#090b22",
+    "--base-spacing-0": "0rem",
+    "--base-spacing-xtiny": ".125rem",
+    "--base-spacing-tiny": ".25rem",
+    "--base-spacing-xsmall": "1rem",
+    "--base-spacing-xxsmall": ".75rem",
+    "--base-spacing-xxxsmall": ".5rem",
+    "--fluid-spacing-small": "1.5rem",
+    "--fluid-spacing-medium": "2rem",
+    "--fluid-spacing-large": "2.5rem",
+    "--base-spacing-large": "2.5rem",
+    "--fluid-spacing-xlarge": "3rem",
+    "--fluid-spacing-xxlarge": "3.5rem",
+    "--fluid-spacing-xxxlarge": "4rem",
+    "--fluid-spacing-huge": "5rem",
+    "--fluid-spacing-xhuge": "6rem",
+    "--fluid-spacing-xxhuge": "7.5rem",
+    "--_semantic---bg-default": "white",
+    "--base-spacing-xlarge": "3rem",
+    "--base-spacing-small": "1.5rem",
+    "--base-spacing-medium": "2rem",
+    "--base-spacing-xxxlarge": "4rem",
+    "--base-spacing-huge": "5rem",
+    "--base-spacing-xxhuge": "7.5rem",
+    "--_semantic---text-inverted": "white",
+    "--base-white": "white",
+    "--grey-100": "#f7f7f7",
+    "--border-radius-base": ".75rem",
+    "--shadow": "#10182814",
+    "--grey-200": "#e9e9eb",
+    "--transparent": "transparent",
+    "--base-white-opacity-20": "#fff3",
+    "--indigo-200": "#e3ebff",
+    "--indigo-700": "#1f235b",
+    "--_semantic---text-brand": "#3e57da",
+    "--border-radius-full": "999rem",
+    "--border-radius-large": "1rem",
+    "--border-radius-small": ".625rem",
+    "--border-radius-xsmall": ".5rem",
+    "--border-radius-xxsmall": ".375rem",
+    "--indigo-100": "#f5f8ff",
+    "--indigo-300": "#c6d7fe",
+    "--error-600-main": "#d92d20",
+    "--_typography---paragraph-small-font-size": "0.875rem",
+    "--_typography---paragraph-small-line-height": "1.25rem",
+    "--_typography---paragraph-small-letter-spacing": "-0.004375rem",
+    "--_semantic---text-primary": "#090b22",
+    "--_typography---label-font-size": "0.75rem",
+    "--_typography---label-line-height": "1.125rem",
+    "--_typography---heading-large-font-size": "3.5rem",
+    "--_typography---heading-large-line-height": "3.5rem",
+    "--_typography---heading-large-letter-spacing": "-0.1925rem",
+    "--grey-300": "#dadadd",
+    "--indigo-400": "#8098f9",
+    "--grey-600-main": "#68686a",
+    "--teal-200": "#d6fbff",
+    "--teal-700": "#164c63",
+    "--lime-200": "#ebf6df",
+    "--lime-700": "#2b4212",
+    "--yellow-200": "#fffadb",
+    "--yellow-700": "#713b12",
+    "--pink-200": "#ffebfc",
+    "--pink-700": "#751b68",
+    "--orange-200": "#ffe7e0",
+    "--orange-700": "#771a0d",
+    "--grey-500": "#98989c",
+    "--grey-700": "#363636",
+    "--indigo-600": "#2c43b8",
+    "--error-300": "#fee4e2",
+    "--error-800": "#55160c",
+    "--teal-600": "#008eae",
+    "--pink-600": "#a73b98",
+    "--lime-600": "#4f7a21",
+    "--grey-800": "#0d0f2c",
+    "--_semantic---border-default": "#dadadd",
+    "--_semantic---border-brand": "#3e57da",
+    "--_semantic---border-brand-subtle": "#e3ebff",
+    "--error-200": "#feeceb",
+    "--success-600-main": "#15a261",
+    "--_semantic---border-subtle": "#e9e9eb",
+    "--_semantic---bg-subtle": "#f7f7f7",
+    "--border-radius-xxxsmall": ".25rem",
+    "--_semantic---bg-subtle-hover": "#e9e9eb",
+    "--_semantic---bg-brand": "#3e57da",
+    "--_semantic---bg-brand-subtle": "#e3ebff",
+    "--error-100": "#fef3f2",
+    "--border-radius-xlarge": "1.5rem",
+    "--error-700": "#912018",
+    "--border-radius-huge": "6.25rem",
+    "--base-spacing-xxlarge": "3.5rem",
+    "--pink-300": "#ffd7f9",
+    "--pink-500-main": "#e585d7",
+    "--lime-500-main": "#86cb3c",
+    "--orange-500-main": "#ff6a42",
+    "--orange-600": "#cb3711",
+    "--yellow-500-main": "#ffc814",
+    "--yellow-600": "#ca8504",
+    "--teal-100": "#ebfbff",
+    "--success-100": "#f1fdf6",
+    "--pink-100": "#fef6fb",
+    "--_typography---heading-x-huge-font-size": "7.25rem",
+    "--_typography---heading-xhuge-line-height": "7.25rem",
+    "--_typography---heading-xhuge-letter-spacing": "-.3625rem",
+    "--_typography---heading-huge-font-size": "5.5rem",
+    "--_typography---heading-huge-line-height": "5.5rem",
+    "--_typography---heading-huge-letter-spacing": "-.275rem",
+    "--_typography---heading-xlarge-font-size": "4.5rem",
+    "--_typography---heading-xlarge-line-height": "4.5rem",
+    "--_typography---heading-xlarge-letter-spacing": "-0.2925rem",
+    "--success-700": "#067647",
+    "--warning-400": "#fedf89",
+    "--warning-700": "#b54708",
+    "--indigo-800": "#0d0f2c",
+    "--teal-300": "#c8faff",
+    "--_semantic---border-caption": "#dadadd",
+    "--border-radius-xxlarge": "5rem",
+    "--_semantic---text-tertiary": "#68686a",
+    "--_semantic---bg-inverted": "#090b22",
+    "--success-400": "#a9efc5",
+    "--success-200": "#e9fcef",
+    "--error-500": "#f04438",
+    "--_semantic---border-accent-teal": "#164c63",
+    "--_semantic---border-accent-pink": "#751b68",
+    "--_semantic---border-accent-lime": "#2b4212",
+    "--_semantic---text-disabled": "#98989c",
+    "--_semantic---text-placeholder": "#68686a",
+    "--_semantic---text-warning": "#f79009",
+    "--_semantic---text-error": "#d92d20",
+    "--_semantic---text-success": "#15a261",
+    "--_semantic---text-accent-teal": "#164c63",
+    "--_semantic---text-accent-lime": "#2b4212",
+    "--_semantic---text-accent-pink": "#751b68",
+    "--_semantic---text-accent-orange": "#771a0d",
+    "--_semantic---text-accent-yellow": "#713b12",
+    "--_semantic---text-link-primary": "#3e57da",
+    "--_semantic---text-link-primary-hover": "#2c43b8",
+    "--_semantic---text-link-primary-active": "#3e57da",
+    "--_semantic---bg-disabled": "#0d0f2c33",
+    "--_semantic---bg-disabled-subtle": "#f7f7f7",
+    "--_semantic---bg-brand-hover": "#2c43b8",
+    "--_semantic---bg-warning": "#fff5dc",
+    "--_semantic---bg-error": "#feeceb",
+    "--_semantic---bg-success": "#e9fcef",
+    "--_semantic---bg-accent-teal": "#d6fbff",
+    "--_semantic---bg-accent-lime": "#ebf6df",
+    "--_semantic---bg-accent-pink": "#ffebfc",
+    "--_semantic---bg-accent-orange": "#ffe7e0",
+    "--_semantic---bg-accent-yellow": "#fffadb",
+    "--_semantic---border-strong": "#090b22",
+    "--_semantic---border-disabled": "#e9e9eb",
+    "--_semantic---border-warning": "#f79009",
+    "--_semantic---border-error": "#d92d20",
+    "--_semantic---border-success": "#15a261",
+    "--_semantic---border-accent-orange": "#771a0d",
+    "--_semantic---border-accent-yellow": "#713b12",
+    "--_semantic---text-link-secondary": "#363636",
+    "--_semantic---text-link-secondary-hover": "#68686a",
+    "--_semantic---text-link-secondary-active": "#363636",
+    "--_semantic---text-link-tertiary": "#68686a",
+    "--_semantic---text-link-tertiary-hover": "#98989c",
+    "--_semantic---text-link-tertiary-active": "#68686a",
+    "--base-dark-opacity-40": "#0d0f2c66",
+    "--base-white-opacity-80": "#fffc",
+    "--_semantic---bg-strong": "#e9e9eb",
+    "--_typography---basier": "\"Basiersquare Webfont\",sans-serif",
+    "--base-dark-opacity-80": "#0d0f2ccc",
+    "--base-dark-opacity-60": "#0d0f2c99",
+    "--base-dark-opacity-20": "#0d0f2c33",
+    "--base-dark-opacity-10": "#0d0f2c1a",
+    "--base-white-opacity-60": "#fff9",
+    "--base-white-opacity-40": "#fff6",
+    "--base-white-opacity-10": "#ffffff1a",
+    "--grey-400": "#c3c3c7",
+    "--_semantic---bg-strong-hover": "#dadadd",
+    "--success-300": "#dcfae6",
+    "--success-500": "#47cd89",
+    "--success-800": "#053321",
+    "--error-400": "#fda29b",
+    "--warning-100": "#fffaeb",
+    "--warning-200": "#fff5dc",
+    "--warning-300": "#fef0c7",
+    "--warning-500": "#fec84b",
+    "--warning-600-main": "#f79009",
+    "--warning-800": "#4e1d09",
+    "--_semantic---focus-border-primary": "white",
+    "--yellow-100": "#fefdf0",
+    "--yellow-300": "#fff4b6",
+    "--yellow-400": "#ffdb65",
+    "--yellow-800": "#42230a",
+    "--orange-100": "#fff9f5",
+    "--orange-300": "#ffcbbe",
+    "--orange-400": "#ff9478",
+    "--orange-800": "#470800",
+    "--pink-400": "#f6b2ec",
+    "--pink-800": "#26042f",
+    "--lime-100": "#fafdf7",
+    "--lime-300": "#ceeab0",
+    "--lime-400": "#acdb79",
+    "--lime-800": "#1a280b",
+    "--teal-400": "#66e3ee",
+    "--teal-500-main": "#00cee0",
+    "--teal-800": "#09202a",
+    "--base-spacing-xhuge": "6rem",
+    "--basier": "\"Basiersquare Webfont\",sans-serif"
+  },
+  "colorScheme": "normal",
+  "reducedMotion": false
+}

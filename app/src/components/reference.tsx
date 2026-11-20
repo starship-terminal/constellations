@@ -3,7 +3,7 @@ import Link from "next/link";
 import * as Dialog from "@radix-ui/react-dialog";
 import referenceStyles from "./reference.module.css";
 import styles from "@/design/reference-values.module.css";
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
   Bookmark,
@@ -253,6 +253,19 @@ export function SaveReference({
     </>
   );
 }
+/** A token name that wraps after its dots and dashes, so a narrow column
+ * never splits a word ("text.primar y"). */
+export function tokenNameParts(name: string) {
+  return name.split(/(?<=[.\-_/])/);
+}
+export function breakableName(name: string) {
+  return tokenNameParts(name).map((part, i) => (
+    <Fragment key={i}>
+      {i > 0 && <wbr />}
+      {part}
+    </Fragment>
+  ));
+}
 export function ReferenceValues({
   title,
   values,
@@ -309,7 +322,7 @@ export function ReferenceValues({
                       : "var(--surface-raised)",
                 }}
               />
-              <strong>{v.name}</strong>
+              <strong>{breakableName(v.name)}</strong>
               <code>{v.value}</code>
               {v.evidence && (
                 <span className={styles.evidence}>{v.evidence}</span>
@@ -321,7 +334,7 @@ export function ReferenceValues({
               key={`${v.name}-${i}`}
             >
               <div>
-                <strong>{v.name}</strong>
+                <strong>{breakableName(v.name)}</strong>
                 {v.role && <small>{v.role}</small>}
                 {v.evidence && (
                   <span className={styles.evidence}>{v.evidence}</span>

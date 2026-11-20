@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rarible style guide</title>
+<style>
+  :root {
+    --page: #0a0a0a;
+    --surface: #09090b;
+    --text: #ffffff;
+    --muted: #a1a1aa;
+    --accent: #faff00;
+    --on-accent: #18181b;
+    --border: #27272a;
+    --danger: #ff2c86;
+    --success: #a1f900;
+    --font: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --display: Tomorrow, ui-sans-serif, system-ui, sans-serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--text); font: 14px/20px var(--font); }
+  main { max-width: 820px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-family: var(--display); font-weight: 400; font-size: 40px; line-height: 48px; margin: 0 0 8px; }
+  h2 { font-family: var(--display); font-weight: 400; font-size: 18px; margin: 32px 0 12px; }
+  p { color: rgba(255,255,255,0.8); }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .swatch { width: 120px; }
+  .chip { height: 48px; border-radius: 8px; border: 1px solid var(--border); }
+  .label { color: var(--muted); font-size: 12px; line-height: 16px; margin-top: 4px; }
+  button.login, a.trade, button.quiet {
+    font: 500 14px/20px var(--font);
+    height: 36px;
+    border-radius: 9999px;
+    padding: 8px 12px;
+  }
+  button.login { background: var(--accent); color: var(--on-accent); border: 1px solid var(--on-accent); }
+  a.trade { background: #fff; color: #000; border-radius: 8px; padding: 8px 20px; text-decoration: none; display: inline-flex; align-items: center; }
+  button.quiet { background: rgba(255,255,255,0.02); color: #fff; border: 1px solid rgba(255,255,255,0.1); }
+  .card { width: 188px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 8px; }
+  .badge { background: var(--accent); color: #000; font-size: 11px; font-weight: 700; padding: 2px 6px; border-radius: 2px; }
+  .field { height: 36px; width: 280px; border: 1px solid var(--border); border-radius: 6px; display: flex; align-items: center; padding: 0 8px; color: rgba(255,255,255,0.4); }
+  .note { color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Rarible</h1>
+  <p>Public signed-out readings, 2026-11-19. Dark is the live theme. The system mono stands in for Geist Mono. Tomorrow is used when the browser has it.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><div class="chip" style="background:#0a0a0a"></div><div class="label">page #0a0a0a</div></div>
+    <div class="swatch"><div class="chip" style="background:#09090b"></div><div class="label">surface #09090b</div></div>
+    <div class="swatch"><div class="chip" style="background:#faff00"></div><div class="label">brand #faff00</div></div>
+    <div class="swatch"><div class="chip" style="background:#27272a"></div><div class="label">border #27272a</div></div>
+    <div class="swatch"><div class="chip" style="background:#a1f900"></div><div class="label">success #a1f900</div></div>
+    <div class="swatch"><div class="chip" style="background:#ff2c86"></div><div class="label">danger #ff2c86</div></div>
+  </div>
+  <h2>Type</h2>
+  <p style="font-family:var(--display);font-size:40px;line-height:48px;color:#fff;margin:0">Terms title, 40px</p>
+  <p style="font-family:var(--display);font-size:28px;line-height:36px;color:#fff">Hero title, 28px</p>
+  <p>Body, Geist Mono 14px / 20px.</p>
+  <p class="note">Caption, 12px / 16px. Floor Price, OG notice.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="login" type="button">Login</button>
+    <a class="trade" href="#trade">Trade Collection</a>
+    <button class="quiet" type="button">Filters</button>
+    <span class="badge">NEW</span>
+  </div>
+  <div class="field" style="margin-top:12px">Search collections and items</div>
+  <h2>Card</h2>
+  <div class="card">
+    <div style="height:140px;background:#27272a;border-radius:8px"></div>
+    <button class="login" type="button" style="margin-top:8px">Buy Now</button>
+    <div style="margin-top:8px">Yoodles Oven</div>
+    <div class="note">Last: —</div>
+  </div>
+  <p class="note">Buy Now was measured and not pressed. Light tokens are the :root declaration, not a live theme.</p>
+</main>
+</body>
+</html>

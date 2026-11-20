@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glorify style guide</title>
+<meta name="description" content="Glorify design tokens and the public marketing and app surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-display: "PolySans Trial Median", "PolySans Trial Median Placeholder", sans-serif;
+  --font-family-body: Inter, "Inter Placeholder", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-size-display: 64px;
+  --font-size-hero: 64px;
+  --font-size-h2: 24px;
+  --font-size-button: 16px;
+  --font-size-planName: 32px;
+  --font-size-body: 14px;
+  --font-size-eyebrow: 12px;
+  --font-size-mobileHero: 36px;
+  --font-lineHeight-hero: 1.2;
+  --font-lineHeight-body: 1.0;
+  --font-lineHeight-eyebrow: 1.0;
+  --font-monospace: "Noto Color Emoji",Menlo,Monaco,Consolas,"Courier New",monospace;
+  --font-sans-serif: "Noto Color Emoji",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  --font-serif: "Noto Color Emoji",Georgia,"Times New Roman",Times,serif;
+  --agent-bubble-bg: #f1f3f5;
+  --chat-bg-color: #ffffff;
+  --chat-transparent-bg-color: rgba(255, 255, 255, 0);
+  --client-bubble-bg: #d4f3fc;
+  --client-transparent-bubble-bg: rgba(212, 243, 252, 0.08);
+  --framer-will-change-override: none;
+  --token-04ac5918-97bb-4b2b-8b5d-02aac8d3803d: #ededed;
+  --token-0bf72244-e448-4725-ab25-338f97c28655: #7cd7c6;
+  --token-0e35e6f8-6b64-4e2d-b3e1-25708def14ef: #fe9872;
+  --token-10556817-ac0a-44f7-ae26-ccb76c9fd09b: #eefaf8;
+  --token-1a71ae8b-0ebf-47f2-9b16-91692b35aeb7: #fff9f3;
+  --token-1f32b964-b083-4151-a439-60e0ebb68cac: #b3b3b3;
+  --token-1fe56cfa-d2fd-419f-acc6-c63b3e1e5afa: #8c8c87;
+  --token-2a937ac2-f205-4e9f-8f26-09e188da2517: #f4f4f4;
+  --token-2ff71b15-79ff-4961-a5d5-3c255280b832: #51cab4;
+  --token-3018db01-3e23-4a46-af28-646b230f2035: #d9d4ce;
+  --token-31149946-8963-4e9c-bdaa-02dc75a04e69: #f6eadf;
+  --token-3ed5b4bf-5ff8-4523-a3ac-20798aba2bbc: #ffedf1;
+  --token-437b14b7-0164-40e6-a64c-c9076019a119: #434242;
+  --token-472f6ab9-ec2c-4864-b6a2-2d2a311fc7ff: #cccccc;
+  --token-4afff1e1-ad66-4449-a126-34071669c871: #111111;
+  --token-4fd202e1-7827-496c-b554-00289bbf9780: #c2ede4;
+  --token-521d7dea-ae19-4cea-a86f-413df69ece62: #a7a5a5;
+  --token-54cafe5b-e692-45e1-b4ac-2d7cde74c178: #ffcebd;
+  --token-5ac40b79-cc5c-4030-8e05-057275d0ffd2: #b9b7b7;
+  --token-5bffa828-bc0f-4d1b-abe0-51155e3a82a6: #030303;
+  --token-5da2a986-5b77-4490-888b-7fb3ea832ddc: #c7cffa;
+  --token-5dd49439-e215-4b63-80c0-703cbaec2c75: #646363;
+  --token-61ee874e-76d3-48bd-99a3-63db95dbfcec: #fd7543;
+  --token-623641a3-48b3-474a-86ae-2862d2044576: #fe7394;
+  --token-63aa41ff-347f-45e4-b29c-546aca5609e8: rgba(236, 239, 253, 0.5);
+  --token-63f7635c-4044-4753-b791-268bd3d1a479: #455eed;
+  --token-6cc30042-9c6b-4358-af65-6289c7ec229d: #f0f0f0;
+  --token-6ee8de94-3479-49f3-9e17-b476618c2a8d: #7688ea;
+  --token-6fe48ea6-97a5-40f2-8b4d-17d3a6bb2684: #646363;
+  --token-71ff440c-ed97-42a2-b452-db1bf5b85fb7: #212121;
+  --token-7212b58d-6f97-4cee-a6e8-062823c03725: #29388e;
+  --token-72222110-6151-4c46-b86b-6c9b034c5d6e: #374bbe;
+  --token-7788b5df-cf66-42e7-bafa-afaea26b1ff0: #1e1f26;
+  --token-7d224856-e282-4e11-9723-60d88a96a61b: #cfcfcf;
+  --token-7e7c27c9-d486-4cbf-9259-1f39132a87d1: #fac3ed;
+  --token-81579d57-17fe-4831-a16f-bac7758d2ee8: #ffffff;
+  --token-826e7cbf-b01d-4eb1-8e1e-98b360fb36bc: #f6f6f6;
+  --token-89a22b54-e29f-49de-91d6-ddc01166c272: #ffbdce;
+  --token-8ce0d4bb-84b2-4aa8-b7fa-cf8d27b8e0c7: #737373;
+  --token-9028fc19-1549-4d96-91ca-93572ae1ac06: #ffffff;
+  --token-929f5058-8d20-42e0-9d98-fe0dafd54d43: #fff2ec;
+  --token-94bddd81-d247-49ef-8a6e-55e00abc5cb8: #fedb5b;
+  --token-9533b59c-1b56-4be7-93d3-f9446c1e87c6: #fce3f8;
+  --token-992f6de2-ff37-4283-999a-88b68d4bc625: #feeeb3;
+  --token-9c080050-c197-4d22-857c-662351924483: #868484;
+  --token-a392612b-78bb-4d6b-bbd0-20d6b8f5a47a: #eceffd;
+  --token-a4c9cff4-c09a-4573-ac8b-b10161e09446: #323232;
+  --token-ab954693-ff86-4dd0-8db2-dea632f7a00e: #484848;
+  --token-afaadb72-5ed7-4334-8805-75cb91a18f24: #ffffff;
+  --token-b02d7c86-46c1-4ae6-a226-0784aba6273e: #fefbea;
+  --token-b2fe3658-3bde-4027-8a2d-5c69cb4736d3: #fd4370;
+  --token-c19f9397-63ce-4c09-9404-3632ec0d3f10: #f7afe7;
+  --token-d37ad7dc-b85f-473e-a78c-5bc709346232: #141414;
+  --token-d5502ce3-c92d-49ca-ba19-934ac1cb957d: #ffffff;
+  --token-d68a1254-a59d-4e05-9b1e-5744db8cc3a4: #222222;
+  --token-dc395c47-03b0-47c8-9692-d39afdfb3d56: #e5e0db;
+  --token-e1016172-3722-4f83-8f01-893dfcc06242: #fff6fe;
+  --token-e4a486da-0f3e-4f0f-a156-7359e80ab5ee: #111110;
+  --token-ec6de9b1-c004-4e71-9eea-00ef53e6bc7a: #111111;
+  --token-ee0eb77a-c5ba-44dd-80da-78c21576ce6b: #262626;
+  --token-f308df2b-2e59-4e93-8e97-df348be19991: #a7a5a5;
+  --token-f52c85c9-4b46-4081-9ae2-43cd4051929f: #403d3a;
+  --token-f89db159-2d55-481a-856f-4b4f2bdd6086: #c0bcb8;
+  --token-fa312d7f-9ffe-4913-8337-46686bcf3920: #ffcf25;
+  --radius-control: 8px;
+  --radius-button: 8px;
+  --radius-field: 2px;
+  --radius-app-button: 8px;
+  --radius-card: 0px;
+  --radius-dialog: 16px;
+  --radius-cta: 8px;
+  --radius-inspector: 12px;
+  --motion-control: all 0.3s linear;
+  --component-topbar-height: 64px;
+  --component-nav-link-height: 30px;
+  --component-nav-cta-height: 42px;
+  --component-hero-cta-height: 46px;
+  --component-hero-cta-width: 119.41px;
+  --component-hero-width: 838px;
+  --component-billing-tab-height: 20px;
+  --component-plan-card-width: 230px;
+  --component-plan-card-height: 149.41px;
+  --component-plan-cta-height: 39.2px;
+  --component-tpl-card-width: 193.93px;
+  --component-tpl-card-height: 102.31px;
+  --component-learn-card-width: 384px;
+  --component-mobile-topbar-height: 64px;
+  --component-mobile-cta-height: 46px;
+  --component-app-card-width: 352px;
+  --component-app-card-height: 384px;
+  --component-app-field-height: 30px;
+  --component-app-field-width: 336px;
+  --component-app-submit-height: 32px;
+  --component-app-header-height: 56px;
+  --component-app-tool-btn: 48px;
+  --component-app-inspector-width: 280px;
+  --component-app-inspector-height: 824px;
+  --component-app-zoom-height: 32px;
+  --component-app-craft-cta-height: 40px;
+  --text-ink: var(--token-4afff1e1-ad66-4449-a126-34071669c871);
+  --text-body: var(--token-4afff1e1-ad66-4449-a126-34071669c871);
+  --text-muted: var(--token-8ce0d4bb-84b2-4aa8-b7fa-cf8d27b8e0c7);
+  --text-link: var(--token-f89db159-2d55-481a-856f-4b4f2bdd6086);
+  --action-cta-fill: var(--token-63f7635c-4044-4753-b791-268bd3d1a479);
+  --action-cta-ink: var(--token-1a71ae8b-0ebf-47f2-9b16-91692b35aeb7);
+  --action-hero-cta-fill: rgba(0, 0, 0, 0);
+  --action-hero-cta-ink: var(--token-81579d57-17fe-4831-a16f-bac7758d2ee8);
+  --action-hero-cta-border: var(--token-81579d57-17fe-4831-a16f-bac7758d2ee8);
+  --surface-card: var(--token-81579d57-17fe-4831-a16f-bac7758d2ee8);
+  --border-focus-ring: #000000;
+  --background-page: var(--token-81579d57-17fe-4831-a16f-bac7758d2ee8);
+  --sg-sans: var(--font-family-body, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif);
+  --sg-serif: var(--font-family-display, var(--font-family-body, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif));
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+.app {
+  --active-danger: #e54d4d;
+  --active-interactive: #475beb;
+  --active-primary: #475beb;
+  --active-secondary: #ffe0c2;
+  --active-success: #1ecd8e;
+  --active-tertiary: linear-gradient(180deg,#fff3e8,#ffe0b8);
+  --active-ui-default: #eceffd;
+  --active-ui-dark: #182654;
+  --alternative-100: conic-gradient(from 180.14deg at 50.11% 54.8%,#7688ea 0deg,#7cd7c6 228.84deg,#7688ea 360deg);
+  --alternative-200: linear-gradient(180.4deg,#7688ea 9.87%,#7cd7c6 66.94%);
+  --alternative-300: conic-gradient(from 180.22deg at 50.19% 50.19%,#f7afe7 0deg,#fd7543 131.83deg,#ffcf25 231.99deg,#f7afe7 360deg);
+  --alternative-400: linear-gradient(0deg,#f7afe7 2.83%,#fd7543 49.67%,#ffcf25);
+  --alternative-500: conic-gradient(from 180deg at 50% 50%,#7688ea 0deg,#fbd7f3 228.84deg,#7688ea 360deg);
+  --alternative-600: linear-gradient(180deg,#7688ea,#fbd7f3 63.57%);
+  --alternative-700: conic-gradient(from 180deg at 50% 50%,#51cab4 0deg,#febaa1 133.88deg,#fbd7f3 228.84deg,#51cab4 360deg);
+  --alternative-800: linear-gradient(180deg,#51cab4 -2.76%,#febaa1 48.63%,#fbd7f3 92.39%);
+  --animate-ping: ping 1s cubic-bezier(0, 0, .2, 1) infinite;
+  --animate-spin: spin 1s linear infinite;
+  --aspect-video: 16 / 9;
+  --assets-default: 300px;
+  --assets-and-toolbar-default: 358px;
+  --assets-and-toolbar-and-inspector: 614px;
+  --assets-and-toolbar-and-ruller: 378px;
+  --blur-lg: 16px;
+  --blur-sm: 8px;
+  --breakpoint-md: 820px;
+  --color-aqua-default: #63c8d9;
+  --color-aqua-dark: #4aafc0;
+  --color-black: #000000;
+  --color-brand-default: #ef567c;
+  --color-brand-dark: #ff5580;
+  --color-brand-text: #ffffff;
+  --color-canvas: #fcfcfc;
+  --color-danger-default: #dd0b3f;
+  --color-danger-dark: #d41142;
+  --color-frill-default: #ef567c;
+  --color-frill-dark: #ff5580;
+  --color-frill-light: #ff5a83;
+  --color-highlight-default: #1675f0;
+  --color-highlight-dark: #0766e1;
+  --color-highlight-light: #2a9efb;
+  --color-info-default: #2196f3;
+  --color-info-dark: #087dda;
+  --color-orange-default: #ff922d;
+  --color-orange-dark: #e67914;
+  --color-positive-default: #2eb67d;
+  --color-positive-dark: #159d64;
+  --color-purple: #865bff;
+  --color-selected: #6fa5fd;
+  --color-shade-0: #ffffff;
+  --color-shade-10: #eeeef1;
+  --color-shade-100: #1c1c1c;
+  --color-shade-20: #dedee7;
+  --color-shade-30: #aeaeb8;
+  --color-shade-40: #a3a3a9;
+  --color-shade-5: #f9f9fb;
+  --color-text-default: #0d0d0e;
+  --color-text-invert: #ffffff;
+  --color-text-low: #8f9399;
+  --color-text-medium: #64676b;
+  --color-warn-default: #f48967;
+  --color-warn-dark: #ff8e75;
+  --color-white: #ffffff;
+  --color-yellow-default: #fab347;
+  --color-yellow-dark: #e19a2e;
+  --cta-300: #ee6e3f;
+  --dark-100: #212121;
+  --dark-200: #323232;
+  --dark-300: #434242;
+  --dark-400: #646363;
+  --dark-500: #868484;
+  --dark-600: #a7a5a5;
+  --dark-700: #ffffff;
+  --dark-800: #262626;
+  --default-filled-slider-bg-color: #455eed;
+  --default-font-family: "Frill Inter", Inter, system-ui, sans-serif;
+  --default-mono-font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --default-slider-bg-color: #c7cffa;
+  --default-transition-duration: 150ms;
+  --default-transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --disabled-01-default: #f6f6f6;
+  --disabled-01-dark: #f6f6f6;
+  --disabled-02-default: #e5e5e5;
+  --disabled-02-dark: #18244a;
+  --disabled-03-default: #949494;
+  --disabled-03-dark: #f6f6f6;
+  --disabled-04: #626262;
+  --ease-in-out: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --ease-out-default: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --ease-out-expo: cubic-bezier(0.69, 0.12, 0.1, 0.98);
+  --error-100: #fcdddd;
+  --error-200: #f59a9a;
+  --error-300: #ee5757;
+  --error-400: #be4646;
+  --error-500: #8f3434;
+  --fade-gradient: linear-gradient(180deg,rgba(0,0,0,0) 50%,#000);
+  --field-01-default: #ffffff;
+  --field-01-dark: #f6f6f6;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans: "Frill Inter", Inter, system-ui, sans-serif;
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --frill-focus-ring-color: #1675f0;
+  --glori-gradient: linear-gradient(180deg,#ff4141,#8f00ff);
+  --green-100: #eefaf8;
+  --green-200: #c2ede4;
+  --green-300: #7cd7c6;
+  --green-400: #51cab4;
+  --header-default: 56px;
+  --header-translate: 0px;
+  --height-header: 0px;
+  --hero: 244px;
+  --hover-danger: #e85555;
+  --hover-primary: #5165f3;
+  --hover-secondary: linear-gradient(180deg,#fef7eb,#fee3bd);
+  --hover-success: #2ed096;
+  --hover-ui-default: #eceffd;
+  --hover-ui-dark: #182654;
+  --icon-01: #3c3c3c;
+  --icon-02: #646363;
+  --icon-03-default: #b9b7b7;
+  --icon-03-dark: #646363;
+  --icon-04: #ffffff;
+  --icon-danger-01: #ea5d5d;
+  --icon-danger-02: #ecc2c2;
+  --icon-danger-03: #ffeaea;
+  --icon-primary-01: #374bbe;
+  --icon-primary-02: #c7cffa;
+  --icon-primary-03: #f2f4ff;
+  --icon-secondary-01: #c7a064;
+  --icon-slide-btn: #626262;
+  --icon-success-01: #38d29a;
+  --icon-success-02: #a4f9da;
+  --icon-success-03: #e3fff5;
+  --info-100: #ccf0ff;
+  --info-200: #66d1ff;
+  --info-300: #00b2ff;
+  --info-400: #006b99;
+  --inspector: 280px;
+  --interactive-01-default: #455eed;
+  --interactive-01-dark: #243568;
+  --interactive-02: linear-gradient(180deg,#fef7ee,#fae5c6);
+  --interactive-03: #ea5d5d;
+  --interactive-04: #38d29a;
+  --leading-normal: 1.5;
+  --leading-snug: 1.375;
+  --leading-tight: 1.25;
+  --light-100: #ffffff;
+  --light-200: #f6f6f6;
+  --light-300: #e0e0e0;
+  --light-400: #b9b7b7;
+  --light-500: #a7a5a5;
+  --light-600: #646363;
+  --light-700: #111111;
+  --neutral-dark-100: #111111;
+  --neutral-dark-200: #2d2d2d;
+  --neutral-dark-300: #484848;
+  --neutral-dark-400: #737373;
+  --neutral-dark-500: #b3b3b3;
+  --neutral-dark-600: #cccccc;
+  --neutral-dark-700: #f0f0f0;
+  --neutral-dark-800: #ffffff;
+  --neutral-light-100: #fff9f3;
+  --neutral-light-200: #f6eadf;
+  --neutral-light-300: #e5e0db;
+  --neutral-light-400: #d9d4ce;
+  --neutral-light-500: #c0bcb8;
+  --neutral-light-600: #8c8986;
+  --neutral-light-700: #403d3a;
+  --neutral-light-800: #111110;
+  --orange-100: #fff2ec;
+  --orange-200: #ffcebd;
+  --orange-300: #fe9872;
+  --orange-400: #fd7543;
+  --pink-100: #fff6fe;
+  --pink-200: #fce3f8;
+  --pink-300: #fac3ed;
+  --pink-400: #f7afe7;
+  --primary-100: #eceffd;
+  --primary-200: #c7cffa;
+  --primary-300: #455eed;
+  --primary-400: #374bbe;
+  --primary-500: #29388e;
+  --primary-600: #29388e;
+  --primary-700: #272b42;
+  --radius-default: 5px;
+  --radius-lg: 8px;
+  --radius-md: 6px;
+  --radius-sm: 3px;
+  --radius-xl: 10px;
+  --red-100: #ffedf1;
+  --red-200: #ffbdce;
+  --red-300: #fe7394;
+  --red-400: #fd4370;
+  --selected-ui-default: #eceffd;
+  --selected-ui-dark: #272b42;
+  --shadow-highlight: rgb(22, 117, 240) 0px 0px 0px 1px inset;
+  --sidebar: 244px;
+  --spacing-default: 4px;
+  --spacing-announcement-sidebar: 240px;
+  --spacing-container-default: 780px;
+  --spacing-container-lg: 980px;
+  --spacing-container-md: 860px;
+  --spacing-header: 0px;
+  --spacing-roadmap-column: 380px;
+  --spacing-sidebar: 300px;
+  --success-100: #d4eee5;
+  --success-200: #7ecbb0;
+  --success-300: #28a87b;
+  --success-400: #208662;
+  --success-500: #18654a;
+  --text-01-default: #111111;
+  --text-01-dark: #eceffd;
+  --text-02-default: #111111;
+  --text-02-dark: #646363;
+  --text-03: #a7a5a5;
+  --text-04: #ffffff;
+  --text-0-5: 8px;
+  --text-0-625: 10px;
+  --text-0-6875: 11px;
+  --text-0-75: 12px;
+  --text-0-8125: 13px;
+  --text-0-875: 14px;
+  --text-0-9375: 15px;
+  --text-1: 16px;
+  --text-1-125: 18px;
+  --text-1-25: 20px;
+  --text-1-375: 22px;
+  --text-1-5: 24px;
+  --text-1-75: 28px;
+  --text-2: 32px;
+  --text-2-125: 34px;
+  --text-2-25: 36px;
+  --text-2-5: 40px;
+  --text-2-75: 44px;
+  --text-danger: #ea5d5d;
+  --text-primary-01: #455eed;
+  --text-primary-02: #b3bafb;
+  --text-secondary-01: #c7a064;
+  --text-ink: var(--color-brand-text);
+  --text-body: var(--light-700);
+  --text-muted: var(--color-brand-text);
+  --text-link: var(--color-brand-text);
+  --theme-aqua-default: #63c8d9;
+  --theme-aqua-dark: #4aafc0;
+  --theme-brand-default: #ef567c;
+  --theme-brand-dark: #ff5580;
+  --theme-brand-text: #ffffff;
+  --theme-canvas: #fcfcfc;
+  --theme-danger-default: #dd0b3f;
+  --theme-danger-dark: #d41142;
+  --theme-frill-default: #ef567c;
+  --theme-frill-dark: #ff5580;
+  --theme-frill-light: #ff5a83;
+  --theme-highlight-default: #1675f0;
+  --theme-highlight-dark: #0766e1;
+  --theme-highlight-light: #2a9efb;
+  --theme-info-default: #2196f3;
+  --theme-info-dark: #087dda;
+  --theme-orange-default: #ff922d;
+  --theme-orange-dark: #e67914;
+  --theme-positive-default: #2eb67d;
+  --theme-positive-dark: #159d64;
+  --theme-purple: #865bff;
+  --theme-selected: #6fa5fd;
+  --theme-shade-0: #ffffff;
+  --theme-shade-10: #eeeef1;
+  --theme-shade-100: #1c1c1c;
+  --theme-shade-20: #dedee7;
+  --theme-shade-30: #aeaeb8;
+  --theme-shade-40: #a3a3a9;
+  --theme-shade-5: #f9f9fb;
+  --theme-text-default: #0d0d0e;
+  --theme-text-invert: #ffffff;
+  --theme-text-low: #8f9399;
+  --theme-text-medium: #64676b;
+  --theme-warn-default: #f48967;
+  --theme-warn-dark: #ff8e75;
+  --theme-yellow-default: #fab347;
+  --theme-yellow-dark: #e19a2e;
+  --thumb-outer-color: rgba(0, 0, 0, 0);
+  --toolbar-default: 84px;
+  --toolbar-and-inspector: 314px;
+  --toolbar-and-ruller: 78px;
+  --tracking-tight: -.025em;
+  --transparent: rgba(0, 0, 0, 0);
+  --ui-01-default: #ffffff;
+  --ui-01-dark: #111111;
+  --ui-02-default: #ffffff;
+  --ui-02-dark: #212121;
+  --ui-03: #f6f6f6;
+  --ui-04-default: #e0e0e0;
+  --ui-04-dark: #646363;
+  --ui-05-default: #b9b7b7;
+  --ui-05-dark: #283e7f;
+  --ui-06: linear-gradient(90deg,#5666f7,#56d1f7);
+  --ui-07: #6775f8;
+  --ui-background: #ffffff;
+  --ui-overlay-01: rgba(0, 0, 0, 0.75);
+  --ui-overlay-02: rgba(0, 0, 0, 0.4);
+  --ui-overlay-03: rgba(255, 255, 255, 0.75);
+  --ui-overlay-04: rgba(0, 0, 0, 0.1);
+  --ui-overlay-05: #000000;
+  --visited-link: #7f8bff;
+  --warning-100: #fdf4d3;
+  --warning-200: #fade7c;
+  --warning-300: #f7c825;
+  --warning-400: #947816;
+  --yellow-100: #fefbea;
+  --yellow-200: #feeeb3;
+  --yellow-300: #fedb5b;
+  --yellow-400: #ffcf25;
+  --z-index-1: 1;
+  --z-index-2: 2;
+  --z-index-dnd: 1000;
+  --z-index-drawer: 100;
+  --z-index-editor: 200;
+  --z-index-floating-button: 5;
+  --z-index-header: 20;
+  --z-index-mobile-header: 51;
+  --z-index-modal: 100;
+  --z-index-overlay: 100;
+  --z-index-popover: 150;
+  --z-index-promo: 25;
+  --z-index-sidebar-default: 50;
+  --z-index-sidebar-shadow: 49;
+  --z-index-toasts: 200;
+  --z-index-tooltip: 200;
+  --surface-card: var(--dark-100);
+  --surface-field-bg: var(--dark-200);
+  --surface-chrome-fill: var(--dark-100);
+  --surface-inspector-fill: var(--dark-100);
+  --surface-dialog-fill: var(--dark-100);
+  --border-field-border: var(--thumb-outer-color);
+  --border-field-focus: var(--thumb-outer-color);
+  --border-style-selected-border: #b53d11;
+  --action-oauth-fill: var(--thumb-outer-color);
+  --action-oauth-ink: #6a7ef1;
+  --action-primary-fill: #6a7ef1;
+  --action-primary-fill-disabled: var(--dark-500);
+  --action-primary-ink: var(--color-brand-text);
+  --action-tool-fill-active: var(--thumb-outer-color);
+  --action-signup-fill: var(--default-filled-slider-bg-color);
+  --action-signup-ink: var(--color-brand-text);
+  --action-craft-cta-fill: var(--default-filled-slider-bg-color);
+  --action-craft-cta-disabled: var(--default-filled-slider-bg-color);
+  --background-page: var(--token-71ff440c-ed97-42a2-b452-db1bf5b85fb7);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-ink, #000); background: var(--background-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 38px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 600 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-focus-ring, #e2e2e2); }
+.lead { max-width: 62ch; color: var(--text-ink, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--text-ink, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 600 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-ink, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+/* A non-light strip's values only read on its own field. */
+.pal.app { background: var(--background-page, #17181c); color: var(--text-ink, #fff); padding: 12px; border-radius: 10px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(127,127,127,.35); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-ink, #000); opacity: .65; }
+.pal.app .vl { color: var(--text-ink, #fff); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid rgba(127,127,127,.35); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-ink, #000); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid rgba(127,127,127,.35); overflow: hidden; background: var(--surface-card, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 72px); padding: 0 12px 0 22px; font-size: 15px; font-weight: 500; color: var(--text-ink, #000); background: var(--surface-card, #fff); }
+.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-nav-cta-height, 44px); padding: 0 18px; font-size: var(--font-size-body, 16px); font-weight: 600; border-radius: var(--radius-button, 10px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-cta-fill, #000); color: var(--action-cta-ink, #fff); }
+.btn.hero { background: var(--action-hero-cta-fill, #000); color: var(--action-hero-cta-ink, #fff); border-radius: var(--radius-pill, 999px); height: var(--component-hero-cta-height, 56px); padding: 0 30px; font-size: 18px; }
+.app .btn.primary { background: var(--action-primary-fill, #3b63f3); color: var(--action-primary-ink, #fff); border-radius: var(--radius-app-button, 8px); }
+.app .btn.disabled { background: var(--action-primary-fill-disabled, #333); color: var(--action-primary-ink, #fff); border-radius: var(--radius-app-button, 8px); }
+.btn.ghost { border-color: rgba(127,127,127,.4); color: var(--text-ink, #000); }
+.app .btn.ghost { color: var(--text-ink, #fff); }
+.btn.small { height: var(--component-nav-cta-height, 40px); font-size: 14px; }
+.hero { color: var(--text-ink, #000); padding: 64px 40px; font: var(--font-weight-bold, 700) var(--font-size-hero, 56px)/var(--font-line-height-hero, 1.05) var(--sg-serif); letter-spacing: -0.02em; text-align: center; background: var(--background-page, #fff); }
+.hero small { display: block; font: 500 var(--font-size-body, 16px)/1.4 var(--sg-sans); letter-spacing: .02em; color: var(--text-body, #333); opacity: .85; margin: 0 0 18px; }
+.tag { display: inline-block; padding: 4px 14px; border-radius: var(--radius-pill, 999px); background: var(--surface-card, #fff); border: 1px solid rgba(127,127,127,.35); font-size: var(--font-size-eyebrow, 12px); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted, #666); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid rgba(127,127,127,.3); padding: 24px; font-size: 13px; background: var(--surface-card, #fff); border-radius: var(--radius-card, 20px); }
+.tile .img { height: 140px; background: var(--background-page, #f4f4f6); border: 1px solid rgba(127,127,127,.25); border-radius: var(--radius-card, 20px); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted, #777); }
+.tile b { display: block; font: 400 var(--font-size-plan-name, 28px)/1.1 var(--sg-serif); margin-bottom: 4px; color: var(--text-ink, #000); }
+.tile .sub { opacity: .65; font-size: 12px; color: var(--text-muted, #555); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid rgba(127,127,127,.35); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid rgba(127,127,127,.3); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--text-ink, #000); opacity: .65; font-family: var(--sg-mono); }
+.app .tr .tv { color: var(--text-muted, #aaa); }
+/* the dark app mock */
+.mock.app { background: var(--background-page, #17181c); color: var(--text-ink, #fff); }
+.field { width: var(--component-app-field-width, 320px); max-width: 100%; height: var(--component-app-field-height, 44px); border: 1px solid var(--border-field-border, rgba(255,255,255,.18)); border-radius: var(--radius-field, 8px); background: var(--surface-field-bg, #22242a); color: var(--text-muted, #999); padding: 0 14px; font-size: 15px; }
+.edchrome { display: flex; align-items: center; gap: 10px; height: var(--component-app-header-height, 56px); padding: 0 16px; background: var(--surface-chrome-fill, #1d1f24); color: var(--text-ink, #fff); font-size: 14px; }
+.edchrome .file { font-weight: 600; }
+.edchrome .sp { flex: 1; }
+.edrail { display: inline-flex; flex-direction: column; gap: 6px; padding: 10px; background: var(--surface-chrome-fill, #1d1f24); border-radius: 10px; }
+.edrail i { width: var(--component-app-tool-btn, 48px); height: var(--component-app-tool-btn, 48px); border-radius: var(--radius-control, 8px); border: 1px solid rgba(255,255,255,.08); display: block; }
+.edrail i.on { background: var(--action-tool-fill-active, #333); }
+.insp { width: var(--component-app-inspector-width, 280px); max-width: 100%; background: var(--surface-inspector-fill, #1f2126); border-radius: var(--radius-inspector, 10px); padding: 14px; font-size: 13px; }
+.insp .tabs { display: flex; gap: 14px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; opacity: .8; margin-bottom: 10px; }
+.insp .swatch { height: 40px; border-radius: var(--radius-control, 8px); border: 1px solid rgba(255,255,255,.12); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Glorify style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Glorify, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the marketing site's hashed Framer token layer (<code>--token-&lt;uuid&gt;</code>, emitted under <code>token.*</code>), the app's own semantic vocabulary (<code>--active-*</code>/<code>--hover-*</code>/<code>--icon-*</code>/<code>--neutral-light-*</code>/<code>--disabled-*</code>/<code>--field-*</code>/<code>--error-*</code>/<code>--info-*</code>/<code>--green-*</code>/<code>--orange-*</code>/<code>--pink-*</code>/<code>--cta-300</code>/<code>--glori-gradient</code>), the measured type ramp, the measured radius ladder, and the measured component sizes. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from glorify.com and app.glorify.com, signed out, in headless Chromium. Everything post-login is a documented boundary; the sign-in and sign-up forms were measured and typed into then cleared, never submitted; the anonymous editor at /designer/use-template/0 is the product's own Play-for-free path on a scratch file the SPA creates. The marketing site is light-only — no toggle, no dark media query. The app surface paints its dark chrome, and its tokens live in the separate <code>app</code> theme. The product's served faces are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The marketing header pairs the wordmark with the "Who is it for?"/Features/Resources/Templates dropdowns, Pricing, Login, "Play for free" and the "Get Started Now" button. The hero runs the display masthead over the Ecom subline, with "Play for free" leading into the anonymous editor.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">Glorify</span><span style="font-weight:400;font-size:14px">Who is it for?</span><span>Features</span><span>Resources</span><span>Templates</span><span>Pricing</span><span class="sp"></span><span style="font-weight:400">Login</span><span style="font-weight:400">Play for free</span><span class="btn small primary">Get Started Now</span></div>
+    <div class="hero"><small>Enjoy the ultimate Ecom design tool</small>Easily create marketing<br>visuals that turn<br>browsers to buyers.<br><br><span class="btn hero">Play for free</span></div>
+  </div>
+
+  <h2 class="sh">Pricing cards</h2>
+  <p class="lead">The billing switcher swaps Monthly and Yearly prices (a local UI toggle); plan cards are rounded panels with a "Start … Trial" action each — measured, never followed.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile"><b>Basic</b><span class="sub">The entry plan — a "Start Basic Trial" action.</span></div>
+      <div class="tile"><b>Pro</b><span class="sub">The mid plan — a "Start Pro Trial" action.</span></div>
+      <div class="tile"><b>Business</b><span class="sub">The top plan — a "Start Business Trial" action.</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The app surface</h2>
+  <p class="lead">app.glorify.com declares its own vocabulary on :root and paints dark chrome. The sign-in submit sits disabled until the fields validate — both fills were measured, never submitted. The anonymous editor paints the header (file name, Login/Signup, zoom, Share, Download), the left tool rail and the EDIT/LAYERS/PAGES inspector; the Craft dialog sits behind "Try with Placeholder Image" and its "Add to canvas" was measured disabled and enabled, never pressed on the measurement pass. The swatches in this scope carry the app set.</p>
+  <div class="mock app" style="padding:24px;max-width:460px">
+    <b style="font-size:20px;font-weight:500">Log in</b>
+    <p class="sub" style="color:var(--text-muted,#999);font-size:14px;margin:4px 0 16px">Sign in to your Glorify workspace</p>
+    <input class="field" placeholder="Email"><br><br>
+    <input class="field" placeholder="Password"><br><br>
+    <span class="btn disabled" style="width:320px;height:44px">Sign in</span>
+  </div>
+  <div class="mock app" style="padding:0;margin-top:12px">
+    <div class="edchrome"><span class="file">Untitled File</span><span class="sp"></span><span class="btn ghost small">Login</span><span class="btn primary small">Signup</span><span style="font-size:12px;opacity:.7">100%</span><span class="btn ghost small">Share</span><span class="btn primary small">Download</span></div>
+    <div style="display:flex;gap:12px;padding:16px">
+      <span class="edrail"><i></i><i class="on"></i><i></i><i></i></span>
+      <span style="flex:1"></span>
+      <span class="insp"><span class="tabs"><b>EDIT</b><span>LAYERS</span><span>PAGES</span></span><span class="swatch" style="display:block"></span></span>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The marketing palette is the hashed Framer <code>--token-*</code> declaration; the app set carries the product's semantic names plus the measured roles of the auth cards and the editor chrome. Measured roles alias the declared values they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Radius and motion</h2>
+  <p class="lead">The radius ladder and the control transition are measured on real controls — marketing sheets declare no readable radius or motion variables.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">The marketing type ramp is measured (the hashed token layer declares colours; the <code>--framer-*</code> text engine stays vendor), and the app paints its own sizes on the dark chrome. Samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared palette variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, focused, filled and enabled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"display":{"v":"\"PolySans Trial Median\", \"PolySans Trial Median Placeholder\", sans-serif","t":"fontFamily","s":"computed fontFamily of hero-h1 default (raw/components-computed.json); the host's @font-face faces in raw/css-vars.json","d":"The display family the marketing headings set, measured on the hero masthead."},"body":{"v":"Inter, \"Inter Placeholder\", sans-serif","t":"fontFamily","s":"computed fontFamily of plan-row default (raw/components-computed.json); the host's @font-face faces in raw/css-vars.json","d":"The body family the marketing prose and nav set, measured on a pricing row."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of hero-h1 default (raw/components-computed.json)","d":"The 400 weight, measured on the hero heading."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of plan-row default, nav-link default, nav-cta default (raw/components-computed.json)","d":"The 500 weight, measured on pricing plan rows; header nav links; the header call to action."}},"size":{"display":{"v":"64px","t":"dimension","s":"computed fontSize of feat-h1 default (raw/components-computed.json)","d":"The feature-page display heading."},"hero":{"v":"64px","t":"dimension","s":"computed fontSize of hero-h1 default (raw/components-computed.json)","d":"The hero masthead."},"h2":{"v":"24px","t":"dimension","s":"computed fontSize of home-h2 default (raw/components-computed.json)","d":"A home section heading."},"button":{"v":"16px","t":"dimension","s":"computed fontSize of nav-cta default (raw/components-computed.json)","d":"The header button size."},"planName":{"v":"32px","t":"dimension","s":"computed fontSize of plan-price default (raw/components-computed.json)","d":"The plan price figure."},"body":{"v":"14px","t":"dimension","s":"computed fontSize of plan-row default (raw/components-computed.json)","d":"The body/prose size."},"eyebrow":{"v":"12px","t":"dimension","s":"computed fontSize of learn-tag default (raw/components-computed.json)","d":"The article-tag and small-label size."},"mobileHero":{"v":"36px","t":"dimension","s":"computed fontSize of m-hero-h1 default (raw/components-computed.json)","d":"The masthead at 390 wide."}},"lineHeight":{"hero":{"v":1.2,"t":"number","s":"computed lineHeight/fontSize of hero-h1 default (76.8px over 64px, raw/components-computed.json)","d":"The hero masthead leading."},"body":{"v":1.0,"t":"number","s":"computed lineHeight/fontSize of plan-row default (14px over 14px, raw/components-computed.json)","d":"The body leading."},"eyebrow":{"v":1.0,"t":"number","s":"computed lineHeight/fontSize of learn-tag default (12px over 12px, raw/components-computed.json)","d":"The small-label leading."}},"monospace":{"v":"\"Noto Color Emoji\",Menlo,Monaco,Consolas,\"Courier New\",monospace","t":"other","s":"css-var --font-monospace (light)"},"sans":{"serif":{"v":"\"Noto Color Emoji\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen,Ubuntu,Cantarell,\"Open Sans\",\"Helvetica Neue\",sans-serif","t":"other","s":"css-var --font-sans-serif (light)"}},"serif":{"v":"\"Noto Color Emoji\",Georgia,\"Times New Roman\",Times,serif","t":"other","s":"css-var --font-serif (light)"}},"agent":{"bubble":{"bg":{"v":"#f1f3f5","t":"color","s":"css-var --agent-bubble-bg (light)"}}},"chat":{"bg":{"color":{"v":"#ffffff","t":"color","s":"css-var --chat-bg-color (light)"}},"transparent":{"bg":{"color":{"v":"rgba(255, 255, 255, 0)","t":"color","s":"css-var --chat-transparent-bg-color (light)"}}}},"client":{"bubble":{"bg":{"v":"#d4f3fc","t":"color","s":"css-var --client-bubble-bg (light)"}},"transparent":{"bubble":{"bg":{"v":"rgba(212, 243, 252, 0.08)","t":"color","s":"css-var --client-transparent-bubble-bg (light)"}}}},"framer":{"will":{"change":{"override":{"v":"none","t":"other","s":"css-var --framer-will-change-override (light)"}}}},"token":{"04ac5918":{"97bb":{"4b2b":{"8b5d":{"02aac8d3803d":{"v":"#ededed","t":"color","s":"css-var --token-04ac5918-97bb-4b2b-8b5d-02aac8d3803d (light)"}}}}},"0bf72244":{"e448":{"4725":{"ab25":{"338f97c28655":{"v":"#7cd7c6","t":"color","s":"css-var --token-0bf72244-e448-4725-ab25-338f97c28655 (light)"}}}}},"0e35e6f8":{"6b64":{"4e2d":{"b3e1":{"25708def14ef":{"v":"#fe9872","t":"color","s":"css-var --token-0e35e6f8-6b64-4e2d-b3e1-25708def14ef (light)"}}}}},"10556817":{"ac0a":{"44f7":{"ae26":{"ccb76c9fd09b":{"v":"#eefaf8","t":"color","s":"css-var --token-10556817-ac0a-44f7-ae26-ccb76c9fd09b (light)"}}}}},"1a71ae8b":{"0ebf":{"47f2":{"9b16":{"91692b35aeb7":{"v":"#fff9f3","t":"color","s":"css-var --token-1a71ae8b-0ebf-47f2-9b16-91692b35aeb7 (light)"}}}}},"1f32b964":{"b083":{"4151":{"a439":{"60e0ebb68cac":{"v":"#b3b3b3","t":"color","s":"css-var --token-1f32b964-b083-4151-a439-60e0ebb68cac (light)"}}}}},"1fe56cfa":{"d2fd":{"419f":{"acc6":{"c63b3e1e5afa":{"v":"#8c8c87","t":"color","s":"css-var --token-1fe56cfa-d2fd-419f-acc6-c63b3e1e5afa (light)"}}}}},"2a937ac2":{"f205":{"4e9f":{"8f26":{"09e188da2517":{"v":"#f4f4f4","t":"color","s":"css-var --token-2a937ac2-f205-4e9f-8f26-09e188da2517 (light)"}}}}},"2ff71b15":{"79ff":{"4961":{"a5d5":{"3c255280b832":{"v":"#51cab4","t":"color","s":"css-var --token-2ff71b15-79ff-4961-a5d5-3c255280b832 (light)"}}}}},"3018db01":{"3e23":{"4a46":{"af28":{"646b230f2035":{"v":"#d9d4ce","t":"color","s":"css-var --token-3018db01-3e23-4a46-af28-646b230f2035 (light)"}}}}},"31149946":{"8963":{"4e9c":{"bdaa":{"02dc75a04e69":{"v":"#f6eadf","t":"color","s":"css-var --token-31149946-8963-4e9c-bdaa-02dc75a04e69 (light)"}}}}},"3ed5b4bf":{"5ff8":{"4523":{"a3ac":{"20798aba2bbc":{"v":"#ffedf1","t":"color","s":"css-var --token-3ed5b4bf-5ff8-4523-a3ac-20798aba2bbc (light)"}}}}},"437b14b7":{"0164":{"40e6":{"a64c":{"c9076019a119":{"v":"#434242","t":"color","s":"css-var --token-437b14b7-0164-40e6-a64c-c9076019a119 (light)"}}}}},"472f6ab9":{"ec2c":{"4864":{"b6a2":{"2d2a311fc7ff":{"v":"#cccccc","t":"color","s":"css-var --token-472f6ab9-ec2c-4864-b6a2-2d2a311fc7ff (light)"}}}}},"4afff1e1":{"ad66":{"4449":{"a126":{"34071669c871":{"v":"#111111","t":"color","s":"css-var --token-4afff1e1-ad66-4449-a126-34071669c871 (light)"}}}}},"4fd202e1":{"7827":{"496c":{"b554":{"00289bbf9780":{"v":"#c2ede4","t":"color","s":"css-var --token-4fd202e1-7827-496c-b554-00289bbf9780 (light)"}}}}},"521d7dea":{"ae19":{"4cea":{"a86f":{"413df69ece62":{"v":"#a7a5a5","t":"color","s":"css-var --token-521d7dea-ae19-4cea-a86f-413df69ece62 (light)"}}}}},"54cafe5b":{"e692":{"45e1":{"b4ac":{"2d7cde74c178":{"v":"#ffcebd","t":"color","s":"css-var --token-54cafe5b-e692-45e1-b4ac-2d7cde74c178 (light)"}}}}},"5ac40b79":{"cc5c":{"4030":{"8e05":{"057275d0ffd2":{"v":"#b9b7b7","t":"color","s":"css-var --token-5ac40b79-cc5c-4030-8e05-057275d0ffd2 (light)"}}}}},"5bffa828":{"bc0f":{"4d1b":{"abe0":{"51155e3a82a6":{"v":"#030303","t":"color","s":"css-var --token-5bffa828-bc0f-4d1b-abe0-51155e3a82a6 (light)"}}}}},"5da2a986":{"5b77":{"4490":{"888b":{"7fb3ea832ddc":{"v":"#c7cffa","t":"color","s":"css-var --token-5da2a986-5b77-4490-888b-7fb3ea832ddc (light)"}}}}},"5dd49439":{"e215":{"4b63":{"80c0":{"703cbaec2c75":{"v":"#646363","t":"color","s":"css-var --token-5dd49439-e215-4b63-80c0-703cbaec2c75 (light)"}}}}},"61ee874e":{"76d3":{"48bd":{"99a3":{"63db95dbfcec":{"v":"#fd7543","t":"color","s":"css-var --token-61ee874e-76d3-48bd-99a3-63db95dbfcec (light)"}}}}},"623641a3":{"48b3":{"474a":{"86ae":{"2862d2044576":{"v":"#fe7394","t":"color","s":"css-var --token-623641a3-48b3-474a-86ae-2862d2044576 (light)"}}}}},"63aa41ff":{"347f":{"45e4":{"b29c":{"546aca5609e8":{"v":"rgba(236, 239, 253, 0.5)","t":"color","s":"css-var --token-63aa41ff-347f-45e4-b29c-546aca5609e8 (light)"}}}}},"63f7635c":{"4044":{"4753":{"b791":{"268bd3d1a479":{"v":"#455eed","t":"color","s":"css-var --token-63f7635c-4044-4753-b791-268bd3d1a479 (light)"}}}}},"6cc30042":{"9c6b":{"4358":{"af65":{"6289c7ec229d":{"v":"#f0f0f0","t":"color","s":"css-var --token-6cc30042-9c6b-4358-af65-6289c7ec229d (light)"}}}}},"6ee8de94":{"3479":{"49f3":{"9e17":{"b476618c2a8d":{"v":"#7688ea","t":"color","s":"css-var --token-6ee8de94-3479-49f3-9e17-b476618c2a8d (light)"}}}}},"6fe48ea6":{"97a5":{"40f2":{"8b4d":{"17d3a6bb2684":{"v":"#646363","t":"color","s":"css-var --token-6fe48ea6-97a5-40f2-8b4d-17d3a6bb2684 (light)"}}}}},"71ff440c":{"ed97":{"42a2":{"b452":{"db1bf5b85fb7":{"v":"#212121","t":"color","s":"css-var --token-71ff440c-ed97-42a2-b452-db1bf5b85fb7 (light)"}}}}},"7212b58d":{"6f97":{"4cee":{"a6e8":{"062823c03725":{"v":"#29388e","t":"color","s":"css-var --token-7212b58d-6f97-4cee-a6e8-062823c03725 (light)"}}}}},"72222110":{"6151":{"4c46":{"b86b":{"6c9b034c5d6e":{"v":"#374bbe","t":"color","s":"css-var --token-72222110-6151-4c46-b86b-6c9b034c5d6e (light)"}}}}},"7788b5df":{"cf66":{"42e7":{"bafa":{"afaea26b1ff0":{"v":"#1e1f26","t":"color","s":"css-var --token-7788b5df-cf66-42e7-bafa-afaea26b1ff0 (light)"}}}}},"7d224856":{"e282":{"4e11":{"9723":{"60d88a96a61b":{"v":"#cfcfcf","t":"color","s":"css-var --token-7d224856-e282-4e11-9723-60d88a96a61b (light)"}}}}},"7e7c27c9":{"d486":{"4cbf":{"9259":{"1f39132a87d1":{"v":"#fac3ed","t":"color","s":"css-var --token-7e7c27c9-d486-4cbf-9259-1f39132a87d1 (light)"}}}}},"81579d57":{"17fe":{"4831":{"a16f":{"bac7758d2ee8":{"v":"#ffffff","t":"color","s":"css-var --token-81579d57-17fe-4831-a16f-bac7758d2ee8 (light)"}}}}},"826e7cbf":{"b01d":{"4eb1":{"8e1e":{"98b360fb36bc":{"v":"#f6f6f6","t":"color","s":"css-var --token-826e7cbf-b01d-4eb1-8e1e-98b360fb36bc (light)"}}}}},"89a22b54":{"e29f":{"49de":{"91d6":{"ddc01166c272":{"v":"#ffbdce","t":"color","s":"css-var --token-89a22b54-e29f-49de-91d6-ddc01166c272 (light)"}}}}},"8ce0d4bb":{"84b2":{"4aa8":{"b7fa":{"cf8d27b8e0c7":{"v":"#737373","t":"color","s":"css-var --token-8ce0d4bb-84b2-4aa8-b7fa-cf8d27b8e0c7 (light)"}}}}},"9028fc19":{"1549":{"4d96":{"91ca":{"93572ae1ac06":{"v":"#ffffff","t":"color","s":"css-var --token-9028fc19-1549-4d96-91ca-93572ae1ac06 (light)"}}}}},"929f5058":{"8d20":{"42e0":{"9d98":{"fe0dafd54d43":{"v":"#fff2ec","t":"color","s":"css-var --token-929f5058-8d20-42e0-9d98-fe0dafd54d43 (light)"}}}}},"94bddd81":{"d247":{"49ef":{"8a6e":{"55e00abc5cb8":{"v":"#fedb5b","t":"color","s":"css-var --token-94bddd81-d247-49ef-8a6e-55e00abc5cb8 (light)"}}}}},"9533b59c":{"1b56":{"4be7":{"93d3":{"f9446c1e87c6":{"v":"#fce3f8","t":"color","s":"css-var --token-9533b59c-1b56-4be7-93d3-f9446c1e87c6 (light)"}}}}},"992f6de2":{"ff37":{"4283":{"999a":{"88b68d4bc625":{"v":"#feeeb3","t":"color","s":"css-var --token-992f6de2-ff37-4283-999a-88b68d4bc625 (light)"}}}}},"9c080050":{"c197":{"4d22":{"857c":{"662351924483":{"v":"#868484","t":"color","s":"css-var --token-9c080050-c197-4d22-857c-662351924483 (light)"}}}}},"a392612b":{"78bb":{"4d6b":{"bbd0":{"20d6b8f5a47a":{"v":"#eceffd","t":"color","s":"css-var --token-a392612b-78bb-4d6b-bbd0-20d6b8f5a47a (light)"}}}}},"a4c9cff4":{"c09a":{"4573":{"ac8b":{"b10161e09446":{"v":"#323232","t":"color","s":"css-var --token-a4c9cff4-c09a-4573-ac8b-b10161e09446 (light)"}}}}},"ab954693":{"ff86":{"4dd0":{"8db2":{"dea632f7a00e":{"v":"#484848","t":"color","s":"css-var --token-ab954693-ff86-4dd0-8db2-dea632f7a00e (light)"}}}}},"afaadb72":{"5ed7":{"4334":{"8805":{"75cb91a18f24":{"v":"#ffffff","t":"color","s":"css-var --token-afaadb72-5ed7-4334-8805-75cb91a18f24 (light)"}}}}},"b02d7c86":{"46c1":{"4ae6":{"a226":{"0784aba6273e":{"v":"#fefbea","t":"color","s":"css-var --token-b02d7c86-46c1-4ae6-a226-0784aba6273e (light)"}}}}},"b2fe3658":{"3bde":{"4027":{"8a2d":{"5c69cb4736d3":{"v":"#fd4370","t":"color","s":"css-var --token-b2fe3658-3bde-4027-8a2d-5c69cb4736d3 (light)"}}}}},"c19f9397":{"63ce":{"4c09":{"9404":{"3632ec0d3f10":{"v":"#f7afe7","t":"color","s":"css-var --token-c19f9397-63ce-4c09-9404-3632ec0d3f10 (light)"}}}}},"d37ad7dc":{"b85f":{"473e":{"a78c":{"5bc709346232":{"v":"#141414","t":"color","s":"css-var --token-d37ad7dc-b85f-473e-a78c-5bc709346232 (light)"}}}}},"d5502ce3":{"c92d":{"49ca":{"ba19":{"934ac1cb957d":{"v":"#ffffff","t":"color","s":"css-var --token-d5502ce3-c92d-49ca-ba19-934ac1cb957d (light)"}}}}},"d68a1254":{"a59d":{"4e05":{"9b1e":{"5744db8cc3a4":{"v":"#222222","t":"color","s":"css-var --token-d68a1254-a59d-4e05-9b1e-5744db8cc3a4 (light)"}}}}},"dc395c47":{"03b0":{"47c8":{"9692":{"d39afdfb3d56":{"v":"#e5e0db","t":"color","s":"css-var --token-dc395c47-03b0-47c8-9692-d39afdfb3d56 (light)"}}}}},"e1016172":{"3722":{"4f83":{"8f01":{"893dfcc06242":{"v":"#fff6fe","t":"color","s":"css-var --token-e1016172-3722-4f83-8f01-893dfcc06242 (light)"}}}}},"e4a486da":{"0f3e":{"4f0f":{"a156":{"7359e80ab5ee":{"v":"#111110","t":"color","s":"css-var --token-e4a486da-0f3e-4f0f-a156-7359e80ab5ee (light)"}}}}},"ec6de9b1":{"c004":{"4e71":{"9eea":{"00ef53e6bc7a":{"v":"#111111","t":"color","s":"css-var --token-ec6de9b1-c004-4e71-9eea-00ef53e6bc7a (light)"}}}}},"ee0eb77a":{"c5ba":{"44dd":{"80da":{"78c21576ce6b":{"v":"#262626","t":"color","s":"css-var --token-ee0eb77a-c5ba-44dd-80da-78c21576ce6b (light)"}}}}},"f308df2b":{"2e59":{"4e93":{"8e97":{"df348be19991":{"v":"#a7a5a5","t":"color","s":"css-var --token-f308df2b-2e59-4e93-8e97-df348be19991 (light)"}}}}},"f52c85c9":{"4b46":{"4081":{"9ae2":{"43cd4051929f":{"v":"#403d3a","t":"color","s":"css-var --token-f52c85c9-4b46-4081-9ae2-43cd4051929f (light)"}}}}},"f89db159":{"2d55":{"481a":{"856f":{"4b4f2bdd6086":{"v":"#c0bcb8","t":"color","s":"css-var --token-f89db159-2d55-481a-856f-4b4f2bdd6086 (light)"}}}}},"fa312d7f":{"9ffe":{"4913":{"8337":{"46686bcf3920":{"v":"#ffcf25","t":"color","s":"css-var --token-fa312d7f-9ffe-4913-8337-46686bcf3920 (light)"}}}}}},"radius":{"control":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of nav-link default (raw/components-computed.json)","d":"The radius on nav links and small controls."},"button":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of nav-play default (raw/components-computed.json)","d":"The radius on the header 'Play for free' button — an 8px rounded rectangle, not a pill."},"field":{"v":"2px","t":"dimension","s":"computed borderTopLeftRadius of login-field default (raw/components-computed.json)","d":"The radius on the app auth fields and submit."},"app-button":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of login-submit default (raw/components-computed.json)","d":"The radius on the app primary submit."},"card":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of plan-card default (raw/components-computed.json)","d":"The pricing-card radius."},"dialog":{"v":"16px","t":"dimension","s":"computed borderTopLeftRadius of ed-craft default (raw/components-computed.json)","d":"The Craft dialog's radius."},"cta":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)","d":"The hero CTA's radius — an 8px rounded rectangle."},"inspector":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of ed-inspector default (raw/components-computed.json)","d":"The inspector panel's radius."}},"motion":{"control":{"v":"all 0.3s linear","t":"other","s":"computed transition of ed-tool default (raw/components-computed.json)","d":"The control transition the site puts on nav links, buttons and cards."}},"component":{"topbar-height":{"v":"64px","t":"dimension","s":"measured h of mkt-header default (raw/components-computed.json)","d":"The marketing header bar height."},"nav-link-height":{"v":"30px","t":"dimension","s":"measured h of nav-link default (raw/components-computed.json)","d":"The nav-link hit height."},"nav-cta-height":{"v":"42px","t":"dimension","s":"measured h of nav-cta default (raw/components-computed.json)","d":"The header button height."},"hero-cta-height":{"v":"46px","t":"dimension","s":"measured h of hero-cta default (raw/components-computed.json)","d":"The hero action height."},"hero-cta-width":{"v":"119.41px","t":"dimension","s":"measured w of hero-cta default (raw/components-computed.json)","d":"The hero action width."},"hero-width":{"v":"838px","t":"dimension","s":"measured w of hero-h1 default (raw/components-computed.json)","d":"The hero masthead measure."},"billing-tab-height":{"v":"20px","t":"dimension","s":"measured h of bill-yearly default (raw/components-computed.json)","d":"The billing-tab height."},"plan-card-width":{"v":"230px","t":"dimension","s":"measured w of plan-card default (raw/components-computed.json)","d":"The pricing-card width."},"plan-card-height":{"v":"149.41px","t":"dimension","s":"measured h of plan-card default (raw/components-computed.json)","d":"The pricing-card height."},"plan-cta-height":{"v":"39.2px","t":"dimension","s":"measured h of plan-cta default (raw/components-computed.json)","d":"The plan-CTA height."},"tpl-card-width":{"v":"193.93px","t":"dimension","s":"measured w of tpl-card default (raw/components-computed.json)","d":"The template card width."},"tpl-card-height":{"v":"102.31px","t":"dimension","s":"measured h of tpl-card default (raw/components-computed.json)","d":"The template card height."},"learn-card-width":{"v":"384px","t":"dimension","s":"measured w of learn-card default (raw/components-computed.json)","d":"The Learn article card width."},"mobile-topbar-height":{"v":"64px","t":"dimension","s":"measured h of m-topbar default (raw/components-computed.json)","d":"The phone header height."},"mobile-cta-height":{"v":"46px","t":"dimension","s":"measured h of m-hero-cta default (raw/components-computed.json)","d":"The hero action at 390 wide."},"app":{"card-width":{"v":"352px","t":"dimension","s":"measured w of login-card default on app.glorify.com (raw/components-computed.json)","d":"The auth card width."},"card-height":{"v":"384px","t":"dimension","s":"measured h of login-card default on app.glorify.com (raw/components-computed.json)","d":"The auth card height."},"field-height":{"v":"30px","t":"dimension","s":"measured h of login-field default on app.glorify.com (raw/components-computed.json)","d":"The auth field height."},"field-width":{"v":"336px","t":"dimension","s":"measured w of login-field default on app.glorify.com (raw/components-computed.json)","d":"The auth field width."},"submit-height":{"v":"32px","t":"dimension","s":"measured h of login-submit default on app.glorify.com (raw/components-computed.json)","d":"The primary submit height."},"header-height":{"v":"56px","t":"dimension","s":"measured h of ed-header default on app.glorify.com (raw/components-computed.json)","d":"The editor header height."},"tool-btn":{"v":"48px","t":"dimension","s":"measured h of ed-tool default on app.glorify.com (raw/components-computed.json)","d":"The tool-rail icon-button size."},"inspector-width":{"v":"280px","t":"dimension","s":"measured w of ed-inspector default on app.glorify.com (raw/components-computed.json)","d":"The inspector panel width."},"inspector-height":{"v":"824px","t":"dimension","s":"measured h of ed-inspector default on app.glorify.com (raw/components-computed.json)","d":"The inspector panel height."},"zoom-height":{"v":"32px","t":"dimension","s":"measured h of ed-zoom default on app.glorify.com (raw/components-computed.json)","d":"The zoom control height."},"craft-cta-height":{"v":"40px","t":"dimension","s":"measured h of ed-add default on app.glorify.com (raw/components-computed.json)","d":"The 'Add to canvas' button height."}}}},"light":{"text":{"ink":{"v":"{token.4afff1e1.ad66.4449.a126.34071669c871}","t":"color","s":"computed color of feat-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared token.4afff1e1.ad66.4449.a126.34071669c871","d":"The marketing heading ink on the white field — the feature-page h1 (the hero h1 is white on the dark hero band instead)."},"body":{"v":"{token.4afff1e1.ad66.4449.a126.34071669c871}","t":"color","s":"computed color of feat-prose default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared token.4afff1e1.ad66.4449.a126.34071669c871","d":"The marketing body-copy ink."},"muted":{"v":"{token.8ce0d4bb.84b2.4aa8.b7fa.cf8d27b8e0c7}","t":"color","s":"computed color of hero-sub default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared token.8ce0d4bb.84b2.4aa8.b7fa.cf8d27b8e0c7","d":"The hero subline's ink — the quieter marketing text role."},"link":{"v":"{token.f89db159.2d55.481a.856f.4b4f2bdd6086}","t":"color","s":"computed color of footer-link default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared token.f89db159.2d55.481a.856f.4b4f2bdd6086","d":"A footer link's ink — a muted gray on the dark footer band."}},"action":{"cta-fill":{"v":"{token.63f7635c.4044.4753.b791.268bd3d1a479}","t":"color","s":"computed backgroundColor of nav-play default (raw/components-computed.json); matches declared token.63f7635c.4044.4753.b791.268bd3d1a479","d":"The header 'Play for free' button's fill — the same blue the 'Get Started Now' CTA paints inside its Button Wrap on /pricing."},"cta-ink":{"v":"{token.1a71ae8b.0ebf.47f2.9b16.91692b35aeb7}","t":"color","s":"computed color of nav-play default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared token.1a71ae8b.0ebf.47f2.9b16.91692b35aeb7","d":"The text on the header CTA button."},"hero-cta-fill":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"computed backgroundColor of hero-cta default (raw/components-computed.json)","d":"The hero 'Play for free' action's fill — honestly transparent: it is an outlined ghost on the dark hero band (unlike the filled nav and feature CTAs)."},"hero-cta-ink":{"v":"{token.81579d57.17fe.4831.a16f.bac7758d2ee8}","t":"color","s":"computed color of hero-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared token.81579d57.17fe.4831.a16f.bac7758d2ee8","d":"The white text on the hero action."},"hero-cta-border":{"v":"{token.81579d57.17fe.4831.a16f.bac7758d2ee8}","t":"color","s":"the colour of the first painted border inside hero-cta default (raw/components-computed.json paint list); matches declared token.81579d57.17fe.4831.a16f.bac7758d2ee8","d":"The 1px white stroke the hero ghost CTA's ::after paints on the dark band."}},"surface":{"card":{"v":"{token.81579d57.17fe.4831.a16f.bac7758d2ee8}","t":"color","s":"computed backgroundColor of plan-card default (raw/components-computed.json); matches declared token.81579d57.17fe.4831.a16f.bac7758d2ee8","d":"The pricing-card surface."}},"border":{"focus-ring":{"v":"#000000","t":"color","s":"computed outlineColor of nav-cta focus-visible (raw/components-computed.json)","d":"The keyboard focus ring on controls, where the browser paints one."}},"background":{"page":{"v":"{token.81579d57.17fe.4831.a16f.bac7758d2ee8}","t":"color","s":"computed backgroundColor of the marketing body (raw/components-computed.json page-bg default); the painted field behind every marketing page (screenshots/*-light-*.png); matches declared token.81579d57.17fe.4831.a16f.bac7758d2ee8","d":"The marketing page field."}}},"app":{"active":{"danger":{"v":"#e54d4d","t":"color","s":"css-var --active-danger (app)"},"interactive":{"v":"#475beb","t":"color","s":"css-var --active-interactive (app)"},"primary":{"v":"#475beb","t":"color","s":"css-var --active-primary (app)"},"secondary":{"v":"#ffe0c2","t":"color","s":"css-var --active-secondary (app)"},"success":{"v":"#1ecd8e","t":"color","s":"css-var --active-success (app)"},"tertiary":{"v":"linear-gradient(180deg,#fff3e8,#ffe0b8)","t":"other","s":"css-var --active-tertiary (app)"},"ui":{"default":{"v":"#eceffd","t":"color","s":"css-var --active-ui (app)"},"dark":{"v":"#182654","t":"color","s":"css-var --active-ui-dark (app)"}}},"alternative":{"100":{"v":"conic-gradient(from 180.14deg at 50.11% 54.8%,#7688ea 0deg,#7cd7c6 228.84deg,#7688ea 360deg)","t":"other","s":"css-var --alternative-100 (app)"},"200":{"v":"linear-gradient(180.4deg,#7688ea 9.87%,#7cd7c6 66.94%)","t":"other","s":"css-var --alternative-200 (app)"},"300":{"v":"conic-gradient(from 180.22deg at 50.19% 50.19%,#f7afe7 0deg,#fd7543 131.83deg,#ffcf25 231.99deg,#f7afe7 360deg)","t":"other","s":"css-var --alternative-300 (app)"},"400":{"v":"linear-gradient(0deg,#f7afe7 2.83%,#fd7543 49.67%,#ffcf25)","t":"other","s":"css-var --alternative-400 (app)"},"500":{"v":"conic-gradient(from 180deg at 50% 50%,#7688ea 0deg,#fbd7f3 228.84deg,#7688ea 360deg)","t":"other","s":"css-var --alternative-500 (app)"},"600":{"v":"linear-gradient(180deg,#7688ea,#fbd7f3 63.57%)","t":"other","s":"css-var --alternative-600 (app)"},"700":{"v":"conic-gradient(from 180deg at 50% 50%,#51cab4 0deg,#febaa1 133.88deg,#fbd7f3 228.84deg,#51cab4 360deg)","t":"other","s":"css-var --alternative-700 (app)"},"800":{"v":"linear-gradient(180deg,#51cab4 -2.76%,#febaa1 48.63%,#fbd7f3 92.39%)","t":"other","s":"css-var --alternative-800 (app)"}},"animate":{"ping":{"v":"ping 1s cubic-bezier(0, 0, .2, 1) infinite","t":"other","s":"css-var --animate-ping (app)"},"spin":{"v":"spin 1s linear infinite","t":"other","s":"css-var --animate-spin (app)"}},"aspect":{"video":{"v":"16 / 9","t":"other","s":"css-var --aspect-video (app)"}},"assets":{"default":{"v":"300px","t":"dimension","s":"css-var --assets (app)"},"and":{"toolbar":{"default":{"v":"358px","t":"dimension","s":"css-var --assets-and-toolbar (app)"},"and":{"inspector":{"v":"614px","t":"dimension","s":"css-var --assets-and-toolbar-and-inspector (app)"},"ruller":{"v":"378px","t":"dimension","s":"css-var --assets-and-toolbar-and-ruller (app)"}}}}},"blur":{"lg":{"v":"16px","t":"dimension","s":"css-var --blur-lg (app)"},"sm":{"v":"8px","t":"dimension","s":"css-var --blur-sm (app)"}},"breakpoint":{"md":{"v":"820px","t":"dimension","s":"css-var --breakpoint-md (app)"}},"color":{"aqua":{"default":{"v":"#63c8d9","t":"color","s":"css-var --color-aqua (app)"},"dark":{"v":"#4aafc0","t":"color","s":"css-var --color-aqua-dark (app)"}},"black":{"v":"#000000","t":"color","s":"css-var --color-black (app)"},"brand":{"default":{"v":"#ef567c","t":"color","s":"css-var --color-brand (app)"},"dark":{"v":"#ff5580","t":"color","s":"css-var --color-brand-dark (app)"},"text":{"v":"#ffffff","t":"color","s":"css-var --color-brand-text (app)"}},"canvas":{"v":"#fcfcfc","t":"color","s":"css-var --color-canvas (app)"},"danger":{"default":{"v":"#dd0b3f","t":"color","s":"css-var --color-danger (app)"},"dark":{"v":"#d41142","t":"color","s":"css-var --color-danger-dark (app)"}},"frill":{"default":{"v":"#ef567c","t":"color","s":"css-var --color-frill (app)"},"dark":{"v":"#ff5580","t":"color","s":"css-var --color-frill-dark (app)"},"light":{"v":"#ff5a83","t":"color","s":"css-var --color-frill-light (app)"}},"highlight":{"default":{"v":"#1675f0","t":"color","s":"css-var --color-highlight (app)"},"dark":{"v":"#0766e1","t":"color","s":"css-var --color-highlight-dark (app)"},"light":{"v":"#2a9efb","t":"color","s":"css-var --color-highlight-light (app)"}},"info":{"default":{"v":"#2196f3","t":"color","s":"css-var --color-info (app)"},"dark":{"v":"#087dda","t":"color","s":"css-var --color-info-dark (app)"}},"orange":{"default":{"v":"#ff922d","t":"color","s":"css-var --color-orange (app)"},"dark":{"v":"#e67914","t":"color","s":"css-var --color-orange-dark (app)"}},"positive":{"default":{"v":"#2eb67d","t":"color","s":"css-var --color-positive (app)"},"dark":{"v":"#159d64","t":"color","s":"css-var --color-positive-dark (app)"}},"purple":{"v":"#865bff","t":"color","s":"css-var --color-purple (app)"},"selected":{"v":"#6fa5fd","t":"color","s":"css-var --color-selected (app)"},"shade":{"0":{"v":"#ffffff","t":"color","s":"css-var --color-shade-0 (app)"},"10":{"v":"#eeeef1","t":"color","s":"css-var --color-shade-10 (app)"},"100":{"v":"#1c1c1c","t":"color","s":"css-var --color-shade-100 (app)"},"20":{"v":"#dedee7","t":"color","s":"css-var --color-shade-20 (app)"},"30":{"v":"#aeaeb8","t":"color","s":"css-var --color-shade-30 (app)"},"40":{"v":"#a3a3a9","t":"color","s":"css-var --color-shade-40 (app)"},"5":{"v":"#f9f9fb","t":"color","s":"css-var --color-shade-5 (app)"}},"text":{"default":{"v":"#0d0d0e","t":"color","s":"css-var --color-text (app)"},"invert":{"v":"#ffffff","t":"color","s":"css-var --color-text-invert (app)"},"low":{"v":"#8f9399","t":"color","s":"css-var --color-text-low (app)"},"medium":{"v":"#64676b","t":"color","s":"css-var --color-text-medium (app)"}},"warn":{"default":{"v":"#f48967","t":"color","s":"css-var --color-warn (app)"},"dark":{"v":"#ff8e75","t":"color","s":"css-var --color-warn-dark (app)"}},"white":{"v":"#ffffff","t":"color","s":"css-var --color-white (app)"},"yellow":{"default":{"v":"#fab347","t":"color","s":"css-var --color-yellow (app)"},"dark":{"v":"#e19a2e","t":"color","s":"css-var --color-yellow-dark (app)"}}},"cta":{"300":{"v":"#ee6e3f","t":"color","s":"css-var --cta-300 (app)"}},"dark":{"100":{"v":"#212121","t":"color","s":"css-var --dark-100 (app)"},"200":{"v":"#323232","t":"color","s":"css-var --dark-200 (app)"},"300":{"v":"#434242","t":"color","s":"css-var --dark-300 (app)"},"400":{"v":"#646363","t":"color","s":"css-var --dark-400 (app)"},"500":{"v":"#868484","t":"color","s":"css-var --dark-500 (app)"},"600":{"v":"#a7a5a5","t":"color","s":"css-var --dark-600 (app)"},"700":{"v":"#ffffff","t":"color","s":"css-var --dark-700 (app)"},"800":{"v":"#262626","t":"color","s":"css-var --dark-800 (app)"}},"default":{"filled":{"slider":{"bg":{"color":{"v":"#455eed","t":"color","s":"css-var --default-filled-slider-bg-color (app)"}}}},"font":{"family":{"v":"\"Frill Inter\", Inter, system-ui, sans-serif","t":"other","s":"css-var --default-font-family (app)"}},"mono":{"font":{"family":{"v":"ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace","t":"other","s":"css-var --default-mono-font-family (app)"}}},"slider":{"bg":{"color":{"v":"#c7cffa","t":"color","s":"css-var --default-slider-bg-color (app)"}}},"transition":{"duration":{"v":"150ms","t":"duration","s":"css-var --default-transition-duration (app)"},"timing":{"function":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --default-transition-timing-function (app)"}}}},"disabled":{"01":{"default":{"v":"#f6f6f6","t":"color","s":"css-var --disabled-01 (app)"},"dark":{"v":"#f6f6f6","t":"color","s":"css-var --disabled-01-dark (app)"}},"02":{"default":{"v":"#e5e5e5","t":"color","s":"css-var --disabled-02 (app)"},"dark":{"v":"#18244a","t":"color","s":"css-var --disabled-02-dark (app)"}},"03":{"default":{"v":"#949494","t":"color","s":"css-var --disabled-03 (app)"},"dark":{"v":"#f6f6f6","t":"color","s":"css-var --disabled-03-dark (app)"}},"04":{"v":"#626262","t":"color","s":"css-var --disabled-04 (app)"}},"ease":{"in":{"out":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-in-out (app)"}},"out":{"default":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-out (app)"},"expo":{"v":[0.69,0.12,0.1,0.98],"t":"cubicBezier","s":"css-var --ease-out-expo (app)"}}},"error":{"100":{"v":"#fcdddd","t":"color","s":"css-var --error-100 (app)"},"200":{"v":"#f59a9a","t":"color","s":"css-var --error-200 (app)"},"300":{"v":"#ee5757","t":"color","s":"css-var --error-300 (app)"},"400":{"v":"#be4646","t":"color","s":"css-var --error-400 (app)"},"500":{"v":"#8f3434","t":"color","s":"css-var --error-500 (app)"}},"fade":{"gradient":{"v":"linear-gradient(180deg,rgba(0,0,0,0) 50%,#000)","t":"other","s":"css-var --fade-gradient (app)"}},"field":{"01":{"default":{"v":"#ffffff","t":"color","s":"css-var --field-01 (app)"},"dark":{"v":"#f6f6f6","t":"color","s":"css-var --field-01-dark (app)"}}},"font":{"mono":{"v":"ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace","t":"other","s":"css-var --font-mono (app)"},"sans":{"v":"\"Frill Inter\", Inter, system-ui, sans-serif","t":"other","s":"css-var --font-sans (app)"},"weight":{"bold":{"v":700,"t":"other","s":"css-var --font-weight-bold (app)"},"medium":{"v":500,"t":"other","s":"css-var --font-weight-medium (app)"},"normal":{"v":400,"t":"other","s":"css-var --font-weight-normal (app)"},"semibold":{"v":600,"t":"other","s":"css-var --font-weight-semibold (app)"}}},"frill":{"focus":{"ring":{"color":{"v":"#1675f0","t":"color","s":"css-var --frill-focus-ring-color (app)"}}}},"glori":{"gradient":{"v":"linear-gradient(180deg,#ff4141,#8f00ff)","t":"other","s":"css-var --glori-gradient (app)"}},"green":{"100":{"v":"#eefaf8","t":"color","s":"css-var --green-100 (app)"},"200":{"v":"#c2ede4","t":"color","s":"css-var --green-200 (app)"},"300":{"v":"#7cd7c6","t":"color","s":"css-var --green-300 (app)"},"400":{"v":"#51cab4","t":"color","s":"css-var --green-400 (app)"}},"header":{"default":{"v":"56px","t":"dimension","s":"css-var --header (app)"},"translate":{"v":"0px","t":"dimension","s":"css-var --header-translate (app)"}},"height":{"header":{"v":"0px","t":"dimension","s":"css-var --height-header (app)"}},"hero":{"v":"244px","t":"dimension","s":"css-var --hero (app)"},"hover":{"danger":{"v":"#e85555","t":"color","s":"css-var --hover-danger (app)"},"primary":{"v":"#5165f3","t":"color","s":"css-var --hover-primary (app)"},"secondary":{"v":"linear-gradient(180deg,#fef7eb,#fee3bd)","t":"other","s":"css-var --hover-secondary (app)"},"success":{"v":"#2ed096","t":"color","s":"css-var --hover-success (app)"},"ui":{"default":{"v":"#eceffd","t":"color","s":"css-var --hover-ui (app)"},"dark":{"v":"#182654","t":"color","s":"css-var --hover-ui-dark (app)"}}},"icon":{"01":{"v":"#3c3c3c","t":"color","s":"css-var --icon-01 (app)"},"02":{"v":"#646363","t":"color","s":"css-var --icon-02 (app)"},"03":{"default":{"v":"#b9b7b7","t":"color","s":"css-var --icon-03 (app)"},"dark":{"v":"#646363","t":"color","s":"css-var --icon-03-dark (app)"}},"04":{"v":"#ffffff","t":"color","s":"css-var --icon-04 (app)"},"danger":{"01":{"v":"#ea5d5d","t":"color","s":"css-var --icon-danger-01 (app)"},"02":{"v":"#ecc2c2","t":"color","s":"css-var --icon-danger-02 (app)"},"03":{"v":"#ffeaea","t":"color","s":"css-var --icon-danger-03 (app)"}},"primary":{"01":{"v":"#374bbe","t":"color","s":"css-var --icon-primary-01 (app)"},"02":{"v":"#c7cffa","t":"color","s":"css-var --icon-primary-02 (app)"},"03":{"v":"#f2f4ff","t":"color","s":"css-var --icon-primary-03 (app)"}},"secondary":{"01":{"v":"#c7a064","t":"color","s":"css-var --icon-secondary-01 (app)"}},"slide":{"btn":{"v":"#626262","t":"color","s":"css-var --icon-slide-btn (app)"}},"success":{"01":{"v":"#38d29a","t":"color","s":"css-var --icon-success-01 (app)"},"02":{"v":"#a4f9da","t":"color","s":"css-var --icon-success-02 (app)"},"03":{"v":"#e3fff5","t":"color","s":"css-var --icon-success-03 (app)"}}},"info":{"100":{"v":"#ccf0ff","t":"color","s":"css-var --info-100 (app)"},"200":{"v":"#66d1ff","t":"color","s":"css-var --info-200 (app)"},"300":{"v":"#00b2ff","t":"color","s":"css-var --info-300 (app)"},"400":{"v":"#006b99","t":"color","s":"css-var --info-400 (app)"}},"inspector":{"v":"280px","t":"dimension","s":"css-var --inspector (app)"},"interactive":{"01":{"default":{"v":"#455eed","t":"color","s":"css-var --interactive-01 (app)"},"dark":{"v":"#243568","t":"color","s":"css-var --interactive-01-dark (app)"}},"02":{"v":"linear-gradient(180deg,#fef7ee,#fae5c6)","t":"other","s":"css-var --interactive-02 (app)"},"03":{"v":"#ea5d5d","t":"color","s":"css-var --interactive-03 (app)"},"04":{"v":"#38d29a","t":"color","s":"css-var --interactive-04 (app)"}},"leading":{"normal":{"v":1.5,"t":"other","s":"css-var --leading-normal (app)"},"snug":{"v":1.375,"t":"other","s":"css-var --leading-snug (app)"},"tight":{"v":1.25,"t":"other","s":"css-var --leading-tight (app)"}},"light":{"100":{"v":"#ffffff","t":"color","s":"css-var --light-100 (app)"},"200":{"v":"#f6f6f6","t":"color","s":"css-var --light-200 (app)"},"300":{"v":"#e0e0e0","t":"color","s":"css-var --light-300 (app)"},"400":{"v":"#b9b7b7","t":"color","s":"css-var --light-400 (app)"},"500":{"v":"#a7a5a5","t":"color","s":"css-var --light-500 (app)"},"600":{"v":"#646363","t":"color","s":"css-var --light-600 (app)"},"700":{"v":"#111111","t":"color","s":"css-var --light-700 (app)"}},"neutral":{"dark":{"100":{"v":"#111111","t":"color","s":"css-var --neutral-dark-100 (app)"},"200":{"v":"#2d2d2d","t":"color","s":"css-var --neutral-dark-200 (app)"},"300":{"v":"#484848","t":"color","s":"css-var --neutral-dark-300 (app)"},"400":{"v":"#737373","t":"color","s":"css-var --neutral-dark-400 (app)"},"500":{"v":"#b3b3b3","t":"color","s":"css-var --neutral-dark-500 (app)"},"600":{"v":"#cccccc","t":"color","s":"css-var --neutral-dark-600 (app)"},"700":{"v":"#f0f0f0","t":"color","s":"css-var --neutral-dark-700 (app)"},"800":{"v":"#ffffff","t":"color","s":"css-var --neutral-dark-800 (app)"}},"light":{"100":{"v":"#fff9f3","t":"color","s":"css-var --neutral-light-100 (app)"},"200":{"v":"#f6eadf","t":"color","s":"css-var --neutral-light-200 (app)"},"300":{"v":"#e5e0db","t":"color","s":"css-var --neutral-light-300 (app)"},"400":{"v":"#d9d4ce","t":"color","s":"css-var --neutral-light-400 (app)"},"500":{"v":"#c0bcb8","t":"color","s":"css-var --neutral-light-500 (app)"},"600":{"v":"#8c8986","t":"color","s":"css-var --neutral-light-600 (app)"},"700":{"v":"#403d3a","t":"color","s":"css-var --neutral-light-700 (app)"},"800":{"v":"#111110","t":"color","s":"css-var --neutral-light-800 (app)"}}},"orange":{"100":{"v":"#fff2ec","t":"color","s":"css-var --orange-100 (app)"},"200":{"v":"#ffcebd","t":"color","s":"css-var --orange-200 (app)"},"300":{"v":"#fe9872","t":"color","s":"css-var --orange-300 (app)"},"400":{"v":"#fd7543","t":"color","s":"css-var --orange-400 (app)"}},"pink":{"100":{"v":"#fff6fe","t":"color","s":"css-var --pink-100 (app)"},"200":{"v":"#fce3f8","t":"color","s":"css-var --pink-200 (app)"},"300":{"v":"#fac3ed","t":"color","s":"css-var --pink-300 (app)"},"400":{"v":"#f7afe7","t":"color","s":"css-var --pink-400 (app)"}},"primary":{"100":{"v":"#eceffd","t":"color","s":"css-var --primary-100 (app)"},"200":{"v":"#c7cffa","t":"color","s":"css-var --primary-200 (app)"},"300":{"v":"#455eed","t":"color","s":"css-var --primary-300 (app)"},"400":{"v":"#374bbe","t":"color","s":"css-var --primary-400 (app)"},"500":{"v":"#29388e","t":"color","s":"css-var --primary-500 (app)"},"600":{"v":"#29388e","t":"color","s":"css-var --primary-600 (app)"},"700":{"v":"#272b42","t":"color","s":"css-var --primary-700 (app)"}},"radius":{"default":{"v":"5px","t":"dimension","s":"css-var --radius (app)"},"lg":{"v":"8px","t":"dimension","s":"css-var --radius-lg (app)"},"md":{"v":"6px","t":"dimension","s":"css-var --radius-md (app)"},"sm":{"v":"3px","t":"dimension","s":"css-var --radius-sm (app)"},"xl":{"v":"10px","t":"dimension","s":"css-var --radius-xl (app)"}},"red":{"100":{"v":"#ffedf1","t":"color","s":"css-var --red-100 (app)"},"200":{"v":"#ffbdce","t":"color","s":"css-var --red-200 (app)"},"300":{"v":"#fe7394","t":"color","s":"css-var --red-300 (app)"},"400":{"v":"#fd4370","t":"color","s":"css-var --red-400 (app)"}},"selected":{"ui":{"default":{"v":"#eceffd","t":"color","s":"css-var --selected-ui (app)"},"dark":{"v":"#272b42","t":"color","s":"css-var --selected-ui-dark (app)"}}},"shadow":{"highlight":{"v":"rgb(22, 117, 240) 0px 0px 0px 1px inset","t":"other","s":"css-var --shadow-highlight (app)"}},"sidebar":{"v":"244px","t":"dimension","s":"css-var --sidebar (app)"},"spacing":{"default":{"v":"4px","t":"dimension","s":"css-var --spacing (app)"},"announcement":{"sidebar":{"v":"240px","t":"dimension","s":"css-var --spacing-announcement-sidebar (app)"}},"container":{"default":{"v":"780px","t":"dimension","s":"css-var --spacing-container (app)"},"lg":{"v":"980px","t":"dimension","s":"css-var --spacing-container-lg (app)"},"md":{"v":"860px","t":"dimension","s":"css-var --spacing-container-md (app)"}},"header":{"v":"0px","t":"dimension","s":"css-var --spacing-header (app)"},"roadmap":{"column":{"v":"380px","t":"dimension","s":"css-var --spacing-roadmap-column (app)"}},"sidebar":{"v":"300px","t":"dimension","s":"css-var --spacing-sidebar (app)"}},"success":{"100":{"v":"#d4eee5","t":"color","s":"css-var --success-100 (app)"},"200":{"v":"#7ecbb0","t":"color","s":"css-var --success-200 (app)"},"300":{"v":"#28a87b","t":"color","s":"css-var --success-300 (app)"},"400":{"v":"#208662","t":"color","s":"css-var --success-400 (app)"},"500":{"v":"#18654a","t":"color","s":"css-var --success-500 (app)"}},"text":{"01":{"default":{"v":"#111111","t":"color","s":"css-var --text-01 (app)"},"dark":{"v":"#eceffd","t":"color","s":"css-var --text-01-dark (app)"}},"02":{"default":{"v":"#111111","t":"color","s":"css-var --text-02 (app)"},"dark":{"v":"#646363","t":"color","s":"css-var --text-02-dark (app)"}},"03":{"v":"#a7a5a5","t":"color","s":"css-var --text-03 (app)"},"04":{"v":"#ffffff","t":"color","s":"css-var --text-04 (app)"},"0_5":{"v":"8px","t":"dimension","s":"css-var --text-0_5 (app)"},"0_625":{"v":"10px","t":"dimension","s":"css-var --text-0_625 (app)"},"0_6875":{"v":"11px","t":"dimension","s":"css-var --text-0_6875 (app)"},"0_75":{"v":"12px","t":"dimension","s":"css-var --text-0_75 (app)"},"0_8125":{"v":"13px","t":"dimension","s":"css-var --text-0_8125 (app)"},"0_875":{"v":"14px","t":"dimension","s":"css-var --text-0_875 (app)"},"0_9375":{"v":"15px","t":"dimension","s":"css-var --text-0_9375 (app)"},"1":{"v":"16px","t":"dimension","s":"css-var --text-1 (app)"},"1_125":{"v":"18px","t":"dimension","s":"css-var --text-1_125 (app)"},"1_25":{"v":"20px","t":"dimension","s":"css-var --text-1_25 (app)"},"1_375":{"v":"22px","t":"dimension","s":"css-var --text-1_375 (app)"},"1_5":{"v":"24px","t":"dimension","s":"css-var --text-1_5 (app)"},"1_75":{"v":"28px","t":"dimension","s":"css-var --text-1_75 (app)"},"2":{"v":"32px","t":"dimension","s":"css-var --text-2 (app)"},"2_125":{"v":"34px","t":"dimension","s":"css-var --text-2_125 (app)"},"2_25":{"v":"36px","t":"dimension","s":"css-var --text-2_25 (app)"},"2_5":{"v":"40px","t":"dimension","s":"css-var --text-2_5 (app)"},"2_75":{"v":"44px","t":"dimension","s":"css-var --text-2_75 (app)"},"danger":{"v":"#ea5d5d","t":"color","s":"css-var --text-danger (app)"},"primary":{"01":{"v":"#455eed","t":"color","s":"css-var --text-primary-01 (app)"},"02":{"v":"#b3bafb","t":"color","s":"css-var --text-primary-02 (app)"}},"secondary":{"01":{"v":"#c7a064","t":"color","s":"css-var --text-secondary-01 (app)"}},"ink":{"v":"{color.brand.text}","t":"color","s":"computed color of login-title default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.brand.text","d":"The app heading ink on the dark chrome."},"body":{"v":"{light.700}","t":"color","s":"computed color of ob-title default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared light.700","d":"The onboarding headline ink — the 'Create designs' headline sits on the white upload card inside the dark editor field."},"muted":{"v":"{color.brand.text}","t":"color","s":"computed color of login-field default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.brand.text","d":"The auth field's typed-text ink."},"link":{"v":"{color.brand.text}","t":"color","s":"computed color of login-forgot default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.brand.text","d":"The 'Forgot password?' link ink."}},"theme":{"aqua":{"default":{"v":"#63c8d9","t":"color","s":"css-var --theme-aqua (app)"},"dark":{"v":"#4aafc0","t":"color","s":"css-var --theme-aqua-dark (app)"}},"brand":{"default":{"v":"#ef567c","t":"color","s":"css-var --theme-brand (app)"},"dark":{"v":"#ff5580","t":"color","s":"css-var --theme-brand-dark (app)"},"text":{"v":"#ffffff","t":"color","s":"css-var --theme-brand-text (app)"}},"canvas":{"v":"#fcfcfc","t":"color","s":"css-var --theme-canvas (app)"},"danger":{"default":{"v":"#dd0b3f","t":"color","s":"css-var --theme-danger (app)"},"dark":{"v":"#d41142","t":"color","s":"css-var --theme-danger-dark (app)"}},"frill":{"default":{"v":"#ef567c","t":"color","s":"css-var --theme-frill (app)"},"dark":{"v":"#ff5580","t":"color","s":"css-var --theme-frill-dark (app)"},"light":{"v":"#ff5a83","t":"color","s":"css-var --theme-frill-light (app)"}},"highlight":{"default":{"v":"#1675f0","t":"color","s":"css-var --theme-highlight (app)"},"dark":{"v":"#0766e1","t":"color","s":"css-var --theme-highlight-dark (app)"},"light":{"v":"#2a9efb","t":"color","s":"css-var --theme-highlight-light (app)"}},"info":{"default":{"v":"#2196f3","t":"color","s":"css-var --theme-info (app)"},"dark":{"v":"#087dda","t":"color","s":"css-var --theme-info-dark (app)"}},"orange":{"default":{"v":"#ff922d","t":"color","s":"css-var --theme-orange (app)"},"dark":{"v":"#e67914","t":"color","s":"css-var --theme-orange-dark (app)"}},"positive":{"default":{"v":"#2eb67d","t":"color","s":"css-var --theme-positive (app)"},"dark":{"v":"#159d64","t":"color","s":"css-var --theme-positive-dark (app)"}},"purple":{"v":"#865bff","t":"color","s":"css-var --theme-purple (app)"},"selected":{"v":"#6fa5fd","t":"color","s":"css-var --theme-selected (app)"},"shade":{"0":{"v":"#ffffff","t":"color","s":"css-var --theme-shade-0 (app)"},"10":{"v":"#eeeef1","t":"color","s":"css-var --theme-shade-10 (app)"},"100":{"v":"#1c1c1c","t":"color","s":"css-var --theme-shade-100 (app)"},"20":{"v":"#dedee7","t":"color","s":"css-var --theme-shade-20 (app)"},"30":{"v":"#aeaeb8","t":"color","s":"css-var --theme-shade-30 (app)"},"40":{"v":"#a3a3a9","t":"color","s":"css-var --theme-shade-40 (app)"},"5":{"v":"#f9f9fb","t":"color","s":"css-var --theme-shade-5 (app)"}},"text":{"default":{"v":"#0d0d0e","t":"color","s":"css-var --theme-text (app)"},"invert":{"v":"#ffffff","t":"color","s":"css-var --theme-text-invert (app)"},"low":{"v":"#8f9399","t":"color","s":"css-var --theme-text-low (app)"},"medium":{"v":"#64676b","t":"color","s":"css-var --theme-text-medium (app)"}},"warn":{"default":{"v":"#f48967","t":"color","s":"css-var --theme-warn (app)"},"dark":{"v":"#ff8e75","t":"color","s":"css-var --theme-warn-dark (app)"}},"yellow":{"default":{"v":"#fab347","t":"color","s":"css-var --theme-yellow (app)"},"dark":{"v":"#e19a2e","t":"color","s":"css-var --theme-yellow-dark (app)"}}},"thumb":{"outer":{"color":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --thumb-outer-color (app)"}}},"toolbar":{"default":{"v":"84px","t":"dimension","s":"css-var --toolbar (app)"},"and":{"inspector":{"v":"314px","t":"dimension","s":"css-var --toolbar-and-inspector (app)"},"ruller":{"v":"78px","t":"dimension","s":"css-var --toolbar-and-ruller (app)"}}},"tracking":{"tight":{"v":"-.025em","t":"other","s":"css-var --tracking-tight (app)"}},"transparent":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --transparent (app)"},"ui":{"01":{"default":{"v":"#ffffff","t":"color","s":"css-var --ui-01 (app)"},"dark":{"v":"#111111","t":"color","s":"css-var --ui-01-dark (app)"}},"02":{"default":{"v":"#ffffff","t":"color","s":"css-var --ui-02 (app)"},"dark":{"v":"#212121","t":"color","s":"css-var --ui-02-dark (app)"}},"03":{"v":"#f6f6f6","t":"color","s":"css-var --ui-03 (app)"},"04":{"default":{"v":"#e0e0e0","t":"color","s":"css-var --ui-04 (app)"},"dark":{"v":"#646363","t":"color","s":"css-var --ui-04-dark (app)"}},"05":{"default":{"v":"#b9b7b7","t":"color","s":"css-var --ui-05 (app)"},"dark":{"v":"#283e7f","t":"color","s":"css-var --ui-05-dark (app)"}},"06":{"v":"linear-gradient(90deg,#5666f7,#56d1f7)","t":"other","s":"css-var --ui-06 (app)"},"07":{"v":"#6775f8","t":"color","s":"css-var --ui-07 (app)"},"background":{"v":"#ffffff","t":"color","s":"css-var --ui-background (app)"},"overlay":{"01":{"v":"rgba(0, 0, 0, 0.75)","t":"color","s":"css-var --ui-overlay-01 (app)"},"02":{"v":"rgba(0, 0, 0, 0.4)","t":"color","s":"css-var --ui-overlay-02 (app)"},"03":{"v":"rgba(255, 255, 255, 0.75)","t":"color","s":"css-var --ui-overlay-03 (app)"},"04":{"v":"rgba(0, 0, 0, 0.1)","t":"color","s":"css-var --ui-overlay-04 (app)"},"05":{"v":"#000000","t":"color","s":"css-var --ui-overlay-05 (app)"}}},"visited":{"link":{"v":"#7f8bff","t":"color","s":"css-var --visited-link (app)"}},"warning":{"100":{"v":"#fdf4d3","t":"color","s":"css-var --warning-100 (app)"},"200":{"v":"#fade7c","t":"color","s":"css-var --warning-200 (app)"},"300":{"v":"#f7c825","t":"color","s":"css-var --warning-300 (app)"},"400":{"v":"#947816","t":"color","s":"css-var --warning-400 (app)"}},"yellow":{"100":{"v":"#fefbea","t":"color","s":"css-var --yellow-100 (app)"},"200":{"v":"#feeeb3","t":"color","s":"css-var --yellow-200 (app)"},"300":{"v":"#fedb5b","t":"color","s":"css-var --yellow-300 (app)"},"400":{"v":"#ffcf25","t":"color","s":"css-var --yellow-400 (app)"}},"z":{"index":{"1":{"v":1,"t":"other","s":"css-var --z-index-1 (app)"},"2":{"v":2,"t":"other","s":"css-var --z-index-2 (app)"},"dnd":{"v":1000,"t":"other","s":"css-var --z-index-dnd (app)"},"drawer":{"v":100,"t":"other","s":"css-var --z-index-drawer (app)"},"editor":{"v":200,"t":"other","s":"css-var --z-index-editor (app)"},"floating":{"button":{"v":5,"t":"other","s":"css-var --z-index-floating-button (app)"}},"header":{"v":20,"t":"other","s":"css-var --z-index-header (app)"},"mobile":{"header":{"v":51,"t":"other","s":"css-var --z-index-mobile-header (app)"}},"modal":{"v":100,"t":"other","s":"css-var --z-index-modal (app)"},"overlay":{"v":100,"t":"other","s":"css-var --z-index-overlay (app)"},"popover":{"v":150,"t":"other","s":"css-var --z-index-popover (app)"},"promo":{"v":25,"t":"other","s":"css-var --z-index-promo (app)"},"sidebar":{"default":{"v":50,"t":"other","s":"css-var --z-index-sidebar (app)"},"shadow":{"v":49,"t":"other","s":"css-var --z-index-sidebar-shadow (app)"}},"toasts":{"v":200,"t":"other","s":"css-var --z-index-toasts (app)"},"tooltip":{"v":200,"t":"other","s":"css-var --z-index-tooltip (app)"}}},"surface":{"card":{"v":"{dark.100}","t":"color","s":"the first opaque painted layer inside login-card default (raw/components-computed.json paint list); matches declared dark.100","d":"The auth card's painted surface on the dark field — the card's own box is transparent, the fill is its inner panel."},"field-bg":{"v":"{dark.200}","t":"color","s":"the painted fill of the field-container layer inside login-card default (raw/components-computed.json paint list); matches declared dark.200","d":"The auth-field fill — the .field-container paint under the transparent inputs."},"chrome-fill":{"v":"{dark.100}","t":"color","s":"the first opaque painted layer inside ed-header default (raw/components-computed.json paint list); matches declared dark.100","d":"The editor header bar's fill on the dark chrome — the header's own box is transparent, the fill is its inner panel."},"inspector-fill":{"v":"{dark.100}","t":"color","s":"the first opaque painted layer inside ed-inspector default (raw/components-computed.json paint list); matches declared dark.100","d":"The inspector panel's fill."},"dialog-fill":{"v":"{dark.100}","t":"color","s":"the first opaque painted layer inside ed-craft default (raw/components-computed.json paint list); matches declared dark.100","d":"The Craft dialog's painted surface — the modal box's own box is transparent, the fill is its inner panel."}},"border":{"field-border":{"v":"{thumb.outer.color}","t":"color","s":"computed borderTopColor of login-field default (raw/components-computed.json); matches declared thumb.outer.color","d":"The auth-field border, where the field paints one."},"field-focus":{"v":"{thumb.outer.color}","t":"color","s":"computed borderTopColor of login-field focused (raw/components-computed.json); matches declared thumb.outer.color","d":"The auth-field border or ring while focused."},"style-selected-border":{"v":"#b53d11","t":"color","s":"computed borderTopColor of ed-craft-style opened (raw/components-computed.json)","d":"The border the picked Craft style card paints."}},"action":{"oauth-fill":{"v":"{thumb.outer.color}","t":"color","s":"computed backgroundColor of login-google default (raw/components-computed.json); matches declared thumb.outer.color","d":"The Google OAuth button's fill — honestly transparent: it is an outlined ghost button with a blue border on the dark card."},"oauth-ink":{"v":"#6a7ef1","t":"color","s":"computed color of login-google default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The text on the OAuth button."},"primary-fill":{"v":"#6a7ef1","t":"color","s":"computed backgroundColor of login-submit enabled (raw/components-computed.json)","d":"The enabled submit fill, painted once sample text sits in both fields — never submitted."},"primary-fill-disabled":{"v":"{dark.500}","t":"color","s":"computed backgroundColor of login-submit default (raw/components-computed.json); matches declared dark.500","d":"The submit's disabled fill at rest."},"primary-ink":{"v":"{color.brand.text}","t":"color","s":"computed color of login-submit enabled — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.brand.text","d":"The text on the app primary button."},"tool-fill-active":{"v":"{thumb.outer.color}","t":"color","s":"computed backgroundColor of ed-tool-active default (raw/components-computed.json); matches declared thumb.outer.color","d":"The selected tool's highlighted fill on the left rail."},"signup-fill":{"v":"{default.filled.slider.bg.color}","t":"color","s":"computed backgroundColor of ed-signup default (raw/components-computed.json); matches declared default.filled.slider.bg.color","d":"The filled Signup button's paint in the editor header."},"signup-ink":{"v":"{color.brand.text}","t":"color","s":"computed color of ed-signup default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.brand.text","d":"The text on the filled Signup button."},"craft-cta-fill":{"v":"{default.filled.slider.bg.color}","t":"color","s":"computed backgroundColor of ed-add enabled (raw/components-computed.json); matches declared default.filled.slider.bg.color","d":"The 'Add to canvas' fill once a style is picked — measured at rest; the screenshot pass pressed it once (an AI generation), measure.mjs never did."},"craft-cta-disabled":{"v":"{default.filled.slider.bg.color}","t":"color","s":"computed backgroundColor of ed-add default (raw/components-computed.json); matches declared default.filled.slider.bg.color","d":"The 'Add to canvas' fill before a style is picked — measured identical to the enabled fill, the button does not dim."}},"background":{"page":{"v":"{token.71ff440c.ed97.42a2.b452.db1bf5b85fb7}","t":"color","s":"computed backgroundColor of the app body (raw/components-computed.json app-bg default); the dark field behind the auth cards and editor chrome (screenshots/*-app-*.png); matches declared token.71ff440c.ed97.42a2.b452.db1bf5b85fb7","d":"The app page field — the dark chrome."}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  // The marketing vocabulary is the hashed token.* namespace at the set
+  // root: collect the colour leaves wherever they live, grouped by first
+  // path segment.
+  const groups = {};
+  for (const [n, t] of flat(TOK.core, '')) {
+    if (t.t !== 'color' || n.startsWith('component')) continue;
+    (groups[n.split('.')[0]] ??= []).push([n, t]);
+  }
+  for (const g of Object.keys(groups).sort()) {
+    h += `<div class="pal-h">${esc(g)} (marketing vocabulary — the hashed Framer token layer)</div><div class="pal">`;
+    for (const [n, t] of groups[g]) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label, scope] of [['light', 'light roles', ''], ['app', 'app vocabulary + roles', ' app']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color');
+    if (!roles.length) continue;
+    // A non-core set's custom properties only resolve inside its own scope.
+    h += `<div class="pal-h">${label}</div><div class="pal${scope}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const setname of ['light', 'app']) {
+    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Aliases are set-relative: the palette scales live under TOK.core, surface
+  // roles under TOK.light / TOK.app. Try each root.
+  for (const root of [TOK.core, TOK.light, TOK.app, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Glorify</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

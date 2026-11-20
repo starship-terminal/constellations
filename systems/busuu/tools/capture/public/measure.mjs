@@ -269,7 +269,11 @@ async function home() {
   await S('logo', q('a.nav-dropdown__logo, nav a:has(svg), nav a:has(img)').filter({ visible: true }).first(), ['default'], { group: g, title: 'Logo', desc: 'The wordmark anchor (a.nav-dropdown__logo, a labelled svg), top-left of the nav bar.', sel: 'a.nav-dropdown__logo' }, { noScroll: true });
   await S('nav-link', q('.nav-dropdown__btn, .responsive-nav a, nav a').filter({ hasText: /Log\s*in/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Nav link', desc: 'The nav\'s Log-in outline button (a.nav-dropdown__btn.btn--outline-default); measured, never followed.', sel: '.nav-dropdown__btn.btn--outline-default' }, { noScroll: true });
   await S('cta-signup', q('header a').filter({ hasText: /Learn for free|Get started/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Signup CTA', desc: 'The header CTA; links to signup, measured never followed.', sel: 'header signup CTA' }, { noScroll: true });
-  await S('nav-dropdown', q('.nav-dropdown, [data-cy="HomePage__mainNav"]').filter({ visible: true }).first(), B4, { group: g, title: 'Nav dropdown', desc: 'The language/product dropdown in the header.', sel: '.nav-dropdown' }, { noScroll: true });
+  // The dropdown panel only. `.nav-dropdown` is the class of the whole nav bar
+  // (nav.nav-dropdown, 1400 x 40), so it recorded the bar; the panel is
+  // div.main-nav-dropdown with its ul.main-nav-dropdown__list, which shows only
+  // while the menu is open. If it is closed, S() records the entry missing.
+  await S('nav-dropdown', q('div.main-nav-dropdown, ul.main-nav-dropdown__list').filter({ visible: true }).first(), B4, { group: g, title: 'Nav dropdown', desc: 'The language/product dropdown panel in the header.', sel: 'div.main-nav-dropdown' }, { noScroll: true });
   const h = G.home;
   await S('hero-title', q('h1, .header-simplified__title').filter({ visible: true }).first(), ['default'], { group: h, title: 'Hero headline', sel: 'h1.header-simplified__title' }, { noScroll: true });
   await S('hero-cta', q('main a, main button, section a, section button').filter({ hasText: /Start learning|Get started|Learn for free/i }).filter({ visible: true }).first(), B4, { group: h, title: 'Hero CTA', desc: 'The hero action; measured never followed.', sel: 'hero CTA (main/section scope)' });

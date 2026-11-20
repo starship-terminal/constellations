@@ -1,0 +1,13 @@
+{
+ "_note": "Rules for systems/endlesstools. A fully public signed-out capture of endlesstools.io's marketing one-pager plus app.endlesstools.io's login and legal routes: no owner data on any surface. No form was submitted and no account exists; the only presses were local UI toggles. Testimonial handles (@endlesstools, @framer, ...) are public Twitter handles quoted on the marketing page, not private data. The OCR email net is kept with endlesstools' own published addresses allowed.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@endlesstools\\.com$",
+   "@endlesstools\\.io$",
+   "@example\\.com$",
+   "@example\\.org$"
+  ]
+ },
+ "families": []
+}

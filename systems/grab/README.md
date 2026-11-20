@@ -2,7 +2,7 @@
 
 A token set and component reference for Grab, Grab Holdings' Southeast Asian super app for rides, food delivery, payments and offers, captured from its iOS app. Use it to build a native iOS service app that borrows its proportions and structure: a white page under a coloured service header, one green for every primary action, pale mint behind secondary controls, dark-teal selected chips, capsule buttons and a tab bar with a raised scan button in the middle.
 
-It holds 24 captures from the owner's signed-in account, made through iPhone Mirroring on 2026-10-23: Home, the ride flow up to the Book button (not pressed), a Dine Out merchant page, Activity, Messages with a permission pre-prompt, Moments, the account page, dietary preferences, search, GrabFood (home, flash deals sheet, empty cart, Offer Zone, a pickup promo and the Pickup map list). Grab has no dark UI: it stays light with the phone in dark mode, so every capture and token is light. Under the repository's rule (AGENTS.md), the owner's account name and the names other people show on Moments stay. The owner's home address and postcode, other saved addresses with postcodes, the map centred on the owner's home block and its Home pin label, trip titles that start with the home address and the payment card's last digits are painted over in every screenshot and crop ([tools/masks.json](tools/masks.json)).
+It holds 24 captures from the owner's signed-in account, made through iPhone Mirroring on 2026-10-23: Home, the ride flow up to the Book button (not pressed), a Dine Out merchant page, Activity, Messages with a permission pre-prompt, Moments, the account page, dietary preferences, search, GrabFood (home, flash deals sheet, empty cart, Offer Zone, a pickup promo and the Pickup map list). Grab has no dark UI: it stays light with the phone in dark mode, so every capture and token is light. The owner's account name stays. On 2026-11-21, for the public repository, other people's names and profile photos (two posters on Moments, a reviewer on the merchant page) were painted out of `08` and `13` with [tools/redact_images.py](../../tools/redact_images.py) and [its rules](../../tools/redact-rules/grab.json); merchants, restaurants and post photos stay. The owner's home address and postcode, other saved addresses with postcodes, the map centred on the owner's home block and its Home pin label, trip titles that start with the home address and the payment card's last digits are painted over in every screenshot and crop ([tools/masks.json](tools/masks.json)).
 
 This package contains no Grab code, and none of its artwork has been redrawn. The screenshots and the visual system they show are Grab's ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the 3D service icons, illustrations, logo or brand green.
 
@@ -60,7 +60,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 |---|---|---|---|---|
 | light | 17.58:1 pass | 17.58:1 pass | 4.88:1 pass | 4.88:1 pass |
 
-4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.color.focus.glow` #DAF3E5; `light.color.focus.ring` #2A8959; `light.color.focus.caret` #00B34E.
+4 of 4 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `light.color.focus.glow` #DAF3E5 (Sampled, not measured); `light.color.focus.ring` #2A8959 (Sampled, not measured); `light.color.focus.caret` #00B34E.
 
 <!-- brief:end -->
 
@@ -199,7 +199,7 @@ python3 -m unittest discover -s tools
 git status --short .
 ```
 
-`tools/capture/quantize.py ~/.design-systems/grab/raw-shots` (masks, then quantises) and `tools/crops.py` both need Pillow, and rewrite `screenshots/` and `components/crops/`. A rebuild that changes nothing proves the outputs still match their inputs. From the repository root, `make design-md` regenerates DESIGN.md and the Brief.
+`tools/capture/quantize.py ~/.design-systems/grab/raw-shots` (masks, then quantises) and `tools/crops.py` both need Pillow, and rewrite `screenshots/` and `components/crops/`. After a re-quantise, run `python3 tools/redact_images.py apply systems/grab --rules tools/redact-rules/grab.json` from the repository root (it keeps each image's palette and every pixel outside the boxes), so the names stay masked. A rebuild that changes nothing proves the outputs still match their inputs. From the repository root, `make design-md` regenerates DESIGN.md and the Brief.
 
 ## Use in SwiftUI and Figma
 

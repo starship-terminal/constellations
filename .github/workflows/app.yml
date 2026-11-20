@@ -5,11 +5,20 @@ on:
       - 'app/**'
       - '.github/workflows/app.yml'
       # The app reads these at runtime and in its tests, and the media
-      # taxonomy seed is built from them.
+      # taxonomy seed is built from them. The float-parity fixture check
+      # imports server/library.py and tools/catalog.py, which loads
+      # tools/refero/refero_media.py. app/src/server/knowledge/ reads
+      # scorecard/ and docs/. The host-rule test reads
+      # server/front-door-cases.json.
       - 'systems/**'
       - 'catalog.json'
       - 'refero/catalog.json'
       - 'tools/catalog.py'
+      - 'server/library.py'
+      - 'server/front-door-cases.json'
+      - 'tools/refero/refero_media.py'
+      - 'scorecard/**'
+      - 'docs/**'
   push:
     branches: [main]
     paths:
@@ -19,13 +28,35 @@ on:
       - 'catalog.json'
       - 'refero/catalog.json'
       - 'tools/catalog.py'
+      - 'server/library.py'
+      - 'server/front-door-cases.json'
+      - 'tools/refero/refero_media.py'
+      - 'scorecard/**'
+      - 'docs/**'
 permissions:
   contents: read
+# Replaces a pull request's older run on a new push; see the note in check.yml.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   app:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+          lfs: false
+        env:
+          GIT_LFS_SKIP_SMUDGE: 1
+      # The taxonomy check compares the seed to the base catalog. A depth-1
+      # pull-request checkout has the merge commit only, so fetch the base.
+      - name: Fetch the pull request base and head
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch --depth=1 origin "${{ github.base_ref }}:refs/remotes/origin/${{ github.base_ref }}"
+          git fetch --depth=1 origin "${{ github.event.pull_request.head.sha }}:refs/pr-head"
+          echo "GITHUB_HEAD_SHA=refs/pr-head" >> "$GITHUB_ENV"
       - uses: actions/setup-node@v7
         with:
           node-version: 22
@@ -37,6 +68,8 @@ jobs:
         run: pnpm --dir app format:check
       - name: Media taxonomy seed is current
         run: python3 app/scripts/build-media-taxonomy.py --check
+      - name: Float parity fixture is current
+        run: python3 app/scripts/build-float-parity-fixture.py --check
       - name: Generate Next types
         # next-env.d.ts and the route types are generated, not committed.
         run: pnpm --dir app exec next typegen

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 20 20" data-icon="AgentsFirstPartyPlagiarismChecker" stroke="transparent" role="img" stroke-width="1px">
+<ellipse cx="10" cy="17.5" fill="#73e1d4" rx="8" ry="2.5" stroke="#000000" stroke-width="1">
+</ellipse>
+<path fill="#73e1d4" d="M21.777 4.404a6.75 6.75 0 0 0-6.205-6.192 72 72 0 0 0-11.168.011 6.75 6.75 0 0 0-6.192 6.205 72 72 0 0 0 .012 11.168 6.75 6.75 0 0 0 6.204 6.192c3.716.284 7.448.284 11.168-.011a6.754 6.754 0 0 0 6.193-6.205 72 72 0 0 0-.012-11.168" stroke="#000000" stroke-width="1">
+</path>
+<path fill="#027e6f" fill-rule="evenodd" d="M9 13h2v-2h7v3a3.5 3.5 0 0 1-6.964.5H8.964A3.5 3.5 0 0 1 2 14v-3h7zm-3-.5V14a.5.5 0 0 1-.5.5V16a2 2 0 0 0 2-2v-1.5zm9 0V14a.5.5 0 0 1-.5.5V16a2 2 0 0 0 2-2v-1.5z" clip-rule="evenodd" stroke="#000000" stroke-width="1">
+</path>
+<path fill="#027e6f" d="M7.356 2c.686 0 1.31.4 1.593 1.025l.595 1.31a.5.5 0 0 0 .91 0l.596-1.309A1.75 1.75 0 0 1 12.644 2h.711c.687 0 1.31.4 1.594 1.025l2.234 4.914.027.061H20v1.5H0V8h2.79l.027-.06L5.05 3.026A1.75 1.75 0 0 1 6.644 2z" stroke="#000000" stroke-width="1">
+</path>
+</svg>

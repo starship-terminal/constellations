@@ -1,0 +1,372 @@
+{
+  "source": "getComputedStyle on the Wayback replay of https://www.modyfi.com/ snapshot 20250219221151, 1440x900, 2026-11-19. Live site is a Webflow 404.",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "components": {
+    "nav": {
+      "states": {
+        "default": {
+          "sel": ".rl_navbar2_component",
+          "text": "Product Effects Roadmap Careers About \ud83d\udc40 Desktop version Log in Sign up",
+          "width": "1440px",
+          "height": "80px",
+          "color": "rgb(201, 201, 201)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "solid",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "lineHeight": "32.4px",
+          "letterSpacing": "normal",
+          "paddingTop": "0px",
+          "paddingRight": "72px",
+          "paddingBottom": "0px",
+          "paddingLeft": "72px",
+          "opacity": "1",
+          "textTransform": "none",
+          "display": "flex",
+          "page": "home",
+          "source": "computed style read with the pointer away, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json (nav-default); other fields from the homepage pass"
+        }
+      }
+    },
+    "nav-link": {
+      "states": {
+        "default": {
+          "sel": "a.rl_navbar2_link",
+          "text": "Product",
+          "width": "88px",
+          "height": "35px",
+          "color": "rgba(255, 255, 255, 0.8)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgba(255, 255, 255, 0.8)",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "none",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "fontFamily": "Jokker, Arial, sans-serif",
+          "fontSize": "12.8px",
+          "fontWeight": "400",
+          "lineHeight": "19.2px",
+          "letterSpacing": "normal",
+          "paddingTop": "8px",
+          "paddingRight": "19.2px",
+          "paddingBottom": "8px",
+          "paddingLeft": "19.2px",
+          "opacity": "1",
+          "textTransform": "none",
+          "display": "block",
+          "page": "home",
+          "source": "computed style read with the pointer away, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json (nav-link-default); other fields from the homepage pass"
+        }
+      }
+    },
+    "logo": {
+      "states": {
+        "default": {
+          "sel": ".rl_navbar2_logo",
+          "text": "",
+          "width": "100px",
+          "height": "30px",
+          "color": "rgb(51, 51, 51)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(51, 51, 51)",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "none",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "lineHeight": "32.4px",
+          "letterSpacing": "normal",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "opacity": "1",
+          "textTransform": "none",
+          "display": "inline-block",
+          "page": "home",
+          "source": "computed style on .rl_navbar2_logo at 1440px, Wayback 20250219221151 https://www.modyfi.com/"
+        }
+      }
+    },
+    "login-button": {
+      "states": {
+        "default": {
+          "sel": "a.rl_navbar2_button.loginbutton.w-button",
+          "text": "Log in",
+          "width": "73px",
+          "height": "39px",
+          "color": "rgba(255, 255, 255, 0.8)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgba(255, 255, 255, 0)",
+          "borderTopWidth": "2px",
+          "borderTopStyle": "solid",
+          "borderRadius": "15px",
+          "boxShadow": "none",
+          "fontFamily": "Jokker, Arial, sans-serif",
+          "fontSize": "12.8px",
+          "fontWeight": "400",
+          "lineHeight": "19.2px",
+          "letterSpacing": "normal",
+          "paddingTop": "8px",
+          "paddingRight": "16px",
+          "paddingBottom": "8px",
+          "paddingLeft": "16px",
+          "opacity": "1",
+          "textTransform": "none",
+          "display": "block",
+          "page": "home",
+          "source": "computed style read with the pointer away, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json (login-button-default); other fields from the homepage pass"
+        }
+      }
+    },
+    "signup-button": {
+      "states": {
+        "default": {
+          "sel": "a.rl_navbar2_button.w-button:not(.loginbutton)",
+          "text": "Sign up",
+          "width": "83px",
+          "height": "39px",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgba(255, 3, 87, 0.47)",
+          "borderTopWidth": "2px",
+          "borderTopStyle": "solid",
+          "borderRadius": "15px",
+          "boxShadow": "none",
+          "fontFamily": "Jokker, Arial, sans-serif",
+          "fontSize": "12.8px",
+          "fontWeight": "400",
+          "lineHeight": "19.2px",
+          "letterSpacing": "normal",
+          "paddingTop": "8px",
+          "paddingRight": "16px",
+          "paddingBottom": "8px",
+          "paddingLeft": "16px",
+          "opacity": "1",
+          "textTransform": "none",
+          "display": "block",
+          "page": "home",
+          "source": "computed style read with the pointer away, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json (signup-button-default); other fields from the homepage pass"
+        },
+        "hover": {
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgb(255, 3, 87)",
+          "borderTopColor": "rgba(255, 3, 87, 0.47)",
+          "borderRadius": "15px",
+          "page": "home",
+          "sel": "a.rl_navbar2_button.w-button:not(.loginbutton)",
+          "source": "computed style read after signup.hover() in tools/capture/crops.mjs, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json (signup-button-hover)",
+          "evidence": "Measured"
+        }
+      }
+    },
+    "hero-title": {
+      "states": {
+        "default": {
+          "sel": "h1",
+          "text": "Design without limits",
+          "width": "510px",
+          "height": "67px",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(255, 255, 255)",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "none",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "fontFamily": "Jokker, Arial, sans-serif",
+          "fontSize": "56px",
+          "fontWeight": "600",
+          "lineHeight": "67.2px",
+          "letterSpacing": "-3px",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "opacity": "1",
+          "textTransform": "none",
+          "display": "block",
+          "page": "home",
+          "source": "computed style read with the pointer away, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json (hero-title-default); other fields from the homepage pass"
+        }
+      }
+    },
+    "hero-body": {
+      "states": {
+        "default": {
+          "sel": "p.rl-text-style-medium-8, .hero-paragraph, p",
+          "text": "Modyfi is the design platform built for multidisciplinary designers. Design, generate, ani",
+          "width": "580px",
+          "height": "63px",
+          "color": "rgb(201, 201, 201)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(201, 201, 201)",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "none",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "fontFamily": "Jokker, Arial, sans-serif",
+          "fontSize": "17.6px",
+          "fontWeight": "400",
+          "lineHeight": "31.68px",
+          "letterSpacing": "-1px",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "opacity": "1",
+          "textTransform": "none",
+          "display": "block",
+          "page": "home",
+          "source": "computed style read with the pointer away, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json (hero-body-default); other fields from the homepage pass"
+        }
+      }
+    },
+    "cta-button": {
+      "states": {
+        "default": {
+          "sel": "a.rl-button, a.button-7",
+          "text": "Start playing for free",
+          "width": "250px",
+          "height": "58px",
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "none",
+          "borderRadius": "15px",
+          "boxShadow": "none",
+          "fontFamily": "system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "600",
+          "lineHeight": "25.6px",
+          "letterSpacing": "normal",
+          "paddingTop": "16px",
+          "paddingRight": "24px",
+          "paddingBottom": "16px",
+          "paddingLeft": "24px",
+          "opacity": "1",
+          "textTransform": "none",
+          "display": "flex",
+          "page": "home",
+          "source": "computed style read with the pointer away, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json (cta-button-default); other fields from the homepage pass"
+        },
+        "focus-visible": {
+          "color": "rgb(0, 0, 0)",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderTopColor": "rgb(0, 0, 0)",
+          "borderRadius": "15px",
+          "outline": "rgb(153, 200, 255) auto 1px",
+          "boxShadow": "none",
+          "page": "home",
+          "sel": "a.rl-button",
+          "source": "entered by hand in tools/build_from_readings.py; no saved reading backs it. A programmatic focus() shows the browser's default ring, not a Modyfi style",
+          "evidence": "Reconstruction"
+        }
+      }
+    },
+    "section-title": {
+      "states": {
+        "default": {
+          "sel": "h2",
+          "text": "Explore what the community has been making",
+          "width": "650px",
+          "height": "115px",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(255, 255, 255)",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "none",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "fontFamily": "Jokker, Arial, sans-serif",
+          "fontSize": "48px",
+          "fontWeight": "600",
+          "lineHeight": "57.6px",
+          "letterSpacing": "-1px",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "opacity": "0",
+          "textTransform": "none",
+          "display": "block",
+          "page": "home",
+          "source": "computed style read with the pointer away, Wayback 20250219221151 https://www.modyfi.com/, raw/crops-measured.json (section-title-default); other fields from the homepage pass"
+        }
+      }
+    },
+    "project-card": {
+      "states": {
+        "default": {
+          "sel": "a.link-block-4",
+          "text": "RemixMelted CountdownBy Bailey RosserMirrorRepeaterDitherPinchRefractionOutlineEdgeHalfton",
+          "width": "0px",
+          "height": "0px",
+          "color": "rgb(255, 3, 87)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(255, 3, 87)",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "none",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "lineHeight": "32.4px",
+          "letterSpacing": "normal",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "opacity": "1",
+          "textTransform": "none",
+          "display": "inline-block",
+          "page": "home",
+          "source": "computed style on a.link-block-4 at 1440px, Wayback 20250219221151 https://www.modyfi.com/"
+        }
+      }
+    },
+    "menu-button": {
+      "states": {
+        "default": {
+          "sel": ".rl_navbar2_menu-button",
+          "text": "",
+          "width": "0px",
+          "height": "0px",
+          "color": "rgb(201, 201, 201)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderTopColor": "rgb(201, 201, 201)",
+          "borderTopWidth": "0px",
+          "borderTopStyle": "none",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "fontFamily": "Inter, sans-serif",
+          "fontSize": "24px",
+          "fontWeight": "400",
+          "lineHeight": "32.4px",
+          "letterSpacing": "normal",
+          "paddingTop": "0px",
+          "paddingRight": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "opacity": "1",
+          "textTransform": "none",
+          "display": "none",
+          "page": "home",
+          "source": "computed style on .rl_navbar2_menu-button at 1440px, Wayback 20250219221151 https://www.modyfi.com/"
+        }
+      }
+    }
+  }
+}

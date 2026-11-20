@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<title>OpenSea style guide</title>
+<style>
+:root, [data-mode="dark"] {
+  color-scheme: dark;
+  --page: #080808; --surface: #0c0c0c; --ink: #ffffff; --muted: #acacac; --line: #202020; --line-2: #2c2c2c; --accent: #0086ff; --selected: #161616; --up: #47bb64; --down: #e24756; --link: #83c3ff;
+}
+[data-mode="light"] {
+  color-scheme: light;
+  --page: #fafafa; --surface: #ffffff; --ink: #171717; --muted: #666666; --line: #ebebeb; --line-2: #dcdcdc; --accent: #0086ff; --selected: #f2f2f2; --up: #28a948; --down: #ea3943; --link: #0086ff;
+}
+body { margin: 0; background: var(--page); color: var(--ink); font: 16px/24px ui-sans-serif, system-ui, sans-serif; }
+main { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font-size: 32px; line-height: 48px; font-weight: 500; margin: 0 0 8px; }
+h2 { font-size: 24px; line-height: 30px; font-weight: 500; margin: 40px 0 12px; }
+p.note { color: var(--muted); max-width: 68ch; }
+.hero { font-size: 60px; line-height: 63px; font-weight: 500; letter-spacing: -1.5px; margin: 12px 0; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+button, .pill { font-family: inherit; font-size: 14px; line-height: 21px; font-weight: 500; border-radius: 9999px; height: 32px; padding: 0 16px; }
+button.primary { background: var(--accent); color: #fff; border: 0; }
+button.nav { background: var(--selected); color: var(--ink); border: 0; }
+button.ghost { background: transparent; color: var(--ink); border: 0; }
+button.filter { height: 28px; background: var(--surface); color: var(--muted); border: 1px solid var(--line); font-weight: 400; }
+button.filter.on { background: var(--selected); color: var(--ink); border-color: var(--line-2); font-weight: 500; }
+button.oauth { height: 48px; border-radius: 12px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); padding: 0 12px; }
+.field { height: 56px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); color: var(--muted); display: flex; align-items: center; padding: 0 12px; width: 280px; }
+.dialog { width: 320px; background: var(--page); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+.swatch { width: 160px; }
+.swatch i { display: block; height: 48px; border-radius: 8px; border: 1px solid var(--line); }
+code, .stat { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+.up { color: var(--up); } .down { color: var(--down); } a { color: var(--link); }
+.toggle { float: right; }
+table { border-collapse: collapse; width: 100%; }
+td { border-top: 1px solid var(--line); padding: 6px 8px; vertical-align: top; font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+<button class="primary toggle" id="theme" type="button">Light</button>
+<h1>OpenSea</h1>
+<p class="note">Rendered from the measured tokens. gtAmerica is proprietary and is not embedded, so this page uses the system sans. The live signed-out site was dark. Light colours are the declared .light pair, resolved on a probe, not a live theme switch.</p>
+<p class="hero">Equip your AI agents</p>
+<div class="row">
+  <button class="primary" type="button">Sign in</button>
+  <button class="nav" type="button">Home</button>
+  <button class="ghost" type="button">Explore</button>
+  <button class="filter on" type="button">All</button>
+  <button class="filter" type="button">Listed</button>
+</div>
+<h2>Connect</h2>
+<div class="dialog">
+  <h2>Connect with OpenSea</h2>
+  <p class="note">Email</p>
+  <div class="field">Continue with email</div>
+  <p></p>
+  <div class="row">
+    <button class="oauth" type="button">Continue with Google</button>
+  </div>
+  <p class="note">or continue with an external wallet</p>
+</div>
+<h2>Type</h2>
+<p>Collection titles are 32px / 48px, weight 500. Stats are mono 12px / 15px. A move up is <span class="up">+68.6%</span> and a move down is <span class="down">-22.1%</span>. A terms link is <a href="#colours">this blue</a>.</p>
+<h2 id="colours">Dark colours</h2>
+<div class="row" id="swatches"></div>
+<h2>Radii</h2>
+<table>
+<tr><td>Pill</td><td>9999px</td><td>Nav, filters, Sign in, close</td></tr>
+<tr><td>Control</td><td>12px</td><td>Dialog, menu, OAuth, email field</td></tr>
+<tr><td>Card</td><td>8px</td><td>Item card shell and menu row</td></tr>
+<tr><td>Avatar</td><td>4px</td><td>Collection avatar</td></tr>
+<tr><td>None</td><td>0px</td><td>Item media, Buy Now</td></tr>
+</table>
+</main>
+<script>
+const dark = [["page", "#080808"], ["surface", "#0c0c0c"], ["selected", "#161616"], ["text", "#ffffff"], ["muted", "#acacac"], ["border", "#202020"], ["accent", "#0086ff"], ["link", "#83c3ff"], ["up", "#47bb64"], ["down", "#e24756"]];
+const box = document.getElementById("swatches");
+for (const [name, hex] of dark) {
+  const d = document.createElement("div");
+  d.className = "swatch";
+  d.innerHTML = "<i style='background:" + hex + "'></i><code>" + name + "</code> <span>" + hex + "</span>";
+  box.appendChild(d);
+}
+document.getElementById("theme").addEventListener("click", () => {
+  const html = document.documentElement;
+  const next = html.getAttribute("data-mode") === "dark" ? "light" : "dark";
+  html.setAttribute("data-mode", next);
+  document.getElementById("theme").textContent = next === "dark" ? "Light" : "Dark";
+});
+</script>
+</body>
+</html>

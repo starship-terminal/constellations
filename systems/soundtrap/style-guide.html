@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soundtrap style guide</title>
+<style>
+  :root {
+    --page: #f2f2f4;
+    --surface: #fdfdfe;
+    --text: #2d2d2d;
+    --muted: #5c5c6d;
+    --link: #553fff;
+    --accent: #6551ff;
+    --accent-hover: #5944ff;
+    --accent-press: #4c35ff;
+    --border: #d4d4da;
+    --border-strong: #7f7f92;
+    --focus: #3c95ff;
+    --danger: #b4074b;
+    --success: #00743a;
+    --pill: #eeeeee;
+    --pill-text: #2d2d2d;
+    --field: rgba(0, 0, 0, 0.07);
+    --on-accent: #ffffff;
+    color-scheme: light;
+  }
+  [data-theme="dark"] {
+    --page: #16161b;
+    --surface: #1f1f26;
+    --text: #e6e6e6;
+    --muted: #9b9bad;
+    --link: #9183ff;
+    --border: #2a2a34;
+    --border-strong: #73738d;
+    --danger: #f95998;
+    --success: #00aa56;
+    --field: rgba(255, 255, 255, 0.08);
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font: 400 15px/20px Matter, sans-serif;
+  }
+  header, main { max-width: 960px; margin: 0 auto; padding: 24px; }
+  header { display: flex; justify-content: space-between; align-items: center; min-height: 90px; }
+  h1 { font-size: 37px; line-height: 41px; font-weight: 600; letter-spacing: -0.99px; margin: 0 0 8px; }
+  h2 { font-size: 25px; line-height: 30px; font-weight: 600; letter-spacing: -0.5px; margin: 40px 0 12px; }
+  p { color: var(--muted); }
+  button.theme {
+    border: 0;
+    background: var(--accent);
+    color: var(--on-accent);
+    border-radius: 8px;
+    padding: 11px 16px;
+    font: 500 15px/20px Matter, sans-serif;
+  }
+  .swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 120px; }
+  .swatch i { display: block; height: 64px; border-radius: 8px; border: 1px solid var(--border); }
+  .swatch span { display: block; font-size: 13px; line-height: 17px; margin-top: 8px; }
+  .row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin: 16px 0; }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    background: var(--pill);
+    color: var(--pill-text);
+    padding: 11px 16px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .primary {
+    display: inline-flex;
+    align-items: center;
+    border: 0;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--on-accent);
+    padding: 11px 16px;
+    font: 400 16px/20px Matter, sans-serif;
+  }
+  .oauth {
+    display: flex;
+    align-items: center;
+    width: 280px;
+    height: 44px;
+    border-radius: 8px;
+    border: 1px solid var(--border-strong);
+    background: var(--surface);
+    color: var(--text);
+    padding: 11px 16px;
+    font: 500 15px/20px Matter, sans-serif;
+  }
+  label { display: block; font-size: 13px; font-weight: 500; line-height: 17px; margin-bottom: 8px; }
+  input {
+    display: block;
+    width: 280px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid var(--border-strong);
+    background: var(--field);
+    color: var(--text);
+    padding: 0 16px;
+    font: 400 15px/20px Matter, sans-serif;
+  }
+  input:focus {
+    outline: none;
+    background: var(--surface);
+    box-shadow: #fff 0 0 0 2px, var(--focus) 0 0 0 4px;
+  }
+  .card {
+    width: 225px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--on-accent);
+    padding: 16px;
+  }
+  .card button {
+    border: 0;
+    border-radius: 9999px;
+    background: #fff;
+    color: var(--accent);
+    padding: 10px 16px;
+    font: 400 15px/20px Matter, sans-serif;
+  }
+  .nav {
+    background: #16161b;
+    color: #e6e6e6;
+    border-radius: 0;
+    padding: 24px 32px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .gap { font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <strong>Soundtrap</strong>
+  <button class="theme" type="button" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">Toggle theme</button>
+</header>
+<main>
+  <h1>Public signed-out surfaces</h1>
+  <p>Values are the ones measured on soundtrap.com. Matter is the product font and is not loaded here, so the page falls back to sans-serif.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><i style="background:var(--page)"></i><span>page</span></div>
+    <div class="swatch"><i style="background:var(--surface)"></i><span>surface</span></div>
+    <div class="swatch"><i style="background:var(--text)"></i><span>text</span></div>
+    <div class="swatch"><i style="background:var(--muted)"></i><span>muted</span></div>
+    <div class="swatch"><i style="background:var(--accent)"></i><span>accent</span></div>
+    <div class="swatch"><i style="background:var(--border)"></i><span>border</span></div>
+    <div class="swatch"><i style="background:var(--focus)"></i><span>focus</span></div>
+    <div class="swatch"><i style="background:var(--danger)"></i><span>danger</span></div>
+    <div class="swatch"><i style="background:var(--success)"></i><span>success</span></div>
+  </div>
+
+  <h2>Navigation</h2>
+  <div class="nav"><span>Music Makers</span><span>Features</span><span>Pricing</span><span style="margin-left:auto" class="pill">Get started</span></div>
+  <p class="gap">The marketing nav is the dark theme even when the page body is light. Pricing uses a different purple bar, rgb(62, 17, 101), which is not a named token.</p>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <a class="pill" href="#buttons">Get started</a>
+    <button class="primary" type="button">Log in</button>
+    <button class="oauth" type="button">Log in with Google</button>
+  </div>
+
+  <h2>Fields</h2>
+  <label for="email">Log in with email</label>
+  <input id="email" placeholder="Enter your email">
+
+  <h2>Plan card</h2>
+  <div class="card">
+    <div style="font-size:25px;font-weight:600;letter-spacing:-0.5px">Sound Starter</div>
+    <p style="color:#fff">9.59 US$ per month</p>
+    <button type="button">Try it free!</button>
+  </div>
+</main>
+</body>
+</html>

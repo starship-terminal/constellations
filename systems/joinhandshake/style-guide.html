@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Handshake style guide</title>
+<meta name="description" content="joinhandshake.com design tokens and the signed-out public surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --color-site-bg: #14151c;
+  --color-site-cta: #2e6aff;
+  --color-site-ctaActive: #6fbb28;
+  --color-site-ctaHover: #1552d6;
+  --color-site-ctaVisited: #6fbb28;
+  --color-site-text: #14151c;
+  --color-framer-00d6b1f2-ffba-47cc-a311-eb0682e2f8b5: #14151c;
+  --color-framer-02b24819-d131-4db0-ad50-04c60a8b807a: #ad0ead;
+  --color-framer-04c5aa86-e05d-4362-a3a2-70312c73b0e9: #00d3d8;
+  --color-framer-089c3dbf-4f41-4221-b7d6-ae39d611e102: #00b1b5;
+  --color-framer-09648668-0e7c-42a0-9f76-b34134ebed88: #606384;
+  --color-framer-09e5027f-2f21-4367-ac07-7da1830b788f: #2c0033;
+  --color-framer-1564935d-2cce-4e10-86c5-41112199d7e8: #a1dd3b;
+  --color-framer-18a62245-67b6-44b2-b30f-a323e60b0121: #59005c;
+  --color-framer-1bb76b84-55e5-4c6e-8c05-ceef58f14a43: #307726;
+  --color-framer-1d804827-2a73-4ceb-97dd-020f3016e038: #cc3a00;
+  --color-framer-1f376138-2a27-4d03-accb-78d481edd219: #ffffff;
+  --color-framer-1fca5de0-07fd-47ed-a059-ace669a2ccb3: #004449;
+  --color-framer-225b0c93-892f-46e5-b3c5-ff6ef9228094: #f3f2f2;
+  --color-framer-246bb7df-58d9-4d76-b2c7-e6267355d0b7: #d3fb52;
+  --color-framer-24ccea63-a288-4de4-8c94-07c5025e7e7e: #e7ff89;
+  --color-framer-2677716e-9e7d-4a65-a8cc-78fc3a0c8ab7: #99000d;
+  --color-framer-2740330e-65d1-4fe3-92e4-5ccaba72f238: #fff0ac;
+  --color-framer-28e78ced-d806-470f-8549-afc933dc6010: #ff60fe;
+  --color-framer-2a50ffb1-3223-49df-a271-78c89f56dc4c: #052326;
+  --color-framer-2ae2c93a-eefd-46f2-a463-590ca5fcd36e: #ff737f;
+  --color-framer-2f29236f-917e-4efc-9fbf-906ec364ae22: #00d3d8;
+  --color-framer-33869df4-3a2a-41b3-91f2-bd6a24bd7598: #1552d6;
+  --color-framer-3387fa0b-ee93-41ed-837a-a09e10adc6ea: #ffacac;
+  --color-framer-34020426-7962-4ed2-ab00-c0a27ae48e76: #7c33cf;
+  --color-framer-36654104-8ecc-40f6-bacb-00ac08a25f29: #00686d;
+  --color-framer-3a7db051-2c5a-4eea-90f3-483fa25dc7d5: #459938;
+  --color-framer-401bd359-b3ce-4951-9322-aa466f647f92: #ffc573;
+  --color-framer-429ed8b6-42a6-438d-bc5a-7310640b1392: #660000;
+  --color-framer-4434606a-ed75-4d49-8f91-000c9872106b: #e1ffff;
+  --color-framer-4742f1bf-3d8d-4904-a38b-7e39a9ae76cd: #9c9ca3;
+  --color-framer-49e6e7a7-d58b-4c1f-a9ba-0b25d67a30f6: #5e1a9f;
+  --color-framer-4a3e6160-1dda-4985-8efe-e8bab5f59a2a: #9fffff;
+  --color-framer-4ddb4291-f2e5-4f31-9076-366e21e9ab32: #2e6aff;
+  --color-framer-4f82731f-0275-4e60-9c76-b626428c6cb9: #ff99ff;
+  --color-framer-58dd1997-5aad-4b04-a21b-33dae23fafc9: #00195c;
+  --color-framer-5dc74602-07d6-440b-b7a5-d799f0cb28cb: #19770c;
+  --color-framer-6a9dbf50-f0ff-49ee-8651-53f504c0f5dc: #c58aff;
+  --color-framer-6c12887e-1fea-4ec0-bdac-ee52c0e03f57: #f9ffe6;
+  --color-framer-6c621e68-cbf1-4faf-a500-3fc11fa7290d: #ff455b;
+  --color-framer-6d14e9c9-d8bf-40c9-8c9c-023a4c462bc0: #661700;
+  --color-framer-715d14ed-987f-49ca-aae3-dff3a080b6dd: #6fbb28;
+  --color-framer-71e74c2f-f995-4e95-80d4-bde2b3068c3b: #efffec;
+  --color-framer-7509cc64-b578-4e00-8e69-ea2d85bc1acc: #bebdbf;
+  --color-framer-7bf23964-929b-4693-825d-04fd8b45c90e: #d72235;
+  --color-framer-7fcdaff0-0ece-4ef7-ac44-4f33c5d3f998: rgba(20, 21, 28, 0.8);
+  --color-framer-8917d8a3-b942-46ed-b19c-3b99cd991b5f: #ff2a40;
+  --color-framer-89f46ebe-6475-422b-a352-933c538a6f86: #7af3ff;
+  --color-framer-8a75d059-dc18-4138-a0a8-bac32ac9ee48: #000c33;
+  --color-framer-8f926180-85b1-4643-ae87-0e0697a5dfa5: #252630;
+  --color-framer-93745c2f-a915-431f-bf89-7849647e0baa: #d4d6ec;
+  --color-framer-958a6369-86de-458c-b44f-8726bb76b59c: #409918;
+  --color-framer-95e6a8d4-cd19-45b6-97da-42aa056868de: #b06aff;
+  --color-framer-984b86b1-e6d5-41fd-a369-89bf43bed0d7: #dcb3ff;
+  --color-framer-99aaff53-254a-47cf-a944-7822b3bf678e: #052326;
+  --color-framer-9a889b22-6b9d-4156-b8ff-7492b8f6353e: #00686d;
+  --color-framer-9bc81069-b7b8-4d87-8c24-886145b7c040: #7b7b85;
+  --color-framer-a034b855-6320-472e-b944-1278f7d355c9: #bcdf4a;
+  --color-framer-a38bc50b-a1a8-4dc1-865c-22999c3ae2b4: #ffe6e6;
+  --color-framer-a66113d6-dd7d-4009-b13f-95a36a15e3c7: #548cff;
+  --color-framer-a767dfa2-32c6-4156-a3d9-c8009354ed91: #240040;
+  --color-framer-a9aec4c5-a368-4a2d-b1af-cbdebf760531: #1f5518;
+  --color-framer-b31c1066-2278-42b4-a5c6-b5f121fc41b9: #d1d1d1;
+  --color-framer-b4a3f643-7478-4bb1-8737-4efc3d79ced4: #d3fb53;
+  --color-framer-b5b488cd-b204-48c3-9271-34b75b456a15: #330000;
+  --color-framer-baa5b080-5973-4df4-b441-f4e642b1c275: #a1dd3b;
+  --color-framer-bbcff7f9-8802-4a68-b309-97e5b64894e6: #000000;
+  --color-framer-bc22d475-4b04-4dcf-a489-000b72e2171b: #ffffff;
+  --color-framer-bcd8d727-7649-4174-8c13-c203c0e84df2: #14151c;
+  --color-framer-be074fc3-c003-4e62-9c41-ae70adb72a75: #003310;
+  --color-framer-bf13514c-efef-401c-a1d2-05328c26d44a: #ff8c39;
+  --color-framer-c02c125d-0845-4ca2-aeb0-911c97165daf: #ffe6ff;
+  --color-framer-c1a92950-da25-49eb-9482-e1cfb091727d: rgba(249, 255, 230, 0.8);
+  --color-framer-c3aac9be-f01f-4244-ba41-5b0aa26f286c: #330a00;
+  --color-framer-c5583c21-56ea-40f2-bd5f-aab56412a3da: #484851;
+  --color-framer-c8309141-eabd-4932-9f84-494a50d857eb: #992700;
+  --color-framer-c8814748-7a51-4c7e-a47a-4852ae350697: #850185;
+  --color-framer-cb9b55b3-6230-45f1-90a2-3a4aa30d8a89: #ff3ce6;
+  --color-framer-cea31574-e182-4ee0-9bd0-655bf8324f7f: #f4e6ff;
+  --color-framer-d002beb2-3c90-4e96-abaf-05b048e7b9f6: #d622d6;
+  --color-framer-d07e1b38-01a3-4f02-b714-3bc829a3f4d7: #f8f8f8;
+  --color-framer-d5681730-75ad-4ce8-a29d-a3a82a22e3da: #5cbb4c;
+  --color-framer-d68ada00-b9e7-44d9-8044-77e06df52552: #ffffe6;
+  --color-framer-db5b7ab7-1a23-4d91-80d5-2522f6fe702a: #f9ffe6;
+  --color-framer-dcfe5de2-aaec-47ad-8532-5af875890752: #008e91;
+  --color-framer-e1500739-a9cb-4f01-a680-ce7539d8cf4c: #04550b;
+  --color-framer-e2c96be4-e2a2-479c-9d91-f16cb80dc376: #75dd63;
+  --color-framer-e45612eb-a27e-4c13-ae38-4c16a543b271: #90ff7d;
+  --color-framer-e577a0df-e6be-4d05-81ae-8c5fd4a51f95: #c58aff;
+  --color-framer-e7237701-d0af-4a3d-bd2d-bca0db83a168: #f94f00;
+  --color-framer-e823c0bf-20e8-4e8d-b3b5-7c1da89a63cf: #99b8ff;
+  --color-framer-e91cc39f-fbfc-42d0-9af2-b3526e2efeef: #7af3ff;
+  --color-framer-ea09e2d9-bb3f-443a-8ce8-80f08a13faee: #002985;
+  --color-framer-eb234ceb-0656-487d-b935-1fc52102e3f3: #e8e8e8;
+  --color-framer-ece6f6a2-f42e-4717-aca0-4588cf4dea5a: #410a70;
+  --color-framer-ef7ca3cf-e063-4a44-b0e3-f85c8aff839e: #e6ecff;
+  --color-framer-ef8c3886-1874-4214-b0ec-059b32e9d7f5: #033cad;
+  --color-framer-f2207144-aaa7-43f3-a086-36dc1635354a: #b9c4fb;
+  --color-framer-f8760b86-f03a-4f32-8b3b-dda4e871b673: #b5ffa6;
+  --color-framer-f8d4d9f2-c148-478e-9f1b-a43f8a3cc1fe: #9b53f6;
+  --color-framer-f94d4fbd-c6b9-4068-a874-597ae3cba5c3: rgba(255, 255, 255, 0.8);
+  --color-framer-f9b146e8-eb40-4079-a780-d91c7a5f56f5: #191919;
+  --layout-gridGapXDesktop: 24px;
+  --layout-gridGapXMobile: 12px;
+  --layout-gridGapXTablet: 16px;
+  --layout-desktopNavHeight: 3.5rem;
+  --layout-desktopNavTopOffset: 1.5rem;
+  --layout-desktopNavTopOffsetWithBanner: 4.75rem;
+  --layout-fullDesktopNavHeight: 80px;
+  --layout-fullMobileNavHeight: 72px;
+  --layout-fullTabletNavHeight: 96px;
+  --layout-notificationBannerHeight: 2.5rem;
+  --layout-notificationBannerOffset: 0rem;
+  --font-family-noiGrotesk: 'NoiGrotesk', 'NoiGrotesk Fallback', sans-serif;
+  --font-family-sansPlomb: 'SansPlomb', 'SansPlomb Fallback', sans-serif;
+  --font-family-sansPlombSwap: 'SansPlombSwap', 'SansPlombSwap Fallback', sans-serif;
+  --font-weight-bold: 700;
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-leading-lg: 1.1;
+  --font-leading-md: 1.0;
+  --font-leading-sm: 0.9;
+  --font-leading-xl: 1.4;
+  --font-leading-xs: 0.85;
+  --font-tracking-lg: -.025em;
+  --font-tracking-sm: -.015em;
+  --space-unit: 0.25rem;
+  --container-2xl: 42rem;
+  --container-3xl: 48rem;
+  --container-3xs: 16rem;
+  --container-4xl: 56rem;
+  --container-5xl: 64rem;
+  --container-6xl: 72rem;
+  --container-7xl: 80rem;
+  --container-lg: 32rem;
+  --container-md: 28rem;
+  --container-sm: 24rem;
+  --container-xl: 36rem;
+  --container-xs: 20rem;
+  --ease-in: cubic-bezier(0.4, 0.0, 1.0, 1.0);
+  --ease-inOut: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --ease-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --ease-default: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --duration-default: 150ms;
+  --blur-2xl: 40px;
+  --blur-md: 12px;
+  --blur-sm: 8px;
+  --blur-xl: 24px;
+  --shadow-2xl: rgba(0, 0, 0, 0.15) 0px 25px 25px 0px;
+  --shadow-md: rgba(0, 0, 0, 0.12) 0px 3px 3px 0px;
+  --animation-pulse: pulse 2s cubic-bezier(.4,0,.6,1) infinite;
+  --animation-spin: spin 1s linear infinite;
+  --aspect-video: 16/9;
+  --typography-display: 600 160px/128px SansPlomb, "SansPlomb Fallback", sans-serif;
+  --typography-navLink: 400 14px/19.6px NoiGrotesk, "NoiGrotesk Fallback", sans-serif;
+  --typography-button: 500 14px/15.4px NoiGrotesk, "NoiGrotesk Fallback", sans-serif;
+  --typography-searchButton: 400 16px/24px NoiGrotesk, "NoiGrotesk Fallback", sans-serif;
+  --typography-pill: 500 14px/11.9px NoiGrotesk, "NoiGrotesk Fallback", sans-serif;
+  --typography-accordion: 400 18px/25.2px NoiGrotesk, "NoiGrotesk Fallback", sans-serif;
+  --typography-footerLink: 400 16px/24px NoiGrotesk, "NoiGrotesk Fallback", sans-serif;
+  --typography-cta: 500 16px/17.6px NoiGrotesk, "NoiGrotesk Fallback", sans-serif;
+  --typography-arrowLink: 500 16px/22.4px NoiGrotesk, "NoiGrotesk Fallback", sans-serif;
+  --typography-input: 400 17px/23.8px "Noi Grotesk", system-ui, sans-serif;
+  --typography-appButton: 500 15px/18px "Noi Grotesk", system-ui, sans-serif;
+  --typography-category: 600 16px/24px NoiGrotesk, "NoiGrotesk Fallback", sans-serif;
+  --typography-legalNav: 400 16px/22.4px NoiGrotesk, "NoiGrotesk Fallback", sans-serif;
+  --component-nav-height: 56px;
+  --component-nav-width: 1440px;
+  --component-nav-radius: 0px;
+  --component-button-signup-height: 40px;
+  --component-button-signup-radius: 8px;
+  --component-button-search-height: 56px;
+  --component-button-search-radius: 12px;
+  --component-button-cta-height: 40px;
+  --component-button-cta-radius: 8px;
+  --component-button-continue-height: 40px;
+  --component-button-continue-radius: 8px;
+  --component-input-search-height: 88px;
+  --component-input-search-radius: 24px;
+  --component-input-email-height: 48px;
+  --component-input-email-radius: 8px;
+  --component-pill-height: 45.91px;
+  --component-pill-radius: 8px;
+  --component-banner-height: 40px;
+  --component-footer-height: 766.25px;
+  --component-accordion-rowHeight: 25.2px;
+  --component-page-width: 1440px;
+  --component-mobileHeader-height: 48px;
+  --component-mobileMenuButton-size: 16px;
+  --component-mobileDrawer-width: 390px;
+  --component-card-blog-radius: 0px;
+  --motion-duration-0ms: 0ms;
+  --motion-duration-30ms: 30ms;
+  --motion-duration-50ms: 50ms;
+  --motion-duration-75ms: 75ms;
+  --motion-duration-100ms: 100ms;
+  --motion-duration-default-transition-duration: 150ms;
+  --motion-duration-200ms: 200ms;
+  --motion-duration-250ms: 250ms;
+  --motion-duration-300ms: 300ms;
+  --motion-duration-350ms: 350ms;
+  --motion-duration-400ms: 400ms;
+  --motion-duration-500ms: 500ms;
+  --motion-duration-600ms: 600ms;
+  --motion-duration-700ms: 700ms;
+  --motion-duration-1000ms: 1000ms;
+  --motion-duration-1200ms: 1200ms;
+  --motion-duration-1600ms: 1600ms;
+  --motion-duration-2000ms: 2000ms;
+  --motion-duration-2500ms: 2500ms;
+  --motion-easing-bezier-0-22-1-0-36-1: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-easing-bezier-0-83-0-0-17-1: cubic-bezier(0.83, 0, 0.17, 1);
+  --motion-easing-default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --motion-easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-ease-in-out-2: cubic-bezier(0.42, 0, 0.58, 1);
+  --motion-easing-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --motion-easing-ease-out-2: cubic-bezier(0, 0, 0.58, 1);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --bg-page: #ffffff;
+  --bg-muted: #f3f4fa;
+  --bg-nav: rgba(0, 0, 0, 0);
+  --bg-footer: #14151c;
+  --fg-navLink: #ffffff;
+  --fg-body: #14151c;
+  --fg-headline: #ffffff;
+  --button-primary-bg: #d3fb52;
+  --button-primary-fg: #14151c;
+  --button-primary-hover: #a1dd3b;
+  --link-nav: #ffffff;
+  --link-accent: #ffffff;
+  --link-accentHover: #ffffff;
+  --link-footer: #ffffff;
+  --cta-bg: rgba(0, 0, 0, 0);
+  --cta-fg: #ffffff;
+  --cta-hover: #ffffff;
+  --input-search-bg: #ffffff;
+  --input-search-border: #252630;
+  --pill-bg: rgba(0, 0, 0, 0);
+  --banner-bg: #d3fb52;
+  --tab-fg: #a9aaae;
+  --accordion-question: #ffffff;
+  --type-hero-size: 160px;
+  --type-hero-lineHeight: 128px;
+  --nav-legalActive: #000000;
+  --nav-legal: #000000;
+  --component-nav-iconSize: 20px;
+  --component-nav-iconTransitionDuration: 200ms;
+  --component-nav-incidentBannerHeight: 80px;
+  --component-nav-mobileItemLeftPadding: 36px;
+  --component-nav-panelTransitionDuration: 300ms;
+  --component-nav-subItemIndent: 36px;
+  --component-nav-topNavHeight: 56px;
+  --component-nav-viewingAsHeaderHeight: 30px;
+  --rosettaAvatar-blue: #548cff;
+  --rosettaAvatar-cyan: #7af3ff;
+  --rosettaAvatar-gray: rgba(18, 18, 18, 0.09);
+  --rosettaAvatar-green: #b5ffa6;
+  --rosettaAvatar-orange: #f94f00;
+  --rosettaAvatar-purple: #dcb3ff;
+  --rosettaBg-disabled: #eeeeee;
+  --rosettaBg-featureCallout: #003bcc;
+  --rosettaBg-inverted: #121212;
+  --rosettaBg-invertedDisabled: rgba(251, 251, 251, 0.07);
+  --rosettaBg-invertedSecondary: rgba(251, 251, 251, 0.08);
+  --rosettaBg-primary: #ffffff;
+  --rosettaBg-secondary: #f6f6f6;
+  --rosettaBg-selected: #eaeaea;
+  --rosettaBg-statusInfo: #ccdbff;
+  --rosettaBg-statusNegative: #ffc2c4;
+  --rosettaBg-statusNeutral: #eaeaea;
+  --rosettaBg-statusPositive: #a5e09f;
+  --rosettaBg-statusWarning: #ffd999;
+  --rosettaBg-surface: #fcfcfd;
+  --deprecated-backgroundAccentFive: #fbef81;
+  --deprecated-backgroundAccentFour: #91f1b8;
+  --deprecated-backgroundAccentOne: #dfc6ff;
+  --deprecated-backgroundAccentThree: #ffb5f5;
+  --deprecated-backgroundAccentTwo: #b1f8ff;
+  --deprecated-backgroundInvertedSecondary: #052326;
+  --deprecated-backgroundInvertedTertiary: #06292d;
+  --deprecated-backgroundQuaternary: #e7e7e7;
+  --deprecated-backgroundSelectedHover: #dddddd;
+  --deprecated-backgroundSelectedPress: #d0d0d0;
+  --deprecated-backgroundTertiary: #f3f3f3;
+  --deprecated-brandHsBlue: #1f1cd6;
+  --deprecated-brandHsMidnight: #0f1035;
+  --deprecated-brandHsRed: #ff1100;
+  --deprecated-brandHsTwilight: #190083;
+  --deprecated-brandHsTwilightDark: #100056;
+  --deprecated-foregroundAccentFive: #5c573b;
+  --deprecated-foregroundAccentFour: #155b0a;
+  --deprecated-foregroundAccentOne: #7139b8;
+  --deprecated-foregroundAccentThree: #a1108f;
+  --deprecated-foregroundAccentTwo: #116169;
+  --deprecated-foregroundInteractiveHover: #132729;
+  --deprecated-foregroundInteractivePress: #223536;
+  --rosettaFg-border: rgba(18, 18, 18, 0.12);
+  --rosettaFg-disabled: rgba(18, 18, 18, 0.4);
+  --rosettaFg-inverted: #ffffff;
+  --rosettaFg-invertedBorder: rgba(251, 251, 251, 0.16);
+  --rosettaFg-invertedDisabled: rgba(251, 251, 251, 0.5);
+  --rosettaFg-primary: #121212;
+  --rosettaFg-secondary: rgba(18, 18, 18, 0.7);
+  --rosettaFg-statusInfo: #003bcc;
+  --rosettaFg-statusNegative: #bb3643;
+  --rosettaFg-statusPositive: #327d0f;
+  --rosettaFg-statusWarning: #a36700;
+  --rosettaFont-familyBrand: "Sansplomb",sans-serif;
+  --rosettaFont-familyMono: "Noi Grotesk",monospace;
+  --rosettaFont-familySans: "Noi Grotesk",system-ui,sans-serif;
+  --rosettaInteractive-focusOutline: #003bcc;
+  --rosettaInteractive-hovered: rgba(18, 18, 18, 0.06);
+  --rosettaInteractive-invertedFocusOutline: #316cff;
+  --rosettaInteractive-invertedHovered: rgba(255, 255, 255, 0.06);
+  --rosettaInteractive-invertedPressed: rgba(255, 255, 255, 0.12);
+  --rosettaInteractive-pressed: rgba(18, 18, 18, 0.12);
+  --rosettaInteractive-primary: #04191b;
+  --rosettaShadow-elevationFive: rgba(0, 0, 0, 0.08) 0px 6px 30px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px;
+  --rosettaShadow-elevationFour: rgba(0, 0, 0, 0.08) 0px 6px 30px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px;
+  --rosettaShadow-elevationOne: rgba(0, 0, 0, 0.08) 0px 1px 2px 0px;
+  --rosettaShadow-elevationThree: rgba(0, 0, 0, 0.08) 0px 6px 30px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px;
+  --rosettaShadow-elevationTwo: rgba(0, 0, 0, 0.04) 0px 2px 20px 0px, rgba(0, 0, 0, 0.08) 0px 1px 2px 0px;
+  --rosettaShadow-elevationZero: none;
+  --rosettaShadow-one: rgba(0, 0, 0, 0.12) 0px 1px 2px 0px;
+  --rosettaShadow-three: rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(0, 0, 0, 0.04) 0px 0px 2px 0px;
+  --rosettaShadow-two: rgba(0, 0, 0, 0.1) 0px 2px 10px 0px, rgba(0, 0, 0, 0.04) 0px 0px 2px 0px;
+  --rosettaSize-borderActive: 2px;
+  --rosettaSize-borderRegular: 1px;
+  --rosettaSize-containedLg: 28px;
+  --rosettaSize-containedMd: 24px;
+  --rosettaSize-containedSm: 20px;
+  --rosettaSize-containedXl: 32px;
+  --rosettaSize-containedXs: 16px;
+  --rosettaSize-containedXxs: 12px;
+  --rosettaSize-controlGap: 8px;
+  --rosettaSize-controlHeightLg: 48px;
+  --rosettaSize-controlHeightMd: 40px;
+  --rosettaSize-controlHeightSm: 36px;
+  --rosettaSize-controlHeightXs: 28px;
+  --rosettaSize-controlPaddingLg: 16px;
+  --rosettaSize-controlPaddingMd: 12px;
+  --rosettaSize-controlPaddingSm: 8px;
+  --rosettaSize-controlPaddingXs: 4px;
+  --rosettaSize-fontBase: 16px;
+  --rosettaSize-fontDisplayWeightBold: 700;
+  --rosettaSize-fontDisplayWeightRegular: 400;
+  --rosettaSize-fontFs1: 12px;
+  --rosettaSize-fontFs2: 14px;
+  --rosettaSize-fontFs3: 16px;
+  --rosettaSize-fontFs4: 20px;
+  --rosettaSize-fontFs5: 24px;
+  --rosettaSize-fontFs6: 32px;
+  --rosettaSize-fontFs7: 40px;
+  --rosettaSize-fontFs8: 46px;
+  --rosettaSize-fontFs9: 58px;
+  --rosettaSize-fontWeightBold: 700;
+  --rosettaSize-fontWeightRegular: 400;
+  --rosettaSize-fontWeightSemiBold: 500;
+  --rosettaSize-lineHeightLh1: 4px;
+  --rosettaSize-lineHeightLh2: 8px;
+  --rosettaSize-lineHeightLh3: 12px;
+  --rosettaSize-lineHeightLh4: 16px;
+  --rosettaSize-lineHeightLh5: 20px;
+  --rosettaSize-lineHeightLh6: 24px;
+  --rosettaSize-lineHeightLh7: 28px;
+  --rosettaSize-lineHeightLh8: 32px;
+  --rosettaSize-radiusContainer: 16px;
+  --rosettaSize-radiusFour: 16px;
+  --rosettaSize-radiusInputRegular: 8px;
+  --rosettaSize-radiusInputSmall: 4px;
+  --rosettaSize-radiusMax: 9999px;
+  --rosettaSize-radiusOne: 4px;
+  --rosettaSize-radiusThree: 12px;
+  --rosettaSize-radiusTwo: 8px;
+  --rosettaSize-radiusZero: 0px;
+  --rosettaSize-space12: 12px;
+  --rosettaSize-space16: 16px;
+  --rosettaSize-space2: 2px;
+  --rosettaSize-space20: 20px;
+  --rosettaSize-space24: 24px;
+  --rosettaSize-space32: 32px;
+  --rosettaSize-space4: 4px;
+  --rosettaSize-space48: 48px;
+  --rosettaSize-space64: 64px;
+  --rosettaSize-space8: 8px;
+  --rosettaSize-spaceBase: 4px;
+  --rosettaSize-spacingBase: 4px;
+  --rosettaSize-spacingEight: 32px;
+  --rosettaSize-spacingFive: 20px;
+  --rosettaSize-spacingFour: 16px;
+  --rosettaSize-spacingHalf: 2px;
+  --rosettaSize-spacingOne: 4px;
+  --rosettaSize-spacingSix: 24px;
+  --rosettaSize-spacingSixteen: 64px;
+  --rosettaSize-spacingThree: 12px;
+  --rosettaSize-spacingTwelve: 48px;
+  --rosettaSize-spacingTwo: 8px;
+  --rosettaSize-standaloneLg: 60px;
+  --rosettaSize-standaloneMd: 48px;
+  --rosettaSize-standaloneSm: 36px;
+  --rosettaSize-standaloneXl: 72px;
+  --rosettaSize-standaloneXs: 24px;
+  --rosettaSpacing-bodyLarge: -0.02em;
+  --rosettaSpacing-bodyMedium: 0;
+  --rosettaSpacing-bodySmall: 0.01em;
+  --rosettaSpacing-bodyXlarge: -0.02em;
+  --rosettaSpacing-brandLarge: -0.02em;
+  --rosettaSpacing-brandSmall: -0.01em;
+  --rosettaSpacing-headingLarge: -0.03em;
+  --rosettaSpacing-headingMedium: -0.03em;
+  --rosettaSpacing-headingSmall: -0.02em;
+  --rosettaSpacing-headingXlarge: -0.04em;
+  --rosettaSpacing-mono1: -0.01em;
+  --rosettaSpacing-mono2: -0.01em;
+  --rosettaSpacing-mono3: 0;
+  --rosettaSpacing-mono4: 0;
+  --rosettaType-bodyLargeMediumLineHeight: 1.4;
+  --rosettaType-bodyLargeMediumSize: 17px;
+  --rosettaType-bodyLargeMediumWeight: 500;
+  --rosettaType-bodyLargeRegularLineHeight: 1.4;
+  --rosettaType-bodyLargeRegularSize: 17px;
+  --rosettaType-bodyLargeRegularWeight: 400;
+  --rosettaType-bodyMediumMediumLineHeight: 1.2;
+  --rosettaType-bodyMediumMediumSize: 15px;
+  --rosettaType-bodyMediumMediumWeight: 500;
+  --rosettaType-bodyMediumRegularLineHeight: 1.2;
+  --rosettaType-bodyMediumRegularSize: 15px;
+  --rosettaType-bodyMediumRegularWeight: 400;
+  --rosettaType-bodySmallMediumLineHeight: 1.2;
+  --rosettaType-bodySmallMediumSize: 13px;
+  --rosettaType-bodySmallMediumWeight: 500;
+  --rosettaType-bodySmallRegularLineHeight: 1.2;
+  --rosettaType-bodySmallRegularSize: 13px;
+  --rosettaType-bodySmallRegularWeight: 400;
+  --rosettaType-bodyXlargeMediumLineHeight: 1.2;
+  --rosettaType-bodyXlargeMediumSize: 19px;
+  --rosettaType-bodyXlargeMediumWeight: 500;
+  --rosettaType-bodyXlargeRegularLineHeight: 1.2;
+  --rosettaType-bodyXlargeRegularSize: 19px;
+  --rosettaType-bodyXlargeRegularWeight: 400;
+  --rosettaType-brandLargeLineHeight: 0.8;
+  --rosettaType-brandLargeSize: 122px;
+  --rosettaType-brandLargeWeight: 600;
+  --rosettaType-brandSmallLineHeight: 0.9;
+  --rosettaType-brandSmallSize: 60px;
+  --rosettaType-brandSmallWeight: 600;
+  --rosettaType-headingLargeLineHeight: 1.2;
+  --rosettaType-headingLargeSize: 32px;
+  --rosettaType-headingLargeWeight: 500;
+  --rosettaType-headingMediumLineHeight: 1.2;
+  --rosettaType-headingMediumSize: 28px;
+  --rosettaType-headingMediumWeight: 500;
+  --rosettaType-headingSmallLineHeight: 1.2;
+  --rosettaType-headingSmallSize: 24px;
+  --rosettaType-headingSmallWeight: 500;
+  --rosettaType-headingXlargeLineHeight: 1;
+  --rosettaType-headingXlargeSize: 44px;
+  --rosettaType-headingXlargeWeight: 500;
+  --rosettaType-mono1MediumLineHeight: 1.25;
+  --rosettaType-mono1MediumSize: 17px;
+  --rosettaType-mono1MediumWeight: 500;
+  --rosettaType-mono1RegularLineHeight: 1.25;
+  --rosettaType-mono1RegularSize: 17px;
+  --rosettaType-mono1RegularWeight: 400;
+  --rosettaType-mono2MediumLineHeight: 1.25;
+  --rosettaType-mono2MediumSize: 15px;
+  --rosettaType-mono2MediumWeight: 500;
+  --rosettaType-mono2RegularLineHeight: 1.25;
+  --rosettaType-mono2RegularSize: 15px;
+  --rosettaType-mono2RegularWeight: 400;
+  --rosettaType-mono3MediumLineHeight: 1.25;
+  --rosettaType-mono3MediumSize: 13px;
+  --rosettaType-mono3MediumWeight: 500;
+  --rosettaType-mono3RegularLineHeight: 1.2;
+  --rosettaType-mono3RegularSize: 13px;
+  --rosettaType-mono3RegularWeight: 400;
+  --rosettaType-mono4MediumLineHeight: 1.25;
+  --rosettaType-mono4MediumSize: 11px;
+  --rosettaType-mono4MediumWeight: 500;
+  --rosettaType-mono4RegularLineHeight: 1.2;
+  --rosettaType-mono4RegularSize: 11px;
+  --rosettaType-mono4RegularWeight: 400;
+  --rosettaTypography-fontFamilyDisplay: "Noi Grotesk",system-ui,sans-serif;
+  --rosettaTypography-fontFamilyText: "Noi Grotesk",system-ui,sans-serif;
+  --sg-sans: var(--font-family-sansPlomb, ui-sans-serif, system-ui, sans-serif);
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.6 var(--sg-sans); color: var(--color-site-text, #14151c); background: #fff; }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.2 var(--font-family-noiGrotesk, var(--sg-sans)); margin: 0 0 4px; letter-spacing: var(--font-tracking-lg, -0.025em); }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid #e5e5e5; }
+.lead { max-width: 62ch; opacity: .8; }
+.note { font-size: 13px; opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; color: var(--color-site-cta, #2e6aff); }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid #e5e5e5; display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); color: inherit; }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); opacity: .65; color: inherit; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid #e5e5e5; overflow: hidden; background: #fff; color: var(--color-site-text, #14151c); border-radius: 12px; }
+.nav { display: flex; align-items: center; gap: 14px; height: var(--component-nav-height, 56px); padding: 0 16px; font-size: 14px; margin: var(--layout-desktopNavTopOffset, 24px) auto 0; max-width: 700px; border-radius: var(--component-nav-radius, 9999px); background: var(--bg-nav, #fff); box-shadow: 0 2px 12px rgba(20,21,28,.10); }
+.nav .wm { font-weight: 700; font-size: 15px; letter-spacing: var(--font-tracking-lg, -.025em); font-family: var(--font-family-noiGrotesk, var(--sg-sans)); }
+.nav .its { opacity: .75; display: flex; gap: 14px; font-size: 13px; }
+.nav .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-cta-height, 36px); padding: 0 16px; font-size: 13.5px; font-weight: 500; border-radius: var(--component-button-cta-radius, 9999px); border: 1px solid transparent; }
+.btn.primary { background: var(--button-primary-bg, #14151c); color: var(--button-primary-fg, #fff); }
+.btn.blue { background: var(--color-site-cta, #2e6aff); color: #fff; }
+.hero { padding: 44px 28px 36px; text-align: center; background: var(--color-site-text, #14151c); } /* the real hero is a dark photo; the ink stands in so the white headline shows */
+.hero h3 { font: 700 44px/1.05 var(--font-family-noiGrotesk, var(--sg-sans)); letter-spacing: var(--font-tracking-lg, -.025em); margin: 0 0 18px; color: var(--fg-headline, #14151c); }
+.hero .form { display: flex; gap: 8px; max-width: 520px; margin: 0 auto; padding: 6px; border: 1px solid var(--input-search-border, #d9d9d9); border-radius: var(--component-input-search-radius, 9999px); background: var(--input-search-bg, #fff); }
+.hero .form .in { flex: 1; border: 0; font: inherit; padding: 0 12px; color: var(--color-site-text, #14151c); }
+.hero .pills { display: flex; gap: 8px; justify-content: center; margin-top: 14px; }
+.hero .pills .pill { padding: 6px 14px; border: 1px solid #e5e5e5; border-radius: var(--component-pill-radius, 9999px); font-size: 13px; background: var(--pill-bg, #fff); }
+.login { max-width: 380px; margin: 0 auto; padding: 28px; border-radius: var(--rosettaSize-radiusThree, 12px); border: 1px solid var(--rosettaFg-border, #e5e5e5); background: var(--rosettaBg-primary, #fff); }
+.login h4 { font: 600 22px/1.2 var(--sg-sans); margin: 0 0 6px; color: var(--rosettaFg-primary, #121212); }
+.login .sub { font-size: 13px; color: var(--rosettaFg-secondary, rgba(18,18,18,.7)); margin-bottom: 14px; }
+.login .g { display: flex; align-items: center; justify-content: center; height: var(--access-component-button-fill, auto); height: 40px; border: 1px solid var(--rosettaFg-border, #e5e5e5); border-radius: var(--rosettaSize-radiusThree, 12px); font-size: 14px; margin-bottom: 10px; }
+.login .e { height: var(--component-input-email-height, 40px); border: 1px solid var(--rosettaFg-border, #e5e5e5); border-radius: var(--component-input-email-radius, 8px); display: flex; align-items: center; padding: 0 12px; font-size: 14px; color: var(--rosettaFg-secondary, rgba(18,18,18,.7)); margin-bottom: 10px; }
+.login .c { display: flex; align-items: center; justify-content: center; height: var(--component-button-continue-height, 40px); border-radius: var(--component-button-continue-radius, 8px); background: var(--rosettaInteractive-primary, #04191b); color: var(--rosettaFg-inverted, #fff); font-size: 14px; font-weight: 600; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid #e5e5e5; padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid #e5e5e5; }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; opacity: .65; font-family: var(--sg-mono); }
+details.fr { margin: 8px 0; }
+details.fr summary { cursor: pointer; font-size: 13px; opacity: .7; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Handshake style guide</h1>
+  <p class="note">joinhandshake.com — Handshake, the career network for the AI economy — signed-out public evidence only.</p>
+
+  <h2 class="sh">joinhandshake.com, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the marketing site's declared layer (the NoiGrotesk/SansPlomb faces, the <code>--spacing</code> unit, <code>--container-3xs..7xl</code>, the leading/tracking/weight scales, the nav geometry vars, and the CTA colours declared as <code>[--cta:#2e6aff]</code> utility props), the Framer-built page's <code>--token-*</code> colour styles under <code>color.framer.*</code>, the painted role measurements under <code>light.*</code>, and the consumer app's Rosetta layer under <code>access.*</code>. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read signed out in headless Chromium at 1440&times;900 (mobile pass at 390&times;844). Both surfaces paint <b>light only</b> — no theme class, no theme control, no prefers-color-scheme rule — so there is no dark set. The app host sits behind a Cloudflare managed challenge that clears intermittently: <code>app.joinhandshake.com/access</code> was captured when it cleared; <code>/explore</code>, <code>/signup</code> and support.joinhandshake.com never cleared and are documented boundaries. NoiGrotesk and SansPlomb are served faces, not bundled: samples fall back to system fonts.</p>
+
+  <h2 class="sh">The surfaces</h2>
+  <p class="lead">The marketing pages carry a floating pill nav (wordmark, section items, "Sign up", "Log in") over a white document; the hero puts a job-search form and type pills under the brand-face headline. The consumer app's "Log in or sign up" page is a single centred card in the Rosetta system.</p>
+  <div class="mock">
+    <div class="nav"><span class="wm">Handshake</span><span class="its"><span>Employers</span><span>Job seekers</span><span>Career centers</span></span><span class="sp"></span><span class="btn primary">Sign up</span></div>
+    <div class="hero"><h3>Let&rsquo;s find your next job</h3>
+      <div class="form"><span class="in">Job title, skill, or company</span><span class="btn blue">Search jobs</span></div>
+      <div class="pills"><span class="pill">Full-time</span><span class="pill">Remote</span><span class="pill">Internship</span></div>
+    </div>
+  </div>
+  <p></p>
+  <div class="mock"><div class="login"><h4>Log in or sign up</h4><div class="sub">Handshake is a career platform for students, recent graduates, and employers.</div>
+    <div class="g">Continue with Google</div><div class="e">Enter your email</div><div class="c">Continue with email</div></div></div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead"><code>color.site.*</code> holds the declared CTA/ink utility values; <code>color.framer.*</code> is the Framer page's declared colour-style palette (the UUIDs are the declared names); <code>light.*</code> holds the painted role measurements; <code>access.*</code> resolves the app's declared Rosetta colours.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius, layout and motion</h2>
+  <p class="lead">Spacing is the Tailwind <code>--spacing</code> unit (0.25rem); containers run <code>--container-3xs..7xl</code> with <code>--container-padding</code>; <code>layout.*</code> carries the declared nav/banner geometry and grid gaps; <code>motion.*</code> is the measured set from the reduced-motion probe. The app's spacing/size scales live under <code>access.*</code>.</p>
+  <div id="spacing-out" class="kv"></div>
+  <div id="motion-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">The marketing faces: <code>NoiGrotesk</code> (display/brand) and <code>SansPlomb</code> (body), plus the retro <code>Chicago FLF</code>/<code>Geneva</code> pair on the toolkit pages. The app uses its own family chain (<code>access.rosettaFontFamily.*</code>). Below, the <code>core.typography.*</code> composites measured off the live DOM. Samples fall back to system sans because the faces are not bundled.</p>
+  <div id="type-out"></div>
+  <div id="typ-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --spacing/--container-*/--font-*/--cta/--token-*/--rosetta-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened and focused states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"site":{"bg":{"v":"#14151c","t":"color","s":"css-var --bg declared on the Tailwind arbitrary-property utility class .\\[--bg\\:\\#14151C\\] — the product's own value applied per element, not a :root variable"},"cta":{"v":"#2e6aff","t":"color","s":"css-var --cta declared on the Tailwind arbitrary-property utility class .\\[--cta\\:\\#2E6AFF\\] — the product's own value applied per element, not a :root variable"},"ctaActive":{"v":"#6fbb28","t":"color","s":"css-var --cta-active declared on the Tailwind arbitrary-property utility class .\\[--cta-active\\:\\#6FBB28\\] — the product's own value applied per element, not a :root variable"},"ctaHover":{"v":"#1552d6","t":"color","s":"css-var --cta-hover declared on the Tailwind arbitrary-property utility class .\\[--cta-hover\\:\\#1552D6\\] — the product's own value applied per element, not a :root variable"},"ctaVisited":{"v":"#6fbb28","t":"color","s":"css-var --cta-visited declared on the Tailwind arbitrary-property utility class .\\[--cta-visited\\:\\#6FBB28\\] — the product's own value applied per element, not a :root variable"},"text":{"v":"#14151c","t":"color","s":"css-var --text declared on the Tailwind arbitrary-property utility class .\\[--text\\:\\#14151C\\] — the product's own value applied per element, not a :root variable"}},"framer":{"00d6b1f2-ffba-47cc-a311-eb0682e2f8b5":{"v":"#14151c","t":"color","s":"css-var --token-00d6b1f2-ffba-47cc-a311-eb0682e2f8b5 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"02b24819-d131-4db0-ad50-04c60a8b807a":{"v":"#ad0ead","t":"color","s":"css-var --token-02b24819-d131-4db0-ad50-04c60a8b807a (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"04c5aa86-e05d-4362-a3a2-70312c73b0e9":{"v":"#00d3d8","t":"color","s":"css-var --token-04c5aa86-e05d-4362-a3a2-70312c73b0e9 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"089c3dbf-4f41-4221-b7d6-ae39d611e102":{"v":"#00b1b5","t":"color","s":"css-var --token-089c3dbf-4f41-4221-b7d6-ae39d611e102 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"09648668-0e7c-42a0-9f76-b34134ebed88":{"v":"#606384","t":"color","s":"css-var --token-09648668-0e7c-42a0-9f76-b34134ebed88 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"09e5027f-2f21-4367-ac07-7da1830b788f":{"v":"#2c0033","t":"color","s":"css-var --token-09e5027f-2f21-4367-ac07-7da1830b788f (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"1564935d-2cce-4e10-86c5-41112199d7e8":{"v":"#a1dd3b","t":"color","s":"css-var --token-1564935d-2cce-4e10-86c5-41112199d7e8 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"18a62245-67b6-44b2-b30f-a323e60b0121":{"v":"#59005c","t":"color","s":"css-var --token-18a62245-67b6-44b2-b30f-a323e60b0121 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"1bb76b84-55e5-4c6e-8c05-ceef58f14a43":{"v":"#307726","t":"color","s":"css-var --token-1bb76b84-55e5-4c6e-8c05-ceef58f14a43 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"1d804827-2a73-4ceb-97dd-020f3016e038":{"v":"#cc3a00","t":"color","s":"css-var --token-1d804827-2a73-4ceb-97dd-020f3016e038 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"1f376138-2a27-4d03-accb-78d481edd219":{"v":"#ffffff","t":"color","s":"css-var --token-1f376138-2a27-4d03-accb-78d481edd219 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"1fca5de0-07fd-47ed-a059-ace669a2ccb3":{"v":"#004449","t":"color","s":"css-var --token-1fca5de0-07fd-47ed-a059-ace669a2ccb3 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"225b0c93-892f-46e5-b3c5-ff6ef9228094":{"v":"#f3f2f2","t":"color","s":"css-var --token-225b0c93-892f-46e5-b3c5-ff6ef9228094 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"246bb7df-58d9-4d76-b2c7-e6267355d0b7":{"v":"#d3fb52","t":"color","s":"css-var --token-246bb7df-58d9-4d76-b2c7-e6267355d0b7 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"24ccea63-a288-4de4-8c94-07c5025e7e7e":{"v":"#e7ff89","t":"color","s":"css-var --token-24ccea63-a288-4de4-8c94-07c5025e7e7e (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"2677716e-9e7d-4a65-a8cc-78fc3a0c8ab7":{"v":"#99000d","t":"color","s":"css-var --token-2677716e-9e7d-4a65-a8cc-78fc3a0c8ab7 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"2740330e-65d1-4fe3-92e4-5ccaba72f238":{"v":"#fff0ac","t":"color","s":"css-var --token-2740330e-65d1-4fe3-92e4-5ccaba72f238 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"28e78ced-d806-470f-8549-afc933dc6010":{"v":"#ff60fe","t":"color","s":"css-var --token-28e78ced-d806-470f-8549-afc933dc6010 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"2a50ffb1-3223-49df-a271-78c89f56dc4c":{"v":"#052326","t":"color","s":"css-var --token-2a50ffb1-3223-49df-a271-78c89f56dc4c (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"2ae2c93a-eefd-46f2-a463-590ca5fcd36e":{"v":"#ff737f","t":"color","s":"css-var --token-2ae2c93a-eefd-46f2-a463-590ca5fcd36e (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"2f29236f-917e-4efc-9fbf-906ec364ae22":{"v":"#00d3d8","t":"color","s":"css-var --token-2f29236f-917e-4efc-9fbf-906ec364ae22 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"33869df4-3a2a-41b3-91f2-bd6a24bd7598":{"v":"#1552d6","t":"color","s":"css-var --token-33869df4-3a2a-41b3-91f2-bd6a24bd7598 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"3387fa0b-ee93-41ed-837a-a09e10adc6ea":{"v":"#ffacac","t":"color","s":"css-var --token-3387fa0b-ee93-41ed-837a-a09e10adc6ea (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"34020426-7962-4ed2-ab00-c0a27ae48e76":{"v":"#7c33cf","t":"color","s":"css-var --token-34020426-7962-4ed2-ab00-c0a27ae48e76 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"36654104-8ecc-40f6-bacb-00ac08a25f29":{"v":"#00686d","t":"color","s":"css-var --token-36654104-8ecc-40f6-bacb-00ac08a25f29 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"3a7db051-2c5a-4eea-90f3-483fa25dc7d5":{"v":"#459938","t":"color","s":"css-var --token-3a7db051-2c5a-4eea-90f3-483fa25dc7d5 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"401bd359-b3ce-4951-9322-aa466f647f92":{"v":"#ffc573","t":"color","s":"css-var --token-401bd359-b3ce-4951-9322-aa466f647f92 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"429ed8b6-42a6-438d-bc5a-7310640b1392":{"v":"#660000","t":"color","s":"css-var --token-429ed8b6-42a6-438d-bc5a-7310640b1392 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"4434606a-ed75-4d49-8f91-000c9872106b":{"v":"#e1ffff","t":"color","s":"css-var --token-4434606a-ed75-4d49-8f91-000c9872106b (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"4742f1bf-3d8d-4904-a38b-7e39a9ae76cd":{"v":"#9c9ca3","t":"color","s":"css-var --token-4742f1bf-3d8d-4904-a38b-7e39a9ae76cd (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"49e6e7a7-d58b-4c1f-a9ba-0b25d67a30f6":{"v":"#5e1a9f","t":"color","s":"css-var --token-49e6e7a7-d58b-4c1f-a9ba-0b25d67a30f6 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"4a3e6160-1dda-4985-8efe-e8bab5f59a2a":{"v":"#9fffff","t":"color","s":"css-var --token-4a3e6160-1dda-4985-8efe-e8bab5f59a2a (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"4ddb4291-f2e5-4f31-9076-366e21e9ab32":{"v":"#2e6aff","t":"color","s":"css-var --token-4ddb4291-f2e5-4f31-9076-366e21e9ab32 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"4f82731f-0275-4e60-9c76-b626428c6cb9":{"v":"#ff99ff","t":"color","s":"css-var --token-4f82731f-0275-4e60-9c76-b626428c6cb9 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"58dd1997-5aad-4b04-a21b-33dae23fafc9":{"v":"#00195c","t":"color","s":"css-var --token-58dd1997-5aad-4b04-a21b-33dae23fafc9 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"5dc74602-07d6-440b-b7a5-d799f0cb28cb":{"v":"#19770c","t":"color","s":"css-var --token-5dc74602-07d6-440b-b7a5-d799f0cb28cb (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"6a9dbf50-f0ff-49ee-8651-53f504c0f5dc":{"v":"#c58aff","t":"color","s":"css-var --token-6a9dbf50-f0ff-49ee-8651-53f504c0f5dc (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"6c12887e-1fea-4ec0-bdac-ee52c0e03f57":{"v":"#f9ffe6","t":"color","s":"css-var --token-6c12887e-1fea-4ec0-bdac-ee52c0e03f57 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"6c621e68-cbf1-4faf-a500-3fc11fa7290d":{"v":"#ff455b","t":"color","s":"css-var --token-6c621e68-cbf1-4faf-a500-3fc11fa7290d (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"6d14e9c9-d8bf-40c9-8c9c-023a4c462bc0":{"v":"#661700","t":"color","s":"css-var --token-6d14e9c9-d8bf-40c9-8c9c-023a4c462bc0 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"715d14ed-987f-49ca-aae3-dff3a080b6dd":{"v":"#6fbb28","t":"color","s":"css-var --token-715d14ed-987f-49ca-aae3-dff3a080b6dd (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"71e74c2f-f995-4e95-80d4-bde2b3068c3b":{"v":"#efffec","t":"color","s":"css-var --token-71e74c2f-f995-4e95-80d4-bde2b3068c3b (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"7509cc64-b578-4e00-8e69-ea2d85bc1acc":{"v":"#bebdbf","t":"color","s":"css-var --token-7509cc64-b578-4e00-8e69-ea2d85bc1acc (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"7bf23964-929b-4693-825d-04fd8b45c90e":{"v":"#d72235","t":"color","s":"css-var --token-7bf23964-929b-4693-825d-04fd8b45c90e (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"7fcdaff0-0ece-4ef7-ac44-4f33c5d3f998":{"v":"rgba(20, 21, 28, 0.8)","t":"color","s":"css-var --token-7fcdaff0-0ece-4ef7-ac44-4f33c5d3f998 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"8917d8a3-b942-46ed-b19c-3b99cd991b5f":{"v":"#ff2a40","t":"color","s":"css-var --token-8917d8a3-b942-46ed-b19c-3b99cd991b5f (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"89f46ebe-6475-422b-a352-933c538a6f86":{"v":"#7af3ff","t":"color","s":"css-var --token-89f46ebe-6475-422b-a352-933c538a6f86 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"8a75d059-dc18-4138-a0a8-bac32ac9ee48":{"v":"#000c33","t":"color","s":"css-var --token-8a75d059-dc18-4138-a0a8-bac32ac9ee48 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"8f926180-85b1-4643-ae87-0e0697a5dfa5":{"v":"#252630","t":"color","s":"css-var --token-8f926180-85b1-4643-ae87-0e0697a5dfa5 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"93745c2f-a915-431f-bf89-7849647e0baa":{"v":"#d4d6ec","t":"color","s":"css-var --token-93745c2f-a915-431f-bf89-7849647e0baa (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"958a6369-86de-458c-b44f-8726bb76b59c":{"v":"#409918","t":"color","s":"css-var --token-958a6369-86de-458c-b44f-8726bb76b59c (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"95e6a8d4-cd19-45b6-97da-42aa056868de":{"v":"#b06aff","t":"color","s":"css-var --token-95e6a8d4-cd19-45b6-97da-42aa056868de (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"984b86b1-e6d5-41fd-a369-89bf43bed0d7":{"v":"#dcb3ff","t":"color","s":"css-var --token-984b86b1-e6d5-41fd-a369-89bf43bed0d7 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"99aaff53-254a-47cf-a944-7822b3bf678e":{"v":"#052326","t":"color","s":"css-var --token-99aaff53-254a-47cf-a944-7822b3bf678e (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"9a889b22-6b9d-4156-b8ff-7492b8f6353e":{"v":"#00686d","t":"color","s":"css-var --token-9a889b22-6b9d-4156-b8ff-7492b8f6353e (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"9bc81069-b7b8-4d87-8c24-886145b7c040":{"v":"#7b7b85","t":"color","s":"css-var --token-9bc81069-b7b8-4d87-8c24-886145b7c040 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"a034b855-6320-472e-b944-1278f7d355c9":{"v":"#bcdf4a","t":"color","s":"css-var --token-a034b855-6320-472e-b944-1278f7d355c9 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"a38bc50b-a1a8-4dc1-865c-22999c3ae2b4":{"v":"#ffe6e6","t":"color","s":"css-var --token-a38bc50b-a1a8-4dc1-865c-22999c3ae2b4 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"a66113d6-dd7d-4009-b13f-95a36a15e3c7":{"v":"#548cff","t":"color","s":"css-var --token-a66113d6-dd7d-4009-b13f-95a36a15e3c7 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"a767dfa2-32c6-4156-a3d9-c8009354ed91":{"v":"#240040","t":"color","s":"css-var --token-a767dfa2-32c6-4156-a3d9-c8009354ed91 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"a9aec4c5-a368-4a2d-b1af-cbdebf760531":{"v":"#1f5518","t":"color","s":"css-var --token-a9aec4c5-a368-4a2d-b1af-cbdebf760531 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"b31c1066-2278-42b4-a5c6-b5f121fc41b9":{"v":"#d1d1d1","t":"color","s":"css-var --token-b31c1066-2278-42b4-a5c6-b5f121fc41b9 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"b4a3f643-7478-4bb1-8737-4efc3d79ced4":{"v":"#d3fb53","t":"color","s":"css-var --token-b4a3f643-7478-4bb1-8737-4efc3d79ced4 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"b5b488cd-b204-48c3-9271-34b75b456a15":{"v":"#330000","t":"color","s":"css-var --token-b5b488cd-b204-48c3-9271-34b75b456a15 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"baa5b080-5973-4df4-b441-f4e642b1c275":{"v":"#a1dd3b","t":"color","s":"css-var --token-baa5b080-5973-4df4-b441-f4e642b1c275 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"bbcff7f9-8802-4a68-b309-97e5b64894e6":{"v":"#000000","t":"color","s":"css-var --token-bbcff7f9-8802-4a68-b309-97e5b64894e6 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"bc22d475-4b04-4dcf-a489-000b72e2171b":{"v":"#ffffff","t":"color","s":"css-var --token-bc22d475-4b04-4dcf-a489-000b72e2171b (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"bcd8d727-7649-4174-8c13-c203c0e84df2":{"v":"#14151c","t":"color","s":"css-var --token-bcd8d727-7649-4174-8c13-c203c0e84df2 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"be074fc3-c003-4e62-9c41-ae70adb72a75":{"v":"#003310","t":"color","s":"css-var --token-be074fc3-c003-4e62-9c41-ae70adb72a75 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"bf13514c-efef-401c-a1d2-05328c26d44a":{"v":"#ff8c39","t":"color","s":"css-var --token-bf13514c-efef-401c-a1d2-05328c26d44a (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"c02c125d-0845-4ca2-aeb0-911c97165daf":{"v":"#ffe6ff","t":"color","s":"css-var --token-c02c125d-0845-4ca2-aeb0-911c97165daf (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"c1a92950-da25-49eb-9482-e1cfb091727d":{"v":"rgba(249, 255, 230, 0.8)","t":"color","s":"css-var --token-c1a92950-da25-49eb-9482-e1cfb091727d (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"c3aac9be-f01f-4244-ba41-5b0aa26f286c":{"v":"#330a00","t":"color","s":"css-var --token-c3aac9be-f01f-4244-ba41-5b0aa26f286c (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"c5583c21-56ea-40f2-bd5f-aab56412a3da":{"v":"#484851","t":"color","s":"css-var --token-c5583c21-56ea-40f2-bd5f-aab56412a3da (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"c8309141-eabd-4932-9f84-494a50d857eb":{"v":"#992700","t":"color","s":"css-var --token-c8309141-eabd-4932-9f84-494a50d857eb (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"c8814748-7a51-4c7e-a47a-4852ae350697":{"v":"#850185","t":"color","s":"css-var --token-c8814748-7a51-4c7e-a47a-4852ae350697 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"cb9b55b3-6230-45f1-90a2-3a4aa30d8a89":{"v":"#ff3ce6","t":"color","s":"css-var --token-cb9b55b3-6230-45f1-90a2-3a4aa30d8a89 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"cea31574-e182-4ee0-9bd0-655bf8324f7f":{"v":"#f4e6ff","t":"color","s":"css-var --token-cea31574-e182-4ee0-9bd0-655bf8324f7f (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"d002beb2-3c90-4e96-abaf-05b048e7b9f6":{"v":"#d622d6","t":"color","s":"css-var --token-d002beb2-3c90-4e96-abaf-05b048e7b9f6 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"d07e1b38-01a3-4f02-b714-3bc829a3f4d7":{"v":"#f8f8f8","t":"color","s":"css-var --token-d07e1b38-01a3-4f02-b714-3bc829a3f4d7 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"d5681730-75ad-4ce8-a29d-a3a82a22e3da":{"v":"#5cbb4c","t":"color","s":"css-var --token-d5681730-75ad-4ce8-a29d-a3a82a22e3da (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"d68ada00-b9e7-44d9-8044-77e06df52552":{"v":"#ffffe6","t":"color","s":"css-var --token-d68ada00-b9e7-44d9-8044-77e06df52552 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"db5b7ab7-1a23-4d91-80d5-2522f6fe702a":{"v":"#f9ffe6","t":"color","s":"css-var --token-db5b7ab7-1a23-4d91-80d5-2522f6fe702a (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"dcfe5de2-aaec-47ad-8532-5af875890752":{"v":"#008e91","t":"color","s":"css-var --token-dcfe5de2-aaec-47ad-8532-5af875890752 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"e1500739-a9cb-4f01-a680-ce7539d8cf4c":{"v":"#04550b","t":"color","s":"css-var --token-e1500739-a9cb-4f01-a680-ce7539d8cf4c (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"e2c96be4-e2a2-479c-9d91-f16cb80dc376":{"v":"#75dd63","t":"color","s":"css-var --token-e2c96be4-e2a2-479c-9d91-f16cb80dc376 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"e45612eb-a27e-4c13-ae38-4c16a543b271":{"v":"#90ff7d","t":"color","s":"css-var --token-e45612eb-a27e-4c13-ae38-4c16a543b271 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"e577a0df-e6be-4d05-81ae-8c5fd4a51f95":{"v":"#c58aff","t":"color","s":"css-var --token-e577a0df-e6be-4d05-81ae-8c5fd4a51f95 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"e7237701-d0af-4a3d-bd2d-bca0db83a168":{"v":"#f94f00","t":"color","s":"css-var --token-e7237701-d0af-4a3d-bd2d-bca0db83a168 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"e823c0bf-20e8-4e8d-b3b5-7c1da89a63cf":{"v":"#99b8ff","t":"color","s":"css-var --token-e823c0bf-20e8-4e8d-b3b5-7c1da89a63cf (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"e91cc39f-fbfc-42d0-9af2-b3526e2efeef":{"v":"#7af3ff","t":"color","s":"css-var --token-e91cc39f-fbfc-42d0-9af2-b3526e2efeef (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"ea09e2d9-bb3f-443a-8ce8-80f08a13faee":{"v":"#002985","t":"color","s":"css-var --token-ea09e2d9-bb3f-443a-8ce8-80f08a13faee (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"eb234ceb-0656-487d-b935-1fc52102e3f3":{"v":"#e8e8e8","t":"color","s":"css-var --token-eb234ceb-0656-487d-b935-1fc52102e3f3 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"ece6f6a2-f42e-4717-aca0-4588cf4dea5a":{"v":"#410a70","t":"color","s":"css-var --token-ece6f6a2-f42e-4717-aca0-4588cf4dea5a (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"ef7ca3cf-e063-4a44-b0e3-f85c8aff839e":{"v":"#e6ecff","t":"color","s":"css-var --token-ef7ca3cf-e063-4a44-b0e3-f85c8aff839e (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"ef8c3886-1874-4214-b0ec-059b32e9d7f5":{"v":"#033cad","t":"color","s":"css-var --token-ef8c3886-1874-4214-b0ec-059b32e9d7f5 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"f2207144-aaa7-43f3-a086-36dc1635354a":{"v":"#b9c4fb","t":"color","s":"css-var --token-f2207144-aaa7-43f3-a086-36dc1635354a (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"f8760b86-f03a-4f32-8b3b-dda4e871b673":{"v":"#b5ffa6","t":"color","s":"css-var --token-f8760b86-f03a-4f32-8b3b-dda4e871b673 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"f8d4d9f2-c148-478e-9f1b-a43f8a3cc1fe":{"v":"#9b53f6","t":"color","s":"css-var --token-f8d4d9f2-c148-478e-9f1b-a43f8a3cc1fe (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"f94d4fbd-c6b9-4068-a874-597ae3cba5c3":{"v":"rgba(255, 255, 255, 0.8)","t":"color","s":"css-var --token-f94d4fbd-c6b9-4068-a874-597ae3cba5c3 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"},"f9b146e8-eb40-4079-a780-d91c7a5f56f5":{"v":"#191919","t":"color","s":"css-var --token-f9b146e8-eb40-4079-a780-d91c7a5f56f5 (site shell)","d":"a Framer colour style declared on body of the Framer-built /research/ai/ page — the marketing palette that page paints"}}},"layout":{"gridGapXDesktop":{"v":"24px","t":"dimension","s":"css-var --grid-gap-x-desktop declared on the Tailwind arbitrary-property utility class .\\[--grid-gap-x-desktop\\:24px\\]"},"gridGapXMobile":{"v":"12px","t":"dimension","s":"css-var --grid-gap-x-mobile declared on the Tailwind arbitrary-property utility class .\\[--grid-gap-x-mobile\\:12px\\]"},"gridGapXTablet":{"v":"16px","t":"dimension","s":"css-var --grid-gap-x-tablet declared on the Tailwind arbitrary-property utility class .\\[--grid-gap-x-tablet\\:16px\\]"},"desktopNavHeight":{"v":"3.5rem","t":"dimension","s":"css-var --desktop-nav-height (site shell)"},"desktopNavTopOffset":{"v":"1.5rem","t":"dimension","s":"css-var --desktop-nav-top-offset (site shell)"},"desktopNavTopOffsetWithBanner":{"v":"4.75rem","t":"dimension","s":"css-var --desktop-nav-top-offset-with-banner (site shell)"},"fullDesktopNavHeight":{"v":"80px","t":"dimension","s":"css-var --full-desktop-nav-height (site shell)"},"fullMobileNavHeight":{"v":"72px","t":"dimension","s":"css-var --full-mobile-nav-height (site shell)"},"fullTabletNavHeight":{"v":"96px","t":"dimension","s":"css-var --full-tablet-nav-height (site shell)"},"notificationBannerHeight":{"v":"2.5rem","t":"dimension","s":"css-var --notification-banner-height (site shell)"},"notificationBannerOffset":{"v":"0rem","t":"dimension","s":"css-var --notification-banner-offset (site shell)"}},"font":{"family":{"noiGrotesk":{"v":"'NoiGrotesk', 'NoiGrotesk Fallback', sans-serif","t":"fontFamily","s":"css-var --font-noi-grotesk (site shell)","d":"NoiGrotesk — the marketing site's display/brand face with its metrics-matched fallback"},"sansPlomb":{"v":"'SansPlomb', 'SansPlomb Fallback', sans-serif","t":"fontFamily","s":"css-var --font-sans-plomb (site shell)","d":"SansPlomb — the body face with its metrics-matched fallback"},"sansPlombSwap":{"v":"'SansPlombSwap', 'SansPlombSwap Fallback', sans-serif","t":"fontFamily","s":"css-var --font-sans-plomb-swap (site shell)","d":"SansPlombSwap — the swap-metrics twin the site pairs with sans-plomb"}},"weight":{"bold":{"v":700,"t":"fontWeight","s":"css-var --font-weight-bold (site shell)"},"light":{"v":300,"t":"fontWeight","s":"css-var --font-weight-light (site shell)"},"medium":{"v":500,"t":"fontWeight","s":"css-var --font-weight-medium (site shell)"},"normal":{"v":400,"t":"fontWeight","s":"css-var --font-weight-normal (site shell)"},"semibold":{"v":600,"t":"fontWeight","s":"css-var --font-weight-semibold (site shell)"}},"leading":{"lg":{"v":1.1,"t":"number","s":"css-var --leading-lg (site)"},"md":{"v":1.0,"t":"number","s":"css-var --leading-md (site)"},"sm":{"v":0.9,"t":"number","s":"css-var --leading-sm (site)"},"xl":{"v":1.4,"t":"number","s":"css-var --leading-xl (site)"},"xs":{"v":0.85,"t":"number","s":"css-var --leading-xs (site)"}},"tracking":{"lg":{"v":"-.025em","t":"other","s":"css-var --tracking-lg (site shell)"},"sm":{"v":"-.015em","t":"other","s":"css-var --tracking-sm (site shell)"}}},"space":{"unit":{"v":"0.25rem","t":"dimension","s":"css-var --spacing (site shell)","d":"the 4px unit the spacing scale multiplies"}},"container":{"2xl":{"v":"42rem","t":"dimension","s":"css-var --container-2xl (site shell)"},"3xl":{"v":"48rem","t":"dimension","s":"css-var --container-3xl (site shell)"},"3xs":{"v":"16rem","t":"dimension","s":"css-var --container-3xs (site shell)"},"4xl":{"v":"56rem","t":"dimension","s":"css-var --container-4xl (site shell)"},"5xl":{"v":"64rem","t":"dimension","s":"css-var --container-5xl (site shell)"},"6xl":{"v":"72rem","t":"dimension","s":"css-var --container-6xl (site shell)"},"7xl":{"v":"80rem","t":"dimension","s":"css-var --container-7xl (site shell)"},"lg":{"v":"32rem","t":"dimension","s":"css-var --container-lg (site shell)"},"md":{"v":"28rem","t":"dimension","s":"css-var --container-md (site shell)"},"sm":{"v":"24rem","t":"dimension","s":"css-var --container-sm (site shell)"},"xl":{"v":"36rem","t":"dimension","s":"css-var --container-xl (site shell)"},"xs":{"v":"20rem","t":"dimension","s":"css-var --container-xs (site shell)"}},"ease":{"in":{"v":[0.4,0.0,1.0,1.0],"t":"cubicBezier","s":"css-var --ease-in (site shell)"},"inOut":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-in-out (site shell)"},"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-out (site shell)"},"default":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --default-transition-timing-function (site shell)"}},"duration":{"default":{"v":"150ms","t":"duration","s":"css-var --default-transition-duration (site shell)"}},"blur":{"2xl":{"v":"40px","t":"dimension","s":"css-var --blur-2xl (site shell)"},"md":{"v":"12px","t":"dimension","s":"css-var --blur-md (site shell)"},"sm":{"v":"8px","t":"dimension","s":"css-var --blur-sm (site shell)"},"xl":{"v":"24px","t":"dimension","s":"css-var --blur-xl (site shell)"}},"shadow":{"2xl":{"v":"rgba(0, 0, 0, 0.15) 0px 25px 25px 0px","t":"other","s":"css-var --drop-shadow-2xl (site shell)","d":"drop-shadow filter value, kept as the computed string"},"md":{"v":"rgba(0, 0, 0, 0.12) 0px 3px 3px 0px","t":"other","s":"css-var --drop-shadow-md (site shell)","d":"drop-shadow filter value, kept as the computed string"}},"animation":{"pulse":{"v":"pulse 2s cubic-bezier(.4,0,.6,1) infinite","t":"other","s":"css-var --animate-pulse (site shell)","d":"animation shorthand as declared"},"spin":{"v":"spin 1s linear infinite","t":"other","s":"css-var --animate-spin (site shell)","d":"animation shorthand as declared"}},"aspect":{"video":{"v":"16/9","t":"other","s":"css-var --aspect-video (site shell)"}},"typography":{"display":{"v":{"fontFamily":"SansPlomb, \"SansPlomb Fallback\", sans-serif","fontSize":"160px","fontWeight":600,"lineHeight":"128px","letterSpacing":"-4px"},"t":"typography","s":"measured hs-hero-h1 on / (default state)","d":"the hero headline — the brand face at its largest"},"navLink":{"v":{"fontFamily":"NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif","fontSize":"14px","fontWeight":400,"lineHeight":"19.6px","letterSpacing":"-0.21px"},"t":"typography","s":"measured hs-nav-link on / (default state)","d":"a nav section item"},"button":{"v":{"fontFamily":"NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif","fontSize":"14px","fontWeight":500,"lineHeight":"15.4px","letterSpacing":"-0.21px"},"t":"typography","s":"measured hs-signup-button on / (default state)","d":"the nav sign-up button label"},"searchButton":{"v":{"fontFamily":"NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif","fontSize":"16px","fontWeight":400,"lineHeight":"24px"},"t":"typography","s":"measured hs-search-button on / (default state)","d":"the \"Search jobs\" button label"},"pill":{"v":{"fontFamily":"NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif","fontSize":"14px","fontWeight":500,"lineHeight":"11.9px","letterSpacing":"-0.21px"},"t":"typography","s":"measured hs-filter-pill on / (default state)","d":"a job-type pill label"},"accordion":{"v":{"fontFamily":"NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif","fontSize":"18px","fontWeight":400,"lineHeight":"25.2px","letterSpacing":"-0.27px"},"t":"typography","s":"measured hs-faq on /employers/ (default state)","d":"an FAQ question"},"footerLink":{"v":{"fontFamily":"NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif","fontSize":"16px","fontWeight":400,"lineHeight":"24px"},"t":"typography","s":"measured hs-footer-link on / (default state)","d":"a footer link"},"cta":{"v":{"fontFamily":"NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif","fontSize":"16px","fontWeight":500,"lineHeight":"17.6px","letterSpacing":"-0.24px"},"t":"typography","s":"measured hs-cta on /employers/ (default state)","d":"a CTA pill label"},"arrowLink":{"v":{"fontFamily":"NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif","fontSize":"16px","fontWeight":500,"lineHeight":"22.4px","letterSpacing":"-0.24px"},"t":"typography","s":"measured stu-text-link on /students/ (default state)","d":"the arrow-suffixed text link"},"input":{"v":{"fontFamily":"\"Noi Grotesk\", system-ui, sans-serif","fontSize":"17px","fontWeight":400,"lineHeight":"23.8px","letterSpacing":"-0.34px"},"t":"typography","s":"measured app-email-field on https://app.joinhandshake.com/access (default state)","d":"the login email field text"},"appButton":{"v":{"fontFamily":"\"Noi Grotesk\", system-ui, sans-serif","fontSize":"15px","fontWeight":500,"lineHeight":"18px"},"t":"typography","s":"measured app-continue-button on https://app.joinhandshake.com/access (default state)","d":"the \"Continue with email\" button label"},"category":{"v":{"fontFamily":"NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif","fontSize":"16px","fontWeight":600,"lineHeight":"24px"},"t":"typography","s":"measured blog-category-link on /blog/ (default state)","d":"an uppercase blog category link"},"legalNav":{"v":{"fontFamily":"NoiGrotesk, \"NoiGrotesk Fallback\", sans-serif","fontSize":"16px","fontWeight":400,"lineHeight":"22.4px","letterSpacing":"-0.24px"},"t":"typography","s":"measured legal-nav-link on /legal/tos/ (default state)","d":"a legal rail link"}},"component":{"nav":{"height":{"v":"56px","t":"dimension","s":"measured hs-nav default on / (fixed pill nav height)"},"width":{"v":"1440px","t":"dimension","s":"measured hs-nav default on / (fixed pill nav width)"},"radius":{"v":"0px","t":"dimension","s":"measured hs-nav default on / (pill nav corner)"}},"button":{"signup":{"height":{"v":"40px","t":"dimension","s":"measured hs-signup-button default on / (nav sign-up button)"},"radius":{"v":"8px","t":"dimension","s":"measured hs-signup-button default on / (nav sign-up corner)"}},"search":{"height":{"v":"56px","t":"dimension","s":"measured hs-search-button default on / (\"Search jobs\" button)"},"radius":{"v":"12px","t":"dimension","s":"measured hs-search-button default on / (\"Search jobs\" corner)"}},"cta":{"height":{"v":"40px","t":"dimension","s":"measured hs-cta default on /employers/ (CTA pill)"},"radius":{"v":"8px","t":"dimension","s":"measured hs-cta default on /employers/ (CTA corner)"}},"continue":{"height":{"v":"40px","t":"dimension","s":"measured app-continue-button default on https://app.joinhandshake.com/access (\"Continue with email\" button)"},"radius":{"v":"8px","t":"dimension","s":"measured app-continue-button default on https://app.joinhandshake.com/access (\"Continue\" corner)"}}},"input":{"search":{"height":{"v":"88px","t":"dimension","s":"measured hs-search-input default on / (hero search field)"},"radius":{"v":"24px","t":"dimension","s":"measured hs-search-input default on / (search field corner)"}},"email":{"height":{"v":"48px","t":"dimension","s":"measured app-email-field default on https://app.joinhandshake.com/access (login email field)"},"radius":{"v":"8px","t":"dimension","s":"measured app-email-field default on https://app.joinhandshake.com/access (login email field corner)"}}},"pill":{"height":{"v":"45.91px","t":"dimension","s":"measured hs-filter-pill default on / (job-type pill)"},"radius":{"v":"8px","t":"dimension","s":"measured hs-filter-pill default on / (job-type pill corner)"}},"banner":{"height":{"v":"40px","t":"dimension","s":"measured hs-banner default on /employers/ (notification banner)"}},"footer":{"height":{"v":"766.25px","t":"dimension","s":"measured hs-footer default on / (footer band)"}},"accordion":{"rowHeight":{"v":"25.2px","t":"dimension","s":"measured hs-faq default on /employers/ (FAQ question row)"}},"page":{"width":{"v":"1440px","t":"dimension","s":"measured app-shell default on https://app.joinhandshake.com/access (the /access page shell — the viewport-wide main, not the card (the card itself is not separately measured))"}},"mobileHeader":{"height":{"v":"48px","t":"dimension","s":"measured m-hs-topbar default on / (mobile top bar)"}},"mobileMenuButton":{"size":{"v":"16px","t":"dimension","s":"measured m-hs-hamburger default on / (\"Open menu\" button)"}},"mobileDrawer":{"width":{"v":"390px","t":"dimension","s":"measured m-hs-drawer opened on / (opened nav sheet)"}},"card":{"blog":{"radius":{"v":"0px","t":"dimension","s":"measured blog-card default on /blog/ (article card corner)"}}}},"motion":{"duration":{"0ms":{"v":"0ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"30ms":{"v":"30ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"50ms":{"v":"50ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 60 elements."},"75ms":{"v":"75ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"100ms":{"v":"100ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 20 elements."},"default-transition-duration":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--default-transition-duration"},"d":"Custom property --default-transition-duration, declared on :host, :root."},"200ms":{"v":"200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 417 elements."},"250ms":{"v":"250ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 46 elements."},"300ms":{"v":"300ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 454 elements."},"350ms":{"v":"350ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"400ms":{"v":"400ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 368 elements."},"500ms":{"v":"500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"600ms":{"v":"600ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"700ms":{"v":"700ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 20 elements."},"1000ms":{"v":"1000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"1200ms":{"v":"1200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1600ms":{"v":"1600ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2000ms":{"v":"2000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2500ms":{"v":"2500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."}},"easing":{"bezier-0_22-1-0_36-1":{"v":[0.22,1,0.36,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_83-0-0_17-1":{"v":[0.83,0,0.17,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"default-transition-timing-function":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--default-transition-timing-function"},"d":"Custom property --default-transition-timing-function, declared on :host, :root."},"ease":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease`, expanded to its control points."},"ease-in":{"v":[0.4,0,1,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-in"},"d":"Custom property --ease-in, declared on :host, :root."},"ease-in-out":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-in-out"},"d":"Custom property --ease-in-out, declared on :host, :root."},"ease-in-out-2":{"v":[0.42,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease-in-out`, expanded to its control points."},"ease-out":{"v":[0,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-out"},"d":"Custom property --ease-out, declared on :host, :root."},"ease-out-2":{"v":[0,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `ease-out`, expanded to its control points."},"linear":{"v":[0,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `linear`, expanded to its control points."}},"transition":{"rotate-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 110 elements."},"scale-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 110 elements."},"transform-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 110 elements."},"translate-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 110 elements."},"opacity-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 74 elements."},"tw-gradient-from-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 70 elements."},"tw-gradient-to-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 70 elements."},"tw-gradient-via-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 70 elements."},"background-color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 70 elements."},"border-color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 70 elements."},"color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 70 elements."},"fill-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 70 elements."},"outline-color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 70 elements."},"stroke-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 70 elements."},"text-decoration-color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 70 elements."},"webkit-backdrop-filter-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 68 elements."},"backdrop-filter-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 68 elements."},"box-shadow-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 68 elements."},"content-visibility-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 68 elements."},"display-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 68 elements."},"filter-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 68 elements."},"overlay-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 68 elements."},"pointer-events-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 68 elements."},"tw-gradient-from-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 41 elements."},"tw-gradient-to-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 41 elements."},"tw-gradient-via-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 41 elements."},"background-color-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 41 elements."},"border-color-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 41 elements."},"color-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 41 elements."},"fill-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 41 elements."},"outline-color-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 41 elements."},"stroke-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 41 elements."},"text-decoration-color-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 41 elements."},"tw-gradient-from-400ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.400ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 35 elements."},"tw-gradient-to-400ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.400ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 35 elements."},"tw-gradient-via-400ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.400ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 35 elements."},"background-color-400ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.400ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 35 elements."},"border-color-400ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.400ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 35 elements."},"color-400ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.400ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 35 elements."},"fill-400ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.400ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 35 elements."},"outline-color-400ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.400ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 35 elements."},"stroke-400ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.400ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 35 elements."},"text-decoration-color-400ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.400ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 35 elements."},"background-color-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 31 elements."},"border-color-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 31 elements."},"color-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 31 elements."},"fill-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 31 elements."},"stroke-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 31 elements."},"text-decoration-color-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 31 elements."},"backdrop-filter-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 24 elements."},"box-shadow-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 24 elements."},"filter-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 24 elements."},"opacity-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 24 elements."},"transform-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 24 elements."},"all-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 17 elements."},"tw-gradient-from-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 15 elements."},"tw-gradient-to-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 15 elements."},"tw-gradient-via-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 15 elements."},"outline-color-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 15 elements."},"all-400ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.400ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 14 elements."}},"animation":{"ketch-bannerdesktopanimate":{"v":{"name":"ketch-bannerDesktopAnimate","duration":"{motion.duration.400ms}","delay":"0ms","timingFunction":"{motion.easing.ease}","iterationCount":"1","direction":"normal","fillMode":"forwards"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `ketch-bannerDesktopAnimate`."}},"_extensions":{"reducedMotion":{"probe":"page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page","verified":true,"pages":7,"behaviour":"ignores","moving":307,"removed":0,"reduced":0,"kept":307,"partial":0,"increased":0,"added":0,"loops":[],"authoredRules":[{"media":"@media (prefers-reduced-motion: reduce)","selector":".motion-reduce\\:animate-none","declarations":{"animation-duration":"auto","animation-timing-function":"ease","animation-delay":"0s","animation-iteration-count":"1","animation-direction":"normal","animation-fill-mode":"none","animation-play-state":"running","animation-name":"none","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: reduce)","selector":".motion-reduce\\:bg-cover","declarations":{"background-size":"cover"}},{"media":"@media (prefers-reduced-motion: reduce)","selector":".motion-reduce\\:bg-center","declarations":{"background-position-x":"50%","background-position-y":"center"}}]},"propertyUsage":{"color":204,"background-color":197,"border-color":197,"fill":197,"stroke":197,"text-decoration-color":197,"--tw-gradient-from":181,"--tw-gradient-to":181,"--tw-gradient-via":181,"outline-color":181,"transform":141,"rotate":125,"scale":125,"translate":125,"opacity":105,"backdrop-filter":94,"box-shadow":94,"filter":94,"-webkit-backdrop-filter":78,"content-visibility":78,"display":78,"overlay":78,"pointer-events":78,"all":41,"top":7},"smoothScrollElements":0,"unusedKeyframes":["ketch-backdropFadeOut","ketch-bannerAnimateCenter","ketch-bannerAnimateTop","ketch-bannerDismissBottom","ketch-bannerDismissCenter","ketch-bannerMobileBottomAnimate","ketch-bannerMobileDismissBottom","ketch-fadeIn","ketch-modalAnimatedLeft","ketch-modalAnimatedRight","ketch-pulseOpacity","mobile-menu-trigger_bar-bottom-return__Pz2CC","mobile-menu-trigger_bar-bottom__fY_tq","mobile-menu-trigger_bar-top-return__y9FT_","pulse","scale-in-content","scale-out-content","spin","whats-next-gradient-drift"],"notTokenised":[{"name":"motion easing var(--ease-in)","value":"var(--ease-in)","why":"an unresolved var() reference: the easing it computes to was not read","uses":0},{"name":"motion easing var(--ease-in-out)","value":"var(--ease-in-out)","why":"an unresolved var() reference: the easing it computes to was not read","uses":0},{"name":"motion easing var(--ease-out)","value":"var(--ease-out)","why":"an unresolved var() reference: the easing it computes to was not read","uses":0},{"name":"motion easing var(--tw-ease, var(--default-transition-timing-function))","value":"var(--tw-ease, var(--default-transition-timing-function))","why":"an unresolved var() reference: the easing it computes to was not read","uses":0},{"name":"motion.transition","value":"72 more","why":"the 60 most-used transitions are tokens; the rest are in raw/motion.json"}]}}},"light":{"bg":{"page":{"v":"#ffffff","t":"color","s":"painted section band 'section.w-full.bg-neutral-0.pt-16' measured by the layout probe on careers@1440 (the bg-neutral-0 white band the index pages alternate)"},"muted":{"v":"#f3f4fa","t":"color","s":"painted section band 'section.py-16.lg:py-20.bg-neutral-10' measured by the layout probe on blog@1440 (the bg-neutral-10 band between the white ones)"},"nav":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"measured hs-nav default on / (the fixed nav bar fill)"},"footer":{"v":"#14151c","t":"color","s":"measured hs-footer default on / (the footer band fill)"}},"fg":{"navLink":{"v":"#ffffff","t":"color","s":"measured hs-nav-link default on / (nav item text)"},"body":{"v":"#14151c","t":"color","s":"measured car-dept-button default on /careers/ (department accordion header text — the ink body copy)"},"headline":{"v":"#ffffff","t":"color","s":"measured hs-hero-h1 default on / (hero headline ink)"}},"button":{"primary":{"bg":{"v":"#d3fb52","t":"color","s":"measured hs-signup-button default on / (\"Sign up\" button fill)"},"fg":{"v":"#14151c","t":"color","s":"measured hs-signup-button default on / (\"Sign up\" button label)"},"hover":{"v":"#a1dd3b","t":"color","s":"measured hs-signup-button hover on / (\"Sign up\" button hover fill)"}}},"link":{"nav":{"v":"#ffffff","t":"color","s":"measured hs-login-link default on / (\"Log in\" link colour)"},"accent":{"v":"#ffffff","t":"color","s":"measured stu-text-link default on /students/ (the arrow text link colour)"},"accentHover":{"v":"#ffffff","t":"color","s":"measured stu-text-link hover on /students/ (the arrow text link hover)"},"footer":{"v":"#ffffff","t":"color","s":"measured hs-footer-link default on / (footer link colour)"}},"cta":{"bg":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"measured hs-cta default on /employers/ (CTA pill fill)"},"fg":{"v":"#ffffff","t":"color","s":"measured hs-cta default on /employers/ (CTA pill label)"},"hover":{"v":"#ffffff","t":"color","s":"measured hs-cta hover on /employers/ (CTA pill hover fill)"}},"input":{"search":{"bg":{"v":"#ffffff","t":"color","s":"measured hs-search-input default on / (hero search field fill)"},"border":{"v":"#252630","t":"color","s":"measured hs-search-input default on / (hero search field border)"}}},"pill":{"bg":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"measured hs-filter-pill default on / (job-type pill fill)"}},"banner":{"bg":{"v":"#d3fb52","t":"color","s":"measured hs-banner default on /employers/ (notification banner fill)"}},"tab":{"fg":{"v":"#a9aaae","t":"color","s":"measured hs-segment-tab default on /employers/ (segment tab text (the unselected tab paints a muted grey))"}},"accordion":{"question":{"v":"#ffffff","t":"color","s":"measured hs-faq default on /employers/ (FAQ question text)"}},"type":{"hero":{"size":{"v":"160px","t":"other","s":"measured hs-hero-h1 default on / (hero headline size)"},"lineHeight":{"v":"128px","t":"other","s":"measured hs-hero-h1 default on / (hero headline leading)"}}},"nav":{"legalActive":{"v":"#000000","t":"color","s":"measured legal-nav-active default on /legal/tos/ (legal rail active link)"},"legal":{"v":"#000000","t":"color","s":"measured legal-nav-link default on /legal/tos/ (legal rail link)"}}},"access":{"component":{"nav":{"iconSize":{"v":"20px","t":"dimension","s":"css-var --nav-icon-size (app shell)"},"iconTransitionDuration":{"v":"200ms","t":"duration","s":"css-var --nav-icon-transition-duration (app shell)"},"incidentBannerHeight":{"v":"80px","t":"dimension","s":"css-var --nav-incident-banner-height (app shell)"},"mobileItemLeftPadding":{"v":"36px","t":"dimension","s":"css-var --nav-mobile-item-left-padding (app shell)"},"panelTransitionDuration":{"v":"300ms","t":"duration","s":"css-var --nav-panel-transition-duration (app shell)"},"subItemIndent":{"v":"36px","t":"dimension","s":"css-var --nav-sub-item-indent (app shell)"},"topNavHeight":{"v":"56px","t":"dimension","s":"css-var --nav-top-nav-height (app shell)"},"viewingAsHeaderHeight":{"v":"30px","t":"dimension","s":"css-var --nav-viewing-as-header-height (app shell)"}}},"rosettaAvatar":{"blue":{"v":"#548cff","t":"color","s":"css-var --rosetta-avatar-blue (app shell)"},"cyan":{"v":"#7af3ff","t":"color","s":"css-var --rosetta-avatar-cyan (app shell)"},"gray":{"v":"rgba(18, 18, 18, 0.09)","t":"color","s":"css-var --rosetta-avatar-gray (app shell)"},"green":{"v":"#b5ffa6","t":"color","s":"css-var --rosetta-avatar-green (app shell)"},"orange":{"v":"#f94f00","t":"color","s":"css-var --rosetta-avatar-orange (app shell)"},"purple":{"v":"#dcb3ff","t":"color","s":"css-var --rosetta-avatar-purple (app shell)"}},"rosettaBg":{"disabled":{"v":"#eeeeee","t":"color","s":"css-var --rosetta-bg-disabled (app shell)"},"featureCallout":{"v":"#003bcc","t":"color","s":"css-var --rosetta-bg-feature-callout (app shell)"},"inverted":{"v":"#121212","t":"color","s":"css-var --rosetta-bg-inverted (app shell)"},"invertedDisabled":{"v":"rgba(251, 251, 251, 0.07)","t":"color","s":"css-var --rosetta-bg-inverted-disabled (app shell)"},"invertedSecondary":{"v":"rgba(251, 251, 251, 0.08)","t":"color","s":"css-var --rosetta-bg-inverted-secondary (app shell)"},"primary":{"v":"#ffffff","t":"color","s":"css-var --rosetta-bg-primary (app shell)"},"secondary":{"v":"#f6f6f6","t":"color","s":"css-var --rosetta-bg-secondary (app shell)"},"selected":{"v":"#eaeaea","t":"color","s":"css-var --rosetta-bg-selected (app shell)"},"statusInfo":{"v":"#ccdbff","t":"color","s":"css-var --rosetta-bg-status-info (app shell)"},"statusNegative":{"v":"#ffc2c4","t":"color","s":"css-var --rosetta-bg-status-negative (app shell)"},"statusNeutral":{"v":"#eaeaea","t":"color","s":"css-var --rosetta-bg-status-neutral (app shell)"},"statusPositive":{"v":"#a5e09f","t":"color","s":"css-var --rosetta-bg-status-positive (app shell)"},"statusWarning":{"v":"#ffd999","t":"color","s":"css-var --rosetta-bg-status-warning (app shell)"},"surface":{"v":"#fcfcfd","t":"color","s":"css-var --rosetta-bg-surface (app shell)"}},"deprecated":{"backgroundAccentFive":{"v":"#fbef81","t":"color","s":"css-var --rosetta-colors-background-accentFive--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"backgroundAccentFour":{"v":"#91f1b8","t":"color","s":"css-var --rosetta-colors-background-accentFour--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"backgroundAccentOne":{"v":"#dfc6ff","t":"color","s":"css-var --rosetta-colors-background-accentOne--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"backgroundAccentThree":{"v":"#ffb5f5","t":"color","s":"css-var --rosetta-colors-background-accentThree--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"backgroundAccentTwo":{"v":"#b1f8ff","t":"color","s":"css-var --rosetta-colors-background-accentTwo--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"backgroundInvertedSecondary":{"v":"#052326","t":"color","s":"css-var --rosetta-colors-background-invertedSecondary--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"backgroundInvertedTertiary":{"v":"#06292d","t":"color","s":"css-var --rosetta-colors-background-invertedTertiary--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"backgroundQuaternary":{"v":"#e7e7e7","t":"color","s":"css-var --rosetta-colors-background-quaternary--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"backgroundSelectedHover":{"v":"#dddddd","t":"color","s":"css-var --rosetta-colors-background-selectedHover--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"backgroundSelectedPress":{"v":"#d0d0d0","t":"color","s":"css-var --rosetta-colors-background-selectedPress--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"backgroundTertiary":{"v":"#f3f3f3","t":"color","s":"css-var --rosetta-colors-background-tertiary--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"brandHsBlue":{"v":"#1f1cd6","t":"color","s":"css-var --rosetta-colors-brand-hsBlue--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"brandHsMidnight":{"v":"#0f1035","t":"color","s":"css-var --rosetta-colors-brand-hsMidnight--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"brandHsRed":{"v":"#ff1100","t":"color","s":"css-var --rosetta-colors-brand-hsRed--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"brandHsTwilight":{"v":"#190083","t":"color","s":"css-var --rosetta-colors-brand-hsTwilight--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"brandHsTwilightDark":{"v":"#100056","t":"color","s":"css-var --rosetta-colors-brand-hsTwilightDark--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"foregroundAccentFive":{"v":"#5c573b","t":"color","s":"css-var --rosetta-colors-foreground-accentFive--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"foregroundAccentFour":{"v":"#155b0a","t":"color","s":"css-var --rosetta-colors-foreground-accentFour--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"foregroundAccentOne":{"v":"#7139b8","t":"color","s":"css-var --rosetta-colors-foreground-accentOne--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"foregroundAccentThree":{"v":"#a1108f","t":"color","s":"css-var --rosetta-colors-foreground-accentThree--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"foregroundAccentTwo":{"v":"#116169","t":"color","s":"css-var --rosetta-colors-foreground-accentTwo--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"foregroundInteractiveHover":{"v":"#132729","t":"color","s":"css-var --rosetta-colors-foreground-interactiveHover--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"},"foregroundInteractivePress":{"v":"#223536","t":"color","s":"css-var --rosetta-colors-foreground-interactivePress--deprecated (app shell)","d":"a --rosetta-colors-* name the Rosetta sheet marks deprecated"}},"rosettaFg":{"border":{"v":"rgba(18, 18, 18, 0.12)","t":"color","s":"css-var --rosetta-fg-border (app shell)"},"disabled":{"v":"rgba(18, 18, 18, 0.4)","t":"color","s":"css-var --rosetta-fg-disabled (app shell)"},"inverted":{"v":"#ffffff","t":"color","s":"css-var --rosetta-fg-inverted (app shell)"},"invertedBorder":{"v":"rgba(251, 251, 251, 0.16)","t":"color","s":"css-var --rosetta-fg-inverted-border (app shell)"},"invertedDisabled":{"v":"rgba(251, 251, 251, 0.5)","t":"color","s":"css-var --rosetta-fg-inverted-disabled (app shell)"},"primary":{"v":"#121212","t":"color","s":"css-var --rosetta-fg-primary (app shell)"},"secondary":{"v":"rgba(18, 18, 18, 0.7)","t":"color","s":"css-var --rosetta-fg-secondary (app shell)"},"statusInfo":{"v":"#003bcc","t":"color","s":"css-var --rosetta-fg-status-info (app shell)"},"statusNegative":{"v":"#bb3643","t":"color","s":"css-var --rosetta-fg-status-negative (app shell)"},"statusPositive":{"v":"#327d0f","t":"color","s":"css-var --rosetta-fg-status-positive (app shell)"},"statusWarning":{"v":"#a36700","t":"color","s":"css-var --rosetta-fg-status-warning (app shell)"}},"rosettaFont":{"familyBrand":{"v":"\"Sansplomb\",sans-serif","t":"fontFamily","s":"css-var --rosetta-font-family-brand (app shell)"},"familyMono":{"v":"\"Noi Grotesk\",monospace","t":"fontFamily","s":"css-var --rosetta-font-family-mono (app shell)"},"familySans":{"v":"\"Noi Grotesk\",system-ui,sans-serif","t":"fontFamily","s":"css-var --rosetta-font-family-sans (app shell)"}},"rosettaInteractive":{"focusOutline":{"v":"#003bcc","t":"color","s":"css-var --rosetta-interactive-focusOutline (app shell)"},"hovered":{"v":"rgba(18, 18, 18, 0.06)","t":"color","s":"css-var --rosetta-interactive-hovered (app shell)"},"invertedFocusOutline":{"v":"#316cff","t":"color","s":"css-var --rosetta-interactive-inverted-focusOutline (app shell)"},"invertedHovered":{"v":"rgba(255, 255, 255, 0.06)","t":"color","s":"css-var --rosetta-interactive-inverted-hovered (app shell)"},"invertedPressed":{"v":"rgba(255, 255, 255, 0.12)","t":"color","s":"css-var --rosetta-interactive-inverted-pressed (app shell)"},"pressed":{"v":"rgba(18, 18, 18, 0.12)","t":"color","s":"css-var --rosetta-interactive-pressed (app shell)"},"primary":{"v":"#04191b","t":"color","s":"css-var --rosetta-interactive-primary (app shell)"}},"rosettaShadow":{"elevationFive":{"v":"rgba(0, 0, 0, 0.08) 0px 6px 30px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px","t":"other","s":"css-var --rosetta-shadow-elevation-five (app shell)"},"elevationFour":{"v":"rgba(0, 0, 0, 0.08) 0px 6px 30px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px","t":"other","s":"css-var --rosetta-shadow-elevation-four (app shell)"},"elevationOne":{"v":"rgba(0, 0, 0, 0.08) 0px 1px 2px 0px","t":"other","s":"css-var --rosetta-shadow-elevation-one (app shell)"},"elevationThree":{"v":"rgba(0, 0, 0, 0.08) 0px 6px 30px 0px, rgba(0, 0, 0, 0.08) 0px 1px 3px 0px","t":"other","s":"css-var --rosetta-shadow-elevation-three (app shell)"},"elevationTwo":{"v":"rgba(0, 0, 0, 0.04) 0px 2px 20px 0px, rgba(0, 0, 0, 0.08) 0px 1px 2px 0px","t":"other","s":"css-var --rosetta-shadow-elevation-two (app shell)"},"elevationZero":{"v":"none","t":"other","s":"css-var --rosetta-shadow-elevation-zero (app shell)"},"one":{"v":"rgba(0, 0, 0, 0.12) 0px 1px 2px 0px","t":"other","s":"css-var --rosetta-shadow-one (app shell)"},"three":{"v":"rgba(0, 0, 0, 0.1) 0px 8px 32px 0px, rgba(0, 0, 0, 0.04) 0px 0px 2px 0px","t":"other","s":"css-var --rosetta-shadow-three (app shell)"},"two":{"v":"rgba(0, 0, 0, 0.1) 0px 2px 10px 0px, rgba(0, 0, 0, 0.04) 0px 0px 2px 0px","t":"other","s":"css-var --rosetta-shadow-two (app shell)"}},"rosettaSize":{"borderActive":{"v":"2px","t":"dimension","s":"css-var --rosetta-size-border-active (app shell)"},"borderRegular":{"v":"1px","t":"dimension","s":"css-var --rosetta-size-border-regular (app shell)"},"containedLg":{"v":"28px","t":"dimension","s":"css-var --rosetta-size-contained-lg (app shell)"},"containedMd":{"v":"24px","t":"dimension","s":"css-var --rosetta-size-contained-md (app shell)"},"containedSm":{"v":"20px","t":"dimension","s":"css-var --rosetta-size-contained-sm (app shell)"},"containedXl":{"v":"32px","t":"dimension","s":"css-var --rosetta-size-contained-xl (app shell)"},"containedXs":{"v":"16px","t":"dimension","s":"css-var --rosetta-size-contained-xs (app shell)"},"containedXxs":{"v":"12px","t":"dimension","s":"css-var --rosetta-size-contained-xxs (app shell)"},"controlGap":{"v":"8px","t":"dimension","s":"css-var --rosetta-size-control-gap (app shell)"},"controlHeightLg":{"v":"48px","t":"dimension","s":"css-var --rosetta-size-control-height-lg (app shell)"},"controlHeightMd":{"v":"40px","t":"dimension","s":"css-var --rosetta-size-control-height-md (app shell)"},"controlHeightSm":{"v":"36px","t":"dimension","s":"css-var --rosetta-size-control-height-sm (app shell)"},"controlHeightXs":{"v":"28px","t":"dimension","s":"css-var --rosetta-size-control-height-xs (app shell)"},"controlPaddingLg":{"v":"16px","t":"dimension","s":"css-var --rosetta-size-control-padding-lg (app shell)"},"controlPaddingMd":{"v":"12px","t":"dimension","s":"css-var --rosetta-size-control-padding-md (app shell)"},"controlPaddingSm":{"v":"8px","t":"dimension","s":"css-var --rosetta-size-control-padding-sm (app shell)"},"controlPaddingXs":{"v":"4px","t":"dimension","s":"css-var --rosetta-size-control-padding-xs (app shell)"},"fontBase":{"v":"16px","t":"dimension","s":"css-var --rosetta-size-font-base (app shell)"},"fontDisplayWeightBold":{"v":700,"t":"number","s":"css-var --rosetta-size-font-displayWeight-bold (app shell)"},"fontDisplayWeightRegular":{"v":400,"t":"number","s":"css-var --rosetta-size-font-displayWeight-regular (app shell)"},"fontFs1":{"v":"12px","t":"dimension","s":"css-var --rosetta-size-font-fs1 (app shell)"},"fontFs2":{"v":"14px","t":"dimension","s":"css-var --rosetta-size-font-fs2 (app shell)"},"fontFs3":{"v":"16px","t":"dimension","s":"css-var --rosetta-size-font-fs3 (app shell)"},"fontFs4":{"v":"20px","t":"dimension","s":"css-var --rosetta-size-font-fs4 (app shell)"},"fontFs5":{"v":"24px","t":"dimension","s":"css-var --rosetta-size-font-fs5 (app shell)"},"fontFs6":{"v":"32px","t":"dimension","s":"css-var --rosetta-size-font-fs6 (app shell)"},"fontFs7":{"v":"40px","t":"dimension","s":"css-var --rosetta-size-font-fs7 (app shell)"},"fontFs8":{"v":"46px","t":"dimension","s":"css-var --rosetta-size-font-fs8 (app shell)"},"fontFs9":{"v":"58px","t":"dimension","s":"css-var --rosetta-size-font-fs9 (app shell)"},"fontWeightBold":{"v":700,"t":"number","s":"css-var --rosetta-size-font-weight-bold (app shell)"},"fontWeightRegular":{"v":400,"t":"number","s":"css-var --rosetta-size-font-weight-regular (app shell)"},"fontWeightSemiBold":{"v":500,"t":"number","s":"css-var --rosetta-size-font-weight-semiBold (app shell)"},"lineHeightLh1":{"v":"4px","t":"dimension","s":"css-var --rosetta-size-lineHeight-lh1 (app shell)"},"lineHeightLh2":{"v":"8px","t":"dimension","s":"css-var --rosetta-size-lineHeight-lh2 (app shell)"},"lineHeightLh3":{"v":"12px","t":"dimension","s":"css-var --rosetta-size-lineHeight-lh3 (app shell)"},"lineHeightLh4":{"v":"16px","t":"dimension","s":"css-var --rosetta-size-lineHeight-lh4 (app shell)"},"lineHeightLh5":{"v":"20px","t":"dimension","s":"css-var --rosetta-size-lineHeight-lh5 (app shell)"},"lineHeightLh6":{"v":"24px","t":"dimension","s":"css-var --rosetta-size-lineHeight-lh6 (app shell)"},"lineHeightLh7":{"v":"28px","t":"dimension","s":"css-var --rosetta-size-lineHeight-lh7 (app shell)"},"lineHeightLh8":{"v":"32px","t":"dimension","s":"css-var --rosetta-size-lineHeight-lh8 (app shell)"},"radiusContainer":{"v":"16px","t":"dimension","s":"css-var --rosetta-size-radius-container (app shell)"},"radiusFour":{"v":"16px","t":"dimension","s":"css-var --rosetta-size-radius-four (app shell)"},"radiusInputRegular":{"v":"8px","t":"dimension","s":"css-var --rosetta-size-radius-input-regular (app shell)"},"radiusInputSmall":{"v":"4px","t":"dimension","s":"css-var --rosetta-size-radius-input-small (app shell)"},"radiusMax":{"v":"9999px","t":"dimension","s":"css-var --rosetta-size-radius-max (app shell)"},"radiusOne":{"v":"4px","t":"dimension","s":"css-var --rosetta-size-radius-one (app shell)"},"radiusThree":{"v":"12px","t":"dimension","s":"css-var --rosetta-size-radius-three (app shell)"},"radiusTwo":{"v":"8px","t":"dimension","s":"css-var --rosetta-size-radius-two (app shell)"},"radiusZero":{"v":"0px","t":"dimension","s":"css-var --rosetta-size-radius-zero (app shell)"},"space12":{"v":"12px","t":"dimension","s":"css-var --rosetta-size-space-12 (app shell)"},"space16":{"v":"16px","t":"dimension","s":"css-var --rosetta-size-space-16 (app shell)"},"space2":{"v":"2px","t":"dimension","s":"css-var --rosetta-size-space-2 (app shell)"},"space20":{"v":"20px","t":"dimension","s":"css-var --rosetta-size-space-20 (app shell)"},"space24":{"v":"24px","t":"dimension","s":"css-var --rosetta-size-space-24 (app shell)"},"space32":{"v":"32px","t":"dimension","s":"css-var --rosetta-size-space-32 (app shell)"},"space4":{"v":"4px","t":"dimension","s":"css-var --rosetta-size-space-4 (app shell)"},"space48":{"v":"48px","t":"dimension","s":"css-var --rosetta-size-space-48 (app shell)"},"space64":{"v":"64px","t":"dimension","s":"css-var --rosetta-size-space-64 (app shell)"},"space8":{"v":"8px","t":"dimension","s":"css-var --rosetta-size-space-8 (app shell)"},"spaceBase":{"v":"4px","t":"dimension","s":"css-var --rosetta-size-space-base (app shell)"},"spacingBase":{"v":"4px","t":"dimension","s":"css-var --rosetta-size-spacing-base (app shell)"},"spacingEight":{"v":"32px","t":"dimension","s":"css-var --rosetta-size-spacing-eight (app shell)"},"spacingFive":{"v":"20px","t":"dimension","s":"css-var --rosetta-size-spacing-five (app shell)"},"spacingFour":{"v":"16px","t":"dimension","s":"css-var --rosetta-size-spacing-four (app shell)"},"spacingHalf":{"v":"2px","t":"dimension","s":"css-var --rosetta-size-spacing-half (app shell)"},"spacingOne":{"v":"4px","t":"dimension","s":"css-var --rosetta-size-spacing-one (app shell)"},"spacingSix":{"v":"24px","t":"dimension","s":"css-var --rosetta-size-spacing-six (app shell)"},"spacingSixteen":{"v":"64px","t":"dimension","s":"css-var --rosetta-size-spacing-sixteen (app shell)"},"spacingThree":{"v":"12px","t":"dimension","s":"css-var --rosetta-size-spacing-three (app shell)"},"spacingTwelve":{"v":"48px","t":"dimension","s":"css-var --rosetta-size-spacing-twelve (app shell)"},"spacingTwo":{"v":"8px","t":"dimension","s":"css-var --rosetta-size-spacing-two (app shell)"},"standaloneLg":{"v":"60px","t":"dimension","s":"css-var --rosetta-size-standalone-lg (app shell)"},"standaloneMd":{"v":"48px","t":"dimension","s":"css-var --rosetta-size-standalone-md (app shell)"},"standaloneSm":{"v":"36px","t":"dimension","s":"css-var --rosetta-size-standalone-sm (app shell)"},"standaloneXl":{"v":"72px","t":"dimension","s":"css-var --rosetta-size-standalone-xl (app shell)"},"standaloneXs":{"v":"24px","t":"dimension","s":"css-var --rosetta-size-standalone-xs (app shell)"}},"rosettaSpacing":{"bodyLarge":{"v":"-0.02em","t":"other","s":"css-var --rosetta-spacing-body-large (app shell)"},"bodyMedium":{"v":0,"t":"number","s":"css-var --rosetta-spacing-body-medium (app shell)"},"bodySmall":{"v":"0.01em","t":"other","s":"css-var --rosetta-spacing-body-small (app shell)"},"bodyXlarge":{"v":"-0.02em","t":"other","s":"css-var --rosetta-spacing-body-xlarge (app shell)"},"brandLarge":{"v":"-0.02em","t":"other","s":"css-var --rosetta-spacing-brand-large (app shell)"},"brandSmall":{"v":"-0.01em","t":"other","s":"css-var --rosetta-spacing-brand-small (app shell)"},"headingLarge":{"v":"-0.03em","t":"other","s":"css-var --rosetta-spacing-heading-large (app shell)"},"headingMedium":{"v":"-0.03em","t":"other","s":"css-var --rosetta-spacing-heading-medium (app shell)"},"headingSmall":{"v":"-0.02em","t":"other","s":"css-var --rosetta-spacing-heading-small (app shell)"},"headingXlarge":{"v":"-0.04em","t":"other","s":"css-var --rosetta-spacing-heading-xlarge (app shell)"},"mono1":{"v":"-0.01em","t":"other","s":"css-var --rosetta-spacing-mono-1 (app shell)"},"mono2":{"v":"-0.01em","t":"other","s":"css-var --rosetta-spacing-mono-2 (app shell)"},"mono3":{"v":0,"t":"number","s":"css-var --rosetta-spacing-mono-3 (app shell)"},"mono4":{"v":0,"t":"number","s":"css-var --rosetta-spacing-mono-4 (app shell)"}},"rosettaType":{"bodyLargeMediumLineHeight":{"v":1.4,"t":"number","s":"css-var --rosetta-type-body-large-medium-lineHeight (app shell)"},"bodyLargeMediumSize":{"v":"17px","t":"dimension","s":"css-var --rosetta-type-body-large-medium-size (app shell)"},"bodyLargeMediumWeight":{"v":500,"t":"number","s":"css-var --rosetta-type-body-large-medium-weight (app shell)"},"bodyLargeRegularLineHeight":{"v":1.4,"t":"number","s":"css-var --rosetta-type-body-large-regular-lineHeight (app shell)"},"bodyLargeRegularSize":{"v":"17px","t":"dimension","s":"css-var --rosetta-type-body-large-regular-size (app shell)"},"bodyLargeRegularWeight":{"v":400,"t":"number","s":"css-var --rosetta-type-body-large-regular-weight (app shell)"},"bodyMediumMediumLineHeight":{"v":1.2,"t":"number","s":"css-var --rosetta-type-body-medium-medium-lineHeight (app shell)"},"bodyMediumMediumSize":{"v":"15px","t":"dimension","s":"css-var --rosetta-type-body-medium-medium-size (app shell)"},"bodyMediumMediumWeight":{"v":500,"t":"number","s":"css-var --rosetta-type-body-medium-medium-weight (app shell)"},"bodyMediumRegularLineHeight":{"v":1.2,"t":"number","s":"css-var --rosetta-type-body-medium-regular-lineHeight (app shell)"},"bodyMediumRegularSize":{"v":"15px","t":"dimension","s":"css-var --rosetta-type-body-medium-regular-size (app shell)"},"bodyMediumRegularWeight":{"v":400,"t":"number","s":"css-var --rosetta-type-body-medium-regular-weight (app shell)"},"bodySmallMediumLineHeight":{"v":1.2,"t":"number","s":"css-var --rosetta-type-body-small-medium-lineHeight (app shell)"},"bodySmallMediumSize":{"v":"13px","t":"dimension","s":"css-var --rosetta-type-body-small-medium-size (app shell)"},"bodySmallMediumWeight":{"v":500,"t":"number","s":"css-var --rosetta-type-body-small-medium-weight (app shell)"},"bodySmallRegularLineHeight":{"v":1.2,"t":"number","s":"css-var --rosetta-type-body-small-regular-lineHeight (app shell)"},"bodySmallRegularSize":{"v":"13px","t":"dimension","s":"css-var --rosetta-type-body-small-regular-size (app shell)"},"bodySmallRegularWeight":{"v":400,"t":"number","s":"css-var --rosetta-type-body-small-regular-weight (app shell)"},"bodyXlargeMediumLineHeight":{"v":1.2,"t":"number","s":"css-var --rosetta-type-body-xlarge-medium-lineHeight (app shell)"},"bodyXlargeMediumSize":{"v":"19px","t":"dimension","s":"css-var --rosetta-type-body-xlarge-medium-size (app shell)"},"bodyXlargeMediumWeight":{"v":500,"t":"number","s":"css-var --rosetta-type-body-xlarge-medium-weight (app shell)"},"bodyXlargeRegularLineHeight":{"v":1.2,"t":"number","s":"css-var --rosetta-type-body-xlarge-regular-lineHeight (app shell)"},"bodyXlargeRegularSize":{"v":"19px","t":"dimension","s":"css-var --rosetta-type-body-xlarge-regular-size (app shell)"},"bodyXlargeRegularWeight":{"v":400,"t":"number","s":"css-var --rosetta-type-body-xlarge-regular-weight (app shell)"},"brandLargeLineHeight":{"v":0.8,"t":"number","s":"css-var --rosetta-type-brand-large-lineHeight (app shell)"},"brandLargeSize":{"v":"122px","t":"dimension","s":"css-var --rosetta-type-brand-large-size (app shell)"},"brandLargeWeight":{"v":600,"t":"number","s":"css-var --rosetta-type-brand-large-weight (app shell)"},"brandSmallLineHeight":{"v":0.9,"t":"number","s":"css-var --rosetta-type-brand-small-lineHeight (app shell)"},"brandSmallSize":{"v":"60px","t":"dimension","s":"css-var --rosetta-type-brand-small-size (app shell)"},"brandSmallWeight":{"v":600,"t":"number","s":"css-var --rosetta-type-brand-small-weight (app shell)"},"headingLargeLineHeight":{"v":1.2,"t":"number","s":"css-var --rosetta-type-heading-large-lineHeight (app shell)"},"headingLargeSize":{"v":"32px","t":"dimension","s":"css-var --rosetta-type-heading-large-size (app shell)"},"headingLargeWeight":{"v":500,"t":"number","s":"css-var --rosetta-type-heading-large-weight (app shell)"},"headingMediumLineHeight":{"v":1.2,"t":"number","s":"css-var --rosetta-type-heading-medium-lineHeight (app shell)"},"headingMediumSize":{"v":"28px","t":"dimension","s":"css-var --rosetta-type-heading-medium-size (app shell)"},"headingMediumWeight":{"v":500,"t":"number","s":"css-var --rosetta-type-heading-medium-weight (app shell)"},"headingSmallLineHeight":{"v":1.2,"t":"number","s":"css-var --rosetta-type-heading-small-lineHeight (app shell)"},"headingSmallSize":{"v":"24px","t":"dimension","s":"css-var --rosetta-type-heading-small-size (app shell)"},"headingSmallWeight":{"v":500,"t":"number","s":"css-var --rosetta-type-heading-small-weight (app shell)"},"headingXlargeLineHeight":{"v":1,"t":"number","s":"css-var --rosetta-type-heading-xlarge-lineHeight (app shell)"},"headingXlargeSize":{"v":"44px","t":"dimension","s":"css-var --rosetta-type-heading-xlarge-size (app shell)"},"headingXlargeWeight":{"v":500,"t":"number","s":"css-var --rosetta-type-heading-xlarge-weight (app shell)"},"mono1MediumLineHeight":{"v":1.25,"t":"number","s":"css-var --rosetta-type-mono-1-medium-lineHeight (app shell)"},"mono1MediumSize":{"v":"17px","t":"dimension","s":"css-var --rosetta-type-mono-1-medium-size (app shell)"},"mono1MediumWeight":{"v":500,"t":"number","s":"css-var --rosetta-type-mono-1-medium-weight (app shell)"},"mono1RegularLineHeight":{"v":1.25,"t":"number","s":"css-var --rosetta-type-mono-1-regular-lineHeight (app shell)"},"mono1RegularSize":{"v":"17px","t":"dimension","s":"css-var --rosetta-type-mono-1-regular-size (app shell)"},"mono1RegularWeight":{"v":400,"t":"number","s":"css-var --rosetta-type-mono-1-regular-weight (app shell)"},"mono2MediumLineHeight":{"v":1.25,"t":"number","s":"css-var --rosetta-type-mono-2-medium-lineHeight (app shell)"},"mono2MediumSize":{"v":"15px","t":"dimension","s":"css-var --rosetta-type-mono-2-medium-size (app shell)"},"mono2MediumWeight":{"v":500,"t":"number","s":"css-var --rosetta-type-mono-2-medium-weight (app shell)"},"mono2RegularLineHeight":{"v":1.25,"t":"number","s":"css-var --rosetta-type-mono-2-regular-lineHeight (app shell)"},"mono2RegularSize":{"v":"15px","t":"dimension","s":"css-var --rosetta-type-mono-2-regular-size (app shell)"},"mono2RegularWeight":{"v":400,"t":"number","s":"css-var --rosetta-type-mono-2-regular-weight (app shell)"},"mono3MediumLineHeight":{"v":1.25,"t":"number","s":"css-var --rosetta-type-mono-3-medium-lineHeight (app shell)"},"mono3MediumSize":{"v":"13px","t":"dimension","s":"css-var --rosetta-type-mono-3-medium-size (app shell)"},"mono3MediumWeight":{"v":500,"t":"number","s":"css-var --rosetta-type-mono-3-medium-weight (app shell)"},"mono3RegularLineHeight":{"v":1.2,"t":"number","s":"css-var --rosetta-type-mono-3-regular-lineHeight (app shell)"},"mono3RegularSize":{"v":"13px","t":"dimension","s":"css-var --rosetta-type-mono-3-regular-size (app shell)"},"mono3RegularWeight":{"v":400,"t":"number","s":"css-var --rosetta-type-mono-3-regular-weight (app shell)"},"mono4MediumLineHeight":{"v":1.25,"t":"number","s":"css-var --rosetta-type-mono-4-medium-lineHeight (app shell)"},"mono4MediumSize":{"v":"11px","t":"dimension","s":"css-var --rosetta-type-mono-4-medium-size (app shell)"},"mono4MediumWeight":{"v":500,"t":"number","s":"css-var --rosetta-type-mono-4-medium-weight (app shell)"},"mono4RegularLineHeight":{"v":1.2,"t":"number","s":"css-var --rosetta-type-mono-4-regular-lineHeight (app shell)"},"mono4RegularSize":{"v":"11px","t":"dimension","s":"css-var --rosetta-type-mono-4-regular-size (app shell)"},"mono4RegularWeight":{"v":400,"t":"number","s":"css-var --rosetta-type-mono-4-regular-weight (app shell)"}},"rosettaTypography":{"fontFamilyDisplay":{"v":"\"Noi Grotesk\",system-ui,sans-serif","t":"fontFamily","s":"css-var --rosetta-typography-font-family-display (app shell)"},"fontFamilyText":{"v":"\"Noi Grotesk\",system-ui,sans-serif","t":"fontFamily","s":"css-var --rosetta-typography-font-family-text (app shell)"}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+const swatch = (n, t) => `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    // The Framer palette is ~100 declared colour styles — kept collapsible.
+    if (g === 'framer') {
+      h += `<details class="fr"><summary>${items.length} declared Framer colour styles (color.framer.*)</summary><div class="pal">`;
+      for (const [n, t] of items) h += swatch(n, t);
+      h += '</div></details>';
+      continue;
+    }
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += swatch(n, t);
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles — the painted marketing surface'], ['access', 'access — the consumer app\'s Rosetta layer (light)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${label} (${roles.length})</div><div class="pal">`;
+    for (const [n, t] of roles) h += swatch(n, t);
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.breakpoint || {}, 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.ease || {}, 'ease.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v.join ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.animation || {}, 'animation.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.access || {}).rosettaSize || {}, 'access.rosettaSize.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 60))}</span></div>`;
+  for (const [n, t] of flat((TOK.access || {}).rosettaSpacing || {}, 'access.rosettaSpacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 60))}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat((TOK.core || {}).shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.access || {}).rosettaShadow || {}, 'access.rosettaShadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 80))}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m || '<div><b>none measured</b></div>';
+})();
+
+(function motion() {
+  const g = TOK.core.motion || {};
+  let m = '';
+  for (const [n, t] of flat(g.duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(g.easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  const tr = Object.keys(g.transition || {}).length, an = Object.keys(g.animation || {}).length;
+  if (tr || an) m += `<div><b>measured</b> <span>${tr} transition tokens, ${an} animation tokens (tokens.json, core.motion)</span></div>`;
+  const rm = (g._extensions || {}).reducedMotion;
+  if (rm) m += `<div><b>reduced motion</b> <span>${esc(rm.behaviour)} — ${esc(String(rm.removed))} removed, ${esc(String(rm.kept))} kept across ${esc(String(rm.pages))} pages</span></div>`;
+  $('#motion-out').innerHTML = m || '<div><b>no motion probe</b></div>';
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK.access, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v)) * (String(resolveVal(t.v)).endsWith('rem') ? 16 : 1);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — Handshake</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).leading || {}, 'font.leading.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Handshake</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.access || {}).rosettaFontFamily || {}, 'access.rosettaFontFamily.')) f += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 80))}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+
+// The measured core.typography.* composites — the styles the live DOM paints,
+// not just the declared scales. Samples fall back to system fonts (NoiGrotesk/
+// SansPlomb/Rosetta's faces are not bundled).
+(function typ() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core || {}).typography || {}, 'typography.')) {
+    const v = t.v || {};
+    const fs = parseFloat(v.fontSize) || 14;
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(fs, 44)}px;font-weight:${v.fontWeight || 400};letter-spacing:${v.letterSpacing || 'normal'}">${esc(n)}</span><span class="tv">${esc(v.fontSize)} / ${esc(v.lineHeight)} w${esc(v.fontWeight)} — ${esc(String(v.fontFamily).split(',')[0].replace(/'/g, ''))}</span></div>`;
+  }
+  $('#typ-out').innerHTML = h;
+})();
+</script>
+</body>
+</html>

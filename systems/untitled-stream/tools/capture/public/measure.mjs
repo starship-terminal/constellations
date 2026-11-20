@@ -64,7 +64,7 @@ async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {
   ctx = await b.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US' });
-  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+  // bot check: Cloudflare's challenge is recorded as a boundary, not bypassed (no navigator.webdriver mask).
   page = await ctx.newPage();
   cdp = await ctx.newCDPSession(page);
   page.setDefaultTimeout(8000);
@@ -72,12 +72,18 @@ async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {
   await cdp.send('CSS.enable');
   log('open', key, mobile ? '(mobile)' : '');
   // Retry transient Cloudflare stalls / Remix error cards.
+  let cleared = false;
   for (let attempt = 0; attempt < 3; attempt++) {
-    await open(page, URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key], { wait, promo });
-    if (!(await blocked())) break;
+    try {
+      cleared = await open(page, URLS[key].startsWith('http') ? URLS[key] : BASE + URLS[key], { wait, promo });
+    } catch (e) {
+      cleared = false;
+      log('  open failed', String(e.message).split('\n')[0]);
+    }
+    if (cleared && !(await blocked())) break;
     log('  blocked pass', attempt + 1, '- reloading');
   }
-  if (await blocked()) { log('  BLOCKED', key); return false; }
+  if (!cleared || await blocked()) { log('  BLOCKED', key); return false; }
   if (promo === 'close') await killGeo(page);
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' }).catch(() => {});
   return true;

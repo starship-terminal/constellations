@@ -6,54 +6,28 @@ import { ErrorState, SkeletonGrid, useResource } from "@/components/shared";
 import { MediaBookmarkButton } from "@/components/media-bookmark";
 import { mediaDetailHref } from "./package-detail-data";
 import styles from "./research-home.module.css";
-import { sampleBrowseScreens } from "./home-browse-data";
+import {
+  browseParams,
+  browseSections,
+  type BrowseSection as Section,
+} from "./home-browse-data";
 import type { ScreenResponse } from "@/contracts/screens";
 
-// These are filename/tag searches over captured media, not inferred annotations.
-const browseSections = [
-  {
-    title: "Page Types",
-    kind: "screenshot",
-    choices: [
-      "Dashboard",
-      "Home",
-      "Settings",
-      "Profile",
-      "Search",
-      "Onboarding",
-    ],
-  },
-  {
-    title: "UX Patterns",
-    kind: "screenshot",
-    choices: ["Search", "Filter", "Empty", "Onboarding", "Navigation"],
-  },
-  {
-    title: "UI Elements",
-    kind: "crop",
-    choices: ["Button", "Dialog", "Menu", "Table", "Navigation", "Card"],
-  },
-] as const;
 function BrowseSection({
   section,
   platform,
 }: {
-  section: (typeof browseSections)[number];
+  section: Section;
   platform?: string;
 }) {
   const [selected, setSelected] = useState<string>(section.choices[0]);
-  const params = new URLSearchParams({
-    q: selected,
-    kind: section.kind,
-    scope: "media",
-    limit: "200",
-  });
-  if (platform) params.set("platform", platform);
+  const params = browseParams(section, selected, platform);
   const { data, loading, error } = useResource<ScreenResponse>(
     `/api/library/screens?${params}`,
   );
   const destination = new URLSearchParams(params);
   destination.delete("limit");
+  destination.delete("perProduct");
   destination.set("view", "screens");
   return (
     <section className={styles.gallery} aria-label={section.title}>
@@ -88,7 +62,7 @@ function BrowseSection({
         <ErrorState message={error} />
       ) : data?.items.length ? (
         <div className={styles.browseGrid}>
-          {sampleBrowseScreens(data.items).map(({ id, reference, media }) => (
+          {data.items.map(({ id, reference, media }) => (
             <article key={id} className={styles.browseCard}>
               <Link
                 href={mediaDetailHref(reference.slug, media)}

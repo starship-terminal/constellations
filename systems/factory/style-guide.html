@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Factory style guide</title>
+<meta name="description" content="Factory design tokens and the public marketing surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-geistSans: "Geist","Geist Fallback";
+  --font-family-geistMono: "Geist Mono","Geist Mono Fallback";
+  --font-family-pixel: "Geist Pixel Square",ui-monospace,monospace;
+  --font-family-sans: var(--font-family-geistSans),sans-serif;
+  --font-family-mono: var(--font-family-geistMono),monospace;
+  --font-weight-bold: 700;
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+  --font-size-4xl: 36px;
+  --font-size-5xl: 48px;
+  --font-size-7xl: 72px;
+  --font-size-8xl: 96px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-sm: 14px;
+  --font-size-xl: 20px;
+  --font-size-xs: 12px;
+  --font-size-measured-masthead: 60.48px;
+  --font-size-measured-body: 18.6883px;
+  --font-size-measured-docsH1: 44px;
+  --font-lineHeight-loose: 2.0;
+  --font-lineHeight-normal: 1.5;
+  --font-lineHeight-relaxed: 1.625;
+  --font-lineHeight-snug: 1.375;
+  --font-lineHeight-tight: 1.25;
+  --font-lineHeight-2xl: 1.3333;
+  --font-lineHeight-3xl: 1.2;
+  --font-lineHeight-4xl: 1.1111;
+  --font-lineHeight-5xl: 1;
+  --font-lineHeight-7xl: 1;
+  --font-lineHeight-8xl: 1;
+  --font-lineHeight-base: 1.5;
+  --font-lineHeight-lg: 1.5556;
+  --font-lineHeight-sm: 1.4286;
+  --font-lineHeight-xl: 1.4;
+  --font-lineHeight-xs: 1.3333;
+  --font-tracking-normal: 0em;
+  --font-tracking-tight: -.025em;
+  --font-tracking-tighter: -.05em;
+  --font-tracking-wide: .025em;
+  --font-tracking-wider: .05em;
+  --font-tracking-widest: .1em;
+  --color-neutral-100: #d6d3d2;
+  --color-neutral-1000: #1f1d1c;
+  --color-neutral-200: #ccc9c7;
+  --color-neutral-300: #b8b3b0;
+  --color-neutral-400: #a49d9a;
+  --color-neutral-500: #8a8380;
+  --color-neutral-600: #5c5855;
+  --color-neutral-700: #4d4947;
+  --color-neutral-800: #3d3a39;
+  --color-neutral-900: #2e2c2b;
+  --color-accent-100: #ef6f2e;
+  --color-accent-200: #ee6018;
+  --color-accent-300: #d15010;
+  --color-surface-page: #f9f9f9;
+  --color-surface-sunken: #ebebeb;
+  --color-lightBasePrimary: #eeeeee;
+  --color-lightBaseSecondary: #fafafa;
+  --color-darkBasePrimary: #020202;
+  --color-darkBaseSecondary: #101010;
+  --color-hue-amber-300: #ffd230;
+  --color-hue-amber-400: #ffb900;
+  --color-hue-amber-700: #bb4d00;
+  --color-hue-blue-400: #51a2ff;
+  --color-hue-blue-500: #2b7fff;
+  --color-hue-blue-700: #1447e6;
+  --color-hue-emerald-300: #5ee9b5;
+  --color-hue-emerald-400: #00d492;
+  --color-hue-emerald-500: #00bc7d;
+  --color-hue-emerald-700: #007a55;
+  --color-hue-gray-500: #6a7282;
+  --color-hue-gray-700: #364153;
+  --color-hue-green-400: #05df72;
+  --color-hue-green-500: #00c950;
+  --color-hue-neutral-200: #e5e5e5;
+  --color-hue-neutral-300: #d4d4d4;
+  --color-hue-neutral-400: #a1a1a1;
+  --color-hue-neutral-600: #525252;
+  --color-hue-neutral-700: #404040;
+  --color-hue-neutral-900: #171717;
+  --color-hue-orange-400: #ff8904;
+  --color-hue-orange-500: #ff6900;
+  --color-hue-orange-700: #ca3500;
+  --color-hue-red-300: #ffa2a2;
+  --color-hue-red-400: #ff6467;
+  --color-hue-red-500: #fb2c36;
+  --color-hue-red-700: #c10007;
+  --color-hue-sky-300: #74d4ff;
+  --color-hue-sky-400: #00bcff;
+  --color-hue-sky-700: #0069a8;
+  --color-hue-violet-300: #c4b4ff;
+  --color-hue-violet-400: #a684ff;
+  --color-hue-violet-700: #7008e7;
+  --color-hue-yellow-400: #fdc700;
+  --color-hue-yellow-500: #f0b100;
+  --color-hue-yellow-800: #894b00;
+  --color-hue-zinc-100: #f4f4f5;
+  --color-hue-zinc-200: #e4e4e7;
+  --color-hue-zinc-300: #d4d4d8;
+  --color-hue-zinc-400: #9f9fa9;
+  --color-hue-zinc-500: #71717b;
+  --color-hue-zinc-700: #3f3f46;
+  --color-hue-zinc-900: #18181b;
+  --color-hue-zinc-950: #09090b;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --spacing-base: 4px;
+  --radius-default: 6px;
+  --radius-2xl: 10px;
+  --radius-3xl: 12px;
+  --radius-lg: 6px;
+  --radius-md: 4px;
+  --radius-sm: 3px;
+  --radius-xl: 8px;
+  --radius-xs: 2px;
+  --radius-cta: var(--radius-sm);
+  --radius-cta2: var(--radius-sm);
+  --radius-menu: var(--radius-lg);
+  --radius-field: var(--radius-sm);
+  --radius-planCard: var(--radius-md);
+  --container-2xl: 672px;
+  --container-3xl: 768px;
+  --container-5xl: 1024px;
+  --container-6xl: 1152px;
+  --container-md: 448px;
+  --container-sm: 384px;
+  --container-xl: 576px;
+  --container-xs: 320px;
+  --layout-contentColumn: 1440px;
+  --layout-contentGutter: 36px;
+  --breakpoint-3xl: 1920px;
+  --aspect-video: 16/9;
+  --blur-2xl: 40px;
+  --blur-3xl: 64px;
+  --blur-md: 12px;
+  --blur-sm: 8px;
+  --blur-xl: 24px;
+  --easing-in-out: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --easing-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --easing-default: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --duration-default: 150ms;
+  --animate-ping: ping 1s cubic-bezier(0,0,.2,1)infinite;
+  --animate-pulse: pulse 2s cubic-bezier(.4,0,.6,1)infinite;
+  --animate-spin: spin 1s linear infinite;
+  --motion-control: color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --component-topbar-height: 72px;
+  --component-logo-width: 128px;
+  --component-nav-pill-height: 12px;
+  --component-cta-height: 25px;
+  --component-cta2-height: 25px;
+  --component-mega-menu-width: 1440px;
+  --component-mega-menu-height: 363px;
+  --component-hero-masthead-width: 593.69px;
+  --component-install-cmd-width: 420px;
+  --component-plan-card-width: 416px;
+  --component-field-height: 36px;
+  --component-textarea-height: 72px;
+  --component-send-width: 100.33px;
+  --component-dark-hero-height: 677.56px;
+  --component-docs-sidebar-width: 311px;
+  --component-mobile-topbar-height: 72px;
+  --component-signin-panel-width: 380px;
+  --component-signin-panel-height: 248.52px;
+  --component-signin-panel-ink: #eeeeee;
+  --component-signin-field-ink: #f5f2ef;
+  --component-signin-field-height: 34px;
+  --component-signin-submit-fill: #fdfcfb;
+  --component-signin-submit-ink: #17120f;
+  --component-signin-submit-height: 36px;
+  --component-signin-google-ink: #f5f2ef;
+  --color-background: #f9f9f9;
+  --color-base-100: #1f1d1c;
+  --color-base-1000: #d6d3d2;
+  --color-base-200: #2e2c2b;
+  --color-base-300: #3d3a39;
+  --color-base-400: #4d4947;
+  --color-base-500: #5c5855;
+  --color-base-600: #8a8380;
+  --color-base-700: #a49d9a;
+  --color-base-800: #b8b3b0;
+  --color-base-900: #ccc9c7;
+  --color-dark-base-primary: #f9f9f9;
+  --color-dark-base-secondary: #ebebeb;
+  --color-foreground: #020202;
+  --color-light-base-primary: #020202;
+  --color-light-base-secondary: #101010;
+  --color-surface-raised: #ffffff;
+  --text-ink: var(--color-darkBasePrimary);
+  --text-navInk: var(--color-darkBasePrimary);
+  --text-subInk: var(--color-neutral-500);
+  --action-ctaFill: var(--color-darkBaseSecondary);
+  --action-ctaInk: var(--color-surface-page);
+  --action-cta2Ink: var(--color-darkBasePrimary);
+  --border-cta2Border: var(--color-neutral-400);
+  --border-focusRing: var(--color-darkBaseSecondary);
+  --background-page: var(--color-background);
+  --sg-sans: "Geist", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Geist", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+/* A .light scope re-pins the light set inside a dark page, so the light-role
+   swatches keep their light values when the toggle flips the page. */
+.light {
+  --color-background: #f9f9f9;
+  --color-base-100: #1f1d1c;
+  --color-base-1000: #d6d3d2;
+  --color-base-200: #2e2c2b;
+  --color-base-300: #3d3a39;
+  --color-base-400: #4d4947;
+  --color-base-500: #5c5855;
+  --color-base-600: #8a8380;
+  --color-base-700: #a49d9a;
+  --color-base-800: #b8b3b0;
+  --color-base-900: #ccc9c7;
+  --color-dark-base-primary: #f9f9f9;
+  --color-dark-base-secondary: #ebebeb;
+  --color-foreground: #020202;
+  --color-light-base-primary: #020202;
+  --color-light-base-secondary: #101010;
+  --color-surface-raised: #ffffff;
+  --text-ink: var(--color-darkBasePrimary);
+  --text-navInk: var(--color-darkBasePrimary);
+  --text-subInk: var(--color-neutral-500);
+  --action-ctaFill: var(--color-darkBaseSecondary);
+  --action-ctaInk: var(--color-surface-page);
+  --action-cta2Ink: var(--color-darkBasePrimary);
+  --border-cta2Border: var(--color-neutral-400);
+  --border-focusRing: var(--color-darkBaseSecondary);
+  --background-page: var(--color-background);
+}
+[data-theme="dark"], .dark {
+  --color-background: #020202;
+  --color-base-100: #d6d3d2;
+  --color-base-1000: #1f1d1c;
+  --color-base-200: #ccc9c7;
+  --color-base-300: #b8b3b0;
+  --color-base-400: #a49d9a;
+  --color-base-500: #8a8380;
+  --color-base-600: #5c5855;
+  --color-base-700: #4d4947;
+  --color-base-800: #3d3a39;
+  --color-base-900: #2e2c2b;
+  --color-dark-base-primary: #020202;
+  --color-dark-base-secondary: #101010;
+  --color-foreground: #eeeeee;
+  --color-light-base-primary: #eeeeee;
+  --color-light-base-secondary: #fafafa;
+  --color-surface-raised: #101010;
+  --background-panel: var(--color-neutral-1000);
+  --background-footerPanel: var(--color-darkBaseSecondary);
+  --text-ink: var(--color-lightBasePrimary);
+  --text-footerInk: var(--color-neutral-500);
+  --text-eyebrowInk: var(--color-lightBaseSecondary);
+  --text-docsInk: var(--color-lightBasePrimary);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-foreground, #020202); background: var(--color-background, #f9f9f9); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+.topline { display: flex; align-items: baseline; gap: 16px; }
+.switch-theme { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--color-foreground, #020202); opacity: .8; cursor: pointer; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-foreground, #020202); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-base-800, #ccc9c7); }
+.lead { max-width: 62ch; color: var(--color-foreground, #020202); opacity: .8; }
+.note { font-size: 13px; color: var(--color-foreground, #020202); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-foreground, #020202); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+/* The role strips re-scope the theme vars (.light/.dark redeclare them
+   below), so each strip carries its own field and ink: dark-role names are
+   near-white and would sit unreadable on the pale page, and light roles on a
+   toggled-dark page need their pale field back. */
+.pal.light { background: var(--color-background, #f9f9f9); color: var(--color-foreground, #020202); padding: 12px; border-radius: 8px; }
+.pal.dark { background: var(--color-background, #020202); color: var(--color-foreground, #eeeeee); padding: 12px; border-radius: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-base-800, #ccc9c7); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-foreground, #020202); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-base-800, #ccc9c7); background: var(--color-surface-raised, #fff); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-foreground, #020202); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-base-800, #ccc9c7); overflow: hidden; background: var(--color-background, #f9f9f9); }
+.navbar { display: flex; align-items: center; gap: 20px; height: var(--component-topbar-height, 72px); padding: 0 14px 0 22px; font-size: 14px; color: var(--text-ink, var(--color-foreground, #020202)); background: var(--color-surface-raised, #fff); }
+.navbar .wm { font-weight: 600; font-size: 16px; letter-spacing: .02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 36px); padding: 0 14px; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; font-family: var(--sg-mono); border-radius: var(--radius-cta, 6px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-ctaFill, var(--color-foreground, #020202)); color: var(--action-ctaInk, #fff); }
+.btn.ghost { border-color: var(--border-cta2Border, var(--color-base-800, #ccc9c7)); color: var(--action-cta2Ink, var(--color-foreground, #020202)); }
+.btn.small { height: var(--component-nav-pill-height, 32px); font-size: 11px; }
+.hero { color: var(--text-ink, var(--color-foreground, #020202)); padding: 72px 40px 40px; text-align: center; background: var(--color-background, #f9f9f9); }
+.hero .mast { font: var(--font-weight-medium, 500) var(--font-size-measured-masthead, 60.48px)/1 var(--sg-serif); letter-spacing: -.04em; text-transform: uppercase; }
+.hero small { display: block; font: 400 15px/1.5 var(--sg-mono); color: var(--text-subInk, var(--color-base-500, #5c5855)); margin: 16px auto 22px; max-width: 46ch; }
+.hero .cta-row { display: flex; gap: 10px; justify-content: center; margin-bottom: 18px; }
+.hero .cmd { display: inline-block; font: 400 12px/1 var(--sg-mono); color: var(--color-base-500, #5c5855); background: var(--color-surface-sunken, #ebebeb); border-radius: 6px; padding: 10px 16px; }
+.hero .panel { height: 180px; margin: 28px -40px -40px; background: var(--color-dark-base-primary, #020202); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-base-800, #ccc9c7); border-radius: var(--radius-planCard, 8px); padding: 14px; font-size: 13px; background: var(--color-surface-raised, #fff); }
+.tile b { display: block; font: 600 16px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.tile .eyebrow { font: 500 10px/1 var(--sg-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--color-accent-200, #ee6018); margin-bottom: 10px; display: block; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-base-800, #ccc9c7); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-base-800, #ccc9c7); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-foreground, #020202); opacity: .65; font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <div class="topline"><h1>Factory style guide</h1><label class="switch-theme"><input type="checkbox" id="theme"> Dark</label></div>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Factory, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the site's declared <code>--neutral-*</code>/<code>--accent-*</code>/<code>--surface-*</code>/<code>--light-base-*</code>/<code>--dark-base-*</code> primitives and <code>--color-&lt;hue&gt;-*</code> palette scales, the semantic <code>--color-background</code>/<code>--color-foreground</code>/<code>--color-base-100..1000</code>/<code>--color-surface-raised</code> roles that resolve under <code>data-theme="light"</code> and the dark :root scope, the Geist/Geist Mono variable faces (wght 100–900) plus Geist Pixel Square, the declared <code>--text-*</code>/<code>--line-height</code>/<code>--tracking-*</code> type ramp, the 2–12px radii and pill CTAs, the 150ms cubic-bezier(.4,0,.2,1) control transition, and the measured component sizes. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from factory.com, docs.factory.com and auth.factory.ai on 2026-11-14, signed out, in headless Chromium. Everything behind app.factory.ai's sign-in is a documented boundary; the contact and sign-in forms were measured, never submitted. Geist and Geist Mono are served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The fixed ~72px header is blurred glass: the Factory mark, Product/Enterprise/Company mega-menu triggers, Pricing/News/Docs links, the locale globe, SIGN IN and the paired CONTACT SALES / DOWNLOAD pills. The hero centers an uppercase Geist masthead over a mono tagline, paired pills and the install-command copy box above a dark product panel.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">FACTORY</span><span>Product</span><span>Enterprise</span><span>Pricing</span><span>News</span><span>Company</span><span>Docs</span><span class="sp"></span><span>SIGN IN</span><span class="btn small ghost">Contact sales</span><span class="btn small primary">Download</span></div>
+    <div class="hero"><div class="mast">AI coding agents<br>for the enterprise</div><small>Model agnostic. Deployed anywhere.</small><span class="cta-row"><span class="btn primary">Download</span> <span class="btn ghost">Book demo</span></span><span class="cmd">&gt; curl -fsSL https://app.factory.ai/cli | sh</span><div class="panel"></div></div>
+  </div>
+
+  <h2 class="sh">The scoped dark sections</h2>
+  <p class="lead">factory.com never paints a whole dark page: <code>&lt;html data-theme="light"&gt;</code> ships on every route and dark lives inside <code>[data-dark-hero]</code> heroes, <code>.invert-color-scheme</code> panels and the footer — near-black fields with light ink and the orange accent. docs.factory.com's theme selector flips a whole page to this same dark set; the auth.factory.ai sign-in is a separate dark surface outside this token layer.</p>
+  <div class="mock dark" style="padding:20px;background:var(--color-background,#020202);color:var(--color-foreground,#eeeeee)">
+    <div class="grid">
+      <div class="tile" style="border-radius:var(--radius-planCard,8px);background:var(--color-dark-base-secondary,#101010);border:1px solid var(--color-base-900,#2e2c2b);color:var(--color-foreground,#eeeeee)"><span class="eyebrow">Enterprise</span><b style="color:var(--color-foreground,#eeeeee)">Build your software factory</b><span class="sub" style="color:var(--color-base-500,#8a8380)">Turn enterprise intent into validated production software.</span></div>
+      <div class="tile" style="border-radius:var(--radius-planCard,8px);background:var(--color-dark-base-secondary,#101010);border:1px solid var(--color-base-900,#2e2c2b);color:var(--color-foreground,#eeeeee)"><b style="color:var(--color-accent-200,#ee6018)">DROID&nbsp;&nbsp;MISSIONS</b><span class="sub" style="color:var(--color-base-500,#8a8380)">Scoped dark section inside a light page</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn primary" style="background:var(--color-foreground,#eeeeee);color:var(--color-background,#020202)">Start building</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared <code>--neutral-*</code> warm ramp runs #1f1d1c (1000) to #d6d3d2 (100) beside the orange <code>--accent-100..300</code> steps and the Tailwind <code>--color-&lt;hue&gt;-*</code> scales; the semantic <code>--color-base-100..1000</code>/<code>--color-background</code>/<code>--color-foreground</code>/<code>--color-surface-raised</code>/<code>--color-*-base-*</code> roles invert between the light and dark scopes. Measured roles alias the declared values they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">Radii are small — 2/3/4/6/8/10/12px for pills, fields, cards and panels. Controls transition over 150ms cubic-bezier(.4,0,.2,1); the layout is a 1440px content column with a 36px side gutter at the desktop breakpoint (declared steps 1rem/1.5rem/2.25rem/5rem).</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two served variable faces: <code>Geist</code> (wght 100–900) carries every heading, control and body — the hero masthead runs 60.48px at weight 500, body 16px — and <code>Geist Mono</code> draws code, eyebrows, labels and the install command; <code>Geist Pixel Square</code> is the pixel label face. Sizes are the declared <code>--text-*</code> steps; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --color-*/--text-*/--radius-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"geistSans":{"v":"\"Geist\",\"Geist Fallback\"","t":"fontFamily","s":"css-var --font-geist-sans (light)","d":"Geist (variable, wght 100-900) — every heading, control and body."},"geistMono":{"v":"\"Geist Mono\",\"Geist Mono Fallback\"","t":"fontFamily","s":"css-var --font-geist-mono (light)","d":"Geist Mono (variable, wght 100-900) — code blocks, the install command, eyebrows and labels."},"pixel":{"v":"\"Geist Pixel Square\",ui-monospace,monospace","t":"fontFamily","s":"css-var --font-pixel (light)","d":"Geist Pixel Square — the pixel-styled label display face."},"sans":{"v":"{font.family.geistSans},sans-serif","t":"fontFamily","s":"the declared --font-sans default (Tailwind `--default-font-family: var(--font-geist-sans),var(--font-japanese,sans-serif)`); the alias chain does not resolve outside the generated body classes, so this aliases the resolved --font-geist-sans plus the declared generic fallback","d":"The default sans — Geist via --font-sans, ending in sans-serif."},"mono":{"v":"{font.family.geistMono},monospace","t":"fontFamily","s":"the declared --font-mono default (Tailwind `--default-mono-font-family: var(--font-geist-mono),var(--font-japanese,monospace)`); aliases the resolved --font-geist-mono plus the declared generic fallback","d":"The default mono — Geist Mono via --font-mono, ending in monospace."}},"weight":{"bold":{"v":700,"t":"fontWeight","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --font-weight-bold","d":"The declared `--font-weight-bold`."},"light":{"v":300,"t":"fontWeight","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --font-weight-light","d":"The declared `--font-weight-light`."},"medium":{"v":500,"t":"fontWeight","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --font-weight-medium","d":"The declared `--font-weight-medium`."},"normal":{"v":400,"t":"fontWeight","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --font-weight-normal","d":"The declared `--font-weight-normal`."},"semibold":{"v":600,"t":"fontWeight","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --font-weight-semibold","d":"The declared `--font-weight-semibold`."}},"size":{"2xl":{"v":"24px","t":"dimension","s":"css-var --text-2xl (light)"},"3xl":{"v":"30px","t":"dimension","s":"css-var --text-3xl (light)"},"4xl":{"v":"36px","t":"dimension","s":"css-var --text-4xl (light)"},"5xl":{"v":"48px","t":"dimension","s":"css-var --text-5xl (light)"},"7xl":{"v":"72px","t":"dimension","s":"css-var --text-7xl (light)"},"8xl":{"v":"96px","t":"dimension","s":"css-var --text-8xl (light)"},"base":{"v":"16px","t":"dimension","s":"css-var --text-base (light)"},"lg":{"v":"18px","t":"dimension","s":"css-var --text-lg (light)"},"sm":{"v":"14px","t":"dimension","s":"css-var --text-sm (light)"},"xl":{"v":"20px","t":"dimension","s":"css-var --text-xl (light)"},"xs":{"v":"12px","t":"dimension","s":"css-var --text-xs (light)"},"measured":{"masthead":{"v":"60.48px","t":"dimension","s":"computed fontSize of hero-h1 default (raw/components-computed.json)","d":"The hero masthead size — the uppercase 'AI CODING AGENTS' display."},"body":{"v":"18.6883px","t":"dimension","s":"computed fontSize of hero-sub default (raw/components-computed.json)","d":"The hero tagline size."},"docsH1":{"v":"44px","t":"dimension","s":"computed fontSize of docs-h1 default (raw/components-computed.json)","d":"The docs masthead size."}}},"lineHeight":{"loose":{"v":2.0,"t":"number","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --leading-loose","d":"The declared `--leading-loose` line-height ratio."},"normal":{"v":1.5,"t":"number","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --leading-normal","d":"The declared `--leading-normal` line-height ratio."},"relaxed":{"v":1.625,"t":"number","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --leading-relaxed","d":"The declared `--leading-relaxed` line-height ratio."},"snug":{"v":1.375,"t":"number","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --leading-snug","d":"The declared `--leading-snug` line-height ratio."},"tight":{"v":1.25,"t":"number","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --leading-tight","d":"The declared `--leading-tight` line-height ratio."},"2xl":{"v":1.3333,"t":"number","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --text-2xl--line-height","d":"The declared `--text-2xl--line-height` line-height ratio."},"3xl":{"v":1.2,"t":"number","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --text-3xl--line-height","d":"The declared `--text-3xl--line-height` line-height ratio."},"4xl":{"v":1.1111,"t":"number","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --text-4xl--line-height","d":"The declared `--text-4xl--line-height` line-height ratio."},"5xl":{"v":1,"t":"other","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --text-5xl--line-height","d":"The declared `--text-5xl--line-height`."},"7xl":{"v":1,"t":"other","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --text-7xl--line-height","d":"The declared `--text-7xl--line-height`."},"8xl":{"v":1,"t":"other","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --text-8xl--line-height","d":"The declared `--text-8xl--line-height`."},"base":{"v":1.5,"t":"number","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --text-base--line-height","d":"The declared `--text-base--line-height` line-height ratio."},"lg":{"v":1.5556,"t":"number","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --text-lg--line-height","d":"The declared `--text-lg--line-height` line-height ratio."},"sm":{"v":1.4286,"t":"number","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --text-sm--line-height","d":"The declared `--text-sm--line-height` line-height ratio."},"xl":{"v":1.4,"t":"number","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --text-xl--line-height","d":"The declared `--text-xl--line-height` line-height ratio."},"xs":{"v":1.3333,"t":"number","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --text-xs--line-height","d":"The declared `--text-xs--line-height` line-height ratio."}},"tracking":{"normal":{"v":"0em","t":"other","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --tracking-normal","d":"The declared `--tracking-normal` letter-spacing."},"tight":{"v":"-.025em","t":"other","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --tracking-tight","d":"The declared `--tracking-tight` letter-spacing."},"tighter":{"v":"-.05em","t":"other","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --tracking-tighter","d":"The declared `--tracking-tighter` letter-spacing."},"wide":{"v":".025em","t":"other","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --tracking-wide","d":"The declared `--tracking-wide` letter-spacing."},"wider":{"v":".05em","t":"other","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --tracking-wider","d":"The declared `--tracking-wider` letter-spacing."},"widest":{"v":".1em","t":"other","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --tracking-widest","d":"The declared `--tracking-widest` letter-spacing."}}},"color":{"neutral":{"100":{"v":"#d6d3d2","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --neutral-100","d":"The declared `--neutral-100`."},"1000":{"v":"#1f1d1c","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --neutral-1000","d":"The declared `--neutral-1000`."},"200":{"v":"#ccc9c7","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --neutral-200","d":"The declared `--neutral-200`."},"300":{"v":"#b8b3b0","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --neutral-300","d":"The declared `--neutral-300`."},"400":{"v":"#a49d9a","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --neutral-400","d":"The declared `--neutral-400`."},"500":{"v":"#8a8380","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --neutral-500","d":"The declared `--neutral-500`."},"600":{"v":"#5c5855","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --neutral-600","d":"The declared `--neutral-600`."},"700":{"v":"#4d4947","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --neutral-700","d":"The declared `--neutral-700`."},"800":{"v":"#3d3a39","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --neutral-800","d":"The declared `--neutral-800`."},"900":{"v":"#2e2c2b","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --neutral-900","d":"The declared `--neutral-900`."}},"accent":{"100":{"v":"#ef6f2e","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --accent-100","d":"The declared `--accent-100`."},"200":{"v":"#ee6018","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --accent-200","d":"The declared `--accent-200`."},"300":{"v":"#d15010","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --accent-300","d":"The declared `--accent-300`."}},"surface":{"page":{"v":"#f9f9f9","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --surface-page","d":"The declared `--surface-page`."},"sunken":{"v":"#ebebeb","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --surface-sunken","d":"The declared `--surface-sunken`."}},"lightBasePrimary":{"v":"#eeeeee","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --light-base-primary","d":"The light-page primary base (#eee) — primitive behind the light surface."},"lightBaseSecondary":{"v":"#fafafa","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --light-base-secondary","d":"The light-page secondary base (#fafafa)."},"darkBasePrimary":{"v":"#020202","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --dark-base-primary","d":"The dark primary base (#020202) — the near-black field of heroes, the footer and dark docs."},"darkBaseSecondary":{"v":"#101010","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --dark-base-secondary","d":"The dark secondary base (#101010) — raised dark panels."},"hue":{"amber":{"300":{"v":"#ffd230","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-amber-300","d":"The declared `--color-amber-300`."},"400":{"v":"#ffb900","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-amber-400","d":"The declared `--color-amber-400`."},"700":{"v":"#bb4d00","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-amber-700","d":"The declared `--color-amber-700`."}},"blue":{"400":{"v":"#51a2ff","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-blue-400","d":"The declared `--color-blue-400`."},"500":{"v":"#2b7fff","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-blue-500","d":"The declared `--color-blue-500`."},"700":{"v":"#1447e6","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-blue-700","d":"The declared `--color-blue-700`."}},"emerald":{"300":{"v":"#5ee9b5","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-emerald-300","d":"The declared `--color-emerald-300`."},"400":{"v":"#00d492","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-emerald-400","d":"The declared `--color-emerald-400`."},"500":{"v":"#00bc7d","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-emerald-500","d":"The declared `--color-emerald-500`."},"700":{"v":"#007a55","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-emerald-700","d":"The declared `--color-emerald-700`."}},"gray":{"500":{"v":"#6a7282","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-gray-500","d":"The declared `--color-gray-500`."},"700":{"v":"#364153","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-gray-700","d":"The declared `--color-gray-700`."}},"green":{"400":{"v":"#05df72","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-green-400","d":"The declared `--color-green-400`."},"500":{"v":"#00c950","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-green-500","d":"The declared `--color-green-500`."}},"neutral":{"200":{"v":"#e5e5e5","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-neutral-200","d":"The declared `--color-neutral-200`."},"300":{"v":"#d4d4d4","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-neutral-300","d":"The declared `--color-neutral-300`."},"400":{"v":"#a1a1a1","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-neutral-400","d":"The declared `--color-neutral-400`."},"600":{"v":"#525252","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-neutral-600","d":"The declared `--color-neutral-600`."},"700":{"v":"#404040","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-neutral-700","d":"The declared `--color-neutral-700`."},"900":{"v":"#171717","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-neutral-900","d":"The declared `--color-neutral-900`."}},"orange":{"400":{"v":"#ff8904","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-orange-400","d":"The declared `--color-orange-400`."},"500":{"v":"#ff6900","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-orange-500","d":"The declared `--color-orange-500`."},"700":{"v":"#ca3500","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-orange-700","d":"The declared `--color-orange-700`."}},"red":{"300":{"v":"#ffa2a2","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-red-300","d":"The declared `--color-red-300`."},"400":{"v":"#ff6467","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-red-400","d":"The declared `--color-red-400`."},"500":{"v":"#fb2c36","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-red-500","d":"The declared `--color-red-500`."},"700":{"v":"#c10007","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-red-700","d":"The declared `--color-red-700`."}},"sky":{"300":{"v":"#74d4ff","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-sky-300","d":"The declared `--color-sky-300`."},"400":{"v":"#00bcff","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-sky-400","d":"The declared `--color-sky-400`."},"700":{"v":"#0069a8","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-sky-700","d":"The declared `--color-sky-700`."}},"violet":{"300":{"v":"#c4b4ff","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-violet-300","d":"The declared `--color-violet-300`."},"400":{"v":"#a684ff","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-violet-400","d":"The declared `--color-violet-400`."},"700":{"v":"#7008e7","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-violet-700","d":"The declared `--color-violet-700`."}},"yellow":{"400":{"v":"#fdc700","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-yellow-400","d":"The declared `--color-yellow-400`."},"500":{"v":"#f0b100","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-yellow-500","d":"The declared `--color-yellow-500`."},"800":{"v":"#894b00","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-yellow-800","d":"The declared `--color-yellow-800`."}},"zinc":{"100":{"v":"#f4f4f5","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-zinc-100","d":"The declared `--color-zinc-100`."},"200":{"v":"#e4e4e7","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-zinc-200","d":"The declared `--color-zinc-200`."},"300":{"v":"#d4d4d8","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-zinc-300","d":"The declared `--color-zinc-300`."},"400":{"v":"#9f9fa9","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-zinc-400","d":"The declared `--color-zinc-400`."},"500":{"v":"#71717b","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-zinc-500","d":"The declared `--color-zinc-500`."},"700":{"v":"#3f3f46","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-zinc-700","d":"The declared `--color-zinc-700`."},"900":{"v":"#18181b","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-zinc-900","d":"The declared `--color-zinc-900`."},"950":{"v":"#09090b","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-zinc-950","d":"The declared `--color-zinc-950`."}}},"white":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-white","d":"Pure white — raised surfaces, button ink on dark fills."},"black":{"v":"#000000","t":"color","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --color-black","d":"Pure black."}},"spacing":{"base":{"v":"4px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --spacing","d":"The declared `--spacing`."}},"radius":{"default":{"v":"6px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --radius","d":"The declared `--radius`."},"2xl":{"v":"10px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --radius-2xl","d":"The declared `--radius-2xl`."},"3xl":{"v":"12px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --radius-3xl","d":"The declared `--radius-3xl`."},"lg":{"v":"6px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --radius-lg","d":"The declared `--radius-lg`."},"md":{"v":"4px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --radius-md","d":"The declared `--radius-md`."},"sm":{"v":"3px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --radius-sm","d":"The declared `--radius-sm`."},"xl":{"v":"8px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --radius-xl","d":"The declared `--radius-xl`."},"xs":{"v":"2px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --radius-xs","d":"The declared `--radius-xs`."},"cta":{"v":"{radius.sm}","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json); matches declared --radius-sm","d":"The CTA pill radius."},"cta2":{"v":"{radius.sm}","t":"dimension","s":"computed borderTopLeftRadius of nav-cta2 default (raw/components-computed.json); matches declared --radius-sm","d":"The secondary pill radius."},"menu":{"v":"{radius.lg}","t":"dimension","s":"the painted radius of nav-panel's rounded child default (raw/components-computed.json paint list); matches declared --radius-lg","d":"The mega-menu panel corner radius — read from a painted rounded child; the wrapper itself may be unrounded."},"field":{"v":"{radius.sm}","t":"dimension","s":"computed borderTopLeftRadius of field-firstname default (raw/components-computed.json); matches declared --radius-sm","d":"The contact field radius."},"planCard":{"v":"{radius.md}","t":"dimension","s":"the painted radius of plan-card's rounded child default (raw/components-computed.json paint list); matches declared --radius-md","d":"The pricing plan-card corner radius."}},"container":{"2xl":{"v":"672px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --container-2xl","d":"The declared `--container-2xl`."},"3xl":{"v":"768px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --container-3xl","d":"The declared `--container-3xl`."},"5xl":{"v":"1024px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --container-5xl","d":"The declared `--container-5xl`."},"6xl":{"v":"1152px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --container-6xl","d":"The declared `--container-6xl`."},"md":{"v":"448px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --container-md","d":"The declared `--container-md`."},"sm":{"v":"384px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --container-sm","d":"The declared `--container-sm`."},"xl":{"v":"576px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --container-xl","d":"The declared `--container-xl`."},"xs":{"v":"320px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --container-xs","d":"The declared `--container-xs`."}},"layout":{"contentColumn":{"v":"1440px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --content-column","d":"The 1440px content column maximum."},"contentGutter":{"v":"36px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --content-gutter","d":"The page side gutter — 36px at 1440; declared 1rem/1.5rem/2.25rem/5rem steps by breakpoint."}},"breakpoint":{"3xl":{"v":"1920px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --breakpoint-3xl","d":"The declared `--breakpoint-3xl`."}},"aspect":{"video":{"v":"16/9","t":"other","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --aspect-video","d":"The declared `--aspect-video`."}},"blur":{"2xl":{"v":"40px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --blur-2xl","d":"The declared `--blur-2xl`."},"3xl":{"v":"64px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --blur-3xl","d":"The declared `--blur-3xl`."},"md":{"v":"12px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --blur-md","d":"The declared `--blur-md`."},"sm":{"v":"8px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --blur-sm","d":"The declared `--blur-sm`."},"xl":{"v":"24px","t":"dimension","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --blur-xl","d":"The declared `--blur-xl`."}},"easing":{"in-out":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --ease-in-out","d":"The declared `--ease-in-out`."},"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --ease-out","d":"The declared `--ease-out`."},"default":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --default-transition-timing-function","d":"The declared `--default-transition-timing-function`."}},"duration":{"default":{"v":"150ms","t":"duration","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --default-transition-duration","d":"The declared `--default-transition-duration`."}},"animate":{"ping":{"v":"ping 1s cubic-bezier(0,0,.2,1)infinite","t":"other","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --animate-ping","d":"The declared `--animate-ping` keyframe shorthand."},"pulse":{"v":"pulse 2s cubic-bezier(.4,0,.6,1)infinite","t":"other","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --animate-pulse","d":"The declared `--animate-pulse` keyframe shorthand."},"spin":{"v":"spin 1s linear infinite","t":"other","s":"declared design-system variable in the site's served CSS bundle (raw/css-vars.json): --animate-spin","d":"The declared `--animate-spin` keyframe shorthand."}},"motion":{"control":{"v":"color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1)","t":"other","s":"computed transition of nav-cta default (raw/components-computed.json); the declared --default-transition-duration/.4-0-.2-1 pair","d":"The control transition on pills and buttons."}},"component":{"topbar-height":{"v":"72px","t":"dimension","s":"measured h of mkt-header default (raw/components-computed.json)","d":"The ~72px fixed marketing header bar."},"logo-width":{"v":"128px","t":"dimension","s":"measured w of mkt-logo default (raw/components-computed.json)","d":"The Factory mark-and-wordmark width."},"nav-pill-height":{"v":"12px","t":"dimension","s":"measured h of nav-link default (raw/components-computed.json)","d":"The header nav-link height."},"cta-height":{"v":"25px","t":"dimension","s":"measured h of nav-cta default (raw/components-computed.json)","d":"The DOWNLOAD pill height."},"cta2-height":{"v":"25px","t":"dimension","s":"measured h of nav-cta2 default (raw/components-computed.json)","d":"The CONTACT SALES pill height."},"mega-menu-width":{"v":"1440px","t":"dimension","s":"measured w of nav-panel default (raw/components-computed.json)","d":"The open mega-menu panel width."},"mega-menu-height":{"v":"363px","t":"dimension","s":"measured h of nav-panel default (raw/components-computed.json)","d":"The open mega-menu panel height."},"hero-masthead-width":{"v":"593.69px","t":"dimension","s":"measured w of hero-h1 default (raw/components-computed.json)","d":"The hero masthead measure (max-w)."},"install-cmd-width":{"v":"420px","t":"dimension","s":"measured w of install-cmd default (raw/components-computed.json)","d":"The install-command copy box width."},"plan-card-width":{"v":"416px","t":"dimension","s":"measured w of plan-card default (raw/components-computed.json)","d":"The pricing plan-card width."},"field-height":{"v":"36px","t":"dimension","s":"measured h of field-firstname default (raw/components-computed.json)","d":"The contact field height."},"textarea-height":{"v":"72px","t":"dimension","s":"measured h of field-msg default (raw/components-computed.json)","d":"The message textarea height."},"send-width":{"v":"100.33px","t":"dimension","s":"measured w of send-btn default (raw/components-computed.json)","d":"The form SUBMIT button width."},"dark-hero-height":{"v":"677.56px","t":"dimension","s":"measured h of dark-hero default (raw/components-computed.json)","d":"A scoped dark hero's height."},"docs-sidebar-width":{"v":"311px","t":"dimension","s":"measured w of docs-sidebar default (raw/components-computed.json)","d":"The docs sidebar column width."},"mobile-topbar-height":{"v":"72px","t":"dimension","s":"measured h of m-topbar default (raw/components-computed.json)","d":"The phone top bar height."},"signin":{"panel-width":{"v":"380px","t":"dimension","s":"measured w of signin-panel default on auth.factory.ai (raw/components-computed.json)","d":"The sign-in card width."},"panel-height":{"v":"248.52px","t":"dimension","s":"measured h of signin-panel default on auth.factory.ai (raw/components-computed.json)","d":"The sign-in card height."},"panel-ink":{"v":"#eeeeee","t":"color","s":"computed color of signin-panel default on auth.factory.ai (raw/components-computed.json)","d":"The card ink."},"field-ink":{"v":"#f5f2ef","t":"color","s":"computed color of signin-field default on auth.factory.ai (raw/components-computed.json)","d":"The field text ink."},"field-height":{"v":"34px","t":"dimension","s":"measured h of signin-field default on auth.factory.ai (raw/components-computed.json)","d":"The e-mail field height."},"submit-fill":{"v":"#fdfcfb","t":"color","s":"computed backgroundColor of signin-submit default on auth.factory.ai (raw/components-computed.json)","d":"The 'Continue with email' button fill."},"submit-ink":{"v":"#17120f","t":"color","s":"computed color of signin-submit default on auth.factory.ai (raw/components-computed.json)","d":"The button text."},"submit-height":{"v":"36px","t":"dimension","s":"measured h of signin-submit default on auth.factory.ai (raw/components-computed.json)","d":"The button height."},"google-ink":{"v":"#f5f2ef","t":"color","s":"computed color of signin-google default on auth.factory.ai (raw/components-computed.json)","d":"The 'Continue with Google' ink."}}}},"light":{"color":{"background":{"v":"#f9f9f9","t":"color","s":"css-var --color-background (light)"},"base":{"100":{"v":"#1f1d1c","t":"color","s":"css-var --color-base-100 (light)"},"1000":{"v":"#d6d3d2","t":"color","s":"css-var --color-base-1000 (light)"},"200":{"v":"#2e2c2b","t":"color","s":"css-var --color-base-200 (light)"},"300":{"v":"#3d3a39","t":"color","s":"css-var --color-base-300 (light)"},"400":{"v":"#4d4947","t":"color","s":"css-var --color-base-400 (light)"},"500":{"v":"#5c5855","t":"color","s":"css-var --color-base-500 (light)"},"600":{"v":"#8a8380","t":"color","s":"css-var --color-base-600 (light)"},"700":{"v":"#a49d9a","t":"color","s":"css-var --color-base-700 (light)"},"800":{"v":"#b8b3b0","t":"color","s":"css-var --color-base-800 (light)"},"900":{"v":"#ccc9c7","t":"color","s":"css-var --color-base-900 (light)"}},"dark":{"base":{"primary":{"v":"#f9f9f9","t":"color","s":"css-var --color-dark-base-primary (light)"},"secondary":{"v":"#ebebeb","t":"color","s":"css-var --color-dark-base-secondary (light)"}}},"foreground":{"v":"#020202","t":"color","s":"css-var --color-foreground (light)"},"light":{"base":{"primary":{"v":"#020202","t":"color","s":"css-var --color-light-base-primary (light)"},"secondary":{"v":"#101010","t":"color","s":"css-var --color-light-base-secondary (light)"}}},"surface":{"raised":{"v":"#ffffff","t":"color","s":"css-var --color-surface-raised (light)"}}},"text":{"ink":{"v":"{color.darkBasePrimary}","t":"color","s":"computed color of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.darkBasePrimary","d":"The near-black ink on display copy, headings and card text."},"navInk":{"v":"{color.darkBasePrimary}","t":"color","s":"computed color of nav-link default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.darkBasePrimary","d":"The nav-link ink."},"subInk":{"v":"{color.neutral.500}","t":"color","s":"computed color of hero-sub default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.neutral.500","d":"The muted mono tagline ink."}},"action":{"ctaFill":{"v":"{color.darkBaseSecondary}","t":"color","s":"computed backgroundColor of nav-cta default (raw/components-computed.json); matches declared color.darkBaseSecondary","d":"The dark fill of the DOWNLOAD pill CTAs."},"ctaInk":{"v":"{color.surface.page}","t":"color","s":"computed color of nav-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.surface.page","d":"The light text on the dark CTA pill."},"cta2Ink":{"v":"{color.darkBasePrimary}","t":"color","s":"computed color of nav-cta2 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.darkBasePrimary","d":"The ink of the CONTACT SALES secondary pill."}},"border":{"cta2Border":{"v":"{color.neutral.400}","t":"color","s":"computed borderTopColor of nav-cta2 default (raw/components-computed.json); matches declared color.neutral.400","d":"The border of the CONTACT SALES secondary pill."},"focusRing":{"v":"{color.darkBaseSecondary}","t":"color","s":"computed outlineColor of nav-menu-btn focus-visible (raw/components-computed.json); matches declared color.darkBaseSecondary","d":"The keyboard focus ring on header controls."}},"background":{"page":{"v":"{color.background}","t":"color","s":"the resolved --color-background under [data-theme=\"light\"] — the #f9f9f9 field behind every marketing page (screenshots/*-light-*.png)","d":"The light page field — --color-background resolved under data-theme=\"light\"."}}},"dark":{"color":{"background":{"v":"#020202","t":"color","s":"css-var --color-background (dark)"},"base":{"100":{"v":"#d6d3d2","t":"color","s":"css-var --color-base-100 (dark)"},"1000":{"v":"#1f1d1c","t":"color","s":"css-var --color-base-1000 (dark)"},"200":{"v":"#ccc9c7","t":"color","s":"css-var --color-base-200 (dark)"},"300":{"v":"#b8b3b0","t":"color","s":"css-var --color-base-300 (dark)"},"400":{"v":"#a49d9a","t":"color","s":"css-var --color-base-400 (dark)"},"500":{"v":"#8a8380","t":"color","s":"css-var --color-base-500 (dark)"},"600":{"v":"#5c5855","t":"color","s":"css-var --color-base-600 (dark)"},"700":{"v":"#4d4947","t":"color","s":"css-var --color-base-700 (dark)"},"800":{"v":"#3d3a39","t":"color","s":"css-var --color-base-800 (dark)"},"900":{"v":"#2e2c2b","t":"color","s":"css-var --color-base-900 (dark)"}},"dark":{"base":{"primary":{"v":"#020202","t":"color","s":"css-var --color-dark-base-primary (dark)"},"secondary":{"v":"#101010","t":"color","s":"css-var --color-dark-base-secondary (dark)"}}},"foreground":{"v":"#eeeeee","t":"color","s":"css-var --color-foreground (dark)"},"light":{"base":{"primary":{"v":"#eeeeee","t":"color","s":"css-var --color-light-base-primary (dark)"},"secondary":{"v":"#fafafa","t":"color","s":"css-var --color-light-base-secondary (dark)"}}},"surface":{"raised":{"v":"#101010","t":"color","s":"css-var --color-surface-raised (dark)"}}},"background":{"panel":{"v":"{color.neutral.1000}","t":"color","s":"computed backgroundColor of dark-hero default (raw/components-computed.json); matches declared color.neutral.1000","d":"The near-black field of a [data-dark-hero] section inside the light page."},"footerPanel":{"v":"{color.darkBaseSecondary}","t":"color","s":"computed backgroundColor of footer default (raw/components-computed.json); matches declared color.darkBaseSecondary","d":"The dark site-footer field."}},"text":{"ink":{"v":"{color.lightBasePrimary}","t":"color","s":"computed color of dark-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.lightBasePrimary","d":"The light ink of a scoped dark hero headline."},"footerInk":{"v":"{color.neutral.500}","t":"color","s":"computed color of footer-link default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.neutral.500","d":"The footer link ink on the dark footer."},"eyebrowInk":{"v":"{color.lightBaseSecondary}","t":"color","s":"computed color of dark-eyebrow default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.lightBaseSecondary","d":"The small mono eyebrow ink inside a dark hero."},"docsInk":{"v":"{color.lightBasePrimary}","t":"color","s":"computed color of docs-h1-dk dark — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.lightBasePrimary","d":"The docs page's heading ink after its theme selector switched to dark."}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (scoped sections + docs dark)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal ${setname}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const setname of ['light', 'dark']) {
+    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.breakpoint || {}), 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.aspect || {}), 'aspect.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}), 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Aliases are set-relative: {font.size.body} and the palette scales live
+  // under TOK.core, semantic roles under TOK.light / TOK.dark. Try each root.
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Factory</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+
+// The header toggle flips data-theme on <html> — the same attribute Factory
+// scopes its dark layer with — so every token-driven block restyles. The
+// scoped .dark examples and the two role strips keep their own theme under
+// the .light/.dark re-declarations above. A light-only product has an empty
+// dark set: the toggle hides then.
+const HAS_DARK = TOK.dark && Object.keys(TOK.dark).length > 0;
+const setTheme = (dark) => {
+  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  const t = $('#theme');
+  t.checked = dark;
+  t.parentElement.lastChild.textContent = dark ? ' Dark' : ' Light';
+};
+$('#theme').addEventListener('change', (e) => setTheme(e.target.checked));
+if (!HAS_DARK) $('#theme').parentElement.style.display = 'none';
+setTheme(HAS_DARK && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
+</script>
+</body>
+</html>

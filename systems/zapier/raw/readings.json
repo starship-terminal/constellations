@@ -1,0 +1,84 @@
+{
+  "captured": "2026-11-19",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {"width": 1169, "height": 731, "scale": 1},
+    "note": "T3 preview tab was fill-sized. A 1440 and 390 pass was not taken: preview_snapshot returned 'The browser is not producing screenshot frames' and the viewport could not be confirmed with a screenshot."
+  },
+  "pages": [
+    {
+      "url": "https://zapier.com/",
+      "title": "Zapier: Automate AI Workflows, Agents, and Apps",
+      "signedOut": true
+    },
+    {
+      "url": "https://zapier.com/pricing",
+      "title": "Plans & Pricing | Zapier",
+      "signedOut": true
+    },
+    {
+      "url": "https://zapier.com/app/login",
+      "title": "Login | Zapier",
+      "signedOut": true,
+      "entered": false
+    },
+    {
+      "url": "https://zapier.com/sign-up",
+      "title": "Sign Up for Zapier | Free Plan Available",
+      "signedOut": true,
+      "submitted": false,
+      "reason": "Form asks for first name, last name, work email and password. Not an email-only form. Not submitted."
+    }
+  ],
+  "stylesheets": {
+    "marketing": [
+      "https://marketing-site.vercel.zapier.com/_next/static/css/1c95589beb0da2ab.css",
+      "https://marketing-site.vercel.zapier.com/_next/static/css/dc9b55852d77014b.css",
+      "https://marketing-site.vercel.zapier.com/_next/static/css/5b1ee098a6fac368.css",
+      "https://marketing-site.vercel.zapier.com/_next/static/css/2633fe2103d5de99.css"
+    ],
+    "identity": [
+      "https://identity-raiq3q4jp.vercel.zapier-deployment.com/_next/static/immutable/chunks/1yj5hxgl5bsew.css",
+      "https://identity-raiq3q4jp.vercel.zapier-deployment.com/_next/static/immutable/chunks/2gtxmifa_q1zv.css",
+      "https://identity-raiq3q4jp.vercel.zapier-deployment.com/_next/static/immutable/chunks/0lldfdw7xde0t.css"
+    ],
+    "note": "Marketing sheets are cross-origin. CSSOM cssRules threw SecurityError. Rules were fetched with curl and matched to live computed styles."
+  },
+  "computed": {
+    "home.body": {"backgroundColor": "rgb(255, 254, 251)", "color": "rgb(32, 21, 21)", "fontFamily": "Inter, Inter, \"Inter Fallback\", system-ui, ui-sans-serif, sans-serif", "fontSize": "16px"},
+    "home.header": {"backgroundColor": "rgb(255, 254, 251)", "height": "56px", "padding": "0px 40px", "class": "zapier-marketing-ui-header-aA9JGvbY zapier-marketing-ui-bgNeutral100-KdxIGCuw"},
+    "home.h1": {"fontSize": "56px", "lineHeight": "56px", "fontWeight": "500", "color": "rgb(32, 21, 21)", "fontFamily": "\"Degular Display\", DegularDisplay, \"DegularDisplay Fallback\", Inter, \"Inter Fallback\", system-ui, ui-sans-serif, sans-serif"},
+    "home.eyebrow": {"fontSize": "12px", "lineHeight": "18px", "letterSpacing": "0.48px", "fontWeight": "400", "color": "rgb(96, 93, 82)", "textTransform": "uppercase"},
+    "home.subheading": {"fontSize": "14px", "lineHeight": "21px", "color": "rgb(54, 52, 46)", "fontWeight": "400"},
+    "home.ctaBrand": {"backgroundColor": "rgb(255, 79, 0)", "color": "rgb(255, 254, 251)", "border": "1px solid rgb(255, 79, 0)", "height": "40px", "padding": "8px 16px", "borderRadius": "4px", "fontSize": "16px", "fontWeight": "600", "gap": "4px", "transition": "0.25s"},
+    "home.ctaSecondary": {"backgroundColor": "rgba(0, 0, 0, 0)", "color": "rgb(32, 21, 21)", "border": "1px solid rgb(32, 21, 21)", "height": "40px", "padding": "8px 16px", "borderRadius": "4px", "fontWeight": "600"},
+    "home.navLogin": {"height": "36px", "padding": "6px 10px", "fontSize": "14px", "fontWeight": "400", "borderRadius": "4px", "color": "rgb(32, 21, 21)"},
+    "home.navSignupPill": {"backgroundColor": "rgb(255, 79, 0)", "color": "rgb(255, 254, 251)", "height": "36px", "padding": "6px 12px", "borderRadius": "18px", "fontSize": "14px", "fontWeight": "600"},
+    "home.featureCard": {"backgroundColor": "rgb(248, 244, 240)", "padding": "24px", "borderRadius": "12px", "height": "188px"},
+    "home.featureCardActive": {"backgroundColor": "rgb(236, 234, 227)", "boxShadow": "rgb(32, 21, 21) 0px 0px 0px 1px", "borderRadius": "12px"},
+    "home.footer": {"backgroundColor": "rgb(255, 254, 251)", "borderTop": "1px rgb(236, 234, 227)", "padding": "40px 20px"},
+    "login.page": {"backgroundColor": "rgb(255, 254, 251)", "color": "rgb(55, 44, 43)", "fontFamily": "Inter, Inter, sans-serif, Helvetica, arial, sans-serif"},
+    "login.h1": {"fontSize": "20px", "lineHeight": "25px", "fontWeight": "600", "letterSpacing": "-0.5px", "color": "rgb(32, 21, 21)"},
+    "login.card": {"border": "1px solid rgb(236, 234, 227)", "borderRadius": "4px", "padding": "32px", "width": "430px"},
+    "login.email": {"height": "48px", "padding": "8px 12px", "borderRadius": "4px", "border": "1px solid rgb(32, 21, 21)", "boxShadow": "rgb(32, 21, 21) 0px 0px 0px 1px", "backgroundColor": "rgb(255, 254, 251)", "fontSize": "16px"},
+    "login.password": {"height": "48px", "border": "1px solid rgb(197, 192, 177)", "borderRadius": "4px", "backgroundColor": "rgb(255, 254, 251)"},
+    "login.submitDisabled": {"backgroundColor": "rgb(236, 234, 227)", "color": "rgb(147, 144, 132)", "border": "1px solid rgb(236, 234, 227)", "height": "48px", "fontSize": "18px", "fontWeight": "600", "opacityObservedViaClass": "stylesheet sets opacity .75 on disabled brand"},
+    "login.ssoButton": {"height": "48px", "padding": "12px 24px", "border": "1px solid rgb(32, 21, 21)", "borderRadius": "4px", "fontSize": "18px", "fontWeight": "600"},
+    "signup.fields": "work email, first name, last name, password. Not submitted.",
+    "signup.submit": {"backgroundColor": "rgb(255, 79, 0)", "color": "rgb(255, 254, 251)", "height": "48px", "padding": "12px 24px", "borderRadius": "4px", "fontSize": "18px", "fontWeight": "600"},
+    "pricing.h1": {"fontSize": "56px", "lineHeight": "56px", "fontWeight": "500", "fontFamily": "Degular Display"},
+    "pricing.card": {"backgroundColor": "rgb(255, 254, 251)", "border": "1px solid rgb(197, 192, 177)", "padding": "28px", "borderRadius": "0px", "width": "283px"},
+    "pricing.price": {"fontSize": "36px", "lineHeight": "54px", "fontWeight": "500", "color": "rgb(32, 21, 21)"},
+    "pricing.tabSelected": {"backgroundColor": "rgb(32, 21, 21)", "color": "rgb(255, 254, 251)", "height": "64px", "padding": "0px 20px", "borderRadius": "8px", "fontSize": "24px", "fontWeight": "600", "ariaSelected": "true"},
+    "pricing.tab": {"backgroundColor": "rgb(255, 254, 251)", "color": "rgb(32, 21, 21)", "border": "1px rgb(32, 21, 21)", "borderRadius": "8px", "height": "64px", "ariaSelected": "false"},
+    "pricing.radioChecked": {"width": "18px", "height": "18px", "border": "1px solid rgb(32, 21, 21)", "borderRadius": "50%", "checked": true},
+    "pricing.radio": {"width": "18px", "height": "18px", "border": "1px solid rgb(147, 144, 132)", "borderRadius": "50%", "checked": false},
+    "pricing.cta": {"backgroundColor": "rgb(32, 21, 21)", "color": "rgb(255, 254, 251)", "height": "48px", "padding": "12px 24px", "borderRadius": "4px", "fontSize": "18px", "fontWeight": "600"}
+  },
+  "screenshot": {
+    "status": "not captured",
+    "error": "The browser is not producing screenshot frames. For a desktop tab, show or restore the T3 Code window and try again."
+  }
+}

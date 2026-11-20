@@ -36,6 +36,17 @@ every value here as lower-confidence than the packages under `systems/`.
   catalog — shot URL, thumbnail, extracted palette, the exact captured
   `page_url` for web entries, `page_id` for iOS screens, and NULL
   `patterns_json`/`elements_json` pending a tag pass).
+- `.dump/` — `refero.db` as committed, line-oriented text: the db's merge
+  surface (see [Merging](#merging)). `schema.sql` holds the PRAGMAs and every
+  `CREATE` statement verbatim; `styles/<uuid>.json` holds one styles row per
+  file, one column per line; every other table is `<table>.jsonl`, one row
+  per line. Rows are sorted by primary key (or a natural key, then every
+  column, for the keyless tables), so the same db always writes the same
+  bytes. Written by [../tools/refero/dump.py](../tools/refero/dump.py); every
+  script that writes the db refreshes it when it finishes, and `check.py`
+  fails when it and the db disagree. It is plain text, not LFS (about 110 MB
+  on disk, about 21 MB gzipped, no file over 250 KB), and a dot folder so
+  nothing mistakes it for a style folder.
 - `<slug>/` — per-style files: `DESIGN.md`, `variables.css`, `theme.css`
   (Tailwind v4 `@theme`), `tokens.json` (DTCG-style), `design-system.json`,
   `meta.json`. `prompt.txt` lives only in the db. `components.json` — the
@@ -78,6 +89,8 @@ python3 tools/refero/index_similar.py    # rebuild the similar table + similar.j
 python3 tools/refero/fetch_collections.py # scrape the collections sitemap → collections.json + collections tables
 python3 tools/refero/fetch_screens.py    # fetch the paid-catalog directory → directory.json + screens table
 python3 tools/refero/coverage.py         # diff the catalog against systems/ → coverage.json
+make refero-dump                         # rewrite .dump/ from refero.db (every writer above already does)
+make refero-db                           # rebuild refero.db from .dump/, then rewrite .dump/ canonically
 python3 tools/refero/check.py            # assert refero.db, the style folders, catalog.json and the derived stores agree (make check runs it)
 ```
 
@@ -92,6 +105,44 @@ filter dropdowns. Run `classify.py` after a fetch so new styles get labeled
 
 Requires node. Fetched result objects are cached in `.work/` (gitignored) and
 persisted in `refero.db`, so `--export-only` can re-materialize files offline.
+
+## Merging
+
+`refero.db` is a binary LFS object, so git cannot merge two branches that
+both changed it: it reports a conflict on the pointer, and taking either side
+silently drops the other side's rows. `.dump/` holds the same rows as text,
+committed in the same commit as the db, and that is what you merge.
+
+1. Commit the db and its dump together. Every writer refreshes `.dump/` when
+   it finishes; after anything else that touches the db, run
+   `make refero-dump`. `make check` fails while the two disagree.
+2. On a merge or rebase that conflicts on `refero/refero.db`, take either
+   side of the db (`git checkout --theirs refero/refero.db`, or `--ours`);
+   it is about to be rebuilt.
+3. Merge `refero/.dump/` as text. Git merges most of it on its own, because
+   each style is its own file and every other row its own line; resolve any
+   conflict left by hand, keeping each line a whole JSON object.
+4. Run `make refero-db`. It rebuilds `refero.db` from the merged dump (the
+   previous file is kept at `refero/.work/refero.db.bak`), checks the row
+   counts, and rewrites `.dump/` in its canonical order. It refuses a dump
+   that still holds conflict markers or has lost a table's file (an empty
+   table is an empty `.jsonl`; `styles/_table` marks the styles folder).
+   It copies the new pages into the live db through sqlite, so it waits for
+   a writer's open transaction, and it shares `refero/.work/dump.lock` with
+   the writers' dump refresh; still, stop running writers first, because
+   rows they commit later are not in the dump you merged.
+5. Regenerate the files derived from the db that conflicted too:
+   `python3 tools/refero/fetch.py --catalog-only` for `catalog.json`,
+   `index_similar.py` for `similar.json`. Run `make check`, then commit the
+   db, the dump and those files together.
+
+`make refero-db` also builds a working db on a clone without `git lfs pull`.
+Building the same dump twice gives byte-identical files with the same
+sqlite library (over a live db only the header counters differ); the rebuilt db can still differ in bytes from the committed one
+(page layout follows the file's history, and the header names the sqlite
+version that wrote it) while every query returns the same rows. No git merge
+driver is configured: git-lfs owns `*.db`'s attributes, and a driver would
+need per-clone config, so the steps above are the procedure.
 
 ## Media mirror
 

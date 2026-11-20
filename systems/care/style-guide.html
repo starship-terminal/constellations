@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Butter style guide</title>
+<meta name="description" content="Butter design tokens and the public marketing plus signed-out app-shell surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-sans: "Oceanic Grotesk", Arial, sans-serif;
+  --font-family-display: "NaN Druid Sans", "Trebuchet MS", sans-serif;
+  --font-family-accent: "Oceanic Text Semibold", Georgia, serif;
+  --font-family-legacy: "Proxima Nova", Arial, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-display: 550;
+  --font-weight-accent: 450;
+  --font-size-display: 64px;
+  --font-size-display-mobile: 48px;
+  --font-size-h2: 40px;
+  --font-size-listing-title: 64px;
+  --font-size-title: 32px;
+  --font-size-pricing-title: 32px;
+  --font-size-lede: 20px;
+  --font-size-body-lg: 16px;
+  --font-size-body: 16px;
+  --font-size-small: 14px;
+  --font-size-meta: 16px;
+  --font-size-legacy: 14px;
+  --font-lineHeight-display: 72px;
+  --font-lineHeight-h2: 40px;
+  --font-lineHeight-body-lg: 24px;
+  --font-lineHeight-body: 24px;
+  --font-lineHeight-cta: 18px;
+  --font-letterSpacing-display: -1px;
+  --color-neutral-ink: #1e1e1e;
+  --color-neutral-white: #ffffff;
+  --color-neutral-grey-hover: #f5f5f5;
+  --color-neutral-grey-pressed: #e8e8e8;
+  --color-neutral-muted: #707070;
+  --color-brand-green: #025747;
+  --color-brand-green-link: #377a69;
+  --color-brand-green-focus: #4d9380;
+  --color-brand-lime: #d0f5a3;
+  --color-brand-lime-hover: #e4ffb8;
+  --color-brand-lime-pressed: #8ae718;
+  --color-brand-lime-text: #e4ffb8;
+  --color-accent-link-blue: #015ac8;
+  --color-accent-login-button: #025747;
+  --radius-pill: 20px;
+  --radius-pill-lg: 28px;
+  --radius-card: 24px;
+  --radius-control: 8px;
+  --measured-focus-outline: #4d9380;
+  --measured-hover-outline: #707070;
+  --measured-footer-fill: #025747;
+  --measured-plan-border: #1e1e1e;
+  --measured-tag-fill: #f5f5f5;
+  --measured-tag-text: #1e1e1e;
+  --measured-page-active: rgba(0, 0, 0, 0);
+  --measured-listing-accent: #025747;
+  --measured-mobile-fill: #ffffff;
+  --measured-cta-transition: 300ms;
+  --measured-header-transition: 300ms;
+  --text-primary: var(--color-neutral-ink);
+  --text-muted: var(--color-neutral-muted);
+  --text-on-dark: #ffffff;
+  --text-on-action: var(--color-brand-green);
+  --text-accent: var(--color-brand-lime-hover);
+  --surface-page: var(--color-neutral-white);
+  --surface-alt: var(--color-neutral-grey-hover);
+  --action-primary-default: var(--color-brand-lime);
+  --action-primary-hover: var(--color-brand-lime-hover);
+  --action-primary-pressed: var(--color-brand-lime-pressed);
+  --action-inverse: var(--color-brand-green);
+  --link-default: var(--color-brand-green-link);
+  --link-legacy: var(--color-accent-link-blue);
+  --border-focus: var(--color-brand-green-focus);
+  --component-header-height: 104px;
+  --component-header-padding: 32px;
+  --component-cta-height: 40px;
+  --component-cta-paddingX: 24px;
+  --component-search-height: 56px;
+  --component-menu-row-height: 48px;
+  --component-field-height: 50px;
+  --component-toolbar-button-height: 32px;
+  --component-chip-height: 24px;
+  --component-card-height: 252px;
+  --component-pager-height: 32px;
+  --component-page-item-size: 24px;
+  --component-login-width: 311px;
+  --component-drawer-height: 844px;
+  --component-m-nav-height: 56px;
+  --sg-sans: DieGrotesk, dieGroteskA, ABCDiatype, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: DieGrotesk, dieGroteskA, ABCDiatype, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --text-primary: #ffffff;
+  --text-on-dark: #ffffff;
+  --text-on-action: var(--color-brand-green);
+  --text-accent: var(--color-brand-lime-hover);
+  --surface-page: var(--color-brand-green);
+  --action-primary-default: var(--color-brand-lime);
+  --action-primary-hover: var(--color-brand-lime-hover);
+  --action-primary-pressed: var(--color-brand-lime-pressed);
+  --divider: var(--color-brand-green-link);
+  --link: var(--color-brand-lime-hover);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); background: var(--color-neutral-paper, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, #ddd); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #000); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, #ddd); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #000); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-hairline, #ddd); overflow: hidden; background: var(--color-neutral-paper, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: 64px; padding: 0 12px 0 22px; font-size: 15px; background: var(--color-neutral-grey, #ededed); border-radius: var(--radius-button, 16px); }
+.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 50px); padding: 0 24px; font-size: 16px; font-weight: 400; border-radius: var(--radius-button, 16px); border: 1px solid transparent; }
+.btn.primary { background: var(--color-neutral-soft-ink, #1e1e1e); color: var(--text-on-dark, #ebebeb); }
+.btn.small { height: var(--component-button-height, 39px); border-radius: var(--radius-control, 10px); font-size: 15px; }
+.hero { color: var(--color-neutral-ink, #0f0f0f); padding: 72px 40px; font: 400 60px/1 var(--sg-serif); letter-spacing: .01em; text-align: center; }
+.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); margin: 16px auto 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 14px; font-size: 13px; background: #fff; }
+.tile .img { height: 140px; background: #ddd; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 400 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #000); opacity: .65; font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: var(--color-neutral-grey, #ededed); border-radius: 999px; padding: 4px; gap: 4px; font-size: 15px; }
+.toggle span { padding: 8px 22px; border-radius: 999px; }
+.toggle .on { background: var(--color-neutral-soft-ink, #1e1e1e); color: var(--text-on-dark, #ebebeb); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Butter style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Butter, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared <code>--butter-*</code> palette (near-black #0f0f0f ink, #1e1e1e buttons and nav text, the #ededed grey fields, the #4dc5e5 cyan accent layer and the four bright accents), the DieGrotesk type ramp from the 107px display to the 13.5px meta, the 16px button pills and 10-42px card radii, and the dark app shell's measured #0a0909/#151515/#f5f5f5 roles. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from butter.video on 2026-11-11, signed out, in headless Chromium — reached via usebutter.com, which redirects to www.butter.video. The editor behind /login is a documented boundary; the /explore, /blocks and /templates galleries are public and paint the dark shell. DieGrotesk, ABCDiatype and dieGroteskA are served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A floating light-grey island carries the wordmark, the Co-Create and Product dropdowns, plain links, Login and the dark Try-for-free pill. The same dark fill draws the hero's Get-Started pill; a cyan layer inside each button is the accent that surfaces on interaction. The light-grey footer closes every marketing page.</p>
+  <div class="mock" style="padding:20px">
+    <div class="navbar"><span class="wm">Butter</span><span>Co-Create</span><span>Product</span><span>Blocks</span><span>Templates</span><span>Pricing</span><span class="sp"></span><span>Login</span><span class="btn small primary">Try for free</span></div>
+    <div class="hero">Engineered for Creativity<small>Butter, the first video editor you can build on.</small><span class="btn primary">Get Started</span></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing centres a Monthly/Annually pill toggle above four light-grey plan cards; each card's name chip paints #fafafa and its Choose action is the dark 16px pill. A "Save 28%" tag sits by the toggle.</p>
+  <div class="mock" style="padding:20px">
+    <div style="text-align:center;margin-bottom:18px"><span class="toggle"><span>Monthly</span><span class="on">Annually</span></span> <span class="note" style="display:inline-block;background:var(--color-neutral-grey,#ededed);border-radius:8px;padding:4px 10px">Save 28%</span></div>
+    <div class="grid">
+      <div class="tile" style="border-radius:var(--radius-card,32px);background:var(--color-neutral-grey,#ededed);border:none;color:var(--color-neutral-ink,#0f0f0f)"><b>Free</b><span class="sub">Start making videos</span></div>
+      <div class="tile" style="border-radius:var(--radius-card,32px);background:var(--color-neutral-grey,#ededed);border:none;color:var(--color-neutral-ink,#0f0f0f)"><b>Pro</b><span class="sub">$18/month annually</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn primary">Choose Pro</span></div>
+  </div>
+
+  <h2 class="sh">The app shell</h2>
+  <p class="lead">/explore, /blocks and /templates paint a dark-only MUI shell signed out: a #0a0909 canvas, #151515 cards on #212121 hairlines, a #252525 active nav pill, and inverted #f5f5f5 buttons with #0a0909 labels.</p>
+  <div class="mock" style="padding:20px;background:var(--color-app-canvas,#0a0909);color:var(--color-app-text,#f5f5f5)">
+    <div class="grid">
+      <div class="tile" style="border-radius:var(--radius-card,32px);background:var(--color-app-card,#151515);border:1px solid var(--color-app-card-border,#212121);color:var(--color-app-text,#f5f5f5)"><b style="color:var(--color-app-text,#f5f5f5)">Meet Butter 2.0</b><span class="sub" style="color:var(--color-app-muted,#a1a1aa)">Our biggest release yet</span></div>
+      <div class="tile" style="border-radius:var(--radius-tile,42px);background:var(--color-app-card,#151515);border:none;color:var(--color-app-text,#f5f5f5)"><b style="color:var(--color-app-text,#f5f5f5)">Text Particles</b><span class="sub" style="color:var(--color-app-muted,#a1a1aa)">Butter Studio</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn" style="height:38px;border-radius:var(--radius-control,10px);background:var(--color-app-text,#f5f5f5);color:var(--color-app-action-ink,#0a0909);padding:0 18px;font-size:14px">Sign up</span> <span class="btn" style="height:38px;border-radius:var(--radius-control,10px);background:var(--color-app-raised,#1d1d1d);color:var(--color-app-text,#f5f5f5);padding:0 18px;font-size:14px">Log in</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared <code>--butter-*</code> layer carries the neutrals and the five accents; the measured <code>color.app.*</code> readings carry the dark shell. Light roles alias the palette, dark roles the app readings.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Buttons are 16px pills on marketing and 10px controls in the shell; nav items and badges sit on 12px, cards on 32px and the dark tiles on 42px. Borders are hairlines: 15%-black on light, #212121 on dark.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Three served faces: <code>DieGrotesk</code> on the marketing pages, <code>ABCDiatype</code> on meta and label text, <code>dieGroteskA</code> in the dark app shell. Sizes are the measured steps; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --butter-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"sans":{"v":"\"Oceanic Grotesk\", Arial, sans-serif","t":"fontFamily","s":"computed fontFamily of join-cta default (raw/components-computed.json); @font-face declared in raw/css-vars.json","d":"The UI stack: Oceanic Grotesk first — nav, buttons, fields, cards and body copy; Arial and system sans fallbacks."},"display":{"v":"\"NaN Druid Sans\", \"Trebuchet MS\", sans-serif","t":"fontFamily","s":"computed fontFamily of section-h2 default (raw/components-computed.json); @font-face declared in raw/css-vars.json; stale: kept from an earlier run (the 2026-11-12 recapture did not find section-h2)","d":"The display stack: NaN Druid Sans (declared weight 550) on hero and section headlines; Trebuchet MS fallback."},"accent":{"v":"\"Oceanic Text Semibold\", Georgia, serif","t":"fontFamily","s":"@font-face 'Oceanic Text Semibold' weight 450 declared in raw/css-vars.json; painted by the accentHeadline1 testimonial-name h1s on the home page","d":"The serif accent: Oceanic Text Semibold (declared weight 450) on testimonial names and display accents; Georgia fallback."},"legacy":{"v":"\"Proxima Nova\", Arial, sans-serif","t":"fontFamily","s":"computed fontFamily of login-email default (raw/components-computed.json); @font-face declared in raw/css-vars.json","d":"The legacy stack: Proxima Nova on the /vis/auth login form — an older surface outside the MUI layer."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of menu-link default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find menu-link)","d":"Body/nav weight (400)."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of join-cta default (raw/components-computed.json)","d":"Button-label weight (500)."},"bold":{"v":700,"t":"fontWeight","s":"computed fontWeight of login-button default (raw/components-computed.json)","d":"The legacy login button's label weight."},"display":{"v":550,"t":"fontWeight","s":"computed fontWeight of section-h2 default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find section-h2)","d":"The NaN Druid display weight (550 declared)."},"accent":{"v":450,"t":"fontWeight","s":"@font-face 'Oceanic Text Semibold' weight 450 declared in raw/css-vars.json","d":"The Oceanic Text Semibold accent weight (450 declared)."}},"size":{"display":{"v":"64px","t":"dimension","s":"computed fontSize of cat-h1 default (raw/components-computed.json)","d":"The 64px display (hero and category titles)."},"display-mobile":{"v":"48px","t":"dimension","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The display size at 390px."},"h2":{"v":"40px","t":"dimension","s":"computed fontSize of section-h2 default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find section-h2)","d":"The 48px section heading (NaN Druid, -1px tracking)."},"listing-title":{"v":"64px","t":"dimension","s":"computed fontSize of listing-h1 default (raw/components-computed.json)","d":"The listing display title."},"title":{"v":"32px","t":"dimension","s":"computed fontSize of plan-price default (raw/components-computed.json)","d":"The 32px plan price figure."},"pricing-title":{"v":"32px","t":"dimension","s":"computed fontSize of pricing-h1 default (raw/components-computed.json)","d":"The pricing page title."},"lede":{"v":"20px","t":"dimension","s":"computed fontSize of search-cta default (raw/components-computed.json)","d":"The 20px hero-CTA label."},"body-lg":{"v":"16px","t":"dimension","s":"computed fontSize of header default (raw/components-computed.json)","d":"The 18px body-large/nav size."},"body":{"v":"16px","t":"dimension","s":"computed fontSize of menu-link default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find menu-link)","d":"The 16px body/button size."},"small":{"v":"14px","t":"dimension","s":"computed fontSize of care-tag default (raw/components-computed.json)","d":"The 13.3px small size (chips, triggers, meta)."},"meta":{"v":"16px","t":"dimension","s":"computed fontSize of learn-more default (raw/components-computed.json)","d":"The listing learn-more/link meta size."},"legacy":{"v":"14px","t":"dimension","s":"computed fontSize of login-card default (raw/components-computed.json)","d":"The legacy login form's body size."}},"lineHeight":{"display":{"v":"72px","t":"dimension","s":"computed lineHeight of cat-h1 default (raw/components-computed.json)","d":"Display leading."},"h2":{"v":"40px","t":"dimension","s":"computed lineHeight of section-h2 default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find section-h2)","d":"Heading leading (56px on 48px)."},"body-lg":{"v":"24px","t":"dimension","s":"computed lineHeight of header default (raw/components-computed.json)","d":"Body-large leading (28px on 18px)."},"body":{"v":"24px","t":"dimension","s":"computed lineHeight of menu-link default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find menu-link)","d":"Body leading (24px on 16px)."},"cta":{"v":"18px","t":"dimension","s":"computed lineHeight of join-cta default (raw/components-computed.json)","d":"Pill-CTA label leading."}},"letterSpacing":{"display":{"v":"-1px","t":"dimension","s":"computed letterSpacing of section-h2 default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find section-h2)","d":"The -1px display tracking."}}},"color":{"neutral":{"ink":{"v":"#1e1e1e","t":"color","s":"computed color of section-h2 default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find section-h2)","d":"The #1e1e1e ink on all body and display text, icons and the footer legal text."},"white":{"v":"#ffffff","t":"color","s":"computed backgroundColor of menu-item default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find menu-item)","d":"The white #ffffff canvas, menu panel and card fields."},"grey-hover":{"v":"#f5f5f5","t":"color","s":"computed backgroundColor of category-card hover (raw/components-computed.json)","d":"The #f5f5f5 wash the category card takes on hover."},"grey-pressed":{"v":"#e8e8e8","t":"color","s":"computed backgroundColor of category-card pressed (raw/components-computed.json)","d":"The #e8e8e8 a pressed category card paints."},"muted":{"v":"#707070","t":"color","s":"computed placeholder of zip-field default (raw/components-computed.json)","d":"The #707070 muted grey on field placeholders and hairline outlines."}},"brand":{"green":{"v":"#025747","t":"color","s":"computed color of join-cta default (raw/components-computed.json)","d":"The deep #025747 brand green: pill-CTA text, outlined actions, the mobile Join-now fill and footer tones."},"green-link":{"v":"#377a69","t":"color","s":"computed color of menu-link default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find menu-link)","d":"The #377a69 link green on mega-menu entries."},"green-focus":{"v":"#4d9380","t":"color","s":"computed outlineColor of read-more focus-visible (raw/components-computed.json)","d":"The #4d9380 green the read-more link draws as a 3px focus outline."},"lime":{"v":"#d0f5a3","t":"color","s":"computed backgroundColor of join-cta default (raw/components-computed.json)","d":"The signature #d0f5a3 lime fill on the Join-now and Search pills."},"lime-hover":{"v":"#e4ffb8","t":"color","s":"computed backgroundColor of join-cta hover (raw/components-computed.json)","d":"The lighter #e4ffb8 lime on CTA hover."},"lime-pressed":{"v":"#8ae718","t":"color","s":"computed backgroundColor of join-cta pressed (raw/components-computed.json)","d":"The bright #8ae718 the pills take on press — Care's accent flash."},"lime-text":{"v":"#e4ffb8","t":"color","s":"computed color of join-option default (raw/components-computed.json)","d":"The #e4ffb8 lime text the mobile-style green buttons paint."}},"accent":{"link-blue":{"v":"#015ac8","t":"color","s":"computed color of passwordless-link default (raw/components-computed.json)","d":"The #015ac8 link blue inside the legacy login card."},"login-button":{"v":"#025747","t":"color","s":"computed backgroundColor of login-button default (raw/components-computed.json)","d":"The legacy login button fill."}}},"radius":{"pill":{"v":"20px","t":"dimension","s":"computed borderTopLeftRadius of join-cta default (raw/components-computed.json)","d":"The capsule radius on the 40px pill CTAs (20px = half height)."},"pill-lg":{"v":"28px","t":"dimension","s":"computed borderTopLeftRadius of search-cta default (raw/components-computed.json)","d":"The capsule radius on the 56px Search CTA (28px = half height)."},"card":{"v":"24px","t":"dimension","s":"computed borderTopLeftRadius of category-card default (raw/components-computed.json)","d":"The 27px radius on category/plan cards."},"control":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of menu-item default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find menu-item)","d":"The 8px radius on mega-menu rows and chips."}},"measured":{"focus-outline":{"v":"#4d9380","t":"color","s":"computed outlineColor of read-more focus-visible (raw/components-computed.json)","d":"The #4d9380 green 3px focus outline on links."},"hover-outline":{"v":"#707070","t":"color","s":"computed outlineColor of category-card hover (raw/components-computed.json)","d":"The muted outline a card draws on hover."},"footer-fill":{"v":"#025747","t":"color","s":"computed backgroundColor of footer default (raw/components-computed.json)","d":"The footer panel's dark fill."},"plan-border":{"v":"#1e1e1e","t":"color","s":"computed borderTopColor of plan-card default (raw/components-computed.json)","d":"The plan column's border tone."},"tag-fill":{"v":"#f5f5f5","t":"color","s":"computed backgroundColor of care-tag default (raw/components-computed.json)","d":"The care-tag chip fill."},"tag-text":{"v":"#1e1e1e","t":"color","s":"computed color of care-tag default (raw/components-computed.json)","d":"The care-tag chip text colour."},"page-active":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"computed backgroundColor of page-item default (raw/components-computed.json)","d":"The active page item's fill in the pager."},"listing-accent":{"v":"#025747","t":"color","s":"computed borderTopColor of city-button default (raw/components-computed.json)","d":"The outlined toolbar buttons' border tone on the listing."},"mobile-fill":{"v":"#ffffff","t":"color","s":"computed backgroundColor of m-menu-open default (raw/components-computed.json)","d":"The full-screen mobile drawer's fill."},"cta-transition":{"v":"300ms","t":"duration","s":"computed transition of join-cta default (raw/components-computed.json)","d":"The 0.3s ease-out background transition on the pill CTAs. (background)"},"header-transition":{"v":"300ms","t":"duration","s":"computed transition of header default (raw/components-computed.json)","d":"The 300ms ease-in-out background transition on the sticky header. (background-color)"}}},"light":{"text":{"primary":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the core palette","d":"Body and display ink."},"muted":{"v":"{color.neutral.muted}","t":"color","s":"role alias over the core palette","d":"Placeholders and hairline outlines."},"on":{"dark":{"v":"#ffffff","t":"color","s":"computed color over the footer panel / hero photo (raw/components-computed.json)","d":"White on the dark footer panel and photo overlays."},"action":{"v":"{color.brand.green}","t":"color","s":"role alias over the core palette","d":"Deep-green text on the lime pills."}},"accent":{"v":"{color.brand.lime-hover}","t":"color","s":"role alias over the core palette","d":"Lime text on deep-green fills."}},"surface":{"page":{"v":"{color.neutral.white}","t":"color","s":"role alias over the core palette","d":"The white page field."},"alt":{"v":"{color.neutral.grey-hover}","t":"color","s":"role alias over the core palette","d":"The light grey hover wash on cards."}},"action":{"primary":{"default":{"v":"{color.brand.lime}","t":"color","s":"role alias over the core palette","d":"The lime pill fill (Join now, Search)."},"hover":{"v":"{color.brand.lime-hover}","t":"color","s":"role alias over the core palette","d":"The lighter lime on CTA hover."},"pressed":{"v":"{color.brand.lime-pressed}","t":"color","s":"role alias over the core palette","d":"The bright lime on press."}},"inverse":{"v":"{color.brand.green}","t":"color","s":"role alias over the core palette","d":"The deep-green fill on inverse buttons (mobile Join now, plan CTAs)."}},"link":{"default":{"v":"{color.brand.green-link}","t":"color","s":"role alias over the core palette","d":"The #377a69 link green."},"legacy":{"v":"{color.accent.link-blue}","t":"color","s":"role alias over the core palette","d":"The login surface's blue links."}},"border":{"focus":{"v":"{color.brand.green-focus}","t":"color","s":"role alias over the core palette","d":"The #4d9380 focus tone on cards."}},"component":{"header":{"height":{"v":"104px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The fixed header height."},"padding":{"v":"32px","t":"dimension","s":"computed paddingLeft / paddingRight of header default (raw/components-computed.json)","d":"The header's horizontal padding."}},"cta":{"height":{"v":"40px","t":"dimension","s":"computed height of join-cta default (raw/components-computed.json)","d":"The pill CTA height."},"paddingX":{"v":"24px","t":"dimension","s":"computed paddingLeft / paddingRight of join-cta default (raw/components-computed.json)","d":"Pill horizontal padding."}},"search":{"height":{"v":"56px","t":"dimension","s":"computed height of search-cta default (raw/components-computed.json)","d":"The hero Search CTA height."}},"menu-row":{"height":{"v":"48px","t":"dimension","s":"computed height of menu-item default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find menu-item)","d":"A mega-menu row height."}},"field":{"height":{"v":"50px","t":"dimension","s":"computed height of login-email default (raw/components-computed.json)","d":"A legacy form field height."}},"toolbar-button":{"height":{"v":"32px","t":"dimension","s":"computed height of filter-button default (raw/components-computed.json)","d":"The listing toolbar button height."}},"chip":{"height":{"v":"24px","t":"dimension","s":"computed height of care-tag default (raw/components-computed.json)","d":"A care-tag chip height."}},"card":{"height":{"v":"252px","t":"dimension","s":"computed height of category-card default (raw/components-computed.json)","d":"The category card height."}},"pager":{"height":{"v":"32px","t":"dimension","s":"computed height of pagination default (raw/components-computed.json)","d":"The pager row height."}},"page-item":{"size":{"v":"24px","t":"dimension","s":"computed width of page-item default (raw/components-computed.json)","d":"A page item's size."}},"login":{"width":{"v":"311px","t":"dimension","s":"computed width of login-card default (raw/components-computed.json)","d":"The login card width."}},"drawer":{"height":{"v":"844px","t":"dimension","s":"computed height of m-menu-open default (raw/components-computed.json)","d":"The mobile drawer's full-screen height."}},"m-nav":{"height":{"v":"56px","t":"dimension","s":"computed height of m-nav-item default (raw/components-computed.json)","d":"A mobile drawer row height."}}}},"dark":{"text":{"primary":{"v":"#ffffff","t":"color","s":"computed color over the footer panel (raw/components-computed.json)","d":"Text on the dark footer panel."},"on":{"dark":{"v":"#ffffff","t":"color","s":"computed color over the footer panel (raw/components-computed.json)","d":"White on dark."},"action":{"v":"{color.brand.green}","t":"color","s":"role alias over the core palette","d":"Deep green on the lime pills."}},"accent":{"v":"{color.brand.lime-hover}","t":"color","s":"role alias over the core palette","d":"Lime text and accents on dark (the Join-now label)."}},"surface":{"page":{"v":"{color.brand.green}","t":"color","s":"role alias over the core palette","d":"The deep-green footer/panel surface."}},"action":{"primary":{"default":{"v":"{color.brand.lime}","t":"color","s":"role alias over the core palette","d":"The lime CTA fill works the same on dark."},"hover":{"v":"{color.brand.lime-hover}","t":"color","s":"role alias over the core palette","d":"CTA hover."},"pressed":{"v":"{color.brand.lime-pressed}","t":"color","s":"role alias over the core palette","d":"CTA press."}}},"divider":{"v":"{color.brand.green-link}","t":"color","s":"role alias over the core palette","d":"Subtle green divider inside the dark panel."},"link":{"v":"{color.brand.lime-hover}","t":"color","s":"role alias over the core palette","d":"Links on dark take the lime accent."}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (app shell)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Butter</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hitchd style guide</title>
+<meta name="description" content="Hitchd design tokens and the signed-out public surfaces' components, rendered from tokens.json with measured values.">
+<style>
+/* The faces load from this package's own gitignored fonts/ folder when a
+   local copy exists, never from hitchd.com: opening the guide must send no
+   request to the captured company, and DDNR is proprietary (docs/RIGHTS.md).
+   Without the files the stacks fall back to the named generics. */
+@font-face { font-display: swap; font-family: "Inter Variable"; font-style: normal; font-weight: 100 900; src: url(fonts/InterVariable.woff2) format("woff2"); }
+@font-face { font-display: swap; font-family: "DDNR"; font-style: normal; font-weight: 100 900; src: url(fonts/DDNR.woff2) format("woff2"); }
+:root {
+  --palette-ink: #111212;
+  --palette-cream: #f6f3ef;
+  --palette-heroInk: #ffffff;
+  --palette-muted: #575a5d;
+  --palette-paper: #ffffff;
+  --palette-fieldLine: #d2d2d7;
+  --palette-disabled: #cdcfd0;
+  --palette-registryInk: #ffffff;
+  --palette-menuBg: #ffffff;
+  --font-family-display: DDNR;
+  --font-family-text: "Inter Variable", "SF Pro Text", "SF Pro Icons", -apple-system, BlinkMacSystemFont, Inter, system-ui, "Segoe UI", Roboto, Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-auth: "Inter Variable", "SF Pro Display", "SF Pro Icons", -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-registry: classic;
+  --font-family-article: "Inter Variable", "SF Pro Text", "SF Pro Icons", -apple-system, BlinkMacSystemFont, Inter, system-ui, "Segoe UI", Roboto, Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-size-display-hero: 88px;
+  --font-size-display-registry: 96px;
+  --font-size-h2: 56px;
+  --font-size-h3: 36px;
+  --font-size-authH1: 28px;
+  --font-size-lead: 21px;
+  --font-size-body: 19px;
+  --font-size-ui: 20px;
+  --font-size-small: 14px;
+  --font-size-navLink: 16px;
+  --font-height-display-hero: 92.4px;
+  --font-height-display-registry: 96px;
+  --font-height-h2: 60px;
+  --font-height-authH1: 32px;
+  --font-height-lead: 29.4px;
+  --font-height-body: 27.0009px;
+  --font-height-ui: 30px;
+  --font-weight-display: /* unrendered composite */ none;
+  --font-weight-registry: /* unrendered composite */ none;
+  --font-weight-h2: /* unrendered composite */ none;
+  --font-weight-authH1: /* unrendered composite */ none;
+  --font-weight-body: /* unrendered composite */ none;
+  --font-weight-link: /* unrendered composite */ none;
+  --font-weight-button: /* unrendered composite */ none;
+  --radius-field: 8px;
+  --radius-pill: 50px;
+  --radius-card: 0px;
+  --radius-modal: 0px;
+  --radius-cta: 100px;
+  --radius-give: 0px;
+  --spacing-strip-y: 20px;
+  --spacing-field-x: 16px;
+  --spacing-button-x: 0px;
+  --spacing-card-pad: 0px;
+  --spacing-modal-pad: 0px;
+  --border-field: 1px solid #d2d2d7;
+  --component-closure-header-height: 96px;
+  --component-announcement-height: 98px;
+  --component-auth-card-width: 450px;
+  --component-field-height: 48px;
+  --component-field-width: 450px;
+  --component-button-height: 48px;
+  --component-login-link-height: 48px;
+  --component-gift-card-width: 1416px;
+  --component-gift-card-height: 472px;
+  --component-modal-width: 1440px;
+  --component-registry-banner-height: 80px;
+  --component-mobile-menu-height: 844px;
+  --component-mobile-gift-card-width: 370px;
+  --motion-duration-0ms: 0ms;
+  --motion-duration-10ms: 10ms;
+  --motion-duration-100ms: 100ms;
+  --motion-duration-150ms: 150ms;
+  --motion-duration-180ms: 180ms;
+  --motion-duration-200ms: 200ms;
+  --motion-duration-250ms: 250ms;
+  --motion-duration-300ms: 300ms;
+  --motion-duration-350ms: 350ms;
+  --motion-duration-400ms: 400ms;
+  --motion-duration-450ms: 450ms;
+  --motion-duration-500ms: 500ms;
+  --motion-duration-550ms: 550ms;
+  --motion-duration-600ms: 600ms;
+  --motion-duration-750ms: 750ms;
+  --motion-duration-1000ms: 1000ms;
+  --motion-duration-1500ms: 1500ms;
+  --motion-duration-2000ms: 2000ms;
+  --motion-duration-2250ms: 2250ms;
+  --motion-duration-2500ms: 2500ms;
+  --motion-duration-2750ms: 2750ms;
+  --motion-duration-3000ms: 3000ms;
+  --motion-duration-3250ms: 3250ms;
+  --motion-duration-3500ms: 3500ms;
+  --motion-duration-4000ms: 4000ms;
+  --motion-duration-6000ms: 6000ms;
+  --motion-duration-8000ms: 8000ms;
+  --motion-duration-10000ms: 10000ms;
+  --motion-duration-12000ms: 12000ms;
+  --motion-duration-12500ms: 12500ms;
+  --motion-duration-20000ms: 20000ms;
+  --motion-duration-30000ms: 30000ms;
+  --motion-duration-40000ms: 40000ms;
+  --motion-duration-80000ms: 80000ms;
+  --motion-easing-bezier-0-0-0-1-1: cubic-bezier(0, 0, 0.1, 1);
+  --motion-easing-bezier-0-0-1-1: cubic-bezier(0, 0, 1, 1);
+  --motion-easing-bezier-0-0-25-0-08-1: cubic-bezier(0, 0.25, 0.08, 1);
+  --motion-easing-bezier-0-36-0-07-0-19-0-97: cubic-bezier(0.36, 0.07, 0.19, 0.97);
+  --motion-easing-bezier-0-4-0-0-2-1: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-bezier-0-44-0-99-0-48-1: cubic-bezier(0.44, 0.99, 0.48, 1);
+  --motion-easing-bezier-0-455-0-03-0-515-0-955: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --motion-easing-bezier-0-485-0-155-0-24-1-245: cubic-bezier(0.485, 0.155, 0.24, 1.245);
+  --motion-easing-bezier-0-485-0-155-0-515-0-845: cubic-bezier(0.485, 0.155, 0.515, 0.845);
+  --motion-easing-bezier-0-76-m0-245-0-24-1-245: cubic-bezier(0.76, -0.245, 0.24, 1.245);
+  --motion-easing-bezier-0-77-0-2-0-05-1: cubic-bezier(0.77, 0.2, 0.05, 1);
+  --motion-easing-bezier-0-77-m7-8-0-05-1: cubic-bezier(0.77, -7.8, 0.05, 1);
+  --motion-easing-bezier-0-83-0-0-37-1-01: cubic-bezier(0.83, 0, 0.37, 1.01);
+  --motion-easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-ease-in: cubic-bezier(0.42, 0, 1, 1);
+  --motion-easing-ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+  --motion-easing-ease-out: cubic-bezier(0, 0, 0.58, 1);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --motion-transition-all-300ms-ease: all var(--motion-duration-300ms) var(--motion-easing-ease) 0ms;
+  --motion-transition-all-150ms-ease-in-out: all var(--motion-duration-150ms) var(--motion-easing-ease-in-out) 0ms;
+  --motion-transition-all-100ms-ease-in-out: all var(--motion-duration-100ms) var(--motion-easing-ease-in-out) 0ms;
+  --motion-transition-all-200ms-ease: all var(--motion-duration-200ms) var(--motion-easing-ease) 0ms;
+  --motion-transition-all-350ms-bezier-0-83-0-0-37-1-01: all var(--motion-duration-350ms) var(--motion-easing-bezier-0-83-0-0-37-1-01) 0ms;
+  --motion-transition-all-150ms-ease-in: all var(--motion-duration-150ms) var(--motion-easing-ease-in) 0ms;
+  --motion-transition-border-color-450ms-ease-in-out: border-color var(--motion-duration-450ms) var(--motion-easing-ease-in-out) 0ms;
+  --motion-transition-box-shadow-450ms-ease: box-shadow var(--motion-duration-450ms) var(--motion-easing-ease) 0ms;
+  --motion-transition-right-300ms-ease: right var(--motion-duration-300ms) var(--motion-easing-ease) 0ms;
+  --motion-transition-border-color-250ms-ease-in-out: border-color var(--motion-duration-250ms) var(--motion-easing-ease-in-out) 0ms;
+  --motion-transition-box-shadow-500ms-ease: box-shadow var(--motion-duration-500ms) var(--motion-easing-ease) 0ms;
+  --motion-animation-slideinfromtop: slideInFromTop var(--motion-duration-600ms) var(--motion-easing-ease-out) 0ms 1 normal;
+  --color-surface-page: var(--palette-heroInk);
+  --color-surface-cream: var(--palette-cream);
+  --color-surface-modal: var(--palette-heroInk);
+  --color-surface-menu: var(--palette-heroInk);
+  --color-surface-footer: var(--palette-heroInk);
+  --color-text-ink: var(--palette-ink);
+  --color-text-muted: var(--palette-muted);
+  --color-text-inverse: var(--palette-heroInk);
+  --color-text-link: var(--palette-ink);
+  --color-text-hashtag: var(--palette-heroInk);
+  --color-text-lead: var(--palette-heroInk);
+  --color-border-field: var(--palette-fieldLine);
+  --color-action-ctaInk: var(--palette-heroInk);
+  --color-action-ctaFill: var(--palette-ink);
+  --color-action-giveInk: var(--palette-heroInk);
+  --color-action-giveFill: #c5c8ca;
+  --color-action-disabledFill: var(--palette-disabled);
+  --color-action-disabledInk: var(--palette-heroInk);
+  --color-nav-ink: var(--palette-heroInk);
+  --color-nav-bar: rgba(255, 255, 255, 0.92);
+  --sg-sans: var(--font-family-text), ui-sans-serif, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --sg-serif: var(--font-family-display), Georgia, "Times New Roman", serif;
+  --sg-registry: var(--font-family-registry), var(--sg-serif);
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+
+}
+* { box-sizing: border-box; }
+/* hitchd.com paints one theme — there is no dark variant or theme control on
+   any surveyed surface, so the guide's body carries no theme scope at all. */
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-text-ink, #111212); background: var(--color-surface-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 600 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-text-muted, #575a5d); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-border-field, #d2d2d7); }
+.lead { max-width: 62ch; color: var(--color-text-muted, #575a5d); }
+.note { font-size: 13px; color: var(--color-text-muted, #888); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 600 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-text-muted, #888); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-border-field, #d2d2d7); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-text-muted, #888); }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-border-field, #d2d2d7); background: var(--color-surface-cream, #f6f3ef); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-text-muted, #888); }
+/* ---- mocks, drawn from the measured tokens ---- */
+.mock { border: 1px solid var(--color-border-field, #d2d2d7); overflow: hidden; background: var(--color-surface-page, #fff); border-radius: var(--radius-card, 8px); }
+.strip { display: flex; align-items: center; justify-content: center; min-height: var(--component-announcement-height, 48px); padding: 8px 24px; font-size: 14px; color: var(--color-text-ink, #111212); background: var(--color-surface-cream, #f6f3ef); text-align: center; }
+.hdr { display: flex; align-items: center; justify-content: space-between; height: var(--component-closure-header-height, 96px); padding: 0 32px; color: var(--color-text-inverse, #fff); background: #232323; }
+.hdr .wm { font-weight: 700; font-size: 22px; letter-spacing: -0.02em; }
+.hdr .login { font-size: var(--font-size-nav-link, 16px); }
+.hero { color: var(--color-text-inverse, #fff); padding: 88px 40px; font: var(--font-weight-display, 100) var(--font-size-display-hero, 56px)/var(--font-height-display-hero, 1.05) var(--sg-serif); text-align: center; background: #2a2a28; }
+.hero small { display: block; font: 400 var(--font-size-lead, 21px)/1.4 var(--sg-sans); color: var(--color-text-lead, #fff); margin: 20px auto 0; max-width: 46ch; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 48px); padding: 0 24px; font-size: 16px; font-weight: var(--font-weight-button, 500); border-radius: var(--radius-pill, 50px); border: 1px solid transparent; }
+.btn.primary { background: var(--color-action-ctaFill, #111212); color: var(--color-action-ctaInk, #fff); }
+.btn.disabled { background: var(--color-action-disabledFill, #cdcfd0); color: var(--color-action-disabledInk, #fff); }
+.btn.give { background: var(--color-action-giveFill, #c5c8ca); color: var(--color-action-giveInk, #fff); border-radius: var(--radius-give, 100px); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-border-field, #e5e5e5); border-radius: var(--radius-card, 8px); padding: var(--spacing-card-pad, 0); overflow: hidden; font-size: 13px; background: var(--color-surface-card, #fff); }
+.tile .img { height: 140px; background: var(--color-surface-cream, #f6f3ef); display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--color-text-muted, #888); }
+.tile .pad { padding: 14px; }
+.tile b { display: block; font: 600 var(--font-size-h3, 16px)/1.3 var(--sg-serif); margin-bottom: 4px; color: var(--color-text-ink, #111212); }
+.tile .loc { color: var(--color-text-muted, #575a5d); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-border-field, #d2d2d7); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid #eee; }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-text-muted, #888); font-family: var(--sg-mono); }
+.field { display: block; width: var(--component-field-width, 280px); height: var(--component-field-height, 48px); padding: 0 var(--spacing-field-x, 14px); border: 1px solid var(--color-border-field, #d2d2d7); border-radius: var(--radius-field, 8px); background: var(--color-surface-page, #fff); font-size: 16px; color: var(--color-text-ink, #111212); }
+.banner { display: flex; align-items: center; justify-content: center; gap: 16px; min-height: var(--component-registry-banner-height, 56px); padding: 8px 24px; font-size: 15px; color: var(--color-text-ink, #111212); background: var(--color-surface-cream, #f6f3ef); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Hitchd style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Hitchd, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>. hitchd.com declares almost no custom properties of its own (~10 radio-control flags in the guest registry app), so the token layer is measured: computed styles and bounding boxes read on real elements of the signed-out public pages, each leaf naming its measurement. The voice is a hairline display serif (DDNR) over Inter Variable on warm paper; the guest registry app sets its own scale. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from www.hitchd.com, signed out, in headless Chromium. Hitchd announced it is closing on 31 December 2026 — the home page is now a single-viewport closure notice, and the old marketing routes redirect to it. Auth surfaces (/login, /signup, /forgot-password) were read at rest and never submitted; the gift modal's Give flow and every contribution/payment step are documented boundaries, never entered.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">Marketing pages open under the cream closure strip ("Hitchd is closing on 31 December 2026") and the 96px header — the wordmark left, Log In right — over the full-bleed hero: the hairline "Tie the knot, without tangles." The registry's sample banner asks guests to Try It Free.</p>
+  <div class="mock" style="padding:0">
+    <div class="strip">Hitchd is closing on 31 December 2026. We're no longer accepting new customers.</div>
+    <div class="hdr"><span class="wm">hitchd</span><span class="login">Log In</span></div>
+    <div class="hero">Tie the knot,<br>without tangles.<small>The honeymoon registry couples actually enjoy using.</small></div>
+    <div class="banner"><span>Fund your dream honeymoon guilt-free.</span><span class="btn primary" style="height:36px;font-size:14px;border-radius:var(--radius-cta,100px)">Try It Free</span></div>
+  </div>
+
+  <h2 class="sh">Auth boundary and the registry</h2>
+  <p class="lead">The couple app's auth surfaces are a quiet centred card: labelled 48px fields on 8px corners, a disabled Continue pill until the form is valid, an OAuth divider and the sign-up link. The demo registry grids gift tiles under a Sort by select; a tile opens the gift modal — shown here at rest with its disabled Give, the step nobody may enter signed-out.</p>
+  <div class="mock" style="padding:20px;max-width:560px">
+    <input class="field" placeholder="Email" style="margin-bottom:10px">
+    <input class="field" placeholder="Password" style="margin-bottom:14px">
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="btn disabled">Continue</span><span class="btn give">Give</span></div>
+    <div class="grid" style="margin-top:16px">
+      <div class="tile"><div class="img">photo</div><div class="pad"><b>Accommodation at Halcyon House</b><span class="loc">Halcyon House, Byron Bay</span></div></div>
+      <div class="tile"><div class="img">photo</div><div class="pad"><b>Seafood Feast</b><span class="loc">Byron Bay</span></div></div>
+      <div class="tile"><div class="img">photo</div><div class="pad"><b>Road Trip</b><span class="loc">Australia</span></div></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">Hitchd's measured palette is restrained: a near-black ink on white and warm cream, white type over photography, the grey of the disabled submit and field borders, and whatever the registry's cover art carries. Measured role values alias the palette entries they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">Paddings, radii (8px fields, the 50px pill, the card corner) and the transitions measured on real elements; <code>motion.*</code> comes from the prefers-reduced-motion probe.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two voices: the DDNR hairline serif at display sizes (88px hero) and Inter Variable for everything functional — 21px leads, 16px UI, 14px helper. The guest registry sets its couple names in its own <code>classic</code> display face (96px on the demo registry) — one of ~20 registry faces couples pick from. The DDNR and Inter Variable woff2 files are linked from hitchd.com, not vendored.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Component-scoped vars</h2>
+  <p class="lead">The few custom properties the apps do declare (the registry's <code>.col-sel</code> radio display flags) plus measured component geometry.</p>
+  <div id="compvars-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Computed styles and bounding boxes read on the live elements, since the site declares almost no custom properties</td></tr><tr><td>No states</td><td>The registry filter's opened and filtered states, the gift modal and the phone drawer measured; auth states documented as boundaries</td></tr><tr><td>No provenance</td><td>Every token names the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"palette":{"ink":{"v":"#111212","t":"color","s":"computed color of announcement-banner text (raw/components-computed.json)","d":"The near-black ink of the closure strip and body copy."},"cream":{"v":"#f6f3ef","t":"color","s":"computed backgroundColor of announcement-banner banner (raw/components-computed.json)","d":"The warm paper of the closure strip."},"heroInk":{"v":"#ffffff","t":"color","s":"computed color of hero h1 (raw/components-computed.json)","d":"The white of the hero display type over the video/photo."},"muted":{"v":"#575a5d","t":"color","s":"computed color of auth-link muted (raw/components-computed.json)","d":"The grey of helper and secondary copy."},"paper":{"v":"#ffffff","t":"color","s":"computed backgroundColor of auth-layout page (raw/components-computed.json)","d":"The page field behind the auth card and content."},"fieldLine":{"v":"#d2d2d7","t":"color","s":"computed borderTopColor of auth-field input (raw/components-computed.json)","d":"The input border grey."},"disabled":{"v":"#cdcfd0","t":"color","s":"computed backgroundColor of auth-button button (raw/components-computed.json)","d":"The disabled Continue fill."},"registryInk":{"v":"#ffffff","t":"color","s":"computed color of registry-hero heading (raw/components-computed.json)","d":"The registry display ink."},"menuBg":{"v":"#ffffff","t":"color","s":"computed backgroundColor of mobile-menu menu (raw/components-computed.json)","d":"The phone drawer fill."}},"font":{"family":{"display":{"v":"DDNR","t":"fontFamily","s":"computed fontFamily of hero h1 (raw/components-computed.json)","d":"The hairline display serif (DDNR) of the hero and marketing display type."},"text":{"v":"\"Inter Variable\", \"SF Pro Text\", \"SF Pro Icons\", -apple-system, BlinkMacSystemFont, Inter, system-ui, \"Segoe UI\", Roboto, Helvetica, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"","t":"fontFamily","s":"computed fontFamily of announcement-banner text (raw/components-computed.json)","d":"The UI/body face (Inter Variable)."},"auth":{"v":"\"Inter Variable\", \"SF Pro Display\", \"SF Pro Icons\", -apple-system, BlinkMacSystemFont, system-ui, \"Segoe UI\", Roboto, Helvetica, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"","t":"fontFamily","s":"computed fontFamily of auth-layout h1 (raw/components-computed.json)","d":"The couple app's UI stack."},"registry":{"v":"classic","t":"fontFamily","s":"computed fontFamily of registry-hero heading (raw/components-computed.json)","d":"The guest registry's display stack."},"article":{"v":"\"Inter Variable\", \"SF Pro Text\", \"SF Pro Icons\", -apple-system, BlinkMacSystemFont, Inter, system-ui, \"Segoe UI\", Roboto, Helvetica, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"","t":"fontFamily","s":"computed fontFamily of article-type body (raw/components-computed.json)","d":"Longform body copy."}},"size":{"display":{"hero":{"v":"88px","t":"dimension","s":"computed fontSize of hero h1 (raw/components-computed.json)","d":"The home hero display size."},"registry":{"v":"96px","t":"dimension","s":"computed fontSize of registry-hero heading (raw/components-computed.json)","d":"The registry couple-name size."}},"h2":{"v":"56px","t":"dimension","s":"computed fontSize of marketing-h2 h2 (raw/components-computed.json)","d":"Marketing section heading."},"h3":{"v":"36px","t":"dimension","s":"computed fontSize of gift-card title (raw/components-computed.json)","d":"A gift tile title."},"authH1":{"v":"28px","t":"dimension","s":"computed fontSize of auth-layout h1 (raw/components-computed.json)","d":"The auth card heading."},"lead":{"v":"21px","t":"dimension","s":"computed fontSize of hero lead (raw/components-computed.json)","d":"The hero supporting paragraph."},"body":{"v":"19px","t":"dimension","s":"computed fontSize of article-type body (raw/components-computed.json)","d":"Longform body."},"ui":{"v":"20px","t":"dimension","s":"computed fontSize of announcement-banner text (raw/components-computed.json)","d":"UI and strip copy."},"small":{"v":"14px","t":"dimension","s":"computed fontSize of auth-link muted (raw/components-computed.json)","d":"Helper and footer small copy."},"navLink":{"v":"16px","t":"dimension","s":"computed fontSize of marketing-nav loginLink (raw/components-computed.json)","d":"Header link size."}},"height":{"display":{"hero":{"v":"92.4px","t":"dimension","s":"computed lineHeight of hero h1 (raw/components-computed.json)","d":"The hero display line-height."},"registry":{"v":"96px","t":"dimension","s":"computed lineHeight of registry-hero heading (raw/components-computed.json)","d":"The registry display line-height."}},"h2":{"v":"60px","t":"dimension","s":"computed lineHeight of marketing-h2 h2 (raw/components-computed.json)","d":"Section heading line-height."},"authH1":{"v":"32px","t":"dimension","s":"computed lineHeight of auth-layout h1 (raw/components-computed.json)","d":"Auth heading line-height."},"lead":{"v":"29.4px","t":"dimension","s":"computed lineHeight of hero lead (raw/components-computed.json)","d":"Hero paragraph line-height."},"body":{"v":"27.0009px","t":"dimension","s":"computed lineHeight of article-type body (raw/components-computed.json)","d":"Longform line-height."},"ui":{"v":"30px","t":"dimension","s":"computed lineHeight of announcement-banner text (raw/components-computed.json)","d":"UI copy line-height."}},"weight":{"display":{"v":100,"t":"fontWeight","s":"computed fontWeight of hero h1 (raw/components-computed.json)","d":"The hairline display weight."},"registry":{"v":400,"t":"fontWeight","s":"computed fontWeight of registry-hero heading (raw/components-computed.json)","d":"The registry display weight."},"h2":{"v":600,"t":"fontWeight","s":"computed fontWeight of marketing-h2 h2 (raw/components-computed.json)","d":"Section heading weight."},"authH1":{"v":600,"t":"fontWeight","s":"computed fontWeight of auth-layout h1 (raw/components-computed.json)","d":"Auth heading weight."},"body":{"v":400,"t":"fontWeight","s":"computed fontWeight of article-type body (raw/components-computed.json)","d":"Body weight."},"link":{"v":400,"t":"fontWeight","s":"computed fontWeight of marketing-nav loginLink (raw/components-computed.json)","d":"Header link weight."},"button":{"v":500,"t":"fontWeight","s":"computed fontWeight of auth-button button (raw/components-computed.json)","d":"Button label weight."}}},"radius":{"field":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of auth-field input (raw/components-computed.json)","d":"Text field corners."},"pill":{"v":"50px","t":"dimension","s":"computed borderTopLeftRadius of auth-button button (raw/components-computed.json)","d":"The auth submit pill."},"card":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of gift-card card (raw/components-computed.json)","d":"Gift tile corners."},"modal":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of gift-modal modal (raw/components-computed.json)","d":"The gift modal corners."},"cta":{"v":"100px","t":"dimension","s":"computed borderTopLeftRadius of registry-nav cta (raw/components-computed.json)","d":"The Try It Free pill's corners."},"give":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of gift-modal give (raw/components-computed.json)","d":"The Give pill's corners."}},"spacing":{"strip":{"y":{"v":"20px","t":"dimension","s":"computed paddingTop of announcement-banner banner (raw/components-computed.json)","d":"The announcement strip's vertical padding."}},"field":{"x":{"v":"16px","t":"dimension","s":"computed paddingLeft of auth-field input (raw/components-computed.json)","d":"Text field side padding."}},"button":{"x":{"v":"0px","t":"dimension","s":"computed paddingLeft of auth-button button (raw/components-computed.json)","d":"Submit button side padding."}},"card":{"pad":{"v":"0px","t":"dimension","s":"computed paddingTop of gift-card card (raw/components-computed.json)","d":"Gift tile padding."}},"modal":{"pad":{"v":"0px","t":"dimension","s":"computed paddingTop of gift-modal modal (raw/components-computed.json)","d":"Gift modal padding."}}},"border":{"field":{"v":{"color":"#d2d2d7","width":"1px","style":"solid"},"t":"border","s":"computed borderTopWidth/style/color of auth-field input (raw/components-computed.json)","d":"The 1px field border."}},"component":{"closure-header-height":{"v":"96px","t":"dimension","s":"measured rect h of marketing-nav header (raw/components-computed.json)","d":"The closure header bar height."},"announcement-height":{"v":"98px","t":"dimension","s":"measured rect h of announcement-banner banner (raw/components-computed.json)","d":"The closure announcement strip height."},"auth-card-width":{"v":"450px","t":"dimension","s":"measured rect w of auth-layout card (raw/components-computed.json)","d":"The auth form card width."},"field-height":{"v":"48px","t":"dimension","s":"measured rect h of auth-field input (raw/components-computed.json)","d":"Auth text field height."},"field-width":{"v":"450px","t":"dimension","s":"measured rect w of auth-field input (raw/components-computed.json)","d":"Auth text field width."},"button-height":{"v":"48px","t":"dimension","s":"measured rect h of auth-button button (raw/components-computed.json)","d":"Auth submit button height."},"login-link-height":{"v":"48px","t":"dimension","s":"measured rect h of marketing-nav loginLink (raw/components-computed.json)","d":"The header Log In hit height."},"gift-card-width":{"v":"1416px","t":"dimension","s":"measured rect w of gift-card card (raw/components-computed.json)","d":"A gift tile width at 1440."},"gift-card-height":{"v":"472px","t":"dimension","s":"measured rect h of gift-card card (raw/components-computed.json)","d":"A gift tile height at 1440."},"modal-width":{"v":"1440px","t":"dimension","s":"measured rect w of gift-modal modal (raw/components-computed.json)","d":"The gift modal width."},"registry-banner-height":{"v":"80px","t":"dimension","s":"measured rect h of registry-nav bar (raw/components-computed.json)","d":"The registry sample banner height."},"mobile-menu-height":{"v":"844px","t":"dimension","s":"measured rect h of mobile-menu menu (raw/components-computed.json)","d":"The phone menu drawer height."},"mobile-gift-card-width":{"v":"370px","t":"dimension","s":"measured rect w of mobile-gift-card card (raw/components-computed.json)","d":"A gift tile width at 390."}},"motion":{"duration":{"0ms":{"v":"0ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"10ms":{"v":"10ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"100ms":{"v":"100ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 20 elements."},"150ms":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 27 elements."},"180ms":{"v":"180ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"200ms":{"v":"200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"250ms":{"v":"250ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"300ms":{"v":"300ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 78 elements."},"350ms":{"v":"350ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"400ms":{"v":"400ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"450ms":{"v":"450ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"500ms":{"v":"500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"550ms":{"v":"550ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"600ms":{"v":"600ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"750ms":{"v":"750ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1000ms":{"v":"1000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1500ms":{"v":"1500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2000ms":{"v":"2000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2250ms":{"v":"2250ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2500ms":{"v":"2500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2750ms":{"v":"2750ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"3000ms":{"v":"3000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"3250ms":{"v":"3250ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"3500ms":{"v":"3500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"4000ms":{"v":"4000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"6000ms":{"v":"6000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"8000ms":{"v":"8000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"10000ms":{"v":"10000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"12000ms":{"v":"12000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"12500ms":{"v":"12500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"20000ms":{"v":"20000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"30000ms":{"v":"30000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"40000ms":{"v":"40000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"80000ms":{"v":"80000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."}},"easing":{"bezier-0-0-0_1-1":{"v":[0,0,0.1,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0-0-1-1":{"v":[0,0,1,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0-0_25-0_08-1":{"v":[0,0.25,0.08,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_36-0_07-0_19-0_97":{"v":[0.36,0.07,0.19,0.97],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_4-0-0_2-1":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_44-0_99-0_48-1":{"v":[0.44,0.99,0.48,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_455-0_03-0_515-0_955":{"v":[0.455,0.03,0.515,0.955],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_485-0_155-0_24-1_245":{"v":[0.485,0.155,0.24,1.245],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_485-0_155-0_515-0_845":{"v":[0.485,0.155,0.515,0.845],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_76-m0_245-0_24-1_245":{"v":[0.76,-0.245,0.24,1.245],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_77-0_2-0_05-1":{"v":[0.77,0.2,0.05,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_77-m7_8-0_05-1":{"v":[0.77,-7.8,0.05,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_83-0-0_37-1_01":{"v":[0.83,0,0.37,1.01],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#pages"}},"ease":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease`, expanded to its control points."},"ease-in":{"v":[0.42,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease-in`, expanded to its control points."},"ease-in-out":{"v":[0.42,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease-in-out`, expanded to its control points."},"ease-out":{"v":[0,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease-out`, expanded to its control points."},"linear":{"v":[0,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `linear`, expanded to its control points."}},"transition":{"all-300ms-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 75 elements."},"all-150ms-ease-in-out":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 24 elements."},"all-100ms-ease-in-out":{"v":{"duration":"{motion.duration.100ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 20 elements."},"all-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"all-350ms-bezier-0_83-0-0_37-1_01":{"v":{"duration":"{motion.duration.350ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_83-0-0_37-1_01}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"all-150ms-ease-in":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"border-color-450ms-ease-in-out":{"v":{"duration":"{motion.duration.450ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"box-shadow-450ms-ease":{"v":{"duration":"{motion.duration.450ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"right-300ms-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"border-color-250ms-ease-in-out":{"v":{"duration":"{motion.duration.250ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"box-shadow-500ms-ease":{"v":{"duration":"{motion.duration.500ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."}},"animation":{"slideinfromtop":{"v":{"name":"slideInFromTop","duration":"{motion.duration.600ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}","iterationCount":"1","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `slideInFromTop`."}}}},"light":{"color":{"surface":{"page":{"v":"{palette.heroInk}","t":"color","s":"computed backgroundColor of auth-layout page (raw/components-computed.json); matches palette.heroInk","d":"The field every page paints behind content."},"cream":{"v":"{palette.cream}","t":"color","s":"computed backgroundColor of announcement-banner banner (raw/components-computed.json); matches palette.cream","d":"The announcement strip fill."},"modal":{"v":"{palette.heroInk}","t":"color","s":"computed backgroundColor of gift-modal modal (raw/components-computed.json); matches palette.heroInk","d":"The gift modal fill."},"menu":{"v":"{palette.heroInk}","t":"color","s":"computed backgroundColor of mobile-menu menu (raw/components-computed.json); matches palette.heroInk","d":"The phone menu drawer fill."},"footer":{"v":"{palette.heroInk}","t":"color","s":"computed backgroundColor of marketing-footer footer (raw/components-computed.json); matches palette.heroInk","d":"The footer fill."}},"text":{"ink":{"v":"{palette.ink}","t":"color","s":"computed color of announcement-banner text (raw/components-computed.json); matches palette.ink","d":"Primary ink."},"muted":{"v":"{palette.muted}","t":"color","s":"computed color of auth-link muted (raw/components-computed.json); matches palette.muted","d":"Secondary and helper copy."},"inverse":{"v":"{palette.heroInk}","t":"color","s":"computed color of hero h1 (raw/components-computed.json); matches palette.heroInk","d":"Type over photography/video."},"link":{"v":"{palette.ink}","t":"color","s":"computed color of marketing-footer link (raw/components-computed.json); matches palette.ink","d":"Inline links."},"hashtag":{"v":"{palette.heroInk}","t":"color","s":"computed color of registry-nav hashtag (raw/components-computed.json); matches palette.heroInk","d":"The registry #hashtag link."},"lead":{"v":"{palette.heroInk}","t":"color","s":"computed color of hero lead (raw/components-computed.json); matches palette.heroInk","d":"The hero supporting paragraph."}},"border":{"field":{"v":"{palette.fieldLine}","t":"color","s":"computed borderTopColor of auth-field input (raw/components-computed.json); matches palette.fieldLine","d":"Text field borders."}},"action":{"ctaInk":{"v":"{palette.heroInk}","t":"color","s":"computed color of registry-nav cta (raw/components-computed.json); matches palette.heroInk","d":"The 'Try It Free' pill's label ink on the sample banner (the painted desktop link — the hidden phone variant is never measured)."},"ctaFill":{"v":"{palette.ink}","t":"color","s":"computed backgroundColor of registry-nav cta (raw/components-computed.json); matches palette.ink","d":"The 'Try It Free' pill's fill."},"giveInk":{"v":"{palette.heroInk}","t":"color","s":"computed color of gift-modal give (raw/components-computed.json); matches palette.heroInk","d":"The Give button label."},"giveFill":{"v":"#c5c8ca","t":"color","s":"computed backgroundColor of gift-modal giveWrap (raw/components-computed.json)","d":"The Give pill's fill, painted on its .pay wrapper (disabled at rest until an amount exists)."},"disabledFill":{"v":"{palette.disabled}","t":"color","s":"computed backgroundColor of auth-button button (raw/components-computed.json); matches palette.disabled","d":"A disabled submit fill."},"disabledInk":{"v":"{palette.heroInk}","t":"color","s":"computed color of auth-button button (raw/components-computed.json); matches palette.heroInk","d":"A disabled submit label."}},"nav":{"ink":{"v":"{palette.heroInk}","t":"color","s":"computed color of marketing-nav loginLink (raw/components-computed.json); matches palette.heroInk","d":"The Log In link on the hero header."},"bar":{"v":"rgba(255, 255, 255, 0.92)","t":"color","s":"computed backgroundColor of registry-nav bar (raw/components-computed.json)","d":"The registry sample banner fill."}}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+// composite token values (border/transition/animation objects) render as
+// their shorthand, never "[object Object]"
+const fmtVal = (v) => {
+  if (v == null || typeof v !== 'object') return String(v);
+  if (Array.isArray(v)) return v.join(', ');
+  if (v.width && v.style && v.color) return `${v.width} ${v.style} ${v.color}`;
+  if (v.name) return [v.name, v.duration, v.timingFunction, v.delay, v.iterationCount, v.direction, v.fillMode].filter(Boolean).join(' ');
+  if (v.duration) return [v.duration, v.timingFunction, v.delay].filter(Boolean).join(' ');
+  return JSON.stringify(v);
+};
+
+(function palette() {
+  let h = '';
+  // hitchd.com paints one theme: the light set holds the measured roles,
+  // core.palette the measured values they alias.
+  for (const [setname, label] of [['core', 'core.palette — the measured colours'], ['light', 'light — the measured roles (alias the palette they match)']]) {
+    for (const [g, grp] of Object.entries(TOK[setname] || {})) {
+      const items = (grp && grp.t ? [[setname + '.' + g, grp]] : flat(grp, setname + '.' + g + '.')).filter(([, t]) => t.t === 'color');
+      if (!items.length) continue;
+      h += `<div class="pal-h">${esc(setname)}.${esc(g)}</div><div class="pal">`;
+      for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n.replace(setname + '.', ''))})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+      h += '</div>';
+    }
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.size || {}, 'size.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(fmtVal(t.v))}</span></div>`;
+  for (const [n, t] of flat(TOK.core.zIndex || {}, 'zIndex.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.grid || {}, 'grid.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).transition || {}, 'motion.transition.')) m += `<div><b>${esc(n)}</b> <span>${esc(fmtVal(t.v))}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).animation || {}, 'motion.animation.')) m += `<div><b>${esc(n)}</b> <span>${esc(fmtVal(t.v))}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat((TOK.light || {}).shadow || {}, 'shadow.')) {
+    e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : String(t.v).slice(0, 140))}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core || {}).shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : String(t.v).slice(0, 140))}</span></div>`;
+  for (const [n, t] of flat((TOK.core || {}).elevation || {}, 'elevation.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function compvars() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.componentVars || {}, 'componentVars.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 80))}</span></div>`;
+  $('#compvars-out').innerHTML = m || '<div><b>none</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}), 'motion.')) {
+    if (n.startsWith('motion.easing.') || n.startsWith('motion.duration.') || n.startsWith('motion.transition.') || n.startsWith('motion.animation.')) continue;
+    m += `<div><b>${esc(n)}</b> <span>${esc(fmtVal(t.v).slice(0, 90))}…</span></div>`;
+  }
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.type || {}), 'type.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(String(t.v).slice(0, 60))}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).height || {}, 'font.height.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Hitchd</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TIDAL style guide</title>
+<style>
+:root {
+  --color-accent-fill: #33FFEE;
+  --color-accent-bright: #66FFF3;
+  --color-accent-brighter: #99FFF7;
+  --color-accent-dark: #3D8F88;
+  --color-accent-darker: #244240;
+  --color-accent-darkest: #141F1E;
+  --color-base-fill: #000000;
+  --color-base-bright: #18181B;
+  --color-base-brighter: #242429;
+  --color-base-brightest: #303036;
+  --color-contrast-fill: #FFFFFF;
+  --color-contrast-dark: #E4E4E7;
+  --color-contrast-darker: #AFAFB6;
+  --color-contrast-darkest: #787887;
+  --color-warning-fill: #FF3269;
+  --color-danger: #FF4242;
+  --color-headliners: #C0FF00;
+  --font-text: Square Sans Text VF, Square Sans Text, Helvetica, Arial, sans-serif;
+  --font-display: Square Sans Display VF, Square Sans Display, Helvetica, Arial, sans-serif;
+  --font-login: nationale, nationale-regular, helvetica, arial, sans-serif;
+  --fontWeight-regular: 400;
+  --fontWeight-medium: 500;
+  --fontWeight-demi: 600;
+  --fontWeight-bold: 700;
+  --radius-none: 0px;
+  --radius-extraSmall: 4px;
+  --radius-small: 8px;
+  --radius-regular: 12px;
+  --radius-panel: 16px;
+  --radius-full: 1000px;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-9: 9px;
+  --space-14: 14px;
+  --space-16: 16px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-78: 78px;
+  --space-240: 240px;
+  --motion-button: 240ms;
+  --motion-buttonEasing: cubic-bezier(0.76, 0, 0.24, 1);
+  --color-bg-page: var(--color-base-fill);
+  --color-bg-sidebar: var(--color-base-fill);
+  --color-bg-footer: var(--color-base-bright);
+  --color-bg-nav: #0000008C;
+  --color-bg-floating: #282828BF;
+  --color-bg-secondaryButton: #282828BF;
+  --color-bg-quietButton: #FFFFFF14;
+  --color-bg-selected: #FFFFFF26;
+  --color-bg-selectedPhone: #FFFFFF1A;
+  --color-bg-loginField: var(--color-base-fill);
+  --color-text-primary: var(--color-contrast-fill);
+  --color-text-secondary: #FFFFFF8C;
+  --color-text-tertiary: var(--color-contrast-darkest);
+  --color-text-disabled: var(--color-base-brightest);
+  --color-text-inverse: #101010;
+  --color-text-link: var(--color-accent-fill);
+  --color-text-danger: var(--color-danger);
+  --color-text-loginMuted: #888F98;
+  --color-accent-default: var(--color-accent-fill);
+  --color-border-field: var(--color-contrast-fill);
+  --color-border-focus: var(--color-contrast-fill);
+  --color-border-divider: var(--color-contrast-darker);
+  --color-button-primaryBg: var(--color-contrast-fill);
+  --color-button-primaryText: #101010;
+  --color-button-secondaryBg: #282828BF;
+  --color-button-secondaryText: var(--color-contrast-fill);
+  --color-button-loginBg: var(--color-contrast-fill);
+  --color-button-loginText: #000000;
+  --color-button-loginDisabled: #FFFFFF66;
+  --component-button-radius: var(--radius-full);
+  --component-button-height: 32px;
+  --component-button-padding: 16px;
+  --component-button-fontSize: 14px;
+  --component-loginButton-radius: var(--radius-regular);
+  --component-loginButton-height: 50px;
+  --component-loginButton-padding: 20px;
+  --component-field-radius: var(--radius-panel);
+  --component-field-height: 54px;
+  --component-sidebar-width: 240px;
+  --component-sidebar-rowHeight: 40px;
+  --component-sidebar-radius: var(--radius-regular);
+  --sans: var(--font-text);
+  --display: var(--font-display);
+  --login: var(--font-login);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-bg-page); color: var(--color-text-primary); font: 400 14px/20px var(--sans); }
+main { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 700 24px/28px var(--sans); margin: 0 0 8px; }
+h2 { font: 700 19px/26px var(--display); margin: 40px 0 12px; }
+p { color: var(--color-text-secondary); max-width: 68ch; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--color-border-divider); vertical-align: middle; }
+th { color: var(--color-text-tertiary); font-weight: 500; }
+td i { display: inline-block; width: 28px; height: 28px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--color-border-divider); }
+code { font-family: ui-monospace, Menlo, monospace; font-size: 12px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.pill { display: inline-flex; align-items: center; height: var(--component-button-height); padding: 0 var(--component-button-padding); border-radius: var(--component-button-radius); font: 600 14px/22px var(--sans); }
+.primary { background: var(--color-button-primaryBg); color: var(--color-button-primaryText); }
+.secondary { background: var(--color-button-secondaryBg); color: var(--color-button-secondaryText); }
+.login { display: inline-flex; align-items: center; height: var(--component-loginButton-height); padding: 0 var(--component-loginButton-padding); border-radius: var(--component-loginButton-radius); background: var(--color-button-loginBg); color: var(--color-button-loginText); font: 600 16px/24px var(--login); }
+.field { display: flex; align-items: center; height: var(--component-field-height); width: 280px; padding: 0 16px; border-radius: var(--component-field-radius); box-shadow: inset 0 0 0 1px var(--color-border-field); color: var(--color-text-secondary); font: 600 16px/24px var(--login); }
+.side { width: var(--component-sidebar-width); background: var(--color-bg-sidebar); padding: 16px; }
+.side a { display: flex; align-items: center; height: var(--component-sidebar-rowHeight); padding: 0 8px; border-radius: var(--component-sidebar-radius); color: var(--color-text-secondary); text-decoration: none; }
+.side a.on { background: var(--color-bg-selected); color: var(--color-text-primary); }
+.note { font-size: 12px; line-height: 18px; color: var(--color-text-tertiary); }
+</style>
+</head>
+<body>
+<main>
+<h1>TIDAL</h1>
+<p>Signed-out web chrome, measured on 2026-11-19. Specimens use the tokens. Square Sans and Nationale are not loaded here, so the stacks fall through to Helvetica and Arial.</p>
+<h2>Controls</h2>
+<div class="row">
+  <span class="pill primary">Create a free account</span>
+  <span class="pill secondary">Log in</span>
+  <span class="login">Continue</span>
+  <span class="field">Enter your email or login name</span>
+</div>
+<p class="note">The player pills are 32px with a 1000px radius. The login Continue button is 50px with a 12px radius. The email field wrapper is 54px with a 16px radius and a 1px inset white stroke.</p>
+<h2>Sidebar</h2>
+<div class="side">
+  <a class="on">Music</a>
+  <a>Explore</a>
+  <a>Playlists</a>
+</div>
+<h2>Colour</h2>
+<table>
+<tr><th>Token</th><th></th><th>Value</th><th>Evidence</th></tr>
+<tr><td>color.bg.page</td><td><i style="background:var(--color-base-fill)"></i></td><td><code>{color.base.fill}</code></td><td>Reconstruction</td></tr>
+<tr><td>color.bg.sidebar</td><td><i style="background:var(--color-base-fill)"></i></td><td><code>{color.base.fill}</code></td><td>Reconstruction</td></tr>
+<tr><td>color.bg.footer</td><td><i style="background:var(--color-base-bright)"></i></td><td><code>{color.base.bright}</code></td><td>Reconstruction</td></tr>
+<tr><td>color.bg.nav</td><td><i style="background:#0000008C"></i></td><td><code>#0000008C</code></td><td>Reconstruction</td></tr>
+<tr><td>color.bg.floating</td><td><i style="background:#282828BF"></i></td><td><code>#282828BF</code></td><td>Reconstruction</td></tr>
+<tr><td>color.bg.secondaryButton</td><td><i style="background:#282828BF"></i></td><td><code>#282828BF</code></td><td>Reconstruction</td></tr>
+<tr><td>color.bg.quietButton</td><td><i style="background:#FFFFFF14"></i></td><td><code>#FFFFFF14</code></td><td>Reconstruction</td></tr>
+<tr><td>color.bg.selected</td><td><i style="background:#FFFFFF26"></i></td><td><code>#FFFFFF26</code></td><td>Reconstruction</td></tr>
+<tr><td>color.bg.selectedPhone</td><td><i style="background:#FFFFFF1A"></i></td><td><code>#FFFFFF1A</code></td><td>Reconstruction</td></tr>
+<tr><td>color.bg.loginField</td><td><i style="background:var(--color-base-fill)"></i></td><td><code>{color.base.fill}</code></td><td>Reconstruction</td></tr>
+<tr><td>color.text.primary</td><td><i style="background:var(--color-contrast-fill)"></i></td><td><code>{color.contrast.fill}</code></td><td>Reconstruction</td></tr>
+<tr><td>color.text.secondary</td><td><i style="background:#FFFFFF8C"></i></td><td><code>#FFFFFF8C</code></td><td>Reconstruction</td></tr>
+<tr><td>color.text.tertiary</td><td><i style="background:var(--color-contrast-darkest)"></i></td><td><code>{color.contrast.darkest}</code></td><td>Reconstruction</td></tr>
+<tr><td>color.text.disabled</td><td><i style="background:var(--color-base-brightest)"></i></td><td><code>{color.base.brightest}</code></td><td>Reconstruction</td></tr>
+<tr><td>color.text.inverse</td><td><i style="background:#101010"></i></td><td><code>#101010</code></td><td>Reconstruction</td></tr>
+<tr><td>color.text.link</td><td><i style="background:var(--color-accent-fill)"></i></td><td><code>{color.accent.fill}</code></td><td>Reconstruction</td></tr>
+<tr><td>color.text.danger</td><td><i style="background:var(--color-danger)"></i></td><td><code>{color.danger}</code></td><td>Reconstruction</td></tr>
+<tr><td>color.text.loginMuted</td><td><i style="background:#888F98"></i></td><td><code>#888F98</code></td><td>Reconstruction</td></tr>
+<tr><td>color.accent.default</td><td><i style="background:var(--color-accent-fill)"></i></td><td><code>{color.accent.fill}</code></td><td>Reconstruction</td></tr>
+<tr><td>color.border.field</td><td><i style="background:var(--color-contrast-fill)"></i></td><td><code>{color.contrast.fill}</code></td><td>Reconstruction</td></tr>
+<tr><td>color.border.focus</td><td><i style="background:var(--color-contrast-fill)"></i></td><td><code>{color.contrast.fill}</code></td><td>Reconstruction</td></tr>
+<tr><td>color.border.divider</td><td><i style="background:var(--color-contrast-darker)"></i></td><td><code>{color.contrast.darker}</code></td><td>Reconstruction</td></tr>
+<tr><td>color.button.primaryBg</td><td><i style="background:var(--color-contrast-fill)"></i></td><td><code>{color.contrast.fill}</code></td><td>Reconstruction</td></tr>
+<tr><td>color.button.primaryText</td><td><i style="background:#101010"></i></td><td><code>#101010</code></td><td>Reconstruction</td></tr>
+<tr><td>color.button.secondaryBg</td><td><i style="background:#282828BF"></i></td><td><code>#282828BF</code></td><td>Reconstruction</td></tr>
+<tr><td>color.button.secondaryText</td><td><i style="background:var(--color-contrast-fill)"></i></td><td><code>{color.contrast.fill}</code></td><td>Reconstruction</td></tr>
+<tr><td>color.button.loginBg</td><td><i style="background:var(--color-contrast-fill)"></i></td><td><code>{color.contrast.fill}</code></td><td>Reconstruction</td></tr>
+<tr><td>color.button.loginText</td><td><i style="background:#000000"></i></td><td><code>#000000</code></td><td>Reconstruction</td></tr>
+<tr><td>color.button.loginDisabled</td><td><i style="background:#FFFFFF66"></i></td><td><code>#FFFFFF66</code></td><td>Derived</td></tr>
+<tr><td>color.accent.fill</td><td><i style="background:#33FFEE"></i></td><td><code>#33FFEE</code></td><td>Reconstruction</td></tr>
+<tr><td>color.accent.bright</td><td><i style="background:#66FFF3"></i></td><td><code>#66FFF3</code></td><td>Reconstruction</td></tr>
+<tr><td>color.accent.brighter</td><td><i style="background:#99FFF7"></i></td><td><code>#99FFF7</code></td><td>Reconstruction</td></tr>
+<tr><td>color.accent.dark</td><td><i style="background:#3D8F88"></i></td><td><code>#3D8F88</code></td><td>Reconstruction</td></tr>
+<tr><td>color.accent.darker</td><td><i style="background:#244240"></i></td><td><code>#244240</code></td><td>Reconstruction</td></tr>
+<tr><td>color.accent.darkest</td><td><i style="background:#141F1E"></i></td><td><code>#141F1E</code></td><td>Reconstruction</td></tr>
+<tr><td>color.base.fill</td><td><i style="background:#000000"></i></td><td><code>#000000</code></td><td>Reconstruction</td></tr>
+<tr><td>color.base.bright</td><td><i style="background:#18181B"></i></td><td><code>#18181B</code></td><td>Reconstruction</td></tr>
+<tr><td>color.base.brighter</td><td><i style="background:#242429"></i></td><td><code>#242429</code></td><td>Reconstruction</td></tr>
+<tr><td>color.base.brightest</td><td><i style="background:#303036"></i></td><td><code>#303036</code></td><td>Reconstruction</td></tr>
+<tr><td>color.contrast.fill</td><td><i style="background:#FFFFFF"></i></td><td><code>#FFFFFF</code></td><td>Reconstruction</td></tr>
+<tr><td>color.contrast.dark</td><td><i style="background:#E4E4E7"></i></td><td><code>#E4E4E7</code></td><td>Reconstruction</td></tr>
+<tr><td>color.contrast.darker</td><td><i style="background:#AFAFB6"></i></td><td><code>#AFAFB6</code></td><td>Reconstruction</td></tr>
+<tr><td>color.contrast.darkest</td><td><i style="background:#787887"></i></td><td><code>#787887</code></td><td>Reconstruction</td></tr>
+<tr><td>color.warning.fill</td><td><i style="background:#FF3269"></i></td><td><code>#FF3269</code></td><td>Reconstruction</td></tr>
+<tr><td>color.danger</td><td><i style="background:#FF4242"></i></td><td><code>#FF4242</code></td><td>Reconstruction</td></tr>
+<tr><td>color.headliners</td><td><i style="background:#C0FF00"></i></td><td><code>#C0FF00</code></td><td>Reconstruction</td></tr>
+</table>
+<h2>Type</h2>
+<table>
+<tr><th>Token</th><th></th><th>Value</th><th>Evidence</th></tr>
+<tr><td>typography.body</td><td></td><td><code>{&#x27;fontFamily&#x27;: &#x27;{font.text}&#x27;, &#x27;fontSize&#x27;: &#x27;14px&#x27;, &#x27;fontWeight&#x27;: &#x27;{fontWeight.regular}&#x27;, &#x27;lineHeight&#x27;: &#x27;20px&#x27;}</code></td><td>Reconstruction</td></tr>
+<tr><td>typography.sidebar</td><td></td><td><code>{&#x27;fontFamily&#x27;: &#x27;{font.text}&#x27;, &#x27;fontSize&#x27;: &#x27;14px&#x27;, &#x27;fontWeight&#x27;: &#x27;{fontWeight.medium}&#x27;, &#x27;lineHeight&#x27;: &#x27;20px&#x27;}</code></td><td>Reconstruction</td></tr>
+<tr><td>typography.button</td><td></td><td><code>{&#x27;fontFamily&#x27;: &#x27;{font.text}&#x27;, &#x27;fontSize&#x27;: &#x27;14px&#x27;, &#x27;fontWeight&#x27;: &#x27;{fontWeight.demi}&#x27;, &#x27;lineHeight&#x27;: &#x27;22px&#x27;}</code></td><td>Reconstruction</td></tr>
+<tr><td>typography.cardBody</td><td></td><td><code>{&#x27;fontFamily&#x27;: &#x27;{font.text}&#x27;, &#x27;fontSize&#x27;: &#x27;12px&#x27;, &#x27;fontWeight&#x27;: &#x27;{fontWeight.regular}&#x27;, &#x27;lineHeight&#x27;: &#x27;18px&#x27;}</code></td><td>Reconstruction</td></tr>
+<tr><td>typography.pageTitle</td><td></td><td><code>{&#x27;fontFamily&#x27;: &#x27;{font.text}&#x27;, &#x27;fontSize&#x27;: &#x27;24px&#x27;, &#x27;fontWeight&#x27;: &#x27;{fontWeight.bold}&#x27;, &#x27;lineHeight&#x27;: &#x27;28px&#x27;}</code></td><td>Reconstruction</td></tr>
+<tr><td>typography.section</td><td></td><td><code>{&#x27;fontFamily&#x27;: &#x27;{font.display}&#x27;, &#x27;fontSize&#x27;: &#x27;19px&#x27;, &#x27;fontWeight&#x27;: &#x27;{fontWeight.bold}&#x27;, &#x27;lineHeight&#x27;: &#x27;26px&#x27;}</code></td><td>Reconstruction</td></tr>
+<tr><td>typography.exploreTitle</td><td></td><td><code>{&#x27;fontFamily&#x27;: &#x27;{font.text}&#x27;, &#x27;fontSize&#x27;: &#x27;27px&#x27;, &#x27;fontWeight&#x27;: &#x27;{fontWeight.bold}&#x27;, &#x27;lineHeight&#x27;: &#x27;28px&#x27;}</code></td><td>Reconstruction</td></tr>
+<tr><td>typography.exploreSection</td><td></td><td><code>{&#x27;fontFamily&#x27;: &#x27;{font.text}&#x27;, &#x27;fontSize&#x27;: &#x27;20px&#x27;, &#x27;fontWeight&#x27;: &#x27;{fontWeight.demi}&#x27;, &#x27;lineHeight&#x27;: &#x27;24px&#x27;}</code></td><td>Reconstruction</td></tr>
+<tr><td>typography.loginTitle</td><td></td><td><code>{&#x27;fontFamily&#x27;: &#x27;{font.login}&#x27;, &#x27;fontSize&#x27;: &#x27;20px&#x27;, &#x27;fontWeight&#x27;: &#x27;{fontWeight.bold}&#x27;, &#x27;lineHeight&#x27;: &#x27;24px&#x27;}</code></td><td>Reconstruction</td></tr>
+<tr><td>typography.loginBody</td><td></td><td><code>{&#x27;fontFamily&#x27;: &#x27;{font.login}&#x27;, &#x27;fontSize&#x27;: &#x27;16px&#x27;, &#x27;fontWeight&#x27;: &#x27;{fontWeight.regular}&#x27;, &#x27;lineHeight&#x27;: &#x27;24px&#x27;}</code></td><td>Reconstruction</td></tr>
+<tr><td>typography.loginButton</td><td></td><td><code>{&#x27;fontFamily&#x27;: &#x27;{font.login}&#x27;, &#x27;fontSize&#x27;: &#x27;16px&#x27;, &#x27;fontWeight&#x27;: &#x27;{fontWeight.demi}&#x27;, &#x27;lineHeight&#x27;: &#x27;24px&#x27;}</code></td><td>Reconstruction</td></tr>
+<tr><td>typography.marketingTitle</td><td></td><td><code>{&#x27;fontFamily&#x27;: &#x27;{font.login}&#x27;, &#x27;fontSize&#x27;: &#x27;32px&#x27;, &#x27;fontWeight&#x27;: &#x27;{fontWeight.bold}&#x27;, &#x27;lineHeight&#x27;: &#x27;38px&#x27;}</code></td><td>Reconstruction</td></tr>
+<tr><td>font.text</td><td></td><td><code>Square Sans Text VF, Square Sans Text, Helvetica, Arial, sans-serif</code></td><td>Reconstruction</td></tr>
+<tr><td>font.display</td><td></td><td><code>Square Sans Display VF, Square Sans Display, Helvetica, Arial, sans-serif</code></td><td>Reconstruction</td></tr>
+<tr><td>font.login</td><td></td><td><code>nationale, nationale-regular, helvetica, arial, sans-serif</code></td><td>Reconstruction</td></tr>
+<tr><td>fontWeight.regular</td><td></td><td><code>400</code></td><td>Reconstruction</td></tr>
+<tr><td>fontWeight.medium</td><td></td><td><code>500</code></td><td>Reconstruction</td></tr>
+<tr><td>fontWeight.demi</td><td></td><td><code>600</code></td><td>Reconstruction</td></tr>
+<tr><td>fontWeight.bold</td><td></td><td><code>700</code></td><td>Reconstruction</td></tr>
+</table>
+<h2>Radius, space, motion</h2>
+<table>
+<tr><th>Token</th><th></th><th>Value</th><th>Evidence</th></tr>
+<tr><td>radius.none</td><td></td><td><code>0px</code></td><td>Derived</td></tr>
+<tr><td>radius.extraSmall</td><td></td><td><code>4px</code></td><td>Reconstruction</td></tr>
+<tr><td>radius.small</td><td></td><td><code>8px</code></td><td>Reconstruction</td></tr>
+<tr><td>radius.regular</td><td></td><td><code>12px</code></td><td>Reconstruction</td></tr>
+<tr><td>radius.panel</td><td></td><td><code>16px</code></td><td>Reconstruction</td></tr>
+<tr><td>radius.full</td><td></td><td><code>1000px</code></td><td>Reconstruction</td></tr>
+<tr><td>space.4</td><td></td><td><code>4px</code></td><td>Reconstruction</td></tr>
+<tr><td>space.8</td><td></td><td><code>8px</code></td><td>Reconstruction</td></tr>
+<tr><td>space.9</td><td></td><td><code>9px</code></td><td>Reconstruction</td></tr>
+<tr><td>space.14</td><td></td><td><code>14px</code></td><td>Reconstruction</td></tr>
+<tr><td>space.16</td><td></td><td><code>16px</code></td><td>Reconstruction</td></tr>
+<tr><td>space.32</td><td></td><td><code>32px</code></td><td>Reconstruction</td></tr>
+<tr><td>space.40</td><td></td><td><code>40px</code></td><td>Reconstruction</td></tr>
+<tr><td>space.48</td><td></td><td><code>48px</code></td><td>Reconstruction</td></tr>
+<tr><td>space.56</td><td></td><td><code>56px</code></td><td>Reconstruction</td></tr>
+<tr><td>space.78</td><td></td><td><code>78px</code></td><td>Reconstruction</td></tr>
+<tr><td>space.240</td><td></td><td><code>240px</code></td><td>Reconstruction</td></tr>
+<tr><td>motion.button</td><td></td><td><code>240ms</code></td><td>Reconstruction</td></tr>
+<tr><td>motion.buttonEasing</td><td></td><td><code>cubic-bezier(0.76, 0, 0.24, 1)</code></td><td>Reconstruction</td></tr>
+<tr><td>component.button.radius</td><td></td><td><code>{radius.full}</code></td><td>Reconstruction</td></tr>
+<tr><td>component.button.height</td><td></td><td><code>32px</code></td><td>Reconstruction</td></tr>
+<tr><td>component.button.padding</td><td></td><td><code>16px</code></td><td>Reconstruction</td></tr>
+<tr><td>component.button.fontSize</td><td></td><td><code>14px</code></td><td>Reconstruction</td></tr>
+<tr><td>component.loginButton.radius</td><td></td><td><code>{radius.regular}</code></td><td>Reconstruction</td></tr>
+<tr><td>component.loginButton.height</td><td></td><td><code>50px</code></td><td>Reconstruction</td></tr>
+<tr><td>component.loginButton.padding</td><td></td><td><code>20px</code></td><td>Reconstruction</td></tr>
+<tr><td>component.field.radius</td><td></td><td><code>{radius.panel}</code></td><td>Reconstruction</td></tr>
+<tr><td>component.field.height</td><td></td><td><code>54px</code></td><td>Reconstruction</td></tr>
+<tr><td>component.sidebar.width</td><td></td><td><code>240px</code></td><td>Reconstruction</td></tr>
+<tr><td>component.sidebar.rowHeight</td><td></td><td><code>40px</code></td><td>Reconstruction</td></tr>
+<tr><td>component.sidebar.radius</td><td></td><td><code>{radius.regular}</code></td><td>Reconstruction</td></tr>
+</table>
+</main>
+</body>
+</html>

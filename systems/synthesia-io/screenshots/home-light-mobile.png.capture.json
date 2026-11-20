@@ -1,0 +1,20 @@
+{
+  "screenshot": "home-light-mobile.png",
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2
+  },
+  "capture": {
+    "mode": "viewport",
+    "scale": "device"
+  },
+  "note": "headless Chromium; preview browser returned no screenshot frames"
+}

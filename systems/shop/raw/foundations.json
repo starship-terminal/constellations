@@ -1,0 +1,189 @@
+{
+  "captured": "2026-11-19",
+  "harness": "T3 preview tab",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {"width": 1169, "height": 731, "scale": 1}
+  },
+  "hosts": {
+    "startUrl": "https://shop.app/",
+    "publicHome": "https://shop.com/",
+    "note": "curl -sI https://shop.app/ returned HTTP 200. Following redirects with curl -L landed on https://shop.com/. The preview browser also opened https://shop.app/ and showed https://shop.com/. Canonical and og:url on that page are https://shop.com/. Sign in navigates to https://shop.app/accounts/login."
+  },
+  "pages": {
+    "home": {
+      "url": "https://shop.com/",
+      "title": "Shop - Shopping designed around you",
+      "htmlClass": "overflow-x-hidden overflow-y-auto",
+      "bodyClass": "bg-page",
+      "colorScheme": "normal",
+      "prefersColorSchemeDark": true,
+      "bodyBackground": "oklch(0.98809 0 0)",
+      "bodyColor": "rgb(0, 0, 0)",
+      "bodyFont": "\"GT Standard Web\", sans-serif",
+      "bodyFontSize": "16px",
+      "bodyLineHeight": "22px",
+      "bodyLetterSpacing": "-0.5px",
+      "bodyFontWeight": "400"
+    },
+    "login": {
+      "url": "https://shop.app/accounts/login",
+      "title": "Log in to your Shop account | Shop",
+      "queryKeptOut": "analytics_context, auth_state, authentication_level, flow, flow_version, full_view, next, origin, version",
+      "colorScheme": "normal",
+      "htmlDarkClass": false,
+      "prefersColorSchemeDark": true,
+      "bodyBackground": "rgb(255, 255, 255)",
+      "bodyColor": "rgb(0, 0, 0)",
+      "bodyFont": "GTStandard-M, ui-sans-serif, system-ui, sans-serif",
+      "bodyFontSize": "14px",
+      "visibleText": "Sign in to Shop. Or create an account. Email field placeholder Enter your email. Continue. Use a passkey. By continuing, you agree to Shop's Terms and Privacy Policy. English.",
+      "submitted": false
+    }
+  },
+  "screenshots": "preview_snapshot returned: The browser is not producing screenshot frames. No frames were invented.",
+  "homeComputed": {
+    "sidebar": {
+      "width": 96,
+      "item": "56 by 56, radius 9999px",
+      "logo": "56 by 56 at x 20 y 20, radius 28.8px",
+      "homeColor": "oklch(0.11853 0.05087 289.487)",
+      "idleColor": "oklch(0.71209 0.01747 291.676)",
+      "signInColor": "oklch(0.55161 0.02649 290.54)",
+      "transition": "color and background 0.15s cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "search": {
+      "role": "searchbox",
+      "placeholder": "What are you shopping for today?",
+      "aria": "Search products and stores",
+      "field": "488 by 40, padding 8px 50px 8px 46px, font 16px/22px, letter-spacing -0.5px, color rgb(0, 0, 0)",
+      "shell": "radius 32px, background rgba(255, 255, 255, 0.75), height 64, shadow rgba(0, 0, 0, 0.12) 0px 0px 1px 0px, rgba(0, 0, 0, 0.2) 0px 12px 64px 0px"
+    },
+    "hero": {
+      "sample": "The Korean Beauty Edit",
+      "fontSize": "64px",
+      "lineHeight": "58px",
+      "letterSpacing": "-1px",
+      "fontWeight": "800",
+      "color": "rgb(255, 255, 255)",
+      "width": 663.8
+    },
+    "sectionTitle": {
+      "sample": "Trending stores",
+      "fontSize": "20px",
+      "lineHeight": "22px",
+      "letterSpacing": "-1px",
+      "fontWeight": "600",
+      "color": "rgb(0, 0, 0)"
+    },
+    "chip": {
+      "sample": "Beauty",
+      "height": 36,
+      "radius": "9999px",
+      "gap": "8px",
+      "background": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "16px",
+      "focusVisible": "ring-2 ring-border-input-active ring-offset-2, declared on the class, not shown"
+    },
+    "productCard": {
+      "size": "150 by 150",
+      "radius": "20px",
+      "fill": "rgb(255, 255, 255)",
+      "shadow": "rgba(0, 0, 0, 0.06) 0px 2px 8px 0px",
+      "imageBorder": "0.5px solid rgba(5, 41, 77, 0.1)",
+      "priceChip": "padding 2px 6px, radius pill, background rgba(0, 0, 0, 0.3), text rgb(255, 255, 255) 10px/13px weight 600 letter-spacing -0.2px"
+    },
+    "downloadBanner": {
+      "size": "380 by 120",
+      "background": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "radius": "24px",
+      "padding": "16px 48px 16px 16px",
+      "shadow": "rgba(0, 0, 0, 0.12) 0px 4px 24px 0px",
+      "lede": "14px/18px, letter-spacing -0.2px, color rgb(201, 203, 204)"
+    },
+    "footer": {
+      "background": "rgb(255, 255, 255)",
+      "paddingLeft": "76px",
+      "link": "16px/22px, letter-spacing -0.5px, color rgb(0, 0, 0)",
+      "transition": "all 0.15s cubic-bezier(0.4, 0, 0.2, 1)"
+    }
+  },
+  "loginComputed": {
+    "heading": {
+      "text": "Sign in to Shop",
+      "fontSize": "32px",
+      "lineHeight": "35.2px",
+      "letterSpacing": "-0.5px",
+      "fontWeight": "800",
+      "color": "rgb(0, 0, 0)"
+    },
+    "subhead": {
+      "text": "Or create an account",
+      "fontSize": "16px",
+      "lineHeight": "22px",
+      "letterSpacing": "-0.5px",
+      "fontWeight": "450",
+      "color": "rgba(0, 0, 0, 0.56)"
+    },
+    "emailField": {
+      "id": "IdentityEmailForm-email",
+      "type": "email",
+      "placeholder": "Enter your email",
+      "autocomplete": "email webauthn",
+      "required": true,
+      "filled": false,
+      "input": "310 by 50, color rgb(0, 0, 0), 16px/22px, letter-spacing -0.5px, weight 450",
+      "shell": "344 by 52, padding 0 16px, radius 999px, background rgba(0, 0, 0, 0.04), border 1px rgb(0, 0, 0), shadow rgba(0, 0, 0, 0.02) 0px 2px 4px 0px, rgba(0, 0, 0, 0.04) 0px 6px 16px 0px"
+    },
+    "continue": {
+      "text": "Continue",
+      "type": "submit",
+      "disabled": false,
+      "opacity": "1",
+      "cursor": "pointer",
+      "size": "344 by 52",
+      "padding": "16px",
+      "radius": "999px",
+      "background": "rgb(84, 51, 235)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "lineHeight": "22px",
+      "letterSpacing": "-0.5px",
+      "fontWeight": "500",
+      "border": "0.5px solid rgb(255, 255, 255)",
+      "shadow": "rgba(255, 255, 255, 0.32) -0.5px -0.5px 1px 0px inset, rgba(255, 255, 255, 0.32) 1px 1px 0.5px 0px inset, rgba(84, 51, 235, 0.24) 0px 4px 24px 0px"
+    },
+    "passkey": {
+      "text": "Use a passkey",
+      "size": "344 by 42",
+      "padding": "12px",
+      "radius": "999px",
+      "background": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "14px",
+      "lineHeight": "18px",
+      "letterSpacing": "-0.2px",
+      "fontWeight": "600"
+    },
+    "legalLink": {
+      "fontSize": "12px",
+      "lineHeight": "16px",
+      "letterSpacing": "-0.2px",
+      "fontWeight": "450",
+      "color": "rgba(0, 0, 0, 0.56)"
+    },
+    "language": {
+      "text": "English",
+      "color": "rgb(84, 51, 235)",
+      "fontSize": "14px",
+      "fontWeight": "450"
+    },
+    "formWidth": 344,
+    "columnWidth": 400,
+    "columnPadding": "73.1px 24px 16px on a 448 wide wrapper"
+  }
+}

@@ -1,0 +1,113 @@
+{
+ "schemaVersion": 1,
+ "capturedAt": "2026-11-17T19:51:31.802Z",
+ "screenshot": "reviews-light-full.png",
+ "sanitizedSourceUrl": null,
+ "requested": {
+  "viewport": {
+   "width": 1440,
+   "height": 900
+  },
+  "deviceScaleFactor": 1
+ },
+ "configuredViewport": {
+  "width": 1440,
+  "height": 900
+ },
+ "actual": {
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 1,
+  "theme": {
+   "classes": [],
+   "attributes": {},
+   "colorScheme": "normal"
+  },
+  "visualViewport": {
+   "width": 1440,
+   "height": 900,
+   "scale": 1,
+   "offsetLeft": 0,
+   "offsetTop": 0,
+   "pageLeft": 0,
+   "pageTop": 0
+  },
+  "documentSize": {
+   "width": 1440,
+   "height": 16007
+  },
+  "scroll": {
+   "x": 0,
+   "y": 0
+  }
+ },
+ "capture": {
+  "mode": "stitchedParts",
+  "scale": "device",
+  "clip": {
+   "x": 0,
+   "y": 0,
+   "width": 1440,
+   "height": 16007
+  }
+ },
+ "png": {
+  "width": 1440,
+  "height": 16007
+ },
+ "dimensionCheck": {
+  "status": "pass",
+  "expected": {
+   "width": 1440,
+   "height": 16007
+  },
+  "basis": "stitchedParts"
+ },
+ "visualReview": {
+  "status": "pending",
+  "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+ },
+ "cropCoordinates": {
+  "status": "unverified",
+  "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+ },
+ "stitchedFrom": [
+  "reviews-light-full.part0.png",
+  "reviews-light-full.part1.png",
+  "reviews-light-full.part2.png",
+  "reviews-light-full.part3.png",
+  "reviews-light-full.part4.png"
+ ],
+ "partClip": [
+  {
+   "x": 0,
+   "y": 0,
+   "width": 1440,
+   "height": 4000
+  },
+  {
+   "x": 0,
+   "y": 4000,
+   "width": 1440,
+   "height": 4000
+  },
+  {
+   "x": 0,
+   "y": 8000,
+   "width": 1440,
+   "height": 4000
+  },
+  {
+   "x": 0,
+   "y": 12000,
+   "width": 1440,
+   "height": 4000
+  },
+  {
+   "x": 0,
+   "y": 16000,
+   "width": 1440,
+   "height": 7
+  }
+ ]
+}

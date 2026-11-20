@@ -44,10 +44,9 @@ export async function launch({ width = 1440, height = 900, mobile = false } = {}
   const context = await browser.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width, height }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US', reducedMotion: 'no-preference' });
-  // Masked as a matter of course; airtable.com rendered fine headless in probing,
-  // but the app host and the sign-in surface are bot-sensitive.
+  // navigator.webdriver is not masked: a bot check is recorded as a boundary.
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
   });
   // The Google One Tap sign-in prompt (accounts.google.com/gsi) is a sign-in
   // surface: it is aborted at the network, never rendered or answered.

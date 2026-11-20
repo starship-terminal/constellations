@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sonarworks style guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+<style>
+  :root {
+    --page: #ffffff;
+    --inverse: #000000;
+    --muted-bg: #f3f3f3;
+    --text: #000000;
+    --secondary: #96999c;
+    --tertiary: #636669;
+    --on-inverse: #ffffff;
+    --border: #dfe0e1;
+    --strong: #000000;
+    --divider: #3e4042;
+    --hairline: #d8d9da;
+    --disabled: #d8d9da;
+    --on-disabled: #636669;
+    --trial: #68befd;
+    --sale: #ffe701;
+    --danger: #fc5b41;
+    --success: #6fe362;
+    --lime: #cdf045;
+    --orange: #ff904c;
+    --yellow: #f8d143;
+    --pink: #eb48c7;
+    --purple: #b25ced;
+    --font: Inter, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--font); }
+  header, main { max-width: 960px; margin: 0 auto; padding: 32px 16px; }
+  h1 { font: 400 44px/52px var(--font); letter-spacing: -1.5px; margin: 0 0 8px; }
+  h2 { font: 400 24px/32px var(--font); letter-spacing: -0.5px; margin: 40px 0 12px; }
+  p.lede { color: var(--secondary); max-width: 62ch; }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .swatch { width: 140px; min-height: 88px; padding: 12px; border: 1px solid var(--border); }
+  .swatch span { display: block; font-size: 11px; letter-spacing: 0.2px; line-height: 16px; margin-top: 8px; }
+  .pill { display: inline-block; border-radius: 9999px; padding: 12px 16px; font: 400 16px/24px var(--font); text-decoration: none; }
+  .pill.dark { background: #000; color: #fff; }
+  .pill.light { background: #fff; color: #000; border: 1px solid #000; }
+  .pill.trial { background: var(--trial); color: #000; padding: 4px 16px; }
+  .pill.off { background: var(--disabled); color: var(--on-disabled); border: 1px solid var(--disabled); }
+  .field { display: block; width: 318px; height: 48px; margin: 8px 0; padding: 12px; border: 1px solid #000; background: #fff; font: 400 16px/24px var(--font); }
+  .field.rest { border-color: var(--border); }
+  .field.bad { border-color: var(--danger); color: var(--danger); }
+  .panel { background: var(--muted-bg); padding: 32px 16px 64px; max-width: 382px; }
+  .bar { background: #000; color: var(--secondary); padding: 8px 16px; }
+  .bar strong { color: #fff; font-weight: 600; }
+  .sale { background: var(--sale); color: #000; display: inline-block; padding: 0 4px; }
+  .note { font-size: 11px; letter-spacing: 0.2px; line-height: 16px; color: var(--tertiary); }
+  table { border-collapse: collapse; width: 100%; }
+  td, th { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--hairline); font-weight: 400; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Sonarworks</h1>
+  <p class="lede">Public marketing and the signed-out account, measured on 19 November 2026. One light theme. Values are the computed styles from the live pages.</p>
+</header>
+<main>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Type</h2>
+  <p style="font:400 44px/52px var(--font);letter-spacing:-1.5px;margin:0">Create, mix and deliver</p>
+  <p style="font:400 24px/32px var(--font);letter-spacing:-0.5px">SoundID Reference</p>
+  <p style="margin:0">Industry-leading speaker and headphone calibration.</p>
+  <p class="note">Forgot your password?</p>
+  <h2>Buttons</h2>
+  <p>
+    <a class="pill dark">Buy now</a>
+    <a class="pill light">Continue with Google</a>
+    <a class="pill trial">7-day Free Trial</a>
+    <a class="pill off">Log in</a>
+  </p>
+  <h2>Fields</h2>
+  <div class="panel">
+    <input class="field" placeholder="Email address" aria-label="Email address">
+    <input class="field rest" placeholder="Password" aria-label="Password" type="password">
+    <input class="field bad" value="Not a valid address" aria-label="Error example">
+    <p class="note">The red border is the declared .field.has-errors rule. It was not shown on the live form.</p>
+  </div>
+  <h2>Chrome</h2>
+  <div class="bar"><strong>Sonarworks</strong> &nbsp; Reviews &nbsp; Blog &nbsp; Log in</div>
+  <p style="margin-top:16px">Was <s style="color:var(--tertiary)">€79.00</s> <span class="sale">You save €29.00</span></p>
+  <h2>Scale</h2>
+  <table>
+    <tr><th>Role</th><th>Value</th></tr>
+    <tr><td>Page</td><td>#ffffff</td></tr>
+    <tr><td>Nav and footer</td><td>#000000</td></tr>
+    <tr><td>Muted text</td><td>#96999c</td></tr>
+    <tr><td>Hairline</td><td>#dfe0e1</td></tr>
+    <tr><td>Display</td><td>44/52, -1.5px, Inter 400</td></tr>
+    <tr><td>Pill radius</td><td>9999px</td></tr>
+  </table>
+</main>
+<script>
+const colors = [
+  ["Page", "#ffffff", "#000"],
+  ["Inverse", "#000000", "#fff"],
+  ["Muted surface", "#f3f3f3", "#000"],
+  ["Secondary text", "#96999c", "#000"],
+  ["Tertiary", "#636669", "#fff"],
+  ["Border", "#dfe0e1", "#000"],
+  ["Divider", "#3e4042", "#fff"],
+  ["Disabled", "#d8d9da", "#636669"],
+  ["Trial blue", "#68befd", "#000"],
+  ["Sale", "#ffe701", "#000"],
+  ["Danger", "#fc5b41", "#000"],
+  ["Success", "#6fe362", "#000"],
+  ["Lime", "#cdf045", "#000"],
+  ["Orange", "#ff904c", "#000"],
+  ["Pink", "#eb48c7", "#000"],
+  ["Purple", "#b25ced", "#fff"]
+];
+document.getElementById("swatches").innerHTML = colors.map(([n, c, ink]) =>
+  `<div class="swatch" style="background:${c};color:${ink}"><b>${n}</b><span>${c}</span></div>`).join("");
+</script>
+</body>
+</html>

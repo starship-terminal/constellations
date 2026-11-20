@@ -1,0 +1,433 @@
+{
+  "captured": "2026-11-19",
+  "viewportDesktop": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "note": "style pass; screenshots at deviceScaleFactor 2"
+  },
+  "pages": {
+    "home": {
+      "href": "https://www.skillshare.com/en/",
+      "title": "Online Classes for Creatives | Skillshare",
+      "status": 200,
+      "scroll": {
+        "w": 1440,
+        "h": 8397
+      },
+      "fonts": [
+        "GT Walsheim Pro bold normal",
+        "GT Walsheim Pro normal normal"
+      ],
+      "paints": [
+        {
+          "bg": "rgb(255, 255, 255)",
+          "tag": "DIV",
+          "cls": "sk-items-center sk-box-border sk-justify-center sk-px-[20px]",
+          "w": 1440,
+          "h": 80,
+          "y": 0
+        },
+        {
+          "bg": "rgb(0, 0, 0)",
+          "tag": "SECTION",
+          "cls": "jss11",
+          "w": 1440,
+          "h": 400,
+          "y": 493
+        },
+        {
+          "bg": "rgb(35, 36, 36)",
+          "tag": "DIV",
+          "cls": "builder-block builder-169853837e294dc8a12163df80ac5f4b css-1",
+          "w": 259,
+          "h": 110,
+          "y": 1413
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0.7)",
+          "tag": "DIV",
+          "cls": "go1632949049",
+          "w": 1454,
+          "h": 909,
+          "y": 0
+        }
+      ]
+    },
+    "about": {
+      "href": "https://www.skillshare.com/en/about",
+      "title": "Skillshare",
+      "status": 200,
+      "scroll": {
+        "w": 1440,
+        "h": 2053
+      },
+      "fonts": [
+        "GT Walsheim Pro bold normal",
+        "GT Walsheim Pro normal normal"
+      ],
+      "paints": [
+        {
+          "bg": "rgb(11, 18, 21)",
+          "tag": "DIV",
+          "cls": "sk-items-center sk-box-border sk-justify-center sk-px-[20px]",
+          "w": 1440,
+          "h": 80,
+          "y": 0
+        },
+        {
+          "bg": "rgb(0, 0, 0)",
+          "tag": "SECTION",
+          "cls": "builder-block builder-28beb9a1f21548f5a95ffcb048f48e6f build",
+          "w": 1440,
+          "h": 331,
+          "y": 80
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0.2)",
+          "tag": "DIV",
+          "cls": "builder-block builder-3425f45988264db3a1a1f47f95aae65e css-5",
+          "w": 1440,
+          "h": 331,
+          "y": 80
+        },
+        {
+          "bg": "rgb(250, 250, 250)",
+          "tag": "SECTION",
+          "cls": "builder-block builder-a9284b801f604b8ba1cb8f5dd2a978c3 build",
+          "w": 1440,
+          "h": 778,
+          "y": 411
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0.7)",
+          "tag": "DIV",
+          "cls": "go1632949049",
+          "w": 1454,
+          "h": 909,
+          "y": 0
+        }
+      ]
+    },
+    "teach": {
+      "href": "https://www.skillshare.com/en/teach",
+      "title": "Skillshare",
+      "status": 200,
+      "scroll": {
+        "w": 1440,
+        "h": 5213
+      },
+      "fonts": [
+        "GT Walsheim Pro bold normal",
+        "GT Walsheim Pro normal normal"
+      ],
+      "paints": [
+        {
+          "bg": "rgb(11, 18, 21)",
+          "tag": "DIV",
+          "cls": "sk-items-center sk-box-border sk-justify-center sk-px-[20px]",
+          "w": 1440,
+          "h": 80,
+          "y": 0
+        },
+        {
+          "bg": "rgb(255, 255, 255)",
+          "tag": "DIV",
+          "cls": "MuiPaper-root md:sk-py-[48px] md:sk-px-[80px] sk-text-center",
+          "w": 1182,
+          "h": 351,
+          "y": 689
+        },
+        {
+          "bg": "rgb(250, 250, 250)",
+          "tag": "DIV",
+          "cls": "MuiPaper-root MuiCard-root jss36 jss37 jss29 MuiPaper-outlin",
+          "w": 383,
+          "h": 440,
+          "y": 1080
+        },
+        {
+          "bg": "rgb(86, 32, 193)",
+          "tag": "DIV",
+          "cls": "jss41",
+          "w": 1440,
+          "h": 392,
+          "y": 1667
+        },
+        {
+          "bg": "rgb(244, 244, 244)",
+          "tag": "SECTION",
+          "cls": "jss66",
+          "w": 1440,
+          "h": 1179,
+          "y": 3443
+        },
+        {
+          "bg": "rgb(7, 12, 14)",
+          "tag": "DIV",
+          "cls": "MuiBox-root jss89 jss87",
+          "w": 1440,
+          "h": 236,
+          "y": 4621
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0.7)",
+          "tag": "DIV",
+          "cls": "go1632949049",
+          "w": 1454,
+          "h": 909,
+          "y": 0
+        }
+      ]
+    },
+    "teams": {
+      "href": "https://www.skillshare.com/en/for-teams/home",
+      "title": "Skillshare for Teams",
+      "status": 200,
+      "scroll": {
+        "w": 1440,
+        "h": 6685
+      },
+      "fonts": [
+        "GT Walsheim Pro bold normal",
+        "GT Walsheim Pro normal normal",
+        "GT Walsheim Pro bold normal",
+        "GT Walsheim Pro normal normal",
+        "GT Walsheim Pro Regular 400 normal"
+      ],
+      "paints": [
+        {
+          "bg": "rgb(0, 0, 0)",
+          "tag": "DIV",
+          "cls": "builder-block builder-5b54cc3ed00f46788983e50a4137dda9 css-1",
+          "w": 1440,
+          "h": 80,
+          "y": 0
+        },
+        {
+          "bg": "rgb(255, 255, 255)",
+          "tag": "DIV",
+          "cls": "builder-block builder-33c5cc6deb214d34ae28acdac67d3393 sft-d",
+          "w": 221,
+          "h": 409,
+          "y": 64
+        },
+        {
+          "bg": "rgb(86, 32, 193)",
+          "tag": "DIV",
+          "cls": "builder-block builder-6fc139914e964e148e932d6ed783addf css-3",
+          "w": 1200,
+          "h": 182,
+          "y": 786
+        },
+        {
+          "bg": "rgb(250, 250, 250)",
+          "tag": "DIV",
+          "cls": "builder-block builder-d43e765b239249e6b9f0783691f7213f css-t",
+          "w": 1440,
+          "h": 1391,
+          "y": 3367
+        },
+        {
+          "bg": "rgb(244, 244, 244)",
+          "tag": "DIV",
+          "cls": "builder-block builder-e78cab3e72a54147b0ea361f47d0c56e build",
+          "w": 1440,
+          "h": 160,
+          "y": 5342
+        },
+        {
+          "bg": "rgb(11, 18, 21)",
+          "tag": "DIV",
+          "cls": "sk-hidden sk-py-[30px] sk-font-sans sk-text-white sk-antiali",
+          "w": 1440,
+          "h": 356,
+          "y": 6330
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0.7)",
+          "tag": "DIV",
+          "cls": "go1632949049",
+          "w": 1454,
+          "h": 909,
+          "y": 0
+        }
+      ]
+    },
+    "careers": {
+      "href": "https://apply.workable.com/skillshare/",
+      "title": "Skillshare - Current Openings",
+      "status": 200,
+      "scroll": {
+        "w": 1440,
+        "h": 981
+      },
+      "fonts": [
+        "Montserrat 700 normal",
+        "Open Sans 400 normal",
+        "Open Sans 700 normal"
+      ],
+      "paints": [
+        {
+          "bg": "rgb(255, 255, 255)",
+          "tag": "HEADER",
+          "cls": "styles--3jBS-",
+          "w": 1440,
+          "h": 282,
+          "y": 0
+        },
+        {
+          "bg": "rgb(56, 57, 64)",
+          "tag": "DIV",
+          "cls": "styles--1TOnJ",
+          "w": 1440,
+          "h": 900,
+          "y": 0
+        }
+      ]
+    },
+    "press": {
+      "href": "https://www.skillshare.com/en/press",
+      "title": "Skillshare - Press",
+      "status": 200,
+      "scroll": {
+        "w": 1440,
+        "h": 9172
+      },
+      "fonts": [
+        "GT Walsheim Pro bold normal",
+        "GT Walsheim Pro normal normal"
+      ],
+      "paints": [
+        {
+          "bg": "rgb(11, 18, 21)",
+          "tag": "DIV",
+          "cls": "sk-items-center sk-box-border sk-justify-center sk-px-[20px]",
+          "w": 1440,
+          "h": 80,
+          "y": 0
+        },
+        {
+          "bg": "rgb(0, 0, 0)",
+          "tag": "SECTION",
+          "cls": "builder-block builder-8539a2cd70f94359bae100e32dcc587b build",
+          "w": 1440,
+          "h": 405,
+          "y": 80
+        },
+        {
+          "bg": "rgb(250, 250, 250)",
+          "tag": "SECTION",
+          "cls": "builder-block builder-c9570afa303a4d4c96b2a4af1b6fa061 build",
+          "w": 1440,
+          "h": 8331,
+          "y": 485
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0.7)",
+          "tag": "DIV",
+          "cls": "go1632949049",
+          "w": 1454,
+          "h": 909,
+          "y": 0
+        }
+      ]
+    },
+    "terms": {
+      "href": "https://legal.skillshare.com/hc/en-us/articles/27194932901645-Skillshare-Terms-of-Service",
+      "title": "Skillshare Terms of Service \u2013 Skillshare Legal",
+      "status": 200,
+      "scroll": {
+        "w": 1440,
+        "h": 26348
+      },
+      "fonts": [
+        "entypo normal normal",
+        "DM Sans 400 normal",
+        "DM Sans 700 normal"
+      ],
+      "paints": [
+        {
+          "bg": "rgb(0, 0, 0)",
+          "tag": "HEADER",
+          "cls": "header",
+          "w": 1440,
+          "h": 89,
+          "y": 0
+        },
+        {
+          "bg": "rgba(0, 183, 255, 0.05)",
+          "tag": "DIV",
+          "cls": "callout callout-idea",
+          "w": 650,
+          "h": 110,
+          "y": 510
+        },
+        {
+          "bg": "rgb(244, 244, 244)",
+          "tag": "SECTION",
+          "cls": "related-articles",
+          "w": 650,
+          "h": 203,
+          "y": 25755
+        },
+        {
+          "bg": "rgb(255, 255, 255)",
+          "tag": "DIV",
+          "cls": "footer-item",
+          "w": 298,
+          "h": 320,
+          "y": 26008
+        }
+      ]
+    },
+    "privacy": {
+      "href": "https://legal.skillshare.com/hc/en-us/articles/27197362156685-Privacy-Policy",
+      "title": "Privacy Policy \u2013 Skillshare Legal",
+      "status": 200,
+      "scroll": {
+        "w": 1440,
+        "h": 28211
+      },
+      "fonts": [
+        "entypo normal normal",
+        "DM Sans 400 normal",
+        "DM Sans 700 normal"
+      ],
+      "paints": [
+        {
+          "bg": "rgb(0, 0, 0)",
+          "tag": "HEADER",
+          "cls": "header",
+          "w": 1440,
+          "h": 89,
+          "y": 0
+        },
+        {
+          "bg": "rgba(0, 183, 255, 0.05)",
+          "tag": "DIV",
+          "cls": "callout callout-idea",
+          "w": 650,
+          "h": 110,
+          "y": 450
+        },
+        {
+          "bg": "rgb(244, 244, 244)",
+          "tag": "SECTION",
+          "cls": "related-articles",
+          "w": 650,
+          "h": 203,
+          "y": 27618
+        },
+        {
+          "bg": "rgb(255, 255, 255)",
+          "tag": "DIV",
+          "cls": "footer-item",
+          "w": 298,
+          "h": 320,
+          "y": 27871
+        }
+      ]
+    }
+  }
+}

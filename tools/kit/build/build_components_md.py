@@ -2,7 +2,7 @@
 """Build components.md for the ChatGPT design reference.
 
 Reads raw/components-computed.json (every component and state, measured in both themes),
-raw/layout.json, tokens.json, screenshots/ and icons/INDEX.tsv, and writes components.md next to
+tokens.json, screenshots/ and icons/INDEX.tsv, and writes components.md next to
 them. Every value is a cell of the measurement file, condensed: colours are hex followed by the token
 in the matching theme's set whose value is the same, the font family is named once per value, and a
 state row shows only what differs from the first state. Dark states come first (the pages were
@@ -15,12 +15,18 @@ Run from anywhere: python3 tools/build_components_md.py
 import collections, json, os, re
 from pathlib import Path
 
+# PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+# for it. While this is None the script stops: the kit's copy is ChatGPT's example and would
+# write ChatGPT's values. KIT_EXAMPLE=1 runs the example as it is.
+ADAPTED_FOR = None
+if ADAPTED_FOR is None and not os.environ.get("KIT_EXAMPLE"):
+    raise SystemExit("build_components_md.py is the kit's ChatGPT example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR")
+
 ROOT = Path(__file__).resolve().parent.parent
 os.chdir(ROOT)
 J = json.load(open("raw/components-computed.json"))
 C = J["components"]
 META = J["_meta"]
-LAYOUT = json.load(open("raw/layout.json"))
 T = json.load(open("tokens.json"))
 
 # --------------------------------------------------------------------------- colours and tokens
@@ -167,6 +173,18 @@ def font(fz, lh, fw, f):
     return f"{fam(f)} {num(fz.replace('px', ''))}/{num(lh)} {fw}"
 
 
+def focus_not_captured(v):
+    """A state whose reading is not what its name says: a skipped one, or a focus-visible reading
+    taken where keyboard focus never landed (kbFocus returned "focus failed") or where the element
+    took focus but did not match :focus-visible. Its style is the element at rest, so it is left out
+    of every table and tally and listed as "focus could not be captured"."""
+    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
+
+
+def measured(v):
+    return "style" in v and not focus_not_captured(v)
+
+
 def props(v):
     s = v["style"]
     o = {}
@@ -202,7 +220,7 @@ def props(v):
     t = v.get("textStyle")
     if t:
         o["text"] = f"{font(t['fontSize'], t['lineHeight'], t['fontWeight'], t['fontFamily'])}, {colour(t['color'], role='text')}"
-    elif v.get("text"):
+    elif v.get("text") or (v.get("placeholder") or {}).get("text"):   # a field shows its placeholder
         o["text"] = f"{font(s['fontSize'], s['lineHeight'], s['fontWeight'], s['fontFamily'])}, {colour(s['color'], role='text')}"
     if s["transitionDuration"] not in ("0s", ""):
         props_ = [x.strip() for x in s["transitionProperty"].split(",")]
@@ -242,7 +260,7 @@ def state_rows(c):
     theme), later rows of the same theme list only what changed."""
     rows = []
     for theme in ("dark", "light"):
-        states = [s for s, v in c["states"].items() if "style" in v and v.get("theme") == theme]
+        states = [s for s, v in c["states"].items() if measured(v) and v.get("theme") == theme]
         if not states:
             continue
         THEME[0] = theme
@@ -273,7 +291,7 @@ def fmt(d):
 
 
 def child_layers(c):
-    st = next((s for s in c["states"].values() if "style" in s and s.get("theme") == "dark"), None)
+    st = next((s for s in c["states"].values() if measured(s) and s.get("theme") == "dark"), None)
     if not st or not st.get("paint"):
         return None
     s = st["style"]
@@ -363,7 +381,7 @@ W("How to read an entry:")
 W()
 W("- A colour is its value followed by the token in [tokens.json](tokens.json) whose value in that theme is the same, when there is one. Text is written family size/line-height weight, then its colour, for example `System 14/20 400, #ffffff`, and is read from the first text node inside the component. System is the `-apple-system-body` stack.")
 W("- Dark states come first (every page was captured dark), then the same states read in light. Each theme's first row lists every value; later rows of that theme list only what changes. A state with the same values as its theme's first is named in that label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
-W(f"- Crops are images of the component from the rendered copy, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
+W(f"- Crops are images of the component from the rendered copy, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x, or halved to 1x when wider than 1600 px or over 1.2 megapixels). Screenshots are in [screenshots/](screenshots).")
 W()
 W("## Discovery list")
 W()
@@ -407,9 +425,12 @@ hover_dark = collections.Counter()
 hover_light = collections.Counter()
 focus = {"dark": collections.Counter(), "light": collections.Counter()}
 focus_n = {"dark": 0, "light": 0}
+unfocused = {"dark": [], "light": []}
 for cid, c in C.items():
     for sname, s in c["states"].items():
-        if "style" not in s:
+        if sname.endswith("focus-visible") and focus_not_captured(s) and s.get("theme") in unfocused:
+            unfocused[s["theme"]].append(f"`{cid}`")
+        if not measured(s):
             continue
         st = s["style"]
         r = full(st["borderTopLeftRadius"])
@@ -430,7 +451,7 @@ for cid, c in C.items():
 for cid, c in C.items():
     for th, base, hov, ctr in (("dark", "default", "hover", hover_dark), ("light", "light", "light-hover", hover_light)):
         a, b = c["states"].get(base), c["states"].get(hov)
-        if not a or not b or "style" not in a or "style" not in b:
+        if not a or not b or not measured(a) or not measured(b):
             continue
         THEME[0] = th
         if a["style"]["backgroundColor"] != b["style"]["backgroundColor"]:
@@ -451,7 +472,7 @@ W(f"**Radius.** {top(radii, 10)}. Rows and settings tabs are 10, controls (icon 
 W()
 W(f"**Hover.** ChatGPT hovers with a translucent fill. Dark: {top(hover_dark, 6)}. Light: {top(hover_light, 6)}. The row fill is `interactive.bg-secondary-hover` (white at 10% in dark, black at 5% in light) and the current page or chat rests on `interactive.bg-secondary-selected`, the same value, so a current row does not change on hover. Icon buttons in the sidebar use `surface.surface-hover` (white at 15%, black at 7%). Menu items show no hover here: Radix highlights them with `data-highlighted`, which its script sets, so only the captured highlighted row is filled.")
 W()
-W(f"**Focus.** Of {focus_n['dark']} elements given a real keyboard focus in dark: {top(focus['dark'], 6)}. In light: {top(focus['light'], 6)}. With scripts gone the `keyboard-focused:` rings ChatGPT draws do not switch on, so most focused states show the browser's own outline (`auto`, the platform blue), and a few controls show their own ring: the settings toggle a 2px gap and a 4px ring in `interactive.border-focus`, the project tabs a 3px ring in the text colour, the settings tabs a 1px outline offset 2.")
+W(f"**Focus.** Of {focus_n['dark']} elements given a real keyboard focus in dark: {top(focus['dark'], 6)}. In light: {top(focus['light'], 6)}.{"".join(f" Focus could not be captured on {len(v)} {th} states (not focusable, or focused without matching :focus-visible), left out of the tally: {', '.join(v)}." for th, v in unfocused.items() if v)} With scripts gone the `keyboard-focused:` rings ChatGPT draws do not switch on, so most focused states show the browser's own outline (`auto`, the platform blue), and a few controls show their own ring: the settings toggle a 2px gap and a 4px ring in `interactive.border-focus`, the project tabs a 3px ring in the text colour, the settings tabs a 1px outline offset 2.")
 W()
 W(f"**Motion.** {top(trans, 6)}. Nearly every transition is Tailwind's `transition-colors` at 150 ms on cubic-bezier(0.4, 0, 0.2, 1) (`duration.default`, `easing.default`); larger moves (the sidebar, popovers, page transitions) use the spring curves listed under the core set's notTokenised, at 667 ms and up. The code block's full-screen view cross-fades at 220 ms ease-out.")
 W()
@@ -485,7 +506,7 @@ for g, ids in groups.items():
         order = ("default", "hover", "light", "light-hover", "active", "selected", "checked", "open", "typed", "focus-visible")
         for sname in [n for n in order if n in c["states"]] + sorted(n for n in c["states"] if n not in order):
             s = c["states"].get(sname)
-            if s and s.get("crop") and Path(s["crop"]).exists():
+            if s and measured(s) and s.get("crop") and Path(s["crop"]).exists():
                 crops.append(f'<img src="{s["crop"]}" alt="{c["title"]}, {sname}" height="{min(120, max(24, round(s["rect"]["h"])))}"> ')
         if crops:
             W("".join(crops))

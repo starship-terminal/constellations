@@ -1,0 +1,11 @@
+{
+ "_note": "Rules for systems/dribbble. A fully public signed-out capture: no account exists and no private data was ever on any surface. The login and signup forms were captured as surfaces; the email field's 'filled' state typed the throwaway name@example.com and deleted it before reading — nothing was submitted. Designer names, handles, ratings and shot imagery in the screenshots are Dribbble's published public content. The OCR email net is kept with example.com allowed.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@example\\.com$",
+   "@example\\.org$"
+  ]
+ },
+ "families": []
+}

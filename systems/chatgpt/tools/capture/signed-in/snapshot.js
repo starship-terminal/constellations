@@ -111,7 +111,7 @@ window.__snap = function (label, REDACT) {
   // any URL with a signing parameter loses its whole query string.
   // The credential-carrying URL parameters: a copy of signed-params.json beside unsnap.py (a console
   // paste cannot read files), matched after ?, &, &amp;, # or their %-encodings. Same regex as unsnap.py.
-  const SIGNED_PARAMS = {"prefixes": ["X-Amz-", "X-Goog-"], "params": ["Signature", "Key-Pair-Id", "Policy", "Expires", "sig", "token", "access_token", "id_token", "refresh_token", "code", "auth"]};
+  const SIGNED_PARAMS = {"prefixes": ["X-Amz-", "X-Goog-"], "params": ["Signature", "Key-Pair-Id", "Policy", "Expires", "sig", "token", "access_token", "id_token", "refresh_token", "code", "auth", "key", "api_key", "apikey", "api-key", "access_key", "client_secret", "jwt", "session", "session_id", "sessionid", "hmac", "hdnts", "__token__", "auth_token", "oauth_token", "csrf_token", "xsrf_token", "session_token", "api_token", "sas_token"]};
   const SIGNED = new RegExp('(?:[?&#]|%3F|%26|%23)(?:amp;)?(' + [
     ...SIGNED_PARAMS.prefixes.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '[A-Za-z0-9-]*'),
     ...SIGNED_PARAMS.params.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
@@ -123,6 +123,7 @@ window.__snap = function (label, REDACT) {
   // url(); any other ; (an &amp; entity, a ;-separated query) stays inside, as do commas and
   // parentheses, except a ")" that closes an unquoted url( ... ) before ; , } or the end.
   const cutSigned = (s) => s.replace(/[?#](?:[^\s"'<>);{}]|;(?![\w-]+\s*:)|\)(?![\s;,"'}]|$))*/g, (q) => (SIGNED.test(q) ? '' : q));
+  const cutSignedUrl = (s) => s.replace(/[?#](?:[^\s"'<>);{}]|;|\)(?![\s"'}]|$))*/g, (q) => (SIGNED.test(q) ? '' : q));
   const abs = (u) => { let h; try { h = new URL(u, location.href).href; } catch { return cutSigned(u); } return SIGNED.test(h) ? h.split(/[?#]/)[0] : h; };
   const parts = [];
   for (const ss of document.styleSheets) {
@@ -273,7 +274,7 @@ window.__snap = function (label, REDACT) {
   if (left.size) throw new Error(left.size + ' title(s) survived the scrub');
   // Last, every attribute of every element (data-src, style="background:url(...)", anything) and then
   // the serialised copy, inlined stylesheets and text included, lose any signed query abs() missed.
-  clone.querySelectorAll('*').forEach((n) => { for (const a of [...n.attributes]) { const v = cutSigned(a.value); if (v !== a.value) n.setAttribute(a.name, v); } });
+  clone.querySelectorAll('*').forEach((n) => { for (const a of [...n.attributes]) { const v = (a.name === 'style' ? cutSigned : cutSignedUrl)(a.value); if (v !== a.value) n.setAttribute(a.name, v); } });
   let html = cutSigned('<!doctype html>\n' + clone.outerHTML);
   for (const [pattern, flags, rep] of REDACT.replace) html = html.replace(new RegExp(pattern, flags), rep);
   html = cutIds(html);

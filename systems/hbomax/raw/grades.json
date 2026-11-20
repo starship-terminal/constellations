@@ -1,0 +1,86 @@
+{
+  "F1": {
+    "grade": "partly",
+    "evidence": "The site's generated token sheet declares semantic roles, not per-hue ramps: 379 --color_* names organised as state ladders (surface.low/mid/high, text.high/mid/low, action.*.fill.low/mid/high, border.lowest/low/mid). Hue families exist as indicator roles (commerce, live, sport, beta, award, upsell) rather than 10-step ramps. The neutral ladder is complete and is what the page paints; no per-hue ramp is declared on the public layer."
+  },
+  "F2": {
+    "grade": "meets",
+    "evidence": "Page (color.surface.low #000000), surface/raised (surface.mid #0f0f0f, surface.high #191919), opacity surfaces (surface.opacity.low/high), inverse surfaces and a dedicated scrim family (color.scrim.*) are all declared in the token sheet and emitted under dark.color.* in tokens.json."
+  },
+  "F3": {
+    "grade": "meets",
+    "evidence": "general.text.high/mid/low plus general.text.error, the inverse text set, on-accent roles (action.primary.text #000 on the white pill), captions/tile text roles and commerce/indicator text roles are declared; measured links resolve through general.text roles (no separate link colour observed — footer links are plain text ink)."
+  },
+  "F4": {
+    "grade": "meets",
+    "evidence": "general.border.lowest/low/mid plus inverse variants, card.border.*, tile and input borders, and a dedicated focus role (component.chip.border.focus, input.option.*.focus) cover default/strong/focus; component focus rings were measured on hover/focus-visible passes."
+  },
+  "F5": {
+    "grade": "meets",
+    "evidence": "The accent recipe is monochrome: action.primary.fill.low/mid/high declares the default/hover/pressed ladder, and component.button.quiet.*.base/hover/press declares the secondary set — both were measured live (hero-cta, plan-choose hover/focus-visible/pressed states in components-computed.json)."
+  },
+  "F6": {
+    "grade": "partly",
+    "evidence": "Error and info are declared (general.text.error, component.inline.message.error/info.border, input.option.border.error.*) and commerce/indicator statuses ship fill+text pairs (commerce #71b8f2, live, sport, award, beta, upsell). No success/warning pair was observed on the signed-out surface — validation states live behind sign-in/checkout, which was never opened."
+  },
+  "F7": {
+    "grade": "na",
+    "evidence": "The product ships one theme: html data-theme=\"max\" paints a dark surface on every route with no theme control anywhere. There is no second theme for parity to span; tokens.json carries a single dark set plus theme-independent core."
+  },
+  "F8": {
+    "grade": "meets",
+    "evidence": "One family (Max Sans, weights 300/400/600, @font-face in the token sheet with woff2 sources) over the declared --font_*-slate3 scale: 434 size/line-height pairs named by role (display, action, body, captions, tile) and redeclared across the seven -bp-01..07 breakpoints. Family, weights, sizes and line heights all emit as core.font.* tokens."
+  },
+  "F9": {
+    "grade": "meets",
+    "evidence": "528 --spacer-* dimensions on the .spacer-tokens scope, redeclared per breakpoint — the site's own spacing scale, emitted as core.spacer.*. Component paddings measured on the live page resolve to these steps."
+  },
+  "F10": {
+    "grade": "meets",
+    "evidence": "448 --border-* declarations on .border-tokens covering corner radii and stroke widths per breakpoint, emitted as core.border.*; measured radii on the plan cards, pills and rails resolve to the declared steps."
+  },
+  "F11": {
+    "grade": "partly",
+    "evidence": "Control geometry is measured (44px nav/hero pill, 52px plan Choose and consent buttons, 60px header, icon sizes in icons/INDEX.tsv) and focus rings measured on focus-visible states. No declared S/M/L control-size ladder exists on the marketing surface — heights are component evidence."
+  },
+  "F12": {
+    "grade": "partly",
+    "evidence": "The token sheet carries scrim roles (color.scrim.*) and overlay surfaces (surface.opacity.*, component.button.utility.overlay.*) but no named shadow-elevation ladder — the site's depth cue is translucency and scrim over backdrop art rather than box-shadow levels; measured shadows are recorded per component in components.md."
+  },
+  "F13": {
+    "grade": "meets",
+    "evidence": "raw/motion.json holds the live motion probe (135 moving elements on home, 14 groups; 76/13 on the detail page) with durations, easings and animated properties, plus the reduced-motion comparison (partial: the page answers prefers-reduced-motion but still animates some properties) — emitted as core.motion tokens."
+  },
+  "F14": {
+    "grade": "meets",
+    "evidence": "The token sheet's own breakpoints are declared (-bp-01..07 = 440/600/800/1100/1400/1800px steps); raw/layout.json measures the shell at 1440/1920/1024/390 — navbar height, content widths, rail geometry and the sticky/fixed layers."
+  },
+  "C1": {
+    "grade": "partly",
+    "evidence": "The checklist is app-form oriented and the signed-out marketing site legitimately lacks most of it (text field, checkbox, radio, table, avatar, toast all live behind auth). Captured: button (hero-cta, plan-choose), icon button (hero-next carousel control), link (nav/footer/legal), card (plan, rail/title cards), dialog (cookie consent), menu (language selector, mobile nav sheet), switch-like toggle (billing period), accordion (FAQ), badge-style indicators. 37 components measured across 10 groups."
+  },
+  "C2": {
+    "grade": "meets",
+    "evidence": "default, hover, focus-visible, CDP-forced pressed and locally-opened states are recorded per component (carousel-next, billing toggle, FAQ opened, language list, consent buttons); absent states are recorded as absent, not faked."
+  },
+  "C3": {
+    "grade": "partly",
+    "evidence": "Real keyboard focus-visible was captured on the interactive set (nav links, sign-in, hero-cta, plan-choose, faq-item, rail-card, footer links, consent buttons); one CDP-forced pressed attempt failed on detail-cta and is recorded as a failure, not a state. A few components (rail-section, footer, m-menu-button) were absent at capture and carry no focus reading."
+  },
+  "C4": {
+    "grade": "meets",
+    "evidence": "Every component entry in components.md labels its measured colours with the matching dark.color.* token path and its metrics with the core scales; measured-only values that have no declared token are marked as measured evidence."
+  },
+  "P1": {
+    "grade": "partly",
+    "evidence": "patterns.md documents the marketing-surface patterns: shell (translucent navbar), hero carousel, plans with billing toggle, FAQ accordion, content rails, title detail, footer, cookie consent and the light legal surface — plus the boundary list. Forms/validation, search, empty/loading/error and destructive patterns do not exist on the signed-out site (they live behind auth.hbomax.com, recorded as a boundary)."
+  },
+  "A1": {
+    "grade": "meets",
+    "evidence": "5 inline SVGs collected into icons/ with INDEX.tsv (file, inferred name, hash, rendered sizes, viewBox, style, seen-on, place, label) — the language globe, carousel chevron and list glyphs the signed-out chrome actually ships; the HBO Max wordmark is image art, not an inline SVG. Max Sans is named with its weights and its proprietary-to-WBD licence note; webfonts are not committed and the fallback stack is documented."
+  },
+  "K1": {
+    "grade": "meets",
+    "evidence": "README states what was captured (routes, locales, viewports, states), how (headed Chromium under Xvfb because Akamai 403s headless, per-tool evidence chain) and what to distrust (single theme, SG locale, breakpoint variants, measured anchors, quantised screenshots)."
+  }
+}

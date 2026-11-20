@@ -1,0 +1,48 @@
+{
+  "captured": "2026-11-19",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1169,
+      "height": 731,
+      "scale": 1
+    }
+  },
+  "requestedWidths": [
+    1440,
+    390
+  ],
+  "actualWidth": 1169,
+  "note": "The preview tab viewport was fill and could not be resized. The browser returned 'The browser is not producing screenshot frames', so no PNG was saved.",
+  "pages": [
+    {
+      "url": "https://officevibe.com/",
+      "final": "https://workleap.com/officevibe",
+      "title": "Officevibe: Engagement Surveys and Feedback | Workleap"
+    },
+    {
+      "url": "https://workleap.com/pricing",
+      "title": "Workleap Pricing: Plans for Teams of Every Size"
+    },
+    {
+      "url": "https://workleap.com/demo",
+      "title": "See Workleap in action \u2013 request a demo with a product expert",
+      "entered": false,
+      "reason": "Form requires phone number, name, job title and company size. Not submitted."
+    },
+    {
+      "url": "https://login.workleap.com/",
+      "title": "Login with Workleap - Access Officevibe, Performance & Compensation",
+      "entered": false,
+      "reason": "Identifier field is 'Email or mobile number'. Not submitted. No self-serve email-only trial was shown."
+    }
+  ],
+  "marketingHtmlFontSize": "15.436px",
+  "loginHtmlFontSize": "16px",
+  "colorScheme": "normal",
+  "prefersColorSchemeDark": true,
+  "darkThemeServed": false,
+  "screenshots": "not captured: preview_snapshot failed with 'The browser is not producing screenshot frames'"
+}

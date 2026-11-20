@@ -1,0 +1,104 @@
+{
+  "capturedAt": "2026-11-20",
+  "url": "https://dashboard.exa.ai",
+  "account": "owner Personal team, already signed in",
+  "theme": {
+    "colorScheme": "dark",
+    "note": "System theme painted dark. Light theme was opened from the command palette; body background became lab(100 0 0). System was restored."
+  },
+  "viewport": {
+    "desktop": {
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2,
+      "visualViewport": {"width": 1440, "height": 900, "scale": 1}
+    },
+    "narrow": {
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "visualViewport": {"width": 390, "height": 844, "scale": 1}
+    }
+  },
+  "computed": {
+    "body": {
+      "backgroundColor": "lab(0 0 0)",
+      "color": "lab(96.5114 0.0971854 -0.364745)",
+      "fontFamily": "\"ABC Diatype\", \"ABC Diatype Fallback\", Arial, sans-serif"
+    },
+    "sidebar": {"widthPx": 240, "backgroundColor": "rgba(0, 0, 0, 0)"},
+    "navLink": {
+      "text": "API Keys",
+      "fontFamily": "\"ABC Diatype\", ui-sans-serif, system-ui",
+      "fontSize": "15px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "color": "lab(96.5114 0.0971854 -0.364745)",
+      "padding": "0px 8px",
+      "heightPx": 30
+    },
+    "pageHeading": {
+      "text": "API Keys",
+      "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+      "fontSize": "15px",
+      "fontWeight": "510",
+      "lineHeight": "22px",
+      "color": "lab(96.5114 0.0971854 -0.364745)"
+    },
+    "createKeyButton": {
+      "text": "Create Key",
+      "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+      "fontSize": "13px",
+      "fontWeight": "510",
+      "lineHeight": "16px",
+      "color": "lab(2.79605 1.88464 -13.6228)",
+      "backgroundColor": "lab(60.8356 8.41457 -59.5572)",
+      "border": "2px solid rgba(0, 0, 0, 0)",
+      "borderRadius": "8px",
+      "padding": "0px 10px",
+      "heightPx": 28,
+      "boxShadow": "none"
+    }
+  },
+  "customProperties": {
+    "note": "Resolved on :root while the home page was signed in, dark. 499 names. Selected dashboard roles below. The full set was read live and is not copied here because many names collide with the public harvest already in css-vars.json.",
+    "selected": {
+      "--color-background-primary": "lab(0% 0 0)",
+      "--color-background-secondary": "#0d0d10",
+      "--color-brand-solid": "lab(60.8356% 8.41457 -59.5572)",
+      "--color-brand-on-solid": "lab(2.79605% 1.88464 -13.6228)",
+      "--color-neutral-foreground-primary": "lab(96.5114% 0.0971854 -0.364745)",
+      "--color-neutral-foreground-secondary": "lab(75.5792% 0.693411 -2.54481)",
+      "--color-neutral-border": "lab(15.2619% 0.667006 -2.3488)",
+      "--color-exa-blue": "lab(36.0102% 41.6426 -91.1529)",
+      "--font-family-sans": "\"ABC Diatype\", \"ABC Diatype Fallback\", Arial, sans-serif",
+      "--font-mono": "\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, SFMono-Regular, Menlo, monospace",
+      "--radius": "8px",
+      "--radius-control": "8px",
+      "--radius-surface": "12px",
+      "--radius-pill": "1000px",
+      "--spacing": "0.25rem",
+      "--motion-duration": "0.15s",
+      "--motion-easing-standard": "cubic-bezier(0.2, 0, 0, 1)"
+    }
+  },
+  "nav": [
+    "Home",
+    "Search",
+    "Agent",
+    "Contents",
+    "Answer",
+    "Websets",
+    "Monitors",
+    "Usage",
+    "Requests",
+    "Billing",
+    "API Keys",
+    "Team Settings",
+    "Exa in Slack",
+    "Websets Settings",
+    "Docs",
+    "Exa MCP",
+    "Templates"
+  ]
+}

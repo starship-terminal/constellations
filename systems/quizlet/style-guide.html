@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quizlet style guide</title>
+<style>
+:root {
+  --page: #f6f7fb;
+  --surface: #ffffff;
+  --sunken: #f6f7fb;
+  --text: #282e3e;
+  --muted: #586380;
+  --faint: #939bb4;
+  --action: #4255ff;
+  --action-hover: #423ed8;
+  --secondary: #edefff;
+  --focus: #a8b1ff;
+  --inverse: #ffffff;
+  --promo: #1f1c8b;
+  --mint: #c7f7e6;
+  --stroke: #d9dde8;
+  --shadow: 0 4px 16px rgba(40, 46, 62, 0.1);
+  --font: hurme_no2-webfont, -apple-system, system-ui, sans-serif;
+  color-scheme: light;
+}
+[data-mode="dark"] {
+  --page: #282e3e;
+  --surface: #1a1d28;
+  --sunken: #2e3856;
+  --text: #f6f7fb;
+  --muted: #d9dde8;
+  --faint: #939bb4;
+  --action: #a8b1ff;
+  --action-hover: #7583ff;
+  --secondary: #423ed8;
+  --focus: #a8b1ff;
+  --inverse: #1a1d28;
+  --promo: #0a092d;
+  --mint: #59e8b5;
+  --stroke: #586380;
+  --shadow: 0 4px 16px rgba(1, 1, 16, 0.45);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/26px var(--font); }
+header { position: sticky; top: 0; background: var(--surface); padding: 12px 24px; display: flex; align-items: center; gap: 16px; z-index: 2; }
+h1 { font: 700 20px/28px var(--font); margin: 0; }
+nav { display: flex; gap: 16px; flex: 1; }
+nav a { color: var(--muted); text-decoration: none; font: 600 14px/20px var(--font); }
+button.switch { margin-left: auto; }
+main { max-width: 1080px; margin: 0 auto; padding: 32px 24px 64px; }
+section { padding-top: 40px; }
+h2 { font: 700 32px/40px var(--font); margin: 0 0 8px; }
+p.lead { color: var(--muted); margin: 0 0 16px; max-width: 70ch; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.sw { background: var(--surface); border-radius: 8px; padding: 12px; box-shadow: var(--shadow); }
+.sw i { display: block; height: 40px; border-radius: 8px; margin-bottom: 8px; border: 1px solid var(--stroke); }
+.sw b { display: block; font: 600 12px/16px ui-monospace, monospace; }
+.sw span { color: var(--muted); font-size: 12px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; border: 2px solid transparent; border-radius: 200px; font: 600 14px/20px var(--font); padding: 10px 16px; height: 40px; cursor: pointer; text-decoration: none; }
+.btn.primary { background: var(--action); color: var(--inverse); }
+.btn.primary:hover { background: var(--action-hover); }
+.btn.secondary { background: var(--secondary); color: var(--action); }
+.btn.large { height: 48px; padding: 12px 24px; font-size: 16px; line-height: 24px; }
+.btn.xlarge { height: 56px; padding: 16px 32px; font-size: 16px; }
+.btn:focus-visible { border-color: var(--focus); outline: none; }
+.link { color: var(--action); font: 600 14px/20px var(--font); text-decoration: none; border-radius: 4px; }
+.link:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.field { display: flex; align-items: center; height: 56px; padding: 8px 16px; background: var(--sunken); border: 2px solid transparent; border-radius: 8px; width: min(100%, 420px); }
+.field:focus-within { border-color: var(--focus); background: var(--surface); }
+.field input { border: 0; background: transparent; color: var(--text); font: 600 16px/24px var(--font); width: 100%; outline: none; }
+.field input::placeholder { color: var(--faint); font-weight: 600; }
+.card { background: var(--surface); border-radius: 24px; box-shadow: 0 2px 4px rgba(40, 46, 62, 0.1); padding: 24px; width: 280px; }
+.tile { border-radius: 24px; padding: 24px; width: 220px; height: 160px; font: 700 24px/32px var(--font); }
+.modal { background: var(--surface); border-radius: 16px; box-shadow: var(--shadow); padding: 24px; max-width: 480px; }
+.promo { background: var(--promo); color: #fff; border-radius: 8px; padding: 12px 16px; display: flex; gap: 16px; align-items: center; }
+.promo a { color: var(--mint); font-weight: 600; }
+.type p { margin: 8px 0; }
+code { font-family: ui-monospace, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Quizlet</h1>
+  <nav>
+    <a href="#color">Color</a>
+    <a href="#type">Type</a>
+    <a href="#controls">Controls</a>
+  </nav>
+  <button class="btn secondary switch" type="button" id="theme">Night tokens</button>
+</header>
+<main>
+  <p class="lead">Values measured on quizlet.com on 19 November 2026, signed out, at a 1169 by 731 CSS viewport. Night tokens come from the body.theme-night rules. That class was not painted on the pages that loaded.</p>
+  <section id="color">
+    <h2>Color</h2>
+    <div class="swatches" id="swatches"></div>
+  </section>
+  <section id="type">
+    <h2>Type</h2>
+    <div class="type">
+      <p style="font:700 44px/56px var(--font);margin:0">How do you want to study?</p>
+      <p style="font:400 20px/28px var(--font)">Discover, create, and master your study material.</p>
+      <p style="font:700 32px/40px var(--font)">Any input. Instant study materials.</p>
+      <p style="font:400 16px/26px var(--font)">Body copy uses Hurme Geo Sans No2 at 16px over 26px.</p>
+      <p style="font:600 14px/20px var(--font)">Label at 14px, weight 600.</p>
+    </div>
+  </section>
+  <section id="controls">
+    <h2>Controls</h2>
+    <div class="row">
+      <button class="btn primary" type="button">Log in</button>
+      <button class="btn secondary" type="button">Teachers</button>
+      <button class="btn primary large" type="button">Sign up for free</button>
+      <button class="btn primary xlarge" type="button">Stay on track</button>
+      <a class="link" href="#controls">Create</a>
+    </div>
+    <p></p>
+    <label class="field"><input placeholder="Enter your email address or username"></label>
+    <p></p>
+    <div class="row">
+      <div class="tile" style="background:#4255ff;color:#fff">Record Lecture</div>
+      <div class="tile" style="background:#d9ffcc;color:#000">Study Guides</div>
+      <div class="card"><b>About Quizlet</b><p style="color:var(--muted);font-size:14px">Mission card, 24px radius, shadow 0 2px 4px.</p></div>
+    </div>
+    <p></p>
+    <div class="promo"><span>WORLD RECORD DAY</span><a href="#controls">RSVP now</a></div>
+    <p></p>
+    <div class="modal">
+      <p style="font:700 32px/40px var(--font);margin:0 0 8px">Request a magic link</p>
+      <p style="margin:0 0 16px">Enter the email you signed up with and we'll send you a link to log in.</p>
+      <label class="field"><input placeholder="Enter your email"></label>
+    </div>
+  </section>
+</main>
+<script>
+const swatches = [
+  ["page", "--page", "gray-200"],
+  ["surface", "--surface", "gray-100"],
+  ["text", "--text", "gray-800"],
+  ["muted", "--muted", "gray-600"],
+  ["action", "--action", "twilight-500"],
+  ["secondary", "--secondary", "twilight-100"],
+  ["focus", "--focus", "twilight-300"],
+  ["promo", "--promo", "twilight-700"],
+  ["mint", "--mint", "mint-200"],
+  ["stroke", "--stroke", "gray-400"]
+];
+const root = document.getElementById("swatches");
+for (const [name, variable] of swatches) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = "<i></i><b></b><span></span>";
+  el.querySelector("i").style.background = "var(" + variable + ")";
+  el.querySelector("b").textContent = name;
+  el.querySelector("span").textContent = variable;
+  root.appendChild(el);
+}
+document.getElementById("theme").addEventListener("click", () => {
+  const html = document.documentElement;
+  const next = html.getAttribute("data-mode") === "dark" ? "light" : "dark";
+  html.setAttribute("data-mode", next);
+  document.getElementById("theme").textContent = next === "dark" ? "Light tokens" : "Night tokens";
+});
+</script>
+</body>
+</html>

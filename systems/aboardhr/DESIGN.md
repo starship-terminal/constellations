@@ -208,6 +208,7 @@ The home page is the screen to get right. A 90px fixed band holds the wordmark, 
 
 ### What to distrust (from README.md)
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **Screenshots are 256-colour PNGs.** Gradients, photography and the pastel tints band slightly; read exact colours from tokens.json or the raw files.
 - **Several brand fills paint in Display P3.** The token records the sRGB conversion (`#009cff` from `color(display-p3 0 0.599909 1)`, and so on); the P3 original is in the token's description and in css-vars.json, where unresolved P3 strings carry a "colour space not converted" note.
 - **The pressed link colour is `#ff0000`.** Framer's stylesheet declares `a:active { color: red }`; the pressed rows show it. It is a framework default, not a design choice.
@@ -216,8 +217,9 @@ The home page is the screen to get right. A 90px fixed band holds the wordmark, 
 - **The co-pilot chat is a marketing animation.** The home hero's assistant demo (the "Ask me anything" prompt) is canned content, not a live product.
 - **`nav-bar` and `m-nav-bar` measure `box-shadow rgba(23,23,23,0.08) 0 0 0 0`.** A zero-offset, zero-blur shadow paints nothing; the header has no real shadow.
 - **`m-nav-bar` measures 37 x 16.** The selector caught the trigger's hit area, not the 390-wide band; the band's real height is the fixed header's 64px (see [raw/layout.json](raw/layout.json)).
-- **Mobile `-full` screenshots stitch viewport slices.** `mobile-*-light-full.png` are stitched from `*.partN.png` tiles in raw/full; the stitch seams can shift a pixel.
+- **Mobile `-full` screenshots stitch viewport slices.** `mobile-*-light-full.png` are stitched from `*.partN.png` tiles in the scratch dir (`~/.design-systems/aboardhr/raw-shots`, outside the repo); the stitch seams can shift a pixel.
 - **Billing toggle and demo submit button states.** The pricing page has no monthly/yearly switch (`billing-toggle` records missing); the demo submit was measured in all four states but never pressed.
+- **`nav-cta` was read from the wrong elements.** `.last()` over every "Book a demo" link took the footer CTA for the default state (y=6854) and the hero CTA for the others (y=430), not the button in the nav. Needs a recapture; the script now searches inside the header (not run since). The CTA tokens now cite only the other CTAs (`cta-demo`, `cta-try`, `plan-cta` and the rest), which hold the same values.
 
 ### Do and don't (from README.md)
 

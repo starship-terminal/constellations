@@ -1,0 +1,92 @@
+{
+  "source": "https://opensea.io/ stylesheets, read in the T3 preview browser on 2026-11-19, signed out. html class was 'x9T2SG_variable K3wO1q_variable dark cc--darkmode'. Colour custom properties were declared on ':root, .dark' and '.light' in https://opensea.io/_next/static/chunks/42m_qrqpbfsj8.css (deploy dpl_CwpX9e5BmHVkkWTfWfcCD4h6Cth3). Channel triplets were painted onto a probe with background-color and read back as computed rgb. Alpha forms were already rgb() and resolved on the same probe. The live page stayed dark. Light values are the .light rule, resolved on the probe, not a live theme switch.",
+  "viewport": {
+    "desktop": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewport": {"width": 1440, "height": 900, "scale": 1}},
+    "phone": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2, "visualViewport": {"width": 390, "height": 844, "scale": 1}},
+    "note": "preview_resize to 1440x900 and 390x844 both settled at those CSS viewports after navigation. An intermediate resize during a navigation reported 1280x800 and was not used."
+  },
+  "fonts": {
+    "sans": "gtAmerica, \"gtAmerica Fallback\", ui-sans-serif, system-ui, sans-serif",
+    "mono": "gtAmericaMono, \"gtAmericaMono Fallback\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace",
+    "faces": [
+      {"family": "gtAmerica", "weight": "400", "file": "GT_America_Standard_Regular"},
+      {"family": "gtAmerica", "weight": "500", "file": "GT_America_Standard_Medium"},
+      {"family": "gtAmerica", "weight": "600", "file": "GT_America_Standard_Bold"},
+      {"family": "gtAmericaMono", "weight": "400", "file": "GT_America_Mono_Regular"},
+      {"family": "gtAmericaMono", "weight": "500", "file": "GT_America_Mono_Medium"}
+    ]
+  },
+  "colors": {
+    "white": {"dark": "#ffffff", "light": "#ffffff", "raw": "255 255 255"},
+    "black": {"dark": "#000000", "light": "#000000", "raw": "0 0 0"},
+    "text-primary": {"dark": "#ffffff", "light": "#171717"},
+    "text-secondary": {"dark": "#acacac", "light": "#666666"},
+    "text-tertiary": {"dark": "#444444", "light": "#c9c9c9"},
+    "bg-app": {"dark": "#080808", "light": "#fafafa"},
+    "bg-primary": {"dark": "#0c0c0c", "light": "#ffffff"},
+    "bg-secondary": {"dark": "#0f0f0f", "light": "#fafafa"},
+    "bg-additional-1": {"dark": "#161616", "light": "#f2f2f2"},
+    "bg-additional-2": {"dark": "#202020", "light": "#ebebeb"},
+    "bg-additional-3": {"dark": "#333333", "light": "#e6e6e6"},
+    "bg-contrast-1": {"dark": "#8a8a8a", "light": "#8f8f8f"},
+    "bg-contrast-2": {"dark": "#969696", "light": "#808080"},
+    "border-1": {"dark": "#202020", "light": "#ebebeb"},
+    "border-2": {"dark": "#2c2c2c", "light": "#dcdcdc"},
+    "border-3": {"dark": "#444444", "light": "#c9c9c9"},
+    "blue-1": {"dark": "#83c3ff", "light": "#83c3ff"},
+    "blue-2": {"dark": "#2092ff", "light": "#2092ff"},
+    "blue-3": {"dark": "#0086ff", "light": "#0086ff"},
+    "blue-4": {"dark": "#0679e6", "light": "#0679e6"},
+    "blue-5": {"dark": "#055eb3", "light": "#055eb3"},
+    "blue-6": {"dark": "#2097ff", "light": "#2097ff"},
+    "blue-7": {"dark": "#23028f", "light": "#23028f"},
+    "link": {"dark": "#83c3ff", "light": "#0086ff", "note": "dark aliases blue-1, light aliases blue-3"},
+    "link-hover": {"dark": "#0086ff", "light": "#055eb3", "note": "dark aliases blue-3, light aliases blue-5"},
+    "pink-1": {"dark": "#ff00aa", "light": "#ff00aa"},
+    "pink-2": {"dark": "#e60099", "light": "#e60099"},
+    "purple-1": {"dark": "#5c00d2", "light": "#5c00d2"},
+    "purple-2": {"dark": "#7b00ff", "light": "#7b00ff"},
+    "legendary": {"dark": "#ff8a00", "light": "#ff8a00"},
+    "epic": {"dark": "#d358ff", "light": "#a335ee"},
+    "rare": {"dark": "#00a3ff", "light": "#0066ff"},
+    "common": {"dark": "#8a8a8a", "light": "#8f8f8f"},
+    "success-1": {"dark": "#47bb64", "light": "#28a948"},
+    "success-2": {"dark": "#0fbe39", "light": "#03bc31"},
+    "success-3": {"dark": "#089d2e", "light": "#009a27"},
+    "warning": {"dark": "#ffcc00", "light": "#e6b800"},
+    "caution": {"dark": "#f47100", "light": "#f47100"},
+    "error-1": {"dark": "#e24756", "light": "#ea3943"},
+    "error-2": {"dark": "#de2b3d", "light": "#e8212b"},
+    "error-3": {"dark": "#c21e2f", "light": "#cb151e"},
+    "overlay": {"dark": "rgba(0, 0, 0, 0.6)", "light": "rgba(0, 0, 0, 0.4)"},
+    "border-special-inset-1": {"dark": "rgba(255, 255, 255, 0.08)", "light": "rgba(0, 0, 0, 0.08)"},
+    "frosted": {
+      "1": "rgba(255, 255, 255, 0.04)",
+      "2": "rgba(255, 255, 255, 0.08)",
+      "3": "rgba(255, 255, 255, 0.12)",
+      "4": "rgba(255, 255, 255, 0.16)",
+      "5": "rgba(255, 255, 255, 0.24)",
+      "6": "rgba(255, 255, 255, 0.32)",
+      "7": "rgba(255, 255, 255, 0.5)",
+      "note": "Same computed values on the probe in both themes. The declaration uses --color-white in both."
+    }
+  },
+  "z": {
+    "inset-border": "10",
+    "sidebar": "110",
+    "fixed-bottom-sheet": "210",
+    "takeover-modal-overlay": "310",
+    "takeover-modal": "410",
+    "overlay": "510",
+    "sheet": "610",
+    "modal": "710",
+    "tooltip": "810",
+    "toast": "910",
+    "top": "1010"
+  },
+  "focus": {
+    "input-focus-outline": "none 1px #99c8ff",
+    "input-rest-outline": "none 3px #ffffff",
+    "note": "Measured on the Connect with OpenSea email input. Focused: outline none 1px rgb(153, 200, 255). Blurred: outline none 3px rgb(255, 255, 255). The wrapper border did not change."
+  }
+}

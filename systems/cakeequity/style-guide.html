@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cake Equity style guide</title>
+<meta name="description" content="Cake Equity design tokens and the signed-out public surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-display: "Exposure Light", "Times New Roman", sans-serif;
+  --font-family-body: Inter, Arial, sans-serif;
+  --font-family-auth: Inter, system-ui, -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-served-display-bold: Exposure Bold;
+  --font-family-served-youth: Youth;
+  --font-family-served-mono: Inconsolata;
+  --font-family-served-jakarta: Plus Jakarta Sans;
+  --font-size-display: 60px;
+  --font-size-display-mobile: 52px;
+  --font-size-h2: 44px;
+  --font-size-price: 40px;
+  --font-size-auth-heading: 24px;
+  --font-size-faq-question: 22.4px;
+  --font-size-lede: 20px;
+  --font-size-plan-name: 20px;
+  --font-size-story: 18px;
+  --font-size-menu-link: 16.8px;
+  --font-size-eyebrow: 16px;
+  --font-size-body: 16px;
+  --font-size-footer-link: 16px;
+  --font-size-pill: 15px;
+  --font-size-plan-cta: 15px;
+  --font-size-nav: 14px;
+  --font-size-badge: 13px;
+  --font-lineHeight-display: 66px;
+  --font-lineHeight-display-mobile: 57.2px;
+  --font-lineHeight-h2: 44px;
+  --font-lineHeight-lede: 32px;
+  --font-lineHeight-faq-question: 26.88px;
+  --font-lineHeight-menu-link: 26.88px;
+  --font-lineHeight-nav: 18.2px;
+  --font-lineHeight-body: 16.8px;
+  --font-weight-display: 400;
+  --font-weight-heading: 300;
+  --font-weight-lede: 300;
+  --font-weight-menu-link: 600;
+  --font-weight-eyebrow: 600;
+  --font-weight-body: 400;
+  --font-weight-pill: 500;
+  --font-weight-badge: 500;
+  --font-weight-footer-link: 300;
+  --font-letterSpacing-display: -2px;
+  --font-letterSpacing-h2: -1px;
+  --font-letterSpacing-lede: -0.3px;
+  --font-letterSpacing-eyebrow: 0.8px;
+  --font-letterSpacing-price: -1.6px;
+  --font-letterSpacing-footer-link: -0.16px;
+  --color-ink-100: #18161a;
+  --color-ink-75: rgba(24, 22, 26, 0.75);
+  --color-ink-50: rgba(24, 22, 26, 0.5);
+  --color-ink-25: rgba(24, 22, 26, 0.25);
+  --color-ink-10: rgba(24, 22, 26, 0.1);
+  --color-neutral-white: #ffffff;
+  --color-neutral-warm-white: #fafaf8;
+  --color-neutral-grey: #ececf0;
+  --color-neutral-dark-grey: #161640;
+  --color-neutral-black: #18161a;
+  --color-neutral-white-50: rgba(255, 255, 255, 0.5);
+  --color-neutral-white-25: rgba(255, 255, 255, 0.25);
+  --color-neutral-white-90: rgba(250, 250, 250, 0.7);
+  --color-neutral-grey-50: rgba(236, 236, 240, 0.5);
+  --color-plum-bright: #4823ff;
+  --color-plum-dark: #2b1599;
+  --color-plum-new: #6d67fb;
+  --color-plum-100: #7e78ff;
+  --color-plum-light: #b2aeff;
+  --color-plum-lighter: #ede9ff;
+  --color-plum-lightest: #f5f4fb;
+  --color-plum-contrast: #932a74;
+  --color-plum-5: rgba(126, 120, 255, 0.05);
+  --color-plum-10: rgba(126, 120, 255, 0.1);
+  --color-plum-25: rgba(126, 120, 255, 0.25);
+  --color-plum-50: rgba(126, 120, 255, 0.5);
+  --color-plum-75: rgba(126, 120, 255, 0.75);
+  --color-berry-100: #99cefe;
+  --color-berry-highlight: #0e87d7;
+  --color-berry-light: #ebf5ff;
+  --color-berry-15: rgba(153, 206, 254, 0.15);
+  --color-berry-25: rgba(153, 206, 254, 0.25);
+  --color-berry-50: rgba(153, 206, 254, 0.5);
+  --color-lemon-100: #e7ff6e;
+  --color-lemon-highlight: #556309;
+  --color-lemon-light: #f6fdd1;
+  --color-lemon-25: rgba(231, 255, 110, 0.25);
+  --color-lemon-50: rgba(231, 255, 110, 0.5);
+  --color-lime-100: #9aff91;
+  --color-lime-highlight: #078f00;
+  --color-lime-go-green: #e3f9c9;
+  --color-lime-light: #ebffe9;
+  --color-lime-25: rgba(154, 255, 145, 0.15);
+  --color-lime-50: rgba(154, 255, 145, 0.5);
+  --color-tangerine-100: #ffa360;
+  --color-tangerine-highlight: #e27500;
+  --color-tangerine-light: #ffeddf;
+  --color-tangerine-25: rgba(255, 163, 96, 0.25);
+  --color-tangerine-50: rgba(255, 163, 96, 0.5);
+  --color-measured-nav-text: #222222;
+  --color-measured-dark-band: #0e0d12;
+  --color-measured-plan-top: #faf9ff;
+  --color-measured-save-pill: #c6f0dc;
+  --color-measured-chip-border: #ebe8f2;
+  --color-measured-field-border: #d9d9e0;
+  --color-measured-field-focus: #3898ec;
+  --color-measured-focus: #005fcc;
+  --color-measured-dark-hairline: rgba(244, 244, 244, 0.18);
+  --color-auth-primary: #5a38fd;
+  --color-auth-oauth: #f5f5f5;
+  --color-auth-oauth-hover: #ebebeb;
+  --color-auth-oauth-pressed: #dbdbdb;
+  --color-auth-text: #0f0f0f;
+  --color-auth-muted: #2b2b2b;
+  --color-auth-link: #1c029d;
+  --color-auth-field-border: #ababab;
+  --color-auth-focus: #0054f0;
+  --radius-pill: 100px;
+  --radius-toggle: 999px;
+  --radius-nav-login: 50px;
+  --radius-dropdown: 20px;
+  --radius-dark-band: 28px;
+  --radius-card: 16px;
+  --radius-auth: 8px;
+  --radius-menu-button: 4px;
+  --shadow-nav: 0px 2px 20px -19px rgba(0, 0, 0, 0.2);
+  --shadow-dropdown: 0px 0px 20px -5px rgba(24, 22, 26, 0.25);
+  --shadow-card: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+  --shadow-faq-open: 0px 2px 10px -8px rgba(0, 0, 0, 0.2);
+  --gradient-pulley-tag: linear-gradient(180deg, #616d3b 0.0%, #616d3b 55.0%, #906a37 78.0%, #c96733 100.0%);
+  --duration-button: 200ms;
+  --duration-ghost: 400ms;
+  --duration-faq: 300ms;
+  --duration-story: 200ms;
+  --duration-auth: 150ms;
+  --duration-mega-nav: 500ms;
+  --duration-nav-panel: 300ms;
+  --measured-focus-outline: 1px auto #005fcc;
+  --measured-auth-focus-outline: 2px solid #0054f0 offset 2px;
+  --measured-faq-open-lift: matrix(1, 0, 0, 1, 0, -2);
+  --measured-mobile-layout-width: 745;
+  --text-primary: var(--color-ink-100);
+  --text-secondary: var(--color-measured-nav-text);
+  --text-muted: var(--color-ink-50);
+  --text-link: var(--color-plum-bright);
+  --text-on-accent: var(--color-neutral-white);
+  --text-on-dark: var(--color-neutral-white);
+  --surface-dark: var(--color-ink-100);
+  --surface-page: var(--color-neutral-white);
+  --surface-card: var(--color-neutral-white);
+  --surface-warm: var(--color-neutral-warm-white);
+  --surface-muted: var(--color-neutral-grey);
+  --surface-tint: var(--color-plum-lightest);
+  --surface-plan-top: var(--color-measured-plan-top);
+  --action-primary-default: var(--color-plum-bright);
+  --action-primary-hover: var(--color-plum-dark);
+  --action-ghost-border: var(--color-plum-bright);
+  --accent-subtle: var(--color-plum-lighter);
+  --accent-success: var(--color-measured-save-pill);
+  --border-field-default: var(--color-measured-field-border);
+  --border-field-focus: var(--color-measured-field-focus);
+  --border-subtle: var(--color-ink-10);
+  --border-chip: var(--color-measured-chip-border);
+  --border-plan: var(--color-plum-25);
+  --focus-ring: var(--color-measured-focus);
+  --state-hover-wash: var(--color-plum-10);
+  --auth-action-primary: var(--color-auth-primary);
+  --auth-surface-secondary: var(--color-auth-oauth);
+  --auth-border-field: var(--color-auth-field-border);
+  --auth-text-link: var(--color-auth-link);
+  --auth-focus-ring: var(--color-auth-focus);
+  --component-control-height: 58.7969px;
+  --component-button-height: 44.1875px;
+  --component-plan-cta-height: 49px;
+  --component-field-height: 48px;
+  --component-header-height: 74.1875px;
+  --component-header-height-mobile: 68px;
+  --component-plan-card-width: 312px;
+  --component-login-card-width: 496px;
+  --component-nav-dropdown-width: 1008px;
+  --component-menu-button-size: 48px;
+  --sg-sans: var(--font-family-body, Inter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif);
+  --sg-serif: var(--font-family-display, "Times New Roman", Georgia, serif);
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --surface-band: var(--color-measured-dark-band);
+  --surface-page: var(--color-ink-100);
+  --text-primary: var(--color-neutral-white);
+  --text-muted: var(--color-neutral-white-50);
+  --text-link-hover: var(--color-plum-100);
+  --text-eyebrow: var(--color-lemon-100);
+  --border-hairline: var(--color-measured-dark-hairline);
+  --border-accent: var(--color-plum-10);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #18161a); background: var(--surface-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 600 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-primary, #18161a); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-subtle, #e5e5ea); }
+.lead { max-width: 62ch; color: var(--text-primary, #18161a); opacity: .8; }
+.note { font-size: 13px; color: var(--text-primary, #18161a); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 600 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-primary, #18161a); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-subtle, #e5e5ea); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-primary, #18161a); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-subtle, #e5e5ea); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-primary, #18161a); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border-subtle, #e5e5ea); overflow: hidden; background: var(--surface-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: 74px; padding: 0 12px 0 22px; font-size: 14px; background: var(--surface-page, #fff); border-bottom: 1px solid var(--border-subtle, #e5e5ea); }
+.navbar .wm { font-weight: 600; font-size: 20px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 59px); padding: 0 28px; font-size: 19px; font-weight: 400; border-radius: var(--radius-pill, 100px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-primary-default, #4823ff); color: var(--text-on-accent, #fff); }
+.btn.small { height: var(--component-button-height, 44px); border-radius: var(--radius-pill, 100px); font-size: 14px; }
+.btn.ghost { background: transparent; border-color: var(--action-ghost-border, #4823ff); color: var(--action-ghost-border, #4823ff); }
+.hero { color: var(--text-primary, #18161a); padding: 72px 40px; font: 400 60px/1.1 var(--sg-serif); letter-spacing: -2px; }
+.hero small { display: block; font: 300 20px/1.6 var(--sg-sans); color: var(--text-primary, #000); margin: 16px auto 22px; max-width: 46ch; letter-spacing: -0.3px; }
+.chip { display: inline-flex; align-items: center; gap: 8px; background: var(--surface-card, #fff); border: 1px solid var(--border-chip, #ebe8f2); border-radius: var(--radius-pill, 100px); padding: 8px 14px; font-size: 15px; font-weight: 500; margin-bottom: 24px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border-subtle, #e5e5ea); padding: 14px; font-size: 13px; background: #fff; }
+.tile b { display: block; font: 400 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-subtle, #e5e5ea); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-subtle, #e5e5ea); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--text-primary, #18161a); opacity: .65; font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: var(--surface-card, #fff); border: 1px solid var(--border-field-default, #d9d9e0); border-radius: 999px; padding: 4px; gap: 4px; font-size: 14px; }
+.toggle span { padding: 8px 22px; border-radius: 999px; }
+.toggle .on { background: var(--color-ink-100, #18161a); color: var(--text-on-dark, #fff); }
+.save { display: inline-block; background: var(--accent-success, #c6f0dc); border-radius: 30px; padding: 2px 9px; font-size: 12px; font-weight: 500; }
+.eyebrow { font: 600 14px/1.2 var(--sg-sans); letter-spacing: .8px; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Cake Equity style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Cake Equity, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared <code>--plum--*</code>/<code>--blackberry--*</code> Webflow palette (the #4823ff brand violet and its #2b1599 pressed step, the #18161a ink, the berry/lemon/lime/tangerine accents and their alphas), the Exposure Light type ramp from the 60px display to the 13px badge, the 100px/999px pill radii and the 20-28px cards, the measured one-offs (the mint #c6f0dc save pill, the #d9d9e0 field borders, the #005fcc focus ring), the Kinde auth card's own violet scale, and the dark roles of the #18161a footer and #0e0d12 Cake-MCP band. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from cakeequity.com on 2026-11-11, signed out, in headless Chromium. The equity-management app behind app.cakeequity.com is a documented boundary; the login card on the hosted auth domain was measured as a form and never filled. Exposure, Youth and Cabinetgrotesk are served faces and are not loaded here: samples fall back to Times/system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A fixed white navbar carries the cake. wordmark, the Product/Solutions mega-nav, Pricing, Login and Book-a-demo — and the violet 100px Get-started-free pill. The same violet fills every primary action on the page; the ghost variant is a 1px violet ring. Hover and press darken to #2b1599.</p>
+  <div class="mock" style="padding:0 0 20px">
+    <div class="navbar"><span class="wm">cake.</span><span>Product</span><span>Solutions</span><span>Resources</span><span>Pricing</span><span class="sp"></span><span>Login</span><span class="btn small ghost">Book a demo</span> <span class="btn small primary">Get started free</span></div>
+    <div class="hero"><span class="chip">Pulley is shutting down — How managed migration works &rarr;</span><br>The equity platform for growing startups<small>Cap table management, equity incentives, valuations and compliance — everything a startup needs to manage equity, without the complexity.</small><span class="btn primary">Get started free</span> <span class="btn ghost">Book a demo</span></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing carries a 200px region select and the white Yearly/Quarterly 999px switch (ink pill on the active half, a mint -20% save pill), over white plan cards — the featured Growth tier picks up a 25% plum border and an #ede9ff most-popular ribbon; its price paints 40px Inter.</p>
+  <div class="mock" style="padding:20px">
+    <div style="text-align:center;margin-bottom:18px"><span class="toggle"><span class="on">Yearly</span><span>Quarterly</span></span> <span class="save">-20% save</span></div>
+    <div class="grid">
+      <div class="tile" style="border-radius:20px"><b>Growth</b><span class="sub">S$1,128 billed annually</span></div>
+      <div class="tile" style="border-radius:20px;border:1px solid var(--border-plan,#c9c3ff);box-shadow:0 -32px 0 0 var(--accent-subtle,#ede9ff) inset"><b>Scale</b><span class="sub">Most popular</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn small primary">Start free</span></div>
+  </div>
+
+  <h2 class="sh">The dark surfaces</h2>
+  <p class="lead">Not a theme — two regions on the light page paint dark: the #18161a footer (white links, #7e78ff hover) and the #0e0d12 Cake-MCP band with its lemon #e7ff6e eyebrows and 18%-white hairlines.</p>
+  <div class="mock dark" style="padding:24px;background:var(--surface-band,#0e0d12);border-radius:var(--radius-dark-band,28px);color:var(--text-primary,#fff)">
+    <div class="eyebrow" style="color:var(--text-eyebrow,#e7ff6e);margin-bottom:12px">Cake MCP</div>
+    <div style="font:300 24px/1.3 var(--sg-serif);max-width:30ch">Let your AI read the cap table.</div>
+    <div style="border-top:1px solid var(--border-hairline,rgba(244,244,244,0.18));margin-top:18px;padding-top:12px;font-size:14px;color:var(--text-muted,rgba(255,255,255,0.5))">Model Context Protocol server &mdash; query equity data from Claude.</div>
+  </div>
+
+  <h2 class="sh">The hosted login</h2>
+  <p class="lead">app.cakeequity.com/login hands off to Kinde (authentication.cakeequity.com): a 496px white card on 16px radius, an 8px email field, a #5a38fd Continue — close to but not the marketing plum — and #f5f5f5 OAuth buttons.</p>
+  <div class="mock" style="padding:32px;display:flex;justify-content:center">
+    <div style="width:340px;background:#fff;border:1px solid var(--border-subtle,#e5e5ea);border-radius:var(--radius-card,16px);padding:32px">
+      <div style="font:500 24px/1.3 var(--sg-sans);letter-spacing:-0.48px;margin-bottom:20px">Welcome back</div>
+      <div style="border:1px solid var(--color-auth-field-border,#ababab);border-radius:var(--radius-auth,8px);height:48px;margin-bottom:12px;padding:12px;font-size:14px;color:#999">Email</div>
+      <div style="background:var(--color-auth-primary,#5a38fd);color:#fff;border-radius:var(--radius-auth,8px);height:48px;display:flex;align-items:center;justify-content:center;font-weight:500">Continue</div>
+      <div style="text-align:center;font-size:13px;margin:12px 0;color:#666">Or</div>
+      <div style="background:var(--color-auth-oauth,#f5f5f5);border-radius:var(--radius-auth,8px);height:48px;display:flex;align-items:center;justify-content:center;font-weight:500;margin-bottom:8px">Continue with Google</div>
+      <div style="background:var(--color-auth-oauth,#f5f5f5);border-radius:var(--radius-auth,8px);height:48px;display:flex;align-items:center;justify-content:center;font-weight:500">Continue with LinkedIn</div>
+      <div style="text-align:center;margin-top:16px;font-size:14px">No account? <span style="color:var(--color-auth-link,#1c029d);font-weight:500">Create one</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared <code>--blackberry--*</code>/<code>--plum--*</code> layer carries the ink and the accent ramps; the measured <code>color.measured.*</code> and <code>color.auth.*</code> readings carry the one-offs and the Kinde card. Light roles alias the palette, dark roles the two dark surfaces.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Radius, gradient and motion</h2>
+  <p class="lead">Pills everywhere: 100px on buttons and selects, 999px on the billing toggle, 50px on the nav Login. Cards run 16-28px; the Kinde controls 8px. Borders are hairlines: #d9d9e0 on fields, 10% ink inside content, 25% plum on the featured card.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two painted faces: <code>Exposure Light</code> on display and headings (60/66 -2px h1s, 44/44 -1 h2s), <code>Inter</code> on everything else — 300 ledes, 600 menu links and eyebrows, 400 body. The Kinde card runs its own Inter/system stack at 24px/16px.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --plum--*/--blackberry--* variables from the live Webflow bundle and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened and toggled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"display":{"v":"\"Exposure Light\", \"Times New Roman\", sans-serif","t":"fontFamily","s":"computed fontFamily of hero-title default (raw/components-computed.json)","d":"The display serif face (Exposure Light first) on every h1/h2 — served from the Webflow CDN, falls back to Times New Roman."},"body":{"v":"Inter, Arial, sans-serif","t":"fontFamily","s":"computed fontFamily of nav-link default (raw/components-computed.json)","d":"The UI/body stack (Inter first) on nav, buttons, copy and cards — served alongside Exposure."},"auth":{"v":"Inter, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif","t":"fontFamily","s":"computed fontFamily of login-card default (raw/components-computed.json)","d":"The Kinde hosted-auth stack (Inter, then system-ui) — a different, older toolchain than the marketing pages."},"served-display-bold":{"v":"Exposure Bold","t":"fontFamily","s":"@font-face declaration in the served stylesheets (raw/css-vars.json fonts); declared, not observed painting","d":"Served @font-face (plus italic) in the Webflow bundle; not painted on any measured component on this pass."},"served-youth":{"v":"Youth","t":"fontFamily","s":"@font-face declaration in the served stylesheets (raw/css-vars.json fonts); declared, not observed painting","d":"Served @font-face in the Webflow bundle; not painted on any measured component on this pass."},"served-mono":{"v":"Inconsolata","t":"fontFamily","s":"@font-face declaration in the served stylesheets (raw/css-vars.json fonts); declared, not observed painting","d":"Served via fonts.googleapis.com (the mono face); not painted on any measured component on this pass."},"served-jakarta":{"v":"Plus Jakarta Sans","t":"fontFamily","s":"@font-face declaration in the served stylesheets (raw/css-vars.json fonts); declared, not observed painting","d":"Served via fonts.googleapis.com; not painted on any measured component on this pass."}},"size":{"display":{"v":"60px","t":"dimension","s":"computed fontSize of hero-title default (raw/components-computed.json)","d":"The Exposure display size on every marketing h1 (pricing, feature, blog and demo heads share it)."},"display-mobile":{"v":"52px","t":"dimension","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The display size at 390px."},"h2":{"v":"44px","t":"dimension","s":"computed fontSize of section-h2 default (raw/components-computed.json)","d":"The Exposure section-heading size (also the blog card title)."},"price":{"v":"40px","t":"dimension","s":"computed fontSize of plan-price default (raw/components-computed.json)","d":"The plan-card price figure."},"auth-heading":{"v":"24px","t":"dimension","s":"computed fontSize of login-title default (raw/components-computed.json)","d":"The Kinde Welcome-back heading."},"faq-question":{"v":"22.4px","t":"dimension","s":"computed fontSize of faq-item default (raw/components-computed.json)","d":"The FAQ question size."},"lede":{"v":"20px","t":"dimension","s":"computed fontSize of hero-sub default (raw/components-computed.json)","d":"The hero sub-copy size."},"plan-name":{"v":"20px","t":"dimension","s":"computed fontSize of plan-card default (raw/components-computed.json)","d":"The plan name (Growth)."},"story":{"v":"18px","t":"dimension","s":"computed fontSize of story-card default (raw/components-computed.json)","d":"The story-card quote size."},"menu-link":{"v":"16.8px","t":"dimension","s":"computed fontSize of menu-link default (raw/components-computed.json)","d":"The mega-nav link size."},"eyebrow":{"v":"16px","t":"dimension","s":"computed fontSize of eyebrow default (raw/components-computed.json)","d":"The section eyebrow size."},"body":{"v":"16px","t":"dimension","s":"computed fontSize of collection-card default (raw/components-computed.json)","d":"The base body size."},"footer-link":{"v":"16px","t":"dimension","s":"computed fontSize of footer-link default (raw/components-computed.json)","d":"The footer link size."},"pill":{"v":"15px","t":"dimension","s":"computed fontSize of announce-pill default (raw/components-computed.json)","d":"The announcement-chip size."},"plan-cta":{"v":"15px","t":"dimension","s":"computed fontSize of plan-cta default (raw/components-computed.json)","d":"The plan CTA label size."},"nav":{"v":"14px","t":"dimension","s":"computed fontSize of nav-link default (raw/components-computed.json)","d":"The nav link / small button size."},"badge":{"v":"13px","t":"dimension","s":"computed fontSize of plan-badge default (raw/components-computed.json)","d":"The most-popular badge size."}},"lineHeight":{"display":{"v":"66px","t":"dimension","s":"computed lineHeight of hero-title default (raw/components-computed.json)","d":"Display leading (1.1x)."},"display-mobile":{"v":"57.2px","t":"dimension","s":"computed lineHeight of m-hero default (raw/components-computed.json)","d":"Mobile display leading."},"h2":{"v":"44px","t":"dimension","s":"computed lineHeight of section-h2 default (raw/components-computed.json)","d":"Heading leading (1x)."},"lede":{"v":"32px","t":"dimension","s":"computed lineHeight of hero-sub default (raw/components-computed.json)","d":"Lede leading (1.6x)."},"faq-question":{"v":"26.88px","t":"dimension","s":"computed lineHeight of faq-item default (raw/components-computed.json)","d":"FAQ-question leading."},"menu-link":{"v":"26.88px","t":"dimension","s":"computed lineHeight of menu-link default (raw/components-computed.json)","d":"Mega-nav link leading."},"nav":{"v":"18.2px","t":"dimension","s":"computed lineHeight of nav-link default (raw/components-computed.json)","d":"Nav link leading."},"body":{"v":"16.8px","t":"dimension","s":"computed lineHeight of collection-card default (raw/components-computed.json)","d":"Body leading."}},"weight":{"display":{"v":400,"t":"fontWeight","s":"computed fontWeight of hero-title default (raw/components-computed.json)","d":"Exposure renders its light face at 400 on h1s."},"heading":{"v":300,"t":"fontWeight","s":"computed fontWeight of section-h2 default (raw/components-computed.json)","d":"The 300 of section headings (Exposure Light)."},"lede":{"v":300,"t":"fontWeight","s":"computed fontWeight of hero-sub default (raw/components-computed.json)","d":"The 300 lede."},"menu-link":{"v":600,"t":"fontWeight","s":"computed fontWeight of menu-link default (raw/components-computed.json)","d":"The 600 mega-nav link."},"eyebrow":{"v":600,"t":"fontWeight","s":"computed fontWeight of eyebrow default (raw/components-computed.json)","d":"The 600 eyebrow."},"body":{"v":400,"t":"fontWeight","s":"computed fontWeight of collection-card default (raw/components-computed.json)","d":"The 400 base."},"pill":{"v":500,"t":"fontWeight","s":"computed fontWeight of announce-pill default (raw/components-computed.json)","d":"The 500 chip label."},"badge":{"v":500,"t":"fontWeight","s":"computed fontWeight of plan-badge default (raw/components-computed.json)","d":"The 500 badge."},"footer-link":{"v":300,"t":"fontWeight","s":"computed fontWeight of footer-link default (raw/components-computed.json)","d":"The 300 footer link."}},"letterSpacing":{"display":{"v":"-2px","t":"dimension","s":"computed letterSpacing of hero-title default (raw/components-computed.json)","d":"The -2px display tracking."},"h2":{"v":"-1px","t":"dimension","s":"computed letterSpacing of section-h2 default (raw/components-computed.json)","d":"The -1px heading tracking."},"lede":{"v":"-0.3px","t":"dimension","s":"computed letterSpacing of hero-sub default (raw/components-computed.json)","d":"The -0.3px lede tracking."},"eyebrow":{"v":"0.8px","t":"dimension","s":"computed letterSpacing of eyebrow default (raw/components-computed.json)","d":"The +0.8px eyebrow tracking."},"price":{"v":"-1.6px","t":"dimension","s":"computed letterSpacing of plan-price default (raw/components-computed.json)","d":"The -1.6px price tracking."},"footer-link":{"v":"-0.16px","t":"dimension","s":"computed letterSpacing of footer-link default (raw/components-computed.json)","d":"The -0.16px footer link tracking."}}},"color":{"ink":{"100":{"v":"#18161a","t":"color","s":"css-var --blackberry--100 (light)","d":"The near-black ink #18161a: headings, hero text, the footer field and the billing toggle's active pill."},"75":{"v":"rgba(24, 22, 26, 0.75)","t":"color","s":"css-var --blackberry--75 (light)","d":"The 75% ink alpha."},"50":{"v":"rgba(24, 22, 26, 0.5)","t":"color","s":"css-var --blackberry--50 (light)","d":"The 50% ink alpha — the muted eyebrow and secondary copy tone."},"25":{"v":"rgba(24, 22, 26, 0.25)","t":"color","s":"css-var --blackberry--25 (light)","d":"The 25% ink alpha."},"10":{"v":"rgba(24, 22, 26, 0.1)","t":"color","s":"css-var --blackberry--10 (light)","d":"The 10% ink hairline under FAQ cards, plan-card headers and pricing rows."}},"neutral":{"white":{"v":"#ffffff","t":"color","s":"css-var --white (light)","d":"The page field and card fill."},"warm-white":{"v":"#fafaf8","t":"color","s":"css-var --warm-white (light)","d":"The declared warm white #fafaf8 (sections that opt into it; the page itself paints pure white)."},"grey":{"v":"#ececf0","t":"color","s":"css-var --grey (light)","d":"The light grey #ececf0 field of tinted sections and pills."},"dark-grey":{"v":"#161640","t":"color","s":"css-var --dark-grey (light)","d":"The declared navy-leaning #161640."},"black":{"v":"#18161a","t":"color","s":"css-var --black (light)","d":"The declared black, the same #18161a as blackberry--100."},"white-50":{"v":"rgba(255, 255, 255, 0.5)","t":"color","s":"css-var --50-white (light)","d":"Half-alpha white for muted text on dark surfaces."},"white-25":{"v":"rgba(255, 255, 255, 0.25)","t":"color","s":"css-var --25-white (light)","d":"Quarter-alpha white."},"white-90":{"v":"rgba(250, 250, 250, 0.7)","t":"color","s":"css-var --90-white (light)","d":"The 70% #fafafa white."},"grey-50":{"v":"rgba(236, 236, 240, 0.5)","t":"color","s":"css-var --50-grey (light)","d":"Half-alpha #ececf0."}},"plum":{"bright":{"v":"#4823ff","t":"color","s":"css-var --plum--bright-plum (light)","d":"The brand violet #4823ff: every primary button fill, link hover and icon accent."},"dark":{"v":"#2b1599","t":"color","s":"css-var --plum--dark-plum (light)","d":"The pressed/hover violet #2b1599 every primary control darkens to."},"new":{"v":"#6d67fb","t":"color","s":"css-var --plum--new-plum (light)","d":"The declared mid violet #6d67fb."},"100":{"v":"#7e78ff","t":"color","s":"css-var --plum--100 (light)","d":"The declared plum #7e78ff: footer-link hover, FAQ +/- icon bars, the top nav accent line."},"light":{"v":"#b2aeff","t":"color","s":"css-var --plum--light-plum (light)","d":"The declared light plum #b2aeff."},"lighter":{"v":"#ede9ff","t":"color","s":"css-var --plum--lighter-plum (light)","d":"The #ede9ff most-popular-pill and tint fill."},"lightest":{"v":"#f5f4fb","t":"color","s":"css-var --plum--lightest-plum (light)","d":"The #f5f4fb plum-tinted section field."},"contrast":{"v":"#932a74","t":"color","s":"css-var --plum--contrast (light)","d":"The declared magenta-plum #932a74 accent."},"5":{"v":"rgba(126, 120, 255, 0.05)","t":"color","s":"css-var --plum--5 (light)","d":"The 5% plum wash."},"10":{"v":"rgba(126, 120, 255, 0.1)","t":"color","s":"css-var --plum--10 (light)","d":"The 10% plum wash a mega-nav link paints on hover."},"25":{"v":"rgba(126, 120, 255, 0.25)","t":"color","s":"css-var --plum--25 (light)","d":"The 25% plum — the featured plan card's border."},"50":{"v":"rgba(126, 120, 255, 0.5)","t":"color","s":"css-var --plum--50 (light)","d":"The 50% plum alpha."},"75":{"v":"rgba(126, 120, 255, 0.75)","t":"color","s":"css-var --plum--75 (light)","d":"The 75% plum alpha."}},"berry":{"100":{"v":"#99cefe","t":"color","s":"css-var --berry--100 (light)","d":"The sky #99cefe accent."},"highlight":{"v":"#0e87d7","t":"color","s":"css-var --berry--highlight-berry (light)","d":"The strong sky #0e87d7."},"light":{"v":"#ebf5ff","t":"color","s":"css-var --berry--light-berry (light)","d":"The pale sky #ebf5ff."},"15":{"v":"rgba(153, 206, 254, 0.15)","t":"color","s":"css-var --berry--15 (light)","d":"The 15% sky wash."},"25":{"v":"rgba(153, 206, 254, 0.25)","t":"color","s":"css-var --berry--25 (light)","d":"The 25% sky wash."},"50":{"v":"rgba(153, 206, 254, 0.5)","t":"color","s":"css-var --berry--50 (light)","d":"The 50% sky."}},"lemon":{"100":{"v":"#e7ff6e","t":"color","s":"css-var --lemon--100 (light)","d":"The acid lemon #e7ff6e — the dark band's eyebrow and highlight text."},"highlight":{"v":"#556309","t":"color","s":"css-var --lemon--highlight-lemon (light)","d":"The dark lemon #556309 (lemon on light)."},"light":{"v":"#f6fdd1","t":"color","s":"css-var --lemon--light-lemon (light)","d":"The pale lemon #f6fdd1."},"25":{"v":"rgba(231, 255, 110, 0.25)","t":"color","s":"css-var --lemon--25 (light)","d":"The 25% lemon wash."},"50":{"v":"rgba(231, 255, 110, 0.5)","t":"color","s":"css-var --lemon--50 (light)","d":"The 50% lemon."}},"lime":{"100":{"v":"#9aff91","t":"color","s":"css-var --lime--100 (light)","d":"The lime #9aff91 accent."},"highlight":{"v":"#078f00","t":"color","s":"css-var --lime--highlight-lime (light)","d":"The green #078f00."},"go-green":{"v":"#e3f9c9","t":"color","s":"css-var --lime--go-green (light)","d":"The declared #e3f9c9 green tint."},"light":{"v":"#ebffe9","t":"color","s":"css-var --lime--light-lime (light)","d":"The pale lime #ebffe9 — the now-live pill fill."},"25":{"v":"rgba(154, 255, 145, 0.15)","t":"color","s":"css-var --lime--25 (light)","d":"The 15% lime wash (declared as --lime--25)."},"50":{"v":"rgba(154, 255, 145, 0.5)","t":"color","s":"css-var --lime--50 (light)","d":"The 50% lime."}},"tangerine":{"100":{"v":"#ffa360","t":"color","s":"css-var --tangerine--100 (light)","d":"The tangerine #ffa360 accent."},"highlight":{"v":"#e27500","t":"color","s":"css-var --tangerine--highlight-tangerine (light)","d":"The deep tangerine #e27500."},"light":{"v":"#ffeddf","t":"color","s":"css-var --tangerine--light-tangerine (light)","d":"The pale tangerine #ffeddf."},"25":{"v":"rgba(255, 163, 96, 0.25)","t":"color","s":"css-var --tangerine--25 (light)","d":"The 25% tangerine wash."},"50":{"v":"rgba(255, 163, 96, 0.5)","t":"color","s":"css-var --tangerine--50 (light)","d":"The 50% tangerine."}},"measured":{"nav-text":{"v":"#222222","t":"color","s":"computed color of nav-link default (raw/components-computed.json)","d":"The rgb(34,34,34) nav-link ink — the bundle's base body colour, lighter than the #18161a heading ink."},"dark-band":{"v":"#0e0d12","t":"color","s":"computed backgroundColor of dark-section default (raw/components-computed.json)","d":"The #0e0d12 near-black of the Cake-MCP band — the site's darkest painted surface, darker than the footer ink."},"plan-top":{"v":"#faf9ff","t":"color","s":"computed paint-bg:.pricing-card-top of plan-card default (raw/components-computed.json)","d":"The #faf9ff violet-tinted header of a plan card."},"save-pill":{"v":"#c6f0dc","t":"color","s":"computed paint-bg:.save-pill-div of billing-toggle default (raw/components-computed.json)","d":"The #c6f0dc mint of the '-20% save' pills — between the declared lime tints."},"chip-border":{"v":"#ebe8f2","t":"color","s":"computed borderTopColor of announce-pill default (raw/components-computed.json)","d":"The #ebe8f2 border on the announcement chip."},"field-border":{"v":"#d9d9e0","t":"color","s":"computed borderTopColor of country-select default (raw/components-computed.json)","d":"The #d9d9e0 border on the region select and the billing-toggle shell."},"field-focus":{"v":"#3898ec","t":"color","s":"computed borderTopColor of country-select focused (raw/components-computed.json)","d":"The #3898ec blue the select border gains on focus."},"focus":{"v":"#005fcc","t":"color","s":"computed outlineColor of nav-cta focus-visible (raw/components-computed.json)","d":"The #005fcc of the 1px auto focus ring (the Webflow/UA ring) every focused control draws."},"dark-hairline":{"v":"rgba(244, 244, 244, 0.18)","t":"color","s":"computed paint-border:.hp26-acc of dark-section default (raw/components-computed.json)","d":"The rgba(244,244,244,0.18) hairline between the dark band's rows."}},"auth":{"primary":{"v":"#5a38fd","t":"color","s":"computed backgroundColor of login-cta default (raw/components-computed.json)","d":"The Kinde primary #5a38fd on Continue — close to but not the marketing #4823ff."},"oauth":{"v":"#f5f5f5","t":"color","s":"computed backgroundColor of login-oauth default (raw/components-computed.json)","d":"The #f5f5f5 OAuth-button fill."},"oauth-hover":{"v":"#ebebeb","t":"color","s":"computed backgroundColor of login-oauth hover (raw/components-computed.json)","d":"The #ebebeb the OAuth fill darkens to on hover."},"oauth-pressed":{"v":"#dbdbdb","t":"color","s":"computed backgroundColor of login-oauth pressed (raw/components-computed.json)","d":"The #dbdbdb the OAuth fill darkens to when pressed."},"text":{"v":"#0f0f0f","t":"color","s":"computed color of login-title default (raw/components-computed.json)","d":"The #0f0f0f auth heading ink."},"muted":{"v":"#2b2b2b","t":"color","s":"computed color of login-card default (raw/components-computed.json)","d":"The #2b2b2b auth body ink."},"link":{"v":"#1c029d","t":"color","s":"computed color of login-link default (raw/components-computed.json)","d":"The #1c029d of the Create-one link — Kinde's link hue."},"field-border":{"v":"#ababab","t":"color","s":"computed paint-border:input of login-field default (raw/components-computed.json)","d":"The #ababab border on the auth email field."},"focus":{"v":"#0054f0","t":"color","s":"computed outlineColor of login-cta focus-visible (raw/components-computed.json)","d":"The #0054f0 of the 2px solid auth focus ring, offset 2px."}}},"radius":{"pill":{"v":"100px","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)","d":"The 100px pill on every button and the region select."},"toggle":{"v":"999px","t":"dimension","s":"painted layer radius under billing-toggle default (raw/components-computed.json)","d":"The 999px billing-toggle shell."},"nav-login":{"v":"50px","t":"dimension","s":"computed borderTopLeftRadius of nav-login default (raw/components-computed.json)","d":"The 50px Login pill — half the standard pill."},"dropdown":{"v":"20px","t":"dimension","s":"painted layer radius under header default (raw/components-computed.json)","d":"The 20px mega-nav panel."},"dark-band":{"v":"28px","t":"dimension","s":"computed borderTopLeftRadius of dark-section default (raw/components-computed.json)","d":"The 28px dark band."},"card":{"v":"16px","t":"dimension","s":"computed borderTopLeftRadius of story-card default (raw/components-computed.json)","d":"The 16px card radius (story card, plan card top, Kinde card)."},"auth":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of login-field default (raw/components-computed.json)","d":"The 8px Kinde control radius."},"menu-button":{"v":"4px","t":"dimension","s":"computed borderTopLeftRadius of m-menu-button default (raw/components-computed.json)","d":"The 4px hamburger radius."}},"shadow":{"nav":{"v":[{"color":"rgba(0, 0, 0, 0.2)","offsetX":"0px","offsetY":"2px","blur":"20px","spread":"-19px"}],"t":"shadow","s":"computed boxShadow of header default (raw/components-computed.json)","d":"The navbar's rgba(0,0,0,0.2) 0 2px 20px -19px drop (plus a second 0 1px 30px rgba(0,0,0,0.1) layer)."},"dropdown":{"v":[{"color":"rgba(24, 22, 26, 0.25)","offsetX":"0px","offsetY":"0px","blur":"20px","spread":"-5px"}],"t":"shadow","s":"computed boxShadow of header default (raw/components-computed.json)","d":"The mega-nav panel's rgba(24,22,26,0.25) 0 0 20px -5px."},"card":{"v":[{"color":"rgba(0, 0, 0, 0.2)","offsetX":"0px","offsetY":"2px","blur":"5px","spread":"0px"}],"t":"shadow","s":"computed boxShadow of story-card default (raw/components-computed.json)","d":"The story/tooltip card's rgba(0,0,0,0.2) 0 2px 5px."},"faq-open":{"v":[{"color":"rgba(0, 0, 0, 0.2)","offsetX":"0px","offsetY":"2px","blur":"10px","spread":"-8px"}],"t":"shadow","s":"computed boxShadow of faq-item opened (raw/components-computed.json)","d":"The rgba(0,0,0,0.2) 0 2px 10px -8px an opened FAQ card draws, with its -2px lift."}},"gradient":{"pulley-tag":{"v":[{"color":"#616d3b","position":0.0},{"color":"#616d3b","position":0.55},{"color":"#906a37","position":0.78},{"color":"#c96733","position":1.0}],"t":"gradient","s":"computed backgroundImage of the pm-pulley-tag layer under announce-pill (raw/components-computed.json)","d":"The olive-to-rust gradient on the Pulley tag inside the announcement chip."}},"duration":{"button":{"v":"200ms","t":"duration","s":"computed transition of nav-cta default (raw/components-computed.json)","d":"The 0.2s all transition on every button and link. (all)"},"ghost":{"v":"400ms","t":"duration","s":"computed transition of hero-demo default (raw/components-computed.json)","d":"The 0.4s all transition on the ghost CTA. (all)"},"faq":{"v":"300ms","t":"duration","s":"computed transition of faq-item default (raw/components-computed.json)","d":"The 0.3s transform transition on the FAQ card (the opened lift). (transform)"},"story":{"v":"200ms","t":"duration","s":"computed transition of story-card default (raw/components-computed.json)","d":"The 0.2s opacity fade of the hover quote cards. (opacity)"},"auth":{"v":"150ms","t":"duration","s":"computed transition of login-cta default (raw/components-computed.json)","d":"The 0.15s transition on Kinde controls. (outline-offset)"},"mega-nav":{"v":"500ms","t":"duration","s":".nav-dropdown-grid transition in the home stylesheets (raw/components-computed.json _meta.sheets: '0.5s')","d":"The mega-nav grid's open animation."},"nav-panel":{"v":"300ms","t":"duration","s":".nav-container.for-dropdown transition in the home stylesheets (raw/components-computed.json _meta.sheets: '0.3s')","d":"The mega-nav panel's transition."}},"measured":{"focus-outline":{"v":"1px auto #005fcc","t":"other","s":"computed outline of nav-cta focus-visible (raw/components-computed.json)","d":"The 1px auto #005fcc focus ring, ~1px offset, on every focused marketing control."},"auth-focus-outline":{"v":"2px solid #0054f0 offset 2px","t":"other","s":"computed outline of login-cta focus-visible (raw/components-computed.json)","d":"The 2px solid #0054f0 ring, 2px offset, on Kinde controls."},"faq-open-lift":{"v":"matrix(1, 0, 0, 1, 0, -2)","t":"other","s":"computed transform of faq-item opened (raw/components-computed.json)","d":"The translateY(-2px) an opened FAQ card takes, over the faq-open shadow."},"mobile-layout-width":{"v":745,"t":"number","s":"m-header default rect width (raw/components-computed.json)","d":"The ~745px layout viewport the page forces at 390 visual width — .comparison-grid{min-width:700px} plus navbar chrome; phones pan horizontally."}}},"light":{"text":{"primary":{"v":"{color.ink.100}","t":"color","s":"role alias over the core palette","d":"Heading and body ink."},"secondary":{"v":"{color.measured.nav-text}","t":"color","s":"role alias over the core palette","d":"Nav-link and base text, one step softer than the ink."},"muted":{"v":"{color.ink.50}","t":"color","s":"role alias over the core palette","d":"Muted eyebrow/secondary copy (50% ink)."},"link":{"v":"{color.plum.bright}","t":"color","s":"role alias over the core palette","d":"Link and hover violet."},"on":{"accent":{"v":"{color.neutral.white}","t":"color","s":"role alias over the core palette","d":"Label on the violet fills."},"dark":{"v":"{color.neutral.white}","t":"color","s":"role alias over the core palette","d":"Text on the dark surfaces."}}},"surface":{"dark":{"v":"{color.ink.100}","t":"color","s":"role alias over the core palette","d":"The footer field — a dark surface painted on the light page."},"page":{"v":"{color.neutral.white}","t":"color","s":"role alias over the core palette","d":"The white page field (body paints white)."},"card":{"v":"{color.neutral.white}","t":"color","s":"role alias over the core palette","d":"Card and panel fill."},"warm":{"v":"{color.neutral.warm-white}","t":"color","s":"role alias over the core palette","d":"The declared warm-white field."},"muted":{"v":"{color.neutral.grey}","t":"color","s":"role alias over the core palette","d":"The light grey tinted field."},"tint":{"v":"{color.plum.lightest}","t":"color","s":"role alias over the core palette","d":"The plum-tinted section field."},"plan":{"top":{"v":"{color.measured.plan-top}","t":"color","s":"role alias over the core palette","d":"The plan card's violet header."}}},"action":{"primary":{"default":{"v":"{color.plum.bright}","t":"color","s":"role alias over the core palette","d":"Every primary button fill."},"hover":{"v":"{color.plum.dark}","t":"color","s":"role alias over the core palette","d":"The violet a primary control darkens to on hover/press."}},"ghost":{"border":{"v":"{color.plum.bright}","t":"color","s":"role alias over the core palette","d":"The ghost button's border and label violet."}}},"accent":{"subtle":{"v":"{color.plum.lighter}","t":"color","s":"role alias over the core palette","d":"The most-popular pill / badge fill."},"success":{"v":"{color.measured.save-pill}","t":"color","s":"role alias over the core palette","d":"The mint save-pill fill."}},"border":{"field":{"default":{"v":"{color.measured.field-border}","t":"color","s":"role alias over the core palette","d":"The #d9d9e0 field/select border."},"focus":{"v":"{color.measured.field-focus}","t":"color","s":"role alias over the core palette","d":"The #3898ec the select border gains on focus."}},"subtle":{"v":"{color.ink.10}","t":"color","s":"role alias over the core palette","d":"The 10% ink hairline."},"chip":{"v":"{color.measured.chip-border}","t":"color","s":"role alias over the core palette","d":"The chip border."},"plan":{"v":"{color.plum.25}","t":"color","s":"role alias over the core palette","d":"The featured plan card's 25% plum border."}},"focus":{"ring":{"v":"{color.measured.focus}","t":"color","s":"role alias over the core palette","d":"The 1px auto focus ring (the Webflow/UA ring)."}},"state":{"hover":{"wash":{"v":"{color.plum.10}","t":"color","s":"role alias over the core palette","d":"The 10% plum wash a mega-nav link paints on hover."}}},"auth":{"action":{"primary":{"v":"{color.auth.primary}","t":"color","s":"role alias over the core palette","d":"The hosted-auth primary fill."}},"surface":{"secondary":{"v":"{color.auth.oauth}","t":"color","s":"role alias over the core palette","d":"The OAuth button fill."}},"border":{"field":{"v":"{color.auth.field-border}","t":"color","s":"role alias over the core palette","d":"The auth field border."}},"text":{"link":{"v":"{color.auth.link}","t":"color","s":"role alias over the core palette","d":"The auth link hue."}},"focus":{"ring":{"v":"{color.auth.focus}","t":"color","s":"role alias over the core palette","d":"The 2px auth focus ring."}}},"component":{"control":{"height":{"v":"58.7969px","t":"dimension","s":"computed height of hero-cta default (raw/components-computed.json)","d":"The hero CTA height."}},"button":{"height":{"v":"44.1875px","t":"dimension","s":"computed height of nav-cta default (raw/components-computed.json)","d":"The header Get-started-free height."}},"plan-cta":{"height":{"v":"49px","t":"dimension","s":"computed height of plan-cta default (raw/components-computed.json)","d":"The plan-card Start-free height."}},"field":{"height":{"v":"48px","t":"dimension","s":"computed height of country-select default (raw/components-computed.json)","d":"The region select height (the Kinde field shares it)."}},"header":{"height":{"v":"74.1875px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The marketing header height."},"height-mobile":{"v":"68px","t":"dimension","s":"computed height of m-header default (raw/components-computed.json)","d":"The marketing header at 390 visual width (745 layout)."}},"plan-card":{"width":{"v":"312px","t":"dimension","s":"computed width of plan-card default (raw/components-computed.json)","d":"A plan card's width."}},"login-card":{"width":{"v":"496px","t":"dimension","s":"computed width of login-card default (raw/components-computed.json)","d":"The Kinde auth card width."}},"nav-dropdown":{"width":{"v":"1008px","t":"dimension","s":"computed width of nav-dropdown default (raw/components-computed.json)","d":"The Product mega-nav panel width."}},"menu-button":{"size":{"v":"48px","t":"dimension","s":"computed width of m-menu-button default (raw/components-computed.json)","d":"The hamburger hit area."}}}},"dark":{"surface":{"band":{"v":"{color.measured.dark-band}","t":"color","s":"role alias over the core palette","d":"The Cake-MCP band — the darkest painted surface."},"page":{"v":"{color.ink.100}","t":"color","s":"role alias over the core palette","d":"The footer field."}},"text":{"primary":{"v":"{color.neutral.white}","t":"color","s":"role alias over the core palette","d":"Text on the dark surfaces."},"muted":{"v":"{color.neutral.white-50}","t":"color","s":"role alias over the core palette","d":"Muted text on dark."},"link":{"hover":{"v":"{color.plum.100}","t":"color","s":"role alias over the core palette","d":"The #7e78ff a footer link turns on hover."}},"eyebrow":{"v":"{color.lemon.100}","t":"color","s":"role alias over the core palette","d":"The lemon eyebrow on the dark band."}},"border":{"hairline":{"v":"{color.measured.dark-hairline}","t":"color","s":"role alias over the core palette","d":"The 18% white hairline inside the dark band."},"accent":{"v":"{color.plum.10}","t":"color","s":"role alias over the core palette","d":"Reserved plum-10 accent border on dark."}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (footer + MCP band)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.gradient || {}, 'gradient.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.color + ' ' + Math.round(x.position * 100) + '%').join(', ') : t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Cake</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).letterSpacing || {}, 'font.letterSpacing.')) h += `<div class="tr"><span class="ts" style="letter-spacing:${esc(t.v)}">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

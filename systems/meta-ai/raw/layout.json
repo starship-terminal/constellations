@@ -1,0 +1,38 @@
+{
+  "viewportDesktop": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "viewportPhone": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "scroller": "div.h-full.overflow-y-auto. Document scrollHeight stayed 900 because the page scrolls inside this div. Desktop scrollHeight 6034, clientHeight 900, x 56 when the sidebar is collapsed. Phone scrollHeight 7523, clientHeight 844, width 390.",
+  "regions": {
+    "sidebar": "56px collapsed, 256px expanded, full viewport height, background #181819",
+    "header": "Download app and Log in sit at y 12 on the right. At 390px both still fit: Download app x 174, Log in x 303.",
+    "hero": "h1 at y 264, width 720, on desktop. Composer sits below it, max width 768, centered.",
+    "sections": [
+      "Describe the image you want",
+      "Edit photos with ease",
+      "Discover and shop products that match your style",
+      "Find the best spots around you",
+      "Go deeper with research",
+      "Stay connected to your business",
+      "Write the caption, plan the post",
+      "Ready to try Meta AI?"
+    ]
+  }
+}

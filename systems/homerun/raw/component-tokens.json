@@ -1,0 +1,1235 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. homerun.co is a Webflow build: its palette lives in --_updated-colors-v2---* (the current layer, promoted into color.* families) plus a large legacy named layer kept under color.named.*. Semantic roles are measured on the painted chrome in raw/components-computed.json and alias the core when the value matches. One theme exists (light); dark bands live inside it. The app.homerun.co sign-in shares the palette and declares its own --ui-* control roles.",
+ "core": {
+  "color": {
+   "beige": {
+    "400": {
+     "value": "#faf9f7",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---primary--beige-400 (raw/css-vars.json)",
+     "description": "Updated-palette primary--beige-400: the tinted band grounds (beige-500 #f5f3ef is the input fill and soft section tint)."
+    },
+    "500": {
+     "value": "#f5f3ef",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---primary--beige-500 (raw/css-vars.json)",
+     "description": "Updated-palette primary--beige-500: the tinted band grounds (beige-500 #f5f3ef is the input fill and soft section tint)."
+    },
+    "600": {
+     "value": "#edebe7",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---primary--beige-600 (raw/css-vars.json)",
+     "description": "Updated-palette primary--beige-600: the tinted band grounds (beige-500 #f5f3ef is the input fill and soft section tint)."
+    },
+    "700": {
+     "value": "#e3e1dd",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---primary--beige-700 (raw/css-vars.json)",
+     "description": "Updated-palette primary--beige-700: the tinted band grounds (beige-500 #f5f3ef is the input fill and soft section tint)."
+    },
+    "800": {
+     "value": "#dbd9d5",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---primary--beige-800 (raw/css-vars.json)",
+     "description": "Updated-palette primary--beige-800: the tinted band grounds (beige-500 #f5f3ef is the input fill and soft section tint)."
+    }
+   },
+   "blue": {
+    "300": {
+     "value": "#eef2ff",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---primary--blue-300 (raw/css-vars.json)",
+     "description": "Updated-palette primary--blue-300: the brand blue ramp — blue-500 #4f75fe is every primary button, 300/400 its tints."
+    },
+    "400": {
+     "value": "#c9d5fd",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---primary--blue-400 (raw/css-vars.json)",
+     "description": "Updated-palette primary--blue-400: the brand blue ramp — blue-500 #4f75fe is every primary button, 300/400 its tints."
+    },
+    "500": {
+     "value": "#4f75fe",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---primary--blue-500 (raw/css-vars.json)",
+     "description": "Updated-palette primary--blue-500: the brand blue ramp — blue-500 #4f75fe is every primary button, 300/400 its tints."
+    },
+    "600": {
+     "value": "#254cda",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---primary--blue-600 (raw/css-vars.json)",
+     "description": "Updated-palette primary--blue-600: the brand blue ramp — blue-500 #4f75fe is every primary button, 300/400 its tints."
+    },
+    "700": {
+     "value": "#0b247f",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---primary--blue-700 (raw/css-vars.json)",
+     "description": "Updated-palette primary--blue-700: the brand blue ramp — blue-500 #4f75fe is every primary button, 300/400 its tints."
+    }
+   },
+   "brown": {
+    "100": {
+     "value": "#a3a2a2",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---primary--brown-100 (raw/css-vars.json)",
+     "description": "Updated-palette primary--brown-100: the warm ink scale — 200 muted, 300 body text, 400 headings, 500 the dark button/CTA fill."
+    },
+    "200": {
+     "value": "#736b6b",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---primary--brown-200 (raw/css-vars.json)",
+     "description": "Updated-palette primary--brown-200: the warm ink scale — 200 muted, 300 body text, 400 headings, 500 the dark button/CTA fill."
+    },
+    "300": {
+     "value": "#4a3e3e",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---primary--brown-300 (raw/css-vars.json)",
+     "description": "Updated-palette primary--brown-300: the warm ink scale — 200 muted, 300 body text, 400 headings, 500 the dark button/CTA fill."
+    },
+    "400": {
+     "value": "#382d2d",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---primary--brown-400 (raw/css-vars.json)",
+     "description": "Updated-palette primary--brown-400: the warm ink scale — 200 muted, 300 body text, 400 headings, 500 the dark button/CTA fill."
+    },
+    "500": {
+     "value": "#2d2323",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---primary--brown-500 (raw/css-vars.json)",
+     "description": "Updated-palette primary--brown-500: the warm ink scale — 200 muted, 300 body text, 400 headings, 500 the dark button/CTA fill."
+    },
+    "600": {
+     "value": "#1f1818",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---primary--brown-600 (raw/css-vars.json)",
+     "description": "Updated-palette primary--brown-600: the warm ink scale — 200 muted, 300 body text, 400 headings, 500 the dark button/CTA fill."
+    },
+    "700": {
+     "value": "#131313",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---primary--brown-700 (raw/css-vars.json)",
+     "description": "Updated-palette primary--brown-700: the warm ink scale — 200 muted, 300 body text, 400 headings, 500 the dark button/CTA fill."
+    }
+   },
+   "white": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "declared --_updated-colors-v2---primary--white (raw/css-vars.json)",
+    "description": "Updated-palette primary--white: the page ground."
+   },
+   "secondary": {
+    "green": {
+     "value": "#00b16b",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---secondary--green (raw/css-vars.json)",
+     "description": "Updated-palette secondary--green: the secondary accent set (green is the HR accent family)."
+    },
+    "lilac": {
+     "value": "#bda3fa",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---secondary--lilac (raw/css-vars.json)",
+     "description": "Updated-palette secondary--lilac: the secondary accent set (green is the HR accent family)."
+    },
+    "orange": {
+     "value": "#f7841f",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---secondary--orange (raw/css-vars.json)",
+     "description": "Updated-palette secondary--orange: the secondary accent set (green is the HR accent family)."
+    },
+    "red": {
+     "value": "#f23540",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---secondary--red (raw/css-vars.json)",
+     "description": "Updated-palette secondary--red: the secondary accent set (green is the HR accent family)."
+    },
+    "yellow": {
+     "value": "#ffbb00",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---secondary--yellow (raw/css-vars.json)",
+     "description": "Updated-palette secondary--yellow: the secondary accent set (green is the HR accent family)."
+    }
+   },
+   "tertiary": {
+    "blood_orange": {
+     "value": "#ffe385",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---tertiary--blood-orange (raw/css-vars.json)",
+     "description": "Updated-palette tertiary--blood-orange: the tertiary scene colours for illustrations and bands."
+    },
+    "light_green": {
+     "value": "#b4dc19",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---tertiary--light-green (raw/css-vars.json)",
+     "description": "Updated-palette tertiary--light-green: the tertiary scene colours for illustrations and bands."
+    },
+    "navy": {
+     "value": "#283750",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---tertiary--navy (raw/css-vars.json)",
+     "description": "Updated-palette tertiary--navy: the tertiary scene colours for illustrations and bands."
+    },
+    "pink": {
+     "value": "#ffc4bf",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---tertiary--pink (raw/css-vars.json)",
+     "description": "Updated-palette tertiary--pink: the tertiary scene colours for illustrations and bands."
+    },
+    "purple": {
+     "value": "#78286e",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---tertiary--purple (raw/css-vars.json)",
+     "description": "Updated-palette tertiary--purple: the tertiary scene colours for illustrations and bands."
+    },
+    "warm_grey": {
+     "value": "#d1d3c4",
+     "type": "color",
+     "source": "declared --_updated-colors-v2---tertiary--warm-grey (raw/css-vars.json)",
+     "description": "Updated-palette tertiary--warm-grey: the tertiary scene colours for illustrations and bands."
+    }
+   },
+   "named": {
+    "accessible-components-dark-grey": {
+     "value": "#9b9b9b",
+     "type": "color",
+     "source": "declared --accessible-components-dark-grey (raw/css-vars.json)",
+     "description": "Legacy palette name accessible-components-dark-grey."
+    },
+    "aoeb": {
+     "value": "#244f41",
+     "type": "color",
+     "source": "declared --aoeb (raw/css-vars.json)",
+     "description": "Legacy palette name aoeb."
+    },
+    "background-grey": {
+     "value": "#f4f3f3",
+     "type": "color",
+     "source": "declared --background-grey (raw/css-vars.json)",
+     "description": "Legacy palette name background-grey."
+    },
+    "beige": {
+     "beige-400": {
+      "value": "#faf9f7",
+      "type": "color",
+      "source": "declared --beige--beige-400 (raw/css-vars.json)",
+      "description": "Legacy palette name beige--beige-400."
+     },
+     "beige-600": {
+      "value": "#edebe7",
+      "type": "color",
+      "source": "declared --beige--beige-600 (raw/css-vars.json)",
+      "description": "Legacy palette name beige--beige-600."
+     },
+     "beige-800": {
+      "value": "#dbd9d5",
+      "type": "color",
+      "source": "declared --beige--beige-800 (raw/css-vars.json)",
+      "description": "Legacy palette name beige--beige-800."
+     }
+    },
+    "beige-500": {
+     "value": "#f5f3ef",
+     "type": "color",
+     "source": "declared --beige-500 (raw/css-vars.json)",
+     "description": "Legacy palette name beige-500."
+    },
+    "beige-700": {
+     "value": "#e3e1dd",
+     "type": "color",
+     "source": "declared --beige-700 (raw/css-vars.json)",
+     "description": "Legacy palette name beige-700."
+    },
+    "black": {
+     "value": "rgba(14, 16, 22, 0.95)",
+     "type": "color",
+     "source": "declared --black (raw/css-vars.json)",
+     "description": "Legacy palette name black."
+    },
+    "blue": {
+     "value": "#63cdf5",
+     "type": "color",
+     "source": "declared --blue (raw/css-vars.json)",
+     "description": "Legacy palette name blue."
+    },
+    "bone": {
+     "value": "#f5f3ef",
+     "type": "color",
+     "source": "declared --bone (raw/css-vars.json)",
+     "description": "Legacy palette name bone."
+    },
+    "bright-yellow": {
+     "value": "#fff442",
+     "type": "color",
+     "source": "declared --bright-yellow (raw/css-vars.json)",
+     "description": "Legacy palette name bright-yellow."
+    },
+    "brown": {
+     "brown-200": {
+      "value": "#736b6b",
+      "type": "color",
+      "source": "declared --brown--brown-200 (raw/css-vars.json)",
+      "description": "Legacy palette name brown--brown-200."
+     },
+     "brown-300": {
+      "value": "#4a3e3e",
+      "type": "color",
+      "source": "declared --brown--brown-300 (raw/css-vars.json)",
+      "description": "Legacy palette name brown--brown-300."
+     },
+     "brown-400": {
+      "value": "#382d2d",
+      "type": "color",
+      "source": "declared --brown--brown-400 (raw/css-vars.json)",
+      "description": "Legacy palette name brown--brown-400."
+     },
+     "brown-500": {
+      "value": "#2d2323",
+      "type": "color",
+      "source": "declared --brown--brown-500 (raw/css-vars.json)",
+      "description": "Legacy palette name brown--brown-500."
+     },
+     "brown-600": {
+      "value": "#1f1818",
+      "type": "color",
+      "source": "declared --brown--brown-600 (raw/css-vars.json)",
+      "description": "Legacy palette name brown--brown-600."
+     }
+    },
+    "brown-text-link": {
+     "value": "#665757",
+     "type": "color",
+     "source": "declared --brown-text-link (raw/css-vars.json)",
+     "description": "Legacy palette name brown-text-link."
+    },
+    "brown200": {
+     "value": "#736b6b",
+     "type": "color",
+     "source": "declared --brown200 (raw/css-vars.json)",
+     "description": "Legacy palette name brown200."
+    },
+    "burntsienna": {
+     "value": "#fd7d5d",
+     "type": "color",
+     "source": "declared --burntsienna (raw/css-vars.json)",
+     "description": "Legacy palette name burntsienna."
+    },
+    "cadet-blue": {
+     "value": "#07a2bb",
+     "type": "color",
+     "source": "declared --cadet-blue (raw/css-vars.json)",
+     "description": "Legacy palette name cadet-blue."
+    },
+    "coffee-100": {
+     "value": "#f1efef",
+     "type": "color",
+     "source": "declared --coffee-100 (raw/css-vars.json)",
+     "description": "Legacy palette name coffee-100."
+    },
+    "coffee-200": {
+     "value": "#e6e2e2",
+     "type": "color",
+     "source": "declared --coffee-200 (raw/css-vars.json)",
+     "description": "Legacy palette name coffee-200."
+    },
+    "coffee-300": {
+     "value": "#d5cccc",
+     "type": "color",
+     "source": "declared --coffee-300 (raw/css-vars.json)",
+     "description": "Legacy palette name coffee-300."
+    },
+    "coffee-50": {
+     "value": "#f9f7f7",
+     "type": "color",
+     "source": "declared --coffee-50 (raw/css-vars.json)",
+     "description": "Legacy palette name coffee-50."
+    },
+    "coffee-500": {
+     "value": "#988686",
+     "type": "color",
+     "source": "declared --coffee-500 (raw/css-vars.json)",
+     "description": "Legacy palette name coffee-500."
+    },
+    "coffee-600": {
+     "value": "#8a7878",
+     "type": "color",
+     "source": "declared --coffee-600 (raw/css-vars.json)",
+     "description": "Legacy palette name coffee-600."
+    },
+    "coffee-800": {
+     "value": "#605454",
+     "type": "color",
+     "source": "declared --coffee-800 (raw/css-vars.json)",
+     "description": "Legacy palette name coffee-800."
+    },
+    "coffee-900": {
+     "value": "#534949",
+     "type": "color",
+     "source": "declared --coffee-900 (raw/css-vars.json)",
+     "description": "Legacy palette name coffee-900."
+    },
+    "coffee-950": {
+     "value": "#2a2525",
+     "type": "color",
+     "source": "declared --coffee-950 (raw/css-vars.json)",
+     "description": "Legacy palette name coffee-950."
+    },
+    "coffee-black": {
+     "value": "#2d2323",
+     "type": "color",
+     "source": "declared --coffee-black (raw/css-vars.json)",
+     "description": "Legacy palette name coffee-black."
+    },
+    "coffee-black-2": {
+     "value": "#2d2323",
+     "type": "color",
+     "source": "declared --coffee-black-2 (raw/css-vars.json)",
+     "description": "Legacy palette name coffee-black-2."
+    },
+    "coral": {
+     "value": "#ff8e5c",
+     "type": "color",
+     "source": "declared --coral (raw/css-vars.json)",
+     "description": "Legacy palette name coral."
+    },
+    "coral-2": {
+     "value": "#e6733e",
+     "type": "color",
+     "source": "declared --coral-2 (raw/css-vars.json)",
+     "description": "Legacy palette name coral-2."
+    },
+    "crimson": {
+     "value": "#f03842",
+     "type": "color",
+     "source": "declared --crimson (raw/css-vars.json)",
+     "description": "Legacy palette name crimson."
+    },
+    "dark-grey": {
+     "value": "#2e3038",
+     "type": "color",
+     "source": "declared --dark-grey (raw/css-vars.json)",
+     "description": "Legacy palette name dark-grey."
+    },
+    "dark-roasted-coffee-black": {
+     "value": "#1f1717",
+     "type": "color",
+     "source": "declared --dark-roasted-coffee-black (raw/css-vars.json)",
+     "description": "Legacy palette name dark-roasted-coffee-black."
+    },
+    "dark-slate-blue": {
+     "value": "#004a7c",
+     "type": "color",
+     "source": "declared --dark-slate-blue (raw/css-vars.json)",
+     "description": "Legacy palette name dark-slate-blue."
+    },
+    "dark-slate-grey": {
+     "value": "#365866",
+     "type": "color",
+     "source": "declared --dark-slate-grey (raw/css-vars.json)",
+     "description": "Legacy palette name dark-slate-grey."
+    },
+    "dark-slate-grey-2": {
+     "value": "#365866",
+     "type": "color",
+     "source": "declared --dark-slate-grey-2 (raw/css-vars.json)",
+     "description": "Legacy palette name dark-slate-grey-2."
+    },
+    "darkgrey": {
+     "value": "#2e3038",
+     "type": "color",
+     "source": "declared --darkgrey (raw/css-vars.json)",
+     "description": "Legacy palette name darkgrey."
+    },
+    "dim-grey": {
+     "value": "#454f5b",
+     "type": "color",
+     "source": "declared --dim-grey (raw/css-vars.json)",
+     "description": "Legacy palette name dim-grey."
+    },
+    "dim-grey-2": {
+     "value": "#4a3e3e",
+     "type": "color",
+     "source": "declared --dim-grey-2 (raw/css-vars.json)",
+     "description": "Legacy palette name dim-grey-2."
+    },
+    "facebook": {
+     "value": "#3b5998",
+     "type": "color",
+     "source": "declared --facebook (raw/css-vars.json)",
+     "description": "Legacy palette name facebook."
+    },
+    "floral-white": {
+     "value": "#f0ede7",
+     "type": "color",
+     "source": "declared --floral-white (raw/css-vars.json)",
+     "description": "Legacy palette name floral-white."
+    },
+    "gdpr-blue": {
+     "value": "rgba(0, 0, 45, 0.9)",
+     "type": "color",
+     "source": "declared --gdpr-blue (raw/css-vars.json)",
+     "description": "Legacy palette name gdpr-blue."
+    },
+    "gold": {
+     "value": "#f7bd00",
+     "type": "color",
+     "source": "declared --gold (raw/css-vars.json)",
+     "description": "Legacy palette name gold."
+    },
+    "homerun-blue": {
+     "value": "#0099ff",
+     "type": "color",
+     "source": "declared --homerun-blue (raw/css-vars.json)",
+     "description": "Legacy palette name homerun-blue."
+    },
+    "homerun-dark-blue": {
+     "value": "#113857",
+     "type": "color",
+     "source": "declared --homerun-dark-blue (raw/css-vars.json)",
+     "description": "Legacy palette name homerun-dark-blue."
+    },
+    "hr": {
+     "500": {
+      "value": "#00c275",
+      "type": "color",
+      "source": "declared --hr--500 (raw/css-vars.json)",
+      "description": "Legacy palette name hr--500."
+     },
+     "700": {
+      "value": "#113428",
+      "type": "color",
+      "source": "declared --hr--700 (raw/css-vars.json)",
+      "description": "Legacy palette name hr--700."
+     },
+     "800": {
+      "value": "#172923",
+      "type": "color",
+      "source": "declared --hr--800 (raw/css-vars.json)",
+      "description": "Legacy palette name hr--800."
+     }
+    },
+    "khaki": {
+     "value": "#fae1b1",
+     "type": "color",
+     "source": "declared --khaki (raw/css-vars.json)",
+     "description": "Legacy palette name khaki."
+    },
+    "light-grey": {
+     "value": "rgba(204, 204, 204, 0.3)",
+     "type": "color",
+     "source": "declared --light-grey (raw/css-vars.json)",
+     "description": "Legacy palette name light-grey."
+    },
+    "light-purple": {
+     "value": "#bca3f9",
+     "type": "color",
+     "source": "declared --light-purple (raw/css-vars.json)",
+     "description": "Legacy palette name light-purple."
+    },
+    "light-sea-green": {
+     "value": "#00b8aa",
+     "type": "color",
+     "source": "declared --light-sea-green (raw/css-vars.json)",
+     "description": "Legacy palette name light-sea-green."
+    },
+    "light-sky-blue": {
+     "value": "#77c1f0",
+     "type": "color",
+     "source": "declared --light-sky-blue (raw/css-vars.json)",
+     "description": "Legacy palette name light-sky-blue."
+    },
+    "lightblue": {
+     "value": "#e1f0fb",
+     "type": "color",
+     "source": "declared --lightblue (raw/css-vars.json)",
+     "description": "Legacy palette name lightblue."
+    },
+    "linen": {
+     "value": "#eee9df",
+     "type": "color",
+     "source": "declared --linen (raw/css-vars.json)",
+     "description": "Legacy palette name linen."
+    },
+    "maroon": {
+     "value": "#4e101f",
+     "type": "color",
+     "source": "declared --maroon (raw/css-vars.json)",
+     "description": "Legacy palette name maroon."
+    },
+    "medium-sea-green": {
+     "value": "#40a16a",
+     "type": "color",
+     "source": "declared --medium-sea-green (raw/css-vars.json)",
+     "description": "Legacy palette name medium-sea-green."
+    },
+    "medium-sea-green-2": {
+     "value": "#1bc183",
+     "type": "color",
+     "source": "declared --medium-sea-green-2 (raw/css-vars.json)",
+     "description": "Legacy palette name medium-sea-green-2."
+    },
+    "medium-turquoise": {
+     "value": "#00c5b6",
+     "type": "color",
+     "source": "declared --medium-turquoise (raw/css-vars.json)",
+     "description": "Legacy palette name medium-turquoise."
+    },
+    "midnight-blue": {
+     "value": "#243341",
+     "type": "color",
+     "source": "declared --midnight-blue (raw/css-vars.json)",
+     "description": "Legacy palette name midnight-blue."
+    },
+    "midnight-blue-2": {
+     "value": "#0d2446",
+     "type": "color",
+     "source": "declared --midnight-blue-2 (raw/css-vars.json)",
+     "description": "Legacy palette name midnight-blue-2."
+    },
+    "pale-green": {
+     "value": "#bcffae",
+     "type": "color",
+     "source": "declared --pale-green (raw/css-vars.json)",
+     "description": "Legacy palette name pale-green."
+    },
+    "pink": {
+     "value": "#f0a8fa",
+     "type": "color",
+     "source": "declared --pink (raw/css-vars.json)",
+     "description": "Legacy palette name pink."
+    },
+    "purple": {
+     "value": "#43283a",
+     "type": "color",
+     "source": "declared --purple (raw/css-vars.json)",
+     "description": "Legacy palette name purple."
+    },
+    "purple-2": {
+     "value": "#43283a",
+     "type": "color",
+     "source": "declared --purple-2 (raw/css-vars.json)",
+     "description": "Legacy palette name purple-2."
+    },
+    "royal-blue": {
+     "value": "#4f75fe",
+     "type": "color",
+     "source": "declared --royal-blue (raw/css-vars.json)",
+     "description": "Legacy palette name royal-blue."
+    },
+    "royal-blue-2": {
+     "value": "#4f75fe",
+     "type": "color",
+     "source": "declared --royal-blue-2 (raw/css-vars.json)",
+     "description": "Legacy palette name royal-blue-2."
+    },
+    "sea-green": {
+     "value": "#14915f",
+     "type": "color",
+     "source": "declared --sea-green (raw/css-vars.json)",
+     "description": "Legacy palette name sea-green."
+    },
+    "silver": {
+     "value": "#cdc4b4",
+     "type": "color",
+     "source": "declared --silver (raw/css-vars.json)",
+     "description": "Legacy palette name silver."
+    },
+    "silver-2": {
+     "value": "#cdc4b4",
+     "type": "color",
+     "source": "declared --silver-2 (raw/css-vars.json)",
+     "description": "Legacy palette name silver-2."
+    },
+    "sky": {
+     "value": "#e8e5de",
+     "type": "color",
+     "source": "declared --sky (raw/css-vars.json)",
+     "description": "Legacy palette name sky."
+    },
+    "sky-light": {
+     "value": "#f4f6f8",
+     "type": "color",
+     "source": "declared --sky-light (raw/css-vars.json)",
+     "description": "Legacy palette name sky-light."
+    },
+    "snow": {
+     "value": "#f8f4f4",
+     "type": "color",
+     "source": "declared --snow (raw/css-vars.json)",
+     "description": "Legacy palette name snow."
+    },
+    "steel-blue": {
+     "value": "#007bb6",
+     "type": "color",
+     "source": "declared --steel-blue (raw/css-vars.json)",
+     "description": "Legacy palette name steel-blue."
+    },
+    "teal": {
+     "value": "#247a88",
+     "type": "color",
+     "source": "declared --teal (raw/css-vars.json)",
+     "description": "Legacy palette name teal."
+    },
+    "teal-2": {
+     "value": "#2c6863",
+     "type": "color",
+     "source": "declared --teal-2 (raw/css-vars.json)",
+     "description": "Legacy palette name teal-2."
+    },
+    "thistle": {
+     "value": "rgba(212, 181, 212, 0.5)",
+     "type": "color",
+     "source": "declared --thistle (raw/css-vars.json)",
+     "description": "Legacy palette name thistle."
+    },
+    "tomato": {
+     "value": "#fc4945",
+     "type": "color",
+     "source": "declared --tomato (raw/css-vars.json)",
+     "description": "Legacy palette name tomato."
+    },
+    "very-light-grey": {
+     "value": "#fcfbf7",
+     "type": "color",
+     "source": "declared --very-light-grey (raw/css-vars.json)",
+     "description": "Legacy palette name very-light-grey."
+    },
+    "warm-grey": {
+     "value": "#b4a6a6",
+     "type": "color",
+     "source": "declared --warm-grey (raw/css-vars.json)",
+     "description": "Legacy palette name warm-grey."
+    },
+    "white": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "declared --white (raw/css-vars.json)",
+     "description": "Legacy palette name white."
+    },
+    "white-2": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "declared --white-2 (raw/css-vars.json)",
+     "description": "Legacy palette name white-2."
+    },
+    "white-smoke": {
+     "value": "#f1f0ed",
+     "type": "color",
+     "source": "declared --white-smoke (raw/css-vars.json)",
+     "description": "Legacy palette name white-smoke."
+    }
+   }
+  },
+  "radius": {
+   "button": {
+    "type": "dimension",
+    "value": "12px",
+    "source": "computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)",
+    "description": "Primary buttons (the large 12px corner)."
+   },
+   "card": {
+    "type": "dimension",
+    "value": "32px",
+    "source": "computed borderTopLeftRadius of plan-card default (raw/components-computed.json)",
+    "description": "Plan-card corners."
+   },
+   "band": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed borderTopLeftRadius of cta-band default (raw/components-computed.json)",
+    "description": "The closing CTA band's pill-like corner."
+   },
+   "field": {
+    "type": "dimension",
+    "value": "30px",
+    "source": "computed borderTopLeftRadius of newsletter-field default (raw/components-computed.json)",
+    "description": "Rounded inputs (newsletter)."
+   },
+   "accordion": {
+    "type": "dimension",
+    "value": "10px",
+    "source": "computed borderTopLeftRadius of feature-accordion default (raw/components-computed.json)",
+    "description": "Feature/FAQ accordion corners."
+   },
+   "testimonial": {
+    "type": "dimension",
+    "value": "20px",
+    "source": "computed borderTopLeftRadius of testimonial-card default (raw/components-computed.json)",
+    "description": "Testimonial card corners."
+   },
+   "control": {
+    "type": "dimension",
+    "value": "10px",
+    "source": "computed borderTopLeftRadius of signin-button default (raw/components-computed.json)",
+    "description": "The app surface's control corner (declared --ui-button-radius = 10px)."
+   }
+  },
+  "font": {
+   "family": {
+    "sans": {
+     "type": "fontFamily",
+     "value": "\"GT America\", sans-serif",
+     "source": "computed fontFamily of hero-sub default (raw/components-computed.json)",
+     "description": "The UI face — GT America (Grilli Type, self-hosted CDN webfont), measured on body/nav/button text."
+    },
+    "display": {
+     "type": "fontFamily",
+     "value": "\"GT Walsheim\", sans-serif",
+     "source": "computed fontFamily of hero-title default (raw/components-computed.json)",
+     "description": "The display face — GT Walsheim (measured on the hero and section titles, weight 900)."
+    },
+    "app": {
+     "type": "fontFamily",
+     "value": "GT-America, Helvetica, Arial, sans-serif",
+     "source": "computed fontFamily of signin-button default (raw/components-computed.json)",
+     "description": "The sign-in surface's stack — the same GT America (named GT-America in the app bundle)."
+    },
+    "careers": {
+     "type": "fontFamily",
+     "value": "GTAmerica-Regular",
+     "source": "computed fontFamily of careers-all-jobs default (raw/components-computed.json)",
+     "description": "The careers site's face (GTAmerica-Regular)."
+    },
+    "apply": {
+     "type": "fontFamily",
+     "value": "Inter, sans-serif",
+     "source": "computed fontFamily of apply-field default (raw/components-computed.json)",
+     "description": "The application wizard's face — Inter."
+    }
+   },
+   "size": {
+    "hero": {
+     "type": "dimension",
+     "value": "64px",
+     "source": "computed fontSize of hero-title default (raw/components-computed.json)",
+     "description": "The hero display headline at 1440px."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "48px",
+     "source": "computed fontSize of section-h2 default (raw/components-computed.json)",
+     "description": "Section headings."
+    },
+    "heroSub": {
+     "type": "dimension",
+     "value": "22px",
+     "source": "computed fontSize of hero-sub default (raw/components-computed.json)",
+     "description": "The hero subline."
+    },
+    "body": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of page-ground default (raw/components-computed.json)",
+     "description": "Body/UI base."
+    },
+    "nav": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of nav-link default (raw/components-computed.json)",
+     "description": "Nav labels and nav buttons."
+    },
+    "cta": {
+     "type": "dimension",
+     "value": "20px",
+     "source": "computed fontSize of hero-cta default (raw/components-computed.json)",
+     "description": "The large primary CTA label."
+    },
+    "faq": {
+     "type": "dimension",
+     "value": "20px",
+     "source": "computed fontSize of faq-item default (raw/components-computed.json)",
+     "description": "The pricing FAQ question."
+    },
+    "footer": {
+     "type": "dimension",
+     "value": "20px",
+     "source": "computed fontSize of footer-link default (raw/components-computed.json)",
+     "description": "Footer links."
+    },
+    "mHero": {
+     "type": "dimension",
+     "value": "40px",
+     "source": "computed fontSize of m-hero default (raw/components-computed.json)",
+     "description": "The hero headline at 390px."
+    }
+   },
+   "weight": {
+    "display": {
+     "type": "fontWeight",
+     "value": 900,
+     "source": "computed fontWeight of hero-title default (raw/components-computed.json)",
+     "description": "Display headlines (GT Walsheim 900)."
+    }
+   }
+  },
+  "motion": {
+   "duration": {
+    "normal": {
+     "type": "duration",
+     "value": "0.2s",
+     "source": "computed transitionDuration of hero-cta default (raw/components-computed.json)",
+     "description": "Transition duration on the hero-cta."
+    },
+    "fast": {
+     "type": "duration",
+     "value": "0.3s",
+     "source": "computed transitionDuration of nav-link default (raw/components-computed.json)",
+     "description": "Transition duration on the nav-link."
+    }
+   }
+  }
+ },
+ "light": {
+  "surface": {
+   "page": {
+    "type": "color",
+    "description": "The page ground, painted by the body.",
+    "value": "{color.white}",
+    "source": "computed backgroundColor of page-ground default (raw/components-computed.json); same value as core.color.white"
+   },
+   "card": {
+    "type": "color",
+    "description": "A card ground (plan card, FAQ items).",
+    "value": "{color.white}",
+    "source": "computed backgroundColor of plan-card default (raw/components-computed.json); same value as core.color.white"
+   },
+   "band": {
+    "type": "color",
+    "description": "The tinted testimonial/band ground.",
+    "value": "#f5f1ec",
+    "source": "computed backgroundColor of testimonial-card default (raw/components-computed.json)"
+   },
+   "dark": {
+    "type": "color",
+    "description": "A dark content band inside the light theme (the closing CTA).",
+    "value": "{color.brown.500}",
+    "source": "computed backgroundColor of cta-band default (raw/components-computed.json); same value as core.color.brown.500"
+   },
+   "field": {
+    "type": "color",
+    "description": "The newsletter input's tinted fill (brown at 10%).",
+    "value": "rgba(45, 35, 35, 0.1)",
+    "source": "computed backgroundColor of newsletter-field default (raw/components-computed.json)"
+   }
+  },
+  "text": {
+   "primary": {
+    "type": "color",
+    "description": "The body ink (= brown-300 #4a3e3e).",
+    "value": "{color.brown.300}",
+    "source": "computed color of page-ground default (raw/components-computed.json); same value as core.color.brown.300"
+   },
+   "heading": {
+    "type": "color",
+    "description": "The display ink (= brown-400 #382d2d).",
+    "value": "{color.brown.400}",
+    "source": "computed color of hero-title default (raw/components-computed.json); same value as core.color.brown.400"
+   },
+   "heading2": {
+    "type": "color",
+    "description": "Section headings paint a slightly deeper ink than brown-400.",
+    "value": "#1e1818",
+    "source": "computed color of section-h2 default (raw/components-computed.json)"
+   },
+   "muted": {
+    "type": "color",
+    "description": "Muted text on footer links and small print (= brown-200 #736b6b).",
+    "value": "{color.brown.200}",
+    "source": "computed color of footer-link default (raw/components-computed.json); same value as core.color.brown.200"
+   },
+   "onDark": {
+    "type": "color",
+    "description": "Text on the dark bands.",
+    "value": "{color.white}",
+    "source": "computed color of cta-band default (raw/components-computed.json); same value as core.color.white"
+   },
+   "onAccent": {
+    "type": "color",
+    "description": "Text on the brand-blue controls.",
+    "value": "{color.white}",
+    "source": "computed color of hero-cta default (raw/components-computed.json); same value as core.color.white"
+   }
+  },
+  "accent": {
+   "type": "color",
+   "description": "The brand blue where a solid fill shows (= blue-500 #4f75fe).",
+   "value": "{color.blue.500}",
+   "source": "computed backgroundColor of hero-cta default (raw/components-computed.json); same value as core.color.blue.500"
+  },
+  "accentHover": {
+   "type": "color",
+   "description": "The primary button's hover fill.",
+   "value": "{color.blue.600}",
+   "source": "computed backgroundColor of hero-cta hover (raw/components-computed.json); same value as core.color.blue.600"
+  },
+  "accentPressed": {
+   "type": "color",
+   "description": "The primary button's pressed fill.",
+   "value": "{color.blue.600}",
+   "source": "computed backgroundColor of hero-cta pressed (raw/components-computed.json); same value as core.color.blue.600"
+  },
+  "darkFill": {
+   "type": "color",
+   "description": "The dark brown button fill (= brown-500 #2d2323).",
+   "value": "{color.brown.500}",
+   "source": "computed backgroundColor of nav-demo default (raw/components-computed.json); same value as core.color.brown.500"
+  },
+  "darkFillHover": {
+   "type": "color",
+   "description": "The dark button's hover fill.",
+   "value": "{color.brown.300}",
+   "source": "computed backgroundColor of nav-demo hover (raw/components-computed.json); same value as core.color.brown.300"
+  },
+  "border": {
+   "subtle": {
+    "type": "color",
+    "description": "The card hairline (= beige-700 #e3e1dd).",
+    "value": "{color.beige.700}",
+    "source": "computed borderTopColor of plan-card default (raw/components-computed.json); same value as core.color.beige.700"
+   },
+   "demo": {
+    "type": "color",
+    "description": "The secondary button's border (= beige-600 #edebe7).",
+    "value": "{color.beige.600}",
+    "source": "computed borderTopColor of hero-demo default (raw/components-computed.json); same value as core.color.beige.600"
+   }
+  },
+  "focus": {
+   "type": "color",
+   "description": "The focus ring on the surface's controls.",
+   "value": "#101010",
+   "source": "computed outlineColor of hero-cta focus-visible (raw/components-computed.json)"
+  },
+  "nav": {
+   "link": {
+    "type": "color",
+    "description": "Nav link ink at rest.",
+    "value": "{color.brown.300}",
+    "source": "computed color of nav-link default (raw/components-computed.json); same value as core.color.brown.300"
+   },
+   "linkHover": {
+    "type": "color",
+    "description": "Nav link ink on hover.",
+    "value": "{color.brown.300}",
+    "source": "computed color of nav-link hover (raw/components-computed.json); same value as core.color.brown.300"
+   }
+  },
+  "careers": {
+   "accent": {
+    "type": "color",
+    "description": "The careers site's own button blue (#466af6 — a step between the brand blue and its hover).",
+    "value": "#466af6",
+    "source": "computed backgroundColor of careers-all-jobs default (raw/components-computed.json)"
+   },
+   "link": {
+    "type": "color",
+    "description": "The job-title link ink on the careers site.",
+    "value": "{color.brown.700}",
+    "source": "computed textStyle.color of careers-job-card default (raw/components-computed.json); same value as core.color.brown.700"
+   },
+   "text": {
+    "type": "color",
+    "description": "Careers body ink.",
+    "value": "#333333",
+    "source": "computed color of careers-header default (raw/components-computed.json)"
+   }
+  },
+  "app": {
+   "accent": {
+    "type": "color",
+    "description": "The ATS sign-in button — the same brand blue-500.",
+    "value": "{color.blue.500}",
+    "source": "computed backgroundColor of signin-button default (raw/components-computed.json); same value as core.color.blue.500"
+   },
+   "field": {
+    "type": "color",
+    "description": "The sign-in input fill (= beige-500 #f5f3ef).",
+    "value": "{color.beige.500}",
+    "source": "computed backgroundColor of signin-email default (raw/components-computed.json); same value as core.color.beige.500"
+   },
+   "ssoBorder": {
+    "type": "color",
+    "description": "The SSO button's hairline.",
+    "value": "rgba(102, 87, 87, 0.2)",
+    "source": "computed borderTopColor of signin-sso default (raw/components-computed.json)"
+   },
+   "hrAccent": {
+    "type": "color",
+    "description": "The HR sign-in button — the HR product green (= secondary--green #00b16b).",
+    "value": "{color.secondary.green}",
+    "source": "computed backgroundColor of hr-button default (raw/components-computed.json); same value as core.color.secondary.green"
+   }
+  },
+  "apply": {
+   "field": {
+    "type": "color",
+    "description": "The application-form input ground.",
+    "value": "#fafafa",
+    "source": "computed backgroundColor of apply-field default (raw/components-computed.json)"
+   },
+   "border": {
+    "type": "color",
+    "description": "The application-form input hairline.",
+    "value": "#e8e8e8",
+    "source": "computed borderTopColor of apply-field default (raw/components-computed.json)"
+   },
+   "accent": {
+    "type": "color",
+    "description": "The application wizard's Next fill — the brand blue again.",
+    "value": "{color.blue.500}",
+    "source": "computed backgroundColor of apply-next default (raw/components-computed.json); same value as core.color.blue.500"
+   }
+  },
+  "shadow": {
+   "cookie": {
+    "type": "shadow",
+    "value": [
+     {
+      "color": "rgba(33, 43, 54, 0.15)",
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "5px",
+      "spread": "0px"
+     }
+    ],
+    "source": "computed boxShadow of cookie-banner default (raw/components-computed.json)",
+    "description": "The cookie-banner's drop shadow."
+   }
+  }
+ },
+ "component": {
+  "ui": {
+   "radiusButton": {
+    "type": "dimension",
+    "value": "10px",
+    "source": "declared --ui-button-radius on app.homerun.co (raw/css-vars.json)",
+    "description": "declared 10px — the sign-in button paints it"
+   },
+   "radiusInput": {
+    "type": "dimension",
+    "value": "10px",
+    "source": "declared --ui-input-border-radius on app.homerun.co (raw/css-vars.json)",
+    "description": "declared 10px — the inputs paint it"
+   },
+   "heightInput": {
+    "type": "dimension",
+    "value": "44px",
+    "source": "declared --ui-input-height on app.homerun.co (raw/css-vars.json)",
+    "description": "declared 44px — the email/password inputs paint it"
+   },
+   "heightButton": {
+    "type": "dimension",
+    "value": "44px",
+    "source": "declared --ui-button-min-height on app.homerun.co (raw/css-vars.json)",
+    "description": "declared 44px — the sign-in buttons paint it"
+   },
+   "fieldBg": {
+    "type": "color",
+    "description": "the input fill, declared #f5f3ef — the fields paint it",
+    "source": "declared --ui-input-bg on app.homerun.co (raw/css-vars.json); the signin-email paints #f5f3ef",
+    "value": "{color.beige.500}"
+   },
+   "textDefault": {
+    "type": "color",
+    "description": "the default app ink, declared #4a3e3e",
+    "source": "declared --ui-color-text-default on app.homerun.co (raw/css-vars.json); the signin-sso paints #4a3e3e",
+    "value": "{color.brown.300}"
+   },
+   "textHeading": {
+    "type": "color",
+    "description": "the app heading ink, declared #2d2323",
+    "source": "declared --ui-color-text-heading on app.homerun.co (raw/css-vars.json); the signin-email paints #2d2323",
+    "value": "{color.brown.500}"
+   }
+  },
+  "control": {
+   "heightNavCta": {
+    "type": "dimension",
+    "value": "72px",
+    "source": "computed height of nav-trial default (raw/components-computed.json)",
+    "description": "The nav Start-free-trial button."
+   },
+   "heightHeroCta": {
+    "type": "dimension",
+    "value": "52px",
+    "source": "computed height of hero-cta default (raw/components-computed.json)",
+    "description": "The large hero CTA."
+   },
+   "heightField": {
+    "type": "dimension",
+    "value": "50px",
+    "source": "computed height of newsletter-field default (raw/components-computed.json)",
+    "description": "The newsletter input."
+   },
+   "heightStepper": {
+    "type": "dimension",
+    "value": "32px",
+    "source": "computed height of plan-stepper-plus default (raw/components-computed.json)",
+    "description": "The pricing job-slot stepper icon."
+   },
+   "heightSso": {
+    "type": "dimension",
+    "value": "44px",
+    "source": "computed height of signin-sso default (raw/components-computed.json)",
+    "description": "The sign-in SSO button."
+   },
+   "widthField": {
+    "type": "dimension",
+    "value": "382px",
+    "source": "computed width of signin-email default (raw/components-computed.json)",
+    "description": "The sign-in email input at 1440px."
+   }
+  },
+  "nav": {
+   "height": {
+    "type": "dimension",
+    "value": "104px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The sticky top nav at 1440px."
+   },
+   "panelWidth": {
+    "type": "dimension",
+    "value": "436px",
+    "source": "computed width of nav-resources-panel default (raw/components-computed.json)",
+    "description": "The open Resources mega-panel."
+   }
+  },
+  "footer": {
+   "height": {
+    "type": "dimension",
+    "value": "622.172px",
+    "source": "computed height of footer default (raw/components-computed.json)",
+    "description": "The footer block at 1440px."
+   }
+  },
+  "menu": {
+   "height": {
+    "type": "dimension",
+    "value": "451px",
+    "source": "computed height of m-menu-open default (raw/components-computed.json)",
+    "description": "The opened mobile menu sheet at 390px."
+   }
+  },
+  "heroTitle": {
+   "width": {
+    "type": "dimension",
+    "value": "576px",
+    "source": "computed width of hero-title default (raw/components-computed.json)",
+    "description": "The hero headline's measure at 1440px."
+   }
+  },
+  "planCard": {
+   "width": {
+    "type": "dimension",
+    "value": "652px",
+    "source": "computed width of plan-card default (raw/components-computed.json)",
+    "description": "A pricing plan card."
+   }
+  },
+  "jobCard": {
+   "width": {
+    "type": "dimension",
+    "value": "1040px",
+    "source": "computed width of careers-job-card default (raw/components-computed.json)",
+    "description": "A careers job row at 1440px."
+   }
+  }
+ }
+}

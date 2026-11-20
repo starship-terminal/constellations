@@ -1,0 +1,58 @@
+{
+  "captured": "2026-11-19",
+  "page": "https://stocktwits.com/about/legal/privacy and stylesheet rules from the home shell",
+  "matchMediaReduce": false,
+  "computedMoving": [
+    {
+      "selector": "top progress bar",
+      "transitionProperty": "width, opacity",
+      "transitionDuration": "0.25s",
+      "transitionTimingFunction": "cubic-bezier(0, 0, 0.2, 1)"
+    },
+    {
+      "selector": "onetrust banner",
+      "animationName": "ot-banner-slide-in",
+      "animationDuration": "0.25s",
+      "animationTimingFunction": "ease-out"
+    }
+  ],
+  "declared": [
+    {
+      "selector": ".HomeLandingPage_gradientText__fxA22",
+      "animationName": "HomeLandingPage_gradientFlow__D7cji",
+      "animationDuration": "4s"
+    },
+    {
+      "selector": ".HomeLandingPage_floatingHeroImage__cWhMz",
+      "animationName": "HomeLandingPage_floatAnimation__drApn",
+      "animationDuration": "3s"
+    },
+    {
+      "selector": ".HomeLandingPageMobileMenu_hamburgerLine__NLSVM",
+      "transitionDuration": "0.3s",
+      "transitionTimingFunction": "ease",
+      "transitionProperty": "all"
+    },
+    {
+      "name": "Trending_marquee__61in5",
+      "from": "translateX(0px)",
+      "to": "translateX(var(--marquee-end))"
+    }
+  ],
+  "reducedMotion": [
+    {
+      "media": "(prefers-reduced-motion: reduce)",
+      "rule": "AnimatedCount enter and exit animations are set to 0s and transform none"
+    },
+    {
+      "media": "(prefers-reduced-motion: reduce)",
+      "rule": "Font Awesome beat, bounce, fade, flip, pulse, shake and spin are set to 1ms"
+    },
+    {
+      "media": "(prefers-reduced-motion: no-preference)",
+      "rule": "OneTrust banner slides in over 250ms"
+    }
+  ],
+  "verdict": "partial. Count animations and Font Awesome spins are stopped or shortened under reduce. The landing float, gradient, and marquee were declared without a reduce override in the rules that were read. The marquee track on the home shell computed animation-name none while data-marquee was running, so the live ticker motion was not confirmed as a CSS animation.",
+  "incomplete": "The motion probe script was not run. Headless Playwright hit Cloudflare. This file is the live-tab reading, not tools/capture/motion-probe.mjs output."
+}

@@ -1,0 +1,23 @@
+{
+  "screenshots": "preview_snapshot failed twice with: The browser is not producing screenshot frames. No page screenshot or crop was invented. screenshots/home-light-unavailable.png is a text label.",
+  "darkTheme": "Homepage html class was tpl-always-light. Dark custom-property pairs were declared and not painted. No theme toggle was used.",
+  "width1440": "Desktop innerWidth stayed 1169. A freeform 390 by 844 resize did change the login page to innerWidth 390.",
+  "reducedMotion": "The prefers-reduced-motion pass was not run. Motion durations were not tokenised.",
+  "notEntered": [
+    "Continue to checkout",
+    "payment and card fields",
+    "account creation beyond the email chrome",
+    "Google, Apple, and work-or-school SSO",
+    "a filled or submitted email",
+    "a submitted search query",
+    "a signed-in article"
+  ],
+  "componentsNotOpened": [
+    "dialog",
+    "toast",
+    "section navigation drawer",
+    "form validation error",
+    "hover and pressed painted states"
+  ],
+  "fonts": "nyt-cheltenham, nyt-franklin, and nyt-imperial are proprietary and are not shipped."
+}

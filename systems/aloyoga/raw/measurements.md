@@ -1226,6 +1226,6 @@ Crops: `newsletter-input-default.png`, `newsletter-input-focused.png`.
 
 ## Transitions declared in the readable stylesheets
 
-appwrite.io's bundle is served cross-origin from cdn.appwrite.io, so this list holds only what the CSSOM could read on each page (inline styles and same-origin sheets); the per-state Transition rows above are computed values and cover the bundle's rules.
+This list holds only what the CSSOM could read on each page: inline styles and same-origin sheets, since a cross-origin sheet stays unreadable there. The per-state Transition rows in the tables above are computed values and cover every rule the page paints.
 
 - home: `transform 100ms linear, opacity 200ms linear, visibility linear`, `flex-grow 1000ms linear`, `none`, `background-color 0.2s ease-out`, `opacity 200ms linear, visibility 200ms linear 200ms`, `opacity 200ms linear, visibility linear`, `background 0.2s ease-in-out`, `background 0.1s, box-shadow 0.1s, color 0.1s`, `color 0.1s`, `opacity 0.1s`, `background 0.1s`, `background-color 0.5s linear`

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-18T18:06:58.241Z",
+  "screenshot": "not-found-light-default.png",
+  "sanitizedSourceUrl": "https://risecalendar.com/signin",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "title": "404: This page could not be found.",
+    "theme": {
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0
+    },
+    "documentSize": {
+      "width": 1440,
+      "height": 980
+    }
+  },
+  "png": {
+    "width": 2880,
+    "height": 1960
+  },
+  "capture": {
+    "mode": "fullPage",
+    "scale": "device"
+  },
+  "note": "Headless Playwright after the preview browser returned: The browser is not producing screenshot frames. No Cloudflare challenge.",
+  "visualReview": {
+    "status": "pending"
+  }
+}

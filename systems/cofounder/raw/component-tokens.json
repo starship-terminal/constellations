@@ -1,0 +1,598 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. cofounder.co declares a Tailwind v4 custom-property layer on :root (raw/css-vars.json) plus literal semantic utility colours. The core ramps below are the declared values plus the literal utility colours the sheet paints (ink opacities, surface-raised, border-card, the #1a6fd1 band). Semantic roles are measured on the painted chrome in raw/components-computed.json and alias the core when the value matches. One theme exists (light); coloured bands live inside it.",
+ "core": {
+  "color": {
+   "surface": {
+    "value": "#f5f5f2",
+    "type": "color",
+    "source": "declared --color-surface (raw/css-vars.json)",
+    "description": "Declared color-surface (#f5f5f2) — the warm off-white page ground (same value as --background)."
+   },
+   "ink": {
+    "90": {
+     "value": "#171717",
+     "type": "color",
+     "source": "declared --foreground (raw/css-vars.json)",
+     "description": "Declared foreground (#171717) — the deepest text ink."
+    },
+    "ui": {
+     "value": "#202020",
+     "type": "color",
+     "source": "declared --color-ink-ui-solid (raw/css-vars.json)",
+     "description": "Declared ink-ui-solid (#202020) — solid UI ink, the dark CTA base."
+    },
+    "80": {
+     "value": "rgba(38, 35, 35, 0.8)",
+     "type": "color",
+     "source": "computed textStyle.color of section-title default (raw/components-computed.json)",
+     "description": "The primary ink #262323 at 80% (text-ink literal)."
+    },
+    "70": {
+     "value": "rgba(38, 35, 35, 0.7)",
+     "type": "color",
+     "source": "computed color of plan-name default (raw/components-computed.json)",
+     "description": "Muted ink #262323 at 70% (text-ink-muted literal)."
+    },
+    "50": {
+     "value": "rgba(38, 35, 35, 0.5)",
+     "type": "color",
+     "source": "computed color of footer-social default (raw/components-computed.json)",
+     "description": "Faint ink #262323 at 50% — the footer social icons."
+    }
+   },
+   "lime": {
+    "200": {
+     "value": "#d8f999",
+     "type": "color",
+     "source": "declared --color-lime-200 (raw/css-vars.json)",
+     "description": "Declared lime-200 (lab ≈ #d8f999) — the light lime accent step."
+    },
+    "300": {
+     "value": "#bbf451",
+     "type": "color",
+     "source": "declared --color-lime-300 (raw/css-vars.json)",
+     "description": "Declared lime-300 (lab ≈ #bbf451) — the lime accent."
+    }
+   },
+   "feature": {
+    "neutral": {
+     "value": "#bfbfbf",
+     "type": "color",
+     "source": "declared --color-feature-neutral (raw/css-vars.json)",
+     "description": "Declared feature-neutral (#bfbfbf)."
+    },
+    "success": {
+     "value": "#34a853",
+     "type": "color",
+     "source": "declared --color-feature-success (raw/css-vars.json)",
+     "description": "Declared feature-success (#34a853) — the only status colour declared."
+    }
+   },
+   "black": {
+    "value": "#000000",
+    "type": "color",
+    "source": "declared --color-black (raw/css-vars.json)",
+    "description": "Declared color-black (#000)."
+   },
+   "white": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "declared --color-white (raw/css-vars.json)",
+    "description": "Declared color-white (#fff) — text on the dark CTA and the blue band."
+   },
+   "surfaceRaised": {
+    "value": "#fbfbf8",
+    "type": "color",
+    "source": "computed paint.0.bg of plan-card default (raw/components-computed.json)",
+    "description": "The #fbfbf8 raised card ground (bg-surface-raised literal, painted on the inner .pricing-card layer)."
+   },
+   "band": {
+    "value": "#1a6fd1",
+    "type": "color",
+    "source": "computed backgroundColor of blue-section default (raw/components-computed.json)",
+    "description": "The #1a6fd1 tools band (bg-[#1a6fd1] literal)."
+   },
+   "borderCard": {
+    "value": "#dee2de",
+    "type": "color",
+    "source": "computed paint.0.border of plan-card default (raw/components-computed.json)",
+    "description": "The #dee2de card border (border-border-card literal, on the inner .pricing-card)."
+   },
+   "tile": {
+    "value": "#f3f3f0",
+    "type": "color",
+    "source": "computed backgroundColor of logo-tile default (raw/components-computed.json)",
+    "description": "The #f3f3f0 logo-tile fill."
+   },
+   "ctaDark": {
+    "value": "rgba(32, 32, 32, 0.85)",
+    "type": "color",
+    "source": "computed backgroundImage.lastColor of cta-dark default (raw/components-computed.json)",
+    "description": "The dark CTA gradient's base colour (≈ #202020d9 at the bottom stop)."
+   }
+  },
+  "measured": {},
+  "radius": {
+   "md": {
+    "value": "6px",
+    "type": "dimension",
+    "source": "declared --radius-md (raw/css-vars.json)",
+    "description": "Declared radius-md (.375rem = 6px)."
+   },
+   "lg": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "declared --radius-lg (raw/css-vars.json)",
+    "description": "Declared radius-lg (.5rem = 8px) — the button radius."
+   },
+   "xl": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "declared --radius-xl (raw/css-vars.json)",
+    "description": "Declared radius-xl (.75rem = 12px)."
+   },
+   "xxl": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "declared --radius-2xl (raw/css-vars.json)",
+    "description": "Declared radius-2xl (1rem = 16px) — pricing cards."
+   },
+   "control": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)",
+    "description": "The button radius on the pill controls."
+   },
+   "tile": {
+    "value": "10px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of logo-tile default (raw/components-computed.json)",
+    "description": "The logo-tile corner (10px)."
+   }
+  },
+  "motion": {
+   "duration": {
+    "default": {
+     "value": "0.15s",
+     "type": "duration",
+     "source": "declared --default-transition-duration (raw/css-vars.json)",
+     "description": "The default transition duration (.15s)."
+    },
+    "control": {
+     "value": "0.14s",
+     "type": "duration",
+     "source": "computed transitionDuration of hero-cta default (raw/components-computed.json)",
+     "description": "The control transition (.14s on the light pill buttons)."
+    },
+    "nav": {
+     "value": "0.06s",
+     "type": "duration",
+     "source": "computed transitionDuration of nav-item default (raw/components-computed.json)",
+     "description": "The nav-link colour transition (.06s)."
+    }
+   },
+   "curve": {
+    "in_": {
+     "value": "cubic-bezier(.4, 0, 1, 1)",
+     "type": "cubicBezier",
+     "source": "declared --ease-in (raw/css-vars.json)",
+     "description": "Declared ease-in."
+    },
+    "out": {
+     "value": "cubic-bezier(0, 0, .2, 1)",
+     "type": "cubicBezier",
+     "source": "declared --ease-out (raw/css-vars.json)",
+     "description": "Declared ease-out."
+    },
+    "inOut": {
+     "value": "cubic-bezier(.4, 0, .2, 1)",
+     "type": "cubicBezier",
+     "source": "declared --ease-in-out (raw/css-vars.json)",
+     "description": "Declared ease-in-out."
+    },
+    "default": {
+     "value": "cubic-bezier(.4, 0, .2, 1)",
+     "type": "cubicBezier",
+     "source": "declared --default-transition-timing-function (raw/css-vars.json)",
+     "description": "Declared default-transition-timing-function."
+    },
+    "control": {
+     "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+     "type": "cubicBezier",
+     "source": "computed transitionTimingFunction of tool-button default (raw/components-computed.json)",
+     "description": "The tool-button ease (the declared default curve, measured on the paint)."
+    }
+   }
+  },
+  "spacing": {
+   "unit": {
+    "value": "4px",
+    "type": "dimension",
+    "source": "declared --spacing (raw/css-vars.json)",
+    "description": "The spacing base unit (.25rem = 4px) — every gap/padding multiplies it."
+   }
+  },
+  "blur": {
+   "sm": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "declared --blur-sm (raw/css-vars.json)",
+    "description": "Declared blur-sm — backdrop-blur step (the glass pill uses 16px+)."
+   },
+   "md": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "declared --blur-md (raw/css-vars.json)",
+    "description": "Declared blur-md — backdrop-blur step (the glass pill uses 16px+)."
+   },
+   "lg": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "declared --blur-lg (raw/css-vars.json)",
+    "description": "Declared blur-lg — backdrop-blur step (the glass pill uses 16px+)."
+   }
+  },
+  "fontSize": {
+   "xs": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "declared --text-xs (raw/css-vars.json)",
+    "description": "Declared text-xs."
+   },
+   "sm": {
+    "value": "14px",
+    "type": "dimension",
+    "source": "declared --text-sm (raw/css-vars.json)",
+    "description": "Declared text-sm."
+   }
+  },
+  "fontWeight": {
+   "normal": {
+    "value": 400,
+    "type": "fontWeight",
+    "source": "declared --font-weight-normal (raw/css-vars.json)",
+    "description": "Declared font-weight-normal."
+   },
+   "medium": {
+    "value": 500,
+    "type": "fontWeight",
+    "source": "declared --font-weight-medium (raw/css-vars.json)",
+    "description": "Declared font-weight-medium."
+   },
+   "semibold": {
+    "value": 600,
+    "type": "fontWeight",
+    "source": "declared --font-weight-semibold (raw/css-vars.json)",
+    "description": "Declared font-weight-semibold."
+   }
+  },
+  "font": {
+   "family": {
+    "display": {
+     "type": "fontFamily",
+     "value": "neoris, \"neoris Fallback\", sans-serif",
+     "source": "computed fontFamily of hero-title default (raw/components-computed.json)",
+     "description": "The display face on the hero headline."
+    },
+    "ui": {
+     "type": "fontFamily",
+     "value": "\"Inter\", \"Inter Fallback\"",
+     "source": "declared --font-inter (raw/css-vars.json)",
+     "description": "Inter — the UI face."
+    },
+    "mono": {
+     "type": "fontFamily",
+     "value": "\"IBM Plex Mono\", \"IBM Plex Mono Fallback\"",
+     "source": "declared --font-mono (raw/css-vars.json)",
+     "description": "The declared mono face (IBM Plex Mono loader)."
+    },
+    "departure": {
+     "type": "fontFamily",
+     "value": "\"departureMono\", \"departureMono Fallback\"",
+     "source": "declared --font-departure (raw/css-vars.json)",
+     "description": "Departure Mono — the pixel-flavoured display mono."
+    }
+   },
+   "size": {
+    "hero": {
+     "type": "dimension",
+     "value": "46px",
+     "source": "computed fontSize of hero-title default (raw/components-computed.json)",
+     "description": "The hero display headline at 1440px (46px/108%)."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "40px",
+     "source": "computed fontSize of section-title default (raw/components-computed.json)",
+     "description": "Section headings."
+    },
+    "mHero": {
+     "type": "dimension",
+     "value": "34px",
+     "source": "computed fontSize of m-hero default (raw/components-computed.json)",
+     "description": "The hero headline at 390px."
+    },
+    "nav": {
+     "type": "dimension",
+     "value": "15px",
+     "source": "computed fontSize of nav-item default (raw/components-computed.json)",
+     "description": "Nav labels (15px)."
+    },
+    "footer": {
+     "type": "dimension",
+     "value": "15px",
+     "source": "computed fontSize of footer-link default (raw/components-computed.json)",
+     "description": "Footer links."
+    },
+    "planName": {
+     "type": "dimension",
+     "value": "15px",
+     "source": "computed fontSize of plan-name default (raw/components-computed.json)",
+     "description": "The plan label inside a pricing card (15px)."
+    },
+    "howtoCard": {
+     "type": "dimension",
+     "value": "15px",
+     "source": "computed fontSize of howto-card-title default (raw/components-computed.json)",
+     "description": "The guide card titles (20px Neoris)."
+    }
+   }
+  }
+ },
+ "light": {
+  "surface": {
+   "page": {
+    "type": "color",
+    "description": "The page ground — painted by the body (#f5f5f2 = declared --background/--color-surface).",
+    "value": "{color.surface}",
+    "source": "computed backgroundColor of page-ground default (raw/components-computed.json); same value as core.color.surface"
+   },
+   "raised": {
+    "type": "color",
+    "description": "The raised card ground (#fbfbf8) the pricing card paints.",
+    "value": "{color.surfaceRaised}",
+    "source": "computed paint.0.bg of plan-card default (raw/components-computed.json); same value as core.color.surfaceRaised"
+   },
+   "band": {
+    "type": "color",
+    "description": "The #1a6fd1 tools band inside the single light theme.",
+    "value": "{color.band}",
+    "source": "computed backgroundColor of blue-section default (raw/components-computed.json); same value as core.color.band"
+   },
+   "glass": {
+    "type": "color",
+    "value": "rgba(255, 255, 255, 0.16)",
+    "source": "computed paint bgImage of header default (raw/components-computed.json): linear-gradient(rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.08) 100%), its top stop",
+    "description": "The white-glass tint on the nav pill and hero prompt button (backdrop-blur 16px over it); the gradient's top stop."
+   }
+  },
+  "text": {
+   "primary": {
+    "type": "color",
+    "description": "The primary ink (#262323 at 80% = the text-ink utility).",
+    "value": "{color.ink.80}",
+    "source": "computed textStyle.color of section-title default (raw/components-computed.json); same value as core.color.ink.80"
+   },
+   "muted": {
+    "type": "color",
+    "description": "Muted ink (#262323 at 70% = text-ink-muted).",
+    "value": "{color.ink.70}",
+    "source": "computed color of plan-name default (raw/components-computed.json); same value as core.color.ink.70"
+   },
+   "faint": {
+    "type": "color",
+    "description": "Faint ink (#262323 at 50%) — the footer social icons and the tool-button captions.",
+    "value": "{color.ink.50}",
+    "source": "computed color of footer-social default (raw/components-computed.json); same value as core.color.ink.50"
+   },
+   "nav": {
+    "type": "color",
+    "description": "The nav-link ink at rest (#fbfbf8 surface-raised text on the glass nav).",
+    "value": "{color.surfaceRaised}",
+    "source": "computed color of nav-item default (raw/components-computed.json); same value as core.color.surfaceRaised"
+   },
+   "onAccent": {
+    "type": "color",
+    "description": "White-90 text on the dark CTA controls.",
+    "value": "rgba(255, 255, 255, 0.9)",
+    "source": "computed textStyle.color of cta-dark default (raw/components-computed.json)"
+   },
+   "onBand": {
+    "type": "color",
+    "description": "White text on the #1a6fd1 tools band.",
+    "value": "{color.white}",
+    "source": "computed textStyle.color of tool-tab default (raw/components-computed.json); same value as core.color.white"
+   },
+   "link": {
+    "type": "color",
+    "description": "Footer link ink at rest (text-ink; hover keeps the colour and paints a rounded highlight behind it).",
+    "value": "{color.ink.80}",
+    "source": "computed color of footer-link default (raw/components-computed.json); same value as core.color.ink.80"
+   },
+   "linkHover": {
+    "type": "color",
+    "description": "Footer link ink on hover — the colour holds, a 4px-radius tint pill appears behind it.",
+    "value": "{color.ink.80}",
+    "source": "computed color of footer-link hover (raw/components-computed.json); same value as core.color.ink.80"
+   }
+  },
+  "accent": {
+   "type": "color",
+   "description": "The dark CTA fill — the surface's accent control (gradient base ≈ #202020d9).",
+   "value": "{color.ctaDark}",
+   "source": "computed backgroundImage.lastColor of cta-dark default (raw/components-computed.json); same value as core.color.ctaDark"
+  },
+  "accentHover": {
+   "type": "color",
+   "description": "The dark CTA's hover fill (gradient base on hover).",
+   "value": "{color.ctaDark}",
+   "source": "computed backgroundImage.lastColor of cta-dark hover (raw/components-computed.json); same value as core.color.ctaDark"
+  },
+  "border": {
+   "subtle": {
+    "type": "color",
+    "description": "The 1px rgba(32,32,32,.1) hairline on the light-surface buttons.",
+    "value": "rgba(32, 32, 32, 0.1)",
+    "source": "computed borderTopColor of cta-light default (raw/components-computed.json)"
+   },
+   "card": {
+    "type": "color",
+    "description": "The pricing card border (#dee2de = border-border-card utility, on the inner .pricing-card).",
+    "value": "{color.borderCard}",
+    "source": "computed paint.0.border of plan-card default (raw/components-computed.json); same value as core.color.borderCard"
+   },
+   "cta": {
+    "type": "color",
+    "description": "The dark CTA's #383838 edge.",
+    "value": "#383838",
+    "source": "computed borderTopColor of cta-dark default (raw/components-computed.json)"
+   }
+  },
+  "focus": {
+   "type": "color",
+   "description": "The focus ring on the surface's controls (outline-ink/outline-white depending on ground).",
+   "value": "#101010",
+   "source": "computed outlineColor of nav-item focus-visible (raw/components-computed.json)"
+  },
+  "shadow": {
+   "control": {
+    "type": "shadow",
+    "value": [
+     {
+      "color": "rgba(64, 64, 64, 0.12)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "1px"
+     },
+     {
+      "color": "rgba(255, 255, 255, 0.24)",
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "0px",
+      "spread": "0px",
+      "inset": true
+     },
+     {
+      "color": "rgba(0, 0, 0, 0.25)",
+      "offsetX": "0px",
+      "offsetY": "-0.5px",
+      "blur": "2px",
+      "spread": "0px",
+      "inset": true
+     },
+     {
+      "color": "rgba(0, 0, 0, 0.03)",
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "8px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(0, 0, 0, 0.16)",
+      "offsetX": "0px",
+      "offsetY": "3px",
+      "blur": "4px",
+      "spread": "0px"
+     }
+    ],
+    "source": "computed boxShadow of cta-dark default (raw/components-computed.json)",
+    "description": "The cta-dark's layered shadow — the surface's painted elevation (inset edge lights + ambient drops)."
+   }
+  }
+ },
+ "component": {
+  "control": {
+   "heightNavCta": {
+    "type": "dimension",
+    "value": "41px",
+    "source": "computed height of nav-cta default (raw/components-computed.json)",
+    "description": "The nav Run-a-company pill."
+   },
+   "heightNavItem": {
+    "type": "dimension",
+    "value": "22.5px",
+    "source": "computed height of nav-item default (raw/components-computed.json)",
+    "description": "Nav links."
+   },
+   "heightHeroCta": {
+    "type": "dimension",
+    "value": "41px",
+    "source": "computed height of hero-cta default (raw/components-computed.json)",
+    "description": "The hero Run-a-company button."
+   },
+   "heightPromptBtn": {
+    "type": "dimension",
+    "value": "41px",
+    "source": "computed height of hero-prompt-btn default (raw/components-computed.json)",
+    "description": "The glass copy-prompt button (41px)."
+   },
+   "heightMenuButton": {
+    "type": "dimension",
+    "value": "41px",
+    "source": "computed height of m-menu-button default (raw/components-computed.json)",
+    "description": "The mobile menu toggle (41x41)."
+   },
+   "radiusCta": {
+    "type": "dimension",
+    "value": "8px",
+    "source": "computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)",
+    "description": "Button corner radius."
+   }
+  },
+  "card": {
+   "radiusPlan": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "computed paint.0.radius of plan-card default (raw/components-computed.json)",
+    "description": "Pricing-card corner (radius-2xl, on the inner .pricing-card)."
+   },
+   "width": {
+    "type": "dimension",
+    "value": "640px",
+    "source": "computed width of plan-card default (raw/components-computed.json)",
+    "description": "A pricing card column at 1440px."
+   }
+  },
+  "nav": {
+   "height": {
+    "type": "dimension",
+    "value": "91px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The fixed header bar at 1440px."
+   }
+  },
+  "footer": {
+   "height": {
+    "type": "dimension",
+    "value": "749.391px",
+    "source": "computed height of footer default (raw/components-computed.json)",
+    "description": "The footer block at 1440px."
+   }
+  },
+  "drawer": {
+   "width": {
+    "type": "dimension",
+    "value": "390px",
+    "source": "computed width of m-menu-open default (raw/components-computed.json)",
+    "description": "The mobile menu panel at 390px."
+   }
+  },
+  "heroTitle": {
+   "width": {
+    "type": "dimension",
+    "value": "580px",
+    "source": "computed width of hero-title default (raw/components-computed.json)",
+    "description": "The hero headline's measure."
+   }
+  },
+  "tile": {
+   "width": {
+    "type": "dimension",
+    "value": "170px",
+    "source": "computed width of logo-tile default (raw/components-computed.json)",
+    "description": "A customer logo tile (170x84)."
+   }
+  }
+ }
+}

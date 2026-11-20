@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Butter style guide</title>
+<meta name="description" content="Butter design tokens and the public marketing plus signed-out app-shell surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-sans: "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-size-display: 80px;
+  --font-size-display-mobile: 48px;
+  --font-size-h2: 48px;
+  --font-size-title: 48px;
+  --font-size-lede: 24px;
+  --font-size-name: 40px;
+  --font-size-body: 16px;
+  --font-size-small: 12px;
+  --font-size-meta: 12px;
+  --font-size-micro: 11px;
+  --font-size-foot: 10px;
+  --font-lineHeight-display: 84px;
+  --font-lineHeight-h2: 53px;
+  --font-lineHeight-lede: 32px;
+  --font-lineHeight-body: 24px;
+  --font-lineHeight-small: 16px;
+  --font-lineHeight-micro: 12px;
+  --color-neutral-ink: #1b1b1b;
+  --color-neutral-cream: #f5f5f0;
+  --color-neutral-field: #ffffff;
+  --color-neutral-line: #ccccc4;
+  --color-neutral-muted: #646e69;
+  --color-neutral-hairline: #e5e5e1;
+  --color-neutral-icon-muted: #999993;
+  --color-neutral-divider-dark: #454542;
+  --color-neutral-grey: #7c7c7c;
+  --color-brand-primary-50: #e7ffe4;
+  --color-brand-primary-100: #c9ffc4;
+  --color-brand-primary-200: #98ff90;
+  --color-brand-primary-300: #94cf96;
+  --color-brand-primary-400: #00ff00;
+  --color-brand-primary-500: #00e606;
+  --color-brand-primary-600: #00b809;
+  --color-brand-primary-700: #008b07;
+  --color-brand-primary-800: #076d0d;
+  --color-brand-primary-900: #0b5c11;
+  --color-brand-primary-950: #003406;
+  --color-brand-primary: #00e606;
+  --color-brand-accent: #fae210;
+  --color-brand-accent-border: #c8b50d;
+  --radius-control: 10px;
+  --radius-link: 8px;
+  --radius-panel: 24px;
+  --radius-chip: 9999px;
+  --radius-card: 10px;
+  --measured-focus-ring: inset 0px 0px 0px 0px #ffffff, inset 0px 0px 0px 2px #1b1b1b, 0px 0px 0px 0px rgba(0, 0, 0, 0);
+  --measured-focus-accent: #00e606;
+  --measured-focus-fallback: #005fcc;
+  --measured-chip-hover-border: #999993;
+  --measured-dropdown-hover: rgba(0, 0, 0, 0.1);
+  --measured-card-scrim: rgba(0, 0, 0, 0.3);
+  --measured-chip-blue: #0e4c92;
+  --measured-control-transition: 150ms;
+  --measured-link-transition: 150ms;
+  --measured-pressed-scale: 0.98;
+  --measured-marquee-duration: 10000ms;
+  --measured-fade-300: 300ms;
+  --measured-ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --text-primary: var(--color-neutral-ink);
+  --text-muted: var(--color-neutral-muted);
+  --text-on-dark: #ffffff;
+  --text-on-action: var(--color-neutral-cream);
+  --surface-page: var(--color-neutral-cream);
+  --surface-field: var(--color-neutral-field);
+  --surface-alt: var(--color-neutral-cream);
+  --action-primary-default: var(--color-neutral-ink);
+  --action-primary-hover: var(--color-brand-accent);
+  --border-field: var(--color-neutral-line);
+  --border-hairline: var(--color-neutral-hairline);
+  --border-focus: var(--color-neutral-icon-muted);
+  --divider-on-dark: var(--color-neutral-divider-dark);
+  --icon-muted: var(--color-neutral-icon-muted);
+  --component-button-height: 48px;
+  --component-field-height: 48px;
+  --component-tab-height: 36px;
+  --component-dropdown-height: 32px;
+  --component-chip-size: 32px;
+  --component-iconbutton-size: 32px;
+  --component-navlink-height: 28px;
+  --component-menurow-height: 48px;
+  --component-header-height: 57px;
+  --component-header-height-mobile: 64px;
+  --component-flyout-height: 210px;
+  --component-faqrow-height: 56px;
+  --sg-sans: DieGrotesk, dieGroteskA, ABCDiatype, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: DieGrotesk, dieGroteskA, ABCDiatype, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --text-primary: #ffffff;
+  --text-on-dark: #ffffff;
+  --text-on-action: var(--color-neutral-cream);
+  --text-secondary: var(--color-neutral-cream);
+  --surface-page: var(--color-neutral-ink);
+  --action-primary-default: var(--color-neutral-ink);
+  --action-primary-hover: var(--color-brand-accent);
+  --divider: var(--color-neutral-divider-dark);
+  --border-focus: var(--color-brand-primary);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); background: var(--color-neutral-paper, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, #ddd); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #000); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, #ddd); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #000); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-hairline, #ddd); overflow: hidden; background: var(--color-neutral-paper, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: 64px; padding: 0 12px 0 22px; font-size: 15px; background: var(--color-neutral-grey, #ededed); border-radius: var(--radius-button, 16px); }
+.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 50px); padding: 0 24px; font-size: 16px; font-weight: 400; border-radius: var(--radius-button, 16px); border: 1px solid transparent; }
+.btn.primary { background: var(--color-neutral-soft-ink, #1e1e1e); color: var(--text-on-dark, #ebebeb); }
+.btn.small { height: var(--component-button-height, 39px); border-radius: var(--radius-control, 10px); font-size: 15px; }
+.hero { color: var(--color-neutral-ink, #0f0f0f); padding: 72px 40px; font: 400 60px/1 var(--sg-serif); letter-spacing: .01em; text-align: center; }
+.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); margin: 16px auto 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 14px; font-size: 13px; background: #fff; }
+.tile .img { height: 140px; background: #ddd; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 400 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #000); opacity: .65; font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: var(--color-neutral-grey, #ededed); border-radius: 999px; padding: 4px; gap: 4px; font-size: 15px; }
+.toggle span { padding: 8px 22px; border-radius: 999px; }
+.toggle .on { background: var(--color-neutral-soft-ink, #1e1e1e); color: var(--text-on-dark, #ebebeb); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Butter style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Butter, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared <code>--butter-*</code> palette (near-black #0f0f0f ink, #1e1e1e buttons and nav text, the #ededed grey fields, the #4dc5e5 cyan accent layer and the four bright accents), the DieGrotesk type ramp from the 107px display to the 13.5px meta, the 16px button pills and 10-42px card radii, and the dark app shell's measured #0a0909/#151515/#f5f5f5 roles. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from butter.video on 2026-11-11, signed out, in headless Chromium — reached via usebutter.com, which redirects to www.butter.video. The editor behind /login is a documented boundary; the /explore, /blocks and /templates galleries are public and paint the dark shell. DieGrotesk, ABCDiatype and dieGroteskA are served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A floating light-grey island carries the wordmark, the Co-Create and Product dropdowns, plain links, Login and the dark Try-for-free pill. The same dark fill draws the hero's Get-Started pill; a cyan layer inside each button is the accent that surfaces on interaction. The light-grey footer closes every marketing page.</p>
+  <div class="mock" style="padding:20px">
+    <div class="navbar"><span class="wm">Butter</span><span>Co-Create</span><span>Product</span><span>Blocks</span><span>Templates</span><span>Pricing</span><span class="sp"></span><span>Login</span><span class="btn small primary">Try for free</span></div>
+    <div class="hero">Engineered for Creativity<small>Butter, the first video editor you can build on.</small><span class="btn primary">Get Started</span></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing centres a Monthly/Annually pill toggle above four light-grey plan cards; each card's name chip paints #fafafa and its Choose action is the dark 16px pill. A "Save 28%" tag sits by the toggle.</p>
+  <div class="mock" style="padding:20px">
+    <div style="text-align:center;margin-bottom:18px"><span class="toggle"><span>Monthly</span><span class="on">Annually</span></span> <span class="note" style="display:inline-block;background:var(--color-neutral-grey,#ededed);border-radius:8px;padding:4px 10px">Save 28%</span></div>
+    <div class="grid">
+      <div class="tile" style="border-radius:var(--radius-card,32px);background:var(--color-neutral-grey,#ededed);border:none;color:var(--color-neutral-ink,#0f0f0f)"><b>Free</b><span class="sub">Start making videos</span></div>
+      <div class="tile" style="border-radius:var(--radius-card,32px);background:var(--color-neutral-grey,#ededed);border:none;color:var(--color-neutral-ink,#0f0f0f)"><b>Pro</b><span class="sub">$18/month annually</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn primary">Choose Pro</span></div>
+  </div>
+
+  <h2 class="sh">The app shell</h2>
+  <p class="lead">/explore, /blocks and /templates paint a dark-only MUI shell signed out: a #0a0909 canvas, #151515 cards on #212121 hairlines, a #252525 active nav pill, and inverted #f5f5f5 buttons with #0a0909 labels.</p>
+  <div class="mock" style="padding:20px;background:var(--color-app-canvas,#0a0909);color:var(--color-app-text,#f5f5f5)">
+    <div class="grid">
+      <div class="tile" style="border-radius:var(--radius-card,32px);background:var(--color-app-card,#151515);border:1px solid var(--color-app-card-border,#212121);color:var(--color-app-text,#f5f5f5)"><b style="color:var(--color-app-text,#f5f5f5)">Meet Butter 2.0</b><span class="sub" style="color:var(--color-app-muted,#a1a1aa)">Our biggest release yet</span></div>
+      <div class="tile" style="border-radius:var(--radius-tile,42px);background:var(--color-app-card,#151515);border:none;color:var(--color-app-text,#f5f5f5)"><b style="color:var(--color-app-text,#f5f5f5)">Text Particles</b><span class="sub" style="color:var(--color-app-muted,#a1a1aa)">Butter Studio</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn" style="height:38px;border-radius:var(--radius-control,10px);background:var(--color-app-text,#f5f5f5);color:var(--color-app-action-ink,#0a0909);padding:0 18px;font-size:14px">Sign up</span> <span class="btn" style="height:38px;border-radius:var(--radius-control,10px);background:var(--color-app-raised,#1d1d1d);color:var(--color-app-text,#f5f5f5);padding:0 18px;font-size:14px">Log in</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared <code>--butter-*</code> layer carries the neutrals and the five accents; the measured <code>color.app.*</code> readings carry the dark shell. Light roles alias the palette, dark roles the app readings.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Buttons are 16px pills on marketing and 10px controls in the shell; nav items and badges sit on 12px, cards on 32px and the dark tiles on 42px. Borders are hairlines: 15%-black on light, #212121 on dark.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Three served faces: <code>DieGrotesk</code> on the marketing pages, <code>ABCDiatype</code> on meta and label text, <code>dieGroteskA</code> in the dark app shell. Sizes are the measured steps; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --butter-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"sans":{"v":"\"Helvetica Neue\", Arial, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"","t":"fontFamily","s":"computed fontFamily of hero-cta default (raw/components-computed.json); @font-face 'Helvetica Neue' 400/500/700 declared in raw/css-vars.json","d":"The one stack the whole site paints: Helvetica Neue first, Arial and the system sans fallbacks."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of nav-link default (raw/components-computed.json)","d":"Body/nav weight (400)."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of page-title default (raw/components-computed.json)","d":"Display and button-label weight (500)."},"bold":{"v":700,"t":"fontWeight","s":"@font-face 'Helvetica Neue' weight 700 in raw/css-vars.json","d":"The declared bold face; nothing on the captured surface paints it."}},"size":{"display":{"v":"80px","t":"dimension","s":"computed fontSize of page-title default (raw/components-computed.json)","d":"The 80px display (Textile Room, FAQ, Contact titles)."},"display-mobile":{"v":"48px","t":"dimension","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The 48px display at 390px."},"h2":{"v":"48px","t":"dimension","s":"computed fontSize of section-h2 default (raw/components-computed.json)","d":"The 48px section heading."},"title":{"v":"48px","t":"dimension","s":"computed fontSize of textile-title default (raw/components-computed.json)","d":"The 48px textile-detail title."},"lede":{"v":"24px","t":"dimension","s":"computed fontSize of hero-sub default (raw/components-computed.json)","d":"The 24px hero lede."},"name":{"v":"40px","t":"dimension","s":"computed fontSize of person-card default (raw/components-computed.json)","d":"The 40px contact-name size."},"body":{"v":"16px","t":"dimension","s":"computed fontSize of hero-cta default (raw/components-computed.json)","d":"The 16px body/button/nav size."},"small":{"v":"12px","t":"dimension","s":"computed fontSize of filter-bar default (raw/components-computed.json)","d":"The 13px small text (filter bar, cards, spec rows, FAQ rows)."},"meta":{"v":"12px","t":"dimension","s":"computed fontSize of pattern-dropdown default (raw/components-computed.json)","d":"The 12px meta size (dropdown trigger, card labels, nav badge)."},"micro":{"v":"11px","t":"dimension","s":"computed fontSize of marquee default (raw/components-computed.json)","d":"The 11px marquee text."},"foot":{"v":"10px","t":"dimension","s":"computed fontSize of footer-link default (raw/components-computed.json)","d":"The 10px footer links."}},"lineHeight":{"display":{"v":"84px","t":"dimension","s":"computed lineHeight of page-title default (raw/components-computed.json)","d":"Display leading (84px on 80px type)."},"h2":{"v":"53px","t":"dimension","s":"computed lineHeight of section-h2 default (raw/components-computed.json)","d":"Heading leading."},"lede":{"v":"32px","t":"dimension","s":"computed lineHeight of hero-sub default (raw/components-computed.json)","d":"Lede leading."},"body":{"v":"24px","t":"dimension","s":"computed lineHeight of hero-cta default (raw/components-computed.json)","d":"Body/button leading."},"small":{"v":"16px","t":"dimension","s":"computed lineHeight of filter-bar default (raw/components-computed.json)","d":"Small-text leading."},"micro":{"v":"12px","t":"dimension","s":"computed lineHeight of marquee default (raw/components-computed.json)","d":"Marquee leading."}}},"color":{"neutral":{"ink":{"v":"#1b1b1b","t":"color","s":"computed color of hero-cta default (raw/components-computed.json)","d":"The black-BRAND ink #1b1b1b: all text, the dark button fill, the footer/marquee panels and the focus ring."},"cream":{"v":"#f5f5f0","t":"color","s":"computed backgroundColor of filter-bar default (raw/components-computed.json)","d":"The cream #f5f5f0 canvas — page field, filter bar, secondary buttons, view tabs and the mobile menu."},"field":{"v":"#ffffff","t":"color","s":"computed backgroundColor of text-field default (raw/components-computed.json)","d":"The white #ffffff fill inside the 1px field border."},"line":{"v":"#ccccc4","t":"color","s":"computed borderTopColor of text-field default (raw/components-computed.json)","d":"The cream-300 #ccccc4 on every field, tab, dropdown, colour-chip ring and mobile-menu row border."},"muted":{"v":"#646e69","t":"color","s":"computed placeholder of text-field default (raw/components-computed.json)","d":"The cream-500 #646e69 on field placeholders and text-link hover."},"hairline":{"v":"#e5e5e1","t":"color","s":"painted layer border of filter-bar default (raw/components-computed.json)","d":"The cream-200 #e5e5e1 hairline painted inside the collection filter bar."},"icon-muted":{"v":"#999993","t":"color","s":"painted layer bg of view-tab default (raw/components-computed.json)","d":"The cream-400 #999993 on the tabs' + icon, the Collaboration badge outline and the colour-chip hover ring."},"divider-dark":{"v":"#454542","t":"color","s":"painted layer border of footer default (raw/components-computed.json)","d":"The cream-600 #454542 divider inside the ink footer panel."},"grey":{"v":"#7c7c7c","t":"color","s":"css-var --color-gray-DEFAULT (light)","d":"The declared --color-gray-DEFAULT channel triplet #7c7c7c."}},"brand":{"primary-50":{"v":"#e7ffe4","t":"color","s":"css-var --color-primary-50 (light)","d":"The declared primary 50 channel triplet (Tailwind rgb(var(--color-primary-50) / a))."},"primary-100":{"v":"#c9ffc4","t":"color","s":"css-var --color-primary-100 (light)","d":"The declared primary 100 channel triplet (Tailwind rgb(var(--color-primary-100) / a))."},"primary-200":{"v":"#98ff90","t":"color","s":"css-var --color-primary-200 (light)","d":"The declared primary 200 channel triplet (Tailwind rgb(var(--color-primary-200) / a))."},"primary-300":{"v":"#94cf96","t":"color","s":"css-var --color-primary-300 (light)","d":"The declared primary 300 channel triplet (Tailwind rgb(var(--color-primary-300) / a))."},"primary-400":{"v":"#00ff00","t":"color","s":"css-var --color-primary-400 (light)","d":"The declared primary 400 channel triplet (Tailwind rgb(var(--color-primary-400) / a))."},"primary-500":{"v":"#00e606","t":"color","s":"css-var --color-primary-500 (light)","d":"The declared primary 500 channel triplet (Tailwind rgb(var(--color-primary-500) / a))."},"primary-600":{"v":"#00b809","t":"color","s":"css-var --color-primary-600 (light)","d":"The declared primary 600 channel triplet (Tailwind rgb(var(--color-primary-600) / a))."},"primary-700":{"v":"#008b07","t":"color","s":"css-var --color-primary-700 (light)","d":"The declared primary 700 channel triplet (Tailwind rgb(var(--color-primary-700) / a))."},"primary-800":{"v":"#076d0d","t":"color","s":"css-var --color-primary-800 (light)","d":"The declared primary 800 channel triplet (Tailwind rgb(var(--color-primary-800) / a))."},"primary-900":{"v":"#0b5c11","t":"color","s":"css-var --color-primary-900 (light)","d":"The declared primary 900 channel triplet (Tailwind rgb(var(--color-primary-900) / a))."},"primary-950":{"v":"#003406","t":"color","s":"css-var --color-primary-950 (light)","d":"The declared primary 950 channel triplet (Tailwind rgb(var(--color-primary-950) / a))."},"primary":{"v":"#00e606","t":"color","s":"css-var --color-primary-DEFAULT (light)","d":"primary DEFAULT: 500 in light, 400 under .dark."},"accent":{"v":"#fae210","t":"color","s":"computed backgroundColor of order-cta hover (raw/components-computed.json)","d":"The #fae210 yellow every ink button and the hero CTA takes on hover — the site's signature accent."},"accent-border":{"v":"#c8b50d","t":"color","s":"computed borderTopColor of order-cta hover (raw/components-computed.json)","d":"The deeper #c8b50d edge the yellow hover keeps."}}},"radius":{"control":{"v":"10px","t":"dimension","s":"computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)","d":"The 10px radius on buttons, fields, tabs and the dropdown trigger."},"link":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of nav-link default (raw/components-computed.json)","d":"The 8px radius on nav links, flyout links, swatches and menu rows."},"panel":{"v":"24px","t":"dimension","s":"computed borderTopLeftRadius of footer default (raw/components-computed.json)","d":"The 24px top radius on the ink footer panel."},"chip":{"v":"9999px","t":"dimension","s":"painted layer radius of colour-chip (raw/components-computed.json)","d":"The 9999px pill on colour chips, the card badge and the card's circle actions."},"card":{"v":"10px","t":"dimension","s":"painted layer radius of textile-card (raw/components-computed.json)","d":"The 10px radius on the textile-card image tile."}},"measured":{"focus-ring":{"v":[{"color":"#ffffff","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"0px","inset":true},{"color":"#1b1b1b","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"2px","inset":true},{"color":"rgba(0, 0, 0, 0)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"0px","inset":false}],"t":"shadow","s":"computed boxShadow of nav-link focus-visible (raw/components-computed.json)","d":"The keyboard-focus ring on links/buttons/fields: a white 0-spread layer plus a 2px ink ring drawn inset — the outline itself is 2px rgba(0,0,0,0) offset 2px."},"focus-accent":{"v":"#00e606","t":"color","s":"computed outlineColor of textile-card focus-visible (raw/components-computed.json)","d":"The #00e606 primary outline links and cards take on keyboard focus (1px auto)."},"focus-fallback":{"v":"#005fcc","t":"color","s":"computed outlineColor of faq-question focus-visible (raw/components-computed.json)","d":"The #005fcc UA fallback outline the FAQ rows and view tabs get — the site styles no ring on them."},"chip-hover-border":{"v":"#999993","t":"color","s":"painted layer border of colour-chip hover (raw/components-computed.json)","d":"The #999993 ring a colour chip takes on hover (was #ccccc4)."},"dropdown-hover":{"v":"rgba(0, 0, 0, 0.1)","t":"color","s":"computed backgroundColor of pattern-dropdown hover (raw/components-computed.json)","d":"The 10%-black wash the Pattern dropdown gets on hover."},"card-scrim":{"v":"rgba(0, 0, 0, 0.3)","t":"color","s":"painted scrim layer of textile-card default (raw/components-computed.json)","d":"The 30%-black scrim over textile-card imagery."},"chip-blue":{"v":"#0e4c92","t":"color","s":"painted swatch fill of colour-chip default (raw/components-computed.json)","d":"The #0e4c92 fill the BLUE colour chip paints — a textile colour, not a UI role."},"control-transition":{"v":"150ms","t":"duration","s":"computed transition of hero-cta default (raw/components-computed.json)","d":"The 0.15s control transition (colour/background). (all)"},"link-transition":{"v":"150ms","t":"duration","s":"computed transition of nav-link default (raw/components-computed.json)","d":"The nav link's 0.15s transition. (color, background-color, border-color, text-decoration-color, fill, stroke)"},"pressed-scale":{"v":0.98,"t":"number","s":"pressed rect / default rect of hero-cta (raw/components-computed.json)","d":"The 0.98 scale a pressed button takes."},"marquee-duration":{"v":"10000ms","t":"duration","s":"animation 'marquee-063d6d2b' 10s linear infinite in the readable stylesheet (raw/css-vars.json) and the reducedMotion probe in raw/components-computed.json","d":"The top ticker's 10s linear scroll; it keeps running under prefers-reduced-motion."},"fade-300":{"v":"300ms","t":"duration","s":"transition declarations in the readable sheets (raw/components-computed.json _meta.sheets)","d":"The 0.3s cubic-bezier(0.4,0,0.2,1) opacity/transform/max-height the site's toggles declare."},"ease-default":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":"transition declarations in the readable sheets (raw/components-computed.json _meta.sheets)","d":"The cubic-bezier(0.4,0,0.2,1) easing on the 0.3s toggles."}}},"light":{"text":{"primary":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the core palette","d":"Body and display ink."},"muted":{"v":"{color.neutral.muted}","t":"color","s":"role alias over the core palette","d":"Placeholders and text-link hover."},"on":{"dark":{"v":"#ffffff","t":"color","s":"computed color of footer-link/hero-title (raw/components-computed.json)","d":"The white on the ink footer, marquee and hero media."},"action":{"v":"{color.neutral.cream}","t":"color","s":"role alias over the core palette","d":"The cream label on the ink buttons."}}},"surface":{"page":{"v":"{color.neutral.cream}","t":"color","s":"role alias over the core palette","d":"The cream page field."},"field":{"v":"{color.neutral.field}","t":"color","s":"role alias over the core palette","d":"The white field fill."},"alt":{"v":"{color.neutral.cream}","t":"color","s":"role alias over the core palette","d":"View tabs, filter bar, mobile menu and secondary buttons."}},"action":{"primary":{"default":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the core palette","d":"The ink button fill."},"hover":{"v":"{color.brand.accent}","t":"color","s":"role alias over the core palette","d":"The yellow every ink button takes on hover."}}},"border":{"field":{"v":"{color.neutral.line}","t":"color","s":"role alias over the core palette","d":"The 1px field/tab/dropdown border."},"hairline":{"v":"{color.neutral.hairline}","t":"color","s":"role alias over the core palette","d":"The #e5e5e1 hairline."},"focus":{"v":"{color.neutral.icon-muted}","t":"color","s":"role alias over the core palette","d":"The colour-chip ring's hover tone (#999993)."}},"divider":{"on":{"dark":{"v":"{color.neutral.divider-dark}","t":"color","s":"role alias over the core palette","d":"The footer divider on ink."}}},"icon":{"muted":{"v":"{color.neutral.icon-muted}","t":"color","s":"role alias over the core palette","d":"Muted glyph colour (+ icons, badge outline)."}},"component":{"button":{"height":{"v":"48px","t":"dimension","s":"computed height of hero-cta default (raw/components-computed.json)","d":"The 48px primary/secondary button height."}},"field":{"height":{"v":"48px","t":"dimension","s":"computed height of text-field default (raw/components-computed.json)","d":"The 48px field height."}},"tab":{"height":{"v":"36px","t":"dimension","s":"computed height of view-tab default (raw/components-computed.json)","d":"The 36px view-tab height."}},"dropdown":{"height":{"v":"32px","t":"dimension","s":"computed height of pattern-dropdown default (raw/components-computed.json)","d":"The 32px dropdown-trigger height."}},"chip":{"size":{"v":"32px","t":"dimension","s":"computed height of colour-chip default (raw/components-computed.json)","d":"The 32px colour-chip circle."}},"iconbutton":{"size":{"v":"32px","t":"dimension","s":"computed width of cart-button default (raw/components-computed.json)","d":"The 32px header icon buttons."}},"navlink":{"height":{"v":"28px","t":"dimension","s":"computed height of nav-link default (raw/components-computed.json)","d":"The 28px nav-link row."}},"menurow":{"height":{"v":"48px","t":"dimension","s":"computed height of m-nav-item default (raw/components-computed.json)","d":"The 48px mobile-menu row."}},"header":{"height":{"v":"57px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The 57px desktop header."},"height-mobile":{"v":"64px","t":"dimension","s":"computed height of m-header default (raw/components-computed.json)","d":"The 64px mobile header."}},"flyout":{"height":{"v":"210px","t":"dimension","s":"computed height of nav-dropdown default (raw/components-computed.json)","d":"The 210px nav flyout."}},"faqrow":{"height":{"v":"56px","t":"dimension","s":"computed height of faq-question default (raw/components-computed.json)","d":"The 56px accordion row."}}}},"dark":{"text":{"primary":{"v":"#ffffff","t":"color","s":"computed color of footer/hero-title over ink (raw/components-computed.json)","d":"Text on the ink surfaces (footer links, hero title over dark media)."},"on":{"dark":{"v":"#ffffff","t":"color","s":"computed color of footer/hero-title over ink (raw/components-computed.json)","d":"White on ink."},"action":{"v":"{color.neutral.cream}","t":"color","s":"role alias over the core palette","d":"Cream on the ink buttons."}},"secondary":{"v":"{color.neutral.cream}","t":"color","s":"role alias over the core palette","d":"The #f5f5f0 label on the ink buttons and the marquee bar."}},"surface":{"page":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the core palette","d":"The ink surface: footer panel, marquee bar, hero media."}},"action":{"primary":{"default":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the core palette","d":"The ink button fill (unchanged)."},"hover":{"v":"{color.brand.accent}","t":"color","s":"role alias over the core palette","d":"The same yellow hover accent."}}},"divider":{"v":"{color.neutral.divider-dark}","t":"color","s":"role alias over the core palette","d":"The #454542 footer divider."},"border":{"focus":{"v":"{color.brand.primary}","t":"color","s":"role alias over the core palette","d":"The #00e606 primary focus outline on links and cards."}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (app shell)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Butter</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 A token set and component reference for aaply's public marketing site (https://aaply.app), the website of a mobile-app wireframing tool — "design mobile apps" screens, user flows and exports to Figma. Use it to build a web page or marketing surface that borrows its look: a `#f2f2f2` field, a floating white pill nav bar, pure-black text in Poppins 700, one signature `#e6e51e` lime for primary actions and held states, coral icon accents, and a full-width black footer band. It was captured signed out, in headless Chromium at 1440 x 900 (mobile pages at 390 x 844) on 2026-11-08.
 
-It holds 23 screenshots across eight routes — home, /features, /value, /pricing, /reviews, /our-story, /team, /figma_plugin, plus mobile variants and the pricing Yearly/Monthly toggle — and 51 measured components with 90 states and one crop each. The product itself lives on go.aaply.app, which returned the bare body "Not found" on /login, /sign, /signup and /workspace/demo: the app is recorded as an unreachable boundary, and nothing here claims its functionality (see [components.md](components.md) > Gaps).
+It holds 23 screenshots across eight routes — home, /features, /value, /pricing, /reviews, /our-story, /team, /figma_plugin, plus mobile variants and the pricing Yearly/Monthly toggle — and 51 measured components with 90 states and 89 crops. The product itself lives on go.aaply.app, which returned the bare body "Not found" on /login, /sign, /signup and /workspace/demo: the app is recorded as an unreachable boundary, and nothing here claims its functionality (see [components.md](components.md) > Gaps).
 
 This package contains no aaply code, and none of its artwork has been redrawn. The screenshots, the 3D character renders and the visual system they show belong to aaply ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the logo, characters or brand lime.
 
@@ -14,7 +14,7 @@ This package contains no aaply code, and none of its artwork has been redrawn. T
 | [style-guide.html](style-guide.html) | Every token rendered, with site mockups built only from the tokens (nav bar, hero CTAs, chat bubbles, pricing rail and cards, review slide, black footer band). Open it from disk |
 | [components.md](components.md) | 51 components, each with its measured values per state and crops of the real page, then a Gaps section |
 | [patterns.md](patterns.md) | The nav/hero/pricing/reviews/footer patterns the marketing pages compose |
-| [components/crops/](components/crops) | 90 element crops, `{component}-{state}.png`, cut from the live page by `tools/capture/public/measure.mjs` |
+| [components/crops/](components/crops) | 89 element crops, `{component}-{state}.png`, cut from the live page by `tools/capture/public/measure.mjs` |
 | [screenshots/](screenshots) | 23 captures, `{page}-light-{state}.png` at 1440 x 900 (`-full` whole pages) and `mobile-*` at 780 wide, quantised to 256 colours |
 | [raw/](raw) | `components-computed.json` (every measured value per state), `measurements.md` (the same as tables), `css-vars.json` (the Tilda site's custom properties — almost none), `component-tokens.json` (the token spec), `full/` (the unquantised captures) |
 | [tools/](tools) | `capture/` (`public/`: lib, public tour, measure, build-measurements; `vars.mjs`, `screenshot.mjs`, `quantize.py`) and the builders (`build_tokens.py`, `build_style_guide.py`, `build_components_md.py`, `style-guide.template.html`) |
@@ -51,7 +51,7 @@ Fonts: `core.font.family.display` is Poppins, then 2 fallbacks; `core.font.famil
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 90 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 89 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -101,11 +101,13 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **The app is absent.** go.aaply.app returned "Not found" on every route, so nothing in this package describes the product's own screens, flows or states — only the marketing site that links to it. The footer reads ©2024 and the app host looks retired or down; treat the product's live state as unknown.
 - **The billing segment's held state** paints its lime fill on a sibling shape, not the text atom — the segments measure transparent in both positions; the lime chip is visible in the screenshots.
 - **Hover-measured values are sparse.** Tilda applies most hovers through `--t396-*hover*` custom properties on the element, many of which read as unchanged at the atom level; the real swaps that were measured (the nav Sign up pill inverting to lime, link grey fades) are in the state rows.
 - **Prices are split across atoms.** A plan price is a `$` atom plus a `.1 /month` numeral atom; the price tokens cite the numeral atom.
 - **Screenshots are 256-colour PNGs** — read exact colours from tokens.json or the raw JSON, never from a screenshot pixel.
+- **`m-burger` was read from the wrong element.** Its selector fell back to the logo image (x=63, coral, no icon), so the Hamburger entry in components.md is the logo, not the menu button. Needs a recapture; the script no longer falls back to any image atom (not run since). `core.palette.coral` now cites only `social-icon` and the logo link, which hold the same value.
 
 ## Fonts
 
@@ -147,8 +149,8 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 ```sh
 cd systems/aaply
-PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/public.mjs      # screenshots -> raw/full/
-python3 tools/capture/quantize.py raw/full screenshots                           # 256-colour PNGs
+PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/public.mjs      # screenshots -> ~/.design-systems/aaply/raw-shots/ (outside the repo)
+python3 tools/capture/quantize.py ~/.design-systems/aaply/raw-shots screenshots                           # 256-colour PNGs
 PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/measure.mjs   # raw/components-computed.json + components/crops/
 node tools/capture/public/build-measurements.mjs                                 # raw/measurements.md
 PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/vars.mjs              # raw/css-vars.json

@@ -1,0 +1,241 @@
+{
+  "capturedAt": "2026-11-19",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1169, "height": 731, "scale": 1 },
+    "note": "The attached preview filled the window. These are the measured CSS pixels, not a requested 1440 or 390."
+  },
+  "pages": {
+    "home": {
+      "url": "https://www.tesla.com/",
+      "title": "Electric Cars, Solar & Clean Energy | Tesla",
+      "colorScheme": "light",
+      "prefersColorSchemeDark": true,
+      "reducedMotion": false,
+      "themeToggle": false
+    },
+    "modely": {
+      "url": "https://www.tesla.com/modely",
+      "title": "Model Y – Electric Midsize SUV | Tesla"
+    },
+    "solarpanels": {
+      "url": "https://www.tesla.com/solarpanels",
+      "title": "Solar Panels With Inverters and Installation | Tesla"
+    },
+    "support": {
+      "url": "https://www.tesla.com/support",
+      "title": "Support | Tesla"
+    },
+    "about": {
+      "url": "https://www.tesla.com/about",
+      "title": "About | Tesla"
+    }
+  },
+  "elements": {
+    "body": {
+      "page": "https://www.tesla.com/",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(57, 60, 65)",
+      "fontFamily": "\"Universal Sans Text\", -apple-system, Arial, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px"
+    },
+    "header": {
+      "selector": "header.tds-site-header",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "height": 56,
+      "fontSize": "14px",
+      "transition": "background-color 0.33s, box-shadow 0.33s",
+      "note": "Transparent over the hero. The scrolled state adds tds-scrim--white."
+    },
+    "h1-home": {
+      "selector": "h1.tcl-text--h2",
+      "text": "Model Y",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "\"Universal Sans Display\"",
+      "fontSize": "28px",
+      "fontWeight": "500",
+      "lineHeight": "36px"
+    },
+    "h2-home": {
+      "selector": "h2.tcl-text--h1",
+      "text": "Full Self-Driving (Supervised)",
+      "color": "rgb(23, 26, 32)",
+      "fontFamily": "\"Universal Sans Display\"",
+      "fontSize": "40px",
+      "fontWeight": "500",
+      "lineHeight": "48px"
+    },
+    "h1-modely": {
+      "selector": "h1.tcl-text--f48l56",
+      "text": "Model Y Premium",
+      "fontSize": "48px",
+      "fontWeight": "500",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "\"Universal Sans Display\""
+    },
+    "h1-solar": {
+      "selector": "h1.tcl-text--f56l64",
+      "text": "Tesla Solar Panels",
+      "fontSize": "56px",
+      "fontWeight": "500",
+      "lineHeight": "64px",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "\"Universal Sans Display\""
+    },
+    "h1-support": {
+      "selector": "h1.tcl-text--h1",
+      "text": "Tesla Support",
+      "fontSize": "40px",
+      "fontWeight": "500",
+      "lineHeight": "48px",
+      "color": "rgb(23, 26, 32)"
+    },
+    "h1-about": {
+      "text": "About Us",
+      "fontSize": "40px",
+      "fontWeight": "500",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "\"Universal Sans Display\""
+    },
+    "button-primary": {
+      "selector": "a.tcl-button.tds-btn.tds-btn--primary",
+      "text": "Order Now",
+      "backgroundColor": "rgb(62, 106, 225)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "16.8px",
+      "borderRadius": "4px",
+      "padding": "4px",
+      "height": 40,
+      "borderTopWidth": "3px",
+      "borderTopColor": "rgba(0, 0, 0, 0)"
+    },
+    "button-high-contrast": {
+      "selector": "a.tcl-button.tds-btn.tcl-btn--high-contrast",
+      "text": "Learn More",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(57, 60, 65)",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "borderRadius": "4px",
+      "height": 40
+    },
+    "button-high-contrast-on-dark": {
+      "selector": "a.tcl-button.tds-btn.tcl-btn--high-contrast",
+      "text": "Schedule Demo",
+      "backgroundColor": "rgb(23, 26, 32)",
+      "color": "rgb(238, 238, 238)",
+      "height": 40,
+      "borderRadius": "4px"
+    },
+    "button-sticky": {
+      "selector": "button.tcl-sticky-bar__drive-cta",
+      "text": "Schedule a Drive Today",
+      "backgroundColor": "rgb(244, 244, 244)",
+      "color": "rgb(57, 60, 65)",
+      "borderRadius": "4px",
+      "padding": "4px 24px",
+      "height": 40,
+      "borderTop": "1px solid rgb(208, 209, 210)"
+    },
+    "link-promo": {
+      "selector": "main a.tds-link",
+      "text": "2.49% APR Available",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "lineHeight": "28px",
+      "fontFamily": "\"Universal Sans Display\"",
+      "boxShadow": "rgb(255, 255, 255) 0px 2px 0px -1px"
+    },
+    "footer-link": {
+      "selector": ".tds-footer-nav a",
+      "color": "rgb(92, 94, 98)",
+      "fontSize": "12px",
+      "fontWeight": "500",
+      "lineHeight": "20px"
+    },
+    "nav-item": {
+      "selector": ".tds-site-nav-item-text",
+      "text": "Menu",
+      "color": "rgb(23, 26, 32)",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "20px"
+    },
+    "icon-button": {
+      "selector": "button.tds-icon-btn--medium",
+      "width": 32,
+      "height": 32,
+      "borderRadius": "4px",
+      "padding": "4px"
+    },
+    "menu-row": {
+      "selector": "dialog.tds-site-header-panel .tds-site-nav-item",
+      "fontSize": "17px",
+      "fontWeight": "500",
+      "color": "rgb(23, 26, 32)",
+      "padding": "16px 6px 16px 12px",
+      "height": 56,
+      "panelBackground": "rgb(255, 255, 255)"
+    },
+    "search": {
+      "page": "https://www.tesla.com/support",
+      "input": "input.tds-form-input-search",
+      "placeholder": "Search Support",
+      "wrap": ".tds-form-input.tds-form-input--default",
+      "wrapBackground": "rgb(244, 244, 244)",
+      "wrapRadius": "4px",
+      "wrapPadding": "0px 12px",
+      "wrapHeight": 40,
+      "inputColor": "rgb(92, 94, 98)",
+      "inputFontSize": "14px",
+      "inputFontWeight": "500",
+      "focusOutline": "none"
+    },
+    "locale-selector": {
+      "selector": ".dx-mini-locale-selector__container",
+      "backgroundColor": "rgba(244, 244, 244, 0.85)",
+      "borderRadius": "8px",
+      "padding": "24px",
+      "boxShadow": "rgba(0, 0, 0, 0.16) 0px 8px 16px 0px",
+      "backdropFilter": "blur(4px)",
+      "headingSize": "17px",
+      "headingWeight": "500",
+      "headingColor": "rgb(23, 26, 32)",
+      "paragraphSize": "12px",
+      "paragraphColor": "rgb(92, 94, 98)"
+    },
+    "cookie-banner": {
+      "selector": ".cookie-banner",
+      "backgroundColor": "rgba(244, 244, 244, 0.85)",
+      "borderRadius": "8px",
+      "padding": "24px",
+      "boxShadow": "rgba(0, 0, 0, 0.16) 0px 8px 8px 0px",
+      "backdropFilter": "blur(4px)",
+      "actions": ["Accept", "Reject"]
+    },
+    "footer": {
+      "selector": "footer.tds-site-footer",
+      "padding": "0px 24px 60px",
+      "fontSize": "12px",
+      "color": "rgb(57, 60, 65)"
+    },
+    "caption": {
+      "selector": ".tds-text--caption",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "lineHeight": "18px",
+      "color": "rgb(92, 94, 98)"
+    }
+  },
+  "screenshots": {
+    "status": "not captured",
+    "reason": "preview_snapshot returned: The browser is not producing screenshot frames. Headless Playwright against https://www.tesla.com/ returned HTTP 403 Access Denied (Akamai). No screenshot was invented."
+  }
+}

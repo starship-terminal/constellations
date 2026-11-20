@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polaroid style guide</title>
+<style>
+  body { margin: 0; background: #ffffff; color: #151515; font: 400 16px/1.2 Arial, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+  h1 { font-size: 40px; font-weight: 600; line-height: 40px; margin: 0 0 8px; letter-spacing: 0; }
+  p { max-width: 68ch; }
+  h2 { font-size: 22px; font-weight: 600; margin: 40px 0 12px; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .sw { display: flex; gap: 10px; align-items: center; }
+  .sw i { width: 40px; height: 40px; border-radius: 0; box-shadow: inset 0 0 0 1px #151515; display: block; }
+  .sw code, .ty code { display: block; font-size: 12px; }
+  .sw span { font-size: 12px; }
+  .ty { padding: 10px 0; border-bottom: 1px solid #e9e9e9; }
+  .promo { background: #151515; color: #ffffff; padding: 8px 16px; font-size: 13px; }
+  .nav { display: flex; gap: 16px; padding: 16px 0; font-size: 13px; }
+  .nav .on { color: #d60026; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; background: #e9e9e9; padding: 24px; }
+  .photo { background: #3a2a22; padding: 24px; display: flex; gap: 12px; }
+  a.shop, button.continue, a.finder, a.compare {
+    display: inline-flex; align-items: center; justify-content: center;
+    font: 400 12px/14.4px ui-monospace, monospace; letter-spacing: 0; text-transform: uppercase;
+    text-decoration: none; box-sizing: border-box;
+  }
+  a.shop { height: 42px; padding: 13px 15px; background: #ffffff; color: #151515; border: 0; border-radius: 0px; }
+  a.ghost { height: 42px; padding: 13px 15px; background: transparent; color: #ffffff; border: 1px solid #ffffff; border-radius: 0px; font: 400 12px/14.4px ui-monospace, monospace; text-transform: uppercase; text-decoration: none; display: inline-flex; align-items: center; }
+  button.continue { height: 45px; width: 280px; border: 0; border-radius: 0px; background: #151515; color: #ffffff; }
+  a.finder { height: 32px; padding: 0 16px; border-radius: 100px; border: 1px solid #151515; background: #ffffff; color: #151515; }
+  a.compare { height: 32px; padding: 0 12px; border-radius: 0px; border: 1px solid #151515; background: #ffffff; color: #151515; }
+  .field { width: 280px; }
+  .field label { display: block; font-size: 13px; margin-bottom: 4px; }
+  .field .box { height: 45px; border: 1px solid #151515; display: flex; align-items: center; padding: 0 15px; font-size: 16px; background: #ffffff; }
+  .note { font-size: 13px; }
+  .swatch-note { font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="promo">Free Standard Shipping over €95</div>
+  <div class="nav"><span class="on">Holidays</span><span>Cameras</span><span>Film</span><span>Support</span></div>
+  <h1>Polaroid</h1>
+  <p class="note">Public storefront, signed out, one light theme. Faces fall back to Arial and a monospace stand-in. Real Head and Commit Mono are proprietary and are not in this package.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:#ffffff"></i><div><code>light.page</code><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#e9e9e9"></i><div><code>light.surface</code><span>#e9e9e9</span></div></div>
+<div class="sw"><i style="background:#151515"></i><div><code>light.text</code><span>#151515</span></div></div>
+<div class="sw"><i style="background:#151515"></i><div><code>light.muted</code><span>#151515</span></div></div>
+<div class="sw"><i style="background:#151515"></i><div><code>light.accent</code><span>#151515</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><code>light.on-accent</code><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#151515"></i><div><code>light.border</code><span>#151515</span></div></div>
+<div class="sw"><i style="background:#151515"></i><div><code>light.promo</code><span>#151515</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><code>light.on-promo</code><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#d60026"></i><div><code>light.nav-active</code><span>#d60026</span></div></div>
+<div class="sw"><i style="background:#d31f26"></i><div><code>light.error</code><span>#d31f26</span></div></div>
+<div class="sw"><i style="background:#27b4da"></i><div><code>light.highlight</code><span>#27b4da</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><code>light.inverse</code><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#151515"></i><div><code>light.badge</code><span>#151515</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><code>light.on-badge</code><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#c6c6c6"></i><div><code>light.card-hover</code><span>#c6c6c6</span></div></div>
+  </div>
+  <p class="swatch-note">Highlight #27b4da. Error #d31f26. No separate muted text colour was computed.</p>
+  <h2>Type</h2>
+  <div class="ty" style="font-family:REAL_HEADER_OFFC_DEMIBOLD, Arial, sans-serif;font-size:62px;font-weight:600;line-height:62px;letter-spacing:normal"><code>core.typography.display</code> A pixel-imperfect holiday. 62px / 62px</div>
+<div class="ty" style="font-family:REAL_HEADER_OFFC_DEMIBOLD, Arial, sans-serif;font-size:40px;font-weight:600;line-height:40px;letter-spacing:normal"><code>core.typography.hero</code> A pixel-imperfect holiday. 40px / 40px</div>
+<div class="ty" style="font-family:REAL_HEADER_OFFC_DEMIBOLD, Arial, sans-serif;font-size:32px;font-weight:600;line-height:32px;letter-spacing:-1.28px"><code>core.typography.title</code> A pixel-imperfect holiday. 32px / 32px</div>
+<div class="ty" style="font-family:REAL_HEADER_OFFC_DEMIBOLD, Arial, sans-serif;font-size:26px;font-weight:600;line-height:31.2px;letter-spacing:-0.845px"><code>core.typography.nav-panel</code> A pixel-imperfect holiday. 26px / 31.2px</div>
+<div class="ty" style="font-family:REAL_HEADER_OFFC_REGULAR, Arial, sans-serif;font-size:13px;font-weight:400;line-height:15.6px;letter-spacing:-0.2106px"><code>core.typography.nav</code> A pixel-imperfect holiday. 13px / 15.6px</div>
+<div class="ty" style="font-family:REAL_HEADER_OFFC_REGULAR, Arial, sans-serif;font-size:13px;font-weight:400;line-height:15.6px;letter-spacing:normal"><code>core.typography.price</code> A pixel-imperfect holiday. 13px / 15.6px</div>
+<div class="ty" style="font-family:REAL_HEADER_OFFC_REGULAR, Arial, sans-serif;font-size:16px;font-weight:400;line-height:19.2px;letter-spacing:normal"><code>core.typography.body</code> A pixel-imperfect holiday. 16px / 19.2px</div>
+<div class="ty" style="font-family:COMMIT_MONO, Arial, sans-serif;font-size:12px;font-weight:400;line-height:14.4px;letter-spacing:normal"><code>core.typography.button</code> A pixel-imperfect holiday. 12px / 14.4px</div>
+  <h2>Controls</h2>
+  <div class="photo">
+    <a class="shop" href="#shop">Shop bundles</a>
+    <a class="ghost" href="#inspired">Get inspired</a>
+  </div>
+  <div class="row">
+    <button class="continue" type="button">Continue</button>
+    <a class="finder" href="#finder">Product finder</a>
+    <a class="compare" href="#compare">Compare</a>
+    <div class="field"><label>Email</label><div class="box">Email</div></div>
+  </div>
+</main>
+</body>
+</html>

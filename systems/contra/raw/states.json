@@ -1,0 +1,80 @@
+{
+  "signup": {
+    "rest": {
+      "bg": "rgb(34, 40, 52)",
+      "color": "rgb(255, 255, 255)",
+      "border": "rgb(34, 40, 52)"
+    },
+    "hovered": {
+      "bg": "rgb(34, 40, 52)",
+      "color": "rgb(255, 255, 255)",
+      "border": "rgb(34, 40, 52)",
+      "shadow": "none"
+    },
+    "focus": {
+      "bg": "rgb(34, 40, 52)",
+      "outline": "rgb(34, 40, 52) solid 2px",
+      "offset": "2px",
+      "shadow": "none"
+    }
+  },
+  "outline": {
+    "rest": {
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 81)",
+      "border": "rgb(55, 63, 81)"
+    },
+    "hovered": {
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(55, 63, 81)",
+      "border": "rgb(55, 63, 81)",
+      "shadow": "none"
+    },
+    "focus": {
+      "bg": "rgb(255, 255, 255)",
+      "outline": "rgb(34, 40, 52) solid 2px",
+      "offset": "2px",
+      "shadow": "none"
+    }
+  },
+  "linkState": {
+    "rest": {
+      "color": "rgb(20, 23, 31)",
+      "decor": "none"
+    },
+    "hovered": {
+      "color": "rgb(29, 33, 42)",
+      "decor": "none",
+      "bg": "rgba(0, 0, 0, 0)"
+    }
+  },
+  "icons": [
+    {
+      "rel": "icon",
+      "href": "data:image/png;base64,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",
+      "sizes": "48x48"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://contra.com/static/media/apple-touch-icon.png",
+      "sizes": ""
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://contra.com/static/media/apple-touch-icon.png",
+      "sizes": "60x60"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://contra.com/static/media/apple-touch-icon@2x.png",
+      "sizes": "120x120"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://contra.com/static/media/apple-touch-icon@3x.png",
+      "sizes": "180x180"
+    }
+  ],
+  "reduce": true,
+  "reduceRules": 1
+}

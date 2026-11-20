@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Family style guide</title>
+<meta name="description" content="Family design tokens and the public family.co marketing surfaces and app.family.co login components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-display: Family, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-ui: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-app: inter, "inter Fallback";
+  --font-family-code: "SF Mono", "SFMono-Regular", "Consolas", "Liberation Mono", Menlo, Courier, monospace;
+  --font-family-secondary: "SF Pro Rounded", ui-rounded, "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-size-measured-xs: 15px;
+  --font-size-measured-sm: 19px;
+  --font-size-measured-control: 15px;
+  --font-size-measured-body: 15px;
+  --font-size-measured-lg: 16px;
+  --font-size-measured-section: 44px;
+  --font-size-measured-article: 44px;
+  --font-size-measured-mobile-display: 44px;
+  --font-size-measured-display: 68px;
+  --color-app-blue: #0090ff;
+  --color-app-gray: #747485;
+  --color-app-green: #00ca48;
+  --color-app-pink: #ff58ae;
+  --color-app-primary: #9896ff;
+  --color-app-valid: #00ca48;
+  --color-app-warning: #ff8600;
+  --color-background-invalid: #fff0f0;
+  --color-background-valid: rgba(0, 196, 84, 0.1);
+  --color-background-warning: #fefae6;
+  --color-beige-default: #fbfaf9;
+  --color-beige-dark: #eaeaea;
+  --color-blue-default: #0086fc;
+  --color-blue-light: #ebfcfd;
+  --color-body-default: #4a443f;
+  --color-body-muted: #848281;
+  --color-card-teal-01: #00d0ce;
+  --color-card-teal-02: #00dcdb;
+  --color-card-yellow-01: #feaa00;
+  --color-card-yellow-02: #ffbe00;
+  --color-anchor: #6187fe;
+  --color-border: #e8e8e8;
+  --color-invalid: #ff4e4e;
+  --color-marketing-primary: #343433;
+  --color-marketing-valid: #00c454;
+  --color-marketing-warning: #f6c30f;
+  --color-text: #343433;
+  --color-danger-default: #ff0c18;
+  --color-danger-100: #ffeae9;
+  --color-danger-200: #ffd6d5;
+  --color-danger-300: #ff9795;
+  --color-danger-400: #ff0c18;
+  --color-danger-500: #fb0c16;
+  --color-danger-600: #de0e14;
+  --color-danger-700: #c30d14;
+  --color-danger-800: #8c0e0f;
+  --color-family-default: #9896ff;
+  --color-family-100: #f5f5ff;
+  --color-family-200: #eaeaff;
+  --color-family-300: #cccbff;
+  --color-family-400: #9896ff;
+  --color-family-500: #8987ed;
+  --color-family-600: #7a78d2;
+  --color-family-700: #6a69b8;
+  --color-family-800: #4c4b84;
+  --color-focus-default: #848281;
+  --color-focus-color: rgba(0, 122, 255, 0.5);
+  --color-gold: #d48f00;
+  --color-graphic-black: #343433;
+  --color-graphic-blue-default: #64c6ff;
+  --color-graphic-blue-alt: #00b2ff;
+  --color-graphic-blue-pale-default: #7aceff;
+  --color-graphic-blue-pale-alt: #4cbfff;
+  --color-graphic-gold-default: #ffb112;
+  --color-graphic-gold-alt: #ffa100;
+  --color-graphic-gray: #e5d5c3;
+  --color-graphic-green: #00c978;
+  --color-graphic-orange: #ff3e00;
+  --color-graphic-outline: #b4a798;
+  --color-graphic-purple: #5f5def;
+  --color-graphic-stone: #f4ebdf;
+  --color-graphic-yellow-default: #ffcd6c;
+  --color-graphic-yellow-pale: #f6f4ee;
+  --color-gray-default: #747485;
+  --color-gray-light: #f2f0ed;
+  --color-green: #00c978;
+  --color-heading: #343433;
+  --color-hyperlink-color: #9896ff;
+  --color-icon-color-secondary: #747474;
+  --color-icon-color-tertiary: #adadad;
+  --color-orange-default: #ff3e00;
+  --color-orange-dark: #ff0000;
+  --color-overlay-background: #171717;
+  --color-overlay-color: #ffffff;
+  --color-overlay-secondary-backdrop: rgba(0, 0, 0, 0.4);
+  --color-overlay-secondary-background: rgba(255, 255, 255, 0.98);
+  --color-overlay-secondary-color-default: rgba(0, 0, 0, 0.85);
+  --color-overlay-secondary-color-muted: rgba(0, 0, 0, 0.5);
+  --color-overlay-secondary-selection-color: rgba(0, 0, 0, 0.85);
+  --color-overlay-selection-background: rgba(255, 255, 255, 0.1);
+  --color-overlay-selection-color-default: #ffffff;
+  --color-overlay-selection-color-muted: rgba(255, 255, 255, 0.5);
+  --color-pocket: #00ce44;
+  --color-primary-100: #f5f5ff;
+  --color-primary-200: #eaeaff;
+  --color-primary-300: #cccbff;
+  --color-primary-400: #9896ff;
+  --color-primary-500: #8987ed;
+  --color-primary-600: #7a78d2;
+  --color-primary-700: #6a69b8;
+  --color-primary-800: #4c4b84;
+  --color-purple: #9f4fff;
+  --color-red: #ff2b3a;
+  --color-twitter-blue: #343433;
+  --color-txn-speed-high: #ff3500;
+  --color-txn-speed-low: #007eff;
+  --color-txn-speed-medium: #ffbb0c;
+  --color-valid-100: #e8faed;
+  --color-valid-200: #cef5dc;
+  --color-valid-300: #82e5a7;
+  --color-valid-400: #00ca48;
+  --color-valid-500: #00b641;
+  --color-valid-600: #00a239;
+  --color-valid-700: #008d32;
+  --color-valid-800: #006625;
+  --color-verified: #00b2ff;
+  --color-wallet-black: #1a1a1a;
+  --color-wallet-blue: #00a8ef;
+  --color-wallet-bluePurple: #5946f9;
+  --color-wallet-burntOrange: #ff6800;
+  --color-wallet-copper: #ce8949;
+  --color-wallet-darkBlue: #0082ff;
+  --color-wallet-darkPurple: #9f4fff;
+  --color-wallet-emerald: #00beca;
+  --color-wallet-grassGreen: #00bc7c;
+  --color-wallet-gray: #808080;
+  --color-wallet-green: #00ca48;
+  --color-wallet-lime: #6bce00;
+  --color-wallet-navy: #003468;
+  --color-wallet-offYellow: #f4b000;
+  --color-wallet-orange: #ff9900;
+  --color-wallet-pink: #ff329b;
+  --color-wallet-purple: #ec34f7;
+  --color-wallet-red: #ff2b3a;
+  --color-wallet-redPink: #ff2d5e;
+  --color-wallet-seaBlue: #00b2ff;
+  --color-wallet-yellowBrown: #d2b24e;
+  --color-warning-100: #fff4e4;
+  --color-warning-200: #ffe7c8;
+  --color-warning-300: #ffc473;
+  --color-warning-400: #ff8600;
+  --color-warning-500: #f67900;
+  --color-warning-600: #da6c00;
+  --color-warning-700: #c05e00;
+  --color-warning-800: #894300;
+  --color-white: #ffffff;
+  --color-yellow: #ffbb26;
+  --duration-overshoot-out: 800ms;
+  --duration-snappy-out: 300ms;
+  --duration-swift-out: 220ms;
+  --easing-overshoot-out: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --easing-snappy-out: cubic-bezier(0.19, 1.0, 0.22, 1.0);
+  --easing-swift-out: cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  --shadow-overlay-filter: none;
+  --shadow-overlay-secondary-selection-shadow: none;
+  --shadow-overlay-secondary-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.07) 0px 6px 14px 0px, rgba(255, 255, 255, 0.1) 0px 0px 3px 0px inset;
+  --shadow-overlay-selection-shadow: rgba(255, 255, 255, 0.02) 0px 0px 0px 0px inset;
+  --shadow-overlay-shadow: rgba(0, 0, 0, 0.2) 0px 2px 14px 0px;
+  --shadow-demo-overlay: none;
+  --overlay-secondary-filter: blur(10px);
+  --radius-field: 14px;
+  --radius-card: 10px;
+  --radius-item: 0px;
+  --radius-button: 32px;
+  --motion-control: background-color 0.1s ease;
+  --component-topbar-height: 94px;
+  --component-logo-width: 96px;
+  --component-faq-toggle: 14px;
+  --component-search-field-width: 269px;
+  --component-control-height: 48px;
+  --component-login-field-width: 380px;
+  --component-login-field-height: 48px;
+  --component-login-card-width: 380px;
+  --component-post-card-width: 1024px;
+  --component-mobile-topbar-height: 70px;
+  --color-banner-grey-default: #f9fafb;
+  --color-banner-grey-hover: #f3f5f7;
+  --color-body-bg-default: #ffffff;
+  --color-body-bg-secondary: #f9fafb;
+  --color-body-bg-tertiary: #f0f2f4;
+  --color-body-bg-transparent: rgba(255, 255, 255, 0);
+  --color-body-color-default: #222222;
+  --color-body-color-muted: rgba(23, 23, 23, 0.5);
+  --color-body-color-secondary: #222222;
+  --color-hr-color: #f0f0f0;
+  --color-icon-color-default: #94979e;
+  --color-icon-color-hover: #171717;
+  --color-input-background-default: #f6f7f9;
+  --color-input-background-secondary: #e8e8ea;
+  --color-input-color: #171717;
+  --color-input-placeholder: rgba(23, 23, 23, 0.2);
+  --color-logo-color: #121212;
+  --color-overlay-secondary-selection-background: #f9fafb;
+  --color-selection-bg: rgba(0, 0, 0, 0.8);
+  --color-selection-color: #ffffff;
+  --background-page: var(--color-white);
+  --background-card: var(--color-white);
+  --background-field: var(--color-input-background-default);
+  --text-ink: var(--color-heading);
+  --text-muted: rgba(71, 70, 69, 0.7);
+  --text-low: var(--color-body-muted);
+  --text-kicker: #121212;
+  --text-on-dark: var(--color-white);
+  --action-accent: var(--color-overlay-background);
+  --action-beige: #f6f4ef;
+  --border-hairline: var(--color-gray-light);
+  --border-field-border: var(--color-input-color);
+  --border-focus: var(--color-focus-default);
+  --sg-sans: "Inter", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Inter", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --color-banner-grey-default: #1e1e1e;
+  --color-banner-grey-hover: #2b2b2b;
+  --color-body-bg-default: #1c1c1c;
+  --color-body-bg-secondary: #272727;
+  --color-body-bg-tertiary: #333333;
+  --color-body-bg-transparent: rgba(28, 28, 28, 0);
+  --color-body-color-default: #ffffff;
+  --color-body-color-muted: rgba(255, 255, 255, 0.5);
+  --color-body-color-secondary: #efefef;
+  --color-hr-color: rgba(255, 255, 255, 0.05);
+  --color-icon-color-default: #666666;
+  --color-icon-color-hover: #ffffff;
+  --color-input-background-default: #1e1e1e;
+  --color-input-background-secondary: rgba(255, 255, 255, 0.06);
+  --color-input-color: #ffffff;
+  --color-input-placeholder: rgba(255, 255, 255, 0.3);
+  --color-logo-color: #ffffff;
+  --color-overlay-secondary-selection-background: #272727;
+  --color-overlay-secondary-selection-color-muted: rgba(255, 255, 255, 0.5);
+  --color-overlay-backdrop: rgba(0, 0, 0, 0.4);
+  --color-overlay-color-muted: rgba(0, 0, 0, 0.5);
+  --color-selection-bg: rgba(255, 255, 255, 0.8);
+  --color-selection-color: #171717;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-ink, #171717); background: var(--background-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 600 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-ink, #171717); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-hairline, #eee); }
+.lead { max-width: 62ch; color: var(--text-ink, #171717); opacity: .8; }
+.note { font-size: 13px; color: var(--text-ink, #171717); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-ink, #171717); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-hairline, #eee); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-ink, #171717); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-hairline, #eee); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-ink, #171717); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border-hairline, #eee); overflow: hidden; background: var(--background-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 64px); padding: 0 12px 0 22px; font-size: 14px; color: var(--text-ink, #171717); background: var(--background-page, #fff); }
+.navbar .wm { font-weight: 700; font-size: 22px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 24px; font-size: 16px; font-weight: 600; border-radius: var(--radius-button, 9999px); border: 1px solid transparent; }
+.btn.blue { background: var(--action-accent, #2f69e3); color: var(--text-on-dark, #fff); }
+.btn.dark { background: var(--action-dark, #171717); color: var(--text-on-dark, #fff); }
+.btn.beige { background: var(--action-beige, #e7e1d5); color: var(--text-ink, #171717); }
+.btn.small { height: 34px; font-size: 13px; }
+.hero { color: var(--text-ink, #171717); padding: 72px 40px; font: 700 56px/1.05 var(--sg-sans); letter-spacing: -0.02em; text-align: center; background: var(--background-page, #fff); }
+.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--text-muted, #6e6e6e); margin: 16px auto 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border-hairline, #eee); border-radius: var(--radius-card, 16px); padding: 14px; font-size: 13px; background: var(--background-card, #fff); }
+.tile b { display: block; font: 600 16px/1.25 var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { color: var(--text-muted, #6e6e6e); font-size: 12px; }
+.tile .kick { font: 600 12px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-kicker, #2f69e3); margin-bottom: 8px; display: block; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-hairline, #eee); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-hairline, #eee); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--text-ink, #171717); opacity: .65; font-family: var(--sg-mono); }
+.field { display: block; width: var(--component-login-field-width, 380px); height: var(--component-login-field-height, 48px); border-radius: var(--radius-field, 14px); background: var(--background-field, #f6f7f9); border: 1px solid var(--border-field-border, #e8e8ea); color: var(--text-low, #94979e); padding: 14px 16px; font-size: 16px; }
+.faq { border: 1px solid var(--border-hairline, #eee); border-radius: var(--radius-item, 12px); padding: 16px 18px; font-size: 15px; font-weight: 500; color: var(--text-ink, #171717); display: flex; align-items: center; }
+.faq .x { margin-left: auto; color: var(--text-low, #94979e); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Family style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Family, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the marketing layer declared on family.co (the <code>--body*</code>/<code>--heading</code> inks, the <code>--blue</code>/<code>--orange</code>/<code>--beige</code> brand fills, the <code>--color-*</code> surface roles, all in Display-P3), and the product token layer the app.family.co login declares (the <code>--family-*</code>/<code>--primary-*</code>/<code>--danger-*</code>/<code>--valid-*</code>/<code>--warning-*</code> scales, the <code>--wallet-*</code> palette, the <code>--overlay-*</code>/<code>--input-*</code> roles and the <code>--duration-*</code>/<code>--ease-*</code> motion tokens). The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from family.co and app.family.co, signed out, in headless Chromium. The login ("Family Accounts is now Aave Account"), every post-login surface and the iOS app itself are a documented boundary; the login and support-search fields were typed into and cleared, never submitted, and no Watch/demo press ever downloaded or submitted anything. Both surfaces paint a single light theme signed out; the app's chunks also declare a real <code>[data-theme="dark"]</code> layer that never paints on the public surface — declared evidence, not a verified surface. The product's faces (the system-sans marketing stack and Inter on the app) are not loaded here: samples fall back to system fonts.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The public top bar carries the Family wordmark, the Developers/Resources hover dropdowns, X (Twitter), the beige Log In pill and the near-black Get Started pill over a white field. The hero is the display headline over the blue Download on iOS pill.</p>
+  <div class="mock" style="padding:20px">
+    <div class="navbar"><span class="wm">Family</span><span>Developers</span><span>Resources</span><span class="sp"></span><span class="btn small beige">Log In</span><span class="btn small dark">Get Started</span></div>
+    <div class="hero">Your favorite crypto wallet.<small>Explore Ethereum with the best wallet for iOS. Send, receive, swap and collect NFTs.</small><span class="btn blue">Download on iOS</span></div>
+  </div>
+
+  <h2 class="sh">A feature card and the FAQ</h2>
+  <p class="lead">Feature sections lead with a coloured kicker, then a section heading and muted body copy; the FAQ is a bordered collapsible item with a small toggle.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile"><span class="kick">Seamless</span><b style="color:var(--text-ink,#171717)">Send, receive, swap.</b><span class="sub">All in one place — a local UI demo, never a transaction.</span></div>
+      <div class="tile"><span class="kick" style="color:var(--color-orange,#f97316)">Simple</span><b style="color:var(--text-ink,#171717)">The best way to experience NFTs.</b><span class="sub">Collectibles, galleries and drag-and-drop.</span></div>
+    </div>
+    <div class="faq" style="margin-top:14px">Is Family safe?<span class="x">&#8744;</span></div>
+  </div>
+
+  <h2 class="sh">The Aave Account login</h2>
+  <p class="lead">app.family.co's public login card: the welcome heading, the Email or Phone Number field on the <code>--input-background</code> field fill, and the Learn More link under the rebrand note.</p>
+  <div class="mock" style="padding:20px;max-width:480px">
+    <b style="font:600 20px/1.3 var(--sg-sans);color:var(--text-ink,#171717)">Welcome to Aave Account</b>
+    <p class="sub" style="color:var(--text-muted,#6e6e6e);font-size:14px">Log in or sign up to get started. We&#8217;ll create an account if you don&#8217;t have one yet.</p>
+    <span class="field">Email or Phone Number</span>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared layer carries the marketing <code>--color-*</code>/<code>--graphic-*</code> roles and the app's <code>--family-*</code>/<code>--wallet-*</code>/<code>--overlay-*</code> scales under <code>color.*</code>; measured roles live in the light set and alias the declared values they match. The dark set holds the app's declared <code>[data-theme="dark"]</code> layer — declared, never painted signed out.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Buttons are full pills, cards and the app field carry their measured radii; the app declares its <code>--padding-*</code>/<code>--border-*</code> spacing roles.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">The marketing stack (system sans via <code>--font</code>) carries the public site; Inter carries the app login (<code>--font-primary</code>), with SF Pro Rounded / Nunito declared as the secondary stack and SF Mono the code stack. Sizes are the measured steps; samples fall back to system fonts.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared variables from the live stylesheets (both the marketing sheet and the app's CSS chunks) and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"display":{"v":"Family, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"","t":"fontFamily","s":"computed fontFamily of hero-h1 default (raw/components-computed.json)","d":"The proprietary \"Family\" display face — every page title, hero and section heading."},"ui":{"v":"Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"","t":"fontFamily","s":"computed fontFamily of nav-developers default (raw/components-computed.json)","d":"The marketing/UI stack — nav labels, buttons and body copy (Inter with system fallbacks)."},"app":{"v":"inter, \"inter Fallback\"","t":"fontFamily","s":"computed fontFamily of login-field default (raw/components-computed.json)","d":"The app surface's variable Inter — the login card and its field."},"code":{"v":"\"SF Mono\", \"SFMono-Regular\", \"Consolas\", \"Liberation Mono\", Menlo, Courier, monospace","t":"fontFamily","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --font-code","d":"The declared `--font-code` stack."},"secondary":{"v":"\"SF Pro Rounded\", ui-rounded, \"Nunito\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"","t":"fontFamily","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --font-secondary","d":"The declared `--font-secondary` stack."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of feature-body default (raw/components-computed.json)","d":"400 — body and feature copy."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of nav-developers default (raw/components-computed.json)","d":"500 — nav labels, control text and the Family display headings."},"semibold":{"v":600,"t":"fontWeight","s":"computed fontWeight of feature-label default (raw/components-computed.json)","d":"600 — feature labels/kickers and entry headings; the heaviest weight painted signed out."}},"size":{"measured":{"xs":{"v":"15px","t":"dimension","s":"computed fontSize of blog-date default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The small meta/date line."},"sm":{"v":"19px","t":"dimension","s":"computed fontSize of faq-item default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The FAQ item copy."},"control":{"v":"15px","t":"dimension","s":"computed fontSize of nav-developers default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The nav/button label size."},"body":{"v":"15px","t":"dimension","s":"computed fontSize of feature-body default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The body/feature copy size."},"lg":{"v":"16px","t":"dimension","s":"computed fontSize of login-field default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The app field and larger body size."},"section":{"v":"44px","t":"dimension","s":"computed fontSize of feature-h2 default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The marketing section heading."},"article":{"v":"44px","t":"dimension","s":"computed fontSize of post-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The article title size."},"mobile-display":{"v":"44px","t":"dimension","s":"computed fontSize of m-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The mobile display size at 390px."},"display":{"v":"68px","t":"dimension","s":"computed fontSize of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The hero display size."}}}},"color":{"app":{"blue":{"v":"#0090ff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --app-blue","d":"The declared `--app-blue`."},"gray":{"v":"#747485","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --app-gray","d":"The declared `--app-gray`."},"green":{"v":"#00ca48","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --app-green","d":"The declared `--app-green`."},"pink":{"v":"#ff58ae","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --app-pink","d":"The declared `--app-pink`."},"primary":{"v":"#9896ff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --primary","d":"The declared `--primary`."},"valid":{"v":"#00ca48","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --valid","d":"The declared `--valid`."},"warning":{"v":"#ff8600","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --warning","d":"The declared `--warning`."}},"background":{"invalid":{"v":"#fff0f0","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --background-invalid","d":"The declared `--background-invalid`."},"valid":{"v":"rgba(0, 196, 84, 0.1)","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --background-valid","d":"The declared `--background-valid`."},"warning":{"v":"#fefae6","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --background-warning","d":"The declared `--background-warning`."}},"beige":{"default":{"v":"#fbfaf9","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --beige","d":"The declared `--beige`."},"dark":{"v":"#eaeaea","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --beige-dark","d":"The declared `--beige-dark`."}},"blue":{"default":{"v":"#0086fc","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --blue","d":"The declared `--blue`."},"light":{"v":"#ebfcfd","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --blue-light","d":"The declared `--blue-light`."}},"body":{"default":{"v":"#4a443f","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --body","d":"The declared `--body`."},"muted":{"v":"#848281","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --body-muted","d":"The declared `--body-muted`."}},"card":{"teal":{"01":{"v":"#00d0ce","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --card-teal-01","d":"The declared `--card-teal-01`."},"02":{"v":"#00dcdb","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --card-teal-02","d":"The declared `--card-teal-02`."}},"yellow":{"01":{"v":"#feaa00","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --card-yellow-01","d":"The declared `--card-yellow-01`."},"02":{"v":"#ffbe00","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --card-yellow-02","d":"The declared `--card-yellow-02`."}}},"anchor":{"v":"#6187fe","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --color-anchor","d":"The declared `--color-anchor`."},"border":{"v":"#e8e8e8","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --color-border","d":"The declared `--color-border`."},"invalid":{"v":"#ff4e4e","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --color-invalid","d":"The declared `--color-invalid`."},"marketing":{"primary":{"v":"#343433","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --color-primary","d":"The declared `--color-primary`."},"valid":{"v":"#00c454","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --color-valid","d":"The declared `--color-valid`."},"warning":{"v":"#f6c30f","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --color-warning","d":"The declared `--color-warning`."}},"text":{"v":"#343433","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --color-text","d":"The declared `--color-text`."},"danger":{"default":{"v":"#ff0c18","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --danger","d":"The declared `--danger`."},"100":{"v":"#ffeae9","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --danger-100","d":"The declared `--danger-100`."},"200":{"v":"#ffd6d5","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --danger-200","d":"The declared `--danger-200`."},"300":{"v":"#ff9795","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --danger-300","d":"The declared `--danger-300`."},"400":{"v":"#ff0c18","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --danger-400","d":"The declared `--danger-400`."},"500":{"v":"#fb0c16","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --danger-500","d":"The declared `--danger-500`."},"600":{"v":"#de0e14","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --danger-600","d":"The declared `--danger-600`."},"700":{"v":"#c30d14","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --danger-700","d":"The declared `--danger-700`."},"800":{"v":"#8c0e0f","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --danger-800","d":"The declared `--danger-800`."}},"family":{"default":{"v":"#9896ff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --family","d":"The declared `--family`."},"100":{"v":"#f5f5ff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --family-100","d":"The declared `--family-100`."},"200":{"v":"#eaeaff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --family-200","d":"The declared `--family-200`."},"300":{"v":"#cccbff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --family-300","d":"The declared `--family-300`."},"400":{"v":"#9896ff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --family-400","d":"The declared `--family-400`."},"500":{"v":"#8987ed","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --family-500","d":"The declared `--family-500`."},"600":{"v":"#7a78d2","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --family-600","d":"The declared `--family-600`."},"700":{"v":"#6a69b8","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --family-700","d":"The declared `--family-700`."},"800":{"v":"#4c4b84","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --family-800","d":"The declared `--family-800`."}},"focus":{"default":{"v":"#848281","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --focus","d":"The declared `--focus`."},"color":{"v":"rgba(0, 122, 255, 0.5)","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --focus-color","d":"The declared `--focus-color`."}},"gold":{"v":"#d48f00","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --gold","d":"The declared `--gold`."},"graphic":{"black":{"v":"#343433","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-black","d":"The declared `--graphic-black`."},"blue":{"default":{"v":"#64c6ff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-blue","d":"The declared `--graphic-blue`."},"alt":{"v":"#00b2ff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-blue-alt","d":"The declared `--graphic-blue-alt`."},"pale":{"default":{"v":"#7aceff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-blue-pale","d":"The declared `--graphic-blue-pale`."},"alt":{"v":"#4cbfff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-blue-pale-alt","d":"The declared `--graphic-blue-pale-alt`."}}},"gold":{"default":{"v":"#ffb112","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-gold","d":"The declared `--graphic-gold`."},"alt":{"v":"#ffa100","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-gold-alt","d":"The declared `--graphic-gold-alt`."}},"gray":{"v":"#e5d5c3","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-gray","d":"The declared `--graphic-gray`."},"green":{"v":"#00c978","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-green","d":"The declared `--graphic-green`."},"orange":{"v":"#ff3e00","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-orange","d":"The declared `--graphic-orange`."},"outline":{"v":"#b4a798","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-outline","d":"The declared `--graphic-outline`."},"purple":{"v":"#5f5def","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-purple","d":"The declared `--graphic-purple`."},"stone":{"v":"#f4ebdf","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-stone","d":"The declared `--graphic-stone`."},"yellow":{"default":{"v":"#ffcd6c","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-yellow","d":"The declared `--graphic-yellow`."},"pale":{"v":"#f6f4ee","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-yellow-pale","d":"The declared `--graphic-yellow-pale`."}}},"gray":{"default":{"v":"#747485","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --gray","d":"The declared `--gray`."},"light":{"v":"#f2f0ed","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --gray-light","d":"The declared `--gray-light`."}},"green":{"v":"#00c978","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --green","d":"The declared `--green`."},"heading":{"v":"#343433","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --heading","d":"The declared `--heading`."},"hyperlink":{"color":{"v":"#9896ff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --hyperlink-color","d":"The declared `--hyperlink-color`."}},"icon":{"color":{"secondary":{"v":"#747474","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --icon-color-secondary","d":"The declared `--icon-color-secondary`."},"tertiary":{"v":"#adadad","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --icon-color-tertiary","d":"The declared `--icon-color-tertiary`."}}},"orange":{"default":{"v":"#ff3e00","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --orange","d":"The declared `--orange`."},"dark":{"v":"#ff0000","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --orange-dark","d":"The declared `--orange-dark`."}},"overlay":{"background":{"v":"#171717","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-background","d":"The declared `--overlay-background`."},"color":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-color","d":"The declared `--overlay-color`."},"secondary":{"backdrop":{"v":"rgba(0, 0, 0, 0.4)","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-secondary-backdrop","d":"The declared `--overlay-secondary-backdrop`."},"background":{"v":"rgba(255, 255, 255, 0.98)","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-secondary-background","d":"The declared `--overlay-secondary-background`."},"color":{"default":{"v":"rgba(0, 0, 0, 0.85)","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-secondary-color","d":"The declared `--overlay-secondary-color`."},"muted":{"v":"rgba(0, 0, 0, 0.5)","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-secondary-color-muted","d":"The declared `--overlay-secondary-color-muted`."}},"selection":{"color":{"v":"rgba(0, 0, 0, 0.85)","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-secondary-selection-color","d":"The declared `--overlay-secondary-selection-color`."}}},"selection":{"background":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-selection-background","d":"The declared `--overlay-selection-background`."},"color":{"default":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-selection-color","d":"The declared `--overlay-selection-color`."},"muted":{"v":"rgba(255, 255, 255, 0.5)","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-selection-color-muted","d":"The declared `--overlay-selection-color-muted`."}}}},"pocket":{"v":"#00ce44","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --pocket","d":"The declared `--pocket`."},"primary":{"100":{"v":"#f5f5ff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --primary-100","d":"The declared `--primary-100`."},"200":{"v":"#eaeaff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --primary-200","d":"The declared `--primary-200`."},"300":{"v":"#cccbff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --primary-300","d":"The declared `--primary-300`."},"400":{"v":"#9896ff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --primary-400","d":"The declared `--primary-400`."},"500":{"v":"#8987ed","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --primary-500","d":"The declared `--primary-500`."},"600":{"v":"#7a78d2","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --primary-600","d":"The declared `--primary-600`."},"700":{"v":"#6a69b8","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --primary-700","d":"The declared `--primary-700`."},"800":{"v":"#4c4b84","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --primary-800","d":"The declared `--primary-800`."}},"purple":{"v":"#9f4fff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --purple","d":"The declared `--purple`."},"red":{"v":"#ff2b3a","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --red","d":"The declared `--red`."},"twitter":{"blue":{"v":"#343433","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --twitter-blue","d":"The declared `--twitter-blue`."}},"txn":{"speed":{"high":{"v":"#ff3500","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --txn-speed-high","d":"The declared `--txn-speed-high`."},"low":{"v":"#007eff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --txn-speed-low","d":"The declared `--txn-speed-low`."},"medium":{"v":"#ffbb0c","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --txn-speed-medium","d":"The declared `--txn-speed-medium`."}}},"valid":{"100":{"v":"#e8faed","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --valid-100","d":"The declared `--valid-100`."},"200":{"v":"#cef5dc","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --valid-200","d":"The declared `--valid-200`."},"300":{"v":"#82e5a7","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --valid-300","d":"The declared `--valid-300`."},"400":{"v":"#00ca48","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --valid-400","d":"The declared `--valid-400`."},"500":{"v":"#00b641","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --valid-500","d":"The declared `--valid-500`."},"600":{"v":"#00a239","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --valid-600","d":"The declared `--valid-600`."},"700":{"v":"#008d32","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --valid-700","d":"The declared `--valid-700`."},"800":{"v":"#006625","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --valid-800","d":"The declared `--valid-800`."}},"verified":{"v":"#00b2ff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --verified","d":"The declared `--verified`."},"wallet":{"black":{"v":"#1a1a1a","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-black","d":"The declared `--wallet-black`."},"blue":{"v":"#00a8ef","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-blue","d":"The declared `--wallet-blue`."},"bluePurple":{"v":"#5946f9","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-bluePurple","d":"The declared `--wallet-bluePurple`."},"burntOrange":{"v":"#ff6800","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-burntOrange","d":"The declared `--wallet-burntOrange`."},"copper":{"v":"#ce8949","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-copper","d":"The declared `--wallet-copper`."},"darkBlue":{"v":"#0082ff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-darkBlue","d":"The declared `--wallet-darkBlue`."},"darkPurple":{"v":"#9f4fff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-darkPurple","d":"The declared `--wallet-darkPurple`."},"emerald":{"v":"#00beca","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-emerald","d":"The declared `--wallet-emerald`."},"grassGreen":{"v":"#00bc7c","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-grassGreen","d":"The declared `--wallet-grassGreen`."},"gray":{"v":"#808080","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-gray","d":"The declared `--wallet-gray`."},"green":{"v":"#00ca48","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-green","d":"The declared `--wallet-green`."},"lime":{"v":"#6bce00","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-lime","d":"The declared `--wallet-lime`."},"navy":{"v":"#003468","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-navy","d":"The declared `--wallet-navy`."},"offYellow":{"v":"#f4b000","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-offYellow","d":"The declared `--wallet-offYellow`."},"orange":{"v":"#ff9900","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-orange","d":"The declared `--wallet-orange`."},"pink":{"v":"#ff329b","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-pink","d":"The declared `--wallet-pink`."},"purple":{"v":"#ec34f7","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-purple","d":"The declared `--wallet-purple`."},"red":{"v":"#ff2b3a","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-red","d":"The declared `--wallet-red`."},"redPink":{"v":"#ff2d5e","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-redPink","d":"The declared `--wallet-redPink`."},"seaBlue":{"v":"#00b2ff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-seaBlue","d":"The declared `--wallet-seaBlue`."},"yellowBrown":{"v":"#d2b24e","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-yellowBrown","d":"The declared `--wallet-yellowBrown`."}},"warning":{"100":{"v":"#fff4e4","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --warning-100","d":"The declared `--warning-100`."},"200":{"v":"#ffe7c8","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --warning-200","d":"The declared `--warning-200`."},"300":{"v":"#ffc473","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --warning-300","d":"The declared `--warning-300`."},"400":{"v":"#ff8600","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --warning-400","d":"The declared `--warning-400`."},"500":{"v":"#f67900","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --warning-500","d":"The declared `--warning-500`."},"600":{"v":"#da6c00","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --warning-600","d":"The declared `--warning-600`."},"700":{"v":"#c05e00","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --warning-700","d":"The declared `--warning-700`."},"800":{"v":"#894300","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --warning-800","d":"The declared `--warning-800`."}},"white":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --white","d":"The declared `--white`."},"yellow":{"v":"#ffbb26","t":"color","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --yellow","d":"The declared `--yellow`."}},"duration":{"overshoot":{"out":{"v":"800ms","t":"duration","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --duration-overshoot-out","d":"The declared `--duration-overshoot-out`."}},"snappy":{"out":{"v":"300ms","t":"duration","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --duration-snappy-out","d":"The declared `--duration-snappy-out`."}},"swift":{"out":{"v":"220ms","t":"duration","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --duration-swift-out","d":"The declared `--duration-swift-out`."}}},"easing":{"overshoot":{"out":{"v":[0.175,0.885,0.32,1.275],"t":"cubicBezier","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --ease-overshoot-out","d":"The declared `--ease-overshoot-out`."}},"snappy":{"out":{"v":[0.19,1.0,0.22,1.0],"t":"cubicBezier","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --ease-snappy-out","d":"The declared `--ease-snappy-out`."}},"swift":{"out":{"v":[0.175,0.885,0.32,1.1],"t":"cubicBezier","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --ease-swift-out","d":"The declared `--ease-swift-out`."}}},"shadow":{"overlay":{"filter":{"v":"none","t":"other","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-filter","d":"The declared `--overlay-filter`."},"secondary":{"selection":{"shadow":{"v":"none","t":"other","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-secondary-selection-shadow","d":"The declared `--overlay-secondary-selection-shadow`."}},"shadow":{"v":"rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.07) 0px 6px 14px 0px, rgba(255, 255, 255, 0.1) 0px 0px 3px 0px inset","t":"other","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-secondary-shadow","d":"The declared `--overlay-secondary-shadow`."}},"selection":{"shadow":{"v":"rgba(255, 255, 255, 0.02) 0px 0px 0px 0px inset","t":"other","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-selection-shadow","d":"The declared `--overlay-selection-shadow`."}},"shadow":{"v":"rgba(0, 0, 0, 0.2) 0px 2px 14px 0px","t":"other","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-shadow","d":"The declared `--overlay-shadow`."}},"demo-overlay":{"v":"none","t":"other","s":"computed boxShadow of demo-overlay default (raw/components-computed.json)","d":"The video overlay's own boxShadow — none; it dims the page with an 80% scrim layer instead."}},"overlay":{"secondary":{"filter":{"v":"blur(10px)","t":"other","s":"declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-secondary-filter","d":"The declared `--overlay-secondary-filter`."}}},"radius":{"field":{"v":"14px","t":"dimension","s":"the painted radius of login-field's wrapper ancestor default (raw/components-computed.json)","d":"The app input's painted shell radius — the input itself is borderless; its wrapper draws the rounded fill."},"card":{"v":"10px","t":"dimension","s":"computed borderTopLeftRadius of tweet-card default (raw/components-computed.json)","d":"The testimonial card radius (post cards sit flat on hairlines)."},"item":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of faq-item default (raw/components-computed.json)","d":"The FAQ item radius — flat rows on hairlines."},"button":{"v":"32px","t":"dimension","s":"computed borderTopLeftRadius of getstarted-btn default (raw/components-computed.json)","d":"The pill button radius — Get Started, Download on iOS, Log In."}},"motion":{"control":{"v":"background-color 0.1s ease","t":"other","s":"computed transition of getstarted-btn default (raw/components-computed.json)","d":"The measured control transition."}},"component":{"topbar-height":{"v":"94px","t":"dimension","s":"measured h of mkt-header default (raw/components-computed.json)","d":"The public top bar height."},"logo-width":{"v":"96px","t":"dimension","s":"measured w of mkt-logo default (raw/components-computed.json)","d":"The header wordmark width."},"faq-toggle":{"v":"14px","t":"dimension","s":"measured w of faq-toggle default (raw/components-computed.json)","d":"The 14px FAQ collapse toggle."},"search-field-width":{"v":"269px","t":"dimension","s":"measured w of sup-search default (raw/components-computed.json)","d":"The support search field width."},"control-height":{"v":"48px","t":"dimension","s":"measured h of download-cta default (raw/components-computed.json)","d":"The 48px CTA pill height — Download on iOS, Get Started."},"login-field-width":{"v":"380px","t":"dimension","s":"measured w of login-field default (raw/components-computed.json)","d":"The app login field width."},"login-field-height":{"v":"48px","t":"dimension","s":"measured h of login-field default (raw/components-computed.json)","d":"The app login field height."},"login-card-width":{"v":"380px","t":"dimension","s":"measured w of login-card default (raw/components-computed.json)","d":"The Aave Account login card."},"post-card-width":{"v":"1024px","t":"dimension","s":"measured w of blog-card default (raw/components-computed.json)","d":"A post card on /blog."},"mobile-topbar-height":{"v":"70px","t":"dimension","s":"measured h of m-header default (raw/components-computed.json)","d":"The phone top bar height."}}},"light":{"color":{"banner":{"grey":{"default":{"v":"#f9fafb","t":"color","s":"css-var --banner-grey (light)"},"hover":{"v":"#f3f5f7","t":"color","s":"css-var --banner-grey-hover (light)"}}},"body":{"bg":{"default":{"v":"#ffffff","t":"color","s":"css-var --body-bg (light)"},"secondary":{"v":"#f9fafb","t":"color","s":"css-var --body-bg-secondary (light)"},"tertiary":{"v":"#f0f2f4","t":"color","s":"css-var --body-bg-tertiary (light)"},"transparent":{"v":"rgba(255, 255, 255, 0)","t":"color","s":"css-var --body-bg-transparent (light)"}},"color":{"default":{"v":"#222222","t":"color","s":"css-var --body-color (light)"},"muted":{"v":"rgba(23, 23, 23, 0.5)","t":"color","s":"css-var --body-color-muted (light)"},"secondary":{"v":"#222222","t":"color","s":"css-var --body-color-secondary (light)"}}},"hr":{"color":{"v":"#f0f0f0","t":"color","s":"css-var --hr-color (light)"}},"icon":{"color":{"default":{"v":"#94979e","t":"color","s":"css-var --icon-color (light)"},"hover":{"v":"#171717","t":"color","s":"css-var --icon-color-hover (light)"}}},"input":{"background":{"default":{"v":"#f6f7f9","t":"color","s":"css-var --input-background (light)"},"secondary":{"v":"#e8e8ea","t":"color","s":"css-var --input-background-secondary (light)"}},"color":{"v":"#171717","t":"color","s":"css-var --input-color (light)"},"placeholder":{"v":"rgba(23, 23, 23, 0.2)","t":"color","s":"css-var --input-placeholder (light)"}},"logo":{"color":{"v":"#121212","t":"color","s":"css-var --logo-color (light)"}},"overlay":{"secondary":{"selection":{"background":{"v":"#f9fafb","t":"color","s":"css-var --overlay-secondary-selection-background (light)"}}}},"selection":{"bg":{"v":"rgba(0, 0, 0, 0.8)","t":"color","s":"css-var --selection-bg (light)"},"color":{"v":"#ffffff","t":"color","s":"css-var --selection-color (light)"}}},"background":{"page":{"v":"{color.white}","t":"color","s":"the public surfaces paint a white field (screenshots/*-light-*.png; --color-background resolves #fff); matches declared --white","d":"The white field the whole public surface paints."},"card":{"v":"{color.white}","t":"color","s":"computed backgroundColor of tweet-card default (raw/components-computed.json); matches declared --white","d":"The white testimonial card field (matches --white)."},"field":{"v":"{color.input.background.default}","t":"color","s":"declared --input-background; login-field default itself paints backgroundColor transparent (raw/components-computed.json)","d":"The app input paints transparent over the card; the field fill it sits on is the declared light.color.input.background.default."}},"text":{"ink":{"v":"{color.heading}","t":"color","s":"computed color of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared --heading","d":"The near-black ink on headings and body text (matches --heading)."},"muted":{"v":"rgba(71, 70, 69, 0.7)","t":"color","s":"computed color of feature-body default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The muted body-copy colour (matches --body-muted/--body)."},"low":{"v":"{color.body.muted}","t":"color","s":"computed color of blog-date default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.body.muted","d":"The low-emphasis meta text on post dates."},"kicker":{"v":"#121212","t":"color","s":"computed color of feature-label default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The coloured feature label/kicker text."},"on-dark":{"v":"{color.white}","t":"color","s":"computed color of download-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared --white","d":"White text on the dark/blue buttons."}},"action":{"accent":{"v":"{color.overlay.background}","t":"color","s":"computed backgroundColor of download-cta default (raw/components-computed.json); matches declared --overlay-background","d":"The near-black pill fill on the primary CTAs (Download on iOS, Get Started) — matches the app's declared --overlay-background #171717."},"beige":{"v":"#f6f4ef","t":"color","s":"the painted background of login-btn's layer default (raw/components-computed.json paint list)","d":"The warm beige pill fill on the secondary actions (the header Log In, the hero's Watch the Video) — #f6f4ef; the declared --beige #e7e1d5 is a deeper cream nothing sampled paints."}},"border":{"hairline":{"v":"{color.gray.light}","t":"color","s":"computed borderBottomColor of blog-card default (raw/components-computed.json); matches declared --gray-light","d":"The bottom hairline under cards and list items (matches --gray-light)."},"field-border":{"v":"{color.input.color}","t":"color","s":"computed borderTopColor of login-field default (raw/components-computed.json); matches declared --input-color","d":"The app input is borderless (0px); the recorded colour is the inherited text colour."},"focus":{"v":"{color.focus.default}","t":"color","s":"computed outlineColor of nav-developers focus-visible (raw/components-computed.json); matches declared --focus","d":"The marketing focus-visible ring (matches --focus #848281; the app draws a blue --focus-color rgba(0,122,255,.5) ring)."}}},"dark":{"color":{"banner":{"grey":{"default":{"v":"#1e1e1e","t":"color","s":"css-var --banner-grey (dark)"},"hover":{"v":"#2b2b2b","t":"color","s":"css-var --banner-grey-hover (dark)"}}},"body":{"bg":{"default":{"v":"#1c1c1c","t":"color","s":"css-var --body-bg (dark)"},"secondary":{"v":"#272727","t":"color","s":"css-var --body-bg-secondary (dark)"},"tertiary":{"v":"#333333","t":"color","s":"css-var --body-bg-tertiary (dark)"},"transparent":{"v":"rgba(28, 28, 28, 0)","t":"color","s":"css-var --body-bg-transparent (dark)"}},"color":{"default":{"v":"#ffffff","t":"color","s":"css-var --body-color (dark)"},"muted":{"v":"rgba(255, 255, 255, 0.5)","t":"color","s":"css-var --body-color-muted (dark)"},"secondary":{"v":"#efefef","t":"color","s":"css-var --body-color-secondary (dark)"}}},"hr":{"color":{"v":"rgba(255, 255, 255, 0.05)","t":"color","s":"css-var --hr-color (dark)"}},"icon":{"color":{"default":{"v":"#666666","t":"color","s":"css-var --icon-color (dark)"},"hover":{"v":"#ffffff","t":"color","s":"css-var --icon-color-hover (dark)"}}},"input":{"background":{"default":{"v":"#1e1e1e","t":"color","s":"css-var --input-background (dark)"},"secondary":{"v":"rgba(255, 255, 255, 0.06)","t":"color","s":"css-var --input-background-secondary (dark)"}},"color":{"v":"#ffffff","t":"color","s":"css-var --input-color (dark)"},"placeholder":{"v":"rgba(255, 255, 255, 0.3)","t":"color","s":"css-var --input-placeholder (dark)"}},"logo":{"color":{"v":"#ffffff","t":"color","s":"css-var --logo-color (dark)"}},"overlay":{"secondary":{"selection":{"background":{"v":"#272727","t":"color","s":"css-var --overlay-secondary-selection-background (dark)"},"color":{"muted":{"v":"rgba(255, 255, 255, 0.5)","t":"color","s":"css-var --overlay-secondary-selection-color-muted (dark)"}}}},"backdrop":{"v":"rgba(0, 0, 0, 0.4)","t":"color","s":"css-var --overlay-backdrop (dark)"},"color":{"muted":{"v":"rgba(0, 0, 0, 0.5)","t":"color","s":"css-var --overlay-color-muted (dark)"}}},"selection":{"bg":{"v":"rgba(255, 255, 255, 0.8)","t":"color","s":"css-var --selection-bg (dark)"},"color":{"v":"#171717","t":"color","s":"css-var --selection-color (dark)"}}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (declared, never painted signed out)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.size || {}, 'size.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  let node = TOK.core || TOK, seen = [];
+  for (const k of m[1].split('.')) { node = node && node[k]; seen.push(k); }
+  return node && node.v !== undefined ? resolveVal(node.v, (depth || 0) + 1) : v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Family</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

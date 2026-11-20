@@ -1,0 +1,1976 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. forhers.com has no named token layer on the marketing stack: core.space and core.layout export the /shop bundle's --unit-u*/--spacing-s*/--grid-*/--*Height scales, core.palette harvests the literal colours the archived inline sheets declare (ink on white, sage and cream surfaces, the #338585 teal ramp, lime and clay accents), core.typography and light.component are computed styles measured on the same archived pages. core.font names the measured faces: sofia-pro/SofiaProWeb UI sans and the CareSans display face.",
+ "core": {
+  "font": {
+   "family": {
+    "sans": {
+     "value": "sofia-pro, SofiaProWeb, Helvetica, Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of article-card default (raw/components-computed.json); blog-topic and the other blog/prose components match (nav-link and footer measure CareSans)",
+     "description": "The UI sans — nav, footer, blog/prose, forms and the /shop stack."
+    },
+    "display": {
+     "value": "CareSans, Helvetica, Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-heading (raw/components-computed.json)",
+     "description": "The marketing display face (the soft-serif brand face): hero and card headlines, CTAs and prices. Fluid-sized via --scale, letter-spacing -0.0625em."
+    },
+    "serif": {
+     "value": "IvarSoft",
+     "type": "fontFamily",
+     "source": "@font-face declarations in the archived inline sheets (raw/css-vars.json fonts)",
+     "description": "Declared faces only: Regular and Italic, unicode-range subsets, font-display: swap. No SSR rule applies it — the marketing display face is CareSans."
+    }
+   }
+  },
+  "typography": {
+   "display": {
+    "$value": {
+     "fontFamily": "CareSans, Helvetica, Arial, sans-serif",
+     "fontSize": "57px",
+     "lineHeight": "57px",
+     "fontWeight": 410,
+     "letterSpacing": "-0.57px"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed text style of hero-heading default (raw/components-computed.json)"
+    },
+    "$description": "The home hero headline — CareSans at its fluid max (57px at 1440, weight 410, letter-spacing -0.0625em, line-height 1). Base size 40 scaled by --scale."
+   },
+   "display-page": {
+    "$value": {
+     "fontFamily": "CareSans, Helvetica, Arial, sans-serif",
+     "fontSize": "52.8333px",
+     "lineHeight": "52.8333px",
+     "fontWeight": 410,
+     "letterSpacing": "-0.528333px"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed text style of page-heading default (raw/components-computed.json)"
+    },
+    "$description": "The category-page H1 (weight-loss, hair-loss, …) — CareSans, about 53px at 1440, weight 410."
+   },
+   "title": {
+    "$value": {
+     "fontFamily": "sofia-pro, SofiaProWeb, Helvetica, Arial, sans-serif",
+     "fontSize": "62px",
+     "lineHeight": "65.1px",
+     "fontWeight": 500,
+     "letterSpacing": "-4.34px"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed text style of article-title default (raw/components-computed.json)"
+    },
+    "$description": "The editorial title — blog article H1 and the lead-capture headline, sofia-pro 62px."
+   },
+   "card-title": {
+    "$value": {
+     "fontFamily": "CareSans, Helvetica, Arial, sans-serif",
+     "fontSize": "28px",
+     "lineHeight": "31.5px",
+     "fontWeight": 460,
+     "letterSpacing": "-0.0466693px"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed text style of product-card default (raw/components-computed.json)"
+    },
+    "$description": "Card and product names — CareSans 28px/31.5 at weight 460."
+   },
+   "dek": {
+    "$value": {
+     "fontFamily": "CareSans, Helvetica, Arial, sans-serif",
+     "fontSize": "18.5px",
+     "lineHeight": "23.1537px",
+     "fontWeight": 400,
+     "letterSpacing": "0.401913px"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed text style of page-dek default (raw/components-computed.json)"
+    },
+    "$description": "The CareSans dek under a page heading — 18.5px."
+   },
+   "body": {
+    "$value": {
+     "fontFamily": "sofia-pro, SofiaProWeb, Helvetica, Arial, sans-serif",
+     "fontSize": "20px",
+     "lineHeight": "28px",
+     "fontWeight": 400,
+     "letterSpacing": "-0.317647px"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed text style of prose-body default (raw/components-computed.json)"
+    },
+    "$description": "The default reading size — sofia-pro 20px/28. The article paragraph reading was the wrong element and is not published."
+   },
+   "body-comfortable": {
+    "$value": {
+     "fontFamily": "sofia-pro, SofiaProWeb, Helvetica, Arial, sans-serif",
+     "fontSize": "20px",
+     "lineHeight": "28px",
+     "fontWeight": 400,
+     "letterSpacing": "-0.317647px"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed text style of prose-body default (raw/components-computed.json)"
+    },
+    "$description": "The wider-measure prose body — sofia-pro 20px/28 at the muted ink."
+   },
+   "small": {
+    "$value": {
+     "fontFamily": "CareSans, Helvetica, Arial, sans-serif",
+     "fontSize": "15.6667px",
+     "lineHeight": "20.0238px",
+     "fontWeight": 600,
+     "letterSpacing": "0.354276px"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed text style of disclaimer default (raw/components-computed.json)"
+    },
+    "$description": "The small print — disclaimers and helper text, sofia-pro 14px/20."
+   },
+   "micro": {
+    "$value": {
+     "fontFamily": "sofia-pro, SofiaProWeb, Helvetica, Arial, sans-serif",
+     "fontSize": "12px",
+     "lineHeight": "20px",
+     "fontWeight": 500
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed text style of byline default (raw/components-computed.json)"
+    },
+    "$description": "Bylines, captions and footer fine print — sofia-pro 12px."
+   },
+   "label": {
+    "$value": {
+     "fontFamily": "CareSans, Helvetica, Arial, sans-serif",
+     "fontSize": "16px",
+     "lineHeight": "24px",
+     "fontWeight": 400
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed text style of login-button default (raw/components-computed.json)"
+    },
+    "$description": "Compact UI labels (Log in, menu) — sofia-pro 12px/12 at weight 600."
+   },
+   "button": {
+    "$value": {
+     "fontFamily": "sofia-pro, SofiaProWeb, Helvetica, Arial, sans-serif",
+     "fontSize": "16px",
+     "lineHeight": "22.4px",
+     "fontWeight": 500
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed text style of region-cta default (raw/components-computed.json)"
+    },
+    "$description": "Button labels — sofia-pro 16px at weight 500."
+   },
+   "chip": {
+    "$value": {
+     "fontFamily": "sofia-pro, SofiaProWeb, Helvetica, Arial, sans-serif",
+     "fontSize": "14px",
+     "lineHeight": "19.6px",
+     "fontWeight": 500
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed text style of blog-topic default (raw/components-computed.json)"
+    },
+    "$description": "Topic chip labels — sofia-pro 14px/19.6 at weight 500."
+   },
+   "drug-index": {
+    "$value": {
+     "fontFamily": "sofia-pro, SofiaProWeb, Helvetica, Arial, sans-serif",
+     "fontSize": "29px",
+     "lineHeight": "37.35px",
+     "fontWeight": 400,
+     "letterSpacing": "-0.72px"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed text style of drug-link default (raw/components-computed.json)"
+    },
+    "$description": "The A-Z drug index links — sofia-pro 29px, link blue."
+   }
+  },
+  "space": {
+   "unit": {
+    "u002": {
+     "var": "--unit-u002",
+     "type": "dimension",
+     "source": "css-var --unit-u002 resolved (raw/css-vars.json)",
+     "description": "Element spacing step --unit-u002."
+    },
+    "u004": {
+     "var": "--unit-u004",
+     "type": "dimension",
+     "source": "css-var --unit-u004 resolved (raw/css-vars.json)",
+     "description": "Element spacing step --unit-u004."
+    },
+    "u006": {
+     "var": "--unit-u006",
+     "type": "dimension",
+     "source": "css-var --unit-u006 resolved (raw/css-vars.json)",
+     "description": "Element spacing step --unit-u006."
+    },
+    "u008": {
+     "var": "--unit-u008",
+     "type": "dimension",
+     "source": "css-var --unit-u008 resolved (raw/css-vars.json)",
+     "description": "Element spacing step --unit-u008."
+    },
+    "u010": {
+     "var": "--unit-u010",
+     "type": "dimension",
+     "source": "css-var --unit-u010 resolved (raw/css-vars.json)",
+     "description": "Element spacing step --unit-u010."
+    },
+    "u012": {
+     "var": "--unit-u012",
+     "type": "dimension",
+     "source": "css-var --unit-u012 resolved (raw/css-vars.json)",
+     "description": "Element spacing step --unit-u012."
+    },
+    "u014": {
+     "var": "--unit-u014",
+     "type": "dimension",
+     "source": "css-var --unit-u014 resolved (raw/css-vars.json)",
+     "description": "Element spacing step --unit-u014."
+    },
+    "u016": {
+     "var": "--unit-u016",
+     "type": "dimension",
+     "source": "css-var --unit-u016 resolved (raw/css-vars.json)",
+     "description": "Element spacing step --unit-u016."
+    },
+    "u018": {
+     "var": "--unit-u018",
+     "type": "dimension",
+     "source": "css-var --unit-u018 resolved (raw/css-vars.json)",
+     "description": "Element spacing step --unit-u018."
+    },
+    "u020": {
+     "var": "--unit-u020",
+     "type": "dimension",
+     "source": "css-var --unit-u020 resolved (raw/css-vars.json)",
+     "description": "Element spacing step --unit-u020."
+    },
+    "u022": {
+     "var": "--unit-u022",
+     "type": "dimension",
+     "source": "css-var --unit-u022 resolved (raw/css-vars.json)",
+     "description": "Element spacing step --unit-u022."
+    },
+    "u024": {
+     "var": "--unit-u024",
+     "type": "dimension",
+     "source": "css-var --unit-u024 resolved (raw/css-vars.json)",
+     "description": "Element spacing step --unit-u024."
+    },
+    "u028": {
+     "var": "--unit-u028",
+     "type": "dimension",
+     "source": "css-var --unit-u028 resolved (raw/css-vars.json)",
+     "description": "Element spacing step --unit-u028."
+    },
+    "u032": {
+     "var": "--unit-u032",
+     "type": "dimension",
+     "source": "css-var --unit-u032 resolved (raw/css-vars.json)",
+     "description": "Element spacing step --unit-u032."
+    },
+    "u036": {
+     "var": "--unit-u036",
+     "type": "dimension",
+     "source": "css-var --unit-u036 resolved (raw/css-vars.json)",
+     "description": "Element spacing step --unit-u036."
+    },
+    "u040": {
+     "var": "--unit-u040",
+     "type": "dimension",
+     "source": "css-var --unit-u040 resolved (raw/css-vars.json)",
+     "description": "Element spacing step --unit-u040."
+    },
+    "u044": {
+     "var": "--unit-u044",
+     "type": "dimension",
+     "source": "css-var --unit-u044 resolved (raw/css-vars.json)",
+     "description": "Element spacing step --unit-u044."
+    },
+    "u048": {
+     "var": "--unit-u048",
+     "type": "dimension",
+     "source": "css-var --unit-u048 resolved (raw/css-vars.json)",
+     "description": "Element spacing step --unit-u048."
+    },
+    "u056": {
+     "var": "--unit-u056",
+     "type": "dimension",
+     "source": "css-var --unit-u056 resolved (raw/css-vars.json)",
+     "description": "Element spacing step --unit-u056."
+    },
+    "u064": {
+     "var": "--unit-u064",
+     "type": "dimension",
+     "source": "css-var --unit-u064 resolved (raw/css-vars.json)",
+     "description": "Element spacing step --unit-u064."
+    }
+   },
+   "section": {
+    "s025": {
+     "var": "--spacing-s025",
+     "type": "dimension",
+     "source": "css-var --spacing-s025 resolved (raw/css-vars.json)",
+     "description": "Section spacing step --spacing-s025 — vertical rhythm between modules."
+    },
+    "s050": {
+     "var": "--spacing-s050",
+     "type": "dimension",
+     "source": "css-var --spacing-s050 resolved (raw/css-vars.json)",
+     "description": "Section spacing step --spacing-s050 — vertical rhythm between modules."
+    },
+    "s075": {
+     "var": "--spacing-s075",
+     "type": "dimension",
+     "source": "css-var --spacing-s075 resolved (raw/css-vars.json)",
+     "description": "Section spacing step --spacing-s075 — vertical rhythm between modules."
+    },
+    "s100": {
+     "var": "--spacing-s100",
+     "type": "dimension",
+     "source": "css-var --spacing-s100 resolved (raw/css-vars.json)",
+     "description": "Section spacing step --spacing-s100 — vertical rhythm between modules."
+    }
+   }
+  },
+  "layout": {
+   "grid": {
+    "column-count": {
+     "var": "--grid-column-count",
+     "type": "number",
+     "source": "css-var --grid-column-count resolved (raw/css-vars.json)",
+     "description": "The 12-column content grid."
+    },
+    "gap": {
+     "var": "--grid-gap",
+     "type": "dimension",
+     "source": "css-var --grid-gap resolved (raw/css-vars.json)",
+     "description": "The grid gutter (declared as the unitless 14; px)."
+    },
+    "max-width": {
+     "value": "1251px",
+     "type": "dimension",
+     "source": "css-var --grid-max-width declared calc(1266 - 15), resolved arithmetically (raw/css-vars.json)",
+     "description": "The grid's max width — the 1266 page shell minus the 15px scrollbar."
+    },
+    "column-width": {
+     "value": "86.75px",
+     "type": "dimension",
+     "source": "css-var --grid-column-width declared calc(((1266 - 15) - (14 * 11) - (14 * 4)) / 12), resolved arithmetically (raw/css-vars.json)",
+     "description": "One of the 12 columns at max width: (1251 - 154 - 56) / 12."
+    },
+    "column-margin": {
+     "value": "56px",
+     "type": "dimension",
+     "source": "css-var --column-margin declared calc(14 * 4), resolved arithmetically (raw/css-vars.json)",
+     "description": "The 4-gap margin inside the 1266 shell."
+    },
+    "content-max-width": {
+     "var": "--grid-content-max-width",
+     "type": "dimension",
+     "source": "css-var --grid-content-max-width resolved (raw/css-vars.json)",
+     "description": "The 1195px text column inside the grid."
+    },
+    "marketing-column": {
+     "var": "--gridColumn",
+     "type": "dimension",
+     "source": "css-var --gridColumn resolved (raw/css-vars.json)",
+     "description": "The marketing stack's column unit at the captured width (calc(100vw / 24) = 60px at 1440)."
+    }
+   },
+   "chrome": {
+    "header-height": {
+     "var": "--headerHeight",
+     "type": "dimension",
+     "source": "css-var --headerHeight resolved (raw/css-vars.json)",
+     "description": "The 56px sticky header."
+    },
+    "global-nav-row-height": {
+     "var": "--global-nav-header-row-height",
+     "type": "dimension",
+     "source": "css-var --global-nav-header-row-height resolved (raw/css-vars.json)",
+     "description": "The 48px global-nav row."
+    },
+    "product-nav-height": {
+     "var": "--productNavHeight",
+     "type": "dimension",
+     "source": "css-var --productNavHeight resolved (raw/css-vars.json)",
+     "description": "The 56px product nav."
+    },
+    "promo-height": {
+     "var": "--promoHeight",
+     "type": "dimension",
+     "source": "css-var --promoHeight resolved (raw/css-vars.json)",
+     "description": "The 44px promo bar."
+    },
+    "promo-offset": {
+     "var": "--promoHeightOffset",
+     "type": "dimension",
+     "source": "css-var --promoHeightOffset resolved (raw/css-vars.json)",
+     "description": "The 44px offset under the promo bar."
+    },
+    "header-offset": {
+     "var": "--headerOffset",
+     "type": "dimension",
+     "source": "css-var --headerOffset resolved (raw/css-vars.json)",
+     "description": "The 100px combined promo+header offset."
+    },
+    "scrollbar-width": {
+     "var": "--scrollbar-width",
+     "type": "number",
+     "source": "css-var --scrollbar-width resolved (raw/css-vars.json)",
+     "description": "The 15px scrollbar the shell subtracts."
+    }
+   },
+   "breakpoint": {
+    "360": {
+     "value": "360px",
+     "type": "dimension",
+     "source": "@media (min-width: 360px) context in the archived sheets (raw/css-vars.json)",
+     "description": "A fluid-type/responsive breakpoint the sheets gate on."
+    },
+    "488": {
+     "value": "488px",
+     "type": "dimension",
+     "source": "@media (min-width: 488px) context in the archived sheets (raw/css-vars.json)",
+     "description": "A fluid-type/responsive breakpoint the sheets gate on."
+    },
+    "740": {
+     "value": "740px",
+     "type": "dimension",
+     "source": "@media (min-width: 740px) context in the archived sheets (raw/css-vars.json)",
+     "description": "A fluid-type/responsive breakpoint the sheets gate on."
+    },
+    "767": {
+     "value": "767px",
+     "type": "dimension",
+     "source": "@media (min-width: 767px) context in the archived sheets (raw/css-vars.json)",
+     "description": "A fluid-type/responsive breakpoint the sheets gate on."
+    },
+    "768": {
+     "value": "768px",
+     "type": "dimension",
+     "source": "@media (min-width: 768px) context in the archived sheets (raw/css-vars.json)",
+     "description": "A fluid-type/responsive breakpoint the sheets gate on."
+    },
+    "1023": {
+     "value": "1023px",
+     "type": "dimension",
+     "source": "@media (min-width: 1023px) context in the archived sheets (raw/css-vars.json)",
+     "description": "A fluid-type/responsive breakpoint the sheets gate on."
+    },
+    "1024": {
+     "value": "1024px",
+     "type": "dimension",
+     "source": "@media (min-width: 1024px) context in the archived sheets (raw/css-vars.json)",
+     "description": "A fluid-type/responsive breakpoint the sheets gate on."
+    },
+    "1092": {
+     "value": "1092px",
+     "type": "dimension",
+     "source": "@media (min-width: 1092px) context in the archived sheets (raw/css-vars.json)",
+     "description": "A fluid-type/responsive breakpoint the sheets gate on."
+    },
+    "1266": {
+     "value": "1266px",
+     "type": "dimension",
+     "source": "@media (min-width: 1266px) context in the archived sheets (raw/css-vars.json)",
+     "description": "A fluid-type/responsive breakpoint the sheets gate on."
+    },
+    "1392": {
+     "value": "1392px",
+     "type": "dimension",
+     "source": "@media (min-width: 1392px) context in the archived sheets (raw/css-vars.json)",
+     "description": "A fluid-type/responsive breakpoint the sheets gate on."
+    },
+    "1439": {
+     "value": "1439px",
+     "type": "dimension",
+     "source": "@media (min-width: 1439px) context in the archived sheets (raw/css-vars.json)",
+     "description": "A fluid-type/responsive breakpoint the sheets gate on."
+    },
+    "1440": {
+     "value": "1440px",
+     "type": "dimension",
+     "source": "@media (min-width: 1440px) context in the archived sheets (raw/css-vars.json)",
+     "description": "A fluid-type/responsive breakpoint the sheets gate on."
+    }
+   }
+  },
+  "radius": {
+   "pill": {
+    "value": "9999px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of region-cta default (raw/components-computed.json)",
+    "description": "The 9999px pill — CTAs and the region dialog's button."
+   },
+   "chip": {
+    "value": "100px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of blog-topic default (raw/components-computed.json)",
+    "description": "The 100px pill the topic chips paint."
+   },
+   "card": {
+    "value": "24px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of tile-card default (raw/components-computed.json)",
+    "description": "The 24px card radius (category tiles, price cards)."
+   },
+   "dialog": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of region-dialog default (raw/components-computed.json)",
+    "description": "The 16px dialog radius (the region card)."
+   },
+   "field": {
+    "value": "11px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of text-field default (raw/components-computed.json)",
+    "description": "The 11px input radius."
+   },
+   "circle": {
+    "value": "100%",
+    "type": "other",
+    "source": "computed borderTopLeftRadius of disabled-button default (raw/components-computed.json)",
+    "description": "The 100% circle the disabled control paints."
+   }
+  },
+  "palette": {
+   "ink": {
+    "base": {
+     "value": "#000000",
+     "type": "color",
+     "source": "stylesheet literal, 62 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "The ink every ramp step derives from."
+    },
+    "a89": {
+     "value": "rgba(0, 0, 0, 0.89)",
+     "type": "color",
+     "source": "computed color of header default (raw/components-computed.json)",
+     "description": "Primary text — nav, body, footer."
+    },
+    "a74": {
+     "value": "rgba(0, 0, 0, 0.74)",
+     "type": "color",
+     "source": "computed backgroundColor of cta-secondary pressed (raw/components-computed.json)",
+     "description": "A mid emphasis step."
+    },
+    "a65": {
+     "value": "rgba(0, 0, 0, 0.65)",
+     "type": "color",
+     "source": "computed color of nav-link default (raw/components-computed.json)",
+     "description": "Secondary text — prose body, privacy notes."
+    },
+    "a54": {
+     "value": "rgba(0, 0, 0, 0.54)",
+     "type": "color",
+     "source": "computed backgroundColor of form-submit focus-visible (raw/components-computed.json)",
+     "description": "The muted step."
+    },
+    "a50": {
+     "value": "rgba(0, 0, 0, 0.5)",
+     "type": "color",
+     "source": "computed color of page-dek default (raw/components-computed.json)",
+     "description": "The page dek's reading."
+    },
+    "a44": {
+     "value": "rgba(0, 0, 0, 0.44)",
+     "type": "color",
+     "source": "computed color of byline default (raw/components-computed.json)",
+     "description": "Subtle text — bylines and meta."
+    },
+    "a37": {
+     "value": "rgba(0, 0, 0, 0.37)",
+     "type": "color",
+     "source": "computed color of read-more default (raw/components-computed.json)",
+     "description": "The faint step — 'Read more'."
+    },
+    "a33": {
+     "value": "rgba(0, 0, 0, 0.33)",
+     "type": "color",
+     "source": "Reconstruction — entered by hand at capture time, no raw reading behind it (no computed style or declaration holds this step)",
+     "description": "Placeholder/disabled-adjacent text."
+    },
+    "a30": {
+     "value": "rgba(16, 16, 16, 0.3)",
+     "type": "color",
+     "source": "computed color of disabled-button default (raw/components-computed.json)",
+     "description": "Disabled control text."
+    },
+    "a12": {
+     "value": "rgba(0, 0, 0, 0.12)",
+     "type": "color",
+     "source": "painted fill (a paint layer) of m-bento-card default (raw/components-computed.json)",
+     "description": "Hairlines and card borders."
+    },
+    "a08": {
+     "value": "rgba(0, 0, 0, 0.08)",
+     "type": "color",
+     "source": "a layer of computed boxShadow of region-dialog default (raw/components-computed.json)",
+     "description": "The soft divider wash."
+    },
+    "a06": {
+     "value": "rgba(0, 0, 0, 0.06)",
+     "type": "color",
+     "source": "computed backgroundColor of menu-toggle hover (raw/components-computed.json)",
+     "description": "Hover wells — Log in hover, chips, social wells, disabled fill."
+    },
+    "a05": {
+     "value": "rgba(0, 0, 0, 0.05)",
+     "type": "color",
+     "source": "declared in an archived inline sheet (raw/css-vars.json)",
+     "description": "The lightest wash."
+    },
+    "a03": {
+     "value": "rgba(0, 0, 0, 0.03)",
+     "type": "color",
+     "source": "computed borderTopColor of menu-toggle default (raw/components-computed.json)",
+     "description": "The faintest surface tint."
+    }
+   },
+   "paper": {
+    "white": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "stylesheet literal, 2 custom-property declarations in raw/css-vars.json",
+     "description": "The page field."
+    },
+    "snow": {
+     "value": "#f7f7f7",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A soft panel."
+    },
+    "wash": {
+     "value": "#f0f0f0",
+     "type": "color",
+     "source": "stylesheet literal, 18 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "The wash surface."
+    },
+    "wash-2": {
+     "value": "#f1f1f1",
+     "type": "color",
+     "source": "stylesheet literal, 12 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A wash variant."
+    },
+    "grey": {
+     "value": "#efefef",
+     "type": "color",
+     "source": "stylesheet literal, 18 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "The tertiary button surface and carousel arrow base."
+    },
+    "grey-2": {
+     "value": "#e7e7e7",
+     "type": "color",
+     "source": "stylesheet literal, 7 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A grey step."
+    },
+    "grey-3": {
+     "value": "#e5e5e5",
+     "type": "color",
+     "source": "stylesheet literal, 3 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A grey step."
+    },
+    "footer": {
+     "value": "#e8eae8",
+     "type": "color",
+     "source": "stylesheet literal, 25 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "The footer slab — measured on the footer."
+    },
+    "warm-grey": {
+     "value": "#e8e8e2",
+     "type": "color",
+     "source": "stylesheet literal, 3 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "The warm grey surface."
+    },
+    "silver": {
+     "value": "#d2d2d2",
+     "type": "color",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A mid grey."
+    },
+    "mid": {
+     "value": "#8f8f8f",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A mid grey."
+    },
+    "muted": {
+     "value": "#757575",
+     "type": "color",
+     "source": "stylesheet literal, 28 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "The muted grey — accordion labels."
+    }
+   },
+   "surface": {
+    "sage-050": {
+     "value": "#f5faf6",
+     "type": "color",
+     "source": "stylesheet literal, 5 custom-property declarations in raw/css-vars.json",
+     "description": "The lightest sage surface."
+    },
+    "sage-100": {
+     "value": "#f2f9f4",
+     "type": "color",
+     "source": "stylesheet literal, 12 custom-property declarations in raw/css-vars.json",
+     "description": "The sage surface."
+    },
+    "sage-200": {
+     "value": "#eaf3ed",
+     "type": "color",
+     "source": "stylesheet literal, 10 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A mid sage."
+    },
+    "sage-300": {
+     "value": "#e4eee6",
+     "type": "color",
+     "source": "stylesheet literal, 12 custom-property declarations in raw/css-vars.json",
+     "description": "The deep sage surface."
+    },
+    "sage-400": {
+     "value": "#f1f4f2",
+     "type": "color",
+     "source": "stylesheet literal, 4 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A sage-grey."
+    },
+    "cream-100": {
+     "value": "#faf8f2",
+     "type": "color",
+     "source": "stylesheet literal, 10 custom-property declarations in raw/css-vars.json",
+     "description": "The light cream."
+    },
+    "cream-200": {
+     "value": "#f4f1e6",
+     "type": "color",
+     "source": "stylesheet literal, 10 custom-property declarations in raw/css-vars.json",
+     "description": "The cream surface."
+    },
+    "cream-300": {
+     "value": "#f2ede5",
+     "type": "color",
+     "source": "stylesheet literal, 10 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "The deep cream."
+    }
+   },
+   "teal": {
+    "950": {
+     "value": "#13262e",
+     "type": "color",
+     "source": "stylesheet literal, 10 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "The deepest teal — dark hero surfaces."
+    },
+    "900": {
+     "value": "#1e3944",
+     "type": "color",
+     "source": "stylesheet literal, 4 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A deep teal."
+    },
+    "850": {
+     "value": "#223c47",
+     "type": "color",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A deep teal."
+    },
+    "800": {
+     "value": "#235b5b",
+     "type": "color",
+     "source": "stylesheet literal, 2 custom-property declarations in raw/css-vars.json",
+     "description": "Deep teal."
+    },
+    "750": {
+     "value": "#2a6868",
+     "type": "color",
+     "source": "stylesheet literal, 2 custom-property declarations in raw/css-vars.json",
+     "description": "Deep teal."
+    },
+    "700": {
+     "value": "#338585",
+     "type": "color",
+     "source": "stylesheet literal, 1 custom-property declaration in raw/css-vars.json",
+     "description": "The Hers teal — 103 declarations: badges, quality seals, accents."
+    },
+    "650": {
+     "value": "#3f676d",
+     "type": "color",
+     "source": "stylesheet literal, 34 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A dark teal-grey."
+    },
+    "600": {
+     "value": "#6498a0",
+     "type": "color",
+     "source": "stylesheet literal, 2 custom-property declarations in raw/css-vars.json",
+     "description": "The mid teal."
+    },
+    "550": {
+     "value": "#729693",
+     "type": "color",
+     "source": "stylesheet literal, 10 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A mid teal."
+    },
+    "500": {
+     "value": "#76b2a7",
+     "type": "color",
+     "source": "stylesheet literal, 1 custom-property declaration in raw/css-vars.json",
+     "description": "The soft teal."
+    },
+    "450": {
+     "value": "#78b3a8",
+     "type": "color",
+     "source": "stylesheet literal, 1 custom-property declaration in raw/css-vars.json",
+     "description": "The soft teal variant."
+    },
+    "400": {
+     "value": "#87a299",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A sage-teal."
+    },
+    "350": {
+     "value": "#7b9e92",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A sage-teal."
+    },
+    "300": {
+     "value": "#9cccbc",
+     "type": "color",
+     "source": "stylesheet literal, 1 custom-property declaration in raw/css-vars.json",
+     "description": "The pale teal."
+    },
+    "250": {
+     "value": "#9abdb1",
+     "type": "color",
+     "source": "stylesheet literal, 20 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "The pale sage-teal."
+    },
+    "200": {
+     "value": "#b4cdc4",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "The lightest teal."
+    }
+   },
+   "forest": {
+    "950": {
+     "value": "#162511",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "The deepest green."
+    },
+    "900": {
+     "value": "#162a13",
+     "type": "color",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A deep green."
+    },
+    "850": {
+     "value": "#194737",
+     "type": "color",
+     "source": "stylesheet literal, 8 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A deep green-teal."
+    },
+    "800": {
+     "value": "#263a1e",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A dark green."
+    },
+    "750": {
+     "value": "#2d4021",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A dark green."
+    },
+    "700": {
+     "value": "#2d3421",
+     "type": "color",
+     "source": "stylesheet literal, 1 custom-property declaration in raw/css-vars.json",
+     "description": "A dark olive."
+    },
+    "650": {
+     "value": "#313631",
+     "type": "color",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A dark neutral green."
+    },
+    "600": {
+     "value": "#343c2b",
+     "type": "color",
+     "source": "stylesheet literal, 1 custom-property declaration in raw/css-vars.json",
+     "description": "A dark olive."
+    },
+    "550": {
+     "value": "#384429",
+     "type": "color",
+     "source": "stylesheet literal, 8 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A mid olive."
+    },
+    "500": {
+     "value": "#3e4f49",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A green-grey."
+    },
+    "450": {
+     "value": "#334b43",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A deep green-grey."
+    },
+    "400": {
+     "value": "#486635",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A mid green."
+    },
+    "350": {
+     "value": "#536240",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A mid olive."
+    }
+   },
+   "sage-green": {
+    "700": {
+     "value": "#7d8f66",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A deep sage green."
+    },
+    "650": {
+     "value": "#7b8967",
+     "type": "color",
+     "source": "stylesheet literal, 10 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A deep sage green."
+    },
+    "600": {
+     "value": "#90ad72",
+     "type": "color",
+     "source": "stylesheet literal, 23 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A mid sage green."
+    },
+    "550": {
+     "value": "#9fb089",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A mid sage green."
+    },
+    "500": {
+     "value": "#9dbd67",
+     "type": "color",
+     "source": "stylesheet literal, 1 custom-property declaration in raw/css-vars.json",
+     "description": "The mid sage green."
+    },
+    "450": {
+     "value": "#a3b58d",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A soft sage green."
+    },
+    "300": {
+     "value": "#b7d7a3",
+     "type": "color",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A pale sage green."
+    },
+    "200": {
+     "value": "#c1d4a3",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A pale sage green."
+    },
+    "100": {
+     "value": "#ccddb7",
+     "type": "color",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "The palest sage green."
+    }
+   },
+   "lime": {
+    "600": {
+     "value": "#b0d563",
+     "type": "color",
+     "source": "stylesheet literal, 7 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A mid lime."
+    },
+    "550": {
+     "value": "#b6dd64",
+     "type": "color",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "The BMI Calculate submit's fill — measured."
+    },
+    "500": {
+     "value": "#c3ec82",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A soft lime."
+    },
+    "450": {
+     "value": "#c5ed82",
+     "type": "color",
+     "source": "stylesheet literal, 1 custom-property declaration in raw/css-vars.json",
+     "description": "The soft lime — 34 declarations."
+    },
+    "400": {
+     "value": "#d5ff5d",
+     "type": "color",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "The promo lime — the promo bar's highlight."
+    },
+    "350": {
+     "value": "#e4ff8b",
+     "type": "color",
+     "source": "stylesheet literal, 4 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A pale lime."
+    },
+    "300": {
+     "value": "#a6fb89",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A green-leaning lime."
+    },
+    "200": {
+     "value": "#bff8b1",
+     "type": "color",
+     "source": "stylesheet literal, 22 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "The pale lime."
+    },
+    "100": {
+     "value": "#fdffa7",
+     "type": "color",
+     "source": "stylesheet literal, 15 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "The palest yellow-lime."
+    }
+   },
+   "clay": {
+    "900": {
+     "value": "#451310",
+     "type": "color",
+     "source": "stylesheet literal, 4 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "The deepest clay."
+    },
+    "800": {
+     "value": "#5d2f24",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A dark clay."
+    },
+    "700": {
+     "value": "#5e1e1a",
+     "type": "color",
+     "source": "stylesheet literal, 4 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A dark clay."
+    },
+    "600": {
+     "value": "#8a3a34",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "The terracotta."
+    },
+    "500": {
+     "value": "#941f18",
+     "type": "color",
+     "source": "stylesheet literal, 4 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "The alert red."
+    },
+    "accent": {
+     "value": "#ff7350",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "The coral accent."
+    }
+   },
+   "accent": {
+    "link": {
+     "value": "#0077ab",
+     "type": "color",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "The text-link blue — measured on the drug index links."
+    },
+    "green": {
+     "value": "#178052",
+     "type": "color",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A success green."
+    },
+    "teal": {
+     "value": "#1a6966",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A bright teal."
+    },
+    "deep-teal": {
+     "value": "#225c5c",
+     "type": "color",
+     "source": "stylesheet literal, 2 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A deep teal accent."
+    },
+    "mint": {
+     "value": "#8fdfc5",
+     "type": "color",
+     "source": "stylesheet literal, 3 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A mint accent."
+    },
+    "violet": {
+     "value": "#5d62c8",
+     "type": "color",
+     "source": "stylesheet literal, 3 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A violet accent."
+    },
+    "blue": {
+     "value": "#5e91d6",
+     "type": "color",
+     "source": "stylesheet literal, 3 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A blue accent."
+    },
+    "sky": {
+     "value": "#6cc2d6",
+     "type": "color",
+     "source": "stylesheet literal, 3 declarations counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A sky accent."
+    },
+    "steel": {
+     "value": "#8db0ca",
+     "type": "color",
+     "source": "stylesheet literal, 1 declaration counted by hand at capture time in the archived inline sheets (not committed; raw/css-vars.json keeps the sheet index)",
+     "description": "A steel blue."
+    }
+   }
+  }
+ },
+ "light": {
+  "bg": {
+   "page": {
+    "value": "{palette.paper.white}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The page field every surface sits on."
+   },
+   "wash": {
+    "value": "{palette.paper.wash}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The light wash surface."
+   },
+   "grey": {
+    "value": "{palette.paper.grey}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The tertiary button / carousel arrow base."
+   },
+   "footer": {
+    "value": "{palette.paper.footer}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The footer slab."
+   },
+   "sage": {
+    "value": "{palette.surface.sage-100}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The sage section surface."
+   },
+   "sage-deep": {
+    "value": "{palette.surface.sage-300}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The deeper sage surface."
+   },
+   "cream": {
+    "value": "{palette.surface.cream-100}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The cream section surface."
+   },
+   "ink": {
+    "value": "{palette.ink.base}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The dark surface — the black CTA pill and dark modules."
+   }
+  },
+  "text": {
+   "primary": {
+    "value": "{palette.ink.a89}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "Primary text."
+   },
+   "secondary": {
+    "value": "{palette.ink.a65}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "Secondary text — prose body, notes."
+   },
+   "muted": {
+    "value": "{palette.ink.a54}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "Muted text."
+   },
+   "subtle": {
+    "value": "{palette.ink.a44}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "Subtle text — bylines, meta."
+   },
+   "faint": {
+    "value": "{palette.ink.a37}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "Faint text — 'Read more'."
+   },
+   "disabled": {
+    "value": "{palette.ink.a30}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "Disabled control text."
+   },
+   "on-dark": {
+    "value": "{palette.paper.white}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "Text on dark surfaces and the black CTA."
+   }
+  },
+  "action": {
+   "primary-bg": {
+    "value": "{palette.ink.base}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The primary action fill — the black pill."
+   },
+   "primary-ink": {
+    "value": "{palette.paper.white}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "Label on the primary action."
+   },
+   "lime-bg": {
+    "value": "{palette.lime.550}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The lime submit fill (BMI Calculate)."
+   },
+   "lime-ink": {
+    "value": "{palette.ink.base}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "Label on the lime submit."
+   },
+   "tertiary-bg": {
+    "value": "{palette.paper.grey}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The tertiary button fill."
+   },
+   "hover-wash": {
+    "value": "{palette.ink.a06}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The 6% ink wash ghost buttons paint on hover/pressed."
+   },
+   "disabled-bg": {
+    "value": "{palette.ink.a06}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The disabled fill."
+   },
+   "disabled-ink": {
+    "value": "{palette.ink.a30}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The disabled label."
+   }
+  },
+  "accent": {
+   "teal": {
+    "value": "{palette.teal.700}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The Hers teal — badges, quality seals."
+   },
+   "link": {
+    "value": "{palette.accent.link}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The text-link blue."
+   },
+   "lime": {
+    "value": "{palette.lime.400}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The promo lime."
+   },
+   "clay": {
+    "value": "{palette.clay.600}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The terracotta accent."
+   },
+   "alert": {
+    "value": "{palette.clay.500}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The alert red."
+   }
+  },
+  "promo": {
+   "bg": {
+    "value": "{palette.lime.400}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The promo bar highlight."
+   }
+  },
+  "border": {
+   "hairline": {
+    "value": "{palette.ink.a12}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The 12% hairline."
+   },
+   "wash": {
+    "value": "{palette.ink.a06}",
+    "type": "color",
+    "source": "alias over core.palette; the palette leaf cites its measurement or declaration",
+    "description": "The 6% border wash (dialog edge)."
+   }
+  },
+  "focus": {
+   "ring": {
+    "value": "#101010",
+    "type": "color",
+    "source": "computed outlineColor of cta-primary focus-visible (raw/components-computed.json); a literal, not an alias (no palette step holds it)",
+    "description": "The painted focus indicator — outline: auto 1px rgb(16,16,16)."
+   }
+  }
+ },
+ "dark": {},
+ "component": {
+  "promo-bar-height": {
+   "value": "44px",
+   "type": "dimension",
+   "source": "computed h of promo-bar default (raw/components-computed.json)",
+   "description": "The promo strip (~55px painted; the --promoHeight var names 44)."
+  },
+  "logo-width": {
+   "value": "57.59px",
+   "type": "dimension",
+   "source": "computed w of logo default (raw/components-computed.json)",
+   "description": "The ~71px 'hers' wordmark."
+  },
+  "logo-height": {
+   "value": "24px",
+   "type": "dimension",
+   "source": "computed h of logo default (raw/components-computed.json)",
+   "description": "The wordmark's 56px row."
+  },
+  "icon-button-size": {
+   "value": "43.59px",
+   "type": "dimension",
+   "source": "computed w of login-button default (raw/components-computed.json)",
+   "description": "The 48px circular icon button (Log in, menu)."
+  },
+  "hero-heading-width": {
+   "value": "1392px",
+   "type": "dimension",
+   "source": "computed w of hero-heading default (raw/components-computed.json)",
+   "description": "The hero headline measure at 1440."
+  },
+  "product-card-width": {
+   "value": "320px",
+   "type": "dimension",
+   "source": "computed w of product-card default (raw/components-computed.json)",
+   "description": "The 320px product card."
+  },
+  "product-card-height": {
+   "value": "389px",
+   "type": "dimension",
+   "source": "computed h of product-card default (raw/components-computed.json)",
+   "description": "The 389px product card."
+  },
+  "treatment-card-width": {
+   "value": "320px",
+   "type": "dimension",
+   "source": "computed w of treatment-card default (raw/components-computed.json)",
+   "description": "The ~282px treatment card."
+  },
+  "treatment-card-height": {
+   "value": "389px",
+   "type": "dimension",
+   "source": "computed h of treatment-card default (raw/components-computed.json)",
+   "description": "The 468px treatment card."
+  },
+  "testimonial-card-width": {
+   "value": "546px",
+   "type": "dimension",
+   "source": "computed w of testimonial default (raw/components-computed.json)",
+   "description": "The 546px testimonial card."
+  },
+  "tile-card-width": {
+   "value": "337px",
+   "type": "dimension",
+   "source": "computed w of tile-card default (raw/components-computed.json)",
+   "description": "The 337px category tile."
+  },
+  "fda-badge-size": {
+   "value": "56px",
+   "type": "dimension",
+   "source": "computed w of fda-badge default (raw/components-computed.json)",
+   "description": "The 56px FDA badge."
+  },
+  "article-card-width": {
+   "value": "691.89px",
+   "type": "dimension",
+   "source": "computed w of article-card default (raw/components-computed.json)",
+   "description": "The ~692px editorial card."
+  },
+  "region-dialog-width": {
+   "value": "388px",
+   "type": "dimension",
+   "source": "computed w of region-dialog default (raw/components-computed.json)",
+   "description": "The 388px region redirect card."
+  },
+  "region-cta-width": {
+   "value": "338px",
+   "type": "dimension",
+   "source": "computed w of region-cta default (raw/components-computed.json)",
+   "description": "The 338px region dialog button."
+  },
+  "text-field-width": {
+   "value": "316.25px",
+   "type": "dimension",
+   "source": "computed w of text-field default (raw/components-computed.json)",
+   "description": "The 316px BMI text field."
+  },
+  "text-field-height": {
+   "value": "54px",
+   "type": "dimension",
+   "source": "computed h of text-field default (raw/components-computed.json)",
+   "description": "The 54px field height."
+  },
+  "email-field-width": {
+   "value": "358px",
+   "type": "dimension",
+   "source": "computed w of email-field default (raw/components-computed.json)",
+   "description": "The 358px email field."
+  },
+  "form-submit-height": {
+   "value": "48px",
+   "type": "dimension",
+   "source": "computed h of form-submit default (raw/components-computed.json)",
+   "description": "The 48px lime submit."
+  },
+  "blog-topic-chip-width": {
+   "value": "139px",
+   "type": "dimension",
+   "source": "computed w of blog-topic default (raw/components-computed.json)",
+   "description": "The ~139px topic chip."
+  },
+  "drug-link-width": {
+   "value": "455px",
+   "type": "dimension",
+   "source": "computed w of drug-link default (raw/components-computed.json)",
+   "description": "A 455px A-Z drug index link."
+  },
+  "m-header-height": {
+   "value": "785px",
+   "type": "dimension",
+   "source": "computed h of m-header default (raw/components-computed.json)",
+   "description": "The mobile header block at 390 wide."
+  },
+  "m-bento-card-width": {
+   "value": "374px",
+   "type": "dimension",
+   "source": "computed w of m-bento-card default (raw/components-computed.json)",
+   "description": "The 374px mobile bento card."
+  },
+  "m-cta-primary-width": {
+   "value": "346px",
+   "type": "dimension",
+   "source": "computed w of m-cta-primary default (raw/components-computed.json)",
+   "description": "The 346px mobile primary CTA."
+  },
+  "m-cta-primary-height": {
+   "value": "48px",
+   "type": "dimension",
+   "source": "computed h of m-cta-primary default (raw/components-computed.json)",
+   "description": "The 48px mobile primary CTA."
+  },
+  "m-text-field-width": {
+   "value": "161.5px",
+   "type": "dimension",
+   "source": "computed w of m-text-field default (raw/components-computed.json)",
+   "description": "The ~161px mobile field."
+  },
+  "state-track": {
+   "login-button-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 238)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 238)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgb(0, 0, 238)"
+     },
+     "hover": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 238)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 238)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgb(0, 0, 238)"
+     },
+     "pressed": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 0, 0)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(255, 0, 0)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgb(255, 0, 0)"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 238)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 238)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgb(0, 0, 238)"
+     }
+    },
+    "source": "computed styles of login-button across states (raw/components-computed.json)",
+    "description": "Log in icon button: transparent at rest; hover and pressed paint the 6% ink wash."
+   },
+   "menu-toggle-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgba(0, 0, 0, 0.89)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgba(0, 0, 0, 0.89)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgba(0, 0, 0, 0)"
+     },
+     "hover": {
+      "backgroundColor": "rgba(0, 0, 0, 0.06)",
+      "color": "rgba(0, 0, 0, 0.89)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgba(0, 0, 0, 0.89)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgba(0, 0, 0, 0)"
+     },
+     "pressed": {
+      "backgroundColor": "rgba(0, 0, 0, 0.06)",
+      "color": "rgba(0, 0, 0, 0.89)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgba(0, 0, 0, 0.89)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgba(0, 0, 0, 0)"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgba(0, 0, 0, 0.89)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgba(0, 0, 0, 0.89)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgba(0, 0, 0, 0)"
+     }
+    },
+    "source": "computed styles of menu-toggle across states (raw/components-computed.json)",
+    "description": "Menu icon button: the same 6% ink wash on hover and pressed."
+   },
+   "cta-tertiary-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0.06)",
+      "color": "rgba(0, 0, 0, 0.89)",
+      "transform": "none",
+      "outlineStyle": "solid",
+      "outlineColor": "rgba(0, 0, 0, 0)",
+      "outlineWidth": "1px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgba(0, 0, 0, 0)"
+     },
+     "hover": {
+      "backgroundColor": "rgba(0, 0, 0, 0.65)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "solid",
+      "outlineColor": "rgba(0, 0, 0, 0)",
+      "outlineWidth": "1px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgba(0, 0, 0, 0)"
+     },
+     "pressed": {
+      "backgroundColor": "rgba(0, 0, 0, 0.74)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "solid",
+      "outlineColor": "rgba(0, 0, 0, 0)",
+      "outlineWidth": "1px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgba(0, 0, 0, 0)"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0.65)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "solid",
+      "outlineColor": "rgba(0, 0, 0, 0)",
+      "outlineWidth": "1px",
+      "outlineOffset": "3px",
+      "borderTopColor": "rgba(0, 0, 0, 0)"
+     }
+    },
+    "source": "computed styles of cta-tertiary across states (raw/components-computed.json)",
+    "description": "The tertiary action: rest is a near-transparent fill with dark text; hover paints a 65% ink fill and white text, and pressed darkens the fill further."
+   },
+   "accordion-toggle-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 0)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgb(0, 0, 0)"
+     },
+     "hover": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 0)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgb(0, 0, 0)"
+     },
+     "pressed": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 0)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgb(0, 0, 0)"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 0)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgb(0, 0, 0)"
+     }
+    },
+    "source": "computed styles of accordion-toggle across states (raw/components-computed.json)",
+    "description": "Accordion row: #757575 grey at rest; hover lifts the label to the .65 ink."
+   },
+   "blog-topic-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0.06)",
+      "color": "rgba(0, 0, 0, 0.89)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgba(0, 0, 0, 0.89)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgba(0, 0, 0, 0.89)"
+     },
+     "hover": {
+      "backgroundColor": "rgba(0, 0, 0, 0.89)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgb(255, 255, 255)"
+     },
+     "pressed": {
+      "backgroundColor": "rgba(0, 0, 0, 0.89)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "matrix(0.95, 0, 0, 0.95, 0, 0)",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgb(255, 255, 255)"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0.89)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineWidth": "0px",
+      "outlineOffset": "1px",
+      "borderTopColor": "rgb(255, 255, 255)"
+     }
+    },
+    "source": "computed styles of blog-topic across states (raw/components-computed.json)",
+    "description": "Topic chip: a 100px pill on the 6% ink wash."
+   },
+   "carousel-arrow-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgba(255, 255, 255, 0.11)",
+      "transform": "matrix(1, 0, 0, 1, 0, -24)",
+      "outlineStyle": "none",
+      "outlineColor": "rgba(255, 255, 255, 0.11)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgba(255, 255, 255, 0.11)"
+     },
+     "hover": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgba(255, 255, 255, 0.11)",
+      "transform": "matrix(1, 0, 0, 1, 0, -24)",
+      "outlineStyle": "none",
+      "outlineColor": "rgba(255, 255, 255, 0.11)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgba(255, 255, 255, 0.11)"
+     },
+     "pressed": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgba(255, 255, 255, 0.11)",
+      "transform": "matrix(1, 0, 0, 1, 0, -24)",
+      "outlineStyle": "none",
+      "outlineColor": "rgba(255, 255, 255, 0.11)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgba(255, 255, 255, 0.11)"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgba(255, 255, 255, 0.11)",
+      "transform": "matrix(1, 0, 0, 1, 0, -24)",
+      "outlineStyle": "none",
+      "outlineColor": "rgba(255, 255, 255, 0.11)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgba(255, 255, 255, 0.11)"
+     }
+    },
+    "source": "computed styles of carousel-arrow across states (raw/components-computed.json)",
+    "description": "Carousel arrow: 30% grey fill with a 2px 30% grey ring."
+   },
+   "form-submit-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgb(182, 221, 100)",
+      "color": "rgb(0, 0, 0)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 0)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgba(255, 255, 255, 0)"
+     },
+     "hover": {
+      "backgroundColor": "rgb(213, 255, 93)",
+      "color": "rgb(0, 0, 0)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 0)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgba(255, 255, 255, 0)"
+     },
+     "pressed": {
+      "backgroundColor": "rgb(213, 255, 93)",
+      "color": "rgb(0, 0, 0)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 0)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgba(255, 255, 255, 0)"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0.54)",
+      "color": "rgb(0, 0, 0)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 0, 0)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgba(255, 255, 255, 0)"
+     }
+    },
+    "source": "computed styles of form-submit across states (raw/components-computed.json)",
+    "description": "BMI Calculate: the #b6dd64 lime fill with black label; a white border paints on the pressed pass."
+   },
+   "m-cta-primary-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "solid",
+      "outlineColor": "rgba(0, 0, 0, 0)",
+      "outlineWidth": "1px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgba(0, 0, 0, 0)"
+     }
+    },
+    "source": "computed styles of m-cta-primary across states (raw/components-computed.json)",
+    "description": "Mobile primary CTA: the black 9999px pill with white label."
+   },
+   "footer-social-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgba(0, 0, 0, 0.65)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgba(0, 0, 0, 0.65)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgba(0, 0, 0, 0.65)"
+     },
+     "hover": {
+      "backgroundColor": "rgba(0, 0, 0, 0.06)",
+      "color": "rgba(0, 0, 0, 0.89)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgba(0, 0, 0, 0.89)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgba(0, 0, 0, 0.89)"
+     },
+     "pressed": {
+      "backgroundColor": "rgba(0, 0, 0, 0.06)",
+      "color": "rgba(0, 0, 0, 0.89)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgba(0, 0, 0, 0.89)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgba(0, 0, 0, 0.89)"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0.06)",
+      "color": "rgba(0, 0, 0, 0.89)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgba(0, 0, 0, 0.89)",
+      "outlineWidth": "0px",
+      "outlineOffset": "1px",
+      "borderTopColor": "rgba(0, 0, 0, 0.89)"
+     }
+    },
+    "source": "computed styles of footer-social across states (raw/components-computed.json)",
+    "description": "Social icon wells: 48px circles on the 6% ink wash."
+   },
+   "drug-link-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 119, 171)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 119, 171)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgb(0, 119, 171)"
+     },
+     "hover": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 119, 171)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 119, 171)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgb(0, 119, 171)"
+     },
+     "pressed": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 119, 171)",
+      "transform": "none",
+      "outlineStyle": "none",
+      "outlineColor": "rgb(0, 119, 171)",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px",
+      "borderTopColor": "rgb(0, 119, 171)"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 119, 171)",
+      "transform": "none",
+      "outlineStyle": "auto",
+      "outlineColor": "rgb(16, 16, 16)",
+      "outlineWidth": "1px",
+      "outlineOffset": "1px",
+      "borderTopColor": "rgb(0, 119, 171)"
+     }
+    },
+    "source": "computed styles of drug-link across states (raw/components-computed.json)",
+    "description": "A-Z drug index link: the #0077ab blue."
+   }
+  },
+  "focus-ring": {
+   "value": "1px auto rgb(16, 16, 16) offset 1px",
+   "type": "other",
+   "source": "computed outline of cta-primary focus-visible (raw/components-computed.json)",
+   "description": "The painted focus indicator — a 1px solid ring around the control."
+  }
+ }
+}

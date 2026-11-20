@@ -1,0 +1,312 @@
+{
+  "captured": "2026-11-19",
+  "host": "variant.com",
+  "method": "getComputedStyle on the live attached page. No screenshots.",
+  "viewportDesktop": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewportScale": 1},
+  "viewportPhone": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2},
+  "colorScheme": {
+    "forced": "light",
+    "matchMediaDarkAfterForce": false,
+    "bodyBackgroundUnchanged": "rgb(34, 34, 34)",
+    "h1ColorUnchanged": "rgb(240, 237, 229)",
+    "note": "Signed-out surfaces do not follow prefers-color-scheme."
+  },
+  "home": {
+    "url": "https://variant.com/",
+    "body": {
+      "backgroundColor": "rgb(34, 34, 34)",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400"
+    },
+    "left": {"class": "HomepageV3_left__WzLkd", "width": "408px", "backgroundColor": "rgb(7, 7, 6)", "padding": "0px"},
+    "right": {"class": "HomepageV3_right__tjUMg", "widthAt1440": "1032px", "backgroundColor": "rgb(7, 7, 6)", "overflow": "hidden"},
+    "h1": {
+      "class": "HomepageV3_title___euBC",
+      "text": "Endless designs for your ideas, just scroll.",
+      "color": "rgb(240, 237, 229)",
+      "fontFamily": "\"Variant Neue Display\", \"Variant Neue Text\", Inter, \"Inter Fallback\", system-ui, sans-serif",
+      "fontSize": "32px",
+      "fontWeight": "400",
+      "lineHeight": "36px",
+      "letterSpacing": "0.32px",
+      "width": "360px",
+      "height": "72px",
+      "x": 24,
+      "y": 87
+    },
+    "subtitlePrimary": {
+      "class": "HomepageV3_subtitlePrimary__w026I",
+      "color": "rgba(240, 237, 229, 0.65)",
+      "fontFamily": "\"Variant Neue Text\", Inter, \"Inter Fallback\", system-ui, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "0.28px",
+      "margin": "40px 0px 16px"
+    },
+    "subtitleSecondary": {
+      "class": "HomepageV3_subtitleSecondary__ivbJS",
+      "color": "rgba(240, 237, 229, 0.65)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "letterSpacing": "0.28px",
+      "margin": "0px 0px 25px"
+    },
+    "suggestionButton": {
+      "class": "HomepageV3_suggestionButton__Fmiyw",
+      "examples": ["Sign up / Sign in", "Surprise me"],
+      "backgroundColor": "rgb(7, 7, 6)",
+      "color": "rgb(240, 237, 229)",
+      "fontFamily": "\"Variant Neue Text\", Inter, \"Inter Fallback\", system-ui, sans-serif",
+      "fontSize": "11px",
+      "fontWeight": "400",
+      "lineHeight": "11px",
+      "letterSpacing": "0.22px",
+      "height": "26px",
+      "padding": "0px 8px 0px 7px",
+      "gap": "7px",
+      "borderRadius": "6px",
+      "border": "0.5px solid rgba(255, 255, 255, 0.1)",
+      "boxShadow": "none"
+    },
+    "composer": {
+      "class": "HomepageInput_inputContainer__bsWQA",
+      "backgroundColor": "rgb(30, 30, 28)",
+      "borderRadius": "10px",
+      "boxShadow": "rgba(255, 255, 255, 0.1) 0px 0px 0px 0.5px",
+      "padding": "8px 8px 0px",
+      "width": "384px",
+      "height": "72px"
+    },
+    "editor": {
+      "contenteditable": true,
+      "color": "rgba(255, 255, 255, 0.85)",
+      "fontFamily": "\"Variant Neue Text\", Inter, \"Inter Fallback\", system-ui, sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "22px",
+      "letterSpacing": "0.28px",
+      "padding": "8px 8px 8.5px 0px"
+    },
+    "placeholder": {
+      "text": "See endless designs for...",
+      "color": "rgba(255, 255, 255, 0.4)",
+      "fontSize": "14px",
+      "lineHeight": "22px",
+      "letterSpacing": "0.28px",
+      "fontWeight": "400"
+    },
+    "iconButton": {
+      "examples": ["Add image", "Select style"],
+      "width": "24px",
+      "height": "24px",
+      "borderRadius": "6px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgba(255, 255, 255, 0.5)",
+      "border": "0px"
+    },
+    "submit": {
+      "ariaLabel": "Submit",
+      "width": "27px",
+      "height": "24px",
+      "borderRadius": "6px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "note": "Not clicked. Hover and pressed not measured."
+    },
+    "grid": {
+      "itemRadius": "8px",
+      "cardClass": "HomepageWidgetGrid_widgetCard__lfecp",
+      "cardRadius": "8px",
+      "cardBackground": "rgba(0, 0, 0, 0)",
+      "cardBoxShadow": "none",
+      "cardOverflow": "hidden",
+      "contentRadius": "8px",
+      "transition": "opacity 0.5s ease 0.3s",
+      "note": "At 390px the right column is not in the 390-wide layout; the grid container measured 366px wide. Cards were still in the DOM (3 widget cards, 9 placeholders) but the feed is not a second column at this width.",
+      "iframeExample": "https://variant.com/homepage-widgets/crt/crt.html"
+    }
+  },
+  "authentication": {
+    "url": "https://variant.com/authentication",
+    "openedBy": "click on button.HomepageV3_suggestionButton (Sign up / Sign in). Not submitted.",
+    "page": {"class": "page_page__JR_T_", "backgroundColor": "rgb(0, 0, 0)"},
+    "left": {"class": "page_left__ZxI4e", "padding": "64px 48px", "backgroundColor": "rgb(0, 0, 0)"},
+    "card": {"class": "page_card__w9y5u", "maxWidth": "520px", "width": "520px", "backgroundColor": "rgba(0, 0, 0, 0)", "boxShadow": "none", "borderRadius": "0px"},
+    "title": {
+      "class": "page_title__7q7G_",
+      "text": "Sign in or sign up",
+      "color": "rgba(255, 255, 255, 0.5)",
+      "fontFamily": "Inter",
+      "fontSize": "21px",
+      "fontWeight": "500",
+      "lineHeight": "32px",
+      "letterSpacing": "-0.21px"
+    },
+    "googleButton": {
+      "class": "page_button__VpyBN",
+      "text": "Continue with Google",
+      "width": "400px",
+      "height": "40px",
+      "padding": "0px 14px",
+      "borderRadius": "6px",
+      "backgroundColor": "rgba(255, 255, 255, 0.1)",
+      "color": "rgba(255, 255, 255, 0.85)",
+      "fontFamily": "Inter",
+      "fontSize": "13px",
+      "fontWeight": "400",
+      "letterSpacing": "0.13px",
+      "border": "0px",
+      "notClicked": true
+    },
+    "divider": {
+      "text": "or",
+      "color": "rgba(255, 255, 255, 0.3)",
+      "fontSize": "12px",
+      "fontWeight": "400"
+    },
+    "emailInput": {
+      "class": "page_input__gXo1y",
+      "placeholder": "Email address",
+      "type": "email",
+      "width": "400px",
+      "height": "40px",
+      "padding": "0px 16px 0.5px",
+      "borderRadius": "6px",
+      "backgroundColor": "rgba(255, 255, 255, 0.03)",
+      "color": "rgba(255, 255, 255, 0.85)",
+      "fontFamily": "Inter",
+      "fontSize": "13px",
+      "fontWeight": "400",
+      "border": "0.5px solid rgba(255, 255, 255, 0.1)",
+      "focus": {
+        "outline": "rgba(255, 255, 255, 0.85) none 3px",
+        "boxShadow": "none",
+        "borderUnchanged": "0.5px solid rgba(255, 255, 255, 0.1)",
+        "note": "Click focus does not paint a ring."
+      }
+    },
+    "emailButton": {
+      "class": "page_primaryButton__Qntay",
+      "text": "Continue with Email",
+      "width": "400px",
+      "height": "40px",
+      "borderRadius": "6px",
+      "fontFamily": "Inter",
+      "fontSize": "13px",
+      "fontWeight": "400",
+      "letterSpacing": "0.13px",
+      "empty": {
+        "backgroundColor": "rgba(255, 255, 255, 0.1)",
+        "color": "rgba(255, 255, 255, 0.5)",
+        "disabled": true,
+        "hoverUnchanged": true
+      },
+      "filled": {
+        "how": "Typed a non-address then a@b.co. Cleared afterwards. Never submitted.",
+        "backgroundColor": "rgba(255, 255, 255, 0.1)",
+        "color": "rgba(255, 255, 255, 0.85)",
+        "disabled": false,
+        "cursor": "pointer",
+        "hover": {"backgroundColor": "rgba(255, 255, 255, 0.15)", "color": "rgba(255, 255, 255, 0.85)"}
+      },
+      "focusVisible": {
+        "how": "Tab onto the enabled button.",
+        "outline": "rgb(229, 151, 0) auto 1px",
+        "outlineOffset": "0px",
+        "backgroundColor": "rgba(255, 255, 255, 0.15)",
+        "note": "Same orange auto outline on the Google button, the home logo link, and the terms link (terms link outline-offset 1px). This is the user-agent focus ring, not a product token. accent-color on the root was auto."
+      },
+      "pressed": "Not captured. A click would submit the form."
+    },
+    "terms": {
+      "color": "rgba(255, 255, 255, 0.5)",
+      "fontFamily": "Inter",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "0.12px",
+      "linkWeight": "500",
+      "linkColor": "rgba(255, 255, 255, 0.5)"
+    }
+  },
+  "terms": {
+    "url": "https://variant.com/terms-and-privacy",
+    "articleWidth": "920px",
+    "h1": {
+      "text": "Terms of Service",
+      "color": "rgba(255, 255, 255, 0.5)",
+      "fontFamily": "Inter, \"Inter Fallback\", system-ui, sans-serif",
+      "fontSize": "21px",
+      "fontWeight": "500",
+      "lineHeight": "32px",
+      "letterSpacing": "-0.21px"
+    },
+    "h2": {
+      "color": "rgba(255, 255, 255, 0.85)",
+      "fontSize": "13px",
+      "fontWeight": "500",
+      "lineHeight": "20px",
+      "letterSpacing": "0.13px"
+    },
+    "body": {
+      "color": "rgba(255, 255, 255, 0.85)",
+      "fontSize": "13px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "0.13px"
+    },
+    "proseLink": {
+      "color": "rgba(255, 255, 255, 0.85)",
+      "textDecorationLine": "underline",
+      "fontWeight": "400"
+    },
+    "tab": {
+      "fontSize": "13px",
+      "fontWeight": "500",
+      "letterSpacing": "0.13px",
+      "padding": "10px 0px",
+      "height": "36px",
+      "borderRadius": "0px",
+      "activeColor": "rgba(255, 255, 255, 0.85)",
+      "inactiveColor": "rgba(255, 255, 255, 0.5)",
+      "borderBottom": "0px",
+      "note": "Privacy Policy tab was clicked. It swaps the article. No underline or fill distinguishes the active tab beyond the text colour."
+    },
+    "company": "Variant Design, Inc. Contact named on the page: help@variant.ai. Not written into tokens."
+  },
+  "motion": {
+    "computedOnVisibleCards": "opacity 0.5s ease, delay 0.3s",
+    "authoredCustomProperties": {
+      "--widget-entry-shimmer-duration": "650ms",
+      "--widget-entry-shimmer-ease": "cubic-bezier(0,0,0.2,1)",
+      "--widget-load-duration": "581.71ms"
+    },
+    "authoredTransitionsSample": [
+      {"selector": ".input-container__style-chip", "transition": "border-color 0.2s, background-color 0.2s"},
+      {"selector": ".GridPreview_image__xCiM7", "transition": "opacity 0.18s"},
+      {"selector": ".shared_container__9cdkX", "transition": "0.3s cubic-bezier(0.19, 1, 0.22, 1)"},
+      {"selector": ".Sidebar_hoverIndicator__gcUzh[data-animate=true]", "transition": "transform 0.1s cubic-bezier(0.175, 0.885, 0.32, 1), opacity 90ms linear"},
+      {"selector": ".Topbar_titleContainer__DxPLc", "transition": "background-color 0.16s, border-color 0.16s"},
+      {"selector": ".DropdownMenu_trigger__K1t2T", "transition": "background-color 0.16s"}
+    ],
+    "reducedMotionRulesFound": 0,
+    "note": "Sidebar, billing, style-modal and sonner keyframes are in the signed-out bundle. They were not observed on a signed-in screen."
+  },
+  "fonts": {
+    "inter": "woff2 from /_next/static/media/, variable 100-900 normal and italic",
+    "variantNeueDisplay": "self-hosted /fonts/neue-haas-grotesk/variant-neue-display/VariantNeueDisplay-{100,200,300,350,400,500,700,900}.woff2 plus italics",
+    "variantNeueText": "weights 400, 500, 700 plus italics, family name Variant Neue Text",
+    "advercase": "declared as @font-face weight 400 and as --font-advercase. Not used on the signed-out surfaces measured.",
+    "filesNotShipped": true
+  },
+  "icons": {
+    "favicon": ["https://variant.com/favicon-light.svg", "https://variant.com/favicon-dark.svg"],
+    "appleTouch": "same SVG files",
+    "inlineSvgCountOnHomepage": 6,
+    "note": "No raster app icon. SVG favicons were not copied into the package as artwork."
+  }
+}

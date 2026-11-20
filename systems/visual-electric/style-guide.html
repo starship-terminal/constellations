@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visual Electric style guide</title>
+<meta name="description" content="Visual Electric public pages, rendered from measured tokens.">
+<style>
+:root {
+  --page: #FFFFFF;
+  --canvas: #000000;
+  --ink: #0F0F0F;
+  --ink-app: #191919;
+  --on-dark: #FFFFFF;
+  --muted: #8C8C8C;
+  --accent: #FF3C00;
+  --hairline: #E6E6E6;
+  --track: #F2F2F2;
+  --font: "Maison Neue Book", Arial, sans-serif;
+  --display: "Maison Neue Ext Demi", Arial, sans-serif;
+  --mono: "Maison Neue Mono Regular", ui-monospace, monospace;
+  color-scheme: light;
+}
+[data-mode="dark"] {
+  --page: #191919;
+  --canvas: #000000;
+  --ink: #FFFFFF;
+  --ink-app: #FFFFFF;
+  --on-dark: #FFFFFF;
+  --muted: #808080;
+  --accent: #FF3C00;
+  --hairline: #333333;
+  --track: #2C2C2C;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 400 15px/22.5px var(--font); }
+.wrap { max-width: 980px; margin: 0 auto; padding: 32px 18px 80px; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+h1 { font: 400 32px/44.8px var(--font); margin: 24px 0 8px; }
+h2 { font: 400 22px/33px var(--font); letter-spacing: -0.5px; margin: 40px 0 12px; }
+button.theme { border: 1px solid var(--hairline); background: var(--page); color: var(--ink); border-radius: 24px; padding: 8px 16px; font: 400 16px/24px var(--font); cursor: pointer; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.swatch { width: 132px; }
+.swatch i { display: block; height: 56px; border-radius: 12px; border: 1px solid var(--hairline); }
+.swatch span { display: block; margin-top: 6px; font-size: 12px; color: var(--muted); }
+.btn { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; border: 0; color: #FFFFFF; background: var(--accent); }
+.btn-header { height: 40px; padding: 4px 24px; border-radius: 64px; font: 400 18px/28.8px var(--font); }
+.btn-hero { height: 47px; padding: 14px 32px; border-radius: 100px; font: 400 16px/19.2px Inter, Arial, sans-serif; }
+.btn-outline { height: 40px; padding: 8px 24px; border-radius: 24px; background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); font: 400 16px/24px var(--font); }
+.canvas { background: var(--canvas); color: var(--on-dark); border-radius: 16px; padding: 28px; margin-top: 16px; }
+.display { font: 400 60px/60px var(--display); letter-spacing: -1.8px; margin: 0; }
+.banner { background: var(--accent); color: #FFFFFF; text-align: center; font: 400 14px/32px var(--font); }
+.track { display: inline-flex; gap: 0; background: var(--track); border-radius: 24px; padding: 2px; }
+.track span { border-radius: 24px; padding: 8px 16px; font: 400 16px/19.2px var(--font); }
+.track .on { background: #FFFFFF; color: #0F0F0F; }
+.track .off { color: #0F0F0F; }
+[data-mode="dark"] .track .on { background: #191919; color: #FFFFFF; }
+[data-mode="dark"] .track .off { color: #FFFFFF; }
+.price { font: 400 32px/44.8px var(--font); }
+.meta { font: 400 13px/19.5px var(--mono); color: var(--accent); letter-spacing: 0.04em; text-transform: uppercase; }
+.note { color: var(--muted); max-width: 68ch; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--hairline); }
+code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="banner">Visual Electric has been acquired by Perplexity</div>
+<div class="wrap">
+<header>
+  <strong>Visual Electric</strong>
+  <button class="theme" type="button" id="theme">Dark tokens</button>
+</header>
+<h1>Public pages</h1>
+<p class="note">Values are the ones measured on the archived marketing pages and the app stylesheet. Maison Neue and Visual Electric Sans are not in this folder, so the specimens fall back.</p>
+
+<h2>Colour</h2>
+<div class="row" id="swatches"></div>
+
+<h2>Type</h2>
+<p class="display">creative workflow</p>
+<p style="font:400 22px/33px var(--font);letter-spacing:-0.5px">Get started with Visual Electric for free.</p>
+<p class="meta">Jul 22, 2025</p>
+
+<h2>Buttons</h2>
+<div class="row">
+  <a class="btn btn-header">Get started</a>
+  <a class="btn btn-hero">Get Started</a>
+  <a class="btn btn-outline">Get started</a>
+</div>
+<div class="canvas">
+  <p class="display">The new creative workflow</p>
+  <p>Turn ideas into images, designs, and videos.</p>
+  <a class="btn btn-hero">Get Started</a>
+</div>
+
+<h2>Billing</h2>
+<div class="track">
+  <span class="on">Annually</span>
+  <span class="off">Monthly</span>
+</div>
+<p class="price">$0 <span class="note">per month</span></p>
+
+<h2>Tokens</h2>
+<table>
+  <tr><th>Role</th><th>Token</th><th>Value</th></tr>
+  <tr><td>Page</td><td><code>light.background.page</code></td><td>#FFFFFF</td></tr>
+  <tr><td>Canvas</td><td><code>light.background.canvas</code></td><td>#000000</td></tr>
+  <tr><td>Text</td><td><code>light.text.primary</code></td><td>#0F0F0F</td></tr>
+  <tr><td>Muted</td><td><code>light.text.muted</code></td><td>#8C8C8C</td></tr>
+  <tr><td>Accent</td><td><code>light.action.accent</code></td><td>#FF3C00</td></tr>
+  <tr><td>Border</td><td><code>light.border.hairline</code></td><td>#E6E6E6</td></tr>
+</table>
+</div>
+<script>
+const theme = document.getElementById('theme');
+const swatches = [
+  ['page', 'var(--page)'],
+  ['canvas', 'var(--canvas)'],
+  ['ink', 'var(--ink)'],
+  ['muted', 'var(--muted)'],
+  ['accent', 'var(--accent)'],
+  ['hairline', 'var(--hairline)']
+];
+const box = document.getElementById('swatches');
+for (const [name, color] of swatches) {
+  const d = document.createElement('div');
+  d.className = 'swatch';
+  d.innerHTML = '<i style="background:' + color + '"></i><span>' + name + '</span>';
+  box.appendChild(d);
+}
+theme.addEventListener('click', () => {
+  const root = document.documentElement;
+  const next = root.getAttribute('data-mode') === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-mode', next);
+  theme.textContent = next === 'dark' ? 'Light tokens' : 'Dark tokens';
+});
+</script>
+</body>
+</html>

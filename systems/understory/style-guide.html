@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Understory style guide</title>
+<style>
+  :root {
+    --page: #f6f4e8;
+    --surface: #eae8dd;
+    --raised: #ffffff;
+    --action: #022c12;
+    --action-soft: #022c121a;
+    --citrus: #f1f97e;
+    --app-action: #d5f285;
+    --app-page: #f5f6f7;
+    --sky: #cfe8ff;
+    --lilac: #d1bee7;
+    --lichen: #d5dfca;
+    --green-100: #b9c2b2;
+    --text: #022c12;
+    --text-secondary: #7c907d;
+    --on-action: #ffffff;
+    --app-text: #0c0e0f;
+    --app-muted: #4d4f51;
+    --app-link: #02401a;
+    --stroke: #d3d1c6;
+    --app-border: #ced1d4;
+    --focus: #024b1e;
+    --rust: #933f29;
+    --red: #7e0c04;
+    --display: "National 2 Condensed", Arial, sans-serif;
+    --body: Inter, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 450 18px/1.5 var(--body); }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font: 700 64px/1 var(--display); text-transform: uppercase; margin: 0 0 12px; }
+  h2 { font: 700 42px/1 var(--display); text-transform: uppercase; margin: 40px 0 12px; }
+  p { max-width: 62ch; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .sw { width: 148px; }
+  .sw i { display: block; height: 64px; border-radius: 12px; border: 1px solid var(--stroke); }
+  .sw span { display: block; font-size: 12px; margin-top: 6px; }
+  .btn { display: inline-flex; align-items: center; border: 0; border-radius: 0.75rem; padding: 0.625rem 0.75rem; font: 500 14px/1.5 var(--body); text-decoration: none; }
+  .btn.primary { background: var(--action); color: var(--on-action); }
+  .btn.soft { background: var(--action-soft); color: var(--text); }
+  .btn.yellow { background: var(--citrus); color: var(--text); }
+  .app { background: var(--app-page); color: var(--app-text); border-radius: 24px; padding: 32px; margin-top: 16px; }
+  .card { background: var(--raised); color: var(--app-text); width: 100%; max-width: 420px; border-radius: 32px; padding: 32px; box-shadow: 0 3px 8px #0e0f0c14; }
+  .card h3 { font: 700 40px/48px var(--display); text-transform: uppercase; margin: 0 0 16px; }
+  label { display: block; font-size: 12px; color: var(--app-muted); margin: 12px 0 4px; }
+  input { width: 100%; height: 48px; border: 1px solid var(--app-border); border-radius: 12px; padding: 0 16px; font: 400 16px/24px var(--body); }
+  input:focus { outline: 2px solid var(--focus); outline-offset: -1px; }
+  .login { display: flex; width: 100%; height: 48px; align-items: center; justify-content: center; border: 0; border-radius: 16px; background: var(--app-action); color: var(--app-link); font: 600 16px/1 var(--body); margin-top: 16px; }
+  .note { font-size: 13px; color: var(--text-secondary); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Understory</h1>
+  <p>Public marketing and signed-out backoffice, measured 19 November 2026. One light theme. Values are the tokens in tokens.json.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:#f6f4e8"></i><span>page #f6f4e8</span></div>
+    <div class="sw"><i style="background:#eae8dd"></i><span>surface #eae8dd</span></div>
+    <div class="sw"><i style="background:#022c12"></i><span>action #022c12</span></div>
+    <div class="sw"><i style="background:#f1f97e"></i><span>citrus #f1f97e</span></div>
+    <div class="sw"><i style="background:#d5f285"></i><span>app action #d5f285</span></div>
+    <div class="sw"><i style="background:#f5f6f7"></i><span>app page #f5f6f7</span></div>
+    <div class="sw"><i style="background:#cfe8ff"></i><span>sky #cfe8ff</span></div>
+    <div class="sw"><i style="background:#d1bee7"></i><span>lilac #d1bee7</span></div>
+    <div class="sw"><i style="background:#d5dfca"></i><span>lichen #d5dfca</span></div>
+    <div class="sw"><i style="background:#b9c2b2"></i><span>green-100 #b9c2b2</span></div>
+    <div class="sw"><i style="background:#933f29"></i><span>rust #933f29</span></div>
+    <div class="sw"><i style="background:#7e0c04"></i><span>red #7e0c04</span></div>
+  </div>
+  <h2>Marketing buttons</h2>
+  <div class="row">
+    <a class="btn primary" href="#buttons">Try for free</a>
+    <a class="btn soft" href="#buttons">Book a demo</a>
+    <a class="btn yellow" href="#buttons">See yours</a>
+  </div>
+  <h2>Type</h2>
+  <p style="font:700 4.375rem/1 var(--display);text-transform:uppercase;margin:0">Admin work is stealing time</p>
+  <p>Body is Inter at 1.125rem, weight 450, line-height 150%, colour #022c12.</p>
+  <h2>Login card</h2>
+  <div class="app">
+    <div class="card">
+      <h3>Welcome back</h3>
+      <label for="email">Email</label>
+      <input id="email" type="email" autocomplete="off">
+      <label for="password">Password</label>
+      <input id="password" type="password" autocomplete="off">
+      <button class="login" type="button">Log in</button>
+    </div>
+  </div>
+  <p class="note">National 2 Condensed and Inter are not bundled. The browser uses the named fallbacks when the faces are not installed.</p>
+</main>
+</body>
+</html>

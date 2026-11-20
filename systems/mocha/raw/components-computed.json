@@ -1,0 +1,590 @@
+{
+  "source": "Computed styles on docs.getmocha.com/getting-started/faq and app.mocha.app, headless Chromium, 1440x900, dpr 2, 2026-11-19. Nothing submitted. Search dialog opened and closed empty. Theme menu opened and closed. One FAQ details row opened.",
+  "components": {
+    "button-primary": {
+      "note": "Go to Mocha pill face",
+      "states": {
+        "light-default": {
+          "style": {
+            "backgroundColor": "rgb(0, 0, 0)",
+            "color": "rgb(255, 255, 255)",
+            "borderRadius": "12px",
+            "height": 36,
+            "padding": "8px 8px 8px 12px",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "note": "The painted face is span.absolute.inset-0.bg-primary-dark (light) / bg-primary-light (dark). The anchor itself is transparent."
+          }
+        },
+        "dark-default": {
+          "style": {
+            "backgroundColor": "rgb(255, 255, 255)",
+            "color": "rgb(0, 0, 0)",
+            "borderRadius": "12px",
+            "height": 36,
+            "padding": "8px 8px 8px 12px",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "note": "The painted face is span.absolute.inset-0.bg-primary-dark (light) / bg-primary-light (dark). The anchor itself is transparent."
+          }
+        }
+      }
+    },
+    "link-nav": {
+      "note": "Top bar Go to Mocha anchor, transparent over the pill face",
+      "states": {
+        "light-default": {
+          "style": {
+            "text": "Go to Mocha",
+            "tag": "A",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(114, 113, 112)",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "radius": "0px",
+            "border": "0px solid rgb(240, 239, 238)",
+            "pad": "8px 8px 8px 12px",
+            "shadow": "none",
+            "outline": "rgb(114, 113, 112) none 0px",
+            "outlineOffset": "0px",
+            "h": 36,
+            "w": 121,
+            "transition": "all | 0s | ease"
+          }
+        },
+        "dark-default": {
+          "style": {
+            "text": "Go to Mocha",
+            "tag": "A",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(160, 160, 158)",
+            "fontSize": "14px",
+            "fontWeight": "500",
+            "radius": "0px",
+            "border": "0px solid rgb(39, 39, 37)",
+            "pad": "8px 8px 8px 12px",
+            "shadow": "none",
+            "outline": "rgb(160, 160, 158) none 0px",
+            "outlineOffset": "0px",
+            "h": 36,
+            "w": 121,
+            "transition": "all | 0s | ease"
+          }
+        }
+      }
+    },
+    "search": {
+      "note": "Top bar search button",
+      "states": {
+        "light-default": {
+          "style": {
+            "text": "Search... \u2318K",
+            "tag": "BUTTON",
+            "bg": "rgb(249, 247, 239)",
+            "color": "rgb(114, 113, 112)",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "radius": "12px",
+            "border": "0px solid rgb(240, 239, 238)",
+            "pad": "0px 12px 0px 14px",
+            "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.705137 -0.000780523 0.00276327 / 0.3) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+            "outline": "rgb(114, 113, 112) none 0px",
+            "outlineOffset": "0px",
+            "h": 36,
+            "w": 437,
+            "transition": "all | 0s | ease"
+          }
+        },
+        "dark-default": {
+          "style": {
+            "text": "Search... \u2318K",
+            "tag": "BUTTON",
+            "bg": "rgb(26, 26, 26)",
+            "color": "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "radius": "12px",
+            "border": "0px solid rgb(39, 39, 37)",
+            "pad": "0px 12px 0px 14px",
+            "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.435543 0.000811443 0.00194547 / 0.3) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+            "outline": "oklab(0.999994 0.0000455678 0.0000200868 / 0.5) none 0px",
+            "outlineOffset": "0px",
+            "h": 36,
+            "w": 437,
+            "transition": "all | 0s | ease"
+          }
+        }
+      }
+    },
+    "nav-active": {
+      "note": "Sidebar current page",
+      "states": {
+        "light-default": {
+          "style": {
+            "text": "FAQ",
+            "tag": "A",
+            "bg": "oklab(0.364975 0.0100353 0.0705809 / 0.1)",
+            "color": "rgb(81, 58, 6)",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "radius": "12px",
+            "border": "0px solid rgb(240, 239, 238)",
+            "pad": "6px 12px 6px 16px",
+            "shadow": "none",
+            "outline": "rgb(81, 58, 6) none 0px",
+            "outlineOffset": "-1px",
+            "h": 36,
+            "w": 256,
+            "transition": "all | 0s | ease"
+          }
+        },
+        "dark-default": {
+          "style": {
+            "text": "FAQ",
+            "tag": "A",
+            "bg": "oklab(0.921162 -0.129713 0.145731 / 0.1)",
+            "color": "rgb(180, 255, 106)",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "radius": "12px",
+            "border": "0px solid rgb(39, 39, 37)",
+            "pad": "6px 12px 6px 16px",
+            "shadow": "none",
+            "outline": "rgb(180, 255, 106) none 0px",
+            "outlineOffset": "-1px",
+            "h": 36,
+            "w": 256,
+            "transition": "all | 0s | ease"
+          }
+        }
+      }
+    },
+    "accordion": {
+      "note": "FAQ summary at rest",
+      "states": {
+        "light-default": {
+          "style": {
+            "text": "What is Mocha?",
+            "tag": "SUMMARY",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(65, 64, 62)",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "radius": "0px",
+            "border": "0px solid rgb(240, 239, 238)",
+            "pad": "14px 20px",
+            "shadow": "none",
+            "outline": "rgb(65, 64, 62) none 0px",
+            "outlineOffset": "0px",
+            "h": 52,
+            "w": 687,
+            "transition": "all | 0s | ease"
+          }
+        },
+        "light-open": {
+          "style": {
+            "text": "What is Mocha?",
+            "tag": "SUMMARY",
+            "bg": "rgb(240, 239, 238)",
+            "color": "rgb(65, 64, 62)",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "radius": "0px",
+            "border": "0px solid rgb(240, 239, 238)",
+            "pad": "14px 20px",
+            "shadow": "none",
+            "outline": "rgb(65, 64, 62) none 0px",
+            "outlineOffset": "0px",
+            "h": 52,
+            "w": 687,
+            "transition": "all | 0s | ease"
+          }
+        },
+        "dark-default": {
+          "style": {
+            "text": "What is Mocha?",
+            "tag": "SUMMARY",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(160, 160, 158)",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "radius": "0px",
+            "border": "0px solid rgb(39, 39, 37)",
+            "pad": "14px 20px",
+            "shadow": "none",
+            "outline": "rgb(160, 160, 158) none 0px",
+            "outlineOffset": "0px",
+            "h": 52,
+            "w": 687,
+            "transition": "all | 0s | ease"
+          }
+        },
+        "dark-open": {
+          "style": {
+            "text": "What is Mocha?",
+            "tag": "SUMMARY",
+            "bg": "rgb(39, 39, 37)",
+            "color": "rgb(160, 160, 158)",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "radius": "0px",
+            "border": "0px solid rgb(39, 39, 37)",
+            "pad": "14px 20px",
+            "shadow": "none",
+            "outline": "rgb(160, 160, 158) none 0px",
+            "outlineOffset": "0px",
+            "h": 52,
+            "w": 687,
+            "transition": "all | 0s | ease"
+          }
+        }
+      }
+    },
+    "callout": {
+      "note": "Shutdown callout on docs",
+      "states": {
+        "light-default": {
+          "style": {
+            "text": "Mocha is shutting down on August 1, 2026. Read the shutdown announceme",
+            "tag": "DIV",
+            "bg": "rgb(254, 252, 232)",
+            "color": "rgb(65, 64, 62)",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "radius": "16px",
+            "border": "1px solid rgb(254, 240, 138)",
+            "pad": "16px 20px",
+            "shadow": "none",
+            "outline": "rgb(65, 64, 62) none 0px",
+            "outlineOffset": "0px",
+            "h": 74,
+            "w": 689,
+            "transition": "all | 0s | ease"
+          }
+        },
+        "dark-default": {
+          "style": {
+            "text": "Mocha is shutting down on August 1, 2026. Read the shutdown announceme",
+            "tag": "DIV",
+            "bg": "oklab(0.68064 0.0348215 0.137956 / 0.2)",
+            "color": "rgb(160, 160, 158)",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "radius": "16px",
+            "border": "1px solid rgb(113, 63, 18)",
+            "pad": "16px 20px",
+            "shadow": "none",
+            "outline": "rgb(160, 160, 158) none 0px",
+            "outlineOffset": "0px",
+            "h": 74,
+            "w": 689,
+            "transition": "all | 0s | ease"
+          }
+        }
+      }
+    },
+    "heading": {
+      "note": "Page h1",
+      "states": {
+        "light-default": {
+          "style": {
+            "text": "FAQ",
+            "tag": "H1",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(25, 24, 22)",
+            "fontSize": "36px",
+            "fontWeight": "600",
+            "radius": "0px",
+            "border": "0px solid rgb(240, 239, 238)",
+            "pad": "0px",
+            "shadow": "none",
+            "outline": "rgb(25, 24, 22) none 0px",
+            "outlineOffset": "0px",
+            "h": 40,
+            "w": 68,
+            "transition": "all | 0s | ease"
+          }
+        },
+        "dark-default": {
+          "style": {
+            "text": "FAQ",
+            "tag": "H1",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(224, 224, 222)",
+            "fontSize": "36px",
+            "fontWeight": "600",
+            "radius": "0px",
+            "border": "0px solid rgb(39, 39, 37)",
+            "pad": "0px",
+            "shadow": "none",
+            "outline": "rgb(224, 224, 222) none 0px",
+            "outlineOffset": "0px",
+            "h": 40,
+            "w": 68,
+            "transition": "all | 0s | ease"
+          }
+        }
+      }
+    },
+    "body": {
+      "note": "Prose paragraph",
+      "states": {
+        "light-default": {
+          "style": {
+            "text": "Frequently asked questions about Mocha",
+            "tag": "P",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(65, 64, 62)",
+            "fontSize": "18px",
+            "fontWeight": "400",
+            "radius": "0px",
+            "border": "0px solid rgb(240, 239, 238)",
+            "pad": "0px",
+            "shadow": "none",
+            "outline": "rgb(65, 64, 62) none 0px",
+            "outlineOffset": "0px",
+            "h": 28,
+            "w": 689,
+            "transition": "all | 0s | ease"
+          }
+        },
+        "dark-default": {
+          "style": {
+            "text": "Frequently asked questions about Mocha",
+            "tag": "P",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(160, 160, 158)",
+            "fontSize": "18px",
+            "fontWeight": "400",
+            "radius": "0px",
+            "border": "0px solid rgb(39, 39, 37)",
+            "pad": "0px",
+            "shadow": "none",
+            "outline": "rgb(160, 160, 158) none 0px",
+            "outlineOffset": "0px",
+            "h": 28,
+            "w": 689,
+            "transition": "all | 0s | ease"
+          }
+        }
+      }
+    },
+    "eyebrow": {
+      "note": "Section eyebrow",
+      "states": {
+        "light-default": {
+          "style": {
+            "text": "Get Started",
+            "tag": "SPAN",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(25, 24, 22)",
+            "fontSize": "14px",
+            "fontWeight": "600",
+            "radius": "0px",
+            "border": "0px solid rgb(240, 239, 238)",
+            "pad": "0px",
+            "shadow": "none",
+            "outline": "rgb(25, 24, 22) none 0px",
+            "outlineOffset": "0px",
+            "h": 17,
+            "w": 77,
+            "transition": "all | 0s | ease"
+          }
+        },
+        "dark-default": {
+          "style": {
+            "text": "Get Started",
+            "tag": "SPAN",
+            "bg": "rgba(0, 0, 0, 0)",
+            "color": "rgb(224, 224, 222)",
+            "fontSize": "14px",
+            "fontWeight": "600",
+            "radius": "0px",
+            "border": "0px solid rgb(39, 39, 37)",
+            "pad": "0px",
+            "shadow": "none",
+            "outline": "rgb(224, 224, 222) none 0px",
+            "outlineOffset": "0px",
+            "h": 17,
+            "w": 77,
+            "transition": "all | 0s | ease"
+          }
+        }
+      }
+    },
+    "search-dialog": {
+      "note": "Search dialog opened empty",
+      "states": {
+        "light-open": {
+          "style": {
+            "text": "Use the up and down arrow keys to select a result, Enter to open it, and Escape to close search.",
+            "bg": "rgb(249, 247, 239)",
+            "color": "rgb(0, 0, 0)",
+            "radius": "20px",
+            "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.150386 0.00104608 0.00251746 / 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.",
+            "w": 640,
+            "h": 62,
+            "input": {
+              "bg": "rgba(0, 0, 0, 0)",
+              "color": "rgb(12, 11, 10)",
+              "fontSize": "16px",
+              "radius": "0px",
+              "pad": "0px 0px 0px 30px",
+              "h": 36,
+              "border": "0px rgb(240, 239, 238)"
+            }
+          }
+        },
+        "dark-open": {
+          "style": {
+            "text": "Use the up and down arrow keys to select a result, Enter to open it, and Escape to close search.",
+            "bg": "rgb(26, 26, 26)",
+            "color": "rgb(255, 255, 255)",
+            "radius": "20px",
+            "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.999994 0.0000455678 0.0000200868 / 0.06) 0px 0px 0px 1px, rgba(0, 0, 0",
+            "w": 640,
+            "h": 62,
+            "input": {
+              "bg": "rgba(0, 0, 0, 0)",
+              "color": "rgb(255, 255, 255)",
+              "fontSize": "16px",
+              "radius": "0px",
+              "pad": "0px 0px 0px 30px",
+              "h": 36,
+              "border": "0px rgb(39, 39, 37)"
+            }
+          }
+        }
+      }
+    },
+    "theme-menu": {
+      "note": "Theme menu",
+      "states": {
+        "light-open": {
+          "style": {
+            "count": 3,
+            "items": [
+              {
+                "text": "System\nSwitch to system theme",
+                "role": "menuitem",
+                "bg": "rgba(0, 0, 0, 0)",
+                "color": "rgb(81, 58, 6)",
+                "fontSize": "14px",
+                "radius": "12px",
+                "h": 36,
+                "w": 118
+              },
+              {
+                "text": "Light\nSwitch to light theme",
+                "role": "menuitem",
+                "bg": "rgba(0, 0, 0, 0)",
+                "color": "rgb(39, 39, 37)",
+                "fontSize": "14px",
+                "radius": "12px",
+                "h": 36,
+                "w": 118
+              },
+              {
+                "text": "Dark\nSwitch to dark theme",
+                "role": "menuitem",
+                "bg": "rgba(0, 0, 0, 0)",
+                "color": "rgb(39, 39, 37)",
+                "fontSize": "14px",
+                "radius": "12px",
+                "h": 36,
+                "w": 118
+              }
+            ],
+            "menu": {
+              "bg": "rgb(255, 255, 255)",
+              "radius": "16px",
+              "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.549149 0.0007719",
+              "w": 128
+            }
+          }
+        },
+        "dark-open": {
+          "style": {
+            "count": 3,
+            "items": [
+              {
+                "text": "System\nSwitch to system theme",
+                "role": "menuitem",
+                "bg": "rgba(0, 0, 0, 0)",
+                "color": "rgb(180, 255, 106)",
+                "fontSize": "14px",
+                "radius": "12px",
+                "h": 36,
+                "w": 118
+              },
+              {
+                "text": "Light\nSwitch to light theme",
+                "role": "menuitem",
+                "bg": "rgba(0, 0, 0, 0)",
+                "color": "rgb(208, 207, 206)",
+                "fontSize": "14px",
+                "radius": "12px",
+                "h": 36,
+                "w": 118
+              },
+              {
+                "text": "Dark\nSwitch to dark theme",
+                "role": "menuitem",
+                "bg": "rgba(0, 0, 0, 0)",
+                "color": "rgb(208, 207, 206)",
+                "fontSize": "14px",
+                "radius": "12px",
+                "h": 36,
+                "w": 118
+              }
+            ],
+            "menu": {
+              "bg": "rgb(12, 11, 10)",
+              "radius": "16px",
+              "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px",
+              "w": 128
+            }
+          }
+        }
+      }
+    },
+    "shutdown-button": {
+      "note": "app.mocha.app 410 link",
+      "states": {
+        "light-default": {
+          "style": {
+            "bg": "rgb(255, 255, 255)",
+            "color": "rgb(34, 31, 28)",
+            "border": "rgb(215, 209, 202)",
+            "outline": "rgb(34, 31, 28) none 0px",
+            "outlineOffset": "0px",
+            "transform": "none",
+            "htmlBg": "rgb(247, 245, 241)"
+          }
+        },
+        "light-hover": {
+          "style": {
+            "bg": "rgb(255, 255, 255)",
+            "color": "rgb(34, 31, 28)",
+            "border": "rgb(169, 161, 153)",
+            "outline": "rgb(34, 31, 28) none 0px",
+            "outlineOffset": "0px",
+            "transform": "matrix(1, 0, 0, 1, 0, -1)",
+            "htmlBg": "rgb(247, 245, 241)"
+          }
+        },
+        "light-focus": {
+          "style": {
+            "bg": "rgb(255, 255, 255)",
+            "color": "rgb(34, 31, 28)",
+            "border": "rgb(169, 161, 153)",
+            "outline": "rgb(239, 106, 58) solid 3px",
+            "outlineOffset": "3px",
+            "transform": "matrix(1, 0, 0, 1, 0, -1)",
+            "htmlBg": "rgb(247, 245, 241)"
+          }
+        }
+      }
+    }
+  }
+}

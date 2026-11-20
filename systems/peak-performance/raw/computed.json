@@ -1,0 +1,423 @@
+{
+  "captured": "2026-11-19",
+  "product": "Peak Performance",
+  "storefront": "https://www.peakperformance.com/se/en",
+  "note": "Geo redirect from https://www.peakperformance.com/ to the Sweden English storefront. Viewport measured after preview_resize freeform 1440x900 settled at innerWidth 1440, innerHeight 900, devicePixelRatio 2, visualViewport scale 1.",
+  "viewport": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "colorScheme": "normal",
+  "lang": "en-SE",
+  "stylesheet": "https://www.peakperformance.com/se/sv/static/version1794987467/frontend/Peak/Peak2024/default/css/styles.min.css",
+  "fontFacesLoaded": [
+    "Icon-Peak2024",
+    "Helvetica Now Display",
+    "Helvetica Now Text",
+    "Mercury Display"
+  ],
+  "pages": {
+    "home": {
+      "url": "https://www.peakperformance.com/se/en/",
+      "title": "home | Peak Performance",
+      "bodyClass": "cms-home cms-index-index page-layout-1column",
+      "scrollHeight": 4858
+    },
+    "collection": {
+      "url": "https://www.peakperformance.com/se/en/women/jackets.html",
+      "title": "Jackets & Vests - Women | Peak Performance",
+      "bodyClass": "page-with-filter page-products categorypath-women-jackets category-jackets",
+      "h1": "WOMEN'S JACKETS & VESTS",
+      "itemCountText": "66 ITEMS",
+      "cardCountRendered": 28
+    }
+  },
+  "consent": "OneTrust banner was visible. Clicked #onetrust-reject-all-handler (Use only necessary cookies). Did not click Accept all cookies.",
+  "computed": {
+    "body": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "\"Helvetica Now Display\", sans-serif",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "16.8px",
+      "letterSpacing": "normal"
+    },
+    "rotatingBanner": {
+      "selector": ".header__rotating-banner",
+      "backgroundColor": "rgb(239, 253, 164)",
+      "color": "rgb(0, 0, 0)",
+      "height": "30px",
+      "fontSize": "14px",
+      "customProperty": "--h-header-rotating-banner: 30px"
+    },
+    "bannerLink": {
+      "selector": ".header__rotating-banner a",
+      "fontFamily": "\"Helvetica Now Text\", \"Helvetica Now Display\", sans-serif",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "lineHeight": "13.2px",
+      "letterSpacing": "-0.12px",
+      "textTransform": "uppercase",
+      "color": "rgb(0, 0, 0)"
+    },
+    "countryButton": {
+      "selector": ".header__country-switcher-btn",
+      "fontFamily": "\"Helvetica Now Text\", \"Helvetica Now Display\", sans-serif",
+      "fontSize": "12px",
+      "letterSpacing": "-0.1px",
+      "padding": "8px",
+      "textTransform": "uppercase",
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgba(0, 0, 0, 0)"
+    },
+    "logo": {
+      "selector": "i.icon-logo",
+      "fontFamily": "Icon-Peak2024, sans-serif",
+      "fontSize": "20px",
+      "width": 215,
+      "height": 29,
+      "color": "rgb(0, 0, 0)"
+    },
+    "navigation": {
+      "selector": ".navigation",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "height": 44,
+      "customProperty": "--h-header-top-bar-desktop: 44px"
+    },
+    "navLink": {
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "letterSpacing": "-0.36px",
+      "textTransform": "uppercase",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "\"Helvetica Now Text\", \"Helvetica Now Display\", sans-serif",
+      "height": 13
+    },
+    "bottomBar": {
+      "selector": ".header__bottom-bar",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "height": 44,
+      "borderTop": "1px solid rgba(0, 0, 0, 0.15)",
+      "customProperty": "--h-header-bottom-bar-desktop: 44px"
+    },
+    "search": {
+      "selector": ".header__search-input",
+      "placeholder": "Search...",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "\"Helvetica Now Display\", sans-serif",
+      "fontSize": "14px",
+      "letterSpacing": "-0.16px",
+      "padding": "0px 12px",
+      "height": 45,
+      "borderRadius": "0px",
+      "borderTop": "0px none rgba(0, 0, 0, 0.15)"
+    },
+    "header": {
+      "selector": "header.header",
+      "height": 118,
+      "position": "relative",
+      "backgroundColor": "rgba(0, 0, 0, 0)"
+    },
+    "heroSubtitle": {
+      "selector": ".hero__subtitle",
+      "text": "OUTERWEAR WITHOUT COMPROMISE",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "\"Helvetica Now Display\", sans-serif",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "lineHeight": "16.8px",
+      "letterSpacing": "normal"
+    },
+    "heroTitle": {
+      "selector": ".hero__title",
+      "text": "ARE YOU READY FOR THE COLD?",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "\"Helvetica Now Display\", sans-serif",
+      "fontSize": "96px",
+      "fontWeight": "400",
+      "lineHeight": "96px",
+      "letterSpacing": "-2.88px",
+      "textTransform": "uppercase",
+      "width": 1408,
+      "height": 192
+    },
+    "pillOnPhoto": {
+      "selector": "hero SHOP WOMEN'S JACKETS link",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "border": "1px solid rgb(255, 255, 255)",
+      "borderRadius": "24px",
+      "padding": "10px 14px",
+      "height": "34px",
+      "fontSize": "12px",
+      "lineHeight": "12px",
+      "letterSpacing": "-0.36px",
+      "textTransform": "uppercase",
+      "fontFamily": "\"Helvetica Now Text\", \"Helvetica Now Display\", sans-serif",
+      "fontWeight": "400"
+    },
+    "sectionTitle": {
+      "selector": ".t-3xl",
+      "text": "SHOP JACKETS",
+      "fontSize": "32px",
+      "lineHeight": "35.2px",
+      "letterSpacing": "-0.32px",
+      "textTransform": "uppercase",
+      "fontFamily": "\"Helvetica Now Display\", sans-serif",
+      "color": "rgb(0, 0, 0)"
+    },
+    "ctaTitle": {
+      "selector": ".cta__title",
+      "fontSize": "48px",
+      "lineHeight": "48px",
+      "letterSpacing": "-0.48px",
+      "textTransform": "uppercase",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "\"Helvetica Now Display\", sans-serif",
+      "fontWeight": "400"
+    },
+    "ctaEyebrow": {
+      "selector": ".cta__head-title",
+      "fontSize": "12px",
+      "lineHeight": "13.2px",
+      "letterSpacing": "-0.36px",
+      "textTransform": "uppercase",
+      "fontFamily": "\"Helvetica Now Text\", \"Helvetica Now Display\", sans-serif",
+      "color": "rgb(255, 255, 255)"
+    },
+    "ctaItemPadding": {
+      "selector": ".cta__item",
+      "padding": "24px 16px"
+    },
+    "productCard": {
+      "width": 360,
+      "image": {
+        "width": 359,
+        "height": 479,
+        "borderRadius": "0px"
+      },
+      "radius": "0px",
+      "shadow": "none",
+      "backgroundColor": "rgba(0, 0, 0, 0)"
+    },
+    "productName": {
+      "selector": "a.product-tile__name-link",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "16.8px",
+      "letterSpacing": "-0.36px",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "\"Helvetica Now Display\", sans-serif",
+      "textTransform": "none"
+    },
+    "price": {
+      "selector": "span.price",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "letterSpacing": "-0.36px",
+      "lineHeight": "16.8px",
+      "color": "rgb(0, 0, 0)",
+      "sample": "3 400 SEK"
+    },
+    "priceMuted": {
+      "selector": "span.price (second in tile)",
+      "color": "rgba(0, 0, 0, 0.55)",
+      "fontSize": "14px",
+      "letterSpacing": "-0.36px"
+    },
+    "carouselArrow": {
+      "selector": "button.swiper-arrow.btn.btn-primary",
+      "height": 32,
+      "borderRadius": "24px",
+      "fontSize": "12px",
+      "padding": "0px"
+    },
+    "footerLink": {
+      "selector": "footer.page-footer a.t-sm",
+      "fontSize": "12px",
+      "lineHeight": "13.2px",
+      "letterSpacing": "-0.36px",
+      "textTransform": "uppercase",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "\"Helvetica Now Text\", \"Helvetica Now Display\", sans-serif"
+    },
+    "footerMutedTitle": {
+      "selector": ".footer__social-network-title",
+      "color": "rgba(0, 0, 0, 0.55)",
+      "fontSize": "12px",
+      "letterSpacing": "-0.36px",
+      "textTransform": "uppercase"
+    },
+    "footerHeight": 317,
+    "collectionH1": {
+      "fontSize": "64px",
+      "lineHeight": "70.4px",
+      "letterSpacing": "-0.64px",
+      "textTransform": "uppercase",
+      "fontWeight": "400",
+      "fontFamily": "\"Helvetica Now Display\", sans-serif",
+      "color": "rgb(0, 0, 0)",
+      "x": 24,
+      "y": 188,
+      "width": 696
+    },
+    "breadcrumb": {
+      "selector": ".breadcrumbs.t-sm",
+      "padding": "24px 24px 32px",
+      "fontSize": "12px",
+      "letterSpacing": "-0.36px",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "\"Helvetica Now Text\", \"Helvetica Now Display\", sans-serif",
+      "textTransform": "uppercase",
+      "separator": "content '/'"
+    },
+    "toolbar": {
+      "selector": ".product-list-toolbar-top",
+      "height": 50,
+      "borderBottom": "1px solid rgba(0, 0, 0, 0.15)"
+    },
+    "filterButton": {
+      "text": "FILTER & SORT",
+      "height": 48,
+      "padding": "0px 16px",
+      "fontSize": "12px",
+      "letterSpacing": "-0.36px",
+      "textTransform": "uppercase",
+      "fontFamily": "\"Helvetica Now Text\", \"Helvetica Now Display\", sans-serif",
+      "borderRight": "1px solid rgba(0, 0, 0, 0.15)"
+    },
+    "grid": {
+      "display": "flex",
+      "gap": "0px measured (four cards at x 0, 360, 720, 1080, each width 360)",
+      "cardWidth": 360
+    },
+    "filterSheet": {
+      "selector": "aside.sidebar-main",
+      "width": 450,
+      "backgroundColor": "rgb(255, 255, 255)",
+      "position": "fixed",
+      "borderRight": "1px solid rgba(0, 0, 0, 0.15)",
+      "boxShadow": "none",
+      "height": 900
+    },
+    "filterHeader": {
+      "padding": "16px 12px",
+      "height": 65,
+      "fontSize": "14px"
+    },
+    "filterGroupLabel": {
+      "fontSize": "14px",
+      "letterSpacing": "normal",
+      "textTransform": "uppercase",
+      "fontFamily": "\"Helvetica Now Display\", sans-serif",
+      "color": "rgb(0, 0, 0)"
+    },
+    "filterOption": {
+      "fontSize": "14px",
+      "letterSpacing": "-0.36px",
+      "fontFamily": "\"Helvetica Now Display\", sans-serif",
+      "color": "rgb(0, 0, 0)",
+      "textTransform": "none"
+    },
+    "filterCount": {
+      "color": "rgba(0, 0, 0, 0.55)",
+      "fontSize": "14px",
+      "letterSpacing": "-0.36px"
+    },
+    "colorSwatch": {
+      "selector": ".item__color-label",
+      "width": 12,
+      "height": 12,
+      "borderRadius": "9999px",
+      "border": "1px solid rgba(0, 0, 0, 0)",
+      "samples": [
+        "#000000",
+        "#255793",
+        "#7b4e2d",
+        "#686a4e",
+        "#828588"
+      ]
+    },
+    "clearFilters": {
+      "selector": "a.clear-filter.btn.btn-primary.btn-lg",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "border": "1px solid rgb(0, 0, 0)",
+      "borderRadius": "24px",
+      "padding": "16px 20px",
+      "height": 46,
+      "fontSize": "12px",
+      "letterSpacing": "-0.36px",
+      "textTransform": "uppercase"
+    },
+    "showResults": {
+      "selector": "button.am-show-button.btn.btn-primary",
+      "backgroundColor": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(255, 255, 255)",
+      "borderRadius": "24px",
+      "padding": "16px 20px",
+      "height": 46,
+      "fontSize": "12px",
+      "letterSpacing": "-0.36px"
+    },
+    "closeCircle": {
+      "selector": "button.sidebar__close-button.btn.btn-circle",
+      "width": 32,
+      "height": 32
+    },
+    "signInLabel": {
+      "sample": "Sign in",
+      "fontSize": "20px",
+      "lineHeight": "22px",
+      "letterSpacing": "-0.2px",
+      "textTransform": "uppercase",
+      "color": "rgba(0, 0, 0, 0.5)",
+      "fontFamily": "\"Helvetica Now Display\", sans-serif",
+      "note": "text node inside a closed authentication modal still in the DOM"
+    },
+    "fieldLabel": {
+      "sample": "Email",
+      "fontSize": "16px",
+      "lineHeight": "17.6px",
+      "letterSpacing": "-0.16px",
+      "color": "rgba(0, 0, 0, 0.55)",
+      "fontFamily": "\"Helvetica Now Display\", sans-serif"
+    },
+    "dobLabel": {
+      "sample": "Date of Birth",
+      "fontSize": "10px",
+      "lineHeight": "11px",
+      "letterSpacing": "-0.1px",
+      "textTransform": "uppercase",
+      "color": "rgba(0, 0, 0, 0.55)",
+      "fontFamily": "\"Helvetica Now Text\", \"Helvetica Now Display\", sans-serif"
+    }
+  },
+  "rootCustomProperties": {
+    "--h-header-rotating-banner": "30px",
+    "--h-header-top-bar": "50px",
+    "--h-header-bottom-bar": "50px",
+    "--h-header-top-bar-desktop": "44px",
+    "--h-header-bottom-bar-desktop": "44px",
+    "--minicart-header-popin": "64px",
+    "--minicart-block-payment": "45px",
+    "--pdp-w-block-right": "540px",
+    "--screen-xs": "480px",
+    "--screen-sm": "640px",
+    "--screen-md": "768px",
+    "--screen-lg": "1024px",
+    "--screen-xl": "1280px",
+    "--screen-2xl": "1536px",
+    "--bg-color-more": "#ebe9e1",
+    "--text-color-more": "#000"
+  }
+}

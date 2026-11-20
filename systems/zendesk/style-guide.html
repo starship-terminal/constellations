@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zendesk style guide</title>
+<style>
+:root {
+  --sg-sans: "Vanilla Sans", Arial, sans-serif;
+    --font-family-sans: Vanilla Sans, Arial, sans-serif;
+  --typography-display: 500 68px/71.4px var(--font-family-sans);
+  --typography-heading: 500 42px/48.3px var(--font-family-sans);
+  --typography-title: 500 26px/32.5px var(--font-family-sans);
+  --typography-eyebrow: 700 14px/18.2px var(--font-family-sans);
+  --typography-body: 400 16px/23.2px var(--font-family-sans);
+  --typography-label: 600 16px/23px var(--font-family-sans);
+  --typography-button: 600 18px/28px var(--font-family-sans);
+  --typography-field: 400 15px/21px var(--font-family-sans);
+  --typography-price: 600 20px/28px var(--font-family-sans);
+  --radius-field: 12px;
+  --radius-button: 16px;
+  --radius-card: 40px;
+  --radius-badge: 40px;
+  --radius-pill: 100px;
+  --radius-root-desktop: 20px;
+  --space-text-sm: 8px;
+  --space-text-md: 16px;
+  --space-text-lg: 24px;
+  --space-content-sm: 24px;
+  --space-content-md: 40px;
+  --space-content-lg: 48px;
+  --space-section: 88px;
+  --space-page: 16px;
+  --space-button-x: 20px;
+  --space-button-y: 10px;
+  --space-field: 12px;
+  --size-control: 48px;
+  --size-nav-button: 43px;
+  --size-header: 115px;
+  --size-content: 1150px;
+  --size-content-wide: 1600px;
+  --stroke-field: 1px;
+  --stroke-focus: 2px;
+  --motion-duration-button: 600ms;
+  --motion-duration-field: 250ms;
+  --motion-easing-button: cubic-bezier(0.7, 0, 0.3, 1);
+  --motion-easing-field: cubic-bezier(0.42, 0, 0.58, 1);
+    --surface-page: #ffffff;
+  --surface-hero: #11110d;
+  --surface-forest: #203524;
+  --surface-raised: #11110d0d;
+  --surface-card: #ffffff;
+  --text-primary: #11110d;
+  --text-on-hero: #f5f5f2;
+  --text-on-hero-body: #ffffff;
+  --text-inverse: #ffffff;
+  --text-muted: #11110db6;
+  --text-link: #11110d;
+  --border-default: #d5d5d2;
+  --border-strong: #11110d78;
+  --border-focus: #11110d;
+  --accent-default: #d1f470;
+  --accent-text: #70a32a;
+  --accent-hover: #d1f470;
+  --accent-pressed: #d1f470;
+  --status-danger: #b84242;
+  --component-button-primary-background: var(--accent-default);
+  --component-button-primary-text: var(--text-primary);
+  --component-button-primary-radius: var(--radius-button);
+  --component-button-primary-height: var(--size-control);
+  --component-button-on-hero-background: var(--accent-default);
+  --component-button-on-hero-text: var(--text-inverse);
+  --component-button-on-hero-radius: var(--radius-button);
+  --component-button-on-hero-height: var(--size-control);
+  --component-field-background: var(--surface-page);
+  --component-field-text: var(--text-primary);
+  --component-field-radius: var(--radius-field);
+  --component-field-height: var(--size-control);
+  --component-badge-background: var(--surface-hero);
+  --component-badge-text: var(--text-inverse);
+  --component-badge-radius: var(--radius-badge);
+}
+[data-mode="dark"] {
+  
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--surface-page); color: var(--text-primary); font: 400 16px/1.45 var(--sg-sans); }
+header.top { position: sticky; top: 0; background: var(--surface-page); border-bottom: 1px solid var(--border-default); z-index: 2; }
+header.top .in { max-width: 1100px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; gap: 16px; }
+h1 { font: 500 22px/1.2 var(--sg-sans); margin: 0; }
+nav a { color: var(--text-primary); margin-right: 14px; font-size: 14px; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; }
+section { margin: 40px 0; }
+h2 { font: 500 26px/1.25 var(--sg-sans); margin: 0 0 12px; }
+p { max-width: 72ch; }
+.swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 64px; border-radius: 12px; border: 1px solid var(--border-default); }
+.sw b, .sw small { display: block; font-size: 12px; font-weight: 500; }
+.sw small { color: var(--text-muted); font-weight: 400; }
+.hero {
+  background: var(--surface-hero); color: var(--text-on-hero); border-radius: 16px; padding: 40px;
+}
+.hero .eye { font: 700 14px/18.2px var(--sg-sans); letter-spacing: 0.75px; text-transform: uppercase; color: var(--text-on-hero); }
+.hero h3 { font: 500 68px/71.4px var(--sg-sans); margin: 8px 0; color: var(--text-on-hero); }
+.hero p { color: var(--text-on-hero-body); }
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 16px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: var(--size-control); padding: 10px 20px; border-radius: var(--radius-button);
+  background: var(--accent-default); color: var(--text-primary); font: 600 18px/28px var(--sg-sans); border: 0;
+}
+.btn.on-hero { color: var(--text-inverse); }
+.btn.quiet { background: transparent; box-shadow: inset 0 0 0 1px var(--border-strong); }
+.field {
+  height: var(--size-control); border-radius: var(--radius-field); border: 0;
+  box-shadow: inset 0 0 0 1px var(--border-default); padding: 12px; width: 280px;
+  font: 400 15px/21px var(--sg-sans); color: var(--text-primary); background: var(--surface-page);
+}
+.field.raised { background: var(--surface-raised); box-shadow: inset 0 0 0 1px var(--border-strong); }
+.field.error { box-shadow: inset 0 0 0 2px var(--status-danger); }
+.card {
+  background: var(--surface-raised); border-radius: var(--radius-card); padding: 24px; width: 260px;
+}
+.badge {
+  display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: var(--radius-badge);
+  background: var(--component-badge-background); color: var(--component-badge-text);
+  font: 700 14px/14px var(--sg-sans); letter-spacing: 0.75px; text-transform: uppercase;
+}
+.forest { background: var(--surface-forest); color: var(--text-on-hero); border-radius: 16px; padding: 24px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border-default); vertical-align: top; }
+code { font-family: ui-monospace, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<header class="top"><div class="in">
+  <h1>Zendesk style guide</h1>
+  <nav>
+    <a href="#colour">Colour</a><a href="#type">Type</a><a href="#components">Components</a>
+  </nav>
+</div></header>
+<div class="wrap">
+<section id="about">
+  <h2>Zendesk, measured</h2>
+  <p>Every colour, radius and size on this page comes from <code>tokens.json</code>, read from the public signed-out site on 2026-11-19. Vanilla Sans is Zendesk's face and is not loaded here. The fallback is Arial, which is the stack the site itself declares. The real pages are in <code>screenshots/</code>.</p>
+</section>
+<section id="colour">
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+</section>
+<section id="type">
+  <h2>Type</h2>
+  <div class="hero">
+    <div class="eye">AI-powered customer service platform</div>
+    <h3>Build for better outcomes</h3>
+    <p>Go beyond answers. The display is 68px / 500. The eyebrow is 14px / 700, tracked 0.75px.</p>
+  </div>
+</section>
+<section id="components">
+  <h2>Components</h2>
+  <div class="hero">
+    <div class="row">
+      <input class="field" placeholder="Enter work email" aria-label="Work email">
+      <button class="btn on-hero">Try it for free</button>
+    </div>
+  </div>
+  <div class="row" style="margin-top:24px">
+    <button class="btn">Sign in</button>
+    <button class="btn quiet">New here? Start free trial</button>
+    <span class="badge">Most popular</span>
+  </div>
+  <div class="row">
+    <input class="field raised" placeholder="yoursubdomain" aria-label="Subdomain">
+    <input class="field error" placeholder="name@company.com" aria-label="Work email in error">
+  </div>
+  <div class="card">
+    <b>Support Team</b>
+    <p style="font:600 20px/28px var(--sg-sans);margin:8px 0">US$ 19</p>
+    <button class="btn" style="height:43px;font-size:16px">Buy now</button>
+  </div>
+  <div class="forest" style="margin-top:24px">
+    <p style="margin:0">Report band, forest green rgb(32, 53, 36).</p>
+  </div>
+</section>
+</div>
+<script>
+const TOKENS = {"core":{"font":{"family":{"sans":{"v":"Vanilla Sans, Arial, sans-serif","t":"fontFamily","s":"computed font-family on body and every measured control, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"}}},"typography":{"display":{"v":{"fontFamily":"{core.font.family.sans}","fontWeight":"500","fontSize":"68px","lineHeight":"71.4px"},"t":"typography","s":"h1 'Build for better outcomes', computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"heading":{"v":{"fontFamily":"{core.font.family.sans}","fontWeight":"500","fontSize":"42px","lineHeight":"48.3px"},"t":"typography","s":"section h2 and login h1, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"title":{"v":{"fontFamily":"{core.font.family.sans}","fontWeight":"500","fontSize":"26px","lineHeight":"32.5px"},"t":"typography","s":"feature h3, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"eyebrow":{"v":{"fontFamily":"{core.font.family.sans}","fontWeight":"700","fontSize":"14px","lineHeight":"18.2px","letterSpacing":"0.75px"},"t":"typography","s":"uppercase eyebrow, letter-spacing 0.75px, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"body":{"v":{"fontFamily":"{core.font.family.sans}","fontWeight":"400","fontSize":"16px","lineHeight":"23.2px"},"t":"typography","s":"hero lede, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"label":{"v":{"fontFamily":"{core.font.family.sans}","fontWeight":"600","fontSize":"16px","lineHeight":"23px"},"t":"typography","s":"nav primary button, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"button":{"v":{"fontFamily":"{core.font.family.sans}","fontWeight":"600","fontSize":"18px","lineHeight":"28px"},"t":"typography","s":"hero and login submit, 48px tall, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"field":{"v":{"fontFamily":"{core.font.family.sans}","fontWeight":"400","fontSize":"15px","lineHeight":"21px"},"t":"typography","s":"email and subdomain inputs, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"price":{"v":{"fontFamily":"{core.font.family.sans}","fontWeight":"600","fontSize":"20px","lineHeight":"28px"},"t":"typography","s":"plan price 'US$ 19', computed on https://www.zendesk.com/sg/pricing/, 2026-11-19"}},"radius":{"field":{"v":"12px","t":"dimension","s":"email, subdomain and contact fields, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"button":{"v":"16px","t":"dimension","s":"primary and secondary buttons, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"card":{"v":"40px","t":"dimension","s":"pricing plan card, computed on https://www.zendesk.com/sg/pricing/, 2026-11-19"},"badge":{"v":"40px","t":"dimension","s":"MOST POPULAR badge, computed on https://www.zendesk.com/sg/pricing/, 2026-11-19"},"pill":{"v":"100px","t":"dimension","s":"help-centre Free trial and search, computed on https://support.zendesk.com/hc/en-us, 2026-11-19"},"root-desktop":{"v":"20px","t":"dimension","s":"declared on :root in the marketing stylesheet, 1440 breakpoint (raw/css-vars.json); --radius at min-width 1150px. Controls use 12px and 16px instead."}},"space":{"text-sm":{"v":"8px","t":"dimension","s":"--space-textMarginSm, declared on :root in the marketing stylesheet, 1440 breakpoint (raw/css-vars.json)"},"text-md":{"v":"16px","t":"dimension","s":"--space-textMarginMd at min-width 768px, declared on :root in the marketing stylesheet, 1440 breakpoint (raw/css-vars.json)"},"text-lg":{"v":"24px","t":"dimension","s":"--space-textMarginLg, declared on :root in the marketing stylesheet, 1440 breakpoint (raw/css-vars.json)"},"content-sm":{"v":"24px","t":"dimension","s":"--space-contentMarginSm, declared on :root in the marketing stylesheet, 1440 breakpoint (raw/css-vars.json)"},"content-md":{"v":"40px","t":"dimension","s":"--space-contentMarginMd at min-width 768px, declared on :root in the marketing stylesheet, 1440 breakpoint (raw/css-vars.json)"},"content-lg":{"v":"48px","t":"dimension","s":"--space-contentMarginLg at min-width 0, declared on :root in the marketing stylesheet, 1440 breakpoint (raw/css-vars.json)"},"section":{"v":"88px","t":"dimension","s":"--space-sectionPadding at min-width 1150px, declared on :root in the marketing stylesheet, 1440 breakpoint (raw/css-vars.json)"},"page":{"v":"16px","t":"dimension","s":"--space-globalPadding, declared on :root in the marketing stylesheet, 1440 breakpoint (raw/css-vars.json)"},"button-x":{"v":"20px","t":"dimension","s":"submit padding-left/right, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"button-y":{"v":"10px","t":"dimension","s":"submit padding-top/bottom, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"field":{"v":"12px","t":"dimension","s":"input padding, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"}},"size":{"control":{"v":"48px","t":"dimension","s":"email field and hero submit height, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"nav-button":{"v":"43px","t":"dimension","s":"nav Try it for free height, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"header":{"v":"115px","t":"dimension","s":"--headerHeight at min-width 1150px, matching the 1440 capture; 65px below that breakpoint, declared on :root in the marketing stylesheet, 1440 breakpoint (raw/css-vars.json)"},"content":{"v":"1150px","t":"dimension","s":"--contentWidth at min-width 1150px, declared on :root in the marketing stylesheet, 1440 breakpoint (raw/css-vars.json)"},"content-wide":{"v":"1600px","t":"dimension","s":"--contentWidth at min-width 1600px, declared on :root in the marketing stylesheet, 1440 breakpoint (raw/css-vars.json)"}},"stroke":{"field":{"v":"1px","t":"dimension","s":"inset ring on resting fields, computed on https://www.zendesk.com/sg/login/, 2026-11-19"},"focus":{"v":"2px","t":"dimension","s":"inset ring on focused fields and the focus outline, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"}},"motion":{"duration":{"button":{"v":"600ms","t":"duration","s":"transition-duration 0.6s on primary buttons, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"field":{"v":"250ms","t":"duration","s":"transition-duration 0.25s on the email field, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"}},"easing":{"button":{"v":[0.7,0,0.3,1],"t":"cubicBezier","s":"cubic-bezier(0.7, 0, 0.3, 1) on primary buttons, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"field":{"v":[0.42,0,0.58,1],"t":"cubicBezier","s":"ease-in-out keyword on the email field, expanded, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"}}}},"light":{"surface":{"page":{"v":"#ffffff","t":"color","s":"body background-color rgb(255, 255, 255), computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"hero":{"v":"#11110d","t":"color","s":"hero section background rgb(17, 17, 13), computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"forest":{"v":"#203524","t":"color","s":"report band background rgb(32, 53, 36), computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"raised":{"v":"#11110d0d","t":"color","s":"pricing card and resting subdomain field rgba(17, 17, 13, 0.05), computed on https://www.zendesk.com/sg/pricing/, 2026-11-19"},"card":{"v":"#ffffff","t":"color","s":"trial dialog background, computed on https://www.zendesk.com/sg/register/, 2026-11-19, form not submitted"}},"text":{"primary":{"v":"#11110d","t":"color","s":"nav, headings on white, field text rgb(17, 17, 13), computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"on-hero":{"v":"#f5f5f2","t":"color","s":"hero display and eyebrow rgb(245, 245, 242), computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"on-hero-body":{"v":"#ffffff","t":"color","s":"hero lede rgb(255, 255, 255), computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"inverse":{"v":"#ffffff","t":"color","s":"badge text and hero-submit text, computed on https://www.zendesk.com/sg/pricing/, 2026-11-19"},"muted":{"v":"#11110db6","t":"color","s":"rgba(17, 17, 13, 0.714) on secondary copy, colour frequency on the homepage, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"link":{"v":"#11110d","t":"color","s":"the Sign in to Chat product link, computed color rgb(17, 17, 13) (raw/components-computed.json controls.login.productLink), computed on https://www.zendesk.com/sg/login/, 2026-11-19"}},"border":{"default":{"v":"#d5d5d2","t":"color","s":"email inset ring rgb(213, 213, 210), computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"strong":{"v":"#11110d78","t":"color","s":"subdomain inset ring rgba(17, 17, 13, 0.47), computed on https://www.zendesk.com/sg/login/, 2026-11-19"},"focus":{"v":"#11110d","t":"color","s":"focused field inset ring rgb(17, 17, 13), computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"}},"accent":{"default":{"v":"#d1f470","t":"color","s":"primary button fill rgb(209, 244, 112), computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"text":{"v":"#70a32a","t":"color","s":"pricing accent text rgb(112, 163, 42), computed on https://www.zendesk.com/sg/pricing/, 2026-11-19"},"hover":{"v":"#d1f470","t":"color","s":"forced :hover keeps the same fill; text opacity changes. computed on https://www.zendesk.com/sg/login/, 2026-11-19"},"pressed":{"v":"#d1f470","t":"color","s":"forced :active keeps the same fill. computed on https://www.zendesk.com/sg/login/, 2026-11-19"}},"status":{"danger":{"v":"#b84242","t":"color","s":"register field error inset ring rgb(184, 66, 66) with aria-invalid=true, before typing, computed on https://www.zendesk.com/sg/register/, 2026-11-19, form not submitted"}},"component":{"button-primary":{"background":{"v":"{light.accent.default}","t":"color","s":"nav and login primary, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"text":{"v":"{light.text.primary}","t":"color","s":"nav Try it for free and login Sign in text, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"radius":{"v":"{core.radius.button}","t":"dimension","s":"16px on primary buttons"},"height":{"v":"{core.size.control}","t":"dimension","s":"48px on the hero and login submits"}},"button-on-hero":{"background":{"v":"{light.accent.default}","t":"color","s":"hero submit fill, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"text":{"v":"{light.text.inverse}","t":"color","s":"hero submit text is white, unlike the nav primary, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"radius":{"v":"{core.radius.button}","t":"dimension","s":"16px"},"height":{"v":"{core.size.control}","t":"dimension","s":"48px"}},"field":{"background":{"v":"{light.surface.page}","t":"color","s":"hero email field is white; login and contact fields use raised, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"text":{"v":"{light.text.primary}","t":"color","s":"field text, computed on https://www.zendesk.com/sg/ at 1440x900, 2026-11-19 (raw/components-computed.json)"},"radius":{"v":"{core.radius.field}","t":"dimension","s":"12px"},"height":{"v":"{core.size.control}","t":"dimension","s":"48px"}},"badge":{"background":{"v":"{light.surface.hero}","t":"color","s":"MOST POPULAR fill, computed on https://www.zendesk.com/sg/pricing/, 2026-11-19"},"text":{"v":"{light.text.inverse}","t":"color","s":"MOST POPULAR text, computed on https://www.zendesk.com/sg/pricing/, 2026-11-19"},"radius":{"v":"{core.radius.badge}","t":"dimension","s":"40px"}}}},"dark":{}};
+const roles = [
+  ["page", "surface-page"],
+  ["hero", "surface-hero"],
+  ["forest", "surface-forest"],
+  ["raised", "surface-raised"],
+  ["text", "text-primary"],
+  ["on hero", "text-on-hero"],
+  ["accent", "accent-default"],
+  ["accent text", "accent-text"],
+  ["border", "border-default"],
+  ["danger", "status-danger"],
+];
+const host = document.getElementById("swatches");
+for (const [name, prop] of roles) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  const dot = document.createElement("i");
+  dot.style.background = `var(--${prop})`;
+  const label = document.createElement("b");
+  label.textContent = name;
+  const code = document.createElement("small");
+  code.textContent = prop;
+  el.append(dot, label, code);
+  host.appendChild(el);
+}
+</script>
+</body>
+</html>

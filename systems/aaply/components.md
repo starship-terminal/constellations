@@ -8,7 +8,7 @@ How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `Poppins 57/60 700, #000000`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (90 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (89 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -60,11 +60,11 @@ Values that apply across entries, from the measurement files.
 | [Plan card (Plus)](#plan-card-plus) | 561 x 618 | - | 36px | #e6e51e `lime` | none | 0 |
 | [Review slide](#review-slide) | 1157 x 418 | - | 40px | #e7e51e `lime-slide` | none | 0 |
 | [Review card](#review-card) | 370 x 580 | - | 40px | #ffffff `white` | none | 0 |
-| [Member card](#member-card) | 359 x 479 | 1px solid #cccccc `border-gray` | 36px | - | none | 0 |
+| [Member card](#member-card) | 359 x 479 | 1px solid #cccccc `border-gray` | 36px | transparent | none | 0 |
 | [Value card](#value-card) | 271 x 272 | - | 40px | #ffffff `white` | none | 0 |
 | [Feature table](#feature-table) | 527 x 1166 | - | 40px | #e6e51e `lime` | none | 0 |
-| [Export step card](#export-step-card) | 561 x 273 | 1px solid #cccccc `border-gray` | 36px | - | none | 0 |
-| [Billing toggle](#billing-toggle) | 1440 x 75 | - | 30px | #e7e51e `lime-slide` | none | 0 |
+| [Export step card](#export-step-card) | 561 x 273 | 1px solid #cccccc `border-gray` | 36px | transparent | none | 0 |
+| [Billing toggle](#billing-toggle) | 1440 x 75 | - | - | #f2f2f2 `page-gray` | none | 0 |
 | [Footer](#footer) | 1440 x 1088 | - | - | #000000 `black` | none | 0 |
 
 ## Components
@@ -376,9 +376,9 @@ The "Compare features →" link under the cards. Read as `compare-cta` on the pr
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 851 x 60; background transparent; text Poppins 57/60 700, #000000 `black`; transition box-shadow 0.2s ease-in-out |
+| default (same: hover, pressed) | size 851 x 60; background transparent; text Poppins 57/60 700, #000000 `black`; transition box-shadow 0.2s ease-in-out |
 
-![Compare features link default](components/crops/compare-cta-default.png) ![Compare features link hover](components/crops/compare-cta-hover.png) ![Compare features link focus-visible](components/crops/compare-cta-focus-visible.png) ![Compare features link pressed](components/crops/compare-cta-pressed.png)
+![Compare features link default](components/crops/compare-cta-default.png) ![Compare features link hover](components/crops/compare-cta-hover.png) ![Compare features link pressed](components/crops/compare-cta-pressed.png)
 
 #### Feature table
 The feature-comparison table card: rows of features with checkmarks, "+" and "soon" pills. Read as `feature-table` on the pricing page.

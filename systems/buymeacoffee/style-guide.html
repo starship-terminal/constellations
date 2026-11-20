@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buy Me a Coffee style guide</title>
+<meta name="description" content="Buy Me a Coffee design tokens and the public marketing plus creator-page surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-bold: "Circular Bold";
+  --font-family-regular: "Circular Regular";
+  --font-family-medium: "Circular Medium";
+  --font-family-book: "Circular Book", sans-serif;
+  --font-family-borel: "Borel Regular";
+  --font-family-app: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-black: "Circular Black";
+  --font-size-display: 96px;
+  --font-size-h2: 64px;
+  --font-size-faq-title: 48px;
+  --font-size-display-mobile: 48px;
+  --font-size-lede: 24px;
+  --font-size-tagline: 22px;
+  --font-size-question: 20px;
+  --font-size-body: 18px;
+  --font-size-button: 17px;
+  --font-size-base: 16px;
+  --font-size-tab: 15px;
+  --font-lineHeight-display: 95px;
+  --font-lineHeight-h2: 80px;
+  --font-lineHeight-lede: 32px;
+  --font-lineHeight-tagline: 33px;
+  --font-letterSpacing-display: -2.4px;
+  --font-letterSpacing-h2: -2px;
+  --font-letterSpacing-eyebrow: 2px;
+  --color-neutral-ink: #222222;
+  --color-neutral-ink-v2: #151515;
+  --color-neutral-grey: #717171;
+  --color-neutral-cream: #faf8f0;
+  --color-neutral-field: #f0f0f0;
+  --color-neutral-divider: #e5e5e5;
+  --color-neutral-hover-fill: rgba(0, 0, 0, 0.05);
+  --color-neutral-search-fill: rgba(0, 0, 0, 0.03);
+  --color-neutral-paper: #ffffff;
+  --color-brand-yellow: #ffdd00;
+  --color-brand-yellow-hover: #ffc800;
+  --color-theme-accent: #ff813f;
+  --color-theme-accent-hover: #ff6b1c;
+  --color-theme-accent-25: rgba(255, 129, 63, 0.25);
+  --color-theme-on-accent: #ffffff;
+  --color-theme-accent-05: rgba(255, 129, 63, 0.05);
+  --color-theme-accent-08: rgba(255, 129, 63, 0.08);
+  --color-theme-accent-10: rgba(255, 129, 63, 0.1);
+  --color-focus-ring: #2563eb;
+  --color-focus-browser: #005fcc;
+  --radius-pill: 9999px;
+  --radius-bmc-pill: 40px;
+  --radius-field: 12px;
+  --radius-panel: 12px;
+  --radius-card: 24px;
+  --radius-tile: 16px;
+  --radius-item: 10px;
+  --radius-tab: 8px;
+  --radius-check: 6px;
+  --shadow-menu: 0px 0px 2px 0px rgba(0, 0, 0, 0.15), 0px 8px 40px 0px rgba(0, 0, 0, 0.04), 0px 2px 5px 0px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0px 1px 4px 0px rgba(0, 0, 0, 0.05);
+  --shadow-header: 0px 1px 1px 0px rgba(0, 0, 0, 0.06);
+  --shadow-focus-ring: 0px 0px 0px 2px #ffffff, 0px 0px 0px 4px #2563eb;
+  --measured-tab-transition: 200ms;
+  --measured-field-transition: 75ms;
+  --measured-widget-field-transition: 250ms;
+  --measured-menu-transition: 300ms;
+  --measured-card-transition: 200ms;
+  --measured-tweet-transition: 100ms;
+  --measured-reveal-transition: 800ms;
+  --measured-card-hover-scale: 1.0282;
+  --text-primary: var(--color-neutral-ink);
+  --text-secondary: var(--color-neutral-grey);
+  --text-on-action: var(--color-neutral-ink);
+  --text-on-accent: var(--color-theme-on-accent);
+  --surface-page: var(--color-neutral-cream);
+  --surface-card: var(--color-neutral-paper);
+  --surface-field: var(--color-neutral-field);
+  --action-primary: var(--color-brand-yellow);
+  --action-accent: var(--color-theme-accent);
+  --border-field: var(--color-neutral-divider);
+  --focus-ring: var(--color-focus-ring);
+  --component-control-height: 48px;
+  --component-hero-cta-height: 74px;
+  --component-button-height: 48px;
+  --component-field-height: 48px;
+  --component-qty-height: 48px;
+  --component-tab-height: 31.5px;
+  --component-slide-size: 40px;
+  --component-header-height: 76px;
+  --component-header-height-mobile: 65px;
+  --component-creator-header-height: 64px;
+  --component-widget-width: 500px;
+  --sg-sans: "Circular Book", "Circular Regular", "Circular Medium", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Circular Bold", "Circular Black", "Borel Regular", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #222); background: var(--surface-page, #faf8f0); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #222); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-divider, #e5e5e5); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #222); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #222); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #222); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-divider, #e5e5e5); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #222); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-divider, #e5e5e5); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #222); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-divider, #e5e5e5); overflow: hidden; background: var(--surface-page, #faf8f0); }
+.navbar { display: flex; align-items: center; gap: 22px; height: 64px; padding: 0 12px 0 22px; font-size: 15px; background: #fff; }
+.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 48px); padding: 0 24px; font-size: 16px; font-weight: 400; border-radius: var(--radius-pill, 9999px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-primary, #fd0); color: var(--text-on-action, #222); }
+.btn.accent { background: var(--action-accent, #ff813f); color: var(--text-on-accent, #fff); }
+.btn.small { height: var(--component-button-height, 48px); font-size: 15px; }
+.hero { color: var(--color-neutral-ink, #222); padding: 72px 40px; font: 400 60px/1 var(--sg-serif); letter-spacing: -0.03em; text-align: center; }
+.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #222); margin: 16px auto 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-neutral-divider, #e5e5e5); padding: 14px; font-size: 13px; background: #fff; }
+.tile .img { height: 140px; background: var(--color-neutral-field, #f0f0f0); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 400 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.widget { border-radius: var(--radius-card, 24px); background: #fff; padding: 24px; border: 1px solid var(--color-neutral-divider, #e5e5e5); }
+.widget .qty { display: inline-flex; width: 48px; height: 48px; border-radius: var(--radius-pill, 9999px); border: 1px solid var(--color-theme-accent-25, rgba(255,129,63,.25)); align-items: center; justify-content: center; margin-right: 8px; color: var(--color-theme-accent, #ff813f); }
+.widget .qty.on { background: var(--color-theme-accent, #ff813f); color: var(--text-on-accent, #fff); }
+.widget .field { display: block; width: 100%; height: 48px; border-radius: var(--radius-field, 12px); background: var(--color-neutral-field, #f0f0f0); border: none; margin: 10px 0; padding: 12px 16px; font: inherit; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-divider, #e5e5e5); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-divider, #e5e5e5); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #222); opacity: .65; font-family: var(--sg-mono); }
+.qty-row { display: flex; gap: 8px; align-items: center; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Buy Me a Coffee style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Buy Me a Coffee, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the measured palette (#222 ink on the #faf8f0 cream marketing field and the white creator/login fields, the #f0f0f0 input fills, the #ffdd00 yellow pill paint and its #ffc800 hover), the per-creator <code>color.theme.*</code> accent set (#ff813f and its tints, declared inline as <code>--theme-color*</code>), the Circular ramp from the 96px display to the 15px tab, the 9999px pills, 40px button paint, 12-24px fields and cards, and the #2563eb focus ring the Vite app draws. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from buymeacoffee.com on 2026-11-11, signed out, in headless Chromium. The dashboard behind /login, the Stripe checkout behind Support, and the password step behind Continue-with-email are documented boundaries; the CookieYes banner was hidden, never answered. Circular and Borel are served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A white header carries the wordmark, the FAQ and Wall-of-love links, the Apps and Resources dropdowns, the fake Search-creators pill, Log-in and the yellow Sign-up pill. The same yellow paint draws the hero's Start-my-page pill; the cream field runs under every marketing page and a drop-up footer closes them.</p>
+  <div class="mock" style="padding:20px">
+    <div class="navbar"><span class="wm">Buy me a coffee</span><span>FAQ</span><span>Wall of &#10084;</span><span>Apps</span><span>Resources</span><span class="sp"></span><span>Log in</span><span class="btn small primary">Sign up</span></div>
+    <div class="hero">Fund your creative work<small>Accept support. Start a membership. Setup a shop. It's easier than you think.</small><span class="btn primary">Start my page</span></div>
+  </div>
+
+  <h2 class="sh">The creator page</h2>
+  <p class="lead">A public creator page (/cara.app) paints the product surface signed out: a sticky white bar with tabs, an About box, and the support widget — quantity pills, a custom-amount field, name and message fields on #f0f0f0, the monthly and private checkboxes, and the accent Support pill. Every accent on this page repaints to the creator's <code>--theme-color</code>.</p>
+  <div class="mock" style="padding:20px;background:#fff">
+    <div class="widget" style="max-width:420px">
+      <b style="font:400 20px/1.3 var(--sg-serif)">Buy Cara a coffee</b>
+      <div class="qty-row" style="margin:14px 0"><span class="qty on">1</span><span class="qty">3</span><span class="qty">5</span></div>
+      <span class="field" style="display:flex;align-items:center;color:#999">Name or @yoursocial</span>
+      <span class="field" style="height:80px;color:#999">Say something nice...</span>
+      <div style="margin:14px 0"><span class="btn accent" style="width:100%">Support $5</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The login card</h2>
+  <p class="lead">/login centres a Welcome-back card: grey 12px fields (white + accent/ink border on focus), the yellow Continue-with-email pill, an or-login-with divider and the bordered social buttons.</p>
+  <div class="mock" style="padding:20px;background:#fff;max-width:480px">
+    <b style="font:400 20px/1.3 var(--sg-serif)">Welcome back</b>
+    <span class="field" style="display:flex;align-items:center;margin-top:14px;color:#999">Email</span>
+    <span class="field" style="display:flex;align-items:center;color:#999">Password</span>
+    <div style="margin:12px 0"><span class="btn primary" style="width:100%">Continue with email</span></div>
+    <div style="text-align:center;font-size:13px;opacity:.6">or login with</div>
+    <div style="margin-top:12px"><span class="btn" style="width:100%;background:#fff;border:1px solid var(--color-neutral-divider,#e5e5e5);color:var(--color-neutral-ink,#222)">Continue with Google</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The measured <code>color.neutral.*</code> readings carry the ink, cream, fields and hairlines; <code>color.brand.*</code> the yellow paint; <code>color.theme.*</code> the per-creator accent scale declared inline on the page root; <code>color.focus.*</code> the two focus paints. Light roles alias the palette.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Buttons and quantity pills are 9999px pills; the marketing bmc-btn's paint layer is a 40px pill; fields and dropdowns sit on 12px, cards on 24px, creator tiles on 16px, menu rows on 10px, tabs on 8px and the checkboxes on 6px. Borders are hairlines: #e5e5e5 on light, theme-25% on the accent pills.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Five served faces: <code>Circular Bold</code> on display type and buttons, <code>Circular Regular</code> on body copy, <code>Circular Medium</code> on nav and labels, <code>Circular Book</code> on the app's fields, and <code>Borel Regular</code> as the script display accent. Sizes are the measured steps; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read computed styles and painted layers on the live elements; the inline --theme-color* vars harvested from the DOM</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, focused/filled fields and open menus measured per component</td></tr><tr><td>No provenance</td><td>Every token names the variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"bold":{"v":"\"Circular Bold\"","t":"fontFamily","s":"computed fontFamily of hero-title default (raw/components-computed.json)","d":"Circular Bold — display type, headings, buttons and bold menu rows."},"regular":{"v":"\"Circular Regular\"","t":"fontFamily","s":"computed fontFamily of hero-sub default (raw/components-computed.json)","d":"Circular Regular — body and tagline copy."},"medium":{"v":"\"Circular Medium\"","t":"fontFamily","s":"computed fontFamily of nav-link default (raw/components-computed.json)","d":"Circular Medium — nav links, labels, tabs and field text."},"book":{"v":"\"Circular Book\", sans-serif","t":"fontFamily","s":"computed fontFamily of c-name default (raw/components-computed.json)","d":"Circular Book — the Vite app's field and menu text."},"borel":{"v":"\"Borel Regular\"","t":"fontFamily","s":"computed fontFamily of f-h1 default (raw/components-computed.json)","d":"Borel Regular — the script display accent (FAQ title, Wall-of-love heart)."},"app":{"v":"ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"","t":"fontFamily","s":"computed fontFamily of c-header default — the element's own stack, not its text's (raw/components-computed.json)","d":"The Vite creator/login app's base stack (ui-sans-serif first); widgets that set no face fall through to it."},"black":{"v":"\"Circular Black\"","t":"fontFamily","s":"declared @font-face in the harvested buymeacoffee.com sheets (raw/css-vars.json fonts); not painted on a captured component","d":"Circular Black — declared face; heaviest weight of the marketing family."}},"size":{"display":{"v":"96px","t":"dimension","s":"computed fontSize of hero-title default (raw/components-computed.json)","d":"The 96px marketing display (Fund your creative work)."},"h2":{"v":"64px","t":"dimension","s":"computed fontSize of section-h2 default (raw/components-computed.json)","d":"The 64px section headings."},"faq-title":{"v":"48px","t":"dimension","s":"computed fontSize of f-h1 default (raw/components-computed.json)","d":"The 48px Borel page title (FAQ, Wall of love)."},"display-mobile":{"v":"48px","t":"dimension","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The display size at 390px."},"lede":{"v":"24px","t":"dimension","s":"computed fontSize of section-lede default (raw/components-computed.json)","d":"The 24px section lede / widget title."},"tagline":{"v":"22px","t":"dimension","s":"computed fontSize of hero-sub default (raw/components-computed.json)","d":"The 22px hero tagline."},"question":{"v":"20px","t":"dimension","s":"computed fontSize of f-q default (raw/components-computed.json)","d":"The 20px FAQ question / mobile menu item."},"body":{"v":"18px","t":"dimension","s":"computed fontSize of f-a default (raw/components-computed.json)","d":"The 18px FAQ answer body."},"button":{"v":"17px","t":"dimension","s":"computed fontSize of l-cta default (raw/components-computed.json)","d":"The 17px Vite-app button / field size."},"base":{"v":"16px","t":"dimension","s":"computed fontSize of header default (raw/components-computed.json)","d":"The 16px base size (nav, body, menu rows)."},"tab":{"v":"15px","t":"dimension","s":"computed fontSize of c-tab default (raw/components-computed.json)","d":"The 15px profile-tab size."}},"lineHeight":{"display":{"v":"95px","t":"dimension","s":"computed lineHeight of hero-title default (raw/components-computed.json)","d":"Tight display leading (~0.99x)."},"h2":{"v":"80px","t":"dimension","s":"computed lineHeight of section-h2 default (raw/components-computed.json)","d":"Section-heading leading (1.25x)."},"lede":{"v":"32px","t":"dimension","s":"computed lineHeight of section-lede default (raw/components-computed.json)","d":"Lede leading."},"tagline":{"v":"33px","t":"dimension","s":"computed lineHeight of hero-sub default (raw/components-computed.json)","d":"Tagline leading (1.5x)."}},"letterSpacing":{"display":{"v":"-2.4px","t":"dimension","s":"computed letterSpacing of hero-title default (raw/components-computed.json)","d":"The -2.4px display tracking."},"h2":{"v":"-2px","t":"dimension","s":"computed letterSpacing of section-h2 default (raw/components-computed.json)","d":"The -2px heading tracking."},"eyebrow":{"v":"2px","t":"dimension","s":"computed letterSpacing of section-eyebrow default (raw/components-computed.json)","d":"The +2px eyebrow tracking (uppercase)."}}},"color":{"neutral":{"ink":{"v":"#222222","t":"color","s":"computed color of hero-title default (raw/components-computed.json)","d":"The #222 ink on headings, body text and button labels."},"ink-v2":{"v":"#151515","t":"color","s":"computed color of c-name default (raw/components-computed.json)","d":"The #151515 ink the Vite app paints in its fields."},"grey":{"v":"#717171","t":"color","s":"computed color of section-eyebrow default (raw/components-computed.json)","d":"The #717171 grey on section eyebrows and secondary copy."},"cream":{"v":"#faf8f0","t":"color","s":"computed backgroundColor of page-field default (raw/components-computed.json)","d":"The #faf8f0 cream field the marketing pages paint on."},"field":{"v":"#f0f0f0","t":"color","s":"computed backgroundColor of l-email default (raw/components-computed.json)","d":"The #f0f0f0 input fill on the login card and support widget."},"divider":{"v":"#e5e5e5","t":"color","s":"computed borderTopColor of l-social default (raw/components-computed.json)","d":"The #e5e5e5 hairline on the social buttons and divider."},"hover-fill":{"v":"rgba(0, 0, 0, 0.05)","t":"color","s":"painted layer under nav-link hover (raw/components-computed.json)","d":"The 5%-black pill a marketing nav link paints on hover (::before)."},"search-fill":{"v":"rgba(0, 0, 0, 0.03)","t":"color","s":"painted layer under nav-search default (raw/components-computed.json)","d":"The 3%-black field the Search-creators pill paints."},"paper":{"v":"#ffffff","t":"color","s":"computed backgroundColor of c-widget / c-header / r-tweet on /cara.app (raw/components-computed.json)","d":"The white creator-page field, cards and dropdowns."}},"brand":{"yellow":{"v":"#ffdd00","t":"color","s":"painted layer under nav-cta default (raw/components-computed.json)","d":"The #ffdd00 yellow pill paint (::before) on every marketing bmc-btn and the login CTA."},"yellow-hover":{"v":"#ffc800","t":"color","s":"painted layer under l-cta hover (raw/components-computed.json)","d":"The #ffc800 the yellow paint deepens to on hover."}},"theme":{"accent":{"v":"#ff813f","t":"color","s":"inline --theme-color declared on div.min-h-screen.bg-white.relative at /cara.app (raw/css-vars.json inline)","d":"The per-creator accent (#ff813f on /cara.app) on the Support button, quantity pills, active tab and field focus."},"accent-hover":{"v":"#ff6b1c","t":"color","s":"inline --theme-color-hover-color declared on div.min-h-screen.bg-white.relative at /cara.app (raw/css-vars.json inline)","d":"The accent's hover step (#ff6b1c on /cara.app)."},"accent-25":{"v":"rgba(255, 129, 63, 0.25)","t":"color","s":"inline --theme-color-25 declared on div.min-h-screen.bg-white.relative at /cara.app (raw/css-vars.json inline); cross-checked against borderTopColor of c-qty-off default","d":"The 25%-accent tint on unchecked pill borders."},"on-accent":{"v":"#ffffff","t":"color","s":"inline --theme-text-color declared on div.min-h-screen.bg-white.relative at /cara.app (raw/css-vars.json inline); cross-checked against color of c-qty-on default","d":"The text colour generated against the accent (white here)."},"accent-05":{"v":"rgba(255, 129, 63, 0.05)","t":"color","s":"inline --theme-color-05 declared on div.min-h-screen.bg-white.relative at /cara.app (raw/css-vars.json inline)","d":"The 5%-accent tint (hover fills)."},"accent-08":{"v":"rgba(255, 129, 63, 0.08)","t":"color","s":"inline --theme-color-08 declared on div.min-h-screen.bg-white.relative at /cara.app (raw/css-vars.json inline)","d":"The 8%-accent tint (hover fills)."},"accent-10":{"v":"rgba(255, 129, 63, 0.1)","t":"color","s":"inline --theme-color-1 declared on div.min-h-screen.bg-white.relative at /cara.app (raw/css-vars.json inline)","d":"The 10%-accent tint (selected fills)."}},"focus":{"ring":{"v":"#2563eb","t":"color","s":"painted boxShadow under c-qty-on focus-visible (raw/components-computed.json)","d":"The Tailwind blue-600 focus ring the Vite app draws (4px ring over a 2px white offset)."},"browser":{"v":"#005fcc","t":"color","s":"painted outline under nav-link focus-visible (raw/components-computed.json)","d":"Chromium's 1px auto outline the marketing links keep (no custom ring declared)."}}},"radius":{"pill":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of c-qty-on default (raw/components-computed.json)","d":"The 9999px pill on quantity buttons, the Support/Join buttons and the Vite CTA."},"bmc-pill":{"v":"40px","t":"dimension","s":"painted layer radius under nav-cta default (raw/components-computed.json)","d":"The 40px pill the marketing bmc-btn paints as its ::before layer."},"field":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of l-email default (raw/components-computed.json)","d":"The 12px field radius (inputs, textarea, custom-amount box)."},"panel":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of nav-dropdown default (raw/components-computed.json)","d":"The 12px dropdown/panel radius."},"card":{"v":"24px","t":"dimension","s":"computed borderTopLeftRadius of r-tweet default (raw/components-computed.json)","d":"The 24px card radius (tweet cards, the support widget)."},"tile":{"v":"16px","t":"dimension","s":"computed borderTopLeftRadius of creator-card default (raw/components-computed.json)","d":"The 16px hero creator-tile radius."},"item":{"v":"10px","t":"dimension","s":"computed borderTopLeftRadius of menu-link default (raw/components-computed.json)","d":"The 10px menu-row radius."},"tab":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of c-tab default (raw/components-computed.json)","d":"The 8px tab/search field radius."},"check":{"v":"6px","t":"dimension","s":"painted layer radius under c-monthly default (raw/components-computed.json)","d":"The 6px checkbox radius."}},"shadow":{"menu":{"v":[{"color":"rgba(0, 0, 0, 0.15)","offsetX":"0px","offsetY":"0px","blur":"2px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.04)","offsetX":"0px","offsetY":"8px","blur":"40px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.05)","offsetX":"0px","offsetY":"2px","blur":"5px","spread":"0px"}],"t":"shadow","s":"computed boxShadow of nav-dropdown default (raw/components-computed.json)","d":"The three-layer dropdown shadow (2px hairline + 40px bloom + 5px contact)."},"card":{"v":[{"color":"rgba(0, 0, 0, 0.05)","offsetX":"0px","offsetY":"1px","blur":"4px","spread":"0px"}],"t":"shadow","s":"computed boxShadow of r-tweet default (raw/components-computed.json)","d":"The 4px card shadow on tweet cards."},"header":{"v":[{"color":"rgba(0, 0, 0, 0.06)","offsetX":"0px","offsetY":"1px","blur":"1px","spread":"0px"}],"t":"shadow","s":"computed boxShadow of c-header default (raw/components-computed.json)","d":"The 1px line the sticky creator header casts."},"focus-ring":{"v":[{"color":"#ffffff","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"2px"},{"color":"#2563eb","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"4px"}],"t":"shadow","s":"painted boxShadow under c-qty-on focus-visible (raw/components-computed.json)","d":"The focus treatment every Vite-app control draws: a 2px white offset under a 4px #2563eb ring."}},"measured":{"tab-transition":{"v":"200ms","t":"duration","s":"computed transition of c-tab default (raw/components-computed.json)","d":"The 0.2s transition on the profile tabs. (all)"},"field-transition":{"v":"75ms","t":"duration","s":"computed transition of l-email default (raw/components-computed.json)","d":"The 0.075s fill/border change on the login fields. (color, background-color, border-color, text-decoration-color)"},"widget-field-transition":{"v":"250ms","t":"duration","s":"computed transition of c-name default (raw/components-computed.json)","d":"The 0.25s transition on the widget fields. (all)"},"menu-transition":{"v":"300ms","t":"duration","s":"computed transition of m-menu-open default (raw/components-computed.json)","d":"The 0.3s slide of the mobile menu panel. (all)"},"card-transition":{"v":"200ms","t":"duration","s":"computed transition of creator-card default (raw/components-computed.json)","d":"The 0.2s float on the hero creator tiles. (all)"},"tweet-transition":{"v":"100ms","t":"duration","s":"computed transition of r-tweet default (raw/components-computed.json)","d":"The 0.1s lift on the tweet cards. (all)"},"reveal-transition":{"v":"800ms","t":"duration","s":"computed transition of section-h2 default (raw/components-computed.json)","d":"The 0.8s scroll-reveal on marketing sections. (all)"},"card-hover-scale":{"v":1.0282,"t":"number","s":"hover rect / default rect of r-tweet (raw/components-computed.json)","d":"The ~1.03 scale a tweet card takes on hover."}}},"light":{"text":{"primary":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the core palette","d":"Body, heading and button-label ink."},"secondary":{"v":"{color.neutral.grey}","t":"color","s":"role alias over the core palette","d":"Eyebrow and secondary copy."},"on":{"action":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the core palette","d":"Text on the yellow pills."},"accent":{"v":"{color.theme.on-accent}","t":"color","s":"role alias over the core palette","d":"Text on the accent paint."}}},"surface":{"page":{"v":"{color.neutral.cream}","t":"color","s":"role alias over the core palette","d":"The marketing page field."},"card":{"v":"{color.neutral.paper}","t":"color","s":"role alias over the core palette","d":"Cards, the creator field, dropdowns and panels."},"field":{"v":"{color.neutral.field}","t":"color","s":"role alias over the core palette","d":"Input fills."}},"action":{"primary":{"v":"{color.brand.yellow}","t":"color","s":"role alias over the core palette","d":"The yellow pill paint on marketing and login CTAs."},"accent":{"v":"{color.theme.accent}","t":"color","s":"role alias over the core palette","d":"The per-creator accent on the creator page."}},"border":{"field":{"v":"{color.neutral.divider}","t":"color","s":"role alias over the core palette","d":"Hairlines on social buttons and dividers."}},"focus":{"ring":{"v":"{color.focus.ring}","t":"color","s":"role alias over the core palette","d":"The #2563eb ring the Vite app draws on focus."}},"component":{"control":{"height":{"v":"48px","t":"dimension","s":"computed height of nav-cta default (raw/components-computed.json)","d":"The marketing button/pill height."}},"hero-cta":{"height":{"v":"74px","t":"dimension","s":"computed height of hero-cta default (raw/components-computed.json)","d":"The hero Start-my-page pill height."}},"button":{"height":{"v":"48px","t":"dimension","s":"computed height of l-cta default (raw/components-computed.json)","d":"The Vite-app primary button height."}},"field":{"height":{"v":"48px","t":"dimension","s":"computed height of l-email default (raw/components-computed.json)","d":"The login/widget field height."}},"qty":{"height":{"v":"48px","t":"dimension","s":"computed height of c-qty-on default (raw/components-computed.json)","d":"The quantity pill's square size."}},"tab":{"height":{"v":"31.5px","t":"dimension","s":"computed height of c-tab default (raw/components-computed.json)","d":"A profile tab's height."}},"slide":{"size":{"v":"40px","t":"dimension","s":"computed height of r-slide default (raw/components-computed.json)","d":"The square carousel button size."}},"header":{"height":{"v":"76px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The marketing header height."},"height-mobile":{"v":"65px","t":"dimension","s":"computed height of m-header default (raw/components-computed.json)","d":"The marketing header at 390px."}},"creator-header":{"height":{"v":"64px","t":"dimension","s":"computed height of c-header default (raw/components-computed.json)","d":"The sticky creator-page header height."}},"widget":{"width":{"v":"500px","t":"dimension","s":"computed width of c-widget default (raw/components-computed.json)","d":"The support widget's width on the creator page."}}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${label}</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).letterSpacing || {}, 'font.letterSpacing.')) h += `<div class="tr"><span class="ts" style="letter-spacing:${esc(t.v)}">${esc(n)} — Letter spacing</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

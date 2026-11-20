@@ -1,0 +1,350 @@
+{
+  "method": "Attached T3 preview browser, getComputedStyle on the live page. preview_snapshot failed twice with: The browser is not producing screenshot frames. No screenshot was invented.",
+  "captured": "2026-11-19",
+  "product": "Parallel",
+  "domain": "parallel.ai",
+  "notEntered": [
+    "Did not submit the email form, click Continue with Google, or open Continue with SSO.",
+    "Did not open checkout, upgrade, add a card, or request an API key.",
+    "Did not visit useparallel.com."
+  ],
+  "screenshotGap": "preview_snapshot on tab_2f_b476fa69-d865-4d9c-9974-6281ced1c8e8 returned Preview automation snapshot failed: The browser is not producing screenshot frames. Measurements already read were kept.",
+  "pages": {
+    "home": {
+      "url": "https://parallel.ai/",
+      "title": "Parallel - Web Infrastructure for AI Agents",
+      "viewportDesktop": {
+        "innerWidth": 1169,
+        "innerHeight": 731,
+        "devicePixelRatio": 2,
+        "visualViewport": {
+          "width": 1169,
+          "height": 731,
+          "scale": 1
+        }
+      },
+      "viewportPhone": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "devicePixelRatio": 2,
+        "visualViewport": {
+          "width": 390,
+          "height": 844,
+          "scale": 1
+        }
+      },
+      "htmlBackground": "rgb(255, 255, 255)",
+      "header": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(24, 24, 24)",
+        "heightDesktop": 74,
+        "paddingDesktop": "0px 48px",
+        "heightPhone": 66,
+        "paddingPhone": "0px 16px"
+      },
+      "h1Desktop": {
+        "text": "Where agents find answers",
+        "color": "rgb(24, 24, 24)",
+        "fontFamily": "gerstnerProgramm, \"gerstnerProgramm Fallback\", sans-serif",
+        "fontSize": "36px",
+        "fontWeight": "500",
+        "lineHeight": "39.96px"
+      },
+      "h1Phone": {
+        "fontSize": "28px",
+        "lineHeight": "31.976px"
+      },
+      "ledeDesktop": {
+        "text": "Web infrastructure for AI to search, extract, monitor, and reason over the world's information",
+        "color": "rgb(133, 132, 131)",
+        "fontSize": "26px",
+        "fontWeight": "500",
+        "lineHeight": "31.98px"
+      },
+      "ledePhone": {
+        "fontSize": "20px",
+        "lineHeight": "28px",
+        "color": "rgb(133, 132, 131)"
+      },
+      "h2": {
+        "text": "Put the web to work across every industry",
+        "fontSize": "32px",
+        "fontWeight": "500",
+        "lineHeight": "36px",
+        "color": "rgb(24, 24, 24)"
+      },
+      "navLink": {
+        "color": "rgb(133, 132, 131)",
+        "fontFamily": "ftSystemMono",
+        "fontSize": "13px",
+        "fontWeight": "400",
+        "letterSpacing": "0.16px"
+      },
+      "loginButton": {
+        "text": "LOG IN",
+        "backgroundColor": "rgb(251, 99, 27)",
+        "color": "rgb(255, 255, 255)",
+        "fontFamily": "ftSystemMono, \"ftSystemMono Fallback\", monospace",
+        "fontSize": "13px",
+        "fontWeight": "400",
+        "lineHeight": "15.99px",
+        "letterSpacing": "0.16px",
+        "textTransform": "uppercase",
+        "borderRadius": "4px",
+        "padding": "9px 16px 7px",
+        "height": 34,
+        "border": "1px solid rgba(0, 0, 0, 0)",
+        "transition": "color 0.15s cubic-bezier(0, 0, 0.2, 1), background-color 0.15s cubic-bezier(0, 0, 0.2, 1), border-color 0.15s cubic-bezier(0, 0, 0.2, 1), scale 0.15s cubic-bezier(0, 0, 0.2, 1)",
+        "hoverClass": "hover:bg-brand-hover hover:opacity-80",
+        "activeClass": "motion-safe:active:scale-[0.98]"
+      },
+      "contactButton": {
+        "text": "CONTACT",
+        "backgroundColor": "rgb(67, 67, 67)",
+        "color": "rgb(255, 255, 255)",
+        "height": 34,
+        "borderRadius": "4px",
+        "fontSize": "13px",
+        "padding": "9px 16px 7px",
+        "transition": "color 0.4s cubic-bezier(0, 0, 0.2, 1), background-color 0.4s cubic-bezier(0, 0, 0.2, 1), border-color 0.4s cubic-bezier(0, 0, 0.2, 1), scale 0.4s cubic-bezier(0, 0, 0.2, 1)"
+      },
+      "ghostButton": {
+        "text": "CONTACT US",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(24, 24, 24)",
+        "borderColor": "rgb(214, 214, 214)",
+        "borderRadius": "4px",
+        "height": 34,
+        "fontSize": "13px"
+      },
+      "link": {
+        "text": "Learn more.",
+        "color": "rgb(13, 110, 165)",
+        "fontSize": "13px",
+        "fontFamily": "gerstnerProgramm",
+        "focusOutline": "rgb(13, 110, 165) auto 1px",
+        "focusOutlineOffset": "1px"
+      },
+      "banner": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "height": 44
+      },
+      "phoneMenu": {
+        "text": "MENU",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(24, 24, 24)",
+        "border": "visible as a 34px mono button",
+        "height": 34,
+        "fontSize": "13px",
+        "fontFamily": "ftSystemMono"
+      }
+    },
+    "pricing": {
+      "url": "https://parallel.ai/pricing",
+      "title": "Parallel Pricing \u2013 Pay-As-You-Go Web Search for AI Agents | Parallel",
+      "h1": {
+        "text": "Pricing",
+        "fontSize": "36px",
+        "fontWeight": "500",
+        "lineHeight": "39.96px",
+        "color": "rgb(24, 24, 24)",
+        "fontFamily": "gerstnerProgramm"
+      },
+      "planTitle": {
+        "fontSize": "26px",
+        "fontWeight": "500",
+        "lineHeight": "31.98px",
+        "color": "rgb(24, 24, 24)"
+      },
+      "price": {
+        "color": "rgb(133, 132, 131)",
+        "fontSize": "26px",
+        "fontWeight": "400",
+        "fontFamily": "gerstnerProgramm"
+      },
+      "popularBadge": {
+        "text": "POPULAR",
+        "backgroundColor": "rgb(251, 99, 27)",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "11px",
+        "height": 18,
+        "padding": "0px 7px 1px",
+        "borderRadius": "2px",
+        "fontFamily": "ftSystemMono",
+        "textTransform": "uppercase"
+      },
+      "growthBadge": {
+        "text": "FOR GROWTH",
+        "backgroundColor": "rgb(24, 24, 24)",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "11px",
+        "height": 18,
+        "borderRadius": "2px"
+      },
+      "primaryPlanButton": {
+        "text": "START BUILDING",
+        "backgroundColor": "rgb(251, 99, 27)",
+        "color": "rgb(255, 255, 255)",
+        "height": 34,
+        "borderRadius": "4px",
+        "fontSize": "13px"
+      },
+      "ghostPlanButton": {
+        "text": "START FOR FREE",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(24, 24, 24)",
+        "border": "1px solid rgb(214, 214, 214)",
+        "height": 34,
+        "borderRadius": "4px"
+      }
+    },
+    "login": {
+      "url": "https://platform.parallel.ai/login?redirectTo=%2F",
+      "title": "Get started - Parallel",
+      "htmlClass": "dark",
+      "htmlBackground": "rgb(24, 24, 27)",
+      "pageBackground": "rgb(18, 18, 18)",
+      "bodyColor": "rgb(255, 255, 255)",
+      "bodyFont": "sansSerifFont, \"sansSerifFont Fallback\"",
+      "h1": {
+        "text": "Get started with Parallel",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "28px",
+        "fontWeight": "500",
+        "lineHeight": "34px",
+        "fontFamily": "sansSerifFont, \"sansSerifFont Fallback\""
+      },
+      "googleButton": {
+        "text": "Continue with Google",
+        "backgroundColor": "rgb(18, 18, 18)",
+        "color": "rgb(255, 255, 255)",
+        "border": "1px solid rgb(64, 64, 64)",
+        "borderRadius": "6px",
+        "height": 40,
+        "width": 360,
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "padding": "0px 16px"
+      },
+      "ssoButton": {
+        "text": "Continue with SSO",
+        "backgroundColor": "rgb(18, 18, 18)",
+        "color": "rgb(255, 255, 255)",
+        "border": "1px solid rgb(64, 64, 64)",
+        "borderRadius": "6px",
+        "height": 40,
+        "width": 360,
+        "fontSize": "14px",
+        "fontWeight": "500"
+      },
+      "emailInput": {
+        "placeholder": "you@company.com",
+        "backgroundColor": "rgb(18, 18, 18)",
+        "color": "rgb(255, 255, 255)",
+        "border": "1px solid rgb(64, 64, 64)",
+        "borderRadius": "6px",
+        "height": 40,
+        "width": 360,
+        "fontSize": "14px",
+        "padding": "0px 12px",
+        "placeholderColor": "rgb(163, 163, 163)"
+      },
+      "submit": {
+        "text": "Continue with email",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(18, 18, 18)",
+        "borderRadius": "6px",
+        "height": 40,
+        "width": 360,
+        "fontSize": "14px",
+        "fontWeight": "500"
+      },
+      "label": {
+        "text": "Email",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "13px",
+        "fontWeight": "500",
+        "lineHeight": "18px"
+      },
+      "muted": {
+        "text": "or",
+        "color": "rgb(163, 163, 163)",
+        "fontSize": "12px"
+      },
+      "navLink": {
+        "color": "rgb(163, 163, 163)",
+        "fontSize": "13px",
+        "fontFamily": "monoFont, \"monoFont Fallback\", ui-mono"
+      },
+      "formWidth": 360,
+      "note": "Email field is present. Google and SSO are also present. The email form was not submitted."
+    },
+    "docs": {
+      "url": "https://docs.parallel.ai/getting-started/overview",
+      "title": "Parallel API Overview - Parallel",
+      "htmlBackground": "rgb(255, 255, 255)",
+      "bodyFont": "Gerstner Programm, -apple-system, system-ui, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, sans-serif",
+      "bodySize": "16px",
+      "h1": {
+        "text": "Parallel API Overview",
+        "color": "rgb(30, 25, 23)",
+        "fontFamily": "Inter, -apple-system, system-ui, Segoe UI, system-ui, sans-serif",
+        "fontSize": "36px",
+        "fontWeight": "500",
+        "lineHeight": "40px",
+        "renderedHeight": 0
+      },
+      "activeNav": {
+        "text": "Overview",
+        "color": "rgb(251, 99, 27)",
+        "backgroundColor": "oklab(0.686646 0.15075 0.131784 / 0.1)",
+        "fontSize": "14px",
+        "borderRadius": "6px",
+        "height": 36
+      },
+      "search": {
+        "text": "Search...",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(119, 115, 112)",
+        "fontSize": "14px",
+        "borderRadius": "6px",
+        "height": 36,
+        "fontFamily": "Gerstner Programm"
+      },
+      "sidebarColor": "rgb(119, 115, 112)",
+      "colorPrimary": "rgb(251 99 27)",
+      "defaultBorder": "245 241 238"
+    }
+  },
+  "declaredHome": {
+    "--color-brand": "#fb631b",
+    "--color-brand-hover": "#f4793f",
+    "--color-black": "#181818",
+    "--color-grey-600": "#858483",
+    "--color-grey-800": "#434343",
+    "--color-grey-400": "#d6d6d6",
+    "--color-white": "#fff",
+    "--color-error-100": "#e14942",
+    "--color-success-100": "#69be78",
+    "--font-sans": "gerstnerProgramm, gerstnerProgramm Fallback, sans-serif",
+    "--font-mono": "ftSystemMono, ftSystemMono Fallback, monospace",
+    "--radius-sm": ".25rem",
+    "--radius-md": ".5rem",
+    "--space-8": ".5rem",
+    "--space-16": "1rem",
+    "--space-24": "1.5rem",
+    "--space-32": "2rem",
+    "--space-48": "3rem",
+    "--space-80": "5rem",
+    "--default-transition-duration": ".15s",
+    "--default-transition-timing-function": "cubic-bezier(.4, 0, .2, 1)",
+    "--max-container-width": "1504px"
+  },
+  "stylesheetOnlyHome": {
+    "note": "Declared in a stylesheet rule, not confirmed as the winning computed value on a painted element.",
+    "--brand": "#ff590a",
+    "--c-blue": "#228dda",
+    "--ease-editorial": "cubic-bezier(.16, 1, .3, 1)",
+    "--shadow-card": "0 1px 2px #1818180a, 0 8px 24px #18181814"
+  }
+}

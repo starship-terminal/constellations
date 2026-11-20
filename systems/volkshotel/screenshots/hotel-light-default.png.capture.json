@@ -1,0 +1,21 @@
+{
+  "capturedAt": "2026-11-18T20:27:16.900Z",
+  "sourceUrl": "https://www.volkshotel.nl/en/hotel/",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1
+  },
+  "measured": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 1,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    }
+  },
+  "title": "Hotel | Volkshotel Amsterdam",
+  "note": "Headless Playwright. preview_snapshot returned no frames. Public page, no Cloudflare challenge."
+}

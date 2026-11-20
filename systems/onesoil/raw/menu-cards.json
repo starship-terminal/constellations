@@ -1,0 +1,113 @@
+{
+  "home": {
+    "h1color": "rgb(21, 21, 21)",
+    "spans": [
+      {
+        "text": "made easy!",
+        "color": "rgb(30, 152, 82)",
+        "weight": "400",
+        "style": "normal"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "text": "OneSoil Platform",
+      "bg": "oklab(0.195735 -2.23517e-8 0 / 0.05)",
+      "color": "rgb(21, 21, 21)",
+      "radius": "16px",
+      "pad": "24px",
+      "h": 120,
+      "w": 200,
+      "shadow": "none",
+      "fontSize": "16px",
+      "weight": "400"
+    },
+    {
+      "text": "OneSoil Global Analytics",
+      "bg": "oklab(0.195735 -2.23517e-8 0 / 0.05)",
+      "color": "rgb(21, 21, 21)",
+      "radius": "16px",
+      "pad": "24px",
+      "h": 120,
+      "w": 200,
+      "shadow": "none",
+      "fontSize": "16px",
+      "weight": "400"
+    },
+    {
+      "text": "AI Agronomist",
+      "bg": "oklab(0.195735 -2.23517e-8 0 / 0.05)",
+      "color": "rgb(21, 21, 21)",
+      "radius": "16px",
+      "pad": "24px",
+      "h": 120,
+      "w": 200,
+      "shadow": "none",
+      "fontSize": "16px",
+      "weight": "400"
+    },
+    {
+      "text": "Field Force Assistant",
+      "bg": "oklab(0.195735 -2.23517e-8 0 / 0.05)",
+      "color": "rgb(21, 21, 21)",
+      "radius": "16px",
+      "pad": "24px",
+      "h": 120,
+      "w": 200,
+      "shadow": "none",
+      "fontSize": "16px",
+      "weight": "400"
+    },
+    {
+      "text": "Global Analytics",
+      "bg": "rgb(21, 21, 21)",
+      "color": "rgb(23, 23, 23)",
+      "radius": "24px",
+      "pad": "0px 24px 32px",
+      "h": 135,
+      "w": 400,
+      "shadow": "none",
+      "fontSize": "16px",
+      "weight": "400"
+    }
+  ],
+  "shell": [
+    {
+      "cls": "hidden xl:block",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "0px",
+      "shadow": "none",
+      "h": 287,
+      "w": 1392,
+      "pad": "0px"
+    },
+    {
+      "cls": "fixed inset-0 z-30 bg-black/20",
+      "bg": "oklab(0 0 0 / 0.2)",
+      "radius": "0px",
+      "shadow": "none",
+      "h": 900,
+      "w": 1440,
+      "pad": "0px"
+    },
+    {
+      "cls": "relative z-40",
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "0px",
+      "shadow": "none",
+      "h": 287,
+      "w": 1416,
+      "pad": "12.1051px 0px 0.21013px"
+    },
+    {
+      "cls": "w-full overflow-hidden rounded-[40px] bg-white shadow-lg",
+      "bg": "rgb(255, 255, 255)",
+      "radius": "40px",
+      "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px",
+      "h": 274,
+      "w": 1416,
+      "pad": "0px"
+    }
+  ]
+}

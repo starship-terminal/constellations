@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hume AI style guide</title>
+<meta name="description" content="hume.ai design tokens and the signed-out surfaces' components — the www marketing/product site, the dev.hume.ai docs, the demo gate and the app log-in — rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: var(--font-family-sans, "Inter", ui-sans-serif, system-ui, sans-serif);
+  --sg-serif: var(--font-family-serif, Georgia, serif);
+  --sg-mono: var(--font-family-mono, ui-monospace, "SF Mono", Menlo, monospace);
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.6 var(--sg-sans); color: var(--ink-default, #1b1918); background: var(--bg-default, #fdfdfc); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.03em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--docs-color-borderDefault, #e7e5e4); }
+.lead { max-width: 62ch; opacity: .8; }
+.note { font-size: 13px; opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; color: var(--docs-accent-9, #6e50aa); }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { padding: 10px; border-radius: 10px; background: var(--docs-color-background, #1c1917); color: var(--docs-color-body, #fff); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(0,0,0,.12); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); color: inherit; }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); opacity: .65; color: inherit; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--docs-color-borderDefault, #e7e5e4); overflow: hidden; background: var(--bg-default, #fdfdfc); color: var(--ink-default, #1b1918); border-radius: var(--component-loginCard-radius, 12px); }
+.mock .topbar { display: flex; align-items: center; gap: 14px; height: var(--component-nav-height, 56px); padding: 0 16px 0 20px; font-size: 14px; border-bottom: 1px solid var(--docs-color-borderDefault, #e7e5e4); background: var(--component-nav-bg, transparent); }
+.topbar .wm { font-weight: 600; font-size: 15px; letter-spacing: -0.02em; }
+.topbar .nav { opacity: .75; display: flex; gap: 14px; font-size: 13px; }
+.topbar .sp { flex: 1; }
+.topbar .theme { width: 28px; height: 28px; border-radius: var(--component-docsSearch-radius, 6px); border: 1px solid var(--docs-color-borderDefault, #e7e5e4); display: inline-flex; align-items: center; justify-content: center; color: inherit; background: transparent; font: inherit; cursor: pointer; padding: 0; }
+.topbar .theme:hover { background: rgba(0,0,0,.04); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-cta-height, 36px); padding: 0 16px; font-size: 13.5px; font-weight: 500; border-radius: var(--component-button-cta-radius, 999px); border: 1px solid transparent; }
+.btn.primary { background: var(--component-button-cta-bg, #1b1918); color: var(--ink-default, #1b1918); }
+.btn.ghost { background: transparent; border-color: var(--docs-color-borderDefault, #e7e5e4); color: inherit; }
+.wash { display: flex; gap: 8px; flex-wrap: wrap; padding: 18px 20px; }
+.wash .chip { height: 34px; padding: 0 14px; display: inline-flex; align-items: center; border-radius: 999px; font-size: 12.5px; color: #1b1918; }
+.hero { padding: 26px 34px 30px; min-width: 0; }
+.hero h3 { font: 300 var(--title-lg, 38px)/1.15 var(--sg-serif); letter-spacing: -0.03em; margin: 0 0 10px; }
+.hero p { font-size: 14.5px; line-height: 1.7; margin: 0 0 14px; max-width: 62ch; }
+.hero .ic { font-family: var(--sg-mono); font-size: .88em; }
+/* the docs mock: every fill is a --docs-* var, so data-mode="dark" repaints
+   the real html.dark values the header Theme menu paints. */
+.dmock { background: var(--docs-color-background, #fff); color: var(--docs-color-body, #44403c); border-color: var(--docs-color-borderDefault, #e7e5e4); }
+.dmock .topbar { background: var(--docs-header-background, #fff); border-color: var(--docs-color-borderDefault, #e7e5e4); }
+.dmock .shell { display: flex; }
+.dmock .sb { width: var(--component-docsSidebar-width, 240px); flex: 0 0 auto; border-right: 1px solid var(--docs-color-borderDefault, #e7e5e4); padding: 18px 14px; font-size: 13px; background: var(--docs-sidebar-background, transparent); }
+.dmock .sb .grp { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; opacity: .55; margin: 14px 6px 6px; }
+.dmock .sb .ln { display: block; padding: 5px 10px; border-radius: 6px; opacity: .8; }
+.dmock .sb .ln.on { opacity: 1; font-weight: 500; background: rgba(127,127,127,.12); }
+.dmock .art { flex: 1; padding: 28px 34px 40px; min-width: 0; }
+.dmock .art h3 { font: 500 26px/1.25 var(--sg-sans); margin: 0 0 10px; }
+.dmock .art p { font-size: 14.5px; line-height: 1.7; margin: 0 0 14px; max-width: 62ch; }
+.dmock .search { display: inline-flex; align-items: center; gap: 8px; height: 30px; padding: 0 10px; border: 1px solid var(--docs-color-borderDefault, #e7e5e4); border-radius: var(--component-docsSearch-radius, 6px); font-size: 12.5px; opacity: .8; }
+.dmock .codeblk { background: var(--component-docsCode-bg, var(--docs-code-background, #f5f4f3)); color: inherit; border-radius: var(--component-docsCodeBlock-radius, 8px); font: 400 12.5px/1.7 var(--sg-mono); padding: 14px 16px; margin: 16px 0; }
+.dmock .codeblk .kw { color: var(--docs-primitive-choice, #6fd3b5); }
+.dmock .codeblk .fn { color: var(--docs-primitive-noul, #7a93e0); }
+.dmock .codeblk .str { color: var(--docs-primitive-span, #a08ae0); }
+.dmock .codeblk .cm { color: var(--docs-primitive-score, #e6b89a); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--docs-color-borderDefault, #e7e5e4); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--docs-color-borderDefault, #e7e5e4); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; opacity: .65; font-family: var(--sg-mono); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.tile { border: 1px solid var(--docs-color-borderDefault, #e7e5e4); border-radius: var(--component-postCard-radius, 8px); padding: 16px; font-size: 13px; background: var(--bg-default, #fdfdfc); color: var(--ink-default, #1b1918); }
+.tile b { display: block; font: 600 15px/1.4 var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Hume AI style guide</h1>
+  <p class="note">hume.ai — the www marketing/product site, the dev.hume.ai docs, the demo.hume.ai invitation gate and the app.hume.ai log-in. Signed-out public evidence only.</p>
+
+  <h2 class="sh">hume.ai, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the www.hume.ai product layer (<code>--background</code> <code>--foreground</code>, the eleven-pastel <code>--accent-*</code> ramp, the five <code>--gradient-*</code> stops, the <code>--title-*</code> display sizes, the four brand families and the <code>--color-spectrum-*</code> hues), the dev.hume.ai docs layer under <code>light.docs.*</code>/<code>dark.docs.*</code> (the <code>--gray-1..12</code> ramp, <code>--code-background</code>, <code>--hume-gradient</code>, the <code>--primitive-*</code> decision-model hues), the demo gate's <code>light.demo.*</code> neutrals and the app's <code>light.app.*</code> shadcn roles — plus the <code>core.palette.*</code> literals, the licensed brand faces as names (never shipped) and the measured geometry under <code>component.*</code>. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from hume.ai's signed-out surfaces in headless Chromium at 1440&times;900 (mobile pass at 390&times;844). Three of the four surfaces paint <b>light only</b> — www.hume.ai, demo.hume.ai and app.hume.ai have no theme control at all, and none is invented. The dev.hume.ai docs carry the one real control: the header Theme button&rsquo;s own Light / Dark / System menu repaints <code>html.dark</code>, so the <code>dark</code> token set holds only the docs&rsquo; painted dark (#1c1917 warm-black ground). The brand faces (Martina Plantijn, PP Fraktion Mono / Fraktion, Fellix, M PLUS 1) are licensed and not bundled — samples fall back to system faces; Inter is open-licensed. The app.hume.ai platform past /log-in, the demo.hume.ai playground (invitation-gated) and the retired EVI/Octave line are documented boundaries, not captures.</p>
+
+  <h2 class="sh">The www surface — light only</h2>
+  <p class="lead">www.hume.ai is a warm off-white editorial surface: Inter body and UI under Martina Plantijn serif headlines — a quiet nav (the wordmark, Emotion Science, the Products / Solutions / Benchmarks / Resources menu buttons, the white &ldquo;See a Demo&rdquo; pill) over hero sections washed with the pastel accent ramp — pink, mint, sky, apricot, lilac — and the scripted customer-call player that animates the audio-decision pipeline.</p>
+  <div class="mock">
+    <div class="topbar"><span class="wm">Hume</span><span class="nav"><span>Emotion Science</span><span>Products</span><span>Solutions</span><span>Benchmarks</span><span>Resources</span></span><span class="sp"></span><span class="btn primary" style="height:30px;padding:0 14px;font-size:12.5px">See a Demo</span></div>
+    <div class="hero"><h3>Measure and improve real-world voice AI performance</h3><p>The hero and section washes compose the pastel ramp: <span class="ic">accent.pink</span>, <span class="ic">accent.mint</span>, <span class="ic">accent.sky</span>, the <span class="ic">gradient.*</span> stops — on the <span class="ic">#fdfdfc</span> ground.</p>
+      <div class="wash"><span class="chip" style="background:var(--accent-pink)">accent.pink</span><span class="chip" style="background:var(--accent-mint)">accent.mint</span><span class="chip" style="background:var(--accent-sky)">accent.sky</span><span class="chip" style="background:var(--accent-orange)">accent.orange</span><span class="chip" style="background:var(--gradientStop-lilac)">gradient.lilac</span></div>
+      <span class="btn primary">See a Demo</span>&nbsp;&nbsp;<span class="btn ghost">Contact sales</span></div>
+  </div>
+
+  <h2 class="sh">The docs surface — the one real theme control</h2>
+  <p class="lead">dev.hume.ai is a Fern docs build on the Fellix/Fraktion faces: a 272px nav rail, the article pane, a code surface, and the header&rsquo;s Theme button whose own menu repaints <code>html.dark</code>. The mock below is driven entirely by <code>--docs-*</code> tokens — press the moon to repaint it with the same values the Dark item paints.</p>
+  <div class="mock dmock" id="docs-mock" data-mode="light">
+    <div class="topbar"><span class="wm">Hume</span><span class="nav"><span>Docs</span><span>API Reference</span><span>Changelog</span></span><span class="sp"></span><span class="search">Search&ensp;/</span><button type="button" class="theme" id="theme-toggle" aria-pressed="false" title="Switch to dark theme">&#9789;</button></div>
+    <div class="shell">
+      <div class="sb"><div class="grp">Audio Decisions</div><span class="ln on">Overview</span><span class="ln">Quickstart</span><span class="ln">Concepts</span><div class="grp">API Reference</div><span class="ln">Decisions</span></div>
+      <div class="art"><h3>Audio Decision Model</h3><p>A decision layer over voice AI: <span class="ic">noul</span> requests, <span class="ic">choice</span> results, <span class="ic">score</span>s and <span class="ic">span</span>s — the <span class="ic">primitive.*</span> hues mark them.</p>
+        <div class="codeblk"><span class="kw">decision</span> = client.decisions.<span class="fn">create</span>(<span class="str">"call_01"</span>) <span class="cm"># a noul</span></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead"><code>core.accent.*</code> is the eleven-pastel brand ramp, <code>core.gradientStop.*</code> the five hero-wash stops and <code>core.spectrum.*</code> the visualisation hues; <code>light.bg.default</code> / <code>light.ink.default</code> are the www ground and ink. <code>light.docs.*</code> and <code>dark.docs.*</code> hold the docs&rsquo; Fern layer under html.light and html.dark (the Theme menu&rsquo;s own repaint — the only dark that exists), <code>light.demo.*</code> the gate&rsquo;s neutrals, <code>light.app.*</code> the log-in&rsquo;s shadcn roles, and <code>core.palette.*</code> the literals the surfaces hard-code outside the token layer.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius, layout and motion</h2>
+  <p class="lead">The www surface ships Tailwind v4&rsquo;s default scales — only the pieces the product composes are tokens (<code>core.tailwind.*</code>); the rest is evidence in <code>raw/css-vars.json</code>. Chrome geometry is <b>measured</b>: <code>component.*</code> carries the nav height, the docs rail width, button and field heights, card corners (pills clamp to 9999px). <code>motion.*</code> is the measured set from the reduced-motion probe (docs/decisions/0001).</p>
+  <div id="spacing-out" class="kv"></div>
+  <div id="motion-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Five faces, recorded by name only: <code>Inter</code> (open-licensed — the www body/UI face), <code>Martina Plantijn</code> (the licensed display serif), <code>PP Fraktion Mono</code>/<code>Fraktion</code> (the licensed code faces), <code>Fellix</code> (the licensed docs/app body face) and <code>M PLUS 1</code> (Japanese). <code>core.title.*</code> holds the declared display sizes; the <code>core.typography.*</code> composites carry the measured styles — the hero, section headings, body and code. Samples fall back to system faces.</p>
+  <div id="type-out"></div>
+  <div id="typ-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --background/--foreground/--accent-*/--font-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, focused, playing, selected and dark states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable (and the surface it resolved on) or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  const coreGroups = { accent: TOK.core.accent, gradientStop: TOK.core.gradientStop, spectrum: TOK.core.spectrum, palette: TOK.core.palette };
+  for (const [g, grp] of Object.entries(coreGroups)) {
+    const items = (grp && grp.t ? [[g + '.' + g, grp]] : flat(grp, g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles — the painted surface: www + the docs under html.light + the demo gate + the app log-in'], ['dark', 'dark roles — only the dev.hume.ai docs under html.dark, repainted by the header Theme menu (no www dark exists)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.tailwind || {}, 'tailwind.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  for (const [n, t] of flat(TOK.core.title || {}, 'title.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.breakpoint || {}, 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.ease || {}, 'ease.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v.join ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.animation || {}, 'animation.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  const sh = (t) => Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v;
+  let e = '';
+  for (const [n, t] of flat((TOK.core || {}).shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(sh(t))}</span></div>`;
+  for (const setname of ['light', 'dark']) {
+    const group = flat((TOK[setname] || {}).elevation || {}, setname + '.elevation.');
+    if (!group.length) continue;
+    e += `<div style="grid-column:1/-1;opacity:.6;margin-top:8px"><b>${setname} elevation</b></div>`;
+    for (const [n, t] of group) e += `<div><b>${esc(n)}</b> <span>${esc(sh(t))}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m || '<div><b>none measured</b></div>';
+})();
+
+(function motion() {
+  const g = TOK.core.motion || {};
+  let m = '';
+  for (const [n, t] of flat(g.duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(g.easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  const tr = Object.keys(g.transition || {}).length, an = Object.keys(g.animation || {}).length;
+  if (tr || an) m += `<div><b>measured</b> <span>${tr} transition tokens, ${an} animation tokens (tokens.json, core.motion)</span></div>`;
+  const rm = (g._extensions || {}).reducedMotion;
+  if (rm) m += `<div><b>reduced motion</b> <span>${esc(rm.behaviour)} — ${esc(String(rm.removed))} removed, ${esc(String(rm.kept))} kept across ${esc(String(rm.pages))} pages</span></div>`;
+  $('#motion-out').innerHTML = m || '<div><b>no motion probe</b></div>';
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.title || {}), 'title.')) {
+    const px = parseFloat(resolveVal(t.v)) * (String(resolveVal(t.v)).endsWith('rem') ? 16 : 1);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — Measure voice AI</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v)) * (String(resolveVal(t.v)).endsWith('rem') ? 16 : 1);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — Measure voice AI</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).leading || {}, 'font.leading.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Hume</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+
+// The measured core.typography.* composites — the styles the live DOM paints,
+// not just the declared scales. Samples fall back to system fonts (the brand
+// faces are not bundled).
+(function typ() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core || {}).typography || {}, 'typography.')) {
+    const v = t.v || {};
+    const fs = parseFloat(v.fontSize) || 14;
+    const mono = /mono|fraktion|code/i.test(String(v.fontFamily) + n);
+    const serif = /plantijn|serif/i.test(String(v.fontFamily));
+    const meta = [v.fontSize, v.lineHeight, 'w' + v.fontWeight, v.letterSpacing].filter(Boolean).join(' / ');
+    h += `<div class="tr"><span class="ts" style="font-family:${mono ? 'var(--sg-mono)' : serif ? 'var(--sg-serif)' : 'var(--sg-sans)'};font-size:${Math.min(fs, 44)}px;font-weight:${esc(String(v.fontWeight || 400))};line-height:${esc(v.lineHeight || 'normal')}">${esc(n)} — Measure voice AI 0123</span><span class="tv">${esc(meta)}</span></div>`;
+  }
+  $('#typ-out').innerHTML = h;
+})();
+
+// The mock's theme button flips data-mode the way the docs header's Theme menu
+// flips html.dark — the mock starts light because light is the painted default
+// on every surface.
+(function themeToggle() {
+  const btn = $('#theme-toggle'), mock = $('#docs-mock');
+  if (!btn || !mock) return;
+  btn.addEventListener('click', () => {
+    const dark = mock.getAttribute('data-mode') !== 'dark';
+    mock.setAttribute('data-mode', dark ? 'dark' : 'light');
+    btn.setAttribute('aria-pressed', String(dark));
+    btn.title = dark ? 'Switch to light theme' : 'Switch to dark theme';
+  });
+})();
+</script>
+</body>
+</html>

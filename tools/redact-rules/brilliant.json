@@ -2,7 +2,8 @@
   "_note": "Brilliant: no rectangles; the 2026-10 renders and crops come from page copies redacted before they left the browser, and the 2026-09 captures were redacted live. The OCR email net is kept, with the redaction placeholder allowed (learner@example.com, which OCR sometimes reads as ...@example.co). One known hit remains on screenshots/pricing-dark-fullpage.png: the public pricing page's feature name 'Toolbox' matches a pattern another package added to the shared list; it is Brilliant's own public copy, not private text.",
   "ocr": {
     "email_allow": [
-      "@example\\.com?\\b"
+      "@example\\.co$",
+      "@example\\.com$"
     ]
   }
 }

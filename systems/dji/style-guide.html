@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DJI style guide</title>
+<meta name="description" content="DJI design tokens and the public brand-site components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-ui: "Open Sans", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", "Hiragino Sans GB", "WenQuanYi Micro Hei", Arial, sans-serif;
+  --font-family-icon: Dji;
+  --font-weight-component: 400;
+  --font-weight-headline: 600;
+  --font-weight-paragraph: 400;
+  --font-familyDeclared-default: "Open Sans","PingFang SC","Microsoft YaHei","Helvetica Neue","Hiragino Sans GB","WenQuanYi Micro Hei",Arial,sans-serif;
+  --font-familyDeclared-jp: "Open Sans","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+  --font-lineHeight-compact: 1.26;
+  --font-lineHeight-normal: 1.5;
+  --font-size-measured-label: 12px;
+  --font-size-measured-nav: 14px;
+  --font-size-measured-body: 16px;
+  --font-size-measured-eyebrow: 20px;
+  --font-size-measured-title: 24px;
+  --font-size-measured-listing: 32px;
+  --font-size-measured-category: 40px;
+  --font-size-measured-display: 48px;
+  --space-lg: 96px;
+  --space-md: 64px;
+  --space-sm: 32px;
+  --space-xl: 128px;
+  --space-xs: 16px;
+  --zIndex-dropdown: 1000;
+  --zIndex-dropdown-backdrop: 990;
+  --zIndex-edit-panel: 1500;
+  --zIndex-fixed: 1100;
+  --zIndex-modal: 1200;
+  --zIndex-modal-backdrop: 1190;
+  --zIndex-navbar-searching: 9111;
+  --zIndex-popover: 9200;
+  --zIndex-quark-modal: 10000;
+  --zIndex-sticky: 1100;
+  --zIndex-sub-nav: 9110;
+  --zIndex-subscribe-modal: 10002;
+  --zIndex-tooltip: 1400;
+  --size-grid-gap: 16px;
+  --size-grid-width: 1200px;
+  --size-grid-col-width: 89.3281px;
+  --size-grid-column-count: 12;
+  --black-default: #000000;
+  --black-bg: rgba(0, 0, 0, 0.04);
+  --black-border: rgba(0, 0, 0, 0.15);
+  --black-disabled: rgba(0, 0, 0, 0.25);
+  --black-divider: rgba(0, 0, 0, 0.06);
+  --black-light-bg: rgba(0, 0, 0, 0.02);
+  --black-primary: rgba(0, 0, 0, 0.85);
+  --black-secondary: rgba(0, 0, 0, 0.65);
+  --black-tertiary: rgba(0, 0, 0, 0.45);
+  --brand-active: #005ab1;
+  --brand-base: #0070d5;
+  --brand-default: #0070d5;
+  --brand-hover: #2c8cdd;
+  --common-black: #000000;
+  --common-white: #ffffff;
+  --highlight-text-on-dark: linear-gradient(90deg, #D95E00, #FFB26E, #D95E00);
+  --radius-default: 16px;
+  --radius-pill-store: 1408px;
+  --radius-ghost: 60px;
+  --radius-hero-cta: 64px;
+  --radius-cta: 60px;
+  --radius-mobile-cta: 60px;
+  --secondary-navigation: #232526;
+  --white-default: #ffffff;
+  --white-bg: rgba(255, 255, 255, 0.08);
+  --white-border: rgba(255, 255, 255, 0.2);
+  --white-disabled: rgba(255, 255, 255, 0.3);
+  --white-divider: rgba(255, 255, 255, 0.12);
+  --white-light-bg: rgba(255, 255, 255, 0.04);
+  --white-primary: #ffffff;
+  --white-secondary: rgba(255, 255, 255, 0.65);
+  --white-tertiary: rgba(255, 255, 255, 0.45);
+  --motion-store-cta: background-color 0.3s ease;
+  --motion-ghost: all 0.3s ease;
+  --motion-atom-cta: all 0.3s ease;
+  --component-nav-bar: 64px;
+  --component-nav-mark: 93px;
+  --component-nav-item: 100.38px;
+  --component-store-cta: 83.61px;
+  --component-hero-panel: 800px;
+  --component-hero-cta: 133px;
+  --component-category-row: 696px;
+  --component-subnav: 64px;
+  --component-atom-cta: 144px;
+  --component-ghost-cta: 147.48px;
+  --component-support-search: 640px;
+  --component-footer: 833px;
+  --component-mobile-bar: 50px;
+  --component-mobile-tab: 354px;
+  --color-background-0: #ffffff;
+  --color-background-1: #f5f5f5;
+  --color-background-2: #f0f0f0;
+  --color-bg-0: #000000;
+  --color-bg-1: #141414;
+  --color-bg-2: #1f1f1f;
+  --color-bg-3: #434343;
+  --color-bg-4: #8c8c8c;
+  --color-bg-5: #d9d9d9;
+  --color-bg-6: #f5f5f5;
+  --color-bg-7: #ffffff;
+  --color-black-1: rgba(0, 0, 0, 0.02);
+  --color-black-2: rgba(0, 0, 0, 0.04);
+  --color-black-3: rgba(0, 0, 0, 0.06);
+  --color-black-4: rgba(0, 0, 0, 0.15);
+  --color-black-5: rgba(0, 0, 0, 0.25);
+  --color-black-6: rgba(0, 0, 0, 0.45);
+  --color-black-7: rgba(0, 0, 0, 0.65);
+  --color-black-8: rgba(0, 0, 0, 0.85);
+  --color-brand-1: #e7f3fb;
+  --color-brand-10: #002046;
+  --color-brand-2: #c5e3f7;
+  --color-brand-3: #8fc6ee;
+  --color-brand-4: #5ca9e6;
+  --color-brand-5: #2c8cdd;
+  --color-brand-6: #0070d5;
+  --color-brand-7: #005ab1;
+  --color-brand-8: #00468e;
+  --color-brand-9: #00326a;
+  --color-green-1: #ecfaef;
+  --color-green-10: #0e461f;
+  --color-green-2: #d0f6d7;
+  --color-green-3: #a4edb2;
+  --color-green-4: #7be391;
+  --color-green-5: #55da73;
+  --color-green-6: #31d158;
+  --color-green-7: #27ae4a;
+  --color-green-8: #1e8b3c;
+  --color-green-9: #15682e;
+  --color-grey-0: #ffffff;
+  --color-grey-1: #fafafa;
+  --color-grey-10: #1f1f1f;
+  --color-grey-11: #141414;
+  --color-grey-12: #000000;
+  --color-grey-2: #f5f5f5;
+  --color-grey-3: #f0f0f0;
+  --color-grey-4: #d9d9d9;
+  --color-grey-5: #bfbfbf;
+  --color-grey-6: #8c8c8c;
+  --color-grey-7: #595959;
+  --color-grey-8: #434343;
+  --color-grey-9: #262626;
+  --color-orange-1: #f9f0e5;
+  --color-orange-10: #6c1500;
+  --color-orange-2: #f2dcc3;
+  --color-orange-3: #e5b88b;
+  --color-orange-4: #d89459;
+  --color-orange-5: #cb712c;
+  --color-orange-6: #be4e04;
+  --color-orange-7: #aa3b00;
+  --color-orange-8: #952c00;
+  --color-orange-9: #812000;
+  --color-red-1: #fbecea;
+  --color-red-10: #44020e;
+  --color-red-2: #f6d0cc;
+  --color-red-3: #eda19d;
+  --color-red-4: #e57270;
+  --color-red-5: #dc4749;
+  --color-red-6: #d32029;
+  --color-red-7: #af1522;
+  --color-red-8: #8c0d1c;
+  --color-red-9: #680615;
+  --color-white-1: rgba(255, 255, 255, 0.04);
+  --color-white-2: rgba(255, 255, 255, 0.08);
+  --color-white-3: rgba(255, 255, 255, 0.12);
+  --color-white-4: rgba(255, 255, 255, 0.2);
+  --color-white-5: rgba(255, 255, 255, 0.3);
+  --color-white-6: rgba(255, 255, 255, 0.45);
+  --color-white-7: rgba(255, 255, 255, 0.65);
+  --color-white-8: #ffffff;
+  --bg: rgba(0, 0, 0, 0.04);
+  --border-default: rgba(0, 0, 0, 0.15);
+  --border-hairline: var(--black-divider);
+  --brand-primary-active: rgba(0, 0, 0, 0.85);
+  --brand-primary-default: rgba(0, 0, 0, 0.85);
+  --brand-primary-focus: rgba(0, 0, 0, 0.15);
+  --brand-primary-hover: rgba(0, 0, 0, 0.65);
+  --brand-text-active: #00468e;
+  --brand-text-default: #005ab1;
+  --brand-text-hover: #0070d5;
+  --danger: #d32029;
+  --disabled: rgba(0, 0, 0, 0.25);
+  --divider: rgba(0, 0, 0, 0.06);
+  --light-bg: rgba(0, 0, 0, 0.02);
+  --primary: rgba(0, 0, 0, 0.85);
+  --reverse-bg: rgba(255, 255, 255, 0.08);
+  --reverse-border: rgba(255, 255, 255, 0.2);
+  --reverse-disabled: rgba(255, 255, 255, 0.3);
+  --reverse-divider: rgba(255, 255, 255, 0.12);
+  --reverse-light-bg: rgba(255, 255, 255, 0.04);
+  --reverse-primary: #ffffff;
+  --reverse-secondary: rgba(255, 255, 255, 0.65);
+  --reverse-tertiary: rgba(255, 255, 255, 0.45);
+  --secondary: rgba(0, 0, 0, 0.65);
+  --success: #1e8b3c;
+  --tertiary: rgba(0, 0, 0, 0.45);
+  --warning: #be4e04;
+  --background-page: var(--white-default);
+  --text-ink: var(--black-primary);
+  --text-muted: var(--black-secondary);
+  --text-nav-ink: #303233;
+  --action-primary: var(--color-brand-6);
+  --action-primary-hover: #2490e3;
+  --action-primary-pressed: #0058b0;
+  --action-on-primary: var(--white-default);
+  --surface-footer: #272727;
+  --sg-sans: "Open Sans", "PingFang SC", "Microsoft YaHei", ui-sans-serif, system-ui, sans-serif;
+  --sg-serif: "Open Sans", "PingFang SC", ui-sans-serif, Georgia, serif;
+  --sg-mono: "gg mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+.light {
+  --color-background-0: #ffffff;
+  --color-background-1: #f5f5f5;
+  --color-background-2: #f0f0f0;
+  --color-bg-0: #000000;
+  --color-bg-1: #141414;
+  --color-bg-2: #1f1f1f;
+  --color-bg-3: #434343;
+  --color-bg-4: #8c8c8c;
+  --color-bg-5: #d9d9d9;
+  --color-bg-6: #f5f5f5;
+  --color-bg-7: #ffffff;
+  --color-black-1: rgba(0, 0, 0, 0.02);
+  --color-black-2: rgba(0, 0, 0, 0.04);
+  --color-black-3: rgba(0, 0, 0, 0.06);
+  --color-black-4: rgba(0, 0, 0, 0.15);
+  --color-black-5: rgba(0, 0, 0, 0.25);
+  --color-black-6: rgba(0, 0, 0, 0.45);
+  --color-black-7: rgba(0, 0, 0, 0.65);
+  --color-black-8: rgba(0, 0, 0, 0.85);
+  --color-brand-1: #e7f3fb;
+  --color-brand-10: #002046;
+  --color-brand-2: #c5e3f7;
+  --color-brand-3: #8fc6ee;
+  --color-brand-4: #5ca9e6;
+  --color-brand-5: #2c8cdd;
+  --color-brand-6: #0070d5;
+  --color-brand-7: #005ab1;
+  --color-brand-8: #00468e;
+  --color-brand-9: #00326a;
+  --color-green-1: #ecfaef;
+  --color-green-10: #0e461f;
+  --color-green-2: #d0f6d7;
+  --color-green-3: #a4edb2;
+  --color-green-4: #7be391;
+  --color-green-5: #55da73;
+  --color-green-6: #31d158;
+  --color-green-7: #27ae4a;
+  --color-green-8: #1e8b3c;
+  --color-green-9: #15682e;
+  --color-grey-0: #ffffff;
+  --color-grey-1: #fafafa;
+  --color-grey-10: #1f1f1f;
+  --color-grey-11: #141414;
+  --color-grey-12: #000000;
+  --color-grey-2: #f5f5f5;
+  --color-grey-3: #f0f0f0;
+  --color-grey-4: #d9d9d9;
+  --color-grey-5: #bfbfbf;
+  --color-grey-6: #8c8c8c;
+  --color-grey-7: #595959;
+  --color-grey-8: #434343;
+  --color-grey-9: #262626;
+  --color-orange-1: #f9f0e5;
+  --color-orange-10: #6c1500;
+  --color-orange-2: #f2dcc3;
+  --color-orange-3: #e5b88b;
+  --color-orange-4: #d89459;
+  --color-orange-5: #cb712c;
+  --color-orange-6: #be4e04;
+  --color-orange-7: #aa3b00;
+  --color-orange-8: #952c00;
+  --color-orange-9: #812000;
+  --color-red-1: #fbecea;
+  --color-red-10: #44020e;
+  --color-red-2: #f6d0cc;
+  --color-red-3: #eda19d;
+  --color-red-4: #e57270;
+  --color-red-5: #dc4749;
+  --color-red-6: #d32029;
+  --color-red-7: #af1522;
+  --color-red-8: #8c0d1c;
+  --color-red-9: #680615;
+  --color-white-1: rgba(255, 255, 255, 0.04);
+  --color-white-2: rgba(255, 255, 255, 0.08);
+  --color-white-3: rgba(255, 255, 255, 0.12);
+  --color-white-4: rgba(255, 255, 255, 0.2);
+  --color-white-5: rgba(255, 255, 255, 0.3);
+  --color-white-6: rgba(255, 255, 255, 0.45);
+  --color-white-7: rgba(255, 255, 255, 0.65);
+  --color-white-8: #ffffff;
+  --bg: rgba(0, 0, 0, 0.04);
+  --border-default: rgba(0, 0, 0, 0.15);
+  --border-hairline: var(--black-divider);
+  --brand-primary-active: rgba(0, 0, 0, 0.85);
+  --brand-primary-default: rgba(0, 0, 0, 0.85);
+  --brand-primary-focus: rgba(0, 0, 0, 0.15);
+  --brand-primary-hover: rgba(0, 0, 0, 0.65);
+  --brand-text-active: #00468e;
+  --brand-text-default: #005ab1;
+  --brand-text-hover: #0070d5;
+  --danger: #d32029;
+  --disabled: rgba(0, 0, 0, 0.25);
+  --divider: rgba(0, 0, 0, 0.06);
+  --light-bg: rgba(0, 0, 0, 0.02);
+  --primary: rgba(0, 0, 0, 0.85);
+  --reverse-bg: rgba(255, 255, 255, 0.08);
+  --reverse-border: rgba(255, 255, 255, 0.2);
+  --reverse-disabled: rgba(255, 255, 255, 0.3);
+  --reverse-divider: rgba(255, 255, 255, 0.12);
+  --reverse-light-bg: rgba(255, 255, 255, 0.04);
+  --reverse-primary: #ffffff;
+  --reverse-secondary: rgba(255, 255, 255, 0.65);
+  --reverse-tertiary: rgba(255, 255, 255, 0.45);
+  --secondary: rgba(0, 0, 0, 0.65);
+  --success: #1e8b3c;
+  --tertiary: rgba(0, 0, 0, 0.45);
+  --warning: #be4e04;
+  --background-page: var(--white-default);
+  --text-ink: var(--black-primary);
+  --text-muted: var(--black-secondary);
+  --text-nav-ink: #303233;
+  --action-primary: var(--color-brand-6);
+  --action-primary-hover: #2490e3;
+  --action-primary-pressed: #0058b0;
+  --action-on-primary: var(--white-default);
+  --surface-footer: #272727;
+}
+[data-mode="dark"], .dark {
+  --color-background-0: #000000;
+  --color-background-1: #141414;
+  --color-background-2: #1f1f1f;
+  --color-bg-0: #000000;
+  --color-bg-1: #141414;
+  --color-bg-2: #1f1f1f;
+  --color-bg-3: #434343;
+  --color-bg-4: #8c8c8c;
+  --color-bg-5: #d9d9d9;
+  --color-bg-6: #f5f5f5;
+  --color-bg-7: #ffffff;
+  --color-black-1: rgba(0, 0, 0, 0.02);
+  --color-black-2: rgba(0, 0, 0, 0.04);
+  --color-black-3: rgba(0, 0, 0, 0.06);
+  --color-black-4: rgba(0, 0, 0, 0.15);
+  --color-black-5: rgba(0, 0, 0, 0.25);
+  --color-black-6: rgba(0, 0, 0, 0.45);
+  --color-black-7: rgba(0, 0, 0, 0.65);
+  --color-black-8: rgba(0, 0, 0, 0.85);
+  --color-brand-1: #e7f3fb;
+  --color-brand-10: #002046;
+  --color-brand-2: #c5e3f7;
+  --color-brand-3: #8fc6ee;
+  --color-brand-4: #5ca9e6;
+  --color-brand-5: #2c8cdd;
+  --color-brand-6: #0070d5;
+  --color-brand-7: #005ab1;
+  --color-brand-8: #00468e;
+  --color-brand-9: #00326a;
+  --color-green-1: #ecfaef;
+  --color-green-10: #0e461f;
+  --color-green-2: #d0f6d7;
+  --color-green-3: #a4edb2;
+  --color-green-4: #7be391;
+  --color-green-5: #55da73;
+  --color-green-6: #31d158;
+  --color-green-7: #27ae4a;
+  --color-green-8: #1e8b3c;
+  --color-green-9: #15682e;
+  --color-grey-0: #ffffff;
+  --color-grey-1: #fafafa;
+  --color-grey-10: #1f1f1f;
+  --color-grey-11: #141414;
+  --color-grey-12: #000000;
+  --color-grey-2: #f5f5f5;
+  --color-grey-3: #f0f0f0;
+  --color-grey-4: #d9d9d9;
+  --color-grey-5: #bfbfbf;
+  --color-grey-6: #8c8c8c;
+  --color-grey-7: #595959;
+  --color-grey-8: #434343;
+  --color-grey-9: #262626;
+  --color-orange-1: #f9f0e5;
+  --color-orange-10: #6c1500;
+  --color-orange-2: #f2dcc3;
+  --color-orange-3: #e5b88b;
+  --color-orange-4: #d89459;
+  --color-orange-5: #cb712c;
+  --color-orange-6: #be4e04;
+  --color-orange-7: #aa3b00;
+  --color-orange-8: #952c00;
+  --color-orange-9: #812000;
+  --color-red-1: #fbecea;
+  --color-red-10: #44020e;
+  --color-red-2: #f6d0cc;
+  --color-red-3: #eda19d;
+  --color-red-4: #e57270;
+  --color-red-5: #dc4749;
+  --color-red-6: #d32029;
+  --color-red-7: #af1522;
+  --color-red-8: #8c0d1c;
+  --color-red-9: #680615;
+  --color-white-1: rgba(255, 255, 255, 0.04);
+  --color-white-2: rgba(255, 255, 255, 0.08);
+  --color-white-3: rgba(255, 255, 255, 0.12);
+  --color-white-4: rgba(255, 255, 255, 0.2);
+  --color-white-5: rgba(255, 255, 255, 0.3);
+  --color-white-6: rgba(255, 255, 255, 0.45);
+  --color-white-7: rgba(255, 255, 255, 0.65);
+  --color-white-8: #ffffff;
+  --bg: rgba(255, 255, 255, 0.08);
+  --border-default: rgba(255, 255, 255, 0.2);
+  --border-ghost-border: var(--white-default);
+  --brand-primary-active: rgba(255, 255, 255, 0.45);
+  --brand-primary-default: #ffffff;
+  --brand-primary-focus: rgba(255, 255, 255, 0.2);
+  --brand-primary-hover: rgba(255, 255, 255, 0.65);
+  --brand-text-active: #0070d5;
+  --brand-text-default: #2c8cdd;
+  --brand-text-hover: #5ca9e6;
+  --danger: #dc4749;
+  --disabled: rgba(255, 255, 255, 0.3);
+  --divider: rgba(255, 255, 255, 0.12);
+  --light-bg: rgba(255, 255, 255, 0.04);
+  --primary: #ffffff;
+  --reverse-bg: rgba(0, 0, 0, 0.04);
+  --reverse-border: rgba(0, 0, 0, 0.15);
+  --reverse-disabled: rgba(0, 0, 0, 0.25);
+  --reverse-divider: rgba(0, 0, 0, 0.06);
+  --reverse-light-bg: rgba(0, 0, 0, 0.02);
+  --reverse-primary: rgba(0, 0, 0, 0.85);
+  --reverse-secondary: rgba(0, 0, 0, 0.65);
+  --reverse-tertiary: rgba(0, 0, 0, 0.45);
+  --secondary: rgba(255, 255, 255, 0.65);
+  --success: #31d158;
+  --tertiary: rgba(255, 255, 255, 0.45);
+  --warning: #cb712c;
+  --text-ink: var(--white-primary);
+  --text-muted: rgba(255, 255, 255, 0.85);
+  --text-nav-ink: var(--white-default);
+  --action-cta: var(--white-default);
+  --action-cta-hover: rgba(255, 255, 255, 0.9);
+  --action-cta-pressed: rgba(255, 255, 255, 0.8);
+  --action-on-cta: var(--black-primary);
+  --action-ghost-hover: rgba(255, 255, 255, 0.09);
+  --action-ghost-pressed: rgba(255, 255, 255, 0.15);
+  --surface-footer: #272727;
+}
+[data-mode="dark"] body { background: #141414; color: rgba(255,255,255,.85); }
+[data-mode="dark"] h2.sh, [data-mode="dark"] .lead, [data-mode="dark"] .note, [data-mode="dark"] .pal-h, [data-mode="dark"] .sw .vl, [data-mode="dark"] .kv span, [data-mode="dark"] .tr .tv { color: rgba(255,255,255,.85); }
+[data-mode="dark"] .mock { background: #141414; }
+#mode { position: fixed; top: 12px; right: 12px; z-index: 10; font: 500 12px/1 var(--sg-sans); border: 1px solid currentColor; border-radius: 999px; background: transparent; color: inherit; padding: 8px 14px; cursor: pointer; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); background: var(--color-neutral-paper, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, #ddd); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #000); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, #ddd); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #000); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-hairline, #ddd); overflow: hidden; background: var(--color-neutral-paper, #fff); }
+.dnav { display: flex; align-items: center; gap: 28px; height: 64px; padding: 0 28px; background: rgba(0,0,0,.55); color: var(--white, #fff); font: 400 14px var(--sg-sans); }
+.dnav .mark { font: 700 20px/1 var(--sg-sans); letter-spacing: -0.02em; font-style: italic; }
+.dnav span { opacity: .92; }
+.dnav .store { margin-left: auto; display: inline-flex; align-items: center; height: 32px; padding: 0 18px; border-radius: var(--radius-pill-store, 1408px); background: var(--color-brand-6, #0070d5); color: var(--white, #fff); font: 500 14px var(--sg-sans); }
+.pcard { max-width: 280px; }
+.pcard .art { height: 170px; background: linear-gradient(180deg, var(--color-grey-2, #f5f5f5), var(--color-grey-4, #d9d9d9)); display: flex; align-items: center; justify-content: center; color: var(--color-grey-6, #8c8c8c); font: 500 12px var(--sg-mono); }
+.pcard h3 { font: 600 18px/1.4 var(--sg-sans); margin: 14px 0 2px; color: var(--color-grey-12, #000); }
+.pcard p { font: 400 13px/1.5 var(--sg-sans); color: var(--secondary, rgba(0,0,0,.65)); margin: 0 0 10px; }
+.pcard .lnk { font: 500 13px var(--sg-sans); color: var(--color-brand-6, #0070d5); }
+.dcta { display: flex; gap: 12px; padding: 28px; background: #141414; }
+.dcta .pill { display: inline-flex; align-items: center; height: 40px; padding: 0 26px; border-radius: var(--radius-cta, 60px); font: 500 16px var(--sg-sans); }
+.dcta .fill { background: var(--white, #fff); color: var(--color-grey-12, rgba(0,0,0,.85)); }
+.dcta .ghost { background: transparent; color: var(--white, #fff); border: 1px solid var(--white, #fff); }
+.dft { padding: 22px 28px; background: var(--surface-footer, #272727); color: var(--dark-muted, rgba(255,255,255,.85)); font: 400 12px/2 var(--sg-sans); }
+.dft b { display: block; color: var(--white, #fff); font-weight: 600; margin-bottom: 4px; }
+.field { display: block; width: 100%; max-width: 420px; height: 32px; padding: 0 12px; border: 1px solid var(--border, rgba(0,0,0,.15)); border-radius: var(--radius, 16px); background: var(--bg, #fff); font: 400 14px var(--sg-sans); color: var(--primary, rgba(0,0,0,.85)); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #000); opacity: .65; font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<button id="mode" type="button" aria-pressed="false">Dark</button>
+<main>
+  <h1>DJI style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">DJI, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared token layer in DJI's v3 bundles (the <code>--grey-0..12</code>, <code>--black-*</code>, <code>--white-*</code> and <code>--brand-1..10</code> scales, the <code>:root .light-theme</code>/<code>:root .dark-theme</code> semantic roles, and the <code>--spacing-*</code>/<code>--zindex-*</code>/<code>--grid-*</code> layout vars), the measured type ramp, and the #0070d5 DJI blue. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from dji.com's geo-locale /sg site on 2026-11-15, signed out, in headless Chromium. Sections opt into light or dark paint through the product's own <code>.light-theme</code>/<code>.dark-theme</code> classes — nav, listings and support paint light; the hero, product dark panels and footer paint dark, so both themes are real paint. The store and member services gate on a DJI account — the Store, Buy Now and search controls were measured, never pressed. Open Sans and the Dji icon face are served faces and are not loaded here: samples fall back to system fonts.</p>
+
+  <h2 class="sh">The nav and Store button</h2>
+  <p class="lead">The header over the hero is a dark-theme bar: white menu items and the #0070d5 Store pill — measured 84x32 with a 1408px radius.</p>
+  <div class="mock">
+    <div class="dnav"><span class="mark">dji</span><span>Camera Drones</span><span>Handheld</span><span>Support</span><span>Where to Buy</span><span class="store">Store</span></div>
+  </div>
+
+  <h2 class="sh">The product card</h2>
+  <p class="lead">Category grids are atom-design hero-vertical-cards: product art, a tagline and the model name on white.</p>
+  <div class="mock" style="padding:20px">
+    <div class="pcard"><div class="art">product art</div><h3>DJI Mavic 4 Pro</h3><p>Triple-Lens Flagship Camera Drone</p><span class="lnk">Learn More &gt;</span></div>
+  </div>
+
+  <h2 class="sh">Dark-section CTAs</h2>
+  <p class="lead">The product page's dark sections carry the atom-design CTA pair: a white pill and a 1px ghost outline, both 60px-radius, 0.3s transitions.</p>
+  <div class="mock">
+    <div class="dcta"><span class="pill fill">Buy Now</span><span class="pill ghost">Watch Video</span></div>
+  </div>
+
+  <h2 class="sh">Search and footer</h2>
+  <p class="lead">The support search field is a 32px rounded input on white; the sitemap footer is a #272727 slab with white@85% links.</p>
+  <div class="mock" style="padding:20px">
+    <input class="field" placeholder="Search DJI Support">
+    <div style="height:14px"></div>
+    <div class="dft"><b>Support</b>Repairs &middot; Service Request &middot; Downloads &middot; DJI Care</div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared layer carries the hue scales under color.* (brand, grey, black, white, bg, green, orange, red, background) and the section-scoped semantic roles (<code>--primary</code>/<code>--secondary</code>/<code>--tertiary</code>, <code>--bg</code>/<code>--light-bg</code>, <code>--border</code>/<code>--divider</code>/<code>--disabled</code>, the inverted <code>--reverse-*</code> pair, <code>--brand-primary-*</code>/<code>--brand-text-*</code> and the status roles) resolved per section theme — .light-theme on the listings, .dark-theme on hero/product/footer sections, both measured paint. Measured roles alias the declared values they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">The declared radius is a single 16px --radius; the CTAs are true pills (60px ghost, 64px hero, 1408px Store — the last is height*44, i.e. fully rounded). Dividers are black@6% on light and white@12% on dark; borders black@15% / white@20%. The grid is 1200px wide with a --grid-gap and --col-width/--column-count pair.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Served faces: <code>Open Sans</code> for every UI string (PingFang SC / Microsoft YaHei CJK fallbacks) and the <code>Dji</code> icon face. Sizes are the measured steps; samples fall back to system fonts.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared variables from the live stylesheets (165 resolved per section theme) and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"ui":{"v":"\"Open Sans\", \"PingFang SC\", \"Microsoft YaHei\", \"Helvetica Neue\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", Arial, sans-serif","t":"fontFamily","s":"computed fontFamily of nv-item default (raw/components-computed.json)","d":"The \"Open Sans\" stack — every UI string: nav, cards, CTAs, spec lines (PingFang SC / Microsoft YaHei fallbacks for CJK)."},"icon":{"v":"Dji","t":"fontFamily","s":"declared @font-face in the served stylesheets (raw/css-vars.json)","d":"Dji — the declared icon face (300/400/500 weights in the served sheets; icon glyphs, not text)."}},"weight":{"component":{"v":400,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-component","d":"The declared `--font-weight-component`."},"headline":{"v":600,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-headline","d":"The declared `--font-weight-headline`."},"paragraph":{"v":400,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-paragraph","d":"The declared `--font-weight-paragraph`."}},"familyDeclared":{"default":{"v":"\"Open Sans\",\"PingFang SC\",\"Microsoft YaHei\",\"Helvetica Neue\",\"Hiragino Sans GB\",\"WenQuanYi Micro Hei\",Arial,sans-serif","t":"fontFamily","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-family","d":"The declared `--font-family`."},"jp":{"v":"\"Open Sans\",\"ヒラギノ角ゴ Pro W3\",\"Hiragino Kaku Gothic Pro\",Osaka,\"メイリオ\",Meiryo,\"ＭＳ Ｐゴシック\",\"MS PGothic\",sans-serif","t":"fontFamily","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-family-jp","d":"The declared `--font-family-jp`."}},"lineHeight":{"compact":{"v":1.26,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --line-height-compact","d":"The declared `--line-height-compact`."},"normal":{"v":1.5,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --line-height-normal","d":"The declared `--line-height-normal`."}},"size":{"measured":{"label":{"v":"12px","t":"fontSize","s":"computed fontSize of nv-login default (raw/components-computed.json)","d":"The 12px account/footer-link size."},"nav":{"v":"14px","t":"fontSize","s":"computed fontSize of nv-item default (raw/components-computed.json)","d":"The 14px nav-item and Store-button size."},"body":{"v":"16px","t":"fontSize","s":"computed fontSize of co-lede default (raw/components-computed.json); co-lede caught the unsupported-browser notice in a modal box, not the company lede (read from the wrong element; recapture needed)","d":"The 16px body and spec-line size."},"eyebrow":{"v":"20px","t":"fontSize","s":"computed fontSize of pd-eyebrow default (raw/components-computed.json)","d":"The 20px section eyebrow (text-ms-24 utility)."},"title":{"v":"24px","t":"fontSize","s":"computed fontSize of pd-h default (raw/components-computed.json)","d":"The 24px product-section title."},"listing":{"v":"32px","t":"fontSize","s":"computed fontSize of st-h1 default (raw/components-computed.json)","d":"The 32px where-to-buy heading."},"category":{"v":"40px","t":"fontSize","s":"computed fontSize of hh-h1 default (raw/components-computed.json)","d":"The 40px handheld category heading."},"display":{"v":"48px","t":"fontSize","s":"computed fontSize of ct-h1 default (raw/components-computed.json)","d":"The 48px category/support display heading."}}}},"color":{},"space":{"lg":{"v":"96px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --spacing-lg","d":"The declared `--spacing-lg`."},"md":{"v":"64px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --spacing-md","d":"The declared `--spacing-md`."},"sm":{"v":"32px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --spacing-sm","d":"The declared `--spacing-sm`."},"xl":{"v":"128px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --spacing-xl","d":"The declared `--spacing-xl`."},"xs":{"v":"16px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --spacing-xs","d":"The declared `--spacing-xs`."}},"zIndex":{"dropdown":{"v":1000,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --zindex-dropdown","d":"The declared `--zindex-dropdown`."},"dropdown-backdrop":{"v":990,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --zindex-dropdown-backdrop","d":"The declared `--zindex-dropdown-backdrop`."},"edit-panel":{"v":1500,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --zindex-edit-panel","d":"The declared `--zindex-edit-panel`."},"fixed":{"v":1100,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --zindex-fixed","d":"The declared `--zindex-fixed`."},"modal":{"v":1200,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --zindex-modal","d":"The declared `--zindex-modal`."},"modal-backdrop":{"v":1190,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --zindex-modal-backdrop","d":"The declared `--zindex-modal-backdrop`."},"navbar-searching":{"v":9111,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --zindex-navbar-searching","d":"The declared `--zindex-navbar-searching`."},"popover":{"v":9200,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --zindex-popover","d":"The declared `--zindex-popover`."},"quark-modal":{"v":10000,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --zindex-quark-modal","d":"The declared `--zindex-quark-modal`."},"sticky":{"v":1100,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --zindex-sticky","d":"The declared `--zindex-sticky`."},"sub-nav":{"v":9110,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --zindex-sub-nav","d":"The declared `--zindex-sub-nav`."},"subscribe-modal":{"v":10002,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --zindex-subscribe-modal","d":"The declared `--zindex-subscribe-modal`."},"tooltip":{"v":1400,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --zindex-tooltip","d":"The declared `--zindex-tooltip`."}},"size":{"grid":{"gap":{"v":"16px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --grid-gap","d":"The declared `--grid-gap`."},"width":{"v":"1200px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --grid-width","d":"The declared `--grid-width`."},"col.width":{"v":"89.3281px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --col-width","d":"The declared `--col-width`."},"column.count":{"v":12,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --column-count","d":"The declared `--column-count`."}}},"black":{"default":{"v":"#000000","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --black","d":"The declared `--black`."},"bg":{"v":"rgba(0, 0, 0, 0.04)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --black-bg","d":"The declared `--black-bg`."},"border":{"v":"rgba(0, 0, 0, 0.15)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --black-border","d":"The declared `--black-border`."},"disabled":{"v":"rgba(0, 0, 0, 0.25)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --black-disabled","d":"The declared `--black-disabled`."},"divider":{"v":"rgba(0, 0, 0, 0.06)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --black-divider","d":"The declared `--black-divider`."},"light":{"bg":{"v":"rgba(0, 0, 0, 0.02)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --black-light-bg","d":"The declared `--black-light-bg`."}},"primary":{"v":"rgba(0, 0, 0, 0.85)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --black-primary","d":"The declared `--black-primary`."},"secondary":{"v":"rgba(0, 0, 0, 0.65)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --black-secondary","d":"The declared `--black-secondary`."},"tertiary":{"v":"rgba(0, 0, 0, 0.45)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --black-tertiary","d":"The declared `--black-tertiary`."}},"brand":{"active":{"v":"#005ab1","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --brand-active","d":"The declared `--brand-active`."},"base":{"v":"#0070d5","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --brand","d":"The declared `--brand`."},"default":{"v":"#0070d5","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --brand-default","d":"The declared `--brand-default`."},"hover":{"v":"#2c8cdd","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --brand-hover","d":"The declared `--brand-hover`."}},"common":{"black":{"v":"#000000","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --common-black","d":"The declared `--common-black`."},"white":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --common-white","d":"The declared `--common-white`."}},"highlight":{"text":{"on":{"dark":{"v":"linear-gradient(90deg, #D95E00, #FFB26E, #D95E00)","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --highlight-text-on-dark","d":"The declared `--highlight-text-on-dark`."}}}},"radius":{"default":{"v":"16px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --radius","d":"The declared `--radius`."},"pill-store":{"v":"1408px","t":"dimension","s":"computed borderTopLeftRadius of nv-store default (raw/components-computed.json)","d":"The 1408px pill radius on the Store button."},"ghost":{"v":"60px","t":"dimension","s":"computed borderTopLeftRadius of pd-watch default (raw/components-computed.json)","d":"The 60px ghost-button radius on dark sections."},"hero-cta":{"v":"64px","t":"dimension","s":"computed borderTopLeftRadius of hm-learn default (raw/components-computed.json)","d":"The 64px hero ghost-CTA radius."},"cta":{"v":"60px","t":"dimension","s":"computed borderTopLeftRadius of pd-buy default (raw/components-computed.json)","d":"The 60px product-page pill CTA radius."},"mobile-cta":{"v":"60px","t":"dimension","s":"computed borderTopLeftRadius of m-cta default (raw/components-computed.json)","d":"The 60px mobile CTA radius."}},"secondary":{"navigation":{"v":"#232526","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --secondary-navigation","d":"The declared `--secondary-navigation`."}},"white":{"default":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --white","d":"The declared `--white`."},"bg":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --white-bg","d":"The declared `--white-bg`."},"border":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --white-border","d":"The declared `--white-border`."},"disabled":{"v":"rgba(255, 255, 255, 0.3)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --white-disabled","d":"The declared `--white-disabled`."},"divider":{"v":"rgba(255, 255, 255, 0.12)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --white-divider","d":"The declared `--white-divider`."},"light":{"bg":{"v":"rgba(255, 255, 255, 0.04)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --white-light-bg","d":"The declared `--white-light-bg`."}},"primary":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --white-primary","d":"The declared `--white-primary`."},"secondary":{"v":"rgba(255, 255, 255, 0.65)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --white-secondary","d":"The declared `--white-secondary`."},"tertiary":{"v":"rgba(255, 255, 255, 0.45)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --white-tertiary","d":"The declared `--white-tertiary`."}},"motion":{"store-cta":{"v":"background-color 0.3s ease","t":"other","s":"computed transition of nv-store default (raw/components-computed.json)","d":"The measured nv-store transition (0.3s)."},"ghost":{"v":"all 0.3s ease","t":"other","s":"computed transition of pd-watch default (raw/components-computed.json)","d":"The measured pd-watch transition (0.3s)."},"atom-cta":{"v":"all 0.3s ease","t":"other","s":"computed transition of pd-buy default (raw/components-computed.json)","d":"The measured pd-buy transition (0.3s)."}},"component":{"nav-bar":{"v":"64px","t":"dimension","s":"measured h of nv-bar default (raw/components-computed.json)","d":"The 64px top nav (legacy dui-navbar on the home hero)."},"nav-mark":{"v":"93px","t":"dimension","s":"measured w of nv-mark default (raw/components-computed.json)","d":"The 93x64 DJI mark cell."},"nav-item":{"v":"100.38px","t":"dimension","s":"measured w of nv-item default (raw/components-computed.json)","d":"The 100x64 nav menu item."},"store-cta":{"v":"83.61px","t":"dimension","s":"measured w of nv-store default (raw/components-computed.json)","d":"The 84x32 Store pill button."},"hero-panel":{"v":"800px","t":"dimension","s":"measured h of hm-slide default (raw/components-computed.json)","d":"The 800px home hero panel."},"hero-cta":{"v":"133px","t":"dimension","s":"measured w of hm-learn default (raw/components-computed.json)","d":"The 133x32 hero ghost CTA."},"category-row":{"v":"696px","t":"dimension","s":"measured w of ct-card default (raw/components-computed.json)","d":"The 1200px product-card row on the category grid."},"subnav":{"v":"64px","t":"dimension","s":"measured h of pd-subnav default (raw/components-computed.json)","d":"The 64px product sub-nav bar."},"atom-cta":{"v":"144px","t":"dimension","s":"measured w of pd-buy default (raw/components-computed.json)","d":"The 144x40 atom-design primary CTA."},"ghost-cta":{"v":"147.48px","t":"dimension","s":"measured w of pd-watch default (raw/components-computed.json)","d":"The 147x40 atom-design ghost CTA."},"support-search":{"v":"640px","t":"dimension","s":"measured w of sp-search default (raw/components-computed.json)","d":"The 640x32 support search field."},"footer":{"v":"833px","t":"dimension","s":"measured h of ft-bar default (raw/components-computed.json)","d":"The 833px sitemap footer."},"mobile-bar":{"v":"50px","t":"dimension","s":"measured h of m-bar default (raw/components-computed.json)","d":"The 50px mobile-site nav bar."},"mobile-tab":{"v":"354px","t":"dimension","s":"measured w of m-tab default (raw/components-computed.json)","d":"The 54x50 mobile nav tab."}}},"light":{"color":{"background":{"0":{"v":"#ffffff","t":"color","s":"css-var --background-0 (light)"},"1":{"v":"#f5f5f5","t":"color","s":"css-var --background-1 (light)"},"2":{"v":"#f0f0f0","t":"color","s":"css-var --background-2 (light)"}},"bg":{"0":{"v":"#000000","t":"color","s":"css-var --bg-0 (light)"},"1":{"v":"#141414","t":"color","s":"css-var --bg-1 (light)"},"2":{"v":"#1f1f1f","t":"color","s":"css-var --bg-2 (light)"},"3":{"v":"#434343","t":"color","s":"css-var --bg-3 (light)"},"4":{"v":"#8c8c8c","t":"color","s":"css-var --bg-4 (light)"},"5":{"v":"#d9d9d9","t":"color","s":"css-var --bg-5 (light)"},"6":{"v":"#f5f5f5","t":"color","s":"css-var --bg-6 (light)"},"7":{"v":"#ffffff","t":"color","s":"css-var --bg-7 (light)"}},"black":{"1":{"v":"rgba(0, 0, 0, 0.02)","t":"color","s":"css-var --black-1 (light)"},"2":{"v":"rgba(0, 0, 0, 0.04)","t":"color","s":"css-var --black-2 (light)"},"3":{"v":"rgba(0, 0, 0, 0.06)","t":"color","s":"css-var --black-3 (light)"},"4":{"v":"rgba(0, 0, 0, 0.15)","t":"color","s":"css-var --black-4 (light)"},"5":{"v":"rgba(0, 0, 0, 0.25)","t":"color","s":"css-var --black-5 (light)"},"6":{"v":"rgba(0, 0, 0, 0.45)","t":"color","s":"css-var --black-6 (light)"},"7":{"v":"rgba(0, 0, 0, 0.65)","t":"color","s":"css-var --black-7 (light)"},"8":{"v":"rgba(0, 0, 0, 0.85)","t":"color","s":"css-var --black-8 (light)"}},"brand":{"1":{"v":"#e7f3fb","t":"color","s":"css-var --brand-1 (light)"},"10":{"v":"#002046","t":"color","s":"css-var --brand-10 (light)"},"2":{"v":"#c5e3f7","t":"color","s":"css-var --brand-2 (light)"},"3":{"v":"#8fc6ee","t":"color","s":"css-var --brand-3 (light)"},"4":{"v":"#5ca9e6","t":"color","s":"css-var --brand-4 (light)"},"5":{"v":"#2c8cdd","t":"color","s":"css-var --brand-5 (light)"},"6":{"v":"#0070d5","t":"color","s":"css-var --brand-6 (light)"},"7":{"v":"#005ab1","t":"color","s":"css-var --brand-7 (light)"},"8":{"v":"#00468e","t":"color","s":"css-var --brand-8 (light)"},"9":{"v":"#00326a","t":"color","s":"css-var --brand-9 (light)"}},"green":{"1":{"v":"#ecfaef","t":"color","s":"css-var --green-1 (light)"},"10":{"v":"#0e461f","t":"color","s":"css-var --green-10 (light)"},"2":{"v":"#d0f6d7","t":"color","s":"css-var --green-2 (light)"},"3":{"v":"#a4edb2","t":"color","s":"css-var --green-3 (light)"},"4":{"v":"#7be391","t":"color","s":"css-var --green-4 (light)"},"5":{"v":"#55da73","t":"color","s":"css-var --green-5 (light)"},"6":{"v":"#31d158","t":"color","s":"css-var --green-6 (light)"},"7":{"v":"#27ae4a","t":"color","s":"css-var --green-7 (light)"},"8":{"v":"#1e8b3c","t":"color","s":"css-var --green-8 (light)"},"9":{"v":"#15682e","t":"color","s":"css-var --green-9 (light)"}},"grey":{"0":{"v":"#ffffff","t":"color","s":"css-var --grey-0 (light)"},"1":{"v":"#fafafa","t":"color","s":"css-var --grey-1 (light)"},"10":{"v":"#1f1f1f","t":"color","s":"css-var --grey-10 (light)"},"11":{"v":"#141414","t":"color","s":"css-var --grey-11 (light)"},"12":{"v":"#000000","t":"color","s":"css-var --grey-12 (light)"},"2":{"v":"#f5f5f5","t":"color","s":"css-var --grey-2 (light)"},"3":{"v":"#f0f0f0","t":"color","s":"css-var --grey-3 (light)"},"4":{"v":"#d9d9d9","t":"color","s":"css-var --grey-4 (light)"},"5":{"v":"#bfbfbf","t":"color","s":"css-var --grey-5 (light)"},"6":{"v":"#8c8c8c","t":"color","s":"css-var --grey-6 (light)"},"7":{"v":"#595959","t":"color","s":"css-var --grey-7 (light)"},"8":{"v":"#434343","t":"color","s":"css-var --grey-8 (light)"},"9":{"v":"#262626","t":"color","s":"css-var --grey-9 (light)"}},"orange":{"1":{"v":"#f9f0e5","t":"color","s":"css-var --orange-1 (light)"},"10":{"v":"#6c1500","t":"color","s":"css-var --orange-10 (light)"},"2":{"v":"#f2dcc3","t":"color","s":"css-var --orange-2 (light)"},"3":{"v":"#e5b88b","t":"color","s":"css-var --orange-3 (light)"},"4":{"v":"#d89459","t":"color","s":"css-var --orange-4 (light)"},"5":{"v":"#cb712c","t":"color","s":"css-var --orange-5 (light)"},"6":{"v":"#be4e04","t":"color","s":"css-var --orange-6 (light)"},"7":{"v":"#aa3b00","t":"color","s":"css-var --orange-7 (light)"},"8":{"v":"#952c00","t":"color","s":"css-var --orange-8 (light)"},"9":{"v":"#812000","t":"color","s":"css-var --orange-9 (light)"}},"red":{"1":{"v":"#fbecea","t":"color","s":"css-var --red-1 (light)"},"10":{"v":"#44020e","t":"color","s":"css-var --red-10 (light)"},"2":{"v":"#f6d0cc","t":"color","s":"css-var --red-2 (light)"},"3":{"v":"#eda19d","t":"color","s":"css-var --red-3 (light)"},"4":{"v":"#e57270","t":"color","s":"css-var --red-4 (light)"},"5":{"v":"#dc4749","t":"color","s":"css-var --red-5 (light)"},"6":{"v":"#d32029","t":"color","s":"css-var --red-6 (light)"},"7":{"v":"#af1522","t":"color","s":"css-var --red-7 (light)"},"8":{"v":"#8c0d1c","t":"color","s":"css-var --red-8 (light)"},"9":{"v":"#680615","t":"color","s":"css-var --red-9 (light)"}},"white":{"1":{"v":"rgba(255, 255, 255, 0.04)","t":"color","s":"css-var --white-1 (light)"},"2":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --white-2 (light)"},"3":{"v":"rgba(255, 255, 255, 0.12)","t":"color","s":"css-var --white-3 (light)"},"4":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"css-var --white-4 (light)"},"5":{"v":"rgba(255, 255, 255, 0.3)","t":"color","s":"css-var --white-5 (light)"},"6":{"v":"rgba(255, 255, 255, 0.45)","t":"color","s":"css-var --white-6 (light)"},"7":{"v":"rgba(255, 255, 255, 0.65)","t":"color","s":"css-var --white-7 (light)"},"8":{"v":"#ffffff","t":"color","s":"css-var --white-8 (light)"}}},"bg":{"v":"rgba(0, 0, 0, 0.04)","t":"color","s":"css-var --bg (light)"},"border":{"default":{"v":"rgba(0, 0, 0, 0.15)","t":"color","s":"css-var --border (light)"},"hairline":{"v":"{black.divider}","t":"color","s":"declared --black-divider, which .light-theme sections assign to --divider (raw/css-vars.json); matches declared --black-divider","d":"The black@6% hairline of .light-theme dividers (declared --divider)."}},"brand":{"primary":{"active":{"v":"rgba(0, 0, 0, 0.85)","t":"color","s":"css-var --brand-primary-active (light)"},"default":{"v":"rgba(0, 0, 0, 0.85)","t":"color","s":"css-var --brand-primary-default (light)"},"focus":{"v":"rgba(0, 0, 0, 0.15)","t":"color","s":"css-var --brand-primary-focus (light)"},"hover":{"v":"rgba(0, 0, 0, 0.65)","t":"color","s":"css-var --brand-primary-hover (light)"}},"text":{"active":{"v":"#00468e","t":"color","s":"css-var --brand-text-active (light)"},"default":{"v":"#005ab1","t":"color","s":"css-var --brand-text-default (light)"},"hover":{"v":"#0070d5","t":"color","s":"css-var --brand-text-hover (light)"}}},"danger":{"v":"#d32029","t":"color","s":"css-var --danger (light)"},"disabled":{"v":"rgba(0, 0, 0, 0.25)","t":"color","s":"css-var --disabled (light)"},"divider":{"v":"rgba(0, 0, 0, 0.06)","t":"color","s":"css-var --divider (light)"},"light":{"bg":{"v":"rgba(0, 0, 0, 0.02)","t":"color","s":"css-var --light-bg (light)"}},"primary":{"v":"rgba(0, 0, 0, 0.85)","t":"color","s":"css-var --primary (light)"},"reverse":{"bg":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --reverse-bg (light)"},"border":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"css-var --reverse-border (light)"},"disabled":{"v":"rgba(255, 255, 255, 0.3)","t":"color","s":"css-var --reverse-disabled (light)"},"divider":{"v":"rgba(255, 255, 255, 0.12)","t":"color","s":"css-var --reverse-divider (light)"},"light":{"bg":{"v":"rgba(255, 255, 255, 0.04)","t":"color","s":"css-var --reverse-light-bg (light)"}},"primary":{"v":"#ffffff","t":"color","s":"css-var --reverse-primary (light)"},"secondary":{"v":"rgba(255, 255, 255, 0.65)","t":"color","s":"css-var --reverse-secondary (light)"},"tertiary":{"v":"rgba(255, 255, 255, 0.45)","t":"color","s":"css-var --reverse-tertiary (light)"}},"secondary":{"v":"rgba(0, 0, 0, 0.65)","t":"color","s":"css-var --secondary (light)"},"success":{"v":"#1e8b3c","t":"color","s":"css-var --success (light)"},"tertiary":{"v":"rgba(0, 0, 0, 0.45)","t":"color","s":"css-var --tertiary (light)"},"warning":{"v":"#be4e04","t":"color","s":"css-var --warning (light)"},"background":{"page":{"v":"{white.default}","t":"color","s":"declared --white (raw/css-vars.json resolved.light); no computed reading of the page field (seen in screenshots/drones-default.png); matches declared --white","d":"The white field the .light-theme sections paint (matches --white)."}},"text":{"ink":{"v":"{black.primary}","t":"color","s":"computed color of ct-h1 default (raw/components-computed.json); matches declared --black-primary","d":"The black@85% ink on headings and body text (matches --black-primary)."},"muted":{"v":"{black.secondary}","t":"color","s":"computed color of co-lede default (raw/components-computed.json); matches declared --black-secondary; co-lede caught the unsupported-browser notice in a modal box, not the company lede (read from the wrong element; recapture needed)","d":"The black@65% muted ink on secondary text (matches --black-secondary)."},"nav-ink":{"v":"#303233","t":"color","s":"computed color of nv-login default (raw/components-computed.json)","d":"The #303233 account-link ink in the header."}},"action":{"primary":{"v":"{color.brand.6}","t":"color","s":"computed backgroundColor of nv-store default (raw/components-computed.json); matches declared --brand-6","d":"The #0070d5 Store CTA — DJI blue (matches --brand-6/--brand-default)."},"primary-hover":{"v":"#2490e3","t":"color","s":"computed backgroundColor of nv-store hover (raw/components-computed.json)","d":"The #2490e3 hover of the Store CTA (mid-flight toward --brand-5 #2c8cdd at read time)."},"primary-pressed":{"v":"#0058b0","t":"color","s":"computed backgroundColor of nv-store pressed (raw/components-computed.json)","d":"The #0058b0 pressed Store CTA (matches --brand-7 #005ab1 within rounding)."},"on-primary":{"v":"{white.default}","t":"color","s":"computed color of nv-store default (raw/components-computed.json); matches declared --white","d":"The white label on the Store CTA (matches --white)."}},"surface":{"footer":{"v":"#272727","t":"color","s":"computed backgroundColor of ft-bar default (raw/components-computed.json)","d":"The #272727 footer slab (between --grey-9 and --grey-10)."}}},"dark":{"color":{"background":{"0":{"v":"#000000","t":"color","s":"css-var --background-0 (dark)"},"1":{"v":"#141414","t":"color","s":"css-var --background-1 (dark)"},"2":{"v":"#1f1f1f","t":"color","s":"css-var --background-2 (dark)"}},"bg":{"0":{"v":"#000000","t":"color","s":"css-var --bg-0 (dark)"},"1":{"v":"#141414","t":"color","s":"css-var --bg-1 (dark)"},"2":{"v":"#1f1f1f","t":"color","s":"css-var --bg-2 (dark)"},"3":{"v":"#434343","t":"color","s":"css-var --bg-3 (dark)"},"4":{"v":"#8c8c8c","t":"color","s":"css-var --bg-4 (dark)"},"5":{"v":"#d9d9d9","t":"color","s":"css-var --bg-5 (dark)"},"6":{"v":"#f5f5f5","t":"color","s":"css-var --bg-6 (dark)"},"7":{"v":"#ffffff","t":"color","s":"css-var --bg-7 (dark)"}},"black":{"1":{"v":"rgba(0, 0, 0, 0.02)","t":"color","s":"css-var --black-1 (dark)"},"2":{"v":"rgba(0, 0, 0, 0.04)","t":"color","s":"css-var --black-2 (dark)"},"3":{"v":"rgba(0, 0, 0, 0.06)","t":"color","s":"css-var --black-3 (dark)"},"4":{"v":"rgba(0, 0, 0, 0.15)","t":"color","s":"css-var --black-4 (dark)"},"5":{"v":"rgba(0, 0, 0, 0.25)","t":"color","s":"css-var --black-5 (dark)"},"6":{"v":"rgba(0, 0, 0, 0.45)","t":"color","s":"css-var --black-6 (dark)"},"7":{"v":"rgba(0, 0, 0, 0.65)","t":"color","s":"css-var --black-7 (dark)"},"8":{"v":"rgba(0, 0, 0, 0.85)","t":"color","s":"css-var --black-8 (dark)"}},"brand":{"1":{"v":"#e7f3fb","t":"color","s":"css-var --brand-1 (dark)"},"10":{"v":"#002046","t":"color","s":"css-var --brand-10 (dark)"},"2":{"v":"#c5e3f7","t":"color","s":"css-var --brand-2 (dark)"},"3":{"v":"#8fc6ee","t":"color","s":"css-var --brand-3 (dark)"},"4":{"v":"#5ca9e6","t":"color","s":"css-var --brand-4 (dark)"},"5":{"v":"#2c8cdd","t":"color","s":"css-var --brand-5 (dark)"},"6":{"v":"#0070d5","t":"color","s":"css-var --brand-6 (dark)"},"7":{"v":"#005ab1","t":"color","s":"css-var --brand-7 (dark)"},"8":{"v":"#00468e","t":"color","s":"css-var --brand-8 (dark)"},"9":{"v":"#00326a","t":"color","s":"css-var --brand-9 (dark)"}},"green":{"1":{"v":"#ecfaef","t":"color","s":"css-var --green-1 (dark)"},"10":{"v":"#0e461f","t":"color","s":"css-var --green-10 (dark)"},"2":{"v":"#d0f6d7","t":"color","s":"css-var --green-2 (dark)"},"3":{"v":"#a4edb2","t":"color","s":"css-var --green-3 (dark)"},"4":{"v":"#7be391","t":"color","s":"css-var --green-4 (dark)"},"5":{"v":"#55da73","t":"color","s":"css-var --green-5 (dark)"},"6":{"v":"#31d158","t":"color","s":"css-var --green-6 (dark)"},"7":{"v":"#27ae4a","t":"color","s":"css-var --green-7 (dark)"},"8":{"v":"#1e8b3c","t":"color","s":"css-var --green-8 (dark)"},"9":{"v":"#15682e","t":"color","s":"css-var --green-9 (dark)"}},"grey":{"0":{"v":"#ffffff","t":"color","s":"css-var --grey-0 (dark)"},"1":{"v":"#fafafa","t":"color","s":"css-var --grey-1 (dark)"},"10":{"v":"#1f1f1f","t":"color","s":"css-var --grey-10 (dark)"},"11":{"v":"#141414","t":"color","s":"css-var --grey-11 (dark)"},"12":{"v":"#000000","t":"color","s":"css-var --grey-12 (dark)"},"2":{"v":"#f5f5f5","t":"color","s":"css-var --grey-2 (dark)"},"3":{"v":"#f0f0f0","t":"color","s":"css-var --grey-3 (dark)"},"4":{"v":"#d9d9d9","t":"color","s":"css-var --grey-4 (dark)"},"5":{"v":"#bfbfbf","t":"color","s":"css-var --grey-5 (dark)"},"6":{"v":"#8c8c8c","t":"color","s":"css-var --grey-6 (dark)"},"7":{"v":"#595959","t":"color","s":"css-var --grey-7 (dark)"},"8":{"v":"#434343","t":"color","s":"css-var --grey-8 (dark)"},"9":{"v":"#262626","t":"color","s":"css-var --grey-9 (dark)"}},"orange":{"1":{"v":"#f9f0e5","t":"color","s":"css-var --orange-1 (dark)"},"10":{"v":"#6c1500","t":"color","s":"css-var --orange-10 (dark)"},"2":{"v":"#f2dcc3","t":"color","s":"css-var --orange-2 (dark)"},"3":{"v":"#e5b88b","t":"color","s":"css-var --orange-3 (dark)"},"4":{"v":"#d89459","t":"color","s":"css-var --orange-4 (dark)"},"5":{"v":"#cb712c","t":"color","s":"css-var --orange-5 (dark)"},"6":{"v":"#be4e04","t":"color","s":"css-var --orange-6 (dark)"},"7":{"v":"#aa3b00","t":"color","s":"css-var --orange-7 (dark)"},"8":{"v":"#952c00","t":"color","s":"css-var --orange-8 (dark)"},"9":{"v":"#812000","t":"color","s":"css-var --orange-9 (dark)"}},"red":{"1":{"v":"#fbecea","t":"color","s":"css-var --red-1 (dark)"},"10":{"v":"#44020e","t":"color","s":"css-var --red-10 (dark)"},"2":{"v":"#f6d0cc","t":"color","s":"css-var --red-2 (dark)"},"3":{"v":"#eda19d","t":"color","s":"css-var --red-3 (dark)"},"4":{"v":"#e57270","t":"color","s":"css-var --red-4 (dark)"},"5":{"v":"#dc4749","t":"color","s":"css-var --red-5 (dark)"},"6":{"v":"#d32029","t":"color","s":"css-var --red-6 (dark)"},"7":{"v":"#af1522","t":"color","s":"css-var --red-7 (dark)"},"8":{"v":"#8c0d1c","t":"color","s":"css-var --red-8 (dark)"},"9":{"v":"#680615","t":"color","s":"css-var --red-9 (dark)"}},"white":{"1":{"v":"rgba(255, 255, 255, 0.04)","t":"color","s":"css-var --white-1 (dark)"},"2":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --white-2 (dark)"},"3":{"v":"rgba(255, 255, 255, 0.12)","t":"color","s":"css-var --white-3 (dark)"},"4":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"css-var --white-4 (dark)"},"5":{"v":"rgba(255, 255, 255, 0.3)","t":"color","s":"css-var --white-5 (dark)"},"6":{"v":"rgba(255, 255, 255, 0.45)","t":"color","s":"css-var --white-6 (dark)"},"7":{"v":"rgba(255, 255, 255, 0.65)","t":"color","s":"css-var --white-7 (dark)"},"8":{"v":"#ffffff","t":"color","s":"css-var --white-8 (dark)"}}},"bg":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --bg (dark)"},"border":{"default":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"css-var --border (dark)"},"ghost-border":{"v":"{white.default}","t":"color","s":"computed borderTopColor of pd-watch default (raw/components-computed.json); matches declared --white","d":"The white 1px ghost-button outline on dark (matches --white)."}},"brand":{"primary":{"active":{"v":"rgba(255, 255, 255, 0.45)","t":"color","s":"css-var --brand-primary-active (dark)"},"default":{"v":"#ffffff","t":"color","s":"css-var --brand-primary-default (dark)"},"focus":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"css-var --brand-primary-focus (dark)"},"hover":{"v":"rgba(255, 255, 255, 0.65)","t":"color","s":"css-var --brand-primary-hover (dark)"}},"text":{"active":{"v":"#0070d5","t":"color","s":"css-var --brand-text-active (dark)"},"default":{"v":"#2c8cdd","t":"color","s":"css-var --brand-text-default (dark)"},"hover":{"v":"#5ca9e6","t":"color","s":"css-var --brand-text-hover (dark)"}}},"danger":{"v":"#dc4749","t":"color","s":"css-var --danger (dark)"},"disabled":{"v":"rgba(255, 255, 255, 0.3)","t":"color","s":"css-var --disabled (dark)"},"divider":{"v":"rgba(255, 255, 255, 0.12)","t":"color","s":"css-var --divider (dark)"},"light":{"bg":{"v":"rgba(255, 255, 255, 0.04)","t":"color","s":"css-var --light-bg (dark)"}},"primary":{"v":"#ffffff","t":"color","s":"css-var --primary (dark)"},"reverse":{"bg":{"v":"rgba(0, 0, 0, 0.04)","t":"color","s":"css-var --reverse-bg (dark)"},"border":{"v":"rgba(0, 0, 0, 0.15)","t":"color","s":"css-var --reverse-border (dark)"},"disabled":{"v":"rgba(0, 0, 0, 0.25)","t":"color","s":"css-var --reverse-disabled (dark)"},"divider":{"v":"rgba(0, 0, 0, 0.06)","t":"color","s":"css-var --reverse-divider (dark)"},"light":{"bg":{"v":"rgba(0, 0, 0, 0.02)","t":"color","s":"css-var --reverse-light-bg (dark)"}},"primary":{"v":"rgba(0, 0, 0, 0.85)","t":"color","s":"css-var --reverse-primary (dark)"},"secondary":{"v":"rgba(0, 0, 0, 0.65)","t":"color","s":"css-var --reverse-secondary (dark)"},"tertiary":{"v":"rgba(0, 0, 0, 0.45)","t":"color","s":"css-var --reverse-tertiary (dark)"}},"secondary":{"v":"rgba(255, 255, 255, 0.65)","t":"color","s":"css-var --secondary (dark)"},"success":{"v":"#31d158","t":"color","s":"css-var --success (dark)"},"tertiary":{"v":"rgba(255, 255, 255, 0.45)","t":"color","s":"css-var --tertiary (dark)"},"warning":{"v":"#cb712c","t":"color","s":"css-var --warning (dark)"},"text":{"ink":{"v":"{white.primary}","t":"color","s":"computed color of pd-h default (raw/components-computed.json); matches declared --white-primary","d":"The white ink on dark sections (matches --white-primary)."},"muted":{"v":"rgba(255, 255, 255, 0.85)","t":"color","s":"computed color of ft-link default (raw/components-computed.json)","d":"The white@85% footer-link ink on dark (matches --white-8)."},"nav-ink":{"v":"{white.default}","t":"color","s":"computed color of nv-item default (raw/components-computed.json); matches declared --white","d":"The white nav-item ink over the hero (legacy dui-navbar)."}},"action":{"cta":{"v":"{white.default}","t":"color","s":"computed backgroundColor of pd-buy default (raw/components-computed.json); matches declared --white","d":"The white pill CTA on the product page's dark hero (matches --white)."},"cta-hover":{"v":"rgba(255, 255, 255, 0.9)","t":"color","s":"computed backgroundColor of pd-buy hover (raw/components-computed.json)","d":"The white@90% hover of the dark-section pill CTA."},"cta-pressed":{"v":"rgba(255, 255, 255, 0.8)","t":"color","s":"computed backgroundColor of pd-buy pressed (raw/components-computed.json)","d":"The white@80% pressed state of the dark-section pill CTA."},"on-cta":{"v":"{black.primary}","t":"color","s":"computed color of pd-buy default (raw/components-computed.json); matches declared --black-primary","d":"The black@85% label on the white pill (matches --black-primary)."},"ghost-hover":{"v":"rgba(255, 255, 255, 0.09)","t":"color","s":"computed backgroundColor of pd-watch hover (raw/components-computed.json)","d":"The white@9% ghost-button hover fill on dark (near --white-2 @8%)."},"ghost-pressed":{"v":"rgba(255, 255, 255, 0.15)","t":"color","s":"computed backgroundColor of pd-watch pressed (raw/components-computed.json)","d":"The white@15% ghost-button pressed fill on dark (near --white-3 @12%)."}},"surface":{"footer":{"v":"#272727","t":"color","s":"computed backgroundColor of ft-bar default (raw/components-computed.json)","d":"The #272727 footer slab."}}}};
+const $ = (s) => document.querySelector(s);
+// The light/dark toggle. Both themes are real paint signed out — the
+// marketing light and the app's .theme-darker — so flipping data-mode swaps
+// every token var and the samples below repaint for real.
+$('#mode').addEventListener('click', () => {
+  const on = document.documentElement.getAttribute('data-mode') === 'dark';
+  document.documentElement.setAttribute('data-mode', on ? '' : 'dark');
+  $('#mode').textContent = on ? 'Dark' : 'Light';
+  $('#mode').setAttribute('aria-pressed', on ? 'false' : 'true');
+});
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // The shared colour layer is wider than color.*: always.*, ansi.*,
+  // background.* and other invariant colour vars live at their natural paths.
+  const shared = {};
+  for (const [n, t] of flat(TOK.core || {}, '')) {
+    if (t.t !== 'color' || n.startsWith('color.') || n.startsWith('component')) continue;
+    (shared[n.split('.')[0]] = shared[n.split('.')[0]] || []).push([n, t]);
+  }
+  for (const g of Object.keys(shared).sort()) {
+    h += `<div class="pal-h">${esc(g)}.*</div><div class="pal">`;
+    for (const [n, t] of shared[g]) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the app surfaces\' .theme-darker paint)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // Each set's custom properties only resolve inside its own scope (.light
+    // re-declares the shared names :root holds), or a dark page repaint turns
+    // the "light roles" palette dark.
+    h += `<div class="pal-h">${label}</div><div class="pal ${setname}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || TOK.core.spacing || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.size || {}, 'size.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.zIndex || {}, 'zIndex.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  let node = TOK.core || TOK, seen = [];
+  for (const k of m[1].split('.')) { node = node && node[k]; seen.push(k); }
+  return node && node.v !== undefined ? resolveVal(node.v, (depth || 0) + 1) : v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const v = resolveVal(t.v).trim();
+    const m = /^([\d.]+)(px|rem|em)$/.exec(v);
+    const size = m ? `min(${m[1]}${m[2]}, 44px)` : '13px';
+    h += `<div class="tr"><span class="ts" style="font-size:${size}">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — DJI</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1956 @@
+{
+ "core": {
+  "font": {
+   "family": {
+    "app": {
+     "type": "fontFamily",
+     "var": "--font-app",
+     "description": "the app face — the system sans stack (-apple-system first); body text and UI"
+    },
+    "inter": {
+     "type": "fontFamily",
+     "var": "--font-inter",
+     "description": "Inter — the product face loaded through next/font (with its metrics-matched fallback); marketing/display text"
+    },
+    "code": {
+     "type": "fontFamily",
+     "var": "--font-mono",
+     "description": "the mono face — ui-monospace stack; code blocks, install commands, inline code"
+    },
+    "systemSans": {
+     "type": "fontFamily",
+     "var": "--font-sans",
+     "description": "Tailwind's default font-sans utility face — the same system stack as --font-app"
+    },
+    "sans": {
+     "type": "fontFamily",
+     "var": "--default-font-family",
+     "description": "Tailwind's default body font chain — resolves to the --font-app stack"
+    },
+    "mono": {
+     "type": "fontFamily",
+     "var": "--default-mono-font-family",
+     "description": "Tailwind's default code font chain — resolves to --font-mono"
+    }
+   },
+   "weight": {
+    "bold": {
+     "type": "fontWeight",
+     "var": "--font-weight-bold"
+    },
+    "light": {
+     "type": "fontWeight",
+     "var": "--font-weight-light"
+    },
+    "medium": {
+     "type": "fontWeight",
+     "var": "--font-weight-medium"
+    },
+    "normal": {
+     "type": "fontWeight",
+     "var": "--font-weight-normal"
+    },
+    "semibold": {
+     "type": "fontWeight",
+     "var": "--font-weight-semibold"
+    }
+   },
+   "size": {
+    "xs": {
+     "type": "dimension",
+     "var": "--text-xs"
+    },
+    "sm": {
+     "type": "dimension",
+     "var": "--text-sm"
+    },
+    "base": {
+     "type": "dimension",
+     "var": "--text-base"
+    },
+    "lg": {
+     "type": "dimension",
+     "var": "--text-lg"
+    },
+    "xl": {
+     "type": "dimension",
+     "var": "--text-xl"
+    },
+    "2xl": {
+     "type": "dimension",
+     "var": "--text-2xl"
+    },
+    "3xl": {
+     "type": "dimension",
+     "var": "--text-3xl"
+    },
+    "4xl": {
+     "type": "dimension",
+     "var": "--text-4xl"
+    },
+    "6xl": {
+     "type": "dimension",
+     "var": "--text-6xl"
+    }
+   },
+   "lineHeight": {
+    "2xl": {
+     "type": "number",
+     "var": "--text-2xl--line-height"
+    },
+    "3xl": {
+     "type": "number",
+     "var": "--text-3xl--line-height"
+    },
+    "4xl": {
+     "type": "number",
+     "var": "--text-4xl--line-height"
+    },
+    "6xl": {
+     "type": "number",
+     "var": "--text-6xl--line-height"
+    },
+    "base": {
+     "type": "number",
+     "var": "--text-base--line-height"
+    },
+    "lg": {
+     "type": "number",
+     "var": "--text-lg--line-height"
+    },
+    "sm": {
+     "type": "number",
+     "var": "--text-sm--line-height"
+    },
+    "xl": {
+     "type": "number",
+     "var": "--text-xl--line-height"
+    },
+    "xs": {
+     "type": "number",
+     "var": "--text-xs--line-height"
+    }
+   },
+   "tracking": {
+    "tight": {
+     "type": "other",
+     "var": "--tracking-tight"
+    },
+    "wide": {
+     "type": "other",
+     "var": "--tracking-wide"
+    },
+    "widest": {
+     "type": "other",
+     "var": "--tracking-widest"
+    }
+   },
+   "role": {
+    "body": {
+     "size": {
+      "type": "dimension",
+      "var": "--text-body"
+     },
+     "weight": {
+      "type": "fontWeight",
+      "var": "--text-body--font-weight"
+     },
+     "lineHeight": {
+      "type": "dimension",
+      "var": "--text-body--line-height"
+     },
+     "letterSpacing": {
+      "type": "other",
+      "var": "--text-body--letter-spacing"
+     }
+    },
+    "label": {
+     "size": {
+      "type": "dimension",
+      "var": "--text-label"
+     },
+     "weight": {
+      "type": "fontWeight",
+      "var": "--text-label--font-weight"
+     },
+     "lineHeight": {
+      "type": "dimension",
+      "var": "--text-label--line-height"
+     },
+     "letterSpacing": {
+      "type": "other",
+      "var": "--text-label--letter-spacing"
+     }
+    },
+    "reading": {
+     "size": {
+      "type": "dimension",
+      "var": "--text-reading"
+     },
+     "weight": {
+      "type": "fontWeight",
+      "var": "--text-reading--font-weight"
+     },
+     "lineHeight": {
+      "type": "dimension",
+      "var": "--text-reading--line-height"
+     },
+     "letterSpacing": {
+      "type": "other",
+      "var": "--text-reading--letter-spacing"
+     }
+    },
+    "small": {
+     "size": {
+      "type": "dimension",
+      "var": "--text-small"
+     },
+     "weight": {
+      "type": "fontWeight",
+      "var": "--text-small--font-weight"
+     },
+     "lineHeight": {
+      "type": "dimension",
+      "var": "--text-small--line-height"
+     },
+     "letterSpacing": {
+      "type": "other",
+      "var": "--text-small--letter-spacing"
+     }
+    },
+    "subtitle": {
+     "size": {
+      "type": "dimension",
+      "var": "--text-subtitle"
+     },
+     "weight": {
+      "type": "fontWeight",
+      "var": "--text-subtitle--font-weight"
+     },
+     "lineHeight": {
+      "type": "dimension",
+      "var": "--text-subtitle--line-height"
+     },
+     "letterSpacing": {
+      "type": "other",
+      "var": "--text-subtitle--letter-spacing"
+     }
+    },
+    "title2": {
+     "size": {
+      "type": "dimension",
+      "var": "--text-title-2"
+     },
+     "weight": {
+      "type": "fontWeight",
+      "var": "--text-title-2--font-weight"
+     },
+     "lineHeight": {
+      "type": "dimension",
+      "var": "--text-title-2--line-height"
+     },
+     "letterSpacing": {
+      "type": "other",
+      "var": "--text-title-2--letter-spacing"
+     }
+    },
+    "title3": {
+     "size": {
+      "type": "dimension",
+      "var": "--text-title-3"
+     },
+     "weight": {
+      "type": "fontWeight",
+      "var": "--text-title-3--font-weight"
+     },
+     "lineHeight": {
+      "type": "dimension",
+      "var": "--text-title-3--line-height"
+     },
+     "letterSpacing": {
+      "type": "other",
+      "var": "--text-title-3--letter-spacing"
+     }
+    },
+    "title4": {
+     "size": {
+      "type": "dimension",
+      "var": "--text-title-4"
+     },
+     "weight": {
+      "type": "fontWeight",
+      "var": "--text-title-4--font-weight"
+     },
+     "lineHeight": {
+      "type": "dimension",
+      "var": "--text-title-4--line-height"
+     },
+     "letterSpacing": {
+      "type": "other",
+      "var": "--text-title-4--letter-spacing"
+     }
+    }
+   }
+  },
+  "radius": {
+   "base": {
+    "type": "dimension",
+    "var": "--radius"
+   },
+   "xs": {
+    "type": "dimension",
+    "var": "--radius-xs"
+   }
+  },
+  "space": {
+   "unit": {
+    "type": "dimension",
+    "var": "--spacing",
+    "description": "the 4px unit the spacing scale multiplies"
+   }
+  },
+  "breakpoint": {
+   "2xl": {
+    "type": "dimension",
+    "var": "--breakpoint-2xl"
+   }
+  },
+  "container": {
+   "2xl": {
+    "type": "dimension",
+    "var": "--container-2xl"
+   },
+   "3xl": {
+    "type": "dimension",
+    "var": "--container-3xl"
+   },
+   "4xl": {
+    "type": "dimension",
+    "var": "--container-4xl"
+   },
+   "5xl": {
+    "type": "dimension",
+    "var": "--container-5xl"
+   },
+   "6xl": {
+    "type": "dimension",
+    "var": "--container-6xl"
+   },
+   "lg": {
+    "type": "dimension",
+    "var": "--container-lg"
+   },
+   "md": {
+    "type": "dimension",
+    "var": "--container-md"
+   },
+   "sm": {
+    "type": "dimension",
+    "var": "--container-sm"
+   },
+   "xl": {
+    "type": "dimension",
+    "var": "--container-xl"
+   },
+   "xs": {
+    "type": "dimension",
+    "var": "--container-xs"
+   }
+  },
+  "ease": {
+   "inOut": {
+    "type": "cubicBezier",
+    "var": "--ease-in-out"
+   },
+   "out": {
+    "type": "cubicBezier",
+    "var": "--ease-out"
+   },
+   "default": {
+    "type": "cubicBezier",
+    "var": "--default-transition-timing-function"
+   }
+  },
+  "duration": {
+   "default": {
+    "type": "duration",
+    "var": "--default-transition-duration"
+   }
+  },
+  "blur": {
+   "2xl": {
+    "type": "dimension",
+    "var": "--blur-2xl"
+   },
+   "lg": {
+    "type": "dimension",
+    "var": "--blur-lg"
+   },
+   "md": {
+    "type": "dimension",
+    "var": "--blur-md"
+   },
+   "sm": {
+    "type": "dimension",
+    "var": "--blur-sm"
+   }
+  },
+  "shadow": {
+   "sm": {
+    "type": "other",
+    "var": "--drop-shadow-sm",
+    "description": "drop-shadow filter value, kept as the computed string"
+   }
+  },
+  "animation": {
+   "bounce": {
+    "type": "other",
+    "var": "--animate-bounce",
+    "description": "animation shorthand as declared"
+   },
+   "ping": {
+    "type": "other",
+    "var": "--animate-ping",
+    "description": "animation shorthand as declared"
+   },
+   "pulse": {
+    "type": "other",
+    "var": "--animate-pulse",
+    "description": "animation shorthand as declared"
+   },
+   "spin": {
+    "type": "other",
+    "var": "--animate-spin",
+    "description": "animation shorthand as declared"
+   }
+  },
+  "layout": {
+   "aspectVideo": {
+    "type": "other",
+    "var": "--aspect-video"
+   }
+  },
+  "typography": {
+   "articleTitle": {
+    "$value": {
+     "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+     "fontSize": "36px",
+     "fontWeight": 600,
+     "lineHeight": "44px",
+     "letterSpacing": "-0.54px"
+    },
+    "$type": "typography",
+    "$description": "the blog article title — text-article-title",
+    "$extensions": {
+     "source": "measured th-prose-h1 on /why-diy-qa-doesnt-work-anymore-a-2025-guide-to-e2e-testing-for-modern-web-apps (default state)"
+    }
+   },
+   "h2": {
+    "$value": {
+     "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+     "fontSize": "24px",
+     "fontWeight": 600,
+     "lineHeight": "32px",
+     "letterSpacing": "-0.24px"
+    },
+    "$type": "typography",
+    "$description": "an in-article section heading",
+    "$extensions": {
+     "source": "measured th-prose-h2 on /why-diy-qa-doesnt-work-anymore-a-2025-guide-to-e2e-testing-for-modern-web-apps (default state)"
+    }
+   },
+   "body": {
+    "$value": {
+     "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+     "fontSize": "18px",
+     "fontWeight": 400,
+     "lineHeight": "28px"
+    },
+    "$type": "typography",
+    "$description": "article body text — text-reading",
+    "$extensions": {
+     "source": "measured th-prose-p on /why-diy-qa-doesnt-work-anymore-a-2025-guide-to-e2e-testing-for-modern-web-apps (default state)"
+    }
+   },
+   "bodyLink": {
+    "$value": {
+     "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+     "fontSize": "18px",
+     "fontWeight": 500,
+     "lineHeight": "28px"
+    },
+    "$type": "typography",
+    "$description": "a body-text link inside the article",
+    "$extensions": {
+     "source": "measured th-prose-link on /why-diy-qa-doesnt-work-anymore-a-2025-guide-to-e2e-testing-for-modern-web-apps (default state)"
+    }
+   },
+   "cardTitle": {
+    "$value": {
+     "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
+     "fontSize": "16px",
+     "fontWeight": 400,
+     "lineHeight": "24px"
+    },
+    "$type": "typography",
+    "$description": "a feed card's post title",
+    "$extensions": {
+     "source": "measured post-title-link on / (default state)"
+    }
+   },
+   "navLink": {
+    "$value": {
+     "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
+     "fontSize": "14px",
+     "fontWeight": 400,
+     "lineHeight": "20px"
+    },
+    "$type": "typography",
+    "$description": "a sidebar nav label",
+    "$extensions": {
+     "source": "measured app-nav-link on / (default state)"
+    }
+   },
+   "button": {
+    "$value": {
+     "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
+     "fontSize": "16px",
+     "fontWeight": 600,
+     "lineHeight": "24px"
+    },
+    "$type": "typography",
+    "$description": "the primary CTA label",
+    "$extensions": {
+     "source": "measured app-cta on / (default state)"
+    }
+   },
+   "input": {
+    "$value": {
+     "fontFamily": "Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"",
+     "fontSize": "16px",
+     "fontWeight": 400,
+     "lineHeight": "24px"
+    },
+    "$type": "typography",
+    "$description": "the Ctrl-K search field",
+    "$extensions": {
+     "source": "measured app-search-input on / (default state)"
+    }
+   },
+   "faqQuestion": {
+    "$value": {
+     "fontFamily": "-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"",
+     "fontSize": "16px",
+     "fontWeight": 600,
+     "lineHeight": "24px"
+    },
+    "$type": "typography",
+    "$description": "a /pro FAQ question",
+    "$extensions": {
+     "source": "measured faq-question on /pro (default state)"
+    }
+   }
+  }
+ },
+ "light": {
+  "primary": {
+   "default": {
+    "type": "color",
+    "var": "--primary"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--primary-foreground"
+   }
+  },
+  "secondary": {
+   "default": {
+    "type": "color",
+    "var": "--secondary"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--secondary-foreground"
+   }
+  },
+  "accent": {
+   "default": {
+    "type": "color",
+    "var": "--accent"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--accent-foreground"
+   }
+  },
+  "muted": {
+   "default": {
+    "type": "color",
+    "var": "--muted"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--muted-foreground"
+   }
+  },
+  "card": {
+   "default": {
+    "type": "color",
+    "var": "--card"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--card-foreground"
+   }
+  },
+  "popover": {
+   "default": {
+    "type": "color",
+    "var": "--popover"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--popover-foreground"
+   }
+  },
+  "destructive": {
+   "default": {
+    "type": "color",
+    "var": "--destructive"
+   },
+   "border": {
+    "type": "color",
+    "var": "--destructive-border"
+   },
+   "cream": {
+    "type": "color",
+    "var": "--destructive-cream"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--destructive-foreground"
+   },
+   "wash": {
+    "type": "color",
+    "var": "--destructive-wash"
+   }
+  },
+  "success": {
+   "default": {
+    "type": "color",
+    "var": "--success"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--success-foreground"
+   },
+   "wash": {
+    "type": "color",
+    "var": "--success-wash"
+   }
+  },
+  "warning": {
+   "default": {
+    "type": "color",
+    "var": "--warning"
+   },
+   "border": {
+    "type": "color",
+    "var": "--warning-border"
+   },
+   "cream": {
+    "type": "color",
+    "var": "--warning-cream"
+   },
+   "wash": {
+    "type": "color",
+    "var": "--warning-wash"
+   }
+  },
+  "disabled": {
+   "foreground": {
+    "type": "color",
+    "var": "--disabled-foreground"
+   }
+  },
+  "highlight": {
+   "default": {
+    "type": "color",
+    "var": "--highlight"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--highlight-foreground"
+   }
+  },
+  "toolbar": {
+   "default": {
+    "type": "color",
+    "var": "--toolbar"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--toolbar-foreground"
+   }
+  },
+  "border": {
+   "default": {
+    "type": "color",
+    "var": "--border"
+   },
+   "input": {
+    "type": "color",
+    "var": "--input"
+   },
+   "ring": {
+    "type": "color",
+    "var": "--ring"
+   }
+  },
+  "sidebar": {
+   "background": {
+    "type": "color",
+    "var": "--sidebar"
+   },
+   "accent": {
+    "type": "color",
+    "var": "--sidebar-accent"
+   },
+   "accentForeground": {
+    "type": "color",
+    "var": "--sidebar-accent-foreground"
+   },
+   "border": {
+    "type": "color",
+    "var": "--sidebar-border"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--sidebar-foreground"
+   },
+   "primary": {
+    "type": "color",
+    "var": "--sidebar-primary"
+   },
+   "primaryForeground": {
+    "type": "color",
+    "var": "--sidebar-primary-foreground"
+   },
+   "ring": {
+    "type": "color",
+    "var": "--sidebar-ring"
+   }
+  },
+  "chart": {
+   "1": {
+    "type": "color",
+    "var": "--chart-1"
+   },
+   "2": {
+    "type": "color",
+    "var": "--chart-2"
+   },
+   "3": {
+    "type": "color",
+    "var": "--chart-3"
+   },
+   "4": {
+    "type": "color",
+    "var": "--chart-4"
+   },
+   "5": {
+    "type": "color",
+    "var": "--chart-5"
+   }
+  },
+  "brand": {
+   "default": {
+    "type": "color",
+    "var": "--brand"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--brand-foreground"
+   },
+   "linkedin": {
+    "type": "color",
+    "var": "--brand-linkedin"
+   }
+  },
+  "link": {
+   "default": {
+    "type": "color",
+    "var": "--link"
+   },
+   "underline": {
+    "type": "color",
+    "var": "--link-underline"
+   }
+  },
+  "codeBlock": {
+   "codeBlock": {
+    "type": "color",
+    "var": "--code-block"
+   },
+   "codeBlockForeground": {
+    "type": "color",
+    "var": "--code-block-foreground"
+   },
+   "codeBlockMuted": {
+    "type": "color",
+    "var": "--code-block-muted"
+   }
+  },
+  "reading": {
+   "text": {
+    "type": "color",
+    "var": "--reading-text"
+   }
+  },
+  "surface": {
+   "default": {
+    "type": "color",
+    "var": "--surface"
+   }
+  },
+  "scrim": {
+   "default": {
+    "type": "color",
+    "var": "--scrim"
+   }
+  },
+  "selection": {
+   "default": {
+    "type": "color",
+    "var": "--selection"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--selection-foreground"
+   }
+  },
+  "scroll": {
+   "shadow": {
+    "type": "color",
+    "var": "--scroll-shadow"
+   }
+  },
+  "scrollbar": {
+   "thumb": {
+    "type": "color",
+    "var": "--scrollbar-thumb"
+   }
+  },
+  "root": {
+   "background": {
+    "type": "color",
+    "var": "--background"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--foreground"
+   }
+  },
+  "elevation": {
+   "button": {
+    "type": "other",
+    "var": "--elevation-button",
+    "description": "box-shadow stack re-pointed per theme, kept as the computed string"
+   },
+   "lg": {
+    "type": "other",
+    "var": "--elevation-lg",
+    "description": "box-shadow stack re-pointed per theme, kept as the computed string"
+   },
+   "md": {
+    "type": "other",
+    "var": "--elevation-md",
+    "description": "box-shadow stack re-pointed per theme, kept as the computed string"
+   },
+   "sm": {
+    "type": "other",
+    "var": "--elevation-sm",
+    "description": "box-shadow stack re-pointed per theme, kept as the computed string"
+   },
+   "xs": {
+    "type": "other",
+    "var": "--elevation-xs",
+    "description": "box-shadow stack re-pointed per theme, kept as the computed string"
+   }
+  },
+  "ai": {
+   "accent": {
+    "type": "color",
+    "var": "--ai-accent"
+   },
+   "border": {
+    "type": "color",
+    "var": "--ai-border"
+   },
+   "from": {
+    "type": "color",
+    "var": "--ai-from"
+   },
+   "to": {
+    "type": "color",
+    "var": "--ai-to"
+   }
+  },
+  "buildful": {
+   "default": {
+    "type": "color",
+    "var": "--buildful"
+   },
+   "soft": {
+    "type": "color",
+    "var": "--buildful-soft"
+   },
+   "strong": {
+    "type": "color",
+    "var": "--buildful-strong"
+   }
+  },
+  "pro": {
+   "default": {
+    "type": "color",
+    "var": "--pro"
+   },
+   "button": {
+    "type": "color",
+    "var": "--pro-button"
+   },
+   "buttonForeground": {
+    "type": "color",
+    "var": "--pro-button-foreground"
+   },
+   "buttonHover": {
+    "type": "color",
+    "var": "--pro-button-hover"
+   },
+   "cream": {
+    "type": "color",
+    "var": "--pro-cream"
+   },
+   "creamBorder": {
+    "type": "color",
+    "var": "--pro-cream-border"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--pro-foreground"
+   },
+   "glow": {
+    "type": "color",
+    "var": "--pro-glow"
+   },
+   "strong": {
+    "type": "color",
+    "var": "--pro-strong"
+   },
+   "wash": {
+    "type": "color",
+    "var": "--pro-wash"
+   }
+  },
+  "landing": {
+   "chatgpt": {
+    "type": "color",
+    "var": "--landing-chatgpt"
+   },
+   "google": {
+    "type": "color",
+    "var": "--landing-google"
+   },
+   "night": {
+    "type": "color",
+    "var": "--landing-night"
+   },
+   "perplexity": {
+    "type": "color",
+    "var": "--landing-perplexity"
+   },
+   "skyFrom": {
+    "type": "color",
+    "var": "--landing-sky-from"
+   },
+   "skyHash": {
+    "type": "color",
+    "var": "--landing-sky-hash"
+   },
+   "skyMark": {
+    "type": "color",
+    "var": "--landing-sky-mark"
+   },
+   "skyTo": {
+    "type": "color",
+    "var": "--landing-sky-to"
+   },
+   "tile": {
+    "type": "color",
+    "var": "--landing-tile"
+   },
+   "warmFrom": {
+    "type": "color",
+    "var": "--landing-warm-from"
+   },
+   "warmMark": {
+    "type": "color",
+    "var": "--landing-warm-mark"
+   },
+   "warmTo": {
+    "type": "color",
+    "var": "--landing-warm-to"
+   }
+  },
+  "tod": {
+   "edge": {
+    "type": "color",
+    "var": "--tod-edge"
+   },
+   "eveningHalo": {
+    "type": "color",
+    "var": "--tod-evening-halo"
+   },
+   "eveningHillFar": {
+    "type": "color",
+    "var": "--tod-evening-hill-far"
+   },
+   "eveningHillFront": {
+    "type": "color",
+    "var": "--tod-evening-hill-front"
+   },
+   "eveningHillNear": {
+    "type": "color",
+    "var": "--tod-evening-hill-near"
+   },
+   "eveningSky1": {
+    "type": "color",
+    "var": "--tod-evening-sky-1"
+   },
+   "eveningSky2": {
+    "type": "color",
+    "var": "--tod-evening-sky-2"
+   },
+   "eveningSky3": {
+    "type": "color",
+    "var": "--tod-evening-sky-3"
+   },
+   "eveningStreak": {
+    "type": "color",
+    "var": "--tod-evening-streak"
+   },
+   "eveningSun": {
+    "type": "color",
+    "var": "--tod-evening-sun"
+   },
+   "morningCloud": {
+    "type": "color",
+    "var": "--tod-morning-cloud"
+   },
+   "morningHalo": {
+    "type": "color",
+    "var": "--tod-morning-halo"
+   },
+   "morningHillFar": {
+    "type": "color",
+    "var": "--tod-morning-hill-far"
+   },
+   "morningHillFront": {
+    "type": "color",
+    "var": "--tod-morning-hill-front"
+   },
+   "morningHillNear": {
+    "type": "color",
+    "var": "--tod-morning-hill-near"
+   },
+   "morningSky1": {
+    "type": "color",
+    "var": "--tod-morning-sky-1"
+   },
+   "morningSky2": {
+    "type": "color",
+    "var": "--tod-morning-sky-2"
+   },
+   "morningSky3": {
+    "type": "color",
+    "var": "--tod-morning-sky-3"
+   },
+   "morningSun": {
+    "type": "color",
+    "var": "--tod-morning-sun"
+   },
+   "nightHalo": {
+    "type": "color",
+    "var": "--tod-night-halo"
+   },
+   "nightHillFar": {
+    "type": "color",
+    "var": "--tod-night-hill-far"
+   },
+   "nightHillFront": {
+    "type": "color",
+    "var": "--tod-night-hill-front"
+   },
+   "nightHillNear": {
+    "type": "color",
+    "var": "--tod-night-hill-near"
+   },
+   "nightMoon": {
+    "type": "color",
+    "var": "--tod-night-moon"
+   },
+   "nightSky1": {
+    "type": "color",
+    "var": "--tod-night-sky-1"
+   },
+   "nightSky2": {
+    "type": "color",
+    "var": "--tod-night-sky-2"
+   },
+   "nightStar": {
+    "type": "color",
+    "var": "--tod-night-star"
+   },
+   "noonCloud": {
+    "type": "color",
+    "var": "--tod-noon-cloud"
+   },
+   "noonHalo": {
+    "type": "color",
+    "var": "--tod-noon-halo"
+   },
+   "noonHillFar": {
+    "type": "color",
+    "var": "--tod-noon-hill-far"
+   },
+   "noonHillFront": {
+    "type": "color",
+    "var": "--tod-noon-hill-front"
+   },
+   "noonHillNear": {
+    "type": "color",
+    "var": "--tod-noon-hill-near"
+   },
+   "noonSky1": {
+    "type": "color",
+    "var": "--tod-noon-sky-1"
+   },
+   "noonSky2": {
+    "type": "color",
+    "var": "--tod-noon-sky-2"
+   },
+   "noonSky3": {
+    "type": "color",
+    "var": "--tod-noon-sky-3"
+   },
+   "noonSun": {
+    "type": "color",
+    "var": "--tod-noon-sun"
+   }
+  },
+  "misc": {
+   "colorBlack": {
+    "type": "color",
+    "var": "--color-black"
+   },
+   "colorPrimary": {
+    "type": "color",
+    "var": "--color-primary"
+   },
+   "colorWhite": {
+    "type": "color",
+    "var": "--color-white"
+   }
+  },
+  "component": {
+   "button": {
+    "cta": {
+     "bg": {
+      "type": "color",
+      "value": "{primary.default}",
+      "source": "measured app-cta default on / (CTA fill) — the element's class paints the primary.default role, so each theme resolves its own",
+      "description": "CTA fill"
+     }
+    }
+   },
+   "blogNav": {
+    "bg": {
+     "type": "color",
+     "value": "{surface.default}",
+     "source": "measured th-nav default on / (blog nav fill) — the element's class paints the surface.default role, so each theme resolves its own",
+     "description": "blog nav fill"
+    }
+   }
+  }
+ },
+ "dark": {
+  "primary": {
+   "default": {
+    "type": "color",
+    "var": "--primary"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--primary-foreground"
+   }
+  },
+  "secondary": {
+   "default": {
+    "type": "color",
+    "var": "--secondary"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--secondary-foreground"
+   }
+  },
+  "accent": {
+   "default": {
+    "type": "color",
+    "var": "--accent"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--accent-foreground"
+   }
+  },
+  "muted": {
+   "default": {
+    "type": "color",
+    "var": "--muted"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--muted-foreground"
+   }
+  },
+  "card": {
+   "default": {
+    "type": "color",
+    "var": "--card"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--card-foreground"
+   }
+  },
+  "popover": {
+   "default": {
+    "type": "color",
+    "var": "--popover"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--popover-foreground"
+   }
+  },
+  "destructive": {
+   "default": {
+    "type": "color",
+    "var": "--destructive"
+   },
+   "border": {
+    "type": "color",
+    "var": "--destructive-border"
+   },
+   "cream": {
+    "type": "color",
+    "var": "--destructive-cream"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--destructive-foreground"
+   },
+   "wash": {
+    "type": "color",
+    "var": "--destructive-wash"
+   }
+  },
+  "success": {
+   "default": {
+    "type": "color",
+    "var": "--success"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--success-foreground"
+   },
+   "wash": {
+    "type": "color",
+    "var": "--success-wash"
+   }
+  },
+  "warning": {
+   "default": {
+    "type": "color",
+    "var": "--warning"
+   },
+   "border": {
+    "type": "color",
+    "var": "--warning-border"
+   },
+   "cream": {
+    "type": "color",
+    "var": "--warning-cream"
+   },
+   "wash": {
+    "type": "color",
+    "var": "--warning-wash"
+   }
+  },
+  "disabled": {
+   "foreground": {
+    "type": "color",
+    "var": "--disabled-foreground"
+   }
+  },
+  "highlight": {
+   "default": {
+    "type": "color",
+    "var": "--highlight"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--highlight-foreground"
+   }
+  },
+  "toolbar": {
+   "default": {
+    "type": "color",
+    "var": "--toolbar"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--toolbar-foreground"
+   }
+  },
+  "border": {
+   "default": {
+    "type": "color",
+    "var": "--border"
+   },
+   "input": {
+    "type": "color",
+    "var": "--input"
+   },
+   "ring": {
+    "type": "color",
+    "var": "--ring"
+   }
+  },
+  "sidebar": {
+   "background": {
+    "type": "color",
+    "var": "--sidebar"
+   },
+   "accent": {
+    "type": "color",
+    "var": "--sidebar-accent"
+   },
+   "accentForeground": {
+    "type": "color",
+    "var": "--sidebar-accent-foreground"
+   },
+   "border": {
+    "type": "color",
+    "var": "--sidebar-border"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--sidebar-foreground"
+   },
+   "primary": {
+    "type": "color",
+    "var": "--sidebar-primary"
+   },
+   "primaryForeground": {
+    "type": "color",
+    "var": "--sidebar-primary-foreground"
+   },
+   "ring": {
+    "type": "color",
+    "var": "--sidebar-ring"
+   }
+  },
+  "chart": {
+   "1": {
+    "type": "color",
+    "var": "--chart-1"
+   },
+   "2": {
+    "type": "color",
+    "var": "--chart-2"
+   },
+   "3": {
+    "type": "color",
+    "var": "--chart-3"
+   },
+   "4": {
+    "type": "color",
+    "var": "--chart-4"
+   },
+   "5": {
+    "type": "color",
+    "var": "--chart-5"
+   }
+  },
+  "brand": {
+   "default": {
+    "type": "color",
+    "var": "--brand"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--brand-foreground"
+   },
+   "linkedin": {
+    "type": "color",
+    "var": "--brand-linkedin"
+   }
+  },
+  "link": {
+   "default": {
+    "type": "color",
+    "var": "--link"
+   },
+   "underline": {
+    "type": "color",
+    "var": "--link-underline"
+   }
+  },
+  "codeBlock": {
+   "codeBlock": {
+    "type": "color",
+    "var": "--code-block"
+   },
+   "codeBlockForeground": {
+    "type": "color",
+    "var": "--code-block-foreground"
+   },
+   "codeBlockMuted": {
+    "type": "color",
+    "var": "--code-block-muted"
+   }
+  },
+  "reading": {
+   "text": {
+    "type": "color",
+    "var": "--reading-text"
+   }
+  },
+  "surface": {
+   "default": {
+    "type": "color",
+    "var": "--surface"
+   }
+  },
+  "scrim": {
+   "default": {
+    "type": "color",
+    "var": "--scrim"
+   }
+  },
+  "selection": {
+   "default": {
+    "type": "color",
+    "var": "--selection"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--selection-foreground"
+   }
+  },
+  "scroll": {
+   "shadow": {
+    "type": "color",
+    "var": "--scroll-shadow"
+   }
+  },
+  "scrollbar": {
+   "thumb": {
+    "type": "color",
+    "var": "--scrollbar-thumb"
+   }
+  },
+  "command": {
+   "default": {
+    "type": "color",
+    "var": "--command",
+    "description": "declared under .dark only"
+   }
+  },
+  "root": {
+   "background": {
+    "type": "color",
+    "var": "--background"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--foreground"
+   }
+  },
+  "elevation": {
+   "button": {
+    "type": "other",
+    "var": "--elevation-button",
+    "description": "box-shadow stack re-pointed per theme, kept as the computed string"
+   },
+   "lg": {
+    "type": "other",
+    "var": "--elevation-lg",
+    "description": "box-shadow stack re-pointed per theme, kept as the computed string"
+   },
+   "md": {
+    "type": "other",
+    "var": "--elevation-md",
+    "description": "box-shadow stack re-pointed per theme, kept as the computed string"
+   },
+   "sm": {
+    "type": "other",
+    "var": "--elevation-sm",
+    "description": "box-shadow stack re-pointed per theme, kept as the computed string"
+   },
+   "xs": {
+    "type": "other",
+    "var": "--elevation-xs",
+    "description": "box-shadow stack re-pointed per theme, kept as the computed string"
+   }
+  },
+  "ai": {
+   "accent": {
+    "type": "color",
+    "var": "--ai-accent"
+   },
+   "border": {
+    "type": "color",
+    "var": "--ai-border"
+   },
+   "from": {
+    "type": "color",
+    "var": "--ai-from"
+   },
+   "to": {
+    "type": "color",
+    "var": "--ai-to"
+   }
+  },
+  "buildful": {
+   "default": {
+    "type": "color",
+    "var": "--buildful"
+   },
+   "soft": {
+    "type": "color",
+    "var": "--buildful-soft"
+   },
+   "strong": {
+    "type": "color",
+    "var": "--buildful-strong"
+   }
+  },
+  "pro": {
+   "default": {
+    "type": "color",
+    "var": "--pro"
+   },
+   "button": {
+    "type": "color",
+    "var": "--pro-button"
+   },
+   "buttonForeground": {
+    "type": "color",
+    "var": "--pro-button-foreground"
+   },
+   "buttonHover": {
+    "type": "color",
+    "var": "--pro-button-hover"
+   },
+   "cream": {
+    "type": "color",
+    "var": "--pro-cream"
+   },
+   "creamBorder": {
+    "type": "color",
+    "var": "--pro-cream-border"
+   },
+   "foreground": {
+    "type": "color",
+    "var": "--pro-foreground"
+   },
+   "glow": {
+    "type": "color",
+    "var": "--pro-glow"
+   },
+   "strong": {
+    "type": "color",
+    "var": "--pro-strong"
+   },
+   "wash": {
+    "type": "color",
+    "var": "--pro-wash"
+   }
+  },
+  "landing": {
+   "chatgpt": {
+    "type": "color",
+    "var": "--landing-chatgpt"
+   },
+   "google": {
+    "type": "color",
+    "var": "--landing-google"
+   },
+   "night": {
+    "type": "color",
+    "var": "--landing-night"
+   },
+   "perplexity": {
+    "type": "color",
+    "var": "--landing-perplexity"
+   },
+   "skyFrom": {
+    "type": "color",
+    "var": "--landing-sky-from"
+   },
+   "skyHash": {
+    "type": "color",
+    "var": "--landing-sky-hash"
+   },
+   "skyMark": {
+    "type": "color",
+    "var": "--landing-sky-mark"
+   },
+   "skyTo": {
+    "type": "color",
+    "var": "--landing-sky-to"
+   },
+   "tile": {
+    "type": "color",
+    "var": "--landing-tile"
+   },
+   "warmFrom": {
+    "type": "color",
+    "var": "--landing-warm-from"
+   },
+   "warmMark": {
+    "type": "color",
+    "var": "--landing-warm-mark"
+   },
+   "warmTo": {
+    "type": "color",
+    "var": "--landing-warm-to"
+   }
+  },
+  "tod": {
+   "edge": {
+    "type": "color",
+    "var": "--tod-edge"
+   },
+   "eveningHalo": {
+    "type": "color",
+    "var": "--tod-evening-halo"
+   },
+   "eveningHillFar": {
+    "type": "color",
+    "var": "--tod-evening-hill-far"
+   },
+   "eveningHillFront": {
+    "type": "color",
+    "var": "--tod-evening-hill-front"
+   },
+   "eveningHillNear": {
+    "type": "color",
+    "var": "--tod-evening-hill-near"
+   },
+   "eveningSky1": {
+    "type": "color",
+    "var": "--tod-evening-sky-1"
+   },
+   "eveningSky2": {
+    "type": "color",
+    "var": "--tod-evening-sky-2"
+   },
+   "eveningSky3": {
+    "type": "color",
+    "var": "--tod-evening-sky-3"
+   },
+   "eveningStreak": {
+    "type": "color",
+    "var": "--tod-evening-streak"
+   },
+   "eveningSun": {
+    "type": "color",
+    "var": "--tod-evening-sun"
+   },
+   "morningCloud": {
+    "type": "color",
+    "var": "--tod-morning-cloud"
+   },
+   "morningHalo": {
+    "type": "color",
+    "var": "--tod-morning-halo"
+   },
+   "morningHillFar": {
+    "type": "color",
+    "var": "--tod-morning-hill-far"
+   },
+   "morningHillFront": {
+    "type": "color",
+    "var": "--tod-morning-hill-front"
+   },
+   "morningHillNear": {
+    "type": "color",
+    "var": "--tod-morning-hill-near"
+   },
+   "morningSky1": {
+    "type": "color",
+    "var": "--tod-morning-sky-1"
+   },
+   "morningSky2": {
+    "type": "color",
+    "var": "--tod-morning-sky-2"
+   },
+   "morningSky3": {
+    "type": "color",
+    "var": "--tod-morning-sky-3"
+   },
+   "morningSun": {
+    "type": "color",
+    "var": "--tod-morning-sun"
+   },
+   "nightHalo": {
+    "type": "color",
+    "var": "--tod-night-halo"
+   },
+   "nightHillFar": {
+    "type": "color",
+    "var": "--tod-night-hill-far"
+   },
+   "nightHillFront": {
+    "type": "color",
+    "var": "--tod-night-hill-front"
+   },
+   "nightHillNear": {
+    "type": "color",
+    "var": "--tod-night-hill-near"
+   },
+   "nightMoon": {
+    "type": "color",
+    "var": "--tod-night-moon"
+   },
+   "nightSky1": {
+    "type": "color",
+    "var": "--tod-night-sky-1"
+   },
+   "nightSky2": {
+    "type": "color",
+    "var": "--tod-night-sky-2"
+   },
+   "nightStar": {
+    "type": "color",
+    "var": "--tod-night-star"
+   },
+   "noonCloud": {
+    "type": "color",
+    "var": "--tod-noon-cloud"
+   },
+   "noonHalo": {
+    "type": "color",
+    "var": "--tod-noon-halo"
+   },
+   "noonHillFar": {
+    "type": "color",
+    "var": "--tod-noon-hill-far"
+   },
+   "noonHillFront": {
+    "type": "color",
+    "var": "--tod-noon-hill-front"
+   },
+   "noonHillNear": {
+    "type": "color",
+    "var": "--tod-noon-hill-near"
+   },
+   "noonSky1": {
+    "type": "color",
+    "var": "--tod-noon-sky-1"
+   },
+   "noonSky2": {
+    "type": "color",
+    "var": "--tod-noon-sky-2"
+   },
+   "noonSky3": {
+    "type": "color",
+    "var": "--tod-noon-sky-3"
+   },
+   "noonSun": {
+    "type": "color",
+    "var": "--tod-noon-sun"
+   }
+  },
+  "misc": {
+   "colorBlack": {
+    "type": "color",
+    "var": "--color-black"
+   },
+   "colorPrimary": {
+    "type": "color",
+    "var": "--color-primary"
+   },
+   "colorWhite": {
+    "type": "color",
+    "var": "--color-white"
+   }
+  },
+  "component": {
+   "button": {
+    "cta": {
+     "bg": {
+      "type": "color",
+      "value": "{primary.default}",
+      "source": "measured app-cta default on / (CTA fill) — the element's class paints the primary.default role, so each theme resolves its own",
+      "description": "CTA fill"
+     }
+    }
+   },
+   "blogNav": {
+    "bg": {
+     "type": "color",
+     "value": "{surface.default}",
+     "source": "measured th-nav default on / (blog nav fill) — the element's class paints the surface.default role, so each theme resolves its own",
+     "description": "blog nav fill"
+    }
+   }
+  }
+ },
+ "component": {
+  "sidebar": {
+   "width": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "measured app-sidebar default on / (app sidebar column)"
+   }
+  },
+  "button": {
+   "cta": {
+    "height": {
+     "type": "dimension",
+     "value": "56px",
+     "source": "measured app-cta default on / ('Start your blog' CTA link)"
+    },
+    "radius": {
+     "type": "dimension",
+     "value": "9999px",
+     "source": "measured app-cta default on / (CTA corner)",
+     "description": "all four corners measure the full-radius clamp — a pill"
+    }
+   }
+  },
+  "navLink": {
+   "height": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "measured app-nav-link default on / (sidebar nav row)"
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "9999px",
+    "source": "measured app-nav-link default on / (sidebar row corner)",
+    "description": "all four corners measure the full-radius clamp — a pill"
+   }
+  },
+  "searchDialog": {
+   "width": {
+    "type": "dimension",
+    "value": "672px",
+    "source": "measured app-search-dialog default on / (the Ctrl-K search dialog)"
+   },
+   "height": {
+    "type": "dimension",
+    "value": "594px",
+    "source": "measured app-search-dialog default on / (the Ctrl-K search dialog)"
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "12px",
+    "source": "measured app-search-dialog default on / (search dialog corner)"
+   }
+  },
+  "postCard": {
+   "height": {
+    "type": "dimension",
+    "value": "293.16px",
+    "source": "measured post-card default on / (a feed post card row)"
+   }
+  },
+  "commentBox": {
+   "height": {
+    "type": "dimension",
+    "value": "72px",
+    "source": "measured comment-box default on /posts/i-used-to-be-a-magician/6afadee8cd8f659889f399ed (the comment textarea)"
+   }
+  },
+  "blogHeader": {
+   "height": {
+    "type": "dimension",
+    "value": "72px",
+    "source": "measured th-header default on / (blog header bar)"
+   }
+  },
+  "blogNav": {
+   "height": {
+    "type": "dimension",
+    "value": "36px",
+    "source": "measured th-nav default on / (blog pill nav)"
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "9999px",
+    "source": "measured th-nav default on / (blog pill nav corner)",
+    "description": "all four corners measure the full-radius clamp — a pill"
+   }
+  },
+  "blogSearchDialog": {
+   "width": {
+    "type": "dimension",
+    "value": "672px",
+    "source": "measured th-search-dialog default on / (blog search dialog)"
+   }
+  },
+  "blogPostCard": {
+   "height": {
+    "type": "dimension",
+    "value": "514.08px",
+    "source": "measured th-post-card default on / (blog index post card)"
+   }
+  },
+  "mobileHeader": {
+   "height": {
+    "type": "dimension",
+    "value": "52px",
+    "source": "measured m-app-header default on / (mobile top bar)"
+   }
+  },
+  "mobileDrawer": {
+   "width": {
+    "type": "dimension",
+    "value": "288px",
+    "source": "measured m-app-drawer opened on / (opened nav sheet)"
+   }
+  },
+  "type": {
+   "linkHover": {
+    "color": {
+     "type": "color",
+     "value": "lab(7.16472 -0.140898 -4.74486)",
+     "source": "measured post-title-link hover on / (post title on hover)"
+    }
+   },
+   "articleTitle": {
+    "size": {
+     "type": "other",
+     "value": "36px",
+     "source": "measured th-prose-h1 default on /why-diy-qa-doesnt-work-anymore-a-2025-guide-to-e2e-testing-for-modern-web-apps (blog article h1)"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTTPie style guide</title>
+<meta name="description" content="httpie.io design tokens and the signed-out surfaces' components — the marketing pages and the /app incognito client — rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --palette-p888888: #888888;
+  --palette-p6b7280: #6b7280;
+  --palette-pd9d9d9: #d9d9d9;
+  --palette-pdddddd: #dddddd;
+  --palette-p426bd1: #426bd1;
+  --palette-pba2452: rgba(245, 245, 240, 0.05);
+  --palette-pink: rgba(250, 155, 250, 0.25);
+  --palette-p555555: #555555;
+  --palette-paaaaaa: #aaaaaa;
+  --palette-p02060c: #02060c;
+  --palette-p55aa69: #55aa69;
+  --palette-pcccccc: #cccccc;
+  --palette-p222222: #222222;
+  --palette-p458ee1: #458ee1;
+  --palette-p282425: #282425;
+  --palette-pba7512: rgba(75, 120, 230, 0.25);
+  --palette-p3b82f6: #3b82f6;
+  --palette-pba2552: rgba(255, 255, 255, 0.5);
+  --palette-pf5f5f5: #f5f5f5;
+  --palette-p333338: #333338;
+  --typography-hero: 400 109px/87.2px "Pie Headline", Impact;
+  --typography-sectionTitle: 600 30px/42px "Pie Body", sans-serif;
+  --typography-articleTitle: 600 30px/42px "Pie Body", sans-serif;
+  --typography-body: 300 18px/25.2px "Pie Body", sans-serif;
+  --typography-bodyLink: 400 18px/30px "Pie Body", sans-serif;
+  --typography-navLink: 400 18px/30px "Pie Body", sans-serif;
+  --typography-button: 400 15px/21px "Pie Body", sans-serif;
+  --typography-urlField: 400 14.2px/24px PolySansMono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --typography-tabLabel: 400 8.5px/16px PolySansMono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --typography-input: 400 16px/24px "Pie Body", sans-serif;
+  --font-family-headline: "Pie Headline", Impact;
+  --font-family-body: "Pie Body", sans-serif;
+  --font-family-mono: "Pie Monospace", monospace;
+  --font-family-symbols: "Pie Symbols";
+  --component-nav-height: 130px;
+  --component-button-cta-height: 51px;
+  --component-button-cta-radius: 9999px;
+  --component-button-secondary-radius: 9999px;
+  --component-navLink-height: 30px;
+  --component-appSidebar-width: 49px;
+  --component-tabCard-height: 28px;
+  --component-tabCard-radius: 6px;
+  --component-urlField-height: 44px;
+  --component-urlField-radius: 0px;
+  --component-sendButton-height: 28px;
+  --component-sendButton-radius: 6px;
+  --component-panelTabs-height: 28px;
+  --component-methodButton-height: 28px;
+  --component-testimonialCard-height: 238px;
+  --component-testimonialCard-radius: 10px;
+  --component-input-height: 44px;
+  --component-input-radius: 9999px;
+  --component-postCard-height: 398.2px;
+  --component-docsToc-width: 314.5px;
+  --component-mobileNav-height: 85px;
+  --component-badge-radius: 9999px;
+  --component-themeToggle-radius: 0px;
+  --component-type-navLinkHover-color: #73dc8c;
+  --component-type-linkHover-color: #f5f5f0;
+  --component-type-articleTitle-size: 30px;
+  --component-type-hero-tracking: 1.308px;
+  --motion-duration-150ms: 150ms;
+  --motion-duration-200ms: 200ms;
+  --motion-duration-300ms: 300ms;
+  --motion-duration-500ms: 500ms;
+  --motion-duration-1000ms: 1000ms;
+  --motion-duration-1200ms: 1200ms;
+  --motion-duration-2000ms: 2000ms;
+  --motion-duration-3000ms: 3000ms;
+  --motion-duration-4000ms: 4000ms;
+  --motion-easing-bezier-0-0-0-2-1: cubic-bezier(0, 0, 0.2, 1);
+  --motion-easing-bezier-0-15-0-27-0-58-1: cubic-bezier(0.15, 0.27, 0.58, 1);
+  --motion-easing-bezier-0-18-0-67-0-6-1-22: cubic-bezier(0.18, 0.67, 0.6, 1.22);
+  --motion-easing-bezier-0-4-0-0-2-1: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-bezier-0-4-0-1-1: cubic-bezier(0.4, 0, 1, 1);
+  --motion-easing-bezier-0-46-0-03-0-52-0-96: cubic-bezier(0.46, 0.03, 0.52, 0.96);
+  --motion-easing-bezier-0-75-m0-02-0-2-0-97: cubic-bezier(0.75, -0.02, 0.2, 0.97);
+  --motion-easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-ease-in: cubic-bezier(0.42, 0, 1, 1);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --bg-z0: #edede8;
+  --bg-z1: #f5f5f0;
+  --bg-z2: #fafaf5;
+  --bg-z3: #ffffff;
+  --text-invertedPrimary: #f5f5f0;
+  --text-placeholders: rgba(28, 24, 24, 0.4);
+  --text-primary: #1c1818;
+  --text-secondary: rgba(28, 24, 24, 0.6);
+  --text-tertiary: rgba(28, 24, 24, 0.2);
+  --accent-default: #52ab66;
+  --accent-hover: #429154;
+  --altAccent-default: #698feb;
+  --altAccent-hover: #4b78e6;
+  --warning-default: #c7382e;
+  --warning-hover: #910a00;
+  --focus-ring: #698feb;
+  --border-default: rgba(0, 0, 0, 0.06);
+  --border-subtle: rgba(0, 0, 0, 0.02);
+  --header-hover: #fcfcf8;
+  --item-hover: rgba(0, 0, 0, 0.03);
+  --item-selected: rgba(0, 0, 0, 0.06);
+  --item-selectedHover: rgba(0, 0, 0, 0.09);
+  --selection-default: rgba(119, 219, 143, 0.3);
+  --drag-draggable: rgba(255, 255, 255, 0.667);
+  --drag-droppable: rgba(0, 0, 0, 0.06);
+  --backdrop-default: rgba(0, 0, 0, 0.2);
+  --shadow-color: rgba(0, 0, 0, 0.15);
+  --code-aqua: #597082;
+  --code-blue: #3354a6;
+  --code-gray: #7d7d7d;
+  --code-green: #429154;
+  --code-orange: #d6701c;
+  --code-pink: #a854a6;
+  --code-primary: #363636;
+  --code-purple: #70389e;
+  --code-red: #c7382e;
+  --code-yellow: #999400;
+  --misc-appCursor: default;
+  --misc-appCursorLink: pointer;
+  --misc-appCursorTiny: pointer;
+  --component-button-cta-bg: #73dc8c;
+  --sg-sans: var(--font-family-body, ui-sans-serif, system-ui, sans-serif);
+  --sg-mono: var(--font-family-mono, ui-monospace, "SF Mono", Menlo, monospace);
+}
+[data-mode="dark"], .dark {
+  --bg-z0: #191515;
+  --bg-z1: #1c1818;
+  --bg-z2: #201c1c;
+  --bg-z3: #292424;
+  --text-invertedPrimary: #1c1818;
+  --text-placeholders: rgba(245, 245, 240, 0.35);
+  --text-primary: #f5f5f0;
+  --text-secondary: rgba(245, 245, 240, 0.6);
+  --text-tertiary: rgba(245, 245, 240, 0.2);
+  --accent-default: #73dc8c;
+  --accent-hover: #a1e8b0;
+  --altAccent-default: #3b5eba;
+  --altAccent-hover: #4b78e6;
+  --warning-default: #ff665b;
+  --warning-hover: #ff968f;
+  --focus-ring: #3b5eba;
+  --border-default: rgba(255, 255, 255, 0.04);
+  --border-subtle: rgba(255, 255, 255, 0.016);
+  --header-hover: #1e1a1a;
+  --item-hover: rgba(255, 255, 255, 0.03);
+  --item-selected: rgba(255, 255, 255, 0.06);
+  --item-selectedHover: rgba(255, 255, 255, 0.12);
+  --selection-default: rgba(119, 219, 143, 0.3);
+  --drag-draggable: rgba(66, 66, 66, 0.667);
+  --drag-droppable: rgba(245, 245, 245, 0.08);
+  --backdrop-default: rgba(0, 0, 0, 0.5);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --code-aqua: #8cb4cd;
+  --code-blue: #4b78e6;
+  --code-gray: #7d7d7d;
+  --code-green: #73dc8c;
+  --code-orange: #ffa24e;
+  --code-pink: #fa9bfa;
+  --code-primary: #d1d1cf;
+  --code-purple: #b464f0;
+  --code-red: #ff665b;
+  --code-yellow: #dbde52;
+  --misc-appCursor: default;
+  --misc-appCursorLink: pointer;
+  --misc-appCursorTiny: pointer;
+  --component-button-cta-bg: #73dc8c;
+  --component-sendButton-bg: var(--accent-default);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.6 var(--sg-sans); color: var(--text-primary, #f5f5f0); background: var(--bg-z0, #191515); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-default, rgba(255,255,255,.08)); }
+.lead { max-width: 62ch; opacity: .8; }
+.note { font-size: 13px; opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; color: var(--accent-default, #73dc8c); }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { padding: 10px; border-radius: 10px; background: var(--bg-z0, #191515); color: var(--text-primary, #f5f5f0); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-default, #e2e4e8); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); color: inherit; }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); opacity: .65; color: inherit; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border-default, #e2e4e8); overflow: hidden; background: var(--bg-z0, #191515); color: var(--text-primary, #f5f5f0); border-radius: 12px; }
+.topbar { display: flex; align-items: center; gap: 14px; height: var(--component-mobileHeader-height, 56px); padding: 0 16px 0 20px; font-size: 14px; border-bottom: 1px solid var(--border-default, #e2e4e8); background: var(--bg-z0, #191515); }
+.topbar .wm { font-weight: 600; font-size: 15px; letter-spacing: -0.02em; }
+.topbar .nav { opacity: .75; display: flex; gap: 14px; font-size: 13px; }
+.topbar .sp { flex: 1; }
+.topbar .pill { display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border: 1px solid var(--border-default, #e2e4e8); border-radius: 999px; font-size: 12px; color: var(--text-secondary, rgba(245,245,240,.6)); background: var(--bg-z1, #1c1818); }
+.topbar .pill b { border: 1px solid var(--border-default, #e2e4e8); border-radius: 4px; padding: 1px 5px; font-weight: 500; font-size: 10px; }
+.topbar .theme { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-default, #e2e4e8); display: inline-flex; align-items: center; justify-content: center; color: var(--text-primary, #f5f5f0); background: transparent; font: inherit; cursor: pointer; padding: 0; }
+.topbar .theme:hover { background: var(--item-hover, rgba(255,255,255,.03)); }
+.shell { display: flex; }
+/* The real /app pairs a 49px icon rail (component.appSidebar.width) with a
+   ~300px side panel when it opens; the mock paints the labelled panel, so it
+   keeps a fixed mock width rather than the rail's. The panel itself paints
+   transparent — bg.z0 shows through, exactly as the token records. */
+.sb { width: 240px; flex: 0 0 auto; border-right: 1px solid var(--border-default, rgba(255,255,255,.04)); padding: 18px 14px; font-size: 13px; background: var(--component-appSidebar-bg, transparent); color: var(--text-primary, #f5f5f0); }
+.sb .grp { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; opacity: .55; margin: 14px 6px 6px; }
+.sb .ln { display: block; padding: 5px 10px; border-radius: var(--radius-base, .5rem); opacity: .8; }
+.sb .ln.on { opacity: 1; font-weight: 500; background: var(--item-selected, rgba(255,255,255,.06)); }
+.art { flex: 1; padding: 28px 34px 40px; min-width: 0; }
+.art h3 { font: 500 30px/1.25 var(--sg-sans); letter-spacing: -0.02em; margin: 0 0 10px; }
+.art p { font-size: 14.5px; line-height: 1.7; color: var(--text-primary, #f5f5f0); margin: 0 0 14px; max-width: 62ch; }
+.art .ic { font-family: var(--sg-mono); font-size: .88em; color: var(--altAccent-default, #4b78e6); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 36px; padding: 0 16px; font-size: 13.5px; font-weight: 500; border-radius: var(--radius-base, .5rem); border: 1px solid transparent; }
+.btn.primary { background: var(--component-sendButton-bg, var(--accent-default, #73dc8c)); color: var(--text-invertedPrimary, #1c1818); }
+.btn.ghost { background: transparent; border-color: var(--border-default, rgba(255,255,255,.12)); color: var(--text-primary, #f5f5f0); }
+.codeblk { background: var(--bg-z2, #201c1c); color: var(--code-primary, #d1d1cf); border-radius: var(--component-codeblock-radius, 8px); font: 400 12.5px/1.7 var(--sg-mono); padding: 14px 16px; margin: 16px 0; }
+.codeblk .tab { display: inline-block; padding: 3px 10px; border-radius: 6px; font-size: 11px; margin: 0 4px 10px 0; background: rgba(255,255,255,.08); }
+.codeblk .tab.on { background: rgba(255,255,255,.2); font-weight: 600; }
+.codeblk .kw { color: var(--code-blue, #4b78e6); }
+.codeblk .str { color: var(--code-green, #73dc8c); }
+.codeblk .fn { color: var(--code-pink, #fa9bfa); }
+.codeblk .cm { color: var(--code-gray, #7d7d7d); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-default, #e2e4e8); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-default, #e2e4e8); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; opacity: .65; font-family: var(--sg-mono); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.tile { border: 1px solid var(--border-default, #e2e4e8); border-radius: var(--component-tabCard-radius, 8px); padding: 16px; font-size: 13px; background: var(--bg-z1, #1c1818); color: var(--text-primary, #f5f5f0); }
+.tile b { display: block; font: 600 15px/1.4 var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>HTTPie style guide</h1>
+  <p class="note">httpie.io — the marketing surface and the signed-out /app client. Signed-out public evidence only.</p>
+
+  <h2 class="sh">httpie.io, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the hand-written semantic layer (<code>--color-bg-z0..z3</code> surfaces, <code>--color-primary</code>/<code>-secondary</code>/<code>-tertiary</code>/<code>-placeholders</code> ink, the <code>--color-accent</code> green and <code>--color-alt-accent</code> blue, <code>--color-warning</code>, <code>--color-focus</code>, <code>--color-borders</code>, the <code>--color-item-*</code> list states, <code>--color-selection</code>/<code>-backdrop</code>/<code>-shadows</code>, and the <code>--color-code-*</code> syntax palette), the <code>core.palette.*</code> literals the marketing utility classes hard-code (the warm darks and off-whites, the pink pill), the proprietary Pie faces as names (never shipped), and the measured geometry (<code>component.*</code>) read off the live DOM — the nav, the buttons, the request builder and the tab strip. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from httpie.io, signed out, in headless Chromium at 1440&times;900 (mobile pass at 390&times;844). The site paints <b>dark by default</b> — <code>html.dark</code> is the boot and AUTO resolves dark — and the footer&rsquo;s own ThemeToggle radios (LIGHT MODE / AUTO / DARK MODE) repaint <code>html.light</code>, persisted to <code>localStorage.theme</code>; the <code>dark</code> token set is the painted surface, <code>light</code> the switched one. The Pie faces (Pie Headline / FK Screamer, Pie Body / PolyPie, Pie Monospace, Pie Symbols) are licensed and not bundled: samples fall back to system fonts. Sign-in, the HTTPie AI &ldquo;Try it out&rdquo; action, and the desktop/CLI binaries behind /download are documented boundaries, not captures.</p>
+
+  <h2 class="sh">The surface</h2>
+  <p class="lead">httpie.io is a dark-on-warm marketing surface over the HTTPie-for-Web client: <code>/app</code> runs signed out as an &ldquo;Incognito space&rdquo; — a <code>bg.z1</code> rail (the space switcher, Collection/Drafts, the draft list) beside a tab strip of request cards, the request line (method menu, <span class="ic">httpie.io/hello</span> URL field in Pie Monospace, the <code>accent</code> Send) and the Params/Headers/Auth/Body panel tabs above request and response panes. The marketing pages wrap it in a site nav (wordmark, Desktop / Terminal / AI / Docs / Jobs / Blog links, the solid &ldquo;Go to App&rdquo; primary button) and a footer carrying the LIGHT MODE / AUTO / DARK MODE radio stack.</p>
+  <div class="mock" id="docs-mock" data-mode="dark">
+    <div class="topbar"><span class="wm">HTTPie</span><span class="nav"><span>Desktop</span><span>Terminal</span><span>AI</span><span>Docs</span><span>Blog</span></span><span class="sp"></span><span class="btn primary" style="height:30px;padding:0 14px;font-size:12.5px">Go to App &rarr;</span><button type="button" class="theme" id="theme-toggle" aria-pressed="true" title="Switch to light theme">&#9789;</button></div>
+    <div class="shell">
+      <div class="sb"><div class="grp">Incognito space</div><span class="ln on">Collection</span><span class="ln">Drafts</span><div class="grp">Requests</div><span class="ln"><b style="color:var(--code-green,#73dc8c)">GET</b>&ensp;untitled</span></div>
+      <div class="art"><h3>Flow through APIs.</h3><p>The request builder: a method menu, the URL field and Send on <span class="ic">bg.z0</span>, the response pane below — the draft&rsquo;s <span class="ic">GET</span> chip inks <span class="ic">code.green</span>.</p>
+        <div class="codeblk"><span class="tab on">Params</span><span class="tab">Headers</span><span class="tab">Auth</span><span class="tab">Body</span><br>
+        <span class="kw">https</span> <span class="cm">//</span> <span class="fn">httpie.io</span><span class="str">/hello</span> <span class="cm"># the incognito draft</span></div>
+        <span class="btn primary">Send</span>&nbsp;&nbsp;<span class="btn ghost">Environments</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The semantic roles under <code>dark.*</code> are the painted default (#191515 warm-black ground, #f5f5f0 warm-white ink, the <code>#73dc8c</code> green and <code>#4b78e6</code> blue accents); <code>light.*</code> resolves the same declarations inside <code>html.light</code> (#edede8 warm-paper ground, #1c1818 ink, the darker #52ab66 / #4b78e6 accents). <code>bg.z0&ndash;z3</code> is the surface stack, <code>text.*</code> the ink ramp, <code>code.*</code> the ten-hue syntax palette, and <code>core.palette.*</code> the literals the marketing utility classes hard-code outside the token layer.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius, layout and motion</h2>
+  <p class="lead">httpie.io declares no spacing scale — the stack is old Tailwind utilities — so spacing and radius are <b>measured</b>: <code>component.*</code> carries the chrome geometry (nav height, the /app rail width, button and field heights, card corners; pills clamp to 9999px). <code>motion.*</code> is the measured set from the reduced-motion probe (docs/decisions/0001): the durations and easing curves elements actually run, the transitions and animations, and what <code>prefers-reduced-motion</code> changes.</p>
+  <div id="spacing-out" class="kv"></div>
+  <div id="motion-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Four proprietary faces, recorded by name only: <code>Pie Headline</code> (FK Screamer — the display face), <code>Pie Body</code> (PolyPie — text and UI), <code>Pie Monospace</code> (code, the URL field) and <code>Pie Symbols</code> (icons). No type ramp is declared; the <code>core.typography.*</code> composites carry the measured styles — the 109px hero, the section headings, body and code. Samples fall back to system fonts because the Pie faces are licensed and never shipped.</p>
+  <div id="type-out"></div>
+  <div id="typ-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --background/--foreground/--primary/--font-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, focused and dark states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"palette":{"p888888":{"v":"#888888","t":"color","s":"literal in httpie.io's stylesheets (raw/css-vars.json palette, 10 declarations; e.g. .ͼ1 .cm-placeholder; .ͼ1 .cm-highlightSpace::before; .ͼ2 .cm-button)"},"p6b7280":{"v":"#6b7280","t":"color","s":"literal in httpie.io's stylesheets (raw/css-vars.json palette, 9 declarations; e.g. [multiple], [type=\"date\"], [type=\"datetime-local\"], [type=\"email\"], [type=\"month\"], [type=\"number\"], [type=\"pa; [multiple], [type=\"date\"], [type=\"datetime-local\"], [type=\"email\"], [type=\"month\"], [type=\"number\"], [type=\"pa; [multiple], [type=\"date\"], [type=\"datetime-local\"], [type=\"email\"], [type=\"month\"], [type=\"number\"], [type=\"pa)"},"pd9d9d9":{"v":"#d9d9d9","t":"color","s":"literal in httpie.io's stylesheets (raw/css-vars.json palette, 7 declarations; e.g. .algolia-autocomplete .ds-dropdown-menu::before; .algolia-autocomplete .ds-dropdown-menu::before; .algolia-autocomplete .ds-dropdown-menu [class^=\"ds-dataset-\"])"},"pdddddd":{"v":"#dddddd","t":"color","s":"literal in httpie.io's stylesheets (raw/css-vars.json palette, 6 declarations; e.g. .algolia-autocomplete .algolia-docsearch-suggestion--content::before; .algolia-autocomplete .algolia-docsearch-suggestion--category-header; .algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column::before)"},"p426bd1":{"v":"#426bd1","t":"color","s":"literal in httpie.io's stylesheets (raw/css-vars.json palette, 5 declarations; e.g. [multiple]:focus, [type=\"date\"]:focus, [type=\"datetime-local\"]:focus, [type=\"email\"]:focus, [type=\"month\"]:foc; [multiple]:focus, [type=\"date\"]:focus, [type=\"datetime-local\"]:focus, [type=\"email\"]:focus, [type=\"month\"]:foc; [multiple]:focus, [type=\"date\"]:focus, [type=\"datetime-local\"]:focus, [type=\"email\"]:focus, [type=\"month\"]:foc)"},"pba2452":{"v":"rgba(245, 245, 240, 0.05)","t":"color","s":"literal in httpie.io's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .border-white\\/5; .border-white\\/5; .border-white\\/5)"},"pink":{"v":"rgba(250, 155, 250, 0.25)","t":"color","s":"literal in httpie.io's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .hover\\:border-pink\\/25:hover; .hover\\:border-pink\\/25:hover; .hover\\:border-pink\\/25:hover)"},"p555555":{"v":"#555555","t":"color","s":"literal in httpie.io's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .ͼ3 .cm-textfield; .ͼ3 .cm-textfield; .ͼ3 .cm-textfield)"},"paaaaaa":{"v":"#aaaaaa","t":"color","s":"literal in httpie.io's stylesheets (raw/css-vars.json palette, 3 declarations; e.g. .searchbox__input:active, .searchbox__input:focus; .searchbox__input::-webkit-input-placeholder; .searchbox__input::placeholder)"},"p02060c":{"v":"#02060c","t":"color","s":"literal in httpie.io's stylesheets (raw/css-vars.json palette, 3 declarations; e.g. .algolia-autocomplete .algolia-docsearch-suggestion; .algolia-autocomplete .algolia-docsearch-suggestion--title; .algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--subcategory-column)"},"p55aa69":{"v":"#55aa69","t":"color","s":"literal in httpie.io's stylesheets (raw/css-vars.json palette, 3 declarations; e.g. .cm-editor .cm-content; .cm-cursor, .cm-dropCursor, .cm-editor .cm-cursor; .Input_input__jKmAa)"},"pcccccc":{"v":"#cccccc","t":"color","s":"literal in httpie.io's stylesheets (raw/css-vars.json palette, 2 declarations; e.g. .searchbox__input; .ͼ3 .cm-gutters)"},"p222222":{"v":"#222222","t":"color","s":"literal in httpie.io's stylesheets (raw/css-vars.json palette, 2 declarations; e.g. .algolia-autocomplete .algolia-docsearch-suggestion code; .ͼ3 .cm-selectionBackground)"},"p458ee1":{"v":"#458ee1","t":"color","s":"literal in httpie.io's stylesheets (raw/css-vars.json palette, 2 declarations; e.g. .algolia-autocomplete .suggestion-layout-simple .algolia-docsearch-suggestion--title; .algolia-autocomplete .suggestion-layout-simple .algolia-docsearch-suggestion--title::before)"},"p282425":{"v":"#282425","t":"color","s":"literal in httpie.io's stylesheets (raw/css-vars.json palette, 2 declarations; e.g. .dark .NewsletterForm_form__ophzl .NewsletterForm_textInput__CWjAF.NewsletterForm_ai__pJNzd; .dark .NewsletterForm_form__ophzl .NewsletterForm_textInput__CWjAF.NewsletterForm_ai__pJNzd)"},"pba7512":{"v":"rgba(75, 120, 230, 0.25)","t":"color","s":"literal in httpie.io's stylesheets (raw/css-vars.json palette, 2 declarations; e.g. .cm-editor .cm-searchMatch; .dark .cm-editor .cm-searchMatch-selected, .dark .cm-editor.cm-focused .cm-searchMatch-selected)"},"p3b82f6":{"v":"#3b82f6","t":"color","s":"literal in httpie.io's stylesheets (raw/css-vars.json palette, 2 declarations; e.g. .cm-editor .cm-searchMatch-selected, .cm-editor.cm-focused .cm-searchMatch-selected; .cm-editor .cm-searchMatch-selected, .cm-editor.cm-focused .cm-searchMatch-selected)"},"pba2552":{"v":"rgba(255, 255, 255, 0.5)","t":"color","s":"literal in httpie.io's stylesheets (raw/css-vars.json palette, 2 declarations; e.g. .PromptState_promptState__LqXTb; .StackedRequest_container__fQedQ)"},"pf5f5f5":{"v":"#f5f5f5","t":"color","s":"literal in httpie.io's stylesheets (raw/css-vars.json palette, 2 declarations; e.g. .ͼ2 .cm-gutters; .ͼ2 .cm-panels)"},"p333338":{"v":"#333338","t":"color","s":"literal in httpie.io's stylesheets (raw/css-vars.json palette, 2 declarations; e.g. .ͼ3 .cm-gutters; .ͼ3 .cm-panels)"}},"typography":{"hero":{"v":{"fontFamily":"\"Pie Headline\", Impact","fontSize":"109px","fontWeight":400,"lineHeight":"87.2px","letterSpacing":"1.308px"},"t":"typography","s":"measured hero-headline on / (default state)","d":"the home hero display — Pie Headline (FK Screamer)"},"sectionTitle":{"v":{"fontFamily":"\"Pie Body\", sans-serif","fontSize":"30px","fontWeight":600,"lineHeight":"42px","letterSpacing":"0.33px"},"t":"typography","s":"measured section-heading on / (default state)","d":"a home section heading"},"articleTitle":{"v":{"fontFamily":"\"Pie Body\", sans-serif","fontSize":"30px","fontWeight":600,"lineHeight":"42px","letterSpacing":"0.33px"},"t":"typography","s":"measured prose-h1 on /blog/changelog-0027 (default state)","d":"the changelog article title"},"body":{"v":{"fontFamily":"\"Pie Body\", sans-serif","fontSize":"18px","fontWeight":300,"lineHeight":"25.2px","letterSpacing":"0.198px"},"t":"typography","s":"measured prose-p on /blog/changelog-0027 (default state)","d":"article body text — Pie Body (PolyPie)"},"bodyLink":{"v":{"fontFamily":"\"Pie Body\", sans-serif","fontSize":"18px","fontWeight":400,"lineHeight":"30px","letterSpacing":"0.198px"},"t":"typography","s":"measured prose-link on /blog/changelog-0027 (default state)","d":"a body-text link inside the article"},"navLink":{"v":{"fontFamily":"\"Pie Body\", sans-serif","fontSize":"18px","fontWeight":400,"lineHeight":"30px","letterSpacing":"0.198px"},"t":"typography","s":"measured nav-link on / (default state)","d":"a nav link"},"button":{"v":{"fontFamily":"\"Pie Body\", sans-serif","fontSize":"15px","fontWeight":400,"lineHeight":"21px","letterSpacing":"0.165px"},"t":"typography","s":"measured nav-cta on / (default state)","d":"the primary button label"},"urlField":{"v":{"fontFamily":"PolySansMono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace","fontSize":"14.2px","fontWeight":400,"lineHeight":"24px"},"t":"typography","s":"measured app-url-field on /app (default state)","d":"the request URL field — Pie Monospace"},"tabLabel":{"v":{"fontFamily":"PolySansMono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace","fontSize":"8.5px","fontWeight":400,"lineHeight":"16px"},"t":"typography","s":"measured app-request-tab on /app (default state)","d":"a request tab label"},"input":{"v":{"fontFamily":"\"Pie Body\", sans-serif","fontSize":"16px","fontWeight":400,"lineHeight":"24px"},"t":"typography","s":"measured newsletter-input on / (default state)","d":"the newsletter email field"}},"font":{"family":{"headline":{"v":"\"Pie Headline\", Impact","t":"fontFamily","s":"computed fontFamily of hero-headline default on / (raw/components-computed.json); Pie Headline is declared by @font-face in httpie.io's sheets, a licensed face (the name is evidence, the font file is not shipped)","d":"the display face — hero and section headlines (FK Screamer)"},"body":{"v":"\"Pie Body\", sans-serif","t":"fontFamily","s":"computed fontFamily of prose-p default on /blog/changelog-0027 (raw/components-computed.json); Pie Body is declared by @font-face in httpie.io's sheets, a licensed face (the name is evidence, the font file is not shipped)","d":"the body/UI face (PolyPie)"},"mono":{"v":"\"Pie Monospace\", monospace","t":"fontFamily","s":"computed fontFamily of cli-code-block default on /cli (raw/components-computed.json); Pie Monospace is declared by @font-face in httpie.io's sheets, a licensed face (the name is evidence, the font file is not shipped)","d":"the code face — terminal blocks, the URL field, JSON"},"symbols":{"v":"\"Pie Symbols\"","t":"fontFamily","s":"@font-face in httpie.io's sheets (raw/css-vars.json fonts): 'Pie Symbols', licensed icon face — the name is evidence, the font file is not shipped","d":"the icon/symbol face"}}},"component":{"nav":{"height":{"v":"130px","t":"dimension","s":"measured site-nav default on / (top navigation bar)"}},"button":{"cta":{"height":{"v":"51px","t":"dimension","s":"measured nav-cta default on / ('Go to App' button)"},"radius":{"v":"9999px","t":"dimension","s":"measured nav-cta default on / (CTA corner)","d":"all four corners measure the full-radius clamp — a pill"}},"secondary":{"radius":{"v":"9999px","t":"dimension","s":"measured button-secondary default on / (secondary button corner)","d":"all four corners measure the full-radius clamp — a pill"}}},"navLink":{"height":{"v":"30px","t":"dimension","s":"measured nav-link default on / (nav link row)"}},"appSidebar":{"width":{"v":"49px","t":"dimension","s":"measured app-sidebar default on /app (/app left rail)"}},"tabCard":{"height":{"v":"28px","t":"dimension","s":"measured app-request-tab default on /app (request tab card)"},"radius":{"v":"6px","t":"dimension","s":"measured app-request-tab default on /app (request tab corner)"}},"urlField":{"height":{"v":"44px","t":"dimension","s":"measured app-url-field default on /app (the URL field)"},"radius":{"v":"0px","t":"dimension","s":"measured app-url-field default on /app (URL field corner)"}},"sendButton":{"height":{"v":"28px","t":"dimension","s":"measured app-send-button default on /app (the Send button)"},"radius":{"v":"6px","t":"dimension","s":"measured app-send-button default on /app (Send corner)"}},"panelTabs":{"height":{"v":"28px","t":"dimension","s":"measured app-panel-tabs default on /app (request panel tablist)"}},"methodButton":{"height":{"v":"28px","t":"dimension","s":"measured app-method-button default on /app (method select)"}},"testimonialCard":{"height":{"v":"238px","t":"dimension","s":"measured testimonial-card default on / (tweet card)"},"radius":{"v":"10px","t":"dimension","s":"measured testimonial-card default on / (tweet card corner)"}},"input":{"height":{"v":"44px","t":"dimension","s":"measured newsletter-input default on / (newsletter field)"},"radius":{"v":"9999px","t":"dimension","s":"measured newsletter-input default on / (newsletter field corner)","d":"all four corners measure the full-radius clamp — a pill"}},"postCard":{"height":{"v":"398.2px","t":"dimension","s":"measured post-card default on /blog (blog index card)"}},"docsToc":{"width":{"v":"314.5px","t":"dimension","s":"measured docs-toc default on /docs/desktop (docs table of contents)"}},"mobileNav":{"height":{"v":"85px","t":"dimension","s":"measured m-nav default on / (mobile top bar)"}},"badge":{"radius":{"v":"9999px","t":"dimension","s":"measured early-access-badge default on / (beta pill corner)","d":"all four corners measure the full-radius clamp — a pill"}},"themeToggle":{"radius":{"v":"0px","t":"dimension","s":"measured theme-toggle default on / (theme control corner)"}},"type":{"navLinkHover":{"color":{"v":"#73dc8c","t":"color","s":"measured nav-link hover on / (nav link on hover)"}},"linkHover":{"color":{"v":"#f5f5f0","t":"color","s":"measured post-title-link hover on /blog (post title on hover)"}},"articleTitle":{"size":{"v":"30px","t":"other","s":"measured prose-h1 default on /blog/changelog-0027 (article h1)"}},"hero":{"tracking":{"v":"1.308px","t":"other","s":"measured hero-headline default on / (hero headline tracking)"}}}},"motion":{"duration":{"150ms":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 9695 elements."},"200ms":{"v":"200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"300ms":{"v":"300ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"500ms":{"v":"500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"1000ms":{"v":"1000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"1200ms":{"v":"1200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2000ms":{"v":"2000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"3000ms":{"v":"3000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"4000ms":{"v":"4000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."}},"easing":{"bezier-0-0-0_2-1":{"v":[0,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_15-0_27-0_58-1":{"v":[0.15,0.27,0.58,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#pages"}},"bezier-0_18-0_67-0_6-1_22":{"v":[0.18,0.67,0.6,1.22],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_4-0-0_2-1":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#pages"}},"bezier-0_4-0-1-1":{"v":[0.4,0,1,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_46-0_03-0_52-0_96":{"v":[0.46,0.03,0.52,0.96],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_75-m0_02-0_2-0_97":{"v":[0.75,-0.02,0.2,0.97],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"ease":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease`, expanded to its control points."},"ease-in":{"v":[0.42,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `ease-in`, expanded to its control points."},"linear":{"v":[0,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `linear`, expanded to its control points."}},"transition":{"opacity-150ms-bezier-0_4-0-0_2-1":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_4-0-0_2-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 808 elements."},"background-color-150ms-bezier-0_4-0-0_2-1":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_4-0-0_2-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 805 elements."},"border-color-150ms-bezier-0_4-0-0_2-1":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_4-0-0_2-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 805 elements."},"color-150ms-bezier-0_4-0-0_2-1":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_4-0-0_2-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 805 elements."},"fill-150ms-bezier-0_4-0-0_2-1":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_4-0-0_2-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 805 elements."},"stroke-150ms-bezier-0_4-0-0_2-1":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_4-0-0_2-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 805 elements."},"text-decoration-color-150ms-bezier-0_4-0-0_2-1":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_4-0-0_2-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 805 elements."},"webkit-backdrop-filter-150ms-bezier-0_4-0-0_2-1":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_4-0-0_2-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 802 elements."},"backdrop-filter-150ms-bezier-0_4-0-0_2-1":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_4-0-0_2-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 802 elements."},"box-shadow-150ms-bezier-0_4-0-0_2-1":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_4-0-0_2-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 802 elements."},"filter-150ms-bezier-0_4-0-0_2-1":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_4-0-0_2-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 802 elements."},"transform-150ms-bezier-0_4-0-0_2-1":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_4-0-0_2-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 802 elements."},"all-150ms-bezier-0_4-0-0_2-1":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_4-0-0_2-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 46 elements."},"background-color-300ms-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"color-300ms-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"all-500ms-bezier-0_4-0-0_2-1":{"v":{"duration":"{motion.duration.500ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_4-0-0_2-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"opacity-200ms-bezier-0_4-0-0_2-1":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_4-0-0_2-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."}},"animation":{"docsselect-fadein-jjowk":{"v":{"name":"DocsSelect_fadeIn__jjowK","duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.ease}","iterationCount":"1","direction":"normal","fillMode":"forwards"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `DocsSelect_fadeIn__jjowK`."},"earlyaccessbadge-ping-slow-wemkn":{"v":{"name":"EarlyAccessBadge_ping-slow__wEmkN","duration":"{motion.duration.2000ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_15-0_27-0_58-1}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `EarlyAccessBadge_ping-slow__wEmkN`."},"spinneranimation":{"v":{"name":"spinnerAnimation","duration":"{motion.duration.1000ms}","delay":"0ms","timingFunction":"{motion.easing.linear}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `spinnerAnimation`."}},"_extensions":{"reducedMotion":{"probe":"page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page","verified":true,"pages":4,"behaviour":"ignores","moving":867,"removed":0,"reduced":0,"kept":867,"partial":0,"increased":0,"added":0,"loops":["EarlyAccessBadge_ping-slow__wEmkN","spinnerAnimation"],"authoredRules":[]},"propertyUsage":{"opacity":810,"background-color":808,"color":808,"border-color":805,"fill":805,"stroke":805,"text-decoration-color":805,"-webkit-backdrop-filter":802,"backdrop-filter":802,"box-shadow":802,"filter":802,"transform":802,"all":48},"smoothScrollElements":0,"unusedKeyframes":["UrlBar_pulse__MedX7","bounce","cm-blink","cm-blink2","fadeIn","go1268368563","go1310225428","go2264125279","go3020080000","go463499852","go651618207","go901347462","ping","ping-slow","pulse","spin"],"incomplete":{"truncatedLists":[],"cappedPages":[],"unreadableSheets":{"page-1":1,"page-2":1,"page-3":1}},"notTokenised":[{"name":"motion easing steps(1, end)","value":"steps(1, end)","why":"an easing DTCG's cubicBezier cannot carry (steps() or a linear() curve)","uses":0}]}}},"light":{"bg":{"z0":{"v":"#edede8","t":"color","s":"css-var --color-bg-z0 (light)"},"z1":{"v":"#f5f5f0","t":"color","s":"css-var --color-bg-z1 (light)"},"z2":{"v":"#fafaf5","t":"color","s":"css-var --color-bg-z2 (light)"},"z3":{"v":"#ffffff","t":"color","s":"css-var --color-bg-z3 (light)"}},"text":{"invertedPrimary":{"v":"#f5f5f0","t":"color","s":"css-var --color-inverted-primary (light)"},"placeholders":{"v":"rgba(28, 24, 24, 0.4)","t":"color","s":"css-var --color-placeholders (light)"},"primary":{"v":"#1c1818","t":"color","s":"css-var --color-primary (light)"},"secondary":{"v":"rgba(28, 24, 24, 0.6)","t":"color","s":"css-var --color-secondary (light)"},"tertiary":{"v":"rgba(28, 24, 24, 0.2)","t":"color","s":"css-var --color-tertiary (light)"}},"accent":{"default":{"v":"#52ab66","t":"color","s":"css-var --color-accent (light)"},"hover":{"v":"#429154","t":"color","s":"css-var --color-hover (light)"}},"altAccent":{"default":{"v":"#698feb","t":"color","s":"css-var --color-alt-accent (light)"},"hover":{"v":"#4b78e6","t":"color","s":"css-var --color-alt-accent-hover (light)"}},"warning":{"default":{"v":"#c7382e","t":"color","s":"css-var --color-warning (light)"},"hover":{"v":"#910a00","t":"color","s":"css-var --color-warning-hover (light)"}},"focus":{"ring":{"v":"#698feb","t":"color","s":"css-var --color-focus (light)"}},"border":{"default":{"v":"rgba(0, 0, 0, 0.06)","t":"color","s":"css-var --color-borders (light)"},"subtle":{"v":"rgba(0, 0, 0, 0.02)","t":"color","s":"css-var --color-borders-subtle (light)"}},"header":{"hover":{"v":"#fcfcf8","t":"color","s":"css-var --color-header-hover (light)"}},"item":{"hover":{"v":"rgba(0, 0, 0, 0.03)","t":"color","s":"css-var --color-item-hover (light)"},"selected":{"v":"rgba(0, 0, 0, 0.06)","t":"color","s":"css-var --color-item-selected (light)"},"selectedHover":{"v":"rgba(0, 0, 0, 0.09)","t":"color","s":"css-var --color-item-selected-hover (light)"}},"selection":{"default":{"v":"rgba(119, 219, 143, 0.3)","t":"color","s":"css-var --color-selection (light)"}},"drag":{"draggable":{"v":"rgba(255, 255, 255, 0.667)","t":"color","s":"css-var --color-draggable (light)"},"droppable":{"v":"rgba(0, 0, 0, 0.06)","t":"color","s":"css-var --color-droppable (light)"}},"backdrop":{"default":{"v":"rgba(0, 0, 0, 0.2)","t":"color","s":"css-var --color-backdrop (light)"}},"shadow":{"color":{"v":"rgba(0, 0, 0, 0.15)","t":"color","s":"css-var --color-shadows (light)"}},"code":{"aqua":{"v":"#597082","t":"color","s":"css-var --color-code-aqua (light)"},"blue":{"v":"#3354a6","t":"color","s":"css-var --color-code-blue (light)"},"gray":{"v":"#7d7d7d","t":"color","s":"css-var --color-code-gray (light)"},"green":{"v":"#429154","t":"color","s":"css-var --color-code-green (light)"},"orange":{"v":"#d6701c","t":"color","s":"css-var --color-code-orange (light)"},"pink":{"v":"#a854a6","t":"color","s":"css-var --color-code-pink (light)"},"primary":{"v":"#363636","t":"color","s":"css-var --color-code-primary (light)"},"purple":{"v":"#70389e","t":"color","s":"css-var --color-code-purple (light)"},"red":{"v":"#c7382e","t":"color","s":"css-var --color-code-red (light)"},"yellow":{"v":"#999400","t":"color","s":"css-var --color-code-yellow (light)"}},"misc":{"appCursor":{"v":"default","t":"other","s":"css-var --app-cursor (light)"},"appCursorLink":{"v":"pointer","t":"fontFamily","s":"css-var --app-cursor-link (light)"},"appCursorTiny":{"v":"pointer","t":"fontFamily","s":"css-var --app-cursor-tiny (light)"}},"component":{"button":{"cta":{"bg":{"v":"#73dc8c","t":"color","s":"measured nav-cta light on / (primary button fill) — the class hard-codes this green in both themes; it is not the themed accent role","d":"primary button fill"}}}}},"dark":{"bg":{"z0":{"v":"#191515","t":"color","s":"css-var --color-bg-z0 (dark)"},"z1":{"v":"#1c1818","t":"color","s":"css-var --color-bg-z1 (dark)"},"z2":{"v":"#201c1c","t":"color","s":"css-var --color-bg-z2 (dark)"},"z3":{"v":"#292424","t":"color","s":"css-var --color-bg-z3 (dark)"}},"text":{"invertedPrimary":{"v":"#1c1818","t":"color","s":"css-var --color-inverted-primary (dark)"},"placeholders":{"v":"rgba(245, 245, 240, 0.35)","t":"color","s":"css-var --color-placeholders (dark)"},"primary":{"v":"#f5f5f0","t":"color","s":"css-var --color-primary (dark)"},"secondary":{"v":"rgba(245, 245, 240, 0.6)","t":"color","s":"css-var --color-secondary (dark)"},"tertiary":{"v":"rgba(245, 245, 240, 0.2)","t":"color","s":"css-var --color-tertiary (dark)"}},"accent":{"default":{"v":"#73dc8c","t":"color","s":"css-var --color-accent (dark)"},"hover":{"v":"#a1e8b0","t":"color","s":"css-var --color-hover (dark)"}},"altAccent":{"default":{"v":"#3b5eba","t":"color","s":"css-var --color-alt-accent (dark)"},"hover":{"v":"#4b78e6","t":"color","s":"css-var --color-alt-accent-hover (dark)"}},"warning":{"default":{"v":"#ff665b","t":"color","s":"css-var --color-warning (dark)"},"hover":{"v":"#ff968f","t":"color","s":"css-var --color-warning-hover (dark)"}},"focus":{"ring":{"v":"#3b5eba","t":"color","s":"css-var --color-focus (dark)"}},"border":{"default":{"v":"rgba(255, 255, 255, 0.04)","t":"color","s":"css-var --color-borders (dark)"},"subtle":{"v":"rgba(255, 255, 255, 0.016)","t":"color","s":"css-var --color-borders-subtle (dark)"}},"header":{"hover":{"v":"#1e1a1a","t":"color","s":"css-var --color-header-hover (dark)"}},"item":{"hover":{"v":"rgba(255, 255, 255, 0.03)","t":"color","s":"css-var --color-item-hover (dark)"},"selected":{"v":"rgba(255, 255, 255, 0.06)","t":"color","s":"css-var --color-item-selected (dark)"},"selectedHover":{"v":"rgba(255, 255, 255, 0.12)","t":"color","s":"css-var --color-item-selected-hover (dark)"}},"selection":{"default":{"v":"rgba(119, 219, 143, 0.3)","t":"color","s":"css-var --color-selection (dark)"}},"drag":{"draggable":{"v":"rgba(66, 66, 66, 0.667)","t":"color","s":"css-var --color-draggable (dark)"},"droppable":{"v":"rgba(245, 245, 245, 0.08)","t":"color","s":"css-var --color-droppable (dark)"}},"backdrop":{"default":{"v":"rgba(0, 0, 0, 0.5)","t":"color","s":"css-var --color-backdrop (dark)"}},"shadow":{"color":{"v":"rgba(0, 0, 0, 0.5)","t":"color","s":"css-var --color-shadows (dark)"}},"code":{"aqua":{"v":"#8cb4cd","t":"color","s":"css-var --color-code-aqua (dark)"},"blue":{"v":"#4b78e6","t":"color","s":"css-var --color-code-blue (dark)"},"gray":{"v":"#7d7d7d","t":"color","s":"css-var --color-code-gray (dark)"},"green":{"v":"#73dc8c","t":"color","s":"css-var --color-code-green (dark)"},"orange":{"v":"#ffa24e","t":"color","s":"css-var --color-code-orange (dark)"},"pink":{"v":"#fa9bfa","t":"color","s":"css-var --color-code-pink (dark)"},"primary":{"v":"#d1d1cf","t":"color","s":"css-var --color-code-primary (dark)"},"purple":{"v":"#b464f0","t":"color","s":"css-var --color-code-purple (dark)"},"red":{"v":"#ff665b","t":"color","s":"css-var --color-code-red (dark)"},"yellow":{"v":"#dbde52","t":"color","s":"css-var --color-code-yellow (dark)"}},"misc":{"appCursor":{"v":"default","t":"other","s":"css-var --app-cursor (dark)"},"appCursorLink":{"v":"pointer","t":"fontFamily","s":"css-var --app-cursor-link (dark)"},"appCursorTiny":{"v":"pointer","t":"fontFamily","s":"css-var --app-cursor-tiny (dark)"}},"component":{"button":{"cta":{"bg":{"v":"#73dc8c","t":"color","s":"measured nav-cta default on / (primary button fill) — the class hard-codes this green in both themes; it is not the themed accent role","d":"primary button fill"}}},"sendButton":{"bg":{"v":"{accent.default}","t":"color","s":"measured app-send-button default on /app (Send fill) — the element's class paints the accent.default role","d":"Send fill"}}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || TOK.core.palette ? { palette: TOK.core.palette, ...(TOK.core.color || {}) } : {})) {
+    const items = (grp && grp.t ? [[g + '.' + g, grp]] : flat(grp, g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles — the footer LIGHT MODE radio repaints html.light'], ['dark', 'dark roles — the painted default: the site boots html.dark']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.breakpoint || {}, 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.ease || {}, 'ease.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v.join ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.animation || {}, 'animation.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const setname of ['light', 'dark']) {
+    const misc = flat((TOK[setname] || {}).misc || {}, setname + '.misc.');
+    if (!misc.length) continue;
+    m += `<div style="grid-column:1/-1;opacity:.6;margin-top:8px"><b>${setname} misc</b></div>`;
+    for (const [n, t] of misc) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  }
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  const sh = (t) => Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v;
+  let e = '';
+  for (const [n, t] of flat((TOK.core || {}).shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(sh(t))}</span></div>`;
+  // The product's five-level --elevation-* stacks live per theme, not in
+  // core.shadow — render both so the real scale is inspectable.
+  for (const setname of ['light', 'dark']) {
+    const group = flat((TOK[setname] || {}).elevation || {}, setname + '.elevation.');
+    if (!group.length) continue;
+    e += `<div style="grid-column:1/-1;opacity:.6;margin-top:8px"><b>${setname} elevation</b></div>`;
+    for (const [n, t] of group) e += `<div><b>${esc(n)}</b> <span>${esc(sh(t))}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m || '<div><b>none measured</b></div>';
+})();
+
+(function motion() {
+  const g = TOK.core.motion || {};
+  let m = '';
+  for (const [n, t] of flat(g.duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(g.easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  const tr = Object.keys(g.transition || {}).length, an = Object.keys(g.animation || {}).length;
+  if (tr || an) m += `<div><b>measured</b> <span>${tr} transition tokens, ${an} animation tokens (tokens.json, core.motion)</span></div>`;
+  const rm = (g._extensions || {}).reducedMotion;
+  if (rm) m += `<div><b>reduced motion</b> <span>${esc(rm.behaviour)} — ${esc(String(rm.removed))} removed, ${esc(String(rm.kept))} kept across ${esc(String(rm.pages))} pages</span></div>`;
+  $('#motion-out').innerHTML = m || '<div><b>no motion probe</b></div>';
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v)) * (String(resolveVal(t.v)).endsWith('rem') ? 16 : 1);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — Flow through APIs</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).leading || {}, 'font.leading.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — HTTPie</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  // the package declares no font.size/lineHeight/weight scales today; drop the
+  // empty block rather than show nothing under the heading
+  const to = $('#type-out');
+  if (h) to.innerHTML = h; else to.remove();
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+
+// The measured core.typography.* composites — the styles the live DOM paints,
+// not just the declared scales. Samples fall back to system fonts (Inter is
+// not bundled).
+(function typ() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core || {}).typography || {}, 'typography.')) {
+    const v = t.v || {};
+    const fs = parseFloat(v.fontSize) || 14;
+    const mono = /mono/i.test(String(v.fontFamily));
+    const meta = [v.fontSize, v.lineHeight, 'w' + v.fontWeight, v.letterSpacing].filter(Boolean).join(' / ');
+    h += `<div class="tr"><span class="ts" style="font-family:${mono ? 'var(--sg-mono)' : 'var(--sg-sans)'};font-size:${Math.min(fs, 44)}px;font-weight:${esc(String(v.fontWeight || 400))};line-height:${esc(v.lineHeight || 'normal')}">${esc(n)} — Flow through APIs 0123</span><span class="tv">${esc(meta)}</span></div>`;
+  }
+  $('#typ-out').innerHTML = h;
+})();
+
+// The mock's theme button flips data-mode the way httpie's footer ThemeToggle flips
+// html.light — the mock starts dark because that is the painted default.
+(function themeToggle() {
+  const btn = $('#theme-toggle'), mock = $('#docs-mock');
+  if (!btn || !mock) return;
+  btn.addEventListener('click', () => {
+    const dark = mock.getAttribute('data-mode') !== 'dark';
+    mock.setAttribute('data-mode', dark ? 'dark' : 'light');
+    btn.setAttribute('aria-pressed', String(dark));
+    btn.title = dark ? 'Switch to light theme' : 'Switch to dark theme';
+  });
+})();
+</script>
+</body>
+</html>

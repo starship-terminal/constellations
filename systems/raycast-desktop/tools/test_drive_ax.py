@@ -59,5 +59,34 @@ class ExpectTest(unittest.TestCase):
             self.assertTrue(label, name)
 
 
+class ClickGuardTest(unittest.TestCase):
+    def test_theme_select_reads_a_theme_name(self):
+        self.assertTrue(drive.theme_select(["Raycast Dark"]))
+        self.assertTrue(drive.theme_select(["Theme", "Raycast Light"]))
+
+    def test_theme_guard_rejects_the_appearance_checkbox_and_nothing(self):
+        self.assertFalse(drive.theme_select(["Follow System Appearance"]))
+        self.assertFalse(drive.theme_select(["Dark", "Light"]))
+        self.assertFalse(drive.theme_select([]))
+
+    def test_footer_menu_button_reads_the_footer(self):
+        self.assertTrue(drive.footer_menu_button(["Open Command", "Actions"]))
+        self.assertTrue(drive.footer_menu_button(["Open Command", "\u21b5", "Actions", "\u2318", "K"]))
+
+    def test_footer_guard_rejects_empty_and_unrelated_readings(self):
+        self.assertFalse(drive.footer_menu_button([]))
+        self.assertFalse(drive.footer_menu_button(["Search for apps and commands..."]))
+        self.assertFalse(drive.footer_menu_button(["Calculator", "Command"]))
+        self.assertFalse(drive.footer_menu_button(["Results", "Actions", "a", "b", "c", "d", "e"]))
+
+    def test_guards_stop_before_a_click(self):
+        with mock.patch.object(drive, "ax", return_value={"owner": "Raycast", "texts": ["Follow System Appearance"]}):
+            with self.assertRaises(SystemExit):
+                drive.expect_at(700, 315, "the General theme select", drive.theme_select)
+        with mock.patch.object(drive, "ax", return_value={"owner": "Raycast", "texts": []}):
+            with self.assertRaises(SystemExit):
+                drive.expect_at(25, 448, "the footer menu button", drive.footer_menu_button)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -103,13 +103,14 @@ Every value came off the running signed-out site in headless Chrome:
 
 - **Tokens.** [tools/capture/vars.mjs](tools/capture/vars.mjs) captured every stylesheet body from the network responses plus inline `<style>` blocks, re-parsed them with `CSSStyleSheet`, and wrote every custom property to [raw/css-vars.json](raw/css-vars.json) binned `generated`/`app`/`vendor`/`utility`/`tailwind` — the site's design tokens (`--color-*`, `--bg-*`, `--font-*`, `--text-size-*`, `--rounded-*`, `--button-*`, `--innerWidth`, `--gutter`) land in `app`. Each name is resolved in a probe carrying the real sheets (light; a `dark` probe lands identical values — nothing binds it). [tools/build_component_tokens.py](tools/build_component_tokens.py) writes the spec, [tools/build_tokens.py](tools/build_tokens.py) the sets.
 - **Components.** [tools/capture/public/measure.mjs](tools/capture/public/measure.mjs) opens each route in a fresh context, hides any consent or promo layer (never answered), and reads `getComputedStyle`, painted layers and boxes per element in default, hover, focus-visible and a CDP-forced pressed state, plus `opened` on the winners-grid filter dropdown and the mobile menu. Selectors are the site's long-lived classes (`header-main__logo`, `nav-filters__item`, `figure-rollover__link`, `box-score`, `button--tag`). Results in [raw/components-computed.json](raw/components-computed.json) and [raw/measurements.md](raw/measurements.md).
-- **Screenshots.** [tools/capture/public/public.mjs](tools/capture/public/public.mjs) takes viewport and full-page shots per route — the arrival view is captured first, before anything is hidden — with `.capture.json` sidecars recording measured viewport/dpr; [tools/capture/quantize.py](tools/capture/quantize.py) posterises them to 256 colours.
+- **Screenshots.** [tools/capture/public/public.mjs](tools/capture/public/public.mjs) takes viewport and full-page shots per route — the arrival view is captured first, before anything is hidden — [tools/capture/quantize.py](tools/capture/quantize.py) posterises them to 256 colours and carries each shot's `.capture.json` sidecar (measured viewport/dpr, `capturedAt`, requested and actual sizes) into `screenshots/`. The committed shots have no sidecars: the shipped quantizer dropped them and the original measurements are unrecoverable, so they stay missing until a recapture ([#484](https://github.com/starship-terminal/constellations/issues/484)).
 - **The site detail is discovered.** `/websites/` card links are walked at run time until one whose detail page still has a Vote button lands (Site of the Day winners have closed voting); the URL is recorded as `site_url`. A different run may land on a different entry.
 
 Nothing was voted on, submitted, joined, searched or signed into. The public directory, the winners grid, a site detail and the submit gate was enough.
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **One theme only.** A `dark` probe resolves to the same `:root` values — nothing paints dark. `tokens.json` ships no dark set.
 - **Roles are verified, not declared.** Every `light` role pairs a var (or a measured colour) with the component that was measured wearing it; the site declares palette, category accents and control vars, no semantic roles.
 - **The award gold is measured, not declared.** The Vote button's #e3c352 fill (`core.measured.action-award`) exists in no var; likewise the #383838 the outlined Submit Website fills on hover/pressed, and the #005fcc browser focus ring on nav/footer links.
@@ -118,6 +119,7 @@ Nothing was voted on, submitted, joined, searched or signed into. The public dir
 - **Log in / Sign Up did not render on the captured loads** — recorded missing, not evidence they are absent: the first recon run saw them in the header. No public login page exists signed-out (`/session/login` 404s).
 - **`submit-cta-2` is a recorded miss** — /submit/ showed no measurable CTA to headless; the plan card is the evidence.
 - **Focus styles were not systematically captured** beyond focus-visible states on the measured components.
+- **`sotd-heading` and `coll-card` were read from the wrong elements.** `sotd-heading` is the whole 1336 x 359 Site of the Day block, not its heading, and `coll-card` is the "Reset filters" link on /collections/. Both need a recapture; the script now takes a heading element and a collections link with an image (not run since).
 
 ## Fonts
 

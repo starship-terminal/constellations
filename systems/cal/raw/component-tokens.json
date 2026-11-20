@@ -1,0 +1,1274 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. cal.com declares the --color-hp-* homepage layer and the --cal-* semantic layer in its stylesheets (raw/css-vars.json); the marketing light roles alias the hp palette, the booker light roles live under light.booker.* over the same --cal-* variables the dark set re-resolves for the booker's dark theme (raw/components-computed.json for the measured pieces).",
+ "core": {
+  "font": {
+   "family": {
+    "sans": {
+     "value": "calSans, \"calSans Fallback\", system-ui, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of header default (raw/components-computed.json)",
+     "description": "The marketing stack: the CalSans variable face with its metric fallback."
+    },
+    "display": {
+     "value": "fontHeading, \"fontHeading Fallback\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of signup-title default (raw/components-computed.json)",
+     "description": "The fontHeading display face on the auth pages' headings."
+    },
+    "app": {
+     "value": "fontHeading, \"fontHeading Fallback\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of auth-card default (raw/components-computed.json)",
+     "description": "The fontSans body face on the app.cal.com auth cards."
+    },
+    "booker": {
+     "value": "Inter, \"Inter Fallback\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of bk-page default (raw/components-computed.json)",
+     "description": "The Inter stack the public booking page paints in."
+    },
+    "mono": {
+     "var": "--font-mono",
+     "type": "fontFamily",
+     "description": "The declared monospace stack."
+    }
+   },
+   "weight": {
+    "normal": {
+     "var": "--font-weight-normal",
+     "type": "fontWeight",
+     "description": "Regular body weight."
+    },
+    "medium": {
+     "var": "--font-weight-medium",
+     "type": "fontWeight",
+     "description": "The 500 nav, button and label weight."
+    },
+    "semibold": {
+     "var": "--font-weight-semibold",
+     "type": "fontWeight",
+     "description": "The 600 booker title weight."
+    },
+    "bold": {
+     "var": "--font-weight-bold",
+     "type": "fontWeight",
+     "description": "The 700 display and section-heading weight."
+    }
+   },
+   "size": {
+    "display": {
+     "type": "dimension",
+     "value": "80px",
+     "source": "computed fontSize of hero-title default (raw/components-computed.json)",
+     "description": "The 80px hero display ('Where people find the time to meet')."
+    },
+    "h1": {
+     "type": "dimension",
+     "value": "64px",
+     "source": "computed fontSize of pricing-h1 default (raw/components-computed.json)",
+     "description": "The 64px page-heading size."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "56px",
+     "source": "computed fontSize of signup-title default (raw/components-computed.json)",
+     "description": "The 56px fontHeading size on the auth cards."
+    },
+    "display-mobile": {
+     "type": "dimension",
+     "value": "42px",
+     "source": "computed fontSize of m-hero default (raw/components-computed.json)",
+     "description": "The 42px display size at 390px."
+    },
+    "h3": {
+     "type": "dimension",
+     "value": "22px",
+     "source": "computed fontSize of plan-tab default (raw/components-computed.json)",
+     "description": "The 22px plan-name/section size."
+    },
+    "lede": {
+     "type": "dimension",
+     "value": "20px",
+     "source": "computed fontSize of hero-sub default (raw/components-computed.json)",
+     "description": "The 20px lede (also the booker event title)."
+    },
+    "body": {
+     "type": "dimension",
+     "value": "14px",
+     "source": "computed fontSize of header default (raw/components-computed.json)",
+     "description": "The 16px base size."
+    },
+    "ui": {
+     "type": "dimension",
+     "value": "14px",
+     "source": "computed fontSize of nav-link default (raw/components-computed.json)",
+     "description": "The 14px nav/button/field size."
+    },
+    "small": {
+     "type": "dimension",
+     "value": "13px",
+     "source": "computed fontSize of trust-row default (raw/components-computed.json)",
+     "description": "The 13px smallest auth text."
+    },
+    "tiny": {
+     "type": "dimension",
+     "value": "11px",
+     "source": "computed fontSize of changelog default (raw/components-computed.json)",
+     "description": "The 11px badge label (text node)."
+    }
+   },
+   "lineHeight": {
+    "display": {
+     "type": "dimension",
+     "value": "86.4px",
+     "source": "computed lineHeight of hero-title default (raw/components-computed.json)",
+     "description": "The 1.08 display leading."
+    },
+    "h1": {
+     "type": "dimension",
+     "value": "64px",
+     "source": "computed lineHeight of pricing-h1 default (raw/components-computed.json)",
+     "description": "The 1.0 page-heading leading."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "56px",
+     "source": "computed lineHeight of signup-title default (raw/components-computed.json)",
+     "description": "The 1.0 auth-heading leading."
+    },
+    "lede": {
+     "type": "dimension",
+     "value": "28px",
+     "source": "computed lineHeight of hero-sub default (raw/components-computed.json)",
+     "description": "The 1.4 lede leading."
+    },
+    "ui": {
+     "type": "dimension",
+     "value": "21px",
+     "source": "computed lineHeight of nav-link default (raw/components-computed.json)",
+     "description": "The 1.5 control-label leading."
+    },
+    "body": {
+     "type": "dimension",
+     "value": "21px",
+     "source": "computed lineHeight of header default (raw/components-computed.json)",
+     "description": "The 1.5 body leading."
+    }
+   },
+   "letterSpacing": {
+    "display": {
+     "type": "dimension",
+     "value": "-0.8px",
+     "source": "computed letterSpacing of hero-title default (raw/components-computed.json)",
+     "description": "The -0.8px display tracking (-1%)."
+    },
+    "h1": {
+     "type": "dimension",
+     "value": "-0.64px",
+     "source": "computed letterSpacing of pricing-h1 default (raw/components-computed.json)",
+     "description": "The -0.64px heading tracking (-1%)."
+    },
+    "h3": {
+     "type": "dimension",
+     "value": "-0.22px",
+     "source": "computed letterSpacing of plan-tab default (raw/components-computed.json)",
+     "description": "The -0.22px section tracking (-1%)."
+    }
+   }
+  },
+  "color": {
+   "hp": {
+    "page": {
+     "var": "--color-hp-page",
+     "type": "color",
+     "description": "The white marketing page field."
+    },
+    "surface": {
+     "var": "--color-hp-surface",
+     "type": "color",
+     "description": "Card/panel white."
+    },
+    "surface-2": {
+     "var": "--color-hp-surface-2",
+     "type": "color",
+     "description": "The #f9fafb sunken section field."
+    },
+    "raised": {
+     "var": "--color-hp-raised",
+     "type": "color",
+     "description": "Raised white control fill."
+    },
+    "field": {
+     "var": "--color-hp-field",
+     "type": "color",
+     "description": "The #f3f4f6 input/chip field."
+    },
+    "chip": {
+     "var": "--color-hp-chip",
+     "type": "color",
+     "description": "The #f3f4f6 chip fill."
+    },
+    "well": {
+     "var": "--color-hp-well",
+     "type": "color",
+     "description": "The #e5e7eb inset well."
+    },
+    "plate": {
+     "var": "--color-hp-plate",
+     "type": "color",
+     "description": "The #f3f4f6 plate under framed content."
+    },
+    "plate-line": {
+     "var": "--color-hp-plate-line",
+     "type": "color",
+     "description": "The 6%-ink plate ring."
+    },
+    "hairline": {
+     "var": "--color-hp-hairline",
+     "type": "color",
+     "description": "The 7%-ink hairline."
+    },
+    "line": {
+     "var": "--color-hp-line",
+     "type": "color",
+     "description": "The #e5e7eb rule line."
+    },
+    "line-2": {
+     "var": "--color-hp-line-2",
+     "type": "color",
+     "description": "The #dee1e6 heavier rule (plan-card border)."
+    },
+    "ink": {
+     "var": "--color-hp-ink",
+     "type": "color",
+     "description": "The #242424 headline ink — also the dark button fill."
+    },
+    "ink-2": {
+     "var": "--color-hp-ink-2",
+     "type": "color",
+     "description": "The #292929 secondary ink."
+    },
+    "text": {
+     "var": "--color-hp-text",
+     "type": "color",
+     "description": "The #111111 strongest text."
+    },
+    "body": {
+     "var": "--color-hp-body",
+     "type": "color",
+     "description": "The #374151 body text."
+    },
+    "muted": {
+     "var": "--color-hp-muted",
+     "type": "color",
+     "description": "The #6a6e78 muted text (hero lede)."
+    },
+    "subtle": {
+     "var": "--color-hp-subtle",
+     "type": "color",
+     "description": "The #5f6570 quieter text."
+    },
+    "quiet": {
+     "var": "--color-hp-quiet",
+     "type": "color",
+     "description": "The #858993 quietest text."
+    },
+    "tint": {
+     "var": "--color-hp-tint",
+     "type": "color",
+     "description": "The #0f234b navy tint the shadows are drawn in."
+    },
+    "on-ink": {
+     "var": "--color-hp-on-ink",
+     "type": "color",
+     "description": "The white label on dark fills."
+    },
+    "accent": {
+     "var": "--color-hp-accent",
+     "type": "color",
+     "description": "The #cc4510 orange accent."
+    },
+    "accent-ink": {
+     "var": "--color-hp-accent-ink",
+     "type": "color",
+     "description": "The #a83a0c accent text."
+    },
+    "slot": {
+     "var": "--color-hp-slot",
+     "type": "color",
+     "description": "The #dee1e6 slot chip in the hero mock."
+    },
+    "slot-selected": {
+     "var": "--color-hp-slot-selected",
+     "type": "color",
+     "description": "The #242424 selected slot."
+    },
+    "highlight": {
+     "var": "--color-hp-highlight",
+     "type": "color",
+     "description": "White highlight paint."
+    },
+    "bar": {
+     "var": "--hp-bar",
+     "type": "color",
+     "description": "The 52%-white glass the floating header blurs over."
+    },
+    "material": {
+     "var": "--hp-material",
+     "type": "color",
+     "description": "The 74% #f3f4f6 window material."
+    },
+    "mica": {
+     "var": "--hp-mica",
+     "type": "color",
+     "description": "The 88% #f3f4f6 mica material."
+    }
+   },
+   "cal": {
+    "bg": {
+     "var": "--cal-bg",
+     "type": "color",
+     "description": "The booker page field (#ffffff light)."
+    },
+    "bg-subtle": {
+     "var": "--cal-bg-subtle",
+     "type": "color",
+     "description": "The #eeeff2 subtle fill (focused slot)."
+    },
+    "bg-muted": {
+     "var": "--cal-bg-muted",
+     "type": "color",
+     "description": "The #f6f7f9 muted fill (slot hover)."
+    },
+    "bg-emphasis": {
+     "var": "--cal-bg-emphasis",
+     "type": "color",
+     "description": "The #e5e7eb emphasis fill (day cell)."
+    },
+    "bg-inverted": {
+     "var": "--cal-bg-inverted",
+     "type": "color",
+     "description": "The #070a0d inverted field."
+    },
+    "bg-primary": {
+     "var": "--cal-bg-primary",
+     "type": "color",
+     "description": "The #1d2735 declared primary fill."
+    },
+    "bg-primary-emphasis": {
+     "var": "--cal-bg-primary-emphasis",
+     "type": "color",
+     "description": "The #3c3e44 primary hover."
+    },
+    "bg-brand": {
+     "var": "--cal-bg-brand",
+     "type": "color",
+     "description": "The declared brand fill."
+    },
+    "bg-brand-emphasis": {
+     "var": "--cal-bg-brand-emphasis",
+     "type": "color",
+     "description": "The declared brand hover."
+    },
+    "bg-info": {
+     "var": "--cal-bg-info",
+     "type": "color",
+     "description": "The #dde7fd info wash."
+    },
+    "bg-success": {
+     "var": "--cal-bg-success",
+     "type": "color",
+     "description": "The #e4fbed success wash."
+    },
+    "bg-error": {
+     "var": "--cal-bg-error",
+     "type": "color",
+     "description": "The #f9e3e1 error wash."
+    },
+    "bg-attention": {
+     "var": "--cal-bg-attention",
+     "type": "color",
+     "description": "The #ffedd6 attention wash."
+    },
+    "brand": {
+     "var": "--cal-brand",
+     "type": "color",
+     "description": "The declared brand colour (#111827 default)."
+    },
+    "brand-text": {
+     "var": "--cal-brand-text",
+     "type": "color",
+     "description": "Text on the brand fill."
+    },
+    "brand-emphasis": {
+     "var": "--cal-brand-emphasis",
+     "type": "color",
+     "description": "The brand emphasis."
+    },
+    "text": {
+     "var": "--cal-text",
+     "type": "color",
+     "description": "The #3c3e44 booker/app body text."
+    },
+    "text-emphasis": {
+     "var": "--cal-text-emphasis",
+     "type": "color",
+     "description": "The #070a0d strong booker text."
+    },
+    "text-muted": {
+     "var": "--cal-text-muted",
+     "type": "color",
+     "description": "The #9ca3b0 muted booker text."
+    },
+    "text-subtle": {
+     "var": "--cal-text-subtle",
+     "type": "color",
+     "description": "The #6b7280 subtle booker text."
+    },
+    "text-inverted": {
+     "var": "--cal-text-inverted",
+     "type": "color",
+     "description": "Inverted text (#ffffff light)."
+    },
+    "text-error": {
+     "var": "--cal-text-error",
+     "type": "color",
+     "description": "The #811d1d error text."
+    },
+    "text-info": {
+     "var": "--cal-text-info",
+     "type": "color",
+     "description": "The #243c84 info text."
+    },
+    "text-attention": {
+     "var": "--cal-text-attention",
+     "type": "color",
+     "description": "The #74331b attention text."
+    },
+    "border": {
+     "var": "--cal-border",
+     "type": "color",
+     "description": "The #d1d5db booker field/slot border."
+    },
+    "border-subtle": {
+     "var": "--cal-border-subtle",
+     "type": "color",
+     "description": "The #e5e7eb subtle border."
+    },
+    "border-emphasis": {
+     "var": "--cal-border-emphasis",
+     "type": "color",
+     "description": "The #9ca3b0 emphasis border."
+    },
+    "border-booker": {
+     "var": "--cal-border-booker",
+     "type": "color",
+     "description": "The booker frame border."
+    }
+   },
+   "paint": {
+    "booker-primary": {
+     "value": "#292929",
+     "type": "color",
+     "source": "computed backgroundColor of bk-confirm default (raw/components-computed.json)",
+     "description": "The #292929 fill the booker's confirm button and today cell paint — the booking page's effective brand paint (the declared --cal-brand #111827 is not what this page paints)."
+    },
+    "bar": {
+     "value": "rgba(244, 244, 244, 0.72)",
+     "type": "color",
+     "source": "computed backgroundColor of header default (raw/components-computed.json)",
+     "description": "The 72% #f4f4f4 glass the floating header bar computes to over --hp-bar."
+    },
+    "footer": {
+     "value": "#111111",
+     "type": "color",
+     "source": "computed backgroundColor of footer default (raw/components-computed.json)",
+     "description": "The #111111 near-black footer field."
+    },
+    "hover-veil": {
+     "value": "rgba(36, 36, 36, 0.04)",
+     "type": "color",
+     "source": "computed backgroundColor of menu-link hover (raw/components-computed.json)",
+     "description": "The ~4%-ink wash a dropdown item takes on hover."
+    },
+    "muted-auth": {
+     "value": "#696969",
+     "type": "color",
+     "source": "computed color of forgot-link default (raw/components-computed.json)",
+     "description": "The #696969 muted text on the app.cal.com auth cards."
+    },
+    "emphasis-auth": {
+     "value": "#262626",
+     "type": "color",
+     "source": "computed backgroundColor of sso-google default (raw/components-computed.json)",
+     "description": "The #262626 dark fill of the auth pages' SSO and continue buttons."
+    }
+   }
+  },
+  "radius": {
+   "sm": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of changelog default (raw/components-computed.json)",
+    "description": "The 8px badge/day-cell radius."
+   },
+   "md": {
+    "value": "10px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of nav-link default (raw/components-computed.json)",
+    "description": "The 10px control radius (nav items, slots, fields, SSO buttons)."
+   },
+   "lg": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)",
+    "description": "The 12px CTA radius (header and plan buttons)."
+   },
+   "xl": {
+    "value": "14px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of hero-google default (raw/components-computed.json)",
+    "description": "The 14px hero-button/card radius."
+   },
+   "2xl": {
+    "value": "18px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of header default (raw/components-computed.json)",
+    "description": "The 18px floating-bar and menu-card radius."
+   },
+   "pill": {
+    "value": "9999px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of billing-toggle default: the capsule computes to an unbounded 3.36e7px, normalized here to the pill constant (raw/components-computed.json)",
+    "description": "The capsule shape (billing switch)."
+   }
+  },
+  "easing": {
+   "hp": {
+    "var": "--ease-hp",
+    "type": "cubicBezier",
+    "description": "The homepage's long ease-out cubic-bezier(.19,1,.22,1)."
+   },
+   "hp-fly": {
+    "var": "--ease-hp-fly",
+    "type": "cubicBezier",
+    "description": "The fly-in curve cubic-bezier(.22,1,.36,1)."
+   },
+   "hp-quad": {
+    "var": "--ease-hp-quad",
+    "type": "cubicBezier",
+    "description": "The quad curve cubic-bezier(.25,.46,.45,.94)."
+   },
+   "out": {
+    "var": "--ease-out",
+    "type": "cubicBezier",
+    "description": "The standard Tailwind ease-out."
+   },
+   "in-out": {
+    "var": "--ease-in-out",
+    "type": "cubicBezier",
+    "description": "The standard ease-in-out."
+   }
+  },
+  "shadow": {
+   "lift": {
+    "value": [
+     {
+      "color": "rgba(15, 35, 75, 0.06)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "1px"
+     },
+     {
+      "color": "rgba(15, 35, 75, 0.04)",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "2px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --hp-shadow-lift (light)",
+    "description": "The resting button/card ring + drop (1px 6% + 1px 4%)."
+   },
+   "raised": {
+    "value": [
+     {
+      "color": "#ffffff",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "0px",
+      "spread": "0px",
+      "inset": true
+     },
+     {
+      "color": "rgba(15, 35, 75, 0.07)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "1px"
+     },
+     {
+      "color": "rgba(15, 35, 75, 0.04)",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "2px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --hp-shadow-raised (light)",
+    "description": "The raised control: white inset top line, ring and drop."
+   },
+   "well": {
+    "value": [
+     {
+      "color": "rgba(15, 35, 75, 0.16)",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "3px",
+      "spread": "0px",
+      "inset": true
+     },
+     {
+      "color": "rgba(15, 35, 75, 0.05)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "1px",
+      "inset": true
+     },
+     {
+      "color": "#ffffff",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "0px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --hp-shadow-well (light)",
+    "description": "The inset well shadow."
+   },
+   "plate": {
+    "value": [
+     {
+      "color": "rgba(15, 35, 75, 0.05)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "1px",
+      "inset": true
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --hp-shadow-plate (light)",
+    "description": "The inset plate ring."
+   },
+   "float": {
+    "value": [
+     {
+      "color": "rgba(15, 35, 75, 0.06)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "1px"
+     },
+     {
+      "color": "rgba(15, 35, 75, 0.08)",
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "6px",
+      "spread": "-2px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --hp-shadow-float (light)",
+    "description": "The floating-menu ring + soft drop."
+   },
+   "print": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.06)",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "2px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(0, 0, 0, 0.22)",
+      "offsetX": "0px",
+      "offsetY": "10px",
+      "blur": "18px",
+      "spread": "-10px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --hp-shadow-print (light)",
+    "description": "The product-mock window shadow."
+   },
+   "print-lift": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "14px",
+      "blur": "22px",
+      "spread": "-12px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --hp-shadow-print-lift (light)",
+    "description": "The lifted print shadow."
+   },
+   "window": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.16)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "0.5px"
+     },
+     {
+      "color": "rgba(0, 0, 0, 0.06)",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "2px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(15, 30, 50, 0.32)",
+      "offsetX": "0px",
+      "offsetY": "24px",
+      "blur": "64px",
+      "spread": "-8px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --hp-shadow-window (light)",
+    "description": "The big OS-window shadow on the hero mock."
+   }
+  },
+  "measured": {
+   "focus-ring": {
+    "value": [
+     {
+      "color": "rgba(255, 255, 255, 0.16)",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "0px",
+      "spread": "0px",
+      "inset": true
+     },
+     {
+      "color": "#ffffff",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "1px"
+     },
+     {
+      "color": "#9ca3af",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "3px"
+     },
+     {
+      "color": "rgba(0, 0, 0, 0.05)",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "2px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of nav-cta focus-visible (raw/components-computed.json)",
+    "description": "The keyboard focus ring every marketing control draws: 1px white gap, then a 3px #9ca3af ring."
+   },
+   "booker-focus-ring": {
+    "value": [
+     {
+      "color": "rgba(59, 130, 246, 0.5)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "0px"
+     },
+     {
+      "color": "rgba(255, 255, 255, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "1px"
+     },
+     {
+      "color": "rgba(0, 0, 0, 0.1)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "2px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of bk-slot focus-visible (raw/components-computed.json)",
+    "description": "The booker's quieter focus ring: 1px 20%-white gap, then a 2px 10%-black ring."
+   },
+   "slot-pressed-shadow": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.05)",
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "1px",
+      "spread": "0px",
+      "inset": true
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of bk-slot pressed (raw/components-computed.json)",
+    "description": "The slot's pressed state: the drop shadow flips to a top inset."
+   },
+   "control-transition": {
+    "value": "0.15s",
+    "type": "duration",
+    "source": "computed transitionDuration of bk-day default (raw/components-computed.json)",
+    "description": "The booker controls' 0.15s colour/shadow transition."
+   },
+   "menu-transition": {
+    "value": "0.1s",
+    "type": "duration",
+    "source": "computed transitionDuration of menu-link default (raw/components-computed.json)",
+    "description": "The dropdown items' 0.1s hover fade."
+   },
+   "navitem-transition": {
+    "value": "0.15s",
+    "type": "duration",
+    "source": "computed transitionDuration of m-nav-item default (raw/components-computed.json)",
+    "description": "The mobile nav items' 0.15s transition."
+   },
+   "default-duration": {
+    "var": "--default-transition-duration",
+    "type": "duration",
+    "description": "The declared default 0.15s transition duration."
+   }
+  }
+ },
+ "light": {
+  "text": {
+   "primary": {
+    "value": "{color.hp.ink}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Headline and strong text (#242424)."
+   },
+   "body": {
+    "value": "{color.hp.body}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Marketing body text."
+   },
+   "muted": {
+    "value": "{color.hp.muted}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Muted lede text."
+   },
+   "subtle": {
+    "value": "{color.hp.subtle}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Quieter text (pricing sub-line)."
+   },
+   "quiet": {
+    "value": "{color.hp.quiet}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The quietest marketing text."
+   },
+   "on": {
+    "action": {
+     "value": "{color.hp.on-ink}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "White label on the dark buttons."
+    }
+   }
+  },
+  "surface": {
+   "page": {
+    "value": "{color.hp.page}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The white marketing page field."
+   },
+   "raised": {
+    "value": "{color.hp.raised}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Raised white controls/cards."
+   },
+   "sunken": {
+    "value": "{color.hp.surface-2}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The #f9fafb sunken field."
+   },
+   "field": {
+    "value": "{color.hp.field}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The #f3f4f6 field fill."
+   },
+   "chip": {
+    "value": "{color.hp.chip}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The chip fill."
+   },
+   "well": {
+    "value": "{color.hp.well}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The inset well."
+   },
+   "bar": {
+    "value": "{color.paint.bar}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The floating header's 72%-white glass."
+   },
+   "dark": {
+    "value": "{color.paint.footer}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The near-black footer field."
+   }
+  },
+  "action": {
+   "primary": {
+    "default": {
+     "value": "{color.hp.ink}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The #242424 dark button fill."
+    },
+    "hover": {
+     "value": "{color.paint.hover-veil}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The 4%-ink hover wash on quiet items."
+    }
+   }
+  },
+  "accent": {
+   "default": {
+    "value": "{color.hp.accent}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The #cc4510 orange accent."
+   },
+   "ink": {
+    "value": "{color.hp.accent-ink}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Accent-coloured text."
+   }
+  },
+  "border": {
+   "default": {
+    "value": "{color.hp.line}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The #e5e7eb rule."
+   },
+   "strong": {
+    "value": "{color.hp.line-2}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The #dee1e6 heavier rule."
+   },
+   "hairline": {
+    "value": "{color.hp.hairline}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The 7%-ink hairline."
+   }
+  },
+  "booker": {
+   "text": {
+    "default": {
+     "value": "{color.cal.text}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "Booker body text (#3c3e44)."
+    },
+    "emphasis": {
+     "value": "{color.cal.text-emphasis}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The strong booker ink (day numbers)."
+    },
+    "muted": {
+     "value": "{color.cal.text-muted}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "Muted booker text."
+    },
+    "subtle": {
+     "value": "{color.cal.text-subtle}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "Subtle booker text."
+    },
+    "inverted": {
+     "value": "{color.cal.text-inverted}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "Inverted booker text."
+    }
+   },
+   "surface": {
+    "default": {
+     "value": "{color.cal.bg}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The booking page field."
+    },
+    "subtle": {
+     "value": "{color.cal.bg-subtle}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "Focused slot fill."
+    },
+    "muted": {
+     "value": "{color.cal.bg-muted}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "Slot hover fill."
+    },
+    "emphasis": {
+     "value": "{color.cal.bg-emphasis}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The selected day-cell fill."
+    }
+   },
+   "border": {
+    "default": {
+     "value": "{color.cal.border}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "Slot and field borders."
+    },
+    "subtle": {
+     "value": "{color.cal.border-subtle}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The booker frame border."
+    }
+   },
+   "action": {
+    "value": "{color.paint.booker-primary}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The #292929 confirm/today paint this booking page uses for its brand moments."
+   },
+   "brand": {
+    "value": "{color.cal.brand}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The declared brand colour."
+   }
+  }
+ },
+ "dark": {
+  "text": {
+   "primary": {
+    "var": "--cal-text",
+    "type": "color",
+    "description": "The #d4d4d4 booker dark body text."
+   },
+   "emphasis": {
+    "var": "--cal-text-emphasis",
+    "type": "color",
+    "description": "The #fafafa strong dark text."
+   },
+   "muted": {
+    "var": "--cal-text-muted",
+    "type": "color",
+    "description": "The #a3a3a3 muted dark text."
+   },
+   "subtle": {
+    "var": "--cal-text-subtle",
+    "type": "color",
+    "description": "The subtle dark text."
+   },
+   "inverted": {
+    "var": "--cal-text-inverted",
+    "type": "color",
+    "description": "The #000000 inverted dark text."
+   }
+  },
+  "surface": {
+   "page": {
+    "var": "--cal-bg",
+    "type": "color",
+    "description": "The #0f0f0f dark canvas."
+   },
+   "subtle": {
+    "var": "--cal-bg-subtle",
+    "type": "color",
+    "description": "The #262626 subtle dark fill."
+   },
+   "muted": {
+    "var": "--cal-bg-muted",
+    "type": "color",
+    "description": "The #171717 muted dark fill."
+   },
+   "emphasis": {
+    "var": "--cal-bg-emphasis",
+    "type": "color",
+    "description": "The #404040 emphasis dark fill."
+   },
+   "inverted": {
+    "var": "--cal-bg-inverted",
+    "type": "color",
+    "description": "The #fafafa inverted dark field."
+   }
+  },
+  "border": {
+   "default": {
+    "var": "--cal-border",
+    "type": "color",
+    "description": "The #4d4d4d dark border."
+   },
+   "subtle": {
+    "var": "--cal-border-subtle",
+    "type": "color",
+    "description": "The #262626 subtle dark border."
+   },
+   "emphasis": {
+    "var": "--cal-border-emphasis",
+    "type": "color",
+    "description": "The #737373 emphasis dark border."
+   }
+  },
+  "action": {
+   "primary": {
+    "var": "--cal-bg-primary",
+    "type": "color",
+    "description": "The #f5f5f5 inverted dark button fill."
+   }
+  },
+  "brand": {
+   "var": "--cal-brand",
+   "type": "color",
+   "description": "The dark brand (#ffffff)."
+  }
+ },
+ "component": {
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The floating header height at 1440."
+   },
+   "height-mobile": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "computed height of m-header default (raw/components-computed.json)",
+    "description": "The floating header at 390."
+   }
+  },
+  "nav": {
+   "button-height": {
+    "type": "dimension",
+    "value": "36px",
+    "source": "computed height of nav-cta default (raw/components-computed.json)",
+    "description": "The 36px nav control height."
+   }
+  },
+  "hero": {
+   "button-height": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "computed height of hero-google default (raw/components-computed.json)",
+    "description": "The 64px hero SSO button height."
+   }
+  },
+  "control": {
+   "height": {
+    "type": "dimension",
+    "value": "36px",
+    "source": "computed height of plan-cta default (raw/components-computed.json)",
+    "description": "The 36px standard button height."
+   }
+  },
+  "slot": {
+   "height": {
+    "type": "dimension",
+    "value": "36px",
+    "source": "computed height of bk-slot default (raw/components-computed.json)",
+    "description": "The 36px booker slot height."
+   }
+  },
+  "day": {
+   "size": {
+    "type": "dimension",
+    "value": "59.2969px",
+    "source": "computed height of bk-day default (raw/components-computed.json)",
+    "description": "The 59px booker day cell."
+   }
+  },
+  "field": {
+   "height": {
+    "type": "dimension",
+    "value": "32px",
+    "source": "computed height of bk-field default (raw/components-computed.json)",
+    "description": "The 32px booker field height."
+   }
+  },
+  "auth": {
+   "field-height": {
+    "type": "dimension",
+    "value": "30px",
+    "source": "computed height of email-field default (raw/components-computed.json)",
+    "description": "The 30px auth field height."
+   },
+   "button-height": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of signup-google default (raw/components-computed.json)",
+    "description": "The 40px auth button height."
+   }
+  },
+  "menu": {
+   "card-width": {
+    "type": "dimension",
+    "value": "200px",
+    "source": "computed width of menu-link default (raw/components-computed.json)",
+    "description": "The 200px product-card column in the dropdown."
+   }
+  },
+  "mobile": {
+   "navitem-height": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of m-nav-item default (raw/components-computed.json)",
+    "description": "The 48px mobile menu row."
+   }
+  },
+  "card": {
+   "radius": {
+    "type": "dimension",
+    "value": "14px",
+    "source": "computed borderTopLeftRadius of plan-card default (raw/components-computed.json)",
+    "description": "The plan-card radius."
+   }
+  }
+ }
+}

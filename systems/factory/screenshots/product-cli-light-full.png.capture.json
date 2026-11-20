@@ -1,0 +1,123 @@
+{
+ "schemaVersion": 1,
+ "capturedAt": "2026-11-13T23:26:46.512Z",
+ "screenshot": "product-cli-light-full.png",
+ "sanitizedSourceUrl": "https://factory.com/product/cli",
+ "requested": {
+  "viewport": {
+   "width": 1440,
+   "height": 900
+  },
+  "deviceScaleFactor": 1
+ },
+ "configuredViewport": {
+  "width": 1440,
+  "height": 900
+ },
+ "actual": {
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 1,
+  "theme": {
+   "classes": [],
+   "attributes": {
+    "data-theme": "light"
+   },
+   "colorScheme": "light"
+  },
+  "visualViewport": {
+   "width": 1440,
+   "height": 900,
+   "scale": 1,
+   "offsetLeft": 0,
+   "offsetTop": 0,
+   "pageLeft": 0,
+   "pageTop": 0
+  },
+  "documentSize": {
+   "width": 1440,
+   "height": 4891
+  },
+  "scroll": {
+   "x": 0,
+   "y": 0
+  }
+ },
+ "capture": {
+  "mode": "stitchedParts",
+  "scale": "device",
+  "clip": {
+   "x": 0,
+   "y": 0,
+   "width": 1440,
+   "height": 4891
+  }
+ },
+ "png": {
+  "width": 1440,
+  "height": 4891
+ },
+ "dimensionCheck": {
+  "status": "pass",
+  "expected": {
+   "width": 1440,
+   "height": 4891
+  },
+  "basis": "stitchedParts"
+ },
+ "visualReview": {
+  "status": "pending",
+  "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+ },
+ "cropCoordinates": {
+  "status": "unverified",
+  "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+ },
+ "stitchedFrom": [
+  "product-cli-light-full.part0.png",
+  "product-cli-light-full.part1.png",
+  "product-cli-light-full.part2.png",
+  "product-cli-light-full.part3.png",
+  "product-cli-light-full.part4.png",
+  "product-cli-light-full.part5.png"
+ ],
+ "partClip": [
+  {
+   "x": 0,
+   "y": 0,
+   "width": 1440,
+   "height": 900
+  },
+  {
+   "x": 0,
+   "y": 900,
+   "width": 1440,
+   "height": 900
+  },
+  {
+   "x": 0,
+   "y": 1800,
+   "width": 1440,
+   "height": 900
+  },
+  {
+   "x": 0,
+   "y": 2700,
+   "width": 1440,
+   "height": 900
+  },
+  {
+   "x": 0,
+   "y": 3600,
+   "width": 1440,
+   "height": 900
+  },
+  {
+   "x": 0,
+   "y": 4500,
+   "width": 1440,
+   "height": 391
+  }
+ ],
+ "intendedHeight": 4891
+}

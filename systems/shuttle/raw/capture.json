@@ -1,0 +1,19 @@
+{
+  "host": "shuttle.zip",
+  "confirmed": "https://shuttle.zip/ loaded and redirected to https://shuttle.zip/new/s/space/. Title was Untitled. Body text started Shuttle, Untitled, Log In, Download, Share.",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {"width": 1169, "height": 731, "scale": 1}
+  },
+  "screenshot": "preview_snapshot returned The browser is not producing screenshot frames. No PNG was saved.",
+  "pages": {
+    "space": "https://shuttle.zip/new/s/space/ signed-out empty space. Log In, Download, Share, Drag & Drop, 2GB for Free, Create Account, What is Shuttle?",
+    "about": "https://shuttle.zip/about marketing. Title Shuttle – Your files. Your rules.",
+    "pricing": "https://shuttle.zip/pricing Free and Pro cards. No checkout opened.",
+    "updates": "https://shuttle.zip/updates prose articles.",
+    "signup": "https://shuttle.zip/signup email, name, two switches, Next disabled, hidden cf-turnstile-response. Not submitted.",
+    "login": "https://shuttle.zip/login email and Next disabled, hidden cf-turnstile-response. Not submitted."
+  }
+}

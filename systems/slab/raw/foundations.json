@@ -1,0 +1,324 @@
+{
+  "captured": "2026-11-19",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "note": "T3 preview fill viewport. Not 1440 and not 390."
+  },
+  "pages": {
+    "home": "https://slab.com/",
+    "pricing": "https://slab.com/pricing/",
+    "login": "https://slab.com/login/",
+    "register": "https://slab.com/register/",
+    "help": "https://help.slab.com/en/"
+  },
+  "screenshotFrames": "preview_snapshot twice returned: The browser is not producing screenshot frames.",
+  "colorSchemeMedia": "matchMedia prefers-color-scheme was dark on the home tab. No dark theme rule was found in the marketing stylesheets. Body and page colours stayed the light marketing palette.",
+  "colors": {
+    "text": "#455360",
+    "textOnPlum": "#ffffff",
+    "muted": "#939598",
+    "ink": "#333333",
+    "inkMuted": "#909090",
+    "slate": "#2f4050",
+    "slateHover": "#35485a",
+    "white": "#ffffff",
+    "pageSoft": "#fcfcfd",
+    "accountPage": "#fcf9f8",
+    "plum": "#42022e",
+    "plumButton": "#7e0048",
+    "plumHover": "#6b003d",
+    "plumPressed": "#560031",
+    "maroon": "#741448",
+    "maroonHover": "#811650",
+    "linkAccount": "#a21a68",
+    "coral": "#ff4143",
+    "coralHover": "#ff5052",
+    "yellow": "#fcb415",
+    "yellowHover": "#fcb924",
+    "cyan": "#50c5dc",
+    "cyanHover": "#5dc9df",
+    "linkActive": "#3bbed8",
+    "focusOutline": "#e59700",
+    "fieldRing": "#50c5dc",
+    "valid": "#45c693",
+    "validFocus": "#2d926a",
+    "error": "#ff4143",
+    "errorFocus": "#f30003",
+    "untitledError": "#ef0038",
+    "google": "#4285f4",
+    "navCategoryBlue": "#207af1",
+    "navCategoryGreen": "#45c693",
+    "hairline": "#ebecec",
+    "borderDashed": "#939598",
+    "accountBorder": "rgba(125, 106, 104, 0.2)",
+    "secondaryBorder": "#e3e3e3",
+    "secondaryBorderHover": "#cccccc",
+    "disabledField": "#f8f8f8",
+    "toggleTrack": "not computed on a visible switch"
+  },
+  "type": {
+    "whitney": "whitney, system-ui, helvetica, sans-serif",
+    "sentinel": "sentinel, georgia, serif",
+    "untitled": "\"Untitled Sans\", system-ui, helvetica, sans-serif",
+    "plex": "\"IBM Plex Mono\"",
+    "roboto": "Roboto",
+    "body": {
+      "size": "20px",
+      "weight": 400,
+      "lineHeight": "32px",
+      "family": "whitney"
+    },
+    "hero": {
+      "size": "42px",
+      "weight": 400,
+      "lineHeight": "52px",
+      "letterSpacing": "-0.75px",
+      "family": "sentinel",
+      "color": "#ffffff"
+    },
+    "h1Pricing": {
+      "size": "56px",
+      "weight": 300,
+      "lineHeight": "64px",
+      "family": "sentinel",
+      "color": "#2f4050"
+    },
+    "h3": {
+      "size": "36px",
+      "weight": 400,
+      "lineHeight": "46px",
+      "family": "sentinel"
+    },
+    "nav": {
+      "size": "20px",
+      "weight": 600,
+      "lineHeight": "32px",
+      "family": "whitney"
+    },
+    "button": {
+      "size": "18px",
+      "weight": 600,
+      "lineHeight": "24px",
+      "family": "whitney"
+    },
+    "buttonSmall": {
+      "size": "16px",
+      "weight": 600,
+      "padding": "8px 16px"
+    },
+    "accountTitle": {
+      "size": "25px",
+      "weight": 500,
+      "lineHeight": "32px",
+      "letterSpacing": "-0.5px",
+      "family": "untitled",
+      "color": "#333333"
+    },
+    "accountBody": {
+      "size": "14px",
+      "weight": 400,
+      "lineHeight": "17px",
+      "letterSpacing": "-0.2px",
+      "family": "untitled"
+    },
+    "accountButton": {
+      "size": "14px",
+      "weight": 500,
+      "lineHeight": "17px",
+      "letterSpacing": "-0.2px",
+      "family": "untitled"
+    },
+    "footerLink": {
+      "size": "16px",
+      "weight": 500,
+      "lineHeight": "28px",
+      "color": "#939598"
+    },
+    "categoryLabel": {
+      "size": "12px",
+      "weight": 600,
+      "letterSpacing": "2px"
+    }
+  },
+  "radius": {
+    "button": "6px",
+    "field": "6px",
+    "google": "2px",
+    "accountControl": "2px",
+    "accountCard": "4px",
+    "pricingPill": "18px",
+    "checkboxCircle": "50%"
+  },
+  "space": {
+    "note": "Spacing-module steps are rem. html font-size computed as 10px on slab.com, so 1rem is 10px.",
+    "htmlFontSize": "10px",
+    "xs": "0.2rem",
+    "sm": "0.4rem",
+    "1": "0.8rem",
+    "md": "1.2rem",
+    "2": "1.6rem",
+    "3": "2.4rem",
+    "4": "3.2rem",
+    "5": "4rem",
+    "buttonPad": "1.6rem 3.2rem",
+    "buttonShortPad": "1.6rem 2.4rem",
+    "accountPad": "8px 12px",
+    "accountCardPad": "48px",
+    "footerPadBlock": "110px"
+  },
+  "motion": {
+    "inputShadow": "0.2s ease",
+    "untitledInputShadow": "0.15s ease",
+    "toggleKnob": "0.15s ease",
+    "toggleTrack": "0.2s ease",
+    "carousel": "0.3s ease",
+    "floatingSubscribe": "0.4s ease",
+    "subnav": "top 0.3s",
+    "reducedMotion": "No prefers-reduced-motion rules were found in the accessible stylesheets on https://slab.com/. Verdict: no authored reduce rules on the home sheet."
+  },
+  "components": {
+    "primaryButton": {
+      "bg": "#ff4143",
+      "hover": "#ff5052",
+      "active": "#ff4143",
+      "text": "#ffffff",
+      "radius": "6px",
+      "pad": "16px 24px",
+      "height": "56px",
+      "size": "18px",
+      "weight": 600,
+      "source": "Get Started on https://slab.com/ computed; hover and active from stylesheet .Button-module--primary"
+    },
+    "secondaryButton": {
+      "bg": "#ffffff",
+      "border": "1px solid #2f4050",
+      "text": "#2f4050",
+      "source": "stylesheet .Button-module--secondary, not a visible element on the pages opened"
+    },
+    "grayButton": {
+      "bg": "#2f4050",
+      "hover": "#35485a",
+      "text": "#ffffff",
+      "height": "56px",
+      "source": "pricing Free Get Started computed plus stylesheet hover"
+    },
+    "yellowButton": {
+      "bg": "#fcb415",
+      "hover": "#fcb924",
+      "source": "pricing Startup Get Started"
+    },
+    "blueButton": {
+      "bg": "#50c5dc",
+      "hover": "#5dc9df",
+      "source": "pricing Business Get Started"
+    },
+    "maroonButton": {
+      "bg": "#741448",
+      "hover": "#811650",
+      "source": "pricing Contact Sales"
+    },
+    "disabled": {
+      "opacity": "0.4",
+      "source": "stylesheet .Button-module--disabled, not shown"
+    },
+    "google": {
+      "bg": "#4285f4",
+      "text": "#ffffff",
+      "radius": "2px",
+      "height": "40px",
+      "width": "460px",
+      "border": "1px solid #4285f4",
+      "source": "home Sign up with Google computed. Not clicked."
+    },
+    "emailField": {
+      "bg": "#ffffff",
+      "radius": "6px",
+      "height": "56px",
+      "pad": "0px 12px",
+      "size": "18px",
+      "placeholder": "Work Email",
+      "source": "home hero input. Not submitted."
+    },
+    "loginInput": {
+      "bg": "#ffffff",
+      "radius": "2px",
+      "height": "33px",
+      "pad": "8px 12px",
+      "size": "14px",
+      "shadow": "rgb(144, 144, 144) 0px 0px 0px 1px",
+      "placeholder": "subdomain",
+      "source": "https://slab.com/login/ computed. Not submitted."
+    },
+    "accountPrimary": {
+      "bg": "#7e0048",
+      "hover": "#6b003d",
+      "active": "#560031",
+      "text": "#ffffff",
+      "radius": "2px",
+      "height": "35px",
+      "pad": "8px 12px",
+      "source": "login Continue computed; hover and active from stylesheet"
+    },
+    "accountSecondary": {
+      "bg": "#ffffff",
+      "border": "1px solid #e3e3e3",
+      "text": "#333333",
+      "hoverBorder": "#cccccc",
+      "source": "register Sign up with Google computed. Not clicked."
+    },
+    "accountCard": {
+      "bg": "#ffffff",
+      "border": "1px solid rgba(125, 106, 104, 0.2)",
+      "radius": "4px",
+      "shadow": "rgba(106, 52, 33, 0.06) 0px 0px 23px",
+      "pad": "48px",
+      "maxWidth": "430px",
+      "width": "430px",
+      "source": "login card computed"
+    },
+    "navPlum": {
+      "bg": "#42022e",
+      "text": "#ffffff",
+      "height": "132px",
+      "source": "home nav at min-width 768px"
+    },
+    "navWhite": {
+      "bg": "#ffffff",
+      "text": "#455360",
+      "height": "132px",
+      "source": "pricing nav"
+    },
+    "pricingPill": {
+      "track": "#ebecec",
+      "active": "#7e0048",
+      "activeText": "#ffffff",
+      "idleText": "#2f4050",
+      "radius": "18px",
+      "height": "36px",
+      "source": "pricing Annually/Monthly computed"
+    },
+    "focus": {
+      "outline": "rgb(229, 151, 0) auto 1px",
+      "outlineOffset": "1px",
+      "source": "focused nav links on home and the login Sign up link"
+    },
+    "fieldFocus": {
+      "shadow": "rgb(80, 197, 220) 0px 0px 0px 2px",
+      "source": "stylesheet .form-field input:focus. Home email focus computed as none after a programmatic focus, so the ring is a stylesheet reading, not a shown state."
+    },
+    "toast": {
+      "source": "Toastify rules in the home stylesheet. No toast was shown.",
+      "successOverride": "background #ffffff, border 2px solid #50c5dc, text #455360"
+    }
+  },
+  "notEntered": [
+    "Did not click Sign up with Google",
+    "Did not submit the home Work Email form",
+    "Did not submit login subdomain",
+    "Register asks for email, full name and password. Not an email-only form. Did not fill or submit it.",
+    "Did not open company SSO, Okta, SAML, checkout or payment",
+    "Did not enter a phone, card, government ID or KYC flow"
+  ]
+}

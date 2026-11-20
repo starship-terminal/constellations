@@ -12,7 +12,7 @@ offset 16, 76 inside the PNG), as written by tools/capture/native/shot.sh. Write
 (the same as tables). tools/build_tokens.py reads only raw/readings.json.
 
 Each reading is one of:
-  fill    the dominant colour of a box and its share of the box            Sampled when share >= 90%
+  fill    the dominant colour of a box and its share of the box            Sampled (share under 90%: inexact)
   text    the anti-aliased pixel furthest from the fill (a glyph colour)    Sampled (text)
   bbox    the bounding box of pixels close to the colour at a point,
           inside a window: a control's width and height in pt             Sampled
@@ -27,6 +27,7 @@ Each reading is one of:
 Standard library only (tools/capture/native/sample.py). Deterministic.
 """
 import json
+import os
 import pathlib
 import sys
 
@@ -195,8 +196,10 @@ def hexof(p):
 
 def op_fill(rows, x, y, w, h):
     colour, share = sample.fill(rows, x, y, w, h)
-    return {"value": hexof(colour), "share": round(share, 2),
-            "evidence": "Sampled" if share >= 0.9 else "Derived"}
+    # A box whose commonest colour covers under 90% of it (a gradient, glass, a thin mark) is still a
+    # sampled pixel, just not an exact fill: the share says how far to trust it. Derived is for values
+    # worked out from measured ones (docs/EVIDENCE.md), which this is not.
+    return {"value": hexof(colour), "share": round(share, 2), "evidence": "Sampled"}
 
 
 def op_text(rows, x, y, w, h, ink=None, dark=False):
@@ -340,7 +343,14 @@ def write(readings):
     (PKG / "raw" / f"{SLUG}-measured.md").write_text("\n".join(lines) + "\n")
 
 
+# PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+# for it. While this is None the script stops when run: the kit's copy is Grok Bot's example and
+# would write Grok Bot's values. KIT_EXAMPLE=1 runs the example as it is.
+ADAPTED_FOR = None
+
 if __name__ == "__main__":
+    if ADAPTED_FOR is None and not os.environ.get("KIT_EXAMPLE"):
+        raise SystemExit("measure.py is the kit's Grok Bot example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR")
     readings = run(sys.argv[1] if len(sys.argv) > 1 else f"~/.design-systems/{SLUG}/raw-shots")
     missing = sorted(rid for rid in R if rid not in readings)
     if missing:   # a light-only gap is fine; a reading with no theme at all means a capture is absent

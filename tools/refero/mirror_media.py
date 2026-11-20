@@ -14,7 +14,10 @@ $DESIGN_SYSTEMS_MEDIA or ~/services/design-systems/media/refero):
 Resumable: existing non-empty files are skipped unless --force. Downloads go
 to <name>.partial and are renamed on success; a response whose Content-Type
 does not match the expected image/ or video/ prefix is discarded (guards
-against 404 HTML error pages).
+against 404 HTML error pages). Only https URLs are fetched (redirects too), and a row whose
+slug is not lowercase letters, digits and hyphens is skipped and reported
+(--check fails on it): both come from the db, which merges from a committed
+text dump, so neither may reach a local file or a path outside the root.
 
 Usage:
     python3 tools/refero/mirror_media.py [--media-root DIR] [--workers 6]
@@ -33,6 +36,7 @@ import sqlite3
 import subprocess
 import sys
 import time
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -72,16 +76,44 @@ def style_urls(row):
     }
 
 
+class NotHttps(ValueError):
+    """A URL, or a redirect target, that is not https."""
+
+
+def require_https(url, what="url"):
+    if urllib.parse.urlsplit(url).scheme.lower() != "https":
+        raise NotHttps(f"refusing a non-https {what} {url!r}")
+
+
+class HttpsOnlyRedirect(urllib.request.HTTPRedirectHandler):
+    """Follow a redirect only when its target is https too."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        require_https(newurl, "redirect to")
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+# Every download goes through this opener, never the global urlopen.
+OPENER = urllib.request.build_opener(HttpsOnlyRedirect)
+
+
 def download(kind, url, dest):
-    """GET url with retry/backoff, verify Content-Type, write dest atomically."""
+    """GET url with retry/backoff, verify Content-Type, write dest atomically.
+
+    Refuses anything but an https URL before opening it, and any redirect
+    away from https: urllib would read a file:// URL from the local disk (and
+    guess an image/ type for a .jpg), and follows https -> http redirects."""
+    require_https(url)
     for i in range(4):
         try:
             req = urllib.request.Request(url, headers=UA)
-            with urllib.request.urlopen(req, timeout=120) as r:
+            with OPENER.open(req, timeout=120) as r:
                 ct = (r.headers.get("Content-Type") or "").split(";")[0] \
                     .strip().lower()
                 data = r.read()
             break
+        except NotHttps:
+            raise
         except Exception:
             if i == 3:
                 raise
@@ -223,9 +255,15 @@ def main():
         db.close()
     if args.limit:
         rows = rows[:args.limit]
+    unsafe = [row[0] for row in rows if not refero_media.safe_slug(row[0])]
+    rows = [row for row in rows if refero_media.safe_slug(row[0])]
+    for slug in unsafe:
+        print(f"FAIL {slug!r}: unsafe slug, skipped", file=sys.stderr)
 
     if args.check:
         missing = missing_files(rows, args.media_root, only)
+        if unsafe and not missing:
+            sys.exit(f"{len(unsafe)} styles rows have an unsafe slug")
         if not missing:
             print(f"media root ok: every expected file exists under "
                   f"{args.media_root}")
@@ -240,7 +278,9 @@ def main():
             print(f"{kind}: {len(slugs)} missing "
                   f"(e.g. {', '.join(slugs[:3])})", file=sys.stderr)
         sys.exit(f"{len(missing)} expected files missing under "
-                 f"{args.media_root}")
+                 f"{args.media_root}"
+                 + (f"; {len(unsafe)} styles rows have an unsafe slug"
+                    if unsafe else ""))
 
     counts = {k: {"downloaded": 0, "skipped": 0, "missing": 0, "failed": 0,
                   "compressed": 0} for k in KINDS}

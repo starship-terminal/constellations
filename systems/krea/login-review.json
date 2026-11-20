@@ -1,0 +1,75 @@
+{
+  "slug": "krea",
+  "captured": "2026-11-20",
+  "signed_in": true,
+  "session": "T3 in-app preview, default profile. Account and usage menu opened on /app. No login wall and no robot check.",
+  "product_version": "1.363.3",
+  "viewport": {
+    "requested": "1440x900",
+    "measured": {
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2,
+      "visualViewport": {"width": 1440, "height": 900, "scale": 1, "offsetLeft": 0, "offsetTop": 0}
+    },
+    "png": {"pixelWidth": 2880, "pixelHeight": 1800},
+    "phone": "not captured"
+  },
+  "offered": {
+    "nav": [
+      {"label": "Krea", "href": "/app", "reached": true},
+      {"label": "Bots", "href": "/bots", "reached": false},
+      {"label": "Agent", "href": "/agent", "reached": false},
+      {"label": "Node Editor", "href": "/nodes", "reached": false},
+      {"label": "Train Lora", "href": "/train", "reached": false},
+      {"label": "Files", "href": "/files", "reached": false},
+      {"label": "API", "href": "/app/api", "reached": false},
+      {"label": "Home", "href": "/app", "reached": true},
+      {"label": "Image", "href": "/image", "reached": false},
+      {"label": "Video", "href": "/video", "reached": false},
+      {"label": "Enhancer", "href": "/enhancer", "reached": false},
+      {"label": "Ad Studio", "href": "/ad-studio", "reached": false},
+      {"label": "Edit", "href": "/edit", "reached": false},
+      {"label": "More", "reached": false},
+      {"label": "Sessions", "reached": false},
+      {"label": "Pricing", "href": "/pricing", "reached": false},
+      {"label": "Enterprise", "href": "/enterprise", "reached": false},
+      {"label": "MCP", "reached": false},
+      {"label": "Invite teammates", "reached": false, "reason": "invite was not sent"}
+    ],
+    "settings": [
+      {"label": "Buy plan", "reached": false, "reason": "paid plan, not started"},
+      {"label": "Usage", "detail": "0% used", "reached": false},
+      {"label": "Workspace", "reached": false},
+      {"label": "Settings", "href": "/manage/profile", "reached": false, "reason": "navigation started, then the preview stopped painting frames"},
+      {"label": "Report a bug", "reached": false},
+      {"label": "Log out", "reached": false, "reason": "would end the session"}
+    ],
+    "create": {
+      "items": ["Image", "Video", "Enhancer", "Ad Studio", "Edit", "composer Generate"],
+      "reached": false,
+      "reason": "create tools were visible on Home and not opened; Generate was not submitted"
+    }
+  },
+  "screens": [
+    {"name": "Home, signed in, dark", "file": "screenshots/app-dark-default.png"},
+    {"name": "Account menu open", "file": "screenshots/app-dark-account-menu.png"}
+  ],
+  "gaps": [
+    "Phone 390x844 was not captured. The preview stopped painting before a resize.",
+    "Light theme was not switched. The signed-in page was html.dark, the same class as the public capture.",
+    "Settings at /manage/profile did not paint. preview_open once, then one more snapshot, still returned no frames.",
+    "Image, Video, Enhancer, Ad Studio, Edit, Agent, Files, API and Sessions were listed and not opened.",
+    "No hover, focus-visible, dialog, empty or error state was captured on the signed-in shell.",
+    "The first paint of /app was an Uh oh error card. Reload was not clicked. Home arrived after a location change to / and the app redirected back to /app."
+  ],
+  "not_submitted": [
+    "Generate",
+    "Buy plan",
+    "Invite teammates",
+    "Sign up to the Waitlist",
+    "Log out",
+    "Report a bug",
+    "profile, birthday, plan, survey and onboarding fields"
+  ]
+}

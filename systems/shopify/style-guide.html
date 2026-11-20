@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shopify public surfaces</title>
+<style>
+  :root { color-scheme: light; font-family: Helvetica, Arial, sans-serif; }
+  body { margin: 0; background: #f4f4f5; color: #18181b; }
+  header, main { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+  h1 { font-weight: 330; letter-spacing: -0.015em; font-size: 40px; margin: 0 0 8px; }
+  h2 { font-size: 20px; font-weight: 450; }
+  p { line-height: 1.4; }
+  nav { display: flex; gap: 8px; margin: 16px 0; flex-wrap: wrap; align-items: center; }
+  .pill { border-radius: 9999px; padding: 8px 20px; font-size: 16px; font-weight: 550; border: 2px solid transparent; }
+  .pill.solid { background: #fff; color: #000; }
+  .pill.ghost { background: transparent; color: #fff; border-color: #fff; }
+  .login-btn { background: #0b1314; color: #fafcfc; border: 0; border-radius: 8px; padding: 12px 16px; font-size: 16px; font-weight: 500; box-shadow: 0 3px 1px -1px rgba(26,26,26,.07); }
+  .passkey { background: #f1f1f1; color: #303030; border: 0; border-radius: 8px; padding: 12px 16px; font-size: 14px; font-weight: 500; }
+  section { margin: 28px 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px; }
+  .chip { display: flex; gap: 8px; align-items: center; background: #fff; border-radius: 12px; padding: 8px; }
+  .chip i { width: 28px; height: 28px; border-radius: 8px; border: 1px solid rgba(0,0,0,.08); display: block; flex: none; }
+  .chip code { font-size: 12px; }
+  .dark { background: #000; color: #fff; border-radius: 16px; padding: 20px; }
+  .dark .chip { background: #0e0e10; color: #fff; }
+  .card { background: #02090a; color: #fff; border-radius: 12px; padding: 24px; border: 1px solid #19272a; }
+  .field { display: block; width: 280px; box-sizing: border-box; background: #f3f3f3; color: #303030; border: 1px solid #1a1a1a; border-radius: 8px; padding: 8px 12px; font-size: 16px; }
+  .type b { display: inline-block; min-width: 140px; font-weight: 450; }
+  .type div { margin: 6px 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Shopify</h1>
+  <p>Public signed-out surfaces, measured 2026-11-19. Shopify-Inter and ShopifyInter are named in the tokens and are not loaded here. The preview browser did not produce screenshot frames.</p>
+  <nav>
+    <span class="pill solid">Start for free</span>
+    <span class="pill ghost" style="background:#000">Pick a plan that fits</span>
+    <span class="login-btn">Continue with email</span>
+    <span class="passkey">Sign in with passkey</span>
+  </nav>
+</header>
+<main>
+  <section>
+    <h2>Light form chrome</h2>
+    <p>Painted on the signed-out login form. The page behind that form is dark and lives in the dark set as login-page.</p>
+    <div class="grid">
+      <div class="chip"><i style="background:#ffffff"></i><span>page</span><code>#ffffff</code></div>
+      <div class="chip"><i style="background:#f3f3f3"></i><span>surface</span><code>#f3f3f3</code></div>
+      <div class="chip"><i style="background:#303030"></i><span>text</span><code>#303030</code></div>
+      <div class="chip"><i style="background:#616161"></i><span>muted</span><code>#616161</code></div>
+      <div class="chip"><i style="background:#005bd3"></i><span>accent</span><code>#005bd3</code></div>
+      <div class="chip"><i style="background:#1a1a1a"></i><span>border</span><code>#1a1a1a</code></div>
+      <div class="chip"><i style="background:#f1f1f1"></i><span>secondary</span><code>#f1f1f1</code></div>
+      <div class="chip"><i style="background:#e51b00"></i><span>critical</span><code>#e51b00</code></div>
+      <div class="chip"><i style="background:#29845a"></i><span>success</span><code>#29845a</code></div>
+    </div>
+    <p><input class="field" value="" placeholder="Email" readonly></p>
+  </section>
+  <section class="dark">
+    <h2>Marketing</h2>
+    <div class="grid">
+      <div class="chip"><i style="background:#000000"></i><span>page</span><code>#000000</code></div>
+      <div class="chip"><i style="background:#02090a"></i><span>surface</span><code>#02090a</code></div>
+      <div class="chip"><i style="background:#ffffff"></i><span>text</span><code>#ffffff</code></div>
+      <div class="chip"><i style="background:#a1a1aa"></i><span>muted</span><code>#a1a1aa</code></div>
+      <div class="chip"><i style="background:#5433eb"></i><span>shop purple</span><code>#5433eb</code></div>
+      <div class="chip"><i style="background:#0e0e10"></i><span>nav card</span><code>#0e0e10</code></div>
+      <div class="chip"><i style="background:#141a1a"></i><span>plan card</span><code>#141a1a</code></div>
+      <div class="chip"><i style="background:#061a1c"></i><span>deep green</span><code>#061a1c</code></div>
+      <div class="chip"><i style="background:#0a1314"></i><span>login page</span><code>#0a1314</code></div>
+    </div>
+    <div class="card">
+      <p style="margin:0 0 8px;font-size:22px;font-weight:330;letter-spacing:-0.02em">Be the next AI all-star</p>
+      <p style="margin:0;color:#9dabad;font-size:16px">Section fill #02090a. Supporting copy measured rgb(157, 171, 173).</p>
+    </div>
+  </section>
+  <section>
+    <h2>Type roles</h2>
+    <div class="type">
+      <div><b>display 4.375rem / 330</b> Be the next</div>
+      <div><b>body 1rem / 420</b> Shopify-Inter, tracking -0.006em</div>
+      <div><b>button 1rem / 550</b> Start for free</div>
+      <div><b>login heading 24px / 700</b> Log in</div>
+    </div>
+  </section>
+  <section>
+    <h2>Radii</h2>
+    <p>4px demo chip, 8px login field and Continue button, 12px product card, 16px nav card, 24px plan card, 9999px marketing pill.</p>
+  </section>
+</main>
+</body>
+</html>

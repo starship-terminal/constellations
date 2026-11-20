@@ -1,0 +1,80 @@
+{
+ "signin": {
+  "inputs": [
+   {
+    "type": "email",
+    "name": "work-email-input",
+    "ph": "Enter your work email",
+    "id": "work-email-input"
+   },
+   {
+    "type": "checkbox",
+    "name": "",
+    "ph": "",
+    "id": "mrl-checkbox-26"
+   }
+  ],
+  "buttons": [
+   "Log in",
+   "Log in with Google"
+  ],
+  "links": [
+   {
+    "t": "",
+    "h": "/"
+   },
+   {
+    "t": "Sign up for free",
+    "h": "/signup"
+   },
+   {
+    "t": "Terms of Service",
+    "h": "/terms/services-agreement"
+   }
+  ],
+  "h1": "Log in",
+  "fonts": "abcsocial, sans-serif"
+ },
+ "pricing": {
+  "heads": [
+   "H1 PRICING Solve hard problems and create new ideas together",
+   "H2 Free",
+   "H3 Free features",
+   "H2 Team+",
+   "H3 Team+ features",
+   "H2 Business",
+   "H3 Business features",
+   "H2 Enterprise",
+   "H3 Enterprise features",
+   "H2 Trusted by over 50% of the Fortune 100",
+   "H3 Plan Highlights",
+   "H2 Features to connect and innovate with your team",
+   "H3 Facilitation Superpowers® features",
+   "H3 Summon & take control",
+   "H3 Timer",
+   "H3 Voting"
+  ],
+  "classes": [
+   "section-pricing-cards",
+   "pricing-component_grid",
+   "pricing-card_component",
+   "pricing-card_content",
+   "pricing-card_content-top",
+   "pricing-card_header",
+   "pricing-card_description-wrapper",
+   "pricing-card_price-wrapper",
+   "pricing-card_value-wrapper",
+   "pricing-card_currency",
+   "pricing-card_details-dropdown w-dropdown",
+   "pricing-card_details-dropdown-toggle w-dropdown-toggle",
+   "pricing-card_details-dropdown-icon w-icon-dropdown-toggle",
+   "pricing-card_details-content w-dropdown-list",
+   "pricing-toggle_show-anually",
+   "pricing-toggle_show-monthly",
+   "pricing-card_number-wrapper",
+   "pricing-toggle_component",
+   "pricing-toggle_annually",
+   "pricing-toggle_element"
+  ]
+ }
+}

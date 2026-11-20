@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Endel style guide</title>
+<meta name="description" content="Endel (endel.io) design tokens and the public site's components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+/*CORE*/
+/*DARK*/
+  --sg-sans: var(--font-family-sans, "apercuPro"), Arial, -apple-system, BlinkMacSystemFont, "SF Pro", system-ui, sans-serif;
+  --sg-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #ffffff); background: var(--page, #000000); }
+main { max-width: 1152px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: 0.35px; }
+h2.sh { font: 400 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--muted, #bfbfbf); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--borderSubtle, #191919); }
+.lead { max-width: 62ch; color: var(--muted, #bfbfbf); }
+.note { font-size: 13px; color: var(--muted, #bfbfbf); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 400 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, #bfbfbf); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--borderSubtle, #262626); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--muted, #bfbfbf); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--muted, #bfbfbf); }
+/* ---- site mock ---- */
+.mock { border: 1px solid var(--borderSubtle, #262626); border-radius: 16px; overflow: hidden; background: var(--page, #000000); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 72px); padding: 0 24px; background: var(--gradient-headerScrim, #000000); font-size: 14px; overflow-x: auto; scrollbar-width: thin; }
+.navbar .wm { font: 400 20px/1 var(--sg-sans); letter-spacing: .35px; }
+.navbar .sp { flex: 1; }
+.navbar .lk { font-size: 16px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightNav, 44px); padding: 0 12px; border-radius: var(--radius-basic, 12px); font-size: 16px; font-weight: 400; border: 2px solid var(--surfaceRaised, #262626); background: var(--surfaceRaised, #262626); color: var(--text, #ffffff); }
+.btn.glow { border-color: transparent; box-shadow: var(--shadow-glow, 0 0 15px #ffffff); }
+.btn.big { height: var(--component-control-height, 56px); padding: 0 24px; font-size: 22px; }
+.btn.pill { border-radius: var(--radius-full, 100px); }
+.btn.strong { border-color: var(--borderStrong, #ffffff); }
+.btn.play { width: var(--component-play-size, 72px); height: var(--component-play-size, 72px); padding: 0; border-radius: var(--radius-full, 100px); background: var(--text, #fff); border-color: var(--text, #fff); color: var(--onAccent, #000); font-size: 22px; }
+.hero { background: var(--page, #000000); color: var(--text, #fff); padding: 72px 40px; font: 400 var(--font-size-h1, 60px)/var(--font-lineHeight-h1, 72px) var(--sg-sans); letter-spacing: 0.35px; text-align: center; }
+.hero small { display: block; font: 400 var(--font-size-text2, 18px)/var(--font-lineHeight-text2, 24px) var(--sg-sans); color: var(--muted, #bfbfbf); margin: 20px auto 26px; max-width: 46ch; letter-spacing: 0; }
+.hero .row { display: flex; gap: 10px; justify-content: center; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--layout-gap, 24px); padding: 20px; }
+.card { border-radius: var(--radius-card, 24px); background: var(--surface, #191919); padding: 20px; min-height: 120px; font-size: 13px; color: var(--text, #fff); }
+.card .price { font: 400 28px/1.2 var(--sg-sans); margin: 8px 0 14px; }
+.acc { display: flex; align-items: center; justify-content: space-between; height: 76px; padding: 0 24px; margin: 0 20px 12px; border-radius: var(--radius-basic, 12px); background: var(--surface, #191919); font-size: 22px; }
+.field { display: flex; align-items: center; height: var(--component-field-height, 62px); padding: 0 20px; border: 2px solid var(--border, #808080); border-radius: var(--radius-basic, 12px); font-size: 22px; color: var(--muted, #bfbfbf); }
+.playerbar { display: flex; align-items: center; gap: 12px; margin: 20px; padding: 16px 24px; border-radius: var(--radius-full, 100px); background: var(--surface, #191919); font-size: 14px; color: var(--muted, #bfbfbf); }
+.playerbar .dot { width: var(--component-dot-size, 12px); height: var(--component-dot-size, 12px); border-radius: var(--radius-round, 50%); background: var(--text, #fff); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--borderSubtle, #262626); padding: 6px 14px; text-align: left; }
+/* ---- token sample tables ---- */
+.fxrow { display: flex; align-items: center; gap: 12px; font: 400 11px/1.3 var(--sg-mono); color: var(--muted, #bfbfbf); margin: 5px 0; }
+.fxrow .nm { flex: 0 0 170px; }
+.fxrow .sm { color: var(--text, #ffffff); }
+.gridbar { height: 14px; background: var(--surfaceRaised, #262626); border-radius: 4px; }
+.swbox { display: inline-flex; align-items: flex-end; gap: 8px; margin: 8px 18px 8px 0; }
+.swbox .box { width: 56px; height: 56px; background: var(--surfaceRaised, #262626); border: 1px solid var(--borderSubtle, #262626); }
+.swbox .lb { font: 400 11px/1.4 var(--sg-mono); color: var(--muted, #bfbfbf); }
+.gradbar { flex: 1; height: 22px; border-radius: 6px; border: 1px solid var(--borderSubtle, #262626); }
+.demo { transition: background var(--duration-hover, 200ms) var(--easing-standard, ease); }
+.demo:hover { background: var(--fillHover, #808080); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Endel style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number.</p>
+
+  <h2 class="sh">Endel, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the <code>--color-*</code> neutrals and declared accents, the <code>--title-*</code>/<code>--text-*</code> apercuPro scale and the 1280px/12-column grid the Next.js bundles declare on <code>:root</code>, plus the component values measured on the live pages of endel.io and app.endel.io. One dark theme; the bundles declare no light variant. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from endel.io and app.endel.io on 2026-11-13, signed out, in headless Chromium. No consent overlay mounts on the captured routes. No link was followed, no form submitted and nothing signed into; the Set Timer sheet, the More flyout and the mobile menu were opened by their own toggles and closed again.</p>
+
+  <h2 class="sh">The site chrome</h2>
+  <p class="lead">A fixed header fades into the page through a black scrim: the ENDEL mark, the nav (ADHD, Sleep, Focus, Relax, Activity, More) and two 44px buttons — the glowing Try Today and Sign In.</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm">Endel</span><span class="sp"></span><span class="lk">ADHD</span><span class="lk">Sleep</span><span class="lk">Focus</span><span class="lk">Relax</span><span class="lk">Activity</span><span class="lk">More</span><span class="btn glow">Try Today</span><span class="btn">Sign In</span></div>
+    <div class="hero">Endel
+      <small>Personalized soundscapes to help you focus, relax and sleep — backed by neuroscience.</small>
+      <div class="row"><span class="btn play">&#9654;</span></div>
+    </div>
+    <div class="acc"><span>What is the difference between Soundscapes and Scenarios?</span><span>+</span></div>
+    <div class="playerbar"><span class="dot"></span><span>Focus &mdash; paused</span><span class="sp" style="flex:1"></span><span>Set Timer</span></div>
+  </div>
+
+  <h2 class="sh">Cards and fields</h2>
+  <p class="lead">Cards fill <code>dark.surface</code> #191919 (accordion rows, the mini-player pill) or <code>dark.surfaceRaised</code> #262626 (every button); the carousel banner carries a 24px corner and a 15% white inset outline. Fields rest on a #808080 border that goes white on focus.</p>
+  <div class="mock">
+    <div class="cards">
+      <div class="card"><b>Colored Noises</b><div class="price" style="font-size:18px">Soundscape</div><span class="btn pill">Try Now</span></div>
+      <div class="card"><b>Focus Timer</b><div class="price" style="font-size:18px">Scenario</div><span class="btn pill">Select</span></div>
+    </div>
+    <div style="padding:0 20px 20px"><div class="field">name@email.com</div></div>
+    <div style="padding:0 20px 20px"><span class="btn big strong">Unlock for $5.99/mo</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The ground is <code>dark.page</code> #000000. <code>color.neutral</code> is a five-step grey ramp (#191919, #262626, #808080, #bfbfbf, #e0e0e0) plus black and white that builds every surface, text level and border; buttons hover from gray-2 to gray-3. <code>color.accent</code> holds the declared greens and orange the signed-out pages never paint.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <p class="lead">Measured boxes: the 72px header, 44px nav buttons and 56px large controls, the 270px (= --cols-3) soundscape card, the 62px sign-in field and the player's 56px transports.</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">The declared apercuPro scale: the <code>--title-*</code> and <code>--text-*</code> steps tokenised as <code>font.size.*</code> with their <code>--line-height-*</code> partners, all at weight 400.</p>
+  <div id="type-out"></div>
+
+  <h2 class="sh">Grid</h2>
+  <p class="lead">The declared 1280px/12-column grid: container, gutter, gap and the <code>--cols-*</code> spans the components snap to (a card is <code>--cols-3</code>, a field <code>--cols-5</code> or <code>--cols-6</code>, a full row <code>--cols-12</code>). Bars at 85% scale.</p>
+  <div id="grid-out"></div>
+
+  <h2 class="sh">Radius, shadow, gradient, motion</h2>
+  <p class="lead">Six radius steps; the Try Today glow and the two focus rings; the header scrim gradients; the measured durations and declared easings.</p>
+  <div id="fx-out"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, toggle and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.dark || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (roles.length) {
+    h += `<div class="pal-h">dark roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat(TOK.dark && TOK.dark.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  const font = (TOK.core && TOK.core.font) || {};
+  const lhs = Object.fromEntries(flat(font.lineHeight || {}, 'font.lineHeight.'));
+  let h = '';
+  for (const [n, t] of flat(font.size || {}, 'font.size.')) {
+    const step = n.slice('font.size.'.length);
+    const lh = lhs['font.lineHeight.' + step];
+    h += `<div class="fxrow"><span class="nm">${esc(n)}</span><span class="sm" style="font:400 var(${cssname(n)})/var(${cssname('font.lineHeight.' + step)}) var(--sg-sans)">Soundscapes ${esc(t.v)}${lh ? '/' + esc(lh.v) : ''}</span></div>`;
+  }
+  for (const [n, t] of flat(font.family || {}, 'font.family.')) h += `<div class="fxrow"><span class="nm">${esc(n)}</span><span>${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+})();
+
+(function grid() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core && TOK.core.layout) || {}, 'layout.')) {
+    if (!n.startsWith('layout.col.')) { h += `<div class="fxrow"><span class="nm">${esc(n)}</span><span>${esc(t.v)}</span></div>`; continue; }
+    h += `<div class="fxrow"><span class="nm">${esc(n)}</span><span class="gridbar" style="width:calc(var(${cssname(n)}) * 0.85)"></span><span>${esc(t.v)}</span></div>`;
+  }
+  $('#grid-out').innerHTML = h;
+})();
+
+(function fx() {
+  let h = '<div class="pal-h">radius</div>';
+  for (const [n, t] of flat((TOK.core && TOK.core.radius) || {}, 'radius.'))
+    h += `<span class="swbox"><span class="box" style="border-radius:var(${cssname(n)})"></span><span class="lb">${esc(n)}<br>${esc(t.v)}</span></span>`;
+  h += '<div class="pal-h">shadow</div>';
+  for (const [n] of flat((TOK.core && TOK.core.shadow) || {}, 'shadow.'))
+    h += `<span class="swbox"><span class="box" style="background:var(--surface,#191919);box-shadow:var(${cssname(n)})"></span><span class="lb">${esc(n)}</span></span>`;
+  h += '<div class="pal-h">gradient</div>';
+  for (const [n] of flat((TOK.core && TOK.core.gradient) || {}, 'gradient.'))
+    h += `<div class="fxrow"><span class="nm">${esc(n)}</span><span class="gradbar" style="background:var(${cssname(n)})"></span></div>`;
+  h += '<div class="pal-h">motion</div>';
+  for (const [n, t] of flat((TOK.core && TOK.core.duration) || {}, 'duration.'))
+    h += `<div class="fxrow"><span class="nm">${esc(n)}</span><span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core && TOK.core.easing) || {}, 'easing.'))
+    h += `<div class="fxrow"><span class="nm">${esc(n)}</span><span>cubic-bezier(${esc((Array.isArray(t.v) ? t.v : [t.v]).join(', '))})</span></div>`;
+  h += '<div class="fxrow"><span class="btn demo">hover me — background var(--duration-hover) var(--easing-standard)</span></div>';
+  $('#fx-out').innerHTML = h;
+})();
+</script>
+</body>
+</html>

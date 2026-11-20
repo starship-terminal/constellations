@@ -1,0 +1,7 @@
+{
+  "_note": "fal.ai's published docs code samples show the Python decorator `_@fal.endpoint` (in docs-light-full / docs-dark-dark-full around y=2320), which OCR reads as an email-shaped word — it is the product's own public SDK copy, not private data, allowed. No real private text or addresses appear in the signed-out captures.",
+  "ocr": {
+    "emails": true,
+    "email_allow": ["_@fal\\.endpoint", "@fal\\.endpoint$", "@fal\\.ai$"]
+  }
+}

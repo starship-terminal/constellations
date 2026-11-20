@@ -1,0 +1,14 @@
+{
+ "_note": "Rules for systems/grow. A fully public signed-out capture of grow.google: no account, enrolment, search or form data appears on any surface — nothing was signed into, typed, submitted or followed off-site. The site publishes no contact addresses; Google-published and example addresses are allowed.",
+ "families": [],
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@google\\.com$",
+   "@grow\\.google$",
+   "@coursera\\.org$",
+   "@example\\.com$",
+   "@example\\.org$"
+  ]
+ }
+}

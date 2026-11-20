@@ -1,0 +1,14 @@
+{
+ "_note": "Rules for systems/enode. A fully public signed-out capture: every route is public marketing content (customer names like Vattenfall are published case studies); the contact and login forms were measured at rest and never submitted, so no PII is reachable. No regions need masking.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@enode\\.com$",
+   "@enode\\.energy$",
+   "@enode\\.io$",
+   "@example\\.com$",
+   "@enode\\.cor$"
+  ]
+ },
+ "families": []
+}

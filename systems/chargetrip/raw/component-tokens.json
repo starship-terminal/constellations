@@ -1,0 +1,377 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. chargetrip.com is a Framer build: its --token-<uuid> palette is the product's own paper, ink, orange, green and alpha colours (duplicated uuids folded onto the first one that resolves to the value). \"var\" leaves resolve through the live document; \"value\" leaves are measured.",
+ "core": {
+  "color": {
+   "ink": {
+    "300": {
+     "var": "--token-0185aaa1-7554-4cbb-8d0f-7094d3dd18bb",
+     "type": "color"
+    },
+    "700": {
+     "var": "--token-318aa4b8-8dab-4906-8bb7-8d804ce75cca",
+     "type": "color"
+    },
+    "500": {
+     "var": "--token-346ee6d0-b504-4399-b7b3-6d55d1700c25",
+     "type": "color"
+    },
+    "800": {
+     "var": "--token-6faa7983-978b-48bf-a16f-dbdf62fc1d01",
+     "type": "color"
+    },
+    "600": {
+     "var": "--token-dd65e8aa-173f-4c6d-a141-6eb333718901",
+     "type": "color"
+    },
+    "900": {
+     "var": "--token-e717b7bb-a100-4bb1-b9e2-bf9e0552cd28",
+     "type": "color"
+    }
+   },
+   "paper": {
+    "100": {
+     "var": "--token-044d76c9-1d00-469c-a961-fef21d17c082",
+     "type": "color"
+    },
+    "300": {
+     "var": "--token-3e897d9b-bc63-44ca-91e7-b613718b2929",
+     "type": "color"
+    },
+    "0": {
+     "var": "--token-481f3ae4-033a-4778-84f5-c7f4acfae6a3",
+     "type": "color"
+    },
+    "400": {
+     "var": "--token-61bd6f31-ff1d-47c7-a52b-0ebc831cf7da",
+     "type": "color"
+    },
+    "200": {
+     "var": "--token-b5e0dc80-9a00-44e7-a66c-8bc0af433b75",
+     "type": "color"
+    },
+    "500": {
+     "var": "--token-d77117d6-1fa5-4b6f-93d5-178036e10542",
+     "type": "color"
+    }
+   },
+   "orange": {
+    "400": {
+     "var": "--token-24318690-bc7e-4a1b-bd55-be4cc75b468d",
+     "type": "color"
+    },
+    "700": {
+     "var": "--token-5160159c-1b7b-42b4-98a0-1e6169331605",
+     "type": "color"
+    },
+    "600": {
+     "var": "--token-8c5548c1-f657-4696-aaf6-a7c1609b6d15",
+     "type": "color"
+    },
+    "500": {
+     "var": "--token-966c3ed4-6bab-4a98-9769-c9192c3fedad",
+     "type": "color"
+    },
+    "100": {
+     "var": "--token-aa5d8937-945a-45a4-9d86-a544041ac3fe",
+     "type": "color"
+    },
+    "alpha-12": {
+     "var": "--token-b60817cc-edc0-4bc3-a842-ab4ba1df33d4",
+     "type": "color"
+    }
+   },
+   "white-alpha": {
+    "52": {
+     "var": "--token-3298e3ee-6109-4481-a9b9-5ee40e59864c",
+     "type": "color"
+    }
+   },
+   "paper-alpha": {
+    "20": {
+     "var": "--token-8825aaa0-9f6a-46f3-b807-d77d6719fffe",
+     "type": "color"
+    }
+   },
+   "green": {
+    "500": {
+     "var": "--token-927da987-24cb-4091-bbfd-782f45ec3c6c",
+     "type": "color"
+    },
+    "600": {
+     "var": "--token-bd0673ba-2f42-477e-8ca5-d6c49eb7e5dc",
+     "type": "color"
+    }
+   }
+  },
+  "measured": {
+   "cta-orbit": {
+    "value": "#fc652d",
+    "type": "color",
+    "source": "computed paint.1.bg of cta-accent default (raw/components-computed.json)",
+    "description": "The decorative orange disc behind the CTA group."
+   },
+   "cta-orbit-deep": {
+    "value": "#dd3b00",
+    "type": "color",
+    "source": "computed paint.2.bg of cta-accent default (raw/components-computed.json)",
+    "description": "The darker orange disc layered under it."
+   },
+   "dark-orbit": {
+    "value": "#524c4a",
+    "type": "color",
+    "source": "computed paint.1.bg of plan-cta-dark default (raw/components-computed.json)",
+    "description": "The lifted-ink disc inside the dark plan card."
+   },
+   "form-ink": {
+    "value": "#071c1f",
+    "type": "color",
+    "source": "computed color of form-input default (raw/components-computed.json)",
+    "description": "The sales-form field text, a near-black teal unrelated to the ink ramp."
+   },
+   "signin-paper": {
+    "value": "#f1eee6",
+    "type": "color",
+    "source": "computed backgroundColor of signin-create default (raw/components-computed.json)",
+    "description": "The account.chargetrip.io 'Create account' card fill (oklch, resolved)."
+   }
+  },
+  "font": {
+   "family": {
+    "ui": {
+     "type": "fontFamily",
+     "value": "\"Geist Variable\", \"Geist Placeholder\", sans-serif",
+     "source": "computed textStyle.fontFamily of cta-accent default (raw/components-computed.json)",
+     "description": "Geist Variable across the UI: controls, nav, body copy (Placeholder is Framer's in-canvas stand-in)."
+    },
+    "display": {
+     "type": "fontFamily",
+     "value": "\"Cirka Regular\", \"Cirka Regular Placeholder\", sans-serif",
+     "source": "computed textStyle.fontFamily of plan-card default (raw/components-computed.json)",
+     "description": "Cirka, the editorial serif of the display headings and plan-card prices."
+    }
+   },
+   "size": {
+    "display": {
+     "type": "dimension",
+     "value": "88px",
+     "source": "computed textStyle.fontSize of hero-title default (raw/components-computed.json)",
+     "description": "The hero's 88px display serif (78px line-height)."
+    },
+    "h1": {
+     "type": "dimension",
+     "value": "64px",
+     "source": "computed textStyle.fontSize of contact-h1 default (raw/components-computed.json)",
+     "description": "The page-H1 size away from the home hero, 64px."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "48px",
+     "source": "computed textStyle.fontSize of section-title default (raw/components-computed.json)",
+     "description": "Section headings, 48px at 48px line-height."
+    },
+    "body": {
+     "type": "dimension",
+     "value": "18px",
+     "source": "computed textStyle.fontSize of nav-item default (raw/components-computed.json)",
+     "description": "Nav and body copy, 18px at 28.8px."
+    },
+    "control": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed textStyle.fontSize of cta-accent default (raw/components-computed.json)",
+     "description": "Control labels, 16px at 24px."
+    },
+    "small": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed textStyle.fontSize of footer-link default (raw/components-computed.json)",
+     "description": "Footer links and check-list items, 16px at 22.4px."
+    }
+   }
+  }
+ },
+ "light": {
+  "surface": {
+   "page": {
+    "type": "color",
+    "description": "The warm-cream page ground (the body element's own fill, painted identically at both widths).",
+    "value": "{color.paper.200}",
+    "source": "computed backgroundColor of page-ground default (raw/components-computed.json); same value as core.color.paper.200"
+   },
+   "card": {
+    "type": "color",
+    "description": "The plan-card and footer-panel fill, a near-white on the cream page.",
+    "value": "{color.paper.0}",
+    "source": "computed paint.0.bg of plan-card default (raw/components-computed.json); same value as core.color.paper.0"
+   },
+   "dark": {
+    "type": "color",
+    "description": "The dark island: the hero band and the 'Popular' plan card.",
+    "value": "{color.ink.800}",
+    "source": "computed paint.0.bg of plan-card-dark default (raw/components-computed.json); same value as core.color.ink.800"
+   }
+  },
+  "text": {
+   "primary": {
+    "type": "color",
+    "description": "Body and heading ink on the light pages.",
+    "value": "{color.ink.800}",
+    "source": "computed color of section-title default (raw/components-computed.json); same value as core.color.ink.800"
+   },
+   "muted": {
+    "type": "color",
+    "description": "Secondary text on the light pages: the footer's column headings (Products, Resources).",
+    "value": "{color.ink.300}",
+    "source": "computed textStyle.color of footer default (raw/components-computed.json); same value as core.color.ink.300"
+   },
+   "onDark": {
+    "type": "color",
+    "description": "Text painted on the dark hero band and dark plan card.",
+    "value": "{color.paper.100}",
+    "source": "computed color of hero-title default (raw/components-computed.json); same value as core.color.paper.100"
+   },
+   "onDarkMuted": {
+    "type": "color",
+    "description": "Muted text on the dark hero band.",
+    "value": "{color.white-alpha.52}",
+    "source": "computed color of hero-sub default (raw/components-computed.json); same value as core.color.white-alpha.52"
+   }
+  },
+  "accent": {
+   "type": "color",
+   "description": "The orange CTA fill (painted by a layer inside the control).",
+   "value": "{color.orange.500}",
+   "source": "computed paint.0.bg of cta-accent default (raw/components-computed.json); same value as core.color.orange.500"
+  },
+  "accentText": {
+   "type": "color",
+   "description": "Text painted on the orange CTA.",
+   "value": "{color.paper.100}",
+   "source": "computed textStyle.color of cta-accent default (raw/components-computed.json); same value as core.color.paper.100"
+  },
+  "fill": {
+   "ink": {
+    "type": "color",
+    "description": "The dark pill fill (nav CTA, sign-in submit, logo-chip band).",
+    "value": "{color.ink.800}",
+    "source": "computed paint.0.bg of nav-cta default (raw/components-computed.json); same value as core.color.ink.800"
+   },
+   "inkHover": {
+    "type": "color",
+    "description": "The lifted ink the dark pills pick up on hover.",
+    "value": "{color.ink.500}",
+    "source": "computed paint.0.bg of form-submit hover (raw/components-computed.json); same value as core.color.ink.500"
+   }
+  },
+  "navHover": {
+   "type": "color",
+   "description": "The translucent orange wash behind a nav item on hover.",
+   "value": "rgba(221, 59, 0, 0.15)",
+   "source": "computed paint.0.bg of nav-item hover (raw/components-computed.json)"
+  },
+  "border": {
+   "subtle": {
+    "type": "color",
+    "description": "The dashed cream hairline inside the light plan card.",
+    "value": "{color.paper.300}",
+    "source": "computed paint.1.border of plan-card default (raw/components-computed.json); same value as core.color.paper.300"
+   },
+   "onDark": {
+    "type": "color",
+    "description": "The dashed ink hairline inside the dark plan card.",
+    "value": "{color.ink.600}",
+    "source": "computed paint.1.border of plan-card-dark default (raw/components-computed.json); same value as core.color.ink.600"
+   }
+  },
+  "status": {
+   "online": {
+    "type": "color",
+    "description": "The 'All systems operational' dot: the only painted child (8 x 8, radius 100%) of the footer column the status-pill selector caught.",
+    "value": "#278859",
+    "source": "computed paint.0.bg of status-pill default (raw/components-computed.json)"
+   }
+  },
+  "focus": {
+   "type": "color",
+   "description": "The keyboard-focus ring the header/footer controls draw (1px auto); plan, slider and form controls still draw the #005fcc ring — recorded per entry.",
+   "value": "#101010",
+   "source": "computed outlineColor of cta-accent focus-visible (raw/components-computed.json)"
+  }
+ },
+ "component": {
+  "control": {
+   "heightCta": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of cta-accent default (raw/components-computed.json)",
+    "description": "The hero/marketing CTA button height."
+   },
+   "heightNav": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of nav-cta default (raw/components-computed.json)",
+    "description": "Header pills are 40px."
+   },
+   "heightPlan": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of plan-cta default (raw/components-computed.json)",
+    "description": "The plan-card CTA height."
+   },
+   "heightInput": {
+    "type": "dimension",
+    "value": "46px",
+    "source": "computed height of signin-input default (raw/components-computed.json)",
+    "description": "The sign-in field height on account.chargetrip.io."
+   },
+   "radiusButton": {
+    "type": "dimension",
+    "value": "8px",
+    "source": "computed paint.0.radius of cta-accent default (raw/components-computed.json)",
+    "description": "CTA corners are 8px."
+   },
+   "radiusSubmit": {
+    "type": "dimension",
+    "value": "10px",
+    "source": "computed paint.0.radius of form-submit default (raw/components-computed.json)",
+    "description": "The sales-form submit corners, 10px."
+   }
+  },
+  "card": {
+   "radiusPlan": {
+    "type": "dimension",
+    "value": "24px",
+    "source": "computed paint.0.radius of plan-card default (raw/components-computed.json)",
+    "description": "The light plan card's 24px corner."
+   },
+   "radiusPlanDark": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "computed paint.0.radius of plan-card-dark default (raw/components-computed.json)",
+    "description": "The dark plan card's 16px corner."
+   },
+   "radiusDemo": {
+    "type": "dimension",
+    "value": "12px",
+    "source": "computed paint.0.radius of demo-card default (raw/components-computed.json)",
+    "description": "The demo-card's 12px corner."
+   }
+  },
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The header block at 1440px."
+   }
+  },
+  "footer": {
+   "height": {
+    "type": "dimension",
+    "value": "481.172px",
+    "source": "computed height of footer default (raw/components-computed.json)",
+    "description": "The footer block at 1440px."
+   }
+  }
+ }
+}

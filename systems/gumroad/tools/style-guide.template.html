@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gumroad style guide</title>
+<meta name="description" content="gumroad.com design tokens and the public signed-out surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: var(--font-family-product, ui-sans-serif, system-ui, sans-serif);
+  --sg-mono: var(--font-family-mono, ui-monospace, "SF Mono", Menlo, monospace);
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.6 var(--sg-sans); color: var(--role-primary, #000); background: var(--ground-bodyBg, #f4f4f0); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--role-border, #000); }
+.lead { max-width: 62ch; opacity: .8; }
+.note { font-size: 13px; opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; color: var(--role-danger, #dc341e); }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { padding: 10px; border-radius: 10px; background: var(--ground-bodyBg, #242423); color: var(--role-primary, #ddd); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--role-border, #000); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); color: inherit; }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); opacity: .65; color: inherit; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--role-border, #000); overflow: hidden; background: var(--ground-bodyBg, #f4f4f0); color: var(--role-primary, #000); }
+.topbar { display: flex; align-items: center; gap: 14px; height: var(--component-header-height, 92px); padding: 0 24px; font-size: 14px; border-bottom: 1px solid var(--role-border, #000); background: var(--component-header-bg, var(--ground-bodyBg, #f4f4f0)); }
+.topbar .wm { font-weight: 700; font-size: 19px; letter-spacing: 0; text-transform: none; }
+.topbar .sp { flex: 1; }
+.topbar .pill { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; border: 1px solid var(--role-border, #000); border-radius: var(--radius-1, 4px); font-size: 13px; color: var(--role-primary, #000); background: var(--role-background, #fff); min-width: 190px; }
+.topbar .pill .ph { opacity: .55; }
+.topbar .theme { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--role-border, #000); display: inline-flex; align-items: center; justify-content: center; color: var(--role-primary, #000); background: transparent; font: inherit; cursor: pointer; padding: 0; }
+.topbar .theme:hover { background: var(--role-activeBg, rgba(0,0,0,.08)); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 18px; font-size: 14px; font-weight: 500; border-radius: var(--radius-1, 4px); border: 1px solid var(--role-border, #000); background: var(--role-background, #fff); color: var(--role-primary, #000); }
+.btn.primary { background: var(--component-cta-bg, var(--role-primary, #000)); color: var(--role-primaryForeground, #fff); }
+.btn.accent { background: var(--role-accent, #ff90e8); color: var(--role-accentForeground, #000); }
+.catrow { display: flex; gap: 10px; padding: 12px 24px; border-bottom: 1px solid var(--role-border, #000); font-size: 13px; flex-wrap: wrap; }
+.catrow .ln { padding: 4px 12px; border-radius: var(--radius-3, 999px); opacity: .85; }
+.catrow .ln.on { opacity: 1; font-weight: 600; background: var(--component-tabActive-bg, var(--role-primary, #000)); color: var(--role-primaryForeground, #fff); }
+.hero { padding: 56px 24px 48px; text-align: center; }
+.hero h3 { font: 400 64px/1.05 var(--sg-sans); letter-spacing: -0.02em; margin: 0 0 14px; }
+.hero p { font-size: 17px; opacity: .8; margin: 0 0 22px; }
+.hero .search { display: inline-flex; align-items: stretch; border: 1px solid var(--role-border, #000); border-radius: var(--radius-1, 4px); overflow: hidden; background: var(--role-background, #fff); box-shadow: var(--shadow-hard-one, 4px 4px 0 #000); }
+.hero .search span { padding: 12px 18px; font-size: 14px; opacity: .55; }
+.hero .search b { padding: 12px 22px; font-size: 14px; font-weight: 600; background: var(--role-primary, #000); color: var(--role-primaryForeground, #fff); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--role-border, #000); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--role-border, #000); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; opacity: .65; font-family: var(--sg-mono); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.tile { border: 1px solid var(--role-border, #000); border-radius: var(--component-card-radius, 8px); padding: 16px; font-size: 13px; background: var(--component-card-bg, var(--role-background, #fff)); color: var(--role-primary, #000); }
+.tile b { display: block; font: 600 15px/1.4 var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Gumroad style guide</h1>
+  <p class="note">gumroad.com — the marketplace for digital products, signed-out public evidence only.</p>
+
+  <h2 class="sh">gumroad.com, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the brand set (<code>--pink #ff90e8</code>, <code>--purple</code>, <code>--green</code>, <code>--orange</code>, <code>--red</code>, <code>--yellow</code>), the semantic roles declared as RGB channel triplets (<code>--accent</code>/<code>--primary</code>/<code>--filled</code>/<code>--success</code>/<code>--warning</code>/<code>--danger</code>/<code>--info</code> plus the <code>--contrast-*</code> partners), the <code>--spacer-1..8</code> spacing scale, <code>--border-radius-1..3</code>, the hard offset shadows <code>--box-shadow-1/2</code>, the <code>--text-xs..9xl</code> type ramp on ABC Favorit, and the measured geometry (<code>component.*</code>) read off the live DOM. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from gumroad.com and one creator subdomain (ichigo.gumroad.com), signed out, in headless Chromium at 1440&times;900 (mobile pass at 390&times;844). The site paints <b>light by default</b> — the <code>light</code> token set is that painted surface — and a real <code>@media (prefers-color-scheme: dark)</code> theme repaints the roles (<code>--body-bg</code> #242423, <code>--border-alpha</code> .35): the <code>dark</code> set is that painted surface, verified through colour-scheme emulation — there is no in-page toggle. The product subdomain pins its own light palette over the shared sheet, so its pages do not repaint; that is recorded as observed behaviour, not a third theme. ABC Favorit is a proprietary face and is not bundled: samples fall back to system fonts.</p>
+
+  <h2 class="sh">The surface</h2>
+  <p class="lead">Every marketing page is a hero header — the GUMROAD wordmark, the marketplace search, "Log in" and the black "Start selling" button — over a pill row of category links and a centred hero. Below sit bordered cards on the <code>#f4f4f0</code> ground, hard 4px offset shadows, and the pink <code>--accent</code>. The theme preview button below is this guide's own control: the product itself follows the OS colour scheme.</p>
+  <div class="mock" id="docs-mock" data-mode="light">
+    <div class="topbar"><span class="wm">Gumroad</span><span class="pill"><span class="ph">Search products</span></span><span class="sp"></span><span class="btn">Log in</span><span class="btn primary">Start selling</span><button type="button" class="theme" id="theme-toggle" aria-pressed="false" title="Preview the dark theme (the site follows your OS)">&#9789;</button></div>
+    <div class="catrow"><span class="ln on">All</span><span class="ln">Drawing &amp; Painting</span><span class="ln">3D</span><span class="ln">Design</span><span class="ln">Music &amp; Sound Design</span><span class="ln">Software Development</span></div>
+    <div class="hero"><h3>Go from 0 to $1</h3><p>Anyone can earn their first dollar online. Just start with what you know.</p><span class="search"><span>Search marketplace &hellip;</span><b>Search</b></span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead"><code>color.brand.*</code> holds the six declared brand colours and the <code>color.scale.*</code> utilities; <code>color.alpha.gray*</code> is the alpha ramp the muted roles mix from. The semantic roles under <code>light.*</code> are the painted default (cream ground, black ink, pink accent); <code>dark.*</code> resolves the same declarations inside <code>@media (prefers-color-scheme: dark)</code> — the accent and status colours hold, the ground, ink and border repaint. <code>channels.*</code> keeps the raw RGB triplets the roles are declared as; <code>role.*</code> is each resolved colour; <code>neutral.*</code> the <code>--neutral-*</code> wrappers.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius, layout and motion</h2>
+  <p class="lead">Spacing is the product's own <code>--spacer-1..8</code> scale (4px steps, 4&ndash;32px) plus the Tailwind <code>--spacing</code> unit; radii run <code>--border-radius-1..3</code> (the squared-off 4px card corner to the pill); <code>layout.*</code> carries the declared grid and container widths (<code>--main-stack-width</code>, <code>--spacing-product-page</code>, <code>--dynamic-grid</code>, <code>--grid-cols-sidebar</code>). <code>duration.*</code>/<code>ease.*</code> are the declared motion constants and <code>animation.*</code> the <code>--animate-*</code> presets.</p>
+  <div id="spacing-out" class="kv"></div>
+  <div id="motion-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">One proprietary face, <code>ABC Favorit</code>, does everything — wordmark, display, body and controls (code falls back to system mono). The <code>--text-*</code> ramp runs xs&ndash;9xl with paired <code>--leading-*</code> line-heights; weights are the named <code>--font-weight-*</code> steps. Below that, the <code>core.typography.*</code> composites — the display, heading, nav, control and price styles measured off the live DOM. Samples fall back to system sans because the face is not bundled.</p>
+  <div id="type-out"></div>
+  <div id="typ-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --pink/--accent/--spacer-*/--text-*/--font-family variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, focused and dark states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => (s !== null && typeof s === 'object' ? JSON.stringify(s) : String(s)).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles — the painted default (every gumroad.com page boots light)'], ['dark', 'dark roles — painted under prefers-color-scheme: dark']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component') && !n.startsWith('channels'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.breakpoint || {}, 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.ease || {}, 'ease.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v.join ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.animation || {}, 'animation.')) m += `<div><b>${esc(n)}</b> <span>${esc((typeof t.v === 'object' ? JSON.stringify(t.v) : String(t.v)).slice(0, 90))}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.zIndex || {}, 'zIndex.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.opacity || {}, 'opacity.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.focus || {}, 'focus.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const setname of ['light', 'dark']) {
+    const misc = flat((TOK[setname] || {}).misc || {}, setname + '.misc.');
+    if (!misc.length) continue;
+    m += `<div style="grid-column:1/-1;opacity:.6;margin-top:8px"><b>${setname} misc</b></div>`;
+    for (const [n, t] of misc) m += `<div><b>${esc(n)}</b> <span>${esc((typeof t.v === 'object' ? JSON.stringify(t.v) : String(t.v)).slice(0, 90))}</span></div>`;
+  }
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat((TOK.core || {}).shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  for (const setname of ['light', 'dark']) {
+    const sh = flat((TOK[setname] || {}).shadow || {}, setname + '.shadow.');
+    if (!sh.length) continue;
+    for (const [n, t] of sh) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const setname of ['light', 'dark']) {
+    const c = flat((TOK[setname] || {}).component || {}, setname + '.component.');
+    for (const [n, t] of c) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  }
+  $('#meas-out').innerHTML = m || '<div><b>none measured</b></div>';
+})();
+
+(function motion() {
+  const g = TOK.core.motion || {};
+  let m = '';
+  for (const [n, t] of flat(g.duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(g.easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  const tr = Object.keys(g.transition || {}).length, an = Object.keys(g.animation || {}).length;
+  if (tr || an) m += `<div><b>measured</b> <span>${tr} transition tokens, ${an} animation tokens (tokens.json, core.motion)</span></div>`;
+  const rm = (g._extensions || {}).reducedMotion;
+  if (rm) m += `<div><b>reduced motion</b> <span>${esc(rm.behaviour)} — ${esc(String(rm.removed))} removed, ${esc(String(rm.kept))} kept across ${esc(String(rm.pages))} pages</span></div>`;
+  $('#motion-out').innerHTML = m || '<div><b>no motion probe</b></div>';
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v)) * (String(resolveVal(t.v)).endsWith('rem') ? 16 : 1);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — Gumroad</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).leading || {}, 'font.leading.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Gumroad</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+
+// The measured core.typography.* composites — the styles the live DOM paints,
+// not just the declared scales. Samples fall back to system sans (ABC Favorit
+// is not bundled).
+(function typ() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core || {}).typography || {}, 'typography.')) {
+    const v = t.v || {};
+    const fs = parseFloat(v.fontSize) || 14;
+    const mono = /mono/i.test(String(v.fontFamily));
+    const meta = [v.fontSize, v.lineHeight, 'w' + v.fontWeight, v.letterSpacing].filter(Boolean).join(' / ');
+    h += `<div class="tr"><span class="ts" style="font-family:${mono ? 'var(--sg-mono)' : 'var(--sg-sans)'};font-size:${Math.min(fs, 44)}px;font-weight:${esc(String(v.fontWeight || 400))};line-height:${esc(v.lineHeight || 'normal')}">${esc(n)} — Gumroad 0123</span><span class="tv">${esc(meta)}</span></div>`;
+  }
+  $('#typ-out').innerHTML = h;
+})();
+
+// The mock's theme button is the guide's own preview — gumroad.com follows
+// prefers-color-scheme, it carries no in-page toggle. The [data-mode="dark"]
+// block carries the dark token set the emulation paints.
+(function themeToggle() {
+  const btn = $('#theme-toggle'), mock = $('#docs-mock');
+  if (!btn || !mock) return;
+  btn.addEventListener('click', () => {
+    const dark = mock.getAttribute('data-mode') !== 'dark';
+    mock.setAttribute('data-mode', dark ? 'dark' : 'light');
+    btn.setAttribute('aria-pressed', String(dark));
+    btn.title = dark ? 'Back to the light theme' : 'Preview the dark theme (the site follows your OS)';
+  });
+})();
+</script>
+</body>
+</html>

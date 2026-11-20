@@ -12,7 +12,7 @@ Busuu is worth a capture because its language-learning marketing is a tight stud
 | [style-guide.html](style-guide.html) | One page that renders every token and the main components with the real values |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (28, ~57 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: the two shells, the gradient hero, the language picker, the upsell, the course page, the footers, mobile |
-| [components/crops/](components/crops) | 58 element screenshots, `{component}-{state}.png` |
+| [components/crops/](components/crops) | 61 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 19 `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x, `-full` whole pages (mobile-course is part-stitched), `mobile-*` phone shots, `home-light-menu`/`mobile-home-light-menu` the opened kebab dropdown, `premium-light-monthly` the toggled billing tab |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (the stylesheet harvest — busuu.com declares almost no custom properties; it carries the served font faces), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [How the values were read](#how-the-values-were-read) |
@@ -51,7 +51,7 @@ Fonts: `core.font.family.marketing` is Nista, then 4 fallbacks; `core.font.famil
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 64 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 61 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -107,12 +107,14 @@ Nothing was signed into, bought or submitted: the register flow's language optio
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **This is the public shell, not the app.** Lessons, review, streaks, the profile and all signed-in surfaces live on app.busuu.com behind login and are uncaptured. Treat the app's own design system as unknown.
 - **One theme only.** The site paints light everywhere; the gradient hero and the indigo upsell are section styles. `tokens.json` ships no dark set.
 - **The tokens are measured, not declared.** busuu.com compiles its styles (Sass + styled-components); almost no `:root` design vars exist. Every token cites the measurement it came from — that is the honest provenance.
 - **The action blue has no fill.** `core.color.brand.blue` (#116eee) was measured on text and borders — picker-option labels, course-CTA text, the hover border on cards. The course CTA itself is a green `#11ee92` pill: its outer anchor computes transparent, its child `<button>` paints the green fill with a 100px radius on the course page's blue band.
 - **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or the raw files.
 - **Missing components.** `save-badge`, `m-menu-button` and `m-menu-open` are recorded missing in the measurement file: the kebab is an empty `<a>` with no text for the specs to name, and the SAVE n% badge selector found no match on the captured premium load. The opened menus show in [home-light-menu](screenshots/home-light-menu.png) and [mobile-home-light-menu](screenshots/mobile-home-light-menu.png). `nav-dropdown`, `period-toggle` and `language-item` have no captured focus look — a real keyboard focus could not be held on them.
+- **`nav-dropdown` was read from the wrong element.** Its selector `.nav-dropdown` is also the class of the whole nav bar, so the reading is `nav.nav-dropdown`, the 1400 x 40 bar, not the dropdown panel (`div.main-nav-dropdown` with its `ul.main-nav-dropdown__list`, visible only while the menu is open). Needs a recapture; the script now targets the panel and records the entry missing when the menu is closed (not run since).
 
 ## Fonts
 

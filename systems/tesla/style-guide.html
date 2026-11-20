@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tesla style guide</title>
+<meta name="description" content="Tesla public marketing tokens, rendered from tokens.json. Universal Sans is not loaded; the stack falls back to the system sans.">
+<style>
+:root {
+  --page: #ffffff;
+  --surface: #f4f4f4;
+  --text: #393c41;
+  --text-high: #171a20;
+  --muted: #5c5e62;
+  --accent: #3e6ae1;
+  --accent-mkt: #171a20;
+  --on-accent: #ffffff;
+  --border: #d0d1d2;
+  --error: #b74134;
+  --green: #12bb00;
+  --radius: 4px;
+  --header: 56px;
+  --sans: "Universal Sans Text", -apple-system, Arial, sans-serif;
+  --display: "Universal Sans Display", -apple-system, Arial, sans-serif;
+  color-scheme: light;
+}
+[data-mode="dark"] {
+  --page: #000000;
+  --surface: #222222;
+  --text: #eeeeee;
+  --text-high: #ffffff;
+  --muted: #a2a3a5;
+  --accent: #3e6ae1;
+  --accent-mkt: #ffffff;
+  --on-accent: #ffffff;
+  --border: #5c5e62;
+  --error: #ed4e3b;
+  --green: #12bb00;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 14px/20px var(--sans); }
+.wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px 64px; }
+header.top { position: sticky; top: 0; height: var(--header); display: flex; align-items: center; justify-content: space-between; background: var(--page); border-bottom: 1px solid var(--border); padding: 0 24px; z-index: 2; }
+header.top h1 { margin: 0; font: 500 17px/24px var(--display); color: var(--text-high); }
+header.top button { font: 500 14px/20px var(--sans); background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius); height: 32px; padding: 0 16px; cursor: pointer; }
+section { padding-top: 40px; }
+h2 { font: 500 28px/36px var(--display); color: var(--text-high); margin: 0 0 8px; }
+p.lead { color: var(--muted); max-width: 70ch; margin: 0 0 16px; }
+.row { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-end; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: center; }
+.sw i { width: 40px; height: 40px; border-radius: var(--radius); box-shadow: inset 0 0 0 1px var(--border); }
+.sw b { display: block; font-size: 12px; }
+.sw span { font-size: 12px; color: var(--muted); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 40px; min-width: 164px; padding: 4px 24px; border-radius: var(--radius); border: 3px solid transparent; font: 500 14px/20px var(--sans); text-decoration: none; }
+.btn.primary { background: var(--accent); color: var(--on-accent); }
+.btn.mkt { background: var(--accent-mkt); color: var(--page); }
+.btn.high { background: var(--page); color: var(--text); box-shadow: inset 0 0 0 1px var(--border); }
+.field { display: flex; align-items: center; height: 40px; width: 320px; max-width: 100%; padding: 0 12px; background: var(--surface); border-radius: var(--radius); color: var(--muted); font-weight: 500; }
+.card { background: var(--surface); border-radius: var(--radius); padding: 24px; max-width: 420px; }
+.card h3 { margin: 0 0 8px; font: 500 17px/24px var(--sans); color: var(--text-high); }
+.hero { background: #171a20; color: #fff; border-radius: var(--radius); padding: 48px 24px; }
+.hero h3 { margin: 0 0 8px; font: 500 40px/48px var(--display); }
+.hero p { margin: 0 0 16px; color: #fff; }
+.note { font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>Tesla</h1>
+  <button type="button" id="theme">Dark scheme</button>
+</header>
+<div class="wrap">
+  <section>
+    <h2>Colour</h2>
+    <p class="lead">Measured on tesla.com, 19 November 2026, from Tesla Design System custom properties. The marketing site paints primary as near-black. The product blue is the unset TDS primary.</p>
+    <div class="swatches" id="swatches"></div>
+  </section>
+  <section>
+    <h2>Type</h2>
+    <p class="lead">Universal Sans is proprietary and is not loaded here. The samples use the measured sizes and the system fallback.</p>
+    <p style="font: 500 40px/48px var(--display); color: var(--text-high); margin: 0;">Full Self-Driving (Supervised)</p>
+    <p class="note">40px / 48px display, weight 500. Homepage h2.</p>
+    <p style="font: 500 17px/24px var(--sans); color: var(--text-high);">Confirm Your Location</p>
+    <p class="note">17px text, weight 500. Locale heading.</p>
+    <p style="margin: 0;">Body copy at 14px / 20px, colour #393c41 in light.</p>
+    <p class="note" style="color: var(--muted);">Caption at 12px / 18px, muted #5c5e62.</p>
+  </section>
+  <section>
+    <h2>Buttons</h2>
+    <div class="row">
+      <a class="btn primary" href="#buttons">Order Now</a>
+      <a class="btn mkt" href="#buttons">Order Now</a>
+      <a class="btn high" href="#buttons">Learn More</a>
+    </div>
+    <p class="note">Left is TDS primary #3e6ae1. Middle is the marketing override #171a20. Right is the high-contrast button, white with #393c41 text. All are 40px tall with a 4px radius.</p>
+  </section>
+  <section>
+    <h2>Field and card</h2>
+    <div class="row">
+      <div class="field">Search Support</div>
+      <div class="card">
+        <h3>Get Personalized Support</h3>
+        <p style="margin: 0; color: var(--muted);">The support search field is a 40px grey container, #f4f4f4, radius 4px.</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2>Hero</h2>
+    <div class="hero">
+      <h3>Model Y</h3>
+      <p>2.49% APR Available</p>
+      <a class="btn primary" href="#hero">Order Now</a>
+    </div>
+    <p class="note">The homepage hero is a full-bleed photograph with white display type. This block uses the measured type and the primary button. The photograph is not redrawn.</p>
+  </section>
+</div>
+<script>
+const swatches = [
+  ["Page", "--page"],
+  ["Surface", "--surface"],
+  ["Text", "--text"],
+  ["High contrast", "--text-high"],
+  ["Muted", "--muted"],
+  ["Accent", "--accent"],
+  ["Marketing primary", "--accent-mkt"],
+  ["Border", "--border"],
+  ["Error", "--error"]
+];
+const host = document.getElementById("swatches");
+for (const [name, v] of swatches) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = "<i></i><div><b></b><span></span></div>";
+  el.querySelector("i").style.background = "var(" + v + ")";
+  el.querySelector("b").textContent = name;
+  el.querySelector("span").textContent = getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+  host.append(el);
+}
+document.getElementById("theme").addEventListener("click", () => {
+  const html = document.documentElement;
+  const dark = html.getAttribute("data-mode") !== "dark";
+  html.setAttribute("data-mode", dark ? "dark" : "light");
+  document.getElementById("theme").textContent = dark ? "Light scheme" : "Dark scheme";
+  for (const span of host.querySelectorAll("span")) {
+    const name = swatches.find(s => s[0] === span.previousElementSibling.textContent);
+  }
+  [...host.children].forEach((el, i) => {
+    el.querySelector("span").textContent = getComputedStyle(document.documentElement).getPropertyValue(swatches[i][1]).trim();
+  });
+});
+</script>
+</body>
+</html>

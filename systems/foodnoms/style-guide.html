@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foodnoms style guide</title>
+<meta name="description" content="Foodnoms design tokens and the public marketing, pricing, help-center, news, press, article and legal surfaces' components, rendered from tokens.json with the declared and measured values, in light and the site's authored prefers-color-scheme dark.">
+<style>
+:root {
+  --color-palette-neutral-1000: #000000;
+  --color-palette-neutral-1000-2: #000000;
+  --color-palette-neutral-1000-3: #000000;
+  --color-palette-black-4: rgba(0, 0, 0, 0.04);
+  --color-palette-black-8: rgba(0, 0, 0, 0.08);
+  --color-palette-link: #007cff;
+  --color-palette-link-16: rgba(0, 124, 255, 0.16);
+  --color-palette-misc-7: #0088ff;
+  --color-palette-link-alt-16: rgba(0, 136, 255, 0.16);
+  --color-palette-neutral-950: #0d0d0d;
+  --color-palette-neutral-950-2: #0d0d0d;
+  --color-palette-misc-11: #1a1a1a;
+  --color-palette-teal: #00a9dd;
+  --color-palette-blue: #0099f9;
+  --color-palette-ink: #2f2f2f;
+  --color-palette-ink-6: rgba(47, 47, 47, 0.06);
+  --color-palette-ink-26: rgba(47, 47, 47, 0.26);
+  --color-palette-ink-64: rgba(47, 47, 47, 0.64);
+  --color-palette-ink-80: rgba(47, 47, 47, 0.8);
+  --color-palette-accent-900: #361206;
+  --color-palette-neutral-800: #333333;
+  --color-palette-neutral-800-2: #333333;
+  --color-palette-misc-22: #4d4d4d;
+  --color-palette-green: #00b33f;
+  --color-palette-indigo: #5856de;
+  --color-palette-indigo-40: rgba(88, 86, 222, 0.4);
+  --color-palette-accent-800: #6b2209;
+  --color-palette-violet: #6364ff;
+  --color-palette-violet-16: rgba(99, 100, 255, 0.16);
+  --color-palette-neutral-600: #666666;
+  --color-palette-neutral-600-2: #666666;
+  --color-palette-steel: #72a2c5;
+  --color-palette-neutral-500: #808080;
+  --color-palette-brown: #945300;
+  --color-palette-accent-700: #a1330b;
+  --color-palette-accent-700-2: #a1330b;
+  --color-palette-neutral-400: #999999;
+  --color-palette-purple: #bd4be5;
+  --color-palette-misc-38: #b3b3b3;
+  --color-palette-pink: #d22086;
+  --color-palette-pink-16: rgba(210, 32, 134, 0.16);
+  --color-palette-accent-600: #d6430b;
+  --color-palette-accent-600-2: #d6430b;
+  --color-palette-accent-600-3: #d6430b;
+  --color-palette-accent-600-4: #d6430b;
+  --color-palette-neutral-200: #cccccc;
+  --color-palette-neutral-200-2: #cccccc;
+  --color-palette-neutral-200-3: #cccccc;
+  --color-palette-wash-36: rgba(208, 208, 208, 0.36);
+  --color-palette-neutral-100: #e6e6e6;
+  --color-palette-neutral-100-2: #e6e6e6;
+  --color-palette-neutral-100-3: #e6e6e6;
+  --color-palette-red: #ff001e;
+  --color-palette-neutral-50: #f2f2f2;
+  --color-palette-neutral-50-2: #f2f2f2;
+  --color-palette-neutral-50-3: #f2f2f2;
+  --color-palette-neutral-40: #f5f5f5;
+  --color-palette-orange: #ff6d00;
+  --color-palette-accent-deep: #ff3400;
+  --color-palette-misc-59: #ff5406;
+  --color-palette-accent-500: #ff5406;
+  --color-palette-accent-500-2: #ff5406;
+  --color-palette-accent-500-3: #ff5406;
+  --color-palette-accent-12: rgba(255, 84, 6, 0.12);
+  --color-palette-accent-16: rgba(255, 84, 6, 0.16);
+  --color-palette-accent-300: #ff784b;
+  --color-palette-accent-300-2: #ff784b;
+  --color-palette-accent-300-3: #ff784b;
+  --color-palette-accent-300-4: #ff784b;
+  --color-palette-accent-300-5: #ff784b;
+  --color-palette-neutral-25: #f9f9f9;
+  --color-palette-accent-200: #ff9c7b;
+  --color-palette-accent-200-2: #ff9c7b;
+  --color-palette-accent-200-3: #ff9c7b;
+  --color-palette-accent-100: #ffbda7;
+  --color-palette-accent-100-2: #ffbda7;
+  --color-palette-accent-100-3: #ffbda7;
+  --color-palette-accent-100-4: #ffbda7;
+  --color-palette-accent-50: #ffdfd3;
+  --color-palette-accent-50-2: #ffdfd3;
+  --color-palette-accent-50-3: #ffdfd3;
+  --color-palette-yellow: #ffbc00;
+  --color-palette-neutral-0: #ffffff;
+  --color-palette-neutral-0-2: #ffffff;
+  --color-palette-neutral-0-3: #ffffff;
+  --color-palette-neutral-0-4: #ffffff;
+  --color-palette-neutral-0-5: #ffffff;
+  --color-palette-neutral-0-6: #ffffff;
+  --font-family-display: "Aquawax Pro Bold", "Aquawax Pro Bold Placeholder", sans-serif;
+  --font-family-ui: "Aquawax Pro Medium", "Aquawax Pro Medium Placeholder", sans-serif;
+  --font-family-button: "Aquawax Pro DemiBold", "Aquawax Pro DemiBold Placeholder", sans-serif;
+  --font-family-mono: "Fragment Mono", monospace;
+  --font-size-ticker: 56px;
+  --font-size-page: 44px;
+  --font-size-heading-2: 36px;
+  --font-size-card: 28px;
+  --font-size-heading-4: 22px;
+  --font-size-title: 18px;
+  --font-size-label: 17px;
+  --font-size-body: 16px;
+  --font-size-ui: 15px;
+  --font-weight-bold: 700;
+  --font-weight-demibold: 600;
+  --font-weight-medium: 500;
+  --font-lineHeight-ticker: 61.6px;
+  --font-lineHeight-page: 48.4px;
+  --font-lineHeight-heading-2: 43.2px;
+  --font-lineHeight-card: 33.6px;
+  --font-lineHeight-heading-4: 30.8px;
+  --font-lineHeight-lede: 28.8px;
+  --font-lineHeight-title: 25.2px;
+  --font-lineHeight-body: 25.6px;
+  --font-lineHeight-label: 23.8px;
+  --font-lineHeight-tag: 21px;
+  --font-lineHeight-button: 16px;
+  --font-lineHeight-ui: 15px;
+  --font-lineHeight-field: 34px;
+  --font-letterSpacing-none: 0px;
+  --typography-ticker: var(--font-weight-bold) var(--font-size-ticker)/var(--font-lineHeight-ticker) var(--font-family-display);
+  --typography-page: var(--font-weight-bold) var(--font-size-page)/var(--font-lineHeight-page) var(--font-family-display);
+  --typography-heading-2: var(--font-weight-bold) var(--font-size-heading-2)/var(--font-lineHeight-heading-2) var(--font-family-display);
+  --typography-title: var(--font-weight-bold) var(--font-size-title)/var(--font-lineHeight-title) var(--font-family-display);
+  --typography-lede: var(--font-weight-medium) var(--font-size-title)/var(--font-lineHeight-lede) var(--font-family-ui);
+  --typography-body: var(--font-weight-medium) var(--font-size-body)/var(--font-lineHeight-body) var(--font-family-ui);
+  --typography-button: var(--font-weight-demibold) var(--font-size-body)/var(--font-lineHeight-button) var(--font-family-button);
+  --typography-ui: var(--font-weight-medium) var(--font-size-ui)/var(--font-lineHeight-ui) var(--font-family-ui);
+  --radius-none: 0px;
+  --radius-row: 12px;
+  --radius-card: 18.8px;
+  --radius-button: 20px;
+  --radius-pill: 40px;
+  --radius-pill-lg: 50px;
+  --space-12: 12px;
+  --space-18: 18px;
+  --space-40: 40px;
+  --duration-link: 400ms;
+  --easing-link: cubic-bezier(0.44, 0.0, 0.56, 1.0);
+  --component-pill-height: 40px;
+  --component-pill-padding-x: 18px;
+  --component-pill-padding-y: 12px;
+  --component-field-height: 42px;
+  --component-field-search-height: 34px;
+  --component-card-feature-width: 590px;
+  --component-card-feature-height: 400px;
+  --component-card-review-width: 279px;
+  --component-card-review-height: 260px;
+  --component-table-width: 1000px;
+  --component-nav-hamburger: 40px;
+  --canvas: #ffffff;
+  --ink: #0d0d0d;
+  --body: #333333;
+  --muted: #666666;
+  --field-ink: #2f2f2f;
+  --surface-card: #f2f2f2;
+  --surface-ring: #e6e6e6;
+  --surface-chip: #f5f5f5;
+  --accent: #ff5406;
+  --accent-hover: #ff9c7b;
+  --on-accent: #ffffff;
+  --accent-text: #ff5406;
+  --hue-red: #ff001e;
+  --hue-yellow: #ffbc00;
+  --hue-blue: #0099f9;
+  --hue-indigo: #5856de;
+  --hue-teal: #00a9dd;
+  --hue-steel: #72a2c5;
+  --on-dark-ink: #ffffff;
+  --focus-ring: #101010;
+  --focus-width: 1px;
+  --focus-offset: 1px;
+  --sg-sans: "Aquawax Pro Medium", "Aquawax Pro", "Nunito", "Quicksand", "Comfortaa", ui-rounded, "SF Pro Rounded", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Aquawax Pro Bold", "Aquawax Pro", "Nunito", "Quicksand", "Comfortaa", ui-rounded, "SF Pro Rounded", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: "Fragment Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --canvas: #000000;
+  --ink: #f2f2f2;
+  --body: #cccccc;
+  --muted: #999999;
+  --field-ink: #2f2f2f;
+  --surface-card: #1a1a1a;
+  --surface-ring: #333333;
+  --surface-chip: #f5f5f5;
+  --accent: #ff5406;
+  --accent-hover: #ff9c7b;
+  --on-accent: #ffffff;
+  --accent-text: #ff5406;
+  --hue-red: #ff001e;
+  --hue-yellow: #ffbc00;
+  --hue-blue: #0099f9;
+  --hue-indigo: #5e5cee;
+  --hue-teal: #00b3ee;
+  --hue-steel: #72a2c5;
+  --on-dark-ink: #ffffff;
+  --focus-ring: #101010;
+  --focus-width: 1px;
+  --focus-offset: 1px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 500 16px/1.6 var(--sg-sans); color: var(--body, #333); background: var(--canvas, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 40px/1.2 var(--sg-serif); margin: 0 0 4px; color: var(--ink, #0d0d0d); }
+h2.sh { font: 700 14px/1 var(--sg-serif); letter-spacing: .04em; color: var(--ink, #0d0d0d); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--surface-ring, #e6e6e6); }
+.lead { max-width: 66ch; color: var(--body, #333); }
+.note { font-size: 13px; color: var(--muted, #666); max-width: 66ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 700 12px/1 var(--sg-serif); letter-spacing: .04em; color: var(--muted, #666); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--canvas, #000); padding: 10px; border-radius: 12px; }
+.pal.dark .sw { color: var(--body, #ccc); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--surface-ring, #e6e6e6); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--muted, #666); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--muted, #666); }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--surface-ring, #e6e6e6); overflow: hidden; background: var(--canvas, #fff); border-radius: 12px; }
+.navbar { display: flex; align-items: center; gap: 22px; height: 64px; padding: 0 22px; font: 500 15px/15px var(--sg-sans); color: var(--muted, #666); background: var(--canvas, #fff); }
+.navbar .wm { font: 700 20px/1 var(--sg-serif); color: var(--ink, #0d0d0d); }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-pill-height, 40px); padding: 0 var(--component-pill-padding-x, 18px); font: 600 16px/16px var(--sg-sans); border-radius: var(--radius-button, 20px); border: 1px solid transparent; }
+.btn.primary { background: var(--accent, #ff5406); color: var(--on-accent, #fff); }
+.btn.primary:hover { background: var(--accent-hover, #ff9c7b); }
+.btn.secondary { background: var(--surface-card, #f2f2f2); color: var(--accent-text, #f8622e); }
+.hero { text-align: center; padding: 80px 24px 64px; background: var(--canvas, #fff); }
+.hero .tick { font: 700 56px/61.6px var(--sg-serif); color: var(--hue-red, #ff001e); }
+.hero small { display: block; font: 500 18px/28.8px var(--sg-sans); color: var(--muted, #666); margin: 18px auto 26px; max-width: 46ch; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; padding: 20px; }
+.card { border-radius: var(--radius-card, 18.8px); background: var(--surface-card, #f2f2f2); padding: var(--space-40, 40px); color: var(--ink, #0d0d0d); }
+.card .t { font: 700 28px/33.6px var(--sg-serif); margin-bottom: 8px; }
+.card .t.blue { color: var(--hue-blue, #0099f9); }
+.card .p { font: 500 16px/25.6px var(--sg-sans); color: var(--body, #333); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--surface-ring, #e6e6e6); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--surface-ring, #e6e6e6); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--muted, #666); font-family: var(--sg-mono); }
+.cmp-table { margin: 20px; border-collapse: collapse; font: 500 16px/25.6px var(--sg-sans); }
+.cmp-table th { font: 700 17px/23.8px var(--sg-serif); text-align: left; padding: 8px 18px; color: var(--ink, #0d0d0d); }
+.cmp-table td { padding: 8px 18px; border-top: 1px solid var(--surface-ring, #e6e6e6); color: var(--body, #333); border-radius: var(--radius-row, 12px); }
+.field { display: inline-flex; align-items: center; height: var(--component-field-height, 42px); padding: 0 18px; border-radius: var(--radius-pill, 40px); background: var(--surface-card, #f2f2f2); box-shadow: inset 0 0 0 1px var(--surface-ring, #e6e6e6); font: 500 16px/16px var(--sg-sans); color: var(--muted, #666); min-width: 200px; }
+.footer { padding: 26px 22px; background: var(--accent, #ff5406); color: var(--on-accent, #fff); border-radius: var(--radius-card, 18.8px); }
+.footer .cols { display: flex; gap: 56px; font: 700 17px/23.8px var(--sg-serif); }
+.footer .cols div > div { font: 500 15px/2 var(--sg-sans); color: var(--on-accent, #fff); }
+.ic { vertical-align: -3px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Foodnoms style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Foodnoms, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared Framer <code>--token-*</code> palette (the #ff5406-class accent ramp, the neutral ramp, the #2f2f2f ink alphas and the per-nutrient hue set), the uploaded Aquawax Pro family at the measured 56-15px sizes, the 20px-radius pills and 18.8px cards, the measured light roles under <code>light.*</code> and the authored dark theme under <code>dark.*</code> — the same stylesheet redeclares 39 names under <code>prefers-color-scheme: dark</code>. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from foodnoms.com on 2026-11-16, signed out, in headless Chromium; the dark pass emulated prefers-color-scheme: dark, the same path a dark-system visitor takes. The product is an iOS/macOS app: every Download / Get-the-App link was measured, never followed. Aquawax Pro is a proprietary uploaded font and is not loaded here: samples fall back to a rounded system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The header pairs the app icon and the Aquawax wordmark with muted nav links and the orange "Get the App" pill — which hovers to the lighter accent-200. The hero rotates its benefit words through the nutrient hue set.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">Foodnoms</span><span>News</span><span>Foodnoms+</span><span>Help</span><span class="sp"></span><span class="btn primary">Get the App ↗</span></div>
+    <div class="hero"><div class="tick">Track Nutrition</div><small>A simple, clear nutrition tracker for building healthier habits.</small><span class="btn secondary">Download the App ↗</span></div>
+  </div>
+
+  <h2 class="sh">Feature cards and the comparison table</h2>
+  <p class="lead">Feature cards paint on the #f2f2f2-class fill at 18.8px radius with per-feature title hues; /plus lays Free vs Foodnoms+ out as a Framer row component on the same fills.</p>
+  <div class="mock">
+    <div class="cards">
+      <div class="card"><div class="t blue">Effortlessly Scan Food</div><div class="p">Point your camera at a barcode or nutrition label.</div></div>
+      <div class="card"><div class="t" style="color:var(--hue-teal,#1ba6d8)">Deep Health Integration</div><div class="p">Reads and writes Apple Health data.</div></div>
+    </div>
+    <table class="cmp-table">
+      <tr><th>Features</th><th>Free</th><th>Foodnoms+</th></tr>
+      <tr><td>Nutrient Tracking</td><td>Calories &amp; Macros</td><td>40+ Nutrients</td></tr>
+      <tr><td>Apple Health Sync</td><td>Export Only</td><td>Import &amp; Export</td></tr>
+    </table>
+  </div>
+
+  <h2 class="sh">Newsletter field</h2>
+  <p class="lead">The email field is a 40px-radius capsule on the card fill with an inset 1px ring; its submit stays accent in both themes.</p>
+  <div class="mock" style="padding:20px">
+    <span class="field">name@example.com</span>
+    <span class="btn primary" style="border-radius:var(--radius-pill,40px)">Subscribe</span>
+  </div>
+
+  <h2 class="sh">Dark theme</h2>
+  <p class="lead">Under <code>prefers-color-scheme: dark</code> the canvas goes black, card fill becomes #1a1a1a, the .2/.4 text greys climb to .8/.6 — while the accent pills and white text stay unchanged.</p>
+  <div class="mock dark" style="padding:0">
+    <div class="navbar"><span class="wm">Foodnoms</span><span>News</span><span>Foodnoms+</span><span>Help</span><span class="sp"></span><span class="btn primary">Get the App ↗</span></div>
+    <div class="cards" style="background:var(--canvas,#000)">
+      <div class="card"><div class="t blue">Effortlessly Scan Food</div><div class="p">Point your camera at a barcode.</div></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Footer</h2>
+  <p class="lead">The footer is an accent-orange panel at card radius with white link columns, identical in both themes.</p>
+  <div class="footer"><div class="cols"><div>Explore<div>Download ↗<br>Foodnoms+<br>News</div></div><div>Comparisons<div>vs MyFitnessPal<br>vs Cronometer<br>vs Lose It!</div></div><div>Legal<div>Terms of Use<br>Privacy Policy</div></div></div></div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared <code>--token-*</code> layer carries the palette in <code>core.color.palette.*</code>; the measured roles resolve in the light and dark sets. Values are the sRGB gamut map of the site's <code>color(display-p3 …)</code> declarations.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">The standard pill is 40px high on a 20px radius with 12px/18px padding; fields and the newsletter submit are 40px capsules; feature cards round at 18.8px and table rows at 12px. Focus is the browser-auto 1px ring.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">One uploaded family, three painted weights: <code>Aquawax Pro Bold</code> (700) on every heading from the 56px ticker to 17px labels, <code>Aquawax Pro DemiBold</code> (600) on buttons and the tag chip, and <code>Aquawax Pro Medium</code> (500) on body and UI. Everything tracks at normal; samples fall back to a rounded system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --token-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and the search/accordion/drawer open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"palette":{"neutral-1000":{"v":"#000000","t":"color","s":"css-var --token-61b98b70-d959-458e-84f1-4b3bd3e2aa33 (light)","d":"black"},"neutral-1000-2":{"v":"#000000","t":"color","s":"css-var --token-8c67ca30-1d64-4535-a964-ffbea5c6d1f8 (light)","d":"black (a duplicate declaration — Framer colour styles repeat per component)"},"neutral-1000-3":{"v":"#000000","t":"color","s":"css-var --token-9ae6d4b3-e45d-4e20-95f4-e2504897c45d (light)","d":"black (a duplicate declaration — Framer colour styles repeat per component)"},"black-4":{"v":"rgba(0, 0, 0, 0.04)","t":"color","s":"css-var --token-b7753076-a09a-422f-9d4c-944d6d64fe36 (light)","d":"black at 4% — a hairline wash"},"black-8":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --token-fe6c0730-e10a-4c55-862d-94cfa8b40f61 (light)","d":"black at 8%"},"link":{"v":"#007cff","t":"color","s":"css-var --token-a49cf519-283d-46ca-a61d-3451d8a690db (light)","d":"link blue"},"link-16":{"v":"rgba(0, 124, 255, 0.16)","t":"color","s":"css-var --token-80695a79-1028-41cb-909e-59d398991b52 (light)","d":"link blue at 16%"},"misc-7":{"v":"#0088ff","t":"color","s":"css-var --token-3c10c460-d242-40a0-9410-e638f445cbc5 (light)","d":"a declared --token-* colour with no observed role"},"link-alt-16":{"v":"rgba(0, 136, 255, 0.16)","t":"color","s":"css-var --token-df576cf7-13ce-4edc-bac8-c46fd9636bed (light)","d":"a slightly brighter link blue at 16%"},"neutral-950":{"v":"#0d0d0d","t":"color","s":"css-var --token-2baf03db-a9e4-46b9-91e4-c826d6094725 (light)","d":"#0d0d0d heading ink"},"neutral-950-2":{"v":"#0d0d0d","t":"color","s":"css-var --token-d67eb3ac-ea94-4478-9402-da8c922c72b2 (light)","d":"#0d0d0d heading ink (a duplicate declaration — Framer colour styles repeat per component)"},"misc-11":{"v":"#1a1a1a","t":"color","s":"css-var --token-b7469093-0d3c-4252-b610-261704317f84 (light)","d":"a declared --token-* colour with no observed role"},"teal":{"v":"#00a9dd","t":"color","s":"css-var --token-b71f95ad-3b6f-4f7d-ae68-18994668e09e (light)","d":"goal hue — teal (a values-card glyph tint)"},"blue":{"v":"#0099f9","t":"color","s":"css-var --token-302ab92d-698f-4e54-b7ad-3e69309ecb79 (light)","d":"goal hue — blue (a feature-card title)"},"ink":{"v":"#2f2f2f","t":"color","s":"css-var --token-ef9d6278-1ce6-4164-a9b5-b638331cd823 (light)","d":"#2f2f2f ink — the search-field text"},"ink-6":{"v":"rgba(47, 47, 47, 0.06)","t":"color","s":"css-var --token-611536fe-4c07-46f9-876b-5b1f4a325974 (light)","d":"ink at 6% — the faintest wash"},"ink-26":{"v":"rgba(47, 47, 47, 0.26)","t":"color","s":"css-var --token-cfd5b08d-af16-4e05-a4e6-f8fd6e9052e6 (light)","d":"ink at 26% — a hairline wash"},"ink-64":{"v":"rgba(47, 47, 47, 0.64)","t":"color","s":"css-var --token-d4bf5d40-703f-45a4-961e-88eb820bd13c (light)","d":"ink at 64%"},"ink-80":{"v":"rgba(47, 47, 47, 0.8)","t":"color","s":"css-var --token-3c7ee4d5-d66a-4a4b-94b8-a061b5ec9b3c (light)","d":"ink at 80%"},"accent-900":{"v":"#361206","t":"color","s":"css-var --token-5bd06a85-0bb5-444b-90a3-2b918ec6e104 (light)","d":"near-black accent"},"neutral-800":{"v":"#333333","t":"color","s":"css-var --token-123b8990-3ac2-43a6-a119-ec6d8f6d9209 (light)","d":"body text grey"},"neutral-800-2":{"v":"#333333","t":"color","s":"css-var --token-60b30f87-f185-446a-a97a-7e8234bb4338 (light)","d":"body text grey (a duplicate declaration — Framer colour styles repeat per component)"},"misc-22":{"v":"#4d4d4d","t":"color","s":"css-var --token-051d5ef4-5e2c-4efd-b198-ed391fe5c26f (light)","d":"a declared --token-* colour with no observed role"},"green":{"v":"#00b33f","t":"color","s":"css-var --token-a92947b6-f973-4ee3-8452-131fbd8972b4 (light)","d":"goal hue — green"},"indigo":{"v":"#5856de","t":"color","s":"css-var --token-b8167313-229c-41eb-a782-380cb605abe8 (light)","d":"goal hue — indigo (a values-card glyph, a pricing check)"},"indigo-40":{"v":"rgba(88, 86, 222, 0.4)","t":"color","s":"css-var --token-0445500a-1558-42ef-a9f6-11d69e310e80 (light)","d":"indigo at 40%"},"accent-800":{"v":"#6b2209","t":"color","s":"css-var --token-59d66004-1139-4ad9-b86f-136a7ce593b4 (light)","d":"the darkest accent"},"violet":{"v":"#6364ff","t":"color","s":"css-var --token-68f0404a-c3be-4d9f-aeba-6e8c36551529 (light)","d":"goal hue — violet"},"violet-16":{"v":"rgba(99, 100, 255, 0.16)","t":"color","s":"css-var --token-8296c51d-7c13-496f-9fad-6a0587bdf99f (light)","d":"violet at 16%"},"neutral-600":{"v":"#666666","t":"color","s":"css-var --token-4ba80d30-a0fa-42f8-abce-e713387f72a1 (light)","d":"secondary text grey (nav links, dates)"},"neutral-600-2":{"v":"#666666","t":"color","s":"css-var --token-cd69b939-d5d2-4670-8365-df0f31d39e7d (light)","d":"secondary text grey (nav links, dates) (a duplicate declaration — Framer colour styles repeat per component)"},"steel":{"v":"#72a2c5","t":"color","s":"css-var --token-e0f008f7-b89b-417a-9fef-4bf7c8cb8cc6 (light)","d":"goal hue — steel blue (the shield glyph)"},"neutral-500":{"v":"#808080","t":"color","s":"css-var --token-a666d9eb-f877-4196-ae85-ed62c6d454e1 (light)","d":"grey"},"brown":{"v":"#945300","t":"color","s":"css-var --token-2e35e017-1b4e-42eb-85ca-437fd1265951 (light)","d":"goal hue — brown"},"accent-700":{"v":"#a1330b","t":"color","s":"css-var --token-b9847933-48cb-49af-b9df-cb1333b3d006 (light)","d":"a deeper accent"},"accent-700-2":{"v":"#a1330b","t":"color","s":"css-var --token-babd754f-9171-4b69-995c-d49a4d324291 (light)","d":"a deeper accent (a duplicate declaration — Framer colour styles repeat per component)"},"neutral-400":{"v":"#999999","t":"color","s":"css-var --token-d73e8176-991a-45ad-b7f7-d06917d9daba (light)","d":"mid grey"},"purple":{"v":"#bd4be5","t":"color","s":"css-var --token-56250f64-aa47-442e-94b7-b6e89d3b75a7 (light)","d":"goal hue — purple"},"misc-38":{"v":"#b3b3b3","t":"color","s":"css-var --token-23dcc6ec-aeb7-4a49-9592-cf1743c8dfdf (light)","d":"a declared --token-* colour with no observed role"},"pink":{"v":"#d22086","t":"color","s":"css-var --token-79f5fe98-6f75-4544-be52-e468c7e0cd46 (light)","d":"goal hue — pink"},"pink-16":{"v":"rgba(210, 32, 134, 0.16)","t":"color","s":"css-var --token-27a0e826-806c-4ede-b77a-6882444af008 (light)","d":"pink at 16%"},"accent-600":{"v":"#d6430b","t":"color","s":"css-var --token-1a347bc6-7fa6-4668-b374-4505f55bb2d7 (light)","d":"a deep accent"},"accent-600-2":{"v":"#d6430b","t":"color","s":"css-var --token-2117ac3a-b564-409a-af19-02f834483126 (light)","d":"a deep accent (a duplicate declaration — Framer colour styles repeat per component)"},"accent-600-3":{"v":"#d6430b","t":"color","s":"css-var --token-2d646bec-e64e-4930-9df8-440e4b56c393 (light)","d":"a deep accent (a duplicate declaration — Framer colour styles repeat per component)"},"accent-600-4":{"v":"#d6430b","t":"color","s":"css-var --token-c273b226-6f01-4b87-a864-0f655ad90e9b (light)","d":"a deep accent (a duplicate declaration — Framer colour styles repeat per component)"},"neutral-200":{"v":"#cccccc","t":"color","s":"css-var --token-440d50fd-6ab3-4f21-b874-f8d1b2cdc6dd (light)","d":"light grey"},"neutral-200-2":{"v":"#cccccc","t":"color","s":"css-var --token-960eb60d-b219-4dc9-a280-f3c4fb49d517 (light)","d":"light grey (a duplicate declaration — Framer colour styles repeat per component)"},"neutral-200-3":{"v":"#cccccc","t":"color","s":"css-var --token-ff3c5601-683f-4a54-a57c-3816b093c39e (light)","d":"light grey (a duplicate declaration — Framer colour styles repeat per component)"},"wash-36":{"v":"rgba(208, 208, 208, 0.36)","t":"color","s":"css-var --token-51db3f60-adb2-498a-a568-38fb7d4e79dc (light)","d":"a grey wash at 36%"},"neutral-100":{"v":"#e6e6e6","t":"color","s":"css-var --token-1d8715d1-f6b8-4f4a-943d-9eab1e8817be (light)","d":"hairline/ring grey"},"neutral-100-2":{"v":"#e6e6e6","t":"color","s":"css-var --token-58e13e30-f9ee-43ec-9b10-704449b3a36a (light)","d":"hairline/ring grey (a duplicate declaration — Framer colour styles repeat per component)"},"neutral-100-3":{"v":"#e6e6e6","t":"color","s":"css-var --token-982d3e4e-88b2-4ab5-adf8-29462fcb75d8 (light)","d":"hairline/ring grey (a duplicate declaration — Framer colour styles repeat per component)"},"red":{"v":"#ff001e","t":"color","s":"css-var --token-a8b17470-5760-49c5-b2d4-98a30eb6a57e (light)","d":"goal hue — red"},"neutral-50":{"v":"#f2f2f2","t":"color","s":"css-var --token-9ccde7da-e2d4-4bd3-a9a1-9d6f4670d0d9 (light)","d":"#f2f2f2-class card and field fill"},"neutral-50-2":{"v":"#f2f2f2","t":"color","s":"css-var --token-b697e7d4-5f13-4490-9d30-b15ab1a8f6a5 (light)","d":"#f2f2f2-class card and field fill (a duplicate declaration — Framer colour styles repeat per component)"},"neutral-50-3":{"v":"#f2f2f2","t":"color","s":"css-var --token-e7a183b7-29d9-44ac-82c4-06dfd2dc2e04 (light)","d":"#f2f2f2-class card and field fill (a duplicate declaration — Framer colour styles repeat per component)"},"neutral-40":{"v":"#f5f5f5","t":"color","s":"css-var --token-a5f25400-a132-4251-9bf4-a594a40d8751 (light)","d":"a pale grey"},"orange":{"v":"#ff6d00","t":"color","s":"css-var --token-15112450-0be7-4537-9056-19f33d803e6d (light)","d":"goal hue — orange"},"accent-deep":{"v":"#ff3400","t":"color","s":"css-var --token-e3a0618f-0992-4f5c-b011-441f9fae39e6 (light)","d":"a saturated red-orange beside the main ramp"},"misc-59":{"v":"#ff5406","t":"color","s":"css-var --token-4b2e9d50-bfc7-4d49-a687-ea9eb6858bcf (light)","d":"a declared --token-* colour with no observed role"},"accent-500":{"v":"#ff5406","t":"color","s":"css-var --token-5cdf92a1-2de5-4b3c-afd6-b05e0da4827a (light)","d":"the brand orange: primary pills, accordion links, pricing checks"},"accent-500-2":{"v":"#ff5406","t":"color","s":"css-var --token-68fc3b44-076f-4e15-8b8d-177d1c92d70c (light)","d":"the brand orange: primary pills, accordion links, pricing checks (a duplicate declaration — Framer colour styles repeat per component)"},"accent-500-3":{"v":"#ff5406","t":"color","s":"css-var --token-d7c13d27-6c37-440c-8ef8-4cabe4f62ace (light)","d":"the brand orange: primary pills, accordion links, pricing checks (a duplicate declaration — Framer colour styles repeat per component)"},"accent-12":{"v":"rgba(255, 84, 6, 0.12)","t":"color","s":"css-var --token-66e44fd2-dee0-4fbd-81a6-ec75fc21cd27 (light)","d":"accent at 12% — a fainter accent wash"},"accent-16":{"v":"rgba(255, 84, 6, 0.16)","t":"color","s":"css-var --token-af5da9ba-392e-4f77-b189-a6e30cac96c1 (light)","d":"accent at 16% — a soft accent wash"},"accent-300":{"v":"#ff784b","t":"color","s":"css-var --token-18857bdc-9160-4a5a-8a22-fe69e9043d0d (light)","d":"a mid-light accent (the newsletter field's focus-ring placeholder)"},"accent-300-2":{"v":"#ff784b","t":"color","s":"css-var --token-31976206-430d-44b8-b8f3-9a8ab6af0e1a (light)","d":"a mid-light accent (the newsletter field's focus-ring placeholder) (a duplicate declaration — Framer colour styles repeat per component)"},"accent-300-3":{"v":"#ff784b","t":"color","s":"css-var --token-6f93025e-575f-46be-8771-e8400fb560d6 (light)","d":"a mid-light accent (the newsletter field's focus-ring placeholder) (a duplicate declaration — Framer colour styles repeat per component)"},"accent-300-4":{"v":"#ff784b","t":"color","s":"css-var --token-7f948b94-82fd-4c8b-8a00-82a895ed42ae (light)","d":"a mid-light accent (the newsletter field's focus-ring placeholder) (a duplicate declaration — Framer colour styles repeat per component)"},"accent-300-5":{"v":"#ff784b","t":"color","s":"css-var --token-d715a68b-17e1-45ee-a057-be1fffb3f9bc (light)","d":"a mid-light accent (the newsletter field's focus-ring placeholder) (a duplicate declaration — Framer colour styles repeat per component)"},"neutral-25":{"v":"#f9f9f9","t":"color","s":"css-var --token-4eff08d0-6591-4d74-9449-cb08e98935ed (light)","d":"near-white"},"accent-200":{"v":"#ff9c7b","t":"color","s":"css-var --token-14ae3875-63fa-4a13-8b34-f91aaf1883fe (light)","d":"the accent-pill hover colour and light accent"},"accent-200-2":{"v":"#ff9c7b","t":"color","s":"css-var --token-a28d69ed-f831-4863-8448-7ecc9157cd69 (light)","d":"the accent-pill hover colour and light accent (a duplicate declaration — Framer colour styles repeat per component)"},"accent-200-3":{"v":"#ff9c7b","t":"color","s":"css-var --token-b5517470-fd88-4e64-97e3-06c36a338eae (light)","d":"the accent-pill hover colour and light accent (a duplicate declaration — Framer colour styles repeat per component)"},"accent-100":{"v":"#ffbda7","t":"color","s":"css-var --token-5d244200-cd0e-4768-8392-f64d18cecc16 (light)","d":"a light accent tint"},"accent-100-2":{"v":"#ffbda7","t":"color","s":"css-var --token-b23d04af-1386-4637-9d61-9f2834baafba (light)","d":"a light accent tint (a duplicate declaration — Framer colour styles repeat per component)"},"accent-100-3":{"v":"#ffbda7","t":"color","s":"css-var --token-d8a96e3d-9811-4cf4-8820-6c4775668fd5 (light)","d":"a light accent tint (a duplicate declaration — Framer colour styles repeat per component)"},"accent-100-4":{"v":"#ffbda7","t":"color","s":"css-var --token-eeeb297f-15c0-411b-ad4a-0810e8b37792 (light)","d":"a light accent tint (a duplicate declaration — Framer colour styles repeat per component)"},"accent-50":{"v":"#ffdfd3","t":"color","s":"css-var --token-326f1884-2b47-4ad0-b9e5-c565fbb1fb95 (light)","d":"the palest accent tint"},"accent-50-2":{"v":"#ffdfd3","t":"color","s":"css-var --token-b923483b-32a6-41ec-a291-047813e04f47 (light)","d":"the palest accent tint (a duplicate declaration — Framer colour styles repeat per component)"},"accent-50-3":{"v":"#ffdfd3","t":"color","s":"css-var --token-f81f49e4-fa52-47c8-aa1a-578094c0e650 (light)","d":"the palest accent tint (a duplicate declaration — Framer colour styles repeat per component)"},"yellow":{"v":"#ffbc00","t":"color","s":"css-var --token-948e6ba4-02b7-4acb-9029-7dd449d2bda1 (light)","d":"goal hue — gold"},"neutral-0":{"v":"#ffffff","t":"color","s":"css-var --token-04035cb5-32c7-4d02-a3c4-a2f1eff628b2 (light)","d":"white"},"neutral-0-2":{"v":"#ffffff","t":"color","s":"css-var --token-3860ba51-8f70-48c5-95ca-fdabfcaf1b49 (light)","d":"white (a duplicate declaration — Framer colour styles repeat per component)"},"neutral-0-3":{"v":"#ffffff","t":"color","s":"css-var --token-5e27d175-abb6-4aed-9b7c-019e3496c205 (light)","d":"white (a duplicate declaration — Framer colour styles repeat per component)"},"neutral-0-4":{"v":"#ffffff","t":"color","s":"css-var --token-99c84fb2-564c-4f3b-9a25-6d6ecb66be27 (light)","d":"white (a duplicate declaration — Framer colour styles repeat per component)"},"neutral-0-5":{"v":"#ffffff","t":"color","s":"css-var --token-d193c1a7-fb4f-4372-a508-5ad12e1d4460 (light)","d":"white (a duplicate declaration — Framer colour styles repeat per component)"},"neutral-0-6":{"v":"#ffffff","t":"color","s":"css-var --token-e4937171-542b-42ad-9ea7-f2313c1b2cba (light)","d":"white (a duplicate declaration — Framer colour styles repeat per component)"}}},"font":{"family":{"display":{"v":"\"Aquawax Pro Bold\", \"Aquawax Pro Bold Placeholder\", sans-serif","t":"fontFamily","s":"measured computed style of hero-ticker default (raw/components-computed.json) · fontFamily","d":"Aquawax Pro Bold with its 'Aquawax Pro Bold Placeholder' fallback — every heading: hero ticker, page h1s, h2-h4, labels, the wordmark."},"ui":{"v":"\"Aquawax Pro Medium\", \"Aquawax Pro Medium Placeholder\", sans-serif","t":"fontFamily","s":"measured computed style of hero-lede default (raw/components-computed.json) · fontFamily","d":"Aquawax Pro Medium with its placeholder fallback — body and UI text."},"button":{"v":"\"Aquawax Pro DemiBold\", \"Aquawax Pro DemiBold Placeholder\", sans-serif","t":"fontFamily","s":"measured computed style of nav-cta default (raw/components-computed.json) · fontFamily","d":"Aquawax Pro DemiBold with its placeholder fallback — every pill button and the pricing tag chip."},"mono":{"v":"\"Fragment Mono\", monospace","t":"fontFamily","s":"measured the site declares a Fragment Mono @font-face (raw/css-vars.json fonts); no measured signed-out surface paints it","d":"Declared mono face (unpainted on the measured surfaces)."}},"size":{"ticker":{"v":"56px","t":"dimension","s":"measured computed style of hero-ticker default (raw/components-computed.json) · fontSize","d":"The rotating hero headline."},"page":{"v":"44px","t":"dimension","s":"measured computed style of help-h1 default (raw/components-computed.json) · fontSize","d":"Page headlines (h1 on help, news, press, articles, legal, the interstitial)."},"heading-2":{"v":"36px","t":"dimension","s":"measured computed style of ha-h2 default (raw/components-computed.json) · fontSize","d":"Section headings (CTA, newsletter, article h2)."},"card":{"v":"28px","t":"dimension","s":"measured computed style of feature-title default (raw/components-computed.json) · fontSize","d":"Feature-card titles (22px at 390 wide)."},"heading-4":{"v":"22px","t":"dimension","s":"measured computed style of featured-title default (raw/components-computed.json) · fontSize","d":"h4 labels (As Featured By, values titles, mobile feature titles)."},"title":{"v":"18px","t":"dimension","s":"measured computed style of review-card default (raw/components-computed.json) · fontSize","d":"Card titles and accordion headers (18px); also the lede size."},"label":{"v":"17px","t":"dimension","s":"measured computed style of ha-tag default (raw/components-computed.json) · fontSize","d":"Labels: article tags, dates, footer headings, table headers."},"body":{"v":"16px","t":"dimension","s":"measured computed style of ha-body default (raw/components-computed.json) · fontSize","d":"Body text, accordion links, table rows, button labels."},"ui":{"v":"15px","t":"dimension","s":"measured computed style of nav-link default (raw/components-computed.json) · fontSize","d":"Small UI: nav links, footer links, date chips, tag note."}},"weight":{"bold":{"v":700,"t":"fontWeight","s":"measured computed style of hero-ticker default (raw/components-computed.json) · fontWeight","d":"Aquawax Pro Bold — every heading."},"demibold":{"v":600,"t":"fontWeight","s":"measured computed style of nav-cta default (raw/components-computed.json) · fontWeight","d":"Aquawax Pro DemiBold — buttons and the tag chip."},"medium":{"v":500,"t":"fontWeight","s":"measured computed style of ha-body default (raw/components-computed.json) · fontWeight","d":"Aquawax Pro Medium — body and UI text."}},"lineHeight":{"ticker":{"v":"61.6px","t":"dimension","s":"measured computed style of hero-ticker default (raw/components-computed.json) · lineHeight"},"page":{"v":"48.4px","t":"dimension","s":"measured computed style of help-h1 default (raw/components-computed.json) · lineHeight"},"heading-2":{"v":"43.2px","t":"dimension","s":"measured computed style of ha-h2 default (raw/components-computed.json) · lineHeight"},"card":{"v":"33.6px","t":"dimension","s":"measured computed style of feature-title default (raw/components-computed.json) · lineHeight"},"heading-4":{"v":"30.8px","t":"dimension","s":"measured computed style of featured-title default (raw/components-computed.json) · lineHeight"},"lede":{"v":"28.8px","t":"dimension","s":"measured computed style of hero-lede default (raw/components-computed.json) · lineHeight"},"title":{"v":"25.2px","t":"dimension","s":"measured computed style of review-card default (raw/components-computed.json) · lineHeight"},"body":{"v":"25.6px","t":"dimension","s":"measured computed style of ha-body default (raw/components-computed.json) · lineHeight"},"label":{"v":"23.8px","t":"dimension","s":"measured computed style of ha-tag default (raw/components-computed.json) · lineHeight"},"tag":{"v":"21px","t":"dimension","s":"measured computed style of plus-tag default (raw/components-computed.json) · lineHeight"},"button":{"v":"16px","t":"dimension","s":"measured computed style of nav-cta default (raw/components-computed.json) · lineHeight"},"ui":{"v":"15px","t":"dimension","s":"measured computed style of nav-link default (raw/components-computed.json) · lineHeight"},"field":{"v":"34px","t":"dimension","s":"measured computed style of help-search-input default (raw/components-computed.json) · lineHeight"}},"letterSpacing":{"none":{"v":"0px","t":"dimension","s":"measured computed letterSpacing 'normal' resolves to 0 on every measured text element","d":"The site tracks everything at normal."}}},"typography":{"ticker":{"v":{"fontFamily":"{font.family.display}","fontSize":"{font.size.ticker}","fontWeight":"{font.weight.bold}","lineHeight":"{font.lineHeight.ticker}","letterSpacing":"{font.letterSpacing.none}"},"t":"typography","s":"composed from the hero-ticker measurements"},"page":{"v":{"fontFamily":"{font.family.display}","fontSize":"{font.size.page}","fontWeight":"{font.weight.bold}","lineHeight":"{font.lineHeight.page}","letterSpacing":"{font.letterSpacing.none}"},"t":"typography","s":"composed from the help-h1 measurements"},"heading-2":{"v":{"fontFamily":"{font.family.display}","fontSize":"{font.size.heading-2}","fontWeight":"{font.weight.bold}","lineHeight":"{font.lineHeight.heading-2}","letterSpacing":"{font.letterSpacing.none}"},"t":"typography","s":"composed from the ha-h2 measurements"},"title":{"v":{"fontFamily":"{font.family.display}","fontSize":"{font.size.title}","fontWeight":"{font.weight.bold}","lineHeight":"{font.lineHeight.title}","letterSpacing":"{font.letterSpacing.none}"},"t":"typography","s":"composed from the review-card measurements"},"lede":{"v":{"fontFamily":"{font.family.ui}","fontSize":"{font.size.title}","fontWeight":"{font.weight.medium}","lineHeight":"{font.lineHeight.lede}","letterSpacing":"{font.letterSpacing.none}"},"t":"typography","s":"composed from the hero-lede measurements"},"body":{"v":{"fontFamily":"{font.family.ui}","fontSize":"{font.size.body}","fontWeight":"{font.weight.medium}","lineHeight":"{font.lineHeight.body}","letterSpacing":"{font.letterSpacing.none}"},"t":"typography","s":"composed from the ha-body measurements"},"button":{"v":{"fontFamily":"{font.family.button}","fontSize":"{font.size.body}","fontWeight":"{font.weight.demibold}","lineHeight":"{font.lineHeight.button}","letterSpacing":"{font.letterSpacing.none}"},"t":"typography","s":"composed from the nav-cta measurements"},"ui":{"v":{"fontFamily":"{font.family.ui}","fontSize":"{font.size.ui}","fontWeight":"{font.weight.medium}","lineHeight":"{font.lineHeight.ui}","letterSpacing":"{font.letterSpacing.none}"},"t":"typography","s":"composed from the nav-link measurements"}},"radius":{"none":{"v":"0px","t":"dimension","s":"measured computed style of help-accordion-header default (raw/components-computed.json) · borderTopLeftRadius","d":"Text and prose blocks are square."},"row":{"v":"12px","t":"dimension","s":"measured computed style of pricing-row default (raw/components-computed.json) · borderTopLeftRadius","d":"Table rows and small tiles."},"card":{"v":"18.8px","t":"dimension","s":"measured computed style of feature-card default (raw/components-computed.json) · borderTopLeftRadius","d":"The feature-card corner."},"button":{"v":"20px","t":"dimension","s":"measured computed style of nav-cta default (raw/components-computed.json) · borderTopLeftRadius","d":"The 40px pills: nav/hero CTAs, Search, mailto and secondary pills."},"pill":{"v":"40px","t":"dimension","s":"measured computed style of nl-email default (raw/components-computed.json) · borderTopLeftRadius","d":"Full capsules: the newsletter email field and its submit."},"pill-lg":{"v":"50px","t":"dimension","s":"measured computed style of press-asset default (raw/components-computed.json) · borderTopLeftRadius","d":"The wider asset-download pill on the press hub."}},"space":{"12":{"v":"12px","t":"dimension","s":"measured computed style of nav-cta default (raw/components-computed.json) · paddingTop","d":"Pill vertical padding."},"18":{"v":"18px","t":"dimension","s":"measured computed style of nav-cta default (raw/components-computed.json) · paddingRight","d":"Pill horizontal padding."},"40":{"v":"40px","t":"dimension","s":"measured computed style of feature-card default (raw/components-computed.json) · paddingTop","d":"Feature-card padding."}},"duration":{"link":{"v":"400ms","t":"duration","s":"measured computed style of help-accordion-link default (raw/components-computed.json) · transitionDuration","d":"The link colour transition."}},"easing":{"link":{"v":[0.44,0.0,0.56,1.0],"t":"cubicBezier","s":"measured the transition easing declared for links (raw/motion.json)"}},"component":{"pill":{"height":{"v":"40px","t":"dimension","s":"measured computed style of nav-cta default (raw/components-computed.json) · rect height","d":"The standard 40px button pill."},"padding-x":{"v":"18px","t":"dimension","s":"measured computed style of nav-cta default (raw/components-computed.json) · paddingRight"},"padding-y":{"v":"12px","t":"dimension","s":"measured computed style of nav-cta default (raw/components-computed.json) · paddingTop"}},"field":{"height":{"v":"42px","t":"dimension","s":"measured computed style of nl-email default (raw/components-computed.json) · rect height","d":"The newsletter email field (294px wide)."},"search-height":{"v":"34px","t":"dimension","s":"measured computed style of help-search-input default (raw/components-computed.json) · rect height","d":"The help search modal's input."}},"card":{"feature-width":{"v":"590px","t":"dimension","s":"measured computed style of feature-card default (raw/components-computed.json) · rect width","d":"A feature card at 1440."},"feature-height":{"v":"400px","t":"dimension","s":"measured computed style of feature-card default (raw/components-computed.json) · rect height"},"review-width":{"v":"279px","t":"dimension","s":"measured computed style of review-card default (raw/components-computed.json) · rect width","d":"A review marquee card."},"review-height":{"v":"260px","t":"dimension","s":"measured computed style of review-card default (raw/components-computed.json) · rect height"}},"table":{"width":{"v":"1000px","t":"dimension","s":"measured computed style of pricing-table default (raw/components-computed.json) · rect width","d":"The Free vs Foodnoms+ comparison table."}},"nav":{"hamburger":{"v":"40px","t":"dimension","s":"measured computed style of m-hamburger default (raw/components-computed.json) · rect height","d":"The mobile menu button."}}}},"light":{"canvas":{"v":"#ffffff","t":"color","s":"css-var --token-e4937171-542b-42ad-9ea7-f2313c1b2cba (light)","d":"Page canvas — white in light; this declaration repaints to black under the dark media rule."},"ink":{"v":"#0d0d0d","t":"color","s":"css-var --token-2baf03db-a9e4-46b9-91e4-c826d6094725 (light)","d":"#0d0d0d heading ink; repaints to #f2f2f2 in dark."},"body":{"v":"#333333","t":"color","s":"css-var --token-123b8990-3ac2-43a6-a119-ec6d8f6d9209 (light)","d":".2 body text; repaints to .8 in dark."},"muted":{"v":"#666666","t":"color","s":"css-var --token-4ba80d30-a0fa-42f8-abce-e713387f72a1 (light)","d":".4 secondary text (nav links, dates, table cells); repaints to .6 in dark."},"field-ink":{"v":"#2f2f2f","t":"color","s":"css-var --token-ef9d6278-1ce6-4164-a9b5-b638331cd823 (light)","d":"#2f2f2f — the search-field text."},"surface":{"card":{"v":"#f2f2f2","t":"color","s":"css-var --token-9ccde7da-e2d4-4bd3-a9a1-9d6f4670d0d9 (light)","d":"#f2f2f2-class card and field fill (feature cards, the newsletter email field, secondary pills); repaints to #1a1a1a in dark."},"ring":{"v":"#e6e6e6","t":"color","s":"css-var --token-1d8715d1-f6b8-4f4a-943d-9eab1e8817be (light)","d":".902 ring/hairline (the newsletter field's inset 1px shadow); repaints to .2 in dark."},"chip":{"v":"#f5f5f5","t":"color","s":"css-var --token-a5f25400-a132-4251-9bf4-a594a40d8751 (light)","d":".9608 pale grey."}},"accent":{"v":"#ff5406","t":"color","s":"css-var --token-68fc3b44-076f-4e15-8b8d-177d1c92d70c (light)","d":"The brand orange: primary pills, accordion links, pricing checks."},"accent-hover":{"v":"#ff9c7b","t":"color","s":"css-var --token-14ae3875-63fa-4a13-8b34-f91aaf1883fe (light)","d":"The lighter orange every accent pill hovers to."},"on-accent":{"v":"#ffffff","t":"color","s":"css-var --token-99c84fb2-564c-4f3b-9a25-6d6ecb66be27 (light)","d":"White text on the accent pills (stays white in dark)."},"accent-text":{"v":"#ff5406","t":"color","s":"css-var --token-4b2e9d50-bfc7-4d49-a687-ea9eb6858bcf (light)","d":"The accent as text: secondary-pill and accordion-link labels."},"hue":{"red":{"v":"#ff001e","t":"color","s":"css-var --token-a8b17470-5760-49c5-b2d4-98a30eb6a57e (light)","d":"Goal hue red — a hero-ticker word colour."},"yellow":{"v":"#ffbc00","t":"color","s":"css-var --token-948e6ba4-02b7-4acb-9029-7dd449d2bda1 (light)","d":"Goal hue gold — a goal-pill colour."},"blue":{"v":"#0099f9","t":"color","s":"css-var --token-302ab92d-698f-4e54-b7ad-3e69309ecb79 (light)","d":"Goal hue blue — the 'Effortlessly Scan Food' card title."},"indigo":{"v":"#5856de","t":"color","s":"css-var --token-b8167313-229c-41eb-a782-380cb605abe8 (light)","d":"Goal hue indigo — the eye-off value glyph, a pricing check."},"teal":{"v":"#00a9dd","t":"color","s":"css-var --token-b71f95ad-3b6f-4f7d-ae68-18994668e09e (light)","d":"Goal hue teal — the cloud value glyph."},"steel":{"v":"#72a2c5","t":"color","s":"css-var --token-e0f008f7-b89b-417a-9fef-4bf7c8cb8cc6 (light)","d":"Goal hue steel — the shield value glyph."}},"on-dark":{"ink":{"v":"#ffffff","t":"color","s":"css-var --token-99c84fb2-564c-4f3b-9a25-6d6ecb66be27 (light)","d":"Footer text is white in both themes."}},"focus":{"ring":{"v":"#101010","t":"color","s":"measured computed style of nav-cta focus-visible (raw/components-computed.json) · outlineColor","d":"The 1px browser-auto focus ring."},"width":{"v":"1px","t":"dimension","s":"measured computed style of nav-cta focus-visible (raw/components-computed.json) · outlineWidth"},"offset":{"v":"1px","t":"dimension","s":"measured computed style of nav-cta focus-visible (raw/components-computed.json) · outlineOffset"}}},"dark":{"canvas":{"v":"#000000","t":"color","s":"css-var --token-e4937171-542b-42ad-9ea7-f2313c1b2cba (dark)","d":"Page canvas — repaints to black under the dark media rule."},"ink":{"v":"#f2f2f2","t":"color","s":"css-var --token-2baf03db-a9e4-46b9-91e4-c826d6094725 (dark)","d":"Heading ink — repaints to #f2f2f2 in dark."},"body":{"v":"#cccccc","t":"color","s":"css-var --token-123b8990-3ac2-43a6-a119-ec6d8f6d9209 (dark)","d":"Body text — repaints to .8 in dark."},"muted":{"v":"#999999","t":"color","s":"css-var --token-4ba80d30-a0fa-42f8-abce-e713387f72a1 (dark)","d":"Secondary text — repaints to .6 in dark."},"field-ink":{"v":"#2f2f2f","t":"color","s":"css-var --token-ef9d6278-1ce6-4164-a9b5-b638331cd823 (dark)","d":"#2f2f2f — unchanged under the dark media rule."},"surface":{"card":{"v":"#1a1a1a","t":"color","s":"css-var --token-9ccde7da-e2d4-4bd3-a9a1-9d6f4670d0d9 (dark)","d":"Card/field fill — repaints to #1a1a1a in dark."},"ring":{"v":"#333333","t":"color","s":"css-var --token-1d8715d1-f6b8-4f4a-943d-9eab1e8817be (dark)","d":"Ring/hairline — repaints to .2 in dark."},"chip":{"v":"#f5f5f5","t":"color","s":"css-var --token-a5f25400-a132-4251-9bf4-a594a40d8751 (dark)","d":".9608 pale grey — unchanged in dark."}},"accent":{"v":"#ff5406","t":"color","s":"css-var --token-68fc3b44-076f-4e15-8b8d-177d1c92d70c (dark)","d":"The brand orange — unchanged: the pills stay #ff5406-class in dark."},"accent-hover":{"v":"#ff9c7b","t":"color","s":"css-var --token-14ae3875-63fa-4a13-8b34-f91aaf1883fe (dark)","d":"The accent-pill hover colour — unchanged in dark."},"on-accent":{"v":"#ffffff","t":"color","s":"css-var --token-99c84fb2-564c-4f3b-9a25-6d6ecb66be27 (dark)","d":"White text on the accent pills — unchanged."},"accent-text":{"v":"#ff5406","t":"color","s":"css-var --token-4b2e9d50-bfc7-4d49-a687-ea9eb6858bcf (dark)","d":"The accent as text — unchanged."},"hue":{"red":{"v":"#ff001e","t":"color","s":"css-var --token-a8b17470-5760-49c5-b2d4-98a30eb6a57e (dark)","d":"Goal hue red — unchanged in dark."},"yellow":{"v":"#ffbc00","t":"color","s":"css-var --token-948e6ba4-02b7-4acb-9029-7dd449d2bda1 (dark)","d":"Goal hue gold — unchanged in dark."},"blue":{"v":"#0099f9","t":"color","s":"css-var --token-302ab92d-698f-4e54-b7ad-3e69309ecb79 (dark)","d":"Goal hue blue — unchanged in dark."},"indigo":{"v":"#5e5cee","t":"color","s":"css-var --token-b8167313-229c-41eb-a782-380cb605abe8 (dark)","d":"Goal hue indigo — repaints slightly lighter in dark."},"teal":{"v":"#00b3ee","t":"color","s":"css-var --token-b71f95ad-3b6f-4f7d-ae68-18994668e09e (dark)","d":"Goal hue teal — repaints slightly lighter in dark."},"steel":{"v":"#72a2c5","t":"color","s":"css-var --token-e0f008f7-b89b-417a-9fef-4bf7c8cb8cc6 (dark)","d":"Goal hue steel — unchanged in dark."}},"on-dark":{"ink":{"v":"#ffffff","t":"color","s":"css-var --token-99c84fb2-564c-4f3b-9a25-6d6ecb66be27 (dark)","d":"Footer text stays white."}},"focus":{"ring":{"v":"#101010","t":"color","s":"measured computed style of nav-cta focus-visible (raw/components-computed.json) · outlineColor","d":"Focus ring, read in light — a dark pass paints the browser-auto ring on black."},"width":{"v":"1px","t":"dimension","s":"measured computed style of nav-cta focus-visible (raw/components-computed.json) · outlineWidth"},"offset":{"v":"1px","t":"dimension","s":"measured computed style of nav-cta focus-visible (raw/components-computed.json) · outlineOffset"}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || TOK.core.spacing || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  let node = TOK, seen = [];
+  for (const k of m[1].split('.')) { node = node && node[k]; seen.push(k); }
+  return node && node.v !== undefined ? resolveVal(node.v, (depth || 0) + 1) : v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Foodnoms</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) h += `<div class="tr"><span class="ts" style="font-size:12px">${esc(n)}</span><span class="tv">${esc(JSON.stringify(t.v))}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

@@ -1,414 +1,1316 @@
 [
- {
-  "referenceId": "systems:duolingo",
-  "groupId": "web-categories",
-  "labels": [
-   "Education"
-  ],
-  "reason": "catalog.json describes gamified learning, lessons, streaks and leaderboards."
- },
- {
-  "referenceId": "systems:brilliant",
-  "groupId": "web-categories",
-  "labels": [
-   "Education"
-  ],
-  "reason": "catalog.json describes interactive problem-solving lessons and course paths."
- },
- {
-  "referenceId": "systems:notebooklm",
-  "groupId": "web-categories",
-  "labels": [
-   "AI Tool",
-   "Productivity"
-  ],
-  "reason": "catalog.json describes a source-grounded AI workspace with sources, chat and studio outputs."
- },
- {
-  "referenceId": "systems:coursera",
-  "groupId": "web-categories",
-  "labels": [
-   "Education"
-  ],
-  "reason": "catalog.json describes the course catalogue, course pages and modules."
- },
- {
-  "referenceId": "systems:gauth",
-  "groupId": "web-categories",
-  "labels": [
-   "AI Tool",
-   "Education"
-  ],
-  "reason": "catalog.json describes AI tutoring, lesson players and an Ask Tutor panel."
- },
- {
-  "referenceId": "systems:researchrabbit",
-  "groupId": "web-categories",
-  "labels": [
-   "Reference"
-  ],
-  "reason": "systems/researchrabbit/README.md describes literature search, citation graphs, article collections and citation copying. Reference fits the captured workflow; the legacy ai-research category alone does not establish a captured AI interaction."
- },
- {
-  "referenceId": "systems:manus",
-  "groupId": "web-categories",
-  "labels": [
-   "AI Tool"
-  ],
-  "reason": "catalog.json describes agent task threads and a library of agent outputs."
- },
- {
-  "referenceId": "systems:chatgpt",
-  "groupId": "web-categories",
-  "labels": [
-   "AI Tool"
-  ],
-  "reason": "catalog.json identifies the AI chat product and its composer, thread and history."
- },
- {
-  "referenceId": "systems:claude",
-  "groupId": "web-categories",
-  "labels": [
-   "AI Tool"
-  ],
-  "reason": "catalog.json identifies the AI chat product with Artifacts and Projects."
- },
- {
-  "referenceId": "systems:hevy",
-  "groupId": "ios-categories",
-  "labels": [
-   "Fitness"
-  ],
-  "reason": "catalog.json describes native iOS workout logging, set tables and rest timers."
- },
- {
-  "referenceId": "systems:tokentracker",
-  "groupId": "web-categories",
-  "labels": [
-   "Development Tools"
-  ],
-  "reason": "systems/tokentracker/README.md describes the local CLI dashboard for token usage, sessions, limits and skills. This monitors developer tooling; displaying usage costs does not make it a Finance product."
- },
- {
-  "referenceId": "systems:linear",
-  "groupId": "web-categories",
-  "labels": [
-   "Project Management"
-  ],
-  "reason": "catalog.json describes issue boards, issue detail and issue tracking."
- },
- {
-  "referenceId": "systems:polaris",
-  "groupId": "web-categories",
-  "labels": [
-   "Development Tools"
-  ],
-  "reason": "systems/polaris/README.md identifies a published React component and token archive with a local reference gallery. Development Tools fits this library package; it is not evidence of a captured Shopify marketplace or merchant application."
- },
- {
-  "referenceId": "systems:grokbot",
-  "groupId": "ios-categories",
-  "labels": [
-   "AI Tool"
-  ],
-  "reason": "catalog.json describes native iOS agent chat with a conversation per bot."
- },
- {
-  "referenceId": "systems:telegram",
-  "groupId": "ios-categories",
-  "labels": [
-   "Communication Tools"
-  ],
-  "reason": "catalog.json describes native iOS messaging, chat lists and outgoing message bubbles."
- },
- {
-  "referenceId": "systems:youtube",
-  "groupId": "ios-categories",
-  "labels": [
-   "Video Streaming"
-  ],
-  "reason": "catalog.json describes the native iOS video feed, thumbnails and video media controls."
- },
- {
-  "referenceId": "systems:gemini",
-  "groupId": "ios-categories",
-  "labels": [
-   "AI Tool"
-  ],
-  "reason": "catalog.json describes the native iOS AI assistant and its chat composer."
- },
- {
-  "referenceId": "systems:spotify",
-  "groupId": "ios-categories",
-  "labels": [
-   "Music Streaming"
-  ],
-  "reason": "catalog.json describes the native iOS music app and mini player."
- },
- {
-  "referenceId": "systems:grab",
-  "groupId": "ios-categories",
-  "labels": [
-   "Food Delivery",
-   "Travel & Booking"
-  ],
-  "reason": "systems/grab/README.md records GrabFood and a ride-booking flow. iOS has no Transport category, so Travel & Booking covers the captured rides; Food Delivery covers the separate GrabFood flow."
- },
- {
-  "referenceId": "systems:github-ios",
-  "groupId": "ios-categories",
-  "labels": [
-   "Collaboration Tools",
-   "Project Management"
-  ],
-  "reason": "systems/github-ios/README.md records issues, pull requests, code review and notifications. iOS has no Development Tools category; collaboration and project tracking cover those captured workflows without inventing a new label."
- },
- {
-  "referenceId": "systems:claude-ios",
-  "groupId": "ios-categories",
-  "labels": [
-   "AI Tool"
-  ],
-  "reason": "catalog.json describes native iOS AI chat and the assistant composer."
- },
- {
-  "referenceId": "systems:substack",
-  "groupId": "ios-categories",
-  "labels": [
-   "Magazines & Newspapers",
-   "Social Networking"
-  ],
-  "reason": "systems/substack/README.md describes newsletter reading and publishing, notes, followed publications, activity and chat. Magazines & Newspapers is the closest publication category; Social Networking covers the captured social activity and chat."
- },
- {
-  "referenceId": "systems:notion-ios",
-  "groupId": "ios-categories",
-  "labels": [
-   "AI Tool",
-   "Productivity"
-  ],
-  "reason": "systems/notion-ios/README.md records notes, docs, pages, databases and Notion AI chat. These support productivity and an explicitly captured AI workflow."
- },
- {
-  "referenceId": "systems:chatgpt-ios",
-  "groupId": "ios-categories",
-  "labels": [
-   "AI Tool"
-  ],
-  "reason": "catalog.json describes native iOS assistant chat and its composer."
- },
- {
-  "referenceId": "systems:arcsearch",
-  "groupId": "ios-categories",
-  "labels": [
-   "Utility"
-  ],
-  "reason": "systems/arcsearch/README.md records browser chrome, searching, tab switching and history. Utility is the iOS category for this browser; no captured AI feature is required by this assignment."
- },
- {
-  "referenceId": "systems:cursor-ios",
-  "groupId": "ios-categories",
-  "labels": [
-   "AI Tool"
-  ],
-  "reason": "catalog.json describes a native iOS coding-agent client and agent replies. iOS has no Development Tools category, so the directly supported AI Tool label stands alone."
- },
- {
-  "referenceId": "systems:cursor-desktop",
-  "groupId": "web-categories",
-  "labels": [
-   "AI Tool",
-   "Development Tools"
-  ],
-  "reason": "catalog.json describes the desktop coding-agent application and project/agent workspace."
- },
- {
-  "referenceId": "systems:devin-desktop",
-  "groupId": "web-categories",
-  "labels": [
-   "AI Tool",
-   "Development Tools"
-  ],
-  "reason": "catalog.json describes a desktop coding agent on a VS Code workbench."
- },
- {
-  "referenceId": "systems:superset-desktop",
-  "groupId": "web-categories",
-  "labels": [
-   "AI Tool",
-   "Development Tools"
-  ],
-  "reason": "catalog.json describes parallel coding agents, CLI terminals and development workspaces."
- },
- {
-  "referenceId": "systems:orca-desktop",
-  "groupId": "web-categories",
-  "labels": [
-   "AI Tool",
-   "Development Tools"
-  ],
-  "reason": "catalog.json describes a desktop coding-agent harness, worktrees, terminals and an inspector."
- },
- {
-  "referenceId": "systems:capy-desktop",
-  "groupId": "web-categories",
-  "labels": [
-   "AI Tool",
-   "Development Tools"
-  ],
-  "reason": "catalog.json describes a desktop application for cloud coding agents, projects and agent runs."
- },
- {
-  "referenceId": "systems:conductor-desktop",
-  "groupId": "web-categories",
-  "labels": [
-   "AI Tool",
-   "Development Tools"
-  ],
-  "reason": "catalog.json describes a desktop coding-agent application with repositories, workspaces, files and changes."
- },
- {
-  "referenceId": "systems:luma-ios",
-  "groupId": "ios-categories",
-  "labels": [
-   "Scheduling Tools",
-   "Social Networking"
-  ],
-  "reason": "systems/luma-ios/README.md records event discovery, event creation, calendars, following and event chat. iOS has no Events category; scheduling and community interaction cover these captured workflows."
- },
- {
-  "referenceId": "systems:grokbot-desktop",
-  "groupId": "web-categories",
-  "labels": [
-   "AI Tool"
-  ],
-  "reason": "systems/grokbot-desktop/README.md describes a messenger for AI agents with one conversation per bot. The capture supports AI Tool; a general agent messenger is insufficient evidence for a Development Tools label."
- },
- {
-  "referenceId": "systems:opencode-desktop",
-  "groupId": "web-categories",
-  "labels": [
-   "AI Tool",
-   "Development Tools"
-  ],
-  "reason": "catalog.json describes a desktop coding agent with projects, sessions and tool calls."
- },
- {
-  "referenceId": "systems:codex-desktop",
-  "groupId": "web-categories",
-  "labels": [
-   "AI Tool",
-   "Development Tools"
-  ],
-  "reason": "catalog.json describes a desktop coding-agent application with projects and chats."
- },
- {
-  "referenceId": "systems:notion-calendar-desktop",
-  "groupId": "web-categories",
-  "labels": [
-   "Scheduling Tools"
-  ],
-  "reason": "catalog.json describes calendar lists, a week grid, event chips and event scheduling."
- },
- {
-  "referenceId": "systems:zed-desktop",
-  "groupId": "web-categories",
-  "labels": [
-   "AI Tool",
-   "Development Tools"
-  ],
-  "reason": "catalog.json describes a native code editor with an agent panel, code, diffs and a terminal."
- },
- {
-  "referenceId": "systems:raycast-desktop",
-  "groupId": "web-categories",
-  "labels": [
-   "Productivity"
-  ],
-  "reason": "catalog.json describes a keyboard-first launcher and command palette. The captured account had an ended AI trial, so the general launcher workflow supports Productivity without adding AI Tool."
- },
- {
-  "referenceId": "systems:notion-desktop",
-  "groupId": "web-categories",
-  "labels": [
-   "AI Tool",
-   "Productivity"
-  ],
-  "reason": "catalog.json describes the desktop docs, notes and database workspace and an explicitly captured docked AI panel."
- },
- {
-  "referenceId": "systems:refero-design",
-  "groupId": "web-categories",
-  "labels": [
-   "Inspiration Board",
-   "Reference"
-  ],
-  "reason": "systems/refero-design/README.md records screenshot research galleries, a styles gallery and style-documentation pages. Inspiration Board covers visual discovery and Reference covers documentation; the legacy ai-research label alone does not prove a captured AI workflow."
- },
- {
-  "referenceId": "systems:clerk",
-  "groupId": "web-categories",
-  "labels": [
-   "Development Tools"
-  ],
-  "reason": "catalog.json describes developer administration: authentication forms, settings screens and searchable tables."
- },
- {
-  "referenceId": "systems:sentry",
-  "groupId": "web-categories",
-  "labels": [
-   "Development Tools"
-  ],
-  "reason": "catalog.json describes monitoring dashboards, trace waterfalls and diagnostic tables."
- },
- {
-  "referenceId": "systems:metabase",
-  "groupId": "web-categories",
-  "labels": [
-   "Business",
-   "Productivity"
-  ],
-  "reason": "catalog.json describes visual query notebooks, analytics dashboards and drill-through tables."
- },
- {
-  "referenceId": "systems:cloudflare",
-  "groupId": "web-categories",
-  "labels": [
-   "Development Tools"
-  ],
-  "reason": "catalog.json describes security dashboards, condition builders and configuration tables."
- },
- {
-  "referenceId": "systems:attio",
-  "groupId": "web-categories",
-  "labels": [
-   "Business",
-   "Productivity"
-  ],
-  "reason": "catalog.json describes CRM tables, configurable views and record panels."
- },
- {
-  "referenceId": "systems:supabase",
-  "groupId": "web-categories",
-  "labels": [
-   "Development Tools"
-  ],
-  "reason": "catalog.json describes developer dashboards, code editors, log filters and database settings."
- },
- {
-  "referenceId": "systems:ableton",
-  "groupId": "web-categories",
-  "labels": [
-   "Music Streaming"
-  ],
-  "reason": "catalog.json describes the Ableton music software storefront: product pages, Packs, shop, trial and login, captured signed out."
- },
- {
-  "referenceId": "systems:allbirds",
-  "groupId": "web-categories",
-  "labels": [
-   "Marketplace"
-  ],
-  "reason": "catalog.json describes a Shopify storefront: collection grid, product page, cart drawer and login card."
- }
+  {
+    "referenceId": "systems:duolingo",
+    "groupId": "web-categories",
+    "labels": ["Education"],
+    "reason": "catalog.json describes gamified learning, lessons, streaks and leaderboards."
+  },
+  {
+    "referenceId": "systems:brilliant",
+    "groupId": "web-categories",
+    "labels": ["Education"],
+    "reason": "catalog.json describes interactive problem-solving lessons and course paths."
+  },
+  {
+    "referenceId": "systems:elevenmusic",
+    "groupId": "web-categories",
+    "labels": ["Music Streaming", "AI Tool"],
+    "reason": "catalog.json describes an AI music product: a song-generation composer, public charts and genre shelves, artist and playlist pages and a paid Pro tier."
+  },
+  {
+    "referenceId": "systems:flutterflow",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes an AI-assisted visual app builder (prompt-to-app composer, pricing, Studio agency arm)."
+  },
+  {
+    "referenceId": "systems:glossgenius",
+    "groupId": "web-categories",
+    "labels": ["Scheduling Tools"],
+    "reason": "catalog.json describes salon and spa business software: the published booking website's service list and date-picker flow are the captured workflows."
+  },
+  {
+    "referenceId": "systems:notebooklm",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Productivity"],
+    "reason": "catalog.json describes a source-grounded AI workspace with sources, chat and studio outputs."
+  },
+  {
+    "referenceId": "systems:coursera",
+    "groupId": "web-categories",
+    "labels": ["Education"],
+    "reason": "catalog.json describes the course catalogue, course pages and modules."
+  },
+  {
+    "referenceId": "systems:gauth",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Education"],
+    "reason": "catalog.json describes AI tutoring, lesson players and an Ask Tutor panel."
+  },
+  {
+    "referenceId": "systems:researchrabbit",
+    "groupId": "web-categories",
+    "labels": ["Reference"],
+    "reason": "systems/researchrabbit/README.md describes literature search, citation graphs, article collections and citation copying. Reference fits the captured workflow; the legacy ai-research category alone does not establish a captured AI interaction."
+  },
+  {
+    "referenceId": "systems:manus",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes agent task threads and a library of agent outputs."
+  },
+  {
+    "referenceId": "systems:chatgpt",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json identifies the AI chat product and its composer, thread and history."
+  },
+  {
+    "referenceId": "systems:claude",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json identifies the AI chat product with Artifacts and Projects."
+  },
+  {
+    "referenceId": "systems:hevy",
+    "groupId": "ios-categories",
+    "labels": ["Fitness"],
+    "reason": "catalog.json describes native iOS workout logging, set tables and rest timers."
+  },
+  {
+    "referenceId": "systems:tokentracker",
+    "groupId": "web-categories",
+    "labels": ["Development Tools"],
+    "reason": "systems/tokentracker/README.md describes the local CLI dashboard for token usage, sessions, limits and skills. This monitors developer tooling; displaying usage costs does not make it a Finance product."
+  },
+  {
+    "referenceId": "systems:linear",
+    "groupId": "web-categories",
+    "labels": ["Project Management"],
+    "reason": "catalog.json describes issue boards, issue detail and issue tracking."
+  },
+  {
+    "referenceId": "systems:polaris",
+    "groupId": "web-categories",
+    "labels": ["Development Tools"],
+    "reason": "systems/polaris/README.md identifies a published React component and token archive with a local reference gallery. Development Tools fits this library package; it is not evidence of a captured Shopify marketplace or merchant application."
+  },
+  {
+    "referenceId": "systems:grokbot",
+    "groupId": "ios-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes native iOS agent chat with a conversation per bot."
+  },
+  {
+    "referenceId": "systems:telegram",
+    "groupId": "ios-categories",
+    "labels": ["Communication Tools"],
+    "reason": "catalog.json describes native iOS messaging, chat lists and outgoing message bubbles."
+  },
+  {
+    "referenceId": "systems:youtube",
+    "groupId": "ios-categories",
+    "labels": ["Video Streaming"],
+    "reason": "catalog.json describes the native iOS video feed, thumbnails and video media controls."
+  },
+  {
+    "referenceId": "systems:gemini",
+    "groupId": "ios-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes the native iOS AI assistant and its chat composer."
+  },
+  {
+    "referenceId": "systems:spotify",
+    "groupId": "ios-categories",
+    "labels": ["Music Streaming"],
+    "reason": "catalog.json describes the native iOS music app and mini player."
+  },
+  {
+    "referenceId": "systems:grab",
+    "groupId": "ios-categories",
+    "labels": ["Food Delivery", "Travel & Booking"],
+    "reason": "systems/grab/README.md records GrabFood and a ride-booking flow. iOS has no Transport category, so Travel & Booking covers the captured rides; Food Delivery covers the separate GrabFood flow."
+  },
+  {
+    "referenceId": "systems:github-ios",
+    "groupId": "ios-categories",
+    "labels": ["Collaboration Tools", "Project Management"],
+    "reason": "systems/github-ios/README.md records issues, pull requests, code review and notifications. iOS has no Development Tools category; collaboration and project tracking cover those captured workflows without inventing a new label."
+  },
+  {
+    "referenceId": "systems:claude-ios",
+    "groupId": "ios-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes native iOS AI chat and the assistant composer."
+  },
+  {
+    "referenceId": "systems:substack",
+    "groupId": "ios-categories",
+    "labels": ["Magazines & Newspapers", "Social Networking"],
+    "reason": "systems/substack/README.md describes newsletter reading and publishing, notes, followed publications, activity and chat. Magazines & Newspapers is the closest publication category; Social Networking covers the captured social activity and chat."
+  },
+  {
+    "referenceId": "systems:notion-ios",
+    "groupId": "ios-categories",
+    "labels": ["AI Tool", "Productivity"],
+    "reason": "systems/notion-ios/README.md records notes, docs, pages, databases and Notion AI chat. These support productivity and an explicitly captured AI workflow."
+  },
+  {
+    "referenceId": "systems:chatgpt-ios",
+    "groupId": "ios-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes native iOS assistant chat and its composer."
+  },
+  {
+    "referenceId": "systems:arcsearch",
+    "groupId": "ios-categories",
+    "labels": ["Utility"],
+    "reason": "systems/arcsearch/README.md records browser chrome, searching, tab switching and history. Utility is the iOS category for this browser; no captured AI feature is required by this assignment."
+  },
+  {
+    "referenceId": "systems:cursor-ios",
+    "groupId": "ios-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes a native iOS coding-agent client and agent replies. iOS has no Development Tools category, so the directly supported AI Tool label stands alone."
+  },
+  {
+    "referenceId": "systems:cursor-desktop",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes the desktop coding-agent application and project/agent workspace."
+  },
+  {
+    "referenceId": "systems:devin-desktop",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes a desktop coding agent on a VS Code workbench."
+  },
+  {
+    "referenceId": "systems:superset-desktop",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes parallel coding agents, CLI terminals and development workspaces."
+  },
+  {
+    "referenceId": "systems:orca-desktop",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes a desktop coding-agent harness, worktrees, terminals and an inspector."
+  },
+  {
+    "referenceId": "systems:capy-desktop",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes a desktop application for cloud coding agents, projects and agent runs."
+  },
+  {
+    "referenceId": "systems:conductor-desktop",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes a desktop coding-agent application with repositories, workspaces, files and changes."
+  },
+  {
+    "referenceId": "systems:luma-ios",
+    "groupId": "ios-categories",
+    "labels": ["Scheduling Tools", "Social Networking"],
+    "reason": "systems/luma-ios/README.md records event discovery, event creation, calendars, following and event chat. iOS has no Events category; scheduling and community interaction cover these captured workflows."
+  },
+  {
+    "referenceId": "systems:grokbot-desktop",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "systems/grokbot-desktop/README.md describes a messenger for AI agents with one conversation per bot. The capture supports AI Tool; a general agent messenger is insufficient evidence for a Development Tools label."
+  },
+  {
+    "referenceId": "systems:opencode-desktop",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes a desktop coding agent with projects, sessions and tool calls."
+  },
+  {
+    "referenceId": "systems:codex-desktop",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes a desktop coding-agent application with projects and chats."
+  },
+  {
+    "referenceId": "systems:notion-calendar-desktop",
+    "groupId": "web-categories",
+    "labels": ["Scheduling Tools"],
+    "reason": "catalog.json describes calendar lists, a week grid, event chips and event scheduling."
+  },
+  {
+    "referenceId": "systems:zed-desktop",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes a native code editor with an agent panel, code, diffs and a terminal."
+  },
+  {
+    "referenceId": "systems:raycast-desktop",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes a keyboard-first launcher and command palette. The captured account had an ended AI trial, so the general launcher workflow supports Productivity without adding AI Tool."
+  },
+  {
+    "referenceId": "systems:notion-desktop",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Productivity"],
+    "reason": "catalog.json describes the desktop docs, notes and database workspace and an explicitly captured docked AI panel."
+  },
+  {
+    "referenceId": "systems:refero-design",
+    "groupId": "web-categories",
+    "labels": ["Inspiration Board", "Reference"],
+    "reason": "systems/refero-design/README.md records screenshot research galleries, a styles gallery and style-documentation pages. Inspiration Board covers visual discovery and Reference covers documentation; the legacy ai-research label alone does not prove a captured AI workflow."
+  },
+  {
+    "referenceId": "systems:clerk",
+    "groupId": "web-categories",
+    "labels": ["Development Tools"],
+    "reason": "catalog.json describes developer administration: authentication forms, settings screens and searchable tables."
+  },
+  {
+    "referenceId": "systems:sentry",
+    "groupId": "web-categories",
+    "labels": ["Development Tools"],
+    "reason": "catalog.json describes monitoring dashboards, trace waterfalls and diagnostic tables."
+  },
+  {
+    "referenceId": "systems:metabase",
+    "groupId": "web-categories",
+    "labels": ["Business", "Productivity"],
+    "reason": "catalog.json describes visual query notebooks, analytics dashboards and drill-through tables."
+  },
+  {
+    "referenceId": "systems:cloudflare",
+    "groupId": "web-categories",
+    "labels": ["Development Tools"],
+    "reason": "catalog.json describes security dashboards, condition builders and configuration tables."
+  },
+  {
+    "referenceId": "systems:attio",
+    "groupId": "web-categories",
+    "labels": ["Business", "Productivity"],
+    "reason": "catalog.json describes CRM tables, configurable views and record panels."
+  },
+  {
+    "referenceId": "systems:supabase",
+    "groupId": "web-categories",
+    "labels": ["Development Tools"],
+    "reason": "catalog.json describes developer dashboards, code editors, log filters and database settings."
+  },
+  {
+    "referenceId": "systems:ableton",
+    "groupId": "web-categories",
+    "labels": ["Music Streaming"],
+    "reason": "catalog.json describes the Ableton music software storefront: product pages, Packs, shop, trial and login, captured signed out."
+  },
+  {
+    "referenceId": "systems:allbirds",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a Shopify storefront: collection grid, product page, cart drawer and login card."
+  },
+  {
+    "referenceId": "systems:buymeacoffee",
+    "groupId": "web-categories",
+    "labels": ["Marketplace", "Fundraising"],
+    "reason": "catalog.json describes creator monetisation: public tip/support pages, memberships, wishlist and a marketing surface. Marketplace carries the e-commerce legacy category; Fundraising is the closest fit for tips and crowdfunding."
+  },
+  {
+    "referenceId": "systems:1password",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes a password manager's marketing, pricing, download and account surfaces."
+  },
+  {
+    "referenceId": "systems:aaply",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a mobile-app design tool's marketing and pricing surfaces."
+  },
+  {
+    "referenceId": "systems:aboard",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes an AI consultancy and AI-teammates product marketing surface."
+  },
+  {
+    "referenceId": "systems:aboardhr",
+    "groupId": "web-categories",
+    "labels": ["Business", "Productivity"],
+    "reason": "catalog.json describes an HR platform's marketing and pricing surfaces."
+  },
+  {
+    "referenceId": "systems:acctual",
+    "groupId": "web-categories",
+    "labels": ["Finance", "Productivity"],
+    "reason": "catalog.json describes an invoicing and accounts-receivable product's marketing surface."
+  },
+  {
+    "referenceId": "systems:acnestudios",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a fashion storefront with product listings, drawers and checkout surfaces."
+  },
+  {
+    "referenceId": "systems:acuityscheduling",
+    "groupId": "web-categories",
+    "labels": ["Scheduling Tools"],
+    "reason": "catalog.json describes booking-software marketing pages and a Squarespace account gate."
+  },
+  {
+    "referenceId": "systems:adidas",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a sportswear storefront captured signed out."
+  },
+  {
+    "referenceId": "systems:aesop",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a skincare storefront with product and checkout surfaces."
+  },
+  {
+    "referenceId": "systems:airbnb",
+    "groupId": "web-categories",
+    "labels": ["Travel & Booking", "Marketplace"],
+    "reason": "catalog.json describes a public travel marketplace: stay search, listing cards and wishlist surfaces."
+  },
+  {
+    "referenceId": "systems:airtable",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes the database-workspace product's marketing, plan grid and lead-form surfaces."
+  },
+  {
+    "referenceId": "systems:aloyoga",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a fashion e-commerce storefront with product and member-price surfaces."
+  },
+  {
+    "referenceId": "systems:amie",
+    "groupId": "web-categories",
+    "labels": ["Scheduling Tools", "Productivity"],
+    "reason": "catalog.json describes an AI calendar and to-do product's marketing and billing surfaces."
+  },
+  {
+    "referenceId": "systems:anam",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes a real-time AI avatar product's marketing and docs surfaces."
+  },
+  {
+    "referenceId": "systems:anthropic",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes the AI lab's marketing, pricing, sales and developer-docs surfaces."
+  },
+  {
+    "referenceId": "systems:apollographql",
+    "groupId": "web-categories",
+    "labels": ["Development Tools"],
+    "reason": "catalog.json describes a GraphQL platform's developer marketing surface."
+  },
+  {
+    "referenceId": "systems:appwrite",
+    "groupId": "web-categories",
+    "labels": ["Development Tools"],
+    "reason": "catalog.json describes a backend developer platform's marketing, docs and sign-in surfaces."
+  },
+  {
+    "referenceId": "systems:arcade",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes an interactive demo and product-tour builder's marketing and demo surfaces."
+  },
+  {
+    "referenceId": "systems:arket",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a fashion storefront with menu, cart, filter and location drawers."
+  },
+  {
+    "referenceId": "systems:artboardstudio",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a mockup design tool's marketing and mockup-library surfaces."
+  },
+  {
+    "referenceId": "systems:asana",
+    "groupId": "web-categories",
+    "labels": ["Project Management"],
+    "reason": "catalog.json describes the project-management product's marketing and product surfaces."
+  },
+  {
+    "referenceId": "systems:asos",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a fashion e-commerce storefront with mega-menu and product surfaces."
+  },
+  {
+    "referenceId": "systems:avnier",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a Shopify fashion storefront with mega-menu and side-drawer navigation."
+  },
+  {
+    "referenceId": "systems:awwwards",
+    "groupId": "web-categories",
+    "labels": ["Inspiration Board", "Reference"],
+    "reason": "catalog.json describes a curated web-awards directory and gallery with filters and site-card grids."
+  },
+  {
+    "referenceId": "systems:b150",
+    "groupId": "web-categories",
+    "labels": ["Social Networking"],
+    "reason": "catalog.json describes a builders' network community site with talent, events and contact surfaces."
+  },
+  {
+    "referenceId": "systems:ballpark",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes a product-research tool's marketing surface."
+  },
+  {
+    "referenceId": "systems:base44",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes an AI app builder's marketing and prompt-composer surfaces."
+  },
+  {
+    "referenceId": "systems:bezi",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes an AI game-development tool's marketing surface."
+  },
+  {
+    "referenceId": "systems:biosites",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes a link-in-bio product's marketing and signed-out editor surfaces."
+  },
+  {
+    "referenceId": "systems:bloomberg",
+    "groupId": "web-categories",
+    "labels": ["Magazines & Newspapers", "News"],
+    "reason": "catalog.json describes a financial news surface: section nav, story grid, live ticker and paywall."
+  },
+  {
+    "referenceId": "systems:blueapron",
+    "groupId": "web-categories",
+    "labels": ["Marketplace", "Food & Drink"],
+    "reason": "catalog.json describes a meal-kit product's storefront, recipe and guide surfaces."
+  },
+  {
+    "referenceId": "systems:boords",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a storyboard pre-production tool's marketing surface."
+  },
+  {
+    "referenceId": "systems:busuu",
+    "groupId": "web-categories",
+    "labels": ["Education"],
+    "reason": "catalog.json describes a language-learning product's marketing and signup flow."
+  },
+  {
+    "referenceId": "systems:butter",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing"],
+    "reason": "catalog.json describes a video-editor product's marketing surface and public app shell."
+  },
+  {
+    "referenceId": "systems:cakeequity",
+    "groupId": "web-categories",
+    "labels": ["Finance", "Productivity"],
+    "reason": "catalog.json describes a startup equity and cap-table product's marketing and login surfaces."
+  },
+  {
+    "referenceId": "systems:untitled-stream",
+    "groupId": "web-categories",
+    "labels": ["Music Streaming"],
+    "reason": "catalog.json describes a music-collaboration product's marketing and pricing surfaces."
+  },
+  {
+    "referenceId": "systems:cal",
+    "groupId": "web-categories",
+    "labels": ["Scheduling Tools"],
+    "reason": "catalog.json describes a scheduling product's marketing and booking-flow surfaces."
+  },
+  {
+    "referenceId": "systems:byborre",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a textile brand's storefront and product surfaces."
+  },
+  {
+    "referenceId": "systems:calendly",
+    "groupId": "web-categories",
+    "labels": ["Scheduling Tools"],
+    "reason": "catalog.json describes a scheduling product: the public booking calendar and invitee flow are the captured workflows."
+  },
+  {
+    "referenceId": "systems:canva",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a design tool: template galleries and the marketing pages for the design editor, docs, whiteboards and presentations."
+  },
+  {
+    "referenceId": "systems:dock",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes a sales-collateral and enablement product: asset workspaces, customer-facing deal rooms and a public demo form."
+  },
+  {
+    "referenceId": "systems:doordash",
+    "groupId": "web-categories",
+    "labels": ["Food Delivery", "Marketplace"],
+    "reason": "catalog.json describes a delivery marketplace: restaurant storefronts, menu tiles with quick-adds and an SEO directory of cuisines and cities."
+  },
+  {
+    "referenceId": "systems:dona",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes a to-do productivity product: task lists, a quiet marketing site and a signed-out public system."
+  },
+  {
+    "referenceId": "systems:drinkdouze",
+    "groupId": "web-categories",
+    "labels": ["Food & Drink", "Marketplace"],
+    "reason": "catalog.json describes a French DTC beverage storefront: a Shopify marketing site and shop for flavoured drinks with product pages, a subscription pitch and a store locator."
+  },
+  {
+    "referenceId": "systems:doctronic",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes an AI health product: the personal-AI-doctor marketing pages and the signed-out chat-adjacent surfaces."
+  },
+  {
+    "referenceId": "systems:docusign",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes an agreement and e-signature platform: marketing pages, pricing and a signed-out public signature generator."
+  },
+  {
+    "referenceId": "systems:doppler",
+    "groupId": "web-categories",
+    "labels": ["Development Tools"],
+    "reason": "catalog.json describes a secrets-management developer platform: marketing pages, pricing and developer-docs surfaces, all signed out."
+  },
+  {
+    "referenceId": "systems:dropbox",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes a cloud-storage and file-sharing productivity product: marketing pages, pricing and signed-out auth surfaces."
+  },
+  {
+    "referenceId": "systems:dailyartmagazine",
+    "groupId": "web-categories",
+    "labels": ["Magazines & Newspapers"],
+    "reason": "catalog.json describes an art-history online magazine's editorial surfaces: the feed, category and article pages, and the newsletter and contact forms."
+  },
+  {
+    "referenceId": "systems:deezer",
+    "groupId": "web-categories",
+    "labels": ["Music Streaming"],
+    "reason": "catalog.json describes a music-streaming catalog: marketing, public charts and album pages, a signed-out player, and account forms."
+  },
+  {
+    "referenceId": "systems:descript",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Productivity"],
+    "reason": "catalog.json describes an AI video/audio editing product's marketing surfaces: workflow tabs, pricing tiers and template galleries \u2014 the AI Tool label."
+  },
+  {
+    "referenceId": "systems:deel",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes a global payroll/HR SaaS marketing site: product pages, pricing tiers and demo CTAs for workforce management."
+  },
+  {
+    "referenceId": "systems:care",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a caregiving-services marketplace: public caregiver listings, category landing pages and membership pricing."
+  },
+  {
+    "referenceId": "systems:cartesia",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes a real-time AI voice and audio product (text-to-speech, voice agents) \u2014 the AI Tool label."
+  },
+  {
+    "referenceId": "systems:chargetrip",
+    "groupId": "web-categories",
+    "labels": ["Development Tools", "Travel & Booking"],
+    "reason": "catalog.json describes a developer-facing EV routing API (GraphQL routing engine, no-code tools, plan pricing) for the EV charging/travel industry."
+  },
+  {
+    "referenceId": "systems:copy",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json category ai-agent maps to AI Tool."
+  },
+  {
+    "referenceId": "systems:dopper",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a water-bottle e-commerce storefront: marketing pages plus a Magento shop with PLP filters, PDP configurator, cart and login cards."
+  },
+  {
+    "referenceId": "systems:cosmos",
+    "groupId": "web-categories",
+    "labels": ["Inspiration Board"],
+    "reason": "catalog.json category directory maps to Inspiration Board."
+  },
+  {
+    "referenceId": "systems:craft",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json category productivity maps to Productivity."
+  },
+  {
+    "referenceId": "systems:craftwork",
+    "groupId": "web-categories",
+    "labels": ["Inspiration Board"],
+    "reason": "catalog.json category directory maps to Inspiration Board."
+  },
+  {
+    "referenceId": "systems:creativemarket",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json category e-commerce maps to Marketplace."
+  },
+  {
+    "referenceId": "systems:cron",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json category productivity maps to Productivity."
+  },
+  {
+    "referenceId": "systems:dribbble",
+    "groupId": "web-categories",
+    "labels": ["Inspiration Board", "Marketplace"],
+    "reason": "catalog.json describes a design-community and portfolio directory: shot grids, designer profiles, a jobs board and hiring surfaces. Inspiration Board covers visual discovery and Marketplace the designer-for-hire/jobs side."
+  },
+  {
+    "referenceId": "systems:curater",
+    "groupId": "web-categories",
+    "labels": ["Entertainment"],
+    "reason": "catalog.json category media maps to Entertainment."
+  },
+  {
+    "referenceId": "systems:cushion",
+    "groupId": "web-categories",
+    "labels": ["Communication Tools"],
+    "reason": "catalog.json category messaging maps to Communication Tools."
+  },
+  {
+    "referenceId": "systems:dub",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes a link-attribution product's marketing, auth and docs surfaces."
+  },
+  {
+    "referenceId": "systems:elevenlabs",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Design & Media Editing"],
+    "reason": "catalog.json describes a voice-AI platform: the marketing pages, the public TTS playground, pricing, the docs shell and the auth cards. Design & Media Editing keeps the former media link reachable."
+  },
+  {
+    "referenceId": "systems:elementor",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a website builder's marketing surface: home, product, pricing, contact-form and FAQ pages."
+  },
+  {
+    "referenceId": "systems:elektron",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a music-hardware maker's storefront: product grid, PDP, cart and login drawers."
+  },
+  {
+    "referenceId": "systems:endel",
+    "groupId": "web-categories",
+    "labels": ["Health & Wellness", "Music Streaming"],
+    "reason": "catalog.json describes a personalized soundscapes product for focus, relaxation and sleep: a dark marketing site and a signed-out web app with a public player."
+  },
+  {
+    "referenceId": "systems:editorx",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a pro site builder: template and inspiration galleries plus the marketing pages for the Wix Studio editor."
+  },
+  {
+    "referenceId": "systems:endlesstools",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a visual exploration tool for graphic designers: a dark marketing one-pager with pricing and a signed-out app login shell."
+  },
+  {
+    "referenceId": "systems:elevenreader",
+    "groupId": "web-categories",
+    "labels": ["Books", "Entertainment"],
+    "reason": "catalog.json describes an audiobook reader/listening product: marketing pages, the explore catalog and the reader sign-in/sign-up boundary cards."
+  },
+  {
+    "referenceId": "systems:endless",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes a multi-model AI creation workspace: a prompt composer, 70+ generation models and free tool pages on a signed-out public system."
+  },
+  {
+    "referenceId": "systems:epidemicsound",
+    "groupId": "web-categories",
+    "labels": ["Music Streaming"],
+    "reason": "catalog.json describes a music-and-SFX licensing product: a public track/artist/genre catalog with 56px track rows, subscription plans and an account wall past login.epidemicsound.com."
+  },
+  {
+    "referenceId": "systems:enode",
+    "groupId": "web-categories",
+    "labels": ["Business", "Development Tools"],
+    "reason": "catalog.json describes an energy-device integration API platform: a per-page light/dark data-mode marketing site with gated platform and docs surfaces."
+  },
+  {
+    "referenceId": "systems:faire",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a wholesale marketplace: category teasers, a brand storefront, supplier listings and auth dialogs, with the signed-in marketplace a documented boundary."
+  },
+  {
+    "referenceId": "systems:delphi",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Productivity"],
+    "reason": "catalog.json describes an AI-clone Q&A product: ask fields, discover galleries, public search results, expert profiles and a chat composer."
+  },
+  {
+    "referenceId": "systems:esquire",
+    "groupId": "web-categories",
+    "labels": ["Magazines & Newspapers", "Lifestyle"],
+    "reason": "catalog.json describes a men's magazine site: editorial chrome, story cards, plan/subscribe cards, FAQ and newsletter surfaces."
+  },
+  {
+    "referenceId": "systems:exa",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes an AI-search developer API: marketing site, model/pricing pages, docs and a gated console."
+  },
+  {
+    "referenceId": "systems:exactly",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Design & Media Editing"],
+    "reason": "catalog.json describes an AI design-generation tool: marketing site with case studies, pricing tiers and gated product surfaces."
+  },
+  {
+    "referenceId": "systems:equals",
+    "groupId": "web-categories",
+    "labels": ["Productivity", "Business"],
+    "reason": "catalog.json describes an AI spreadsheet and analytics product: marketing site, workbook product tour and gated app surfaces."
+  },
+  {
+    "referenceId": "systems:epicgames",
+    "groupId": "web-categories",
+    "labels": ["Marketplace", "Entertainment"],
+    "reason": "catalog.json describes a games storefront and launcher: store home, product pages, free-games promos and gated library/checkout surfaces."
+  },
+  {
+    "referenceId": "systems:excalidraw",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a whiteboard/drawing editor: tool islands, a properties sidebar, a shape library and image export on a signed-out public canvas."
+  },
+  {
+    "referenceId": "systems:expedia",
+    "groupId": "web-categories",
+    "labels": ["Travel & Booking"],
+    "reason": "catalog.json describes a travel OTA: multi-product stay/flight/car search, deal carousels, hotel results and filter rail."
+  },
+  {
+    "referenceId": "systems:fable",
+    "groupId": "web-categories",
+    "labels": ["Books", "Social Networking"],
+    "reason": "catalog.json describes a book-club and reading product: club directories and detail pages, a book catalog with an ebook store, a /discover cover wall, sign-in, support and a blog. Post-login reader and club surfaces are gated."
+  },
+  {
+    "referenceId": "systems:explore",
+    "groupId": "web-categories",
+    "labels": ["Inspiration Board", "Social Networking"],
+    "reason": "catalog.json describes an ad-free creative-community platform: a public discover feed and member portfolios on a signed-out site, replayed from the 2023-02-23 archive because the product is closed."
+  },
+  {
+    "referenceId": "systems:factory",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes an AI software-engineering agents product: enterprise marketing pages, product tours, docs with a theme toggle, pricing and a gated agent console."
+  },
+  {
+    "referenceId": "systems:designstripe",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Productivity"],
+    "reason": "catalog.json describes an AI design-agent product (Visual, formerly designstripe): a marketing surface, CC0 asset library, free design tools and blog \u2014 the AI Tool label."
+  },
+  {
+    "referenceId": "systems:family",
+    "groupId": "web-categories",
+    "labels": ["Web3 & Crypto", "Finance"],
+    "reason": "catalog.json describes a crypto wallet product: an iOS Ethereum self-custody wallet's marketing site and the signed-out Aave Account login."
+  },
+  {
+    "referenceId": "systems:fibery",
+    "groupId": "web-categories",
+    "labels": ["Productivity", "Project Management"],
+    "reason": "catalog.json describes a modular work-management platform: a warm-palette marketing site with template gallery, pricing plans and gated workspace surfaces past fibery.io sign-up/login."
+  },
+  {
+    "referenceId": "systems:fal",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes a generative-media inference platform: a public model catalog, model playground and API docs for developers, with an OAuth account wall past login."
+  },
+  {
+    "referenceId": "systems:designmodo",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a design-tool suite (Postcards email builder, Slides, Static.app): an InterVariable marketing surface plus the Fira Sans Postcards app shell, all signed out."
+  },
+  {
+    "referenceId": "systems:farfetch",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a luxury-fashion marketplace: department chooser, product listing grids, a PDP buy box and editorial modules."
+  },
+  {
+    "referenceId": "systems:feedhive",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Productivity", "Scheduling Tools"],
+    "reason": "catalog.json describes an AI social-media management product: marketing site, AI and scheduling feature pages, pricing and a gated app sign-in."
+  },
+  {
+    "referenceId": "systems:digg",
+    "groupId": "web-categories",
+    "labels": ["Magazines & Newspapers", "News"],
+    "reason": "catalog.json describes a news aggregator and community feed (the 2025 Digg reboot): story cards with vote pills, category feeds, source profiles and ranked rails."
+  },
+  {
+    "referenceId": "systems:district",
+    "groupId": "web-categories",
+    "labels": ["Entertainment", "Travel & Booking", "Scheduling Tools"],
+    "reason": "catalog.json describes a live-event and venue booking product (District by Zomato): movie and venue cards, artist pages, ticket purchase flows and a gated checkout."
+  },
+  {
+    "referenceId": "systems:getfernand",
+    "groupId": "web-categories",
+    "labels": ["Business", "Productivity"],
+    "reason": "catalog.json describes a customer-support helpdesk SaaS: an editorial light marketing site, signed-out app login/signup, and a docs center with a real dark-mode toggle; the product workspace is gated."
+  },
+  {
+    "referenceId": "systems:glassnode",
+    "groupId": "web-categories",
+    "labels": ["Web3 & Crypto", "Finance"],
+    "reason": "catalog.json describes a digital-asset market-intelligence platform: marketing pages, a Vector pricing page, the signed-out Studio shell, research, docs, a tokenization registry and the Auth0 login."
+  },
+  {
+    "referenceId": "systems:figma",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a design tool: the marketing pages for the design editor, FigJam, Slides, Dev Mode and Make, a pricing grid, community resource grids and the login/signup app shells."
+  },
+  {
+    "referenceId": "systems:fourmula",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Design & Media Editing"],
+    "reason": "catalog.json describes an AI product-photography generator for e-commerce brands: a two-theme Webflow marketing site and a signed-out Next.js app edge with sign-in and a PDP generator."
+  },
+  {
+    "referenceId": "systems:fingerprint",
+    "groupId": "web-categories",
+    "labels": ["Development Tools"],
+    "reason": "catalog.json describes a device-intelligence and fraud-detection developer platform: visitor identification, smart signals, bot detection, docs and a usage-priced API."
+  },
+  {
+    "referenceId": "systems:flowmapp",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a UX planning SaaS: a light Webflow marketing site, signed-out app auth forms, and published read-only sitemap/user-flow demo viewers; the editing workspace is gated."
+  },
+  {
+    "referenceId": "systems:flask",
+    "groupId": "web-categories",
+    "labels": ["Collaboration Tools", "Productivity"],
+    "reason": "catalog.json describes a video review and collaboration workspace: marketing pages with an embedded product demo, a pricing page, an MCP documentation page and the signed-out login boundary."
+  },
+  {
+    "referenceId": "systems:fiverr",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a freelance services marketplace: the home and /categories directory, /search/gigs gig listings, a gig page with package pricing, seller profiles and the join/login auth edge."
+  },
+  {
+    "referenceId": "systems:foodnoms",
+    "groupId": "web-categories",
+    "labels": ["Health & Wellness", "Fitness"],
+    "reason": "catalog.json describes a food-and-nutrition tracker: a marketing site for an iOS/macOS app with feature cards, a Free-vs-Plus comparison, help center, news, press and comparison articles."
+  },
+  {
+    "referenceId": "systems:clearful",
+    "groupId": "web-categories",
+    "labels": ["Health & Wellness", "Productivity"],
+    "reason": "catalog.json describes a guided-journal app: a marketing site for journaling flows, prompts library, pricing and a mobile-app download."
+  },
+  {
+    "referenceId": "systems:clay-earth",
+    "groupId": "web-categories",
+    "labels": ["Productivity", "Communication Tools"],
+    "reason": "catalog.json describes a relationship manager (personal CRM): unified contacts, notes and reminders, public pricing and the app.me.sh sign-in boundary."
+  },
+  {
+    "referenceId": "systems:classpass",
+    "groupId": "web-categories",
+    "labels": ["Health & Wellness", "Marketplace", "Fitness"],
+    "reason": "catalog.json describes a fitness-and-wellness booking marketplace: studio search with filter pills and venue cards, a credits-plan carousel, gift, corporate-wellness and studio-partner pages."
+  },
+  {
+    "referenceId": "systems:framer",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a website builder and AI design agent: marketing product pages (AI, agents, design, MCP), a pricing grid, community gallery and marketplace template indexes and the signed-out login shell."
+  },
+  {
+    "referenceId": "systems:discord",
+    "groupId": "web-categories",
+    "labels": ["Communication Tools", "Social Networking"],
+    "reason": "catalog.json describes a chat-community platform: signed-out server discovery, server detail pages with Join/Share, and the login/register auth surface."
+  },
+  {
+    "referenceId": "systems:dji",
+    "groupId": "web-categories",
+    "labels": ["Electronic & Devices", "Marketplace"],
+    "reason": "catalog.json describes a consumer-drone and imaging-hardware brand site: product marketing pages, category grids, a store locator and links into the gated DJI store."
+  },
+  {
+    "referenceId": "systems:fourthwall",
+    "groupId": "web-categories",
+    "labels": ["Business", "Marketplace"],
+    "reason": "catalog.json describes a creator-commerce platform: a Webflow marketing site with a pricing grid, a styled-components print-on-demand product catalogue with product pages, Mintlify docs and Docusaurus help (each with a real dark toggle), and a Keycloak sign-up shell; the shop dashboard, designer and checkout are gated."
+  },
+  {
+    "referenceId": "systems:calm",
+    "groupId": "web-categories",
+    "labels": ["Fitness"],
+    "reason": "catalog.json classifies Calm as fitness: meditation-app marketing, a signed-out app preview, and a login card."
+  },
+  {
+    "referenceId": "systems:fresha",
+    "groupId": "web-categories",
+    "labels": ["Marketplace", "Scheduling Tools", "Health & Wellness"],
+    "reason": "catalog.json describes a beauty and wellness booking marketplace: a consumer browse-and-book flow, venue profiles, a booking wizard boundary, business scheduling software marketing and the partner sign-in."
+  },
+  {
+    "referenceId": "systems:gladia",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools", "Entertainment"],
+    "reason": "catalog.json describes an audio-transcription and speech-AI developer platform: the marketing pages, usage-based pricing with a calculator, the Mintlify docs site and the app-shell auth cards."
+  },
+  {
+    "referenceId": "systems:frame",
+    "groupId": "web-categories",
+    "labels": ["Collaboration Tools", "Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes a video review-and-collaboration product: marketing and feature pages, a pricing grid, customer and integration indexes, a contact form and the accounts sign-in surface."
+  },
+  {
+    "referenceId": "systems:front",
+    "groupId": "web-categories",
+    "labels": ["Communication Tools", "Business", "Productivity"],
+    "reason": "catalog.json describes an AI customer-operations platform: a shared-inbox/omnichannel product (email, chat, channels), customer-service marketing, pricing tiers, a help centre and developer docs."
+  },
+  {
+    "referenceId": "systems:gofundme",
+    "groupId": "web-categories",
+    "labels": ["Fundraising", "Marketplace"],
+    "reason": "catalog.json describes a crowdfunding platform: the home hero and header dropdowns, the /discover and /s browse grids of fundraiser cards, a public /f/<slug> fundraiser page, the /create/fundraiser/category wizard at rest, the /sign-in auth boundary and the /c/* marketing stack \u2014 all signed-out."
+  },
+  {
+    "referenceId": "systems:grammarly",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Productivity"],
+    "reason": "catalog.json describes an AI writing assistant: marketing and pricing pages, a free grammar checker, paraphrasing tool, AI detector and word counter, all signed out."
+  },
+  {
+    "referenceId": "systems:glorify",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes an e-commerce design tool: a Framer marketing site with pricing, template galleries and a Learn hub, the signed-out auth cards, and the anonymous editor (upload onboarding, Craft dialog, canvas chrome); the signed-in workspace is gated."
+  },
+  {
+    "referenceId": "systems:grok",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Development Tools"],
+    "reason": "catalog.json describes the xAI/Grok developer documentation portal: quickstart and model docs, API reference, token pricing tables, rate limits, release notes, a cmdK search surface and the Grok help section."
+  },
+  {
+    "referenceId": "systems:hbomax",
+    "groupId": "web-categories",
+    "labels": ["Video Streaming", "Entertainment"],
+    "reason": "catalog.json describes a video streaming service's signed-out marketing site: hero title carousel, subscription plan cards, content rails and title detail pages."
+  },
+  {
+    "referenceId": "systems:hashnode",
+    "groupId": "web-categories",
+    "labels": ["Social Networking", "Development Tools"],
+    "reason": "catalog.json describes Hashnode's signed-out developer-blogging product: the marketing pages, public feed and post cards, public profiles and posts, Pro pricing, the agents install page, changelog, hackathons and brand surfaces, plus the Town Hall hosted-blog engine's index/article/archive."
+  },
+  {
+    "referenceId": "systems:clipchamp",
+    "groupId": "web-categories",
+    "labels": ["Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes Microsoft's Clipchamp video editor: marketing pages for the browser video editor, templates, stock library, pricing tiers and an education/work surface."
+  },
+  {
+    "referenceId": "systems:httpie",
+    "groupId": "web-categories",
+    "labels": ["Development Tools"],
+    "reason": "catalog.json describes HTTPie's API-client product: the marketing pages, CLI/desktop download surfaces, documentation and changelog, plus the HTTPie-for-Web client's signed-out incognito request builder."
+  },
+  {
+    "referenceId": "systems:headspace",
+    "groupId": "web-categories",
+    "labels": ["Health & Wellness", "Fitness"],
+    "reason": "catalog.json describes the Headspace meditation-and-sleep product: the marketing pages, the free-preview content library, the plans block, the signed-out Auth0 auth cards, the checkout shell and the organizations.headspace.com B2B surface; the member app past login is gated."
+  },
+  {
+    "referenceId": "systems:gumroad",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a digital-products marketplace: the Discover browse grid with category pills and product cards, a creator subdomain product page with tier pricing, a public checkout form and the signed-out login/signup edge."
+  },
+  {
+    "referenceId": "systems:grow",
+    "groupId": "web-categories",
+    "labels": ["Education"],
+    "reason": "catalog.json describes Google's Grow with Google program site: Career Certificate pages, the certificates catalog, AI training courses and graduate/partner stories \u2014 a public learning program, enrolment on Coursera."
+  },
+  {
+    "referenceId": "systems:cofounder",
+    "groupId": "web-categories",
+    "labels": ["AI Tool", "Productivity"],
+    "reason": "catalog.json describes Cofounder's AI agent-orchestration marketing site: a pixel-art hero, an agent tools band, how-to guides, pricing cards and the Cofounder OS sign-in boundary."
+  },
+  {
+    "referenceId": "systems:joinhandshake",
+    "groupId": "web-categories",
+    "labels": ["Marketplace", "Productivity"],
+    "reason": "catalog.json describes a college career network: the students/employers/career-centers marketing stack, employer pricing and request-a-demo Marketo forms, a careers page with a departments filter, a blog and learn hub, legal and corporate pages, and the consumer app's signed-out 'Log in or sign up' card at /access - all signed-out, with the job feed and registration behind a Cloudflare boundary."
+  },
+  {
+    "referenceId": "systems:homerun",
+    "groupId": "web-categories",
+    "labels": ["Business", "Productivity"],
+    "reason": "catalog.json describes Homerun's signed-out hiring/ATS product: the marketing pages, product/features/pricing/customers surfaces, blog/templates/integrations/guides/updates libraries, trial and legal pages, the jobs.homerun.co careers app with its public job ads and application wizard, and the two sign-in boundaries."
+  },
+  {
+    "referenceId": "systems:helloivy",
+    "groupId": "web-categories",
+    "labels": ["Project Management"],
+    "reason": "catalog.json describes Hello Ivy, a project-management tool for interior designers: projects, clients, files and feedback across the marketing site, the app login boundary and the public share document."
+  },
+  {
+    "referenceId": "systems:cohere",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes Cohere's enterprise AI platform marketing site: the Command/North product pages, per-model pricing rate table, models overview, developer and customer-story surfaces, legal pages and the dashboard.cohere.com sign-in boundary."
+  },
+  {
+    "referenceId": "systems:coinbase",
+    "groupId": "web-categories",
+    "labels": ["Finance", "Web3 & Crypto"],
+    "reason": "catalog.json describes Coinbase's crypto-exchange marketing site (Singapore locale): the home/explore price tables, Coinbase One/Business/Prime product pages, developer platform, USDC, learn/about/careers/blog surfaces, legal pages and the login.coinbase.com sign-in boundary."
+  },
+  {
+    "referenceId": "systems:hitchd",
+    "groupId": "web-categories",
+    "labels": ["Fundraising", "Marketplace"],
+    "reason": "catalog.json describes a honeymoon cash-gift registry: the closure-notice home, marketing content pages (blog, destination trips, guides), the signed-out auth forms at rest and the public demo registry where guests fund a couple's listed gifts."
+  },
+  {
+    "referenceId": "systems:column",
+    "groupId": "web-categories",
+    "labels": ["Finance", "Development Tools"],
+    "reason": "catalog.json describes developer banking APIs - ledgers, transfers, bank accounts and card issuing - a finance product sold to developers."
+  },
+  {
+    "referenceId": "systems:hume",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes Hume's empathic voice-AI platform: the post-pivot Audio Decision Model marketing site, the dev.hume.ai docs, the invitation-gated demo playground and the app.hume.ai/log-in boundary."
+  },
+  {
+    "referenceId": "systems:jace",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes an AI email assistant: a cream Next.js marketing site and a separate dark product theme."
+  },
+  {
+    "referenceId": "systems:jasper",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes Jasper's enterprise marketing site: declared swatch ramps, brand ink, and a flame primary."
+  },
+  {
+    "referenceId": "systems:jetbrains",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes JetBrains developer-tool marketing: a dark header, purple announcement strip, and a light pricing page."
+  },
+  {
+    "referenceId": "systems:jitter",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes a motion-design tool: light marketing with pill CTAs and a dark editor header."
+  },
+  {
+    "referenceId": "systems:julienne",
+    "groupId": "web-categories",
+    "labels": ["Fitness"],
+    "reason": "catalog.json describes recipe-app marketing and public discovery, classified as fitness."
+  },
+  {
+    "referenceId": "systems:kickstarter",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes a crowdfunding marketplace: a shipped KDS token layer, project cards, and Discover filters."
+  },
+  {
+    "referenceId": "systems:kinhive",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes editorial SaaS marketing: a chocolate promo strip, Affairs headlines, and an ink action fill."
+  },
+  {
+    "referenceId": "systems:kit",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes creator marketing for an email product: a blue announcement strip and a soft-black hero."
+  },
+  {
+    "referenceId": "systems:kitchen",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes agency marketing plus a signed-in client portal."
+  },
+  {
+    "referenceId": "systems:kitchenstories",
+    "groupId": "web-categories",
+    "labels": ["Entertainment"],
+    "reason": "catalog.json describes a recipe magazine: a sticky wordmark header and recipe cards with a time chip."
+  },
+  {
+    "referenceId": "systems:klarna",
+    "groupId": "web-categories",
+    "labels": ["Finance"],
+    "reason": "catalog.json describes shopper marketing in Klarna UI: ink, brand pink pills, and Klarna Title display."
+  },
+  {
+    "referenceId": "systems:kraken",
+    "groupId": "web-categories",
+    "labels": ["Finance"],
+    "reason": "catalog.json describes crypto-exchange marketing: a purple primary, a market table, and a light/dark pair."
+  },
+  {
+    "referenceId": "systems:krea",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes a dark generative-media app: a sidebar shell, a prompt composer, and a pricing page."
+  },
+  {
+    "referenceId": "systems:krisp",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes voice-AI marketing plus a signed-in notes app."
+  },
+  {
+    "referenceId": "systems:lego",
+    "groupId": "web-categories",
+    "labels": ["Marketplace"],
+    "reason": "catalog.json describes toy retail: a yellow header, pill search, and an Add to Bag action."
+  },
+  {
+    "referenceId": "systems:lemni",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes AI-agent marketing: a dark home, light inner pages, and a separate sign-in card."
+  },
+  {
+    "referenceId": "systems:lemonsqueezy",
+    "groupId": "web-categories",
+    "labels": ["Finance"],
+    "reason": "catalog.json describes a merchant-of-record marketing site: a purple hero and a shutdown banner."
+  },
+  {
+    "referenceId": "systems:limitless",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes a quiet marketing site for an AI memory product after an acquisition."
+  },
+  {
+    "referenceId": "systems:lummi",
+    "groupId": "web-categories",
+    "labels": ["Entertainment"],
+    "reason": "catalog.json describes a signed-out stock library: a search palette and a public image page."
+  },
+  {
+    "referenceId": "systems:huddlekit",
+    "groupId": "web-categories",
+    "labels": ["Collaboration Tools", "Design & Media Editing", "Productivity"],
+    "reason": "catalog.json describes Huddlekit's signed-out visual-annotation product for website feedback: the marketing site (features, solutions, pricing, integrations, compare, MCP, blog, support, free design tools) plus the app's anonymous login surface."
+  },
+  {
+    "referenceId": "systems:macaw",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes a cream marketing site for an AI website builder: one coral action and tinted pricing cards."
+  },
+  {
+    "referenceId": "systems:matter",
+    "groupId": "web-categories",
+    "labels": ["Entertainment"],
+    "reason": "catalog.json describes near-black reading-app marketing: a blurple pill, display type, and a white sign-in card."
+  },
+  {
+    "referenceId": "systems:manychat",
+    "groupId": "web-categories",
+    "labels": ["Communication Tools"],
+    "reason": "catalog.json describes chat-marketing pages: a neon-pink hero pill, a black promo strip, and pricing cards."
+  },
+  {
+    "referenceId": "systems:intercom",
+    "groupId": "web-categories",
+    "labels": ["Communication Tools", "Business"],
+    "reason": "catalog.json describes an AI customer-service platform: shared inbox, Fin AI agent, helpdesk marketing, pricing, a help centre and changelog - the same product category as systems:front."
+  },
+  {
+    "referenceId": "systems:maze",
+    "groupId": "web-categories",
+    "labels": ["Productivity"],
+    "reason": "catalog.json describes user-research marketing: a warm page, Phonic display, and a blue login action."
+  },
+  {
+    "referenceId": "systems:leonardo",
+    "groupId": "web-categories",
+    "labels": ["AI Tool"],
+    "reason": "catalog.json describes creator generative-media marketing: a black canvas, a violet wordmark, and a signed-out app shell."
+  },
+  {
+    "referenceId": "systems:forhers",
+    "groupId": "web-categories",
+    "labels": ["Health & Wellness", "Marketplace"],
+    "reason": "catalog.json describes the Hers women's telehealth storefront: treatment verticals (weight loss, hair, skin, mental health, birth control, anti-aging, labs), product cards with prices, a BMI calculator, an editorial blog and a drug-information index - health and wellness products sold direct."
+  },
+  {
+    "referenceId": "systems:ifttt",
+    "groupId": "web-categories",
+    "labels": ["Productivity", "AI Tool"],
+    "reason": "catalog.json describes IFTTT's automation platform: the ifttt.ai marketing home (AI prompt hero), the explore applet/service/story gallery, the plans pricing, service/applet/connect detail pages, solutions, MCP, about/careers/partners and legal surfaces."
+  }
 ]

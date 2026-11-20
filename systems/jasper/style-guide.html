@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jasper style guide</title>
+<meta name="description" content="Jasper (jasper.ai) design tokens and the public site's components, rendered from tokens.json.">
+<style>
+:root {
+  --color-swatch-blue-200: #e4f4ff;
+  --color-swatch-blue-300: #ceebff;
+  --color-swatch-blue-400: #81cbff;
+  --color-swatch-blue-500: #0095ff;
+  --color-swatch-blue-600: #0043d3;
+  --color-swatch-blue-700: #0011a7;
+  --color-swatch-blue-800: #00063d;
+  --color-swatch-brand-text: #00063d;
+  --color-swatch-dark-100: #f2f2f3;
+  --color-swatch-dark-150: #ededed;
+  --color-swatch-dark-200: #e0e0e1;
+  --color-swatch-dark-300: #cfcfd0;
+  --color-swatch-dark-400: #bbbabc;
+  --color-swatch-dark-50: #f9f9f9;
+  --color-swatch-dark-500: #9b9b9b;
+  --color-swatch-dark-600: #7d7d7e;
+  --color-swatch-dark-700: #5e5d5f;
+  --color-swatch-dark-800: #515052;
+  --color-swatch-dark-900: #262627;
+  --color-swatch-dark-900-faded: rgba(31, 29, 30, 0.2);
+  --color-swatch-flame-100: #fffdfc;
+  --color-swatch-flame-200: #fff7f5;
+  --color-swatch-flame-300: #ffe8e2;
+  --color-swatch-flame-400: #ffb3a3;
+  --color-swatch-flame-500: #fa7560;
+  --color-swatch-flame-600: #fa4028;
+  --color-swatch-flame-700: #801a10;
+  --color-swatch-flame-800: #410d07;
+  --color-swatch-green-300: #e6ffd9;
+  --color-swatch-green-400: #d2ffc1;
+  --color-swatch-green-500: #96ff6f;
+  --color-swatch-green-600: #45ff00;
+  --color-swatch-green-700: #207a00;
+  --color-swatch-green-800: #103a00;
+  --color-swatch-light-100: #ffffff;
+  --color-swatch-light-200: #f2f2f3;
+  --color-swatch-pink-300: #fff9fc;
+  --color-swatch-pink-400: #ffe6f3;
+  --color-swatch-pink-500: #ffb3de;
+  --color-swatch-pink-600: #ff80c8;
+  --color-swatch-pink-700: #ff66cc;
+  --color-swatch-pink-800: #5a003c;
+  --color-swatch-transparent: rgba(0, 0, 0, 0);
+  --color-swatch-violet-300: #faf9ff;
+  --color-swatch-violet-400: #e7e3f7;
+  --color-swatch-violet-500: #b5a9e3;
+  --color-swatch-violet-600: #7c5ac4;
+  --color-swatch-violet-700: #391e7e;
+  --color-swatch-violet-800: #1b0e3c;
+  --color-swatch-yellow-200: #fffef4;
+  --color-swatch-yellow-300: #fffeef;
+  --color-swatch-yellow-400: #fffdd9;
+  --color-swatch-yellow-500: #fffbb7;
+  --color-swatch-yellow-600: #fff67d;
+  --color-swatch-yellow-700: #fff133;
+  --color-swatch-yellow-800: #a69f00;
+  --color-legacy-blue-100: #eef8ff;
+  --color-legacy-blue-200: #c5e7ff;
+  --color-legacy-blue-400: #0190ff;
+  --color-legacy-blue-500: #0053d3;
+  --color-legacy-blue-700: #00063d;
+  --color-legacy-gray-100: #f9fafa;
+  --color-legacy-gray-400: #bac1cf;
+  --color-legacy-gray-600: #424b5e;
+  --color-legacy-green-100: #e6fcf0;
+  --color-legacy-green-200: #a6f6cb;
+  --color-legacy-green-500: #10ab5c;
+  --color-legacy-pink-300: #ffa6e0;
+  --color-legacy-red-100: #fff0e8;
+  --color-legacy-red-200: #feded0;
+  --color-legacy-red-500: #fa4028;
+  --color-legacy-red-600: #a22014;
+  --color-legacy-white: #ffffff;
+  --color-legacy-yellow-400: #f4ab0b;
+  --font-family-primary: "ABC ROM",Arial,sans-serif;
+  --font-family-display: Feature,Georgia,sans-serif;
+  --font-family-mono: "ABC ROM Mono",Arial,sans-serif;
+  --font-weight-regular: 450;
+  --font-weight-medium: 500;
+  --font-weight-displayRegular: 450;
+  --font-weight-displayThin: 400;
+  --fontSize-display: 80px;
+  --fontSize-h1: 54px;
+  --fontSize-h2: 38px;
+  --fontSize-h3: 28px;
+  --fontSize-h4: 24px;
+  --fontSize-h5: 20px;
+  --fontSize-h6: 16px;
+  --fontSize-textLarge: 18px;
+  --fontSize-textMain: 16px;
+  --fontSize-textSmall: 14px;
+  --fontSize-textTiny: 12px;
+  --lineHeight-tight: 1;
+  --lineHeight-display: 1.1;
+  --lineHeight-heading: 1.2;
+  --lineHeight-body: 1.4;
+  --spacing-1: 8px;
+  --spacing-2: 12px;
+  --spacing-3: 16px;
+  --spacing-4: 24px;
+  --spacing-5: 32px;
+  --spacing-6: 40px;
+  --spacing-7: 48px;
+  --spacing-8: 64px;
+  --spacing-9: 80px;
+  --spacing-sectionSmall: 96px;
+  --spacing-sectionMain: 112px;
+  --spacing-sectionLarge: 180px;
+  --radius-small: 8px;
+  --radius-main: 16px;
+  --radius-round: 1440px;
+  --borderWidth-main: 1px;
+  --motion-duration-0ms: 0ms;
+  --motion-duration-50ms: 50ms;
+  --motion-duration-100ms: 100ms;
+  --motion-duration-120ms: 120ms;
+  --motion-duration-150ms: 150ms;
+  --motion-duration-200ms: 200ms;
+  --motion-duration-240ms: 240ms;
+  --motion-duration-300ms: 300ms;
+  --motion-duration-400ms: 400ms;
+  --motion-duration-500ms: 500ms;
+  --motion-duration-600ms: 600ms;
+  --motion-duration-650ms: 650ms;
+  --motion-duration-750ms: 750ms;
+  --motion-duration-800ms: 800ms;
+  --motion-duration-1000ms: 1000ms;
+  --motion-duration-4800ms: 4800ms;
+  --motion-duration-5000ms: 5000ms;
+  --motion-duration-9600ms: 9600ms;
+  --motion-duration-14400ms: 14400ms;
+  --motion-duration-30000ms: 30000ms;
+  --motion-duration-32400ms: 32400ms;
+  --motion-easing-bezier-0-175-0-885-0-32-1-275: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --motion-easing-bezier-0-215-0-61-0-355-1: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --motion-easing-bezier-0-45-0-0-55-1: cubic-bezier(0.45, 0, 0.55, 1);
+  --motion-easing-bezier-0-76-0-0-24-1: cubic-bezier(0.76, 0, 0.24, 1);
+  --motion-easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-ease-in: cubic-bezier(0.42, 0, 1, 1);
+  --motion-easing-ease-out: cubic-bezier(0, 0, 0.58, 1);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --background: #ffffff;
+  --background-secondary: #f2f2f3;
+  --border: #00063d;
+  --button-primary-background: #fa4028;
+  --button-primary-background-hover: #801a10;
+  --button-primary-border: #fa4028;
+  --button-primary-border-hover: #801a10;
+  --button-primary-text: #ffffff;
+  --button-primary-text-hover: #fffdfc;
+  --button-secondary-background: rgba(0, 0, 0, 0);
+  --button-secondary-background-hover: #00063d;
+  --button-secondary-border: #00063d;
+  --button-secondary-border-hover: #00063d;
+  --button-secondary-text: #00063d;
+  --button-secondary-text-hover: #ffffff;
+  --button-tertiary-background: #00063d;
+  --button-tertiary-background-hover: #0011a7;
+  --button-tertiary-border: #00063d;
+  --button-tertiary-border-hover: #0011a7;
+  --button-tertiary-color: #ffffff;
+  --button-tertiary-text: #ffffff;
+  --button-tertiary-text-hover: #ffffff;
+  --selection-background: #fa4028;
+  --selection-text: #ffffff;
+  --text: #00063d;
+  --text-muted: #5e5d5f;
+  --component-buttonPrimary-background: #fa4028;
+  --component-buttonPrimary-backgroundHover: #801a10;
+  --component-buttonPrimary-text: #ffffff;
+  --component-buttonPrimary-border: #fa4028;
+  --component-buttonSecondary-background: rgba(0, 0, 0, 0);
+  --component-buttonSecondary-backgroundHover: #00063d;
+  --component-buttonSecondary-text: #00063d;
+  --component-buttonSecondary-border: #00063d;
+  --component-buttonTertiary-background: #00063d;
+  --component-buttonTertiary-text: #ffffff;
+  --component-buttonTertiary-border: #00063d;
+}
+[data-mode="dark"] {
+  --background: #262627;
+  --background-secondary: #00063d;
+  --border: #ffffff;
+  --button-primary-background: #fa4028;
+  --button-primary-background-hover: #801a10;
+  --button-primary-border: #fa4028;
+  --button-primary-border-hover: #801a10;
+  --button-primary-text: #ffffff;
+  --button-primary-text-hover: #fffdfc;
+  --button-secondary-background: rgba(0, 0, 0, 0);
+  --button-secondary-background-hover: #00063d;
+  --button-secondary-border: #ffffff;
+  --button-secondary-border-hover: #ffffff;
+  --button-secondary-text: #ffffff;
+  --button-secondary-text-hover: #ffffff;
+  --button-tertiary-background: #00063d;
+  --button-tertiary-background-hover: #0011a7;
+  --button-tertiary-border: #00063d;
+  --button-tertiary-border-hover: #0011a7;
+  --button-tertiary-color: #ffffff;
+  --button-tertiary-text: #ffffff;
+  --button-tertiary-text-hover: #ffffff;
+  --selection-background: #00063d;
+  --selection-text: #00063d;
+  --text: #ffffff;
+  --text-muted: #bbbabc;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font: 450 16px/1.4 var(--font-family-primary);
+  padding: 32px;
+}
+h1 { font: 500 38px/1.1 var(--font-family-display); letter-spacing: -0.02em; margin: 0 0 8px; }
+h2 { font: 500 24px/1.2 var(--font-family-display); margin: 40px 0 8px; }
+p { max-width: 68ch; }
+code { font-family: var(--font-family-mono); font-size: 13px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0 24px; }
+.swatch { width: 140px; }
+.swatch i { display: block; height: 64px; border-radius: var(--radius-small); border: 1px solid var(--border); }
+.swatch b { display: block; margin-top: 6px; font-size: 13px; }
+.swatch span { display: block; font-size: 12px; opacity: 0.7; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 0 20px; border-radius: var(--radius-small);
+  font: 500 16px/1 var(--font-family-primary); text-decoration: none;
+}
+.primary { background: var(--button-primary-background); color: var(--button-primary-text); border: 1px solid var(--button-primary-border); }
+.secondary { background: var(--button-secondary-background); color: var(--button-secondary-text); border: 1px solid var(--button-secondary-border); }
+.tertiary { background: var(--button-tertiary-background); color: var(--button-tertiary-text); border: 1px solid var(--button-tertiary-border); }
+.island { background: var(--background); color: var(--text); padding: 24px; border-radius: var(--radius-main); }
+header.bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+button.toggle { background: transparent; color: inherit; border: 1px solid currentColor; border-radius: var(--radius-small); padding: 8px 12px; font: inherit; }
+</style>
+</head>
+<body>
+<header class="bar">
+  <div>
+    <h1>Jasper style guide</h1>
+    <p>Rendered from tokens.json. The toggle sets data-mode, which is how this page shows the declared .u-theme-dark rebinding. The marketing site itself stays light and uses dark as islands.</p>
+  </div>
+  <button class="toggle" type="button" id="mode">Dark island tokens</button>
+</header>
+<h2>Colour roles</h2>
+<div class="row" id="roles"></div>
+<h2>Buttons</h2>
+<div class="row">
+  <a class="btn primary">Get a Demo</a>
+  <a class="btn secondary">Start Free Trial</a>
+  <a class="btn tertiary">Log In</a>
+</div>
+<h2>Type</h2>
+<p style="font: 500 54px/1.05 var(--font-family-display); letter-spacing: -0.02em;">Applied AI for Enterprise Marketing</p>
+<p>Body copy sits in ABC ROM at 16px, weight 450, colour text. Display lines sit in Feature.</p>
+<script>
+const TOKENS = {"core":{"color":{"swatch":{"blue-200":{"v":"#e4f4ff","t":"color","s":"css-var --swatch--blue-200 (light); declared --swatch--blue-200"},"blue-300":{"v":"#ceebff","t":"color","s":"css-var --swatch--blue-300 (light); declared --swatch--blue-300"},"blue-400":{"v":"#81cbff","t":"color","s":"css-var --swatch--blue-400 (light); declared --swatch--blue-400"},"blue-500":{"v":"#0095ff","t":"color","s":"css-var --swatch--blue-500 (light); declared --swatch--blue-500"},"blue-600":{"v":"#0043d3","t":"color","s":"css-var --swatch--blue-600 (light); declared --swatch--blue-600"},"blue-700":{"v":"#0011a7","t":"color","s":"css-var --swatch--blue-700 (light); declared --swatch--blue-700"},"blue-800":{"v":"#00063d","t":"color","s":"css-var --swatch--blue-800 (light); declared --swatch--blue-800"},"brand-text":{"v":"#00063d","t":"color","s":"css-var --swatch--brand-text (light); declared --swatch--brand-text"},"dark-100":{"v":"#f2f2f3","t":"color","s":"css-var --swatch--dark-100 (light); declared --swatch--dark-100"},"dark-150":{"v":"#ededed","t":"color","s":"css-var --swatch--dark-150 (light); declared --swatch--dark-150"},"dark-200":{"v":"#e0e0e1","t":"color","s":"css-var --swatch--dark-200 (light); declared --swatch--dark-200"},"dark-300":{"v":"#cfcfd0","t":"color","s":"css-var --swatch--dark-300 (light); declared --swatch--dark-300"},"dark-400":{"v":"#bbbabc","t":"color","s":"css-var --swatch--dark-400 (light); declared --swatch--dark-400"},"dark-50":{"v":"#f9f9f9","t":"color","s":"css-var --swatch--dark-50 (light); declared --swatch--dark-50"},"dark-500":{"v":"#9b9b9b","t":"color","s":"css-var --swatch--dark-500 (light); declared --swatch--dark-500"},"dark-600":{"v":"#7d7d7e","t":"color","s":"css-var --swatch--dark-600 (light); declared --swatch--dark-600"},"dark-700":{"v":"#5e5d5f","t":"color","s":"css-var --swatch--dark-700 (light); declared --swatch--dark-700"},"dark-800":{"v":"#515052","t":"color","s":"css-var --swatch--dark-800 (light); declared --swatch--dark-800"},"dark-900":{"v":"#262627","t":"color","s":"css-var --swatch--dark-900 (light); declared --swatch--dark-900"},"dark-900-faded":{"v":"rgba(31, 29, 30, 0.2)","t":"color","s":"css-var --swatch--dark-900-faded (light); declared --swatch--dark-900-faded"},"flame-100":{"v":"#fffdfc","t":"color","s":"css-var --swatch--flame-100 (light); declared --swatch--flame-100"},"flame-200":{"v":"#fff7f5","t":"color","s":"css-var --swatch--flame-200 (light); declared --swatch--flame-200"},"flame-300":{"v":"#ffe8e2","t":"color","s":"css-var --swatch--flame-300 (light); declared --swatch--flame-300"},"flame-400":{"v":"#ffb3a3","t":"color","s":"css-var --swatch--flame-400 (light); declared --swatch--flame-400"},"flame-500":{"v":"#fa7560","t":"color","s":"css-var --swatch--flame-500 (light); declared --swatch--flame-500"},"flame-600":{"v":"#fa4028","t":"color","s":"css-var --swatch--flame-600 (light); declared --swatch--flame-600"},"flame-700":{"v":"#801a10","t":"color","s":"css-var --swatch--flame-700 (light); declared --swatch--flame-700"},"flame-800":{"v":"#410d07","t":"color","s":"css-var --swatch--flame-800 (light); declared --swatch--flame-800"},"green-300":{"v":"#e6ffd9","t":"color","s":"css-var --swatch--green-300 (light); declared --swatch--green-300"},"green-400":{"v":"#d2ffc1","t":"color","s":"css-var --swatch--green-400 (light); declared --swatch--green-400"},"green-500":{"v":"#96ff6f","t":"color","s":"css-var --swatch--green-500 (light); declared --swatch--green-500"},"green-600":{"v":"#45ff00","t":"color","s":"css-var --swatch--green-600 (light); declared --swatch--green-600"},"green-700":{"v":"#207a00","t":"color","s":"css-var --swatch--green-700 (light); declared --swatch--green-700"},"green-800":{"v":"#103a00","t":"color","s":"css-var --swatch--green-800 (light); declared --swatch--green-800"},"light-100":{"v":"#ffffff","t":"color","s":"css-var --swatch--light-100 (light); declared --swatch--light-100"},"light-200":{"v":"#f2f2f3","t":"color","s":"css-var --swatch--light-200 (light); declared --swatch--light-200"},"pink-300":{"v":"#fff9fc","t":"color","s":"css-var --swatch--pink-300 (light); declared --swatch--pink-300"},"pink-400":{"v":"#ffe6f3","t":"color","s":"css-var --swatch--pink-400 (light); declared --swatch--pink-400"},"pink-500":{"v":"#ffb3de","t":"color","s":"css-var --swatch--pink-500 (light); declared --swatch--pink-500"},"pink-600":{"v":"#ff80c8","t":"color","s":"css-var --swatch--pink-600 (light); declared --swatch--pink-600"},"pink-700":{"v":"#ff66cc","t":"color","s":"css-var --swatch--pink-700 (light); declared --swatch--pink-700"},"pink-800":{"v":"#5a003c","t":"color","s":"css-var --swatch--pink-800 (light); declared --swatch--pink-800"},"transparent":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --swatch--transparent (light); declared --swatch--transparent"},"violet-300":{"v":"#faf9ff","t":"color","s":"css-var --swatch--violet-300 (light); declared --swatch--violet-300"},"violet-400":{"v":"#e7e3f7","t":"color","s":"css-var --swatch--violet-400 (light); declared --swatch--violet-400"},"violet-500":{"v":"#b5a9e3","t":"color","s":"css-var --swatch--violet-500 (light); declared --swatch--violet-500"},"violet-600":{"v":"#7c5ac4","t":"color","s":"css-var --swatch--violet-600 (light); declared --swatch--violet-600"},"violet-700":{"v":"#391e7e","t":"color","s":"css-var --swatch--violet-700 (light); declared --swatch--violet-700"},"violet-800":{"v":"#1b0e3c","t":"color","s":"css-var --swatch--violet-800 (light); declared --swatch--violet-800"},"yellow-200":{"v":"#fffef4","t":"color","s":"css-var --swatch--yellow-200 (light); declared --swatch--yellow-200"},"yellow-300":{"v":"#fffeef","t":"color","s":"css-var --swatch--yellow-300 (light); declared --swatch--yellow-300"},"yellow-400":{"v":"#fffdd9","t":"color","s":"css-var --swatch--yellow-400 (light); declared --swatch--yellow-400"},"yellow-500":{"v":"#fffbb7","t":"color","s":"css-var --swatch--yellow-500 (light); declared --swatch--yellow-500"},"yellow-600":{"v":"#fff67d","t":"color","s":"css-var --swatch--yellow-600 (light); declared --swatch--yellow-600"},"yellow-700":{"v":"#fff133","t":"color","s":"css-var --swatch--yellow-700 (light); declared --swatch--yellow-700"},"yellow-800":{"v":"#a69f00","t":"color","s":"css-var --swatch--yellow-800 (light); declared --swatch--yellow-800"}},"legacy":{"blue-100":{"v":"#eef8ff","t":"color","s":"css-var --_ns-2-0---color--blue-100 (light); declared --_ns-2-0---color--blue-100"},"blue-200":{"v":"#c5e7ff","t":"color","s":"css-var --_ns-2-0---color--blue-200 (light); declared --_ns-2-0---color--blue-200"},"blue-400":{"v":"#0190ff","t":"color","s":"css-var --_ns-2-0---color--blue-400 (light); declared --_ns-2-0---color--blue-400"},"blue-500":{"v":"#0053d3","t":"color","s":"css-var --_ns-2-0---color--blue-500 (light); declared --_ns-2-0---color--blue-500"},"blue-700":{"v":"#00063d","t":"color","s":"css-var --_ns-2-0---color--blue-700 (light); declared --_ns-2-0---color--blue-700"},"gray-100":{"v":"#f9fafa","t":"color","s":"css-var --_ns-2-0---color--gray-100 (light); declared --_ns-2-0---color--gray-100"},"gray-400":{"v":"#bac1cf","t":"color","s":"css-var --_ns-2-0---color--gray-400 (light); declared --_ns-2-0---color--gray-400"},"gray-600":{"v":"#424b5e","t":"color","s":"css-var --_ns-2-0---color--gray-600 (light); declared --_ns-2-0---color--gray-600"},"green-100":{"v":"#e6fcf0","t":"color","s":"css-var --_ns-2-0---color--green-100 (light); declared --_ns-2-0---color--green-100"},"green-200":{"v":"#a6f6cb","t":"color","s":"css-var --_ns-2-0---color--green-200 (light); declared --_ns-2-0---color--green-200"},"green-500":{"v":"#10ab5c","t":"color","s":"css-var --_ns-2-0---color--green-500 (light); declared --_ns-2-0---color--green-500"},"pink-300":{"v":"#ffa6e0","t":"color","s":"css-var --_ns-2-0---color--pink-300 (light); declared --_ns-2-0---color--pink-300"},"red-100":{"v":"#fff0e8","t":"color","s":"css-var --_ns-2-0---color--red-100 (light); declared --_ns-2-0---color--red-100"},"red-200":{"v":"#feded0","t":"color","s":"css-var --_ns-2-0---color--red-200 (light); declared --_ns-2-0---color--red-200"},"red-500":{"v":"#fa4028","t":"color","s":"css-var --_ns-2-0---color--red-500 (light); declared --_ns-2-0---color--red-500"},"red-600":{"v":"#a22014","t":"color","s":"css-var --_ns-2-0---color--red-600 (light); declared --_ns-2-0---color--red-600"},"white":{"v":"#ffffff","t":"color","s":"css-var --_ns-2-0---color--white (light); declared --_ns-2-0---color--white"},"yellow-400":{"v":"#f4ab0b","t":"color","s":"css-var --_ns-2-0---color--yellow-400 (light); declared --_ns-2-0---color--yellow-400"}}},"font":{"family":{"primary":{"v":"\"ABC ROM\",Arial,sans-serif","t":"fontFamily","s":"css-var --_typography---font--primary-family (light); declared --_typography---font--primary-family","d":"ABC ROM, the UI face"},"display":{"v":"Feature,Georgia,sans-serif","t":"fontFamily","s":"css-var --_typography---font--secondary-family (light); declared --_typography---font--secondary-family","d":"Feature, the display face"},"mono":{"v":"\"ABC ROM Mono\",Arial,sans-serif","t":"fontFamily","s":"css-var --_typography---font--mono-family (light); declared --_typography---font--mono-family","d":"ABC ROM Mono"}},"weight":{"regular":{"v":450,"t":"fontWeight","s":"css-var --_typography---font--primary-regular (light); declared --_typography---font--primary-regular"},"medium":{"v":500,"t":"fontWeight","s":"css-var --_typography---font--primary-medium (light); declared --_typography---font--primary-medium"},"displayRegular":{"v":450,"t":"fontWeight","s":"css-var --_typography---font--secondary-regular (light); declared --_typography---font--secondary-regular"},"displayThin":{"v":400,"t":"fontWeight","s":"css-var --_typography---font--secondary-thin (light); declared --_typography---font--secondary-thin"}}},"fontSize":{"display":{"v":"80px","t":"dimension","s":"css-var --_typography---font-size--display (light); declared --_typography---font-size--display"},"h1":{"v":"54px","t":"dimension","s":"css-var --_typography---font-size--h1 (light); declared --_typography---font-size--h1"},"h2":{"v":"38px","t":"dimension","s":"css-var --_typography---font-size--h2 (light); declared --_typography---font-size--h2"},"h3":{"v":"28px","t":"dimension","s":"css-var --_typography---font-size--h3 (light); declared --_typography---font-size--h3"},"h4":{"v":"24px","t":"dimension","s":"css-var --_typography---font-size--h4 (light); declared --_typography---font-size--h4"},"h5":{"v":"20px","t":"dimension","s":"css-var --_typography---font-size--h5 (light); declared --_typography---font-size--h5"},"h6":{"v":"16px","t":"dimension","s":"css-var --_typography---font-size--h6 (light); declared --_typography---font-size--h6"},"textLarge":{"v":"18px","t":"dimension","s":"css-var --_typography---font-size--text-large (light); declared --_typography---font-size--text-large"},"textMain":{"v":"16px","t":"dimension","s":"css-var --_typography---font-size--text-main (light); declared --_typography---font-size--text-main"},"textSmall":{"v":"14px","t":"dimension","s":"css-var --_typography---font-size--text-small (light); declared --_typography---font-size--text-small"},"textTiny":{"v":"12px","t":"dimension","s":"css-var --_typography---font-size--text-tiny (light); declared --_typography---font-size--text-tiny"}},"lineHeight":{"tight":{"v":1,"t":"number","s":"css-var --_typography---line-height--1 (light); declared --_typography---line-height--1"},"display":{"v":1.1,"t":"number","s":"css-var --_typography---line-height--1-1 (light); declared --_typography---line-height--1-1"},"heading":{"v":1.2,"t":"number","s":"css-var --_typography---line-height--1-2 (light); declared --_typography---line-height--1-2"},"body":{"v":1.4,"t":"number","s":"css-var --_typography---line-height--1-4 (light); declared --_typography---line-height--1-4"}},"spacing":{"1":{"v":"8px","t":"dimension","s":"css-var --_spacing---space--1 (light); declared --_spacing---space--1"},"2":{"v":"12px","t":"dimension","s":"css-var --_spacing---space--2 (light); declared --_spacing---space--2"},"3":{"v":"16px","t":"dimension","s":"css-var --_spacing---space--3 (light); declared --_spacing---space--3"},"4":{"v":"24px","t":"dimension","s":"css-var --_spacing---space--4 (light); declared --_spacing---space--4"},"5":{"v":"32px","t":"dimension","s":"css-var --_spacing---space--5 (light); declared --_spacing---space--5"},"6":{"v":"40px","t":"dimension","s":"css-var --_spacing---space--6 (light); declared --_spacing---space--6"},"7":{"v":"48px","t":"dimension","s":"css-var --_spacing---space--7 (light); declared --_spacing---space--7"},"8":{"v":"64px","t":"dimension","s":"css-var --_spacing---space--8 (light); declared --_spacing---space--8"},"9":{"v":"80px","t":"dimension","s":"css-var --_spacing---space--9 (light); declared --_spacing---space--9"},"sectionSmall":{"v":"96px","t":"dimension","s":"css-var --_spacing---section-space--small (light); declared --_spacing---section-space--small"},"sectionMain":{"v":"112px","t":"dimension","s":"css-var --_spacing---section-space--main (light); declared --_spacing---section-space--main"},"sectionLarge":{"v":"180px","t":"dimension","s":"css-var --_spacing---section-space--large (light); declared --_spacing---section-space--large"}},"radius":{"small":{"v":"8px","t":"dimension","s":"css-var --radius--small (light); declared --radius--small"},"main":{"v":"16px","t":"dimension","s":"css-var --radius--main (light); declared --radius--main"},"round":{"v":"1440px","t":"dimension","s":"css-var --radius--round (light); declared --radius--round"}},"borderWidth":{"main":{"v":"1px","t":"dimension","s":"css-var --border-width--main (light); declared --border-width--main"}},"motion":{"duration":{"0ms":{"v":"0ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1253 elements."},"50ms":{"v":"50ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"100ms":{"v":"100ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 20 elements."},"120ms":{"v":"120ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"150ms":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"200ms":{"v":"200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 100 elements."},"240ms":{"v":"240ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"300ms":{"v":"300ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 65 elements."},"400ms":{"v":"400ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 38 elements."},"500ms":{"v":"500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"600ms":{"v":"600ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"650ms":{"v":"650ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 10 elements."},"750ms":{"v":"750ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"800ms":{"v":"800ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1000ms":{"v":"1000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"4800ms":{"v":"4800ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"5000ms":{"v":"5000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"9600ms":{"v":"9600ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"14400ms":{"v":"14400ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"30000ms":{"v":"30000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"32400ms":{"v":"32400ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."}},"easing":{"bezier-0_175-0_885-0_32-1_275":{"v":[0.175,0.885,0.32,1.275],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_215-0_61-0_355-1":{"v":[0.215,0.61,0.355,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#pages"}},"bezier-0_45-0-0_55-1":{"v":[0.45,0,0.55,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#pages"}},"bezier-0_76-0-0_24-1":{"v":[0.76,0,0.24,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"ease":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease`, expanded to its control points."},"ease-in":{"v":[0.42,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `ease-in`, expanded to its control points."},"ease-out":{"v":[0,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease-out`, expanded to its control points."},"linear":{"v":[0,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `linear`, expanded to its control points."}},"transition":{"opacity-0ms-linear-delay200ms":{"v":{"duration":"{motion.duration.0ms}","delay":"200ms","timingFunction":"{motion.easing.linear}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1248 elements."},"background-color-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 33 elements."},"all-400ms-ease":{"v":{"duration":"{motion.duration.400ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 24 elements."},"color-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 20 elements."},"gap-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 20 elements."},"opacity-100ms-ease":{"v":{"duration":"{motion.duration.100ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 20 elements."},"transform-400ms-ease-out-delay150ms":{"v":{"duration":"{motion.duration.400ms}","delay":"150ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 14 elements."},"background-color-300ms-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 13 elements."},"box-shadow-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 13 elements."},"transform-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 13 elements."},"background-color-300ms-ease-out":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 12 elements."},"opacity-300ms-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 10 elements."},"transform-300ms-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"grid-template-rows-300ms-bezier-0_45-0-0_55-1":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_45-0-0_55-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"transform-300ms-bezier-0_45-0-0_55-1":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_45-0-0_55-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"transform-300ms-ease-out":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"grid-template-rows-650ms-bezier-0_215-0_61-0_355-1":{"v":{"duration":"{motion.duration.650ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_215-0_61-0_355-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"visibility-0ms-ease-delay300ms":{"v":{"duration":"{motion.duration.0ms}","delay":"300ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"opacity-650ms-bezier-0_215-0_61-0_355-1":{"v":{"duration":"{motion.duration.650ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_215-0_61-0_355-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"text-decoration-color-300ms-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"all-50ms-ease":{"v":{"duration":"{motion.duration.50ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"opacity-650ms-bezier-0_215-0_61-0_355-1-delay300ms":{"v":{"duration":"{motion.duration.650ms}","delay":"300ms","timingFunction":"{motion.easing.bezier-0_215-0_61-0_355-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"outline-color-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."}},"animation":{"nslogosmarquee":{"v":{"name":"nsLogosMarquee","duration":"{motion.duration.32400ms}","delay":"0ms","timingFunction":"{motion.easing.linear}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `nsLogosMarquee`."},"nswhyprogress":{"v":{"name":"nsWhyProgress","duration":"{motion.duration.5000ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_45-0-0_55-1}","iterationCount":"1","direction":"normal","fillMode":"forwards"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `nsWhyProgress`."}}}},"light":{"background":{"v":"#ffffff","t":"color","s":"css-var --_theme---background (light); declared --_theme---background"},"background-secondary":{"v":"#f2f2f3","t":"color","s":"css-var --_theme---background-secondary (light); declared --_theme---background-secondary"},"border":{"v":"#00063d","t":"color","s":"css-var --_theme---border (light); declared --_theme---border"},"button-primary-background":{"v":"#fa4028","t":"color","s":"css-var --_theme---button-primary--background (light); declared --_theme---button-primary--background"},"button-primary-background-hover":{"v":"#801a10","t":"color","s":"css-var --_theme---button-primary--background-hover (light); declared --_theme---button-primary--background-hover"},"button-primary-border":{"v":"#fa4028","t":"color","s":"css-var --_theme---button-primary--border (light); declared --_theme---button-primary--border"},"button-primary-border-hover":{"v":"#801a10","t":"color","s":"css-var --_theme---button-primary--border-hover (light); declared --_theme---button-primary--border-hover"},"button-primary-text":{"v":"#ffffff","t":"color","s":"css-var --_theme---button-primary--text (light); declared --_theme---button-primary--text"},"button-primary-text-hover":{"v":"#fffdfc","t":"color","s":"css-var --_theme---button-primary--text-hover (light); declared --_theme---button-primary--text-hover"},"button-secondary-background":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --_theme---button-secondary--background (light); declared --_theme---button-secondary--background"},"button-secondary-background-hover":{"v":"#00063d","t":"color","s":"css-var --_theme---button-secondary--background-hover (light); declared --_theme---button-secondary--background-hover"},"button-secondary-border":{"v":"#00063d","t":"color","s":"css-var --_theme---button-secondary--border (light); declared --_theme---button-secondary--border"},"button-secondary-border-hover":{"v":"#00063d","t":"color","s":"css-var --_theme---button-secondary--border-hover (light); declared --_theme---button-secondary--border-hover"},"button-secondary-text":{"v":"#00063d","t":"color","s":"css-var --_theme---button-secondary--text (light); declared --_theme---button-secondary--text"},"button-secondary-text-hover":{"v":"#ffffff","t":"color","s":"css-var --_theme---button-secondary--text-hover (light); declared --_theme---button-secondary--text-hover"},"button-tertiary-background":{"v":"#00063d","t":"color","s":"css-var --_theme---button-tertiary--background (light); declared --_theme---button-tertiary--background"},"button-tertiary-background-hover":{"v":"#0011a7","t":"color","s":"css-var --_theme---button-tertiary--background-hover (light); declared --_theme---button-tertiary--background-hover"},"button-tertiary-border":{"v":"#00063d","t":"color","s":"css-var --_theme---button-tertiary--border (light); declared --_theme---button-tertiary--border"},"button-tertiary-border-hover":{"v":"#0011a7","t":"color","s":"css-var --_theme---button-tertiary--border-hover (light); declared --_theme---button-tertiary--border-hover"},"button-tertiary-color":{"v":"#ffffff","t":"color","s":"css-var --_theme---button-tertiary--color (light); declared --_theme---button-tertiary--color"},"button-tertiary-text":{"v":"#ffffff","t":"color","s":"css-var --_theme---button-tertiary--text (light); declared --_theme---button-tertiary--text"},"button-tertiary-text-hover":{"v":"#ffffff","t":"color","s":"css-var --_theme---button-tertiary--text-hover (light); declared --_theme---button-tertiary--text-hover"},"selection-background":{"v":"#fa4028","t":"color","s":"css-var --_theme---selection--background (light); declared --_theme---selection--background"},"selection-text":{"v":"#ffffff","t":"color","s":"css-var --_theme---selection--text (light); declared --_theme---selection--text"},"text":{"v":"#00063d","t":"color","s":"css-var --_theme---text (light); declared --_theme---text"},"text-muted":{"v":"#5e5d5f","t":"color","s":"css-var --swatch--dark-700 (light); declared --swatch--dark-700","d":"Secondary ink on marketing copy. The theme layer has no muted role, so this names the dark-700 swatch."},"component":{"buttonPrimary":{"background":{"v":"#fa4028","t":"color","s":"css-var --_theme---button-primary--background (light); declared --_theme---button-primary--background"},"backgroundHover":{"v":"#801a10","t":"color","s":"css-var --_theme---button-primary--background-hover (light); declared --_theme---button-primary--background-hover"},"text":{"v":"#ffffff","t":"color","s":"css-var --_theme---button-primary--text (light); declared --_theme---button-primary--text"},"border":{"v":"#fa4028","t":"color","s":"css-var --_theme---button-primary--border (light); declared --_theme---button-primary--border"}},"buttonSecondary":{"background":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --_theme---button-secondary--background (light); declared --_theme---button-secondary--background"},"backgroundHover":{"v":"#00063d","t":"color","s":"css-var --_theme---button-secondary--background-hover (light); declared --_theme---button-secondary--background-hover"},"text":{"v":"#00063d","t":"color","s":"css-var --_theme---button-secondary--text (light); declared --_theme---button-secondary--text"},"border":{"v":"#00063d","t":"color","s":"css-var --_theme---button-secondary--border (light); declared --_theme---button-secondary--border"}},"buttonTertiary":{"background":{"v":"#00063d","t":"color","s":"css-var --_theme---button-tertiary--background (light); declared --_theme---button-tertiary--background"},"text":{"v":"#ffffff","t":"color","s":"css-var --_theme---button-tertiary--text (light); declared --_theme---button-tertiary--text"},"border":{"v":"#00063d","t":"color","s":"css-var --_theme---button-tertiary--border (light); declared --_theme---button-tertiary--border"}}}},"dark":{"background":{"v":"#262627","t":"color","s":"css-var --_theme---background (dark); declared --_theme---background"},"background-secondary":{"v":"#00063d","t":"color","s":"css-var --_theme---background-secondary (dark); declared --_theme---background-secondary"},"border":{"v":"#ffffff","t":"color","s":"css-var --_theme---border (dark); declared --_theme---border"},"button-primary-background":{"v":"#fa4028","t":"color","s":"css-var --_theme---button-primary--background (dark); declared --_theme---button-primary--background"},"button-primary-background-hover":{"v":"#801a10","t":"color","s":"css-var --_theme---button-primary--background-hover (dark); declared --_theme---button-primary--background-hover"},"button-primary-border":{"v":"#fa4028","t":"color","s":"css-var --_theme---button-primary--border (dark); declared --_theme---button-primary--border"},"button-primary-border-hover":{"v":"#801a10","t":"color","s":"css-var --_theme---button-primary--border-hover (dark); declared --_theme---button-primary--border-hover"},"button-primary-text":{"v":"#ffffff","t":"color","s":"css-var --_theme---button-primary--text (dark); declared --_theme---button-primary--text"},"button-primary-text-hover":{"v":"#fffdfc","t":"color","s":"css-var --_theme---button-primary--text-hover (dark); declared --_theme---button-primary--text-hover"},"button-secondary-background":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --_theme---button-secondary--background (dark); declared --_theme---button-secondary--background"},"button-secondary-background-hover":{"v":"#00063d","t":"color","s":"css-var --_theme---button-secondary--background-hover (dark); declared --_theme---button-secondary--background-hover"},"button-secondary-border":{"v":"#ffffff","t":"color","s":"css-var --_theme---button-secondary--border (dark); declared --_theme---button-secondary--border"},"button-secondary-border-hover":{"v":"#ffffff","t":"color","s":"css-var --_theme---button-secondary--border-hover (dark); declared --_theme---button-secondary--border-hover"},"button-secondary-text":{"v":"#ffffff","t":"color","s":"css-var --_theme---button-secondary--text (dark); declared --_theme---button-secondary--text"},"button-secondary-text-hover":{"v":"#ffffff","t":"color","s":"css-var --_theme---button-secondary--text-hover (dark); declared --_theme---button-secondary--text-hover"},"button-tertiary-background":{"v":"#00063d","t":"color","s":"css-var --_theme---button-tertiary--background (dark); declared --_theme---button-tertiary--background"},"button-tertiary-background-hover":{"v":"#0011a7","t":"color","s":"css-var --_theme---button-tertiary--background-hover (dark); declared --_theme---button-tertiary--background-hover"},"button-tertiary-border":{"v":"#00063d","t":"color","s":"css-var --_theme---button-tertiary--border (dark); declared --_theme---button-tertiary--border"},"button-tertiary-border-hover":{"v":"#0011a7","t":"color","s":"css-var --_theme---button-tertiary--border-hover (dark); declared --_theme---button-tertiary--border-hover"},"button-tertiary-color":{"v":"#ffffff","t":"color","s":"css-var --_theme---button-tertiary--color (dark); declared --_theme---button-tertiary--color"},"button-tertiary-text":{"v":"#ffffff","t":"color","s":"css-var --_theme---button-tertiary--text (dark); declared --_theme---button-tertiary--text"},"button-tertiary-text-hover":{"v":"#ffffff","t":"color","s":"css-var --_theme---button-tertiary--text-hover (dark); declared --_theme---button-tertiary--text-hover"},"selection-background":{"v":"#00063d","t":"color","s":"css-var --_theme---selection--background (dark); declared --_theme---selection--background"},"selection-text":{"v":"#00063d","t":"color","s":"css-var --_theme---selection--text (dark); declared --_theme---selection--text"},"text":{"v":"#ffffff","t":"color","s":"css-var --_theme---text (dark); declared --_theme---text"},"text-muted":{"v":"#bbbabc","t":"color","s":"css-var --swatch--dark-400 (light); declared --swatch--dark-400","d":"Secondary ink on a dark island. The theme layer has no muted role."}}};
+const roles = ["background","background-secondary","border","text","button-primary-background","button-secondary-background","button-tertiary-background","selection-background"];
+const box = document.getElementById("roles");
+function paint() {
+  const dark = document.documentElement.getAttribute("data-mode") === "dark";
+  const set = dark ? TOKENS.dark : TOKENS.light;
+  box.innerHTML = roles.map((k) => {
+    const t = set[k];
+    if (!t) return "";
+    return `<div class="swatch"><i style="background:${t.v}"></i><b>${k}</b><span>${t.v}</span></div>`;
+  }).join("");
+}
+document.getElementById("mode").onclick = () => {
+  const on = document.documentElement.getAttribute("data-mode") === "dark";
+  if (on) document.documentElement.removeAttribute("data-mode");
+  else document.documentElement.setAttribute("data-mode", "dark");
+  paint();
+};
+paint();
+</script>
+</body>
+</html>

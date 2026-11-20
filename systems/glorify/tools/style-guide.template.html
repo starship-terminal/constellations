@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glorify style guide</title>
+<meta name="description" content="Glorify design tokens and the public marketing and app surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: var(--font-family-body, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif);
+  --sg-serif: var(--font-family-display, var(--font-family-body, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif));
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+.app {
+/*APP*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-ink, #000); background: var(--background-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 38px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 600 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-focus-ring, #e2e2e2); }
+.lead { max-width: 62ch; color: var(--text-ink, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--text-ink, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 600 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-ink, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+/* A non-light strip's values only read on its own field. */
+.pal.app { background: var(--background-page, #17181c); color: var(--text-ink, #fff); padding: 12px; border-radius: 10px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(127,127,127,.35); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-ink, #000); opacity: .65; }
+.pal.app .vl { color: var(--text-ink, #fff); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid rgba(127,127,127,.35); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-ink, #000); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid rgba(127,127,127,.35); overflow: hidden; background: var(--surface-card, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 72px); padding: 0 12px 0 22px; font-size: 15px; font-weight: 500; color: var(--text-ink, #000); background: var(--surface-card, #fff); }
+.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-nav-cta-height, 44px); padding: 0 18px; font-size: var(--font-size-body, 16px); font-weight: 600; border-radius: var(--radius-button, 10px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-cta-fill, #000); color: var(--action-cta-ink, #fff); }
+.btn.hero { background: var(--action-hero-cta-fill, #000); color: var(--action-hero-cta-ink, #fff); border-radius: var(--radius-pill, 999px); height: var(--component-hero-cta-height, 56px); padding: 0 30px; font-size: 18px; }
+.app .btn.primary { background: var(--action-primary-fill, #3b63f3); color: var(--action-primary-ink, #fff); border-radius: var(--radius-app-button, 8px); }
+.app .btn.disabled { background: var(--action-primary-fill-disabled, #333); color: var(--action-primary-ink, #fff); border-radius: var(--radius-app-button, 8px); }
+.btn.ghost { border-color: rgba(127,127,127,.4); color: var(--text-ink, #000); }
+.app .btn.ghost { color: var(--text-ink, #fff); }
+.btn.small { height: var(--component-nav-cta-height, 40px); font-size: 14px; }
+.hero { color: var(--text-ink, #000); padding: 64px 40px; font: var(--font-weight-bold, 700) var(--font-size-hero, 56px)/var(--font-line-height-hero, 1.05) var(--sg-serif); letter-spacing: -0.02em; text-align: center; background: var(--background-page, #fff); }
+.hero small { display: block; font: 500 var(--font-size-body, 16px)/1.4 var(--sg-sans); letter-spacing: .02em; color: var(--text-body, #333); opacity: .85; margin: 0 0 18px; }
+.tag { display: inline-block; padding: 4px 14px; border-radius: var(--radius-pill, 999px); background: var(--surface-card, #fff); border: 1px solid rgba(127,127,127,.35); font-size: var(--font-size-eyebrow, 12px); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted, #666); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid rgba(127,127,127,.3); padding: 24px; font-size: 13px; background: var(--surface-card, #fff); border-radius: var(--radius-card, 20px); }
+.tile .img { height: 140px; background: var(--background-page, #f4f4f6); border: 1px solid rgba(127,127,127,.25); border-radius: var(--radius-card, 20px); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted, #777); }
+.tile b { display: block; font: 400 var(--font-size-plan-name, 28px)/1.1 var(--sg-serif); margin-bottom: 4px; color: var(--text-ink, #000); }
+.tile .sub { opacity: .65; font-size: 12px; color: var(--text-muted, #555); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid rgba(127,127,127,.35); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid rgba(127,127,127,.3); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--text-ink, #000); opacity: .65; font-family: var(--sg-mono); }
+.app .tr .tv { color: var(--text-muted, #aaa); }
+/* the dark app mock */
+.mock.app { background: var(--background-page, #17181c); color: var(--text-ink, #fff); }
+.field { width: var(--component-app-field-width, 320px); max-width: 100%; height: var(--component-app-field-height, 44px); border: 1px solid var(--border-field-border, rgba(255,255,255,.18)); border-radius: var(--radius-field, 8px); background: var(--surface-field-bg, #22242a); color: var(--text-muted, #999); padding: 0 14px; font-size: 15px; }
+.edchrome { display: flex; align-items: center; gap: 10px; height: var(--component-app-header-height, 56px); padding: 0 16px; background: var(--surface-chrome-fill, #1d1f24); color: var(--text-ink, #fff); font-size: 14px; }
+.edchrome .file { font-weight: 600; }
+.edchrome .sp { flex: 1; }
+.edrail { display: inline-flex; flex-direction: column; gap: 6px; padding: 10px; background: var(--surface-chrome-fill, #1d1f24); border-radius: 10px; }
+.edrail i { width: var(--component-app-tool-btn, 48px); height: var(--component-app-tool-btn, 48px); border-radius: var(--radius-control, 8px); border: 1px solid rgba(255,255,255,.08); display: block; }
+.edrail i.on { background: var(--action-tool-fill-active, #333); }
+.insp { width: var(--component-app-inspector-width, 280px); max-width: 100%; background: var(--surface-inspector-fill, #1f2126); border-radius: var(--radius-inspector, 10px); padding: 14px; font-size: 13px; }
+.insp .tabs { display: flex; gap: 14px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; opacity: .8; margin-bottom: 10px; }
+.insp .swatch { height: 40px; border-radius: var(--radius-control, 8px); border: 1px solid rgba(255,255,255,.12); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Glorify style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Glorify, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the marketing site's hashed Framer token layer (<code>--token-&lt;uuid&gt;</code>, emitted under <code>token.*</code>), the app's own semantic vocabulary (<code>--active-*</code>/<code>--hover-*</code>/<code>--icon-*</code>/<code>--neutral-light-*</code>/<code>--disabled-*</code>/<code>--field-*</code>/<code>--error-*</code>/<code>--info-*</code>/<code>--green-*</code>/<code>--orange-*</code>/<code>--pink-*</code>/<code>--cta-300</code>/<code>--glori-gradient</code>), the measured type ramp, the measured radius ladder, and the measured component sizes. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from glorify.com and app.glorify.com, signed out, in headless Chromium. Everything post-login is a documented boundary; the sign-in and sign-up forms were measured and typed into then cleared, never submitted; the anonymous editor at /designer/use-template/0 is the product's own Play-for-free path on a scratch file the SPA creates. The marketing site is light-only — no toggle, no dark media query. The app surface paints its dark chrome, and its tokens live in the separate <code>app</code> theme. The product's served faces are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The marketing header pairs the wordmark with the "Who is it for?"/Features/Resources/Templates dropdowns, Pricing, Login, "Play for free" and the "Get Started Now" button. The hero runs the display masthead over the Ecom subline, with "Play for free" leading into the anonymous editor.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">Glorify</span><span style="font-weight:400;font-size:14px">Who is it for?</span><span>Features</span><span>Resources</span><span>Templates</span><span>Pricing</span><span class="sp"></span><span style="font-weight:400">Login</span><span style="font-weight:400">Play for free</span><span class="btn small primary">Get Started Now</span></div>
+    <div class="hero"><small>Enjoy the ultimate Ecom design tool</small>Easily create marketing<br>visuals that turn<br>browsers to buyers.<br><br><span class="btn hero">Play for free</span></div>
+  </div>
+
+  <h2 class="sh">Pricing cards</h2>
+  <p class="lead">The billing switcher swaps Monthly and Yearly prices (a local UI toggle); plan cards are rounded panels with a "Start … Trial" action each — measured, never followed.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile"><b>Basic</b><span class="sub">The entry plan — a "Start Basic Trial" action.</span></div>
+      <div class="tile"><b>Pro</b><span class="sub">The mid plan — a "Start Pro Trial" action.</span></div>
+      <div class="tile"><b>Business</b><span class="sub">The top plan — a "Start Business Trial" action.</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The app surface</h2>
+  <p class="lead">app.glorify.com declares its own vocabulary on :root and paints dark chrome. The sign-in submit sits disabled until the fields validate — both fills were measured, never submitted. The anonymous editor paints the header (file name, Login/Signup, zoom, Share, Download), the left tool rail and the EDIT/LAYERS/PAGES inspector; the Craft dialog sits behind "Try with Placeholder Image" and its "Add to canvas" was measured disabled and enabled, never pressed on the measurement pass. The swatches in this scope carry the app set.</p>
+  <div class="mock app" style="padding:24px;max-width:460px">
+    <b style="font-size:20px;font-weight:500">Log in</b>
+    <p class="sub" style="color:var(--text-muted,#999);font-size:14px;margin:4px 0 16px">Sign in to your Glorify workspace</p>
+    <input class="field" placeholder="Email"><br><br>
+    <input class="field" placeholder="Password"><br><br>
+    <span class="btn disabled" style="width:320px;height:44px">Sign in</span>
+  </div>
+  <div class="mock app" style="padding:0;margin-top:12px">
+    <div class="edchrome"><span class="file">Untitled File</span><span class="sp"></span><span class="btn ghost small">Login</span><span class="btn primary small">Signup</span><span style="font-size:12px;opacity:.7">100%</span><span class="btn ghost small">Share</span><span class="btn primary small">Download</span></div>
+    <div style="display:flex;gap:12px;padding:16px">
+      <span class="edrail"><i></i><i class="on"></i><i></i><i></i></span>
+      <span style="flex:1"></span>
+      <span class="insp"><span class="tabs"><b>EDIT</b><span>LAYERS</span><span>PAGES</span></span><span class="swatch" style="display:block"></span></span>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The marketing palette is the hashed Framer <code>--token-*</code> declaration; the app set carries the product's semantic names plus the measured roles of the auth cards and the editor chrome. Measured roles alias the declared values they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Radius and motion</h2>
+  <p class="lead">The radius ladder and the control transition are measured on real controls — marketing sheets declare no readable radius or motion variables.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">The marketing type ramp is measured (the hashed token layer declares colours; the <code>--framer-*</code> text engine stays vendor), and the app paints its own sizes on the dark chrome. Samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared palette variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, focused, filled and enabled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  // The marketing vocabulary is the hashed token.* namespace at the set
+  // root: collect the colour leaves wherever they live, grouped by first
+  // path segment.
+  const groups = {};
+  for (const [n, t] of flat(TOK.core, '')) {
+    if (t.t !== 'color' || n.startsWith('component')) continue;
+    (groups[n.split('.')[0]] ??= []).push([n, t]);
+  }
+  for (const g of Object.keys(groups).sort()) {
+    h += `<div class="pal-h">${esc(g)} (marketing vocabulary — the hashed Framer token layer)</div><div class="pal">`;
+    for (const [n, t] of groups[g]) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label, scope] of [['light', 'light roles', ''], ['app', 'app vocabulary + roles', ' app']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color');
+    if (!roles.length) continue;
+    // A non-core set's custom properties only resolve inside its own scope.
+    h += `<div class="pal-h">${label}</div><div class="pal${scope}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const setname of ['light', 'app']) {
+    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Aliases are set-relative: the palette scales live under TOK.core, surface
+  // roles under TOK.light / TOK.app. Try each root.
+  for (const root of [TOK.core, TOK.light, TOK.app, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Glorify</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

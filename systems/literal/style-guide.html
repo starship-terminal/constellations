@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Literal.club style guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --page: #ffffff;
+    --text: #444340;
+    --muted: #9a988b;
+    --line: #eeeeee;
+    --surface: #f8f8f8;
+    --accent: #278458;
+    --accent-hover: #389e6e;
+    --ink: #000000;
+  }
+  :root[data-theme="dark"] {
+    --page: #131313;
+    --text: #f9f9f9;
+    --muted: #acacac;
+    --line: #383838;
+    --surface: #272727;
+    --accent: #33bb7a;
+    --accent-hover: #389e6e;
+    --ink: #f9f9f9;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 14px/20px Inter, sans-serif; }
+  header { display: flex; align-items: center; gap: 16px; padding: 16px 28px; border-bottom: 1px solid var(--line); position: sticky; top: 0; background: var(--page); }
+  header h1 { font: 400 20px/28px "Libre Baskerville", Georgia, serif; margin: 0; }
+  header button { margin-left: auto; border: 0; background: var(--accent); color: #fff; height: 40px; padding: 0 16px; font: 500 14px/20px Inter, sans-serif; cursor: pointer; }
+  :root[data-theme="dark"] header button { color: #000; }
+  main { padding: 28px; max-width: 1100px; }
+  h2 { font: 400 24px/36px "Libre Baskerville", Georgia, serif; margin: 36px 0 12px; }
+  p.note { color: var(--muted); max-width: 68ch; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+  .sw { display: flex; gap: 10px; align-items: center; border: 1px solid var(--line); background: var(--surface); padding: 8px; }
+  .sw i { width: 36px; height: 36px; border: 1px solid var(--line); flex: none; }
+  .sw code, .sp code, .rd code { display: block; font: 500 12px/16px ui-monospace, monospace; }
+  .sw span, .sp span, .rd span, .ty small { color: var(--muted); font-size: 12px; }
+  .ty { padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .ty small { display: block; font: 400 12px/16px Inter, sans-serif; }
+  .sp { display: flex; align-items: center; gap: 12px; margin: 4px 0; }
+  .sp i { height: 8px; background: var(--accent); }
+  .rd { width: 88px; height: 48px; border: 1px solid var(--line); display: inline-flex; align-items: center; justify-content: center; margin: 4px 8px 4px 0; }
+  .controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .btn { height: 48px; padding: 0 20px; border: 0; font: 500 14px/20px Inter, sans-serif; }
+  .btn.green { background: var(--accent); color: #fff; }
+  :root[data-theme="dark"] .btn.green { color: #000; }
+  .btn.ink { background: var(--ink); color: var(--page); }
+  .field { width: 280px; height: 50px; border: 0; background: var(--surface); color: var(--text); padding: 0 12px; font: 400 14px/20px Inter, sans-serif; }
+  .link { color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Literal</h1>
+  <span>public signed-out tokens</span>
+  <button type="button" id="theme">Dark</button>
+</header>
+<main>
+  <p class="note">Values come from tokens.json, harvested from literal.club on 2026-11-18. Light is the default. Dark is the product's :root.dark set, resolved when prefers-color-scheme is dark. There is no public theme toggle. Corners on the measured controls are square.</p>
+  <h2>Light colours</h2>
+  <div class="grid">
+<div class="sw"><i style="background:#444340"></i><div><code>text.primary</code><span>#444340</span></div></div>
+<div class="sw"><i style="background:#838178"></i><div><code>text.secondary</code><span>#838178</span></div></div>
+<div class="sw"><i style="background:#9a988b"></i><div><code>text.discreet</code><span>#9a988b</span></div></div>
+<div class="sw"><i style="background:#000000"></i><div><code>text.black</code><span>#000000</span></div></div>
+<div class="sw"><i style="background:#c4c2ba"></i><div><code>text.disabled</code><span>#c4c2ba</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><code>text.white</code><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#c4c2ba"></i><div><code>ui.base</code><span>#c4c2ba</span></div></div>
+<div class="sw"><i style="background:#e1dddd"></i><div><code>ui.input</code><span>#e1dddd</span></div></div>
+<div class="sw"><i style="background:#eeeeee"></i><div><code>ui.outline</code><span>#eeeeee</span></div></div>
+<div class="sw"><i style="background:#ebebeb"></i><div><code>ui.baseLight</code><span>#ebebeb</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><code>ui.white</code><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#000000"></i><div><code>ui.black</code><span>#000000</span></div></div>
+<div class="sw"><i style="background:#6c6c67"></i><div><code>ui.secondary</code><span>#6c6c67</span></div></div>
+<div class="sw"><i style="background:#f8f8f8"></i><div><code>ui.boxBackground</code><span>#f8f8f8</span></div></div>
+<div class="sw"><i style="background:#f5f5f5"></i><div><code>ui.hover</code><span>#f5f5f5</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><code>ui.overlayBackground</code><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#278458"></i><div><code>accent.primary</code><span>#278458</span></div></div>
+<div class="sw"><i style="background:#389e6e"></i><div><code>accent.primaryHover</code><span>#389e6e</span></div></div>
+<div class="sw"><i style="background:#216545"></i><div><code>accent.primaryActive</code><span>#216545</span></div></div>
+<div class="sw"><i style="background:#739a88"></i><div><code>accent.primaryDisabled</code><span>#739a88</span></div></div>
+<div class="sw"><i style="background:#f69438"></i><div><code>accent.alert</code><span>#f69438</span></div></div>
+<div class="sw"><i style="background:#e14d4d"></i><div><code>accent.danger</code><span>#e14d4d</span></div></div>
+<div class="sw"><i style="background:rgba(0, 0, 0, 0.15)"></i><div><code>shadow</code><span>rgba(0, 0, 0, 0.15)</span></div></div>
+  </div>
+  <h2>Dark colours</h2>
+  <div class="grid">
+<div class="sw"><i style="background:#f9f9f9"></i><div><code>text.primary</code><span>#f9f9f9</span></div></div>
+<div class="sw"><i style="background:#bebebe"></i><div><code>text.secondary</code><span>#bebebe</span></div></div>
+<div class="sw"><i style="background:#acacac"></i><div><code>text.discreet</code><span>#acacac</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><code>text.black</code><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#585858"></i><div><code>text.disabled</code><span>#585858</span></div></div>
+<div class="sw"><i style="background:#000000"></i><div><code>text.white</code><span>#000000</span></div></div>
+<div class="sw"><i style="background:#c0c0c0"></i><div><code>ui.base</code><span>#c0c0c0</span></div></div>
+<div class="sw"><i style="background:#7c7c7c"></i><div><code>ui.input</code><span>#7c7c7c</span></div></div>
+<div class="sw"><i style="background:#383838"></i><div><code>ui.outline</code><span>#383838</span></div></div>
+<div class="sw"><i style="background:#646464"></i><div><code>ui.baseLight</code><span>#646464</span></div></div>
+<div class="sw"><i style="background:#000000"></i><div><code>ui.white</code><span>#000000</span></div></div>
+<div class="sw"><i style="background:#f0f0f0"></i><div><code>ui.black</code><span>#f0f0f0</span></div></div>
+<div class="sw"><i style="background:#e2e2e2"></i><div><code>ui.secondary</code><span>#e2e2e2</span></div></div>
+<div class="sw"><i style="background:#131313"></i><div><code>ui.boxBackground</code><span>#131313</span></div></div>
+<div class="sw"><i style="background:#292929"></i><div><code>ui.hover</code><span>#292929</span></div></div>
+<div class="sw"><i style="background:#272727"></i><div><code>ui.overlayBackground</code><span>#272727</span></div></div>
+<div class="sw"><i style="background:#33bb7a"></i><div><code>accent.primary</code><span>#33bb7a</span></div></div>
+<div class="sw"><i style="background:#389e6e"></i><div><code>accent.primaryHover</code><span>#389e6e</span></div></div>
+<div class="sw"><i style="background:#216545"></i><div><code>accent.primaryActive</code><span>#216545</span></div></div>
+<div class="sw"><i style="background:#739a88"></i><div><code>accent.primaryDisabled</code><span>#739a88</span></div></div>
+<div class="sw"><i style="background:#f69438"></i><div><code>accent.alert</code><span>#f69438</span></div></div>
+<div class="sw"><i style="background:#e14d4d"></i><div><code>accent.danger</code><span>#e14d4d</span></div></div>
+<div class="sw"><i style="background:rgba(255, 255, 255, 0.07)"></i><div><code>shadow</code><span>rgba(255, 255, 255, 0.07)</span></div></div>
+  </div>
+  <h2>Type</h2>
+  <div class="ty" style="font:400 14px/20px Inter, sans-serif">body<small>14px / 20px / 400 / Inter</small></div>
+<div class="ty" style="font:500 40px/54px Libre Baskerville, Georgia, serif">hero<small>40px / 54px / 500 / Libre Baskerville</small></div>
+<div class="ty" style="font:400 24px/36px Libre Baskerville, Georgia, serif">display<small>24px / 36px / 400 / Libre Baskerville</small></div>
+<div class="ty" style="font:400 32px/41.6px Libre Baskerville, Georgia, serif">book-title<small>32px / 41.6px / 400 / Libre Baskerville</small></div>
+  <h2>Spacing</h2>
+  <div class="sp"><i style="width:4px"></i><code>1</code><span>4px</span></div><div class="sp"><i style="width:8px"></i><code>2</code><span>8px</span></div><div class="sp"><i style="width:12px"></i><code>3</code><span>12px</span></div><div class="sp"><i style="width:16px"></i><code>4</code><span>16px</span></div><div class="sp"><i style="width:20px"></i><code>5</code><span>20px</span></div><div class="sp"><i style="width:24px"></i><code>6</code><span>24px</span></div><div class="sp"><i style="width:28px"></i><code>7</code><span>28px</span></div><div class="sp"><i style="width:32px"></i><code>8</code><span>32px</span></div><div class="sp"><i style="width:36px"></i><code>9</code><span>36px</span></div><div class="sp"><i style="width:40px"></i><code>10</code><span>40px</span></div><div class="sp"><i style="width:44px"></i><code>11</code><span>44px</span></div><div class="sp"><i style="width:48px"></i><code>12</code><span>48px</span></div><div class="sp"><i style="width:52px"></i><code>13</code><span>52px</span></div><div class="sp"><i style="width:56px"></i><code>14</code><span>56px</span></div><div class="sp"><i style="width:60px"></i><code>15</code><span>60px</span></div><div class="sp"><i style="width:64px"></i><code>16</code><span>64px</span></div><div class="sp"><i style="width:68px"></i><code>17</code><span>68px</span></div><div class="sp"><i style="width:72px"></i><code>18</code><span>72px</span></div><div class="sp"><i style="width:76px"></i><code>19</code><span>76px</span></div><div class="sp"><i style="width:80px"></i><code>20</code><span>80px</span></div><div class="sp"><i style="width:84px"></i><code>21</code><span>84px</span></div><div class="sp"><i style="width:88px"></i><code>22</code><span>88px</span></div><div class="sp"><i style="width:92px"></i><code>23</code><span>92px</span></div><div class="sp"><i style="width:96px"></i><code>24</code><span>96px</span></div><div class="sp"><i style="width:100px"></i><code>25</code><span>100px</span></div><div class="sp"><i style="width:104px"></i><code>26</code><span>104px</span></div><div class="sp"><i style="width:108px"></i><code>27</code><span>108px</span></div><div class="sp"><i style="width:112px"></i><code>28</code><span>112px</span></div><div class="sp"><i style="width:116px"></i><code>29</code><span>116px</span></div><div class="sp"><i style="width:120px"></i><code>30</code><span>120px</span></div><div class="sp"><i style="width:124px"></i><code>31</code><span>124px</span></div><div class="sp"><i style="width:128px"></i><code>32</code><span>128px</span></div><div class="sp"><i style="width:132px"></i><code>33</code><span>132px</span></div><div class="sp"><i style="width:136px"></i><code>34</code><span>136px</span></div><div class="sp"><i style="width:140px"></i><code>35</code><span>140px</span></div><div class="sp"><i style="width:144px"></i><code>36</code><span>144px</span></div><div class="sp"><i style="width:148px"></i><code>37</code><span>148px</span></div><div class="sp"><i style="width:152px"></i><code>38</code><span>152px</span></div><div class="sp"><i style="width:156px"></i><code>39</code><span>156px</span></div><div class="sp"><i style="width:160px"></i><code>40</code><span>160px</span></div>
+  <h2>Radius</h2>
+  <div class="rd" style="border-radius:0px"><code>none</code><span>0px</span></div><div class="rd" style="border-radius:2px"><code>sm</code><span>2px</span></div><div class="rd" style="border-radius:5px"><code>md</code><span>5px</span></div>
+  <h2>Motion</h2>
+  <p class="note">The reduced-motion probe kept every measured transition. The product ignores prefers-reduced-motion on the public pages that were read.</p>
+  <div class="sp"><code>duration.100ms</code><span>100ms</span></div>
+<div class="sp"><code>duration.120ms</code><span>120ms</span></div>
+<div class="sp"><code>duration.150ms</code><span>150ms</span></div>
+<div class="sp"><code>duration.200ms</code><span>200ms</span></div>
+<div class="sp"><code>duration.250ms</code><span>250ms</span></div>
+<div class="sp"><code>duration.300ms</code><span>300ms</span></div>
+<div class="sp"><code>duration.350ms</code><span>350ms</span></div>
+<div class="sp"><code>duration.400ms</code><span>400ms</span></div>
+<div class="sp"><code>duration.500ms</code><span>500ms</span></div>
+<div class="sp"><code>duration.1000ms</code><span>1000ms</span></div>
+<div class="sp"><code>duration.1100ms</code><span>1100ms</span></div>
+<div class="sp"><code>duration.1800ms</code><span>1800ms</span></div>
+<div class="sp"><code>easing.bezier-0_54-1_5-0_38-1_11</code><span>[0.54, 1.5, 0.38, 1.11]</span></div>
+<div class="sp"><code>easing.ease</code><span>[0.25, 0.1, 0.25, 1]</span></div>
+<div class="sp"><code>easing.ease-in</code><span>[0.42, 0, 1, 1]</span></div>
+<div class="sp"><code>easing.ease-in-out</code><span>[0.42, 0, 0.58, 1]</span></div>
+<div class="sp"><code>easing.ease-out</code><span>[0, 0, 0.58, 1]</span></div>
+<div class="sp"><code>easing.linear</code><span>[0, 0, 1, 1]</span></div>
+<div class="sp"><code>transition.color-150ms-linear</code><span>duration:{motion.duration.150ms} delay:0ms timingFunction:{motion.easing.linear}</span></div>
+<div class="sp"><code>transition.all-150ms-ease</code><span>duration:{motion.duration.150ms} delay:0ms timingFunction:{motion.easing.ease}</span></div>
+<div class="sp"><code>transition.color-200ms-ease-in-out</code><span>duration:{motion.duration.200ms} delay:0ms timingFunction:{motion.easing.ease-in-out}</span></div>
+<div class="sp"><code>transition.all-150ms-linear</code><span>duration:{motion.duration.150ms} delay:0ms timingFunction:{motion.easing.linear}</span></div>
+<div class="sp"><code>transition.filter-300ms-ease</code><span>duration:{motion.duration.300ms} delay:0ms timingFunction:{motion.easing.ease}</span></div>
+<div class="sp"><code>transition.filter-200ms-ease</code><span>duration:{motion.duration.200ms} delay:0ms timingFunction:{motion.easing.ease}</span></div>
+<div class="sp"><code>transition.transform-200ms-ease</code><span>duration:{motion.duration.200ms} delay:0ms timingFunction:{motion.easing.ease}</span></div>
+<div class="sp"><code>transition.background-color-100ms-linear</code><span>duration:{motion.duration.100ms} delay:0ms timingFunction:{motion.easing.linear}</span></div>
+<div class="sp"><code>transition.color-100ms-ease</code><span>duration:{motion.duration.100ms} delay:0ms timingFunction:{motion.easing.ease}</span></div>
+<div class="sp"><code>transition.all-200ms-linear</code><span>duration:{motion.duration.200ms} delay:0ms timingFunction:{motion.easing.linear}</span></div>
+<div class="sp"><code>transition.color-150ms-ease</code><span>duration:{motion.duration.150ms} delay:0ms timingFunction:{motion.easing.ease}</span></div>
+<div class="sp"><code>transition.all-200ms-ease</code><span>duration:{motion.duration.200ms} delay:0ms timingFunction:{motion.easing.ease}</span></div>
+<div class="sp"><code>transition.opacity-200ms-linear</code><span>duration:{motion.duration.200ms} delay:0ms timingFunction:{motion.easing.linear}</span></div>
+<div class="sp"><code>transition.transform-300ms-ease</code><span>duration:{motion.duration.300ms} delay:0ms timingFunction:{motion.easing.ease}</span></div>
+<div class="sp"><code>transition.border-color-150ms-ease</code><span>duration:{motion.duration.150ms} delay:0ms timingFunction:{motion.easing.ease}</span></div>
+<div class="sp"><code>transition.fill-200ms-ease</code><span>duration:{motion.duration.200ms} delay:0ms timingFunction:{motion.easing.ease}</span></div>
+<div class="sp"><code>transition.all-400ms-ease</code><span>duration:{motion.duration.400ms} delay:0ms timingFunction:{motion.easing.ease}</span></div>
+<div class="sp"><code>transition.all-200ms-ease-in-out</code><span>duration:{motion.duration.200ms} delay:0ms timingFunction:{motion.easing.ease-in-out}</span></div>
+<div class="sp"><code>transition.background-color-150ms-linear</code><span>duration:{motion.duration.150ms} delay:0ms timingFunction:{motion.easing.linear}</span></div>
+<div class="sp"><code>transition.background-color-200ms-ease</code><span>duration:{motion.duration.200ms} delay:0ms timingFunction:{motion.easing.ease}</span></div>
+<div class="sp"><code>transition.filter-200ms-ease-in-out</code><span>duration:{motion.duration.200ms} delay:0ms timingFunction:{motion.easing.ease-in-out}</span></div>
+<div class="sp"><code>transition.all-150ms-ease-in-out</code><span>duration:{motion.duration.150ms} delay:0ms timingFunction:{motion.easing.ease-in-out}</span></div>
+<div class="sp"><code>transition.background-color-200ms-ease-out</code><span>duration:{motion.duration.200ms} delay:0ms timingFunction:{motion.easing.ease-out}</span></div>
+<div class="sp"><code>transition.border-color-200ms-ease</code><span>duration:{motion.duration.200ms} delay:0ms timingFunction:{motion.easing.ease}</span></div>
+<div class="sp"><code>transition.opacity-300ms-ease</code><span>duration:{motion.duration.300ms} delay:0ms timingFunction:{motion.easing.ease}</span></div>
+<div class="sp"><code>transition.width-200ms-ease</code><span>duration:{motion.duration.200ms} delay:0ms timingFunction:{motion.easing.ease}</span></div>
+<div class="sp"><code>transition.border-color-150ms-linear</code><span>duration:{motion.duration.150ms} delay:0ms timingFunction:{motion.easing.linear}</span></div>
+<div class="sp"><code>transition.background-color-120ms-ease</code><span>duration:{motion.duration.120ms} delay:0ms timingFunction:{motion.easing.ease}</span></div>
+<div class="sp"><code>transition.border-bottom-150ms-linear</code><span>duration:{motion.duration.150ms} delay:0ms timingFunction:{motion.easing.linear}</span></div>
+<div class="sp"><code>transition.transform-120ms-ease</code><span>duration:{motion.duration.120ms} delay:0ms timingFunction:{motion.easing.ease}</span></div>
+  <h2>Controls</h2>
+  <div class="controls">
+    <button class="btn green" type="button">Join</button>
+    <button class="btn ink" type="button">Want to read</button>
+    <input class="field" placeholder="Email address" readonly>
+    <a class="link" href="#theme">Forgot password?</a>
+  </div>
+</main>
+<script>
+  const root = document.documentElement;
+  const btn = document.getElementById("theme");
+  btn.addEventListener("click", () => {
+    const dark = root.getAttribute("data-theme") === "dark";
+    root.setAttribute("data-theme", dark ? "light" : "dark");
+    btn.textContent = dark ? "Dark" : "Light";
+  });
+</script>
+</body>
+</html>

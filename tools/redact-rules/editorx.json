@@ -1,0 +1,11 @@
+{
+ "_note": "Rules for systems/editorx. A fully public signed-out capture: no owner data on any surface. Every press was a local UI toggle (Product dropdown, FAQ expander, mobile menu); nothing was submitted and no account exists. All names, prices and copy in the screenshots are Wix's published public-page content. The OCR email net is kept with example.com allowed. tools/redact_images.py check could not run OCR at review time because tesseract is not installed on this machine - the text scan (catalog.py scan) passed clean.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@example\\.com$",
+   "@example\\.org$"
+  ]
+ },
+ "families": []
+}

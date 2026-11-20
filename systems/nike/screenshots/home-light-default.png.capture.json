@@ -1,0 +1,19 @@
+{
+  "capturedAt": "2026-11-18T16:59:59.161Z",
+  "name": "home-light-default",
+  "url": "https://www.nike.com/sg/",
+  "title": "Nike. Just Do It. Nike SG",
+  "vw": 1440,
+  "vh": 900,
+  "dpr": 1,
+  "vv": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1,
+    "offsetLeft": 0,
+    "offsetTop": 0
+  },
+  "colorScheme": "normal",
+  "reduced": false,
+  "note": "viewport screenshot"
+}

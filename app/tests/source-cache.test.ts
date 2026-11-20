@@ -8,6 +8,7 @@ import {
   listLibrary,
 } from "@/server/sources";
 import { validateReferences } from "@/server/research/references";
+import { listScreens } from "@/server/sources/screens";
 
 const originalRepo = process.env.DESIGN_SYSTEMS_REPO;
 const originalMedia = process.env.DESIGN_SYSTEMS_MEDIA;
@@ -129,4 +130,22 @@ test("a file hydrated in place shows once the cache ages out, with no stamp chan
   expect((await getReferenceSummary("systems:alpha"))?.image).toBe(
     "/media/systems/alpha/screenshots/cover.png",
   );
+});
+
+test("the capture list outlives 30 seconds and rescans when the catalog changes", async () => {
+  const root = await fixture(["alpha"]);
+  const now = Date.now();
+  const clock = vi.spyOn(Date, "now").mockReturnValue(now);
+  expect((await listScreens()).total).toBe(1);
+  const open = vi.spyOn(fs, "open");
+  clock.mockReturnValue(now + 60_000);
+  // A minute later the captures are still cached: no screenshot is opened.
+  expect((await listScreens()).total).toBe(1);
+  expect(open).not.toHaveBeenCalled();
+  await fs.mkdir(path.join(root, "systems/beta/screenshots"), {
+    recursive: true,
+  });
+  await fs.writeFile(path.join(root, "systems/beta/screenshots/home.png"), PNG);
+  await writeCatalog(root, ["alpha", "beta"]);
+  expect((await listScreens()).total).toBe(2);
 });

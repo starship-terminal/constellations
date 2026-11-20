@@ -1,0 +1,582 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. cron.com's public surface splits in two: the dark marketing home (literal CSS, measured computed values) and the light Next.js content pages whose declared var layer (raw/css-vars.json: the 14-step gray ramp, --chronos brand, --elevation-*, --material-*/--object-* roles) is var-referenced wherever it names a value.",
+ "core": {
+  "font": {
+   "family": {
+    "sans": {
+     "var": "--sans-serif-font",
+     "type": "fontFamily",
+     "source": "css-var --sans-serif-font resolved (raw/css-vars.json); every measured component computes Helvetica Neue",
+     "description": "Helvetica Neue, Helvetica, Arial, sans-serif — every surface."
+    }
+   },
+   "weight": {
+    "regular": {
+     "value": "400",
+     "type": "fontWeight",
+     "source": "computed fontWeight of post-body default (raw/components-computed.json)",
+     "description": "Measured 400 — body copy."
+    },
+    "medium": {
+     "value": "500",
+     "type": "fontWeight",
+     "source": "computed fontWeight of nav-link default (raw/components-computed.json)",
+     "description": "Measured 500 — nav, links, buttons."
+    },
+    "bold": {
+     "value": "700",
+     "type": "fontWeight",
+     "source": "computed fontWeight of hero-h1 default (raw/components-computed.json)",
+     "description": "Measured 700 — headings, the wordmark weight."
+    }
+   },
+   "size": {
+    "display": {
+     "value": "140px",
+     "type": "fontSize",
+     "source": "computed fontSize of hero-h1 default (raw/components-computed.json)",
+     "description": "The 140px home hero (-3px tracking, 90% leading)."
+    },
+    "m-display": {
+     "value": "80px",
+     "type": "fontSize",
+     "source": "computed fontSize of m-heading default (raw/components-computed.json)",
+     "description": "The 80px mobile hero."
+    },
+    "h1": {
+     "value": "40px",
+     "type": "fontSize",
+     "source": "computed fontSize of blog-h1 default (raw/components-computed.json)",
+     "description": "The 40px index heading (blog/changelog)."
+    },
+    "post-h1": {
+     "value": "32px",
+     "type": "fontSize",
+     "source": "computed fontSize of post-h1 default (raw/components-computed.json)",
+     "description": "The 32px article title."
+    },
+    "h2": {
+     "value": "24px",
+     "type": "fontSize",
+     "source": "computed fontSize of feature-h2 default (raw/components-computed.json)",
+     "description": "The 24px feature title."
+    },
+    "body": {
+     "value": "22px",
+     "type": "fontSize",
+     "source": "computed fontSize of hero-sub default (raw/components-computed.json)",
+     "description": "The 22px home body size."
+    },
+    "content": {
+     "value": "16px",
+     "type": "fontSize",
+     "source": "computed fontSize of post-body default (raw/components-computed.json)",
+     "description": "The 16px content-page body size."
+    },
+    "nav": {
+     "value": "22px",
+     "type": "fontSize",
+     "source": "computed fontSize of nav-link default (raw/components-computed.json)",
+     "description": "The 22px nav link size."
+    },
+    "footer": {
+     "value": "13px",
+     "type": "fontSize",
+     "source": "computed fontSize of footer-link default (raw/components-computed.json)",
+     "description": "The 13px footer size."
+    },
+    "display-lh": {
+     "value": "126px",
+     "type": "other",
+     "source": "computed lineHeight of hero-h1 default (raw/components-computed.json)",
+     "description": "The hero's 90% line-height."
+    },
+    "display-ls": {
+     "value": "-3px",
+     "type": "other",
+     "source": "computed letterSpacing of hero-h1 default (raw/components-computed.json)",
+     "description": "The hero's -3px tracking."
+    }
+   }
+  },
+  "color": {
+   "gray": {
+    "10": {
+     "var": "--gray10",
+     "type": "color",
+     "source": "css-var --gray10 resolved (raw/css-vars.json)",
+     "description": "The --gray10 neutral step."
+    },
+    "100": {
+     "var": "--gray100",
+     "type": "color",
+     "source": "css-var --gray100 resolved (raw/css-vars.json)",
+     "description": "The --gray100 neutral step."
+    },
+    "150": {
+     "var": "--gray150",
+     "type": "color",
+     "source": "css-var --gray150 resolved (raw/css-vars.json)",
+     "description": "The --gray150 neutral step."
+    },
+    "200": {
+     "var": "--gray200",
+     "type": "color",
+     "source": "css-var --gray200 resolved (raw/css-vars.json)",
+     "description": "The --gray200 neutral step."
+    },
+    "30": {
+     "var": "--gray30",
+     "type": "color",
+     "source": "css-var --gray30 resolved (raw/css-vars.json)",
+     "description": "The --gray30 neutral step."
+    },
+    "300": {
+     "var": "--gray300",
+     "type": "color",
+     "source": "css-var --gray300 resolved (raw/css-vars.json)",
+     "description": "The --gray300 neutral step."
+    },
+    "400": {
+     "var": "--gray400",
+     "type": "color",
+     "source": "css-var --gray400 resolved (raw/css-vars.json)",
+     "description": "The --gray400 neutral step."
+    },
+    "50": {
+     "var": "--gray50",
+     "type": "color",
+     "source": "css-var --gray50 resolved (raw/css-vars.json)",
+     "description": "The --gray50 neutral step."
+    },
+    "500": {
+     "var": "--gray500",
+     "type": "color",
+     "source": "css-var --gray500 resolved (raw/css-vars.json)",
+     "description": "The --gray500 neutral step."
+    },
+    "550": {
+     "var": "--gray550",
+     "type": "color",
+     "source": "css-var --gray550 resolved (raw/css-vars.json)",
+     "description": "The --gray550 neutral step."
+    },
+    "600": {
+     "var": "--gray600",
+     "type": "color",
+     "source": "css-var --gray600 resolved (raw/css-vars.json)",
+     "description": "The --gray600 neutral step."
+    },
+    "650": {
+     "var": "--gray650",
+     "type": "color",
+     "source": "css-var --gray650 resolved (raw/css-vars.json)",
+     "description": "The --gray650 neutral step."
+    },
+    "70": {
+     "var": "--gray70",
+     "type": "color",
+     "source": "css-var --gray70 resolved (raw/css-vars.json)",
+     "description": "The --gray70 neutral step."
+    },
+    "700": {
+     "var": "--gray700",
+     "type": "color",
+     "source": "css-var --gray700 resolved (raw/css-vars.json)",
+     "description": "The --gray700 neutral step."
+    },
+    "750": {
+     "var": "--gray750",
+     "type": "color",
+     "source": "css-var --gray750 resolved (raw/css-vars.json)",
+     "description": "The --gray750 neutral step."
+    },
+    "800": {
+     "var": "--gray800",
+     "type": "color",
+     "source": "css-var --gray800 resolved (raw/css-vars.json)",
+     "description": "The --gray800 neutral step."
+    },
+    "850": {
+     "var": "--gray850",
+     "type": "color",
+     "source": "css-var --gray850 resolved (raw/css-vars.json)",
+     "description": "The --gray850 neutral step."
+    },
+    "870": {
+     "var": "--gray870",
+     "type": "color",
+     "source": "css-var --gray870 resolved (raw/css-vars.json)",
+     "description": "The --gray870 neutral step."
+    },
+    "900": {
+     "var": "--gray900",
+     "type": "color",
+     "source": "css-var --gray900 resolved (raw/css-vars.json)",
+     "description": "The --gray900 neutral step."
+    }
+   },
+   "brand": {
+    "chronos": {
+     "var": "--chronos",
+     "type": "color",
+     "source": "css-var --chronos resolved (raw/css-vars.json)",
+     "description": "The #ff4700 brand orange — Sign up fill, every link on the content pages."
+    },
+    "chronos-gradient": {
+     "var": "--chronos-gradient",
+     "type": "other",
+     "source": "css-var --chronos-gradient resolved (raw/css-vars.json)",
+     "description": "The declared linear-gradient(#fa6c38, #f44e25) brand gradient."
+    },
+    "primary-100": {
+     "var": "--primary100",
+     "type": "color",
+     "source": "css-var --primary100 resolved (raw/css-vars.json)",
+     "description": "The #ffcdb3 light orange step."
+    },
+    "primary-700": {
+     "var": "--primary700",
+     "type": "color",
+     "source": "css-var --primary700 resolved (raw/css-vars.json)",
+     "description": "The #ca3800 dark orange step."
+    }
+   },
+   "named": {
+    "eclipse": {
+     "var": "--eclipse",
+     "type": "color",
+     "source": "css-var --eclipse resolved (raw/css-vars.json)",
+     "description": "#000000 — the named black."
+    },
+    "snow": {
+     "var": "--snow",
+     "type": "color",
+     "source": "css-var --snow resolved (raw/css-vars.json)",
+     "description": "#ffffff — the named white."
+    },
+    "dieter": {
+     "var": "--dieter",
+     "type": "color",
+     "source": "css-var --dieter resolved (raw/css-vars.json)",
+     "description": "#eeeeee — the named light fill."
+    },
+    "urushi": {
+     "var": "--urushi",
+     "type": "color",
+     "source": "css-var --urushi resolved (raw/css-vars.json)",
+     "description": "#282828 — the named dark fill."
+    }
+   },
+   "semantic": {
+    "red-100": {
+     "var": "--semantic-red100",
+     "type": "color",
+     "source": "css-var --semantic-red100 resolved (raw/css-vars.json)",
+     "description": "Declared #f8c4c7 light red."
+    },
+    "red-500": {
+     "var": "--semantic-red500",
+     "type": "color",
+     "source": "css-var --semantic-red500 resolved (raw/css-vars.json)",
+     "description": "Declared #ed4556 red."
+    }
+   }
+  },
+  "radius": {
+   "pill": {
+    "value": "9999px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of signup-btn default (raw/components-computed.json)",
+    "description": "The 9999px pill (Sign up, integration chips)."
+   },
+   "banner": {
+    "value": "4px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of banner default (raw/components-computed.json)",
+    "description": "The 4px banner radius."
+   }
+  },
+  "shadow": {
+   "low": {
+    "value": "rgba(0, 0, 0, 0.1) 0px 1px 1px 0px, rgba(0, 0, 0, 0.08) 0px 2px 4px 0px, rgba(0, 0, 0, 0.06) 0px 4px 12px 0px",
+    "type": "other",
+    "source": "css-var --elevation-low resolved (raw/css-vars.json)",
+    "description": "The declared low elevation."
+   },
+   "high": {
+    "value": "rgba(0, 0, 0, 0.06) 0px 2px 4px 0px, rgba(0, 0, 0, 0.06) 0px 4px 8px 0px, rgba(0, 0, 0, 0.08) 0px 8px 16px 0px, rgba(0, 0, 0, 0.1) 0px 16px 32px 0px, rgba(0, 0, 0, 0.12) 0px 32px 64px 0px",
+    "type": "other",
+    "source": "css-var --elevation-high resolved (raw/css-vars.json)",
+    "description": "The declared high elevation."
+   },
+   "glow": {
+    "value": "0px 0px 100px rgba(255, 71, 0, 0.2)",
+    "type": "other",
+    "source": "css-var --glow declared on .primary-link-button.glow (raw/css-vars.json)",
+    "description": "The Sign up pill's orange glow — 0 0 100px 20% at rest, 0 0 25px 40% on hover."
+   },
+   "glow-hover": {
+    "value": "0px 0px 25px 0px rgba(255, 71, 0, 0.4)",
+    "type": "other",
+    "source": "css-var --glow-hover declared on .primary-link-button.glow (raw/css-vars.json)",
+    "description": "The Sign up pill's orange glow — 0 0 100px 20% at rest, 0 0 25px 40% on hover."
+   },
+   "banner": {
+    "value": "rgba(255, 71, 0, 0.5) 0px 0px 0px 0.5px inset, rgba(255, 72, 0, 0.2) 0px 0px 28px 0px",
+    "type": "other",
+    "source": "computed boxShadow of banner default (raw/components-computed.json)",
+    "description": "The rebrand banner's inset 0.5px orange ring + 28px 20% glow."
+   }
+  },
+  "spacing": {
+   "header-h": {
+    "value": 120,
+    "type": "dimension",
+    "source": "computed rect height of site-header default (raw/components-computed.json)",
+    "description": "The 120px desktop header."
+   },
+   "content-max": {
+    "value": "1000px",
+    "type": "dimension",
+    "source": "Reconstruction: entered by hand at capture time; raw/css-vars.json holds no .content max-width rule",
+    "description": "The .content max-width (1000px; 800px under 1000px viewport)."
+   },
+   "entry-w": {
+    "value": 676,
+    "type": "dimension",
+    "source": "computed rect width of post-entry default (raw/components-computed.json)",
+    "description": "The 676px article column width."
+   },
+   "footer-h": {
+    "value": 180,
+    "type": "dimension",
+    "source": "computed rect height of footer default (raw/components-computed.json)",
+    "description": "The 180px footer."
+   }
+  },
+  "motion": {
+   "duration": {
+    "var": "--animation-duration-default",
+    "type": "other",
+    "source": "css-var --animation-duration-default resolved (raw/css-vars.json)",
+    "description": "The declared 0.175s default duration (Sign up glow, banner shadow)."
+   },
+   "_": {}
+  },
+  "opacity": {
+   "disabled": {
+    "var": "--disabled-opacity",
+    "type": "other",
+    "source": "css-var --disabled-opacity resolved (raw/css-vars.json)",
+    "description": "The declared 0.33 disabled opacity."
+   }
+  },
+  "layout": {
+   "z-popover": {
+    "var": "--z-index-popover",
+    "type": "other",
+    "source": "css-var --z-index-popover resolved (raw/css-vars.json)",
+    "description": "The declared popover z-index (10)."
+   }
+  }
+ },
+ "light": {
+  "color": {
+   "background": {
+    "page": {
+     "var": "--snow",
+     "type": "color",
+     "source": "css-var --snow resolved (raw/css-vars.json)",
+     "description": "The white content-page fill."
+    },
+    "object-highlight": {
+     "var": "--object-highlight-bg",
+     "type": "color",
+     "source": "css-var --object-highlight-bg resolved (raw/css-vars.json)",
+     "description": "The #ededed highlighted object fill."
+    },
+    "material": {
+     "var": "--material-default",
+     "type": "color",
+     "source": "css-var --material-default resolved (raw/css-vars.json)",
+     "description": "The #fff material surface."
+    }
+   },
+   "text": {
+    "text": {
+     "var": "--text-default",
+     "type": "color",
+     "source": "css-var --text-default resolved (raw/css-vars.json)",
+     "description": "The #1a1a1a body text."
+    },
+    "meta": {
+     "var": "--ratio",
+     "type": "color",
+     "source": "css-var --ratio resolved (raw/css-vars.json)",
+     "description": "The #616161 meta/date text."
+    },
+    "object": {
+     "var": "--object-default",
+     "type": "color",
+     "source": "css-var --object-default resolved (raw/css-vars.json)",
+     "description": "The #999 object/icon tone."
+    }
+   },
+   "action": {
+    "accent": {
+     "var": "--chronos",
+     "type": "color",
+     "source": "css-var --chronos resolved (raw/css-vars.json)",
+     "description": "The #ff4700 link/action orange."
+    }
+   },
+   "border": {
+    "border": {
+     "var": "--object-border",
+     "type": "color",
+     "source": "css-var --object-border resolved (raw/css-vars.json)",
+     "description": "The #e5e5e5 object border."
+    }
+   }
+  }
+ },
+ "dark": {
+  "color": {
+   "background": {
+    "page": {
+     "value": "#161412",
+     "type": "color",
+     "source": "computed backgroundColor of m-menu-open default (raw/components-computed.json)",
+     "description": "The #161412 dark page fill (also the banner's)."
+    },
+    "footer": {
+     "value": "#0f0d0a",
+     "type": "color",
+     "source": "computed backgroundColor of footer default (raw/components-computed.json)",
+     "description": "The #0f0d0a footer band."
+    }
+   },
+   "text": {
+    "text": {
+     "value": "#cccccc",
+     "type": "color",
+     "source": "computed color of site-header default (raw/components-computed.json)",
+     "description": "The #ccc body text on dark."
+    },
+    "strong": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed color of nav-link default (raw/components-computed.json)",
+     "description": "The #fff strong text/links on dark."
+    },
+    "on-accent": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed color of signup-btn default (raw/components-computed.json)",
+     "description": "White text on the orange fill."
+    }
+   },
+   "action": {
+    "accent": {
+     "value": "#ff4700",
+     "type": "color",
+     "source": "computed backgroundColor of signup-btn default (raw/components-computed.json)",
+     "description": "The #ff4700 Sign up / accent fill on dark."
+    }
+   }
+  }
+ },
+ "component": {
+  "header-height": {
+   "value": 120,
+   "type": "dimension",
+   "source": "computed h of site-header default (raw/components-computed.json)",
+   "description": "The 120px desktop header."
+  },
+  "logotype-height": {
+   "value": 40,
+   "type": "dimension",
+   "source": "computed h of logotype default (raw/components-computed.json)",
+   "description": "The 40px logotype."
+  },
+  "signup-height": {
+   "value": 46,
+   "type": "dimension",
+   "source": "computed h of signup-btn default (raw/components-computed.json)",
+   "description": "The 46px Sign up pill."
+  },
+  "banner-height": {
+   "value": 45,
+   "type": "dimension",
+   "source": "computed h of banner default (raw/components-computed.json)",
+   "description": "The 44-45px rebrand banner."
+  },
+  "hero-size": {
+   "value": "140px",
+   "type": "fontSize",
+   "source": "computed fontSize of hero-h1 default (raw/components-computed.json)",
+   "description": "The 140px hero."
+  },
+  "entry-width": {
+   "value": 676,
+   "type": "dimension",
+   "source": "computed w of post-entry default (raw/components-computed.json)",
+   "description": "The 676px article column."
+  },
+  "footer-height": {
+   "value": 180,
+   "type": "dimension",
+   "source": "computed h of footer default (raw/components-computed.json)",
+   "description": "The 180px footer."
+  },
+  "m-header-height": {
+   "value": 96,
+   "type": "dimension",
+   "source": "computed h of m-header default (raw/components-computed.json)",
+   "description": "The ~96px mobile header."
+  },
+  "m-menu-height": {
+   "value": 768,
+   "type": "dimension",
+   "source": "computed h of m-menu-open default (raw/components-computed.json)",
+   "description": "The 736px opened nav overlay."
+  },
+  "m-signup-width": {
+   "value": 342,
+   "type": "dimension",
+   "source": "computed w of m-signup-btn default (raw/components-computed.json)",
+   "description": "The ~342px full-width mobile Sign up."
+  },
+  "nav-link-size": {
+   "value": "22px",
+   "type": "fontSize",
+   "source": "computed fontSize of nav-link default (raw/components-computed.json)",
+   "description": "Nav link 22px."
+  },
+  "button": {
+   "signup-glow": {
+    "type": "other",
+    "value": {
+     "default": {
+      "boxShadow": "rgba(255, 71, 0, 0.2) 0px 0px 100px 0px"
+     },
+     "hover": {
+      "boxShadow": "rgba(255, 71, 0, 0.4) 0px 0px 25px 0px"
+     },
+     "pressed": {
+      "boxShadow": "rgba(255, 71, 0, 0.4) 0px 0px 25px 0px"
+     }
+    },
+    "source": "computed boxShadow of signup-btn default/hover/pressed (raw/components-computed.json)",
+    "description": "The Sign up pill's glow track: 0 0 100px 20% orange at rest, tightening to 0 0 25px 40% on hover."
+   }
+  },
+  "meta-color": {
+   "value": "{color.text.meta}",
+   "type": "color",
+   "source": "alias of color.text.meta (the declared --ratio #616161)",
+   "description": "The #616161 meta/date tone — the entries' dates render it; the post-meta element itself computed #000."
+  }
+ }
+}

@@ -1,0 +1,2478 @@
+{
+ "readAt": "2026-11-14",
+ "source": "the stylesheet bodies read during live /, /pricing and /video-editing loads on descript.com (the same-origin stylesheet responses plus inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets at 1440 x 900 — the page paints a single light theme",
+ "sheets": [
+  "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css (117800 bytes)",
+  "https://www.descript.com/_next/static/chunks/25pj_x78ppfxw.css (1772 bytes)",
+  "https://www.descript.com/_next/static/chunks/1-8f7gq9ry3my.css (6638 bytes)",
+  "https://accounts.google.com/gsi/style (696 bytes)",
+  "https://tags.srv.stackadapt.com/sa.css (91 bytes)",
+  "inline-0 (9538 bytes)",
+  "inline-1 (1376 bytes)",
+  "inline-2 (1376 bytes)",
+  "inline-3 (1376 bytes)",
+  "inline-4 (1376 bytes)",
+  "inline-5 (1376 bytes)",
+  "inline-6 (2392 bytes)",
+  "inline-pricing-0 (9538 bytes)",
+  "inline-pricing-1 (2392 bytes)",
+  "inline-feature-0 (9538 bytes)",
+  "inline-feature-1 (2392 bytes)"
+ ],
+ "counts": {
+  "rules": 170,
+  "fonts": 10,
+  "names": {
+   "theme": 92,
+   "app": 1,
+   "skins": 0,
+   "vendor": 2,
+   "utility": 3,
+   "tailwind": 59
+  },
+  "bySelector": {
+   "[theme] :root": 89,
+   "[tailwind] ::before, ::after": 1,
+   "[tailwind] *, ::before, ::after, ::backdrop": 51,
+   "[tailwind] .-translate-x-1\\/2, .-translate-x-\\[50\\%\\]": 1,
+   "[tailwind] .-translate-y-1\\/2": 1,
+   "[tailwind] .-translate-y-6": 1,
+   "[tailwind] .-translate-y-\\[10\\%\\]": 1,
+   "[tailwind] .-translate-y-\\[50\\%\\]": 1,
+   "[tailwind] .-translate-y-\\[54px\\]": 1,
+   "[tailwind] .translate-x-0": 1,
+   "[tailwind] .translate-x-1\\/2": 1,
+   "[tailwind] .translate-x-\\[-50\\%\\]": 1,
+   "[tailwind] .translate-x-\\[100px\\]": 1,
+   "[tailwind] .translate-x-\\[2px\\]": 1,
+   "[tailwind] .translate-x-\\[90px\\]": 1,
+   "[tailwind] .translate-y-0": 1,
+   "[tailwind] .translate-y-\\[-34px\\]": 1,
+   "[tailwind] .translate-y-\\[-44px\\]": 1,
+   "[tailwind] .translate-y-\\[-50\\%\\]": 1,
+   "[tailwind] .translate-y-\\[-64px\\]": 1,
+   "[tailwind] .translate-y-\\[-66px\\]": 1,
+   "[tailwind] .translate-y-\\[0\\]": 1,
+   "[tailwind] .translate-y-\\[1px\\]": 1,
+   "[tailwind] .translate-y-\\[40px\\]": 1,
+   "[tailwind] .rotate-0": 1,
+   "[tailwind] .rotate-180": 1,
+   "[tailwind] .rotate-90": 1,
+   "[tailwind] .rotate-\\[-2deg\\]": 1,
+   "[tailwind] .rotate-\\[-3deg\\]": 1,
+   "[tailwind] .rotate-\\[180deg\\]": 1,
+   "[tailwind] .rotate-\\[4deg\\]": 1,
+   "[tailwind] .scale-0": 2,
+   "[tailwind] .scale-100": 2,
+   "[tailwind] .scale-\\[0\\.75\\]": 2,
+   "[tailwind] .scale-\\[0\\.7\\]": 2,
+   "[tailwind] .scale-\\[0\\]": 2,
+   "[tailwind] .scale-\\[1\\.2\\]": 2,
+   "[tailwind] .scale-\\[1\\.4\\]": 2,
+   "[tailwind] .scale-\\[1\\]": 2,
+   "[tailwind] .scale-x-0": 1,
+   "[tailwind] .snap-mandatory": 1,
+   "[tailwind] .-space-x-\\[2\\.88px\\] > :not([hidden]) ~ :not([hidden])": 1,
+   "[tailwind] .space-y-1 > :not([hidden]) ~ :not([hidden])": 1,
+   "[tailwind] .space-y-10 > :not([hidden]) ~ :not([hidden])": 1,
+   "[tailwind] .space-y-2 > :not([hidden]) ~ :not([hidden])": 1,
+   "[tailwind] .space-y-3 > :not([hidden]) ~ :not([hidden])": 1,
+   "[tailwind] .space-y-4 > :not([hidden]) ~ :not([hidden])": 1,
+   "[tailwind] .space-y-8 > :not([hidden]) ~ :not([hidden])": 1,
+   "[tailwind] .divide-y > :not([hidden]) ~ :not([hidden])": 1,
+   "[tailwind] .border-\\[\\#1A1A1A\\]": 1,
+   "[tailwind] .border-\\[\\#3E29FA\\]": 1,
+   "[tailwind] .border-\\[\\#666666\\]": 1,
+   "[tailwind] .border-\\[\\#907580\\]": 1,
+   "[tailwind] .border-\\[\\#E6E6E6\\]": 1,
+   "[tailwind] .border-\\[\\#F2F2F2\\]": 1,
+   "[tailwind] .border-\\[\\#faf8f7\\]": 1,
+   "[tailwind] .border-black": 1,
+   "[tailwind] .border-white": 1,
+   "[tailwind] .border-opacity-10": 1,
+   "[tailwind] .bg-\\[\\#0045E5\\]": 1,
+   "[tailwind] .bg-\\[\\#111111\\]": 1,
+   "[tailwind] .bg-\\[\\#1A1A1A\\], .bg-\\[\\#1a1a1a\\]": 1,
+   "[tailwind] .bg-\\[\\#343434\\]": 1,
+   "[tailwind] .bg-\\[\\#3e29fa\\]": 1,
+   "[tailwind] .bg-\\[\\#443BF5\\]": 1,
+   "[tailwind] .bg-\\[\\#5059FE\\]": 1,
+   "[tailwind] .bg-\\[\\#E6E6E6\\]": 1,
+   "[tailwind] .bg-\\[\\#F2F2F2\\]": 1,
+   "[tailwind] .bg-\\[\\#FAF8F7\\]": 1,
+   "[tailwind] .bg-\\[\\#FCFBFA\\]": 1,
+   "[tailwind] .bg-\\[\\#FFFAFC\\]": 1,
+   "[tailwind] .bg-\\[\\#faf8f7\\]": 1,
+   "[tailwind] .bg-black": 1,
+   "[tailwind] .bg-gray-100": 1,
+   "[tailwind] .bg-gray-200": 1,
+   "[tailwind] .bg-white": 1,
+   "[tailwind] .bg-zinc-100": 1,
+   "[tailwind] .text-\\[\\#0062ff\\]": 1,
+   "[tailwind] .text-\\[\\#1A1A1A\\], .text-\\[\\#1a1a1a\\]": 1,
+   "[tailwind] .text-\\[\\#343434\\]": 1,
+   "[tailwind] .text-\\[\\#4D4D4D\\], .text-\\[\\#4d4d4d\\]": 1,
+   "[tailwind] .text-\\[\\#545454\\]": 1,
+   "[tailwind] .text-\\[\\#666\\]": 1,
+   "[tailwind] .text-\\[\\#858585\\]": 1,
+   "[tailwind] .text-\\[\\#999999\\], .text-\\[\\#999\\]": 1,
+   "[tailwind] .text-\\[\\#B3B3B3\\]": 1,
+   "[tailwind] .text-\\[\\#C4B5BB\\]": 1,
+   "[tailwind] .text-\\[\\#CCC\\], .text-\\[\\#ccc\\]": 1,
+   "[tailwind] .text-\\[\\#d2c7cb\\]": 1,
+   "[tailwind] .text-black": 1,
+   "[tailwind] .text-blue-500": 1,
+   "[tailwind] .text-gray-500": 1,
+   "[tailwind] .text-gray-700": 1,
+   "[tailwind] .text-red-500": 1,
+   "[tailwind] .text-white": 1,
+   "[tailwind] .text-zinc-500": 1,
+   "[tailwind] .placeholder-\\[\\#4d4d4d\\]::placeholder": 1,
+   "[tailwind] .shadow": 2,
+   "[tailwind] .shadow-\\[0_2px_4px_\\#00000029\\]": 2,
+   "[tailwind] .shadow-\\[0_2px_4px_0_rgba\\(0\\,0\\,0\\,0\\.16\\)\\]": 2,
+   "[tailwind] .shadow-\\[0_2px_4px_rgba\\(0\\,0\\,0\\,0\\.16\\)\\]": 2,
+   "[tailwind] .shadow-\\[0_8px_24px_rgba\\(0\\,0\\,0\\,0\\.35\\)\\]": 2,
+   "[tailwind] .shadow-\\[0px_3px_3px_rgba\\(0\\,0\\,0\\,0\\.16\\)\\]": 2,
+   "[tailwind] .shadow-elevation1": 2,
+   "[tailwind] .shadow-elevation5": 2,
+   "[tailwind] .shadow-md": 2,
+   "[tailwind] .shadow-xl": 2,
+   "[tailwind] .ring": 2,
+   "[tailwind] .ring-inset": 1,
+   "[tailwind] .blur": 1,
+   "[tailwind] .blur-\\[12px\\]": 1,
+   "[tailwind] .blur-\\[5px\\]": 1,
+   "[tailwind] .brightness-150": 1,
+   "[tailwind] .brightness-75": 1,
+   "[tailwind] .brightness-\\[10\\]": 1,
+   "[tailwind] .contrast-\\[0\\.25\\]": 1,
+   "[tailwind] .grayscale": 1,
+   "[tailwind] .grayscale-\\[0\\]": 1,
+   "[tailwind] .grayscale-\\[1\\]": 1,
+   "[tailwind] .invert": 1,
+   "[utility] .\\[--arrow-inset\\:calc\\(\\(100\\%_-_var\\(--card-w\\)\\)_\\/_2_-_var\\(--card-gap\\)_\\/_2\\)\\]": 1,
+   "[utility] .\\[--card-gap\\:16px\\]": 1,
+   "[utility] .\\[--card-w\\:86vw\\]": 1,
+   "[vendor] :where(html:has(#sanity-studio))": 2,
+   "[vendor] @media (prefers-color-scheme: dark) :where(html:has(#sanity-studio))": 2,
+   "[tailwind] .before\\:content-\\[\\'\\'\\]::before": 1,
+   "[tailwind] .before\\:content-\\[\\'•\\'\\]::before": 1,
+   "[tailwind] .before\\:content-\\[counter\\(blog-ol\\)\\'\\.\\'\\]::before": 1,
+   "[tailwind] .after\\:content-\\[\\'\\'\\]::after": 1,
+   "[tailwind] .hover\\:bg-\\[\\#3226c9\\]:hover": 1,
+   "[tailwind] .hover\\:bg-\\[\\#3C3C3C\\]:hover": 1,
+   "[tailwind] .hover\\:bg-\\[\\#EBEBEB\\]:hover": 1,
+   "[tailwind] .hover\\:bg-\\[\\#EDECEB\\]:hover": 1,
+   "[tailwind] .hover\\:bg-\\[\\#F2F2F2\\]:hover": 1,
+   "[tailwind] .hover\\:bg-\\[\\#fff7fa\\]:hover": 1,
+   "[tailwind] .hover\\:bg-black:hover": 1,
+   "[tailwind] .hover\\:bg-gray-100:hover": 1,
+   "[tailwind] .hover\\:bg-white:hover": 1,
+   "[tailwind] .hover\\:shadow-elevation1:hover": 2,
+   "[tailwind] .hover\\:drop-shadow-2xl:hover": 1,
+   "[tailwind] .hover\\:grayscale-\\[0\\]:hover": 1,
+   "[tailwind] .focus-visible\\:ring-1:focus-visible": 2,
+   "[tailwind] .focus-visible\\:ring-2:focus-visible": 2,
+   "[tailwind] .focus-visible\\:ring-inset:focus-visible": 1,
+   "[tailwind] .focus-visible\\:ring-\\[var\\(--Neutral-0\\)\\]:focus-visible": 1,
+   "[tailwind] .focus-visible\\:ring-\\[var\\(--Red-450\\)\\]:focus-visible": 1,
+   "[tailwind] .focus-visible\\:ring-offset-2:focus-visible": 1,
+   "[tailwind] .group:hover .group-hover\\:scale-\\[1\\.02\\]": 2,
+   "[tailwind] .group:hover .group-hover\\:scale-x-100": 1,
+   "[tailwind] @media (min-width: 640px) .sm\\:translate-y-\\[-42px\\]": 1,
+   "[tailwind] @media (min-width: 640px) .sm\\:text-\\[\\#1A1A1A\\]": 1,
+   "[tailwind] @media (min-width: 640px) .sm\\:text-white": 1,
+   "[utility] @media (min-width: 640px) .sm\\:\\[--card-w\\:640px\\]": 1,
+   "[tailwind] @media (min-width: 768px) .md\\:scale-\\[1\\.4\\]": 2,
+   "[utility] @media (min-width: 768px) .md\\:\\[--card-gap\\:40px\\]": 1,
+   "[tailwind] @media (min-width: 1024px) .lg\\:translate-y-\\[-52px\\]": 1,
+   "[utility] @media (min-width: 1024px) .lg\\:\\[--card-gap\\:144px\\]": 1,
+   "[utility] @media (min-width: 1024px) .lg\\:\\[--card-w\\:min\\(1112px\\,74vw\\)\\]": 1,
+   "[tailwind] @media (min-width: 1200px) .min-\\[1200px\\]\\:-translate-x-\\[50\\%\\]": 1,
+   "[tailwind] @media (min-width: 1200px) .min-\\[1200px\\]\\:bg-\\[\\#f7f5f2\\]": 1,
+   "[tailwind] @media (min-width: 1200px) .min-\\[1200px\\]\\:shadow-nav": 2,
+   "[tailwind] @media (min-width: 1200px) .min-\\[1200px\\]\\:hover\\:bg-\\[\\#fff7fa\\]:hover": 1,
+   "[tailwind] @media (min-width: 1280px) .xl\\:-translate-x-\\[calc\\(\\(100\\%\\+24px\\)\\/3\\)\\]": 1,
+   "[tailwind] @media (min-width: 1440px) .min-\\[1440px\\]\\:translate-x-\\[-50\\%\\]": 1,
+   "[tailwind] .\\[\\&\\:not\\(\\:placeholder-shown\\)\\]\\:bg-white:not(:placeholder-shown)": 1,
+   "[tailwind] .\\[\\&_a\\]\\:text-\\[rgb\\(0\\,98\\,255\\)\\] a": 1,
+   "[theme] .gamuthdisplay_8c3f2637-module__M_h3Ua__variable": 1,
+   "[theme] .booton_590d21f9-module__JH_N9a__variable": 1,
+   "[theme] .brett_c7495493-module__Ejtauq__variable": 1,
+   "[app] :root": 1
+  }
+ },
+ "errors": [],
+ "theme": [
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--Red-0": "#fff8f4",
+    "--Red-50": "#ffe8db",
+    "--Red-100": "#ffd6c5",
+    "--Red-200": "#ffb297",
+    "--Red-300": "#ff8969",
+    "--Red-400": "#ff5340",
+    "--Red-450": "#f73b3b",
+    "--Red-500": "#e62324",
+    "--Red-600": "#b81b1e",
+    "--Red-700": "#8f0c10",
+    "--Red-750": "#7a080b",
+    "--Red-800": "#660607",
+    "--Red-900": "#400303",
+    "--Red-950": "#180101",
+    "--Core-White": "#fffafc",
+    "--Core-Canvas-White": "#fff7f2",
+    "--Core-Canvas-Beige": "#faf8f7",
+    "--Core-Black": "#000",
+    "--Core-Screen-Black": "#27181e",
+    "--Maroon-0": "#fff7fd",
+    "--Maroon-50": "#ffe5f7",
+    "--Maroon-100": "#f4d7ea",
+    "--Maroon-200": "#e5b6d5",
+    "--Maroon-300": "#d597bf",
+    "--Maroon-400": "#c576a7",
+    "--Maroon-450": "#b96a96",
+    "--Maroon-500": "#ab5c86",
+    "--Maroon-600": "#90436a",
+    "--Maroon-700": "#772a4d",
+    "--Maroon-750": "#651a39",
+    "--Maroon-800": "#5b142e",
+    "--Maroon-900": "#390a1a",
+    "--Maroon-950": "#190308",
+    "--Lilac-0": "#f9f9ff",
+    "--Lilac-50": "#ebebff",
+    "--Lilac-100": "#dcdcff",
+    "--Lilac-200": "#cdcdfe",
+    "--Lilac-300": "#a3a3ee",
+    "--Lilac-400": "#8787e0",
+    "--Lilac-450": "#7a79d6",
+    "--Lilac-500": "#6b6bcf",
+    "--Lilac-600": "#5050be",
+    "--Lilac-700": "#3434ab",
+    "--Lilac-750": "#2a2a96",
+    "--Lilac-800": "#1c1c8a",
+    "--Lilac-900": "#0c0b5f",
+    "--Lilac-950": "#030331",
+    "--Neutral-0": "#fff7fa",
+    "--Neutral-50": "#f1eaed",
+    "--Neutral-100": "#e4dde0",
+    "--Neutral-200": "#d1c7cb",
+    "--Neutral-300": "#b8a5ad",
+    "--Neutral-400": "#a28993",
+    "--Neutral-450": "#987c87",
+    "--Neutral-500": "#8b6f7a",
+    "--Neutral-600": "#715661",
+    "--Neutral-700": "#583f4a",
+    "--Neutral-750": "#4c343e",
+    "--Neutral-800": "#3f2a32",
+    "--Neutral-900": "#26171d",
+    "--Neutral-950": "#110a0d",
+    "--Green-0": "#f5fff7",
+    "--Green-50": "#daf1da",
+    "--Green-100": "#bbe3be",
+    "--Green-150": "#9ed5a8",
+    "--Green-200": "#84c696",
+    "--Green-300": "#5baa7b",
+    "--Green-400": "#3d8e66",
+    "--Green-500": "#277154",
+    "--Green-600": "#185542",
+    "--Green-700": "#0e392e",
+    "--Green-800": "#061c18",
+    "--Green-900": "#000",
+    "--Gray-100": "#f2f2f2",
+    "--Gray-200": "#e6e6e6",
+    "--Gray-300": "#ccc",
+    "--Gray-400": "#999",
+    "--Gray-600": "#666",
+    "--Gray-700": "#4d4d4d",
+    "--Gray-800": "#343434",
+    "--Gray-900": "#1a1a1a",
+    "--Tools-Glow-audio": "#ffd4bf",
+    "--Tools-Glow-write": "#bfd0f9",
+    "--Tools-Glow-ai": "#ebd6ff",
+    "--Tools-Glow-collaborate": "#ffe5bf",
+    "--Tools-Glow-video": "#d9f3ff",
+    "--Tools-Glow-transcribe": "#c7e9c7",
+    "--Tools-Glow-record": "#ffbfbf",
+    "--Tools-Glow-convert": "#ffdbe6"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/25pj_x78ppfxw.css",
+   "selector": ".gamuthdisplay_8c3f2637-module__M_h3Ua__variable",
+   "context": [],
+   "properties": {
+    "--font-gamuth-display": "\"gamuthDisplay\", \"gamuthDisplay Fallback\", Georgia, serif"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/25pj_x78ppfxw.css",
+   "selector": ".booton_590d21f9-module__JH_N9a__variable",
+   "context": [],
+   "properties": {
+    "--font-booton": "\"booton\", \"booton Fallback\", system-ui, Roboto, Arial, sans-serif"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/25pj_x78ppfxw.css",
+   "selector": ".brett_c7495493-module__Ejtauq__variable",
+   "context": [],
+   "properties": {
+    "--font-brett": "\"brett\", \"brett Fallback\", system-ui, Roboto, Arial, sans-serif"
+   },
+   "bin": "theme"
+  }
+ ],
+ "app": [
+  {
+   "file": "https://tags.srv.stackadapt.com/sa.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--sa-uid": "'CiQwMWExZDZjNy1mNmQxLTczNmMtYmI0MS0yYmUyOTNjYWM1YTMQAxoEQVBBQyAR'"
+   },
+   "bin": "app"
+  }
+ ],
+ "skins": [],
+ "vendor": [
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ":where(html:has(#sanity-studio))",
+   "context": [],
+   "properties": {
+    "--lightningcss-light": "initial",
+    "--lightningcss-dark": ""
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ":where(html:has(#sanity-studio))",
+   "context": [
+    "@media (prefers-color-scheme: dark)"
+   ],
+   "properties": {
+    "--lightningcss-light": "",
+    "--lightningcss-dark": "initial"
+   },
+   "bin": "vendor"
+  }
+ ],
+ "utility": [
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".\\[--arrow-inset\\:calc\\(\\(100\\%_-_var\\(--card-w\\)\\)_\\/_2_-_var\\(--card-gap\\)_\\/_2\\)\\]",
+   "context": [],
+   "properties": {
+    "--arrow-inset": "calc((100% - var(--card-w)) / 2 - var(--card-gap) / 2)"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".\\[--card-gap\\:16px\\]",
+   "context": [],
+   "properties": {
+    "--card-gap": "16px"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".\\[--card-w\\:86vw\\]",
+   "context": [],
+   "properties": {
+    "--card-w": "86vw"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".sm\\:\\[--card-w\\:640px\\]",
+   "context": [
+    "@media (min-width: 640px)"
+   ],
+   "properties": {
+    "--card-w": "640px"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".md\\:\\[--card-gap\\:40px\\]",
+   "context": [
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--card-gap": "40px"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".lg\\:\\[--card-gap\\:144px\\]",
+   "context": [
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--card-gap": "144px"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".lg\\:\\[--card-w\\:min\\(1112px\\,74vw\\)\\]",
+   "context": [
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--card-w": "min(1112px,74vw)"
+   },
+   "bin": "utility"
+  }
+ ],
+ "tailwind": [
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": "::before, ::after",
+   "context": [],
+   "properties": {
+    "--tw-content": "\"\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": "*, ::before, ::after, ::backdrop",
+   "context": [],
+   "properties": {
+    "--tw-border-spacing-x": "0",
+    "--tw-border-spacing-y": "0",
+    "--tw-translate-x": "0",
+    "--tw-translate-y": "0",
+    "--tw-rotate": "0",
+    "--tw-skew-x": "0",
+    "--tw-skew-y": "0",
+    "--tw-scale-x": "1",
+    "--tw-scale-y": "1",
+    "--tw-pan-x": "",
+    "--tw-pan-y": "",
+    "--tw-pinch-zoom": "",
+    "--tw-scroll-snap-strictness": "proximity",
+    "--tw-gradient-from-position": "",
+    "--tw-gradient-via-position": "",
+    "--tw-gradient-to-position": "",
+    "--tw-ordinal": "",
+    "--tw-slashed-zero": "",
+    "--tw-numeric-figure": "",
+    "--tw-numeric-spacing": "",
+    "--tw-numeric-fraction": "",
+    "--tw-ring-inset": "",
+    "--tw-ring-offset-width": "0px",
+    "--tw-ring-offset-color": "#fff",
+    "--tw-ring-color": "#3b82f680",
+    "--tw-ring-offset-shadow": "0 0 #0000",
+    "--tw-ring-shadow": "0 0 #0000",
+    "--tw-shadow": "0 0 #0000",
+    "--tw-shadow-colored": "0 0 #0000",
+    "--tw-blur": "",
+    "--tw-brightness": "",
+    "--tw-contrast": "",
+    "--tw-grayscale": "",
+    "--tw-hue-rotate": "",
+    "--tw-invert": "",
+    "--tw-saturate": "",
+    "--tw-sepia": "",
+    "--tw-drop-shadow": "",
+    "--tw-backdrop-blur": "",
+    "--tw-backdrop-brightness": "",
+    "--tw-backdrop-contrast": "",
+    "--tw-backdrop-grayscale": "",
+    "--tw-backdrop-hue-rotate": "",
+    "--tw-backdrop-invert": "",
+    "--tw-backdrop-opacity": "",
+    "--tw-backdrop-saturate": "",
+    "--tw-backdrop-sepia": "",
+    "--tw-contain-size": "",
+    "--tw-contain-layout": "",
+    "--tw-contain-paint": "",
+    "--tw-contain-style": ""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".-translate-x-1\\/2, .-translate-x-\\[50\\%\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-x": "-50%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".-translate-y-1\\/2",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "-50%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".-translate-y-6",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "-1.5rem"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".-translate-y-\\[10\\%\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "-10%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".-translate-y-\\[50\\%\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "-50%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".-translate-y-\\[54px\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "-54px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".translate-x-0",
+   "context": [],
+   "properties": {
+    "--tw-translate-x": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".translate-x-1\\/2",
+   "context": [],
+   "properties": {
+    "--tw-translate-x": "50%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".translate-x-\\[-50\\%\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-x": "-50%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".translate-x-\\[100px\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-x": "100px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".translate-x-\\[2px\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-x": "2px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".translate-x-\\[90px\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-x": "90px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".translate-y-0",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".translate-y-\\[-34px\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "-34px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".translate-y-\\[-44px\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "-44px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".translate-y-\\[-50\\%\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "-50%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".translate-y-\\[-64px\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "-64px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".translate-y-\\[-66px\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "-66px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".translate-y-\\[0\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".translate-y-\\[1px\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "1px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".translate-y-\\[40px\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "40px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".rotate-0",
+   "context": [],
+   "properties": {
+    "--tw-rotate": "0deg"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".rotate-180",
+   "context": [],
+   "properties": {
+    "--tw-rotate": "180deg"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".rotate-90",
+   "context": [],
+   "properties": {
+    "--tw-rotate": "90deg"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".rotate-\\[-2deg\\]",
+   "context": [],
+   "properties": {
+    "--tw-rotate": "-2deg"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".rotate-\\[-3deg\\]",
+   "context": [],
+   "properties": {
+    "--tw-rotate": "-3deg"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".rotate-\\[180deg\\]",
+   "context": [],
+   "properties": {
+    "--tw-rotate": "180deg"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".rotate-\\[4deg\\]",
+   "context": [],
+   "properties": {
+    "--tw-rotate": "4deg"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".scale-0",
+   "context": [],
+   "properties": {
+    "--tw-scale-x": "0",
+    "--tw-scale-y": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".scale-100",
+   "context": [],
+   "properties": {
+    "--tw-scale-x": "1",
+    "--tw-scale-y": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".scale-\\[0\\.75\\]",
+   "context": [],
+   "properties": {
+    "--tw-scale-x": ".75",
+    "--tw-scale-y": ".75"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".scale-\\[0\\.7\\]",
+   "context": [],
+   "properties": {
+    "--tw-scale-x": ".7",
+    "--tw-scale-y": ".7"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".scale-\\[0\\]",
+   "context": [],
+   "properties": {
+    "--tw-scale-x": "0",
+    "--tw-scale-y": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".scale-\\[1\\.2\\]",
+   "context": [],
+   "properties": {
+    "--tw-scale-x": "1.2",
+    "--tw-scale-y": "1.2"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".scale-\\[1\\.4\\]",
+   "context": [],
+   "properties": {
+    "--tw-scale-x": "1.4",
+    "--tw-scale-y": "1.4"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".scale-\\[1\\]",
+   "context": [],
+   "properties": {
+    "--tw-scale-x": "1",
+    "--tw-scale-y": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".scale-x-0",
+   "context": [],
+   "properties": {
+    "--tw-scale-x": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".snap-mandatory",
+   "context": [],
+   "properties": {
+    "--tw-scroll-snap-strictness": "mandatory"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".-space-x-\\[2\\.88px\\] > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-x-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".space-y-1 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".space-y-10 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".space-y-2 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".space-y-3 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".space-y-4 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".space-y-8 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".divide-y > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-divide-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".border-\\[\\#1A1A1A\\]",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".border-\\[\\#3E29FA\\]",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".border-\\[\\#666666\\]",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".border-\\[\\#907580\\]",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".border-\\[\\#E6E6E6\\]",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".border-\\[\\#F2F2F2\\]",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".border-\\[\\#faf8f7\\]",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".border-black",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".border-white",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".border-opacity-10",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": ".1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".bg-\\[\\#0045E5\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".bg-\\[\\#111111\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".bg-\\[\\#1A1A1A\\], .bg-\\[\\#1a1a1a\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".bg-\\[\\#343434\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".bg-\\[\\#3e29fa\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".bg-\\[\\#443BF5\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".bg-\\[\\#5059FE\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".bg-\\[\\#E6E6E6\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".bg-\\[\\#F2F2F2\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".bg-\\[\\#FAF8F7\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".bg-\\[\\#FCFBFA\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".bg-\\[\\#FFFAFC\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".bg-\\[\\#faf8f7\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".bg-black",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".bg-gray-100",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".bg-gray-200",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".bg-white",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".bg-zinc-100",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".text-\\[\\#0062ff\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".text-\\[\\#1A1A1A\\], .text-\\[\\#1a1a1a\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".text-\\[\\#343434\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".text-\\[\\#4D4D4D\\], .text-\\[\\#4d4d4d\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".text-\\[\\#545454\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".text-\\[\\#666\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".text-\\[\\#858585\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".text-\\[\\#999999\\], .text-\\[\\#999\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".text-\\[\\#B3B3B3\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".text-\\[\\#C4B5BB\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".text-\\[\\#CCC\\], .text-\\[\\#ccc\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".text-\\[\\#d2c7cb\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".text-black",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".text-blue-500",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".text-gray-500",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".text-gray-700",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".text-red-500",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".text-white",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".text-zinc-500",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".placeholder-\\[\\#4d4d4d\\]::placeholder",
+   "context": [],
+   "properties": {
+    "--tw-placeholder-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".shadow",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a",
+    "--tw-shadow-colored": "0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".shadow-\\[0_2px_4px_\\#00000029\\]",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 2px 4px #00000029",
+    "--tw-shadow-colored": "0 2px 4px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".shadow-\\[0_2px_4px_0_rgba\\(0\\,0\\,0\\,0\\.16\\)\\]",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 2px 4px 0 #00000029",
+    "--tw-shadow-colored": "0 2px 4px 0 var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".shadow-\\[0_2px_4px_rgba\\(0\\,0\\,0\\,0\\.16\\)\\]",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 2px 4px #00000029",
+    "--tw-shadow-colored": "0 2px 4px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".shadow-\\[0_8px_24px_rgba\\(0\\,0\\,0\\,0\\.35\\)\\]",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 8px 24px #00000059",
+    "--tw-shadow-colored": "0 8px 24px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".shadow-\\[0px_3px_3px_rgba\\(0\\,0\\,0\\,0\\.16\\)\\]",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0px 3px 3px #00000029",
+    "--tw-shadow-colored": "0px 3px 3px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".shadow-elevation1",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0px 2px 4px 0px #00000029",
+    "--tw-shadow-colored": "0px 2px 4px 0px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".shadow-elevation5",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0px 8px 16px 0px #0000001f, 0px 8px 8px 0px #00000014",
+    "--tw-shadow-colored": "0px 8px 16px 0px var(--tw-shadow-color), 0px 8px 8px 0px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".shadow-md",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a",
+    "--tw-shadow-colored": "0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".shadow-xl",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a",
+    "--tw-shadow-colored": "0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".ring",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".ring-inset",
+   "context": [],
+   "properties": {
+    "--tw-ring-inset": "inset"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".blur",
+   "context": [],
+   "properties": {
+    "--tw-blur": "blur(8px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".blur-\\[12px\\]",
+   "context": [],
+   "properties": {
+    "--tw-blur": "blur(12px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".blur-\\[5px\\]",
+   "context": [],
+   "properties": {
+    "--tw-blur": "blur(5px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".brightness-150",
+   "context": [],
+   "properties": {
+    "--tw-brightness": "brightness(1.5)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".brightness-75",
+   "context": [],
+   "properties": {
+    "--tw-brightness": "brightness(.75)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".brightness-\\[10\\]",
+   "context": [],
+   "properties": {
+    "--tw-brightness": "brightness(10)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".contrast-\\[0\\.25\\]",
+   "context": [],
+   "properties": {
+    "--tw-contrast": "contrast(.25)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".grayscale",
+   "context": [],
+   "properties": {
+    "--tw-grayscale": "grayscale(100%)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".grayscale-\\[0\\]",
+   "context": [],
+   "properties": {
+    "--tw-grayscale": "grayscale(0)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".grayscale-\\[1\\]",
+   "context": [],
+   "properties": {
+    "--tw-grayscale": "grayscale(1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".invert",
+   "context": [],
+   "properties": {
+    "--tw-invert": "invert(100%)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".before\\:content-\\[\\'\\'\\]::before",
+   "context": [],
+   "properties": {
+    "--tw-content": "\"\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".before\\:content-\\[\\'•\\'\\]::before",
+   "context": [],
+   "properties": {
+    "--tw-content": "\"•\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".before\\:content-\\[counter\\(blog-ol\\)\\'\\.\\'\\]::before",
+   "context": [],
+   "properties": {
+    "--tw-content": "counter(blog-ol)\".\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".after\\:content-\\[\\'\\'\\]::after",
+   "context": [],
+   "properties": {
+    "--tw-content": "\"\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".hover\\:bg-\\[\\#3226c9\\]:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".hover\\:bg-\\[\\#3C3C3C\\]:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".hover\\:bg-\\[\\#EBEBEB\\]:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".hover\\:bg-\\[\\#EDECEB\\]:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".hover\\:bg-\\[\\#F2F2F2\\]:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".hover\\:bg-\\[\\#fff7fa\\]:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".hover\\:bg-black:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".hover\\:bg-gray-100:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".hover\\:bg-white:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".hover\\:shadow-elevation1:hover",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0px 2px 4px 0px #00000029",
+    "--tw-shadow-colored": "0px 2px 4px 0px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".hover\\:drop-shadow-2xl:hover",
+   "context": [],
+   "properties": {
+    "--tw-drop-shadow": "drop-shadow(0 25px 25px #00000026)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".hover\\:grayscale-\\[0\\]:hover",
+   "context": [],
+   "properties": {
+    "--tw-grayscale": "grayscale(0)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".focus-visible\\:ring-1:focus-visible",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".focus-visible\\:ring-2:focus-visible",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".focus-visible\\:ring-inset:focus-visible",
+   "context": [],
+   "properties": {
+    "--tw-ring-inset": "inset"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".focus-visible\\:ring-\\[var\\(--Neutral-0\\)\\]:focus-visible",
+   "context": [],
+   "properties": {
+    "--tw-ring-color": "var(--Neutral-0)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".focus-visible\\:ring-\\[var\\(--Red-450\\)\\]:focus-visible",
+   "context": [],
+   "properties": {
+    "--tw-ring-color": "var(--Red-450)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".focus-visible\\:ring-offset-2:focus-visible",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-width": "2px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".group:hover .group-hover\\:scale-\\[1\\.02\\]",
+   "context": [],
+   "properties": {
+    "--tw-scale-x": "1.02",
+    "--tw-scale-y": "1.02"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".group:hover .group-hover\\:scale-x-100",
+   "context": [],
+   "properties": {
+    "--tw-scale-x": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".sm\\:translate-y-\\[-42px\\]",
+   "context": [
+    "@media (min-width: 640px)"
+   ],
+   "properties": {
+    "--tw-translate-y": "-42px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".sm\\:text-\\[\\#1A1A1A\\]",
+   "context": [
+    "@media (min-width: 640px)"
+   ],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".sm\\:text-white",
+   "context": [
+    "@media (min-width: 640px)"
+   ],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".md\\:scale-\\[1\\.4\\]",
+   "context": [
+    "@media (min-width: 768px)"
+   ],
+   "properties": {
+    "--tw-scale-x": "1.4",
+    "--tw-scale-y": "1.4"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".lg\\:translate-y-\\[-52px\\]",
+   "context": [
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--tw-translate-y": "-52px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".min-\\[1200px\\]\\:-translate-x-\\[50\\%\\]",
+   "context": [
+    "@media (min-width: 1200px)"
+   ],
+   "properties": {
+    "--tw-translate-x": "-50%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".min-\\[1200px\\]\\:bg-\\[\\#f7f5f2\\]",
+   "context": [
+    "@media (min-width: 1200px)"
+   ],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".min-\\[1200px\\]\\:shadow-nav",
+   "context": [
+    "@media (min-width: 1200px)"
+   ],
+   "properties": {
+    "--tw-shadow": "0 16px 38px #583f4a24,0 120px 136px #583f4a1f",
+    "--tw-shadow-colored": "0 16px 38px var(--tw-shadow-color), 0 120px 136px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".min-\\[1200px\\]\\:hover\\:bg-\\[\\#fff7fa\\]:hover",
+   "context": [
+    "@media (min-width: 1200px)"
+   ],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".xl\\:-translate-x-\\[calc\\(\\(100\\%\\+24px\\)\\/3\\)\\]",
+   "context": [
+    "@media (min-width: 1280px)"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(calc((100% + 24px) / 3) * -1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".min-\\[1440px\\]\\:translate-x-\\[-50\\%\\]",
+   "context": [
+    "@media (min-width: 1440px)"
+   ],
+   "properties": {
+    "--tw-translate-x": "-50%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".\\[\\&\\:not\\(\\:placeholder-shown\\)\\]\\:bg-white:not(:placeholder-shown)",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/3gfgpsmv_7xna.css",
+   "selector": ".\\[\\&_a\\]\\:text-\\[rgb\\(0\\,98\\,255\\)\\] a",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  }
+ ],
+ "fonts": [
+  {
+   "file": "https://www.descript.com/_next/static/chunks/25pj_x78ppfxw.css",
+   "font-family": "gamuthDisplay",
+   "src": "url(\"../media/GamuthDisplay_Bold-s.p.0iu849f9keare.woff2\") format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "700",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/25pj_x78ppfxw.css",
+   "font-family": "\"gamuthDisplay Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "92.72%",
+   "descent-override": "17.43%",
+   "line-gap-override": "0%",
+   "size-adjust": "107.85%"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/25pj_x78ppfxw.css",
+   "font-family": "booton",
+   "src": "url(\"../media/Booton_Regular-s.p.2oakv-hhhln2z.woff2\") format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "400",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/25pj_x78ppfxw.css",
+   "font-family": "booton",
+   "src": "url(\"../media/Booton_SemiBold-s.p.0hhjh79u6xpso.woff2\") format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "600",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/25pj_x78ppfxw.css",
+   "font-family": "\"booton Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "85.01%",
+   "descent-override": "17.09%",
+   "line-gap-override": "0%",
+   "size-adjust": "109.14%"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/25pj_x78ppfxw.css",
+   "font-family": "brett",
+   "src": "url(\"../media/Brett_Regular-s.25rswqxmax3k0.woff2\") format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "400",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://www.descript.com/_next/static/chunks/25pj_x78ppfxw.css",
+   "font-family": "\"brett Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "65.4%",
+   "descent-override": "7.85%",
+   "line-gap-override": "0%",
+   "size-adjust": "114.67%"
+  },
+  {
+   "file": "inline-6",
+   "font-family": "WistiaPlayerInterNumbersSemiBold",
+   "font-feature-settings": "\"tnum\"",
+   "src": "url(\"data:application/x-font-woff;charset=utf-8;base64,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\")"
+  },
+  {
+   "file": "inline-pricing-1",
+   "font-family": "WistiaPlayerInterNumbersSemiBold",
+   "font-feature-settings": "\"tnum\"",
+   "src": "url(\"data:application/x-font-woff;charset=utf-8;base64,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\")"
+  },
+  {
+   "file": "inline-feature-1",
+   "font-family": "WistiaPlayerInterNumbersSemiBold",
+   "font-feature-settings": "\"tnum\"",
+   "src": "url(\"data:application/x-font-woff;charset=utf-8;base64,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\")"
+  }
+ ],
+ "resolved": {
+  "light": {
+   "--Core-Black": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--Core-Canvas-Beige": {
+    "raw": "#faf8f7",
+    "kind": "color",
+    "value": "#faf8f7"
+   },
+   "--Core-Canvas-White": {
+    "raw": "#fff7f2",
+    "kind": "color",
+    "value": "#fff7f2"
+   },
+   "--Core-Screen-Black": {
+    "raw": "#27181e",
+    "kind": "color",
+    "value": "#27181e"
+   },
+   "--Core-White": {
+    "raw": "#fffafc",
+    "kind": "color",
+    "value": "#fffafc"
+   },
+   "--Gray-100": {
+    "raw": "#f2f2f2",
+    "kind": "color",
+    "value": "#f2f2f2"
+   },
+   "--Gray-200": {
+    "raw": "#e6e6e6",
+    "kind": "color",
+    "value": "#e6e6e6"
+   },
+   "--Gray-300": {
+    "raw": "#ccc",
+    "kind": "color",
+    "value": "#cccccc"
+   },
+   "--Gray-400": {
+    "raw": "#999",
+    "kind": "color",
+    "value": "#999999"
+   },
+   "--Gray-600": {
+    "raw": "#666",
+    "kind": "color",
+    "value": "#666666"
+   },
+   "--Gray-700": {
+    "raw": "#4d4d4d",
+    "kind": "color",
+    "value": "#4d4d4d"
+   },
+   "--Gray-800": {
+    "raw": "#343434",
+    "kind": "color",
+    "value": "#343434"
+   },
+   "--Gray-900": {
+    "raw": "#1a1a1a",
+    "kind": "color",
+    "value": "#1a1a1a"
+   },
+   "--Green-0": {
+    "raw": "#f5fff7",
+    "kind": "color",
+    "value": "#f5fff7"
+   },
+   "--Green-100": {
+    "raw": "#bbe3be",
+    "kind": "color",
+    "value": "#bbe3be"
+   },
+   "--Green-150": {
+    "raw": "#9ed5a8",
+    "kind": "color",
+    "value": "#9ed5a8"
+   },
+   "--Green-200": {
+    "raw": "#84c696",
+    "kind": "color",
+    "value": "#84c696"
+   },
+   "--Green-300": {
+    "raw": "#5baa7b",
+    "kind": "color",
+    "value": "#5baa7b"
+   },
+   "--Green-400": {
+    "raw": "#3d8e66",
+    "kind": "color",
+    "value": "#3d8e66"
+   },
+   "--Green-50": {
+    "raw": "#daf1da",
+    "kind": "color",
+    "value": "#daf1da"
+   },
+   "--Green-500": {
+    "raw": "#277154",
+    "kind": "color",
+    "value": "#277154"
+   },
+   "--Green-600": {
+    "raw": "#185542",
+    "kind": "color",
+    "value": "#185542"
+   },
+   "--Green-700": {
+    "raw": "#0e392e",
+    "kind": "color",
+    "value": "#0e392e"
+   },
+   "--Green-800": {
+    "raw": "#061c18",
+    "kind": "color",
+    "value": "#061c18"
+   },
+   "--Green-900": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--Lilac-0": {
+    "raw": "#f9f9ff",
+    "kind": "color",
+    "value": "#f9f9ff"
+   },
+   "--Lilac-100": {
+    "raw": "#dcdcff",
+    "kind": "color",
+    "value": "#dcdcff"
+   },
+   "--Lilac-200": {
+    "raw": "#cdcdfe",
+    "kind": "color",
+    "value": "#cdcdfe"
+   },
+   "--Lilac-300": {
+    "raw": "#a3a3ee",
+    "kind": "color",
+    "value": "#a3a3ee"
+   },
+   "--Lilac-400": {
+    "raw": "#8787e0",
+    "kind": "color",
+    "value": "#8787e0"
+   },
+   "--Lilac-450": {
+    "raw": "#7a79d6",
+    "kind": "color",
+    "value": "#7a79d6"
+   },
+   "--Lilac-50": {
+    "raw": "#ebebff",
+    "kind": "color",
+    "value": "#ebebff"
+   },
+   "--Lilac-500": {
+    "raw": "#6b6bcf",
+    "kind": "color",
+    "value": "#6b6bcf"
+   },
+   "--Lilac-600": {
+    "raw": "#5050be",
+    "kind": "color",
+    "value": "#5050be"
+   },
+   "--Lilac-700": {
+    "raw": "#3434ab",
+    "kind": "color",
+    "value": "#3434ab"
+   },
+   "--Lilac-750": {
+    "raw": "#2a2a96",
+    "kind": "color",
+    "value": "#2a2a96"
+   },
+   "--Lilac-800": {
+    "raw": "#1c1c8a",
+    "kind": "color",
+    "value": "#1c1c8a"
+   },
+   "--Lilac-900": {
+    "raw": "#0c0b5f",
+    "kind": "color",
+    "value": "#0c0b5f"
+   },
+   "--Lilac-950": {
+    "raw": "#030331",
+    "kind": "color",
+    "value": "#030331"
+   },
+   "--Maroon-0": {
+    "raw": "#fff7fd",
+    "kind": "color",
+    "value": "#fff7fd"
+   },
+   "--Maroon-100": {
+    "raw": "#f4d7ea",
+    "kind": "color",
+    "value": "#f4d7ea"
+   },
+   "--Maroon-200": {
+    "raw": "#e5b6d5",
+    "kind": "color",
+    "value": "#e5b6d5"
+   },
+   "--Maroon-300": {
+    "raw": "#d597bf",
+    "kind": "color",
+    "value": "#d597bf"
+   },
+   "--Maroon-400": {
+    "raw": "#c576a7",
+    "kind": "color",
+    "value": "#c576a7"
+   },
+   "--Maroon-450": {
+    "raw": "#b96a96",
+    "kind": "color",
+    "value": "#b96a96"
+   },
+   "--Maroon-50": {
+    "raw": "#ffe5f7",
+    "kind": "color",
+    "value": "#ffe5f7"
+   },
+   "--Maroon-500": {
+    "raw": "#ab5c86",
+    "kind": "color",
+    "value": "#ab5c86"
+   },
+   "--Maroon-600": {
+    "raw": "#90436a",
+    "kind": "color",
+    "value": "#90436a"
+   },
+   "--Maroon-700": {
+    "raw": "#772a4d",
+    "kind": "color",
+    "value": "#772a4d"
+   },
+   "--Maroon-750": {
+    "raw": "#651a39",
+    "kind": "color",
+    "value": "#651a39"
+   },
+   "--Maroon-800": {
+    "raw": "#5b142e",
+    "kind": "color",
+    "value": "#5b142e"
+   },
+   "--Maroon-900": {
+    "raw": "#390a1a",
+    "kind": "color",
+    "value": "#390a1a"
+   },
+   "--Maroon-950": {
+    "raw": "#190308",
+    "kind": "color",
+    "value": "#190308"
+   },
+   "--Neutral-0": {
+    "raw": "#fff7fa",
+    "kind": "color",
+    "value": "#fff7fa"
+   },
+   "--Neutral-100": {
+    "raw": "#e4dde0",
+    "kind": "color",
+    "value": "#e4dde0"
+   },
+   "--Neutral-200": {
+    "raw": "#d1c7cb",
+    "kind": "color",
+    "value": "#d1c7cb"
+   },
+   "--Neutral-300": {
+    "raw": "#b8a5ad",
+    "kind": "color",
+    "value": "#b8a5ad"
+   },
+   "--Neutral-400": {
+    "raw": "#a28993",
+    "kind": "color",
+    "value": "#a28993"
+   },
+   "--Neutral-450": {
+    "raw": "#987c87",
+    "kind": "color",
+    "value": "#987c87"
+   },
+   "--Neutral-50": {
+    "raw": "#f1eaed",
+    "kind": "color",
+    "value": "#f1eaed"
+   },
+   "--Neutral-500": {
+    "raw": "#8b6f7a",
+    "kind": "color",
+    "value": "#8b6f7a"
+   },
+   "--Neutral-600": {
+    "raw": "#715661",
+    "kind": "color",
+    "value": "#715661"
+   },
+   "--Neutral-700": {
+    "raw": "#583f4a",
+    "kind": "color",
+    "value": "#583f4a"
+   },
+   "--Neutral-750": {
+    "raw": "#4c343e",
+    "kind": "color",
+    "value": "#4c343e"
+   },
+   "--Neutral-800": {
+    "raw": "#3f2a32",
+    "kind": "color",
+    "value": "#3f2a32"
+   },
+   "--Neutral-900": {
+    "raw": "#26171d",
+    "kind": "color",
+    "value": "#26171d"
+   },
+   "--Neutral-950": {
+    "raw": "#110a0d",
+    "kind": "color",
+    "value": "#110a0d"
+   },
+   "--Red-0": {
+    "raw": "#fff8f4",
+    "kind": "color",
+    "value": "#fff8f4"
+   },
+   "--Red-100": {
+    "raw": "#ffd6c5",
+    "kind": "color",
+    "value": "#ffd6c5"
+   },
+   "--Red-200": {
+    "raw": "#ffb297",
+    "kind": "color",
+    "value": "#ffb297"
+   },
+   "--Red-300": {
+    "raw": "#ff8969",
+    "kind": "color",
+    "value": "#ff8969"
+   },
+   "--Red-400": {
+    "raw": "#ff5340",
+    "kind": "color",
+    "value": "#ff5340"
+   },
+   "--Red-450": {
+    "raw": "#f73b3b",
+    "kind": "color",
+    "value": "#f73b3b"
+   },
+   "--Red-50": {
+    "raw": "#ffe8db",
+    "kind": "color",
+    "value": "#ffe8db"
+   },
+   "--Red-500": {
+    "raw": "#e62324",
+    "kind": "color",
+    "value": "#e62324"
+   },
+   "--Red-600": {
+    "raw": "#b81b1e",
+    "kind": "color",
+    "value": "#b81b1e"
+   },
+   "--Red-700": {
+    "raw": "#8f0c10",
+    "kind": "color",
+    "value": "#8f0c10"
+   },
+   "--Red-750": {
+    "raw": "#7a080b",
+    "kind": "color",
+    "value": "#7a080b"
+   },
+   "--Red-800": {
+    "raw": "#660607",
+    "kind": "color",
+    "value": "#660607"
+   },
+   "--Red-900": {
+    "raw": "#400303",
+    "kind": "color",
+    "value": "#400303"
+   },
+   "--Red-950": {
+    "raw": "#180101",
+    "kind": "color",
+    "value": "#180101"
+   },
+   "--Tools-Glow-ai": {
+    "raw": "#ebd6ff",
+    "kind": "color",
+    "value": "#ebd6ff"
+   },
+   "--Tools-Glow-audio": {
+    "raw": "#ffd4bf",
+    "kind": "color",
+    "value": "#ffd4bf"
+   },
+   "--Tools-Glow-collaborate": {
+    "raw": "#ffe5bf",
+    "kind": "color",
+    "value": "#ffe5bf"
+   },
+   "--Tools-Glow-convert": {
+    "raw": "#ffdbe6",
+    "kind": "color",
+    "value": "#ffdbe6"
+   },
+   "--Tools-Glow-record": {
+    "raw": "#ffbfbf",
+    "kind": "color",
+    "value": "#ffbfbf"
+   },
+   "--Tools-Glow-transcribe": {
+    "raw": "#c7e9c7",
+    "kind": "color",
+    "value": "#c7e9c7"
+   },
+   "--Tools-Glow-video": {
+    "raw": "#d9f3ff",
+    "kind": "color",
+    "value": "#d9f3ff"
+   },
+   "--Tools-Glow-write": {
+    "raw": "#bfd0f9",
+    "kind": "color",
+    "value": "#bfd0f9"
+   },
+   "--sa-uid": {
+    "raw": "'CiQwMWExZDZjNy1mNmQxLTczNmMtYmI0MS0yYmUyOTNjYWM1YTMQAxoEQVBBQyAR'",
+    "kind": "fontFamily",
+    "value": "'CiQwMWExZDZjNy1mNmQxLTczNmMtYmI0MS0yYmUyOTNjYWM1YTMQAxoEQVBBQyAR'"
+   }
+  }
+ }
+}

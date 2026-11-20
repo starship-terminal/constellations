@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>forhers style guide</title>
+<meta name="description" content="forhers design tokens and the public signed-out telehealth surface's components, rendered from tokens.json — measured computed styles plus the /shop bundle's spacing, grid and chrome variables.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "sofia-pro", "SofiaProWeb", "Helvetica Neue", Arial, sans-serif;
+  --sg-display: "CareSans", Georgia, "Times New Roman", serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+  --ink: var(--text-primary, rgba(0,0,0,.89));
+  --hairline: var(--border-hairline, rgba(0,0,0,.12));
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.4 var(--sg-sans); color: var(--ink); background: var(--bg-page, #ffffff); }
+[data-mode="dark"] body { background: #1a1a1a; color: #ddd; }
+[data-mode="dark"] h2.sh, [data-mode="dark"] .lead, [data-mode="dark"] .note, [data-mode="dark"] .pal-h, [data-mode="dark"] .sw .vl, [data-mode="dark"] .kv span, [data-mode="dark"] .tr .tv { color: #ddd; }
+[data-mode="dark"] .mock { background: #242424; }
+#mode { position: fixed; top: 12px; right: 12px; z-index: 10; font: 500 12px/1 var(--sg-sans); border: 1px solid currentColor; background: transparent; color: inherit; padding: 8px 14px; border-radius: 9999px; cursor: pointer; }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.1 var(--sg-display); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--hairline); }
+.lead { max-width: 62ch; color: var(--ink); opacity: .8; }
+.note { font-size: 13px; color: var(--ink); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--hairline); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--ink); opacity: .65; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--ink); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--hairline); overflow: hidden; background: var(--bg-page, #ffffff); }
+.promo { display: flex; align-items: center; justify-content: center; gap: 8px; height: 44px; font: 500 13px/1 var(--sg-sans); color: var(--palette-ink-base, #000); background: var(--promo-bg, #d5ff5d); }
+.hdr { display: flex; align-items: center; gap: 20px; height: var(--layout-chrome-header-height, 56px); padding: 0 24px; font-size: 14px; color: var(--ink); background: var(--bg-page, #fff); border-bottom: 1px solid var(--hairline); }
+.hdr .wm svg { height: 24px; width: auto; display: block; }
+.hdr .nl { color: var(--ink); opacity: .89; }
+.hdr .sp { margin-left: auto; }
+.icobtn { width: 48px; height: 48px; border-radius: 48px; display: inline-flex; align-items: center; justify-content: center; color: var(--ink); }
+.icobtn svg { width: 22px; height: 22px; }
+.icobtn:hover { background: var(--action-hover-wash, rgba(0,0,0,.06)); }
+.hero { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 340px; padding: 48px 24px; text-align: center; background: var(--bg-sage, #f2f9f4); }
+.hero h2 { font: 400 57px/1 var(--sg-display); font-weight: 410; letter-spacing: -.04em; color: var(--ink); margin: 0 0 20px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 28px; font-size: 15px; font-weight: 500; border: 1px solid transparent; border-radius: var(--radius-pill, 9999px); }
+.btn.primary { background: var(--action-primary-bg, #000); border-color: var(--action-primary-bg, #000); color: var(--action-primary-ink, #fff); }
+.btn.tertiary { background: var(--action-tertiary-bg, #efefef); border: 2px solid var(--palette-ink-base, #000); color: var(--palette-ink-base, #000); border-radius: 48px; font-size: 13px; height: 34px; padding: 0 16px; }
+.btn.lime { background: var(--action-lime-bg, #b6dd64); color: var(--action-lime-ink, #000); border-radius: 48px; }
+.btn:disabled { background: var(--action-disabled-bg, rgba(0,0,0,.06)); color: var(--action-disabled-ink, rgba(16,16,16,.3)); border-color: transparent; }
+.linky { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.linky.blue { color: var(--accent-link, #0077ab); }
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; padding: 20px 24px; }
+.tile { border-radius: var(--radius-card, 24px); background: var(--bg-cream, #faf8f2); padding: 18px; min-height: 100px; font: 500 19px/1.25 var(--sg-display); color: var(--ink); }
+.tile.sage { background: var(--bg-sage-deep, #e4eee6); }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 0 24px 24px; }
+.tcard { border-radius: var(--radius-card, 24px); background: var(--palette-surface-cream-200, #f4f1e6); padding: 18px; }
+.tcard .ph { aspect-ratio: 4/3; border-radius: 16px; background: var(--palette-paper-grey-3, #e5e5e5); margin-bottom: 14px; }
+.tcard b { display: block; font: 460 28px/1.12 var(--sg-display); color: var(--palette-ink-base, #000); }
+.tcard .pr { font: 400 15px/1.4 var(--sg-sans); color: var(--text-secondary, rgba(0,0,0,.65)); margin-top: 6px; }
+.form { padding: 24px; max-width: 420px; }
+.form .fld { height: 54px; border-radius: var(--radius-field, 11px); border: 1px solid var(--hairline); display: flex; align-items: center; padding: 0 14px; font-size: 14px; color: var(--text-subtle, rgba(0,0,0,.44)); margin-bottom: 10px; background: var(--bg-page, #fff); }
+.form .note { font: 400 12px/1.33 var(--sg-sans); color: var(--text-secondary, rgba(0,0,0,.65)); margin: 10px 0 14px; }
+.foot { padding: 28px 24px; font-size: 14px; color: var(--ink); background: var(--bg-footer, #e8eae8); }
+.foot .cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 20px; }
+.foot .cols b { display: block; font: 500 12px/1 var(--sg-sans); color: var(--ink); margin-bottom: 8px; }
+.foot .soc { display: flex; gap: 10px; margin: 8px 0 18px; }
+.foot .soc .well { width: 48px; height: 48px; border-radius: 50%; background: var(--action-hover-wash, rgba(0,0,0,.06)); display: inline-flex; align-items: center; justify-content: center; }
+.foot .soc .well svg { width: 20px; height: 20px; }
+.foot .fine { font: 400 12px/2 var(--sg-sans); color: var(--ink); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--hairline); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--palette-paper-wash, #f0f0f0); }
+.tr .ts { font-family: var(--sg-display); }
+.tr .tv { font-size: 12px; color: var(--ink); opacity: .65; font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<button id="mode" type="button" aria-pressed="false">Dark</button>
+<main>
+  <h1>forhers style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">forhers.com, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the /shop bundle's <code>--unit-u*</code> element scale, <code>--spacing-s*</code> section rhythm, <code>--grid-*</code> layout terms and <code>--*Height</code> chrome sizes, plus the measured palette, type styles and component dimensions the archived styled-components paint. The look: white and sage/cream surfaces, <code>rgba(0,0,0,.89)</code> ink, the <code>#338585</code> Hers teal ramp, the <code>#d5ff5d</code> promo lime, the black 9999px action pill and the <code>#b6dd64</code> lime submit, over 'CareSans' display type and 'sofia-pro/SofiaProWeb' UI type. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from forhers.com on 2026-11-17, signed out, in headless Chromium — through the Wayback Machine, because live www.forhers.com answers a Cloudflare managed challenge to this network: the DOM is archived SSR markup painted by its own stylesheets with scripts removed, so hydration-owned surfaces (the slide menu, Log-in menu, accordion panels, quiz) stay closed. Nothing was signed into, bought, submitted or answered; hover/focus/pressed states were forced, fields were typed into and cleared, never submitted. 'sofia-pro/SofiaProWeb' and 'CareSans' are proprietary fonts; samples fall back to system faces.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A 44px lime promo strip over the 56px sticky header: the 'hers' wordmark, the category nav links at the .89 ink, and two 48px circular icon buttons — Log in and the menu. Hover on the icon buttons paints the 6% ink wash.</p>
+  <div class="mock">
+    <div class="promo">Start your journey — <span class="linky">learn more</span></div>
+    <div class="hdr"><span class="wm"><!--icon:navigate-to-homepage--></span><span class="nl">Weight Loss</span><span class="nl">Hair</span><span class="nl">Skin</span><span class="nl">Mental Health</span><span class="nl">Sex</span><span class="sp"></span><span class="icobtn"><!--icon:login-button--></span><span class="icobtn"><!--icon:slide-menu-toggle--></span></div>
+  </div>
+
+  <h2 class="sh">The hero and tiles</h2>
+  <p class="lead">The home hero is a sage surface under the CareSans display headline (57px at 1440, letter-spacing -0.0625em) with the black pill CTA; wide category tiles with the 24px card radius carry the cream and sage surfaces.</p>
+  <div class="mock">
+    <div class="hero"><h2>The care you've always deserved</h2><span class="btn primary">Get started</span></div>
+    <div class="tiles"><div class="tile">Weight loss</div><div class="tile sage">Hair regrowth</div><div class="tile">Skin care</div><div class="tile sage">Mental health</div></div>
+  </div>
+
+  <h2 class="sh">The shop cards</h2>
+  <p class="lead">Category pages open with the CareSans page heading (about 53px at 1440), then treatment cards: cream or sage surfaces with the 24px radius, CareSans 28px names and the price line. Actions are the black pill primary, the outlined tertiary and the underlined link.</p>
+  <div class="mock">
+    <div class="cards">
+      <div class="tcard"><div class="ph"></div><b>Minoxidil + biotin chew</b><div class="pr">from $35/mo</div></div>
+      <div class="tcard" style="background:var(--bg-sage,#f2f9f4)"><div class="ph"></div><b>Wegovy pill</b><div class="pr">from $69/mo</div></div>
+      <div class="tcard"><div class="ph"></div><b>Anti-aging cream</b><div class="pr">from $29/mo</div></div>
+    </div>
+    <div class="cards" style="grid-template-columns:auto auto auto; justify-content:start; gap:10px">
+      <span class="btn primary">Get started</span><span class="btn tertiary">Learn more</span><span class="linky" style="align-self:center">Read the details</span>
+    </div>
+  </div>
+
+  <h2 class="sh">The form</h2>
+  <p class="lead">The BMI calculator's fields paint the 11px field radius and .12 hairline; Calculate is the <code>#b6dd64</code> lime pill, and the disabled control sits on the 6% ink wash with 30% ink text. Fields were typed into and cleared, never submitted.</p>
+  <div class="mock">
+    <div class="form">
+      <div class="fld">Height (cm)</div>
+      <div class="fld">Weight (kg)</div>
+      <div class="fld">Email</div>
+      <span class="btn lime">Calculate</span> <span class="btn primary" disabled style="opacity:1; background:var(--action-disabled-bg); color:var(--action-disabled-ink)">Continue</span>
+      <p class="note">By continuing you agree to the terms. This tool is not medical advice.</p>
+    </div>
+  </div>
+
+  <h2 class="sh">The footer</h2>
+  <p class="lead">The footer slab paints <code>#e8eae8</code>: link columns, the social icon wells on the 6% ink wash, the 'visit hims.com' cross-promo and the 12px fineprint line.</p>
+  <div class="mock">
+    <div class="foot">
+      <div class="cols"><span><b>Shop</b>Weight loss<br>Hair<br>Skin<br>Mental health</span><span><b>Company</b>About<br>Benefits<br>Quality &amp; safety</span><span><b>Resources</b>Blog<br>Drug information<br>BMI calculator</span><span><b>Social</b><span class="soc"><span class="well"><!--icon:hers-on-instagram--></span><span class="well"><!--icon:hers-on-facebook--></span><span class="well"><!--icon:hers-on-tiktok--></span></span></span></div>
+      <div class="fine">© Hers. Medical advice, diagnosis or treatment is provided by licensed clinicians. <span class="linky">Terms</span> · <span class="linky">Privacy</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead"><code>core.palette</code> is the literal colour census of the archived inline sheets: the ink and its alpha steps, the paper/grey washes, the sage and cream surfaces, the <code>#338585</code> teal ramp, the dark forest greens, the sage greens, the lime promo ramp and the clay/terracotta accents. The light set layers the semantic roles — bg, text, action, accent, promo, border, focus — over it. The site paints one theme; the dark set is empty.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and layout</h2>
+  <p class="lead"><code>core.space.unit</code> is the --unit-u* element scale (3–78px) and <code>core.space.section</code> the --spacing-s* rhythm (41–163px). <code>core.layout.grid</code> is the 12-column, 14px-gutter, 1251px grid with the chrome heights beside it; <code>core.layout.breakpoint</code> the fluid-type staircase. <code>core.radius</code> is measured: the 48px icon circle, the 9999px CTA pill, 24px cards, 16px dialogs and 11px fields. <code>core.motion</code> is what the probe measured — durations, easings and the reduced-motion behaviour.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Elevation</h2>
+  <p class="lead">The pages are nearly flat — layering is the ink hairline, the 6% wash and the modal scrim (the continuity dialog at z-900). Any shadows that appear were measured per component.</p>
+  <div id="elev-out" class="kv"></div>
+  <div id="z-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two voices: <code>'CareSans'</code> — the soft-serif display face for heroes, card names, deks and prices, sized fluidly by the <code>--scale</code> staircase between 360px and 1392px — and <code>'sofia-pro/SofiaProWeb'</code> for UI, prose, nav and footer. 'IvarSoft' is @font-face-declared but no SSR rule applies it. Below, the measured roles at 1440. Samples fall back to Georgia/Times New Roman and Helvetica/Arial.</p>
+  <div id="styles-out"></div>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Resolved the custom properties off the site's own archived sheets and read computed styles on the archived pages at every captured route</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, focused and filled states forced and measured per component; hydration-owned opened states declared as a boundary, never faked</td></tr><tr><td>No provenance</td><td>Every token names its variable, the stylesheet literal or the measurement it came from; archived-markup provenance is declared on the package</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+// The light/dark toggle. forhers.com paints ONE theme — the dark set is
+// empty, so dark mode restates the light tokens and the page only dims its
+// own chrome; that is the honest answer the toggle is here to show.
+$('#mode').addEventListener('click', () => {
+  const on = document.documentElement.getAttribute('data-mode') === 'dark';
+  document.documentElement.setAttribute('data-mode', on ? '' : 'dark');
+  $('#mode').textContent = on ? 'Dark' : 'Light';
+  $('#mode').setAttribute('aria-pressed', on ? 'false' : 'true');
+});
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.palette || {})) {
+    const items = (grp && grp.t ? [['palette.' + g, grp]] : flat(grp, 'palette.' + g + '.')).filter(([, t]) => t.t === 'color' || t.t === 'gradient');
+    if (!items.length) continue;
+    h += `<div class="pal-h">palette.${esc(g)}</div><div class="pal">`;
+    // A gradient token's value is its list of stops; show them as "start 0% → end 100%".
+    const val = (t) => Array.isArray(t.v) ? t.v.map((x) => x.color + ' ' + Math.round(x.position * 100) + '%').join(' → ') : t.v;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(val(t))}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (none — the site paints one theme)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.borderWidth || {}, 'borderWidth.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) {
+    if (typeof t.v === 'object') continue;
+    m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : typeof t.v === 'object' ? Object.entries(t.v).map(([k, x]) => k + ' ' + (Array.isArray(x) ? 'cubic-bezier(' + x.join(', ') + ')' : x)).join(', ') : t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) {
+    const v = Array.isArray(t.v) ? t.v.map(x => [x.offsetX, x.offsetY, x.blur, x.spread, x.color].filter(Boolean).join(' ')).join(', ') : t.v;
+    e += `<div><b>${esc(n)}</b> <span>${esc(v)}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none captured</b></div>';
+})();
+
+(function zladder() {
+  let m = '';
+  for (const [n, t] of flat((TOK.core.layout || {}).z || {}, 'layout.z.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#z-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function typeStyles() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
+    const v = t.v || {};
+    const fam = String(v.fontFamily || '').split(',')[0].replace(/"/g, '').replace(/'/g, '');
+    const spec = [v.fontSize, v.lineHeight && '/' + v.lineHeight, v.fontWeight && ' ' + v.fontWeight, v.letterSpacing && v.letterSpacing !== 'normal' && ' ' + v.letterSpacing, v.textTransform && ' ' + v.textTransform].filter(Boolean).join('');
+    const ls = v.letterSpacing && v.letterSpacing !== 'normal' ? v.letterSpacing : 'normal';
+    h += `<div class="tr"><span class="ts" style='font-size:${Math.min(parseFloat(v.fontSize) || 14, 40)}px;font-family:${(v.fontFamily || 'inherit')};font-weight:${v.fontWeight || 400};letter-spacing:${ls};line-height:${v.lineHeight || 'normal'};text-transform:${v.textTransform || 'none'}'>${esc(n)} — forhers</span><span class="tv">${esc(fam)} ${esc(spec)}</span></div>`;
+  }
+  $('#styles-out').innerHTML = h;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — forhers</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

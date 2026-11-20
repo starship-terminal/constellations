@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TikTok style guide</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --page: #000000;
+    --text: #ffffffe6;
+    --strong: #ffffff;
+    --nav: #f6f6f6;
+    --muted: #ffffff80;
+    --action: #fe2c55;
+    --primary: #ff3b5c;
+    --splash: #25f4ee;
+    --sheet: #1e1e1e;
+    --channel: #ffffff21;
+    --negative: #ff4c3a;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 14px/21px Arial, Tahoma, PingFangSC, sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 32px 24px 64px; }
+  h1 { font-size: 33px; line-height: 49.5px; font-weight: 700; margin: 0 0 8px; color: var(--strong); }
+  h2 { font-size: 16px; font-weight: 500; letter-spacing: 0.15px; margin: 32px 0 12px; }
+  p { max-width: 68ch; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .swatch { width: 96px; }
+  .swatch i { display: block; height: 48px; border-radius: 6px; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12); }
+  .swatch span { display: block; margin-top: 6px; font-size: 12px; color: var(--muted); }
+  button.login { background: var(--action); color: #fff; border: 0; border-radius: 6px; height: 40px; padding: 1px 16px; font: 500 16px/21px Arial, sans-serif; letter-spacing: 0.15px; }
+  button.nav { background: transparent; color: var(--nav); border: 0; border-radius: 6px; height: 40px; padding: 0 16px; font: 500 16px/21px Arial, sans-serif; }
+  button.nav.on { color: var(--primary); }
+  .search { display: inline-flex; align-items: center; height: 40px; padding: 6px 16px; border-radius: 999px; background: var(--channel); color: var(--nav); }
+  .sheet { background: var(--sheet); border-radius: 24px; padding: 24px; max-width: 428px; }
+  .channel { display: flex; align-items: center; height: 48px; border-radius: 24px; background: var(--channel); padding: 0 14px 0 10px; margin-top: 8px; font-weight: 600; }
+  .focus { outline: 2px solid var(--negative); }
+  a.signup { color: var(--primary); font-size: 11px; font-weight: 600; text-decoration: none; }
+  code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>TikTok</h1>
+  <p>Signed-out chrome, dark only. Values come from tokens.json. TikTokFont and TikTokDisplayFont are not loaded here.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><i style="background:#000000"></i><span>page #000000</span></div>
+    <div class="swatch"><i style="background:#1e1e1e"></i><span>sheet #1e1e1e</span></div>
+    <div class="swatch"><i style="background:#fe2c55"></i><span>action #fe2c55</span></div>
+    <div class="swatch"><i style="background:#ff3b5c"></i><span>primary #ff3b5c</span></div>
+    <div class="swatch"><i style="background:#25f4ee"></i><span>splash #25f4ee</span></div>
+    <div class="swatch"><i style="background:#ffffff21"></i><span>channel #ffffff21</span></div>
+    <div class="swatch"><i style="background:#ff4c3a"></i><span>focus #ff4c3a</span></div>
+    <div class="swatch"><i style="background:#20d5ec"></i><span>cyan #20d5ec</span></div>
+    <div class="swatch"><i style="background:#0be09b"></i><span>positive #0be09b</span></div>
+  </div>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="login">Log in</button>
+    <button class="nav on">For You</button>
+    <button class="nav">Explore</button>
+    <span class="search">Search</span>
+  </div>
+  <h2>Login sheet</h2>
+  <div class="sheet">
+    <div style="font-size:33px;line-height:49.5px;font-weight:700;color:#fff">Log in to TikTok</div>
+    <div class="channel">Use QR code</div>
+    <div class="channel">Use phone or email</div>
+    <p style="font-size:15px">Don't have an account? <a class="signup" href="#signup">Sign up</a></p>
+    <button class="login focus">Focus ring</button>
+  </div>
+  <p>The focus ring is the declared <code>button:focus-visible</code> outline, #ff4c3a at 2px. It was not painted during capture.</p>
+</main>
+</body>
+</html>

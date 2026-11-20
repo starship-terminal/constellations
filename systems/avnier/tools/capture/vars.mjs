@@ -24,7 +24,7 @@
 // Bins:
 //   generated  the hashed-name design tokens the UI library declares
 //   app        semantically-named vars on the shop's own selectors
-//   vendor     OneTrust (--ot-*, ot-* selectors) and Font Awesome (--fa-*)
+//   vendor     the VENDOR pattern below: Axeptio, Loloyal (--ll-*), Swiper (--swiper-*), Font Awesome (--fa-*)
 //   utility    a one-off `[--x:value]` arbitrary-property utility class
 //   tailwind   Tailwind internals: --tw-*, @layer properties
 import fs from 'node:fs';
@@ -60,7 +60,7 @@ const result = await probe.evaluate((sheets) => {
     for (const r of list) {
       if (r.type === CSSRule.FONT_FACE_RULE) {
         const o = { file };
-        for (let i = 0; i < r.style.length; i++) o[r.style[i]] = r.style.getPropertyValue(r.style[i]).trim();
+        for (let i = 0; i < r.style.length; i++) o[r.style[i]] = noUrl(r.style.getPropertyValue(r.style[i]).trim());
         fonts.push(o);
         continue;
       }

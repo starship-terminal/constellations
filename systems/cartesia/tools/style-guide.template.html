@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cartesia style guide</title>
+<meta name="description" content="Cartesia design tokens and the public marketing, sign-in boundary and docs surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "ABC Diatype", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-display: "PP Kyoto", "ABC Diatype", ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-foreground, #1e1c1a); background: var(--color-background, #fefefe); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.1 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-foreground, #1e1c1a); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-boundary, #ededed); }
+.lead { max-width: 62ch; color: var(--color-foreground, #1e1c1a); opacity: .8; }
+.note { font-size: 13px; color: var(--color-foreground, #1e1c1a); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-foreground, #1e1c1a); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--color-background, #171715); padding: 12px; border-radius: 8px; }
+.pal.dark .nm, .pal.dark .vl { color: var(--color-foreground, #cdc8c1); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-border, #e4e3db); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-foreground, #1e1c1a); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-border, #e4e3db); background: var(--color-field, #fff); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-foreground, #1e1c1a); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-border, #e4e3db); overflow: hidden; background: var(--color-background, #fefefe); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 64px); padding: 0 12px 0 22px; font-size: 14px; border-bottom: 1px solid var(--color-boundary, #ededed); color: var(--color-foreground, #1e1c1a); }
+.navbar .wm { font-weight: 500; font-size: 18px; letter-spacing: -0.02em; font-family: var(--sg-display); }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 36px); padding: 0 16px; font-size: 14px; font-weight: 500; border-radius: var(--radius-lg, 8px); border: 1px solid transparent; }
+.btn.primary { background: var(--color-primary, #309d4b); color: var(--color-primary-foreground, #f9f9f8); }
+.btn.outline { border-color: var(--color-border, #e4e3db); color: var(--color-foreground, #1e1c1a); }
+.hero { color: var(--color-foreground, #1e1c1a); padding: 48px 40px; font: 500 40px/1.15 var(--sg-display); letter-spacing: -0.02em; text-align: left; }
+.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); color: var(--color-muted-foreground, #525150); letter-spacing: 0; margin: 16px 0 22px; max-width: 46ch; }
+.orb { width: var(--component-orb-size, 244.8px); height: var(--component-orb-size, 244.8px); border-radius: 50%; background: var(--color-accent, #f3f2ef); border: 1px solid var(--color-border, #e4e3db); display: flex; align-items: center; justify-content: center; color: var(--color-muted-foreground, #525150); font-size: 13px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-border, #e4e3db); border-radius: var(--radius-lg, 8px); padding: 14px; font-size: 13px; background: var(--color-card, #f9f9f8); }
+.tile b { display: block; font: 500 18px/1.25 var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.chip { display: inline-flex; align-items: center; height: var(--component-chip-height, 30px); padding: 0 14px; border-radius: 9999px; border: 1px solid var(--color-border, #e4e3db); font-size: 12px; color: var(--color-muted-foreground, #525150); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-border, #e4e3db); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-boundary, #ededed); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--color-foreground, #1e1c1a); opacity: .65; font-family: var(--sg-mono); }
+/* ---- auth mock ---- */
+.auth { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 32px 0; }
+.auth .f { width: var(--component-auth-field-width, 420px); height: var(--component-field-height, 44px); border: 1px solid var(--color-input, #e4e3db); border-radius: var(--radius-lg, 8px); background: var(--color-field, #fff); display: flex; align-items: center; padding: 0 14px; font-size: 14px; color: var(--color-placeholder, #75716c); }
+.auth .sub { width: var(--component-auth-field-width, 420px); height: var(--component-button-height-auth, 44px); border-radius: var(--radius-xl, 12px); background: var(--color-primary, #309d4b); color: var(--color-primary-foreground, #f9f9f8); display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 500; }
+.auth .sso { display: flex; gap: 10px; }
+.auth .sso i { width: var(--component-play-sample-size, 44px); height: 44px; border-radius: var(--radius-xl, 12px); border: 1px solid var(--color-input, #e4e3db); background: var(--color-field, #fff); }
+.faq { border: 1px solid var(--color-border, #e4e3db); border-radius: var(--radius-lg, 8px); padding: 18px var(--component-accordion-faq-padding, 48px); font: 500 16px/1.4 var(--sg-sans); }
+.faq small { display: block; font: 400 14px/1.5 var(--sg-sans); color: var(--color-muted-foreground, #525150); margin-top: 6px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Cartesia style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Cartesia, measured</h2>
+  <p class="lead">cartesia.ai is three surfaces signed out: the marketing site (Astro + Tailwind v4), the Playground auth boundary on play.cartesia.ai (a Clerk app sharing the token layer) and docs.cartesia.ai (a Mintlify app in Inter, kept out of the export). The marketing site declares its token layer — the --cartesia-* named palette (verdant #309d4b, growth #abd49e, forest #004e23, the canvas/field/mist/carbon/memory tints and the neutral ramps), a shadcn-style semantic layer (--background/--foreground/--primary/--card/…), the --control-* sizing scale, --motion-* ramps, the --site-* layout vars and the --text-* ramp from 60px to 12px — and paints it light, with a .dark scope that re-binds the same roles for dark islands (verdant primary becomes growth, borders become white alphas). The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from cartesia.ai on 2026-11-12, signed out, in headless Chromium. The playground behind sign-in is a documented boundary; the sign-in/sign-up cards were measured but never filled or submitted, the voice demos were pressed only as far as their own play controls, and the Talk to Skylar / Talk to Cartesia live-agent calls were never started. ABC Diatype, PP Kyoto, IBM Plex Mono and Homemade Apple are served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">Every marketing page carries the same chrome on the #fefefe field: the wordmark, the Products mega-menu trigger, plain links, Sign In, Talk to Sales and the verdant Try Cartesia pill at 36px high, 8px radius. The Products menu opens on click into a 624px panel of 6px-radius links. Keyboard focus draws a 2px solid #a1a1a1 (--ring) outline; voice-list rows ring in verdant.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">cartesia</span><span>Products &#9662;</span><span>Research</span><span>Pricing</span><span>Docs</span><span class="sp"></span><span>Sign In</span><span class="btn outline">Talk to Sales</span><span class="btn primary">Try Cartesia</span></div>
+    <div class="hero">The voice model for real-time agents<small>Sonic is the fastest, most natural text-to-speech model for voice agents, dubbing and interactive voice experiences.</small><span class="btn primary" style="height:40px">Play</span></div>
+  </div>
+
+  <h2 class="sh">The voice orb</h2>
+  <p class="lead">The home hero centres the Talk-to-Skylar orb — a 245px circle ringed by 59px voice-chooser buttons — a full-radius demo control. Use-case chips are 30px pills at 12px.</p>
+  <div class="mock" style="padding:24px;display:flex;gap:24px;align-items:center">
+    <div class="orb">Talk to Skylar</div>
+    <div><span class="chip">Support</span> <span class="chip">Sales</span> <span class="chip">Tutor</span><div style="margin-top:14px"><span class="btn primary">Try Cartesia</span></div></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing grids four plan cells (~255px wide, 24px side padding) with verdant and outlined CTAs, a 46px usage-slider calculator and details/summary FAQ items with 48px side padding.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile"><b>Free</b><span class="sub">$0/mo</span></div>
+      <div class="tile"><b>Pro</b><span class="sub">$8/mo</span></div>
+      <div class="tile"><b>Scale</b><span class="sub">$64/mo</span></div>
+      <div class="tile"><b>Enterprise</b><span class="sub">Custom</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn primary">Get started</span> <span class="btn outline">Talk to Sales</span></div>
+  </div>
+
+  <h2 class="sh">The dark islands</h2>
+  <p class="lead">Dark sections scope a .dark class that re-binds the same role tokens: the field goes #171715, the primary becomes growth #abd49e on near-black text, and borders become white translucencies.</p>
+  <div class="mock dark" style="padding:20px;background:var(--color-background,#171715);color:var(--color-foreground,#cdc8c1)">
+    <div class="grid">
+      <div class="tile" style="background:var(--color-card,#171717);border-color:var(--color-border,rgba(255,255,255,.1));color:var(--color-foreground,#cdc8c1)"><b style="color:var(--color-foreground,#cdc8c1)">Voice agents</b><span class="sub" style="color:var(--color-muted-foreground,#a1a1a1)">for teams and enterprise</span></div>
+      <div class="tile" style="background:var(--color-surface,#262421);border-color:var(--color-border,rgba(255,255,255,.1));color:var(--color-foreground,#cdc8c1)"><b style="color:var(--color-foreground,#cdc8c1)">Dubbing</b><span class="sub" style="color:var(--color-muted-foreground,#a1a1a1)">32+ languages</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn" style="background:var(--color-primary,#abd49e);color:var(--color-primary-foreground,#0a0a0a);padding:0 18px;font-size:14px">Learn more</span></div>
+  </div>
+
+  <h2 class="sh">The sign-in boundary</h2>
+  <p class="lead">play.cartesia.ai's Clerk cards centre a 640px column on the light field: 420px inputs at 8px radius, the verdant Continue button at 44px and 12px radius, and icon-only SSO buttons — measured, never filled or submitted.</p>
+  <div class="mock auth">
+    <div class="f">name@work.com</div>
+    <div class="sub">Continue</div>
+    <div class="sso"><i></i><i></i><i></i></div>
+  </div>
+
+  <h2 class="sh">Disclosure</h2>
+  <p class="lead">The pricing FAQ is native details/summary — 48px side padding, 8px-radius rows — and the home deployment accordion animates on --site-accordion-duration (350ms).</p>
+  <div class="mock" style="padding:20px"><div class="faq">How is usage billed?<small>Minutes of generated audio, measured per plan.</small></div></div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared layer carries the named --cartesia-* palette (greens, blues, oranges and the neutral ramps) under a shadcn-style semantic layer; light and dark roles are the same declared variables, re-bound by the .dark scope.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Spacing multiplies a 4px unit; the --radius scale runs 2-24px plus full, and the components paint inside it — 8px buttons and fields, 12px sign-in controls, 6px menu links, full-circle orbs and chips. Borders are quiet: #e4e3db border, #ededed boundary hairlines.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Motion</h2>
+  <p class="lead">The --motion-* ramp runs 100-200ms over two declared eases; the marketing accordion and scroll reveal take their own --site-accordion (350ms) and --site-reveal (700ms, 60ms stagger) vars.</p>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Four declared faces: <code>ABC Diatype</code> on body and UI, <code>PP Kyoto</code> on display headlines, <code>IBM Plex Mono</code> on code and figures and <code>Homemade Apple</code> on handwriting accents; the docs app adds Inter. Sizes are the declared --text-* steps plus the measured 40px hero and 26px section display; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --cartesia-*/--color-* variables from the live stylesheets and computed styles on the elements of the marketing, sign-in and docs surfaces</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, selected and open states measured per component, including the voice demo controls</td></tr><tr><td>No provenance</td><td>Every token names its variable (and the theme scope it was resolved in) or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const lightRoles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (lightRoles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of lightRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // The dark set's custom properties only resolve inside a .dark scope:
+  // swatch dots must live under it or they paint the light values/unset.
+  const darkRoles = flat(TOK.dark || {}, '').filter(([n, t]) => t.t === 'color');
+  if (darkRoles.length) {
+    h += `<div class="pal-h">dark roles (.dark islands)</div><div class="pal dark">`;
+    for (const [n, t] of darkRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.control || {}, 'control.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function motion() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) e += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) { const ls = typeof t.v === 'number' ? t.v + 'em' : t.v; h += `<div class="tr"><span class="ts" style="letter-spacing:${esc(ls)}">${esc(n)} — tracking</span><span class="tv">${esc(ls)}</span></div>`; }
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Cartesia</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

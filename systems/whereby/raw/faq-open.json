@@ -1,0 +1,24 @@
+{
+  "q": {
+    "name": "Question",
+    "text": "What is the difference between Meetings & Embedded",
+    "h": 72,
+    "color": "rgb(0, 0, 0)",
+    "font": "sans-serif",
+    "size": "16px",
+    "weight": "400",
+    "lh": "normal",
+    "bg": "rgba(0, 0, 0, 0)"
+  },
+  "a": {
+    "name": "Answer",
+    "text": "Meetings is ideal for individuals and teams looking to connect virtually with patients, customers and colleagues. You’ll have memorable rooms links and there are no downloads requi",
+    "h": 277,
+    "color": "rgb(0, 0, 0)",
+    "font": "sans-serif",
+    "size": "16px",
+    "weight": "400",
+    "lh": "normal",
+    "bg": "rgba(0, 0, 0, 0)"
+  }
+}

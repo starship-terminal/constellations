@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spyglass style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: light;
+}
+[data-mode="dark"] {
+/*DARK*/
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-page); color: var(--color-ink); font: 400 16px/24px var(--font-sans); }
+[data-mode="dark"] body { background: var(--color-page); color: var(--color-ink); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
+h1 { font: 500 28px/32px var(--font-display); letter-spacing: -0.84px; margin: 0; }
+h2 { font: 500 28px/32px var(--font-display); letter-spacing: -0.84px; margin: 40px 0 12px; }
+button.theme { margin-left: auto; height: 36px; padding: 8px 16px; border-radius: 6px; border: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-ink); font: 500 14px/20px var(--font-sans); cursor: pointer; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 148px; }
+.sw i { display: block; height: 56px; border-radius: 8px; border: 1px solid var(--color-border); }
+.sw b, .sw span { display: block; font-size: 12px; line-height: 16px; }
+.sw span { color: var(--color-muted); }
+.btn { display: inline-flex; align-items: center; height: 36px; padding: 8px 16px; border-radius: 6px; font: 500 14px/20px var(--font-sans); text-decoration: none; }
+.btn.primary { background: var(--color-primary); color: var(--color-onPrimary); border: 0; }
+[data-mode="dark"] .btn.primary { background: var(--color-primary); color: var(--color-onPrimary); }
+.btn.outline { background: var(--color-surface); color: var(--color-ink); border: 1px solid var(--color-border); }
+.nav { height: 39px; padding: 0 12px; border-radius: 9999px; border: 0; background: transparent; color: var(--color-nav); font: 500 14px/20px var(--font-sans); }
+.card { border: 1px solid var(--color-border); border-radius: 8px; padding: 12px; background: var(--color-surface); max-width: 420px; }
+.field { height: 40px; border: 1px solid var(--color-fieldBorder); border-radius: 6px; padding: 0 13px; display: flex; align-items: center; color: var(--color-muted); font-size: 14px; background: var(--color-surface); }
+.menu { width: 380px; border-radius: 24px; background: var(--color-scrim); box-shadow: var(--shadow-menu); padding: 16px; }
+.note { color: var(--color-muted); font-size: 13px; max-width: 70ch; }
+code { font-family: var(--font-mono); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Spyglass</h1>
+    <button class="theme" type="button" id="theme">Theme</button>
+  </header>
+  <p class="note">Public marketing values measured on spyglass.so on 2026-11-19. The theme toggle swaps the declared <code>.dark</code> set. Those dark values were not computed on a visible dark page.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Type</h2>
+  <p style="font: 500 40px/44px var(--font-display); letter-spacing: -1.2px; margin: 0;">Simple pricing. Scale as you grow.</p>
+  <p style="font: 400 16px/24px var(--font-sans); max-width: 60ch;">Body copy is Geist at 16px / 24px. Headings are Familjen Grotesk.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="btn primary" href="#components">Get 50% off</a>
+    <a class="btn outline" href="#components">Sign in</a>
+    <button class="nav" type="button">Product</button>
+  </div>
+  <h2>Prompt and field</h2>
+  <div class="card">
+    <div class="field">your@email.com</div>
+  </div>
+  <h2>Menu</h2>
+  <div class="menu">
+    <b>Features</b>
+    <div class="note">Everything Spyglass can do</div>
+  </div>
+</div>
+<script>
+const DATA = /*TOKENS*/null;
+const root = document.documentElement;
+document.getElementById("theme").addEventListener("click", () => {
+  root.dataset.mode = root.dataset.mode === "dark" ? "light" : "dark";
+  paint();
+});
+function paint() {
+  const mode = root.dataset.mode;
+  const colors = (DATA[mode] && DATA[mode].color) || {};
+  const box = document.getElementById("swatches");
+  box.innerHTML = "";
+  for (const [name, token] of Object.entries(colors)) {
+    if (!token || !("v" in token)) continue;
+    // Paint the set's emitted property, so an alias shows its resolved colour; text via textContent.
+    const el = document.createElement("div");
+    el.className = "sw";
+    const dot = document.createElement("i");
+    dot.style.background = `var(--color-${name.replace(/[^a-zA-Z0-9-]/g, "-")})`;
+    const label = document.createElement("b");
+    label.textContent = name;
+    const value = document.createElement("span");
+    value.textContent = typeof token.v === "string" ? token.v : JSON.stringify(token.v);
+    el.append(dot, label, value);
+    box.appendChild(el);
+  }
+}
+paint();
+</script>
+</body>
+</html>

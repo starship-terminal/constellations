@@ -1,0 +1,4 @@
+{
+  "systems/helloklean/tools/capture/test_motion.mjs": "Fails on macOS only (passes on Linux CI): subtest 'motion-probe finds its package folder when the path has a space' captures no page from a temp folder whose path holds a space. Kit motion-probe fix not yet ported (capture kit wave).",
+  "systems/kickstarter/tools/capture/test_motion.mjs": "Fails on macOS only (passes on Linux CI): five motion-probe subtests read ~/.design-systems/kickstarter/probe/css instead of the test's fixture folder, and the space-in-path subtest cannot import public/lib.mjs. Routed to the capture kit wave."
+}

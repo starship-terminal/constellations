@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Krea style guide</title>
+<meta name="description" content="Krea design tokens and the public signed-out surface, rendered from tokens.json. The painted theme is html.dark.">
+<style>
+:root {
+  --color-primary-0: #ffffff;
+  --color-primary-50: #fafafa;
+  --color-primary-100: #f5f5f5;
+  --color-primary-150: #f1f1f1;
+  --color-primary-200: #e5e5e5;
+  --color-primary-250: #dadada;
+  --color-primary-300: #d4d4d5;
+  --color-primary-400: #a3a3a3;
+  --color-primary-500: #737373;
+  --color-primary-600: #525252;
+  --color-primary-700: #404040;
+  --color-primary-800: #262626;
+  --color-primary-850: #202020;
+  --color-primary-900: #171717;
+  --color-primary-950: #101010;
+  --color-primary-975: #0b0b0b;
+  --color-primary-1000: #000000;
+  --color-action-default: #006eff;
+  --color-action-hover: #0064fe;
+  --color-action-green: #65f223;
+  --color-action-purple: #af00ff;
+  --color-red-50: #fef2f2;
+  --color-red-100: #ffe2e2;
+  --color-red-200: #ffc9c9;
+  --color-red-300: #ffa2a2;
+  --color-red-400: #ff6467;
+  --color-red-500: #fb2c36;
+  --color-red-600: #e7000b;
+  --color-red-700: #c10007;
+  --color-red-800: #9f0712;
+  --color-red-900: #82181a;
+  --color-red-950: #460809;
+  --color-orange-50: #fff7ed;
+  --color-orange-100: #ffedd4;
+  --color-orange-200: #ffd6a7;
+  --color-orange-300: #ffb86a;
+  --color-orange-400: #ff8904;
+  --color-orange-500: #ff6900;
+  --color-orange-600: #f54900;
+  --color-orange-700: #ca3500;
+  --color-orange-800: #9f2d00;
+  --color-orange-900: #7e2a0c;
+  --color-amber-50: #fffbeb;
+  --color-amber-100: #fef3c6;
+  --color-amber-200: #fee685;
+  --color-amber-300: #ffd230;
+  --color-amber-400: #ffb900;
+  --color-amber-500: #fe9a00;
+  --color-amber-600: #e17100;
+  --color-amber-700: #bb4d00;
+  --color-amber-800: #973c00;
+  --color-amber-900: #7b3306;
+  --color-amber-950: #461901;
+  --color-yellow-50: #fefce8;
+  --color-yellow-100: #fef9c2;
+  --color-yellow-200: #fff085;
+  --color-yellow-300: #ffdf20;
+  --color-yellow-400: #fdc700;
+  --color-yellow-500: #f0b100;
+  --color-yellow-600: #d08700;
+  --color-yellow-700: #a65f00;
+  --color-yellow-800: #894b00;
+  --color-yellow-900: #733e0a;
+  --color-yellow-950: #432004;
+  --color-green-50: #f0fdf4;
+  --color-green-100: #dcfce7;
+  --color-green-200: #b9f8cf;
+  --color-green-300: #7bf1a8;
+  --color-green-400: #05df72;
+  --color-green-500: #00c950;
+  --color-green-600: #00a63e;
+  --color-green-700: #008236;
+  --color-green-800: #016630;
+  --color-green-900: #0d542b;
+  --color-green-950: #032e15;
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-200: #bedbff;
+  --color-blue-300: #8ec5ff;
+  --color-blue-400: #51a2ff;
+  --color-blue-500: #2b7fff;
+  --color-blue-600: #155dfc;
+  --color-blue-700: #1447e6;
+  --color-blue-800: #193cb8;
+  --color-blue-900: #1c398e;
+  --color-blue-950: #162456;
+  --color-zinc-50: #fafafa;
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-300: #d4d4d8;
+  --color-zinc-400: #9f9fa9;
+  --color-zinc-500: #71717b;
+  --color-zinc-600: #52525c;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-800: #27272a;
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a1a1a1;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  --color-neutral-950: #0a0a0a;
+  --font-family-sans: "Suisse Intl",ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  --font-family-mono: "Suisse Intl Mono",ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-book: 450;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+  --font-size-4xl: 36px;
+  --font-size-5xl: 48px;
+  --font-size-6xl: 60px;
+  --radius-xs: 2px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 14px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-4xl: 32px;
+  --spacing-unit: 4px;
+  --motion-easing-in: cubic-bezier(0.4, 0.0, 1.0, 1.0);
+  --motion-easing-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --motion-easing-in-out: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+
+  --sg-sans: "Suisse Intl", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: "Suisse Intl Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --color-page: #0a0a0a;
+  --color-surface: #171717;
+  --color-popover: #171717;
+  --color-text: #fafafa;
+  --color-text-muted: #a1a1a1;
+  --color-text-on-accent: #000000;
+  --color-muted: #262626;
+  --color-accent: #006eff;
+  --color-accent-hover: #0064fe;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-input: rgba(255, 255, 255, 0.15);
+  --color-ring: #737373;
+  --color-destructive: #ff6467;
+  --color-warning: #ffb900;
+  --color-success: #05df72;
+  --color-sidebar: #000000;
+  --color-sidebar-foreground: #fafafa;
+  --color-sidebar-accent: #262626;
+  --color-sidebar-border: rgba(255, 255, 255, 0.1);
+  --color-sidebar-primary: #1447e6;
+  --color-page-950: #101010;
+  --color-on-dark: #ffffff;
+  --component-sign-in-backgroundColor: #fafafa;
+  --component-sign-in-color: #0a0a0a;
+  --component-sign-in-height: 48px;
+  --component-sign-in-borderTopLeftRadius: 10px;
+  --component-sign-in-hover-backgroundColor: #e5e5e5;
+  --component-plan-cta-backgroundColor: #ffffff;
+  --component-plan-cta-color: #000000;
+  --component-plan-cta-height: 40px;
+  --component-email-cta-backgroundColor: rgba(0, 110, 255, 0.15);
+  --component-oauth-backgroundColor: #ffffff;
+  --component-oauth-color: #000000;
+  --component-nav-active-backgroundColor: #262626;
+  --component-heading-color: #fafafa;
+  --component-sidebar-width: 255px;
+  --component-focus-ring-width: 2px;
+  --component-focus-ring: rgba(0, 0, 0, 0.1);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-text, #fafafa); background: var(--color-page-950, #101010); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.1 var(--sg-sans); margin: 0 0 8px; letter-spacing: -0.03em; }
+h2.sh { font: 500 13px/1 var(--sg-sans); letter-spacing: 0; color: var(--color-text-muted, #a1a1a1); margin: 48px 0 8px; padding-bottom: 8px; border-bottom: 1px solid var(--color-border, #262626); }
+.lead { max-width: 68ch; color: var(--color-text, #fafafa); opacity: .85; }
+.note { font-size: 13px; color: var(--color-text-muted, #a1a1a1); max-width: 68ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 12px/1 var(--sg-sans); color: var(--color-text-muted, #a1a1a1); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 180px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-border, #333); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-text-muted, #a1a1a1); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-text-muted, #a1a1a1); }
+.mock { border: 1px solid var(--color-border, #262626); overflow: hidden; background: var(--color-page-950, #101010); border-radius: 12px; }
+.shell { display: flex; min-height: 280px; }
+.side { width: 255px; background: var(--color-sidebar, #171717); padding: 16px 12px; display: flex; flex-direction: column; gap: 6px; }
+.side .item { height: 36px; border-radius: 10px; display: flex; align-items: center; padding: 0 12px; font-size: 14px; color: var(--color-text, #fafafa); }
+.side .item.on { background: var(--color-sidebar-accent, #262626); }
+.side .signin { margin-top: auto; height: 48px; border-radius: 10px; background: var(--color-on-dark, #fff); color: #111; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.mainpane { flex: 1; padding: 24px; }
+.composer { height: 48px; border-radius: 16px; border: 1px solid var(--color-border, #333); display: flex; align-items: center; padding: 0 12px 0 16px; color: var(--color-text-muted, #888); font-size: 14px; }
+.gen { margin-left: auto; width: 31px; height: 31px; border-radius: 8px; background: var(--color-accent, #006eff); }
+.plans { display: flex; gap: 12px; padding: 16px; }
+.plan { flex: 1; background: var(--color-surface, #171717); border: 1px solid var(--color-border, #333); border-radius: 16px; padding: 16px; }
+.plan .cta { display: flex; align-items: center; justify-content: center; height: 40px; border-radius: 999px; background: #fff; color: #111; font-size: 14px; margin-top: 16px; }
+.badge { display: inline-flex; background: var(--color-accent, #006eff); color: #fff; border-radius: 999px; font-size: 12px; padding: 2px 8px; }
+.login { max-width: 352px; margin: 16px auto; display: flex; flex-direction: column; gap: 8px; }
+.oauth { height: 46px; border-radius: 12px; background: var(--color-surface, #1c1c1c); border: 1px solid var(--color-border, #333); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.emailcta { height: 46px; border-radius: 12px; background: var(--color-accent, #006eff); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-border, #262626); }
+.tr .tv { font-size: 12px; color: var(--color-text-muted, #a1a1a1); font-family: var(--sg-mono); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-border, #333); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Krea style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>. Swatches and sizes below are tokens. The boxed mocks are reconstructions drawn with those tokens, not captured pixels. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+
+  <h2 class="sh">What was measured</h2>
+  <p class="lead">Read from www.krea.ai on 2026-11-18, signed out, in headless Chromium. The public app paints one theme, <code>html.dark</code>: a #101010 field, white Sign in and plan buttons, and a #006eff action blue, set in Suisse Intl. Those painted roles are the token file's dark set; there is no light set. There is no public light switch.</p>
+  <p class="note">Sign in, Sign up, Continue with Google, Apple and SSO, Book a call, Get Pro and Generate were measured, never followed. Continue with Email was submitted once and stopped on Cloudflare Turnstile captcha_failed. Consent overlays were hidden, never answered. Suisse Intl is served by the site. Samples fall back to system faces.</p>
+
+  <h2 class="sh">App shell</h2>
+  <p class="lead">A 255px sidebar holds 36px nav rows and a 48px white Sign in button. The composer is a 48px field with a 31px blue Generate control. Generate was never clicked.</p>
+  <div class="mock">
+    <div class="shell">
+      <div class="side">
+        <div class="item on">Home</div>
+        <div class="item">Image</div>
+        <div class="item">Video</div>
+        <div class="item">Pricing</div>
+        <div class="signin">Sign in</div>
+      </div>
+      <div class="mainpane">
+        <div class="composer">Describe an idea or upload an image to edit it<span class="gen"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">Four plan columns on the dark field. Yearly is selected by default, with a blue 40% off badge. Plan buttons are white pills. Checkout was never followed.</p>
+  <div class="mock">
+    <div class="plans">
+      <div class="plan"><b>Free</b><div class="note">$0</div><div class="cta">Get Free</div></div>
+      <div class="plan"><b>Pro</b> <span class="badge">40% off</span><div class="note">Most popular</div><div class="cta">Get Pro</div></div>
+      <div class="plan"><b>Max</b><div class="note">Yearly</div><div class="cta">Get Max</div></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Login boundary</h2>
+  <p class="lead">Welcome to Krea: three dark OAuth rows and a blue Continue with Email button. Email continue was submitted once and stopped on captcha_failed.</p>
+  <div class="mock" style="padding:24px">
+    <div class="login">
+      <div class="oauth">Continue with Google</div>
+      <div class="oauth">Continue with Apple</div>
+      <div class="oauth">SSO</div>
+      <div class="emailcta">Continue with Email</div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The primary ramp is the product grey, from white to black, with primary-950 as the app field. Action blue is #006eff. Semantic roles (page, surface, text, border, sidebar) come from the dark shadcn layer.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Spacing is a 4px base. Radius runs from 2px to 32px, with a 10px default on Sign in and sidebar rows.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">One voice: Suisse Intl for UI and display, Suisse Intl Mono for code. Weights include book at 450. Samples fall back to system faces.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Reading</th><th>What it is</th></tr><tr><td>Stylesheets</td><td>Tailwind v4 theme layer on :root,:host, semantic roles on .dark, resolved in raw/css-vars.json</td></tr><tr><td>Components</td><td>Computed styles on the signed-out DOM, hover and keyboard focus, pressed forced with DevTools</td></tr><tr><td>Provenance</td><td>Every token names its custom property or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"primary":{"0":{"v":"#ffffff","t":"color","s":"css-var --color-primary-0 (dark)","d":"Primary grey ramp step 0, declared on :root,:host."},"50":{"v":"#fafafa","t":"color","s":"css-var --color-primary-50 (dark)","d":"Primary grey ramp step 50, declared on :root,:host."},"100":{"v":"#f5f5f5","t":"color","s":"css-var --color-primary-100 (dark)","d":"Primary grey ramp step 100, declared on :root,:host."},"150":{"v":"#f1f1f1","t":"color","s":"css-var --color-primary-150 (dark)","d":"Primary grey ramp step 150, declared on :root,:host."},"200":{"v":"#e5e5e5","t":"color","s":"css-var --color-primary-200 (dark)","d":"Primary grey ramp step 200, declared on :root,:host."},"250":{"v":"#dadada","t":"color","s":"css-var --color-primary-250 (dark)","d":"Primary grey ramp step 250, declared on :root,:host."},"300":{"v":"#d4d4d5","t":"color","s":"css-var --color-primary-300 (dark)","d":"Primary grey ramp step 300, declared on :root,:host."},"400":{"v":"#a3a3a3","t":"color","s":"css-var --color-primary-400 (dark)","d":"Primary grey ramp step 400, declared on :root,:host."},"500":{"v":"#737373","t":"color","s":"css-var --color-primary-500 (dark)","d":"Primary grey ramp step 500, declared on :root,:host."},"600":{"v":"#525252","t":"color","s":"css-var --color-primary-600 (dark)","d":"Primary grey ramp step 600, declared on :root,:host."},"700":{"v":"#404040","t":"color","s":"css-var --color-primary-700 (dark)","d":"Primary grey ramp step 700, declared on :root,:host."},"800":{"v":"#262626","t":"color","s":"css-var --color-primary-800 (dark)","d":"Primary grey ramp step 800, declared on :root,:host."},"850":{"v":"#202020","t":"color","s":"css-var --color-primary-850 (dark)","d":"Primary grey ramp step 850, declared on :root,:host."},"900":{"v":"#171717","t":"color","s":"css-var --color-primary-900 (dark)","d":"Primary grey ramp step 900, declared on :root,:host."},"950":{"v":"#101010","t":"color","s":"css-var --color-primary-950 (dark)","d":"Primary grey ramp step 950, declared on :root,:host."},"975":{"v":"#0b0b0b","t":"color","s":"css-var --color-primary-975 (dark)","d":"Primary grey ramp step 975, declared on :root,:host."},"1000":{"v":"#000000","t":"color","s":"css-var --color-primary-1000 (dark)","d":"Primary grey ramp step 1000, declared on :root,:host."}},"action":{"default":{"v":"#006eff","t":"color","s":"css-var --color-action (dark)","d":"Krea action colour, declared on :root,:host."},"hover":{"v":"#0064fe","t":"color","s":"css-var --color-action-hover (dark)","d":"Krea action colour, declared on :root,:host."},"green":{"v":"#65f223","t":"color","s":"css-var --color-action-green (dark)","d":"Krea action colour, declared on :root,:host."},"purple":{"v":"#af00ff","t":"color","s":"css-var --color-action-purple (dark)","d":"Krea action colour, declared on :root,:host."}},"red":{"50":{"v":"#fef2f2","t":"color","s":"css-var --color-red-50 (dark)"},"100":{"v":"#ffe2e2","t":"color","s":"css-var --color-red-100 (dark)"},"200":{"v":"#ffc9c9","t":"color","s":"css-var --color-red-200 (dark)"},"300":{"v":"#ffa2a2","t":"color","s":"css-var --color-red-300 (dark)"},"400":{"v":"#ff6467","t":"color","s":"css-var --color-red-400 (dark)"},"500":{"v":"#fb2c36","t":"color","s":"css-var --color-red-500 (dark)"},"600":{"v":"#e7000b","t":"color","s":"css-var --color-red-600 (dark)"},"700":{"v":"#c10007","t":"color","s":"css-var --color-red-700 (dark)"},"800":{"v":"#9f0712","t":"color","s":"css-var --color-red-800 (dark)"},"900":{"v":"#82181a","t":"color","s":"css-var --color-red-900 (dark)"},"950":{"v":"#460809","t":"color","s":"css-var --color-red-950 (dark)"}},"orange":{"50":{"v":"#fff7ed","t":"color","s":"css-var --color-orange-50 (dark)"},"100":{"v":"#ffedd4","t":"color","s":"css-var --color-orange-100 (dark)"},"200":{"v":"#ffd6a7","t":"color","s":"css-var --color-orange-200 (dark)"},"300":{"v":"#ffb86a","t":"color","s":"css-var --color-orange-300 (dark)"},"400":{"v":"#ff8904","t":"color","s":"css-var --color-orange-400 (dark)"},"500":{"v":"#ff6900","t":"color","s":"css-var --color-orange-500 (dark)"},"600":{"v":"#f54900","t":"color","s":"css-var --color-orange-600 (dark)"},"700":{"v":"#ca3500","t":"color","s":"css-var --color-orange-700 (dark)"},"800":{"v":"#9f2d00","t":"color","s":"css-var --color-orange-800 (dark)"},"900":{"v":"#7e2a0c","t":"color","s":"css-var --color-orange-900 (dark)"}},"amber":{"50":{"v":"#fffbeb","t":"color","s":"css-var --color-amber-50 (dark)"},"100":{"v":"#fef3c6","t":"color","s":"css-var --color-amber-100 (dark)"},"200":{"v":"#fee685","t":"color","s":"css-var --color-amber-200 (dark)"},"300":{"v":"#ffd230","t":"color","s":"css-var --color-amber-300 (dark)"},"400":{"v":"#ffb900","t":"color","s":"css-var --color-amber-400 (dark)"},"500":{"v":"#fe9a00","t":"color","s":"css-var --color-amber-500 (dark)"},"600":{"v":"#e17100","t":"color","s":"css-var --color-amber-600 (dark)"},"700":{"v":"#bb4d00","t":"color","s":"css-var --color-amber-700 (dark)"},"800":{"v":"#973c00","t":"color","s":"css-var --color-amber-800 (dark)"},"900":{"v":"#7b3306","t":"color","s":"css-var --color-amber-900 (dark)"},"950":{"v":"#461901","t":"color","s":"css-var --color-amber-950 (dark)"}},"yellow":{"50":{"v":"#fefce8","t":"color","s":"css-var --color-yellow-50 (dark)"},"100":{"v":"#fef9c2","t":"color","s":"css-var --color-yellow-100 (dark)"},"200":{"v":"#fff085","t":"color","s":"css-var --color-yellow-200 (dark)"},"300":{"v":"#ffdf20","t":"color","s":"css-var --color-yellow-300 (dark)"},"400":{"v":"#fdc700","t":"color","s":"css-var --color-yellow-400 (dark)"},"500":{"v":"#f0b100","t":"color","s":"css-var --color-yellow-500 (dark)"},"600":{"v":"#d08700","t":"color","s":"css-var --color-yellow-600 (dark)"},"700":{"v":"#a65f00","t":"color","s":"css-var --color-yellow-700 (dark)"},"800":{"v":"#894b00","t":"color","s":"css-var --color-yellow-800 (dark)"},"900":{"v":"#733e0a","t":"color","s":"css-var --color-yellow-900 (dark)"},"950":{"v":"#432004","t":"color","s":"css-var --color-yellow-950 (dark)"}},"green":{"50":{"v":"#f0fdf4","t":"color","s":"css-var --color-green-50 (dark)"},"100":{"v":"#dcfce7","t":"color","s":"css-var --color-green-100 (dark)"},"200":{"v":"#b9f8cf","t":"color","s":"css-var --color-green-200 (dark)"},"300":{"v":"#7bf1a8","t":"color","s":"css-var --color-green-300 (dark)"},"400":{"v":"#05df72","t":"color","s":"css-var --color-green-400 (dark)"},"500":{"v":"#00c950","t":"color","s":"css-var --color-green-500 (dark)"},"600":{"v":"#00a63e","t":"color","s":"css-var --color-green-600 (dark)"},"700":{"v":"#008236","t":"color","s":"css-var --color-green-700 (dark)"},"800":{"v":"#016630","t":"color","s":"css-var --color-green-800 (dark)"},"900":{"v":"#0d542b","t":"color","s":"css-var --color-green-900 (dark)"},"950":{"v":"#032e15","t":"color","s":"css-var --color-green-950 (dark)"}},"blue":{"50":{"v":"#eff6ff","t":"color","s":"css-var --color-blue-50 (dark)"},"100":{"v":"#dbeafe","t":"color","s":"css-var --color-blue-100 (dark)"},"200":{"v":"#bedbff","t":"color","s":"css-var --color-blue-200 (dark)"},"300":{"v":"#8ec5ff","t":"color","s":"css-var --color-blue-300 (dark)"},"400":{"v":"#51a2ff","t":"color","s":"css-var --color-blue-400 (dark)"},"500":{"v":"#2b7fff","t":"color","s":"css-var --color-blue-500 (dark)"},"600":{"v":"#155dfc","t":"color","s":"css-var --color-blue-600 (dark)"},"700":{"v":"#1447e6","t":"color","s":"css-var --color-blue-700 (dark)"},"800":{"v":"#193cb8","t":"color","s":"css-var --color-blue-800 (dark)"},"900":{"v":"#1c398e","t":"color","s":"css-var --color-blue-900 (dark)"},"950":{"v":"#162456","t":"color","s":"css-var --color-blue-950 (dark)"}},"zinc":{"50":{"v":"#fafafa","t":"color","s":"css-var --color-zinc-50 (dark)"},"100":{"v":"#f4f4f5","t":"color","s":"css-var --color-zinc-100 (dark)"},"200":{"v":"#e4e4e7","t":"color","s":"css-var --color-zinc-200 (dark)"},"300":{"v":"#d4d4d8","t":"color","s":"css-var --color-zinc-300 (dark)"},"400":{"v":"#9f9fa9","t":"color","s":"css-var --color-zinc-400 (dark)"},"500":{"v":"#71717b","t":"color","s":"css-var --color-zinc-500 (dark)"},"600":{"v":"#52525c","t":"color","s":"css-var --color-zinc-600 (dark)"},"700":{"v":"#3f3f46","t":"color","s":"css-var --color-zinc-700 (dark)"},"800":{"v":"#27272a","t":"color","s":"css-var --color-zinc-800 (dark)"}},"neutral":{"50":{"v":"#fafafa","t":"color","s":"css-var --color-neutral-50 (dark)"},"100":{"v":"#f5f5f5","t":"color","s":"css-var --color-neutral-100 (dark)"},"200":{"v":"#e5e5e5","t":"color","s":"css-var --color-neutral-200 (dark)"},"300":{"v":"#d4d4d4","t":"color","s":"css-var --color-neutral-300 (dark)"},"400":{"v":"#a1a1a1","t":"color","s":"css-var --color-neutral-400 (dark)"},"500":{"v":"#737373","t":"color","s":"css-var --color-neutral-500 (dark)"},"600":{"v":"#525252","t":"color","s":"css-var --color-neutral-600 (dark)"},"700":{"v":"#404040","t":"color","s":"css-var --color-neutral-700 (dark)"},"800":{"v":"#262626","t":"color","s":"css-var --color-neutral-800 (dark)"},"900":{"v":"#171717","t":"color","s":"css-var --color-neutral-900 (dark)"},"950":{"v":"#0a0a0a","t":"color","s":"css-var --color-neutral-950 (dark)"}}},"font":{"family":{"sans":{"v":"\"Suisse Intl\",ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"","t":"fontFamily","s":"css-var --font-sans (dark)","d":"Suisse Intl, the UI face, with the system fallback stack."},"mono":{"v":"\"Suisse Intl Mono\",ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace","t":"fontFamily","s":"css-var --font-mono (dark)","d":"Suisse Intl Mono."}},"weight":{"light":{"v":300,"t":"fontWeight","s":"css-var --font-weight-light (dark)"},"normal":{"v":400,"t":"fontWeight","s":"css-var --font-weight-normal (dark)"},"book":{"v":450,"t":"fontWeight","s":"css-var --font-weight-book (dark)"},"medium":{"v":500,"t":"fontWeight","s":"css-var --font-weight-medium (dark)"},"semibold":{"v":600,"t":"fontWeight","s":"css-var --font-weight-semibold (dark)"},"bold":{"v":700,"t":"fontWeight","s":"css-var --font-weight-bold (dark)"}},"size":{"xs":{"v":"12px","t":"dimension","s":"css-var --text-xs (dark)","d":"Tailwind text-xs size."},"sm":{"v":"14px","t":"dimension","s":"css-var --text-sm (dark)","d":"Tailwind text-sm size."},"base":{"v":"16px","t":"dimension","s":"css-var --text-base (dark)","d":"Tailwind text-base size."},"lg":{"v":"18px","t":"dimension","s":"css-var --text-lg (dark)","d":"Tailwind text-lg size."},"xl":{"v":"20px","t":"dimension","s":"css-var --text-xl (dark)","d":"Tailwind text-xl size."},"2xl":{"v":"24px","t":"dimension","s":"css-var --text-2xl (dark)","d":"Tailwind text-2xl size."},"3xl":{"v":"30px","t":"dimension","s":"css-var --text-3xl (dark)","d":"Tailwind text-3xl size."},"4xl":{"v":"36px","t":"dimension","s":"css-var --text-4xl (dark)","d":"Tailwind text-4xl size."},"5xl":{"v":"48px","t":"dimension","s":"css-var --text-5xl (dark)","d":"Tailwind text-5xl size."},"6xl":{"v":"60px","t":"dimension","s":"css-var --text-6xl (dark)","d":"Tailwind text-6xl size."}}},"radius":{"xs":{"v":"2px","t":"dimension","s":"css-var --radius-xs (dark)"},"sm":{"v":"6px","t":"dimension","s":"css-var --radius-sm (dark)"},"md":{"v":"8px","t":"dimension","s":"css-var --radius-md (dark)"},"lg":{"v":"10px","t":"dimension","s":"css-var --radius-lg (dark)"},"xl":{"v":"14px","t":"dimension","s":"css-var --radius-xl (dark)"},"2xl":{"v":"16px","t":"dimension","s":"css-var --radius-2xl (dark)"},"3xl":{"v":"24px","t":"dimension","s":"css-var --radius-3xl (dark)"},"4xl":{"v":"32px","t":"dimension","s":"css-var --radius-4xl (dark)"}},"spacing":{"unit":{"v":"4px","t":"dimension","s":"css-var --spacing (dark)","d":"The 4px spacing base."}},"motion":{"easing":{"in":{"v":[0.4,0.0,1.0,1.0],"t":"cubicBezier","s":"css-var --ease-in (dark)"},"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-out (dark)"},"in-out":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-in-out (dark)"}}}},"light":{},"dark":{"color":{"page":{"v":"#0a0a0a","t":"color","s":"css-var --background (dark)","d":"Painted on html.dark (--background)."},"surface":{"v":"#171717","t":"color","s":"css-var --card (dark)","d":"Painted on html.dark (--card)."},"popover":{"v":"#171717","t":"color","s":"css-var --popover (dark)","d":"Painted on html.dark (--popover)."},"text":{"v":"#fafafa","t":"color","s":"css-var --foreground (dark)","d":"Painted on html.dark (--foreground)."},"text-muted":{"v":"#a1a1a1","t":"color","s":"css-var --muted-foreground (dark)","d":"Painted on html.dark (--muted-foreground)."},"text-on-accent":{"v":"#000000","t":"color","s":"css-var --primary-foreground (dark)","d":"Painted on html.dark (--primary-foreground)."},"muted":{"v":"#262626","t":"color","s":"css-var --muted (dark)","d":"Painted on html.dark (--muted)."},"accent":{"v":"#006eff","t":"color","s":"css-var --color-action (dark)","d":"Painted on html.dark (--color-action)."},"accent-hover":{"v":"#0064fe","t":"color","s":"css-var --color-action-hover (dark)","d":"Painted on html.dark (--color-action-hover)."},"border":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"css-var --border (dark)","d":"Painted on html.dark (--border)."},"input":{"v":"rgba(255, 255, 255, 0.15)","t":"color","s":"css-var --input (dark)","d":"Painted on html.dark (--input)."},"ring":{"v":"#737373","t":"color","s":"css-var --ring (dark)","d":"Painted on html.dark (--ring)."},"destructive":{"v":"#ff6467","t":"color","s":"css-var --destructive (dark)","d":"Painted on html.dark (--destructive)."},"warning":{"v":"#ffb900","t":"color","s":"css-var --warning (dark)","d":"Painted on html.dark (--warning)."},"success":{"v":"#05df72","t":"color","s":"css-var --success (dark)","d":"Painted on html.dark (--success)."},"sidebar":{"v":"#000000","t":"color","s":"css-var --sidebar (dark)","d":"Painted on html.dark (--sidebar)."},"sidebar-foreground":{"v":"#fafafa","t":"color","s":"css-var --sidebar-foreground (dark)","d":"Painted on html.dark (--sidebar-foreground)."},"sidebar-accent":{"v":"#262626","t":"color","s":"css-var --sidebar-accent (dark)","d":"Painted on html.dark (--sidebar-accent)."},"sidebar-border":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"css-var --sidebar-border (dark)","d":"Painted on html.dark (--sidebar-border)."},"sidebar-primary":{"v":"#1447e6","t":"color","s":"css-var --sidebar-primary (dark)","d":"Painted on html.dark (--sidebar-primary)."},"page-950":{"v":"#101010","t":"color","s":"css-var --color-primary-950 (dark)","d":"body dark:bg-primary-950, the app field."},"on-dark":{"v":"#ffffff","t":"color","s":"css-var --color-primary-0 (dark)","d":"White text and the Sign in fill."}},"component":{"sign-in":{"backgroundColor":{"v":"#fafafa","t":"color","s":"css-var --accent-foreground (dark); computed backgroundColor of nav-signin/default (raw/components-computed.json)","d":"The white Sign in button fill."},"color":{"v":"#0a0a0a","t":"color","s":"css-var --background (dark); computed color of nav-signin/default (raw/components-computed.json)","d":"Sign in label, black on white."},"height":{"v":"48px","t":"dimension","s":"computed height of nav-signin/default","d":"Sign in control height."},"borderTopLeftRadius":{"v":"10px","t":"dimension","s":"computed borderTopLeftRadius of nav-signin/default","d":"Sign in corner radius."}},"sign-in-hover":{"backgroundColor":{"v":"#e5e5e5","t":"color","s":"css-var --color-neutral-200 (dark); computed backgroundColor of nav-signin/hover (raw/components-computed.json)","d":"Sign in hover fill."}},"plan-cta":{"backgroundColor":{"v":"#ffffff","t":"color","s":"css-var --color-primary (dark); computed backgroundColor of price-cta/default (raw/components-computed.json)","d":"Get Pro fill, white pill."},"color":{"v":"#000000","t":"color","s":"css-var --color-black (dark); computed color of price-cta/default (raw/components-computed.json)","d":"Get Pro label."},"height":{"v":"40px","t":"dimension","s":"computed height of price-cta/default","d":"Plan button height."}},"email-cta":{"backgroundColor":{"v":"rgba(0, 110, 255, 0.15)","t":"color","s":"computed backgroundColor of login-email-btn/default (raw/components-computed.json)","d":"Continue with Email fill, the action blue."}},"oauth":{"backgroundColor":{"v":"#ffffff","t":"color","s":"css-var --color-primary (dark); computed backgroundColor of login-google/default (raw/components-computed.json)","d":"Continue with Google fill."},"color":{"v":"#000000","t":"color","s":"css-var --color-black (dark); computed color of login-google/default (raw/components-computed.json)","d":"OAuth label."}},"nav-active":{"backgroundColor":{"v":"#262626","t":"color","s":"css-var --accent (dark); computed backgroundColor of nav-home/default (raw/components-computed.json)","d":"Selected sidebar item fill."}},"heading":{"color":{"v":"#fafafa","t":"color","s":"css-var --accent-foreground (dark); computed color of price-h1/default (raw/components-computed.json)","d":"Pricing heading colour."}},"sidebar":{"width":{"v":"255px","t":"dimension","s":"computed width of sidebar/default","d":"Sidebar width at 1440."}},"focus":{"ring-width":{"v":"2px","t":"dimension","s":"computed focus-visible ring of nav-signin (box-shadow 2px spread; outline none)","d":"Keyboard focus ring width."},"ring":{"v":"rgba(0, 0, 0, 0.1)","t":"color","s":"computed focus-visible ring of nav-signin (box-shadow 2px spread; outline none)","d":"Keyboard focus ring."}}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['dark', 'painted roles (dark)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${label}</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.join(', ') : t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none declared as a shadow token</b> <span>cards sit on the dark field with a hairline border</span></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.dark.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)}  Describe an idea</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)}  Welcome to Krea</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

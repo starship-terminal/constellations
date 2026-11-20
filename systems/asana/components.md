@@ -8,7 +8,7 @@ How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (80 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (79 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -171,9 +171,9 @@ A hero action. Measured, never followed. Read as `hero-cta` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 167.81 x 64; padding 16px 32px; border 1px solid transparent; radius 100px; background #ffffff `white`; text TWK Lausanne 20/30 400, #0d0d0d `black.1000`; transition color 0.3s ease, border 0.3s ease |
+| default (same: hover, pressed) | size 167.81 x 64; padding 16px 32px; border 1px solid transparent; radius 100px; background #ffffff `white`; text TWK Lausanne 20/30 400, #0d0d0d `black.1000`; transition color 0.3s ease, border 0.3s ease |
 
-![Hero CTA default](components/crops/hero-cta-default.png) ![Hero CTA hover](components/crops/hero-cta-hover.png) ![Hero CTA focus-visible](components/crops/hero-cta-focus-visible.png) ![Hero CTA pressed](components/crops/hero-cta-pressed.png)
+![Hero CTA default](components/crops/hero-cta-default.png) ![Hero CTA hover](components/crops/hero-cta-hover.png) ![Hero CTA pressed](components/crops/hero-cta-pressed.png)
 
 #### Caps label
 A small-caps eyebrow label. Read as `caps-label` on the home page.
@@ -429,7 +429,7 @@ No standalone SVG icon set was lifted on this pass; the icons in the crops and s
 
 ### Pages
 
-- **Anything that sends, submits or signs in.** No form was submitted, no prompt was sent, no account was created. The contact-sales .ds-input fields were focused and one sample value typed and deleted, never submitted.
+- **Anything that sends, submits or signs in.** No form was submitted, no prompt was sent, no account was created. Fields clicked into (and, where a `filled` state exists, typed into and cleared), never submitted: `gate-field`, `sales-field`.
 
 ### States
 

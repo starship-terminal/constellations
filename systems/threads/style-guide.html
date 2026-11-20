@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Threads style guide</title>
+<style>
+  :root {
+    color-scheme: light;
+    --page: #ffffff;
+    --surface: #ffffff;
+    --card: #f5f5f5;
+    --text: #000000;
+    --muted: #999999;
+    --line: rgba(0, 0, 0, 0.15);
+    --button: #000000;
+    --button-text: #ffffff;
+    --accent: #1876f2;
+    --input: #ffffff;
+    --divider: #ced0d4;
+    --font: system-ui, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    --field-font: Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, Menlo, Consolas, Monaco, monospace;
+  }
+  [data-mode="dark"] {
+    color-scheme: dark;
+    --page: #101010;
+    --surface: #242526;
+    --card: #1e1e1e;
+    --text: #f3f5f7;
+    --muted: #777777;
+    --line: rgba(243, 245, 247, 0.15);
+    --button: #ffffff;
+    --button-text: #101010;
+    --accent: #2e89ff;
+    --input: #101010;
+    --divider: #3e4042;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 15px/21px var(--font); }
+  header { display: flex; gap: 16px; align-items: center; padding: 16px 24px; border-bottom: 1px solid var(--line); position: sticky; top: 0; background: var(--page); }
+  header h1 { font-size: 20px; line-height: 25px; margin: 0; }
+  header button { margin-left: auto; background: transparent; color: var(--text); border: 0.5px solid var(--line); border-radius: 18px; padding: 8px 16px; font: 600 15px/21px var(--font); }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+  h2 { font-size: 20px; line-height: 25px; margin: 40px 0 12px; }
+  p.note { color: var(--muted); font-size: 13px; line-height: 18.2px; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+  .sw { display: grid; grid-template-columns: 40px 1fr; gap: 8px; align-items: center; }
+  .sw i { width: 40px; height: 40px; border-radius: 8px; border: 0.5px solid var(--line); display: block; }
+  .sw b { font: 600 12px/16px var(--mono); display: block; }
+  .sw span { color: var(--muted); font-size: 12px; }
+  .type p { margin: 8px 0; }
+  .card { background: var(--card); border: 0.5px solid var(--line); border-radius: 24px; padding: 32px 24px 28px; max-width: 337px; }
+  .card h3 { margin: 0 0 8px; font-size: 20px; line-height: 25px; }
+  .card p { margin: 0 0 16px; color: var(--muted); }
+  .ig { display: block; width: 100%; background: var(--page); color: var(--text); border: 0; border-radius: 16px; padding: 28px 16px; font: 600 15px/21px var(--font); }
+  .field { display: block; width: 100%; max-width: 370px; background: var(--input); color: var(--text); border: 0.5px solid var(--line); border-radius: 18px; padding: 16px; font: 400 15px/21px var(--field-font); margin: 8px 0; }
+  .field::placeholder { color: var(--muted); }
+  .login { display: block; width: 100%; max-width: 370px; background: var(--button); color: var(--button-text); border: 0; border-radius: 18px; padding: 16px; font: 600 15px/21px var(--font); margin: 8px 0; }
+  .link { color: var(--muted); font-size: 15px; }
+  .row { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  td, th { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 500; }
+  code { font-family: var(--mono); font-size: 12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Threads</h1>
+  <span class="note">Signed-out tokens, 2026-11-19</span>
+  <button type="button" id="theme">Light</button>
+</header>
+<main>
+  <p class="note">Values are the measured custom properties and computed styles. Light is the <code>__fb-light-mode</code> remap. The blue Facebook primary is not the painted Log in button.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+
+  <h2>Type</h2>
+  <div class="type">
+    <p style="font-size:32px;line-height:44.8px;font-weight:800">Say more with Threads</p>
+    <p style="font-size:20px;line-height:25px;font-weight:700">Log in or sign up for Threads</p>
+    <p style="font-size:16px;line-height:21px;font-weight:700">Log in with your Instagram account</p>
+    <p>See what people are talking about and join the conversation.</p>
+    <p class="note">Footer legal links are 12 px. "Scan to get the app" is 13 px / 18.2 px.</p>
+  </div>
+
+  <h2>Login card</h2>
+  <div class="row">
+    <div class="card">
+      <h3>Log in or sign up for Threads</h3>
+      <p>See what people are talking about and join the conversation.</p>
+      <button class="ig" type="button">Continue with Instagram</button>
+    </div>
+  </div>
+
+  <h2>Login form</h2>
+  <input class="field" placeholder="Username, phone or email" readonly>
+  <input class="field" placeholder="Password" type="password" readonly>
+  <button class="login" type="button">Log in</button>
+  <p><a class="link" href="#gaps">Forgot password?</a></p>
+  <p class="note">Fields are empty on purpose. The capture did not type a username, a phone number, or a password.</p>
+
+  <h2>Radius and spacing</h2>
+  <table>
+    <tr><th>Token</th><th>Value</th><th>Where</th></tr>
+    <tr><td><code>radius.login-field</code></td><td>18 px</td><td>Fields and the Log in button</td></tr>
+    <tr><td><code>radius.login-card</code></td><td>24 px</td><td>Home login card</td></tr>
+    <tr><td><code>radius.instagram-wall</code></td><td>16 px</td><td>Instagram button on the card</td></tr>
+    <tr><td><code>radius.instagram-dialog</code></td><td>20 px</td><td>Instagram button in the dialog</td></tr>
+    <tr><td><code>radius.button</code></td><td>6 px</td><td>Declared <code>--button-corner-radius</code>, not the painted control</td></tr>
+    <tr><td><code>spacing.1</code>, <code>spacing.2</code></td><td>4 px, 8 px</td><td>Derived from declared radii</td></tr>
+    <tr><td><code>spacing.4</code> through <code>spacing.14</code></td><td>16 to 56 px</td><td>Measured padding and control heights</td></tr>
+  </table>
+
+  <h2 id="gaps">Gaps</h2>
+  <p class="note">No account, no Instagram login, no phone number. Pressed, error, disabled, loading, hover, toast, and reduced motion were not captured. Icons are not in this package.</p>
+</main>
+<script>
+const roles = [
+  ["page", "--page", "color.background.page"],
+  ["card", "--card", "color.background.login-card"],
+  ["surface", "--surface", "color.background.surface"],
+  ["text", "--text", "color.text.primary"],
+  ["muted", "--muted", "color.text.secondary"],
+  ["button", "--button", "color.control.button-background"],
+  ["accent", "--accent", "color.status.accent"],
+  ["divider", "--divider", "color.border.divider"]
+];
+const box = document.getElementById("swatches");
+for (const [name, css, token] of roles) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = "<i style=\"background:var(" + css + ")\"></i><div><b>" + name + "</b><span>" + token + "</span></div>";
+  box.appendChild(el);
+}
+const btn = document.getElementById("theme");
+btn.addEventListener("click", () => {
+  const dark = document.documentElement.getAttribute("data-mode") !== "light";
+  document.documentElement.setAttribute("data-mode", dark ? "light" : "dark");
+  btn.textContent = dark ? "Dark" : "Light";
+});
+</script>
+</body>
+</html>

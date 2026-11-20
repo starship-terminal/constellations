@@ -11,7 +11,15 @@ Adapted from systems/hevy/tools/build_style_guide.py. Standard library only, det
 """
 import html
 import json
+import os
 import pathlib
+
+# PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+# for it. While this is None the script stops: the kit's copy is Grok Bot's example and
+# would write Grok Bot's values. KIT_EXAMPLE=1 runs the example as it is.
+ADAPTED_FOR = None
+if ADAPTED_FOR is None and not os.environ.get("KIT_EXAMPLE"):
+    raise SystemExit("build_style_guide.py is the kit's Grok Bot example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR")
 
 PKG = pathlib.Path(__file__).resolve().parent.parent
 TOKENS = PKG / "tokens.json"
@@ -22,7 +30,7 @@ MONO_STACK = 'ui-monospace, "SF Mono", Menlo, monospace'
 NAME = "Grok Bot"   # PRODUCT (adapt)
 OWNER = "X Corp"    # PRODUCT (adapt): whose visual system it is
 LEDE = ("Grok Bot 1.16.0 for iOS 26, read from stills captured through iPhone Mirroring on 2026-10-23.")  # PRODUCT (adapt)
-EV_CLASS = {"Sampled": "ev-sampled", "Sampled (text)": "ev-text", "Derived": "ev-derived", "Not captured": "ev-none"}
+EV_CLASS = {"Sampled": "ev-sampled", "Sampled (text)": "ev-text", "Derived": "ev-derived", "Reconstruction": "ev-derived", "Not captured": "ev-none"}
 
 
 def walk(node, path=()):
@@ -69,9 +77,15 @@ def swatch_cell(tok, *sets):
 
 def build():
     data = json.loads(TOKENS.read_text())
-    core, light, dark = (list(walk(data[s])) for s in ("core", "light", "dark"))
-    dark_by = dict(dark)
-    core_by, light_by = dict(core), dict(light)
+    # A one-theme app (check() in build_tokens.py allows it) has no light or no dark set: every
+    # theme table, stylesheet block and the toggle follow the sets that exist.
+    themes = [s for s in ("light", "dark") if s in data]
+    if not themes:
+        raise SystemExit("tokens.json has neither a light nor a dark set")
+    core = list(walk(data["core"]))
+    sets = {s: list(walk(data[s])) for s in themes}
+    by = {s: dict(sets[s]) for s in themes}
+    core_by = dict(core)
 
     core_css, type_css = [], []
     for p, t in core:
@@ -84,20 +98,21 @@ def build():
         else:
             core_css.append("%s:%s" % (var(p), css(t["$value"])))
     core_css += ["--font-base:%s" % FONT_STACK, "--font-mono:%s" % MONO_STACK]
-    light_css = ["%s:%s" % (var(p), css(t["$value"])) for p, t in light]
-    dark_css = ["%s:%s" % (var(p), css(t["$value"])) for p, t in dark]
+    start = "dark" if "dark" in themes else "light"
+    theme_css = {s: ["%s:%s" % (var(p), css(t["$value"])) for p, t in sets[s]] for s in themes}
 
     # ---- semantic colours, light and dark side by side
     groups = {}
-    for p, t in light:
+    for p, t in sets[themes[0]]:
         groups.setdefault(p[1], []).append((p, t))
     colour_html = []
     for g, items in groups.items():
-        rows = "".join('<tr><th scope="row"><code>%s</code><span class="desc">%s</span></th>%s%s</tr>'
-                       % (esc(".".join(p)), esc(t["$description"]), swatch_cell(t, light_by, core_by), swatch_cell(dark_by[p], dark_by, core_by))
+        rows = "".join('<tr><th scope="row"><code>%s</code><span class="desc">%s</span></th>%s</tr>'
+                       % (esc(".".join(p)), esc(t["$description"]),
+                          "".join(swatch_cell(by[s][p], by[s], core_by) if p in by[s] else "<td>-</td>" for s in themes))
                        for p, t in items)
-        colour_html.append('<h3>%s</h3><div class="scroll"><table class="tokens"><thead><tr><th>Token</th><th>Light</th>'
-                           '<th>Dark</th></tr></thead><tbody>%s</tbody></table></div>' % (esc(g), rows))
+        colour_html.append('<h3>%s</h3><div class="scroll"><table class="tokens"><thead><tr><th>Token</th>%s'
+                           '</tr></thead><tbody>%s</tbody></table></div>' % (esc(g), "".join("<th>%s</th>" % s.title() for s in themes), rows))
 
     under = lambda pre: [(p, t) for p, t in core if p[:len(pre)] == pre]
     palette = "".join('<div class="chip-sw"><span class="dot" style="background:%s"></span><code>%s</code><span>%s</span></div>'
@@ -255,23 +270,26 @@ footer{margin-top:48px;color:var(--color-text-secondary);font-size:12px}
 
     script = """(function(){var r=document.documentElement,b=document.querySelectorAll('[data-set-theme]');
 function a(t){r.setAttribute('data-theme',t);for(var i=0;i<b.length;i++){b[i].setAttribute('aria-pressed',String(b[i].getAttribute('data-set-theme')===t));}}
-for(var i=0;i<b.length;i++){b[i].addEventListener('click',function(e){a(e.currentTarget.getAttribute('data-set-theme'));});}a('dark');})();"""
+for(var i=0;i<b.length;i++){b[i].addEventListener('click',function(e){a(e.currentTarget.getAttribute('data-set-theme'));});}a('%s');})();""" % start
 
-    parts = ["<!doctype html>", '<html lang="en" data-theme="dark">', "<head>", '<meta charset="utf-8">',
+    parts = ["<!doctype html>", '<html lang="en" data-theme="%s">' % start, "<head>", '<meta charset="utf-8">',
              '<meta name="viewport" content="width=device-width, initial-scale=1">', "<title>%s style guide</title>" % esc(NAME), "<style>",
              ":root{%s}" % ";".join(core_css),
-             ':root,:root[data-theme="light"]{color-scheme:light;%s}' % ";".join(light_css),
-             ':root[data-theme="dark"]{color-scheme:dark;%s}' % ";".join(dark_css),
+             *(([':root,:root[data-theme="light"]{color-scheme:light;%s}' % ";".join(theme_css["light"])] if "light" in themes else [])
+               + ([(':root[data-theme="dark"]' if "light" in themes else ':root,:root[data-theme="dark"]') + '{color-scheme:dark;%s}' % ";".join(theme_css["dark"])]
+                  if "dark" in themes else [])),
              "\n".join(type_css), page_css, "</style>", "</head>", "<body>", '<div class="wrap">',
              '<header class="top"><div><h1>%s style guide</h1>' % esc(NAME),
              '<p class="lede">%s Every value below comes from tokens.json; points are 1:1 with CSS pixels. ' % esc(LEDE)
              + "The font is not known, so the page uses the platform sans. "
              "Glass is drawn as its centre colour: the real material blurs what is behind it.</p></div>",
-             '<div class="toggle" role="group" aria-label="Theme"><button type="button" data-set-theme="light" aria-pressed="false">Light</button>'
-             '<button type="button" data-set-theme="dark" aria-pressed="true">Dark</button></div></header>',
+             ('<div class="toggle" role="group" aria-label="Theme"><button type="button" data-set-theme="light" aria-pressed="false">Light</button>'
+              '<button type="button" data-set-theme="dark" aria-pressed="true">Dark</button></div></header>' if len(themes) == 2 else "</header>"),
              "<h2>Colour</h2>",
-             '<p class="lede">Light and dark side by side. The badge says how each value was read: Sampled (a flat fill, exact), Sampled (text) '
-             "(the anti-aliased pixel furthest from the fill), Derived (worked out, or a glass or gradient reading). Hover a swatch for its capture.</p>",
+             '<p class="lede">%s The badge says how each value was read: Sampled (a pixel read off a capture; '
+             "a glass or gradient box gives its share in the description), Sampled (text) (the anti-aliased pixel furthest from the fill), "
+             "Derived (worked out from readings), Reconstruction (judged by eye). Hover a swatch for its capture.</p>"
+             % ("Light and dark side by side." if len(themes) == 2 else "%s only: the app has one theme." % themes[0].title()),
              "".join(colour_html),
              # PRODUCT (adapt): the palette and ramp captions
              "<h3>Avatar palette (core)</h3><p class=\"lede\">The Create New Bot palette. Bots take one colour each; their switches and the owner's bubbles use it darkened to about 77%.</p>",

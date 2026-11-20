@@ -1,0 +1,26 @@
+{
+ "_note": "Rules for systems/getfernand. A fully public signed-out capture: every route is public marketing, docs or signed-out app content; the login/signup fields were typed into with name@example.com and cleared before shots, never submitted, so no PII is reachable. The Cal.com 'Book a demo' action was never activated. Every email the OCR finds is published content: the support@ contact printed in the footer/pricing/integrations pages, placeholder addresses in the product copy (help@yourapp.com, sales@yourapp.com), and fictional demo addresses painted inside the product mocks (piedpiper.com, hooli.xyz, bachmanity.com, nathotdog.com, trescomas.com, seo-wizards.biz). OCR reads 'fernand' as 'femand'/'getiernana' etc. - the misread variants of the same published domains are allowed too. No regions need masking.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@getfernand\\.com$",
+   "@piedpiper\\.com$",
+   "@bachmanity\\.com$",
+   "@hooli\\.xyz$",
+   "@seo-wizards\\.biz$",
+   "@example\\.com$",
+   "@example\\.inc$",
+   "@example\\.org$",
+   "@everyone$",
+   "@here$",
+   "@getfemand\\.com$",
+   "@getiemana\\.com$",
+   "@yourapp\\.com$",
+   "@nathotdog\\.com$",
+   "@trescomas\\.com$",
+   "@tescomas\\.com$",
+   "@bachnanity\\.com$"
+  ]
+ },
+ "families": []
+}

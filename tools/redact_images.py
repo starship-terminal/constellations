@@ -11,17 +11,22 @@ finds anything the rectangles missed, using the same detection patterns as `tool
     python3 tools/redact_images.py check systems/manus --patterns ~/.design-systems/cleanup-redact.json
     python3 tools/redact_images.py lines systems/manus/screenshots/home-dark.png   # author a rules file
 
-`check` never lets a rules file switch a detector off (its ocr.emails or ocr.net), and an email_allow
-entry must match a whole part of an address (see email_allowed). `check` reads every image file under the package that git does not ignore (any folder, every frame;
+`check` never lets a rules file switch a detector off (its ocr.emails or ocr.net). A rules file's
+email_allow entry is one exact address or one @domain, never a pattern, and never a free-mail domain
+(see allow_entry_text); `check` and `apply` refuse a file holding anything else. `check` reads every image file under the package that git does not ignore (any folder, every frame;
 a file of an image type it cannot read fails the check), and the package's own rules file, tools/redact-rules/<slug>.json, when one exists (its ocr
 block: email_allow, wrap_ignore) and prints which file it loaded; `--rules` names another one instead.
-`apply` never guesses: it edits files, so its `--rules` stays required.
+`apply` never guesses: it edits files, so its `--rules` stays required. Both refuse a rules file with a
+key at a level that never reads it or a key that is not listed below (RULES_KEYS); a key that starts
+with "_" is a note.
 
 `apply` edits files in place (they are Git LFS objects, so git has the originals until you commit).
 Run it on a clean checkout of the package; to redo it after changing a rule, `git checkout` the
 package's images first, because a painted-over image no longer holds the pixels a rule was written
 against. Needs Pillow and numpy, and `tesseract` on PATH. Only Pillow, numpy and the
-patterns file are read; no private value is ever written by this tool, and none belongs in a rules file.
+patterns file are read; no private value is ever written by this tool, and none belongs in a rules file:
+`check` fails when a rules file's own text (its notes, family names, keep lists) holds an email address
+its email_allow does not pass or a phone-number-shaped string. Say what a family hides, not the value.
 
 Rules file (JSON, committed, coordinates and generic UI words only):
 
@@ -59,8 +64,18 @@ rectangle touches something bright, such as a modal's edge); "pixelate:N" averag
 photographs, where a flat fill would look like a hole. N below 16 is refused: a pixelated title is
 still a title.
 
-Every output is requantized to 256 colours with the call the kit's quantize.py makes (median cut, no
-dither), so untouched pixels keep their exact colour and the files stay small. A pattern that spans
+`apply` changes only the pixels inside the regions it paints (the rectangles and the padded OCR
+boxes); a file with nothing painted is never rewritten, so it stays byte-identical. An edited PNG
+keeps its mode and every chunk but IHDR and IDAT byte for byte (PLTE, tRNS, iCCP, gAMA, pHYs, text),
+and is written with Pillow's optimize setting. A palette image keeps every untouched pixel's index;
+a painted pixel takes the nearest existing palette entry, over RGB and, when the file has tRNS,
+alpha too. The palette is never grown or reordered: when it holds no entry within NEAR of a fill
+colour, the nearest one is used and `apply` says how many pixels that hit. An RGB, RGBA, grey or
+grey-alpha image is painted in its own mode, alpha included (inside a region alpha is filled like
+the colour, so a glyph drawn in alpha alone is hidden too). Before replacing a file, `apply` decodes
+the written copy and stops, leaving the file unchanged, if any pixel or alpha value outside the
+painted regions, or any other chunk, differs. A file it cannot rewrite that way (a JPEG, which is
+lossy; a 16-bit or animated PNG) is named and left alone, and `apply` exits 1. A pattern that spans
 two OCR lines is reported, not painted; add a rectangle for it.
 """
 import argparse
@@ -70,6 +85,7 @@ import io
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -80,7 +96,7 @@ import numpy as np
 from PIL import Image, ImageFilter, ImageSequence
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from catalog import IMAGE_EXT, read_redaction, redaction_patterns, tool_env  # noqa: E402
+from catalog import IMAGE_EXT, input_error, read_json_object, read_redaction, redaction_patterns, tool_env  # noqa: E402
 
 Image.MAX_IMAGE_PIXELS = None
 warnings.simplefilter("ignore", Image.DecompressionBombWarning)
@@ -294,7 +310,7 @@ def fill_solid(a, x0, y0, x1, y1):
     px = a[Y0:Y1, X0:X1][mask]
     if len(px) == 0:
         return
-    vals, counts = np.unique(px.reshape(-1, 3), axis=0, return_counts=True)
+    vals, counts = np.unique(px.reshape(-1, a.shape[2]), axis=0, return_counts=True)
     a[y0:y1, x0:x1] = vals[counts.argmax()]
 
 
@@ -303,7 +319,7 @@ def pixelate(a, x0, y0, x1, y1, n):
     h, w = block.shape[:2]
     ph, pw = -h % n, -w % n
     padded = np.pad(block, ((0, ph), (0, pw), (0, 0)), mode="edge")
-    small = padded.reshape(padded.shape[0] // n, n, padded.shape[1] // n, n, 3).mean(axis=(1, 3))
+    small = padded.reshape(padded.shape[0] // n, n, padded.shape[1] // n, n, a.shape[2]).mean(axis=(1, 3))
     big = np.repeat(np.repeat(small, n, axis=0), n, axis=1)[:h, :w]
     a[y0:y1, x0:x1] = np.rint(big).astype(np.uint8)
 
@@ -435,6 +451,172 @@ def email_allowed(addr, allow):
     return False
 
 
+# A rules file is committed, so it must never hold the values it paints out: a note names the kind of
+# value and where it sits, never the value. These find what slipped in anyway.
+PHONE_RUN = re.compile(r"\+?\(?\d[\d ().-]*\d\)?")
+ISO_DATE = re.compile(r"\b\d{4}-\d{2}-\d{2}\b")
+RESERVED_DOMAIN = re.compile(r"(^|\.)(example(\.(com|org|net))?|test|invalid|localhost)$", re.I)
+
+
+def _rule_strings(o, path=""):
+    """(JSON path, string) for every string in a rules file except its own ocr.email_allow list."""
+    if isinstance(o, dict):
+        for k, v in o.items():
+            if path == "ocr" and k == "email_allow":
+                continue
+            yield from _rule_strings(v, f"{path}.{k}" if path else k)
+    elif isinstance(o, list):
+        for i, v in enumerate(o):
+            yield from _rule_strings(v, f"{path}[{i}]")
+    elif isinstance(o, str):
+        yield path, o
+
+
+def _phone_shaped(s):
+    """Whether s holds a phone-number-shaped run: 2 to 6 consecutive digit groups joined by spaces,
+    dots, hyphens or brackets, 9 to 15 digits in all. Every window of a long run is tried, so two
+    numbers side by side, or a number next to a date, still count. An ISO date is never part of one."""
+    for m in PHONE_RUN.finditer(ISO_DATE.sub(",", s)):
+        groups = [len(g) for g in re.findall(r"\d+", m.group())]
+        for i in range(len(groups)):
+            for j in range(i + 1, min(i + 6, len(groups))):
+                if 9 <= sum(groups[i:j + 1]) <= 15:
+                    return True
+    return False
+
+
+def rules_text_leaks(rules):
+    """Where a rules file's own text holds a private-looking value: an email address that neither its
+    ocr.email_allow nor a reserved test domain (example.com, .test, .example, .invalid) passes, also
+    when a regex escapes its dots, or a phone-number-shaped string (see _phone_shaped). Returns
+    "path: kind" lines, never the value, so the report itself leaks nothing."""
+    ocr = rules.get("ocr") if isinstance(rules, dict) else None
+    allow = ocr.get("email_allow", []) if isinstance(ocr, dict) else []
+    out = []
+    for path, s in _rule_strings(rules):
+        # A keep regex spells an address with escaped dots (person@host\.com): read it unescaped too.
+        addrs = {m.group().rstrip(".") for t in (s, re.sub(r"\\(.)", r"\1", s)) for m in EMAIL.finditer(t)}
+        for addr in sorted(addrs):
+            if not RESERVED_DOMAIN.search(addr.partition("@")[2]) and not email_allowed(addr, allow):
+                out.append(f"{path}: an email address its email_allow does not pass")
+        if _phone_shaped(s):
+            out.append(f"{path}: a phone-number-shaped string")
+    return out
+# Mailbox domains anyone can sign up at: an allow entry may name one address there, never the domain.
+FREE_MAIL = ("gmail.com", "googlemail.com", "yahoo.com", "yahoo.co.jp", "yahoo.co.uk", "ymail.com",
+             "outlook.com", "hotmail.com", "live.com", "msn.com", "icloud.com", "me.com", "mac.com",
+             "proton.me", "protonmail.com", "pm.me", "mail.com", "email.com", "aol.com", "gmx.com", "gmx.de",
+             "gmx.net", "web.de", "yandex.com", "yandex.ru", "mail.ru", "qq.com", "163.com", "126.com",
+             "zoho.com", "fastmail.com", "hey.com", "tutanota.com", "naver.com", "agentmail.to")
+# The reserved .example top-level domain (RFC 2606) can never hold a real mailbox, so an address
+# there is a placeholder wherever it shows; no rules file needs to list it.
+EXAMPLE_TLD = re.compile(r"\.example$", re.I)
+REGEX_META = re.compile(r"[.^$*+?{}\[\]\\|()]")
+# ASCII only: a Unicode letter can fold to a different ASCII one under the matcher's re.I (a dotless
+# i matches i), so a domain spelled with one could name a free-mail domain without looking like it.
+ALLOW_TEXT = re.compile(r"[A-Za-z0-9_.+-]*@[A-Za-z0-9_.-]+")
+
+
+def allow_entry_text(entry):
+    """(plain text, None) for a package rules file's email_allow entry, or (None, why it is refused).
+    An entry is one exact address (`^support@vendor\\.com$`) or one `@domain` suffix
+    (`@vendor\\.com$`): optional ^ and $ (or a trailing \\b) anchors are dropped and \\. \\- \\+
+    unescaped, and nothing else regex-like may remain, so validation never has to read a pattern.
+    A suffix may not name a free-mail domain. The owner's private patterns file is not held to this."""
+    if not isinstance(entry, str) or not entry:
+        return None, "is empty or not a string"
+    core = entry[1:] if entry.startswith("^") else entry
+    for end in ("$", "\\b"):
+        if core.endswith(end) and not core.endswith("\\" + end):
+            core = core[:-len(end)]
+            break
+    if REGEX_META.search(re.sub(r"\\[.+-]", "", core)):
+        return None, "is a regex pattern: list exact addresses, one per entry, or one @domain"
+    text = re.sub(r"\\([.+-])", r"\1", core)
+    if not ALLOW_TEXT.fullmatch(text):
+        return None, "is not one address or one @domain in plain ASCII: list exact addresses, one per entry"
+    domain = text.partition("@")[2].lower()
+    if text.startswith("@") and any(domain == d or domain.endswith("." + d) for d in FREE_MAIL):
+        return None, f"allows every address at the free-mail domain {domain}: list exact addresses, one per entry"
+    return text, None
+
+
+def allow_entry_problem(entry):
+    """Why allow_entry_text refuses an entry, or None."""
+    return allow_entry_text(entry)[1]
+
+
+def package_allow(rules_file, entries):
+    """A package rules file's email_allow as the regexes email_allowed reads: each entry's plain text,
+    escaped, so an address matches exactly and an @domain matches the address's whole domain, both
+    case-insensitively. Stops with one error line naming every refused entry."""
+    if not isinstance(entries, list):
+        input_error(f"{rules_file}: ocr.email_allow must be a list of entries")
+    out, bad = [], []
+    for e in entries:
+        text, why = allow_entry_text(e)
+        if why:
+            bad.append(f"{json.dumps(e)} {why}")
+        else:
+            out.append(re.escape(text))
+    if bad:
+        input_error(f"{rules_file}: ocr.email_allow " + "; ".join(bad))
+    return out
+
+
+# The keys a rules file may hold at each level, as cmd_apply, cmd_check and rules_for read them. A key
+# that starts with "_" is a note and is never read. excludeSources and captureLimitations are read by
+# systems/clerk/tools/ingest_evidence.py from that package's rules file.
+RULES_KEYS = {
+    "the top level": {"families", "delete_stems", "delete", "ocr", "excludeSources", "captureLimitations"},
+    "ocr": {"net", "emails", "email_allow", "keep", "boost", "delete_if_covered", "wrap_ignore"},
+    "a family": {"name", "files", "skip", "size", "rects", "ocr_lines"},
+    "an ocr_lines entry": {"rect", "keep"},
+}
+
+
+def rules_key_problems(rules):
+    """One line per key a rules file holds at a level that never reads it: a known key at the wrong
+    level names where it belongs, any other key is unknown. A misplaced key used to be ignored without
+    a word (a top-level wrap_ignore, an ocr.families), so the rule it carried never ran."""
+    out = []
+
+    def keys(obj, level, where):
+        if not isinstance(obj, dict):
+            out.append(f"{where} must be a JSON object")
+            return
+        for k in obj:
+            if k.startswith("_") or k in RULES_KEYS[level]:
+                continue
+            home = [lv for lv, ks in RULES_KEYS.items() if k in ks]
+            label = f"{where}.{k}" if where else k
+            out.append(f"{label} belongs in {' or '.join(home)}" if home else f"{label} is not a rules-file key")
+
+    def items(obj, level, where):
+        if not isinstance(obj, list):
+            out.append(f"{where} must be a list")
+            return []
+        for i, o in enumerate(obj):
+            keys(o, level, f"{where}[{i}]")
+        return [(i, o) for i, o in enumerate(obj) if isinstance(o, dict)]   # keep each entry's own index
+
+    keys(rules, "the top level", "")
+    if "ocr" in rules:
+        keys(rules["ocr"], "ocr", "ocr")
+    for i, fam in items(rules.get("families", []), "a family", "families"):
+        items(fam.get("ocr_lines", []), "an ocr_lines entry", f"families[{i}].ocr_lines")
+    return out
+
+
+def read_rules(path):
+    """The rules file at `path`, or one error line naming the file and every misplaced or unknown key."""
+    rules = read_json_object(path, "rules file")
+    bad = rules_key_problems(rules)
+    if bad:
+        input_error(f"{path}: " + "; ".join(bad))
+    return rules
+
+
 def find_private(words, patterns, emails, email_allow):
     """Boxes (x0, y0, x1, y1) of OCR words that fall inside a pattern or email match, per line."""
     lines = {}
@@ -453,7 +635,7 @@ def find_private(words, patterns, emails, email_allow):
         hits = [m.span() for p in rx for m in p.finditer(text)]
         if emails:
             hits += [m.span() for m in EMAIL.finditer(text)
-                     if not email_allowed(m.group(), email_allow)]
+                     if not email_allowed(m.group(), email_allow) and not EXAMPLE_TLD.search(m.group().rstrip("."))]
         for s, e in hits:
             for a, b, box in spans:
                 if a < e and b > s:
@@ -480,19 +662,201 @@ def open_rgb(f):
 
 
 def save_256(im, f):
-    """The kit's quantize.py call: sRGB, 256 colours, median cut, no dither."""
+    """The kit's quantize.py call: sRGB, 256 colours, median cut, no dither. For a builder writing a
+    new image (clerk's ingest_evidence.py); `apply` never uses it, because it rewrites every pixel."""
     im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(f, optimize=True)
+
+
+# ---------------------------------------------------------------- editing in place
+
+class NotEditable(Exception):
+    """An image `apply` cannot rewrite without changing pixels outside the regions it paints."""
+
+
+PNG_MAGIC = b"\x89PNG\r\n\x1a\n"
+PNG_MODES = {0: "L", 2: "RGB", 3: "P", 4: "LA", 6: "RGBA"}    # IHDR colour type -> Pillow mode
+PIXEL_CHUNKS = (b"IHDR", b"IDAT")       # the only chunks a rewrite replaces; every other is copied
+ANIMATION_CHUNKS = (b"acTL", b"fcTL", b"fdAT")
+NEAR = 24                               # a palette entry this far off (RGB, plus alpha) is reported
+
+
+def png_chunks(data):
+    """([(type, whole chunk bytes)], bytes after IEND) of a PNG file."""
+    if data.startswith(b"\xff\xd8"):
+        raise NotEditable("a JPEG is lossy, so rewriting it would change every pixel")
+    if not data.startswith(PNG_MAGIC):
+        raise NotEditable("not a PNG file; apply rewrites PNGs only")
+    out, i = [], len(PNG_MAGIC)
+    while i + 12 <= len(data):
+        end = i + 12 + int.from_bytes(data[i:i + 4], "big")
+        if end > len(data):
+            raise NotEditable("a PNG chunk runs past the end of the file")
+        out.append((data[i + 4:i + 8], data[i:end]))
+        i = end
+        if out[-1][0] == b"IEND":
+            break
+    if not out or out[0][0] != b"IHDR" or out[-1][0] != b"IEND":
+        raise NotEditable("not a well-formed PNG (no IHDR first or no IEND)")
+    return out, data[i:]
+
+
+def _work_from(mode, arr):
+    """The array the fills paint, from a Pillow array of `mode` (not P): RGB, or RGBA where the
+    file has an alpha channel; grey is spread over three equal channels."""
+    if mode == "L":
+        return np.repeat(arr[..., None], 3, axis=2)
+    if mode == "LA":
+        return np.stack([arr[..., 0]] * 3 + [arr[..., 1]], axis=2)
+    return arr.copy()
+
+
+class Native:
+    """One PNG as `apply` edits it in place. `work` is what the fills read and write: RGB, or RGBA
+    when the file carries alpha (an alpha channel, or a tRNS chunk on a palette). A palette file
+    keeps its indices (`idx`) and its palette (`lut`, read from PLTE and tRNS themselves). `kept` is
+    every chunk but IHDR and IDAT, byte for byte, with anything after IEND: a rewrite copies it."""
+
+    def __init__(self, data):
+        chunks, self.tail = png_chunks(data)
+        self.data, self.chunks = data, chunks
+        ihdr = chunks[0][1]
+        depth, ctype = ihdr[16], ihdr[17]
+        if any(k in ANIMATION_CHUNKS for k, _ in chunks):
+            raise NotEditable("an animated PNG: a rewrite would keep only its first frame")
+        if ctype not in PNG_MODES:
+            raise NotEditable(f"PNG colour type {ctype} is not one apply rewrites")
+        if ctype != 3 and depth != 8:
+            raise NotEditable(f"{depth}-bit samples: Pillow decodes them to 8 bits, so a rewrite would change every pixel")
+        with Image.open(io.BytesIO(data)) as im:
+            im.load()
+            self.mode, self.size = im.mode, im.size
+            if self.mode != PNG_MODES[ctype]:
+                raise NotEditable(f"Pillow reads it as {im.mode}, not {PNG_MODES[ctype]}")
+            arr = np.array(im)
+        self.kept = [raw for k, raw in chunks if k not in PIXEL_CHUNKS] + [self.tail]
+        self.idx = self.lut = None
+        if self.mode != "P":
+            self.work = _work_from(self.mode, arr)
+            return
+        body = {k: raw[8:-4] for k, raw in reversed(chunks)}          # the first chunk of each type
+        if b"PLTE" not in body:
+            raise NotEditable("a palette PNG without a PLTE chunk")
+        pal = np.frombuffer(body[b"PLTE"][:len(body[b"PLTE"]) // 3 * 3], np.uint8).reshape(-1, 3)
+        if arr.size and int(arr.max()) >= len(pal):
+            raise NotEditable("a palette index beyond the PLTE entries")
+        if b"tRNS" in body:
+            alpha = np.full(len(pal), 255, np.uint8)
+            t = np.frombuffer(body[b"tRNS"], np.uint8)[:len(pal)]
+            alpha[:len(t)] = t
+            pal = np.concatenate([pal, alpha[:, None]], axis=1)
+        self.idx, self.lut = arr, pal
+        self.work = pal[arr]
+
+    def alpha(self):
+        """Alpha of every pixel as Pillow composes it (tRNS, an alpha channel, or 255)."""
+        with Image.open(io.BytesIO(self.data)) as im:
+            return np.array(im.convert("RGBA"))[..., 3]
+
+    def encode(self, work, painted):
+        """(PNG bytes, the array a decode must give back, painted pixels with no palette entry
+        within NEAR, the largest distance to the entry used). The bytes and the array are None when no
+        pixel changes, which a palette file can do even though a fill wrote new colours: `far` still counts.
+
+        A palette file keeps every index outside `painted`, and every painted pixel whose colour the
+        fill left alone; any other painted pixel takes the nearest existing entry (squared distance
+        over RGB, and alpha when the file has tRNS). The palette is never grown or reordered, so a
+        fill colour it has no close entry for comes out as the nearest one, and `far` says how many."""
+        far, dmax = 0, 0.0
+        if self.mode == "P":
+            idx = self.idx.copy()
+            sel = painted & (work != self.work).any(axis=2)
+            if sel.any():
+                uniq, inv = np.unique(work[sel].astype(np.int32), axis=0, return_inverse=True)
+                pal = self.lut.astype(np.int32)
+                best, dist = np.empty(len(uniq), np.intp), np.empty(len(uniq))
+                for s in range(0, len(uniq), 4096):
+                    d = ((uniq[s:s + 4096, None, :] - pal[None]) ** 2).sum(axis=2)
+                    best[s:s + 4096], dist[s:s + 4096] = d.argmin(axis=1), np.sqrt(d.min(axis=1))
+                inv = inv.reshape(-1)
+                idx[sel] = best[inv]
+                far, dmax = int((dist[inv] > NEAR).sum()), float(dist.max())
+            if np.array_equal(idx, self.idx):
+                return None, None, far, dmax
+            im = Image.frombytes("P", self.size, np.ascontiguousarray(idx, np.uint8).tobytes())
+            im.putpalette(np.ascontiguousarray(self.lut[:, :3]).tobytes())
+            intended = idx
+        else:
+            if np.array_equal(work, self.work):
+                return None, None, 0, 0.0
+            arr = work[..., 0] if self.mode == "L" else work[..., [0, 3]] if self.mode == "LA" else work
+            im = Image.fromarray(np.ascontiguousarray(arr, np.uint8))
+            intended = _work_from(self.mode, np.asarray(arr))
+        buf = io.BytesIO()
+        im.save(buf, format="PNG", optimize=True)
+        new, _ = png_chunks(buf.getvalue())
+        out, placed = [PNG_MAGIC], False
+        for k, raw in self.chunks:                       # the original layout, new pixel data
+            if k == b"IHDR":
+                out += [raw for k2, raw in new if k2 == b"IHDR"]
+            elif k == b"IDAT":
+                if not placed:
+                    out += [raw for k2, raw in new if k2 == b"IDAT"]
+                    placed = True
+            else:
+                out.append(raw)
+        return b"".join(out) + self.tail, intended, far, dmax
+
+
+def edit_problem(before, after, painted, intended):
+    """Why the PNG bytes `after` are not `before` with only the `painted` pixels changed into
+    `intended` (indices for a palette file, else the work array), or None."""
+    a, b = Native(before), Native(after)
+    keep = ~painted
+    if (a.mode, a.size) != (b.mode, b.size):
+        return f"mode or size changed ({a.mode} {a.size} to {b.mode} {b.size})"
+    if a.kept != b.kept:
+        return "a chunk other than the pixel data changed (palette, tRNS or metadata)"
+    if a.mode == "P" and not (np.array_equal(a.lut, b.lut) and np.array_equal(a.idx[keep], b.idx[keep])):
+        return "the palette, or an index outside the painted regions, changed"
+    if not np.array_equal(a.work[keep], b.work[keep]):
+        return f"{int((a.work != b.work).any(axis=-1)[keep].sum())} pixels outside the painted regions changed"
+    if not np.array_equal(a.alpha()[keep], b.alpha()[keep]):
+        return "alpha outside the painted regions changed"
+    if not np.array_equal(b.idx if b.mode == "P" else b.work, intended):
+        return "the written pixels are not the painted ones"
+    return None
+
+
+def write_in_place(f, before, after, painted, intended):
+    """Write the PNG bytes `after` over f, but only once a decode of the written copy proves that
+    nothing outside `painted` changed, alpha included; otherwise stop with the file untouched."""
+    fd, tmp = tempfile.mkstemp(dir=f.parent, prefix=f".{f.name}.", suffix=".tmp")
+    try:
+        with os.fdopen(fd, "wb") as fh:
+            fh.write(after)
+        try:
+            problem = edit_problem(before, Path(tmp).read_bytes(), painted, intended)
+        except NotEditable as e:
+            problem = f"the written copy does not read back ({e})"
+        if problem:
+            sys.exit(f"{f}: refusing to write it: {problem}. The file is unchanged; this is a bug in redact_images.py")
+        shutil.copymode(f, tmp)
+        os.replace(tmp, f)
+    finally:
+        if os.path.exists(tmp):
+            os.unlink(tmp)
 
 
 def cmd_apply(args):
     pkg = Path(args.package)
-    rules = json.loads(Path(args.rules).read_text())
+    rules = read_rules(args.rules)
     ocr_cfg = dict(rules.get("ocr", {}))
+    allow = package_allow(args.rules, ocr_cfg.get("email_allow", []))
     patterns = load_patterns(args.patterns) if args.patterns else []
-    ocr_cfg["email_allow"] = ocr_cfg.get("email_allow", []) + load_email_allow(args.patterns)
+    ocr_cfg["email_allow"] = allow + load_email_allow(args.patterns)
     global_keep = [re.compile(k, re.I) for k in ocr_cfg.get("keep", [])]
     only = args.only
-    deleted, edited, flagged = set(), 0, []
+    deleted, edited, flagged, refused = set(), 0, [], []
 
     for g in rules.get("delete", []):
         deleted.update(pkg.glob(g))
@@ -504,36 +868,61 @@ def cmd_apply(args):
         rel = f.relative_to(pkg).as_posix()
         if f in deleted or (only and not any(fnmatch.fnmatch(rel, g) for g in only)):
             continue
-        im = open_rgb(f)
-        rects, regions = rules_for(rules, rel, im.size)
-        a = np.array(im)
+        before = f.read_bytes()
+        try:
+            src, why = Native(before), None
+            a = src.work.copy()
+        except NotEditable as e:              # still read, so a file that needs an edit is named
+            src, why = None, str(e)
+            a = np.array(open_rgb(f))
+        h, w = a.shape[:2]
+        rects, regions = rules_for(rules, rel, (w, h))
         orig = a.copy()
+        painted = np.zeros((h, w), bool)      # every pixel a fill wrote; nothing else may change
         for r in rects:
             paint(a, r)
+            painted[r[1]:r[3], r[0]:r[2]] = True
         boxes, wrapped = [], False
         if regions or (ocr_cfg.get("net", True) and (patterns or ocr_cfg.get("emails", True))):
-            reads = [ocr_words(Image.fromarray(a))]
+            seen = Image.fromarray(np.ascontiguousarray(a[..., :3]))      # what open_rgb gave before
+            reads = [ocr_words(seen)]
             if any(fnmatch.fnmatch(rel, g) for g in ocr_cfg.get("boost", [])):
-                reads.append(ocr_words(Image.fromarray(a), boost=True))
+                reads.append(ocr_words(seen, boost=True))
             boxes = [b for words in reads for b in region_boxes(words, regions, global_keep)]
             if ocr_cfg.get("net", True):
                 found, wrapped = ocr_hits(patterns, ocr_cfg, reads)
                 boxes += found
         covered = np.zeros(a.shape[:2], bool)       # union of the painted boxes, so overlaps count once
         for x0, y0, x1, y1 in boxes:
-            r = (max(0, x0 - PAD), max(0, y0 - PAD), min(im.width, x1 + PAD), min(im.height, y1 + PAD), "rows")
+            r = (max(0, x0 - PAD), max(0, y0 - PAD), min(w, x1 + PAD), min(h, y1 + PAD), "rows")
             covered[r[1]:r[3], r[0]:r[2]] = True
             paint(a, r)
+        painted |= covered
         if boxes and "components/crops/" in rel and covered.mean() >= ocr_cfg.get("delete_if_covered", 0.3):
             deleted.add(f)
             continue
         if wrapped:
             flagged.append(rel)
-        if not np.array_equal(a, orig):
+        if np.array_equal(a, orig):
+            continue
+        if why:
+            refused.append(rel)
+            print(f"cannot edit {rel} in place: {why}", flush=True)
+            continue
+        out, intended, far, dmax = src.encode(a, painted)
+        if out is not None:
             edited += 1
             print(("would edit " if args.dry_run else "edited ") + rel, flush=True)
-            if not args.dry_run:
-                save_256(Image.fromarray(a), f)
+        elif far:                             # the fill mapped back to the pixels' own entries
+            print(f"unchanged {rel}: every painted pixel mapped back to its own palette entry, so the "
+                  "region may still show what it was meant to hide", flush=True)
+        if far:
+            print(f"   {far} painted pixels have no palette entry within {NEAR} of the fill; painted with the "
+                  f"nearest entry (up to {dmax:.0f} off). The palette is never grown; look at the result", flush=True)
+        if out is None:
+            continue
+        if not args.dry_run:
+            write_in_place(f, before, out, painted, intended)
 
     # A delete glob ("../x", a symlinked folder) must never reach a file outside the package.
     # unlink removes the directory entry, so the folder holding it is what must sit in the package
@@ -550,6 +939,12 @@ def cmd_apply(args):
     print(f"{edited} edited, {len(deleted)} deleted, {len(flagged)} with a pattern spanning lines (add rectangles):")
     for rel in flagged:
         print("  ", rel)
+    if refused:
+        print(f"{len(refused)} images need an edit apply cannot make in place (named above); nothing was written "
+              "to them. Convert each to an 8-bit PNG in its own commit, then run apply again:")
+        for rel in refused:
+            print("  ", rel)
+        return 1
     return 0
 
 
@@ -561,11 +956,17 @@ def cmd_check(args):
     if not patterns:
         sys.exit("no patterns read; a check against nothing proves nothing")
     rules_file = package_rules(pkg, args.rules)
-    cfg = {}
+    cfg, leaks = {}, []
     if rules_file:
-        cfg = dict(json.loads(rules_file.read_text()).get("ocr", {}))
+        rules = read_rules(rules_file)
+        cfg = dict(rules.get("ocr", {}))
+        cfg["email_allow"] = package_allow(rules_file, cfg.get("email_allow", []))
         print(f"rules: {rules_file if args.rules else 'tools/redact-rules/' + rules_file.name}"
               + ("" if args.rules else " (loaded for this package)"), flush=True)
+        # The rules file is committed too: it may describe what it hides, never hold it.
+        leaks = rules_text_leaks(rules)
+        for leak in leaks:
+            print(f"LEAK {rules_file.name} {leak}; describe the value instead of writing it", flush=True)
         # A rules file steers `apply`; it never switches a detector off in the check that guards a commit.
         for key in ("emails", "net"):
             if cfg.get(key, True) is not True:
@@ -601,8 +1002,9 @@ def cmd_check(args):
         if found or wrapped:
             bad += 1
             print(f"HIT {f.relative_to(pkg) if pkg in f.parents else f}: {len(found)} match boxes" + (" (spans lines)" if wrapped else ""))
-    print(f"{len(targets)} images read, {bad} with a match" + (f" or unreadable ({len(unreadable)})" if unreadable else ""))
-    return 1 if bad else 0
+    print(f"{len(targets)} images read, {bad} with a match" + (f" or unreadable ({len(unreadable)})" if unreadable else "")
+          + (f"; {len(leaks)} private-looking values in the rules file" if leaks else ""))
+    return 1 if bad or leaks else 0
 
 
 def cmd_lines(args):
@@ -639,7 +1041,20 @@ def main(argv=None):
     p = sub.add_parser("lines", help="print OCR text lines with [x0, y0, x1, y1] boxes")
     p.add_argument("files", nargs="+")
     p.set_defaults(fn=cmd_lines)
-    args = ap.parse_args(argv)
+    # argv entries may be Paths (tests build them with pathlib); argparse on
+    # Python >=3.12 indexes args[0], so coerce to str first. parse_known_args
+    # because a nargs="*" positional after an optional (check's trailing file
+    # list) comes back in extras on affected argparse versions.
+    args, extra = ap.parse_known_args(None if argv is None else [str(a) for a in argv])
+    if extra:
+        # Extras argparse could not place are legit trailing files only when
+        # none looks like an option. A dash-prefixed extra is an unknown flag
+        # (a misspelt --rules used to be checked as an image path, silently
+        # skipping the whole-package scan).
+        if getattr(args, "files", None) is not None and not any(a.startswith("-") for a in extra):
+            args.files.extend(extra)
+        else:
+            ap.error("unrecognized arguments: %s" % " ".join(extra))
     sys.exit(args.fn(args))
 
 

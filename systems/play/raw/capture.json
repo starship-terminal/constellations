@@ -1,0 +1,77 @@
+{
+  "captured": "2026-11-19",
+  "harness": "Grok Build",
+  "model": "grok-4.7",
+  "browser": "headless Chrome via Playwright (channel chrome). T3 preview_open on https://www.createwithplay.com/ failed with ERR_NAME_NOT_RESOLVED. preview_snapshot on the Wayback tab failed with: The browser is not producing screenshot frames.",
+  "liveHost": {
+    "createwithplay.com": "NXDOMAIN on 2026-11-19 (no A record; NS are Com Laude). www, docs, dashboard, login also NXDOMAIN.",
+    "play.design": "parked Spaceship for-sale page, not the product"
+  },
+  "source": "Internet Archive replay of public Framer marketing pages. Not a live computed style of a server that still answers.",
+  "pages": [
+    {
+      "name": "home",
+      "original": "https://createwithplay.com/",
+      "archive": "https://web.archive.org/web/20260106182217/https://createwithplay.com/",
+      "memento": "2026-01-06T18:22:17Z",
+      "title": "Play \u00b7 Design and ship mobile apps with the power of iOS & SwiftUI",
+      "viewportCss": {
+        "innerWidth": 1440,
+        "innerHeight": 900,
+        "devicePixelRatioReported": 1,
+        "visualViewport": {
+          "width": 1440,
+          "height": 900,
+          "scale": 1
+        }
+      },
+      "screenshot": {
+        "file": "screenshots/home-dark-default.png",
+        "pngPx": [
+          2880,
+          1800
+        ],
+        "deviceScaleFactorRequested": 2,
+        "note": "Playwright page.evaluate reported devicePixelRatio 1 while the PNG is 2880x1800. Labelled by the PNG, not the JS dpr."
+      },
+      "phone": {
+        "innerWidth": 390,
+        "innerHeight": 844,
+        "pngPx": [
+          780,
+          1688
+        ],
+        "file": "screenshots/home-dark-phone.png"
+      }
+    },
+    {
+      "name": "pricing",
+      "original": "https://createwithplay.com/pricing",
+      "archive": "https://web.archive.org/web/20260112075832/https://createwithplay.com/pricing",
+      "memento": "2026-01-12T07:58:32Z",
+      "screenshot": "screenshots/pricing-dark-default.png"
+    },
+    {
+      "name": "download",
+      "original": "https://createwithplay.com/download",
+      "archive": "https://web.archive.org/web/20260112111027/https://createwithplay.com/download",
+      "memento": "2026-01-12T11:10:27Z",
+      "screenshot": "screenshots/download-dark-default.png"
+    },
+    {
+      "name": "shutdown",
+      "original": "https://createwithplay.com/",
+      "archive": "https://web.archive.org/web/20260420184028/https://createwithplay.com/",
+      "memento": "2026-04-20T18:40:28Z",
+      "note": "Last public capture before the host stopped resolving. A shutdown notice, not the marketing homepage.",
+      "screenshot": "screenshots/shutdown-dark-default.png"
+    }
+  ],
+  "theme": "dark only on the captured marketing pages. meta theme-color #000000. body background rgb(0,0,0). No light theme switch was on the page.",
+  "notEntered": [
+    "No email, password, card, phone, or SSO was submitted.",
+    "AgentMail was not used. The create-account page embeds dashboard login; that frame did not hydrate, and the product's own April 2026 notice says new accounts are closed.",
+    "No payment, booking, checkout, or company SSO.",
+    "Pricing plan buttons (Choose Starter, Choose Pro, Contact Us) were not clicked."
+  ]
+}

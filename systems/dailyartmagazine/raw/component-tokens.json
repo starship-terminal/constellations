@@ -1,0 +1,834 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. dailyartmagazine.com is a single-theme WordPress magazine: a white editorial field with #19191c dark bands (top nav, hero, mid-page sections) and a #c6002f crimson accent. The theme declares only stock WordPress --wp--preset--* variables, so design values are measured computed styles, wp presets are var-referenced where declared.",
+ "core": {
+  "font": {
+   "family": {
+    "sans": {
+     "value": "Basier, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of nav-link, art-para, nl-send (raw/components-computed.json); @font-face Basier in idvetmp-child style.css",
+     "description": "Basier — every UI string, body copy, buttons, chips, meta."
+    },
+    "display": {
+     "value": "RoslindaleCondensed, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-h1, art-h1, section-heading, feed-tab (raw/components-computed.json); @font-face RoslindaleCondensed in style.css",
+     "description": "RoslindaleCondensed — hero/article 56px, section headings 32px, feed tabs 28px."
+    },
+    "narrow": {
+     "value": "RoslindaleNarrow, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of post-card-title, cat-nav-item (raw/components-computed.json); @font-face RoslindaleNarrow in style.css",
+     "description": "RoslindaleNarrow — card titles 20px/700, category-menu items 16px/600."
+    }
+   },
+   "weight": {
+    "normal": {
+     "value": "400",
+     "type": "fontWeight",
+     "source": "computed fontWeight of art-para default (raw/components-computed.json)",
+     "description": "400 — body copy, inputs."
+    },
+    "medium": {
+     "value": "500",
+     "type": "fontWeight",
+     "source": "computed fontWeight of hero-h1 default (raw/components-computed.json)",
+     "description": "500 — every display heading."
+    },
+    "semibold": {
+     "value": "600",
+     "type": "fontWeight",
+     "source": "computed fontWeight of nav-link default (raw/components-computed.json)",
+     "description": "600 — nav links, buttons, card meta labels."
+    },
+    "bold": {
+     "value": "700",
+     "type": "fontWeight",
+     "source": "computed fontWeight of hero-tag default (raw/components-computed.json)",
+     "description": "700 — chips/tags, card titles (RoslindaleNarrow)."
+    }
+   },
+   "size": {
+    "chip": {
+     "value": "10px",
+     "type": "fontSize",
+     "source": "computed fontSize of hero-tag default (raw/components-computed.json)",
+     "description": "The 10px/700 uppercase chip text."
+    },
+    "ui": {
+     "value": "14px",
+     "type": "fontSize",
+     "source": "computed fontSize of nav-link default (raw/components-computed.json)",
+     "description": "The 14px nav/button/meta size."
+    },
+    "body": {
+     "value": "16px",
+     "type": "fontSize",
+     "source": "computed fontSize of nl-modal default (raw/components-computed.json)",
+     "description": "The 16px body size (modal copy, menus)."
+    },
+    "article": {
+     "value": "18px",
+     "type": "fontSize",
+     "source": "computed fontSize of art-para default (raw/components-computed.json)",
+     "description": "The 18px article paragraph."
+    },
+    "card-title": {
+     "value": "20px",
+     "type": "fontSize",
+     "source": "computed fontSize of post-card-title default (raw/components-computed.json)",
+     "description": "The 20px RoslindaleNarrow card title."
+    },
+    "tab": {
+     "value": "28px",
+     "type": "fontSize",
+     "source": "computed fontSize of feed-tab default (raw/components-computed.json)",
+     "description": "The 28px RoslindaleCondensed feed tab."
+    },
+    "section": {
+     "value": "32px",
+     "type": "fontSize",
+     "source": "computed fontSize of section-heading default (raw/components-computed.json)",
+     "description": "The 32px section heading."
+    },
+    "display": {
+     "value": "56px",
+     "type": "fontSize",
+     "source": "computed fontSize of hero-h1 default (raw/components-computed.json)",
+     "description": "The 56px hero/article display heading."
+    }
+   },
+   "lineHeight": {
+    "article": {
+     "value": "24px",
+     "type": "other",
+     "source": "computed lineHeight of art-para default (raw/components-computed.json)",
+     "description": "Article paragraph line-height."
+    },
+    "display": {
+     "value": "60px",
+     "type": "other",
+     "source": "computed lineHeight of hero-h1 default (raw/components-computed.json)",
+     "description": "Display heading line-height."
+    },
+    "modal-copy": {
+     "value": "21.6px",
+     "type": "other",
+     "source": "computed lineHeight of nl-modal default (raw/components-computed.json)",
+     "description": "The 21.6px modal copy line-height (textStyle)."
+    }
+   }
+  },
+  "wp-preset": {
+   "aspect_ratio": {
+    "16_9": {
+     "var": "--wp--preset--aspect-ratio--16-9",
+     "type": "other",
+     "source": "css-var --wp--preset--aspect-ratio--16-9 resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--aspect-ratio--16-9 — declared for the block editor; theme styles do not consume it."
+    },
+    "2_3": {
+     "var": "--wp--preset--aspect-ratio--2-3",
+     "type": "other",
+     "source": "css-var --wp--preset--aspect-ratio--2-3 resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--aspect-ratio--2-3 — declared for the block editor; theme styles do not consume it."
+    },
+    "3_2": {
+     "var": "--wp--preset--aspect-ratio--3-2",
+     "type": "other",
+     "source": "css-var --wp--preset--aspect-ratio--3-2 resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--aspect-ratio--3-2 — declared for the block editor; theme styles do not consume it."
+    },
+    "3_4": {
+     "var": "--wp--preset--aspect-ratio--3-4",
+     "type": "other",
+     "source": "css-var --wp--preset--aspect-ratio--3-4 resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--aspect-ratio--3-4 — declared for the block editor; theme styles do not consume it."
+    },
+    "4_3": {
+     "var": "--wp--preset--aspect-ratio--4-3",
+     "type": "other",
+     "source": "css-var --wp--preset--aspect-ratio--4-3 resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--aspect-ratio--4-3 — declared for the block editor; theme styles do not consume it."
+    },
+    "9_16": {
+     "var": "--wp--preset--aspect-ratio--9-16",
+     "type": "other",
+     "source": "css-var --wp--preset--aspect-ratio--9-16 resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--aspect-ratio--9-16 — declared for the block editor; theme styles do not consume it."
+    },
+    "square": {
+     "var": "--wp--preset--aspect-ratio--square",
+     "type": "other",
+     "source": "css-var --wp--preset--aspect-ratio--square resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--aspect-ratio--square — declared for the block editor; theme styles do not consume it."
+    }
+   },
+   "color": {
+    "black": {
+     "var": "--wp--preset--color--black",
+     "type": "color",
+     "source": "css-var --wp--preset--color--black resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--color--black — declared for the block editor; theme styles do not consume it."
+    },
+    "cyan_bluish_gray": {
+     "var": "--wp--preset--color--cyan-bluish-gray",
+     "type": "color",
+     "source": "css-var --wp--preset--color--cyan-bluish-gray resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--color--cyan-bluish-gray — declared for the block editor; theme styles do not consume it."
+    },
+    "light_green_cyan": {
+     "var": "--wp--preset--color--light-green-cyan",
+     "type": "color",
+     "source": "css-var --wp--preset--color--light-green-cyan resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--color--light-green-cyan — declared for the block editor; theme styles do not consume it."
+    },
+    "luminous_vivid_amber": {
+     "var": "--wp--preset--color--luminous-vivid-amber",
+     "type": "color",
+     "source": "css-var --wp--preset--color--luminous-vivid-amber resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--color--luminous-vivid-amber — declared for the block editor; theme styles do not consume it."
+    },
+    "luminous_vivid_orange": {
+     "var": "--wp--preset--color--luminous-vivid-orange",
+     "type": "color",
+     "source": "css-var --wp--preset--color--luminous-vivid-orange resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--color--luminous-vivid-orange — declared for the block editor; theme styles do not consume it."
+    },
+    "pale_cyan_blue": {
+     "var": "--wp--preset--color--pale-cyan-blue",
+     "type": "color",
+     "source": "css-var --wp--preset--color--pale-cyan-blue resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--color--pale-cyan-blue — declared for the block editor; theme styles do not consume it."
+    },
+    "pale_pink": {
+     "var": "--wp--preset--color--pale-pink",
+     "type": "color",
+     "source": "css-var --wp--preset--color--pale-pink resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--color--pale-pink — declared for the block editor; theme styles do not consume it."
+    },
+    "vivid_cyan_blue": {
+     "var": "--wp--preset--color--vivid-cyan-blue",
+     "type": "color",
+     "source": "css-var --wp--preset--color--vivid-cyan-blue resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--color--vivid-cyan-blue — declared for the block editor; theme styles do not consume it."
+    },
+    "vivid_green_cyan": {
+     "var": "--wp--preset--color--vivid-green-cyan",
+     "type": "color",
+     "source": "css-var --wp--preset--color--vivid-green-cyan resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--color--vivid-green-cyan — declared for the block editor; theme styles do not consume it."
+    },
+    "vivid_purple": {
+     "var": "--wp--preset--color--vivid-purple",
+     "type": "color",
+     "source": "css-var --wp--preset--color--vivid-purple resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--color--vivid-purple — declared for the block editor; theme styles do not consume it."
+    },
+    "vivid_red": {
+     "var": "--wp--preset--color--vivid-red",
+     "type": "color",
+     "source": "css-var --wp--preset--color--vivid-red resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--color--vivid-red — declared for the block editor; theme styles do not consume it."
+    },
+    "white": {
+     "var": "--wp--preset--color--white",
+     "type": "color",
+     "source": "css-var --wp--preset--color--white resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--color--white — declared for the block editor; theme styles do not consume it."
+    }
+   },
+   "font_size": {
+    "large": {
+     "var": "--wp--preset--font-size--large",
+     "type": "dimension",
+     "source": "css-var --wp--preset--font-size--large resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--font-size--large — declared for the block editor; theme styles do not consume it."
+    },
+    "medium": {
+     "var": "--wp--preset--font-size--medium",
+     "type": "dimension",
+     "source": "css-var --wp--preset--font-size--medium resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--font-size--medium — declared for the block editor; theme styles do not consume it."
+    },
+    "small": {
+     "var": "--wp--preset--font-size--small",
+     "type": "dimension",
+     "source": "css-var --wp--preset--font-size--small resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--font-size--small — declared for the block editor; theme styles do not consume it."
+    },
+    "x_large": {
+     "var": "--wp--preset--font-size--x-large",
+     "type": "dimension",
+     "source": "css-var --wp--preset--font-size--x-large resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--font-size--x-large — declared for the block editor; theme styles do not consume it."
+    }
+   },
+   "gradient": {
+    "blush_bordeaux": {
+     "var": "--wp--preset--gradient--blush-bordeaux",
+     "type": "other",
+     "source": "css-var --wp--preset--gradient--blush-bordeaux resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--gradient--blush-bordeaux — declared for the block editor; theme styles do not consume it."
+    },
+    "blush_light_purple": {
+     "var": "--wp--preset--gradient--blush-light-purple",
+     "type": "other",
+     "source": "css-var --wp--preset--gradient--blush-light-purple resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--gradient--blush-light-purple — declared for the block editor; theme styles do not consume it."
+    },
+    "cool_to_warm_spectrum": {
+     "var": "--wp--preset--gradient--cool-to-warm-spectrum",
+     "type": "other",
+     "source": "css-var --wp--preset--gradient--cool-to-warm-spectrum resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--gradient--cool-to-warm-spectrum — declared for the block editor; theme styles do not consume it."
+    },
+    "electric_grass": {
+     "var": "--wp--preset--gradient--electric-grass",
+     "type": "other",
+     "source": "css-var --wp--preset--gradient--electric-grass resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--gradient--electric-grass — declared for the block editor; theme styles do not consume it."
+    },
+    "light_green_cyan_to_vivid_green_cyan": {
+     "var": "--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan",
+     "type": "other",
+     "source": "css-var --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan — declared for the block editor; theme styles do not consume it."
+    },
+    "luminous_dusk": {
+     "var": "--wp--preset--gradient--luminous-dusk",
+     "type": "other",
+     "source": "css-var --wp--preset--gradient--luminous-dusk resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--gradient--luminous-dusk — declared for the block editor; theme styles do not consume it."
+    },
+    "luminous_vivid_amber_to_luminous_vivid_orange": {
+     "var": "--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange",
+     "type": "other",
+     "source": "css-var --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange — declared for the block editor; theme styles do not consume it."
+    },
+    "luminous_vivid_orange_to_vivid_red": {
+     "var": "--wp--preset--gradient--luminous-vivid-orange-to-vivid-red",
+     "type": "other",
+     "source": "css-var --wp--preset--gradient--luminous-vivid-orange-to-vivid-red resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--gradient--luminous-vivid-orange-to-vivid-red — declared for the block editor; theme styles do not consume it."
+    },
+    "midnight": {
+     "var": "--wp--preset--gradient--midnight",
+     "type": "other",
+     "source": "css-var --wp--preset--gradient--midnight resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--gradient--midnight — declared for the block editor; theme styles do not consume it."
+    },
+    "pale_ocean": {
+     "var": "--wp--preset--gradient--pale-ocean",
+     "type": "other",
+     "source": "css-var --wp--preset--gradient--pale-ocean resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--gradient--pale-ocean — declared for the block editor; theme styles do not consume it."
+    },
+    "very_light_gray_to_cyan_bluish_gray": {
+     "var": "--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray",
+     "type": "other",
+     "source": "css-var --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray — declared for the block editor; theme styles do not consume it."
+    },
+    "vivid_cyan_blue_to_vivid_purple": {
+     "var": "--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple",
+     "type": "other",
+     "source": "css-var --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple — declared for the block editor; theme styles do not consume it."
+    }
+   },
+   "shadow": {
+    "crisp": {
+     "var": "--wp--preset--shadow--crisp",
+     "type": "other",
+     "source": "css-var --wp--preset--shadow--crisp resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--shadow--crisp — declared for the block editor; theme styles do not consume it."
+    },
+    "deep": {
+     "var": "--wp--preset--shadow--deep",
+     "type": "other",
+     "source": "css-var --wp--preset--shadow--deep resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--shadow--deep — declared for the block editor; theme styles do not consume it."
+    },
+    "natural": {
+     "var": "--wp--preset--shadow--natural",
+     "type": "other",
+     "source": "css-var --wp--preset--shadow--natural resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--shadow--natural — declared for the block editor; theme styles do not consume it."
+    },
+    "outlined": {
+     "var": "--wp--preset--shadow--outlined",
+     "type": "other",
+     "source": "css-var --wp--preset--shadow--outlined resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--shadow--outlined — declared for the block editor; theme styles do not consume it."
+    },
+    "sharp": {
+     "var": "--wp--preset--shadow--sharp",
+     "type": "other",
+     "source": "css-var --wp--preset--shadow--sharp resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--shadow--sharp — declared for the block editor; theme styles do not consume it."
+    }
+   },
+   "spacing": {
+    "20": {
+     "var": "--wp--preset--spacing--20",
+     "type": "dimension",
+     "source": "css-var --wp--preset--spacing--20 resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--spacing--20 — declared for the block editor; theme styles do not consume it."
+    },
+    "30": {
+     "var": "--wp--preset--spacing--30",
+     "type": "dimension",
+     "source": "css-var --wp--preset--spacing--30 resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--spacing--30 — declared for the block editor; theme styles do not consume it."
+    },
+    "40": {
+     "var": "--wp--preset--spacing--40",
+     "type": "dimension",
+     "source": "css-var --wp--preset--spacing--40 resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--spacing--40 — declared for the block editor; theme styles do not consume it."
+    },
+    "50": {
+     "var": "--wp--preset--spacing--50",
+     "type": "dimension",
+     "source": "css-var --wp--preset--spacing--50 resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--spacing--50 — declared for the block editor; theme styles do not consume it."
+    },
+    "60": {
+     "var": "--wp--preset--spacing--60",
+     "type": "dimension",
+     "source": "css-var --wp--preset--spacing--60 resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--spacing--60 — declared for the block editor; theme styles do not consume it."
+    },
+    "70": {
+     "var": "--wp--preset--spacing--70",
+     "type": "dimension",
+     "source": "css-var --wp--preset--spacing--70 resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--spacing--70 — declared for the block editor; theme styles do not consume it."
+    },
+    "80": {
+     "var": "--wp--preset--spacing--80",
+     "type": "dimension",
+     "source": "css-var --wp--preset--spacing--80 resolved (raw/css-vars.json)",
+     "description": "Stock WordPress Gutenberg preset --wp--preset--spacing--80 — declared for the block editor; theme styles do not consume it."
+    }
+   }
+  },
+  "radius": {
+   "sm": {
+    "value": "2px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of cf7-send default (raw/components-computed.json)",
+    "description": "The 2px contact-submit radius."
+   },
+   "md": {
+    "value": "3px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of hero-tag default (raw/components-computed.json)",
+    "description": "The 3px chip/button/input radius."
+   }
+  },
+  "shadow": {
+   "menu": {
+    "value": "rgba(0, 0, 0, 0.25) 0px 16px 48px 0px",
+    "type": "other",
+    "source": "computed boxShadow of cat-nav opened (raw/components-computed.json)",
+    "description": "The rgba(0,0,0,.25) 0 16px 48px drop under the mega-menu."
+   }
+  },
+  "motion": {
+   "hover": {
+    "value": "all 0.3s ease",
+    "type": "other",
+    "source": "computed transition of search-btn default (raw/components-computed.json)",
+    "description": "The hover fill transition shared by the ghost buttons."
+   }
+  }
+ },
+ "light": {
+  "background": {
+   "dark-band": {
+    "value": "#19191c",
+    "type": "color",
+    "source": "computed backgroundColor of nav-bar default (raw/components-computed.json)",
+    "description": "The #19191c near-black behind the top nav, the hero band and the mid-page dark sections."
+   },
+   "page": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "computed backgroundColor of cat-nav opened (raw/components-computed.json)",
+    "description": "The #fff page field — body declares no background and paints the default canvas white; verified against the white mega-menu, feed and field surfaces."
+   },
+   "menu-panel": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "computed backgroundColor of cat-nav opened (raw/components-computed.json)",
+    "description": "The white mega-menu panel the Art Movements dropdown paints (#fff, over the dark bar)."
+   },
+   "field-surface": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "computed backgroundColor of nl-email default (raw/components-computed.json)",
+    "description": "White input fill (newsletter email, contact fields)."
+   },
+   "scrim": {
+    "value": "rgba(0, 0, 0, 0.9)",
+    "type": "color",
+    "source": "computed backgroundColor of the .modal-r overlay ancestor of nl-modal default (raw/components-computed.json)",
+    "description": "The rgba(0,0,0,.9) overlay the newsletter modal's ancestor paints behind the panel."
+   }
+  },
+  "text": {
+   "ink": {
+    "value": "#000000",
+    "type": "color",
+    "source": "computed color of post-card-title default (raw/components-computed.json)",
+    "description": "The #000 ink on every light-surface heading and label."
+   },
+   "muted": {
+    "value": "#4d5761",
+    "type": "color",
+    "source": "computed color of art-para default (raw/components-computed.json)",
+    "description": "The #4d5761 slate of article paragraphs, card excerpts and meta."
+   },
+   "on-dark": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "computed color of nav-link default (raw/components-computed.json)",
+    "description": "White text on the #19191c bands."
+   }
+  },
+  "action": {
+   "accent": {
+    "value": "#c6002f",
+    "type": "color",
+    "source": "computed backgroundColor of hero-tag default (raw/components-computed.json)",
+    "description": "The #c6002f crimson — chips, tags, ghost-button borders, footer links, hover fills."
+   },
+   "link-bright": {
+    "value": "#f3003a",
+    "type": "color",
+    "source": "computed color of art-inline-link default (raw/components-computed.json)",
+    "description": "The #f3003a brighter red the theme paints on inline article links."
+   }
+  },
+  "border": {
+   "accent-ghost-border": {
+    "value": "#c6002f",
+    "type": "color",
+    "source": "computed borderTopColor of search-btn default (raw/components-computed.json)",
+    "description": "The 1px #c6002f border of the ghost buttons (Search, Send, Load more)."
+   },
+   "hairline-dark": {
+    "value": "#2e2e32",
+    "type": "color",
+    "source": "computed borderTopColor of cat-nav-item default (raw/components-computed.json)",
+    "description": "The #2e2e32 dark hairline — menu-item rules and the hero-tag flanking lines."
+   },
+   "submit-border": {
+    "value": "#989da7",
+    "type": "color",
+    "source": "computed borderTopColor of cf7-send default (raw/components-computed.json)",
+    "description": "The #989da7 grey border on the black contact-submit button."
+   }
+  }
+ },
+ "dark": {},
+ "component": {
+  "nav-height": {
+   "value": 65,
+   "type": "dimension",
+   "source": "computed h of nav-bar default (raw/components-computed.json)",
+   "description": "The 65px fixed top nav."
+  },
+  "nav-cluster-width": {
+   "value": 300.08,
+   "type": "dimension",
+   "source": "computed w of nav-cluster default (raw/components-computed.json)",
+   "description": "The 300px primary-nav cluster."
+  },
+  "logo-width": {
+   "value": 111,
+   "type": "dimension",
+   "source": "computed w of nav-logo default (raw/components-computed.json)",
+   "description": "The 111px wordmark."
+  },
+  "hamburger-size": {
+   "value": 15,
+   "type": "dimension",
+   "source": "computed h of hamburger default (raw/components-computed.json)",
+   "description": "The 20x15 hamburger trigger."
+  },
+  "cat-nav-height": {
+   "value": 633,
+   "type": "dimension",
+   "source": "computed h of cat-nav opened (raw/components-computed.json)",
+   "description": "The 633px mega-menu panel."
+  },
+  "cat-nav-item-height": {
+   "value": 59,
+   "type": "dimension",
+   "source": "computed h of cat-nav-item default (raw/components-computed.json)",
+   "description": "The 59px category-menu row."
+  },
+  "search-btn-height": {
+   "value": 38,
+   "type": "dimension",
+   "source": "computed h of search-btn default (raw/components-computed.json)",
+   "description": "The 38px header Search button."
+  },
+  "hero-height": {
+   "value": 798.75,
+   "type": "dimension",
+   "source": "computed h of hero-block default (raw/components-computed.json)",
+   "description": "The ~799px dark hero band."
+  },
+  "chip-height": {
+   "value": 20.25,
+   "type": "dimension",
+   "source": "computed h of hero-tag default (raw/components-computed.json)",
+   "description": "The 20.25px crimson category chip."
+  },
+  "card-h-width": {
+   "value": 760,
+   "type": "dimension",
+   "source": "computed w of post-card-h default (raw/components-computed.json)",
+   "description": "The 760px horizontal feed card."
+  },
+  "card-h-height": {
+   "value": 194,
+   "type": "dimension",
+   "source": "computed h of post-card-h default (raw/components-computed.json)",
+   "description": "The 194px feed card height."
+  },
+  "card-img-width": {
+   "value": 260,
+   "type": "dimension",
+   "source": "computed w of post-card-img default (raw/components-computed.json)",
+   "description": "The 260x177 card thumbnail."
+  },
+  "card-v-height": {
+   "value": 292.75,
+   "type": "dimension",
+   "source": "computed h of post-card-v default (raw/components-computed.json)",
+   "description": "The 292.75px vertical card."
+  },
+  "load-more-height": {
+   "value": 38,
+   "type": "dimension",
+   "source": "computed h of load-more default (raw/components-computed.json)",
+   "description": "The 38px full-width Load more ghost button."
+  },
+  "nl-send-height": {
+   "value": 38,
+   "type": "dimension",
+   "source": "computed h of nl-send default (raw/components-computed.json)",
+   "description": "The 38px newsletter Send button."
+  },
+  "nl-email-height": {
+   "value": 40,
+   "type": "dimension",
+   "source": "computed h of nl-email default (raw/components-computed.json)",
+   "description": "The 40px email input."
+  },
+  "nl-checkbox-input": {
+   "value": 13,
+   "type": "dimension",
+   "source": "computed w of nl-checkbox default (raw/components-computed.json)",
+   "description": "The 13px invisible input box (opacity:0); the painted checkbox is the label's ::after."
+  },
+  "nl-modal-width": {
+   "value": 720,
+   "type": "dimension",
+   "source": "computed w of nl-modal default (raw/components-computed.json)",
+   "description": "The 720px slide-down newsletter modal."
+  },
+  "article-column": {
+   "value": 648,
+   "type": "dimension",
+   "source": "computed w of art-para default (raw/components-computed.json)",
+   "description": "The 648px article text column."
+  },
+  "article-header-width": {
+   "value": 1152,
+   "type": "dimension",
+   "source": "computed w of art-h1 default (raw/components-computed.json)",
+   "description": "The 1152px article header row."
+  },
+  "figure-width": {
+   "value": 648,
+   "type": "dimension",
+   "source": "computed w of art-figure default (raw/components-computed.json)",
+   "description": "The 648px article figure."
+  },
+  "contact-form-width": {
+   "value": 669,
+   "type": "dimension",
+   "source": "computed w of cf7-form default (raw/components-computed.json)",
+   "description": "The 669px Contact Form 7 form."
+  },
+  "contact-input-width": {
+   "value": 319.5,
+   "type": "dimension",
+   "source": "computed w of cf7-name default (raw/components-computed.json)",
+   "description": "The half-width 319.5px name/email field."
+  },
+  "contact-send-height": {
+   "value": 46,
+   "type": "dimension",
+   "source": "computed h of cf7-send default (raw/components-computed.json)",
+   "description": "The 46px black Send button."
+  },
+  "footer-height": {
+   "value": 842,
+   "type": "dimension",
+   "source": "computed h of footer default (raw/components-computed.json)",
+   "description": "The 842px footer block."
+  },
+  "ad-slot-height": {
+   "value": 98,
+   "type": "dimension",
+   "source": "computed h of ad-slot default (raw/components-computed.json)",
+   "description": "The 98px leaderboard ad slot."
+  },
+  "nl-checkbox-box": {
+   "value": "16px",
+   "type": "dimension",
+   "source": "entered by hand at capture time, not measured: a probe of the .checkbox-style label's ::after (16x16 #fff, 1px solid #989da7, 2px radius) was never saved to raw/; raw/components-computed.json holds only the 13x13 input (nl-checkbox); recapture needed",
+   "description": "The 16px painted checkbox box (white, 1px #989da7 border, 2px radius) — the 13px input is opacity:0."
+  },
+  "chip-flanking-rule": {
+   "value": "41px x 1px",
+   "type": "other",
+   "source": "computed ::before/::after of hero-tag default (raw/components-computed.json)",
+   "description": "The 41x1 #2e2e32 rules the hero tag paints on both sides."
+  },
+  "state-track": {
+   "ghost-dark-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "hover": {
+      "backgroundColor": "rgb(198, 0, 47)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "pressed": {
+      "backgroundColor": "rgb(198, 0, 47)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none"
+     }
+    },
+    "source": "computed styles of search-btn across states (raw/components-computed.json)",
+    "description": "Ghost button on the dark bar (Search): transparent + 1px #c6002f border with WHITE text at rest, fills #c6002f on hover/pressed."
+   },
+   "ghost-light-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "hover": {
+      "backgroundColor": "rgb(198, 0, 47)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "pressed": {
+      "backgroundColor": "rgb(198, 0, 47)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "transform": "none",
+      "outlineStyle": "none"
+     }
+    },
+    "source": "computed styles of nl-send across states (raw/components-computed.json)",
+    "description": "Ghost button on white (newsletter Send, Load more): transparent + 1px #c6002f border with #000 text at rest, fills #c6002f with white text on hover/pressed."
+   },
+   "nav-link-state-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "hover": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "pressed": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "transform": "none",
+      "outlineStyle": "dotted"
+     }
+    },
+    "source": "computed styles of nav-link across states (raw/components-computed.json)",
+    "description": "Nav link: white at rest; no background/color change on hover or pressed — focus shows a dotted white outline."
+   },
+   "cat-item-state-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "pressed": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "transform": "none",
+      "outlineStyle": "none"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "transform": "none",
+      "outlineStyle": "dotted"
+     }
+    },
+    "source": "computed styles of cat-nav-item across states (raw/components-computed.json)",
+    "description": "Category-menu item: #000 RoslindaleNarrow on the white panel with a #2e2e32 1px bottom rule; hover state not captured (item leaves the viewport as the panel opens)."
+   }
+  },
+  "focus-ring": {
+   "value": "dotted rgb(255, 255, 255)",
+   "type": "other",
+   "source": "computed outline of nav-link/footer-link/art-inline-link focus-visible (raw/components-computed.json)",
+   "description": "The browser's dotted outline in the element's own colour — no custom focus ring is painted."
+  }
+ }
+}

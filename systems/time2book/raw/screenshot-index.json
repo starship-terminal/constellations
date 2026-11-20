@@ -1,0 +1,92 @@
+[
+  {
+    "name": "home",
+    "url": "https://www.time2book.me/",
+    "title": "Fitness Studio Management Software | Time2book",
+    "status": 200,
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    },
+    "scrollH": 7249
+  },
+  {
+    "name": "pricing",
+    "url": "https://www.time2book.me/pricing",
+    "title": "Pricing Fitness Studio Software | Time2book",
+    "status": 200,
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    },
+    "scrollH": 4994
+  },
+  {
+    "name": "feature-scheduling",
+    "url": "https://www.time2book.me/features/class-scheduling",
+    "title": "Modern Class Scheduling Software | Time2book",
+    "status": 200,
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    },
+    "scrollH": 7437
+  },
+  {
+    "name": "not-found",
+    "url": "https://www.time2book.me/signup",
+    "title": "Page not found | Time2book",
+    "status": 404,
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    },
+    "scrollH": 1718
+  },
+  {
+    "name": "blog",
+    "url": "https://www.time2book.me/blog",
+    "title": "Blog for fitness studios, gyms, and trainers | Time2book",
+    "status": 200,
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    },
+    "scrollH": 4105
+  },
+  {
+    "name": "help",
+    "url": "https://www.time2book.me/help",
+    "title": "Help center | Time2book",
+    "status": 200,
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    },
+    "scrollH": 2559
+  }
+]

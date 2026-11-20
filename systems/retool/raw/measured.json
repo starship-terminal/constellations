@@ -1,0 +1,297 @@
+{
+  "captured": "2026-11-19",
+  "harness": "T3 preview browser, getComputedStyle and computed custom properties",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2
+  },
+  "screenshotFrames": "preview_snapshot failed: The browser is not producing screenshot frames",
+  "pages": {
+    "home": {
+      "url": "https://retool.com/",
+      "title": "Build internal software better, with AI. | Retool",
+      "challenge": false,
+      "htmlClass": "scroll-pt-nav-offset dark",
+      "themeMode": "dark",
+      "body": {
+        "backgroundColor": "rgb(21, 21, 21)",
+        "color": "rgb(233, 235, 223)",
+        "fontSize": "16px",
+        "fontFamily": "ui-sans-serif, system-ui, sans-serif"
+      },
+      "h1": {
+        "text": "Secure your vibe-coded apps",
+        "fontFamily": "saansFont, saansFont Fallback, sans-serif",
+        "fontSize": "66.7885px",
+        "fontWeight": "300",
+        "lineHeight": "70.1279px",
+        "letterSpacing": "-1.46935px",
+        "color": "rgb(233, 235, 223)"
+      },
+      "primaryCta": {
+        "text": "Start for free",
+        "href": "https://login.retool.com/auth/signup?source=navbarcta",
+        "backgroundColor": "rgb(233, 235, 223)",
+        "color": "rgb(21, 21, 21)",
+        "fontFamily": "pxGroteskFont",
+        "fontSize": "12.6971px",
+        "fontWeight": "400",
+        "lineHeight": "15.2365px",
+        "height": "40px",
+        "padding": "0px 20px",
+        "borderRadius": "16777200px",
+        "border": "0px solid rgb(21, 21, 21)",
+        "boxShadow": "none",
+        "focusVisible": {
+          "outline": "rgb(21, 21, 21) auto 1px",
+          "outlineOffset": "1px"
+        }
+      },
+      "secondaryCta": {
+        "text": "Book a demo",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(233, 235, 223)",
+        "border": "1px solid rgb(139, 134, 127)",
+        "height": "40px",
+        "padding": "0px 20px",
+        "borderRadius": "16777200px",
+        "fontSize": "12.6971px",
+        "fontFamily": "pxGroteskFont"
+      },
+      "signIn": {
+        "text": "Sign in",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(233, 235, 223)",
+        "height": "40px",
+        "padding": "0px 12px",
+        "borderRadius": "16777200px",
+        "border": "0px none"
+      },
+      "navLink": {
+        "text": "Pricing",
+        "fontFamily": "pxGroteskFont",
+        "fontSize": "12.6971px",
+        "fontWeight": "400",
+        "color": "rgb(233, 235, 223)"
+      },
+      "submitPrompt": {
+        "backgroundColor": "rgb(81, 141, 210)",
+        "color": "rgb(233, 235, 223)",
+        "width": "40px",
+        "height": "40px",
+        "borderRadius": "16777200px"
+      },
+      "starterPrompts": {
+        "backgroundColor": "rgba(21, 21, 21, 0.063)",
+        "color": "rgb(36, 36, 36)",
+        "border": "1px solid rgba(21, 21, 21, 0.12)",
+        "height": "26px",
+        "borderRadius": "8px",
+        "padding": "4px 4px 4px 8px",
+        "fontSize": "12.6971px"
+      },
+      "transition": "color, background-color, border-color 0.3s cubic-bezier(0.72, 0, 0.12, 1)",
+      "fontsLoaded": [
+        "saansFont 100-900 loaded",
+        "pxGroteskFont 400 loaded"
+      ],
+      "notEntered": "No form was filled. Book a demo was not opened. Ask AI was not submitted."
+    },
+    "pricing": {
+      "url": "https://retool.com/pricing",
+      "title": "Pricing | Retool",
+      "challenge": false,
+      "htmlClass": "scroll-pt-nav-offset dark",
+      "body": {
+        "backgroundColor": "rgb(21, 21, 21)",
+        "color": "rgb(233, 235, 223)"
+      },
+      "h1": {
+        "text": "Find the plan that works for you",
+        "fontFamily": "saansFont",
+        "fontSize": "54.7885px",
+        "fontWeight": "300",
+        "color": "rgb(233, 235, 223)"
+      },
+      "planTitle": {
+        "fontFamily": "saansFont",
+        "fontSize": "21.3942px",
+        "fontWeight": "380",
+        "color": "rgb(233, 235, 223)"
+      },
+      "priceNote": {
+        "examples": [
+          "$10/month",
+          "$50/month",
+          "$5/month",
+          "Custom"
+        ],
+        "fontFamily": "saansFont",
+        "fontSize": "16px",
+        "fontWeight": "300"
+      },
+      "muted": {
+        "text": "AI credits per month",
+        "color": "rgb(203, 204, 196)",
+        "fontSize": "14px",
+        "fontWeight": "300"
+      },
+      "card": {
+        "border": "1px rgba(233, 235, 223, 0.2)",
+        "borderRadius": "12px",
+        "backgroundColor": "rgba(0, 0, 0, 0)"
+      },
+      "primaryCta": {
+        "text": "Get started for free",
+        "backgroundColor": "rgb(233, 235, 223)",
+        "color": "rgb(21, 21, 21)",
+        "height": "40px",
+        "padding": "0px 20px",
+        "borderRadius": "16777200px",
+        "fontSize": "12.6971px"
+      },
+      "secondaryCta": {
+        "text": "Start free trial",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(233, 235, 223)",
+        "border": "1px rgb(139, 134, 127)",
+        "height": "40px",
+        "borderRadius": "16777200px"
+      },
+      "table": {
+        "borderCollapse": "collapse",
+        "thBackground": "rgb(21, 21, 21)",
+        "thColor": "rgb(233, 235, 223)",
+        "thPadding": "16px 24px",
+        "tdColor": "rgb(233, 235, 223)",
+        "tdPadding": "16px 32.4722px",
+        "tdFontSize": "16px"
+      },
+      "notEntered": "No plan was started. No checkout. No card."
+    },
+    "login": {
+      "url": "https://login.retool.com/auth/login",
+      "title": "Login | Retool",
+      "challenge": false,
+      "body": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(34, 34, 34)",
+        "fontFamily": "Inter var, Inter, -apple-system, system-ui, sans-serif",
+        "fontSize": "12px"
+      },
+      "h1": {
+        "text": "Welcome back.",
+        "fontFamily": "Saans, sans-serif",
+        "fontSize": "36px",
+        "fontWeight": "380",
+        "lineHeight": "37.8px",
+        "letterSpacing": "-0.81576px",
+        "color": "rgb(21, 21, 21)"
+      },
+      "email": {
+        "placeholder": "name@company.com",
+        "backgroundColor": "rgb(247, 248, 244)",
+        "color": "rgb(21, 21, 21)",
+        "fontFamily": "Inter, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "18.4px",
+        "height": "40px",
+        "padding": "16px",
+        "borderRadius": "8px",
+        "border": "0px none",
+        "focus": {
+          "outline": "rgb(81, 141, 210) solid 2px",
+          "outlineOffset": "2px"
+        }
+      },
+      "password": {
+        "placeholder": "Password",
+        "backgroundColor": "rgb(247, 248, 244)",
+        "height": "40px",
+        "borderRadius": "8px",
+        "fontSize": "16px"
+      },
+      "submit": {
+        "text": "Sign in",
+        "backgroundColor": "rgb(21, 21, 21)",
+        "color": "rgb(247, 248, 244)",
+        "fontFamily": "Inter, sans-serif",
+        "fontSize": "15px",
+        "fontWeight": "600",
+        "height": "44px",
+        "padding": "12px 6px",
+        "borderRadius": "6px",
+        "boxShadow": "none"
+      },
+      "google": {
+        "text": "Sign in with Google",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(34, 34, 34)",
+        "border": "1px solid rgb(235, 235, 235)",
+        "height": "36px",
+        "padding": "0px 12px",
+        "borderRadius": "8px",
+        "boxShadow": "rgba(0, 0, 0, 0.04) 0px 1px 2px 0px",
+        "fontSize": "15px",
+        "fontWeight": "400"
+      },
+      "textButton": {
+        "text": "Sign in with login link instead",
+        "color": "rgb(21, 21, 21)",
+        "fontSize": "13px",
+        "fontWeight": "400",
+        "fontFamily": "Inter"
+      },
+      "notEntered": "Email and password were left empty. Google was not clicked. Login link was not requested. No SSO. No card, phone, or government ID."
+    },
+    "signup": {
+      "url": "https://login.retool.com/auth/signup",
+      "title": "Sign Up | Retool",
+      "challenge": false,
+      "fields": [
+        "Continue with Google",
+        "email placeholder Work email",
+        "password placeholder Password",
+        "Continue"
+      ],
+      "askedForCardPhoneOrId": false,
+      "askedForCompanySso": false,
+      "notEntered": "Signup was not submitted. AgentMail was not used. The form asks for a password as well as email, so it is not email-only."
+    },
+    "docs": {
+      "url": "https://docs.retool.com/",
+      "title": "Retool Docs",
+      "challenge": false,
+      "dataTheme": "dark",
+      "htmlBackground": "rgb(21, 21, 21)",
+      "htmlColor": "rgb(182, 184, 175)",
+      "bodyFont": "SaansReg, sans-serif",
+      "navbar": {
+        "backgroundColor": "rgb(21, 21, 21)",
+        "height": "80px"
+      },
+      "banner": {
+        "text": "New Cloud signups are temporarily paused",
+        "backgroundColor": "color(srgb 0.179451 0.170353 0.157804)",
+        "border": "1px rgb(158, 129, 89)",
+        "color": "rgb(233, 235, 223)",
+        "borderRadius": "10px",
+        "padding": "10px 16px",
+        "fontSize": "14px",
+        "fontWeight": "500"
+      },
+      "notEntered": "Theme toggle was seen and not used. Search was not opened. No account was created."
+    }
+  },
+  "lightClassProbe": {
+    "note": "html.class was swapped from dark to light on the homepage. The page's own themeMode is dark. The swap changed token values. Painted hero text stayed rgb(233, 235, 223). Body background became rgb(233, 235, 223). This is a class probe, not a published light marketing theme.",
+    "bodyBackground": "rgb(233, 235, 223)",
+    "bodyColor": "rgb(21, 21, 21)",
+    "surfaceBackgroundBase": "#e9ebdf",
+    "surfaceTextPrimary": "#151515",
+    "btnPrimaryDefaultBackground": "#151515",
+    "btnPrimaryDefaultText": "#e9ebdf"
+  }
+}

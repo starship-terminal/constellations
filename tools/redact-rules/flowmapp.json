@@ -1,0 +1,15 @@
+{
+ "_note": "Rules for systems/flowmapp. A fully public signed-out capture: every route is public marketing, signed-out auth, or the product's own published read-only demo project; the auth/contact fields were typed into with sample text (name@example.com, 'Example name', 'Example User', 'sample-pass-123') and cleared, never submitted, so no PII is reachable. No booking flow was activated. Every email the OCR finds is published content: flowmapp.com addresses printed in the footer/contact/pricing pages, placeholder addresses in the product copy and form fields (name@example.com), and the published demo project's own content. No regions need masking.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@flowmapp\\.com$",
+   "@example\\.com$",
+   "@example\\.inc$",
+   "@example\\.org$",
+   "@everyone$",
+   "@here$"
+  ]
+ },
+ "families": []
+}

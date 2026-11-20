@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vivid Money style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #f5f5f4;
+    --text: #333333;
+    --muted: #79797f;
+    --accent: #7d33f6;
+    --accent-hover: #a372fa;
+    --accent-soft: #f4edff;
+    --border: #eceef2;
+    --promo: #222222;
+    --error: #c40b08;
+    --ink: #333333;
+    --sans: Satoshi, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 24px; }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 24px 96px; }
+  h1 { font-size: 40px; line-height: 44px; font-weight: 500; letter-spacing: -0.02em; margin: 0 0 8px; }
+  h2 { font-size: 24px; line-height: 28px; font-weight: 500; margin: 48px 0 16px; }
+  p { margin: 0 0 16px; max-width: 62ch; }
+  .note { color: var(--muted); font-size: 13px; line-height: 20px; }
+  .swatches, .steps { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 64px; border-radius: 8px; border: 1px solid var(--border); }
+  .label { font-size: 13px; line-height: 20px; margin-top: 6px; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: var(--muted); }
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin: 12px 0; }
+  button, .pill { border: 0; border-radius: 100px; font: 500 16px/24px var(--sans); padding: 15px 23px; }
+  .primary { background: var(--accent); color: #fff; }
+  .outline { background: rgba(255,255,255,0.2); color: var(--accent); border: 1px solid var(--accent); padding: 11px 23px; }
+  .soft { background: var(--accent-soft); color: var(--accent); }
+  .promo { background: var(--promo); color: #fff; border-radius: 0; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+  .promo button { background: #fff; color: var(--ink); padding: 11px 23px; }
+  .field { background: var(--surface); border: 1px solid var(--surface); border-radius: 10px; height: 56px; padding: 0 12px; width: 320px; color: var(--muted); display: flex; align-items: center; }
+  .card { background: var(--accent-soft); border-radius: 24px; padding: 24px; width: 240px; }
+  .wordmark { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <svg class="wordmark" xmlns="http://www.w3.org/2000/svg" width="68" height="28" viewBox="0 0 68 28" fill="none" aria-label="Vivid"><path d="M5.99366 23.1737L0 7.80463H5.09461L6.96763 13.1778C7.85665 15.7994 8.35616 17.4303 8.46602 18.0707C8.64588 17.1801 9.19026 15.5492 10.0993 13.1778L12.1521 7.80463H17.067L10.6537 23.1737H5.99366Z" fill="currentColor"/><path d="M21.0307 5.40319C20.2815 5.40319 19.6421 5.14304 19.1127 4.62273C18.5932 4.09242 18.3335 3.45204 18.3335 2.70159C18.3335 1.95115 18.5932 1.32078 19.1127 0.810478C19.6421 0.290168 20.2815 0.030014 21.0307 0.030014C21.7699 0.030014 22.3992 0.290168 22.9186 0.810478C23.4481 1.32078 23.7128 1.95115 23.7128 2.70159C23.7128 3.45204 23.4481 4.09242 22.9186 4.62273C22.3992 5.14304 21.7699 5.40319 21.0307 5.40319ZM18.7081 23.1737V7.80463H23.4282V23.1737H18.7081Z" fill="currentColor"/><path d="M31.0328 23.1737L25.0391 7.80463H30.1337L32.0067 13.1778C32.8958 15.7994 33.3952 17.4303 33.5052 18.0707C33.6849 17.1801 34.2294 15.5492 35.1384 13.1778L37.1912 7.80463H42.106L35.6928 23.1737H31.0328Z" fill="currentColor"/><path d="M46.0697 5.40319C45.3205 5.40319 44.6812 5.14304 44.1517 4.62273C43.6323 4.09242 43.3726 3.45204 43.3726 2.70159C43.3726 1.95115 43.6323 1.32078 44.1517 0.810478C44.6812 0.290168 45.3205 0.030014 46.0697 0.030014C46.8089 0.030014 47.4382 0.290168 47.9577 0.810478C48.4871 1.32078 48.7519 1.95115 48.7519 2.70159C48.7519 3.45204 48.4871 4.09242 47.9577 4.62273C47.4382 5.14304 46.8089 5.40319 46.0697 5.40319ZM43.7472 23.1737V7.80463H48.4672V23.1737H43.7472Z" fill="currentColor"/><path d="M58.1548 23.5789C55.9472 23.5789 54.1791 22.8535 52.8505 21.4027C51.5318 19.9518 50.8726 18.0106 50.8726 15.5792C50.8726 13.1078 51.5568 11.1116 52.9254 9.59066C54.3039 8.06975 56.1469 7.30933 58.4545 7.30933C59.4035 7.30933 60.2976 7.4844 61.1367 7.83462C61.9858 8.18484 62.6301 8.64515 63.0697 9.21546V0H67.7896V23.1737H63.3393L63.0996 21.2076C62.6801 21.918 62.0208 22.4933 61.1217 22.9335C60.2327 23.3638 59.2437 23.5789 58.1548 23.5789ZM59.2936 19.2414C60.4024 19.2414 61.3015 18.8912 61.9908 18.1908C62.6801 17.4803 63.0247 16.5498 63.0247 15.3991C63.0247 14.2485 62.6801 13.3229 61.9908 12.6225C61.3015 11.912 60.4024 11.5569 59.2936 11.5569C58.1748 11.5569 57.2857 11.912 56.6265 12.6225C55.9672 13.3229 55.6375 14.2485 55.6375 15.3991C55.6375 16.5498 55.9672 17.4803 56.6265 18.1908C57.2857 18.8912 58.1748 19.2414 59.2936 19.2414Z" fill="currentColor"/></svg>
+  <h1>Vivid Money</h1>
+  <p>Public signed-out surfaces. Satoshi is not loaded here, so the guide falls back to the system sans. Values come from tokens.json.</p>
+  <p class="note">Light only. The marketing site set html data-theme to light. No dark theme was shown on a public page.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+
+  <h2>Type</h2>
+  <p style="font-size:52px;line-height:52px;font-weight:500;letter-spacing:-0.02em">Business account</p>
+  <p style="font-size:16px;line-height:24px">Manage your money, stay in control of team spending.</p>
+
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="primary">Get started</button>
+    <button class="outline">Login</button>
+    <button class="soft">Get started</button>
+  </div>
+  <div class="field">Company name</div>
+
+  <h2>Promo bar</h2>
+  <div class="promo"><span>Vivid CFO Club</span><button>Request a seat</button></div>
+
+  <h2>Plan card</h2>
+  <div class="card">
+    <strong>Pro</strong>
+    <p>Featured plan, fill #f4edff, radius 24px.</p>
+    <button class="primary">Get started</button>
+  </div>
+</main>
+<script>
+const rows = [
+  ["page", "#ffffff"], ["surface", "#f5f5f4"], ["text", "#333333"],
+  ["muted", "#79797f"], ["accent", "#7d33f6"], ["accent hover", "#a372fa"],
+  ["accent soft", "#f4edff"], ["border", "#eceef2"], ["promo", "#222222"],
+  ["error", "#c40b08"], ["amber", "#ffbe64"], ["coral", "#ff6955"],
+  ["green", "#65dd6b"], ["sky", "#75c0f6"], ["pink", "#f360b0"]
+];
+document.getElementById("swatches").innerHTML = rows.map(([name, hex]) =>
+  `<div class="swatch"><div class="chip" style="background:${hex}"></div><div class="label">${name}</div><div class="mono">${hex}</div></div>`
+).join("");
+</script>
+</body>
+</html>

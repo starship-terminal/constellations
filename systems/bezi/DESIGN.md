@@ -97,6 +97,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **One painted theme.** Every captured route paints dark; the bundle declares no light variant, so the semantic set is emitted under `dark` (the spotify convention for a single painted dark surface).
 - **Framer uuid token names.** `--token-<uuid>` names are unstable build artefacts; tokens.json emits them under readable orange/ink/alpha/pastel names while each leaf keeps the real variable in `$extensions.source`.
 - **Anchor `color` reads `#0000ee` or transparent fills.** Framer paints link/button text on inner spans and button fills on sibling layers; the anchor's own computed colour is the UA default and its background is transparent. `dark.accent`/`accentText`/`link` read the painted layers and text child (`paint`/`textStyle` in the raw file), never the anchor alone.

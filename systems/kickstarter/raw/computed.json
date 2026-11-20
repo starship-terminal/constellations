@@ -1,0 +1,52 @@
+{
+  "captured": "2026-11-20",
+  "product": "Kickstarter",
+  "url": "https://www.kickstarter.com",
+  "route": "live signed-in browser, T3 preview default profile",
+  "theme": "light",
+  "dark": "not offered in the signed-in web UI walked on this date",
+  "viewport": {
+    "desktop": {
+      "requested": "1440x900",
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2,
+      "visualViewport": {"width": 1440, "height": 900, "scale": 1},
+      "png": "2880x1800"
+    },
+    "phone": {
+      "requested": "390x844",
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "visualViewport": {"width": 390, "height": 844, "scale": 1},
+      "png": "780x1688"
+    }
+  },
+  "fontFamily": "Inter, sans-serif",
+  "stylesheet": "https://a.kickstarter.com/assets/packages/base-26371ddfbe568b96ec0eeab027849af0cf201abd397495e74a32dadd5a96445d.css",
+  "note": "Cross-origin stylesheets are blocked from the CSSOM in this browser. Values below are getComputedStyle readings on the live signed-in pages, not custom properties. Kickstarter's own UI does not declare a product token set on :root; the only custom properties on the page were CKEditor --ck-* names, which are not Kickstarter's.",
+  "readings": {
+    "header.bar": {"bg": "#000000", "height": "74px", "page": "/settings/account"},
+    "page": {"bg": "#ffffff", "color": "#282828", "fontSize": "14px", "fontWeight": "400", "lineHeight": "21px"},
+    "search.field": {"bg": "#ffffff", "color": "#282828", "height": "48px", "radius": "8px", "padding": "12px", "fontSize": "16px", "fontWeight": "400"},
+    "button.creator": {"bg": "transparent", "color": "#171717", "border": "1px solid #c9c9c9", "radius": "4px", "padding": "7px 11px", "fontSize": "16px", "fontWeight": "500"},
+    "button.secondary": {"bg": "transparent", "color": "#171717", "border": "1px solid #c9c9c9", "radius": "4px", "padding": "11px 15px", "fontSize": "16px", "fontWeight": "500", "lineHeight": "20px", "page": "/settings/account", "label": "Change email address"},
+    "button.filled": {"bg": "#464646", "color": "#ffffff", "border": "1px solid #464646", "radius": "0px", "padding": "10.5px 18px", "fontSize": "14px", "fontWeight": "400", "height": "41px", "page": "/profile/saved_projects", "label": "Discover projects"},
+    "button.nextDisabled": {"bg": "#464646", "color": "#ffffff", "opacityNote": "rendered pale grey on /start; computed background is #464646 with a disabled state", "radius": "0px", "fontSize": "14px", "height": "41px", "page": "/start"},
+    "button.primary": {"bg": "#2752ff", "color": "#ffffff", "page": "/profile/following", "label": "Get started"},
+    "link": {"color": "#2752ff", "fontSize": "14px", "fontWeight": "400", "lineHeight": "20px"},
+    "tab.selected": {"color": "#060f46", "fontSize": "14px", "fontWeight": "700", "lineHeight": "21px", "indicator": "#2752ff", "page": "/settings/account"},
+    "tab.idle": {"color": "#656969", "fontSize": "14px", "fontWeight": "400"},
+    "category.nav": {"color": "#000000", "fontSize": "16px", "fontWeight": "500", "radius": "4px"},
+    "heading.display": {"color": "#282828", "fontSize": "48px", "fontWeight": "700", "lineHeight": "50px", "page": "/settings/account"},
+    "heading.page": {"color": "#282828", "fontSize": "48px", "fontWeight": "400", "lineHeight": "54px", "page": "/profile/saved_projects"},
+    "heading.step": {"color": "#000000", "fontSize": "28px", "fontWeight": "400", "page": "/start"},
+    "heading.stepSub": {"color": "#000000", "fontSize": "24px", "fontWeight": "400", "page": "/start"},
+    "badge.off": {"bg": "#f1eeea", "color": "#3d3d66", "fontSize": "12px", "fontWeight": "500", "padding": "1px 5px", "radius": "0px", "page": "/settings/account"},
+    "footer": {"bg": "#171717", "color": "#fafafa", "border": "1px solid #3c3c3c", "fontSize": "14px"},
+    "note.welcome": {"color": "#656969", "fontSize": "14px", "page": "/start"},
+    "banner.spam": {"note": "pale yellow warning strip with a dark left rule on /messages/inbox; exact fill not isolated because the painted node was transparent in getComputedStyle"},
+    "logo": {"note": "wordmark is a green bitmap, not a CSS colour. Not sampled as a token."}
+  }
+}

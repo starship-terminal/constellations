@@ -1,0 +1,7 @@
+{
+  "_note": "The filled crops type the throwaway name@example.com and then delete it. The terms, docs and enterprise pages print Krea's published support@krea.ai. Neither is a private address.",
+  "ocr": {
+    "emails": true,
+    "email_allow": ["@example\\.com$", "@krea\\.ai$", "@krea\\.al$", "@acme\\.com$"]
+  }
+}

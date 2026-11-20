@@ -1,0 +1,8 @@
+role	file	note
+site-icon	../icon.png	128px PNG from /favicon/apple-touch-icon.png (180px source)
+wordmark	gap	Inline SVG in the header. Not extracted as a file.
+heart	gap	Inline header icon, 24px viewBox 0 0 25 24.
+profile	gap	Inline header icon.
+menu	gap	Inline hamburger, aria-label Mobile menu trigger.
+chat	gap	LiveChat launcher, third-party, black circle.
+arrow	gap	Inline carousel and menu arrows.

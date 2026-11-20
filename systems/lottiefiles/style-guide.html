@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LottieFiles style guide</title>
+<style>
+:root {
+  --font-family-sans: "Inter LF",sans-serif;
+  --font-family-display: "DM Sans LF","DM Sans",sans-serif;
+  --font-family-mono: "Menlo","Monaco","Consolas","Liberation Mono","Courier New",monospace;
+  --typography-caption-fontFamily: var(--font-family-sans);
+  --typography-caption-fontSize: 0.75rem;
+  --typography-caption-fontWeight: 400;
+  --typography-label-fontFamily: var(--font-family-sans);
+  --typography-label-fontSize: 0.875rem;
+  --typography-label-fontWeight: 500;
+  --typography-body-fontFamily: var(--font-family-sans);
+  --typography-body-fontSize: 1rem;
+  --typography-body-fontWeight: 400;
+  --typography-body-lineHeight: 1.5;
+  --typography-body-lg-fontFamily: var(--font-family-sans);
+  --typography-body-lg-fontSize: 1.125rem;
+  --typography-body-lg-fontWeight: 400;
+  --typography-heading-sm-fontFamily: var(--font-family-sans);
+  --typography-heading-sm-fontSize: 1.25rem;
+  --typography-heading-sm-fontWeight: 600;
+  --typography-heading-fontFamily: var(--font-family-sans);
+  --typography-heading-fontSize: 1.5rem;
+  --typography-heading-fontWeight: 600;
+  --typography-heading-lg-fontFamily: var(--font-family-sans);
+  --typography-heading-lg-fontSize: 1.875rem;
+  --typography-heading-lg-fontWeight: 600;
+  --typography-heading-lg-lineHeight: 1.2;
+  --typography-display-fontFamily: var(--font-family-sans);
+  --typography-display-fontSize: 3rem;
+  --typography-display-fontWeight: 600;
+  --typography-display-lineHeight: 1;
+  --spacing-unit: 0.25rem;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.5rem;
+  --radius-2xl: 1rem;
+  --radius-button: 12px;
+  --elevation-sm: 0px 1px 3px 0px rgba(0, 0, 0, 0.102), 0px 1px 2px -1px rgba(0, 0, 0, 0.102);
+  --elevation-md: 0px 4px 6px -1px rgba(0, 0, 0, 0.102), 0px 2px 4px -2px rgba(0, 0, 0, 0.102);
+  --elevation-lg: 0px 10px 15px -3px rgba(0, 0, 0, 0.102), 0px 4px 6px -4px rgba(0, 0, 0, 0.102);
+  --motion-duration-base: 150ms;
+  --motion-delay-fast: 75ms;
+  --motion-delay-base: 150ms;
+  --motion-delay-slow: 300ms;
+  --size-control-header: 36px;
+  --size-control-hero: 48px;
+  --layout-breakpoint-sm: 40rem;
+  --layout-breakpoint-md: 48rem;
+  --layout-breakpoint-lg: 64rem;
+  --layout-breakpoint-xl: 80rem;
+  --background-page: #ffffff;
+  --background-surface: #ffffff;
+  --background-raised: #ffffff;
+  --background-faint: #fafafa;
+  --background-muted: #f4f4f5;
+  --background-inverse: #09090b;
+  --background-sidebar: #fafafa;
+  --text-primary: #09090b;
+  --text-secondary: #71717b;
+  --text-on-accent: #fafafa;
+  --text-inverse: #fafafa;
+  --text-card: #09090b;
+  --accent-default: #019d91;
+  --accent-on: #fafafa;
+  --accent-secondary: #00c1a2;
+  --accent-soft: #f4f4f5;
+  --border-default: #e4e4e7;
+  --border-input: #e4e4e7;
+  --border-focus: #18181b;
+  --status-danger: #e7000b;
+  --status-danger-foreground: #fef2f2;
+  --status-warning: #ff6900;
+  --button-signup-background: #019d91;
+  --button-signup-text: #fafafa;
+  --button-hero-background: #019d91;
+  --button-hero-text: #fafafa;
+  --button-login-background: #ffffff;
+  --button-login-text: #09090b;
+  color-scheme: light;
+  --sg-sans: "Inter", "Inter LF", ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: ui-monospace, Menlo, Consolas, monospace;
+}
+[data-mode="dark"] {
+  --background-page: #09090b;
+  --background-surface: #09090b;
+  --background-raised: #09090b;
+  --background-faint: #18181b;
+  --background-muted: #27272a;
+  --background-inverse: #ffffff;
+  --background-sidebar: #18181b;
+  --text-primary: #fafafa;
+  --text-secondary: #9f9fa9;
+  --text-on-accent: #fafafa;
+  --text-inverse: #18181b;
+  --text-card: #fafafa;
+  --accent-default: #019d91;
+  --accent-on: #fafafa;
+  --accent-secondary: #00c1a2;
+  --accent-soft: #27272a;
+  --border-default: #27272a;
+  --border-input: #27272a;
+  --border-focus: #d4d4d8;
+  --status-danger: #82181a;
+  --status-danger-foreground: #fef2f2;
+  --status-warning: #ff6900;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 16px/1.5 var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header.top { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+header.top h1 { font-size: 22px; margin: 0; font-weight: 600; }
+.switch-theme { margin-left: auto; font-size: 13px; }
+h2 { font-size: 18px; margin: 36px 0 8px; }
+p.note { color: var(--text-secondary); font-size: 14px; max-width: 70ch; }
+.pal { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 40px 1fr; gap: 10px; align-items: center; }
+.sw i { width: 40px; height: 40px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--border-default); display: block; }
+.sw b { font: 600 12px/1.3 var(--sg-mono); display: block; }
+.sw span { font-size: 12px; color: var(--text-secondary); }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
+.btn { display: inline-flex; align-items: center; height: 36px; padding: 0 16px; border-radius: 8px; background: var(--accent-default); color: var(--accent-on); font-weight: 500; font-size: 14px; }
+.btn.quiet { background: var(--background-page); color: var(--text-primary); box-shadow: inset 0 0 0 1px var(--border-default); }
+.card { background: var(--background-faint); border-radius: 16px; padding: 16px; max-width: 280px; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border-default); }
+code { font-family: var(--sg-mono); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <h1>LottieFiles</h1>
+  <label class="switch-theme"><input type="checkbox" id="theme"> Declared dark (not painted on the public site)</label>
+</header>
+<p class="note">Values come from tokens.json. The public site painted light only. The dark block is the stylesheet's <code>.dark</code> set, resolved by adding that class. It was not a live theme switch.</p>
+
+<h2>Colour</h2>
+<div class="pal" id="pal"></div>
+
+<h2>Buttons</h2>
+<div class="row">
+  <span class="btn">Sign up</span>
+  <span class="btn quiet">Log in</span>
+</div>
+<p class="note">Sign up uses the teal primary. Log in is a quiet control on the page. Pricing plan buttons use a second blue and a second teal that the marketing token set does not name. Those fills are in the component readings, not invented here.</p>
+
+<h2>Type</h2>
+<p style="font-size: 48px; line-height: 1; font-weight: 600; margin: 8px 0;">Great designs come alive with motion</p>
+<p class="note">Inter LF is the body face. DM Sans LF is declared as a second family. Font files are not in this package.</p>
+
+<h2>Tokens</h2>
+<table id="tokens"></table>
+</div>
+<script>
+const T = {"core":{"font":{"family":{"sans":{"v":"\"Inter LF\",sans-serif","t":"fontFamily","s":"css-var --font-sans on :root"},"display":{"v":"\"DM Sans LF\",\"DM Sans\",sans-serif","t":"fontFamily","s":"css-var --font-dm on :root"},"mono":{"v":"\"Menlo\",\"Monaco\",\"Consolas\",\"Liberation Mono\",\"Courier New\",monospace","t":"fontFamily","s":"css-var --font-code on :root"}}},"typography":{"caption":{"fontFamily":{"v":"{font.family.sans}","t":"fontFamily","s":"css-var --font-sans; body computed Inter LF"},"fontSize":{"v":"0.75rem","t":"dimension","s":"css-var --text-xs on :root"},"fontWeight":{"v":400,"t":"fontWeight","s":"Reconstruction: entered by hand at capture time as the Tailwind font-weight step this role appears to use; no element's weight was read for it"}},"label":{"fontFamily":{"v":"{font.family.sans}","t":"fontFamily","s":"css-var --font-sans; body computed Inter LF"},"fontSize":{"v":"0.875rem","t":"dimension","s":"css-var --text-sm on :root"},"fontWeight":{"v":500,"t":"fontWeight","s":"Reconstruction: entered by hand at capture time as the Tailwind font-weight step this role appears to use; no element's weight was read for it"}},"body":{"fontFamily":{"v":"{font.family.sans}","t":"fontFamily","s":"css-var --font-sans; body computed Inter LF"},"fontSize":{"v":"1rem","t":"dimension","s":"css-var --text-base on :root"},"fontWeight":{"v":400,"t":"fontWeight","s":"Reconstruction: entered by hand at capture time as the Tailwind font-weight step this role appears to use; no element's weight was read for it"},"lineHeight":{"v":1.5,"t":"number","s":"css-var --text-base--line-height on :root"}},"body-lg":{"fontFamily":{"v":"{font.family.sans}","t":"fontFamily","s":"css-var --font-sans; body computed Inter LF"},"fontSize":{"v":"1.125rem","t":"dimension","s":"css-var --text-lg on :root"},"fontWeight":{"v":400,"t":"fontWeight","s":"Reconstruction: entered by hand at capture time as the Tailwind font-weight step this role appears to use; no element's weight was read for it"}},"heading-sm":{"fontFamily":{"v":"{font.family.sans}","t":"fontFamily","s":"css-var --font-sans; body computed Inter LF"},"fontSize":{"v":"1.25rem","t":"dimension","s":"css-var --text-xl on :root"},"fontWeight":{"v":600,"t":"fontWeight","s":"Reconstruction: entered by hand at capture time as the Tailwind font-weight step this role appears to use; no element's weight was read for it"}},"heading":{"fontFamily":{"v":"{font.family.sans}","t":"fontFamily","s":"css-var --font-sans; body computed Inter LF"},"fontSize":{"v":"1.5rem","t":"dimension","s":"css-var --text-2xl on :root"},"fontWeight":{"v":600,"t":"fontWeight","s":"Reconstruction: entered by hand at capture time as the Tailwind font-weight step this role appears to use; no element's weight was read for it"}},"heading-lg":{"fontFamily":{"v":"{font.family.sans}","t":"fontFamily","s":"css-var --font-sans; body computed Inter LF"},"fontSize":{"v":"1.875rem","t":"dimension","s":"css-var --text-3xl on :root"},"fontWeight":{"v":600,"t":"fontWeight","s":"Reconstruction: entered by hand at capture time as the Tailwind font-weight step this role appears to use; no element's weight was read for it"},"lineHeight":{"v":1.2,"t":"number","s":"css-var --text-3xl--line-height on :root"}},"display":{"fontFamily":{"v":"{font.family.sans}","t":"fontFamily","s":"css-var --font-sans; body computed Inter LF"},"fontSize":{"v":"3rem","t":"dimension","s":"css-var --text-5xl on :root"},"fontWeight":{"v":600,"t":"fontWeight","s":"Reconstruction: entered by hand at capture time as the Tailwind font-weight step this role appears to use; no element's weight was read for it"},"lineHeight":{"v":1,"t":"number","s":"css-var --text-5xl--line-height on :root"}}},"spacing":{"unit":{"v":"0.25rem","t":"dimension","s":"css-var --spacing on :root (Tailwind spacing unit)"},"1":{"v":"0.25rem","t":"dimension","s":"derived: css-var --spacing (0.25rem) multiplied by the Tailwind step 1"},"2":{"v":"0.5rem","t":"dimension","s":"derived: css-var --spacing (0.25rem) multiplied by the Tailwind step 2"},"3":{"v":"0.75rem","t":"dimension","s":"derived: css-var --spacing (0.25rem) multiplied by the Tailwind step 3"},"4":{"v":"1rem","t":"dimension","s":"derived: css-var --spacing (0.25rem) multiplied by the Tailwind step 4"},"6":{"v":"1.5rem","t":"dimension","s":"derived: css-var --spacing (0.25rem) multiplied by the Tailwind step 6"},"8":{"v":"2rem","t":"dimension","s":"derived: css-var --spacing (0.25rem) multiplied by the Tailwind step 8"}},"radius":{"md":{"v":"0.5rem","t":"dimension","s":"css-var --radius on :root"},"lg":{"v":"0.5rem","t":"dimension","s":"css-var --radius-lg on :root"},"2xl":{"v":"1rem","t":"dimension","s":"css-var --radius-2xl on :root"},"button":{"v":"12px","t":"dimension","s":"measured hero-cta border-radius on lottiefiles.com home, 1440"}},"elevation":{"sm":{"v":[{"color":"rgba(0, 0, 0, 0.102)","offsetX":"0px","offsetY":"1px","blur":"3px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.102)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"-1px"}],"t":"shadow","s":"css-var --shadow-sm on :root"},"md":{"v":[{"color":"rgba(0, 0, 0, 0.102)","offsetX":"0px","offsetY":"4px","blur":"6px","spread":"-1px"},{"color":"rgba(0, 0, 0, 0.102)","offsetX":"0px","offsetY":"2px","blur":"4px","spread":"-2px"}],"t":"shadow","s":"css-var --shadow-md on :root"},"lg":{"v":[{"color":"rgba(0, 0, 0, 0.102)","offsetX":"0px","offsetY":"10px","blur":"15px","spread":"-3px"},{"color":"rgba(0, 0, 0, 0.102)","offsetX":"0px","offsetY":"4px","blur":"6px","spread":"-4px"}],"t":"shadow","s":"css-var --shadow-lg on :root"}},"motion":{"duration":{"base":{"v":"150ms","t":"duration","s":"css-var --default-transition-duration on :root (Tailwind default transition duration)"}},"delay":{"fast":{"v":"75ms","t":"duration","s":"css-var --animation-delay-75 on :root (Tailwind animation-delay step: a delay before an animation starts, not a transition duration)"},"base":{"v":"150ms","t":"duration","s":"css-var --animation-delay-150 on :root (Tailwind animation-delay step: a delay before an animation starts, not a transition duration)"},"slow":{"v":"300ms","t":"duration","s":"css-var --animation-delay-300 on :root (Tailwind animation-delay step: a delay before an animation starts, not a transition duration)"}}},"size":{"control":{"header":{"v":"36px","t":"dimension","s":"measured nav-signup default height on lottiefiles.com home, 1440"},"hero":{"v":"48px","t":"dimension","s":"measured hero-cta default height on lottiefiles.com home, 1440"}}},"layout":{"breakpoint":{"sm":{"v":"40rem","t":"dimension","s":"css-var --breakpoint-sm on :root"},"md":{"v":"48rem","t":"dimension","s":"css-var --breakpoint-md on :root"},"lg":{"v":"64rem","t":"dimension","s":"css-var --breakpoint-lg on :root"},"xl":{"v":"80rem","t":"dimension","s":"css-var --breakpoint-xl on :root"}}}},"light":{"background":{"page":{"v":"#ffffff","t":"color","s":"css-var --background (light; painted on the public site)"},"surface":{"v":"#ffffff","t":"color","s":"css-var --card (light; painted on the public site)"},"raised":{"v":"#ffffff","t":"color","s":"css-var --popover (light; painted on the public site)"},"faint":{"v":"#fafafa","t":"color","s":"css-var --faint (light; painted on the public site)"},"muted":{"v":"#f4f4f5","t":"color","s":"css-var --muted (light; painted on the public site)"},"inverse":{"v":"#09090b","t":"color","s":"css-var --background-inverse (light; painted on the public site)"},"sidebar":{"v":"#fafafa","t":"color","s":"css-var --sidebar-background (light; painted on the public site)"}},"text":{"primary":{"v":"#09090b","t":"color","s":"css-var --foreground (light; painted on the public site)"},"secondary":{"v":"#71717b","t":"color","s":"css-var --muted-foreground (light; painted on the public site)"},"on-accent":{"v":"#fafafa","t":"color","s":"css-var --primary-foreground (light; painted on the public site)"},"inverse":{"v":"#fafafa","t":"color","s":"css-var --foreground-inverse (light; painted on the public site)"},"card":{"v":"#09090b","t":"color","s":"css-var --card-foreground (light; painted on the public site)"}},"accent":{"default":{"v":"#019d91","t":"color","s":"css-var --primary (light; painted on the public site)"},"on":{"v":"#fafafa","t":"color","s":"css-var --primary-foreground (light; painted on the public site)"},"secondary":{"v":"#00c1a2","t":"color","s":"css-var --brand-secondary (light; painted on the public site)"},"soft":{"v":"#f4f4f5","t":"color","s":"css-var --accent (light; painted on the public site)"}},"border":{"default":{"v":"#e4e4e7","t":"color","s":"css-var --border (light; painted on the public site)"},"input":{"v":"#e4e4e7","t":"color","s":"css-var --input (light; painted on the public site)"},"focus":{"v":"#18181b","t":"color","s":"css-var --ring (light; painted on the public site)"}},"status":{"danger":{"v":"#e7000b","t":"color","s":"css-var --destructive (light; painted on the public site)"},"danger-foreground":{"v":"#fef2f2","t":"color","s":"css-var --destructive-foreground (light; painted on the public site)"},"warning":{"v":"#ff6900","t":"color","s":"css-var --warning (light; painted on the public site)"}},"button":{"signup":{"background":{"v":"#019d91","t":"color","s":"measured nav-signup default backgroundColor on lottiefiles.com"},"text":{"v":"#fafafa","t":"color","s":"measured nav-signup default color on lottiefiles.com"}},"hero":{"background":{"v":"#019d91","t":"color","s":"measured hero-cta default backgroundColor on lottiefiles.com"},"text":{"v":"#fafafa","t":"color","s":"measured hero-cta default color on lottiefiles.com"}},"login":{"background":{"v":"#ffffff","t":"color","s":"measured nav-login default backgroundColor on lottiefiles.com"},"text":{"v":"#09090b","t":"color","s":"measured nav-login default color on lottiefiles.com"}}}},"dark":{"background":{"page":{"v":"#09090b","t":"color","s":"css-var --background (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"},"surface":{"v":"#09090b","t":"color","s":"css-var --card (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"},"raised":{"v":"#09090b","t":"color","s":"css-var --popover (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"},"faint":{"v":"#18181b","t":"color","s":"css-var --faint (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"},"muted":{"v":"#27272a","t":"color","s":"css-var --muted (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"},"inverse":{"v":"#ffffff","t":"color","s":"css-var --background-inverse (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"},"sidebar":{"v":"#18181b","t":"color","s":"css-var --sidebar-background (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"}},"text":{"primary":{"v":"#fafafa","t":"color","s":"css-var --foreground (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"},"secondary":{"v":"#9f9fa9","t":"color","s":"css-var --muted-foreground (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"},"on-accent":{"v":"#fafafa","t":"color","s":"css-var --primary-foreground (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"},"inverse":{"v":"#18181b","t":"color","s":"css-var --foreground-inverse (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"},"card":{"v":"#fafafa","t":"color","s":"css-var --card-foreground (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"}},"accent":{"default":{"v":"#019d91","t":"color","s":"css-var --primary (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"},"on":{"v":"#fafafa","t":"color","s":"css-var --primary-foreground (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"},"secondary":{"v":"#00c1a2","t":"color","s":"css-var --brand-secondary (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"},"soft":{"v":"#27272a","t":"color","s":"css-var --accent (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"}},"border":{"default":{"v":"#27272a","t":"color","s":"css-var --border (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"},"input":{"v":"#27272a","t":"color","s":"css-var --input (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"},"focus":{"v":"#d4d4d8","t":"color","s":"css-var --ring (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"}},"status":{"danger":{"v":"#82181a","t":"color","s":"css-var --destructive (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"},"danger-foreground":{"v":"#fef2f2","t":"color","s":"css-var --destructive-foreground (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"},"warning":{"v":"#ff6900","t":"color","s":"css-var --warning (dark; stylesheet .dark block, resolved by adding html.dark; the public site did not switch to this theme)"}}}};
+const root = document.documentElement;
+document.getElementById('theme').addEventListener('change', (e) => {
+  root.setAttribute('data-mode', e.target.checked ? 'dark' : 'light');
+  paint();
+});
+// The builder inlines a slim tree: each token is {v: value, t: type, s: source}.
+const esc = (x) => String(x).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const show = (v) => (typeof v === 'string' ? v : JSON.stringify(v));
+function flat(node, prefix, out) {
+  for (const [k, v] of Object.entries(node || {})) {
+    if (v && v.v !== undefined && v.t !== undefined) out.push([prefix + k, v]);
+    else if (v && typeof v === 'object') flat(v, prefix + k + '.', out);
+  }
+  return out;
+}
+function paint() {
+  const mode = root.getAttribute('data-mode') === 'dark' ? 'dark' : 'light';
+  const set = T[mode] || {};
+  const rows = flat(set, '', []);
+  const pal = document.getElementById('pal');
+  pal.innerHTML = rows.filter(([, t]) => t.t === 'color').map(([n, t]) =>
+    `<div class="sw"><i style="background:${esc(t.v)}"></i><div><b>${esc(n)}</b><span>${esc(t.v)}</span></div></div>`).join('');
+  const all = [...flat(T.core, 'core.', []), ...rows.map(([n, t]) => [mode + '.' + n, t])];
+  document.getElementById('tokens').innerHTML = '<tr><th>Token</th><th>Value</th><th>Source</th></tr>' +
+    all.map(([n, t]) => `<tr><td><code>${esc(n)}</code></td><td>${esc(show(t.v))}</td><td>${esc(t.s || '')}</td></tr>`).join('');
+}
+paint();
+</script>
+</body>
+</html>

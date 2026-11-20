@@ -182,8 +182,18 @@ function PackageDetail({ slug }: { slug: string }) {
   if (error)
     return (
       <div className={styles.page}>
-        <ErrorState message={error} />
-        <Link href="/library">Back to captured packages</Link>
+        <Empty
+          title={
+            /not found/i.test(error)
+              ? "Package not found"
+              : "Could not open this package"
+          }
+        >
+          <p role="alert">{error}</p>
+          <Link className="pill small" href="/library">
+            Back to captured packages
+          </Link>
+        </Empty>
       </div>
     );
   if (!detail || !pkg) return <Empty title="Captured package unavailable" />;

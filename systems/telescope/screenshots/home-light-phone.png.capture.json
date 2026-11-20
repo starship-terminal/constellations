@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-19",
+  "source": "headless Playwright, public https://telescope.fyi/, no Cloudflare challenge",
+  "note": "Preview browser could not produce screenshot frames. This PNG is a second load, not the measured tab. Viewport only, after 5s so the hero intro could settle.",
+  "requested": {
+    "width": 390,
+    "height": 844,
+    "devicePixelRatio": 2
+  },
+  "measured": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  }
+}

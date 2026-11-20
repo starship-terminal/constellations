@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hashnode style guide</title>
+<meta name="description" content="hashnode.com design tokens and the signed-out surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-app: -apple-system,system-ui,sans-serif,"Apple Color Emoji";
+  --font-family-inter: "Inter", "Inter Fallback";
+  --font-family-code: ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  --font-family-systemSans: -apple-system,system-ui,sans-serif,"Apple Color Emoji";
+  --font-family-sans: -apple-system,system-ui,sans-serif,"Apple Color Emoji";
+  --font-family-mono: ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  --font-weight-bold: 700;
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-6xl: 3.75rem;
+  --font-lineHeight-2xl: 1.3333;
+  --font-lineHeight-3xl: 1.2;
+  --font-lineHeight-4xl: 1.1111;
+  --font-lineHeight-6xl: 1;
+  --font-lineHeight-base: 1.5;
+  --font-lineHeight-lg: 1.5556;
+  --font-lineHeight-sm: 1.4286;
+  --font-lineHeight-xl: 1.4;
+  --font-lineHeight-xs: 1.3333;
+  --font-tracking-tight: -.025em;
+  --font-tracking-wide: .025em;
+  --font-tracking-widest: .1em;
+  --font-role-body-size: 1rem;
+  --font-role-body-weight: 400;
+  --font-role-body-lineHeight: 1.5rem;
+  --font-role-body-letterSpacing: 0em;
+  --font-role-label-size: 0.875rem;
+  --font-role-label-weight: 600;
+  --font-role-label-lineHeight: 1.25rem;
+  --font-role-label-letterSpacing: 0em;
+  --font-role-reading-size: 1.125rem;
+  --font-role-reading-weight: 400;
+  --font-role-reading-lineHeight: 1.75rem;
+  --font-role-reading-letterSpacing: 0em;
+  --font-role-small-size: 0.875rem;
+  --font-role-small-weight: 400;
+  --font-role-small-lineHeight: 1.25rem;
+  --font-role-small-letterSpacing: 0em;
+  --font-role-subtitle-size: 1.25rem;
+  --font-role-subtitle-weight: 400;
+  --font-role-subtitle-lineHeight: 1.75rem;
+  --font-role-subtitle-letterSpacing: 0em;
+  --font-role-title2-size: 1.5rem;
+  --font-role-title2-weight: 600;
+  --font-role-title2-lineHeight: 2rem;
+  --font-role-title2-letterSpacing: -.01em;
+  --font-role-title3-size: 1.25rem;
+  --font-role-title3-weight: 600;
+  --font-role-title3-lineHeight: 1.75rem;
+  --font-role-title3-letterSpacing: 0em;
+  --font-role-title4-size: 1rem;
+  --font-role-title4-weight: 600;
+  --font-role-title4-lineHeight: 1.5rem;
+  --font-role-title4-letterSpacing: 0em;
+  --radius-base: 0.5rem;
+  --radius-xs: 0.125rem;
+  --space-unit: 0.25rem;
+  --breakpoint-2xl: 96rem;
+  --container-2xl: 42rem;
+  --container-3xl: 48rem;
+  --container-4xl: 56rem;
+  --container-5xl: 64rem;
+  --container-6xl: 72rem;
+  --container-lg: 32rem;
+  --container-md: 28rem;
+  --container-sm: 24rem;
+  --container-xl: 36rem;
+  --container-xs: 20rem;
+  --ease-inOut: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --ease-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --ease-default: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --duration-default: 150ms;
+  --blur-2xl: 40px;
+  --blur-lg: 16px;
+  --blur-md: 12px;
+  --blur-sm: 8px;
+  --shadow-sm: rgba(0, 0, 0, 0.15) 0px 1px 2px 0px;
+  --animation-bounce: bounce 1s infinite;
+  --animation-ping: ping 1s cubic-bezier(0,0,.2,1)infinite;
+  --animation-pulse: pulse 2s cubic-bezier(.4,0,.6,1)infinite;
+  --animation-spin: spin 1s linear infinite;
+  --layout-aspectVideo: 16/9;
+  --typography-articleTitle: 600 36px/44px -apple-system, system-ui, sans-serif, "Apple Color Emoji";
+  --typography-h2: 600 24px/32px -apple-system, system-ui, sans-serif, "Apple Color Emoji";
+  --typography-body: 400 18px/28px -apple-system, system-ui, sans-serif, "Apple Color Emoji";
+  --typography-bodyLink: 500 18px/28px -apple-system, system-ui, sans-serif, "Apple Color Emoji";
+  --typography-cardTitle: 400 16px/24px Inter, "Inter Fallback", "Segoe UI", Roboto, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
+  --typography-navLink: 400 14px/20px Inter, "Inter Fallback", "Segoe UI", Roboto, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
+  --typography-button: 600 16px/24px Inter, "Inter Fallback", "Segoe UI", Roboto, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
+  --typography-input: 400 16px/24px Inter, "Inter Fallback", "Segoe UI", Roboto, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
+  --typography-faqQuestion: 600 16px/24px -apple-system, system-ui, sans-serif, "Apple Color Emoji";
+  --component-sidebar-width: 64px;
+  --component-button-cta-height: 56px;
+  --component-button-cta-radius: 9999px;
+  --component-navLink-height: 40px;
+  --component-navLink-radius: 9999px;
+  --component-searchDialog-width: 672px;
+  --component-searchDialog-height: 594px;
+  --component-searchDialog-radius: 12px;
+  --component-postCard-height: 293.16px;
+  --component-commentBox-height: 72px;
+  --component-blogHeader-height: 72px;
+  --component-blogNav-height: 36px;
+  --component-blogNav-radius: 9999px;
+  --component-blogSearchDialog-width: 672px;
+  --component-blogPostCard-height: 514.08px;
+  --component-mobileHeader-height: 52px;
+  --component-mobileDrawer-width: 288px;
+  --component-type-linkHover-color: #13161c;
+  --component-type-articleTitle-size: 36px;
+  --motion-duration-tw-animation-delay: 0ms;
+  --motion-duration-100ms: 100ms;
+  --motion-duration-default-transition-duration: 150ms;
+  --motion-duration-200ms: 200ms;
+  --motion-duration-300ms: 300ms;
+  --motion-duration-400ms: 400ms;
+  --motion-duration-500ms: 500ms;
+  --motion-duration-800ms: 800ms;
+  --motion-duration-1000ms: 1000ms;
+  --motion-duration-1200ms: 1200ms;
+  --motion-duration-2000ms: 2000ms;
+  --motion-duration-2200ms: 2200ms;
+  --motion-duration-2400ms: 2400ms;
+  --motion-duration-2600ms: 2600ms;
+  --motion-duration-2800ms: 2800ms;
+  --motion-duration-3000ms: 3000ms;
+  --motion-duration-3200ms: 3200ms;
+  --motion-duration-4000ms: 4000ms;
+  --motion-duration-6000ms: 6000ms;
+  --motion-easing-bezier-0-16-1-0-3-1: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-easing-bezier-0-34-1-56-0-64-1: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --motion-easing-default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-ease-in-out-2: cubic-bezier(0.42, 0, 0.58, 1);
+  --motion-easing-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --motion-easing-ease-out-2: cubic-bezier(0, 0, 0.58, 1);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --primary-default: #181b20;
+  --primary-foreground: #ffffff;
+  --secondary-default: #f2f3f6;
+  --secondary-foreground: #13161c;
+  --accent-default: #e9ebef;
+  --accent-foreground: #13161c;
+  --muted-default: #f2f3f6;
+  --muted-foreground: #63666d;
+  --card-default: #ffffff;
+  --card-foreground: #13161c;
+  --popover-default: #ffffff;
+  --popover-foreground: #13161c;
+  --destructive-default: #c52b30;
+  --destructive-border: #e9b9bb;
+  --destructive-cream: #fdf5f5;
+  --destructive-foreground: #ffffff;
+  --destructive-wash: #fdecec;
+  --success-default: #227c45;
+  --success-foreground: #ffffff;
+  --success-wash: #e8f5ec;
+  --warning-default: #ad5c15;
+  --warning-border: #f2dec6;
+  --warning-cream: #fcf7f0;
+  --warning-wash: #fcf0e3;
+  --disabled-foreground: #9a9da3;
+  --highlight-default: #c8f9e1;
+  --highlight-foreground: #13161c;
+  --toolbar-default: #181b20;
+  --toolbar-foreground: #ffffff;
+  --border-default: #e2e4e8;
+  --border-input: #ced1d6;
+  --border-ring: #2962ff;
+  --sidebar-background: #f7f8fa;
+  --sidebar-accent: #e9ebef;
+  --sidebar-accentForeground: #13161c;
+  --sidebar-border: #e2e4e8;
+  --sidebar-foreground: #13161c;
+  --sidebar-primary: #181b20;
+  --sidebar-primaryForeground: #ffffff;
+  --sidebar-ring: #1d65c8;
+  --chart-1: #3470c7;
+  --chart-2: #14938d;
+  --chart-3: #7f5bb6;
+  --chart-4: #d15d4d;
+  --chart-5: #4a9a5e;
+  --brand-default: #2962ff;
+  --brand-foreground: #ffffff;
+  --brand-linkedin: #0a66c2;
+  --link-default: #2962ff;
+  --link-underline: #aac4f9;
+  --codeBlock-codeBlock: #15171c;
+  --codeBlock-codeBlockForeground: #e6e8eb;
+  --codeBlock-codeBlockMuted: #9a9da3;
+  --reading-text: #292b30;
+  --surface-default: #f7f8fa;
+  --scrim-default: rgba(19, 22, 28, 0.45);
+  --selection-default: #cce0fc;
+  --selection-foreground: #13161c;
+  --scroll-shadow: rgba(0, 0, 0, 0.16);
+  --scrollbar-thumb: #ced1d6;
+  --root-background: #ffffff;
+  --root-foreground: #13161c;
+  --elevation-button: rgba(255, 255, 255, 0.12) 0px 1px 0px 0px inset, rgba(19, 22, 28, 0.2) 0px 1px 2px 0px;
+  --elevation-lg: rgba(19, 22, 28, 0.06) 0px 1px 2px 0px, rgba(19, 22, 28, 0.22) 0px 12px 32px -12px;
+  --elevation-md: rgba(19, 22, 28, 0.06) 0px 1px 2px 0px, rgba(19, 22, 28, 0.22) 0px 12px 32px -12px;
+  --elevation-sm: rgba(19, 22, 28, 0.05) 0px 1px 2px 0px;
+  --elevation-xs: rgba(19, 22, 28, 0.05) 0px 1px 2px 0px;
+  --ai-accent: #7550d1;
+  --ai-border: rgba(195, 187, 251, 0.6);
+  --ai-from: #e2ecff;
+  --ai-to: #ffe1ff;
+  --buildful-default: #11a968;
+  --buildful-soft: #effaf3;
+  --buildful-strong: #057a4b;
+  --pro-default: #feedc9;
+  --pro-button: #e8b543;
+  --pro-buttonForeground: #392000;
+  --pro-buttonHover: #f2bf4e;
+  --pro-cream: #fef6e4;
+  --pro-creamBorder: #f3dfa8;
+  --pro-foreground: #926009;
+  --pro-glow: rgba(232, 181, 67, 0.16);
+  --pro-strong: #926009;
+  --pro-wash: #fbf1dc;
+  --landing-chatgpt: #ffffff;
+  --landing-google: #ffffff;
+  --landing-night: #0e1014;
+  --landing-perplexity: #ffffff;
+  --landing-skyFrom: #f3f6ff;
+  --landing-skyHash: #a4b8f5;
+  --landing-skyMark: #d2dcfb;
+  --landing-skyTo: #eaf0ff;
+  --landing-tile: #f7f8fa;
+  --landing-warmFrom: #fffcf5;
+  --landing-warmMark: #f3dfb2;
+  --landing-warmTo: #fef3db;
+  --tod-edge: rgba(0, 0, 0, 0);
+  --tod-eveningHalo: #f59d8b;
+  --tod-eveningHillFar: #905e85;
+  --tod-eveningHillFront: #423658;
+  --tod-eveningHillNear: #62456f;
+  --tod-eveningSky1: #cdc3ee;
+  --tod-eveningSky2: #f3bbd9;
+  --tod-eveningSky3: #ffb9ad;
+  --tod-eveningStreak: #f8d6e8;
+  --tod-eveningSun: #e5564a;
+  --tod-morningCloud: #fff9f4;
+  --tod-morningHalo: #ffc0a3;
+  --tod-morningHillFar: #cfb4cc;
+  --tod-morningHillFront: #629472;
+  --tod-morningHillNear: #84b193;
+  --tod-morningSky1: #ffeee2;
+  --tod-morningSky2: #ffe1d1;
+  --tod-morningSky3: #ffd1bc;
+  --tod-morningSun: #f0834f;
+  --tod-nightHalo: #3a3a64;
+  --tod-nightHillFar: #1c1f39;
+  --tod-nightHillFront: #0c1021;
+  --tod-nightHillNear: #12162d;
+  --tod-nightMoon: #f2e9ff;
+  --tod-nightSky1: #22284b;
+  --tod-nightSky2: #2f3156;
+  --tod-nightStar: #f1eaff;
+  --tod-noonCloud: #ffffff;
+  --tod-noonHalo: #ffeaca;
+  --tod-noonHillFar: #8fd2b4;
+  --tod-noonHillFront: #448c56;
+  --tod-noonHillNear: #5fb077;
+  --tod-noonSky1: #b8ddf9;
+  --tod-noonSky2: #cae8fa;
+  --tod-noonSky3: #dcf1fa;
+  --tod-noonSun: #fe9d4b;
+  --misc-colorBlack: #000000;
+  --misc-colorPrimary: #181b20;
+  --misc-colorWhite: #ffffff;
+  --component-button-cta-bg: var(--primary-default);
+  --component-blogNav-bg: var(--surface-default);
+  --sg-sans: var(--font-family-sans, ui-sans-serif, system-ui, sans-serif);
+  --sg-mono: var(--font-family-mono, ui-monospace, "SF Mono", Menlo, monospace);
+}
+[data-mode="dark"], .dark {
+  --primary-default: #e6e8eb;
+  --primary-foreground: #15171c;
+  --secondary-default: #191c21;
+  --secondary-foreground: #e6e8eb;
+  --accent-default: #23262c;
+  --accent-foreground: #e6e8eb;
+  --muted-default: #191c21;
+  --muted-foreground: #a2a5aa;
+  --card-default: #15171c;
+  --card-foreground: #e6e8eb;
+  --popover-default: #1b1e23;
+  --popover-foreground: #e6e8eb;
+  --destructive-default: #f17070;
+  --destructive-border: #5c2e31;
+  --destructive-cream: #2a1a1b;
+  --destructive-foreground: #0d0f14;
+  --destructive-wash: #3a1a1c;
+  --success-default: #65c281;
+  --success-foreground: #0d0f14;
+  --success-wash: #16301f;
+  --warning-default: #e99e5e;
+  --warning-border: #4a3a26;
+  --warning-cream: #2a2218;
+  --warning-wash: #3a2614;
+  --disabled-foreground: #606369;
+  --highlight-default: #154433;
+  --highlight-foreground: #e6e8eb;
+  --toolbar-default: #2b2e35;
+  --toolbar-foreground: #e6e8eb;
+  --border-default: #272a30;
+  --border-input: #3a3d44;
+  --border-ring: #6293ff;
+  --sidebar-background: #06070b;
+  --sidebar-accent: #23262c;
+  --sidebar-accentForeground: #e6e8eb;
+  --sidebar-border: #272a30;
+  --sidebar-foreground: #e6e8eb;
+  --sidebar-primary: #e6e8eb;
+  --sidebar-primaryForeground: #15171c;
+  --sidebar-ring: #71a6f5;
+  --chart-1: #66a0ee;
+  --chart-2: #4bb9b2;
+  --chart-3: #e4ac59;
+  --chart-4: #ab8be3;
+  --chart-5: #e8777a;
+  --brand-default: #6293ff;
+  --brand-foreground: #0d0f14;
+  --brand-linkedin: #4aa3f0;
+  --link-default: #6293ff;
+  --link-underline: #335197;
+  --codeBlock-codeBlock: #0a0c10;
+  --codeBlock-codeBlockForeground: #e6e8eb;
+  --codeBlock-codeBlockMuted: #9a9da3;
+  --reading-text: #d5d7db;
+  --surface-default: #121419;
+  --scrim-default: rgba(0, 0, 0, 0.6);
+  --selection-default: #253d61;
+  --selection-foreground: #e6e8eb;
+  --scroll-shadow: rgba(255, 255, 255, 0.12);
+  --scrollbar-thumb: #3a3d44;
+  --command-default: #1b1e23;
+  --root-background: #0d0f14;
+  --root-foreground: #e6e8eb;
+  --elevation-button: rgba(255, 255, 255, 0.12) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.4) 0px 1px 2px 0px;
+  --elevation-lg: rgba(0, 0, 0, 0.4) 0px 1px 2px 0px, rgba(0, 0, 0, 0.6) 0px 12px 32px -12px;
+  --elevation-md: rgba(0, 0, 0, 0.4) 0px 1px 2px 0px, rgba(0, 0, 0, 0.6) 0px 12px 32px -12px;
+  --elevation-sm: rgba(0, 0, 0, 0.35) 0px 1px 2px 0px;
+  --elevation-xs: rgba(0, 0, 0, 0.3) 0px 1px 2px 0px;
+  --ai-accent: #c4acff;
+  --ai-border: rgba(113, 99, 178, 0.45);
+  --ai-from: #292f56;
+  --ai-to: #492746;
+  --buildful-default: #3cc07e;
+  --buildful-soft: #173526;
+  --buildful-strong: #7fddb0;
+  --pro-default: #403012;
+  --pro-button: #efbc4b;
+  --pro-buttonForeground: #392000;
+  --pro-buttonHover: #f9c555;
+  --pro-cream: #2a2418;
+  --pro-creamBorder: #4a3d20;
+  --pro-foreground: #e8bd6d;
+  --pro-glow: rgba(239, 188, 75, 0.22);
+  --pro-strong: #e8bd6d;
+  --pro-wash: #2a2418;
+  --landing-chatgpt: #15271e;
+  --landing-google: #1d232e;
+  --landing-night: #0e1014;
+  --landing-perplexity: #0e272c;
+  --landing-skyFrom: #111620;
+  --landing-skyHash: #435793;
+  --landing-skyMark: #1f2c4c;
+  --landing-skyTo: #131b2e;
+  --landing-tile: #101317;
+  --landing-warmFrom: #191610;
+  --landing-warmMark: #413314;
+  --landing-warmTo: #251e0f;
+  --tod-edge: rgba(255, 255, 255, 0.1);
+  --tod-eveningHalo: #d87e6c;
+  --tod-eveningHillFar: #7d4a73;
+  --tod-eveningHillFront: #372a4d;
+  --tod-eveningHillNear: #543661;
+  --tod-eveningSky1: #ada3cf;
+  --tod-eveningSky2: #d29ab9;
+  --tod-eveningSky3: #e0988c;
+  --tod-eveningStreak: #eacfdd;
+  --tod-eveningSun: #e5564a;
+  --tod-morningCloud: #f1e6de;
+  --tod-morningHalo: #f5b592;
+  --tod-morningHillFar: #b58bb0;
+  --tod-morningHillFront: #3f7d57;
+  --tod-morningHillNear: #5d9c74;
+  --tod-morningSky1: #e3c3ae;
+  --tod-morningSky2: #e6b297;
+  --tod-morningSky3: #eaa182;
+  --tod-morningSun: #f0834f;
+  --tod-nightHalo: #3a3a64;
+  --tod-nightHillFar: #1c1f39;
+  --tod-nightHillFront: #0c1021;
+  --tod-nightHillNear: #12162d;
+  --tod-nightMoon: #f2e9ff;
+  --tod-nightSky1: #22284b;
+  --tod-nightSky2: #2f3156;
+  --tod-nightStar: #f1eaff;
+  --tod-noonCloud: #e9f0f5;
+  --tod-noonHalo: #dec5a4;
+  --tod-noonHillFar: #6db395;
+  --tod-noonHillFront: #2a7841;
+  --tod-noonHillNear: #41975d;
+  --tod-noonSky1: #95bbd7;
+  --tod-noonSky2: #a6c4d7;
+  --tod-noonSky3: #b7ccd5;
+  --tod-noonSun: #fe9d4b;
+  --misc-colorBlack: #000000;
+  --misc-colorPrimary: #e6e8eb;
+  --misc-colorWhite: #ffffff;
+  --component-button-cta-bg: var(--primary-default);
+  --component-blogNav-bg: var(--surface-default);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.6 var(--sg-sans); color: var(--root-foreground, #13161c); background: var(--root-background, #ffffff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-default, #e2e4e8); }
+.lead { max-width: 62ch; opacity: .8; }
+.note { font-size: 13px; opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; color: var(--link-default, #2962ff); }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { padding: 10px; border-radius: 10px; background: var(--root-background, #0d0f14); color: var(--root-foreground, #e6e8eb); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-default, #e2e4e8); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); color: inherit; }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); opacity: .65; color: inherit; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border-default, #e2e4e8); overflow: hidden; background: var(--root-background, #ffffff); color: var(--root-foreground, #13161c); border-radius: 12px; }
+.topbar { display: flex; align-items: center; gap: 14px; height: var(--component-mobileHeader-height, 56px); padding: 0 16px 0 20px; font-size: 14px; border-bottom: 1px solid var(--border-default, #e2e4e8); background: var(--root-background, #ffffff); }
+.topbar .wm { font-weight: 600; font-size: 15px; letter-spacing: -0.02em; }
+.topbar .nav { opacity: .75; display: flex; gap: 14px; font-size: 13px; }
+.topbar .sp { flex: 1; }
+.topbar .pill { display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border: 1px solid var(--border-default, #e2e4e8); border-radius: var(--radius-base, .5rem); font-size: 12px; color: var(--muted-foreground, #63666d); background: var(--surface-default, #f7f8fa); }
+.topbar .pill b { border: 1px solid var(--border-default, #e2e4e8); border-radius: 4px; padding: 1px 5px; font-weight: 500; font-size: 10px; }
+.topbar .theme { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-default, #e2e4e8); display: inline-flex; align-items: center; justify-content: center; color: var(--root-foreground, #13161c); background: transparent; font: inherit; cursor: pointer; padding: 0; }
+.topbar .theme:hover { background: var(--accent-default, #e9ebef); }
+.shell { display: flex; }
+.sb { width: var(--component-sidebar-width, 280px); flex: 0 0 auto; border-right: 1px solid var(--border-default, #e2e4e8); padding: 18px 14px; font-size: 13px; background: var(--sidebar-background, #fff); color: var(--sidebar-foreground, #13161c); }
+.sb .grp { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; opacity: .55; margin: 14px 6px 6px; }
+.sb .ln { display: block; padding: 5px 10px; border-radius: var(--radius-base, .5rem); opacity: .8; }
+.sb .ln.on { opacity: 1; font-weight: 500; background: var(--accent-default, #e9ebef); }
+.art { flex: 1; padding: 28px 34px 40px; min-width: 0; }
+.art h3 { font: 500 30px/1.25 var(--sg-sans); letter-spacing: -0.02em; margin: 0 0 10px; }
+.art p { font-size: 14.5px; line-height: 1.7; color: var(--root-foreground, #13161c); margin: 0 0 14px; max-width: 62ch; }
+.art .ic { font-family: var(--sg-mono); font-size: .88em; color: var(--link-default, #2962ff); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 36px; padding: 0 16px; font-size: 13.5px; font-weight: 500; border-radius: var(--radius-base, .5rem); border: 1px solid transparent; }
+.btn.primary { background: var(--primary-default, #181b20); color: var(--primary-foreground, #ffffff); }
+.btn.ghost { background: transparent; border-color: var(--border-default, #e2e4e8); color: var(--root-foreground, #13161c); }
+.codeblk { background: var(--codeBlock-codeBlock, #15171c); color: #e6edf3; border-radius: var(--component-codeblock-radius, 8px); font: 400 12.5px/1.7 var(--sg-mono); padding: 14px 16px; margin: 16px 0; }
+.codeblk .tab { display: inline-block; padding: 3px 10px; border-radius: 6px; font-size: 11px; margin: 0 4px 10px 0; background: rgba(255,255,255,.08); }
+.codeblk .tab.on { background: rgba(255,255,255,.2); font-weight: 600; }
+.codeblk .kw { color: #82aaff; }
+.codeblk .str { color: #c3e88d; }
+.codeblk .fn { color: #ffcb6b; }
+.codeblk .cm { color: #697098; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-default, #e2e4e8); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-default, #e2e4e8); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; opacity: .65; font-family: var(--sg-mono); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.tile { border: 1px solid var(--border-default, #e2e4e8); border-radius: var(--radius-base, .5rem); padding: 16px; font-size: 13px; background: var(--surface-default, #f7f8fa); color: var(--card-foreground, #13161c); }
+.tile b { display: block; font: 600 15px/1.4 var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Hashnode style guide</h1>
+  <p class="note">hashnode.com + townhall.hashnode.com — signed-out public evidence only.</p>
+
+  <h2 class="sh">hashnode.com, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the shadcn-style semantic roles (<code>--background</code>/<code>--foreground</code>, <code>--primary</code>/<code>--secondary</code>/<code>--accent</code>/<code>--muted</code>/<code>--card</code>/<code>--popover</code> + foregrounds, <code>--destructive</code>/<code>--success</code>/<code>--warning</code> families, <code>--border</code>/<code>--input</code>/<code>--ring</code>), the <code>--brand</code>/<code>--link</code> blue (<code>#2962ff</code>), the <code>--sidebar-*</code> and <code>--chart-*</code> sets, the <code>--code-block</code>/<code>--reading-text</code>/<code>--surface</code>/<code>--scrim</code>/<code>--selection</code> roles, the scene palettes (<code>--pro-*</code> gold, <code>--buildful</code> green, <code>--ai-*</code>, the <code>--landing-*</code> and <code>--tod-*</code> hero art), the <code>--elevation-*</code> shadow stacks, the system-stack + Inter faces on the <code>--text-*</code> ramp and the <code>--text-body</code>/<code>-reading</code>/<code>-title-*</code> prose roles, and the measured geometry (<code>component.*</code>) read off the live DOM. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from hashnode.com and townhall.hashnode.com, signed out, in headless Chromium at 1440&times;900 (mobile pass at 390&times;844). Both surfaces paint <b>light by default</b> — the <code>light</code> token set is that painted surface — and hashnode.com's own sidebar Theme menu (Light / Dark / System) flips <code>html.dark</code>, re-pointing the roles to the <code>dark</code> set; on the blog engine the same repaint comes from <code>prefers-color-scheme</code> (its own toggle produced no repaint headless). <code>--command</code> exists in dark only. Inter is loaded through next/font and not bundled here: samples fall back to system fonts. /login and every post-auth surface, engineering.hashnode.com (429) and the NXDOMAIN docs/help/api subdomains are documented boundaries, not captures.</p>
+
+  <h2 class="sh">The surface</h2>
+  <p class="lead">hashnode.com is a viewport-high app shell: a <code>--sidebar-*</code> rail (logo, Home/Feed/Pro/Agents nav, Search &#8984;K, Theme and More buttons, a solid "Start your blog" CTA, a Sign-in link) beside the scrolling feed of post cards. townhall.hashnode.com is the hosted blog engine on the same system: a sticky header (wordmark, a pill <code>--surface</code> nav, Search and theme buttons) over the index and the article page with its table-of-contents rail and tinted <code>--code-block</code> panels.</p>
+  <div class="mock" id="docs-mock" data-mode="light">
+    <div class="topbar"><span class="wm">hashnode</span><span class="nav"><span>Feed</span><span>Pro</span><span>Agents</span></span><span class="sp"></span><span class="pill">Search <b>&#8984;K</b></span><button type="button" class="theme" id="theme-toggle" aria-pressed="false" title="Switch to dark theme">&#9789;</button></div>
+    <div class="shell">
+      <div class="sb"><div class="grp">Navigate</div><span class="ln on">Home</span><span class="ln">Feed</span><span class="ln">Hashnode Pro</span><span class="ln">For Agents</span><div class="grp">Community</div><span class="ln">Hackathons</span><span class="ln">Changelog</span></div>
+      <div class="art"><h3>Why DIY QA doesn&rsquo;t work anymore</h3><p>A 2025 guide to E2E testing for modern web apps — the post card row sits on <span class="ic">bg-background</span>, its title inks <span class="ic">fg-foreground</span> and the excerpt mutes to <span class="ic">fg-muted-foreground</span>.</p>
+        <div class="codeblk"><span class="tab on">MCP server</span><span class="tab">Agent skill</span><span class="tab">CLI</span><br>
+        <span class="kw">npx</span> -y <span class="fn">hashnode</span>@latest <span class="cm"># the /agents install command</span></div>
+        <span class="btn primary">Start your blog, free</span>&nbsp;&nbsp;<span class="btn ghost">Sign in</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The semantic roles under <code>light.*</code> are the painted default (white ground, near-black ink, the <code>#2962ff</code> brand/link blue); <code>dark.*</code> resolves the same declarations inside <code>html.dark</code> (#0d0f14 ground, #e6e8eb ink, #6293ff blue) — including the dark-only <code>command</code> name. <code>sidebar.*</code>, <code>chart.*</code>, <code>codeBlock.*</code>, <code>selection.*</code> and <code>scrollbar.*</code> are their own role sets; <code>pro.*</code>, <code>buildful.*</code>, <code>ai.*</code>, <code>landing.*</code> and <code>tod.*</code> are the scene palettes (Pro gold, the green accent, the AI gradient, the landing and time-of-day hero art), all re-pointed per theme.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius, layout and motion</h2>
+  <p class="lead">Spacing is the Tailwind <code>--spacing</code> unit (0.25rem); radii are <code>--radius</code> .5rem and <code>--radius-xs</code> .125rem (pills clamp to 9999px); <code>container.*</code> and <code>breakpoint.*</code> carry the layout scales and <code>component.*</code> the measured chrome — sidebar width, CTA height, dialog and card sizes, the mobile drawer. <code>motion.*</code> is the measured set from the reduced-motion probe (docs/decisions/0001): the durations and easing curves elements actually run, the transitions and animations, and what <code>prefers-reduced-motion</code> changes.</p>
+  <div id="spacing-out" class="kv"></div>
+  <div id="motion-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two font chains: <code>--font-app</code> (the system sans stack, the UI face) and <code>--font-inter</code> (Inter through next/font, the product face), plus <code>--font-mono</code> for code. The <code>--text-*</code> ramp runs xs&ndash;6xl with paired line-heights and the prose roles <code>--text-body</code>/<code>-label</code>/<code>-reading</code>/<code>-small</code>/<code>-subtitle</code>/<code>-title-2..4</code> carry size, weight, tracking and leading; weights are the named <code>--font-weight-*</code> steps (300&ndash;700). Below that, the <code>core.typography.*</code> composites — the article title, headings, body, code and control styles measured off the live DOM. Samples fall back to system sans because Inter is not bundled.</p>
+  <div id="type-out"></div>
+  <div id="typ-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --background/--foreground/--primary/--font-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, focused and dark states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"app":{"v":"-apple-system,system-ui,sans-serif,\"Apple Color Emoji\"","t":"fontFamily","s":"css-var --font-app (light)","d":"the app face — the system sans stack (-apple-system first); body text and UI"},"inter":{"v":"\"Inter\", \"Inter Fallback\"","t":"fontFamily","s":"css-var --font-inter (light)","d":"Inter — the product face loaded through next/font (with its metrics-matched fallback); marketing/display text"},"code":{"v":"ui-monospace,SFMono-Regular,\"SF Mono\",Menlo,Consolas,\"Liberation Mono\",monospace","t":"fontFamily","s":"css-var --font-mono (light)","d":"the mono face — ui-monospace stack; code blocks, install commands, inline code"},"systemSans":{"v":"-apple-system,system-ui,sans-serif,\"Apple Color Emoji\"","t":"fontFamily","s":"css-var --font-sans (light)","d":"Tailwind's default font-sans utility face — the same system stack as --font-app"},"sans":{"v":"-apple-system,system-ui,sans-serif,\"Apple Color Emoji\"","t":"fontFamily","s":"css-var --default-font-family (light)","d":"Tailwind's default body font chain — resolves to the --font-app stack"},"mono":{"v":"ui-monospace,SFMono-Regular,\"SF Mono\",Menlo,Consolas,\"Liberation Mono\",monospace","t":"fontFamily","s":"css-var --default-mono-font-family (light)","d":"Tailwind's default code font chain — resolves to --font-mono"}},"weight":{"bold":{"v":700,"t":"fontWeight","s":"css-var --font-weight-bold (light)"},"light":{"v":300,"t":"fontWeight","s":"css-var --font-weight-light (light)"},"medium":{"v":500,"t":"fontWeight","s":"css-var --font-weight-medium (light)"},"normal":{"v":400,"t":"fontWeight","s":"css-var --font-weight-normal (light)"},"semibold":{"v":600,"t":"fontWeight","s":"css-var --font-weight-semibold (light)"}},"size":{"xs":{"v":"0.75rem","t":"dimension","s":"css-var --text-xs (light)"},"sm":{"v":"0.875rem","t":"dimension","s":"css-var --text-sm (light)"},"base":{"v":"1rem","t":"dimension","s":"css-var --text-base (light)"},"lg":{"v":"1.125rem","t":"dimension","s":"css-var --text-lg (light)"},"xl":{"v":"1.25rem","t":"dimension","s":"css-var --text-xl (light)"},"2xl":{"v":"1.5rem","t":"dimension","s":"css-var --text-2xl (light)"},"3xl":{"v":"1.875rem","t":"dimension","s":"css-var --text-3xl (light)"},"4xl":{"v":"2.25rem","t":"dimension","s":"css-var --text-4xl (light)"},"6xl":{"v":"3.75rem","t":"dimension","s":"css-var --text-6xl (light)"}},"lineHeight":{"2xl":{"v":1.3333,"t":"number","s":"css-var --text-2xl--line-height (light)"},"3xl":{"v":1.2,"t":"number","s":"css-var --text-3xl--line-height (light)"},"4xl":{"v":1.1111,"t":"number","s":"css-var --text-4xl--line-height (light)"},"6xl":{"v":1,"t":"number","s":"css-var --text-6xl--line-height (light)"},"base":{"v":1.5,"t":"number","s":"css-var --text-base--line-height (light)"},"lg":{"v":1.5556,"t":"number","s":"css-var --text-lg--line-height (light)"},"sm":{"v":1.4286,"t":"number","s":"css-var --text-sm--line-height (light)"},"xl":{"v":1.4,"t":"number","s":"css-var --text-xl--line-height (light)"},"xs":{"v":1.3333,"t":"number","s":"css-var --text-xs--line-height (light)"}},"tracking":{"tight":{"v":"-.025em","t":"other","s":"css-var --tracking-tight (light)"},"wide":{"v":".025em","t":"other","s":"css-var --tracking-wide (light)"},"widest":{"v":".1em","t":"other","s":"css-var --tracking-widest (light)"}},"role":{"body":{"size":{"v":"1rem","t":"dimension","s":"css-var --text-body (light)"},"weight":{"v":400,"t":"fontWeight","s":"css-var --text-body--font-weight (light)"},"lineHeight":{"v":"1.5rem","t":"dimension","s":"css-var --text-body--line-height (light)"},"letterSpacing":{"v":"0em","t":"other","s":"css-var --text-body--letter-spacing (light)"}},"label":{"size":{"v":"0.875rem","t":"dimension","s":"css-var --text-label (light)"},"weight":{"v":600,"t":"fontWeight","s":"css-var --text-label--font-weight (light)"},"lineHeight":{"v":"1.25rem","t":"dimension","s":"css-var --text-label--line-height (light)"},"letterSpacing":{"v":"0em","t":"other","s":"css-var --text-label--letter-spacing (light)"}},"reading":{"size":{"v":"1.125rem","t":"dimension","s":"css-var --text-reading (light)"},"weight":{"v":400,"t":"fontWeight","s":"css-var --text-reading--font-weight (light)"},"lineHeight":{"v":"1.75rem","t":"dimension","s":"css-var --text-reading--line-height (light)"},"letterSpacing":{"v":"0em","t":"other","s":"css-var --text-reading--letter-spacing (light)"}},"small":{"size":{"v":"0.875rem","t":"dimension","s":"css-var --text-small (light)"},"weight":{"v":400,"t":"fontWeight","s":"css-var --text-small--font-weight (light)"},"lineHeight":{"v":"1.25rem","t":"dimension","s":"css-var --text-small--line-height (light)"},"letterSpacing":{"v":"0em","t":"other","s":"css-var --text-small--letter-spacing (light)"}},"subtitle":{"size":{"v":"1.25rem","t":"dimension","s":"css-var --text-subtitle (light)"},"weight":{"v":400,"t":"fontWeight","s":"css-var --text-subtitle--font-weight (light)"},"lineHeight":{"v":"1.75rem","t":"dimension","s":"css-var --text-subtitle--line-height (light)"},"letterSpacing":{"v":"0em","t":"other","s":"css-var --text-subtitle--letter-spacing (light)"}},"title2":{"size":{"v":"1.5rem","t":"dimension","s":"css-var --text-title-2 (light)"},"weight":{"v":600,"t":"fontWeight","s":"css-var --text-title-2--font-weight (light)"},"lineHeight":{"v":"2rem","t":"dimension","s":"css-var --text-title-2--line-height (light)"},"letterSpacing":{"v":"-.01em","t":"other","s":"css-var --text-title-2--letter-spacing (light)"}},"title3":{"size":{"v":"1.25rem","t":"dimension","s":"css-var --text-title-3 (light)"},"weight":{"v":600,"t":"fontWeight","s":"css-var --text-title-3--font-weight (light)"},"lineHeight":{"v":"1.75rem","t":"dimension","s":"css-var --text-title-3--line-height (light)"},"letterSpacing":{"v":"0em","t":"other","s":"css-var --text-title-3--letter-spacing (light)"}},"title4":{"size":{"v":"1rem","t":"dimension","s":"css-var --text-title-4 (light)"},"weight":{"v":600,"t":"fontWeight","s":"css-var --text-title-4--font-weight (light)"},"lineHeight":{"v":"1.5rem","t":"dimension","s":"css-var --text-title-4--line-height (light)"},"letterSpacing":{"v":"0em","t":"other","s":"css-var --text-title-4--letter-spacing (light)"}}}},"radius":{"base":{"v":"0.5rem","t":"dimension","s":"css-var --radius (light)"},"xs":{"v":"0.125rem","t":"dimension","s":"css-var --radius-xs (light)"}},"space":{"unit":{"v":"0.25rem","t":"dimension","s":"css-var --spacing (light)","d":"the 4px unit the spacing scale multiplies"}},"breakpoint":{"2xl":{"v":"96rem","t":"dimension","s":"css-var --breakpoint-2xl (light)"}},"container":{"2xl":{"v":"42rem","t":"dimension","s":"css-var --container-2xl (light)"},"3xl":{"v":"48rem","t":"dimension","s":"css-var --container-3xl (light)"},"4xl":{"v":"56rem","t":"dimension","s":"css-var --container-4xl (light)"},"5xl":{"v":"64rem","t":"dimension","s":"css-var --container-5xl (light)"},"6xl":{"v":"72rem","t":"dimension","s":"css-var --container-6xl (light)"},"lg":{"v":"32rem","t":"dimension","s":"css-var --container-lg (light)"},"md":{"v":"28rem","t":"dimension","s":"css-var --container-md (light)"},"sm":{"v":"24rem","t":"dimension","s":"css-var --container-sm (light)"},"xl":{"v":"36rem","t":"dimension","s":"css-var --container-xl (light)"},"xs":{"v":"20rem","t":"dimension","s":"css-var --container-xs (light)"}},"ease":{"inOut":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-in-out (light)"},"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-out (light)"},"default":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --default-transition-timing-function (light)"}},"duration":{"default":{"v":"150ms","t":"duration","s":"css-var --default-transition-duration (light)"}},"blur":{"2xl":{"v":"40px","t":"dimension","s":"css-var --blur-2xl (light)"},"lg":{"v":"16px","t":"dimension","s":"css-var --blur-lg (light)"},"md":{"v":"12px","t":"dimension","s":"css-var --blur-md (light)"},"sm":{"v":"8px","t":"dimension","s":"css-var --blur-sm (light)"}},"shadow":{"sm":{"v":"rgba(0, 0, 0, 0.15) 0px 1px 2px 0px","t":"other","s":"css-var --drop-shadow-sm (light)","d":"drop-shadow filter value, kept as the computed string"}},"animation":{"bounce":{"v":"bounce 1s infinite","t":"other","s":"css-var --animate-bounce (light)","d":"animation shorthand as declared"},"ping":{"v":"ping 1s cubic-bezier(0,0,.2,1)infinite","t":"other","s":"css-var --animate-ping (light)","d":"animation shorthand as declared"},"pulse":{"v":"pulse 2s cubic-bezier(.4,0,.6,1)infinite","t":"other","s":"css-var --animate-pulse (light)","d":"animation shorthand as declared"},"spin":{"v":"spin 1s linear infinite","t":"other","s":"css-var --animate-spin (light)","d":"animation shorthand as declared"}},"layout":{"aspectVideo":{"v":"16/9","t":"other","s":"css-var --aspect-video (light)"}},"typography":{"articleTitle":{"v":{"fontFamily":"-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"","fontSize":"36px","fontWeight":600,"lineHeight":"44px","letterSpacing":"-0.54px"},"t":"typography","s":"measured th-prose-h1 on /why-diy-qa-doesnt-work-anymore-a-2025-guide-to-e2e-testing-for-modern-web-apps (default state)","d":"the blog article title — text-article-title"},"h2":{"v":{"fontFamily":"-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"","fontSize":"24px","fontWeight":600,"lineHeight":"32px","letterSpacing":"-0.24px"},"t":"typography","s":"measured th-prose-h2 on /why-diy-qa-doesnt-work-anymore-a-2025-guide-to-e2e-testing-for-modern-web-apps (default state)","d":"an in-article section heading"},"body":{"v":{"fontFamily":"-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"","fontSize":"18px","fontWeight":400,"lineHeight":"28px"},"t":"typography","s":"measured th-prose-p on /why-diy-qa-doesnt-work-anymore-a-2025-guide-to-e2e-testing-for-modern-web-apps (default state)","d":"article body text — text-reading"},"bodyLink":{"v":{"fontFamily":"-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"","fontSize":"18px","fontWeight":500,"lineHeight":"28px"},"t":"typography","s":"measured th-prose-link on /why-diy-qa-doesnt-work-anymore-a-2025-guide-to-e2e-testing-for-modern-web-apps (default state)","d":"a body-text link inside the article"},"cardTitle":{"v":{"fontFamily":"Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"","fontSize":"16px","fontWeight":400,"lineHeight":"24px"},"t":"typography","s":"measured post-title-link on / (default state)","d":"a feed card's post title"},"navLink":{"v":{"fontFamily":"Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"","fontSize":"14px","fontWeight":400,"lineHeight":"20px"},"t":"typography","s":"measured app-nav-link on / (default state)","d":"a sidebar nav label"},"button":{"v":{"fontFamily":"Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"","fontSize":"16px","fontWeight":600,"lineHeight":"24px"},"t":"typography","s":"measured app-cta on / (default state)","d":"the primary CTA label"},"input":{"v":{"fontFamily":"Inter, \"Inter Fallback\", \"Segoe UI\", Roboto, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Noto Color Emoji\"","fontSize":"16px","fontWeight":400,"lineHeight":"24px"},"t":"typography","s":"measured app-search-input on / (default state)","d":"the Ctrl-K search field"},"faqQuestion":{"v":{"fontFamily":"-apple-system, system-ui, sans-serif, \"Apple Color Emoji\"","fontSize":"16px","fontWeight":600,"lineHeight":"24px"},"t":"typography","s":"measured faq-question on /pro (default state)","d":"a /pro FAQ question"}},"component":{"sidebar":{"width":{"v":"64px","t":"dimension","s":"measured app-sidebar default on / (app sidebar column)"}},"button":{"cta":{"height":{"v":"56px","t":"dimension","s":"measured app-cta default on / ('Start your blog' CTA link)"},"radius":{"v":"9999px","t":"dimension","s":"measured app-cta default on / (CTA corner)","d":"all four corners measure the full-radius clamp — a pill"}}},"navLink":{"height":{"v":"40px","t":"dimension","s":"measured app-nav-link default on / (sidebar nav row)"},"radius":{"v":"9999px","t":"dimension","s":"measured app-nav-link default on / (sidebar row corner)","d":"all four corners measure the full-radius clamp — a pill"}},"searchDialog":{"width":{"v":"672px","t":"dimension","s":"measured app-search-dialog default on / (the Ctrl-K search dialog)"},"height":{"v":"594px","t":"dimension","s":"measured app-search-dialog default on / (the Ctrl-K search dialog)"},"radius":{"v":"12px","t":"dimension","s":"measured app-search-dialog default on / (search dialog corner)"}},"postCard":{"height":{"v":"293.16px","t":"dimension","s":"measured post-card default on / (a feed post card row)"}},"commentBox":{"height":{"v":"72px","t":"dimension","s":"measured comment-box default on /posts/i-used-to-be-a-magician/6afadee8cd8f659889f399ed (the comment textarea)"}},"blogHeader":{"height":{"v":"72px","t":"dimension","s":"measured th-header default on / (blog header bar)"}},"blogNav":{"height":{"v":"36px","t":"dimension","s":"measured th-nav default on / (blog pill nav)"},"radius":{"v":"9999px","t":"dimension","s":"measured th-nav default on / (blog pill nav corner)","d":"all four corners measure the full-radius clamp — a pill"}},"blogSearchDialog":{"width":{"v":"672px","t":"dimension","s":"measured th-search-dialog default on / (blog search dialog)"}},"blogPostCard":{"height":{"v":"514.08px","t":"dimension","s":"measured th-post-card default on / (blog index post card)"}},"mobileHeader":{"height":{"v":"52px","t":"dimension","s":"measured m-app-header default on / (mobile top bar)"}},"mobileDrawer":{"width":{"v":"288px","t":"dimension","s":"measured m-app-drawer opened on / (opened nav sheet)"}},"type":{"linkHover":{"color":{"v":"#13161c","t":"color","s":"measured post-title-link hover on / (post title on hover)"}},"articleTitle":{"size":{"v":"36px","t":"other","s":"measured th-prose-h1 default on /why-diy-qa-doesnt-work-anymore-a-2025-guide-to-e2e-testing-for-modern-web-apps (blog article h1)"}}}},"motion":{"duration":{"tw-animation-delay":{"v":"0ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--tw-animation-delay"},"d":"Custom property --tw-animation-delay, declared on *, ::before, ::after, ::backdrop."},"100ms":{"v":"100ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"default-transition-duration":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--default-transition-duration"},"d":"Custom property --default-transition-duration, declared on :root, :host."},"200ms":{"v":"200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 422 elements."},"300ms":{"v":"300ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 31 elements."},"400ms":{"v":"400ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"500ms":{"v":"500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"800ms":{"v":"800ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1000ms":{"v":"1000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1200ms":{"v":"1200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2000ms":{"v":"2000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2200ms":{"v":"2200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2400ms":{"v":"2400ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2600ms":{"v":"2600ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2800ms":{"v":"2800ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"3000ms":{"v":"3000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"3200ms":{"v":"3200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"4000ms":{"v":"4000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"6000ms":{"v":"6000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."}},"easing":{"bezier-0_16-1-0_3-1":{"v":[0.16,1,0.3,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#pages"}},"bezier-0_34-1_56-0_64-1":{"v":[0.34,1.56,0.64,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"default-transition-timing-function":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--default-transition-timing-function"},"d":"Custom property --default-transition-timing-function, declared on :root, :host."},"ease":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease`, expanded to its control points."},"ease-in-out":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-in-out"},"d":"Custom property --ease-in-out, declared on :root, :host."},"ease-in-out-2":{"v":[0.42,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `ease-in-out`, expanded to its control points."},"ease-out":{"v":[0,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-out"},"d":"Custom property --ease-out, declared on :root, :host."},"ease-out-2":{"v":[0,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `ease-out`, expanded to its control points."},"linear":{"v":[0,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `linear`, expanded to its control points."}},"transition":{"color-150ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 202 elements."},"tw-gradient-from-150ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 182 elements."},"tw-gradient-to-150ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 182 elements."},"tw-gradient-via-150ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 182 elements."},"background-color-150ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 182 elements."},"border-color-150ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 182 elements."},"fill-150ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 182 elements."},"outline-color-150ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 182 elements."},"stroke-150ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 182 elements."},"text-decoration-color-150ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 182 elements."},"box-shadow-150ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 84 elements."},"tw-gradient-from-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 69 elements."},"tw-gradient-to-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 69 elements."},"tw-gradient-via-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 69 elements."},"background-color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 69 elements."},"border-color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 69 elements."},"color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 69 elements."},"fill-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 69 elements."},"outline-color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 69 elements."},"stroke-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 69 elements."},"text-decoration-color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 69 elements."},"tw-gradient-from-200ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 40 elements."},"tw-gradient-to-200ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 40 elements."},"tw-gradient-via-200ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 40 elements."},"background-color-200ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 40 elements."},"border-color-200ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 40 elements."},"color-200ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 40 elements."},"fill-200ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 40 elements."},"outline-color-200ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 40 elements."},"stroke-200ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 40 elements."},"text-decoration-color-200ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 40 elements."},"height-150ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 20 elements."},"padding-150ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 20 elements."},"width-150ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 20 elements."},"text-decoration-color-150ms-ease":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 17 elements."},"all-150ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 16 elements."},"all-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 11 elements."},"color-150ms-ease":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 10 elements."},"opacity-150ms-ease":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 10 elements."},"rotate-150ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 9 elements."},"scale-150ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 9 elements."},"transform-150ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 9 elements."},"translate-150ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 9 elements."},"opacity-200ms-linear":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.linear}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"all-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"margin-200ms-linear":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.linear}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"width-200ms-linear":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.linear}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"left-200ms-linear":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.linear}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"opacity-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"right-200ms-linear":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.linear}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"rotate-300ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"rotate-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"scale-300ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"scale-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"transform-300ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"transform-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"translate-300ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"translate-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"visibility-200ms-linear":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.linear}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"opacity-300ms-bezier-0_16-1-0_3-1":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_16-1-0_3-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."}},"animation":{"enter":{"v":{"name":"enter","duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}","iterationCount":"1","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `enter`."}},"_extensions":{"reducedMotion":{"probe":"page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page","verified":true,"pages":4,"behaviour":"partial","moving":484,"removed":28,"reduced":0,"kept":454,"partial":2,"increased":0,"added":0,"loops":[],"authoredRules":[{"media":"@media (prefers-reduced-motion: reduce)","selector":".fa-beat, .fa-bounce, .fa-fade, .fa-beat-fade, .fa-flip, .fa-pulse, .fa-shake, .fa-spin, .fa-spin-pulse","declarations":{"transition-behavior":"normal !important","transition-duration":"0s !important","transition-timing-function":"ease !important","transition-delay":"0s !important","transition-property":"none !important","animation-duration":"auto !important","animation-timing-function":"ease !important","animation-delay":"0s !important","animation-iteration-count":"1 !important","animation-direction":"normal !important","animation-fill-mode":"none !important","animation-play-state":"running !important","animation-name":"none !important","animation-timeline":"auto !important","animation-range-start":"normal !important","animation-range-end":"normal !important"}},{"media":"@media (prefers-reduced-motion: reduce)","selector":"[class*=\"animate-in\"], [class*=\"animate-out\"]","declarations":{"animation-duration":"0.01ms !important"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:animate-\\[tod-bloom_1000ms_cubic-bezier\\(0\\.16\\,1\\,0\\.3\\,1\\)_150ms_both\\]","declarations":{"animation-duration":"1s","animation-timing-function":"cubic-bezier(0.16, 1, 0.3, 1)","animation-delay":"0.15s","animation-iteration-count":"1","animation-direction":"normal","animation-fill-mode":"both","animation-play-state":"running","animation-name":"tod-bloom","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:animate-\\[tod-breathe_4s_ease-in-out_1\\.2s_infinite\\]","declarations":{"animation-duration":"4s","animation-timing-function":"ease-in-out","animation-delay":"1.2s","animation-iteration-count":"infinite","animation-direction":"normal","animation-fill-mode":"none","animation-play-state":"running","animation-name":"tod-breathe","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:animate-\\[tod-drift-in-left_1000ms_cubic-bezier\\(0\\.16\\,1\\,0\\.3\\,1\\)_300ms_both\\]","declarations":{"animation-duration":"1s","animation-timing-function":"cubic-bezier(0.16, 1, 0.3, 1)","animation-delay":"0.3s","animation-iteration-count":"1","animation-direction":"normal","animation-fill-mode":"both","animation-play-state":"running","animation-name":"tod-drift-in-left","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:animate-\\[tod-drift-in-right_1000ms_cubic-bezier\\(0\\.16\\,1\\,0\\.3\\,1\\)_300ms_both\\]","declarations":{"animation-duration":"1s","animation-timing-function":"cubic-bezier(0.16, 1, 0.3, 1)","animation-delay":"0.3s","animation-iteration-count":"1","animation-direction":"normal","animation-fill-mode":"both","animation-play-state":"running","animation-name":"tod-drift-in-right","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:animate-\\[tod-float_6s_ease-in-out_1\\.3s_infinite\\]","declarations":{"animation-duration":"6s","animation-timing-function":"ease-in-out","animation-delay":"1.3s","animation-iteration-count":"infinite","animation-direction":"normal","animation-fill-mode":"none","animation-play-state":"running","animation-name":"tod-float","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:animate-\\[tod-pop_800ms_ease-out_both\\]","declarations":{"animation-duration":"0.8s","animation-timing-function":"ease-out","animation-delay":"0s","animation-iteration-count":"1","animation-direction":"normal","animation-fill-mode":"both","animation-play-state":"running","animation-name":"tod-pop","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:animate-\\[tod-rise_1200ms_cubic-bezier\\(0\\.16\\,1\\,0\\.3\\,1\\)_both\\]","declarations":{"animation-duration":"1.2s","animation-timing-function":"cubic-bezier(0.16, 1, 0.3, 1)","animation-delay":"0s","animation-iteration-count":"1","animation-direction":"normal","animation-fill-mode":"both","animation-play-state":"running","animation-name":"tod-rise","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:animate-\\[tod-set_1200ms_cubic-bezier\\(0\\.16\\,1\\,0\\.3\\,1\\)_both\\]","declarations":{"animation-duration":"1.2s","animation-timing-function":"cubic-bezier(0.16, 1, 0.3, 1)","animation-delay":"0s","animation-iteration-count":"1","animation-direction":"normal","animation-fill-mode":"both","animation-play-state":"running","animation-name":"tod-set","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:animate-\\[tod-swing_1000ms_cubic-bezier\\(0\\.34\\,1\\.56\\,0\\.64\\,1\\)_both\\]","declarations":{"animation-duration":"1s","animation-timing-function":"cubic-bezier(0.34, 1.56, 0.64, 1)","animation-delay":"0s","animation-iteration-count":"1","animation-direction":"normal","animation-fill-mode":"both","animation-play-state":"running","animation-name":"tod-swing","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:animate-\\[tod-twinkle_500ms_ease-out_300ms_both\\,tod-shimmer_3s_ease-in-out_2\\.2s_infinite\\]","declarations":{"animation-duration":"0.5s, 3s","animation-timing-function":"ease-out, ease-in-out","animation-delay":"0.3s, 2.2s","animation-iteration-count":"1, infinite","animation-direction":"normal, normal","animation-fill-mode":"both, none","animation-play-state":"running, running","animation-name":"tod-twinkle, tod-shimmer","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:animate-\\[tod-twinkle_500ms_ease-out_450ms_both\\,tod-shimmer_2\\.6s_ease-in-out_1\\.4s_infinite\\]","declarations":{"animation-duration":"0.5s, 2.6s","animation-timing-function":"ease-out, ease-in-out","animation-delay":"0.45s, 1.4s","animation-iteration-count":"1, infinite","animation-direction":"normal, normal","animation-fill-mode":"both, none","animation-play-state":"running, running","animation-name":"tod-twinkle, tod-shimmer","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:animate-\\[tod-twinkle_500ms_ease-out_600ms_both\\,tod-shimmer_2\\.2s_ease-in-out_2\\.1s_infinite\\]","declarations":{"animation-duration":"0.5s, 2.2s","animation-timing-function":"ease-out, ease-in-out","animation-delay":"0.6s, 2.1s","animation-iteration-count":"1, infinite","animation-direction":"normal, normal","animation-fill-mode":"both, none","animation-play-state":"running, running","animation-name":"tod-twinkle, tod-shimmer","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:animate-\\[tod-twinkle_500ms_ease-out_750ms_both\\,tod-shimmer_2\\.8s_ease-in-out_1\\.8s_infinite\\]","declarations":{"animation-duration":"0.5s, 2.8s","animation-timing-function":"ease-out, ease-in-out","animation-delay":"0.75s, 1.8s","animation-iteration-count":"1, infinite","animation-direction":"normal, normal","animation-fill-mode":"both, none","animation-play-state":"running, running","animation-name":"tod-twinkle, tod-shimmer","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:animate-\\[tod-twinkle_500ms_ease-out_900ms_both\\,tod-shimmer_2\\.4s_ease-in-out_2\\.6s_infinite\\]","declarations":{"animation-duration":"0.5s, 2.4s","animation-timing-function":"ease-out, ease-in-out","animation-delay":"0.9s, 2.6s","animation-iteration-count":"1, infinite","animation-direction":"normal, normal","animation-fill-mode":"both, none","animation-play-state":"running, running","animation-name":"tod-twinkle, tod-shimmer","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:animate-\\[tod-twinkle_500ms_ease-out_1050ms_both\\,tod-shimmer_3\\.2s_ease-in-out_1\\.6s_infinite\\]","declarations":{"animation-duration":"0.5s, 3.2s","animation-timing-function":"ease-out, ease-in-out","animation-delay":"1.05s, 1.6s","animation-iteration-count":"1, infinite","animation-direction":"normal, normal","animation-fill-mode":"both, none","animation-play-state":"running, running","animation-name":"tod-twinkle, tod-shimmer","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: reduce)","selector":".motion-reduce\\:hidden","declarations":{"display":"none"}},{"media":"@media (prefers-reduced-motion: reduce)","selector":".motion-reduce\\:transform-none","declarations":{"transform":"none"}},{"media":"@media (prefers-reduced-motion: reduce)","selector":".motion-reduce\\:animate-none","declarations":{"animation-duration":"auto","animation-timing-function":"ease","animation-delay":"0s","animation-iteration-count":"1","animation-direction":"normal","animation-fill-mode":"none","animation-play-state":"running","animation-name":"none","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}}]},"propertyUsage":{"color":321,"text-decoration-color":308,"--tw-gradient-from":291,"--tw-gradient-to":291,"--tw-gradient-via":291,"background-color":291,"border-color":291,"fill":291,"outline-color":291,"stroke":291,"box-shadow":84,"all":31,"width":24,"height":20,"padding":20,"opacity":19,"rotate":14,"scale":14,"transform":14,"translate":14,"margin":4,"visibility":3,"left":2,"right":2},"smoothScrollElements":6,"unusedKeyframes":["accordion-down","accordion-up","bounce","exit","fa-beat","fa-beat-fade","fa-bounce","fa-fade","fa-flip","fa-shake","fa-spin","ping","pulse","sonner-fade-in","sonner-fade-out","sonner-spin","spin","swipe-out-down","swipe-out-left","swipe-out-right","swipe-out-up","target-highlight","tod-bloom","tod-breathe","tod-drift-in-left","tod-drift-in-right","tod-float","tod-pop","tod-rise","tod-set","tod-shimmer","tod-swing","tod-twinkle"],"notTokenised":[{"name":"motion easing var(--ease-in-out)","value":"var(--ease-in-out)","why":"an unresolved var() reference: the easing it computes to was not read","uses":0},{"name":"motion easing var(--ease-out)","value":"var(--ease-out)","why":"an unresolved var() reference: the easing it computes to was not read","uses":0},{"name":"motion easing var(--fa-animation-timing, cubic-bezier(.28, .84, .42, 1))","value":"var(--fa-animation-timing, cubic-bezier(.28, .84, .42, 1))","why":"an unresolved var() reference: the easing it computes to was not read","uses":0},{"name":"motion easing var(--fa-animation-timing, cubic-bezier(.4, 0, .6, 1))","value":"var(--fa-animation-timing, cubic-bezier(.4, 0, .6, 1))","why":"an unresolved var() reference: the easing it computes to was not read","uses":0},{"name":"motion easing var(--fa-animation-timing, ease-in-out)","value":"var(--fa-animation-timing, ease-in-out)","why":"an unresolved var() reference: the easing it computes to was not read","uses":0},{"name":"motion easing var(--fa-animation-timing, linear)","value":"var(--fa-animation-timing, linear)","why":"an unresolved var() reference: the easing it computes to was not read","uses":0},{"name":"motion easing var(--fa-animation-timing, steps(8))","value":"var(--fa-animation-timing, steps(8))","why":"an unresolved var() reference: the easing it computes to was not read","uses":0},{"name":"motion easing var(--tw-ease, cubic-bezier(.16, 1, .3, 1))","value":"var(--tw-ease, cubic-bezier(.16, 1, .3, 1))","why":"an unresolved var() reference: the easing it computes to was not read","uses":0},{"name":"motion easing var(--tw-ease, var(--default-transition-timing-function))","value":"var(--tw-ease, var(--default-transition-timing-function))","why":"an unresolved var() reference: the easing it computes to was not read","uses":0},{"name":"motion.transition","value":"5 more","why":"the 60 most-used transitions are tokens; the rest are in raw/motion.json"}]}}},"light":{"primary":{"default":{"v":"#181b20","t":"color","s":"css-var --primary (light)"},"foreground":{"v":"#ffffff","t":"color","s":"css-var --primary-foreground (light)"}},"secondary":{"default":{"v":"#f2f3f6","t":"color","s":"css-var --secondary (light)"},"foreground":{"v":"#13161c","t":"color","s":"css-var --secondary-foreground (light)"}},"accent":{"default":{"v":"#e9ebef","t":"color","s":"css-var --accent (light)"},"foreground":{"v":"#13161c","t":"color","s":"css-var --accent-foreground (light)"}},"muted":{"default":{"v":"#f2f3f6","t":"color","s":"css-var --muted (light)"},"foreground":{"v":"#63666d","t":"color","s":"css-var --muted-foreground (light)"}},"card":{"default":{"v":"#ffffff","t":"color","s":"css-var --card (light)"},"foreground":{"v":"#13161c","t":"color","s":"css-var --card-foreground (light)"}},"popover":{"default":{"v":"#ffffff","t":"color","s":"css-var --popover (light)"},"foreground":{"v":"#13161c","t":"color","s":"css-var --popover-foreground (light)"}},"destructive":{"default":{"v":"#c52b30","t":"color","s":"css-var --destructive (light)"},"border":{"v":"#e9b9bb","t":"color","s":"css-var --destructive-border (light)"},"cream":{"v":"#fdf5f5","t":"color","s":"css-var --destructive-cream (light)"},"foreground":{"v":"#ffffff","t":"color","s":"css-var --destructive-foreground (light)"},"wash":{"v":"#fdecec","t":"color","s":"css-var --destructive-wash (light)"}},"success":{"default":{"v":"#227c45","t":"color","s":"css-var --success (light)"},"foreground":{"v":"#ffffff","t":"color","s":"css-var --success-foreground (light)"},"wash":{"v":"#e8f5ec","t":"color","s":"css-var --success-wash (light)"}},"warning":{"default":{"v":"#ad5c15","t":"color","s":"css-var --warning (light)"},"border":{"v":"#f2dec6","t":"color","s":"css-var --warning-border (light)"},"cream":{"v":"#fcf7f0","t":"color","s":"css-var --warning-cream (light)"},"wash":{"v":"#fcf0e3","t":"color","s":"css-var --warning-wash (light)"}},"disabled":{"foreground":{"v":"#9a9da3","t":"color","s":"css-var --disabled-foreground (light)"}},"highlight":{"default":{"v":"#c8f9e1","t":"color","s":"css-var --highlight (light)"},"foreground":{"v":"#13161c","t":"color","s":"css-var --highlight-foreground (light)"}},"toolbar":{"default":{"v":"#181b20","t":"color","s":"css-var --toolbar (light)"},"foreground":{"v":"#ffffff","t":"color","s":"css-var --toolbar-foreground (light)"}},"border":{"default":{"v":"#e2e4e8","t":"color","s":"css-var --border (light)"},"input":{"v":"#ced1d6","t":"color","s":"css-var --input (light)"},"ring":{"v":"#2962ff","t":"color","s":"css-var --ring (light)"}},"sidebar":{"background":{"v":"#f7f8fa","t":"color","s":"css-var --sidebar (light)"},"accent":{"v":"#e9ebef","t":"color","s":"css-var --sidebar-accent (light)"},"accentForeground":{"v":"#13161c","t":"color","s":"css-var --sidebar-accent-foreground (light)"},"border":{"v":"#e2e4e8","t":"color","s":"css-var --sidebar-border (light)"},"foreground":{"v":"#13161c","t":"color","s":"css-var --sidebar-foreground (light)"},"primary":{"v":"#181b20","t":"color","s":"css-var --sidebar-primary (light)"},"primaryForeground":{"v":"#ffffff","t":"color","s":"css-var --sidebar-primary-foreground (light)"},"ring":{"v":"#1d65c8","t":"color","s":"css-var --sidebar-ring (light)"}},"chart":{"1":{"v":"#3470c7","t":"color","s":"css-var --chart-1 (light)"},"2":{"v":"#14938d","t":"color","s":"css-var --chart-2 (light)"},"3":{"v":"#7f5bb6","t":"color","s":"css-var --chart-3 (light)"},"4":{"v":"#d15d4d","t":"color","s":"css-var --chart-4 (light)"},"5":{"v":"#4a9a5e","t":"color","s":"css-var --chart-5 (light)"}},"brand":{"default":{"v":"#2962ff","t":"color","s":"css-var --brand (light)"},"foreground":{"v":"#ffffff","t":"color","s":"css-var --brand-foreground (light)"},"linkedin":{"v":"#0a66c2","t":"color","s":"css-var --brand-linkedin (light)"}},"link":{"default":{"v":"#2962ff","t":"color","s":"css-var --link (light)"},"underline":{"v":"#aac4f9","t":"color","s":"css-var --link-underline (light)"}},"codeBlock":{"codeBlock":{"v":"#15171c","t":"color","s":"css-var --code-block (light)"},"codeBlockForeground":{"v":"#e6e8eb","t":"color","s":"css-var --code-block-foreground (light)"},"codeBlockMuted":{"v":"#9a9da3","t":"color","s":"css-var --code-block-muted (light)"}},"reading":{"text":{"v":"#292b30","t":"color","s":"css-var --reading-text (light)"}},"surface":{"default":{"v":"#f7f8fa","t":"color","s":"css-var --surface (light)"}},"scrim":{"default":{"v":"rgba(19, 22, 28, 0.45)","t":"color","s":"css-var --scrim (light)"}},"selection":{"default":{"v":"#cce0fc","t":"color","s":"css-var --selection (light)"},"foreground":{"v":"#13161c","t":"color","s":"css-var --selection-foreground (light)"}},"scroll":{"shadow":{"v":"rgba(0, 0, 0, 0.16)","t":"color","s":"css-var --scroll-shadow (light)"}},"scrollbar":{"thumb":{"v":"#ced1d6","t":"color","s":"css-var --scrollbar-thumb (light)"}},"root":{"background":{"v":"#ffffff","t":"color","s":"css-var --background (light)"},"foreground":{"v":"#13161c","t":"color","s":"css-var --foreground (light)"}},"elevation":{"button":{"v":"rgba(255, 255, 255, 0.12) 0px 1px 0px 0px inset, rgba(19, 22, 28, 0.2) 0px 1px 2px 0px","t":"other","s":"css-var --elevation-button (light)","d":"box-shadow stack re-pointed per theme, kept as the computed string"},"lg":{"v":"rgba(19, 22, 28, 0.06) 0px 1px 2px 0px, rgba(19, 22, 28, 0.22) 0px 12px 32px -12px","t":"other","s":"css-var --elevation-lg (light)","d":"box-shadow stack re-pointed per theme, kept as the computed string"},"md":{"v":"rgba(19, 22, 28, 0.06) 0px 1px 2px 0px, rgba(19, 22, 28, 0.22) 0px 12px 32px -12px","t":"other","s":"css-var --elevation-md (light)","d":"box-shadow stack re-pointed per theme, kept as the computed string"},"sm":{"v":"rgba(19, 22, 28, 0.05) 0px 1px 2px 0px","t":"other","s":"css-var --elevation-sm (light)","d":"box-shadow stack re-pointed per theme, kept as the computed string"},"xs":{"v":"rgba(19, 22, 28, 0.05) 0px 1px 2px 0px","t":"other","s":"css-var --elevation-xs (light)","d":"box-shadow stack re-pointed per theme, kept as the computed string"}},"ai":{"accent":{"v":"#7550d1","t":"color","s":"css-var --ai-accent (light)"},"border":{"v":"rgba(195, 187, 251, 0.6)","t":"color","s":"css-var --ai-border (light)"},"from":{"v":"#e2ecff","t":"color","s":"css-var --ai-from (light)"},"to":{"v":"#ffe1ff","t":"color","s":"css-var --ai-to (light)"}},"buildful":{"default":{"v":"#11a968","t":"color","s":"css-var --buildful (light)"},"soft":{"v":"#effaf3","t":"color","s":"css-var --buildful-soft (light)"},"strong":{"v":"#057a4b","t":"color","s":"css-var --buildful-strong (light)"}},"pro":{"default":{"v":"#feedc9","t":"color","s":"css-var --pro (light)"},"button":{"v":"#e8b543","t":"color","s":"css-var --pro-button (light)"},"buttonForeground":{"v":"#392000","t":"color","s":"css-var --pro-button-foreground (light)"},"buttonHover":{"v":"#f2bf4e","t":"color","s":"css-var --pro-button-hover (light)"},"cream":{"v":"#fef6e4","t":"color","s":"css-var --pro-cream (light)"},"creamBorder":{"v":"#f3dfa8","t":"color","s":"css-var --pro-cream-border (light)"},"foreground":{"v":"#926009","t":"color","s":"css-var --pro-foreground (light)"},"glow":{"v":"rgba(232, 181, 67, 0.16)","t":"color","s":"css-var --pro-glow (light)"},"strong":{"v":"#926009","t":"color","s":"css-var --pro-strong (light)"},"wash":{"v":"#fbf1dc","t":"color","s":"css-var --pro-wash (light)"}},"landing":{"chatgpt":{"v":"#ffffff","t":"color","s":"css-var --landing-chatgpt (light)"},"google":{"v":"#ffffff","t":"color","s":"css-var --landing-google (light)"},"night":{"v":"#0e1014","t":"color","s":"css-var --landing-night (light)"},"perplexity":{"v":"#ffffff","t":"color","s":"css-var --landing-perplexity (light)"},"skyFrom":{"v":"#f3f6ff","t":"color","s":"css-var --landing-sky-from (light)"},"skyHash":{"v":"#a4b8f5","t":"color","s":"css-var --landing-sky-hash (light)"},"skyMark":{"v":"#d2dcfb","t":"color","s":"css-var --landing-sky-mark (light)"},"skyTo":{"v":"#eaf0ff","t":"color","s":"css-var --landing-sky-to (light)"},"tile":{"v":"#f7f8fa","t":"color","s":"css-var --landing-tile (light)"},"warmFrom":{"v":"#fffcf5","t":"color","s":"css-var --landing-warm-from (light)"},"warmMark":{"v":"#f3dfb2","t":"color","s":"css-var --landing-warm-mark (light)"},"warmTo":{"v":"#fef3db","t":"color","s":"css-var --landing-warm-to (light)"}},"tod":{"edge":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --tod-edge (light)"},"eveningHalo":{"v":"#f59d8b","t":"color","s":"css-var --tod-evening-halo (light)"},"eveningHillFar":{"v":"#905e85","t":"color","s":"css-var --tod-evening-hill-far (light)"},"eveningHillFront":{"v":"#423658","t":"color","s":"css-var --tod-evening-hill-front (light)"},"eveningHillNear":{"v":"#62456f","t":"color","s":"css-var --tod-evening-hill-near (light)"},"eveningSky1":{"v":"#cdc3ee","t":"color","s":"css-var --tod-evening-sky-1 (light)"},"eveningSky2":{"v":"#f3bbd9","t":"color","s":"css-var --tod-evening-sky-2 (light)"},"eveningSky3":{"v":"#ffb9ad","t":"color","s":"css-var --tod-evening-sky-3 (light)"},"eveningStreak":{"v":"#f8d6e8","t":"color","s":"css-var --tod-evening-streak (light)"},"eveningSun":{"v":"#e5564a","t":"color","s":"css-var --tod-evening-sun (light)"},"morningCloud":{"v":"#fff9f4","t":"color","s":"css-var --tod-morning-cloud (light)"},"morningHalo":{"v":"#ffc0a3","t":"color","s":"css-var --tod-morning-halo (light)"},"morningHillFar":{"v":"#cfb4cc","t":"color","s":"css-var --tod-morning-hill-far (light)"},"morningHillFront":{"v":"#629472","t":"color","s":"css-var --tod-morning-hill-front (light)"},"morningHillNear":{"v":"#84b193","t":"color","s":"css-var --tod-morning-hill-near (light)"},"morningSky1":{"v":"#ffeee2","t":"color","s":"css-var --tod-morning-sky-1 (light)"},"morningSky2":{"v":"#ffe1d1","t":"color","s":"css-var --tod-morning-sky-2 (light)"},"morningSky3":{"v":"#ffd1bc","t":"color","s":"css-var --tod-morning-sky-3 (light)"},"morningSun":{"v":"#f0834f","t":"color","s":"css-var --tod-morning-sun (light)"},"nightHalo":{"v":"#3a3a64","t":"color","s":"css-var --tod-night-halo (light)"},"nightHillFar":{"v":"#1c1f39","t":"color","s":"css-var --tod-night-hill-far (light)"},"nightHillFront":{"v":"#0c1021","t":"color","s":"css-var --tod-night-hill-front (light)"},"nightHillNear":{"v":"#12162d","t":"color","s":"css-var --tod-night-hill-near (light)"},"nightMoon":{"v":"#f2e9ff","t":"color","s":"css-var --tod-night-moon (light)"},"nightSky1":{"v":"#22284b","t":"color","s":"css-var --tod-night-sky-1 (light)"},"nightSky2":{"v":"#2f3156","t":"color","s":"css-var --tod-night-sky-2 (light)"},"nightStar":{"v":"#f1eaff","t":"color","s":"css-var --tod-night-star (light)"},"noonCloud":{"v":"#ffffff","t":"color","s":"css-var --tod-noon-cloud (light)"},"noonHalo":{"v":"#ffeaca","t":"color","s":"css-var --tod-noon-halo (light)"},"noonHillFar":{"v":"#8fd2b4","t":"color","s":"css-var --tod-noon-hill-far (light)"},"noonHillFront":{"v":"#448c56","t":"color","s":"css-var --tod-noon-hill-front (light)"},"noonHillNear":{"v":"#5fb077","t":"color","s":"css-var --tod-noon-hill-near (light)"},"noonSky1":{"v":"#b8ddf9","t":"color","s":"css-var --tod-noon-sky-1 (light)"},"noonSky2":{"v":"#cae8fa","t":"color","s":"css-var --tod-noon-sky-2 (light)"},"noonSky3":{"v":"#dcf1fa","t":"color","s":"css-var --tod-noon-sky-3 (light)"},"noonSun":{"v":"#fe9d4b","t":"color","s":"css-var --tod-noon-sun (light)"}},"misc":{"colorBlack":{"v":"#000000","t":"color","s":"css-var --color-black (light)"},"colorPrimary":{"v":"#181b20","t":"color","s":"css-var --color-primary (light)"},"colorWhite":{"v":"#ffffff","t":"color","s":"css-var --color-white (light)"}},"component":{"button":{"cta":{"bg":{"v":"{primary.default}","t":"color","s":"measured app-cta default on / (CTA fill) — the element's class paints the primary.default role, so each theme resolves its own","d":"CTA fill"}}},"blogNav":{"bg":{"v":"{surface.default}","t":"color","s":"measured th-nav default on / (blog nav fill) — the element's class paints the surface.default role, so each theme resolves its own","d":"blog nav fill"}}}},"dark":{"primary":{"default":{"v":"#e6e8eb","t":"color","s":"css-var --primary (dark)"},"foreground":{"v":"#15171c","t":"color","s":"css-var --primary-foreground (dark)"}},"secondary":{"default":{"v":"#191c21","t":"color","s":"css-var --secondary (dark)"},"foreground":{"v":"#e6e8eb","t":"color","s":"css-var --secondary-foreground (dark)"}},"accent":{"default":{"v":"#23262c","t":"color","s":"css-var --accent (dark)"},"foreground":{"v":"#e6e8eb","t":"color","s":"css-var --accent-foreground (dark)"}},"muted":{"default":{"v":"#191c21","t":"color","s":"css-var --muted (dark)"},"foreground":{"v":"#a2a5aa","t":"color","s":"css-var --muted-foreground (dark)"}},"card":{"default":{"v":"#15171c","t":"color","s":"css-var --card (dark)"},"foreground":{"v":"#e6e8eb","t":"color","s":"css-var --card-foreground (dark)"}},"popover":{"default":{"v":"#1b1e23","t":"color","s":"css-var --popover (dark)"},"foreground":{"v":"#e6e8eb","t":"color","s":"css-var --popover-foreground (dark)"}},"destructive":{"default":{"v":"#f17070","t":"color","s":"css-var --destructive (dark)"},"border":{"v":"#5c2e31","t":"color","s":"css-var --destructive-border (dark)"},"cream":{"v":"#2a1a1b","t":"color","s":"css-var --destructive-cream (dark)"},"foreground":{"v":"#0d0f14","t":"color","s":"css-var --destructive-foreground (dark)"},"wash":{"v":"#3a1a1c","t":"color","s":"css-var --destructive-wash (dark)"}},"success":{"default":{"v":"#65c281","t":"color","s":"css-var --success (dark)"},"foreground":{"v":"#0d0f14","t":"color","s":"css-var --success-foreground (dark)"},"wash":{"v":"#16301f","t":"color","s":"css-var --success-wash (dark)"}},"warning":{"default":{"v":"#e99e5e","t":"color","s":"css-var --warning (dark)"},"border":{"v":"#4a3a26","t":"color","s":"css-var --warning-border (dark)"},"cream":{"v":"#2a2218","t":"color","s":"css-var --warning-cream (dark)"},"wash":{"v":"#3a2614","t":"color","s":"css-var --warning-wash (dark)"}},"disabled":{"foreground":{"v":"#606369","t":"color","s":"css-var --disabled-foreground (dark)"}},"highlight":{"default":{"v":"#154433","t":"color","s":"css-var --highlight (dark)"},"foreground":{"v":"#e6e8eb","t":"color","s":"css-var --highlight-foreground (dark)"}},"toolbar":{"default":{"v":"#2b2e35","t":"color","s":"css-var --toolbar (dark)"},"foreground":{"v":"#e6e8eb","t":"color","s":"css-var --toolbar-foreground (dark)"}},"border":{"default":{"v":"#272a30","t":"color","s":"css-var --border (dark)"},"input":{"v":"#3a3d44","t":"color","s":"css-var --input (dark)"},"ring":{"v":"#6293ff","t":"color","s":"css-var --ring (dark)"}},"sidebar":{"background":{"v":"#06070b","t":"color","s":"css-var --sidebar (dark)"},"accent":{"v":"#23262c","t":"color","s":"css-var --sidebar-accent (dark)"},"accentForeground":{"v":"#e6e8eb","t":"color","s":"css-var --sidebar-accent-foreground (dark)"},"border":{"v":"#272a30","t":"color","s":"css-var --sidebar-border (dark)"},"foreground":{"v":"#e6e8eb","t":"color","s":"css-var --sidebar-foreground (dark)"},"primary":{"v":"#e6e8eb","t":"color","s":"css-var --sidebar-primary (dark)"},"primaryForeground":{"v":"#15171c","t":"color","s":"css-var --sidebar-primary-foreground (dark)"},"ring":{"v":"#71a6f5","t":"color","s":"css-var --sidebar-ring (dark)"}},"chart":{"1":{"v":"#66a0ee","t":"color","s":"css-var --chart-1 (dark)"},"2":{"v":"#4bb9b2","t":"color","s":"css-var --chart-2 (dark)"},"3":{"v":"#e4ac59","t":"color","s":"css-var --chart-3 (dark)"},"4":{"v":"#ab8be3","t":"color","s":"css-var --chart-4 (dark)"},"5":{"v":"#e8777a","t":"color","s":"css-var --chart-5 (dark)"}},"brand":{"default":{"v":"#6293ff","t":"color","s":"css-var --brand (dark)"},"foreground":{"v":"#0d0f14","t":"color","s":"css-var --brand-foreground (dark)"},"linkedin":{"v":"#4aa3f0","t":"color","s":"css-var --brand-linkedin (dark)"}},"link":{"default":{"v":"#6293ff","t":"color","s":"css-var --link (dark)"},"underline":{"v":"#335197","t":"color","s":"css-var --link-underline (dark)"}},"codeBlock":{"codeBlock":{"v":"#0a0c10","t":"color","s":"css-var --code-block (dark)"},"codeBlockForeground":{"v":"#e6e8eb","t":"color","s":"css-var --code-block-foreground (dark)"},"codeBlockMuted":{"v":"#9a9da3","t":"color","s":"css-var --code-block-muted (dark)"}},"reading":{"text":{"v":"#d5d7db","t":"color","s":"css-var --reading-text (dark)"}},"surface":{"default":{"v":"#121419","t":"color","s":"css-var --surface (dark)"}},"scrim":{"default":{"v":"rgba(0, 0, 0, 0.6)","t":"color","s":"css-var --scrim (dark)"}},"selection":{"default":{"v":"#253d61","t":"color","s":"css-var --selection (dark)"},"foreground":{"v":"#e6e8eb","t":"color","s":"css-var --selection-foreground (dark)"}},"scroll":{"shadow":{"v":"rgba(255, 255, 255, 0.12)","t":"color","s":"css-var --scroll-shadow (dark)"}},"scrollbar":{"thumb":{"v":"#3a3d44","t":"color","s":"css-var --scrollbar-thumb (dark)"}},"command":{"default":{"v":"#1b1e23","t":"color","s":"css-var --command (dark)","d":"declared under .dark only"}},"root":{"background":{"v":"#0d0f14","t":"color","s":"css-var --background (dark)"},"foreground":{"v":"#e6e8eb","t":"color","s":"css-var --foreground (dark)"}},"elevation":{"button":{"v":"rgba(255, 255, 255, 0.12) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.4) 0px 1px 2px 0px","t":"other","s":"css-var --elevation-button (dark)","d":"box-shadow stack re-pointed per theme, kept as the computed string"},"lg":{"v":"rgba(0, 0, 0, 0.4) 0px 1px 2px 0px, rgba(0, 0, 0, 0.6) 0px 12px 32px -12px","t":"other","s":"css-var --elevation-lg (dark)","d":"box-shadow stack re-pointed per theme, kept as the computed string"},"md":{"v":"rgba(0, 0, 0, 0.4) 0px 1px 2px 0px, rgba(0, 0, 0, 0.6) 0px 12px 32px -12px","t":"other","s":"css-var --elevation-md (dark)","d":"box-shadow stack re-pointed per theme, kept as the computed string"},"sm":{"v":"rgba(0, 0, 0, 0.35) 0px 1px 2px 0px","t":"other","s":"css-var --elevation-sm (dark)","d":"box-shadow stack re-pointed per theme, kept as the computed string"},"xs":{"v":"rgba(0, 0, 0, 0.3) 0px 1px 2px 0px","t":"other","s":"css-var --elevation-xs (dark)","d":"box-shadow stack re-pointed per theme, kept as the computed string"}},"ai":{"accent":{"v":"#c4acff","t":"color","s":"css-var --ai-accent (dark)"},"border":{"v":"rgba(113, 99, 178, 0.45)","t":"color","s":"css-var --ai-border (dark)"},"from":{"v":"#292f56","t":"color","s":"css-var --ai-from (dark)"},"to":{"v":"#492746","t":"color","s":"css-var --ai-to (dark)"}},"buildful":{"default":{"v":"#3cc07e","t":"color","s":"css-var --buildful (dark)"},"soft":{"v":"#173526","t":"color","s":"css-var --buildful-soft (dark)"},"strong":{"v":"#7fddb0","t":"color","s":"css-var --buildful-strong (dark)"}},"pro":{"default":{"v":"#403012","t":"color","s":"css-var --pro (dark)"},"button":{"v":"#efbc4b","t":"color","s":"css-var --pro-button (dark)"},"buttonForeground":{"v":"#392000","t":"color","s":"css-var --pro-button-foreground (dark)"},"buttonHover":{"v":"#f9c555","t":"color","s":"css-var --pro-button-hover (dark)"},"cream":{"v":"#2a2418","t":"color","s":"css-var --pro-cream (dark)"},"creamBorder":{"v":"#4a3d20","t":"color","s":"css-var --pro-cream-border (dark)"},"foreground":{"v":"#e8bd6d","t":"color","s":"css-var --pro-foreground (dark)"},"glow":{"v":"rgba(239, 188, 75, 0.22)","t":"color","s":"css-var --pro-glow (dark)"},"strong":{"v":"#e8bd6d","t":"color","s":"css-var --pro-strong (dark)"},"wash":{"v":"#2a2418","t":"color","s":"css-var --pro-wash (dark)"}},"landing":{"chatgpt":{"v":"#15271e","t":"color","s":"css-var --landing-chatgpt (dark)"},"google":{"v":"#1d232e","t":"color","s":"css-var --landing-google (dark)"},"night":{"v":"#0e1014","t":"color","s":"css-var --landing-night (dark)"},"perplexity":{"v":"#0e272c","t":"color","s":"css-var --landing-perplexity (dark)"},"skyFrom":{"v":"#111620","t":"color","s":"css-var --landing-sky-from (dark)"},"skyHash":{"v":"#435793","t":"color","s":"css-var --landing-sky-hash (dark)"},"skyMark":{"v":"#1f2c4c","t":"color","s":"css-var --landing-sky-mark (dark)"},"skyTo":{"v":"#131b2e","t":"color","s":"css-var --landing-sky-to (dark)"},"tile":{"v":"#101317","t":"color","s":"css-var --landing-tile (dark)"},"warmFrom":{"v":"#191610","t":"color","s":"css-var --landing-warm-from (dark)"},"warmMark":{"v":"#413314","t":"color","s":"css-var --landing-warm-mark (dark)"},"warmTo":{"v":"#251e0f","t":"color","s":"css-var --landing-warm-to (dark)"}},"tod":{"edge":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"css-var --tod-edge (dark)"},"eveningHalo":{"v":"#d87e6c","t":"color","s":"css-var --tod-evening-halo (dark)"},"eveningHillFar":{"v":"#7d4a73","t":"color","s":"css-var --tod-evening-hill-far (dark)"},"eveningHillFront":{"v":"#372a4d","t":"color","s":"css-var --tod-evening-hill-front (dark)"},"eveningHillNear":{"v":"#543661","t":"color","s":"css-var --tod-evening-hill-near (dark)"},"eveningSky1":{"v":"#ada3cf","t":"color","s":"css-var --tod-evening-sky-1 (dark)"},"eveningSky2":{"v":"#d29ab9","t":"color","s":"css-var --tod-evening-sky-2 (dark)"},"eveningSky3":{"v":"#e0988c","t":"color","s":"css-var --tod-evening-sky-3 (dark)"},"eveningStreak":{"v":"#eacfdd","t":"color","s":"css-var --tod-evening-streak (dark)"},"eveningSun":{"v":"#e5564a","t":"color","s":"css-var --tod-evening-sun (dark)"},"morningCloud":{"v":"#f1e6de","t":"color","s":"css-var --tod-morning-cloud (dark)"},"morningHalo":{"v":"#f5b592","t":"color","s":"css-var --tod-morning-halo (dark)"},"morningHillFar":{"v":"#b58bb0","t":"color","s":"css-var --tod-morning-hill-far (dark)"},"morningHillFront":{"v":"#3f7d57","t":"color","s":"css-var --tod-morning-hill-front (dark)"},"morningHillNear":{"v":"#5d9c74","t":"color","s":"css-var --tod-morning-hill-near (dark)"},"morningSky1":{"v":"#e3c3ae","t":"color","s":"css-var --tod-morning-sky-1 (dark)"},"morningSky2":{"v":"#e6b297","t":"color","s":"css-var --tod-morning-sky-2 (dark)"},"morningSky3":{"v":"#eaa182","t":"color","s":"css-var --tod-morning-sky-3 (dark)"},"morningSun":{"v":"#f0834f","t":"color","s":"css-var --tod-morning-sun (dark)"},"nightHalo":{"v":"#3a3a64","t":"color","s":"css-var --tod-night-halo (dark)"},"nightHillFar":{"v":"#1c1f39","t":"color","s":"css-var --tod-night-hill-far (dark)"},"nightHillFront":{"v":"#0c1021","t":"color","s":"css-var --tod-night-hill-front (dark)"},"nightHillNear":{"v":"#12162d","t":"color","s":"css-var --tod-night-hill-near (dark)"},"nightMoon":{"v":"#f2e9ff","t":"color","s":"css-var --tod-night-moon (dark)"},"nightSky1":{"v":"#22284b","t":"color","s":"css-var --tod-night-sky-1 (dark)"},"nightSky2":{"v":"#2f3156","t":"color","s":"css-var --tod-night-sky-2 (dark)"},"nightStar":{"v":"#f1eaff","t":"color","s":"css-var --tod-night-star (dark)"},"noonCloud":{"v":"#e9f0f5","t":"color","s":"css-var --tod-noon-cloud (dark)"},"noonHalo":{"v":"#dec5a4","t":"color","s":"css-var --tod-noon-halo (dark)"},"noonHillFar":{"v":"#6db395","t":"color","s":"css-var --tod-noon-hill-far (dark)"},"noonHillFront":{"v":"#2a7841","t":"color","s":"css-var --tod-noon-hill-front (dark)"},"noonHillNear":{"v":"#41975d","t":"color","s":"css-var --tod-noon-hill-near (dark)"},"noonSky1":{"v":"#95bbd7","t":"color","s":"css-var --tod-noon-sky-1 (dark)"},"noonSky2":{"v":"#a6c4d7","t":"color","s":"css-var --tod-noon-sky-2 (dark)"},"noonSky3":{"v":"#b7ccd5","t":"color","s":"css-var --tod-noon-sky-3 (dark)"},"noonSun":{"v":"#fe9d4b","t":"color","s":"css-var --tod-noon-sun (dark)"}},"misc":{"colorBlack":{"v":"#000000","t":"color","s":"css-var --color-black (dark)"},"colorPrimary":{"v":"#e6e8eb","t":"color","s":"css-var --color-primary (dark)"},"colorWhite":{"v":"#ffffff","t":"color","s":"css-var --color-white (dark)"}},"component":{"button":{"cta":{"bg":{"v":"{primary.default}","t":"color","s":"measured app-cta default on / (CTA fill) — the element's class paints the primary.default role, so each theme resolves its own","d":"CTA fill"}}},"blogNav":{"bg":{"v":"{surface.default}","t":"color","s":"measured th-nav default on / (blog nav fill) — the element's class paints the surface.default role, so each theme resolves its own","d":"blog nav fill"}}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles — the painted default (both surfaces boot html.light)'], ['dark', 'dark roles — the Theme menu / prefers-color-scheme repaints html.dark']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.breakpoint || {}, 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.ease || {}, 'ease.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v.join ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.animation || {}, 'animation.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const setname of ['light', 'dark']) {
+    const misc = flat((TOK[setname] || {}).misc || {}, setname + '.misc.');
+    if (!misc.length) continue;
+    m += `<div style="grid-column:1/-1;opacity:.6;margin-top:8px"><b>${setname} misc</b></div>`;
+    for (const [n, t] of misc) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  }
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  const sh = (t) => Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v;
+  let e = '';
+  for (const [n, t] of flat((TOK.core || {}).shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(sh(t))}</span></div>`;
+  // The product's five-level --elevation-* stacks live per theme, not in
+  // core.shadow — render both so the real scale is inspectable.
+  for (const setname of ['light', 'dark']) {
+    const group = flat((TOK[setname] || {}).elevation || {}, setname + '.elevation.');
+    if (!group.length) continue;
+    e += `<div style="grid-column:1/-1;opacity:.6;margin-top:8px"><b>${setname} elevation</b></div>`;
+    for (const [n, t] of group) e += `<div><b>${esc(n)}</b> <span>${esc(sh(t))}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m || '<div><b>none measured</b></div>';
+})();
+
+(function motion() {
+  const g = TOK.core.motion || {};
+  let m = '';
+  for (const [n, t] of flat(g.duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(g.easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  const tr = Object.keys(g.transition || {}).length, an = Object.keys(g.animation || {}).length;
+  if (tr || an) m += `<div><b>measured</b> <span>${tr} transition tokens, ${an} animation tokens (tokens.json, core.motion)</span></div>`;
+  const rm = (g._extensions || {}).reducedMotion;
+  if (rm) m += `<div><b>reduced motion</b> <span>${esc(rm.behaviour)} — ${esc(String(rm.removed))} removed, ${esc(String(rm.kept))} kept across ${esc(String(rm.pages))} pages</span></div>`;
+  $('#motion-out').innerHTML = m || '<div><b>no motion probe</b></div>';
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v)) * (String(resolveVal(t.v)).endsWith('rem') ? 16 : 1);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The Hashnode blog</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).leading || {}, 'font.leading.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Hashnode</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+
+// The measured core.typography.* composites — the styles the live DOM paints,
+// not just the declared scales. Samples fall back to system fonts (Inter is
+// not bundled).
+(function typ() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core || {}).typography || {}, 'typography.')) {
+    const v = t.v || {};
+    const fs = parseFloat(v.fontSize) || 14;
+    const mono = /mono/i.test(String(v.fontFamily));
+    const meta = [v.fontSize, v.lineHeight, 'w' + v.fontWeight, v.letterSpacing].filter(Boolean).join(' / ');
+    h += `<div class="tr"><span class="ts" style="font-family:${mono ? 'var(--sg-mono)' : 'var(--sg-sans)'};font-size:${Math.min(fs, 44)}px;font-weight:${esc(String(v.fontWeight || 400))};line-height:${esc(v.lineHeight || 'normal')}">${esc(n)} — The Hashnode blog 0123</span><span class="tv">${esc(meta)}</span></div>`;
+  }
+  $('#typ-out').innerHTML = h;
+})();
+
+// The mock's theme button flips data-mode the way hashnode's own Theme menu flips
+// html.dark — the [data-mode="dark"] block carries the dark token set.
+(function themeToggle() {
+  const btn = $('#theme-toggle'), mock = $('#docs-mock');
+  if (!btn || !mock) return;
+  btn.addEventListener('click', () => {
+    const dark = mock.getAttribute('data-mode') !== 'dark';
+    mock.setAttribute('data-mode', dark ? 'dark' : 'light');
+    btn.setAttribute('aria-pressed', String(dark));
+    btn.title = dark ? 'Switch to light theme' : 'Switch to dark theme';
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "href": "https://preply.com/en/online/english-tutors",
+  "title": "Online English tutors & teachers for private classes",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "vv": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "scrollH": 12067,
+  "theme": "tokyo-ui",
+  "colorScheme": "normal",
+  "dark": false,
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "capturedAt": "2026-11-18T17:52:26.161Z",
+  "fullPage": false,
+  "screenshotFrames": "headless-playwright (T3 preview returned: The browser is not producing screenshot frames)"
+}

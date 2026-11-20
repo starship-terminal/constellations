@@ -1,0 +1,692 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. endel.io and app.endel.io declare named :root vars (a neutral ramp, two declared accents the signed-out pages never paint, the 12-column grid and the apercuPro type scale); \"var\" leaves resolve through those declarations, \"value\" leaves are measured computed styles. Both hosts paint one dark theme, so the semantic set lands in `dark`.",
+ "core": {
+  "color": {
+   "neutral": {
+    "black": {
+     "var": "--color-black",
+     "type": "color",
+     "description": "The pure black every page paints on (#000, body's own fill and the header scrim's base)."
+    },
+    "800": {
+     "var": "--color-gray-1",
+     "type": "color",
+     "description": "#191919: card fills (accordion rows, the mini-player pill, the timer sheet) and the footer hairline."
+    },
+    "700": {
+     "var": "--color-gray-2",
+     "type": "color",
+     "description": "#262626: the default fill of every button and pill (Try Today, Sign In, Continue, OAuth, the scenario pills)."
+    },
+    "500": {
+     "var": "--color-gray-3",
+     "type": "color",
+     "description": "#808080: field borders, the hover/pressed fill of gray-2 buttons, the link focus ring, the volume track's empty half."
+    },
+    "300": {
+     "var": "--color-gray-4",
+     "type": "color",
+     "description": "#bfbfbf: muted text (footer headings and legal links, the accordion answer, the mini-player's time)."
+    },
+    "200": {
+     "var": "--color-gray-5",
+     "type": "color",
+     "description": "#e0e0e0: the lightest grey, the FREEMIUM account chip's label."
+    },
+    "white": {
+     "var": "--color-white",
+     "type": "color",
+     "description": "#fff: text, strong borders (focused fields, the Unlock and Continue borders), the play button's fill."
+    }
+   },
+   "accent": {
+    "green": {
+     "var": "--color-green",
+     "type": "color",
+     "description": "#82d133, declared on both hosts' :root; nothing on the captured signed-out routes paints it."
+    },
+    "orange": {
+     "var": "--color-orange",
+     "type": "color",
+     "description": "#ff7a00, declared on both hosts' :root; nothing on the captured signed-out routes paints it."
+    },
+    "bright": {
+     "var": "--color-accent-green",
+     "type": "color",
+     "description": "#58ff5d, declared on app.endel.io's :root only; nothing on the captured signed-out routes paints it."
+    },
+    "brightHover": {
+     "var": "--color-accent-green-hover",
+     "type": "color",
+     "description": "#3ee843, the hover state of --color-accent-green, declared on app.endel.io's :root only."
+    }
+   }
+  },
+  "font": {
+   "size": {
+    "h1": {
+     "var": "--title-h1",
+     "type": "dimension",
+     "description": "60px display size (the Endel wordmark hero)."
+    },
+    "h2": {
+     "var": "--title-h2",
+     "type": "dimension",
+     "description": "44px section titles."
+    },
+    "h3": {
+     "var": "--title-h3",
+     "type": "dimension",
+     "description": "36px smaller headings — also the mobile display size (m-hero-title computes 36px)."
+    },
+    "h4": {
+     "var": "--title-h4",
+     "type": "dimension",
+     "description": "28px minor headings and the player title."
+    },
+    "text1": {
+     "var": "--text-1",
+     "type": "dimension",
+     "description": "22px lead text and big links/buttons (nav items, Try Now, button labels)."
+    },
+    "text2": {
+     "var": "--text-2",
+     "type": "dimension",
+     "description": "18px secondary links (Learn More, footer links)."
+    },
+    "text3": {
+     "var": "--text-3",
+     "type": "dimension",
+     "description": "16px base text and small button labels (header buttons)."
+    },
+    "text4": {
+     "var": "--text-4",
+     "type": "dimension",
+     "description": "14px muted labels (footer headings, mini-player meta)."
+    },
+    "text5": {
+     "var": "--text-5",
+     "type": "dimension",
+     "description": "10px microtext."
+    }
+   },
+   "lineHeight": {
+    "h1": {
+     "var": "--line-height-h1",
+     "type": "dimension",
+     "description": "72px on the 60px display size."
+    },
+    "h2": {
+     "var": "--line-height-h2",
+     "type": "dimension",
+     "description": "56px on h2."
+    },
+    "h3": {
+     "var": "--line-height-h3",
+     "type": "dimension",
+     "description": "42px on h3."
+    },
+    "h4": {
+     "var": "--line-height-h4",
+     "type": "dimension",
+     "description": "36px on h4."
+    },
+    "text1": {
+     "var": "--line-height-text-1",
+     "type": "dimension",
+     "description": "28px on the 22px text."
+    },
+    "text2": {
+     "var": "--line-height-text-2",
+     "type": "dimension",
+     "description": "24px on the 18px text."
+    },
+    "text3": {
+     "var": "--line-height-text-3",
+     "type": "dimension",
+     "description": "24px on the 16px text."
+    },
+    "text4": {
+     "var": "--line-height-text-4",
+     "type": "dimension",
+     "description": "20px on the 14px text."
+    },
+    "text5": {
+     "var": "--line-height-text-5",
+     "type": "dimension",
+     "description": "14px on the 10px microtext."
+    }
+   },
+   "family": {
+    "sans": {
+     "value": "apercuPro, \"apercuPro Fallback\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of page-ground default (raw/components-computed.json); the apercuPro faces are @font-face declarations in the site and app bundles (fonts in raw/css-vars.json)",
+     "description": "apercuPro plus the metric-matched 'apercuPro Fallback' (a local Arial face with override descriptors), the stack every captured marketing node uses."
+    },
+    "appSans": {
+     "value": "apercuProRegular, \"apercuProRegular Fallback\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of login-card default (raw/components-computed.json); the apercuPro faces are @font-face declarations in the site and app bundles (fonts in raw/css-vars.json)",
+     "description": "apercuProRegular plus its metric-matched fallback — the web app's own body face (the app bundle declares a separate apercuProRegular @font-face at weight 400)."
+    },
+    "appMedium": {
+     "value": "apercuProMedium, \"apercuProMedium Fallback\"",
+     "type": "fontFamily",
+     "source": "computed textStyle.fontFamily of banner default (raw/components-computed.json); the apercuPro faces are @font-face declarations in the site and app bundles (fonts in raw/css-vars.json)",
+     "description": "apercuProMedium plus its fallback — the app's second declared face (weight 500); the banner's promo text is set in it even though its computed fontWeight reads 400."
+    }
+   }
+  },
+  "layout": {
+   "container": {
+    "var": "--max-width",
+    "type": "dimension",
+    "description": "The 1280px page column."
+   },
+   "gutter": {
+    "var": "--gutter",
+    "type": "dimension",
+    "description": "The 64px side gutter inside the 1280px column."
+   },
+   "gap": {
+    "var": "--gap",
+    "type": "dimension",
+    "description": "The 24px grid gap."
+   },
+   "cols": {
+    "var": "--max-cols",
+    "type": "number",
+    "description": "The 12-column grid."
+   },
+   "col": {
+    "1": {
+     "var": "--cols-1",
+     "type": "dimension",
+     "description": "The width of 1 column at the 1280px container (74px)."
+    },
+    "2": {
+     "var": "--cols-2",
+     "type": "dimension",
+     "description": "The width of 2 columns at the 1280px container (172px)."
+    },
+    "3": {
+     "var": "--cols-3",
+     "type": "dimension",
+     "description": "The width of 3 columns at the 1280px container (270px)."
+    },
+    "4": {
+     "var": "--cols-4",
+     "type": "dimension",
+     "description": "The width of 4 columns at the 1280px container (368px)."
+    },
+    "5": {
+     "var": "--cols-5",
+     "type": "dimension",
+     "description": "The width of 5 columns at the 1280px container (466px)."
+    },
+    "6": {
+     "var": "--cols-6",
+     "type": "dimension",
+     "description": "The width of 6 columns at the 1280px container (564px)."
+    },
+    "7": {
+     "var": "--cols-7",
+     "type": "dimension",
+     "description": "The width of 7 columns at the 1280px container (662px)."
+    },
+    "8": {
+     "var": "--cols-8",
+     "type": "dimension",
+     "description": "The width of 8 columns at the 1280px container (760px)."
+    },
+    "9": {
+     "var": "--cols-9",
+     "type": "dimension",
+     "description": "The width of 9 columns at the 1280px container (858px)."
+    },
+    "10": {
+     "var": "--cols-10",
+     "type": "dimension",
+     "description": "The width of 10 columns at the 1280px container (956px)."
+    },
+    "11": {
+     "var": "--cols-11",
+     "type": "dimension",
+     "description": "The width of 11 columns at the 1280px container (1054px)."
+    },
+    "12": {
+     "var": "--cols-12",
+     "type": "dimension",
+     "description": "The width of 12 columns at the 1280px container (1152px)."
+    }
+   }
+  },
+  "measured": {
+   "titleTracking": {
+    "value": "0.35px",
+    "type": "dimension",
+    "source": "computed letterSpacing of hero-title default (raw/components-computed.json)",
+    "description": "The 0.35px tracking on the display sizes (h1-h3 share it)."
+   },
+   "linkHover": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "computed color of footer-link default (raw/components-computed.json)",
+    "description": "Links keep their colour on hover — only an underline paints (the footer's legal line additionally steps #bfbfbf to white)."
+   },
+   "glowColour": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "computed boxShadow of btn-try hover (raw/components-computed.json)",
+    "description": "The Try Today button keeps its white 15px glow through hover."
+   },
+   "sliderBase": {
+    "value": "#101010",
+    "type": "color",
+    "source": "computed color of volume default (raw/components-computed.json)",
+    "description": "The volume slider's own colour #101010 (the track paints a white/gray-3 gradient over it)."
+   },
+   "mobileMenuLabel": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "computed fontSize of m-menu-button default (raw/components-computed.json)",
+    "description": "The 12px label on the mobile Menu button."
+   }
+  },
+  "shadow": {
+   "glow": {
+    "value": [
+     {
+      "color": "#ffffff",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "15px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of btn-try default (raw/components-computed.json)",
+    "description": "The white 0 0 15px glow on the Try Today button (kept through hover and press)."
+   },
+   "focusRing": {
+    "value": [
+     {
+      "color": "#666666",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "6px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of btn-signin focus-visible (raw/components-computed.json)",
+    "description": "The product's keyboard focus ring on buttons: a #666666 6px spread shadow."
+   },
+   "focusRingLink": {
+    "value": [
+     {
+      "color": "#808080",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "4px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of press-logo focus-visible (raw/components-computed.json)",
+    "description": "The focus ring on plain links and tiles: a #808080 4px spread shadow."
+   }
+  },
+  "radius": {
+   "basic": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of btn-try default (raw/components-computed.json)",
+    "description": "The 12px corner of buttons, fields, accordion rows and the mobile menu button (the bundle's border-radius-basic)."
+   },
+   "full": {
+    "value": "100px",
+    "type": "dimension",
+    "source": "computed paint.0.radius of play-button default (raw/components-computed.json)",
+    "description": "The 100px pill/circle corner (play and transport buttons, scenario pills, the mini-player pill; the bundle's border-radius-full)."
+   },
+   "sheet": {
+    "value": "20px",
+    "type": "dimension",
+    "source": "computed paint.0.radius of btn-explore default (raw/components-computed.json)",
+    "description": "The 20px top corner of the player's bottom Explore sheet (20px 20px 0 0)."
+   },
+   "card": {
+    "value": "24px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of banner default (raw/components-computed.json)",
+    "description": "The 24px corner of the explore carousel banner."
+   },
+   "dialog": {
+    "value": "32px",
+    "type": "dimension",
+    "source": "computed paint.2.radius of timer-dialog opened (raw/components-computed.json)",
+    "description": "The 32px corner of the timer sheet."
+   },
+   "round": {
+    "value": "50%",
+    "type": "dimension",
+    "source": "computed paint.0.radius of banner-dot default (raw/components-computed.json)",
+    "description": "The 50% carousel dot."
+   }
+  },
+  "duration": {
+   "hover": {
+    "value": "0.2s",
+    "type": "duration",
+    "source": "computed transitionDuration of btn-signin default (raw/components-computed.json)",
+    "description": "The 200ms background/border transition on every button and accordion row."
+   },
+   "sheet": {
+    "value": "0.3s",
+    "type": "duration",
+    "source": "declared slide-in-out/slide-out transition in the app bundle's CSSOM (raw/components-computed.json _meta.sheets)",
+    "description": "The 300ms slide of the timer sheet and the mobile menu."
+   }
+  },
+  "easing": {
+   "standard": {
+    "value": "ease",
+    "type": "cubicBezier",
+    "source": "computed transitionTimingFunction of btn-signin default (raw/components-computed.json)",
+    "description": "Plain ease on the hover transitions."
+   },
+   "sheetIn": {
+    "value": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+    "type": "cubicBezier",
+    "source": "declared .slide-in-out-enter animation in the app bundle's CSSOM (raw/components-computed.json _meta.sheets)",
+    "description": "The sheet's entrance bezier."
+   },
+   "sheetOut": {
+    "value": "cubic-bezier(0.55, 0.085, 0.68, 0.53)",
+    "type": "cubicBezier",
+    "source": "declared .slide-in-out-exit animation in the app bundle's CSSOM (raw/components-computed.json _meta.sheets)",
+    "description": "The sheet's exit bezier."
+   }
+  },
+  "gradient": {
+   "headerScrim": {
+    "type": "gradient",
+    "value": [
+     {
+      "color": "{color.neutral.black}",
+      "position": 0
+     },
+     {
+      "color": "rgba(0, 0, 0, 0.65)",
+      "position": 0.5
+     },
+     {
+      "color": "rgba(0, 0, 0, 0)",
+      "position": 1
+     }
+    ],
+    "source": "computed backgroundImage of header default (raw/components-computed.json)",
+    "description": "The fade the fixed header paints over scrolled content."
+   },
+   "declaredScrim": {
+    "type": "gradient",
+    "value": [
+     {
+      "color": "#181818",
+      "position": 0
+     },
+     {
+      "color": "rgba(0, 0, 0, 0)",
+      "position": 1
+     }
+    ],
+    "source": "declared --color-gradient-1 on :root (raw/css-vars.json); where it mounts was not identified on the captured routes",
+    "description": "The bundle's #181818-to-transparent fade."
+   }
+  }
+ },
+ "dark": {
+  "page": {
+   "type": "color",
+   "description": "The pure black every captured route paints on (body's own fill).",
+   "value": "{color.neutral.black}",
+   "source": "computed backgroundColor of page-ground default (raw/components-computed.json); same value as core.color.neutral.black"
+  },
+  "text": {
+   "type": "color",
+   "description": "The display type's white; all captured text is white or a grey.",
+   "value": "{color.neutral.white}",
+   "source": "computed color of hero-title default (raw/components-computed.json); same value as core.color.neutral.white"
+  },
+  "muted": {
+   "type": "color",
+   "description": "Secondary text: footer legal links, accordion answers, the mini-player's time (#bfbfbf on the text node).",
+   "value": "{color.neutral.300}",
+   "source": "computed textStyle.color of footer-legal default (raw/components-computed.json); same value as core.color.neutral.300"
+  },
+  "faint": {
+   "type": "color",
+   "description": "The lightest text grey, the FREEMIUM account chip's label (#e0e0e0).",
+   "value": "{color.neutral.200}",
+   "source": "computed textStyle.color of app-header default (raw/components-computed.json); same value as core.color.neutral.200"
+  },
+  "surface": {
+   "type": "color",
+   "description": "The card fill, #191919 (accordion rows, the mini-player pill, the timer sheet).",
+   "value": "{color.neutral.800}",
+   "source": "computed backgroundColor of accordion-title default (raw/components-computed.json); same value as core.color.neutral.800"
+  },
+  "surfaceRaised": {
+   "type": "color",
+   "description": "The control fill, #262626 (every button and pill at rest).",
+   "value": "{color.neutral.700}",
+   "source": "computed backgroundColor of btn-signin default (raw/components-computed.json); same value as core.color.neutral.700"
+  },
+  "fillHover": {
+   "type": "color",
+   "description": "The hover and pressed fill of gray-2 controls, #808080.",
+   "value": "{color.neutral.500}",
+   "source": "computed backgroundColor of btn-signin hover (raw/components-computed.json); same value as core.color.neutral.500"
+  },
+  "border": {
+   "type": "color",
+   "description": "The resting field border, #808080.",
+   "value": "{color.neutral.500}",
+   "source": "computed borderTopColor of input-email-login default (raw/components-computed.json); same value as core.color.neutral.500"
+  },
+  "borderStrong": {
+   "type": "color",
+   "description": "The focused-field and primary-action border, pure white.",
+   "value": "{color.neutral.white}",
+   "source": "computed borderTopColor of input-email-login focused (raw/components-computed.json); same value as core.color.neutral.white"
+  },
+  "borderSubtle": {
+   "type": "color",
+   "description": "The 1px hairline under the footer columns, #191919.",
+   "value": "{color.neutral.800}",
+   "source": "computed paint.2.border of footer default (raw/components-computed.json); same value as core.color.neutral.800"
+  },
+  "bar": {
+   "type": "color",
+   "description": "The player header's inner bar, #2b2b2b, a grey between gray-2 and gray-3 that no var names.",
+   "value": "#2b2b2b",
+   "source": "computed paint.0.bg of player-header default (raw/components-computed.json)"
+  },
+  "scrim": {
+   "type": "color",
+   "description": "The modal overlay, rgba(0,0,0,0.8), behind the timer sheet.",
+   "value": "rgba(0, 0, 0, 0.8)",
+   "source": "computed backgroundColor of timer-dialog opened (raw/components-computed.json)"
+  },
+  "focus": {
+   "type": "color",
+   "description": "The keyboard focus ring's colour #666666, painted as a 6px spread shadow (the UA outline is suppressed).",
+   "value": "#666666",
+   "source": "computed ringShadow of btn-signin focus-visible (raw/components-computed.json)"
+  },
+  "chipOutline": {
+   "type": "color",
+   "description": "The carousel banner's inset outline, rgba(255,255,255,0.15).",
+   "value": "rgba(255, 255, 255, 0.15)",
+   "source": "computed paint.0.outline of banner default (raw/components-computed.json)"
+  },
+  "onAccent": {
+   "type": "color",
+   "description": "Text on a white fill inside the banner (the SPECIAL OFFER tag chip), black.",
+   "value": "{color.neutral.black}",
+   "source": "computed textStyle.color of banner default (raw/components-computed.json); same value as core.color.neutral.black"
+  }
+ },
+ "component": {
+  "control": {
+   "heightNav": {
+    "type": "dimension",
+    "value": "44px",
+    "source": "computed rect.h of btn-try default (raw/components-computed.json)",
+    "description": "Header buttons are 44px (Try Today, Sign In)."
+   },
+   "height": {
+    "type": "dimension",
+    "value": "56px",
+    "source": "computed rect.h of btn-set-timer default (raw/components-computed.json)",
+    "description": "The 56px large controls (Set Timer, Continue, OAuth, scenario pills, transport buttons)."
+   },
+   "heightMobile": {
+    "type": "dimension",
+    "value": "36px",
+    "source": "computed rect.h of m-menu-button default (raw/components-computed.json)",
+    "description": "The mobile Menu button is 36px."
+   },
+   "border": {
+    "type": "dimension",
+    "value": "2px",
+    "source": "computed style.borderTopWidth of btn-set-timer default (raw/components-computed.json)",
+    "description": "Every button and field carries a 2px border (often painted its own fill colour)."
+   }
+  },
+  "field": {
+   "height": {
+    "type": "dimension",
+    "value": "62px",
+    "source": "computed rect.h of input-email-login default (raw/components-computed.json)",
+    "description": "The sign-in email field is 62px."
+   },
+   "width": {
+    "type": "dimension",
+    "value": "564px",
+    "source": "computed rect.w of input-email-login default (raw/components-computed.json)",
+    "description": "The login field and card are 564px wide, exactly --cols-6."
+   }
+  },
+  "footerField": {
+   "width": {
+    "type": "dimension",
+    "value": "466px",
+    "source": "computed paint.0.size of footer default (raw/components-computed.json)",
+    "description": "The footer newsletter field is 466px wide, exactly --cols-5 (466x56)."
+   }
+  },
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "72px",
+    "source": "computed rect.h of header default (raw/components-computed.json)",
+    "description": "The fixed header is 72px."
+   },
+   "heightMobile": {
+    "type": "dimension",
+    "value": "56px",
+    "source": "computed rect.h of m-header default (raw/components-computed.json)",
+    "description": "The mobile header is 56px."
+   }
+  },
+  "footer": {
+   "height": {
+    "type": "dimension",
+    "value": "569px",
+    "source": "computed rect.h of footer default (raw/components-computed.json)",
+    "description": "The footer block at 1440px."
+   }
+  },
+  "card": {
+   "size": {
+    "type": "dimension",
+    "value": "270px",
+    "source": "computed rect.w of soundscape-card default (raw/components-computed.json)",
+    "description": "A soundscape card is 270px, exactly --cols-3."
+   }
+  },
+  "row": {
+   "width": {
+    "type": "dimension",
+    "value": "956px",
+    "source": "computed rect.w of soundscape-row default (raw/components-computed.json)",
+    "description": "A soundscape row (and the carousel banner) is 956px, exactly --cols-10."
+   }
+  },
+  "accordion": {
+   "width": {
+    "type": "dimension",
+    "value": "1152px",
+    "source": "computed rect.w of accordion-title default (raw/components-computed.json)",
+    "description": "An FAQ row spans the full grid, 1152px = --cols-12."
+   }
+  },
+  "play": {
+   "size": {
+    "type": "dimension",
+    "value": "72px",
+    "source": "computed rect.w of play-button default (raw/components-computed.json)",
+    "description": "The round play control is 72px."
+   }
+  },
+  "transport": {
+   "size": {
+    "type": "dimension",
+    "value": "56px",
+    "source": "computed rect.w of player-control default (raw/components-computed.json)",
+    "description": "The player's transport buttons are 56px."
+   }
+  },
+  "icon": {
+   "size": {
+    "type": "dimension",
+    "value": "24px",
+    "source": "computed icon.w of accordion-title default (raw/components-computed.json)",
+    "description": "Row and chevron icons are 24px."
+   },
+   "sizeLg": {
+    "type": "dimension",
+    "value": "36px",
+    "source": "computed icon.w of play-button default (raw/components-computed.json)",
+    "description": "The play glyph is 36px."
+   }
+  },
+  "dot": {
+   "size": {
+    "type": "dimension",
+    "value": "12px",
+    "source": "computed rect.w of banner-dot default (raw/components-computed.json)",
+    "description": "Carousel dots are 12px."
+   }
+  },
+  "volume": {
+   "width": {
+    "type": "dimension",
+    "value": "129px",
+    "source": "computed rect.w of volume default (raw/components-computed.json)",
+    "description": "The volume slider is 129px wide, 5px tall."
+   }
+  },
+  "mobileMenu": {
+   "width": {
+    "type": "dimension",
+    "value": "326px",
+    "source": "computed rect.w of m-menu-flyout default (raw/components-computed.json)",
+    "description": "A promo row in the open mobile menu, 326px."
+   }
+  }
+ }
+}

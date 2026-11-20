@@ -97,12 +97,15 @@ The cookie overlay (`#biscuits-overlay`) is hidden by CSS for the clean captures
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **Screenshots are 256-colour PNGs.** Gradients and photography band slightly; read exact colours from tokens.json or the raw files.
 - **Hero cells carry video.** Two captures of the same page can differ in the frame shown.
 - **The `main` rect in `raw/layout.json` is the whole page column** (Ableton wraps content in a single `<main>`), so "content x 0, 1440 wide" does not mean text spans 1440: the 1200px text column sits inside it.
 - **`palette.lime-stripe` is read off a patterned cell**, not a flat fill: the promo card's background alternates lime and pale-blue stripes, and the token is the lime of the brighter band, approximate by eye.
 - **Hover reads "same" on most controls by design.** Ableton's `abl-button`s genuinely do not restyle on hover (verified on the crop pairs); the entries are not missing a state.
 - **The register form's `ul` paints `#ffc2ca`** in the child-layers note: that is the password-strength meter's track, not the form's background.
+- **`trial-edition-card` and `pack-card` were read from the wrong elements.** `trial-edition-card` is the 720 x 655 hero column of /trial and `pack-card` is the 1440 x 348 page banner of /packs, not a single edition panel or Pack tile. Both need a recapture. `packs-green` now cites only `packs-title`, which holds the same value.
+- **`hero-cta` has no keyboard-focus reading.** Its selector matched the `<p class="homepage-teaser__cta">` around the "See what's new" link, and keyboard focus never reached it (the raw state says `focus failed`), so the stored focus-visible style is the element at rest. The builders leave that state out of components.md and raw/measurements.md, and the focus summary lists it as not captured. It needs a recapture that focuses the link itself.
 
 ## Fonts
 
@@ -165,7 +168,7 @@ PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/public.mjs
 PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/measure.mjs home live mobile
 ```
 
-`public.mjs` re-takes the screenshot set into `RAW` (a scratch dir outside the repository, defaults to `raw/full`); `python3 tools/capture/quantize.py raw/full` stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs`, `layout.mjs` and `icons.mjs` rewrite their raw or icon files whole. `lib.mjs` holds the shared helpers, including the cookie-overlay hide and the `navigator.webdriver` masking.
+`public.mjs` re-takes the screenshot set into `RAW` (a scratch dir outside the repository, defaults to `raw/full`); `python3 tools/capture/quantize.py raw/full` stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs`, `layout.mjs` and `icons.mjs` rewrite their raw or icon files whole. `lib.mjs` holds the shared helpers, including the cookie-overlay hide (it no longer masks `navigator.webdriver`).
 
 ## Use in Figma
 

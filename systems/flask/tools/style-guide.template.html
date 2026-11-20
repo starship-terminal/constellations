@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flask style guide</title>
+<meta name="description" content="Flask design tokens and the public surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --sg-serif: var(--sg-sans);
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+/* flask.do paints one theme — the dark `default` --ds-* layer — so the guide's
+   body carries the .dark scope exactly the way the site's :root does. */
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--fg-1, #fafafa); background: var(--surface-0, #0c0c0c); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--fg-2, #a0a0a0); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--line-2, #282828); }
+.lead { max-width: 62ch; color: var(--fg-2, #a0a0a0); }
+.note { font-size: 13px; color: var(--fg-3, #6f6f6f); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--fg-3, #6f6f6f); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--line-2, #282828); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--fg-3, #6f6f6f); }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--line-2, #282828); background: var(--surface-1, #121212); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--fg-3, #6f6f6f); }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--line-2, #282828); overflow: hidden; background: var(--surface-0, #0c0c0c); border-radius: var(--radius-default, 12px); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 64px); padding: 0 12px 0 22px; font-size: 15px; color: var(--fg-2, #a0a0a0); background: var(--surface-0, #0c0c0c); box-shadow: var(--line-1, #1c1c1c) 0 -1px 0 0 inset; }
+.navbar .wm { font-weight: 600; font-size: 17px; letter-spacing: -0.02em; color: var(--fg-1, #fafafa); font-style: italic; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 40px); padding: 0 18px; font-size: 15px; font-weight: 500; border-radius: var(--radius-control, 9999px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-ctaFill, var(--brand-highlight, #cacaca)); color: var(--action-ctaInk, var(--brand-fg, #090909)); }
+.btn.ghost { background: var(--control-light, rgba(250,250,250,.06)); color: var(--fg-1, #fafafa); }
+.btn.small { height: 32px; font-size: 13px; font-weight: 500; }
+.hero { color: var(--fg-1, #fafafa); padding: 80px 40px; font: 600 var(--font-size-measured-hero, 60px)/1.15 var(--sg-serif); letter-spacing: -0.02em; text-align: left; background: var(--surface-0, #0c0c0c); }
+.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--fg-2, #a0a0a0); margin: 20px 0 26px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--line-2, #282828); border-radius: var(--radius-default, 12px); padding: 14px; font-size: 13px; background: var(--surface-1, #121212); }
+.tile .img { height: 140px; background: var(--fill, rgba(250,250,250,.0485)); border-radius: 8px; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--fg-3, #6f6f6f); }
+.tile b { display: block; font: 600 20px/1.2 var(--sg-serif); margin-bottom: 4px; color: var(--fg-1, #fafafa); }
+.tile .sub { color: var(--fg-3, #6f6f6f); font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--line-2, #282828); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--line-1, #1c1c1c); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--fg-3, #6f6f6f); font-family: var(--sg-mono); }
+.field { display: block; width: 280px; height: var(--component-login-field-height, 40px); padding: 0 14px; border: 1px solid var(--line-2, #282828); border-radius: var(--radius-default, 12px); background: var(--control-light, rgba(250,250,250,.06)); font-size: 15px; color: var(--fg-1, #fafafa); }
+.badge { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: var(--radius-control, 9999px); background: var(--brand-tint, rgba(173,173,173,.18)); color: var(--brand-text, #adadad); font-size: 12px; font-weight: 500; }
+.switch { display: inline-flex; align-items: center; width: var(--component-switch-width, 36px); height: var(--component-switch-height, 20px); border-radius: 9999px; background: var(--action-switchTrack, var(--fill-strong, rgba(250,250,250,.0873))); padding: 2px; }
+.switch i { width: 16px; height: 16px; border-radius: 50%; background: var(--fg-1, #fafafa); }
+.chip { display: inline-flex; align-items: center; gap: 6px; height: var(--component-chip-height, 28px); padding: 0 12px; border-radius: var(--radius-control, 9999px); background: var(--control-light, rgba(250,250,250,.06)); color: var(--chip-fg-unselected, #868686); font-size: 13px; }
+</style>
+</head>
+<body class="dark">
+<main>
+  <h1>Flask style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Flask, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the site's declared <code>--ds-*</code> layer — the <code>surface-0…4</code> near-black ramp, the <code>fg-1…4</code> foreground steps and <code>fg-lead/-subhead/-placeholder</code> roles, the <code>line-*</code> hairlines, the neutral <code>brand</code> grey, the danger/warning/success/info/live palettes, the <code>flair-1…3</code> gradient accents, the glass/glow/metal/showcase ingredient colours, the interaction-opacity roles (<code>fill</code>, <code>hover</code>, <code>pressed</code>, <code>selected</code>, <code>row-hover</code>, <code>control-*</code>), the scrim/media/scrollbar roles and the <code>shadow-*</code> ingredients — plus <code>--ds-font-sans</code>, the 12px/9999px radii and the <code>--ease-*</code> curves. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from flask.do, signed out, in headless Chromium. The workspace and every post-login surface is a documented boundary (/home redirects to /login); the login form was measured, never submitted. Every public page paints the dark <code>default</code> theme — the only theme the bundle declares; no light variant or toggle exists. Most colours are declared as rgb channel lists; the guide shows the rgba() they paint.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The site header is a dark bar on the near-black field: the Flask wordmark, Pricing and Features links, then the light "Sign Up" pill (the brand-highlight fill on brand-fg ink, radius-control). Below, the hero — "The world's fastest way to review video." in the system sans at the measured display size — pairs a light "Open Flask" pill with a control-light "Copy Prompt".</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">flask</span><span class="sp"></span><span>Pricing</span><span>Features</span><span class="btn small primary">Sign Up</span></div>
+    <div class="hero">The world's fastest way<br>to review video.<small>Talk and draw to get complex creative feedback across to your team. Agents understand it, iterate and upload autonomously.</small><span class="btn primary">Open Flask</span>&nbsp;&nbsp;<span class="btn ghost">Copy Prompt</span></div>
+  </div>
+
+  <h2 class="sh">Pricing and the demo workspace</h2>
+  <p class="lead">/pricing arranges Free/Pro/Organization cards on the surface-0 field beside the billing switch ("Billed yearly" on, "Billed quarterly" off); the home page's marketing demo paints the same component classes — chips, tabs, rows with <code>row-hover</code> and the glass panels.</p>
+  <div class="mock" style="padding:20px">
+    <div style="display:flex;align-items:center;gap:10px;font-size:14px"><span class="switch"><i></i></span> Billed yearly</div>
+    <div class="grid" style="margin-top:16px">
+      <div class="tile"><div class="img">Free</div><b>$0</b><span class="sub">Upload, give feedback, iterate</span></div>
+      <div class="tile"><div class="img">Pro</div><b>$15</b><span class="sub">/ member / month, billed yearly</span></div>
+      <div class="tile"><div class="img">Organization</div><b>Custom</b><span class="sub">For teams that make videos with agents</span></div>
+    </div>
+    <div style="margin-top:18px;display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="chip">v2 · Context</span><span class="chip">Feedback · 0</span><span class="chip">Version 3</span><span class="btn small ghost">Copy Link</span><span class="badge">Anyone with Link</span></div>
+    <div style="margin-top:18px"><input class="field" placeholder="han@solo.com"></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared <code>--ds-*</code> roles are the palette: the near-black <code>surface-0…4</code> ramp under <code>fg-1…4</code> foreground steps, the <code>line-*</code> hairlines, the neutral <code>brand</code> grey with its tint/highlight/shade, the danger/warning/success/info and red <code>live</code> palettes, the <code>flair</code>/<code>glow</code> gradient ingredients and the translucent glass/interaction washes — every one a channel list the utilities composite. Measured roles alias the declared values they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Radius and motion</h2>
+  <p class="lead">Two radii: <code>radius</code> 12px on cards and panels, <code>radius-control</code> 9999px on buttons, chips and the switch — and two declared easing curves, <code>--ease-out</code> and <code>--ease-in-out</code>, under the measured control transitions.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">One face: <code>--ds-font-sans</code> is the ui-sans-serif/system-ui stack — the site ships no self-hosted display face. Sizes and weights are the measured steps from the live pages.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --ds-*/--ease-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, off, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // flask.do paints one theme: the dark set is the palette, resolved under
+  // the body's .dark scope.
+  for (const [setname, label] of [['dark', 'the dark roles — the only theme the site ships']]) {
+    // gradient roles (the CTA faces) swatch too: their custom property holds
+    // the whole linear-gradient(), and the value line lists the stops
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => (t.t === 'color' || t.t === 'gradient') && !n.startsWith('component'));
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    const shown = (t) => t.t === 'gradient' && Array.isArray(t.v) ? t.v.map((s) => `${s.color} ${Math.round(s.position * 100)}%`).join(', ') : t.v;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(shown(t))}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).ease || {}, 'motion.ease.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  // This package keeps real shadow declarations under dark.shadow.* and the
+  // shadow colour ingredients under dark.shadow.color.*.
+  for (const [n, t] of flat((TOK.dark || {}).shadow || {}, 'shadow.')) {
+    if (t.t === 'shadow') e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core || {}).elevation || {}, 'elevation.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}), 'motion.')) {
+    if (n.startsWith('motion.ease')) continue;
+    m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  }
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Aliases are set-relative: scales live under TOK.core, the roles under
+  // TOK.dark. Try each root.
+  for (const root of [TOK.core, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Flask</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

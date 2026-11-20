@@ -109,6 +109,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **One theme only.** A `dark` probe resolves to the same `:root` values — nothing paints dark. `tokens.json` ships no dark set.
 - **Roles are verified, not declared.** Every `light` role pairs a var (or a measured colour) with the component that was measured wearing it; the site declares palette, category accents and control vars, no semantic roles.
 - **The award gold is measured, not declared.** The Vote button's #e3c352 fill (`core.measured.action-award`) exists in no var; likewise the #383838 the outlined Submit Website fills on hover/pressed, and the #005fcc browser focus ring on nav/footer links.
@@ -117,6 +118,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **Log in / Sign Up did not render on the captured loads** — recorded missing, not evidence they are absent: the first recon run saw them in the header. No public login page exists signed-out (`/session/login` 404s).
 - **`submit-cta-2` is a recorded miss** — /submit/ showed no measurable CTA to headless; the plan card is the evidence.
 - **Focus styles were not systematically captured** beyond focus-visible states on the measured components.
+- **`sotd-heading` and `coll-card` were read from the wrong elements.** `sotd-heading` is the whole 1336 x 359 Site of the Day block, not its heading, and `coll-card` is the "Reset filters" link on /collections/. Both need a recapture; the script now takes a heading element and a collections link with an image (not run since).
 
 ### Do and don't (from README.md)
 

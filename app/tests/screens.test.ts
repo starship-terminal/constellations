@@ -107,7 +107,7 @@ describe("capture search", () => {
     expect(
       queryScreens(items, {
         platform: "web",
-        referenceId: reference.id,
+        referenceIds: [reference.id],
         query: "missing",
         termIds: ["web-page-types:dashboard"],
       }).termCounts,
@@ -120,8 +120,7 @@ describe("capture search", () => {
     });
     expect(
       queryScreens(items, {
-        referenceId: reference.id,
-        referenceIds: ["systems:second"],
+        referenceIds: [reference.id, "systems:second"],
       }).total,
     ).toBe(2);
   });
@@ -220,11 +219,7 @@ describe("capture search", () => {
     });
     expect(result.items).toEqual([dashboard]);
     expect(result.total).toBe(1);
-    expect(result.taxonomy).toEqual({
-      pageTypes: [],
-      uiElements: [],
-      uxPatterns: [],
-    });
+    expect(result).not.toHaveProperty("taxonomy");
     expect(
       queryScreens([dashboard, profile], { query: "invented pattern" }).items,
     ).toEqual([]);

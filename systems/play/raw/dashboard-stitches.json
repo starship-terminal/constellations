@@ -1,0 +1,27 @@
+{
+  "source": "Declared Stitches custom property in the archived dashboard shell (dashboard.createwithplay.com, memento 2025-11-26). The signed-out login form did not hydrate, so these are stylesheet declarations, not a painted login control.",
+  "colors": {
+    "bg": "#050505",
+    "secondaryBg": "#19191B",
+    "playGreen": "#17FFA6",
+    "playGreenHover": "#15E595",
+    "playMagenta": "#FF5DE0",
+    "playYellow": "#FFB200",
+    "playPurple": "#B476FF",
+    "playBlue": "#0A84FF",
+    "playEnterprise": "#12b2ce",
+    "warning": "#FF453A",
+    "success": "#30D158",
+    "primaryGray": "#48484A",
+    "secondaryGray": "#2C2C2E",
+    "border": "#8E8E93",
+    "tooltipBg": "#D1D1D6",
+    "formError": "#ED556B"
+  },
+  "fonts": {
+    "inter": "Inter, Helvetica, sans-serif",
+    "varela": "Varela Round, sans-serif",
+    "haboro": "haboro-soft-condensed, sans-serif"
+  },
+  "note": "Not tokenised into tokens.json. The login document that declares these never painted a form in this capture."
+}

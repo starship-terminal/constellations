@@ -1,0 +1,1 @@
+No screenshots. `preview_snapshot` on the T3 preview tab returned "The browser is not producing screenshot frames". Measurements were kept from `preview_evaluate`. Frames were not invented. Headless Playwright was not used. The catalog cover is the site icon.

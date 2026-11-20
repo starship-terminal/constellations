@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delphi style guide</title>
+<meta name="description" content="Delphi design tokens and the public home, discover, search, expert and chat surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-ui: "Delphi Inter", "Delphi Inter Fallback", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-display: "Delphi Pythia", "Delphi Pythia Fallback", ui-serif, Georgia, "Times New Roman", serif;
+  --font-weight-regular: 400;
+  --font-weight-book: 450;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-declared-bold: 700;
+  --font-weight-declared-light: 300;
+  --font-weight-declared-medium: 500;
+  --font-weight-declared-normal: 400;
+  --font-weight-declared-semibold: 600;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+  --font-size-7xl: 4.5rem;
+  --font-size-8xl: 6rem;
+  --font-size-9xl: 8rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-sm: .875rem;
+  --font-size-xl: 1.25rem;
+  --font-size-xs: .75rem;
+  --font-size-measured-badge: 10px;
+  --font-size-measured-xs: 12px;
+  --font-size-measured-sm: 13px;
+  --font-size-measured-control: 14px;
+  --font-size-measured-body: 16px;
+  --font-size-measured-lg: 18px;
+  --font-size-measured-section: 20px;
+  --font-size-measured-mobile-display: 32px;
+  --font-size-measured-name: 34px;
+  --font-size-measured-display: 50px;
+  --font-lineHeight-2xl: calc(2/1.5);
+  --font-lineHeight-3xl: calc(2.25/1.875);
+  --font-lineHeight-4xl: calc(2.5/2.25);
+  --font-lineHeight-5xl: 1;
+  --font-lineHeight-6xl: 1;
+  --font-lineHeight-7xl: 1;
+  --font-lineHeight-8xl: 1;
+  --font-lineHeight-9xl: 1;
+  --font-lineHeight-base: calc(1.5/1);
+  --font-lineHeight-lg: calc(1.75/1.125);
+  --font-lineHeight-sm: calc(1.25/.875);
+  --font-lineHeight-xl: calc(1.75/1.25);
+  --font-lineHeight-xs: calc(1/.75);
+  --font-lineHeight-normal: 1.5;
+  --font-lineHeight-relaxed: 1.625;
+  --font-lineHeight-snug: 1.375;
+  --font-lineHeight-tight: 1.25;
+  --font-tracking-normal: 0em;
+  --font-tracking-tight: -.025em;
+  --font-tracking-wide: .025em;
+  --font-tracking-widest: .1em;
+  --color-amber-400: #ffb900;
+  --color-amber-600: #e17100;
+  --color-black: #000000;
+  --color-emerald-500: #00bc7d;
+  --color-emerald-600: #009966;
+  --color-green-400: #05df72;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a1a1a1;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  --color-neutral-950: #0a0a0a;
+  --color-red-300: #ffa2a2;
+  --color-red-400: #ff6467;
+  --color-red-500: #fb2c36;
+  --color-red-600: #e7000b;
+  --color-rose-500: #ff2056;
+  --color-sky-600: #0084d1;
+  --color-slate-300: #cad5e2;
+  --color-slate-400: #90a1b9;
+  --color-slate-500: #62748e;
+  --color-slate-600: #45556c;
+  --color-slate-700: #314158;
+  --color-slate-800: #1d293d;
+  --color-slate-900: #0f172b;
+  --color-tangerine-9: #fd5400;
+  --color-white: #ffffff;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-300: #d4d4d8;
+  --color-zinc-400: #9f9fa9;
+  --size-container-2xl: 42rem;
+  --size-container-3xl: 48rem;
+  --size-container-4xl: 56rem;
+  --size-container-5xl: 64rem;
+  --size-container-6xl: 72rem;
+  --size-container-lg: 32rem;
+  --size-container-md: 28rem;
+  --size-container-sm: 24rem;
+  --size-container-xl: 36rem;
+  --size-container-xs: 20rem;
+  --breakpoint-2xl: 96rem;
+  --breakpoint-xl: 80rem;
+  --radius-xl: 14px;
+  --radius-xs: .125rem;
+  --radius-default: .625rem;
+  --radius-badge: 6px;
+  --radius-chip: 18px;
+  --radius-card-sm: 20px;
+  --radius-card: 24px;
+  --radius-button: 26px;
+  --radius-flip: 28px;
+  --radius-pill: calc(infinity * 1px);
+  --duration-enter: 0.14s;
+  --duration-exit: 0.09s;
+  --duration-move: 0.22s;
+  --easing-in: cubic-bezier(0.4, 0.0, 1.0, 1.0);
+  --easing-in-out: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --easing-in-out-quart: cubic-bezier(0.77, 0.0, 0.175, 1.0);
+  --easing-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --easing-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1.0);
+  --easing-out-quint: cubic-bezier(0.23, 1.0, 0.32, 1.0);
+  --motion-arrive: arrive .3s cubic-bezier(.23,1,.32,1).15s backwards;
+  --motion-lean-in-left: lean-in-left 1.4s cubic-bezier(.65,0,.35,1)infinite;
+  --motion-lean-in-right: lean-in-right 1.4s cubic-bezier(.65,0,.35,1)infinite;
+  --motion-ping: ping 1s cubic-bezier(0,0,.2,1)infinite;
+  --motion-pulse: pulse 2s cubic-bezier(.4,0,.6,1)infinite;
+  --motion-spin: spin 1s linear infinite;
+  --motion-typing-dot: typing-dot 1s linear infinite;
+  --motion-typing-dot-wave: typing-dot-wave 1.7s ease-in-out infinite;
+  --motion-control: color, background-color, border-color, box-shadow, transform, opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1);
+  --blur-2xl: 40px;
+  --blur-3xl: 64px;
+  --blur-md: 12px;
+  --blur-sm: 8px;
+  --blur-xl: 24px;
+  --blur-xs: 4px;
+  --zIndex-dropdown: 100;
+  --zIndex-modal: 200;
+  --zIndex-toast: 400;
+  --zIndex-tooltip: 300;
+  --default-transition-duration: 0.15s;
+  --default-transition-timing-function: cubic-bezier(.4,0,.2,1);
+  --shadow-drop-sm: rgba(0, 0, 0, 0.15) 0px 1px 2px 0px;
+  --shadow-dialog: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.243135 -0.000696592 0.00753608 / 0.05) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px;
+  --aspect-video: 16/9;
+  --border-hairline-width: 1px;
+  --destructive: #e5484d;
+  --dock-rest: 0px;
+  --head-climb: 0px;
+  --info: #0090ff;
+  --person-preview-fade-bottom: 0px;
+  --person-preview-fade-top: 0px;
+  --quote-glow: 1;
+  --silk-100-lvh-dvh-pct: 900px;
+  --spacing: .25rem;
+  --success: #30a46c;
+  --warning: #ffc53d;
+  --component-topbar-height: 64px;
+  --component-logo-width: 91.5px;
+  --component-search-field-width: 624px;
+  --component-query-field-width: 664px;
+  --component-dialog-width: 448px;
+  --component-dialog-button-width: 400px;
+  --component-topic-card-width: 346.66px;
+  --component-flip-card-width: 272px;
+  --component-expert-card-width: 672px;
+  --component-chat-input-width: 592px;
+  --component-send-size: 48px;
+  --component-scroll-pill: 30.4px;
+  --component-portrait: 110px;
+  --component-mobile-topbar-height: 64px;
+  --accent-default: #f9f9f8;
+  --accent-foreground: #21201c;
+  --color-amber-1: #fefdfb;
+  --color-amber-10: #ffba18;
+  --color-amber-11: #ab6400;
+  --color-amber-12: #4f3422;
+  --color-amber-2: #fefbe9;
+  --color-amber-3: #fff7c2;
+  --color-amber-4: #ffee9c;
+  --color-amber-5: #fbe577;
+  --color-amber-6: #f3d673;
+  --color-amber-7: #e9c162;
+  --color-amber-8: #e2a336;
+  --color-amber-9: #ffc53d;
+  --color-blue-1: #fbfdff;
+  --color-blue-10: #0588f0;
+  --color-blue-11: #0d74ce;
+  --color-blue-12: #113264;
+  --color-blue-2: #f4faff;
+  --color-blue-3: #e6f4fe;
+  --color-blue-4: #d5efff;
+  --color-blue-5: #c2e5ff;
+  --color-blue-6: #acd8fc;
+  --color-blue-7: #8ec8f6;
+  --color-blue-8: #5eb1ef;
+  --color-blue-9: #0090ff;
+  --color-brown-1: #fefdfc;
+  --color-brown-10: #a07553;
+  --color-brown-11: #815e46;
+  --color-brown-12: #3e332e;
+  --color-brown-2: #fcf9f6;
+  --color-brown-3: #f6eee7;
+  --color-brown-4: #f0e4d9;
+  --color-brown-5: #ebdaca;
+  --color-brown-6: #e4cdb7;
+  --color-brown-7: #dcbc9f;
+  --color-brown-8: #cea37e;
+  --color-brown-9: #ad7f58;
+  --color-tangerine-3-default: #ffe4d9;
+  --color-tangerine-3-oklch: .94 .036 42;
+  --color-tangerine-1-oklch: .99 .0096 42;
+  --color-tangerine-10-oklch: .6 .21 42;
+  --color-tangerine-11-oklch: .5 .18 42;
+  --color-tangerine-12-oklch: .4 .14 42;
+  --color-tangerine-2-oklch: .97 .0192 42;
+  --color-tangerine-4-oklch: .9 .06 42;
+  --color-tangerine-5-oklch: .85 .096 42;
+  --color-tangerine-6-oklch: .79 .132 42;
+  --color-tangerine-7-oklch: .72 .18 42;
+  --color-tangerine-8-oklch: .68 .21 42;
+  --color-tangerine-9-oklch: .67 .22 42;
+  --color-crimson-1: #fffcfd;
+  --color-crimson-10: #df3478;
+  --color-crimson-11: #cb1d63;
+  --color-crimson-12: #621639;
+  --color-crimson-2: #fef7f9;
+  --color-crimson-3: #ffe9f0;
+  --color-crimson-4: #fedce7;
+  --color-crimson-5: #facedd;
+  --color-crimson-6: #f3bed1;
+  --color-crimson-7: #eaacc3;
+  --color-crimson-8: #e093b2;
+  --color-crimson-9: #e93d82;
+  --color-cyan-1: #fafdfe;
+  --color-cyan-10: #0797b9;
+  --color-cyan-11: #107d98;
+  --color-cyan-12: #0d3c48;
+  --color-cyan-2: #f2fafb;
+  --color-cyan-3: #def7f9;
+  --color-cyan-4: #caf1f6;
+  --color-cyan-5: #b5e9f0;
+  --color-cyan-6: #9ddde7;
+  --color-cyan-7: #7dcedc;
+  --color-cyan-8: #3db9cf;
+  --color-cyan-9: #00a2c7;
+  --color-gold-1: #fdfdfc;
+  --color-gold-10: #8c7a5e;
+  --color-gold-11: #71624b;
+  --color-gold-12: #3b352b;
+  --color-gold-2: #faf9f2;
+  --color-gold-3: #f2f0e7;
+  --color-gold-4: #eae6db;
+  --color-gold-5: #e1dccf;
+  --color-gold-6: #d8d0bf;
+  --color-gold-7: #cbc0aa;
+  --color-gold-8: #b9a88d;
+  --color-gold-9: #978365;
+  --color-grass-1: #fbfefb;
+  --color-grass-10: #3e9b4f;
+  --color-grass-11: #2a7e3b;
+  --color-grass-12: #203c25;
+  --color-grass-2: #f5fbf5;
+  --color-grass-3: #e9f6e9;
+  --color-grass-4: #daf1db;
+  --color-grass-5: #c9e8ca;
+  --color-grass-6: #b2ddb5;
+  --color-grass-7: #94ce9a;
+  --color-grass-8: #65ba74;
+  --color-grass-9: #46a758;
+  --color-green-1: #fbfefc;
+  --color-green-10: #2b9a66;
+  --color-green-11: #218358;
+  --color-green-12: #193b2d;
+  --color-green-2: #f4fbf6;
+  --color-green-3: #e6f6eb;
+  --color-green-4: #d6f1df;
+  --color-green-5: #c4e8d1;
+  --color-green-6: #adddc0;
+  --color-green-7: #8eceaa;
+  --color-green-8: #5bb98b;
+  --color-green-9: #30a46c;
+  --color-indigo-1: #fdfdfe;
+  --color-indigo-10: #3358d4;
+  --color-indigo-11: #3a5bc7;
+  --color-indigo-12: #1f2d5c;
+  --color-indigo-2: #f7f9ff;
+  --color-indigo-3: #edf2fe;
+  --color-indigo-4: #e1e9ff;
+  --color-indigo-5: #d2deff;
+  --color-indigo-6: #c1d0ff;
+  --color-indigo-7: #abbdf9;
+  --color-indigo-8: #8da4ef;
+  --color-indigo-9: #3e63dd;
+  --color-jade-1: #fbfefd;
+  --color-jade-10: #26997b;
+  --color-jade-11: #208368;
+  --color-jade-12: #1d3b31;
+  --color-jade-2: #f4fbf7;
+  --color-jade-3: #e6f7ed;
+  --color-jade-4: #d6f1e3;
+  --color-jade-5: #c3e9d7;
+  --color-jade-6: #acdec8;
+  --color-jade-7: #8bceb6;
+  --color-jade-8: #56ba9f;
+  --color-jade-9: #29a383;
+  --color-plum-1: #fefcff;
+  --color-plum-10: #a144af;
+  --color-plum-11: #953ea3;
+  --color-plum-12: #53195d;
+  --color-plum-2: #fdf7fd;
+  --color-plum-3: #fbebfb;
+  --color-plum-4: #f7def8;
+  --color-plum-5: #f2d1f3;
+  --color-plum-6: #e9c2ec;
+  --color-plum-7: #deade3;
+  --color-plum-8: #cf91d8;
+  --color-plum-9: #ab4aba;
+  --color-red-1: #fffcfc;
+  --color-red-10: #dc3e42;
+  --color-red-11: #ce2c31;
+  --color-red-12: #641723;
+  --color-red-2: #fff7f7;
+  --color-red-3: #feebec;
+  --color-red-4: #ffdbdc;
+  --color-red-5: #ffcdce;
+  --color-red-6: #fdbdbe;
+  --color-red-7: #f4a9aa;
+  --color-red-8: #eb8e90;
+  --color-red-9: #e5484d;
+  --color-ruby-1: #fffcfd;
+  --color-ruby-10: #dc3b5d;
+  --color-ruby-11: #ca244d;
+  --color-ruby-12: #64172b;
+  --color-ruby-2: #fff7f8;
+  --color-ruby-3: #feeaed;
+  --color-ruby-4: #ffdce1;
+  --color-ruby-5: #ffced6;
+  --color-ruby-6: #f8bfc8;
+  --color-ruby-7: #efacb8;
+  --color-ruby-8: #e592a3;
+  --color-ruby-9: #e54666;
+  --color-sand-1: #fdfdfc;
+  --color-sand-10: #82827c;
+  --color-sand-11: #63635e;
+  --color-sand-12: #21201c;
+  --color-sand-2: #f9f9f8;
+  --color-sand-3: #f1f0ef;
+  --color-sand-4: #e9e8e6;
+  --color-sand-5: #e2e1de;
+  --color-sand-6: #dad9d6;
+  --color-sand-7: #cfceca;
+  --color-sand-8: #bcbbb5;
+  --color-sand-9: #8d8d86;
+  --color-teal-1: #fafefd;
+  --color-teal-10: #0d9b8a;
+  --color-teal-11: #008573;
+  --color-teal-12: #0d3d38;
+  --color-teal-2: #f3fbf9;
+  --color-teal-3: #e0f8f3;
+  --color-teal-4: #ccf3ea;
+  --color-teal-5: #b8eae0;
+  --color-teal-6: #a1ded2;
+  --color-teal-7: #83cdc1;
+  --color-teal-8: #53b9ab;
+  --color-teal-9: #12a594;
+  --color-tomato-1: #fffcfc;
+  --color-tomato-10: #dd4425;
+  --color-tomato-11: #d13415;
+  --color-tomato-12: #5c271f;
+  --color-tomato-2: #fff8f7;
+  --color-tomato-3: #feebe7;
+  --color-tomato-4: #ffdcd3;
+  --color-tomato-5: #ffcdc2;
+  --color-tomato-6: #fdbdaf;
+  --color-tomato-7: #f5a898;
+  --color-tomato-8: #ec8e7b;
+  --color-tomato-9: #e54d2e;
+  --color-violet-1: #fdfcfe;
+  --color-violet-10: #654dc4;
+  --color-violet-11: #6550b9;
+  --color-violet-12: #2f265f;
+  --color-violet-2: #faf8ff;
+  --color-violet-3: #f4f0fe;
+  --color-violet-4: #ebe4ff;
+  --color-violet-5: #e1d9ff;
+  --color-violet-6: #d4cafe;
+  --color-violet-7: #c2b5f5;
+  --color-violet-8: #aa99ec;
+  --color-violet-9: #6e56cf;
+  --color-yellow-1: #fdfdf9;
+  --color-yellow-10: #ffdc00;
+  --color-yellow-11: #9e6c00;
+  --color-yellow-12: #473b1f;
+  --color-yellow-2: #fefce9;
+  --color-yellow-3: #fffab8;
+  --color-yellow-4: #fff394;
+  --color-yellow-5: #ffe770;
+  --color-yellow-6: #f3d768;
+  --color-yellow-7: #e4c767;
+  --color-yellow-8: #d5ae39;
+  --color-yellow-9: #ffe629;
+  --avatar-shadow-default: rgba(0, 0, 0, 0.1) 0px 32.25px 32.25px 0px, rgba(0, 0, 0, 0.1) 0px 17.2px 17.2px -8.6px, rgba(0, 0, 0, 0.03) 0px 8.6px 8.6px -4.3px, rgba(0, 0, 0, 0.05) 0px 4.3px 4.3px -2.15px, rgba(0, 0, 0, 0.05) 0px 1.075px 1.075px -0.538px, rgba(255, 255, 255, 0.5) 0px 2px 4px 0px inset, rgba(255, 255, 255, 0.4) 0px -2px 4px 0px inset;
+  --avatar-shadow-inset: rgba(255, 255, 255, 0.5) 0px 2px 4px 0px inset, rgba(255, 255, 255, 0.4) 0px -2px 4px 0px inset;
+  --background-default: #ffffff;
+  --background-page: var(--background-default);
+  --background-card: var(--card-default);
+  --background-warm: #f7f3f0;
+  --background-chip: var(--input);
+  --background-badge: rgba(33, 32, 28, 0.06);
+  --border-default: #dad9d6;
+  --border-hairline: rgba(33, 32, 28, 0.09);
+  --border-card-border: rgba(141, 141, 134, 0.2);
+  --border-focus: var(--ring);
+  --brand-accent: #fd5400;
+  --bubble-accent: #fd5400;
+  --card-default: #ffffff;
+  --card-foreground: #21201c;
+  --chart-1: #fd5400;
+  --chart-2: #8d8d86;
+  --chart-3: #cfceca;
+  --chart-4: #e2e1de;
+  --chart-5: #fe773d;
+  --fg-error: #dc3e42;
+  --fg-high: #21201c;
+  --fg-info: #0d74ce;
+  --fg-inverted: #ffffff;
+  --fg-low: #82827c;
+  --fg-mid: #63635e;
+  --fg-placeholder: #bcbbb5;
+  --fg-success: #218358;
+  --fg-warning: #ab6400;
+  --foreground-default: #21201c;
+  --input: rgba(141, 141, 134, 0.1);
+  --mind-eternal: #000000;
+  --mind-expert: #7c009e;
+  --mind-legendary: #c79041;
+  --mind-master: #4e7daa;
+  --mind-novice: #ff5a01;
+  --mind-sage: #17572b;
+  --mind-skilled: #e52310;
+  --muted-default: #f9f9f8;
+  --muted-foreground: #63635e;
+  --overlay: #ffffff;
+  --popover-default: #ffffff;
+  --popover-foreground: #21201c;
+  --primary-default: #21201c;
+  --primary-foreground: #ffffff;
+  --ring: #fd5400;
+  --secondary-default: #f9f9f8;
+  --secondary-foreground: #21201c;
+  --sidebar-default: #f9f9f8;
+  --sidebar-accent-default: #f9f9f8;
+  --sidebar-accent-foreground: #21201c;
+  --sidebar-border: #dad9d6;
+  --sidebar-foreground: #21201c;
+  --sidebar-primary-default: #21201c;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-ring: #fd5400;
+  --surface-primary: #ffffff;
+  --surface-secondary: #f9f9f8;
+  --text-ink: var(--fg-high);
+  --text-mid: var(--fg-mid);
+  --text-low: var(--fg-low);
+  --text-strong: #161615;
+  --text-on-dark: #f0eae4;
+  --action-accent: var(--brand-accent);
+  --action-accent-fg: var(--primary-foreground);
+  --action-dark-button: var(--primary-default);
+  --action-share: rgba(33, 32, 28, 0.1);
+  --sg-sans: "Delphi Inter", Inter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Delphi Pythia", Georgia, ui-serif, "Times New Roman", serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --accent-default: #191918;
+  --accent-foreground: #eeeeec;
+  --color-amber-1: #16120c;
+  --color-amber-10: #ffd60a;
+  --color-amber-11: #ffca16;
+  --color-amber-12: #ffe7b3;
+  --color-amber-2: #1d180f;
+  --color-amber-3: #302008;
+  --color-amber-4: #3f2700;
+  --color-amber-5: #4d3000;
+  --color-amber-6: #5c3d05;
+  --color-amber-7: #714f19;
+  --color-amber-8: #8f6424;
+  --color-amber-9: #ffc53d;
+  --color-blue-1: #0d1520;
+  --color-blue-10: #3b9eff;
+  --color-blue-11: #70b8ff;
+  --color-blue-12: #c2e6ff;
+  --color-blue-2: #111927;
+  --color-blue-3: #0d2847;
+  --color-blue-4: #003362;
+  --color-blue-5: #004074;
+  --color-blue-6: #104d87;
+  --color-blue-7: #205d9e;
+  --color-blue-8: #2870bd;
+  --color-blue-9: #0090ff;
+  --color-brown-1: #12110f;
+  --color-brown-10: #b88c67;
+  --color-brown-11: #dbb594;
+  --color-brown-12: #f2e1ca;
+  --color-brown-2: #1c1816;
+  --color-brown-3: #28211d;
+  --color-brown-4: #322922;
+  --color-brown-5: #3e3128;
+  --color-brown-6: #4d3c2f;
+  --color-brown-7: #614a39;
+  --color-brown-8: #7c5f46;
+  --color-brown-9: #ad7f58;
+  --color-tangerine-3-default: #331104;
+  --color-tangerine-3-oklch: .23 .06 42;
+  --color-tangerine-1-oklch: .15 .014 42;
+  --color-tangerine-10-oklch: .74 .2 42;
+  --color-tangerine-11-oklch: .82 .16 42;
+  --color-tangerine-12-oklch: .92 .07 60;
+  --color-tangerine-2-oklch: .18 .026 42;
+  --color-tangerine-4-oklch: .27 .09 42;
+  --color-tangerine-5-oklch: .31 .12 42;
+  --color-tangerine-6-oklch: .36 .14 42;
+  --color-tangerine-7-oklch: .43 .17 42;
+  --color-tangerine-8-oklch: .55 .2 42;
+  --color-tangerine-9-oklch: .67 .22 42;
+  --color-crimson-1: #191114;
+  --color-crimson-10: #ee518a;
+  --color-crimson-11: #ff92ad;
+  --color-crimson-12: #fdd3e8;
+  --color-crimson-2: #201318;
+  --color-crimson-3: #381525;
+  --color-crimson-4: #4d122f;
+  --color-crimson-5: #5c1839;
+  --color-crimson-6: #6d2545;
+  --color-crimson-7: #873356;
+  --color-crimson-8: #b0436e;
+  --color-crimson-9: #e93d82;
+  --color-cyan-1: #0b161a;
+  --color-cyan-10: #23afd0;
+  --color-cyan-11: #4ccce6;
+  --color-cyan-12: #b6ecf7;
+  --color-cyan-2: #101b20;
+  --color-cyan-3: #082c36;
+  --color-cyan-4: #003848;
+  --color-cyan-5: #004558;
+  --color-cyan-6: #045468;
+  --color-cyan-7: #12677e;
+  --color-cyan-8: #11809c;
+  --color-cyan-9: #00a2c7;
+  --color-gold-1: #121211;
+  --color-gold-10: #a39073;
+  --color-gold-11: #cbb99f;
+  --color-gold-12: #e8e2d9;
+  --color-gold-2: #1b1a17;
+  --color-gold-3: #24231f;
+  --color-gold-4: #2d2b26;
+  --color-gold-5: #38352e;
+  --color-gold-6: #444039;
+  --color-gold-7: #544f46;
+  --color-gold-8: #696256;
+  --color-gold-9: #978365;
+  --color-grass-1: #0e1511;
+  --color-grass-10: #53b365;
+  --color-grass-11: #71d083;
+  --color-grass-12: #c2f0c2;
+  --color-grass-2: #141a15;
+  --color-grass-3: #1b2a1e;
+  --color-grass-4: #1d3a24;
+  --color-grass-5: #25482d;
+  --color-grass-6: #2d5736;
+  --color-grass-7: #366740;
+  --color-grass-8: #3e7949;
+  --color-grass-9: #46a758;
+  --color-green-1: #0e1512;
+  --color-green-10: #33b074;
+  --color-green-11: #3dd68c;
+  --color-green-12: #b1f1cb;
+  --color-green-2: #121b17;
+  --color-green-3: #132d21;
+  --color-green-4: #113b29;
+  --color-green-5: #174933;
+  --color-green-6: #20573e;
+  --color-green-7: #28684a;
+  --color-green-8: #2f7c57;
+  --color-green-9: #30a46c;
+  --color-indigo-1: #11131f;
+  --color-indigo-10: #5472e4;
+  --color-indigo-11: #9eb1ff;
+  --color-indigo-12: #d6e1ff;
+  --color-indigo-2: #141726;
+  --color-indigo-3: #182449;
+  --color-indigo-4: #1d2e62;
+  --color-indigo-5: #253974;
+  --color-indigo-6: #304384;
+  --color-indigo-7: #3a4f97;
+  --color-indigo-8: #435db1;
+  --color-indigo-9: #3e63dd;
+  --color-jade-1: #0d1512;
+  --color-jade-10: #27b08b;
+  --color-jade-11: #1fd8a4;
+  --color-jade-12: #adf0d4;
+  --color-jade-2: #121c18;
+  --color-jade-3: #0f2e22;
+  --color-jade-4: #0b3b2c;
+  --color-jade-5: #114837;
+  --color-jade-6: #1b5745;
+  --color-jade-7: #246854;
+  --color-jade-8: #2a7e68;
+  --color-jade-9: #29a383;
+  --color-plum-1: #181118;
+  --color-plum-10: #b658c4;
+  --color-plum-11: #e796f3;
+  --color-plum-12: #f4d4f4;
+  --color-plum-2: #201320;
+  --color-plum-3: #351a35;
+  --color-plum-4: #451d47;
+  --color-plum-5: #512454;
+  --color-plum-6: #5e3061;
+  --color-plum-7: #734079;
+  --color-plum-8: #92549c;
+  --color-plum-9: #ab4aba;
+  --color-red-1: #191111;
+  --color-red-10: #ec5d5e;
+  --color-red-11: #ff9592;
+  --color-red-12: #ffd1d9;
+  --color-red-2: #201314;
+  --color-red-3: #3b1219;
+  --color-red-4: #500f1c;
+  --color-red-5: #611623;
+  --color-red-6: #72232d;
+  --color-red-7: #8c333a;
+  --color-red-8: #b54548;
+  --color-red-9: #e5484d;
+  --color-ruby-1: #191113;
+  --color-ruby-10: #ec5a72;
+  --color-ruby-11: #ff949d;
+  --color-ruby-12: #fed2e1;
+  --color-ruby-2: #1e1517;
+  --color-ruby-3: #3a141e;
+  --color-ruby-4: #4e1325;
+  --color-ruby-5: #5e1a2e;
+  --color-ruby-6: #6f2539;
+  --color-ruby-7: #883447;
+  --color-ruby-8: #b3445a;
+  --color-ruby-9: #e54666;
+  --color-sand-1: #111110;
+  --color-sand-10: #7c7b74;
+  --color-sand-11: #b5b3ad;
+  --color-sand-12: #eeeeec;
+  --color-sand-2: #191918;
+  --color-sand-3: #222221;
+  --color-sand-4: #2a2a28;
+  --color-sand-5: #31312e;
+  --color-sand-6: #3b3a37;
+  --color-sand-7: #494844;
+  --color-sand-8: #62605b;
+  --color-sand-9: #6f6d66;
+  --color-teal-1: #0d1514;
+  --color-teal-10: #0eb39e;
+  --color-teal-11: #0bd8b6;
+  --color-teal-12: #adf0dd;
+  --color-teal-2: #111c1b;
+  --color-teal-3: #0d2d2a;
+  --color-teal-4: #023b37;
+  --color-teal-5: #084843;
+  --color-teal-6: #145750;
+  --color-teal-7: #1c6961;
+  --color-teal-8: #207e73;
+  --color-teal-9: #12a594;
+  --color-tomato-1: #181111;
+  --color-tomato-10: #ec6142;
+  --color-tomato-11: #ff977d;
+  --color-tomato-12: #fbd3cb;
+  --color-tomato-2: #1f1513;
+  --color-tomato-3: #391714;
+  --color-tomato-4: #4e1511;
+  --color-tomato-5: #5e1c16;
+  --color-tomato-6: #6e2920;
+  --color-tomato-7: #853a2d;
+  --color-tomato-8: #ac4d39;
+  --color-tomato-9: #e54d2e;
+  --color-violet-1: #14121f;
+  --color-violet-10: #7d66d9;
+  --color-violet-11: #baa7ff;
+  --color-violet-12: #e2ddfe;
+  --color-violet-2: #1b1525;
+  --color-violet-3: #291f43;
+  --color-violet-4: #33255b;
+  --color-violet-5: #3c2e69;
+  --color-violet-6: #473876;
+  --color-violet-7: #56468b;
+  --color-violet-8: #6958ad;
+  --color-violet-9: #6e56cf;
+  --color-yellow-1: #14120b;
+  --color-yellow-10: #ffff57;
+  --color-yellow-11: #f5e147;
+  --color-yellow-12: #f6eeb4;
+  --color-yellow-2: #1b180f;
+  --color-yellow-3: #2d2305;
+  --color-yellow-4: #362b00;
+  --color-yellow-5: #433500;
+  --color-yellow-6: #524202;
+  --color-yellow-7: #665417;
+  --color-yellow-8: #836a21;
+  --color-yellow-9: #ffe629;
+  --avatar-shadow-default: rgba(0, 0, 0, 0.2) 0px 32.25px 32.25px 0px, rgba(0, 0, 0, 0.15) 0px 17.2px 17.2px -8.6px, rgba(0, 0, 0, 0.1) 0px 8.6px 8.6px -4.3px, rgba(0, 0, 0, 0.08) 0px 4.3px 4.3px -2.15px, rgba(0, 0, 0, 0.05) 0px 1.075px 1.075px -0.538px, rgba(255, 255, 255, 0.05) 0px 2px 4px 0px inset, rgba(255, 255, 255, 0.03) 0px -2px 4px 0px inset;
+  --avatar-shadow-inset: rgba(255, 255, 255, 0.15) 0px 2px 4px 0px inset, rgba(255, 255, 255, 0.1) 0px -2px 4px 0px inset;
+  --background-default: #1e1e1d;
+  --border-default: #3b3a37;
+  --brand-accent: #ff7530;
+  --bubble-accent: #ca3400;
+  --card-default: #1e1e1d;
+  --card-foreground: #eeeeec;
+  --chart-1: #ff9e6d;
+  --chart-2: #6f6d66;
+  --chart-3: #494844;
+  --chart-4: #31312e;
+  --chart-5: #fd5400;
+  --fg-error: #ec5d5e;
+  --fg-high: #eeeeec;
+  --fg-info: #70b8ff;
+  --fg-inverted: #000000;
+  --fg-low: #7c7b74;
+  --fg-mid: #b5b3ad;
+  --fg-placeholder: #62605b;
+  --fg-success: #3dd68c;
+  --fg-warning: #ffca16;
+  --foreground-default: #eeeeec;
+  --input: rgba(111, 109, 102, 0.1);
+  --mind-eternal: #66a3b8;
+  --mind-expert: #b366cc;
+  --mind-legendary: #e6b973;
+  --mind-master: #7da3cc;
+  --mind-novice: #ffb366;
+  --mind-sage: #4a8a5c;
+  --mind-skilled: #ff7a66;
+  --muted-default: #191918;
+  --muted-foreground: #b5b3ad;
+  --overlay: #1e1e1d;
+  --popover-default: #1e1e1d;
+  --popover-foreground: #eeeeec;
+  --primary-default: #eeeeec;
+  --primary-foreground: #000000;
+  --ring: #ff9e6d;
+  --secondary-default: #191918;
+  --secondary-foreground: #eeeeec;
+  --sidebar-default: #191918;
+  --sidebar-accent-default: #191918;
+  --sidebar-accent-foreground: #eeeeec;
+  --sidebar-border: #3b3a37;
+  --sidebar-foreground: #eeeeec;
+  --sidebar-primary-default: #eeeeec;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-ring: #ff9e6d;
+  --surface-primary: #1e1e1d;
+  --surface-secondary: #191918;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); background: var(--color-neutral-paper, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, #ddd); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #000); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, #ddd); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #000); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-hairline, #ddd); overflow: hidden; background: var(--color-neutral-paper, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 64px); padding: 0 12px 0 22px; font-size: 15px; color: var(--text-ink, #21201c); background: var(--background-page, #fff); }
+.navbar .wm { font-weight: 800; font-size: 24px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 24px; font-size: 16px; font-weight: 700; border-radius: var(--radius-button, 26px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-accent, #a238ff); color: #fff; }
+.btn.dark { background: var(--action-dark-button, #121216); color: var(--text-on-dark, #fdfcfe); }
+.btn.small { height: 34px; border-radius: var(--radius-chip, 18px); font-size: 13px; font-weight: 600; }
+.hero { color: var(--text-ink, #21201c); padding: 72px 40px; font: 500 50px/1.1 var(--sg-serif); letter-spacing: .01em; text-align: center; background: var(--background-page, #fff); }
+.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--text-mid, #63635e); margin: 16px auto 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 14px; font-size: 13px; background: #fff; }
+.tile .img { height: 140px; background: #ddd; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 400 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #000); opacity: .65; font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: var(--background-chip, rgba(33,32,28,.06)); border-radius: 999px; padding: 4px; gap: 4px; font-size: 15px; color: var(--text-ink, #21201c); }
+.toggle span { padding: 8px 22px; border-radius: 999px; }
+.toggle .on { background: var(--action-accent, #fd5400); color: #fff; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Delphi style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Delphi, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared token layer (the Radix-style 12-step palette scales, the shadcn-style <code>--background</code>/<code>--card</code>/<code>--primary</code>/<code>--ring</code> semantics and Delphi's <code>--fg-*</code>/<code>--surface-*</code>/<code>--mind-*</code>/<code>--brand-accent</code> roles) plus the theme-invariant Tailwind scales, Delphi Inter next to the Pythia display face, the measured 50-10px type ramp, the 26px pills and 24px cards, and the #fd5400 brand accent. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from www.delphi.co on 2026-11-14, signed out, in headless Chromium (delphi.ai redirects to delphi.co). Everything behind an account — creating a clone, saving, personalising — is a documented boundary; the Sign-In and onboarding dialogs were measured, never submitted, and no chat message was ever sent. Delphi Inter, Delphi Pythia and Delphi Geist Mono are served faces and are not loaded here: samples fall back to system fonts.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The public top bar carries the Delphi wordmark, muted topic pills, a Sign In link and the #fd5400 Create Your Delphi pill over a white field. The hero is a 50px Pythia display over the ask-anything field.</p>
+  <div class="mock" style="padding:20px">
+    <div class="navbar"><span class="wm">Delphi</span><span>Productivity</span><span>Entrepreneurship</span><span class="sp"></span><span>Sign In</span><span class="btn small" style="background:var(--action-accent,#fd5400);color:#fff;border-radius:var(--radius-button,26px)">Create Your Delphi</span></div>
+    <div class="hero" style="font-family:var(--sg-serif)">Ask The World&#8217;s Experts<small>Describe your situation and Delphi finds the expert who has been there.</small><span class="btn" style="height:52px;border-radius:var(--radius-button,26px);background:#fff;border:1px solid var(--border-default,#dad9d6);color:var(--text-mid,#63635e);padding:0 20px;font-size:18px">Describe your situation&#8230;</span></div>
+  </div>
+
+  <h2 class="sh">Search results</h2>
+  <p class="lead">Public /search/&lt;question&gt; pages paint white result cards on the light field: portrait, Pythia name, credential badges on a ~6% ink fill, a quoted perspective, then Save and the orange Expand pill.</p>
+  <div class="mock" style="padding:20px">
+    <div class="tile" style="border-radius:var(--radius-button,26px);background:var(--background-card,#fff);border:1px solid var(--border-card-border,rgba(141,141,134,.2));color:var(--text-ink,#21201c)">
+      <b style="font-family:var(--sg-serif)">taylor desseyn</b>
+      <span class="sub" style="color:var(--text-mid,#63635e)">Built a 90,000-person developer community at Torc</span>
+      <span class="sub" style="display:inline-block;margin-top:8px;padding:3px 8px;border-radius:var(--radius-badge,6px);background:var(--background-badge,rgba(33,32,28,.06));font-size:10px;font-family:var(--sg-serif);letter-spacing:.04em;color:var(--text-mid,#63635e)">VP OF GLOBAL COMMUNITY AT TORC</span>
+      <span class="sub" style="display:block;margin-top:8px;padding:10px 14px;border-radius:12px;background:rgba(33,32,28,.05);color:var(--text-ink,#21201c);font-style:italic">&#8220;Don&#8217;t wait for the perfect group chat or the big event&#8230;&#8221;</span>
+      <span style="display:block;margin-top:12px"><span class="btn" style="height:36px;border-radius:var(--radius-button,26px);border:1px solid var(--border-default,#dad9d6);background:#fff;color:var(--text-mid,#63635e);padding:0 16px;font-size:14px">Save</span> <span class="btn" style="height:36px;border-radius:var(--radius-button,26px);background:var(--action-accent,#fd5400);color:#fff;padding:0 16px;font-size:14px">Expand &#8594;</span></span>
+    </div>
+  </div>
+
+  <h2 class="sh">The chat surface</h2>
+  <p class="lead">The public /&lt;expert&gt;/chat surface: a greeting line, suggested-question chips on the ~10% ink fill, and a bordered composer whose orange send button only renders once text is in the field.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile" style="border-radius:var(--radius-chip,18px);background:var(--background-chip,rgba(33,32,28,.1));border:none;color:var(--text-ink,#21201c)"><b style="color:var(--text-ink,#21201c)">What are you building right now?</b><span class="sub" style="color:var(--text-mid,#63635e)">suggested question</span></div>
+      <div class="tile" style="border-radius:var(--radius-card,24px);background:var(--background-warm,#f7f3f0);border:none;color:var(--text-ink,#21201c)"><b style="color:var(--text-ink,#21201c)">How do I find a co-founder?</b><span class="sub" style="color:var(--text-mid,#63635e)">ask card</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn" style="height:52px;border-radius:var(--radius-button,26px);background:#fff;border:1px solid var(--border-hairline,rgba(33,32,28,.09));color:var(--text-low,#82827c);padding:0 18px;font-size:18px">Send a message&#8230;</span> <span class="btn" style="width:48px;height:48px;border-radius:var(--radius-pill,9999px);background:var(--action-accent,#fd5400);color:#fff;font-size:18px">&#8593;</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared layer carries the Radix-style 12-step palette scales (<code>--sand-*</code>, <code>--tangerine-*</code>, the accent ramps) per theme under color.*; the shadcn semantic names (<code>--background</code>, <code>--card</code>, <code>--primary</code>, <code>--ring</code>) and Delphi's <code>--fg-*</code>/<code>--surface-*</code>/<code>--mind-*</code>/<code>--brand-accent</code> roles resolve per theme in the light and dark sets. Measured roles alias the declared values they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Buttons and the dialog are 26px pills, cards 24px (topic/gallery) and 20px (mobile/experience), chips 18px, badges 6px; nav pills and round buttons are full pills (calc(infinity * 1px)). Borders are translucent ink hairlines (~9-20% ink), with #dad9d6 declared on inputs.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Served faces: <code>Delphi Inter</code> on every UI control, <code>Delphi Pythia</code> on display headings, quoted perspectives and credential badges, <code>Delphi Geist Mono</code> declared but not exercised on the public surface. Sizes are the measured steps; samples fall back to system fonts.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared variables from the live stylesheets (425 resolved per theme) and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"ui":{"v":"\"Delphi Inter\", \"Delphi Inter Fallback\", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif","t":"fontFamily","s":"computed fontFamily of chat-input default (raw/components-computed.json)","d":"Delphi Inter — every UI control, body and meta text."},"display":{"v":"\"Delphi Pythia\", \"Delphi Pythia Fallback\", ui-serif, Georgia, \"Times New Roman\", serif","t":"fontFamily","s":"computed fontFamily of hero-h1 default (raw/components-computed.json)","d":"Delphi Pythia — the serif display face (hero 50px, names 34px, quotes 18px, badges 10px)."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of chat-input default (raw/components-computed.json)","d":"400 — body and field text."},"book":{"v":450,"t":"fontWeight","s":"computed fontWeight of share-btn default (raw/components-computed.json)","d":"450 — the profile Share pill."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of signin-btn default (raw/components-computed.json)","d":"500 — pill buttons, chips and card actions."},"semibold":{"v":600,"t":"fontWeight","s":"computed fontWeight of exp-name default (raw/components-computed.json)","d":"600 — expert names and credential badges."},"declared":{"bold":{"v":700,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-bold","d":"The declared `--font-weight-bold`."},"light":{"v":300,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-light","d":"The declared `--font-weight-light`."},"medium":{"v":500,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-medium","d":"The declared `--font-weight-medium`."},"normal":{"v":400,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-normal","d":"The declared `--font-weight-normal`."},"semibold":{"v":600,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-semibold","d":"The declared `--font-weight-semibold`."}}},"size":{"2xl":{"v":"1.5rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-2xl","d":"The declared `--text-2xl`."},"3xl":{"v":"1.875rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-3xl","d":"The declared `--text-3xl`."},"4xl":{"v":"2.25rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-4xl","d":"The declared `--text-4xl`."},"5xl":{"v":"3rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-5xl","d":"The declared `--text-5xl`."},"6xl":{"v":"3.75rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-6xl","d":"The declared `--text-6xl`."},"7xl":{"v":"4.5rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-7xl","d":"The declared `--text-7xl`."},"8xl":{"v":"6rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-8xl","d":"The declared `--text-8xl`."},"9xl":{"v":"8rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-9xl","d":"The declared `--text-9xl`."},"base":{"v":"1rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-base","d":"The declared `--text-base`."},"lg":{"v":"1.125rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-lg","d":"The declared `--text-lg`."},"sm":{"v":".875rem","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-sm","d":"The declared `--text-sm`."},"xl":{"v":"1.25rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-xl","d":"The declared `--text-xl`."},"xs":{"v":".75rem","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-xs","d":"The declared `--text-xs`."},"measured":{"badge":{"v":"10px","t":"fontSize","s":"computed fontSize of srch-badge default (raw/components-computed.json)","d":"The 10px uppercase credential badge (Pythia 600)."},"xs":{"v":"12px","t":"fontSize","s":"computed fontSize of chat-terms default (raw/components-computed.json)","d":"The 12px terms/helper line under the composer."},"sm":{"v":"13px","t":"fontSize","s":"computed fontSize of m-signin default (raw/components-computed.json)","d":"The 13px mobile sign-in link."},"control":{"v":"14px","t":"fontSize","s":"computed fontSize of signin-btn default (raw/components-computed.json)","d":"The 14px pill-button, chip and nav-topic label."},"body":{"v":"16px","t":"fontSize","s":"computed fontSize of chat-name default (raw/components-computed.json)","d":"The 16px body, card and profile text."},"lg":{"v":"18px","t":"fontSize","s":"computed fontSize of hero-search default (raw/components-computed.json)","d":"The 18px ask fields, quotes and section headings."},"section":{"v":"20px","t":"fontSize","s":"computed fontSize of section-h2 default (raw/components-computed.json)","d":"The 20px marketing section heading."},"mobile-display":{"v":"32px","t":"fontSize","s":"computed fontSize of m-h1 default (raw/components-computed.json)","d":"The 32px mobile display size at 390px."},"name":{"v":"34px","t":"fontSize","s":"computed fontSize of exp-name default (raw/components-computed.json)","d":"The 34px expert display name (Pythia 600)."},"display":{"v":"50px","t":"fontSize","s":"computed fontSize of hero-h1 default (raw/components-computed.json)","d":"The 50px Pythia display on home and discover."}}},"lineHeight":{"2xl":{"v":"calc(2/1.5)","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-2xl--line-height","d":"The declared `--text-2xl--line-height`."},"3xl":{"v":"calc(2.25/1.875)","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-3xl--line-height","d":"The declared `--text-3xl--line-height`."},"4xl":{"v":"calc(2.5/2.25)","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-4xl--line-height","d":"The declared `--text-4xl--line-height`."},"5xl":{"v":1,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-5xl--line-height","d":"The declared `--text-5xl--line-height`."},"6xl":{"v":1,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-6xl--line-height","d":"The declared `--text-6xl--line-height`."},"7xl":{"v":1,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-7xl--line-height","d":"The declared `--text-7xl--line-height`."},"8xl":{"v":1,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-8xl--line-height","d":"The declared `--text-8xl--line-height`."},"9xl":{"v":1,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-9xl--line-height","d":"The declared `--text-9xl--line-height`."},"base":{"v":"calc(1.5/1)","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-base--line-height","d":"The declared `--text-base--line-height`."},"lg":{"v":"calc(1.75/1.125)","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-lg--line-height","d":"The declared `--text-lg--line-height`."},"sm":{"v":"calc(1.25/.875)","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-sm--line-height","d":"The declared `--text-sm--line-height`."},"xl":{"v":"calc(1.75/1.25)","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-xl--line-height","d":"The declared `--text-xl--line-height`."},"xs":{"v":"calc(1/.75)","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --text-xs--line-height","d":"The declared `--text-xs--line-height`."},"normal":{"v":1.5,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --leading-normal","d":"The declared `--leading-normal`."},"relaxed":{"v":1.625,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --leading-relaxed","d":"The declared `--leading-relaxed`."},"snug":{"v":1.375,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --leading-snug","d":"The declared `--leading-snug`."},"tight":{"v":1.25,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --leading-tight","d":"The declared `--leading-tight`."}},"tracking":{"normal":{"v":"0em","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --tracking-normal","d":"The declared `--tracking-normal`."},"tight":{"v":"-.025em","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --tracking-tight","d":"The declared `--tracking-tight`."},"wide":{"v":".025em","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --tracking-wide","d":"The declared `--tracking-wide`."},"widest":{"v":".1em","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --tracking-widest","d":"The declared `--tracking-widest`."}}},"color":{"amber":{"400":{"v":"#ffb900","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-amber-400","d":"The declared `--color-amber-400`."},"600":{"v":"#e17100","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-amber-600","d":"The declared `--color-amber-600`."}},"black":{"v":"#000000","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-black","d":"The declared `--color-black`."},"emerald":{"500":{"v":"#00bc7d","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-emerald-500","d":"The declared `--color-emerald-500`."},"600":{"v":"#009966","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-emerald-600","d":"The declared `--color-emerald-600`."}},"green":{"400":{"v":"#05df72","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-green-400","d":"The declared `--color-green-400`."}},"neutral":{"100":{"v":"#f5f5f5","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-neutral-100","d":"The declared `--color-neutral-100`."},"200":{"v":"#e5e5e5","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-neutral-200","d":"The declared `--color-neutral-200`."},"300":{"v":"#d4d4d4","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-neutral-300","d":"The declared `--color-neutral-300`."},"400":{"v":"#a1a1a1","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-neutral-400","d":"The declared `--color-neutral-400`."},"500":{"v":"#737373","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-neutral-500","d":"The declared `--color-neutral-500`."},"600":{"v":"#525252","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-neutral-600","d":"The declared `--color-neutral-600`."},"800":{"v":"#262626","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-neutral-800","d":"The declared `--color-neutral-800`."},"900":{"v":"#171717","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-neutral-900","d":"The declared `--color-neutral-900`."},"950":{"v":"#0a0a0a","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-neutral-950","d":"The declared `--color-neutral-950`."}},"red":{"300":{"v":"#ffa2a2","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-red-300","d":"The declared `--color-red-300`."},"400":{"v":"#ff6467","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-red-400","d":"The declared `--color-red-400`."},"500":{"v":"#fb2c36","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-red-500","d":"The declared `--color-red-500`."},"600":{"v":"#e7000b","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-red-600","d":"The declared `--color-red-600`."}},"rose":{"500":{"v":"#ff2056","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-rose-500","d":"The declared `--color-rose-500`."}},"sky":{"600":{"v":"#0084d1","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-sky-600","d":"The declared `--color-sky-600`."}},"slate":{"300":{"v":"#cad5e2","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-slate-300","d":"The declared `--color-slate-300`."},"400":{"v":"#90a1b9","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-slate-400","d":"The declared `--color-slate-400`."},"500":{"v":"#62748e","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-slate-500","d":"The declared `--color-slate-500`."},"600":{"v":"#45556c","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-slate-600","d":"The declared `--color-slate-600`."},"700":{"v":"#314158","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-slate-700","d":"The declared `--color-slate-700`."},"800":{"v":"#1d293d","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-slate-800","d":"The declared `--color-slate-800`."},"900":{"v":"#0f172b","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-slate-900","d":"The declared `--color-slate-900`."}},"tangerine":{"9":{"v":"#fd5400","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-tangerine-9","d":"The declared `--color-tangerine-9`."}},"white":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-white","d":"The declared `--color-white`."},"zinc":{"200":{"v":"#e4e4e7","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-zinc-200","d":"The declared `--color-zinc-200`."},"300":{"v":"#d4d4d8","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-zinc-300","d":"The declared `--color-zinc-300`."},"400":{"v":"#9f9fa9","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-zinc-400","d":"The declared `--color-zinc-400`."}}},"size":{"container":{"2xl":{"v":"42rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --container-2xl","d":"The declared `--container-2xl`."},"3xl":{"v":"48rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --container-3xl","d":"The declared `--container-3xl`."},"4xl":{"v":"56rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --container-4xl","d":"The declared `--container-4xl`."},"5xl":{"v":"64rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --container-5xl","d":"The declared `--container-5xl`."},"6xl":{"v":"72rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --container-6xl","d":"The declared `--container-6xl`."},"lg":{"v":"32rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --container-lg","d":"The declared `--container-lg`."},"md":{"v":"28rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --container-md","d":"The declared `--container-md`."},"sm":{"v":"24rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --container-sm","d":"The declared `--container-sm`."},"xl":{"v":"36rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --container-xl","d":"The declared `--container-xl`."},"xs":{"v":"20rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --container-xs","d":"The declared `--container-xs`."}}},"breakpoint":{"2xl":{"v":"96rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --breakpoint-2xl","d":"The declared `--breakpoint-2xl`."},"xl":{"v":"80rem","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --breakpoint-xl","d":"The declared `--breakpoint-xl`."}},"radius":{"xl":{"v":"14px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --radius-xl","d":"The declared `--radius-xl`."},"xs":{"v":".125rem","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --radius-xs","d":"The declared `--radius-xs`."},"default":{"v":".625rem","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --radius","d":"The declared `--radius`."},"badge":{"v":"6px","t":"dimension","s":"computed borderTopLeftRadius of srch-badge default (raw/components-computed.json)","d":"The 6px credential-badge radius."},"chip":{"v":"18px","t":"dimension","s":"computed borderTopLeftRadius of suggested-chip default (raw/components-computed.json)","d":"The 18px suggested-question chip."},"card-sm":{"v":"20px","t":"dimension","s":"computed borderTopLeftRadius of m-topic-card default (raw/components-computed.json)","d":"The 20px mobile topic card and experience item."},"card":{"v":"24px","t":"dimension","s":"computed borderTopLeftRadius of topic-card default (raw/components-computed.json)","d":"The 24px topic/gallery card."},"button":{"v":"26px","t":"dimension","s":"computed borderTopLeftRadius of create-cta default (raw/components-computed.json)","d":"The 26px button/dialog radius — CTAs, dialog actions, expert cards, Share."},"flip":{"v":"28px","t":"dimension","s":"computed borderTopLeftRadius of persp-flip default (raw/components-computed.json)","d":"The 28px perspective flip card."},"pill":{"v":"calc(infinity * 1px)","t":"other","s":"computed borderTopLeftRadius of mic-btn default (raw/components-computed.json)","d":"The full-pill (calc(infinity * 1px)) on round and topic buttons."}},"duration":{"enter":{"v":"0.14s","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --duration-enter","d":"The declared `--duration-enter`."},"exit":{"v":"0.09s","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --duration-exit","d":"The declared `--duration-exit`."},"move":{"v":"0.22s","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --duration-move","d":"The declared `--duration-move`."}},"easing":{"in":{"v":[0.4,0.0,1.0,1.0],"t":"cubicBezier","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --ease-in","d":"The declared `--ease-in`."},"in-out":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --ease-in-out","d":"The declared `--ease-in-out`."},"in-out-quart":{"v":[0.77,0.0,0.175,1.0],"t":"cubicBezier","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --ease-in-out-quart","d":"The declared `--ease-in-out-quart`."},"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --ease-out","d":"The declared `--ease-out`."},"out-quart":{"v":[0.165,0.84,0.44,1.0],"t":"cubicBezier","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --ease-out-quart","d":"The declared `--ease-out-quart`."},"out-quint":{"v":[0.23,1.0,0.32,1.0],"t":"cubicBezier","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --ease-out-quint","d":"The declared `--ease-out-quint`."}},"motion":{"arrive":{"v":"arrive .3s cubic-bezier(.23,1,.32,1).15s backwards","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --animate-arrive","d":"The declared `--animate-arrive`."},"lean-in-left":{"v":"lean-in-left 1.4s cubic-bezier(.65,0,.35,1)infinite","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --animate-lean-in-left","d":"The declared `--animate-lean-in-left`."},"lean-in-right":{"v":"lean-in-right 1.4s cubic-bezier(.65,0,.35,1)infinite","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --animate-lean-in-right","d":"The declared `--animate-lean-in-right`."},"ping":{"v":"ping 1s cubic-bezier(0,0,.2,1)infinite","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --animate-ping","d":"The declared `--animate-ping`."},"pulse":{"v":"pulse 2s cubic-bezier(.4,0,.6,1)infinite","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --animate-pulse","d":"The declared `--animate-pulse`."},"spin":{"v":"spin 1s linear infinite","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --animate-spin","d":"The declared `--animate-spin`."},"typing-dot":{"v":"typing-dot 1s linear infinite","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --animate-typing-dot","d":"The declared `--animate-typing-dot`."},"typing-dot-wave":{"v":"typing-dot-wave 1.7s ease-in-out infinite","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --animate-typing-dot-wave","d":"The declared `--animate-typing-dot-wave`."},"control":{"v":"color, background-color, border-color, box-shadow, transform, opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1)","t":"other","s":"computed transition of create-cta default (raw/components-computed.json)","d":"The measured control transition."}},"blur":{"2xl":{"v":"40px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --blur-2xl","d":"The declared `--blur-2xl`."},"3xl":{"v":"64px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --blur-3xl","d":"The declared `--blur-3xl`."},"md":{"v":"12px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --blur-md","d":"The declared `--blur-md`."},"sm":{"v":"8px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --blur-sm","d":"The declared `--blur-sm`."},"xl":{"v":"24px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --blur-xl","d":"The declared `--blur-xl`."},"xs":{"v":"4px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --blur-xs","d":"The declared `--blur-xs`."}},"zIndex":{"dropdown":{"v":100,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --z-dropdown","d":"The declared `--z-dropdown`."},"modal":{"v":200,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --z-modal","d":"The declared `--z-modal`."},"toast":{"v":400,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --z-toast","d":"The declared `--z-toast`."},"tooltip":{"v":300,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --z-tooltip","d":"The declared `--z-tooltip`."}},"default":{"transition-duration":{"v":"0.15s","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --default-transition-duration","d":"The declared `--default-transition-duration`."},"transition-timing-function":{"v":"cubic-bezier(.4,0,.2,1)","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --default-transition-timing-function","d":"The declared `--default-transition-timing-function`."}},"shadow":{"drop":{"sm":{"v":"rgba(0, 0, 0, 0.15) 0px 1px 2px 0px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --drop-shadow-sm","d":"The declared `--drop-shadow-sm`."}},"dialog":{"v":"rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.243135 -0.000696592 0.00753608 / 0.05) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px","t":"other","s":"computed boxShadow of signin-dialog default (raw/components-computed.json)","d":"The layered shadow the sign-in dialog carries."}},"aspect":{"video":{"v":"16/9","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --aspect-video","d":"The declared `--aspect-video`."}},"border":{"hairline":{"width":{"v":"1px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --border-hairline","d":"The declared `--border-hairline`."}}},"destructive":{"v":"#e5484d","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --destructive","d":"The declared `--destructive`."},"dock":{"rest":{"v":"0px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --dock-rest","d":"The declared `--dock-rest`."}},"head":{"climb":{"v":"0px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --head-climb","d":"The declared `--head-climb`."}},"info":{"v":"#0090ff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --info","d":"The declared `--info`."},"person":{"preview":{"fade":{"bottom":{"v":"0px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --person-preview-fade-bottom","d":"The declared `--person-preview-fade-bottom`."},"top":{"v":"0px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --person-preview-fade-top","d":"The declared `--person-preview-fade-top`."}}}},"quote":{"glow":{"v":1,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --quote-glow","d":"The declared `--quote-glow`."}},"silk":{"100":{"lvh":{"dvh":{"pct":{"v":"900px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --silk-100-lvh-dvh-pct","d":"The declared `--silk-100-lvh-dvh-pct`."}}}}},"spacing":{"v":".25rem","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --spacing","d":"The declared `--spacing`."},"success":{"v":"#30a46c","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --success","d":"The declared `--success`."},"warning":{"v":"#ffc53d","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --warning","d":"The declared `--warning`."},"component":{"topbar-height":{"v":"64px","t":"dimension","s":"measured h of mkt-header default (raw/components-computed.json)","d":"The 64px public top bar."},"logo-width":{"v":"91.5px","t":"dimension","s":"measured w of mkt-logo default (raw/components-computed.json)","d":"The 91.5px header wordmark."},"search-field-width":{"v":"624px","t":"dimension","s":"measured w of hero-search default (raw/components-computed.json)","d":"The 624px hero ask field."},"query-field-width":{"v":"664px","t":"dimension","s":"measured w of srch-field default (raw/components-computed.json)","d":"The 664px results query field."},"dialog-width":{"v":"448px","t":"dimension","s":"measured w of signin-dialog default (raw/components-computed.json)","d":"The 448px sign-in dialog."},"dialog-button-width":{"v":"400px","t":"dimension","s":"measured w of dialog-google default (raw/components-computed.json)","d":"The 400px dialog action."},"topic-card-width":{"v":"346.66px","t":"dimension","s":"measured w of topic-card default (raw/components-computed.json)","d":"The ~347px topic card."},"flip-card-width":{"v":"272px","t":"dimension","s":"measured w of persp-card default (raw/components-computed.json)","d":"The 272px perspective flip card."},"expert-card-width":{"v":"672px","t":"dimension","s":"measured w of srch-expert-card default (raw/components-computed.json)","d":"The 672px search result card."},"chat-input-width":{"v":"592px","t":"dimension","s":"measured w of chat-input default (raw/components-computed.json)","d":"The 592px composer field."},"send-size":{"v":"48px","t":"dimension","s":"measured w of chat-send default (raw/components-computed.json)","d":"The 48px round send button."},"scroll-pill":{"v":"30.4px","t":"dimension","s":"measured w of scroll-bottom default (raw/components-computed.json)","d":"The ~30px scroll-to-bottom pill."},"portrait":{"v":"110px","t":"dimension","s":"measured w of exp-portrait default (raw/components-computed.json)","d":"The 110px expert portrait."},"mobile-topbar-height":{"v":"64px","t":"dimension","s":"measured h of m-header default (raw/components-computed.json)","d":"The 64px phone top bar."}}},"light":{"accent":{"default":{"v":"#f9f9f8","t":"color","s":"css-var --accent (light)"},"foreground":{"v":"#21201c","t":"color","s":"css-var --accent-foreground (light)"}},"color":{"amber":{"1":{"v":"#fefdfb","t":"color","s":"css-var --amber-1 (light)"},"10":{"v":"#ffba18","t":"color","s":"css-var --amber-10 (light)"},"11":{"v":"#ab6400","t":"color","s":"css-var --amber-11 (light)"},"12":{"v":"#4f3422","t":"color","s":"css-var --amber-12 (light)"},"2":{"v":"#fefbe9","t":"color","s":"css-var --amber-2 (light)"},"3":{"v":"#fff7c2","t":"color","s":"css-var --amber-3 (light)"},"4":{"v":"#ffee9c","t":"color","s":"css-var --amber-4 (light)"},"5":{"v":"#fbe577","t":"color","s":"css-var --amber-5 (light)"},"6":{"v":"#f3d673","t":"color","s":"css-var --amber-6 (light)"},"7":{"v":"#e9c162","t":"color","s":"css-var --amber-7 (light)"},"8":{"v":"#e2a336","t":"color","s":"css-var --amber-8 (light)"},"9":{"v":"#ffc53d","t":"color","s":"css-var --amber-9 (light)"}},"blue":{"1":{"v":"#fbfdff","t":"color","s":"css-var --blue-1 (light)"},"10":{"v":"#0588f0","t":"color","s":"css-var --blue-10 (light)"},"11":{"v":"#0d74ce","t":"color","s":"css-var --blue-11 (light)"},"12":{"v":"#113264","t":"color","s":"css-var --blue-12 (light)"},"2":{"v":"#f4faff","t":"color","s":"css-var --blue-2 (light)"},"3":{"v":"#e6f4fe","t":"color","s":"css-var --blue-3 (light)"},"4":{"v":"#d5efff","t":"color","s":"css-var --blue-4 (light)"},"5":{"v":"#c2e5ff","t":"color","s":"css-var --blue-5 (light)"},"6":{"v":"#acd8fc","t":"color","s":"css-var --blue-6 (light)"},"7":{"v":"#8ec8f6","t":"color","s":"css-var --blue-7 (light)"},"8":{"v":"#5eb1ef","t":"color","s":"css-var --blue-8 (light)"},"9":{"v":"#0090ff","t":"color","s":"css-var --blue-9 (light)"}},"brown":{"1":{"v":"#fefdfc","t":"color","s":"css-var --brown-1 (light)"},"10":{"v":"#a07553","t":"color","s":"css-var --brown-10 (light)"},"11":{"v":"#815e46","t":"color","s":"css-var --brown-11 (light)"},"12":{"v":"#3e332e","t":"color","s":"css-var --brown-12 (light)"},"2":{"v":"#fcf9f6","t":"color","s":"css-var --brown-2 (light)"},"3":{"v":"#f6eee7","t":"color","s":"css-var --brown-3 (light)"},"4":{"v":"#f0e4d9","t":"color","s":"css-var --brown-4 (light)"},"5":{"v":"#ebdaca","t":"color","s":"css-var --brown-5 (light)"},"6":{"v":"#e4cdb7","t":"color","s":"css-var --brown-6 (light)"},"7":{"v":"#dcbc9f","t":"color","s":"css-var --brown-7 (light)"},"8":{"v":"#cea37e","t":"color","s":"css-var --brown-8 (light)"},"9":{"v":"#ad7f58","t":"color","s":"css-var --brown-9 (light)"}},"tangerine":{"3":{"default":{"v":"#ffe4d9","t":"color","s":"css-var --color-tangerine-3 (light)"},"oklch":{"v":".94 .036 42","t":"other","s":"css-var --tangerine-3-oklch (light)"}},"1":{"oklch":{"v":".99 .0096 42","t":"other","s":"css-var --tangerine-1-oklch (light)"}},"10":{"oklch":{"v":".6 .21 42","t":"other","s":"css-var --tangerine-10-oklch (light)"}},"11":{"oklch":{"v":".5 .18 42","t":"other","s":"css-var --tangerine-11-oklch (light)"}},"12":{"oklch":{"v":".4 .14 42","t":"other","s":"css-var --tangerine-12-oklch (light)"}},"2":{"oklch":{"v":".97 .0192 42","t":"other","s":"css-var --tangerine-2-oklch (light)"}},"4":{"oklch":{"v":".9 .06 42","t":"other","s":"css-var --tangerine-4-oklch (light)"}},"5":{"oklch":{"v":".85 .096 42","t":"other","s":"css-var --tangerine-5-oklch (light)"}},"6":{"oklch":{"v":".79 .132 42","t":"other","s":"css-var --tangerine-6-oklch (light)"}},"7":{"oklch":{"v":".72 .18 42","t":"other","s":"css-var --tangerine-7-oklch (light)"}},"8":{"oklch":{"v":".68 .21 42","t":"other","s":"css-var --tangerine-8-oklch (light)"}},"9":{"oklch":{"v":".67 .22 42","t":"other","s":"css-var --tangerine-9-oklch (light)"}}},"crimson":{"1":{"v":"#fffcfd","t":"color","s":"css-var --crimson-1 (light)"},"10":{"v":"#df3478","t":"color","s":"css-var --crimson-10 (light)"},"11":{"v":"#cb1d63","t":"color","s":"css-var --crimson-11 (light)"},"12":{"v":"#621639","t":"color","s":"css-var --crimson-12 (light)"},"2":{"v":"#fef7f9","t":"color","s":"css-var --crimson-2 (light)"},"3":{"v":"#ffe9f0","t":"color","s":"css-var --crimson-3 (light)"},"4":{"v":"#fedce7","t":"color","s":"css-var --crimson-4 (light)"},"5":{"v":"#facedd","t":"color","s":"css-var --crimson-5 (light)"},"6":{"v":"#f3bed1","t":"color","s":"css-var --crimson-6 (light)"},"7":{"v":"#eaacc3","t":"color","s":"css-var --crimson-7 (light)"},"8":{"v":"#e093b2","t":"color","s":"css-var --crimson-8 (light)"},"9":{"v":"#e93d82","t":"color","s":"css-var --crimson-9 (light)"}},"cyan":{"1":{"v":"#fafdfe","t":"color","s":"css-var --cyan-1 (light)"},"10":{"v":"#0797b9","t":"color","s":"css-var --cyan-10 (light)"},"11":{"v":"#107d98","t":"color","s":"css-var --cyan-11 (light)"},"12":{"v":"#0d3c48","t":"color","s":"css-var --cyan-12 (light)"},"2":{"v":"#f2fafb","t":"color","s":"css-var --cyan-2 (light)"},"3":{"v":"#def7f9","t":"color","s":"css-var --cyan-3 (light)"},"4":{"v":"#caf1f6","t":"color","s":"css-var --cyan-4 (light)"},"5":{"v":"#b5e9f0","t":"color","s":"css-var --cyan-5 (light)"},"6":{"v":"#9ddde7","t":"color","s":"css-var --cyan-6 (light)"},"7":{"v":"#7dcedc","t":"color","s":"css-var --cyan-7 (light)"},"8":{"v":"#3db9cf","t":"color","s":"css-var --cyan-8 (light)"},"9":{"v":"#00a2c7","t":"color","s":"css-var --cyan-9 (light)"}},"gold":{"1":{"v":"#fdfdfc","t":"color","s":"css-var --gold-1 (light)"},"10":{"v":"#8c7a5e","t":"color","s":"css-var --gold-10 (light)"},"11":{"v":"#71624b","t":"color","s":"css-var --gold-11 (light)"},"12":{"v":"#3b352b","t":"color","s":"css-var --gold-12 (light)"},"2":{"v":"#faf9f2","t":"color","s":"css-var --gold-2 (light)"},"3":{"v":"#f2f0e7","t":"color","s":"css-var --gold-3 (light)"},"4":{"v":"#eae6db","t":"color","s":"css-var --gold-4 (light)"},"5":{"v":"#e1dccf","t":"color","s":"css-var --gold-5 (light)"},"6":{"v":"#d8d0bf","t":"color","s":"css-var --gold-6 (light)"},"7":{"v":"#cbc0aa","t":"color","s":"css-var --gold-7 (light)"},"8":{"v":"#b9a88d","t":"color","s":"css-var --gold-8 (light)"},"9":{"v":"#978365","t":"color","s":"css-var --gold-9 (light)"}},"grass":{"1":{"v":"#fbfefb","t":"color","s":"css-var --grass-1 (light)"},"10":{"v":"#3e9b4f","t":"color","s":"css-var --grass-10 (light)"},"11":{"v":"#2a7e3b","t":"color","s":"css-var --grass-11 (light)"},"12":{"v":"#203c25","t":"color","s":"css-var --grass-12 (light)"},"2":{"v":"#f5fbf5","t":"color","s":"css-var --grass-2 (light)"},"3":{"v":"#e9f6e9","t":"color","s":"css-var --grass-3 (light)"},"4":{"v":"#daf1db","t":"color","s":"css-var --grass-4 (light)"},"5":{"v":"#c9e8ca","t":"color","s":"css-var --grass-5 (light)"},"6":{"v":"#b2ddb5","t":"color","s":"css-var --grass-6 (light)"},"7":{"v":"#94ce9a","t":"color","s":"css-var --grass-7 (light)"},"8":{"v":"#65ba74","t":"color","s":"css-var --grass-8 (light)"},"9":{"v":"#46a758","t":"color","s":"css-var --grass-9 (light)"}},"green":{"1":{"v":"#fbfefc","t":"color","s":"css-var --green-1 (light)"},"10":{"v":"#2b9a66","t":"color","s":"css-var --green-10 (light)"},"11":{"v":"#218358","t":"color","s":"css-var --green-11 (light)"},"12":{"v":"#193b2d","t":"color","s":"css-var --green-12 (light)"},"2":{"v":"#f4fbf6","t":"color","s":"css-var --green-2 (light)"},"3":{"v":"#e6f6eb","t":"color","s":"css-var --green-3 (light)"},"4":{"v":"#d6f1df","t":"color","s":"css-var --green-4 (light)"},"5":{"v":"#c4e8d1","t":"color","s":"css-var --green-5 (light)"},"6":{"v":"#adddc0","t":"color","s":"css-var --green-6 (light)"},"7":{"v":"#8eceaa","t":"color","s":"css-var --green-7 (light)"},"8":{"v":"#5bb98b","t":"color","s":"css-var --green-8 (light)"},"9":{"v":"#30a46c","t":"color","s":"css-var --green-9 (light)"}},"indigo":{"1":{"v":"#fdfdfe","t":"color","s":"css-var --indigo-1 (light)"},"10":{"v":"#3358d4","t":"color","s":"css-var --indigo-10 (light)"},"11":{"v":"#3a5bc7","t":"color","s":"css-var --indigo-11 (light)"},"12":{"v":"#1f2d5c","t":"color","s":"css-var --indigo-12 (light)"},"2":{"v":"#f7f9ff","t":"color","s":"css-var --indigo-2 (light)"},"3":{"v":"#edf2fe","t":"color","s":"css-var --indigo-3 (light)"},"4":{"v":"#e1e9ff","t":"color","s":"css-var --indigo-4 (light)"},"5":{"v":"#d2deff","t":"color","s":"css-var --indigo-5 (light)"},"6":{"v":"#c1d0ff","t":"color","s":"css-var --indigo-6 (light)"},"7":{"v":"#abbdf9","t":"color","s":"css-var --indigo-7 (light)"},"8":{"v":"#8da4ef","t":"color","s":"css-var --indigo-8 (light)"},"9":{"v":"#3e63dd","t":"color","s":"css-var --indigo-9 (light)"}},"jade":{"1":{"v":"#fbfefd","t":"color","s":"css-var --jade-1 (light)"},"10":{"v":"#26997b","t":"color","s":"css-var --jade-10 (light)"},"11":{"v":"#208368","t":"color","s":"css-var --jade-11 (light)"},"12":{"v":"#1d3b31","t":"color","s":"css-var --jade-12 (light)"},"2":{"v":"#f4fbf7","t":"color","s":"css-var --jade-2 (light)"},"3":{"v":"#e6f7ed","t":"color","s":"css-var --jade-3 (light)"},"4":{"v":"#d6f1e3","t":"color","s":"css-var --jade-4 (light)"},"5":{"v":"#c3e9d7","t":"color","s":"css-var --jade-5 (light)"},"6":{"v":"#acdec8","t":"color","s":"css-var --jade-6 (light)"},"7":{"v":"#8bceb6","t":"color","s":"css-var --jade-7 (light)"},"8":{"v":"#56ba9f","t":"color","s":"css-var --jade-8 (light)"},"9":{"v":"#29a383","t":"color","s":"css-var --jade-9 (light)"}},"plum":{"1":{"v":"#fefcff","t":"color","s":"css-var --plum-1 (light)"},"10":{"v":"#a144af","t":"color","s":"css-var --plum-10 (light)"},"11":{"v":"#953ea3","t":"color","s":"css-var --plum-11 (light)"},"12":{"v":"#53195d","t":"color","s":"css-var --plum-12 (light)"},"2":{"v":"#fdf7fd","t":"color","s":"css-var --plum-2 (light)"},"3":{"v":"#fbebfb","t":"color","s":"css-var --plum-3 (light)"},"4":{"v":"#f7def8","t":"color","s":"css-var --plum-4 (light)"},"5":{"v":"#f2d1f3","t":"color","s":"css-var --plum-5 (light)"},"6":{"v":"#e9c2ec","t":"color","s":"css-var --plum-6 (light)"},"7":{"v":"#deade3","t":"color","s":"css-var --plum-7 (light)"},"8":{"v":"#cf91d8","t":"color","s":"css-var --plum-8 (light)"},"9":{"v":"#ab4aba","t":"color","s":"css-var --plum-9 (light)"}},"red":{"1":{"v":"#fffcfc","t":"color","s":"css-var --red-1 (light)"},"10":{"v":"#dc3e42","t":"color","s":"css-var --red-10 (light)"},"11":{"v":"#ce2c31","t":"color","s":"css-var --red-11 (light)"},"12":{"v":"#641723","t":"color","s":"css-var --red-12 (light)"},"2":{"v":"#fff7f7","t":"color","s":"css-var --red-2 (light)"},"3":{"v":"#feebec","t":"color","s":"css-var --red-3 (light)"},"4":{"v":"#ffdbdc","t":"color","s":"css-var --red-4 (light)"},"5":{"v":"#ffcdce","t":"color","s":"css-var --red-5 (light)"},"6":{"v":"#fdbdbe","t":"color","s":"css-var --red-6 (light)"},"7":{"v":"#f4a9aa","t":"color","s":"css-var --red-7 (light)"},"8":{"v":"#eb8e90","t":"color","s":"css-var --red-8 (light)"},"9":{"v":"#e5484d","t":"color","s":"css-var --red-9 (light)"}},"ruby":{"1":{"v":"#fffcfd","t":"color","s":"css-var --ruby-1 (light)"},"10":{"v":"#dc3b5d","t":"color","s":"css-var --ruby-10 (light)"},"11":{"v":"#ca244d","t":"color","s":"css-var --ruby-11 (light)"},"12":{"v":"#64172b","t":"color","s":"css-var --ruby-12 (light)"},"2":{"v":"#fff7f8","t":"color","s":"css-var --ruby-2 (light)"},"3":{"v":"#feeaed","t":"color","s":"css-var --ruby-3 (light)"},"4":{"v":"#ffdce1","t":"color","s":"css-var --ruby-4 (light)"},"5":{"v":"#ffced6","t":"color","s":"css-var --ruby-5 (light)"},"6":{"v":"#f8bfc8","t":"color","s":"css-var --ruby-6 (light)"},"7":{"v":"#efacb8","t":"color","s":"css-var --ruby-7 (light)"},"8":{"v":"#e592a3","t":"color","s":"css-var --ruby-8 (light)"},"9":{"v":"#e54666","t":"color","s":"css-var --ruby-9 (light)"}},"sand":{"1":{"v":"#fdfdfc","t":"color","s":"css-var --sand-1 (light)"},"10":{"v":"#82827c","t":"color","s":"css-var --sand-10 (light)"},"11":{"v":"#63635e","t":"color","s":"css-var --sand-11 (light)"},"12":{"v":"#21201c","t":"color","s":"css-var --sand-12 (light)"},"2":{"v":"#f9f9f8","t":"color","s":"css-var --sand-2 (light)"},"3":{"v":"#f1f0ef","t":"color","s":"css-var --sand-3 (light)"},"4":{"v":"#e9e8e6","t":"color","s":"css-var --sand-4 (light)"},"5":{"v":"#e2e1de","t":"color","s":"css-var --sand-5 (light)"},"6":{"v":"#dad9d6","t":"color","s":"css-var --sand-6 (light)"},"7":{"v":"#cfceca","t":"color","s":"css-var --sand-7 (light)"},"8":{"v":"#bcbbb5","t":"color","s":"css-var --sand-8 (light)"},"9":{"v":"#8d8d86","t":"color","s":"css-var --sand-9 (light)"}},"teal":{"1":{"v":"#fafefd","t":"color","s":"css-var --teal-1 (light)"},"10":{"v":"#0d9b8a","t":"color","s":"css-var --teal-10 (light)"},"11":{"v":"#008573","t":"color","s":"css-var --teal-11 (light)"},"12":{"v":"#0d3d38","t":"color","s":"css-var --teal-12 (light)"},"2":{"v":"#f3fbf9","t":"color","s":"css-var --teal-2 (light)"},"3":{"v":"#e0f8f3","t":"color","s":"css-var --teal-3 (light)"},"4":{"v":"#ccf3ea","t":"color","s":"css-var --teal-4 (light)"},"5":{"v":"#b8eae0","t":"color","s":"css-var --teal-5 (light)"},"6":{"v":"#a1ded2","t":"color","s":"css-var --teal-6 (light)"},"7":{"v":"#83cdc1","t":"color","s":"css-var --teal-7 (light)"},"8":{"v":"#53b9ab","t":"color","s":"css-var --teal-8 (light)"},"9":{"v":"#12a594","t":"color","s":"css-var --teal-9 (light)"}},"tomato":{"1":{"v":"#fffcfc","t":"color","s":"css-var --tomato-1 (light)"},"10":{"v":"#dd4425","t":"color","s":"css-var --tomato-10 (light)"},"11":{"v":"#d13415","t":"color","s":"css-var --tomato-11 (light)"},"12":{"v":"#5c271f","t":"color","s":"css-var --tomato-12 (light)"},"2":{"v":"#fff8f7","t":"color","s":"css-var --tomato-2 (light)"},"3":{"v":"#feebe7","t":"color","s":"css-var --tomato-3 (light)"},"4":{"v":"#ffdcd3","t":"color","s":"css-var --tomato-4 (light)"},"5":{"v":"#ffcdc2","t":"color","s":"css-var --tomato-5 (light)"},"6":{"v":"#fdbdaf","t":"color","s":"css-var --tomato-6 (light)"},"7":{"v":"#f5a898","t":"color","s":"css-var --tomato-7 (light)"},"8":{"v":"#ec8e7b","t":"color","s":"css-var --tomato-8 (light)"},"9":{"v":"#e54d2e","t":"color","s":"css-var --tomato-9 (light)"}},"violet":{"1":{"v":"#fdfcfe","t":"color","s":"css-var --violet-1 (light)"},"10":{"v":"#654dc4","t":"color","s":"css-var --violet-10 (light)"},"11":{"v":"#6550b9","t":"color","s":"css-var --violet-11 (light)"},"12":{"v":"#2f265f","t":"color","s":"css-var --violet-12 (light)"},"2":{"v":"#faf8ff","t":"color","s":"css-var --violet-2 (light)"},"3":{"v":"#f4f0fe","t":"color","s":"css-var --violet-3 (light)"},"4":{"v":"#ebe4ff","t":"color","s":"css-var --violet-4 (light)"},"5":{"v":"#e1d9ff","t":"color","s":"css-var --violet-5 (light)"},"6":{"v":"#d4cafe","t":"color","s":"css-var --violet-6 (light)"},"7":{"v":"#c2b5f5","t":"color","s":"css-var --violet-7 (light)"},"8":{"v":"#aa99ec","t":"color","s":"css-var --violet-8 (light)"},"9":{"v":"#6e56cf","t":"color","s":"css-var --violet-9 (light)"}},"yellow":{"1":{"v":"#fdfdf9","t":"color","s":"css-var --yellow-1 (light)"},"10":{"v":"#ffdc00","t":"color","s":"css-var --yellow-10 (light)"},"11":{"v":"#9e6c00","t":"color","s":"css-var --yellow-11 (light)"},"12":{"v":"#473b1f","t":"color","s":"css-var --yellow-12 (light)"},"2":{"v":"#fefce9","t":"color","s":"css-var --yellow-2 (light)"},"3":{"v":"#fffab8","t":"color","s":"css-var --yellow-3 (light)"},"4":{"v":"#fff394","t":"color","s":"css-var --yellow-4 (light)"},"5":{"v":"#ffe770","t":"color","s":"css-var --yellow-5 (light)"},"6":{"v":"#f3d768","t":"color","s":"css-var --yellow-6 (light)"},"7":{"v":"#e4c767","t":"color","s":"css-var --yellow-7 (light)"},"8":{"v":"#d5ae39","t":"color","s":"css-var --yellow-8 (light)"},"9":{"v":"#ffe629","t":"color","s":"css-var --yellow-9 (light)"}}},"avatar":{"shadow":{"default":{"v":"rgba(0, 0, 0, 0.1) 0px 32.25px 32.25px 0px, rgba(0, 0, 0, 0.1) 0px 17.2px 17.2px -8.6px, rgba(0, 0, 0, 0.03) 0px 8.6px 8.6px -4.3px, rgba(0, 0, 0, 0.05) 0px 4.3px 4.3px -2.15px, rgba(0, 0, 0, 0.05) 0px 1.075px 1.075px -0.538px, rgba(255, 255, 255, 0.5) 0px 2px 4px 0px inset, rgba(255, 255, 255, 0.4) 0px -2px 4px 0px inset","t":"other","s":"css-var --avatar-shadow (light)"},"inset":{"v":"rgba(255, 255, 255, 0.5) 0px 2px 4px 0px inset, rgba(255, 255, 255, 0.4) 0px -2px 4px 0px inset","t":"other","s":"css-var --avatar-shadow-inset (light)"}}},"background":{"default":{"v":"#ffffff","t":"color","s":"css-var --background (light)"},"page":{"v":"{background.default}","t":"color","s":"declared --background (raw/css-vars.json resolved.light); no computed reading of the page field (seen in screenshots/*-light-*.png); matches declared --background","d":"The white field the whole public surface paints."},"card":{"v":"{card.default}","t":"color","s":"computed backgroundColor of disc-card default (raw/components-computed.json); matches declared --card","d":"The white card field (result and gallery cards match --card/--popover)."},"warm":{"v":"#f7f3f0","t":"color","s":"computed backgroundColor of topic-card default (raw/components-computed.json)","d":"The #f7f3f0 warm field on the topic/ask cards."},"chip":{"v":"{input}","t":"color","s":"computed backgroundColor of suggested-chip default (raw/components-computed.json); matches declared input","d":"The ~10% ink chip fill on suggested questions, nav topics and dialog alternatives."},"badge":{"v":"rgba(33, 32, 28, 0.06)","t":"color","s":"computed backgroundColor of srch-badge default (raw/components-computed.json)","d":"The ~6% ink fill behind credential badges."}},"border":{"default":{"v":"#dad9d6","t":"color","s":"css-var --border (light)"},"hairline":{"v":"rgba(33, 32, 28, 0.09)","t":"color","s":"computed borderTopColor of disc-card default (raw/components-computed.json)","d":"The ~12% ink hairline around cards and fields."},"card-border":{"v":"rgba(141, 141, 134, 0.2)","t":"color","s":"computed borderTopColor of srch-expert-card default (raw/components-computed.json)","d":"The ~20% ink border on result cards."},"focus":{"v":"{ring}","t":"color","s":"computed borderTopColor of signin-btn focus-visible (raw/components-computed.json); matches declared --ring","d":"The orange focus-visible border on buttons (matches --ring/--brand-accent); cards take an ink outline instead."}},"brand":{"accent":{"v":"#fd5400","t":"color","s":"css-var --brand-accent (light)"}},"bubble":{"accent":{"v":"#fd5400","t":"color","s":"css-var --bubble-accent (light)"}},"card":{"default":{"v":"#ffffff","t":"color","s":"css-var --card (light)"},"foreground":{"v":"#21201c","t":"color","s":"css-var --card-foreground (light)"}},"chart":{"1":{"v":"#fd5400","t":"color","s":"css-var --chart-1 (light)"},"2":{"v":"#8d8d86","t":"color","s":"css-var --chart-2 (light)"},"3":{"v":"#cfceca","t":"color","s":"css-var --chart-3 (light)"},"4":{"v":"#e2e1de","t":"color","s":"css-var --chart-4 (light)"},"5":{"v":"#fe773d","t":"color","s":"css-var --chart-5 (light)"}},"fg":{"error":{"v":"#dc3e42","t":"color","s":"css-var --fg-error (light)"},"high":{"v":"#21201c","t":"color","s":"css-var --fg-high (light)"},"info":{"v":"#0d74ce","t":"color","s":"css-var --fg-info (light)"},"inverted":{"v":"#ffffff","t":"color","s":"css-var --fg-inverted (light)"},"low":{"v":"#82827c","t":"color","s":"css-var --fg-low (light)"},"mid":{"v":"#63635e","t":"color","s":"css-var --fg-mid (light)"},"placeholder":{"v":"#bcbbb5","t":"color","s":"css-var --fg-placeholder (light)"},"success":{"v":"#218358","t":"color","s":"css-var --fg-success (light)"},"warning":{"v":"#ab6400","t":"color","s":"css-var --fg-warning (light)"}},"foreground":{"default":{"v":"#21201c","t":"color","s":"css-var --foreground (light)"}},"input":{"v":"rgba(141, 141, 134, 0.1)","t":"color","s":"css-var --input (light)"},"mind":{"eternal":{"v":"#000000","t":"color","s":"css-var --mind-eternal (light)"},"expert":{"v":"#7c009e","t":"color","s":"css-var --mind-expert (light)"},"legendary":{"v":"#c79041","t":"color","s":"css-var --mind-legendary (light)"},"master":{"v":"#4e7daa","t":"color","s":"css-var --mind-master (light)"},"novice":{"v":"#ff5a01","t":"color","s":"css-var --mind-novice (light)"},"sage":{"v":"#17572b","t":"color","s":"css-var --mind-sage (light)"},"skilled":{"v":"#e52310","t":"color","s":"css-var --mind-skilled (light)"}},"muted":{"default":{"v":"#f9f9f8","t":"color","s":"css-var --muted (light)"},"foreground":{"v":"#63635e","t":"color","s":"css-var --muted-foreground (light)"}},"overlay":{"v":"#ffffff","t":"color","s":"css-var --overlay (light)"},"popover":{"default":{"v":"#ffffff","t":"color","s":"css-var --popover (light)"},"foreground":{"v":"#21201c","t":"color","s":"css-var --popover-foreground (light)"}},"primary":{"default":{"v":"#21201c","t":"color","s":"css-var --primary (light)"},"foreground":{"v":"#ffffff","t":"color","s":"css-var --primary-foreground (light)"}},"ring":{"v":"#fd5400","t":"color","s":"css-var --ring (light)"},"secondary":{"default":{"v":"#f9f9f8","t":"color","s":"css-var --secondary (light)"},"foreground":{"v":"#21201c","t":"color","s":"css-var --secondary-foreground (light)"}},"sidebar":{"default":{"v":"#f9f9f8","t":"color","s":"css-var --sidebar (light)"},"accent":{"default":{"v":"#f9f9f8","t":"color","s":"css-var --sidebar-accent (light)"},"foreground":{"v":"#21201c","t":"color","s":"css-var --sidebar-accent-foreground (light)"}},"border":{"v":"#dad9d6","t":"color","s":"css-var --sidebar-border (light)"},"foreground":{"v":"#21201c","t":"color","s":"css-var --sidebar-foreground (light)"},"primary":{"default":{"v":"#21201c","t":"color","s":"css-var --sidebar-primary (light)"},"foreground":{"v":"#ffffff","t":"color","s":"css-var --sidebar-primary-foreground (light)"}},"ring":{"v":"#fd5400","t":"color","s":"css-var --sidebar-ring (light)"}},"surface":{"primary":{"v":"#ffffff","t":"color","s":"css-var --surface-primary (light)"},"secondary":{"v":"#f9f9f8","t":"color","s":"css-var --surface-secondary (light)"}},"text":{"ink":{"v":"{fg.high}","t":"color","s":"computed color of hero-h1 default (raw/components-computed.json); matches declared --fg-high","d":"The #21201c ink — headings and body text (matches --fg-high/--foreground)."},"mid":{"v":"{fg.mid}","t":"color","s":"computed color of nav-topic default (raw/components-computed.json); matches declared --fg-mid","d":"The #63635e mid text — nav topics, pills, helper copy (matches --fg-mid)."},"low":{"v":"{fg.low}","t":"color","s":"computed color of m-signin default (raw/components-computed.json); matches declared --fg-low","d":"The #82827c low text — bylines and the mobile sign-in (matches --fg-low)."},"strong":{"v":"#161615","t":"color","s":"computed color of exp-section default (raw/components-computed.json)","d":"The #161615 near-black on profile section headings."},"on-dark":{"v":"#f0eae4","t":"color","s":"computed color of persp-quote default (raw/components-computed.json)","d":"The #f0eae4 quote text painted on the dark perspective flip cards."}},"action":{"accent":{"v":"{brand.accent}","t":"color","s":"computed backgroundColor of create-cta default (raw/components-computed.json); matches declared --brand-accent","d":"The #fd5400 orange — Create Your Delphi, Expand, Send (matches --brand-accent/--ring/--chart-1/--bubble-accent)."},"accent-fg":{"v":"{primary.foreground}","t":"color","s":"computed color of create-cta default (raw/components-computed.json); matches declared --primary-foreground","d":"White text on the orange accent."},"dark-button":{"v":"{primary.default}","t":"color","s":"computed backgroundColor of dialog-google default (raw/components-computed.json); matches declared --primary","d":"The #21201c near-black fill on primary dialog actions (matches --primary)."},"share":{"v":"rgba(33, 32, 28, 0.1)","t":"color","s":"computed backgroundColor of share-btn default (raw/components-computed.json)","d":"The ~10% dark-ink fill on the profile Share pill."}}},"dark":{"accent":{"default":{"v":"#191918","t":"color","s":"css-var --accent (dark)"},"foreground":{"v":"#eeeeec","t":"color","s":"css-var --accent-foreground (dark)"}},"color":{"amber":{"1":{"v":"#16120c","t":"color","s":"css-var --amber-1 (dark)"},"10":{"v":"#ffd60a","t":"color","s":"css-var --amber-10 (dark)"},"11":{"v":"#ffca16","t":"color","s":"css-var --amber-11 (dark)"},"12":{"v":"#ffe7b3","t":"color","s":"css-var --amber-12 (dark)"},"2":{"v":"#1d180f","t":"color","s":"css-var --amber-2 (dark)"},"3":{"v":"#302008","t":"color","s":"css-var --amber-3 (dark)"},"4":{"v":"#3f2700","t":"color","s":"css-var --amber-4 (dark)"},"5":{"v":"#4d3000","t":"color","s":"css-var --amber-5 (dark)"},"6":{"v":"#5c3d05","t":"color","s":"css-var --amber-6 (dark)"},"7":{"v":"#714f19","t":"color","s":"css-var --amber-7 (dark)"},"8":{"v":"#8f6424","t":"color","s":"css-var --amber-8 (dark)"},"9":{"v":"#ffc53d","t":"color","s":"css-var --amber-9 (dark)"}},"blue":{"1":{"v":"#0d1520","t":"color","s":"css-var --blue-1 (dark)"},"10":{"v":"#3b9eff","t":"color","s":"css-var --blue-10 (dark)"},"11":{"v":"#70b8ff","t":"color","s":"css-var --blue-11 (dark)"},"12":{"v":"#c2e6ff","t":"color","s":"css-var --blue-12 (dark)"},"2":{"v":"#111927","t":"color","s":"css-var --blue-2 (dark)"},"3":{"v":"#0d2847","t":"color","s":"css-var --blue-3 (dark)"},"4":{"v":"#003362","t":"color","s":"css-var --blue-4 (dark)"},"5":{"v":"#004074","t":"color","s":"css-var --blue-5 (dark)"},"6":{"v":"#104d87","t":"color","s":"css-var --blue-6 (dark)"},"7":{"v":"#205d9e","t":"color","s":"css-var --blue-7 (dark)"},"8":{"v":"#2870bd","t":"color","s":"css-var --blue-8 (dark)"},"9":{"v":"#0090ff","t":"color","s":"css-var --blue-9 (dark)"}},"brown":{"1":{"v":"#12110f","t":"color","s":"css-var --brown-1 (dark)"},"10":{"v":"#b88c67","t":"color","s":"css-var --brown-10 (dark)"},"11":{"v":"#dbb594","t":"color","s":"css-var --brown-11 (dark)"},"12":{"v":"#f2e1ca","t":"color","s":"css-var --brown-12 (dark)"},"2":{"v":"#1c1816","t":"color","s":"css-var --brown-2 (dark)"},"3":{"v":"#28211d","t":"color","s":"css-var --brown-3 (dark)"},"4":{"v":"#322922","t":"color","s":"css-var --brown-4 (dark)"},"5":{"v":"#3e3128","t":"color","s":"css-var --brown-5 (dark)"},"6":{"v":"#4d3c2f","t":"color","s":"css-var --brown-6 (dark)"},"7":{"v":"#614a39","t":"color","s":"css-var --brown-7 (dark)"},"8":{"v":"#7c5f46","t":"color","s":"css-var --brown-8 (dark)"},"9":{"v":"#ad7f58","t":"color","s":"css-var --brown-9 (dark)"}},"tangerine":{"3":{"default":{"v":"#331104","t":"color","s":"css-var --color-tangerine-3 (dark)"},"oklch":{"v":".23 .06 42","t":"other","s":"css-var --tangerine-3-oklch (dark)"}},"1":{"oklch":{"v":".15 .014 42","t":"other","s":"css-var --tangerine-1-oklch (dark)"}},"10":{"oklch":{"v":".74 .2 42","t":"other","s":"css-var --tangerine-10-oklch (dark)"}},"11":{"oklch":{"v":".82 .16 42","t":"other","s":"css-var --tangerine-11-oklch (dark)"}},"12":{"oklch":{"v":".92 .07 60","t":"other","s":"css-var --tangerine-12-oklch (dark)"}},"2":{"oklch":{"v":".18 .026 42","t":"other","s":"css-var --tangerine-2-oklch (dark)"}},"4":{"oklch":{"v":".27 .09 42","t":"other","s":"css-var --tangerine-4-oklch (dark)"}},"5":{"oklch":{"v":".31 .12 42","t":"other","s":"css-var --tangerine-5-oklch (dark)"}},"6":{"oklch":{"v":".36 .14 42","t":"other","s":"css-var --tangerine-6-oklch (dark)"}},"7":{"oklch":{"v":".43 .17 42","t":"other","s":"css-var --tangerine-7-oklch (dark)"}},"8":{"oklch":{"v":".55 .2 42","t":"other","s":"css-var --tangerine-8-oklch (dark)"}},"9":{"oklch":{"v":".67 .22 42","t":"other","s":"css-var --tangerine-9-oklch (dark)"}}},"crimson":{"1":{"v":"#191114","t":"color","s":"css-var --crimson-1 (dark)"},"10":{"v":"#ee518a","t":"color","s":"css-var --crimson-10 (dark)"},"11":{"v":"#ff92ad","t":"color","s":"css-var --crimson-11 (dark)"},"12":{"v":"#fdd3e8","t":"color","s":"css-var --crimson-12 (dark)"},"2":{"v":"#201318","t":"color","s":"css-var --crimson-2 (dark)"},"3":{"v":"#381525","t":"color","s":"css-var --crimson-3 (dark)"},"4":{"v":"#4d122f","t":"color","s":"css-var --crimson-4 (dark)"},"5":{"v":"#5c1839","t":"color","s":"css-var --crimson-5 (dark)"},"6":{"v":"#6d2545","t":"color","s":"css-var --crimson-6 (dark)"},"7":{"v":"#873356","t":"color","s":"css-var --crimson-7 (dark)"},"8":{"v":"#b0436e","t":"color","s":"css-var --crimson-8 (dark)"},"9":{"v":"#e93d82","t":"color","s":"css-var --crimson-9 (dark)"}},"cyan":{"1":{"v":"#0b161a","t":"color","s":"css-var --cyan-1 (dark)"},"10":{"v":"#23afd0","t":"color","s":"css-var --cyan-10 (dark)"},"11":{"v":"#4ccce6","t":"color","s":"css-var --cyan-11 (dark)"},"12":{"v":"#b6ecf7","t":"color","s":"css-var --cyan-12 (dark)"},"2":{"v":"#101b20","t":"color","s":"css-var --cyan-2 (dark)"},"3":{"v":"#082c36","t":"color","s":"css-var --cyan-3 (dark)"},"4":{"v":"#003848","t":"color","s":"css-var --cyan-4 (dark)"},"5":{"v":"#004558","t":"color","s":"css-var --cyan-5 (dark)"},"6":{"v":"#045468","t":"color","s":"css-var --cyan-6 (dark)"},"7":{"v":"#12677e","t":"color","s":"css-var --cyan-7 (dark)"},"8":{"v":"#11809c","t":"color","s":"css-var --cyan-8 (dark)"},"9":{"v":"#00a2c7","t":"color","s":"css-var --cyan-9 (dark)"}},"gold":{"1":{"v":"#121211","t":"color","s":"css-var --gold-1 (dark)"},"10":{"v":"#a39073","t":"color","s":"css-var --gold-10 (dark)"},"11":{"v":"#cbb99f","t":"color","s":"css-var --gold-11 (dark)"},"12":{"v":"#e8e2d9","t":"color","s":"css-var --gold-12 (dark)"},"2":{"v":"#1b1a17","t":"color","s":"css-var --gold-2 (dark)"},"3":{"v":"#24231f","t":"color","s":"css-var --gold-3 (dark)"},"4":{"v":"#2d2b26","t":"color","s":"css-var --gold-4 (dark)"},"5":{"v":"#38352e","t":"color","s":"css-var --gold-5 (dark)"},"6":{"v":"#444039","t":"color","s":"css-var --gold-6 (dark)"},"7":{"v":"#544f46","t":"color","s":"css-var --gold-7 (dark)"},"8":{"v":"#696256","t":"color","s":"css-var --gold-8 (dark)"},"9":{"v":"#978365","t":"color","s":"css-var --gold-9 (dark)"}},"grass":{"1":{"v":"#0e1511","t":"color","s":"css-var --grass-1 (dark)"},"10":{"v":"#53b365","t":"color","s":"css-var --grass-10 (dark)"},"11":{"v":"#71d083","t":"color","s":"css-var --grass-11 (dark)"},"12":{"v":"#c2f0c2","t":"color","s":"css-var --grass-12 (dark)"},"2":{"v":"#141a15","t":"color","s":"css-var --grass-2 (dark)"},"3":{"v":"#1b2a1e","t":"color","s":"css-var --grass-3 (dark)"},"4":{"v":"#1d3a24","t":"color","s":"css-var --grass-4 (dark)"},"5":{"v":"#25482d","t":"color","s":"css-var --grass-5 (dark)"},"6":{"v":"#2d5736","t":"color","s":"css-var --grass-6 (dark)"},"7":{"v":"#366740","t":"color","s":"css-var --grass-7 (dark)"},"8":{"v":"#3e7949","t":"color","s":"css-var --grass-8 (dark)"},"9":{"v":"#46a758","t":"color","s":"css-var --grass-9 (dark)"}},"green":{"1":{"v":"#0e1512","t":"color","s":"css-var --green-1 (dark)"},"10":{"v":"#33b074","t":"color","s":"css-var --green-10 (dark)"},"11":{"v":"#3dd68c","t":"color","s":"css-var --green-11 (dark)"},"12":{"v":"#b1f1cb","t":"color","s":"css-var --green-12 (dark)"},"2":{"v":"#121b17","t":"color","s":"css-var --green-2 (dark)"},"3":{"v":"#132d21","t":"color","s":"css-var --green-3 (dark)"},"4":{"v":"#113b29","t":"color","s":"css-var --green-4 (dark)"},"5":{"v":"#174933","t":"color","s":"css-var --green-5 (dark)"},"6":{"v":"#20573e","t":"color","s":"css-var --green-6 (dark)"},"7":{"v":"#28684a","t":"color","s":"css-var --green-7 (dark)"},"8":{"v":"#2f7c57","t":"color","s":"css-var --green-8 (dark)"},"9":{"v":"#30a46c","t":"color","s":"css-var --green-9 (dark)"}},"indigo":{"1":{"v":"#11131f","t":"color","s":"css-var --indigo-1 (dark)"},"10":{"v":"#5472e4","t":"color","s":"css-var --indigo-10 (dark)"},"11":{"v":"#9eb1ff","t":"color","s":"css-var --indigo-11 (dark)"},"12":{"v":"#d6e1ff","t":"color","s":"css-var --indigo-12 (dark)"},"2":{"v":"#141726","t":"color","s":"css-var --indigo-2 (dark)"},"3":{"v":"#182449","t":"color","s":"css-var --indigo-3 (dark)"},"4":{"v":"#1d2e62","t":"color","s":"css-var --indigo-4 (dark)"},"5":{"v":"#253974","t":"color","s":"css-var --indigo-5 (dark)"},"6":{"v":"#304384","t":"color","s":"css-var --indigo-6 (dark)"},"7":{"v":"#3a4f97","t":"color","s":"css-var --indigo-7 (dark)"},"8":{"v":"#435db1","t":"color","s":"css-var --indigo-8 (dark)"},"9":{"v":"#3e63dd","t":"color","s":"css-var --indigo-9 (dark)"}},"jade":{"1":{"v":"#0d1512","t":"color","s":"css-var --jade-1 (dark)"},"10":{"v":"#27b08b","t":"color","s":"css-var --jade-10 (dark)"},"11":{"v":"#1fd8a4","t":"color","s":"css-var --jade-11 (dark)"},"12":{"v":"#adf0d4","t":"color","s":"css-var --jade-12 (dark)"},"2":{"v":"#121c18","t":"color","s":"css-var --jade-2 (dark)"},"3":{"v":"#0f2e22","t":"color","s":"css-var --jade-3 (dark)"},"4":{"v":"#0b3b2c","t":"color","s":"css-var --jade-4 (dark)"},"5":{"v":"#114837","t":"color","s":"css-var --jade-5 (dark)"},"6":{"v":"#1b5745","t":"color","s":"css-var --jade-6 (dark)"},"7":{"v":"#246854","t":"color","s":"css-var --jade-7 (dark)"},"8":{"v":"#2a7e68","t":"color","s":"css-var --jade-8 (dark)"},"9":{"v":"#29a383","t":"color","s":"css-var --jade-9 (dark)"}},"plum":{"1":{"v":"#181118","t":"color","s":"css-var --plum-1 (dark)"},"10":{"v":"#b658c4","t":"color","s":"css-var --plum-10 (dark)"},"11":{"v":"#e796f3","t":"color","s":"css-var --plum-11 (dark)"},"12":{"v":"#f4d4f4","t":"color","s":"css-var --plum-12 (dark)"},"2":{"v":"#201320","t":"color","s":"css-var --plum-2 (dark)"},"3":{"v":"#351a35","t":"color","s":"css-var --plum-3 (dark)"},"4":{"v":"#451d47","t":"color","s":"css-var --plum-4 (dark)"},"5":{"v":"#512454","t":"color","s":"css-var --plum-5 (dark)"},"6":{"v":"#5e3061","t":"color","s":"css-var --plum-6 (dark)"},"7":{"v":"#734079","t":"color","s":"css-var --plum-7 (dark)"},"8":{"v":"#92549c","t":"color","s":"css-var --plum-8 (dark)"},"9":{"v":"#ab4aba","t":"color","s":"css-var --plum-9 (dark)"}},"red":{"1":{"v":"#191111","t":"color","s":"css-var --red-1 (dark)"},"10":{"v":"#ec5d5e","t":"color","s":"css-var --red-10 (dark)"},"11":{"v":"#ff9592","t":"color","s":"css-var --red-11 (dark)"},"12":{"v":"#ffd1d9","t":"color","s":"css-var --red-12 (dark)"},"2":{"v":"#201314","t":"color","s":"css-var --red-2 (dark)"},"3":{"v":"#3b1219","t":"color","s":"css-var --red-3 (dark)"},"4":{"v":"#500f1c","t":"color","s":"css-var --red-4 (dark)"},"5":{"v":"#611623","t":"color","s":"css-var --red-5 (dark)"},"6":{"v":"#72232d","t":"color","s":"css-var --red-6 (dark)"},"7":{"v":"#8c333a","t":"color","s":"css-var --red-7 (dark)"},"8":{"v":"#b54548","t":"color","s":"css-var --red-8 (dark)"},"9":{"v":"#e5484d","t":"color","s":"css-var --red-9 (dark)"}},"ruby":{"1":{"v":"#191113","t":"color","s":"css-var --ruby-1 (dark)"},"10":{"v":"#ec5a72","t":"color","s":"css-var --ruby-10 (dark)"},"11":{"v":"#ff949d","t":"color","s":"css-var --ruby-11 (dark)"},"12":{"v":"#fed2e1","t":"color","s":"css-var --ruby-12 (dark)"},"2":{"v":"#1e1517","t":"color","s":"css-var --ruby-2 (dark)"},"3":{"v":"#3a141e","t":"color","s":"css-var --ruby-3 (dark)"},"4":{"v":"#4e1325","t":"color","s":"css-var --ruby-4 (dark)"},"5":{"v":"#5e1a2e","t":"color","s":"css-var --ruby-5 (dark)"},"6":{"v":"#6f2539","t":"color","s":"css-var --ruby-6 (dark)"},"7":{"v":"#883447","t":"color","s":"css-var --ruby-7 (dark)"},"8":{"v":"#b3445a","t":"color","s":"css-var --ruby-8 (dark)"},"9":{"v":"#e54666","t":"color","s":"css-var --ruby-9 (dark)"}},"sand":{"1":{"v":"#111110","t":"color","s":"css-var --sand-1 (dark)"},"10":{"v":"#7c7b74","t":"color","s":"css-var --sand-10 (dark)"},"11":{"v":"#b5b3ad","t":"color","s":"css-var --sand-11 (dark)"},"12":{"v":"#eeeeec","t":"color","s":"css-var --sand-12 (dark)"},"2":{"v":"#191918","t":"color","s":"css-var --sand-2 (dark)"},"3":{"v":"#222221","t":"color","s":"css-var --sand-3 (dark)"},"4":{"v":"#2a2a28","t":"color","s":"css-var --sand-4 (dark)"},"5":{"v":"#31312e","t":"color","s":"css-var --sand-5 (dark)"},"6":{"v":"#3b3a37","t":"color","s":"css-var --sand-6 (dark)"},"7":{"v":"#494844","t":"color","s":"css-var --sand-7 (dark)"},"8":{"v":"#62605b","t":"color","s":"css-var --sand-8 (dark)"},"9":{"v":"#6f6d66","t":"color","s":"css-var --sand-9 (dark)"}},"teal":{"1":{"v":"#0d1514","t":"color","s":"css-var --teal-1 (dark)"},"10":{"v":"#0eb39e","t":"color","s":"css-var --teal-10 (dark)"},"11":{"v":"#0bd8b6","t":"color","s":"css-var --teal-11 (dark)"},"12":{"v":"#adf0dd","t":"color","s":"css-var --teal-12 (dark)"},"2":{"v":"#111c1b","t":"color","s":"css-var --teal-2 (dark)"},"3":{"v":"#0d2d2a","t":"color","s":"css-var --teal-3 (dark)"},"4":{"v":"#023b37","t":"color","s":"css-var --teal-4 (dark)"},"5":{"v":"#084843","t":"color","s":"css-var --teal-5 (dark)"},"6":{"v":"#145750","t":"color","s":"css-var --teal-6 (dark)"},"7":{"v":"#1c6961","t":"color","s":"css-var --teal-7 (dark)"},"8":{"v":"#207e73","t":"color","s":"css-var --teal-8 (dark)"},"9":{"v":"#12a594","t":"color","s":"css-var --teal-9 (dark)"}},"tomato":{"1":{"v":"#181111","t":"color","s":"css-var --tomato-1 (dark)"},"10":{"v":"#ec6142","t":"color","s":"css-var --tomato-10 (dark)"},"11":{"v":"#ff977d","t":"color","s":"css-var --tomato-11 (dark)"},"12":{"v":"#fbd3cb","t":"color","s":"css-var --tomato-12 (dark)"},"2":{"v":"#1f1513","t":"color","s":"css-var --tomato-2 (dark)"},"3":{"v":"#391714","t":"color","s":"css-var --tomato-3 (dark)"},"4":{"v":"#4e1511","t":"color","s":"css-var --tomato-4 (dark)"},"5":{"v":"#5e1c16","t":"color","s":"css-var --tomato-5 (dark)"},"6":{"v":"#6e2920","t":"color","s":"css-var --tomato-6 (dark)"},"7":{"v":"#853a2d","t":"color","s":"css-var --tomato-7 (dark)"},"8":{"v":"#ac4d39","t":"color","s":"css-var --tomato-8 (dark)"},"9":{"v":"#e54d2e","t":"color","s":"css-var --tomato-9 (dark)"}},"violet":{"1":{"v":"#14121f","t":"color","s":"css-var --violet-1 (dark)"},"10":{"v":"#7d66d9","t":"color","s":"css-var --violet-10 (dark)"},"11":{"v":"#baa7ff","t":"color","s":"css-var --violet-11 (dark)"},"12":{"v":"#e2ddfe","t":"color","s":"css-var --violet-12 (dark)"},"2":{"v":"#1b1525","t":"color","s":"css-var --violet-2 (dark)"},"3":{"v":"#291f43","t":"color","s":"css-var --violet-3 (dark)"},"4":{"v":"#33255b","t":"color","s":"css-var --violet-4 (dark)"},"5":{"v":"#3c2e69","t":"color","s":"css-var --violet-5 (dark)"},"6":{"v":"#473876","t":"color","s":"css-var --violet-6 (dark)"},"7":{"v":"#56468b","t":"color","s":"css-var --violet-7 (dark)"},"8":{"v":"#6958ad","t":"color","s":"css-var --violet-8 (dark)"},"9":{"v":"#6e56cf","t":"color","s":"css-var --violet-9 (dark)"}},"yellow":{"1":{"v":"#14120b","t":"color","s":"css-var --yellow-1 (dark)"},"10":{"v":"#ffff57","t":"color","s":"css-var --yellow-10 (dark)"},"11":{"v":"#f5e147","t":"color","s":"css-var --yellow-11 (dark)"},"12":{"v":"#f6eeb4","t":"color","s":"css-var --yellow-12 (dark)"},"2":{"v":"#1b180f","t":"color","s":"css-var --yellow-2 (dark)"},"3":{"v":"#2d2305","t":"color","s":"css-var --yellow-3 (dark)"},"4":{"v":"#362b00","t":"color","s":"css-var --yellow-4 (dark)"},"5":{"v":"#433500","t":"color","s":"css-var --yellow-5 (dark)"},"6":{"v":"#524202","t":"color","s":"css-var --yellow-6 (dark)"},"7":{"v":"#665417","t":"color","s":"css-var --yellow-7 (dark)"},"8":{"v":"#836a21","t":"color","s":"css-var --yellow-8 (dark)"},"9":{"v":"#ffe629","t":"color","s":"css-var --yellow-9 (dark)"}}},"avatar":{"shadow":{"default":{"v":"rgba(0, 0, 0, 0.2) 0px 32.25px 32.25px 0px, rgba(0, 0, 0, 0.15) 0px 17.2px 17.2px -8.6px, rgba(0, 0, 0, 0.1) 0px 8.6px 8.6px -4.3px, rgba(0, 0, 0, 0.08) 0px 4.3px 4.3px -2.15px, rgba(0, 0, 0, 0.05) 0px 1.075px 1.075px -0.538px, rgba(255, 255, 255, 0.05) 0px 2px 4px 0px inset, rgba(255, 255, 255, 0.03) 0px -2px 4px 0px inset","t":"other","s":"css-var --avatar-shadow (dark)"},"inset":{"v":"rgba(255, 255, 255, 0.15) 0px 2px 4px 0px inset, rgba(255, 255, 255, 0.1) 0px -2px 4px 0px inset","t":"other","s":"css-var --avatar-shadow-inset (dark)"}}},"background":{"default":{"v":"#1e1e1d","t":"color","s":"css-var --background (dark)"}},"border":{"default":{"v":"#3b3a37","t":"color","s":"css-var --border (dark)"}},"brand":{"accent":{"v":"#ff7530","t":"color","s":"css-var --brand-accent (dark)"}},"bubble":{"accent":{"v":"#ca3400","t":"color","s":"css-var --bubble-accent (dark)"}},"card":{"default":{"v":"#1e1e1d","t":"color","s":"css-var --card (dark)"},"foreground":{"v":"#eeeeec","t":"color","s":"css-var --card-foreground (dark)"}},"chart":{"1":{"v":"#ff9e6d","t":"color","s":"css-var --chart-1 (dark)"},"2":{"v":"#6f6d66","t":"color","s":"css-var --chart-2 (dark)"},"3":{"v":"#494844","t":"color","s":"css-var --chart-3 (dark)"},"4":{"v":"#31312e","t":"color","s":"css-var --chart-4 (dark)"},"5":{"v":"#fd5400","t":"color","s":"css-var --chart-5 (dark)"}},"fg":{"error":{"v":"#ec5d5e","t":"color","s":"css-var --fg-error (dark)"},"high":{"v":"#eeeeec","t":"color","s":"css-var --fg-high (dark)"},"info":{"v":"#70b8ff","t":"color","s":"css-var --fg-info (dark)"},"inverted":{"v":"#000000","t":"color","s":"css-var --fg-inverted (dark)"},"low":{"v":"#7c7b74","t":"color","s":"css-var --fg-low (dark)"},"mid":{"v":"#b5b3ad","t":"color","s":"css-var --fg-mid (dark)"},"placeholder":{"v":"#62605b","t":"color","s":"css-var --fg-placeholder (dark)"},"success":{"v":"#3dd68c","t":"color","s":"css-var --fg-success (dark)"},"warning":{"v":"#ffca16","t":"color","s":"css-var --fg-warning (dark)"}},"foreground":{"default":{"v":"#eeeeec","t":"color","s":"css-var --foreground (dark)"}},"input":{"v":"rgba(111, 109, 102, 0.1)","t":"color","s":"css-var --input (dark)"},"mind":{"eternal":{"v":"#66a3b8","t":"color","s":"css-var --mind-eternal (dark)"},"expert":{"v":"#b366cc","t":"color","s":"css-var --mind-expert (dark)"},"legendary":{"v":"#e6b973","t":"color","s":"css-var --mind-legendary (dark)"},"master":{"v":"#7da3cc","t":"color","s":"css-var --mind-master (dark)"},"novice":{"v":"#ffb366","t":"color","s":"css-var --mind-novice (dark)"},"sage":{"v":"#4a8a5c","t":"color","s":"css-var --mind-sage (dark)"},"skilled":{"v":"#ff7a66","t":"color","s":"css-var --mind-skilled (dark)"}},"muted":{"default":{"v":"#191918","t":"color","s":"css-var --muted (dark)"},"foreground":{"v":"#b5b3ad","t":"color","s":"css-var --muted-foreground (dark)"}},"overlay":{"v":"#1e1e1d","t":"color","s":"css-var --overlay (dark)"},"popover":{"default":{"v":"#1e1e1d","t":"color","s":"css-var --popover (dark)"},"foreground":{"v":"#eeeeec","t":"color","s":"css-var --popover-foreground (dark)"}},"primary":{"default":{"v":"#eeeeec","t":"color","s":"css-var --primary (dark)"},"foreground":{"v":"#000000","t":"color","s":"css-var --primary-foreground (dark)"}},"ring":{"v":"#ff9e6d","t":"color","s":"css-var --ring (dark)"},"secondary":{"default":{"v":"#191918","t":"color","s":"css-var --secondary (dark)"},"foreground":{"v":"#eeeeec","t":"color","s":"css-var --secondary-foreground (dark)"}},"sidebar":{"default":{"v":"#191918","t":"color","s":"css-var --sidebar (dark)"},"accent":{"default":{"v":"#191918","t":"color","s":"css-var --sidebar-accent (dark)"},"foreground":{"v":"#eeeeec","t":"color","s":"css-var --sidebar-accent-foreground (dark)"}},"border":{"v":"#3b3a37","t":"color","s":"css-var --sidebar-border (dark)"},"foreground":{"v":"#eeeeec","t":"color","s":"css-var --sidebar-foreground (dark)"},"primary":{"default":{"v":"#eeeeec","t":"color","s":"css-var --sidebar-primary (dark)"},"foreground":{"v":"#000000","t":"color","s":"css-var --sidebar-primary-foreground (dark)"}},"ring":{"v":"#ff9e6d","t":"color","s":"css-var --sidebar-ring (dark)"}},"surface":{"primary":{"v":"#1e1e1d","t":"color","s":"css-var --surface-primary (dark)"},"secondary":{"v":"#191918","t":"color","s":"css-var --surface-secondary (dark)"}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (declared, never painted signed out)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  let node = TOK.core || TOK, seen = [];
+  for (const k of m[1].split('.')) { node = node && node[k]; seen.push(k); }
+  return node && node.v !== undefined ? resolveVal(node.v, (depth || 0) + 1) : v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Delphi</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

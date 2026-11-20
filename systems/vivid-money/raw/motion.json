@@ -1,0 +1,24 @@
+{
+  "source": "Computed styles and stylesheet rules on https://vivid.money/en-eu/, 2026-11-19. prefers-reduced-motion was false in the preview tab. A full motion-probe.mjs pass was not run.",
+  "primaryButton": {
+    "transitionProperty": "all",
+    "transitionDuration": "0s",
+    "transitionTimingFunction": "ease-in-out",
+    "animationName": "none"
+  },
+  "loginLink": {
+    "transitionProperty": "all",
+    "transitionDuration": "0s",
+    "transitionTimingFunction": "ease-in-out"
+  },
+  "declared": {
+    "hoverRules": 70,
+    "focusRules": 62,
+    "prefersReducedMotionRules": 7,
+    "primaryHover": ".kk6taH:not(:disabled):focus, .kk6taH:not(:disabled):hover { background: rgb(163, 114, 250) }"
+  },
+  "gaps": [
+    "Durations on the measured controls resolved to 0s, so no duration token is recorded.",
+    "The 7 prefers-reduced-motion rules were counted, not copied. Whether they remove motion is a gap."
+  ]
+}

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elektron style guide</title>
+<meta name="description" content="Elektron (elektron.se) design tokens and the public signed-out surface's components, rendered from tokens.json with the declared thedock variables and the measured computed styles.">
+<style>
+:root {
+/*CORE*/
+/*DARK*/
+  --sg-sans: "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sg-display: "Neue Haas Grotesk Display Pro", "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, var(--color-neutral-paper, #eeeef2)); background: var(--page, #151515); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.1 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.01em; }
+h2.sh { font: 400 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted, var(--color-neutral-muted, #97979a)); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border, var(--color-neutral-border, #363636)); }
+.lead { max-width: 62ch; color: var(--text-muted2, var(--color-neutral-muted2, #b8b8bb)); }
+.note { font-size: 13px; color: var(--text-muted, var(--color-neutral-muted, #97979a)); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 400 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted, var(--color-neutral-muted, #97979a)); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, var(--color-neutral-border, #363636)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 400 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-muted, var(--color-neutral-muted, #97979a)); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-muted, var(--color-neutral-muted, #97979a)); }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border, var(--color-neutral-border, #363636)); overflow: hidden; background: var(--page, #151515); }
+.navbar { display: flex; align-items: center; gap: 26px; height: 56px; padding: 0 20px; font: 400 14px/21px var(--sg-sans); letter-spacing: .033em; color: var(--text, #eeeef2); border-bottom: 1px solid var(--border, #363636); }
+.navbar .wm { font: 700 17px/1 var(--sg-sans); letter-spacing: .28em; }
+.navbar .sp { flex: 1; }
+.navbar .ic { font-size: 15px; opacity: .9; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 46px); padding: 0 17.5px; font: 400 14px/21px var(--sg-sans); letter-spacing: .033em; text-transform: uppercase; border-radius: var(--radius-none, 0px); border: 2px solid transparent; }
+.btn.outline { border-color: var(--accent, var(--color-neutral-paper, #eeeef2)); color: var(--accent, #eeeef2); background: transparent; }
+.btn.outline:hover { background: var(--accent, #eeeef2); color: var(--accent-text, #151515); }
+.btn.secondary { background: var(--secondary, var(--color-neutral-grey, #cccccc)); color: var(--accent-text, #151515); height: 42px; }
+.field { display: flex; align-items: center; height: var(--component-control-height-field, 42px); padding: 0 14px; background: var(--field, var(--color-neutral-paper, #eeeef2)); color: var(--field-text, #151515); font: 400 14px/21px var(--sg-sans); letter-spacing: .04em; border-radius: 0; }
+.field .ph { color: var(--placeholder, #757575); }
+.prow { display: flex; align-items: baseline; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--border, #363636); }
+.prow b { font: 400 18px/27px var(--sg-sans); letter-spacing: .04em; }
+.prow .sub { font: 400 14px/21px var(--sg-sans); color: var(--text, #eeeef2); }
+.prow .price { margin-left: auto; font: 400 18px/27px var(--sg-sans); }
+.drawer { background: var(--surface-raised, var(--color-neutral-raised, #212121)); padding: 20px 14px; width: 300px; box-shadow: var(--shadow-drawer, -7px 0 35px rgba(0,0,0,.18)); }
+.drawer h3 { font: 400 18px/27px var(--sg-sans); letter-spacing: .04em; margin: 0 0 12px; }
+.focusdemo { display: inline-block; padding: 6px 10px; box-shadow: 0 0 0 2px var(--focus-ring, #ffffff); outline: 2px solid var(--focus-outline, #000000); outline-offset: 2px; font: 400 14px/21px var(--sg-sans); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border, var(--color-neutral-border, #363636)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border, var(--color-neutral-border, #363636)); }
+.tr .ts { font-family: var(--sg-display); }
+.tr .tv { font-size: 12px; color: var(--text-muted, var(--color-neutral-muted, #97979a)); font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Elektron style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Elektron, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the inverted monochrome — a #151515 ground, #eeeef2 paper text that doubles as the action fill, #1e1e1e/#212121 raised surfaces, #363636/#444444 hairlines — plus the measured greys (#cccccc secondary buttons, #757575 placeholders, #333333 underline-sweep), Neue Haas Grotesk Text/Display with digi one v2 button labels, square corners everywhere, a 7px space rhythm and the double focus ring (2px white spread + 2px black outline). The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from elektron.se on 2026-11-13, signed out, in headless Chromium. The account, checkout and serial-registered downloads behind the magic-login card are a documented boundary. Neue Haas Grotesk, digi one v2 and Analog One V2 are licensed served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A 56px transparent header (63px on phone) over the #151515 page: 14px Neue Haas Text labels with 28px icons, the wordmark centred. Every text link carries a #333333 gradient layer that sweeps in on hover over 0.4s of background-size.</p>
+  <div class="mock">
+    <div class="navbar"><span>Catalog</span><span>Shop</span><span>Kulture</span><span class="ic">&#9906;</span><span class="wm sp" style="text-align:center">ELEKTRON</span><span>Support</span><span class="ic">&#9826;</span><span class="ic">&#8856;</span></div>
+    <div style="padding:34px 20px"><div style="font:400 30.8px/41px var(--sg-display);letter-spacing:.04em">Machines for music</div><p class="note" style="margin:8px 0 18px">A 2px paper-outline block-button inverts to a paper fill with ink text on hover and pressed.</p><span class="btn outline">Explore Digitakt II</span>&ensp;<span class="btn secondary">Send me a code</span>&ensp;<span class="focusdemo">focused link</span></div>
+  </div>
+
+  <h2 class="sh">Shop and login drawer</h2>
+  <p class="lead">The product row is 18px Neue Haas Text with a 14px descriptor and the price; the account/cart surfaces slide in as right drawers — #212121 on a 50% scrim, a 392px content column — carrying the 42px light fields and the grey secondary actions.</p>
+  <div class="mock" style="display:flex;gap:0">
+    <div style="flex:1;padding:14px 20px">
+      <div class="prow"><b>Digitakt II</b><span class="sub">16-track drum computer and sampler</span><span class="price">1149 $</span></div>
+      <div class="prow"><b>PL-2</b><span class="sub">Protective lid</span><span class="price">349 $</span></div>
+    </div>
+    <div class="drawer"><h3>Log in</h3><div class="field"><span class="ph">Email</span></div><p style="height:10px;margin:0"></p><span class="btn secondary" style="width:100%">Send me a code</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The core set carries the monochrome ramp, var-referenced to the <code>--thedock-*</code>/<code>--tdc-*</code> layer where it declares the same value and measured where it does not; the roles alias the palette. There is one painted theme: dark.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and borders</h2>
+  <p class="lead">A 7px rhythm — 3.5/7/10.5/14/17.5/21/35/44/70 — on square corners: every button, field and drawer is 0px; the only rounded control is the 7px header search field. Borders are 2px on the outline actions, 1px self-coloured on the search field.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Neue Haas Grotesk Text Pro for UI and body (400), Neue Haas Grotesk Display Pro for headings and big links (450/500, tighter tracking on the 64/44px display), digi one v2 on block-button labels and Analog One V2 in the search field. The ramp runs 64/60.8 display down to 14/21 controls. Samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the thedock custom-property layer off the same-origin sheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, filled and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.dark || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (roles.length) {
+    h += `<div class="pal-h">roles (the one painted theme)</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat((TOK.dark && TOK.dark.component) || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).letterSpacing || {}, 'font.letterSpacing.')) h += `<div class="tr"><span class="ts" style="letter-spacing:${esc(t.v)}">${esc(n)} — Elektron</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Elektron</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

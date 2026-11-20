@@ -1,0 +1,2465 @@
+[
+  {
+    "label": "home",
+    "href": "https://promova.com/",
+    "title": "Promova \u2013 Your Online Language Learning App & Language Courses",
+    "status": 200,
+    "viewport": {
+      "w": 1440,
+      "h": 900,
+      "dpr": 1,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      }
+    },
+    "bodyBg": "#000000",
+    "h1": {
+      "tag": "H1",
+      "cls": "hero_section_concept5__title__OOpka6",
+      "text": "Speak before you're ready",
+      "color": "#000000",
+      "bg": "transparent",
+      "font": "Nekst",
+      "size": "70px",
+      "weight": "700",
+      "lh": "70px",
+      "ls": "normal",
+      "radius": "0px",
+      "pad": "0px",
+      "border": "0px none #000000",
+      "shadow": "",
+      "h": 140,
+      "w": 500,
+      "tt": "none",
+      "trans": "0s all"
+    },
+    "buttons": [
+      {
+        "tag": "A",
+        "cls": "navigation_actions__login__zl9Mva",
+        "text": "SIGN UP",
+        "color": "#000000",
+        "bg": "#ffffff",
+        "font": "nekst",
+        "size": "14px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px 10px",
+        "border": "1px solid #000000",
+        "shadow": "",
+        "h": 40,
+        "w": 78,
+        "tt": "uppercase",
+        "trans": "0s all"
+      },
+      {
+        "tag": "A",
+        "cls": "navigation_actions__main_button__KANxM7 navigation_actions__min_width_max_content__LG0hxD",
+        "text": "GET STARTED",
+        "color": "#ffffff",
+        "bg": "#000000",
+        "font": "nekst",
+        "size": "14px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px 10px",
+        "border": "0px none #ffffff",
+        "shadow": "",
+        "h": 40,
+        "w": 115,
+        "tt": "uppercase",
+        "trans": "0s all"
+      },
+      {
+        "tag": "A",
+        "cls": "PEtu1G_btn_filled PEtu1G_size_l PEtu1G_scaled_button hero_section_concept5__button__em-jwD",
+        "text": "TRY NOW",
+        "color": "#ffffff",
+        "bg": "#000000",
+        "font": "Nekst",
+        "size": "18px",
+        "weight": "700",
+        "lh": "18px",
+        "ls": "0.72px",
+        "radius": "0px",
+        "pad": "20px 60px",
+        "border": "0px none #ffffff",
+        "shadow": "",
+        "h": 60,
+        "w": 340,
+        "tt": "uppercase",
+        "trans": "0.25s background-color"
+      },
+      {
+        "tag": "A",
+        "cls": "PEtu1G_btn_filled PEtu1G_size_l PEtu1G_scaled_button what-you-get-concept8__cta__0xfKqb",
+        "text": "TRY NOW",
+        "color": "#ffffff",
+        "bg": "#000000",
+        "font": "nekst",
+        "size": "18px",
+        "weight": "400",
+        "lh": "18px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px 15px",
+        "border": "0px none #ffffff",
+        "shadow": "",
+        "h": 60,
+        "w": 340,
+        "tt": "uppercase",
+        "trans": "0.25s background-color"
+      },
+      {
+        "tag": "A",
+        "cls": "PEtu1G_btn_filled PEtu1G_size_l PEtu1G_scaled_button what-you-get-concept8__cta__0xfKqb",
+        "text": "TRY NOW",
+        "color": "#ffffff",
+        "bg": "#000000",
+        "font": "nekst",
+        "size": "18px",
+        "weight": "400",
+        "lh": "18px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px 15px",
+        "border": "0px none #ffffff",
+        "shadow": "",
+        "h": 60,
+        "w": 340,
+        "tt": "uppercase",
+        "trans": "0.25s background-color"
+      },
+      {
+        "tag": "A",
+        "cls": "PEtu1G_btn_filled PEtu1G_size_l PEtu1G_scaled_button text_v2_concept6__button__YN4H8d",
+        "text": "START NOW",
+        "color": "#ffffff",
+        "bg": "#000000",
+        "font": "nekst",
+        "size": "18px",
+        "weight": "400",
+        "lh": "18px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px 15px",
+        "border": "0px none #ffffff",
+        "shadow": "",
+        "h": 60,
+        "w": 340,
+        "tt": "uppercase",
+        "trans": "0.25s background-color"
+      },
+      {
+        "tag": "A",
+        "cls": "PEtu1G_btn_filled PEtu1G_size_l PEtu1G_scaled_button",
+        "text": "READ ARTICLE",
+        "color": "#ffffff",
+        "bg": "#000000",
+        "font": "nekst",
+        "size": "18px",
+        "weight": "400",
+        "lh": "18px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px 15px",
+        "border": "0px none #ffffff",
+        "shadow": "",
+        "h": 60,
+        "w": 340,
+        "tt": "uppercase",
+        "trans": "0.25s background-color"
+      },
+      {
+        "tag": "A",
+        "cls": "PEtu1G_btn_outlined PEtu1G_size_l PEtu1G_scaled_button resources_concept1__full_list_butto",
+        "text": "VISIT BLOG",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "nekst",
+        "size": "18px",
+        "weight": "700",
+        "lh": "18px",
+        "ls": "0.9px",
+        "radius": "0px",
+        "pad": "0px 15px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 60,
+        "w": 340,
+        "tt": "uppercase",
+        "trans": "0.25s background-color"
+      }
+    ],
+    "sections": [
+      {
+        "bg": "#bec8ff",
+        "radius": "30px",
+        "pad": "0px",
+        "text": "Speak before you're ready Speaking isn't the final"
+      },
+      {
+        "bg": "#ffffff",
+        "radius": "30px",
+        "pad": "60px",
+        "text": "4.6 App rating 12 Languages 400+ Topics 46M Lesson"
+      },
+      {
+        "bg": "transparent",
+        "radius": "0px",
+        "pad": "0px",
+        "text": "What language do you want to speak? English Spanis"
+      },
+      {
+        "bg": "#f5f5f5",
+        "radius": "30px",
+        "pad": "80px 120px",
+        "text": "Why Promova language learning platform \u2014 01 Speak "
+      },
+      {
+        "bg": "#fff8a7",
+        "radius": "30px",
+        "pad": "60px 30px",
+        "text": "93% of our learners say they feel more confident s"
+      },
+      {
+        "bg": "#ffffff",
+        "radius": "30px",
+        "pad": "80px 120px",
+        "text": "How our language learning app works \u2014 01 Personal "
+      },
+      {
+        "bg": "transparent",
+        "radius": "0px",
+        "pad": "0px",
+        "text": "Backed by a champion who doesn't lose Usyk helped "
+      },
+      {
+        "bg": "#bcf0d0",
+        "radius": "30px",
+        "pad": "30px 60px",
+        "text": "I have tried many different apps to improve my Eng"
+      },
+      {
+        "bg": "transparent",
+        "radius": "0px",
+        "pad": "0px",
+        "text": "How to get started 1 Download Promova app. It's fr"
+      },
+      {
+        "bg": "#f2f4ff",
+        "radius": "30px",
+        "pad": "100px 0px",
+        "text": "From learners who started just like you App Store "
+      },
+      {
+        "bg": "#ebe0d3",
+        "radius": "30px",
+        "pad": "80px 30px 100px",
+        "text": "Improve your language skills with Promova Free lan"
+      },
+      {
+        "bg": "#f5a3d0",
+        "radius": "30px",
+        "pad": "30px 30px 60px",
+        "text": "Awards & achievements Who doesn't like a bit of br"
+      },
+      {
+        "bg": "#ebe0d3",
+        "radius": "30px",
+        "pad": "60px 85px 60px 120px",
+        "text": "Our latest articles Best Language Learning Apps in"
+      },
+      {
+        "bg": "#f4f4f4",
+        "radius": "30px",
+        "pad": "100px 30px",
+        "text": "People often ask What does Promova mean anyway? Ho"
+      },
+      {
+        "bg": "transparent",
+        "radius": "0px",
+        "pad": "0px",
+        "text": "Create your account today and get started for free"
+      }
+    ],
+    "colors": [
+      [
+        "#ffffff",
+        40
+      ],
+      [
+        "#000000",
+        15
+      ],
+      [
+        "#e0e0e0",
+        5
+      ],
+      [
+        "#bec8ff",
+        3
+      ],
+      [
+        "#c8df87",
+        3
+      ],
+      [
+        "#ebe0d3",
+        2
+      ],
+      [
+        "#fff584",
+        1
+      ],
+      [
+        "#d7d4e2",
+        1
+      ],
+      [
+        "#f5f5f5",
+        1
+      ],
+      [
+        "#fff8a7",
+        1
+      ],
+      [
+        "#bcf0d0",
+        1
+      ],
+      [
+        "#e3efc3",
+        1
+      ],
+      [
+        "#eef5db",
+        1
+      ],
+      [
+        "#f2f4ff",
+        1
+      ],
+      [
+        "#f5a3d0",
+        1
+      ],
+      [
+        "#f4f4f4",
+        1
+      ]
+    ],
+    "fonts": [
+      [
+        "manrope 16px 400",
+        514
+      ],
+      [
+        "manrope 18px 400",
+        123
+      ],
+      [
+        "manrope 15px 400",
+        42
+      ],
+      [
+        "nekst 24px 400",
+        39
+      ],
+      [
+        "manrope 24px 400",
+        31
+      ],
+      [
+        "nekst 70px 400",
+        19
+      ],
+      [
+        "nekst 18px 400",
+        12
+      ],
+      [
+        "nekst 40px 400",
+        11
+      ],
+      [
+        "nekst 24px 700",
+        10
+      ],
+      [
+        "nekst 15px 400",
+        8
+      ],
+      [
+        "nekst 14px 400",
+        8
+      ],
+      [
+        "nekst 30px 400",
+        8
+      ]
+    ],
+    "radii": [
+      [
+        "30px",
+        42
+      ],
+      [
+        "50%",
+        25
+      ],
+      [
+        "20px",
+        17
+      ],
+      [
+        "10px",
+        16
+      ],
+      [
+        "15px",
+        5
+      ],
+      [
+        "24px",
+        2
+      ]
+    ],
+    "inputs": []
+  },
+  {
+    "label": "blog",
+    "href": "https://promova.com/blog",
+    "title": "Promova Blog | Language Learning Tips, Vocabulary & Guides",
+    "status": 200,
+    "viewport": {
+      "w": 1440,
+      "h": 900,
+      "dpr": 1,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      }
+    },
+    "bodyBg": "#000000",
+    "h1": {
+      "tag": "H1",
+      "cls": "zjd93q_title",
+      "text": "Promova Blog",
+      "color": "#000000",
+      "bg": "transparent",
+      "font": "nekst",
+      "size": "70px",
+      "weight": "400",
+      "lh": "70px",
+      "ls": "normal",
+      "radius": "0px",
+      "pad": "0px",
+      "border": "0px none #000000",
+      "shadow": "",
+      "h": 70,
+      "w": 1000,
+      "tt": "none",
+      "trans": "0s all"
+    },
+    "buttons": [
+      {
+        "tag": "A",
+        "cls": "navigation_actions__login__zl9Mva",
+        "text": "SIGN UP",
+        "color": "#000000",
+        "bg": "#ffffff",
+        "font": "nekst",
+        "size": "14px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px 10px",
+        "border": "1px solid #000000",
+        "shadow": "",
+        "h": 40,
+        "w": 78,
+        "tt": "uppercase",
+        "trans": "0s all"
+      },
+      {
+        "tag": "A",
+        "cls": "navigation_actions__main_button__KANxM7 navigation_actions__min_width_max_content__LG0hxD",
+        "text": "GET STARTED",
+        "color": "#ffffff",
+        "bg": "#000000",
+        "font": "nekst",
+        "size": "14px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px 10px",
+        "border": "0px none #ffffff",
+        "shadow": "",
+        "h": 40,
+        "w": 115,
+        "tt": "uppercase",
+        "trans": "0s all"
+      },
+      {
+        "tag": "A",
+        "cls": "links_list__nav_link__MtljnT",
+        "text": "Instagram",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "manrope",
+        "size": "18px",
+        "weight": "400",
+        "lh": "25.92px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 30,
+        "w": 295,
+        "tt": "none",
+        "trans": "0s all"
+      },
+      {
+        "tag": "A",
+        "cls": "links_list__nav_link__MtljnT",
+        "text": "Facebook",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "manrope",
+        "size": "18px",
+        "weight": "400",
+        "lh": "25.92px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 30,
+        "w": 295,
+        "tt": "none",
+        "trans": "0s all"
+      },
+      {
+        "tag": "A",
+        "cls": "links_list__nav_link__MtljnT",
+        "text": "TikTok",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "manrope",
+        "size": "18px",
+        "weight": "400",
+        "lh": "25.92px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 30,
+        "w": 295,
+        "tt": "none",
+        "trans": "0s all"
+      },
+      {
+        "tag": "A",
+        "cls": "links_list__nav_link__MtljnT",
+        "text": "YouTube",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "manrope",
+        "size": "18px",
+        "weight": "400",
+        "lh": "25.92px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 30,
+        "w": 295,
+        "tt": "none",
+        "trans": "0s all"
+      },
+      {
+        "tag": "A",
+        "cls": "buttons_list__button__Rv2xgW",
+        "text": "Download on the App Store",
+        "color": "#ffffff",
+        "bg": "#000000",
+        "font": "manrope",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "10px",
+        "pad": "5px 20px",
+        "border": "0px none #ffffff",
+        "shadow": "",
+        "h": 60,
+        "w": 300,
+        "tt": "none",
+        "trans": "0s all"
+      },
+      {
+        "tag": "A",
+        "cls": "buttons_list__button__Rv2xgW",
+        "text": "GET IT ON Google Play",
+        "color": "#ffffff",
+        "bg": "#000000",
+        "font": "manrope",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "10px",
+        "pad": "5px 20px",
+        "border": "0px none #ffffff",
+        "shadow": "",
+        "h": 60,
+        "w": 300,
+        "tt": "none",
+        "trans": "0s all"
+      }
+    ],
+    "sections": [],
+    "colors": [
+      [
+        "#ffffff",
+        5
+      ],
+      [
+        "#000000",
+        5
+      ],
+      [
+        "#f4f4f4",
+        1
+      ]
+    ],
+    "fonts": [
+      [
+        "manrope 16px 400",
+        308
+      ],
+      [
+        "manrope 15px 400",
+        66
+      ],
+      [
+        "manrope 18px 400",
+        36
+      ],
+      [
+        "nekst 15px 400",
+        16
+      ],
+      [
+        "nekst 14px 400",
+        12
+      ],
+      [
+        "manrope 24px 400",
+        12
+      ],
+      [
+        "manrope 18px 700",
+        12
+      ],
+      [
+        "nekst 16px 400",
+        7
+      ],
+      [
+        "manrope 14px 400",
+        5
+      ],
+      [
+        "nekst 24px 400",
+        4
+      ],
+      [
+        "nekst 18px 400",
+        4
+      ],
+      [
+        "manrope 20px 700",
+        3
+      ]
+    ],
+    "radii": [
+      [
+        "10px",
+        15
+      ],
+      [
+        "50%",
+        6
+      ],
+      [
+        "30px",
+        3
+      ],
+      [
+        "5px",
+        2
+      ]
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "cls": "input__input__0C3wAo input__input_with_icon__YxObee input__input_scaled__mQ0SuZ input__inp",
+        "text": "Article name, keywords",
+        "color": "#000000",
+        "bg": "#ffffff",
+        "font": "manrope",
+        "size": "15px",
+        "weight": "500",
+        "lh": "22px",
+        "ls": "normal",
+        "radius": "5px",
+        "pad": "0px 50px 0px 20px",
+        "border": "1px solid #000000/0.3",
+        "shadow": "",
+        "h": 50,
+        "w": 300,
+        "tt": "none",
+        "trans": "0s all"
+      },
+      {
+        "tag": "INPUT",
+        "cls": "css-1hac4vs-dummyInput",
+        "text": "",
+        "color": "transparent",
+        "bg": "transparent",
+        "font": "manrope",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none transparent",
+        "shadow": "",
+        "h": 0,
+        "w": 0,
+        "tt": "none",
+        "trans": "0s all"
+      }
+    ]
+  },
+  {
+    "label": "english",
+    "href": "https://promova.com/learn-english-online",
+    "title": "Learn English Online | English Speaking Courses at Promova",
+    "status": 200,
+    "viewport": {
+      "w": 1440,
+      "h": 900,
+      "dpr": 1,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      }
+    },
+    "bodyBg": "#000000",
+    "h1": {
+      "tag": "H1",
+      "cls": "hero_description_block__title__2QMtZs",
+      "text": "Learn English Online",
+      "color": "#000000",
+      "bg": "transparent",
+      "font": "nekst",
+      "size": "60px",
+      "weight": "400",
+      "lh": "60px",
+      "ls": "normal",
+      "radius": "0px",
+      "pad": "0px",
+      "border": "0px none #000000",
+      "shadow": "",
+      "h": 120,
+      "w": 570,
+      "tt": "none",
+      "trans": "0s all"
+    },
+    "buttons": [
+      {
+        "tag": "A",
+        "cls": "navigation_actions__login__zl9Mva",
+        "text": "SIGN UP",
+        "color": "#000000",
+        "bg": "#ffffff",
+        "font": "nekst",
+        "size": "14px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px 10px",
+        "border": "1px solid #000000",
+        "shadow": "",
+        "h": 40,
+        "w": 78,
+        "tt": "uppercase",
+        "trans": "0s all"
+      },
+      {
+        "tag": "A",
+        "cls": "navigation_actions__main_button__KANxM7 navigation_actions__min_width_max_content__LG0hxD",
+        "text": "GET STARTED",
+        "color": "#ffffff",
+        "bg": "#000000",
+        "font": "nekst",
+        "size": "14px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px 10px",
+        "border": "0px none #ffffff",
+        "shadow": "",
+        "h": 40,
+        "w": 115,
+        "tt": "uppercase",
+        "trans": "0s all"
+      },
+      {
+        "tag": "A",
+        "cls": "PEtu1G_btn_filled PEtu1G_size_l PEtu1G_scaled_button hero_section__button__Q9InxT",
+        "text": "GET STARTED",
+        "color": "#ffffff",
+        "bg": "#000000",
+        "font": "nekst",
+        "size": "18px",
+        "weight": "400",
+        "lh": "18px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px 15px",
+        "border": "0px none #ffffff",
+        "shadow": "",
+        "h": 60,
+        "w": 340,
+        "tt": "uppercase",
+        "trans": "0.25s background-color"
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "what-you-get-concept7__list_item__Vqr2VR what-you-get-concept7__list_item_active__EEjtK4",
+        "text": "Bite-sized daily lessons",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "manrope",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "10px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 46,
+        "w": 420,
+        "tt": "none",
+        "trans": "0s all"
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "what-you-get-concept7__list_item__Vqr2VR",
+        "text": "Speaking practice with AI Tutor",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "manrope",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "10px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 46,
+        "w": 420,
+        "tt": "none",
+        "trans": "0s all"
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "what-you-get-concept7__list_item__Vqr2VR",
+        "text": "Role-play conversations",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "manrope",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "10px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 46,
+        "w": 420,
+        "tt": "none",
+        "trans": "0s all"
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "what-you-get-concept7__list_item__Vqr2VR",
+        "text": "Learning with media",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "manrope",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "10px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 46,
+        "w": 420,
+        "tt": "none",
+        "trans": "0s all"
+      },
+      {
+        "tag": "BUTTON",
+        "cls": "what-you-get-concept7__list_item__Vqr2VR",
+        "text": "Support at every step",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "manrope",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "10px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 46,
+        "w": 420,
+        "tt": "none",
+        "trans": "0s all"
+      }
+    ],
+    "sections": [
+      {
+        "bg": "transparent",
+        "radius": "0px",
+        "pad": "0px",
+        "text": "Learn English Online Want to improve your English "
+      },
+      {
+        "bg": "#ffffff",
+        "radius": "30px",
+        "pad": "60px",
+        "text": "Promova in numbers 4.7 App rating 4,4m Instagram f"
+      },
+      {
+        "bg": "#f5f5f5",
+        "radius": "30px",
+        "pad": "60px 85px 60px 120px",
+        "text": "What you get with Promova English learning platfor"
+      },
+      {
+        "bg": "transparent",
+        "radius": "0px",
+        "pad": "0px",
+        "text": "Learn with Usyk \u2014 Discipline That Keeps You Going "
+      },
+      {
+        "bg": "#fce2f2",
+        "radius": "30px",
+        "pad": "60px 30px 30px",
+        "text": "How the results are achieved with Promova STEP 1: "
+      },
+      {
+        "bg": "#d2d9ff",
+        "radius": "30px",
+        "pad": "120px 30px",
+        "text": "Join millions learning English online GET STARTED"
+      },
+      {
+        "bg": "#f5f5f5",
+        "radius": "30px",
+        "pad": "60px 85px 60px 120px",
+        "text": "Practical English courses for real-life goals Busi"
+      },
+      {
+        "bg": "#fce2f2",
+        "radius": "30px",
+        "pad": "120px 60px",
+        "text": "Learn English Speaking Online From Day One Start s"
+      },
+      {
+        "bg": "#ffffff",
+        "radius": "30px",
+        "pad": "80px 30px",
+        "text": "Why Promova is #1 choice for speaking English \u2014 01"
+      },
+      {
+        "bg": "#f5f5f5",
+        "radius": "30px",
+        "pad": "60px 30px 120px",
+        "text": "Primary levels of English language proficiency: A0"
+      },
+      {
+        "bg": "#d2d9ff",
+        "radius": "30px",
+        "pad": "30px",
+        "text": "Test your English level online You can determine y"
+      },
+      {
+        "bg": "#ebe0d3",
+        "radius": "30px",
+        "pad": "60px 120px",
+        "text": ""
+      },
+      {
+        "bg": "#f2f4ff",
+        "radius": "30px",
+        "pad": "100px 0px",
+        "text": "What our learners say LEARN WITH US App Store I lo"
+      },
+      {
+        "bg": "#d2d9ff",
+        "radius": "30px",
+        "pad": "120px 30px",
+        "text": "Promova is your all-in-one solution to learn Engli"
+      },
+      {
+        "bg": "#fce2f2",
+        "radius": "30px",
+        "pad": "100px 30px",
+        "text": "Learn another language LEARN SPANISH LEARN FRENCH "
+      },
+      {
+        "bg": "#f4f4f4",
+        "radius": "30px",
+        "pad": "100px 30px",
+        "text": "People often ask What\u2019s the best way to learn Engl"
+      }
+    ],
+    "colors": [
+      [
+        "#ffffff",
+        33
+      ],
+      [
+        "#000000",
+        30
+      ],
+      [
+        "#ebe0d3",
+        7
+      ],
+      [
+        "#d2d9ff",
+        4
+      ],
+      [
+        "#f5f5f5",
+        3
+      ],
+      [
+        "#fce2f2",
+        3
+      ],
+      [
+        "#f5a0d2",
+        2
+      ],
+      [
+        "#000000/0.3",
+        2
+      ],
+      [
+        "#bec8ff",
+        1
+      ],
+      [
+        "#facfe9",
+        1
+      ],
+      [
+        "#f2f4ff",
+        1
+      ],
+      [
+        "#f4f4f4",
+        1
+      ]
+    ],
+    "fonts": [
+      [
+        "manrope 16px 400",
+        526
+      ],
+      [
+        "manrope 18px 400",
+        216
+      ],
+      [
+        "nekst 24px 400",
+        46
+      ],
+      [
+        "nekst 40px 400",
+        42
+      ],
+      [
+        "manrope 15px 400",
+        42
+      ],
+      [
+        "manrope 24px 400",
+        34
+      ],
+      [
+        "nekst 70px 400",
+        28
+      ],
+      [
+        "nekst 15px 400",
+        27
+      ],
+      [
+        "manrope 18px 700",
+        25
+      ],
+      [
+        "nekst 50px 400",
+        20
+      ],
+      [
+        "nekst 18.72px 400",
+        17
+      ],
+      [
+        "nekst 18px 400",
+        16
+      ]
+    ],
+    "radii": [
+      [
+        "30px",
+        65
+      ],
+      [
+        "10px",
+        38
+      ],
+      [
+        "50%",
+        8
+      ],
+      [
+        "15px",
+        5
+      ],
+      [
+        "4px",
+        3
+      ],
+      [
+        "20px",
+        1
+      ]
+    ],
+    "inputs": []
+  },
+  {
+    "label": "who",
+    "href": "https://promova.com/who-we-are",
+    "title": "Who We Are: What is Promova | Promova",
+    "status": 200,
+    "viewport": {
+      "w": 1440,
+      "h": 900,
+      "dpr": 1,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      }
+    },
+    "bodyBg": "#000000",
+    "h1": {
+      "tag": "H1",
+      "cls": "hero_section_concept4__title__xrUnte",
+      "text": "We\u2019re a diverse team of lifelong learners ",
+      "color": "#000000",
+      "bg": "transparent",
+      "font": "nekst",
+      "size": "70px",
+      "weight": "400",
+      "lh": "70px",
+      "ls": "normal",
+      "radius": "0px",
+      "pad": "0px",
+      "border": "0px none #000000",
+      "shadow": "",
+      "h": 280,
+      "w": 770,
+      "tt": "none",
+      "trans": "0s all"
+    },
+    "buttons": [
+      {
+        "tag": "A",
+        "cls": "navigation_actions__login__zl9Mva",
+        "text": "SIGN UP",
+        "color": "#000000",
+        "bg": "#ffffff",
+        "font": "nekst",
+        "size": "14px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px 10px",
+        "border": "1px solid #000000",
+        "shadow": "",
+        "h": 40,
+        "w": 78,
+        "tt": "uppercase",
+        "trans": "0s all"
+      },
+      {
+        "tag": "A",
+        "cls": "navigation_actions__main_button__KANxM7 navigation_actions__min_width_max_content__LG0hxD",
+        "text": "GET STARTED",
+        "color": "#ffffff",
+        "bg": "#000000",
+        "font": "nekst",
+        "size": "14px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px 10px",
+        "border": "0px none #ffffff",
+        "shadow": "",
+        "h": 40,
+        "w": 115,
+        "tt": "uppercase",
+        "trans": "0s all"
+      },
+      {
+        "tag": "A",
+        "cls": "our_products_section__button__SSKo3B",
+        "text": "DOWNLOAD THE APP",
+        "color": "#ffffff",
+        "bg": "#000000",
+        "font": "nekst",
+        "size": "18px",
+        "weight": "700",
+        "lh": "normal",
+        "ls": "0.36px",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #ffffff",
+        "shadow": "",
+        "h": 60,
+        "w": 320,
+        "tt": "uppercase",
+        "trans": "0.2s background"
+      },
+      {
+        "tag": "A",
+        "cls": "our_products_section__button__SSKo3B",
+        "text": "PRACTICE NOW",
+        "color": "#ffffff",
+        "bg": "#000000",
+        "font": "nekst",
+        "size": "18px",
+        "weight": "700",
+        "lh": "normal",
+        "ls": "0.36px",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #ffffff",
+        "shadow": "",
+        "h": 60,
+        "w": 320,
+        "tt": "uppercase",
+        "trans": "0.2s background"
+      },
+      {
+        "tag": "A",
+        "cls": "our_products_section__button__SSKo3B",
+        "text": "LEARN MORE",
+        "color": "#ffffff",
+        "bg": "#000000",
+        "font": "nekst",
+        "size": "18px",
+        "weight": "700",
+        "lh": "normal",
+        "ls": "0.36px",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #ffffff",
+        "shadow": "",
+        "h": 60,
+        "w": 320,
+        "tt": "uppercase",
+        "trans": "0.2s background"
+      },
+      {
+        "tag": "A",
+        "cls": "our_products_section__button__SSKo3B",
+        "text": "LISTEN NOW",
+        "color": "#ffffff",
+        "bg": "#000000",
+        "font": "nekst",
+        "size": "18px",
+        "weight": "700",
+        "lh": "normal",
+        "ls": "0.36px",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #ffffff",
+        "shadow": "",
+        "h": 60,
+        "w": 320,
+        "tt": "uppercase",
+        "trans": "0.2s background"
+      },
+      {
+        "tag": "A",
+        "cls": "our_products_section__button__SSKo3B",
+        "text": "LEARN MORE",
+        "color": "#ffffff",
+        "bg": "#000000",
+        "font": "nekst",
+        "size": "18px",
+        "weight": "700",
+        "lh": "normal",
+        "ls": "0.36px",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #ffffff",
+        "shadow": "",
+        "h": 60,
+        "w": 320,
+        "tt": "uppercase",
+        "trans": "0.2s background"
+      },
+      {
+        "tag": "A",
+        "cls": "PEtu1G_btn_filled PEtu1G_size_l PEtu1G_scaled_button cta_section_concept1__button__mk6yZ2",
+        "text": "TRY NOW",
+        "color": "#ffffff",
+        "bg": "#000000",
+        "font": "nekst",
+        "size": "18px",
+        "weight": "400",
+        "lh": "18px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px 15px",
+        "border": "0px none #ffffff",
+        "shadow": "",
+        "h": 60,
+        "w": 340,
+        "tt": "uppercase",
+        "trans": "0.25s background-color"
+      }
+    ],
+    "sections": [
+      {
+        "bg": "#bc9de4",
+        "radius": "30px",
+        "pad": "30px",
+        "text": "We\u2019re a diverse team of lifelong learners passiona"
+      },
+      {
+        "bg": "#ffffff",
+        "radius": "30px",
+        "pad": "60px 30px",
+        "text": "Promova in numbers 84% of users say they feel more"
+      },
+      {
+        "bg": "#d9e9ab",
+        "radius": "30px",
+        "pad": "30px",
+        "text": "What is Promova Promova (/pr\u0254\u02c8m\u0254v\u028c/) is a language"
+      },
+      {
+        "bg": "#f5f5f5",
+        "radius": "30px",
+        "pad": "120px",
+        "text": ""
+      },
+      {
+        "bg": "#eceeff",
+        "radius": "30px",
+        "pad": "60px 0px 120px",
+        "text": "What we offer Self-learning app Promova adapts to "
+      },
+      {
+        "bg": "#f5f5f5",
+        "radius": "30px",
+        "pad": "60px 30px 30px",
+        "text": "The story of Promova 2019 \u2014 JUST TEN WORDS We kick"
+      },
+      {
+        "bg": "#d2d9ff",
+        "radius": "30px",
+        "pad": "120px 30px",
+        "text": "Choose a course that fits your goals best TRY NOW"
+      },
+      {
+        "bg": "transparent",
+        "radius": "0px",
+        "pad": "0px",
+        "text": "Andrew Skrypnyk, Promova CEO \u201cLanguage is a bridge"
+      },
+      {
+        "bg": "#f2f4ff",
+        "radius": "30px",
+        "pad": "120px 60px",
+        "text": "Promova cares Free for Ukrainians The project is p"
+      },
+      {
+        "bg": "transparent",
+        "radius": "0px",
+        "pad": "0px",
+        "text": "Awards & achievements TIME World's Top EdTech Risi"
+      },
+      {
+        "bg": "transparent",
+        "radius": "30px",
+        "pad": "0px",
+        "text": "See what Promova's about"
+      },
+      {
+        "bg": "transparent",
+        "radius": "0px",
+        "pad": "0px",
+        "text": "Oleksandr Usyk joins Promova to help you finally f"
+      },
+      {
+        "bg": "#eeeeee",
+        "radius": "30px",
+        "pad": "60px 85px 60px 120px",
+        "text": "Promova in the news LEARN FOR LESS \"Best language "
+      },
+      {
+        "bg": "#bc9de4",
+        "radius": "30px",
+        "pad": "30px",
+        "text": "Want to know more? BROWSE FAQ We created a handy F"
+      },
+      {
+        "bg": "#eeeeee",
+        "radius": "30px",
+        "pad": "30px",
+        "text": "Contact us Have something to share? Bounce us a me"
+      },
+      {
+        "bg": "#78e0a2",
+        "radius": "30px",
+        "pad": "30px",
+        "text": "Support team support@promova.com Media inquires In"
+      }
+    ],
+    "colors": [
+      [
+        "#000000",
+        30
+      ],
+      [
+        "#ffffff",
+        24
+      ],
+      [
+        "#facfe9",
+        4
+      ],
+      [
+        "#dfe3ff",
+        3
+      ],
+      [
+        "#eeeeee",
+        3
+      ],
+      [
+        "#bc9de4",
+        2
+      ],
+      [
+        "#f5f5f5",
+        2
+      ],
+      [
+        "#000000/0.3",
+        2
+      ],
+      [
+        "#d9e9ab",
+        1
+      ],
+      [
+        "#eceeff",
+        1
+      ],
+      [
+        "#ecf8ff",
+        1
+      ],
+      [
+        "#d2d9ff",
+        1
+      ],
+      [
+        "#f1af62",
+        1
+      ],
+      [
+        "#f2f4ff",
+        1
+      ],
+      [
+        "#d7d4e2",
+        1
+      ],
+      [
+        "#78e0a2",
+        1
+      ]
+    ],
+    "fonts": [
+      [
+        "manrope 16px 400",
+        350
+      ],
+      [
+        "manrope 18px 400",
+        69
+      ],
+      [
+        "manrope 24px 400",
+        43
+      ],
+      [
+        "manrope 15px 400",
+        43
+      ],
+      [
+        "nekst 70px 400",
+        30
+      ],
+      [
+        "nekst 15px 400",
+        16
+      ],
+      [
+        "nekst 40px 400",
+        14
+      ],
+      [
+        "nekst 50px 400",
+        11
+      ],
+      [
+        "nekst 18px 400",
+        11
+      ],
+      [
+        "nekst 24px 400",
+        10
+      ],
+      [
+        "nekst 120px 400",
+        9
+      ],
+      [
+        "manrope 18px 700",
+        9
+      ]
+    ],
+    "radii": [
+      [
+        "30px",
+        31
+      ],
+      [
+        "10px",
+        24
+      ],
+      [
+        "20px",
+        11
+      ],
+      [
+        "50%",
+        5
+      ],
+      [
+        "15px",
+        5
+      ],
+      [
+        "4px",
+        3
+      ],
+      [
+        "5px",
+        3
+      ],
+      [
+        "6px",
+        2
+      ]
+    ],
+    "inputs": [
+      {
+        "tag": "INPUT",
+        "cls": "input__input__0C3wAo input__input_scaled__mQ0SuZ",
+        "text": "name@mail.com",
+        "color": "#000000",
+        "bg": "#ffffff",
+        "font": "manrope",
+        "size": "15px",
+        "weight": "500",
+        "lh": "22px",
+        "ls": "normal",
+        "radius": "5px",
+        "pad": "0px 20px",
+        "border": "1px solid #000000/0.3",
+        "shadow": "",
+        "h": 50,
+        "w": 340,
+        "tt": "none",
+        "trans": "0s all"
+      },
+      {
+        "tag": "INPUT",
+        "cls": "css-1hac4vs-dummyInput",
+        "text": "",
+        "color": "transparent",
+        "bg": "transparent",
+        "font": "manrope",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none transparent",
+        "shadow": "",
+        "h": 0,
+        "w": 0,
+        "tt": "none",
+        "trans": "0s all"
+      },
+      {
+        "tag": "INPUT",
+        "cls": "",
+        "text": "",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "manrope",
+        "size": "13.3333px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 0,
+        "w": 0,
+        "tt": "none",
+        "trans": "0s all"
+      },
+      {
+        "tag": "TEXTAREA",
+        "cls": "iKXd3G_textarea iKXd3G_textarea_scaled _6jEVrq_textarea",
+        "text": "Your message here",
+        "color": "#000000",
+        "bg": "#ffffff",
+        "font": "manrope",
+        "size": "15px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "5px",
+        "pad": "20px",
+        "border": "1px solid #000000/0.3",
+        "shadow": "",
+        "h": 120,
+        "w": 710,
+        "tt": "none",
+        "trans": "0s all"
+      },
+      {
+        "tag": "TEXTAREA",
+        "cls": "g-recaptcha-response",
+        "text": "",
+        "color": "#000000",
+        "bg": "#ffffff",
+        "font": "manrope",
+        "size": "13.3333px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "1px solid #c1c1c1",
+        "shadow": "",
+        "h": 0,
+        "w": 0,
+        "tt": "none",
+        "trans": "0s all"
+      }
+    ]
+  },
+  {
+    "label": "reviews",
+    "href": "https://promova.com/reviews",
+    "title": "Promova",
+    "status": 404,
+    "viewport": {
+      "w": 1440,
+      "h": 900,
+      "dpr": 1,
+      "vv": {
+        "w": 1440,
+        "h": 900,
+        "scale": 1
+      }
+    },
+    "bodyBg": "#000000",
+    "h1": {
+      "tag": "H1",
+      "cls": "_2Lfa0a_title",
+      "text": "page not found",
+      "color": "#000000",
+      "bg": "transparent",
+      "font": "nekst",
+      "size": "20px",
+      "weight": "400",
+      "lh": "20px",
+      "ls": "normal",
+      "radius": "0px",
+      "pad": "0px",
+      "border": "0px none #000000",
+      "shadow": "",
+      "h": 20,
+      "w": 310,
+      "tt": "none",
+      "trans": "0s all"
+    },
+    "buttons": [
+      {
+        "tag": "A",
+        "cls": "navigation_actions__login__zl9Mva",
+        "text": "SIGN UP",
+        "color": "#000000",
+        "bg": "#ffffff",
+        "font": "nekst",
+        "size": "14px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px 10px",
+        "border": "1px solid #000000",
+        "shadow": "",
+        "h": 40,
+        "w": 78,
+        "tt": "uppercase",
+        "trans": "0s all"
+      },
+      {
+        "tag": "A",
+        "cls": "navigation_actions__main_button__KANxM7 navigation_actions__min_width_max_content__LG0hxD",
+        "text": "GET STARTED",
+        "color": "#ffffff",
+        "bg": "#000000",
+        "font": "nekst",
+        "size": "14px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px 10px",
+        "border": "0px none #ffffff",
+        "shadow": "",
+        "h": 40,
+        "w": 115,
+        "tt": "uppercase",
+        "trans": "0s all"
+      },
+      {
+        "tag": "A",
+        "cls": "NXMoRW_button NXMoRW_filled",
+        "text": "GO TO HOMEPAGE",
+        "color": "#ffffff",
+        "bg": "#000000",
+        "font": "nekst",
+        "size": "14px",
+        "weight": "400",
+        "lh": "14px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px 10px",
+        "border": "0px none #ffffff",
+        "shadow": "",
+        "h": 50,
+        "w": 310,
+        "tt": "uppercase",
+        "trans": "0s all"
+      },
+      {
+        "tag": "A",
+        "cls": "links_list__nav_link__MtljnT",
+        "text": "Instagram",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "manrope",
+        "size": "18px",
+        "weight": "400",
+        "lh": "25.92px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 30,
+        "w": 295,
+        "tt": "none",
+        "trans": "0s all"
+      },
+      {
+        "tag": "A",
+        "cls": "links_list__nav_link__MtljnT",
+        "text": "Facebook",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "manrope",
+        "size": "18px",
+        "weight": "400",
+        "lh": "25.92px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 30,
+        "w": 295,
+        "tt": "none",
+        "trans": "0s all"
+      },
+      {
+        "tag": "A",
+        "cls": "links_list__nav_link__MtljnT",
+        "text": "TikTok",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "manrope",
+        "size": "18px",
+        "weight": "400",
+        "lh": "25.92px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 30,
+        "w": 295,
+        "tt": "none",
+        "trans": "0s all"
+      },
+      {
+        "tag": "A",
+        "cls": "links_list__nav_link__MtljnT",
+        "text": "YouTube",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "manrope",
+        "size": "18px",
+        "weight": "400",
+        "lh": "25.92px",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 30,
+        "w": 295,
+        "tt": "none",
+        "trans": "0s all"
+      },
+      {
+        "tag": "A",
+        "cls": "buttons_list__button__Rv2xgW",
+        "text": "Download on the App Store",
+        "color": "#ffffff",
+        "bg": "#000000",
+        "font": "manrope",
+        "size": "16px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "10px",
+        "pad": "5px 20px",
+        "border": "0px none #ffffff",
+        "shadow": "",
+        "h": 60,
+        "w": 300,
+        "tt": "none",
+        "trans": "0s all"
+      }
+    ],
+    "sections": [
+      {
+        "bg": "#bec8ff",
+        "radius": "30px",
+        "pad": "160px 15px",
+        "text": "page not found GO TO HOMEPAGE"
+      }
+    ],
+    "colors": [
+      [
+        "#000000",
+        5
+      ],
+      [
+        "#ffffff",
+        3
+      ],
+      [
+        "#bec8ff",
+        1
+      ]
+    ],
+    "fonts": [
+      [
+        "manrope 16px 400",
+        116
+      ],
+      [
+        "manrope 15px 400",
+        42
+      ],
+      [
+        "manrope 18px 400",
+        36
+      ],
+      [
+        "nekst 15px 400",
+        16
+      ],
+      [
+        "nekst 14px 400",
+        8
+      ],
+      [
+        "nekst 16px 400",
+        5
+      ],
+      [
+        "manrope 14px 400",
+        5
+      ],
+      [
+        "nekst 24px 400",
+        4
+      ],
+      [
+        "nekst 18px 400",
+        4
+      ],
+      [
+        "manrope 20px 700",
+        3
+      ],
+      [
+        "manrope 14px 500",
+        2
+      ],
+      [
+        "nekst 20px 400",
+        1
+      ]
+    ],
+    "radii": [
+      [
+        "30px",
+        3
+      ],
+      [
+        "10px",
+        3
+      ]
+    ],
+    "inputs": []
+  },
+  {
+    "label": "mobile-home",
+    "href": "https://promova.com/",
+    "title": "Promova \u2013 Your Online Language Learning App & Language Courses",
+    "status": null,
+    "viewport": {
+      "w": 390,
+      "h": 844,
+      "dpr": 2,
+      "vv": {
+        "w": 390,
+        "h": 844,
+        "scale": 1
+      }
+    },
+    "bodyBg": "#000000",
+    "h1": {
+      "tag": "H1",
+      "cls": "hero_section_concept5__title__OOpka6",
+      "text": "Speak before you're ready",
+      "color": "#000000",
+      "bg": "transparent",
+      "font": "Nekst",
+      "size": "50px",
+      "weight": "700",
+      "lh": "50px",
+      "ls": "-1px",
+      "radius": "0px",
+      "pad": "0px",
+      "border": "0px none #000000",
+      "shadow": "",
+      "h": 100,
+      "w": 330,
+      "tt": "none",
+      "trans": "0s all"
+    },
+    "buttons": [
+      {
+        "tag": "A",
+        "cls": "bOfJ3W_navmenu_link",
+        "text": "Learn English POPULAR",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "nekst",
+        "size": "15px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 30,
+        "w": 132,
+        "tt": "none",
+        "trans": "0.2s opacity"
+      },
+      {
+        "tag": "A",
+        "cls": "bOfJ3W_navmenu_link",
+        "text": "Learn Spanish",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "nekst",
+        "size": "15px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 30,
+        "w": 138,
+        "tt": "none",
+        "trans": "0.2s opacity"
+      },
+      {
+        "tag": "A",
+        "cls": "bOfJ3W_navmenu_link",
+        "text": "Learn French",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "nekst",
+        "size": "15px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 30,
+        "w": 129,
+        "tt": "none",
+        "trans": "0.2s opacity"
+      },
+      {
+        "tag": "A",
+        "cls": "bOfJ3W_navmenu_link",
+        "text": "Learn German",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "nekst",
+        "size": "15px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 30,
+        "w": 137,
+        "tt": "none",
+        "trans": "0.2s opacity"
+      },
+      {
+        "tag": "A",
+        "cls": "bOfJ3W_navmenu_link",
+        "text": "Learn Italian",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "nekst",
+        "size": "15px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 30,
+        "w": 124,
+        "tt": "none",
+        "trans": "0.2s opacity"
+      },
+      {
+        "tag": "A",
+        "cls": "bOfJ3W_navmenu_link",
+        "text": "Learn Korean",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "nekst",
+        "size": "15px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 30,
+        "w": 130,
+        "tt": "none",
+        "trans": "0.2s opacity"
+      },
+      {
+        "tag": "A",
+        "cls": "bOfJ3W_navmenu_link",
+        "text": "Learn Japanese",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "nekst",
+        "size": "15px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 30,
+        "w": 149,
+        "tt": "none",
+        "trans": "0.2s opacity"
+      },
+      {
+        "tag": "A",
+        "cls": "bOfJ3W_navmenu_link",
+        "text": "Learn \u0421hinese",
+        "color": "#000000",
+        "bg": "transparent",
+        "font": "nekst",
+        "size": "15px",
+        "weight": "400",
+        "lh": "normal",
+        "ls": "normal",
+        "radius": "0px",
+        "pad": "0px",
+        "border": "0px none #000000",
+        "shadow": "",
+        "h": 30,
+        "w": 139,
+        "tt": "none",
+        "trans": "0.2s opacity"
+      }
+    ],
+    "sections": [
+      {
+        "bg": "#bec8ff",
+        "radius": "20px",
+        "pad": "0px",
+        "text": "Speak before you're ready Speaking isn't the final"
+      },
+      {
+        "bg": "#ffffff",
+        "radius": "20px",
+        "pad": "20px",
+        "text": "4.6 App rating 12 Languages 400+ Topics 46M Lesson"
+      },
+      {
+        "bg": "transparent",
+        "radius": "0px",
+        "pad": "0px",
+        "text": "What language do you want to speak? English Spanis"
+      },
+      {
+        "bg": "#f5f5f5",
+        "radius": "20px",
+        "pad": "40px 20px",
+        "text": "Why Promova language learning platform \u2014 01 Speak "
+      },
+      {
+        "bg": "#fff8a7",
+        "radius": "20px",
+        "pad": "20px",
+        "text": "93% of our learners say they feel more confident s"
+      },
+      {
+        "bg": "#ffffff",
+        "radius": "20px",
+        "pad": "30px 20px",
+        "text": "How our language learning app works \u2014 01 Personal "
+      },
+      {
+        "bg": "transparent",
+        "radius": "0px",
+        "pad": "0px",
+        "text": "Backed by a champion who doesn't lose Usyk helped "
+      },
+      {
+        "bg": "#bcf0d0",
+        "radius": "20px",
+        "pad": "20px",
+        "text": "I have tried many different apps to improve my Eng"
+      },
+      {
+        "bg": "transparent",
+        "radius": "0px",
+        "pad": "0px",
+        "text": "How to get started 1 Download Promova app. It's fr"
+      },
+      {
+        "bg": "#f2f4ff",
+        "radius": "20px",
+        "pad": "30px 0px",
+        "text": "From learners who started just like you App Store "
+      },
+      {
+        "bg": "#ebe0d3",
+        "radius": "20px",
+        "pad": "40px 20px",
+        "text": "Improve your language skills with Promova Free lan"
+      },
+      {
+        "bg": "#f5a3d0",
+        "radius": "20px",
+        "pad": "24px 16px",
+        "text": "Awards & achievements Who doesn't like a bit of br"
+      },
+      {
+        "bg": "#ebe0d3",
+        "radius": "20px",
+        "pad": "60px 20px 20px",
+        "text": "Our latest articles Best Language Learning Apps in"
+      },
+      {
+        "bg": "#f4f4f4",
+        "radius": "20px",
+        "pad": "20px 0px 0px",
+        "text": "People often ask What does Promova mean anyway? Ho"
+      },
+      {
+        "bg": "transparent",
+        "radius": "0px",
+        "pad": "0px",
+        "text": "Create your account today and get started for free"
+      }
+    ],
+    "colors": [
+      [
+        "#ffffff",
+        42
+      ],
+      [
+        "#000000",
+        23
+      ],
+      [
+        "#000000/0.3",
+        6
+      ],
+      [
+        "#e0e0e0",
+        5
+      ],
+      [
+        "#bec8ff",
+        3
+      ],
+      [
+        "#c8df87",
+        3
+      ],
+      [
+        "#fff050",
+        2
+      ],
+      [
+        "#ebe0d3",
+        2
+      ],
+      [
+        "#fff584",
+        1
+      ],
+      [
+        "#d7d4e2",
+        1
+      ],
+      [
+        "#f5f5f5",
+        1
+      ],
+      [
+        "#fff8a7",
+        1
+      ],
+      [
+        "#bcf0d0",
+        1
+      ],
+      [
+        "#e3efc3",
+        1
+      ],
+      [
+        "#eef5db",
+        1
+      ],
+      [
+        "#f2f4ff",
+        1
+      ]
+    ],
+    "fonts": [
+      [
+        "manrope 16px 400",
+        612
+      ],
+      [
+        "nekst 15px 400",
+        177
+      ],
+      [
+        "manrope 15px 400",
+        92
+      ],
+      [
+        "manrope 18px 400",
+        55
+      ],
+      [
+        "nekst 20px 400",
+        54
+      ],
+      [
+        "nekst 14px 400",
+        23
+      ],
+      [
+        "nekst 50px 400",
+        19
+      ],
+      [
+        "manrope 20px 400",
+        16
+      ],
+      [
+        "nekst 24px 400",
+        15
+      ],
+      [
+        "nekst 18px 400",
+        14
+      ],
+      [
+        "nekst 30px 400",
+        8
+      ],
+      [
+        "nekst 60px 400",
+        7
+      ]
+    ],
+    "radii": [
+      [
+        "20px",
+        57
+      ],
+      [
+        "50%",
+        22
+      ],
+      [
+        "10px",
+        12
+      ],
+      [
+        "4px",
+        8
+      ],
+      [
+        "30px",
+        4
+      ],
+      [
+        "24px",
+        2
+      ],
+      [
+        "2px",
+        1
+      ],
+      [
+        "12px",
+        1
+      ],
+      [
+        "12.86px",
+        1
+      ],
+      [
+        "9.46px",
+        1
+      ]
+    ],
+    "inputs": []
+  }
+]

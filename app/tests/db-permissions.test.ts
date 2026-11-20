@@ -22,13 +22,13 @@ test.skipIf(process.platform === "win32")(
     // a permissive umask leaves them.
     await chmod(dir, 0o755);
     const first = await createResearchStore(dir);
-    await first.saveSettings({ provider: "openai" });
+    await first.updateSettings(() => ({ provider: "openai" }));
     first.close();
     for (const name of await readdir(dir)) await chmod(join(dir, name), 0o644);
     await chmod(dir, 0o755);
     const store = await createResearchStore(dir);
     try {
-      await store.saveSettings({ provider: "anthropic" });
+      await store.updateSettings(() => ({ provider: "anthropic" }));
       expect(await mode(dir)).toBe(0o700);
       const files = (await readdir(dir)).filter((name) =>
         name.startsWith("app.db"),

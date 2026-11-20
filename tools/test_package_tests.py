@@ -1,5 +1,8 @@
 """Tests for tools/package_tests.py. Run with `make test`."""
 import io
+import json
+import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -62,15 +65,21 @@ class ResultTest(unittest.TestCase):
 
 
 class PackagesTest(unittest.TestCase):
-    def test_finds_package_tools_with_tests_only(self):
+    def test_finds_test_files_at_any_depth_outside_evidence_folders(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            for rel in ("systems/b/tools/test_x.py", "systems/b/tools/test_y.py",
-                        "systems/a/tools/test_x.py", "systems/c/tools/build.py"):
+            for rel in ("systems/b/tools/test_x.py", "systems/b/tools/native/test_y.py",
+                        "systems/b/tools/capture/test_serve.mjs", "systems/b/tools/capture/electron/stop.test.mjs",
+                        "systems/b/native/test_z.py", "systems/b/raw/test_dump.py",
+                        "systems/b/tools/capture/node_modules/x/test_dep.mjs",
+                        "systems/a/tools/test_x.py", "systems/c/tools/build.py", "systems/d/tools/capture/test_q.py"):
                 (root / rel).parent.mkdir(parents=True, exist_ok=True)
                 (root / rel).write_text("")
-            self.assertEqual([p.parent.name for p in package_tests.packages(root)], ["a", "b"])
-            self.assertEqual([p.parent.name for p in package_tests.packages(root, ["b"])], ["b"])
+            found = package_tests.packages(root)
+            self.assertEqual(list(found), ["a", "b", "d"])
+            self.assertEqual(found["b"], ["native/test_z.py", "tools/capture/electron/stop.test.mjs",
+                                          "tools/capture/test_serve.mjs", "tools/native/test_y.py", "tools/test_x.py"])
+            self.assertEqual(list(package_tests.packages(root, ["d"])), ["d"])
 
 
 def write(root, rel, text):
@@ -88,7 +97,7 @@ class T(unittest.TestCase):
 
 
 class MainTest(unittest.TestCase):
-    """Runs the real gate over a scratch systems/ tree, one interpreter per package."""
+    """Runs the real gate over a scratch systems/ tree, one interpreter per test file."""
 
     def tree(self, tmp, slugs, failing=()):
         root = Path(tmp)
@@ -101,22 +110,108 @@ class MainTest(unittest.TestCase):
         return root
 
     def main(self, root, argv=()):
-        with mock.patch("sys.stdout", io.StringIO()) as out, mock.patch("sys.stderr", io.StringIO()):
+        with mock.patch("sys.stdout", io.StringIO()) as out, mock.patch("sys.stderr", io.StringIO()) as err:
             code = package_tests.main(list(argv), root)
-        return code, out.getvalue()
+        return code, out.getvalue() + err.getvalue()
 
     def test_same_named_siblings_stay_separate(self):
         with tempfile.TemporaryDirectory() as tmp:
             code, out = self.main(self.tree(tmp, ["one", "two"]))
         self.assertEqual(code, 0, out)
-        self.assertIn("systems/one: 1 tests OK", out)
-        self.assertIn("systems/two: 1 tests OK", out)
+        self.assertIn("systems/one/tools/test_sibling.py: 1 tests OK", out)
+        self.assertIn("systems/two/tools/test_sibling.py: 1 tests OK", out)
+
+    def test_a_nested_test_runs_from_its_own_folder(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self.tree(tmp, ["one"])
+            write(root, "systems/one/tools/native/sibling.py", "SLUG = 'native'\n")
+            write(root, "systems/one/tools/native/test_sibling.py", SIBLING_TEST.format(slug="native"))
+            code, out = self.main(root)
+        self.assertEqual(code, 0, out)
+        self.assertIn("systems/one/tools/native/test_sibling.py: 1 tests OK", out)
+
+    @unittest.skipUnless(shutil.which("node"), "node is not installed")
+    def test_mjs_tests_run_under_node(self):
+        passing = "import test from 'node:test';\ntest('ok', () => {});\n"
+        failing = "import test from 'node:test';\nimport assert from 'node:assert';\ntest('no', () => assert.fail());\n"
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self.tree(tmp, ["one"])
+            write(root, "systems/one/tools/capture/test_ok.mjs", passing)
+            code, out = self.main(root)
+            self.assertEqual(code, 0, out)
+            self.assertIn("systems/one/tools/capture/test_ok.mjs: 1 tests, 0 failed (node --test)", out)
+            write(root, "systems/one/tools/capture/test_no.mjs", failing)
+            code, out = self.main(root)
+        self.assertEqual(code, 1, out)
+        self.assertIn("1 failed: systems/one/tools/capture/test_no.mjs", out)
 
     def test_a_failing_package_fails_the_run(self):
         with tempfile.TemporaryDirectory() as tmp:
             code, out = self.main(self.tree(tmp, ["one", "two"], failing=["two"]))
         self.assertEqual(code, 1)
-        self.assertIn("1 failed: two", out)
+        self.assertIn("1 failed: systems/two/tools/test_fail.py", out)
+
+    def test_an_expected_failure_is_reported_and_must_keep_failing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self.tree(tmp, ["one", "two"], failing=["two"])
+            listed = {"systems/two/tools/test_fail.py": "known: routed to the package owner"}
+            write(root, package_tests.EXPECTED, json.dumps(listed))
+            code, out = self.main(root)
+            self.assertEqual(code, 0, out)
+            self.assertIn("expected failure: known: routed to the package owner", out)
+            # Once it passes, the run says the entry can go (a warning: it may fail elsewhere).
+            write(root, "systems/two/tools/test_fail.py", "import unittest\n")
+            code, out = self.main(root)
+            self.assertEqual(code, 0, out)
+            self.assertIn("passes here but is listed", out)
+            # An entry naming no test file is stale too.
+            write(root, package_tests.EXPECTED, json.dumps({"systems/two/tools/test_gone.py": "x"}))
+            code, out = self.main(root)
+        self.assertEqual(code, 1, out)
+        self.assertIn("not a package test file", out)
+
+    def test_a_test_that_rewrites_its_package_runs_on_a_copy(self):
+        rewrite = ("import pathlib, unittest\nclass T(unittest.TestCase):\n    def test_it(self):\n"
+                   "        pathlib.Path('../tokens.json').write_text('changed')\n")
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self.tree(tmp, ["one"])
+            write(root, "systems/one/tokens.json", "{}")
+            write(root, "systems/one/tools/test_rewrite.py", rewrite)
+            code, out = self.main(root)
+            self.assertEqual(code, 0, out)
+            self.assertEqual((root / "systems/one/tokens.json").read_text(), "{}")
+
+    def test_a_test_that_writes_into_the_checkout_fails_the_run(self):
+        escape = ("import pathlib, unittest\nclass T(unittest.TestCase):\n    def test_it(self):\n"
+                  "        (pathlib.Path('../../..').resolve() / 'tools' / 'stray.txt').write_text('x')\n")
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self.tree(tmp, ["one"])
+            write(root, "tools/keep.txt", "")
+            write(root, "systems/one/tools/test_escape.py", escape)
+            subprocess.run(["git", "init", "-q"], cwd=root, check=True)
+            subprocess.run(["git", "add", "."], cwd=root, check=True)
+            code, out = self.main(root)
+        self.assertEqual(code, 1, out)
+        self.assertIn("a package test changed the checkout: ?? tools/stray.txt", out)
+
+    def test_a_test_that_changes_an_already_dirty_or_untracked_file_fails_the_run(self):
+        for target, change in (("tools/keep.txt", "write_text('edited again')"),   # tracked, already modified
+                               ("tools/scratch.txt", "write_text('changed')"),      # untracked
+                               ("tools/scratch.txt", "unlink()")):                 # untracked, removed
+            escape = ("import pathlib, unittest\nclass T(unittest.TestCase):\n    def test_it(self):\n"
+                      f"        (pathlib.Path('../../..').resolve() / {target!r}).{change}\n")
+            with self.subTest(target=target, change=change), tempfile.TemporaryDirectory() as tmp:
+                root = self.tree(tmp, ["one"])
+                write(root, "tools/keep.txt", "")
+                write(root, "systems/one/tools/test_escape.py", escape)
+                subprocess.run(["git", "init", "-q"], cwd=root, check=True)
+                subprocess.run(["git", "add", "."], cwd=root, check=True)
+                write(root, "tools/keep.txt", "edited before the run")
+                write(root, "tools/scratch.txt", "untracked before the run")
+                code, out = self.main(root)
+                self.assertEqual(code, 1, out)
+                self.assertIn(f"a package test changed the checkout: ", out)
+                self.assertIn(target, out.split("changed the checkout: ", 1)[1])
 
     def test_unknown_slug_is_refused(self):
         with tempfile.TemporaryDirectory() as tmp:

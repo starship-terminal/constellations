@@ -1,0 +1,7 @@
+{
+  "_note": "Published marketing addresses only. jenny@example.com is the login field's own placeholder. hey@jasper.ai is the public contact line on /pricing. Neither was typed.",
+  "ocr": {
+    "emails": true,
+    "email_allow": ["^jenny@example\\.com$", "^hey@jasper\\.ai$", "^hey@Jasper\\.ai$"]
+  }
+}

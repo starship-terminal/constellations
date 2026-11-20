@@ -1,0 +1,13 @@
+{
+  "_note": "Rules for systems/helloivy. Public signed-out capture of www.helloivy.co, app.helloivy.co/login (at rest - never signed into) and a public share document. No surface paints machine-private data: nothing was signed into, typed, searched or submitted. The public share document is a media kit the author chose to publish by link - its contents (including the author's public name and studio details shown on the published page) are published content and are kept. helloivy.co's own public contact addresses on the site are the product's published contact details; @helloivy.co is the product's public domain, allowed. The second pattern covers OCR-mangled reads of that same published address (observed: 'hello@helloivy.c' with the final letter clipped on mobile-pricing-light-full.png, and 'hello@helloivy.coPrivacy' where 'Privacy policy' ran into the domain on terms-light-full.png).",
+  "families": [],
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@helloivy\\.co$",
+      "@example\\.com$",
+      "@helloivy\\.coprivacy$",
+      "@helloivy\\.c$"
+    ]
+  }
+}

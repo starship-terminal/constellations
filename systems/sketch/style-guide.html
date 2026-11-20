@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sketch style guide</title>
+<style>
+  :root {
+    --page: #f5f5f5;
+    --surface: #ffffff;
+    --footer: #fafafa;
+    --action: #151515;
+    --input: #f9f9f9;
+    --text: #212123;
+    --muted: #000000b3;
+    --on-action: #ffffff;
+    --link: #555dff;
+    --stroke: #e6e6e6;
+    --success: #13bf3e;
+    --invalid: #cc0000;
+    --focus: #555dff;
+    --sans: Inter, system-ui, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --display: Georgia, "Times New Roman", serif;
+  }
+  [data-theme="dark"] {
+    --page: #2d2d2f;
+    --surface: #202022;
+    --footer: #202022;
+    --action: #575fff;
+    --input: #ffffff29;
+    --text: #ffffff;
+    --muted: #ffffffb3;
+    --on-action: #ffffff;
+    --link: #575fff;
+    --stroke: #ffffff14;
+    --focus: #575fff;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--sans); }
+  header { display: flex; justify-content: space-between; align-items: center; padding: 16px 32px; }
+  h1 { font: 500 32px/40px var(--display); margin: 0; }
+  main { max-width: 960px; margin: 0 auto; padding: 8px 32px 64px; }
+  h2 { font: 500 28px/32px var(--display); margin: 40px 0 12px; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 64px; border-radius: 16px; border: 1px solid var(--stroke); }
+  .name { font-size: 12px; line-height: 16px; color: var(--muted); margin-top: 4px; }
+  .display { font: 500 76px/76px var(--display); letter-spacing: -1.5px; margin: 0; }
+  .lead { font-size: 24px; line-height: 32px; max-width: 36rem; }
+  button, .btn {
+    font: 600 16px/24px var(--sans);
+    color: var(--on-action);
+    background: var(--action);
+    border: 0;
+    border-radius: 24px;
+    padding: 11px 24px 12px;
+    cursor: pointer;
+  }
+  [data-theme="dark"] button, [data-theme="dark"] .btn { border-radius: 6px; padding: 10px 12px; font-size: 14px; }
+  .field {
+    display: block; width: 280px; background: var(--input); color: var(--text);
+    border: 0; border-radius: 16px; padding: 12px 14px; font: 400 16px/24px var(--sans);
+    box-shadow: var(--stroke) 0 0 0 1px;
+  }
+  [data-theme="dark"] .field { border-radius: 6px; padding: 10px; font-size: 14px; }
+  .card {
+    background: var(--surface); border-radius: 28px; padding: 36px;
+    box-shadow: rgba(74, 21, 39, 0.2) 0 0 1px, rgba(74, 21, 39, 0.1) 0 12px 24px;
+    max-width: 286px;
+  }
+  .card h3 { font: 500 32px/40px var(--display); margin: 0 0 8px; }
+  .price { font: 500 76px/76px var(--display); margin: 8px 0; }
+  a { color: var(--link); }
+  .note { color: var(--muted); font-size: 14px; max-width: 62ch; }
+  .toggle { background: transparent; color: var(--text); border: 1px solid var(--stroke); border-radius: 16px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Sketch</h1>
+  <button class="toggle" type="button" id="theme">Account dark</button>
+</header>
+<main>
+  <p class="display">Designers, welcome home.</p>
+  <p class="lead">Sketch is a toolkit made by designers, for designers, that puts the focus on you and your work.</p>
+  <p><button type="button">Get started for free</button></p>
+  <p class="note">Values are the ones measured on sketch.com on 19 November 2026. Reckless is replaced by Georgia. Inter Variable is replaced by Inter.</p>
+
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+
+  <h2>Type</h2>
+  <p class="display" style="font-size:56px;line-height:56px">Pricing</p>
+  <p class="lead">Start using Sketch for free for 30 days.</p>
+  <p>Body copy sits at 16px. Nav links are 15px and weight 600 on the refreshed site.</p>
+
+  <h2>Controls</h2>
+  <p><button type="button">Start a subscription</button></p>
+  <p><input class="field" placeholder="Enter your email" aria-label="Email"></p>
+
+  <h2>Plan card</h2>
+  <div class="card">
+    <h3>Standard</h3>
+    <p class="note">For individuals and small teams</p>
+    <p class="price">11</p>
+    <p class="note">Monthly / per Editor, billed yearly</p>
+    <p><button type="button">Start a subscription</button></p>
+  </div>
+</main>
+<script>
+  const colours = [
+    ["page", "--page"], ["surface", "--surface"], ["action", "--action"],
+    ["text", "--text"], ["muted", "--muted"], ["link", "--link"],
+    ["stroke", "--stroke"], ["focus", "--focus"], ["success", "--success"],
+    ["invalid", "--invalid"]
+  ];
+  const row = document.getElementById("swatches");
+  for (const [name, v] of colours) {
+    const el = document.createElement("div");
+    el.className = "swatch";
+    el.innerHTML = '<div class="chip" style="background:var(' + v + ')"></div><div class="name">' + name + '</div>';
+    row.appendChild(el);
+  }
+  document.getElementById("theme").addEventListener("click", () => {
+    const dark = document.body.getAttribute("data-theme") === "dark";
+    document.body.toggleAttribute("data-theme", !dark);
+    document.body.dataset.theme = dark ? "" : "dark";
+    if (dark) document.body.removeAttribute("data-theme");
+    document.getElementById("theme").textContent = dark ? "Account dark" : "Marketing light";
+  });
+</script>
+</body>
+</html>

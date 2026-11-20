@@ -1,0 +1,11 @@
+{
+  "_note": "Rules for systems/glassnode. Public signed-out capture of glassnode.com, studio/research/docs/tokenization.glassnode.com and the Auth0 login. Nothing machine-private is painted on the public surface; Glassnode's own published contact addresses (support@/sales@glassnode.com on the studio contact page) are allow-listed.",
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@glassnode\\.com$",
+      "@example\\.com$"
+    ],
+    "net": true
+  }
+}

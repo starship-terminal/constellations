@@ -3,7 +3,8 @@
 
     python3 tools/grade.py            print the scripted grades for every package
     python3 tools/grade.py --write    write scorecard/audits/<today>[-N].json, then every README's Health
-    python3 tools/grade.py --check    fail if the newest snapshot or a README's Health is stale
+    python3 tools/grade.py --check    fail if the newest snapshot or a README's Health is stale, or
+                                      the newest snapshot lacks a review an older one holds
     python3 tools/grade.py --criteria SLUG    print the wording a reviewer grades SLUG against
 
 A snapshot copies the newest audit, replaces the grades below with fresh results, and
@@ -12,6 +13,11 @@ an optional criterion where the product publishes it (a public design system's p
 say), a Meets or Partly grade counts, and anything else is graded not applicable, never
 missing. Every other grade is a reviewer's judgement and is carried over unchanged, so it
 stays exactly as reliable as the review that set it.
+
+Snapshots written on parallel branches each start from their own newest audit, so after
+both merge the newest one can lack a review that only the other holds. `--write` carries
+every snapshot's reviewed grades forward (per package and criterion, the newest review
+wins), and `--check` fails while the newest snapshot lacks one.
 
 A reviewer grades a package against the wording for its catalog `platform` (web, mobile
 or desktop; `--criteria SLUG` prints it). Each package in a snapshot records `platform` and
@@ -341,6 +347,83 @@ def snapshot(criteria: dict, base: dict, catalog_systems: list[dict], date: str,
     return out
 
 
+def snapshot_name(audit: dict) -> str:
+    """The file an audit loaded from: run 1 of a day is `<date>.json`, run N `<date>-N.json`."""
+    seq = audit.get("_seq", 1)
+    return f"{audit['date']}.json" if seq == 1 else f"{audit['date']}-{seq}.json"
+
+
+def carry_forward(criteria: dict, audits: list[dict], slugs: set[str]) -> tuple[dict, list[tuple[str, str, str]]]:
+    """(base, restored): the newest audit with every reviewed grade any snapshot holds
+    carried into it, and the packages whose reviewed grades that changed.
+
+    Capture branches each write their own snapshot from their own base, so once two
+    merge, the newest snapshot can lack a review only the other one holds. Every
+    snapshot counts here: for each package in `slugs` and each criterion a reviewer
+    sets, the grade from the newest review wins (the package's `reviewed` date, else
+    the snapshot's base review), and a tie goes to the later snapshot. `restored`
+    lists (slug, snapshot file, review date) for each package whose reviewed grades
+    the newest snapshot lacks or holds from an older review."""
+    ids = {c["id"] for c in reviewable(criteria)} | {c["id"] for c in optional(criteria)}
+    best: dict[str, dict] = {}        # slug -> criterion -> (key, grade)
+    owner: dict[str, tuple] = {}      # slug -> (key, system, audit) of its newest review
+    for index, audit in enumerate(audits):
+        for system in audit.get("systems", []):
+            slug = system.get("slug") if isinstance(system, dict) else None
+            grades = system.get("grades") if slug in slugs else None
+            if not isinstance(grades, dict):
+                continue
+            key = (system.get("reviewed") or audit.get("base") or audit["date"], index)
+            if slug not in owner or key >= owner[slug][0]:
+                owner[slug] = (key, system, audit)
+            held = best.setdefault(slug, {})
+            for cid, g in grades.items():
+                if cid in ids and isinstance(g, dict) and (cid not in held or key >= held[cid][0]):
+                    held[cid] = (key, g)
+    out = copy.deepcopy(audits[-1])
+    newest = {s["slug"]: s for s in out["systems"] if isinstance(s, dict) and "slug" in s}
+    restored = []
+    for slug in sorted(owner):
+        key, source, audit = owner[slug]
+        target = newest.get(slug)
+        wanted = {cid: g for cid, (_, g) in best.get(slug, {}).items()}
+        held = (target or {}).get("grades") if isinstance((target or {}).get("grades"), dict) else {}
+        if target is not None and all(held.get(cid) == g for cid, g in wanted.items()) \
+                and target.get("reviewed") == source.get("reviewed"):
+            continue
+        if target is None:
+            target = {"slug": slug, "grades": {}}
+            out["systems"].append(target)
+            newest[slug] = target
+        target.setdefault("grades", {}).update(copy.deepcopy(wanted))
+        for field in ("reviewed", "reviewedPlatform"):
+            if field in source:
+                target[field] = source[field]
+            else:
+                target.pop(field, None)
+        restored.append((slug, snapshot_name(audit), key[0]))
+    return out, restored
+
+
+# Reviews lost to sibling snapshots, as {slug: review date}: `--check` warns about these
+# instead of failing until the next `make grade` carries them into the newest snapshot.
+# Empty since the 2026-11-20 restore; any loss now fails. Add an entry only with a reason.
+KNOWN_LOST: dict[str, str] = {}
+
+
+def lost_reviews(criteria: dict, audits: list[dict], slugs: set[str],
+                 known: dict[str, str] | None = None) -> tuple[list[str], list[str]]:
+    """(problems, warnings): a package whose reviewed grades an older snapshot holds and
+    the newest one lacks is a problem, unless `known` lists that exact review."""
+    known = KNOWN_LOST if known is None else known
+    problems, warnings = [], []
+    for slug, name, date in carry_forward(criteria, audits, slugs)[1]:
+        line = (f"{slug}: the review dated {date} in scorecard/audits/{name} is missing from the newest "
+                f"snapshot; run `make grade` to carry it forward")
+        (warnings if known.get(slug) == date else problems).append(line)
+    return problems, warnings
+
+
 def stale(criteria: dict, audit: dict, catalog_systems: list[dict], categories: dict) -> tuple[list, list]:
     """Problems (scripted grades or package details that no longer match the packages)
     and warnings (a package captured after its reviewed grades were last set, or graded
@@ -453,7 +536,9 @@ def main() -> None:
         if problems:
             sys.exit("scorecard data problems:\n  " + "\n  ".join(problems))
         stale_problems, warnings = stale(criteria, audits[-1], systems, categories)
-        problems = stale_problems + health.problems(criteria, audits[-1], systems)
+        lost, known = lost_reviews(criteria, audits, {s["slug"] for s in systems})
+        problems = lost + stale_problems + health.problems(criteria, audits[-1], systems)
+        warnings = known + warnings
         for w in warnings:
             print(f"warning: {w}")
         if problems:
@@ -467,7 +552,10 @@ def main() -> None:
         return
     criteria, audits = scorecard.load()
     reviews = load_reviews(args.review, {s["slug"] for s in systems})
-    out = snapshot(criteria, audits[-1], systems, args.date, categories, reviews, args.method)
+    base, restored = carry_forward(criteria, audits, {s["slug"] for s in systems})
+    for slug, name, date in restored:
+        print(f"carried forward {slug}'s review dated {date} from scorecard/audits/{name}")
+    out = snapshot(criteria, base, systems, args.date, categories, reviews, args.method)
     problems = scorecard.check(criteria, audits + [out])
     if problems:
         sys.exit("snapshot problems:\n  " + "\n  ".join(problems))

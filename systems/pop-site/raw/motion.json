@@ -1,0 +1,1490 @@
+{
+ "_meta": {
+  "readAt": "2026-11-19",
+  "probe": "page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page",
+  "source": "public pages, headless Chromium, read at rest",
+  "notes": "Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial."
+ },
+ "summary": {
+  "moving": 4,
+  "removed": 0,
+  "reduced": 0,
+  "kept": 4,
+  "partial": 0,
+  "increased": 0,
+  "added": 0,
+  "behaviour": "ignores",
+  "loops": []
+ },
+ "pages": {
+  "page-1": {
+   "url": "https://pop.site/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 930,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 0,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 0,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "no-motion",
+    "loops": []
+   },
+   "groups": [],
+   "keyframes": [
+    {
+     "name": "__framer-editorbar-spinner-spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [],
+   "declared": [
+    {
+     "selector": ".framer-form-input-wrapper::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-color"
+      },
+      {
+       "property": "border-width"
+      },
+      {
+       "property": "border-style"
+      },
+      {
+       "property": "border-top-left-radius"
+      },
+      {
+       "property": "border-top-right-radius"
+      },
+      {
+       "property": "border-bottom-right-radius"
+      },
+      {
+       "property": "border-bottom-left-radius"
+      },
+      {
+       "property": "corner-shape"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".framer-form-input-wrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background"
+      },
+      {
+       "property": "box-shadow"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".framer-form-text-input-clear",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#-editorbar-label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".-editorbar-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "__framer-editorbar-spinner-spin",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    }
+   ],
+   "customProperties": []
+  },
+  "page-2": {
+   "url": "https://pop.site/pricing",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 194,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 0,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 0,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "no-motion",
+    "loops": []
+   },
+   "groups": [],
+   "keyframes": [
+    {
+     "name": "__framer-editorbar-spinner-spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [],
+   "declared": [
+    {
+     "selector": ".framer-form-input-wrapper::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-color"
+      },
+      {
+       "property": "border-width"
+      },
+      {
+       "property": "border-style"
+      },
+      {
+       "property": "border-top-left-radius"
+      },
+      {
+       "property": "border-top-right-radius"
+      },
+      {
+       "property": "border-bottom-right-radius"
+      },
+      {
+       "property": "border-bottom-left-radius"
+      },
+      {
+       "property": "corner-shape"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".framer-form-input-wrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background"
+      },
+      {
+       "property": "box-shadow"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".framer-form-text-input-clear",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#-editorbar-label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".-editorbar-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "__framer-editorbar-spinner-spin",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    }
+   ],
+   "customProperties": []
+  },
+  "page-3": {
+   "url": "https://app.pop.site/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 47,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 4,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 4,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "ignores",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "outline-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "--tw-gradient-from",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "--tw-gradient-via",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "--tw-gradient-to",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "outline-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "--tw-gradient-from",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "--tw-gradient-via",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "--tw-gradient-to",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "outline-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "text-decoration-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "fill",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "stroke",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "--tw-gradient-from",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "--tw-gradient-via",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "--tw-gradient-to",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "a.font-medium.transition-colors"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "button.w-full.rounded-full.font-medium"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "outline-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "--tw-gradient-from",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "--tw-gradient-via",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "--tw-gradient-to",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "outline-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "text-decoration-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "fill",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "stroke",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "--tw-gradient-from",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "--tw-gradient-via",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "--tw-gradient-to",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "outline-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "text-decoration-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "fill",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "stroke",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "--tw-gradient-from",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "--tw-gradient-via",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "--tw-gradient-to",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "button.w-full.flex.items-center"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "fadeIn",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "shake",
+     "steps": [
+      {
+       "offset": "0%, 100%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "15%, 45%, 75%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "30%, 60%, 85%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "ping",
+     "steps": [
+      {
+       "offset": "75%, 100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "pulse",
+     "steps": [
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "_overlayShow_1e2ox_1",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "_contentShow_1e2ox_1",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".motion-reduce\\:transition-none",
+     "declarations": {
+      "transition-property": "none"
+     }
+    }
+   ],
+   "declared": [
+    {
+     "selector": ".animate-\\[fadeIn_0\\.2s_ease-out\\]",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "fadeIn",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".scroll-smooth",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [],
+     "animations": [],
+     "scrollBehavior": "smooth"
+    },
+    {
+     "selector": ".transition",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [
+      {
+       "property": "color",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "background-color",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "border-color",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "outline-color",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "text-decoration-color",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "fill",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "stroke",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "--tw-gradient-from",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "--tw-gradient-via",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "--tw-gradient-to",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "opacity",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "box-shadow",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "transform",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "translate",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "scale",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "rotate",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "filter",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "-webkit-backdrop-filter",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "backdrop-filter",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".transition-\\[height\\]",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [
+      {
+       "property": "height",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".transition-all",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [
+      {
+       "property": "all",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".transition-colors",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [
+      {
+       "property": "color",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "background-color",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "border-color",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "outline-color",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "text-decoration-color",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "fill",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "stroke",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "--tw-gradient-from",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "--tw-gradient-via",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "--tw-gradient-to",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".transition-opacity",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".transition-shadow",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [
+      {
+       "property": "box-shadow",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".transition-transform",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "translate",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "scale",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      },
+      {
+       "property": "rotate",
+       "durationRaw": "var(--tw-duration,var(--default-transition-duration))",
+       "easing": "var(--tw-ease, var(--default-transition-timing-function))"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".duration-100",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 100
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-150",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 150
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-200",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 200
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-300",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 300
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-500",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 500
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".duration-700",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationMs": 700
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ease-\\[cubic-bezier\\(0\\.34\\,1\\.56\\,0\\.64\\,1\\)\\]",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ease-in-out",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "var(--ease-in-out)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".ease-out",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "easing": "var(--ease-out)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": "input:-webkit-autofill",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 5000000,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "input:-webkit-autofill:hover",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 5000000,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "input:-webkit-autofill:focus",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 5000000,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "input:-webkit-autofill:active",
+     "context": [
+      "@layer utilities"
+     ],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 5000000,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".animate-fade-in",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "fadeIn",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".animate-shake",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "shake",
+       "durationMs": 350,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.36, 0.07, 0.19, 0.97)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "._dialogOverlay_1e2ox_870",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "_overlayShow_1e2ox_1",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "._dialogContent_1e2ox_603, ._largeDialogContent_1e2ox_615",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "_contentShow_1e2ox_1",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    }
+   ],
+   "customProperties": [
+    {
+     "name": "--default-transition-duration",
+     "declared": ".15s",
+     "selector": ":root, :host",
+     "resolved": ".15s"
+    },
+    {
+     "name": "--default-transition-timing-function",
+     "declared": "cubic-bezier(.4,0,.2,1)",
+     "selector": ":root, :host",
+     "resolved": "cubic-bezier(.4,0,.2,1)"
+    },
+    {
+     "name": "--ease-in-out",
+     "declared": "cubic-bezier(.4,0,.2,1)",
+     "selector": ":root, :host",
+     "resolved": "cubic-bezier(.4,0,.2,1)"
+    },
+    {
+     "name": "--ease-out",
+     "declared": "cubic-bezier(0,0,.2,1)",
+     "selector": ":root, :host",
+     "resolved": "cubic-bezier(0,0,.2,1)"
+    },
+    {
+     "name": "--tw-duration",
+     "declared": ".1s",
+     "selector": ".duration-100",
+     "resolved": ""
+    },
+    {
+     "name": "--tw-ease",
+     "declared": "cubic-bezier(.34,1.56,.64,1)",
+     "selector": ".ease-\\[cubic-bezier\\(0\\.34\\,1\\.56\\,0\\.64\\,1\\)\\]",
+     "resolved": ""
+    }
+   ]
+  }
+ }
+}

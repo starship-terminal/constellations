@@ -1,0 +1,29 @@
+{
+  "capturedAt": "2026-11-18T20:54:13.859Z",
+  "name": "home-light-default",
+  "sanitizedSourceUrl": "https://wynde.io/",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 1,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    },
+    "scrollH": 6983,
+    "bodyBg": "rgb(255, 255, 255)"
+  },
+  "png": "/tmp/ds-sparse/wynde-shots/home-light-default.png",
+  "note": "public home, light, desktop 1440",
+  "theme": "light",
+  "screenshotFramesFromPreview": "unavailable: The browser is not producing screenshot frames",
+  "status": 200,
+  "title": "Wynde",
+  "truncated": false
+}

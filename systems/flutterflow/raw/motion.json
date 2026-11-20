@@ -1,0 +1,6490 @@
+{
+ "_meta": {
+  "readAt": "2026-11-16",
+  "probe": "page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page",
+  "source": "public pages, headless Chromium, read at rest",
+  "notes": "Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial."
+ },
+ "summary": {
+  "moving": 285,
+  "removed": 226,
+  "reduced": 0,
+  "kept": 59,
+  "partial": 0,
+  "increased": 0,
+  "added": 0,
+  "behaviour": "partial",
+  "loops": []
+ },
+ "pages": {
+  "page-1": {
+   "url": "https://flutterflow.io/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 1133,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 105,
+    "removed": 64,
+    "reduced": 0,
+    "kept": 41,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "partial",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "box-shadow",
+        "durationMs": 550,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "removed",
+       "from": 550,
+       "to": 0
+      }
+     ],
+     "count": 8,
+     "nodes": [
+      "div.fv-glass"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "transform",
+        "durationMs": 350,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 200,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 350,
+       "to": 0
+      }
+     ],
+     "count": 8,
+     "nodes": [
+      "figcaption"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 240,
+       "to": 240
+      }
+     ],
+     "count": 8,
+     "nodes": [
+      "div.screen::after",
+      "div.ex-s.on"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 550,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 550,
+       "to": 0
+      }
+     ],
+     "count": 8,
+     "nodes": [
+      "figure.fv-tile"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      }
+     ],
+     "count": 6,
+     "nodes": [
+      "button.ff-snav-menu",
+      "a.ff-snav-lk",
+      "a.ff-snav-lk.ff-snav-signin"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      }
+     ],
+     "count": 6,
+     "nodes": [
+      "span.ff-btn.ff-btn-primary.ff-btn-sm",
+      "a.ff-btn.ff-btn-primary.ff-btn-sm",
+      "a.ff-btn.ff-btn-primary.ff-btn-ab"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "cmp-blink",
+        "durationMs": 1050,
+        "delayMs": 0,
+        "easing": "steps(1, end)",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "cmp-blink",
+       "outcome": "removed",
+       "from": 1050,
+       "to": 0
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "span.cmp-caret",
+      "i.sx-caret"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "button.cmp-nav"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 240,
+       "to": 240
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "div.sb"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "button.pbtn.outline.sx-replay"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "button.cmp-go"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "border-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "border-radius",
+        "durationMs": 320,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "border-radius",
+       "outcome": "removed",
+       "from": 320,
+       "to": 0
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "div.cmp-card.big.ghosting",
+      "div.cmp-card"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "height",
+        "durationMs": 320,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "height",
+       "outcome": "removed",
+       "from": 320,
+       "to": 0
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "textarea.cmp-field"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "visibility",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "visibility",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "div.ff-snav-panel",
+      "div.ff-snav-panel.ff-snav-panel-studio"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "span.mono.s-ready",
+      "span.mono.s-sent",
+      "span.mono.s-live"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "button.ff-ibtn"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "transform",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "transform",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "span.sx-go"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "i"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 350,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 350,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 350,
+       "to": 350
+      },
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div.sx-cmp.bx-cmp",
+      "div.sx-cmp"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 400,
+        "delayMs": 100,
+        "easing": "ease"
+       },
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 400,
+        "delayMs": 100,
+        "easing": "ease"
+       },
+       {
+        "property": "transform",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 400,
+       "to": 400
+      },
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "p.sx-q.bx-ask",
+      "p.sx-q.rx-ask"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 1000,
+        "delayMs": 0,
+        "easing": "linear(0 0%, 0.001 0.6%, 0.006 1.5%, 0.017 2.7%, 0.036 3.9%, 0.062 5.3%, 0.095 6.8%, 0.135 8.4%, 0.18 10%, 0.231 11.7%, 0.285 13.5%, 0.341 15.4%, 0.399 17.3%, 0.456 19.3%, 0.513 21.3%, 0.569 23.4%, 0.621 25.5%, 0.671 27.7%, 0.717 29.9%, 0.76 32.2%, 0.799 34.5%, 0.833 36.8%, 0.864 39.2%, 0.891 41.7%, 0.914 44.1%, 0.934 46.6%, 0.951 49.2%, 0.964 51.7%, 0.976 54.3%, 0.985 57%, 0.992 59.6%, 0.997 62.3%, 1.001 65.1%, 1.004 67.8%, 1.006 70.6%, 1.007 73.4%, 1.008 76.3%, 1.008 79.1%, 1.007 82%, 1.007 85%, 1.006 87.9%, 1.006 90.9%, 1.005 93.9%, 1.004 96.9%, 1 100%)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 1000,
+        "delayMs": 0,
+        "easing": "linear(0 0%, 0.001 0.6%, 0.006 1.5%, 0.017 2.7%, 0.036 3.9%, 0.062 5.3%, 0.095 6.8%, 0.135 8.4%, 0.18 10%, 0.231 11.7%, 0.285 13.5%, 0.341 15.4%, 0.399 17.3%, 0.456 19.3%, 0.513 21.3%, 0.569 23.4%, 0.621 25.5%, 0.671 27.7%, 0.717 29.9%, 0.76 32.2%, 0.799 34.5%, 0.833 36.8%, 0.864 39.2%, 0.891 41.7%, 0.914 44.1%, 0.934 46.6%, 0.951 49.2%, 0.964 51.7%, 0.976 54.3%, 0.985 57%, 0.992 59.6%, 0.997 62.3%, 1.001 65.1%, 1.004 67.8%, 1.006 70.6%, 1.007 73.4%, 1.008 76.3%, 1.008 79.1%, 1.007 82%, 1.007 85%, 1.006 87.9%, 1.006 90.9%, 1.005 93.9%, 1.004 96.9%, 1 100%)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 1000,
+       "to": 1000
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "article.pc.fv",
+      "div.rx-dev"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div.lx-dev.as",
+      "div.lx-dev.gp"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [],
+      "scrollBehavior": "smooth"
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "scroll",
+       "key": "scroll-behavior",
+       "outcome": "removed"
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "html.hx-play.intro"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "rise",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "rise",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "p.lede.rise"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "rise",
+        "durationMs": 300,
+        "delayMs": 100,
+        "easing": "ease-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "rise",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "p.proof.rise"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "rise",
+        "durationMs": 300,
+        "delayMs": 140,
+        "easing": "ease-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "rise",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "ol.hx-steps.rise"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "rise",
+        "durationMs": 300,
+        "delayMs": 60,
+        "easing": "ease-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "rise",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.hx-cmp.rise"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "rise",
+        "durationMs": 300,
+        "delayMs": 80,
+        "easing": "ease-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "rise",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "ul.hx-diff.rise"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "kept",
+       "from": 250,
+       "to": 250
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "i.dot.ok"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 120,
+       "to": 120
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "a.ff-snav-lead"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "box-shadow",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "header.ff-snav"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "grid-template-rows",
+        "durationMs": 500,
+        "delayMs": 100,
+        "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "grid-template-rows",
+        "durationMs": 500,
+        "delayMs": 100,
+        "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "grid-template-rows",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      },
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 250,
+       "to": 250
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.lx-foot"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 160,
+        "delayMs": 130,
+        "easing": "ease"
+       },
+       {
+        "property": "transform",
+        "durationMs": 1000,
+        "delayMs": 130,
+        "easing": "linear(0 0%, 0.001 0.6%, 0.006 1.5%, 0.017 2.7%, 0.036 3.9%, 0.062 5.3%, 0.095 6.8%, 0.135 8.4%, 0.18 10%, 0.231 11.7%, 0.285 13.5%, 0.341 15.4%, 0.399 17.3%, 0.456 19.3%, 0.513 21.3%, 0.569 23.4%, 0.621 25.5%, 0.671 27.7%, 0.717 29.9%, 0.76 32.2%, 0.799 34.5%, 0.833 36.8%, 0.864 39.2%, 0.891 41.7%, 0.914 44.1%, 0.934 46.6%, 0.951 49.2%, 0.964 51.7%, 0.976 54.3%, 0.985 57%, 0.992 59.6%, 0.997 62.3%, 1.001 65.1%, 1.004 67.8%, 1.006 70.6%, 1.007 73.4%, 1.008 76.3%, 1.008 79.1%, 1.007 82%, 1.007 85%, 1.006 87.9%, 1.006 90.9%, 1.005 93.9%, 1.004 96.9%, 1 100%)"
+       },
+       {
+        "property": "filter",
+        "durationMs": 700,
+        "delayMs": 450,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 160,
+        "delayMs": 130,
+        "easing": "ease"
+       },
+       {
+        "property": "transform",
+        "durationMs": 1000,
+        "delayMs": 130,
+        "easing": "linear(0 0%, 0.001 0.6%, 0.006 1.5%, 0.017 2.7%, 0.036 3.9%, 0.062 5.3%, 0.095 6.8%, 0.135 8.4%, 0.18 10%, 0.231 11.7%, 0.285 13.5%, 0.341 15.4%, 0.399 17.3%, 0.456 19.3%, 0.513 21.3%, 0.569 23.4%, 0.621 25.5%, 0.671 27.7%, 0.717 29.9%, 0.76 32.2%, 0.799 34.5%, 0.833 36.8%, 0.864 39.2%, 0.891 41.7%, 0.914 44.1%, 0.934 46.6%, 0.951 49.2%, 0.964 51.7%, 0.976 54.3%, 0.985 57%, 0.992 59.6%, 0.997 62.3%, 1.001 65.1%, 1.004 67.8%, 1.006 70.6%, 1.007 73.4%, 1.008 76.3%, 1.008 79.1%, 1.007 82%, 1.007 85%, 1.006 87.9%, 1.006 90.9%, 1.005 93.9%, 1.004 96.9%, 1 100%)"
+       },
+       {
+        "property": "filter",
+        "durationMs": 700,
+        "delayMs": 450,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 160,
+       "to": 160
+      },
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 1000,
+       "to": 1000
+      },
+      {
+       "kind": "transition",
+       "key": "filter",
+       "outcome": "kept",
+       "from": 700,
+       "to": 700
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "span.rx-card"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "transform",
+        "durationMs": 450,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "transform",
+        "durationMs": 450,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 450,
+       "to": 450
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.lx-card"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "span.lx-send"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 950,
+        "delayMs": 0,
+        "easing": "linear(0 0%, 0.001 0.6%, 0.006 1.5%, 0.017 2.7%, 0.036 3.9%, 0.062 5.3%, 0.095 6.8%, 0.135 8.4%, 0.18 10%, 0.231 11.7%, 0.285 13.5%, 0.341 15.4%, 0.399 17.3%, 0.456 19.3%, 0.513 21.3%, 0.569 23.4%, 0.621 25.5%, 0.671 27.7%, 0.717 29.9%, 0.76 32.2%, 0.799 34.5%, 0.833 36.8%, 0.864 39.2%, 0.891 41.7%, 0.914 44.1%, 0.934 46.6%, 0.951 49.2%, 0.964 51.7%, 0.976 54.3%, 0.985 57%, 0.992 59.6%, 0.997 62.3%, 1.001 65.1%, 1.004 67.8%, 1.006 70.6%, 1.007 73.4%, 1.008 76.3%, 1.008 79.1%, 1.007 82%, 1.007 85%, 1.006 87.9%, 1.006 90.9%, 1.005 93.9%, 1.004 96.9%, 1 100%)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 950,
+        "delayMs": 0,
+        "easing": "linear(0 0%, 0.001 0.6%, 0.006 1.5%, 0.017 2.7%, 0.036 3.9%, 0.062 5.3%, 0.095 6.8%, 0.135 8.4%, 0.18 10%, 0.231 11.7%, 0.285 13.5%, 0.341 15.4%, 0.399 17.3%, 0.456 19.3%, 0.513 21.3%, 0.569 23.4%, 0.621 25.5%, 0.671 27.7%, 0.717 29.9%, 0.76 32.2%, 0.799 34.5%, 0.833 36.8%, 0.864 39.2%, 0.891 41.7%, 0.914 44.1%, 0.934 46.6%, 0.951 49.2%, 0.964 51.7%, 0.976 54.3%, 0.985 57%, 0.992 59.6%, 0.997 62.3%, 1.001 65.1%, 1.004 67.8%, 1.006 70.6%, 1.007 73.4%, 1.008 76.3%, 1.008 79.1%, 1.007 82%, 1.007 85%, 1.006 87.9%, 1.006 90.9%, 1.005 93.9%, 1.004 96.9%, 1 100%)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 950,
+       "to": 950
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "span.rx-list"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "cmp-blink",
+     "steps": [
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "rise",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ff-rise",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    }
+   ],
+   "reducedMotionRules": [
+    {
+     "media": "@media (prefers-reduced-motion: no-preference)",
+     "selector": "html",
+     "declarations": {
+      "scroll-behavior": "smooth"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".btn",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".top, .nav a.lk",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".sx-caret",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".fv-tile, .fv-glass, .fv-tile figcaption",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".cmp-card, .cmp-field, .cmp-go",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".cmp-caret",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (max-width: 759.98px) and (prefers-reduced-motion: reduce)",
+     "selector": ".dock-bar",
+     "declarations": {
+      "transform": "none",
+      "opacity": "0",
+      "transition-behavior": "normal",
+      "transition-duration": "0.2s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "opacity"
+     }
+    },
+    {
+     "media": "@media (max-width: 759.98px) and (prefers-reduced-motion: reduce)",
+     "selector": ".dock[data-shown] .dock-bar",
+     "declarations": {
+      "opacity": "1"
+     }
+    },
+    {
+     "media": "@media (max-width: 759.98px) and (prefers-reduced-motion: reduce)",
+     "selector": ".dock-veil, .dock-veil.on, .dock .cmp-card, .dock .cmp-field, .dock-bar::before",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference)",
+     "selector": ".intro .rise",
+     "declarations": {
+      "animation-duration": "0.3s",
+      "animation-timing-function": "ease-out",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "both",
+      "animation-play-state": "running",
+      "animation-name": "rise",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal",
+      "animation-delay": "var(--d, 0s)"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-btn",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-ibtn",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": "a.ff-go .ff-i",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference)",
+     "selector": ".ff-intro .ff-rise",
+     "declarations": {
+      "animation-duration": "0.3s",
+      "animation-timing-function": "ease-out",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "both",
+      "animation-play-state": "running",
+      "animation-name": "ff-rise",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal",
+      "animation-delay": "var(--ff-rise-delay, 0s)"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-sdn-x[data-astro-cid-2cufpxhb], .ff-sdn-link[data-astro-cid-2cufpxhb]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-sdn-x[data-astro-cid-3pl5raqq], .ff-sdn-link[data-astro-cid-3pl5raqq]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-snav, .ff-snav-nav a.ff-snav-lk",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-snav-menu[data-astro-cid-tfvwvzww], .ff-snav-menu[data-astro-cid-tfvwvzww] .ff-i[data-astro-cid-tfvwvzww], .ff-snav-panel[data-astro-cid-tfvwvzww]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-snav-search[data-astro-cid-tfvwvzww]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    }
+   ],
+   "declared": [
+    {
+     "selector": "html",
+     "context": [
+      "@layer legacy",
+      "@media (prefers-reduced-motion: no-preference)"
+     ],
+     "transitions": [],
+     "animations": [],
+     "scrollBehavior": "smooth"
+    },
+    {
+     "selector": ".eyebrow .dot.ok",
+     "context": [
+      "@layer legacy"
+     ],
+     "transitions": [
+      {
+       "property": "background",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".pbtn",
+     "context": [
+      "@layer legacy"
+     ],
+     "transitions": [
+      {
+       "property": "background",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".sx-caret",
+     "context": [
+      "@layer legacy"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "cmp-blink",
+       "durationMs": 1050,
+       "delayMs": 0,
+       "easing": "steps(1, end)",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".bx[data-step=\"built\"] :is(.bx-x > *, .pc-head time)",
+     "context": [
+      "@layer legacy"
+     ],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 350,
+       "delayMs": 1050,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".bx[data-step=\"built\"] .dot.ok",
+     "context": [
+      "@layer legacy"
+     ],
+     "transitions": [
+      {
+       "property": "background",
+       "durationMs": 300,
+       "delayMs": 1050,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".fv-tile",
+     "context": [
+      "@layer legacy"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 550,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".fv-glass",
+     "context": [
+      "@layer legacy"
+     ],
+     "transitions": [
+      {
+       "property": "box-shadow",
+       "durationMs": 550,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".fv-tile figcaption",
+     "context": [
+      "@layer legacy"
+     ],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "transform",
+       "durationMs": 350,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".fv-tile.on figcaption",
+     "context": [
+      "@layer legacy"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 60
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".rx:is([data-step=\"chart\"], [data-step=\"rest\"]) .rx-ring",
+     "context": [
+      "@layer legacy"
+     ],
+     "transitions": [
+      {
+       "property": "--a",
+       "durationMs": 1200,
+       "delayMs": 800,
+       "easing": "cubic-bezier(0.45, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".rx:is([data-step=\"chart\"], [data-step=\"rest\"]) .rx-dev",
+     "context": [
+      "@layer legacy"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 1700,
+       "delayMs": 100,
+       "easing": "cubic-bezier(0.6, 0, 0.2, 1)"
+      },
+      {
+       "property": "--zf",
+       "durationMs": 1000,
+       "delayMs": 100,
+       "easing": "cubic-bezier(0.3, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".lx-state > *",
+     "context": [
+      "@layer legacy"
+     ],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".lx-st",
+     "context": [
+      "@layer legacy"
+     ],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 150,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".lx-dev.gp",
+     "context": [
+      "@layer legacy"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 120
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".lx[data-step=\"live\"] .lx-cam",
+     "context": [
+      "@layer legacy"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 1700,
+       "delayMs": 1100,
+       "easing": "cubic-bezier(0.6, 0, 0.2, 1)"
+      },
+      {
+       "property": "--lf",
+       "durationMs": 1700,
+       "delayMs": 1100,
+       "easing": "cubic-bezier(0.6, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".lx:not([data-step=\"live\"]) .lx-dev",
+     "context": [
+      "@layer legacy"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 500,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".chart svg",
+     "context": [
+      "@layer legacy"
+     ],
+     "transitions": [
+      {
+       "property": "clip-path",
+       "durationMs": 1400,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.45, 0.05, 0.25, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".chart :is(.xh, .xdot, .tt, .rel)",
+     "context": [
+      "@layer legacy"
+     ],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 900,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".cmp-field",
+     "context": [
+      "@layer legacy"
+     ],
+     "transitions": [
+      {
+       "property": "height",
+       "durationMs": 320,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".cmp-caret",
+     "context": [
+      "@layer legacy"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "cmp-blink",
+       "durationMs": 1050,
+       "delayMs": 0,
+       "easing": "steps(1, end)",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".cmp-nav",
+     "context": [
+      "@layer legacy"
+     ],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".dock-veil",
+     "context": [
+      "@layer legacy",
+      "@media (max-width: 759.98px)"
+     ],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 320,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "-webkit-backdrop-filter",
+       "durationMs": 320,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "backdrop-filter",
+       "durationMs": 320,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "visibility",
+       "durationMs": 0,
+       "delayMs": 320,
+       "easing": "linear"
+      },
+      {
+       "property": "height",
+       "durationMs": 0,
+       "delayMs": 320,
+       "easing": "linear"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".dock-veil.on",
+     "context": [
+      "@layer legacy",
+      "@media (max-width: 759.98px)"
+     ],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 350,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "-webkit-backdrop-filter",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.5, 0, 0.5, 1)"
+      },
+      {
+       "property": "backdrop-filter",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.5, 0, 0.5, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".dock-bar",
+     "context": [
+      "@layer legacy",
+      "@media (max-width: 759.98px)"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 350,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.25, 1, 0.5, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".dock-bar::before",
+     "context": [
+      "@layer legacy",
+      "@media (max-width: 759.98px)"
+     ],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 320,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".dock .cmp-card",
+     "context": [
+      "@layer legacy",
+      "@media (max-width: 759.98px)"
+     ],
+     "transitions": [
+      {
+       "property": "border-color",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "border-radius",
+       "durationMs": 350,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.25, 1, 0.5, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".dock .cmp-field",
+     "context": [
+      "@layer legacy",
+      "@media (max-width: 759.98px)"
+     ],
+     "transitions": [
+      {
+       "property": "height",
+       "durationMs": 350,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.25, 1, 0.5, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".dock-bar",
+     "context": [
+      "@layer legacy",
+      "@media (max-width: 759.98px) and (prefers-reduced-motion: reduce)"
+     ],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".intro .rise",
+     "context": [
+      "@layer legacy",
+      "@media (prefers-reduced-motion: no-preference)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "rise",
+       "durationMs": 300,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ],
+     "viaVar": true
+    },
+    {
+     "selector": ".ff-pbtn",
+     "context": [
+      "@layer ff.primitives"
+     ],
+     "transitions": [
+      {
+       "property": "background",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ff-intro .ff-rise",
+     "context": [
+      "@layer ff.utilities",
+      "@media (prefers-reduced-motion: no-preference)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ff-rise",
+       "durationMs": 300,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ],
+     "viaVar": true
+    }
+   ],
+   "customProperties": [
+    {
+     "name": "--d1",
+     "declared": ".12s",
+     "selector": ":root",
+     "resolved": ".12s"
+    },
+    {
+     "name": "--d2",
+     "declared": ".24s",
+     "selector": ":root",
+     "resolved": ".24s"
+    },
+    {
+     "name": "--ease",
+     "declared": "cubic-bezier(.2,.8,.2,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(.2,.8,.2,1)"
+    },
+    {
+     "name": "--ease-ui",
+     "declared": "cubic-bezier(.25,.46,.45,.94)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(.25,.46,.45,.94)"
+    },
+    {
+     "name": "--ff-duration-base",
+     "declared": ".24s",
+     "selector": ":root",
+     "resolved": ".24s"
+    },
+    {
+     "name": "--ff-duration-fast",
+     "declared": ".12s",
+     "selector": ":root",
+     "resolved": ".12s"
+    },
+    {
+     "name": "--ff-ease-out",
+     "declared": "cubic-bezier(.2,.8,.2,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(.2,.8,.2,1)"
+    },
+    {
+     "name": "--ff-ease-spring",
+     "declared": "cubic-bezier(.2,.8,.2,1)",
+     "selector": ":root",
+     "resolved": "linear(0, .001 .6%, .006 1.5%, .017 2.7%, .036 3.9%, .062 5.3%, .095 6.8%, .135 8.4%, .18 10%, .231 11.7%, .285 13.5%, .341 15.4%, .399 17.3%, .456 19.3%, .513 21.3%, .569 23.4%, .621 25.5%, .671 27.7%, .717 29.9%, .76 32.2%, .799 34.5%, .833 36.8%, .864 39.2%, .891 41.7%, .914 44.1%, .934 46.6%, .951 49.2%, .964 51.7%, .976 54.3%, .985 57%, .992 59.6%, .997 62.3%, 1.001 65.1%, 1.004 67.8%, 1.006 70.6%, 1.007 73.4%, 1.008 76.3%, 1.008 79.1%, 1.007 82%, 1.007 85%, 1.006 87.9%, 1.006 90.9%, 1.005 93.9%, 1.004 96.9%, 1)"
+    },
+    {
+     "name": "--ff-ease-ui",
+     "declared": "cubic-bezier(.25,.46,.45,.94)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(.25,.46,.45,.94)"
+    },
+    {
+     "name": "--sp-soft",
+     "declared": "cubic-bezier(.2,.8,.2,1)",
+     "selector": ":root",
+     "resolved": "linear(0, .001 .6%, .006 1.5%, .017 2.7%, .036 3.9%, .062 5.3%, .095 6.8%, .135 8.4%, .18 10%, .231 11.7%, .285 13.5%, .341 15.4%, .399 17.3%, .456 19.3%, .513 21.3%, .569 23.4%, .621 25.5%, .671 27.7%, .717 29.9%, .76 32.2%, .799 34.5%, .833 36.8%, .864 39.2%, .891 41.7%, .914 44.1%, .934 46.6%, .951 49.2%, .964 51.7%, .976 54.3%, .985 57%, .992 59.6%, .997 62.3%, 1.001 65.1%, 1.004 67.8%, 1.006 70.6%, 1.007 73.4%, 1.008 76.3%, 1.008 79.1%, 1.007 82%, 1.007 85%, 1.006 87.9%, 1.006 90.9%, 1.005 93.9%, 1.004 96.9%, 1)"
+    }
+   ]
+  },
+  "page-2": {
+   "url": "https://flutterflow.io/pricing",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 1825,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 59,
+    "removed": 55,
+    "reduced": 0,
+    "kept": 4,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "partial",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      }
+     ],
+     "count": 15,
+     "nodes": [
+      "span.ff-btn.ff-btn-primary.ff-btn-sm",
+      "a.ff-btn.ff-btn-primary.ff-btn-sm",
+      "a.ff-btn.ff-btn-primary.ff-btn-ab"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      }
+     ],
+     "count": 7,
+     "nodes": [
+      "span.ff-acc-x"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      }
+     ],
+     "count": 7,
+     "nodes": [
+      "a.ff-page-skip",
+      "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      }
+     ],
+     "count": 6,
+     "nodes": [
+      "button.ff-snav-menu",
+      "a.ff-snav-lk",
+      "a.ff-snav-lk.ff-snav-signin"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "button.ff-ibtn"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "visibility",
+        "durationMs": 0,
+        "delayMs": 240,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "visibility",
+       "outcome": "removed",
+       "from": 0,
+       "to": 0
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "p.ff-plg-p.ff-plg-bil-y"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "visibility",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "visibility",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "div.ff-snav-panel",
+      "div.ff-snav-panel.ff-snav-panel-studio"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "p.ff-plg-p.ff-plg-bil-m"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "button.ff-cmp-nav"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "button[role=radio]"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [],
+      "scrollBehavior": "smooth"
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "scroll",
+       "key": "scroll-behavior",
+       "outcome": "removed"
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "html"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "ff-cmp-blink",
+        "durationMs": 1050,
+        "delayMs": 0,
+        "easing": "steps(1, end)",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "ff-cmp-blink",
+       "outcome": "removed",
+       "from": 1050,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "span.ff-cmp-caret"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "button.ff-cmp-go"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 120,
+       "to": 120
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "a.ff-snav-lead"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "border-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "border-radius",
+        "durationMs": 320,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "border-radius",
+       "outcome": "removed",
+       "from": 320,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.ff-cmp-card.ff-cmp-big.ff-cmp-ghosting"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "box-shadow",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "header.ff-snav"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "height",
+        "durationMs": 320,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "height",
+       "outcome": "removed",
+       "from": 320,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "textarea.ff-cmp-field"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 120,
+       "to": 120
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "svg"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "ff-prg-turn",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "rotate"
+       ]
+      }
+     ],
+     "properties": [
+      "rotate"
+     ]
+    },
+    {
+     "name": "ff-rise",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ff-cmp-blink",
+     "steps": [
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    }
+   ],
+   "reducedMotionRules": [
+    {
+     "media": "@media (prefers-reduced-motion: no-preference)",
+     "selector": "html",
+     "declarations": {
+      "scroll-behavior": "smooth"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": "a.ff-go .ff-i",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-btn",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-ibtn",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-prg-spin",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-swi, .ff-swi::before",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-seg button, .ff-seg[data-ff-seg-motion]::before",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-fld-i, .ff-fld-row, .ff-chc input, .ff-chc-cells span",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference)",
+     "selector": ".ff-intro .ff-rise",
+     "declarations": {
+      "animation-duration": "0.3s",
+      "animation-timing-function": "ease-out",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "both",
+      "animation-play-state": "running",
+      "animation-name": "ff-rise",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal",
+      "animation-delay": "var(--ff-rise-delay, 0s)"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-page-skip",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-plg-bil-f[data-astro-cid-6ullku73] > .ff-plg-bil-m[data-astro-cid-6ullku73], .ff-plg-bil-f[data-astro-cid-6ullku73] > .ff-plg-bil-y[data-astro-cid-6ullku73]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (hover: hover) and (prefers-reduced-motion: no-preference)",
+     "selector": ".ff-plg-band[data-astro-cid-6ullku73] a.ff-btn-ext:hover .ff-i",
+     "declarations": {
+      "transform": "translate(2px, -2px)"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-acc-x",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-sdn-x[data-astro-cid-2cufpxhb], .ff-sdn-link[data-astro-cid-2cufpxhb]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-sdn-x[data-astro-cid-3pl5raqq], .ff-sdn-link[data-astro-cid-3pl5raqq]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-snav, .ff-snav-nav a.ff-snav-lk",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-snav-menu[data-astro-cid-tfvwvzww], .ff-snav-menu[data-astro-cid-tfvwvzww] .ff-i[data-astro-cid-tfvwvzww], .ff-snav-panel[data-astro-cid-tfvwvzww]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-snav-search[data-astro-cid-tfvwvzww]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-cmp-card, .ff-cmp-field, .ff-cmp-go",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-cmp-caret",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    }
+   ],
+   "declared": [
+    {
+     "selector": "html",
+     "context": [
+      "@layer ff.base",
+      "@media (prefers-reduced-motion: no-preference)"
+     ],
+     "transitions": [],
+     "animations": [],
+     "scrollBehavior": "smooth"
+    },
+    {
+     "selector": ".ff-pbtn",
+     "context": [
+      "@layer ff.primitives"
+     ],
+     "transitions": [
+      {
+       "property": "background",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ff-prg-spin",
+     "context": [
+      "@layer ff.primitives"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ff-prg-turn",
+       "durationMs": 800,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".ff-intro .ff-rise",
+     "context": [
+      "@layer ff.utilities",
+      "@media (prefers-reduced-motion: no-preference)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ff-rise",
+       "durationMs": 300,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ],
+     "viaVar": true
+    },
+    {
+     "selector": ".ff-cmp-caret",
+     "context": [
+      "@layer ff.components"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ff-cmp-blink",
+       "durationMs": 1050,
+       "delayMs": 0,
+       "easing": "steps(1, end)",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".ff-cmp-nav",
+     "context": [
+      "@layer ff.components"
+     ],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    }
+   ],
+   "customProperties": [
+    {
+     "name": "--ff-duration-base",
+     "declared": ".24s",
+     "selector": ":root",
+     "resolved": ".24s"
+    },
+    {
+     "name": "--ff-duration-fast",
+     "declared": ".12s",
+     "selector": ":root",
+     "resolved": ".12s"
+    },
+    {
+     "name": "--ff-ease-out",
+     "declared": "cubic-bezier(.2,.8,.2,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(.2,.8,.2,1)"
+    },
+    {
+     "name": "--ff-ease-spring",
+     "declared": "cubic-bezier(.2,.8,.2,1)",
+     "selector": ":root",
+     "resolved": "linear(0, .001 .6%, .006 1.5%, .017 2.7%, .036 3.9%, .062 5.3%, .095 6.8%, .135 8.4%, .18 10%, .231 11.7%, .285 13.5%, .341 15.4%, .399 17.3%, .456 19.3%, .513 21.3%, .569 23.4%, .621 25.5%, .671 27.7%, .717 29.9%, .76 32.2%, .799 34.5%, .833 36.8%, .864 39.2%, .891 41.7%, .914 44.1%, .934 46.6%, .951 49.2%, .964 51.7%, .976 54.3%, .985 57%, .992 59.6%, .997 62.3%, 1.001 65.1%, 1.004 67.8%, 1.006 70.6%, 1.007 73.4%, 1.008 76.3%, 1.008 79.1%, 1.007 82%, 1.007 85%, 1.006 87.9%, 1.006 90.9%, 1.005 93.9%, 1.004 96.9%, 1)"
+    },
+    {
+     "name": "--ff-ease-ui",
+     "declared": "cubic-bezier(.25,.46,.45,.94)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(.25,.46,.45,.94)"
+    }
+   ]
+  },
+  "page-3": {
+   "url": "https://flutterflow.io/enterprise",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 1067,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 49,
+    "removed": 49,
+    "reduced": 0,
+    "kept": 0,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "honours",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "border-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      }
+     ],
+     "count": 12,
+     "nodes": [
+      "input.ff-fld-i.astro-bgnjr626",
+      "select.ff-fld-i",
+      "button[role=combobox].ff-fld-i.ff-sel-t"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      }
+     ],
+     "count": 9,
+     "nodes": [
+      "a.ff-btn.ff-btn-secondary.ff-btn-sm",
+      "a.ff-btn.ff-btn-primary.ff-btn-sm",
+      "a.ff-btn.ff-btn-primary.ff-btn-ab"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      }
+     ],
+     "count": 6,
+     "nodes": [
+      "button.ff-snav-menu",
+      "a.ff-snav-lk",
+      "a.ff-snav-lk.ff-snav-signin"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      }
+     ],
+     "count": 5,
+     "nodes": [
+      "input"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "a.ff-page-skip",
+      "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "button.ff-ibtn"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "visibility",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "visibility",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "div.ff-snav-panel"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "ff-sel-in",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "ff-sel-in",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div[role=listbox].ff-sel-p"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [],
+      "scrollBehavior": "smooth"
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "scroll",
+       "key": "scroll-behavior",
+       "outcome": "removed"
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "html.ff-intro"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "ff-rise",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "ff-rise",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "p.ff-lede.ff-rise"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "ff-rise",
+        "durationMs": 300,
+        "delayMs": 140,
+        "easing": "ease-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "ff-rise",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.ff-hero-shot.ff-rise.ff-hero-shot-window"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "ff-rise",
+        "durationMs": 300,
+        "delayMs": 60,
+        "easing": "ease-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "ff-rise",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.ff-hero-acts.ff-rise"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "box-shadow",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "header.ff-snav.ff-snav-studio"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "ff-prg-turn",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "rotate"
+       ]
+      }
+     ],
+     "properties": [
+      "rotate"
+     ]
+    },
+    {
+     "name": "ff-rise",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ff-stg-blink",
+     "steps": [
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ff-stg-grow",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": []
+      }
+     ],
+     "properties": []
+    },
+    {
+     "name": "ff-stg-fade",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ff-sel-in",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ff-cmp-blink",
+     "steps": [
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    }
+   ],
+   "reducedMotionRules": [
+    {
+     "media": "@media (prefers-reduced-motion: no-preference)",
+     "selector": "html",
+     "declarations": {
+      "scroll-behavior": "smooth"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": "a.ff-go .ff-i",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-btn",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-ibtn",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-prg-spin",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-swi, .ff-swi::before",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-seg button, .ff-seg[data-ff-seg-motion]::before",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-fld-i, .ff-fld-row, .ff-chc input, .ff-chc-cells span",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference)",
+     "selector": ".ff-intro .ff-rise",
+     "declarations": {
+      "animation-duration": "0.3s",
+      "animation-timing-function": "ease-out",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "both",
+      "animation-play-state": "running",
+      "animation-name": "ff-rise",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal",
+      "animation-delay": "var(--ff-rise-delay, 0s)"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-page-skip",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-prf-qw-story[data-astro-cid-pzrzfoq6] .ff-i[data-astro-cid-pzrzfoq6]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-hgr-co[data-astro-cid-lglc3xgm] li[data-astro-cid-lglc3xgm] > a[data-astro-cid-lglc3xgm], .ff-hgr-co[data-astro-cid-lglc3xgm] li[data-astro-cid-lglc3xgm] > a[data-astro-cid-lglc3xgm] > .ff-i:last-",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-hgr[data-astro-cid-dfpjgkjo] .ff-cells-grid[data-astro-cid-dfpjgkjo] li[data-astro-cid-dfpjgkjo].ff-hgr-link > a[data-astro-cid-dfpjgkjo], .ff-hgr[data-astro-cid-dfpjgkjo] .ff-cells-grid[data-astr",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-sdn-x[data-astro-cid-2cufpxhb], .ff-sdn-link[data-astro-cid-2cufpxhb]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-sdn-x[data-astro-cid-3pl5raqq], .ff-sdn-link[data-astro-cid-3pl5raqq]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-snav, .ff-snav-nav a.ff-snav-lk",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-snav-menu[data-astro-cid-tfvwvzww], .ff-snav-menu[data-astro-cid-tfvwvzww] .ff-i[data-astro-cid-tfvwvzww], .ff-snav-panel[data-astro-cid-tfvwvzww]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-snav-search[data-astro-cid-tfvwvzww]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-stg-caret[data-astro-cid-zuqrvydt]",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": "[data-astro-cid-zuqrvydt]:is(.ff-stg-cmp, .ff-stg-go, .ff-stg-q, .ff-stg-res)",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference) and (width >= 641px)",
+     "selector": ".ff-stg-zc[data-astro-cid-zuqrvydt]",
+     "declarations": {
+      "view-timeline-name": "--ff-stg-zt",
+      "view-timeline-axis": "block",
+      "view-timeline-inset": "auto"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference) and (width >= 641px)",
+     "selector": ".ff-stg-zc[data-astro-cid-zuqrvydt] > :not(.ff-stg-plate)",
+     "declarations": {
+      "--ff-win-radius": "calc(var(--ff-radius-page) / var(--ff-stg-scale))",
+      "transform": "scale(var(--ff-stg-scale))",
+      "transform-origin": "50% 0px",
+      "animation-duration": "auto",
+      "animation-timing-function": "linear",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "both",
+      "animation-play-state": "running",
+      "animation-name": "ff-stg-grow",
+      "animation-timeline": "--ff-stg-zt",
+      "animation-range-start": "entry 40%",
+      "animation-range-end": "cover 50%"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference) and (width >= 641px)",
+     "selector": ".ff-stg-plate[data-astro-cid-zuqrvydt]",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "linear",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "both",
+      "animation-play-state": "running",
+      "animation-name": "ff-stg-fade",
+      "animation-timeline": "--ff-stg-zt",
+      "animation-range-start": "cover 50%",
+      "animation-range-end": "cover 56%"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference) and (width >= 1024px)",
+     "selector": ".ff-stg-at[data-astro-cid-zuqrvydt]:not(:first-child)",
+     "declarations": {
+      "margin-top": "24px"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference) and (width >= 1024px)",
+     "selector": ".ff-stg-panel[data-astro-cid-zuqrvydt]",
+     "declarations": {
+      "position": "sticky",
+      "top": "calc(96px + var(--ff-stg-i) * 52px)",
+      "display": "flex",
+      "flex-direction": "column",
+      "height": "calc(min(640px,100svh - 160px) - var(--ff-stg-i) * 52px)",
+      "overflow-x": "hidden",
+      "overflow-y": "hidden",
+      "border-top-width": "0px",
+      "border-top-style": "initial",
+      "border-top-color": "initial",
+      "border-top-left-radius": "",
+      "border-top-right-radius": "",
+      "border-bottom-right-radius": "",
+      "border-bottom-left-radius": "",
+      "background-image": "",
+      "background-position-x": "",
+      "background-position-y": "",
+      "background-size": "",
+      "background-repeat": "",
+      "background-attachment": "",
+      "background-origin": "",
+      "background-clip": "",
+      "background-color": "",
+      "box-shadow": "var(--ff-shadow-resting)"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference) and (width >= 1024px)",
+     "selector": ".ff-stg-pl[data-astro-cid-zuqrvydt]",
+     "declarations": {
+      "flex-grow": "0",
+      "flex-shrink": "0",
+      "flex-basis": "auto",
+      "height": "52px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "padding-top": "0px",
+      "padding-right": "28px",
+      "padding-bottom": "0px",
+      "padding-left": "28px",
+      "border-bottom-width": "",
+      "border-bottom-style": "",
+      "border-bottom-color": ""
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference) and (width >= 1024px)",
+     "selector": ".ff-stg-pl[data-astro-cid-zuqrvydt]:focus-visible",
+     "declarations": {
+      "outline-offset": "-4px",
+      "border-top-left-radius": "",
+      "border-top-right-radius": "",
+      "border-bottom-right-radius": "",
+      "border-bottom-left-radius": ""
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference) and (width >= 1024px)",
+     "selector": ".ff-stg-panel[data-astro-cid-zuqrvydt] > .ff-split[data-astro-cid-zuqrvydt]",
+     "declarations": {
+      "flex-grow": "1",
+      "flex-shrink": "1",
+      "flex-basis": "0%",
+      "min-height": "0px",
+      "align-items": "stretch"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference) and (width >= 1024px)",
+     "selector": ".ff-stg-panel[data-astro-cid-zuqrvydt] .ff-split-words[data-astro-cid-zuqrvydt]",
+     "declarations": {
+      "align-self": "start",
+      "padding-top": "56px",
+      "padding-left": "40px"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference) and (width >= 1024px)",
+     "selector": ".ff-stg-panel[data-astro-cid-zuqrvydt] .ff-split-stage[data-astro-cid-zuqrvydt]",
+     "declarations": {
+      "height": "auto"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference)",
+     "selector": ".ff-sel-p[data-astro-cid-nue4yuma]",
+     "declarations": {
+      "animation-duration": "",
+      "animation-timing-function": "",
+      "animation-delay": "",
+      "animation-iteration-count": "",
+      "animation-direction": "",
+      "animation-fill-mode": "",
+      "animation-play-state": "",
+      "animation-name": "",
+      "animation-timeline": "",
+      "animation-range-start": "",
+      "animation-range-end": ""
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": "a[data-astro-cid-6syndgyx].ff-lgr-cred-b",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-lgr-feat[data-astro-cid-kb5qz262] a[data-astro-cid-kb5qz262]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-cmp-card, .ff-cmp-field, .ff-cmp-go",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-cmp-caret",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    }
+   ],
+   "declared": [
+    {
+     "selector": "html",
+     "context": [
+      "@layer ff.base",
+      "@media (prefers-reduced-motion: no-preference)"
+     ],
+     "transitions": [],
+     "animations": [],
+     "scrollBehavior": "smooth"
+    },
+    {
+     "selector": ".ff-pbtn",
+     "context": [
+      "@layer ff.primitives"
+     ],
+     "transitions": [
+      {
+       "property": "background",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ff-prg-spin",
+     "context": [
+      "@layer ff.primitives"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ff-prg-turn",
+       "durationMs": 800,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".ff-intro .ff-rise",
+     "context": [
+      "@layer ff.utilities",
+      "@media (prefers-reduced-motion: no-preference)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ff-rise",
+       "durationMs": 300,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ],
+     "viaVar": true
+    },
+    {
+     "selector": ".ff-stg-caret[data-astro-cid-zuqrvydt]",
+     "context": [
+      "@layer ff.components"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ff-stg-blink",
+       "durationMs": 1050,
+       "delayMs": 0,
+       "easing": "steps(1, end)",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".ff-stg-zc[data-astro-cid-zuqrvydt] > :not(.ff-stg-plate)",
+     "context": [
+      "@layer ff.components",
+      "@supports (animation-timeline: view())",
+      "@media (prefers-reduced-motion: no-preference) and (width >= 641px)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ff-stg-grow",
+       "durationRaw": "auto",
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".ff-stg-plate[data-astro-cid-zuqrvydt]",
+     "context": [
+      "@layer ff.components",
+      "@supports (animation-timeline: view())",
+      "@media (prefers-reduced-motion: no-preference) and (width >= 641px)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ff-stg-fade",
+       "durationRaw": "auto",
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".ff-cmp-caret",
+     "context": [
+      "@layer ff.components"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ff-cmp-blink",
+       "durationMs": 1050,
+       "delayMs": 0,
+       "easing": "steps(1, end)",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".ff-cmp-nav",
+     "context": [
+      "@layer ff.components"
+     ],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    }
+   ],
+   "customProperties": [
+    {
+     "name": "--ff-duration-base",
+     "declared": ".24s",
+     "selector": ":root",
+     "resolved": ".24s"
+    },
+    {
+     "name": "--ff-duration-fast",
+     "declared": ".12s",
+     "selector": ":root",
+     "resolved": ".12s"
+    },
+    {
+     "name": "--ff-ease-out",
+     "declared": "cubic-bezier(.2,.8,.2,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(.2,.8,.2,1)"
+    },
+    {
+     "name": "--ff-ease-spring",
+     "declared": "cubic-bezier(.2,.8,.2,1)",
+     "selector": ":root",
+     "resolved": "linear(0, .001 .6%, .006 1.5%, .017 2.7%, .036 3.9%, .062 5.3%, .095 6.8%, .135 8.4%, .18 10%, .231 11.7%, .285 13.5%, .341 15.4%, .399 17.3%, .456 19.3%, .513 21.3%, .569 23.4%, .621 25.5%, .671 27.7%, .717 29.9%, .76 32.2%, .799 34.5%, .833 36.8%, .864 39.2%, .891 41.7%, .914 44.1%, .934 46.6%, .951 49.2%, .964 51.7%, .976 54.3%, .985 57%, .992 59.6%, .997 62.3%, 1.001 65.1%, 1.004 67.8%, 1.006 70.6%, 1.007 73.4%, 1.008 76.3%, 1.008 79.1%, 1.007 82%, 1.007 85%, 1.006 87.9%, 1.006 90.9%, 1.005 93.9%, 1.004 96.9%, 1)"
+    },
+    {
+     "name": "--ff-ease-ui",
+     "declared": "cubic-bezier(.25,.46,.45,.94)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(.25,.46,.45,.94)"
+    }
+   ]
+  },
+  "page-4": {
+   "url": "https://flutterflow.io/studio",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 1028,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 72,
+    "removed": 58,
+    "reduced": 0,
+    "kept": 14,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "partial",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      }
+     ],
+     "count": 14,
+     "nodes": [
+      "a.ff-page-skip",
+      "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 120,
+       "to": 120
+      }
+     ],
+     "count": 12,
+     "nodes": [
+      "a"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "transform",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      }
+     ],
+     "count": 12,
+     "nodes": [
+      "svg"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      }
+     ],
+     "count": 8,
+     "nodes": [
+      "span.ff-acc-x"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      }
+     ],
+     "count": 7,
+     "nodes": [
+      "a.ff-btn.ff-btn-secondary.ff-btn-sm",
+      "a.ff-btn.ff-btn-primary.ff-btn-sm",
+      "a.ff-btn.ff-btn-primary.ff-btn-ab"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      }
+     ],
+     "count": 6,
+     "nodes": [
+      "button.ff-snav-menu",
+      "a.ff-snav-lk",
+      "a.ff-snav-lk.ff-snav-signin"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "color",
+        "durationMs": 120,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "removed",
+       "from": 120,
+       "to": 0
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "button.ff-ibtn"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       },
+       {
+        "property": "visibility",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      },
+      {
+       "kind": "transition",
+       "key": "visibility",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "div.ff-snav-panel"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [],
+      "scrollBehavior": "smooth"
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "scroll",
+       "key": "scroll-behavior",
+       "outcome": "removed"
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "html.ff-intro"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "ff-rise",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "ff-rise",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "p.ff-lede.ff-rise"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "ff-rise",
+        "durationMs": 300,
+        "delayMs": 140,
+        "easing": "ease-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "ff-rise",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.ff-hero-shot.ff-rise.ff-hero-shot-capture"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "ff-rise",
+        "durationMs": 300,
+        "delayMs": 60,
+        "easing": "ease-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "both",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "ff-rise",
+       "outcome": "removed",
+       "from": 300,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.ff-hero-acts.ff-rise"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "box-shadow",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": []
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "removed",
+       "from": 240,
+       "to": 0
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "header.ff-snav.ff-snav-studio"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 240,
+       "to": 240
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.ff-phn-sb"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 240,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 240,
+       "to": 240
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.ff-phn-screen::after"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "ff-prg-turn",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "rotate"
+       ]
+      }
+     ],
+     "properties": [
+      "rotate"
+     ]
+    },
+    {
+     "name": "ff-rise",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ff-stg-blink",
+     "steps": [
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ff-stg-grow",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": []
+      }
+     ],
+     "properties": []
+    },
+    {
+     "name": "ff-stg-fade",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ff-cmp-blink",
+     "steps": [
+      {
+       "offset": "50%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    }
+   ],
+   "reducedMotionRules": [
+    {
+     "media": "@media (prefers-reduced-motion: no-preference)",
+     "selector": "html",
+     "declarations": {
+      "scroll-behavior": "smooth"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": "a.ff-go .ff-i",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-btn",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-ibtn",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-prg-spin",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-swi, .ff-swi::before",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-seg button, .ff-seg[data-ff-seg-motion]::before",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-fld-i, .ff-fld-row, .ff-chc input, .ff-chc-cells span",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference)",
+     "selector": ".ff-intro .ff-rise",
+     "declarations": {
+      "animation-duration": "0.3s",
+      "animation-timing-function": "ease-out",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "both",
+      "animation-play-state": "running",
+      "animation-name": "ff-rise",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal",
+      "animation-delay": "var(--ff-rise-delay, 0s)"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-page-skip",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference)",
+     "selector": ".ff-win-wph[data-astro-cid-mc4wrifj].ff-win-wph-rise > .ff-win-wph-w[data-astro-cid-mc4wrifj], .ff-win-wph[data-astro-cid-mc4wrifj].ff-win-wph-rise > .ff-win-ph[data-astro-cid-mc4wrifj]",
+     "declarations": {
+      "opacity": "0",
+      "translate": "0px 24px"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference)",
+     "selector": ".ff-win-wph[data-astro-cid-mc4wrifj].ff-win-wph-rise.ff-win-in > .ff-win-wph-w[data-astro-cid-mc4wrifj], .ff-win-wph[data-astro-cid-mc4wrifj].ff-win-wph-rise.ff-win-in > .ff-win-ph[data-astro-cid-mc4w",
+     "declarations": {
+      "opacity": "1",
+      "translate": "0px",
+      "transition-property": "",
+      "transition-duration": "",
+      "transition-timing-function": "",
+      "transition-delay": "",
+      "transition-behavior": ""
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference)",
+     "selector": ".ff-win-wph[data-astro-cid-mc4wrifj].ff-win-wph-rise.ff-win-in > .ff-win-ph[data-astro-cid-mc4wrifj]",
+     "declarations": {
+      "transition-delay": "0.22s"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-menu-btn[data-astro-cid-puklolk3] .ff-menu-chev[data-astro-cid-puklolk3]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-chip[data-astro-cid-e6lqvrsl]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-prf-qw-story[data-astro-cid-pzrzfoq6] .ff-i[data-astro-cid-pzrzfoq6]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-acc-x",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-stg-caret[data-astro-cid-zuqrvydt]",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": "[data-astro-cid-zuqrvydt]:is(.ff-stg-cmp, .ff-stg-go, .ff-stg-q, .ff-stg-res)",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference) and (width >= 641px)",
+     "selector": ".ff-stg-zc[data-astro-cid-zuqrvydt]",
+     "declarations": {
+      "view-timeline-name": "--ff-stg-zt",
+      "view-timeline-axis": "block",
+      "view-timeline-inset": "auto"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference) and (width >= 641px)",
+     "selector": ".ff-stg-zc[data-astro-cid-zuqrvydt] > :not(.ff-stg-plate)",
+     "declarations": {
+      "--ff-win-radius": "calc(var(--ff-radius-page) / var(--ff-stg-scale))",
+      "transform": "scale(var(--ff-stg-scale))",
+      "transform-origin": "50% 0px",
+      "animation-duration": "auto",
+      "animation-timing-function": "linear",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "both",
+      "animation-play-state": "running",
+      "animation-name": "ff-stg-grow",
+      "animation-timeline": "--ff-stg-zt",
+      "animation-range-start": "entry 40%",
+      "animation-range-end": "cover 50%"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference) and (width >= 641px)",
+     "selector": ".ff-stg-plate[data-astro-cid-zuqrvydt]",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "linear",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "both",
+      "animation-play-state": "running",
+      "animation-name": "ff-stg-fade",
+      "animation-timeline": "--ff-stg-zt",
+      "animation-range-start": "cover 50%",
+      "animation-range-end": "cover 56%"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference) and (width >= 1024px)",
+     "selector": ".ff-stg-at[data-astro-cid-zuqrvydt]:not(:first-child)",
+     "declarations": {
+      "margin-top": "24px"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference) and (width >= 1024px)",
+     "selector": ".ff-stg-panel[data-astro-cid-zuqrvydt]",
+     "declarations": {
+      "position": "sticky",
+      "top": "calc(96px + var(--ff-stg-i) * 52px)",
+      "display": "flex",
+      "flex-direction": "column",
+      "height": "calc(min(640px,100svh - 160px) - var(--ff-stg-i) * 52px)",
+      "overflow-x": "hidden",
+      "overflow-y": "hidden",
+      "border-top-width": "0px",
+      "border-top-style": "initial",
+      "border-top-color": "initial",
+      "border-top-left-radius": "",
+      "border-top-right-radius": "",
+      "border-bottom-right-radius": "",
+      "border-bottom-left-radius": "",
+      "background-image": "",
+      "background-position-x": "",
+      "background-position-y": "",
+      "background-size": "",
+      "background-repeat": "",
+      "background-attachment": "",
+      "background-origin": "",
+      "background-clip": "",
+      "background-color": "",
+      "box-shadow": "var(--ff-shadow-resting)"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference) and (width >= 1024px)",
+     "selector": ".ff-stg-pl[data-astro-cid-zuqrvydt]",
+     "declarations": {
+      "flex-grow": "0",
+      "flex-shrink": "0",
+      "flex-basis": "auto",
+      "height": "52px",
+      "margin-top": "0px",
+      "margin-right": "0px",
+      "margin-bottom": "0px",
+      "margin-left": "0px",
+      "padding-top": "0px",
+      "padding-right": "28px",
+      "padding-bottom": "0px",
+      "padding-left": "28px",
+      "border-bottom-width": "",
+      "border-bottom-style": "",
+      "border-bottom-color": ""
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference) and (width >= 1024px)",
+     "selector": ".ff-stg-pl[data-astro-cid-zuqrvydt]:focus-visible",
+     "declarations": {
+      "outline-offset": "-4px",
+      "border-top-left-radius": "",
+      "border-top-right-radius": "",
+      "border-bottom-right-radius": "",
+      "border-bottom-left-radius": ""
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference) and (width >= 1024px)",
+     "selector": ".ff-stg-panel[data-astro-cid-zuqrvydt] > .ff-split[data-astro-cid-zuqrvydt]",
+     "declarations": {
+      "flex-grow": "1",
+      "flex-shrink": "1",
+      "flex-basis": "0%",
+      "min-height": "0px",
+      "align-items": "stretch"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference) and (width >= 1024px)",
+     "selector": ".ff-stg-panel[data-astro-cid-zuqrvydt] .ff-split-words[data-astro-cid-zuqrvydt]",
+     "declarations": {
+      "align-self": "start",
+      "padding-top": "56px",
+      "padding-left": "40px"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: no-preference) and (width >= 1024px)",
+     "selector": ".ff-stg-panel[data-astro-cid-zuqrvydt] .ff-split-stage[data-astro-cid-zuqrvydt]",
+     "declarations": {
+      "height": "auto"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-sdn-x[data-astro-cid-2cufpxhb], .ff-sdn-link[data-astro-cid-2cufpxhb]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-sdn-x[data-astro-cid-3pl5raqq], .ff-sdn-link[data-astro-cid-3pl5raqq]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-snav, .ff-snav-nav a.ff-snav-lk",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-snav-menu[data-astro-cid-tfvwvzww], .ff-snav-menu[data-astro-cid-tfvwvzww] .ff-i[data-astro-cid-tfvwvzww], .ff-snav-panel[data-astro-cid-tfvwvzww]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-snav-search[data-astro-cid-tfvwvzww]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": "a[data-astro-cid-6syndgyx].ff-lgr-cred-b",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-lgr-feat[data-astro-cid-kb5qz262] a[data-astro-cid-kb5qz262]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-itd-igl[data-astro-cid-fhe2wpy4] a[data-astro-cid-fhe2wpy4], .ff-itd-igl[data-astro-cid-fhe2wpy4] b[data-astro-cid-fhe2wpy4] .ff-i[data-astro-cid-fhe2wpy4]",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-cmp-card, .ff-cmp-field, .ff-cmp-go",
+     "declarations": {
+      "transition-behavior": "normal",
+      "transition-duration": "0s",
+      "transition-timing-function": "ease",
+      "transition-delay": "0s",
+      "transition-property": "none"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".ff-cmp-caret",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    }
+   ],
+   "declared": [
+    {
+     "selector": "html",
+     "context": [
+      "@layer ff.base",
+      "@media (prefers-reduced-motion: no-preference)"
+     ],
+     "transitions": [],
+     "animations": [],
+     "scrollBehavior": "smooth"
+    },
+    {
+     "selector": ".ff-pbtn",
+     "context": [
+      "@layer ff.primitives"
+     ],
+     "transitions": [
+      {
+       "property": "background",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ff-prg-spin",
+     "context": [
+      "@layer ff.primitives"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ff-prg-turn",
+       "durationMs": 800,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".ff-intro .ff-rise",
+     "context": [
+      "@layer ff.utilities",
+      "@media (prefers-reduced-motion: no-preference)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ff-rise",
+       "durationMs": 300,
+       "easing": "ease-out",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ],
+     "viaVar": true
+    },
+    {
+     "selector": ".ff-win-wph[data-astro-cid-mc4wrifj].ff-win-wph-rise.ff-win-in > .ff-win-ph[data-astro-cid-mc4wrifj]",
+     "context": [
+      "@layer ff.components",
+      "@media (prefers-reduced-motion: no-preference)"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 220
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ff-stg-caret[data-astro-cid-zuqrvydt]",
+     "context": [
+      "@layer ff.components"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ff-stg-blink",
+       "durationMs": 1050,
+       "delayMs": 0,
+       "easing": "steps(1, end)",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".ff-stg-zc[data-astro-cid-zuqrvydt] > :not(.ff-stg-plate)",
+     "context": [
+      "@layer ff.components",
+      "@supports (animation-timeline: view())",
+      "@media (prefers-reduced-motion: no-preference) and (width >= 641px)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ff-stg-grow",
+       "durationRaw": "auto",
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".ff-stg-plate[data-astro-cid-zuqrvydt]",
+     "context": [
+      "@layer ff.components",
+      "@supports (animation-timeline: view())",
+      "@media (prefers-reduced-motion: no-preference) and (width >= 641px)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ff-stg-fade",
+       "durationRaw": "auto",
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".ff-cmp-caret",
+     "context": [
+      "@layer ff.components"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ff-cmp-blink",
+       "durationMs": 1050,
+       "delayMs": 0,
+       "easing": "steps(1, end)",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".ff-cmp-nav",
+     "context": [
+      "@layer ff.components"
+     ],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    }
+   ],
+   "customProperties": [
+    {
+     "name": "--ff-duration-base",
+     "declared": ".24s",
+     "selector": ":root",
+     "resolved": ".24s"
+    },
+    {
+     "name": "--ff-duration-fast",
+     "declared": ".12s",
+     "selector": ":root",
+     "resolved": ".12s"
+    },
+    {
+     "name": "--ff-ease-out",
+     "declared": "cubic-bezier(.2,.8,.2,1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(.2,.8,.2,1)"
+    },
+    {
+     "name": "--ff-ease-spring",
+     "declared": "cubic-bezier(.2,.8,.2,1)",
+     "selector": ":root",
+     "resolved": "linear(0, .001 .6%, .006 1.5%, .017 2.7%, .036 3.9%, .062 5.3%, .095 6.8%, .135 8.4%, .18 10%, .231 11.7%, .285 13.5%, .341 15.4%, .399 17.3%, .456 19.3%, .513 21.3%, .569 23.4%, .621 25.5%, .671 27.7%, .717 29.9%, .76 32.2%, .799 34.5%, .833 36.8%, .864 39.2%, .891 41.7%, .914 44.1%, .934 46.6%, .951 49.2%, .964 51.7%, .976 54.3%, .985 57%, .992 59.6%, .997 62.3%, 1.001 65.1%, 1.004 67.8%, 1.006 70.6%, 1.007 73.4%, 1.008 76.3%, 1.008 79.1%, 1.007 82%, 1.007 85%, 1.006 87.9%, 1.006 90.9%, 1.005 93.9%, 1.004 96.9%, 1)"
+    },
+    {
+     "name": "--ff-ease-ui",
+     "declared": "cubic-bezier(.25,.46,.45,.94)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(.25,.46,.45,.94)"
+    }
+   ]
+  }
+ }
+}

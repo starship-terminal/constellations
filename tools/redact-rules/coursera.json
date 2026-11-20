@@ -4,7 +4,8 @@
   "net": true,
   "emails": true,
   "email_allow": [
-   "@example\\.(com|org)$",
+   "@example\\.com$",
+   "@example\\.org$",
    "@coursera\\.org$",
    "^name@email\\.com$"
   ],
@@ -34,13 +35,163 @@
     "components/crops/signed-in/rail-due-tag-two-line.png"
    ],
    "rects": [
-    [
-     30,
-     58,
-     90,
-     84
-    ]
+    [30, 58, 90, 84]
+   ]
+  },
+  {
+   "name": "Learner reviews: reviewer initials in the avatar circle and beside it",
+   "files": [
+    "components/crops/review-card-default.png"
+   ],
+   "rects": [
+    [112, 96, 186, 168, "solid"],
+    [221, 104, 313, 160, "solid"]
+   ]
+  },
+  {
+   "name": "Learner reviews: reviewer initials in the avatar circle and beside it",
+   "files": [
+    "screenshots/course-light-tab-reviews.png"
+   ],
+   "rects": [
+    [1106, 560, 1178, 632, "solid"],
+    [1213, 568, 1305, 624, "solid"],
+    [1106, 958, 1178, 1030, "solid"],
+    [1213, 966, 1305, 1022, "solid"],
+    [1106, 1356, 1178, 1428, "solid"],
+    [1213, 1364, 1305, 1420, "solid"]
+   ]
+  },
+  {
+   "name": "Learner reviews: reviewer initials in the avatar circle and beside it",
+   "files": [
+    "screenshots/course-dark-tab-reviews.png"
+   ],
+   "rects": [
+    [1106, 560, 1178, 632, "solid"],
+    [1213, 568, 1305, 624, "solid"],
+    [1106, 958, 1178, 1030, "solid"],
+    [1213, 966, 1305, 1022, "solid"],
+    [1106, 1356, 1178, 1428, "solid"],
+    [1213, 1364, 1305, 1420, "solid"]
+   ]
+  },
+  {
+   "name": "Learner reviews: reviewer initials in the avatar circle and beside it",
+   "files": [
+    "screenshots/course-light-tab-testimonials.png"
+   ],
+   "rects": [
+    [1105, 1278, 1179, 1350, "solid"],
+    [1214, 1286, 1306, 1342, "solid"],
+    [1105, 1676, 1179, 1748, "solid"],
+    [1214, 1684, 1306, 1740, "solid"]
+   ]
+  },
+  {
+   "name": "Learner reviews: reviewer initials in the avatar circle and beside it",
+   "files": [
+    "screenshots/course-dark-tab-testimonials.png"
+   ],
+   "rects": [
+    [1105, 1278, 1179, 1350, "solid"],
+    [1214, 1286, 1306, 1342, "solid"],
+    [1105, 1676, 1179, 1748, "solid"],
+    [1214, 1684, 1306, 1740, "solid"]
+   ]
+  },
+  {
+   "name": "Learner reviews: reviewer initials in the avatar circle and beside it",
+   "files": [
+    "screenshots/course-light-full.png"
+   ],
+   "rects": [
+    [552, 3532, 590, 3568, "solid"],
+    [607, 3536, 653, 3564, "solid"],
+    [553, 3731, 589, 3767, "solid"],
+    [606, 3735, 652, 3763, "solid"],
+    [553, 3930, 590, 3966, "solid"],
+    [607, 3934, 653, 3962, "solid"]
+   ]
+  },
+  {
+   "name": "Learner reviews: reviewer initials in the avatar circle and beside it",
+   "files": [
+    "screenshots/course2-light-full.png"
+   ],
+   "rects": [
+    [553, 2755, 589, 2791, "solid"],
+    [606, 2759, 652, 2787, "solid"],
+    [553, 2954, 589, 2990, "solid"],
+    [606, 2958, 652, 2986, "solid"],
+    [553, 3153, 589, 3189, "solid"],
+    [606, 3157, 652, 3185, "solid"]
+   ]
+  },
+  {
+   "name": "Learner reviews: reviewer initials in the avatar circle and beside it",
+   "files": [
+    "screenshots/certificate-light-full.png"
+   ],
+   "rects": [
+    [553, 4525, 589, 4561, "solid"],
+    [606, 4529, 652, 4557, "solid"],
+    [553, 4744, 589, 4780, "solid"],
+    [606, 4748, 652, 4776, "solid"],
+    [553, 4963, 589, 4999, "solid"],
+    [606, 4967, 652, 4995, "solid"]
+   ]
+  },
+  {
+   "name": "Learner reviews: reviewer initials in the avatar circle and beside it",
+   "files": [
+    "screenshots/specialization-light-full.png"
+   ],
+   "rects": [
+    [553, 3569, 589, 3605, "solid"],
+    [606, 3573, 652, 3601, "solid"],
+    [553, 3788, 589, 3824, "solid"],
+    [606, 3792, 652, 3820, "solid"],
+    [553, 4007, 589, 4043, "solid"],
+    [606, 4011, 652, 4039, "solid"]
+   ]
+  },
+  {
+   "name": "Learner reviews: reviewer initials in the avatar circle and beside it",
+   "files": [
+    "screenshots/specialization-light-full-courses-expanded.png"
+   ],
+   "rects": [
+    [552, 4627, 590, 4663, "solid"],
+    [607, 4631, 653, 4659, "solid"],
+    [552, 4846, 590, 4882, "solid"],
+    [607, 4850, 653, 4878, "solid"],
+    [552, 5065, 590, 5101, "solid"],
+    [607, 5069, 653, 5097, "solid"]
+   ]
+  },
+  {
+   "name": "Learner reviews (mobile): reviewer initials",
+   "files": [
+    "screenshots/mobile-course-light-full.png"
+   ],
+   "rects": [
+    [94, 10024, 160, 10062, "solid"],
+    [94, 10460, 160, 10498, "solid"],
+    [94, 10897, 160, 10934, "solid"]
+   ]
+  },
+  {
+   "name": "Learner reviews (mobile): reviewer initials",
+   "files": [
+    "screenshots/mobile-specialization-light-full.png"
+   ],
+   "rects": [
+    [94, 9896, 160, 9934, "solid"],
+    [94, 10413, 160, 10450, "solid"],
+    [94, 10889, 160, 10926, "solid"]
    ]
   }
- ]
+ ],
+ "_note_reviews": "Added 2026-11-21 for the public repository: other learners are masked. The course, specialization and certificate pages' Learner reviews show each reviewer as initials in a letter circle and beside it; both are painted out (the circle keeps its fill). Testimonials Coursera publishes (named, with photos) and instructors are catalog content and stay."
 }

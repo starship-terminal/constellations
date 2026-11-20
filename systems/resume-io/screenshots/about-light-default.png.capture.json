@@ -1,0 +1,22 @@
+{
+  "capturedAt": "2026-11-18T18:08:29.237Z",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1
+  },
+  "status": 200,
+  "sanitizedSourceUrl": "https://resume.io/about",
+  "url": "https://resume.io/about",
+  "title": "Elevating Careers Worldwide with Resume.io · Resume.io",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 1,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "cookieOpen": false,
+  "screenshotFrames": "headless Playwright PNG. T3 preview returned: The browser is not producing screenshot frames."
+}

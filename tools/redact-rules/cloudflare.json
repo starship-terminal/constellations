@@ -1,8 +1,8 @@
 {
-  "notes": [
+  "_notes": [
     "Cloudflare invite-input sample placeholders, observed in members-invite-dark-desktop.png at x368\u2013648 y225\u2013240.",
     "Boosted OCR splits the owner account address at x961 y396, reading ial@gmail.com; normal OCR and source JSON identify the full owner address. Exact OCR suffix only.",
-    "Browser Run chart axes repeat 16:00 timestamps; boosted OCR flattened these to 1600 1600 1606 1600, triggering the card-number pattern only across lines. Visually reviewed. Ignore only wrapped matches in this exact image; direct boxes still fail."
+    "Browser Run chart axes repeat 16:00 timestamps; boosted OCR flattened these to four 4-digit groups, triggering the card-number pattern only across lines. Visually reviewed. Ignore only wrapped matches in this exact image; direct boxes still fail."
   ],
   "ocr": {
     "email_allow": [

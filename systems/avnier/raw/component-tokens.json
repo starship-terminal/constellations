@@ -106,12 +106,12 @@
     "regular": {
      "value": "400",
      "type": "fontWeight",
-     "source": "computed fontWeight of nav/body text"
+     "source": "computed fontWeight of nav/body text (m-nav-link / nav-item / header, raw/components-computed.json)"
     },
     "medium": {
      "value": "500",
      "type": "fontWeight",
-     "source": "computed fontWeight of avnier-font titles"
+     "source": "computed fontWeight of avnier-font titles (pdp-title, raw/components-computed.json)"
     }
    },
    "size": {

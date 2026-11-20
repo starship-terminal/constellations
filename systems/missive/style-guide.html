@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Missive style guide</title>
+<meta name="description" content="Missive public marketing and signed-out mail tokens, rendered from tokens.json. Marketing is light. The mail app also paints dark.">
+<style>
+:root {
+  --color-neutral-600: #565b64;
+  --color-neutral-950: #232529;
+  --color-neutral-900: #34363a;
+  --color-neutral-1000: #050607;
+  --color-neutral-050: #f5f6f6;
+  --color-neutral-100: #e4e6e9;
+  --color-neutral-200: #cdd0d4;
+  --color-neutral-300: #aab0b6;
+  --color-neutral-400: #7f8791;
+  --color-neutral-500: #646c76;
+  --color-neutral-700: #494d55;
+  --color-neutral-800: #414449;
+  --color-blue-100: #dbebfe;
+  --color-blue-600: #2266ed;
+  --color-blue-800: #1c42b1;
+  --color-cumin-50: #fef9ec;
+  --color-cumin-500: #e5901b;
+  --color-cumin-600: #cb6d14;
+  --color-cumin-700: #a94e14;
+  --color-cumin-200: #f5dc92;
+  --color-green-600: #2b8e3f;
+  --color-green-050: #eff7ef;
+  --color-green-100: #dbeade;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-brand: #2266ed;
+  --color-mail-brand: #2266ed;
+  --color-mail-blue: #0677f9;
+  --color-mail-green: #309643;
+  --color-mail-red: #f0433d;
+  --color-mail-orange: #e0750b;
+  --color-mail-yellow: #ffbb00;
+  --color-mail-ink: #2e3034;
+  --color-mail-inkMuted: #585f66;
+  --font-family-display: Tiempos Headline, "Times New Roman", sans-serif;
+  --font-family-sans: Inter, Arial, sans-serif;
+  --font-family-ui: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Helvetica Neue","Apple Color Emoji",sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-size-ui: 14px;
+  --font-size-nav: 14px;
+  --font-size-body: 20px;
+  --font-size-title: 24px;
+  --font-size-display: 56px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-control: 8px;
+  --radius-lg: 12px;
+  --radius-card: 16px;
+  --layout-page: 1440px;
+  --layout-phone: 390px;
+  --layout-navHeight: 61px;
+  --layout-topBar: 48px;
+  --layout-control: 44px;
+  --layout-mailControl: 45px;
+  --motion-duration-0ms: 0ms;
+  --motion-duration-100ms: 100ms;
+  --motion-duration-120ms: 120ms;
+  --motion-duration-duration: 125ms;
+  --motion-duration-150ms: 150ms;
+  --motion-duration-200ms: 200ms;
+  --motion-duration-material-duration: 225ms;
+  --motion-duration-250ms: 250ms;
+  --motion-duration-300ms: 300ms;
+  --motion-duration-navigation-duration: 350ms;
+  --motion-duration-400ms: 400ms;
+  --motion-duration-425ms: 425ms;
+  --motion-duration-500ms: 500ms;
+  --motion-duration-800ms: 800ms;
+  --motion-duration-1000ms: 1000ms;
+  --motion-duration-1500ms: 1500ms;
+  --motion-duration-2000ms: 2000ms;
+  --motion-duration-5000000ms: 5000000ms;
+  --motion-easing-bezier-0-0-0-2-1: cubic-bezier(0, 0, 0.2, 1);
+  --motion-easing-bezier-0-4-0-0-6-1: cubic-bezier(0.4, 0, 0.6, 1);
+  --motion-easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+  --motion-easing-easing: cubic-bezier(0, 0, 0.58, 1);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --motion-easing-material-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --page: var(--color-white);
+  --surface: var(--color-neutral-050);
+  --text: var(--color-neutral-900);
+  --textBody: var(--color-neutral-500);
+  --textMuted: var(--color-neutral-400);
+  --textOnAccent: var(--color-white);
+  --accent: var(--color-brand);
+  --accentHover: var(--color-blue-800);
+  --link: var(--color-mail-blue);
+  --action: var(--color-brand);
+  --focus: var(--color-mail-blue);
+  --border: var(--color-neutral-100);
+  --error: var(--color-mail-red);
+  --success: var(--color-green-600);
+  --mailPage: #f5f6f7;
+  --mailSurface: var(--color-white);
+  --mailText: var(--color-mail-ink);
+  --mailMuted: var(--color-mail-inkMuted);
+  --sg-display: "Times New Roman", Times, serif;
+  --sg-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color-scheme: light;
+}
+[data-mode="dark"] {
+  --page: #1d1e1f;
+  --surface: #242528;
+  --text: #e1e2e4;
+  --textBody: #a7acb2;
+  --textMuted: #a7acb2;
+  --textOnAccent: var(--color-white);
+  --accent: var(--color-brand);
+  --accentHover: var(--color-blue-800);
+  --link: var(--color-mail-blue);
+  --action: var(--color-brand);
+  --focus: var(--color-mail-blue);
+  --border: rgba(225, 226, 228, 0.14);
+  --error: var(--color-mail-red);
+  --success: var(--color-mail-green);
+  --mailPage: #1d1e1f;
+  --mailSurface: #1f2123;
+  --mailText: #e1e2e4;
+  --mailMuted: #a7acb2;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--sg-sans); }
+main { max-width: 1040px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font: 300 56px/1 var(--sg-display); letter-spacing: -1.5px; margin: 0 0 8px; }
+h2 { font: 500 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--textBody); margin: 48px 0 12px; }
+p { max-width: 68ch; color: var(--textBody); }
+code { font-family: var(--sg-mono); font-size: 13px; color: var(--link); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 148px; }
+.sw i { display: block; height: 48px; border-radius: 8px; border: 1px solid var(--border); }
+.sw b, .sw span { display: block; font: 500 12px/1.4 var(--sg-mono); }
+.sw span { font-weight: 400; color: var(--textBody); }
+.ramp { margin: 0 0 20px; }
+.ramp h3 { margin: 0 0 8px; font: 500 14px/1 var(--sg-sans); text-transform: none; letter-spacing: 0; color: var(--text); }
+.bars i { display: block; height: 8px; background: var(--accent); border-radius: 4px; }
+.bars div { margin: 0 0 8px; }
+.bars span { display: block; font: 400 12px/1.4 var(--sg-mono); color: var(--textBody); margin-bottom: 4px; }
+.radii { display: flex; flex-wrap: wrap; gap: 12px; }
+.radii div { width: 96px; height: 72px; border: 1px solid var(--border); background: var(--surface); display: flex; align-items: flex-end; padding: 6px; font: 500 11px/1.3 var(--sg-mono); }
+.bar { display: flex; align-items: center; gap: 18px; height: 80px; padding: 0 20px; background: var(--surface); border-bottom: 1px solid var(--border); }
+.bar .mark { font: 500 22px/1 var(--sg-display); }
+.bar a { color: var(--text); text-decoration: none; font-size: 13px; letter-spacing: .04em; }
+.bar .sp { flex: 1; }
+.hero { padding: 48px 0 16px; }
+.hero h3 { margin: 0; font: 300 64px/1 var(--sg-display); letter-spacing: -1.6px; max-width: 12ch; }
+.btn { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: 8px; background: var(--accent); color: var(--textOnAccent); border: 0; font: 500 14px/1 var(--sg-sans); }
+.pill { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: 9999px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font: 500 14px/1 var(--sg-sans); }
+.action { display: inline-flex; align-items: center; height: 48px; padding: 0 20px; border-radius: 8px; background: var(--action); color: var(--textOnAccent); font: 600 16px/1 var(--sg-sans); }
+.field { display: flex; align-items: center; height: 48px; width: 320px; padding: 0 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--textMuted); }
+.lime { margin-top: 16px; height: 72px; border-radius: 16px; background: var(--lime); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+th { color: var(--textBody); font-weight: 500; }
+</style>
+</head>
+<body>
+<main>
+  <p><label><input type="checkbox" id="theme"> Dark (mail app)</label></p>
+  <h1>Missive</h1>
+  <p>Public marketing site and the signed-out mail screens, captured 2026-11-19. Marketing is light. The mail app paints light and dark through data-theme. Tiempos Headline and Inter are licensed and not loaded here. Display falls back to Times New Roman. UI falls back to the system sans.</p>
+
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>white</span></div>
+    <div class="sw"><i style="background:var(--surface)"></i><b>surface</b><span>neutral 050</span></div>
+    <div class="sw"><i style="background:var(--text)"></i><b>text</b><span>neutral 900</span></div>
+    <div class="sw"><i style="background:var(--textBody)"></i><b>body</b><span>neutral 500</span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><b>accent</b><span>blue 600</span></div>
+    <div class="sw"><i style="background:var(--action)"></i><b>action</b><span>brand</span></div>
+    <div class="sw"><i style="background:var(--link)"></i><b>link</b><span>mail blue</span></div>
+    <div class="sw"><i style="background:var(--error)"></i><b>error</b><span>mail red</span></div>
+    <div class="sw"><i style="background:var(--success)"></i><b>success</b><span>green 600</span></div>
+  </div>
+
+  <h2>Chrome</h2>
+  <div class="bar">
+    <span class="mark">missive</span>
+    <a>Product</a><a>Pricing</a>
+    <span class="sp"></span>
+    <span class="pill">Book a demo</span>
+    <span class="btn">Try for free</span>
+  </div>
+  <div class="hero">
+    <h3>Inbox collaboration for teams that run on email</h3>
+    <p>Display is Tiempos Headline at 56px. The filled action is brand blue at 8px radius. Book a demo is a ghost link.</p>
+    <p><span class="btn">Try for free</span> <span class="pill">Watch demo</span></p>
+  </div>
+  <p><span class="field">Work email</span></p>
+  <p><span class="action">Log in</span></p>
+
+  <h2>Palette</h2>
+  <div id="palette"></div>
+
+  <h2>Space</h2>
+  <div class="bars" id="space"></div>
+
+  <h2>Radius</h2>
+  <div class="radii" id="radius"></div>
+
+  <h2>Layout</h2>
+  <table id="layout"><tr><th>Token</th><th>Value</th></tr></table>
+
+  <h2>Type</h2>
+  <table>
+    <tr><th>Role</th><th>Size</th><th>Weight</th></tr>
+    <tr><td>Display</td><td>56px</td><td>400</td></tr>
+    <tr><td>Title</td><td>24px</td><td>500</td></tr>
+    <tr><td>Body</td><td>20px</td><td>400</td></tr>
+    <tr><td>Nav</td><td>14px</td><td>400</td></tr>
+  </table>
+  <p>Values are the measured public surface. See <code>tokens.json</code> for provenance.</p>
+</main>
+<script>
+const TOKENS = {"core":{"color":{"neutral":{"600":{"v":"#565b64","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--neutral-600 was #565b64"},"950":{"v":"#232529","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--neutral-950 was #232529"},"900":{"v":"#34363a","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--neutral-900 was #34363a"},"1000":{"v":"#050607","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--neutral-1000 was #050607"},"050":{"v":"#f5f6f6","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--neutral-050 was #f5f6f6"},"100":{"v":"#e4e6e9","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--neutral-100 was #e4e6e9"},"200":{"v":"#cdd0d4","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--neutral-200 was #cdd0d4"},"300":{"v":"#aab0b6","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--neutral-300 was #aab0b6"},"400":{"v":"#7f8791","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--neutral-400 was #7f8791"},"500":{"v":"#646c76","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--neutral-500 was #646c76"},"700":{"v":"#494d55","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--neutral-700 was #494d55"},"800":{"v":"#414449","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--neutral-800 was #414449"}},"blue":{"100":{"v":"#dbebfe","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--blue-100 was #dbebfe"},"600":{"v":"#2266ed","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--blue-600 was #2266ed"},"800":{"v":"#1c42b1","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--blue-800 was #1c42b1"}},"cumin":{"50":{"v":"#fef9ec","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--cumin-50 was #fef9ec"},"500":{"v":"#e5901b","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--cumin-500 was #e5901b"},"600":{"v":"#cb6d14","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--cumin-600 was #cb6d14"},"700":{"v":"#a94e14","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--cumin-700 was #a94e14"},"200":{"v":"#f5dc92","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--cumin-200 was #f5dc92"}},"green":{"600":{"v":"#2b8e3f","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--green-600 was #2b8e3f"},"050":{"v":"#eff7ef","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--green-050 was #eff7ef"},"100":{"v":"#dbeade","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--green-100 was #dbeade"}},"white":{"v":"#ffffff","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--white"},"black":{"v":"#000000","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--black"},"brand":{"v":"#2266ed","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --color--brand aliases --swatch--blue-600"},"mail":{"brand":{"v":"#2266ed","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --brand-color"},"blue":{"v":"#0677f9","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --blue-color"},"green":{"v":"#309643","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --green-color"},"red":{"v":"#f0433d","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --red-color"},"orange":{"v":"#e0750b","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --orange-color"},"yellow":{"v":"#ffbb00","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --yellow-color"},"ink":{"v":"#2e3034","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --text-color-a, light"},"inkMuted":{"v":"#585f66","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --text-color-b, light"}}},"font":{"family":{"display":{"v":"Tiempos Headline, \"Times New Roman\", sans-serif","t":"fontFamily","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: marketing h1 paints Tiempos Headline"},"sans":{"v":"Inter, Arial, sans-serif","t":"fontFamily","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: marketing nav and body paint Inter"},"ui":{"v":"-apple-system,BlinkMacSystemFont,\"Segoe UI\",\"Roboto\",\"Oxygen\",\"Ubuntu\",\"Helvetica Neue\",\"Apple Color Emoji\",sans-serif","t":"fontFamily","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --font-family, the system stack"}},"weight":{"regular":{"v":400,"t":"number","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: marketing body and nav links"},"medium":{"v":500,"t":"number","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: Try for free is 500; mail title is 500"},"semibold":{"v":600,"t":"number","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: Continue with Google is 600"}},"size":{"ui":{"v":"14px","t":"dimension","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --font-size"},"nav":{"v":"14px","t":"dimension","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: marketing nav links"},"body":{"v":"20px","t":"dimension","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: home hero paragraph"},"title":{"v":"24px","t":"dimension","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: Log in to Missive"},"display":{"v":"56px","t":"dimension","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: home h1"}}},"space":{"1":{"v":"4px","t":"dimension","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --spacing--1 is 0.25rem"},"2":{"v":"8px","t":"dimension","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --spacing--2 is 0.5rem"},"3":{"v":"12px","t":"dimension","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --spacing--3 is 0.75rem"},"4":{"v":"16px","t":"dimension","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --spacing--4 is 1rem"},"6":{"v":"24px","t":"dimension","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --spacing--6 is 1.5rem"},"8":{"v":"32px","t":"dimension","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --spacing--8 is 2rem"},"12":{"v":"48px","t":"dimension","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --spacing--12 is 3rem"},"16":{"v":"64px","t":"dimension","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --spacing--16 is 4rem"},"20":{"v":"80px","t":"dimension","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --spacing--20 is 5rem"}},"radius":{"sm":{"v":"4px","t":"dimension","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --border-radius-small"},"md":{"v":"6px","t":"dimension","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --border-radius"},"control":{"v":"8px","t":"dimension","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: marketing buttons and mail controls paint 8px"},"lg":{"v":"12px","t":"dimension","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --border-radius-large"},"card":{"v":"16px","t":"dimension","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: pricing plan card left radius is 16px"}},"layout":{"page":{"v":"1440px","t":"dimension","s":"Desktop capture width"},"phone":{"v":"390px","t":"dimension","s":"Phone capture width"},"navHeight":{"v":"61px","t":"dimension","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: marketing navbar height"},"topBar":{"v":"48px","t":"dimension","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --top-bar-height"},"control":{"v":"44px","t":"dimension","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: marketing nav Try for free height"},"mailControl":{"v":"45px","t":"dimension","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: Continue with Google height"}},"motion":{"duration":{"0ms":{"v":"0ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"100ms":{"v":"100ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"120ms":{"v":"120ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"duration":{"v":"125ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--duration"},"d":"Custom property --duration, declared on :root, [data-theme] [data-theme=\"light\"]."},"150ms":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"200ms":{"v":"200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"material-duration":{"v":"225ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--material-duration"},"d":"Custom property --material-duration, declared on :root, [data-theme] [data-theme=\"light\"]."},"250ms":{"v":"250ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"300ms":{"v":"300ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 26 elements."},"navigation-duration":{"v":"350ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--navigation-duration"},"d":"Custom property --navigation-duration, declared on :root."},"400ms":{"v":"400ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"425ms":{"v":"425ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"500ms":{"v":"500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"800ms":{"v":"800ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1000ms":{"v":"1000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"1500ms":{"v":"1500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"2000ms":{"v":"2000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"5000000ms":{"v":"5000000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."}},"easing":{"bezier-0-0-0_2-1":{"v":[0,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_4-0-0_6-1":{"v":[0.4,0,0.6,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"ease":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease`, expanded to its control points."},"ease-in-out":{"v":[0.42,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease-in-out`, expanded to its control points."},"easing":{"v":[0,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#customProperties/--easing"},"d":"Custom property --easing, declared on :root, [data-theme] [data-theme=\"light\"]."},"linear":{"v":[0,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `linear`, expanded to its control points."},"material-easing":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--material-easing"},"d":"Custom property --material-easing, declared on :root, [data-theme] [data-theme=\"light\"]."}},"transition":{"padding-200ms-ease-in-out":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"transform-150ms-material-easing":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.material-easing}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"opacity-300ms-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"transform-300ms-material-easing":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.material-easing}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"backdrop-filter-300ms-material-easing":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.material-easing}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"background-color-300ms-material-easing":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.material-easing}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"border-color-300ms-material-easing":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.material-easing}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"box-shadow-300ms-material-easing":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.material-easing}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"color-300ms-material-easing":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.material-easing}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"fill-300ms-material-easing":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.material-easing}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"filter-300ms-material-easing":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.material-easing}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"opacity-300ms-material-easing":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.material-easing}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"stroke-300ms-material-easing":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.material-easing}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"text-decoration-color-300ms-material-easing":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.material-easing}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."}},"animation":{"ketch-bannerdesktopanimate":{"v":{"name":"ketch-bannerDesktopAnimate","duration":"{motion.duration.400ms}","delay":"0ms","timingFunction":"{motion.easing.ease}","iterationCount":"1","direction":"normal","fillMode":"forwards"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `ketch-bannerDesktopAnimate`."},"spin":{"v":{"name":"spin","duration":"{motion.duration.1000ms}","delay":"0ms","timingFunction":"{motion.easing.linear}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `spin`."},"spinner":{"v":{"name":"spinner","duration":"{motion.duration.1500ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `spinner`."}}}},"light":{"page":{"v":"{color.white}","t":"color","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: marketing body background is rgb(255, 255, 255)"},"surface":{"v":"{color.neutral.050}","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --color--bg-neutral aliases --swatch--neutral-050. Watch demo paints it."},"text":{"v":"{color.neutral.900}","t":"color","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: marketing ink is rgb(52, 54, 58), --swatch--neutral-900"},"textBody":{"v":"{color.neutral.500}","t":"color","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: hero paragraph is rgb(100, 108, 118), --swatch--neutral-500"},"textMuted":{"v":"{color.neutral.400}","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --color--c aliases --swatch--neutral-400's neighbour --swatch--neutral-300 is captions; muted step is 400"},"textOnAccent":{"v":"{color.white}","t":"color","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: Try for free label is white"},"accent":{"v":"{color.brand}","t":"color","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: Try for free and Log in fill is rgb(34, 102, 237)"},"accentHover":{"v":"{color.blue.800}","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --color--brand-dark aliases --swatch--blue-800"},"link":{"v":"{color.mail.blue}","t":"color","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: Forgot your password paints the mail blue"},"action":{"v":"{color.brand}","t":"color","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: mail Log in submit backgroundColor rgb(34, 102, 237)"},"focus":{"v":"{color.mail.blue}","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail focus ring uses --blue-color"},"border":{"v":"{color.neutral.100}","t":"color","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: pricing card border is rgb(228, 230, 233), --swatch--neutral-100"},"error":{"v":"{color.mail.red}","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --red-color"},"success":{"v":"{color.green.600}","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: --swatch--green-600"},"mailPage":{"v":"#f5f6f7","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --background-color rgb(245, 246, 247)"},"mailSurface":{"v":"{color.white}","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --input-background-color and --popup-background-color"},"mailText":{"v":"{color.mail.ink}","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --text-color-a"},"mailMuted":{"v":"{color.mail.inkMuted}","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --text-color-b"}},"dark":{"page":{"v":"#1d1e1f","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --background-color under [data-theme=dark] is rgb(29,30,31)"},"surface":{"v":"#242528","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --popup-background-color under dark is rgb(36 37 40)"},"text":{"v":"#e1e2e4","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --text-color-a under dark is rgb(225 226 228)"},"textBody":{"v":"#a7acb2","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --text-color-b under dark is rgb(167 172 178)"},"textMuted":{"v":"#a7acb2","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --text-color-c under dark is rgb(167 172 178)"},"textOnAccent":{"v":"{color.white}","t":"color","s":"Measured computed style, public Missive pages, 2026-11-19, light, 1440: Log in label stays white on the brand fill"},"accent":{"v":"{color.brand}","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --brand-color does not change under dark"},"accentHover":{"v":"{color.blue.800}","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: marketing brand-dark; mail brand is unchanged"},"link":{"v":"{color.mail.blue}","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --blue-color does not change under dark"},"action":{"v":"{color.brand}","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --brand-color"},"focus":{"v":"{color.mail.blue}","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --blue-color"},"border":{"v":"rgba(225, 226, 228, 0.14)","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --border-color under dark is rgb(225 226 228/.14)"},"error":{"v":"{color.mail.red}","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --red-color"},"success":{"v":"{color.mail.green}","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --green-color"},"mailPage":{"v":"#1d1e1f","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --background-color under dark"},"mailSurface":{"v":"#1f2123","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --input-background-color under dark is rgb(31 33 35)"},"mailText":{"v":"#e1e2e4","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --text-color-a under dark"},"mailMuted":{"v":"#a7acb2","t":"color","s":"Resolved from missiveapp.com and mail.missiveapp.com custom properties, 2026-11-19: mail --text-color-b under dark"}}};
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+const cssv = (path) => "--" + path.replace(/[^a-zA-Z0-9-]/g, "-");
+// Recurse into objects only: a token straight under a group (core.color.white) would otherwise recurse
+// through its value string character by character until the stack overflows.
+const flat = (node, prefix = "") => Object.entries(node || {}).flatMap(([k, v]) => (v && v.t ? [[prefix + k, v]] : (v && typeof v === "object" ? flat(v, prefix + k + ".") : [])));
+const pal = document.getElementById("palette");
+for (const [group, node] of Object.entries((TOKENS.core && TOKENS.core.color) || {})) {
+  const steps = node && node.t ? [["", node]] : flat(node);  // a single colour, or a ramp
+  if (!steps.length || steps[0][1].t !== "color") continue;
+  const box = document.createElement("div");
+  box.className = "ramp";
+  box.innerHTML = `<h3>${esc(group)}</h3><div class="row"></div>`;
+  const row = box.querySelector(".row");
+  for (const [k, t] of steps) {
+    const name = (k ? `color-${group}-${k}` : `color-${group}`).replace(/\./g, "-");
+    row.insertAdjacentHTML("beforeend", `<div class="sw" title="${esc(t.s)}"><i style="background:var(${cssv(name)})"></i><b>${esc(k || group)}</b><span>${esc(t.v)}</span></div>`);
+  }
+  pal.appendChild(box);
+}
+const space = document.getElementById("space");
+for (const [k, t] of flat(TOKENS.core && TOKENS.core.space)) {
+  space.insertAdjacentHTML("beforeend", `<div title="${esc(t.s)}"><span>space.${esc(k)} · ${esc(t.v)}</span><i style="width:var(${cssv("space-" + k)})"></i></div>`);
+}
+const radius = document.getElementById("radius");
+for (const [k, t] of flat(TOKENS.core && TOKENS.core.radius)) {
+  radius.insertAdjacentHTML("beforeend", `<div title="${esc(t.s)}" style="border-radius:var(${cssv("radius-" + k)})">${esc(k)}<br>${esc(t.v)}</div>`);
+}
+const layout = document.querySelector("#layout");
+for (const [k, t] of flat(TOKENS.core && TOKENS.core.layout)) {
+  layout.insertAdjacentHTML("beforeend", `<tr title="${esc(t.s)}"><td>layout.${esc(k)}</td><td>${esc(t.v)}</td></tr>`);
+}
+document.getElementById("theme").addEventListener("change", (e) => {
+  document.documentElement.setAttribute("data-mode", e.target.checked ? "dark" : "light");
+});
+</script>
+</body>
+</html>

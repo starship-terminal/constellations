@@ -3,7 +3,8 @@
 
 Upstream, each style's designSystem.components[] entries gain an `html`
 field after an enrichment pass. Styles fetched before that pass ran hold
-html: null (or an unresolved "$1e" flight reference) in styles.result_json.
+html: null (or, from older runs, an unresolved "$1e" flight reference) in
+styles.result_json.
 This tool re-scrapes the style pages, resolves the React flight references
 ("$1e" -> the `1e:T<hex-byte-length>,<utf8 text>` row in the same
 __next_f.push blob, sliced by UTF-8 bytes), and rewrites each row:
@@ -20,10 +21,11 @@ __next_f.push blob, sliced by UTF-8 bytes), and rewrites each row:
     design-system.json, prompt.txt) via one batched node export.js run
 
 Selection: every styles row whose stored designSystem.components has no
-element with a truthy html (covers complete-but-empty and
-pending-may-be-complete). Styles whose stored html holds unresolved "$xx"
-references count as having html and are skipped; pass --uuids to force
-specific styles back in (e.g. for testing).
+element with resolved html (covers complete-but-empty and
+pending-may-be-complete). An unresolved "$xx" reference is not html, so a
+style whose only html values are such references is selected too; a ref
+that still does not resolve is stored as null, never as "$xx". Pass
+--uuids to force specific styles in (e.g. for testing).
 
 Usage:
     python3 tools/refero/backfill_components.py [--workers 8] [--limit N]
@@ -42,6 +44,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import fetch  # noqa: E402
+import dump as refero_dump  # noqa: E402  (refreshes refero/.dump/ after a write)
 
 REFERO = fetch.REFERO
 WORK = fetch.WORK
@@ -51,29 +54,19 @@ EXPORT_JS = fetch.EXPORT_JS
 # A React flight reference looks like "$1e": the model text lives in a
 # `1e:T<hex-byte-length>,<text>` row of the same blob.
 REF_RE = re.compile(r"^\$[0-9a-z]+$")
-COMPONENT_COLUMNS = ["components_json", "components_at"]
-
-
-def init_db():
-    """fetch.init_db plus the two component columns this tool owns."""
-    db = fetch.init_db()
-    have = {r[1] for r in db.execute("PRAGMA table_info(styles)")}
-    for col in COMPONENT_COLUMNS:
-        if col not in have:
-            db.execute(f"ALTER TABLE styles ADD COLUMN {col} TEXT")
-    db.commit()
-    return db
 
 
 def has_truthy_html(result_json):
-    """True when the stored result has a component with a truthy html
-    (resolved text or an unresolved "$xx" reference)."""
+    """True when the stored result has a component with resolved html. A
+    leftover "$xx" reference is not html, so its style stays selected."""
     try:
         result = json.loads(result_json or "")
     except json.JSONDecodeError:
         return False
     comps = (result.get("designSystem") or {}).get("components") or []
-    return any(isinstance(c, dict) and c.get("html") for c in comps)
+    return any(isinstance(c, dict) and c.get("html")
+               and not (isinstance(c["html"], str) and REF_RE.match(c["html"]))
+               for c in comps)
 
 
 def resolve_ref(blob_bytes, ref_id):
@@ -98,7 +91,8 @@ def resolve_components(result, blob_bytes):
 
     Returns (resolved, unresolved): how many components ended up with real
     HTML (already-text values count) versus how many "$xx" refs could not
-    be resolved and were left in place.
+    be resolved. Like fetch.resolve_component_html, an unresolved ref and
+    "$undefined" become None, never a "$xx" string stored as html.
     """
     comps = (result.get("designSystem") or {}).get("components") or []
     resolved = unresolved = 0
@@ -106,9 +100,12 @@ def resolve_components(result, blob_bytes):
         if not isinstance(c, dict):
             continue
         h = c.get("html")
-        if isinstance(h, str) and REF_RE.match(h):
+        if h == "$undefined":
+            c["html"] = None
+        elif isinstance(h, str) and REF_RE.match(h):
             text = resolve_ref(blob_bytes, h[1:])
             if text is None:
+                c["html"] = None
                 unresolved += 1
             else:
                 c["html"] = text
@@ -293,7 +290,7 @@ def main():
                          "(resolved first, ahead of --limit)")
     args = ap.parse_args()
 
-    db = init_db()
+    db = fetch.init_db()  # adds the component columns too
     rows = select_rows(db, args)
     print(f"to refetch: {len(rows)}")
     if args.dry_run:
@@ -304,7 +301,13 @@ def main():
     if not rows:
         db.close()
         return
+    try:
+        refetch(db, rows, args)
+    finally:
+        refero_dump.refresh(fetch.DB)
 
+
+def refetch(db, rows, args):
     done = with_components = still_pending = failed = unresolved_refs = 0
     export_rows = []
     with concurrent.futures.ThreadPoolExecutor(

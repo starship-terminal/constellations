@@ -355,23 +355,24 @@ Page: pricing. Selector: `ancestor of the plan TRY FOR FREE text that holds the 
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 126.7 x 48 | = | = | = |
-| Padding | 12px 20px | = | = | = |
-| Gap | 4px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | #000000 @ 0.84 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | sans-serif 12px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | span: Space Mono 12px/14.4px 400, #ffffff, ls -0.12px | = | = | = |
-| Transition | none | = | = | = |
-| Painted layers | a.framer-10cmto.framer-hpy0rr 126.7x48.0 bg #000000 @ 0.84 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 126.7 x 48 | = | - | = |
+| Padding | 12px 20px | = | - | = |
+| Gap | 4px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | #000000 @ 0.84 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | sans-serif 12px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | span: Space Mono 12px/14.4px 400, #ffffff, ls -0.12px | = | - | = |
+| Transition | none | = | - | = |
+| Painted layers | a.framer-10cmto.framer-hpy0rr 126.7x48.0 bg #000000 @ 0.84 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `plan-cta-default.png`, `plan-cta-hover.png`, `plan-cta-focus-visible.png`, `plan-cta-pressed.png`.
+Crops: `plan-cta-default.png`, `plan-cta-hover.png`, `plan-cta-pressed.png`.
 
 #### plan-card
 

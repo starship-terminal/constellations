@@ -1,0 +1,14 @@
+{
+  "component": "scene",
+  "route": "https://www.calm.com/app/sleep",
+  "captured": "2026-11-16",
+  "via": "standalone DOM probe (scene-probe/probe.mjs-style pass), headed Chromium under Xvfb, desktop 1440x900, signed out; the /app/* re-measure through measure.mjs stayed PerimeterX-blocked afterward, so this reading was persisted from the probe's live output",
+  "selector": "div[class*=\"SceneGradient\" i]",
+  "measurements": {
+    "backgroundImage": "linear-gradient(rgb(21, 100, 148) 0%, rgb(47, 47, 126) 100%)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "position": "absolute",
+    "inset": "full viewport (1440x900 painted behind the rail and content)",
+    "note": "the same SceneGradient layer paints on /app/sleep, /app/meditate and /app/music"
+  }
+}

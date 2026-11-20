@@ -138,7 +138,9 @@ def catalog_table(audit: dict, systems: list[dict]) -> str:
             health += ", re-review due"
         missing, _ = catalog.layout_gaps(slug)
         gaps = ", ".join(f"`{m}`" for m in missing) or "none"
-        lines.append(f"| <img src=\"systems/{slug}/icon.png\" width=\"20\" alt=\"{slug}\"> | "
+        icon = s.get("preview", {}).get("icon")   # absent when the entry declares the icon.png gap
+        icon_cell = f"<img src=\"{icon}\" width=\"20\" alt=\"{slug}\">" if icon else ""
+        lines.append(f"| {icon_cell} | "
                      f"[{slug}](systems/{slug}/README.md) | {cell(s.get('goodFor', ''))} | {s.get('captured', '')} "
                      f"| {', '.join(s.get('themes', []))} | {health} | {gaps} |")
     lines += ["", "<!-- catalog:end -->", ""]
@@ -160,9 +162,62 @@ def expected(criteria: dict, audit: dict, systems: list[dict]) -> dict[Path, str
     return out
 
 
+def _same_added_health(committed: str, fresh: str) -> bool:
+    """True when a new package's Health matches, including the period a
+    layoutGaps reason may keep. The generator strips that period. A capture
+    written before the strip, or by hand with the catalog's own period, is
+    the same section. Any other difference still fails."""
+    if committed == fresh:
+        return True
+    return committed.replace(".).", ").") == fresh.replace(".).", ").")
+
+
+def root_omits_only_ungraded(text: str, criteria: dict, audit: dict, systems: list[dict]) -> bool:
+    """True when the committed catalog table is the generated table for the
+    slugs it lists, and every slug it omits has no scorecard review.
+
+    An add-only capture cannot rewrite this table for the merge commit, and
+    the merged commit is what `main` checks next, with no pull request base.
+    The omission stays valid after merging. A graded package missing from
+    the table, or a stale row for a package the table still lists, fails."""
+    match = TABLE.search(text)
+    if not match:
+        return False
+    listed = set(re.findall(r"\]\(systems/([^)/]+)/README\.md\)", match.group(0)))
+    by_slug = {s.get("slug") for s in systems}
+    if not listed <= by_slug:
+        return False
+    graded = {s.get("slug") for s in audit.get("systems", [])}
+    if (by_slug - listed) & graded:
+        return False
+    subset = [s for s in systems if s.get("slug") in listed]
+    return match.group(0) == catalog_table(audit, subset)
+
+
 def problems(criteria: dict, audit: dict, systems: list[dict]) -> list[str]:
-    return [f"{path.relative_to(ROOT)}: Health is stale; run `python3 tools/health.py`"
-            for path, text in expected(criteria, audit, systems).items() if path.read_text() != text]
+    """Health sections and the root catalog table that differ from a fresh write.
+
+    A package with no scorecard review may keep the Health section the
+    generator writes, and the root table may omit that package. This holds
+    on a pull request and on main after the pull request merges. A graded
+    package, or a hand-edited new section, still fails."""
+    fresh = expected(criteria, audit, systems)
+    found = [f"{path.relative_to(ROOT)}: Health is stale; run `python3 tools/health.py`"
+             for path, text in fresh.items() if path.read_text() != text]
+    if not found:
+        return found
+    graded = {s.get("slug") for s in audit.get("systems", [])}
+    kept = []
+    root = ROOT / "README.md"
+    for line in found:
+        path = ROOT / line.split(":", 1)[0]
+        if path == root and root_omits_only_ungraded(path.read_text(), criteria, audit, systems):
+            continue
+        slug = path.parent.name if path.parent.parent.name == "systems" else None
+        if slug and slug not in graded and path in fresh and _same_added_health(path.read_text(), fresh[path]):
+            continue
+        kept.append(line)
+    return kept
 
 
 def write(criteria: dict, audit: dict, systems: list[dict]) -> list[Path]:

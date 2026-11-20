@@ -48,9 +48,9 @@ Screenshots are named `{page}-light-{state}.png` (Ableton has one theme). Deskto
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 24 components were given a real keyboard focus. 20 draw a ring: `nav-logo` (1px auto #005fcc `focus-blue`, offset 1px), `nav-link` (1px auto #005fcc `focus-blue`, offset 1px), `nav-more` (1px auto #005fcc `focus-blue`, offset 0px), `nav-trial-cta` (1px auto #005fcc `focus-blue`, offset 1px), `nav-login` (1px auto #005fcc `focus-blue`, offset 1px), `panel-cat-link` (1px auto #005fcc `focus-blue`, offset 1px), `footer-link` (1px auto #005fcc `focus-blue`, offset 1px), `footer-social` (1px auto #005fcc `focus-blue`, offset 1px), `newsletter-submit` (1px auto #005fcc `focus-blue`, offset 0px), `cookie-close` (1px auto #005fcc `focus-blue`, offset 0px), `cookie-more-info` (1px auto #005fcc `focus-blue`, offset 1px), `btn-try` (2px solid #ff764d `focus-orange`, offset 2px), `btn-buy` (2px solid #0000ff `blue`, offset 2px), `anchor-link` (2px solid #0000ff `blue`, offset 2px), `push-cta` (2px solid #ff764d `focus-orange`, offset 2px), `move-cta` (2px solid #ff764d `focus-orange`, offset 2px), `note-cta` (2px solid #ff764d `focus-orange`, offset 2px), `link-cta` (1px auto #005fcc `focus-blue`, offset 1px), `pack-download` (1px auto #005fcc `focus-blue`, offset 1px), `login-submit` (1px auto #005fcc `focus-blue`, offset 0px). The other 4 draw none, so a keyboard user sees no change: `hero-cta`, `cookie-accept`, `trial-download`, `add-to-cart`. Ableton uses two rings: the browser's `auto 1px #005fcc` on text links, and a deliberate `solid 2px #ff764d` orange on the boxed buttons.
+**Focus.** 23 components were given a real keyboard focus. 20 draw a ring: `nav-logo` (1px auto #005fcc `focus-blue`, offset 1px), `nav-link` (1px auto #005fcc `focus-blue`, offset 1px), `nav-more` (1px auto #005fcc `focus-blue`, offset 0px), `nav-trial-cta` (1px auto #005fcc `focus-blue`, offset 1px), `nav-login` (1px auto #005fcc `focus-blue`, offset 1px), `panel-cat-link` (1px auto #005fcc `focus-blue`, offset 1px), `footer-link` (1px auto #005fcc `focus-blue`, offset 1px), `footer-social` (1px auto #005fcc `focus-blue`, offset 1px), `newsletter-submit` (1px auto #005fcc `focus-blue`, offset 0px), `cookie-close` (1px auto #005fcc `focus-blue`, offset 0px), `cookie-more-info` (1px auto #005fcc `focus-blue`, offset 1px), `btn-try` (2px solid #ff764d `focus-orange`, offset 2px), `btn-buy` (2px solid #0000ff `blue`, offset 2px), `anchor-link` (2px solid #0000ff `blue`, offset 2px), `push-cta` (2px solid #ff764d `focus-orange`, offset 2px), `move-cta` (2px solid #ff764d `focus-orange`, offset 2px), `note-cta` (2px solid #ff764d `focus-orange`, offset 2px), `link-cta` (1px auto #005fcc `focus-blue`, offset 1px), `pack-download` (1px auto #005fcc `focus-blue`, offset 1px), `login-submit` (1px auto #005fcc `focus-blue`, offset 0px). The other 3 draw none, so a keyboard user sees no change: `cookie-accept`, `trial-download`, `add-to-cart`. Focus could not be captured on 1 more (keyboard focus never landed on them, so their readings are left out): `hero-cta`. Ableton uses two rings: the browser's `auto 1px #005fcc` on text links, and a deliberate `solid 2px #ff764d` orange on the boxed buttons.
 
-**Pressed.** Forced `:active` changed almost nothing measurable on Ableton: the deep-blue Buy button darkens to `#042b9f` (its hover colour) and everything else reads the same as default. The site's controls do not shrink or recolour under the finger; hover on most `abl-button`s is likewise a no-op, with the boxed Try button instead swapping its text from blue to black.
+**Pressed.** Forced `:active` was read on 25 components. 6 change from default: `btn-try` (text Futura PT 20/30 700, #000000 `black`); `btn-buy` (border 1px solid #042b9f `blue-hover`); `anchor-link` (text Futura PT 18/27 700, #0000ff `blue`); `push-cta` (text Futura PT 20/30 700, #000000 `black`); `move-cta` (text Futura PT 20/30 700, #000000 `black`); `note-cta` (text Futura PT 20/30 700, #000000 `black`). Each of those reads exactly as its hover state. The other 19 read the same as default.
 
 **Motion.** Transitions measured on the components, by duration.
 
@@ -261,11 +261,11 @@ The white display headline over the hero media. Read as `hero-title` on the home
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 719.98 x 36; background transparent; text futura-pt 24/36 700, #ffffff `white` |
+| default (same: hover, pressed) | size 719.98 x 36; background transparent; text futura-pt 24/36 700, #ffffff `white` |
 
 Child layers that carry the look: span::after 7.1875pxx7.1875px border 2px solid #ffffff `white`.
 
-![Hero link default](components/crops/hero-cta-default.png) ![Hero link hover](components/crops/hero-cta-hover.png) ![Hero link focus-visible](components/crops/hero-cta-focus-visible.png) ![Hero link pressed](components/crops/hero-cta-pressed.png)
+![Hero link default](components/crops/hero-cta-default.png) ![Hero link hover](components/crops/hero-cta-hover.png) ![Hero link pressed](components/crops/hero-cta-pressed.png)
 
 #### Grid cell
 One tile of the loose homepage grid: the layout mixes image cells and text-on-white cells. Read as `home-cell` on the home page.
@@ -512,7 +512,7 @@ Read as `move-cta` on the Move page.
 #### Note page title
 Read as `note-title` on the Note page.
 
-**Values (default).** size 1207 x 144; background transparent; text Futura PT 120/144 700, #d6ff00.
+**Values (default).** size 1207 x 144; background transparent; text Futura PT 120/144 700, #d6ff00 `note-lime`.
 
 ![Note page title default](components/crops/note-title-default.png)
 
@@ -578,7 +578,7 @@ Read as `help-body` on the help page.
 #### Jobs title
 Read as `jobs-title` on the jobs page.
 
-**Values (default).** size 1200.03 x 799.73; background transparent; text futura-pt 110/110 700, #00ffff.
+**Values (default).** size 1200.03 x 799.73; background transparent; text futura-pt 110/110 700, #00ffff `jobs-cyan`.
 
 ![Jobs title default](components/crops/jobs-title-default.png)
 
@@ -664,7 +664,7 @@ The Packs catalogue: a 40k px grid of pack cards (artwork, name, genre tags) wit
 #### Packs page title
 Read as `packs-title` on the Packs page.
 
-**Values (default).** size 1200.03 x 66; background transparent; text futura-pt 60/66 700, #00ffaf.
+**Values (default).** size 1200.03 x 66; background transparent; text futura-pt 60/66 700, #00ffaf `packs-green`.
 
 ![Packs page title default](components/crops/packs-title-default.png)
 
@@ -673,7 +673,7 @@ A Pack tile in the catalogue grid. Read as `pack-card` on the Packs page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover) | size 1440 x 348; padding 90px 120px; background #000000 `black`; text futura-pt 60/66 700, #00ffaf |
+| default (same: hover) | size 1440 x 348; padding 90px 120px; background #000000 `black`; text futura-pt 60/66 700, #00ffaf `packs-green` |
 
 ![Pack card default](components/crops/pack-card-default.png) ![Pack card hover](components/crops/pack-card-hover.png)
 

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>mymind style guide</title>
+<style>
+  :root {
+    --page: #f9fafc;
+    --surface: #ffffff;
+    --text: #000000;
+    --muted: #4a5465;
+    --accent: #ff5924;
+    --on-accent: #ffffff;
+    --link: #1573dd;
+    --border: #e2e2e2;
+    --band: #f6f4f2;
+    --chip: #f5f7f9;
+    --chip-text: #748297;
+    --display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: Nunito, "Avenir Next", "Segoe UI", sans-serif;
+    --body: Inter, "Avenir Next", "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 20px;
+    line-height: 28px;
+  }
+  main { max-width: 1100px; margin: 0 auto; padding: 48px 30px 96px; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; letter-spacing: -0.04em; }
+  h1 { font-size: 64px; line-height: 1; margin: 0 0 12px; }
+  h2 { font-size: 32px; margin: 48px 0 12px; }
+  p.note { color: var(--muted); font-size: 16px; line-height: 24px; }
+  .swatches, .type, .radii, .space { display: grid; gap: 12px; }
+  .swatches { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+  .swatch { background: var(--surface); border-radius: 22px; overflow: hidden; box-shadow: 0 1px 6px #3d415426; }
+  .swatch i { display: block; height: 72px; }
+  .swatch span, .row span { display: block; padding: 10px 14px; font-family: var(--sans); font-size: 13px; color: var(--muted); }
+  .row { display: flex; align-items: baseline; gap: 16px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .pill, .cta, .ghost {
+    display: inline-flex; align-items: center; font-family: var(--sans); text-decoration: none;
+  }
+  .pill { background: var(--accent); color: var(--on-accent); border-radius: 30px; padding: 11px 20px; font-size: 16px; font-weight: 500; }
+  .cta { background: var(--accent); color: var(--on-accent); border-radius: 120px; padding: 10px 22px; font-size: 15px; letter-spacing: 0.8px; }
+  .ghost { color: var(--accent); border-radius: 100px; padding: 10px 24px; font-size: 14px; letter-spacing: 0.4px; border: 1px solid var(--accent); }
+  .nav a { color: var(--link); font-family: var(--display); font-size: 20px; text-decoration: none; margin-right: 24px; }
+  .bubbles { display: flex; flex-wrap: wrap; gap: 8px; }
+  .bubble { border-radius: 36px; padding: 4px 18px; font-family: var(--sans); font-size: 18px; background: transparent; }
+  .card { background: var(--surface); border-radius: 22px; box-shadow: 0 1px 6px #3d415426; padding: 15px 30px 24px; max-width: 350px; }
+  .card h3 { margin: 0 0 8px; font-size: 28px; letter-spacing: -1.4px; color: #2c3441; }
+  .card p { margin: 0; color: var(--chip-text); font-size: 16px; }
+  .band { background: var(--band); border-radius: 22px; padding: 28px 30px; }
+  .band-accent { background: var(--accent); color: #f0f2f5; border-radius: 22px; padding: 28px 30px; margin-top: 12px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+</style>
+</head>
+<body>
+<main>
+  <p class="note">Public signed-out capture, 2026-11-19. Light only. The product ships one marketing theme. Louize is substituted with a system serif because the webfont is licensed.</p>
+  <h1>Remember everything.</h1>
+  <p class="note">Page #f9fafc. Display ink #000000. Muted copy #4a5465. Accent #ff5924.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><i style="background:#f9fafc"></i><span>page #f9fafc</span></div>
+    <div class="swatch"><i style="background:#ffffff;border-bottom:1px solid #e2e2e2"></i><span>surface #ffffff</span></div>
+    <div class="swatch"><i style="background:#000000"></i><span>text #000000</span></div>
+    <div class="swatch"><i style="background:#4a5465"></i><span>muted #4a5465</span></div>
+    <div class="swatch"><i style="background:#ff5924"></i><span>accent #ff5924</span></div>
+    <div class="swatch"><i style="background:#1573dd"></i><span>link #1573dd</span></div>
+    <div class="swatch"><i style="background:#e2e2e2"></i><span>border #e2e2e2</span></div>
+    <div class="swatch"><i style="background:#f6f4f2"></i><span>band #f6f4f2</span></div>
+    <div class="swatch"><i style="background:#f5f7f9"></i><span>chip #f5f7f9</span></div>
+    <div class="swatch"><i style="background:#748297"></i><span>chip text #748297</span></div>
+    <div class="swatch"><i style="background:#e98f53"></i><span>bubble orange</span></div>
+    <div class="swatch"><i style="background:#e48abf"></i><span>bubble pink</span></div>
+    <div class="swatch"><i style="background:#99d2fb"></i><span>bubble blue</span></div>
+    <div class="swatch"><i style="background:#ea726b"></i><span>bubble red</span></div>
+    <div class="swatch"><i style="background:#ffcf27"></i><span>bubble yellow</span></div>
+  </div>
+
+  <h2>Type</h2>
+  <div class="type">
+    <div class="row"><span style="font-family:var(--display);font-size:42px;line-height:38px;letter-spacing:-1.67px;color:#000">What kind of mind are you?</span></div>
+    <div class="row"><span style="font-family:var(--body);font-size:20px;line-height:28px;color:#4a5465">One place for everything you care about.</span></div>
+    <div class="row"><span style="font-family:var(--sans);font-size:16px;letter-spacing:1.998px">OUR MANIFESTO</span></div>
+    <div class="row"><span style="font-family:var(--display);font-size:32px;font-weight:500;color:#ff5924;letter-spacing:-1.6px">$79/year</span></div>
+  </div>
+
+  <h2>Controls</h2>
+  <div class="actions">
+    <span class="pill">Sign up</span>
+    <span class="cta">TRY IT OUT</span>
+    <span class="ghost">GET APP</span>
+    <span class="nav"><a href="#nav">What</a><a href="#why">Why</a><a href="#how">How</a></span>
+  </div>
+  <div class="bubbles" style="margin-top:16px">
+    <span class="bubble" style="color:#e98f53;border:1px solid #e98f53">notes</span>
+    <span class="bubble" style="color:#e48abf;border:1px solid #e48abf">bookmarks</span>
+    <span class="bubble" style="color:#99d2fb;border:1px solid #99d2fb">inspiration</span>
+    <span class="bubble" style="color:#ea726b;border:1px solid #ea726b">articles</span>
+    <span class="bubble" style="color:#ffcf27;border:1px solid #ffcf27">images</span>
+  </div>
+
+  <h2>Card and bands</h2>
+  <div class="card">
+    <h3>Student of Life</h3>
+    <p>Unlimited cards. Intelligent bookmarks.</p>
+  </div>
+  <div class="band" style="margin-top:16px"><strong style="font-family:var(--sans);letter-spacing:2px;font-size:16px;color:#ff5924">IT JUST WORKS</strong></div>
+  <div class="band-accent">Search by color, keyword, brand, date.</div>
+</main>
+</body>
+</html>

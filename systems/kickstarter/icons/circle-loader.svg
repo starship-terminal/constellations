@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" width="24" height="24" fill="currentColor">
+      <title>icon--circle-loader icon</title>
+      <title>Page 1</title><g fill-rule="evenodd"><animateTransform attributeName="transform" dur="0.8s" from="0 26 26" repeatCount="indefinite" to="360 26 26" type="rotate"></animateTransform><path d="M26 5.098C14.474 5.098 5.098 14.474 5.098 26S14.474 46.902 26 46.902 46.902 37.526 46.902 26 37.526 5.098 26 5.098M26 52C11.664 52 0 40.336 0 26S11.664 0 26 0s26 11.664 26 26-11.664 26-26 26" opacity=".1"></path><path d="M42.582 11.967c-.652 0-1.304-.25-1.8-.748A20.78 20.78 0 0 0 26 5.097 2.547 2.547 0 1 1 26 0c6.946 0 13.474 2.704 18.384 7.614a2.547 2.547 0 0 1 0 3.604 2.54 2.54 0 0 1-1.802.748"></path></g>
+    </svg>

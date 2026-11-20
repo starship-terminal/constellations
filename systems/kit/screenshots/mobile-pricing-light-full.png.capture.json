@@ -1,0 +1,92 @@
+{
+ "schemaVersion": 1,
+ "capturedAt": "2026-11-17T19:52:06.971Z",
+ "screenshot": "mobile-pricing-light-full.png",
+ "sanitizedSourceUrl": "https://kit.com/pricing",
+ "requested": {
+  "viewport": {
+   "width": 390,
+   "height": 844
+  },
+  "deviceScaleFactor": 2
+ },
+ "configuredViewport": {
+  "width": 390,
+  "height": 844
+ },
+ "actual": {
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "devicePixelRatio": 2,
+  "theme": {
+   "classes": [],
+   "attributes": {},
+   "colorScheme": "normal"
+  },
+  "visualViewport": {
+   "width": 390,
+   "height": 844,
+   "scale": 1,
+   "offsetLeft": 0,
+   "offsetTop": 0,
+   "pageLeft": 0,
+   "pageTop": 0
+  },
+  "documentSize": {
+   "width": 390,
+   "height": 11514
+  },
+  "scroll": {
+   "x": 0,
+   "y": 0
+  }
+ },
+ "capture": {
+  "mode": "stitchedParts",
+  "scale": "css",
+  "clip": {
+   "x": 0,
+   "y": 0,
+   "width": 390,
+   "height": 11514
+  }
+ },
+ "png": {
+  "width": 390,
+  "height": 11514
+ },
+ "dimensionCheck": {
+  "status": "pass",
+  "expected": {
+   "width": 390,
+   "height": 11514
+  },
+  "basis": "stitchedParts"
+ },
+ "visualReview": {
+  "status": "pending",
+  "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+ },
+ "cropCoordinates": {
+  "status": "unverified",
+  "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+ },
+ "stitchedFrom": [
+  "mobile-pricing-light-full.part0.png",
+  "mobile-pricing-light-full.part1.png"
+ ],
+ "partClip": [
+  {
+   "x": 0,
+   "y": 0,
+   "width": 390,
+   "height": 7000
+  },
+  {
+   "x": 0,
+   "y": 7000,
+   "width": 390,
+   "height": 4514
+  }
+ ]
+}

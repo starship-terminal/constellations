@@ -38,12 +38,12 @@ export const RAW = path.join(REF, 'raw');
 // FIELD-NOTES last resort, and the only route that returns 200.
 export const M = (name) => `[class*="${name}"]`;
 
-// The per-context patches every page gets: the webdriver mask (still applied
+// The per-context patches every page gets (no webdriver mask: a bot check is a boundary; formerly applied
 // in headed mode — Akamai reads it), plus a record of the real
 // devicePixelRatio before app code runs, for the screenshot sidecar.
 export async function patch(context) {
   await context.addInitScript(() => {
-    Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+    // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
     try { window.__captureDPR = window.devicePixelRatio; } catch { /* read-only */ }
   });
 }

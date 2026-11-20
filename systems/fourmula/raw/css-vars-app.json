@@ -1,0 +1,2451 @@
+{
+ "readAt": "2026-11-16",
+ "source": "the stylesheet bodies read during a live signed-out load of https://app.fourmula.ai/start (the linked chunks from network responses plus any inline <style> blocks, re-parsed with CSSStyleSheet); resolved on document.body of a probe carrying the real sheets at 1440 x 900 — the app declares a single dark theme, so both passes resolve identically",
+ "sheets": [
+  "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css (105832 bytes)",
+  "https://app.fourmula.ai/_next/static/chunks/f0549f55786e9454.css (14841 bytes)"
+ ],
+ "counts": {
+  "rules": 111,
+  "fonts": 9,
+  "names": {
+   "theme": 76,
+   "app": 8,
+   "skins": 0,
+   "vendor": 0,
+   "utility": 1,
+   "tailwind": 72
+  },
+  "bySelector": {
+   "[tailwind] @layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))) *, ::before, ::after": 72,
+   "[tailwind] @layer properties @supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))) ::backdrop": 72,
+   "[theme] @layer theme :root, :host": 76,
+   "[theme] @layer theme @supports (color:color(display-p3 0 0 0)) :root, :host": 4,
+   "[theme] @layer theme @supports (color:lab(0% 0 0)) :root, :host": 4,
+   "[tailwind] @layer utilities .-translate-1\\/2": 2,
+   "[tailwind] @layer utilities .-translate-x-1\\/2": 1,
+   "[tailwind] @layer utilities .-translate-x-1\\/2\\!": 1,
+   "[tailwind] @layer utilities .-translate-x-full": 1,
+   "[tailwind] @layer utilities .translate-x-0": 1,
+   "[tailwind] @layer utilities .translate-x-1\\/2": 1,
+   "[tailwind] @layer utilities .translate-x-full": 1,
+   "[tailwind] @layer utilities .-translate-y-1\\/2": 1,
+   "[tailwind] @layer utilities .-translate-y-2": 1,
+   "[tailwind] @layer utilities .translate-y-0": 1,
+   "[tailwind] @layer utilities .translate-y-2": 1,
+   "[tailwind] @layer utilities .scale-50": 3,
+   "[tailwind] @layer utilities .scale-95": 3,
+   "[tailwind] @layer utilities .scale-100": 3,
+   "[tailwind] @layer utilities .snap-mandatory": 1,
+   "[tailwind] @layer utilities :where(.space-y-0\\.5 > :not(:last-child))": 1,
+   "[tailwind] @layer utilities :where(.divide-x > :not(:last-child))": 1,
+   "[tailwind] @layer utilities .border-dashed": 1,
+   "[tailwind] @layer utilities .border-none": 1,
+   "[tailwind] @layer utilities .bg-linear-to-l": 1,
+   "[tailwind] @layer utilities @supports (background-image:linear-gradient(in lab, red, red)) .bg-linear-to-l": 1,
+   "[tailwind] @layer utilities .bg-linear-to-r": 1,
+   "[tailwind] @layer utilities @supports (background-image:linear-gradient(in lab, red, red)) .bg-linear-to-r": 1,
+   "[tailwind] @layer utilities .bg-gradient-to-b": 1,
+   "[tailwind] @layer utilities .bg-gradient-to-t": 1,
+   "[tailwind] @layer utilities .from-base-100\\/10": 2,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .from-base-100\\/10": 1,
+   "[tailwind] @layer utilities .from-base-900\\/0": 2,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .from-base-900\\/0": 1,
+   "[tailwind] @layer utilities .from-base-900\\/85": 2,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .from-base-900\\/85": 1,
+   "[tailwind] @layer utilities .via-base-900\\/40": 3,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .via-base-900\\/40": 1,
+   "[tailwind] @layer utilities .via-base-900\\/70": 3,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .via-base-900\\/70": 1,
+   "[tailwind] @layer utilities .to-base-100\\/30": 2,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .to-base-100\\/30": 1,
+   "[tailwind] @layer utilities .to-base-900": 2,
+   "[tailwind] @layer utilities .to-transparent": 2,
+   "[tailwind] @layer utilities .leading-4": 1,
+   "[tailwind] @layer utilities .leading-5": 1,
+   "[tailwind] @layer utilities .leading-6": 1,
+   "[tailwind] @layer utilities .leading-\\[125\\%\\]": 1,
+   "[tailwind] @layer utilities .leading-none": 1,
+   "[tailwind] @layer utilities .leading-tight": 1,
+   "[tailwind] @layer utilities .font-medium": 1,
+   "[tailwind] @layer utilities .font-normal": 1,
+   "[tailwind] @layer utilities .tracking-\\[-0\\.2px\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[-0\\.04em\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[-0\\.4px\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[-0\\.22px\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[-1\\.5\\%\\]": 1,
+   "[tailwind] @layer utilities .tracking-\\[-3\\%\\]": 1,
+   "[tailwind] @layer utilities .tracking-normal": 1,
+   "[tailwind] @layer utilities .tracking-tighter": 1,
+   "[tailwind] @layer utilities .ordinal": 1,
+   "[tailwind] @layer utilities .shadow-2xl": 1,
+   "[tailwind] @layer utilities .shadow-\\[0px_4px_15px_0px_\\#0000000D\\]": 1,
+   "[tailwind] @layer utilities .shadow-lg": 1,
+   "[tailwind] @layer utilities .shadow-view-product-dropdown": 1,
+   "[tailwind] @layer utilities .ring-2": 1,
+   "[tailwind] @layer utilities .ring-accent-500\\/35": 1,
+   "[tailwind] @layer utilities @supports (color:color-mix(in lab, red, red)) .ring-accent-500\\/35": 1,
+   "[tailwind] @layer utilities .blur": 1,
+   "[tailwind] @layer utilities .blur-\\[2px\\]": 1,
+   "[tailwind] @layer utilities .blur-sm": 1,
+   "[tailwind] @layer utilities .backdrop-blur-2xl": 1,
+   "[tailwind] @layer utilities .backdrop-blur-\\[2px\\]": 1,
+   "[tailwind] @layer utilities .backdrop-blur-lg": 1,
+   "[tailwind] @layer utilities .backdrop-blur-md": 1,
+   "[tailwind] @layer utilities .backdrop-blur-none": 1,
+   "[tailwind] @layer utilities .backdrop-blur-xl": 1,
+   "[tailwind] @layer utilities .duration-100": 1,
+   "[tailwind] @layer utilities .duration-150": 1,
+   "[tailwind] @layer utilities .duration-200": 1,
+   "[tailwind] @layer utilities .duration-300": 1,
+   "[tailwind] @layer utilities .duration-500": 1,
+   "[tailwind] @layer utilities .duration-1000": 1,
+   "[tailwind] @layer utilities .ease-in-out": 1,
+   "[tailwind] @layer utilities .ease-linear": 1,
+   "[tailwind] @layer utilities .ease-out": 1,
+   "[tailwind] @layer utilities .outline-none": 1,
+   "[utility] @layer utilities .\\[--anchor-max-height\\:55vh\\]": 1,
+   "[tailwind] @layer utilities .before\\:backdrop-blur-2xl::before": 1,
+   "[tailwind] @layer utilities .focus-within\\:before\\:content-\\[\\\"\\\"\\]:focus-within::before": 1,
+   "[tailwind] @layer utilities .focus-within\\:after\\:content-\\[\\\"\\\"\\]:focus-within::after": 1,
+   "[tailwind] @layer utilities .data-closed\\:translate-y-full[data-closed]": 1,
+   "[tailwind] @layer utilities .data-closed\\:scale-95[data-closed]": 3,
+   "[tailwind] @layer utilities @media (min-width: 640px) .sm\\:translate-x-0\\!": 1,
+   "[tailwind] @layer utilities @media (min-width: 640px) .sm\\:-translate-y-1\\/2": 1,
+   "[tailwind] @layer utilities @media (min-width: 640px) .sm\\:leading-none": 1,
+   "[tailwind] @layer utilities @media (min-width: 960px) .md\\:leading-none": 1,
+   "[tailwind] @layer utilities @media (min-width: 1025px) .\\32 md\\:translate-y-0": 1,
+   "[app] @layer utilities .spinner": 2,
+   "[app] :root": 4,
+   "[app] body": 2,
+   "[app] .sfprofont_8d378603-module__35IIva__variable": 1,
+   "[app] .swiper-lazy-preloader-white": 1,
+   "[app] .swiper-lazy-preloader-black": 1
+  }
+ },
+ "errors": [],
+ "theme": [
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ":root, :host",
+   "context": [
+    "@layer theme"
+   ],
+   "properties": {
+    "--font-sans": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+    "--font-mono": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
+    "--color-red-500": "#fb2c36",
+    "--color-blue-100": "#dbeafe",
+    "--color-blue-500": "#3080ff",
+    "--color-gray-600": "#4a5565",
+    "--color-white": "#fff",
+    "--spacing": ".25rem",
+    "--container-3xs": "16rem",
+    "--container-xs": "20rem",
+    "--container-md": "28rem",
+    "--container-xl": "36rem",
+    "--text-xs": "12px",
+    "--text-xs--line-height": "calc(1/.75)",
+    "--text-sm": "14px",
+    "--text-sm--line-height": "calc(1.25/.875)",
+    "--text-lg": "22px",
+    "--text-lg--line-height": "calc(1.75/1.125)",
+    "--text-xl": "32px",
+    "--text-xl--line-height": "calc(1.75/1.25)",
+    "--text-2xl": "52px",
+    "--text-2xl--line-height": "calc(2/1.5)",
+    "--font-weight-normal": "400",
+    "--font-weight-medium": "500",
+    "--tracking-tighter": "-.05em",
+    "--tracking-normal": "0em",
+    "--leading-tight": "1.25",
+    "--radius-sm": ".25rem",
+    "--radius-md": ".375rem",
+    "--radius-lg": ".5rem",
+    "--radius-xl": ".75rem",
+    "--radius-2xl": "1rem",
+    "--radius-3xl": "1.5rem",
+    "--radius-4xl": "28px",
+    "--ease-out": "cubic-bezier(0,0,.2,1)",
+    "--ease-in-out": "cubic-bezier(.4,0,.2,1)",
+    "--animate-pulse": "pulse 2s cubic-bezier(.4,0,.6,1)infinite",
+    "--blur-sm": "8px",
+    "--blur-md": "12px",
+    "--blur-lg": "16px",
+    "--blur-xl": "24px",
+    "--blur-2xl": "40px",
+    "--default-transition-duration": ".15s",
+    "--default-transition-timing-function": "cubic-bezier(.4,0,.2,1)",
+    "--default-font-family": "var(--font-sans)",
+    "--default-mono-font-family": "var(--font-mono)",
+    "--color-base-900": "#020108",
+    "--color-base-800": "#111",
+    "--color-base-750": "#1e1e1e",
+    "--color-base-700": "#1a1a1a",
+    "--color-base-650": "#202020",
+    "--color-base-625": "#444547",
+    "--color-base-600": "#686a6e",
+    "--color-base-500": "#b0b4ba",
+    "--color-base-200": "#f2f2f2",
+    "--color-base-100": "#fff",
+    "--color-accent-600": "#f94a00",
+    "--color-accent-500": "#ff6b02",
+    "--color-success": "#46fea5",
+    "--color-success-500": "#0fa359",
+    "--color-error": "#ff173f",
+    "--color-error-light": "#ff9592",
+    "--color-error-500": "#e82e1d",
+    "--color-alert-warning": "#e093b2",
+    "--color-valid": "#31cb4b",
+    "--color-invalid": "#f63c34",
+    "--color-neutral-alpha-3": "rgba(0,0,51,.06)",
+    "--color-overlay-black-alpha-1": "rgba(0,0,0,.05)",
+    "--color-overlay-black-50": "rgba(0,0,0,.5)",
+    "--text-2xs": "9px",
+    "--text-md": "16px",
+    "--text-m": "18px",
+    "--text-2lg": "24px",
+    "--text-l": "28px",
+    "--radius-5xl": "32px",
+    "--radius-7xl": "40px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ":root, :host",
+   "context": [
+    "@layer theme",
+    "@supports (color:color(display-p3 0 0 0))"
+   ],
+   "properties": {
+    "--color-red-500": "color(display-p3 .903738 .262579 .253307)",
+    "--color-blue-100": "color(display-p3 .869214 .915931 .989622)",
+    "--color-blue-500": "color(display-p3 .266422 .491219 .988624)",
+    "--color-gray-600": "color(display-p3 .297358 .332176 .39043)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ":root, :host",
+   "context": [
+    "@layer theme",
+    "@supports (color:lab(0% 0 0))"
+   ],
+   "properties": {
+    "--color-red-500": "lab(55.4814% 75.0732 48.8528)",
+    "--color-blue-100": "lab(92.0301% -2.24757 -11.6453)",
+    "--color-blue-500": "lab(54.1736% 13.3369 -74.6839)",
+    "--color-gray-600": "lab(35.6337% -1.58697 -10.8425)"
+   },
+   "bin": "theme"
+  }
+ ],
+ "app": [
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".spinner",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--spinner-animation-duration": ".8s",
+    "--spinner-opacity": ".65"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--overlay-color": "rgba(17,17,17,.5)",
+    "--lightningcss-light": "",
+    "--lightningcss-dark": "initial"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": "body",
+   "context": [],
+   "properties": {
+    "--lightningcss-light": "",
+    "--lightningcss-dark": "initial"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/f0549f55786e9454.css",
+   "selector": ".sfprofont_8d378603-module__35IIva__variable",
+   "context": [],
+   "properties": {
+    "--font-sfPro": "\"sfProFont\",\"sfProFont Fallback\""
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/f0549f55786e9454.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--swiper-theme-color": "#007aff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/f0549f55786e9454.css",
+   "selector": ".swiper-lazy-preloader-white",
+   "context": [],
+   "properties": {
+    "--swiper-preloader-color": "#fff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/f0549f55786e9454.css",
+   "selector": ".swiper-lazy-preloader-black",
+   "context": [],
+   "properties": {
+    "--swiper-preloader-color": "#000"
+   },
+   "bin": "app"
+  }
+ ],
+ "skins": [],
+ "vendor": [],
+ "utility": [
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".\\[--anchor-max-height\\:55vh\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--anchor-max-height": "55vh"
+   },
+   "bin": "utility"
+  }
+ ],
+ "tailwind": [
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": "*, ::before, ::after",
+   "context": [
+    "@layer properties",
+    "@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b))))"
+   ],
+   "properties": {
+    "--tw-translate-x": "0",
+    "--tw-translate-y": "0",
+    "--tw-translate-z": "0",
+    "--tw-scale-x": "1",
+    "--tw-scale-y": "1",
+    "--tw-scale-z": "1",
+    "--tw-rotate-x": "initial",
+    "--tw-rotate-y": "initial",
+    "--tw-rotate-z": "initial",
+    "--tw-skew-x": "initial",
+    "--tw-skew-y": "initial",
+    "--tw-scroll-snap-strictness": "proximity",
+    "--tw-space-y-reverse": "0",
+    "--tw-divide-x-reverse": "0",
+    "--tw-border-style": "solid",
+    "--tw-gradient-position": "initial",
+    "--tw-gradient-from": "transparent",
+    "--tw-gradient-via": "transparent",
+    "--tw-gradient-to": "transparent",
+    "--tw-gradient-stops": "initial",
+    "--tw-gradient-via-stops": "initial",
+    "--tw-gradient-from-position": "0%",
+    "--tw-gradient-via-position": "50%",
+    "--tw-gradient-to-position": "100%",
+    "--tw-leading": "initial",
+    "--tw-font-weight": "initial",
+    "--tw-tracking": "initial",
+    "--tw-ordinal": "initial",
+    "--tw-slashed-zero": "initial",
+    "--tw-numeric-figure": "initial",
+    "--tw-numeric-spacing": "initial",
+    "--tw-numeric-fraction": "initial",
+    "--tw-shadow": "0 0 transparent",
+    "--tw-shadow-color": "initial",
+    "--tw-shadow-alpha": "100%",
+    "--tw-inset-shadow": "0 0 transparent",
+    "--tw-inset-shadow-color": "initial",
+    "--tw-inset-shadow-alpha": "100%",
+    "--tw-ring-color": "initial",
+    "--tw-ring-shadow": "0 0 transparent",
+    "--tw-inset-ring-color": "initial",
+    "--tw-inset-ring-shadow": "0 0 transparent",
+    "--tw-ring-inset": "initial",
+    "--tw-ring-offset-width": "0px",
+    "--tw-ring-offset-color": "#fff",
+    "--tw-ring-offset-shadow": "0 0 transparent",
+    "--tw-outline-style": "solid",
+    "--tw-blur": "initial",
+    "--tw-brightness": "initial",
+    "--tw-contrast": "initial",
+    "--tw-grayscale": "initial",
+    "--tw-hue-rotate": "initial",
+    "--tw-invert": "initial",
+    "--tw-opacity": "initial",
+    "--tw-saturate": "initial",
+    "--tw-sepia": "initial",
+    "--tw-drop-shadow": "initial",
+    "--tw-drop-shadow-color": "initial",
+    "--tw-drop-shadow-alpha": "100%",
+    "--tw-drop-shadow-size": "initial",
+    "--tw-backdrop-blur": "initial",
+    "--tw-backdrop-brightness": "initial",
+    "--tw-backdrop-contrast": "initial",
+    "--tw-backdrop-grayscale": "initial",
+    "--tw-backdrop-hue-rotate": "initial",
+    "--tw-backdrop-invert": "initial",
+    "--tw-backdrop-opacity": "initial",
+    "--tw-backdrop-saturate": "initial",
+    "--tw-backdrop-sepia": "initial",
+    "--tw-duration": "initial",
+    "--tw-ease": "initial",
+    "--tw-content": "\"\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": "::backdrop",
+   "context": [
+    "@layer properties",
+    "@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b))))"
+   ],
+   "properties": {
+    "--tw-translate-x": "0",
+    "--tw-translate-y": "0",
+    "--tw-translate-z": "0",
+    "--tw-scale-x": "1",
+    "--tw-scale-y": "1",
+    "--tw-scale-z": "1",
+    "--tw-rotate-x": "initial",
+    "--tw-rotate-y": "initial",
+    "--tw-rotate-z": "initial",
+    "--tw-skew-x": "initial",
+    "--tw-skew-y": "initial",
+    "--tw-scroll-snap-strictness": "proximity",
+    "--tw-space-y-reverse": "0",
+    "--tw-divide-x-reverse": "0",
+    "--tw-border-style": "solid",
+    "--tw-gradient-position": "initial",
+    "--tw-gradient-from": "transparent",
+    "--tw-gradient-via": "transparent",
+    "--tw-gradient-to": "transparent",
+    "--tw-gradient-stops": "initial",
+    "--tw-gradient-via-stops": "initial",
+    "--tw-gradient-from-position": "0%",
+    "--tw-gradient-via-position": "50%",
+    "--tw-gradient-to-position": "100%",
+    "--tw-leading": "initial",
+    "--tw-font-weight": "initial",
+    "--tw-tracking": "initial",
+    "--tw-ordinal": "initial",
+    "--tw-slashed-zero": "initial",
+    "--tw-numeric-figure": "initial",
+    "--tw-numeric-spacing": "initial",
+    "--tw-numeric-fraction": "initial",
+    "--tw-shadow": "0 0 transparent",
+    "--tw-shadow-color": "initial",
+    "--tw-shadow-alpha": "100%",
+    "--tw-inset-shadow": "0 0 transparent",
+    "--tw-inset-shadow-color": "initial",
+    "--tw-inset-shadow-alpha": "100%",
+    "--tw-ring-color": "initial",
+    "--tw-ring-shadow": "0 0 transparent",
+    "--tw-inset-ring-color": "initial",
+    "--tw-inset-ring-shadow": "0 0 transparent",
+    "--tw-ring-inset": "initial",
+    "--tw-ring-offset-width": "0px",
+    "--tw-ring-offset-color": "#fff",
+    "--tw-ring-offset-shadow": "0 0 transparent",
+    "--tw-outline-style": "solid",
+    "--tw-blur": "initial",
+    "--tw-brightness": "initial",
+    "--tw-contrast": "initial",
+    "--tw-grayscale": "initial",
+    "--tw-hue-rotate": "initial",
+    "--tw-invert": "initial",
+    "--tw-opacity": "initial",
+    "--tw-saturate": "initial",
+    "--tw-sepia": "initial",
+    "--tw-drop-shadow": "initial",
+    "--tw-drop-shadow-color": "initial",
+    "--tw-drop-shadow-alpha": "100%",
+    "--tw-drop-shadow-size": "initial",
+    "--tw-backdrop-blur": "initial",
+    "--tw-backdrop-brightness": "initial",
+    "--tw-backdrop-contrast": "initial",
+    "--tw-backdrop-grayscale": "initial",
+    "--tw-backdrop-hue-rotate": "initial",
+    "--tw-backdrop-invert": "initial",
+    "--tw-backdrop-opacity": "initial",
+    "--tw-backdrop-saturate": "initial",
+    "--tw-backdrop-sepia": "initial",
+    "--tw-duration": "initial",
+    "--tw-ease": "initial",
+    "--tw-content": "\"\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".-translate-1\\/2",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(calc(1/2*100%)*-1)",
+    "--tw-translate-y": "calc(calc(1/2*100%)*-1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".-translate-x-1\\/2",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(calc(1/2*100%)*-1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".-translate-x-1\\/2\\!",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(calc(1/2*100%)*-1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".-translate-x-full",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "-100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".translate-x-0",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".translate-x-1\\/2",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(1/2*100%)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".translate-x-full",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".-translate-y-1\\/2",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(calc(1/2*100%)*-1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".-translate-y-2",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(var(--spacing)*-2)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".translate-y-0",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".translate-y-2",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(var(--spacing)*2)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".scale-50",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "50%",
+    "--tw-scale-y": "50%",
+    "--tw-scale-z": "50%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".scale-95",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "95%",
+    "--tw-scale-y": "95%",
+    "--tw-scale-z": "95%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".scale-100",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "100%",
+    "--tw-scale-y": "100%",
+    "--tw-scale-z": "100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".snap-mandatory",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scroll-snap-strictness": "mandatory"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ":where(.space-y-0\\.5 > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ":where(.divide-x > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-divide-x-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".border-dashed",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-border-style": "dashed"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".border-none",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-border-style": "none"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".bg-linear-to-l",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to left"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".bg-linear-to-l",
+   "context": [
+    "@layer utilities",
+    "@supports (background-image:linear-gradient(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to left in oklab"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".bg-linear-to-r",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to right"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".bg-linear-to-r",
+   "context": [
+    "@layer utilities",
+    "@supports (background-image:linear-gradient(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to right in oklab"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".bg-gradient-to-b",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to bottom in oklab"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".bg-gradient-to-t",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to top in oklab"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".from-base-100\\/10",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from": "rgba(255,255,255,.1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".from-base-100\\/10",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab,var(--color-base-100)10%,transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".from-base-100\\/10",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position),var(--tw-gradient-from)var(--tw-gradient-from-position),var(--tw-gradient-to)var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".from-base-900\\/0",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from": "transparent"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".from-base-900\\/0",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab,var(--color-base-900)0%,transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".from-base-900\\/0",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position),var(--tw-gradient-from)var(--tw-gradient-from-position),var(--tw-gradient-to)var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".from-base-900\\/85",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from": "rgba(2,1,8,.85)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".from-base-900\\/85",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab,var(--color-base-900)85%,transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".from-base-900\\/85",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position),var(--tw-gradient-from)var(--tw-gradient-from-position),var(--tw-gradient-to)var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".via-base-900\\/40",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-via": "rgba(2,1,8,.4)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".via-base-900\\/40",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-via": "color-mix(in oklab,var(--color-base-900)40%,transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".via-base-900\\/40",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-via-stops": "var(--tw-gradient-position),var(--tw-gradient-from)var(--tw-gradient-from-position),var(--tw-gradient-via)var(--tw-gradient-via-position),var(--tw-gradient-to)var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".via-base-900\\/70",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-via": "rgba(2,1,8,.7)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".via-base-900\\/70",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-via": "color-mix(in oklab,var(--color-base-900)70%,transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".via-base-900\\/70",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-via-stops": "var(--tw-gradient-position),var(--tw-gradient-from)var(--tw-gradient-from-position),var(--tw-gradient-via)var(--tw-gradient-via-position),var(--tw-gradient-to)var(--tw-gradient-to-position)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".to-base-100\\/30",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-to": "rgba(255,255,255,.3)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".to-base-100\\/30",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab,var(--color-base-100)30%,transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".to-base-100\\/30",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position),var(--tw-gradient-from)var(--tw-gradient-from-position),var(--tw-gradient-to)var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".to-base-900",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-to": "var(--color-base-900)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position),var(--tw-gradient-from)var(--tw-gradient-from-position),var(--tw-gradient-to)var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".to-transparent",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-to": "transparent",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position),var(--tw-gradient-from)var(--tw-gradient-from-position),var(--tw-gradient-to)var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".leading-4",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "calc(var(--spacing)*4)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".leading-5",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "calc(var(--spacing)*5)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".leading-6",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "calc(var(--spacing)*6)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".leading-\\[125\\%\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "125%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".leading-none",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".leading-tight",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-tight)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".font-medium",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-medium)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".font-normal",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-normal)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".tracking-\\[-0\\.2px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-.2px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".tracking-\\[-0\\.04em\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-.04em"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".tracking-\\[-0\\.4px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-.4px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".tracking-\\[-0\\.22px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-.22px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".tracking-\\[-1\\.5\\%\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-1.5%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".tracking-\\[-3\\%\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "-3%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".tracking-normal",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "var(--tracking-normal)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".tracking-tighter",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "var(--tracking-tighter)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".ordinal",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ordinal": "ordinal"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".shadow-2xl",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 25px 50px -12px var(--tw-shadow-color,rgba(0,0,0,.25))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".shadow-\\[0px_4px_15px_0px_\\#0000000D\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0px 4px 15px 0px var(--tw-shadow-color,rgba(0,0,0,.05))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".shadow-lg",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 10px 15px -3px var(--tw-shadow-color,rgba(0,0,0,.1)),0 4px 6px -4px var(--tw-shadow-color,rgba(0,0,0,.1))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".shadow-view-product-dropdown",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-shadow": "0 12px 32px -16px var(--tw-shadow-color,var(--color-neutral-alpha-3)),0 8px 40px 0 var(--tw-shadow-color,var(--color-overlay-black-alpha-1))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".ring-2",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,)0 0 0 calc(2px + var(--tw-ring-offset-width))var(--tw-ring-color,currentcolor)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".ring-accent-500\\/35",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "rgba(255,107,2,.35)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".ring-accent-500\\/35",
+   "context": [
+    "@layer utilities",
+    "@supports (color:color-mix(in lab, red, red))"
+   ],
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab,var(--color-accent-500)35%,transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".blur",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-blur": "blur(8px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".blur-\\[2px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-blur": "blur(2px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".blur-sm",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-blur": "blur(var(--blur-sm))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".backdrop-blur-2xl",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(var(--blur-2xl))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".backdrop-blur-\\[2px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(2px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".backdrop-blur-lg",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(var(--blur-lg))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".backdrop-blur-md",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(var(--blur-md))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".backdrop-blur-none",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": ""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".backdrop-blur-xl",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(var(--blur-xl))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".duration-100",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".1s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".duration-150",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".15s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".duration-200",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".2s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".duration-300",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".3s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".duration-500",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".5s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".duration-1000",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": "1s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".ease-in-out",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ease": "var(--ease-in-out)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".ease-linear",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ease": "linear"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".ease-out",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ease": "var(--ease-out)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".outline-none",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-outline-style": "none"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".before\\:backdrop-blur-2xl::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(var(--blur-2xl))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".focus-within\\:before\\:content-\\[\\\"\\\"\\]:focus-within::before",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-content": "\"\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".focus-within\\:after\\:content-\\[\\\"\\\"\\]:focus-within::after",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-content": "\"\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".data-closed\\:translate-y-full[data-closed]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "100%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".data-closed\\:scale-95[data-closed]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "95%",
+    "--tw-scale-y": "95%",
+    "--tw-scale-z": "95%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".sm\\:translate-x-0\\!",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 640px)"
+   ],
+   "properties": {
+    "--tw-translate-x": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".sm\\:-translate-y-1\\/2",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 640px)"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(calc(1/2*100%)*-1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".sm\\:leading-none",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 640px)"
+   ],
+   "properties": {
+    "--tw-leading": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".md\\:leading-none",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 960px)"
+   ],
+   "properties": {
+    "--tw-leading": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/3d133cc65dff313f.css",
+   "selector": ".\\32 md\\:translate-y-0",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 1025px)"
+   ],
+   "properties": {
+    "--tw-translate-y": "0"
+   },
+   "bin": "tailwind"
+  }
+ ],
+ "fonts": [
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/f0549f55786e9454.css",
+   "font-family": "sfProFont",
+   "src": "url(…) format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "400",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/f0549f55786e9454.css",
+   "font-family": "sfProFont",
+   "src": "url(…) format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "500",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/f0549f55786e9454.css",
+   "font-family": "sfProFont",
+   "src": "url(…) format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "700",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/f0549f55786e9454.css",
+   "font-family": "sfProFont",
+   "src": "url(…) format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "100",
+   "font-style": "italic"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/f0549f55786e9454.css",
+   "font-family": "sfProFont",
+   "src": "url(…) format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "200",
+   "font-style": "italic"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/f0549f55786e9454.css",
+   "font-family": "sfProFont",
+   "src": "url(…) format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "200",
+   "font-style": "italic"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/f0549f55786e9454.css",
+   "font-family": "sfProFont",
+   "src": "url(…) format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "600",
+   "font-style": "italic"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/f0549f55786e9454.css",
+   "font-family": "sfProFont",
+   "src": "url(…) format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "900",
+   "font-style": "italic"
+  },
+  {
+   "file": "https://app.fourmula.ai/_next/static/chunks/f0549f55786e9454.css",
+   "font-family": "\"sfProFont Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "101.52%",
+   "descent-override": "25.72%",
+   "line-gap-override": "0%",
+   "size-adjust": "93.79%"
+  }
+ ],
+ "resolved": {
+  "dark": {
+   "--animate-pulse": {
+    "raw": "pulse 2s cubic-bezier(.4,0,.6,1)infinite",
+    "kind": "other"
+   },
+   "--blur-2xl": {
+    "raw": "40px",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--blur-lg": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--blur-md": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--blur-sm": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--blur-xl": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--color-accent-500": {
+    "raw": "#ff6b02",
+    "kind": "color",
+    "value": "#ff6b02"
+   },
+   "--color-accent-600": {
+    "raw": "#f94a00",
+    "kind": "color",
+    "value": "#f94a00"
+   },
+   "--color-alert-warning": {
+    "raw": "#e093b2",
+    "kind": "color",
+    "value": "#e093b2"
+   },
+   "--color-base-100": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--color-base-200": {
+    "raw": "#f2f2f2",
+    "kind": "color",
+    "value": "#f2f2f2"
+   },
+   "--color-base-500": {
+    "raw": "#b0b4ba",
+    "kind": "color",
+    "value": "#b0b4ba"
+   },
+   "--color-base-600": {
+    "raw": "#686a6e",
+    "kind": "color",
+    "value": "#686a6e"
+   },
+   "--color-base-625": {
+    "raw": "#444547",
+    "kind": "color",
+    "value": "#444547"
+   },
+   "--color-base-650": {
+    "raw": "#202020",
+    "kind": "color",
+    "value": "#202020"
+   },
+   "--color-base-700": {
+    "raw": "#1a1a1a",
+    "kind": "color",
+    "value": "#1a1a1a"
+   },
+   "--color-base-750": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--color-base-800": {
+    "raw": "#111",
+    "kind": "color",
+    "value": "#111111"
+   },
+   "--color-base-900": {
+    "raw": "#020108",
+    "kind": "color",
+    "value": "#020108"
+   },
+   "--color-blue-100": {
+    "raw": "lab(92.0301% -2.24757 -11.6453)",
+    "kind": "color",
+    "value": "#dbeafe"
+   },
+   "--color-blue-500": {
+    "raw": "lab(54.1736% 13.3369 -74.6839)",
+    "kind": "color",
+    "value": "#2b7fff"
+   },
+   "--color-error": {
+    "raw": "#ff173f",
+    "kind": "color",
+    "value": "#ff173f"
+   },
+   "--color-error-500": {
+    "raw": "#e82e1d",
+    "kind": "color",
+    "value": "#e82e1d"
+   },
+   "--color-error-light": {
+    "raw": "#ff9592",
+    "kind": "color",
+    "value": "#ff9592"
+   },
+   "--color-gray-600": {
+    "raw": "lab(35.6337% -1.58697 -10.8425)",
+    "kind": "color",
+    "value": "#4a5565"
+   },
+   "--color-invalid": {
+    "raw": "#f63c34",
+    "kind": "color",
+    "value": "#f63c34"
+   },
+   "--color-neutral-alpha-3": {
+    "raw": "rgba(0,0,51,.06)",
+    "kind": "color",
+    "value": "rgba(0, 0, 51, 0.06)"
+   },
+   "--color-overlay-black-50": {
+    "raw": "rgba(0,0,0,.5)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.5)"
+   },
+   "--color-overlay-black-alpha-1": {
+    "raw": "rgba(0,0,0,.05)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.05)"
+   },
+   "--color-red-500": {
+    "raw": "lab(55.4814% 75.0732 48.8528)",
+    "kind": "color",
+    "value": "#fb2c36"
+   },
+   "--color-success": {
+    "raw": "#46fea5",
+    "kind": "color",
+    "value": "#46fea5"
+   },
+   "--color-success-500": {
+    "raw": "#0fa359",
+    "kind": "color",
+    "value": "#0fa359"
+   },
+   "--color-valid": {
+    "raw": "#31cb4b",
+    "kind": "color",
+    "value": "#31cb4b"
+   },
+   "--color-white": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--container-3xs": {
+    "raw": "16rem",
+    "kind": "dimension",
+    "value": "256px"
+   },
+   "--container-md": {
+    "raw": "28rem",
+    "kind": "dimension",
+    "value": "448px"
+   },
+   "--container-xl": {
+    "raw": "36rem",
+    "kind": "dimension",
+    "value": "576px"
+   },
+   "--container-xs": {
+    "raw": "20rem",
+    "kind": "dimension",
+    "value": "320px"
+   },
+   "--default-font-family": {
+    "raw": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+    "kind": "fontFamily",
+    "value": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\""
+   },
+   "--default-mono-font-family": {
+    "raw": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
+    "kind": "fontFamily",
+    "value": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace"
+   },
+   "--default-transition-duration": {
+    "raw": ".15s",
+    "kind": "duration",
+    "value": "0.15s"
+   },
+   "--default-transition-timing-function": {
+    "raw": "cubic-bezier(.4,0,.2,1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.4,0,.2,1)"
+   },
+   "--ease-in-out": {
+    "raw": "cubic-bezier(.4,0,.2,1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.4,0,.2,1)"
+   },
+   "--ease-out": {
+    "raw": "cubic-bezier(0,0,.2,1)",
+    "kind": "easing",
+    "value": "cubic-bezier(0,0,.2,1)"
+   },
+   "--font-mono": {
+    "raw": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
+    "kind": "fontFamily",
+    "value": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace"
+   },
+   "--font-sans": {
+    "raw": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+    "kind": "fontFamily",
+    "value": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\""
+   },
+   "--font-weight-medium": {
+    "raw": "500",
+    "kind": "number",
+    "value": 500
+   },
+   "--font-weight-normal": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--leading-tight": {
+    "raw": "1.25",
+    "kind": "number",
+    "value": 1.25
+   },
+   "--overlay-color": {
+    "raw": "rgba(17,17,17,.5)",
+    "kind": "color",
+    "value": "rgba(17, 17, 17, 0.5)"
+   },
+   "--radius-2xl": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--radius-3xl": {
+    "raw": "1.5rem",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--radius-4xl": {
+    "raw": "28px",
+    "kind": "dimension",
+    "value": "28px"
+   },
+   "--radius-5xl": {
+    "raw": "32px",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--radius-7xl": {
+    "raw": "40px",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--radius-lg": {
+    "raw": ".5rem",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--radius-md": {
+    "raw": ".375rem",
+    "kind": "dimension",
+    "value": "6px"
+   },
+   "--radius-sm": {
+    "raw": ".25rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--radius-xl": {
+    "raw": ".75rem",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--spacing": {
+    "raw": ".25rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--swiper-theme-color": {
+    "raw": "#007aff",
+    "kind": "color",
+    "value": "#007aff"
+   },
+   "--text-2lg": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--text-2xl": {
+    "raw": "52px",
+    "kind": "dimension",
+    "value": "52px"
+   },
+   "--text-2xl--line-height": {
+    "raw": "calc(2/1.5)",
+    "kind": "other"
+   },
+   "--text-2xs": {
+    "raw": "9px",
+    "kind": "dimension",
+    "value": "9px"
+   },
+   "--text-l": {
+    "raw": "28px",
+    "kind": "dimension",
+    "value": "28px"
+   },
+   "--text-lg": {
+    "raw": "22px",
+    "kind": "dimension",
+    "value": "22px"
+   },
+   "--text-lg--line-height": {
+    "raw": "calc(1.75/1.125)",
+    "kind": "other"
+   },
+   "--text-m": {
+    "raw": "18px",
+    "kind": "dimension",
+    "value": "18px"
+   },
+   "--text-md": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--text-sm": {
+    "raw": "14px",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--text-sm--line-height": {
+    "raw": "calc(1.25/.875)",
+    "kind": "other"
+   },
+   "--text-xl": {
+    "raw": "32px",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--text-xl--line-height": {
+    "raw": "calc(1.75/1.25)",
+    "kind": "other"
+   },
+   "--text-xs": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--text-xs--line-height": {
+    "raw": "calc(1/.75)",
+    "kind": "other"
+   },
+   "--tracking-normal": {
+    "raw": "0em",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--tracking-tighter": {
+    "raw": "-.05em",
+    "kind": "other"
+   }
+  },
+  "light": {
+   "--animate-pulse": {
+    "raw": "pulse 2s cubic-bezier(.4,0,.6,1)infinite",
+    "kind": "other"
+   },
+   "--blur-2xl": {
+    "raw": "40px",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--blur-lg": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--blur-md": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--blur-sm": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--blur-xl": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--color-accent-500": {
+    "raw": "#ff6b02",
+    "kind": "color",
+    "value": "#ff6b02"
+   },
+   "--color-accent-600": {
+    "raw": "#f94a00",
+    "kind": "color",
+    "value": "#f94a00"
+   },
+   "--color-alert-warning": {
+    "raw": "#e093b2",
+    "kind": "color",
+    "value": "#e093b2"
+   },
+   "--color-base-100": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--color-base-200": {
+    "raw": "#f2f2f2",
+    "kind": "color",
+    "value": "#f2f2f2"
+   },
+   "--color-base-500": {
+    "raw": "#b0b4ba",
+    "kind": "color",
+    "value": "#b0b4ba"
+   },
+   "--color-base-600": {
+    "raw": "#686a6e",
+    "kind": "color",
+    "value": "#686a6e"
+   },
+   "--color-base-625": {
+    "raw": "#444547",
+    "kind": "color",
+    "value": "#444547"
+   },
+   "--color-base-650": {
+    "raw": "#202020",
+    "kind": "color",
+    "value": "#202020"
+   },
+   "--color-base-700": {
+    "raw": "#1a1a1a",
+    "kind": "color",
+    "value": "#1a1a1a"
+   },
+   "--color-base-750": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--color-base-800": {
+    "raw": "#111",
+    "kind": "color",
+    "value": "#111111"
+   },
+   "--color-base-900": {
+    "raw": "#020108",
+    "kind": "color",
+    "value": "#020108"
+   },
+   "--color-blue-100": {
+    "raw": "lab(92.0301% -2.24757 -11.6453)",
+    "kind": "color",
+    "value": "#dbeafe"
+   },
+   "--color-blue-500": {
+    "raw": "lab(54.1736% 13.3369 -74.6839)",
+    "kind": "color",
+    "value": "#2b7fff"
+   },
+   "--color-error": {
+    "raw": "#ff173f",
+    "kind": "color",
+    "value": "#ff173f"
+   },
+   "--color-error-500": {
+    "raw": "#e82e1d",
+    "kind": "color",
+    "value": "#e82e1d"
+   },
+   "--color-error-light": {
+    "raw": "#ff9592",
+    "kind": "color",
+    "value": "#ff9592"
+   },
+   "--color-gray-600": {
+    "raw": "lab(35.6337% -1.58697 -10.8425)",
+    "kind": "color",
+    "value": "#4a5565"
+   },
+   "--color-invalid": {
+    "raw": "#f63c34",
+    "kind": "color",
+    "value": "#f63c34"
+   },
+   "--color-neutral-alpha-3": {
+    "raw": "rgba(0,0,51,.06)",
+    "kind": "color",
+    "value": "rgba(0, 0, 51, 0.06)"
+   },
+   "--color-overlay-black-50": {
+    "raw": "rgba(0,0,0,.5)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.5)"
+   },
+   "--color-overlay-black-alpha-1": {
+    "raw": "rgba(0,0,0,.05)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.05)"
+   },
+   "--color-red-500": {
+    "raw": "lab(55.4814% 75.0732 48.8528)",
+    "kind": "color",
+    "value": "#fb2c36"
+   },
+   "--color-success": {
+    "raw": "#46fea5",
+    "kind": "color",
+    "value": "#46fea5"
+   },
+   "--color-success-500": {
+    "raw": "#0fa359",
+    "kind": "color",
+    "value": "#0fa359"
+   },
+   "--color-valid": {
+    "raw": "#31cb4b",
+    "kind": "color",
+    "value": "#31cb4b"
+   },
+   "--color-white": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--container-3xs": {
+    "raw": "16rem",
+    "kind": "dimension",
+    "value": "256px"
+   },
+   "--container-md": {
+    "raw": "28rem",
+    "kind": "dimension",
+    "value": "448px"
+   },
+   "--container-xl": {
+    "raw": "36rem",
+    "kind": "dimension",
+    "value": "576px"
+   },
+   "--container-xs": {
+    "raw": "20rem",
+    "kind": "dimension",
+    "value": "320px"
+   },
+   "--default-font-family": {
+    "raw": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+    "kind": "fontFamily",
+    "value": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\""
+   },
+   "--default-mono-font-family": {
+    "raw": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
+    "kind": "fontFamily",
+    "value": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace"
+   },
+   "--default-transition-duration": {
+    "raw": ".15s",
+    "kind": "duration",
+    "value": "0.15s"
+   },
+   "--default-transition-timing-function": {
+    "raw": "cubic-bezier(.4,0,.2,1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.4,0,.2,1)"
+   },
+   "--ease-in-out": {
+    "raw": "cubic-bezier(.4,0,.2,1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.4,0,.2,1)"
+   },
+   "--ease-out": {
+    "raw": "cubic-bezier(0,0,.2,1)",
+    "kind": "easing",
+    "value": "cubic-bezier(0,0,.2,1)"
+   },
+   "--font-mono": {
+    "raw": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
+    "kind": "fontFamily",
+    "value": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace"
+   },
+   "--font-sans": {
+    "raw": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+    "kind": "fontFamily",
+    "value": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\""
+   },
+   "--font-weight-medium": {
+    "raw": "500",
+    "kind": "number",
+    "value": 500
+   },
+   "--font-weight-normal": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--leading-tight": {
+    "raw": "1.25",
+    "kind": "number",
+    "value": 1.25
+   },
+   "--overlay-color": {
+    "raw": "rgba(17,17,17,.5)",
+    "kind": "color",
+    "value": "rgba(17, 17, 17, 0.5)"
+   },
+   "--radius-2xl": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--radius-3xl": {
+    "raw": "1.5rem",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--radius-4xl": {
+    "raw": "28px",
+    "kind": "dimension",
+    "value": "28px"
+   },
+   "--radius-5xl": {
+    "raw": "32px",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--radius-7xl": {
+    "raw": "40px",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--radius-lg": {
+    "raw": ".5rem",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--radius-md": {
+    "raw": ".375rem",
+    "kind": "dimension",
+    "value": "6px"
+   },
+   "--radius-sm": {
+    "raw": ".25rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--radius-xl": {
+    "raw": ".75rem",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--spacing": {
+    "raw": ".25rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--swiper-theme-color": {
+    "raw": "#007aff",
+    "kind": "color",
+    "value": "#007aff"
+   },
+   "--text-2lg": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--text-2xl": {
+    "raw": "52px",
+    "kind": "dimension",
+    "value": "52px"
+   },
+   "--text-2xl--line-height": {
+    "raw": "calc(2/1.5)",
+    "kind": "other"
+   },
+   "--text-2xs": {
+    "raw": "9px",
+    "kind": "dimension",
+    "value": "9px"
+   },
+   "--text-l": {
+    "raw": "28px",
+    "kind": "dimension",
+    "value": "28px"
+   },
+   "--text-lg": {
+    "raw": "22px",
+    "kind": "dimension",
+    "value": "22px"
+   },
+   "--text-lg--line-height": {
+    "raw": "calc(1.75/1.125)",
+    "kind": "other"
+   },
+   "--text-m": {
+    "raw": "18px",
+    "kind": "dimension",
+    "value": "18px"
+   },
+   "--text-md": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--text-sm": {
+    "raw": "14px",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--text-sm--line-height": {
+    "raw": "calc(1.25/.875)",
+    "kind": "other"
+   },
+   "--text-xl": {
+    "raw": "32px",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--text-xl--line-height": {
+    "raw": "calc(1.75/1.25)",
+    "kind": "other"
+   },
+   "--text-xs": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--text-xs--line-height": {
+    "raw": "calc(1/.75)",
+    "kind": "other"
+   },
+   "--tracking-normal": {
+    "raw": "0em",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--tracking-tighter": {
+    "raw": "-.05em",
+    "kind": "other"
+   }
+  }
+ }
+}

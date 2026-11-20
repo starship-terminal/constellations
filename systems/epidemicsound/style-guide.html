@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Epidemic Sound style guide</title>
+<meta name="description" content="Epidemic Sound design tokens and the public marketing plus signed-out catalog surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-ui: Inter, "Inter Fallback: Arial", "Inter Fallback: Helvetica Neue", Arial, "Helvetica Neue";
+  --font-family-display: Sebenta, "Sebenta Fallback: Georgia", "Sebenta Fallback: Times New Roman", "Sebenta Fallback: Noto Serif", Georgia, "Times New Roman", "Noto Serif";
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-declared-bold: 700;
+  --font-weight-declared-medium: 500;
+  --font-weight-declared-normal: 400;
+  --font-weight-declared-semibold: 600;
+  --font-weight-heading-2xl: 500;
+  --font-weight-heading-2xs: 500;
+  --font-weight-heading-3xl: 500;
+  --font-weight-heading-l: 500;
+  --font-weight-heading-m: 500;
+  --font-weight-heading-s: 500;
+  --font-weight-heading-xl: 500;
+  --font-weight-heading-xs: 500;
+  --font-weight-subheading-l: 500;
+  --font-weight-subheading-m: 600;
+  --font-weight-subheading-s: 600;
+  --font-weight-text-button-m: 600;
+  --font-weight-text-button-s: 600;
+  --font-weight-text-button-xs: 600;
+  --font-weight-text-l: 500;
+  --font-weight-text-m: 500;
+  --font-weight-text-overline-m: 600;
+  --font-weight-text-overline-s: 500;
+  --font-weight-text-s: 500;
+  --font-weight-text-xl: 500;
+  --font-weight-text-xs: 400;
+  --font-size-heading-2xl: 80px;
+  --font-size-heading-2xs: 20px;
+  --font-size-heading-3xl: 128px;
+  --font-size-heading-l: 48px;
+  --font-size-heading-m: 40px;
+  --font-size-heading-s: 32px;
+  --font-size-heading-xl: 64px;
+  --font-size-heading-xs: 24px;
+  --font-size-subheading-l: 20px;
+  --font-size-subheading-m: 16px;
+  --font-size-subheading-s: 14px;
+  --font-size-text-button-m: 16px;
+  --font-size-text-button-s: 14px;
+  --font-size-text-button-xs: 12px;
+  --font-size-text-l: 18px;
+  --font-size-text-m: 16px;
+  --font-size-text-overline-m: 14px;
+  --font-size-text-overline-s: 12px;
+  --font-size-text-s: 14px;
+  --font-size-text-xl: 18px;
+  --font-size-text-xs: 12px;
+  --font-size-measured-button-s: var(--font-size-subheading-s);
+  --font-size-measured-h1-genre: var(--font-size-heading-m);
+  --font-size-measured-h1-pricing: var(--font-size-heading-xl);
+  --font-size-measured-h1-home: var(--font-size-heading-2xl);
+  --font-size-measured-plan-name: var(--font-size-heading-2xs);
+  --font-size-measured-kc-h1: var(--font-size-heading-l);
+  --font-tracking-heading-2xl: -.15rem;
+  --font-tracking-heading-2xs: -.025rem;
+  --font-tracking-heading-3xl: -.32rem;
+  --font-tracking-heading-l: -.09rem;
+  --font-tracking-heading-m: -.075rem;
+  --font-tracking-heading-s: -.06rem;
+  --font-tracking-heading-xl: -.12rem;
+  --font-tracking-heading-xs: -.03rem;
+  --font-tracking-text-overline-m: 1.39062px;
+  --font-tracking-text-overline-s: 1.1875px;
+  --font-lineHeight-heading-2xl: 80px;
+  --font-lineHeight-heading-2xs: 24px;
+  --font-lineHeight-heading-3xl: 128px;
+  --font-lineHeight-heading-l: 54px;
+  --font-lineHeight-heading-m: 48px;
+  --font-lineHeight-heading-s: 40px;
+  --font-lineHeight-heading-xl: 68px;
+  --font-lineHeight-heading-xs: 30px;
+  --font-lineHeight-subheading-l: 24px;
+  --font-lineHeight-subheading-m: 24px;
+  --font-lineHeight-subheading-s: 24px;
+  --font-lineHeight-text-button-m: 24px;
+  --font-lineHeight-text-button-s: 24px;
+  --font-lineHeight-text-button-xs: 16px;
+  --font-lineHeight-text-l: 28px;
+  --font-lineHeight-text-m: 24px;
+  --font-lineHeight-text-overline-m: 24px;
+  --font-lineHeight-text-overline-s: 16px;
+  --font-lineHeight-text-s: 24px;
+  --font-lineHeight-text-xl: 28px;
+  --font-lineHeight-text-xs: 16px;
+  --radius-button: 10000px;
+  --radius-circle: 0;
+  --radius-detail: 4px;
+  --radius-element: 8px;
+  --radius-large: 0;
+  --radius-medium: 0;
+  --radius-small: 0;
+  --radius-surface: 16px;
+  --radius-tiny: 2px;
+  --radius-tailwind-lg: 8px;
+  --radius-tailwind-sm: 4px;
+  --radius-measured-pill: var(--radius-button);
+  --radius-measured-surface: var(--radius-surface);
+  --radius-measured-detail: var(--radius-detail);
+  --elevation-bottom: rgba(0, 0, 0, 0.25) 0px -8px 16px 0px;
+  --elevation-floating: rgba(0, 0, 0, 0.25) 0px 8px 16px 0px;
+  --elevation-top: rgba(0, 0, 0, 0.25) 0px 8px 16px 0px;
+  --grid-gutter-large: 16px;
+  --grid-gutter-medium: 16px;
+  --grid-gutter-small: 16px;
+  --grid-padding-large: 56px;
+  --grid-padding-medium: 32px;
+  --grid-padding-small: 16px;
+  --grid-page-maxWidth: 1440px;
+  --border-width-input: 1px;
+  --border-width-select-input: 2px;
+  --spacing-unit: 4px;
+  --container-2xl: 672px;
+  --container-3xl: 768px;
+  --container-3xs: 256px;
+  --container-md: 448px;
+  --breakpoint-md: 481px;
+  --breakpoint-nav: 1024px;
+  --blur-2xl: 40px;
+  --easing-in-out: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --easing-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --motion-animate-lavalamp: lavalamp 6s ease-in-out infinite;
+  --motion-animate-marquee: marquee 60s linear infinite;
+  --motion-animate-pulse: pulse 2s cubic-bezier(.4,0,.6,1) infinite;
+  --motion-animation-duration: 600ms;
+  --motion-animation-slide-in-timing-function: cubic-bezier(0.9, 0.0, 0.0, 1.0);
+  --motion-default-transition-duration: 150ms;
+  --motion-default-transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --color-brand-black: #000000;
+  --color-brand-white: #ffffff;
+  --component-header-height: 100px;
+  --component-track-row-height: 56px;
+  --component-track-play-size: 56px;
+  --component-icon-button: 44px;
+  --component-nav-button-height: 44px;
+  --component-login-card-width: 416px;
+  --component-login-field-height: 54px;
+  --component-login-submit-height: 56px;
+  --component-billing-switch: 40px;
+  --component-mobile-header-height: 100px;
+  --component-genre-banner-height: 204px;
+  --component-trackrow-margin: 16px;
+  --component-trackrow-padding-default: 0;
+  --component-trackrow-padding-right: 8px;
+  --component-trackrow-size: 56px;
+  --component-play-l: 64px;
+  --component-play-m: 56px;
+  --component-play-s: 40px;
+  --component-play-xl: 80px;
+  --component-play-xs: 32px;
+  --component-play-xxs: 24px;
+  --component-i-accent-button-text-color: #000000;
+  --component-i-header-font-family: Sebenta, "Sebenta Fallback: Georgia", "Sebenta Fallback: Times New Roman", "Sebenta Fallback: Noto Serif", Georgia, "Times New Roman", "Noto Serif";
+  --component-i-text-font-family: Inter, "Inter Fallback: Arial", "Inter Fallback: Helvetica Neue", Arial, "Helvetica Neue";
+  --component-declared-button-s-min-height: 2rem;
+  --component-declared-button-s-min-width: 3.5rem;
+  --component-declared-button-s-padding: .25rem .75rem;
+  --component-declared-dropdown-list-handler-margin: 0;
+  --component-declared-dropdown-list-item-horizontal-padding: 1;
+  --component-declared-dropdown-list-item-min-height: 2.5;
+  --component-declared-dropdown-list-item-min-vertical-padding: .5;
+  --component-declared-dropdown-list-max-height-default: calc(var(--es-dropdown-list-vertical-list-padding) + calc(var(--es-dropdown-list-item-min-height) * var(--es-dropdown-list-max-visible-items)));
+  --component-declared-dropdown-list-max-height-mobile: calc(var(--es-dropdown-list-item-min-height) * var(--es-dropdown-list-max-visible-items-mobile));
+  --component-declared-dropdown-list-max-visible-items: 6.5;
+  --component-declared-dropdown-list-min-window-margin: 8;
+  --component-declared-dropdown-list-vertical-list-padding: .5;
+  --component-declared-fp-grid-max-width: 110rem;
+  --component-declared-handles-border-width: .125rem;
+  --component-declared-i-activity-badge-font-size: .625rem;
+  --component-declared-i-buffer: 1px;
+  --component-declared-i-container-size: 2.75rem;
+  --component-declared-i-control-inset: .5rem;
+  --component-declared-i-cover-art-action-inset: 0px;
+  --component-declared-i-cover-art-focus-padding: 4px;
+  --component-declared-i-cover-art-image-padding: .5rem;
+  --component-declared-i-cover-art-play-button-size: var(--es-play-button-size-m,3.5rem);
+  --component-declared-i-feature-highlight-size: 16.25rem;
+  --component-declared-i-focus-ring-offset: 4px;
+  --component-declared-i-modal-media-overlay-opacity: 0;
+  --component-declared-i-modal-size: 28.5rem;
+  --component-declared-i-play-button-image-visibility: hidden;
+  --component-declared-i-playhead-cursor: pointer;
+  --component-declared-i-status-badge-font-size: .5625rem;
+  --component-declared-i-status-badge-padding: 0 .25rem;
+  --component-declared-i-tab-block-padding: calc(.5rem - 2px);
+  --component-declared-i-tab-s-block-padding: .1875rem;
+  --component-declared-i-tablist-gap: 1rem;
+  --component-declared-i-thumb-width-default: .75rem;
+  --component-declared-i-thumb-width-with-offset: calc(var(--es-i-thumb-width) + calc(var(--es-i-focus-ring-offset) * 2));
+  --component-declared-i-tip-height: calc(4px + var(--es-i-buffer));
+  --component-declared-i-tip-vertical-offset: 50%;
+  --component-declared-i-tip-width: 8px;
+  --component-declared-i-tooltip-font-size: .6875rem;
+  --component-declared-i-tooltip-font-weight: 500;
+  --component-declared-i-tooltip-line-height: 1rem;
+  --component-declared-i-top-banner-block-padding: 1rem;
+  --component-declared-i-top-banner-close-button-offset: .375rem;
+  --component-declared-i-top-banner-inline-padding: var(--es-grid-padding-small);
+  --component-declared-i-track-action-color: var(--es-color-text-secondary);
+  --component-declared-i-track-height: 3rem;
+  --component-declared-i-track-selector-opacity: 0;
+  --component-declared-i-video-controls-direction: 1;
+  --component-declared-i-video-controls-opacity: 1;
+  --component-declared-i-video-controls-position: 0px;
+  --component-declared-i-video-overlay-color: rgba(0,0,0,.5);
+  --component-declared-i-video-overlay-padding: 0;
+  --component-declared-i-width-transition-time: .3s;
+  --component-declared-iconbutton-s-icon-max-height: 1rem;
+  --component-declared-iconbutton-s-icon-max-width: 1rem;
+  --component-declared-iconbutton-s-min-height: 2rem;
+  --component-declared-iconbutton-s-min-width: 2rem;
+  --component-declared-iconbutton-xs-icon-max-height: 1rem;
+  --component-declared-iconbutton-xs-icon-max-width: 1rem;
+  --component-declared-plugin-icon-size-l: 1rem;
+  --component-declared-plugin-icon-size-m: 1rem;
+  --component-declared-sectionbanner-icon-max-height: 1rem;
+  --component-declared-sectionbanner-icon-max-width: 1rem;
+  --component-declared-select-input-bottom-margin-filled: .375;
+  --component-declared-select-input-chevron-icon-inner-padding: .5;
+  --component-declared-select-input-chevron-icon-width: 1.5;
+  --component-declared-select-input-handler-top-padding: calc(calc(var(--es-select-input-horizontal-margin) + var(--es-select-input-chevron-icon-width) + var(--es-select-input-chevron-icon-inner-padding)) * 1rem);
+  --component-declared-select-input-horizontal-margin: 1;
+  --component-declared-select-input-label-line-height: calc(16 / 12);
+  --component-declared-select-input-label-margin-origin: calc(calc(var(--es-select-input-size) - var(--es-select-input-label-line-height)) / 2);
+  --component-declared-select-input-label-scale-floating: .75;
+  --component-declared-select-input-label-top-margin-floating: .625;
+  --component-declared-select-input-label-transform: calc(calc(calc(var(--es-select-input-label-margin-origin) - var(--es-select-input-label-top-margin-floating)) / var(--es-select-input-label-line-height)) * -100%);
+  --component-declared-select-input-label-width: calc(100% - calc(calc(calc(var(--es-select-input-horizontal-margin) * 2) + var(--es-select-input-chevron-icon-width) + var(--es-select-input-chevron-icon-inner-padding)) * 1rem));
+  --component-declared-select-input-line-height: 1.5;
+  --component-declared-select-input-size: 3.5;
+  --component-declared-select-input-top-margin-filled: calc(calc(var(--es-select-input-size) - var(--es-select-input-line-height)) - var(--es-select-input-bottom-margin-filled));
+  --component-declared-selector-input-size: 1.5;
+  --component-declared-spinner-color: inherit;
+  --component-declared-spinner-size: 0;
+  --component-declared-text-input-adornment-margin: .375;
+  --component-declared-text-input-bottom-margin-filled: .4375;
+  --component-declared-text-input-horizontal-margin: 1;
+  --component-declared-text-input-label-line-height: calc(16 / 12);
+  --component-declared-text-input-label-margin-origin: calc(calc(var(--es-text-input-size) - var(--es-text-input-label-line-height)) / 2);
+  --component-declared-text-input-label-scale-floating: .75;
+  --component-declared-text-input-label-top-margin-floating: .625;
+  --component-declared-text-input-label-transform: calc(calc(calc(var(--es-text-input-label-margin-origin) - var(--es-text-input-label-top-margin-floating)) / var(--es-text-input-label-line-height)) * -100%);
+  --component-declared-text-input-line-height: 1.5;
+  --component-declared-text-input-size: 3.5;
+  --component-declared-text-input-top-margin-filled: calc(calc(var(--es-text-input-size) - var(--es-text-input-line-height)) - var(--es-text-input-bottom-margin-filled));
+  --component-declared-text-input-vertical-margin-origin: calc(calc(var(--es-text-input-size) - var(--es-text-input-line-height)) / 2);
+  --color-action-accent-default: #ff82c2;
+  --color-action-accent-disabled: rgba(61, 77, 116, 0.06);
+  --color-action-accent-hovered: #e575af;
+  --color-action-accent-pressed: #cc689b;
+  --color-action-ghost-default: rgba(61, 77, 116, 0);
+  --color-action-ghost-disabled: rgba(61, 77, 116, 0);
+  --color-action-ghost-hovered: rgba(61, 77, 116, 0.06);
+  --color-action-ghost-pressed: rgba(61, 77, 116, 0.12);
+  --color-action-negative-default: #ff6138;
+  --color-action-negative-disabled: rgba(61, 77, 116, 0.06);
+  --color-action-negative-hovered: #e85833;
+  --color-action-negative-pressed: #d1502e;
+  --color-action-positive-default: #5ad363;
+  --color-action-positive-disabled: rgba(61, 77, 116, 0.06);
+  --color-action-positive-hovered: #51be59;
+  --color-action-positive-pressed: #48a94f;
+  --color-action-primary-default: #000000;
+  --color-action-primary-disabled: rgba(61, 77, 116, 0.06);
+  --color-action-primary-hovered: #272727;
+  --color-action-primary-inverse-default: #ffffff;
+  --color-action-primary-inverse-disabled: rgba(207, 214, 229, 0.16);
+  --color-action-primary-inverse-hovered: #e7e7e7;
+  --color-action-primary-inverse-pressed: #cfcfcf;
+  --color-action-primary-pressed: #333333;
+  --color-action-secondary-default: rgba(61, 77, 116, 0.12);
+  --color-action-secondary-disabled: rgba(61, 77, 116, 0.06);
+  --color-action-secondary-hovered: rgba(61, 77, 116, 0.18);
+  --color-action-secondary-pressed: rgba(61, 77, 116, 0.24);
+  --color-action-segment-default: #bb76ff;
+  --color-action-segment-hovered: #bb76ff;
+  --color-action-segment-pressed: #a86ae5;
+  --color-action-segment-subtle: #5e3b80;
+  --color-action-tertiary-default: rgba(61, 77, 116, 0.06);
+  --color-action-tertiary-disabled: rgba(61, 77, 116, 0.06);
+  --color-action-tertiary-hovered: rgba(61, 77, 116, 0.12);
+  --color-action-tertiary-pressed: rgba(61, 77, 116, 0.18);
+  --color-action-trim: #ffda40;
+  --color-background-backdrop: rgba(0, 0, 0, 0.7);
+  --color-background-base: #f1f0eb;
+  --color-background-beta: #20afff;
+  --color-background-brand-azur: #20afff;
+  --color-background-brand-ecru: #e4d9cf;
+  --color-background-brand-fog: #cfd6e5;
+  --color-background-brand-moss: #bfbda8;
+  --color-background-brand-off-black: #292c33;
+  --color-background-brand-off-white: #f1f0eb;
+  --color-background-brand-pink: #ff82c2;
+  --color-background-brand-red: #ff6138;
+  --color-background-brand-stone: #9793a5;
+  --color-background-brand-yellow: #ffda40;
+  --color-background-caution: #ffda40;
+  --color-background-elevation: #ffffff;
+  --color-background-floating: #44474f;
+  --color-background-inverse: #000000;
+  --color-background-negative: #ff6138;
+  --color-background-new: #bb76ff;
+  --color-background-overlay-default: rgba(0, 0, 0, 0.25);
+  --color-background-overlay-fade-full-to-bottom: linear-gradient(180deg,#0F0F0F00,#0F0F0F);
+  --color-background-overlay-fade-full-to-top: linear-gradient(0deg,#0F0F0F00,#0F0F0F);
+  --color-background-overlay-fade-to-bottom: linear-gradient(180deg,#00000000,#000000BF);
+  --color-background-overlay-fade-to-top: linear-gradient(0deg,#00000000,#000000BF);
+  --color-background-positive: #5ad363;
+  --color-background-surface: rgba(61, 77, 116, 0.06);
+  --color-border-negative: #ff6138;
+  --color-border-primary: #000000;
+  --color-border-secondary: rgba(0, 0, 0, 0.64);
+  --color-border-tertiary: rgba(0, 0, 0, 0.08);
+  --color-brand-azur: #20afff;
+  --color-brand-ecru: #e4d9cf;
+  --color-brand-extended-blue: #6792ff;
+  --color-brand-extended-brown: #a8954c;
+  --color-brand-extended-dusty-pink: #f6d1d1;
+  --color-brand-extended-green: #5ad363;
+  --color-brand-extended-lavender: #cfbdd2;
+  --color-brand-extended-mint-green: #c4e7d1;
+  --color-brand-extended-neon-yellow: #d6f382;
+  --color-brand-extended-orange: #ff9b26;
+  --color-brand-extended-purple: #bb76ff;
+  --color-brand-extended-rust: #d6832b;
+  --color-brand-extended-tan: #dfd796;
+  --color-brand-extended-turquoise: #91ceda;
+  --color-brand-fog: #cfd6e5;
+  --color-brand-moss: #bfbda8;
+  --color-brand-off-black: #292c33;
+  --color-brand-off-white: #f1f0eb;
+  --color-brand-pink: #ff82c2;
+  --color-brand-red: #ff6138;
+  --color-brand-stone: #9793a5;
+  --color-brand-yellow: #ffda40;
+  --color-data-visualization-blue: #20afff;
+  --color-data-visualization-cyan: #31f4e8;
+  --color-data-visualization-magenta: #ca26cc;
+  --color-data-visualization-negative: #ff6138;
+  --color-data-visualization-orange: #ff9b26;
+  --color-data-visualization-pink: #ff82c2;
+  --color-data-visualization-positive: #41d74d;
+  --color-data-visualization-purple: #bb76ff;
+  --color-data-visualization-yellow: #ffda40;
+  --color-icon-active: #20afff;
+  --color-icon-caution: #ffda40;
+  --color-icon-dark-static: #000000;
+  --color-icon-disabled: rgba(0, 0, 0, 0.2);
+  --color-icon-inverse-default: #ffffff;
+  --color-icon-inverse-secondary: rgba(255, 255, 255, 0.72);
+  --color-icon-light-static: #ffffff;
+  --color-icon-liked: #ff82c2;
+  --color-icon-negative: #ff6138;
+  --color-icon-positive: #5ad363;
+  --color-icon-primary: #000000;
+  --color-icon-secondary: rgba(0, 0, 0, 0.6);
+  --color-input-active-default: #000000;
+  --color-input-active-disabled: rgba(61, 77, 116, 0.12);
+  --color-input-active-hovered: #272727;
+  --color-input-active-pressed: #333333;
+  --color-input-default: rgba(61, 77, 116, 0.06);
+  --color-input-disabled: rgba(61, 77, 116, 0.06);
+  --color-input-hovered: rgba(61, 77, 116, 0.12);
+  --color-input-pressed: rgba(61, 77, 116, 0.18);
+  --color-misc-divider: rgba(0, 0, 0, 0.08);
+  --color-misc-focused: #000000;
+  --color-misc-grabber: rgba(0, 0, 0, 0.35);
+  --color-misc-handle-default: #ffffff;
+  --color-misc-handle-disabled: #3e4147;
+  --color-platform-facebook: #1877f2;
+  --color-platform-instagram: linear-gradient(to top right,#FFCA05,#F6026B,#8512FA);
+  --color-platform-linkedin: #0072b1;
+  --color-platform-podcast: #f78422;
+  --color-platform-rumble: #74cc1d;
+  --color-platform-snapchat: #fffc00;
+  --color-platform-tiktok: #ff0050;
+  --color-platform-twitch: #9146ff;
+  --color-platform-twitter: #1da1f2;
+  --color-platform-vimeo: #1ab7ea;
+  --color-platform-website: #7d7d7d;
+  --color-platform-youtube: #ff0000;
+  --color-text-dark-static: #000000;
+  --color-text-disabled: rgba(0, 0, 0, 0.2);
+  --color-text-inverse-default: #ffffff;
+  --color-text-inverse-secondary: rgba(255, 255, 255, 0.72);
+  --color-text-light-static: #ffffff;
+  --color-text-negative: #ff6138;
+  --color-text-primary: #000000;
+  --color-text-secondary: rgba(0, 0, 0, 0.6);
+  --color-track-default: rgba(61, 77, 116, 0.24);
+  --color-track-disabled: rgba(61, 77, 116, 0.24);
+  --color-track-fill-default: #000000;
+  --color-track-fill-inverse: #ffffff;
+  --color-track-highlight-default: #ffda40;
+  --color-track-highlight-hovered: #e5c43a;
+  --color-track-highlight-pressed: #ccae33;
+  --color-track-inverse: rgba(207, 214, 229, 0.24);
+  --background-page: var(--color-background-base);
+  --text-ink: var(--color-action-primary-default);
+  --action-primary: var(--color-action-primary-default);
+  --action-primary-hover: var(--color-action-primary-hovered);
+  --action-secondary: var(--color-action-secondary-default);
+  --action-secondary-hover: var(--color-action-secondary-hovered);
+  --action-switch: var(--color-action-primary-default);
+  --border-focus: var(--color-action-primary-default);
+  --sg-sans: Inter, "Inter Fallback: Arial", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: Sebenta, "Sebenta Fallback: Georgia", Georgia, "Times New Roman", "Noto Serif", serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+  /* Guide chrome: deliberately not token vars, so the page's own text and
+     hairlines stay readable whatever a token scope resolves to. */
+  --sg-ink: #101012;
+  --sg-muted: rgba(16, 16, 18, .65);
+  --sg-hairline: rgba(16, 16, 18, .14);
+  --sg-paper: #fff;
+}
+[data-mode="dark"], .dark {
+  --color-action-accent-default: #ff82c2;
+  --color-action-accent-disabled: rgba(207, 214, 229, 0.16);
+  --color-action-accent-hovered: #e575af;
+  --color-action-accent-pressed: #cc689b;
+  --color-action-ghost-default: rgba(207, 214, 229, 0);
+  --color-action-ghost-disabled: rgba(207, 214, 229, 0);
+  --color-action-ghost-hovered: rgba(207, 214, 229, 0.08);
+  --color-action-ghost-pressed: rgba(207, 214, 229, 0.16);
+  --color-action-negative-default: #ff6138;
+  --color-action-negative-disabled: rgba(207, 214, 229, 0.16);
+  --color-action-negative-hovered: #e85833;
+  --color-action-negative-pressed: #d1502e;
+  --color-action-positive-default: #5ad363;
+  --color-action-positive-disabled: rgba(207, 214, 229, 0.16);
+  --color-action-positive-hovered: #51be59;
+  --color-action-positive-pressed: #48a94f;
+  --color-action-primary-default: #ffffff;
+  --color-action-primary-disabled: rgba(207, 214, 229, 0.16);
+  --color-action-primary-hovered: #e7e7e7;
+  --color-action-primary-inverse-default: #000000;
+  --color-action-primary-inverse-disabled: rgba(0, 0, 0, 0.06);
+  --color-action-primary-inverse-hovered: #272727;
+  --color-action-primary-inverse-pressed: #333333;
+  --color-action-primary-pressed: #cfcfcf;
+  --color-action-secondary-default: rgba(207, 214, 229, 0.16);
+  --color-action-secondary-disabled: rgba(207, 214, 229, 0.16);
+  --color-action-secondary-hovered: rgba(207, 214, 229, 0.24);
+  --color-action-secondary-pressed: rgba(207, 214, 229, 0.32);
+  --color-action-segment-default: #bb76ff;
+  --color-action-segment-hovered: #bb76ff;
+  --color-action-segment-pressed: #a86ae5;
+  --color-action-segment-subtle: #5e3b80;
+  --color-action-tertiary-default: rgba(207, 214, 229, 0.08);
+  --color-action-tertiary-disabled: rgba(207, 214, 229, 0.08);
+  --color-action-tertiary-hovered: rgba(207, 214, 229, 0.16);
+  --color-action-tertiary-pressed: rgba(207, 214, 229, 0.24);
+  --color-action-trim: #ffda40;
+  --color-background-backdrop: rgba(0, 0, 0, 0.7);
+  --color-background-base: #121418;
+  --color-background-beta: #20afff;
+  --color-background-brand-azur: #20afff;
+  --color-background-brand-ecru: #e4d9cf;
+  --color-background-brand-fog: #cfd6e5;
+  --color-background-brand-moss: #bfbda8;
+  --color-background-brand-off-black: #292c33;
+  --color-background-brand-off-white: #f1f0eb;
+  --color-background-brand-pink: #ff82c2;
+  --color-background-brand-red: #ff6138;
+  --color-background-brand-stone: #9793a5;
+  --color-background-brand-yellow: #ffda40;
+  --color-background-caution: #ffda40;
+  --color-background-elevation: #292c33;
+  --color-background-floating: #44474f;
+  --color-background-inverse: #ffffff;
+  --color-background-negative: #ff6138;
+  --color-background-new: #bb76ff;
+  --color-background-overlay-default: rgba(0, 0, 0, 0.25);
+  --color-background-overlay-fade-full-to-bottom: linear-gradient(180deg,#0F0F0F00,#0F0F0F);
+  --color-background-overlay-fade-full-to-top: linear-gradient(0deg,#0F0F0F00,#0F0F0F);
+  --color-background-overlay-fade-to-bottom: linear-gradient(180deg,#00000000,#000000BF);
+  --color-background-overlay-fade-to-top: linear-gradient(0deg,#00000000,#000000BF);
+  --color-background-positive: #5ad363;
+  --color-background-surface: rgba(207, 214, 229, 0.08);
+  --color-border-negative: #ff6138;
+  --color-border-primary: #ffffff;
+  --color-border-secondary: rgba(207, 214, 229, 0.56);
+  --color-border-tertiary: rgba(207, 214, 229, 0.08);
+  --color-brand-azur: #20afff;
+  --color-brand-ecru: #e4d9cf;
+  --color-brand-extended-blue: #6792ff;
+  --color-brand-extended-brown: #a8954c;
+  --color-brand-extended-dusty-pink: #f6d1d1;
+  --color-brand-extended-green: #5ad363;
+  --color-brand-extended-lavender: #cfbdd2;
+  --color-brand-extended-mint-green: #c4e7d1;
+  --color-brand-extended-neon-yellow: #d6f382;
+  --color-brand-extended-orange: #ff9b26;
+  --color-brand-extended-purple: #bb76ff;
+  --color-brand-extended-rust: #d6832b;
+  --color-brand-extended-tan: #dfd796;
+  --color-brand-extended-turquoise: #91ceda;
+  --color-brand-fog: #cfd6e5;
+  --color-brand-moss: #bfbda8;
+  --color-brand-off-black: #292c33;
+  --color-brand-off-white: #f1f0eb;
+  --color-brand-pink: #ff82c2;
+  --color-brand-red: #ff6138;
+  --color-brand-stone: #9793a5;
+  --color-brand-yellow: #ffda40;
+  --color-data-visualization-blue: #20afff;
+  --color-data-visualization-cyan: #31f4e8;
+  --color-data-visualization-magenta: #ca26cc;
+  --color-data-visualization-negative: #ff6138;
+  --color-data-visualization-orange: #ff9b26;
+  --color-data-visualization-pink: #ff82c2;
+  --color-data-visualization-positive: #41d74d;
+  --color-data-visualization-purple: #bb76ff;
+  --color-data-visualization-yellow: #ffda40;
+  --color-icon-active: #20afff;
+  --color-icon-caution: #ffda40;
+  --color-icon-dark-static: #000000;
+  --color-icon-disabled: rgba(255, 255, 255, 0.32);
+  --color-icon-inverse-default: #000000;
+  --color-icon-inverse-secondary: rgba(0, 0, 0, 0.6);
+  --color-icon-light-static: #ffffff;
+  --color-icon-liked: #ff82c2;
+  --color-icon-negative: #ff6138;
+  --color-icon-positive: #5ad363;
+  --color-icon-primary: #ffffff;
+  --color-icon-secondary: rgba(255, 255, 255, 0.72);
+  --color-input-active-default: #20afff;
+  --color-input-active-disabled: rgba(207, 214, 229, 0.16);
+  --color-input-active-hovered: #1d9de5;
+  --color-input-active-pressed: #1a8ccc;
+  --color-input-default: rgba(207, 214, 229, 0.16);
+  --color-input-disabled: rgba(207, 214, 229, 0.08);
+  --color-input-hovered: rgba(207, 214, 229, 0.24);
+  --color-input-pressed: rgba(207, 214, 229, 0.32);
+  --color-misc-divider: rgba(207, 214, 229, 0.16);
+  --color-misc-focused: #20afff;
+  --color-misc-grabber: rgba(207, 214, 229, 0.48);
+  --color-misc-handle-default: #ffffff;
+  --color-misc-handle-disabled: #3e4147;
+  --color-platform-facebook: #1877f2;
+  --color-platform-instagram: linear-gradient(to top right,#FFCA05,#F6026B,#8512FA);
+  --color-platform-linkedin: #0072b1;
+  --color-platform-podcast: #f78422;
+  --color-platform-rumble: #74cc1d;
+  --color-platform-snapchat: #fffc00;
+  --color-platform-tiktok: #ff0050;
+  --color-platform-twitch: #9146ff;
+  --color-platform-twitter: #1da1f2;
+  --color-platform-vimeo: #1ab7ea;
+  --color-platform-website: #7d7d7d;
+  --color-platform-youtube: #ff0000;
+  --color-text-dark-static: #000000;
+  --color-text-disabled: rgba(255, 255, 255, 0.32);
+  --color-text-inverse-default: #000000;
+  --color-text-inverse-secondary: rgba(0, 0, 0, 0.6);
+  --color-text-light-static: #ffffff;
+  --color-text-negative: #ff6138;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.72);
+  --color-track-default: rgba(207, 214, 229, 0.24);
+  --color-track-disabled: rgba(207, 214, 229, 0.24);
+  --color-track-fill-default: #ffffff;
+  --color-track-fill-inverse: #000000;
+  --color-track-highlight-default: #ffda40;
+  --color-track-highlight-hovered: #e5c43a;
+  --color-track-highlight-pressed: #ccae33;
+  --color-track-inverse: rgba(0, 0, 0, 0.24);
+  --background-canvas: var(--color-background-base);
+  --background-surface: var(--color-background-surface);
+  --background-upsell: var(--color-action-accent-default);
+  --text-text: var(--color-action-primary-default);
+  --action-primary: var(--color-action-primary-default);
+  --action-primary-hover: var(--color-action-primary-hovered);
+  --action-secondary: var(--color-action-secondary-default);
+  --action-accent: var(--color-action-accent-default);
+  --action-liked: var(--color-action-accent-default);
+  --border-focus: var(--color-background-beta);
+  --border-divider: var(--color-action-accent-disabled);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--sg-ink); background: var(--sg-paper); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--sg-muted); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--sg-hairline); }
+.lead { max-width: 62ch; color: var(--sg-ink); opacity: .8; }
+.note { font-size: 13px; color: var(--sg-muted); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--sg-muted); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--sg-hairline); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--sg-muted); }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--sg-hairline); background: var(--sg-paper); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--sg-muted); }
+/* ---- mocks: the boxed reconstructions style themselves with the real
+   tokens (--background-page, --action-primary, --radius-button, …) so the
+   shapes and colours the guide shows are the measured ones. ---- */
+.mock { border: 1px solid var(--sg-hairline); overflow: hidden; background: var(--sg-paper); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 100px); padding: 0 12px 0 22px; font-size: 15px; color: var(--color-text-primary, #000); background: var(--background-page, #f1f0eb); }
+.navbar .wm { font-weight: 800; font-size: 24px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-nav-button-height, 44px); padding: 0 24px; font-size: 16px; font-weight: 600; border-radius: var(--radius-button, 10000px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-primary, #000); color: var(--color-text-inverse-default, #fff); }
+.btn.dark { background: var(--action-primary, #000); color: var(--color-text-inverse-default, #fff); }
+.btn.small { height: 34px; border-radius: var(--radius-button, 10000px); font-size: 13px; font-weight: 600; }
+.hero { color: var(--color-text-primary, #000); padding: 72px 40px; font: 500 60px/1 var(--sg-serif); letter-spacing: .01em; text-align: center; background: var(--background-page, #f1f0eb); }
+.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--color-text-secondary, rgba(0, 0, 0, .6)); margin: 16px auto 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-border-tertiary, rgba(0, 0, 0, .08)); padding: 14px; font-size: 13px; background: var(--color-background-elevation, #fff); }
+.tile .img { height: 140px; background: var(--color-background-surface, rgba(61, 77, 116, .06)); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 500 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { color: var(--color-text-secondary, rgba(0, 0, 0, .6)); font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--sg-hairline); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--sg-hairline); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--sg-muted); font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: var(--color-background-surface, rgba(61, 77, 116, .06)); border-radius: 999px; padding: 4px; gap: 4px; font-size: 15px; color: var(--color-text-primary, #000); }
+.toggle span { padding: 8px 22px; border-radius: 999px; }
+.toggle .on { background: var(--action-switch, #000); color: var(--color-text-inverse-default, #fff); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Epidemic Sound style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Epidemic Sound, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared Epidemic Sound design-token layer (the 151 semantic <code>--es-color-*</code> roles — action/background/border/icon/input/misc/platform/text/track plus the brand and data-viz palettes, the <code>--es-heading-*</code>/<code>--es-subheading-*</code>/<code>--es-text-*</code> type scales, <code>--es-radius-*</code>/<code>--es-elevation-*</code>/<code>--es-grid-*</code> and the component internals), the Sebenta display face next to Inter, and the measured values from the ecru marketing pages and the dark catalog. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from epidemicsound.com on 2026-11-13, signed out, in headless Chromium. Everything behind login.epidemicsound.com is a documented boundary; the login and signup forms were measured, never submitted. Inter and Sebenta are served faces and are not loaded here: samples fall back to system sans/serif.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The 100px sticky header carries the ES logotype, the mega-menu triggers (Music, Sound effects, Tools, License, Resources, For business), Pricing, the secondary Log-in pill and the primary Create-free-account pill. The primary button inverts with the surface: black fill on the ecru marketing pages, white fill on the dark catalog.</p>
+  <div class="mock" style="padding:20px;background:var(--background-page,#f1f0eb)">
+    <div class="navbar" style="color:var(--text-ink,#000)"><span class="wm">Epidemic Sound</span><span>Music</span><span>Sound effects</span><span>Pricing</span><span class="sp"></span><span class="btn small" style="background:var(--action-secondary,rgba(61,77,116,.12))">Log in</span><span class="btn small primary">Create free account</span></div>
+    <div class="hero" style="color:var(--text-ink,#000)">Soundtrack your story.<small>Royalty-free music and sound effects for video.</small><span class="btn primary">Create free account</span></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing/ stays on the ecru surface: 'Our subscriptions' in the 64px es-heading-xl, a Monthly/Yearly switch, the Creator/Pro/Pro-Plus columns and the black Get-30-days-free pill actions.</p>
+  <div class="mock" style="padding:20px;background:var(--background-page,#f1f0eb);color:var(--text-ink,#000)">
+    <div style="text-align:center;margin-bottom:18px"><span class="toggle"><span class="on">Monthly</span><span>Yearly</span></span></div>
+    <div class="grid">
+      <div class="tile" style="border-radius:var(--radius-surface,16px);background:#fff;color:var(--text-ink,#000)"><b>Creator</b><span class="sub" style="opacity:.6">For personal channels</span></div>
+      <div class="tile" style="border-radius:var(--radius-surface,16px);background:#fff;color:var(--text-ink,#000)"><b>Pro</b><span class="sub" style="opacity:.6">For freelancers and teams</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn dark" style="height:56px;border-radius:999px;padding:0 28px;font-size:16px">Get 30 days free</span></div>
+  </div>
+
+  <h2 class="sh">The catalog shell</h2>
+  <p class="lead">The catalog pages paint the dark theme signed out: a #121418 canvas, rgba(207,214,229,.08) surfaces, #fff text and primary fills, the #ff82c2 brand pink on the genre banner and liked states, #20afff on focus/active inputs, and rgba(207,214,229,.16) dividers. Track rows are 56px with an album-cover play button and hover actions.</p>
+  <div class="mock dark" style="padding:20px;background:var(--background-canvas,#121418);color:var(--color-text-primary,#fff)">
+    <div class="grid">
+      <div class="tile" style="border-radius:var(--radius-surface,16px);background:var(--action-accent,#ff82c2);border:none;color:#000"><b style="color:#000">GENRE</b><span class="sub" style="color:#000;opacity:.75">Pop music — 40px heading on the pink banner</span></div>
+      <div class="tile" style="border-radius:var(--radius-element,8px);background:var(--background-surface,rgba(207,214,229,.08));border:none;color:var(--color-text-primary,#fff)"><b style="color:var(--color-text-primary,#fff)">Almost Love</b><span class="sub" style="color:var(--color-text-secondary,rgba(255,255,255,.72))">Adelyn Paik · 2:28 · 160 BPM</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn" style="height:44px;border-radius:var(--radius-button,10000px);background:var(--action-primary,#fff);color:var(--color-text-inverse-default,#000);padding:0 20px;font-size:14px">Create free account</span> <span class="btn" style="height:44px;border-radius:var(--radius-button,10000px);background:var(--action-secondary,rgba(207,214,229,.16));color:var(--color-text-primary,#fff);padding:0 20px;font-size:14px">Log in</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared <code>--es-color-*</code> layer resolves per theme in the light (alternative-light) and dark sets: action/background/border/icon/input/misc/platform/text/track roles plus the brand palette (azur, ecru, pink, red, yellow, off-black, off-white) and the extended/data-viz ramps. Measured roles alias the declared values they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Under radii-override the shipped pages draw full-pill buttons (radius.button 10000px), 16px surfaces, 8px elements, 4px details and 2px tiny corners — while small/medium/large stay 0. Borders are hairline tints: rgba(0,0,0,.08)/rgba(0,0,0,.64) on light, rgba(207,214,229,.08)/(.56) on dark, with a #20afff azur (dark) or #000 (light) focus ring.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two served faces: <code>Inter</code> on every UI control, body and meta text, and <code>Sebenta</code> (weight 500, tight negative tracking) on every es-heading/es-subheading. Sizes are the declared es-* steps; samples fall back to system sans/serif.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --es-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"ui":{"v":"Inter, \"Inter Fallback: Arial\", \"Inter Fallback: Helvetica Neue\", Arial, \"Helvetica Neue\"","t":"fontFamily","s":"css-var --es-text-font-family (light)","d":"The declared Inter stack — every UI control, body and meta text (aliases --es-i-text-font-family, --pds-font-primary)."},"display":{"v":"Sebenta, \"Sebenta Fallback: Georgia\", \"Sebenta Fallback: Times New Roman\", \"Sebenta Fallback: Noto Serif\", Georgia, \"Times New Roman\", \"Noto Serif\"","t":"fontFamily","s":"css-var --es-header-font-family (light)","d":"The declared Sebenta stack — every es-heading/es-subheading and the h1-h6 layer (alias --es-i-header-font-family)."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of track-row default (raw/components-computed.json)","d":"400 — the es-text-xs meta weight; body text sits at 500."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of genre-h1 default (raw/components-computed.json)","d":"500 — every es-heading, es-subheading-l, es-text-l/xl/m/s and buttons' base weight."},"semibold":{"v":600,"t":"fontWeight","s":"computed fontWeight of btn-signup default (raw/components-computed.json)","d":"600 — es-text-button-*, es-subheading-s/m and the overlines."},"bold":{"v":700,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-bold","d":"The declared `--font-weight-bold`."},"declared":{"bold":{"v":700,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-bold","d":"The declared `--font-weight-bold`."},"medium":{"v":500,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-medium","d":"The declared `--font-weight-medium`."},"normal":{"v":400,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-normal","d":"The declared `--font-weight-normal`."},"semibold":{"v":600,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-semibold","d":"The declared `--font-weight-semibold`."}},"heading":{"2xl":{"v":500,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-2xl-font-weight","d":"The declared `--es-heading-2xl-font-weight`."},"2xs":{"v":500,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-2xs-font-weight","d":"The declared `--es-heading-2xs-font-weight`."},"3xl":{"v":500,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-3xl-font-weight","d":"The declared `--es-heading-3xl-font-weight`."},"l":{"v":500,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-l-font-weight","d":"The declared `--es-heading-l-font-weight`."},"m":{"v":500,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-m-font-weight","d":"The declared `--es-heading-m-font-weight`."},"s":{"v":500,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-s-font-weight","d":"The declared `--es-heading-s-font-weight`."},"xl":{"v":500,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-xl-font-weight","d":"The declared `--es-heading-xl-font-weight`."},"xs":{"v":500,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-xs-font-weight","d":"The declared `--es-heading-xs-font-weight`."}},"subheading":{"l":{"v":500,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-subheading-l-font-weight","d":"The declared `--es-subheading-l-font-weight`."},"m":{"v":600,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-subheading-m-font-weight","d":"The declared `--es-subheading-m-font-weight`."},"s":{"v":600,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-subheading-s-font-weight","d":"The declared `--es-subheading-s-font-weight`."}},"text":{"button-m":{"v":600,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-button-m-font-weight","d":"The declared `--es-text-button-m-font-weight`."},"button-s":{"v":600,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-button-s-font-weight","d":"The declared `--es-text-button-s-font-weight`."},"button-xs":{"v":600,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-button-xs-font-weight","d":"The declared `--es-text-button-xs-font-weight`."},"l":{"v":500,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-l-font-weight","d":"The declared `--es-text-l-font-weight`."},"m":{"v":500,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-m-font-weight","d":"The declared `--es-text-m-font-weight`."},"overline-m":{"v":600,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-overline-m-font-weight","d":"The declared `--es-text-overline-m-font-weight`."},"overline-s":{"v":500,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-overline-s-font-weight","d":"The declared `--es-text-overline-s-font-weight`."},"s":{"v":500,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-s-font-weight","d":"The declared `--es-text-s-font-weight`."},"xl":{"v":500,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-xl-font-weight","d":"The declared `--es-text-xl-font-weight`."},"xs":{"v":400,"t":"fontWeight","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-xs-font-weight","d":"The declared `--es-text-xs-font-weight`."}}},"size":{"heading":{"2xl":{"v":"80px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-2xl-font-size","d":"The declared `--es-heading-2xl-font-size`."},"2xs":{"v":"20px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-2xs-font-size","d":"The declared `--es-heading-2xs-font-size`."},"3xl":{"v":"128px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-3xl-font-size","d":"The declared `--es-heading-3xl-font-size`."},"l":{"v":"48px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-l-font-size","d":"The declared `--es-heading-l-font-size`."},"m":{"v":"40px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-m-font-size","d":"The declared `--es-heading-m-font-size`."},"s":{"v":"32px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-s-font-size","d":"The declared `--es-heading-s-font-size`."},"xl":{"v":"64px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-xl-font-size","d":"The declared `--es-heading-xl-font-size`."},"xs":{"v":"24px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-xs-font-size","d":"The declared `--es-heading-xs-font-size`."}},"subheading":{"l":{"v":"20px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-subheading-l-font-size","d":"The declared `--es-subheading-l-font-size`."},"m":{"v":"16px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-subheading-m-font-size","d":"The declared `--es-subheading-m-font-size`."},"s":{"v":"14px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-subheading-s-font-size","d":"The declared `--es-subheading-s-font-size`."}},"text":{"button-m":{"v":"16px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-button-m-font-size","d":"The declared `--es-text-button-m-font-size`."},"button-s":{"v":"14px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-button-s-font-size","d":"The declared `--es-text-button-s-font-size`."},"button-xs":{"v":"12px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-button-xs-font-size","d":"The declared `--es-text-button-xs-font-size`."},"l":{"v":"18px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-l-font-size","d":"The declared `--es-text-l-font-size`."},"m":{"v":"16px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-m-font-size","d":"The declared `--es-text-m-font-size`."},"overline-m":{"v":"14px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-overline-m-font-size","d":"The declared `--es-text-overline-m-font-size`."},"overline-s":{"v":"12px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-overline-s-font-size","d":"The declared `--es-text-overline-s-font-size`."},"s":{"v":"14px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-s-font-size","d":"The declared `--es-text-s-font-size`."},"xl":{"v":"18px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-xl-font-size","d":"The declared `--es-text-xl-font-size`."},"xs":{"v":"12px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-xs-font-size","d":"The declared `--es-text-xs-font-size`."}},"measured":{"button-s":{"v":"{font.size.subheading.s}","t":"dimension","s":"computed fontSize of btn-signup default (raw/components-computed.json); matches declared --es-subheading-s-font-size","d":"The 14px es-text-button-s header button label."},"h1-genre":{"v":"{font.size.heading.m}","t":"dimension","s":"computed fontSize of genre-h1 default (raw/components-computed.json); matches declared --es-heading-m-font-size","d":"The 40px es-heading-m genre page heading."},"h1-pricing":{"v":"{font.size.heading.xl}","t":"dimension","s":"computed fontSize of pr-h1 default (raw/components-computed.json); matches declared --es-heading-xl-font-size","d":"The 64px es-heading-xl pricing heading."},"h1-home":{"v":"{font.size.heading.2xl}","t":"dimension","s":"computed fontSize of hero-h1 default (raw/components-computed.json); matches declared --es-heading-2xl-font-size","d":"The home hero display heading size."},"plan-name":{"v":"{font.size.heading.2xs}","t":"dimension","s":"computed fontSize of plan-name default (raw/components-computed.json); matches declared --es-heading-2xs-font-size","d":"The 20px es-subheading-l plan name."},"kc-h1":{"v":"{font.size.heading.l}","t":"dimension","s":"computed fontSize of kc-h1 default (raw/components-computed.json); matches declared --es-heading-l-font-size","d":"The Keycloak login heading size."}}},"tracking":{"heading":{"2xl":{"v":"-.15rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-2xl-letter-spacing","d":"The declared `--es-heading-2xl-letter-spacing`."},"2xs":{"v":"-.025rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-2xs-letter-spacing","d":"The declared `--es-heading-2xs-letter-spacing`."},"3xl":{"v":"-.32rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-3xl-letter-spacing","d":"The declared `--es-heading-3xl-letter-spacing`."},"l":{"v":"-.09rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-l-letter-spacing","d":"The declared `--es-heading-l-letter-spacing`."},"m":{"v":"-.075rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-m-letter-spacing","d":"The declared `--es-heading-m-letter-spacing`."},"s":{"v":"-.06rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-s-letter-spacing","d":"The declared `--es-heading-s-letter-spacing`."},"xl":{"v":"-.12rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-xl-letter-spacing","d":"The declared `--es-heading-xl-letter-spacing`."},"xs":{"v":"-.03rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-xs-letter-spacing","d":"The declared `--es-heading-xs-letter-spacing`."}},"text":{"overline-m":{"v":"1.39062px","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-overline-m-letter-spacing","d":"The declared `--es-text-overline-m-letter-spacing`."},"overline-s":{"v":"1.1875px","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-overline-s-letter-spacing","d":"The declared `--es-text-overline-s-letter-spacing`."}}},"lineHeight":{"heading":{"2xl":{"v":"80px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-2xl-line-height","d":"The declared `--es-heading-2xl-line-height`."},"2xs":{"v":"24px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-2xs-line-height","d":"The declared `--es-heading-2xs-line-height`."},"3xl":{"v":"128px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-3xl-line-height","d":"The declared `--es-heading-3xl-line-height`."},"l":{"v":"54px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-l-line-height","d":"The declared `--es-heading-l-line-height`."},"m":{"v":"48px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-m-line-height","d":"The declared `--es-heading-m-line-height`."},"s":{"v":"40px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-s-line-height","d":"The declared `--es-heading-s-line-height`."},"xl":{"v":"68px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-xl-line-height","d":"The declared `--es-heading-xl-line-height`."},"xs":{"v":"30px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-heading-xs-line-height","d":"The declared `--es-heading-xs-line-height`."}},"subheading":{"l":{"v":"24px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-subheading-l-line-height","d":"The declared `--es-subheading-l-line-height`."},"m":{"v":"24px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-subheading-m-line-height","d":"The declared `--es-subheading-m-line-height`."},"s":{"v":"24px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-subheading-s-line-height","d":"The declared `--es-subheading-s-line-height`."}},"text":{"button-m":{"v":"24px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-button-m-line-height","d":"The declared `--es-text-button-m-line-height`."},"button-s":{"v":"24px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-button-s-line-height","d":"The declared `--es-text-button-s-line-height`."},"button-xs":{"v":"16px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-button-xs-line-height","d":"The declared `--es-text-button-xs-line-height`."},"l":{"v":"28px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-l-line-height","d":"The declared `--es-text-l-line-height`."},"m":{"v":"24px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-m-line-height","d":"The declared `--es-text-m-line-height`."},"overline-m":{"v":"24px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-overline-m-line-height","d":"The declared `--es-text-overline-m-line-height`."},"overline-s":{"v":"16px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-overline-s-line-height","d":"The declared `--es-text-overline-s-line-height`."},"s":{"v":"24px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-s-line-height","d":"The declared `--es-text-s-line-height`."},"xl":{"v":"28px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-xl-line-height","d":"The declared `--es-text-xl-line-height`."},"xs":{"v":"16px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-xs-line-height","d":"The declared `--es-text-xs-line-height`."}}}},"radius":{"button":{"v":"10000px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-radius-button; Resolved under `radii-override` (raw/css-vars.json): :root declares 2/4/8/10000px, body zeroes every radius, and radii-override re-enables the values below — buttons are 10000px pills while small/medium/large stay 0.","d":"The declared `--es-radius-button`."},"circle":{"v":0,"t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-radius-circle; Resolved under `radii-override` (raw/css-vars.json): :root declares 2/4/8/10000px, body zeroes every radius, and radii-override re-enables the values below — buttons are 10000px pills while small/medium/large stay 0.","d":"The declared `--es-radius-circle`."},"detail":{"v":"4px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-radius-detail; Resolved under `radii-override` (raw/css-vars.json): :root declares 2/4/8/10000px, body zeroes every radius, and radii-override re-enables the values below — buttons are 10000px pills while small/medium/large stay 0.","d":"The declared `--es-radius-detail`."},"element":{"v":"8px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-radius-element; Resolved under `radii-override` (raw/css-vars.json): :root declares 2/4/8/10000px, body zeroes every radius, and radii-override re-enables the values below — buttons are 10000px pills while small/medium/large stay 0.","d":"The declared `--es-radius-element`."},"large":{"v":0,"t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-radius-large; Resolved under `radii-override` (raw/css-vars.json): :root declares 2/4/8/10000px, body zeroes every radius, and radii-override re-enables the values below — buttons are 10000px pills while small/medium/large stay 0.","d":"The declared `--es-radius-large`."},"medium":{"v":0,"t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-radius-medium; Resolved under `radii-override` (raw/css-vars.json): :root declares 2/4/8/10000px, body zeroes every radius, and radii-override re-enables the values below — buttons are 10000px pills while small/medium/large stay 0.","d":"The declared `--es-radius-medium`."},"small":{"v":0,"t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-radius-small; Resolved under `radii-override` (raw/css-vars.json): :root declares 2/4/8/10000px, body zeroes every radius, and radii-override re-enables the values below — buttons are 10000px pills while small/medium/large stay 0.","d":"The declared `--es-radius-small`."},"surface":{"v":"16px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-radius-surface; Resolved under `radii-override` (raw/css-vars.json): :root declares 2/4/8/10000px, body zeroes every radius, and radii-override re-enables the values below — buttons are 10000px pills while small/medium/large stay 0.","d":"The declared `--es-radius-surface`."},"tiny":{"v":"2px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-radius-tiny; Resolved under `radii-override` (raw/css-vars.json): :root declares 2/4/8/10000px, body zeroes every radius, and radii-override re-enables the values below — buttons are 10000px pills while small/medium/large stay 0.","d":"The declared `--es-radius-tiny`."},"tailwind":{"lg":{"v":"8px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --radius-lg","d":"The declared `--radius-lg`."},"sm":{"v":"4px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --radius-sm","d":"The declared `--radius-sm`."}},"measured-pill":{"v":"{radius.button}","t":"dimension","s":"computed borderTopLeftRadius of btn-signup default (raw/components-computed.json); matches declared --es-radius-button","d":"The measured button radius — 10000px pill under radii-override."},"measured-surface":{"v":"{radius.surface}","t":"dimension","s":"computed borderTopLeftRadius of genre-banner default (raw/components-computed.json); matches declared --es-radius-surface","d":"The genre banner's surface radius."},"measured-detail":{"v":"{radius.detail}","t":"dimension","s":"computed borderTopLeftRadius of track-play default (raw/components-computed.json); matches declared --es-radius-detail","d":"The track-play cover's detail radius."}},"elevation":{"bottom":{"v":"rgba(0, 0, 0, 0.25) 0px -8px 16px 0px","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-elevation-bottom","d":"The declared `--es-elevation-bottom`."},"floating":{"v":"rgba(0, 0, 0, 0.25) 0px 8px 16px 0px","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-elevation-floating","d":"The declared `--es-elevation-floating`."},"top":{"v":"rgba(0, 0, 0, 0.25) 0px 8px 16px 0px","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-elevation-top","d":"The declared `--es-elevation-top`."}},"grid":{"gutter":{"large":{"v":"16px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-grid-gutter-large","d":"The declared `--es-grid-gutter-large`."},"medium":{"v":"16px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-grid-gutter-medium","d":"The declared `--es-grid-gutter-medium`."},"small":{"v":"16px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-grid-gutter-small","d":"The declared `--es-grid-gutter-small`."}},"padding":{"large":{"v":"56px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-grid-padding-large","d":"The declared `--es-grid-padding-large`."},"medium":{"v":"32px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-grid-padding-medium","d":"The declared `--es-grid-padding-medium`."},"small":{"v":"16px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-grid-padding-small","d":"The declared `--es-grid-padding-small`."}},"page":{"maxWidth":{"v":"1440px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --full-page-grid-max-width","d":"The declared `--full-page-grid-max-width`."}}},"border":{"width":{"input":{"v":"1px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-border-width-input","d":"The declared `--es-border-width-input`."},"select-input":{"v":"2px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-border-width-select-input","d":"The declared `--es-border-width-select-input`."}}},"spacing":{"unit":{"v":"4px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --spacing","d":"The declared `--spacing`."}},"container":{"2xl":{"v":"672px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --container-2xl","d":"The declared `--container-2xl`."},"3xl":{"v":"768px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --container-3xl","d":"The declared `--container-3xl`."},"3xs":{"v":"256px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --container-3xs","d":"The declared `--container-3xs`."},"md":{"v":"448px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --container-md","d":"The declared `--container-md`."}},"breakpoint":{"md":{"v":"481px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --breakpoint-md","d":"The declared `--breakpoint-md`."},"nav":{"v":"1024px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --breakpoint-nav","d":"The declared `--breakpoint-nav`."}},"blur":{"2xl":{"v":"40px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --blur-2xl","d":"The declared `--blur-2xl`."}},"easing":{"in-out":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --ease-in-out","d":"The declared `--ease-in-out`."},"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --ease-out","d":"The declared `--ease-out`."}},"motion":{"animate":{"lavalamp":{"v":"lavalamp 6s ease-in-out infinite","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --animate-lavalamp","d":"The declared `--animate-lavalamp`."},"marquee":{"v":"marquee 60s linear infinite","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --animate-marquee","d":"The declared `--animate-marquee`."},"pulse":{"v":"pulse 2s cubic-bezier(.4,0,.6,1) infinite","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --animate-pulse","d":"The declared `--animate-pulse`."}},"animation":{"duration":{"v":"600ms","t":"duration","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --animation-duration","d":"The declared `--animation-duration`."},"slide":{"in":{"timing":{"function":{"v":[0.9,0.0,0.0,1.0],"t":"cubicBezier","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --animation-slide-in-timing-function","d":"The declared `--animation-slide-in-timing-function`."}}}}},"default":{"transition":{"duration":{"v":"150ms","t":"duration","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --default-transition-duration","d":"The declared `--default-transition-duration`."},"timing":{"function":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --default-transition-timing-function","d":"The declared `--default-transition-timing-function`."}}}}},"color":{"brand":{"black":{"v":"#000000","t":"color","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --color-brand-black","d":"The declared `--color-brand-black`."},"white":{"v":"#ffffff","t":"color","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --color-brand-white","d":"The declared `--color-brand-white`."}}},"component":{"header-height":{"v":"100px","t":"dimension","s":"measured h of header default (raw/components-computed.json)","d":"The 100px sticky site header."},"track-row-height":{"v":"56px","t":"dimension","s":"measured h of track-row default (raw/components-computed.json)","d":"The 56px track row — matches declared --es-trackrow-size."},"track-play-size":{"v":"56px","t":"dimension","s":"measured w of track-play default (raw/components-computed.json)","d":"The 56px album-cover play button — matches --es-play-button-size-m."},"icon-button":{"v":"44px","t":"dimension","s":"measured h of track-like default (raw/components-computed.json)","d":"The 44px ghost icon button on track rows."},"nav-button-height":{"v":"44px","t":"dimension","s":"measured h of nav-pricing default (raw/components-computed.json)","d":"The 44px header control height."},"login-card-width":{"v":"416px","t":"dimension","s":"measured w of kc-card default (raw/components-computed.json)","d":"The Keycloak form card width."},"login-field-height":{"v":"54px","t":"dimension","s":"measured h of kc-email default (raw/components-computed.json)","d":"The Keycloak input height."},"login-submit-height":{"v":"56px","t":"dimension","s":"measured h of kc-submit default (raw/components-computed.json)","d":"The Keycloak primary button height."},"billing-switch":{"v":"40px","t":"dimension","s":"measured w of billing-switch default (raw/components-computed.json)","d":"The plan-period switch track width."},"mobile-header-height":{"v":"100px","t":"dimension","s":"measured h of m-header default (raw/components-computed.json)","d":"The phone top bar height."},"genre-banner-height":{"v":"204px","t":"dimension","s":"measured h of genre-banner default (raw/components-computed.json)","d":"The genre banner card height."},"trackrow":{"margin":{"v":"16px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-trackrow-margin","d":"The declared `--es-trackrow-margin`."},"padding":{"default":{"v":0,"t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-trackrow-padding","d":"The declared `--es-trackrow-padding`."},"right":{"v":"8px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-trackrow-padding-right","d":"The declared `--es-trackrow-padding-right`."}},"size":{"v":"56px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-trackrow-size","d":"The declared `--es-trackrow-size`."}},"play":{"l":{"v":"64px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-play-button-size-l","d":"The declared `--es-play-button-size-l`."},"m":{"v":"56px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-play-button-size-m","d":"The declared `--es-play-button-size-m`."},"s":{"v":"40px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-play-button-size-s","d":"The declared `--es-play-button-size-s`."},"xl":{"v":"80px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-play-button-size-xl","d":"The declared `--es-play-button-size-xl`."},"xs":{"v":"32px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-play-button-size-xs","d":"The declared `--es-play-button-size-xs`."},"xxs":{"v":"24px","t":"dimension","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-play-button-size-xxs","d":"The declared `--es-play-button-size-xxs`."}},"i":{"accent":{"button":{"text":{"color":{"v":"#000000","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-accent-button-text-color","d":"The declared `--es-i-accent-button-text-color`."}}}},"header":{"font":{"family":{"v":"Sebenta, \"Sebenta Fallback: Georgia\", \"Sebenta Fallback: Times New Roman\", \"Sebenta Fallback: Noto Serif\", Georgia, \"Times New Roman\", \"Noto Serif\"","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-header-font-family","d":"The declared `--es-i-header-font-family`."}}},"text":{"font":{"family":{"v":"Inter, \"Inter Fallback: Arial\", \"Inter Fallback: Helvetica Neue\", Arial, \"Helvetica Neue\"","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-text-font-family","d":"The declared `--es-i-text-font-family`."}}}},"declared":{"button":{"s":{"min":{"height":{"v":"2rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-button-s-min-height (component-scoped declaration, not :root-resolved)","d":"The declared `--es-button-s-min-height`."},"width":{"v":"3.5rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-button-s-min-width (component-scoped declaration, not :root-resolved)","d":"The declared `--es-button-s-min-width`."}},"padding":{"v":".25rem .75rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-button-s-padding (component-scoped declaration, not :root-resolved)","d":"The declared `--es-button-s-padding`."}}},"dropdown":{"list":{"handler":{"margin":{"v":"0","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-dropdown-list-handler-margin (component-scoped declaration, not :root-resolved)","d":"The declared `--es-dropdown-list-handler-margin`."}},"item":{"horizontal":{"padding":{"v":"1","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-dropdown-list-item-horizontal-padding (component-scoped declaration, not :root-resolved)","d":"The declared `--es-dropdown-list-item-horizontal-padding`."}},"min":{"height":{"v":"2.5","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-dropdown-list-item-min-height (component-scoped declaration, not :root-resolved)","d":"The declared `--es-dropdown-list-item-min-height`."},"vertical":{"padding":{"v":".5","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-dropdown-list-item-min-vertical-padding (component-scoped declaration, not :root-resolved)","d":"The declared `--es-dropdown-list-item-min-vertical-padding`."}}}},"max":{"height":{"default":{"v":"calc(var(--es-dropdown-list-vertical-list-padding) + calc(var(--es-dropdown-list-item-min-height) * var(--es-dropdown-list-max-visible-items)))","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-dropdown-list-max-height (component-scoped declaration, not :root-resolved)","d":"The declared `--es-dropdown-list-max-height`."},"mobile":{"v":"calc(var(--es-dropdown-list-item-min-height) * var(--es-dropdown-list-max-visible-items-mobile))","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-dropdown-list-max-height-mobile (component-scoped declaration, not :root-resolved)","d":"The declared `--es-dropdown-list-max-height-mobile`."}},"visible":{"items":{"v":"6.5","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-dropdown-list-max-visible-items (component-scoped declaration, not :root-resolved)","d":"The declared `--es-dropdown-list-max-visible-items`."}}},"min":{"window":{"margin":{"v":"8","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-dropdown-list-min-window-margin (component-scoped declaration, not :root-resolved)","d":"The declared `--es-dropdown-list-min-window-margin`."}}},"vertical":{"list":{"padding":{"v":".5","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-dropdown-list-vertical-list-padding (component-scoped declaration, not :root-resolved)","d":"The declared `--es-dropdown-list-vertical-list-padding`."}}}}},"fp":{"grid":{"max":{"width":{"v":"110rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-fp-grid-max-width (component-scoped declaration, not :root-resolved)","d":"The declared `--es-fp-grid-max-width`."}}}},"handles":{"border":{"width":{"v":".125rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-handles-border-width (component-scoped declaration, not :root-resolved)","d":"The declared `--es-handles-border-width`."}}},"i":{"activity":{"badge":{"font":{"size":{"v":".625rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-activity-badge-font-size (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-activity-badge-font-size`."}}}},"buffer":{"v":"1px","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-buffer (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-buffer`."},"container":{"size":{"v":"2.75rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-container-size (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-container-size`."}},"control":{"inset":{"v":".5rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-control-inset (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-control-inset`."}},"cover":{"art":{"action":{"inset":{"v":"0px","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-cover-art-action-inset (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-cover-art-action-inset`."}},"focus":{"padding":{"v":"4px","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-cover-art-focus-padding (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-cover-art-focus-padding`."}},"image":{"padding":{"v":".5rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-cover-art-image-padding (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-cover-art-image-padding`."}},"play":{"button":{"size":{"v":"var(--es-play-button-size-m,3.5rem)","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-cover-art-play-button-size (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-cover-art-play-button-size`."}}}}},"feature":{"highlight":{"size":{"v":"16.25rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-feature-highlight-size (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-feature-highlight-size`."}}},"focus":{"ring":{"offset":{"v":"4px","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-focus-ring-offset (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-focus-ring-offset`."}}},"modal":{"media":{"overlay":{"opacity":{"v":"0","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-modal-media-overlay-opacity (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-modal-media-overlay-opacity`."}}},"size":{"v":"28.5rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-modal-size (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-modal-size`."}},"play":{"button":{"image":{"visibility":{"v":"hidden","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-play-button-image-visibility (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-play-button-image-visibility`."}}}},"playhead":{"cursor":{"v":"pointer","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-playhead-cursor (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-playhead-cursor`."}},"status":{"badge":{"font":{"size":{"v":".5625rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-status-badge-font-size (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-status-badge-font-size`."}},"padding":{"v":"0 .25rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-status-badge-padding (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-status-badge-padding`."}}},"tab":{"block":{"padding":{"v":"calc(.5rem - 2px)","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-tab-block-padding (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-tab-block-padding`."}},"s":{"block":{"padding":{"v":".1875rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-tab-s-block-padding (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-tab-s-block-padding`."}}}},"tablist":{"gap":{"v":"1rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-tablist-gap (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-tablist-gap`."}},"thumb":{"width":{"default":{"v":".75rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-thumb-width (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-thumb-width`."},"with":{"offset":{"v":"calc(var(--es-i-thumb-width) + calc(var(--es-i-focus-ring-offset) * 2))","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-thumb-width-with-offset (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-thumb-width-with-offset`."}}}},"tip":{"height":{"v":"calc(4px + var(--es-i-buffer))","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-tip-height (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-tip-height`."},"vertical":{"offset":{"v":"50%","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-tip-vertical-offset (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-tip-vertical-offset`."}},"width":{"v":"8px","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-tip-width (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-tip-width`."}},"tooltip":{"font":{"size":{"v":".6875rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-tooltip-font-size (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-tooltip-font-size`."},"weight":{"v":"500","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-tooltip-font-weight (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-tooltip-font-weight`."}},"line":{"height":{"v":"1rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-tooltip-line-height (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-tooltip-line-height`."}}},"top":{"banner":{"block":{"padding":{"v":"1rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-top-banner-block-padding (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-top-banner-block-padding`."}},"close":{"button":{"offset":{"v":".375rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-top-banner-close-button-offset (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-top-banner-close-button-offset`."}}},"inline":{"padding":{"v":"var(--es-grid-padding-small)","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-top-banner-inline-padding (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-top-banner-inline-padding`."}}}},"track":{"action":{"color":{"v":"var(--es-color-text-secondary)","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-track-action-color (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-track-action-color`."}},"height":{"v":"3rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-track-height (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-track-height`."},"selector":{"opacity":{"v":"0","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-track-selector-opacity (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-track-selector-opacity`."}}},"video":{"controls":{"direction":{"v":"1","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-video-controls-direction (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-video-controls-direction`."},"opacity":{"v":"1","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-video-controls-opacity (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-video-controls-opacity`."},"position":{"v":"0px","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-video-controls-position (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-video-controls-position`."}},"overlay":{"color":{"v":"rgba(0,0,0,.5)","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-video-overlay-color (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-video-overlay-color`."},"padding":{"v":"0","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-video-overlay-padding (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-video-overlay-padding`."}}},"width":{"transition":{"time":{"v":".3s","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-i-width-transition-time (component-scoped declaration, not :root-resolved)","d":"The declared `--es-i-width-transition-time`."}}}},"iconbutton":{"s":{"icon":{"max":{"height":{"v":"1rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-iconbutton-s-icon-max-height (component-scoped declaration, not :root-resolved)","d":"The declared `--es-iconbutton-s-icon-max-height`."},"width":{"v":"1rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-iconbutton-s-icon-max-width (component-scoped declaration, not :root-resolved)","d":"The declared `--es-iconbutton-s-icon-max-width`."}}},"min":{"height":{"v":"2rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-iconbutton-s-min-height (component-scoped declaration, not :root-resolved)","d":"The declared `--es-iconbutton-s-min-height`."},"width":{"v":"2rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-iconbutton-s-min-width (component-scoped declaration, not :root-resolved)","d":"The declared `--es-iconbutton-s-min-width`."}}},"xs":{"icon":{"max":{"height":{"v":"1rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-iconbutton-xs-icon-max-height (component-scoped declaration, not :root-resolved)","d":"The declared `--es-iconbutton-xs-icon-max-height`."},"width":{"v":"1rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-iconbutton-xs-icon-max-width (component-scoped declaration, not :root-resolved)","d":"The declared `--es-iconbutton-xs-icon-max-width`."}}}}},"plugin":{"icon":{"size":{"l":{"v":"1rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-plugin-icon-size-l (component-scoped declaration, not :root-resolved)","d":"The declared `--es-plugin-icon-size-l`."},"m":{"v":"1rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-plugin-icon-size-m (component-scoped declaration, not :root-resolved)","d":"The declared `--es-plugin-icon-size-m`."}}}},"sectionbanner":{"icon":{"max":{"height":{"v":"1rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-sectionbanner-icon-max-height (component-scoped declaration, not :root-resolved)","d":"The declared `--es-sectionbanner-icon-max-height`."},"width":{"v":"1rem","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-sectionbanner-icon-max-width (component-scoped declaration, not :root-resolved)","d":"The declared `--es-sectionbanner-icon-max-width`."}}}},"select":{"input":{"bottom":{"margin":{"filled":{"v":".375","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-select-input-bottom-margin-filled (component-scoped declaration, not :root-resolved)","d":"The declared `--es-select-input-bottom-margin-filled`."}}},"chevron":{"icon":{"inner":{"padding":{"v":".5","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-select-input-chevron-icon-inner-padding (component-scoped declaration, not :root-resolved)","d":"The declared `--es-select-input-chevron-icon-inner-padding`."}},"width":{"v":"1.5","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-select-input-chevron-icon-width (component-scoped declaration, not :root-resolved)","d":"The declared `--es-select-input-chevron-icon-width`."}}},"handler":{"top":{"padding":{"v":"calc(calc(var(--es-select-input-horizontal-margin) + var(--es-select-input-chevron-icon-width) + var(--es-select-input-chevron-icon-inner-padding)) * 1rem)","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-select-input-handler-top-padding (component-scoped declaration, not :root-resolved)","d":"The declared `--es-select-input-handler-top-padding`."}}},"horizontal":{"margin":{"v":"1","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-select-input-horizontal-margin (component-scoped declaration, not :root-resolved)","d":"The declared `--es-select-input-horizontal-margin`."}},"label":{"line":{"height":{"v":"calc(16 / 12)","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-select-input-label-line-height (component-scoped declaration, not :root-resolved)","d":"The declared `--es-select-input-label-line-height`."}},"margin":{"origin":{"v":"calc(calc(var(--es-select-input-size) - var(--es-select-input-label-line-height)) / 2)","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-select-input-label-margin-origin (component-scoped declaration, not :root-resolved)","d":"The declared `--es-select-input-label-margin-origin`."}},"scale":{"floating":{"v":".75","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-select-input-label-scale-floating (component-scoped declaration, not :root-resolved)","d":"The declared `--es-select-input-label-scale-floating`."}},"top":{"margin":{"floating":{"v":".625","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-select-input-label-top-margin-floating (component-scoped declaration, not :root-resolved)","d":"The declared `--es-select-input-label-top-margin-floating`."}}},"transform":{"v":"calc(calc(calc(var(--es-select-input-label-margin-origin) - var(--es-select-input-label-top-margin-floating)) / var(--es-select-input-label-line-height)) * -100%)","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-select-input-label-transform (component-scoped declaration, not :root-resolved)","d":"The declared `--es-select-input-label-transform`."},"width":{"v":"calc(100% - calc(calc(calc(var(--es-select-input-horizontal-margin) * 2) + var(--es-select-input-chevron-icon-width) + var(--es-select-input-chevron-icon-inner-padding)) * 1rem))","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-select-input-label-width (component-scoped declaration, not :root-resolved)","d":"The declared `--es-select-input-label-width`."}},"line":{"height":{"v":"1.5","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-select-input-line-height (component-scoped declaration, not :root-resolved)","d":"The declared `--es-select-input-line-height`."}},"size":{"v":"3.5","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-select-input-size (component-scoped declaration, not :root-resolved)","d":"The declared `--es-select-input-size`."},"top":{"margin":{"filled":{"v":"calc(calc(var(--es-select-input-size) - var(--es-select-input-line-height)) - var(--es-select-input-bottom-margin-filled))","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-select-input-top-margin-filled (component-scoped declaration, not :root-resolved)","d":"The declared `--es-select-input-top-margin-filled`."}}}}},"selector":{"input":{"size":{"v":"1.5","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-selector-input-size (component-scoped declaration, not :root-resolved)","d":"The declared `--es-selector-input-size`."}}},"spinner":{"color":{"v":"inherit","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-spinner-color (component-scoped declaration, not :root-resolved)","d":"The declared `--es-spinner-color`."},"size":{"v":"0","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-spinner-size (component-scoped declaration, not :root-resolved)","d":"The declared `--es-spinner-size`."}},"text":{"input":{"adornment":{"margin":{"v":".375","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-input-adornment-margin (component-scoped declaration, not :root-resolved)","d":"The declared `--es-text-input-adornment-margin`."}},"bottom":{"margin":{"filled":{"v":".4375","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-input-bottom-margin-filled (component-scoped declaration, not :root-resolved)","d":"The declared `--es-text-input-bottom-margin-filled`."}}},"horizontal":{"margin":{"v":"1","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-input-horizontal-margin (component-scoped declaration, not :root-resolved)","d":"The declared `--es-text-input-horizontal-margin`."}},"label":{"line":{"height":{"v":"calc(16 / 12)","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-input-label-line-height (component-scoped declaration, not :root-resolved)","d":"The declared `--es-text-input-label-line-height`."}},"margin":{"origin":{"v":"calc(calc(var(--es-text-input-size) - var(--es-text-input-label-line-height)) / 2)","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-input-label-margin-origin (component-scoped declaration, not :root-resolved)","d":"The declared `--es-text-input-label-margin-origin`."}},"scale":{"floating":{"v":".75","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-input-label-scale-floating (component-scoped declaration, not :root-resolved)","d":"The declared `--es-text-input-label-scale-floating`."}},"top":{"margin":{"floating":{"v":".625","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-input-label-top-margin-floating (component-scoped declaration, not :root-resolved)","d":"The declared `--es-text-input-label-top-margin-floating`."}}},"transform":{"v":"calc(calc(calc(var(--es-text-input-label-margin-origin) - var(--es-text-input-label-top-margin-floating)) / var(--es-text-input-label-line-height)) * -100%)","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-input-label-transform (component-scoped declaration, not :root-resolved)","d":"The declared `--es-text-input-label-transform`."}},"line":{"height":{"v":"1.5","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-input-line-height (component-scoped declaration, not :root-resolved)","d":"The declared `--es-text-input-line-height`."}},"size":{"v":"3.5","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-input-size (component-scoped declaration, not :root-resolved)","d":"The declared `--es-text-input-size`."},"top":{"margin":{"filled":{"v":"calc(calc(var(--es-text-input-size) - var(--es-text-input-line-height)) - var(--es-text-input-bottom-margin-filled))","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-input-top-margin-filled (component-scoped declaration, not :root-resolved)","d":"The declared `--es-text-input-top-margin-filled`."}}},"vertical":{"margin":{"origin":{"v":"calc(calc(var(--es-text-input-size) - var(--es-text-input-line-height)) / 2)","t":"other","s":"declared Epidemic Sound design-system variable in the site stylesheet (raw/css-vars.json): --es-text-input-vertical-margin-origin (component-scoped declaration, not :root-resolved)","d":"The declared `--es-text-input-vertical-margin-origin`."}}}}}}}},"light":{"color":{"action":{"accent":{"default":{"v":"#ff82c2","t":"color","s":"css-var --es-color-action-accent (light)"},"disabled":{"v":"rgba(61, 77, 116, 0.06)","t":"color","s":"css-var --es-color-action-accent-disabled (light)"},"hovered":{"v":"#e575af","t":"color","s":"css-var --es-color-action-accent-hovered (light)"},"pressed":{"v":"#cc689b","t":"color","s":"css-var --es-color-action-accent-pressed (light)"}},"ghost":{"default":{"v":"rgba(61, 77, 116, 0)","t":"color","s":"css-var --es-color-action-ghost (light)"},"disabled":{"v":"rgba(61, 77, 116, 0)","t":"color","s":"css-var --es-color-action-ghost-disabled (light)"},"hovered":{"v":"rgba(61, 77, 116, 0.06)","t":"color","s":"css-var --es-color-action-ghost-hovered (light)"},"pressed":{"v":"rgba(61, 77, 116, 0.12)","t":"color","s":"css-var --es-color-action-ghost-pressed (light)"}},"negative":{"default":{"v":"#ff6138","t":"color","s":"css-var --es-color-action-negative (light)"},"disabled":{"v":"rgba(61, 77, 116, 0.06)","t":"color","s":"css-var --es-color-action-negative-disabled (light)"},"hovered":{"v":"#e85833","t":"color","s":"css-var --es-color-action-negative-hovered (light)"},"pressed":{"v":"#d1502e","t":"color","s":"css-var --es-color-action-negative-pressed (light)"}},"positive":{"default":{"v":"#5ad363","t":"color","s":"css-var --es-color-action-positive (light)"},"disabled":{"v":"rgba(61, 77, 116, 0.06)","t":"color","s":"css-var --es-color-action-positive-disabled (light)"},"hovered":{"v":"#51be59","t":"color","s":"css-var --es-color-action-positive-hovered (light)"},"pressed":{"v":"#48a94f","t":"color","s":"css-var --es-color-action-positive-pressed (light)"}},"primary":{"default":{"v":"#000000","t":"color","s":"css-var --es-color-action-primary (light)"},"disabled":{"v":"rgba(61, 77, 116, 0.06)","t":"color","s":"css-var --es-color-action-primary-disabled (light)"},"hovered":{"v":"#272727","t":"color","s":"css-var --es-color-action-primary-hovered (light)"},"inverse":{"default":{"v":"#ffffff","t":"color","s":"css-var --es-color-action-primary-inverse (light)"},"disabled":{"v":"rgba(207, 214, 229, 0.16)","t":"color","s":"css-var --es-color-action-primary-inverse-disabled (light)"},"hovered":{"v":"#e7e7e7","t":"color","s":"css-var --es-color-action-primary-inverse-hovered (light)"},"pressed":{"v":"#cfcfcf","t":"color","s":"css-var --es-color-action-primary-inverse-pressed (light)"}},"pressed":{"v":"#333333","t":"color","s":"css-var --es-color-action-primary-pressed (light)"}},"secondary":{"default":{"v":"rgba(61, 77, 116, 0.12)","t":"color","s":"css-var --es-color-action-secondary (light)"},"disabled":{"v":"rgba(61, 77, 116, 0.06)","t":"color","s":"css-var --es-color-action-secondary-disabled (light)"},"hovered":{"v":"rgba(61, 77, 116, 0.18)","t":"color","s":"css-var --es-color-action-secondary-hovered (light)"},"pressed":{"v":"rgba(61, 77, 116, 0.24)","t":"color","s":"css-var --es-color-action-secondary-pressed (light)"}},"segment":{"default":{"v":"#bb76ff","t":"color","s":"css-var --es-color-action-segment (light)"},"hovered":{"v":"#bb76ff","t":"color","s":"css-var --es-color-action-segment-hovered (light)"},"pressed":{"v":"#a86ae5","t":"color","s":"css-var --es-color-action-segment-pressed (light)"},"subtle":{"v":"#5e3b80","t":"color","s":"css-var --es-color-action-segment-subtle (light)"}},"tertiary":{"default":{"v":"rgba(61, 77, 116, 0.06)","t":"color","s":"css-var --es-color-action-tertiary (light)"},"disabled":{"v":"rgba(61, 77, 116, 0.06)","t":"color","s":"css-var --es-color-action-tertiary-disabled (light)"},"hovered":{"v":"rgba(61, 77, 116, 0.12)","t":"color","s":"css-var --es-color-action-tertiary-hovered (light)"},"pressed":{"v":"rgba(61, 77, 116, 0.18)","t":"color","s":"css-var --es-color-action-tertiary-pressed (light)"}},"trim":{"v":"#ffda40","t":"color","s":"css-var --es-color-action-trim (light)"}},"background":{"backdrop":{"v":"rgba(0, 0, 0, 0.7)","t":"color","s":"css-var --es-color-background-backdrop (light)"},"base":{"v":"#f1f0eb","t":"color","s":"css-var --es-color-background-base (light)"},"beta":{"v":"#20afff","t":"color","s":"css-var --es-color-background-beta (light)"},"brand":{"azur":{"v":"#20afff","t":"color","s":"css-var --es-color-background-brand-azur (light)"},"ecru":{"v":"#e4d9cf","t":"color","s":"css-var --es-color-background-brand-ecru (light)"},"fog":{"v":"#cfd6e5","t":"color","s":"css-var --es-color-background-brand-fog (light)"},"moss":{"v":"#bfbda8","t":"color","s":"css-var --es-color-background-brand-moss (light)"},"off":{"black":{"v":"#292c33","t":"color","s":"css-var --es-color-background-brand-off-black (light)"},"white":{"v":"#f1f0eb","t":"color","s":"css-var --es-color-background-brand-off-white (light)"}},"pink":{"v":"#ff82c2","t":"color","s":"css-var --es-color-background-brand-pink (light)"},"red":{"v":"#ff6138","t":"color","s":"css-var --es-color-background-brand-red (light)"},"stone":{"v":"#9793a5","t":"color","s":"css-var --es-color-background-brand-stone (light)"},"yellow":{"v":"#ffda40","t":"color","s":"css-var --es-color-background-brand-yellow (light)"}},"caution":{"v":"#ffda40","t":"color","s":"css-var --es-color-background-caution (light)"},"elevation":{"v":"#ffffff","t":"color","s":"css-var --es-color-background-elevation (light)"},"floating":{"v":"#44474f","t":"color","s":"css-var --es-color-background-floating (light)"},"inverse":{"v":"#000000","t":"color","s":"css-var --es-color-background-inverse (light)"},"negative":{"v":"#ff6138","t":"color","s":"css-var --es-color-background-negative (light)"},"new":{"v":"#bb76ff","t":"color","s":"css-var --es-color-background-new (light)"},"overlay":{"default":{"v":"rgba(0, 0, 0, 0.25)","t":"color","s":"css-var --es-color-background-overlay (light)"},"fade":{"full":{"to":{"bottom":{"v":"linear-gradient(180deg,#0F0F0F00,#0F0F0F)","t":"other","s":"css-var --es-color-background-overlay-fade-full-to-bottom (light)"},"top":{"v":"linear-gradient(0deg,#0F0F0F00,#0F0F0F)","t":"other","s":"css-var --es-color-background-overlay-fade-full-to-top (light)"}}},"to":{"bottom":{"v":"linear-gradient(180deg,#00000000,#000000BF)","t":"other","s":"css-var --es-color-background-overlay-fade-to-bottom (light)"},"top":{"v":"linear-gradient(0deg,#00000000,#000000BF)","t":"other","s":"css-var --es-color-background-overlay-fade-to-top (light)"}}}},"positive":{"v":"#5ad363","t":"color","s":"css-var --es-color-background-positive (light)"},"surface":{"v":"rgba(61, 77, 116, 0.06)","t":"color","s":"css-var --es-color-background-surface (light)"}},"border":{"negative":{"v":"#ff6138","t":"color","s":"css-var --es-color-border-negative (light)"},"primary":{"v":"#000000","t":"color","s":"css-var --es-color-border-primary (light)"},"secondary":{"v":"rgba(0, 0, 0, 0.64)","t":"color","s":"css-var --es-color-border-secondary (light)"},"tertiary":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --es-color-border-tertiary (light)"}},"brand":{"azur":{"v":"#20afff","t":"color","s":"css-var --es-color-brand-azur (light)"},"ecru":{"v":"#e4d9cf","t":"color","s":"css-var --es-color-brand-ecru (light)"},"extended":{"blue":{"v":"#6792ff","t":"color","s":"css-var --es-color-brand-extended-blue (light)"},"brown":{"v":"#a8954c","t":"color","s":"css-var --es-color-brand-extended-brown (light)"},"dusty":{"pink":{"v":"#f6d1d1","t":"color","s":"css-var --es-color-brand-extended-dusty-pink (light)"}},"green":{"v":"#5ad363","t":"color","s":"css-var --es-color-brand-extended-green (light)"},"lavender":{"v":"#cfbdd2","t":"color","s":"css-var --es-color-brand-extended-lavender (light)"},"mint":{"green":{"v":"#c4e7d1","t":"color","s":"css-var --es-color-brand-extended-mint-green (light)"}},"neon":{"yellow":{"v":"#d6f382","t":"color","s":"css-var --es-color-brand-extended-neon-yellow (light)"}},"orange":{"v":"#ff9b26","t":"color","s":"css-var --es-color-brand-extended-orange (light)"},"purple":{"v":"#bb76ff","t":"color","s":"css-var --es-color-brand-extended-purple (light)"},"rust":{"v":"#d6832b","t":"color","s":"css-var --es-color-brand-extended-rust (light)"},"tan":{"v":"#dfd796","t":"color","s":"css-var --es-color-brand-extended-tan (light)"},"turquoise":{"v":"#91ceda","t":"color","s":"css-var --es-color-brand-extended-turquoise (light)"}},"fog":{"v":"#cfd6e5","t":"color","s":"css-var --es-color-brand-fog (light)"},"moss":{"v":"#bfbda8","t":"color","s":"css-var --es-color-brand-moss (light)"},"off":{"black":{"v":"#292c33","t":"color","s":"css-var --es-color-brand-off-black (light)"},"white":{"v":"#f1f0eb","t":"color","s":"css-var --es-color-brand-off-white (light)"}},"pink":{"v":"#ff82c2","t":"color","s":"css-var --es-color-brand-pink (light)"},"red":{"v":"#ff6138","t":"color","s":"css-var --es-color-brand-red (light)"},"stone":{"v":"#9793a5","t":"color","s":"css-var --es-color-brand-stone (light)"},"yellow":{"v":"#ffda40","t":"color","s":"css-var --es-color-brand-yellow (light)"}},"data":{"visualization":{"blue":{"v":"#20afff","t":"color","s":"css-var --es-color-data-visualization-blue (light)"},"cyan":{"v":"#31f4e8","t":"color","s":"css-var --es-color-data-visualization-cyan (light)"},"magenta":{"v":"#ca26cc","t":"color","s":"css-var --es-color-data-visualization-magenta (light)"},"negative":{"v":"#ff6138","t":"color","s":"css-var --es-color-data-visualization-negative (light)"},"orange":{"v":"#ff9b26","t":"color","s":"css-var --es-color-data-visualization-orange (light)"},"pink":{"v":"#ff82c2","t":"color","s":"css-var --es-color-data-visualization-pink (light)"},"positive":{"v":"#41d74d","t":"color","s":"css-var --es-color-data-visualization-positive (light)"},"purple":{"v":"#bb76ff","t":"color","s":"css-var --es-color-data-visualization-purple (light)"},"yellow":{"v":"#ffda40","t":"color","s":"css-var --es-color-data-visualization-yellow (light)"}}},"icon":{"active":{"v":"#20afff","t":"color","s":"css-var --es-color-icon-active (light)"},"caution":{"v":"#ffda40","t":"color","s":"css-var --es-color-icon-caution (light)"},"dark":{"static":{"v":"#000000","t":"color","s":"css-var --es-color-icon-dark-static (light)"}},"disabled":{"v":"rgba(0, 0, 0, 0.2)","t":"color","s":"css-var --es-color-icon-disabled (light)"},"inverse":{"default":{"v":"#ffffff","t":"color","s":"css-var --es-color-icon-inverse (light)"},"secondary":{"v":"rgba(255, 255, 255, 0.72)","t":"color","s":"css-var --es-color-icon-inverse-secondary (light)"}},"light":{"static":{"v":"#ffffff","t":"color","s":"css-var --es-color-icon-light-static (light)"}},"liked":{"v":"#ff82c2","t":"color","s":"css-var --es-color-icon-liked (light)"},"negative":{"v":"#ff6138","t":"color","s":"css-var --es-color-icon-negative (light)"},"positive":{"v":"#5ad363","t":"color","s":"css-var --es-color-icon-positive (light)"},"primary":{"v":"#000000","t":"color","s":"css-var --es-color-icon-primary (light)"},"secondary":{"v":"rgba(0, 0, 0, 0.6)","t":"color","s":"css-var --es-color-icon-secondary (light)"}},"input":{"active":{"default":{"v":"#000000","t":"color","s":"css-var --es-color-input-active-default (light)"},"disabled":{"v":"rgba(61, 77, 116, 0.12)","t":"color","s":"css-var --es-color-input-active-disabled (light)"},"hovered":{"v":"#272727","t":"color","s":"css-var --es-color-input-active-hovered (light)"},"pressed":{"v":"#333333","t":"color","s":"css-var --es-color-input-active-pressed (light)"}},"default":{"v":"rgba(61, 77, 116, 0.06)","t":"color","s":"css-var --es-color-input-default (light)"},"disabled":{"v":"rgba(61, 77, 116, 0.06)","t":"color","s":"css-var --es-color-input-disabled (light)"},"hovered":{"v":"rgba(61, 77, 116, 0.12)","t":"color","s":"css-var --es-color-input-hovered (light)"},"pressed":{"v":"rgba(61, 77, 116, 0.18)","t":"color","s":"css-var --es-color-input-pressed (light)"}},"misc":{"divider":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --es-color-misc-divider (light)"},"focused":{"v":"#000000","t":"color","s":"css-var --es-color-misc-focused (light)"},"grabber":{"v":"rgba(0, 0, 0, 0.35)","t":"color","s":"css-var --es-color-misc-grabber (light)"},"handle":{"default":{"v":"#ffffff","t":"color","s":"css-var --es-color-misc-handle (light)"},"disabled":{"v":"#3e4147","t":"color","s":"css-var --es-color-misc-handle-disabled (light)"}}},"platform":{"facebook":{"v":"#1877f2","t":"color","s":"css-var --es-color-platform-facebook (light)"},"instagram":{"v":"linear-gradient(to top right,#FFCA05,#F6026B,#8512FA)","t":"other","s":"css-var --es-color-platform-instagram (light)"},"linkedin":{"v":"#0072b1","t":"color","s":"css-var --es-color-platform-linkedin (light)"},"podcast":{"v":"#f78422","t":"color","s":"css-var --es-color-platform-podcast (light)"},"rumble":{"v":"#74cc1d","t":"color","s":"css-var --es-color-platform-rumble (light)"},"snapchat":{"v":"#fffc00","t":"color","s":"css-var --es-color-platform-snapchat (light)"},"tiktok":{"v":"#ff0050","t":"color","s":"css-var --es-color-platform-tiktok (light)"},"twitch":{"v":"#9146ff","t":"color","s":"css-var --es-color-platform-twitch (light)"},"twitter":{"v":"#1da1f2","t":"color","s":"css-var --es-color-platform-twitter (light)"},"vimeo":{"v":"#1ab7ea","t":"color","s":"css-var --es-color-platform-vimeo (light)"},"website":{"v":"#7d7d7d","t":"color","s":"css-var --es-color-platform-website (light)"},"youtube":{"v":"#ff0000","t":"color","s":"css-var --es-color-platform-youtube (light)"}},"text":{"dark":{"static":{"v":"#000000","t":"color","s":"css-var --es-color-text-dark-static (light)"}},"disabled":{"v":"rgba(0, 0, 0, 0.2)","t":"color","s":"css-var --es-color-text-disabled (light)"},"inverse":{"default":{"v":"#ffffff","t":"color","s":"css-var --es-color-text-inverse (light)"},"secondary":{"v":"rgba(255, 255, 255, 0.72)","t":"color","s":"css-var --es-color-text-inverse-secondary (light)"}},"light":{"static":{"v":"#ffffff","t":"color","s":"css-var --es-color-text-light-static (light)"}},"negative":{"v":"#ff6138","t":"color","s":"css-var --es-color-text-negative (light)"},"primary":{"v":"#000000","t":"color","s":"css-var --es-color-text-primary (light)"},"secondary":{"v":"rgba(0, 0, 0, 0.6)","t":"color","s":"css-var --es-color-text-secondary (light)"}},"track":{"default":{"v":"rgba(61, 77, 116, 0.24)","t":"color","s":"css-var --es-color-track-default (light)"},"disabled":{"v":"rgba(61, 77, 116, 0.24)","t":"color","s":"css-var --es-color-track-disabled (light)"},"fill":{"default":{"v":"#000000","t":"color","s":"css-var --es-color-track-fill (light)"},"inverse":{"v":"#ffffff","t":"color","s":"css-var --es-color-track-fill-inverse (light)"}},"highlight":{"default":{"v":"#ffda40","t":"color","s":"css-var --es-color-track-highlight (light)"},"hovered":{"v":"#e5c43a","t":"color","s":"css-var --es-color-track-highlight-hovered (light)"},"pressed":{"v":"#ccae33","t":"color","s":"css-var --es-color-track-highlight-pressed (light)"}},"inverse":{"v":"rgba(207, 214, 229, 0.24)","t":"color","s":"css-var --es-color-track-inverse (light)"}}},"background":{"page":{"v":"{color.background.base}","t":"color","s":"computed body fill among the ancestors of header default (raw/components-computed.json); matches declared color.background.base","d":"The ecru field every marketing page paints (alternative-light)."}},"text":{"ink":{"v":"{color.action.primary.default}","t":"color","s":"computed color of hero-h1 default (raw/components-computed.json); matches declared color.action.primary.default","d":"The #000 ink — display headings and body text on ecru."}},"action":{"primary":{"v":"{color.action.primary.default}","t":"color","s":"computed backgroundColor of btn-signup default (raw/components-computed.json); declared as color.action.primary.default","d":"The #000 primary button fill (inverse of the light surface)."},"primary-hover":{"v":"{color.action.primary.hovered}","t":"color","s":"computed backgroundColor of btn-signup hover (raw/components-computed.json); matches declared color.action.primary.hovered","d":"The #272727 the light primary fill lifts to on hover."},"secondary":{"v":"{color.action.secondary.default}","t":"color","s":"computed backgroundColor of btn-login default (raw/components-computed.json); declared as color.action.secondary.default","d":"The rgba(61,77,116,.12) secondary button fill."},"secondary-hover":{"v":"{color.action.secondary.hovered}","t":"color","s":"computed backgroundColor of btn-login hover (raw/components-computed.json); matches declared color.action.secondary.hovered","d":"The rgba(61,77,116,.18) secondary fill on hover."},"switch":{"v":"{color.action.primary.default}","t":"color","s":"computed backgroundColor of billing-switch default (raw/components-computed.json); matches declared color.action.primary.default","d":"The plan-period switch track on pricing."}},"border":{"focus":{"v":"{color.action.primary.default}","t":"color","s":"computed outlineColor of nav-pricing focus-visible (raw/components-computed.json); matches declared color.action.primary.default","d":"The #000 focus ring the light surface draws on keyboard focus."}}},"dark":{"color":{"action":{"accent":{"default":{"v":"#ff82c2","t":"color","s":"css-var --es-color-action-accent (dark)"},"disabled":{"v":"rgba(207, 214, 229, 0.16)","t":"color","s":"css-var --es-color-action-accent-disabled (dark)"},"hovered":{"v":"#e575af","t":"color","s":"css-var --es-color-action-accent-hovered (dark)"},"pressed":{"v":"#cc689b","t":"color","s":"css-var --es-color-action-accent-pressed (dark)"}},"ghost":{"default":{"v":"rgba(207, 214, 229, 0)","t":"color","s":"css-var --es-color-action-ghost (dark)"},"disabled":{"v":"rgba(207, 214, 229, 0)","t":"color","s":"css-var --es-color-action-ghost-disabled (dark)"},"hovered":{"v":"rgba(207, 214, 229, 0.08)","t":"color","s":"css-var --es-color-action-ghost-hovered (dark)"},"pressed":{"v":"rgba(207, 214, 229, 0.16)","t":"color","s":"css-var --es-color-action-ghost-pressed (dark)"}},"negative":{"default":{"v":"#ff6138","t":"color","s":"css-var --es-color-action-negative (dark)"},"disabled":{"v":"rgba(207, 214, 229, 0.16)","t":"color","s":"css-var --es-color-action-negative-disabled (dark)"},"hovered":{"v":"#e85833","t":"color","s":"css-var --es-color-action-negative-hovered (dark)"},"pressed":{"v":"#d1502e","t":"color","s":"css-var --es-color-action-negative-pressed (dark)"}},"positive":{"default":{"v":"#5ad363","t":"color","s":"css-var --es-color-action-positive (dark)"},"disabled":{"v":"rgba(207, 214, 229, 0.16)","t":"color","s":"css-var --es-color-action-positive-disabled (dark)"},"hovered":{"v":"#51be59","t":"color","s":"css-var --es-color-action-positive-hovered (dark)"},"pressed":{"v":"#48a94f","t":"color","s":"css-var --es-color-action-positive-pressed (dark)"}},"primary":{"default":{"v":"#ffffff","t":"color","s":"css-var --es-color-action-primary (dark)"},"disabled":{"v":"rgba(207, 214, 229, 0.16)","t":"color","s":"css-var --es-color-action-primary-disabled (dark)"},"hovered":{"v":"#e7e7e7","t":"color","s":"css-var --es-color-action-primary-hovered (dark)"},"inverse":{"default":{"v":"#000000","t":"color","s":"css-var --es-color-action-primary-inverse (dark)"},"disabled":{"v":"rgba(0, 0, 0, 0.06)","t":"color","s":"css-var --es-color-action-primary-inverse-disabled (dark)"},"hovered":{"v":"#272727","t":"color","s":"css-var --es-color-action-primary-inverse-hovered (dark)"},"pressed":{"v":"#333333","t":"color","s":"css-var --es-color-action-primary-inverse-pressed (dark)"}},"pressed":{"v":"#cfcfcf","t":"color","s":"css-var --es-color-action-primary-pressed (dark)"}},"secondary":{"default":{"v":"rgba(207, 214, 229, 0.16)","t":"color","s":"css-var --es-color-action-secondary (dark)"},"disabled":{"v":"rgba(207, 214, 229, 0.16)","t":"color","s":"css-var --es-color-action-secondary-disabled (dark)"},"hovered":{"v":"rgba(207, 214, 229, 0.24)","t":"color","s":"css-var --es-color-action-secondary-hovered (dark)"},"pressed":{"v":"rgba(207, 214, 229, 0.32)","t":"color","s":"css-var --es-color-action-secondary-pressed (dark)"}},"segment":{"default":{"v":"#bb76ff","t":"color","s":"css-var --es-color-action-segment (dark)"},"hovered":{"v":"#bb76ff","t":"color","s":"css-var --es-color-action-segment-hovered (dark)"},"pressed":{"v":"#a86ae5","t":"color","s":"css-var --es-color-action-segment-pressed (dark)"},"subtle":{"v":"#5e3b80","t":"color","s":"css-var --es-color-action-segment-subtle (dark)"}},"tertiary":{"default":{"v":"rgba(207, 214, 229, 0.08)","t":"color","s":"css-var --es-color-action-tertiary (dark)"},"disabled":{"v":"rgba(207, 214, 229, 0.08)","t":"color","s":"css-var --es-color-action-tertiary-disabled (dark)"},"hovered":{"v":"rgba(207, 214, 229, 0.16)","t":"color","s":"css-var --es-color-action-tertiary-hovered (dark)"},"pressed":{"v":"rgba(207, 214, 229, 0.24)","t":"color","s":"css-var --es-color-action-tertiary-pressed (dark)"}},"trim":{"v":"#ffda40","t":"color","s":"css-var --es-color-action-trim (dark)"}},"background":{"backdrop":{"v":"rgba(0, 0, 0, 0.7)","t":"color","s":"css-var --es-color-background-backdrop (dark)"},"base":{"v":"#121418","t":"color","s":"css-var --es-color-background-base (dark)"},"beta":{"v":"#20afff","t":"color","s":"css-var --es-color-background-beta (dark)"},"brand":{"azur":{"v":"#20afff","t":"color","s":"css-var --es-color-background-brand-azur (dark)"},"ecru":{"v":"#e4d9cf","t":"color","s":"css-var --es-color-background-brand-ecru (dark)"},"fog":{"v":"#cfd6e5","t":"color","s":"css-var --es-color-background-brand-fog (dark)"},"moss":{"v":"#bfbda8","t":"color","s":"css-var --es-color-background-brand-moss (dark)"},"off":{"black":{"v":"#292c33","t":"color","s":"css-var --es-color-background-brand-off-black (dark)"},"white":{"v":"#f1f0eb","t":"color","s":"css-var --es-color-background-brand-off-white (dark)"}},"pink":{"v":"#ff82c2","t":"color","s":"css-var --es-color-background-brand-pink (dark)"},"red":{"v":"#ff6138","t":"color","s":"css-var --es-color-background-brand-red (dark)"},"stone":{"v":"#9793a5","t":"color","s":"css-var --es-color-background-brand-stone (dark)"},"yellow":{"v":"#ffda40","t":"color","s":"css-var --es-color-background-brand-yellow (dark)"}},"caution":{"v":"#ffda40","t":"color","s":"css-var --es-color-background-caution (dark)"},"elevation":{"v":"#292c33","t":"color","s":"css-var --es-color-background-elevation (dark)"},"floating":{"v":"#44474f","t":"color","s":"css-var --es-color-background-floating (dark)"},"inverse":{"v":"#ffffff","t":"color","s":"css-var --es-color-background-inverse (dark)"},"negative":{"v":"#ff6138","t":"color","s":"css-var --es-color-background-negative (dark)"},"new":{"v":"#bb76ff","t":"color","s":"css-var --es-color-background-new (dark)"},"overlay":{"default":{"v":"rgba(0, 0, 0, 0.25)","t":"color","s":"css-var --es-color-background-overlay (dark)"},"fade":{"full":{"to":{"bottom":{"v":"linear-gradient(180deg,#0F0F0F00,#0F0F0F)","t":"other","s":"css-var --es-color-background-overlay-fade-full-to-bottom (dark)"},"top":{"v":"linear-gradient(0deg,#0F0F0F00,#0F0F0F)","t":"other","s":"css-var --es-color-background-overlay-fade-full-to-top (dark)"}}},"to":{"bottom":{"v":"linear-gradient(180deg,#00000000,#000000BF)","t":"other","s":"css-var --es-color-background-overlay-fade-to-bottom (dark)"},"top":{"v":"linear-gradient(0deg,#00000000,#000000BF)","t":"other","s":"css-var --es-color-background-overlay-fade-to-top (dark)"}}}},"positive":{"v":"#5ad363","t":"color","s":"css-var --es-color-background-positive (dark)"},"surface":{"v":"rgba(207, 214, 229, 0.08)","t":"color","s":"css-var --es-color-background-surface (dark)"}},"border":{"negative":{"v":"#ff6138","t":"color","s":"css-var --es-color-border-negative (dark)"},"primary":{"v":"#ffffff","t":"color","s":"css-var --es-color-border-primary (dark)"},"secondary":{"v":"rgba(207, 214, 229, 0.56)","t":"color","s":"css-var --es-color-border-secondary (dark)"},"tertiary":{"v":"rgba(207, 214, 229, 0.08)","t":"color","s":"css-var --es-color-border-tertiary (dark)"}},"brand":{"azur":{"v":"#20afff","t":"color","s":"css-var --es-color-brand-azur (dark)"},"ecru":{"v":"#e4d9cf","t":"color","s":"css-var --es-color-brand-ecru (dark)"},"extended":{"blue":{"v":"#6792ff","t":"color","s":"css-var --es-color-brand-extended-blue (dark)"},"brown":{"v":"#a8954c","t":"color","s":"css-var --es-color-brand-extended-brown (dark)"},"dusty":{"pink":{"v":"#f6d1d1","t":"color","s":"css-var --es-color-brand-extended-dusty-pink (dark)"}},"green":{"v":"#5ad363","t":"color","s":"css-var --es-color-brand-extended-green (dark)"},"lavender":{"v":"#cfbdd2","t":"color","s":"css-var --es-color-brand-extended-lavender (dark)"},"mint":{"green":{"v":"#c4e7d1","t":"color","s":"css-var --es-color-brand-extended-mint-green (dark)"}},"neon":{"yellow":{"v":"#d6f382","t":"color","s":"css-var --es-color-brand-extended-neon-yellow (dark)"}},"orange":{"v":"#ff9b26","t":"color","s":"css-var --es-color-brand-extended-orange (dark)"},"purple":{"v":"#bb76ff","t":"color","s":"css-var --es-color-brand-extended-purple (dark)"},"rust":{"v":"#d6832b","t":"color","s":"css-var --es-color-brand-extended-rust (dark)"},"tan":{"v":"#dfd796","t":"color","s":"css-var --es-color-brand-extended-tan (dark)"},"turquoise":{"v":"#91ceda","t":"color","s":"css-var --es-color-brand-extended-turquoise (dark)"}},"fog":{"v":"#cfd6e5","t":"color","s":"css-var --es-color-brand-fog (dark)"},"moss":{"v":"#bfbda8","t":"color","s":"css-var --es-color-brand-moss (dark)"},"off":{"black":{"v":"#292c33","t":"color","s":"css-var --es-color-brand-off-black (dark)"},"white":{"v":"#f1f0eb","t":"color","s":"css-var --es-color-brand-off-white (dark)"}},"pink":{"v":"#ff82c2","t":"color","s":"css-var --es-color-brand-pink (dark)"},"red":{"v":"#ff6138","t":"color","s":"css-var --es-color-brand-red (dark)"},"stone":{"v":"#9793a5","t":"color","s":"css-var --es-color-brand-stone (dark)"},"yellow":{"v":"#ffda40","t":"color","s":"css-var --es-color-brand-yellow (dark)"}},"data":{"visualization":{"blue":{"v":"#20afff","t":"color","s":"css-var --es-color-data-visualization-blue (dark)"},"cyan":{"v":"#31f4e8","t":"color","s":"css-var --es-color-data-visualization-cyan (dark)"},"magenta":{"v":"#ca26cc","t":"color","s":"css-var --es-color-data-visualization-magenta (dark)"},"negative":{"v":"#ff6138","t":"color","s":"css-var --es-color-data-visualization-negative (dark)"},"orange":{"v":"#ff9b26","t":"color","s":"css-var --es-color-data-visualization-orange (dark)"},"pink":{"v":"#ff82c2","t":"color","s":"css-var --es-color-data-visualization-pink (dark)"},"positive":{"v":"#41d74d","t":"color","s":"css-var --es-color-data-visualization-positive (dark)"},"purple":{"v":"#bb76ff","t":"color","s":"css-var --es-color-data-visualization-purple (dark)"},"yellow":{"v":"#ffda40","t":"color","s":"css-var --es-color-data-visualization-yellow (dark)"}}},"icon":{"active":{"v":"#20afff","t":"color","s":"css-var --es-color-icon-active (dark)"},"caution":{"v":"#ffda40","t":"color","s":"css-var --es-color-icon-caution (dark)"},"dark":{"static":{"v":"#000000","t":"color","s":"css-var --es-color-icon-dark-static (dark)"}},"disabled":{"v":"rgba(255, 255, 255, 0.32)","t":"color","s":"css-var --es-color-icon-disabled (dark)"},"inverse":{"default":{"v":"#000000","t":"color","s":"css-var --es-color-icon-inverse (dark)"},"secondary":{"v":"rgba(0, 0, 0, 0.6)","t":"color","s":"css-var --es-color-icon-inverse-secondary (dark)"}},"light":{"static":{"v":"#ffffff","t":"color","s":"css-var --es-color-icon-light-static (dark)"}},"liked":{"v":"#ff82c2","t":"color","s":"css-var --es-color-icon-liked (dark)"},"negative":{"v":"#ff6138","t":"color","s":"css-var --es-color-icon-negative (dark)"},"positive":{"v":"#5ad363","t":"color","s":"css-var --es-color-icon-positive (dark)"},"primary":{"v":"#ffffff","t":"color","s":"css-var --es-color-icon-primary (dark)"},"secondary":{"v":"rgba(255, 255, 255, 0.72)","t":"color","s":"css-var --es-color-icon-secondary (dark)"}},"input":{"active":{"default":{"v":"#20afff","t":"color","s":"css-var --es-color-input-active-default (dark)"},"disabled":{"v":"rgba(207, 214, 229, 0.16)","t":"color","s":"css-var --es-color-input-active-disabled (dark)"},"hovered":{"v":"#1d9de5","t":"color","s":"css-var --es-color-input-active-hovered (dark)"},"pressed":{"v":"#1a8ccc","t":"color","s":"css-var --es-color-input-active-pressed (dark)"}},"default":{"v":"rgba(207, 214, 229, 0.16)","t":"color","s":"css-var --es-color-input-default (dark)"},"disabled":{"v":"rgba(207, 214, 229, 0.08)","t":"color","s":"css-var --es-color-input-disabled (dark)"},"hovered":{"v":"rgba(207, 214, 229, 0.24)","t":"color","s":"css-var --es-color-input-hovered (dark)"},"pressed":{"v":"rgba(207, 214, 229, 0.32)","t":"color","s":"css-var --es-color-input-pressed (dark)"}},"misc":{"divider":{"v":"rgba(207, 214, 229, 0.16)","t":"color","s":"css-var --es-color-misc-divider (dark)"},"focused":{"v":"#20afff","t":"color","s":"css-var --es-color-misc-focused (dark)"},"grabber":{"v":"rgba(207, 214, 229, 0.48)","t":"color","s":"css-var --es-color-misc-grabber (dark)"},"handle":{"default":{"v":"#ffffff","t":"color","s":"css-var --es-color-misc-handle (dark)"},"disabled":{"v":"#3e4147","t":"color","s":"css-var --es-color-misc-handle-disabled (dark)"}}},"platform":{"facebook":{"v":"#1877f2","t":"color","s":"css-var --es-color-platform-facebook (dark)"},"instagram":{"v":"linear-gradient(to top right,#FFCA05,#F6026B,#8512FA)","t":"other","s":"css-var --es-color-platform-instagram (dark)"},"linkedin":{"v":"#0072b1","t":"color","s":"css-var --es-color-platform-linkedin (dark)"},"podcast":{"v":"#f78422","t":"color","s":"css-var --es-color-platform-podcast (dark)"},"rumble":{"v":"#74cc1d","t":"color","s":"css-var --es-color-platform-rumble (dark)"},"snapchat":{"v":"#fffc00","t":"color","s":"css-var --es-color-platform-snapchat (dark)"},"tiktok":{"v":"#ff0050","t":"color","s":"css-var --es-color-platform-tiktok (dark)"},"twitch":{"v":"#9146ff","t":"color","s":"css-var --es-color-platform-twitch (dark)"},"twitter":{"v":"#1da1f2","t":"color","s":"css-var --es-color-platform-twitter (dark)"},"vimeo":{"v":"#1ab7ea","t":"color","s":"css-var --es-color-platform-vimeo (dark)"},"website":{"v":"#7d7d7d","t":"color","s":"css-var --es-color-platform-website (dark)"},"youtube":{"v":"#ff0000","t":"color","s":"css-var --es-color-platform-youtube (dark)"}},"text":{"dark":{"static":{"v":"#000000","t":"color","s":"css-var --es-color-text-dark-static (dark)"}},"disabled":{"v":"rgba(255, 255, 255, 0.32)","t":"color","s":"css-var --es-color-text-disabled (dark)"},"inverse":{"default":{"v":"#000000","t":"color","s":"css-var --es-color-text-inverse (dark)"},"secondary":{"v":"rgba(0, 0, 0, 0.6)","t":"color","s":"css-var --es-color-text-inverse-secondary (dark)"}},"light":{"static":{"v":"#ffffff","t":"color","s":"css-var --es-color-text-light-static (dark)"}},"negative":{"v":"#ff6138","t":"color","s":"css-var --es-color-text-negative (dark)"},"primary":{"v":"#ffffff","t":"color","s":"css-var --es-color-text-primary (dark)"},"secondary":{"v":"rgba(255, 255, 255, 0.72)","t":"color","s":"css-var --es-color-text-secondary (dark)"}},"track":{"default":{"v":"rgba(207, 214, 229, 0.24)","t":"color","s":"css-var --es-color-track-default (dark)"},"disabled":{"v":"rgba(207, 214, 229, 0.24)","t":"color","s":"css-var --es-color-track-disabled (dark)"},"fill":{"default":{"v":"#ffffff","t":"color","s":"css-var --es-color-track-fill (dark)"},"inverse":{"v":"#000000","t":"color","s":"css-var --es-color-track-fill-inverse (dark)"}},"highlight":{"default":{"v":"#ffda40","t":"color","s":"css-var --es-color-track-highlight (dark)"},"hovered":{"v":"#e5c43a","t":"color","s":"css-var --es-color-track-highlight-hovered (dark)"},"pressed":{"v":"#ccae33","t":"color","s":"css-var --es-color-track-highlight-pressed (dark)"}},"inverse":{"v":"rgba(0, 0, 0, 0.24)","t":"color","s":"css-var --es-color-track-inverse (dark)"}}},"background":{"canvas":{"v":"{color.background.base}","t":"color","s":"computed body fill among the ancestors of c-header default (raw/components-computed.json); matches declared color.background.base","d":"The #121418 dark canvas every catalog page and the account forms paint."},"surface":{"v":"{color.background.surface}","t":"color","s":"computed backgroundColor of sfx-row hover (raw/components-computed.json); declared as color.background.surface","d":"The rgba(207,214,229,.08) surface tint — cards, hover fills, the want-more strip edges."},"upsell":{"v":"{color.action.accent.default}","t":"color","s":"painted banner fill (the largest painted layer) inside wantmore default (raw/components-computed.json); matches declared color.action.accent.default","d":"The #ff82c2 pink 'Want more music?' card inside the dark catalog."}},"text":{"text":{"v":"{color.action.primary.default}","t":"color","s":"computed first text node colour of track-row default (raw/components-computed.json); matches declared color.action.primary.default","d":"The #fff primary text (genre h1 prints dark on its pink banner, so the row text carries this)."}},"action":{"primary":{"v":"{color.action.primary.default}","t":"color","s":"computed backgroundColor of c-signup default (raw/components-computed.json); declared as color.action.primary.default","d":"The #fff primary button fill on dark (inverse of the canvas)."},"primary-hover":{"v":"{color.action.primary.hovered}","t":"color","s":"computed backgroundColor of c-signup hover (raw/components-computed.json); matches declared color.action.primary.hovered","d":"The #e7e7e7 the dark primary fill dims to on hover."},"secondary":{"v":"{color.action.secondary.default}","t":"color","s":"declared --es-color-action-secondary (raw/css-vars.json); declared as color.action.secondary.default","d":"The rgba(207,214,229,.16) secondary button fill on dark."},"accent":{"v":"{color.action.accent.default}","t":"color","s":"computed backgroundColor of genre-banner default (raw/components-computed.json); declared as color.action.accent.default","d":"The #ff82c2 brand pink — the genre banner fill and action-accent."},"liked":{"v":"{color.action.accent.default}","t":"color","s":"entered by hand at capture time, not measured: no liked-state icon was measured (the value equals the genre banner's pink); recapture needed; matches declared color.action.accent.default","d":"The #ff82c2 liked state — icon-liked and the pink accent."}},"border":{"focus":{"v":"{color.background.beta}","t":"color","s":"computed focus outline of a dark-surface icon button (raw/components-computed.json); matches declared color.background.beta","d":"The #20afff azur focus ring the dark surface draws."},"divider":{"v":"{color.action.accent.disabled}","t":"color","s":"entered by hand at capture time, not measured: no measured border paints it (rgba(207,214,229,.16) appears only as icon-button pressed fills); recapture needed; matches declared color.action.accent.disabled","d":"The rgba(207,214,229,.16) hairline divider on dark."}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (app shell)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.').concat(flat(TOK.core.elevation || {}, 'elevation.'))) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Token aliases are paths inside their own set: {font.size.heading.2xl}
+  // lives under TOK.core, a theme alias under TOK.light/TOK.dark. Try each.
+  for (const root of [TOK.core, TOK, TOK.light, TOK.dark]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Epidemic Sound</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

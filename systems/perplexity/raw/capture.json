@@ -1,0 +1,31 @@
+{
+  "captured": "2026-11-19",
+  "harness": "Grok Build",
+  "model": "grok-4.7",
+  "route": "public-web",
+  "viewport": {
+    "desktop": { "innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2 },
+    "phone": { "innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2 }
+  },
+  "pages": [
+    "https://www.perplexity.ai/",
+    "https://www.perplexity.ai/hub",
+    "https://www.perplexity.ai/hub/pricing",
+    "https://www.perplexity.ai/enterprise",
+    "https://www.perplexity.ai/hub/legal/terms-of-service",
+    "https://www.perplexity.ai/hub/this-page-does-not-exist-capture"
+  ],
+  "themes": {
+    "light": "html[data-color-scheme=light] when prefers-color-scheme is light",
+    "dark": "html[data-color-scheme=dark] when prefers-color-scheme is dark, on the product home only. The hub stayed light under a dark preference."
+  },
+  "notEntered": [
+    "Continue with email was not submitted",
+    "Continue with Google and Continue with Apple were not followed",
+    "Single sign-on (SSO) was not opened",
+    "No card, phone, or Pro checkout",
+    "Get started, Get Pro, Get Max, Select, and See a demo were not followed",
+    "No query was typed into the composer"
+  ],
+  "screenshotNote": "The T3 preview tab loaded the product and the hub and returned computed styles, then failed with: The browser is not producing screenshot frames. Screenshots are from headless Playwright on public pages that returned 200 with no Cloudflare challenge."
+}

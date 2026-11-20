@@ -1,0 +1,11 @@
+{
+ "_note": "Rules for systems/lemonsqueezy. The merchant login error shots show the placeholder learner@example.com after a failed submit. The capture email and password live outside git under ~/.design-systems/lemonsqueezy/.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@example\\.com$",
+   "@example\\.org$"
+  ]
+ },
+ "families": []
+}

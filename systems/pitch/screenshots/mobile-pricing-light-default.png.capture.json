@@ -1,0 +1,16 @@
+{
+  "capturedAt": "2026-11-18T17:31:55.333Z",
+  "source": "https://pitch.com/pricing",
+  "requested": {
+    "width": 390,
+    "height": 844,
+    "dpr": 2
+  },
+  "measured": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "dpr": 2,
+    "scrollH": 8088,
+    "title": "Pricing | Pitch"
+  }
+}

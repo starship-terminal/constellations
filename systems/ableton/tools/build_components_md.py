@@ -81,6 +81,18 @@ def font(fz, lh, fw, f):
     return f"{fam(f)} {num(fz.replace('px', ''))}/{num(lh)} {fw}"
 
 
+def focus_not_captured(v):
+    """A state whose reading is not what its name says: a skipped one, or a focus-visible reading
+    taken where keyboard focus never landed (kbFocus returned "focus failed") or where the element
+    took focus but did not match :focus-visible. Its style is the element at rest, so it is left out
+    of every table and tally and listed as "focus could not be captured"."""
+    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
+
+
+def measured(v):
+    return "style" in v and not focus_not_captured(v)
+
+
 def props(v):
     s = v["style"]
     o = {}
@@ -149,7 +161,7 @@ ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow",
 
 
 def state_rows(c):
-    states = [s for s in c["states"] if "style" in c["states"][s]]
+    states = [s for s in c["states"] if measured(c["states"][s])]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -178,7 +190,7 @@ def fmt(d):
 
 
 def child_layers(c):
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if not st or not st.get("paint"):
         return None
     s = st["style"]
@@ -308,19 +320,42 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
-foc = []
+foc, unfocused = [], []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
-    if not st or "style" not in st:
+    if st and focus_not_captured(st):
+        unfocused.append(f"`{k}`")
+    if not st or not measured(st):
         continue
     s = st["style"]
     ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
     foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
 with_ring = [f"`{k}` ({r})" for k, r in foc if r]
 without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}. Ableton uses two rings: the browser's `auto 1px #005fcc` on text links, and a deliberate `solid 2px #ff764d` orange on the boxed buttons.")
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}.{f" Focus could not be captured on {len(unfocused)} more (keyboard focus never landed on them, so their readings are left out): {', '.join(unfocused)}." if unfocused else ""} Ableton uses two rings: the browser's `auto 1px #005fcc` on text links, and a deliberate `solid 2px #ff764d` orange on the boxed buttons.")
 W()
-W("**Pressed.** Forced `:active` changed almost nothing measurable on Ableton: the deep-blue Buy button darkens to `#042b9f` (its hover colour) and everything else reads the same as default. The site's controls do not shrink or recolour under the finger; hover on most `abl-button`s is likewise a no-op, with the boxed Try button instead swapping its text from blue to black.")
+# Pressed, from the readings: each component whose forced :active differs from its default, what
+# changes, and whether that is the same reading as its hover.
+pressed, same_as_hover = [], 0
+for k, c in C.items():
+    st = c["states"]
+    if not all(s in st and measured(st[s]) for s in ("default", "pressed")):
+        continue
+    base, p = props(st["default"]), props(st["pressed"])
+    diff = {x: p.get(x, "none") for x in ORDER if p.get(x) != base.get(x)}
+    # A shadow whose every layer is fully transparent draws nothing; it is not a change.
+    if "shadow" in diff and "shadow" not in base and all(
+            re.match(r"rgba\(\d+, \d+, \d+, 0\)", x.strip()) for x in re.split(r",(?![^(]*\))", diff["shadow"])):
+        del diff["shadow"]
+    if not diff:
+        continue
+    pressed.append(f"`{k}` ({fmt(diff)})")
+    if "hover" in st and measured(st["hover"]) and props(st["hover"]) == p:
+        same_as_hover += 1
+n_pressed = sum(1 for c in C.values() if all(s in c["states"] and measured(c["states"][s]) for s in ("default", "pressed")))
+hover_note = (" Each of those reads exactly as its hover state." if pressed and same_as_hover == len(pressed)
+              else f" {same_as_hover} of those read exactly as their hover state." if same_as_hover else "")
+W(f"**Pressed.** Forced `:active` was read on {n_pressed} components. {len(pressed)} change from default: {'; '.join(pressed)}.{hover_note} The other {n_pressed - len(pressed)} read the same as default.")
 W()
 W("**Motion.** Transitions measured on the components, by duration.")
 W()
@@ -329,7 +364,7 @@ W("|---|---|---|---|")
 mot = {}
 for k, c in C.items():
     for st in c["states"].values():
-        if "style" not in st:
+        if not measured(st):
             continue
         s = st["style"]
         if s["transitionDuration"] in ("0s", ""):
@@ -384,7 +419,7 @@ for k in ["home-promo-card", "blog-teaser", "product-card", "pack-card", "trial-
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):
         continue
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if st is None:
         continue
     p = props(st)

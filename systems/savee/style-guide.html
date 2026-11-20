@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAVEE style guide</title>
+<style>
+:root, [data-mode="light"] {
+  --page: #fdfdfd;
+  --shell: #f3f3f3;
+  --raised: #e4e4e4;
+  --text: #0a0a0a;
+  --body: #404040;
+  --muted: #a3a3a3;
+  --accent: #0a0a0a;
+  --on-accent: #fdfdfd;
+  --border: #dadada;
+  --secondary: #dadada;
+  --secondary-text: #464646;
+  --field: transparent;
+  --field-text: #0a0a0a;
+  --field-radius: 0px;
+  --ring: #c4c4c4;
+}
+[data-mode="dark"] {
+  --page: #0e0e0e;
+  --shell: #0e0e0e;
+  --raised: #1e1e1e;
+  --text: #fdfdfd;
+  --body: #d4d4d4;
+  --muted: #a3a3a3;
+  --accent: #fdfdfd;
+  --on-accent: #0e0e0e;
+  --border: #2f2f2f;
+  --secondary: #2f2f2f;
+  --secondary-text: #d4d4d4;
+  --field: #1e1e1e;
+  --field-text: #a3a3a3;
+  --field-radius: 14px;
+  --ring: #e5e5e5;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--shell);
+  color: var(--body);
+  font-family: "saveeFont", "Savee", ui-sans-serif, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+main { max-width: 960px; margin: 0 auto; padding: 48px 33px 80px; }
+h1 { color: var(--text); font-weight: 500; font-size: 52.6px; line-height: 1.05; letter-spacing: -0.025em; margin: 0 0 8px; }
+h2 { color: var(--text); font-weight: 500; font-size: 30px; letter-spacing: -0.025em; margin: 40px 0 12px; }
+p { color: var(--muted); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 128px; }
+.swatch i { display: block; height: 64px; border-radius: 16px; border: 1px solid var(--border); }
+.swatch span { display: block; font-size: 12px; margin-top: 6px; color: var(--muted); }
+button, .ghost, .outline {
+  border: 0;
+  border-radius: 999px;
+  font: 500 16px/16px "saveeFont", ui-sans-serif, sans-serif;
+  letter-spacing: -0.16px;
+  cursor: pointer;
+}
+.primary { background: var(--accent); color: var(--on-accent); height: 56px; padding: 20px 40px; }
+.secondary { background: var(--secondary); color: var(--secondary-text); height: 56px; padding: 20px 40px; font-weight: 400; }
+.ghost { background: transparent; color: var(--body); height: 46px; padding: 16px 20px; font-weight: 400; font-size: 14px; }
+.outline { background: transparent; color: var(--text); height: 44px; padding: 14px 32px; box-shadow: inset 0 0 0 2px var(--ring); font-weight: 400; }
+.field {
+  display: block;
+  width: 328px;
+  margin-top: 12px;
+  background: var(--field);
+  color: var(--field-text);
+  border: 0;
+  border-bottom: 1px solid var(--text);
+  border-radius: var(--field-radius);
+  padding: 12px 16px;
+  font: 400 16px/24px "saveeFont", ui-sans-serif, sans-serif;
+}
+[data-mode="dark"] .field { border-bottom: 0; padding: 12px 16px; }
+.card {
+  width: 256px;
+  height: 160px;
+  border-radius: 16px;
+  background: var(--raised);
+}
+.badge {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--on-accent);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.toggle { margin-top: 16px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>SAVEE</h1>
+  <p>Measured on savee.com, 2026-11-19. The font files are not in this package, so the specimens fall back to the system sans.</p>
+  <button class="toggle" type="button" onclick="document.documentElement.dataset.mode = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'">Toggle theme</button>
+
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="primary" type="button">Join for free</button>
+    <button class="secondary" type="button">See plans</button>
+    <button class="ghost" type="button">Log in</button>
+    <button class="outline" type="button">Get Portfolio</button>
+  </div>
+
+  <h2>Field</h2>
+  <input class="field" placeholder="Email or username" aria-label="Email or username">
+
+  <h2>Tile and badge</h2>
+  <div class="row">
+    <div class="card"></div>
+    <span class="badge">Popular</span>
+  </div>
+</main>
+<script>
+const names = ["page", "shell", "raised", "text", "body", "muted", "accent", "border"];
+const row = document.getElementById("swatches");
+for (const name of names) {
+  const el = document.createElement("div");
+  el.className = "swatch";
+  el.innerHTML = "<i></i><span></span>";
+  el.querySelector("i").style.background = "var(--" + name + ")";
+  el.querySelector("span").textContent = name;
+  row.appendChild(el);
+}
+</script>
+</body>
+</html>

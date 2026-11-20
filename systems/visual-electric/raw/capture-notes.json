@@ -1,0 +1,64 @@
+{
+  "captured": "2026-11-19",
+  "productVersion": "Next.js build v4.8.0 on the January 2026 app shell; Framer marketing last-modified 2025-10-01",
+  "live": {
+    "apex": "visualelectric.com has an SOA at love.ns.cloudflare.com and no A record. curl and the preview browser both returned ERR_NAME_NOT_RESOLVED.",
+    "www": "https://www.visualelectric.com/ returns 301 to https://visualelectric.com/.",
+    "login": "https://login.visualelectric.com/ is a WorkOS CNAME and returns Cloudflare error 1014.",
+    "auth": "https://auth.visualelectric.com/ returns HTTP 200 and the body {}.",
+    "app": "app.visualelectric.com and api.visualelectric.com did not resolve from this network.",
+    "blog": "blog.visualelectric.com resolves to Fastly and did not connect."
+  },
+  "preview": {
+    "tool": "T3 preview browser, reuseExistingTab false",
+    "screenshotFrames": "The browser is not producing screenshot frames. Measurements below were read with preview_evaluate before that failure.",
+    "pages": [
+      {
+        "url": "https://web.archive.org/web/20260104182559id_/https://visualelectric.com/",
+        "title": "Visual Electric - AI image generator",
+        "inner": [1169, 731],
+        "devicePixelRatio": 2,
+        "note": "Static export shell. body is an empty #__next. Computed styles come from the three same-origin stylesheets the archive served."
+      },
+      {
+        "url": "https://web.archive.org/web/20251128161608id_/https://visualelectric.com/pricing",
+        "title": "Visual Electric - Pricing",
+        "inner": [1440, 900],
+        "devicePixelRatio": 2,
+        "visualViewport": {"width": 1440, "height": 900, "scale": 1}
+      },
+      {
+        "url": "https://web.archive.org/web/20251108131511id_/https://visualelectric.com/",
+        "title": "Visual Electric - Generate AI Images & Videos",
+        "inner": [1440, 900],
+        "devicePixelRatio": 2,
+        "visualViewport": {"width": 1440, "height": 900, "scale": 1}
+      },
+      {
+        "url": "https://web.archive.org/web/20251002173404id_/https://visualelectric.com/whats-new",
+        "title": "Visual Electric - AI image generator",
+        "inner": [1440, 900],
+        "devicePixelRatio": 2
+      }
+    ]
+  },
+  "screenshots": {
+    "tool": "Headless Playwright after the preview browser returned no screenshot frames. Public archive pages only. Login hosts were not opened in Playwright.",
+    "deviceScaleFactor": 2,
+    "files": {
+      "home-light-default.png": {"css": [1440, 900], "png": [2880, 1800], "source": "20251108131511id_ /"},
+      "home-light-phone.png": {"css": [390, 844], "png": [780, 1688], "source": "20251108131511id_ /"},
+      "pricing-light-default.png": {"css": [1440, 900], "png": [2880, 1800], "source": "20251128161608id_ /pricing"},
+      "pricing-light-phone.png": {"css": [390, 844], "png": [780, 1688], "source": "20251128161608id_ /pricing"},
+      "inspo-light-default.png": {"css": [1440, 900], "png": [2880, 1800], "source": "20251002173455id_ /inspo"},
+      "whats-new-light-default.png": {"css": [1440, 900], "png": [2880, 1800], "source": "20251002173404id_ /whats-new"},
+      "whats-new-light-phone.png": {"css": [390, 844], "png": [780, 1688], "source": "20251002173404id_ /whats-new"}
+    }
+  },
+  "notEntered": [
+    "No email submitted. AgentMail was not used.",
+    "No card, phone, government ID, wallet, or KYC.",
+    "login.visualelectric.com/sign-up was not opened past the Cloudflare 1014 response.",
+    "No paid plan, checkout, or company SSO."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+ "_note": "Rules for systems/factory. A fully public signed-out capture: no owner data on any surface. The contact form and the sign-in email field were each typed into once with throwaway values then cleared; nothing was submitted. The privacy@factory.com address visible in the privacy-policy screenshot is the product's own published privacy contact. The OCR email net is kept with the product's own domains allowed.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@factory\\.com$",
+   "@factory\\.ai$"
+  ]
+ },
+ "families": []
+}

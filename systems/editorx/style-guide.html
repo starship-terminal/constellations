@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editor X / Wix Studio style guide</title>
+<meta name="description" content="Wix Studio design tokens and the public signed-out surface's components, rendered from tokens.json with the declared thunderbolt theme values and the measured computed styles.">
+<style>
+:root {
+  --font-family-display: wix-madefor-display-v2, sans-serif;
+  --font-family-text: wix-madefor-text-v2, sans-serif;
+  --font-family-chrome-display: Madefor-Display, "Madefor Display", "Helvetica Neue", Helvetica, Arial, メイリオ, Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro W3", "Hiragino Kaku Gothic Pro", sans-serif;
+  --font-family-chrome-text: Madefor-Text, Madefor, "Helvetica Neue", Helvetica, Arial, メイリオ, Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro W3", "Hiragino Kaku Gothic Pro", sans-serif;
+  --font-family-plans: Madefor, "Helvetica Neue", Helvetica, Arial, メイリオ, meiryo, "ヒラギノ角ゴ pro w3", "hiragino kaku gothic pro", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-mediumbold: 530;
+  --font-weight-bold: 700;
+  --font-size-display-max: 157.5px;
+  --font-size-display-hero: 80.2485px;
+  --font-size-display-page: 75px;
+  --font-size-display-2: 72.5669px;
+  --font-size-display-3: 60.9px;
+  --font-size-display-4: 60px;
+  --font-size-h2: 54px;
+  --font-size-h2-2: 48px;
+  --font-size-display-mobile: 34.5313px;
+  --font-size-h3: 32px;
+  --font-size-card-title: 26.6px;
+  --font-size-question: 24px;
+  --font-size-cta-label: 23.25px;
+  --font-size-filter: 20px;
+  --font-size-lede: 18px;
+  --font-size-menu: 18px;
+  --font-size-body: 16px;
+  --font-size-card-action: 16px;
+  --font-size-footer-meta: 14px;
+  --font-size-link: 14px;
+  --font-size-meta: 12px;
+  --font-size-badge: 10px;
+  --font-lineHeight-display-max: 157.5px;
+  --font-lineHeight-display-hero: 88.2733px;
+  --font-lineHeight-display-page: 75px;
+  --font-lineHeight-h2: 54px;
+  --font-lineHeight-display-mobile: 37.9844px;
+  --font-lineHeight-h3: 36px;
+  --font-lineHeight-question: 31.2001px;
+  --font-lineHeight-cta-label: 32.5499px;
+  --font-lineHeight-lede: 28.8px;
+  --font-lineHeight-card-action: 24px;
+  --font-lineHeight-footer-link: 34px;
+  --font-lineHeight-footer-meta: 20px;
+  --font-lineHeight-link: 18px;
+  --font-lineHeight-meta: 19.2px;
+  --font-lineHeight-badge: 24px;
+  --font-letterSpacing-display: -2.40745px;
+  --font-letterSpacing-question: -0.480001px;
+  --font-letterSpacing-mobile: -0.345313px;
+  --color-brand-studio-purple: #3910ed;
+  --color-brand-lime: #deff00;
+  --color-brand-link: #116dff;
+  --color-brand-link-hover: #0f62e6;
+  --color-brand-studio-blue: #1a6aff;
+  --color-brand-blue-100: #dce8ff;
+  --color-brand-blue-200: #95b9ff;
+  --color-brand-blue-700: #094bcc;
+  --color-brand-lime-deep: #deff06;
+  --color-brand-lime-100: #dbff81;
+  --color-brand-lime-tint: #f3f8f0;
+  --color-brand-olive-300: #92b079;
+  --color-brand-olive-500: #618741;
+  --color-brand-olive-700: #39641d;
+  --color-brand-clay-100: #f2eae7;
+  --color-brand-clay-200: #e5cec0;
+  --color-brand-clay-400: #a9806f;
+  --color-brand-clay-600: #8b614f;
+  --color-brand-clay-800: #633c2b;
+  --color-brand-orange-100: #ffe9df;
+  --color-brand-orange-200: #ffbfa1;
+  --color-brand-orange-400: #fa854f;
+  --color-brand-orange-500: #ea6020;
+  --color-brand-orange-700: #c94001;
+  --color-status-error: #ed1c24;
+  --color-status-info: #0088cb;
+  --color-status-warning: #ffcb05;
+  --color-status-disabled: #c7c7c7;
+  --color-neutral-ink: #000000;
+  --color-neutral-ink-plans: #000624;
+  --color-neutral-white: #ffffff;
+  --color-neutral-footer-ink: #f6f6f6;
+  --color-neutral-footer-muted: #828282;
+  --color-neutral-hairline: #d8e2ec;
+  --color-neutral-card-line: #dfe5eb;
+  --color-neutral-navy: #0e106a;
+  --color-neutral-badge-mint: #a6ffd8;
+  --color-neutral-surface-dark: #0e0e0e;
+  --color-neutral-footer-divider: #848280;
+  --color-neutral-shade-1: #eeeeee;
+  --color-neutral-shade-2: #c7c7c7;
+  --color-neutral-shade-3: #8d8d8d;
+  --color-neutral-grey-600: #727272;
+  --radius-stadium: 1123.88px;
+  --radius-pill: 50px;
+  --radius-card: 2px;
+  --radius-none: 0px;
+  --radius-button-card: 21px;
+  --radius-circle: 9999px;
+  --spacing-card-pad: 12px;
+  --spacing-control-pad-y: 15px;
+  --spacing-control-pad-r: 22px;
+  --spacing-menu-pad-x: 27.2969px;
+  --spacing-cta-pad-x: 35px;
+  --spacing-dropdown-pad-y: 47px;
+  --spacing-dropdown-pad-b: 66px;
+  --spacing-dropdown-pad-x: 72px;
+  --measured-focus-ring-content: 0px 0px 0px 2px #ffffff, 0px 0px 0px 4px #116dff;
+  --measured-focus-ring-chrome: 0px 0px 0px 1px #000000, 0px 0px 0px 3px #000000;
+  --measured-focus-ring-footer: 0px 0px 0px 1px #828282, 0px 0px 0px 3px #828282;
+  --measured-focus-ring-auto: #005fcc;
+  --measured-focus-ring-link: #116dff;
+  --measured-card-elevation: 0px 6px 6px 0px rgba(0, 6, 36, 0.05), 0px 0px 18px 0px rgba(0, 6, 36, 0.1);
+  --measured-transition-cta: 400ms;
+  --measured-transition-control: 200ms;
+  --text-primary: var(--color-neutral-ink);
+  --text-muted: var(--color-neutral-shade-3);
+  --text-on-dark: var(--color-neutral-footer-ink);
+  --text-on-action: #ffffff;
+  --text-hover-accent: var(--color-brand-studio-purple);
+  --surface-page: var(--color-neutral-white);
+  --surface-tint: var(--color-neutral-shade-1);
+  --surface-dark: var(--color-neutral-surface-dark);
+  --surface-accent: var(--color-brand-lime);
+  --surface-badge: var(--color-neutral-badge-mint);
+  --action-primary: var(--color-brand-studio-purple);
+  --action-secondary: var(--color-neutral-ink);
+  --action-link-default: var(--color-brand-link);
+  --action-link-hover: var(--color-brand-link-hover);
+  --border-hairline: var(--color-neutral-hairline);
+  --border-card: var(--color-neutral-card-line);
+  --border-accent: var(--color-neutral-navy);
+  --component-button-cta-height: 57px;
+  --component-button-pill-height: 56.2344px;
+  --component-button-secondary-height: 52px;
+  --component-link-pill-height: 32px;
+  --component-filter-height: 32px;
+  --component-header-height: 56px;
+  --component-header-mobile-height: 47px;
+  --component-menurow-height: 50px;
+  --component-menubutton-height: 46px;
+  --component-footer-height: 793px;
+  --component-dropdown-height: 397px;
+  --component-plancard-height: 574px;
+  --component-plancard-width: 202.016px;
+  --component-templatecard-height: 394.797px;
+  --component-faqrow-height: 131.188px;
+  --component-ctaband-height: 171px;
+  --sg-sans: "Madefor Text", Madefor, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Madefor Display", Madefor, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --text-primary: var(--color-neutral-footer-ink);
+  --text-muted: var(--color-neutral-footer-muted);
+  --text-on-action: #ffffff;
+  --surface-page: var(--color-neutral-surface-dark);
+  --border-default: var(--color-neutral-footer-ink);
+  --border-divider: var(--color-neutral-footer-divider);
+  --action-primary: var(--color-brand-studio-purple);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, var(--color-neutral-ink, #000)); background: var(--surface-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-hairline, var(--color-neutral-hairline, #d8e2ec)); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--surface-dark, #0e0e0e); padding: 12px; }
+.pal.dark .nm, .pal.dark .vl { color: var(--color-neutral-footer-ink, #f6f6f6); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-hairline, var(--color-neutral-hairline, #d8e2ec)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #000); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-hairline, var(--color-neutral-hairline, #d8e2ec)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #000); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border-hairline, var(--color-neutral-hairline, #d8e2ec)); overflow: hidden; background: var(--surface-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 18px; height: 56px; padding: 0 12px 0 22px; font-size: 14px; color: var(--color-neutral-ink, #000); border-bottom: 1px solid var(--border-hairline, #d8e2ec); }
+.navbar .wm { font-weight: 700; font-size: 15px; letter-spacing: .04em; text-transform: uppercase; }
+.navbar .sp { flex: 1; }
+.band { background: var(--surface-dark, #0e0e0e); color: var(--color-neutral-footer-ink, #f6f6f6); }
+.band .navbar { border-bottom-color: var(--color-neutral-footer-divider, #848280); color: var(--color-neutral-footer-ink, #f6f6f6); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-secondary-height, 52px); padding: 0 30px; font-size: 16px; font-weight: 400; border-radius: var(--radius-pill, 50px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-primary, var(--color-brand-studio-purple, #3910ed)); color: var(--text-on-action, #fff); }
+.btn.ghost { background: transparent; color: inherit; border: 1px solid currentColor; border-radius: 999px; height: 36px; padding: 0 14px; font-size: 13px; }
+.btn.secondary { background: var(--action-secondary, var(--color-neutral-ink, #000)); color: var(--text-on-action, #fff); }
+.btn.square { background: var(--action-primary, var(--color-brand-studio-purple, #3910ed)); color: var(--text-on-action, #fff); border-radius: 0; height: var(--component-button-cta-height, 57px); padding: 0 35px; }
+.hero { color: var(--color-neutral-ink, #000); padding: 64px 40px 80px; font: 400 56px/1.1 var(--sg-serif); letter-spacing: -.03em; text-align: center; }
+.hero small { display: block; font: 400 18px/1.6 var(--sg-sans); color: var(--color-neutral-ink, #000); margin: 16px auto 22px; max-width: 46ch; }
+.hero .big-cta { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-pill-height, 56px); padding: 0 34px; border-radius: var(--radius-stadium, 999px); font-size: 20px; background: var(--action-primary, var(--color-brand-studio-purple, #3910ed)); color: var(--text-on-action, #fff); }
+.limeband { background: var(--surface-accent, var(--color-brand-lime, #deff00)); color: var(--color-neutral-ink, #000); padding: 34px 30px; font: 400 30px/1.15 var(--sg-serif); letter-spacing: -.02em; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border-card, var(--color-neutral-card-line, #dfe5eb)); padding: 14px; font-size: 13px; background: #fff; border-radius: var(--radius-card, 2px); }
+.tile.rec { border-top: 3px solid var(--border-accent, var(--color-neutral-navy, #0e106a)); }
+.tile .img { height: 120px; background: #eee; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 400 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.tile .price { font: 500 26px/1.2 var(--sg-sans); margin: 10px 0 2px; }
+.badge { display: inline-block; background: var(--surface-badge, var(--color-neutral-badge-mint, #a6ffd8)); color: var(--color-neutral-ink-plans, #000624); font: 700 10px/24px var(--sg-sans); padding: 0 10px; letter-spacing: .06em; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-hairline, var(--color-neutral-hairline, #d8e2ec)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-hairline, var(--color-neutral-hairline, #d8e2ec)); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #000); opacity: .65; font-family: var(--sg-mono); }
+.footlink { color: var(--color-neutral-footer-ink, #f6f6f6); font-size: 16px; line-height: 34px; margin-right: 22px; }
+.soc { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid var(--color-neutral-footer-ink, #f6f6f6); border-radius: 50%; color: var(--color-neutral-footer-ink, #f6f6f6); font-size: 12px; margin-right: 8px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Wix Studio style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Wix Studio, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the Wix Studio purple #3910ed measured off the real actions (header Start Creating, the hero 'Start creating' stadium pill), the #deff00 lime closing band, the declared thunderbolt theme layer (--color_*, --wst-* — the #1a6aff action blue and the blue/lime/clay/orange ramps), the ink/white neutrals and the #0e0e0e chrome with #f6f6f6 text, the double focus rings, Madefor under its five face names, and the stadium pills next to the sharp 0px default. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from editorx.com on 2026-11-13, signed out, in headless Chromium — editorx.com 301s to wix.com/studio (only /pricing is still served on-domain, and it answered with its Premium-plans error pane at capture time). The Studio editor and every signed-in surface behind Log In / Start Creating are a documented boundary. Madefor is a licensed served face and is not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A fixed white 56px header carries the Wix Studio wordmark, the Product / Resources / Enterprise dropdown triggers, Pricing, the language globe, Log In — and the square-cornered #3910ed Start Creating (57px, 35px side padding). Below it the hero runs the 80px display at -0.03em tracking over the 18px lede and the purple stadium pill.</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm">Wix Studio</span><span>Product ⌄</span><span>Resources ⌄</span><span>Enterprise ⌄</span><span>Pricing</span><span class="sp"></span><span>Log In</span><span class="btn square">Start Creating</span></div>
+    <div class="hero">Design with impact<br>Deliver at scale<small>The website building platform for designers, developers, and marketers.</small><span class="big-cta">Start creating &nbsp;→</span></div>
+    <div class="limeband">Unleash your creations. Rein in the chaos.</div>
+  </div>
+
+  <h2 class="sh">Plans</h2>
+  <p class="lead">wix.com/studio/plans lays the white plan cards in a row: 1px #dfe5eb borders, the recommended card topped with a 3px #0e106a accent edge and the mint #a6ffd8 RECOMMENDED badge — prices in the plans face, 700 headings in #000624. (editorx.com/pricing itself served the Premium-plans error pane at capture time.)</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile"><b>Free</b><span class="sub">For exploring the platform.</span><div class="price">$0</div></div>
+      <div class="tile rec"><span class="badge">RECOMMENDED</span><b>Plus</b><span class="sub">For freelancers and studios.</span><div class="price">$22</div><span class="sub">/month</span></div>
+      <div class="tile"><b>Elite</b><span class="sub">For scaling agencies.</span><div class="price">$49</div><span class="sub">/month</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn square">Select plan</span> <span class="btn secondary">Compare plans</span></div>
+  </div>
+
+  <h2 class="sh">The dark chrome</h2>
+  <p class="lead">The #0e0e0e footer is the only dark surface: #f6f6f6 links at 16/34 dimming to #828282 on hover, circled 36px social buttons on a 1px ring, the #848280 hairline. Not a user theme — the export's dark set is this painted chrome.</p>
+  <div class="mock band" style="padding:22px">
+    <div style="margin-bottom:14px"><span class="footlink">Product</span><span class="footlink">Features</span><span class="footlink">Enterprise</span><span class="footlink">Resources</span><span class="footlink">Pricing</span></div>
+    <div><span class="soc">ig</span><span class="soc">fb</span><span class="soc">yt</span><span class="soc">in</span><span class="soc">x</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The core set carries the measured neutrals and the Wix Studio brand actions (measured off the components, var-referenced where a --color_*/--wst-* variable resolves the same value); the declared blue/lime/clay/orange ramps and status hues come from the thunderbolt site theme. Light roles alias the palette; the "dark" set is the #0e0e0e chrome the page paints — a painted surface, not a user toggle.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Corners are sharp by default: the header CTA, plan cards and bands take 0px. The pills are stadiums — the hero CTA's computed cap, the 50px link pill (section links, the enterprise CTA), 21px on the template card's action, 50% circles for the footer socials, 2px on the template card itself.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <p class="lead">Almost no elevation: the plan card's soft ink-plans wash is the only measured shadow; focus rings draw as double box-shadows, not outlines.</p>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">One family under five served names: <code>Madefor</code> — wix-madefor-display-v2 on the thunderbolt displays, wix-madefor-text-v2 on body, Madefor-Display/-Text on the marketing chrome, plain Madefor on plans. Display sizes are spx-scaled (they track the viewport): the measured 157.5/80.25/75/72.6/61/60/54/48 displays are the 1440px readings; the ramp runs down to 14/20 footer meta and the 10/24 badge. Samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the thunderbolt theme layer off the inline styles and linked bundles, plus computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"display":{"v":"wix-madefor-display-v2, sans-serif","t":"fontFamily","s":"computed fontFamily of hero-title default text (raw/components-computed.json); the @font-face blocks are served from static.parastorage.com (raw/css-vars.json fonts)","d":"The thunderbolt display face, served as wix-madefor-display-v2 (Madefor Display)."},"text":{"v":"wix-madefor-text-v2, sans-serif","t":"fontFamily","s":"computed fontFamily of faq-question default text (raw/components-computed.json); the @font-face blocks are served from static.parastorage.com (raw/css-vars.json fonts)","d":"The thunderbolt text face, served as wix-madefor-text-v2 (Madefor Text)."},"chrome-display":{"v":"Madefor-Display, \"Madefor Display\", \"Helvetica Neue\", Helvetica, Arial, メイリオ, Meiryo, \"ヒラギノ角ゴ Pro W3\", \"Hiragino Kaku Gothic Pro W3\", \"Hiragino Kaku Gothic Pro\", sans-serif","t":"fontFamily","s":"computed fontFamily of nav-trigger default text (raw/components-computed.json); the @font-face blocks are served from static.parastorage.com (raw/css-vars.json fonts)","d":"The marketing chrome's display face, served as Madefor-Display."},"chrome-text":{"v":"Madefor-Text, Madefor, \"Helvetica Neue\", Helvetica, Arial, メイリオ, Meiryo, \"ヒラギノ角ゴ Pro W3\", \"Hiragino Kaku Gothic Pro W3\", \"Hiragino Kaku Gothic Pro\", sans-serif","t":"fontFamily","s":"computed fontFamily of nav-cta default text (raw/components-computed.json); the @font-face blocks are served from static.parastorage.com (raw/css-vars.json fonts)","d":"The marketing chrome's text face, served as Madefor-Text."},"plans":{"v":"Madefor, \"Helvetica Neue\", Helvetica, Arial, メイリオ, meiryo, \"ヒラギノ角ゴ pro w3\", \"hiragino kaku gothic pro\", sans-serif","t":"fontFamily","s":"computed fontFamily of plans-h1 default text (raw/components-computed.json); the @font-face blocks are served from static.parastorage.com (raw/css-vars.json fonts)","d":"The plans page's face, served as plain Madefor."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of hero-sub default (raw/components-computed.json)","d":"Body and display weight (400)."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of faq-question default (raw/components-computed.json)","d":"The 500 weight on FAQ questions and plan labels."},"mediumbold":{"v":530,"t":"fontWeight","s":"computed fontWeight of template-card default (raw/components-computed.json)","d":"The 530 variable weight the wds buttons paint."},"bold":{"v":700,"t":"fontWeight","s":"computed fontWeight of plans-h1 default (raw/components-computed.json)","d":"The 700 weight on plan headings, badges and menu links."}},"size":{"display-max":{"v":"157.5px","t":"dimension","s":"computed fontSize of design-h1 default (raw/components-computed.json)","d":"The 157.5px studio display (/studio/design; spx-scaled, so viewport-dependent)."},"display-hero":{"v":"80.2485px","t":"dimension","s":"computed fontSize of hero-title default (raw/components-computed.json)","d":"The 80.25px home hero display."},"display-page":{"v":"75px","t":"dimension","s":"computed fontSize of academy-h1 default (raw/components-computed.json)","d":"The 75px page display (/studio/academy)."},"display-2":{"v":"72.5669px","t":"dimension","s":"computed fontSize of inspo-h1 default (raw/components-computed.json)","d":"The 72.57px gallery display (/studio/inspiration)."},"display-3":{"v":"60.9px","t":"dimension","s":"computed fontSize of feat-h1 default (raw/components-computed.json)","d":"The 60.9px features display."},"display-4":{"v":"60px","t":"dimension","s":"computed fontSize of ent-h1 default (raw/components-computed.json)","d":"The 60px enterprise display."},"h2":{"v":"54px","t":"dimension","s":"computed fontSize of section-h2 default (raw/components-computed.json)","d":"The 54px home section heading."},"h2-2":{"v":"48px","t":"dimension","s":"computed fontSize of design-h2 default (raw/components-computed.json)","d":"The 48px /studio/design section heading."},"display-mobile":{"v":"34.5313px","t":"dimension","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The 34.5px hero display at 390 wide."},"h3":{"v":"32px","t":"dimension","s":"computed fontSize of plans-h1 default (raw/components-computed.json)","d":"The 32px plans heading (700)."},"card-title":{"v":"26.6px","t":"dimension","s":"computed fontSize of academy-card default (raw/components-computed.json)","d":"The 26.6px academy card title."},"question":{"v":"24px","t":"dimension","s":"computed fontSize of faq-question default (raw/components-computed.json)","d":"The 24px FAQ question (500)."},"cta-label":{"v":"23.25px","t":"dimension","s":"computed fontSize of hero-cta default (raw/components-computed.json)","d":"The 23.25px hero-pill label."},"filter":{"v":"20px","t":"dimension","s":"computed fontSize of inspo-filter default (raw/components-computed.json)","d":"The 20px gallery filter label."},"lede":{"v":"18px","t":"dimension","s":"computed fontSize of hero-sub default (raw/components-computed.json)","d":"The 18px hero lede."},"menu":{"v":"18px","t":"dimension","s":"computed fontSize of menu-link default (raw/components-computed.json)","d":"The 18px mega-menu link (700)."},"body":{"v":"16px","t":"dimension","s":"computed fontSize of nav-link default (raw/components-computed.json)","d":"The 16px nav/body/control size."},"card-action":{"v":"16px","t":"dimension","s":"computed fontSize of template-card default (raw/components-computed.json)","d":"The 16px card action (530)."},"footer-meta":{"v":"14px","t":"dimension","s":"computed fontSize of footer default (raw/components-computed.json)","d":"The 14px footer meta text."},"link":{"v":"14px","t":"dimension","s":"computed fontSize of pricing-support default (raw/components-computed.json)","d":"The 14px inline link text."},"meta":{"v":"12px","t":"dimension","s":"computed fontSize of inspo-card default (raw/components-computed.json)","d":"The 12px card meta text."},"badge":{"v":"10px","t":"dimension","s":"computed fontSize of plan-badge default (raw/components-computed.json)","d":"The 10px plan badge label (700)."}},"lineHeight":{"display-max":{"v":"157.5px","t":"dimension","s":"computed lineHeight of design-h1 default (raw/components-computed.json)","d":"Display leading (157.5px, 1.0)."},"display-hero":{"v":"88.2733px","t":"dimension","s":"computed lineHeight of hero-title default (raw/components-computed.json)","d":"Hero leading (88.27px on 80.25px)."},"display-page":{"v":"75px","t":"dimension","s":"computed lineHeight of academy-h1 default (raw/components-computed.json)","d":"Page-display leading (75px, 1.0)."},"h2":{"v":"54px","t":"dimension","s":"computed lineHeight of section-h2 default (raw/components-computed.json)","d":"Section heading leading (54px, 1.0)."},"display-mobile":{"v":"37.9844px","t":"dimension","s":"computed lineHeight of m-hero default (raw/components-computed.json)","d":"Mobile hero leading (37.98px on 34.53px)."},"h3":{"v":"36px","t":"dimension","s":"computed lineHeight of plans-h1 default (raw/components-computed.json)","d":"Plans heading leading (36px on 32px)."},"question":{"v":"31.2001px","t":"dimension","s":"computed lineHeight of faq-question default (raw/components-computed.json)","d":"FAQ question leading (31.2px on 24px)."},"cta-label":{"v":"32.5499px","t":"dimension","s":"computed lineHeight of hero-cta default (raw/components-computed.json)","d":"Hero-pill label leading (32.55px on 23.25px)."},"lede":{"v":"28.8px","t":"dimension","s":"computed lineHeight of hero-sub default (raw/components-computed.json)","d":"Lede leading (28.8px on 18px)."},"card-action":{"v":"24px","t":"dimension","s":"computed lineHeight of template-card default (raw/components-computed.json)","d":"Card action leading (24px on 16px)."},"footer-link":{"v":"34px","t":"dimension","s":"computed lineHeight of footer-link default (raw/components-computed.json)","d":"Footer link leading (34px on 16px)."},"footer-meta":{"v":"20px","t":"dimension","s":"computed lineHeight of footer default (raw/components-computed.json)","d":"Footer meta leading (20px on 14px)."},"link":{"v":"18px","t":"dimension","s":"computed lineHeight of pricing-support default (raw/components-computed.json)","d":"Link leading (18px on 14px)."},"meta":{"v":"19.2px","t":"dimension","s":"computed lineHeight of inspo-card default (raw/components-computed.json)","d":"Card meta leading (19.2px on 12px)."},"badge":{"v":"24px","t":"dimension","s":"computed lineHeight of plan-badge default (raw/components-computed.json)","d":"Badge leading (24px on 10px)."}},"letterSpacing":{"display":{"v":"-2.40745px","t":"dimension","s":"computed letterSpacing of hero-title default (raw/components-computed.json)","d":"The -2.4px (~-0.03em) tracking the display faces carry."},"question":{"v":"-0.480001px","t":"dimension","s":"computed letterSpacing of faq-question default (raw/components-computed.json)","d":"The -0.48px (~-0.02em) tracking on FAQ questions."},"mobile":{"v":"-0.345313px","t":"dimension","s":"computed letterSpacing of m-hero default (raw/components-computed.json)","d":"The -0.35px (~-0.01em) tracking at 390 wide."}}},"color":{"brand":{"studio-purple":{"v":"#3910ed","t":"color","s":"computed backgroundColor of nav-cta default (raw/components-computed.json)","d":"The Wix Studio purple #3910ed: the header Start Creating and the hero 'Start creating' pill."},"lime":{"v":"#deff00","t":"color","s":"computed backgroundColor of cta-band default (raw/components-computed.json)","d":"The Wix Studio lime #deff00 the closing CTA band paints."},"link":{"v":"#116dff","t":"color","s":"computed color of pricing-refresh default (raw/components-computed.json)","d":"The #116dff link blue (the pricing error pane's Refresh)."},"link-hover":{"v":"#0f62e6","t":"color","s":"computed color of pricing-refresh hover (raw/components-computed.json)","d":"The #0f62e6 hover step on the link blue."},"studio-blue":{"v":"#1a6aff","t":"color","s":"css-var --wst-color-action (light); css-var --wst-color-action resolved light (raw/css-vars.json)","d":"The declared thunderbolt action blue #1a6aff (--color_18; the --wst-* action/fill/button roles all resolve to it)."},"blue-100":{"v":"#dce8ff","t":"color","s":"css-var --color_16 (light); css-var --color_16 resolved light (raw/css-vars.json)","d":"The declared lightest blue #dce8ff."},"blue-200":{"v":"#95b9ff","t":"color","s":"css-var --color_17 (light); css-var --color_17 resolved light (raw/css-vars.json)","d":"The declared mid light blue #95b9ff."},"blue-700":{"v":"#094bcc","t":"color","s":"css-var --color_19 (light); css-var --color_19 resolved light (raw/css-vars.json)","d":"The declared deep blue #094bcc."},"lime-deep":{"v":"#deff06","t":"color","s":"css-var --color_22 (light); css-var --color_22 resolved light (raw/css-vars.json)","d":"The declared lime variant #deff06 in the site palette."},"lime-100":{"v":"#dbff81","t":"color","s":"css-var --color_20 (light); css-var --color_20 resolved light (raw/css-vars.json)","d":"The declared pale lime #dbff81."},"lime-tint":{"v":"#f3f8f0","t":"color","s":"css-var --color_21 (light); css-var --color_21 resolved light (raw/css-vars.json)","d":"The declared lime-tinted surface #f3f8f0."},"olive-300":{"v":"#92b079","t":"color","s":"css-var --color_23 (light); css-var --color_23 resolved light (raw/css-vars.json)","d":"The declared olive #92b079."},"olive-500":{"v":"#618741","t":"color","s":"css-var --color_24 (light); css-var --color_24 resolved light (raw/css-vars.json)","d":"The declared olive #618741."},"olive-700":{"v":"#39641d","t":"color","s":"css-var --color_25 (light); css-var --color_25 resolved light (raw/css-vars.json)","d":"The declared deep olive #39641d."},"clay-100":{"v":"#f2eae7","t":"color","s":"css-var --color_26 (light); css-var --color_26 resolved light (raw/css-vars.json)","d":"The declared pale clay #f2eae7."},"clay-200":{"v":"#e5cec0","t":"color","s":"css-var --color_27 (light); css-var --color_27 resolved light (raw/css-vars.json)","d":"The declared clay #e5cec0."},"clay-400":{"v":"#a9806f","t":"color","s":"css-var --color_28 (light); css-var --color_28 resolved light (raw/css-vars.json)","d":"The declared clay #a9806f."},"clay-600":{"v":"#8b614f","t":"color","s":"css-var --color_29 (light); css-var --color_29 resolved light (raw/css-vars.json)","d":"The declared clay #8b614f."},"clay-800":{"v":"#633c2b","t":"color","s":"css-var --color_30 (light); css-var --color_30 resolved light (raw/css-vars.json)","d":"The declared deep clay #633c2b."},"orange-100":{"v":"#ffe9df","t":"color","s":"css-var --color_31 (light); css-var --color_31 resolved light (raw/css-vars.json)","d":"The declared pale orange #ffe9df."},"orange-200":{"v":"#ffbfa1","t":"color","s":"css-var --color_32 (light); css-var --color_32 resolved light (raw/css-vars.json)","d":"The declared light orange #ffbfa1."},"orange-400":{"v":"#fa854f","t":"color","s":"css-var --color_33 (light); css-var --color_33 resolved light (raw/css-vars.json)","d":"The declared orange #fa854f."},"orange-500":{"v":"#ea6020","t":"color","s":"css-var --color_34 (light); css-var --color_34 resolved light (raw/css-vars.json)","d":"The declared orange #ea6020."},"orange-700":{"v":"#c94001","t":"color","s":"css-var --color_35 (light); css-var --color_35 resolved light (raw/css-vars.json)","d":"The declared deep orange #c94001."}},"status":{"error":{"v":"#ed1c24","t":"color","s":"css-var --color_3 (light); css-var --color_3 resolved light (raw/css-vars.json)","d":"The declared error red #ed1c24 in the site palette."},"info":{"v":"#0088cb","t":"color","s":"css-var --color_4 (light); css-var --color_4 resolved light (raw/css-vars.json)","d":"The declared info blue #0088cb."},"warning":{"v":"#ffcb05","t":"color","s":"css-var --color_5 (light); css-var --color_5 resolved light (raw/css-vars.json)","d":"The declared warning yellow #ffcb05."},"disabled":{"v":"#c7c7c7","t":"color","s":"css-var --wst-color-disabled (light); css-var --wst-color-disabled resolved light (raw/css-vars.json)","d":"The declared disabled grey #c7c7c7."}},"neutral":{"ink":{"v":"#000000","t":"color","s":"computed ts-color of hero-title default (raw/components-computed.json)","d":"The #000 ink: nearly all text on the marketing surface."},"ink-plans":{"v":"#000624","t":"color","s":"computed ts-color of plans-h1 default (raw/components-computed.json)","d":"The #000624 near-black the plans page paints."},"white":{"v":"#ffffff","t":"color","s":"computed backgroundColor of plan-card default (raw/components-computed.json)","d":"The #ffffff surface: page field, plan cards, template cards."},"footer-ink":{"v":"#f6f6f6","t":"color","s":"computed color of footer-link default (raw/components-computed.json)","d":"The #f6f6f6 text the dark chrome paints."},"footer-muted":{"v":"#828282","t":"color","s":"computed color of footer-link hover (raw/components-computed.json)","d":"The #828282 muted/hover text on the dark chrome."},"hairline":{"v":"#d8e2ec","t":"color","s":"computed paint-border of nav-dropdown default (raw/components-computed.json)","d":"The #d8e2ec hairline under the opened mega-menu."},"card-line":{"v":"#dfe5eb","t":"color","s":"computed paint-border-side of plan-card default (raw/components-computed.json)","d":"The #dfe5eb 1px border the plan cards carry on three sides."},"navy":{"v":"#0e106a","t":"color","s":"computed borderTopColor of plan-card default (raw/components-computed.json)","d":"The #0e106a 3px accent border on the recommended plan card's top edge."},"badge-mint":{"v":"#a6ffd8","t":"color","s":"computed paint-bg of plan-badge default (raw/components-computed.json)","d":"The #a6ffd8 mint the RECOMMENDED badge paints."},"surface-dark":{"v":"#0e0e0e","t":"color","s":"computed paint-bg of footer default (raw/components-computed.json)","d":"The #0e0e0e near-black chrome: the footer."},"footer-divider":{"v":"#848280","t":"color","s":"computed paint-shadow of footer default (raw/components-computed.json)","d":"The #848280 1px rule inside the dark footer."},"shade-1":{"v":"#eeeeee","t":"color","s":"css-var --wst-color-fill-base-shade-1 (light); css-var --wst-color-fill-base-shade-1 resolved light (raw/css-vars.json)","d":"The declared lightest shade #eeeeee."},"shade-2":{"v":"#c7c7c7","t":"color","s":"css-var --wst-color-fill-base-shade-2 (light); css-var --wst-color-fill-base-shade-2 resolved light (raw/css-vars.json)","d":"The declared mid shade #c7c7c7."},"shade-3":{"v":"#8d8d8d","t":"color","s":"css-var --wst-color-fill-base-shade-3 (light); css-var --wst-color-fill-base-shade-3 resolved light (raw/css-vars.json)","d":"The declared deep shade #8d8d8d — also the --wst-* secondary text."},"grey-600":{"v":"#727272","t":"color","s":"css-var --color_6 (light); css-var --color_6 resolved light (raw/css-vars.json)","d":"The declared #727272 grey in the site palette."}}},"radius":{"stadium":{"v":"1123.88px","t":"dimension","s":"computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)","d":"The stadium pill on the hero CTA (the computed cap reads 1123.88px; the ends are semicircles)."},"pill":{"v":"50px","t":"dimension","s":"computed borderTopLeftRadius of section-link default (raw/components-computed.json)","d":"The 50px pill on section links and the enterprise CTA."},"card":{"v":"2px","t":"dimension","s":"computed borderTopLeftRadius of template-card default (raw/components-computed.json)","d":"The 2px radius on template cards."},"none":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)","d":"The sharp 0px default: header CTA, plan cards, bands — corners stay square."},"button-card":{"v":"21px","t":"dimension","s":"painted layer radius inside template-card (raw/components-computed.json)","d":"The 21px radius on the template card's white action button."},"circle":{"v":"9999px","t":"dimension","s":"painted layer radius '50%' on the footer's social buttons (raw/components-computed.json); exported as a full circle","d":"The 50% circle on the footer's social buttons (36px)."}},"spacing":{"card-pad":{"v":"12px","t":"dimension","s":"computed paddingTop of template-card default (raw/components-computed.json)","d":"The 12px card padding."},"control-pad-y":{"v":"15px","t":"dimension","s":"computed paddingTop of m-nav-item default (raw/components-computed.json)","d":"The 15px vertical padding on nav rows and mobile menu items."},"control-pad-r":{"v":"22px","t":"dimension","s":"computed paddingRight of section-link default (raw/components-computed.json)","d":"The 22px trailing padding before a link's arrow."},"menu-pad-x":{"v":"27.2969px","t":"dimension","s":"computed paddingLeft of m-nav-item default (raw/components-computed.json)","d":"The ~27px horizontal gutter at 390 wide."},"cta-pad-x":{"v":"35px","t":"dimension","s":"computed paddingLeft of nav-cta default (raw/components-computed.json)","d":"The 35px horizontal padding on the header CTA."},"dropdown-pad-y":{"v":"47px","t":"dimension","s":"computed paddingTop of nav-dropdown default (raw/components-computed.json)","d":"The 47px top padding inside the mega-menu."},"dropdown-pad-b":{"v":"66px","t":"dimension","s":"computed paddingBottom of nav-dropdown default (raw/components-computed.json)","d":"The 66px bottom padding inside the mega-menu."},"dropdown-pad-x":{"v":"72px","t":"dimension","s":"computed paddingRight of nav-dropdown default (raw/components-computed.json)","d":"The 72-100px horizontal padding inside the mega-menu."}},"measured":{"focus-ring-content":{"v":[{"color":"#ffffff","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"2px","inset":false},{"color":"#116dff","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"4px","inset":false}],"t":"shadow","s":"computed boxShadow of hero-cta focus-visible (raw/components-computed.json)","d":"The double keyboard ring on content controls: 2px white + 4px #116dff."},"focus-ring-chrome":{"v":[{"color":"#000000","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","inset":false},{"color":"#000000","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"3px","inset":false}],"t":"shadow","s":"computed boxShadow of nav-link focus-visible (raw/components-computed.json)","d":"The double keyboard ring in the header: 1px + 3px black."},"focus-ring-footer":{"v":[{"color":"#828282","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","inset":false},{"color":"#828282","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"3px","inset":false}],"t":"shadow","s":"computed boxShadow of footer-link focus-visible (raw/components-computed.json)","d":"The double keyboard ring on the dark chrome: 1px + 3px #828282."},"focus-ring-auto":{"v":"#005fcc","t":"color","s":"computed outlineColor of pricing-support focus-visible (raw/components-computed.json)","d":"The #005fcc auto outline the link-blue controls take (1px)."},"focus-ring-link":{"v":"#116dff","t":"color","s":"computed outlineColor of pricing-refresh focus-visible (raw/components-computed.json)","d":"The 3px solid #116dff outline the standalone Refresh link takes on focus."},"card-elevation":{"v":[{"color":"rgba(0, 6, 36, 0.05)","offsetX":"0px","offsetY":"6px","blur":"6px","spread":"0px","inset":false},{"color":"rgba(0, 6, 36, 0.1)","offsetX":"0px","offsetY":"0px","blur":"18px","spread":"0px","inset":false}],"t":"shadow","s":"ancestor boxShadow of plan-badge (raw/components-computed.json): the recommended plan card's elevation","d":"The plan card's soft elevation: 6px/5% and 18px/10% ink-plans washes."},"transition-cta":{"v":"400ms","t":"duration","s":"computed transition of nav-cta default (raw/components-computed.json)","d":"The 0.4s ease colour transition the CTAs run (color, background-color). (color, background-color)"},"transition-control":{"v":"200ms","t":"duration","s":"computed transition of ent-cta default (raw/components-computed.json)","d":"The 0.2s ease control transition (all). (all, visibility)"}}},"light":{"text":{"primary":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the core palette","d":"Body and display ink on light."},"muted":{"v":"{color.neutral.shade-3}","t":"color","s":"role alias over the core palette","d":"Secondary text on light (the declared --wst-* secondary)."},"on":{"dark":{"v":"{color.neutral.footer-ink}","t":"color","s":"role alias over the core palette","d":"The #f6f6f6 text on the #0e0e0e chrome."},"action":{"v":"#ffffff","t":"color","s":"computed color of nav-cta default (raw/components-computed.json)","d":"White labels on the purple and black fills."}},"hover":{"accent":{"v":"{color.brand.studio-purple}","t":"color","s":"role alias over the core palette","d":"The #3910ed a menu link takes on hover."}}},"surface":{"page":{"v":"{color.neutral.white}","t":"color","s":"role alias over the core palette","d":"The white page field."},"tint":{"v":"{color.neutral.shade-1}","t":"color","s":"role alias over the core palette","d":"The declared #eeeeee secondary fill."},"dark":{"v":"{color.neutral.surface-dark}","t":"color","s":"role alias over the core palette","d":"The #0e0e0e footer chrome on the light page."},"accent":{"v":"{color.brand.lime}","t":"color","s":"role alias over the core palette","d":"The lime closing band."},"badge":{"v":"{color.neutral.badge-mint}","t":"color","s":"role alias over the core palette","d":"The mint RECOMMENDED badge."}},"action":{"primary":{"v":"{color.brand.studio-purple}","t":"color","s":"role alias over the core palette","d":"The #3910ed action fill."},"secondary":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the core palette","d":"The black pill fill the section links / enterprise CTA carry."},"link":{"default":{"v":"{color.brand.link}","t":"color","s":"role alias over the core palette","d":"The #116dff link blue."},"hover":{"v":"{color.brand.link-hover}","t":"color","s":"role alias over the core palette","d":"The #0f62e6 link hover."}}},"border":{"hairline":{"v":"{color.neutral.hairline}","t":"color","s":"role alias over the core palette","d":"The #d8e2ec hairline (mega-menu, page rules)."},"card":{"v":"{color.neutral.card-line}","t":"color","s":"role alias over the core palette","d":"The #dfe5eb card border."},"accent":{"v":"{color.neutral.navy}","t":"color","s":"role alias over the core palette","d":"The #0e106a top accent on the recommended plan card."}},"component":{"button-cta":{"height":{"v":"57px","t":"dimension","s":"computed height of nav-cta default (raw/components-computed.json)","d":"The 57px header CTA height."}},"button-pill":{"height":{"v":"56.2344px","t":"dimension","s":"computed height of hero-cta default (raw/components-computed.json)","d":"The ~56px hero 'Start creating' pill."}},"button-secondary":{"height":{"v":"52px","t":"dimension","s":"computed height of ent-cta default (raw/components-computed.json)","d":"The 52px enterprise/secondary pill."}},"link-pill":{"height":{"v":"32px","t":"dimension","s":"computed height of section-link default (raw/components-computed.json)","d":"The 32px section-link pill."}},"filter":{"height":{"v":"32px","t":"dimension","s":"computed height of inspo-filter default (raw/components-computed.json)","d":"The 32px gallery filter chip."}},"header":{"height":{"v":"56px","t":"dimension","s":"computed height of nav-bar default (raw/components-computed.json)","d":"The 56px desktop header."}},"header-mobile":{"height":{"v":"47px","t":"dimension","s":"computed height of m-header default (raw/components-computed.json)","d":"The 47px mobile header."}},"menurow":{"height":{"v":"50px","t":"dimension","s":"computed height of m-nav-item default (raw/components-computed.json)","d":"The 50px mobile-menu row."}},"menubutton":{"height":{"v":"46px","t":"dimension","s":"computed height of m-menu-button default (raw/components-computed.json)","d":"The 46px mobile menu button (50px wide)."}},"footer":{"height":{"v":"793px","t":"dimension","s":"computed height of footer default (raw/components-computed.json)","d":"The 793px dark footer."}},"dropdown":{"height":{"v":"397px","t":"dimension","s":"computed height of nav-dropdown default (raw/components-computed.json)","d":"The ~400-510px mega-menu panel."}},"plancard":{"height":{"v":"574px","t":"dimension","s":"computed height of plan-card default (raw/components-computed.json)","d":"The 574px plan card."},"width":{"v":"202.016px","t":"dimension","s":"computed width of plan-card default (raw/components-computed.json)","d":"The ~202px plan card column."}},"templatecard":{"height":{"v":"394.797px","t":"dimension","s":"computed height of template-card default (raw/components-computed.json)","d":"The ~395px template card."}},"faqrow":{"height":{"v":"131.188px","t":"dimension","s":"computed height of faq-question default (raw/components-computed.json)","d":"The ~131px FAQ row, closed."}},"ctaband":{"height":{"v":"171px","t":"dimension","s":"computed height of cta-band default (raw/components-computed.json)","d":"The 171px lime closing band."}}}},"dark":{"text":{"primary":{"v":"{color.neutral.footer-ink}","t":"color","s":"role alias over the core palette","d":"The #f6f6f6 text on the dark chrome."},"muted":{"v":"{color.neutral.footer-muted}","t":"color","s":"role alias over the core palette","d":"The #828282 muted/hover text on dark."},"on":{"action":{"v":"#ffffff","t":"color","s":"computed color of nav-cta default (raw/components-computed.json)","d":"White labels on the action fill; the dark footer carries no action, so this is the header action's label ink."}}},"surface":{"page":{"v":"{color.neutral.surface-dark}","t":"color","s":"role alias over the core palette","d":"The #0e0e0e chrome surface."}},"border":{"default":{"v":"{color.neutral.footer-ink}","t":"color","s":"role alias over the core palette","d":"The 1px #f6f6f6 ring the footer's 50%-radius social buttons carry."},"divider":{"v":"{color.neutral.footer-divider}","t":"color","s":"role alias over the core palette","d":"The #848280 hairline inside the footer."}},"action":{"primary":{"v":"{color.brand.studio-purple}","t":"color","s":"role alias over the core palette","d":"The #3910ed action fill; the dark footer carries no action of its own, the role is kept for completeness."}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the .theme.dark band)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  // Shadows live under core.shadow in most packs; this one stores them under
+  // core.measured (the plan card's elevation and the double focus rings), so
+  // every $type=shadow token under core is listed.
+  const seen = new Set();
+  for (const [n, t] of flat(TOK.core, '')) {
+    if (t.t !== 'shadow' || seen.has(n)) continue;
+    seen.add(n);
+    e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => [x.offsetX, x.offsetY, x.blur, x.spread, x.color].filter(Boolean).join(' ')).join(', ') : t.v)}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Wix Studio</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "_note": "Public marketing copy. satoshi@email.com is the home hero placeholder. satoshi@gmail.com is a published sample on /learn. a.smith@company.com is a published sample on the /prime institutions mock. None was typed.",
+  "ocr": {
+    "emails": true,
+    "email_allow": ["satoshi@email\\.com$", "satoshi@emall\\.com$", "satoshi@gmail\\.com$", "a\\.smith@company\\.com$"]
+  }
+}

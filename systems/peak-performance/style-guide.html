@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peak Performance style guide</title>
+<style>
+:root {
+  --core-color-ink: #000000;
+  --core-color-paper: #ffffff;
+  --core-color-lime: #effda4;
+  --core-color-sand: #ebe9e1;
+  --core-color-hairline: rgba(0, 0, 0, 0.15);
+  --core-color-muted: rgba(0, 0, 0, 0.55);
+  --core-color-dim: rgba(0, 0, 0, 0.5);
+  --core-color-focus-border: rgba(0, 0, 0, 0.9);
+  --core-color-error: #b62020;
+  --core-color-success: #56865e;
+  --core-color-charcoal: #202020;
+  --core-color-stone: #c8c6bf;
+  --core-color-mist: #d9d9d9;
+  --core-color-white-veil: rgba(255, 255, 255, 0.3);
+  --core-color-ink-veil: rgba(0, 0, 0, 0.15);
+  --core-font-family-display: "Helvetica Now Display", sans-serif;
+  --core-font-family-text: "Helvetica Now Text", "Helvetica Now Display", sans-serif;
+  --core-font-family-highlight: "Mercury Display", sans-serif;
+  --core-font-family-icon: Icon-Peak2024, sans-serif;
+  --core-radius-none: 0px;
+  --core-radius-pill: 24px;
+  --core-radius-circle: 9999px;
+  --core-radius-sheet: 30px;
+  --core-spacing-0: 0px;
+  --core-spacing-8: 8px;
+  --core-spacing-10: 10px;
+  --core-spacing-12: 12px;
+  --core-spacing-14: 14px;
+  --core-spacing-16: 16px;
+  --core-spacing-20: 20px;
+  --core-spacing-24: 24px;
+  --core-spacing-32: 32px;
+  --core-spacing-44: 44px;
+  --core-spacing-50: 50px;
+  --core-spacing-banner: 30px;
+  --core-size-logo-width: 215px;
+  --core-size-logo-height: 29px;
+  --core-size-header: 118px;
+  --core-size-pill: 34px;
+  --core-size-button-lg: 46px;
+  --core-size-icon-button: 32px;
+  --core-size-swatch: 12px;
+  --core-size-filter-sheet: 450px;
+  --core-size-card: 360px;
+  --core-size-card-image: 479px;
+  --core-size-search: 45px;
+  --core-size-pdp-buy-column: 540px;
+  --core-size-minicart-header: 64px;
+  --core-border-hairline: 1px;
+  --core-breakpoint-xs: 480px;
+  --core-breakpoint-sm: 640px;
+  --core-breakpoint-md: 768px;
+  --core-breakpoint-lg: 1024px;
+  --core-breakpoint-xl: 1280px;
+  --core-breakpoint-2xl: 1536px;
+  --core-motion-duration-150: 150ms;
+  --core-motion-duration-300: 300ms;
+  --core-motion-duration-600: 600ms;
+  --core-motion-duration-loader: 1000ms;
+  --light-background-page: var(--core-color-paper);
+  --light-background-surface: var(--core-color-paper);
+  --light-background-inverse: var(--core-color-ink);
+  --light-background-banner: var(--core-color-lime);
+  --light-background-sand: var(--core-color-sand);
+  --light-background-scrim: rgba(0, 0, 0, 0);
+  --light-text-primary: var(--core-color-ink);
+  --light-text-secondary: var(--core-color-muted);
+  --light-text-tertiary: var(--core-color-dim);
+  --light-text-inverse: var(--core-color-paper);
+  --light-text-on-banner: var(--core-color-ink);
+  --light-border-stroke: var(--core-color-hairline);
+  --light-border-strong: var(--core-color-ink);
+  --light-border-focus: var(--core-color-focus-border);
+  --light-border-error: var(--core-color-error);
+  --light-border-success: var(--core-color-success);
+  --light-action-primary-background: var(--core-color-ink);
+  --light-action-primary-text: var(--core-color-paper);
+  --light-action-primary-border: var(--core-color-paper);
+  --light-action-secondary-background: rgba(0, 0, 0, 0);
+  --light-action-secondary-text: var(--core-color-ink);
+  --light-action-secondary-border: var(--core-color-ink);
+  --light-action-on-photo-background: rgba(0, 0, 0, 0);
+  --light-action-on-photo-text: var(--core-color-paper);
+  --light-action-on-photo-border: var(--core-color-paper);
+  --light-action-hover-background: var(--core-color-ink-veil);
+  --light-button-radius: var(--core-radius-pill);
+  --light-button-padding: 10px;
+  --light-button-height: var(--core-size-pill);
+  --light-button-font-size: 12px;
+  --light-field-background: rgba(0, 0, 0, 0);
+  --light-field-text: var(--core-color-ink);
+  --light-field-border: var(--core-color-hairline);
+  --light-field-radius: var(--core-radius-none);
+  --page: var(--light-background-page);
+  --ink: var(--light-text-primary);
+  --muted: var(--light-text-secondary);
+  --line: var(--light-border-stroke);
+  --sans: "Helvetica Now Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --text: "Helvetica Now Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 400 14px/16.8px var(--sans); letter-spacing: -0.36px; }
+header.top { background: #effda4; color: #000; min-height: 30px; display: flex; align-items: center; justify-content: center; font-family: var(--text); font-size: 12px; letter-spacing: -0.12px; text-transform: uppercase; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font-size: 48px; line-height: 48px; letter-spacing: -0.48px; font-weight: 400; text-transform: uppercase; margin: 24px 0 8px; }
+h2 { font-size: 32px; line-height: 35.2px; letter-spacing: -0.32px; font-weight: 400; text-transform: uppercase; margin: 48px 0 12px; }
+p.lead { max-width: 68ch; color: var(--ink); }
+.note { color: rgba(0,0,0,0.55); font-size: 12px; letter-spacing: -0.36px; font-family: var(--text); text-transform: uppercase; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: center; }
+.sw i { width: 44px; height: 44px; display: block; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.15); }
+.sw b { display: block; font-size: 12px; letter-spacing: -0.36px; font-family: var(--text); text-transform: uppercase; font-weight: 400; }
+.sw span { font-size: 12px; color: rgba(0,0,0,0.55); }
+.typerow { display: grid; grid-template-columns: 220px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.15); align-items: baseline; }
+.typerow .k { font-family: var(--text); font-size: 12px; letter-spacing: -0.36px; text-transform: uppercase; }
+.typerow .k small { display: block; color: rgba(0,0,0,0.55); text-transform: none; letter-spacing: 0; margin-top: 4px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.pill { display: inline-flex; align-items: center; justify-content: center; height: 34px; padding: 10px 14px; border-radius: 24px; border: 1px solid #fff; color: #fff; background: transparent; font-family: var(--text); font-size: 12px; letter-spacing: -0.36px; text-transform: uppercase; text-decoration: none; }
+.photo { background: #000; padding: 24px; display: flex; gap: 12px; }
+.btn-fill { display: inline-flex; align-items: center; justify-content: center; height: 46px; padding: 16px 20px; border-radius: 24px; border: 1px solid #fff; background: #000; color: #fff; font-family: var(--text); font-size: 12px; letter-spacing: -0.36px; text-transform: uppercase; }
+.btn-line { display: inline-flex; align-items: center; justify-content: center; height: 46px; padding: 16px 20px; border-radius: 24px; border: 1px solid #000; background: transparent; color: #000; font-family: var(--text); font-size: 12px; letter-spacing: -0.36px; text-transform: uppercase; }
+.card { width: 180px; }
+.card .img { height: 220px; background: #ebe9e1; }
+.card .name, .card .price { font-size: 14px; letter-spacing: -0.36px; margin-top: 6px; }
+.search { height: 45px; padding: 0 12px; border: 0; border-bottom: 1px solid rgba(0,0,0,0.15); width: 280px; font: 400 14px/16.8px var(--sans); letter-spacing: -0.16px; }
+.swatch { width: 12px; height: 12px; border-radius: 9999px; display: inline-block; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid rgba(0,0,0,0.15); vertical-align: top; }
+th { font-family: var(--text); font-size: 12px; letter-spacing: -0.36px; text-transform: uppercase; font-weight: 400; color: rgba(0,0,0,0.55); }
+</style>
+</head>
+<body>
+<header class="top">Free shipping for members. Sign up today.</header>
+<div class="wrap">
+  <p class="note">Sweden English storefront, signed out, 2026-11-19</p>
+  <h1>Peak Performance</h1>
+  <p class="lead">Values on this page are the tokens in tokens.json. Helvetica Now Display, Helvetica Now Text and Mercury Display are proprietary and are not loaded here. The specimens fall back to Helvetica Neue.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:#000000"></i><div><b>color-ink</b><span>#000000</span></div></div><div class="sw"><i style="background:#ffffff"></i><div><b>color-paper</b><span>#ffffff</span></div></div><div class="sw"><i style="background:#effda4"></i><div><b>color-lime</b><span>#effda4</span></div></div><div class="sw"><i style="background:#ebe9e1"></i><div><b>color-sand</b><span>#ebe9e1</span></div></div><div class="sw"><i style="background:rgba(0, 0, 0, 0.15)"></i><div><b>color-hairline</b><span>rgba(0, 0, 0, 0.15)</span></div></div><div class="sw"><i style="background:rgba(0, 0, 0, 0.55)"></i><div><b>color-muted</b><span>rgba(0, 0, 0, 0.55)</span></div></div><div class="sw"><i style="background:rgba(0, 0, 0, 0.5)"></i><div><b>color-dim</b><span>rgba(0, 0, 0, 0.5)</span></div></div><div class="sw"><i style="background:rgba(0, 0, 0, 0.9)"></i><div><b>color-focus-border</b><span>rgba(0, 0, 0, 0.9)</span></div></div><div class="sw"><i style="background:#b62020"></i><div><b>color-error</b><span>#b62020</span></div></div><div class="sw"><i style="background:#56865e"></i><div><b>color-success</b><span>#56865e</span></div></div><div class="sw"><i style="background:#202020"></i><div><b>color-charcoal</b><span>#202020</span></div></div><div class="sw"><i style="background:#c8c6bf"></i><div><b>color-stone</b><span>#c8c6bf</span></div></div><div class="sw"><i style="background:#d9d9d9"></i><div><b>color-mist</b><span>#d9d9d9</span></div></div><div class="sw"><i style="background:rgba(255, 255, 255, 0.3)"></i><div><b>color-white-veil</b><span>rgba(255, 255, 255, 0.3)</span></div></div><div class="sw"><i style="background:rgba(0, 0, 0, 0.15)"></i><div><b>color-ink-veil</b><span>rgba(0, 0, 0, 0.15)</span></div></div>
+  </div>
+
+  <h2>Type</h2>
+  <div class="typerow">
+      <div class="k">hero<small>96px / 96px / -2.88px</small></div>
+      <div class="sample" style="font-family:var(--core-font-family-display);font-size:96px;font-weight:400;line-height:96px;letter-spacing:-2.88px;text-transform:uppercase">Outerwear without compromise</div>
+    </div>
+<div class="typerow">
+      <div class="k">display<small>80px / 80px / -2.4px</small></div>
+      <div class="sample" style="font-family:var(--core-font-family-display);font-size:80px;font-weight:400;line-height:80px;letter-spacing:-2.4px;text-transform:uppercase">Outerwear without compromise</div>
+    </div>
+<div class="typerow">
+      <div class="k">page-title<small>64px / 70.4px / -0.64px</small></div>
+      <div class="sample" style="font-family:var(--core-font-family-display);font-size:64px;font-weight:400;line-height:70.4px;letter-spacing:-0.64px;text-transform:uppercase">Outerwear without compromise</div>
+    </div>
+<div class="typerow">
+      <div class="k">cta-title<small>48px / 48px / -0.48px</small></div>
+      <div class="sample" style="font-family:var(--core-font-family-display);font-size:48px;font-weight:400;line-height:48px;letter-spacing:-0.48px;text-transform:uppercase">Outerwear without compromise</div>
+    </div>
+<div class="typerow">
+      <div class="k">section<small>32px / 35.2px / -0.32px</small></div>
+      <div class="sample" style="font-family:var(--core-font-family-display);font-size:32px;font-weight:400;line-height:35.2px;letter-spacing:-0.32px;text-transform:uppercase">Outerwear without compromise</div>
+    </div>
+<div class="typerow">
+      <div class="k">title<small>24px / 28.8px / -0.24px</small></div>
+      <div class="sample" style="font-family:var(--core-font-family-display);font-size:24px;font-weight:400;line-height:28.8px;letter-spacing:-0.24px;text-transform:none">Outerwear without compromise</div>
+    </div>
+<div class="typerow">
+      <div class="k">lead<small>20px / 22px / -0.2px</small></div>
+      <div class="sample" style="font-family:var(--core-font-family-display);font-size:20px;font-weight:400;line-height:22px;letter-spacing:-0.2px;text-transform:uppercase">Outerwear without compromise</div>
+    </div>
+<div class="typerow">
+      <div class="k">nav-group<small>16px / 19.2px / -0.16px</small></div>
+      <div class="sample" style="font-family:var(--core-font-family-display);font-size:16px;font-weight:400;line-height:19.2px;letter-spacing:-0.16px;text-transform:none">Outerwear without compromise</div>
+    </div>
+<div class="typerow">
+      <div class="k">body<small>14px / 16.8px / -0.36px</small></div>
+      <div class="sample" style="font-family:var(--core-font-family-display);font-size:14px;font-weight:400;line-height:16.8px;letter-spacing:-0.36px;text-transform:none">Outerwear without compromise</div>
+    </div>
+<div class="typerow">
+      <div class="k">label<small>12px / 13.2px / -0.36px</small></div>
+      <div class="sample" style="font-family:var(--core-font-family-text);font-size:12px;font-weight:400;line-height:13.2px;letter-spacing:-0.36px;text-transform:uppercase">Outerwear without compromise</div>
+    </div>
+<div class="typerow">
+      <div class="k">caption<small>10px / 11px / -0.1px</small></div>
+      <div class="sample" style="font-family:var(--core-font-family-text);font-size:10px;font-weight:400;line-height:11px;letter-spacing:-0.1px;text-transform:uppercase">Outerwear without compromise</div>
+    </div>
+<div class="typerow">
+      <div class="k">micro<small>8px / 8.8px / -0.24px</small></div>
+      <div class="sample" style="font-family:var(--core-font-family-text);font-size:8px;font-weight:400;line-height:8.8px;letter-spacing:-0.24px;text-transform:none">Outerwear without compromise</div>
+    </div>
+<div class="typerow">
+      <div class="k">quote<small>24px / 28.8px / -0.48px</small></div>
+      <div class="sample" style="font-family:var(--core-font-family-highlight);font-size:24px;font-weight:400;line-height:28.8px;letter-spacing:-0.48px;text-transform:none">Outerwear without compromise</div>
+    </div>
+<div class="typerow">
+      <div class="k">quote-large<small>56px / 56px / -1.12px</small></div>
+      <div class="sample" style="font-family:var(--core-font-family-highlight);font-size:56px;font-weight:400;line-height:56px;letter-spacing:-1.12px;text-transform:none">Outerwear without compromise</div>
+    </div>
+
+  <h2>Controls</h2>
+  <div class="photo">
+    <a class="pill">Shop women's jackets</a>
+    <a class="pill">Shop men's jackets</a>
+  </div>
+  <div class="row" style="margin-top:16px">
+    <span class="btn-fill">Show results 66</span>
+    <span class="btn-line">Clear filters</span>
+    <input class="search" placeholder="Search...">
+    <span class="swatch" style="background:#000"></span>
+    <span class="swatch" style="background:#255793"></span>
+    <span class="swatch" style="background:#7b4e2d"></span>
+    <span class="swatch" style="background:#828588"></span>
+  </div>
+
+  <h2>Product tile</h2>
+  <div class="card">
+    <div class="img"></div>
+    <div class="name">Helium Down Hood Jacket Women</div>
+    <div class="price">3 000 SEK</div>
+  </div>
+
+  <h2>Spacing</h2>
+  <table>
+    <tr><th>Token</th><th>Value</th></tr>
+    <tr><td>core.spacing.0</td><td>0px</td></tr><tr><td>core.spacing.8</td><td>8px</td></tr><tr><td>core.spacing.10</td><td>10px</td></tr><tr><td>core.spacing.12</td><td>12px</td></tr><tr><td>core.spacing.14</td><td>14px</td></tr><tr><td>core.spacing.16</td><td>16px</td></tr><tr><td>core.spacing.20</td><td>20px</td></tr><tr><td>core.spacing.24</td><td>24px</td></tr><tr><td>core.spacing.32</td><td>32px</td></tr><tr><td>core.spacing.44</td><td>44px</td></tr><tr><td>core.spacing.50</td><td>50px</td></tr><tr><td>core.spacing.banner</td><td>30px</td></tr>
+  </table>
+</div>
+</body>
+</html>

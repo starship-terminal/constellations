@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Athletic style guide</title>
+<style>
+  :root {
+    --page: #ffffff; --surface: #f7f7f4; --text: #121212; --muted: #323232;
+    --accent: #b72424; --border: #c4c4c0; --nav: #1a1a1a; --nav-text: #ffffff;
+    --ink: #000000; --cta: #121212; --banner: #f0f0ee; --focus: #f0f0ee;
+  }
+  html[data-theme="dark"] {
+    --page: #000000; --surface: #121212; --text: #ffffff; --muted: #969693;
+    --accent: #fd5757; --border: #52524f; --nav: #121212; --nav-text: #ffffff;
+    --ink: #ffffff; --cta: #ffffff; --banner: #323232; --focus: #f0f0ee;
+  }
+  body { margin: 0; background: var(--page); color: var(--text); font-family: nyt-franklin, helvetica, arial, sans-serif; }
+  header { background: var(--nav); color: var(--nav-text); padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+  header h1 { font-size: 16px; font-weight: 600; letter-spacing: 0.25px; margin: 0; }
+  main { padding: 32px 24px 64px; max-width: 960px; }
+  h2 { font-family: nyt-cheltenham, georgia, serif; font-weight: 400; font-size: 28px; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0 28px; }
+  .swatch { width: 140px; }
+  .chip { height: 56px; border-radius: 2px; border: 1px solid var(--border); }
+  .swatch span { display: block; font-size: 12px; color: var(--muted); margin-top: 4px; }
+  button, .btn { font-family: inherit; cursor: pointer; }
+  .trial { background: var(--accent); color: #fff; border: 0; border-radius: 2px; height: 32px; padding: 0 16px; font-size: 14px; font-weight: 700; letter-spacing: 0.25px; }
+  .login { background: transparent; color: var(--nav-text); border: 0; border-radius: 20px; font-size: 14px; font-weight: 600; letter-spacing: 0.25px; }
+  .cta { background: var(--cta); color: var(--page); border: 0; border-radius: 4px; height: 44px; padding: 0 20px; font-size: 16px; font-weight: 600; }
+  .pill { background: var(--ink); color: var(--page); border: 0; border-radius: 100px; padding: 8px 14px; font-size: 14px; font-weight: 600; }
+  .plan { border: 1px solid #dfdfdf; border-radius: 3px; padding: 14px 10px; width: 157px; background: #fff; color: #363636; }
+  .plan.on { border-color: #267c30; background: #f8f8f8; }
+  .story { font-family: nyt-imperial, georgia, serif; font-size: 20px; line-height: 30px; max-width: 722px; }
+  .display { font-family: nyt-cheltenham, georgia, serif; font-size: 40px; line-height: 44px; font-weight: 400; }
+  .slab { font-family: RegularSlab, georgia, serif; font-size: 42px; letter-spacing: -0.21px; }
+  .note { font-size: 13px; color: var(--muted); max-width: 640px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>The Athletic</h1>
+  <div>
+    <button class="login" type="button">Log In</button>
+    <button class="trial" type="button">Start a free trial</button>
+    <button type="button" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'" style="margin-left:12px;background:transparent;color:#fff;border:1px solid #fff;border-radius:2px;padding:4px 8px">Theme</button>
+  </div>
+</header>
+<main>
+  <p class="note">Values are the computed styles read on 2026-11-19. The dark theme is the declared <code>:root[data-theme=dark]</code> set. The signed-out pages painted <code>html[data-theme=legacy]</code>, which this page shows as light. Georgia stands in for nyt-cheltenham, nyt-imperial and RegularSlab.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Type</h2>
+  <p class="slab">About Us</p>
+  <p class="display">NHL goalies are in crisis</p>
+  <p class="story">Linus Ullmark took an elevator to the 400 level. Story body is nyt-imperial at 20px / 30px, measured at 722px wide.</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="trial" type="button">Start a free trial</button>
+    <button class="cta" type="button">Continue to checkout</button>
+    <button class="pill" type="button">International</button>
+    <div class="plan on">BEST VALUE<br>$12.50/year</div>
+    <div class="plan">$1/month<br>Pay monthly</div>
+  </div>
+</main>
+<script>
+  const light = [
+    ["page", "#ffffff"], ["surface", "#f7f7f4"], ["text", "#121212"],
+    ["muted", "#323232"], ["accent", "#b72424"], ["border", "#c4c4c0"],
+    ["nav", "#1a1a1a"], ["link", "#386c92"]
+  ];
+  document.getElementById("swatches").innerHTML = light.map(([n, c]) =>
+    `<div class="swatch"><div class="chip" style="background:${c}"></div><span>${n}<br>${c}</span></div>`
+  ).join("");
+</script>
+</body>
+</html>

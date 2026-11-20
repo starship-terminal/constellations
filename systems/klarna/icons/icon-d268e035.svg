@@ -1,0 +1,12 @@
+<svg role="img" preserveAspectRatio="none" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" width="50" height="50">
+<path d="M25 50a25 25 0 1 0 0-50 25 25 0 0 0 0 50" fill="#f0f0f0">
+</path>
+<path d="M50 25A25 25 0 0 0 35.87 2.48v45.04A25 25 0 0 0 50 25" fill="#d80027">
+</path>
+<path d="M0 25a25 25 0 0 0 14.13 22.52V2.48A25 25 0 0 0 0 25M18.48 25a6.52 6.52 0 0 0 13.04 0v-2.17H18.48z" fill="#6da544">
+</path>
+<path d="M33.7 20.65h-6.53a2.17 2.17 0 0 0-4.34 0H16.3c0 1.2 1.05 2.18 2.25 2.18h-.07c0 1.2.97 2.17 2.17 2.17 0 1.2.98 2.17 2.18 2.17h4.34c1.2 0 2.18-.97 2.18-2.17 1.2 0 2.17-.97 2.17-2.17h-.07c1.2 0 2.25-.98 2.25-2.18" fill="#ff9811">
+</path>
+<circle cx="25" cy="25" r="25" stroke-width="1" fill="#ffffff" stroke="currentColor">
+</circle>
+</svg>

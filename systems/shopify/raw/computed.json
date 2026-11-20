@@ -1,0 +1,193 @@
+{
+  "home": {
+    "url": "https://www.shopify.com/sg",
+    "title": "Shopify: Your Commerce Platform to Sell Online & In Person - Shopify Singapore",
+    "viewport": {
+      "innerWidth": 1169,
+      "innerHeight": 731,
+      "devicePixelRatio": 2,
+      "visualViewport": {
+        "width": 1169,
+        "height": 731,
+        "scale": 1
+      }
+    },
+    "body": {
+      "background": "rgb(0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "font": "Shopify-Inter, Helvetica, Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px"
+    },
+    "header": {
+      "height": "72px",
+      "color": "rgb(255, 255, 255)",
+      "padding": "0px 37px 0px 50px",
+      "background": "transparent"
+    },
+    "h1": {
+      "text": "Be the next AI all-star",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "70px",
+      "fontWeight": "330",
+      "lineHeight": "75.6px",
+      "letterSpacing": "-1.4px"
+    },
+    "startForFreeHeader": {
+      "background": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "padding": "8px 20px",
+      "radius": "9999px",
+      "fontSize": "16px",
+      "fontWeight": "550",
+      "height": "44px",
+      "border": "2px solid transparent"
+    },
+    "startForFreeHero": {
+      "background": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "padding": "12px 24px",
+      "radius": "9999px",
+      "fontSize": "18px",
+      "fontWeight": "550",
+      "height": "56px"
+    },
+    "secondary": {
+      "text": "Pick a plan that fits",
+      "color": "rgb(255, 255, 255)",
+      "border": "2px solid rgb(255, 255, 255)",
+      "radius": "9999px",
+      "padding": "12px 24px",
+      "fontSize": "18px",
+      "fontWeight": "550"
+    },
+    "navCard": {
+      "background": "rgb(14, 14, 16)",
+      "border": "1px solid rgb(25, 39, 42)",
+      "radius": "16px",
+      "padding": "24px",
+      "color": "rgb(255, 255, 255)"
+    },
+    "section": {
+      "background": "rgb(2, 9, 10)",
+      "color": "rgb(255, 255, 255)",
+      "paddingTop": "72px"
+    },
+    "productCard": {
+      "background": "rgb(6, 26, 28)",
+      "border": "1px solid rgb(30, 44, 49)",
+      "radius": "12px",
+      "padding": "32px"
+    },
+    "footer": {
+      "background": "rgb(0, 0, 0)",
+      "color": "rgb(161, 161, 170)",
+      "padding": "80px 50px"
+    },
+    "logInLink": {
+      "href": "https://www.shopify.com/login?ui_locales=en-SG",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "400"
+    }
+  },
+  "pricing": {
+    "url": "https://www.shopify.com/sg/pricing",
+    "title": "Shopify Pricing: Find the Right Plan for Your Business - Shopify Singapore",
+    "h1": {
+      "text": "You've got plans. Us too.",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "54px",
+      "fontWeight": "330",
+      "lineHeight": "58.152px",
+      "letterSpacing": "-0.27px"
+    },
+    "section": {
+      "background": "rgb(2, 9, 10)",
+      "color": "rgb(255, 255, 255)"
+    },
+    "planCard": {
+      "background": "rgb(20, 26, 26)",
+      "radius": "24px",
+      "padding": "24px 24px 32px"
+    },
+    "cta": {
+      "text": "Start for free",
+      "hrefHost": "admin.shopify.com",
+      "signupTypes": "paid_trial_experience",
+      "entered": false
+    }
+  },
+  "login": {
+    "url": "https://accounts.shopify.com/lookup",
+    "title": "Log in \u2014 Shopify account",
+    "challenge": false,
+    "submitted": false,
+    "bodyClass": "page fresh-ui has-dark-background",
+    "body": {
+      "background": "rgb(10, 19, 20)",
+      "color": "rgb(32, 34, 35)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "font": "ShopifyInter, Noto Sans Arabic, Noto Sans Hebrew, ui-sans-serif, system-ui, sans-serif"
+    },
+    "h1": {
+      "text": "Log in",
+      "color": "rgb(48, 48, 48)",
+      "fontSize": "24px",
+      "fontWeight": "700",
+      "lineHeight": "32px"
+    },
+    "card": {
+      "class": "login-card with-unified-design",
+      "background": "transparent",
+      "padding": "40px",
+      "width": "476px"
+    },
+    "email": {
+      "background": "rgb(243, 243, 243)",
+      "color": "rgb(48, 48, 48)",
+      "border": "1px solid rgb(26, 26, 26)",
+      "radius": "8px",
+      "padding": "8px 12px",
+      "height": "38px",
+      "fontSize": "16px",
+      "fontWeight": "450",
+      "outline": "rgb(0, 91, 211) solid 2px",
+      "filled": false
+    },
+    "password": {
+      "background": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(26, 26, 26)",
+      "radius": "8px",
+      "filled": false
+    },
+    "continue": {
+      "text": "Continue with email",
+      "background": "rgb(11, 19, 20)",
+      "color": "rgb(250, 252, 252)",
+      "radius": "8px",
+      "padding": "12px 16px",
+      "height": "44px",
+      "fontWeight": "500",
+      "shadow": "rgba(26, 26, 26, 0.07) 0px 3px 1px -1px",
+      "clicked": false
+    },
+    "passkey": {
+      "text": "Sign in with passkey",
+      "background": "rgb(241, 241, 241)",
+      "color": "rgb(48, 48, 48)",
+      "radius": "8px",
+      "clicked": false
+    },
+    "providers": [
+      "Google",
+      "Apple",
+      "Facebook",
+      "WhatsApp"
+    ],
+    "providersClicked": false
+  }
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Scale AI style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --ink: #000000;
+    --nav: #ffffff;
+    --text: #000000;
+    --muted: #929292;
+    --secondary: #575757;
+    --title: #212121;
+    --field: #171717;
+    --border: #c7c7c7;
+    --field-border: #d1d5db;
+    --focus: #171717;
+    --sand: #a8927c;
+    --pine: #193a29;
+    --chart: #72ce7b;
+    --login-field: #edf2f7;
+    --login-text: #454d57;
+    --link: #2f80ed;
+    --secondary-face: #eaeaea;
+    --sans: aeonik, "aeonik Fallback", ui-sans-serif, system-ui, sans-serif;
+    --mono: mono, ui-monospace, monospace;
+    --login: Inter, -apple-system, Arial, sans-serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 24px; }
+  header { height: 88px; background: var(--nav); display: flex; align-items: center; justify-content: space-between; padding: 0 32px; position: sticky; top: 0; }
+  .word { font-size: 18px; letter-spacing: -0.01em; }
+  nav { display: flex; gap: 12px; align-items: center; }
+  .nav-link { font-size: 14px; line-height: 14px; background: none; border: 0; height: 40px; }
+  .login { height: 40px; min-width: 72px; border: 1px solid var(--border); border-radius: 8px; color: var(--muted); background: transparent; font-size: 14px; }
+  .primary { height: 40px; min-width: 105px; border: 0; border-radius: 8px; background: var(--ink); color: #fff; font-size: 16px; }
+  main { padding: 48px 32px 96px; max-width: 880px; }
+  h1 { font-size: 64px; font-weight: 400; line-height: 1.05; letter-spacing: -0.01em; margin: 0 0 16px; }
+  h2 { font-size: 40px; font-weight: 400; line-height: 1.25; letter-spacing: -0.01em; color: var(--title); margin: 48px 0 12px; }
+  .lede { color: var(--secondary); letter-spacing: -0.01em; max-width: 576px; }
+  .eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: #101010; }
+  .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .swatch { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .swatch i { display: block; height: 64px; }
+  .swatch span { display: block; padding: 8px 10px; font-size: 12px; }
+  .row { display: flex; gap: 12px; align-items: center; margin: 12px 0; }
+  input, select { height: 46px; border: 1px solid var(--field-border); border-radius: 8px; padding: 12px 16px; font: 14px/1 var(--sans); color: var(--field); width: 240px; }
+  input:focus { outline: none; border-color: var(--focus); box-shadow: 0 0 0 3px rgba(23, 23, 23, 0.08); }
+  .submit { height: 40px; border: 0; border-radius: 6px; background: var(--ink); color: #fff; padding: 0 24px; font-size: 16px; }
+  .secondary { height: 37px; border: 0; border-radius: 6px; background: var(--secondary-face); color: var(--ink); padding: 0 16px; }
+  .login-panel { margin-top: 24px; width: 352px; font-family: var(--login); }
+  .login-panel h3 { font-size: 20px; font-weight: 400; line-height: 40px; margin: 0; }
+  .pill { display: flex; align-items: center; justify-content: center; height: 46px; border-radius: 24px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); background: #fff; color: #2b99d8; font-size: 14px; font-weight: 500; margin: 8px 0; border: 0; width: 100%; }
+  .login-field { height: 48px; width: 100%; box-sizing: border-box; background: var(--login-field); color: var(--login-text); border: 0; border-radius: 8px; padding: 0 24px; font: 16px/22px var(--login); }
+  .login-submit { height: 46px; width: 100%; border: 0; border-radius: 24px; background: var(--ink); color: #fff; font: 700 16px/46px var(--login); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); margin-top: 12px; }
+  .or { color: #4a5568; font-size: 14px; text-align: center; }
+  footer { background: var(--ink); color: #fff; padding: 160px 32px 24px; font-size: 14px; font-weight: 600; text-transform: capitalize; }
+  .note { color: var(--secondary); font-size: 14px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="word">Scale</div>
+  <nav>
+    <button class="nav-link" type="button">Products</button>
+    <button class="login" type="button">Log In</button>
+    <button class="primary" type="button">Get Started</button>
+  </nav>
+</header>
+<main>
+  <p class="eyebrow">Company</p>
+  <h1>The world’s most important decisions need reliable AI systems.</h1>
+  <p class="lede">Join leading enterprises partnering with Scale. Book a 1:1 intro call with us to get started.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><i style="background:#ffffff"></i><span>page #ffffff</span></div>
+    <div class="swatch"><i style="background:#000000"></i><span>ink #000000</span></div>
+    <div class="swatch"><i style="background:#929292"></i><span>muted #929292</span></div>
+    <div class="swatch"><i style="background:#575757"></i><span>secondary #575757</span></div>
+    <div class="swatch"><i style="background:#c7c7c7"></i><span>stroke #c7c7c7</span></div>
+    <div class="swatch"><i style="background:#d1d5db"></i><span>field border #d1d5db</span></div>
+    <div class="swatch"><i style="background:#a8927c"></i><span>sand #a8927c</span></div>
+    <div class="swatch"><i style="background:#193a29"></i><span>pine #193a29</span></div>
+    <div class="swatch"><i style="background:#edf2f7"></i><span>login field #edf2f7</span></div>
+    <div class="swatch"><i style="background:#2f80ed"></i><span>forgot link #2f80ed</span></div>
+    <div class="swatch"><i style="background:#72ce7b"></i><span>chart #72ce7b</span></div>
+    <div class="swatch"><i style="background:#eaeaea"></i><span>secondary face #eaeaea</span></div>
+  </div>
+  <h2>Let's Scale Together</h2>
+  <div class="row">
+    <input placeholder="First name*" aria-label="First name">
+    <input placeholder="Work email*" aria-label="Work email">
+    <button class="submit" type="button">Submit</button>
+    <button class="secondary" type="button">Learn More</button>
+  </div>
+  <p class="note">By submitting this form, your information will be processed in accordance with our Privacy Policy.</p>
+  <h2>Login</h2>
+  <div class="login-panel">
+    <h3>Log in to your account</h3>
+    <button class="pill" type="button">LOG IN WITH GOOGLE</button>
+    <p class="or">or</p>
+    <input class="login-field" placeholder="Email" aria-label="Email">
+    <button class="login-submit" type="button">Log In</button>
+  </div>
+</main>
+<footer>Scale Data Engine</footer>
+</body>
+</html>

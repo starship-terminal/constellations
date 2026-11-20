@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DoorDash style guide</title>
+<meta name="description" content="DoorDash design tokens — the prism token system (base/usage/comp) and the public signed-out surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "DD Norms", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-text-default, #191919); background: var(--color-background-default, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 800 40px/1.1 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.01em; }
+h2.sh { font: 700 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-text-default, #191919); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-border-default, #e7e7e7); }
+.lead { max-width: 62ch; color: var(--color-text-default, #191919); opacity: .8; }
+.note { font-size: 13px; color: var(--color-text-default, #191919); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-text-default, #191919); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-border-default, #e7e7e7); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-text-default, #191919); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-border-default, #e7e7e7); background: var(--color-background-default, #fff); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-text-default, #191919); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-border-default, #e7e7e7); overflow: hidden; background: var(--color-background-default, #fff); }
+.navbar { display: flex; align-items: center; gap: 18px; height: var(--component-appHeader-height, 64px); padding: 0 20px; font-size: 15px; color: var(--color-text-default, #191919); }
+.navbar .wm { font-weight: 800; font-size: 18px; letter-spacing: 0; color: var(--color-action-primary-default, #eb1700); }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-signupButton-height, 40px); padding: 0 var(--component-signupButton-padding, 20px); font-size: 14px; font-weight: 700; border-radius: var(--component-signupButton-radius, 20px); border: 0; }
+.btn.primary { background: var(--color-action-primary-default, #eb1700); color: var(--color-text-inverse-default, #fff); }
+.btn.primary:hover { background: var(--color-action-primary-hovered, #d91400); }
+.btn.plain { background: var(--color-transparent-default, transparent); color: var(--color-text-default, #191919); }
+.btn.pill { background: var(--color-background-default, #fff); color: var(--color-text-default, #191919); box-shadow: var(--elevation-2, 0 2px 8px #19191933); border-radius: var(--component-addressPill-radius, 22px); height: var(--component-addressPill-height, 40px); padding: 0 var(--component-addressPill-padding, 16px); font-weight: 700; }
+.hero { color: var(--color-text-inverse-default, #fff); padding: 60px 40px 56px; text-align: center; background: var(--color-action-primary-default, #eb1700); }
+.hero .wm { font-weight: 800; font-size: 22px; letter-spacing: .04em; }
+.hero h3 { font: 900 var(--type-display-condensed-large-size, 48px)/1.05 var(--sg-sans); text-transform: uppercase; margin: 10px 0 6px; }
+.hero small { display: block; font: 500 14px/1.4 var(--sg-sans); opacity: .9; margin-bottom: 20px; }
+.cta-band { text-align: center; padding: 44px 32px; background: var(--color-background-subdued-default, #fdf0ed); }
+.cta-band b { display: block; font: 700 var(--type-title-large-size, 28px)/1.2 var(--sg-sans); margin-bottom: 6px; }
+.cta-band p { margin: 0 0 18px; font-size: 15px; opacity: .75; }
+.tabs { display: flex; gap: 28px; padding: 0 20px; border-bottom: 1px solid var(--color-border-default, #e7e7e7); font: 700 15px/1 var(--sg-sans); }
+.tabs span { padding: 12px 0 10px; color: var(--color-text-default, #191919); }
+.tabs .on { box-shadow: inset 0 -3px 0 var(--color-border-selected-default, #191919); }
+.dir { display: flex; flex-wrap: wrap; gap: 10px 28px; padding: 16px 20px; font-size: 14px; }
+.dir a { color: var(--color-text-default, #191919); }
+.store { padding: 20px; }
+.store .name { font: 700 26px/1.2 var(--sg-sans); }
+.store .meta { font-size: 13px; opacity: .7; margin: 4px 0 14px; }
+.seg { display: inline-flex; padding: 2px; border-radius: 999px; background: var(--color-background-hovered, #f5f5f5); font: 700 13px/1 var(--sg-sans); }
+.seg span { padding: 8px 14px; border-radius: 999px; }
+.seg .on { background: var(--color-background-default, #fff); box-shadow: var(--elevation-1, 0 1px 4px #19191926); }
+.menurow { display: flex; align-items: center; gap: 12px; border: 1px solid var(--color-border-default, #e7e7e7); border-radius: var(--component-menuItem-radius, 12px); padding: 12px; margin-top: 12px; max-width: 420px; }
+.menurow .pic { width: 72px; height: 72px; border-radius: 8px; background: var(--color-background-hovered, #f5f5f5); flex: none; }
+.menurow b { display: block; font-size: 15px; }
+.menurow .sub { font-size: 12px; opacity: .65; }
+.qadd { margin-left: auto; width: var(--component-quickAdd-height, 36px); height: var(--component-quickAdd-height, 36px); border-radius: 50%; background: var(--color-action-primary-default, #eb1700); color: var(--color-text-inverse-default, #fff); display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; }
+.offchip { display: inline-block; padding: 3px 8px; border-radius: 4px; background: var(--color-deal-default, #eb1700); color: var(--color-text-inverse-default, #fff); font: 700 11px/1.4 var(--sg-sans); }
+.ft { background: var(--color-background-default, #fff); border-top: 1px solid var(--color-border-default, #e7e7e7); padding: 22px 20px; font-size: 13px; color: var(--color-text-default, #191919); }
+.ft .cols { display: flex; gap: 60px; flex-wrap: wrap; }
+.ft b { display: block; font: 700 13px/1 var(--sg-sans); margin-bottom: 8px; }
+.ft a { display: block; opacity: .7; padding: 3px 0; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-border-default, #e7e7e7); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-border-default, #e7e7e7); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--color-text-default, #191919); opacity: .65; font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <h1>DoorDash style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">DoorDash, measured</h2>
+  <p class="lead">doordash.com's consumer web (consumer-web-next) declares the <b>prism</b> token system on <code>:where(.prism-theme)</code>: <code>--base-*</code> primitives — the DoorDash red ramp, the caviar/dashpass brand palettes, neutral and warm/cool greys, twelve hue ramps, a 32-step size scale and a 28-step DD Norms type scale — <code>--usage-*</code> semantic roles over them (stateful colour, type, space, size, radius, elevation and motion), and a <code>--comp-*</code> component layer over the roles. The same sheet ships sibling brand themes (deliveroo, plus — each light and dark) under <code>[data-dt-theme][data-dt-mode]</code> scopes; a doordash.com visitor gets only the unscoped doordash light set tokenised here. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Captured 2026-11-13 from the product's own SSR pages rendered by the Internet Archive (live *.doordash.com Cloudflare-blocks this client — see raw/archive-urls.json), signed out, in headless Chromium. Sign-in, ordering, the address gate and cart were never crossed. DD Norms is proprietary and not loaded here: samples fall back to the system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">Every marketing page carries the same white top bar: the red wordmark, then the red <b>Sign In</b> pill (action-primary, radius-full) and the plain <b>Sign Up</b> label. The hero is the campaign field — DoorDash red, the wordmark, a TTNormsProCond-Blk uppercase headline and the two white address pills: the sign-in and geolocation gates.</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm">DoorDash</span><span class="sp"></span><span class="btn primary" style="height:36px">Sign In</span><span class="btn plain" style="height:36px">Sign Up</span></div>
+    <div class="hero"><span class="wm">DOORDASH</span><h3>$0 delivery fee on first order</h3><small>Other fees apply</small><span class="btn pill">Sign in for saved address</span> <span class="btn pill">Use current Location</span></div>
+  </div>
+
+  <h2 class="sh">CTA band and directory</h2>
+  <p class="lead">Mid-page CTA sections sit on subdued tints with a red primary pill; the SEO directory rows ride the tabbed Top Cities / Top Cuisines / Top Chains control — a 3px selected underline in the action red.</p>
+  <div class="mock">
+    <div class="cta-band"><b>Get grocery and convenience store essentials</b><p>Grocery delivery, exactly how you want it.</p><span class="btn primary">Shop Now</span></div>
+    <div class="tabs"><span class="on">Top Cities</span><span>Top Cuisines</span><span>Top Chains</span></div>
+    <div class="dir"><a>Atlanta</a><a>Austin</a><a>Boston</a><a>Chicago</a><a>Dallas</a><a>Denver</a><a>Las Vegas</a><a>Los Angeles</a></div>
+  </div>
+
+  <h2 class="sh">The storefront</h2>
+  <p class="lead">The public store page is the real consumer shell: the sticky header with logo, address and cart; the store header with rating and fee; the Delivery/Pickup segmented toggle; menu cards with the round red quick-add.</p>
+  <div class="mock">
+    <div class="store"><div class="name">The Sweet Tooth</div><div class="meta">4.7 &#9733; &middot; Desserts &middot; $0.99 delivery fee</div>
+      <div class="seg"><span class="on">Delivery</span><span>Pickup</span></div>
+      <div class="menurow"><span class="pic"></span><span><b>Custom Cake Slice</b><span class="sub">$8.50 &middot; signature</span></span><span class="qadd">+</span></div>
+      <div class="menurow"><span class="pic"></span><span><b>Churro Sundae</b><span class="sub">$9.25</span> <span class="offchip">20% off</span></span><span class="qadd">+</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The <code>--base-color-*</code> ramps: the DoorDash brand ramp feeding action-primary, the caviar and dashpass palettes, neutral/warm/cool greys and twelve hue ramps. The light roles are the <code>--usage-color-*</code> semantic layer — stateful (default/hovered/pressed/disabled) and aliased to the ramps.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">The --usage-space-* roles (none → xxx-large) alias the 32-step --base-size-* scale; radii are roles (none → full — DoorDash pills are radius-full); motion is the --usage-motion-* ladder of auto/functional durations and easings.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">DD Norms on the system fallback: the --usage-type-* composites (body, display-condensed for campaign headlines, label, link, title) at weights 400-800. Samples below render the token composites.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">The declared component and type layers</h2>
+  <p class="lead">The <code>--comp-*</code> component tokens (button, field, tag, toggle, banner, …) and the <code>light.type.*</code> slots — every leaf a <code>var()</code> alias down the prism comp → usage → base chain — shown with its resolved value. This is the product's declared layer; the measured paint is under Measured extras above.</p>
+  <div id="layers-out"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --base-*/--usage-*/--comp-* prism variables from the archived stylesheets and computed styles on the rendered components</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and focused states measured per component; pressed forced via CDP so nothing was ever submitted</td></tr><tr><td>No provenance</td><td>Every token names its variable (and the prism selector block) or the measurement it came from; archival routes in raw/archive-urls.json</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+// Every token by dotted path, for resolving {alias} values (core and light
+// share the alias namespace — build_style_guide.py refuses a clash).
+const ALLTOK = {};
+for (const s of ['core', 'light', 'dark']) for (const [n, t] of flat(TOK[s] || {}, '')) ALLTOK[n] = t;
+const resAlias = (v, d = 0) => (typeof v === 'string' && v.startsWith('{') && d < 8 && ALLTOK[v.slice(1, -1)])
+  ? resAlias(ALLTOK[v.slice(1, -1)].v, d + 1) : v;
+const showTok = (t) => {
+  const v = t.v;
+  if (typeof v === 'string' && v.startsWith('{')) {
+    const r = resAlias(v);
+    return r === v ? esc(v) : esc(v) + ' → ' + esc(typeof r === 'object' ? JSON.stringify(r) : r);
+  }
+  return esc(typeof v === 'object' ? JSON.stringify(v) : v);
+};
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const lightRoles = flat(TOK.light.color || {}, 'color.').filter(([, t]) => t.t === 'color');
+  if (lightRoles.length) {
+    h += `<div class="pal-h">light roles (usage-color-*)</div><div class="pal">`;
+    for (const [n, t] of lightRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const surfaces = flat(TOK.light.surface || {}, 'surface.').filter(([, t]) => t.t === 'color');
+  if (surfaces.length) {
+    h += `<div class="pal-h">light surface (surface-color-*)</div><div class="pal">`;
+    for (const [n, t] of surfaces) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${showTok(t)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.borderWidth || {}, 'borderWidth.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.size || {}, 'size.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.light.size || {}, 'light.size.')) m += `<div><b>${esc(n)}</b> <span>${showTok(t)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.elevation || {}, 'elevation.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function layers() {
+  // The declared prism layers the sections above do not cover: light.type
+  // (the --usage-type-* slots and generic type aliases) and light.comp (the
+  // --comp-* component tokens). One pal-h per group so the list stays
+  // browsable.
+  let h = '';
+  for (const [set, root] of [['type', TOK.light.type || {}], ['comp', TOK.light.comp || {}]]) {
+    for (const [g, grp] of Object.entries(root)) {
+      const items = grp && grp.t ? [[set + '.' + g, grp]] : flat(grp, set + '.' + g + '.');
+      if (!items.length) continue;
+      h += `<div class="pal-h">light.${esc(set)}.${esc(g)}</div><div class="kv">`;
+      for (const [n, t] of items) h += `<div><b>${esc(n)}</b> <span>${showTok(t)}</span></div>`;
+      h += '</div>';
+    }
+  }
+  $('#layers-out').innerHTML = h;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.typography || {}), 'typography.')) {
+    const st = t.v || {};
+    const fam = cssname('font.family.default');
+    const sz = cssname('font.size.25'), lh = cssname('font.lineHeight.30'), wt = cssname('font.weight.regular');
+    const style = `font-family:var(${fam});font-size:${typeof st.fontSize === 'string' && st.fontSize.startsWith('{') ? 'var(' + cssname(st.fontSize.slice(1, -1)) + ')' : st.fontSize};line-height:${typeof st.lineHeight === 'string' && st.lineHeight.startsWith('{') ? 'var(' + cssname(st.lineHeight.slice(1, -1)) + ')' : st.lineHeight};font-weight:${typeof st.fontWeight === 'string' && st.fontWeight.startsWith('{') ? 'var(' + cssname(st.fontWeight.slice(1, -1)) + ')' : st.fontWeight}`;
+    h += `<div class="tr"><span class="ts" style="${style}">${esc(n)} — The quick brown fox</span><span class="tv">${esc(typeof st.fontSize === 'string' ? st.fontSize : '')}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    // Named steps are {alias} leaves — draw them through the generated
+    // custom property so they paint at the resolved size, not a fallback.
+    h += `<div class="tr"><span class="ts" style="font-size:min(var(${cssname(n)}), 44px)">${esc(n)} — The quick brown fox</span><span class="tv">${showTok(t)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — DoorDash</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

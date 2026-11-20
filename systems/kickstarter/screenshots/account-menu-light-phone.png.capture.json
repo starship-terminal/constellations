@@ -1,0 +1,25 @@
+{
+  "captured": "2026-11-20",
+  "harness": "T3 preview, default profile, signed in",
+  "sourceUrl": "https://www.kickstarter.com/recommendations",
+  "theme": "light",
+  "viewport": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    },
+    "requested": {
+      "width": 390,
+      "height": 844
+    }
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "note": "Live preview screenshot, quantized to 256 colours. CSS viewport is viewport.innerWidth, not the PNG width."
+}

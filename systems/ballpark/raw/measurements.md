@@ -98,23 +98,24 @@ Page: home. Selector: `a:has-text("Solutions")`. States: default, hover, focus-v
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 90 x 36 | = | = | = |
-| Padding | 0px 14px | = | = | = |
-| Gap | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 7px | = | = | = |
-| Background | #ffffff | #f3f4f6 | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | sans-serif 12px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | p.framer-text.framer-styles-preset-121aysi: Inter 14px/20px 600, #111827, ls -0.14px | = | = | = |
-| Transition | none | = | = | = |
-| Painted layers | a.framer-S1C7R.framer-vTRZK 90.0x36.0 bg #ffffff r 7px | a.framer-S1C7R.framer-vTRZK 90.0x36.0 bg #f3f4f6 r 7px | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 90 x 36 | = | - | = |
+| Padding | 0px 14px | = | - | = |
+| Gap | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 7px | = | - | = |
+| Background | #ffffff | #f3f4f6 | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | sans-serif 12px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | p.framer-text.framer-styles-preset-121aysi: Inter 14px/20px 600, #111827, ls -0.14px | = | - | = |
+| Transition | none | = | - | = |
+| Painted layers | a.framer-S1C7R.framer-vTRZK 90.0x36.0 bg #ffffff r 7px | a.framer-S1C7R.framer-vTRZK 90.0x36.0 bg #f3f4f6 r 7px | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `nav-solutions-default.png`, `nav-solutions-hover.png`, `nav-solutions-focus-visible.png`, `nav-solutions-pressed.png`.
+Crops: `nav-solutions-default.png`, `nav-solutions-hover.png`, `nav-solutions-pressed.png`.
 
 #### nav-solutions-open
 

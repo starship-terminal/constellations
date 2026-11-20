@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Equals style guide</title>
+<meta name="description" content="Equals design tokens and the public marketing, sign-in and docs surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --color-brand-amber: #ff3716;
+  --color-brand-aquamarine: #85fac1;
+  --color-brand-black: #000000;
+  --color-brand-blue: #0000bb;
+  --color-brand-glacier: #2dcbdc;
+  --color-brand-green: #20a277;
+  --color-brand-grey-1: #faf9f5;
+  --color-brand-grey-2: rgba(0, 0, 0, 0.05);
+  --color-brand-grey-3: rgba(0, 0, 0, 0.08);
+  --color-brand-grey-4: rgba(0, 0, 0, 0.15);
+  --color-brand-grey-5: rgba(0, 0, 0, 0.6);
+  --color-brand-orchid: #b074ce;
+  --color-brand-peach: #ffcc91;
+  --color-brand-purple: #611848;
+  --color-brand-sky: #c4f2f7;
+  --color-brand-white: #ffffff;
+  --color-brand-yellow: #ffcc00;
+  --color-app-background: #fcfcfc;
+  --color-app-black: #000000;
+  --color-app-blue-100: #dbeafe;
+  --color-app-blue-200: #bfdbfe;
+  --color-app-blue-300: #93c5fd;
+  --color-app-blue-400: #60a5fa;
+  --color-app-blue-50: #eff6ff;
+  --color-app-blue-500: #3b82f6;
+  --color-app-blue-600: #2563eb;
+  --color-app-blue-700: #1d4ed8;
+  --color-app-blue-800: #1e40af;
+  --color-app-blue-900: #1e3a8a;
+  --color-app-cyan-100: #cffafe;
+  --color-app-cyan-200: #a5f3fc;
+  --color-app-cyan-300: #67e8f9;
+  --color-app-cyan-400: #22d3ee;
+  --color-app-cyan-50: #ecfeff;
+  --color-app-cyan-500: #06b6d4;
+  --color-app-cyan-600: #0891b2;
+  --color-app-cyan-700: #0e7490;
+  --color-app-cyan-800: #155e75;
+  --color-app-cyan-900: #164e63;
+  --color-app-emerald-500: #00bc7d;
+  --color-app-green-100: #d1fae5;
+  --color-app-green-200: #a7f3d0;
+  --color-app-green-300: #6ee7b7;
+  --color-app-green-400: #34d399;
+  --color-app-green-50: #ecfdf5;
+  --color-app-green-500: #10b981;
+  --color-app-green-600: #059669;
+  --color-app-green-700: #047857;
+  --color-app-green-800: #065f46;
+  --color-app-green-900: #064e3b;
+  --color-app-grey-100: #f5f5f5;
+  --color-app-grey-150: #ededed;
+  --color-app-grey-200: #e5e5e5;
+  --color-app-grey-25: #fcfcfc;
+  --color-app-grey-300: #d4d4d4;
+  --color-app-grey-400: #a3a3a3;
+  --color-app-grey-50: #fafafa;
+  --color-app-grey-500: #737373;
+  --color-app-grey-600: #525252;
+  --color-app-grey-700: #404040;
+  --color-app-grey-800: #262626;
+  --color-app-grey-900: #171717;
+  --color-app-orange-100: #ffedd5;
+  --color-app-orange-200: #fed7aa;
+  --color-app-orange-300: #fdba74;
+  --color-app-orange-400: #fb923c;
+  --color-app-orange-50: #fff7ed;
+  --color-app-orange-500: #f97316;
+  --color-app-orange-600: #ea580c;
+  --color-app-orange-700: #c2410c;
+  --color-app-orange-800: #9a3412;
+  --color-app-orange-900: #7c2d12;
+  --color-app-pink-100: #fce7f3;
+  --color-app-pink-200: #fbcfe8;
+  --color-app-pink-300: #f9a8d4;
+  --color-app-pink-400: #f472b6;
+  --color-app-pink-50: #fdf2f8;
+  --color-app-pink-500: #ec4899;
+  --color-app-pink-600: #db2777;
+  --color-app-pink-700: #be185d;
+  --color-app-pink-800: #9d174d;
+  --color-app-pink-900: #831843;
+  --color-app-primary: #7839e5;
+  --color-app-purple-100: #ede9fe;
+  --color-app-purple-200: #ddd6fe;
+  --color-app-purple-300: #c4b5fd;
+  --color-app-purple-400: #a78bfa;
+  --color-app-purple-50: #f5f3ff;
+  --color-app-purple-500: #8b5cf6;
+  --color-app-purple-600: #7c3aed;
+  --color-app-purple-700: #6d28d9;
+  --color-app-purple-800: #5b21b6;
+  --color-app-purple-900: #4c1d95;
+  --color-app-red-100: #fee2e2;
+  --color-app-red-200: #fecaca;
+  --color-app-red-300: #fca5a5;
+  --color-app-red-400: #f87171;
+  --color-app-red-50: #fef2f2;
+  --color-app-red-500: #ef4444;
+  --color-app-red-600: #dc2626;
+  --color-app-red-700: #b91c1c;
+  --color-app-red-800: #991b1b;
+  --color-app-red-900: #7f1d1d;
+  --color-app-shadow: #e5e5e5;
+  --color-app-teal-100: #ccfbf1;
+  --color-app-teal-200: #99f6e4;
+  --color-app-teal-300: #5eead4;
+  --color-app-teal-400: #2dd4bf;
+  --color-app-teal-50: #f0fdfa;
+  --color-app-teal-500: #14b8a6;
+  --color-app-teal-600: #0d9488;
+  --color-app-teal-700: #0f766e;
+  --color-app-teal-800: #115e59;
+  --color-app-teal-900: #134e4a;
+  --color-app-white: #ffffff;
+  --color-app-yellow-100: #fef9c3;
+  --color-app-yellow-200: #fef08a;
+  --color-app-yellow-300: #fde047;
+  --color-app-yellow-400: #facc15;
+  --color-app-yellow-50: #fefce8;
+  --color-app-yellow-500: #eab308;
+  --color-app-yellow-600: #ca8a04;
+  --color-app-yellow-700: #a16207;
+  --color-app-yellow-800: #854d0e;
+  --color-app-yellow-900: #713f12;
+  --color-docs-gray-100: #f1eff5;
+  --color-docs-gray-200: #e2e0e5;
+  --color-docs-gray-300: #d1cfd5;
+  --color-docs-gray-400: #a2a0a5;
+  --color-docs-gray-50: #f6f4f9;
+  --color-docs-gray-500: #737176;
+  --color-docs-gray-600: #535156;
+  --color-docs-gray-700: #424045;
+  --color-docs-gray-800: #29272c;
+  --color-docs-gray-900: #1a181d;
+  --color-docs-gray-950: #0d0b11;
+  --color-docs-primary: #7839e5;
+  --color-docs-primary-light: #7839e5;
+  --color-docs-primary-dark: #7839e5;
+  --color-docs-tooltip-foreground: #ffffff;
+  --font-family-unica: "Unica77",sans-serif;
+  --font-family-serif-condensed: "Serrif Condensed",serif;
+  --font-family-fono: "Aeonik Fono",sans-serif;
+  --font-family-sans-serif: "Aeonik Pro",sans-serif;
+  --font-family-lato: "Lato",sans-serif;
+  --font-family-inter: "Inter";
+  --font-family-hubspot: "HubSpot Sans",sans-serif;
+  --font-family-anthropic-sans: "Anthropic Sans",sans-serif;
+  --font-family-anthropic-serif: "Anthropic Serif",Georgia,serif;
+  --font-family-app: neue-haas-unica, Helvetica, sans-serif;
+  --font-family-mono: "JetBrains Mono", monospace;
+  --font-family-paper-mono: "Paper Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family-default-mono: "Paper Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-size-tab: 11px;
+  --font-size-app: 12px;
+  --font-size-cell: 12px;
+  --font-size-small: 14px;
+  --font-size-field: 16px;
+  --font-size-body: 24px;
+  --font-size-docs-body: 18px;
+  --font-size-lede: 24px;
+  --font-size-signin-display: 30px;
+  --font-size-docs-h1: 36px;
+  --font-size-section: 48px;
+  --font-size-mobile-display: 48px;
+  --font-size-display: 110px;
+  --font-lineHeight-tight: 1.25;
+  --font-lineHeight-normal: 1.5;
+  --font-lineHeight-relaxed: 1.625;
+  --font-lineHeight-display: 110px;
+  --font-lineHeight-label: 24px;
+  --font-lineHeight-body: 32px;
+  --font-lineHeight-lede: 32px;
+  --font-lineHeight-docs-body: 28px;
+  --font-lineHeight-app: 15px;
+  --font-tracking-tighter: -.05em;
+  --font-tracking-tight: -.025em;
+  --font-tracking-wide: 0.390625px;
+  --font-tracking-display: -2.2px;
+  --font-tracking-body: -0.09px;
+  --font-tracking-label: 0.28px;
+  --font-tracking-caption: 0.18px;
+  --size-header: 52px;
+  --size-banner: 0px;
+  --size-base: 4px;
+  --size-radius-xl: 12px;
+  --size-container-2xl: 672px;
+  --size-container-3xl: 768px;
+  --size-container-4xl: 896px;
+  --size-container-5xl: 1024px;
+  --size-container-6xl: 1152px;
+  --size-container-lg: 512px;
+  --size-container-sm: 384px;
+  --size-container-xl: 576px;
+  --size-container-xs: 320px;
+  --radius-control: 4px;
+  --radius-small: 6px;
+  --radius-field: 8px;
+  --radius-card: 12px;
+  --radius-cta: 60px;
+  --radius-pill: 9999px;
+  --shadow-menu: rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.05) 0px 2px 8px -2px, rgba(0, 0, 0, 0.15) 0px 8px 24px -4px;
+  --shadow-card: rgba(38, 38, 38, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.2) 0px 2px 8px -4px;
+  --shadow-pressed: rgba(0, 0, 0, 0.17) 0px 1px 3px 0px inset;
+  --shadow-popup: rgba(0, 0, 0, 0.08) 0px 1px 4px 0px;
+  --motion-duration: 150ms;
+  --motion-easing: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --motion-ease-in: cubic-bezier(0.4, 0.0, 1.0, 1.0);
+  --motion-ease-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --motion-ease-in-out: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --motion-control: background-color 0.15s ease-out;
+  --breakpoint-max-1100: 1100px;
+  --breakpoint-max-767: 767px;
+  --breakpoint-min-1024: 1024px;
+  --breakpoint-min-640: 640px;
+  --component-header-height: 52px;
+  --component-mobile-header-height: 53px;
+  --component-hero-field-height: 56px;
+  --component-mobile-field-height: 52px;
+  --component-signin-field-height: 30px;
+  --component-signin-card-width: 300px;
+  --component-cta-height: 44px;
+  --component-plan-cta-height: 42px;
+  --component-app-submit-height: 27px;
+  --component-menu-width: 633.76px;
+  --component-nav-item-height: 32px;
+  --component-search-height: 36px;
+  --component-theme-button: 30px;
+  --component-docs-sidebar-width: 288px;
+  --component-plan-card-width: 421.33px;
+  --component-workbook-mockup: 980px;
+  --component-sheet-tab-height: 32px;
+  --component-hamburger: 40px;
+  --docs-surface: #ffffff;
+  --docs-border: #f1eff5;
+  --docs-primary: #7839e5;
+  --docs-twoslash-border-color: #dbdfde;
+  --docs-twoslash-code-font-size: 16px;
+  --docs-twoslash-cursor-color: rgba(136, 136, 136, 0.533);
+  --docs-twoslash-docs-tag-style: italic;
+  --docs-twoslash-error-bg: rgba(212, 86, 86, 0.125);
+  --docs-twoslash-error-color: #d45656;
+  --docs-twoslash-highlighted-bg: rgba(195, 125, 13, 0.125);
+  --docs-twoslash-highlighted-border: rgba(195, 125, 13, 0.314);
+  --docs-twoslash-popup-bg: #f3f7f6;
+  --docs-twoslash-popup-shadow: rgba(0, 0, 0, 0.08) 0px 1px 4px 0px;
+  --docs-twoslash-tag-annotate-bg: rgba(27, 166, 115, 0.125);
+  --docs-twoslash-tag-annotate-color: #1ba673;
+  --docs-twoslash-tag-bg: rgba(55, 114, 207, 0.125);
+  --docs-twoslash-tag-color: #3772cf;
+  --docs-twoslash-tag-warn-bg: rgba(195, 125, 13, 0.125);
+  --docs-twoslash-tag-warn-color: #c37d0d;
+  --docs-twoslash-text-size: 12.7969px;
+  --docs-twoslash-underline-color: currentColor;
+  --docs-twoslash-unmatched-color: #888888;
+  --docs-twoslash-warn-bg: rgba(195, 125, 13, 0.125);
+  --docs-twoslash-warn-color: #c37d0d;
+  --docs-text: var(--color-docs-gray-900);
+  --docs-body-text: var(--color-docs-gray-700);
+  --docs-muted: var(--color-docs-gray-500);
+  --docs-nav-hover: rgba(120, 57, 229, 0.1);
+  --docs-code-text: #101828;
+  --docs-code-bg: rgba(241, 239, 245, 0.5);
+  --docs-field: rgba(13, 11, 17, 0.03);
+  --docs-focus: var(--color-app-primary);
+  --marketing-surface: var(--color-brand-grey-1);
+  --marketing-text: var(--color-brand-black);
+  --marketing-muted: var(--color-brand-grey-5);
+  --marketing-line: rgba(0, 0, 0, 0.1);
+  --marketing-card: var(--color-brand-grey-1);
+  --marketing-menu-surface: var(--color-brand-white);
+  --marketing-menu-hover: var(--color-brand-grey-2);
+  --marketing-accent-orchid-background: #b074ce;
+  --marketing-accent-orchid-on: #000000;
+  --marketing-accent-violet-background: #b074ce;
+  --marketing-accent-violet-on: #000000;
+  --marketing-accent-green-background: #20a277;
+  --marketing-accent-green-light: #85fac1;
+  --marketing-accent-green-on: #ffffff;
+  --marketing-accent-amber-background: #ff3716;
+  --marketing-accent-amber-light: #ffcc91;
+  --marketing-accent-amber-on: #000000;
+  --marketing-accent-blue-background: #0000bb;
+  --marketing-accent-blue-light: #c4f2f7;
+  --marketing-accent-blue-on: #ffffff;
+  --marketing-accent-purple-background: #611848;
+  --marketing-accent-purple-on: #ffffff;
+  --marketing-accent-black-background: #000000;
+  --marketing-accent-black-on: #ffffff;
+  --marketing-label-amber: #ff3716;
+  --marketing-label-peach: #ffcc91;
+  --marketing-label-green: #20a277;
+  --marketing-label-blue: #0000bb;
+  --marketing-label-orchid: #b074ce;
+  --marketing-action-hover: #9b66b5;
+  --signin-canvas: var(--color-app-background);
+  --signin-heading: var(--color-brand-black);
+  --signin-text: var(--color-app-grey-800);
+  --signin-field: var(--color-app-grey-100);
+  --signin-placeholder: var(--color-app-grey-400);
+  --signin-focus: var(--color-app-purple-600);
+  --signin-action: var(--color-app-purple-600);
+  --signin-action-hover: var(--color-app-purple-700);
+  --signin-on-action: var(--color-brand-white);
+  --signin-muted: var(--color-app-grey-500);
+  --sg-sans: Unica77, "Aeonik Pro", Lato, Inter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Serrif Condensed", Georgia, "Times New Roman", serif;
+  --sg-mono: "Paper Mono", "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --docs-surface: #0b0a0f;
+  --docs-border: #29272c;
+  --docs-primary: #7839e5;
+  --docs-twoslash-border-color: #222526;
+  --docs-twoslash-code-font-size: 16px;
+  --docs-twoslash-cursor-color: rgba(187, 187, 187, 0.733);
+  --docs-twoslash-docs-tag-style: italic;
+  --docs-twoslash-error-bg: rgba(255, 107, 107, 0.19);
+  --docs-twoslash-error-color: #ff6b6b;
+  --docs-twoslash-highlighted-bg: rgba(255, 165, 0, 0.19);
+  --docs-twoslash-highlighted-border: rgba(255, 165, 0, 0.5);
+  --docs-twoslash-popup-bg: #151819;
+  --docs-twoslash-popup-shadow: rgba(0, 0, 0, 0.08) 0px 1px 4px 0px;
+  --docs-twoslash-tag-annotate-bg: rgba(74, 222, 128, 0.19);
+  --docs-twoslash-tag-annotate-color: #4ade80;
+  --docs-twoslash-tag-bg: rgba(107, 182, 255, 0.19);
+  --docs-twoslash-tag-color: #6bb6ff;
+  --docs-twoslash-tag-warn-bg: rgba(255, 165, 0, 0.19);
+  --docs-twoslash-tag-warn-color: #ffa500;
+  --docs-twoslash-text-size: 12.7969px;
+  --docs-twoslash-underline-color: currentColor;
+  --docs-twoslash-unmatched-color: #aaaaaa;
+  --docs-twoslash-warn-bg: rgba(255, 165, 0, 0.19);
+  --docs-twoslash-warn-color: #ffa500;
+  --docs-text: var(--color-docs-gray-200);
+  --docs-body-text: var(--color-docs-gray-400);
+  --docs-muted: var(--color-docs-gray-400);
+  --docs-nav-hover: rgba(120, 57, 229, 0.1);
+  --docs-code-text: var(--color-docs-gray-200);
+  --docs-code-bg: rgba(255, 255, 255, 0.05);
+  --docs-field: rgba(255, 255, 255, 0.03);
+  --docs-focus: var(--color-app-primary);
+  --docs-line: rgba(255, 255, 255, 0.1);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-brand-black, #000); background: var(--marketing-surface, #faf9f5); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 48px/1 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-brand-black, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-brand-grey-3, rgba(0,0,0,.08)); }
+.lead { max-width: 62ch; color: var(--color-brand-black, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--color-brand-black, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-brand-black, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--docs-surface, #0b0a0f); padding: 10px; border-radius: 8px; }
+.pal.dark .nm, .pal.dark .vl { color: #e2e0e5; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-brand-grey-3, rgba(0,0,0,.08)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-brand-black, #000); opacity: .65; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-brand-black, #000); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-brand-grey-3, rgba(0,0,0,.08)); overflow: hidden; background: var(--marketing-surface, #faf9f5); }
+.mnav { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 52px); padding: 0 12px 0 22px; font-size: 14px; color: var(--marketing-text, #000); background: var(--marketing-surface, #faf9f5); border-bottom: 1px solid var(--color-brand-grey-3, rgba(0,0,0,.08)); }
+.mnav .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+.mnav .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 44px); padding: 0 18px; font-size: 14px; font-weight: 500; border-radius: var(--radius-cta, 60px); border: 1px solid transparent; }
+.btn.orchid { background: var(--marketing-accent-orchid-background, #b074ce); color: var(--marketing-accent-orchid-on, #000); }
+.btn.green { background: var(--marketing-accent-green-background, #20a277); color: var(--marketing-accent-green-on, #fff); }
+.btn.purple { background: var(--signin-action, #7c3aed); color: var(--signin-on-action, #fff); border-radius: var(--radius-field, 8px); height: var(--component-app-submit-height, 27px); font-size: 12px; }
+.hero { color: var(--marketing-text, #000); padding: 72px 40px; font: 400 88px/0.95 var(--sg-serif); letter-spacing: -0.02em; text-align: center; background: var(--marketing-surface, #faf9f5); }
+.hero small { display: block; font: 400 20px/1.5 var(--sg-sans); color: var(--marketing-text, #000); margin: 16px auto 22px; max-width: 46ch; }
+.caprow { display: flex; gap: 8px; justify-content: center; margin-top: 8px; }
+.capin { width: 300px; height: var(--component-hero-field-height, 56px); border-radius: var(--radius-cta, 60px); border: 1px solid var(--color-brand-grey-4, rgba(0,0,0,.15)); background: var(--color-brand-white, #fff); font-size: 16px; padding: 0 28px; color: var(--marketing-muted, rgba(0,0,0,.6)); display: inline-flex; align-items: center; }
+.eyebrow { font: 500 12px/1.8 var(--sg-mono); letter-spacing: .02em; color: var(--marketing-label-amber, #ff3716); text-transform: uppercase; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-brand-grey-3, rgba(0,0,0,.08)); padding: 24px; font-size: 13px; background: var(--color-brand-white, #fff); border-radius: var(--radius-card, 12px); }
+.tile b { display: block; font: 400 30px/1.1 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-brand-grey-3, rgba(0,0,0,.08)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-brand-grey-3, rgba(0,0,0,.08)); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-brand-black, #000); opacity: .65; font-family: var(--sg-mono); }
+/* sign-in mock */
+.sgw { background: var(--signin-canvas, #fcfcfc); padding: 28px; display: flex; justify-content: center; }
+.sgcard { width: var(--component-signin-card-width, 300px); font-family: "neue-haas-unica", Helvetica, sans-serif; color: var(--signin-text, #262626); }
+.sgcard h3 { font-size: 20px; font-weight: 600; margin: 0 0 4px; color: var(--signin-heading, #000); }
+.sgcard p { font-size: 12px; color: var(--signin-muted, #737373); margin: 0 0 14px; }
+.sgfield { height: var(--component-signin-field-height, 30px); border-radius: var(--radius-field, 8px); background: var(--signin-field, #f5f5f5); display: flex; align-items: center; padding: 0 10px; font-size: 12px; color: var(--signin-placeholder, #a3a3a3); margin-bottom: 8px; }
+/* docs mock */
+.dgw { display: flex; border: 1px solid var(--docs-border, #f1eff5); border-radius: var(--radius-card, 12px); overflow: hidden; background: var(--docs-surface, #fff); font-family: Inter, var(--sg-sans); }
+.dgw .dsb { width: var(--component-docs-sidebar-width, 288px); border-right: 1px solid var(--docs-border, #f1eff5); padding: 12px; font-size: 13px; }
+.dgw .dni { height: var(--component-nav-item-height, 32px); display: flex; align-items: center; padding: 0 10px; border-radius: var(--radius-small, 6px); color: var(--docs-muted, #737176); }
+.dgw .dni.on { background: var(--docs-nav-hover, rgba(120,57,229,.1)); color: var(--docs-primary, #7839e5); }
+.dgw .dse { height: var(--component-search-height, 36px); border-radius: var(--radius-pill, 9999px); background: var(--docs-field, rgba(0,0,0,.03)); display: flex; align-items: center; padding: 0 14px; font-size: 13px; color: var(--docs-muted, #737176); margin-bottom: 10px; }
+.dgw .dco { flex: 1; padding: 20px 28px; }
+.dgw .dco h3 { font-size: 24px; font-weight: 600; margin: 0 0 8px; color: var(--docs-text, #1a181d); }
+.dgw .dco p { font-size: 14px; color: var(--docs-body-text, #424045); margin: 0 0 10px; }
+.dgw .dco code.ic { background: var(--docs-code-bg, rgba(245,244,247,.5)); color: var(--docs-code-text, #38385b); border-radius: var(--radius-small, 6px); padding: 1px 5px; font-family: var(--sg-mono); }
+.dgw.dark { background: var(--docs-surface, #0b0a0f); border-color: var(--docs-border, #29272c); }
+.dgw.dark .dsb { border-right-color: var(--docs-border, #29272c); }
+.dgw.dark .dni { color: var(--docs-muted, #a2a0a5); }
+.dgw.dark .dse { color: var(--docs-muted, #a2a0a5); }
+.dgw.dark .dco h3 { color: var(--docs-text, #e2e0e5); }
+.dgw.dark .dco p { color: var(--docs-body-text, #a2a0a5); }
+.dgw.dark .dco code.ic { color: var(--docs-code-text, #e2e0e5); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Equals style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Equals, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared <code>--brand-*</code> marketing palette and <code>--accent-*</code>/<code>--section-label-color</code> theme classes, the go.equals.com app's Tailwind-style <code>--color-*</code> layer, the docs' Mintlify <code>--primary</code>/<code>--gray-*</code>/<code>--twoslash-*</code> layer, the Unica77/Serrif-Condensed/Aeonik-Fono marketing faces next to the app's neue-haas-unica and JetBrains Mono and the docs' Inter and Paper Mono, plus the measured control heights, radii and component geometry. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from equals.com, go.equals.com and docs.equals.com on 2026-11-13, signed out, in headless Chromium. Everything behind the sign-in is a documented boundary; the sign-in and e-mail fields were measured, never submitted; the 'workbook' components are the marketing page's own mockup, not the app. The named faces are served fonts and are not loaded here: samples fall back to system sans, Georgia and ui-monospace.</p>
+
+  <h2 class="sh">Marketing chrome</h2>
+  <p class="lead">The equals.com header is a 52px cream bar over the cream page; the hero sets 'What's after Excel?' in Serrif Condensed at 110px, above the 56px email pill and the orchid 44px CTA. Eyebrow labels paint the amber <code>--section-label-color</code>.</p>
+  <div class="mock">
+    <div class="mnav"><span class="wm">Equals</span><span>Product</span><span>Use cases</span><span>Pricing</span><span class="sp"></span><span>Sign in</span><span class="btn orchid" style="height:36px">Get a demo</span></div>
+    <div class="hero"><span class="eyebrow">1. Trusted AI analytics</span>What's after Excel?<small>Connect your data, ask questions, and let the agent do the spreadsheet work.</small>
+      <div class="caprow"><span class="capin">Work email</span><span class="btn orchid">Get a demo</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing keeps the cream field and sets plan cards 421px wide with 32px padding; the price sets in Serrif Condensed 48px and each card's CTA is a 42px pill, black or orchid.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile"><b>Starter</b><span class="sub">For individuals</span><p style="font:400 36px/1.1 var(--sg-serif);margin:14px 0">$0</p><span class="btn" style="height:42px;background:var(--color-brand-black,#000);color:#fff;width:100%">Get started</span></div>
+      <div class="tile"><b>Pro</b><span class="sub">For teams that live in data</span><p style="font:400 36px/1.1 var(--sg-serif);margin:14px 0">$59<span style="font-size:14px">/mo</span></p><span class="btn orchid" style="height:42px;width:100%">Get a demo</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Sign in</h2>
+  <p class="lead">go.equals.com serves one signed-out card on the app's #fcfcfc canvas: a #f5f5f5 field with an 8px radius whose border turns purple-600 on focus, and the 27px purple Continue submit. neue-haas-unica is the app face.</p>
+  <div class="mock sgw">
+    <div class="sgcard"><h3>Sign in to Equals</h3><p>Enter your work email to continue.</p><div class="sgfield">you@company.com</div><span class="btn purple" style="width:100%">Continue</span><p style="margin-top:10px">By continuing you agree to the terms.</p></div>
+  </div>
+
+  <h2 class="sh">Docs shell</h2>
+  <p class="lead">docs.equals.com is the one surface with a real theme switch: the light shell paints a 288px rail on white; html.dark flips to the #0b0a0f canvas with grey-200 ink and white-wash chips, keeping the same #7839e5 primary. Search and the assistant are 36px pills, nav items 32px rows with a 10%-primary active wash, and inline code is Paper Mono in a small-radius chip.</p>
+  <div class="dgw"><div class="dsb"><div class="dse">Search…</div><div class="dni on">Getting started</div><div class="dni">How to spreadsheet</div><div class="dni">Dashboards</div></div><div class="dco"><h3>Getting started</h3><p>Equals is a spreadsheet that connects to your data. Write formulas like <code class="ic">=SUM(ARR)</code> or ask the agent.</p><p>Learn the <a style="color:var(--docs-primary,#7839e5)">fundamentals</a> first.</p></div></div>
+  <div class="dgw dark" style="margin-top:14px"><div class="dsb"><div class="dse">Search…</div><div class="dni on">Getting started</div><div class="dni">How to spreadsheet</div><div class="dni">Dashboards</div></div><div class="dco"><h3>Getting started</h3><p>Equals is a spreadsheet that connects to your data. Write formulas like <code class="ic">=SUM(ARR)</code> or ask the agent.</p><p>Learn the <a style="color:var(--docs-primary,#7839e5)">fundamentals</a> first.</p></div></div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead"><code>core.color.brand</code> is the marketing scale (the cream and black neutrals plus the nine accent hues), <code>core.color.app</code> the sign-in app's Tailwind-style ramps, <code>core.color.docs</code> the Mintlify greys and primaries. The light set carries the measured <code>marketing.*</code>/<code>signin.*</code>/<code>docs.*</code> roles — each aliases the declared token it matches — and the dark set the docs' dark roles. Flip the page's dark-mode class to compare the docs roles.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Metrics and radius</h2>
+  <p class="lead">Marketing CTAs and fields are 60px pills (52-56px tall), the plan/menu/mockup radius is 12px, the sign-in controls 8px and the docs search a 9999px pill. The declared <code>--spacing</code> base is 4px; breakpoints are the declared @media widths of the public sheets.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Motion</h2>
+  <div id="motion-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Marketing runs Unica77 for UI and Serrif Condensed for display with Aeonik Fono eyebrows; the app card sets neue-haas-unica with JetBrains Mono; the docs set Inter with Paper Mono code. Sizes are the measured steps; samples fall back to system faces.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --brand-*/--color-*/--primary layer from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, filled and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"brand":{"amber":{"v":"#ff3716","t":"color","s":"css-var --brand-amber (light)","d":"The declared `--brand-amber` — the marketing brand scale."},"aquamarine":{"v":"#85fac1","t":"color","s":"css-var --brand-aquamarine (light)","d":"The declared `--brand-aquamarine` — the marketing brand scale."},"black":{"v":"#000000","t":"color","s":"css-var --brand-black (light)","d":"The declared `--brand-black` — the marketing brand scale."},"blue":{"v":"#0000bb","t":"color","s":"css-var --brand-blue (light)","d":"The declared `--brand-blue` — the marketing brand scale."},"glacier":{"v":"#2dcbdc","t":"color","s":"css-var --brand-glacier (light)","d":"The declared `--brand-glacier` — the marketing brand scale."},"green":{"v":"#20a277","t":"color","s":"css-var --brand-green (light)","d":"The declared `--brand-green` — the marketing brand scale."},"grey-1":{"v":"#faf9f5","t":"color","s":"css-var --brand-grey-1 (light)","d":"The declared `--brand-grey-1` — the marketing brand scale."},"grey-2":{"v":"rgba(0, 0, 0, 0.05)","t":"color","s":"css-var --brand-grey-2 (light)","d":"The declared `--brand-grey-2` — the marketing brand scale."},"grey-3":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --brand-grey-3 (light)","d":"The declared `--brand-grey-3` — the marketing brand scale."},"grey-4":{"v":"rgba(0, 0, 0, 0.15)","t":"color","s":"css-var --brand-grey-4 (light)","d":"The declared `--brand-grey-4` — the marketing brand scale."},"grey-5":{"v":"rgba(0, 0, 0, 0.6)","t":"color","s":"css-var --brand-grey-5 (light)","d":"The declared `--brand-grey-5` — the marketing brand scale."},"orchid":{"v":"#b074ce","t":"color","s":"css-var --brand-orchid (light)","d":"The declared `--brand-orchid` — the marketing brand scale."},"peach":{"v":"#ffcc91","t":"color","s":"css-var --brand-peach (light)","d":"The declared `--brand-peach` — the marketing brand scale."},"purple":{"v":"#611848","t":"color","s":"css-var --brand-purple (light)","d":"The declared `--brand-purple` — the marketing brand scale."},"sky":{"v":"#c4f2f7","t":"color","s":"css-var --brand-sky (light)","d":"The declared `--brand-sky` — the marketing brand scale."},"white":{"v":"#ffffff","t":"color","s":"css-var --brand-white (light)","d":"The declared `--brand-white` — the marketing brand scale."},"yellow":{"v":"#ffcc00","t":"color","s":"css-var --brand-yellow (light)","d":"The declared `--brand-yellow` — the marketing brand scale."}},"app":{"background":{"v":"#fcfcfc","t":"color","s":"css-var --color-background (light)","d":"The declared `--color-background` — the app's Tailwind-style palette."},"black":{"v":"#000000","t":"color","s":"css-var --color-black (light)","d":"The declared `--color-black` — the app's Tailwind-style palette."},"blue":{"100":{"v":"#dbeafe","t":"color","s":"css-var --color-blue-100 (light)","d":"The declared `--color-blue-100` — the app's Tailwind-style palette."},"200":{"v":"#bfdbfe","t":"color","s":"css-var --color-blue-200 (light)","d":"The declared `--color-blue-200` — the app's Tailwind-style palette."},"300":{"v":"#93c5fd","t":"color","s":"css-var --color-blue-300 (light)","d":"The declared `--color-blue-300` — the app's Tailwind-style palette."},"400":{"v":"#60a5fa","t":"color","s":"css-var --color-blue-400 (light)","d":"The declared `--color-blue-400` — the app's Tailwind-style palette."},"50":{"v":"#eff6ff","t":"color","s":"css-var --color-blue-50 (light)","d":"The declared `--color-blue-50` — the app's Tailwind-style palette."},"500":{"v":"#3b82f6","t":"color","s":"css-var --color-blue-500 (light)","d":"The declared `--color-blue-500` — the app's Tailwind-style palette."},"600":{"v":"#2563eb","t":"color","s":"css-var --color-blue-600 (light)","d":"The declared `--color-blue-600` — the app's Tailwind-style palette."},"700":{"v":"#1d4ed8","t":"color","s":"css-var --color-blue-700 (light)","d":"The declared `--color-blue-700` — the app's Tailwind-style palette."},"800":{"v":"#1e40af","t":"color","s":"css-var --color-blue-800 (light)","d":"The declared `--color-blue-800` — the app's Tailwind-style palette."},"900":{"v":"#1e3a8a","t":"color","s":"css-var --color-blue-900 (light)","d":"The declared `--color-blue-900` — the app's Tailwind-style palette."}},"cyan":{"100":{"v":"#cffafe","t":"color","s":"css-var --color-cyan-100 (light)","d":"The declared `--color-cyan-100` — the app's Tailwind-style palette."},"200":{"v":"#a5f3fc","t":"color","s":"css-var --color-cyan-200 (light)","d":"The declared `--color-cyan-200` — the app's Tailwind-style palette."},"300":{"v":"#67e8f9","t":"color","s":"css-var --color-cyan-300 (light)","d":"The declared `--color-cyan-300` — the app's Tailwind-style palette."},"400":{"v":"#22d3ee","t":"color","s":"css-var --color-cyan-400 (light)","d":"The declared `--color-cyan-400` — the app's Tailwind-style palette."},"50":{"v":"#ecfeff","t":"color","s":"css-var --color-cyan-50 (light)","d":"The declared `--color-cyan-50` — the app's Tailwind-style palette."},"500":{"v":"#06b6d4","t":"color","s":"css-var --color-cyan-500 (light)","d":"The declared `--color-cyan-500` — the app's Tailwind-style palette."},"600":{"v":"#0891b2","t":"color","s":"css-var --color-cyan-600 (light)","d":"The declared `--color-cyan-600` — the app's Tailwind-style palette."},"700":{"v":"#0e7490","t":"color","s":"css-var --color-cyan-700 (light)","d":"The declared `--color-cyan-700` — the app's Tailwind-style palette."},"800":{"v":"#155e75","t":"color","s":"css-var --color-cyan-800 (light)","d":"The declared `--color-cyan-800` — the app's Tailwind-style palette."},"900":{"v":"#164e63","t":"color","s":"css-var --color-cyan-900 (light)","d":"The declared `--color-cyan-900` — the app's Tailwind-style palette."}},"emerald":{"500":{"v":"#00bc7d","t":"color","s":"css-var --color-emerald-500 (light)","d":"The declared `--color-emerald-500` — the app's Tailwind-style palette."}},"green":{"100":{"v":"#d1fae5","t":"color","s":"css-var --color-green-100 (light)","d":"The declared `--color-green-100` — the app's Tailwind-style palette."},"200":{"v":"#a7f3d0","t":"color","s":"css-var --color-green-200 (light)","d":"The declared `--color-green-200` — the app's Tailwind-style palette."},"300":{"v":"#6ee7b7","t":"color","s":"css-var --color-green-300 (light)","d":"The declared `--color-green-300` — the app's Tailwind-style palette."},"400":{"v":"#34d399","t":"color","s":"css-var --color-green-400 (light)","d":"The declared `--color-green-400` — the app's Tailwind-style palette."},"50":{"v":"#ecfdf5","t":"color","s":"css-var --color-green-50 (light)","d":"The declared `--color-green-50` — the app's Tailwind-style palette."},"500":{"v":"#10b981","t":"color","s":"css-var --color-green-500 (light)","d":"The declared `--color-green-500` — the app's Tailwind-style palette."},"600":{"v":"#059669","t":"color","s":"css-var --color-green-600 (light)","d":"The declared `--color-green-600` — the app's Tailwind-style palette."},"700":{"v":"#047857","t":"color","s":"css-var --color-green-700 (light)","d":"The declared `--color-green-700` — the app's Tailwind-style palette."},"800":{"v":"#065f46","t":"color","s":"css-var --color-green-800 (light)","d":"The declared `--color-green-800` — the app's Tailwind-style palette."},"900":{"v":"#064e3b","t":"color","s":"css-var --color-green-900 (light)","d":"The declared `--color-green-900` — the app's Tailwind-style palette."}},"grey":{"100":{"v":"#f5f5f5","t":"color","s":"css-var --color-grey-100 (light)","d":"The declared `--color-grey-100` — the app's Tailwind-style palette."},"150":{"v":"#ededed","t":"color","s":"css-var --color-grey-150 (light)","d":"The declared `--color-grey-150` — the app's Tailwind-style palette."},"200":{"v":"#e5e5e5","t":"color","s":"css-var --color-grey-200 (light)","d":"The declared `--color-grey-200` — the app's Tailwind-style palette."},"25":{"v":"#fcfcfc","t":"color","s":"css-var --color-grey-25 (light)","d":"The declared `--color-grey-25` — the app's Tailwind-style palette."},"300":{"v":"#d4d4d4","t":"color","s":"css-var --color-grey-300 (light)","d":"The declared `--color-grey-300` — the app's Tailwind-style palette."},"400":{"v":"#a3a3a3","t":"color","s":"css-var --color-grey-400 (light)","d":"The declared `--color-grey-400` — the app's Tailwind-style palette."},"50":{"v":"#fafafa","t":"color","s":"css-var --color-grey-50 (light)","d":"The declared `--color-grey-50` — the app's Tailwind-style palette."},"500":{"v":"#737373","t":"color","s":"css-var --color-grey-500 (light)","d":"The declared `--color-grey-500` — the app's Tailwind-style palette."},"600":{"v":"#525252","t":"color","s":"css-var --color-grey-600 (light)","d":"The declared `--color-grey-600` — the app's Tailwind-style palette."},"700":{"v":"#404040","t":"color","s":"css-var --color-grey-700 (light)","d":"The declared `--color-grey-700` — the app's Tailwind-style palette."},"800":{"v":"#262626","t":"color","s":"css-var --color-grey-800 (light)","d":"The declared `--color-grey-800` — the app's Tailwind-style palette."},"900":{"v":"#171717","t":"color","s":"css-var --color-grey-900 (light)","d":"The declared `--color-grey-900` — the app's Tailwind-style palette."}},"orange":{"100":{"v":"#ffedd5","t":"color","s":"css-var --color-orange-100 (light)","d":"The declared `--color-orange-100` — the app's Tailwind-style palette."},"200":{"v":"#fed7aa","t":"color","s":"css-var --color-orange-200 (light)","d":"The declared `--color-orange-200` — the app's Tailwind-style palette."},"300":{"v":"#fdba74","t":"color","s":"css-var --color-orange-300 (light)","d":"The declared `--color-orange-300` — the app's Tailwind-style palette."},"400":{"v":"#fb923c","t":"color","s":"css-var --color-orange-400 (light)","d":"The declared `--color-orange-400` — the app's Tailwind-style palette."},"50":{"v":"#fff7ed","t":"color","s":"css-var --color-orange-50 (light)","d":"The declared `--color-orange-50` — the app's Tailwind-style palette."},"500":{"v":"#f97316","t":"color","s":"css-var --color-orange-500 (light)","d":"The declared `--color-orange-500` — the app's Tailwind-style palette."},"600":{"v":"#ea580c","t":"color","s":"css-var --color-orange-600 (light)","d":"The declared `--color-orange-600` — the app's Tailwind-style palette."},"700":{"v":"#c2410c","t":"color","s":"css-var --color-orange-700 (light)","d":"The declared `--color-orange-700` — the app's Tailwind-style palette."},"800":{"v":"#9a3412","t":"color","s":"css-var --color-orange-800 (light)","d":"The declared `--color-orange-800` — the app's Tailwind-style palette."},"900":{"v":"#7c2d12","t":"color","s":"css-var --color-orange-900 (light)","d":"The declared `--color-orange-900` — the app's Tailwind-style palette."}},"pink":{"100":{"v":"#fce7f3","t":"color","s":"css-var --color-pink-100 (light)","d":"The declared `--color-pink-100` — the app's Tailwind-style palette."},"200":{"v":"#fbcfe8","t":"color","s":"css-var --color-pink-200 (light)","d":"The declared `--color-pink-200` — the app's Tailwind-style palette."},"300":{"v":"#f9a8d4","t":"color","s":"css-var --color-pink-300 (light)","d":"The declared `--color-pink-300` — the app's Tailwind-style palette."},"400":{"v":"#f472b6","t":"color","s":"css-var --color-pink-400 (light)","d":"The declared `--color-pink-400` — the app's Tailwind-style palette."},"50":{"v":"#fdf2f8","t":"color","s":"css-var --color-pink-50 (light)","d":"The declared `--color-pink-50` — the app's Tailwind-style palette."},"500":{"v":"#ec4899","t":"color","s":"css-var --color-pink-500 (light)","d":"The declared `--color-pink-500` — the app's Tailwind-style palette."},"600":{"v":"#db2777","t":"color","s":"css-var --color-pink-600 (light)","d":"The declared `--color-pink-600` — the app's Tailwind-style palette."},"700":{"v":"#be185d","t":"color","s":"css-var --color-pink-700 (light)","d":"The declared `--color-pink-700` — the app's Tailwind-style palette."},"800":{"v":"#9d174d","t":"color","s":"css-var --color-pink-800 (light)","d":"The declared `--color-pink-800` — the app's Tailwind-style palette."},"900":{"v":"#831843","t":"color","s":"css-var --color-pink-900 (light)","d":"The declared `--color-pink-900` — the app's Tailwind-style palette."}},"primary":{"v":"#7839e5","t":"color","s":"css-var --color-primary (light)","d":"The declared `--color-primary` — the app's Tailwind-style palette."},"purple":{"100":{"v":"#ede9fe","t":"color","s":"css-var --color-purple-100 (light)","d":"The declared `--color-purple-100` — the app's Tailwind-style palette."},"200":{"v":"#ddd6fe","t":"color","s":"css-var --color-purple-200 (light)","d":"The declared `--color-purple-200` — the app's Tailwind-style palette."},"300":{"v":"#c4b5fd","t":"color","s":"css-var --color-purple-300 (light)","d":"The declared `--color-purple-300` — the app's Tailwind-style palette."},"400":{"v":"#a78bfa","t":"color","s":"css-var --color-purple-400 (light)","d":"The declared `--color-purple-400` — the app's Tailwind-style palette."},"50":{"v":"#f5f3ff","t":"color","s":"css-var --color-purple-50 (light)","d":"The declared `--color-purple-50` — the app's Tailwind-style palette."},"500":{"v":"#8b5cf6","t":"color","s":"css-var --color-purple-500 (light)","d":"The declared `--color-purple-500` — the app's Tailwind-style palette."},"600":{"v":"#7c3aed","t":"color","s":"css-var --color-purple-600 (light)","d":"The declared `--color-purple-600` — the app's Tailwind-style palette."},"700":{"v":"#6d28d9","t":"color","s":"css-var --color-purple-700 (light)","d":"The declared `--color-purple-700` — the app's Tailwind-style palette."},"800":{"v":"#5b21b6","t":"color","s":"css-var --color-purple-800 (light)","d":"The declared `--color-purple-800` — the app's Tailwind-style palette."},"900":{"v":"#4c1d95","t":"color","s":"css-var --color-purple-900 (light)","d":"The declared `--color-purple-900` — the app's Tailwind-style palette."}},"red":{"100":{"v":"#fee2e2","t":"color","s":"css-var --color-red-100 (light)","d":"The declared `--color-red-100` — the app's Tailwind-style palette."},"200":{"v":"#fecaca","t":"color","s":"css-var --color-red-200 (light)","d":"The declared `--color-red-200` — the app's Tailwind-style palette."},"300":{"v":"#fca5a5","t":"color","s":"css-var --color-red-300 (light)","d":"The declared `--color-red-300` — the app's Tailwind-style palette."},"400":{"v":"#f87171","t":"color","s":"css-var --color-red-400 (light)","d":"The declared `--color-red-400` — the app's Tailwind-style palette."},"50":{"v":"#fef2f2","t":"color","s":"css-var --color-red-50 (light)","d":"The declared `--color-red-50` — the app's Tailwind-style palette."},"500":{"v":"#ef4444","t":"color","s":"css-var --color-red-500 (light)","d":"The declared `--color-red-500` — the app's Tailwind-style palette."},"600":{"v":"#dc2626","t":"color","s":"css-var --color-red-600 (light)","d":"The declared `--color-red-600` — the app's Tailwind-style palette."},"700":{"v":"#b91c1c","t":"color","s":"css-var --color-red-700 (light)","d":"The declared `--color-red-700` — the app's Tailwind-style palette."},"800":{"v":"#991b1b","t":"color","s":"css-var --color-red-800 (light)","d":"The declared `--color-red-800` — the app's Tailwind-style palette."},"900":{"v":"#7f1d1d","t":"color","s":"css-var --color-red-900 (light)","d":"The declared `--color-red-900` — the app's Tailwind-style palette."}},"shadow":{"v":"#e5e5e5","t":"color","s":"css-var --color-shadow (light)","d":"The declared `--color-shadow` — the app's Tailwind-style palette."},"teal":{"100":{"v":"#ccfbf1","t":"color","s":"css-var --color-teal-100 (light)","d":"The declared `--color-teal-100` — the app's Tailwind-style palette."},"200":{"v":"#99f6e4","t":"color","s":"css-var --color-teal-200 (light)","d":"The declared `--color-teal-200` — the app's Tailwind-style palette."},"300":{"v":"#5eead4","t":"color","s":"css-var --color-teal-300 (light)","d":"The declared `--color-teal-300` — the app's Tailwind-style palette."},"400":{"v":"#2dd4bf","t":"color","s":"css-var --color-teal-400 (light)","d":"The declared `--color-teal-400` — the app's Tailwind-style palette."},"50":{"v":"#f0fdfa","t":"color","s":"css-var --color-teal-50 (light)","d":"The declared `--color-teal-50` — the app's Tailwind-style palette."},"500":{"v":"#14b8a6","t":"color","s":"css-var --color-teal-500 (light)","d":"The declared `--color-teal-500` — the app's Tailwind-style palette."},"600":{"v":"#0d9488","t":"color","s":"css-var --color-teal-600 (light)","d":"The declared `--color-teal-600` — the app's Tailwind-style palette."},"700":{"v":"#0f766e","t":"color","s":"css-var --color-teal-700 (light)","d":"The declared `--color-teal-700` — the app's Tailwind-style palette."},"800":{"v":"#115e59","t":"color","s":"css-var --color-teal-800 (light)","d":"The declared `--color-teal-800` — the app's Tailwind-style palette."},"900":{"v":"#134e4a","t":"color","s":"css-var --color-teal-900 (light)","d":"The declared `--color-teal-900` — the app's Tailwind-style palette."}},"white":{"v":"#ffffff","t":"color","s":"css-var --color-white (light)","d":"The declared `--color-white` — the app's Tailwind-style palette."},"yellow":{"100":{"v":"#fef9c3","t":"color","s":"css-var --color-yellow-100 (light)","d":"The declared `--color-yellow-100` — the app's Tailwind-style palette."},"200":{"v":"#fef08a","t":"color","s":"css-var --color-yellow-200 (light)","d":"The declared `--color-yellow-200` — the app's Tailwind-style palette."},"300":{"v":"#fde047","t":"color","s":"css-var --color-yellow-300 (light)","d":"The declared `--color-yellow-300` — the app's Tailwind-style palette."},"400":{"v":"#facc15","t":"color","s":"css-var --color-yellow-400 (light)","d":"The declared `--color-yellow-400` — the app's Tailwind-style palette."},"50":{"v":"#fefce8","t":"color","s":"css-var --color-yellow-50 (light)","d":"The declared `--color-yellow-50` — the app's Tailwind-style palette."},"500":{"v":"#eab308","t":"color","s":"css-var --color-yellow-500 (light)","d":"The declared `--color-yellow-500` — the app's Tailwind-style palette."},"600":{"v":"#ca8a04","t":"color","s":"css-var --color-yellow-600 (light)","d":"The declared `--color-yellow-600` — the app's Tailwind-style palette."},"700":{"v":"#a16207","t":"color","s":"css-var --color-yellow-700 (light)","d":"The declared `--color-yellow-700` — the app's Tailwind-style palette."},"800":{"v":"#854d0e","t":"color","s":"css-var --color-yellow-800 (light)","d":"The declared `--color-yellow-800` — the app's Tailwind-style palette."},"900":{"v":"#713f12","t":"color","s":"css-var --color-yellow-900 (light)","d":"The declared `--color-yellow-900` — the app's Tailwind-style palette."}}},"docs":{"gray":{"100":{"v":"#f1eff5","t":"color","s":"css-var --gray-100 (light)","d":"The declared `--gray-100` — the docs grey ramp."},"200":{"v":"#e2e0e5","t":"color","s":"css-var --gray-200 (light)","d":"The declared `--gray-200` — the docs grey ramp."},"300":{"v":"#d1cfd5","t":"color","s":"css-var --gray-300 (light)","d":"The declared `--gray-300` — the docs grey ramp."},"400":{"v":"#a2a0a5","t":"color","s":"css-var --gray-400 (light)","d":"The declared `--gray-400` — the docs grey ramp."},"50":{"v":"#f6f4f9","t":"color","s":"css-var --gray-50 (light)","d":"The declared `--gray-50` — the docs grey ramp."},"500":{"v":"#737176","t":"color","s":"css-var --gray-500 (light)","d":"The declared `--gray-500` — the docs grey ramp."},"600":{"v":"#535156","t":"color","s":"css-var --gray-600 (light)","d":"The declared `--gray-600` — the docs grey ramp."},"700":{"v":"#424045","t":"color","s":"css-var --gray-700 (light)","d":"The declared `--gray-700` — the docs grey ramp."},"800":{"v":"#29272c","t":"color","s":"css-var --gray-800 (light)","d":"The declared `--gray-800` — the docs grey ramp."},"900":{"v":"#1a181d","t":"color","s":"css-var --gray-900 (light)","d":"The declared `--gray-900` — the docs grey ramp."},"950":{"v":"#0d0b11","t":"color","s":"css-var --gray-950 (light)","d":"The declared `--gray-950` — the docs grey ramp."}},"primary":{"v":"#7839e5","t":"color","s":"css-var --primary (light)","d":"The declared `--primary`."},"primary-light":{"v":"#7839e5","t":"color","s":"css-var --primary-light (light)","d":"The declared `--primary-light`."},"primary-dark":{"v":"#7839e5","t":"color","s":"css-var --primary-dark (light)","d":"The declared `--primary-dark`."},"tooltip-foreground":{"v":"#ffffff","t":"color","s":"css-var --tooltip-foreground (light)","d":"The declared `--tooltip-foreground`."}}},"font":{"family":{"unica":{"v":"\"Unica77\",sans-serif","t":"fontFamily","s":"css-var --font-unica (light)","d":"Unica77 — the marketing body/UI face (nav, lede, buttons, workbook mockup)."},"serif-condensed":{"v":"\"Serrif Condensed\",serif","t":"fontFamily","s":"css-var --font-serif-condensed (light)","d":"Serrif Condensed — the marketing display face ('What's after Excel?', 'ARR Dashboard')."},"fono":{"v":"\"Aeonik Fono\",sans-serif","t":"fontFamily","s":"css-var --font-fono (light)","d":"Aeonik Fono — the monospaced eyebrow labels ('1. TRUST')."},"sans-serif":{"v":"\"Aeonik Pro\",sans-serif","t":"fontFamily","s":"css-var --font-sans-serif (light)","d":"Aeonik Pro — the declared sans stack behind Unica77."},"lato":{"v":"\"Lato\",sans-serif","t":"fontFamily","s":"css-var --font-lato (light)","d":"Lato — a declared secondary stack."},"inter":{"v":"\"Inter\"","t":"fontFamily","s":"css-var --font-inter (light)","d":"Inter — declared; the docs body/UI face."},"hubspot":{"v":"\"HubSpot Sans\",sans-serif","t":"fontFamily","s":"css-var --font-hubspot (light)","d":"HubSpot Sans — a declared mockup face."},"anthropic-sans":{"v":"\"Anthropic Sans\",sans-serif","t":"fontFamily","s":"css-var --font-anthropic-sans (light)","d":"Anthropic Sans — a declared mockup face (the Claude demo)."},"anthropic-serif":{"v":"\"Anthropic Serif\",Georgia,serif","t":"fontFamily","s":"css-var --font-anthropic-serif (light)","d":"Anthropic Serif — a declared mockup face."},"app":{"v":"neue-haas-unica, Helvetica, sans-serif","t":"fontFamily","s":"css-var --font-app (light)","d":"neue-haas-unica — the go.equals.com app face (the sign-in card)."},"mono":{"v":"\"JetBrains Mono\", monospace","t":"fontFamily","s":"css-var --font-mono (light)","d":"JetBrains Mono — the app's declared mono stack."},"paper-mono":{"v":"\"Paper Mono\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace","t":"fontFamily","s":"css-var --font-paper-mono (light)","d":"Paper Mono — the docs code face."},"default-mono":{"v":"\"Paper Mono\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace","t":"fontFamily","s":"css-var --default-mono-font-family (light)","d":"The docs' declared default mono stack (Paper Mono first)."}},"weight":{"normal":{"v":400,"t":"fontWeight","s":"css-var --font-weight-normal (light)","d":"400 — body and UI text everywhere."},"medium":{"v":500,"t":"fontWeight","s":"css-var --font-weight-medium (light)","d":"500 — the workbook mockup's cell labels, docs code."},"semibold":{"v":600,"t":"fontWeight","s":"css-var --font-weight-semibold (light)","d":"600 — docs headings."},"bold":{"v":700,"t":"fontWeight","s":"css-var --font-weight-bold (light)","d":"700 — declared."},"extrabold":{"v":800,"t":"fontWeight","s":"css-var --font-weight-extrabold (light)","d":"800 — declared."}},"size":{"tab":{"v":"11px","t":"dimension","s":"computed fontSize of wb-sheet-tab default (raw/components-computed.json)","d":"The 11px workbook sheet-tab label."},"app":{"v":"12px","t":"dimension","s":"computed fontSize of signin-continue default (raw/components-computed.json)","d":"The 12px go.equals.com app text — sign-in field, submit, footer."},"cell":{"v":"12px","t":"dimension","s":"computed fontSize of wb-cell default (raw/components-computed.json)","d":"The 12px workbook cell label."},"small":{"v":"14px","t":"dimension","s":"computed fontSize of mkt-nav-link default (raw/components-computed.json)","d":"The 14px marketing UI size — nav links, eyebrow labels, buttons, plan features' chrome."},"field":{"v":"16px","t":"dimension","s":"computed fontSize of hero-email default (raw/components-computed.json)","d":"The 16px field and plan-feature text."},"body":{"v":"24px","t":"dimension","s":"computed fontSize of faq-question default (raw/components-computed.json)","d":"The 18px marketing body size (plan cards, FAQ, header text)."},"docs-body":{"v":"18px","t":"dimension","s":"computed fontSize of docs-para default (raw/components-computed.json)","d":"The 18px docs paragraph size."},"lede":{"v":"24px","t":"dimension","s":"computed fontSize of hero-sub default (raw/components-computed.json)","d":"The 24px hero lede and use-case lede."},"signin-display":{"v":"30px","t":"dimension","s":"computed fontSize of signin-heading default (raw/components-computed.json)","d":"The 30px 'Sign in to Equals' card heading — Serrif Condensed inside the app."},"docs-h1":{"v":"36px","t":"dimension","s":"computed fontSize of docs-h1 default (raw/components-computed.json)","d":"The 36px docs page heading."},"section":{"v":"48px","t":"dimension","s":"computed fontSize of section-h2 default (raw/components-computed.json)","d":"The 48px marketing section heading; also the mobile display size."},"mobile-display":{"v":"48px","t":"dimension","s":"computed fontSize of m-hero-h1 default (raw/components-computed.json)","d":"The 48px display at 390px."},"display":{"v":"110px","t":"dimension","s":"computed fontSize of hero-h1 default (raw/components-computed.json)","d":"The 110px marketing display ('What's after Excel?', 'ARR Dashboard')."}},"lineHeight":{"tight":{"v":1.25,"t":"number","s":"css-var --leading-tight (light)","d":"1.25 — declared tight leading."},"normal":{"v":1.5,"t":"number","s":"css-var --leading-normal (light)","d":"1.5 — declared normal leading."},"relaxed":{"v":1.625,"t":"number","s":"css-var --leading-relaxed (light)","d":"1.625 — declared relaxed leading."},"display":{"v":"110px","t":"dimension","s":"computed lineHeight of hero-h1 default (raw/components-computed.json)","d":"The 110px/110px display's own leading (ratio 1)."},"label":{"v":"24px","t":"dimension","s":"computed lineHeight of section-label default (raw/components-computed.json)","d":"The eyebrow's 24px line on 14px."},"body":{"v":"32px","t":"dimension","s":"computed lineHeight of faq-question default (raw/components-computed.json)","d":"The 24px marketing body line on 18px."},"lede":{"v":"32px","t":"dimension","s":"computed lineHeight of hero-sub default (raw/components-computed.json)","d":"The 32px lede line on 24px."},"docs-body":{"v":"28px","t":"dimension","s":"computed lineHeight of docs-para default (raw/components-computed.json)","d":"The 28px docs paragraph line on 18px."},"app":{"v":"15px","t":"dimension","s":"computed lineHeight of signin-continue default (raw/components-computed.json)","d":"The app's tight 15-16px control leading."}},"tracking":{"tighter":{"v":"-.05em","t":"other","s":"css-var --tracking-tighter (light)","d":"-0.05em — declared."},"tight":{"v":"-.025em","t":"other","s":"css-var --tracking-tight (light)","d":"-0.025em — declared."},"wide":{"v":"0.390625px","t":"other","s":"css-var --tracking-wide (light)","d":"0.025em — declared."},"display":{"v":"-2.2px","t":"dimension","s":"computed letterSpacing of hero-h1 default (raw/components-computed.json)","d":"The display's -0.02em tightening (-2.2px on 110px)."},"body":{"v":"-0.09px","t":"dimension","s":"computed letterSpacing of mkt-nav-link default (raw/components-computed.json)","d":"The marketing UI's -0.005em (-0.09px on 14-18px)."},"label":{"v":"0.28px","t":"dimension","s":"computed letterSpacing of section-label default (raw/components-computed.json)","d":"The eyebrow's +0.02em (+0.28px on 14px)."},"caption":{"v":"0.18px","t":"dimension","s":"computed letterSpacing of wb-cell default (raw/components-computed.json)","d":"The mockup caption's +0.015em (+0.18px)."}}},"size":{"header":{"v":"52px","t":"dimension","s":"css-var --header-height (light)","d":"The declared 52px marketing header (measured 52 desktop, 53 mobile)."},"banner":{"v":"0px","t":"dimension","s":"css-var --banner-height (light)","d":"The declared 0px promo banner slot."},"base":{"v":"4px","t":"dimension","s":"css-var --spacing (light)","d":"The docs/Tailwind 4px spacing base."},"radius-xl":{"v":"12px","t":"dimension","s":"css-var --radius-xl (light)","d":"The declared 12px extra-large radius (docs nav items, the mega-menu, the workbook mockup)."},"container":{"2xl":{"v":"672px","t":"dimension","s":"css-var --container-2xl (light)","d":"The declared `--container-2xl` docs container width."},"3xl":{"v":"768px","t":"dimension","s":"css-var --container-3xl (light)","d":"The declared `--container-3xl` docs container width."},"4xl":{"v":"896px","t":"dimension","s":"css-var --container-4xl (light)","d":"The declared `--container-4xl` docs container width."},"5xl":{"v":"1024px","t":"dimension","s":"css-var --container-5xl (light)","d":"The declared `--container-5xl` docs container width."},"6xl":{"v":"1152px","t":"dimension","s":"css-var --container-6xl (light)","d":"The declared `--container-6xl` docs container width."},"lg":{"v":"512px","t":"dimension","s":"css-var --container-lg (light)","d":"The declared `--container-lg` docs container width."},"sm":{"v":"384px","t":"dimension","s":"css-var --container-sm (light)","d":"The declared `--container-sm` docs container width."},"xl":{"v":"576px","t":"dimension","s":"css-var --container-xl (light)","d":"The declared `--container-xl` docs container width."},"xs":{"v":"320px","t":"dimension","s":"css-var --container-xs (light)","d":"The declared `--container-xs` docs container width."}}},"radius":{"control":{"v":"4px","t":"dimension","s":"computed borderTopLeftRadius of wb-toolbar-button default (raw/components-computed.json)","d":"The 4px toolbar-button radius inside the workbook mockup."},"small":{"v":"6px","t":"dimension","s":"computed borderTopLeftRadius of docs-code default (raw/components-computed.json)","d":"The 6px inline-code and menu-item radius."},"field":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of signin-email default (raw/components-computed.json)","d":"The 8px sign-in field and submit radius."},"card":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of mkt-menu default (raw/components-computed.json)","d":"The 12px card/menu/mockup radius (matches declared --radius-xl)."},"cta":{"v":"60px","t":"dimension","s":"computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)","d":"The 60px pill radius of the marketing CTAs."},"pill":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of docs-search default (raw/components-computed.json)","d":"The 9999px fully-round radius of the docs search/assistant pills."}},"shadow":{"menu":{"v":"rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.05) 0px 2px 8px -2px, rgba(0, 0, 0, 0.15) 0px 8px 24px -4px","t":"other","s":"computed boxShadow of mkt-menu default (raw/components-computed.json)","d":"The three-layer card shadow the mega-menu carries (0.5px ring + soft drop + larger drop)."},"card":{"v":"rgba(38, 38, 38, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.2) 0px 2px 8px -4px","t":"other","s":"computed boxShadow of wb-mockup default (raw/components-computed.json)","d":"The ring + drop pair the workbook mockup carries."},"pressed":{"v":"rgba(0, 0, 0, 0.17) 0px 1px 3px 0px inset","t":"other","s":"computed boxShadow of hero-cta pressed (raw/components-computed.json)","d":"The 1px 3px inset shadow a marketing CTA draws when active."},"popup":{"v":"rgba(0, 0, 0, 0.08) 0px 1px 4px 0px","t":"other","s":"css-var --twoslash-popup-shadow (light)","d":"The docs' declared code-popup shadow."}},"motion":{"duration":{"v":"150ms","t":"duration","s":"css-var --default-transition-duration (light)","d":"The declared 150ms default transition duration."},"easing":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --default-transition-timing-function (light)","d":"The declared default curve (ease-in-out)."},"ease-in":{"v":[0.4,0.0,1.0,1.0],"t":"cubicBezier","s":"css-var --ease-in (light)","d":"The declared ease-in curve."},"ease-out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-out (light)","d":"The declared ease-out curve."},"ease-in-out":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-in-out (light)","d":"The declared ease-in-out curve."},"control":{"v":"background-color 0.15s ease-out","t":"other","s":"computed transition of hero-cta default (raw/components-computed.json)","d":"The marketing button's transition."}},"breakpoint":{"max-1100":{"v":"1100px","t":"dimension","s":"`@media (max-width: 1100px)` in a public stylesheet (raw/css-vars.json rules)","d":"A declared breakpoint in the public CSS."},"max-767":{"v":"767px","t":"dimension","s":"`@media (max-width: 767px)` in a public stylesheet (raw/css-vars.json rules)","d":"A declared breakpoint in the public CSS."},"min-1024":{"v":"1024px","t":"dimension","s":"`@media (width >= 1024px)` in a public stylesheet (raw/css-vars.json rules)","d":"A declared breakpoint in the public CSS."},"min-640":{"v":"640px","t":"dimension","s":"`@media (width >= 640px)` in a public stylesheet (raw/css-vars.json rules)","d":"A declared breakpoint in the public CSS."}},"component":{"header-height":{"v":"52px","t":"dimension","s":"measured h of mkt-header default (raw/components-computed.json)","d":"The 52px marketing header (matches declared --header-height)."},"mobile-header-height":{"v":"53px","t":"dimension","s":"measured h of m-header default (raw/components-computed.json)","d":"The 53px phone header."},"hero-field-height":{"v":"56px","t":"dimension","s":"measured h of hero-email default (raw/components-computed.json)","d":"The 56px hero email capture."},"mobile-field-height":{"v":"52px","t":"dimension","s":"measured h of m-email default (raw/components-computed.json)","d":"The 52px phone email capture."},"signin-field-height":{"v":"30px","t":"dimension","s":"measured h of signin-email default (raw/components-computed.json)","d":"The 30px sign-in field."},"signin-card-width":{"v":"300px","t":"dimension","s":"measured w of signin-card default (raw/components-computed.json)","d":"The 300px sign-in card."},"cta-height":{"v":"44px","t":"dimension","s":"measured h of hero-cta default (raw/components-computed.json)","d":"The 44px hero CTA."},"plan-cta-height":{"v":"42px","t":"dimension","s":"measured h of plan-cta default (raw/components-computed.json)","d":"The 42px plan-card action row."},"app-submit-height":{"v":"27px","t":"dimension","s":"measured h of signin-continue default (raw/components-computed.json)","d":"The 27px Continue submit."},"menu-width":{"v":"633.76px","t":"dimension","s":"measured w of mkt-menu default (raw/components-computed.json)","d":"The ~634px use-cases mega-menu."},"nav-item-height":{"v":"32px","t":"dimension","s":"measured h of docs-nav-item default (raw/components-computed.json)","d":"The 32px docs nav item."},"search-height":{"v":"36px","t":"dimension","s":"measured h of docs-search default (raw/components-computed.json)","d":"The 36px docs search pill."},"theme-button":{"v":"30px","t":"dimension","s":"measured h of docs-theme-btn default (raw/components-computed.json)","d":"The 30px docs theme button."},"docs-sidebar-width":{"v":"288px","t":"dimension","s":"measured w of docs-sidebar default (raw/components-computed.json)","d":"The 288px docs rail."},"plan-card-width":{"v":"421.33px","t":"dimension","s":"measured w of plan-card default (raw/components-computed.json)","d":"The ~421px plan card."},"workbook-mockup":{"v":"980px","t":"dimension","s":"measured w of wb-mockup default (raw/components-computed.json)","d":"The 980x640 workbook mockup frame."},"sheet-tab-height":{"v":"32px","t":"dimension","s":"measured h of wb-sheet-tab default (raw/components-computed.json)","d":"The 32px mockup sheet tab."},"hamburger":{"v":"40px","t":"dimension","s":"measured h of m-hamburger default (raw/components-computed.json)","d":"The 40px phone hamburger hit area."}}},"light":{"docs":{"surface":{"v":"#ffffff","t":"color","s":"css-var --background-light (light)","d":"The declared `--background-light`."},"border":{"v":"#f1eff5","t":"color","s":"css-var --default-border-color (light)","d":"The declared `--default-border-color`."},"primary":{"v":"#7839e5","t":"color","s":"css-var --primary (light)","d":"The declared `--primary`."},"twoslash":{"border-color":{"v":"#dbdfde","t":"color","s":"css-var --twoslash-border-color (light)"},"code-font-size":{"v":"16px","t":"other","s":"css-var --twoslash-code-font-size (light)"},"cursor-color":{"v":"rgba(136, 136, 136, 0.533)","t":"color","s":"css-var --twoslash-cursor-color (light)"},"docs-tag-style":{"v":"italic","t":"other","s":"css-var --twoslash-docs-tag-style (light)"},"error-bg":{"v":"rgba(212, 86, 86, 0.125)","t":"color","s":"css-var --twoslash-error-bg (light)"},"error-color":{"v":"#d45656","t":"color","s":"css-var --twoslash-error-color (light)"},"highlighted-bg":{"v":"rgba(195, 125, 13, 0.125)","t":"color","s":"css-var --twoslash-highlighted-bg (light)"},"highlighted-border":{"v":"rgba(195, 125, 13, 0.314)","t":"color","s":"css-var --twoslash-highlighted-border (light)"},"popup-bg":{"v":"#f3f7f6","t":"color","s":"css-var --twoslash-popup-bg (light)"},"popup-shadow":{"v":"rgba(0, 0, 0, 0.08) 0px 1px 4px 0px","t":"other","s":"css-var --twoslash-popup-shadow (light)"},"tag-annotate-bg":{"v":"rgba(27, 166, 115, 0.125)","t":"color","s":"css-var --twoslash-tag-annotate-bg (light)"},"tag-annotate-color":{"v":"#1ba673","t":"color","s":"css-var --twoslash-tag-annotate-color (light)"},"tag-bg":{"v":"rgba(55, 114, 207, 0.125)","t":"color","s":"css-var --twoslash-tag-bg (light)"},"tag-color":{"v":"#3772cf","t":"color","s":"css-var --twoslash-tag-color (light)"},"tag-warn-bg":{"v":"rgba(195, 125, 13, 0.125)","t":"color","s":"css-var --twoslash-tag-warn-bg (light)"},"tag-warn-color":{"v":"#c37d0d","t":"color","s":"css-var --twoslash-tag-warn-color (light)"},"text-size":{"v":"12.7969px","t":"other","s":"css-var --twoslash-text-size (light)"},"underline-color":{"v":"currentColor","t":"other","s":"css-var --twoslash-underline-color (light)"},"unmatched-color":{"v":"#888888","t":"color","s":"css-var --twoslash-unmatched-color (light)"},"warn-bg":{"v":"rgba(195, 125, 13, 0.125)","t":"color","s":"css-var --twoslash-warn-bg (light)"},"warn-color":{"v":"#c37d0d","t":"color","s":"css-var --twoslash-warn-color (light)"}},"text":{"v":"{color.docs.gray.900}","t":"color","s":"computed color of docs-h1 default (raw/components-computed.json); matches declared color.docs.gray.900","d":"The docs heading ink (#1a181d, grey-900)."},"body-text":{"v":"{color.docs.gray.700}","t":"color","s":"computed color of docs-para default (raw/components-computed.json); matches declared color.docs.gray.700","d":"The docs paragraph colour (#424045, grey-700)."},"muted":{"v":"{color.docs.gray.500}","t":"color","s":"computed color of docs-sidebar default (raw/components-computed.json); matches declared color.docs.gray.500","d":"The docs rail/meta colour (#737176, grey-500)."},"nav-hover":{"v":"rgba(120, 57, 229, 0.1)","t":"color","s":"computed backgroundColor of docs-nav-item default (raw/components-computed.json); the browser painted oklab(0.529224 0.0935356 -0.219964 / 0.1), converted here","d":"The active nav item's primary tint (the browser paints it in oklab: ~primary at 10%)."},"code-text":{"v":"#101828","t":"color","s":"computed color of docs-code default (raw/components-computed.json); the browser painted oklch(0.21 0.034 264.665), converted here","d":"The dark-navy inline-code ink (painted in oklch)."},"code-bg":{"v":"rgba(241, 239, 245, 0.5)","t":"color","s":"computed backgroundColor of docs-code default (raw/components-computed.json); the browser painted oklab(0.955295 0.00433394 -0.00702435 / 0.5), converted here","d":"The near-white 50% code chip fill."},"field":{"v":"rgba(13, 11, 17, 0.03)","t":"color","s":"computed backgroundColor of docs-search default (raw/components-computed.json); the browser painted oklab(0.155089 0.0065295 -0.0112347 / 0.03), converted here","d":"The 3%-ink search field wash."},"focus":{"v":"{color.app.primary}","t":"color","s":"the outline 1px auto focus ring of docs-search focus-visible (raw/components-computed.json outline/boxShadow); matches declared color.app.primary","d":"The primary outline the docs search draws on keyboard focus."}},"marketing":{"surface":{"v":"{color.brand.grey-1}","t":"color","s":"computed backgroundColor of mkt-header default (raw/components-computed.json); matches declared color.brand.grey-1","d":"The cream #FAF9F5 marketing field."},"text":{"v":"{color.brand.black}","t":"color","s":"computed color of faq-question default (raw/components-computed.json); matches declared color.brand.black","d":"The near-black marketing ink."},"muted":{"v":"{color.brand.grey-5}","t":"color","s":"computed placeholder colour of hero-email default (raw/components-computed.json); matches declared color.brand.grey-5","d":"The 60%-black placeholder/muted marketing text."},"line":{"v":"rgba(0, 0, 0, 0.1)","t":"color","s":"computed borderTopColor of faq default (raw/components-computed.json)","d":"The 10%-black hairline the FAQ dividers draw."},"card":{"v":"{color.brand.grey-1}","t":"color","s":"computed backgroundColor of plan-card default (raw/components-computed.json); matches declared color.brand.grey-1","d":"The cream plan-card field (same as the page — the cards separate by layout, not colour)."},"menu-surface":{"v":"{color.brand.white}","t":"color","s":"computed backgroundColor of mkt-menu default (raw/components-computed.json); matches declared color.brand.white","d":"The white mega-menu surface."},"menu-hover":{"v":"{color.brand.grey-2}","t":"color","s":"computed backgroundColor of mkt-menu-item hover (raw/components-computed.json); matches declared color.brand.grey-2","d":"The 5%-black hover wash on menu items."},"accent":{"orchid":{"background":{"v":"#b074ce","t":"color","s":"css-var --accent-background resolved on .accent--orchid (raw/css-vars.json resolved.accents)","d":"The orchid accent fill — CTAs, hero pills, section bands on .accent--orchid pages."},"on":{"v":"#000000","t":"color","s":"css-var --accent-color resolved on .accent--orchid (raw/css-vars.json resolved.accents)","d":"Text and icons painted on the orchid accent."}},"violet":{"background":{"v":"#b074ce","t":"color","s":"css-var --accent-background resolved on .accent--violet (raw/css-vars.json resolved.accents)","d":"The violet accent fill — CTAs, hero pills, section bands on .accent--violet pages."},"on":{"v":"#000000","t":"color","s":"css-var --accent-color resolved on .accent--violet (raw/css-vars.json resolved.accents)","d":"Text and icons painted on the violet accent."}},"green":{"background":{"v":"#20a277","t":"color","s":"css-var --accent-background resolved on .accent--green (raw/css-vars.json resolved.accents)","d":"The green accent fill — CTAs, hero pills, section bands on .accent--green pages."},"light":{"v":"#85fac1","t":"color","s":"css-var --accent-light-background resolved on .accent--green (raw/css-vars.json resolved.accents)","d":"The lighter green wash behind accent-tinted areas."},"on":{"v":"#ffffff","t":"color","s":"css-var --accent-color resolved on .accent--green (raw/css-vars.json resolved.accents)","d":"Text and icons painted on the green accent."}},"amber":{"background":{"v":"#ff3716","t":"color","s":"css-var --accent-background resolved on .accent--amber (raw/css-vars.json resolved.accents)","d":"The amber accent fill — CTAs, hero pills, section bands on .accent--amber pages."},"light":{"v":"#ffcc91","t":"color","s":"css-var --accent-light-background resolved on .accent--amber (raw/css-vars.json resolved.accents)","d":"The lighter amber wash behind accent-tinted areas."},"on":{"v":"#000000","t":"color","s":"css-var --accent-color resolved on .accent--amber (raw/css-vars.json resolved.accents)","d":"Text and icons painted on the amber accent."}},"blue":{"background":{"v":"#0000bb","t":"color","s":"css-var --accent-background resolved on .accent--blue (raw/css-vars.json resolved.accents)","d":"The blue accent fill — CTAs, hero pills, section bands on .accent--blue pages."},"light":{"v":"#c4f2f7","t":"color","s":"css-var --accent-light-background resolved on .accent--blue (raw/css-vars.json resolved.accents)","d":"The lighter blue wash behind accent-tinted areas."},"on":{"v":"#ffffff","t":"color","s":"css-var --accent-color resolved on .accent--blue (raw/css-vars.json resolved.accents)","d":"Text and icons painted on the blue accent."}},"purple":{"background":{"v":"#611848","t":"color","s":"css-var --accent-background resolved on .accent--purple (raw/css-vars.json resolved.accents)","d":"The purple accent fill — CTAs, hero pills, section bands on .accent--purple pages."},"on":{"v":"#ffffff","t":"color","s":"css-var --accent-color resolved on .accent--purple (raw/css-vars.json resolved.accents)","d":"Text and icons painted on the purple accent."}},"black":{"background":{"v":"#000000","t":"color","s":"css-var --accent-background resolved on .accent--black (raw/css-vars.json resolved.accents)","d":"The black accent fill — CTAs, hero pills, section bands on .accent--black pages."},"on":{"v":"#ffffff","t":"color","s":"css-var --accent-color resolved on .accent--black (raw/css-vars.json resolved.accents)","d":"Text and icons painted on the black accent."}}},"label":{"amber":{"v":"#ff3716","t":"color","s":"css-var --section-label-color resolved on .label--amber (raw/css-vars.json resolved.accents)","d":"The eyebrow-label colour on .label--amber pages."},"peach":{"v":"#ffcc91","t":"color","s":"css-var --section-label-color resolved on .label--peach (raw/css-vars.json resolved.accents)","d":"The eyebrow-label colour on .label--peach pages."},"green":{"v":"#20a277","t":"color","s":"css-var --section-label-color resolved on .label--green (raw/css-vars.json resolved.accents)","d":"The eyebrow-label colour on .label--green pages."},"blue":{"v":"#0000bb","t":"color","s":"css-var --section-label-color resolved on .label--blue (raw/css-vars.json resolved.accents)","d":"The eyebrow-label colour on .label--blue pages."},"orchid":{"v":"#b074ce","t":"color","s":"css-var --section-label-color resolved on .label--orchid (raw/css-vars.json resolved.accents)","d":"The eyebrow-label colour on .label--orchid pages."}},"action":{"hover":{"v":"#9b66b5","t":"color","s":"computed backgroundColor of hero-cta hover (raw/components-computed.json); the browser-resolved color-mix of the orchid accent","d":"The darker accent the marketing CTA lifts to on hover."}}},"signin":{"canvas":{"v":"{color.app.background}","t":"color","s":"css-var --color-background behind the sign-in card (raw/css-vars.json); matches declared color.app.background","d":"The #fcfcfc app canvas behind the sign-in card (declared --color-background, app grey-25)."},"heading":{"v":"{color.brand.black}","t":"color","s":"computed color of signin-heading default (raw/components-computed.json); matches declared color.brand.black","d":"The card heading ink."},"text":{"v":"{color.app.grey.800}","t":"color","s":"computed color of signin-email default (raw/components-computed.json); matches declared color.app.grey.800","d":"The field text colour (app grey-800)."},"field":{"v":"{color.app.grey.100}","t":"color","s":"computed backgroundColor of signin-email default (raw/components-computed.json); matches declared color.app.grey.100","d":"The #f5f5f5 sign-in field fill (app grey-100)."},"placeholder":{"v":"{color.app.grey.400}","t":"color","s":"computed placeholder colour of signin-email default (raw/components-computed.json); matches declared color.app.grey.400","d":"The #a3a3a3 placeholder (app grey-400)."},"focus":{"v":"{color.app.purple.600}","t":"color","s":"computed borderTopColor of signin-email focused (raw/components-computed.json); matches declared color.app.purple.600","d":"The #7c3aed border the field draws when focused (app purple-600)."},"action":{"v":"{color.app.purple.600}","t":"color","s":"computed backgroundColor of signin-continue default (raw/components-computed.json); matches declared color.app.purple.600","d":"The #7c3aed Continue submit fill (app purple-600)."},"action-hover":{"v":"{color.app.purple.700}","t":"color","s":"computed backgroundColor of signin-continue hover (raw/components-computed.json); matches declared color.app.purple.700","d":"The #6d28d9 hover (app purple-700)."},"on-action":{"v":"{color.brand.white}","t":"color","s":"computed color of signin-continue default (raw/components-computed.json); matches declared color.brand.white","d":"White text on the submit."},"muted":{"v":"{color.app.grey.500}","t":"color","s":"computed color of signin-footer default (raw/components-computed.json); matches declared color.app.grey.500","d":"The #737373 footer copy (app grey-500)."}}},"dark":{"docs":{"surface":{"v":"#0b0a0f","t":"color","s":"css-var --background-dark (dark)","d":"The declared `--background-dark`."},"border":{"v":"#29272c","t":"color","s":"css-var --default-border-color (dark)","d":"The declared `--default-border-color`."},"primary":{"v":"#7839e5","t":"color","s":"css-var --primary (dark)","d":"The declared `--primary`."},"twoslash":{"border-color":{"v":"#222526","t":"color","s":"css-var --twoslash-border-color (dark)"},"code-font-size":{"v":"16px","t":"other","s":"css-var --twoslash-code-font-size (dark)"},"cursor-color":{"v":"rgba(187, 187, 187, 0.733)","t":"color","s":"css-var --twoslash-cursor-color (dark)"},"docs-tag-style":{"v":"italic","t":"other","s":"css-var --twoslash-docs-tag-style (dark)"},"error-bg":{"v":"rgba(255, 107, 107, 0.19)","t":"color","s":"css-var --twoslash-error-bg (dark)"},"error-color":{"v":"#ff6b6b","t":"color","s":"css-var --twoslash-error-color (dark)"},"highlighted-bg":{"v":"rgba(255, 165, 0, 0.19)","t":"color","s":"css-var --twoslash-highlighted-bg (dark)"},"highlighted-border":{"v":"rgba(255, 165, 0, 0.5)","t":"color","s":"css-var --twoslash-highlighted-border (dark)"},"popup-bg":{"v":"#151819","t":"color","s":"css-var --twoslash-popup-bg (dark)"},"popup-shadow":{"v":"rgba(0, 0, 0, 0.08) 0px 1px 4px 0px","t":"other","s":"css-var --twoslash-popup-shadow (dark)"},"tag-annotate-bg":{"v":"rgba(74, 222, 128, 0.19)","t":"color","s":"css-var --twoslash-tag-annotate-bg (dark)"},"tag-annotate-color":{"v":"#4ade80","t":"color","s":"css-var --twoslash-tag-annotate-color (dark)"},"tag-bg":{"v":"rgba(107, 182, 255, 0.19)","t":"color","s":"css-var --twoslash-tag-bg (dark)"},"tag-color":{"v":"#6bb6ff","t":"color","s":"css-var --twoslash-tag-color (dark)"},"tag-warn-bg":{"v":"rgba(255, 165, 0, 0.19)","t":"color","s":"css-var --twoslash-tag-warn-bg (dark)"},"tag-warn-color":{"v":"#ffa500","t":"color","s":"css-var --twoslash-tag-warn-color (dark)"},"text-size":{"v":"12.7969px","t":"other","s":"css-var --twoslash-text-size (dark)"},"underline-color":{"v":"currentColor","t":"other","s":"css-var --twoslash-underline-color (dark)"},"unmatched-color":{"v":"#aaaaaa","t":"color","s":"css-var --twoslash-unmatched-color (dark)"},"warn-bg":{"v":"rgba(255, 165, 0, 0.19)","t":"color","s":"css-var --twoslash-warn-bg (dark)"},"warn-color":{"v":"#ffa500","t":"color","s":"css-var --twoslash-warn-color (dark)"}},"text":{"v":"{color.docs.gray.200}","t":"color","s":"computed color of d-docs-h1 default (raw/components-computed.json); matches declared color.docs.gray.200","d":"The docs dark heading ink (#e2e0e5, grey-200)."},"body-text":{"v":"{color.docs.gray.400}","t":"color","s":"computed color of d-docs-para default (raw/components-computed.json); matches declared color.docs.gray.400","d":"The docs dark paragraph colour (#a2a0a5, grey-400)."},"muted":{"v":"{color.docs.gray.400}","t":"color","s":"computed color of d-docs-sidebar default (raw/components-computed.json); matches declared color.docs.gray.400","d":"The docs dark rail/meta colour (#a2a0a5, grey-400)."},"nav-hover":{"v":"rgba(120, 57, 229, 0.1)","t":"color","s":"computed backgroundColor of d-docs-nav-item default (raw/components-computed.json); the browser painted oklab(0.529224 0.0935356 -0.219964 / 0.1), converted here","d":"The active nav item's primary tint on dark (~primary at 10%, painted in oklab)."},"code-text":{"v":"{color.docs.gray.200}","t":"color","s":"computed color of d-docs-code default (raw/components-computed.json); matches declared color.docs.gray.200","d":"The near-white code ink (#e2e0e5, grey-200)."},"code-bg":{"v":"rgba(255, 255, 255, 0.05)","t":"color","s":"computed backgroundColor of d-docs-code default (raw/components-computed.json); the browser painted oklab(0.999994 0.0000455678 0.0000200868 / 0.05), converted here","d":"The 5%-white code chip fill on dark."},"field":{"v":"rgba(255, 255, 255, 0.03)","t":"color","s":"computed backgroundColor of d-docs-search default (raw/components-computed.json); the browser painted oklab(0.999994 0.0000455678 0.0000200868 / 0.03), converted here","d":"The 3%-white search field wash on dark."},"focus":{"v":"{color.app.primary}","t":"color","s":"the outline 1px auto focus ring of d-docs-search focus-visible (raw/components-computed.json outline/boxShadow); matches declared color.app.primary","d":"The primary outline on dark."},"line":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"computed borderRightColor of d-docs-sidebar default (raw/components-computed.json); the browser painted oklab(0.999994 0.0000455678 0.0000200868 / 0.1), converted here","d":"The 10%-white rail hairline on dark."}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles (marketing / sign-in / docs)'], ['dark', 'dark roles (docs only)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.size || {}, 'size.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.breakpoint || {}, 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function motion() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  $('#motion-out').innerHTML = m || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  let node = TOK, seen = [];
+  for (const k of m[1].split('.')) { node = node && node[k]; seen.push(k); }
+  return node && node.v !== undefined ? resolveVal(node.v, (depth || 0) + 1) : v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Equals</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts" style="letter-spacing:${esc(t.v)}">${esc(n)} — Tracked</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

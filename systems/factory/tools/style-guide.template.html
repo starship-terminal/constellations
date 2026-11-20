@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Factory style guide</title>
+<meta name="description" content="Factory design tokens and the public marketing surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Geist", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Geist", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+/* A .light scope re-pins the light set inside a dark page, so the light-role
+   swatches keep their light values when the toggle flips the page. */
+.light {
+/*LIGHT*/
+}
+[data-theme="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-foreground, #020202); background: var(--color-background, #f9f9f9); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+.topline { display: flex; align-items: baseline; gap: 16px; }
+.switch-theme { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--color-foreground, #020202); opacity: .8; cursor: pointer; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-foreground, #020202); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-base-800, #ccc9c7); }
+.lead { max-width: 62ch; color: var(--color-foreground, #020202); opacity: .8; }
+.note { font-size: 13px; color: var(--color-foreground, #020202); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-foreground, #020202); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+/* The role strips re-scope the theme vars (.light/.dark redeclare them
+   below), so each strip carries its own field and ink: dark-role names are
+   near-white and would sit unreadable on the pale page, and light roles on a
+   toggled-dark page need their pale field back. */
+.pal.light { background: var(--color-background, #f9f9f9); color: var(--color-foreground, #020202); padding: 12px; border-radius: 8px; }
+.pal.dark { background: var(--color-background, #020202); color: var(--color-foreground, #eeeeee); padding: 12px; border-radius: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-base-800, #ccc9c7); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-foreground, #020202); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-base-800, #ccc9c7); background: var(--color-surface-raised, #fff); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-foreground, #020202); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-base-800, #ccc9c7); overflow: hidden; background: var(--color-background, #f9f9f9); }
+.navbar { display: flex; align-items: center; gap: 20px; height: var(--component-topbar-height, 72px); padding: 0 14px 0 22px; font-size: 14px; color: var(--text-ink, var(--color-foreground, #020202)); background: var(--color-surface-raised, #fff); }
+.navbar .wm { font-weight: 600; font-size: 16px; letter-spacing: .02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 36px); padding: 0 14px; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; font-family: var(--sg-mono); border-radius: var(--radius-cta, 6px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-ctaFill, var(--color-foreground, #020202)); color: var(--action-ctaInk, #fff); }
+.btn.ghost { border-color: var(--border-cta2Border, var(--color-base-800, #ccc9c7)); color: var(--action-cta2Ink, var(--color-foreground, #020202)); }
+.btn.small { height: var(--component-nav-pill-height, 32px); font-size: 11px; }
+.hero { color: var(--text-ink, var(--color-foreground, #020202)); padding: 72px 40px 40px; text-align: center; background: var(--color-background, #f9f9f9); }
+.hero .mast { font: var(--font-weight-medium, 500) var(--font-size-measured-masthead, 60.48px)/1 var(--sg-serif); letter-spacing: -.04em; text-transform: uppercase; }
+.hero small { display: block; font: 400 15px/1.5 var(--sg-mono); color: var(--text-subInk, var(--color-base-500, #5c5855)); margin: 16px auto 22px; max-width: 46ch; }
+.hero .cta-row { display: flex; gap: 10px; justify-content: center; margin-bottom: 18px; }
+.hero .cmd { display: inline-block; font: 400 12px/1 var(--sg-mono); color: var(--color-base-500, #5c5855); background: var(--color-surface-sunken, #ebebeb); border-radius: 6px; padding: 10px 16px; }
+.hero .panel { height: 180px; margin: 28px -40px -40px; background: var(--color-dark-base-primary, #020202); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-base-800, #ccc9c7); border-radius: var(--radius-planCard, 8px); padding: 14px; font-size: 13px; background: var(--color-surface-raised, #fff); }
+.tile b { display: block; font: 600 16px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.tile .eyebrow { font: 500 10px/1 var(--sg-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--color-accent-200, #ee6018); margin-bottom: 10px; display: block; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-base-800, #ccc9c7); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-base-800, #ccc9c7); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-foreground, #020202); opacity: .65; font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <div class="topline"><h1>Factory style guide</h1><label class="switch-theme"><input type="checkbox" id="theme"> Dark</label></div>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Factory, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the site's declared <code>--neutral-*</code>/<code>--accent-*</code>/<code>--surface-*</code>/<code>--light-base-*</code>/<code>--dark-base-*</code> primitives and <code>--color-&lt;hue&gt;-*</code> palette scales, the semantic <code>--color-background</code>/<code>--color-foreground</code>/<code>--color-base-100..1000</code>/<code>--color-surface-raised</code> roles that resolve under <code>data-theme="light"</code> and the dark :root scope, the Geist/Geist Mono variable faces (wght 100–900) plus Geist Pixel Square, the declared <code>--text-*</code>/<code>--line-height</code>/<code>--tracking-*</code> type ramp, the 2–12px radii and pill CTAs, the 150ms cubic-bezier(.4,0,.2,1) control transition, and the measured component sizes. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from factory.com, docs.factory.com and auth.factory.ai on 2026-11-14, signed out, in headless Chromium. Everything behind app.factory.ai's sign-in is a documented boundary; the contact and sign-in forms were measured, never submitted. Geist and Geist Mono are served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The fixed ~72px header is blurred glass: the Factory mark, Product/Enterprise/Company mega-menu triggers, Pricing/News/Docs links, the locale globe, SIGN IN and the paired CONTACT SALES / DOWNLOAD pills. The hero centers an uppercase Geist masthead over a mono tagline, paired pills and the install-command copy box above a dark product panel.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">FACTORY</span><span>Product</span><span>Enterprise</span><span>Pricing</span><span>News</span><span>Company</span><span>Docs</span><span class="sp"></span><span>SIGN IN</span><span class="btn small ghost">Contact sales</span><span class="btn small primary">Download</span></div>
+    <div class="hero"><div class="mast">AI coding agents<br>for the enterprise</div><small>Model agnostic. Deployed anywhere.</small><span class="cta-row"><span class="btn primary">Download</span> <span class="btn ghost">Book demo</span></span><span class="cmd">&gt; curl -fsSL https://app.factory.ai/cli | sh</span><div class="panel"></div></div>
+  </div>
+
+  <h2 class="sh">The scoped dark sections</h2>
+  <p class="lead">factory.com never paints a whole dark page: <code>&lt;html data-theme="light"&gt;</code> ships on every route and dark lives inside <code>[data-dark-hero]</code> heroes, <code>.invert-color-scheme</code> panels and the footer — near-black fields with light ink and the orange accent. docs.factory.com's theme selector flips a whole page to this same dark set; the auth.factory.ai sign-in is a separate dark surface outside this token layer.</p>
+  <div class="mock dark" style="padding:20px;background:var(--color-background,#020202);color:var(--color-foreground,#eeeeee)">
+    <div class="grid">
+      <div class="tile" style="border-radius:var(--radius-planCard,8px);background:var(--color-dark-base-secondary,#101010);border:1px solid var(--color-base-900,#2e2c2b);color:var(--color-foreground,#eeeeee)"><span class="eyebrow">Enterprise</span><b style="color:var(--color-foreground,#eeeeee)">Build your software factory</b><span class="sub" style="color:var(--color-base-500,#8a8380)">Turn enterprise intent into validated production software.</span></div>
+      <div class="tile" style="border-radius:var(--radius-planCard,8px);background:var(--color-dark-base-secondary,#101010);border:1px solid var(--color-base-900,#2e2c2b);color:var(--color-foreground,#eeeeee)"><b style="color:var(--color-accent-200,#ee6018)">DROID&nbsp;&nbsp;MISSIONS</b><span class="sub" style="color:var(--color-base-500,#8a8380)">Scoped dark section inside a light page</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn primary" style="background:var(--color-foreground,#eeeeee);color:var(--color-background,#020202)">Start building</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared <code>--neutral-*</code> warm ramp runs #1f1d1c (1000) to #d6d3d2 (100) beside the orange <code>--accent-100..300</code> steps and the Tailwind <code>--color-&lt;hue&gt;-*</code> scales; the semantic <code>--color-base-100..1000</code>/<code>--color-background</code>/<code>--color-foreground</code>/<code>--color-surface-raised</code>/<code>--color-*-base-*</code> roles invert between the light and dark scopes. Measured roles alias the declared values they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">Radii are small — 2/3/4/6/8/10/12px for pills, fields, cards and panels. Controls transition over 150ms cubic-bezier(.4,0,.2,1); the layout is a 1440px content column with a 36px side gutter at the desktop breakpoint (declared steps 1rem/1.5rem/2.25rem/5rem).</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two served variable faces: <code>Geist</code> (wght 100–900) carries every heading, control and body — the hero masthead runs 60.48px at weight 500, body 16px — and <code>Geist Mono</code> draws code, eyebrows, labels and the install command; <code>Geist Pixel Square</code> is the pixel label face. Sizes are the declared <code>--text-*</code> steps; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --color-*/--text-*/--radius-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (scoped sections + docs dark)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal ${setname}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const setname of ['light', 'dark']) {
+    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.breakpoint || {}), 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.aspect || {}), 'aspect.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}), 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Aliases are set-relative: {font.size.body} and the palette scales live
+  // under TOK.core, semantic roles under TOK.light / TOK.dark. Try each root.
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Factory</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+
+// The header toggle flips data-theme on <html> — the same attribute Factory
+// scopes its dark layer with — so every token-driven block restyles. The
+// scoped .dark examples and the two role strips keep their own theme under
+// the .light/.dark re-declarations above. A light-only product has an empty
+// dark set: the toggle hides then.
+const HAS_DARK = TOK.dark && Object.keys(TOK.dark).length > 0;
+const setTheme = (dark) => {
+  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  const t = $('#theme');
+  t.checked = dark;
+  t.parentElement.lastChild.textContent = dark ? ' Dark' : ' Light';
+};
+$('#theme').addEventListener('change', (e) => setTheme(e.target.checked));
+if (!HAS_DARK) $('#theme').parentElement.style.display = 'none';
+setTheme(HAS_DARK && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
+</script>
+</body>
+</html>

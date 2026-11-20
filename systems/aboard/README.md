@@ -15,7 +15,7 @@ aboard.com is a WordPress site; the theme's own custom properties (`--wp--preset
 | [components/crops/](components/crops) | 125 element screenshots, `{component}-{state}.png`, at 2x. |
 | [icons/](icons) | 28 SVGs lifted from the pages (the feed chips, the carousel arrows and pause, the podcast play and RSS badges, the share buttons, the disclosure icons), named by role in [icons/INDEX.tsv](icons/INDEX.tsv). Aboard's property, kept for reference only. |
 | [screenshots/](screenshots) | 41 `{page}-light-{state}.png` captures. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at the same width; `mobile-*` shots are 390 wide. The home page also keeps the contact-section and cookie-banner attempts, and the mobile home keeps the open menu. |
-| [raw/](raw) | The unprocessed readings: every custom property the theme declares (`css-vars.json`, 245 declared, 124 resolved names), per-component computed styles (`components-computed.json`, and `measurements.md` built from it), the token tree the builder reads (`component-tokens.json`), and page geometry at four widths on eight routes (`layout.json`). The unquantised screenshot originals and their `.capture.json` sidecars are working evidence in `raw/full/`. |
+| [raw/](raw) | The unprocessed readings: every custom property the theme declares (`css-vars.json`, 245 declared, 124 resolved names), per-component computed styles (`components-computed.json`, and `measurements.md` built from it), the token tree the builder reads (`component-tokens.json`), and page geometry at four widths on eight routes (`layout.json`). The unquantised screenshot originals and their `.capture.json` sidecars are working evidence kept outside the repo. |
 | [tools/](tools) | The three builders and the capture kit. See Rebuild. |
 
 ## Brief
@@ -90,10 +90,11 @@ aboard.com is WordPress (block theme markup, `wp-singular` body classes, Tailwin
 
 Component values are computed styles read per state with Playwright ([measure.mjs](tools/capture/public/measure.mjs)). Hover used the pointer, focus-visible a real keyboard Tab, and pressed was forced through DevTools (`CSS.forcePseudoState`), so no button was clicked for real. The only presses were local UI toggles: the FAQ accordion headings and the mobile menu trigger. The newsletter fields were clicked into for their focus style but nothing was typed or sent (the form posts to `/wp-json/aboard/v1/newsletter-signups`). The CookieYes consent strip is hidden by CSS for the clean captures ([lib.mjs](tools/capture/public/lib.mjs)), which is a hide, not a consent; it was re-shown for measurement but its `.cky-*` markup never rendered in headless Chromium, so the four `cookie-*` entries record `missing` rather than values.
 
-Font sizes on this site are fluid (`clamp()` everywhere), so every size token is a px value resolved at 1440 wide; at 390 the same roles measure smaller (the mobile hero reads 44.8px where the desktop reads 77.76px). Screenshots were lazily scrolled to settle lazy-loaded media, then stored quantised to 256 colours; the unquantised originals and per-capture metadata stay in [raw/full/](raw/full).
+Font sizes on this site are fluid (`clamp()` everywhere), so every size token is a px value resolved at 1440 wide; at 390 the same roles measure smaller (the mobile hero reads 44.8px where the desktop reads 77.76px). Screenshots were lazily scrolled to settle lazy-loaded media, then stored quantised to 256 colours; the unquantised originals and per-capture metadata stay outside the repo.
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **Screenshots are 256-colour PNGs.** Gradients, photography and the frosted nav pill band slightly; read exact colours from tokens.json or the raw files.
 - **Font sizes are fluid.** The px values in `core.font.size` are resolved at 1440 wide; scale them or re-measure for another width (see `font.size.m-display` for the 390 hero step). The `--wp--preset--font-size--*` presets in css-vars.json are the theme's own steps and differ from what the `.rd-*` classes paint.
 - **The four `cookie-*` components are recorded missing.** CookieYes never rendered headless, so `home-light-cookie-banner.png` shows the page without the strip; the consent mock in style-guide.html is a placeholder, not a measurement.
@@ -101,7 +102,7 @@ Font sizes on this site are fluid (`clamp()` everywhere), so every size token is
 - **The hero carousel's dashboard is a marketing animation.** Metrics inside it (revenue figures, the "57%" dial) are demo content, not a live product.
 - **`layout.header-height` is 80px declared, 78px measured.** The `--header-height` variable and the rendered bar disagree by 2px.
 - **`home-light-contact.png` is a scroll position, not a route.** The contact block is the home page's bottom section (a same-origin iframe form).
-- **Mobile `-full` screenshots stitch viewport slices.** `mobile-*-light-full.png` are stitched from `*.partN.png` tiles in raw/full; the stitch seams can shift a pixel.
+- **Mobile `-full` screenshots stitch viewport slices.** `mobile-*-light-full.png` are stitched from `*.partN.png` tiles in the scratch dir (`~/.design-systems/aboard/raw-shots`, outside the repo); the stitch seams can shift a pixel.
 
 ## Fonts
 
@@ -165,7 +166,7 @@ PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/public.mjs
 PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/measure.mjs home newsletter mobile
 ```
 
-`public.mjs` re-takes the screenshot set into `raw/full`; `python3 tools/capture/quantize.py raw/full` stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs`, `layout.mjs` and `icons.mjs` rewrite their raw or icon files whole. `lib.mjs` holds the shared helpers, including the consent-strip hide and the `navigator.webdriver` masking.
+`public.mjs` re-takes the screenshot set into `~/.design-systems/aboard/raw-shots` (outside the repo); `python3 tools/capture/quantize.py ~/.design-systems/aboard/raw-shots` stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs`, `layout.mjs` and `icons.mjs` rewrite their raw or icon files whole. `lib.mjs` holds the shared helpers, including the consent-strip hide (it no longer masks `navigator.webdriver`).
 
 ## Use in Figma
 

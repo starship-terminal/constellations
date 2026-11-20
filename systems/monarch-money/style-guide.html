@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monarch Money style guide</title>
+<meta name="description" content="Monarch Money public-site tokens, rendered from tokens.json. One light theme.">
+<style>
+:root {
+  --color-orange-1: #fefcfb;
+  --color-orange-2: #fff5f0;
+  --color-orange-3: #ffe9de;
+  --color-orange-4: #ffd7c4;
+  --color-orange-5: #ffc9b1;
+  --color-orange-6: #ffb99c;
+  --color-orange-7: #ffa586;
+  --color-orange-8: #f48d68;
+  --color-orange-9: #ff692d;
+  --color-orange-10: #f35b16;
+  --color-orange-11: #d64700;
+  --color-orange-12: #592c1d;
+  --color-gray-1: #fbfaf8;
+  --color-gray-2: #f6f5f3;
+  --color-gray-3: #efecea;
+  --color-gray-4: #ebe8e5;
+  --color-gray-5: #e4e1de;
+  --color-gray-6: #dcd9d6;
+  --color-gray-7: #d1cecb;
+  --color-gray-8: #bebbb8;
+  --color-gray-9: #8f8c8a;
+  --color-gray-10: #84827f;
+  --color-gray-11: #777573;
+  --color-gray-12: #22201d;
+  --color-blue-1: #fafdfe;
+  --color-blue-2: #f2fafb;
+  --color-blue-3: #def7f9;
+  --color-blue-4: #caf1f6;
+  --color-blue-5: #b5e9f0;
+  --color-blue-6: #9ddde7;
+  --color-blue-7: #7dcedc;
+  --color-blue-8: #3db9cf;
+  --color-blue-9: #00a2c7;
+  --color-blue-10: #0797b9;
+  --color-blue-11: #107d98;
+  --color-blue-12: #0d3c48;
+  --color-green-1: #fbfefc;
+  --color-green-2: #f4fbf6;
+  --color-green-3: #e6f6eb;
+  --color-green-4: #d6f1df;
+  --color-green-5: #c4e8d1;
+  --color-green-6: #adddc0;
+  --color-green-7: #8eceaa;
+  --color-green-8: #5bb98b;
+  --color-green-9: #30a46c;
+  --color-green-10: #2b9a66;
+  --color-green-11: #218358;
+  --color-green-12: #193b2d;
+  --color-red-1: #fffcfc;
+  --color-red-2: #fff7f7;
+  --color-red-3: #feebec;
+  --color-red-4: #ffdbdc;
+  --color-red-5: #ffcdce;
+  --color-red-6: #fdbdbe;
+  --color-red-7: #f4a9aa;
+  --color-red-8: #eb8e90;
+  --color-red-9: #e5484d;
+  --color-red-10: #dc3e42;
+  --color-red-11: #ce2c31;
+  --color-red-12: #641723;
+  --color-yellow-1: #fefdfb;
+  --color-yellow-2: #fefbe9;
+  --color-yellow-3: #fff7c2;
+  --color-yellow-4: #ffee9c;
+  --color-yellow-5: #fbe577;
+  --color-yellow-6: #f3d673;
+  --color-yellow-7: #e9c162;
+  --color-yellow-8: #e2a336;
+  --color-yellow-9: #ffc53d;
+  --color-yellow-10: #ffba18;
+  --color-yellow-11: #ab6400;
+  --color-yellow-12: #4f3422;
+  --color-pink-1: #fffcfe;
+  --color-pink-2: #fef7fb;
+  --color-pink-3: #fee9f5;
+  --color-pink-4: #fbdcef;
+  --color-pink-5: #f6cee7;
+  --color-pink-6: #efbfdd;
+  --color-pink-7: #e7acd0;
+  --color-pink-8: #dd93c2;
+  --color-pink-9: #d6409f;
+  --color-pink-10: #cf3897;
+  --color-pink-11: #c2298a;
+  --color-pink-12: #651249;
+  --color-purple-1: #fefcfe;
+  --color-purple-2: #fbf7fe;
+  --color-purple-3: #f7edfe;
+  --color-purple-4: #f2e2fc;
+  --color-purple-5: #ead5f9;
+  --color-purple-6: #e0c4f4;
+  --color-purple-7: #d1afec;
+  --color-purple-8: #be93e4;
+  --color-purple-9: #8e4ec6;
+  --color-purple-10: #8347b9;
+  --color-purple-11: #8145b5;
+  --color-purple-12: #402060;
+  --color-indigo-1: #fdfdfe;
+  --color-indigo-2: #f7f9ff;
+  --color-indigo-3: #edf2fe;
+  --color-indigo-4: #e1e9ff;
+  --color-indigo-5: #d2deff;
+  --color-indigo-6: #c1d0ff;
+  --color-indigo-7: #abbdf9;
+  --color-indigo-8: #8da4ef;
+  --color-indigo-9: #3e63dd;
+  --color-indigo-10: #3358d4;
+  --color-indigo-11: #3a5bc7;
+  --color-indigo-12: #1f2d5c;
+  --color-pigment-orange: #f35b16;
+  --color-pigment-persimmon: #e64818;
+  --color-pigment-charcoal: #22201d;
+  --color-pigment-parchment: #fdf8ed;
+  --color-pigment-wheat: #f3ecd7;
+  --color-pigment-walnut: #7e3c1c;
+  --color-pigment-evergreen: #1a3d37;
+  --color-pigment-mahogany: #360305;
+  --color-pigment-goldenrod: #efb921;
+  --color-pigment-milkweed: #7abf72;
+  --color-pigment-pool-blue: #278fc0;
+  --color-pigment-sky: #c1eeff;
+  --color-pigment-aster: #fbc9e8;
+  --color-pigment-daisy: #fffdf6;
+  --color-pigment-sunbeam: #f3e69e;
+  --color-pigment-dark-grey: #8f8c8a;
+  --color-pigment-secondary-grey: #f6f5f3;
+  --color-pigment-tertiary-grey: #e4e1de;
+  --color-refresh-page: #fdf8ed;
+  --color-refresh-text: #22201d;
+  --color-refresh-accent: #f35b16;
+  --color-refresh-accentHover: #e64818;
+  --font-family-primary: "ABC Oracle", sans-serif;
+  --font-family-secondary: "Copernicus", sans-serif;
+  --font-family-display: "ABC Otto", serif;
+  --font-family-accent: "Beltram Mono", ui-monospace, monospace;
+  --font-weight-book: 350;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-size-display: 48px;
+  --font-size-heading-1: 48px;
+  --font-size-heading-2: 40px;
+  --font-size-heading-3: 32px;
+  --font-size-heading-4: 24px;
+  --font-size-heading-5: 20px;
+  --font-size-heading-6: 20px;
+  --font-size-body: 18px;
+  --font-size-small: 16px;
+  --font-size-extra-small: 14px;
+  --font-size-eyebrow: 14px;
+  --font-lineHeight-display: 1.2;
+  --font-lineHeight-heading-1: 1.2;
+  --font-lineHeight-heading-2: 1.2;
+  --font-lineHeight-heading-3: 1.2;
+  --font-lineHeight-heading-4: 1.2;
+  --font-lineHeight-heading-5: 1.4;
+  --font-lineHeight-heading-6: 1.4;
+  --font-lineHeight-body: 1.4;
+  --font-lineHeight-small: 1.3;
+  --font-lineHeight-extra-small: 1.3;
+  --font-lineHeight-eyebrow: 1.3;
+  --font-tracking-display: -3.2px;
+  --font-tracking-heading-1: -3.2px;
+  --font-tracking-heading-2: -2.4px;
+  --font-tracking-heading-3: -1.6px;
+  --font-tracking-heading-4: -.24px;
+  --font-tracking-heading-5: -.2px;
+  --font-tracking-heading-6: -.2px;
+  --font-tracking-body: -.18px;
+  --font-tracking-small: -.16px;
+  --font-tracking-extra-small: -.14px;
+  --font-tracking-eyebrow: 0.7px;
+  --radius-sm: 8px;
+  --radius-control: 8px;
+  --radius-pill: 9999px;
+  --radius-none: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-9: 36px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --typography-display: var(--font-weight-book) var(--font-size-display)/var(--font-lineHeight-display) var(--font-family-display);
+  --typography-heading-1: var(--font-weight-book) var(--font-size-heading-1)/var(--font-lineHeight-heading-1) var(--font-family-display);
+  --typography-heading-2: var(--font-weight-book) var(--font-size-heading-2)/var(--font-lineHeight-heading-2) var(--font-family-display);
+  --typography-heading-3: var(--font-weight-book) var(--font-size-heading-3)/var(--font-lineHeight-heading-3) var(--font-family-secondary);
+  --typography-body: var(--font-weight-book) var(--font-size-body)/var(--font-lineHeight-body) var(--font-family-primary);
+  --typography-small: var(--font-weight-book) var(--font-size-small)/var(--font-lineHeight-small) var(--font-family-primary);
+  --typography-eyebrow: var(--font-weight-medium) var(--font-size-eyebrow)/var(--font-lineHeight-eyebrow) var(--font-family-primary);
+  --typography-label: var(--font-weight-medium) var(--font-size-small)/var(--font-lineHeight-small) var(--font-family-primary);
+  --layout-desktop: 1440px;
+  --layout-phone: 390px;
+  --layout-nav: 36px;
+  --layout-announcement: 32px;
+  --layout-field: 48px;
+  --motion-duration-0ms: 0ms;
+  --motion-duration-75ms: 75ms;
+  --motion-duration-100ms: 100ms;
+  --motion-duration-150ms: 150ms;
+  --motion-duration-delay: 160ms;
+  --motion-duration-200ms: 200ms;
+  --motion-duration-218ms: 218ms;
+  --motion-duration-250ms: 250ms;
+  --motion-duration-300ms: 300ms;
+  --motion-duration-slide-transition-time: 400ms;
+  --motion-duration-450ms: 450ms;
+  --motion-duration-500ms: 500ms;
+  --motion-duration-fade-transition-time: 700ms;
+  --motion-duration-1000ms: 1000ms;
+  --motion-duration-1500ms: 1500ms;
+  --motion-duration-2000ms: 2000ms;
+  --motion-duration-duration: 3000ms;
+  --motion-easing-bezier-0-0-0-2-1: cubic-bezier(0, 0, 0.2, 1);
+  --motion-easing-bezier-0-075-0-82-0-165-1: cubic-bezier(0.075, 0.82, 0.165, 1);
+  --motion-easing-bezier-0-25-0-1-0-25-1: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-bezier-0-32-0-72-0-1: cubic-bezier(0.32, 0.72, 0, 1);
+  --motion-easing-bezier-0-4-0-0-2-1: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-bezier-0-4-0-1-1: cubic-bezier(0.4, 0, 1, 1);
+  --motion-easing-bezier-0-87-0-0-13-1: cubic-bezier(0.87, 0, 0.13, 1);
+  --motion-easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+  --motion-easing-ease-out: cubic-bezier(0, 0, 0.58, 1);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --page: var(--color-gray-2);
+  --surface: #ffffff;
+  --surfaceMuted: var(--color-gray-3);
+  --text: var(--color-gray-12);
+  --textMuted: var(--color-gray-11);
+  --textSubtle: var(--color-gray-9);
+  --textOnAccent: #fefcfb;
+  --accent: var(--color-orange-9);
+  --accentHover: var(--color-orange-10);
+  --accentPressed: var(--color-pigment-orange);
+  --border: var(--color-gray-6);
+  --focus: var(--color-gray-12);
+  --link: #0797b9;
+  --danger: #e5484d;
+  --dangerForeground: #ffffff;
+  --success: #e6f6eb;
+  --successForeground: #218358;
+  --warning: #fff7c2;
+  --warningForeground: #ab6400;
+  --info: #def7f9;
+  --infoForeground: #107d98;
+  --errorSurface: #fdebec;
+  --errorText: #e5484d;
+  --face-sans: "ABC Oracle", ui-sans-serif, system-ui, sans-serif;
+  --face-display: "ABC Otto", "Copernicus", Georgia, serif;
+  --face-mono: "Beltram Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 350 18px/1.4 var(--face-sans); }
+main { max-width: 1040px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font: 350 48px/1.2 var(--face-display); letter-spacing: -2.4px; margin: 0 0 8px; }
+h2 { font: 500 13px/1 var(--face-sans); letter-spacing: .04em; text-transform: uppercase; color: var(--textMuted); margin: 48px 0 12px; }
+p { max-width: 68ch; color: var(--textMuted); }
+code { font-family: var(--face-mono); font-size: 13px; color: var(--link); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 148px; }
+.sw i { display: block; height: 48px; border-radius: 8px; border: 1px solid var(--border); }
+.sw b, .sw span { display: block; font: 500 12px/1.4 var(--face-mono); }
+.sw span { font-weight: 400; color: var(--textMuted); }
+.bar { display: flex; align-items: center; gap: 16px; height: 68px; padding: 0 16px; background: var(--surface); border-radius: 9999px; border: 1px solid var(--border); }
+.bar .mark { font: 400 18px/1 var(--face-display); }
+.bar a { color: var(--text); text-decoration: none; font-size: 14px; font-weight: 350; }
+.bar .sp { flex: 1; }
+.signin { display: inline-flex; align-items: center; height: 36px; padding: 0 16px; border-radius: 9999px; background: var(--surface); color: var(--text); border: 1px solid var(--border); font: 350 14px/1 var(--face-sans); }
+.signup { display: inline-flex; align-items: center; height: 36px; padding: 0 16px; border-radius: 9999px; background: var(--accent); color: var(--textOnAccent); border: 0; font: 350 14px/1 var(--face-sans); }
+.hero { padding: 36px 0 8px; }
+.hero h3 { margin: 0; font: 350 48px/1.2 var(--face-display); letter-spacing: -3.2px; }
+.card { max-width: 420px; margin: 16px 0; padding: 24px; border-radius: 16px; background: var(--surface); border: 1px solid var(--border); }
+.field { display: flex; align-items: center; height: 48px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--textMuted); font-size: 16px; }
+.submit { display: flex; align-items: center; justify-content: center; height: 40px; margin-top: 12px; border-radius: 8px; background: var(--accent); color: white; opacity: .5; font: 500 16px/1 var(--face-sans); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+th { color: var(--textMuted); font-weight: 500; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Monarch Money</h1>
+  <p>Public marketing pages and the sign-in wall, captured 2026-11-19. One light theme. ABC Oracle, ABC Otto, Copernicus and Beltram Mono are licensed and not loaded here. The page uses the system fallback.</p>
+
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>gray 2</span></div>
+    <div class="sw"><i style="background:var(--surface)"></i><b>surface</b><span>white</span></div>
+    <div class="sw"><i style="background:var(--text)"></i><b>text</b><span>gray 12</span></div>
+    <div class="sw"><i style="background:var(--textMuted)"></i><b>muted</b><span>gray 11</span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><b>accent</b><span>orange 9</span></div>
+    <div class="sw"><i style="background:var(--accentHover)"></i><b>accent hover</b><span>orange 10</span></div>
+    <div class="sw"><i style="background:var(--border)"></i><b>border</b><span>gray 6</span></div>
+    <div class="sw"><i style="background:var(--link)"></i><b>link</b><span>sign-in link</span></div>
+    <div class="sw"><i style="background:var(--danger)"></i><b>danger</b><span>declared</span></div>
+    <div class="sw"><i style="background:var(--success)"></i><b>success</b><span>declared</span></div>
+    <div class="sw"><i style="background:var(--warning)"></i><b>warning</b><span>declared</span></div>
+    <div class="sw"><i style="background:var(--info)"></i><b>info</b><span>declared</span></div>
+  </div>
+
+  <h2>Frame</h2>
+  <div class="bar">
+    <span class="mark">Monarch</span>
+    <a>Pricing</a>
+    <a>Download</a>
+    <span class="sp"></span>
+    <span class="signin">Sign in</span>
+    <span class="signup">Sign up</span>
+  </div>
+  <div class="hero">
+    <h3>Your home base for money clarity</h3>
+    <p>Display is ABC Otto or Copernicus at 48px, weight 350, tracking -3.2px. Body is ABC Oracle at 18px.</p>
+  </div>
+  <div class="card">
+    <strong>Sign in</strong>
+    <p>The wall stops here. The email field is empty. The submit is half orange until a password exists. Nothing was submitted.</p>
+    <div class="field">Email address</div>
+    <div class="submit">Sign in</div>
+  </div>
+
+  <h2>Type</h2>
+  <table>
+    <tr><th>Role</th><th>Size</th><th>Sample</th></tr>
+    <tr><td>display</td><td>48px</td><td style="font:350 48px/1.2 var(--face-display);letter-spacing:-3.2px">Clarity</td></tr>
+    <tr><td>heading-2</td><td>40px</td><td style="font:350 40px/1.2 var(--face-display);letter-spacing:-2.4px">Pricing</td></tr>
+    <tr><td>body</td><td>18px</td><td>Track, budget, and plan.</td></tr>
+    <tr><td>label</td><td>16px</td><td style="font-weight:500">Sign up</td></tr>
+  </table>
+</main>
+</body>
+</html>

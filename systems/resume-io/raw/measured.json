@@ -1,0 +1,359 @@
+{
+  "captured": "2026-11-19",
+  "viewport": {
+    "preview": {"innerWidth": 1169, "innerHeight": 731, "devicePixelRatio": 2, "note": "T3 preview tab, fill viewport. Not a planned 1440 or 390 capture."},
+    "headless": "Headless Chromium without a browser user agent received CloudFront 'The request could not be satisfied' on every public URL. A later pass with a Chrome user agent loaded the marketing HTML. Preview screenshot frames failed with 'The browser is not producing screenshot frames', so no live preview PNG was saved."
+  },
+  "pages": {
+    "home": "https://resume.io/",
+    "templates": "https://resume.io/resume-templates",
+    "pricing": "https://resume.io/pricing",
+    "signIn": "https://resume.io/app/auth/sign-in"
+  },
+  "palette": {
+    "neutral": {
+      "5": "#f7f9fc",
+      "10": "#eff2f9",
+      "15": "#e7eaf4",
+      "20": "#d9deeb",
+      "30": "#bec4d5",
+      "40": "#9fa6bb",
+      "50": "#828ba2",
+      "60": "#656e83",
+      "70": "#495163",
+      "80": "#303848",
+      "90": "#1e2532",
+      "100": "#0f141e"
+    },
+    "blue": {
+      "10": "#eaf6ff",
+      "20": "#c3e5fe",
+      "30": "#92cdfc",
+      "40": "#54aff8",
+      "50": "#1a91f0",
+      "60": "#1170cd",
+      "70": "#10529b",
+      "80": "#0f3871",
+      "90": "#0c264c",
+      "100": "#09162d"
+    },
+    "indigo": {
+      "10": "#f1f2ff",
+      "20": "#dbdeff",
+      "30": "#bec2fe",
+      "40": "#9ba1fb",
+      "50": "#7a82f5",
+      "60": "#5660e8",
+      "70": "#343ecc",
+      "80": "#282b8f",
+      "90": "#1a1c6a",
+      "100": "#0e0f47"
+    },
+    "green": {
+      "10": "#e7f4ed",
+      "20": "#c6e4d2",
+      "30": "#96d0ad",
+      "40": "#48ba75",
+      "50": "#339d5d",
+      "60": "#217d47",
+      "70": "#135c37",
+      "80": "#094025",
+      "90": "#042b18",
+      "100": "#01180d"
+    },
+    "red": {
+      "10": "#ffeaec",
+      "20": "#ffd0d5",
+      "30": "#ffacb5",
+      "40": "#fe7d8b",
+      "50": "#fb4458",
+      "60": "#da0c22",
+      "70": "#a10e1d",
+      "80": "#6f0e19",
+      "90": "#470c12",
+      "100": "#24090c"
+    },
+    "orange": {
+      "10": "#feebe3",
+      "20": "#fdd2c0",
+      "30": "#fbb092",
+      "40": "#f68559",
+      "50": "#ee571d",
+      "60": "#bf4213",
+      "70": "#8b3211",
+      "80": "#5e240e",
+      "90": "#3b180b",
+      "100": "#1c0c06"
+    },
+    "amber": {
+      "10": "#fff2cc",
+      "20": "#fddb8c",
+      "30": "#f9ba44",
+      "40": "#ec930c",
+      "50": "#cf760d",
+      "60": "#a85a0e",
+      "70": "#7f400d",
+      "80": "#582c0c",
+      "90": "#3e1d0a",
+      "100": "#231007"
+    },
+    "beige": {
+      "10": "#f3f1eb",
+      "20": "#e1ddd2",
+      "30": "#cbc3b3",
+      "40": "#afa58f",
+      "50": "#968a70",
+      "60": "#776d59",
+      "70": "#575041",
+      "80": "#3c372d",
+      "90": "#27241d",
+      "100": "#15130f"
+    }
+  },
+  "brand": {
+    "white": "#fff",
+    "linkedin-color": "#0077b5",
+    "twitter-color": "#1da1f2",
+    "facebook-color": "#3b5998",
+    "youtube-color": "#ff3d00",
+    "spotify-color": "#1ed760",
+    "pinterest-color": "#cd1f28",
+    "tiktok-color": "#1e2532"
+  },
+  "spacing": {
+    "zero": "0px",
+    "4xs": "2px",
+    "3xs": "4px",
+    "2xs": "8px",
+    "xs": "12px",
+    "s": "16px",
+    "m": "24px",
+    "l": "32px",
+    "xl": "48px",
+    "2xl": "64px",
+    "3xl": "96px",
+    "4xl": "128px",
+    "5xl": "192px",
+    "6xl": "256px"
+  },
+  "fontSize": {
+    "caps-mobile": "12px",
+    "tiny": "14px",
+    "caps": "14px",
+    "caption-mobile": "15px",
+    "body-mobile": "16px",
+    "button-s": "16px",
+    "caption": "16px",
+    "button-m": "18px",
+    "body": "19px",
+    "subhead-mobile": "19px",
+    "text-s": "22px",
+    "subhead": "23px",
+    "s-mobile": "23px",
+    "m-mobile": "27px",
+    "s": "27px",
+    "text-score": "28.07px",
+    "l-mobile": "33px",
+    "m": "33px",
+    "l": "39px",
+    "xl-mobile": "40px",
+    "xl": "47px"
+  },
+  "lineHeight": {
+    "caps-mobile": "16px",
+    "tiny": "16px",
+    "caption-mobile": "18px",
+    "body-mobile": "20px",
+    "button-s": "20px",
+    "caps": "20px",
+    "caption": "20px",
+    "button-m": "22px",
+    "subhead-mobile": "22px",
+    "body": "24px",
+    "s-mobile": "24px",
+    "s": "28px",
+    "subhead": "28px",
+    "text-s": "28px",
+    "m-mobile": "30px",
+    "l-mobile": "34px",
+    "text-score": "35.457px",
+    "m": "36px",
+    "l": "40px",
+    "xl-mobile": "42px",
+    "xl": "48px"
+  },
+  "weight": {
+    "regular": "400",
+    "medium": "500",
+    "demibold": "600",
+    "bold": "700"
+  },
+  "shadow": {
+    "light-shadow-low": "0px 1px 2px rgba(15, 56, 113, 0.12), 0px 2px 4px rgba(15, 56, 113, 0.08)",
+    "light-shadow-mid": "0px 2px 4px -1px rgba(15, 56, 113, 0.08), 0px 8px 20px -4px rgba(15, 56, 113, 0.12)",
+    "light-shadow-high": "0px 6px 8px -2px rgba(15, 56, 113, 0.02), 0px 16px 64px -8px rgba(15, 56, 113, 0.18)",
+    "light-with-border-shadow-low": "0px 0px 1px rgba(15, 56, 113, 0.32), 0px 1px 2px rgba(15, 56, 113, 0.12), 0px 2px 4px rgba(15, 56, 113, 0.08)",
+    "light-with-border-shadow-mid": "0px 0px 1px rgba(15, 56, 113, 0.32), 0px 2px 4px -1px rgba(15, 56, 113, 0.08), 0px 8px 20px -4px rgba(15, 56, 113, 0.12)",
+    "light-with-border-shadow-high": "0px 0px 1px rgba(15, 56, 113, 0.32), 0px 6px 8px -2px rgba(15, 56, 113, 0.02), 0px 16px 64px -8px rgba(15, 56, 113, 0.18)",
+    "dark-shadow-low": "0px 1px 2px rgba(15, 20, 30, 0.24), 0px 2px 4px rgba(15, 20, 30, 0.16)",
+    "dark-shadow-mid": "0px 2px 4px -1px rgba(15, 20, 30, 0.16), 0px 8px 20px -4px rgba(15, 20, 30, 0.24)",
+    "dark-shadow-high": "0px 6px 8px -2px rgba(15, 20, 30, 0.08), 0px 16px 64px -8px rgba(15, 20, 30, 0.32)",
+    "template-shadow-low": "0px 0px 1px rgba(15, 56, 113, 0.4), 0px 2px 4px rgba(15, 56, 113, 0.08)",
+    "template-shadow-mid": "0px 0px 1px rgba(15, 56, 113, 0.16), 0px 8px 20px -4px rgba(15, 56, 113, 0.08)",
+    "template-shadow-high": "0px 0px 1px rgba(15, 56, 113, 0.08), 0px 16px 64px -8px rgba(15, 56, 113, 0.08)"
+  },
+  "fontFamily": {
+    "commons": "\"TT Commons\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Noto Sans\", Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+    "talent": "\"TT Talent\", system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Noto Sans\", Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+    "tricks": "\"TT Tricks\", system-ui, sans-serif"
+  },
+  "typography": {
+    "body": {
+      "fontFamily": "{fontFamily.commons}",
+      "fontSize": "19px",
+      "fontWeight": "400",
+      "lineHeight": "24px",
+      "source": "computed style, body on https://resume.io/ (also matches --font-body / --line-body)"
+    },
+    "hero": {
+      "fontFamily": "{fontFamily.commons}",
+      "fontSize": "67px",
+      "fontWeight": "400",
+      "lineHeight": "64px",
+      "source": "computed style, h1.home__hero-typing-title on https://resume.io/ at innerWidth 1169. Not a declared --font-* step."
+    },
+    "section-title": {
+      "fontFamily": "{fontFamily.commons}",
+      "fontSize": "31px",
+      "fontWeight": "400",
+      "lineHeight": "36px",
+      "source": "computed style, h2.new_home-title on https://resume.io/ at innerWidth 1169"
+    },
+    "page-title": {
+      "fontFamily": "{fontFamily.commons}",
+      "fontSize": "38px",
+      "fontWeight": "700",
+      "lineHeight": "40px",
+      "source": "computed style, h1.templates-root__header-title on https://resume.io/resume-templates"
+    },
+    "button": {
+      "fontFamily": "{fontFamily.commons}",
+      "fontSize": "18px",
+      "fontWeight": "600",
+      "lineHeight": "22px",
+      "source": "stylesheet rule .button and computed style on a.button.auth-button"
+    },
+    "caption": {
+      "fontFamily": "{fontFamily.commons}",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "source": "computed style, label on sign-in email field and .nav__template-cat-subtitle"
+    },
+    "display": {
+      "fontFamily": "{fontFamily.talent}",
+      "fontSize": "47px",
+      "fontWeight": "600",
+      "lineHeight": "48px",
+      "source": "computed style, sign-in title div on https://resume.io/app/auth/sign-in (matches --font-xl / --line-xl)"
+    },
+    "price": {
+      "fontFamily": "{fontFamily.commons}",
+      "fontSize": "38px",
+      "fontWeight": "600",
+      "lineHeight": "40px",
+      "source": "computed style, .pricing__card-price on https://resume.io/pricing"
+    }
+  },
+  "radius": {
+    "button": ["4px", "stylesheet .button border-radius, confirmed on a.button and sign-in Continue"],
+    "field": ["3px", "stylesheet .field__input border-radius and computed style on sign-in input[name=email]"],
+    "field-focus": ["2px", "stylesheet .field__input:focus border-bottom-left-radius; computed focus underline on sign-in field is 0px 0px 2px 2px"],
+    "card": ["6px", "computed style, .pricing__card-inner and stylesheet .modal__content"],
+    "pill": ["36px", "computed style, .templates-filter__tab-static on https://resume.io/resume-templates"],
+    "toggle": ["9px", "stylesheet .checkbox--toggle .checkbox__checkmark border-radius"],
+    "none": ["0px", "computed style, header.nav and body"]
+  },
+  "layout": {
+    "container": "1120px",
+    "navHeight": "80px"
+  },
+  "semantic": {
+    "background": {
+      "page": ["#eff2f9", "computed style, body background-color on https://resume.io/ and https://resume.io/pricing (rgb(239, 242, 249), equal to --neutral-10)"],
+      "surface": ["#ffffff", "computed style, .nav__bar and .pricing__card-inner background-color (rgb(255, 255, 255), equal to --white)"],
+      "sunken": ["#f7f9fc", "computed style, .templates-filter__tab-static background (rgb(247, 249, 252), equal to --neutral-5)"],
+      "field": ["#eff2f9", "computed style, input[name=email] and stylesheet .field__input background (rgb(239, 242, 249))"],
+      "action": ["#1a91f0", "computed style, a.button.auth-button and stylesheet .button background (rgb(26, 145, 240), equal to --blue-50)"],
+      "action-hover": ["#1170cd", "stylesheet .button:hover background-color (rgb(17, 112, 205), equal to --blue-60). Not hovered live."],
+      "action-pressed": ["#10529b", "stylesheet .button:active and computed style on button.cookie-panel__accept (rgb(16, 82, 155), equal to --blue-70)"],
+      "secondary": ["#eaf6ff", "computed style, button.upload__resume-button background (rgb(234, 246, 255), equal to --blue-10)"],
+      "footer": ["#0f141e", "computed style, footer.footer background (rgb(15, 20, 30), equal to --neutral-100)"],
+      "disabled": ["#d9deeb", "stylesheet .button[disabled] background-color (rgb(217, 222, 235), equal to --neutral-20). No disabled control was on screen."]
+    },
+    "text": {
+      "primary": ["#1e2532", "computed style, body color on https://resume.io/ (rgb(30, 37, 50), equal to --neutral-90)"],
+      "secondary": ["#828ba2", "computed style, sign-in label and .nav__template-cat-subtitle (rgb(130, 139, 162), equal to --neutral-50)"],
+      "muted": ["#656e83", "computed style, footer .footer__links-title__new (rgb(101, 110, 131), equal to --neutral-60)"],
+      "link": ["#1a91f0", "computed style, a[href='/app/auth/sign-in'] and a.view-all-button (rgb(26, 145, 240))"],
+      "on-action": ["#ffffff", "computed style, a.button.auth-button color"],
+      "on-footer": ["#ffffff", "computed style, footer color"],
+      "disabled": ["#828ba2", "stylesheet .button[disabled] color. No disabled control was on screen."]
+    },
+    "border": {
+      "stroke": ["#d9deeb", "computed style, a.button.button--outline inset box-shadow and stylesheet .checkbox__checkmark border (rgb(217, 222, 235))"],
+      "focus": ["#1a91f0", "stylesheet .field__input:focus border-bottom-color and computed focus underline on the sign-in email field"],
+      "strong": ["#1a91f0", "computed style, a.button.button--outline border-top-color"]
+    },
+    "component": {
+      "button-bg": ["#1a91f0", "computed style, a.button.auth-button background-color"],
+      "button-text": ["#ffffff", "computed style, a.button.auth-button color"],
+      "button-outline-text": ["#1a91f0", "computed style, a.button.button--outline color"],
+      "field-bg": ["#eff2f9", "computed style, sign-in input[name=email] background-color"]
+    }
+  },
+  "motion": {
+    "button": "background-color 0.1s, color 0.1s, box-shadow 0.1s",
+    "field": "border-color 0.2s",
+    "cookie-panel": "transform 0.3s ease-in-out, opacity 0.5s ease-in-out",
+    "modal-overlay": "opacity 0.2s",
+    "modal-content": "transform 0.2s ease-out",
+    "toggle": "background-color 0.125s",
+    "reducedMotion": "One authored rule under (prefers-reduced-motion: reduce) on the home sheets: .ai_home__tailoring-gauge-* { transition: none } and .ai_home__hero-anim-pause { display: none }. A full motion probe was not run."
+  },
+  "breakpoints": ["(width <= 374px)", "(width <= 767px)", "(width <= 1023px)", "(width <= 1080px)", "(width <= 1199px)", "(width <= 1440px)", "(width >= 768px)", "(width >= 1024px)", "(width >= 1200px)"],
+  "controls": {
+    "button": {
+      "padding": "14px 24px",
+      "fontSize": "18px",
+      "fontWeight": "600",
+      "lineHeight": "22px",
+      "radius": "4px",
+      "heightObserved": "52px on a.button.auth-button; 48px on a.home__hero-typing-button and sign-in Continue",
+      "source": "stylesheet .button plus computed styles"
+    },
+    "buttonSmall": {"padding": "8px 14px", "fontSize": "16px", "lineHeight": "20px", "source": "stylesheet .button--small"},
+    "field": {"padding": "13px 16px 11px", "radius": "3px", "fontSize": "19px", "lineHeight": "24px", "heightObserved": "48px on sign-in input", "source": "stylesheet .field__input and computed style"},
+    "checkbox": {"box": "24px", "radius": "4px", "border": "1px solid rgb(217, 222, 235)", "checked": "background and border rgb(26, 145, 240)", "source": "stylesheet .checkbox__checkmark"},
+    "toggle": {"width": "30px", "height": "18px", "radius": "9px", "knob": "14px", "source": "stylesheet .checkbox--toggle"},
+    "modal": {"width": "544px", "radius": "6px", "shadow": "rgba(0, 0, 0, 0.08) 0px 0px 1px plus a second shadow cut off in the rule dump", "source": "stylesheet .modal__content. The cookie settings modal was in the DOM, not opened."},
+    "nav": {"height": "80px", "background": "rgb(255, 255, 255)", "padding": "0px 32px", "source": "computed style .nav__bar at innerWidth 1169"},
+    "pricingCard": {"padding": "40px 32px", "radius": "6px", "background": "rgb(255, 255, 255)", "priceSize": "38px", "source": "computed style .pricing__card-inner"},
+    "filterTab": {"padding": "8px 16px", "radius": "36px", "height": "38px", "background": "rgb(247, 249, 252)", "fontSize": "16px", "source": "computed style .templates-filter__tab-static"},
+    "signInSocial": {
+      "facebook": "rgb(19, 113, 240)",
+      "google": "rgb(219, 68, 55)",
+      "linkedin": "rgb(40, 103, 178)",
+      "email": "rgb(255, 255, 255) with 1px solid rgb(217, 222, 235)",
+      "size": "200x48, radius 4px, padding 12px 10px 12px 30px, 18px/600",
+      "source": "computed style on the sign-in chooser, not followed"
+    }
+  },
+  "notEntered": [
+    "Continue on the email step was not pressed. No address was typed.",
+    "Facebook, Google and LinkedIn auth links were not followed.",
+    "Create my resume, Build Resume, Upload my resume and template CTAs were not followed.",
+    "No card, phone, download or checkout was started.",
+    "help.resume.io was not opened."
+  ]
+}

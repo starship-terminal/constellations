@@ -1,0 +1,32 @@
+{
+  "_note": "Public marketing copy. visitor@example.com is the capture's own placeholder typed into the sign-in field and then cleared. support@lemni.com and any other @lemni.com address is published on the site. name@myworkspace.com is the invite-field placeholder. The marketing art's demo contacts use a placeholder address at a large company's domain (allowed by its exact address) and a webmail address, which is painted out like the demo phone numbers. lemnl.com is an OCR miss of lemni.com.",
+  "ocr": {
+    "emails": true,
+    "email_allow": ["@example\\.com$", "@lemni\\.com$", "@lemni\\.ai$", "@lemnl\\.com$", "@acme\\.com$", "^jane@apple\\.com$", "@krijnrijshouwer\\.com$", "@myworkspace\\.com$"],
+    "wrap_ignore": [
+      "screenshots/mobile-docs-light-full.png",
+      "screenshots/privacy-light-full.png"
+    ]
+  },
+  "families": [
+    {
+      "name": "demo phone numbers in marketing art",
+      "files": ["screenshots/home-dark-full.png"],
+      "rects": [
+        [180, 1530, 310, 1560, "rows"],
+        [1040, 1975, 1180, 2040, "rows"],
+        [1188, 10980, 1310, 11010, "rows"]
+      ]
+    },
+    {
+      "name": "demo phone number on the phone home",
+      "files": ["screenshots/mobile-home-dark-full.png"],
+      "rects": [[200, 6180, 450, 6220, "rows"]]
+    },
+    {
+      "name": "demo contact's webmail address on the phone home",
+      "files": ["screenshots/mobile-home-dark-full.png"],
+      "rects": [[205, 6108, 476, 6146, "rows"]]
+    }
+  ]
+}

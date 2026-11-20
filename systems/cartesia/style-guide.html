@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cartesia style guide</title>
+<meta name="description" content="Cartesia design tokens and the public marketing, sign-in boundary and docs surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-sans: "ABC Diatype-75f05108b2d5df75","ABC Diatype-75f05108b2d5df75 fallback: Arial","ABC Diatype-75f05108b2d5df75 fallback: Arial Bold",ui-sans-serif,system-ui,sans-serif;
+  --font-family-display: "PP Kyoto-b14c6ebb315b725b","PP Kyoto-b14c6ebb315b725b fallback: Times New Roman",Georgia,"Times New Roman",serif;
+  --font-family-mono: "IBM Plex Mono-1f31a4fbe8ce28fa", monospace;
+  --font-family-handwriting: "Homemade Apple", cursive;
+  --font-family-docs: Inter, -apple-system, "system-ui", "Segoe UI", system-ui, sans-serif;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+  --font-size-4xl: 36px;
+  --font-size-5xl: 48px;
+  --font-size-6xl: 60px;
+  --font-size-control-xs: 12px;
+  --font-size-control-sm: 13px;
+  --font-size-control-default: 14px;
+  --font-size-control-lg: 15px;
+  --font-size-control-xl: 16px;
+  --font-size-control-2xl: 18px;
+  --font-size-hero: 40px;
+  --font-size-section-h2: 26px;
+  --font-size-mobile-hero: 32px;
+  --font-size-docs-title: 36px;
+  --font-lineHeight-xs: 1.3333;
+  --font-lineHeight-sm: 1.4286;
+  --font-lineHeight-base: 1.5;
+  --font-lineHeight-lg: 1.5556;
+  --font-lineHeight-xl: 1.4;
+  --font-lineHeight-2xl: 1.3333;
+  --font-lineHeight-3xl: 1.2;
+  --font-lineHeight-4xl: 1.1111;
+  --font-lineHeight-5xl: 1;
+  --font-lineHeight-6xl: 1;
+  --font-lineHeight-tight: 1.25;
+  --font-lineHeight-snug: 1.375;
+  --font-lineHeight-normal: 1.5;
+  --font-lineHeight-relaxed: 1.625;
+  --font-lineHeight-header: 1.3;
+  --font-lineHeight-header-1: 1.15;
+  --font-lineHeight-control-default: 20px;
+  --font-lineHeight-control-sm: 18px;
+  --font-lineHeight-control-2xl: 24px;
+  --font-lineHeight-hero: 46px;
+  --font-tracking-tight: -0.025;
+  --font-tracking-normal: 0px;
+  --font-tracking-wide: 0.025;
+  --font-tracking-wider: 0.05;
+  --font-tracking-widest: 0.1;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --color-brand-forest: #004e23;
+  --color-brand-verdant: #309d4b;
+  --color-brand-growth: #abd49e;
+  --color-brand-canvas: #e4e3db;
+  --color-brand-field: #f4f4f1;
+  --color-brand-mist: #d1e2e8;
+  --color-brand-carbon: #1e1e1e;
+  --color-brand-memory: #99b0c8;
+  --color-green-50: #f4faef;
+  --color-green-100: #e2f5da;
+  --color-green-200: #ceecbf;
+  --color-green-300: #abd49e;
+  --color-green-400: #5db368;
+  --color-green-500: #309d4b;
+  --color-green-600: #227a38;
+  --color-green-700: #1a6b2e;
+  --color-green-800: #125c25;
+  --color-green-900: #004e23;
+  --color-green-950: #00311a;
+  --color-blue-50: #eef4f8;
+  --color-blue-100: #d1e2e8;
+  --color-blue-200: #bad0dc;
+  --color-blue-300: #a8c0d2;
+  --color-blue-400: #a0b8cc;
+  --color-blue-500: #99b0c8;
+  --color-blue-600: #7a92a8;
+  --color-blue-700: #5c7488;
+  --color-blue-800: #415869;
+  --color-blue-900: #2a3d4d;
+  --color-blue-950: #182530;
+  --color-orange-50: #fff6f0;
+  --color-orange-100: #ffe8d6;
+  --color-orange-200: #ffd4b3;
+  --color-orange-300: #ffbb8a;
+  --color-orange-400: #fda05e;
+  --color-orange-500: #fc7a37;
+  --color-orange-600: #e5601e;
+  --color-orange-700: #c24b12;
+  --color-orange-800: #9a380c;
+  --color-orange-900: #6e2608;
+  --color-orange-950: #3f1403;
+  --color-neutral-10: #f4f4f1;
+  --color-neutral-20: #f0efe9;
+  --color-neutral-30: #e4e3db;
+  --color-neutral-40: #cdc8c1;
+  --color-neutral-50: #9fa09f;
+  --color-neutral-60: #525150;
+  --color-neutral-70: #39342f;
+  --color-neutral-80: #282523;
+  --color-neutral-90: #1e1e1e;
+  --color-neutral-100: #1e1c1a;
+  --color-neutral-scale-50: #fefefe;
+  --color-neutral-scale-100: #f9f9f8;
+  --color-neutral-scale-200: #f3f2ef;
+  --color-neutral-scale-300: #f0efe9;
+  --color-neutral-scale-400: #e4e3db;
+  --color-neutral-scale-500: #c5c2bc;
+  --color-neutral-scale-600: #a7a6a2;
+  --color-neutral-scale-700: #787672;
+  --color-neutral-scale-800: #525150;
+  --color-neutral-scale-900: #1e1c1a;
+  --color-neutral-scale-950: #111010;
+  --color-named-white: #ffffff;
+  --color-named-black: #000000;
+  --color-named-servicenow: #62d84e;
+  --color-named-artificial-analysis: #8842fd;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 20px;
+  --radius-4xl: 24px;
+  --radius-full: 9999px;
+  --spacing-unit: 4px;
+  --spacing-hairline: 1px;
+  --layout-content-max: 1280px;
+  --layout-gutter: 48px;
+  --layout-nav-height: 64px;
+  --layout-breakpoint-sm: 640px;
+  --layout-container-xs: 320px;
+  --layout-container-sm: 384px;
+  --layout-container-md: 448px;
+  --layout-container-lg: 512px;
+  --layout-container-xl: 576px;
+  --layout-container-2xl: 672px;
+  --layout-container-3xl: 768px;
+  --layout-container-4xl: 896px;
+  --layout-container-5xl: 1024px;
+  --layout-container-6xl: 1152px;
+  --control-height-xs: 24px;
+  --control-height-sm: 32px;
+  --control-height-default: 36px;
+  --control-height-lg: 36px;
+  --control-height-xl: 44px;
+  --control-height-2xl: 48px;
+  --control-icon-xs: 12px;
+  --control-icon-sm: 14px;
+  --control-icon-default: 16px;
+  --control-icon-xl: 20px;
+  --control-padding-xs: 8px;
+  --control-padding-sm: 12px;
+  --control-padding-default: 16px;
+  --control-padding-lg: 24px;
+  --control-padding-2xl: 32px;
+  --control-field-default: 10px;
+  --control-field-sm: 8px;
+  --motion-duration-fast: 100ms;
+  --motion-duration-label: 120ms;
+  --motion-duration-normal: 150ms;
+  --motion-duration-panel: 200ms;
+  --motion-ease-out: cubic-bezier(0.23, 1.0, 0.32, 1.0);
+  --motion-ease-layout: cubic-bezier(0.2, 0.0, 0.0, 1.0);
+  --motion-ease-in: cubic-bezier(0.4, 0.0, 1.0, 1.0);
+  --motion-ease-out-tw: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --motion-default-ease: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --motion-disclosure-ease: cubic-bezier(0.23, 1.0, 0.32, 1.0);
+  --motion-disclosure-enter: 200ms;
+  --motion-disclosure-exit: 200ms;
+  --motion-feedback-enter: 100ms;
+  --motion-feedback-exit: 100ms;
+  --motion-overlay-enter: 150ms;
+  --motion-overlay-exit: 100ms;
+  --motion-panel-enter: 200ms;
+  --motion-panel-exit: 150ms;
+  --motion-sidebar-ease: cubic-bezier(0.2, 0.0, 0.0, 1.0);
+  --motion-sidebar-enter: 200ms;
+  --motion-sidebar-exit: 200ms;
+  --motion-site-accordion-duration: 350ms;
+  --motion-site-accordion-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-site-reveal-duration: 700ms;
+  --motion-site-reveal-ease: cubic-bezier(0.32, 0.72, 0.0, 1.0);
+  --motion-site-reveal-step: 60ms;
+  --blur-xs: 4px;
+  --blur-sm: 8px;
+  --blur-md: 12px;
+  --measured-focus-ring: #a1a1a1;
+  --measured-focus-ring-width: 2px;
+  --measured-focus-ring-verdant: #309d4b;
+  --measured-hover-dim: 0.9;
+  --color-background: #fefefe;
+  --color-foreground: #1e1c1a;
+  --color-primary: #309d4b;
+  --color-primary-foreground: #f9f9f8;
+  --color-secondary: #f9f9f8;
+  --color-secondary-foreground: #525150;
+  --color-accent: #f3f2ef;
+  --color-accent-foreground: #1e1c1a;
+  --color-card: #f9f9f8;
+  --color-card-foreground: #1e1c1a;
+  --color-muted: #f3f2ef;
+  --color-muted-foreground: #525150;
+  --color-surface: #f5f5f2;
+  --color-surface-foreground: #1e1c1a;
+  --color-field: #ffffff;
+  --color-popover: #fefefe;
+  --color-popover-foreground: #1e1c1a;
+  --color-popover-border: rgba(30, 28, 26, 0.1);
+  --color-border: #e4e3db;
+  --color-boundary: #ededed;
+  --color-input: #e4e3db;
+  --color-ring: #a1a1a1;
+  --color-focus: #a1a1a1;
+  --color-placeholder: rgba(82, 81, 80, 0.55);
+  --color-subtle-foreground: #a7a6a2;
+  --color-destructive: #e7000b;
+  --color-destructive-foreground: #e7000b;
+  --color-success: #008235;
+  --color-success-foreground: #008235;
+  --color-warning: #bb4d00;
+  --color-warning-foreground: #bb4d00;
+  --color-sidebar: #f0efe9;
+  --color-sidebar-foreground: #525150;
+  --color-sidebar-border: #ededed;
+  --color-sidebar-accent: #e9e8e0;
+  --color-sidebar-primary: #dcdbd3;
+  --color-sidebar-ring: #a1a1a1;
+  --color-sidebar-raised: #fefefe;
+  --color-chart-1: #f54900;
+  --color-chart-2: #009689;
+  --color-chart-3: #104e64;
+  --color-chart-4: #ffb900;
+  --color-chart-5: #fe9a00;
+  --action-link-verdant: var(--color-brand-verdant);
+  --component-header-height: 64px;
+  --component-banner-height: 36.8px;
+  --component-button-height: 36px;
+  --component-button-radius: 8px;
+  --component-button-padding-x: 16px;
+  --component-button-label-size: 14px;
+  --component-button-height-lg: 40px;
+  --component-button-height-auth: 44px;
+  --component-button-radius-auth: 12px;
+  --component-nav-link-height: 36px;
+  --component-nav-menu-width: 624px;
+  --component-nav-menu-radius: 6px;
+  --component-nav-menu-pad: 12px;
+  --component-field-height: 44px;
+  --component-field-radius: 8px;
+  --component-field-padding-x: 14px;
+  --component-auth-column-width: 640px;
+  --component-auth-field-width: 420px;
+  --component-auth-sso-width: 206px;
+  --component-orb-size: 244.8px;
+  --component-orb-chooser-size: 58.75px;
+  --component-orb-arrow-size: 40px;
+  --component-chip-height: 30px;
+  --component-chip-voice-height: 34px;
+  --component-chip-label-size: 12px;
+  --component-card-product-width: 571px;
+  --component-card-product-height: 377.59px;
+  --component-card-story-tile: 559px;
+  --component-card-plan-width: 254.8px;
+  --component-card-plan-padding: 24px;
+  --component-play-sample-size: 32px;
+  --component-play-globe-dot: 19.08px;
+  --component-play-globe-play: 81px;
+  --component-play-globe-voice-height: 38px;
+  --component-accordion-height: 74px;
+  --component-accordion-faq-padding: 48px;
+  --component-docs-search-width: 277.56px;
+  --component-docs-nav-height: 32px;
+  --component-docs-nav-radius: 12px;
+  --component-mobile-menu-height: 844px;
+  --component-mobile-nav-item-height: 56px;
+  --component-mobile-menu-button: 36px;
+  --sg-sans: "ABC Diatype", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-display: "PP Kyoto", "ABC Diatype", ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --color-background: #171715;
+  --color-foreground: #cdc8c1;
+  --color-primary: #abd49e;
+  --color-primary-foreground: #0a0a0a;
+  --color-secondary: #1e1c1a;
+  --color-secondary-foreground: #cdc8c1;
+  --color-accent: #1e1c1a;
+  --color-accent-foreground: #cdc8c1;
+  --color-card: #171717;
+  --color-card-foreground: #cdc8c1;
+  --color-muted: #1e1c1a;
+  --color-muted-foreground: #a1a1a1;
+  --color-surface: #262421;
+  --color-surface-foreground: #a1a1a1;
+  --color-field: rgba(255, 255, 255, 0.045);
+  --color-popover: #171717;
+  --color-popover-foreground: #cdc8c1;
+  --color-popover-border: #787672;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-boundary: rgba(255, 255, 255, 0.06);
+  --color-input: rgba(255, 255, 255, 0.15);
+  --color-ring: #737373;
+  --color-focus: #737373;
+  --color-placeholder: rgba(161, 161, 161, 0.55);
+  --color-subtle-foreground: #a7a6a2;
+  --color-destructive: #ff6467;
+  --color-destructive-foreground: #ff6467;
+  --color-success: #56da7d;
+  --color-success-foreground: #56da7d;
+  --color-warning: #fe9a00;
+  --color-warning-foreground: #fe9a00;
+  --color-sidebar: #1f1f1c;
+  --color-sidebar-foreground: #b8b4ae;
+  --color-sidebar-border: rgba(255, 255, 255, 0.06);
+  --color-sidebar-accent: #2a2826;
+  --color-sidebar-primary: #363330;
+  --color-sidebar-ring: #737373;
+  --color-sidebar-raised: #3d3a36;
+  --color-chart-1: #1447e6;
+  --color-chart-2: #00bc7d;
+  --color-chart-3: #fe9a00;
+  --color-chart-4: #ad46ff;
+  --color-chart-5: #ff2056;
+  --action-link-verdant: var(--color-brand-growth);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-foreground, #1e1c1a); background: var(--color-background, #fefefe); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.1 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-foreground, #1e1c1a); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-boundary, #ededed); }
+.lead { max-width: 62ch; color: var(--color-foreground, #1e1c1a); opacity: .8; }
+.note { font-size: 13px; color: var(--color-foreground, #1e1c1a); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-foreground, #1e1c1a); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--color-background, #171715); padding: 12px; border-radius: 8px; }
+.pal.dark .nm, .pal.dark .vl { color: var(--color-foreground, #cdc8c1); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-border, #e4e3db); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-foreground, #1e1c1a); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-border, #e4e3db); background: var(--color-field, #fff); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-foreground, #1e1c1a); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-border, #e4e3db); overflow: hidden; background: var(--color-background, #fefefe); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 64px); padding: 0 12px 0 22px; font-size: 14px; border-bottom: 1px solid var(--color-boundary, #ededed); color: var(--color-foreground, #1e1c1a); }
+.navbar .wm { font-weight: 500; font-size: 18px; letter-spacing: -0.02em; font-family: var(--sg-display); }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 36px); padding: 0 16px; font-size: 14px; font-weight: 500; border-radius: var(--radius-lg, 8px); border: 1px solid transparent; }
+.btn.primary { background: var(--color-primary, #309d4b); color: var(--color-primary-foreground, #f9f9f8); }
+.btn.outline { border-color: var(--color-border, #e4e3db); color: var(--color-foreground, #1e1c1a); }
+.hero { color: var(--color-foreground, #1e1c1a); padding: 48px 40px; font: 500 40px/1.15 var(--sg-display); letter-spacing: -0.02em; text-align: left; }
+.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); color: var(--color-muted-foreground, #525150); letter-spacing: 0; margin: 16px 0 22px; max-width: 46ch; }
+.orb { width: var(--component-orb-size, 244.8px); height: var(--component-orb-size, 244.8px); border-radius: 50%; background: var(--color-accent, #f3f2ef); border: 1px solid var(--color-border, #e4e3db); display: flex; align-items: center; justify-content: center; color: var(--color-muted-foreground, #525150); font-size: 13px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-border, #e4e3db); border-radius: var(--radius-lg, 8px); padding: 14px; font-size: 13px; background: var(--color-card, #f9f9f8); }
+.tile b { display: block; font: 500 18px/1.25 var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.chip { display: inline-flex; align-items: center; height: var(--component-chip-height, 30px); padding: 0 14px; border-radius: 9999px; border: 1px solid var(--color-border, #e4e3db); font-size: 12px; color: var(--color-muted-foreground, #525150); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-border, #e4e3db); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-boundary, #ededed); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--color-foreground, #1e1c1a); opacity: .65; font-family: var(--sg-mono); }
+/* ---- auth mock ---- */
+.auth { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 32px 0; }
+.auth .f { width: var(--component-auth-field-width, 420px); height: var(--component-field-height, 44px); border: 1px solid var(--color-input, #e4e3db); border-radius: var(--radius-lg, 8px); background: var(--color-field, #fff); display: flex; align-items: center; padding: 0 14px; font-size: 14px; color: var(--color-placeholder, #75716c); }
+.auth .sub { width: var(--component-auth-field-width, 420px); height: var(--component-button-height-auth, 44px); border-radius: var(--radius-xl, 12px); background: var(--color-primary, #309d4b); color: var(--color-primary-foreground, #f9f9f8); display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 500; }
+.auth .sso { display: flex; gap: 10px; }
+.auth .sso i { width: var(--component-play-sample-size, 44px); height: 44px; border-radius: var(--radius-xl, 12px); border: 1px solid var(--color-input, #e4e3db); background: var(--color-field, #fff); }
+.faq { border: 1px solid var(--color-border, #e4e3db); border-radius: var(--radius-lg, 8px); padding: 18px var(--component-accordion-faq-padding, 48px); font: 500 16px/1.4 var(--sg-sans); }
+.faq small { display: block; font: 400 14px/1.5 var(--sg-sans); color: var(--color-muted-foreground, #525150); margin-top: 6px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Cartesia style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Cartesia, measured</h2>
+  <p class="lead">cartesia.ai is three surfaces signed out: the marketing site (Astro + Tailwind v4), the Playground auth boundary on play.cartesia.ai (a Clerk app sharing the token layer) and docs.cartesia.ai (a Mintlify app in Inter, kept out of the export). The marketing site declares its token layer — the --cartesia-* named palette (verdant #309d4b, growth #abd49e, forest #004e23, the canvas/field/mist/carbon/memory tints and the neutral ramps), a shadcn-style semantic layer (--background/--foreground/--primary/--card/…), the --control-* sizing scale, --motion-* ramps, the --site-* layout vars and the --text-* ramp from 60px to 12px — and paints it light, with a .dark scope that re-binds the same roles for dark islands (verdant primary becomes growth, borders become white alphas). The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from cartesia.ai on 2026-11-12, signed out, in headless Chromium. The playground behind sign-in is a documented boundary; the sign-in/sign-up cards were measured but never filled or submitted, the voice demos were pressed only as far as their own play controls, and the Talk to Skylar / Talk to Cartesia live-agent calls were never started. ABC Diatype, PP Kyoto, IBM Plex Mono and Homemade Apple are served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">Every marketing page carries the same chrome on the #fefefe field: the wordmark, the Products mega-menu trigger, plain links, Sign In, Talk to Sales and the verdant Try Cartesia pill at 36px high, 8px radius. The Products menu opens on click into a 624px panel of 6px-radius links. Keyboard focus draws a 2px solid #a1a1a1 (--ring) outline; voice-list rows ring in verdant.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">cartesia</span><span>Products &#9662;</span><span>Research</span><span>Pricing</span><span>Docs</span><span class="sp"></span><span>Sign In</span><span class="btn outline">Talk to Sales</span><span class="btn primary">Try Cartesia</span></div>
+    <div class="hero">The voice model for real-time agents<small>Sonic is the fastest, most natural text-to-speech model for voice agents, dubbing and interactive voice experiences.</small><span class="btn primary" style="height:40px">Play</span></div>
+  </div>
+
+  <h2 class="sh">The voice orb</h2>
+  <p class="lead">The home hero centres the Talk-to-Skylar orb — a 245px circle ringed by 59px voice-chooser buttons — a full-radius demo control. Use-case chips are 30px pills at 12px.</p>
+  <div class="mock" style="padding:24px;display:flex;gap:24px;align-items:center">
+    <div class="orb">Talk to Skylar</div>
+    <div><span class="chip">Support</span> <span class="chip">Sales</span> <span class="chip">Tutor</span><div style="margin-top:14px"><span class="btn primary">Try Cartesia</span></div></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing grids four plan cells (~255px wide, 24px side padding) with verdant and outlined CTAs, a 46px usage-slider calculator and details/summary FAQ items with 48px side padding.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile"><b>Free</b><span class="sub">$0/mo</span></div>
+      <div class="tile"><b>Pro</b><span class="sub">$8/mo</span></div>
+      <div class="tile"><b>Scale</b><span class="sub">$64/mo</span></div>
+      <div class="tile"><b>Enterprise</b><span class="sub">Custom</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn primary">Get started</span> <span class="btn outline">Talk to Sales</span></div>
+  </div>
+
+  <h2 class="sh">The dark islands</h2>
+  <p class="lead">Dark sections scope a .dark class that re-binds the same role tokens: the field goes #171715, the primary becomes growth #abd49e on near-black text, and borders become white translucencies.</p>
+  <div class="mock dark" style="padding:20px;background:var(--color-background,#171715);color:var(--color-foreground,#cdc8c1)">
+    <div class="grid">
+      <div class="tile" style="background:var(--color-card,#171717);border-color:var(--color-border,rgba(255,255,255,.1));color:var(--color-foreground,#cdc8c1)"><b style="color:var(--color-foreground,#cdc8c1)">Voice agents</b><span class="sub" style="color:var(--color-muted-foreground,#a1a1a1)">for teams and enterprise</span></div>
+      <div class="tile" style="background:var(--color-surface,#262421);border-color:var(--color-border,rgba(255,255,255,.1));color:var(--color-foreground,#cdc8c1)"><b style="color:var(--color-foreground,#cdc8c1)">Dubbing</b><span class="sub" style="color:var(--color-muted-foreground,#a1a1a1)">32+ languages</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn" style="background:var(--color-primary,#abd49e);color:var(--color-primary-foreground,#0a0a0a);padding:0 18px;font-size:14px">Learn more</span></div>
+  </div>
+
+  <h2 class="sh">The sign-in boundary</h2>
+  <p class="lead">play.cartesia.ai's Clerk cards centre a 640px column on the light field: 420px inputs at 8px radius, the verdant Continue button at 44px and 12px radius, and icon-only SSO buttons — measured, never filled or submitted.</p>
+  <div class="mock auth">
+    <div class="f">name@work.com</div>
+    <div class="sub">Continue</div>
+    <div class="sso"><i></i><i></i><i></i></div>
+  </div>
+
+  <h2 class="sh">Disclosure</h2>
+  <p class="lead">The pricing FAQ is native details/summary — 48px side padding, 8px-radius rows — and the home deployment accordion animates on --site-accordion-duration (350ms).</p>
+  <div class="mock" style="padding:20px"><div class="faq">How is usage billed?<small>Minutes of generated audio, measured per plan.</small></div></div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared layer carries the named --cartesia-* palette (greens, blues, oranges and the neutral ramps) under a shadcn-style semantic layer; light and dark roles are the same declared variables, re-bound by the .dark scope.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Spacing multiplies a 4px unit; the --radius scale runs 2-24px plus full, and the components paint inside it — 8px buttons and fields, 12px sign-in controls, 6px menu links, full-circle orbs and chips. Borders are quiet: #e4e3db border, #ededed boundary hairlines.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Motion</h2>
+  <p class="lead">The --motion-* ramp runs 100-200ms over two declared eases; the marketing accordion and scroll reveal take their own --site-accordion (350ms) and --site-reveal (700ms, 60ms stagger) vars.</p>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Four declared faces: <code>ABC Diatype</code> on body and UI, <code>PP Kyoto</code> on display headlines, <code>IBM Plex Mono</code> on code and figures and <code>Homemade Apple</code> on handwriting accents; the docs app adds Inter. Sizes are the declared --text-* steps plus the measured 40px hero and 26px section display; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --cartesia-*/--color-* variables from the live stylesheets and computed styles on the elements of the marketing, sign-in and docs surfaces</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, selected and open states measured per component, including the voice demo controls</td></tr><tr><td>No provenance</td><td>Every token names its variable (and the theme scope it was resolved in) or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"sans":{"v":"\"ABC Diatype-75f05108b2d5df75\",\"ABC Diatype-75f05108b2d5df75 fallback: Arial\",\"ABC Diatype-75f05108b2d5df75 fallback: Arial Bold\",ui-sans-serif,system-ui,sans-serif","t":"fontFamily","s":"css-var --font-sans (light)","d":"ABC Diatype: body text, nav, buttons and most UI."},"display":{"v":"\"PP Kyoto-b14c6ebb315b725b\",\"PP Kyoto-b14c6ebb315b725b fallback: Times New Roman\",Georgia,\"Times New Roman\",serif","t":"fontFamily","s":"css-var --font-display (light)","d":"PP Kyoto: the display face for headlines (h1/h2) and brand moments."},"mono":{"v":"\"IBM Plex Mono-1f31a4fbe8ce28fa\", monospace","t":"fontFamily","s":"css-var --font-mono (light)","d":"IBM Plex Mono: code, figures and technical labels."},"handwriting":{"v":"\"Homemade Apple\", cursive","t":"fontFamily","s":"css-var --font-handwriting (light)","d":"Homemade Apple: the annotation/handwriting accent."},"docs":{"v":"Inter, -apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif","t":"fontFamily","s":"computed fontFamily of docs-nav-item default (raw/components-computed.json)","d":"Inter: the Mintlify docs app's stack — a separate surface, not the marketing fonts."}},"size":{"xs":{"v":"12px","t":"dimension","s":"css-var --text-xs (light)","d":"Declared --text-xs (12px)."},"sm":{"v":"14px","t":"dimension","s":"css-var --text-sm (light)","d":"Declared --text-sm (14px)."},"base":{"v":"16px","t":"dimension","s":"css-var --text-base (light)","d":"Declared --text-base (16px)."},"lg":{"v":"18px","t":"dimension","s":"css-var --text-lg (light)","d":"Declared --text-lg (18px)."},"xl":{"v":"20px","t":"dimension","s":"css-var --text-xl (light)","d":"Declared --text-xl (20px)."},"2xl":{"v":"24px","t":"dimension","s":"css-var --text-2xl (light)","d":"Declared --text-2xl (24px)."},"3xl":{"v":"30px","t":"dimension","s":"css-var --text-3xl (light)","d":"Declared --text-3xl (30px)."},"4xl":{"v":"36px","t":"dimension","s":"css-var --text-4xl (light)","d":"Declared --text-4xl (36px)."},"5xl":{"v":"48px","t":"dimension","s":"css-var --text-5xl (light)","d":"Declared --text-5xl (48px)."},"6xl":{"v":"60px","t":"dimension","s":"css-var --text-6xl (light)","d":"Declared --text-6xl (60px)."},"control-xs":{"v":"12px","t":"dimension","s":"css-var --control-font-size-xs (light)","d":"Control label size xs (12px)."},"control-sm":{"v":"13px","t":"dimension","s":"css-var --control-font-size-sm (light)","d":"Control label size sm (13px)."},"control-default":{"v":"14px","t":"dimension","s":"css-var --control-font-size-default (light)","d":"Control label size default (14px — nav buttons, chips, CTAs)."},"control-lg":{"v":"15px","t":"dimension","s":"css-var --control-font-size-lg (light)","d":"Control label size lg (15px — the sign-in submit)."},"control-xl":{"v":"16px","t":"dimension","s":"css-var --control-font-size-xl (light)","d":"Control label size xl (16px)."},"control-2xl":{"v":"18px","t":"dimension","s":"css-var --control-font-size-2xl (light)","d":"Control label size 2xl (18px)."},"hero":{"v":"40px","t":"dimension","s":"computed fontSize of hero-title default (raw/components-computed.json)","d":"The PP-Kyoto hero headline."},"section-h2":{"v":"26px","t":"dimension","s":"computed fontSize of h2-display default (raw/components-computed.json)","d":"The display section heading."},"mobile-hero":{"v":"32px","t":"dimension","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The hero size at 390px."},"docs-title":{"v":"36px","t":"dimension","s":"computed fontSize of docs-h1 default (raw/components-computed.json)","d":"The Mintlify docs page title (Inter)."}},"lineHeight":{"xs":{"v":1.3333,"t":"number","s":"css-var --text-xs--line-height (light)","d":"Declared leading for --text-xs."},"sm":{"v":1.4286,"t":"number","s":"css-var --text-sm--line-height (light)","d":"Declared leading for --text-sm."},"base":{"v":1.5,"t":"number","s":"css-var --text-base--line-height (light)","d":"Declared leading for --text-base."},"lg":{"v":1.5556,"t":"number","s":"css-var --text-lg--line-height (light)","d":"Declared leading for --text-lg."},"xl":{"v":1.4,"t":"number","s":"css-var --text-xl--line-height (light)","d":"Declared leading for --text-xl."},"2xl":{"v":1.3333,"t":"number","s":"css-var --text-2xl--line-height (light)","d":"Declared leading for --text-2xl."},"3xl":{"v":1.2,"t":"number","s":"css-var --text-3xl--line-height (light)","d":"Declared leading for --text-3xl."},"4xl":{"v":1.1111,"t":"number","s":"css-var --text-4xl--line-height (light)","d":"Declared leading for --text-4xl."},"5xl":{"v":1,"t":"number","s":"css-var --text-5xl--line-height (light)","d":"Declared leading for --text-5xl (1)."},"6xl":{"v":1,"t":"number","s":"css-var --text-6xl--line-height (light)","d":"Declared leading for --text-6xl (1)."},"tight":{"v":1.25,"t":"number","s":"css-var --leading-tight (light)","d":"Declared --leading-tight (1.25)."},"snug":{"v":1.375,"t":"number","s":"css-var --leading-snug (light)","d":"Declared --leading-snug (1.375)."},"normal":{"v":1.5,"t":"number","s":"css-var --leading-normal (light)","d":"Declared --leading-normal (1.5)."},"relaxed":{"v":1.625,"t":"number","s":"css-var --leading-relaxed (light)","d":"Declared --leading-relaxed (1.625)."},"header":{"v":1.3,"t":"number","s":"css-var --leading-header (light)","d":"Declared --leading-header (1.3)."},"header-1":{"v":1.15,"t":"number","s":"css-var --leading-header-1 (light)","d":"Declared --leading-header-1 (1.15)."},"control-default":{"v":"20px","t":"dimension","s":"css-var --control-line-height-default (light)","d":"Control label leading (20px on 14px)."},"control-sm":{"v":"18px","t":"dimension","s":"css-var --control-line-height-sm (light)","d":"Control label leading sm (18px)."},"control-2xl":{"v":"24px","t":"dimension","s":"css-var --control-line-height-2xl (light)","d":"Control label leading 2xl (24px)."},"hero":{"v":"46px","t":"dimension","s":"computed lineHeight of hero-title default (raw/components-computed.json)","d":"The hero headline leading."}},"tracking":{"tight":{"v":-0.025,"t":"number","s":"css-var --tracking-tight -.025em (declared em ratio; multiply by the font size — -0.4px at 16px)","d":"The -0.025em tight tracking."},"normal":{"v":"0px","t":"dimension","s":"css-var --tracking-normal (light)","d":"Zero tracking."},"wide":{"v":0.025,"t":"number","s":"css-var --tracking-wide .025em (declared em ratio; 0.4px at 16px)","d":"The +0.025em wide tracking."},"wider":{"v":0.05,"t":"number","s":"css-var --tracking-wider .05em (declared em ratio; 0.8px at 16px)","d":"The +0.05em wider tracking."},"widest":{"v":0.1,"t":"number","s":"css-var --tracking-widest .1em (declared em ratio; 1.6px at 16px)","d":"The +0.1em widest tracking."}},"weight":{"normal":{"v":400,"t":"fontWeight","s":"css-var --font-weight-normal (light)","d":"400 body weight."},"medium":{"v":500,"t":"fontWeight","s":"css-var --font-weight-medium (light)","d":"500 — headings, nav and button labels."},"semibold":{"v":600,"t":"fontWeight","s":"css-var --font-weight-semibold (light)","d":"600."},"bold":{"v":700,"t":"fontWeight","s":"css-var --font-weight-bold (light)","d":"700."}}},"color":{"brand":{"forest":{"v":"#004e23","t":"color","s":"css-var --cartesia-forest (light)","d":"Forest #004e23: the deep brand green (dark accents, the wordmark's alt tone)."},"verdant":{"v":"#309d4b","t":"color","s":"css-var --cartesia-verdant (light)","d":"Verdant #309d4b: the primary action green (Try Cartesia, Play, selected markers)."},"growth":{"v":"#abd49e","t":"color","s":"css-var --cartesia-growth (light)","d":"Growth #abd49e: the light green tint — the .dark primary."},"canvas":{"v":"#e4e3db","t":"color","s":"css-var --cartesia-canvas (light)","d":"Canvas #e4e3db: the warm grey field and border tone."},"field":{"v":"#f4f4f1","t":"color","s":"css-var --cartesia-field (light)","d":"Field #f4f4f1: the light warm-grey surface."},"mist":{"v":"#d1e2e8","t":"color","s":"css-var --cartesia-mist (light)","d":"Mist #d1e2e8: the cool blue-grey tint."},"carbon":{"v":"#1e1e1e","t":"color","s":"css-var --cartesia-carbon (light)","d":"Carbon #1e1e1e: the near-black ink."},"memory":{"v":"#99b0c8","t":"color","s":"css-var --cartesia-memory (light)","d":"Memory #99b0c8: the muted blue accent."}},"green":{"50":{"v":"#f4faef","t":"color","s":"css-var --color-cartesia-green-50 (light)"},"100":{"v":"#e2f5da","t":"color","s":"css-var --color-cartesia-green-100 (light)"},"200":{"v":"#ceecbf","t":"color","s":"css-var --color-cartesia-green-200 (light)"},"300":{"v":"#abd49e","t":"color","s":"css-var --color-cartesia-green-300 (light)"},"400":{"v":"#5db368","t":"color","s":"css-var --color-cartesia-green-400 (light)"},"500":{"v":"#309d4b","t":"color","s":"css-var --color-cartesia-green-500 (light)","d":"Green 500 = verdant #309d4b."},"600":{"v":"#227a38","t":"color","s":"css-var --color-cartesia-green-600 (light)"},"700":{"v":"#1a6b2e","t":"color","s":"css-var --color-cartesia-green-700 (light)"},"800":{"v":"#125c25","t":"color","s":"css-var --color-cartesia-green-800 (light)"},"900":{"v":"#004e23","t":"color","s":"css-var --color-cartesia-green-900 (light)","d":"Green 900 = forest #004e23."},"950":{"v":"#00311a","t":"color","s":"css-var --color-cartesia-green-950 (light)"}},"blue":{"50":{"v":"#eef4f8","t":"color","s":"css-var --color-cartesia-blue-50 (light)"},"100":{"v":"#d1e2e8","t":"color","s":"css-var --color-cartesia-blue-100 (light)","d":"Blue 100 = mist #d1e2e8."},"200":{"v":"#bad0dc","t":"color","s":"css-var --color-cartesia-blue-200 (light)"},"300":{"v":"#a8c0d2","t":"color","s":"css-var --color-cartesia-blue-300 (light)"},"400":{"v":"#a0b8cc","t":"color","s":"css-var --color-cartesia-blue-400 (light)"},"500":{"v":"#99b0c8","t":"color","s":"css-var --color-cartesia-blue-500 (light)","d":"Blue 500 = memory #99b0c8."},"600":{"v":"#7a92a8","t":"color","s":"css-var --color-cartesia-blue-600 (light)"},"700":{"v":"#5c7488","t":"color","s":"css-var --color-cartesia-blue-700 (light)"},"800":{"v":"#415869","t":"color","s":"css-var --color-cartesia-blue-800 (light)"},"900":{"v":"#2a3d4d","t":"color","s":"css-var --color-cartesia-blue-900 (light)"},"950":{"v":"#182530","t":"color","s":"css-var --color-cartesia-blue-950 (light)"}},"orange":{"50":{"v":"#fff6f0","t":"color","s":"css-var --color-cartesia-orange-50 (light)"},"100":{"v":"#ffe8d6","t":"color","s":"css-var --color-cartesia-orange-100 (light)"},"200":{"v":"#ffd4b3","t":"color","s":"css-var --color-cartesia-orange-200 (light)"},"300":{"v":"#ffbb8a","t":"color","s":"css-var --color-cartesia-orange-300 (light)"},"400":{"v":"#fda05e","t":"color","s":"css-var --color-cartesia-orange-400 (light)"},"500":{"v":"#fc7a37","t":"color","s":"css-var --color-cartesia-orange-500 (light)","d":"Orange 500 #fc7a37 — the warm accent (chart-1)."},"600":{"v":"#e5601e","t":"color","s":"css-var --color-cartesia-orange-600 (light)"},"700":{"v":"#c24b12","t":"color","s":"css-var --color-cartesia-orange-700 (light)"},"800":{"v":"#9a380c","t":"color","s":"css-var --color-cartesia-orange-800 (light)"},"900":{"v":"#6e2608","t":"color","s":"css-var --color-cartesia-orange-900 (light)"},"950":{"v":"#3f1403","t":"color","s":"css-var --color-cartesia-orange-950 (light)"}},"neutral":{"10":{"v":"#f4f4f1","t":"color","s":"css-var --cartesia-neutral-10 (light)","d":"Neutral ramp 10 #f4f4f1."},"20":{"v":"#f0efe9","t":"color","s":"css-var --cartesia-neutral-20 (light)","d":"Neutral ramp 20 #f0efe9."},"30":{"v":"#e4e3db","t":"color","s":"css-var --cartesia-neutral-30 (light)","d":"Neutral ramp 30 #e4e3db."},"40":{"v":"#cdc8c1","t":"color","s":"css-var --cartesia-neutral-40 (light)","d":"Neutral ramp 40 #cdc8c1 — the .dark foreground."},"50":{"v":"#9fa09f","t":"color","s":"css-var --cartesia-neutral-50 (light)","d":"Neutral ramp 50 #9fa09f."},"60":{"v":"#525150","t":"color","s":"css-var --cartesia-neutral-60 (light)","d":"Neutral ramp 60 #525150 — muted-foreground."},"70":{"v":"#39342f","t":"color","s":"css-var --cartesia-neutral-70 (light)","d":"Neutral ramp 70 #39342f."},"80":{"v":"#282523","t":"color","s":"css-var --cartesia-neutral-80 (light)","d":"Neutral ramp 80 #282523."},"90":{"v":"#1e1e1e","t":"color","s":"css-var --cartesia-neutral-90 (light)","d":"Neutral ramp 90 #1e1e1e — carbon."},"100":{"v":"#1e1c1a","t":"color","s":"css-var --cartesia-neutral-100 (light)","d":"Neutral ramp 100 #1e1c1a — the light foreground."},"scale-50":{"v":"#fefefe","t":"color","s":"css-var --color-cartesia-neutral-50 (light)","d":"Neutral scale 50 #fefefe — the page field."},"scale-100":{"v":"#f9f9f8","t":"color","s":"css-var --color-cartesia-neutral-100 (light)","d":"Neutral scale 100 #f9f9f8 — card."},"scale-200":{"v":"#f3f2ef","t":"color","s":"css-var --color-cartesia-neutral-200 (light)","d":"Neutral scale 200 #f3f2ef — muted/accent."},"scale-300":{"v":"#f0efe9","t":"color","s":"css-var --color-cartesia-neutral-300 (light)","d":"Neutral scale 300 #f0efe9."},"scale-400":{"v":"#e4e3db","t":"color","s":"css-var --color-cartesia-neutral-400 (light)","d":"Neutral scale 400 #e4e3db — border/canvas."},"scale-500":{"v":"#c5c2bc","t":"color","s":"css-var --color-cartesia-neutral-500 (light)"},"scale-600":{"v":"#a7a6a2","t":"color","s":"css-var --color-cartesia-neutral-600 (light)"},"scale-700":{"v":"#787672","t":"color","s":"css-var --color-cartesia-neutral-700 (light)"},"scale-800":{"v":"#525150","t":"color","s":"css-var --color-cartesia-neutral-800 (light)"},"scale-900":{"v":"#1e1c1a","t":"color","s":"css-var --color-cartesia-neutral-900 (light)","d":"Neutral scale 900 #1e1c1a — foreground."},"scale-950":{"v":"#111010","t":"color","s":"css-var --color-cartesia-neutral-950 (light)"}},"named":{"white":{"v":"#ffffff","t":"color","s":"css-var --color-white (light)","d":"Pure white: the sign-in field fill."},"black":{"v":"#000000","t":"color","s":"css-var --color-black (light)","d":"Pure black."},"servicenow":{"v":"#62d84e","t":"color","s":"css-var --color-servicenow (light)","d":"Partner green #62d84e (customer logo accents)."},"artificial-analysis":{"v":"#8842fd","t":"color","s":"css-var --color-artificial-analysis (light)","d":"Artificial Analysis purple #8842fd (benchmark logo accents)."}}},"radius":{"xs":{"v":"2px","t":"dimension","s":"css-var --radius-xs (light)","d":"Declared --radius-xs (2px)."},"sm":{"v":"4px","t":"dimension","s":"css-var --radius-sm (light)","d":"Declared --radius-sm (4px)."},"md":{"v":"6px","t":"dimension","s":"css-var --radius-md (light)","d":"Declared --radius-md (6px — menu links)."},"lg":{"v":"8px","t":"dimension","s":"css-var --radius-lg (light)","d":"Declared --radius-lg (8px — buttons, fields, cards' base radius)."},"xl":{"v":"12px","t":"dimension","s":"css-var --radius-xl (light)","d":"Declared --radius-xl (12px — the sign-in submit, docs nav items)."},"2xl":{"v":"16px","t":"dimension","s":"css-var --radius-2xl (light)","d":"Declared --radius-2xl (16px)."},"3xl":{"v":"20px","t":"dimension","s":"css-var --radius-3xl (light)","d":"Declared --radius-3xl (20px)."},"4xl":{"v":"24px","t":"dimension","s":"css-var --radius-4xl (light)","d":"Declared --radius-4xl (24px)."},"full":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of usecase-chip default (raw/components-computed.json): rounded-full resolves to the browser's clamp","d":"rounded-full: chips, the voice orb and chooser buttons, the docs search pill. The globe dots paint a 50% circle instead (percentage radii are not length-scale entries)."}},"spacing":{"unit":{"v":"4px","t":"dimension","s":"css-var --spacing (light)","d":"The 4px spacing unit the Tailwind scale multiplies."},"hairline":{"v":"1px","t":"dimension","s":"css-var --theme-border-width-hairline (light)","d":"The 1px hairline border width."}},"layout":{"content-max":{"v":"1280px","t":"dimension","s":"css-var --site-content-max (light)","d":"The 1280px content column."},"gutter":{"v":"48px","t":"dimension","s":"css-var --site-gutter (light)","d":"The 48px page gutter at desktop."},"nav-height":{"v":"64px","t":"dimension","s":"css-var --site-nav-height (light)","d":"The 64px sticky header height."},"breakpoint-sm":{"v":"640px","t":"dimension","s":"css-var --breakpoint-sm (light)","d":"The 640px small breakpoint."},"container-xs":{"v":"320px","t":"dimension","s":"css-var --container-xs (light)","d":"Container xs (320px)."},"container-sm":{"v":"384px","t":"dimension","s":"css-var --container-sm (light)","d":"Container sm (384px)."},"container-md":{"v":"448px","t":"dimension","s":"css-var --container-md (light)","d":"Container md (448px)."},"container-lg":{"v":"512px","t":"dimension","s":"css-var --container-lg (light)","d":"Container lg (512px)."},"container-xl":{"v":"576px","t":"dimension","s":"css-var --container-xl (light)","d":"Container xl (576px)."},"container-2xl":{"v":"672px","t":"dimension","s":"css-var --container-2xl (light)","d":"Container 2xl (672px)."},"container-3xl":{"v":"768px","t":"dimension","s":"css-var --container-3xl (light)","d":"Container 3xl (768px)."},"container-4xl":{"v":"896px","t":"dimension","s":"css-var --container-4xl (light)","d":"Container 4xl (896px)."},"container-5xl":{"v":"1024px","t":"dimension","s":"css-var --container-5xl (light)","d":"Container 5xl (1024px)."},"container-6xl":{"v":"1152px","t":"dimension","s":"css-var --container-6xl (light)","d":"Container 6xl (1152px)."}},"control":{"height-xs":{"v":"24px","t":"dimension","s":"css-var --control-height-xs (light)","d":"Control height xs (24px)."},"height-sm":{"v":"32px","t":"dimension","s":"css-var --control-height-sm (light)","d":"Control height sm (32px)."},"height-default":{"v":"36px","t":"dimension","s":"css-var --control-height-default (light)","d":"Control height default (36px — nav buttons, CTAs, play)."},"height-lg":{"v":"36px","t":"dimension","s":"css-var --control-height-lg (light)","d":"Control height lg (36px)."},"height-xl":{"v":"44px","t":"dimension","s":"css-var --control-height-xl (light)","d":"Control height xl (44px — sign-in fields and submit)."},"height-2xl":{"v":"48px","t":"dimension","s":"css-var --control-height-2xl (light)","d":"Control height 2xl (48px)."},"icon-xs":{"v":"12px","t":"dimension","s":"css-var --control-icon-size-xs (light)","d":"Control icon xs."},"icon-sm":{"v":"14px","t":"dimension","s":"css-var --control-icon-size-sm (light)","d":"Control icon sm."},"icon-default":{"v":"16px","t":"dimension","s":"css-var --control-icon-size-default (light)","d":"Control icon default."},"icon-xl":{"v":"20px","t":"dimension","s":"css-var --control-icon-size-xl (light)","d":"Control icon xl."},"padding-xs":{"v":"8px","t":"dimension","s":"css-var --control-padding-xs (light)","d":"Control inline padding xs."},"padding-sm":{"v":"12px","t":"dimension","s":"css-var --control-padding-sm (light)","d":"Control inline padding sm."},"padding-default":{"v":"16px","t":"dimension","s":"css-var --control-padding-default (light)","d":"Control inline padding default."},"padding-lg":{"v":"24px","t":"dimension","s":"css-var --control-padding-lg (light)","d":"Control inline padding lg."},"padding-2xl":{"v":"32px","t":"dimension","s":"css-var --control-padding-2xl (light)","d":"Control inline padding 2xl."},"field-default":{"v":"10px","t":"dimension","s":"css-var --field-padding-default (light)","d":"Field padding default."},"field-sm":{"v":"8px","t":"dimension","s":"css-var --field-padding-sm (light)","d":"Field padding sm."}},"motion":{"duration-fast":{"v":"100ms","t":"duration","s":"css-var --motion-duration-fast (light)","d":"100ms — the fastest feedback."},"duration-label":{"v":"120ms","t":"duration","s":"css-var --motion-duration-label (light)","d":"120ms — label fades."},"duration-normal":{"v":"150ms","t":"duration","s":"css-var --motion-duration-normal (light)","d":"150ms — the default transition (--default-transition-duration)."},"duration-panel":{"v":"200ms","t":"duration","s":"css-var --motion-duration-panel (light)","d":"200ms — panels/menus."},"ease-out":{"v":[0.23,1.0,0.32,1.0],"t":"cubicBezier","s":"css-var --motion-ease-out (light)","d":"The standard ease-out cubic-bezier(.23,1,.32,1)."},"ease-layout":{"v":[0.2,0.0,0.0,1.0],"t":"cubicBezier","s":"css-var --motion-ease-layout (light)","d":"The layout ease cubic-bezier(.2,0,0,1)."},"ease-in":{"v":[0.4,0.0,1.0,1.0],"t":"cubicBezier","s":"css-var --ease-in (light)","d":"Tailwind ease-in."},"ease-out-tw":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-out (light)","d":"Tailwind ease-out."},"default-ease":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --default-transition-timing-function (light)","d":"The default transition timing cubic-bezier(.4,0,.2,1)."},"disclosure-ease":{"v":[0.23,1.0,0.32,1.0],"t":"cubicBezier","s":"css-var --motion-disclosure-ease (light)","d":"Disclosure ease (same curve as ease-out)."},"disclosure-enter":{"v":"200ms","t":"duration","s":"css-var --motion-disclosure-enter-duration (light)","d":"Disclosure enter 200ms."},"disclosure-exit":{"v":"200ms","t":"duration","s":"css-var --motion-disclosure-exit-duration (light)","d":"Disclosure exit 200ms."},"feedback-enter":{"v":"100ms","t":"duration","s":"css-var --motion-feedback-enter-duration (light)","d":"Feedback enter 100ms."},"feedback-exit":{"v":"100ms","t":"duration","s":"css-var --motion-feedback-exit-duration (light)","d":"Feedback exit 100ms."},"overlay-enter":{"v":"150ms","t":"duration","s":"css-var --motion-overlay-enter-duration (light)","d":"Overlay enter 150ms."},"overlay-exit":{"v":"100ms","t":"duration","s":"css-var --motion-overlay-exit-duration (light)","d":"Overlay exit 100ms."},"panel-enter":{"v":"200ms","t":"duration","s":"css-var --motion-panel-enter-duration (light)","d":"Panel enter 200ms."},"panel-exit":{"v":"150ms","t":"duration","s":"css-var --motion-panel-exit-duration (light)","d":"Panel exit 150ms."},"sidebar-ease":{"v":[0.2,0.0,0.0,1.0],"t":"cubicBezier","s":"css-var --motion-sidebar-ease (light)","d":"Sidebar ease cubic-bezier(.2,0,0,1)."},"sidebar-enter":{"v":"200ms","t":"duration","s":"css-var --motion-sidebar-enter-duration (light)","d":"Sidebar enter 200ms."},"sidebar-exit":{"v":"200ms","t":"duration","s":"css-var --motion-sidebar-exit-duration (light)","d":"Sidebar exit 200ms."},"site-accordion-duration":{"v":"350ms","t":"duration","s":"css-var --site-accordion-duration (light)","d":"The marketing accordion's 350ms."},"site-accordion-ease":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":"css-var --site-accordion-ease (light)","d":"The marketing accordion ease (ease keyword)."},"site-reveal-duration":{"v":"700ms","t":"duration","s":"css-var --site-reveal-duration (light)","d":"The scroll-reveal 700ms."},"site-reveal-ease":{"v":[0.32,0.72,0.0,1.0],"t":"cubicBezier","s":"css-var --site-reveal-ease (light)","d":"The scroll-reveal ease cubic-bezier(.32,.72,0,1)."},"site-reveal-step":{"v":"60ms","t":"duration","s":"css-var --site-reveal-step (light)","d":"The 60ms stagger between reveal items."}},"blur":{"xs":{"v":"4px","t":"dimension","s":"css-var --blur-xs (light)","d":"Blur xs."},"sm":{"v":"8px","t":"dimension","s":"css-var --blur-sm (light)","d":"Blur sm."},"md":{"v":"12px","t":"dimension","s":"css-var --blur-md (light)","d":"Blur md."}},"measured":{"focus-ring":{"v":"#a1a1a1","t":"color","s":"computed outlineColor of faq-trigger focus-visible (raw/components-computed.json): 2px solid var(--ring)","d":"The default 2px focus ring (--ring)."},"focus-ring-width":{"v":"2px","t":"dimension","s":"computed outlineWidth of faq-trigger focus-visible (raw/components-computed.json)","d":"Focus ring width."},"focus-ring-verdant":{"v":"#309d4b","t":"color","s":"computed outlineColor of voice-row focus-visible (raw/components-computed.json)","d":"The verdant 2px focus ring on voice-list rows."},"hover-dim":{"v":0.9,"t":"number","s":"computed backgroundColor of nav-cta hover (raw/components-computed.json): the primary fill at reduced opacity","d":"Primary buttons hover at a fraction of the verdant fill."}}},"light":{"color":{"background":{"v":"#fefefe","t":"color","s":"css-var --background (light)","d":"The page field #fefefe."},"foreground":{"v":"#1e1c1a","t":"color","s":"css-var --foreground (light)","d":"Body/headline ink #1e1c1a."},"primary":{"v":"#309d4b","t":"color","s":"css-var --primary (light)","d":"Verdant #309d4b — solid CTAs and selections."},"primary-foreground":{"v":"#f9f9f8","t":"color","s":"css-var --primary-foreground (light)","d":"Text on primary."},"secondary":{"v":"#f9f9f8","t":"color","s":"css-var --secondary (light)","d":"Secondary fill."},"secondary-foreground":{"v":"#525150","t":"color","s":"css-var --secondary-foreground (light)","d":"Text on secondary."},"accent":{"v":"#f3f2ef","t":"color","s":"css-var --accent (light)","d":"Accent/hover fill."},"accent-foreground":{"v":"#1e1c1a","t":"color","s":"css-var --accent-foreground (light)","d":"Text on accent."},"card":{"v":"#f9f9f8","t":"color","s":"css-var --card (light)","d":"Card fill."},"card-foreground":{"v":"#1e1c1a","t":"color","s":"css-var --card-foreground (light)","d":"Text on card."},"muted":{"v":"#f3f2ef","t":"color","s":"css-var --muted (light)","d":"Muted fill (hover surfaces)."},"muted-foreground":{"v":"#525150","t":"color","s":"css-var --muted-foreground (light)","d":"Secondary text #525150."},"surface":{"v":"#f5f5f2","t":"color","s":"css-var --surface (light)","d":"Raised surface."},"surface-foreground":{"v":"#1e1c1a","t":"color","s":"css-var --surface-foreground (light)","d":"Text on surface."},"field":{"v":"#ffffff","t":"color","s":"css-var --field (light)","d":"Input fill (#ffffff light, white/4.5% dark)."},"popover":{"v":"#fefefe","t":"color","s":"css-var --popover (light)","d":"Popover/menu fill."},"popover-foreground":{"v":"#1e1c1a","t":"color","s":"css-var --popover-foreground (light)","d":"Popover text."},"popover-border":{"v":"rgba(30, 28, 26, 0.1)","t":"color","s":"css-var --popover-border (light)","d":"Popover hairline."},"border":{"v":"#e4e3db","t":"color","s":"css-var --border (light)","d":"The border tone (#e4e3db light, white/10% dark)."},"boundary":{"v":"#ededed","t":"color","s":"css-var --boundary (light)","d":"The hairline (header underline, column rules)."},"input":{"v":"#e4e3db","t":"color","s":"css-var --input (light)","d":"Input border."},"ring":{"v":"#a1a1a1","t":"color","s":"css-var --ring (light)","d":"Focus ring."},"focus":{"v":"#a1a1a1","t":"color","s":"css-var --focus (light)","d":"Focus border (focus-visible:border-focus)."},"placeholder":{"v":"rgba(82, 81, 80, 0.55)","t":"color","s":"css-var --placeholder (light)","d":"Placeholder ink."},"subtle-foreground":{"v":"#a7a6a2","t":"color","s":"css-var --subtle-foreground (light)","d":"Subtle text."},"destructive":{"v":"#e7000b","t":"color","s":"css-var --destructive (light)","d":"Error/destructive."},"destructive-foreground":{"v":"#e7000b","t":"color","s":"css-var --destructive-foreground (light)","d":"Text on destructive."},"success":{"v":"#008235","t":"color","s":"css-var --success (light)","d":"Success."},"success-foreground":{"v":"#008235","t":"color","s":"css-var --success-foreground (light)","d":"Text on success."},"warning":{"v":"#bb4d00","t":"color","s":"css-var --warning (light)","d":"Warning."},"warning-foreground":{"v":"#bb4d00","t":"color","s":"css-var --warning-foreground (light)","d":"Text on warning."},"sidebar":{"v":"#f0efe9","t":"color","s":"css-var --sidebar (light)","d":"Sidebar fill (declared; the app shell behind sign-in)."},"sidebar-foreground":{"v":"#525150","t":"color","s":"css-var --sidebar-foreground (light)","d":"Sidebar text."},"sidebar-border":{"v":"#ededed","t":"color","s":"css-var --sidebar-border (light)","d":"Sidebar border."},"sidebar-accent":{"v":"#e9e8e0","t":"color","s":"css-var --sidebar-accent (light)","d":"Sidebar hover fill."},"sidebar-primary":{"v":"#dcdbd3","t":"color","s":"css-var --sidebar-primary (light)","d":"Sidebar primary."},"sidebar-ring":{"v":"#a1a1a1","t":"color","s":"css-var --sidebar-ring (light)","d":"Sidebar focus ring."},"sidebar-raised":{"v":"#fefefe","t":"color","s":"css-var --sidebar-raised (light)","d":"Sidebar raised fill."},"chart-1":{"v":"#f54900","t":"color","s":"css-var --chart-1 (light)","d":"Chart 1 (declared chart ramp)."},"chart-2":{"v":"#009689","t":"color","s":"css-var --chart-2 (light)","d":"Chart 2."},"chart-3":{"v":"#104e64","t":"color","s":"css-var --chart-3 (light)","d":"Chart 3."},"chart-4":{"v":"#ffb900","t":"color","s":"css-var --chart-4 (light)","d":"Chart 4."},"chart-5":{"v":"#fe9a00","t":"color","s":"css-var --chart-5 (light)","d":"Chart 5."}},"action":{"link-verdant":{"v":"{color.brand.verdant}","t":"color","s":"alias of core.color.brand.verdant (css-var --cartesia-verdant); the Tools breadcrumb measured text-cartesia-verdant","d":"Inline verdant links (the Tools breadcrumb, text accents)."}},"component":{"header":{"height":{"v":"64px","t":"dimension","s":"measured header default (raw/components-computed.json); --site-nav-height","d":"Sticky header height."}},"banner":{"height":{"v":"36.8px","t":"dimension","s":"computed height of banner default (raw/components-computed.json)","d":"Announcement banner height."}},"button":{"height":{"v":"36px","t":"dimension","s":"measured nav-cta/nav-sales/play-btn default","d":"The standard control height (control-height-default)."},"radius":{"v":"8px","t":"dimension","s":"measured nav-cta/play-btn default; --radius-lg","d":"Button radius."},"padding-x":{"v":"16px","t":"dimension","s":"computed paddingLeft of nav-cta default (raw/components-computed.json)","d":"Button inline padding."},"label-size":{"v":"14px","t":"dimension","s":"measured nav-cta/play-btn default","d":"Button label size."},"height-lg":{"v":"40px","t":"dimension","s":"measured pd-cta/pd-secondary default","d":"Hero CTA height on product pages."},"height-auth":{"v":"44px","t":"dimension","s":"measured continue-btn/email-field default","d":"Sign-in control height (control-height-xl)."},"radius-auth":{"v":"12px","t":"dimension","s":"measured continue-btn/sso-btn default","d":"Sign-in control radius."}},"nav":{"link-height":{"v":"36px","t":"dimension","s":"measured nav-link/nav-trigger default","d":"Nav item height."},"menu-width":{"v":"624px","t":"dimension","s":"computed width of nav-dropdown default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find nav-dropdown)","d":"Products mega-menu panel width."},"menu-radius":{"v":"6px","t":"dimension","s":"computed borderTopLeftRadius of menu-link default (raw/components-computed.json)","d":"Menu item radius (--radius-md)."},"menu-pad":{"v":"12px","t":"dimension","s":"computed paddingTop of nav-dropdown default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find nav-dropdown)","d":"Menu panel padding."}},"field":{"height":{"v":"44px","t":"dimension","s":"computed height of email-field default (raw/components-computed.json)","d":"Sign-in field height."},"radius":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of email-field default (raw/components-computed.json)","d":"Sign-in field radius."},"padding-x":{"v":"14px","t":"dimension","s":"computed paddingLeft of email-field default (raw/components-computed.json)","d":"Field inline padding."}},"auth":{"column-width":{"v":"640px","t":"dimension","s":"measured login-card/signup-card default","d":"The centred sign-in column."},"field-width":{"v":"420px","t":"dimension","s":"measured email-field/continue-btn default","d":"The auth form width."},"sso-width":{"v":"206px","t":"dimension","s":"computed width of sso-btn default (raw/components-computed.json)","d":"The SSO/passkey button width (the two buttons split the 420px form with a gap)."}},"orb":{"size":{"v":"244.8px","t":"dimension","s":"computed width of hero-orb default (raw/components-computed.json)","d":"The Talk-to-Skylar orb diameter."},"chooser-size":{"v":"58.75px","t":"dimension","s":"bounding-rect of voice-choose default (raw/components-computed.json): the buttons are scale-transformed, so the computed width is the pre-scale length and the rect is what paints","d":"A voice-chooser button diameter as displayed (ring of voices around the orb)."},"arrow-size":{"v":"40px","t":"dimension","s":"computed width of voice-nav default (raw/components-computed.json)","d":"Voice carousel arrow size."}},"chip":{"height":{"v":"30px","t":"dimension","s":"computed height of usecase-chip default (raw/components-computed.json)","d":"Use-case chip height."},"voice-height":{"v":"34px","t":"dimension","s":"computed height of voice-chip default (raw/components-computed.json)","d":"Voice/locale chip height."},"label-size":{"v":"12px","t":"dimension","s":"computed fontSize of usecase-chip default (raw/components-computed.json)","d":"Chip label size."}},"card":{"product-width":{"v":"571px","t":"dimension","s":"computed width of product-card default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find product-card)","d":"Product card width (half of the two-up grid)."},"product-height":{"v":"377.59px","t":"dimension","s":"computed height of product-card default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find product-card)","d":"Product card height."},"story-tile":{"v":"559px","t":"dimension","s":"measured media-frame/story-card default","d":"Customer-story media tile (square)."},"plan-width":{"v":"254.8px","t":"dimension","s":"computed width of plan-card default (raw/components-computed.json)","d":"Plan card cell width."},"plan-padding":{"v":"24px","t":"dimension","s":"computed paddingLeft of plan-card default (raw/components-computed.json)","d":"Plan card inline padding (40px top)."}},"play":{"sample-size":{"v":"32px","t":"dimension","s":"computed width of word-play default (raw/components-computed.json)","d":"Square pronunciation/clone play button."},"globe-dot":{"v":"19.08px","t":"dimension","s":"computed width of globe-dot default (raw/components-computed.json)","d":"Voices-globe locale dot."},"globe-play":{"v":"81px","t":"dimension","s":"computed width of globe-play default (raw/components-computed.json)","d":"Globe play button diameter."},"globe-voice-height":{"v":"38px","t":"dimension","s":"computed height of globe-voice default (raw/components-computed.json)","d":"Globe voice row height."}},"accordion":{"height":{"v":"74px","t":"dimension","s":"computed height of accordion-trigger default (raw/components-computed.json)","d":"Deployment accordion row height."},"faq-padding":{"v":"48px","t":"dimension","s":"computed paddingLeft of faq-trigger default (raw/components-computed.json)","d":"FAQ summary inline padding (56px top)."}},"docs":{"search-width":{"v":"277.56px","t":"dimension","s":"computed width of docs-search default (raw/components-computed.json)","d":"Docs search input width (Mintlify surface)."},"nav-height":{"v":"32px","t":"dimension","s":"computed height of docs-nav-item default (raw/components-computed.json)","d":"Docs sidebar item height."},"nav-radius":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of docs-nav-item default (raw/components-computed.json)","d":"Docs sidebar item radius."}},"mobile":{"menu-height":{"v":"844px","t":"dimension","s":"computed height of m-menu-open default (raw/components-computed.json)","d":"Mobile menu covers the full viewport."},"nav-item-height":{"v":"56px","t":"dimension","s":"computed height of m-nav-item default (raw/components-computed.json)","d":"Mobile nav item height."},"menu-button":{"v":"36px","t":"dimension","s":"computed width of m-menu-button default (raw/components-computed.json)","d":"Mobile menu toggle size."}}}},"dark":{"color":{"background":{"v":"#171715","t":"color","s":"css-var --background (dark)","d":"The .dark field #171715."},"foreground":{"v":"#cdc8c1","t":"color","s":"css-var --foreground (dark)","d":"Dark-surface text #cdc8c1 (neutral-40)."},"primary":{"v":"#abd49e","t":"color","s":"css-var --primary (dark)","d":"Growth #abd49e — the .dark primary."},"primary-foreground":{"v":"#0a0a0a","t":"color","s":"css-var --primary-foreground (dark)","d":"Text on dark primary #0a0a0a."},"secondary":{"v":"#1e1c1a","t":"color","s":"css-var --secondary (dark)","d":"Secondary fill."},"secondary-foreground":{"v":"#cdc8c1","t":"color","s":"css-var --secondary-foreground (dark)","d":"Text on secondary."},"accent":{"v":"#1e1c1a","t":"color","s":"css-var --accent (dark)","d":"Accent/hover fill."},"accent-foreground":{"v":"#cdc8c1","t":"color","s":"css-var --accent-foreground (dark)","d":"Text on accent."},"card":{"v":"#171717","t":"color","s":"css-var --card (dark)","d":"Dark card #171717."},"card-foreground":{"v":"#cdc8c1","t":"color","s":"css-var --card-foreground (dark)","d":"Text on card."},"muted":{"v":"#1e1c1a","t":"color","s":"css-var --muted (dark)","d":"Muted fill (hover surfaces)."},"muted-foreground":{"v":"#a1a1a1","t":"color","s":"css-var --muted-foreground (dark)","d":"Dark secondary text #a1a1a1."},"surface":{"v":"#262421","t":"color","s":"css-var --surface (dark)","d":"Dark raised surface #262421."},"surface-foreground":{"v":"#a1a1a1","t":"color","s":"css-var --surface-foreground (dark)","d":"Text on surface."},"field":{"v":"rgba(255, 255, 255, 0.045)","t":"color","s":"css-var --field (dark)","d":"Dark input fill white/4.5%."},"popover":{"v":"#171717","t":"color","s":"css-var --popover (dark)","d":"Popover/menu fill."},"popover-foreground":{"v":"#cdc8c1","t":"color","s":"css-var --popover-foreground (dark)","d":"Popover text."},"popover-border":{"v":"#787672","t":"color","s":"css-var --popover-border (dark)","d":"Popover hairline."},"border":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"css-var --border (dark)","d":"Dark border white/10%."},"boundary":{"v":"rgba(255, 255, 255, 0.06)","t":"color","s":"css-var --boundary (dark)","d":"Dark hairline white/6%."},"input":{"v":"rgba(255, 255, 255, 0.15)","t":"color","s":"css-var --input (dark)","d":"Dark input border white/15%."},"ring":{"v":"#737373","t":"color","s":"css-var --ring (dark)","d":"Dark focus ring #737373."},"focus":{"v":"#737373","t":"color","s":"css-var --focus (dark)","d":"Focus border (focus-visible:border-focus)."},"placeholder":{"v":"rgba(161, 161, 161, 0.55)","t":"color","s":"css-var --placeholder (dark)","d":"Placeholder ink."},"subtle-foreground":{"v":"#a7a6a2","t":"color","s":"css-var --subtle-foreground (dark)","d":"Subtle text."},"destructive":{"v":"#ff6467","t":"color","s":"css-var --destructive (dark)","d":"Dark error #ff6467."},"destructive-foreground":{"v":"#ff6467","t":"color","s":"css-var --destructive-foreground (dark)","d":"Text on destructive."},"success":{"v":"#56da7d","t":"color","s":"css-var --success (dark)","d":"Dark success #56da7d."},"success-foreground":{"v":"#56da7d","t":"color","s":"css-var --success-foreground (dark)","d":"Text on success."},"warning":{"v":"#fe9a00","t":"color","s":"css-var --warning (dark)","d":"Dark warning #fe9a00."},"warning-foreground":{"v":"#fe9a00","t":"color","s":"css-var --warning-foreground (dark)","d":"Text on warning."},"sidebar":{"v":"#1f1f1c","t":"color","s":"css-var --sidebar (dark)","d":"Sidebar fill (declared; the app shell behind sign-in)."},"sidebar-foreground":{"v":"#b8b4ae","t":"color","s":"css-var --sidebar-foreground (dark)","d":"Sidebar text."},"sidebar-border":{"v":"rgba(255, 255, 255, 0.06)","t":"color","s":"css-var --sidebar-border (dark)","d":"Sidebar border."},"sidebar-accent":{"v":"#2a2826","t":"color","s":"css-var --sidebar-accent (dark)","d":"Sidebar hover fill."},"sidebar-primary":{"v":"#363330","t":"color","s":"css-var --sidebar-primary (dark)","d":"Sidebar primary."},"sidebar-ring":{"v":"#737373","t":"color","s":"css-var --sidebar-ring (dark)","d":"Sidebar focus ring."},"sidebar-raised":{"v":"#3d3a36","t":"color","s":"css-var --sidebar-raised (dark)","d":"Sidebar raised fill."},"chart-1":{"v":"#1447e6","t":"color","s":"css-var --chart-1 (dark)","d":"Chart 1 (declared chart ramp)."},"chart-2":{"v":"#00bc7d","t":"color","s":"css-var --chart-2 (dark)","d":"Chart 2."},"chart-3":{"v":"#fe9a00","t":"color","s":"css-var --chart-3 (dark)","d":"Chart 3."},"chart-4":{"v":"#ad46ff","t":"color","s":"css-var --chart-4 (dark)","d":"Chart 4."},"chart-5":{"v":"#ff2056","t":"color","s":"css-var --chart-5 (dark)","d":"Chart 5."}},"action":{"link-verdant":{"v":"{color.brand.growth}","t":"color","s":"alias of core.color.brand.growth (css-var --cartesia-growth); on the .dark scope --primary rebinds to growth","d":"On the .dark scope the accent reads growth."}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const lightRoles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (lightRoles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of lightRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // The dark set's custom properties only resolve inside a .dark scope:
+  // swatch dots must live under it or they paint the light values/unset.
+  const darkRoles = flat(TOK.dark || {}, '').filter(([n, t]) => t.t === 'color');
+  if (darkRoles.length) {
+    h += `<div class="pal-h">dark roles (.dark islands)</div><div class="pal dark">`;
+    for (const [n, t] of darkRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.control || {}, 'control.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function motion() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) e += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) { const ls = typeof t.v === 'number' ? t.v + 'em' : t.v; h += `<div class="tr"><span class="ts" style="letter-spacing:${esc(ls)}">${esc(n)} — tracking</span><span class="tv">${esc(ls)}</span></div>`; }
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Cartesia</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

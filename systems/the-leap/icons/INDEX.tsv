@@ -1,0 +1,6 @@
+role	file	source
+wordmark	logo.svg	header svg.nav-logo on https://www.theleap.co/, fill #4D2114
+tiktok	tiktok.svg	footer .social-nav-icon, stroke and fill #482317
+instagram	instagram.svg	footer .social-nav-icon, stroke and fill #482317
+youtube	youtube.svg	footer .social-nav-icon, stroke and fill #482317
+pinterest	pinterest.svg	footer .social-nav-icon, stroke and fill #482317

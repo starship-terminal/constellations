@@ -12,7 +12,7 @@ The site: strict monochrome — black text and keylines on white with grey steps
 | [style-guide.html](style-guide.html) | Self-contained rendering of tokens and components |
 | [components.md](components.md) | Discovery list + component inventory (21 components, 41 states) with crops and Gaps |
 | [patterns.md](patterns.md) | How the components combine per surface |
-| [components/crops/](components/crops) | 41 element screenshots at 2x |
+| [components/crops/](components/crops) | 34 element screenshots at 2x |
 | [screenshots/](screenshots) | 17 `{page}-light-{state}.png` captures: desktop 1440x900, mobile 390x844 |
 | [raw/](raw) | `css-vars.json`, `components-computed.json`, `measurements.md`, `component-tokens.json`. Full-colour raws stay outside the repo at `~/.design-systems/adidas/raw-full/` |
 | [tools/](tools) | The builders and capture kit. See Rebuild |
@@ -48,7 +48,7 @@ Fonts: `core.font.family.din` is AdihausDIN, then 3 fallbacks; `core.font.family
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 38 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 34 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -97,6 +97,7 @@ Every surface is public, so pages were captured signed out in headless Chromium 
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **This is adidas.com.cn, not adidas.com.** Same brand language, different front end and market. Values here are the China flagship's — do not project them onto the global storefront without re-measuring.
 - The PDP captured showed a disabled add-to-cart state (white fill, grey #c8cbcc text/border, "加入购物袋"); an in-stock enabled bar was not captured.
 - The site renders pages as fixed-height app shells with inner scroll containers, so `-full` shots capture the viewport-height shell, not a tall page — a hard boundary of the front end, not a truncation.

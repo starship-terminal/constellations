@@ -1,0 +1,1444 @@
+{
+ "readAt": "2026-11-18",
+ "source": "inline <style> blocks and any linked stylesheets from a signed-out load of www.lemni.com /, /pricing, /docs and lemni.com/signup (which redirects to /signin), re-parsed with CSSStyleSheet and resolved on a probe carrying those sheets. Framer publishes no --token-* palette on these pages; painted colours are measured from elements.",
+ "sheets": [
+  "https://lemni.com/assets/index-BO418128.css (23151 bytes)",
+  "https://fonts.googleapis.com/css2 (2371 bytes)",
+  "https://www.lemni.com/#inline-0 (16027 bytes)",
+  "https://www.lemni.com/#inline-1 (320654 bytes)",
+  "https://www.lemni.com/#inline-3 (2175 bytes)",
+  "https://www.lemni.com/#inline-4 (703 bytes)",
+  "https://www.lemni.com/#inline-5 (42 bytes)",
+  "https://www.lemni.com/#inline-6 (370 bytes)",
+  "https://www.lemni.com/pricing#inline-0 (16027 bytes)",
+  "https://www.lemni.com/pricing#inline-1 (112823 bytes)",
+  "https://www.lemni.com/pricing#inline-2 (2175 bytes)",
+  "https://www.lemni.com/pricing#inline-3 (703 bytes)",
+  "https://www.lemni.com/pricing#inline-4 (45 bytes)",
+  "https://www.lemni.com/docs#inline-0 (16027 bytes)",
+  "https://www.lemni.com/docs#inline-1 (149350 bytes)",
+  "https://www.lemni.com/docs#inline-2 (2175 bytes)",
+  "https://www.lemni.com/docs#inline-3 (703 bytes)",
+  "https://www.lemni.com/docs#inline-5 (45 bytes)"
+ ],
+ "counts": {
+  "rules": 259,
+  "fonts": 195,
+  "names": {
+   "token": 0,
+   "app": 32,
+   "framer": 44
+  }
+ },
+ "errors": [],
+ "token": [],
+ "app": [
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": "[data-framer-component-type=\"Text\"] div div span, [data-framer-component-type=\"Text\"] a div span, [data-framer-component-type=\"Text\"] span span span, [data-framer-component-type=\"T",
+   "context": [],
+   "properties": {
+    "--text-decoration": "var(--framer-text-decoration-style,solid)var(--framer-text-decoration,none)var(--framer-text-decoration-color,currentcolor)var(--framer-text-decoration-thickness,auto)",
+    "--text-decoration-skip-ink": "var(--framer-text-decoration-skip-ink)",
+    "--text-underline-offset": "var(--framer-text-decoration-offset)",
+    "--font-family": "var(--framer-font-family)",
+    "--font-style": "var(--framer-font-style)",
+    "--font-weight": "var(--framer-font-weight)",
+    "--text-color": "var(--framer-text-color)",
+    "--letter-spacing": "var(--framer-letter-spacing)",
+    "--font-size": "var(--framer-font-size)",
+    "--text-transform": "var(--framer-text-transform)",
+    "--line-height": "var(--framer-line-height)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ":root",
+   "context": [
+    "@supports not (overflow:clip)"
+   ],
+   "properties": {
+    "--overflow-clip-fallback": "hidden"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ":root",
+   "context": [
+    "@supports (corner-shape:superellipse(2))"
+   ],
+   "properties": {
+    "--one-if-corner-shape-supported": "1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1dv24px",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "0px",
+    "--border-color": "#ffffff1a",
+    "--border-left-width": "0px",
+    "--border-right-width": "0px",
+    "--border-style": "solid",
+    "--border-top-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-16s9onu",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": ".5px",
+    "--border-color": "#0000000d",
+    "--border-left-width": ".5px",
+    "--border-right-width": ".5px",
+    "--border-style": "solid",
+    "--border-top-width": ".5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-18kleuk",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "1px",
+    "--border-color": "#00000008",
+    "--border-left-width": "1px",
+    "--border-right-width": "1px",
+    "--border-style": "solid",
+    "--border-top-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1xvlyjr",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "0px",
+    "--border-color": "#ffffff1a",
+    "--border-left-width": "1px",
+    "--border-right-width": "0px",
+    "--border-style": "solid",
+    "--border-top-width": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-6g47oj",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "0px",
+    "--border-color": "#ffffff1a",
+    "--border-left-width": "0px",
+    "--border-right-width": "1px",
+    "--border-style": "solid",
+    "--border-top-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1jrpgd3",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "0px",
+    "--border-color": "#ffffff1a",
+    "--border-left-width": "0px",
+    "--border-right-width": "1px",
+    "--border-style": "solid",
+    "--border-top-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-aufejf, .framer-OTUf0 .framer-1vakw9b, .framer-OTUf0 .framer-npuyly, .framer-OTUf0 .framer-11hu3dt, .framer-OTUf0 .framer-1ti5s94, .framer-OTUf0 .framer-kvzcl",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "1px",
+    "--border-color": "#e3e3fe0f",
+    "--border-left-width": "0px",
+    "--border-right-width": "0px",
+    "--border-style": "solid",
+    "--border-top-width": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-dwkbpf",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "0px",
+    "--border-color": "#e3e3fe0f",
+    "--border-left-width": "0px",
+    "--border-right-width": "0px",
+    "--border-style": "solid",
+    "--border-top-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1ms7tdq",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "0px",
+    "--border-color": "#ffffff1a",
+    "--border-left-width": "0px",
+    "--border-right-width": "0px",
+    "--border-style": "solid",
+    "--border-top-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1tbmux3",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": ".5px",
+    "--border-color": "#0000000a",
+    "--border-left-width": ".5px",
+    "--border-right-width": ".5px",
+    "--border-style": "solid",
+    "--border-top-width": ".5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1xlpwpa",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "0px",
+    "--border-color": "#0000000a",
+    "--border-left-width": "0px",
+    "--border-right-width": "1px",
+    "--border-style": "solid",
+    "--border-top-width": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1h4r3qr, .framer-OTUf0 .framer-lvdiyy",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": ".5px",
+    "--border-color": "#0000000d",
+    "--border-left-width": ".5px",
+    "--border-right-width": ".5px",
+    "--border-style": "solid",
+    "--border-top-width": ".5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-v2v4vj, .framer-OTUf0 .framer-qrjc1x, .framer-OTUf0 .framer-y6sc12, .framer-OTUf0 .framer-r4k4jk, .framer-OTUf0 .framer-v4ilw2",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": ".5px",
+    "--border-color": "#0000000d",
+    "--border-left-width": ".5px",
+    "--border-right-width": ".5px",
+    "--border-style": "solid",
+    "--border-top-width": ".5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1r6866b, .framer-OTUf0 .framer-1c4ec53",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": ".5px",
+    "--border-color": "#ffffff80",
+    "--border-left-width": ".5px",
+    "--border-right-width": ".5px",
+    "--border-style": "solid",
+    "--border-top-width": ".5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-g84wls, .framer-OTUf0 .framer-10lrmiz",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "0px",
+    "--border-color": "#0000000a",
+    "--border-left-width": "0px",
+    "--border-right-width": "1px",
+    "--border-style": "solid",
+    "--border-top-width": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-fujg8v, .framer-OTUf0 .framer-mf4p7d",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "0px",
+    "--border-color": "#0000000a",
+    "--border-left-width": "1px",
+    "--border-right-width": "0px",
+    "--border-style": "solid",
+    "--border-top-width": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-qtn07i",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "1px",
+    "--border-color": "#00000008",
+    "--border-left-width": "1px",
+    "--border-right-width": "1px",
+    "--border-style": "solid",
+    "--border-top-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-ivpptw, .framer-OTUf0 .framer-mobkr6, .framer-OTUf0 .framer-ldn5yi",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": ".5px",
+    "--border-color": "#ffffff80",
+    "--border-left-width": ".5px",
+    "--border-right-width": ".5px",
+    "--border-style": "solid",
+    "--border-top-width": ".5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1ls5yyf",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "1px",
+    "--border-color": "#0000000a",
+    "--border-left-width": "0px",
+    "--border-right-width": "0px",
+    "--border-style": "solid",
+    "--border-top-width": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1lg0caq",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "0px",
+    "--border-color": "#0000000a",
+    "--border-left-width": "1px",
+    "--border-right-width": "0px",
+    "--border-style": "solid",
+    "--border-top-width": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-14tx9dh",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "1px",
+    "--border-color": "#0000000a",
+    "--border-left-width": "1px",
+    "--border-right-width": "1px",
+    "--border-style": "solid",
+    "--border-top-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1f9z07s",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "0px",
+    "--border-color": "#0000000a",
+    "--border-left-width": "0px",
+    "--border-right-width": "1px",
+    "--border-style": "solid",
+    "--border-top-width": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1h75765",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "1px",
+    "--border-color": "#0000000a",
+    "--border-left-width": "1px",
+    "--border-right-width": "1px",
+    "--border-style": "solid",
+    "--border-top-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-mqj47e",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "0px",
+    "--border-color": "#0000000a",
+    "--border-left-width": "0px",
+    "--border-right-width": "0px",
+    "--border-style": "solid",
+    "--border-top-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1dijjij",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "1px",
+    "--border-color": "#0000000a",
+    "--border-left-width": "0px",
+    "--border-right-width": "0px",
+    "--border-style": "solid",
+    "--border-top-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-873fsa",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": ".5px",
+    "--border-color": "#0000000d",
+    "--border-left-width": ".5px",
+    "--border-right-width": ".5px",
+    "--border-style": "solid",
+    "--border-top-width": ".5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1c8nz9k, .framer-OTUf0 .framer-1ys9v94, .framer-OTUf0 .framer-hf3lna, .framer-OTUf0 .framer-yihajz, .framer-OTUf0 .framer-aa2an2",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "1px",
+    "--border-color": "#0000000a",
+    "--border-left-width": "0px",
+    "--border-right-width": "0px",
+    "--border-style": "solid",
+    "--border-top-width": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-nbug7n",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "0px",
+    "--border-color": "#e3e3fe0f",
+    "--border-left-width": "0px",
+    "--border-right-width": "0px",
+    "--border-style": "solid",
+    "--border-top-width": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1spljdm, .framer-OTUf0 .framer-1fifs0d, .framer-OTUf0 .framer-hxoocs, .framer-OTUf0 .framer-mp9tlv",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "0px",
+    "--border-color": "#e3e3fe0f",
+    "--border-left-width": "0px",
+    "--border-right-width": "0px",
+    "--border-style": "solid",
+    "--border-top-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-ll3xg, .framer-OTUf0 .framer-4i7ilb, .framer-OTUf0 .framer-lyke8v, .framer-OTUf0 .framer-3z1tvi",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "1px",
+    "--border-color": "#00000008",
+    "--border-left-width": "1px",
+    "--border-right-width": "1px",
+    "--border-style": "solid",
+    "--border-top-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-4ey9zo",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "0px",
+    "--border-color": "#e3e3fe0f",
+    "--border-left-width": "0px",
+    "--border-right-width": "1px",
+    "--border-style": "solid",
+    "--border-top-width": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-19rsdmf",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": ".5px",
+    "--border-color": "#0000000d",
+    "--border-left-width": ".5px",
+    "--border-right-width": ".5px",
+    "--border-style": "solid",
+    "--border-top-width": ".5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1r0odpc",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "0px",
+    "--border-color": "#e3e3fe0f",
+    "--border-left-width": "0px",
+    "--border-right-width": "1px",
+    "--border-style": "solid",
+    "--border-top-width": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1adqz1g",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "0px",
+    "--border-color": "#e3e3fe0f",
+    "--border-left-width": "0px",
+    "--border-right-width": "0px",
+    "--border-style": "solid",
+    "--border-top-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1qg38yu",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": ".5px",
+    "--border-color": "#0000000d",
+    "--border-left-width": ".5px",
+    "--border-right-width": ".5px",
+    "--border-style": "solid",
+    "--border-top-width": ".5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-147uigb",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": ".5px",
+    "--border-color": "#0000000d",
+    "--border-left-width": ".5px",
+    "--border-right-width": ".5px",
+    "--border-style": "solid",
+    "--border-top-width": ".5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1gnkvaw, .framer-OTUf0 .framer-11e08ak, .framer-OTUf0 .framer-1w2cvrp",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "0px",
+    "--border-color": "#e3e3fe0f",
+    "--border-left-width": "0px",
+    "--border-right-width": "0px",
+    "--border-style": "solid",
+    "--border-top-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-6d6ifl",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": ".5px",
+    "--border-color": "#0000000d",
+    "--border-left-width": ".5px",
+    "--border-right-width": ".5px",
+    "--border-style": "solid",
+    "--border-top-width": ".5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1c223p3",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": ".5px",
+    "--border-color": "#0000000d",
+    "--border-left-width": ".5px",
+    "--border-right-width": ".5px",
+    "--border-style": "solid",
+    "--border-top-width": ".5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-6nhlwu",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": ".5px",
+    "--border-color": "#0000000d",
+    "--border-left-width": ".5px",
+    "--border-right-width": ".5px",
+    "--border-style": "solid",
+    "--border-top-width": ".5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-4k2p9r",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "1px",
+    "--border-color": "#e3e3fe0f",
+    "--border-left-width": "0px",
+    "--border-right-width": "0px",
+    "--border-style": "solid",
+    "--border-top-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1cx5qla",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": ".5px",
+    "--border-color": "#0000000d",
+    "--border-left-width": ".5px",
+    "--border-right-width": ".5px",
+    "--border-style": "solid",
+    "--border-top-width": ".5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-a5gtdy",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": ".5px",
+    "--border-color": "#0000000d",
+    "--border-left-width": ".5px",
+    "--border-right-width": ".5px",
+    "--border-style": "solid",
+    "--border-top-width": ".5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1nvo5bl, .framer-OTUf0 .framer-31eb0k",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "1px",
+    "--border-color": "#00000008",
+    "--border-left-width": "1px",
+    "--border-right-width": "1px",
+    "--border-style": "solid",
+    "--border-top-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-fa3je4",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "1px",
+    "--border-color": "#0000000a",
+    "--border-left-width": "0px",
+    "--border-right-width": "0px",
+    "--border-style": "solid",
+    "--border-top-width": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-84d8ew",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "1.5px",
+    "--border-color": "#e3e3fe0f",
+    "--border-left-width": "1.5px",
+    "--border-right-width": "1.5px",
+    "--border-style": "solid",
+    "--border-top-width": "1.5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1cfcomv",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "1px",
+    "--border-color": "#e3e3fe0f",
+    "--border-left-width": "0px",
+    "--border-right-width": "0px",
+    "--border-style": "solid",
+    "--border-top-width": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-55p9qu",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "0px",
+    "--border-color": "#e3e3fe0f",
+    "--border-left-width": "0px",
+    "--border-right-width": "0px",
+    "--border-style": "solid",
+    "--border-top-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-14qn7df",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "1.5px",
+    "--border-color": "#e3e3fe0f",
+    "--border-left-width": "1.5px",
+    "--border-right-width": "1.5px",
+    "--border-style": "solid",
+    "--border-top-width": "1.5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1ri8yg9",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "0px",
+    "--border-color": "#e3e3fe0f",
+    "--border-left-width": "1px",
+    "--border-right-width": "0px",
+    "--border-style": "solid",
+    "--border-top-width": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1c1cjor, .framer-OTUf0 .framer-1twktd6",
+   "context": [],
+   "properties": {
+    "--border-bottom-width": "1px",
+    "--border-color": "#00000008",
+    "--border-left-width": "1px",
+    "--border-right-width": "1px",
+    "--border-style": "solid",
+    "--border-top-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1dv24px",
+   "context": [
+    "@media (min-width: 810px) and (max-width: 1199.98px)"
+   ],
+   "properties": {
+    "--border-bottom-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-6g47oj",
+   "context": [
+    "@media (min-width: 810px) and (max-width: 1199.98px)"
+   ],
+   "properties": {
+    "--border-right-width": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1jrpgd3",
+   "context": [
+    "@media (min-width: 810px) and (max-width: 1199.98px)"
+   ],
+   "properties": {
+    "--border-bottom-width": "1px",
+    "--border-right-width": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1dv24px",
+   "context": [
+    "@media (max-width: 809.98px)"
+   ],
+   "properties": {
+    "--border-bottom-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-6g47oj",
+   "context": [
+    "@media (max-width: 809.98px)"
+   ],
+   "properties": {
+    "--border-right-width": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ".framer-OTUf0 .framer-1jrpgd3",
+   "context": [
+    "@media (max-width: 809.98px)"
+   ],
+   "properties": {
+    "--border-bottom-width": "1px",
+    "--border-right-width": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": "[data-framer-component-type=\"Text\"] div div span, [data-framer-component-type=\"Text\"] a div span, [data-framer-component-type=\"Text\"] span span span, [data-framer-component-type=\"T",
+   "context": [],
+   "properties": {
+    "--text-decoration": "var(--framer-text-decoration-style,solid)var(--framer-text-decoration,none)var(--framer-text-decoration-color,currentcolor)var(--framer-text-decoration-thickness,auto)",
+    "--text-decoration-skip-ink": "var(--framer-text-decoration-skip-ink)",
+    "--text-underline-offset": "var(--framer-text-decoration-offset)",
+    "--font-family": "var(--framer-font-family)",
+    "--font-style": "var(--framer-font-style)",
+    "--font-weight": "var(--framer-font-weight)",
+    "--text-color": "var(--framer-text-color)",
+    "--letter-spacing": "var(--framer-letter-spacing)",
+    "--font-size": "var(--framer-font-size)",
+    "--text-transform": "var(--framer-text-transform)",
+    "--line-height": "var(--framer-line-height)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": "[data-framer-component-type=\"Text\"] a, [data-framer-component-type=\"Text\"] a div span, [data-framer-component-type=\"Text\"] a span span span, [data-framer-component-type=\"Text\"] a p",
+   "context": [],
+   "properties": {
+    "--font-family": "var(--framer-link-font-family,var(--framer-font-family))",
+    "--font-style": "var(--framer-link-font-style,var(--framer-font-style))",
+    "--font-weight": "var(--framer-link-font-weight,var(--framer-font-weight))",
+    "--text-color": "var(--framer-link-text-color,var(--framer-text-color))",
+    "--font-size": "var(--framer-link-font-size,var(--framer-font-size))",
+    "--text-transform": "var(--framer-link-text-transform,var(--framer-text-transform))",
+    "--text-decoration": "var(--framer-link-text-decoration-style,var(--framer-text-decoration-style,solid))var(--framer-link-text-decoration,var(--framer-text-decoration,none))var(--framer-link-text-decoration-color,var(--framer-text-decoration-color,currentcolor))var(--framer-link-text-decoration-thickness,var(--framer-text-decoration-thickness,auto))",
+    "--text-decoration-skip-ink": "var(--framer-link-text-decoration-skip-ink,var(--framer-text-decoration-skip-ink))",
+    "--text-underline-offset": "var(--framer-link-text-decoration-offset,var(--framer-text-decoration-offset))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": "[data-framer-component-type=\"Text\"] a:hover, [data-framer-component-type=\"Text\"] a div span:hover, [data-framer-component-type=\"Text\"] a span span span:hover, [data-framer-componen",
+   "context": [],
+   "properties": {
+    "--font-family": "var(--framer-link-hover-font-family,var(--framer-link-font-family,var(--framer-font-family)))",
+    "--font-style": "var(--framer-link-hover-font-style,var(--framer-link-font-style,var(--framer-font-style)))",
+    "--font-weight": "var(--framer-link-hover-font-weight,var(--framer-link-font-weight,var(--framer-font-weight)))",
+    "--text-color": "var(--framer-link-hover-text-color,var(--framer-link-text-color,var(--framer-text-color)))",
+    "--font-size": "var(--framer-link-hover-font-size,var(--framer-link-font-size,var(--framer-font-size)))",
+    "--text-transform": "var(--framer-link-hover-text-transform,var(--framer-link-text-transform,var(--framer-text-transform)))",
+    "--text-decoration": "var(--framer-link-hover-text-decoration-style,var(--framer-link-text-decoration-style,var(--framer-text-decoration-style,solid)))var(--framer-link-hover-text-decoration,var(--framer-link-text-decoration,var(--framer-text-decoration,none)))var(--framer-link-hover-text-decoration-color,var(--framer-link-text-decoration-color,var(--framer-text-decoration-color,currentcolor)))var(--framer-link-hover-text-decoration-thickness,var(--framer-link-text-decoration-thickness,var(--framer-text-decoration-thickness,auto)))",
+    "--text-decoration-skip-ink": "var(--framer-link-hover-text-decoration-skip-ink,var(--framer-link-text-decoration-skip-ink,var(--framer-text-decoration-skip-ink)))",
+    "--text-underline-offset": "var(--framer-link-hover-text-decoration-offset,var(--framer-link-text-decoration-offset,var(--framer-text-decoration-offset)))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": "[data-framer-component-type=\"Text\"].isCurrent a, [data-framer-component-type=\"Text\"].isCurrent a div span, [data-framer-component-type=\"Text\"].isCurrent a span span span, [data-fra",
+   "context": [],
+   "properties": {
+    "--font-family": "var(--framer-link-current-font-family,var(--framer-link-font-family,var(--framer-font-family)))",
+    "--font-style": "var(--framer-link-current-font-style,var(--framer-link-font-style,var(--framer-font-style)))",
+    "--font-weight": "var(--framer-link-current-font-weight,var(--framer-link-font-weight,var(--framer-font-weight)))",
+    "--text-color": "var(--framer-link-current-text-color,var(--framer-link-text-color,var(--framer-text-color)))",
+    "--font-size": "var(--framer-link-current-font-size,var(--framer-link-font-size,var(--framer-font-size)))",
+    "--text-transform": "var(--framer-link-current-text-transform,var(--framer-link-text-transform,var(--framer-text-transform)))",
+    "--text-decoration": "var(--framer-link-current-text-decoration-style,var(--framer-link-text-decoration-style,var(--framer-text-decoration-style,solid)))var(--framer-link-current-text-decoration,var(--framer-link-text-decoration,var(--framer-text-decoration,none)))var(--framer-link-current-text-decoration-color,var(--framer-link-text-decoration-color,var(--framer-text-decoration-color,currentcolor)))var(--framer-link-current-text-decoration-thickness,var(--framer-link-text-decoration-thickness,var(--framer-text-decoration-thickness,auto)))",
+    "--text-decoration-skip-ink": "var(--framer-link-current-text-decoration-skip-ink,var(--framer-link-text-decoration-skip-ink,var(--framer-text-decoration-skip-ink)))",
+    "--text-underline-offset": "var(--framer-link-current-text-decoration-offset,var(--framer-link-text-decoration-offset,var(--framer-text-decoration-offset)))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": "ol.framer-text",
+   "context": [],
+   "properties": {
+    "--list-style-type": "decimal"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": "[data-framer-component-type=\"DeprecatedRichText\"] .text-styles-preset-reset",
+   "context": [],
+   "properties": {
+    "--framer-font-family": "Inter,Inter Placeholder,sans-serif",
+    "--framer-font-style": "normal",
+    "--framer-font-weight": "500",
+    "--framer-text-color": "#000",
+    "--framer-font-size": "16px",
+    "--framer-letter-spacing": "0",
+    "--framer-text-transform": "none",
+    "--framer-text-decoration": "none",
+    "--framer-line-height": "1.2em",
+    "--framer-text-alignment": "start",
+    "--framer-font-open-type-features": "normal",
+    "--font-variation-settings": "normal"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ":root",
+   "context": [
+    "@supports not (overflow:clip)"
+   ],
+   "properties": {
+    "--overflow-clip-fallback": "hidden"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/#inline-1",
+   "selector": ":root",
+   "context": [
+    "@supports (corner-shape:superellipse(2))"
+   ],
+   "properties": {
+    "--one-if-corner-shape-supported": "1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/pricing#inline-1",
+   "selector": "[data-framer-component-type=\"Text\"] div div span, [data-framer-component-type=\"Text\"] a div span, [data-framer-component-type=\"Text\"] span span span, [data-framer-component-type=\"T",
+   "context": [],
+   "properties": {
+    "--text-decoration": "var(--framer-text-decoration-style,solid)var(--framer-text-decoration,none)var(--framer-text-decoration-color,currentcolor)var(--framer-text-decoration-thickness,auto)",
+    "--text-decoration-skip-ink": "var(--framer-text-decoration-skip-ink)",
+    "--text-underline-offset": "var(--framer-text-decoration-offset)",
+    "--font-family": "var(--framer-font-family)",
+    "--font-style": "var(--framer-font-style)",
+    "--font-weight": "var(--framer-font-weight)",
+    "--text-color": "var(--framer-text-color)",
+    "--letter-spacing": "var(--framer-letter-spacing)",
+    "--font-size": "var(--framer-font-size)",
+    "--text-transform": "var(--framer-text-transform)",
+    "--line-height": "var(--framer-line-height)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/pricing#inline-1",
+   "selector": ":root",
+   "context": [
+    "@supports not (overflow:clip)"
+   ],
+   "properties": {
+    "--overflow-clip-fallback": "hidden"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/pricing#inline-1",
+   "selector": ":root",
+   "context": [
+    "@supports (corner-shape:superellipse(2))"
+   ],
+   "properties": {
+    "--one-if-corner-shape-supported": "1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/pricing#inline-1",
+   "selector": "[data-framer-component-type=\"Text\"] div div span, [data-framer-component-type=\"Text\"] a div span, [data-framer-component-type=\"Text\"] span span span, [data-framer-component-type=\"T",
+   "context": [],
+   "properties": {
+    "--text-decoration": "var(--framer-text-decoration-style,solid)var(--framer-text-decoration,none)var(--framer-text-decoration-color,currentcolor)var(--framer-text-decoration-thickness,auto)",
+    "--text-decoration-skip-ink": "var(--framer-text-decoration-skip-ink)",
+    "--text-underline-offset": "var(--framer-text-decoration-offset)",
+    "--font-family": "var(--framer-font-family)",
+    "--font-style": "var(--framer-font-style)",
+    "--font-weight": "var(--framer-font-weight)",
+    "--text-color": "var(--framer-text-color)",
+    "--letter-spacing": "var(--framer-letter-spacing)",
+    "--font-size": "var(--framer-font-size)",
+    "--text-transform": "var(--framer-text-transform)",
+    "--line-height": "var(--framer-line-height)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/pricing#inline-1",
+   "selector": "[data-framer-component-type=\"Text\"] a, [data-framer-component-type=\"Text\"] a div span, [data-framer-component-type=\"Text\"] a span span span, [data-framer-component-type=\"Text\"] a p",
+   "context": [],
+   "properties": {
+    "--font-family": "var(--framer-link-font-family,var(--framer-font-family))",
+    "--font-style": "var(--framer-link-font-style,var(--framer-font-style))",
+    "--font-weight": "var(--framer-link-font-weight,var(--framer-font-weight))",
+    "--text-color": "var(--framer-link-text-color,var(--framer-text-color))",
+    "--font-size": "var(--framer-link-font-size,var(--framer-font-size))",
+    "--text-transform": "var(--framer-link-text-transform,var(--framer-text-transform))",
+    "--text-decoration": "var(--framer-link-text-decoration-style,var(--framer-text-decoration-style,solid))var(--framer-link-text-decoration,var(--framer-text-decoration,none))var(--framer-link-text-decoration-color,var(--framer-text-decoration-color,currentcolor))var(--framer-link-text-decoration-thickness,var(--framer-text-decoration-thickness,auto))",
+    "--text-decoration-skip-ink": "var(--framer-link-text-decoration-skip-ink,var(--framer-text-decoration-skip-ink))",
+    "--text-underline-offset": "var(--framer-link-text-decoration-offset,var(--framer-text-decoration-offset))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/pricing#inline-1",
+   "selector": "[data-framer-component-type=\"Text\"] a:hover, [data-framer-component-type=\"Text\"] a div span:hover, [data-framer-component-type=\"Text\"] a span span span:hover, [data-framer-componen",
+   "context": [],
+   "properties": {
+    "--font-family": "var(--framer-link-hover-font-family,var(--framer-link-font-family,var(--framer-font-family)))",
+    "--font-style": "var(--framer-link-hover-font-style,var(--framer-link-font-style,var(--framer-font-style)))",
+    "--font-weight": "var(--framer-link-hover-font-weight,var(--framer-link-font-weight,var(--framer-font-weight)))",
+    "--text-color": "var(--framer-link-hover-text-color,var(--framer-link-text-color,var(--framer-text-color)))",
+    "--font-size": "var(--framer-link-hover-font-size,var(--framer-link-font-size,var(--framer-font-size)))",
+    "--text-transform": "var(--framer-link-hover-text-transform,var(--framer-link-text-transform,var(--framer-text-transform)))",
+    "--text-decoration": "var(--framer-link-hover-text-decoration-style,var(--framer-link-text-decoration-style,var(--framer-text-decoration-style,solid)))var(--framer-link-hover-text-decoration,var(--framer-link-text-decoration,var(--framer-text-decoration,none)))var(--framer-link-hover-text-decoration-color,var(--framer-link-text-decoration-color,var(--framer-text-decoration-color,currentcolor)))var(--framer-link-hover-text-decoration-thickness,var(--framer-link-text-decoration-thickness,var(--framer-text-decoration-thickness,auto)))",
+    "--text-decoration-skip-ink": "var(--framer-link-hover-text-decoration-skip-ink,var(--framer-link-text-decoration-skip-ink,var(--framer-text-decoration-skip-ink)))",
+    "--text-underline-offset": "var(--framer-link-hover-text-decoration-offset,var(--framer-link-text-decoration-offset,var(--framer-text-decoration-offset)))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/pricing#inline-1",
+   "selector": "[data-framer-component-type=\"Text\"].isCurrent a, [data-framer-component-type=\"Text\"].isCurrent a div span, [data-framer-component-type=\"Text\"].isCurrent a span span span, [data-fra",
+   "context": [],
+   "properties": {
+    "--font-family": "var(--framer-link-current-font-family,var(--framer-link-font-family,var(--framer-font-family)))",
+    "--font-style": "var(--framer-link-current-font-style,var(--framer-link-font-style,var(--framer-font-style)))",
+    "--font-weight": "var(--framer-link-current-font-weight,var(--framer-link-font-weight,var(--framer-font-weight)))",
+    "--text-color": "var(--framer-link-current-text-color,var(--framer-link-text-color,var(--framer-text-color)))",
+    "--font-size": "var(--framer-link-current-font-size,var(--framer-link-font-size,var(--framer-font-size)))",
+    "--text-transform": "var(--framer-link-current-text-transform,var(--framer-link-text-transform,var(--framer-text-transform)))",
+    "--text-decoration": "var(--framer-link-current-text-decoration-style,var(--framer-link-text-decoration-style,var(--framer-text-decoration-style,solid)))var(--framer-link-current-text-decoration,var(--framer-link-text-decoration,var(--framer-text-decoration,none)))var(--framer-link-current-text-decoration-color,var(--framer-link-text-decoration-color,var(--framer-text-decoration-color,currentcolor)))var(--framer-link-current-text-decoration-thickness,var(--framer-link-text-decoration-thickness,var(--framer-text-decoration-thickness,auto)))",
+    "--text-decoration-skip-ink": "var(--framer-link-current-text-decoration-skip-ink,var(--framer-link-text-decoration-skip-ink,var(--framer-text-decoration-skip-ink)))",
+    "--text-underline-offset": "var(--framer-link-current-text-decoration-offset,var(--framer-link-text-decoration-offset,var(--framer-text-decoration-offset)))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/pricing#inline-1",
+   "selector": "ol.framer-text",
+   "context": [],
+   "properties": {
+    "--list-style-type": "decimal"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/pricing#inline-1",
+   "selector": "[data-framer-component-type=\"DeprecatedRichText\"] .text-styles-preset-reset",
+   "context": [],
+   "properties": {
+    "--framer-font-family": "Inter,Inter Placeholder,sans-serif",
+    "--framer-font-style": "normal",
+    "--framer-font-weight": "500",
+    "--framer-text-color": "#000",
+    "--framer-font-size": "16px",
+    "--framer-letter-spacing": "0",
+    "--framer-text-transform": "none",
+    "--framer-text-decoration": "none",
+    "--framer-line-height": "1.2em",
+    "--framer-text-alignment": "start",
+    "--framer-font-open-type-features": "normal",
+    "--font-variation-settings": "normal"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/pricing#inline-1",
+   "selector": ":root",
+   "context": [
+    "@supports not (overflow:clip)"
+   ],
+   "properties": {
+    "--overflow-clip-fallback": "hidden"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/pricing#inline-1",
+   "selector": ":root",
+   "context": [
+    "@supports (corner-shape:superellipse(2))"
+   ],
+   "properties": {
+    "--one-if-corner-shape-supported": "1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.lemni.com/docs#inline-1",
+   "selector": "[data-framer-component-type=\"Text\"] div div span, [data-framer-component-type=\"Text\"] a div span, [data-framer-component-type=\"Text\"] span span span, [data-framer-component-type=\"T",
+   "context": [],
+   "properties": {
+    "--text-decoration": "var(--framer-text-decoration-style,solid)var(--framer-text-decoration,none)var(--framer-text-decoration-color,currentcolor)var(--framer-text-decoration-thickness,auto)",
+    "--text-decoration-skip-ink": "var(--framer-text-decoration-skip-ink)",
+    "--text-underline-offset": "var(--framer-text-decoration-offset)",
+    "--font-family": "var(--framer-font-family)",
+    "--font-style": "var(--framer-font-style)",
+    "--font-weight": "var(--framer-font-weight)",
+    "--text-color": "var(--framer-text-color)",
+    "--letter-spacing": "var(--framer-letter-spacing)",
+    "--font-size": "var(--framer-font-size)",
+    "--text-transform": "var(--framer-text-transform)",
+    "--line-height": "var(--framer-line-height)"
+   },
+   "bin": "app"
+  }
+ ],
+ "framerNames": [
+  "--framer-aspect-ratio-supported",
+  "--framer-font-family",
+  "--framer-font-family-bold",
+  "--framer-font-family-bold-italic",
+  "--framer-font-family-italic",
+  "--framer-font-open-type-features",
+  "--framer-font-size",
+  "--framer-font-style",
+  "--framer-font-style-bold",
+  "--framer-font-style-bold-italic",
+  "--framer-font-style-italic",
+  "--framer-font-variation-axes",
+  "--framer-font-weight",
+  "--framer-font-weight-bold",
+  "--framer-font-weight-bold-italic",
+  "--framer-font-weight-italic",
+  "--framer-letter-spacing",
+  "--framer-line-height",
+  "--framer-link-current-text-color",
+  "--framer-link-current-text-decoration",
+  "--framer-link-hover-text-color",
+  "--framer-link-hover-text-decoration",
+  "--framer-link-text-color",
+  "--framer-link-text-decoration",
+  "--framer-paragraph-spacing",
+  "--framer-text-alignment",
+  "--framer-text-background-color",
+  "--framer-text-background-corner-shape",
+  "--framer-text-background-padding",
+  "--framer-text-background-radius",
+  "--framer-text-color",
+  "--framer-text-decoration",
+  "--framer-text-decoration-color",
+  "--framer-text-decoration-offset",
+  "--framer-text-decoration-skip-ink",
+  "--framer-text-decoration-style",
+  "--framer-text-decoration-thickness",
+  "--framer-text-stroke-color",
+  "--framer-text-stroke-width",
+  "--framer-text-transform",
+  "--framer-text-wrap",
+  "--framer-text-wrap-override",
+  "--framer-will-change-filter-override",
+  "--framer-will-change-override"
+ ],
+ "fonts": [
+  {
+   "family": "\"Roboto Mono\"",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://fonts.googleapis.com/css2"
+  },
+  {
+   "family": "\"Roboto Mono\"",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://fonts.googleapis.com/css2"
+  },
+  {
+   "family": "\"Roboto Mono\"",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://fonts.googleapis.com/css2"
+  },
+  {
+   "family": "\"Roboto Mono\"",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://fonts.googleapis.com/css2"
+  },
+  {
+   "family": "\"Roboto Mono\"",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://fonts.googleapis.com/css2"
+  },
+  {
+   "family": "\"Roboto Mono\"",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://fonts.googleapis.com/css2"
+  },
+  {
+   "family": "\"Roboto Mono\"",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "\"Roboto Mono\"",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "\"Roboto Mono\"",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "\"Roboto Mono\"",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "\"Roboto Mono\"",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "\"Roboto Mono\"",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "\"TWK Lausanne 300\"",
+   "weight": "300",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "\"TWK Lausanne 500\"",
+   "weight": "500",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "\"TWK Lausanne 400\"",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "\"TWK Lausanne 400\"",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "\"TWK Lausanne 500\"",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "\"TWK Lausanne 300\"",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "\"TWK Lausanne 400 Italic\"",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "\"TWK Lausanne 250\"",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "\"TWK Lausanne 300 Italic\"",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "\"TWK Lausanne 600\"",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "Inter",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "Inter",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "Inter",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "Inter",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "Inter",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "Inter",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "Inter",
+   "weight": "400",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "Inter",
+   "weight": "500",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "Inter",
+   "weight": "500",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "Inter",
+   "weight": "500",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "Inter",
+   "weight": "500",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "Inter",
+   "weight": "500",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "Inter",
+   "weight": "500",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "Inter",
+   "weight": "500",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "Inter",
+   "weight": "700",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "Inter",
+   "weight": "700",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "Inter",
+   "weight": "700",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  },
+  {
+   "family": "Inter",
+   "weight": "700",
+   "style": "normal",
+   "file": "https://www.lemni.com/#inline-0"
+  }
+ ],
+ "resolved": {
+  "light": {
+   "--one-if-corner-shape-supported": {
+    "raw": "1",
+    "kind": "other"
+   }
+  }
+ }
+}

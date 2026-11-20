@@ -1,0 +1,171 @@
+{
+  "_note": "Rules for systems/fingerprint. Public signed-out capture of fingerprint.com, docs.fingerprint.com and the dashboard auth shell. The site's live IdentifySection demos paint the capture machine's own visitor ID, IP address and geolocation (a real map tile) into the page; those values are machine-private, so the live-signal regions are painted out. Fingerprint's own published addresses are allow-listed.",
+  "families": [
+    {
+      "name": "home live signal panel",
+      "files": [
+        "screenshots/home-light-default.png",
+        "screenshots/home-light-menu-*.png",
+        "screenshots/home-light-full.png"
+      ],
+      "rects": [
+        [
+          315,
+          498,
+          1136,
+          814
+        ]
+      ]
+    },
+    {
+      "name": "mobile home live signal panel (default, dpr2)",
+      "files": [
+        "screenshots/mobile-home-light-default.png"
+      ],
+      "rects": [
+        [
+          40,
+          1200,
+          745,
+          1688
+        ]
+      ]
+    },
+    {
+      "name": "mobile home live signal panel (full)",
+      "files": [
+        "screenshots/mobile-home-light-full.png"
+      ],
+      "rects": [
+        [
+          15,
+          530,
+          375,
+          880
+        ]
+      ]
+    },
+    {
+      "name": "demo visitor id, ip and footer strip (default)",
+      "files": [
+        "screenshots/demo-light-default.png"
+      ],
+      "rects": [
+        [
+          585,
+          493,
+          858,
+          517
+        ],
+        [
+          672,
+          680,
+          790,
+          712
+        ],
+        [
+          318,
+          793,
+          495,
+          814
+        ]
+      ]
+    },
+    {
+      "name": "demo visitor id, ip and footer strip (full)",
+      "files": [
+        "screenshots/demo-light-full.png"
+      ],
+      "rects": [
+        [
+          585,
+          493,
+          858,
+          517
+        ],
+        [
+          620,
+          682,
+          745,
+          715
+        ],
+        [
+          318,
+          793,
+          495,
+          814
+        ]
+      ]
+    },
+    {
+      "name": "mobile demo visitor id and ip (default, dpr2)",
+      "files": [
+        "screenshots/mobile-demo-light-default.png"
+      ],
+      "rects": [
+        [
+          85,
+          985,
+          625,
+          1052
+        ],
+        [
+          105,
+          1625,
+          285,
+          1668
+        ]
+      ]
+    },
+    {
+      "name": "mobile demo visitor id and ip (full)",
+      "files": [
+        "screenshots/mobile-demo-light-full.png"
+      ],
+      "rects": [
+        [
+          42,
+          474,
+          305,
+          515
+        ],
+        [
+          48,
+          816,
+          150,
+          845
+        ]
+      ]
+    },
+    {
+      "name": "identification live JSON sample values",
+      "files": [
+        "screenshots/identification-light-full.png"
+      ],
+      "rects": [
+        [
+          318,
+          2186,
+          715,
+          2212
+        ],
+        [
+          318,
+          2312,
+          640,
+          2342
+        ]
+      ]
+    }
+  ],
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@fingerprint\\.com$",
+      "@example\\.com$",
+      "^name@email\\.com$",
+      "@company\\.com$"
+    ],
+    "net": true
+  }
+}

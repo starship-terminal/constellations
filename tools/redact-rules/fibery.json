@@ -1,0 +1,12 @@
+{
+ "_note": "Rules for systems/fibery. A fully public signed-out capture: every route is public marketing content (customer stories name published case-study companies); the sign-up and login forms were typed into then cleared and never submitted, and the OAuth POST forms were never pressed, so no PII or credentials are reachable. The login page's CSRF fields were never sent. No regions need masking.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@fibery\\.com$",
+   "@fibery\\.io$",
+   "@example\\.com$"
+  ]
+ },
+ "families": []
+}

@@ -119,11 +119,65 @@ def _is_loopback(host: str) -> bool:
         return False
 
 
+# The model APIs a provider URL may name without configuration; each entry
+# also covers its subdomains. web/lib/chat/chat.ts holds the same list.
+KNOWN_PROVIDER_HOSTS = (
+    "anthropic.com", "openai.com", "openai.azure.com", "generativelanguage.googleapis.com",
+    "x.ai", "openrouter.ai", "groq.com", "mistral.ai", "deepseek.com", "together.xyz",
+    "fireworks.ai", "cohere.com", "cohere.ai", "perplexity.ai", "cerebras.ai",
+)
+PROVIDER_HOSTS_ENV = "DESIGN_SYSTEMS_PROVIDER_HOSTS"
+
+
+def _is_ip(host: str) -> bool:
+    try:
+        ipaddress.ip_address(host)
+        return True
+    except ValueError:
+        return False
+
+
+def _norm_host(host: str) -> str:
+    """Lowercase, no brackets or root dot, and an IP address in its canonical
+    form, so a listed 0:0:0:0:0:0:0:1 matches a request for [::1]."""
+    host = host.strip().lower().strip("[]").rstrip(".")
+    try:
+        return str(ipaddress.ip_address(host))
+    except ValueError:
+        return host
+
+
+def _listed_hosts() -> list[str]:
+    """DESIGN_SYSTEMS_PROVIDER_HOSTS: comma-separated host names (each also
+    covering its subdomains) or exact IP addresses, from the environment or
+    the repo .env."""
+    _env.load_env((PROVIDER_HOSTS_ENV,))
+    return [_norm_host(h) for h in (os.environ.get(PROVIDER_HOSTS_ENV) or "").split(",") if h.strip()]
+
+
+def provider_host_allowed(host: str) -> bool:
+    """Whether a provider URL may name `host`. The URL comes from the request
+    body and the server fetches it with the key attached, so without a list
+    any client that reaches /api/ (the Origin guard stops browsers only)
+    could make this machine GET an internal https service or a loopback port
+    and read the status back. Loopback names and IP literals pass only when
+    listed exactly, which is how a self-hosted model on this machine is opted
+    in (DESIGN_SYSTEMS_PROVIDER_HOSTS=localhost)."""
+    host = _norm_host(host)
+    listed = _listed_hosts()
+    if host in listed:
+        return True
+    if _is_loopback(host) or _is_ip(host):
+        return False
+    return any(host == h or host.endswith("." + h) for h in (*KNOWN_PROVIDER_HOSTS, *listed)
+               if not _is_ip(h))
+
+
 def check_url(url: str) -> None:
-    """Only https anywhere, or plain http to this machine (a self-hosted model).
-    Anything else (file:, ftp:, http to another host) is refused before a
-    socket opens, so the endpoint cannot be used to read local files or reach
-    internal plain-http services."""
+    """https to an allowed provider host, or plain http to a listed loopback
+    host (a self-hosted model). Anything else (file:, ftp:, http to another
+    host, an unlisted host) is refused before a socket opens, so the endpoint
+    cannot be used to read local files or reach internal services."""
     try:
         u = urlparse(url)
         host = u.hostname or ""
@@ -131,9 +185,10 @@ def check_url(url: str) -> None:
         raise ProviderError("invalid provider URL")
     if not host:
         raise ProviderError("invalid provider URL")
-    if u.scheme == "https" or (u.scheme == "http" and _is_loopback(host)):
-        return
-    raise ProviderError("provider URL must be https (http only for localhost)")
+    if u.scheme not in ("https", "http") or (u.scheme == "http" and not _is_loopback(host)):
+        raise ProviderError("provider URL must be https (http only for localhost)")
+    if not provider_host_allowed(host):
+        raise ProviderError(f"provider host {host} is not allowed; add it to {PROVIDER_HOSTS_ENV}")
 
 
 def _same_origin(a: str, b: str) -> bool:

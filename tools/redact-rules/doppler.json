@@ -1,0 +1,13 @@
+{
+  "_note": "Rules for systems/doppler. A fully public signed-out capture: no owner data on any surface. The demo form's First-name input and the integrations search were focused and sample-filled then deleted; nothing was submitted and no account exists. All names, prices and copy in the screenshots are Doppler's published public-page content. The OCR email net is kept with example.com allowed. info@doppler.com and the @dopplerhq/@dopplersecrets handles are Doppler's published contact details, not owner data; the doppler-domain allow covers their OCR reads.",
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@example\\.com$",
+      "@example\\.org$",
+      "@dopplerhg\\.com$",
+      "@doppler\\.com$"
+    ]
+  },
+  "families": []
+}

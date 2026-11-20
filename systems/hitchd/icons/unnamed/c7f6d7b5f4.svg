@@ -1,0 +1,13 @@
+<svg _ngcontent-c12="" class="back-hang" fill="none" height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
+            <mask _ngcontent-c12="" height="24" id="mask0_481_3079" maskUnits="userSpaceOnUse" style="mask-type:luminance" width="24" x="4" y="4">
+            <path _ngcontent-c12="" d="M28 4H4V28H28V4Z" fill="white"></path>
+            </mask>
+            <g _ngcontent-c12="" mask="url(#mask0_481_3079)">
+            <mask _ngcontent-c12="" height="24" id="mask1_481_3079" maskUnits="userSpaceOnUse" style="mask-type:luminance" width="24" x="4" y="4">
+            <path _ngcontent-c12="" d="M28 4H4V28H28V4Z" fill="white"></path>
+            </mask>
+            <g _ngcontent-c12="" mask="url(#mask1_481_3079)">
+            <path _ngcontent-c12="" d="M19 23.5L11.5 16L19 8.5" stroke="#3C3D3D" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+            </g>
+            </g>
+            </svg>

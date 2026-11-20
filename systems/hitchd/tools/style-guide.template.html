@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hitchd style guide</title>
+<meta name="description" content="Hitchd design tokens and the signed-out public surfaces' components, rendered from tokens.json with measured values.">
+<style>
+/* The faces load from this package's own gitignored fonts/ folder when a
+   local copy exists, never from hitchd.com: opening the guide must send no
+   request to the captured company, and DDNR is proprietary (docs/RIGHTS.md).
+   Without the files the stacks fall back to the named generics. */
+@font-face { font-display: swap; font-family: "Inter Variable"; font-style: normal; font-weight: 100 900; src: url(fonts/InterVariable.woff2) format("woff2"); }
+@font-face { font-display: swap; font-family: "DDNR"; font-style: normal; font-weight: 100 900; src: url(fonts/DDNR.woff2) format("woff2"); }
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: var(--font-family-text), ui-sans-serif, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --sg-serif: var(--font-family-display), Georgia, "Times New Roman", serif;
+  --sg-registry: var(--font-family-registry), var(--sg-serif);
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+/* hitchd.com paints one theme — there is no dark variant or theme control on
+   any surveyed surface, so the guide's body carries no theme scope at all. */
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-text-ink, #111212); background: var(--color-surface-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 600 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-text-muted, #575a5d); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-border-field, #d2d2d7); }
+.lead { max-width: 62ch; color: var(--color-text-muted, #575a5d); }
+.note { font-size: 13px; color: var(--color-text-muted, #888); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 600 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-text-muted, #888); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-border-field, #d2d2d7); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-text-muted, #888); }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-border-field, #d2d2d7); background: var(--color-surface-cream, #f6f3ef); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-text-muted, #888); }
+/* ---- mocks, drawn from the measured tokens ---- */
+.mock { border: 1px solid var(--color-border-field, #d2d2d7); overflow: hidden; background: var(--color-surface-page, #fff); border-radius: var(--radius-card, 8px); }
+.strip { display: flex; align-items: center; justify-content: center; min-height: var(--component-announcement-height, 48px); padding: 8px 24px; font-size: 14px; color: var(--color-text-ink, #111212); background: var(--color-surface-cream, #f6f3ef); text-align: center; }
+.hdr { display: flex; align-items: center; justify-content: space-between; height: var(--component-closure-header-height, 96px); padding: 0 32px; color: var(--color-text-inverse, #fff); background: #232323; }
+.hdr .wm { font-weight: 700; font-size: 22px; letter-spacing: -0.02em; }
+.hdr .login { font-size: var(--font-size-nav-link, 16px); }
+.hero { color: var(--color-text-inverse, #fff); padding: 88px 40px; font: var(--font-weight-display, 100) var(--font-size-display-hero, 56px)/var(--font-height-display-hero, 1.05) var(--sg-serif); text-align: center; background: #2a2a28; }
+.hero small { display: block; font: 400 var(--font-size-lead, 21px)/1.4 var(--sg-sans); color: var(--color-text-lead, #fff); margin: 20px auto 0; max-width: 46ch; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 48px); padding: 0 24px; font-size: 16px; font-weight: var(--font-weight-button, 500); border-radius: var(--radius-pill, 50px); border: 1px solid transparent; }
+.btn.primary { background: var(--color-action-ctaFill, #111212); color: var(--color-action-ctaInk, #fff); }
+.btn.disabled { background: var(--color-action-disabledFill, #cdcfd0); color: var(--color-action-disabledInk, #fff); }
+.btn.give { background: var(--color-action-giveFill, #c5c8ca); color: var(--color-action-giveInk, #fff); border-radius: var(--radius-give, 100px); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-border-field, #e5e5e5); border-radius: var(--radius-card, 8px); padding: var(--spacing-card-pad, 0); overflow: hidden; font-size: 13px; background: var(--color-surface-card, #fff); }
+.tile .img { height: 140px; background: var(--color-surface-cream, #f6f3ef); display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--color-text-muted, #888); }
+.tile .pad { padding: 14px; }
+.tile b { display: block; font: 600 var(--font-size-h3, 16px)/1.3 var(--sg-serif); margin-bottom: 4px; color: var(--color-text-ink, #111212); }
+.tile .loc { color: var(--color-text-muted, #575a5d); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-border-field, #d2d2d7); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid #eee; }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-text-muted, #888); font-family: var(--sg-mono); }
+.field { display: block; width: var(--component-field-width, 280px); height: var(--component-field-height, 48px); padding: 0 var(--spacing-field-x, 14px); border: 1px solid var(--color-border-field, #d2d2d7); border-radius: var(--radius-field, 8px); background: var(--color-surface-page, #fff); font-size: 16px; color: var(--color-text-ink, #111212); }
+.banner { display: flex; align-items: center; justify-content: center; gap: 16px; min-height: var(--component-registry-banner-height, 56px); padding: 8px 24px; font-size: 15px; color: var(--color-text-ink, #111212); background: var(--color-surface-cream, #f6f3ef); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Hitchd style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Hitchd, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>. hitchd.com declares almost no custom properties of its own (~10 radio-control flags in the guest registry app), so the token layer is measured: computed styles and bounding boxes read on real elements of the signed-out public pages, each leaf naming its measurement. The voice is a hairline display serif (DDNR) over Inter Variable on warm paper; the guest registry app sets its own scale. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from www.hitchd.com, signed out, in headless Chromium. Hitchd announced it is closing on 31 December 2026 — the home page is now a single-viewport closure notice, and the old marketing routes redirect to it. Auth surfaces (/login, /signup, /forgot-password) were read at rest and never submitted; the gift modal's Give flow and every contribution/payment step are documented boundaries, never entered.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">Marketing pages open under the cream closure strip ("Hitchd is closing on 31 December 2026") and the 96px header — the wordmark left, Log In right — over the full-bleed hero: the hairline "Tie the knot, without tangles." The registry's sample banner asks guests to Try It Free.</p>
+  <div class="mock" style="padding:0">
+    <div class="strip">Hitchd is closing on 31 December 2026. We're no longer accepting new customers.</div>
+    <div class="hdr"><span class="wm">hitchd</span><span class="login">Log In</span></div>
+    <div class="hero">Tie the knot,<br>without tangles.<small>The honeymoon registry couples actually enjoy using.</small></div>
+    <div class="banner"><span>Fund your dream honeymoon guilt-free.</span><span class="btn primary" style="height:36px;font-size:14px;border-radius:var(--radius-cta,100px)">Try It Free</span></div>
+  </div>
+
+  <h2 class="sh">Auth boundary and the registry</h2>
+  <p class="lead">The couple app's auth surfaces are a quiet centred card: labelled 48px fields on 8px corners, a disabled Continue pill until the form is valid, an OAuth divider and the sign-up link. The demo registry grids gift tiles under a Sort by select; a tile opens the gift modal — shown here at rest with its disabled Give, the step nobody may enter signed-out.</p>
+  <div class="mock" style="padding:20px;max-width:560px">
+    <input class="field" placeholder="Email" style="margin-bottom:10px">
+    <input class="field" placeholder="Password" style="margin-bottom:14px">
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="btn disabled">Continue</span><span class="btn give">Give</span></div>
+    <div class="grid" style="margin-top:16px">
+      <div class="tile"><div class="img">photo</div><div class="pad"><b>Accommodation at Halcyon House</b><span class="loc">Halcyon House, Byron Bay</span></div></div>
+      <div class="tile"><div class="img">photo</div><div class="pad"><b>Seafood Feast</b><span class="loc">Byron Bay</span></div></div>
+      <div class="tile"><div class="img">photo</div><div class="pad"><b>Road Trip</b><span class="loc">Australia</span></div></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">Hitchd's measured palette is restrained: a near-black ink on white and warm cream, white type over photography, the grey of the disabled submit and field borders, and whatever the registry's cover art carries. Measured role values alias the palette entries they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">Paddings, radii (8px fields, the 50px pill, the card corner) and the transitions measured on real elements; <code>motion.*</code> comes from the prefers-reduced-motion probe.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two voices: the DDNR hairline serif at display sizes (88px hero) and Inter Variable for everything functional — 21px leads, 16px UI, 14px helper. The guest registry sets its couple names in its own <code>classic</code> display face (96px on the demo registry) — one of ~20 registry faces couples pick from. The DDNR and Inter Variable woff2 files are linked from hitchd.com, not vendored.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Component-scoped vars</h2>
+  <p class="lead">The few custom properties the apps do declare (the registry's <code>.col-sel</code> radio display flags) plus measured component geometry.</p>
+  <div id="compvars-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Computed styles and bounding boxes read on the live elements, since the site declares almost no custom properties</td></tr><tr><td>No states</td><td>The registry filter's opened and filtered states, the gift modal and the phone drawer measured; auth states documented as boundaries</td></tr><tr><td>No provenance</td><td>Every token names the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+// composite token values (border/transition/animation objects) render as
+// their shorthand, never "[object Object]"
+const fmtVal = (v) => {
+  if (v == null || typeof v !== 'object') return String(v);
+  if (Array.isArray(v)) return v.join(', ');
+  if (v.width && v.style && v.color) return `${v.width} ${v.style} ${v.color}`;
+  if (v.name) return [v.name, v.duration, v.timingFunction, v.delay, v.iterationCount, v.direction, v.fillMode].filter(Boolean).join(' ');
+  if (v.duration) return [v.duration, v.timingFunction, v.delay].filter(Boolean).join(' ');
+  return JSON.stringify(v);
+};
+
+(function palette() {
+  let h = '';
+  // hitchd.com paints one theme: the light set holds the measured roles,
+  // core.palette the measured values they alias.
+  for (const [setname, label] of [['core', 'core.palette — the measured colours'], ['light', 'light — the measured roles (alias the palette they match)']]) {
+    for (const [g, grp] of Object.entries(TOK[setname] || {})) {
+      const items = (grp && grp.t ? [[setname + '.' + g, grp]] : flat(grp, setname + '.' + g + '.')).filter(([, t]) => t.t === 'color');
+      if (!items.length) continue;
+      h += `<div class="pal-h">${esc(setname)}.${esc(g)}</div><div class="pal">`;
+      for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n.replace(setname + '.', ''))})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+      h += '</div>';
+    }
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.size || {}, 'size.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(fmtVal(t.v))}</span></div>`;
+  for (const [n, t] of flat(TOK.core.zIndex || {}, 'zIndex.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.grid || {}, 'grid.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).transition || {}, 'motion.transition.')) m += `<div><b>${esc(n)}</b> <span>${esc(fmtVal(t.v))}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).animation || {}, 'motion.animation.')) m += `<div><b>${esc(n)}</b> <span>${esc(fmtVal(t.v))}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat((TOK.light || {}).shadow || {}, 'shadow.')) {
+    e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : String(t.v).slice(0, 140))}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core || {}).shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : String(t.v).slice(0, 140))}</span></div>`;
+  for (const [n, t] of flat((TOK.core || {}).elevation || {}, 'elevation.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function compvars() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.componentVars || {}, 'componentVars.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 80))}</span></div>`;
+  $('#compvars-out').innerHTML = m || '<div><b>none</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}), 'motion.')) {
+    if (n.startsWith('motion.easing.') || n.startsWith('motion.duration.') || n.startsWith('motion.transition.') || n.startsWith('motion.animation.')) continue;
+    m += `<div><b>${esc(n)}</b> <span>${esc(fmtVal(t.v).slice(0, 90))}…</span></div>`;
+  }
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.type || {}), 'type.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(String(t.v).slice(0, 60))}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).height || {}, 'font.height.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Hitchd</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

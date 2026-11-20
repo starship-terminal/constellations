@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rork style guide</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --page: #171717;
+    --card: #262626;
+    --raised: #171717cc;
+    --wash: #ffffff0a;
+    --text: #ffffff;
+    --muted: #a6a6a6;
+    --secondary: #ffffff80;
+    --inverse: #000000;
+    --action: #ffffff;
+    --action-hover: #ffffffe6;
+    --max-start: #e17100;
+    --max-end: #ca3500;
+    --gold-start: #ffd230;
+    --gold-end: #ff6900;
+    --border: #ffffff1a;
+    --focus: #d6d6d6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font: 400 16px/24px -apple-system, system-ui, "SF Pro Text", sans-serif;
+  }
+  main { max-width: 980px; margin: 0 auto; padding: 40px 24px 80px; }
+  h1 { font: 600 36px/40px -apple-system, system-ui, sans-serif; letter-spacing: -0.9px; margin: 0 0 8px; }
+  h2 { font: 600 20px/28px -apple-system, system-ui, sans-serif; margin: 40px 0 12px; }
+  p { color: var(--muted); max-width: 68ch; }
+  .swatches, .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 148px; }
+  .chip { height: 64px; border-radius: 12px; border: 1px solid var(--border); }
+  .label { font-size: 12px; line-height: 16px; margin-top: 6px; color: var(--muted); }
+  .label b { color: var(--text); font-weight: 500; }
+  button.primary, button.plan {
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 12px;
+    border: 1px solid #ffffff14;
+    background: var(--action);
+    color: var(--inverse);
+    font: 500 14px/20px -apple-system, system-ui, sans-serif;
+  }
+  button.pill {
+    height: 36px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 9999px;
+    background: var(--action);
+    color: var(--inverse);
+    font: 500 14px/20px -apple-system, system-ui, sans-serif;
+  }
+  .composer {
+    width: 100%;
+    max-width: 768px;
+    height: 112px;
+    border-radius: 28px;
+    background: var(--card);
+    color: var(--muted);
+    padding: 20px 16px;
+  }
+  .max {
+    width: 220px;
+    height: 120px;
+    border-radius: 16px;
+    background: linear-gradient(to right, var(--max-start), var(--max-end));
+    padding: 20px;
+    font: 700 20px/24px -apple-system, system-ui, sans-serif;
+  }
+  .gold {
+    font-weight: 600;
+    background: linear-gradient(to right, var(--gold-start), var(--gold-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .field {
+    width: 320px;
+    height: 40px;
+    border-radius: 12px;
+    border: 1px solid #ffffff14;
+    background: #ffffff08;
+    color: var(--text);
+    padding: 4px 12px;
+    font: 400 14px/20px -apple-system, system-ui, sans-serif;
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Rork</h1>
+  <p>Public signed-out surfaces of rork.com, measured 19 November 2026. The site paints one dark theme. Britti Sans is named in the stack and was not loaded here, so this page uses the system face that painted.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#171717"></div><div class="label"><b>page</b><br>#171717</div></div>
+    <div class="swatch"><div class="chip" style="background:#262626"></div><div class="label"><b>card</b><br>#262626</div></div>
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label"><b>action</b><br>#ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#a6a6a6"></div><div class="label"><b>muted</b><br>#a6a6a6</div></div>
+    <div class="swatch"><div class="chip" style="background:linear-gradient(to right,#e17100,#ca3500)"></div><div class="label"><b>max</b><br>#e17100 to #ca3500</div></div>
+    <div class="swatch"><div class="chip" style="background:linear-gradient(to right,#ffd230,#ff6900)"></div><div class="label"><b>gold</b><br>#ffd230 to #ff6900</div></div>
+  </div>
+
+  <h2>Type</h2>
+  <p style="color:#fff;font:600 36px/40px -apple-system,system-ui,sans-serif;letter-spacing:-0.9px">Choose your Rork.</p>
+  <p style="color:#a6a6a6;font:400 14px/20px -apple-system,system-ui,sans-serif">From first prototype to App Store launch.</p>
+  <p class="gold">App</p>
+
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="pill">Sign in</button>
+    <button class="primary">Continue</button>
+    <button class="plan">Get Started</button>
+  </div>
+  <p></p>
+  <input class="field" placeholder="Email address" aria-label="Email address">
+  <p></p>
+  <div class="composer">An app that...</div>
+  <p></p>
+  <div class="max">Rork Max</div>
+</main>
+</body>
+</html>

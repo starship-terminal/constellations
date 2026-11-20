@@ -1,0 +1,22 @@
+{
+  "capturedAt": "2026-11-19",
+  "requestedViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "devicePixelRatio": 2,
+  "measured": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "status": 200,
+  "title": "Teachable \u2014 Build & Sell Online Courses, Coaching, Memberships & More",
+  "note": "Headless Playwright of a public marketing page. The T3 preview browser returned 'The browser is not producing screenshot frames', so these PNGs were not taken in that pane. Quantized to 256-colour sRGB. Login chrome was measured in the preview browser and was not screenshotted.",
+  "scrollHeight": 17161
+}

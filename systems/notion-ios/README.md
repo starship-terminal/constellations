@@ -2,7 +2,7 @@
 
 A token set and component reference for Notion's iPhone app: the sidebar tree, Notion AI chat, search, pages, databases, sheets and Settings. Use it to build a native iOS notes, docs or workspace app (SwiftUI) that borrows its proportions and structure: two warm greys (a navigation grey and a content canvas), top tabs instead of a tab bar, floating iOS 26 glass at the bottom, text-first rows with no cards in the main lists, grouped cards only inside sheets, and one blue accent. It was captured from the shipped app on iOS 26 through iPhone Mirroring, signed in to the owner's account: dark on 2026-10-23 with the app on Use system setting and the phone in dark mode, light on 2026-10-24 with the app's Settings > Preferences > Theme set to Light and put back to Use system setting afterwards. The device screen is 390 x 844 pt; the captures are 812 x 1780 px at 2 px per pt, with the screen at (16, 76) inside each PNG.
 
-It holds 46 captures: 29 in dark (home, the four tabs, search, Notion AI, a page, a database, sheets, menus and Settings) and 17 of the same screens in light. Under the repository's rule (AGENTS.md) nothing in them is masked: they show the owner's pages, chats and coworkers' names, and no credentials or personally identifiable data.
+It holds 46 captures: 29 in dark (home, the four tabs, search, Notion AI, a page, a database, sheets, menus and Settings) and 17 of the same screens in light. Under the repository's rule (AGENTS.md) other people's names and avatars are painted out (the Inbox access requests and two Meetings note titles, by [tools/redact-rules/notion-ios.json](../../tools/redact-rules/notion-ios.json)); the owner's own pages, chats and profile stay, and no credentials or personally identifiable data appear.
 
 This package contains no Notion code, and none of its artwork has been redrawn. The screenshots and the visual system they show are Notion Labs' ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the AI face, icons or brand colours.
 
@@ -200,7 +200,7 @@ python3 -m unittest discover -s tools
 git status --short .
 ```
 
-`tools/capture/quantize.py <raw-shots>` and `tools/crops.py` (both need Pillow) rewrite `screenshots/` and `components/crops/`. A rebuild that changes nothing proves the outputs still match their inputs. From the repository root, `make design-md` regenerates DESIGN.md and the Brief.
+`tools/capture/quantize.py <raw-shots>` and `tools/crops.py` (both need Pillow) rewrite `screenshots/` and `components/crops/`. The raw shots are unmasked, so after `quantize.py` and before `crops.py`, mask the screenshots again from the repository root: `python3 tools/redact_images.py apply systems/notion-ios --rules tools/redact-rules/notion-ios.json --only 'screenshots/*'`. `apply` keeps each image's palette, its transparency and every pixel outside the boxes. `crops.py` cuts the crops from the masked screenshots. A rebuild that changes nothing proves the outputs still match their inputs. From the repository root, `make design-md` regenerates DESIGN.md and the Brief.
 
 ## Use in SwiftUI and Figma
 

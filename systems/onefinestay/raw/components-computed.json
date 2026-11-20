@@ -1,0 +1,259 @@
+{
+  "captured": "2026-11-19",
+  "browser": "T3 preview, reuseExistingTab false, tab owned by this capture",
+  "screenshotFrames": "preview_snapshot returned: The browser is not producing screenshot frames. No screenshot was invented.",
+  "desktop": {
+    "requested": "1440x900",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {"width": 1440, "height": 900, "scale": 1}
+  },
+  "phone": {
+    "requested": "390x844",
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {"width": 390, "height": 844, "scale": 1},
+    "homeH1": {"fontSize": "32px", "lineHeight": "40px", "fontFamily": "tiempos", "color": "rgb(38, 35, 42)"},
+    "homeH2": {"fontSize": "36px", "lineHeight": "44px", "color": "rgb(255, 255, 255)"},
+    "headerPadding": "0px 24px",
+    "menuButton": {"width": 40, "height": 40, "display": "flex"}
+  },
+  "pages": {
+    "home": "https://www.onefinestay.com/",
+    "listYourHome": "https://www.onefinestay.com/list-your-home",
+    "enquire": "https://www.onefinestay.com/enquire",
+    "london": "https://www.onefinestay.com/destination/london",
+    "listing": "https://www.onefinestay.com/home-listing/cadogan-street-iv-cad126",
+    "journal": "https://www.onefinestay.com/journal",
+    "search": "https://www.onefinestay.com/search/london/500"
+  },
+  "elements": {
+    "homeH1Desktop": {
+      "text": "Enjoy the finest luxury vacation rentals",
+      "fontFamily": "tiempos, tiempos Fallback, serif",
+      "fontSize": "40px",
+      "lineHeight": "48px",
+      "fontWeight": "400",
+      "color": "rgb(38, 35, 42)",
+      "letterSpacing": "normal"
+    },
+    "homeHeroH2": {
+      "text": "Where good taste travels",
+      "fontFamily": "tiempos, tiempos Fallback, serif",
+      "fontSize": "64px",
+      "lineHeight": "72px",
+      "fontWeight": "400",
+      "color": "rgb(255, 255, 255)"
+    },
+    "body": {
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "fontWeight": "400",
+      "fontFamily": "akkurat, akkurat Fallback, serif",
+      "color": "rgb(38, 35, 42)"
+    },
+    "navLink": {
+      "text": "Destinations",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "fontWeight": "400",
+      "fontFamily": "akkurat",
+      "color": "rgb(38, 35, 42)",
+      "height": 40
+    },
+    "header": {
+      "height": 80,
+      "paddingDesktop": "0px 48px",
+      "paddingPhone": "0px 24px",
+      "homeBackground": "rgba(0, 0, 0, 0)",
+      "listingBackground": "rgb(255, 255, 255)",
+      "listingColor": "rgb(0, 0, 0)"
+    },
+    "inquireNowFrame": {
+      "border": "1px solid rgb(255, 255, 255)",
+      "height": 40,
+      "padding": "0px 12px",
+      "radius": "0px",
+      "label": {"fontSize": "16px", "fontWeight": "400", "color": "rgb(255, 255, 255)", "fontFamily": "akkurat"}
+    },
+    "searchButton": {
+      "background": "rgb(255, 128, 101)",
+      "width": 40,
+      "height": 40,
+      "radius": "0px",
+      "token": "--brand-500"
+    },
+    "searchBar": {
+      "background": "rgb(255, 255, 255)",
+      "width": 752,
+      "height": 56,
+      "padding": "8px",
+      "radius": "2px",
+      "shadow": "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px"
+    },
+    "footer": {
+      "background": "rgb(59, 57, 63)",
+      "padding": "64px 48px",
+      "token": "--neutral-700"
+    },
+    "submitYourHome": {
+      "page": "list-your-home",
+      "border": "1px solid rgb(255, 255, 255)",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgba(0, 0, 0, 0)",
+      "fontWeight": "700",
+      "fontSize": "16px",
+      "lineHeight": "20px",
+      "padding": "0px 16px",
+      "height": 40,
+      "radius": "2px",
+      "fontFamily": "akkurat"
+    },
+    "enquireSubmit": {
+      "page": "enquire",
+      "background": "rgb(38, 35, 42)",
+      "color": "rgb(255, 255, 255)",
+      "border": "2px solid rgb(38, 35, 42)",
+      "fontWeight": "700",
+      "fontSize": "16px",
+      "height": 48,
+      "padding": "0px 16px",
+      "radius": "2px",
+      "token": "--neutral-900"
+    },
+    "fieldShell": {
+      "page": "enquire",
+      "border": "1px solid rgb(201, 200, 202)",
+      "radius": "2px",
+      "padding": "12px 16px",
+      "height": 70,
+      "hoverClass": "hover:border-neutral-500",
+      "tokenBorder": "--neutral-300"
+    },
+    "fieldLabel": {
+      "fontSize": "12px",
+      "lineHeight": "16px",
+      "fontWeight": "700",
+      "fontFamily": "akkurat",
+      "color": "rgb(38, 35, 42)",
+      "textTransform": "uppercase in the visible label text"
+    },
+    "fieldInput": {
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "fontFamily": "akkurat",
+      "color": "rgb(38, 35, 42)",
+      "placeholderColorClass": "placeholder:text-neutral-400"
+    },
+    "textarea": {
+      "height": 96,
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "shellHeight": 122
+    },
+    "checkbox": {
+      "width": 24,
+      "height": 24,
+      "appearance": "auto"
+    },
+    "checkAvailability": {
+      "page": "listing",
+      "background": "rgb(200, 73, 8)",
+      "color": "rgb(255, 255, 255)",
+      "fontWeight": "700",
+      "height": 40,
+      "padding": "0px 16px",
+      "radius": "2px",
+      "width": 324,
+      "token": "--brand-900"
+    },
+    "viewAllPhotos": {
+      "background": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(201, 200, 202)",
+      "color": "rgb(38, 35, 42)",
+      "fontWeight": "700",
+      "height": 40,
+      "radius": "2px",
+      "padding": "0px 16px"
+    },
+    "eyebrow": {
+      "page": "destination/london",
+      "color": "rgb(255, 128, 101)",
+      "fontSize": "14px",
+      "lineHeight": "24px",
+      "fontWeight": "700",
+      "letterSpacing": "0.35px",
+      "textTransform": "uppercase",
+      "fontFamily": "akkurat"
+    },
+    "price": {
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "fontWeight": "700",
+      "color": "rgb(38, 35, 42)"
+    },
+    "cardTitle": {
+      "fontFamily": "tiempos",
+      "fontStyle": "italic",
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "fontWeight": "400",
+      "color": "rgb(38, 35, 42)"
+    },
+    "filterChip": {
+      "page": "search",
+      "border": "1px solid rgb(201, 200, 202)",
+      "radius": "24px",
+      "padding": "8px 16px",
+      "height": 38,
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "color": "rgb(38, 35, 42)"
+    },
+    "filterChipFocus": {
+      "boxShadow": "rgb(0, 102, 204) 0px 0px 0px 2px",
+      "note": "Focus ring computed on the Garden chip after element.focus(). The colour matches --blue-500."
+    },
+    "filterSelect": {
+      "border": "1px solid rgb(201, 200, 202)",
+      "radius": "2px",
+      "padding": "12px 16px",
+      "height": 50
+    },
+    "badge": {
+      "page": "listing",
+      "exclusiveColor": "rgb(255, 128, 101)",
+      "houseColor": "rgb(112, 110, 114)",
+      "fontSize": "12px",
+      "lineHeight": "16px",
+      "fontWeight": "700",
+      "textTransform": "uppercase"
+    },
+    "journalTag": {
+      "background": "rgb(254, 127, 99)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "12px",
+      "lineHeight": "12px",
+      "letterSpacing": "0.6px",
+      "padding": "5px 10px",
+      "radius": "2px",
+      "textTransform": "uppercase",
+      "fontFamily": "AkkuratStd-Regular"
+    },
+    "journalDate": {
+      "color": "rgb(254, 127, 99)",
+      "fontSize": "12px",
+      "lineHeight": "12px",
+      "letterSpacing": "0.6px",
+      "textTransform": "uppercase"
+    },
+    "linkTransition": "color 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+    "reducedMotion": {
+      "declared": ".motion-reduce:transition-none under prefers-reduced-motion: reduce",
+      "motionSafe": ".motion-safe:transition-colors under prefers-reduced-motion: no-preference",
+      "probe": "A full motion-probe.mjs pass was not run. The page was not emulated under prefers-reduced-motion."
+    }
+  }
+}

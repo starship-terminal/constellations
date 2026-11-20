@@ -56,7 +56,7 @@ async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {
   const ctx = curCtx = await b.newContext(mobile
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US' });
-  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+  // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
   page = await ctx.newPage();
   cdp = await ctx.newCDPSession(page);
   page.setDefaultTimeout(8000);
@@ -444,7 +444,7 @@ async function mobile() {
   const g = G.mobile;
   await closePromo(page);
   await S('m-nav-bar', q('[data-elem-type="shape"], [data-elem-type="button"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Mobile nav bar', desc: 'The mobile header: logo left, hamburger right.', sel: 'mobile nav' }, { noScroll: true });
-  await S('m-burger', q('[data-elem-type="button"] .tn-atom, [class*="burger" i], .tn-atom:has(img)').filter({ visible: true }).first(), ['default', 'pressed'], { group: g, title: 'Hamburger', desc: 'The mobile menu button at the top right. Not opened — the menu overlays the measured content.', sel: 'burger' }, { noScroll: true });
+  await S('m-burger', q('[data-elem-type="button"] .tn-atom, [class*="burger" i]').filter({ visible: true }).first(), ['default', 'pressed'], { group: g, title: 'Hamburger', desc: 'The mobile menu button at the top right. Not opened — the menu overlays the measured content.', sel: 'burger' }, { noScroll: true });
   // the mobile headline is split into one painted atom per line; the full-text
   // duplicates stay hidden off-viewport for scroll animation — pick the painted line
   await page.evaluate(() => {

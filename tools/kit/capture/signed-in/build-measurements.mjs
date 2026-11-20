@@ -3,11 +3,20 @@
 // per theme (a column per state, a row per property). Deterministic; no browser, no network.
 //
 //   node tools/capture/signed-in/build-measurements.mjs
+// PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+// for it. While this is null the script stops: the kit's copy is ChatGPT's example and would
+// read or write ChatGPT's values. KIT_EXAMPLE=1 runs the example as it is.
+const ADAPTED_FOR = null;
+if (!ADAPTED_FOR && !process.env.KIT_EXAMPLE) {
+  console.error('build-measurements.mjs is the kit\'s ChatGPT example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR');
+  process.exit(2);
+}
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { hex } from '../css-colour.mjs';
 
-const REF = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', '..', '..');
+const REF = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
 const J = JSON.parse(fs.readFileSync(path.join(REF, 'raw', 'components-computed.json'), 'utf8'));
 
 // rounded-full is calc(infinity * 1px), which computes to 33554400px.
@@ -54,7 +63,13 @@ function props(v) {
 
 const comps = Object.entries(J.components);
 const allStates = comps.flatMap(([k, c]) => Object.entries(c.states).map(([st, v]) => ({ k, st, v })));
-const ok = allStates.filter((x) => x.v.style);
+// A state whose reading is not what its name says, kept out of every tally, table and crop list
+// (the same rule as focus_not_captured in tools/build_components_md.py): a skipped one, or a
+// focus-visible reading taken where keyboard focus never landed or where the element took focus
+// without matching :focus-visible, so its style is the element at rest.
+const focusNotCaptured = (v) => Boolean(v.skipped) || v.via === 'focus failed' || v.focus?.matches === false;
+const notCapturedWhy = (v) => v.skipped || (v.via === 'focus failed' ? 'focus failed: keyboard focus did not reach the element' : 'focused without matching :focus-visible, so no keyboard-focus reading');
+const ok = allStates.filter((x) => x.v.style && !focusNotCaptured(x.v));
 const count = (arr) => { const m = new Map(); for (const a of arr) m.set(a, (m.get(a) || 0) + 1); return [...m.entries()].sort((a, b) => b[1] - a[1]); };
 
 function hoverChanges(theme) {
@@ -86,7 +101,7 @@ W('Every component has one table per theme: a column per state, a row per proper
 W('');
 W('States: `hover` is a real pointer hover; `focus-visible` a real keyboard focus (Shift+Tab, Tab), skipped where the element cannot take focus. ChatGPT draws most focus rings from `keyboard-focused:` variants that its own script turns on, so with scripts gone many focused states look like the rest state. The rest (`active`, `selected`, `checked`, `open`, `typed`, `highlighted`, ...) are other elements or copies captured in that state. Light states are prefixed `light`. The 390 wide copies are measured at rest only.');
 W('');
-W(`${comps.length} components, ${allStates.length} states (${ok.length} measured, ${allStates.filter((x) => x.v.skipped).length} skipped, ${allStates.filter((x) => x.v.error).length} not found).`);
+W(`${comps.length} components, ${allStates.length} states (${ok.length} measured, ${allStates.filter((x) => !x.v.error && focusNotCaptured(x.v)).length} skipped, ${allStates.filter((x) => x.v.error).length} not found).`);
 W('');
 W('## Shared values');
 W('');
@@ -107,14 +122,16 @@ const cleanShadow = (sh) => splitTop(sh).filter((l) => !/rgba\([^)]*,\s*0\)/.tes
 const shadows = count(ok.flatMap((x) => [x.v.style.boxShadow, ...(x.v.paint || []).map((p) => p.shadow)]).filter((s) => s && s !== 'none').map(cleanShadow).filter(Boolean));
 W(`- **Shadows**: ${shadows.slice(0, 6).map(([s, n]) => `\`${s}\` (${n})`).join('; ')}.`);
 for (const theme of ['dark', 'light']) {
+  // ok already leaves out the focus states with no keyboard-focus reading; those are counted apart
   const fv = ok.filter((x) => x.v.theme === theme && /focus-visible/.test(x.st));
+  const notFv = allStates.filter((x) => x.v.theme === theme && /focus-visible/.test(x.st) && !x.v.error && focusNotCaptured(x.v)).length;
   const rings = count(fv.map((x) => {
     const s = x.v.style;
     const ol = s.outlineStyle !== 'none' && parseFloat(s.outlineWidth) > 0 ? `outline ${s.outlineWidth} ${s.outlineStyle} ${hex(s.outlineColor)} offset ${s.outlineOffset}` : '';
     const sh = s.boxShadow !== 'none' ? `shadow ${hex(s.boxShadow)}` : '';
     return ol || sh || 'nothing painted on the element';
   }));
-  W(`- **Focus-visible, ${theme}** (${fv.length} focused states): ${rings.map(([r, n]) => `${r} (${n})`).join('; ')}.`);
+  W(`- **Focus-visible, ${theme}** (${fv.length} focused states${notFv ? `; focus could not be captured on ${notFv} more` : ''}): ${rings.map(([r, n]) => `${r} (${n})`).join('; ')}.`);
 }
 for (const theme of ['dark', 'light']) {
   const hc = hoverChanges(theme);
@@ -156,7 +173,7 @@ for (const g of groups) {
       for (const st of states) {
         const v = c.states[st];
         if (v.error) { (rows['Not found'] ||= {})[st] = v.error; continue; }
-        if (v.skipped) { (rows.Skipped ||= {})[st] = v.skipped; continue; }
+        if (focusNotCaptured(v)) { (rows.Skipped ||= {})[st] = notCapturedWhy(v); continue; }
         for (const [p, val] of Object.entries(props(v))) (rows[p] ||= {})[st] = val;
       }
       W('');
@@ -169,7 +186,7 @@ for (const g of groups) {
         W(`| ${p} | ${states.map((st, i) => (i && vals[st] === first && p !== 'How' ? '=' : esc(vals[st] ?? '-'))).join(' | ')} |`);
       }
     }
-    const crops = Object.values(c.states).map((s) => s.crop).filter(Boolean).map((f) => '`' + path.basename(f) + '`');
+    const crops = Object.values(c.states).filter((s) => !focusNotCaptured(s)).map((s) => s.crop).filter(Boolean).map((f) => '`' + path.basename(f) + '`');
     const other = c.selectors ? Object.entries(c.selectors).map(([st, src]) => `${st}: \`${esc(src).replace(/`/g, "'")}\``).join('; ') : '';
     W('');
     if (other) { W(`Other finders: ${other}.`); W(''); }

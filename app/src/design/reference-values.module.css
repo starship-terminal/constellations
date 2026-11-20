@@ -29,7 +29,7 @@
   font-size: 11px;
   line-height: 1.5;
   font-weight: 400;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 .colorValue code {
   display: block;
@@ -61,7 +61,7 @@
   font-size: 12px;
   line-height: 1.6;
   font-weight: 400;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 .valueRow small {
   display: block;

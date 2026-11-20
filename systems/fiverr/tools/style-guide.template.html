@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fiverr style guide</title>
+<meta name="description" content="Fiverr design tokens and the public signed-out surfaces' components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Macan", "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
+  --sg-serif: "Macan", "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: "Macan Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #404145); background: var(--surface-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-primary, #404145); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-hairline, #e4e5e7); }
+.lead { max-width: 62ch; color: var(--text-primary, #404145); opacity: .8; }
+.note { font-size: 13px; color: var(--text-primary, #404145); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-primary, #404145); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-hairline, #e4e5e7); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-primary, #404145); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-hairline, #e4e5e7); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-primary, #404145); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border-hairline, #e4e5e7); overflow: hidden; background: var(--surface-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 86px); padding: 0 12px 0 22px; font-size: 15px; color: var(--text-primary, #404145); background: var(--surface-page, #fff); box-shadow: rgba(0,0,0,.16) 0 1px 0 0; }
+.navbar .wm { font-weight: 600; font-size: 17px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 42px); padding: 0 18px; font-size: 15px; font-weight: 500; border-radius: var(--measured-button-radius, 8px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-primary-default, #222325); color: var(--text-onAccent, #fff); }
+.btn.ghost { background: transparent; border-color: var(--border-hairline, #e4e5e7); color: var(--text-primary, #404145); }
+.btn.small { height: 32px; font-size: 13px; font-weight: 500; }
+/* The hero band's deep green was read off the page but no surface.hero token
+   was emitted, so it stays a literal here. */
+.hero { color: var(--text-onAccent, #fff); padding: 80px 40px; font: var(--font-weight-hero, 280) var(--font-size-hero, 72px)/var(--font-lineHeight-hero, 86.4px) var(--sg-serif); text-align: left; background: #003912; }
+.hero small { display: block; font: 400 var(--font-size-body, 14px)/1.4 var(--sg-sans); color: var(--text-onAccent, #fff); opacity: .9; margin: 20px 0 26px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border-hairline, #e4e5e7); border-radius: var(--measured-card-radius, 8px); padding: 14px; font-size: 13px; background: var(--surface-card, #fff); }
+.tile .img { height: 140px; background: var(--color-neutral-press-wash, #f5f5f5); border-radius: var(--measured-card-radius, 8px); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 600 var(--font-size-title, 20px)/1.3 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { color: var(--text-muted, #62646a); font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-hairline, #e4e5e7); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-hairline, #ddd); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--text-primary, #404145); opacity: .65; font-family: var(--sg-mono); }
+ .pill-nav { display: inline-flex; background: var(--color-neutral-press-wash, #f5f5f5); border-radius: 9999px; padding: 4px; gap: 4px; font-size: 14px; color: var(--text-muted, #62646a); }
+.pill-nav span { padding: 6px 14px; border-radius: 9999px; }
+.pill-nav .on { background: var(--surface-page, #fff); color: var(--text-primary, #404145); box-shadow: 0 1px 2px rgba(0,0,0,.12); }
+.field { display: block; width: 280px; height: var(--component-field-height, 42px); padding: 0 14px; border: 0; border-radius: var(--measured-field-radius, 4px); background: var(--surface-page, #fff); border: 1px solid var(--border-hairline, #e4e5e7); font-size: 15px; color: var(--text-primary, #404145); }
+.badge { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: 9999px; background: var(--color-neutral-press-wash, #f5f5f5); color: var(--text-primary, #404145); font-size: 12px; font-weight: 500; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Fiverr style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Fiverr, measured</h2>
+  <p class="lead">fiverr.com is a React app styled with atomic hashed classes: its served sheets declare ~1,290 custom properties on <code>:root</code>, all named by content hash — a token-free layer with no semantic names to alias, so every value on this page is a computed style measured on the live public pages, not a var alias. Macan (self-hosted woff2, weights 400/600/700) carries the type; the dark ink fill drives Join, the hero search submit and the gig Continue, while the brand green (#1dbf73) survives as the accent — the category-nav hover underline. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from fiverr.com, signed out, in Chromium. The buyer/seller account, checkout and inbox are a documented boundary; the join, login and search fields were measured and typed into then cleared, never submitted. One light theme is painted — the hero's dark band is a component skin, not a site theme. Macan is a served face and is not loaded here: samples fall back to system sans. PerimeterX's press&hold was driven automatically, never answered by hand.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The sticky header is a white bar on the white page: the Fiverr wordmark, the Sidebar-menu hamburger (which slides in the Browse-categories drawer), Connect to your AI, the EN locale button, Become a Seller, Sign in and the dark Join button; a category strip runs beneath. The hero below sits on a deep-green band and carries the dark-skinned search form with its submit button.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">fiverr.</span><span>Connect to your AI</span><span class="sp"></span><span>EN</span><span>Become a Seller</span><span>Sign in</span><span class="btn small primary">Join</span></div>
+    <div class="hero">Our freelancers will take it from here<small>Search for any service…</small><span class="btn primary">Search</span></div>
+  </div>
+
+  <h2 class="sh">The marketplace</h2>
+  <p class="lead">Search results are gig cards — thumbnail, seller row, star rating, a collect heart and the localized "From S$xx" starting price — behind filter dropdown triggers and a sort control. The gig page carries the Basic/Standard/Premium package tablist and its price card with the dark Continue.</p>
+  <div class="mock" style="padding:20px">
+    <div class="pill-nav"><span class="on">Basic</span><span>Standard</span><span>Premium</span></div>
+    <div class="grid" style="margin-top:16px">
+      <div class="tile"><div class="img">gig thumb</div><b>Gig card</b><span class="sub">★ 4.9 · Level 2 · From S$xx</span></div>
+      <div class="tile"><div class="img">price</div><b>S$xx.xx</b><span class="sub">per package · Continue</span></div>
+    </div>
+    <div style="margin-top:16px"><span class="btn primary">Continue</span>&nbsp;&nbsp;<span class="btn ghost">Contact me</span>&nbsp;&nbsp;<input class="field" placeholder="Username or email"></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The measured palette: the white page and off-white section surfaces, the ink and muted grays of the text ramp, the hairline borders, the dark action fills — Join, the search submit and Continue — and the #1dbf73 green accent, each labelled with the component and state it was measured on.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">Measured control geometry: the Join pill radius, the search field and auth field heights and radii, the gig card radius, the header padding and the control transition durations.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Macan carries every heading, control and body — the hero display, section headings, gig titles, nav labels and the package price are the measured steps; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read computed styles on the running pages (the site's ~1,290 :root variables are all hash-named — nothing semantic to alias — so the atomic-class values are read inline)</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (declared — no public page painted data-theme="dark" while captured)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  // Shadows, when measured, land in core.elevation.
+  for (const [n, t] of flat((TOK.core || {}).elevation || {}, 'elevation.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.breakpoint || {}), 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.aspect || {}), 'aspect.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}), 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Aliases are set-relative: {font.size.body} and the palette scales live
+  // under TOK.core, semantic roles under TOK.light / TOK.dark. Try each root.
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Fiverr</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

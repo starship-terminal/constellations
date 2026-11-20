@@ -40,22 +40,33 @@ export function RfImg({ media, alt = "", className, onLoad }: {
   onLoad?: (e: React.SyntheticEvent<HTMLImageElement>) => void;
 }) {
   const [failed, setFailed] = useState(false);
+  const img = useRef<HTMLImageElement | null>(null);
   const src = media.local || media.remote;
+  // Move to the remote copy once, then give up so the tile shows its letter
+  // or panel colour instead of a broken-image icon.
+  const fail = (el: HTMLImageElement) => {
+    if (media.remote && el.src !== media.remote) el.src = media.remote;
+    else setFailed(true);
+  };
+  // A server-rendered image can fail before React attaches onError, and the
+  // event is gone by then: look at its state once on mount.
+  useEffect(() => {
+    const el = img.current;
+    if (el && el.complete && el.naturalWidth === 0) fail(el);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   if (!src || failed) return null;
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
+      ref={img}
       className={className}
       src={src}
       alt={alt}
       loading="lazy"
       decoding="async"
       onLoad={onLoad}
-      onError={(e) => {
-        const img = e.currentTarget;
-        if (media.remote && img.src !== media.remote) img.src = media.remote;
-        else setFailed(true);
-      }}
+      onError={(e) => fail(e.currentTarget)}
     />
   );
 }

@@ -1,0 +1,11 @@
+{
+ "_note": "Rules for systems/dub. A fully public signed-out capture: no owner data on any surface. The auth email field was focused and filled once with a throwaway example address, then cleared; nothing was submitted and no account exists. All names, prices and copy in the screenshots are Dub's published public-page content. The OCR email net is kept with example.com allowed.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@example\\.com$",
+   "@example\\.org$"
+  ]
+ },
+ "families": []
+}

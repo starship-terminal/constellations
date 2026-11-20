@@ -1,0 +1,423 @@
+{
+  "core": {
+    "font": {
+      "family": {
+        "display": {
+          "value": "\"Headspace Apercu\", sans-serif",
+          "type": "fontFamily",
+          "source": "computed fontFamily of hero-h1 default (raw/components-computed.json); the /share page's headline: measure.mjs read hero-h1 on 16 pages under one key and kept the last, so the home headline was not kept; recapture needed",
+          "description": "The Headspace Apercu stack on the hero headline \u2014 the single family the whole marketing surface ships, weights 200/400/600/700."
+        },
+        "body": {
+          "value": "\"Headspace Apercu\", sans-serif",
+          "type": "fontFamily",
+          "source": "computed fontFamily of hero-lede default (raw/components-computed.json)",
+          "description": "The Headspace Apercu stack on body copy."
+        },
+        "nav": {
+          "value": "\"Headspace Apercu\", sans-serif",
+          "type": "fontFamily",
+          "source": "computed fontFamily of nav-category default (raw/components-computed.json)",
+          "description": "The stack on the top-nav labels."
+        }
+      },
+      "size": {
+        "display": {
+          "value": "64px",
+          "type": "dimension",
+          "source": "computed text-fontSize of hero-h1 default (raw/components-computed.json); the /share page's headline: measure.mjs read hero-h1 on 16 pages under one key and kept the last, so the home headline was not kept; recapture needed",
+          "description": "The hero headline."
+        },
+        "h1-b2b": {
+          "value": "48px",
+          "type": "dimension",
+          "source": "computed text-fontSize of org-h1 default (raw/components-computed.json)",
+          "description": "The B2B hero headline (a second large size if it differs)."
+        },
+        "h2": {
+          "value": "32px",
+          "type": "dimension",
+          "source": "computed text-fontSize of prose-h2 default (raw/components-computed.json)",
+          "description": "A marketing section heading."
+        },
+        "h3": {
+          "value": "18px",
+          "type": "dimension",
+          "source": "computed text-fontSize of prose-h3 default (raw/components-computed.json)",
+          "description": "A card heading."
+        },
+        "body-lg": {
+          "value": "16px",
+          "type": "dimension",
+          "source": "computed text-fontSize of hero-lede default (raw/components-computed.json)",
+          "description": "The lede under the hero headline."
+        },
+        "body": {
+          "value": "18px",
+          "type": "dimension",
+          "source": "computed text-fontSize of prose-body default (raw/components-computed.json)",
+          "description": "Running body text."
+        },
+        "caption": {
+          "value": "12px",
+          "type": "dimension",
+          "source": "computed text-fontSize of footer-link default (raw/components-computed.json)",
+          "description": "Footer links and small print."
+        },
+        "button": {
+          "value": "14px",
+          "type": "dimension",
+          "source": "computed text-fontSize of nav-cta default (raw/components-computed.json)",
+          "description": "Button labels."
+        },
+        "nav": {
+          "value": "16px",
+          "type": "dimension",
+          "source": "computed text-fontSize of nav-category default (raw/components-computed.json)",
+          "description": "The top-nav category labels."
+        }
+      },
+      "weight": {
+        "display": {
+          "value": "700",
+          "type": "number",
+          "source": "computed text-fontWeight of hero-h1 default (raw/components-computed.json); the /share page's headline: measure.mjs read hero-h1 on 16 pages under one key and kept the last, so the home headline was not kept; recapture needed",
+          "description": "The headline weight (the family ships 200/400/600/700)."
+        },
+        "body": {
+          "value": "500",
+          "type": "number",
+          "source": "computed text-fontWeight of prose-body default (raw/components-computed.json)",
+          "description": "Body text weight."
+        },
+        "cardHeading": {
+          "value": "400",
+          "type": "number",
+          "source": "computed text-fontWeight of prose-h3 default (raw/components-computed.json)",
+          "description": "The card-heading weight."
+        },
+        "button": {
+          "value": "700",
+          "type": "number",
+          "source": "computed text-fontWeight of nav-cta default (raw/components-computed.json)",
+          "description": "Button-label weight."
+        }
+      },
+      "lineHeight": {
+        "display": {
+          "value": "72px",
+          "type": "dimension",
+          "source": "computed text-lineHeight of hero-h1 default (raw/components-computed.json); the /share page's headline: measure.mjs read hero-h1 on 16 pages under one key and kept the last, so the home headline was not kept; recapture needed",
+          "description": "The hero headline line height."
+        },
+        "heading": {
+          "value": "38.4px",
+          "type": "dimension",
+          "source": "computed text-lineHeight of prose-h2 default (raw/components-computed.json)",
+          "description": "The section-heading line height."
+        },
+        "body": {
+          "value": "26px",
+          "type": "dimension",
+          "source": "computed text-lineHeight of prose-body default (raw/components-computed.json)",
+          "description": "The body line height."
+        }
+      }
+    },
+    "radius": {
+      "button": {
+        "value": "32px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)",
+        "description": "The CTA pill radius (32px on the marketing pills)."
+      },
+      "pill": {
+        "value": "800px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of org-cta default (raw/components-computed.json)",
+        "description": "The fully-round pill the B2B CTA draws (800px)."
+      },
+      "field": {
+        "value": "8px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of newsletter-field default (raw/components-computed.json)",
+        "description": "An input's corner radius."
+      },
+      "field-sm": {
+        "value": "4px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of redeem-field default (raw/components-computed.json)",
+        "description": "The redeem field's smaller radius."
+      }
+    },
+    "shadow": {
+      "button": {
+        "value": "rgba(65, 61, 69, 0.2) 0px 2px 0px 0px",
+        "type": "shadow",
+        "source": "computed boxShadow of hero-cta default (raw/components-computed.json)",
+        "description": "The 2px soft drop every pill button carries."
+      }
+    },
+    "spacing": {
+      "button-x": {
+        "value": "24px",
+        "type": "dimension",
+        "source": "computed paddingLeft of hero-cta default (raw/components-computed.json)",
+        "description": "A pill button's horizontal padding."
+      },
+      "button-y": {
+        "value": "13.2px",
+        "type": "dimension",
+        "source": "computed paddingTop of hero-cta default (raw/components-computed.json)",
+        "description": "A pill button's vertical padding."
+      },
+      "header-x": {
+        "value": "48px",
+        "type": "dimension",
+        "source": "computed paddingLeft of nav-header default (raw/components-computed.json)",
+        "description": "The header's horizontal padding."
+      },
+      "field-y": {
+        "value": "24px",
+        "type": "dimension",
+        "source": "computed paddingTop of newsletter-field default (raw/components-computed.json)",
+        "description": "An input's vertical padding."
+      },
+      "field-x": {
+        "value": "16px",
+        "type": "dimension",
+        "source": "computed paddingLeft of newsletter-field default (raw/components-computed.json)",
+        "description": "An input's horizontal padding."
+      },
+      "auth-card": {
+        "value": "40px",
+        "type": "dimension",
+        "source": "computed paddingLeft of auth-card default (raw/components-computed.json); the /signup card (\"Create your account\"): measured under one key on /login and /signup, the /signup reading was kept and the /login one lost; recapture needed",
+        "description": "The auth card's padding."
+      }
+    },
+    "layout": {
+      "container": {
+        "value": "1447px",
+        "type": "dimension",
+        "source": "widest constrained container on home@1440 (raw/layout.json)",
+        "description": "The marketing content column's max width."
+      },
+      "header-height-1440": {
+        "value": "80px",
+        "type": "dimension",
+        "source": "header bounding box on home@1440 (raw/layout.json)",
+        "description": "The header's painted height at 1440px wide."
+      },
+      "header-height-390": {
+        "value": "64px",
+        "type": "dimension",
+        "source": "header bounding box on home@390 (raw/layout.json)",
+        "description": "The header's painted height at 390px wide."
+      }
+    },
+    "motion": {
+      "duration-1": {
+        "value": "100ms",
+        "type": "duration",
+        "source": "transition/animation duration measured on live components (raw/motion.json)",
+        "description": "A motion duration the site uses."
+      },
+      "duration-2": {
+        "value": "150ms",
+        "type": "duration",
+        "source": "transition/animation duration measured on live components (raw/motion.json)",
+        "description": "A motion duration the site uses."
+      },
+      "duration-3": {
+        "value": "200ms",
+        "type": "duration",
+        "source": "transition/animation duration measured on live components (raw/motion.json)",
+        "description": "A motion duration the site uses."
+      },
+      "duration-4": {
+        "value": "250ms",
+        "type": "duration",
+        "source": "transition/animation duration measured on live components (raw/motion.json)",
+        "description": "A motion duration the site uses."
+      },
+      "easing": {
+        "value": [
+          0.32,
+          0.94,
+          0.6,
+          1.0
+        ],
+        "type": "cubicBezier",
+        "source": "transition-timing-function measured on live components (raw/motion.json)",
+        "description": "The easing curve most components transition with."
+      },
+      "reduced": {
+        "value": "ignores",
+        "type": "other",
+        "source": "prefers-reduced-motion probe (raw/motion.json)",
+        "description": "What the site changes under prefers-reduced-motion: reduce, as measured by the probe."
+      }
+    }
+  },
+  "light": {
+    "color": {
+      "ink": {
+        "primary": {
+          "value": "#4b4c4d",
+          "type": "color",
+          "source": "computed color of hero-h1 default (raw/components-computed.json); the /share page's headline: measure.mjs read hero-h1 on 16 pages under one key and kept the last, so the home headline was not kept; recapture needed",
+          "description": "The near-black text of headings and body on the light ground."
+        },
+        "muted": {
+          "value": "#44423f",
+          "type": "color",
+          "source": "computed color of hero-lede default (raw/components-computed.json)",
+          "description": "The secondary text colour under the hero."
+        },
+        "nav": {
+          "value": "#2d2c2b",
+          "type": "color",
+          "source": "computed color of nav-category default (raw/components-computed.json)",
+          "description": "The warm near-black of nav labels and links."
+        },
+        "footer": {
+          "value": "#44423f",
+          "type": "color",
+          "source": "computed color of footer-link default (raw/components-computed.json)",
+          "description": "Footer link colour."
+        }
+      },
+      "surface": {
+        "header": {
+          "value": "#ffffff",
+          "type": "color",
+          "source": "computed backgroundColor of nav-header default (raw/components-computed.json)",
+          "description": "The header's ground."
+        },
+        "field": {
+          "value": "#ffffff",
+          "type": "color",
+          "source": "computed backgroundColor of newsletter-field default (raw/components-computed.json)",
+          "description": "An input field's ground."
+        },
+        "page": {
+          "value": "#f9f4f2",
+          "type": "color",
+          "source": "computed paint of div.css-15t8m5e inside nav-header default (raw/components-computed.json)",
+          "description": "The warm-grey wash the page/menu wrapper paints (the same #f9f4f2 the auth ground and the declared --2ndary-warm-grey-100/--grey-for-bg-adjacent tokens carry)."
+        },
+        "auth-card": {
+          "value": "#ffffff",
+          "type": "color",
+          "source": "computed paint of div.bg-card.text-card-foreground inside auth-card default (raw/components-computed.json); the /signup card (\"Create your account\"): measured under one key on /login and /signup, the /signup reading was kept and the /login one lost; recapture needed",
+          "description": "The white the universal-login card paints."
+        },
+        "footer-panel": {
+          "value": "#44423f",
+          "type": "color",
+          "source": "computed paint of div.css-1v3qhkq inside footer default (raw/components-computed.json)",
+          "description": "The dark panel band inside the footer."
+        }
+      },
+      "brand": {
+        "blue": {
+          "value": "#0061ef",
+          "type": "color",
+          "source": "computed backgroundColor of hero-cta default (raw/components-computed.json)",
+          "description": "The bright blue every primary CTA paints (the declared --secondary-blue)."
+        },
+        "blue-hover": {
+          "value": "#0040ea",
+          "type": "color",
+          "source": "computed backgroundColor of hero-cta hover (raw/components-computed.json)",
+          "description": "The deeper blue primary CTAs shift to on hover (the declared --primary-blue)."
+        },
+        "on-blue": {
+          "value": "#ffffff",
+          "type": "color",
+          "source": "computed color of hero-cta default (raw/components-computed.json)",
+          "description": "Text on the blue CTA."
+        },
+        "orange": {
+          "value": "#ff7e1d",
+          "type": "color",
+          "source": "computed backgroundColor of org-cta hover (raw/components-computed.json)",
+          "description": "Headspace's signature orange \u2014 it surfaces as the B2B CTA's hover fill (the declared --orange)."
+        },
+        "yellow": {
+          "value": "#ffce00",
+          "type": "color",
+          "source": "computed backgroundColor of org-card default (raw/components-computed.json)",
+          "description": "The Headspace yellow a B2B highlight card paints (the declared --yellow)."
+        }
+      },
+      "action": {
+        "secondary": {
+          "value": "#2d2c2b",
+          "type": "color",
+          "source": "computed backgroundColor of subscribe-button default (raw/components-computed.json)",
+          "description": "The dark pill secondary CTAs paint (Subscribe, and the declared --primary-warm-grey-700)."
+        },
+        "secondary-hover": {
+          "value": "#141313",
+          "type": "color",
+          "source": "computed backgroundColor of subscribe-button hover (raw/components-computed.json)",
+          "description": "The near-black the dark pill shifts to on hover."
+        },
+        "secondary-ink": {
+          "value": "#ffffff",
+          "type": "color",
+          "source": "computed color of subscribe-button default (raw/components-computed.json)",
+          "description": "Text on the dark pill."
+        },
+        "tertiary": {
+          "value": "#f9f4f2",
+          "type": "color",
+          "source": "computed backgroundColor of auth-sso default (raw/components-computed.json)",
+          "description": "The quiet warm-grey button ground (the SSO button)."
+        },
+        "tertiary-hover": {
+          "value": "#e5e7ec",
+          "type": "color",
+          "source": "computed backgroundColor of auth-sso hover (raw/components-computed.json)",
+          "description": "The SSO button's hover ground."
+        },
+        "link": {
+          "value": "#2d2c2b",
+          "type": "color",
+          "source": "computed color of prose-link default (raw/components-computed.json)",
+          "description": "Inline link colour (dark, underlined on hover)."
+        },
+        "link-hover": {
+          "value": "#44423f",
+          "type": "color",
+          "source": "computed color of footer-link hover (raw/components-computed.json)",
+          "description": "A link on hover."
+        }
+      },
+      "accent": {
+        "promo-ink": {
+          "value": "#2d2c2b",
+          "type": "color",
+          "source": "computed textStyle-color of nav-promo-strip default (raw/components-computed.json)",
+          "description": "Text on the offer strip."
+        },
+        "focus": {
+          "value": "#101010",
+          "type": "color",
+          "source": "computed outlineColor of nav-category focus-visible (raw/components-computed.json)",
+          "description": "The 1px near-black keyboard focus ring the site's controls draw."
+        }
+      },
+      "line": {
+        "field": {
+          "value": "#d2d5de",
+          "type": "color",
+          "source": "computed borderTopColor of newsletter-field default (raw/components-computed.json)",
+          "description": "An input's border."
+        }
+      }
+    }
+  }
+}

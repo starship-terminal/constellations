@@ -1,0 +1,291 @@
+{
+  "viewport": {
+    "url": "https://www.playstation.com/en-sg/",
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1169,
+      "height": 731,
+      "scale": 1
+    },
+    "colorScheme": "normal",
+    "locale": "en-SG",
+    "note": "Requested 1440 and 390 were not applied. The preview pane filled at 1169 by 731."
+  },
+  "pages": [
+    "https://www.playstation.com/en-sg/",
+    "https://store.playstation.com/en-sg/pages/latest",
+    "https://my.account.sony.com/sonyacct/signin/ (hash /signin/input/id; query stripped)"
+  ],
+  "cssVariablesComputedAt1169": {
+    "--space-1": "2px",
+    "--space-2": "4px",
+    "--space-3": "7px",
+    "--space-4": "10px",
+    "--space-5": "14px",
+    "--space-6": "21px",
+    "--space-7": "28px",
+    "--space-8": "35px",
+    "--space-9": "42px",
+    "--space-10": "56px",
+    "--space-11": "70px",
+    "--space-12": "112px",
+    "--space-13": "224px",
+    "--corner-size-0": "2px",
+    "--corner-size-1": "3px",
+    "--corner-size-2": "6px",
+    "--corner-size-3": "12px",
+    "--corner-size-4": "24px",
+    "--text-1": "8px",
+    "--text-2": "10px",
+    "--text-3": "12px",
+    "--text-4": "14px",
+    "--text-5": "18px",
+    "--text-6": "22px",
+    "--text-7": "27px",
+    "--text-8": "34px",
+    "--text-9": "43px",
+    "--text-10": "53px",
+    "--text-11": "67px",
+    "--icon-size-1": "12px",
+    "--icon-size-2": "18px",
+    "--icon-size-3": "28px",
+    "--mesh-columns": "12",
+    "--mesh-gutter": "14px",
+    "--mesh-margin": "42px",
+    "--mesh-max-width": "100%",
+    "--root-font-size": "14px",
+    "--spacer-size-1": "75px",
+    "--spacer-size-2": "150px",
+    "--spacer-size-3": "225px",
+    "--spacer-size-4": "300px",
+    "--spacer-size-5": "375px",
+    "--color-1-light": "255 255 255",
+    "--color-4-light": "0 0 0",
+    "--color-5-light": "107 107 107",
+    "--color-9-light": "213 59 0",
+    "--color-17-light": "0 112 204",
+    "--color-10-light": "0 104 189",
+    "--color-8-light": "243 243 243",
+    "--color-2-light": "245 247 250",
+    "--color-3-light": "235 238 240"
+  },
+  "authoredRootAtUnspecifiedWidth": {
+    "note": "Declared on :root in the homepage clientlib, before the 1169px media query overrode the computed values. Not used as token values.",
+    "--space-1": "2px",
+    "--space-2": "5px",
+    "--space-4": "14px",
+    "--space-13": "288px",
+    "--corner-size-0": "3px",
+    "--corner-size-4": "48px",
+    "--text-8": "not re-read from the authored rule after the computed override"
+  },
+  "elements": {
+    "marketing.body": {
+      "backgroundColor": "transparent on body; white comes from the header parent section",
+      "color": "rgb(31, 31, 31)",
+      "fontFamily": "sst, Arial, sans-serif",
+      "fontSize": "14px"
+    },
+    "header.section": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "height": "64px nav"
+    },
+    "nav.shared-nav": {
+      "height": 64,
+      "width": 492,
+      "fontFamily": "SST, helvetica, arial, sans-serif",
+      "fontWeight": "500",
+      "color": "rgb(31, 31, 31)",
+      "transition": "0.55s height"
+    },
+    "nav.primary-button": {
+      "fontSize": "11.375px",
+      "fontWeight": "500",
+      "padding": "0px 20px 0px 5px",
+      "height": 64,
+      "color": "rgb(31, 31, 31)"
+    },
+    "signIn.web-toolbar": {
+      "backgroundColor": "rgb(0, 112, 204)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "999px",
+      "padding": "0px 6px",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "height": 22,
+      "width": 70,
+      "letterSpacing": "0.4px",
+      "fontFamily": "sst, helvetica, arial, sans-serif"
+    },
+    "cta.primary.visible": {
+      "class": "a.cta__primary",
+      "text": "Find out more",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "colorOnDarkHero": "rgb(255, 255, 255)",
+      "colorOnLight": "rgb(0, 104, 189)",
+      "borderRadius": "28px",
+      "padding": "2px",
+      "margin": "3.5px",
+      "height": 38,
+      "fontSize": "14px",
+      "lineHeight": "21px",
+      "fontWeight": "400",
+      "transition": "0.1s all"
+    },
+    "txt-style-large-title": {
+      "fontSize": "34px",
+      "lineHeight": "42.5px",
+      "fontWeight": "300",
+      "letterSpacing": "0.1px",
+      "fontFamily": "sst, Arial, sans-serif"
+    },
+    "txt-style-medium-title": {
+      "fontSize": "22px",
+      "lineHeight": "27.5px",
+      "fontWeight": "300",
+      "letterSpacing": "0.1px"
+    },
+    "txt-style-small-title": {
+      "fontSize": "18px",
+      "lineHeight": "22.5px",
+      "fontWeight": "300",
+      "letterSpacing": "0.1px"
+    },
+    "txt-style-base": {
+      "fontSize": "14px",
+      "lineHeight": "21px",
+      "fontWeight": "400",
+      "letterSpacing": "0.1px",
+      "colorWhenSecondary": "rgb(107, 107, 107)"
+    },
+    "txt-style-secondary": {
+      "fontSize": "12px",
+      "lineHeight": "18px",
+      "fontWeight": "400",
+      "color": "rgb(107, 107, 107)"
+    },
+    "txt-style-utility": {
+      "fontSize": "10px",
+      "lineHeight": "15px",
+      "fontWeight": "400"
+    },
+    "hero.theme-dark": {
+      "backgroundColor": "rgb(9, 35, 145)",
+      "color": "rgb(255, 255, 255)"
+    },
+    "site-footer-v2": {
+      "backgroundColor": "rgb(0, 67, 156)",
+      "color": "rgb(255, 255, 255)",
+      "class": "site-footer-v2 theme--dark"
+    },
+    "store.body": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(54, 54, 54)",
+      "fontFamily": "sst, helvetica, arial, sans-serif",
+      "fontSize": "14px",
+      "url": "https://store.playstation.com/en-sg/pages/latest"
+    },
+    "store.tab.active": {
+      "backgroundColor": "rgb(235, 238, 240)",
+      "color": "rgb(0, 0, 0)",
+      "border": "2px solid transparent",
+      "borderRadius": "24px",
+      "padding": "4px 10px",
+      "height": 29,
+      "fontSize": "14px",
+      "fontWeight": "500"
+    },
+    "store.tab.inactive": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "borderRadius": "24px",
+      "padding": "4px 10px",
+      "height": 29
+    },
+    "store.product-tile": {
+      "class": "psw-product-tile",
+      "height": 313,
+      "width": 261,
+      "color": "rgb(54, 54, 54)",
+      "radius": "0px",
+      "shadow": "none"
+    },
+    "store.price": {
+      "fontSize": "14px",
+      "lineHeight": "19.6px",
+      "color": "rgb(54, 54, 54)",
+      "textSample": "SGD136.00"
+    },
+    "store.badge": {
+      "backgroundColor": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "12.25px",
+      "fontWeight": "700",
+      "padding": "4px",
+      "borderRadius": "3px",
+      "height": 23,
+      "text": "-50%"
+    },
+    "store.h1": {
+      "fontSize": "36.75px",
+      "lineHeight": "51.45px",
+      "fontWeight": "300",
+      "class": "psw-sr-only"
+    },
+    "signin.h1": {
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "22px",
+      "fontWeight": "300",
+      "fontFamily": "sst, helvetica, arial, sans-serif",
+      "text": "Sign in to PlayStation"
+    },
+    "signin.field-box": {
+      "border": "1px solid rgb(178, 178, 178)",
+      "borderRadius": "6px",
+      "height": 38,
+      "width": 422,
+      "backgroundColor": "transparent"
+    },
+    "signin.email": {
+      "padding": "6px 6px 6px 10px",
+      "fontSize": "16px",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "6px",
+      "type": "email",
+      "typed": false
+    },
+    "signin.label": {
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "14px",
+      "fontWeight": "400"
+    },
+    "signin.next.disabled-looking": {
+      "backgroundColor": "rgb(117, 117, 117)",
+      "color": "rgb(0, 0, 0)",
+      "borderRadius": "999px",
+      "padding": "0px 10px",
+      "height": 34,
+      "fontWeight": "700",
+      "classContains": "psw-is-disabled",
+      "clicked": false
+    },
+    "signin.create": {
+      "backgroundColor": "rgba(255, 255, 255, 0.14)",
+      "color": "rgb(255, 255, 255)",
+      "border": "1px solid rgba(255, 255, 255, 0.8)",
+      "borderRadius": "999px",
+      "height": 34,
+      "padding": "0px 10px",
+      "fontWeight": "700",
+      "clicked": false
+    },
+    "signin.link": {
+      "color": "rgb(36, 156, 255)",
+      "fontSize": "14px"
+    },
+    "signin.page-bg": "not a solid computed colour on html or body (both transparent). The visible plate is dark; h1 is white. No element with a solid page fill was isolated."
+  },
+  "screenshot": "preview_snapshot returned: The browser is not producing screenshot frames. For a desktop tab, show or restore the T3 Code window and try again. No PNG was saved."
+}

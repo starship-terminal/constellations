@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teenage Engineering style guide</title>
+<style>
+  :root {
+    --ink: #000000;
+    --paper: #ffffff;
+    --black: #0f0e12;
+    --white: #f5f5f5;
+    --chrome: #f1f2f2;
+    --grey-100: #e5e5e5;
+    --grey-300: #b2b2b2;
+    --grey-600: #767676;
+    --grey-700: #7f7f7f;
+    --blue: #0071bb;
+    --green: #006837;
+    --orange: #f05a24;
+    --red: #b81d13;
+    --yellow: #fab413;
+    --error: #c0262c;
+    --ui: "te-20", "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--ui);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  main { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
+  h1 { font-weight: 300; font-size: 26px; line-height: 44px; margin: 0 0 8px; }
+  h2 { font-weight: 300; font-size: 19px; margin: 40px 0 12px; }
+  p.note { color: var(--grey-600); font-size: 14px; }
+  .swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; background: var(--paper); border: 1px solid var(--grey-100); }
+  .swatch i { display: block; height: 64px; }
+  .swatch span { display: block; padding: 8px 10px 10px; font-size: 12px; }
+  .stage {
+    background: var(--ink);
+    color: var(--chrome);
+    padding: 32px;
+    margin-top: 24px;
+  }
+  .stage .price {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: -0.89px;
+  }
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 480px;
+    height: 73px;
+    padding: 0 26px;
+    border: 0;
+    border-radius: 0;
+    background: var(--black);
+    color: var(--white);
+    font: inherit;
+    font-size: 26px;
+    line-height: 44px;
+  }
+  .field {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    height: 60px;
+    margin: 12px 0;
+    padding: 22px 15px 7px;
+    border: 1px solid var(--ink);
+    border-radius: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: inherit;
+    font-size: 19px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    height: 28px;
+    padding: 7px 10px;
+    border-radius: 9999px;
+    background: var(--black);
+    color: var(--paper);
+    font-size: 13px;
+  }
+  .search {
+    display: flex;
+    align-items: center;
+    height: 59px;
+    max-width: 582px;
+    padding: 0 18px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+  }
+  .row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin: 16px 0; }
+  .muted { color: var(--grey-600); text-decoration: line-through; }
+  a.return { color: var(--ink); font-size: 26px; }
+  .tile {
+    width: 220px;
+    background: var(--white);
+    padding: 24px;
+  }
+  .tile strong { display: block; font-weight: 300; font-size: 19px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>teenage engineering</h1>
+  <p class="note">Values from computed styles on the public site, 2026-11-19. te-20 and TechnoType are not in this package. The stacks below are the measured names plus a local fallback.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><i style="background:#ffffff"></i><span>paper #ffffff</span></div>
+    <div class="swatch"><i style="background:#000000"></i><span>ink #000000</span></div>
+    <div class="swatch"><i style="background:#0f0e12"></i><span>black #0f0e12</span></div>
+    <div class="swatch"><i style="background:#f5f5f5"></i><span>white #f5f5f5</span></div>
+    <div class="swatch"><i style="background:#f1f2f2"></i><span>chrome #f1f2f2</span></div>
+    <div class="swatch"><i style="background:#e5e5e5"></i><span>grey 100 #e5e5e5</span></div>
+    <div class="swatch"><i style="background:#b2b2b2"></i><span>grey 300 #b2b2b2</span></div>
+    <div class="swatch"><i style="background:#767676"></i><span>grey 600 #767676</span></div>
+    <div class="swatch"><i style="background:#0071bb"></i><span>blue #0071bb</span></div>
+    <div class="swatch"><i style="background:#006837"></i><span>green #006837</span></div>
+    <div class="swatch"><i style="background:#f05a24"></i><span>orange #f05a24</span></div>
+    <div class="swatch"><i style="background:#b81d13"></i><span>red #b81d13</span></div>
+    <div class="swatch"><i style="background:#fab413"></i><span>yellow #fab413</span></div>
+    <div class="swatch"><i style="background:#c0262c"></i><span>error #c0262c</span></div>
+  </div>
+
+  <h2>Store</h2>
+  <div class="row">
+    <div class="tile">
+      <span class="badge">-30%</span>
+      <strong>EP–1320 medieval</strong>
+      <span>209.30 USD <span class="muted">299 USD</span></span>
+    </div>
+  </div>
+
+  <h2>Newsletter</h2>
+  <input class="field" placeholder="email" aria-label="email">
+  <button class="button" type="button">subscribe</button>
+
+  <h2>Product stage</h2>
+  <div class="stage">
+    <div class="price">399 USD</div>
+    <div class="search">search</div>
+  </div>
+
+  <h2>404</h2>
+  <p>sorry, we can't find the page you are looking for</p>
+  <a class="return" href="#top">return to teenage.engineering</a>
+</main>
+</body>
+</html>

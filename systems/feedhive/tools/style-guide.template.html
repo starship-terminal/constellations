@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FeedHive style guide</title>
+<meta name="description" content="FeedHive design tokens and the public marketing surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: light;
+  --sg-sans: Inter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Plus Jakarta Sans", Inter, ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: "Sometype Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-body, #20232b); background: var(--background-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 600 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.03em; color: var(--text-ink, #23252b); }
+h2.sh { font: 700 12px/1 var(--sg-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted, #666c77); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-rule, #e7e8ec); }
+.lead { max-width: 62ch; color: var(--text-body, #20232b); opacity: .85; }
+.note { font-size: 13px; color: var(--text-muted, #666c77); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 700 11px/1 var(--sg-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted, #666c77); opacity: .75; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-input, #dfdfe4); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-muted, #666c77); }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-input, #dfdfe4); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-muted, #666c77); }
+/* ---- toggle ---- */
+.mode { display: inline-flex; align-items: center; gap: 10px; font: 500 13px/1 var(--sg-sans); color: var(--text-muted, #666c77); user-select: none; cursor: pointer; }
+.mode input { position: absolute; opacity: 0; }
+.mode .trk { width: 36px; height: 20px; border-radius: 9999px; background: var(--background-card, #f6f6f8); border: 1px solid var(--border-input, #dfdfe4); position: relative; transition: background .15s; }
+.mode .trk::after { content: ""; position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: var(--action-fill, #4457ff); transition: transform .15s; }
+.mode input:checked + .trk::after { transform: translateX(16px); }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border-input, #dfdfe4); border-radius: var(--radius-card, 16px); overflow: hidden; background: var(--background-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 80px); padding: 0 22px; font-size: 14px; font-weight: 500; letter-spacing: -0.01em; color: var(--text-linkInk, #4f5562); background: var(--background-page, #fff); border-bottom: 1px solid var(--border-panel, #efefed); }
+.navbar .wm { font-weight: 700; font-size: 17px; letter-spacing: -0.02em; color: var(--text-ink, #23252b); }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-hero-cta-height, 50px); padding: 0 22px; font-size: 15px; font-weight: 600; letter-spacing: -0.03em; border-radius: var(--radius-cta, 15px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-fill, #4457ff); color: var(--action-ink, #fff); }
+.btn.ghost { border-color: var(--border-input, #dfdfe4); color: var(--text-ink, #23252b); background: var(--background-page, #fff); }
+.btn.small { height: var(--component-nav-pill-height, 40px); border-radius: var(--radius-navPill, 11px); font-size: 14px; padding: 0 18px; }
+.btn.neutral { background: var(--background-pillNeutral, #f4f2f0); color: var(--text-ink, #23252b); height: var(--component-nav-pill-height, 40px); border-radius: var(--radius-navPill, 11px); font-size: 14px; padding: 0 18px; font-weight: 500; }
+.hero { color: var(--text-ink, #23252b); padding: 56px 40px 64px; font: 600 var(--font-size-measured-hero, 55px)/1.15 var(--sg-serif); letter-spacing: -0.035em; text-align: left; background: var(--background-page, #fff); }
+.hero .badge { display: inline-flex; align-items: center; gap: 8px; font: 500 13px/1 var(--sg-sans); letter-spacing: -0.01em; color: var(--text-ink, #23252b); border: 1px solid var(--border-input, #dfdfe4); border-radius: 9999px; padding: 9px 14px; margin-bottom: 22px; }
+.hero .accent { color: var(--action-fill, #4457ff); }
+.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); letter-spacing: -0.026em; color: var(--text-muted, #666c77); margin: 16px 0 22px; max-width: 46ch; }
+.hero .check { font: 400 16px/1.45 var(--sg-sans); letter-spacing: -0.026em; color: var(--text-body, #20232b); margin-top: 14px; }
+.hero .check b { font-weight: 600; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border-input, #dfdfe4); border-radius: var(--radius-card, 16px); padding: 14px; font-size: 13px; background: var(--background-card, #f6f6f8); }
+.tile .kick { display: block; font: 700 11px/1 var(--sg-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--action-fill, #4457ff); margin-bottom: 10px; }
+.tile b { display: block; font: 600 18px/1.25 var(--sg-serif); letter-spacing: -0.02em; color: var(--text-ink, #23252b); margin-bottom: 4px; }
+.tile .sub { color: var(--text-muted, #666c77); font-size: 12px; }
+/* ---- sign-in card mock (the Chakra app) ---- */
+.auth { display: flex; justify-content: center; padding: 44px 20px; background: var(--background-card, #f6f6f8); }
+.acard { width: min(512px, 100%); background: #fff; border-radius: var(--component-login-panel-radius, 20px); box-shadow: var(--component-login-panel-shadow, 0 20px 25px -5px rgba(0,0,0,.1)); padding: 34px 44px; font-family: Inter, sans-serif; }
+.acard h3 { font: 700 18.4px/1.4 Inter, sans-serif; color: var(--component-login-panel-ink, #1a202c); margin: 18px 0 14px; }
+.acard .pill { display: flex; align-items: center; justify-content: center; height: 60px; border-radius: 9999px; border: 1px solid var(--component-login-field-border, #edf2f7); box-shadow: var(--component-login-control-shadow, 0 2px 8px rgba(27,25,121,.05)); font-size: 14.72px; color: var(--component-login-panel-ink, #1a202c); }
+.acard .or { display: flex; align-items: center; gap: 14px; margin: 16px 0; font-size: 12px; color: var(--text-meta, #6c7280); }
+.acard .or::before, .acard .or::after { content: ""; flex: 1; border-top: 1px solid var(--component-login-field-border, #edf2f7); }
+.acard .field { height: 60px; border-radius: 9999px; border: 1px solid var(--component-login-field-border, #edf2f7); box-shadow: var(--component-login-control-shadow, 0 2px 8px rgba(27,25,121,.05)); margin-bottom: 10px; display: flex; align-items: center; padding: 0 22px; font-size: 14.72px; color: var(--text-faint, #8b9098); }
+.acard .go { height: 58px; border-radius: 9999px; background: var(--component-login-submit-gradient, var(--component-login-submit-fill, #3b82f6)); box-shadow: var(--component-login-submit-glow, 0 0 35px 10px rgba(89,106,255,.28)); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 14.72px; margin-top: 14px; }
+.acard .forgot { text-align: center; margin-top: 14px; font-size: 13px; color: var(--component-login-link, #5d60ec); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-input, #dfdfe4); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-rule, #e7e8ec); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--text-muted, #666c77); font-family: var(--sg-mono); }
+.pill-nav { display: inline-flex; background: var(--background-page, #fff); border: 1px solid var(--border-tab, #d8dbe2); border-radius: 9999px; padding: 4px; gap: 4px; font-size: 14px; font-weight: 500; letter-spacing: -0.02em; color: var(--text-gray, #757b86); }
+.pill-nav span { padding: 8px 20px; border-radius: 9999px; }
+.pill-nav .on { background: var(--action-selectedBg, #3347fb); color: #fff; }
+.tabrow { display: inline-flex; gap: 8px; font-size: 14px; font-weight: 500; letter-spacing: -0.02em; }
+.tabrow span { height: 30px; display: inline-flex; align-items: center; padding: 0 14px; border-radius: 9999px; border: 1px dashed var(--border-tab, #d8dbe2); background: var(--background-page, #fff); color: var(--text-gray, #757b86); }
+.tabrow .on { border: 1px solid var(--action-selectedBorder, #84a1ff); background: var(--background-selectedTint, #eef2ff); color: var(--action-selectedInk, #5a84ff); }
+</style>
+</head>
+<body>
+<main>
+  <h1>FeedHive style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.
+  <label class="mode" style="float:right;margin-top:-34px"><input type="checkbox" id="theme"><span class="trk"></span>Dark</label></p>
+
+  <h2 class="sh">FeedHive, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the thin declared Tailwind-v4 layer (<code>--spacing</code>, <code>--radius-*</code>, <code>--text-sm/--text-lg</code>, <code>--font-weight-*</code>, <code>--ease-out</code>, <code>--default-transition-*</code>), FeedHive's own <code>.cta-gradient-ring</code> properties (<code>--cta-ring-*</code>, <code>--cta-glow-*</code>, <code>--cta-border-angle</code>), the measured indigo palette (<code>#4457ff</code> brand, <code>#3347fb</code> hover, <code>#eef2ff</code> selected tint), the warm ink/gray ramp, the 9–20px radii and full pills, the 150ms control transition, and the measured component geometry. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from feedhive.com on 2026-11-14, signed out, in headless Chromium. The marketing site ships light only — the Dark toggle above switches the roles panel to the dark set, which is empty on purpose; there is no dark surface to show. Inter, Plus Jakarta Sans and Sometype Mono are served faces and are not loaded here: samples fall back to system fonts. app.feedhive.com sign-in/sign-up is a separate Chakra-UI app measured as a boundary — its values live under <code>component.login.*</code>.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The 80px header sits under a 38px promo bar: the wordmark, Product / Agents &amp; Automation / Socials / Learn dropdown triggers, Pricing, the neutral Login pill (<code>#f4f2f0</code>, 11px radius) and the indigo Sign Up pill (<code>#4457ff</code>). The hero pairs a gradient-ring release badge with a Plus Jakarta Sans masthead, a muted lede, the 50px indigo "Get started for free" CTA (15px radius) and checked feature rows.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">FeedHive</span><span>Product ▾</span><span>Agents &amp; Automation ▾</span><span>Socials ▾</span><span>Learn ▾</span><span>Pricing</span><span class="sp"></span><span class="btn neutral">Login</span><span class="btn small primary">Sign Up</span></div>
+    <div class="hero"><span class="badge">◆ Introducing FeedHive v2.0</span><br>Social media using<br><span class="accent">Automation &amp; AI Agents.</span><small>The AI social media management platform — schedule, generate and automate content across every channel.</small><span class="btn primary">Get started for free</span><div class="check">✓ <b>Create with AI.</b> Generate content that fits your tone-of-voice &amp; brand.<br>✓ <b>Automate.</b> Create advanced workflows and posting conditions.<br>✓ <b>Collaborate.</b> Work together with humans and AI agents in one place.</div></div>
+  </div>
+
+  <h2 class="sh">Tabs and toggles</h2>
+  <p class="lead">Feature tab pills rest as dashed-border pills (<code>#d8dbe2</code>) and select into the indigo tint (<code>#eef2ff</code> fill, <code>#84a1ff</code> border, <code>#5a84ff</code> ink); the billing toggle selects the darker <code>#3347fb</code> step.</p>
+  <div class="mock" style="padding:22px;display:flex;gap:28px;align-items:center;flex-wrap:wrap">
+    <span class="tabrow"><span>Composer</span><span class="on">✓ AI Assistant</span><span>Automation</span><span>Publishing</span></span>
+    <span class="pill-nav"><span>Monthly</span><span class="on">Yearly</span></span>
+  </div>
+
+  <h2 class="sh">The app sign-in (a different system)</h2>
+  <p class="lead">app.feedhive.com/signin and /signup are a separate Chakra-UI app that shares no token layer with the marketing site: a white 512px card with a 20px radius and a two-layer lift shadow, 9999px pill controls on hairline <code>#edf2f7</code> borders, a <code>#3b82f6</code> submit blue with a violet glow, and <code>#5d60ec</code> links — all measured, never submitted. These values are tokens under <code>component.login.*</code>.</p>
+  <div class="auth">
+    <div class="acard"><b>FeedHive</b><span style="float:right;font-size:12px;color:var(--text-muted,#666c77)">No account yet? <span style="color:var(--component-login-link,#5d60ec)">Sign up</span></span><h3>Let's get you signed in</h3><div class="pill">Sign in with Google</div><div class="or">OR</div><div class="field">Email</div><div class="field">Password</div><div class="go">Sign in</div><div class="forgot">Forgot your password?</div></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The brand indigo <code>#4457ff</code> with its <code>#3347fb</code> hover step and the <code>#eef2ff</code>/<code>#84a1ff</code>/<code>#5a84ff</code> selected tint, against the warm neutral ramp: <code>#23252b</code> ink, muted grays <code>#666c77–#8b9098</code>, subtle surfaces <code>#f4f3f2/#f6f6f8/#fbfaf7</code> and hairlines <code>#dfdfe4–#e6e2dc</code>. The declared layer carries only <code>--color-black</code>/<code>--color-white</code> — everything else was measured.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">A 4px declared spacing base (<code>--spacing</code>). Radii: 9px option chips, 11px header pills, 12px fields, 15px CTAs, 16px cards and media clips, 18px dropdown items, 20px on the Chakra card, full pills elsewhere. Controls transition over the declared 150ms cubic-bezier(.4,0,.2,1); the gradient ring's <code>--cta-border-angle</code> animates 0deg → 1turn.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Three served faces: <code>Inter</code> (variable wght 100–900) carries every control and body; <code>Plus Jakarta Sans</code> draws the display headings and plan names; <code>Sometype Mono</code> sets the tracked caps eyebrows and card kickers. Display sizes are measured arbitrary-px steps — 68/64/62/60/58/55px, 46px on the phone — with negative tracking throughout and +0.14–0.2em on the mono caps. The Chakra app paints 14.72px controls.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --radius-*/--text-*/--spacing variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, selected, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // The roles panel obeys the Dark toggle: feedhive.com ships no dark
+  // surface, so the dark set is empty and the panel says so instead of
+  // pretending.
+  const rolesHost = () => {
+    const dark = document.documentElement.dataset.mode === 'dark';
+    const roles = flat(TOK[dark ? 'dark' : 'light'] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    let hh = `<div class="pal-h">${dark ? 'dark roles' : 'light roles'}</div>`;
+    if (!roles.length) return hh + `<p class="note">Empty — feedhive.com ships one light theme only; there is no dark token set on the public site.</p>`;
+    hh += `<div class="pal${dark ? ' dark' : ''}">`;
+    for (const [n, t] of roles) hh += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    return hh + '</div>';
+  };
+  const host = document.createElement('div');
+  host.id = 'roles-panel';
+  $('#roles-out').insertAdjacentHTML('beforeend', h);
+  $('#roles-out').appendChild(host);
+  const refill = () => { host.innerHTML = rolesHost(); };
+  refill();
+  document.getElementById('theme').addEventListener('change', function () {
+    document.documentElement.dataset.mode = this.checked ? 'dark' : '';
+    refill();
+  });
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.ctaRing || {}, 'ctaRing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat(TOK.core.animate || {}, 'animate.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const setname of ['light', 'dark']) {
+    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.component || {}).login || {}, 'component.login.')) {
+    if (/shadow|glow/.test(n)) e += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 110))}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}), 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — FeedHive</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

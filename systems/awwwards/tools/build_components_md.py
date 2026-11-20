@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build components.md for the ASOS design reference.
+"""Build components.md for the Awwwards design reference.
 
 Reads raw/components-computed.json (every component and state, measured), raw/layout.json,
 tokens.json, screenshots/ and icons/INDEX.tsv, and writes components.md next to them. Every value
@@ -409,7 +409,8 @@ for g in groups:
         if desc and not desc.endswith((".", ")", '"')):
             desc += "."
         where = PAGE_NAME.get(c.get("page") or "?", c.get("page") or "the")
-        W(f"{desc + ' ' if desc else ''}Read as `{k}` on the {where} page{' at 390 wide' if g.startswith('Mobile') else ''}.")
+        # PAGE_NAME already reads "the home page", "the shop grid" or bare "the"
+        W(f"{desc + ' ' if desc else ''}Read as `{k}` on {where}{'' if where.endswith(' page') else ' page'}{' at 390 wide' if g.startswith('Mobile') else ''}.")
         W()
         if c.get("missing"):
             W("Not on the page when it was captured.")

@@ -6,6 +6,7 @@ import type { SettingsStats } from "@/components/Settings";
 import { loadData } from "@/lib/catalog";
 import { loadReferoIndex } from "@/lib/refero";
 import { load as loadScorecard } from "@/lib/scorecard";
+import path from "node:path";
 import { ROOT } from "@/lib/repo";
 import "./settings.css";
 
@@ -13,7 +14,9 @@ export const metadata: Metadata = { title: "Settings" };
 export const dynamic = "force-dynamic";
 
 export default async function SettingsPage() {
-  const stats: SettingsStats = { repo: ROOT, systems: null, refero: null, audit: null };
+  // The checkout's folder name only: the page is served to every allowed host,
+  // and the absolute path names the server's user and directory layout.
+  const stats: SettingsStats = { repo: path.basename(ROOT), systems: null, refero: null, audit: null };
   try {
     stats.systems = (await loadData()).systems.length;
   } catch {}

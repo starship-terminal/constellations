@@ -1,0 +1,79 @@
+Source: :root, :host block in https://sana.ai/_/5a39345e5bdd/assets/index-fYDhCrAU.css, @layer theme.
+Resolved on the home page (html has no .dark class) unless noted.
+Dark overrides are the .dark rule, which the sign-in page applies (html.dark).
+
+--spacing: .25rem
+--font-weight-light: 300
+--font-weight-normal: 400
+--font-weight-medium: 500
+--font-weight-semibold: 600
+--font-weight-bold: 500
+--font-weight-book: 450
+--tracking-wider: .05em
+--leading-tight: 1.25
+--leading-snug: 1.375
+--leading-normal: 1.5
+--leading-relaxed: 1.625
+--radius-xs: .125rem
+--radius-sm: .25rem
+--radius-md: .375rem
+--radius-lg: .5rem
+--radius-xl: .75rem
+--radius-2xl: 1rem
+--radius-3xl: 1.5rem
+--radius-4xl: 2rem
+--ease-out: cubic-bezier(0, 0, .2, 1)
+--ease-in-out: cubic-bezier(.4, 0, .2, 1)
+--default-transition-duration: .15s
+--default-transition-timing-function: cubic-bezier(.4, 0, .2, 1)
+--color-foreground-primary: #0a1217
+--color-foreground-secondary: #0a121799
+--color-foreground-secondary-solid: #686d70
+--color-foreground-muted: #0a121766
+--color-foreground-accent: #0a1217
+--color-foreground-accent-alt: #fd2d55
+--color-background-primary: #fff
+--color-background-secondary: #131314f5
+--color-background-secondary-hover: #131314ec
+--color-background-tertiary: #131314d9
+--color-background-tertiary-hover: #131314c2
+--color-background-muted: #1313141a
+--color-background-accent: #cdfe00
+--color-alert: #ff3b30
+--color-alert-background: #ff3b300f
+--color-warning: #ffa82f
+--color-warning-hover: #ffa82fcc
+--color-warning-background: #ffa82f1a
+--color-paper: #fafafa
+--color-brand-lime: #0d0
+--text-xs: 12px
+--text-sm: 14px
+--text-base: 16px
+--text-lg: 18px
+--text-xl: 20px
+--text-2xl: 24px
+--text-3xl: 34px
+--font-sans: "Sana Sans", -apple-system, BlinkMacSystemFont, "Sana Serif", Roboto, Inter, system-ui, sans-serif, Avenir, Helvetica, Arial, sans-serif
+--font-serif: "Sana Serif"
+--font-mono: "IBM Plex Mono", monospace
+
+.dark overrides that were resolved on the sign-in page:
+--color-foreground-primary: #e8e8e8
+--color-foreground-secondary: #e8e8e899
+--color-foreground-secondary-solid: #8b8b8b
+--color-foreground-muted: #e8e8e866
+--color-foreground-muted-solid: #5d5d5d
+--color-background-primary: #131314
+--color-background-secondary: #1e1f20
+--color-background-secondary-hover: #242628
+--color-background-tertiary: #353536
+--color-background-tertiary-hover: #4c4c4d
+--color-background-muted: #000000ed
+--color-paper: #131314
+
+Resolved on the sign-in page (html.dark):
+--color-background-primary computed #131314
+--color-foreground-primary computed #e8e8e8
+--color-background-accent stayed #cdfe00
+--color-alert stayed #ff3b30
+--color-brand-lime stayed #0d0

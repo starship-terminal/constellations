@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luma AI style guide</title>
+<meta name="description" content="Luma AI design tokens and the public signed-out surface, rendered from tokens.json.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Graphik", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"] {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.4 var(--sg-sans); color: var(--text-primary, #000); background: var(--surface-page, #fff); letter-spacing: -0.03em; }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.2 var(--sg-sans); margin: 0 0 8px; letter-spacing: -0.04em; }
+h2.sh { font: 500 13px/1 var(--sg-sans); letter-spacing: 0.04em; color: var(--text-secondary, #737373); margin: 48px 0 8px; padding-bottom: 8px; border-bottom: 1px solid var(--shadcn-border, #e5e5e5); }
+.lead { max-width: 68ch; }
+.note { font-size: 13px; color: var(--text-secondary, #737373); max-width: 68ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 12px/1 var(--sg-sans); color: var(--text-secondary, #737373); margin: 18px 0 6px; letter-spacing: 0; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 200px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--shadcn-border, #e5e5e5); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-secondary, #737373); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv span { color: var(--text-secondary, #737373); }
+.mock { border: 1px solid var(--shadcn-border, #e5e5e5); overflow: hidden; background: var(--surface-page, #fff); border-radius: 16px; }
+.hero { background: #000; color: #fff; min-height: 280px; padding: 28px 32px 40px; display: flex; flex-direction: column; }
+.nav { display: flex; align-items: center; gap: 18px; font-size: 13px; letter-spacing: 0.04em; }
+.nav b { margin-right: auto; font-weight: 500; letter-spacing: 0; }
+.nav span { opacity: .9; }
+.pill { margin-left: 8px; height: 32px; padding: 0 14px; border-radius: 999px; background: #fff; color: #000; display: inline-flex; align-items: center; font-size: 14px; font-weight: 500; letter-spacing: 0; }
+.hero h3 { margin: 64px auto 8px; font: 500 40px/1.2 var(--sg-sans); letter-spacing: -0.04em; text-align: center; }
+.hero p { margin: 0 auto 20px; text-align: center; color: #b3b3b3; }
+.hero .cta { align-self: center; height: 48px; padding: 0 22px; border-radius: 999px; background: #fff; color: #000; display: inline-flex; align-items: center; font-weight: 500; }
+.plans { display: flex; gap: 12px; padding: 20px; background: var(--surface-page, #fff); }
+.plan { flex: 1; background: var(--surface-subtle, #f2f2f2); border-radius: 16px; padding: 16px; }
+.plan.on { background: #000; color: #fff; }
+.plan .price { font: 500 28px/1 var(--sg-sans); margin: 8px 0; }
+.plan .cta { display: flex; align-items: center; justify-content: center; height: 40px; border-radius: 999px; background: #fff; color: #000; font-size: 14px; margin-top: 12px; }
+.toggle { display: flex; justify-content: center; padding: 16px 0 0; }
+.toggle i { font-style: normal; background: var(--surface-subtle, #f2f2f2); border-radius: 999px; padding: 4px; display: inline-flex; gap: 4px; }
+.toggle b, .toggle span { border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 500; }
+.toggle b { background: #000; color: #fff; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--shadcn-border, #e5e5e5); }
+.tr .tv { font-size: 12px; color: var(--text-secondary, #737373); font-family: var(--sg-mono); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--shadcn-border, #e5e5e5); padding: 6px 14px; text-align: left; }
+button.mode { margin-top: 16px; height: 32px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--shadcn-border, #ccc); background: var(--surface-page, #fff); color: var(--text-primary, #000); font: 500 14px var(--sg-sans); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Luma AI style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>. Swatches and sizes below are tokens. The boxed mocks are reconstructions drawn with those tokens, not captured pixels. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <button class="mode" type="button" onclick="document.documentElement.dataset.mode = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'">Toggle light / dark tokens</button>
+
+  <h2 class="sh">What was measured</h2>
+  <p class="lead">Read from lumalabs.ai on 2026-11-18, signed out, in headless Chromium. Inner pages paint a white field with black text in Graphik. The home hero and /ray paint dark media. Sign In, Try for free, Start Now, Use the API and the enterprise Submit were measured, never followed. The home prompt was filled and cleared.</p>
+  <p class="note">Graphik and PP Editorial are served by the site. Samples fall back to system faces. There is no public user gallery. Generation sits behind sign-in.</p>
+
+  <h2 class="sh">Home hero</h2>
+  <p class="lead">A black field, a 32px white Sign In pill, and a 48px Try for free pill. Nav labels are 14px uppercase. Try for free was never followed.</p>
+  <div class="mock">
+    <div class="hero">
+      <div class="nav"><b>Luma</b><span>PRODUCT</span><span>PRICING</span><span>API</span><span class="pill">Sign In</span></div>
+      <h3>Luma is your creative partner</h3>
+      <p>You have the idea. Luma helps make it real.</p>
+      <div class="cta">Try for free</div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">A white page, a pill interval toggle, and three plan cards. Plus and Ultra sit on the subtle surface. Pro inverts to black. Start Now was never followed.</p>
+  <div class="mock">
+    <div class="toggle"><i><b>Monthly</b><span>Yearly</span></i></div>
+    <div class="plans">
+      <div class="plan"><div>Plus</div><div class="price">$30</div><div class="cta">Start Now</div></div>
+      <div class="plan on"><div>Pro</div><div class="price">$90</div><div class="cta">Start Now</div></div>
+      <div class="plan"><div>Ultra</div><div class="price">$300</div><div class="cta">Start Now</div></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Colour</h2>
+  <p class="pal-h">Light surface and text</p>
+  <div class="pal">
+    <div class="sw"><span class="dot"><i style="background:var(--surface-page)"></i></span><span><span class="nm">surface.page</span><br><span class="vl">var(--surface-page)</span></span></div>
+    <div class="sw"><span class="dot"><i style="background:var(--surface-subtle)"></i></span><span><span class="nm">surface.subtle</span><br><span class="vl">var(--surface-subtle)</span></span></div>
+    <div class="sw"><span class="dot"><i style="background:var(--surface-inverted)"></i></span><span><span class="nm">surface.inverted</span><br><span class="vl">var(--surface-inverted)</span></span></div>
+    <div class="sw"><span class="dot"><i style="background:var(--text-primary)"></i></span><span><span class="nm">text.primary</span><br><span class="vl">var(--text-primary)</span></span></div>
+    <div class="sw"><span class="dot"><i style="background:var(--text-secondary)"></i></span><span><span class="nm">text.secondary</span><br><span class="vl">var(--text-secondary)</span></span></div>
+    <div class="sw"><span class="dot"><i style="background:var(--shadcn-border)"></i></span><span><span class="nm">shadcn.border</span><br><span class="vl">var(--shadcn-border)</span></span></div>
+    <div class="sw"><span class="dot"><i style="background:var(--shadcn-destructive)"></i></span><span><span class="nm">shadcn.destructive</span><br><span class="vl">var(--shadcn-destructive)</span></span></div>
+  </div>
+
+  <h2 class="sh">Type</h2>
+  <div class="tr"><span style="font:500 52px/1.2 var(--sg-sans);letter-spacing:-0.04em">Hero</span><span class="tv">52 / 500 Graphik</span></div>
+  <div class="tr"><span style="font:500 36px/1.2 var(--sg-sans)">Plans and Pricing</span><span class="tv">heading</span></div>
+  <div class="tr"><span style="font:400 16px/1.4 var(--sg-sans)">Body. You have the idea.</span><span class="tv">16 / 400 / 1.4 / -0.03em</span></div>
+  <div class="tr"><span style="font:500 13px/1 var(--sg-sans);letter-spacing:0.04em">PRODUCT</span><span class="tv">nav label</span></div>
+
+  <h2 class="sh">Radius</h2>
+  <table class="cmp">
+    <tr><th>Token</th><th>Use</th></tr>
+    <tr><td>999px</td><td>Sign In, Try for free, Start Now, filter chips</td></tr>
+    <tr><td>12px</td><td>Prompt composer (rounded-xl)</td></tr>
+    <tr><td>16px</td><td>Plan cards</td></tr>
+  </table>
+</main>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FARFETCH style guide</title>
+<meta name="description" content="FARFETCH design tokens and the public signed-out luxury e-commerce surface's components, rendered from tokens.json — the pulse token layer resolved from the site's own stylesheets plus measured computed styles.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: var(--font-family-sans, "Helvetica Neue", Arial, sans-serif);
+  --sg-serif: var(--font-family-editorial, "Times New Roman", Georgia, serif);
+  --sg-display: var(--font-family-display-large, "Helvetica Neue", Arial, sans-serif);
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--general-brand-ui01, #222222); background: var(--page-primary-enabled-surface, #ffffff); }
+[data-mode="dark"] body { background: #1a1a1a; color: #ddd; }
+[data-mode="dark"] h2.sh, [data-mode="dark"] .lead, [data-mode="dark"] .note, [data-mode="dark"] .pal-h, [data-mode="dark"] .sw .vl, [data-mode="dark"] .kv span, [data-mode="dark"] .tr .tv { color: #ddd; }
+[data-mode="dark"] .mock { background: #242424; }
+#mode { position: fixed; top: 12px; right: 12px; z-index: 10; font: 500 12px/1 var(--sg-sans); border: 1px solid currentColor; background: transparent; color: inherit; padding: 8px 14px; cursor: pointer; }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.1 var(--sg-display); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--general-brand-ui01, #222222); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: var(--borderWidth-s, 1px) solid var(--general-brand-ui04, #e6e6e6); }
+.lead { max-width: 62ch; color: var(--general-brand-ui01, #222222); opacity: .8; }
+.note { font-size: 13px; color: var(--general-brand-ui01, #222222); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--general-brand-ui01, #222222); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--general-brand-ui04, #e6e6e6); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--general-brand-ui01, #222222); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--general-brand-ui04, #e6e6e6); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--general-brand-ui01, #222222); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--general-brand-ui04, #e6e6e6); overflow: hidden; background: var(--page-primary-enabled-surface, #ffffff); }
+.topbar { display: flex; align-items: center; gap: 20px; height: 44px; padding: 0 24px; font-size: 13px; color: var(--general-brand-ui01, #222222); background: #fff; border-bottom: 1px solid var(--general-brand-ui04, #e6e6e6); }
+.topbar .wm { font: 700 17px/1 var(--sg-display); letter-spacing: .22em; }
+.topbar .dept { color: var(--navigation-primary-enabled-label, #727272); }
+.topbar .dept.on { color: var(--general-brand-ui01, #222222); border-bottom: 2px solid var(--general-brand-ui01, #222222); height: 44px; display: inline-flex; align-items: center; }
+.topbar .icons { display: inline-flex; gap: 14px; margin-left: auto; font-size: 15px; }
+.navrow { display: flex; align-items: center; gap: 18px; height: 44px; padding: 0 24px; font-size: 13px; color: var(--navigation-primary-enabled-label, #727272); background: #fff; border-bottom: 1px solid var(--general-brand-ui04, #e6e6e6); }
+.navrow .sale { color: var(--content-primary-enabled-sale, #e71d34); }
+.navrow .search { width: var(--component-search-field-width, 270px); height: var(--component-search-field-height, 44px); border: 1px solid var(--form-primary-default-enabled-stroke, #727272); font-size: 12px; color: var(--form-primary-default-enabled-placeholder, #727272); padding: 0 10px; display: inline-flex; align-items: center; margin-left: auto; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 var(--button-base-padding, 16px); font-size: 13px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; border: 1px solid transparent; }
+.btn.primary { background: var(--action-primary-enabled-surface, #222222); border-color: var(--action-primary-enabled-surface, #222222); color: var(--action-primary-enabled-label, #ffffff); }
+.btn.primary:hover { background: var(--action-primary-hover-surface, #727272); }
+.btn.secondary { background: var(--action-secondary-enabled-surface, #ffffff); border-color: var(--action-secondary-enabled-stroke, #222222); color: var(--action-secondary-enabled-label, #222222); }
+.btn.ghost { background: none; border-color: transparent; color: var(--action-ghost-dark-enabled-label, #222222); }
+.heromod { display: flex; min-height: 380px; background: var(--general-brand-ui05, #f5f5f5); }
+.heromod .img { flex: 1.2; background: linear-gradient(160deg, #d8d8d8, var(--general-ui-skeleton, #f5f5f5)); }
+.heromod .copy { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 40px; }
+.heromod .copy b { font: 400 34px/1.1 var(--sg-display); color: var(--general-brand-ui01, #222222); }
+.heromod .copy em { font: 400 17px/1.4 var(--sg-serif); color: var(--general-brand-ui02, #727272); margin: 14px 0 20px; }
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 20px 24px; }
+.pcard { position: relative; }
+.pcard .img { aspect-ratio: 3/4; background: var(--general-ui-skeleton, #f5f5f5); }
+.pcard .heart { position: absolute; top: 8px; right: 8px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: #fff; color: var(--action-ghost-dark-enabled-icon, #222222); font-size: 14px; }
+.pcard .brand { display: block; font: 500 11px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--content-primary-enabled-label, #222222); margin: 10px 0 4px; }
+.pcard .desc { font: 400 13px/1.4 var(--sg-sans); color: var(--general-brand-ui02, #727272); }
+.pcard .price { font: 500 13px/1.4 var(--sg-sans); color: var(--content-primary-enabled-label, #222222); margin-top: 6px; }
+.pcard .price s { color: var(--general-brand-ui02, #727272); }
+.pcard .price .disc { color: var(--content-primary-enabled-sale, #e71d34); }
+.pdprow { display: flex; gap: 24px; padding: 24px; }
+.pdprow .img { width: 42%; aspect-ratio: 3/4; background: var(--general-ui-skeleton, #f5f5f5); }
+.pdprow .buy { flex: 1; }
+.pdprow .brand { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; text-decoration: underline; }
+.pdprow h3 { font: 400 22px/1.27 var(--sg-sans); margin: 8px 0 10px; }
+.pdprow .price { font: 400 18px/1.2 var(--sg-sans); margin-bottom: 18px; }
+.pdprow .field { display: flex; align-items: center; justify-content: space-between; height: var(--component-size-selector-height, 44px); border: 1px solid var(--form-primary-default-enabled-stroke, #727272); padding: 0 14px; font-size: 13px; color: var(--form-primary-default-enabled-label, #222222); margin-bottom: 10px; }
+.pdprow .buyrow { display: flex; gap: 10px; }
+.pdprow .buyrow .primary { flex: 1; }
+.foot { padding: 28px 24px; border-top: 1px solid var(--general-brand-ui04, #e6e6e6); font-size: 13px; color: var(--general-brand-ui02, #727272); }
+.foot .cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 20px; }
+.foot .cols b { display: block; font: 500 11px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--general-brand-ui01, #222222); margin-bottom: 8px; }
+.foot .nl { display: flex; gap: 10px; }
+.foot .nl .in { width: var(--component-news-field-width, 300px); height: 44px; border: 1px solid var(--form-primary-default-enabled-stroke, #727272); padding: 0 14px; display: inline-flex; align-items: center; color: var(--form-primary-default-enabled-placeholder, #727272); font-size: 13px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--general-brand-ui04, #e6e6e6); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--general-brand-ui05, #f5f5f5); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--general-brand-ui01, #222222); opacity: .65; font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<button id="mode" type="button" aria-pressed="false">Dark</button>
+<main>
+  <h1>FARFETCH style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">farfetch.com, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared pulse token layer — the ~590 <code>--colors-&lt;family&gt;-&lt;role&gt;-&lt;state&gt;-&lt;slot&gt;</code> semantics (actions, forms, navigation, content, cards, messaging, notifications, modality, pos, rating, access, general, page), the <code>--typography-*</code> roles, the <code>--spacers-c*/-l*</code> and <code>--gutter-*</code> scales, <code>--borders-*</code>, <code>--motion-functional/emotional-*</code>, <code>--icons-*</code>, <code>--button-*</code> and <code>--page-*</code> — plus the legacy camelCase palette/type layer. The look: white surfaces, <code>#222222</code> ink, <code>#727272</code> secondary text, <code>#e6e6e6</code> hairlines and the <code>#e71d34</code> sale red, 'Farfetch Basis' UI type with 'Nimbus Roman D' editorial serif, square corners everywhere except the 1000px pill. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from farfetch.com on 2026-11-14, signed out, in headless Chromium — through the Wayback Machine, because live farfetch.com answers Akamai 403 to automation and its CDNs 429: the DOM is archived SSR markup painted by its own stylesheets with scripts removed, so hydration-owned surfaces (size listboxes, dropdown panels, filter drawers) stay closed. Nothing was signed into, added to a bag or wishlist, submitted or bought; hover/focus/pressed states were forced, the search and newsletter fields were typed into and cleared, never submitted. 'Farfetch Basis' and 'Nimbus Roman D' are proprietary fonts; samples fall back to system faces.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A two-row white top chrome, ~124px at 1440: the TopBar carries the department links (Womenswear/Menswear/Kidswear), the 201px letterspaced wordmark and the 44px icon hit areas — locale flag, account, wishlist, bag; the NavBar carries the category links in <code>#727272</code>, the one chromatic item — <code>Sale</code> in <code>#e71d34</code> — and the 270x44 search field. The TopBar is sticky with a <code>#e6e6e6</code> hairline.</p>
+  <div class="mock">
+    <div class="topbar"><span class="dept on">Womenswear</span><span class="dept">Menswear</span><span class="dept">Kidswear</span><span class="wm">FARFETCH</span><span class="icons">&#9873; &#9790; &#9825; &#128717;</span></div>
+    <div class="navrow"><span>Clothing</span><span>Shoes</span><span>Bags</span><span>Jewelry</span><span>Accessories</span><span class="sale">Sale</span><span class="search">Search</span></div>
+  </div>
+
+  <h2 class="sh">The listing</h2>
+  <p class="lead">Below the chrome the page stays white: a full-bleed hero module (campaign image, DisplayLarge title over a 'Nimbus Roman D' dek and the secondary <code>Shop Now</code> button), then the 4-up product-card grid — image, ghost-dark wishlist heart, uppercase brand kicker, grey description, price; sale cards add the <code>#e71d34</code> discount line under a struck original.</p>
+  <div class="mock">
+    <div class="heromod"><div class="img"></div><div class="copy"><b>The new-season edit</b><em>Pieces we love right now, in the editorial serif.</em><div><span class="btn secondary">Shop Now</span></div></div></div>
+    <div class="grid">
+      <div class="pcard"><div class="img"></div><span class="heart">&#9825;</span><span class="brand">Dolce &amp; Gabbana</span><div class="desc">logo-embossed cut-out slides</div><div class="price">$345</div></div>
+      <div class="pcard"><div class="img"></div><span class="heart">&#9825;</span><span class="brand">Jacquemus</span><div class="desc">Le Chiquito leather bag</div><div class="price"><s>$890</s> $534 <span class="disc">-40%</span></div></div>
+      <div class="pcard"><div class="img"></div><span class="heart">&#9825;</span><span class="brand">Toteme</span><div class="desc">signature monogram scarf</div><div class="price">$450</div></div>
+      <div class="pcard"><div class="img"></div><span class="heart">&#9825;</span><span class="brand">Ganni</span><div class="desc">buckle ballet flats</div><div class="price">$295</div></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The PDP buy box</h2>
+  <p class="lead">A product page pairs the image carousel (ghost-dark arrows on the photo) with the buy column: underlined uppercase brand link, the 22px Heading title, the price, the 44px <code>Select size</code> combobox, then the square <code>#222222</code> Add To Bag (hover lifts the fill to <code>#727272</code>) beside the outlined Wishlist secondary.</p>
+  <div class="mock">
+    <div class="pdprow">
+      <div class="img"></div>
+      <div class="buy">
+        <span class="brand">Dolce &amp; Gabbana</span>
+        <h3>logo-embossed cut-out slides</h3>
+        <div class="price">$345</div>
+        <div class="field"><span>Select size</span><span>&#9662;</span></div>
+        <div class="buyrow"><span class="btn primary">Add To Bag</span><span class="btn secondary">&#9825; Wishlist</span></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sh">The footer</h2>
+  <p class="lead">The footer closes the page: uppercase section-title columns of muted links, the 'Get updates by Email' field with the square <code>Sign Up</code> button, the ghost-dark social icon row and the legal line — typed into and cleared during the capture, never submitted.</p>
+  <div class="mock">
+    <div class="foot">
+      <div class="cols"><span><b>Farfetch</b>About us<br>Partners<br>Careers</span><span><b>Customer service</b>Contact us<br>Orders &amp; delivery<br>Payment &amp; pricing</span><span><b>About Farfetch</b>Investors<br>Boutiques<br>Affiliates</span><span><b>Get updates by Email</b><span class="nl"><span class="in">Email address</span><span class="btn primary" style="height:44px">Sign Up</span></span></span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The <code>core.palette</code> groups are the legacy declared colours — the named <code>--color-*</code> ramp (preto ink, branco white, ouro gold, the grey steps), the <code>--color[Tier]*</code> Access loyalty palettes and the five <code>--gradientAccess*</code> tier gradients. The light set exports the whole pulse semantic layer — every <code>--colors-*</code> role/state/slot. The site paints one theme; the dark set is empty.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and borders</h2>
+  <p class="lead"><code>core.space.component</code> is the <code>--spacers-c*</code> control scale (4–48px) and <code>core.space.layout</code> the <code>--spacers-l*</code> block scale (to 72px), beside the older <code>--spacer-*</code> names and the <code>--gutter-*</code> steps under <code>core.layout.gutter</code>. <code>core.radius</code> is squareness — every corner is 0 except the 1000px <code>rounded</code> pill; <code>core.borderWidth</code> is the 1px/2px stroke pair. Motion splits functional (0.15–0.6s controls) from emotional (0.2–0.85s page emphasis), each with accelerated/decelerated/standard easings.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Elevation</h2>
+  <p class="lead">The pages are nearly flat — no declared shadow scale was found in the token sheets; layering is the <code>#e6e6e6</code> hairline, the <code>ui-overlay01</code> rgba(34,34,34,.4) scrim and the 0.95-white <code>ui-overlay02</code>. Any shadows that appear were measured per component.</p>
+  <div id="elev-out" class="kv"></div>
+  <div id="z-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two voices: <code>'Farfetch Basis'</code> for everything — body 15px/1.3333, Title/Heading 22px, Display 30px, DisplayLarge 38px, the uppercase 15px Kicker, Caption and Footnote at 13px — and <code>'Nimbus Roman D'</code> for the 20px/1.2 Editorial dek; the legacy display stack adds 'Nimbus Sans Extended D'. Below, the declared <code>core.typography</code> roles resolved at 1440 (the sheets re-declare sizes under the 36em/60em breakpoints), then the legacy scales. Samples fall back to Helvetica Neue/Arial and Times New Roman.</p>
+  <div id="styles-out"></div>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Resolved the ~776 pulse and legacy custom properties off the site's own stylesheets and read computed styles on the archived pages at every captured route</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, focused and filled states forced and measured per component; hydration-owned opened states declared as a boundary, never faked</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from; archived-markup provenance is declared on the package</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+// The light/dark toggle. farfetch.com paints ONE theme — the dark set is
+// empty, so dark mode restates the light tokens and the page only dims its
+// own chrome; that is the honest answer the toggle is here to show.
+$('#mode').addEventListener('click', () => {
+  const on = document.documentElement.getAttribute('data-mode') === 'dark';
+  document.documentElement.setAttribute('data-mode', on ? '' : 'dark');
+  $('#mode').textContent = on ? 'Dark' : 'Light';
+  $('#mode').setAttribute('aria-pressed', on ? 'false' : 'true');
+});
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.palette || {})) {
+    const items = (grp && grp.t ? [['palette.' + g, grp]] : flat(grp, 'palette.' + g + '.')).filter(([, t]) => t.t === 'color' || t.t === 'gradient');
+    if (!items.length) continue;
+    h += `<div class="pal-h">palette.${esc(g)}</div><div class="pal">`;
+    // A gradient token's value is its list of stops; show them as "start 0% → end 100%".
+    const val = (t) => Array.isArray(t.v) ? t.v.map((x) => x.color + ' ' + Math.round(x.position * 100) + '%').join(' → ') : t.v;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(val(t))}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (none — the site paints one theme)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.borderWidth || {}, 'borderWidth.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) {
+    if (typeof t.v === 'object') continue;
+    m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v.join ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) {
+    const v = Array.isArray(t.v) ? t.v.map(x => [x.offsetX, x.offsetY, x.blur, x.spread, x.color].filter(Boolean).join(' ')).join(', ') : t.v;
+    e += `<div><b>${esc(n)}</b> <span>${esc(v)}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none captured</b></div>';
+})();
+
+(function zladder() {
+  let m = '';
+  for (const [n, t] of flat((TOK.core.layout || {}).z || {}, 'layout.z.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#z-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function typeStyles() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
+    const v = t.v || {};
+    const fam = String(v.fontFamily || '').split(',')[0].replace(/"/g, '').replace(/'/g, '');
+    const spec = [v.fontSize, v.lineHeight && '/' + v.lineHeight, v.fontWeight && ' ' + v.fontWeight, v.textTransform && ' ' + v.textTransform].filter(Boolean).join('');
+    h += `<div class="tr"><span class="ts" style='font-size:${Math.min(parseFloat(v.fontSize) || 14, 40)}px;font-family:${(v.fontFamily || 'inherit')};line-height:${v.lineHeight || 'normal'};text-transform:${v.textTransform || 'none'}'>${esc(n)} — FARFETCH</span><span class="tv">${esc(fam)} ${esc(spec)}</span></div>`;
+  }
+  $('#styles-out').innerHTML = h;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — FARFETCH</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

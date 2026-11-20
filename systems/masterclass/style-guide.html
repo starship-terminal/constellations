@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MasterClass style guide</title>
+<style>
+:root {
+  --color-ai-500: rgb(101,34,242);
+  --color-error-100: #ffd6d6;
+  --color-error-200: #ffadad;
+  --color-error-300: #ff8585;
+  --color-error-400: #ff5c5c;
+  --color-error-500: #ff3333;
+  --color-error-600: #ff0000;
+  --color-error-700: #e00000;
+  --color-error-800: #b80000;
+  --color-error-900: #8f0000;
+  --color-green-100: #c2ebd2;
+  --color-green-200: #a3e0bc;
+  --color-green-300: #85d6a5;
+  --color-green-400: #66cc8f;
+  --color-green-500: #3ebb70;
+  --color-green-600: #38a865;
+  --color-green-700: #2e8a53;
+  --color-green-800: #246b40;
+  --color-green-900: #194d2e;
+  --color-neutral-90: #ffffff;
+  --color-neutral-100: #f4f4f5;
+  --color-neutral-200: #e9eaec;
+  --color-neutral-300: #d4d5d9;
+  --color-neutral-400: #b3b5bc;
+  --color-neutral-500: #9ea0a9;
+  --color-neutral-600: #565961;
+  --color-neutral-700: #43454c;
+  --color-neutral-800: #303136;
+  --color-neutral-900: #222326;
+  --color-pink-100: #feb0c2;
+  --color-pink-200: #ea5d7e;
+  --color-pink-300: #e84a6f;
+  --color-pink-400: #e84a6f;
+  --color-pink-500: #e32652;
+  --color-pink-600: #d61a46;
+  --color-pink-700: #c71a42;
+  --color-pink-800: #b5173c;
+  --color-pink-900: #a21536;
+  --color-primary-100: #feb0c2;
+  --color-primary-200: #ea5d7e;
+  --color-primary-300: #e84a6f;
+  --color-primary-400: #e84a6f;
+  --color-primary-500: #e32652;
+  --color-primary-600: #d61a46;
+  --color-primary-700: #c71a42;
+  --color-primary-800: #b5173c;
+  --color-primary-900: #a21536;
+  --color-purple-100: #d4caf7;
+  --color-purple-200: #b7a7f1;
+  --color-purple-300: #9a83ec;
+  --color-purple-400: #7d60e6;
+  --color-purple-500: #4721d0;
+  --color-purple-600: #3c1cb0;
+  --color-purple-700: #301680;
+  --color-purple-800: #24116a;
+  --color-purple-900: #190b50;
+  --color-red-100: #ffd6d6;
+  --color-red-200: #ffadad;
+  --color-red-300: #ff8585;
+  --color-red-400: #ff5c5c;
+  --color-red-500: #ff3333;
+  --color-red-600: #ff0000;
+  --color-red-700: #e00000;
+  --color-red-800: #b80000;
+  --color-red-900: #8f0000;
+  --color-success-100: #c2ebd2;
+  --color-success-200: #a3e0bc;
+  --color-success-300: #85d6a5;
+  --color-success-400: #66cc8f;
+  --color-success-500: #3ebb70;
+  --color-success-600: #38a865;
+  --color-success-700: #2e8a53;
+  --color-success-800: #246b40;
+  --color-success-900: #194d2e;
+  --color-utility-100: #d4caf7;
+  --color-utility-200: #b7a7f1;
+  --color-utility-300: #9a83ec;
+  --color-utility-400: #7d60e6;
+  --color-utility-500: #4721d0;
+  --color-utility-600: #3c1cb0;
+  --color-utility-700: #301680;
+  --color-utility-800: #24116a;
+  --color-utility-900: #190b50;
+  --color-warning-100: #ffdcad;
+  --color-warning-200: #ffca85;
+  --color-warning-300: #ffb856;
+  --color-warning-400: #ffa733;
+  --color-warning-500: #ff9000;
+  --color-warning-600: #e88503;
+  --color-warning-700: #d17a08;
+  --color-warning-800: #b95c05;
+  --color-warning-900: #663a00;
+  --color-yellow-100: #ffdcad;
+  --color-yellow-200: #ffca85;
+  --color-yellow-300: #ffb856;
+  --color-yellow-400: #ffa733;
+  --color-yellow-500: #ff9000;
+  --color-yellow-600: #e88503;
+  --color-yellow-700: #d17a08;
+  --color-yellow-800: #b95c05;
+  --color-yellow-900: #663a00;
+  --font-family-sohne: Sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-display: "Ivar Display Condensed", "Times New Roman", serif;
+  --font-family-sohneKraftig: "Sohne Kraftig", Sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --spacing-0: 0px;
+  --spacing-1: 4px;
+  --spacing-10: 64px;
+  --spacing-11: 80px;
+  --spacing-12: 96px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-7: 28px;
+  --spacing-8: 32px;
+  --spacing-9: 48px;
+  --radius-lg: 1.6rem;
+  --radius-md: 1.2rem;
+  --radius-sm: 0.8rem;
+  --radius-xl: 2.4rem;
+  --lineHeight-body: 1.5;
+  --lineHeight-body-relaxed: 1.6;
+  --lineHeight-body-tight: 1.45;
+  --lineHeight-heading: 1.25;
+  --lineHeight-heading-super-tight: 1;
+  --lineHeight-heading-tight: 1.15;
+  --lineHeight-heading-ultra-tight: 0.9;
+  --breakpoint-lg: 960px;
+  --breakpoint-md: 768px;
+  --breakpoint-sm: 576px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-xs: 0px;
+  --color-page-default: #0d0d0e;
+  --color-surface-default: #0d0d0e;
+  --color-surface-raised: #191c21;
+  --color-surface-overlay: #272c33;
+  --color-scrim: rgba(0,0,0,0.9);
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #d4d5d9;
+  --color-text-muted: #9ea0a9;
+  --color-text-disabled: #9ea0a9;
+  --color-text-onAccent: #ffffff;
+  --color-text-link: #ffffff;
+  --color-border-default: #303136;
+  --color-border-strong: #9ea0a9;
+  --color-border-focus: #3787ff;
+  --color-accent-default: #e32652;
+  --color-accent-hover: #d61a46;
+  --color-accent-pressed: #c71a42;
+  --color-brand-default: #ef4562;
+  --color-status-success: #3ebb70;
+  --color-status-warning: #ff9000;
+  --color-status-danger: #ff3333;
+  --color-status-info: #3787ff;
+  --color-control-field: #191c21;
+  --color-control-fieldBorder: #272c33;
+  --color-control-placeholder: rgba(255,255,255,0.5);
+  --color-plan-selected: rgba(25,28,33,0.8);
+  --color-plan-unselectedText: #949aa4;
+  --color-badge-fill: #272c33;
+  --color-badge-text: #ffffff;
+}
+body { margin: 0; background: var(--page-default, #0d0d0e); color: var(--text-primary, #fff); font: 16px/1.5 Sohne, Helvetica, Arial, sans-serif; }
+main { max-width: 960px; margin: 0 auto; padding: 32px 20px 80px; }
+h1 { font-weight: 600; letter-spacing: 0.02em; }
+.swatches, .ramps { display: grid; gap: 8px; }
+.swatch { display: grid; grid-template-columns: 48px 1fr auto; gap: 12px; align-items: center; background: #191c21; border-radius: 8px; padding: 8px 12px; }
+.swatch i { width: 48px; height: 32px; border-radius: 4px; border: 1px solid #303136; }
+.ramp { display: flex; gap: 4px; align-items: center; }
+.ramp b { width: 88px; font-weight: 600; font-size: 13px; color: #d4d5d9; }
+.ramp i { width: 28px; height: 28px; border-radius: 4px; }
+.specimen { margin-top: 28px; }
+.btn { display: inline-block; background: var(--accent-default, #e32652); color: #fff; border-radius: 8px; padding: 12px 16px; font-weight: 600; }
+.field { display: block; margin-top: 12px; background: #191c21; color: #fff; border: 1px solid #272c33; border-radius: 8px; padding: 12px; width: 280px; }
+</style>
+</head>
+<body>
+<main>
+<h1>MasterClass</h1>
+<p>Signed-out public surface. One dark theme. Values are the custom properties read on :root.</p>
+<h2>Roles</h2>
+<div class="swatches"><div class="swatch"><i style="background:#0d0d0e"></i><span>color-page-default</span><code>#0d0d0e</code></div><div class="swatch"><i style="background:#0d0d0e"></i><span>color-surface-default</span><code>#0d0d0e</code></div><div class="swatch"><i style="background:#191c21"></i><span>color-surface-raised</span><code>#191c21</code></div><div class="swatch"><i style="background:#272c33"></i><span>color-surface-overlay</span><code>#272c33</code></div><div class="swatch"><i style="background:rgba(0,0,0,0.9)"></i><span>color-scrim</span><code>rgba(0,0,0,0.9)</code></div><div class="swatch"><i style="background:#ffffff"></i><span>color-text-primary</span><code>#ffffff</code></div><div class="swatch"><i style="background:#d4d5d9"></i><span>color-text-secondary</span><code>#d4d5d9</code></div><div class="swatch"><i style="background:#9ea0a9"></i><span>color-text-muted</span><code>#9ea0a9</code></div><div class="swatch"><i style="background:#9ea0a9"></i><span>color-text-disabled</span><code>#9ea0a9</code></div><div class="swatch"><i style="background:#ffffff"></i><span>color-text-onAccent</span><code>#ffffff</code></div><div class="swatch"><i style="background:#ffffff"></i><span>color-text-link</span><code>#ffffff</code></div><div class="swatch"><i style="background:#303136"></i><span>color-border-default</span><code>#303136</code></div><div class="swatch"><i style="background:#9ea0a9"></i><span>color-border-strong</span><code>#9ea0a9</code></div><div class="swatch"><i style="background:#3787ff"></i><span>color-border-focus</span><code>#3787ff</code></div><div class="swatch"><i style="background:#e32652"></i><span>color-accent-default</span><code>#e32652</code></div><div class="swatch"><i style="background:#d61a46"></i><span>color-accent-hover</span><code>#d61a46</code></div><div class="swatch"><i style="background:#c71a42"></i><span>color-accent-pressed</span><code>#c71a42</code></div><div class="swatch"><i style="background:#ef4562"></i><span>color-brand-default</span><code>#ef4562</code></div><div class="swatch"><i style="background:#3ebb70"></i><span>color-status-success</span><code>#3ebb70</code></div><div class="swatch"><i style="background:#ff9000"></i><span>color-status-warning</span><code>#ff9000</code></div><div class="swatch"><i style="background:#ff3333"></i><span>color-status-danger</span><code>#ff3333</code></div><div class="swatch"><i style="background:#3787ff"></i><span>color-status-info</span><code>#3787ff</code></div><div class="swatch"><i style="background:#191c21"></i><span>color-control-field</span><code>#191c21</code></div><div class="swatch"><i style="background:#272c33"></i><span>color-control-fieldBorder</span><code>#272c33</code></div><div class="swatch"><i style="background:rgba(255,255,255,0.5)"></i><span>color-control-placeholder</span><code>rgba(255,255,255,0.5)</code></div><div class="swatch"><i style="background:rgba(25,28,33,0.8)"></i><span>color-plan-selected</span><code>rgba(25,28,33,0.8)</code></div><div class="swatch"><i style="background:#949aa4"></i><span>color-plan-unselectedText</span><code>#949aa4</code></div><div class="swatch"><i style="background:#272c33"></i><span>color-badge-fill</span><code>#272c33</code></div><div class="swatch"><i style="background:#ffffff"></i><span>color-badge-text</span><code>#ffffff</code></div></div>
+<h2>Ramps</h2>
+<div class="ramps"><div class="ramp"><b>ai</b><i title="ai 500" style="background:rgb(101,34,242)"></i></div><div class="ramp"><b>error</b><i title="error 100" style="background:#ffd6d6"></i><i title="error 200" style="background:#ffadad"></i><i title="error 300" style="background:#ff8585"></i><i title="error 400" style="background:#ff5c5c"></i><i title="error 500" style="background:#ff3333"></i><i title="error 600" style="background:#ff0000"></i><i title="error 700" style="background:#e00000"></i><i title="error 800" style="background:#b80000"></i><i title="error 900" style="background:#8f0000"></i></div><div class="ramp"><b>green</b><i title="green 100" style="background:#c2ebd2"></i><i title="green 200" style="background:#a3e0bc"></i><i title="green 300" style="background:#85d6a5"></i><i title="green 400" style="background:#66cc8f"></i><i title="green 500" style="background:#3ebb70"></i><i title="green 600" style="background:#38a865"></i><i title="green 700" style="background:#2e8a53"></i><i title="green 800" style="background:#246b40"></i><i title="green 900" style="background:#194d2e"></i></div><div class="ramp"><b>neutral</b><i title="neutral 90" style="background:#ffffff"></i><i title="neutral 100" style="background:#f4f4f5"></i><i title="neutral 200" style="background:#e9eaec"></i><i title="neutral 300" style="background:#d4d5d9"></i><i title="neutral 400" style="background:#b3b5bc"></i><i title="neutral 500" style="background:#9ea0a9"></i><i title="neutral 600" style="background:#565961"></i><i title="neutral 700" style="background:#43454c"></i><i title="neutral 800" style="background:#303136"></i><i title="neutral 900" style="background:#222326"></i></div><div class="ramp"><b>pink</b><i title="pink 100" style="background:#feb0c2"></i><i title="pink 200" style="background:#ea5d7e"></i><i title="pink 300" style="background:#e84a6f"></i><i title="pink 400" style="background:#e84a6f"></i><i title="pink 500" style="background:#e32652"></i><i title="pink 600" style="background:#d61a46"></i><i title="pink 700" style="background:#c71a42"></i><i title="pink 800" style="background:#b5173c"></i><i title="pink 900" style="background:#a21536"></i></div><div class="ramp"><b>primary</b><i title="primary 100" style="background:#feb0c2"></i><i title="primary 200" style="background:#ea5d7e"></i><i title="primary 300" style="background:#e84a6f"></i><i title="primary 400" style="background:#e84a6f"></i><i title="primary 500" style="background:#e32652"></i><i title="primary 600" style="background:#d61a46"></i><i title="primary 700" style="background:#c71a42"></i><i title="primary 800" style="background:#b5173c"></i><i title="primary 900" style="background:#a21536"></i></div><div class="ramp"><b>purple</b><i title="purple 100" style="background:#d4caf7"></i><i title="purple 200" style="background:#b7a7f1"></i><i title="purple 300" style="background:#9a83ec"></i><i title="purple 400" style="background:#7d60e6"></i><i title="purple 500" style="background:#4721d0"></i><i title="purple 600" style="background:#3c1cb0"></i><i title="purple 700" style="background:#301680"></i><i title="purple 800" style="background:#24116a"></i><i title="purple 900" style="background:#190b50"></i></div><div class="ramp"><b>red</b><i title="red 100" style="background:#ffd6d6"></i><i title="red 200" style="background:#ffadad"></i><i title="red 300" style="background:#ff8585"></i><i title="red 400" style="background:#ff5c5c"></i><i title="red 500" style="background:#ff3333"></i><i title="red 600" style="background:#ff0000"></i><i title="red 700" style="background:#e00000"></i><i title="red 800" style="background:#b80000"></i><i title="red 900" style="background:#8f0000"></i></div><div class="ramp"><b>success</b><i title="success 100" style="background:#c2ebd2"></i><i title="success 200" style="background:#a3e0bc"></i><i title="success 300" style="background:#85d6a5"></i><i title="success 400" style="background:#66cc8f"></i><i title="success 500" style="background:#3ebb70"></i><i title="success 600" style="background:#38a865"></i><i title="success 700" style="background:#2e8a53"></i><i title="success 800" style="background:#246b40"></i><i title="success 900" style="background:#194d2e"></i></div><div class="ramp"><b>utility</b><i title="utility 100" style="background:#d4caf7"></i><i title="utility 200" style="background:#b7a7f1"></i><i title="utility 300" style="background:#9a83ec"></i><i title="utility 400" style="background:#7d60e6"></i><i title="utility 500" style="background:#4721d0"></i><i title="utility 600" style="background:#3c1cb0"></i><i title="utility 700" style="background:#301680"></i><i title="utility 800" style="background:#24116a"></i><i title="utility 900" style="background:#190b50"></i></div><div class="ramp"><b>warning</b><i title="warning 100" style="background:#ffdcad"></i><i title="warning 200" style="background:#ffca85"></i><i title="warning 300" style="background:#ffb856"></i><i title="warning 400" style="background:#ffa733"></i><i title="warning 500" style="background:#ff9000"></i><i title="warning 600" style="background:#e88503"></i><i title="warning 700" style="background:#d17a08"></i><i title="warning 800" style="background:#b95c05"></i><i title="warning 900" style="background:#663a00"></i></div><div class="ramp"><b>yellow</b><i title="yellow 100" style="background:#ffdcad"></i><i title="yellow 200" style="background:#ffca85"></i><i title="yellow 300" style="background:#ffb856"></i><i title="yellow 400" style="background:#ffa733"></i><i title="yellow 500" style="background:#ff9000"></i><i title="yellow 600" style="background:#e88503"></i><i title="yellow 700" style="background:#d17a08"></i><i title="yellow 800" style="background:#b95c05"></i><i title="yellow 900" style="background:#663a00"></i></div></div>
+<div class="specimen">
+  <a class="btn" href="#roles">Get MasterClass</a>
+  <input class="field" placeholder="Email" readonly>
+</div>
+</main>
+</body>
+</html>

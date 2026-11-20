@@ -1,0 +1,12 @@
+{
+ "_note": "Rules for systems/curater. A fully public signed-out capture: no owner data on any surface. The search field was opened locally and left empty; nothing was typed, submitted or followed. All curator names, titles and imagery in the screenshots are Curater's published public-page content. support@curater.org is the product's own published support address printed twice in its public Terms — allowed, not private data. The OCR email net stays on otherwise.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@example\\.com$",
+   "@example\\.org$",
+   "support@curater\\.org$"
+  ]
+ },
+ "families": []
+}

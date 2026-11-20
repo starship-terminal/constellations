@@ -1,0 +1,15 @@
+{
+  "_note": "Rules for systems/httpie. Public signed-out capture of httpie.io: no surface paints machine-private data - nothing was signed into, typed, searched, sent or submitted. httpie.io publishes its own public contact addresses on the legal and blog pages (privacy@/legal@/feedback@httpie.io); they are product-published content and are kept. The CLI docs show example addresses and dummy credentials (john@example.org, user:pass@10.10.1.10, password@hostname) - product-published documentation samples, allowed.",
+  "families": [],
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@httpie\\.io$",
+      "@pie\\.dev$",
+      "@example\\.com$",
+      "@example\\.org$",
+      "@10\\.10\\.1\\.10$",
+      "@hostname$"
+    ]
+  }
+}

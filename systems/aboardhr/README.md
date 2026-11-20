@@ -15,7 +15,7 @@ aboardhr.com is a Framer site: its stylesheets are inline `<style>` blocks that 
 | [components/crops/](components/crops) | 109 element screenshots, `{component}-{state}.png`, at 2x. |
 | [icons/](icons) | 28 SVGs lifted from the pages (the feature illustrations and small marks Framer ships inline), named where a label was inferable in [icons/INDEX.tsv](icons/INDEX.tsv). Aboard's property, kept for reference only. |
 | [screenshots/](screenshots) | 30 `{page}-light-{state}.png` captures. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at the same width; `mobile-*` shots are 390 wide at 2x. The home page also keeps the co-pilot demo view, and the mobile home keeps the open menu. |
-| [raw/](raw) | The unprocessed readings: every custom property the site declares (`css-vars.json`), per-component computed styles (`components-computed.json`, and `measurements.md` built from it), the token tree the builder reads (`component-tokens.json`), and page geometry at four widths (`layout.json`). The unquantised screenshot originals and their `.capture.json` sidecars are working evidence in `raw/full/`. |
+| [raw/](raw) | The unprocessed readings: every custom property the site declares (`css-vars.json`), per-component computed styles (`components-computed.json`, and `measurements.md` built from it), the token tree the builder reads (`component-tokens.json`), and page geometry at four widths (`layout.json`). The unquantised screenshot originals and their `.capture.json` sidecars are working evidence kept outside the repo. |
 | [tools/](tools) | The three builders and the capture kit. See Rebuild. |
 
 ## Brief
@@ -95,10 +95,11 @@ aboardhr.com is a Framer site, so its stylesheets are inline `<style>` blocks an
 
 Component values are computed styles read per state with Playwright ([measure.mjs](tools/capture/public/measure.mjs)). Hover used the pointer, focus-visible a real keyboard Tab, and pressed was forced through DevTools (`CSS.forcePseudoState`), so no button was clicked for real. The only press was a local UI toggle: the mobile nav trigger. The demo form's first field was clicked into for its focus style but nothing was typed or sent. No consent manager ever rendered on the site, so nothing was hidden or answered.
 
-Font sizes on this site are not fluid: Framer serves fixed px steps per breakpoint, so the 64px display at 1440 is the 48px display at 390, and both are recorded. Screenshots were lazily scrolled to settle lazy-loaded media, then stored quantised to 256 colours; the unquantised originals and per-capture metadata stay in [raw/full/](raw/full).
+Font sizes on this site are not fluid: Framer serves fixed px steps per breakpoint, so the 64px display at 1440 is the 48px display at 390, and both are recorded. Screenshots were lazily scrolled to settle lazy-loaded media, then stored quantised to 256 colours; the unquantised originals and per-capture metadata stay outside the repo.
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **Screenshots are 256-colour PNGs.** Gradients, photography and the pastel tints band slightly; read exact colours from tokens.json or the raw files.
 - **Several brand fills paint in Display P3.** The token records the sRGB conversion (`#009cff` from `color(display-p3 0 0.599909 1)`, and so on); the P3 original is in the token's description and in css-vars.json, where unresolved P3 strings carry a "colour space not converted" note.
 - **The pressed link colour is `#ff0000`.** Framer's stylesheet declares `a:active { color: red }`; the pressed rows show it. It is a framework default, not a design choice.
@@ -107,8 +108,9 @@ Font sizes on this site are not fluid: Framer serves fixed px steps per breakpoi
 - **The co-pilot chat is a marketing animation.** The home hero's assistant demo (the "Ask me anything" prompt) is canned content, not a live product.
 - **`nav-bar` and `m-nav-bar` measure `box-shadow rgba(23,23,23,0.08) 0 0 0 0`.** A zero-offset, zero-blur shadow paints nothing; the header has no real shadow.
 - **`m-nav-bar` measures 37 x 16.** The selector caught the trigger's hit area, not the 390-wide band; the band's real height is the fixed header's 64px (see [raw/layout.json](raw/layout.json)).
-- **Mobile `-full` screenshots stitch viewport slices.** `mobile-*-light-full.png` are stitched from `*.partN.png` tiles in raw/full; the stitch seams can shift a pixel.
+- **Mobile `-full` screenshots stitch viewport slices.** `mobile-*-light-full.png` are stitched from `*.partN.png` tiles in the scratch dir (`~/.design-systems/aboardhr/raw-shots`, outside the repo); the stitch seams can shift a pixel.
 - **Billing toggle and demo submit button states.** The pricing page has no monthly/yearly switch (`billing-toggle` records missing); the demo submit was measured in all four states but never pressed.
+- **`nav-cta` was read from the wrong elements.** `.last()` over every "Book a demo" link took the footer CTA for the default state (y=6854) and the hero CTA for the others (y=430), not the button in the nav. Needs a recapture; the script now searches inside the header (not run since). The CTA tokens now cite only the other CTAs (`cta-demo`, `cta-try`, `plan-cta` and the rest), which hold the same values.
 
 ## Fonts
 
@@ -173,7 +175,7 @@ PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/public.mjs
 PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/measure.mjs home pricing mobile
 ```
 
-`public.mjs` re-takes the screenshot set into `raw/full`; `python3 tools/capture/quantize.py raw/full` stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs`, `layout.mjs` and `icons.mjs` rewrite their raw or icon files whole. `lib.mjs` holds the shared helpers, including the `navigator.webdriver` masking and the generic overlay sweep (unused: no CMP renders).
+`public.mjs` re-takes the screenshot set into `~/.design-systems/aboardhr/raw-shots` (outside the repo); `python3 tools/capture/quantize.py ~/.design-systems/aboardhr/raw-shots` stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs`, `layout.mjs` and `icons.mjs` rewrite their raw or icon files whole. `lib.mjs` holds the shared helpers, including the generic overlay sweep (unused: no CMP renders); it no longer masks `navigator.webdriver`.
 
 ## Use in Figma
 

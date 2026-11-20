@@ -1,0 +1,198 @@
+{
+ "schemaVersion": 1,
+ "capturedAt": "2026-11-14T05:47:34.978Z",
+ "screenshot": "mobile-home-light-full.png",
+ "sanitizedSourceUrl": "https://factory.com/",
+ "requested": {
+  "viewport": {
+   "width": 390,
+   "height": 844
+  },
+  "deviceScaleFactor": 2
+ },
+ "configuredViewport": {
+  "width": 390,
+  "height": 844
+ },
+ "actual": {
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "devicePixelRatio": 2,
+  "theme": {
+   "classes": [],
+   "attributes": {
+    "data-theme": "light"
+   },
+   "colorScheme": "light"
+  },
+  "visualViewport": {
+   "width": 390,
+   "height": 844,
+   "scale": 1,
+   "offsetLeft": 0,
+   "offsetTop": 0,
+   "pageLeft": 0,
+   "pageTop": 0
+  },
+  "documentSize": {
+   "width": 390,
+   "height": 13805
+  },
+  "scroll": {
+   "x": 0,
+   "y": 0
+  }
+ },
+ "capture": {
+  "mode": "stitchedParts",
+  "scale": "device",
+  "clip": {
+   "x": 0,
+   "y": 0,
+   "width": 390,
+   "height": 13504
+  }
+ },
+ "png": {
+  "width": 780,
+  "height": 27008
+ },
+ "dimensionCheck": {
+  "status": "pass",
+  "expected": {
+   "width": 780,
+   "height": 27008
+  },
+  "basis": "stitchedParts"
+ },
+ "visualReview": {
+  "status": "pending",
+  "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+ },
+ "cropCoordinates": {
+  "status": "unverified",
+  "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+ },
+ "stitchedFrom": [
+  "mobile-home-light-full.part0.png",
+  "mobile-home-light-full.part1.png",
+  "mobile-home-light-full.part2.png",
+  "mobile-home-light-full.part3.png",
+  "mobile-home-light-full.part4.png",
+  "mobile-home-light-full.part5.png",
+  "mobile-home-light-full.part6.png",
+  "mobile-home-light-full.part7.png",
+  "mobile-home-light-full.part8.png",
+  "mobile-home-light-full.part9.png",
+  "mobile-home-light-full.part10.png",
+  "mobile-home-light-full.part11.png",
+  "mobile-home-light-full.part12.png",
+  "mobile-home-light-full.part13.png",
+  "mobile-home-light-full.part14.png",
+  "mobile-home-light-full.part15.png"
+ ],
+ "partClip": [
+  {
+   "x": 0,
+   "y": 0,
+   "width": 390,
+   "height": 844
+  },
+  {
+   "x": 0,
+   "y": 844,
+   "width": 390,
+   "height": 844
+  },
+  {
+   "x": 0,
+   "y": 1688,
+   "width": 390,
+   "height": 844
+  },
+  {
+   "x": 0,
+   "y": 2532,
+   "width": 390,
+   "height": 844
+  },
+  {
+   "x": 0,
+   "y": 3376,
+   "width": 390,
+   "height": 844
+  },
+  {
+   "x": 0,
+   "y": 4220,
+   "width": 390,
+   "height": 844
+  },
+  {
+   "x": 0,
+   "y": 5064,
+   "width": 390,
+   "height": 844
+  },
+  {
+   "x": 0,
+   "y": 5908,
+   "width": 390,
+   "height": 844
+  },
+  {
+   "x": 0,
+   "y": 6752,
+   "width": 390,
+   "height": 844
+  },
+  {
+   "x": 0,
+   "y": 7596,
+   "width": 390,
+   "height": 844
+  },
+  {
+   "x": 0,
+   "y": 8440,
+   "width": 390,
+   "height": 844
+  },
+  {
+   "x": 0,
+   "y": 9284,
+   "width": 390,
+   "height": 844
+  },
+  {
+   "x": 0,
+   "y": 10128,
+   "width": 390,
+   "height": 844
+  },
+  {
+   "x": 0,
+   "y": 10972,
+   "width": 390,
+   "height": 844
+  },
+  {
+   "x": 0,
+   "y": 11816,
+   "width": 390,
+   "height": 844
+  },
+  {
+   "x": 0,
+   "y": 12660,
+   "width": 390,
+   "height": 844
+  }
+ ],
+ "intendedHeight": 13504,
+ "truncated": {
+  "documentHeight": 13805,
+  "capturedHeight": 13504,
+  "note": "The document is taller than the 16-tile cap; the bottom 301px (the end of the page) is not in this sheet."
+ }
+}

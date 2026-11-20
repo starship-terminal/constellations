@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlutterFlow style guide</title>
+<meta name="description" content="FlutterFlow (flutterflow.io) design tokens and signed-out components, rendered from tokens.json with the measured values, in both of its themes.">
+<!--
+   FlutterFlow's Inter is self-hosted and variable (wght 100-900); the guide loads the same face
+   from Google Fonts. The mono roles use the ui-monospace stack, exactly as the site does.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --fontFamily-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --fontFamily-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  --fontWeight-regular: 400;
+  --fontWeight-medium: 500;
+  --fontWeight-semibold: 510;
+  --fontWeight-bold: 600;
+  --radius-card: 20px;
+  --radius-field: 26px;
+  --radius-field-tall: 22px;
+  --radius-icon: 10px;
+  --radius-page: 16px;
+  --radius-pill: 999px;
+  --space-cell: 32px;
+  --space-column: 32px;
+  --space-gutter: 48px;
+  --space-head: 96px;
+  --space-section: 128px;
+  --space-tile: 28px;
+  --space-words: 64px;
+  --size-bar: 64px;
+  --size-composer: 680px;
+  --size-composer-close: 640px;
+  --size-composer-hero: 720px;
+  --size-content: 1344px;
+  --size-stage: 700px;
+  --size-words: 440px;
+  --border-hair: 1px;
+  --focus-offset: 2px;
+  --focus-width: 2px;
+  --shadow-field: 0px 1px 2px 0px rgba(0, 0, 0, 0.04), 0px 8px 24px -14px rgba(0, 0, 0, 0.14);
+  --duration-fast: 120ms;
+  --duration-base: 240ms;
+  --easing-out: cubic-bezier(0.2, 0.8, 0.2, 1.0);
+  --easing-ui: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --easing-spring: linear(0, .001 .6%, .006 1.5%, .017 2.7%, .036 3.9%, .062 5.3%, .095 6.8%, .135 8.4%, .18 10%, .231 11.7%, .285 13.5%, .341 15.4%, .399 17.3%, .456 19.3%, .513 21.3%, .569 23.4%, .621 25.5%, .671 27.7%, .717 29.9%, .76 32.2%, .799 34.5%, .833 36.8%, .864 39.2%, .891 41.7%, .914 44.1%, .934 46.6%, .951 49.2%, .964 51.7%, .976 54.3%, .985 57%, .992 59.6%, .997 62.3%, 1.001 65.1%, 1.004 67.8%, 1.006 70.6%, 1.007 73.4%, 1.008 76.3%, 1.008 79.1%, 1.007 82%, 1.007 85%, 1.006 87.9%, 1.006 90.9%, 1.005 93.9%, 1.004 96.9%, 1);
+  --zIndex-dropdown: 5;
+  --zIndex-sticky: 19;
+  --zIndex-bar: 20;
+  --zIndex-bar-menu: 21;
+  --zIndex-overlay: 50;
+  --zIndex-skip: 60;
+  --typography-article-title: 510 48px/1.08 var(--fontFamily-sans);
+  --typography-article-title-ls: -.022em;
+  --typography-body: 400 16px/1.55 var(--fontFamily-sans);
+  --typography-body-ls: 0px;
+  --typography-card-body: 400 15px/24px var(--fontFamily-sans);
+  --typography-card-body-ls: -.011em;
+  --typography-card-title: 510 15px/24px var(--fontFamily-sans);
+  --typography-card-title-ls: -.011em;
+  --typography-display: 600 66px/1.03 var(--fontFamily-sans);
+  --typography-display-ls: -.035em;
+  --typography-heading: 510 48px/1.08 var(--fontFamily-sans);
+  --typography-heading-ls: -.022em;
+  --typography-heading-sm: 510 42px/1.1 var(--fontFamily-sans);
+  --typography-heading-sm-ls: -.022em;
+  --typography-kicker: 510 14px/20px var(--fontFamily-sans);
+  --typography-kicker-ls: 0px;
+  --typography-label: 500 11px/16px var(--fontFamily-mono);
+  --typography-label-ls: .06em;
+  --typography-lede: 400 19px/30px var(--fontFamily-sans);
+  --typography-lede-ls: 0px;
+  --typography-nav: 400 14px/1.55 var(--fontFamily-sans);
+  --typography-nav-ls: 0px;
+  --typography-prompt: 400 18px/26px var(--fontFamily-sans);
+  --typography-prompt-ls: -.01em;
+  --typography-prose: 400 18px/30px var(--fontFamily-sans);
+  --typography-prose-ls: -.011em;
+  --typography-prose-h2: 510 28px/1.2 var(--fontFamily-sans);
+  --typography-prose-h2-ls: -.018em;
+  --typography-prose-h3: 600 19px/28px var(--fontFamily-sans);
+  --typography-prose-h3-ls: -.012em;
+  --typography-question: 510 17px/26px var(--fontFamily-sans);
+  --typography-question-ls: -.012em;
+  --typography-quote: 400 19px/28px var(--fontFamily-sans);
+  --typography-quote-ls: -.01em;
+  --typography-section-lede: 400 20px/1.45 var(--fontFamily-sans);
+  --typography-section-lede-ls: -.012em;
+  --typography-small: 400 13px/1.4 var(--fontFamily-sans);
+  --typography-small-ls: 0px;
+  --typography-stat: 510 56px/1 var(--fontFamily-sans);
+  --typography-stat-ls: -.03em;
+  --typography-testimonial: 510 34px/1.25 var(--fontFamily-sans);
+  --typography-testimonial-ls: -.02em;
+  --motion-duration-0ms: 0ms;
+  --motion-duration-d1: 120ms;
+  --motion-duration-ff-duration-fast: 120ms;
+  --motion-duration-150ms: 150ms;
+  --motion-duration-160ms: 160ms;
+  --motion-duration-200ms: 200ms;
+  --motion-duration-d2: 240ms;
+  --motion-duration-ff-duration-base: 240ms;
+  --motion-duration-250ms: 250ms;
+  --motion-duration-300ms: 300ms;
+  --motion-duration-320ms: 320ms;
+  --motion-duration-350ms: 350ms;
+  --motion-duration-400ms: 400ms;
+  --motion-duration-450ms: 450ms;
+  --motion-duration-500ms: 500ms;
+  --motion-duration-550ms: 550ms;
+  --motion-duration-600ms: 600ms;
+  --motion-duration-700ms: 700ms;
+  --motion-duration-800ms: 800ms;
+  --motion-duration-950ms: 950ms;
+  --motion-duration-1000ms: 1000ms;
+  --motion-duration-1050ms: 1050ms;
+  --motion-duration-1200ms: 1200ms;
+  --motion-duration-1400ms: 1400ms;
+  --motion-duration-1700ms: 1700ms;
+  --motion-easing-bezier-0-22-1-0-36-1: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-easing-bezier-0-25-1-0-5-1: cubic-bezier(0.25, 1, 0.5, 1);
+  --motion-easing-bezier-0-3-0-0-2-1: cubic-bezier(0.3, 0, 0.2, 1);
+  --motion-easing-bezier-0-45-0-0-2-1: cubic-bezier(0.45, 0, 0.2, 1);
+  --motion-easing-bezier-0-45-0-05-0-25-1: cubic-bezier(0.45, 0.05, 0.25, 1);
+  --motion-easing-bezier-0-5-0-0-5-1: cubic-bezier(0.5, 0, 0.5, 1);
+  --motion-easing-bezier-0-6-0-0-2-1: cubic-bezier(0.6, 0, 0.2, 1);
+  --motion-easing-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --motion-easing-ease-2: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-ease-out: cubic-bezier(0, 0, 0.58, 1);
+  --motion-easing-ease-ui: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --motion-easing-ff-ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --motion-easing-ff-ease-ui: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+}
+:root, [data-theme="light"] {
+  --color-page: #fcfcfb;
+  --color-well: #f5f5f5;
+  --color-card: #ffffff;
+  --color-card-2: #f0f0f0;
+  --color-ink: #1a1a1a;
+  --color-ink-2: #3d3d3d;
+  --color-ink-soft: #555555;
+  --color-muted: #6b6b6b;
+  --color-faint: #a3a3a3;
+  --color-line: rgba(0, 0, 0, 0.08);
+  --color-accent: #0a68e0;
+  --color-focus: #1a1a1a;
+  --color-send: #0a68e0;
+  --color-send-ink: #ffffff;
+  --color-success: #177245;
+  --color-danger: #c4320a;
+  --color-studio-ink: #4b39ef;
+  --color-studio-tint: #ececfd;
+  --color-contrast: #1a1a1a;
+  --color-contrast-ink: #ffffff;
+  --color-sheen: rgba(255, 255, 255, 0.95);
+  --color-statusbar-ink: #000000;
+  --color-statusbar-ink-on-light: #000000;
+  --color-statusbar-ink-on-dark: #ffffff;
+  --color-chrome-bar: #ececec;
+  --color-chrome-bg: #f7f7f7;
+  --color-chrome-ink: rgba(0, 0, 0, 0.55);
+  --color-chrome-line: rgba(0, 0, 0, 0.08);
+  --color-tile: #ffffff;
+  --color-tile-ring: rgba(0, 0, 0, 0.08);
+  --color-ui-card: #ffffff;
+  --color-ui-fill: #ebebeb;
+  --color-ui-line: #dedede;
+  --color-ui-frame: #efefef;
+  --color-selected-ring: rgba(0, 0, 0, 0.08);
+  --border-rule: 1px solid var(--color-line);
+  --shadow-field-focus: 0px 0px 0px 4px rgba(26, 26, 26, 0.06), 0px 1px 2px 0px rgba(0, 0, 0, 0.04), 0px 8px 24px -14px rgba(0, 0, 0, 0.14);
+  --shadow-floating: 0px 0px 0px 1px rgba(0, 0, 0, 0.08), 0px 24px 48px -20px rgba(0, 0, 0, 0.28);
+  --shadow-resting: 0px 0px 0px 1px rgba(0, 0, 0, 0.08), 0px 18px 40px -22px rgba(0, 0, 0, 0.22);
+  --shadow-resting-sm: 0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 12px 32px -18px rgba(0, 0, 0, 0.18);
+  --drip-bg: #f5f5f5;
+  --drip-surface: #ffffff;
+  --drip-surface-2: #efefef;
+  --drip-fg: #1a1a1a;
+  --drip-muted: #6b6b6b;
+  --drip-border: #dedede;
+  --drip-sep: #e4e4e4;
+  --drip-sep-3: #cecece;
+  --drip-default: #ebebeb;
+  --drip-dim: rgba(20, 20, 20, 0.1);
+  --drip-accent: #0a68e0;
+  --drip-accent-fg: #ffffff;
+  --drip-accent-soft: rgba(10, 104, 224, 0.15);
+  --drip-accent-soft-fg: #1b519f;
+  --drip-success: #177245;
+  --drip-success-soft: rgba(23, 114, 69, 0.15);
+  --drip-warning: #8f5a0c;
+  --drip-warning-soft: rgba(143, 90, 12, 0.15);
+  --drip-surface-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.03), 0px 6px 20px 0px rgba(0, 0, 0, 0.05);
+  --drip-overlay-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.04), 0px 16px 40px 0px rgba(0, 0, 0, 0.08);
+  --drip-overlay-raised: 0px 2px 6px 0px rgba(0, 0, 0, 0.06), 0px 24px 64px 0px rgba(0, 0, 0, 0.18);
+  --legacy-accent: #0a68e0;
+  --legacy-accent-ink: #1b519f;
+  --legacy-app: #f5f5f5;
+  --legacy-btn: #1a1a1a;
+  --legacy-btn-ink: #ffffff;
+  --legacy-card: #ffffff;
+  --legacy-card-2: #f0f0f0;
+  --legacy-edge: rgba(0, 0, 0, 0.07);
+  --legacy-faint: #a3a3a3;
+  --legacy-ink: #1a1a1a;
+  --legacy-ink-2: #3d3d3d;
+  --legacy-line: #e7e7e5;
+  --legacy-line-1: rgba(0, 0, 0, 0.08);
+  --legacy-muted: #6b6b6b;
+  --legacy-p-card: #ffffff;
+  --legacy-p-chip: #eaeaea;
+  --legacy-p-fill: #ebebeb;
+  --legacy-p-line: #dedede;
+  --legacy-p-widget: #efefef;
+  --legacy-page: #fcfcfb;
+  --legacy-sb: #000000;
+  --legacy-success: #177245;
+  --legacy-tender: #f4f4f6;
+  --legacy-rule: 1px solid var(--legacy-line-1);
+  --legacy-field-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.08), 0px 18px 40px -22px rgba(0, 0, 0, 0.22);
+  --component-button-primary-bg: var(--color-contrast);
+  --component-button-primary-ink: var(--color-contrast-ink);
+  --component-button-primary-height: 44px;
+  --component-button-primary-height-sm: 32px;
+  --component-button-primary-padding-x: 22px;
+  --component-button-primary-padding-x-sm: 14px;
+  --component-button-primary-radius: var(--radius-pill);
+  --component-button-primary-font: 15px;
+  --component-button-secondary-bg: var(--color-card);
+  --component-button-secondary-ink: var(--color-ink);
+  --component-button-secondary-ring: var(--color-line);
+  --component-field-bg: var(--color-card);
+  --component-field-height: 44px;
+  --component-field-radius: var(--radius-field);
+  --component-field-ink: var(--color-ink);
+  --component-field-placeholder: var(--color-muted);
+  --component-field-border: rgba(26, 26, 26, 0.12);
+  --component-field-padding-x: 18px;
+  --component-field-focus-ring: rgba(26, 26, 26, 0.06);
+  --component-field-error: var(--color-danger);
+  --component-select-popup-radius: var(--radius-card);
+  --component-select-popup-option-height: 44px;
+  --component-nav-panel-radius: var(--radius-page);
+  --component-nav-panel-padding: 8px;
+  --component-segmented-height: 38px;
+  --component-segmented-option-height: 32px;
+  --component-segmented-padding: 3px;
+  --component-segmented-ink: var(--color-muted);
+  --component-composer-height: 130px;
+  --component-composer-width-hero: 720px;
+  --component-composer-width: 640px;
+  --component-composer-go-size: 36px;
+  --component-composer-go-bg: rgba(26, 26, 26, 0.08);
+  --component-composer-go-ink: rgba(26, 26, 26, 0.4);
+  --component-composer-key-radius: 6px;
+  --component-composer-key-border: rgba(0, 0, 0, 0.07);
+  --component-radio-size: 18px;
+  --component-radio-ring: rgba(26, 26, 26, 0.3);
+  --component-radio-checked-fill: var(--color-contrast);
+  --component-tag-height: 24px;
+  --component-tag-radius: var(--radius-pill);
+  --component-tag-padding-x: 8px;
+  --component-tab-height: 52px;
+  --component-tab-tracking: -0.165px;
+  --component-theme-switch-height: 30px;
+  --component-theme-switch-pick: 30px;
+  --component-header-height: var(--size-bar);
+  --component-header-bg: rgba(252, 252, 251, 0.86);
+  --component-accordion-width: 840px;
+  --component-error-text-size: 13px;
+}
+[data-theme="dark"] {
+  --color-page: #121212;
+  --color-well: #0b0b0b;
+  --color-card: #1b1b1b;
+  --color-card-2: #262626;
+  --color-ink: #ededed;
+  --color-ink-2: #c8c8c8;
+  --color-ink-soft: #a3a3a3;
+  --color-muted: #a0a0a0;
+  --color-faint: #6b6b6b;
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-accent: #5aa2f0;
+  --color-focus: #ededed;
+  --color-send: #0a68e0;
+  --color-send-ink: #ffffff;
+  --color-success: #4fbd88;
+  --color-danger: #ff8a65;
+  --color-studio-ink: #b7adff;
+  --color-studio-tint: rgba(75, 57, 239, 0.22);
+  --color-contrast: #ededed;
+  --color-contrast-ink: #111111;
+  --color-sheen: rgba(255, 255, 255, 0.043);
+  --color-statusbar-ink: #ffffff;
+  --color-statusbar-ink-on-light: #000000;
+  --color-statusbar-ink-on-dark: #ffffff;
+  --color-chrome-bar: #26272b;
+  --color-chrome-bg: #1c1d20;
+  --color-chrome-ink: rgba(255, 255, 255, 0.6);
+  --color-chrome-line: rgba(255, 255, 255, 0.07);
+  --color-tile: #ffffff;
+  --color-tile-ring: rgba(0, 0, 0, 0.08);
+  --color-ui-card: #181818;
+  --color-ui-fill: #272727;
+  --color-ui-line: #303030;
+  --color-ui-frame: #232323;
+  --color-selected-ring: rgba(237, 237, 237, 0.4);
+  --border-rule: 1px solid var(--color-line);
+  --shadow-field-focus: 0px 0px 0px 4px rgba(237, 237, 237, 0.06), 0px 1px 2px 0px rgba(0, 0, 0, 0.04), 0px 8px 24px -14px rgba(0, 0, 0, 0.14);
+  --shadow-floating: 0px 0px 0px 1px rgba(255, 255, 255, 0.1), 0px 24px 48px -20px #000000;
+  --shadow-resting: 0px 0px 0px 1px rgba(255, 255, 255, 0.1), 0px 18px 40px -22px #000000;
+  --shadow-resting-sm: 0px 0px 0px 1px rgba(255, 255, 255, 0.08), 0px 12px 32px -18px #000000;
+  --drip-bg: #0b0b0b;
+  --drip-surface: #181818;
+  --drip-surface-2: #232323;
+  --drip-fg: #ededed;
+  --drip-muted: #a0a0a0;
+  --drip-border: #292929;
+  --drip-sep: #222222;
+  --drip-sep-3: #3a3a3a;
+  --drip-default: #272727;
+  --drip-dim: rgba(0, 0, 0, 0.35);
+  --drip-accent: #5aa2f0;
+  --drip-accent-fg: #101010;
+  --drip-accent-soft: rgba(90, 162, 240, 0.15);
+  --drip-accent-soft-fg: #88b9f1;
+  --drip-success: #4fbd88;
+  --drip-success-soft: rgba(79, 189, 136, 0.15);
+  --drip-warning: #d9a050;
+  --drip-warning-soft: rgba(217, 160, 80, 0.15);
+  --drip-surface-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.35), 0px 6px 20px 0px rgba(0, 0, 0, 0.4);
+  --drip-overlay-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.08), 0px 2px 6px 0px rgba(0, 0, 0, 0.4), 0px 16px 40px 0px rgba(0, 0, 0, 0.5);
+  --drip-overlay-raised: 0px 0px 0px 1px rgba(255, 255, 255, 0.08), 0px 2px 6px 0px rgba(0, 0, 0, 0.4), 0px 24px 64px 0px rgba(0, 0, 0, 0.6);
+  --legacy-accent: #5aa2f0;
+  --legacy-accent-ink: #84b7f1;
+  --legacy-app: #0b0b0b;
+  --legacy-btn: #ededed;
+  --legacy-btn-ink: #111111;
+  --legacy-card: #1b1b1b;
+  --legacy-card-2: #262626;
+  --legacy-edge: rgba(255, 255, 255, 0.08);
+  --legacy-faint: #6b6b6b;
+  --legacy-ink: #ededed;
+  --legacy-ink-2: #c8c8c8;
+  --legacy-line: #262626;
+  --legacy-line-1: rgba(255, 255, 255, 0.08);
+  --legacy-muted: #a0a0a0;
+  --legacy-p-card: #181818;
+  --legacy-p-chip: #2a2a2a;
+  --legacy-p-fill: #272727;
+  --legacy-p-line: #303030;
+  --legacy-p-widget: #232323;
+  --legacy-page: #121212;
+  --legacy-sb: #ffffff;
+  --legacy-success: #4fbd88;
+  --legacy-tender: #0c0c0e;
+  --legacy-rule: 1px solid var(--legacy-line-1);
+  --legacy-field-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.1), 0px 18px 40px -22px #000000;
+  --component-button-primary-bg: var(--color-contrast);
+  --component-button-primary-ink: var(--color-contrast-ink);
+  --component-button-primary-height: 44px;
+  --component-button-primary-height-sm: 32px;
+  --component-button-primary-padding-x: 22px;
+  --component-button-primary-padding-x-sm: 14px;
+  --component-button-primary-radius: var(--radius-pill);
+  --component-button-primary-font: 15px;
+  --component-button-secondary-bg: var(--color-card);
+  --component-button-secondary-ink: var(--color-ink);
+  --component-button-secondary-ring: var(--color-line);
+  --component-field-bg: var(--color-card);
+  --component-field-height: 44px;
+  --component-field-radius: var(--radius-field);
+  --component-field-ink: var(--color-ink);
+  --component-field-placeholder: var(--color-muted);
+}
+
+* { box-sizing: border-box; }
+html { color-scheme: light dark; }
+body { margin: 0; background: var(--color-page); color: var(--color-ink); font: var(--typography-body); letter-spacing: var(--typography-body-ls, normal); }
+code { font-family: var(--fontFamily-mono); font-size: 12.5px; color: var(--color-ink-2); }
+header { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 16px; height: 64px; padding: 0 24px; background: color-mix(in srgb, var(--color-page) 86%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-line); }
+h1 { font: var(--typography-nav); letter-spacing: var(--typography-nav-ls, normal); font-weight: 510; font-size: 17px; display: flex; align-items: center; gap: 10px; margin: 0; }
+header .sp { flex: 1; }
+.tsw { display: inline-flex; align-items: center; gap: 4px; padding: 3px; border-radius: var(--radius-pill); box-shadow: inset 0 0 0 1px var(--color-line); font-size: 13px; color: var(--color-muted); cursor: pointer; user-select: none; }
+.tsw input { position: absolute; opacity: 0; }
+.tsw .pick { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: var(--radius-pill); }
+.tsw .pick.on { background: var(--color-card); color: var(--color-ink); box-shadow: 0 0 0 1px var(--color-selected-ring, var(--color-line)); }
+main { max-width: 1100px; margin: 0 auto; padding: 40px 24px 120px; }
+h2.sh { font: var(--typography-heading-sm); letter-spacing: var(--typography-heading-sm-ls, -0.022em); margin: 72px 0 18px; }
+h2.sh:first-of-type { margin-top: 0; }
+h3 { font: var(--typography-card-title); letter-spacing: var(--typography-card-title-ls, normal); font-size: 15px; margin: 36px 0 12px; }
+p.lead { max-width: 72ch; font: var(--typography-lede); letter-spacing: var(--typography-lede-ls, normal); color: var(--color-ink-2); margin: 0 0 18px; }
+p.note { max-width: 72ch; font: var(--typography-small); letter-spacing: var(--typography-small-ls, normal); color: var(--color-muted); }
+.kick { font: var(--typography-label); letter-spacing: var(--typography-label-ls, normal); color: var(--color-muted); text-transform: none; margin: 0 0 6px; }
+.ic { display: inline-block; vertical-align: -0.15em; }
+
+/* swatches */
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+.sw { display: flex; gap: 10px; align-items: center; padding: 8px; border-radius: 12px; border: 1px solid var(--color-line); background: var(--color-card); }
+.sw .dot { width: 34px; height: 34px; flex: none; border-radius: 9px; box-shadow: inset 0 0 0 1px var(--color-line); }
+.sw .nm { font: 500 12px/1.3 var(--fontFamily-mono); color: var(--color-ink); }
+.sw .vl { font: 11px/1.3 var(--fontFamily-mono); color: var(--color-muted); margin-top: 2px; }
+.grp { margin: 26px 0 8px; font: var(--typography-label); letter-spacing: var(--typography-label-ls, normal); color: var(--color-muted); }
+
+/* type rows */
+.typerow { display: grid; grid-template-columns: 220px 1fr; gap: 18px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--color-line); }
+.typerow .k { font: 500 12px/1.4 var(--fontFamily-mono); color: var(--color-ink-2); }
+.typerow .k small { display: block; color: var(--color-muted); font-weight: 400; margin-top: 2px; }
+.typerow .sample { color: var(--color-ink); }
+
+/* bars + radius + shadow */
+.bars .b { display: flex; align-items: center; gap: 10px; margin: 4px 0; font: 11.5px var(--fontFamily-mono); color: var(--color-muted); }
+.bars .b span { width: 190px; flex: none; }
+.bars .b i { height: 10px; border-radius: 5px; background: var(--color-accent); display: block; }
+.bxs { display: flex; flex-wrap: wrap; gap: 10px; }
+.bx { width: 96px; height: 64px; border: 1px solid var(--color-line); background: var(--color-card-2); display: flex; align-items: flex-end; padding: 7px; font: 10.5px var(--fontFamily-mono); color: var(--color-ink-2); }
+.shs { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 18px; }
+.shs .box { height: 74px; border-radius: 14px; background: var(--color-card); border: 1px solid var(--color-line); }
+.shs .k { font: 11px var(--fontFamily-mono); color: var(--color-muted); margin-top: 7px; }
+
+/* motion tracks */
+.track { position: relative; height: 30px; border-radius: 15px; background: var(--color-well); box-shadow: inset 0 0 0 1px var(--color-line); cursor: pointer; overflow: hidden; }
+.track .dot { position: absolute; left: 4px; top: 4px; width: 22px; height: 22px; border-radius: 50%; background: var(--color-contrast); }
+.track.go .dot { left: calc(100% - 26px); }
+.mrow { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 16px; }
+.cap { font: 11px var(--fontFamily-mono); color: var(--color-muted); display: block; margin-top: 6px; }
+
+/* components drawn from the tokens */
+.cells { display: flex; flex-wrap: wrap; gap: 22px; }
+.cell { flex: 1 1 300px; }
+.frame { border: 1px solid var(--color-line); border-radius: var(--radius-card); background: var(--color-well); padding: 22px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; min-height: 120px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; border: 0; font: 510 15px/1.55 var(--fontFamily-sans); letter-spacing: -0.011em; cursor: pointer; transition: transform var(--duration-fast) var(--easing-ui), box-shadow var(--duration-fast) var(--easing-ui), background-color var(--duration-fast) var(--easing-ui); }
+.btn:active { transform: scale(.965); }
+.btn:focus-visible { outline: var(--focus-width) solid var(--color-focus); outline-offset: var(--focus-offset); }
+.btn.pri { height: var(--component-button-primary-height); padding: 0 var(--component-button-primary-padding-x); border-radius: var(--component-button-primary-radius); background: var(--component-button-primary-bg); color: var(--component-button-primary-ink); }
+.btn.pri.sm { height: var(--component-button-primary-height-sm); padding: 0 var(--component-button-primary-padding-x-sm); font-size: 13px; }
+.btn.sec { height: var(--component-button-primary-height); padding: 0 var(--component-button-primary-padding-x); border-radius: var(--component-button-primary-radius); background: var(--component-button-secondary-bg); color: var(--component-button-secondary-ink); box-shadow: inset 0 0 0 .5px var(--color-line), 0 1px 2px rgba(0,0,0,.04); }
+.fld { width: 100%; max-width: 340px; height: var(--component-field-height); border-radius: var(--component-field-radius); border: 1px solid var(--component-field-border); background: var(--component-field-bg); box-shadow: var(--shadow-field); font: var(--typography-body); letter-spacing: var(--typography-body-ls, normal); color: var(--component-field-ink); padding: 0 var(--component-field-padding-x); }
+.fld::placeholder { color: var(--component-field-placeholder); }
+.fld.is-focus { box-shadow: var(--shadow-field-focus); outline: none; }
+.err { font: var(--typography-small); letter-spacing: var(--typography-small-ls, normal); color: var(--color-danger); display: flex; gap: 6px; align-items: center; }
+.comp { width: 100%; max-width: var(--size-composer-close); border-radius: var(--radius-card); border: 1px solid var(--color-line); background: var(--color-card); box-shadow: var(--shadow-field); padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; }
+.comp .ghost { font: var(--typography-prompt); letter-spacing: var(--typography-prompt-ls, normal); color: var(--color-muted); }
+.comp .bar { display: flex; align-items: center; gap: 10px; }
+.comp .key { font: 500 12px/18px var(--fontFamily-mono); padding: 0 7px; border-radius: 6px; border: 1px solid var(--component-composer-key-border); color: var(--color-ink-2); }
+.comp .sp { flex: 1; }
+.comp .go { width: var(--component-composer-go-size); height: var(--component-composer-go-size); border-radius: 50%; border: 0; background: var(--component-composer-go-bg); color: var(--component-composer-go-ink); display: grid; place-items: center; }
+.seg { display: inline-flex; gap: 2px; padding: var(--component-segmented-padding); border-radius: var(--radius-pill); box-shadow: inset 0 0 0 1px var(--color-line); }
+.seg span { height: var(--component-segmented-option-height); display: inline-flex; align-items: center; padding: 0 14px; border-radius: var(--radius-pill); font: 510 14px/1.55 var(--fontFamily-sans); color: var(--component-segmented-ink); }
+.seg span.on { background: var(--color-card); color: var(--color-ink); box-shadow: 0 0 0 1px var(--color-line), 0 1px 2px rgba(0,0,0,.05); }
+.tag { display: inline-flex; align-items: center; gap: 6px; height: var(--component-tag-height); padding: 0 var(--component-tag-padding-x); border-radius: var(--component-tag-radius); background: var(--color-studio-tint); color: var(--color-studio-ink); font: 510 12px/16px var(--fontFamily-sans); }
+.tag i { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.card { border-radius: var(--radius-card); background: var(--color-card); border: 1px solid var(--color-line); box-shadow: var(--shadow-resting-sm); padding: var(--space-cell); width: 100%; max-width: 320px; }
+.card h4 { margin: 0 0 4px; font: var(--typography-card-title); letter-spacing: var(--typography-card-title-ls, normal); }
+.card p { margin: 0; font: var(--typography-card-body); letter-spacing: var(--typography-card-body-ls, normal); color: var(--color-muted); }
+.pop { width: 260px; border-radius: var(--component-select-popup-radius); background: var(--color-card); box-shadow: var(--shadow-floating); padding: 6px; }
+.pop .opt { height: var(--component-select-popup-option-height); display: flex; align-items: center; padding: 0 14px; border-radius: 10px; font: var(--typography-body); letter-spacing: var(--typography-body-ls, normal); color: var(--color-muted); }
+.pop .opt.on { color: var(--color-ink); background: var(--color-card-2); }
+.nav { display: flex; align-items: center; gap: 18px; height: var(--size-bar); padding: 0 18px; border-radius: var(--radius-page); background: var(--color-card); box-shadow: var(--shadow-resting-sm); font: var(--typography-nav); letter-spacing: var(--typography-nav-ls, normal); }
+.nav a { color: var(--color-muted); text-decoration: none; padding: 8px 12px; border-radius: 10px; }
+.nav a:hover { color: var(--color-ink); }
+.nav .brand { display: flex; align-items: center; gap: 8px; font-weight: 510; color: var(--color-ink); }
+.nav .sp { flex: 1; }
+table.tok { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.tok td, table.tok th { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--color-line); vertical-align: top; }
+table.tok th { font: var(--typography-label); letter-spacing: var(--typography-label-ls, normal); color: var(--color-muted); }
+table.tok td:first-child { font: 500 12px var(--fontFamily-mono); color: var(--color-ink); }
+table.tok td:last-child { font: 11px var(--fontFamily-mono); color: var(--color-muted); max-width: 46ch; }
+</style>
+</head>
+<body>
+<header>
+  <h1><svg width="18" height="18" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-tfvwvzww="true"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> FlutterFlow style guide</h1>
+  <span class="sp"></span>
+  <label class="tsw"><input type="checkbox" id="theme"><span class="pick on" data-p="l"><svg width="13" height="13" aria-hidden="true" focusable="false" class="ic" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></circle><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg> Light</span><span class="pick" data-p="d"><svg width="13" height="13" aria-hidden="true" focusable="false" class="ic" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg> Dark</span></label>
+</header>
+<main>
+<section>
+  <h2 class="sh">FlutterFlow, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>, read signed-out from flutterflow.io: the <code>--ff-*</code> design layer (colour roles, type, radii, space, sizes, shadows, motion, the <code>.ff-drip</code> widget kit and z-order), the legacy shorthand the home page's earlier skin still reads, and the values measured on the real components. The header's pick sets <code>data-theme</code> on <code>&lt;html&gt;</code> — the same mechanism as the site's footer switch. The mock controls below are rebuilt from the tokens; the real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Each token's provenance (the declaring selector, or the measurement it came from) is in the tables at the bottom and in <code>tokens.json</code> under <code>$extensions.source</code>. Inter is self-hosted by the site and loaded here from Google Fonts; the mono roles use the platform's ui-monospace stack.</p>
+</section>
+
+<section>
+  <h2 class="sh">Colour</h2>
+  <p class="lead"><code>color.*</code> is the semantic layer every page reads (rebound per theme); <code>legacy.*</code> is the shorthand the home page's earlier skin declares and the <code>legacy</code> sheet re-binds per theme; <code>drip.*</code> belongs to the <code>.ff-drip</code> UI kit used inside the site's own demos and widgets. Flip the theme pick to watch the sets move.</p>
+  <div class="grp">color (themed)</div>
+  <div class="swatches" id="color-out"></div>
+  <div class="grp">legacy shorthand (home skin)</div>
+  <div class="swatches" id="legacy-out"></div>
+  <div class="grp">ff-drip UI kit</div>
+  <div class="swatches" id="drip-out"></div>
+</section>
+
+<section>
+  <h2 class="sh">Type</h2>
+  <p class="lead">One face, Inter, in every role: the <code>--ff-text-*</code> shorthands are parsed into <code>typography.*</code> tokens. Sizes written as <code>clamp()</code> are shown resolved at 1440px; the 390px reading is on each token's <code>$extensions.responsive</code>.</p>
+  <div id="type-out"></div>
+</section>
+
+<section>
+  <h2 class="sh">Radius, space and size</h2>
+  <p class="lead">Radii are pill-led (fields and buttons are 999px), cards 20px, page sheets 16. The spacing and content sizes are single-purpose names rather than a numbered scale.</p>
+  <div class="bxs" id="radius-out"></div>
+  <div class="bars" id="space-out" style="margin-top:18px"></div>
+</section>
+
+<section>
+  <h2 class="sh">Elevation</h2>
+  <p class="lead">Ring-plus-drop shadows: the field lift, its focus variant (a 4px ink ring added), resting and floating chrome.</p>
+  <div class="shs" id="shadow-out"></div>
+</section>
+
+<section>
+  <h2 class="sh">Motion</h2>
+  <p class="lead">Two durations — 120ms fast (hovers, presses) and 240ms base (panels) — over two bezier easings and a <code>linear()</code> spring. Click a track to run it. The measured group is what the elements actually run; prefers-reduced-motion strips most of it (<code>raw/motion.json</code>).</p>
+  <div class="mrow" id="motion-out"></div>
+</section>
+
+<section>
+  <h2 class="sh">Components, rebuilt from the tokens</h2>
+  <p class="note">Mocked here from the measured component tokens: the real crops are in <code>components/crops/</code> and the per-state tables in <code>components.md</code>.</p>
+  <div class="cells">
+    <div class="cell"><div class="frame">
+      <div class="nav"><span class="brand"><svg width="16" height="16" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-tfvwvzww="true"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> FlutterFlow</span><a>Product ▾</a><a>Solutions</a><a>Pricing</a><span class="sp"></span><a>Sign in</a><button class="btn pri sm">Start building</button></div>
+      <span class="cap">top bar — 64px, translucent page + blur over the content</span>
+    </div></div>
+    <div class="cell"><div class="frame">
+      <div><button class="btn pri">Start building free</button> <button class="btn sec">Talk to sales</button></div>
+      <div><button class="btn pri sm">Start building</button> <button class="btn pri sm" style="background:var(--color-accent)">Install the app</button></div>
+      <span class="cap">contrast fill + ink; sm is 32px/13px; accent blue is for links and the composer send</span>
+    </div></div>
+  </div>
+  <div class="cells" style="margin-top:22px">
+    <div class="cell"><div class="frame">
+      <input class="fld" placeholder="Work email">
+      <input class="fld is-focus" value="Kai Rivers" readonly>
+      <span class="err"><svg width="12" height="12" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-nmudqryh="true"><path d="M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="m6 6 12 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg> Work email is required</span>
+      <span class="cap">field — pill radius, ink-12% edge, field shadow; focus adds the 4px ink ring. The error line is the declared slot colour (#field-error), never seen painted.</span>
+    </div></div>
+    <div class="cell"><div class="frame">
+      <div class="comp">
+        <div class="ghost">Describe the app you want to build…</div>
+        <div class="bar"><button class="btn" style="padding:0;color:var(--color-muted)"><svg width="15" height="15" aria-hidden="true" focusable="false" class="ic" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m15 18-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><button class="btn" style="padding:0;color:var(--color-muted)"><svg width="15" height="15" aria-hidden="true" focusable="false" class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><span class="key">Tab</span><span class="sp"></span><button class="go"><svg width="15" height="15" aria-hidden="true" focusable="false" class="ic" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></div>
+      </div>
+      <span class="cap">prompt composer — ghost idea text, idea arrows, Tab chip, 36px send at 8% ink (arms to accent once text is entered)</span>
+    </div></div>
+  </div>
+  <div class="cells" style="margin-top:22px">
+    <div class="cell"><div class="frame">
+      <div class="seg"><span>Monthly</span><span class="on">Yearly</span></div>
+      <div class="tag"><i></i> Studio</div>
+      <div class="pop"><div class="opt">Individual</div><div class="opt on">Team</div><div class="opt">Enterprise</div></div>
+      <span class="cap">billing segmented control · studio tag chip · select popup (floating shadow, 20px radius)</span>
+    </div></div>
+    <div class="cell"><div class="frame">
+      <div class="card"><h4>Standard</h4><p>Visual development, testing and deployment from one canvas.</p><div style="margin-top:12px"><button class="btn pri sm">Start for free</button></div></div>
+      <span class="cap">plan card — 20px radius, cell padding</span>
+    </div></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="sh">Every token, with its source</h2>
+  <table class="tok"><thead><tr><th>Token</th><th>Value (this theme)</th><th>Source</th></tr></thead><tbody id="tok-out"></tbody></table>
+</section>
+</main>
+
+<script>
+const TOK = {"core":{"fontFamily":{"sans":{"v":"\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif","t":"fontFamily","s":"css-var --ff-font-sans (:root (@layer ff.tokens))","d":"Inter (variable, self-hosted via @font-face) then the system stack"},"mono":{"v":"ui-monospace, \"SF Mono\", SFMono-Regular, Menlo, Consolas, monospace","t":"fontFamily","s":"css-var --ff-font-mono (:root (@layer ff.tokens))","d":"the ui-monospace stack used by the label/kbd roles"}},"fontWeight":{"regular":{"v":400,"t":"fontWeight","s":"declared in the --ff-text-* font shorthands (raw/css-vars.json)"},"medium":{"v":500,"t":"fontWeight","s":"declared --ff-text-label; measured raw/measurements.md#composer-key"},"semibold":{"v":510,"t":"fontWeight","s":"declared in most --ff-text-* shorthands and measured on every button (Inter variable wght 510): raw/measurements.md#plan-cta, #submit"},"bold":{"v":600,"t":"fontWeight","s":"declared --ff-text-display and --ff-text-prose-h3; measured raw/measurements.md#home-title"}},"radius":{"card":{"v":"20px","t":"dimension","s":"css-var --ff-radius-card (:root (@layer ff.tokens))","d":"cards, popups (select popup measured 20px)"},"field":{"v":"26px","t":"dimension","s":"css-var --ff-radius-field (:root (@layer ff.tokens))","d":"pill fields and buttons (measured 999px)"},"field-tall":{"v":"22px","t":"dimension","s":"css-var --ff-radius-field-tall (:root (@layer ff.tokens))","d":"multi-line fields (textarea measured 22px)"},"icon":{"v":"10px","t":"dimension","s":"css-var --ff-radius-icon (:root (@layer ff.tokens))"},"page":{"v":"16px","t":"dimension","s":"css-var --ff-radius-page (:root (@layer ff.tokens))","d":"page-level sheets (nav panel measured 16px)"},"pill":{"v":"999px","t":"dimension","s":"css-var --ff-radius-pill (:root (@layer ff.tokens))"}},"space":{"cell":{"v":"32px","t":"dimension","s":"css-var --ff-space-cell (:root (@layer ff.tokens))"},"column":{"v":"32px","t":"dimension","s":"css-var --ff-space-column (:root (@layer ff.tokens))"},"gutter":{"v":"48px","t":"dimension","s":"css-var --ff-space-gutter (:root (@layer ff.tokens))"},"head":{"v":"96px","t":"dimension","s":"css-var --ff-space-head (:root (@layer ff.tokens))"},"section":{"v":"128px","t":"dimension","s":"css-var --ff-space-section (:root (@layer ff.tokens))","d":"vertical rhythm between page sections"},"tile":{"v":"28px","t":"dimension","s":"css-var --ff-space-tile (:root (@layer ff.tokens))"},"words":{"v":"64px","t":"dimension","s":"css-var --ff-space-words (:root (@layer ff.tokens))"}},"size":{"bar":{"v":"64px","t":"dimension","s":"css-var --ff-size-bar (:root (@layer ff.tokens))","d":"top nav height (64px desktop, 56px measured at 390)"},"composer":{"v":"680px","t":"dimension","s":"css-var --ff-size-composer (:root (@layer ff.tokens))"},"composer-close":{"v":"640px","t":"dimension","s":"css-var --ff-size-composer-close (:root (@layer ff.tokens))"},"composer-hero":{"v":"720px","t":"dimension","s":"css-var --ff-size-composer-hero (:root (@layer ff.tokens))","d":"the hero composer width (measured 720px on home)"},"content":{"v":"1344px","t":"dimension","s":"css-var --ff-size-content (:root (@layer ff.tokens))","d":"the 1344px content column every grid uses"},"stage":{"v":"700px","t":"dimension","s":"css-var --ff-size-stage (:root (@layer ff.tokens))"},"words":{"v":"440px","t":"dimension","s":"css-var --ff-size-words (:root (@layer ff.tokens))"}},"border":{"hair":{"v":"1px","t":"dimension","s":"css-var --ff-border-hair (:root (@layer ff.tokens))"}},"focus":{"offset":{"v":"2px","t":"dimension","s":"css-var --ff-focus-offset (:root (@layer ff.tokens))"},"width":{"v":"2px","t":"dimension","s":"css-var --ff-focus-width (:root (@layer ff.tokens))"}},"shadow":{"field":{"v":[{"color":"rgba(0, 0, 0, 0.04)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px","inset":false},{"color":"rgba(0, 0, 0, 0.14)","offsetX":"0px","offsetY":"8px","blur":"24px","spread":"-14px","inset":false}],"t":"shadow","s":"css-var --ff-shadow-field (:root (@layer ff.tokens))","d":"the resting field lift; identical light and dark"}},"duration":{"fast":{"v":"120ms","t":"duration","s":"css-var --ff-duration-fast (:root (@layer ff.tokens))","d":"120ms; the measured hover/press transition on buttons, fields, links"},"base":{"v":"240ms","t":"duration","s":"css-var --ff-duration-base (:root (@layer ff.tokens))","d":"240ms; panels and the header"}},"easing":{"out":{"v":[0.2,0.8,0.2,1.0],"t":"cubicBezier","s":"css-var --ff-ease-out (:root (@layer ff.tokens))"},"ui":{"v":[0.25,0.46,0.45,0.94],"t":"cubicBezier","s":"css-var --ff-ease-ui (:root (@layer ff.tokens))"},"spring":{"v":"linear(0, .001 .6%, .006 1.5%, .017 2.7%, .036 3.9%, .062 5.3%, .095 6.8%, .135 8.4%, .18 10%, .231 11.7%, .285 13.5%, .341 15.4%, .399 17.3%, .456 19.3%, .513 21.3%, .569 23.4%, .621 25.5%, .671 27.7%, .717 29.9%, .76 32.2%, .799 34.5%, .833 36.8%, .864 39.2%, .891 41.7%, .914 44.1%, .934 46.6%, .951 49.2%, .964 51.7%, .976 54.3%, .985 57%, .992 59.6%, .997 62.3%, 1.001 65.1%, 1.004 67.8%, 1.006 70.6%, 1.007 73.4%, 1.008 76.3%, 1.008 79.1%, 1.007 82%, 1.007 85%, 1.006 87.9%, 1.006 90.9%, 1.005 93.9%, 1.004 96.9%, 1)","t":"spring","s":"css-var --ff-ease-spring (:root (@layer ff.tokens))","d":"a linear() spring curve; not expressible as cubicBezier so the raw function is kept"}},"zIndex":{"dropdown":{"v":5,"t":"number","s":"css-var --ff-z-dropdown (:root (@layer ff.tokens))"},"sticky":{"v":19,"t":"number","s":"css-var --ff-z-sticky (:root (@layer ff.tokens))"},"bar":{"v":20,"t":"number","s":"css-var --ff-z-bar (:root (@layer ff.tokens))"},"bar-menu":{"v":21,"t":"number","s":"css-var --ff-z-bar-menu (:root (@layer ff.tokens))"},"overlay":{"v":50,"t":"number","s":"css-var --ff-z-overlay (:root (@layer ff.tokens))"},"skip":{"v":60,"t":"number","s":"css-var --ff-z-skip (:root (@layer ff.tokens))"}},"typography":{"article-title":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"48px","lineHeight":"1.08","fontWeight":510,"letterSpacing":"-.022em"},"t":"typography","s":"css-var --ff-text-article-title (:root (@layer ff.tokens))"},"body":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"16px","lineHeight":"1.55","fontWeight":400,"letterSpacing":"0px"},"t":"typography","s":"css-var --ff-text-body (:root (@layer ff.tokens))"},"card-body":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"15px","lineHeight":"24px","fontWeight":400,"letterSpacing":"-.011em"},"t":"typography","s":"css-var --ff-text-card-body (:root (@layer ff.tokens))"},"card-title":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"15px","lineHeight":"24px","fontWeight":510,"letterSpacing":"-.011em"},"t":"typography","s":"css-var --ff-text-card-title (:root (@layer ff.tokens))"},"display":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"66px","lineHeight":"1.03","fontWeight":600,"letterSpacing":"-.035em"},"t":"typography","s":"css-var --ff-text-display (:root (@layer ff.tokens))"},"heading":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"48px","lineHeight":"1.08","fontWeight":510,"letterSpacing":"-.022em"},"t":"typography","s":"css-var --ff-text-heading (:root (@layer ff.tokens))"},"heading-sm":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"42px","lineHeight":"1.1","fontWeight":510,"letterSpacing":"-.022em"},"t":"typography","s":"css-var --ff-text-heading-sm (:root (@layer ff.tokens))"},"kicker":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"14px","lineHeight":"20px","fontWeight":510,"letterSpacing":"0px"},"t":"typography","s":"css-var --ff-text-kicker (:root (@layer ff.tokens))"},"label":{"v":{"fontFamily":"{fontFamily.mono}","fontSize":"11px","lineHeight":"16px","fontWeight":500,"letterSpacing":".06em"},"t":"typography","s":"css-var --ff-text-label (:root (@layer ff.tokens))"},"lede":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"19px","lineHeight":"30px","fontWeight":400,"letterSpacing":"0px"},"t":"typography","s":"css-var --ff-text-lede (:root (@layer ff.tokens))"},"nav":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"14px","lineHeight":"1.55","fontWeight":400,"letterSpacing":"0px"},"t":"typography","s":"css-var --ff-text-nav (:root (@layer ff.tokens))"},"prompt":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"18px","lineHeight":"26px","fontWeight":400,"letterSpacing":"-.01em"},"t":"typography","s":"css-var --ff-text-prompt (:root (@layer ff.tokens))"},"prose":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"18px","lineHeight":"30px","fontWeight":400,"letterSpacing":"-.011em"},"t":"typography","s":"css-var --ff-text-prose (:root (@layer ff.tokens))"},"prose-h2":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"28px","lineHeight":"1.2","fontWeight":510,"letterSpacing":"-.018em"},"t":"typography","s":"css-var --ff-text-prose-h2 (:root (@layer ff.tokens))"},"prose-h3":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"19px","lineHeight":"28px","fontWeight":600,"letterSpacing":"-.012em"},"t":"typography","s":"css-var --ff-text-prose-h3 (:root (@layer ff.tokens))"},"question":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"17px","lineHeight":"26px","fontWeight":510,"letterSpacing":"-.012em"},"t":"typography","s":"css-var --ff-text-question (:root (@layer ff.tokens))"},"quote":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"19px","lineHeight":"28px","fontWeight":400,"letterSpacing":"-.01em"},"t":"typography","s":"css-var --ff-text-quote (:root (@layer ff.tokens))"},"section-lede":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"20px","lineHeight":"1.45","fontWeight":400,"letterSpacing":"-.012em"},"t":"typography","s":"css-var --ff-text-section-lede (:root (@layer ff.tokens))"},"small":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"13px","lineHeight":"1.4","fontWeight":400,"letterSpacing":"0px"},"t":"typography","s":"css-var --ff-text-small (:root (@layer ff.tokens))"},"stat":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"56px","lineHeight":"1","fontWeight":510,"letterSpacing":"-.03em"},"t":"typography","s":"css-var --ff-text-stat (:root (@layer ff.tokens))"},"testimonial":{"v":{"fontFamily":"{fontFamily.sans}","fontSize":"34px","lineHeight":"1.25","fontWeight":510,"letterSpacing":"-.02em"},"t":"typography","s":"css-var --ff-text-testimonial (:root (@layer ff.tokens))"}},"motion":{"duration":{"0ms":{"v":"0ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"d1":{"v":"120ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--d1"},"d":"Custom property --d1, declared on :root."},"ff-duration-fast":{"v":"120ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ff-duration-fast"},"d":"Custom property --ff-duration-fast, declared on :root."},"150ms":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 26 elements."},"160ms":{"v":"160ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"200ms":{"v":"200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 11 elements."},"d2":{"v":"240ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--d2"},"d":"Custom property --d2, declared on :root."},"ff-duration-base":{"v":"240ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ff-duration-base"},"d":"Custom property --ff-duration-base, declared on :root."},"250ms":{"v":"250ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"300ms":{"v":"300ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 17 elements."},"320ms":{"v":"320ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"350ms":{"v":"350ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 10 elements."},"400ms":{"v":"400ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"450ms":{"v":"450ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"500ms":{"v":"500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"550ms":{"v":"550ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 16 elements."},"600ms":{"v":"600ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"700ms":{"v":"700ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"800ms":{"v":"800ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"950ms":{"v":"950ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"1000ms":{"v":"1000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"1050ms":{"v":"1050ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"1200ms":{"v":"1200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1400ms":{"v":"1400ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1700ms":{"v":"1700ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."}},"easing":{"bezier-0_22-1-0_36-1":{"v":[0.22,1,0.36,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#pages"}},"bezier-0_25-1-0_5-1":{"v":[0.25,1,0.5,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_3-0-0_2-1":{"v":[0.3,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_45-0-0_2-1":{"v":[0.45,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_45-0_05-0_25-1":{"v":[0.45,0.05,0.25,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_5-0-0_5-1":{"v":[0.5,0,0.5,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_6-0-0_2-1":{"v":[0.6,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"ease":{"v":[0.2,0.8,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease"},"d":"Custom property --ease, declared on :root."},"ease-2":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease`, expanded to its control points."},"ease-out":{"v":[0,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease-out`, expanded to its control points."},"ease-ui":{"v":[0.25,0.46,0.45,0.94],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-ui"},"d":"Custom property --ease-ui, declared on :root."},"ff-ease-out":{"v":[0.2,0.8,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ff-ease-out"},"d":"Custom property --ff-ease-out, declared on :root."},"ff-ease-ui":{"v":[0.25,0.46,0.45,0.94],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ff-ease-ui"},"d":"Custom property --ff-ease-ui, declared on :root."},"linear":{"v":[0,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `linear`, expanded to its control points."}},"transition":{"background-color-120ms-ease-ui":{"v":{"duration":"{motion.duration.d1}","delay":"0ms","timingFunction":"{motion.easing.ease-ui}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 88 elements."},"transform-240ms-ease-ui":{"v":{"duration":"{motion.duration.d2}","delay":"0ms","timingFunction":"{motion.easing.ease-ui}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 55 elements."},"box-shadow-120ms-ease-ui":{"v":{"duration":"{motion.duration.d1}","delay":"0ms","timingFunction":"{motion.easing.ease-ui}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 53 elements."},"transform-120ms-ease-ui":{"v":{"duration":"{motion.duration.d1}","delay":"0ms","timingFunction":"{motion.easing.ease-ui}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 42 elements."},"color-120ms-ease-ui":{"v":{"duration":"{motion.duration.d1}","delay":"0ms","timingFunction":"{motion.easing.ease-ui}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 41 elements."},"opacity-240ms-ease-ui":{"v":{"duration":"{motion.duration.d2}","delay":"0ms","timingFunction":"{motion.easing.ease-ui}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 27 elements."},"border-color-120ms-ease-ui":{"v":{"duration":"{motion.duration.d1}","delay":"0ms","timingFunction":"{motion.easing.ease-ui}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 21 elements."},"opacity-120ms-ease-ui":{"v":{"duration":"{motion.duration.d1}","delay":"0ms","timingFunction":"{motion.easing.ease-ui}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 12 elements."},"visibility-240ms-ease-2":{"v":{"duration":"{motion.duration.d2}","delay":"0ms","timingFunction":"{motion.easing.ease-2}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 12 elements."},"opacity-200ms-ease-2":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-2}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 11 elements."},"background-color-150ms-ease-2":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.ease-2}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 9 elements."},"box-shadow-550ms-bezier-0_22-1-0_36-1":{"v":{"duration":"{motion.duration.550ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_22-1-0_36-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"color-150ms-ease-2":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.ease-2}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"transform-350ms-bezier-0_22-1-0_36-1":{"v":{"duration":"{motion.duration.350ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_22-1-0_36-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"transform-550ms-bezier-0_22-1-0_36-1":{"v":{"duration":"{motion.duration.550ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_22-1-0_36-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"color-240ms-ease-ui":{"v":{"duration":"{motion.duration.d2}","delay":"0ms","timingFunction":"{motion.easing.ease-ui}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"border-radius-320ms-ease":{"v":{"duration":"{motion.duration.320ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"box-shadow-240ms-ease-ui":{"v":{"duration":"{motion.duration.d2}","delay":"0ms","timingFunction":"{motion.easing.ease-ui}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"height-320ms-ease":{"v":{"duration":"{motion.duration.320ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"opacity-300ms-ease-2":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-2}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"transform-600ms-ease":{"v":{"duration":"{motion.duration.600ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"background-150ms-ease-2":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.ease-2}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"box-shadow-150ms-ease-2":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.ease-2}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"transform-150ms-ease":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"visibility-0ms-ease-2-delay240ms":{"v":{"duration":"{motion.duration.0ms}","delay":"240ms","timingFunction":"{motion.easing.ease-2}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"background-color-300ms-ease-2":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-2}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"opacity-350ms-ease-2":{"v":{"duration":"{motion.duration.350ms}","delay":"0ms","timingFunction":"{motion.easing.ease-2}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"opacity-400ms-ease-2-delay100ms":{"v":{"duration":"{motion.duration.400ms}","delay":"100ms","timingFunction":"{motion.easing.ease-2}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"transform-500ms-ease-2":{"v":{"duration":"{motion.duration.500ms}","delay":"0ms","timingFunction":"{motion.easing.ease-2}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"transform-1000ms-linear-0-0-0-001-0-6-0-006-1-5-0-017-2-7-0-036-3-9-0-062-5-3-0-095-6-8-0-135-8-4-0-18-10-0-231-11-7-0-285-13-5-0-341-15-4-0-399-17-3-0-456-19-3-0-513-21-3-0-569-23-4-0-621-25-5-0-671-27-7-0-717-29-9-0-76-32-2-0-799-34-5-0-833-36-8-0-864-39-2-0-891-41-7-0-914-44-1-0-934-46-6-0-951-49-2-0-964-51-7-0-976-54-3-0-985-57-0-992-59-6-0-997-62-3-1-001-65-1-1-004-67-8-1-006-70-6-1-007-73-4-1-008-76-3-1-008-79-1-1-007-82-1-007-85-1-006-87-9-1-006-90-9-1-005-93-9-1-004-96-9-1-100":{"v":{"duration":"{motion.duration.1000ms}","delay":"0ms","timingFunction":"linear(0 0%, 0.001 0.6%, 0.006 1.5%, 0.017 2.7%, 0.036 3.9%, 0.062 5.3%, 0.095 6.8%, 0.135 8.4%, 0.18 10%, 0.231 11.7%, 0.285 13.5%, 0.341 15.4%, 0.399 17.3%, 0.456 19.3%, 0.513 21.3%, 0.569 23.4%, 0.621 25.5%, 0.671 27.7%, 0.717 29.9%, 0.76 32.2%, 0.799 34.5%, 0.833 36.8%, 0.864 39.2%, 0.891 41.7%, 0.914 44.1%, 0.934 46.6%, 0.951 49.2%, 0.964 51.7%, 0.976 54.3%, 0.985 57%, 0.992 59.6%, 0.997 62.3%, 1.001 65.1%, 1.004 67.8%, 1.006 70.6%, 1.007 73.4%, 1.008 76.3%, 1.008 79.1%, 1.007 82%, 1.007 85%, 1.006 87.9%, 1.006 90.9%, 1.005 93.9%, 1.004 96.9%, 1 100%)"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"background-250ms-ease-2":{"v":{"duration":"{motion.duration.250ms}","delay":"0ms","timingFunction":"{motion.easing.ease-2}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"filter-700ms-ease-2-delay450ms":{"v":{"duration":"{motion.duration.700ms}","delay":"450ms","timingFunction":"{motion.easing.ease-2}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"grid-template-rows-500ms-ease-delay100ms":{"v":{"duration":"{motion.duration.500ms}","delay":"100ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"opacity-160ms-ease-2-delay130ms":{"v":{"duration":"{motion.duration.160ms}","delay":"130ms","timingFunction":"{motion.easing.ease-2}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"opacity-250ms-ease-2":{"v":{"duration":"{motion.duration.250ms}","delay":"0ms","timingFunction":"{motion.easing.ease-2}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"transform-450ms-ease":{"v":{"duration":"{motion.duration.450ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"transform-950ms-linear-0-0-0-001-0-6-0-006-1-5-0-017-2-7-0-036-3-9-0-062-5-3-0-095-6-8-0-135-8-4-0-18-10-0-231-11-7-0-285-13-5-0-341-15-4-0-399-17-3-0-456-19-3-0-513-21-3-0-569-23-4-0-621-25-5-0-671-27-7-0-717-29-9-0-76-32-2-0-799-34-5-0-833-36-8-0-864-39-2-0-891-41-7-0-914-44-1-0-934-46-6-0-951-49-2-0-964-51-7-0-976-54-3-0-985-57-0-992-59-6-0-997-62-3-1-001-65-1-1-004-67-8-1-006-70-6-1-007-73-4-1-008-76-3-1-008-79-1-1-007-82-1-007-85-1-006-87-9-1-006-90-9-1-005-93-9-1-004-96-9-1-100":{"v":{"duration":"{motion.duration.950ms}","delay":"0ms","timingFunction":"linear(0 0%, 0.001 0.6%, 0.006 1.5%, 0.017 2.7%, 0.036 3.9%, 0.062 5.3%, 0.095 6.8%, 0.135 8.4%, 0.18 10%, 0.231 11.7%, 0.285 13.5%, 0.341 15.4%, 0.399 17.3%, 0.456 19.3%, 0.513 21.3%, 0.569 23.4%, 0.621 25.5%, 0.671 27.7%, 0.717 29.9%, 0.76 32.2%, 0.799 34.5%, 0.833 36.8%, 0.864 39.2%, 0.891 41.7%, 0.914 44.1%, 0.934 46.6%, 0.951 49.2%, 0.964 51.7%, 0.976 54.3%, 0.985 57%, 0.992 59.6%, 0.997 62.3%, 1.001 65.1%, 1.004 67.8%, 1.006 70.6%, 1.007 73.4%, 1.008 76.3%, 1.008 79.1%, 1.007 82%, 1.007 85%, 1.006 87.9%, 1.006 90.9%, 1.005 93.9%, 1.004 96.9%, 1 100%)"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"transform-1000ms-linear-0-0-0-001-0-6-0-006-1-5-0-017-2-7-0-036-3-9-0-062-5-3-0-095-6-8-0-135-8-4-0-18-10-0-231-11-7-0-285-13-5-0-341-15-4-0-399-17-3-0-456-19-3-0-513-21-3-0-569-23-4-0-621-25-5-0-671-27-7-0-717-29-9-0-76-32-2-0-799-34-5-0-833-36-8-0-864-39-2-0-891-41-7-0-914-44-1-0-934-46-6-0-951-49-2-0-964-51-7-0-976-54-3-0-985-57-0-992-59-6-0-997-62-3-1-001-65-1-1-004-67-8-1-006-70-6-1-007-73-4-1-008-76-3-1-008-79-1-1-007-82-1-007-85-1-006-87-9-1-006-90-9-1-005-93-9-1-004-96-9-1-100-delay130ms":{"v":{"duration":"{motion.duration.1000ms}","delay":"130ms","timingFunction":"linear(0 0%, 0.001 0.6%, 0.006 1.5%, 0.017 2.7%, 0.036 3.9%, 0.062 5.3%, 0.095 6.8%, 0.135 8.4%, 0.18 10%, 0.231 11.7%, 0.285 13.5%, 0.341 15.4%, 0.399 17.3%, 0.456 19.3%, 0.513 21.3%, 0.569 23.4%, 0.621 25.5%, 0.671 27.7%, 0.717 29.9%, 0.76 32.2%, 0.799 34.5%, 0.833 36.8%, 0.864 39.2%, 0.891 41.7%, 0.914 44.1%, 0.934 46.6%, 0.951 49.2%, 0.964 51.7%, 0.976 54.3%, 0.985 57%, 0.992 59.6%, 0.997 62.3%, 1.001 65.1%, 1.004 67.8%, 1.006 70.6%, 1.007 73.4%, 1.008 76.3%, 1.008 79.1%, 1.007 82%, 1.007 85%, 1.006 87.9%, 1.006 90.9%, 1.005 93.9%, 1.004 96.9%, 1 100%)"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."}},"animation":{"cmp-blink":{"v":{"name":"cmp-blink","duration":"{motion.duration.1050ms}","delay":"0ms","timingFunction":"steps(1, end)","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `cmp-blink`."},"ff-cmp-blink":{"v":{"name":"ff-cmp-blink","duration":"{motion.duration.1050ms}","delay":"0ms","timingFunction":"steps(1, end)","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `ff-cmp-blink`."},"ff-rise":{"v":{"name":"ff-rise","duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}","iterationCount":"1","direction":"normal","fillMode":"both"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `ff-rise`."},"ff-sel-in":{"v":{"name":"ff-sel-in","duration":"{motion.duration.d1}","delay":"0ms","timingFunction":"{motion.easing.ease-ui}","iterationCount":"1","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `ff-sel-in`."},"rise":{"v":{"name":"rise","duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}","iterationCount":"1","direction":"normal","fillMode":"both"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `rise`."}}}},"light":{"color":{"page":{"v":"#fcfcfb","t":"color","s":"css-var --ff-color-page ([data-theme=\"light\"] (@layer ff.tokens))","d":"the page ground"},"well":{"v":"#f5f5f5","t":"color","s":"css-var --ff-color-well ([data-theme=\"light\"] (@layer ff.tokens))","d":"the sunken well/section tint behind cards"},"card":{"v":"#ffffff","t":"color","s":"css-var --ff-color-card ([data-theme=\"light\"] (@layer ff.tokens))","d":"card and field fill"},"card-2":{"v":"#f0f0f0","t":"color","s":"css-var --ff-color-card-2 ([data-theme=\"light\"] (@layer ff.tokens))","d":"the second card step (plan cards, tiles)"},"ink":{"v":"#1a1a1a","t":"color","s":"css-var --ff-color-ink ([data-theme=\"light\"] (@layer ff.tokens))","d":"headings, body, the contrast button fill"},"ink-2":{"v":"#3d3d3d","t":"color","s":"css-var --ff-color-ink-2 ([data-theme=\"light\"] (@layer ff.tokens))","d":"secondary text"},"ink-soft":{"v":"#555555","t":"color","s":"css-var --ff-color-ink-soft ([data-theme=\"light\"] (@layer ff.tokens))","d":"tertiary text"},"muted":{"v":"#6b6b6b","t":"color","s":"css-var --ff-color-muted ([data-theme=\"light\"] (@layer ff.tokens))","d":"quiet labels, nav links, unselected tabs"},"faint":{"v":"#a3a3a3","t":"color","s":"css-var --ff-color-faint ([data-theme=\"light\"] (@layer ff.tokens))","d":"placeholder-quiet text"},"line":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --ff-color-line ([data-theme=\"light\"] (@layer ff.tokens))","d":"hairlines: card edges, field borders, separators"},"accent":{"v":"#0a68e0","t":"color","s":"css-var --ff-color-accent ([data-theme=\"light\"] (@layer ff.tokens))","d":"links and accent CTAs (FlutterFlow blue)"},"focus":{"v":"#1a1a1a","t":"color","s":"css-var --ff-color-focus ([data-theme=\"light\"] (@layer ff.tokens))","d":"the keyboard focus ring"},"send":{"v":"#0a68e0","t":"color","s":"css-var --ff-color-send (:root (@layer ff.tokens))","d":"the composer send button when armed"},"send-ink":{"v":"#ffffff","t":"color","s":"css-var --ff-color-send-ink (:root (@layer ff.tokens))","d":"glyph on the send button"},"success":{"v":"#177245","t":"color","s":"css-var --ff-color-success ([data-theme=\"light\"] (@layer ff.tokens))","d":"success/pricing check marks"},"danger":{"v":"#c4320a","t":"color","s":"css-var --ff-color-danger ([data-theme=\"light\"] (@layer ff.tokens))","d":"error text (the field-error slot's declared colour)"},"studio-ink":{"v":"#4b39ef","t":"color","s":"css-var --ff-color-studio-ink ([data-theme=\"light\"] (@layer ff.tokens))","d":"the Studio product line's violet"},"studio-tint":{"v":"#ececfd","t":"color","s":"css-var --ff-color-studio-tint ([data-theme=\"light\"] (@layer ff.tokens))","d":"the Studio tag chip's tint"},"contrast":{"v":"#1a1a1a","t":"color","s":"css-var --ff-color-contrast ([data-theme=\"light\"] (@layer ff.tokens))","d":"primary button fill: ink on light, near-white on dark"},"contrast-ink":{"v":"#ffffff","t":"color","s":"css-var --ff-color-contrast-ink ([data-theme=\"light\"] (@layer ff.tokens))","d":"text on the contrast fill"},"sheen":{"v":"rgba(255, 255, 255, 0.95)","t":"color","s":"css-var --ff-color-sheen ([data-theme=\"light\"] (@layer ff.tokens))","d":"glass sheen on floating chrome"},"statusbar-ink":{"v":"#000000","t":"color","s":"css-var --ff-color-statusbar-ink ([data-theme=\"light\"] (@layer ff.tokens))","d":"mock status-bar glyphs in the product shots"},"statusbar-ink-on-light":{"v":"#000000","t":"color","s":"css-var --ff-color-statusbar-ink-on-light (:root (@layer ff.tokens))"},"statusbar-ink-on-dark":{"v":"#ffffff","t":"color","s":"css-var --ff-color-statusbar-ink-on-dark (:root (@layer ff.tokens))"},"chrome-bar":{"v":"#ececec","t":"color","s":"css-var --ff-color-chrome-bar ([data-theme=\"light\"] (@layer ff.tokens))","d":"browser-chrome strip on the mock windows"},"chrome-bg":{"v":"#f7f7f7","t":"color","s":"css-var --ff-color-chrome-bg ([data-theme=\"light\"] (@layer ff.tokens))","d":"mock window ground"},"chrome-ink":{"v":"rgba(0, 0, 0, 0.55)","t":"color","s":"css-var --ff-color-chrome-ink ([data-theme=\"light\"] (@layer ff.tokens))","d":"mock chrome glyphs"},"chrome-line":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --ff-color-chrome-line ([data-theme=\"light\"] (@layer ff.tokens))","d":"mock chrome hairline"},"tile":{"v":"#ffffff","t":"color","s":"css-var --ff-color-tile (:root (@layer ff.tokens))","d":"logo/avatar tiles"},"tile-ring":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --ff-color-tile-ring (:root (@layer ff.tokens))","d":"the ring around tiles"},"ui-card":{"v":"#ffffff","t":"color","s":"css-var --ff-color-ui-card ([data-theme=\"light\"] (@layer ff.tokens))","d":"the ff-drip widget kit's card"},"ui-fill":{"v":"#ebebeb","t":"color","s":"css-var --ff-color-ui-fill ([data-theme=\"light\"] (@layer ff.tokens))","d":"drip control fill"},"ui-line":{"v":"#dedede","t":"color","s":"css-var --ff-color-ui-line ([data-theme=\"light\"] (@layer ff.tokens))","d":"drip hairline"},"ui-frame":{"v":"#efefef","t":"color","s":"css-var --ff-color-ui-frame ([data-theme=\"light\"] (@layer ff.tokens))","d":"drip frame"},"selected-ring":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --ff-theme-selected-ring ([data-theme=\"light\"] (@layer ff.tokens))","d":"the ring the footer theme switch paints on the active pick"}},"border":{"rule":{"v":{"width":"1px","style":"solid","color":"{color.line}"},"t":"border","s":"css-var --ff-border-rule (:root (@layer ff.tokens))","d":"hairline rule: 1px solid line"}},"shadow":{"field-focus":{"v":[{"color":"rgba(26, 26, 26, 0.06)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"4px","inset":false},{"color":"rgba(0, 0, 0, 0.04)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px","inset":false},{"color":"rgba(0, 0, 0, 0.14)","offsetX":"0px","offsetY":"8px","blur":"24px","spread":"-14px","inset":false}],"t":"shadow","s":"css-var --ff-shadow-field-focus ([data-theme=\"light\"] (@layer ff.tokens))","d":"adds a 4px ink-6% ring on focus; measured on raw/measurements.md#text-field focused. Dark's ring is ink-6% of its own ink (a white ring)"},"floating":{"v":[{"color":"rgba(0, 0, 0, 0.08)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","inset":false},{"color":"rgba(0, 0, 0, 0.28)","offsetX":"0px","offsetY":"24px","blur":"48px","spread":"-20px","inset":false}],"t":"shadow","s":"css-var --ff-shadow-floating ([data-theme=\"light\"] (@layer ff.tokens))","d":"highest chrome: nav panel and select popup measured exactly this. Dark carries a white 1px ring and a full-black drop"},"resting":{"v":[{"color":"rgba(0, 0, 0, 0.08)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","inset":false},{"color":"rgba(0, 0, 0, 0.22)","offsetX":"0px","offsetY":"18px","blur":"40px","spread":"-22px","inset":false}],"t":"shadow","s":"css-var --ff-shadow-resting ([data-theme=\"light\"] (@layer ff.tokens))","d":"white ring + stronger drop in dark"},"resting-sm":{"v":[{"color":"rgba(0, 0, 0, 0.05)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","inset":false},{"color":"rgba(0, 0, 0, 0.18)","offsetX":"0px","offsetY":"12px","blur":"32px","spread":"-18px","inset":false}],"t":"shadow","s":"css-var --ff-shadow-resting-sm ([data-theme=\"light\"] (@layer ff.tokens))","d":"white ring + stronger drop in dark"}},"drip":{"bg":{"v":"#f5f5f5","t":"color","s":"css-var --ff-drip-bg (.ff-drip (@layer ff.tokens))"},"surface":{"v":"#ffffff","t":"color","s":"css-var --ff-drip-surface (.ff-drip (@layer ff.tokens))"},"surface-2":{"v":"#efefef","t":"color","s":"css-var --ff-drip-surface-2 (.ff-drip (@layer ff.tokens))"},"fg":{"v":"#1a1a1a","t":"color","s":"css-var --ff-drip-fg (.ff-drip (@layer ff.tokens))"},"muted":{"v":"#6b6b6b","t":"color","s":"css-var --ff-drip-muted (.ff-drip (@layer ff.tokens))"},"border":{"v":"#dedede","t":"color","s":"css-var --ff-drip-border (.ff-drip (@layer ff.tokens))"},"sep":{"v":"#e4e4e4","t":"color","s":"css-var --ff-drip-sep (.ff-drip (@layer ff.tokens))"},"sep-3":{"v":"#cecece","t":"color","s":"css-var --ff-drip-sep-3 (.ff-drip (@layer ff.tokens))"},"default":{"v":"#ebebeb","t":"color","s":"css-var --ff-drip-default (.ff-drip (@layer ff.tokens))"},"dim":{"v":"rgba(20, 20, 20, 0.1)","t":"color","s":"css-var --ff-drip-dim (.ff-drip (@layer ff.tokens))"},"accent":{"v":"#0a68e0","t":"color","s":"css-var --ff-drip-accent (.ff-drip (@layer ff.tokens))"},"accent-fg":{"v":"#ffffff","t":"color","s":"css-var --ff-drip-accent-fg (.ff-drip (@layer ff.tokens))"},"accent-soft":{"v":"rgba(10, 104, 224, 0.15)","t":"color","s":"css-var --ff-drip-accent-soft (.ff-drip (@layer ff.tokens))"},"accent-soft-fg":{"v":"#1b519f","t":"color","s":"css-var --ff-drip-accent-soft-fg (.ff-drip (@layer ff.tokens))"},"success":{"v":"#177245","t":"color","s":"css-var --ff-drip-success (.ff-drip (@layer ff.tokens))"},"success-soft":{"v":"rgba(23, 114, 69, 0.15)","t":"color","s":"css-var --ff-drip-success-soft (.ff-drip (@layer ff.tokens))"},"warning":{"v":"#8f5a0c","t":"color","s":"css-var --ff-drip-warning (.ff-drip (@layer ff.tokens))"},"warning-soft":{"v":"rgba(143, 90, 12, 0.15)","t":"color","s":"css-var --ff-drip-warning-soft (.ff-drip (@layer ff.tokens))"},"surface-shadow":{"v":[{"color":"rgba(0, 0, 0, 0.03)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px","inset":false},{"color":"rgba(0, 0, 0, 0.05)","offsetX":"0px","offsetY":"6px","blur":"20px","spread":"0px","inset":false}],"t":"shadow","s":"css-var --ff-drip-surface-shadow (.ff-drip (@layer ff.tokens))"},"overlay-shadow":{"v":[{"color":"rgba(0, 0, 0, 0.04)","offsetX":"0px","offsetY":"2px","blur":"6px","spread":"0px","inset":false},{"color":"rgba(0, 0, 0, 0.08)","offsetX":"0px","offsetY":"16px","blur":"40px","spread":"0px","inset":false}],"t":"shadow","s":"css-var --ff-drip-overlay-shadow (.ff-drip (@layer ff.tokens))"},"overlay-raised":{"v":[{"color":"rgba(0, 0, 0, 0.06)","offsetX":"0px","offsetY":"2px","blur":"6px","spread":"0px","inset":false},{"color":"rgba(0, 0, 0, 0.18)","offsetX":"0px","offsetY":"24px","blur":"64px","spread":"0px","inset":false}],"t":"shadow","s":"css-var --ff-drip-overlay-raised (.ff-drip (@layer ff.tokens))"}},"legacy":{"accent":{"v":"#0a68e0","t":"color","s":"css-var --accent (:root (@layer legacy))","d":"accent blue, matches color.accent"},"accent-ink":{"v":"#1b519f","t":"color","s":"css-var --accent-ink (:root (@layer legacy))","d":"accent text on tints"},"app":{"v":"#f5f5f5","t":"color","s":"css-var --app (:root (@layer legacy))","d":"well/section ground, matches color.well"},"btn":{"v":"#1a1a1a","t":"color","s":"css-var --btn (:root (@layer legacy))","d":"button fill, matches color.contrast"},"btn-ink":{"v":"#ffffff","t":"color","s":"css-var --btn-ink (:root (@layer legacy))","d":"button label, matches color.contrast-ink"},"card":{"v":"#ffffff","t":"color","s":"css-var --card (:root (@layer legacy))","d":"card fill, matches color.card"},"card-2":{"v":"#f0f0f0","t":"color","s":"css-var --card-2 (:root (@layer legacy))","d":"second card step"},"edge":{"v":"rgba(0, 0, 0, 0.07)","t":"color","s":"css-var --edge (:root (@layer legacy))","d":"home-skin hairline"},"faint":{"v":"#a3a3a3","t":"color","s":"css-var --faint (:root (@layer legacy))","d":"faint text"},"ink":{"v":"#1a1a1a","t":"color","s":"css-var --ink (:root (@layer legacy))","d":"ink, matches color.ink"},"ink-2":{"v":"#3d3d3d","t":"color","s":"css-var --ink-2 (:root (@layer legacy))","d":"secondary ink"},"line":{"v":"#e7e7e5","t":"color","s":"css-var --line (:root (@layer legacy))","d":"opaque separator used by the old skin"},"line-1":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --line-1 (:root (@layer legacy))","d":"translucent hairline, matches color.line"},"muted":{"v":"#6b6b6b","t":"color","s":"css-var --muted (:root (@layer legacy))","d":"muted text"},"p-card":{"v":"#ffffff","t":"color","s":"css-var --p-card (:root (@layer legacy))","d":"phone-mock card in the hero"},"p-chip":{"v":"#eaeaea","t":"color","s":"css-var --p-chip (:root (@layer legacy))","d":"phone-mock chip"},"p-fill":{"v":"#ebebeb","t":"color","s":"css-var --p-fill (:root (@layer legacy))","d":"phone-mock fill"},"p-line":{"v":"#dedede","t":"color","s":"css-var --p-line (:root (@layer legacy))","d":"phone-mock hairline"},"p-widget":{"v":"#efefef","t":"color","s":"css-var --p-widget (:root (@layer legacy))","d":"phone-mock widget frame"},"page":{"v":"#fcfcfb","t":"color","s":"css-var --page (:root (@layer legacy))","d":"page ground, matches color.page"},"sb":{"v":"#000000","t":"color","s":"css-var --sb (:root (@layer legacy))","d":"mock status-bar ink"},"success":{"v":"#177245","t":"color","s":"css-var --success (:root (@layer legacy))","d":"success green"},"tender":{"v":"#f4f4f6","t":"color","s":"css-var --tender (:root (@layer legacy))","d":"soft section tint"},"rule":{"v":{"width":"1px","style":"solid","color":"{legacy.line-1}"},"t":"border","s":"css-var --rule (:root (@layer legacy))","d":"the old skin's '1px solid line' shorthand"},"field-shadow":{"v":[{"color":"rgba(0, 0, 0, 0.08)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","inset":false},{"color":"rgba(0, 0, 0, 0.22)","offsetX":"0px","offsetY":"18px","blur":"40px","spread":"-22px","inset":false}],"t":"shadow","s":"css-var --fsh (:root (@layer legacy))","d":"the old skin's floating field shadow"}},"component":{"button-primary":{"bg":{"v":"{color.contrast}","t":"color","s":"measured raw/measurements.md#btn-primary-sm, #plan-cta-primary, #submit, #btn-contrast (dark state too: #btn-contrast dark)"},"ink":{"v":"{color.contrast-ink}","t":"color","s":"measured same"},"height":{"v":"44px","t":"dimension","s":"measured raw/measurements.md#plan-cta, #submit, #btn-contrast"},"height-sm":{"v":"32px","t":"dimension","s":"measured raw/measurements.md#btn-primary-sm, #plan-cta-primary"},"padding-x":{"v":"22px","t":"dimension","s":"measured raw/measurements.md#plan-cta, #submit"},"padding-x-sm":{"v":"14px","t":"dimension","s":"measured raw/measurements.md#btn-primary-sm"},"radius":{"v":"{radius.pill}","t":"dimension","s":"measured 999px on every ff-btn (= --ff-radius-pill)"},"font":{"v":"15px","t":"dimension","s":"measured raw/measurements.md#plan-cta (fontSize)","d":"510/15px label; the sm variant is 510/13px"}},"button-secondary":{"bg":{"v":"{color.card}","t":"color","s":"measured raw/measurements.md#plan-cta"},"ink":{"v":"{color.ink}","t":"color","s":"measured same"},"ring":{"v":"{color.line}","t":"color","s":"measured #plan-cta: inset 0.5px ring + 1px 2px drop"}},"field":{"bg":{"v":"{color.card}","t":"color","s":"measured raw/measurements.md#text-field, #select-trigger"},"height":{"v":"44px","t":"dimension","s":"measured same"},"radius":{"v":"{radius.field}","t":"dimension","s":"measured 999px raw/measurements.md#text-field, #select-trigger (= --ff-radius-field)"},"ink":{"v":"{color.ink}","t":"color","s":"measured #text-field colour"},"placeholder":{"v":"{color.muted}","t":"color","s":"measured #select-trigger colour (muted = the placeholder/quiet value state)"},"border":{"v":"rgba(26, 26, 26, 0.12)","t":"color","s":"measured raw/measurements.md#text-field borderTopColor (oklab ink at 12%, sRGB equivalent)","d":"the 1px field edge, a touch stronger than color.line"},"padding-x":{"v":"18px","t":"dimension","s":"measured raw/measurements.md#text-field, #select-trigger"},"focus-ring":{"v":"rgba(26, 26, 26, 0.06)","t":"color","s":"measured raw/measurements.md#text-field focused: 4px ring, first layer of --ff-shadow-field-focus"},"error":{"v":"{color.danger}","t":"color","s":"declared colour of the .ff-fld-err slot (#field-error; the slot is in the DOM but unpainted at rest)"}},"select-popup":{"radius":{"v":"{radius.card}","t":"dimension","s":"measured 20px raw/measurements.md#select-popup"},"option-height":{"v":"44px","t":"dimension","s":"measured raw/measurements.md#select-option"}},"nav-panel":{"radius":{"v":"{radius.page}","t":"dimension","s":"measured 16px raw/measurements.md#nav-panel"},"padding":{"v":"8px","t":"dimension","s":"measured same"}},"segmented":{"height":{"v":"38px","t":"dimension","s":"measured raw/measurements.md#billing-seg (pricing Monthly/Yearly)"},"option-height":{"v":"32px","t":"dimension","s":"measured raw/measurements.md#billing-seg-option"},"padding":{"v":"3px","t":"dimension","s":"measured same"},"ink":{"v":"{color.muted}","t":"color","s":"measured #billing-seg-option colour"}},"composer":{"height":{"v":"130px","t":"dimension","s":"measured raw/measurements.md#composer, #ff-composer"},"width-hero":{"v":"720px","t":"dimension","s":"measured #composer (= --ff-size-composer-hero)"},"width":{"v":"640px","t":"dimension","s":"measured #ff-composer on /pricing"},"go-size":{"v":"36px","t":"dimension","s":"measured #composer-go, #ff-composer-go"},"go-bg":{"v":"rgba(26, 26, 26, 0.08)","t":"color","s":"measured #composer-go (oklab ink at 8%; the send button's resting tint)"},"go-ink":{"v":"rgba(26, 26, 26, 0.4)","t":"color","s":"measured #composer-go glyph at 40% ink"},"key-radius":{"v":"6px","t":"dimension","s":"measured #composer-key (the Tab hint chip)"},"key-border":{"v":"rgba(0, 0, 0, 0.07)","t":"color","s":"measured #composer-key borderTopColor"}},"radio":{"size":{"v":"18px","t":"dimension","s":"measured raw/measurements.md#radio, #radio-checked"},"ring":{"v":"rgba(26, 26, 26, 0.3)","t":"color","s":"measured #radio borderTopColor (oklab ink at 30%)"},"checked-fill":{"v":"{color.contrast}","t":"color","s":"measured #radio-checked"}},"tag":{"height":{"v":"24px","t":"dimension","s":"measured raw/measurements.md#ptag-studio"},"radius":{"v":"{radius.pill}","t":"dimension","s":"measured 999px same"},"padding-x":{"v":"8px","t":"dimension","s":"measured same"}},"tab":{"height":{"v":"52px","t":"dimension","s":"measured raw/measurements.md#tab (product feature tabs)"},"tracking":{"v":"-0.165px","t":"dimension","s":"measured letterSpacing same"}},"theme-switch":{"height":{"v":"30px","t":"dimension","s":"measured raw/measurements.md#theme-switch (footer light/dark pick)"},"pick":{"v":"30px","t":"dimension","s":"measured #theme-switch-pick cell"}},"header":{"height":{"v":"{size.bar}","t":"dimension","s":"measured 64px raw/measurements.md#header"},"bg":{"v":"rgba(252, 252, 251, 0.86)","t":"color","s":"measured #header backgroundColor (oklab page at 86%, sRGB equivalent); the sticky bar is translucent over page"}},"accordion":{"width":{"v":"840px","t":"dimension","s":"measured raw/measurements.md#accordion-item (pricing FAQ, studio FAQ)"}},"error-text":{"size":{"v":"13px","t":"dimension","s":"measured raw/measurements.md#field-error fontSize (declared style of the unpainted slot)"}}}},"dark":{"color":{"page":{"v":"#121212","t":"color","s":"css-var --ff-color-page (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"the page ground"},"well":{"v":"#0b0b0b","t":"color","s":"css-var --ff-color-well (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"the sunken well/section tint behind cards"},"card":{"v":"#1b1b1b","t":"color","s":"css-var --ff-color-card (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"card and field fill"},"card-2":{"v":"#262626","t":"color","s":"css-var --ff-color-card-2 (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"the second card step (plan cards, tiles)"},"ink":{"v":"#ededed","t":"color","s":"css-var --ff-color-ink (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"headings, body, the contrast button fill"},"ink-2":{"v":"#c8c8c8","t":"color","s":"css-var --ff-color-ink-2 (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"secondary text"},"ink-soft":{"v":"#a3a3a3","t":"color","s":"css-var --ff-color-ink-soft (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"tertiary text"},"muted":{"v":"#a0a0a0","t":"color","s":"css-var --ff-color-muted (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"quiet labels, nav links, unselected tabs"},"faint":{"v":"#6b6b6b","t":"color","s":"css-var --ff-color-faint (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"placeholder-quiet text"},"line":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --ff-color-line (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"hairlines: card edges, field borders, separators"},"accent":{"v":"#5aa2f0","t":"color","s":"css-var --ff-color-accent (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"links and accent CTAs (FlutterFlow blue)"},"focus":{"v":"#ededed","t":"color","s":"css-var --ff-color-focus (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"the keyboard focus ring"},"send":{"v":"#0a68e0","t":"color","s":"css-var --ff-color-send (:root (@layer ff.tokens))","d":"the composer send button when armed"},"send-ink":{"v":"#ffffff","t":"color","s":"css-var --ff-color-send-ink (:root (@layer ff.tokens))","d":"glyph on the send button"},"success":{"v":"#4fbd88","t":"color","s":"css-var --ff-color-success (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"success/pricing check marks"},"danger":{"v":"#ff8a65","t":"color","s":"css-var --ff-color-danger (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"error text (the field-error slot's declared colour)"},"studio-ink":{"v":"#b7adff","t":"color","s":"css-var --ff-color-studio-ink (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"the Studio product line's violet"},"studio-tint":{"v":"rgba(75, 57, 239, 0.22)","t":"color","s":"css-var --ff-color-studio-tint (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"the Studio tag chip's tint"},"contrast":{"v":"#ededed","t":"color","s":"css-var --ff-color-contrast (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"primary button fill: ink on light, near-white on dark"},"contrast-ink":{"v":"#111111","t":"color","s":"css-var --ff-color-contrast-ink (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"text on the contrast fill"},"sheen":{"v":"rgba(255, 255, 255, 0.043)","t":"color","s":"css-var --ff-color-sheen (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"glass sheen on floating chrome"},"statusbar-ink":{"v":"#ffffff","t":"color","s":"css-var --ff-color-statusbar-ink (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"mock status-bar glyphs in the product shots"},"statusbar-ink-on-light":{"v":"#000000","t":"color","s":"css-var --ff-color-statusbar-ink-on-light (:root (@layer ff.tokens))"},"statusbar-ink-on-dark":{"v":"#ffffff","t":"color","s":"css-var --ff-color-statusbar-ink-on-dark (:root (@layer ff.tokens))"},"chrome-bar":{"v":"#26272b","t":"color","s":"css-var --ff-color-chrome-bar (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"browser-chrome strip on the mock windows"},"chrome-bg":{"v":"#1c1d20","t":"color","s":"css-var --ff-color-chrome-bg (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"mock window ground"},"chrome-ink":{"v":"rgba(255, 255, 255, 0.6)","t":"color","s":"css-var --ff-color-chrome-ink (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"mock chrome glyphs"},"chrome-line":{"v":"rgba(255, 255, 255, 0.07)","t":"color","s":"css-var --ff-color-chrome-line (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"mock chrome hairline"},"tile":{"v":"#ffffff","t":"color","s":"css-var --ff-color-tile (:root (@layer ff.tokens))","d":"logo/avatar tiles"},"tile-ring":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --ff-color-tile-ring (:root (@layer ff.tokens))","d":"the ring around tiles"},"ui-card":{"v":"#181818","t":"color","s":"css-var --ff-color-ui-card (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"the ff-drip widget kit's card"},"ui-fill":{"v":"#272727","t":"color","s":"css-var --ff-color-ui-fill (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"drip control fill"},"ui-line":{"v":"#303030","t":"color","s":"css-var --ff-color-ui-line (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"drip hairline"},"ui-frame":{"v":"#232323","t":"color","s":"css-var --ff-color-ui-frame (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"drip frame"},"selected-ring":{"v":"rgba(237, 237, 237, 0.4)","t":"color","s":"css-var --ff-theme-selected-ring (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"the ring the footer theme switch paints on the active pick"}},"border":{"rule":{"v":{"width":"1px","style":"solid","color":"{color.line}"},"t":"border","s":"css-var --ff-border-rule (:root (@layer ff.tokens))","d":"hairline rule: 1px solid line"}},"shadow":{"field-focus":{"v":[{"color":"rgba(237, 237, 237, 0.06)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"4px","inset":false},{"color":"rgba(0, 0, 0, 0.04)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px","inset":false},{"color":"rgba(0, 0, 0, 0.14)","offsetX":"0px","offsetY":"8px","blur":"24px","spread":"-14px","inset":false}],"t":"shadow","s":"css-var --ff-shadow-field-focus (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"adds a 4px ink-6% ring on focus; measured on raw/measurements.md#text-field focused. Dark's ring is ink-6% of its own ink (a white ring)"},"floating":{"v":[{"color":"rgba(255, 255, 255, 0.1)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","inset":false},{"color":"#000000","offsetX":"0px","offsetY":"24px","blur":"48px","spread":"-20px","inset":false}],"t":"shadow","s":"css-var --ff-shadow-floating (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"highest chrome: nav panel and select popup measured exactly this. Dark carries a white 1px ring and a full-black drop"},"resting":{"v":[{"color":"rgba(255, 255, 255, 0.1)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","inset":false},{"color":"#000000","offsetX":"0px","offsetY":"18px","blur":"40px","spread":"-22px","inset":false}],"t":"shadow","s":"css-var --ff-shadow-resting (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"white ring + stronger drop in dark"},"resting-sm":{"v":[{"color":"rgba(255, 255, 255, 0.08)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","inset":false},{"color":"#000000","offsetX":"0px","offsetY":"12px","blur":"32px","spread":"-18px","inset":false}],"t":"shadow","s":"css-var --ff-shadow-resting-sm (:root[data-theme=\"dark\"] (@layer ff.tokens))","d":"white ring + stronger drop in dark"}},"drip":{"bg":{"v":"#0b0b0b","t":"color","s":"css-var --ff-drip-bg (:root[data-theme=\"dark\"] .ff-drip (@layer ff.tokens))"},"surface":{"v":"#181818","t":"color","s":"css-var --ff-drip-surface (:root[data-theme=\"dark\"] .ff-drip (@layer ff.tokens))"},"surface-2":{"v":"#232323","t":"color","s":"css-var --ff-drip-surface-2 (:root[data-theme=\"dark\"] .ff-drip (@layer ff.tokens))"},"fg":{"v":"#ededed","t":"color","s":"css-var --ff-drip-fg (:root[data-theme=\"dark\"] .ff-drip (@layer ff.tokens))"},"muted":{"v":"#a0a0a0","t":"color","s":"css-var --ff-drip-muted (:root[data-theme=\"dark\"] .ff-drip (@layer ff.tokens))"},"border":{"v":"#292929","t":"color","s":"css-var --ff-drip-border (:root[data-theme=\"dark\"] .ff-drip (@layer ff.tokens))"},"sep":{"v":"#222222","t":"color","s":"css-var --ff-drip-sep (:root[data-theme=\"dark\"] .ff-drip (@layer ff.tokens))"},"sep-3":{"v":"#3a3a3a","t":"color","s":"css-var --ff-drip-sep-3 (.ff-drip (@layer ff.tokens))"},"default":{"v":"#272727","t":"color","s":"css-var --ff-drip-default (:root[data-theme=\"dark\"] .ff-drip (@layer ff.tokens))"},"dim":{"v":"rgba(0, 0, 0, 0.35)","t":"color","s":"css-var --ff-drip-dim (:root[data-theme=\"dark\"] .ff-drip (@layer ff.tokens))"},"accent":{"v":"#5aa2f0","t":"color","s":"css-var --ff-drip-accent (:root[data-theme=\"dark\"] .ff-drip (@layer ff.tokens))"},"accent-fg":{"v":"#101010","t":"color","s":"css-var --ff-drip-accent-fg (:root[data-theme=\"dark\"] .ff-drip (@layer ff.tokens))"},"accent-soft":{"v":"rgba(90, 162, 240, 0.15)","t":"color","s":"css-var --ff-drip-accent-soft (.ff-drip (@layer ff.tokens))"},"accent-soft-fg":{"v":"#88b9f1","t":"color","s":"css-var --ff-drip-accent-soft-fg (.ff-drip (@layer ff.tokens))"},"success":{"v":"#4fbd88","t":"color","s":"css-var --ff-drip-success (:root[data-theme=\"dark\"] .ff-drip (@layer ff.tokens))"},"success-soft":{"v":"rgba(79, 189, 136, 0.15)","t":"color","s":"css-var --ff-drip-success-soft (.ff-drip (@layer ff.tokens))"},"warning":{"v":"#d9a050","t":"color","s":"css-var --ff-drip-warning (:root[data-theme=\"dark\"] .ff-drip (@layer ff.tokens))"},"warning-soft":{"v":"rgba(217, 160, 80, 0.15)","t":"color","s":"css-var --ff-drip-warning-soft (.ff-drip (@layer ff.tokens))"},"surface-shadow":{"v":[{"color":"rgba(0, 0, 0, 0.35)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px","inset":false},{"color":"rgba(0, 0, 0, 0.4)","offsetX":"0px","offsetY":"6px","blur":"20px","spread":"0px","inset":false}],"t":"shadow","s":"css-var --ff-drip-surface-shadow (:root[data-theme=\"dark\"] .ff-drip (@layer ff.tokens))"},"overlay-shadow":{"v":[{"color":"rgba(255, 255, 255, 0.08)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","inset":false},{"color":"rgba(0, 0, 0, 0.4)","offsetX":"0px","offsetY":"2px","blur":"6px","spread":"0px","inset":false},{"color":"rgba(0, 0, 0, 0.5)","offsetX":"0px","offsetY":"16px","blur":"40px","spread":"0px","inset":false}],"t":"shadow","s":"css-var --ff-drip-overlay-shadow (:root[data-theme=\"dark\"] .ff-drip (@layer ff.tokens))"},"overlay-raised":{"v":[{"color":"rgba(255, 255, 255, 0.08)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","inset":false},{"color":"rgba(0, 0, 0, 0.4)","offsetX":"0px","offsetY":"2px","blur":"6px","spread":"0px","inset":false},{"color":"rgba(0, 0, 0, 0.6)","offsetX":"0px","offsetY":"24px","blur":"64px","spread":"0px","inset":false}],"t":"shadow","s":"css-var --ff-drip-overlay-raised (:root[data-theme=\"dark\"] .ff-drip (@layer ff.tokens))"}},"legacy":{"accent":{"v":"#5aa2f0","t":"color","s":"css-var --accent (:root[data-theme=\"dark\"] (@layer legacy))","d":"accent blue, matches color.accent"},"accent-ink":{"v":"#84b7f1","t":"color","s":"css-var --accent-ink (:root[data-theme=\"dark\"] (@layer legacy))","d":"accent text on tints"},"app":{"v":"#0b0b0b","t":"color","s":"css-var --app (:root[data-theme=\"dark\"] (@layer legacy))","d":"well/section ground, matches color.well"},"btn":{"v":"#ededed","t":"color","s":"css-var --btn (:root[data-theme=\"dark\"] (@layer legacy))","d":"button fill, matches color.contrast"},"btn-ink":{"v":"#111111","t":"color","s":"css-var --btn-ink (:root[data-theme=\"dark\"] (@layer legacy))","d":"button label, matches color.contrast-ink"},"card":{"v":"#1b1b1b","t":"color","s":"css-var --card (:root[data-theme=\"dark\"] (@layer legacy))","d":"card fill, matches color.card"},"card-2":{"v":"#262626","t":"color","s":"css-var --card-2 (:root[data-theme=\"dark\"] (@layer legacy))","d":"second card step"},"edge":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --edge (:root[data-theme=\"dark\"] (@layer legacy))","d":"home-skin hairline"},"faint":{"v":"#6b6b6b","t":"color","s":"css-var --faint (:root[data-theme=\"dark\"] (@layer legacy))","d":"faint text"},"ink":{"v":"#ededed","t":"color","s":"css-var --ink (:root[data-theme=\"dark\"] (@layer legacy))","d":"ink, matches color.ink"},"ink-2":{"v":"#c8c8c8","t":"color","s":"css-var --ink-2 (:root[data-theme=\"dark\"] (@layer legacy))","d":"secondary ink"},"line":{"v":"#262626","t":"color","s":"css-var --line (:root[data-theme=\"dark\"] (@layer legacy))","d":"opaque separator used by the old skin"},"line-1":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --line-1 (:root[data-theme=\"dark\"] (@layer legacy))","d":"translucent hairline, matches color.line"},"muted":{"v":"#a0a0a0","t":"color","s":"css-var --muted (:root[data-theme=\"dark\"] (@layer legacy))","d":"muted text"},"p-card":{"v":"#181818","t":"color","s":"css-var --p-card (:root[data-theme=\"dark\"] (@layer legacy))","d":"phone-mock card in the hero"},"p-chip":{"v":"#2a2a2a","t":"color","s":"css-var --p-chip (:root[data-theme=\"dark\"] (@layer legacy))","d":"phone-mock chip"},"p-fill":{"v":"#272727","t":"color","s":"css-var --p-fill (:root[data-theme=\"dark\"] (@layer legacy))","d":"phone-mock fill"},"p-line":{"v":"#303030","t":"color","s":"css-var --p-line (:root[data-theme=\"dark\"] (@layer legacy))","d":"phone-mock hairline"},"p-widget":{"v":"#232323","t":"color","s":"css-var --p-widget (:root[data-theme=\"dark\"] (@layer legacy))","d":"phone-mock widget frame"},"page":{"v":"#121212","t":"color","s":"css-var --page (:root[data-theme=\"dark\"] (@layer legacy))","d":"page ground, matches color.page"},"sb":{"v":"#ffffff","t":"color","s":"css-var --sb (:root[data-theme=\"dark\"] (@layer legacy))","d":"mock status-bar ink"},"success":{"v":"#4fbd88","t":"color","s":"css-var --success (:root[data-theme=\"dark\"] (@layer legacy))","d":"success green"},"tender":{"v":"#0c0c0e","t":"color","s":"css-var --tender (:root[data-theme=\"dark\"] (@layer legacy))","d":"soft section tint"},"rule":{"v":{"width":"1px","style":"solid","color":"{legacy.line-1}"},"t":"border","s":"css-var --rule (:root (@layer legacy))","d":"the old skin's '1px solid line' shorthand"},"field-shadow":{"v":[{"color":"rgba(255, 255, 255, 0.1)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","inset":false},{"color":"#000000","offsetX":"0px","offsetY":"18px","blur":"40px","spread":"-22px","inset":false}],"t":"shadow","s":"css-var --fsh (:root[data-theme=\"dark\"] (@layer legacy))","d":"the old skin's floating field shadow"}},"component":{"button-primary":{"bg":{"v":"{color.contrast}","t":"color","s":"measured raw/measurements.md#btn-primary-sm, #plan-cta-primary, #submit, #btn-contrast (dark state too: #btn-contrast dark)"},"ink":{"v":"{color.contrast-ink}","t":"color","s":"measured same"},"height":{"v":"44px","t":"dimension","s":"measured raw/measurements.md#plan-cta, #submit, #btn-contrast"},"height-sm":{"v":"32px","t":"dimension","s":"measured raw/measurements.md#btn-primary-sm, #plan-cta-primary"},"padding-x":{"v":"22px","t":"dimension","s":"measured raw/measurements.md#plan-cta, #submit"},"padding-x-sm":{"v":"14px","t":"dimension","s":"measured raw/measurements.md#btn-primary-sm"},"radius":{"v":"{radius.pill}","t":"dimension","s":"measured 999px on every ff-btn (= --ff-radius-pill)"},"font":{"v":"15px","t":"dimension","s":"measured raw/measurements.md#plan-cta (fontSize)","d":"510/15px label; the sm variant is 510/13px"}},"button-secondary":{"bg":{"v":"{color.card}","t":"color","s":"measured raw/measurements.md#plan-cta"},"ink":{"v":"{color.ink}","t":"color","s":"measured same"},"ring":{"v":"{color.line}","t":"color","s":"measured #plan-cta: inset 0.5px ring + 1px 2px drop"}},"field":{"bg":{"v":"{color.card}","t":"color","s":"measured raw/measurements.md#text-field, #select-trigger"},"height":{"v":"44px","t":"dimension","s":"measured same"},"radius":{"v":"{radius.field}","t":"dimension","s":"measured 999px raw/measurements.md#text-field, #select-trigger (= --ff-radius-field)"},"ink":{"v":"{color.ink}","t":"color","s":"measured #text-field colour"},"placeholder":{"v":"{color.muted}","t":"color","s":"measured #select-trigger colour (muted = the placeholder/quiet value state)"}}}}};
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const flat = (o, p='') => Object.entries(o||{}).flatMap(([k,v]) => k.startsWith('$') ? [] : (v && typeof v === 'object' && 'v' in v) ? [[p+k, v]] : flat(v, p+k+'.'));
+const cssname = (p) => '--' + p.replace(/[^a-zA-Z0-9-]/g, '-').replace(/\./g, '-');
+const theme = () => document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+
+// Swatch names come from the light set (both sets carry every themed colour), but each
+// value label must be the active theme's: re-rendered by setTheme() on every flip.
+function swatches(out, grp) {
+  const cur = {};
+  for (const [n, t] of flat((TOK[theme()]||{})[grp]||{}, grp+'.')) cur[n] = t;
+  let h = '';
+  for (const [n, t] of flat(TOK.light[grp]||{}, grp+'.')) {
+    if (t.t !== 'color') continue;
+    const vt = cur[n] || t;
+    h += `<div class="sw" title="${esc(t.s)}"><span class="dot"><i style="display:block;width:100%;height:100%;border-radius:8px;background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(typeof vt.v==='string'?vt.v:'')}</div></div></div>`;
+  }
+  document.getElementById(out).innerHTML = h;
+}
+function paintSwatches() { swatches('color-out', 'color'); swatches('legacy-out', 'legacy'); swatches('drip-out', 'drip'); }
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography, 'typography.')) {
+    const v = t.v;
+    h += `<div class="typerow" title="${esc(t.s)}"><div class="k">${esc(n.replace('typography.',''))}<small>${esc(v.fontWeight)} ${esc(String(v.fontSize))}/${esc(String(v.lineHeight))}${v.letterSpacing && v.letterSpacing!=='0px' ? ' · ls ' + esc(String(v.letterSpacing)) : ''}</small></div><div class="sample" style="font:var(${cssname(n)});letter-spacing:var(${cssname(n)}-ls, normal)">Build something real</div></div>`;
+  }
+  document.getElementById('type-out').innerHTML = h;
+})();
+
+(function scales() {
+  let r = '';
+  for (const [n, t] of flat(TOK.core.radius, 'radius.')) r += `<div class="bx" style="border-radius:min(var(${cssname(n)}),40px)" title="${esc(t.s)}">${esc(n.replace('radius.',''))}<br>${esc(t.v)}</div>`;
+  document.getElementById('radius-out').innerHTML = r;
+  let h = '';
+  for (const grp of ['space', 'size']) {
+    for (const [n, t] of flat(TOK.core[grp]||{}, grp+'.')) {
+      const px = parseFloat(t.v);
+      h += `<div class="b" title="${esc(t.s)}"><span>${esc(n)} <b style="color:var(--color-ink-2)">${esc(t.v)}</b></span><i style="width:${Math.min(100, px/13.44)}%"></i></div>`;
+    }
+  }
+  for (const [n, t] of [...flat(TOK.core.border||{},'border.'), ...flat(TOK.core.focus||{},'focus.')]) {
+    h += `<div class="b" title="${esc(t.s)}"><span>${esc(n)} <b style="color:var(--color-ink-2)">${esc(t.v)}</b></span><i style="width:${Math.min(100, parseFloat(t.v)*8)}%"></i></div>`;
+  }
+  document.getElementById('space-out').innerHTML = h;
+})();
+
+// shadow.* splits: shadow.field is theme-independent (core), the other four are themed
+// (a white ring and a deeper drop in dark) and ride in each theme set.
+function shadows() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.shadow, 'shadow.')) h += `<div><div class="box" style="box-shadow:var(${cssname(n)})"></div><div class="k">${esc(n)}</div></div>`;
+  for (const [n, t] of flat((TOK[theme()]||{}).shadow || {}, 'shadow.')) h += `<div><div class="box" style="box-shadow:var(${cssname(n)})"></div><div class="k">${esc(n)}</div></div>`;
+  for (const [n, t] of flat((TOK[theme()]||{}).drip || {}, 'drip.')) if (t.t === 'shadow') h += `<div><div class="box" style="box-shadow:var(${cssname(n)})"></div><div class="k">${esc(n)}</div></div>`;
+  document.getElementById('shadow-out').innerHTML = h;
+}
+shadows();
+
+(function motion() {
+  let h = '';
+  const eb = (n) => `var(${cssname(n)})`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) h += `<div><div class="track" style="--e:${eb('easing-ui')}"><div class="dot" style="transition:left ${esc(t.v)} ${eb('easing-ui')}"></div></div><span class="cap">${esc(n)} · ${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) {
+    if (t.t !== 'cubicBezier') continue;
+    h += `<div><div class="track"><div class="dot" style="transition:left 600ms ${eb(n)}"></div></div><span class="cap">${esc(n)} · cubic-bezier(${esc(t.v.join(', '))})</span></div>`;
+  }
+  const M = TOK.core.motion;
+  if (M && M.duration) for (const [n, t] of flat(M.duration, 'motion.duration.')) h += `<div><div class="track"><div class="dot" style="transition:left ${esc(t.v)} ${eb('easing-ui')}"></div></div><span class="cap">measured · ${esc(n)} · ${esc(t.v)}</span></div>`;
+  document.getElementById('motion-out').innerHTML = h;
+  document.querySelectorAll('.track').forEach((tr) => tr.addEventListener('click', () => tr.classList.toggle('go')));
+})();
+
+// A token's source is a string, except the motion group's {evidence, capture} pairs.
+const srcText = (s) => (s && typeof s === 'object')
+  ? [s.evidence, s.capture].filter(Boolean).join(' ') || JSON.stringify(s)
+  : (s || '');
+
+(function table() {
+  const rows = [];
+  for (const set of ['core', 'light', 'dark']) for (const [n, t] of flat(TOK[set]||{}, '')) {
+    const val = typeof t.v === 'object' ? JSON.stringify(t.v).slice(0, 110) : String(t.v);
+    rows.push([`${set}.${n}`, val.slice(0, 110), srcText(t.s)]);
+  }
+  document.getElementById('tok-out').innerHTML = rows.map((r) => `<tr><td>${esc(r[0])}</td><td style="font:11px var(--fontFamily-mono)">${esc(r[1])}</td><td>${esc(r[2])}</td></tr>`).join('');
+})();
+
+function setTheme(dark) {
+  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  document.getElementById('theme').checked = dark;
+  document.querySelectorAll('.tsw .pick').forEach((p) => p.classList.toggle('on', (p.dataset.p === 'd') === dark));
+  paintSwatches();
+  shadows();
+}
+document.getElementById('theme').addEventListener('change', (e) => setTheme(e.target.checked));
+// The picks sit inside the <label> that wraps the checkbox: without preventDefault the
+// label's own activation would toggle the checkbox right back and setTheme() would run
+// again with the old theme (clicking Dark landed on light).
+document.querySelectorAll('.tsw .pick').forEach((p) => p.addEventListener('click', (e) => { e.preventDefault(); document.getElementById('theme').checked = p.dataset.p === 'd'; setTheme(p.dataset.p === 'd'); }));
+setTheme(window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
+</script>
+</body>
+</html>

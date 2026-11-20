@@ -1,0 +1,130 @@
+{
+ "text-h1": {
+  "fontSize": "31.3162px",
+  "fontWeight": "400",
+  "lineHeight": "46.9744px",
+  "color": "rgb(242, 242, 242)",
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "letterSpacing": "normal"
+ },
+ "text-h2": {
+  "fontSize": "26.1052px",
+  "fontWeight": "400",
+  "lineHeight": "39.1578px",
+  "color": "rgb(242, 242, 242)",
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "letterSpacing": "normal"
+ },
+ "text-h3": {
+  "fontSize": "21.9297px",
+  "fontWeight": "400",
+  "lineHeight": "32.8946px",
+  "color": "rgb(242, 242, 242)",
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "letterSpacing": "normal"
+ },
+ "text-h4": {
+  "fontSize": "18.7897px",
+  "fontWeight": "400",
+  "lineHeight": "28.1846px",
+  "color": "rgb(242, 242, 242)",
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "letterSpacing": "normal"
+ },
+ "text-base": {
+  "fontSize": "16.702px",
+  "fontWeight": "400",
+  "lineHeight": "25.053px",
+  "color": "rgb(242, 242, 242)",
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "letterSpacing": "normal"
+ },
+ "text-b1": {
+  "fontSize": "16.702px",
+  "fontWeight": "400",
+  "lineHeight": "25.053px",
+  "color": "rgb(242, 242, 242)",
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "letterSpacing": "normal"
+ },
+ "text-b2": {
+  "fontSize": "15.0318px",
+  "fontWeight": "400",
+  "lineHeight": "22.5477px",
+  "color": "rgb(242, 242, 242)",
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "letterSpacing": "normal"
+ },
+ "text-b3": {
+  "fontSize": "13.3616px",
+  "fontWeight": "400",
+  "lineHeight": "20.0424px",
+  "color": "rgb(242, 242, 242)",
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "letterSpacing": "normal"
+ },
+ "text-lb2": {
+  "fontSize": "15.8669px",
+  "fontWeight": "400",
+  "lineHeight": "23.8003px",
+  "color": "rgb(242, 242, 242)",
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "letterSpacing": "normal"
+ },
+ "text-lbase": {
+  "fontSize": "17px",
+  "fontWeight": "400",
+  "lineHeight": "25.5px",
+  "color": "rgb(242, 242, 242)",
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "letterSpacing": "normal"
+ },
+ "text-fgs1": {
+  "fontSize": "16.702px",
+  "fontWeight": "400",
+  "lineHeight": "25.053px",
+  "color": "rgb(242, 242, 242)",
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "letterSpacing": "normal"
+ },
+ "text-fgs2": {
+  "fontSize": "16.702px",
+  "fontWeight": "400",
+  "lineHeight": "25.053px",
+  "color": "rgb(201, 201, 201)",
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "letterSpacing": "normal"
+ },
+ "bg-bgs1": {
+  "fontSize": "16.702px",
+  "fontWeight": "400",
+  "lineHeight": "25.053px",
+  "color": "rgb(242, 242, 242)",
+  "backgroundColor": "rgb(21, 24, 35)",
+  "letterSpacing": "normal"
+ },
+ "bg-bgs2": {
+  "fontSize": "16.702px",
+  "fontWeight": "400",
+  "lineHeight": "25.053px",
+  "color": "rgb(242, 242, 242)",
+  "backgroundColor": "rgb(31, 34, 46)",
+  "letterSpacing": "normal"
+ },
+ "bg-fgs1": {
+  "fontSize": "16.702px",
+  "fontWeight": "400",
+  "lineHeight": "25.053px",
+  "color": "rgb(242, 242, 242)",
+  "backgroundColor": "rgb(242, 242, 242)",
+  "letterSpacing": "normal"
+ },
+ "text-aps1": {
+  "fontSize": "16.702px",
+  "fontWeight": "400",
+  "lineHeight": "25.053px",
+  "color": "rgb(44, 112, 221)",
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "letterSpacing": "normal"
+ }
+}

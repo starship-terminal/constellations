@@ -1,0 +1,24 @@
+{
+  "_note": "Rules for systems/joinhandshake. Public signed-out capture of joinhandshake.com and app.joinhandshake.com/access: no surface paints machine-private data — nothing was signed into, typed, searched or submitted, and the Ketch consent banner was hidden, never answered. Marketing copy publishes the product's own contact addresses on its public domains; allowed.",
+  "families": [],
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@joilnhandshake\\.co$",
+      "@joilnhandshake\\.col$",
+      "@joinhandshake\\.co$",
+      "@joinhandshake\\.col$",
+      "@jollnhandshake\\.co$",
+      "@jollnhandshake\\.col$",
+      "@jolnhandshake\\.co$",
+      "@jolnhandshake\\.col$",
+      "@handshake\\.ai$",
+      "@handshake\\.com$",
+      "@handshake\\.edu$",
+      "@example\\.com$",
+      "@example\\.org$",
+      "@joinhandshake\\.com$",
+      "@joinhandshake\\.com\\.we$"
+    ]
+  }
+}

@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faire style guide</title>
+<meta name="description" content="Faire design tokens and the public signed-out surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --color-blue-100: #f2f5f5;
+  --color-blue-1000: #1b2834;
+  --color-blue-200: #e2e7f0;
+  --color-blue-400: #7a7885;
+  --color-blue-700: #275ec5;
+  --color-bsr-coral-100: #ffc9a7;
+  --color-bsr-green-1000: #576916;
+  --color-bsr-green-200: #ddeda5;
+  --color-bsr-green-400: #e8e882;
+  --color-bsr-grey-100: #ffffff;
+  --color-bsr-grey-1000: #000000;
+  --color-bsr-grey-800: #474747;
+  --color-bsr-grey-900: #161616;
+  --color-bsr-lilac-100: #eaeeff;
+  --color-bsr-lilac-200: #d2daff;
+  --color-bsr-mahogany-1000: #40121e;
+  --color-bsr-neutral-1000: #6c6a6a;
+  --color-bsr-neutral-200: #f9f8f5;
+  --color-bsr-neutral-300: #f5f4f0;
+  --color-bsr-neutral-400: #edece2;
+  --color-bsr-neutral-500: #e4e1de;
+  --color-bsr-neutral-600: #e7e2d9;
+  --color-bsr-neutral-700: #d8d0c3;
+  --color-bsr-neutral-800: #95948f;
+  --color-bsr-olive-200: #c7be51;
+  --color-bsr-purple-1000: #1d2757;
+  --color-bsr-purple-200: #e1e6ff;
+  --color-bsr-red-100: #ffe7e2;
+  --color-bsr-red-1000: #9b0a00;
+  --color-bsr-red-200: #ffddd5;
+  --color-bsr-yellow-1000: #b55e10;
+  --color-bsr-yellow-200: #ffe7b1;
+  --color-green-100: #e9f1e5;
+  --color-green-1000: #3e4023;
+  --color-green-200: #dde3d0;
+  --color-green-300: #d9d8cd;
+  --color-green-500: #91957b;
+  --color-green-600: #91a793;
+  --color-green-700: #49694c;
+  --color-grey-100: #ffffff;
+  --color-grey-1000: #000000;
+  --color-grey-200: #f7f7f7;
+  --color-grey-300: #f1f1f1;
+  --color-grey-400: #dadada;
+  --color-grey-600: #8e8c8c;
+  --color-grey-700: #6c6a6a;
+  --color-grey-800: #474747;
+  --color-grey-900: #333333;
+  --color-neutral-100: #fbf8f6;
+  --color-neutral-1000: #585550;
+  --color-neutral-600: #b5a998;
+  --color-orange-100: #f6eee4;
+  --color-orange-1000: #7d3e1e;
+  --color-orange-400: #ab7456;
+  --color-red-100: #f2e5e1;
+  --color-red-1000: #390d18;
+  --color-red-200: #e9e0dc;
+  --color-red-500: #d17e70;
+  --color-red-700: #921100;
+  --color-red-800: #5a1e09;
+  --color-teal-600: #36676a;
+  --color-teal-900: #154548;
+  --color-transparent-grey-0: rgba(51, 51, 51, 0);
+  --color-transparent-grey-100: rgba(51, 51, 51, 0.05);
+  --color-transparent-grey-200: rgba(51, 51, 51, 0.1);
+  --color-transparent-grey-500: rgba(51, 51, 51, 0.5);
+  --color-yellow-100: #f6efdb;
+  --color-yellow-1000: #595540;
+  --color-yellow-200: #ece3d2;
+  --color-yellow-400: #d1b985;
+  --color-yellow-800: #907c3a;
+  --font-face-sans: "Graphik_fix";
+  --font-face-serif: "Nantes_fix";
+  --font-size-100: 12px;
+  --font-size-200: 14px;
+  --font-size-300: 18px;
+  --font-size-400: 22px;
+  --font-size-500: 30px;
+  --font-size-600: 38px;
+  --font-size-700: 52px;
+  --font-size-800: 72px;
+  --font-letterSpacing-100: 0px;
+  --font-letterSpacing-200: 0.140625px;
+  --font-lineHeight-100: 16px;
+  --font-lineHeight-200: 20px;
+  --font-lineHeight-300: 26px;
+  --font-lineHeight-400: 32px;
+  --font-lineHeight-500: 38px;
+  --font-lineHeight-600: 50px;
+  --font-lineHeight-700: 64px;
+  --font-lineHeight-800: 86px;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-normal: 400;
+  --font-family-sans: "Graphik_fix",sans-serif;
+  --font-family-serif: "Nantes_fix",serif;
+  --font-family-legacySans: graphik,helvetica,sans-serif;
+  --font-family-legacySerif: nantes,georgia,serif;
+  --font-family-gtStandard: "GT Standard", sans-serif;
+  --font-family-gtCanon: "GT Canon", serif;
+  --font-legacySize-12: 12px;
+  --font-legacySize-14: 14px;
+  --font-legacySize-18: 18px;
+  --font-legacySize-22: 22px;
+  --font-legacySize-30: 30px;
+  --font-legacySize-38: 38px;
+  --font-legacySize-52: 52px;
+  --font-legacySize-72: 72px;
+  --font-legacyWeight-200: 200;
+  --font-legacyWeight-400: 400;
+  --font-legacyWeight-500: 500;
+  --font-legacyWeight-700: 700;
+  --font-legacyLetterSpacing-0: 0px;
+  --font-legacyLetterSpacing-0-15: 0.140625px;
+  --font-legacyLineHeight-16: 16px;
+  --font-legacyLineHeight-20: 20px;
+  --font-legacyLineHeight-26: 26px;
+  --font-legacyLineHeight-32: 32px;
+  --font-legacyLineHeight-38: 38px;
+  --font-legacyLineHeight-50: 50px;
+  --font-legacyLineHeight-64: 64px;
+  --font-legacyLineHeight-86: 86px;
+  --font-leading-relaxed: 1.625;
+  --font-leading-snug: 1.375;
+  --font-leading-tight: 1.25;
+  --font-utilitySize-2xl: 24px;
+  --font-utilitySize-3xl: 30px;
+  --font-utilitySize-4xl: 36px;
+  --font-utilitySize-5xl: 48px;
+  --font-utilitySize-base: 16px;
+  --font-utilitySize-lg: 18px;
+  --font-utilitySize-sm: 14px;
+  --font-utilitySize-xl: 20px;
+  --font-utilitySize-xs: 12px;
+  --font-utilityLineHeight-2xl: 1.3333;
+  --font-utilityLineHeight-3xl: 1.2;
+  --font-utilityLineHeight-4xl: 1.1111;
+  --font-utilityLineHeight-5xl: 1;
+  --font-utilityLineHeight-base: 1.5;
+  --font-utilityLineHeight-lg: 1.5556;
+  --font-utilityLineHeight-sm: 1.4286;
+  --font-utilityLineHeight-xl: 1.4;
+  --font-utilityLineHeight-xs: 1.3333;
+  --font-tracking-tight: -.025em;
+  --font-tracking-wide: 0.390625px;
+  --font-tracking-widest: 1.59375px;
+  --typography-display: 400 52px/64px Nantes_fix, serif;
+  --typography-displayCanon: 400 38px/50px "GT Canon", serif;
+  --typography-dialogHeading: 400 30px/38px "GT Canon", serif;
+  --typography-formHeading: 400 30px/38px nantes, georgia, serif;
+  --typography-paragraph: 400 14px/20px Graphik_fix, sans-serif;
+  --typography-caption: 200 12px/16px graphik, helvetica, sans-serif;
+  --space-base: 4px;
+  --space-element-default: 8px;
+  --space-element-large: 16px;
+  --space-element-medium: 12px;
+  --space-element-small: 8px;
+  --space-element-xlarge: 20px;
+  --space-element-xsmall: 4px;
+  --space-element-xxlarge: 24px;
+  --space-element-xxxlarge: 32px;
+  --space-group-default: 16px;
+  --space-group-large: 16px;
+  --space-group-medium: 12px;
+  --space-group-small: 8px;
+  --space-group-xlarge: 24px;
+  --space-group-xsmall: 4px;
+  --space-layout-edge-desktop-default: 48px;
+  --space-layout-edge-desktop-wide: 80px;
+  --space-layout-edge-mobile: 16px;
+  --space-layout-edge-tablet: 32px;
+  --space-section-default: 32px;
+  --space-section-large: 40px;
+  --space-section-medium: 32px;
+  --space-section-small: 24px;
+  --space-section-xlarge: 48px;
+  --blur-sm: 8px;
+  --blur-xl: 24px;
+  --container-2xl: 672px;
+  --container-3xl: 768px;
+  --container-4xl: 896px;
+  --container-6xl: 1152px;
+  --container-7xl: 1280px;
+  --container-lg: 512px;
+  --container-md: 448px;
+  --container-sm: 384px;
+  --container-xl: 576px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-fs-component-default: 4px;
+  --radius-fs-component-round: 999px;
+  --radius-fs-component-tag: 2px;
+  --radius-fs-container-default: 4px;
+  --radius-lg: 8px;
+  --radius-md: 6px;
+  --radius-sm: 4px;
+  --radius-xl: 12px;
+  --radius-xs: 2px;
+  --radius-component-component-button-large: 4px;
+  --radius-component-component-checkbox: 2px;
+  --radius-component-component-default: 4px;
+  --radius-component-component-dropdown: 4px;
+  --radius-component-component-filter: 999px;
+  --radius-component-component-modal-desktop-default: 4px;
+  --radius-component-component-modal-mobile-default: 12px;
+  --radius-component-component-modal-mobile-large: 12px;
+  --radius-component-component-prompt-modal: 4px;
+  --radius-component-component-round: 999px;
+  --radius-component-component-tag: 2px;
+  --radius-component-component-toast: 4px;
+  --radius-component-container-default: 4px;
+  --dimension-1: 4px;
+  --dimension-10: 40px;
+  --dimension-11: 44px;
+  --dimension-12: 48px;
+  --dimension-13: 52px;
+  --dimension-14: 56px;
+  --dimension-15: 60px;
+  --dimension-16: 64px;
+  --dimension-17: 68px;
+  --dimension-18: 72px;
+  --dimension-19: 76px;
+  --dimension-2: 8px;
+  --dimension-20: 80px;
+  --dimension-3: 12px;
+  --dimension-4: 16px;
+  --dimension-5: 20px;
+  --dimension-6: 24px;
+  --dimension-7: 28px;
+  --dimension-8: 32px;
+  --dimension-9: 36px;
+  --elevation-low: rgba(0, 0, 0, 0.1) 0px 2px 8px 0px;
+  --elevation-medium: rgba(0, 0, 0, 0.15) 0px 2px 12px 0px;
+  --elevation-sm: rgba(0, 0, 0, 0.15) 0px 1px 2px 0px;
+  --elevation-md: rgba(0, 0, 0, 0.12) 0px 3px 3px 0px;
+  --ease-in: cubic-bezier(0.4, 0.0, 1.0, 1.0);
+  --ease-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --ease-inOut: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --motion-duration-default: 150ms;
+  --motion-duration-glow: 1200ms;
+  --motion-duration-headerGlow: 1200ms;
+  --motion-easing-default: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --motion-animation-spin: spin 1s linear infinite;
+  --motion-animation-pulse: pulse 2s cubic-bezier(.4,0,.6,1)infinite;
+  --motion-animation-bounce: bounce 1s infinite;
+  --aspect-video: 16/9;
+  --component-button-height-small: 40px;
+  --component-button-height-medium: 48px;
+  --component-button-paddingX-small: 16px;
+  --component-button-paddingX-medium: 20px;
+  --component-button-radius: 4px;
+  --component-radius-filter: 999px;
+  --component-field-inputHeight: 20px;
+  --component-field-borderWidth: 1px;
+  --component-checkbox-size: 14px;
+  --component-checkbox-radius: 2px;
+  --component-dialog-width-signIn: 420px;
+  --component-dialog-width-signUp: 500px;
+  --component-navDrawer-width: 312px;
+  --component-avatar-brand: 96px;
+  --component-categoriesPanel-height: 712px;
+  --component-header-height-desktop: 108px;
+  --component-header-height-mobile: 51px;
+  --component-focusRing-width: 2px;
+  --component-focusRing-offset: 1px;
+  --component-focusRing-color: #275ec5;
+  --color-action-border-active: #000000;
+  --color-action-border-critical: #d17e70;
+  --color-action-border-default: #333333;
+  --color-action-border-disabled: #dadada;
+  --color-action-border-focusRing: #275ec5;
+  --color-action-border-hover: #000000;
+  --color-action-border-inverse: #ffffff;
+  --color-action-border-subdued: #dadada;
+  --color-action-icon-active: #000000;
+  --color-action-icon-critical-default: #921100;
+  --color-action-icon-critical-active: #5a1e09;
+  --color-action-icon-critical-hover: #5a1e09;
+  --color-action-icon-critical-inverse: #ffffff;
+  --color-action-icon-default: #333333;
+  --color-action-icon-disabled: #8e8c8c;
+  --color-action-icon-hover: #000000;
+  --color-action-icon-inverse-default: #ffffff;
+  --color-action-icon-inverse-active: #000000;
+  --color-action-icon-inverse-hover: #000000;
+  --color-action-surface-active: #000000;
+  --color-action-surface-critical-default: #f2e5e1;
+  --color-action-surface-critical-active: #921100;
+  --color-action-surface-critical-hover: #921100;
+  --color-action-surface-critical-inverse-active: #f2e5e1;
+  --color-action-surface-critical-inverse-hover: #f2e5e1;
+  --color-action-surface-default: #333333;
+  --color-action-surface-disabled: #f1f1f1;
+  --color-action-surface-favorited: #921100;
+  --color-action-surface-hover: #000000;
+  --color-action-surface-inverse-default: #ffffff;
+  --color-action-surface-inverse-active: #f1f1f1;
+  --color-action-surface-inverse-hover: #f1f1f1;
+  --color-action-surface-neutral-default: #333333;
+  --color-action-surface-neutral-active: #333333;
+  --color-action-surface-neutral-hover: #333333;
+  --color-action-text-active: #000000;
+  --color-action-text-critical-default: #921100;
+  --color-action-text-critical-active: #5a1e09;
+  --color-action-text-critical-hover: #5a1e09;
+  --color-action-text-critical-inverse: #ffffff;
+  --color-action-text-default: #333333;
+  --color-action-text-disabled: #8e8c8c;
+  --color-action-text-hover: #000000;
+  --color-action-text-inverse-default: #ffffff;
+  --color-action-text-inverse-active: #000000;
+  --color-action-text-inverse-hover: #000000;
+  --color-action-text-placeholder: #6c6a6a;
+  --color-border-muted: #dadada;
+  --color-border-subdued: #8e8c8c;
+  --color-button-border-secondary-default: #dadada;
+  --color-button-border-secondary-active: #000000;
+  --color-button-border-secondary-hover: #000000;
+  --color-button-surface-secondary-default: #ffffff;
+  --color-button-surface-secondary-active: #f1f1f1;
+  --color-button-surface-secondary-hover: #f1f1f1;
+  --color-button-surface-tertiary-default: rgba(51, 51, 51, 0);
+  --color-button-surface-tertiary-active: #f1f1f1;
+  --color-button-surface-tertiary-hover: #f1f1f1;
+  --color-expressive-icon-blue-default: #1b2834;
+  --color-expressive-icon-blue-inverse: #e2e7f0;
+  --color-expressive-icon-green-default: #3e4023;
+  --color-expressive-icon-green-inverse: #d9d8cd;
+  --color-expressive-icon-neutral-default: #585550;
+  --color-expressive-icon-neutral-inverse: #fbf8f6;
+  --color-expressive-icon-orange-default: #7d3e1e;
+  --color-expressive-icon-orange-inverse: #f6eee4;
+  --color-expressive-icon-red-default: #390d18;
+  --color-expressive-icon-red-inverse: #e9e0dc;
+  --color-expressive-icon-yellow-default: #595540;
+  --color-expressive-icon-yellow-inverse: #ece3d2;
+  --color-expressive-surface-blue-default: #e2e7f0;
+  --color-expressive-surface-blue-inverse: #1b2834;
+  --color-expressive-surface-earth: #453200;
+  --color-expressive-surface-eggplant: #41252a;
+  --color-expressive-surface-green-default: #d9d8cd;
+  --color-expressive-surface-green-inverse: #3e4023;
+  --color-expressive-surface-neutral-default: #fbf8f6;
+  --color-expressive-surface-neutral-inverse: #585550;
+  --color-expressive-surface-olive: #595604;
+  --color-expressive-surface-orange-default: #f6eee4;
+  --color-expressive-surface-orange-inverse: #ab7456;
+  --color-expressive-surface-red-default: #e9e0dc;
+  --color-expressive-surface-red-inverse: #390d18;
+  --color-expressive-surface-yellow-default: #ece3d2;
+  --color-expressive-surface-yellow-inverse: #595540;
+  --color-expressive-text-blue-default: #1b2834;
+  --color-expressive-text-blue-inverse: #e2e7f0;
+  --color-expressive-text-green-default: #3e4023;
+  --color-expressive-text-green-inverse: #d9d8cd;
+  --color-expressive-text-neutral-default: #585550;
+  --color-expressive-text-neutral-inverse: #fbf8f6;
+  --color-expressive-text-orange-default: #ab7456;
+  --color-expressive-text-orange-inverse: #f6eee4;
+  --color-expressive-text-red-default: #390d18;
+  --color-expressive-text-red-inverse: #e9e0dc;
+  --color-expressive-text-yellow-default: #595540;
+  --color-expressive-text-yellow-inverse: #ece3d2;
+  --color-icon-primary-default: #333333;
+  --color-icon-primary-inverse: #ffffff;
+  --color-icon-subdued: #6c6a6a;
+  --color-message-border-critical: #d17e70;
+  --color-message-border-info: #7a7885;
+  --color-message-border-success: #91a793;
+  --color-message-border-warning: #d1b985;
+  --color-message-icon-critical: #921100;
+  --color-message-icon-info: #1b2834;
+  --color-message-icon-success: #49694c;
+  --color-message-icon-warning: #907c3a;
+  --color-message-surface-critical: #f2e5e1;
+  --color-message-surface-info: #e2e7f0;
+  --color-message-surface-success: #e9f1e5;
+  --color-message-surface-warning: #f6efdb;
+  --color-message-text-critical: #921100;
+  --color-message-text-sale: #7d3e1e;
+  --color-program-border-aiSuggestions: #eacfff;
+  --color-program-icon-fairePay: #365cbb;
+  --color-program-icon-faireSource: #735b21;
+  --color-program-icon-insider: #36676a;
+  --color-program-icon-market: #df6630;
+  --color-program-icon-topShop: #91957b;
+  --color-program-surface-aiSuggestions-primary-default: #f7e9ff;
+  --color-program-surface-aiSuggestions-primary-inverse: #eacfff;
+  --color-program-surface-faireDirect-primary-default: #e8eeff;
+  --color-program-surface-faireDirect-primary-inverse: #a2b8ff;
+  --color-program-surface-faireDirect-secondary-default: #fbfaf9;
+  --color-program-surface-faireDirect-secondary-inverse: #f6f5f2;
+  --color-program-surface-faireDirect-tertiary: #fe8240;
+  --color-program-surface-fairePay-primary-default: #e9eefb;
+  --color-program-surface-fairePay-primary-inverse: #213871;
+  --color-program-surface-fairePay-secondary: #365cbb;
+  --color-program-surface-faireSource-primary-default: #f6f2e8;
+  --color-program-surface-faireSource-primary-inverse: #735b21;
+  --color-program-surface-insider-primary-default: #f2f5f5;
+  --color-program-surface-insider-primary-inverse: #154548;
+  --color-program-surface-market-primary-default: #56160c;
+  --color-program-surface-market-primary-inverse: #f8f1e9;
+  --color-program-surface-market-secondary: #f38f7f;
+  --color-program-surface-market-tertiary: #df6630;
+  --color-program-surface-promotion-primary: #ffe1ce;
+  --color-program-surface-topShop-primary-default: #dde3d0;
+  --color-program-surface-topShop-primary-inverse: #3e4023;
+  --color-program-surface-topShop-secondary: #91957b;
+  --color-program-text-fairePay: #365cbb;
+  --color-program-text-faireSource: #735b21;
+  --color-program-text-insider: #154548;
+  --color-program-text-topShop: #3e4023;
+  --color-progress-bar-surface-default: #dadada;
+  --color-surface-mask: rgba(51, 51, 51, 0.5);
+  --color-surface-neutral: #ffffff;
+  --color-surface-overlay: rgba(51, 51, 51, 0.05);
+  --color-surface-primary-default: #ffffff;
+  --color-surface-primary-inverse: #333333;
+  --color-surface-secondary: #f7f7f7;
+  --color-surface-tertiary: #f1f1f1;
+  --color-surface-transparent: rgba(51, 51, 51, 0);
+  --color-tag-surface-active: #dadada;
+  --color-tag-surface-default: #f1f1f1;
+  --color-tag-surface-hover: #dadada;
+  --color-tag-surface-strong: #474747;
+  --color-text-accent: #ff5dd9;
+  --color-text-primary-default: #333333;
+  --color-text-primary-inverse: #ffffff;
+  --color-text-subdued: #6c6a6a;
+  --color-toggle-border-disabled: #dadada;
+  --color-toggle-surface-default: #dadada;
+  --color-toggle-surface-disabled: #f1f1f1;
+  --color-toggle-surface-inverse: #000000;
+  --color-toggle-surface-subdued: #ffffff;
+  --color-fs-action-border-focusRing: #275ec5;
+  --color-fs-program-surface-faireSource-primary-inverse: #735b21;
+  --color-fs-surface-primary: #ffffff;
+  --color-fs-surface-secondary: #f7f7f7;
+  --color-onSurface-action-border-active: #f7f7f7;
+  --color-onSurface-action-border-default: #ffffff;
+  --color-onSurface-action-border-hover: #f7f7f7;
+  --color-onSurface-action-border-inverse: #000000;
+  --color-onSurface-action-border-subdued: #ffffff;
+  --color-onSurface-action-icon-active: #f7f7f7;
+  --color-onSurface-action-icon-default: #ffffff;
+  --color-onSurface-action-icon-hover: #f7f7f7;
+  --color-onSurface-action-icon-inverse: #333333;
+  --color-onSurface-action-surface-active: #f7f7f7;
+  --color-onSurface-action-surface-default: #ffffff;
+  --color-onSurface-action-surface-disabled: #f1f1f1;
+  --color-onSurface-action-surface-hover: #f7f7f7;
+  --color-onSurface-action-surface-inverse: rgba(51, 51, 51, 0);
+  --color-onSurface-action-surface-neutral-default: #ffffff;
+  --color-onSurface-action-surface-neutral-active: #ffffff;
+  --color-onSurface-action-surface-neutral-hover: #ffffff;
+  --color-onSurface-action-text-active: #f7f7f7;
+  --color-onSurface-action-text-default: #ffffff;
+  --color-onSurface-action-text-hover: #f7f7f7;
+  --color-onSurface-action-text-inverse: #333333;
+  --color-onSurface-button-border-secondary-default: #ffffff;
+  --color-onSurface-button-border-secondary-active: #f7f7f7;
+  --color-onSurface-button-border-secondary-hover: #f7f7f7;
+  --color-onSurface-button-surface-secondary-default: rgba(51, 51, 51, 0);
+  --color-onSurface-button-surface-secondary-active: #f1f1f1;
+  --color-onSurface-button-surface-secondary-hover: #f1f1f1;
+  --color-onSurface-button-surface-tertiary-default: rgba(51, 51, 51, 0);
+  --color-onSurface-button-surface-tertiary-active: #f1f1f1;
+  --color-onSurface-button-surface-tertiary-hover: #f1f1f1;
+  --color-onSurface-progress-bar-surface-default: #dadada;
+  --color-onSurface-tag-surface-active: #dadada;
+  --color-onSurface-tag-surface-default: #f1f1f1;
+  --color-onSurface-tag-surface-hover: #dadada;
+  --color-onSurface-tag-surface-strong: #474747;
+  --color-onSurface-toggle-border-disabled: #dadada;
+  --color-onSurface-toggle-surface-default: #dadada;
+  --color-onSurface-toggle-surface-disabled: #f1f1f1;
+  --color-onSurface-toggle-surface-inverse: #f7f7f7;
+  --color-onSurface-toggle-surface-subdued: rgba(51, 51, 51, 0);
+  --sg-sans: "Graphik_fix", "Graphik", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Nantes_fix", "Nantes", "GT Canon", Georgia, "Times New Roman", serif;
+  --sg-mono: "GT Standard M", ui-monospace, "SF Mono", Menlo, monospace;
+  --ink: var(--color-text-primary-default, #333333);
+  --paper: var(--color-surface-primary-default, #ffffff);
+  --hair: var(--color-border-muted, #dadada);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--ink, #333); background: var(--paper, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink, #333); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--hair, #ddd); }
+.lead { max-width: 62ch; color: var(--ink, #333); opacity: .8; }
+.note { font-size: 13px; color: var(--ink, #333); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink, #333); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--hair, #ddd); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--ink, #333); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--hair, #ddd); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--ink, #333); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--hair, #ddd); overflow: hidden; background: var(--paper, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: 60px; padding: 0 12px 0 22px; font-size: 14px; color: var(--ink, #333); background: #fff; border-bottom: 1px solid var(--hair, #ddd); }
+.navbar .wm { font: 400 18px/1 var(--sg-serif); letter-spacing: .28em; }
+.navbar .cat { border: 1px solid var(--hair, #ddd); border-radius: var(--radius-component-filter, 999px); padding: 8px 14px; font-size: 14px; }
+.navbar .find { flex: 0 0 300px; border: 1px solid var(--hair, #ddd); border-radius: var(--radius-component-filter, 999px); padding: 8px 14px; font-size: 14px; color: var(--color-text-subdued, #6c6a6a); }
+.navbar .sp { flex: 1; }
+.navbar .loc { font-size: 13px; color: var(--color-text-subdued, #6c6a6a); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height-medium, 48px); padding: 0 var(--component-button-paddingX-medium, 20px); font-size: 14px; font-weight: 400; border-radius: var(--component-button-radius, 4px); border: 1px solid transparent; }
+.btn.small { height: var(--component-button-height-small, 40px); padding: 0 var(--component-button-paddingX-small, 16px); }
+.btn.primary { background: var(--color-action-surface-default, #333333); color: var(--color-action-text-inverse, #fff); }
+.btn.ghost { border-color: var(--color-button-border-secondary, #dadada); color: var(--color-action-text-default, #333); }
+.btn.plain { color: var(--color-action-text-default, #333); }
+.btn:focus-visible, .cat:focus-visible { outline: var(--component-focusRing-width, 2px) solid var(--component-focusRing-color, #275ec5); outline-offset: var(--component-focusRing-offset, 1px); }
+.hero { color: #fff; padding: 72px 40px; font: 400 52px/64px var(--sg-serif); letter-spacing: 0; text-align: left; background: #333333; }
+.hero small { display: block; font: 400 14px/20px var(--sg-sans); letter-spacing: .15px; color: rgba(255,255,255,.85); margin: 16px 0 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--hair, #ddd); padding: 14px; font-size: 13px; background: #fff; }
+.tile .img { height: 140px; background: #eee; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 400 16px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.dlg { width: var(--component-dialog-width-signIn, 420px); margin: 0 auto; padding: 28px; border: 1px solid var(--hair, #ddd); background: #fff; }
+.dlg h3 { font: 400 30px/38px "GT Canon", var(--sg-serif); margin: 0 0 18px; }
+.dlg .field { display: block; height: 40px; border: 1px solid var(--hair, #ddd); border-radius: 0; padding: 0 12px; margin: 10px 0; font: 400 14px/20px var(--sg-sans); color: var(--color-action-text-placeholder, #6c6a6a); }
+.dlg .field b { font-weight: 400; color: var(--ink, #333); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--hair, #ddd); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--hair, #ddd); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--ink, #333); opacity: .65; font-family: var(--sg-mono); }
+.pill { display: inline-block; border-radius: var(--radius-component-filter, 999px); padding: 8px 16px; font-size: 14px; border: 1px solid var(--hair, #ddd); margin: 0 6px 6px 0; }
+.pill.on { background: var(--color-action-surface-default, #333); color: var(--color-action-text-inverse, #fff); border-color: var(--color-action-surface-default, #333); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Faire style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Faire, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the Slate design-token layer faire.com declares in its cdn.faire.com bundles — the <code>--slate-color-*</code> grey/neutral/bsr ramps and the text/surface/border/icon/action/button/message/tag/toggle/expressive/program roles they feed, the <code>--slate-typography-*</code> Graphik/Nantes ramp and the older <code>--f_t_*</code> ramp still on the page, the 4px spacing base, the 2–24px radii and 999px pills, the two <code>--slate-elevation-*</code> shadows, the .fs-mode-on-surface inverse scope, and the measured component sizes. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from faire.com on 2026-11-14, signed out, in headless Chromium. Everything past the sign-up/sign-in dialogs — search results, product detail, cart, checkout, account — is a documented boundary; the application and auth forms were measured and typed into then cleared, never submitted. Graphik/Nantes/GT Canon/GT Standard are served faces and are not loaded here: samples fall back to system sans and serif.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The white header carries the FAIRE wordmark, the rounded "All categories" dropdown, the pill search field, EN-US locale, Blog, "Sign up to sell", "Sign in" and the dark "Sign up to buy" fs-button; below it the sub-header category strip. The hero pairs the serif display masthead over media with sign-up CTAs; the featured-brands row uses rounded pill tabs (the selected one paints dark).</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">F A I R E</span><span class="cat">All categories</span><span class="find">Search wholesale products or brands</span><span class="sp"></span><span class="loc">EN-US</span><span>Blog</span><span>Sign up to sell</span><span>Sign in</span><span class="btn small primary">Sign up to buy</span></div>
+    <div class="hero">Find your next bestseller<small>Sign up to unlock wholesale pricing with over 100,000 brands.</small><span class="btn ghost" style="border-color:#fff;color:#fff">Sign up to buy</span></div>
+    <div style="padding:16px"><span class="pill">Home decor</span><span class="pill">Food &amp; drink</span><span class="pill on">Women</span><span class="pill">Beauty &amp; wellness</span><span class="pill">Jewelry</span><span class="pill">Paper &amp; novelty</span></div>
+  </div>
+
+  <h2 class="sh">The auth dialogs</h2>
+  <p class="lead">The sign-in (<code>?signIn=1</code>, 420px) and sign-up (<code>?signUp=1</code>, 500px) fs-modals are the deepest public surface: a GT Canon title, boxed fields, the dark submit and Google/Apple SSO. Measured at rest, never submitted.</p>
+  <div class="mock" style="padding:24px">
+    <div class="dlg"><h3>Sign in to Faire</h3><span class="field"><b>name@company.com</b></span><span class="field">Enter your password</span><span class="btn primary" style="width:100%">Sign in</span><span class="btn ghost" style="width:100%;margin-top:8px">Sign in with Google</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The Slate ramps: <code>--slate-color-grey-*</code>/<code>--slate-color-neutral-*</code> run white #ffffff to near-black, beside blue/green/orange/red/teal/yellow accents and the seasonal <code>--slate-color-bsr-*</code> ramp. The semantic layer — text/surface/border/icon roles, the action.* state matrix, button/message/tag/toggle/progress/expressive/program roles — resolves to them on the only theme the site paints. The <code>onSurface</code> group is the same roles remapped inside <code>.fs-mode-on-surface</code> for controls over dark media.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">Everything sits on the 4px <code>--spacing</code> base with the <code>--slate-spacing-element/group/layout/section-*</code> roles and the 4–80px <code>--slate-dimensions-*</code> ramp. Radii are small — 4px on buttons and fields, 999px on filter pills and round controls. Controls transition over 150ms <code>cubic-bezier(.4,0,.2,1)</code>.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Elevation</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead"><code>Graphik_fix</code> carries the UI — body, controls, fields at 14/20 with +0.15px tracking; <code>Nantes_fix</code> draws the marketing display (52/64 mastheads); <code>GT Canon</code> draws the category masthead and dialog titles; <code>GT Standard</code> the large CTAs. The declared <code>--slate-typography-*</code> ramp runs 100–800; the older <code>--f_t_*</code> ramp (sizes 12–72) is still resolved on the page.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --slate-*/--f_t_*/Tailwind theme variables from the live stylesheets (network bodies — the sheets are cross-origin) and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"blue":{"100":{"v":"#f2f5f5","t":"color","s":"css-var --slate-color-blue-100 (light)"},"1000":{"v":"#1b2834","t":"color","s":"css-var --slate-color-blue-1000 (light)"},"200":{"v":"#e2e7f0","t":"color","s":"css-var --slate-color-blue-200 (light)"},"400":{"v":"#7a7885","t":"color","s":"css-var --slate-color-blue-400 (light)"},"700":{"v":"#275ec5","t":"color","s":"css-var --slate-color-blue-700 (light)"}},"bsr":{"coral":{"100":{"v":"#ffc9a7","t":"color","s":"css-var --slate-color-bsr-coral-100 (light)"}},"green":{"1000":{"v":"#576916","t":"color","s":"css-var --slate-color-bsr-green-1000 (light)"},"200":{"v":"#ddeda5","t":"color","s":"css-var --slate-color-bsr-green-200 (light)"},"400":{"v":"#e8e882","t":"color","s":"css-var --slate-color-bsr-green-400 (light)"}},"grey":{"100":{"v":"#ffffff","t":"color","s":"css-var --slate-color-bsr-grey-100 (light)"},"1000":{"v":"#000000","t":"color","s":"css-var --slate-color-bsr-grey-1000 (light)"},"800":{"v":"#474747","t":"color","s":"css-var --slate-color-bsr-grey-800 (light)"},"900":{"v":"#161616","t":"color","s":"css-var --slate-color-bsr-grey-900 (light)"}},"lilac":{"100":{"v":"#eaeeff","t":"color","s":"css-var --slate-color-bsr-lilac-100 (light)"},"200":{"v":"#d2daff","t":"color","s":"css-var --slate-color-bsr-lilac-200 (light)"}},"mahogany":{"1000":{"v":"#40121e","t":"color","s":"css-var --slate-color-bsr-mahogany-1000 (light)"}},"neutral":{"1000":{"v":"#6c6a6a","t":"color","s":"css-var --slate-color-bsr-neutral-1000 (light)"},"200":{"v":"#f9f8f5","t":"color","s":"css-var --slate-color-bsr-neutral-200 (light)"},"300":{"v":"#f5f4f0","t":"color","s":"css-var --slate-color-bsr-neutral-300 (light)"},"400":{"v":"#edece2","t":"color","s":"css-var --slate-color-bsr-neutral-400 (light)"},"500":{"v":"#e4e1de","t":"color","s":"css-var --slate-color-bsr-neutral-500 (light)"},"600":{"v":"#e7e2d9","t":"color","s":"css-var --slate-color-bsr-neutral-600 (light)"},"700":{"v":"#d8d0c3","t":"color","s":"css-var --slate-color-bsr-neutral-700 (light)"},"800":{"v":"#95948f","t":"color","s":"css-var --slate-color-bsr-neutral-800 (light)"}},"olive":{"200":{"v":"#c7be51","t":"color","s":"css-var --slate-color-bsr-olive-200 (light)"}},"purple":{"1000":{"v":"#1d2757","t":"color","s":"css-var --slate-color-bsr-purple-1000 (light)"},"200":{"v":"#e1e6ff","t":"color","s":"css-var --slate-color-bsr-purple-200 (light)"}},"red":{"100":{"v":"#ffe7e2","t":"color","s":"css-var --slate-color-bsr-red-100 (light)"},"1000":{"v":"#9b0a00","t":"color","s":"css-var --slate-color-bsr-red-1000 (light)"},"200":{"v":"#ffddd5","t":"color","s":"css-var --slate-color-bsr-red-200 (light)"}},"yellow":{"1000":{"v":"#b55e10","t":"color","s":"css-var --slate-color-bsr-yellow-1000 (light)"},"200":{"v":"#ffe7b1","t":"color","s":"css-var --slate-color-bsr-yellow-200 (light)"}}},"green":{"100":{"v":"#e9f1e5","t":"color","s":"css-var --slate-color-green-100 (light)"},"1000":{"v":"#3e4023","t":"color","s":"css-var --slate-color-green-1000 (light)"},"200":{"v":"#dde3d0","t":"color","s":"css-var --slate-color-green-200 (light)"},"300":{"v":"#d9d8cd","t":"color","s":"css-var --slate-color-green-300 (light)"},"500":{"v":"#91957b","t":"color","s":"css-var --slate-color-green-500 (light)"},"600":{"v":"#91a793","t":"color","s":"css-var --slate-color-green-600 (light)"},"700":{"v":"#49694c","t":"color","s":"css-var --slate-color-green-700 (light)"}},"grey":{"100":{"v":"#ffffff","t":"color","s":"css-var --slate-color-grey-100 (light)"},"1000":{"v":"#000000","t":"color","s":"css-var --slate-color-grey-1000 (light)"},"200":{"v":"#f7f7f7","t":"color","s":"css-var --slate-color-grey-200 (light)"},"300":{"v":"#f1f1f1","t":"color","s":"css-var --slate-color-grey-300 (light)"},"400":{"v":"#dadada","t":"color","s":"css-var --slate-color-grey-400 (light)"},"600":{"v":"#8e8c8c","t":"color","s":"css-var --slate-color-grey-600 (light)"},"700":{"v":"#6c6a6a","t":"color","s":"css-var --slate-color-grey-700 (light)"},"800":{"v":"#474747","t":"color","s":"css-var --slate-color-grey-800 (light)"},"900":{"v":"#333333","t":"color","s":"css-var --slate-color-grey-900 (light)"}},"neutral":{"100":{"v":"#fbf8f6","t":"color","s":"css-var --slate-color-neutral-100 (light)"},"1000":{"v":"#585550","t":"color","s":"css-var --slate-color-neutral-1000 (light)"},"600":{"v":"#b5a998","t":"color","s":"css-var --slate-color-neutral-600 (light)"}},"orange":{"100":{"v":"#f6eee4","t":"color","s":"css-var --slate-color-orange-100 (light)"},"1000":{"v":"#7d3e1e","t":"color","s":"css-var --slate-color-orange-1000 (light)"},"400":{"v":"#ab7456","t":"color","s":"css-var --slate-color-orange-400 (light)"}},"red":{"100":{"v":"#f2e5e1","t":"color","s":"css-var --slate-color-red-100 (light)"},"1000":{"v":"#390d18","t":"color","s":"css-var --slate-color-red-1000 (light)"},"200":{"v":"#e9e0dc","t":"color","s":"css-var --slate-color-red-200 (light)"},"500":{"v":"#d17e70","t":"color","s":"css-var --slate-color-red-500 (light)"},"700":{"v":"#921100","t":"color","s":"css-var --slate-color-red-700 (light)"},"800":{"v":"#5a1e09","t":"color","s":"css-var --slate-color-red-800 (light)"}},"teal":{"600":{"v":"#36676a","t":"color","s":"css-var --slate-color-teal-600 (light)"},"900":{"v":"#154548","t":"color","s":"css-var --slate-color-teal-900 (light)"}},"transparent":{"grey":{"0":{"v":"rgba(51, 51, 51, 0)","t":"color","s":"css-var --slate-color-transparent-grey-0 (light)"},"100":{"v":"rgba(51, 51, 51, 0.05)","t":"color","s":"css-var --slate-color-transparent-grey-100 (light)"},"200":{"v":"rgba(51, 51, 51, 0.1)","t":"color","s":"css-var --slate-color-transparent-grey-200 (light)"},"500":{"v":"rgba(51, 51, 51, 0.5)","t":"color","s":"css-var --slate-color-transparent-grey-500 (light)"}}},"yellow":{"100":{"v":"#f6efdb","t":"color","s":"css-var --slate-color-yellow-100 (light)"},"1000":{"v":"#595540","t":"color","s":"css-var --slate-color-yellow-1000 (light)"},"200":{"v":"#ece3d2","t":"color","s":"css-var --slate-color-yellow-200 (light)"},"400":{"v":"#d1b985","t":"color","s":"css-var --slate-color-yellow-400 (light)"},"800":{"v":"#907c3a","t":"color","s":"css-var --slate-color-yellow-800 (light)"}}},"font":{"face":{"sans":{"v":"\"Graphik_fix\"","t":"fontFamily","s":"css-var --slate-typography-family-sans (light)"},"serif":{"v":"\"Nantes_fix\"","t":"fontFamily","s":"css-var --slate-typography-family-serif (light)"}},"size":{"100":{"v":"12px","t":"dimension","s":"css-var --slate-typography-font-size-100 (light)"},"200":{"v":"14px","t":"dimension","s":"css-var --slate-typography-font-size-200 (light)"},"300":{"v":"18px","t":"dimension","s":"css-var --slate-typography-font-size-300 (light)"},"400":{"v":"22px","t":"dimension","s":"css-var --slate-typography-font-size-400 (light)"},"500":{"v":"30px","t":"dimension","s":"css-var --slate-typography-font-size-500 (light)"},"600":{"v":"38px","t":"dimension","s":"css-var --slate-typography-font-size-600 (light)"},"700":{"v":"52px","t":"dimension","s":"css-var --slate-typography-font-size-700 (light)"},"800":{"v":"72px","t":"dimension","s":"css-var --slate-typography-font-size-800 (light)"}},"letterSpacing":{"100":{"v":"0px","t":"dimension","s":"css-var --slate-typography-letter-spacing-100 (light)"},"200":{"v":"0.140625px","t":"dimension","s":"css-var --slate-typography-letter-spacing-200 (light)"}},"lineHeight":{"100":{"v":"16px","t":"dimension","s":"css-var --slate-typography-line-height-100 (light)"},"200":{"v":"20px","t":"dimension","s":"css-var --slate-typography-line-height-200 (light)"},"300":{"v":"26px","t":"dimension","s":"css-var --slate-typography-line-height-300 (light)"},"400":{"v":"32px","t":"dimension","s":"css-var --slate-typography-line-height-400 (light)"},"500":{"v":"38px","t":"dimension","s":"css-var --slate-typography-line-height-500 (light)"},"600":{"v":"50px","t":"dimension","s":"css-var --slate-typography-line-height-600 (light)"},"700":{"v":"64px","t":"dimension","s":"css-var --slate-typography-line-height-700 (light)"},"800":{"v":"86px","t":"dimension","s":"css-var --slate-typography-line-height-800 (light)"}},"weight":{"medium":{"v":500,"t":"fontWeight","s":"css-var --font-weight-medium (light)"},"regular":{"v":400,"t":"fontWeight","s":"css-var --slate-typography-weight-regular (light)"},"semibold":{"v":600,"t":"fontWeight","s":"css-var --font-weight-semibold (light)"},"normal":{"v":400,"t":"fontWeight","s":"css-var --font-weight-normal (light)"}},"family":{"sans":{"v":"\"Graphik_fix\",sans-serif","t":"fontFamily","s":"css-var --font-family-sans (light)","d":"The Graphik_fix sans stack the UI type ramp uses."},"serif":{"v":"\"Nantes_fix\",serif","t":"fontFamily","s":"css-var --font-family-serif (light)","d":"The Nantes_fix serif stack the display roles use."},"legacySans":{"v":"graphik,helvetica,sans-serif","t":"fontFamily","s":"css-var --f_t_font_family_sans (light)","d":"The older f_t ramp's sans stack (graphik,helvetica,sans-serif)."},"legacySerif":{"v":"nantes,georgia,serif","t":"fontFamily","s":"css-var --f_t_font_family_serif (light)","d":"The older f_t ramp's serif stack (nantes,georgia,serif)."},"gtStandard":{"v":"\"GT Standard\", sans-serif","t":"fontFamily","s":"measured fontFamily on the hero primary button (cta-primary default, raw/components-computed.json)","d":"GT Standard — the sans face the large marketing buttons paint."},"gtCanon":{"v":"\"GT Canon\", serif","t":"fontFamily","s":"measured fontFamily on the category masthead (cat-h1 default, raw/components-computed.json)","d":"GT Canon — the serif face the category masthead and auth dialog titles paint."}},"legacySize":{"12":{"v":"12px","t":"dimension","s":"css-var --f_t_font_size_12 (light)"},"14":{"v":"14px","t":"dimension","s":"css-var --f_t_font_size_14 (light)"},"18":{"v":"18px","t":"dimension","s":"css-var --f_t_font_size_18 (light)"},"22":{"v":"22px","t":"dimension","s":"css-var --f_t_font_size_22 (light)"},"30":{"v":"30px","t":"dimension","s":"css-var --f_t_font_size_30 (light)"},"38":{"v":"38px","t":"dimension","s":"css-var --f_t_font_size_38 (light)"},"52":{"v":"52px","t":"dimension","s":"css-var --f_t_font_size_52 (light)"},"72":{"v":"72px","t":"dimension","s":"css-var --f_t_font_size_72 (light)"}},"legacyWeight":{"200":{"v":200,"t":"fontWeight","s":"css-var --f_t_font_weight_200 (light)"},"400":{"v":400,"t":"fontWeight","s":"css-var --f_t_font_weight_400 (light)"},"500":{"v":500,"t":"fontWeight","s":"css-var --f_t_font_weight_500 (light)"},"700":{"v":700,"t":"fontWeight","s":"css-var --f_t_font_weight_700 (light)"}},"legacyLetterSpacing":{"0":{"v":"0px","t":"dimension","s":"css-var --f_t_letter_spacing_0 (light)"},"0_15":{"v":"0.140625px","t":"dimension","s":"css-var --f_t_letter_spacing_0_15 (light)"}},"legacyLineHeight":{"16":{"v":"16px","t":"dimension","s":"css-var --f_t_line_height_16 (light)"},"20":{"v":"20px","t":"dimension","s":"css-var --f_t_line_height_20 (light)"},"26":{"v":"26px","t":"dimension","s":"css-var --f_t_line_height_26 (light)"},"32":{"v":"32px","t":"dimension","s":"css-var --f_t_line_height_32 (light)"},"38":{"v":"38px","t":"dimension","s":"css-var --f_t_line_height_38 (light)"},"50":{"v":"50px","t":"dimension","s":"css-var --f_t_line_height_50 (light)"},"64":{"v":"64px","t":"dimension","s":"css-var --f_t_line_height_64 (light)"},"86":{"v":"86px","t":"dimension","s":"css-var --f_t_line_height_86 (light)"}},"leading":{"relaxed":{"v":1.625,"t":"number","s":"css-var --leading-relaxed (light)"},"snug":{"v":1.375,"t":"number","s":"css-var --leading-snug (light)"},"tight":{"v":1.25,"t":"number","s":"css-var --leading-tight (light)"}},"utilitySize":{"2xl":{"v":"24px","t":"dimension","s":"css-var --text-2xl (light)"},"3xl":{"v":"30px","t":"dimension","s":"css-var --text-3xl (light)"},"4xl":{"v":"36px","t":"dimension","s":"css-var --text-4xl (light)"},"5xl":{"v":"48px","t":"dimension","s":"css-var --text-5xl (light)"},"base":{"v":"16px","t":"dimension","s":"css-var --text-base (light)"},"lg":{"v":"18px","t":"dimension","s":"css-var --text-lg (light)"},"sm":{"v":"14px","t":"dimension","s":"css-var --text-sm (light)"},"xl":{"v":"20px","t":"dimension","s":"css-var --text-xl (light)"},"xs":{"v":"12px","t":"dimension","s":"css-var --text-xs (light)"}},"utilityLineHeight":{"2xl":{"v":1.3333,"t":"number","s":"css-var --text-2xl--line-height (light)"},"3xl":{"v":1.2,"t":"number","s":"css-var --text-3xl--line-height (light)"},"4xl":{"v":1.1111,"t":"number","s":"css-var --text-4xl--line-height (light)"},"5xl":{"v":1,"t":"number","s":"css-var --text-5xl--line-height (light)"},"base":{"v":1.5,"t":"number","s":"css-var --text-base--line-height (light)"},"lg":{"v":1.5556,"t":"number","s":"css-var --text-lg--line-height (light)"},"sm":{"v":1.4286,"t":"number","s":"css-var --text-sm--line-height (light)"},"xl":{"v":1.4,"t":"number","s":"css-var --text-xl--line-height (light)"},"xs":{"v":1.3333,"t":"number","s":"css-var --text-xs--line-height (light)"}},"tracking":{"tight":{"v":"-.025em","t":"other","s":"css-var --tracking-tight (light)"},"wide":{"v":"0.390625px","t":"other","s":"css-var --tracking-wide (light)"},"widest":{"v":"1.59375px","t":"other","s":"css-var --tracking-widest (light)"}}},"typography":{"display":{"v":{"fontFamily":"Nantes_fix, serif","fontSize":"52px","fontWeight":400,"lineHeight":"64px","letterSpacing":"normal"},"t":"typography","s":"measured hero-h1 default (raw/components-computed.json)","d":"The type-fs-display marketing masthead (Nantes serif, 52/64) — 'Find your next bestseller'."},"displayCanon":{"v":{"fontFamily":"\"GT Canon\", serif","fontSize":"38px","fontWeight":400,"lineHeight":"50px","letterSpacing":"normal"},"t":"typography","s":"measured cat-h1 default (raw/components-computed.json)","d":"The category-masthead serif (GT Canon, 38/50) painted over hero media — also the auth-dialog title face at 30/38."},"dialogHeading":{"v":{"fontFamily":"\"GT Canon\", serif","fontSize":"30px","fontWeight":400,"lineHeight":"38px","letterSpacing":"normal"},"t":"typography","s":"measured signin-dialog default (raw/components-computed.json)","d":"The fs-modal title style (GT Canon, 30/38) — 'Sign in to Faire'."},"formHeading":{"v":{"fontFamily":"nantes, georgia, serif","fontSize":"30px","fontWeight":400,"lineHeight":"38px","letterSpacing":"normal"},"t":"typography","s":"measured apply-heading default (raw/components-computed.json)","d":"The /apply step heading (nantes, 30/38) — 'Welcome! Sign up to sell on Faire.'"},"paragraph":{"v":{"fontFamily":"Graphik_fix, sans-serif","fontSize":"14px","fontWeight":400,"lineHeight":"20px","letterSpacing":"0.15px"},"t":"typography","s":"measured cta-plain default (raw/components-computed.json)","d":"The type-fs-paragraph body style (Graphik_fix, 14/20, +0.15px tracking)."},"caption":{"v":{"fontFamily":"graphik, helvetica, sans-serif","fontSize":"12px","fontWeight":200,"lineHeight":"16px","letterSpacing":"0.15px"},"t":"typography","s":"measured categories-panel default (raw/components-computed.json)","d":"The 12/16 fine-print style inside the categories menu (graphik legacy stack, +0.15px tracking)."}},"space":{"base":{"v":"4px","t":"dimension","s":"css-var --spacing (light)","d":"The 4px base every spacing utility multiplies."},"element":{"default":{"v":"8px","t":"dimension","s":"css-var --slate-spacing-element-default (light)"},"large":{"v":"16px","t":"dimension","s":"css-var --slate-spacing-element-large (light)"},"medium":{"v":"12px","t":"dimension","s":"css-var --slate-spacing-element-medium (light)"},"small":{"v":"8px","t":"dimension","s":"css-var --slate-spacing-element-small (light)"},"xlarge":{"v":"20px","t":"dimension","s":"css-var --slate-spacing-element-xlarge (light)"},"xsmall":{"v":"4px","t":"dimension","s":"css-var --slate-spacing-element-xsmall (light)"},"xxlarge":{"v":"24px","t":"dimension","s":"css-var --slate-spacing-element-xxlarge (light)"},"xxxlarge":{"v":"32px","t":"dimension","s":"css-var --slate-spacing-element-xxxlarge (light)"}},"group":{"default":{"v":"16px","t":"dimension","s":"css-var --slate-spacing-group-default (light)"},"large":{"v":"16px","t":"dimension","s":"css-var --slate-spacing-group-large (light)"},"medium":{"v":"12px","t":"dimension","s":"css-var --slate-spacing-group-medium (light)"},"small":{"v":"8px","t":"dimension","s":"css-var --slate-spacing-group-small (light)"},"xlarge":{"v":"24px","t":"dimension","s":"css-var --slate-spacing-group-xlarge (light)"},"xsmall":{"v":"4px","t":"dimension","s":"css-var --slate-spacing-group-xsmall (light)"}},"layout":{"edge":{"desktop":{"default":{"v":"48px","t":"dimension","s":"css-var --slate-spacing-layout-edge-desktop-default (light)"},"wide":{"v":"80px","t":"dimension","s":"css-var --slate-spacing-layout-edge-desktop-wide (light)"}},"mobile":{"v":"16px","t":"dimension","s":"css-var --slate-spacing-layout-edge-mobile (light)"},"tablet":{"v":"32px","t":"dimension","s":"css-var --slate-spacing-layout-edge-tablet (light)"}}},"section":{"default":{"v":"32px","t":"dimension","s":"css-var --slate-spacing-section-default (light)"},"large":{"v":"40px","t":"dimension","s":"css-var --slate-spacing-section-large (light)"},"medium":{"v":"32px","t":"dimension","s":"css-var --slate-spacing-section-medium (light)"},"small":{"v":"24px","t":"dimension","s":"css-var --slate-spacing-section-small (light)"},"xlarge":{"v":"48px","t":"dimension","s":"css-var --slate-spacing-section-xlarge (light)"}}},"blur":{"sm":{"v":"8px","t":"dimension","s":"css-var --blur-sm (light)"},"xl":{"v":"24px","t":"dimension","s":"css-var --blur-xl (light)"}},"container":{"2xl":{"v":"672px","t":"dimension","s":"css-var --container-2xl (light)"},"3xl":{"v":"768px","t":"dimension","s":"css-var --container-3xl (light)"},"4xl":{"v":"896px","t":"dimension","s":"css-var --container-4xl (light)"},"6xl":{"v":"1152px","t":"dimension","s":"css-var --container-6xl (light)"},"7xl":{"v":"1280px","t":"dimension","s":"css-var --container-7xl (light)"},"lg":{"v":"512px","t":"dimension","s":"css-var --container-lg (light)"},"md":{"v":"448px","t":"dimension","s":"css-var --container-md (light)"},"sm":{"v":"384px","t":"dimension","s":"css-var --container-sm (light)"},"xl":{"v":"576px","t":"dimension","s":"css-var --container-xl (light)"}},"radius":{"2xl":{"v":"16px","t":"dimension","s":"css-var --radius-2xl (light)"},"3xl":{"v":"24px","t":"dimension","s":"css-var --radius-3xl (light)"},"fs":{"component":{"default":{"v":"4px","t":"dimension","s":"css-var --radius-fs-component-default (light)"},"round":{"v":"999px","t":"dimension","s":"css-var --radius-fs-component-round (light)"},"tag":{"v":"2px","t":"dimension","s":"css-var --radius-fs-component-tag (light)"}},"container":{"default":{"v":"4px","t":"dimension","s":"css-var --radius-fs-container-default (light)"}}},"lg":{"v":"8px","t":"dimension","s":"css-var --radius-lg (light)"},"md":{"v":"6px","t":"dimension","s":"css-var --radius-md (light)"},"sm":{"v":"4px","t":"dimension","s":"css-var --radius-sm (light)"},"xl":{"v":"12px","t":"dimension","s":"css-var --radius-xl (light)"},"xs":{"v":"2px","t":"dimension","s":"css-var --radius-xs (light)"},"component":{"component":{"button":{"large":{"v":"4px","t":"dimension","s":"css-var --slate-radius-component-button-large (light)"}},"checkbox":{"v":"2px","t":"dimension","s":"css-var --slate-radius-component-checkbox (light)"},"default":{"v":"4px","t":"dimension","s":"css-var --slate-radius-component-default (light)"},"dropdown":{"v":"4px","t":"dimension","s":"css-var --slate-radius-component-dropdown (light)"},"filter":{"v":"999px","t":"dimension","s":"css-var --slate-radius-component-filter (light)"},"modal":{"desktop":{"default":{"v":"4px","t":"dimension","s":"css-var --slate-radius-component-modal-desktop-default (light)"}},"mobile":{"default":{"v":"12px","t":"dimension","s":"css-var --slate-radius-component-modal-mobile-default (light)"},"large":{"v":"12px","t":"dimension","s":"css-var --slate-radius-component-modal-mobile-large (light)"}}},"prompt":{"modal":{"v":"4px","t":"dimension","s":"css-var --slate-radius-component-prompt-modal (light)"}},"round":{"v":"999px","t":"dimension","s":"css-var --slate-radius-component-round (light)"},"tag":{"v":"2px","t":"dimension","s":"css-var --slate-radius-component-tag (light)"},"toast":{"v":"4px","t":"dimension","s":"css-var --slate-radius-component-toast (light)"}},"container":{"default":{"v":"4px","t":"dimension","s":"css-var --slate-radius-container-default (light)"}}}},"dimension":{"1":{"v":"4px","t":"dimension","s":"css-var --slate-dimensions-1 (light)"},"10":{"v":"40px","t":"dimension","s":"css-var --slate-dimensions-10 (light)"},"11":{"v":"44px","t":"dimension","s":"css-var --slate-dimensions-11 (light)"},"12":{"v":"48px","t":"dimension","s":"css-var --slate-dimensions-12 (light)"},"13":{"v":"52px","t":"dimension","s":"css-var --slate-dimensions-13 (light)"},"14":{"v":"56px","t":"dimension","s":"css-var --slate-dimensions-14 (light)"},"15":{"v":"60px","t":"dimension","s":"css-var --slate-dimensions-15 (light)"},"16":{"v":"64px","t":"dimension","s":"css-var --slate-dimensions-16 (light)"},"17":{"v":"68px","t":"dimension","s":"css-var --slate-dimensions-17 (light)"},"18":{"v":"72px","t":"dimension","s":"css-var --slate-dimensions-18 (light)"},"19":{"v":"76px","t":"dimension","s":"css-var --slate-dimensions-19 (light)"},"2":{"v":"8px","t":"dimension","s":"css-var --slate-dimensions-2 (light)"},"20":{"v":"80px","t":"dimension","s":"css-var --slate-dimensions-20 (light)"},"3":{"v":"12px","t":"dimension","s":"css-var --slate-dimensions-3 (light)"},"4":{"v":"16px","t":"dimension","s":"css-var --slate-dimensions-4 (light)"},"5":{"v":"20px","t":"dimension","s":"css-var --slate-dimensions-5 (light)"},"6":{"v":"24px","t":"dimension","s":"css-var --slate-dimensions-6 (light)"},"7":{"v":"28px","t":"dimension","s":"css-var --slate-dimensions-7 (light)"},"8":{"v":"32px","t":"dimension","s":"css-var --slate-dimensions-8 (light)"},"9":{"v":"36px","t":"dimension","s":"css-var --slate-dimensions-9 (light)"}},"elevation":{"low":{"v":"rgba(0, 0, 0, 0.1) 0px 2px 8px 0px","t":"other","s":"css-var --slate-elevation-low (light)","d":"The low card/dropdown shadow."},"medium":{"v":"rgba(0, 0, 0, 0.15) 0px 2px 12px 0px","t":"other","s":"css-var --slate-elevation-medium (light)","d":"The medium overlay shadow."},"sm":{"v":"rgba(0, 0, 0, 0.15) 0px 1px 2px 0px","t":"other","s":"css-var --drop-shadow-sm (light)"},"md":{"v":"rgba(0, 0, 0, 0.12) 0px 3px 3px 0px","t":"other","s":"css-var --drop-shadow-md (light)"}},"ease":{"in":{"v":[0.4,0.0,1.0,1.0],"t":"cubicBezier","s":"css-var --ease-in (light)"},"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-out (light)"},"inOut":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-in-out (light)"}},"motion":{"duration":{"default":{"v":"150ms","t":"duration","s":"css-var --default-transition-duration (light)"},"glow":{"v":"1200ms","t":"duration","s":"css-var --glow-duration (light)"},"headerGlow":{"v":"1200ms","t":"duration","s":"css-var --header-glow-duration (light)"}},"easing":{"default":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --default-transition-timing-function (light)"}},"animation":{"spin":{"v":"spin 1s linear infinite","t":"other","s":"css-var --animate-spin (light)"},"pulse":{"v":"pulse 2s cubic-bezier(.4,0,.6,1)infinite","t":"other","s":"css-var --animate-pulse (light)"},"bounce":{"v":"bounce 1s infinite","t":"other","s":"css-var --animate-bounce (light)"}}},"aspect":{"video":{"v":"16/9","t":"other","s":"css-var --aspect-video (light)"}},"component":{"button":{"height":{"small":{"v":"40px","t":"dimension","s":"computed height of nav-signup-buy default (raw/components-computed.json); the header fs-button--primary small"},"medium":{"v":"48px","t":"dimension","s":"computed height of cta-primary default (raw/components-computed.json); next-btn matches"}},"paddingX":{"small":{"v":"16px","t":"dimension","s":"computed paddingLeft of nav-signup-buy default (raw/components-computed.json)"},"medium":{"v":"20px","t":"dimension","s":"computed paddingLeft of cta-primary default (raw/components-computed.json)"}},"radius":{"v":"4px","t":"dimension","s":"computed borderTopLeftRadius of cta-primary default (raw/components-computed.json); nav-signup-buy matches; matches --slate-radius-component-default"}},"radius":{"filter":{"v":"999px","t":"dimension","s":"computed borderTopLeftRadius of cat-filter-btn default (raw/components-computed.json); the All-filters pill; matches --slate-radius-component-filter"}},"field":{"inputHeight":{"v":"20px","t":"dimension","s":"computed height of field-email default (raw/components-computed.json); the text input inside the boxed apply field (signin-email matches)"},"borderWidth":{"v":"1px","t":"dimension","s":"Reconstruction — entered by hand at capture time, no raw reading behind it (field-firstname measures borderTopWidth 0px, and its fs-form-field box records no border)"}},"checkbox":{"size":{"v":"14px","t":"dimension","s":"computed width of checkbox-terms default (raw/components-computed.json)"},"radius":{"v":"2px","t":"dimension","s":"painted radius of div.fs-checkbox__box.type-aligned-elem, the ancestor of checkbox-terms default (raw/components-computed.json); the input itself measures 0px; matches --slate-radius-component-checkbox"}},"dialog":{"width":{"signIn":{"v":"420px","t":"dimension","s":"computed width of signin-dialog default (raw/components-computed.json); the Sign in to Faire fs-modal"},"signUp":{"v":"500px","t":"dimension","s":"computed width of signup-dialog default (raw/components-computed.json); the Unlock wholesale pricing fs-modal"}}},"navDrawer":{"width":{"v":"312px","t":"dimension","s":"computed width of m-drawer default (raw/components-computed.json); the mobile nav drawer"}},"avatar":{"brand":{"v":"96px","t":"dimension","s":"computed width of brand-avatar default (raw/components-computed.json); the circular fs-avatar on the brand storefront"}},"categoriesPanel":{"height":{"v":"712px","t":"dimension","s":"computed height of categories-panel default (raw/components-computed.json); the All categories dropdown at 1440x900"}},"header":{"height":{"desktop":{"v":"108px","t":"dimension","s":"computed height of mkt-header default (raw/components-computed.json); header incl. promo strip and category nav"},"mobile":{"v":"51px","t":"dimension","s":"computed height of m-topbar default (raw/components-computed.json); the phone top bar"}}},"focusRing":{"width":{"v":"2px","t":"dimension","s":"computed outlineWidth of cta-primary focus-visible (raw/components-computed.json); nav-signup-buy and next-btn match"},"offset":{"v":"1px","t":"dimension","s":"computed outlineOffset of cta-primary focus-visible (raw/components-computed.json); next-btn matches"},"color":{"v":"#275ec5","t":"color","s":"computed outlineColor of cta-primary focus-visible (raw/components-computed.json); next-btn matches; the blue action-border-focus_ring role"}}}},"light":{"color":{"action":{"border":{"active":{"v":"#000000","t":"color","s":"css-var --slate-color-action-border-active (light)"},"critical":{"v":"#d17e70","t":"color","s":"css-var --slate-color-action-border-critical (light)"},"default":{"v":"#333333","t":"color","s":"css-var --slate-color-action-border-default (light)"},"disabled":{"v":"#dadada","t":"color","s":"css-var --slate-color-action-border-disabled (light)"},"focusRing":{"v":"#275ec5","t":"color","s":"css-var --slate-color-action-border-focus_ring (light)"},"hover":{"v":"#000000","t":"color","s":"css-var --slate-color-action-border-hover (light)"},"inverse":{"v":"#ffffff","t":"color","s":"css-var --slate-color-action-border-inverse (light)"},"subdued":{"v":"#dadada","t":"color","s":"css-var --slate-color-action-border-subdued (light)"}},"icon":{"active":{"v":"#000000","t":"color","s":"css-var --slate-color-action-icon-active (light)"},"critical":{"default":{"v":"#921100","t":"color","s":"css-var --slate-color-action-icon-critical (light)"},"active":{"v":"#5a1e09","t":"color","s":"css-var --slate-color-action-icon-critical-active (light)"},"hover":{"v":"#5a1e09","t":"color","s":"css-var --slate-color-action-icon-critical-hover (light)"},"inverse":{"v":"#ffffff","t":"color","s":"css-var --slate-color-action-icon-critical-inverse (light)"}},"default":{"v":"#333333","t":"color","s":"css-var --slate-color-action-icon-default (light)"},"disabled":{"v":"#8e8c8c","t":"color","s":"css-var --slate-color-action-icon-disabled (light)"},"hover":{"v":"#000000","t":"color","s":"css-var --slate-color-action-icon-hover (light)"},"inverse":{"default":{"v":"#ffffff","t":"color","s":"css-var --slate-color-action-icon-inverse (light)"},"active":{"v":"#000000","t":"color","s":"css-var --slate-color-action-icon-inverse-active (light)"},"hover":{"v":"#000000","t":"color","s":"css-var --slate-color-action-icon-inverse-hover (light)"}}},"surface":{"active":{"v":"#000000","t":"color","s":"css-var --slate-color-action-surface-active (light)"},"critical":{"default":{"v":"#f2e5e1","t":"color","s":"css-var --slate-color-action-surface-critical (light)"},"active":{"v":"#921100","t":"color","s":"css-var --slate-color-action-surface-critical-active (light)"},"hover":{"v":"#921100","t":"color","s":"css-var --slate-color-action-surface-critical-hover (light)"},"inverse":{"active":{"v":"#f2e5e1","t":"color","s":"css-var --slate-color-action-surface-critical-inverse-active (light)"},"hover":{"v":"#f2e5e1","t":"color","s":"css-var --slate-color-action-surface-critical-inverse-hover (light)"}}},"default":{"v":"#333333","t":"color","s":"css-var --slate-color-action-surface-default (light)"},"disabled":{"v":"#f1f1f1","t":"color","s":"css-var --slate-color-action-surface-disabled (light)"},"favorited":{"v":"#921100","t":"color","s":"css-var --slate-color-action-surface-favorited (light)"},"hover":{"v":"#000000","t":"color","s":"css-var --slate-color-action-surface-hover (light)"},"inverse":{"default":{"v":"#ffffff","t":"color","s":"css-var --slate-color-action-surface-inverse (light)"},"active":{"v":"#f1f1f1","t":"color","s":"css-var --slate-color-action-surface-inverse-active (light)"},"hover":{"v":"#f1f1f1","t":"color","s":"css-var --slate-color-action-surface-inverse-hover (light)"}},"neutral":{"default":{"v":"#333333","t":"color","s":"css-var --slate-color-action-surface-neutral (light)"},"active":{"v":"#333333","t":"color","s":"css-var --slate-color-action-surface-neutral-active (light)"},"hover":{"v":"#333333","t":"color","s":"css-var --slate-color-action-surface-neutral-hover (light)"}}},"text":{"active":{"v":"#000000","t":"color","s":"css-var --slate-color-action-text-active (light)"},"critical":{"default":{"v":"#921100","t":"color","s":"css-var --slate-color-action-text-critical (light)"},"active":{"v":"#5a1e09","t":"color","s":"css-var --slate-color-action-text-critical-active (light)"},"hover":{"v":"#5a1e09","t":"color","s":"css-var --slate-color-action-text-critical-hover (light)"},"inverse":{"v":"#ffffff","t":"color","s":"css-var --slate-color-action-text-critical-inverse (light)"}},"default":{"v":"#333333","t":"color","s":"css-var --slate-color-action-text-default (light)"},"disabled":{"v":"#8e8c8c","t":"color","s":"css-var --slate-color-action-text-disabled (light)"},"hover":{"v":"#000000","t":"color","s":"css-var --slate-color-action-text-hover (light)"},"inverse":{"default":{"v":"#ffffff","t":"color","s":"css-var --slate-color-action-text-inverse (light)"},"active":{"v":"#000000","t":"color","s":"css-var --slate-color-action-text-inverse-active (light)"},"hover":{"v":"#000000","t":"color","s":"css-var --slate-color-action-text-inverse-hover (light)"}},"placeholder":{"v":"#6c6a6a","t":"color","s":"css-var --slate-color-action-text-placeholder (light)"}}},"border":{"muted":{"v":"#dadada","t":"color","s":"css-var --slate-color-border-muted (light)"},"subdued":{"v":"#8e8c8c","t":"color","s":"css-var --slate-color-border-subdued (light)"}},"button":{"border":{"secondary":{"default":{"v":"#dadada","t":"color","s":"css-var --slate-color-button-border-secondary (light)"},"active":{"v":"#000000","t":"color","s":"css-var --slate-color-button-border-secondary-active (light)"},"hover":{"v":"#000000","t":"color","s":"css-var --slate-color-button-border-secondary-hover (light)"}}},"surface":{"secondary":{"default":{"v":"#ffffff","t":"color","s":"css-var --slate-color-button-surface-secondary (light)"},"active":{"v":"#f1f1f1","t":"color","s":"css-var --slate-color-button-surface-secondary-active (light)"},"hover":{"v":"#f1f1f1","t":"color","s":"css-var --slate-color-button-surface-secondary-hover (light)"}},"tertiary":{"default":{"v":"rgba(51, 51, 51, 0)","t":"color","s":"css-var --slate-color-button-surface-tertiary (light)"},"active":{"v":"#f1f1f1","t":"color","s":"css-var --slate-color-button-surface-tertiary-active (light)"},"hover":{"v":"#f1f1f1","t":"color","s":"css-var --slate-color-button-surface-tertiary-hover (light)"}}}},"expressive":{"icon":{"blue":{"default":{"v":"#1b2834","t":"color","s":"css-var --slate-color-expressive-icon-blue (light)"},"inverse":{"v":"#e2e7f0","t":"color","s":"css-var --slate-color-expressive-icon-blue-inverse (light)"}},"green":{"default":{"v":"#3e4023","t":"color","s":"css-var --slate-color-expressive-icon-green (light)"},"inverse":{"v":"#d9d8cd","t":"color","s":"css-var --slate-color-expressive-icon-green-inverse (light)"}},"neutral":{"default":{"v":"#585550","t":"color","s":"css-var --slate-color-expressive-icon-neutral (light)"},"inverse":{"v":"#fbf8f6","t":"color","s":"css-var --slate-color-expressive-icon-neutral-inverse (light)"}},"orange":{"default":{"v":"#7d3e1e","t":"color","s":"css-var --slate-color-expressive-icon-orange (light)"},"inverse":{"v":"#f6eee4","t":"color","s":"css-var --slate-color-expressive-icon-orange-inverse (light)"}},"red":{"default":{"v":"#390d18","t":"color","s":"css-var --slate-color-expressive-icon-red (light)"},"inverse":{"v":"#e9e0dc","t":"color","s":"css-var --slate-color-expressive-icon-red-inverse (light)"}},"yellow":{"default":{"v":"#595540","t":"color","s":"css-var --slate-color-expressive-icon-yellow (light)"},"inverse":{"v":"#ece3d2","t":"color","s":"css-var --slate-color-expressive-icon-yellow-inverse (light)"}}},"surface":{"blue":{"default":{"v":"#e2e7f0","t":"color","s":"css-var --slate-color-expressive-surface-blue (light)"},"inverse":{"v":"#1b2834","t":"color","s":"css-var --slate-color-expressive-surface-blue-inverse (light)"}},"earth":{"v":"#453200","t":"color","s":"css-var --slate-color-expressive-surface-earth (light)"},"eggplant":{"v":"#41252a","t":"color","s":"css-var --slate-color-expressive-surface-eggplant (light)"},"green":{"default":{"v":"#d9d8cd","t":"color","s":"css-var --slate-color-expressive-surface-green (light)"},"inverse":{"v":"#3e4023","t":"color","s":"css-var --slate-color-expressive-surface-green-inverse (light)"}},"neutral":{"default":{"v":"#fbf8f6","t":"color","s":"css-var --slate-color-expressive-surface-neutral (light)"},"inverse":{"v":"#585550","t":"color","s":"css-var --slate-color-expressive-surface-neutral-inverse (light)"}},"olive":{"v":"#595604","t":"color","s":"css-var --slate-color-expressive-surface-olive (light)"},"orange":{"default":{"v":"#f6eee4","t":"color","s":"css-var --slate-color-expressive-surface-orange (light)"},"inverse":{"v":"#ab7456","t":"color","s":"css-var --slate-color-expressive-surface-orange-inverse (light)"}},"red":{"default":{"v":"#e9e0dc","t":"color","s":"css-var --slate-color-expressive-surface-red (light)"},"inverse":{"v":"#390d18","t":"color","s":"css-var --slate-color-expressive-surface-red-inverse (light)"}},"yellow":{"default":{"v":"#ece3d2","t":"color","s":"css-var --slate-color-expressive-surface-yellow (light)"},"inverse":{"v":"#595540","t":"color","s":"css-var --slate-color-expressive-surface-yellow-inverse (light)"}}},"text":{"blue":{"default":{"v":"#1b2834","t":"color","s":"css-var --slate-color-expressive-text-blue (light)"},"inverse":{"v":"#e2e7f0","t":"color","s":"css-var --slate-color-expressive-text-blue-inverse (light)"}},"green":{"default":{"v":"#3e4023","t":"color","s":"css-var --slate-color-expressive-text-green (light)"},"inverse":{"v":"#d9d8cd","t":"color","s":"css-var --slate-color-expressive-text-green-inverse (light)"}},"neutral":{"default":{"v":"#585550","t":"color","s":"css-var --slate-color-expressive-text-neutral (light)"},"inverse":{"v":"#fbf8f6","t":"color","s":"css-var --slate-color-expressive-text-neutral-inverse (light)"}},"orange":{"default":{"v":"#ab7456","t":"color","s":"css-var --slate-color-expressive-text-orange (light)"},"inverse":{"v":"#f6eee4","t":"color","s":"css-var --slate-color-expressive-text-orange-inverse (light)"}},"red":{"default":{"v":"#390d18","t":"color","s":"css-var --slate-color-expressive-text-red (light)"},"inverse":{"v":"#e9e0dc","t":"color","s":"css-var --slate-color-expressive-text-red-inverse (light)"}},"yellow":{"default":{"v":"#595540","t":"color","s":"css-var --slate-color-expressive-text-yellow (light)"},"inverse":{"v":"#ece3d2","t":"color","s":"css-var --slate-color-expressive-text-yellow-inverse (light)"}}}},"icon":{"primary":{"default":{"v":"#333333","t":"color","s":"css-var --slate-color-icon-primary (light)"},"inverse":{"v":"#ffffff","t":"color","s":"css-var --slate-color-icon-primary-inverse (light)"}},"subdued":{"v":"#6c6a6a","t":"color","s":"css-var --slate-color-icon-subdued (light)"}},"message":{"border":{"critical":{"v":"#d17e70","t":"color","s":"css-var --slate-color-message-border-critical (light)"},"info":{"v":"#7a7885","t":"color","s":"css-var --slate-color-message-border-info (light)"},"success":{"v":"#91a793","t":"color","s":"css-var --slate-color-message-border-success (light)"},"warning":{"v":"#d1b985","t":"color","s":"css-var --slate-color-message-border-warning (light)"}},"icon":{"critical":{"v":"#921100","t":"color","s":"css-var --slate-color-message-icon-critical (light)"},"info":{"v":"#1b2834","t":"color","s":"css-var --slate-color-message-icon-info (light)"},"success":{"v":"#49694c","t":"color","s":"css-var --slate-color-message-icon-success (light)"},"warning":{"v":"#907c3a","t":"color","s":"css-var --slate-color-message-icon-warning (light)"}},"surface":{"critical":{"v":"#f2e5e1","t":"color","s":"css-var --slate-color-message-surface-critical (light)"},"info":{"v":"#e2e7f0","t":"color","s":"css-var --slate-color-message-surface-info (light)"},"success":{"v":"#e9f1e5","t":"color","s":"css-var --slate-color-message-surface-success (light)"},"warning":{"v":"#f6efdb","t":"color","s":"css-var --slate-color-message-surface-warning (light)"}},"text":{"critical":{"v":"#921100","t":"color","s":"css-var --slate-color-message-text-critical (light)"},"sale":{"v":"#7d3e1e","t":"color","s":"css-var --slate-color-message-text-sale (light)"}}},"program":{"border":{"aiSuggestions":{"v":"#eacfff","t":"color","s":"css-var --slate-color-program-border-ai_suggestions (light)"}},"icon":{"fairePay":{"v":"#365cbb","t":"color","s":"css-var --slate-color-program-icon-faire_pay (light)"},"faireSource":{"v":"#735b21","t":"color","s":"css-var --slate-color-program-icon-faire_source (light)"},"insider":{"v":"#36676a","t":"color","s":"css-var --slate-color-program-icon-insider (light)"},"market":{"v":"#df6630","t":"color","s":"css-var --slate-color-program-icon-market (light)"},"topShop":{"v":"#91957b","t":"color","s":"css-var --slate-color-program-icon-top_shop (light)"}},"surface":{"aiSuggestions":{"primary":{"default":{"v":"#f7e9ff","t":"color","s":"css-var --slate-color-program-surface-ai_suggestions-primary (light)"},"inverse":{"v":"#eacfff","t":"color","s":"css-var --slate-color-program-surface-ai_suggestions-primary-inverse (light)"}}},"faireDirect":{"primary":{"default":{"v":"#e8eeff","t":"color","s":"css-var --slate-color-program-surface-faire_direct-primary (light)"},"inverse":{"v":"#a2b8ff","t":"color","s":"css-var --slate-color-program-surface-faire_direct-primary-inverse (light)"}},"secondary":{"default":{"v":"#fbfaf9","t":"color","s":"css-var --slate-color-program-surface-faire_direct-secondary (light)"},"inverse":{"v":"#f6f5f2","t":"color","s":"css-var --slate-color-program-surface-faire_direct-secondary-inverse (light)"}},"tertiary":{"v":"#fe8240","t":"color","s":"css-var --slate-color-program-surface-faire_direct-tertiary (light)"}},"fairePay":{"primary":{"default":{"v":"#e9eefb","t":"color","s":"css-var --slate-color-program-surface-faire_pay-primary (light)"},"inverse":{"v":"#213871","t":"color","s":"css-var --slate-color-program-surface-faire_pay-primary-inverse (light)"}},"secondary":{"v":"#365cbb","t":"color","s":"css-var --slate-color-program-surface-faire_pay-secondary (light)"}},"faireSource":{"primary":{"default":{"v":"#f6f2e8","t":"color","s":"css-var --slate-color-program-surface-faire_source-primary (light)"},"inverse":{"v":"#735b21","t":"color","s":"css-var --slate-color-program-surface-faire_source-primary-inverse (light)"}}},"insider":{"primary":{"default":{"v":"#f2f5f5","t":"color","s":"css-var --slate-color-program-surface-insider-primary (light)"},"inverse":{"v":"#154548","t":"color","s":"css-var --slate-color-program-surface-insider-primary-inverse (light)"}}},"market":{"primary":{"default":{"v":"#56160c","t":"color","s":"css-var --slate-color-program-surface-market-primary (light)"},"inverse":{"v":"#f8f1e9","t":"color","s":"css-var --slate-color-program-surface-market-primary-inverse (light)"}},"secondary":{"v":"#f38f7f","t":"color","s":"css-var --slate-color-program-surface-market-secondary (light)"},"tertiary":{"v":"#df6630","t":"color","s":"css-var --slate-color-program-surface-market-tertiary (light)"}},"promotion":{"primary":{"v":"#ffe1ce","t":"color","s":"css-var --slate-color-program-surface-promotion-primary (light)"}},"topShop":{"primary":{"default":{"v":"#dde3d0","t":"color","s":"css-var --slate-color-program-surface-top_shop-primary (light)"},"inverse":{"v":"#3e4023","t":"color","s":"css-var --slate-color-program-surface-top_shop-primary-inverse (light)"}},"secondary":{"v":"#91957b","t":"color","s":"css-var --slate-color-program-surface-top_shop-secondary (light)"}}},"text":{"fairePay":{"v":"#365cbb","t":"color","s":"css-var --slate-color-program-text-faire_pay (light)"},"faireSource":{"v":"#735b21","t":"color","s":"css-var --slate-color-program-text-faire_source (light)"},"insider":{"v":"#154548","t":"color","s":"css-var --slate-color-program-text-insider (light)"},"topShop":{"v":"#3e4023","t":"color","s":"css-var --slate-color-program-text-top_shop (light)"}}},"progress":{"bar":{"surface":{"default":{"v":"#dadada","t":"color","s":"css-var --slate-color-progress-bar-surface-default (light)"}}}},"surface":{"mask":{"v":"rgba(51, 51, 51, 0.5)","t":"color","s":"css-var --slate-color-surface-mask (light)"},"neutral":{"v":"#ffffff","t":"color","s":"css-var --slate-color-surface-neutral (light)"},"overlay":{"v":"rgba(51, 51, 51, 0.05)","t":"color","s":"css-var --slate-color-surface-overlay (light)"},"primary":{"default":{"v":"#ffffff","t":"color","s":"css-var --slate-color-surface-primary (light)"},"inverse":{"v":"#333333","t":"color","s":"css-var --slate-color-surface-primary-inverse (light)"}},"secondary":{"v":"#f7f7f7","t":"color","s":"css-var --slate-color-surface-secondary (light)"},"tertiary":{"v":"#f1f1f1","t":"color","s":"css-var --slate-color-surface-tertiary (light)"},"transparent":{"v":"rgba(51, 51, 51, 0)","t":"color","s":"css-var --slate-color-surface-transparent (light)"}},"tag":{"surface":{"active":{"v":"#dadada","t":"color","s":"css-var --slate-color-tag-surface-active (light)"},"default":{"v":"#f1f1f1","t":"color","s":"css-var --slate-color-tag-surface-default (light)"},"hover":{"v":"#dadada","t":"color","s":"css-var --slate-color-tag-surface-hover (light)"},"strong":{"v":"#474747","t":"color","s":"css-var --slate-color-tag-surface-strong (light)"}}},"text":{"accent":{"v":"#ff5dd9","t":"color","s":"css-var --slate-color-text-accent (light)"},"primary":{"default":{"v":"#333333","t":"color","s":"css-var --slate-color-text-primary (light)"},"inverse":{"v":"#ffffff","t":"color","s":"css-var --slate-color-text-primary-inverse (light)"}},"subdued":{"v":"#6c6a6a","t":"color","s":"css-var --slate-color-text-subdued (light)"}},"toggle":{"border":{"disabled":{"v":"#dadada","t":"color","s":"css-var --slate-color-toggle-border-disabled (light)"}},"surface":{"default":{"v":"#dadada","t":"color","s":"css-var --slate-color-toggle-surface-default (light)"},"disabled":{"v":"#f1f1f1","t":"color","s":"css-var --slate-color-toggle-surface-disabled (light)"},"inverse":{"v":"#000000","t":"color","s":"css-var --slate-color-toggle-surface-inverse (light)"},"subdued":{"v":"#ffffff","t":"color","s":"css-var --slate-color-toggle-surface-subdued (light)"}}},"fs":{"action":{"border":{"focusRing":{"v":"#275ec5","t":"color","s":"css-var --color-fs-action-border-focus_ring (light)"}}},"program":{"surface":{"faireSource":{"primary":{"inverse":{"v":"#735b21","t":"color","s":"css-var --color-fs-program-surface-faire_source-primary-inverse (light)"}}}}},"surface":{"primary":{"v":"#ffffff","t":"color","s":"css-var --color-fs-surface-primary (light)"},"secondary":{"v":"#f7f7f7","t":"color","s":"css-var --color-fs-surface-secondary (light)"}}},"onSurface":{"action":{"border":{"active":{"v":"#f7f7f7","t":"color","s":"css-var --slate-color-action-border-active declared under .fs-mode-on-surface = var(--slate-color-grey-200) (resolves via --slate-color-grey-200)"},"default":{"v":"#ffffff","t":"color","s":"css-var --slate-color-action-border-default declared under .fs-mode-on-surface = var(--slate-color-grey-100) (resolves via --slate-color-grey-100)"},"hover":{"v":"#f7f7f7","t":"color","s":"css-var --slate-color-action-border-hover declared under .fs-mode-on-surface = var(--slate-color-grey-200) (resolves via --slate-color-grey-200)"},"inverse":{"v":"#000000","t":"color","s":"css-var --slate-color-action-border-inverse declared under .fs-mode-on-surface = var(--slate-color-grey-1000) (resolves via --slate-color-grey-1000)"},"subdued":{"v":"#ffffff","t":"color","s":"css-var --slate-color-action-border-subdued declared under .fs-mode-on-surface = var(--slate-color-grey-100) (resolves via --slate-color-grey-100)"}},"icon":{"active":{"v":"#f7f7f7","t":"color","s":"css-var --slate-color-action-icon-active declared under .fs-mode-on-surface = var(--slate-color-grey-200) (resolves via --slate-color-grey-200)"},"default":{"v":"#ffffff","t":"color","s":"css-var --slate-color-action-icon-default declared under .fs-mode-on-surface = var(--slate-color-grey-100) (resolves via --slate-color-grey-100)"},"hover":{"v":"#f7f7f7","t":"color","s":"css-var --slate-color-action-icon-hover declared under .fs-mode-on-surface = var(--slate-color-grey-200) (resolves via --slate-color-grey-200)"},"inverse":{"v":"#333333","t":"color","s":"css-var --slate-color-action-icon-inverse declared under .fs-mode-on-surface = var(--slate-color-grey-900) (resolves via --slate-color-grey-900)"}},"surface":{"active":{"v":"#f7f7f7","t":"color","s":"css-var --slate-color-action-surface-active declared under .fs-mode-on-surface = var(--slate-color-grey-200) (resolves via --slate-color-grey-200)"},"default":{"v":"#ffffff","t":"color","s":"css-var --slate-color-action-surface-default declared under .fs-mode-on-surface = var(--slate-color-grey-100) (resolves via --slate-color-grey-100)"},"disabled":{"v":"#f1f1f1","t":"color","s":"css-var --slate-color-action-surface-disabled declared under .fs-mode-on-surface = var(--slate-color-grey-300) (resolves via --slate-color-grey-300)"},"hover":{"v":"#f7f7f7","t":"color","s":"css-var --slate-color-action-surface-hover declared under .fs-mode-on-surface = var(--slate-color-grey-200) (resolves via --slate-color-grey-200)"},"inverse":{"v":"rgba(51, 51, 51, 0)","t":"color","s":"css-var --slate-color-action-surface-inverse declared under .fs-mode-on-surface = var(--slate-color-transparent-grey-0) (resolves via --slate-color-transparent-grey-0)"},"neutral":{"default":{"v":"#ffffff","t":"color","s":"css-var --slate-color-action-surface-neutral declared under .fs-mode-on-surface = var(--slate-color-grey-100) (resolves via --slate-color-grey-100)"},"active":{"v":"#ffffff","t":"color","s":"css-var --slate-color-action-surface-neutral-active declared under .fs-mode-on-surface = var(--slate-color-grey-100) (resolves via --slate-color-grey-100)"},"hover":{"v":"#ffffff","t":"color","s":"css-var --slate-color-action-surface-neutral-hover declared under .fs-mode-on-surface = var(--slate-color-grey-100) (resolves via --slate-color-grey-100)"}}},"text":{"active":{"v":"#f7f7f7","t":"color","s":"css-var --slate-color-action-text-active declared under .fs-mode-on-surface = var(--slate-color-grey-200) (resolves via --slate-color-grey-200)"},"default":{"v":"#ffffff","t":"color","s":"css-var --slate-color-action-text-default declared under .fs-mode-on-surface = var(--slate-color-grey-100) (resolves via --slate-color-grey-100)"},"hover":{"v":"#f7f7f7","t":"color","s":"css-var --slate-color-action-text-hover declared under .fs-mode-on-surface = var(--slate-color-grey-200) (resolves via --slate-color-grey-200)"},"inverse":{"v":"#333333","t":"color","s":"css-var --slate-color-action-text-inverse declared under .fs-mode-on-surface = var(--slate-color-grey-900) (resolves via --slate-color-grey-900)"}}},"button":{"border":{"secondary":{"default":{"v":"#ffffff","t":"color","s":"css-var --slate-color-button-border-secondary declared under .fs-mode-on-surface = var(--slate-color-grey-100) (resolves via --slate-color-grey-100)"},"active":{"v":"#f7f7f7","t":"color","s":"css-var --slate-color-button-border-secondary-active declared under .fs-mode-on-surface = var(--bsr-on-surface-button-border-secondary-active,var(--slate-color-grey-200)) (resolves via --bsr-on-surface-button-border-secondary-active, --slate-color-grey-200)"},"hover":{"v":"#f7f7f7","t":"color","s":"css-var --slate-color-button-border-secondary-hover declared under .fs-mode-on-surface = var(--bsr-on-surface-button-border-secondary-hover,var(--slate-color-grey-200)) (resolves via --bsr-on-surface-button-border-secondary-hover, --slate-color-grey-200)"}}},"surface":{"secondary":{"default":{"v":"rgba(51, 51, 51, 0)","t":"color","s":"css-var --slate-color-button-surface-secondary declared under .fs-mode-on-surface = var(--slate-color-transparent-grey-0) (resolves via --slate-color-transparent-grey-0)"},"active":{"v":"#f1f1f1","t":"color","s":"css-var --slate-color-button-surface-secondary-active declared under .fs-mode-on-surface = var(--bsr-on-surface-button-surface-secondary-active,var(--slate-color-grey-300)) (resolves via --bsr-on-surface-button-surface-secondary-active, --slate-color-grey-300)"},"hover":{"v":"#f1f1f1","t":"color","s":"css-var --slate-color-button-surface-secondary-hover declared under .fs-mode-on-surface = var(--bsr-on-surface-button-surface-secondary-hover,var(--slate-color-grey-300)) (resolves via --bsr-on-surface-button-surface-secondary-hover, --slate-color-grey-300)"}},"tertiary":{"default":{"v":"rgba(51, 51, 51, 0)","t":"color","s":"css-var --slate-color-button-surface-tertiary declared under .fs-mode-on-surface = var(--slate-color-transparent-grey-0) (resolves via --slate-color-transparent-grey-0)"},"active":{"v":"#f1f1f1","t":"color","s":"css-var --slate-color-button-surface-tertiary-active declared under .fs-mode-on-surface = var(--bsr-on-surface-button-surface-tertiary-active,var(--slate-color-grey-300)) (resolves via --bsr-on-surface-button-surface-tertiary-active, --slate-color-grey-300)"},"hover":{"v":"#f1f1f1","t":"color","s":"css-var --slate-color-button-surface-tertiary-hover declared under .fs-mode-on-surface = var(--bsr-on-surface-button-surface-tertiary-hover,var(--slate-color-grey-300)) (resolves via --bsr-on-surface-button-surface-tertiary-hover, --slate-color-grey-300)"}}}},"progress":{"bar":{"surface":{"default":{"v":"#dadada","t":"color","s":"css-var --slate-color-progress-bar-surface-default declared under .fs-mode-on-surface = var(--bsr-on-surface-progress-bar-surface-default,var(--slate-color-grey-400)) (resolves via --bsr-on-surface-progress-bar-surface-default, --slate-color-grey-400)"}}}},"tag":{"surface":{"active":{"v":"#dadada","t":"color","s":"css-var --slate-color-tag-surface-active declared under .fs-mode-on-surface = var(--bsr-on-surface-tag-surface-active,var(--slate-color-grey-400)) (resolves via --bsr-on-surface-tag-surface-active, --slate-color-grey-400)"},"default":{"v":"#f1f1f1","t":"color","s":"css-var --slate-color-tag-surface-default declared under .fs-mode-on-surface = var(--bsr-on-surface-tag-surface-default,var(--slate-color-grey-300)) (resolves via --bsr-on-surface-tag-surface-default, --slate-color-grey-300)"},"hover":{"v":"#dadada","t":"color","s":"css-var --slate-color-tag-surface-hover declared under .fs-mode-on-surface = var(--bsr-on-surface-tag-surface-hover,var(--slate-color-grey-400)) (resolves via --bsr-on-surface-tag-surface-hover, --slate-color-grey-400)"},"strong":{"v":"#474747","t":"color","s":"css-var --slate-color-tag-surface-strong declared under .fs-mode-on-surface = var(--bsr-on-surface-tag-surface-strong,var(--slate-color-grey-800)) (resolves via --bsr-on-surface-tag-surface-strong, --slate-color-grey-800)"}}},"toggle":{"border":{"disabled":{"v":"#dadada","t":"color","s":"css-var --slate-color-toggle-border-disabled declared under .fs-mode-on-surface = var(--slate-color-grey-400) (resolves via --slate-color-grey-400)"}},"surface":{"default":{"v":"#dadada","t":"color","s":"css-var --slate-color-toggle-surface-default declared under .fs-mode-on-surface = var(--slate-color-grey-400) (resolves via --slate-color-grey-400)"},"disabled":{"v":"#f1f1f1","t":"color","s":"css-var --slate-color-toggle-surface-disabled declared under .fs-mode-on-surface = var(--slate-color-grey-300) (resolves via --slate-color-grey-300)"},"inverse":{"v":"#f7f7f7","t":"color","s":"css-var --slate-color-toggle-surface-inverse declared under .fs-mode-on-surface = var(--bsr-on-surface-toggle-surface-inverse,var(--slate-color-grey-200)) (resolves via --bsr-on-surface-toggle-surface-inverse, --slate-color-grey-200)"},"subdued":{"v":"rgba(51, 51, 51, 0)","t":"color","s":"css-var --slate-color-toggle-surface-subdued declared under .fs-mode-on-surface = var(--bsr-on-surface-toggle-surface-subdued,var(--slate-color-transparent-grey-0)) (resolves via --bsr-on-surface-toggle-surface-subdued, --slate-color-transparent-grey-0)"}}}}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles (the only theme faire.com paints)'], ['dark', 'dark roles']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${label}</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.dimension || {}, 'dimension.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.ease || {}, 'ease.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.elevation || {}, 'elevation.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.aspect || {}, 'aspect.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).animation || {}, 'motion.animation.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
+    const v = t.v || {};
+    const px = parseFloat(v.fontSize);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — Find your next bestseller</span><span class="tv">${esc(v.fontFamily)} ${esc(v.fontSize)}/${esc(v.lineHeight)} ${esc(v.fontWeight)}${v.letterSpacing && v.letterSpacing !== 'normal' ? ' ls ' + esc(v.letterSpacing) : ''}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px;font-family:var(--sg-sans)">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts" style="font-family:var(--sg-sans)">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-family:var(--sg-sans);font-weight:${esc(t.v)}">${esc(n)} — Faire</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).letterSpacing || {}, 'font.letterSpacing.')) h += `<div class="tr"><span class="ts" style="font-family:var(--sg-sans)">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).utilitySize || {}, 'font.utilitySize.')) h += `<div class="tr"><span class="ts" style="font-family:var(--sg-sans)">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).legacySize || {}, 'font.legacySize.')) h += `<div class="tr"><span class="ts" style="font-family:var(--sg-sans)">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts" style="font-family:var(--sg-sans)">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).face || {}, 'font.face.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

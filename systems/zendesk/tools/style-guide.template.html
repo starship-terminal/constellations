@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zendesk style guide</title>
+<style>
+:root {
+  --sg-sans: "Vanilla Sans", Arial, sans-serif;
+  /*CORE*/
+  /*LIGHT*/
+}
+[data-mode="dark"] {
+  /*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--surface-page); color: var(--text-primary); font: 400 16px/1.45 var(--sg-sans); }
+header.top { position: sticky; top: 0; background: var(--surface-page); border-bottom: 1px solid var(--border-default); z-index: 2; }
+header.top .in { max-width: 1100px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; gap: 16px; }
+h1 { font: 500 22px/1.2 var(--sg-sans); margin: 0; }
+nav a { color: var(--text-primary); margin-right: 14px; font-size: 14px; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; }
+section { margin: 40px 0; }
+h2 { font: 500 26px/1.25 var(--sg-sans); margin: 0 0 12px; }
+p { max-width: 72ch; }
+.swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 64px; border-radius: 12px; border: 1px solid var(--border-default); }
+.sw b, .sw small { display: block; font-size: 12px; font-weight: 500; }
+.sw small { color: var(--text-muted); font-weight: 400; }
+.hero {
+  background: var(--surface-hero); color: var(--text-on-hero); border-radius: 16px; padding: 40px;
+}
+.hero .eye { font: 700 14px/18.2px var(--sg-sans); letter-spacing: 0.75px; text-transform: uppercase; color: var(--text-on-hero); }
+.hero h3 { font: 500 68px/71.4px var(--sg-sans); margin: 8px 0; color: var(--text-on-hero); }
+.hero p { color: var(--text-on-hero-body); }
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 16px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: var(--size-control); padding: 10px 20px; border-radius: var(--radius-button);
+  background: var(--accent-default); color: var(--text-primary); font: 600 18px/28px var(--sg-sans); border: 0;
+}
+.btn.on-hero { color: var(--text-inverse); }
+.btn.quiet { background: transparent; box-shadow: inset 0 0 0 1px var(--border-strong); }
+.field {
+  height: var(--size-control); border-radius: var(--radius-field); border: 0;
+  box-shadow: inset 0 0 0 1px var(--border-default); padding: 12px; width: 280px;
+  font: 400 15px/21px var(--sg-sans); color: var(--text-primary); background: var(--surface-page);
+}
+.field.raised { background: var(--surface-raised); box-shadow: inset 0 0 0 1px var(--border-strong); }
+.field.error { box-shadow: inset 0 0 0 2px var(--status-danger); }
+.card {
+  background: var(--surface-raised); border-radius: var(--radius-card); padding: 24px; width: 260px;
+}
+.badge {
+  display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: var(--radius-badge);
+  background: var(--component-badge-background); color: var(--component-badge-text);
+  font: 700 14px/14px var(--sg-sans); letter-spacing: 0.75px; text-transform: uppercase;
+}
+.forest { background: var(--surface-forest); color: var(--text-on-hero); border-radius: 16px; padding: 24px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border-default); vertical-align: top; }
+code { font-family: ui-monospace, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<header class="top"><div class="in">
+  <h1>Zendesk style guide</h1>
+  <nav>
+    <a href="#colour">Colour</a><a href="#type">Type</a><a href="#components">Components</a>
+  </nav>
+</div></header>
+<div class="wrap">
+<section id="about">
+  <h2>Zendesk, measured</h2>
+  <p>Every colour, radius and size on this page comes from <code>tokens.json</code>, read from the public signed-out site on 2026-11-19. Vanilla Sans is Zendesk's face and is not loaded here. The fallback is Arial, which is the stack the site itself declares. The real pages are in <code>screenshots/</code>.</p>
+</section>
+<section id="colour">
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+</section>
+<section id="type">
+  <h2>Type</h2>
+  <div class="hero">
+    <div class="eye">AI-powered customer service platform</div>
+    <h3>Build for better outcomes</h3>
+    <p>Go beyond answers. The display is 68px / 500. The eyebrow is 14px / 700, tracked 0.75px.</p>
+  </div>
+</section>
+<section id="components">
+  <h2>Components</h2>
+  <div class="hero">
+    <div class="row">
+      <input class="field" placeholder="Enter work email" aria-label="Work email">
+      <button class="btn on-hero">Try it for free</button>
+    </div>
+  </div>
+  <div class="row" style="margin-top:24px">
+    <button class="btn">Sign in</button>
+    <button class="btn quiet">New here? Start free trial</button>
+    <span class="badge">Most popular</span>
+  </div>
+  <div class="row">
+    <input class="field raised" placeholder="yoursubdomain" aria-label="Subdomain">
+    <input class="field error" placeholder="name@company.com" aria-label="Work email in error">
+  </div>
+  <div class="card">
+    <b>Support Team</b>
+    <p style="font:600 20px/28px var(--sg-sans);margin:8px 0">US$ 19</p>
+    <button class="btn" style="height:43px;font-size:16px">Buy now</button>
+  </div>
+  <div class="forest" style="margin-top:24px">
+    <p style="margin:0">Report band, forest green rgb(32, 53, 36).</p>
+  </div>
+</section>
+</div>
+<script>
+const TOKENS = /*TOKENS*/null;
+const roles = [
+  ["page", "surface-page"],
+  ["hero", "surface-hero"],
+  ["forest", "surface-forest"],
+  ["raised", "surface-raised"],
+  ["text", "text-primary"],
+  ["on hero", "text-on-hero"],
+  ["accent", "accent-default"],
+  ["accent text", "accent-text"],
+  ["border", "border-default"],
+  ["danger", "status-danger"],
+];
+const host = document.getElementById("swatches");
+for (const [name, prop] of roles) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  const dot = document.createElement("i");
+  dot.style.background = `var(--${prop})`;
+  const label = document.createElement("b");
+  label.textContent = name;
+  const code = document.createElement("small");
+  code.textContent = prop;
+  el.append(dot, label, code);
+  host.appendChild(el);
+}
+</script>
+</body>
+</html>

@@ -10,6 +10,7 @@ import {
   tokenResolver,
   type TokenLeaf,
 } from "@/server/sources/tokens";
+import { parseJson, pyJsonStringify } from "@/server/sources/pyjson";
 import type { LibraryDetail } from "@/contracts/library";
 
 export async function allowedReference(
@@ -84,7 +85,7 @@ export async function packageTokens(
   const document = await readPackageDocument(referenceId, "tokens.json");
   if (!document)
     throw new Error("No readable tokens.json exists for this package.");
-  const tokens = JSON.parse(document.text) as Raw;
+  const tokens = parseJson(document.text) as Raw;
   const all = tokenLeaves(tokens),
     resolver = tokenResolver(all);
   // Theme sets the catalog names. A `core` token whose alias only resolves
@@ -120,6 +121,8 @@ export async function packageTokens(
         ).length,
       })),
       note: "Choose any group or nested dotted token path. Values preserve their recorded evidence.",
+      text: undefined,
+      tokens: undefined,
     };
   if (
     !all.some(
@@ -140,7 +143,7 @@ export async function packageTokens(
       rawValue: token.value,
       ...resolveToken(token),
     };
-    const size = JSON.stringify(resolved).length;
+    const size = pyJsonStringify(resolved).length;
     if (characters + size > 24000) {
       if (!page.length)
         page.push({
@@ -152,7 +155,7 @@ export async function packageTokens(
     page.push(resolved);
     characters += size;
   }
-  return {
+  const result = {
     kind: "package-tokens",
     referenceId,
     group,
@@ -163,6 +166,10 @@ export async function packageTokens(
     nextOffset:
       offset + page.length < selected.length ? offset + page.length : null,
   };
+  // Saved conversations and the stream are plain JSON, where 1.0 is 1. The
+  // page's Python-style text travels with it so a replay still shows the
+  // model 1.0.
+  return { ...result, text: pyJsonStringify(result) };
 }
 export async function handoffPrompt(
   referenceId: string,
@@ -173,7 +180,7 @@ export async function handoffPrompt(
   const sourcePath = `${reference.source}/${reference.slug}`;
   const measured = reference.source === "systems";
   const prompt =
-    `Use the ${reference.name} reference from my private design-systems library${appDescription ? ` for ${appDescription}` : ""}.\n\n` +
+    `Use the ${reference.name} reference from my private Constellations library${appDescription ? ` for ${appDescription}` : ""}.\n\n` +
     (measured
       ? `Read ${sourcePath}/README.md in full first, including capture limits and Health. Take values from ${sourcePath}/tokens.json and preserve their per-value evidence labels. Resolve aliases and use the recorded theme groups. Read components.md and patterns.md when available. Use screenshots and component crops for layout and proportion only. ${sourcePath}/style-guide.html renders the recorded tokens.\n\n`
       : `Read ${sourcePath}/DESIGN.md and design-system.json. This Refero reference contains third-party interpreted values, not measurements. Treat it as inspiration and verify every value against a measured package or the target app's own design system.\n\n`) +

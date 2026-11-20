@@ -1,0 +1,25 @@
+{
+  "name": "home",
+  "url": "https://www.rox.com/",
+  "title": "Rox | Revenue Agents for the Global 2000",
+  "host": "www.rox.com",
+  "requested": {
+    "w": 1440,
+    "h": 900
+  },
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 2,
+  "vv": {
+    "w": 1440,
+    "h": 900,
+    "scale": 1
+  },
+  "capturedAt": "2026-11-18T18:04:42.690Z",
+  "status": 200,
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "note": "Viewport screenshot, not full page. Quantized to sRGB 256 colours. Headless Playwright after the live preview browser confirmed the host and returned no screenshot frames."
+}

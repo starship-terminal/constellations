@@ -1,0 +1,73 @@
+{
+  "terms": {
+    "url": "https://wynde.io/terms-of-service",
+    "title": "Wynde",
+    "scrollHeight": 8672,
+    "heading": {
+      "text": "Terms of Service",
+      "font": "Inter",
+      "size": "32px",
+      "weight": "700",
+      "lineHeight": "64px",
+      "color": "rgb(0, 0, 0)"
+    },
+    "body": {
+      "size": "18px",
+      "weight": "400",
+      "lineHeight": "36px",
+      "color": "rgb(0, 0, 0)",
+      "width": 880,
+      "x": 145
+    },
+    "updated": "16 Feb 2024",
+    "inputs": 0
+  },
+  "privacy": {
+    "url": "https://wynde.io/privacy-policy",
+    "scrollHeight": 6044,
+    "heading": {
+      "text": "Privacy Policy",
+      "size": "32px",
+      "weight": "700",
+      "lineHeight": "64px",
+      "color": "rgb(0, 0, 0)",
+      "font": "Inter"
+    },
+    "updated": "16 Feb 2024",
+    "inputs": 0
+  },
+  "notFound": {
+    "url": "https://wynde.io/this-page-does-not-exist-capture",
+    "title": "Page Not Found | Framer",
+    "note": "Framer's hosted empty state, not a Wynde-designed 404. Recorded as a boundary, not as Wynde tokens.",
+    "bodyBackground": "rgb(17, 17, 17)",
+    "bodyColor": "rgb(153, 153, 153)",
+    "font": "Inter Variable UI",
+    "heading": {
+      "text": "Page not found",
+      "size": "12px",
+      "weight": "550",
+      "lineHeight": "12px",
+      "color": "rgb(255, 255, 255)"
+    },
+    "message": {
+      "text": "This page doesn\u2019t exist or has moved.",
+      "size": "12px",
+      "weight": "450",
+      "lineHeight": "16.8px",
+      "color": "rgb(153, 153, 153)"
+    },
+    "link": {
+      "text": "Back to home",
+      "href": "/",
+      "backgroundColor": "rgb(31, 31, 31)",
+      "color": "rgb(255, 255, 255)",
+      "padding": "0px 10px",
+      "height": 30,
+      "width": 98,
+      "borderRadius": "8px",
+      "fontSize": "12px",
+      "fontWeight": "450"
+    }
+  }
+}

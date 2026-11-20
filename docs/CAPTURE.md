@@ -34,7 +34,8 @@ how it was captured. The `extract-style` skill in the quiver-hub
    alternate theme or interaction rendered from a copy as a reconstruction;
    its filename does not prove the live app displayed it. Record approval for
    account appearance changes, reuse approval already given, and restore and
-   verify the original theme after capture.
+   verify the original theme after capture. Read the product's motion with
+   `tools/capture/motion-probe.mjs` ([Motion](#motion)).
 5. **Shrink the screenshots.** `quantize.py` converts to sRGB 256-colour
    PNGs (61 MB became 15 MB on Duolingo). Flat UI colours survive exactly.
 6. **Build.** `build_tokens.py`, `build_style_guide.py`,
@@ -54,7 +55,7 @@ how it was captured. The `extract-style` skill in the quiver-hub
    reviewed grades against the platform rubric as described in [AGENTS.md](../AGENTS.md),
    then rerun the checks after writing those grades. This review is not
    optional: the package is not done until `tools/grade.py --write --review`
-   has written its grades, and every criterion that cannot grade `yes`
+   has written its grades, and every criterion that cannot grade `meets`
    carries a written justification in the grades file.
 9. **Clean up when it merges.** `git worktree remove` the capture worktree,
    delete `~/.design-systems/<slug>/`, and delete the merged branch.
@@ -76,7 +77,7 @@ interpreter `PYTHON`/`python3` resolves to.
 
 | Dependency | Needed by |
 |---|---|
-| Pillow (`pillow`) | `capture/quantize.py` and its per-package copies, `crops.py`, `srgb.py`, `shot.py`, `store.py`, the inline `python3 -c "from PIL import …"` quantize calls in the `.mjs` scripts, `tools/make_icons.py`, `tools/redact_images.py`, linear's `build_guide.py`/`build_library.py`, polaris's `build_vectors.py`, and `tools/catalog.py` gallery thumbnails (macOS `sips` is used instead when present; with neither, thumbs fall back to the full-size screenshot and `build` warns once) |
+| Pillow (`pillow`) | `capture/quantize.py` and its per-package copies, `crops.py`, the package-only `srgb.py` (brilliant), `shot.py` (duolingo) and `store.py` (researchrabbit), the inline `python3 -c "from PIL import …"` quantize calls in the `.mjs` scripts, `tools/make_icons.py`, `tools/redact_images.py`, linear's `build_guide.py`/`build_library.py`, polaris's `build_vectors.py`, and `tools/catalog.py` gallery thumbnails (macOS `sips` is used instead when present; with neither, thumbs fall back to the full-size screenshot and `build` warns once) |
 | numpy (`numpy`) | `tools/redact_images.py` (also needs `tesseract` on PATH) |
 | markdown (`markdown`) | `tools/site.py`, linear's `build_guide.py` |
 | fontTools + Brotli (`fonttools[woff]`) | polaris's `build_vectors.py` (text measurement; widths drift across versions; Brotli decodes `inter.woff2` to TTF) |
@@ -131,6 +132,16 @@ the capture mode and scale. Live-browser captures should record the same
 fields through their supported APIs. A passing dimension check leaves visual
 review pending and does not establish a CSS-to-PNG crop transform.
 
+A signed-in pass is not finished when the first post-login page loads.
+Before the last screenshot, write `login-review.offered` from the
+signed-in navigation, the settings area, and the create or empty-state
+flow. Open every item those three areas show. Record each opened screen
+in `login-review.screens`, with the file that shows it, before setting
+`login-extracted` to `done`. A review of one screenshot fails the check,
+and so does a package screenshot the review never names. The check is
+`python3 tools/login_extracted.py --check`, and the states are in
+[HANDOVER.md](HANDOVER.md).
+
 Open every final screenshot before ticking its coverage row. For a popup,
 confirm the whole popup is inside the image and its entrance animation has
 finished; recapture blank or clipped images. Keep the screenshot and CSS
@@ -140,6 +151,66 @@ Public marketing pages may contain animated dashboard demonstrations.
 Label those as public demos, with their URL and capture time. Use the real
 signed-in dashboard for dashboard component and state coverage; a demo only
 covers the public page and the demo state actually shown.
+
+### Motion
+
+A package records how the product moves as tokens, and whether it honours
+`prefers-reduced-motion` ([decision](decisions/0001-motion-tokens.md)). Screenshots
+cannot show either, so this is a reading, not a shot. Run
+`tools/capture/motion-probe.mjs` on the same pages the other readings use:
+
+```bash
+PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs SNAPS=<dir of page copies> node tools/capture/motion-probe.mjs
+PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs node tools/capture/motion-probe.mjs --urls <url>[,<url>...]
+```
+
+It writes `raw/motion.json`. Per page it records:
+
+| Reading | What it holds |
+|---|---|
+| Motion per element | Every element and `::before`/`::after` that transitions or animates, read from computed `transition-property`, `-duration`, `-timing-function`, `-delay` and `animation-name`, `-duration`, `-timing-function`, `-delay`, `-iteration-count`, `-direction`, `-fill-mode`, plus `scroll-behavior: smooth`. Durations are in ms, easings in one spelling (`cubic-bezier(0.4, 0, 0.2, 1)`), and elements with the same motion share one group with up to three example nodes |
+| Reduced-motion pass | The same elements read again after `page.emulateMedia({ reducedMotion: 'reduce' })`. Each transition and animation is `removed` (at or under 1 ms, the usual `0.01ms` reset), `shortened`, `kept` or `changed`; each element is `removed`, `reduced`, `kept` or `partial`. The page verdict is `honours`, `partial`, `ignores` or `no-motion`, and `loops` names the animations that still run forever under reduce. The page's own `matchMedia('(prefers-reduced-motion: reduce)')` answer is stored for both passes: a `false` under reduce means the emulation did not take, so discard the reading |
+| Declared motion | The transitions and animations the stylesheets declare, by selector and `@media`/`@supports` context. This is where a `:hover` or state rule shows, which a computed read at rest cannot see; a value still holding `var()` is flagged |
+| `@keyframes` | Each name, its steps, and the properties each step sets |
+| Authored reduce rules | Every rule under a `prefers-reduced-motion` media query (`reduce` and `no-preference` alike; the media text says which), with its declarations. `@import`ed sheets and a sheet's own `media` attribute are followed. Selectors and conditions are cleaned of URLs and query strings |
+| Motion custom properties | Each custom property whose name says duration, easing, motion, transition, animation, delay and so on, or whose value is a time or an easing, with its declared and resolved value on the root |
+
+Then `build_tokens.py` calls `motion.py`, which writes the `core.motion` group
+into `tokens.json`: `duration`, `easing`, `transition`, `animation`, and
+`$extensions` for the reduce verdict, which properties transition, and keyframes
+nothing used. Durations and easings are named after the product's own custom
+properties when it has them, else by value (`200ms`, `ease-out`,
+`bezier-0_4-0-0_2-1`). Every token carries an evidence label
+([EVIDENCE.md](EVIDENCE.md)): Measured for a computed value, a rule or a custom
+property; Derived for a keyword expanded to its control points. An easing that
+`cubicBezier` cannot hold (`steps()`, a `linear()` spring) goes to
+`notTokenised`.
+
+Rules for the reading:
+
+- Run it on the pages where the product has its motion (the app shell, a dialog
+  open, a list with rows), not only the landing page. It reads what is in the
+  DOM at that moment; an element that is not rendered is not read. For a state
+  that only exists after a click, take a copy in that state (signed-in route) or
+  run the probe again from a script that opens it.
+- A computed read sees the state at rest. Read the sheets' own rules too (the probe
+  does) before saying a product has no hover motion.
+- JavaScript-driven motion (a spring library, `element.animate`, canvas) leaves no
+  computed transition. Say so in the README's coverage table as Not captured, with
+  the reason; do not infer a duration from a video or a screenshot.
+- A page's reading says when it is incomplete: `capped` (more moving elements than the cap, 6000; the
+  rest were read in neither pass, so none is taken for stopped) and `sheetsTruncated` (a rule or custom
+  property list cut at 400). Both reach `core.motion.$extensions.incomplete`. Only a real reduction
+  counts as honouring: a longer duration, a replacement animation or smooth scrolling that appears under
+  reduce is `increased`, and an animation set to `paused` counts as stopped. Pages are keyed `page-1`,
+  `page-2`... in `--urls` order (the sanitised URL is inside each record); a run that captures no page
+  exits 1 and leaves the earlier `raw/motion.json` alone.
+- A reduce verdict of `ignores` is a finding, not a failed capture: the product does
+  not honour the setting. Record it; do not tidy it away.
+- Raw values pass through `noUrl` before they are written, like every other
+  computed value: an animation name or custom property can hold a `url()`.
+- Native iOS and desktop routes read screenshots and have no computed styles: record
+  motion as Not captured, unless the app is an Electron one the probe can open.
 
 ## Native iOS apps (iPhone Mirroring)
 
@@ -169,9 +240,10 @@ package was made this way and its README shows the evidence labels to use.
    sizes, padding and radii (exact for sizes, Derived for radii). Font
    family is usually not determinable; mark it Not captured.
 5. **Mask what [AGENTS.md](../AGENTS.md) still bans before anything enters
-   the package.** Names, avatars, chat text and published content may stay;
-   a password, a code, a phone number, an address or another person's
-   email may not. A native capture is pixels, so `scan` cannot see any of it.
+   the package.** The owner's own profile and chat text and the content
+   the product publishes may stay; another user's name, username or
+   avatar, a password, a code, a phone number, an address or another
+   person's email may not. A native capture is pixels, so `scan` cannot see any of it.
    Look at every capture and paint those regions over with `sample.py mask
    shot.png X,Y,W,H ...`, which fills each box with the surface colour
    around it. Sample values first, mask second, then quantise.
@@ -327,6 +399,20 @@ package with a rules file needs no `--rules` to pass. `--rules <file>` loads
 that file instead. `apply` always needs `--rules`, because it edits images in
 place.
 
+`apply` changes only the pixels inside the regions it paints, so the image
+stays the evidence it was apart from the mask. A file with nothing to paint is
+not rewritten. An edited PNG keeps its mode, its palette and tRNS, and every
+other chunk (colour profile, pHYs, text) byte for byte. A palette image keeps
+every untouched pixel's index and paints with the nearest existing palette
+entry, alpha included. The palette is never grown or reordered, so when it has
+no entry close to a fill colour, `apply` uses the nearest one and prints how
+many pixels that hit; look at those images. RGB, RGBA and grey images are
+painted in their own mode, and alpha inside a region is filled like the
+colour. Before replacing a file, `apply` decodes the written copy and stops
+with the file unchanged if any pixel or alpha value outside the painted
+regions differs. It will not edit a JPEG (lossy), a 16-bit PNG or an animated
+PNG: it names each one, writes nothing to it and exits 1.
+
 A rules file (see [manus.json](../tools/redact-rules/manus.json) and
 [notebooklm.json](../tools/redact-rules/notebooklm.json); duolingo.json and
 coursera.json show the net-first style) lists pixel
@@ -339,16 +425,20 @@ images. Look at a contact sheet of every family after an `apply`: OCR does not
 read text that is dimmed behind a modal unless the rules say to boost it, and a
 pattern file only knows the strings it was given.
 
-Follow the current policy in [AGENTS.md](../AGENTS.md): other people's names
-and profile pictures may stay, but their email and other contact details may
-not. Add only banned literals to a local pattern file; leave out anything
+Follow the current policy in [AGENTS.md](../AGENTS.md): other people's names,
+usernames and avatars are masked, and so are their email and other contact
+details. OCR finds a name only when a pattern file lists it and never sees an
+avatar, so give each one a rectangle. Add only banned literals to a local pattern file; leave out anything
 that is also a UI word or a number (a gem total, the product's own name), or
 the net paints it everywhere. Text typed
 into a focused input is not read by OCR, so give it a rectangle. A `rows` rectangle
 whose right edge touches a coloured button smears that colour across the fill; end
 it a few pixels short. A pattern that matches a logo word next to a heading is
 reported as spanning lines; if it is a false positive, list the image under
-`ocr.wrap_ignore` and `check --rules` stops flagging it.
+`ocr.wrap_ignore` and `check --rules` stops flagging it. `check` and `apply`
+refuse a rules file holding a key at a level that never reads it (a top-level
+`wrap_ignore`, an `ocr.families`) or a key they do not know; start a note's
+key with `_`.
 
 ## Traps that cost time before
 
@@ -394,9 +484,10 @@ Hygiene:
 - Real DTCG types: a `dimension` is one px or rem length.
 - Write new captures first and prune old outputs only after a complete run.
 - Follow [AGENTS.md](../AGENTS.md) when deciding what to mask. The owner's
-  own profile, chat and document titles may stay; mask credentials and the
-  personally identifiable data listed there, including other people's
-  contact details. Keep raw page copies and redaction lists outside git.
+  own profile, chat and document titles may stay; mask other people's
+  names, usernames and avatars, credentials, and the personally
+  identifiable data listed there, including other people's contact
+  details. Keep raw page copies and redaction lists outside git.
 
 ## A quicker, shallower path
 

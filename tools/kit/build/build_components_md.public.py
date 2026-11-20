@@ -14,11 +14,20 @@ Run from anywhere: python3 tools/build_components_md.py
 import json, os, re
 from pathlib import Path
 
+# PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+# for it. While this is None the script stops: the kit's copy is Gauth's example and would
+# write Gauth's values. KIT_EXAMPLE=1 runs the example as it is.
+ADAPTED_FOR = None
+if ADAPTED_FOR is None and not os.environ.get("KIT_EXAMPLE"):
+    raise SystemExit("build_components_md.public.py is the kit's Gauth example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR")
+
 ROOT = Path(__file__).resolve().parent.parent
 os.chdir(ROOT)
 J = json.load(open("raw/components-computed.json"))
 C = J["components"]
-LAYOUT = json.load(open("raw/layout.json"))
+# raw/layout.json is optional: the grid table below reads it when a public layout reader wrote one
+# (keyed page@width, with grids and a main box); the kit ships no such reader.
+LAYOUT = json.load(open("raw/layout.json")) if Path("raw/layout.json").exists() else {}
 T = json.load(open("tokens.json"))
 
 # --------------------------------------------------------------------------- colours and tokens
@@ -79,6 +88,18 @@ def num(x):
 def font(fz, lh, fw, f):
     lh = lh.replace("px", "") if lh != "normal" else "normal"
     return f"{fam(f)} {num(fz.replace('px', ''))}/{num(lh)} {fw}"
+
+
+def focus_not_captured(v):
+    """A state whose reading is not what its name says: a skipped one, or a focus-visible reading
+    taken where keyboard focus never landed (kbFocus returned "focus failed") or where the element
+    took focus but did not match :focus-visible. Its style is the element at rest, so it is left out
+    of every table and tally and listed as "focus could not be captured"."""
+    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
+
+
+def measured(v):
+    return "style" in v and not focus_not_captured(v)
 
 
 def props(v):
@@ -149,7 +170,7 @@ ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow",
 
 
 def state_rows(c):
-    states = [s for s in c["states"] if "style" in c["states"][s]]
+    states = [s for s in c["states"] if measured(c["states"][s])]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -178,7 +199,7 @@ def fmt(d):
 
 
 def child_layers(c):
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if not st or not st.get("paint"):
         return None
     s = st["style"]
@@ -275,7 +296,7 @@ W("How to read an entry:")
 W()
 W("- A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.")
 W("- The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example \"default (same: focus-visible)\". When the root paints nothing, \"Child layers\" names the first nodes inside it that do.")
-W(f"- Crops are images of the component read from the live page, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x). Screenshots are in [screenshots/](screenshots).")
+W(f"- Crops are images of the component read from the live page, in [components/crops/](components/crops) ({n_crops} files, named `{{component}}-{{state}}.png`, at 2x, or halved to 1x when wider than 1600 px or over 1.2 megapixels). Screenshots are in [screenshots/](screenshots).")
 W()
 W("## Discovery list")
 W()
@@ -314,17 +335,19 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
-foc = []
+foc, unfocused = [], []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
-    if not st or "style" not in st:
+    if st and focus_not_captured(st):
+        unfocused.append(f"`{k}`")
+    if not st or not measured(st):
         continue
     s = st["style"]
     ring = s["outlineStyle"] != "none" and float(s["outlineWidth"].replace("px", "")) > 0
     foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else None))
 with_ring = [f"`{k}` ({r})" for k, r in foc if r]
 without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}. The Upgrade and Sign in buttons in the top bar are a `div` and a `span` and cannot take focus at all.")
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} draw a ring: {', '.join(with_ring)}. The other {len(without)} draw none, so a keyboard user sees no change: {', '.join(without)}.{f" Focus could not be captured on {len(unfocused)} more (keyboard focus never landed on them, so their readings are left out): {', '.join(unfocused)}." if unfocused else ""} The Upgrade and Sign in buttons in the top bar are a `div` and a `span` and cannot take focus at all.")
 W()
 W("**Pressed.** Gauth's primary buttons shrink when pressed instead of changing colour much: Create, Start, Create Course and the Astryx buttons scale to 0.98, the math player's round buttons to 0.94, the promo button to 0.99. Cards deepen their shadow on hover and keep it when pressed.")
 W()
@@ -335,7 +358,7 @@ W("|---|---|---|---|")
 mot = {}
 for k, c in C.items():
     for st in c["states"].values():
-        if "style" not in st:
+        if not measured(st):
             continue
         s = st["style"]
         if s["transitionDuration"] in ("0s", ""):
@@ -361,25 +384,47 @@ def dur_ms(d):
 for (d, e), (ps, ks) in sorted(mot.items(), key=lambda kv: (dur_ms(kv[0][0]), kv[0][1])):
     W(f"| {d} | `{e}` | {', '.join(sorted(ps))} | {', '.join(sorted(ks)[:8])}{' and more' if len(ks) > 8 else ''} |")
 W()
-W("**Layout grid.** Read on each page at each width ([raw/layout.json](raw/layout.json)).")
-W()
-W("| Page | 1440 | 1920 | 1024 | 390 |")
-W("|---|---|---|---|---|")
-
-
 def grid_of(key):
+    """One cell of the grid table: the content box and the first grid, or '-' for what was not read
+    (a page or width missing, a reading without a main box or grids)."""
     v = LAYOUT.get(key)
     if not v:
         return "-"
-    g = v["grids"][0] if v["grids"] else None
+    grids = v.get("grids") or []
+    g = grids[0] if grids else None
     cols = re.sub(r"(\d+\.\d)\d*px", r"\1", g["cols"]).replace("px", "") if g else ""
-    main = f"content x {v['main']['x']}, {v['main']['w']} wide" if v["main"]["w"] else "content full width"
-    return f"{main}; grid {cols} gap {g['colGap']}" if g else main
+    box = v.get("main")
+    main = (f"content x {box['x']}, {box['w']} wide" if box.get("w") else "content full width") if box else None
+    if g:
+        return f"{main + '; ' if main else ''}grid {cols} gap {g['colGap']}"
+    return main or "-"
 
 
-for page in ["home", "academy-science", "academy-math", "unit", "lesson-math", "atlas"]:
-    W(f"| {page} | " + " | ".join(grid_of(f"{page}@{w}") for w in (1440, 1920, 1024, 390)) + " |")
-W()
+# PRODUCT (adapt): the pages and widths the layout table compares.
+GRID_PAGES, GRID_WIDTHS = ["home", "academy-science", "academy-math", "unit", "lesson-math", "atlas"], (1440, 1920, 1024, 390)
+if any(f"{p}@{w}" in LAYOUT for p in GRID_PAGES for w in GRID_WIDTHS):
+    W("**Layout grid.** Read on each page at each width ([raw/layout.json](raw/layout.json)).")
+    W()
+    W("| Page | " + " | ".join(str(w) for w in GRID_WIDTHS) + " |")
+    W("|---|" + "---|" * len(GRID_WIDTHS))
+    for page in GRID_PAGES:
+        W(f"| {page} | " + " | ".join(grid_of(f"{page}@{w}") for w in GRID_WIDTHS) + " |")
+    W()
+
+
+def covering_layer(st):
+    """The first painted layer inside the component that fills or frames at least 90% of its box. The
+    capture records a layer's size but not its offset, so the most it can cover is the smaller width
+    times the smaller height: a wide, short child (600x100 in a 300x200 card) covers at most half the
+    card and is not its look, though its own area is larger."""
+    rw, rh = st["rect"]["w"], st["rect"]["h"]
+    for x in st.get("paint") or []:
+        dims = [float(n) for n in re.findall(r"[\d.]+", x.get("size", ""))[:2]]
+        if len(dims) == 2 and rw and rh and min(dims[0], rw) * min(dims[1], rh) >= 0.9 * rw * rh and (x.get("bg") or x.get("border")):
+            return x
+    return None
+
+
 W("**Card shapes.** Default-state values; the entries hold the states.")
 W()
 W("| Card | Size | Border | Radius | Background | Shadow | Padding |")
@@ -390,13 +435,19 @@ for k in ["lesson-card", "unit-card", "story-card", "feature-card", "solution-op
     # A card the capture could not find is saved with missing: true and no states.
     if not c or c.get("missing"):
         continue
-    st = next((s for s in c["states"].values() if "style" in s), None)
+    st = next((s for s in c["states"].values() if measured(s)), None)
     if st is None:
         continue
     p = props(st)
-    if ("radius" not in p or p["background"] == "transparent") and st.get("paint"):
-        p0 = next((x for x in st["paint"] if x.get("bg") and x.get("radius")), st["paint"][0])
-        p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius", "-"), background=colour(p0.get("bg", "")) or "-", shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
+    if p["background"] == "transparent" and "border" not in p and st.get("paint"):
+        # The root paints nothing (a radius alone paints nothing): its look is a painted child that
+        # covers it (at least 90% of its box), named in the row. A smaller child (a CTA's ::before, a
+        # badge, a divider) is not the card, so the row then keeps the root's own values.
+        p0 = covering_layer(st)
+        if p0:
+            p = dict(p, border=colour(p0["border"].split(" | ")[0][2:]) if p0.get("border") else "-", radius=p0.get("radius") or p.get("radius", "-"),
+                     background=(colour(p0["bg"]) if p0.get("bg") else "-") + f" (on `{p0['node']}`)",
+                     shadow=colour(p0.get("shadow", ""), tokens=False) or "none")
     W(f"| [{c['title']}](#{re.sub(r'[^a-z0-9 -]', '', c['title'].lower()).replace(' ', '-')}) | {p['size']} | {p.get('border', '-')} | {p.get('radius', '-')} | {p.get('background', '-')} | {p.get('shadow', 'none')} | {p.get('padding', '0')} |")
 W()
 

@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>descript.com style guide</title>
+<meta name="description" content="descript.com design tokens and the public marketing surface's components, rendered from tokens.json with measured computed styles and the declared Red/Maroon/Lilac/Neutral/Green/Gray palette scales.">
+<style>
+:root {
+  --font-family-sans: booton, "booton Fallback", system-ui, Roboto, Arial, sans-serif;
+  --font-family-auth: "Booton VF", system-ui, sans-serif;
+  --font-family-label: brett, "brett Fallback", system-ui, Roboto, Arial, sans-serif;
+  --font-family-display: gamuthDisplay, "gamuthDisplay Fallback", Georgia, serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-size-auth: 15.75px;
+  --font-size-body: 18px;
+  --font-size-eyebrow: 18px;
+  --font-size-mobile-display: 48px;
+  --font-size-section: 56px;
+  --font-size-page: 72px;
+  --font-size-hero: 88px;
+  --font-lineHeight-body: 27px;
+  --font-lineHeight-section: 61.6px;
+  --font-lineHeight-page: 79.2px;
+  --color-gray-100: #f2f2f2;
+  --color-gray-200: #e6e6e6;
+  --color-gray-300: #cccccc;
+  --color-gray-400: #999999;
+  --color-gray-600: #666666;
+  --color-gray-700: #4d4d4d;
+  --color-gray-800: #343434;
+  --color-gray-900: #1a1a1a;
+  --color-green-0: #f5fff7;
+  --color-green-100: #bbe3be;
+  --color-green-150: #9ed5a8;
+  --color-green-200: #84c696;
+  --color-green-300: #5baa7b;
+  --color-green-400: #3d8e66;
+  --color-green-50: #daf1da;
+  --color-green-500: #277154;
+  --color-green-600: #185542;
+  --color-green-700: #0e392e;
+  --color-green-800: #061c18;
+  --color-green-900: #000000;
+  --color-lilac-0: #f9f9ff;
+  --color-lilac-100: #dcdcff;
+  --color-lilac-200: #cdcdfe;
+  --color-lilac-300: #a3a3ee;
+  --color-lilac-400: #8787e0;
+  --color-lilac-450: #7a79d6;
+  --color-lilac-50: #ebebff;
+  --color-lilac-500: #6b6bcf;
+  --color-lilac-600: #5050be;
+  --color-lilac-700: #3434ab;
+  --color-lilac-750: #2a2a96;
+  --color-lilac-800: #1c1c8a;
+  --color-lilac-900: #0c0b5f;
+  --color-lilac-950: #030331;
+  --color-maroon-0: #fff7fd;
+  --color-maroon-100: #f4d7ea;
+  --color-maroon-200: #e5b6d5;
+  --color-maroon-300: #d597bf;
+  --color-maroon-400: #c576a7;
+  --color-maroon-450: #b96a96;
+  --color-maroon-50: #ffe5f7;
+  --color-maroon-500: #ab5c86;
+  --color-maroon-600: #90436a;
+  --color-maroon-700: #772a4d;
+  --color-maroon-750: #651a39;
+  --color-maroon-800: #5b142e;
+  --color-maroon-900: #390a1a;
+  --color-maroon-950: #190308;
+  --color-neutral-0: #fff7fa;
+  --color-neutral-100: #e4dde0;
+  --color-neutral-200: #d1c7cb;
+  --color-neutral-300: #b8a5ad;
+  --color-neutral-400: #a28993;
+  --color-neutral-450: #987c87;
+  --color-neutral-50: #f1eaed;
+  --color-neutral-500: #8b6f7a;
+  --color-neutral-600: #715661;
+  --color-neutral-700: #583f4a;
+  --color-neutral-750: #4c343e;
+  --color-neutral-800: #3f2a32;
+  --color-neutral-900: #26171d;
+  --color-neutral-950: #110a0d;
+  --color-red-0: #fff8f4;
+  --color-red-100: #ffd6c5;
+  --color-red-200: #ffb297;
+  --color-red-300: #ff8969;
+  --color-red-400: #ff5340;
+  --color-red-450: #f73b3b;
+  --color-red-50: #ffe8db;
+  --color-red-500: #e62324;
+  --color-red-600: #b81b1e;
+  --color-red-700: #8f0c10;
+  --color-red-750: #7a080b;
+  --color-red-800: #660607;
+  --color-red-900: #400303;
+  --color-red-950: #180101;
+  --color-core-black: #000000;
+  --color-core-canvas-beige: #faf8f7;
+  --color-core-canvas-white: #fff7f2;
+  --color-core-screen-black: #27181e;
+  --color-core-white: #fffafc;
+  --color-tools-glow-ai: #ebd6ff;
+  --color-tools-glow-audio: #ffd4bf;
+  --color-tools-glow-collaborate: #ffe5bf;
+  --color-tools-glow-convert: #ffdbe6;
+  --color-tools-glow-record: #ffbfbf;
+  --color-tools-glow-transcribe: #c7e9c7;
+  --color-tools-glow-video: #d9f3ff;
+  --color-tools-glow-write: #bfd0f9;
+  --radius-control: 8px;
+  --radius-cta: 12px;
+  --radius-nav-item: 4px;
+  --radius-toggle: 42px;
+  --motion-tab: color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --background-page: var(--color-neutral-0);
+  --background-footer: var(--color-neutral-950);
+  --background-toggle-track: var(--color-neutral-50);
+  --text-ink: var(--color-neutral-900);
+  --text-body: var(--color-gray-900);
+  --text-accent: var(--color-red-450);
+  --text-on-dark: var(--color-red-0);
+  --text-muted-on-dark: #c4b5bb;
+  --border-focus: #101010;
+  --surface-tab-selected: var(--color-maroon-800);
+  --action-primary: var(--color-maroon-700);
+  --action-primary-hover: var(--color-maroon-800);
+  --action-deep: var(--color-maroon-900);
+  --action-red: var(--color-red-450);
+  --action-red-hover: var(--color-red-600);
+  --action-red-pressed: var(--color-red-700);
+  --action-auth-primary: var(--color-neutral-800);
+  --action-auth-outline: #fdfcfc;
+  --action-hover-wash: var(--color-neutral-50);
+  --component-header-height: 102.08px;
+  --component-logo-width: 98px;
+  --component-nav-item-height: 32px;
+  --component-signup-size: 54.08px;
+  --component-flow-tab-height: 44px;
+  --component-flow-tabs-width: 610px;
+  --component-toggle-size: 50px;
+  --component-toggle-option: 34px;
+  --component-plan-card-size: 708.19px;
+  --component-plan-cta-size: 56px;
+  --component-template-card: 380.56px;
+  --component-hero-display-size: 210px;
+  --component-auth-control: 40.48px;
+  --component-footer-height: 1145.81px;
+  --component-m-header-height: 84px;
+  --component-m-toggle-option: 32.5px;
+  --component-m-plan-cta: 52.5px;
+  --component-focus-ring: auto rgb(16, 16, 16);
+  --sg-sans: booton, "Booton VF", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: gamuthDisplay, "gamuthDisplay Fallback", Georgia, "Times New Roman", serif;
+  --sg-pill: brett, "brett Fallback", booton, ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-body, #1a1a1a); background: var(--background-page, #fff7fa); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.1 var(--sg-serif); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #0f1015); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #0f1015); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--color-brand-ink, #030302); padding: 12px; border-radius: 12px; }
+.pal.dark .nm, .pal.dark .vl { color: rgba(255, 255, 255, 0.898); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); overflow: hidden; background: var(--surface-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 20px; height: var(--component-nav-height, 65px); padding: 0 10px 0 18px; font-size: 16px; color: var(--color-brand-ink, #030302); background: #fff; border-radius: var(--radius-nav, 26px); box-shadow: 0 1px 3px rgba(3,3,2,.08); margin: 12px 18px; }
+.navbar .wm { font-weight: 800; font-size: 18px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.navbar .link { color: var(--color-brand-ink, #030302); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-load-more-height, 38px); padding: 0 24px; font-size: 16px; font-weight: 500; border-radius: var(--radius-full, 9999px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-primary, #772a4d); color: var(--text-on-dark, #fff7fd); height: var(--component-signup-size, 54px); font-size: 16px; font-weight: 600; border-radius: var(--radius-cta, 12px); }
+.btn.light { background: var(--background-field-surface, #fff); color: var(--color-brand-ink, #030302); box-shadow: 0 1px 4px rgba(3,3,2,.12); }
+.btn.outline { background: transparent; color: var(--color-brand-ink, #030302); box-shadow: inset 0 0 0 1px var(--border-hairline-dark, #2e2e32); }
+.hero { color: var(--color-brand-ink, #030302); padding: 96px 40px 90px; font: 400 52px/1 var(--sg-serif); text-align: center; background: linear-gradient(180deg, #bfe0ee 0%, #dceef7 60%, var(--background-page, #fff) 100%); }
+.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); color: var(--text-muted-foreground, rgba(3,3,2,.5)); margin: 18px auto 26px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border-hairline-dark, #2e2e32); padding: 18px; font-size: 13px; background: var(--background-field-surface, #fff); border-radius: var(--radius-2xl, 16px); }
+.tile .img { height: 100px; background: var(--background-page, #fff); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: var(--radius-default, 10px); }
+.tile b { display: block; font: 400 20px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .price { font: 400 40px/1.1 var(--sg-serif); margin: 8px 0 2px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-hairline-dark, #2e2e32); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-border, #e0e0e0); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #171717); opacity: .65; font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: var(--background-page, #fff); border-radius: var(--radius-full, 9999px); padding: 4px; gap: 0; font-size: 16px; }
+.toggle span { padding: 10px 28px; border-radius: var(--radius-full, 9999px); font-weight: 500; color: var(--color-brand-ink, #030302); }
+.toggle .on { background: var(--background-field-surface, #fff); box-shadow: 0 1px 3px rgba(3,3,2,.12); }
+</style>
+</head>
+<body>
+<main>
+  <h1>descript.com style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">descript.com, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the #fff7fa blush field, the maroon CTA ramp (#772a4d rest, #5b142e hover, #390a1a plan CTAs), the #f73b3b red accent, the #c4b5bb muted-on-dark tab text, and Gamuth Display over Booton/Brett type. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from descript.com on 2026-11-14, signed out, in headless Chromium. The product lives behind web.descript.com — its public sign-in card was captured as a boundary and never submitted; Sign in, Sign up, Get started and every plan CTA were measured, never followed. booton, brett and gamuthDisplay are served by the site; samples fall back to system faces.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A 102px floating #fff7fa nav bar: the 98px wordmark, 16px/600 Booton items (Features, Pricing, Contact sales, Sign in) and the 108x54 #772a4d maroon Sign up button at 12px radius.</p>
+  <div class="mock" style="background:#fff7fa;padding:0">
+    <div class="navbar" style="height:102px;border-radius:0;margin:0;box-shadow:none;background:var(--background-page,#fff7fa)"><span class="wm" style="font-weight:700;font-size:22px;color:var(--text-ink,#26171d)">DESCRIPT</span><span class="link" style="font-size:16px;font-weight:600;color:var(--text-ink,#26171d)">Features &#9662;</span><span class="link" style="font-size:16px;font-weight:600;color:var(--text-ink,#26171d)">Pricing</span><span class="link" style="font-size:16px;font-weight:600;color:var(--text-ink,#26171d)">Contact sales</span><span class="sp"></span><span class="link" style="font-size:16px;font-weight:600;color:var(--text-ink,#26171d)">Sign in</span><span class="btn primary" style="height:54px;padding:0 22px">Sign up</span></div>
+  </div>
+
+  <h2 class="sh">The maroon hero band</h2>
+  <p class="lead">The home opens on a deep-maroon band: an 18px Brett red eyebrow, an 88px Gamuth display headline in #fff8f4, and the 610px workflow tab strip (Record / Edit / Refine / Share / Multiply) whose selected tab paints #5b142e with #fff7fd text over muted #c4b5bb.</p>
+  <div class="mock" style="padding:56px 40px;background:var(--color-core-screen-black,#27181e);text-align:center">
+    <div style="color:var(--text-accent,#f73b3b);font:400 18px var(--sg-pill);letter-spacing:.12em;text-transform:uppercase">AI Video Editor</div>
+    <div style="color:var(--text-on-dark,#fff8f4);font:400 60px/1.1 var(--sg-serif);margin-top:14px">AI-editing for every<br>kind of video</div>
+    <div style="display:inline-flex;gap:6px;justify-content:center;margin:30px 0 4px;padding:6px">
+      <span style="background:var(--surface-tab-selected,#5b142e);border-radius:var(--radius-control,8px);color:#fff7fd;font:400 16px var(--sg-sans);padding:10px 24px">Record</span>
+      <span style="border-radius:var(--radius-control,8px);color:var(--text-muted-on-dark,#c4b5bb);font:400 16px var(--sg-sans);padding:10px 24px">Edit</span>
+      <span style="border-radius:var(--radius-control,8px);color:var(--text-muted-on-dark,#c4b5bb);font:400 16px var(--sg-sans);padding:10px 24px">Refine</span>
+      <span style="border-radius:var(--radius-control,8px);color:var(--text-muted-on-dark,#c4b5bb);font:400 16px var(--sg-sans);padding:10px 24px">Share</span>
+      <span style="border-radius:var(--radius-control,8px);color:var(--text-muted-on-dark,#c4b5bb);font:400 16px var(--sg-sans);padding:10px 24px">Multiply</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing and the auth card</h2>
+  <p class="lead">/pricing runs a 228x50 Monthly/Annual toggle on a #f1eaed track into 284x708 plan cards with #390a1a maroon CTAs; the sign-in card on web.descript.com pairs outline SSO buttons with a #3f2a32 primary at 8px radius.</p>
+  <div class="mock" style="padding:20px;display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
+    <div style="width:280px;background:#fff;border-radius:var(--radius-cta,12px);overflow:hidden;border:1px solid #f1eaed">
+      <div style="padding:18px"><b style="font:600 20px var(--sg-sans);color:var(--text-body,#1a1a1a)">Hobbyist</b><div class="sub" style="font:400 13px var(--sg-sans);opacity:.6;margin:6px 0 14px">Monthly</div><span class="btn" style="width:100%;height:56px;border-radius:var(--radius-cta,12px);background:var(--action-deep,#390a1a);color:#fff7fa;font-weight:600">Get started</span></div>
+    </div>
+    <div style="display:inline-flex;background:var(--background-toggle-track,#f1eaed);border-radius:var(--radius-toggle,42px);padding:8px;height:50px;align-items:center">
+      <span style="padding:5px 20px;border-radius:21px;font:400 16px var(--sg-sans);color:var(--text-body,#1a1a1a)">Monthly</span>
+      <span style="padding:5px 20px;border-radius:21px;background:#fff;font:400 16px var(--sg-sans);color:var(--text-body,#1a1a1a);box-shadow:0 1px 3px rgba(0,0,0,.12)">Annual</span>
+    </div>
+    <div style="width:280px;background:#fff;border-radius:var(--radius-control,8px);padding:18px;border:1px solid #f1eaed">
+      <span class="btn" style="width:100%;height:40px;border-radius:var(--radius-control,8px);background:var(--action-auth-outline,#fdfcfc);color:var(--text-ink,#26171d);border:1px solid #e4dde0;font-weight:500;font-size:15.75px">Continue with Google</span>
+      <span class="btn" style="width:100%;height:40px;border-radius:var(--radius-control,8px);background:var(--action-auth-primary,#3f2a32);color:#fff;font-weight:500;font-size:15.75px;margin-top:10px">Continue with email</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared scales carry the palette — the Red, Maroon, Lilac, Neutral, Green and Gray ramps plus the Core canvas constants and Tools-Glow pastels. The light roles alias them: #fff7fa page, #26171d ink, the maroon CTA ramp, #f73b3b red, #c4b5bb muted-on-dark. The page paints one theme; the dark set is empty.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">A soft-cornered design: 8px auth controls, 12px CTAs and plan cards, a 42px billing-toggle track. The measured component set below holds header/toggle/card/auth sizes.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Three voices: <code>booton</code> for UI and body (16px/400-600; the auth card reads <code>Booton VF</code> at 15.75px/500), <code>brett</code> for the 18px uppercase eyebrows and <code>gamuthDisplay</code> for every display heading (hero 88px, pages 72px, sections 56px, mobile 48px). Samples fall back to system faces.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read computed styles off the live Next.js + Tailwind DOM on every captured route</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and opened (workflow tab, billing toggle) states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"sans":{"v":"booton, \"booton Fallback\", system-ui, Roboto, Arial, sans-serif","t":"fontFamily","s":"computed fontFamily of nav-link, signup-cta, flow-tab, pr-toggle (raw/components-computed.json); pr-card, pr-cta, site-footer and st-prose compute the same stack with Tailwind's fallback list repeated after it","d":"Booton — UI, body copy, nav, buttons and every form control on descript.com."},"auth":{"v":"\"Booton VF\", system-ui, sans-serif","t":"fontFamily","s":"computed fontFamily of au-email, au-email-btn, au-google, au-password, au-sso (raw/components-computed.json)","d":"Booton VF — the auth card on web.descript.com names the variable face instead of booton."},"label":{"v":"brett, \"brett Fallback\", system-ui, Roboto, Arial, sans-serif","t":"fontFamily","s":"computed fontFamily of hero-eyebrow, pr-eyebrow, m-eyebrow (raw/components-computed.json)","d":"Brett — the small uppercase eyebrow labels."},"display":{"v":"gamuthDisplay, \"gamuthDisplay Fallback\", Georgia, serif","t":"fontFamily","s":"computed fontFamily of hero-display, section-h2, pr-display, vid-h1, tpl-h1 (raw/components-computed.json)","d":"Gamuth Display — every display heading, hero 88px to section 56px."}},"weight":{"normal":{"v":400,"t":"fontWeight","s":"computed fontWeight of hero-eyebrow default (raw/components-computed.json)","d":"400 — eyebrow labels and body copy."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of au-email-btn default (raw/components-computed.json)","d":"500 — the auth card's Booton VF buttons."},"semibold":{"v":600,"t":"fontWeight","s":"computed fontWeight of nav-link default (raw/components-computed.json)","d":"600 — nav items, CTAs, plan names, section h2s."}},"size":{"auth":{"v":"15.75px","t":"fontSize","s":"computed fontSize of au-email-btn default (raw/components-computed.json)","d":"The 15.75px auth-card control size (Booton VF)."},"body":{"v":"18px","t":"fontSize","s":"computed fontSize of st-prose default (raw/components-computed.json)","d":"The 16px body/nav/CTA size."},"eyebrow":{"v":"18px","t":"fontSize","s":"computed fontSize of hero-eyebrow default (raw/components-computed.json)","d":"The 18px uppercase Brett eyebrow."},"mobile-display":{"v":"48px","t":"fontSize","s":"computed fontSize of m-display default (raw/components-computed.json)","d":"The 48px mobile display heading."},"section":{"v":"56px","t":"fontSize","s":"computed fontSize of section-h2 default (raw/components-computed.json)","d":"The 56px Gamuth section/pricing heading."},"page":{"v":"72px","t":"fontSize","s":"computed fontSize of vid-h1 default (raw/components-computed.json)","d":"The 72px Gamuth page heading."},"hero":{"v":"88px","t":"fontSize","s":"computed fontSize of hero-display default (raw/components-computed.json)","d":"The 88px Gamuth home display (clamped by viewport)."}},"lineHeight":{"body":{"v":"27px","t":"other","s":"computed lineHeight of st-prose default (raw/components-computed.json)","d":"The 24px body line-height."},"section":{"v":"61.6px","t":"other","s":"computed lineHeight of section-h2 default (raw/components-computed.json)","d":"The 61.6px section-heading line-height (1.1x)."},"page":{"v":"79.2px","t":"other","s":"computed lineHeight of vid-h1 default (raw/components-computed.json)","d":"The 79.2px page-heading line-height (1.1x)."}}},"color":{"gray":{"100":{"v":"#f2f2f2","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Gray-100","d":"The declared `--Gray-100`."},"200":{"v":"#e6e6e6","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Gray-200","d":"The declared `--Gray-200`."},"300":{"v":"#cccccc","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Gray-300","d":"The declared `--Gray-300`."},"400":{"v":"#999999","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Gray-400","d":"The declared `--Gray-400`."},"600":{"v":"#666666","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Gray-600","d":"The declared `--Gray-600`."},"700":{"v":"#4d4d4d","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Gray-700","d":"The declared `--Gray-700`."},"800":{"v":"#343434","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Gray-800","d":"The declared `--Gray-800`."},"900":{"v":"#1a1a1a","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Gray-900","d":"The declared `--Gray-900`."}},"green":{"0":{"v":"#f5fff7","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-0","d":"The declared `--Green-0`."},"100":{"v":"#bbe3be","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-100","d":"The declared `--Green-100`."},"150":{"v":"#9ed5a8","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-150","d":"The declared `--Green-150`."},"200":{"v":"#84c696","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-200","d":"The declared `--Green-200`."},"300":{"v":"#5baa7b","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-300","d":"The declared `--Green-300`."},"400":{"v":"#3d8e66","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-400","d":"The declared `--Green-400`."},"50":{"v":"#daf1da","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-50","d":"The declared `--Green-50`."},"500":{"v":"#277154","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-500","d":"The declared `--Green-500`."},"600":{"v":"#185542","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-600","d":"The declared `--Green-600`."},"700":{"v":"#0e392e","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-700","d":"The declared `--Green-700`."},"800":{"v":"#061c18","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-800","d":"The declared `--Green-800`."},"900":{"v":"#000000","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-900","d":"The declared `--Green-900`."}},"lilac":{"0":{"v":"#f9f9ff","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-0","d":"The declared `--Lilac-0`."},"100":{"v":"#dcdcff","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-100","d":"The declared `--Lilac-100`."},"200":{"v":"#cdcdfe","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-200","d":"The declared `--Lilac-200`."},"300":{"v":"#a3a3ee","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-300","d":"The declared `--Lilac-300`."},"400":{"v":"#8787e0","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-400","d":"The declared `--Lilac-400`."},"450":{"v":"#7a79d6","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-450","d":"The declared `--Lilac-450`."},"50":{"v":"#ebebff","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-50","d":"The declared `--Lilac-50`."},"500":{"v":"#6b6bcf","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-500","d":"The declared `--Lilac-500`."},"600":{"v":"#5050be","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-600","d":"The declared `--Lilac-600`."},"700":{"v":"#3434ab","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-700","d":"The declared `--Lilac-700`."},"750":{"v":"#2a2a96","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-750","d":"The declared `--Lilac-750`."},"800":{"v":"#1c1c8a","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-800","d":"The declared `--Lilac-800`."},"900":{"v":"#0c0b5f","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-900","d":"The declared `--Lilac-900`."},"950":{"v":"#030331","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-950","d":"The declared `--Lilac-950`."}},"maroon":{"0":{"v":"#fff7fd","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-0","d":"The declared `--Maroon-0`."},"100":{"v":"#f4d7ea","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-100","d":"The declared `--Maroon-100`."},"200":{"v":"#e5b6d5","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-200","d":"The declared `--Maroon-200`."},"300":{"v":"#d597bf","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-300","d":"The declared `--Maroon-300`."},"400":{"v":"#c576a7","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-400","d":"The declared `--Maroon-400`."},"450":{"v":"#b96a96","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-450","d":"The declared `--Maroon-450`."},"50":{"v":"#ffe5f7","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-50","d":"The declared `--Maroon-50`."},"500":{"v":"#ab5c86","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-500","d":"The declared `--Maroon-500`."},"600":{"v":"#90436a","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-600","d":"The declared `--Maroon-600`."},"700":{"v":"#772a4d","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-700","d":"The declared `--Maroon-700`."},"750":{"v":"#651a39","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-750","d":"The declared `--Maroon-750`."},"800":{"v":"#5b142e","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-800","d":"The declared `--Maroon-800`."},"900":{"v":"#390a1a","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-900","d":"The declared `--Maroon-900`."},"950":{"v":"#190308","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-950","d":"The declared `--Maroon-950`."}},"neutral":{"0":{"v":"#fff7fa","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-0","d":"The declared `--Neutral-0`."},"100":{"v":"#e4dde0","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-100","d":"The declared `--Neutral-100`."},"200":{"v":"#d1c7cb","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-200","d":"The declared `--Neutral-200`."},"300":{"v":"#b8a5ad","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-300","d":"The declared `--Neutral-300`."},"400":{"v":"#a28993","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-400","d":"The declared `--Neutral-400`."},"450":{"v":"#987c87","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-450","d":"The declared `--Neutral-450`."},"50":{"v":"#f1eaed","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-50","d":"The declared `--Neutral-50`."},"500":{"v":"#8b6f7a","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-500","d":"The declared `--Neutral-500`."},"600":{"v":"#715661","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-600","d":"The declared `--Neutral-600`."},"700":{"v":"#583f4a","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-700","d":"The declared `--Neutral-700`."},"750":{"v":"#4c343e","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-750","d":"The declared `--Neutral-750`."},"800":{"v":"#3f2a32","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-800","d":"The declared `--Neutral-800`."},"900":{"v":"#26171d","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-900","d":"The declared `--Neutral-900`."},"950":{"v":"#110a0d","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-950","d":"The declared `--Neutral-950`."}},"red":{"0":{"v":"#fff8f4","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-0","d":"The declared `--Red-0`."},"100":{"v":"#ffd6c5","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-100","d":"The declared `--Red-100`."},"200":{"v":"#ffb297","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-200","d":"The declared `--Red-200`."},"300":{"v":"#ff8969","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-300","d":"The declared `--Red-300`."},"400":{"v":"#ff5340","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-400","d":"The declared `--Red-400`."},"450":{"v":"#f73b3b","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-450","d":"The declared `--Red-450`."},"50":{"v":"#ffe8db","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-50","d":"The declared `--Red-50`."},"500":{"v":"#e62324","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-500","d":"The declared `--Red-500`."},"600":{"v":"#b81b1e","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-600","d":"The declared `--Red-600`."},"700":{"v":"#8f0c10","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-700","d":"The declared `--Red-700`."},"750":{"v":"#7a080b","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-750","d":"The declared `--Red-750`."},"800":{"v":"#660607","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-800","d":"The declared `--Red-800`."},"900":{"v":"#400303","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-900","d":"The declared `--Red-900`."},"950":{"v":"#180101","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-950","d":"The declared `--Red-950`."}},"core":{"black":{"v":"#000000","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Core-Black","d":"The declared `--Core-Black`."},"canvas-beige":{"v":"#faf8f7","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Core-Canvas-Beige","d":"The declared `--Core-Canvas-Beige`."},"canvas-white":{"v":"#fff7f2","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Core-Canvas-White","d":"The declared `--Core-Canvas-White`."},"screen-black":{"v":"#27181e","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Core-Screen-Black","d":"The declared `--Core-Screen-Black`."},"white":{"v":"#fffafc","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Core-White","d":"The declared `--Core-White`."}},"tools":{"glow-ai":{"v":"#ebd6ff","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Tools-Glow-ai","d":"The declared `--Tools-Glow-ai`."},"glow-audio":{"v":"#ffd4bf","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Tools-Glow-audio","d":"The declared `--Tools-Glow-audio`."},"glow-collaborate":{"v":"#ffe5bf","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Tools-Glow-collaborate","d":"The declared `--Tools-Glow-collaborate`."},"glow-convert":{"v":"#ffdbe6","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Tools-Glow-convert","d":"The declared `--Tools-Glow-convert`."},"glow-record":{"v":"#ffbfbf","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Tools-Glow-record","d":"The declared `--Tools-Glow-record`."},"glow-transcribe":{"v":"#c7e9c7","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Tools-Glow-transcribe","d":"The declared `--Tools-Glow-transcribe`."},"glow-video":{"v":"#d9f3ff","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Tools-Glow-video","d":"The declared `--Tools-Glow-video`."},"glow-write":{"v":"#bfd0f9","t":"color","s":"declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Tools-Glow-write","d":"The declared `--Tools-Glow-write`."}}},"radius":{"control":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of au-email-btn default (raw/components-computed.json)","d":"The 8px auth-card button/field radius."},"cta":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of signup-cta default (raw/components-computed.json)","d":"The 12px CTA/plan-card radius."},"nav-item":{"v":"4px","t":"dimension","s":"computed borderTopLeftRadius of nav-link default (raw/components-computed.json)","d":"The 4px nav-item corner."},"toggle":{"v":"42px","t":"dimension","s":"computed borderTopLeftRadius of pr-toggle default (raw/components-computed.json)","d":"The 42px billing-toggle track pill."}},"shadow":{},"motion":{"tab":{"v":"color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1)","t":"other","s":"computed transition of flow-tab default (raw/components-computed.json)","d":"The workflow-tab state transition."}}},"light":{"background":{"page":{"v":"{color.neutral.0}","t":"color","s":"computed backgroundColor of mkt-header default (raw/components-computed.json); matches declared color.neutral.0","d":"The #fff7fa blush field (Neutral-0) the nav, cards and page paint."},"footer":{"v":"{color.neutral.950}","t":"color","s":"computed backgroundColor of site-footer default (raw/components-computed.json); matches declared color.neutral.950","d":"The #110a0d near-black maroon footer."},"toggle-track":{"v":"{color.neutral.50}","t":"color","s":"computed backgroundColor of pr-toggle default (raw/components-computed.json); matches declared color.neutral.50","d":"The #f1eaed warm-grey track behind the Monthly/Annual options — the same wash nav links take on hover."}},"text":{"ink":{"v":"{color.neutral.900}","t":"color","s":"computed color of nav-link default (raw/components-computed.json); matches declared color.neutral.900","d":"The #26171d marketing ink (Neutral-900) — nav text, story prose, headings."},"body":{"v":"{color.gray.900}","t":"color","s":"computed color of pr-card default (raw/components-computed.json); matches declared color.gray.900","d":"The #1a1a1a Gray-900 body text on pricing, templates and the auth card."},"accent":{"v":"{color.red.450}","t":"color","s":"computed color of hero-eyebrow default (raw/components-computed.json); matches declared color.red.450","d":"The #f73b3b Red-450 — the uppercase eyebrow labels and red CTAs."},"on-dark":{"v":"{color.red.0}","t":"color","s":"computed color of hero-display default (raw/components-computed.json); matches declared color.red.0","d":"The #fff8f4 near-white (Red-0) display text over the dark hero band."},"muted-on-dark":{"v":"#c4b5bb","t":"color","s":"computed color of flow-tab default (raw/components-computed.json)","d":"The #c4b5bb muted mauve — unselected workflow-tab text over the dark band."}},"border":{"focus":{"v":"#101010","t":"color","s":"computed outlineColor of signup-cta focus-visible (raw/components-computed.json)","d":"The #101010 1px auto focus outline on light controls."}},"surface":{"tab-selected":{"v":"{color.maroon.800}","t":"color","s":"painted background of the selected workflow tab inside flow-tabs default (raw/components-computed.json); matches declared color.maroon.800","d":"The #5b142e Maroon-800 fill the selected workflow tab paints."}},"action":{"primary":{"v":"{color.maroon.700}","t":"color","s":"computed backgroundColor of signup-cta default (raw/components-computed.json); matches declared color.maroon.700","d":"The #772a4d Maroon-700 — the Sign up button and primary CTA fill."},"primary-hover":{"v":"{color.maroon.800}","t":"color","s":"computed backgroundColor of signup-cta hover (raw/components-computed.json); matches declared color.maroon.800","d":"The #5b142e Maroon-800 the maroon buttons deepen to on hover/pressed."},"deep":{"v":"{color.maroon.900}","t":"color","s":"computed backgroundColor of pr-cta default (raw/components-computed.json); matches declared color.maroon.900","d":"The #390a1a Maroon-900 — the pricing plan CTAs."},"red":{"v":"{color.red.450}","t":"color","s":"computed backgroundColor of vid-cta default (raw/components-computed.json); matches declared color.red.450","d":"The #f73b3b Red-450 — the red hero CTAs."},"red-hover":{"v":"{color.red.600}","t":"color","s":"computed backgroundColor of vid-cta hover (raw/components-computed.json); matches declared color.red.600","d":"The #b81b1e the red CTAs deepen to on hover."},"red-pressed":{"v":"{color.red.700}","t":"color","s":"computed backgroundColor of vid-cta pressed (raw/components-computed.json); matches declared color.red.700","d":"The #8f0c10 Red-700 the red CTAs deepen to when pressed."},"auth-primary":{"v":"{color.neutral.800}","t":"color","s":"computed backgroundColor of au-email-btn default (raw/components-computed.json); matches declared color.neutral.800","d":"The #3f2a32 maroon-grey — the auth card's primary button."},"auth-outline":{"v":"#fdfcfc","t":"color","s":"computed backgroundColor of au-google default (raw/components-computed.json)","d":"The #fdfcfc field/outline fill on the auth card's secondary buttons and input."},"hover-wash":{"v":"{color.neutral.50}","t":"color","s":"computed backgroundColor of nav-link hover (raw/components-computed.json); matches declared color.neutral.50","d":"The #f1eaed warm-grey wash nav links take on hover — the same as the billing-toggle track."}},"component":{"header-height":{"v":"102.08px","t":"dimension","s":"computed h of mkt-header default (raw/components-computed.json)","d":"The 102px floating header bar."},"logo-width":{"v":"98px","t":"dimension","s":"computed w of mkt-logo default (raw/components-computed.json)","d":"The 98px Descript wordmark."},"nav-item-height":{"v":"32px","t":"dimension","s":"computed h of nav-link default (raw/components-computed.json)","d":"The 32px nav-item hit area."},"signup-size":{"v":"54.08px","t":"dimension","s":"computed h of signup-cta default (raw/components-computed.json)","d":"The 54px Sign up button (108px wide)."},"flow-tab-height":{"v":"44px","t":"dimension","s":"computed h of flow-tab default (raw/components-computed.json)","d":"The 44px workflow tabs."},"flow-tabs-width":{"v":"610px","t":"dimension","s":"computed w of flow-tabs default (raw/components-computed.json)","d":"The 610px workflow tab strip."},"toggle-size":{"v":"50px","t":"dimension","s":"computed h of pr-toggle default (raw/components-computed.json)","d":"The 50px billing-toggle track (228px wide)."},"toggle-option":{"v":"34px","t":"dimension","s":"computed h of pr-toggle-annual default (raw/components-computed.json)","d":"The 34px toggle option (106px wide)."},"plan-card-size":{"v":"708.19px","t":"dimension","s":"computed h of pr-card default (raw/components-computed.json)","d":"The 708px-tall pricing plan card (284px wide)."},"plan-cta-size":{"v":"56px","t":"dimension","s":"computed h of pr-cta default (raw/components-computed.json)","d":"The 56px plan-card CTA."},"template-card":{"v":"380.56px","t":"dimension","s":"computed h of tpl-link default (raw/components-computed.json)","d":"The 381px-tall template card (336px wide)."},"hero-display-size":{"v":"210px","t":"dimension","s":"computed h of hero-display default (raw/components-computed.json)","d":"The 210px-tall hero display block (892px wide)."},"auth-control":{"v":"40.48px","t":"dimension","s":"computed h of au-email-btn default (raw/components-computed.json)","d":"The 40px auth-card buttons and field (308px wide)."},"footer-height":{"v":"1145.81px","t":"dimension","s":"computed h of site-footer default (raw/components-computed.json)","d":"The 1146px sitemap footer."},"m-header-height":{"v":"84px","t":"dimension","s":"computed h of m-header default (raw/components-computed.json)","d":"The 84px mobile header."},"m-toggle-option":{"v":"32.5px","t":"dimension","s":"computed h of mp-toggle default (raw/components-computed.json)","d":"The 32.5px mobile billing-toggle option."},"m-plan-cta":{"v":"52.5px","t":"dimension","s":"computed h of mp-cta default (raw/components-computed.json)","d":"The 52.5px mobile plan CTA (full-width)."},"state-track":{"signup-track":{"v":{"default":{"backgroundColor":"rgb(119, 42, 77)","color":"rgb(255, 255, 255)","opacity":"1","transform":"none","boxShadow":"rgba(0, 0, 0, 0.16) 0px 2px 4px 0px","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(255, 255, 255)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"hover":{"backgroundColor":"rgb(91, 20, 46)","color":"rgb(255, 255, 255)","opacity":"1","transform":"none","boxShadow":"rgba(0, 0, 0, 0.16) 0px 2px 4px 0px","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(255, 255, 255)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"pressed":{"backgroundColor":"rgb(91, 20, 46)","color":"rgb(255, 255, 255)","opacity":"1","transform":"none","boxShadow":"rgba(0, 0, 0, 0.16) 0px 2px 4px 0px","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(255, 255, 255)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"focus-visible":{"backgroundColor":"rgb(119, 42, 77)","color":"rgb(255, 255, 255)","opacity":"1","transform":"none","boxShadow":"rgba(0, 0, 0, 0.16) 0px 2px 4px 0px","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(16, 16, 16)","outlineStyle":"auto","outlineWidth":"1px","outlineOffset":"1px"}},"t":"other","s":"computed styles of signup-cta across states (raw/components-computed.json)","d":"Sign up button: #772a4d Maroon-700 fill/white text at rest; hover+pressed deepen to #5b142e Maroon-800; focus shows the 1px auto outline."},"red-cta-track":{"v":{"default":{"backgroundColor":"rgb(247, 59, 59)","color":"rgb(255, 247, 253)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(255, 247, 253)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"hover":{"backgroundColor":"rgb(184, 27, 30)","color":"rgb(255, 247, 253)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(255, 247, 253)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"pressed":{"backgroundColor":"rgb(143, 12, 16)","color":"rgb(255, 247, 253)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(255, 247, 253)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"focus-visible":{"backgroundColor":"rgb(247, 59, 59)","color":"rgb(255, 247, 253)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(16, 16, 16)","outlineStyle":"auto","outlineWidth":"1px","outlineOffset":"1px"}},"t":"other","s":"computed styles of vid-cta across states (raw/components-computed.json)","d":"Red CTA: #f73b3b Red-450 at rest; #b81b1e on hover; #8f0c10 Red-700 pressed; focus shows the 1px auto outline."},"nav-link-track":{"v":{"default":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(38, 23, 29)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(38, 23, 29)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"hover":{"backgroundColor":"rgb(241, 234, 237)","color":"rgb(38, 23, 29)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(38, 23, 29)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"pressed":{"backgroundColor":"rgb(241, 234, 237)","color":"rgb(38, 23, 29)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(38, 23, 29)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"focus-visible":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(38, 23, 29)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(16, 16, 16)","outlineStyle":"auto","outlineWidth":"1px","outlineOffset":"1px"}},"t":"other","s":"computed styles of nav-link across states (raw/components-computed.json)","d":"Nav item: transparent/#26171d at rest; the #f1eaed warm-grey wash on hover/pressed; focus shows the 1px auto outline."},"flow-tab-track":{"v":{"default":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(196, 181, 187)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(196, 181, 187)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"hover":{"backgroundColor":"rgb(38, 23, 29)","color":"rgb(196, 181, 187)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(196, 181, 187)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"pressed":{"backgroundColor":"rgb(38, 23, 29)","color":"rgb(196, 181, 187)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(196, 181, 187)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"focus-visible":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(196, 181, 187)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(16, 16, 16)","outlineStyle":"auto","outlineWidth":"1px","outlineOffset":"0px"},"opened":{"backgroundColor":"rgb(91, 20, 46)","color":"rgb(255, 247, 253)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(255, 247, 253)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"}},"t":"other","s":"computed styles of flow-tab across states (raw/components-computed.json)","d":"Workflow tab: muted #c4b5bb text on the dark band at rest; #26171d ink wash on hover; opened selects the #5b142e Maroon-800 fill with #fff7fd text."},"toggle-track":{"v":{"default":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(26, 26, 26)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(26, 26, 26)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"hover":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(26, 26, 26)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(26, 26, 26)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"pressed":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(26, 26, 26)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(26, 26, 26)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"focus-visible":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(26, 26, 26)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(16, 16, 16)","outlineStyle":"auto","outlineWidth":"1px","outlineOffset":"0px"},"opened":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(26, 26, 26)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(26, 26, 26)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"}},"t":"other","s":"computed styles of pr-toggle-annual across states (raw/components-computed.json)","d":"Billing-toggle option: transparent/#1a1a1a at rest on the #f1eaed track; opened is the Annual-selected state; focus shows the 1px auto outline."},"auth-primary-track":{"v":{"default":{"backgroundColor":"rgb(63, 42, 50)","color":"rgb(255, 255, 255)","opacity":"1","transform":"none","boxShadow":"rgb(255, 255, 255) 0px 0px 0px 0px","borderTopColor":"rgb(63, 42, 50)","borderRightColor":"rgb(63, 42, 50)","borderBottomColor":"rgb(63, 42, 50)","borderLeftColor":"rgb(63, 42, 50)","outlineColor":"rgb(255, 255, 255)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"hover":{"backgroundColor":"oklab(0.313067 0.0335334 -0.00314325 / 0.9)","color":"rgb(255, 255, 255)","opacity":"1","transform":"none","boxShadow":"rgb(255, 255, 255) 0px 0px 0px 0px","borderTopColor":"oklab(0.313067 0.0335334 -0.00314325 / 0.9)","borderRightColor":"oklab(0.313067 0.0335334 -0.00314325 / 0.9)","borderBottomColor":"oklab(0.313067 0.0335334 -0.00314325 / 0.9)","borderLeftColor":"oklab(0.313067 0.0335334 -0.00314325 / 0.9)","outlineColor":"rgb(255, 255, 255)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"pressed":{"backgroundColor":"oklab(0.313067 0.0335334 -0.00314325 / 0.9)","color":"rgb(255, 255, 255)","opacity":"1","transform":"none","boxShadow":"rgb(255, 255, 255) 0px 0px 0px 0px","borderTopColor":"oklab(0.313067 0.0335334 -0.00314325 / 0.9)","borderRightColor":"oklab(0.313067 0.0335334 -0.00314325 / 0.9)","borderBottomColor":"oklab(0.313067 0.0335334 -0.00314325 / 0.9)","borderLeftColor":"oklab(0.313067 0.0335334 -0.00314325 / 0.9)","outlineColor":"rgb(255, 255, 255)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"focus-visible":{"backgroundColor":"rgb(63, 42, 50)","color":"rgb(255, 255, 255)","opacity":"1","transform":"none","boxShadow":"rgb(163, 163, 238) 0px 0px 0px 1px, rgb(52, 52, 171) 0px 0px 0px 2px","borderTopColor":"rgb(52, 52, 171)","borderRightColor":"rgb(52, 52, 171)","borderBottomColor":"rgb(52, 52, 171)","borderLeftColor":"rgb(52, 52, 171)","outlineColor":"rgb(255, 255, 255)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"}},"t":"other","s":"computed styles of au-email-btn across states (raw/components-computed.json)","d":"Auth primary: #3f2a32 at rest; a 90%-alpha oklab shade on hover/pressed."},"template-card-track":{"v":{"default":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(26, 26, 26)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(26, 26, 26)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"hover":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(26, 26, 26)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(26, 26, 26)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"pressed":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(26, 26, 26)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgb(26, 26, 26)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"focus-visible":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(26, 26, 26)","opacity":"1","transform":"none","boxShadow":"rgb(255, 255, 255) 0px 0px 0px 0px inset, rgb(247, 59, 59) 0px 0px 0px 2px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px","borderTopColor":"rgb(229, 231, 235)","borderRightColor":"rgb(229, 231, 235)","borderBottomColor":"rgb(229, 231, 235)","borderLeftColor":"rgb(229, 231, 235)","outlineColor":"rgba(0, 0, 0, 0)","outlineStyle":"solid","outlineWidth":"2px","outlineOffset":"2px"}},"t":"other","s":"computed styles of tpl-link across states (raw/components-computed.json)","d":"Template card overlay: no paint change across hover/pressed; focus-visible paints a 2px inset ring."}},"focus-ring":{"v":"auto rgb(16, 16, 16)","t":"other","s":"computed outline of signup-cta/nav controls focus-visible (raw/components-computed.json)","d":"The browser's 1px auto outline in #101010 — no custom focus ring is painted on buttons; template cards paint a 2px inset ring."}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the .theme.dark band)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Hire anyone, anywhere</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

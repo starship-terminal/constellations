@@ -1,0 +1,24 @@
+{
+  "captured": "2026-11-19",
+  "product": "Superlist",
+  "startUrl": "https://www.superlist.com/",
+  "harness": "Grok Build",
+  "model": "grok-4.7",
+  "route": "public-web",
+  "previewTab": "tab_60_b476fa69-d865-4d9c-9974-6281ced1c8e8",
+  "previewSnapshotError": "The browser is not producing screenshot frames",
+  "screenshots": "Headless Playwright on public marketing URLs that returned 200 with no Cloudflare challenge. Viewport 1440x900 and 390x844, devicePixelRatio 2.",
+  "notEntered": [
+    "email magic link was not sent",
+    "Continue with Apple was not followed",
+    "subscriptions checkout was not opened",
+    "no card, phone, or company SSO"
+  ],
+  "pages": [
+    "https://www.superlist.com/",
+    "https://www.superlist.com/pricing",
+    "https://www.superlist.com/blog",
+    "https://www.superlist.com/updates",
+    "https://app.superlist.com/"
+  ]
+}

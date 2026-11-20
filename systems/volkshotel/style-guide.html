@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Volkshotel style guide</title>
+<style>
+:root {
+  --page: #ffffff;
+  --band: #f1f1f1;
+  --card: #ffffff;
+  --ink: #000000;
+  --muted: #717171;
+  --inverse: #ffffff;
+  --footer: #000000;
+  --nav: #fffffff7;
+  --card-border: #d5d5d5;
+  --font: Arial, Helvetica, sans-serif;
+  --display: Georgia, "Iowan Old Style", serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--font); font-size: 13px; letter-spacing: 0.5px; line-height: 13px; }
+main { max-width: 960px; margin: 0 auto; padding: 32px 20px 64px; }
+h1 { font-family: var(--display); font-weight: 700; font-size: 39px; line-height: 42px; letter-spacing: 0; margin: 0 0 12px; }
+h2 { font-family: var(--display); font-weight: 700; font-size: 29px; line-height: 30px; letter-spacing: 0; margin: 36px 0 12px; }
+p { font-size: 14px; line-height: 22px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 140px; }
+.chip { height: 64px; border: 1px solid var(--card-border); }
+.swatch span { display: block; font-size: 12px; margin-top: 6px; }
+.band { background: var(--band); padding: 37px 20px 43px; margin: 16px 0; }
+.btn { display: inline-block; background: var(--page); color: var(--ink); border: 3px solid var(--ink); padding: 12px 20px 10px; font-size: 18px; line-height: 18px; letter-spacing: 0.5px; text-transform: uppercase; text-decoration: none; font-weight: 700; }
+.btn:hover { background: var(--ink); color: var(--inverse); }
+.navbtn { display: inline-block; background: var(--nav); color: var(--ink); padding: 12px 20px 10px; font-size: 18px; line-height: 18px; text-transform: uppercase; text-decoration: none; font-weight: 700; }
+.tab { display: inline-block; border: 3px solid var(--ink); padding: 13px 40px 9px; font-size: 18px; line-height: 18px; text-transform: uppercase; text-decoration: none; color: var(--ink); font-weight: 700; }
+.tab.on { background: var(--ink); color: var(--inverse); }
+.card { background: var(--card); border: 1px solid var(--card-border); width: 280px; }
+.card .content { padding: 0 20px 20px; }
+.card h3 { font-family: var(--display); font-size: 25px; line-height: 29px; margin: 16px 0 8px; }
+.card p { color: var(--muted); font-size: 14px; line-height: 19px; }
+footer.demo { background: var(--footer); color: var(--inverse); padding: 50px 20px; margin-top: 32px; }
+footer.demo h3 { color: var(--inverse); font-size: 29px; line-height: 28px; margin: 0 0 12px; }
+footer.demo a { color: var(--inverse); font-size: 16px; line-height: 22px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Volkshotel</h1>
+  <p>Public marketing tokens, light only. Apercu and Century Old Style are not loaded here. The page falls back to Arial and Georgia.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><span>page #ffffff</span></div>
+    <div class="swatch"><div class="chip" style="background:#f1f1f1"></div><span>band #f1f1f1</span></div>
+    <div class="swatch"><div class="chip" style="background:#000000"></div><span>footer #000000</span></div>
+    <div class="swatch"><div class="chip" style="background:#717171"></div><span>muted #717171</span></div>
+    <div class="swatch"><div class="chip" style="background:#d5d5d5"></div><span>card border #d5d5d5</span></div>
+    <div class="swatch"><div class="chip" style="background:#fffffff7;border:1px solid #000"></div><span>nav #fffffff7</span></div>
+  </div>
+  <h2>Buttons</h2>
+  <p><a class="navbtn" href="#book">Book room</a> <a class="btn" href="#rooms">See our rooms</a></p>
+  <p><a class="tab on" href="#standard">Standard rooms</a> <a class="tab" href="#special">Special rooms</a></p>
+  <div class="band">
+    <h2>Canvas</h2>
+    <p>Grey band, 37px top padding, 43px bottom padding.</p>
+    <div class="card">
+      <div class="content">
+        <h3>Studio</h3>
+        <p>White card, 1px #d5d5d5 border, square corners.</p>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="demo">
+  <h3>Contact</h3>
+  <p>White text on black. 14px body, 16px links.</p>
+  <a href="#info">General info</a>
+</footer>
+</body>
+</html>

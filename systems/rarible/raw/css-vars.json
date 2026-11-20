@@ -1,0 +1,584 @@
+{
+  "captured": "2026-11-19",
+  "url": "https://rarible.com/",
+  "redirect": "https://rarible.com/all",
+  "harness": "T3 preview browser, preview_evaluate, signed out",
+  "viewport": {
+    "desktop": {
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2,
+      "visualViewportScale": 1
+    },
+    "phone": {
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2
+    }
+  },
+  "screenshotFrames": "preview_snapshot failed once: The browser is not producing screenshot frames. No live PNG was saved.",
+  "theme": {
+    "live": "body.dark",
+    "colorSchemeComputed": "normal",
+    "lightSelector": ":root in eed11b1f5f906eee.css",
+    "darkSelector": ".dark in eed11b1f5f906eee.css",
+    "note": "A probe without .dark still inherited .dark because body has the class. Light values are the :root declaration, not a live theme switch. No theme control was on the public pages."
+  },
+  "stylesheets": [
+    "https://rarible.com/_next/static/chunks/eed11b1f5f906eee.css",
+    "https://rarible.com/_next/static/chunks/04a33597a6ce30a0.css",
+    "https://rarible.com/_next/static/chunks/d202275b73d4f3cb.css"
+  ],
+  "colors": {
+    "light": {
+      "--background": {
+        "raw": "0 0% 100%",
+        "painted": "#ffffff"
+      },
+      "--foreground": {
+        "raw": "0 0% 4%",
+        "painted": "#0a0a0a"
+      },
+      "--foreground-invert": {
+        "raw": "0 0% 100%",
+        "painted": "#ffffff"
+      },
+      "--card": {
+        "raw": "0 0% 100%",
+        "painted": "#ffffff"
+      },
+      "--card-foreground": {
+        "raw": "0 0% 100%",
+        "painted": "#ffffff"
+      },
+      "--popover": {
+        "raw": "0 0% 100%",
+        "painted": "#ffffff"
+      },
+      "--popover-foreground": {
+        "raw": "0 0% 100%",
+        "painted": "#ffffff"
+      },
+      "--primary": {
+        "raw": "240 5.9% 10%",
+        "painted": "#18181b"
+      },
+      "--primary-foreground": {
+        "raw": "0 0% 98%",
+        "painted": "#fafafa"
+      },
+      "--secondary": {
+        "raw": "240 4.8% 95.9%",
+        "painted": "#f4f4f5"
+      },
+      "--secondary-foreground": {
+        "raw": "240 5.9% 10%",
+        "painted": "#18181b"
+      },
+      "--muted": {
+        "raw": "240 4.8% 95.9%",
+        "painted": "#f4f4f5"
+      },
+      "--muted-foreground": {
+        "raw": "240 3.8% 46.1%",
+        "painted": "#71717a"
+      },
+      "--accent": {
+        "raw": "240 4.8% 95.9%",
+        "painted": "#f4f4f5"
+      },
+      "--accent-foreground": {
+        "raw": "240 5.9% 10%",
+        "painted": "#18181b"
+      },
+      "--destructive": {
+        "raw": "334.41 100% 58.63%",
+        "painted": "#ff2c86"
+      },
+      "--destructive-foreground": {
+        "raw": "0 0% 98%",
+        "painted": "#fafafa"
+      },
+      "--border": {
+        "raw": "240 5.9% 90%",
+        "painted": "#e4e4e7"
+      },
+      "--input": {
+        "raw": "240 5.9% 90%",
+        "painted": "#e4e4e7"
+      },
+      "--ring": {
+        "raw": "240 10% 3.9%",
+        "painted": "#09090b"
+      },
+      "--brand": {
+        "raw": "61.18 100% 50%",
+        "painted": "#faff00"
+      },
+      "--success": {
+        "raw": "81.2 100% 48.82%",
+        "painted": "#a1f900"
+      },
+      "--chart-1": {
+        "raw": "12 76% 61%",
+        "painted": "#e76e50"
+      },
+      "--chart-2": {
+        "raw": "173 58% 39%",
+        "painted": "#2a9d90"
+      },
+      "--chart-3": {
+        "raw": "197 37% 24%",
+        "painted": "#274754"
+      },
+      "--chart-4": {
+        "raw": "43 74% 66%",
+        "painted": "#e8c468"
+      },
+      "--chart-5": {
+        "raw": "27 87% 67%",
+        "painted": "#f4a462"
+      },
+      "--chart-positive": {
+        "raw": "81.2 100% 48.82%",
+        "painted": "#a1f900"
+      },
+      "--chart-negative": {
+        "raw": "334.41 100% 58.63%",
+        "painted": "#ff2c86"
+      }
+    },
+    "dark": {
+      "--background": {
+        "raw": "0 0% 4%",
+        "painted": "#0a0a0a"
+      },
+      "--foreground": {
+        "raw": "0 0% 100%",
+        "painted": "#ffffff"
+      },
+      "--foreground-invert": {
+        "raw": "0 0% 4%",
+        "painted": "#0a0a0a"
+      },
+      "--card": {
+        "raw": "240 10% 3.9%",
+        "painted": "#09090b"
+      },
+      "--card-foreground": {
+        "raw": "0 0% 100%",
+        "painted": "#ffffff"
+      },
+      "--popover": {
+        "raw": "240 10% 3.9%",
+        "painted": "#09090b"
+      },
+      "--popover-foreground": {
+        "raw": "0 0% 100%",
+        "painted": "#ffffff"
+      },
+      "--primary": {
+        "raw": "0 0% 98%",
+        "painted": "#fafafa"
+      },
+      "--primary-foreground": {
+        "raw": "240 5.9% 10%",
+        "painted": "#18181b"
+      },
+      "--secondary": {
+        "raw": "240 3.7% 15.9%",
+        "painted": "#27272a"
+      },
+      "--secondary-foreground": {
+        "raw": "0 0% 100%",
+        "painted": "#ffffff"
+      },
+      "--muted": {
+        "raw": "240 3.7% 15.9%",
+        "painted": "#27272a"
+      },
+      "--muted-foreground": {
+        "raw": "240 5% 64.9%",
+        "painted": "#a1a1aa"
+      },
+      "--accent": {
+        "raw": "240 3.7% 15.9%",
+        "painted": "#27272a"
+      },
+      "--accent-foreground": {
+        "raw": "0 0% 100%",
+        "painted": "#ffffff"
+      },
+      "--destructive": {
+        "raw": "334.41 100% 58.63%",
+        "painted": "#ff2c86"
+      },
+      "--destructive-foreground": {
+        "raw": "0 0% 100%",
+        "painted": "#ffffff"
+      },
+      "--border": {
+        "raw": "240 3.7% 15.9%",
+        "painted": "#27272a"
+      },
+      "--input": {
+        "raw": "240 3.7% 15.9%",
+        "painted": "#27272a"
+      },
+      "--ring": {
+        "raw": "240 4.9% 83.9%",
+        "painted": "#d4d4d8"
+      },
+      "--brand": {
+        "raw": "61.18 100% 50%",
+        "painted": "#faff00"
+      },
+      "--success": {
+        "raw": "81.2 100% 48.82%",
+        "painted": "#a1f900"
+      },
+      "--chart-1": {
+        "raw": "220 70% 50%",
+        "painted": "#2662d9"
+      },
+      "--chart-2": {
+        "raw": "160 60% 45%",
+        "painted": "#2eb88a"
+      },
+      "--chart-3": {
+        "raw": "30 80% 55%",
+        "painted": "#e88c30"
+      },
+      "--chart-4": {
+        "raw": "280 65% 60%",
+        "painted": "#af57db"
+      },
+      "--chart-5": {
+        "raw": "340 75% 55%",
+        "painted": "#e23670"
+      },
+      "--chart-positive": {
+        "raw": "81.2 100% 48.82%",
+        "painted": "#a1f900"
+      },
+      "--chart-negative": {
+        "raw": "334.41 100% 58.63%",
+        "painted": "#ff2c86"
+      },
+      "--scrollbar-thumb": {
+        "raw": "rgba(255,255,255,.2)",
+        "painted": "rgba(255, 255, 255, 0.2)"
+      }
+    }
+  },
+  "paintNote": "Painted hex comes from a probe: backgroundColor set to hsl(raw), then getComputedStyle. Dark role colours were also painted on a .dark element earlier in the session and match these. Light was not a live theme.",
+  "components": {
+    "body": {
+      "backgroundColor": "rgb(10, 10, 10)",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "\"Geist Mono\", \"Geist Mono Fallback\"",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px"
+    },
+    "login": {
+      "backgroundColor": "rgb(250, 255, 0)",
+      "color": "rgb(24, 24, 27)",
+      "border": "1px solid rgb(24, 24, 27)",
+      "borderRadius": "9999px",
+      "padding": "8px 12px",
+      "height": 36,
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "fontFamily": "\"Geist Mono\", monospace",
+      "boxShadow": "rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px",
+      "transition": "0.2s cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "searchWrap": {
+      "height": 36,
+      "maxWidth": "400px",
+      "border": "1px solid rgb(39, 39, 42)",
+      "borderRadius": "6px",
+      "padding": "0px 8px",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "focusWithinRing": "hsl(61.18 100% 50%)",
+      "transition": "0.2s cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "searchInput": {
+      "height": 40,
+      "fontSize": "14px",
+      "padding": "12px 0px",
+      "color": "rgb(255, 255, 255)",
+      "placeholder": "Search collections and items",
+      "outline": "solid 2px rgba(0, 0, 0, 0)"
+    },
+    "navLink": {
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "color": "rgb(255, 255, 255)",
+      "fontFamily": "\"Geist Mono\", monospace"
+    },
+    "chainTabSelected": {
+      "text": "All",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "fontWeight": "500",
+      "fontSize": "14px",
+      "padding": "0px 12px 16px",
+      "height": 37
+    },
+    "chainTabIdle": {
+      "text": "Ethereum",
+      "opacity": "0.6",
+      "color": "rgb(255, 255, 255)"
+    },
+    "badgeNew": {
+      "backgroundColor": "rgb(250, 255, 0)",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "11px",
+      "fontWeight": "700",
+      "padding": "2px 6px",
+      "borderRadius": "2px",
+      "height": 15
+    },
+    "ogLink": {
+      "color": "rgb(250, 255, 0)",
+      "fontSize": "12px",
+      "lineHeight": "16px"
+    },
+    "bannerBar": {
+      "backgroundColor": "rgba(10, 10, 10, 0.95)",
+      "height": 112,
+      "note": "sticky header including the OG banner"
+    },
+    "heroTitleDesktop": {
+      "fontFamily": "Tomorrow, \"Tomorrow Fallback\"",
+      "fontSize": "28px",
+      "fontWeight": "400",
+      "lineHeight": "36px",
+      "color": "rgb(255, 255, 255)",
+      "class": "font-bold text-white text-xl leading-tight md:text-2xl"
+    },
+    "heroTitlePhone": {
+      "fontSize": "24px",
+      "fontFamily": "Tomorrow, \"Tomorrow Fallback\""
+    },
+    "tradeCollection": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "borderRadius": "8px",
+      "padding": "8px 20px",
+      "height": 36,
+      "fontWeight": "500",
+      "fontSize": "14px"
+    },
+    "itemCard": {
+      "backgroundColor": "rgb(9, 9, 11)",
+      "border": "1px",
+      "borderColor": "rgb(39, 39, 42)",
+      "borderRadius": "12px",
+      "padding": "8px",
+      "width": 188,
+      "height": 281,
+      "shadow": "group shadow class; computed box-shadow not separately stored beyond the card class shadow token"
+    },
+    "buyNow": {
+      "backgroundColor": "rgb(250, 255, 0)",
+      "color": "rgb(24, 24, 27)",
+      "border": "1px solid rgb(24, 24, 27)",
+      "borderRadius": "9999px",
+      "height": 36,
+      "padding": "8px 12px",
+      "fontWeight": "500"
+    },
+    "filterPill": {
+      "backgroundColor": "rgba(255, 255, 255, 0.02)",
+      "border": "1px solid rgba(255, 255, 255, 0.1)",
+      "borderRadius": "9999px",
+      "height": 36,
+      "padding": "8px 12px 8px 10px"
+    },
+    "sortSelect": {
+      "backgroundColor": "rgba(255, 255, 255, 0.02)",
+      "border": "1px solid rgba(255, 255, 255, 0.1)",
+      "borderRadius": "6px",
+      "height": 36
+    },
+    "collectionTabActive": {
+      "text": "Items",
+      "data-state": "active",
+      "color": "rgb(255, 255, 255)",
+      "padding": "0px 0px 14px"
+    },
+    "collectionTabIdle": {
+      "color": "rgba(255, 255, 255, 0.6)"
+    },
+    "footer": {
+      "backgroundColor": "rgb(10, 10, 10)",
+      "borderTop": "1px solid rgba(255, 255, 255, 0.1)",
+      "padding": "12px 16px"
+    },
+    "termsH1": {
+      "fontFamily": "Tomorrow, \"Tomorrow Fallback\"",
+      "fontSize": "40px",
+      "fontWeight": "400",
+      "lineHeight": "48px",
+      "color": "rgb(255, 255, 255)"
+    },
+    "termsBody": {
+      "maxWidth": "820px",
+      "fontSize": "14px",
+      "lineHeight": "22.75px",
+      "color": "rgba(255, 255, 255, 0.8)"
+    },
+    "termsMeta": {
+      "fontSize": "12px",
+      "lineHeight": "16px",
+      "color": "rgba(255, 255, 255, 0.5)"
+    },
+    "faqH2": {
+      "fontFamily": "Tomorrow, \"Tomorrow Fallback\"",
+      "fontSize": "18px",
+      "fontWeight": "400",
+      "color": "rgb(255, 255, 255)"
+    },
+    "faqH3": {
+      "fontFamily": "Tomorrow, \"Tomorrow Fallback\"",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "color": "rgb(255, 255, 255)"
+    },
+    "emptySearch": {
+      "text": "No results. NGMI.",
+      "color": "rgba(255, 255, 255, 0.6)",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "fontFamily": "\"Geist Mono\", monospace"
+    },
+    "dropsEmpty": {
+      "text": "Nothing here yet...",
+      "fontFamily": "Tomorrow, \"Tomorrow Fallback\"",
+      "fontSize": "28px",
+      "fontWeight": "400",
+      "color": "rgb(255, 255, 255)"
+    },
+    "phoneSheet": {
+      "backgroundColor": "rgb(10, 10, 10)",
+      "width": 390,
+      "height": 455,
+      "padding": "24px",
+      "borderRadius": "12px 12px 0px 0px",
+      "overlay": "rgba(0, 0, 0, 0.8)"
+    },
+    "phoneNavLink": {
+      "fontFamily": "Tomorrow, \"Tomorrow Fallback\"",
+      "fontSize": "24px",
+      "fontWeight": "400",
+      "color": "rgb(255, 255, 255)"
+    },
+    "phoneCloseFocus": {
+      "boxShadow": "rgb(10, 10, 10) 0px 0px 0px 2px, rgb(212, 212, 216) 0px 0px 0px 4px"
+    }
+  },
+  "privy": {
+    "note": "Opened from Login and closed with the close control. No wallet, email, or submit was used.",
+    "panel": {
+      "width": 360,
+      "height": 465,
+      "backgroundColor": "rgb(2, 7, 19)",
+      "borderRadius": "24px",
+      "boxShadow": "rgba(55, 65, 81, 0.15) 0px 8px 36px",
+      "padding": "0px 16px",
+      "fontFamily": "system-ui"
+    },
+    "methodButton": {
+      "width": 318,
+      "height": 55,
+      "border": "1px solid rgb(31, 41, 55)",
+      "borderRadius": "12px",
+      "color": "rgb(155, 162, 174)"
+    },
+    "email": {
+      "placeholder": "your@email.com",
+      "backgroundColor": "rgb(2, 7, 19)",
+      "border": "1px solid rgb(31, 41, 55)",
+      "borderRadius": "12px",
+      "height": 56,
+      "color": "rgb(248, 248, 248)"
+    },
+    "submit": {
+      "color": "rgb(123, 132, 145)",
+      "text": "Submit",
+      "notPressed": true
+    },
+    "links": {
+      "color": "rgb(251, 255, 0)",
+      "fontSize": "13px",
+      "hrefs": [
+        "https://static.rarible.com/terms.pdf",
+        "https://static.rarible.com/privacy.pdf"
+      ]
+    },
+    "close": {
+      "size": 24,
+      "backgroundColor": "rgb(26, 34, 48)",
+      "borderRadius": "9999px"
+    }
+  },
+  "motion": {
+    "loginTransition": "0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+    "searchTransition": "0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+    "keyframes": [
+      "square-stroke-fill",
+      "width-expand",
+      "pulse",
+      "spin",
+      "enter",
+      "exit",
+      "swipe-out",
+      "sonner-fade-in",
+      "sonner-fade-out",
+      "sonner-spin"
+    ],
+    "reducedMotion": "matchMedia false. One authored rule: (prefers-reduced-motion) on [data-sonner-toast]. Live emulation was not run.",
+    "utilityDuration": "0.15s cubic-bezier(0.4, 0, 0.2, 1) on Tailwind transition utilities"
+  },
+  "fonts": {
+    "Geist Mono": {
+      "weights": [
+        "400"
+      ],
+      "files": "6 woff2 on rarible.com/_next/static/media"
+    },
+    "Tomorrow": {
+      "weights": [
+        "400",
+        "700"
+      ],
+      "files": "4 woff2"
+    },
+    "fallbacks": [
+      "Geist Mono Fallback local(Arial)",
+      "Tomorrow Fallback local(Arial)"
+    ]
+  },
+  "pages": [
+    "https://rarible.com/ (redirects to /all)",
+    "https://rarible.com/all",
+    "https://rarible.com/robinhood/collections/yoodles-ovens",
+    "https://rarible.com/all/drops (redirects to /ethereum/drops)",
+    "https://rarible.com/terms",
+    "https://rarible.com/faq",
+    "phone nav sheet on /all at 390",
+    "search empty state typed locally, not submitted"
+  ],
+  "notEntered": [
+    "wallet connect (MetaMask, Phantom, VeeFriends Wallet)",
+    "email submit in the Privy dialog",
+    "More options in the login dialog",
+    "Buy Now",
+    "https://og.rarible.com/",
+    "https://rwa.rarible.com/ and /gacha",
+    "checkout, listing, and any transaction"
+  ]
+}

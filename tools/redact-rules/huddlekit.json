@@ -1,0 +1,11 @@
+{
+  "_note": "Rules for systems/huddlekit. Public signed-out capture of huddlekit.com and app.huddlekit.com/login: no surface paints machine-private data - nothing was signed into, typed, searched or submitted. huddlekit.com publishes its own public contact addresses on /contact and the legal pages (hello@/support@huddlekit.com); they are product-published content and are kept.",
+  "families": [],
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@huddlekit\\.com$",
+      "@huddiekit\\.com$"
+    ]
+  }
+}

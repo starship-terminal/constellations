@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZARA style guide</title>
+<meta name="description" content="ZARA public storefront tokens, rendered from tokens.json. Helvetica Now Text is proprietary and not loaded here.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: light;
+  --sg-sans: "Helvetica Now Text", Helvetica, Arial, sans-serif;
+  --sg-serif: "Times New Roman", Times, serif;
+}
+[data-mode="dark"] {
+/*DARK*/
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--surface-page); color: var(--text-primary); font: 300 13px/16px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header.top { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 0.5px solid var(--text-primary); padding-bottom: 12px; }
+header.top h1 { margin: 0; font: 300 15px/24px var(--sg-sans); letter-spacing: 0.08em; text-transform: uppercase; }
+header.top p { margin: 0; color: var(--text-secondary); font-size: 12px; }
+h2 { font: 300 15px/24px var(--sg-sans); text-transform: uppercase; margin: 40px 0 12px; }
+p.note { color: var(--text-secondary); max-width: 70ch; }
+.row { display: flex; flex-wrap: wrap; gap: 16px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 56px; border: 0.5px solid var(--border-default); }
+.sw b, .sw span { display: block; font-weight: 300; font-size: 11px; text-transform: uppercase; }
+.sw span { color: var(--text-secondary); text-transform: none; }
+button.pri, button.sec, a.nav {
+  font: 300 13px/16px var(--sg-sans); text-transform: uppercase; border-radius: 0; letter-spacing: 0;
+}
+button.pri { background: var(--action-primary); color: var(--action-primary-text); border: 0; height: 32px; padding: 2px 12px; }
+button.sec { background: var(--action-secondary); color: var(--action-secondary-text); border: 0.5px solid var(--text-primary); height: 40px; padding: 2px 12px; }
+a.nav { color: var(--text-primary); text-decoration: none; padding: 5px 0; }
+.field { border: 0; border-bottom: 1px solid var(--text-primary); background: transparent; font: 300 12px/16px var(--sg-sans); width: 280px; padding: 8px 0; color: var(--text-primary); }
+.dialog { border: 1px solid var(--border-default); background: #fff; padding: 20px; width: 320px; }
+.dialog h3 { margin: 0 0 12px; font: 300 15px/24px var(--sg-sans); text-transform: uppercase; }
+table { border-collapse: collapse; width: 100%; font-size: 12px; }
+td, th { text-align: left; padding: 6px 8px; border-bottom: 0.5px solid var(--border-default); font-weight: 300; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: 11px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <h1>ZARA</h1>
+  <p>Public storefront, light only. Values from tokens.json.</p>
+</header>
+<section>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <p class="note">Status colours (sales, emphasis, done) are declared on :root. They were not painted on the pages measured in this pass, so they are tokens, not observed components.</p>
+</section>
+<section>
+  <h2>Type</h2>
+  <p class="note">Helvetica Now Text is the storefront face. It is proprietary and is not loaded here, so this page falls back to Helvetica. Category links on the home gate used Times New Roman at 24px, tracked -1px, uppercase.</p>
+  <div id="type"></div>
+</section>
+<section>
+  <h2>Controls</h2>
+  <div class="row">
+    <div>
+      <button class="pri" type="button">Yes, stay on United States</button>
+      <p class="note">Primary, 32px, padding 2px 12px, radius 0.</p>
+    </div>
+    <div>
+      <button class="sec" type="button">Select a size</button>
+      <p class="note">Secondary large, 40px, 0.5px black border, radius 0. Not pressed into a bag.</p>
+    </div>
+    <div>
+      <a class="nav" href="#controls">Search</a>
+      <p class="note">Header link, 13px, weight 300, uppercase.</p>
+    </div>
+  </div>
+  <p><input class="field" placeholder="What are you looking for?" aria-label="Search"></p>
+</section>
+<section>
+  <h2>Dialog</h2>
+  <div class="dialog">
+    <h3>Hello,</h3>
+    <p>Yes, stay on United States</p>
+    <button class="pri" type="button">Yes, stay on United States</button>
+  </div>
+  <p class="note">Measured wrapper: white, 1px #ccc border, padding 20px 20px 0, radius 0, width 393px.</p>
+</section>
+<section>
+  <h2>Spacing</h2>
+  <table id="space"></table>
+</section>
+</div>
+<script>
+const TOKENS = /*TOKENS*/null;
+const root = document.documentElement;
+function val(path) {
+  const parts = path.split(".");
+  let node = TOKENS;
+  for (const p of parts) node = node[p];
+  const v = node.v;
+  if (v && v.fontFamily) return v;
+  return v;
+}
+const swatches = [
+  ["Page", "light.color.bg.page"],
+  ["Wash", "light.color.bg.wash"],
+  ["Text", "light.color.text.primary"],
+  ["Muted", "light.color.text.secondary"],
+  ["Border", "light.color.border.default"],
+  ["Primary", "light.action.primary"],
+  ["Sales", "light.color.status.sales"],
+  ["Emphasis", "light.color.status.emphasis"],
+  ["Focus", "light.color.status.focus"]
+];
+// Built with DOM properties, not an HTML string: a font family such as "Helvetica Now Text"
+// holds double quotes that would close a style="..." attribute and drop the rest of the specimen.
+const el = (tag, text) => { const n = document.createElement(tag); if (text !== undefined) n.textContent = text; return n; };
+document.getElementById("swatches").replaceChildren(...swatches.map(([n, p]) => {
+  const v = val(p);
+  const sw = el("div");
+  sw.className = "sw";
+  const dot = el("i");
+  dot.style.background = v;
+  sw.append(dot, el("b", n), el("span", v));
+  return sw;
+}));
+const type = TOKENS.core.typography;
+document.getElementById("type").replaceChildren(...Object.entries(type).map(([n, t]) => {
+  const v = t.v;
+  const p = el("p", `${n} — The new`);
+  Object.assign(p.style, { fontFamily: v.fontFamily, fontSize: v.fontSize, fontWeight: v.fontWeight,
+    lineHeight: v.lineHeight, letterSpacing: v.letterSpacing, textTransform: "uppercase" });
+  return p;
+}));
+const space = TOKENS.core.spacing;
+const head = el("tr");
+head.append(el("th", "Token"), el("th", "Value"));
+document.getElementById("space").replaceChildren(head, ...Object.entries(space).map(([n, t]) => {
+  const tr = el("tr");
+  const name = el("td");
+  name.append(el("code", `core.spacing.${n}`));
+  tr.append(name, el("td", t.v));
+  return tr;
+}));
+</script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Endel style guide</title>
+<meta name="description" content="Endel (endel.io) design tokens and the public site's components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+  --color-neutral-black: #000000;
+  --color-neutral-800: #191919;
+  --color-neutral-700: #262626;
+  --color-neutral-500: #808080;
+  --color-neutral-300: #bfbfbf;
+  --color-neutral-200: #e0e0e0;
+  --color-neutral-white: #ffffff;
+  --color-accent-green: #82d133;
+  --color-accent-orange: #ff7a00;
+  --color-accent-bright: #58ff5d;
+  --color-accent-brightHover: #3ee843;
+  --font-size-h1: 60px;
+  --font-size-h2: 44px;
+  --font-size-h3: 36px;
+  --font-size-h4: 28px;
+  --font-size-text1: 22px;
+  --font-size-text2: 18px;
+  --font-size-text3: 16px;
+  --font-size-text4: 14px;
+  --font-size-text5: 10px;
+  --font-lineHeight-h1: 72px;
+  --font-lineHeight-h2: 56px;
+  --font-lineHeight-h3: 42px;
+  --font-lineHeight-h4: 36px;
+  --font-lineHeight-text1: 28px;
+  --font-lineHeight-text2: 24px;
+  --font-lineHeight-text3: 24px;
+  --font-lineHeight-text4: 20px;
+  --font-lineHeight-text5: 14px;
+  --font-family-sans: apercuPro, "apercuPro Fallback";
+  --font-family-appSans: apercuProRegular, "apercuProRegular Fallback";
+  --font-family-appMedium: apercuProMedium, "apercuProMedium Fallback";
+  --layout-container: 1280px;
+  --layout-gutter: 64px;
+  --layout-gap: 24px;
+  --layout-cols: 12;
+  --layout-col-1: 74px;
+  --layout-col-2: 172px;
+  --layout-col-3: 270px;
+  --layout-col-4: 368px;
+  --layout-col-5: 466px;
+  --layout-col-6: 564px;
+  --layout-col-7: 662px;
+  --layout-col-8: 760px;
+  --layout-col-9: 858px;
+  --layout-col-10: 956px;
+  --layout-col-11: 1054px;
+  --layout-col-12: 1152px;
+  --measured-titleTracking: 0.35px;
+  --measured-linkHover: #ffffff;
+  --measured-glowColour: #ffffff;
+  --measured-sliderBase: #101010;
+  --measured-mobileMenuLabel: 12px;
+  --shadow-glow: 0px 0px 15px 0px #ffffff;
+  --shadow-focusRing: 0px 0px 0px 6px #666666;
+  --shadow-focusRingLink: 0px 0px 0px 4px #808080;
+  --radius-basic: 12px;
+  --radius-full: 100px;
+  --radius-sheet: 20px;
+  --radius-card: 24px;
+  --radius-dialog: 32px;
+  --radius-round: 50%;
+  --duration-hover: 200ms;
+  --duration-sheet: 300ms;
+  --easing-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --easing-sheetIn: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --easing-sheetOut: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --gradient-headerScrim: linear-gradient(180deg, var(--color-neutral-black) 0%, rgba(0, 0, 0, 0.65) 50.0%, rgba(0, 0, 0, 0) 100%);
+  --gradient-declaredScrim: linear-gradient(180deg, #181818 0%, rgba(0, 0, 0, 0) 100%);
+  --page: var(--color-neutral-black);
+  --text: var(--color-neutral-white);
+  --muted: var(--color-neutral-300);
+  --faint: var(--color-neutral-200);
+  --surface: var(--color-neutral-800);
+  --surfaceRaised: var(--color-neutral-700);
+  --fillHover: var(--color-neutral-500);
+  --border: var(--color-neutral-500);
+  --borderStrong: var(--color-neutral-white);
+  --borderSubtle: var(--color-neutral-800);
+  --bar: #2b2b2b;
+  --scrim: rgba(0, 0, 0, 0.8);
+  --focus: #666666;
+  --chipOutline: rgba(255, 255, 255, 0.15);
+  --onAccent: var(--color-neutral-black);
+  --component-control-heightNav: 44px;
+  --component-control-height: 56px;
+  --component-control-heightMobile: 36px;
+  --component-control-border: 2px;
+  --component-field-height: 62px;
+  --component-field-width: 564px;
+  --component-footerField-width: 466px;
+  --component-header-height: 72px;
+  --component-header-heightMobile: 56px;
+  --component-footer-height: 569px;
+  --component-card-size: 270px;
+  --component-row-width: 956px;
+  --component-accordion-width: 1152px;
+  --component-play-size: 72px;
+  --component-transport-size: 56px;
+  --component-icon-size: 24px;
+  --component-icon-sizeLg: 36px;
+  --component-dot-size: 12px;
+  --component-volume-width: 129px;
+  --component-mobileMenu-width: 326px;
+  --sg-sans: var(--font-family-sans, "apercuPro"), Arial, -apple-system, BlinkMacSystemFont, "SF Pro", system-ui, sans-serif;
+  --sg-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #ffffff); background: var(--page, #000000); }
+main { max-width: 1152px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: 0.35px; }
+h2.sh { font: 400 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--muted, #bfbfbf); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--borderSubtle, #191919); }
+.lead { max-width: 62ch; color: var(--muted, #bfbfbf); }
+.note { font-size: 13px; color: var(--muted, #bfbfbf); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 400 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, #bfbfbf); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--borderSubtle, #262626); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--muted, #bfbfbf); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--muted, #bfbfbf); }
+/* ---- site mock ---- */
+.mock { border: 1px solid var(--borderSubtle, #262626); border-radius: 16px; overflow: hidden; background: var(--page, #000000); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 72px); padding: 0 24px; background: var(--gradient-headerScrim, #000000); font-size: 14px; overflow-x: auto; scrollbar-width: thin; }
+.navbar .wm { font: 400 20px/1 var(--sg-sans); letter-spacing: .35px; }
+.navbar .sp { flex: 1; }
+.navbar .lk { font-size: 16px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightNav, 44px); padding: 0 12px; border-radius: var(--radius-basic, 12px); font-size: 16px; font-weight: 400; border: 2px solid var(--surfaceRaised, #262626); background: var(--surfaceRaised, #262626); color: var(--text, #ffffff); }
+.btn.glow { border-color: transparent; box-shadow: var(--shadow-glow, 0 0 15px #ffffff); }
+.btn.big { height: var(--component-control-height, 56px); padding: 0 24px; font-size: 22px; }
+.btn.pill { border-radius: var(--radius-full, 100px); }
+.btn.strong { border-color: var(--borderStrong, #ffffff); }
+.btn.play { width: var(--component-play-size, 72px); height: var(--component-play-size, 72px); padding: 0; border-radius: var(--radius-full, 100px); background: var(--text, #fff); border-color: var(--text, #fff); color: var(--onAccent, #000); font-size: 22px; }
+.hero { background: var(--page, #000000); color: var(--text, #fff); padding: 72px 40px; font: 400 var(--font-size-h1, 60px)/var(--font-lineHeight-h1, 72px) var(--sg-sans); letter-spacing: 0.35px; text-align: center; }
+.hero small { display: block; font: 400 var(--font-size-text2, 18px)/var(--font-lineHeight-text2, 24px) var(--sg-sans); color: var(--muted, #bfbfbf); margin: 20px auto 26px; max-width: 46ch; letter-spacing: 0; }
+.hero .row { display: flex; gap: 10px; justify-content: center; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--layout-gap, 24px); padding: 20px; }
+.card { border-radius: var(--radius-card, 24px); background: var(--surface, #191919); padding: 20px; min-height: 120px; font-size: 13px; color: var(--text, #fff); }
+.card .price { font: 400 28px/1.2 var(--sg-sans); margin: 8px 0 14px; }
+.acc { display: flex; align-items: center; justify-content: space-between; height: 76px; padding: 0 24px; margin: 0 20px 12px; border-radius: var(--radius-basic, 12px); background: var(--surface, #191919); font-size: 22px; }
+.field { display: flex; align-items: center; height: var(--component-field-height, 62px); padding: 0 20px; border: 2px solid var(--border, #808080); border-radius: var(--radius-basic, 12px); font-size: 22px; color: var(--muted, #bfbfbf); }
+.playerbar { display: flex; align-items: center; gap: 12px; margin: 20px; padding: 16px 24px; border-radius: var(--radius-full, 100px); background: var(--surface, #191919); font-size: 14px; color: var(--muted, #bfbfbf); }
+.playerbar .dot { width: var(--component-dot-size, 12px); height: var(--component-dot-size, 12px); border-radius: var(--radius-round, 50%); background: var(--text, #fff); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--borderSubtle, #262626); padding: 6px 14px; text-align: left; }
+/* ---- token sample tables ---- */
+.fxrow { display: flex; align-items: center; gap: 12px; font: 400 11px/1.3 var(--sg-mono); color: var(--muted, #bfbfbf); margin: 5px 0; }
+.fxrow .nm { flex: 0 0 170px; }
+.fxrow .sm { color: var(--text, #ffffff); }
+.gridbar { height: 14px; background: var(--surfaceRaised, #262626); border-radius: 4px; }
+.swbox { display: inline-flex; align-items: flex-end; gap: 8px; margin: 8px 18px 8px 0; }
+.swbox .box { width: 56px; height: 56px; background: var(--surfaceRaised, #262626); border: 1px solid var(--borderSubtle, #262626); }
+.swbox .lb { font: 400 11px/1.4 var(--sg-mono); color: var(--muted, #bfbfbf); }
+.gradbar { flex: 1; height: 22px; border-radius: 6px; border: 1px solid var(--borderSubtle, #262626); }
+.demo { transition: background var(--duration-hover, 200ms) var(--easing-standard, ease); }
+.demo:hover { background: var(--fillHover, #808080); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Endel style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number.</p>
+
+  <h2 class="sh">Endel, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the <code>--color-*</code> neutrals and declared accents, the <code>--title-*</code>/<code>--text-*</code> apercuPro scale and the 1280px/12-column grid the Next.js bundles declare on <code>:root</code>, plus the component values measured on the live pages of endel.io and app.endel.io. One dark theme; the bundles declare no light variant. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from endel.io and app.endel.io on 2026-11-13, signed out, in headless Chromium. No consent overlay mounts on the captured routes. No link was followed, no form submitted and nothing signed into; the Set Timer sheet, the More flyout and the mobile menu were opened by their own toggles and closed again.</p>
+
+  <h2 class="sh">The site chrome</h2>
+  <p class="lead">A fixed header fades into the page through a black scrim: the ENDEL mark, the nav (ADHD, Sleep, Focus, Relax, Activity, More) and two 44px buttons — the glowing Try Today and Sign In.</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm">Endel</span><span class="sp"></span><span class="lk">ADHD</span><span class="lk">Sleep</span><span class="lk">Focus</span><span class="lk">Relax</span><span class="lk">Activity</span><span class="lk">More</span><span class="btn glow">Try Today</span><span class="btn">Sign In</span></div>
+    <div class="hero">Endel
+      <small>Personalized soundscapes to help you focus, relax and sleep — backed by neuroscience.</small>
+      <div class="row"><span class="btn play">&#9654;</span></div>
+    </div>
+    <div class="acc"><span>What is the difference between Soundscapes and Scenarios?</span><span>+</span></div>
+    <div class="playerbar"><span class="dot"></span><span>Focus &mdash; paused</span><span class="sp" style="flex:1"></span><span>Set Timer</span></div>
+  </div>
+
+  <h2 class="sh">Cards and fields</h2>
+  <p class="lead">Cards fill <code>dark.surface</code> #191919 (accordion rows, the mini-player pill) or <code>dark.surfaceRaised</code> #262626 (every button); the carousel banner carries a 24px corner and a 15% white inset outline. Fields rest on a #808080 border that goes white on focus.</p>
+  <div class="mock">
+    <div class="cards">
+      <div class="card"><b>Colored Noises</b><div class="price" style="font-size:18px">Soundscape</div><span class="btn pill">Try Now</span></div>
+      <div class="card"><b>Focus Timer</b><div class="price" style="font-size:18px">Scenario</div><span class="btn pill">Select</span></div>
+    </div>
+    <div style="padding:0 20px 20px"><div class="field">name@email.com</div></div>
+    <div style="padding:0 20px 20px"><span class="btn big strong">Unlock for $5.99/mo</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The ground is <code>dark.page</code> #000000. <code>color.neutral</code> is a five-step grey ramp (#191919, #262626, #808080, #bfbfbf, #e0e0e0) plus black and white that builds every surface, text level and border; buttons hover from gray-2 to gray-3. <code>color.accent</code> holds the declared greens and orange the signed-out pages never paint.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <p class="lead">Measured boxes: the 72px header, 44px nav buttons and 56px large controls, the 270px (= --cols-3) soundscape card, the 62px sign-in field and the player's 56px transports.</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">The declared apercuPro scale: the <code>--title-*</code> and <code>--text-*</code> steps tokenised as <code>font.size.*</code> with their <code>--line-height-*</code> partners, all at weight 400.</p>
+  <div id="type-out"></div>
+
+  <h2 class="sh">Grid</h2>
+  <p class="lead">The declared 1280px/12-column grid: container, gutter, gap and the <code>--cols-*</code> spans the components snap to (a card is <code>--cols-3</code>, a field <code>--cols-5</code> or <code>--cols-6</code>, a full row <code>--cols-12</code>). Bars at 85% scale.</p>
+  <div id="grid-out"></div>
+
+  <h2 class="sh">Radius, shadow, gradient, motion</h2>
+  <p class="lead">Six radius steps; the Try Today glow and the two focus rings; the header scrim gradients; the measured durations and declared easings.</p>
+  <div id="fx-out"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, toggle and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"neutral":{"black":{"v":"#000000","t":"color","s":"css-var --color-black","d":"The pure black every page paints on (#000, body's own fill and the header scrim's base)."},"800":{"v":"#191919","t":"color","s":"css-var --color-gray-1","d":"#191919: card fills (accordion rows, the mini-player pill, the timer sheet) and the footer hairline."},"700":{"v":"#262626","t":"color","s":"css-var --color-gray-2","d":"#262626: the default fill of every button and pill (Try Today, Sign In, Continue, OAuth, the scenario pills)."},"500":{"v":"#808080","t":"color","s":"css-var --color-gray-3","d":"#808080: field borders, the hover/pressed fill of gray-2 buttons, the link focus ring, the volume track's empty half."},"300":{"v":"#bfbfbf","t":"color","s":"css-var --color-gray-4","d":"#bfbfbf: muted text (footer headings and legal links, the accordion answer, the mini-player's time)."},"200":{"v":"#e0e0e0","t":"color","s":"css-var --color-gray-5","d":"#e0e0e0: the lightest grey, the FREEMIUM account chip's label."},"white":{"v":"#ffffff","t":"color","s":"css-var --color-white","d":"#fff: text, strong borders (focused fields, the Unlock and Continue borders), the play button's fill."}},"accent":{"green":{"v":"#82d133","t":"color","s":"css-var --color-green","d":"#82d133, declared on both hosts' :root; nothing on the captured signed-out routes paints it."},"orange":{"v":"#ff7a00","t":"color","s":"css-var --color-orange","d":"#ff7a00, declared on both hosts' :root; nothing on the captured signed-out routes paints it."},"bright":{"v":"#58ff5d","t":"color","s":"css-var --color-accent-green","d":"#58ff5d, declared on app.endel.io's :root only; nothing on the captured signed-out routes paints it."},"brightHover":{"v":"#3ee843","t":"color","s":"css-var --color-accent-green-hover","d":"#3ee843, the hover state of --color-accent-green, declared on app.endel.io's :root only."}}},"font":{"size":{"h1":{"v":"60px","t":"dimension","s":"css-var --title-h1","d":"60px display size (the Endel wordmark hero)."},"h2":{"v":"44px","t":"dimension","s":"css-var --title-h2","d":"44px section titles."},"h3":{"v":"36px","t":"dimension","s":"css-var --title-h3","d":"36px smaller headings — also the mobile display size (m-hero-title computes 36px)."},"h4":{"v":"28px","t":"dimension","s":"css-var --title-h4","d":"28px minor headings and the player title."},"text1":{"v":"22px","t":"dimension","s":"css-var --text-1","d":"22px lead text and big links/buttons (nav items, Try Now, button labels)."},"text2":{"v":"18px","t":"dimension","s":"css-var --text-2","d":"18px secondary links (Learn More, footer links)."},"text3":{"v":"16px","t":"dimension","s":"css-var --text-3","d":"16px base text and small button labels (header buttons)."},"text4":{"v":"14px","t":"dimension","s":"css-var --text-4","d":"14px muted labels (footer headings, mini-player meta)."},"text5":{"v":"10px","t":"dimension","s":"css-var --text-5","d":"10px microtext."}},"lineHeight":{"h1":{"v":"72px","t":"dimension","s":"css-var --line-height-h1","d":"72px on the 60px display size."},"h2":{"v":"56px","t":"dimension","s":"css-var --line-height-h2","d":"56px on h2."},"h3":{"v":"42px","t":"dimension","s":"css-var --line-height-h3","d":"42px on h3."},"h4":{"v":"36px","t":"dimension","s":"css-var --line-height-h4","d":"36px on h4."},"text1":{"v":"28px","t":"dimension","s":"css-var --line-height-text-1","d":"28px on the 22px text."},"text2":{"v":"24px","t":"dimension","s":"css-var --line-height-text-2","d":"24px on the 18px text."},"text3":{"v":"24px","t":"dimension","s":"css-var --line-height-text-3","d":"24px on the 16px text."},"text4":{"v":"20px","t":"dimension","s":"css-var --line-height-text-4","d":"20px on the 14px text."},"text5":{"v":"14px","t":"dimension","s":"css-var --line-height-text-5","d":"14px on the 10px microtext."}},"family":{"sans":{"v":"apercuPro, \"apercuPro Fallback\"","t":"fontFamily","s":"computed fontFamily of page-ground default (raw/components-computed.json); the apercuPro faces are @font-face declarations in the site and app bundles (fonts in raw/css-vars.json)","d":"apercuPro plus the metric-matched 'apercuPro Fallback' (a local Arial face with override descriptors), the stack every captured marketing node uses."},"appSans":{"v":"apercuProRegular, \"apercuProRegular Fallback\"","t":"fontFamily","s":"computed fontFamily of login-card default (raw/components-computed.json); the apercuPro faces are @font-face declarations in the site and app bundles (fonts in raw/css-vars.json)","d":"apercuProRegular plus its metric-matched fallback — the web app's own body face (the app bundle declares a separate apercuProRegular @font-face at weight 400)."},"appMedium":{"v":"apercuProMedium, \"apercuProMedium Fallback\"","t":"fontFamily","s":"computed textStyle.fontFamily of banner default (raw/components-computed.json); the apercuPro faces are @font-face declarations in the site and app bundles (fonts in raw/css-vars.json)","d":"apercuProMedium plus its fallback — the app's second declared face (weight 500); the banner's promo text is set in it even though its computed fontWeight reads 400."}}},"layout":{"container":{"v":"1280px","t":"dimension","s":"css-var --max-width","d":"The 1280px page column."},"gutter":{"v":"64px","t":"dimension","s":"css-var --gutter","d":"The 64px side gutter inside the 1280px column."},"gap":{"v":"24px","t":"dimension","s":"css-var --gap","d":"The 24px grid gap."},"cols":{"v":12,"t":"number","s":"css-var --max-cols","d":"The 12-column grid."},"col":{"1":{"v":"74px","t":"dimension","s":"css-var --cols-1","d":"The width of 1 column at the 1280px container (74px)."},"2":{"v":"172px","t":"dimension","s":"css-var --cols-2","d":"The width of 2 columns at the 1280px container (172px)."},"3":{"v":"270px","t":"dimension","s":"css-var --cols-3","d":"The width of 3 columns at the 1280px container (270px)."},"4":{"v":"368px","t":"dimension","s":"css-var --cols-4","d":"The width of 4 columns at the 1280px container (368px)."},"5":{"v":"466px","t":"dimension","s":"css-var --cols-5","d":"The width of 5 columns at the 1280px container (466px)."},"6":{"v":"564px","t":"dimension","s":"css-var --cols-6","d":"The width of 6 columns at the 1280px container (564px)."},"7":{"v":"662px","t":"dimension","s":"css-var --cols-7","d":"The width of 7 columns at the 1280px container (662px)."},"8":{"v":"760px","t":"dimension","s":"css-var --cols-8","d":"The width of 8 columns at the 1280px container (760px)."},"9":{"v":"858px","t":"dimension","s":"css-var --cols-9","d":"The width of 9 columns at the 1280px container (858px)."},"10":{"v":"956px","t":"dimension","s":"css-var --cols-10","d":"The width of 10 columns at the 1280px container (956px)."},"11":{"v":"1054px","t":"dimension","s":"css-var --cols-11","d":"The width of 11 columns at the 1280px container (1054px)."},"12":{"v":"1152px","t":"dimension","s":"css-var --cols-12","d":"The width of 12 columns at the 1280px container (1152px)."}}},"measured":{"titleTracking":{"v":"0.35px","t":"dimension","s":"computed letterSpacing of hero-title default (raw/components-computed.json)","d":"The 0.35px tracking on the display sizes (h1-h3 share it)."},"linkHover":{"v":"#ffffff","t":"color","s":"computed color of footer-link default (raw/components-computed.json)","d":"Links keep their colour on hover — only an underline paints (the footer's legal line additionally steps #bfbfbf to white)."},"glowColour":{"v":"#ffffff","t":"color","s":"computed boxShadow of btn-try hover (raw/components-computed.json)","d":"The Try Today button keeps its white 15px glow through hover."},"sliderBase":{"v":"#101010","t":"color","s":"computed color of volume default (raw/components-computed.json)","d":"The volume slider's own colour #101010 (the track paints a white/gray-3 gradient over it)."},"mobileMenuLabel":{"v":"12px","t":"dimension","s":"computed fontSize of m-menu-button default (raw/components-computed.json)","d":"The 12px label on the mobile Menu button."}},"shadow":{"glow":{"v":[{"color":"#ffffff","offsetX":"0px","offsetY":"0px","blur":"15px","spread":"0px"}],"t":"shadow","s":"computed boxShadow of btn-try default (raw/components-computed.json)","d":"The white 0 0 15px glow on the Try Today button (kept through hover and press)."},"focusRing":{"v":[{"color":"#666666","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"6px"}],"t":"shadow","s":"computed boxShadow of btn-signin focus-visible (raw/components-computed.json)","d":"The product's keyboard focus ring on buttons: a #666666 6px spread shadow."},"focusRingLink":{"v":[{"color":"#808080","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"4px"}],"t":"shadow","s":"computed boxShadow of press-logo focus-visible (raw/components-computed.json)","d":"The focus ring on plain links and tiles: a #808080 4px spread shadow."}},"radius":{"basic":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of btn-try default (raw/components-computed.json)","d":"The 12px corner of buttons, fields, accordion rows and the mobile menu button (the bundle's border-radius-basic)."},"full":{"v":"100px","t":"dimension","s":"computed paint.0.radius of play-button default (raw/components-computed.json)","d":"The 100px pill/circle corner (play and transport buttons, scenario pills, the mini-player pill; the bundle's border-radius-full)."},"sheet":{"v":"20px","t":"dimension","s":"computed paint.0.radius of btn-explore default (raw/components-computed.json)","d":"The 20px top corner of the player's bottom Explore sheet (20px 20px 0 0)."},"card":{"v":"24px","t":"dimension","s":"computed borderTopLeftRadius of banner default (raw/components-computed.json)","d":"The 24px corner of the explore carousel banner."},"dialog":{"v":"32px","t":"dimension","s":"computed paint.2.radius of timer-dialog opened (raw/components-computed.json)","d":"The 32px corner of the timer sheet."},"round":{"v":"50%","t":"dimension","s":"computed paint.0.radius of banner-dot default (raw/components-computed.json)","d":"The 50% carousel dot."}},"duration":{"hover":{"v":"200ms","t":"duration","s":"computed transitionDuration of btn-signin default (raw/components-computed.json)","d":"The 200ms background/border transition on every button and accordion row."},"sheet":{"v":"300ms","t":"duration","s":"declared slide-in-out/slide-out transition in the app bundle's CSSOM (raw/components-computed.json _meta.sheets)","d":"The 300ms slide of the timer sheet and the mobile menu."}},"easing":{"standard":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":"computed transitionTimingFunction of btn-signin default (raw/components-computed.json)","d":"Plain ease on the hover transitions."},"sheetIn":{"v":[0.25,0.46,0.45,0.94],"t":"cubicBezier","s":"declared .slide-in-out-enter animation in the app bundle's CSSOM (raw/components-computed.json _meta.sheets)","d":"The sheet's entrance bezier."},"sheetOut":{"v":[0.55,0.085,0.68,0.53],"t":"cubicBezier","s":"declared .slide-in-out-exit animation in the app bundle's CSSOM (raw/components-computed.json _meta.sheets)","d":"The sheet's exit bezier."}},"gradient":{"headerScrim":{"v":[{"color":"{color.neutral.black}","position":0},{"color":"rgba(0, 0, 0, 0.65)","position":0.5},{"color":"rgba(0, 0, 0, 0)","position":1}],"t":"gradient","s":"computed backgroundImage of header default (raw/components-computed.json)","d":"The fade the fixed header paints over scrolled content."},"declaredScrim":{"v":[{"color":"#181818","position":0},{"color":"rgba(0, 0, 0, 0)","position":1}],"t":"gradient","s":"declared --color-gradient-1 on :root (raw/css-vars.json); where it mounts was not identified on the captured routes","d":"The bundle's #181818-to-transparent fade."}}},"light":{},"dark":{"page":{"v":"{color.neutral.black}","t":"color","s":"computed backgroundColor of page-ground default (raw/components-computed.json); same value as core.color.neutral.black","d":"The pure black every captured route paints on (body's own fill)."},"text":{"v":"{color.neutral.white}","t":"color","s":"computed color of hero-title default (raw/components-computed.json); same value as core.color.neutral.white","d":"The display type's white; all captured text is white or a grey."},"muted":{"v":"{color.neutral.300}","t":"color","s":"computed textStyle.color of footer-legal default (raw/components-computed.json); same value as core.color.neutral.300","d":"Secondary text: footer legal links, accordion answers, the mini-player's time (#bfbfbf on the text node)."},"faint":{"v":"{color.neutral.200}","t":"color","s":"computed textStyle.color of app-header default (raw/components-computed.json); same value as core.color.neutral.200","d":"The lightest text grey, the FREEMIUM account chip's label (#e0e0e0)."},"surface":{"v":"{color.neutral.800}","t":"color","s":"computed backgroundColor of accordion-title default (raw/components-computed.json); same value as core.color.neutral.800","d":"The card fill, #191919 (accordion rows, the mini-player pill, the timer sheet)."},"surfaceRaised":{"v":"{color.neutral.700}","t":"color","s":"computed backgroundColor of btn-signin default (raw/components-computed.json); same value as core.color.neutral.700","d":"The control fill, #262626 (every button and pill at rest)."},"fillHover":{"v":"{color.neutral.500}","t":"color","s":"computed backgroundColor of btn-signin hover (raw/components-computed.json); same value as core.color.neutral.500","d":"The hover and pressed fill of gray-2 controls, #808080."},"border":{"v":"{color.neutral.500}","t":"color","s":"computed borderTopColor of input-email-login default (raw/components-computed.json); same value as core.color.neutral.500","d":"The resting field border, #808080."},"borderStrong":{"v":"{color.neutral.white}","t":"color","s":"computed borderTopColor of input-email-login focused (raw/components-computed.json); same value as core.color.neutral.white","d":"The focused-field and primary-action border, pure white."},"borderSubtle":{"v":"{color.neutral.800}","t":"color","s":"computed paint.2.border of footer default (raw/components-computed.json); same value as core.color.neutral.800","d":"The 1px hairline under the footer columns, #191919."},"bar":{"v":"#2b2b2b","t":"color","s":"computed paint.0.bg of player-header default (raw/components-computed.json)","d":"The player header's inner bar, #2b2b2b, a grey between gray-2 and gray-3 that no var names."},"scrim":{"v":"rgba(0, 0, 0, 0.8)","t":"color","s":"computed backgroundColor of timer-dialog opened (raw/components-computed.json)","d":"The modal overlay, rgba(0,0,0,0.8), behind the timer sheet."},"focus":{"v":"#666666","t":"color","s":"computed ringShadow of btn-signin focus-visible (raw/components-computed.json)","d":"The keyboard focus ring's colour #666666, painted as a 6px spread shadow (the UA outline is suppressed)."},"chipOutline":{"v":"rgba(255, 255, 255, 0.15)","t":"color","s":"computed paint.0.outline of banner default (raw/components-computed.json)","d":"The carousel banner's inset outline, rgba(255,255,255,0.15)."},"onAccent":{"v":"{color.neutral.black}","t":"color","s":"computed textStyle.color of banner default (raw/components-computed.json); same value as core.color.neutral.black","d":"Text on a white fill inside the banner (the SPECIAL OFFER tag chip), black."},"component":{"control":{"heightNav":{"v":"44px","t":"dimension","s":"computed rect.h of btn-try default (raw/components-computed.json)","d":"Header buttons are 44px (Try Today, Sign In)."},"height":{"v":"56px","t":"dimension","s":"computed rect.h of btn-set-timer default (raw/components-computed.json)","d":"The 56px large controls (Set Timer, Continue, OAuth, scenario pills, transport buttons)."},"heightMobile":{"v":"36px","t":"dimension","s":"computed rect.h of m-menu-button default (raw/components-computed.json)","d":"The mobile Menu button is 36px."},"border":{"v":"2px","t":"dimension","s":"computed style.borderTopWidth of btn-set-timer default (raw/components-computed.json)","d":"Every button and field carries a 2px border (often painted its own fill colour)."}},"field":{"height":{"v":"62px","t":"dimension","s":"computed rect.h of input-email-login default (raw/components-computed.json)","d":"The sign-in email field is 62px."},"width":{"v":"564px","t":"dimension","s":"computed rect.w of input-email-login default (raw/components-computed.json)","d":"The login field and card are 564px wide, exactly --cols-6."}},"footerField":{"width":{"v":"466px","t":"dimension","s":"computed paint.0.size of footer default (raw/components-computed.json)","d":"The footer newsletter field is 466px wide, exactly --cols-5 (466x56)."}},"header":{"height":{"v":"72px","t":"dimension","s":"computed rect.h of header default (raw/components-computed.json)","d":"The fixed header is 72px."},"heightMobile":{"v":"56px","t":"dimension","s":"computed rect.h of m-header default (raw/components-computed.json)","d":"The mobile header is 56px."}},"footer":{"height":{"v":"569px","t":"dimension","s":"computed rect.h of footer default (raw/components-computed.json)","d":"The footer block at 1440px."}},"card":{"size":{"v":"270px","t":"dimension","s":"computed rect.w of soundscape-card default (raw/components-computed.json)","d":"A soundscape card is 270px, exactly --cols-3."}},"row":{"width":{"v":"956px","t":"dimension","s":"computed rect.w of soundscape-row default (raw/components-computed.json)","d":"A soundscape row (and the carousel banner) is 956px, exactly --cols-10."}},"accordion":{"width":{"v":"1152px","t":"dimension","s":"computed rect.w of accordion-title default (raw/components-computed.json)","d":"An FAQ row spans the full grid, 1152px = --cols-12."}},"play":{"size":{"v":"72px","t":"dimension","s":"computed rect.w of play-button default (raw/components-computed.json)","d":"The round play control is 72px."}},"transport":{"size":{"v":"56px","t":"dimension","s":"computed rect.w of player-control default (raw/components-computed.json)","d":"The player's transport buttons are 56px."}},"icon":{"size":{"v":"24px","t":"dimension","s":"computed icon.w of accordion-title default (raw/components-computed.json)","d":"Row and chevron icons are 24px."},"sizeLg":{"v":"36px","t":"dimension","s":"computed icon.w of play-button default (raw/components-computed.json)","d":"The play glyph is 36px."}},"dot":{"size":{"v":"12px","t":"dimension","s":"computed rect.w of banner-dot default (raw/components-computed.json)","d":"Carousel dots are 12px."}},"volume":{"width":{"v":"129px","t":"dimension","s":"computed rect.w of volume default (raw/components-computed.json)","d":"The volume slider is 129px wide, 5px tall."}},"mobileMenu":{"width":{"v":"326px","t":"dimension","s":"computed rect.w of m-menu-flyout default (raw/components-computed.json)","d":"A promo row in the open mobile menu, 326px."}}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.dark || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (roles.length) {
+    h += `<div class="pal-h">dark roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat(TOK.dark && TOK.dark.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  const font = (TOK.core && TOK.core.font) || {};
+  const lhs = Object.fromEntries(flat(font.lineHeight || {}, 'font.lineHeight.'));
+  let h = '';
+  for (const [n, t] of flat(font.size || {}, 'font.size.')) {
+    const step = n.slice('font.size.'.length);
+    const lh = lhs['font.lineHeight.' + step];
+    h += `<div class="fxrow"><span class="nm">${esc(n)}</span><span class="sm" style="font:400 var(${cssname(n)})/var(${cssname('font.lineHeight.' + step)}) var(--sg-sans)">Soundscapes ${esc(t.v)}${lh ? '/' + esc(lh.v) : ''}</span></div>`;
+  }
+  for (const [n, t] of flat(font.family || {}, 'font.family.')) h += `<div class="fxrow"><span class="nm">${esc(n)}</span><span>${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+})();
+
+(function grid() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core && TOK.core.layout) || {}, 'layout.')) {
+    if (!n.startsWith('layout.col.')) { h += `<div class="fxrow"><span class="nm">${esc(n)}</span><span>${esc(t.v)}</span></div>`; continue; }
+    h += `<div class="fxrow"><span class="nm">${esc(n)}</span><span class="gridbar" style="width:calc(var(${cssname(n)}) * 0.85)"></span><span>${esc(t.v)}</span></div>`;
+  }
+  $('#grid-out').innerHTML = h;
+})();
+
+(function fx() {
+  let h = '<div class="pal-h">radius</div>';
+  for (const [n, t] of flat((TOK.core && TOK.core.radius) || {}, 'radius.'))
+    h += `<span class="swbox"><span class="box" style="border-radius:var(${cssname(n)})"></span><span class="lb">${esc(n)}<br>${esc(t.v)}</span></span>`;
+  h += '<div class="pal-h">shadow</div>';
+  for (const [n] of flat((TOK.core && TOK.core.shadow) || {}, 'shadow.'))
+    h += `<span class="swbox"><span class="box" style="background:var(--surface,#191919);box-shadow:var(${cssname(n)})"></span><span class="lb">${esc(n)}</span></span>`;
+  h += '<div class="pal-h">gradient</div>';
+  for (const [n] of flat((TOK.core && TOK.core.gradient) || {}, 'gradient.'))
+    h += `<div class="fxrow"><span class="nm">${esc(n)}</span><span class="gradbar" style="background:var(${cssname(n)})"></span></div>`;
+  h += '<div class="pal-h">motion</div>';
+  for (const [n, t] of flat((TOK.core && TOK.core.duration) || {}, 'duration.'))
+    h += `<div class="fxrow"><span class="nm">${esc(n)}</span><span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core && TOK.core.easing) || {}, 'easing.'))
+    h += `<div class="fxrow"><span class="nm">${esc(n)}</span><span>cubic-bezier(${esc((Array.isArray(t.v) ? t.v : [t.v]).join(', '))})</span></div>`;
+  h += '<div class="fxrow"><span class="btn demo">hover me — background var(--duration-hover) var(--easing-standard)</span></div>';
+  $('#fx-out').innerHTML = h;
+})();
+</script>
+</body>
+</html>

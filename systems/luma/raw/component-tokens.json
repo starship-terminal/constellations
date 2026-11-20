@@ -1,0 +1,764 @@
+{
+  "_about": "Luma's declared --color / --gray / --font layer, resolved on html.theme-root.light and html.theme-root.dark, plus measured geometry from the public signed-out pages.",
+  "core": {
+    "color": {
+      "gray": {
+        "10": {
+          "var": "--gray-10",
+          "type": "color"
+        },
+        "20": {
+          "var": "--gray-20",
+          "type": "color"
+        },
+        "30": {
+          "var": "--gray-30",
+          "type": "color"
+        },
+        "40": {
+          "var": "--gray-40",
+          "type": "color"
+        },
+        "50": {
+          "var": "--gray-50",
+          "type": "color"
+        },
+        "60": {
+          "var": "--gray-60",
+          "type": "color"
+        },
+        "70": {
+          "var": "--gray-70",
+          "type": "color"
+        },
+        "80": {
+          "var": "--gray-80",
+          "type": "color"
+        },
+        "90": {
+          "var": "--gray-90",
+          "type": "color"
+        },
+        "100": {
+          "var": "--gray-100",
+          "type": "color"
+        }
+      },
+      "ink": {
+        "var": "--black",
+        "type": "color"
+      },
+      "white": {
+        "var": "--white",
+        "type": "color"
+      },
+      "pure-black": {
+        "var": "--pure-black",
+        "type": "color"
+      },
+      "status": {
+        "brand": {
+          "var": "--brand-color",
+          "type": "color",
+          "description": "Light-theme declaration of --brand-color. Dark rebinds it."
+        },
+        "brand-active": {
+          "var": "--brand-active-color",
+          "type": "color",
+          "description": "Light-theme declaration of --brand-active-color. Dark rebinds it."
+        },
+        "success": {
+          "var": "--success-color",
+          "type": "color",
+          "description": "Light-theme declaration of --success-color. Dark rebinds it."
+        },
+        "error": {
+          "var": "--error-color",
+          "type": "color",
+          "description": "Light-theme declaration of --error-color. Dark rebinds it."
+        },
+        "warning": {
+          "var": "--warning-color",
+          "type": "color",
+          "description": "Light-theme declaration of --warning-color. Dark rebinds it."
+        }
+      }
+    },
+    "font": {
+      "family": {
+        "sans": {
+          "var": "--font",
+          "type": "fontFamily"
+        },
+        "title": {
+          "var": "--title-font",
+          "type": "fontFamily"
+        },
+        "mono": {
+          "var": "--mono-font",
+          "type": "fontFamily"
+        }
+      },
+      "size": {
+        "xxxs": {
+          "var": "--font-size-xxxs",
+          "type": "dimension"
+        },
+        "xxs": {
+          "var": "--font-size-xxs",
+          "type": "dimension"
+        },
+        "xs": {
+          "var": "--font-size-xs",
+          "type": "dimension"
+        },
+        "sm": {
+          "var": "--font-size-sm",
+          "type": "dimension"
+        },
+        "md": {
+          "var": "--font-size-md",
+          "type": "dimension"
+        },
+        "lg": {
+          "var": "--font-size-lg",
+          "type": "dimension"
+        },
+        "xl": {
+          "var": "--font-size-xl",
+          "type": "dimension"
+        },
+        "xxl": {
+          "var": "--font-size-xxl",
+          "type": "dimension"
+        },
+        "xxxl": {
+          "var": "--font-size-xxxl",
+          "type": "dimension"
+        }
+      },
+      "weight": {
+        "regular": {
+          "var": "--font-weight-regular",
+          "type": "fontWeight"
+        },
+        "medium": {
+          "var": "--font-weight-medium",
+          "type": "fontWeight"
+        },
+        "bold": {
+          "var": "--font-weight-bold",
+          "type": "fontWeight"
+        }
+      }
+    },
+    "radius": {
+      "sm": {
+        "var": "--small-border-radius",
+        "type": "dimension"
+      },
+      "md": {
+        "var": "--border-radius",
+        "type": "dimension"
+      },
+      "card": {
+        "var": "--card-border-radius",
+        "type": "dimension"
+      },
+      "lg": {
+        "var": "--large-border-radius",
+        "type": "dimension"
+      },
+      "squircle": {
+        "var": "--squircle-border-radius",
+        "type": "dimension"
+      },
+      "card-squircle": {
+        "var": "--card-squircle-border-radius",
+        "type": "dimension"
+      },
+      "modal": {
+        "var": "--modal-border-radius",
+        "type": "dimension"
+      },
+      "modal-squircle": {
+        "var": "--modal-squircle-border-radius",
+        "type": "dimension"
+      }
+    },
+    "size": {
+      "input": {
+        "var": "--input-height",
+        "type": "dimension"
+      },
+      "input-lg": {
+        "var": "--large-input-height",
+        "type": "dimension"
+      },
+      "input-x": {
+        "var": "--input-horizontal-padding",
+        "type": "dimension"
+      },
+      "input-y": {
+        "var": "--input-vertical-padding",
+        "type": "dimension"
+      },
+      "icon-button": {
+        "var": "--button-icon-only-padding",
+        "type": "dimension"
+      },
+      "page-x": {
+        "var": "--horizontal-padding",
+        "type": "dimension"
+      }
+    },
+    "shadow": {
+      "xs": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.1)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "4px",
+            "spread": "0px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --shadow-xs (light); Hairline lift."
+      },
+      "sm": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.02)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "3px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.03)",
+            "offsetX": "0px",
+            "offsetY": "2px",
+            "blur": "7px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "3px",
+            "blur": "14px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.05)",
+            "offsetX": "0px",
+            "offsetY": "7px",
+            "blur": "29px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.06)",
+            "offsetX": "0px",
+            "offsetY": "20px",
+            "blur": "80px",
+            "spread": "0px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --shadow-sm (light); Small card lift. Same layers as --light-shadow-sm and --chat-box-shadow."
+      },
+      "md": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.02)",
+            "offsetX": "0px",
+            "offsetY": "1.6px",
+            "blur": "3px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.03)",
+            "offsetX": "0px",
+            "offsetY": "4.2px",
+            "blur": "7px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "8px",
+            "blur": "14px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.05)",
+            "offsetX": "0px",
+            "offsetY": "17.5px",
+            "blur": "29px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.06)",
+            "offsetX": "0px",
+            "offsetY": "48px",
+            "blur": "80px",
+            "spread": "0px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --shadow (light); Default elevation. Same layers as --light-shadow."
+      },
+      "lg": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.03)",
+            "offsetX": "0px",
+            "offsetY": "3px",
+            "blur": "3px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "8px",
+            "blur": "7px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.05)",
+            "offsetX": "0px",
+            "offsetY": "17px",
+            "blur": "14px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.06)",
+            "offsetX": "0px",
+            "offsetY": "35px",
+            "blur": "29px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.07)",
+            "offsetX": "0px",
+            "offsetY": "96px",
+            "blur": "80px",
+            "spread": "0px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --shadow-lg (light); Large elevation. Same layers as --light-shadow-lg."
+      },
+      "xl": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "4.5px",
+            "blur": "3px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.06)",
+            "offsetX": "0px",
+            "offsetY": "11.3px",
+            "blur": "7px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.08)",
+            "offsetX": "0px",
+            "offsetY": "23px",
+            "blur": "14px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.1)",
+            "offsetX": "0px",
+            "offsetY": "47.5px",
+            "blur": "29px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.14)",
+            "offsetX": "0px",
+            "offsetY": "130px",
+            "blur": "80px",
+            "spread": "0px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --shadow-xl (light); Largest elevation. Same layers as --light-shadow-xl."
+      },
+      "modal": {
+        "value": [
+          {
+            "color": "rgba(21, 21, 21, 0.08)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "0px",
+            "spread": "1px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.03)",
+            "offsetX": "0px",
+            "offsetY": "3px",
+            "blur": "3px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "8px",
+            "blur": "7px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.05)",
+            "offsetX": "0px",
+            "offsetY": "17px",
+            "blur": "14px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.06)",
+            "offsetX": "0px",
+            "offsetY": "35px",
+            "blur": "29px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "-4px",
+            "blur": "4px",
+            "spread": "0px",
+            "inset": true
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --shadow-modal (light); Modal: a 1px hairline plus the large shadow and an inset top edge."
+      },
+      "card-hover": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.004)",
+            "offsetX": "0px",
+            "offsetY": "28px",
+            "blur": "17px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.01)",
+            "offsetX": "0px",
+            "offsetY": "12px",
+            "blur": "12px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.01)",
+            "offsetX": "0px",
+            "offsetY": "3px",
+            "blur": "7px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.01)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "0px",
+            "spread": "0px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --card-hover-shadow (light); The hover lift named for content cards."
+      }
+    },
+    "duration": {
+      "fast": {
+        "var": "--fast-transition-duration",
+        "type": "duration"
+      },
+      "base": {
+        "var": "--transition-duration",
+        "type": "duration"
+      },
+      "slow": {
+        "var": "--slow-transition-duration",
+        "type": "duration"
+      }
+    },
+    "easing": {
+      "standard": {
+        "var": "--transition-fn",
+        "type": "cubicBezier"
+      },
+      "bounce": {
+        "var": "--bounce-transition-fn",
+        "type": "cubicBezier"
+      }
+    }
+  },
+  "light": {
+    "color": {
+      "text": {
+        "primary": {
+          "var": "--primary-color",
+          "type": "color"
+        },
+        "secondary": {
+          "var": "--secondary-color",
+          "type": "color"
+        },
+        "tertiary": {
+          "var": "--tertiary-color",
+          "type": "color"
+        },
+        "quaternary": {
+          "var": "--quaternary-color",
+          "type": "color"
+        }
+      },
+      "bg": {
+        "page": {
+          "var": "--primary-bg-color",
+          "type": "color"
+        },
+        "sunken": {
+          "var": "--secondary-bg-color",
+          "type": "color"
+        },
+        "muted": {
+          "var": "--tertiary-bg-color",
+          "type": "color"
+        },
+        "elevated": {
+          "var": "--elevated-primary-bg-color",
+          "type": "color"
+        },
+        "modal": {
+          "var": "--modal-bg-color",
+          "type": "color"
+        },
+        "menu": {
+          "var": "--menu-bg-color",
+          "type": "color"
+        },
+        "hover": {
+          "var": "--hover-bg-color",
+          "type": "color"
+        }
+      },
+      "border": {
+        "primary": {
+          "var": "--primary-border-color",
+          "type": "color"
+        },
+        "divider": {
+          "var": "--divider-color",
+          "type": "color"
+        }
+      },
+      "brand": {
+        "var": "--brand-color",
+        "type": "color"
+      },
+      "brand-active": {
+        "var": "--brand-active-color",
+        "type": "color"
+      },
+      "success": {
+        "var": "--success-color",
+        "type": "color"
+      },
+      "error": {
+        "var": "--error-color",
+        "type": "color"
+      },
+      "warning": {
+        "var": "--warning-color",
+        "type": "color"
+      }
+    }
+  },
+  "dark": {
+    "color": {
+      "text": {
+        "primary": {
+          "var": "--primary-color",
+          "type": "color"
+        },
+        "secondary": {
+          "var": "--secondary-color",
+          "type": "color"
+        },
+        "tertiary": {
+          "var": "--tertiary-color",
+          "type": "color"
+        },
+        "quaternary": {
+          "var": "--quaternary-color",
+          "type": "color"
+        }
+      },
+      "bg": {
+        "page": {
+          "var": "--primary-bg-color",
+          "type": "color"
+        },
+        "sunken": {
+          "var": "--secondary-bg-color",
+          "type": "color"
+        },
+        "muted": {
+          "var": "--tertiary-bg-color",
+          "type": "color"
+        },
+        "elevated": {
+          "var": "--elevated-primary-bg-color",
+          "type": "color"
+        },
+        "modal": {
+          "var": "--modal-bg-color",
+          "type": "color"
+        },
+        "menu": {
+          "var": "--menu-bg-color",
+          "type": "color"
+        },
+        "hover": {
+          "var": "--hover-bg-color",
+          "type": "color"
+        }
+      },
+      "border": {
+        "primary": {
+          "var": "--primary-border-color",
+          "type": "color"
+        },
+        "divider": {
+          "var": "--divider-color",
+          "type": "color"
+        }
+      },
+      "brand": {
+        "var": "--brand-color",
+        "type": "color"
+      },
+      "brand-active": {
+        "var": "--brand-active-color",
+        "type": "color"
+      },
+      "success": {
+        "var": "--success-color",
+        "type": "color"
+      },
+      "error": {
+        "var": "--error-color",
+        "type": "color"
+      },
+      "warning": {
+        "var": "--warning-color",
+        "type": "color"
+      }
+    }
+  },
+  "component": {
+    "signin-pill": {
+      "radius": {
+        "value": "15px",
+        "type": "dimension",
+        "source": "measured nav-signin default borderTopLeftRadius"
+      },
+      "height": {
+        "value": "30px",
+        "type": "dimension",
+        "source": "measured nav-signin default rect height"
+      }
+    },
+    "create-pill": {
+      "radius": {
+        "value": "100px",
+        "type": "dimension",
+        "source": "measured cta-create default borderTopLeftRadius"
+      },
+      "bg": {
+        "value": "rgb(21, 21, 21)",
+        "type": "color",
+        "source": "measured cta-create default backgroundColor"
+      },
+      "color": {
+        "value": "rgb(255, 255, 255)",
+        "type": "color",
+        "source": "measured cta-create default color"
+      }
+    },
+    "primary-button": {
+      "radius": {
+        "value": "16px",
+        "type": "dimension",
+        "source": "measured plan-cta default borderTopLeftRadius"
+      },
+      "bg": {
+        "value": "rgb(53, 53, 53)",
+        "type": "color",
+        "source": "measured plan-cta default backgroundColor"
+      },
+      "height": {
+        "value": "38px",
+        "type": "dimension",
+        "source": "measured plan-cta default rect height"
+      }
+    },
+    "brand-button": {
+      "bg": {
+        "value": "rgb(243, 26, 124)",
+        "type": "color",
+        "source": "measured plan-cta-brand default backgroundColor"
+      },
+      "radius": {
+        "value": "16px",
+        "type": "dimension",
+        "source": "measured plan-cta-brand default borderTopLeftRadius"
+      }
+    },
+    "field": {
+      "radius": {
+        "value": "8px",
+        "type": "dimension",
+        "source": "measured email-field default borderTopLeftRadius"
+      },
+      "height": {
+        "value": "38px",
+        "type": "dimension",
+        "source": "measured email-field default rect height"
+      }
+    },
+    "plan-card": {
+      "radius": {
+        "value": "24px",
+        "type": "dimension",
+        "source": "measured plan-card default borderTopLeftRadius"
+      }
+    },
+    "hero-title": {
+      "size": {
+        "value": "80px",
+        "type": "dimension",
+        "source": "measured hero-title default fontSize"
+      },
+      "weight": {
+        "value": 500,
+        "type": "fontWeight",
+        "source": "measured hero-title default fontWeight"
+      }
+    },
+    "pricing-title": {
+      "size": {
+        "value": "60px",
+        "type": "dimension",
+        "source": "measured pricing-title default fontSize"
+      }
+    }
+  }
+}

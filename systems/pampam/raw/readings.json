@@ -1,0 +1,74 @@
+{
+  "captured": "2026-11-19",
+  "source": "getComputedStyle on https://www.pampam.city/ and public routes, viewport 1440x900 and 390x844, devicePixelRatio 2",
+  "theme": "light only. html has no theme attribute. prefers-color-scheme dark was true in the preview tab and the page stayed light.",
+  "fonts": {
+    "inter": {
+      "family": "inter",
+      "weight": "100 900",
+      "src": "/_next/static/media/ff710c092db72df4-s.p.woff2",
+      "display": "swap",
+      "fallback": "inter Fallback -> local(Arial)"
+    },
+    "nineties": {
+      "family": "nineties",
+      "src": "/_next/static/media/359d79036b1aee39-s.p.woff2",
+      "display": "swap",
+      "fallback": "nineties Fallback -> local(Arial)"
+    },
+    "cssVars": {
+      "--font-inter": "\"inter\",\"inter Fallback\"",
+      "--font-nineties": "\"nineties\",\"nineties Fallback\""
+    }
+  },
+  "page": {
+    "home": "https://www.pampam.city/",
+    "pricing": "https://www.pampam.city/pricing",
+    "about": "https://www.pampam.city/about",
+    "features": "https://www.pampam.city/features",
+    "blog": "https://www.pampam.city/blog",
+    "login": "https://www.pampam.city/login"
+  },
+  "viewport": {
+    "desktop": {
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2,
+      "visualViewportScale": 1
+    },
+    "phone": {
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2
+    }
+  },
+  "colours": {
+    "ink": "#1b1917",
+    "body": "#2c2936",
+    "muted": "#9894a8",
+    "menuItem": "#666666",
+    "menuItemHover": "#aaaaaa",
+    "placeholder": "#8f8f8f",
+    "fieldText": "#222222",
+    "loginMuted": "#808080",
+    "secondaryLabel": "#8a8a8a",
+    "white": "#ffffff",
+    "page": "#ffffff",
+    "offWhite": "#fefefe",
+    "cream": "#faf2ec",
+    "planCard": "#fbfcfd",
+    "black": "#000000",
+    "accent": "#4b72f3",
+    "accentBorder": "#2b3ea7",
+    "accentLip": "#6387f4",
+    "focus": "#ff9a50",
+    "success": "#00a917",
+    "successFill": "#e5ffe8",
+    "switchOn": "#006e0b",
+    "selectedBorder": "#dde1f1",
+    "hairline": "rgba(0,0,0,0.1)",
+    "hairlineSoft": "rgba(0,0,0,0.05)",
+    "hairlineFaint": "rgba(0,0,0,0.02)",
+    "typeCardWash": "rgba(211,211,211,0.6)"
+  }
+}

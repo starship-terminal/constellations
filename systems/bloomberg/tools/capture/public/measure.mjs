@@ -18,6 +18,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, M, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
+import { pageRunner, exitStatus } from './run-pages.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -142,6 +143,9 @@ async function measure(key, state, target, opts = {}) {
 }
 
 async function S(key, target, list, meta = {}, opts = {}) {
+  // meta is the entry's description only; an option placed here (fillText, cropLoc,
+  // noToggle...) would be silently ignored, so refuse it
+  for (const k of Object.keys(meta)) if (!['group', 'title', 'desc', 'sel'].includes(k)) throw new Error(`S(${key}): '${k}' is an option; pass it in opts`);
   const prev = out.components[key];
   const keep = prev && Object.keys(prev.states || {}).length ? { page: prev.page, run: prev.run, url: prev.url } : null;
   comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
@@ -280,7 +284,7 @@ async function home() {
   await S('utility-bar', q('nav.bb-that').first(), ['default'], { group: g, title: 'Utility bar', desc: 'The thin top strip: "Bloomberg the Company & Its Products", Terminal demo, Anywhere login, customer support.', sel: 'nav.bb-that' }, { noScroll: true });
   const util = q('button, a').filter({ hasText: /Bloomberg the Company/i }).first();
   await S('utility-toggle', util, B4, { group: g, title: 'Company sitemap toggle', desc: 'Opens the "Bloomberg the Company & Its Products" sitemap dropdown.', sel: 'button:has-text("Bloomberg the Company")' }, { noScroll: true });
-  await S('utility-toggle-open', util, ['opened'], { group: g, title: 'Company sitemap, open', desc: 'The toggle after its own press; the dropdown shows in the crop of the opened panel.', sel: 'button:has-text("Bloomberg the Company")', noToggle: false }, { noScroll: true, cropLoc: q('nav.bb-that').first(), allowLink: true });
+  await S('utility-toggle-open', util, ['opened'], { group: g, title: 'Company sitemap, open', desc: 'The toggle after its own press; the dropdown shows in the crop of the opened panel.', sel: 'button:has-text("Bloomberg the Company")' }, { noScroll: true, cropLoc: q('nav.bb-that').first() });
   await page.keyboard.press('Escape'); await page.waitForTimeout(500);
   await S('logo-bar', q('[class*="nav-ui-LogoBar__bar"]').first(), ['default'], { group: g, title: 'Logo bar', desc: 'The black bar: wordmark, Sign In, Subscribe, search.', sel: '[class*="nav-ui-LogoBar__bar"]' }, { noScroll: true });
   await S('logo', q('a[class*="nav-ui-Logo__logo"]').first(), ['default'], { group: g, title: 'Logo', sel: 'a[class*="nav-ui-Logo__logo"]' }, { noScroll: true });
@@ -392,7 +396,8 @@ async function subscriptions() {
   if (!(await newPage('subscriptions', { wait: 10000 }))) return;
   await sheetsFor('subscriptions');
   const g = G.subscriptions;
-  await S('offer-header', q('header, [class*="offers-page-header"], [class*="header" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Offers header', sel: 'header' }, { noScroll: true });
+  // the offers page's own header: header/[class*=header] caught the corporate utility bar
+  await S('offer-header', q('[class*="offers-page-header"]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Offers header', sel: 'header' }, { noScroll: true });
   await S('offer-hero', q('[class*="offers-header-block"]').first(), ['default'], { group: g, title: 'Offer hero', desc: 'The lead WordPress offer block ("Get context beyond the headlines").', sel: '[class*="offers-header-block"]' });
   await S('offer-price', q('[class*="offers-header-block-price"], [class*="price" i]').filter({ visible: true }).first(), ['default'], { group: g, title: 'Offer price', sel: '[class*="price"]' });
   await S('offer-cta', q('[class*="wp-ga-button"], .wp-block-button a, a.wp-element-button').filter({ hasText: /Continue|Choose|Subscribe/i }).first(), B4, { group: g, title: 'Offer CTA', desc: 'The offer’s own action; links to checkout, measured, never followed.', sel: 'a.wp-ga-button' });
@@ -436,22 +441,30 @@ context = ctx0;
 const pages = process.argv.slice(2);
 const plan = { home, markets, article, quote, live, subscriptions, mobile };
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
+// A page counts as finished only when its runner returns without throwing and
+// no bot check stopped it: any other throw (a goto timeout, a locator outside
+// S()) used to abort the loop, and the finally then pruned every page after it.
+// A page that throws is recorded as broken and the run goes on; the exit
+// status at the end is nonzero when any page threw (run-pages.mjs).
+const { finished, broken, runPage } = pageRunner(() => current, log);
+const pageDone = (c) => finished.has(c.page) && !failedPages.has(c.page) && !broken.has(c.page);
 try {
-  for (const k of order) { if (k !== 'mobile' && k !== 'article') await plan[k](); }
-  if (!pages.length || pages.includes('article')) await article();
-  if (!pages.length || pages.includes('home')) await footer();
-  if (!pages.length || pages.includes('mobile')) await plan.mobile();
-  if (!pages.length || pages.includes('home')) await reducedMotion('home', '[class*="TickerBarWithPill_bar"]');
+  for (const k of order) { if (k !== 'mobile' && k !== 'article') await runPage(plan[k]); }
+  if (!pages.length || pages.includes('article')) await runPage(article);
+  if (!pages.length || pages.includes('home')) await runPage(footer);
+  if (!pages.length || pages.includes('mobile')) await runPage(plan.mobile);
+  if (!pages.length || pages.includes('home')) await runPage(reducedMotion, 'home', '[class*="TickerBarWithPill_bar"]');
 } finally {
   for (const [key, c] of Object.entries(out.components)) {
-    // An untouched entry is pruned only when its page was not blocked this
-    // run: a PerimeterX-gated route keeps its earlier readings under their
+    // Prune only what a finished page no longer produces: a page that was
+    // blocked (PerimeterX) or threw keeps its earlier readings under their
     // original provenance instead of being erased and republished.
-    if (!touched.has(key) && !pages.length && !failedPages.has(c.page)) { delete out.components[key]; continue; }
+    if (!touched.has(key)) { if (!pages.length && pageDone(c)) delete out.components[key]; continue; }
     const want = listed.get(key);
-    if (want) for (const st of Object.keys(c.states || {})) if (!want.has(st)) delete c.states[st];
+    if (want && pageDone(c)) for (const st of Object.keys(c.states || {})) if (!want.has(st)) delete c.states[st];
   }
   save();
   await browser.close();
 }
 console.log('components-computed.json:', Object.keys(out.components).length, 'components');
+process.exitCode = exitStatus(broken);

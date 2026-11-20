@@ -1,0 +1,28 @@
+{
+  "prefersLight": {
+    "theme": null,
+    "body": "rgba(0, 0, 0, 0)",
+    "h1": "rgb(36, 36, 36)",
+    "btn": {
+      "bg": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "radius": "16px"
+    }
+  },
+  "measured": {
+    "href": "https://copilot.com/",
+    "title": "Microsoft Copilot | Sign in",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 1,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "theme": null,
+    "colorScheme": "normal",
+    "scrollH": 2932,
+    "bodyBg": "rgba(0, 0, 0, 0)"
+  }
+}

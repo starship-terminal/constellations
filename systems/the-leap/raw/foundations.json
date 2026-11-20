@@ -1,0 +1,374 @@
+{
+  "source": "getComputedStyle on www.theleap.co and make.theleap.co, 2026-11-19, T3 preview tab tab_5z_b476fa69, viewport 1169x731 at devicePixelRatio 2, visualViewport scale 1",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1169,
+      "height": 731,
+      "scale": 1
+    }
+  },
+  "colorScheme": "normal",
+  "metaThemeColor": "#f0edee",
+  "htmlClass": "spai_has_js",
+  "pages": [
+    "https://www.theleap.co/",
+    "https://www.theleap.co/pricing/",
+    "https://www.theleap.co/features/",
+    "https://www.theleap.co/blog/",
+    "https://www.theleap.co/contact/",
+    "https://www.theleap.co/changelog/",
+    "https://accounts.theleap.co/login",
+    "https://accounts.theleap.co/signup"
+  ],
+  "loginRedirect": "https://accounts.theleap.co/login and https://accounts.theleap.co/signup both landed on https://make.theleap.co/accounts/login",
+  "screenshotFrames": "preview_snapshot returned: The browser is not producing screenshot frames. Measurements were kept. No screenshots were invented.",
+  "colors": {
+    "page": "#f0edee",
+    "surface": "#fafafa",
+    "text": "#482317",
+    "textDeep": "#4c2116",
+    "muted": "#4c2116",
+    "white": "#ffffff",
+    "ink": "#4d2114",
+    "accent": "#ecf956",
+    "brown": "#4c2116",
+    "cookie": "#eeeeee",
+    "placeholder": "#a1a1a1",
+    "sky": "#b1dcfc",
+    "skyPale": "#e2f2fe",
+    "green": "#c6e57d",
+    "greenPale": "#e7f7c1",
+    "greenSolid": "#52b448",
+    "limePale": "#f3fb9a",
+    "lemonPale": "#faffc4",
+    "blush": "#efd8f0",
+    "lilac": "#e3c6e4",
+    "lilacPale": "#f6eef7",
+    "coral": "#fb7259",
+    "coralDeep": "#fb4827",
+    "peach": "#ffe1d5",
+    "creatorBlue": "#6abdf6",
+    "creatorGreen": "#76c86e",
+    "blue": "#29a7ff",
+    "testimonialStart": "#f3e8f3",
+    "testimonialEnd": "#dff5dd",
+    "focusRing": "#2563eb",
+    "tailwindBorder": "#e5e7eb"
+  },
+  "fonts": {
+    "display": "Tobias, sans-serif",
+    "displaySerif": "Tobias, serif",
+    "ui": "Favorit, sans-serif",
+    "uiComputed": "Favorit, sans-serif",
+    "prose": "\"ABC Favorit\", sans-serif",
+    "auth": "Favorit, ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "htmlFallback": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif"
+  },
+  "faces": [
+    "Favorit 700 ABCFavorit-Bold.woff2",
+    "Favorit 400 ABCFavorit-Regular.woff2",
+    "Favorit 300 ABCFavorit-Book.woff2",
+    "Tobias 300 Tobias-Light.woff2"
+  ],
+  "type": {
+    "hero": {
+      "size": "70px",
+      "weight": 300,
+      "lineHeight": "normal",
+      "letterSpacing": "-1.4px",
+      "font": "Tobias, sans-serif",
+      "color": "#482317"
+    },
+    "section": {
+      "size": "60px",
+      "weight": 300,
+      "lineHeight": "normal",
+      "letterSpacing": "-1.2px",
+      "font": "Tobias, sans-serif",
+      "color": "#4c2116"
+    },
+    "display": {
+      "size": "92px",
+      "weight": 300,
+      "lineHeight": "97.9px",
+      "letterSpacing": "-1.84px",
+      "font": "Tobias, sans-serif",
+      "color": "#482317"
+    },
+    "blogTitle": {
+      "size": "54px",
+      "weight": 300,
+      "lineHeight": "55.35px",
+      "letterSpacing": "-1.08px",
+      "font": "Tobias, sans-serif",
+      "color": "#482317"
+    },
+    "faqQuestion": {
+      "size": "40px",
+      "weight": 300,
+      "lineHeight": "normal",
+      "letterSpacing": "-0.8px",
+      "font": "Tobias, sans-serif",
+      "color": "#482317"
+    },
+    "authTitle": {
+      "size": "40px",
+      "weight": 400,
+      "lineHeight": "52.8px",
+      "letterSpacing": "normal",
+      "font": "Tobias",
+      "color": "#4c2116"
+    },
+    "planName": {
+      "size": "35px",
+      "weight": 400,
+      "lineHeight": "32px",
+      "letterSpacing": "-0.7px",
+      "font": "\"ABC Favorit\", sans-serif",
+      "color": "#4c2116"
+    },
+    "price": {
+      "size": "62px",
+      "weight": 700,
+      "lineHeight": "74.4px",
+      "letterSpacing": "0.16px",
+      "font": "\"ABC Favorit\", sans-serif",
+      "color": "#4c2116"
+    },
+    "lede": {
+      "size": "22px",
+      "weight": 400,
+      "lineHeight": "normal",
+      "letterSpacing": "0.16px",
+      "font": "\"ABC Favorit\", sans-serif",
+      "color": "#4c2116"
+    },
+    "pricingLede": {
+      "size": "24px",
+      "weight": 400,
+      "lineHeight": "normal",
+      "letterSpacing": "0.16px",
+      "font": "\"ABC Favorit\", sans-serif",
+      "color": "#4c2116"
+    },
+    "step": {
+      "size": "24.6px",
+      "weight": 400,
+      "font": "\"ABC Favorit\"",
+      "color": "#4c2116"
+    },
+    "body": {
+      "size": "16px",
+      "weight": 400,
+      "lineHeight": "24px",
+      "letterSpacing": "0.16px",
+      "font": "Favorit, sans-serif",
+      "color": "#482317"
+    },
+    "nav": {
+      "size": "20px",
+      "weight": 350,
+      "lineHeight": "20px",
+      "letterSpacing": "0.16px",
+      "font": "Favorit, sans-serif",
+      "color": "#482317",
+      "textTransform": "uppercase"
+    },
+    "button": {
+      "size": "20px",
+      "weight": 400,
+      "lineHeight": "20px",
+      "letterSpacing": "0.16px",
+      "font": "Favorit, sans-serif",
+      "color": "#482317",
+      "textTransform": "uppercase"
+    },
+    "buttonSmall": {
+      "size": "16px",
+      "weight": 400,
+      "letterSpacing": "0.16px",
+      "font": "Favorit",
+      "padding": "8px 24px 5.6px"
+    },
+    "authButton": {
+      "size": "22px",
+      "weight": 400,
+      "font": "Favorit",
+      "color": "#4c2116",
+      "padding": "6px 48px"
+    },
+    "field": {
+      "size": "18px",
+      "weight": 400,
+      "lineHeight": "30px",
+      "font": "Favorit",
+      "color": "#4c2116"
+    },
+    "label": {
+      "size": "16px",
+      "weight": 400,
+      "lineHeight": "17.6px",
+      "font": "Favorit",
+      "color": "#4c2116"
+    },
+    "changelogLede": {
+      "size": "24px",
+      "weight": 400,
+      "font": "Favorit",
+      "color": "#482317"
+    }
+  },
+  "radius": {
+    "cookie": "8px",
+    "pricingCard": "20px",
+    "pricingButton": "20px",
+    "featureImage": "30px",
+    "testimonial": "30px",
+    "creatorBottom": "0px 0px 30px 30px",
+    "pill": "100px",
+    "authPill": "9999px",
+    "category": "38.5px",
+    "avatar": "100%",
+    "authCard": "16px",
+    "field": "0px"
+  },
+  "spacing": {
+    "fieldY": "6px",
+    "fieldX": "12px",
+    "authButtonX": "48px",
+    "oauthX": "24px",
+    "buttonY": "10px",
+    "buttonX": "30px",
+    "buttonBottom": "7px",
+    "smallButtonX": "24px",
+    "cookieClose": "16px",
+    "testimonial": "40px",
+    "pricing": "40px",
+    "brown": "48px",
+    "featureBlock": "100px 88px",
+    "authCard": "32px",
+    "navHeight": "80px"
+  },
+  "shadows": {
+    "cookie": "rgba(0, 0, 0, 0.2) 0px 0px 2px 1px",
+    "submenu": "0 0.25rem 0.375rem -0.0625rem rgba(0,0,0,.1), 0 0.125rem 0.25rem -0.0625rem rgba(0,0,0,.06)",
+    "buttonHover": "rgb(236, 249, 86) 0px 4px 24px 10px"
+  },
+  "motion": {
+    "buttonBefore": "opacity 0.15s ease-in",
+    "buttonGray": "background 0.15s ease-in",
+    "yellowHoverShadow": "rgb(236, 249, 86) 0px 4px 24px 10px",
+    "reducedMotionRules": 0,
+    "keyframes": ["spin", "splide-loading", "lds-dual-ring"]
+  },
+  "components": {
+    "nav": {
+      "height": "80.1953px",
+      "background": "#f0edee",
+      "borderBottom": "1px solid #482317",
+      "position": "fixed",
+      "top": "0px"
+    },
+    "buttonYellow": {
+      "background": "#ecf956",
+      "color": "#482317",
+      "border": "1px solid #482317",
+      "radius": "100px",
+      "padding": "10px 30px 7px",
+      "height": "39px",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "letterSpacing": "0.16px",
+      "lineHeight": "20px",
+      "textTransform": "uppercase"
+    },
+    "buttonLearnMore": {
+      "background": "#ecf956",
+      "padding": "8px 24px 5.6px",
+      "height": "40px",
+      "fontSize": "16px",
+      "radius": "100px",
+      "border": "1px solid #482317"
+    },
+    "pricingCard": {
+      "background": "#fafafa",
+      "padding": "40px",
+      "radius": "20px",
+      "width": "330px",
+      "borderColor": "#4c2116"
+    },
+    "pricingButton": {
+      "radius": "20px",
+      "width": "250px",
+      "height": "39px"
+    },
+    "testimonial": {
+      "width": "550px",
+      "height": "420px",
+      "radius": "30px",
+      "padding": "40px",
+      "backgroundImage": "linear-gradient(129deg, #f3e8f3 24.01%, #dff5dd 96.01%)"
+    },
+    "avatar": {
+      "width": "50px",
+      "height": "50px",
+      "radius": "100%"
+    },
+    "cookie": {
+      "background": "#eeeeee",
+      "radius": "8px",
+      "height": "80px",
+      "width": "1052px",
+      "shadow": "rgba(0, 0, 0, 0.2) 0px 0px 2px 1px"
+    },
+    "field": {
+      "background": "#ffffff",
+      "color": "#4c2116",
+      "border": "1px solid #4c2116",
+      "radius": "0px",
+      "padding": "6px 12px",
+      "height": "44px",
+      "width": "704px",
+      "fontSize": "18px",
+      "lineHeight": "30px",
+      "placeholder": "#a1a1a1"
+    },
+    "authSubmit": {
+      "background": "#ecf956",
+      "color": "#4c2116",
+      "border": "1px solid #4c2116",
+      "radius": "9999px",
+      "padding": "6px 48px",
+      "height": "46px",
+      "fontSize": "22px",
+      "fontWeight": "400"
+    },
+    "oauth": {
+      "background": "#ffffff",
+      "color": "#4c2116",
+      "border": "1px solid #4c2116",
+      "radius": "9999px",
+      "padding": "6px 24px",
+      "height": "44px",
+      "fontSize": "18px"
+    },
+    "authCard": {
+      "background": "#fafafa",
+      "radius": "16px",
+      "padding": "32px",
+      "width": "768px",
+      "class": "mx-auto max-w-3xl p-4 md:p-8 bg-gray-100 md:rounded-2xl"
+    },
+    "categoryPill": {
+      "background": "transparent",
+      "color": "#4c2116",
+      "radius": "38.5px",
+      "fontSize": "18px",
+      "height": "41px",
+      "textTransform": "uppercase"
+    }
+  }
+}

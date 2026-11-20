@@ -14,7 +14,7 @@ Base44 is worth a capture because its bundle ships a complete, readable token sy
 | [patterns.md](patterns.md) | How the components combine: the fixed shell, the CTA vocabulary, the prompt composer, pricing, the accordion, sign-in, footer |
 | [components/crops/](components/crops) | 115 element screenshots, `{component}-{state}.png` |
 | [screenshots/](screenshots) | 24 `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages, `-product-menu`/`-menu-open`/`-monthly` the toggled states |
-| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property in the bundle, binned token/app/tw/utility, resolved in light and `.dark` probes), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads), [full/](raw/full) (the full-colour captures with `.capture.json` sidecars) |
+| [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property in the bundle, binned token/app/tw/utility, resolved in light and `.dark` probes), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [Rebuild](#rebuild) |
 
 ## Brief
@@ -96,6 +96,7 @@ Nothing was sent, downloaded, signed into or trialled. The only presses were loc
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **One painted theme.** Every captured route paints light; the `dark` token set is emitted from the bundle's declared `.dark` block (standard shadcn dark channels, charts and sidebar) and labelled declared-not-painted — no screenshot or component evidence exists for it.
 - **App-side `--sem-*` vars.** Utility classes reference a second semantic layer (`--sem-text-icon-*`, `--sem-surface-*`, …) that is only declared inside the product app; on the marketing bundle those names resolve empty. They are recorded in css-vars.json but not tokenised.
 - **`component.*` tokens are measured**, not site variables.

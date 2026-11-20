@@ -5,8 +5,8 @@
   "emails": true,
   "email_allow": [
    "@manus\\.im$",
-   "@example\\.(com|org)$",
-   "\\.example$"
+   "@example\\.com$",
+   "@example\\.org$"
   ],
   "delete_if_covered": 0.3,
   "keep": [

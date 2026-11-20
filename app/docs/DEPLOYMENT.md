@@ -4,7 +4,9 @@ Studio has no login. Keep the listener on loopback and publish it only through t
 
 ## Exact private origin
 
-Local development accepts only `localhost`, `127.0.0.1` and `[::1]`. A server operator can set `DESIGN_RESEARCH_PRIVATE_ORIGIN` to one exact HTTPS Tailscale hostname and port, without a trailing slash, such as `https://research.tail123.ts.net:8108`. This permits that HTTP Host in addition to loopback. Other hosts, ports and lookalikes remain blocked; forwarded headers never grant access. Mutation requests through that hostname must carry an `Origin` header matching the configured HTTPS origin. One without `Origin` is refused unless it carries `Sec-Fetch-Site: same-origin`, which only a browser on that origin sends. Loopback requests without `Origin`, such as `curl` on the server itself, are still accepted. An invalid setting leaves the app loopback-only.
+Local development accepts only `localhost`, `127.0.0.1` and `[::1]`. A server operator can set `DESIGN_RESEARCH_PRIVATE_ORIGIN` to one exact HTTPS Tailscale hostname and port, without a trailing slash, such as `https://research.tail123.ts.net:8108`. This permits that HTTP Host in addition to loopback. Other hosts, ports and lookalikes remain blocked; forwarded headers never grant access. Mutation requests through that hostname must carry an `Origin` header matching the configured HTTPS origin. One without `Origin` is refused unless it carries `Sec-Fetch-Site: same-origin`, which only a browser on that origin sends. Loopback requests without `Origin`, such as `curl` on the server itself, are still accepted. `POST /api/mcp` is the one exception on the private hostname: MCP clients send neither `Origin` nor `Sec-Fetch-Site`, so a request with neither is accepted there, while a foreign `Origin`, `Sec-Fetch-Site: cross-site` or a body that is not `application/json` is refused on every host. An invalid setting leaves the app loopback-only.
+
+This rule is deliberately stricter than the one `server/routes.py` and `web/proxy.ts` share (`server/front-door-cases.json`), which also accepts any IP literal, any `*.ts.net` host, a configured host list and an empty Host. Studio has no login, so it accepts only loopback and the one configured origin; `app/tests/front-door-subset.test.ts` runs the shared cases and fails if Studio ever accepts a host the other front doors refuse.
 
 The hostname check provides DNS rebinding protection. Tailscale provides network access control. A permitted hostname alone does not authenticate clients, so the listener must remain `127.0.0.1` and the Serve configuration must remain tailnet-only.
 
@@ -21,7 +23,7 @@ Legacy browser bookmarks live in the old origin's `ds-saved` localStorage. A sha
 The existing Nix-managed Node 22.13+ and Corepack/pnpm 10 must be on PATH. No global package installation occurs. Create `~/services/design-research/runtime.env` with mode 0600 before installing:
 
 ```sh
-DESIGN_SYSTEMS_REPO=/home/USER/dev/design-systems
+DESIGN_SYSTEMS_REPO=/home/USER/dev/constellations
 DESIGN_SYSTEMS_MEDIA=/home/USER/services/design-systems/media/refero
 DESIGN_RESEARCH_DATA_DIR=/home/USER/services/design-research/data
 DESIGN_RESEARCH_PRIVATE_ORIGIN=https://HOST.TAILNET.ts.net:8108

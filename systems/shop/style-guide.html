@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shop style guide</title>
+<style>
+:root {
+  --page: #fcfcfc;
+  --surface: #ffffff;
+  --search: #ffffffbf;
+  --action: #5433eb;
+  --action-hover: #7f68e9;
+  --field: #0000000a;
+  --inverse: #000000;
+  --text: #000000;
+  --text-secondary: #000000bf;
+  --muted: #0000008f;
+  --placeholder: #00000066;
+  --on-action: #ffffff;
+  --on-inverse-secondary: #c9cbcc;
+  --border: #0000001a;
+  --border-input: #00000033;
+  --border-image: #05294d1a;
+  --critical: #d92a0f;
+  --success: #008552;
+  --stars: #e3be2b;
+  --font: "GT Standard Web", "GTStandard-M", ui-sans-serif, system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.5px;
+}
+main { max-width: 880px; margin: 0 auto; padding: 48px 24px 80px; }
+h1 { font-size: 32px; line-height: 35.2px; font-weight: 800; letter-spacing: -0.5px; margin: 0 0 8px; }
+h2 { font-size: 20px; line-height: 22px; font-weight: 600; letter-spacing: -1px; margin: 36px 0 12px; }
+p { color: var(--muted); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 128px; }
+.swatch i { display: block; height: 64px; border-radius: 20px; border: 1px solid var(--border); }
+.swatch span { display: block; font-size: 12px; line-height: 16px; letter-spacing: -0.2px; margin-top: 6px; color: var(--muted); }
+.poster { font-size: 64px; line-height: 58px; font-weight: 800; letter-spacing: -1px; color: var(--on-action); background: var(--inverse); border-radius: 24px; padding: 16px; }
+button.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 0.5px solid #ffffff;
+  background: var(--action);
+  color: var(--on-action);
+  font: 500 16px/22px var(--font);
+  letter-spacing: -0.5px;
+  box-shadow: rgba(255, 255, 255, 0.32) -0.5px -0.5px 1px 0px inset, rgba(255, 255, 255, 0.32) 1px 1px 0.5px 0px inset, rgba(84, 51, 235, 0.24) 0px 4px 24px 0px;
+}
+button.passkey {
+  display: inline-flex;
+  height: 42px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font: 600 14px/18px var(--font);
+  letter-spacing: -0.2px;
+}
+.field {
+  display: flex;
+  align-items: center;
+  width: 344px;
+  height: 52px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid #000;
+  background: rgba(0, 0, 0, 0.04);
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 2px 4px 0px, rgba(0, 0, 0, 0.04) 0px 6px 16px 0px;
+  color: var(--placeholder);
+}
+.search {
+  height: 64px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 1px 0px, rgba(0, 0, 0, 0.2) 0px 12px 64px 0px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  color: var(--text);
+}
+.card {
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 8px 0px;
+  position: relative;
+}
+.card b {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 10px;
+  line-height: 13px;
+  letter-spacing: -0.2px;
+  font-weight: 600;
+}
+.banner {
+  width: 380px;
+  background: #000;
+  color: #fff;
+  border-radius: 24px;
+  padding: 16px 48px 16px 16px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 24px 0px;
+}
+.banner p { color: #c9cbcc; font-size: 14px; line-height: 18px; letter-spacing: -0.2px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Shop</h1>
+  <p>Measured public values from shop.com and the shop.app login wall. Light only. No dark set was painted.</p>
+
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><i style="background:#fcfcfc"></i><span>page #fcfcfc</span></div>
+    <div class="swatch"><i style="background:#ffffff"></i><span>surface #ffffff</span></div>
+    <div class="swatch"><i style="background:#5433eb"></i><span>action #5433eb</span></div>
+    <div class="swatch"><i style="background:#000"></i><span>text #000000</span></div>
+    <div class="swatch"><i style="background:#0000008f"></i><span>muted #0000008f</span></div>
+    <div class="swatch"><i style="background:#fff;border:1px solid #0000001a"></i><span>border #0000001a</span></div>
+    <div class="swatch"><i style="background:#d92a0f"></i><span>critical #d92a0f</span></div>
+    <div class="swatch"><i style="background:#008552"></i><span>success #008552</span></div>
+    <div class="swatch"><i style="background:#e3be2b"></i><span>stars #e3be2b</span></div>
+  </div>
+
+  <h2>Type</h2>
+  <p class="poster">The Korean Beauty Edit</p>
+  <p style="font-size:20px;line-height:22px;font-weight:600;letter-spacing:-1px;color:#000">Trending stores</p>
+  <p style="font-size:16px;line-height:22px;letter-spacing:-0.5px">What are you shopping for today?</p>
+
+  <h2>Controls</h2>
+  <div class="search">What are you shopping for today?</div>
+  <p></p>
+  <div class="field">Enter your email</div>
+  <p></p>
+  <button class="primary" type="button">Continue</button>
+  <button class="passkey" type="button">Use a passkey</button>
+
+  <h2>Card and banner</h2>
+  <div class="row">
+    <div class="card"><b>SGD 27.00</b></div>
+    <div class="banner">
+      <strong>Download the Shop app</strong>
+      <p>Get the app with over 8 million 5-star reviews.</p>
+    </div>
+  </div>
+</main>
+</body>
+</html>

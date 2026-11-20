@@ -1,0 +1,29 @@
+{
+ "note": "The storefront does not publish a brand token sheet. Live custom properties on the home page are Tailwind internals (--tw-*), layout lengths (--site-header-*), and vendor widgets (--marqo-*, --jdgm-*, --dg-*, --swym-*). Brand colour and type were read as computed styles into components-computed.json and tokens.json.",
+ "site": [
+  {
+   "name": "--site-header-height-mobile",
+   "value": "132px"
+  },
+  {
+   "name": "--site-header-offset",
+   "value": "92px"
+  },
+  {
+   "name": "--site-search-background-color",
+   "value": "#f5f5f5"
+  },
+  {
+   "name": "--site-search-placeholder-text-color",
+   "value": "#939393"
+  }
+ ],
+ "vendorExcluded": [
+  "--tw-*",
+  "--marqo-*",
+  "--jdgm-*",
+  "--dg-*",
+  "--swym-*",
+  "--ps-theme-*"
+ ]
+}

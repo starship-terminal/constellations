@@ -1,0 +1,108 @@
+{
+  "source": "getComputedStyle(document.documentElement) on https://www.skyscanner.com.sg/ after geo redirect from https://www.skyscanner.com/, 2026-11-19. Declared sheets were dark-canvas; computed :root resolved to the light Backpack theme.",
+  "viewportDesktop": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "viewportPhone": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "fontFamily": "\"Skyscanner Relative\", -apple-system, system-ui, Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+  "body": {
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "color": "rgb(22, 22, 22)",
+    "fontSize": "16px",
+    "lineHeight": "20.8px"
+  },
+  "core": {
+    "primary": "#05203c",
+    "accent": "#0062e3",
+    "eco": "#0fa1a9",
+    "textPrimary": "#161616",
+    "textSecondary": "#626971",
+    "textError": "#e70866",
+    "textSuccess": "#0c838a",
+    "textDisabled": "#0003",
+    "canvasDefault": "#fff",
+    "canvasContrast": "#eff3f8",
+    "surfaceContrast": "#05203c",
+    "surfaceHero": "#0062e3",
+    "surfaceHighlight": "#e0e4e9",
+    "surfaceLowContrast": "#f5f7fa",
+    "surfaceSubtle": "#e3f0ff",
+    "surfaceDangerFill": "#ffe9f9",
+    "surfaceSuccessFill": "#d4fff2",
+    "surfaceWarningFill": "#fff7cf",
+    "borderDefault": "#c1c7cf",
+    "borderFocus": "#0062e3",
+    "borderSelected": "#05203c",
+    "borderDanger": "#e70866",
+    "borderSuccess": "#0c838a",
+    "borderWarning": "#f55d42",
+    "statusDanger": "#e70866",
+    "statusLoyalty": "#c9fc70",
+    "statusSuccess": "#0c838a",
+    "statusWarning": "#f55d42",
+    "buttonPrimary": "#05203c",
+    "buttonPrimaryPressed": "#154679",
+    "buttonFeatured": "#0062e3",
+    "buttonFeaturePressed": "#024daf",
+    "buttonSecondary": "#e0e4e9",
+    "buttonSecondaryPressed": "#c1c7cf",
+    "buttonDisabled": "#e0e4e9",
+    "buttonLogin": "#eff3f8",
+    "buttonLoginPressed": "#e0e4e9",
+    "shadow": "#16161640",
+    "scrim": "#000000b3",
+    "overlay": "#0003"
+  },
+  "radius": {
+    "none": "0",
+    "xs": "0.25rem",
+    "sm": "0.5rem",
+    "md": "0.75rem",
+    "lg": "1.5rem",
+    "xl": "3rem",
+    "full": "62.4375rem",
+    "navTabs": "1.125rem"
+  },
+  "spacing": {
+    "none": "0",
+    "xxs": "0.0625rem",
+    "xs": "0.125rem",
+    "sm": "0.25rem",
+    "md": "0.5rem",
+    "base": "1rem",
+    "lg": "1.5rem",
+    "xl": "2rem",
+    "xxl": "2.5rem",
+    "xxxl": "4rem",
+    "xxxxl": "6rem"
+  },
+  "shadow": {
+    "small": "0 0.0625rem 0.1875rem #16161640",
+    "large": "0 0.25rem 0.875rem #16161640",
+    "xl": "0 0.75rem 3.125rem #16161640"
+  },
+  "button": {
+    "minHeight": "2.25rem",
+    "minHeightLarge": "3rem",
+    "padX": "1rem",
+    "radius": "0.5rem",
+    "label": "1rem"
+  },
+  "focusDeclared": "#0062e3"
+}

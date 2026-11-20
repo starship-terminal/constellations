@@ -1,0 +1,16 @@
+{
+  "source": "computed transition groups on a,button,header,input at https://www.wrike.com/ 1440x900, plus a stylesheet scan for prefers-reduced-motion",
+  "moving": 179,
+  "groups": {
+    "0.15s|linear|background-color": 13,
+    "0.15s, 0.15s, 0.15s, 0.15s|linear, linear, linear, linear|background-color, border-color, color, box-shadow": 14,
+    "0.25s|ease|box-shadow, outline-color": 7,
+    "0.25s|ease|opacity, background-color": 6,
+    "0s, 0.35s|linear, ease|visibility, opacity": 2,
+    "0.35s, 0.35s, 0.35s|ease, ease, ease|border-color, box-shadow, transform": 137
+  },
+  "reduceRules": [
+    "(prefers-reduced-motion: reduce)"
+  ],
+  "gap": "The reduce media query exists. Element-level reduced-motion emulation was not run, so the honour/ignore verdict is not captured."
+}

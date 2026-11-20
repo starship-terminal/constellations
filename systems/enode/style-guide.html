@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enode style guide</title>
+<meta name="description" content="Enode design tokens and the public marketing surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-sans: "Enode Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-sansFeatureSettings: normal;
+  --font-family-mono: "Enode Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family-monoFeatureSettings: "zero" 1;
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
+  --font-weight-body: 470;
+  --font-weight-body-lg: 470;
+  --font-weight-button: 490;
+  --font-weight-button-secondary: 500;
+  --font-weight-display: 500;
+  --font-weight-fine: 475;
+  --font-weight-h1: 500;
+  --font-weight-h2: 510;
+  --font-weight-h3: 520;
+  --font-weight-label: 450;
+  --font-weight-lead: 500;
+  --font-weight-masthead: 475;
+  --font-weight-quote: 450;
+  --font-weight-quote-lg: 450;
+  --font-weight-standfirst: 470;
+  --font-size-2xl: 24px;
+  --font-size-body: 18px;
+  --font-size-body-lg: 20px;
+  --font-size-button: 15px;
+  --font-size-button-secondary: 15px;
+  --font-size-display: 44px;
+  --font-size-fine: 12px;
+  --font-size-h1: 36px;
+  --font-size-h2: 30px;
+  --font-size-h3: 24px;
+  --font-size-label: 14px;
+  --font-size-lead: 22px;
+  --font-size-lede: 36px;
+  --font-size-masthead: 68px;
+  --font-size-quote: 20px;
+  --font-size-quote-lg: 30px;
+  --font-size-sm: 14px;
+  --font-size-standfirst: 40px;
+  --font-size-measured-masthead: var(--font-size-masthead);
+  --font-size-measured-body: var(--font-size-body);
+  --font-lineHeight-normal: 1.5;
+  --font-lineHeight-relaxed: 1.625;
+  --font-lineHeight-snug: 1.375;
+  --font-lineHeight-tight: 1.25;
+  --font-lineHeight-2xl: 1.3333;
+  --font-lineHeight-body: 1.45;
+  --font-lineHeight-body-lg: 1.55;
+  --font-lineHeight-button: 1.5;
+  --font-lineHeight-button-secondary: 1.5;
+  --font-lineHeight-display: 1.05;
+  --font-lineHeight-fine: 1.45;
+  --font-lineHeight-h1: 1.15;
+  --font-lineHeight-h2: 1.2;
+  --font-lineHeight-h3: 1.25;
+  --font-lineHeight-label: 1.4;
+  --font-lineHeight-lead: 1.35;
+  --font-lineHeight-lede: 1.25;
+  --font-lineHeight-masthead: 1.05;
+  --font-lineHeight-quote: 1.5;
+  --font-lineHeight-quote-lg: 1.3;
+  --font-lineHeight-sm: 1.4286;
+  --font-lineHeight-standfirst: 1.15;
+  --font-tracking-wide: 0.4375px;
+  --font-tracking-button: 0.078125px;
+  --font-tracking-button-secondary: 0.078125px;
+  --font-tracking-display: -.015em;
+  --font-tracking-h1: -.015em;
+  --font-tracking-h2: -.01em;
+  --font-tracking-h3: -.005em;
+  --font-tracking-label: -.005em;
+  --font-tracking-masthead: -.02em;
+  --font-tracking-quote: -.005em;
+  --font-tracking-quote-lg: -.01em;
+  --font-tracking-standfirst: -.015em;
+  --color-brand-100: #e4fed2;
+  --color-brand-125: #d8ffbd;
+  --color-brand-150: #cfffad;
+  --color-brand-175: #c4ff99;
+  --color-brand-200: #b8fc88;
+  --color-brand-225: #b0f87c;
+  --color-brand-250: #a9ee77;
+  --color-brand-275: #99e467;
+  --color-brand-300: #80cb57;
+  --color-brand-350: #6ab04a;
+  --color-brand-450: #55973b;
+  --color-brand-525: #3f7d2c;
+  --color-brand-625: #265f1b;
+  --color-brand-700: #10450c;
+  --color-brand-75: #f0fde8;
+  --color-brand-800: #022c06;
+  --color-brand-825: #022204;
+  --color-gray-100: #f4f2f1;
+  --color-gray-125: #efedeb;
+  --color-gray-150: #e8e5e3;
+  --color-gray-175: #dcd8d6;
+  --color-gray-200: #cfcbc9;
+  --color-gray-225: #c5c1bf;
+  --color-gray-300: #b0adab;
+  --color-gray-350: #a19d9b;
+  --color-gray-475: #6e6a68;
+  --color-gray-600: #595654;
+  --color-gray-650: #4c4948;
+  --color-gray-700: #403c3b;
+  --color-gray-75: #f8f7f7;
+  --color-gray-750: #32302f;
+  --color-gray-800: #252322;
+  --color-gray-850: #151413;
+  --color-grayAlpha-100: rgba(21, 20, 19, 0.055);
+  --color-grayAlpha-125: rgba(21, 20, 19, 0.08);
+  --color-grayAlpha-150: rgba(21, 20, 19, 0.11);
+  --color-grayAlpha-175: rgba(21, 20, 19, 0.165);
+  --color-grayAlpha-200: rgba(21, 20, 19, 0.22);
+  --color-grayAlpha-225: rgba(21, 20, 19, 0.263);
+  --color-grayAlpha-300: rgba(21, 20, 19, 0.35);
+  --color-grayAlpha-350: rgba(21, 20, 19, 0.416);
+  --color-grayAlpha-475: rgba(21, 20, 19, 0.63);
+  --color-grayAlpha-600: rgba(21, 20, 19, 0.718);
+  --color-grayAlpha-650: rgba(21, 20, 19, 0.773);
+  --color-grayAlpha-700: rgba(21, 20, 19, 0.827);
+  --color-grayAlpha-75: rgba(21, 20, 19, 0.03);
+  --color-grayAlpha-750: rgba(21, 20, 19, 0.882);
+  --color-grayAlpha-800: rgba(21, 20, 19, 0.933);
+  --color-grayAlpha-850: #151413;
+  --color-whiteAlpha-100: rgba(255, 255, 255, 0.945);
+  --color-whiteAlpha-125: rgba(255, 255, 255, 0.92);
+  --color-whiteAlpha-150: rgba(255, 255, 255, 0.89);
+  --color-whiteAlpha-175: rgba(255, 255, 255, 0.835);
+  --color-whiteAlpha-200: rgba(255, 255, 255, 0.78);
+  --color-whiteAlpha-225: rgba(255, 255, 255, 0.737);
+  --color-whiteAlpha-300: rgba(255, 255, 255, 0.65);
+  --color-whiteAlpha-350: rgba(255, 255, 255, 0.584);
+  --color-whiteAlpha-475: rgba(255, 255, 255, 0.37);
+  --color-whiteAlpha-600: rgba(255, 255, 255, 0.282);
+  --color-whiteAlpha-650: rgba(255, 255, 255, 0.227);
+  --color-whiteAlpha-700: rgba(255, 255, 255, 0.173);
+  --color-whiteAlpha-75: rgba(255, 255, 255, 0.97);
+  --color-whiteAlpha-750: rgba(255, 255, 255, 0.118);
+  --color-whiteAlpha-800: rgba(255, 255, 255, 0.067);
+  --color-whiteAlpha-850: rgba(255, 255, 255, 0);
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-deepBlack: #161514;
+  --color-warmGrey: #efedec;
+  --color-enodeGreen: #b0f87d;
+  --color-enodeGreenDeep: #99e467;
+  --color-enodeGreenMid: #a9ee77;
+  --color-enodeGreenSoft: #c5ff9b;
+  --color-enodeGreenSoftest: #cfffad;
+  --color-signalBrand: #b0f87c;
+  --color-controlLink: #b0f87c;
+  --color-controlFocusRing: #b0f87c;
+  --color-transparent: rgba(0, 0, 0, 0);
+  --color-current: currentcolor;
+  --spacing-base: 4px;
+  --radius-full: 33554400px;
+  --radius-lg: 10px;
+  --radius-md: 6px;
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-xs: 2px;
+  --radius-cta: var(--radius-full);
+  --radius-navPill: var(--radius-sm);
+  --radius-menu: var(--radius-lg);
+  --radius-statCard: var(--radius-md);
+  --radius-field: var(--radius-md);
+  --container-2xl: 672px;
+  --container-3xl: 768px;
+  --container-4xl: 896px;
+  --container-5xl: 1024px;
+  --container-lg: 512px;
+  --container-md: 448px;
+  --container-sm: 384px;
+  --container-xl: 576px;
+  --container-xs: 320px;
+  --layout-gridMax: 1308px;
+  --layout-gridInset: 40px;
+  --layout-gutterBase: 20px;
+  --layout-gutterTight: 8px;
+  --layout-heroMediaOvershoot: 48px;
+  --layout-enablerGridShift: 0.13;
+  --breakpoint-md: 768px;
+  --aspect-video: 16 / 9;
+  --blur-md: 12px;
+  --blur-sm: 8px;
+  --blur-xl: 24px;
+  --easing-in: cubic-bezier(0.4, 0.0, 1.0, 1.0);
+  --easing-in-out: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --easing-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --easing-default: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --duration-default: 150ms;
+  --duration-themeFade: 400ms;
+  --motion-control: color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), translate 0.15s cubic-bezier(0.4, 0, 0.2, 1), scale 0.15s cubic-bezier(0.4, 0, 0.2, 1), rotate 0.15s cubic-bezier(0.4, 0, 0.2, 1), filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), -webkit-backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), display 0.15s cubic-bezier(0.4, 0, 0.2, 1), content-visibility 0.15s cubic-bezier(0.4, 0, 0.2, 1), overlay 0.15s cubic-bezier(0.4, 0, 0.2, 1), pointer-events 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --component-topbar-height: 58px;
+  --component-logo-width: 81.83px;
+  --component-nav-pill-height: 34px;
+  --component-cta-height: 32px;
+  --component-mega-menu-width: 1120px;
+  --component-mega-menu-height: 290px;
+  --component-hero-masthead-width: 1024px;
+  --component-stat-card-width: 396px;
+  --component-stat-card-height: 184px;
+  --component-showcase-height: 765px;
+  --component-field-height: 48.09px;
+  --component-textarea-height: 100.28px;
+  --component-send-width: 129.91px;
+  --component-visual-frame-width: 304px;
+  --component-mobile-topbar-height: 60px;
+  --component-mobile-menu-size: 36px;
+  --component-login-panel-width: 600px;
+  --component-login-panel-height: 900px;
+  --component-login-panel-ink: var(--color-gray-800);
+  --component-login-field-bg: var(--color-white);
+  --component-login-field-ink: var(--color-gray-800);
+  --component-login-field-height: 41px;
+  --component-login-submit-fill: var(--color-gray-800);
+  --component-login-submit-ink: var(--color-white);
+  --component-login-submit-height: 32px;
+  --component-login-sso-ink: var(--color-gray-800);
+  --color-background-glass-thick: rgba(21, 20, 19, 0.565);
+  --color-background-glass-thin: rgba(21, 20, 19, 0.11);
+  --color-background-primary: #f4f2f1;
+  --color-background-secondary: #ffffff;
+  --color-border-primary-default: rgba(21, 20, 19, 0.165);
+  --color-border-primary-hover: rgba(21, 20, 19, 0.263);
+  --color-border-secondary-default: rgba(21, 20, 19, 0.11);
+  --color-border-secondary-hover: rgba(21, 20, 19, 0.165);
+  --color-browser-bar: rgba(239, 237, 235, 0.85);
+  --color-browser-dot-default: rgba(21, 20, 19, 0.12);
+  --color-browser-dot-edge: rgba(21, 20, 19, 0.12);
+  --color-browser-hairline: rgba(21, 20, 19, 0.06);
+  --color-browser-pill-default: rgba(21, 20, 19, 0.05);
+  --color-browser-pill-edge: rgba(21, 20, 19, 0.07);
+  --color-browser-ring: rgba(21, 20, 19, 0.1);
+  --color-browser-screen: #ffffff;
+  --color-browser-tab-divider: rgba(21, 20, 19, 0.14);
+  --color-browser-tabbar: rgba(0, 0, 0, 0);
+  --color-browser-url-default: rgba(21, 20, 19, 0.55);
+  --color-browser-url-icon: rgba(21, 20, 19, 0.38);
+  --color-button-ink: #ffffff;
+  --color-card-background-default: rgba(21, 20, 19, 0.037);
+  --color-card-background-highlighted: rgba(21, 20, 19, 0.032);
+  --color-card-background-hover: rgba(21, 20, 19, 0.016);
+  --color-card-hairline-default: rgba(21, 20, 19, 0.032);
+  --color-card-hairline-highlighted: rgba(21, 20, 19, 0.034);
+  --color-card-hairline-hover-default: rgba(21, 20, 19, 0.033);
+  --color-card-hairline-hover-overlay: rgba(21, 20, 19, 0.001);
+  --color-diagram-grid-dot: rgba(21, 20, 19, 0.14);
+  --color-diagram-node-background: rgba(21, 20, 19, 0.037);
+  --color-diagram-node-hairline: rgba(21, 20, 19, 0.068);
+  --color-diagram-surface-background: rgba(21, 20, 19, 0);
+  --color-diagram-surface-hairline: rgba(21, 20, 19, 0.165);
+  --color-foreground-primary: #252322;
+  --color-foreground-secondary: rgba(37, 35, 34, 0.718);
+  --color-foreground-tertiary: rgba(21, 20, 19, 0.63);
+  --color-line-primary: rgba(21, 20, 19, 0.11);
+  --color-line-subtle: rgba(21, 20, 19, 0.08);
+  --color-nav-ink-default: rgba(37, 35, 34, 0.827);
+  --color-nav-ink-active: #252322;
+  --color-node-default: #99e467;
+  --color-node-dim: #6ab04a;
+  --color-phone-bezel: #e5e2e0;
+  --color-phone-indicator: rgba(21, 20, 19, 0.35);
+  --color-phone-ink: #151413;
+  --color-phone-notch: #151413;
+  --color-phone-ring: rgba(21, 20, 19, 0.1);
+  --color-phone-screen-default: #ffffff;
+  --color-phone-screen-inset: rgba(21, 20, 19, 0.12);
+  --color-phone-skeleton: rgba(21, 20, 19, 0.08);
+  --color-text-primary: #252322;
+  --color-text-secondary: rgba(37, 35, 34, 0.827);
+  --color-text-tertiary: rgba(37, 35, 34, 0.63);
+  --color-visual-background-default: rgba(21, 20, 19, 0.09);
+  --color-visual-background-hover: rgba(21, 20, 19, 0.11);
+  --color-visual-diagram-accent: #b0f87c;
+  --color-visual-diagram-grid-dot: #d2cecc;
+  --color-visual-diagram-group-background-primary: rgba(0, 0, 0, 0);
+  --color-visual-diagram-group-hairline-primary: #cfcbc9;
+  --color-visual-diagram-ink-muted: #7b7876;
+  --color-visual-diagram-ink-on-fill: #f8f7f7;
+  --color-visual-diagram-ink-primary: #151413;
+  --color-visual-diagram-ink-secondary: #3b3836;
+  --color-visual-diagram-ink-tertiary: #595654;
+  --color-visual-diagram-node-background-hover: #f7f6f5;
+  --color-visual-diagram-node-background-primary: #fbfaf9;
+  --color-visual-diagram-node-background-secondary: #f7f6f5;
+  --color-visual-diagram-node-background-tertiary: rgba(0, 0, 0, 0);
+  --color-visual-diagram-node-hairline-alpha: rgba(176, 172, 170, 0.5);
+  --color-visual-diagram-node-hairline-hover: #ccc7c4;
+  --color-visual-diagram-node-hairline-primary: #cfcbc9;
+  --color-visual-diagram-node-hairline-secondary: #b0acaa;
+  --color-visual-diagram-section-background-primary: #f4f2f1;
+  --color-visual-diagram-section-hairline-primary: #cfcbc9;
+  --color-visual-diagram-sign-fill-quiet: #a19d9b;
+  --color-visual-diagram-sign-on-accent: #151413;
+  --color-visual-diagram-sign-on-fill: #f8f7f7;
+  --color-visual-diagram-sign-on-quiet: #fbfaf9;
+  --color-visual-diagram-sign-primary: #3b3836;
+  --color-visual-diagram-sign-secondary: #7b7876;
+  --color-visual-diagram-sign-tertiary: #b0acaa;
+  --color-visual-diagram-title-background-hover: rgba(21, 20, 19, 0.05);
+  --color-visual-motif-brand: #6ab04a;
+  --color-visual-motif-grid: #dbd8d7;
+  --color-visual-motif-line: #cfcbc9;
+  --color-visual-motif-mark: #a19d9b;
+  --color-visual-well: #e5e2e1;
+  --shadow-browser-dot: none;
+  --shadow-visual-well-hairline: oklch(0.2 0.004 48.7 / 0.04) 0px 0px 0px 1px inset;
+  --shadow-visual-well-inset: oklch(0.2 0.004 48.7 / 0.04) 0px 0px 0px 1px inset;
+  --showcase-flush-default: #dfefdc;
+  --showcase-flush-line: #d1e8cb;
+  --text-ink: var(--color-gray-800);
+  --text-nav-ink: var(--color-nav-ink-default);
+  --text-stat-ink: var(--color-gray-800);
+  --action-cta-fill: var(--color-gray-800);
+  --action-cta-ink: var(--color-white);
+  --border-cta-outline: var(--color-border-primary-default);
+  --border-focus-ring: var(--color-brand-225);
+  --background-page: var(--color-brand-75);
+  --sg-sans: "Enode Sans", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Enode Sans", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: "Enode Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --color-background-glass-thick: rgba(255, 255, 255, 0.435);
+  --color-background-glass-thin: rgba(255, 255, 255, 0.118);
+  --color-background-primary: #151413;
+  --color-background-secondary: #252322;
+  --color-border-primary-default: rgba(255, 255, 255, 0.584);
+  --color-border-primary-hover: rgba(255, 255, 255, 0.65);
+  --color-border-secondary-default: rgba(255, 255, 255, 0.435);
+  --color-border-secondary-hover: rgba(255, 255, 255, 0.584);
+  --color-browser-bar: rgba(46, 43, 41, 0.98);
+  --color-browser-dot-default: #383533;
+  --color-browser-dot-edge: #4b4644;
+  --color-browser-hairline: rgba(255, 255, 255, 0.08);
+  --color-browser-pill-default: rgba(255, 255, 255, 0.06);
+  --color-browser-pill-edge: rgba(255, 255, 255, 0.06);
+  --color-browser-ring: rgba(255, 255, 255, 0.12);
+  --color-browser-screen: #252322;
+  --color-browser-tab-divider: rgba(255, 255, 255, 0.14);
+  --color-browser-tabbar: rgba(0, 0, 0, 0.3);
+  --color-browser-url-default: #b0adab;
+  --color-browser-url-icon: #7e7977;
+  --color-button-ink: #252322;
+  --color-card-background-default: rgba(255, 255, 255, 0.041);
+  --color-card-background-highlighted: rgba(255, 255, 255, 0.036);
+  --color-card-background-hover: rgba(255, 255, 255, 0.018);
+  --color-card-hairline-default: rgba(255, 255, 255, 0.036);
+  --color-card-hairline-highlighted: rgba(255, 255, 255, 0.038);
+  --color-card-hairline-hover-default: rgba(255, 255, 255, 0.037);
+  --color-card-hairline-hover-overlay: rgba(255, 255, 255, 0.001);
+  --color-diagram-grid-dot: rgba(255, 255, 255, 0.16);
+  --color-diagram-node-background: rgba(255, 255, 255, 0.041);
+  --color-diagram-node-hairline: rgba(255, 255, 255, 0.076);
+  --color-diagram-surface-background: rgba(255, 255, 255, 0);
+  --color-diagram-surface-hairline: rgba(255, 255, 255, 0.584);
+  --color-foreground-primary: rgba(237, 237, 237, 0.97);
+  --color-foreground-secondary: rgba(237, 237, 237, 0.737);
+  --color-foreground-tertiary: rgba(255, 255, 255, 0.584);
+  --color-line-primary: rgba(255, 255, 255, 0.435);
+  --color-line-subtle: rgba(255, 255, 255, 0.282);
+  --color-nav-ink-default: rgba(237, 237, 237, 0.737);
+  --color-nav-ink-active: rgba(237, 237, 237, 0.97);
+  --color-node-default: #b0f87c;
+  --color-node-dim: #55973b;
+  --color-phone-bezel: #181716;
+  --color-phone-indicator: rgba(255, 255, 255, 0.4);
+  --color-phone-ink: rgba(255, 255, 255, 0.92);
+  --color-phone-notch: #000000;
+  --color-phone-ring: rgba(255, 255, 255, 0.12);
+  --color-phone-screen-default: #252322;
+  --color-phone-screen-inset: rgba(255, 255, 255, 0.1);
+  --color-phone-skeleton: rgba(255, 255, 255, 0.1);
+  --color-text-primary: rgba(237, 237, 237, 0.97);
+  --color-text-secondary: rgba(237, 237, 237, 0.737);
+  --color-text-tertiary: rgba(237, 237, 237, 0.584);
+  --color-visual-background-default: rgba(255, 255, 255, 0.1);
+  --color-visual-background-hover: rgba(255, 255, 255, 0.12);
+  --color-visual-diagram-accent: #b0f87c;
+  --color-visual-diagram-grid-dot: #302d2c;
+  --color-visual-diagram-group-background-primary: rgba(0, 0, 0, 0);
+  --color-visual-diagram-group-hairline-primary: #32302f;
+  --color-visual-diagram-ink-muted: #7d7a78;
+  --color-visual-diagram-ink-on-fill: #151413;
+  --color-visual-diagram-ink-primary: #f8f7f7;
+  --color-visual-diagram-ink-secondary: #c5c1bf;
+  --color-visual-diagram-ink-tertiary: #a19d9b;
+  --color-visual-diagram-node-background-hover: #2a2726;
+  --color-visual-diagram-node-background-primary: #252322;
+  --color-visual-diagram-node-background-secondary: #1d1c1b;
+  --color-visual-diagram-node-background-tertiary: rgba(0, 0, 0, 0);
+  --color-visual-diagram-node-hairline-alpha: rgba(76, 73, 72, 0.5);
+  --color-visual-diagram-node-hairline-hover: #363432;
+  --color-visual-diagram-node-hairline-primary: #32302f;
+  --color-visual-diagram-node-hairline-secondary: #4c4948;
+  --color-visual-diagram-section-background-primary: #151413;
+  --color-visual-diagram-section-hairline-primary: #32302f;
+  --color-visual-diagram-sign-fill-quiet: #595654;
+  --color-visual-diagram-sign-on-accent: #151413;
+  --color-visual-diagram-sign-on-fill: #151413;
+  --color-visual-diagram-sign-on-quiet: #252322;
+  --color-visual-diagram-sign-primary: #c5c1bf;
+  --color-visual-diagram-sign-secondary: #7d7a78;
+  --color-visual-diagram-sign-tertiary: #4c4948;
+  --color-visual-diagram-title-background-hover: rgba(248, 247, 247, 0.07);
+  --color-visual-motif-brand: #b0f87c;
+  --color-visual-motif-grid: #252221;
+  --color-visual-motif-line: #403c3b;
+  --color-visual-motif-mark: #696563;
+  --color-visual-well: #2c2928;
+  --shadow-browser-dot: rgba(0, 0, 0, 0.15) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.15) 0px 0px 2px 0px, rgba(255, 255, 255, 0.06) 0px 0px 1px 1px inset;
+  --shadow-visual-well-hairline: oklch(1 0 0 / 0.042) 0px 0px 0px 1px inset;
+  --shadow-visual-well-inset: oklch(0.15 0.004 48.6 / 0.35) 0px 0px 0px 1px inset;
+  --showcase-flush-default: #1f2a1b;
+  --showcase-flush-line: #273822;
+  --background-panel: var(--color-gray-850);
+  --text-ink: var(--color-enodeGreen);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); background: var(--color-neutral-paper, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, #ddd); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #000); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, #ddd); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #000); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-hairline, #ddd); overflow: hidden; background: var(--color-neutral-paper, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 58px); padding: 0 12px 0 22px; font-size: 15px; color: var(--color-foreground-primary, #252322); background: var(--color-background-glass-thin, rgba(244, 242, 241, .92)); box-shadow: var(--color-line-primary, rgba(21,20,19,.11)) 0 1px 0 0; }
+.navbar .wm { font-weight: 500; font-size: 17px; letter-spacing: -0.01em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 32px); padding: 0 14px; font-size: 14px; font-weight: 500; border-radius: var(--radius-cta, 999px); border: 1px solid transparent; }
+.btn.primary { background: var(--color-foreground-primary, #252322); color: var(--color-button-ink, #fff); }
+.btn.ghost { border-color: var(--color-border-primary-default, rgba(21,20,19,.165)); color: var(--color-foreground-primary, #252322); }
+.btn.small { height: var(--component-nav-pill-height, 34px); border-radius: var(--radius-nav-pill, 4px); font-size: 13px; font-weight: 500; }
+.hero { color: var(--color-foreground-primary, #252322); padding: 72px 40px; font: 475 var(--font-size-masthead, 68px)/1.05 var(--sg-serif); letter-spacing: -0.02em; text-align: left; background: var(--color-brand-75, #f0fde8); }
+.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--color-foreground-secondary, rgba(37,35,34,.72)); margin: 16px 0 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 14px; font-size: 13px; background: #fff; }
+.tile .img { height: 140px; background: #ddd; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 475 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #000); opacity: .65; font-family: var(--sg-mono); }
+.pill-nav { display: inline-flex; background: var(--color-card-background-default, rgba(21,20,19,.037)); border-radius: var(--radius-nav-pill, 4px); padding: 4px; gap: 4px; font-size: 14px; color: var(--color-foreground-secondary, rgba(37,35,34,.72)); }
+.pill-nav span { padding: 6px 12px; border-radius: var(--radius-nav-pill, 4px); }
+.pill-nav .on { background: var(--color-background-secondary, #fff); color: var(--color-foreground-primary, #252322); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Enode style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Enode, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the site's declared <code>--color-brand-*</code>/<code>--color-gray-*</code>/<code>--color-enode-green-*</code> palette scales, the <code>--color-background-*</code>/<code>--color-foreground-*</code>/<code>--color-card-*</code>/<code>--color-border-*</code>/<code>--color-diagram-*</code> semantic roles that resolve under <code>data-mode="light"</code> and <code>data-mode="dark"</code>, the Enode Sans/Enode Mono variable faces (wght 375–635), the declared <code>--text-*</code>/<code>--leading-*</code>/<code>--tracking-*</code> type ramp, the 2–10px radii and full-pill CTAs, the 150ms cubic-bezier(.4,0,.2,1) control transition, and the measured component sizes. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from enode.com on 2026-11-13, signed out, in headless Chromium. Everything behind platform.enode.com is a documented boundary; the contact and login forms were measured, never submitted. Enode Sans and Enode Mono are served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The fixed 58px header is glass: the wordmark, the Platform/Resources mega-menu triggers, nav pills, Sign in and the dark "Talk to our team" pill float over the pale-green hero (<code>--color-brand-75</code> page background). The hero pairs a dark CTA pill with a hairline-bordered ghost pill under a 68px/475 masthead.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">Enode</span><span>Platform</span><span>Resources</span><span>Enterprise</span><span>Updates</span><span>Company</span><span class="sp"></span><span>Sign in</span><span class="btn small primary" style="border-radius:var(--radius-cta,999px)">Talk to our team</span></div>
+    <div class="hero">Orchestrating energy<br>for the next grid<small>One integration to connect 1,000+ energy devices.</small><span class="btn primary">Talk to our team</span> <span class="btn ghost">Explore our platform</span></div>
+  </div>
+
+  <h2 class="sh">The dark platform pages</h2>
+  <p class="lead">/platform/overview and /platform/flexibility paint <code>data-mode="dark"</code> on <code>&lt;html&gt;</code> itself: a #151413 page, white masthead, translucent card tiles and the green #b0f87c accent reserved for live metrics and focus rings. The same dark set paints the scoped showcase sections inside the light pages.</p>
+  <div class="mock dark" style="padding:20px;background:var(--color-background-primary,#151413);color:var(--color-foreground-primary,rgba(237,237,237,.97))">
+    <div class="grid">
+      <div class="tile" style="border-radius:var(--radius-md,6px);background:var(--color-card-background-default,rgba(255,255,255,.041));border:1px solid var(--color-card-hairline-default,rgba(255,255,255,.036));color:var(--color-foreground-primary,rgba(237,237,237,.97))"><b style="color:var(--color-foreground-primary,rgba(237,237,237,.97))">Asset connectivity</b><span class="sub" style="color:var(--color-foreground-secondary,rgba(237,237,237,.74))">One API for 1,000+ device models across 100+ brands.</span></div>
+      <div class="tile" style="border-radius:var(--radius-md,6px);background:var(--color-card-background-default,rgba(255,255,255,.041));border:1px solid var(--color-card-hairline-default,rgba(255,255,255,.036));color:var(--color-foreground-primary,rgba(237,237,237,.97))"><b style="color:var(--color-visual-diagram-accent,#b0f87c)">BALANCING&nbsp;&nbsp;9.24 MW</b><span class="sub" style="color:var(--color-foreground-secondary,rgba(237,237,237,.74))">Scoped [data-mode="dark"] showcase</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn primary">Talk to our team</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared <code>--color-brand-*</code> ramp runs pale-green #f0fde8 (75) to the signature #b0f87c (225) next to warm <code>--color-gray-*</code> neutrals (#f4f2f1 paper to #252322 ink) and the alpha ramps the glass surfaces are built from; the semantic <code>--color-background-*</code>/<code>--color-foreground-*</code>/<code>--color-card-*</code>/<code>--color-border-*</code>/<code>--color-line-*</code>/<code>--color-diagram-*</code> roles resolve per <code>data-mode</code> in the light and dark sets. Measured roles alias the declared values they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">Radii are small — 2/4/6/10px for pills, nav items, cards and fields — against full pills for the CTAs (33.5M px <code>--radius-full</code>). Controls transition color/background/border/shadow/transform over 150ms cubic-bezier(.4,0,.2,1); the layout is a 1308px grid with 20px base gutters.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two served variable faces: <code>Enode Sans</code> (wght 375–635) carries every heading, control and body — the masthead runs 68px at weight 475, body 18px at ~470 — and <code>Enode Mono</code> draws the product demo and code frames. Sizes are the declared <code>--text-*</code> steps; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --color-*/--text-*/--radius-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"sans":{"v":"\"Enode Sans\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"","t":"fontFamily","s":"css-var --font-sans (light)","d":"Enode Sans VF — every heading, control and body."},"sansFeatureSettings":{"v":"normal","t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --font-sans--font-feature-settings","d":"The declared `--font-sans--font-feature-settings`."},"mono":{"v":"\"Enode Mono\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace","t":"fontFamily","s":"css-var --font-mono (light)","d":"Enode Mono VF — product demo and code frames."},"monoFeatureSettings":{"v":"\"zero\" 1","t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --font-mono--font-feature-settings","d":"The declared `--font-mono--font-feature-settings`."}},"weight":{"light":{"v":300,"t":"fontWeight","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --font-weight-light","d":"The declared `--font-weight-light`."},"medium":{"v":500,"t":"fontWeight","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --font-weight-medium","d":"The declared `--font-weight-medium`."},"body":{"v":470,"t":"fontWeight","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-body--font-weight","d":"The declared `--text-body--font-weight`."},"body-lg":{"v":470,"t":"fontWeight","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-body-lg--font-weight","d":"The declared `--text-body-lg--font-weight`."},"button":{"v":490,"t":"fontWeight","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-button--font-weight","d":"The declared `--text-button--font-weight`."},"button-secondary":{"v":500,"t":"fontWeight","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-button-secondary--font-weight","d":"The declared `--text-button-secondary--font-weight`."},"display":{"v":500,"t":"fontWeight","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-display--font-weight","d":"The declared `--text-display--font-weight`."},"fine":{"v":475,"t":"fontWeight","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-fine--font-weight","d":"The declared `--text-fine--font-weight`."},"h1":{"v":500,"t":"fontWeight","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-h1--font-weight","d":"The declared `--text-h1--font-weight`."},"h2":{"v":510,"t":"fontWeight","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-h2--font-weight","d":"The declared `--text-h2--font-weight`."},"h3":{"v":520,"t":"fontWeight","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-h3--font-weight","d":"The declared `--text-h3--font-weight`."},"label":{"v":450,"t":"fontWeight","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-label--font-weight","d":"The declared `--text-label--font-weight`."},"lead":{"v":500,"t":"fontWeight","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-lead--font-weight","d":"The declared `--text-lead--font-weight`."},"masthead":{"v":475,"t":"fontWeight","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-masthead--font-weight","d":"The declared `--text-masthead--font-weight`."},"quote":{"v":450,"t":"fontWeight","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-quote--font-weight","d":"The declared `--text-quote--font-weight`."},"quote-lg":{"v":450,"t":"fontWeight","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-quote-lg--font-weight","d":"The declared `--text-quote-lg--font-weight`."},"standfirst":{"v":470,"t":"fontWeight","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-standfirst--font-weight","d":"The declared `--text-standfirst--font-weight`."}},"size":{"2xl":{"v":"24px","t":"dimension","s":"css-var --text-2xl (light)"},"body":{"v":"18px","t":"dimension","s":"css-var --text-body (light)"},"body-lg":{"v":"20px","t":"dimension","s":"css-var --text-body-lg (light)"},"button":{"v":"15px","t":"dimension","s":"css-var --text-button (light)"},"button-secondary":{"v":"15px","t":"dimension","s":"css-var --text-button-secondary (light)"},"display":{"v":"44px","t":"dimension","s":"css-var --text-display (light)"},"fine":{"v":"12px","t":"dimension","s":"css-var --text-fine (light)"},"h1":{"v":"36px","t":"dimension","s":"css-var --text-h1 (light)"},"h2":{"v":"30px","t":"dimension","s":"css-var --text-h2 (light)"},"h3":{"v":"24px","t":"dimension","s":"css-var --text-h3 (light)"},"label":{"v":"14px","t":"dimension","s":"css-var --text-label (light)"},"lead":{"v":"22px","t":"dimension","s":"css-var --text-lead (light)"},"lede":{"v":"36px","t":"dimension","s":"css-var --text-lede (light)"},"masthead":{"v":"68px","t":"dimension","s":"css-var --text-masthead (light)"},"quote":{"v":"20px","t":"dimension","s":"css-var --text-quote (light)"},"quote-lg":{"v":"30px","t":"dimension","s":"css-var --text-quote-lg (light)"},"sm":{"v":"14px","t":"dimension","s":"css-var --text-sm (light)"},"standfirst":{"v":"40px","t":"dimension","s":"css-var --text-standfirst (light)"},"measured":{"masthead":{"v":"{font.size.masthead}","t":"dimension","s":"computed fontSize of hero-h1 default (raw/components-computed.json); matches declared --text-masthead","d":"The 68px hero masthead — aliases --text-masthead."},"body":{"v":"{font.size.body}","t":"dimension","s":"computed fontSize of stat-card default (raw/components-computed.json); matches declared --text-body","d":"The stat-card copy size."}}},"lineHeight":{"normal":{"v":1.5,"t":"number","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --leading-normal","d":"The declared `--leading-normal` line-height ratio."},"relaxed":{"v":1.625,"t":"number","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --leading-relaxed","d":"The declared `--leading-relaxed` line-height ratio."},"snug":{"v":1.375,"t":"number","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --leading-snug","d":"The declared `--leading-snug` line-height ratio."},"tight":{"v":1.25,"t":"number","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --leading-tight","d":"The declared `--leading-tight` line-height ratio."},"2xl":{"v":1.3333,"t":"number","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-2xl--line-height","d":"The declared `--text-2xl--line-height` line-height ratio."},"body":{"v":1.45,"t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-body--line-height","d":"The declared `--text-body--line-height`."},"body-lg":{"v":1.55,"t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-body-lg--line-height","d":"The declared `--text-body-lg--line-height`."},"button":{"v":1.5,"t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-button--line-height","d":"The declared `--text-button--line-height`."},"button-secondary":{"v":1.5,"t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-button-secondary--line-height","d":"The declared `--text-button-secondary--line-height`."},"display":{"v":1.05,"t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-display--line-height","d":"The declared `--text-display--line-height`."},"fine":{"v":1.45,"t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-fine--line-height","d":"The declared `--text-fine--line-height`."},"h1":{"v":1.15,"t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-h1--line-height","d":"The declared `--text-h1--line-height`."},"h2":{"v":1.2,"t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-h2--line-height","d":"The declared `--text-h2--line-height`."},"h3":{"v":1.25,"t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-h3--line-height","d":"The declared `--text-h3--line-height`."},"label":{"v":1.4,"t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-label--line-height","d":"The declared `--text-label--line-height`."},"lead":{"v":1.35,"t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-lead--line-height","d":"The declared `--text-lead--line-height`."},"lede":{"v":1.25,"t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-lede--line-height","d":"The declared `--text-lede--line-height`."},"masthead":{"v":1.05,"t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-masthead--line-height","d":"The declared `--text-masthead--line-height`."},"quote":{"v":1.5,"t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-quote--line-height","d":"The declared `--text-quote--line-height`."},"quote-lg":{"v":1.3,"t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-quote-lg--line-height","d":"The declared `--text-quote-lg--line-height`."},"sm":{"v":1.4286,"t":"number","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-sm--line-height","d":"The declared `--text-sm--line-height` line-height ratio."},"standfirst":{"v":1.15,"t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-standfirst--line-height","d":"The declared `--text-standfirst--line-height`."}},"tracking":{"wide":{"v":"0.4375px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --tracking-wide","d":"The declared `--tracking-wide`."},"button":{"v":"0.078125px","t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-button--letter-spacing","d":"The declared `--text-button--letter-spacing`."},"button-secondary":{"v":"0.078125px","t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-button-secondary--letter-spacing","d":"The declared `--text-button-secondary--letter-spacing`."},"display":{"v":"-.015em","t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-display--letter-spacing","d":"The declared `--text-display--letter-spacing`."},"h1":{"v":"-.015em","t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-h1--letter-spacing","d":"The declared `--text-h1--letter-spacing`."},"h2":{"v":"-.01em","t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-h2--letter-spacing","d":"The declared `--text-h2--letter-spacing`."},"h3":{"v":"-.005em","t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-h3--letter-spacing","d":"The declared `--text-h3--letter-spacing`."},"label":{"v":"-.005em","t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-label--letter-spacing","d":"The declared `--text-label--letter-spacing`."},"masthead":{"v":"-.02em","t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-masthead--letter-spacing","d":"The declared `--text-masthead--letter-spacing`."},"quote":{"v":"-.005em","t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-quote--letter-spacing","d":"The declared `--text-quote--letter-spacing`."},"quote-lg":{"v":"-.01em","t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-quote-lg--letter-spacing","d":"The declared `--text-quote-lg--letter-spacing`."},"standfirst":{"v":"-.015em","t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-standfirst--letter-spacing","d":"The declared `--text-standfirst--letter-spacing`."}}},"color":{"brand":{"100":{"v":"#e4fed2","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-100","d":"The declared `--color-brand-100`."},"125":{"v":"#d8ffbd","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-125","d":"The declared `--color-brand-125`."},"150":{"v":"#cfffad","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-150","d":"The declared `--color-brand-150`."},"175":{"v":"#c4ff99","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-175","d":"The declared `--color-brand-175`."},"200":{"v":"#b8fc88","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-200","d":"The declared `--color-brand-200`."},"225":{"v":"#b0f87c","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-225","d":"The declared `--color-brand-225`."},"250":{"v":"#a9ee77","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-250","d":"The declared `--color-brand-250`."},"275":{"v":"#99e467","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-275","d":"The declared `--color-brand-275`."},"300":{"v":"#80cb57","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-300","d":"The declared `--color-brand-300`."},"350":{"v":"#6ab04a","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-350","d":"The declared `--color-brand-350`."},"450":{"v":"#55973b","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-450","d":"The declared `--color-brand-450`."},"525":{"v":"#3f7d2c","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-525","d":"The declared `--color-brand-525`."},"625":{"v":"#265f1b","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-625","d":"The declared `--color-brand-625`."},"700":{"v":"#10450c","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-700","d":"The declared `--color-brand-700`."},"75":{"v":"#f0fde8","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-75","d":"The declared `--color-brand-75`."},"800":{"v":"#022c06","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-800","d":"The declared `--color-brand-800`."},"825":{"v":"#022204","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-825","d":"The declared `--color-brand-825`."}},"gray":{"100":{"v":"#f4f2f1","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-100","d":"The declared `--color-gray-100`."},"125":{"v":"#efedeb","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-125","d":"The declared `--color-gray-125`."},"150":{"v":"#e8e5e3","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-150","d":"The declared `--color-gray-150`."},"175":{"v":"#dcd8d6","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-175","d":"The declared `--color-gray-175`."},"200":{"v":"#cfcbc9","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-200","d":"The declared `--color-gray-200`."},"225":{"v":"#c5c1bf","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-225","d":"The declared `--color-gray-225`."},"300":{"v":"#b0adab","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-300","d":"The declared `--color-gray-300`."},"350":{"v":"#a19d9b","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-350","d":"The declared `--color-gray-350`."},"475":{"v":"#6e6a68","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-475","d":"The declared `--color-gray-475`."},"600":{"v":"#595654","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-600","d":"The declared `--color-gray-600`."},"650":{"v":"#4c4948","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-650","d":"The declared `--color-gray-650`."},"700":{"v":"#403c3b","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-700","d":"The declared `--color-gray-700`."},"75":{"v":"#f8f7f7","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-75","d":"The declared `--color-gray-75`."},"750":{"v":"#32302f","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-750","d":"The declared `--color-gray-750`."},"800":{"v":"#252322","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-800","d":"The declared `--color-gray-800`."},"850":{"v":"#151413","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-850","d":"The declared `--color-gray-850`."}},"grayAlpha":{"100":{"v":"rgba(21, 20, 19, 0.055)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-100","d":"The declared `--color-gray-alpha-100`."},"125":{"v":"rgba(21, 20, 19, 0.08)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-125","d":"The declared `--color-gray-alpha-125`."},"150":{"v":"rgba(21, 20, 19, 0.11)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-150","d":"The declared `--color-gray-alpha-150`."},"175":{"v":"rgba(21, 20, 19, 0.165)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-175","d":"The declared `--color-gray-alpha-175`."},"200":{"v":"rgba(21, 20, 19, 0.22)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-200","d":"The declared `--color-gray-alpha-200`."},"225":{"v":"rgba(21, 20, 19, 0.263)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-225","d":"The declared `--color-gray-alpha-225`."},"300":{"v":"rgba(21, 20, 19, 0.35)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-300","d":"The declared `--color-gray-alpha-300`."},"350":{"v":"rgba(21, 20, 19, 0.416)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-350","d":"The declared `--color-gray-alpha-350`."},"475":{"v":"rgba(21, 20, 19, 0.63)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-475","d":"The declared `--color-gray-alpha-475`."},"600":{"v":"rgba(21, 20, 19, 0.718)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-600","d":"The declared `--color-gray-alpha-600`."},"650":{"v":"rgba(21, 20, 19, 0.773)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-650","d":"The declared `--color-gray-alpha-650`."},"700":{"v":"rgba(21, 20, 19, 0.827)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-700","d":"The declared `--color-gray-alpha-700`."},"75":{"v":"rgba(21, 20, 19, 0.03)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-75","d":"The declared `--color-gray-alpha-75`."},"750":{"v":"rgba(21, 20, 19, 0.882)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-750","d":"The declared `--color-gray-alpha-750`."},"800":{"v":"rgba(21, 20, 19, 0.933)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-800","d":"The declared `--color-gray-alpha-800`."},"850":{"v":"#151413","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-850","d":"The declared `--color-gray-alpha-850`."}},"whiteAlpha":{"100":{"v":"rgba(255, 255, 255, 0.945)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-100","d":"The declared `--color-white-alpha-100`."},"125":{"v":"rgba(255, 255, 255, 0.92)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-125","d":"The declared `--color-white-alpha-125`."},"150":{"v":"rgba(255, 255, 255, 0.89)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-150","d":"The declared `--color-white-alpha-150`."},"175":{"v":"rgba(255, 255, 255, 0.835)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-175","d":"The declared `--color-white-alpha-175`."},"200":{"v":"rgba(255, 255, 255, 0.78)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-200","d":"The declared `--color-white-alpha-200`."},"225":{"v":"rgba(255, 255, 255, 0.737)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-225","d":"The declared `--color-white-alpha-225`."},"300":{"v":"rgba(255, 255, 255, 0.65)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-300","d":"The declared `--color-white-alpha-300`."},"350":{"v":"rgba(255, 255, 255, 0.584)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-350","d":"The declared `--color-white-alpha-350`."},"475":{"v":"rgba(255, 255, 255, 0.37)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-475","d":"The declared `--color-white-alpha-475`."},"600":{"v":"rgba(255, 255, 255, 0.282)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-600","d":"The declared `--color-white-alpha-600`."},"650":{"v":"rgba(255, 255, 255, 0.227)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-650","d":"The declared `--color-white-alpha-650`."},"700":{"v":"rgba(255, 255, 255, 0.173)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-700","d":"The declared `--color-white-alpha-700`."},"75":{"v":"rgba(255, 255, 255, 0.97)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-75","d":"The declared `--color-white-alpha-75`."},"750":{"v":"rgba(255, 255, 255, 0.118)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-750","d":"The declared `--color-white-alpha-750`."},"800":{"v":"rgba(255, 255, 255, 0.067)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-800","d":"The declared `--color-white-alpha-800`."},"850":{"v":"rgba(255, 255, 255, 0)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-850","d":"The declared `--color-white-alpha-850`."}},"white":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white","d":"Pure white — secondary surface, pill ink on dark buttons."},"black":{"v":"#000000","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-black","d":"Pure black."},"deepBlack":{"v":"#161514","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-deep-black","d":"The warm near-black of the dark showcase (#161514)."},"warmGrey":{"v":"#efedec","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-warm-grey","d":"The warm off-white surface (#efedec)."},"enodeGreen":{"v":"#b0f87d","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-enode-green","d":"The brand green (#b0f87d) — accent, node sign, focus ring base."},"enodeGreenDeep":{"v":"#99e467","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-enode-green-deep","d":"A deeper brand green (#99e467)."},"enodeGreenMid":{"v":"#a9ee77","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-enode-green-mid","d":"A mid brand green (#a9ee77)."},"enodeGreenSoft":{"v":"#c5ff9b","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-enode-green-soft","d":"A soft brand green (#c5ff9b)."},"enodeGreenSoftest":{"v":"#cfffad","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-enode-green-softest","d":"The softest brand green (#cfffad)."},"signalBrand":{"v":"#b0f87c","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-signal-brand","d":"The signal brand green — control link/focus ring source."},"controlLink":{"v":"#b0f87c","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-control-link","d":"The declared control link colour (brand green)."},"controlFocusRing":{"v":"#b0f87c","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-control-focus-ring","d":"The declared keyboard focus ring (brand green)."},"transparent":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-transparent","d":"Fully transparent."},"current":{"v":"currentcolor","t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-current","d":"currentColor passthrough."}},"spacing":{"base":{"v":"4px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --spacing","d":"The declared `--spacing`."}},"radius":{"full":{"v":"33554400px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --radius-full","d":"The declared `--radius-full` — `calc(infinity * 1px)`, which Chromium resolves to 33554400px (effectively a full pill)."},"lg":{"v":"10px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --radius-lg","d":"The declared `--radius-lg`."},"md":{"v":"6px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --radius-md","d":"The declared `--radius-md`."},"none":{"v":0,"t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --radius-none","d":"The declared `--radius-none`."},"sm":{"v":"4px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --radius-sm","d":"The declared `--radius-sm`."},"xs":{"v":"2px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --radius-xs","d":"The declared `--radius-xs`."},"cta":{"v":"{radius.full}","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json); matches declared --radius-full","d":"The fully-rounded CTA pill radius (radius-full)."},"navPill":{"v":"{radius.sm}","t":"dimension","s":"computed borderTopLeftRadius of nav-link default (raw/components-computed.json); matches declared --radius-sm","d":"The 4px nav-pill radius (rounded-sm → radius-sm)."},"menu":{"v":"{radius.lg}","t":"dimension","s":"the painted radius of nav-panel's rounded child default (raw/components-computed.json paint list); matches declared --radius-lg","d":"The mega-menu panel corner radius — read from the painted rounded-lg child; the wrapper itself is unrounded."},"statCard":{"v":"{radius.md}","t":"dimension","s":"computed borderTopLeftRadius of stat-card default (raw/components-computed.json); matches declared --radius-md","d":"The stat-card corner radius."},"field":{"v":"{radius.md}","t":"dimension","s":"computed borderTopLeftRadius of field-firstname default (raw/components-computed.json); matches declared --radius-md","d":"The contact field radius."}},"container":{"2xl":{"v":"672px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --container-2xl","d":"The declared `--container-2xl`."},"3xl":{"v":"768px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --container-3xl","d":"The declared `--container-3xl`."},"4xl":{"v":"896px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --container-4xl","d":"The declared `--container-4xl`."},"5xl":{"v":"1024px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --container-5xl","d":"The declared `--container-5xl`."},"lg":{"v":"512px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --container-lg","d":"The declared `--container-lg`."},"md":{"v":"448px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --container-md","d":"The declared `--container-md`."},"sm":{"v":"384px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --container-sm","d":"The declared `--container-sm`."},"xl":{"v":"576px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --container-xl","d":"The declared `--container-xl`."},"xs":{"v":"320px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --container-xs","d":"The declared `--container-xs`."}},"layout":{"gridMax":{"v":"1308px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --grid-max","d":"The 1308px content grid maximum."},"gridInset":{"v":"40px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --grid-inset","d":"The grid side inset — 40px at 1440; 24px from 48rem, narrower below."},"gutterBase":{"v":"20px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --gutter-base","d":"The 20px base gutter."},"gutterTight":{"v":"8px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --gutter-tight","d":"The 8px tight gutter."},"heroMediaOvershoot":{"v":"48px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --hero-media-overshoot","d":"The 48px the hero media panel overshoots."},"enablerGridShift":{"v":0.13,"t":"number","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --enabler-grid-shift","d":"The declared `--enabler-grid-shift`."}},"breakpoint":{"md":{"v":"768px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --breakpoint-md","d":"The declared `--breakpoint-md`."}},"aspect":{"video":{"v":"16 / 9","t":"other","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --aspect-video","d":"The declared `--aspect-video`."}},"blur":{"md":{"v":"12px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --blur-md","d":"The declared `--blur-md`."},"sm":{"v":"8px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --blur-sm","d":"The declared `--blur-sm`."},"xl":{"v":"24px","t":"dimension","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --blur-xl","d":"The declared `--blur-xl`."}},"easing":{"in":{"v":[0.4,0.0,1.0,1.0],"t":"cubicBezier","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --ease-in","d":"The declared `--ease-in`."},"in-out":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --ease-in-out","d":"The declared `--ease-in-out`."},"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --ease-out","d":"The declared `--ease-out`."},"default":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --default-transition-timing-function","d":"The declared `--default-transition-timing-function`."}},"duration":{"default":{"v":"150ms","t":"duration","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --default-transition-duration","d":"The declared `--default-transition-duration`."},"themeFade":{"v":"400ms","t":"duration","s":"declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --theme-fade-duration","d":"The 0.4s cross-fade duration applied when [data-mode] scopes swap (declared on html)."}},"motion":{"control":{"v":"color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), translate 0.15s cubic-bezier(0.4, 0, 0.2, 1), scale 0.15s cubic-bezier(0.4, 0, 0.2, 1), rotate 0.15s cubic-bezier(0.4, 0, 0.2, 1), filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), -webkit-backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), display 0.15s cubic-bezier(0.4, 0, 0.2, 1), content-visibility 0.15s cubic-bezier(0.4, 0, 0.2, 1), overlay 0.15s cubic-bezier(0.4, 0, 0.2, 1), pointer-events 0.15s cubic-bezier(0.4, 0, 0.2, 1)","t":"other","s":"computed transition of nav-cta default (raw/components-computed.json); the declared --default-transition-duration/.4-0-.2-1 pair","d":"The 0.15s transition on pills and controls."}},"component":{"topbar-height":{"v":"58px","t":"dimension","s":"measured h of mkt-header default (raw/components-computed.json)","d":"The 58px marketing header bar."},"logo-width":{"v":"81.83px","t":"dimension","s":"measured w of mkt-logo default (raw/components-computed.json)","d":"The ~82px Enode wordmark."},"nav-pill-height":{"v":"34px","t":"dimension","s":"measured h of nav-link default (raw/components-computed.json)","d":"The 34px nav pills."},"cta-height":{"v":"32px","t":"dimension","s":"measured h of nav-cta default (raw/components-computed.json)","d":"The 32px CTA pills."},"mega-menu-width":{"v":"1120px","t":"dimension","s":"measured w of nav-panel default (raw/components-computed.json)","d":"The open mega-menu panel width."},"mega-menu-height":{"v":"290px","t":"dimension","s":"measured h of nav-panel default (raw/components-computed.json)","d":"The open mega-menu panel height."},"hero-masthead-width":{"v":"1024px","t":"dimension","s":"measured w of hero-h1 default (raw/components-computed.json)","d":"The hero masthead measure (max-w)."},"stat-card-width":{"v":"396px","t":"dimension","s":"measured w of stat-card default (raw/components-computed.json)","d":"The stat-card width."},"stat-card-height":{"v":"184px","t":"dimension","s":"measured h of stat-card default (raw/components-computed.json)","d":"The stat-card height."},"showcase-height":{"v":"765px","t":"dimension","s":"measured h of dark-showcase default (raw/components-computed.json)","d":"The dark showcase panel height on the home hero."},"field-height":{"v":"48.09px","t":"dimension","s":"measured h of field-firstname default (raw/components-computed.json)","d":"The 48px contact field height."},"textarea-height":{"v":"100.28px","t":"dimension","s":"measured h of field-inquiry default (raw/components-computed.json)","d":"The ~100px inquiry textarea height."},"send-width":{"v":"129.91px","t":"dimension","s":"measured w of send-btn default (raw/components-computed.json)","d":"The 'Send message' pill width."},"visual-frame-width":{"v":"304px","t":"dimension","s":"measured w of visual-frame default (raw/components-computed.json)","d":"The product visual-frame tile width."},"mobile-topbar-height":{"v":"60px","t":"dimension","s":"measured h of m-topbar default (raw/components-computed.json)","d":"The 60px phone top bar."},"mobile-menu-size":{"v":"36px","t":"dimension","s":"measured w of m-menu-btn default (raw/components-computed.json)","d":"The 36px round mobile menu button."},"login":{"panel-width":{"v":"600px","t":"dimension","s":"measured w of login-panel default on platform.enode.com/login (raw/components-computed.json)","d":"The 600px light sign-in panel."},"panel-height":{"v":"900px","t":"dimension","s":"measured h of login-panel default on platform.enode.com/login (raw/components-computed.json)","d":"The panel height."},"panel-ink":{"v":"{color.gray.800}","t":"color","s":"computed color of login-panel default on platform.enode.com/login (raw/components-computed.json); matches declared color.gray.800","d":"The panel ink — the login form side paints light."},"field-bg":{"v":"{color.white}","t":"color","s":"computed backgroundColor of login-field default on platform.enode.com/login (raw/components-computed.json); matches declared color.white","d":"The white e-mail field fill."},"field-ink":{"v":"{color.gray.800}","t":"color","s":"computed color of login-field default on platform.enode.com/login (raw/components-computed.json); matches declared color.gray.800","d":"The field text ink."},"field-height":{"v":"41px","t":"dimension","s":"measured h of login-field default on platform.enode.com/login (raw/components-computed.json)","d":"The e-mail field height."},"submit-fill":{"v":"{color.gray.800}","t":"color","s":"computed backgroundColor of login-submit default on platform.enode.com/login (raw/components-computed.json); matches declared color.gray.800","d":"The dark 'Log in' button fill."},"submit-ink":{"v":"{color.white}","t":"color","s":"computed color of login-submit default on platform.enode.com/login (raw/components-computed.json); matches declared color.white","d":"The button text."},"submit-height":{"v":"32px","t":"dimension","s":"measured h of login-submit default on platform.enode.com/login (raw/components-computed.json)","d":"The button height."},"sso-ink":{"v":"{color.gray.800}","t":"color","s":"computed color of login-sso default on platform.enode.com/login (raw/components-computed.json); matches declared color.gray.800","d":"The 'Continue with SAML SSO' link ink."}}}},"light":{"color":{"background":{"glass":{"thick":{"v":"rgba(21, 20, 19, 0.565)","t":"color","s":"css-var --color-background-glass-thick (light)"},"thin":{"v":"rgba(21, 20, 19, 0.11)","t":"color","s":"css-var --color-background-glass-thin (light)"}},"primary":{"v":"#f4f2f1","t":"color","s":"css-var --color-background-primary (light)"},"secondary":{"v":"#ffffff","t":"color","s":"css-var --color-background-secondary (light)"}},"border":{"primary":{"default":{"v":"rgba(21, 20, 19, 0.165)","t":"color","s":"css-var --color-border-primary (light)"},"hover":{"v":"rgba(21, 20, 19, 0.263)","t":"color","s":"css-var --color-border-primary-hover (light)"}},"secondary":{"default":{"v":"rgba(21, 20, 19, 0.11)","t":"color","s":"css-var --color-border-secondary (light)"},"hover":{"v":"rgba(21, 20, 19, 0.165)","t":"color","s":"css-var --color-border-secondary-hover (light)"}}},"browser":{"bar":{"v":"rgba(239, 237, 235, 0.85)","t":"color","s":"css-var --color-browser-bar (light)"},"dot":{"default":{"v":"rgba(21, 20, 19, 0.12)","t":"color","s":"css-var --color-browser-dot (light)"},"edge":{"v":"rgba(21, 20, 19, 0.12)","t":"color","s":"css-var --color-browser-dot-edge (light)"}},"hairline":{"v":"rgba(21, 20, 19, 0.06)","t":"color","s":"css-var --color-browser-hairline (light)"},"pill":{"default":{"v":"rgba(21, 20, 19, 0.05)","t":"color","s":"css-var --color-browser-pill (light)"},"edge":{"v":"rgba(21, 20, 19, 0.07)","t":"color","s":"css-var --color-browser-pill-edge (light)"}},"ring":{"v":"rgba(21, 20, 19, 0.1)","t":"color","s":"css-var --color-browser-ring (light)"},"screen":{"v":"#ffffff","t":"color","s":"css-var --color-browser-screen (light)"},"tab":{"divider":{"v":"rgba(21, 20, 19, 0.14)","t":"color","s":"css-var --color-browser-tab-divider (light)"}},"tabbar":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --color-browser-tabbar (light)"},"url":{"default":{"v":"rgba(21, 20, 19, 0.55)","t":"color","s":"css-var --color-browser-url (light)"},"icon":{"v":"rgba(21, 20, 19, 0.38)","t":"color","s":"css-var --color-browser-url-icon (light)"}}},"button":{"ink":{"v":"#ffffff","t":"color","s":"css-var --color-button-ink (light)"}},"card":{"background":{"default":{"v":"rgba(21, 20, 19, 0.037)","t":"color","s":"css-var --color-card-background (light)"},"highlighted":{"v":"rgba(21, 20, 19, 0.032)","t":"color","s":"css-var --color-card-background-highlighted (light)"},"hover":{"v":"rgba(21, 20, 19, 0.016)","t":"color","s":"css-var --color-card-background-hover (light)"}},"hairline":{"default":{"v":"rgba(21, 20, 19, 0.032)","t":"color","s":"css-var --color-card-hairline (light)"},"highlighted":{"v":"rgba(21, 20, 19, 0.034)","t":"color","s":"css-var --color-card-hairline-highlighted (light)"},"hover":{"default":{"v":"rgba(21, 20, 19, 0.033)","t":"color","s":"css-var --color-card-hairline-hover (light)"},"overlay":{"v":"rgba(21, 20, 19, 0.001)","t":"color","s":"css-var --color-card-hairline-hover-overlay (light)"}}}},"diagram":{"grid":{"dot":{"v":"rgba(21, 20, 19, 0.14)","t":"color","s":"css-var --color-diagram-grid-dot (light)"}},"node":{"background":{"v":"rgba(21, 20, 19, 0.037)","t":"color","s":"css-var --color-diagram-node-background (light)"},"hairline":{"v":"rgba(21, 20, 19, 0.068)","t":"color","s":"css-var --color-diagram-node-hairline (light)"}},"surface":{"background":{"v":"rgba(21, 20, 19, 0)","t":"color","s":"css-var --color-diagram-surface-background (light)"},"hairline":{"v":"rgba(21, 20, 19, 0.165)","t":"color","s":"css-var --color-diagram-surface-hairline (light)"}}},"foreground":{"primary":{"v":"#252322","t":"color","s":"css-var --color-foreground-primary (light)"},"secondary":{"v":"rgba(37, 35, 34, 0.718)","t":"color","s":"css-var --color-foreground-secondary (light)"},"tertiary":{"v":"rgba(21, 20, 19, 0.63)","t":"color","s":"css-var --color-foreground-tertiary (light)"}},"line":{"primary":{"v":"rgba(21, 20, 19, 0.11)","t":"color","s":"css-var --color-line-primary (light)"},"subtle":{"v":"rgba(21, 20, 19, 0.08)","t":"color","s":"css-var --color-line-subtle (light)"}},"nav":{"ink":{"default":{"v":"rgba(37, 35, 34, 0.827)","t":"color","s":"css-var --color-nav-ink (light)"},"active":{"v":"#252322","t":"color","s":"css-var --color-nav-ink-active (light)"}}},"node":{"default":{"v":"#99e467","t":"color","s":"css-var --color-node (light)"},"dim":{"v":"#6ab04a","t":"color","s":"css-var --color-node-dim (light)"}},"phone":{"bezel":{"v":"#e5e2e0","t":"color","s":"css-var --color-phone-bezel (light)"},"indicator":{"v":"rgba(21, 20, 19, 0.35)","t":"color","s":"css-var --color-phone-indicator (light)"},"ink":{"v":"#151413","t":"color","s":"css-var --color-phone-ink (light)"},"notch":{"v":"#151413","t":"color","s":"css-var --color-phone-notch (light)"},"ring":{"v":"rgba(21, 20, 19, 0.1)","t":"color","s":"css-var --color-phone-ring (light)"},"screen":{"default":{"v":"#ffffff","t":"color","s":"css-var --color-phone-screen (light)"},"inset":{"v":"rgba(21, 20, 19, 0.12)","t":"color","s":"css-var --color-phone-screen-inset (light)"}},"skeleton":{"v":"rgba(21, 20, 19, 0.08)","t":"color","s":"css-var --color-phone-skeleton (light)"}},"text":{"primary":{"v":"#252322","t":"color","s":"css-var --color-text-primary (light)"},"secondary":{"v":"rgba(37, 35, 34, 0.827)","t":"color","s":"css-var --color-text-secondary (light)"},"tertiary":{"v":"rgba(37, 35, 34, 0.63)","t":"color","s":"css-var --color-text-tertiary (light)"}},"visual":{"background":{"default":{"v":"rgba(21, 20, 19, 0.09)","t":"color","s":"css-var --color-visual-background (light)"},"hover":{"v":"rgba(21, 20, 19, 0.11)","t":"color","s":"css-var --color-visual-background-hover (light)"}},"diagram":{"accent":{"v":"#b0f87c","t":"color","s":"css-var --color-visual-diagram-accent (light)"},"grid":{"dot":{"v":"#d2cecc","t":"color","s":"css-var --color-visual-diagram-grid-dot (light)"}},"group":{"background":{"primary":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --color-visual-diagram-group-background-primary (light)"}},"hairline":{"primary":{"v":"#cfcbc9","t":"color","s":"css-var --color-visual-diagram-group-hairline-primary (light)"}}},"ink":{"muted":{"v":"#7b7876","t":"color","s":"css-var --color-visual-diagram-ink-muted (light)"},"on":{"fill":{"v":"#f8f7f7","t":"color","s":"css-var --color-visual-diagram-ink-on-fill (light)"}},"primary":{"v":"#151413","t":"color","s":"css-var --color-visual-diagram-ink-primary (light)"},"secondary":{"v":"#3b3836","t":"color","s":"css-var --color-visual-diagram-ink-secondary (light)"},"tertiary":{"v":"#595654","t":"color","s":"css-var --color-visual-diagram-ink-tertiary (light)"}},"node":{"background":{"hover":{"v":"#f7f6f5","t":"color","s":"css-var --color-visual-diagram-node-background-hover (light)"},"primary":{"v":"#fbfaf9","t":"color","s":"css-var --color-visual-diagram-node-background-primary (light)"},"secondary":{"v":"#f7f6f5","t":"color","s":"css-var --color-visual-diagram-node-background-secondary (light)"},"tertiary":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --color-visual-diagram-node-background-tertiary (light)"}},"hairline":{"alpha":{"v":"rgba(176, 172, 170, 0.5)","t":"color","s":"css-var --color-visual-diagram-node-hairline-alpha (light)"},"hover":{"v":"#ccc7c4","t":"color","s":"css-var --color-visual-diagram-node-hairline-hover (light)"},"primary":{"v":"#cfcbc9","t":"color","s":"css-var --color-visual-diagram-node-hairline-primary (light)"},"secondary":{"v":"#b0acaa","t":"color","s":"css-var --color-visual-diagram-node-hairline-secondary (light)"}}},"section":{"background":{"primary":{"v":"#f4f2f1","t":"color","s":"css-var --color-visual-diagram-section-background-primary (light)"}},"hairline":{"primary":{"v":"#cfcbc9","t":"color","s":"css-var --color-visual-diagram-section-hairline-primary (light)"}}},"sign":{"fill":{"quiet":{"v":"#a19d9b","t":"color","s":"css-var --color-visual-diagram-sign-fill-quiet (light)"}},"on":{"accent":{"v":"#151413","t":"color","s":"css-var --color-visual-diagram-sign-on-accent (light)"},"fill":{"v":"#f8f7f7","t":"color","s":"css-var --color-visual-diagram-sign-on-fill (light)"},"quiet":{"v":"#fbfaf9","t":"color","s":"css-var --color-visual-diagram-sign-on-quiet (light)"}},"primary":{"v":"#3b3836","t":"color","s":"css-var --color-visual-diagram-sign-primary (light)"},"secondary":{"v":"#7b7876","t":"color","s":"css-var --color-visual-diagram-sign-secondary (light)"},"tertiary":{"v":"#b0acaa","t":"color","s":"css-var --color-visual-diagram-sign-tertiary (light)"}},"title":{"background":{"hover":{"v":"rgba(21, 20, 19, 0.05)","t":"color","s":"css-var --color-visual-diagram-title-background-hover (light)"}}}},"motif":{"brand":{"v":"#6ab04a","t":"color","s":"css-var --color-visual-motif-brand (light)"},"grid":{"v":"#dbd8d7","t":"color","s":"css-var --color-visual-motif-grid (light)"},"line":{"v":"#cfcbc9","t":"color","s":"css-var --color-visual-motif-line (light)"},"mark":{"v":"#a19d9b","t":"color","s":"css-var --color-visual-motif-mark (light)"}},"well":{"v":"#e5e2e1","t":"color","s":"css-var --color-visual-well (light)"}}},"shadow":{"browser":{"dot":{"v":"none","t":"other","s":"css-var --shadow-browser-dot (light)"}},"visual":{"well":{"hairline":{"v":"oklch(0.2 0.004 48.7 / 0.04) 0px 0px 0px 1px inset","t":"other","s":"css-var --shadow-visual-well-hairline (light)"},"inset":{"v":"oklch(0.2 0.004 48.7 / 0.04) 0px 0px 0px 1px inset","t":"other","s":"css-var --shadow-visual-well-inset (light)"}}}},"showcase":{"flush":{"default":{"v":"#dfefdc","t":"color","s":"css-var --showcase-flush (light)"},"line":{"v":"#d1e8cb","t":"color","s":"css-var --showcase-flush-line (light)"}}},"text":{"ink":{"v":"{color.gray.800}","t":"color","s":"computed color of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.gray.800","d":"The near-black ink on display copy, headings and card text."},"nav-ink":{"v":"{color.nav.ink.default}","t":"color","s":"computed color of nav-link default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.nav.ink.default","d":"The translucent nav-pill ink."},"stat-ink":{"v":"{color.gray.800}","t":"color","s":"computed color of stat-card default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.gray.800","d":"The stat-card figure ink."}},"action":{"cta-fill":{"v":"{color.gray.800}","t":"color","s":"computed backgroundColor of nav-cta default (raw/components-computed.json); matches declared color.gray.800","d":"The dark fill of the 'Talk to our team' pill CTAs."},"cta-ink":{"v":"{color.white}","t":"color","s":"computed color of nav-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.white","d":"The white text on the dark CTA pill."}},"border":{"cta-outline":{"v":"{color.border.primary.default}","t":"color","s":"the inset box-shadow layer painted on hero-cta2 default (raw/components-computed.json); matches declared color.border.primary.default","d":"The translucent inset ring of the 'Explore our platform' secondary pill — a 1px inset shadow; its border-width is 0."},"focus-ring":{"v":"{color.brand.225}","t":"color","s":"computed focus ring (outline 2px solid) of nav-link focus-visible (raw/components-computed.json); matches declared color.brand.225","d":"The brand-green keyboard focus ring (focus-visible:outline-control-focus-ring)."}},"background":{"page":{"v":"{color.brand.75}","t":"color","s":"the \u003chtml> element's inline style --color-page-background:var(--color-brand-75); visible as the mint field behind every marketing page (screenshots/home-light-*.png)","d":"The mint page field — brand-75, set inline on \u003chtml>."}}},"dark":{"color":{"background":{"glass":{"thick":{"v":"rgba(255, 255, 255, 0.435)","t":"color","s":"css-var --color-background-glass-thick (dark)"},"thin":{"v":"rgba(255, 255, 255, 0.118)","t":"color","s":"css-var --color-background-glass-thin (dark)"}},"primary":{"v":"#151413","t":"color","s":"css-var --color-background-primary (dark)"},"secondary":{"v":"#252322","t":"color","s":"css-var --color-background-secondary (dark)"}},"border":{"primary":{"default":{"v":"rgba(255, 255, 255, 0.584)","t":"color","s":"css-var --color-border-primary (dark)"},"hover":{"v":"rgba(255, 255, 255, 0.65)","t":"color","s":"css-var --color-border-primary-hover (dark)"}},"secondary":{"default":{"v":"rgba(255, 255, 255, 0.435)","t":"color","s":"css-var --color-border-secondary (dark)"},"hover":{"v":"rgba(255, 255, 255, 0.584)","t":"color","s":"css-var --color-border-secondary-hover (dark)"}}},"browser":{"bar":{"v":"rgba(46, 43, 41, 0.98)","t":"color","s":"css-var --color-browser-bar (dark)"},"dot":{"default":{"v":"#383533","t":"color","s":"css-var --color-browser-dot (dark)"},"edge":{"v":"#4b4644","t":"color","s":"css-var --color-browser-dot-edge (dark)"}},"hairline":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --color-browser-hairline (dark)"},"pill":{"default":{"v":"rgba(255, 255, 255, 0.06)","t":"color","s":"css-var --color-browser-pill (dark)"},"edge":{"v":"rgba(255, 255, 255, 0.06)","t":"color","s":"css-var --color-browser-pill-edge (dark)"}},"ring":{"v":"rgba(255, 255, 255, 0.12)","t":"color","s":"css-var --color-browser-ring (dark)"},"screen":{"v":"#252322","t":"color","s":"css-var --color-browser-screen (dark)"},"tab":{"divider":{"v":"rgba(255, 255, 255, 0.14)","t":"color","s":"css-var --color-browser-tab-divider (dark)"}},"tabbar":{"v":"rgba(0, 0, 0, 0.3)","t":"color","s":"css-var --color-browser-tabbar (dark)"},"url":{"default":{"v":"#b0adab","t":"color","s":"css-var --color-browser-url (dark)"},"icon":{"v":"#7e7977","t":"color","s":"css-var --color-browser-url-icon (dark)"}}},"button":{"ink":{"v":"#252322","t":"color","s":"css-var --color-button-ink (dark)"}},"card":{"background":{"default":{"v":"rgba(255, 255, 255, 0.041)","t":"color","s":"css-var --color-card-background (dark)"},"highlighted":{"v":"rgba(255, 255, 255, 0.036)","t":"color","s":"css-var --color-card-background-highlighted (dark)"},"hover":{"v":"rgba(255, 255, 255, 0.018)","t":"color","s":"css-var --color-card-background-hover (dark)"}},"hairline":{"default":{"v":"rgba(255, 255, 255, 0.036)","t":"color","s":"css-var --color-card-hairline (dark)"},"highlighted":{"v":"rgba(255, 255, 255, 0.038)","t":"color","s":"css-var --color-card-hairline-highlighted (dark)"},"hover":{"default":{"v":"rgba(255, 255, 255, 0.037)","t":"color","s":"css-var --color-card-hairline-hover (dark)"},"overlay":{"v":"rgba(255, 255, 255, 0.001)","t":"color","s":"css-var --color-card-hairline-hover-overlay (dark)"}}}},"diagram":{"grid":{"dot":{"v":"rgba(255, 255, 255, 0.16)","t":"color","s":"css-var --color-diagram-grid-dot (dark)"}},"node":{"background":{"v":"rgba(255, 255, 255, 0.041)","t":"color","s":"css-var --color-diagram-node-background (dark)"},"hairline":{"v":"rgba(255, 255, 255, 0.076)","t":"color","s":"css-var --color-diagram-node-hairline (dark)"}},"surface":{"background":{"v":"rgba(255, 255, 255, 0)","t":"color","s":"css-var --color-diagram-surface-background (dark)"},"hairline":{"v":"rgba(255, 255, 255, 0.584)","t":"color","s":"css-var --color-diagram-surface-hairline (dark)"}}},"foreground":{"primary":{"v":"rgba(237, 237, 237, 0.97)","t":"color","s":"css-var --color-foreground-primary (dark)"},"secondary":{"v":"rgba(237, 237, 237, 0.737)","t":"color","s":"css-var --color-foreground-secondary (dark)"},"tertiary":{"v":"rgba(255, 255, 255, 0.584)","t":"color","s":"css-var --color-foreground-tertiary (dark)"}},"line":{"primary":{"v":"rgba(255, 255, 255, 0.435)","t":"color","s":"css-var --color-line-primary (dark)"},"subtle":{"v":"rgba(255, 255, 255, 0.282)","t":"color","s":"css-var --color-line-subtle (dark)"}},"nav":{"ink":{"default":{"v":"rgba(237, 237, 237, 0.737)","t":"color","s":"css-var --color-nav-ink (dark)"},"active":{"v":"rgba(237, 237, 237, 0.97)","t":"color","s":"css-var --color-nav-ink-active (dark)"}}},"node":{"default":{"v":"#b0f87c","t":"color","s":"css-var --color-node (dark)"},"dim":{"v":"#55973b","t":"color","s":"css-var --color-node-dim (dark)"}},"phone":{"bezel":{"v":"#181716","t":"color","s":"css-var --color-phone-bezel (dark)"},"indicator":{"v":"rgba(255, 255, 255, 0.4)","t":"color","s":"css-var --color-phone-indicator (dark)"},"ink":{"v":"rgba(255, 255, 255, 0.92)","t":"color","s":"css-var --color-phone-ink (dark)"},"notch":{"v":"#000000","t":"color","s":"css-var --color-phone-notch (dark)"},"ring":{"v":"rgba(255, 255, 255, 0.12)","t":"color","s":"css-var --color-phone-ring (dark)"},"screen":{"default":{"v":"#252322","t":"color","s":"css-var --color-phone-screen (dark)"},"inset":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"css-var --color-phone-screen-inset (dark)"}},"skeleton":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"css-var --color-phone-skeleton (dark)"}},"text":{"primary":{"v":"rgba(237, 237, 237, 0.97)","t":"color","s":"css-var --color-text-primary (dark)"},"secondary":{"v":"rgba(237, 237, 237, 0.737)","t":"color","s":"css-var --color-text-secondary (dark)"},"tertiary":{"v":"rgba(237, 237, 237, 0.584)","t":"color","s":"css-var --color-text-tertiary (dark)"}},"visual":{"background":{"default":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"css-var --color-visual-background (dark)"},"hover":{"v":"rgba(255, 255, 255, 0.12)","t":"color","s":"css-var --color-visual-background-hover (dark)"}},"diagram":{"accent":{"v":"#b0f87c","t":"color","s":"css-var --color-visual-diagram-accent (dark)"},"grid":{"dot":{"v":"#302d2c","t":"color","s":"css-var --color-visual-diagram-grid-dot (dark)"}},"group":{"background":{"primary":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --color-visual-diagram-group-background-primary (dark)"}},"hairline":{"primary":{"v":"#32302f","t":"color","s":"css-var --color-visual-diagram-group-hairline-primary (dark)"}}},"ink":{"muted":{"v":"#7d7a78","t":"color","s":"css-var --color-visual-diagram-ink-muted (dark)"},"on":{"fill":{"v":"#151413","t":"color","s":"css-var --color-visual-diagram-ink-on-fill (dark)"}},"primary":{"v":"#f8f7f7","t":"color","s":"css-var --color-visual-diagram-ink-primary (dark)"},"secondary":{"v":"#c5c1bf","t":"color","s":"css-var --color-visual-diagram-ink-secondary (dark)"},"tertiary":{"v":"#a19d9b","t":"color","s":"css-var --color-visual-diagram-ink-tertiary (dark)"}},"node":{"background":{"hover":{"v":"#2a2726","t":"color","s":"css-var --color-visual-diagram-node-background-hover (dark)"},"primary":{"v":"#252322","t":"color","s":"css-var --color-visual-diagram-node-background-primary (dark)"},"secondary":{"v":"#1d1c1b","t":"color","s":"css-var --color-visual-diagram-node-background-secondary (dark)"},"tertiary":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --color-visual-diagram-node-background-tertiary (dark)"}},"hairline":{"alpha":{"v":"rgba(76, 73, 72, 0.5)","t":"color","s":"css-var --color-visual-diagram-node-hairline-alpha (dark)"},"hover":{"v":"#363432","t":"color","s":"css-var --color-visual-diagram-node-hairline-hover (dark)"},"primary":{"v":"#32302f","t":"color","s":"css-var --color-visual-diagram-node-hairline-primary (dark)"},"secondary":{"v":"#4c4948","t":"color","s":"css-var --color-visual-diagram-node-hairline-secondary (dark)"}}},"section":{"background":{"primary":{"v":"#151413","t":"color","s":"css-var --color-visual-diagram-section-background-primary (dark)"}},"hairline":{"primary":{"v":"#32302f","t":"color","s":"css-var --color-visual-diagram-section-hairline-primary (dark)"}}},"sign":{"fill":{"quiet":{"v":"#595654","t":"color","s":"css-var --color-visual-diagram-sign-fill-quiet (dark)"}},"on":{"accent":{"v":"#151413","t":"color","s":"css-var --color-visual-diagram-sign-on-accent (dark)"},"fill":{"v":"#151413","t":"color","s":"css-var --color-visual-diagram-sign-on-fill (dark)"},"quiet":{"v":"#252322","t":"color","s":"css-var --color-visual-diagram-sign-on-quiet (dark)"}},"primary":{"v":"#c5c1bf","t":"color","s":"css-var --color-visual-diagram-sign-primary (dark)"},"secondary":{"v":"#7d7a78","t":"color","s":"css-var --color-visual-diagram-sign-secondary (dark)"},"tertiary":{"v":"#4c4948","t":"color","s":"css-var --color-visual-diagram-sign-tertiary (dark)"}},"title":{"background":{"hover":{"v":"rgba(248, 247, 247, 0.07)","t":"color","s":"css-var --color-visual-diagram-title-background-hover (dark)"}}}},"motif":{"brand":{"v":"#b0f87c","t":"color","s":"css-var --color-visual-motif-brand (dark)"},"grid":{"v":"#252221","t":"color","s":"css-var --color-visual-motif-grid (dark)"},"line":{"v":"#403c3b","t":"color","s":"css-var --color-visual-motif-line (dark)"},"mark":{"v":"#696563","t":"color","s":"css-var --color-visual-motif-mark (dark)"}},"well":{"v":"#2c2928","t":"color","s":"css-var --color-visual-well (dark)"}}},"shadow":{"browser":{"dot":{"v":"rgba(0, 0, 0, 0.15) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.15) 0px 0px 2px 0px, rgba(255, 255, 255, 0.06) 0px 0px 1px 1px inset","t":"other","s":"css-var --shadow-browser-dot (dark)"}},"visual":{"well":{"hairline":{"v":"oklch(1 0 0 / 0.042) 0px 0px 0px 1px inset","t":"other","s":"css-var --shadow-visual-well-hairline (dark)"},"inset":{"v":"oklch(0.15 0.004 48.6 / 0.35) 0px 0px 0px 1px inset","t":"other","s":"css-var --shadow-visual-well-inset (dark)"}}}},"showcase":{"flush":{"default":{"v":"#1f2a1b","t":"color","s":"css-var --showcase-flush (dark)"},"line":{"v":"#273822","t":"color","s":"css-var --showcase-flush-line (dark)"}}},"background":{"panel":{"v":"{color.gray.850}","t":"color","s":"computed backgroundColor of dark-showcase default (raw/components-computed.json); matches declared color.gray.850","d":"The near-black showcase panel fill inside the light page."}},"text":{"ink":{"v":"{color.enodeGreen}","t":"color","s":"computed color of demo-card default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.enodeGreen","d":"The brand-green label ink inside the dark showcase (the demo diagram's PRODUCING/CHARGING/BALANCING metrics)."}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (platform pages + scoped sections)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const setname of ['light', 'dark']) {
+    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.breakpoint || {}), 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.aspect || {}), 'aspect.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}), 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Aliases are set-relative: {font.size.body} and the palette scales live
+  // under TOK.core, semantic roles under TOK.light / TOK.dark. Try each root.
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Enode</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

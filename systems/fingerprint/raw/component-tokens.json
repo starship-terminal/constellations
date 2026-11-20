@@ -1,0 +1,2319 @@
+{
+  "_about": "The token tree build_tokens.py turns into tokens.json. fingerprint.com declares its design-token layer in the marketing site's stylesheets (raw/css-vars.json): the FPDS channel-triplet palette under fpds.*, its resolved --color-* hex ramp under color.*, the Tailwind type/space/radius/container/shadow/ease scales under core.*, and the semantic --color-primary/-border/-surface-raised roles under light.*. The dark set holds only the 11 .dark-scoped syntax redeclarations — the site ships no dark theme, so they are declared values, not a painted page theme. Measured roles alias the declared values they match.",
+  "core": {
+    "font": {
+      "family": {
+        "sans": {
+          "var": "--font-sans",
+          "type": "fontFamily",
+          "description": "Inter — every heading, control and body on the marketing site; hashed family name plus Arial/system fallbacks."
+        },
+        "serif": {
+          "var": "--font-serif",
+          "type": "fontFamily",
+          "description": "Petrona — the serif display face used on editorial sections; Times New Roman/Georgia fallback."
+        },
+        "mono": {
+          "var": "--font-mono",
+          "type": "fontFamily",
+          "description": "JetBrains Mono — code, prompts and signal values; Courier New/monospace fallback."
+        },
+        "pixel": {
+          "var": "--font-pixel",
+          "type": "fontFamily",
+          "description": "Geist Pixel — the pixel display face; ui-monospace fallback."
+        }
+      },
+      "weight": {
+        "bold": {
+          "value": 700,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --font-weight-bold",
+          "description": "The declared `--font-weight-bold`."
+        },
+        "extralight": {
+          "value": 200,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --font-weight-extralight",
+          "description": "The declared `--font-weight-extralight`."
+        },
+        "light": {
+          "value": 300,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --font-weight-light",
+          "description": "The declared `--font-weight-light`."
+        },
+        "medium": {
+          "value": 500,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --font-weight-medium",
+          "description": "The declared `--font-weight-medium`."
+        },
+        "normal": {
+          "value": 400,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --font-weight-normal",
+          "description": "The declared `--font-weight-normal`."
+        },
+        "semibold": {
+          "value": 600,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --font-weight-semibold",
+          "description": "The declared `--font-weight-semibold`."
+        }
+      },
+      "size": {
+        "2xl": {
+          "var": "--text-2xl",
+          "type": "dimension"
+        },
+        "2xs": {
+          "var": "--text-2xs",
+          "type": "dimension"
+        },
+        "3xl": {
+          "var": "--text-3xl",
+          "type": "dimension"
+        },
+        "4xl": {
+          "var": "--text-4xl",
+          "type": "dimension"
+        },
+        "5xl": {
+          "var": "--text-5xl",
+          "type": "dimension"
+        },
+        "6xl": {
+          "var": "--text-6xl",
+          "type": "dimension"
+        },
+        "base": {
+          "var": "--text-base",
+          "type": "dimension"
+        },
+        "lg": {
+          "var": "--text-lg",
+          "type": "dimension"
+        },
+        "sm": {
+          "var": "--text-sm",
+          "type": "dimension"
+        },
+        "xl": {
+          "var": "--text-xl",
+          "type": "dimension"
+        },
+        "xs": {
+          "var": "--text-xs",
+          "type": "dimension"
+        },
+        "measured": {
+          "hero": {
+            "value": "{font.size.6xl}",
+            "type": "dimension",
+            "source": "computed fontSize of hero-h1 default (raw/components-computed.json); matches declared font.size.6xl",
+            "description": "The hero display heading — aliases a --text-* step where it matches."
+          },
+          "section": {
+            "value": "{font.size.5xl}",
+            "type": "dimension",
+            "source": "computed fontSize of section-h2 default (raw/components-computed.json); matches declared font.size.5xl",
+            "description": "A section heading size."
+          },
+          "body": {
+            "value": "{font.size.base}",
+            "type": "dimension",
+            "source": "computed fontSize of footer-link default (raw/components-computed.json); matches declared font.size.base",
+            "description": "A footer link's body size."
+          }
+        }
+      },
+      "lineHeight": {
+        "2xl": {
+          "var": "--text-2xl--line-height",
+          "type": "dimension"
+        },
+        "2xs": {
+          "var": "--text-2xs--line-height",
+          "type": "dimension"
+        },
+        "3xl": {
+          "var": "--text-3xl--line-height",
+          "type": "dimension"
+        },
+        "4xl": {
+          "var": "--text-4xl--line-height",
+          "type": "dimension"
+        },
+        "5xl": {
+          "var": "--text-5xl--line-height",
+          "type": "dimension"
+        },
+        "6xl": {
+          "var": "--text-6xl--line-height",
+          "type": "dimension"
+        },
+        "base": {
+          "var": "--text-base--line-height",
+          "type": "dimension"
+        },
+        "lg": {
+          "var": "--text-lg--line-height",
+          "type": "dimension"
+        },
+        "sm": {
+          "var": "--text-sm--line-height",
+          "type": "dimension"
+        },
+        "xl": {
+          "var": "--text-xl--line-height",
+          "type": "dimension"
+        },
+        "xs": {
+          "var": "--text-xs--line-height",
+          "type": "dimension"
+        },
+        "normal": {
+          "value": 1.5,
+          "type": "number",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --leading-normal",
+          "description": "The declared `--leading-normal`."
+        },
+        "relaxed": {
+          "value": 1.625,
+          "type": "number",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --leading-relaxed",
+          "description": "The declared `--leading-relaxed`."
+        },
+        "tight": {
+          "value": 1.25,
+          "type": "number",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --leading-tight",
+          "description": "The declared `--leading-tight`."
+        }
+      },
+      "tracking": {
+        "2xl": {
+          "value": "-.017em",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --text-2xl--letter-spacing",
+          "description": "The declared `--text-2xl--letter-spacing` — `-.017em`; font-relative, so it scales with the text it spaces."
+        },
+        "2xs": {
+          "value": ".005em",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --text-2xs--letter-spacing",
+          "description": "The declared `--text-2xs--letter-spacing` — `.005em`; font-relative, so it scales with the text it spaces."
+        },
+        "3xl": {
+          "value": "-.019em",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --text-3xl--letter-spacing",
+          "description": "The declared `--text-3xl--letter-spacing` — `-.019em`; font-relative, so it scales with the text it spaces."
+        },
+        "4xl": {
+          "value": "-.021em",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --text-4xl--letter-spacing",
+          "description": "The declared `--text-4xl--letter-spacing` — `-.021em`; font-relative, so it scales with the text it spaces."
+        },
+        "5xl": {
+          "value": "-.021em",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --text-5xl--letter-spacing",
+          "description": "The declared `--text-5xl--letter-spacing` — `-.021em`; font-relative, so it scales with the text it spaces."
+        },
+        "6xl": {
+          "value": "-.021em",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --text-6xl--letter-spacing",
+          "description": "The declared `--text-6xl--letter-spacing` — `-.021em`; font-relative, so it scales with the text it spaces."
+        },
+        "base": {
+          "value": "-.006em",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --text-base--letter-spacing",
+          "description": "The declared `--text-base--letter-spacing` — `-.006em`; font-relative, so it scales with the text it spaces."
+        },
+        "lg": {
+          "value": "-.011em",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --text-lg--letter-spacing",
+          "description": "The declared `--text-lg--letter-spacing` — `-.011em`; font-relative, so it scales with the text it spaces."
+        },
+        "sm": {
+          "value": "-.003em",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --text-sm--letter-spacing",
+          "description": "The declared `--text-sm--letter-spacing` — `-.003em`; font-relative, so it scales with the text it spaces."
+        },
+        "xl": {
+          "value": "-.014em",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --text-xl--letter-spacing",
+          "description": "The declared `--text-xl--letter-spacing` — `-.014em`; font-relative, so it scales with the text it spaces."
+        },
+        "xs": {
+          "value": 0,
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --text-xs--letter-spacing",
+          "description": "The declared `--text-xs--letter-spacing`."
+        },
+        "normal": {
+          "value": "0em",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --tracking-normal",
+          "description": "The declared `--tracking-normal` — `0em`; font-relative, so it scales with the text it spaces."
+        },
+        "tight": {
+          "value": "-.025em",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --tracking-tight",
+          "description": "The declared `--tracking-tight` — `-.025em`; font-relative, so it scales with the text it spaces."
+        },
+        "wide": {
+          "value": ".025em",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --tracking-wide",
+          "description": "The declared `--tracking-wide` — `.025em`; font-relative, so it scales with the text it spaces."
+        }
+      }
+    },
+    "spacing": {
+      "base": {
+        "var": "--spacing",
+        "type": "dimension",
+        "description": "The declared `--spacing` base — 4px; every Tailwind space-n utility is a multiple of it."
+      }
+    },
+    "radius": {
+      "default": {
+        "value": "8px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --radius",
+        "description": "The declared `--radius`."
+      },
+      "2xl": {
+        "value": "16px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --radius-2xl",
+        "description": "The declared `--radius-2xl`."
+      },
+      "3xl": {
+        "value": "24px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --radius-3xl",
+        "description": "The declared `--radius-3xl`."
+      },
+      "lg": {
+        "value": "8px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --radius-lg",
+        "description": "The declared `--radius-lg`."
+      },
+      "md": {
+        "value": "6px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --radius-md",
+        "description": "The declared `--radius-md`."
+      },
+      "sm": {
+        "value": "4px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --radius-sm",
+        "description": "The declared `--radius-sm`."
+      },
+      "xl": {
+        "value": "12px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --radius-xl",
+        "description": "The declared `--radius-xl`."
+      },
+      "xs": {
+        "value": "2px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --radius-xs",
+        "description": "The declared `--radius-xs`."
+      },
+      "cta": {
+        "value": "{radius.md}",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of nav-cta default (raw/components-computed.json); matches declared --radius-md",
+        "description": "The header CTA pill radius."
+      },
+      "navLink": {
+        "value": "{radius.sm}",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of nav-pricing default (raw/components-computed.json); matches declared --radius-sm",
+        "description": "The header link radius."
+      },
+      "card": {
+        "value": "{radius.2xl}",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of plan-card default (raw/components-computed.json); matches declared --radius-2xl",
+        "description": "The plan-card corner radius."
+      },
+      "field": {
+        "value": "{radius.md}",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of contact-email default (raw/components-computed.json); matches declared --radius-md",
+        "description": "The contact field radius."
+      },
+      "dropdown": {
+        "value": "0px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of nav-panel default (raw/components-computed.json)",
+        "description": "The product-dropdown panel corner radius."
+      }
+    },
+    "layout": {
+      "container": {
+        "2xl": {
+          "value": "672px",
+          "type": "dimension",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --container-2xl",
+          "description": "The declared `--container-2xl`."
+        },
+        "3xl": {
+          "value": "768px",
+          "type": "dimension",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --container-3xl",
+          "description": "The declared `--container-3xl`."
+        },
+        "4xl": {
+          "value": "896px",
+          "type": "dimension",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --container-4xl",
+          "description": "The declared `--container-4xl`."
+        },
+        "7xl": {
+          "value": "1280px",
+          "type": "dimension",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --container-7xl",
+          "description": "The declared `--container-7xl`."
+        },
+        "content-lg": {
+          "value": "1248px",
+          "type": "dimension",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --container-content-lg",
+          "description": "The declared `--container-content-lg`."
+        },
+        "content-sm": {
+          "value": "680px",
+          "type": "dimension",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --container-content-sm",
+          "description": "The declared `--container-content-sm`."
+        },
+        "lg": {
+          "value": "512px",
+          "type": "dimension",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --container-lg",
+          "description": "The declared `--container-lg`."
+        },
+        "md": {
+          "value": "448px",
+          "type": "dimension",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --container-md",
+          "description": "The declared `--container-md`."
+        },
+        "xl": {
+          "value": "576px",
+          "type": "dimension",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --container-xl",
+          "description": "The declared `--container-xl`."
+        }
+      }
+    },
+    "elevation": {
+      "100": {
+        "value": [
+          {
+            "color": "rgba(23, 24, 22, 0.03)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "2px",
+            "spread": "0px"
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-shadow-100",
+        "description": "The declared `--fpds-shadow-100` shadow (1 layer)."
+      },
+      "200": {
+        "value": [
+          {
+            "color": "rgba(23, 24, 22, 0.05)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "2px",
+            "spread": "0px"
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-shadow-200",
+        "description": "The declared `--fpds-shadow-200` shadow (1 layer)."
+      },
+      "300": {
+        "value": [
+          {
+            "color": "rgba(23, 24, 22, 0.05)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "3px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(23, 24, 22, 0.05)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "2px",
+            "spread": "-1px"
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-shadow-300",
+        "description": "The declared `--fpds-shadow-300` shadow (2 layers)."
+      },
+      "400": {
+        "value": [
+          {
+            "color": "rgba(23, 24, 22, 0.05)",
+            "offsetX": "0px",
+            "offsetY": "4px",
+            "blur": "6px",
+            "spread": "-1px"
+          },
+          {
+            "color": "rgba(23, 24, 22, 0.05)",
+            "offsetX": "0px",
+            "offsetY": "2px",
+            "blur": "4px",
+            "spread": "-2px"
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-shadow-400",
+        "description": "The declared `--fpds-shadow-400` shadow (2 layers)."
+      },
+      "500": {
+        "value": [
+          {
+            "color": "rgba(23, 24, 22, 0.05)",
+            "offsetX": "0px",
+            "offsetY": "10px",
+            "blur": "15px",
+            "spread": "-3px"
+          },
+          {
+            "color": "rgba(23, 24, 22, 0.05)",
+            "offsetX": "0px",
+            "offsetY": "4px",
+            "blur": "6px",
+            "spread": "-4px"
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-shadow-500",
+        "description": "The declared `--fpds-shadow-500` shadow (2 layers)."
+      },
+      "600": {
+        "value": [
+          {
+            "color": "rgba(23, 24, 22, 0.05)",
+            "offsetX": "0px",
+            "offsetY": "20px",
+            "blur": "25px",
+            "spread": "-5px"
+          },
+          {
+            "color": "rgba(23, 24, 22, 0.05)",
+            "offsetX": "0px",
+            "offsetY": "8px",
+            "blur": "10px",
+            "spread": "-6px"
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-shadow-600",
+        "description": "The declared `--fpds-shadow-600` shadow (2 layers)."
+      },
+      "700": {
+        "value": [
+          {
+            "color": "rgba(23, 24, 22, 0.1)",
+            "offsetX": "0px",
+            "offsetY": "25px",
+            "blur": "50px",
+            "spread": "-12px"
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-shadow-700",
+        "description": "The declared `--fpds-shadow-700` shadow (1 layer)."
+      },
+      "inset-100": {
+        "value": [
+          {
+            "color": "rgba(23, 24, 22, 0.02)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "2px",
+            "spread": "0px",
+            "inset": true
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-shadow-inset-100",
+        "description": "The declared `--fpds-shadow-inset-100` shadow (1 layer)."
+      },
+      "inset-200": {
+        "value": [
+          {
+            "color": "rgba(23, 24, 22, 0.03)",
+            "offsetX": "0px",
+            "offsetY": "3px",
+            "blur": "3px",
+            "spread": "0px",
+            "inset": true
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-shadow-inset-200",
+        "description": "The declared `--fpds-shadow-inset-200` shadow (1 layer)."
+      },
+      "inset-300": {
+        "value": [
+          {
+            "color": "rgba(23, 24, 22, 0.1)",
+            "offsetX": "0px",
+            "offsetY": "2px",
+            "blur": "0px",
+            "spread": "0px",
+            "inset": true
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-shadow-inset-300",
+        "description": "The declared `--fpds-shadow-inset-300` shadow (1 layer)."
+      },
+      "inset-b-black-100": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.02)",
+            "offsetX": "0px",
+            "offsetY": "-1px",
+            "blur": "0px",
+            "spread": "0px",
+            "inset": true
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-shadow-inset-b-black-100",
+        "description": "The declared `--fpds-shadow-inset-b-black-100` shadow (1 layer)."
+      },
+      "inset-b-black-200": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.03)",
+            "offsetX": "0px",
+            "offsetY": "-1px",
+            "blur": "0px",
+            "spread": "0px",
+            "inset": true
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-shadow-inset-b-black-200",
+        "description": "The declared `--fpds-shadow-inset-b-black-200` shadow (1 layer)."
+      },
+      "inset-b-white-100": {
+        "value": [
+          {
+            "color": "rgba(255, 255, 255, 0.1)",
+            "offsetX": "0px",
+            "offsetY": "-1px",
+            "blur": "0px",
+            "spread": "0px",
+            "inset": true
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-shadow-inset-b-white-100",
+        "description": "The declared `--fpds-shadow-inset-b-white-100` shadow (1 layer)."
+      },
+      "inset-t-black-100": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.02)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "0px",
+            "spread": "0px",
+            "inset": true
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-shadow-inset-t-black-100",
+        "description": "The declared `--fpds-shadow-inset-t-black-100` shadow (1 layer)."
+      },
+      "inset-t-black-200": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.03)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "0px",
+            "spread": "0px",
+            "inset": true
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-shadow-inset-t-black-200",
+        "description": "The declared `--fpds-shadow-inset-t-black-200` shadow (1 layer)."
+      },
+      "inset-t-black-300": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.05)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "0px",
+            "spread": "0px",
+            "inset": true
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-shadow-inset-t-black-300",
+        "description": "The declared `--fpds-shadow-inset-t-black-300` shadow (1 layer)."
+      },
+      "inset-t-white-100": {
+        "value": [
+          {
+            "color": "rgba(255, 255, 255, 0.1)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "0px",
+            "spread": "0px",
+            "inset": true
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-shadow-inset-t-white-100",
+        "description": "The declared `--fpds-shadow-inset-t-white-100` shadow (1 layer)."
+      },
+      "inset-t-white-200": {
+        "value": [
+          {
+            "color": "rgba(255, 255, 255, 0.2)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "0px",
+            "spread": "0px",
+            "inset": true
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-shadow-inset-t-white-200",
+        "description": "The declared `--fpds-shadow-inset-t-white-200` shadow (1 layer)."
+      },
+      "inset-tr-100": {
+        "value": [
+          {
+            "color": "rgba(23, 24, 22, 0.02)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "2px",
+            "spread": "0px",
+            "inset": true
+          },
+          {
+            "color": "rgba(23, 24, 22, 0.02)",
+            "offsetX": "-1px",
+            "offsetY": "0px",
+            "blur": "2px",
+            "spread": "0px",
+            "inset": true
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-shadow-inset-tr-100",
+        "description": "The declared `--fpds-shadow-inset-tr-100` shadow (2 layers)."
+      },
+      "alias": {
+        "100": {
+          "value": [
+            {
+              "color": "rgba(23, 24, 22, 0.03)",
+              "offsetX": "0px",
+              "offsetY": "1px",
+              "blur": "2px",
+              "spread": "0px"
+            }
+          ],
+          "type": "shadow",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --shadow-100",
+          "description": "The declared `--shadow-100` shadow (1 layer)."
+        },
+        "button": {
+          "value": [
+            {
+              "color": "rgba(255, 255, 255, 0.2)",
+              "offsetX": "0px",
+              "offsetY": "1px",
+              "blur": "0px",
+              "spread": "0px",
+              "inset": true
+            },
+            {
+              "color": "rgba(0, 0, 0, 0.02)",
+              "offsetX": "0px",
+              "offsetY": "-1px",
+              "blur": "0px",
+              "spread": "0px",
+              "inset": true
+            },
+            {
+              "color": "rgba(23, 24, 22, 0.03)",
+              "offsetX": "0px",
+              "offsetY": "1px",
+              "blur": "2px",
+              "spread": "0px"
+            }
+          ],
+          "type": "shadow",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --shadow-button",
+          "description": "The declared `--shadow-button` shadow (3 layers)."
+        },
+        "inset-b-black-100": {
+          "value": [
+            {
+              "color": "rgba(0, 0, 0, 0.02)",
+              "offsetX": "0px",
+              "offsetY": "-1px",
+              "blur": "0px",
+              "spread": "0px",
+              "inset": true
+            }
+          ],
+          "type": "shadow",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --shadow-inset-b-black-100",
+          "description": "The declared `--shadow-inset-b-black-100` shadow (1 layer)."
+        },
+        "inset-t-black-100": {
+          "value": [
+            {
+              "color": "rgba(0, 0, 0, 0.02)",
+              "offsetX": "0px",
+              "offsetY": "1px",
+              "blur": "0px",
+              "spread": "0px",
+              "inset": true
+            }
+          ],
+          "type": "shadow",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --shadow-inset-t-black-100",
+          "description": "The declared `--shadow-inset-t-black-100` shadow (1 layer)."
+        },
+        "inset-t-white-100": {
+          "value": [
+            {
+              "color": "rgba(255, 255, 255, 0.1)",
+              "offsetX": "0px",
+              "offsetY": "1px",
+              "blur": "0px",
+              "spread": "0px",
+              "inset": true
+            }
+          ],
+          "type": "shadow",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --shadow-inset-t-white-100",
+          "description": "The declared `--shadow-inset-t-white-100` shadow (1 layer)."
+        },
+        "inset-t-white-200": {
+          "value": [
+            {
+              "color": "rgba(255, 255, 255, 0.2)",
+              "offsetX": "0px",
+              "offsetY": "1px",
+              "blur": "0px",
+              "spread": "0px",
+              "inset": true
+            }
+          ],
+          "type": "shadow",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --shadow-inset-t-white-200",
+          "description": "The declared `--shadow-inset-t-white-200` shadow (1 layer)."
+        }
+      }
+    },
+    "motion": {
+      "easing": {
+        "in-cubic": {
+          "var": "--ease-in-cubic",
+          "type": "cubicBezier"
+        },
+        "in-cubic-overshoot": {
+          "var": "--ease-in-cubic-overshoot",
+          "type": "cubicBezier"
+        },
+        "in-out": {
+          "var": "--ease-in-out",
+          "type": "cubicBezier"
+        },
+        "in-out-cubic": {
+          "var": "--ease-in-out-cubic",
+          "type": "cubicBezier"
+        },
+        "in-quart": {
+          "var": "--ease-in-quart",
+          "type": "cubicBezier"
+        },
+        "out": {
+          "var": "--ease-out",
+          "type": "cubicBezier"
+        },
+        "out-quad": {
+          "var": "--ease-out-quad",
+          "type": "cubicBezier"
+        },
+        "out-quart": {
+          "var": "--ease-out-quart",
+          "type": "cubicBezier"
+        },
+        "default": {
+          "var": "--default-transition-timing-function",
+          "type": "cubicBezier"
+        }
+      },
+      "duration": {
+        "default": {
+          "value": "0.15s",
+          "type": "duration",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --default-transition-duration",
+          "description": "The declared `--default-transition-duration`."
+        }
+      },
+      "control": {
+        "value": "color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1)",
+        "type": "other",
+        "source": "computed transition of nav-cta default (raw/components-computed.json); the --ease-*/--default-transition-* steps are the declared easings",
+        "description": "The control transition on the header CTA."
+      }
+    },
+    "misc": {
+      "blur": {
+        "xs": {
+          "value": "4px",
+          "type": "dimension",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --blur-xs",
+          "description": "The declared `--blur-xs`."
+        },
+        "sm": {
+          "value": "8px",
+          "type": "dimension",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --blur-sm",
+          "description": "The declared `--blur-sm`."
+        }
+      },
+      "aspectVideo": {
+        "value": "16 / 9",
+        "type": "other",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --aspect-video",
+        "description": "The declared `--aspect-video`."
+      },
+      "dropShadow": {
+        "xl": {
+          "value": "rgba(0, 0, 0, 0.1) 0px 9px 7px 0px",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --drop-shadow-xl",
+          "description": "The declared `--drop-shadow-xl`."
+        }
+      }
+    },
+    "animation": {
+      "ping": {
+        "value": "ping 1s cubic-bezier(0, 0, .2, 1) infinite",
+        "type": "other",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --animate-ping",
+        "description": "The declared `--animate-ping` animation shorthand."
+      },
+      "pulse": {
+        "value": "pulse 2s cubic-bezier(.4, 0, .6, 1) infinite",
+        "type": "other",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --animate-pulse",
+        "description": "The declared `--animate-pulse` animation shorthand."
+      },
+      "spin": {
+        "value": "spin 1s linear infinite",
+        "type": "other",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --animate-spin",
+        "description": "The declared `--animate-spin` animation shorthand."
+      }
+    },
+    "fpds": {
+      "black": {
+        "value": "0 0% 0%",
+        "type": "other",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-black",
+        "description": "The declared `--fpds-color-black` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+      },
+      "blue": {
+        "1": {
+          "value": "207 85% 97%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-blue-1",
+          "description": "The declared `--fpds-color-blue-1` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "10": {
+          "value": "208 100% 11%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-blue-10",
+          "description": "The declared `--fpds-color-blue-10` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "2": {
+          "value": "208 100% 95%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-blue-2",
+          "description": "The declared `--fpds-color-blue-2` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "3": {
+          "value": "205 91% 91%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-blue-3",
+          "description": "The declared `--fpds-color-blue-3` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "4": {
+          "value": "206 81% 85%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-blue-4",
+          "description": "The declared `--fpds-color-blue-4` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "5": {
+          "value": "207 81% 75%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-blue-5",
+          "description": "The declared `--fpds-color-blue-5` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "6": {
+          "value": "205 70% 60%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-blue-6",
+          "description": "The declared `--fpds-color-blue-6` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "7": {
+          "value": "204 68% 51%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-blue-7",
+          "description": "The declared `--fpds-color-blue-7` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "8": {
+          "value": "201 54% 35%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-blue-8",
+          "description": "The declared `--fpds-color-blue-8` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "9": {
+          "value": "205 85% 26%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-blue-9",
+          "description": "The declared `--fpds-color-blue-9` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        }
+      },
+      "gray": {
+        "1": {
+          "value": "60 13% 97%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-gray-1",
+          "description": "The declared `--fpds-color-gray-1` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "10": {
+          "value": "80 6% 9%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-gray-10",
+          "description": "The declared `--fpds-color-gray-10` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "2": {
+          "value": "60 9% 94%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-gray-2",
+          "description": "The declared `--fpds-color-gray-2` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "3": {
+          "value": "75 7% 89%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-gray-3",
+          "description": "The declared `--fpds-color-gray-3` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "4": {
+          "value": "60 4% 85%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-gray-4",
+          "description": "The declared `--fpds-color-gray-4` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "5": {
+          "value": "60 2% 75%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-gray-5",
+          "description": "The declared `--fpds-color-gray-5` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "6": {
+          "value": "60 2% 62%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-gray-6",
+          "description": "The declared `--fpds-color-gray-6` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "7": {
+          "value": "60 1% 54%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-gray-7",
+          "description": "The declared `--fpds-color-gray-7` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "8": {
+          "value": "80 1% 42%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-gray-8",
+          "description": "The declared `--fpds-color-gray-8` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "9": {
+          "value": "80 2% 28%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-gray-9",
+          "description": "The declared `--fpds-color-gray-9` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        }
+      },
+      "green": {
+        "1": {
+          "value": "130 33% 96%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-green-1",
+          "description": "The declared `--fpds-color-green-1` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "10": {
+          "value": "131 69% 8%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-green-10",
+          "description": "The declared `--fpds-color-green-10` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "2": {
+          "value": "124 48% 94%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-green-2",
+          "description": "The declared `--fpds-color-green-2` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "3": {
+          "value": "123 38% 89%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-green-3",
+          "description": "The declared `--fpds-color-green-3` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "4": {
+          "value": "125 36% 82%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-green-4",
+          "description": "The declared `--fpds-color-green-4` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "5": {
+          "value": "126 38% 70%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-green-5",
+          "description": "The declared `--fpds-color-green-5` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "6": {
+          "value": "128 33% 54%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-green-6",
+          "description": "The declared `--fpds-color-green-6` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "7": {
+          "value": "132 36% 42%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-green-7",
+          "description": "The declared `--fpds-color-green-7` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "8": {
+          "value": "132 50% 33%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-green-8",
+          "description": "The declared `--fpds-color-green-8` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "9": {
+          "value": "134 58% 21%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-green-9",
+          "description": "The declared `--fpds-color-green-9` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        }
+      },
+      "orange": {
+        "1": {
+          "value": "15 75% 97%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-orange-1",
+          "description": "The declared `--fpds-color-orange-1` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "10": {
+          "value": "16 82% 11%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-orange-10",
+          "description": "The declared `--fpds-color-orange-10` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "2": {
+          "value": "24 100% 93%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-orange-2",
+          "description": "The declared `--fpds-color-orange-2` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "3": {
+          "value": "23 100% 89%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-orange-3",
+          "description": "The declared `--fpds-color-orange-3` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "4": {
+          "value": "17 100% 85%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-orange-4",
+          "description": "The declared `--fpds-color-orange-4` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "5": {
+          "value": "15 98% 77%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-orange-5",
+          "description": "The declared `--fpds-color-orange-5` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "6": {
+          "value": "14 91% 65%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-orange-6",
+          "description": "The declared `--fpds-color-orange-6` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "7": {
+          "value": "16 90% 54%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-orange-7",
+          "description": "The declared `--fpds-color-orange-7` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "8": {
+          "value": "17 85% 40%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-orange-8",
+          "description": "The declared `--fpds-color-orange-8` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "9": {
+          "value": "17 62% 29%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-orange-9",
+          "description": "The declared `--fpds-color-orange-9` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        }
+      },
+      "pink": {
+        "1": {
+          "value": "343 78% 98%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-pink-1",
+          "description": "The declared `--fpds-color-pink-1` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "10": {
+          "value": "337 64% 24%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-pink-10",
+          "description": "The declared `--fpds-color-pink-10` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "2": {
+          "value": "344 100% 96%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-pink-2",
+          "description": "The declared `--fpds-color-pink-2` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "3": {
+          "value": "346 100% 93%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-pink-3",
+          "description": "The declared `--fpds-color-pink-3` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "4": {
+          "value": "345 76% 88%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-pink-4",
+          "description": "The declared `--fpds-color-pink-4` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "5": {
+          "value": "343 83% 79%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-pink-5",
+          "description": "The declared `--fpds-color-pink-5` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "6": {
+          "value": "340 82% 70%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-pink-6",
+          "description": "The declared `--fpds-color-pink-6` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "7": {
+          "value": "338 77% 63%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-pink-7",
+          "description": "The declared `--fpds-color-pink-7` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "8": {
+          "value": "336 54% 48%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-pink-8",
+          "description": "The declared `--fpds-color-pink-8` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "9": {
+          "value": "336 32% 33%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-pink-9",
+          "description": "The declared `--fpds-color-pink-9` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        }
+      },
+      "purple": {
+        "1": {
+          "value": "249 78% 98%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-purple-1",
+          "description": "The declared `--fpds-color-purple-1` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "10": {
+          "value": "257 55% 17%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-purple-10",
+          "description": "The declared `--fpds-color-purple-10` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "2": {
+          "value": "244 88% 97%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-purple-2",
+          "description": "The declared `--fpds-color-purple-2` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "3": {
+          "value": "247 87% 94%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-purple-3",
+          "description": "The declared `--fpds-color-purple-3` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "4": {
+          "value": "249 73% 90%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-purple-4",
+          "description": "The declared `--fpds-color-purple-4` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "5": {
+          "value": "248 92% 85%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-purple-5",
+          "description": "The declared `--fpds-color-purple-5` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "6": {
+          "value": "250 69% 75%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-purple-6",
+          "description": "The declared `--fpds-color-purple-6` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "7": {
+          "value": "251 55% 68%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-purple-7",
+          "description": "The declared `--fpds-color-purple-7` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "8": {
+          "value": "252 43% 56%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-purple-8",
+          "description": "The declared `--fpds-color-purple-8` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "9": {
+          "value": "254 26% 39%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-purple-9",
+          "description": "The declared `--fpds-color-purple-9` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        }
+      },
+      "red": {
+        "1": {
+          "value": "0 83% 98%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-red-1",
+          "description": "The declared `--fpds-color-red-1` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "10": {
+          "value": "353 94% 13%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-red-10",
+          "description": "The declared `--fpds-color-red-10` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "2": {
+          "value": "3 100% 96%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-red-2",
+          "description": "The declared `--fpds-color-red-2` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "3": {
+          "value": "5 95% 92%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-red-3",
+          "description": "The declared `--fpds-color-red-3` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "4": {
+          "value": "3 100% 90%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-red-4",
+          "description": "The declared `--fpds-color-red-4` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "5": {
+          "value": "4 87% 82%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-red-5",
+          "description": "The declared `--fpds-color-red-5` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "6": {
+          "value": "1 88% 71%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-red-6",
+          "description": "The declared `--fpds-color-red-6` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "7": {
+          "value": "357 93% 63%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-red-7",
+          "description": "The declared `--fpds-color-red-7` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "8": {
+          "value": "353 68% 48%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-red-8",
+          "description": "The declared `--fpds-color-red-8` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "9": {
+          "value": "356 30% 34%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-red-9",
+          "description": "The declared `--fpds-color-red-9` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        }
+      },
+      "teal": {
+        "1": {
+          "value": "165 50% 97%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-teal-1",
+          "description": "The declared `--fpds-color-teal-1` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "10": {
+          "value": "170 56% 8%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-teal-10",
+          "description": "The declared `--fpds-color-teal-10` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "2": {
+          "value": "166 64% 92%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-teal-2",
+          "description": "The declared `--fpds-color-teal-2` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "3": {
+          "value": "166 60% 87%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-teal-3",
+          "description": "The declared `--fpds-color-teal-3` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "4": {
+          "value": "166 49% 79%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-teal-4",
+          "description": "The declared `--fpds-color-teal-4` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "5": {
+          "value": "168 43% 66%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-teal-5",
+          "description": "The declared `--fpds-color-teal-5` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "6": {
+          "value": "169 40% 48%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-teal-6",
+          "description": "The declared `--fpds-color-teal-6` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "7": {
+          "value": "171 36% 40%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-teal-7",
+          "description": "The declared `--fpds-color-teal-7` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "8": {
+          "value": "173 92% 25%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-teal-8",
+          "description": "The declared `--fpds-color-teal-8` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "9": {
+          "value": "171 93% 17%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-teal-9",
+          "description": "The declared `--fpds-color-teal-9` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        }
+      },
+      "white": {
+        "value": "0 0% 100%",
+        "type": "other",
+        "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-white",
+        "description": "The declared `--fpds-color-white` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+      },
+      "yellow": {
+        "1": {
+          "value": "44 56% 95%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-yellow-1",
+          "description": "The declared `--fpds-color-yellow-1` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "10": {
+          "value": "35 95% 8%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-yellow-10",
+          "description": "The declared `--fpds-color-yellow-10` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "2": {
+          "value": "38 90% 92%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-yellow-2",
+          "description": "The declared `--fpds-color-yellow-2` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "3": {
+          "value": "37 81% 85%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-yellow-3",
+          "description": "The declared `--fpds-color-yellow-3` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "4": {
+          "value": "38 75% 79%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-yellow-4",
+          "description": "The declared `--fpds-color-yellow-4` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "5": {
+          "value": "36 73% 67%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-yellow-5",
+          "description": "The declared `--fpds-color-yellow-5` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "6": {
+          "value": "39 64% 49%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-yellow-6",
+          "description": "The declared `--fpds-color-yellow-6` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "7": {
+          "value": "40 63% 41%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-yellow-7",
+          "description": "The declared `--fpds-color-yellow-7` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "8": {
+          "value": "41 39% 30%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-yellow-8",
+          "description": "The declared `--fpds-color-yellow-8` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        },
+        "9": {
+          "value": "37 77% 22%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --fpds-color-yellow-9",
+          "description": "The declared `--fpds-color-yellow-9` — the `H S% L%` channel triplet the `--color-*` alias resolves through."
+        }
+      }
+    },
+    "color": {
+      "base": {
+        "black": {
+          "var": "--color-black",
+          "type": "color"
+        },
+        "white": {
+          "var": "--color-white",
+          "type": "color"
+        }
+      },
+      "blue": {
+        "100": {
+          "var": "--color-blue-100",
+          "type": "color"
+        },
+        "1000": {
+          "var": "--color-blue-1000",
+          "type": "color"
+        },
+        "200": {
+          "var": "--color-blue-200",
+          "type": "color"
+        },
+        "300": {
+          "var": "--color-blue-300",
+          "type": "color"
+        },
+        "400": {
+          "var": "--color-blue-400",
+          "type": "color"
+        },
+        "500": {
+          "var": "--color-blue-500",
+          "type": "color"
+        },
+        "600": {
+          "var": "--color-blue-600",
+          "type": "color"
+        },
+        "700": {
+          "var": "--color-blue-700",
+          "type": "color"
+        },
+        "800": {
+          "var": "--color-blue-800",
+          "type": "color"
+        },
+        "900": {
+          "var": "--color-blue-900",
+          "type": "color"
+        }
+      },
+      "emerald": {
+        "500": {
+          "var": "--color-emerald-500",
+          "type": "color"
+        },
+        "600": {
+          "var": "--color-emerald-600",
+          "type": "color"
+        },
+        "700": {
+          "var": "--color-emerald-700",
+          "type": "color"
+        },
+        "800": {
+          "var": "--color-emerald-800",
+          "type": "color"
+        }
+      },
+      "gray": {
+        "100": {
+          "var": "--color-gray-100",
+          "type": "color"
+        },
+        "1000": {
+          "var": "--color-gray-1000",
+          "type": "color"
+        },
+        "200": {
+          "var": "--color-gray-200",
+          "type": "color"
+        },
+        "300": {
+          "var": "--color-gray-300",
+          "type": "color"
+        },
+        "400": {
+          "var": "--color-gray-400",
+          "type": "color"
+        },
+        "50": {
+          "var": "--color-gray-50",
+          "type": "color"
+        },
+        "500": {
+          "var": "--color-gray-500",
+          "type": "color"
+        },
+        "600": {
+          "var": "--color-gray-600",
+          "type": "color"
+        },
+        "700": {
+          "var": "--color-gray-700",
+          "type": "color"
+        },
+        "800": {
+          "var": "--color-gray-800",
+          "type": "color"
+        },
+        "900": {
+          "var": "--color-gray-900",
+          "type": "color"
+        }
+      },
+      "green": {
+        "100": {
+          "var": "--color-green-100",
+          "type": "color"
+        },
+        "200": {
+          "var": "--color-green-200",
+          "type": "color"
+        },
+        "300": {
+          "var": "--color-green-300",
+          "type": "color"
+        },
+        "400": {
+          "var": "--color-green-400",
+          "type": "color"
+        },
+        "500": {
+          "var": "--color-green-500",
+          "type": "color"
+        },
+        "600": {
+          "var": "--color-green-600",
+          "type": "color"
+        },
+        "700": {
+          "var": "--color-green-700",
+          "type": "color"
+        },
+        "800": {
+          "var": "--color-green-800",
+          "type": "color"
+        },
+        "900": {
+          "var": "--color-green-900",
+          "type": "color"
+        }
+      },
+      "lime": {
+        "500": {
+          "var": "--color-lime-500",
+          "type": "color"
+        }
+      },
+      "neutral": {
+        "200": {
+          "var": "--color-neutral-200",
+          "type": "color"
+        }
+      },
+      "orange": {
+        "100": {
+          "var": "--color-orange-100",
+          "type": "color"
+        },
+        "1000": {
+          "var": "--color-orange-1000",
+          "type": "color"
+        },
+        "200": {
+          "var": "--color-orange-200",
+          "type": "color"
+        },
+        "300": {
+          "var": "--color-orange-300",
+          "type": "color"
+        },
+        "400": {
+          "var": "--color-orange-400",
+          "type": "color"
+        },
+        "500": {
+          "var": "--color-orange-500",
+          "type": "color"
+        },
+        "600": {
+          "var": "--color-orange-600",
+          "type": "color"
+        },
+        "700": {
+          "var": "--color-orange-700",
+          "type": "color"
+        },
+        "800": {
+          "var": "--color-orange-800",
+          "type": "color"
+        },
+        "900": {
+          "var": "--color-orange-900",
+          "type": "color"
+        }
+      },
+      "pink": {
+        "100": {
+          "var": "--color-pink-100",
+          "type": "color"
+        },
+        "200": {
+          "var": "--color-pink-200",
+          "type": "color"
+        },
+        "300": {
+          "var": "--color-pink-300",
+          "type": "color"
+        },
+        "400": {
+          "var": "--color-pink-400",
+          "type": "color"
+        },
+        "500": {
+          "var": "--color-pink-500",
+          "type": "color"
+        },
+        "600": {
+          "var": "--color-pink-600",
+          "type": "color"
+        },
+        "700": {
+          "var": "--color-pink-700",
+          "type": "color"
+        },
+        "800": {
+          "var": "--color-pink-800",
+          "type": "color"
+        }
+      },
+      "purple": {
+        "100": {
+          "var": "--color-purple-100",
+          "type": "color"
+        },
+        "1000": {
+          "var": "--color-purple-1000",
+          "type": "color"
+        },
+        "200": {
+          "var": "--color-purple-200",
+          "type": "color"
+        },
+        "300": {
+          "var": "--color-purple-300",
+          "type": "color"
+        },
+        "400": {
+          "var": "--color-purple-400",
+          "type": "color"
+        },
+        "500": {
+          "var": "--color-purple-500",
+          "type": "color"
+        },
+        "600": {
+          "var": "--color-purple-600",
+          "type": "color"
+        },
+        "700": {
+          "var": "--color-purple-700",
+          "type": "color"
+        },
+        "800": {
+          "var": "--color-purple-800",
+          "type": "color"
+        },
+        "900": {
+          "var": "--color-purple-900",
+          "type": "color"
+        }
+      },
+      "red": {
+        "100": {
+          "var": "--color-red-100",
+          "type": "color"
+        },
+        "1000": {
+          "var": "--color-red-1000",
+          "type": "color"
+        },
+        "200": {
+          "var": "--color-red-200",
+          "type": "color"
+        },
+        "300": {
+          "var": "--color-red-300",
+          "type": "color"
+        },
+        "400": {
+          "var": "--color-red-400",
+          "type": "color"
+        },
+        "500": {
+          "var": "--color-red-500",
+          "type": "color"
+        },
+        "600": {
+          "var": "--color-red-600",
+          "type": "color"
+        },
+        "700": {
+          "var": "--color-red-700",
+          "type": "color"
+        },
+        "800": {
+          "var": "--color-red-800",
+          "type": "color"
+        },
+        "900": {
+          "var": "--color-red-900",
+          "type": "color"
+        }
+      },
+      "rose": {
+        "400": {
+          "var": "--color-rose-400",
+          "type": "color"
+        }
+      },
+      "teal": {
+        "100": {
+          "var": "--color-teal-100",
+          "type": "color"
+        },
+        "1000": {
+          "var": "--color-teal-1000",
+          "type": "color"
+        },
+        "200": {
+          "var": "--color-teal-200",
+          "type": "color"
+        },
+        "300": {
+          "var": "--color-teal-300",
+          "type": "color"
+        },
+        "400": {
+          "var": "--color-teal-400",
+          "type": "color"
+        },
+        "600": {
+          "var": "--color-teal-600",
+          "type": "color"
+        },
+        "700": {
+          "var": "--color-teal-700",
+          "type": "color"
+        },
+        "800": {
+          "var": "--color-teal-800",
+          "type": "color"
+        }
+      },
+      "yellow": {
+        "100": {
+          "var": "--color-yellow-100",
+          "type": "color"
+        },
+        "200": {
+          "var": "--color-yellow-200",
+          "type": "color"
+        },
+        "300": {
+          "var": "--color-yellow-300",
+          "type": "color"
+        },
+        "400": {
+          "var": "--color-yellow-400",
+          "type": "color"
+        },
+        "500": {
+          "var": "--color-yellow-500",
+          "type": "color"
+        },
+        "600": {
+          "var": "--color-yellow-600",
+          "type": "color"
+        },
+        "700": {
+          "var": "--color-yellow-700",
+          "type": "color"
+        },
+        "800": {
+          "var": "--color-yellow-800",
+          "type": "color"
+        },
+        "900": {
+          "var": "--color-yellow-900",
+          "type": "color"
+        }
+      },
+      "syntax": {
+        "boolean": {
+          "var": "--fpds-color-syntax-boolean",
+          "type": "color"
+        },
+        "comment": {
+          "var": "--fpds-color-syntax-comment",
+          "type": "color"
+        },
+        "console": {
+          "var": "--fpds-color-syntax-console",
+          "type": "color"
+        },
+        "function": {
+          "var": "--fpds-color-syntax-function",
+          "type": "color"
+        },
+        "keyword": {
+          "var": "--fpds-color-syntax-keyword",
+          "type": "color"
+        },
+        "null": {
+          "var": "--fpds-color-syntax-null",
+          "type": "color"
+        },
+        "number": {
+          "var": "--fpds-color-syntax-number",
+          "type": "color"
+        },
+        "property": {
+          "var": "--fpds-color-syntax-property",
+          "type": "color"
+        },
+        "punctuation": {
+          "var": "--fpds-color-syntax-punctuation",
+          "type": "color"
+        },
+        "string": {
+          "var": "--fpds-color-syntax-string",
+          "type": "color"
+        },
+        "variable": {
+          "var": "--fpds-color-syntax-variable",
+          "type": "color"
+        }
+      }
+    }
+  },
+  "light": {
+    "theme": {
+      "ink": {
+        "default": {
+          "var": "--color-black",
+          "type": "color",
+          "description": "The near-black ink — `hsl(var(--fpds-color-black))`."
+        },
+        "inverse": {
+          "var": "--color-white",
+          "type": "color",
+          "description": "White — text on the dark CTA and dark sections."
+        }
+      },
+      "border": {
+        "default": {
+          "var": "--color-border",
+          "type": "color",
+          "description": "The gray-3 hairline on cards, fields and dividers."
+        }
+      },
+      "action": {
+        "primary": {
+          "var": "--color-primary",
+          "type": "color",
+          "description": "The brand orange — primary buttons, links, the slider and focus accents."
+        },
+        "primaryActive": {
+          "var": "--color-primary-active",
+          "type": "color",
+          "description": "The primary's active step."
+        },
+        "primaryHover": {
+          "var": "--color-primary-hover",
+          "type": "color",
+          "description": "The primary's hover step."
+        }
+      },
+      "surface": {
+        "raised": {
+          "var": "--color-surface-raised",
+          "type": "color",
+          "description": "The raised surface fill (cards, the dropdown panel)."
+        }
+      },
+      "triplet": {
+        "primary": {
+          "value": "16 90% 54%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --primary",
+          "description": "The `--primary` channel triplet the --color-primary alias wraps."
+        },
+        "primaryHover": {
+          "value": "17 85% 40%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --primary-hover",
+          "description": "The `--primary-hover` triplet."
+        },
+        "primaryActive": {
+          "value": "17 62% 29%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --primary-active",
+          "description": "The `--primary-active` triplet."
+        },
+        "border": {
+          "value": "75 7% 89%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --border",
+          "description": "The `--border` triplet behind --color-border."
+        },
+        "surfaceRaised": {
+          "value": "60 20% 98%",
+          "type": "other",
+          "source": "declared design-system variable in the site's stylesheets (raw/css-vars.json): --surface-raised",
+          "description": "The `--surface-raised` triplet behind --color-surface-raised."
+        }
+      }
+    },
+    "text": {
+      "ink": {
+        "value": "{theme.ink.default}",
+        "type": "color",
+        "source": "computed color of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared theme.ink.default",
+        "description": "The near-black ink on display copy, headings and body."
+      },
+      "navInk": {
+        "value": "{color.gray.900}",
+        "type": "color",
+        "source": "computed color of nav-pricing default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.gray.900",
+        "description": "The header link ink."
+      }
+    },
+    "action": {
+      "ctaFill": {
+        "value": "{theme.action.primary}",
+        "type": "color",
+        "source": "computed backgroundColor of nav-cta default (raw/components-computed.json); matches declared theme.action.primary",
+        "description": "The orange fill of the 'Get Started' header pill — the brand primary."
+      },
+      "ctaInk": {
+        "value": "{theme.ink.inverse}",
+        "type": "color",
+        "source": "computed color of nav-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared theme.ink.inverse",
+        "description": "The text on the orange 'Get Started' pill."
+      },
+      "ctaHover": {
+        "value": "{color.orange.800}",
+        "type": "color",
+        "source": "computed backgroundColor of nav-cta hover (raw/components-computed.json); matches declared color.orange.800",
+        "description": "The CTA pill's hover fill."
+      },
+      "submitFill": {
+        "value": "#f35b22",
+        "type": "color",
+        "source": "computed backgroundColor of contact-submit default (raw/components-computed.json)",
+        "description": "The 'Submit' button fill on the sales form."
+      },
+      "submitInk": {
+        "value": "{theme.ink.inverse}",
+        "type": "color",
+        "source": "computed color of contact-submit default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared theme.ink.inverse",
+        "description": "The 'Submit' button text."
+      }
+    },
+    "border": {
+      "focusRing": {
+        "value": "{theme.action.primary}",
+        "type": "color",
+        "source": "computed outlineColor of nav-cta focus-visible (raw/components-computed.json); matches declared theme.action.primary",
+        "description": "The keyboard focus ring colour on the header CTA."
+      }
+    },
+    "form": {
+      "fieldBg": {
+        "value": "{theme.ink.inverse}",
+        "type": "color",
+        "source": "computed backgroundColor of contact-email default (raw/components-computed.json); matches declared theme.ink.inverse",
+        "description": "The contact-sales field fill."
+      },
+      "fieldInk": {
+        "value": "#181916",
+        "type": "color",
+        "source": "computed color of contact-email default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+        "description": "The field text ink."
+      },
+      "placeholder": {
+        "value": "#a0a09d",
+        "type": "color",
+        "source": "computed ::placeholder color of contact-email default (raw/components-computed.json)",
+        "description": "The placeholder ink on the sales form."
+      }
+    },
+    "surface": {
+      "planCardBg": {
+        "value": "{color.gray.100}",
+        "type": "color",
+        "source": "computed backgroundColor of plan-card default (raw/components-computed.json); matches declared color.gray.100",
+        "description": "The plan card's fill on /pricing."
+      }
+    },
+    "background": {
+      "page": {
+        "value": "{color.base.white}",
+        "type": "color",
+        "source": "the :root --color-white resolved on the marketing pages (raw/css-vars.json); visible as the page field behind every page (screenshots/*-light-*.png)",
+        "description": "The white page field — --color-white."
+      }
+    }
+  },
+  "dark": {
+    "syntax": {
+      "boolean": {
+        "value": "#8cc4f3",
+        "type": "color",
+        "source": "declared --fpds-color-syntax-boolean under the .dark selector (raw/css-vars.json): `hsl(var(--fpds-color-*))` re-pointed at the `207 81% 75%` triplet = #8cc4f3; the .dark scope is mounted by code blocks only — no public page paints a dark theme",
+        "description": "The `.dark` redeclaration of `--fpds-color-syntax-boolean` — code-block syntax colours, not a page theme."
+      },
+      "comment": {
+        "value": "#a0a09c",
+        "type": "color",
+        "source": "declared --fpds-color-syntax-comment under the .dark selector (raw/css-vars.json): `hsl(var(--fpds-color-*))` re-pointed at the `60 2% 62%` triplet = #a0a09c; the .dark scope is mounted by code blocks only — no public page paints a dark theme",
+        "description": "The `.dark` redeclaration of `--fpds-color-syntax-comment` — code-block syntax colours, not a page theme."
+      },
+      "console": {
+        "value": "#8cc4f3",
+        "type": "color",
+        "source": "declared --fpds-color-syntax-console under the .dark selector (raw/css-vars.json): `hsl(var(--fpds-color-*))` re-pointed at the `207 81% 75%` triplet = #8cc4f3; the .dark scope is mounted by code blocks only — no public page paints a dark theme",
+        "description": "The `.dark` redeclaration of `--fpds-color-syntax-console` — code-block syntax colours, not a page theme."
+      },
+      "function": {
+        "value": "#8cc4f3",
+        "type": "color",
+        "source": "declared --fpds-color-syntax-function under the .dark selector (raw/css-vars.json): `hsl(var(--fpds-color-*))` re-pointed at the `207 81% 75%` triplet = #8cc4f3; the .dark scope is mounted by code blocks only — no public page paints a dark theme",
+        "description": "The `.dark` redeclaration of `--fpds-color-syntax-function` — code-block syntax colours, not a page theme."
+      },
+      "keyword": {
+        "value": "#bfb6fc",
+        "type": "color",
+        "source": "declared --fpds-color-syntax-keyword under the .dark selector (raw/css-vars.json): `hsl(var(--fpds-color-*))` re-pointed at the `248 92% 85%` triplet = #bfb6fc; the .dark scope is mounted by code blocks only — no public page paints a dark theme",
+        "description": "The `.dark` redeclaration of `--fpds-color-syntax-keyword` — code-block syntax colours, not a page theme."
+      },
+      "null": {
+        "value": "#bfb6fc",
+        "type": "color",
+        "source": "declared --fpds-color-syntax-null under the .dark selector (raw/css-vars.json): `hsl(var(--fpds-color-*))` re-pointed at the `248 92% 85%` triplet = #bfb6fc; the .dark scope is mounted by code blocks only — no public page paints a dark theme",
+        "description": "The `.dark` redeclaration of `--fpds-color-syntax-null` — code-block syntax colours, not a page theme."
+      },
+      "number": {
+        "value": "#bfb6fc",
+        "type": "color",
+        "source": "declared --fpds-color-syntax-number under the .dark selector (raw/css-vars.json): `hsl(var(--fpds-color-*))` re-pointed at the `248 92% 85%` triplet = #bfb6fc; the .dark scope is mounted by code blocks only — no public page paints a dark theme",
+        "description": "The `.dark` redeclaration of `--fpds-color-syntax-number` — code-block syntax colours, not a page theme."
+      },
+      "property": {
+        "value": "#c1c1be",
+        "type": "color",
+        "source": "declared --fpds-color-syntax-property under the .dark selector (raw/css-vars.json): `hsl(var(--fpds-color-*))` re-pointed at the `60 2% 75%` triplet = #c1c1be; the .dark scope is mounted by code blocks only — no public page paints a dark theme",
+        "description": "The `.dark` redeclaration of `--fpds-color-syntax-property` — code-block syntax colours, not a page theme."
+      },
+      "punctuation": {
+        "value": "#8b8b89",
+        "type": "color",
+        "source": "declared --fpds-color-syntax-punctuation under the .dark selector (raw/css-vars.json): `hsl(var(--fpds-color-*))` re-pointed at the `60 1% 54%` triplet = #8b8b89; the .dark scope is mounted by code blocks only — no public page paints a dark theme",
+        "description": "The `.dark` redeclaration of `--fpds-color-syntax-punctuation` — code-block syntax colours, not a page theme."
+      },
+      "string": {
+        "value": "#f77a55",
+        "type": "color",
+        "source": "declared --fpds-color-syntax-string under the .dark selector (raw/css-vars.json): `hsl(var(--fpds-color-*))` re-pointed at the `14 91% 65%` triplet = #f77a55; the .dark scope is mounted by code blocks only — no public page paints a dark theme",
+        "description": "The `.dark` redeclaration of `--fpds-color-syntax-string` — code-block syntax colours, not a page theme."
+      },
+      "variable": {
+        "value": "#95d09b",
+        "type": "color",
+        "source": "declared --fpds-color-syntax-variable under the .dark selector (raw/css-vars.json): `hsl(var(--fpds-color-*))` re-pointed at the `126 38% 70%` triplet = #95d09b; the .dark scope is mounted by code blocks only — no public page paints a dark theme",
+        "description": "The `.dark` redeclaration of `--fpds-color-syntax-variable` — code-block syntax colours, not a page theme."
+      }
+    }
+  },
+  "component": {
+    "topbar-height": {
+      "value": "56px",
+      "type": "dimension",
+      "source": "measured h of mkt-header default (raw/components-computed.json)",
+      "description": "The marketing header bar height."
+    },
+    "cta-height": {
+      "value": "32px",
+      "type": "dimension",
+      "source": "measured h of nav-cta default (raw/components-computed.json)",
+      "description": "The header CTA pill height."
+    },
+    "dropdown-width": {
+      "value": "1288px",
+      "type": "dimension",
+      "source": "measured w of nav-panel default (raw/components-computed.json)",
+      "description": "The open product-dropdown panel width."
+    },
+    "hero-headline-width": {
+      "value": "828.67px",
+      "type": "dimension",
+      "source": "measured w of hero-h1 default (raw/components-computed.json)",
+      "description": "The hero display heading's measure."
+    },
+    "field-height": {
+      "value": "40.39px",
+      "type": "dimension",
+      "source": "measured h of contact-email default (raw/components-computed.json)",
+      "description": "The contact field height."
+    },
+    "submit-width": {
+      "value": "413px",
+      "type": "dimension",
+      "source": "measured w of contact-submit default (raw/components-computed.json)",
+      "description": "The 'Submit' button width."
+    },
+    "plan-card-width": {
+      "value": "329.44px",
+      "type": "dimension",
+      "source": "measured w of plan-card default (raw/components-computed.json)",
+      "description": "The plan-card column width."
+    },
+    "slider-width": {
+      "value": "444px",
+      "type": "dimension",
+      "source": "measured w of price-slider default (raw/components-computed.json)",
+      "description": "The pricing volume slider width."
+    },
+    "newsletter-width": {
+      "value": "211px",
+      "type": "dimension",
+      "source": "measured w of newsletter-field default (raw/components-computed.json)",
+      "description": "The footer newsletter field width."
+    },
+    "mobile-topbar-height": {
+      "value": "56px",
+      "type": "dimension",
+      "source": "measured h of m-topbar default (raw/components-computed.json)",
+      "description": "The phone header bar height."
+    },
+    "docs": {
+      "sidebar-link-ink": {
+        "value": "#f35b22",
+        "type": "color",
+        "source": "computed color of docs-side-link default on docs.fingerprint.com (raw/components-computed.json)",
+        "description": "A docs sidebar link's ink."
+      },
+      "search-btn-bg": {
+        "value": "#f8f8f6",
+        "type": "color",
+        "source": "computed backgroundColor of docs-search default on docs.fingerprint.com (raw/components-computed.json)",
+        "description": "The docs 'Open search' button fill."
+      }
+    },
+    "productShell": {
+      "login-panel-width": {
+        "value": "384px",
+        "type": "dimension",
+        "source": "measured w of login-panel default on the product shell (raw/components-computed.json)",
+        "description": "The sign-in card width on dashboard.fingerprint.com/login."
+      },
+      "google-btn-fill": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "computed backgroundColor of login-google default on the product shell (raw/components-computed.json)",
+        "description": "The 'Continue with Google' button fill."
+      },
+      "google-btn-ink": {
+        "value": "#171816",
+        "type": "color",
+        "source": "computed color of login-google default on the product shell (raw/components-computed.json)",
+        "description": "The 'Continue with Google' button text."
+      },
+      "email-btn-fill": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "computed backgroundColor of login-email-btn default on the product shell (raw/components-computed.json)",
+        "description": "The 'Continue with email' control fill on /login."
+      }
+    }
+  }
+}

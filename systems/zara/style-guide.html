@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZARA style guide</title>
+<meta name="description" content="ZARA public storefront tokens, rendered from tokens.json. Helvetica Now Text is proprietary and not loaded here.">
+<style>
+:root {
+  --font-family-main: "Helvetica Now Text", "Helvetica", "Arial", Sans-Serif;
+  --font-family-alt: "Times New Roman";
+  --font-family-title-alt: "Times New Roman";
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+  --spacing-s00: 0.125rem;
+  --spacing-s01: 0.25rem;
+  --spacing-s02: 0.5rem;
+  --spacing-s03: 0.75rem;
+  --spacing-s04: 1rem;
+  --spacing-s05: 1.25rem;
+  --spacing-s06: 1.5rem;
+  --spacing-s07: 2rem;
+  --spacing-s08: 2.5rem;
+  --spacing-s09: 3rem;
+  --spacing-s10: 3.5rem;
+  --spacing-s11: 4rem;
+  --spacing-s12: 4.5rem;
+  --spacing-s13: 5rem;
+  --spacing-s14: 6rem;
+  --spacing-s15: 7rem;
+  --spacing-s16: 7.5rem;
+  --radius-none: 0px;
+  --line-thin: 0.5px;
+  --line-thick: 1.5px;
+  --layout-actionable-height: 2rem;
+  --layout-actionable-size: 2.5rem;
+  --layout-horizontal-padding: 1.25rem;
+  --layout-lateral-margin: 3rem;
+  --layout-grid-gutter: 1.25rem;
+  --layout-grid-columns: 12;
+  --motion-category: 500ms ease-in-out;
+  --typography-label-l: 300 0.8125rem/1rem "Helvetica Now Text", "Helvetica", "Arial", Sans-Serif;
+  --typography-label-m: 300 0.75rem/1rem "Helvetica Now Text", "Helvetica", "Arial", Sans-Serif;
+  --typography-label-s: 300 0.6875rem/1rem "Helvetica Now Text", "Helvetica", "Arial", Sans-Serif;
+  --typography-label-xs: 300 0.625rem/1rem "Helvetica Now Text", "Helvetica", "Arial", Sans-Serif;
+  --typography-label-m-highlight: 500 0.75rem/1rem "Helvetica Now Text", "Helvetica", "Arial", Sans-Serif;
+  --typography-body-l: 300 0.8125rem/1.25rem "Helvetica Now Text", "Helvetica", "Arial", Sans-Serif;
+  --typography-body-m: 300 0.75rem/1.125rem "Helvetica Now Text", "Helvetica", "Arial", Sans-Serif;
+  --typography-body-s: 300 0.625rem/1rem "Helvetica Now Text", "Helvetica", "Arial", Sans-Serif;
+  --typography-title-l: 300 1.125rem/1.75rem "Helvetica Now Text", "Helvetica", "Arial", Sans-Serif;
+  --typography-title-m: 300 0.9375rem/1.5rem "Helvetica Now Text", "Helvetica", "Arial", Sans-Serif;
+  --typography-title-alt-l: 300 1.25rem/1.5rem "Times New Roman";
+  --color-bg-page: #ffffff;
+  --color-bg-wash: #f7f7f7;
+  --color-bg-wash-alt: #e5e5e5;
+  --color-bg-mid: #949494;
+  --color-bg-inverse: #000000;
+  --color-bg-inverse-alt: #333333;
+  --color-bg-overlay: #00000040;
+  --color-bg-overlay-light: #ffffffbf;
+  --color-bg-surface: #ffffffbf;
+  --color-bg-base-alt: #fffffff2;
+  --color-text-primary: #000000;
+  --color-text-secondary: #757575;
+  --color-text-secondary-alt: #717171;
+  --color-text-muted: #cccccc;
+  --color-text-inverse: #ffffff;
+  --color-border-default: #cccccc;
+  --color-border-strong: #000000;
+  --color-border-hairline: #000000;
+  --color-border-field: #757575;
+  --color-border-field-account: #797979;
+  --color-action-primary: #000000;
+  --color-action-primary-text: #ffffff;
+  --color-action-secondary: #ffffff;
+  --color-action-secondary-text: #000000;
+  --color-status-done: #34c759;
+  --color-status-emphasis: #ff3b30;
+  --color-status-emphasis-bg: #ff3b3033;
+  --color-status-sales: #23f444;
+  --color-status-notification: #ff9500;
+  --color-status-notification-bg: #ff950033;
+  --color-status-focus: #0170e9;
+  --color-status-info: #0170e9;
+  --color-status-info-low: #bfdeff;
+  --color-status-danger: #e90d01;
+  --color-status-danger-low: #ffd8d6;
+  --color-status-success: #0a882a;
+  --color-status-success-low: #d6f4de;
+  --color-status-warning: #b66009;
+  --color-status-warning-low: #ffeacc;
+  --color-scale-s000: #ffffff;
+  --color-scale-s005: #f2f2f2;
+  --color-scale-s010: #e5e5e5;
+  --color-scale-s020: #cccccc;
+  --color-scale-s040: #999999;
+  --color-scale-s060: #666666;
+  --color-scale-s080: #333333;
+  --surface-page: var(--color-bg-page);
+  --surface-wash: var(--color-bg-wash);
+  --text-primary: var(--color-text-primary);
+  --text-secondary: var(--color-text-secondary);
+  --text-muted: var(--color-text-muted);
+  --border-default: var(--color-border-default);
+  --action-primary: #000000;
+  --action-primary-text: #ffffff;
+  --action-secondary: #ffffff;
+  --action-secondary-text: #000000;
+  --component-button-primary-bg: var(--action-primary);
+  --component-button-primary-text: var(--action-primary-text);
+  --component-button-primary-radius: 0px;
+  --component-button-primary-height: 32px;
+  --component-button-primary-padding: 2px 12px;
+  --component-button-secondary-bg: var(--action-secondary);
+  --component-button-secondary-text: var(--action-secondary-text);
+  --component-button-secondary-radius: 0px;
+  --component-button-secondary-height: 40px;
+  --component-nav-link-text: var(--text-primary);
+  --component-nav-link-size: 13px;
+  --component-product-name-text: var(--text-primary);
+  --component-product-name-size: 15px;
+  --component-price-text: var(--text-primary);
+  --component-price-size: 15px;
+  --component-dialog-bg: #ffffff;
+  --component-dialog-radius: 0px;
+  --component-field-text: var(--text-primary);
+  --component-field-radius: 0px;
+  color-scheme: light;
+  --sg-sans: "Helvetica Now Text", Helvetica, Arial, sans-serif;
+  --sg-serif: "Times New Roman", Times, serif;
+}
+[data-mode="dark"] {
+
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--surface-page); color: var(--text-primary); font: 300 13px/16px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header.top { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 0.5px solid var(--text-primary); padding-bottom: 12px; }
+header.top h1 { margin: 0; font: 300 15px/24px var(--sg-sans); letter-spacing: 0.08em; text-transform: uppercase; }
+header.top p { margin: 0; color: var(--text-secondary); font-size: 12px; }
+h2 { font: 300 15px/24px var(--sg-sans); text-transform: uppercase; margin: 40px 0 12px; }
+p.note { color: var(--text-secondary); max-width: 70ch; }
+.row { display: flex; flex-wrap: wrap; gap: 16px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 56px; border: 0.5px solid var(--border-default); }
+.sw b, .sw span { display: block; font-weight: 300; font-size: 11px; text-transform: uppercase; }
+.sw span { color: var(--text-secondary); text-transform: none; }
+button.pri, button.sec, a.nav {
+  font: 300 13px/16px var(--sg-sans); text-transform: uppercase; border-radius: 0; letter-spacing: 0;
+}
+button.pri { background: var(--action-primary); color: var(--action-primary-text); border: 0; height: 32px; padding: 2px 12px; }
+button.sec { background: var(--action-secondary); color: var(--action-secondary-text); border: 0.5px solid var(--text-primary); height: 40px; padding: 2px 12px; }
+a.nav { color: var(--text-primary); text-decoration: none; padding: 5px 0; }
+.field { border: 0; border-bottom: 1px solid var(--text-primary); background: transparent; font: 300 12px/16px var(--sg-sans); width: 280px; padding: 8px 0; color: var(--text-primary); }
+.dialog { border: 1px solid var(--border-default); background: #fff; padding: 20px; width: 320px; }
+.dialog h3 { margin: 0 0 12px; font: 300 15px/24px var(--sg-sans); text-transform: uppercase; }
+table { border-collapse: collapse; width: 100%; font-size: 12px; }
+td, th { text-align: left; padding: 6px 8px; border-bottom: 0.5px solid var(--border-default); font-weight: 300; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: 11px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <h1>ZARA</h1>
+  <p>Public storefront, light only. Values from tokens.json.</p>
+</header>
+<section>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <p class="note">Status colours (sales, emphasis, done) are declared on :root. They were not painted on the pages measured in this pass, so they are tokens, not observed components.</p>
+</section>
+<section>
+  <h2>Type</h2>
+  <p class="note">Helvetica Now Text is the storefront face. It is proprietary and is not loaded here, so this page falls back to Helvetica. Category links on the home gate used Times New Roman at 24px, tracked -1px, uppercase.</p>
+  <div id="type"></div>
+</section>
+<section>
+  <h2>Controls</h2>
+  <div class="row">
+    <div>
+      <button class="pri" type="button">Yes, stay on United States</button>
+      <p class="note">Primary, 32px, padding 2px 12px, radius 0.</p>
+    </div>
+    <div>
+      <button class="sec" type="button">Select a size</button>
+      <p class="note">Secondary large, 40px, 0.5px black border, radius 0. Not pressed into a bag.</p>
+    </div>
+    <div>
+      <a class="nav" href="#controls">Search</a>
+      <p class="note">Header link, 13px, weight 300, uppercase.</p>
+    </div>
+  </div>
+  <p><input class="field" placeholder="What are you looking for?" aria-label="Search"></p>
+</section>
+<section>
+  <h2>Dialog</h2>
+  <div class="dialog">
+    <h3>Hello,</h3>
+    <p>Yes, stay on United States</p>
+    <button class="pri" type="button">Yes, stay on United States</button>
+  </div>
+  <p class="note">Measured wrapper: white, 1px #ccc border, padding 20px 20px 0, radius 0, width 393px.</p>
+</section>
+<section>
+  <h2>Spacing</h2>
+  <table id="space"></table>
+</section>
+</div>
+<script>
+const TOKENS = {"core":{"font":{"family":{"main":{"v":"\"Helvetica Now Text\", \"Helvetica\", \"Arial\", Sans-Serif","t":"fontFamily","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --font-family-main"},"alt":{"v":"\"Times New Roman\"","t":"fontFamily","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --font-family-alt"},"title-alt":{"v":"\"Times New Roman\"","t":"fontFamily","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --font-family-title-alt-l"}}},"weight":{"light":{"v":300,"t":"number","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --font-weight-light = 300"},"regular":{"v":400,"t":"number","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --font-weight-regular = normal, computed as 400 on category links"},"medium":{"v":500,"t":"number","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --font-weight-medium = 500"},"bold":{"v":700,"t":"number","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --font-weight-bold = bold"}},"spacing":{"s00":{"v":"0.125rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --spacing-00"},"s01":{"v":"0.25rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --spacing-01"},"s02":{"v":"0.5rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --spacing-02"},"s03":{"v":"0.75rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --spacing-03"},"s04":{"v":"1rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --spacing-04"},"s05":{"v":"1.25rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --spacing-05"},"s06":{"v":"1.5rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --spacing-06"},"s07":{"v":"2rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --spacing-07"},"s08":{"v":"2.5rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --spacing-08"},"s09":{"v":"3rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --spacing-09"},"s10":{"v":"3.5rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --spacing-10"},"s11":{"v":"4rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --spacing-11"},"s12":{"v":"4.5rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --spacing-12"},"s13":{"v":"5rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --spacing-13"},"s14":{"v":"6rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --spacing-14"},"s15":{"v":"7rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --spacing-15"},"s16":{"v":"7.5rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --spacing-16"}},"radius":{"none":{"v":"0px","t":"dimension","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. zds-button, size list, search input, dialog wrapper all computed border-radius 0px"}},"line":{"thin":{"v":"0.5px","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --zds-line-width"},"thick":{"v":"1.5px","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --zds-line-width-thick"}},"layout":{"actionable-height":{"v":"2rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --layout-actionable-height"},"actionable-size":{"v":"2.5rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --layout-actionable-size"},"horizontal-padding":{"v":"1.25rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --layout-horizontal-padding"},"lateral-margin":{"v":"3rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --layout-lateral-margin"},"grid-gutter":{"v":"1.25rem","t":"dimension","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --grid-column-gutter"},"grid-columns":{"v":12,"t":"number","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --grid-columns = 12"}},"motion":{"category":{"v":"500ms ease-in-out","t":"other","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --category-transition-duration and --category-transition-easing"}},"typography":{"label-l":{"v":{"fontFamily":"\"Helvetica Now Text\", \"Helvetica\", \"Arial\", Sans-Serif","fontSize":"0.8125rem","fontWeight":"300","lineHeight":"1rem","letterSpacing":"0rem"},"t":"typography","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --font-*-label-l (calc(Nrem * 1) stored resolved)"},"label-m":{"v":{"fontFamily":"\"Helvetica Now Text\", \"Helvetica\", \"Arial\", Sans-Serif","fontSize":"0.75rem","fontWeight":"300","lineHeight":"1rem","letterSpacing":"0rem"},"t":"typography","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --font-*-label-m (calc(Nrem * 1) stored resolved)"},"label-s":{"v":{"fontFamily":"\"Helvetica Now Text\", \"Helvetica\", \"Arial\", Sans-Serif","fontSize":"0.6875rem","fontWeight":"300","lineHeight":"1rem","letterSpacing":"0rem"},"t":"typography","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --font-*-label-s (calc(Nrem * 1) stored resolved)"},"label-xs":{"v":{"fontFamily":"\"Helvetica Now Text\", \"Helvetica\", \"Arial\", Sans-Serif","fontSize":"0.625rem","fontWeight":"300","lineHeight":"1rem","letterSpacing":"0rem"},"t":"typography","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --font-*-label-xs (calc(Nrem * 1) stored resolved)"},"label-m-highlight":{"v":{"fontFamily":"\"Helvetica Now Text\", \"Helvetica\", \"Arial\", Sans-Serif","fontSize":"0.75rem","fontWeight":"500","lineHeight":"1rem","letterSpacing":"0.05rem"},"t":"typography","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --font-*-label-m-highlight (calc(Nrem * 1) stored resolved)"},"body-l":{"v":{"fontFamily":"\"Helvetica Now Text\", \"Helvetica\", \"Arial\", Sans-Serif","fontSize":"0.8125rem","fontWeight":"300","lineHeight":"1.25rem","letterSpacing":"0rem"},"t":"typography","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --font-*-body-l (calc(Nrem * 1) stored resolved)"},"body-m":{"v":{"fontFamily":"\"Helvetica Now Text\", \"Helvetica\", \"Arial\", Sans-Serif","fontSize":"0.75rem","fontWeight":"300","lineHeight":"1.125rem","letterSpacing":"0rem"},"t":"typography","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --font-*-body-m (calc(Nrem * 1) stored resolved)"},"body-s":{"v":{"fontFamily":"\"Helvetica Now Text\", \"Helvetica\", \"Arial\", Sans-Serif","fontSize":"0.625rem","fontWeight":"300","lineHeight":"1rem","letterSpacing":"0rem"},"t":"typography","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --font-*-body-s (calc(Nrem * 1) stored resolved)"},"title-l":{"v":{"fontFamily":"\"Helvetica Now Text\", \"Helvetica\", \"Arial\", Sans-Serif","fontSize":"1.125rem","fontWeight":"300","lineHeight":"1.75rem","letterSpacing":"0rem"},"t":"typography","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --font-*-title-l (calc(Nrem * 1) stored resolved)"},"title-m":{"v":{"fontFamily":"\"Helvetica Now Text\", \"Helvetica\", \"Arial\", Sans-Serif","fontSize":"0.9375rem","fontWeight":"300","lineHeight":"1.5rem","letterSpacing":"0rem"},"t":"typography","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --font-*-title-m (calc(Nrem * 1) stored resolved)"},"title-alt-l":{"v":{"fontFamily":"\"Times New Roman\"","fontSize":"1.25rem","fontWeight":"300","lineHeight":"1.5rem","letterSpacing":"-1px"},"t":"typography","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --font-*-title-alt-l (calc(Nrem * 1) stored resolved)"}}},"light":{"color":{"bg":{"page":{"v":"#ffffff","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-background-base; body computed rgb(255, 255, 255)"},"wash":{"v":"#f7f7f7","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-background-low"},"wash-alt":{"v":"#e5e5e5","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-background-low-alt"},"mid":{"v":"#949494","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-background-mid"},"inverse":{"v":"#000000","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-background-high"},"inverse-alt":{"v":"#333333","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-background-high-alt"},"overlay":{"v":"#00000040","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-background-overlay (declared rgba(0, 0, 0, 0.25), written as hex)"},"overlay-light":{"v":"#ffffffbf","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-background-overlay-alt (declared hsla(0, 0%, 100%, 0.75), written as hex)"},"surface":{"v":"#ffffffbf","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-background-surface (declared hsla(0, 0%, 100%, 0.75), written as hex)"},"base-alt":{"v":"#fffffff2","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-background-base-alt (declared hsla(0, 0%, 100%, 0.95), written as hex)"}},"text":{"primary":{"v":"#000000","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-content-high; body computed rgb(0, 0, 0)"},"secondary":{"v":"#757575","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-content-mid"},"secondary-alt":{"v":"#717171","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-content-mid-alt"},"muted":{"v":"#cccccc","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-content-low"},"inverse":{"v":"#ffffff","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-content-inverse"}},"border":{"default":{"v":"#cccccc","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-main-020; dialog wrapper computed 1px solid rgb(204, 204, 204)"},"strong":{"v":"#000000","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-main; secondary button computed 0.5px solid rgb(0, 0, 0)"},"hairline":{"v":"#000000","t":"color","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. secondary zds-button border-top-color rgb(0, 0, 0) at --zds-line-width 0.5px"},"field":{"v":"#757575","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --form-input-label-border-color-unfocused"},"field-account":{"v":"#797979","t":"color","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. account.zara.com .mds-base-field__control border rgb(121, 121, 121)"}},"action":{"primary":{"v":"#000000","t":"color","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. geolocation primary button and account CONTINUE computed background rgb(0, 0, 0)"},"primary-text":{"v":"#ffffff","t":"color","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. those buttons computed color rgb(255, 255, 255)"},"secondary":{"v":"#ffffff","t":"color","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. secondary zds-button computed background rgb(255, 255, 255)"},"secondary-text":{"v":"#000000","t":"color","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. secondary zds-button computed color rgb(0, 0, 0)"}},"status":{"done":{"v":"#34c759","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-done"},"emphasis":{"v":"#ff3b30","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-emphasis"},"emphasis-bg":{"v":"#ff3b3033","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-emphasis-background"},"sales":{"v":"#23f444","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-sales"},"notification":{"v":"#ff9500","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-notification"},"notification-bg":{"v":"#ff950033","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-notification-background"},"focus":{"v":"#0170e9","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-focus-ring"},"info":{"v":"#0170e9","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-semantic-info-high"},"info-low":{"v":"#bfdeff","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-semantic-info-low"},"danger":{"v":"#e90d01","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-semantic-danger-high"},"danger-low":{"v":"#ffd8d6","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-semantic-danger-low"},"success":{"v":"#0a882a","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-semantic-success-high"},"success-low":{"v":"#d6f4de","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-semantic-success-low"},"warning":{"v":"#b66009","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-semantic-warning-high"},"warning-low":{"v":"#ffeacc","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-semantic-warning-low"}},"scale":{"s000":{"v":"#ffffff","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-main-000"},"s005":{"v":"#f2f2f2","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-main-005"},"s010":{"v":"#e5e5e5","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-main-010"},"s020":{"v":"#cccccc","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-main-020"},"s040":{"v":"#999999","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-main-040"},"s060":{"v":"#666666","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-main-060"},"s080":{"v":"#333333","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties. --color-main-080"}}},"surface":{"page":{"v":"{color.bg.page}","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties."},"wash":{"v":"{color.bg.wash}","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties."}},"text":{"primary":{"v":"{color.text.primary}","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties."},"secondary":{"v":"{color.text.secondary}","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties."},"muted":{"v":"{color.text.muted}","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties."}},"border":{"default":{"v":"{color.border.default}","t":"color","s":"Computed custom properties on documentElement at https://www.zara.com/us/en/woman-new-in-l1180.html, stylesheet static.zara.net/stdstatic/10.21.1, 2026-11-19. Cross-origin sheets were blocked to cssRules; values are the browser's resolved custom properties."}},"action":{"primary":{"v":"#000000","t":"color","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. geolocation primary button and account CONTINUE computed background rgb(0, 0, 0)"},"primary-text":{"v":"#ffffff","t":"color","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. those buttons computed color rgb(255, 255, 255)"},"secondary":{"v":"#ffffff","t":"color","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. secondary zds-button computed background rgb(255, 255, 255)"},"secondary-text":{"v":"#000000","t":"color","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. secondary zds-button computed color rgb(0, 0, 0)"}},"component":{"button-primary":{"bg":{"v":"{action.primary}","t":"color","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. .zds-button--primary and .mds-button--primary"},"text":{"v":"{action.primary-text}","t":"color","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. primary button text"},"radius":{"v":"0px","t":"dimension","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. primary button border-radius 0px"},"height":{"v":"32px","t":"dimension","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. geolocation primary button height"},"padding":{"v":"2px 12px","t":"other","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. geolocation primary button padding"}},"button-secondary":{"bg":{"v":"{action.secondary}","t":"color","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. .zds-button--secondary"},"text":{"v":"{action.secondary-text}","t":"color","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. secondary button text"},"radius":{"v":"0px","t":"dimension","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. secondary button border-radius 0px"},"height":{"v":"40px","t":"dimension","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. ADD button height 40px (large); small secondary is 32px"}},"nav-link":{"text":{"v":"{text.primary}","t":"color","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. header SEARCH/LOG IN/HELP"},"size":{"v":"13px","t":"dimension","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. header actionable font-size"}},"product-name":{"text":{"v":"{text.primary}","t":"color","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. .product-detail-info__header-name"},"size":{"v":"15px","t":"dimension","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. product name font-size"}},"price":{"text":{"v":"{text.primary}","t":"color","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. .money-amount--highlight"},"size":{"v":"15px","t":"dimension","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. highlighted price font-size"}},"dialog":{"bg":{"v":"#ffffff","t":"color","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. .zds-dialog__wrapper background rgb(255, 255, 255)"},"radius":{"v":"0px","t":"dimension","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. dialog wrapper border-radius 0px"}},"field":{"text":{"v":"{text.primary}","t":"color","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. search and help inputs"},"radius":{"v":"0px","t":"dimension","s":"getComputedStyle on the named elements, same session, viewport innerWidth 1169, innerHeight 731, devicePixelRatio 2. search-home-input and help input border-radius 0px"}}}},"dark":{}};
+const root = document.documentElement;
+function val(path) {
+  const parts = path.split(".");
+  let node = TOKENS;
+  for (const p of parts) node = node[p];
+  const v = node.v;
+  if (v && v.fontFamily) return v;
+  return v;
+}
+const swatches = [
+  ["Page", "light.color.bg.page"],
+  ["Wash", "light.color.bg.wash"],
+  ["Text", "light.color.text.primary"],
+  ["Muted", "light.color.text.secondary"],
+  ["Border", "light.color.border.default"],
+  ["Primary", "light.action.primary"],
+  ["Sales", "light.color.status.sales"],
+  ["Emphasis", "light.color.status.emphasis"],
+  ["Focus", "light.color.status.focus"]
+];
+// Built with DOM properties, not an HTML string: a font family such as "Helvetica Now Text"
+// holds double quotes that would close a style="..." attribute and drop the rest of the specimen.
+const el = (tag, text) => { const n = document.createElement(tag); if (text !== undefined) n.textContent = text; return n; };
+document.getElementById("swatches").replaceChildren(...swatches.map(([n, p]) => {
+  const v = val(p);
+  const sw = el("div");
+  sw.className = "sw";
+  const dot = el("i");
+  dot.style.background = v;
+  sw.append(dot, el("b", n), el("span", v));
+  return sw;
+}));
+const type = TOKENS.core.typography;
+document.getElementById("type").replaceChildren(...Object.entries(type).map(([n, t]) => {
+  const v = t.v;
+  const p = el("p", `${n} — The new`);
+  Object.assign(p.style, { fontFamily: v.fontFamily, fontSize: v.fontSize, fontWeight: v.fontWeight,
+    lineHeight: v.lineHeight, letterSpacing: v.letterSpacing, textTransform: "uppercase" });
+  return p;
+}));
+const space = TOKENS.core.spacing;
+const head = el("tr");
+head.append(el("th", "Token"), el("th", "Value"));
+document.getElementById("space").replaceChildren(head, ...Object.entries(space).map(([n, t]) => {
+  const tr = el("tr");
+  const name = el("td");
+  name.append(el("code", `core.spacing.${n}`));
+  tr.append(name, el("td", t.v));
+  return tr;
+}));
+</script>
+</body>
+</html>

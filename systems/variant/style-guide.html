@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Variant signed-out tokens</title>
+  <style>
+    :root {
+      --page: rgb(34, 34, 34);
+      --column: rgb(7, 7, 6);
+      --auth: rgb(0, 0, 0);
+      --composer: rgb(30, 30, 28);
+      --text: rgb(240, 237, 229);
+      --muted: rgba(240, 237, 229, 0.65);
+      --soft: rgba(255, 255, 255, 0.85);
+      --placeholder: rgba(255, 255, 255, 0.4);
+      --border: rgba(255, 255, 255, 0.1);
+      --fill: rgba(255, 255, 255, 0.1);
+      --fill-hover: rgba(255, 255, 255, 0.15);
+      --disabled: rgba(255, 255, 255, 0.5);
+      --field: rgba(255, 255, 255, 0.03);
+      --focus: rgb(229, 151, 0);
+    }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--text);
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    main { max-width: 880px; margin: 0 auto; padding: 32px 24px 64px; }
+    h1 { font-size: 32px; font-weight: 400; line-height: 36px; letter-spacing: 0.32px; margin: 0 0 8px; }
+    h2 { font-size: 13px; font-weight: 500; letter-spacing: 0.13px; color: var(--soft); margin: 32px 0 12px; }
+    p.note { color: var(--muted); font-size: 13px; max-width: 62ch; }
+    .swatches { display: flex; flex-wrap: wrap; gap: 8px; }
+    .swatch { width: 128px; }
+    .chip {
+      height: 48px;
+      border-radius: 6px;
+      border: 0.5px solid var(--border);
+    }
+    .name { font-size: 11px; letter-spacing: 0.22px; margin-top: 4px; color: var(--soft); }
+    .value { font-size: 11px; color: var(--disabled); }
+    .column {
+      background: var(--column);
+      border-radius: 8px;
+      padding: 24px;
+      max-width: 408px;
+    }
+    .chip-btn {
+      display: inline-flex;
+      align-items: center;
+      height: 26px;
+      padding: 0 8px 0 7px;
+      border-radius: 6px;
+      border: 0.5px solid var(--border);
+      background: var(--column);
+      color: var(--text);
+      font-size: 11px;
+      letter-spacing: 0.22px;
+      line-height: 11px;
+    }
+    .composer {
+      margin-top: 16px;
+      background: var(--composer);
+      border-radius: 10px;
+      box-shadow: rgba(255, 255, 255, 0.1) 0 0 0 0.5px;
+      padding: 8px;
+      color: var(--placeholder);
+      font-size: 14px;
+      letter-spacing: 0.28px;
+    }
+    .auth {
+      background: var(--auth);
+      border-radius: 8px;
+      padding: 32px 24px;
+      max-width: 448px;
+    }
+    .auth h3 {
+      margin: 0 0 16px;
+      font-size: 21px;
+      font-weight: 500;
+      line-height: 32px;
+      letter-spacing: -0.21px;
+      color: var(--disabled);
+    }
+    .btn, .field {
+      display: block;
+      width: 100%;
+      height: 40px;
+      border-radius: 6px;
+      border: 0;
+      font-size: 13px;
+      letter-spacing: 0.13px;
+      margin-bottom: 12px;
+    }
+    .btn { background: var(--fill); color: var(--soft); }
+    .btn.disabled { color: var(--disabled); }
+    .btn.hover { background: var(--fill-hover); }
+    .field {
+      background: var(--field);
+      color: var(--soft);
+      border: 0.5px solid var(--border);
+      padding: 0 16px;
+    }
+    .focus { outline: 1px auto var(--focus); }
+    table { border-collapse: collapse; width: 100%; }
+    td { padding: 8px 12px 8px 0; vertical-align: baseline; color: var(--soft); font-size: 13px; }
+    .display { font-size: 32px; line-height: 36px; letter-spacing: 0.32px; font-weight: 400; color: var(--text); }
+    .sub { font-size: 14px; line-height: 24px; letter-spacing: 0.28px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Variant, signed out</h1>
+    <p class="note">Measured colours from variant.com on 2026-11-19. One dark paint. No screenshot in this package.</p>
+
+    <h2>Paint</h2>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background: rgb(34, 34, 34)"></div><div class="name">page</div><div class="value">rgb(34, 34, 34)</div></div>
+      <div class="swatch"><div class="chip" style="background: rgb(7, 7, 6)"></div><div class="name">column</div><div class="value">rgb(7, 7, 6)</div></div>
+      <div class="swatch"><div class="chip" style="background: rgb(0, 0, 0)"></div><div class="name">auth page</div><div class="value">rgb(0, 0, 0)</div></div>
+      <div class="swatch"><div class="chip" style="background: rgb(30, 30, 28)"></div><div class="name">composer</div><div class="value">rgb(30, 30, 28)</div></div>
+      <div class="swatch"><div class="chip" style="background: rgb(240, 237, 229)"></div><div class="name">text</div><div class="value">rgb(240, 237, 229)</div></div>
+      <div class="swatch"><div class="chip" style="background: rgba(255, 255, 255, 0.1)"></div><div class="name">control fill</div><div class="value">white 10%</div></div>
+      <div class="swatch"><div class="chip" style="background: rgba(255, 255, 255, 0.15)"></div><div class="name">control hover</div><div class="value">white 15%</div></div>
+      <div class="swatch"><div class="chip" style="background: rgb(229, 151, 0)"></div><div class="name">UA focus</div><div class="value">rgb(229, 151, 0)</div></div>
+    </div>
+
+    <h2>Homepage column</h2>
+    <div class="column">
+      <div class="display">Endless designs for your ideas, just scroll.</div>
+      <p class="sub">Most tools make you explain what you want. Variant just shows you.</p>
+      <span class="chip-btn">Sign up / Sign in</span>
+      <div class="composer">See endless designs for...</div>
+    </div>
+
+    <h2>Authentication</h2>
+    <div class="auth">
+      <h3>Sign in or sign up</h3>
+      <button class="btn" type="button">Continue with Google</button>
+      <input class="field" value="Email address" readonly>
+      <button class="btn disabled" type="button">Continue with Email, empty</button>
+      <button class="btn hover focus" type="button">Continue with Email, hover and focus</button>
+    </div>
+
+    <h2>Type</h2>
+    <table>
+      <tr><td>Display</td><td>32 / 36, weight 400, tracking 0.32px, Variant Neue Display</td></tr>
+      <tr><td>Subtitle</td><td>14 / 24, weight 400, tracking 0.28px, Variant Neue Text</td></tr>
+      <tr><td>Chip</td><td>11 / 11, tracking 0.22px</td></tr>
+      <tr><td>Auth and legal title</td><td>Inter 21 / 32, weight 500, tracking -0.21px</td></tr>
+      <tr><td>Legal body</td><td>Inter 13 / 20, tracking 0.13px</td></tr>
+      <tr><td>Fine print</td><td>Inter 12 / 20, tracking 0.12px</td></tr>
+    </table>
+  </main>
+</body>
+</html>

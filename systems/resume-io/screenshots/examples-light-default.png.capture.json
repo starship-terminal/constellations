@@ -1,0 +1,22 @@
+{
+  "capturedAt": "2026-11-18T18:08:22.330Z",
+  "requested": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1
+  },
+  "status": 200,
+  "sanitizedSourceUrl": "https://resume.io/resume-examples",
+  "url": "https://resume.io/resume-examples",
+  "title": "500+ Free Resume Examples: Sample by Industry or Job (2026) · Resume.io",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "devicePixelRatio": 1,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "cookieOpen": false,
+  "screenshotFrames": "headless Playwright PNG. T3 preview returned: The browser is not producing screenshot frames."
+}

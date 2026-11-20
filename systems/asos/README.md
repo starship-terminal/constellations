@@ -13,7 +13,8 @@ ASOS is worth a capture because it is the reference for *flat fast-fashion chrom
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (72, ~180 states) with crops and values, the shared values, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine on each surface: shop chrome, buttons, product surfaces, PDP, forms, the mobile side panel, consent |
 | [components/crops/](components/crops) | ~176 element screenshots, `{component}-{state}.png` |
-| [screenshots/](screenshots) | 25 `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages, `home-light-consent` the OneTrust dialog as it arrives |
+| [screenshots/](screenshots) | 25 `{page}-light-{state}.png` captures. Desktop 1440 x 900 at 1x, `mobile-*` 390 x 844 at 2x, `-full` whole pages, `home-light-consent` the OneTrust dialog as it arrives. Signed-in shots are `signed-in-*.png` |
+| [login-review.json](login-review.json) | Signed-in walk: nav, settings, and create that were opened, the screenshot for each, and what was not submitted |
 | [raw/](raw) | The unprocessed readings: [css-vars.json](raw/css-vars.json) (every custom property, binned generated/app/vendor/utility/tailwind, resolved light+dark, plus @font-face declarations), [components-computed.json](raw/components-computed.json) + [measurements.md](raw/measurements.md), [component-tokens.json](raw/component-tokens.json) (the spec build_tokens.py reads) |
 | [tools/](tools) | The builders and the capture kit. See [Rebuild](#rebuild) |
 
@@ -103,15 +104,19 @@ Every value came off the running signed-out shop in headed Chrome (Akamai 403s h
 
 Nothing was bought, added to bag, joined, subscribed, searched or signed into. The public storefront plus the account gate was enough.
 
+A later signed-in pass (2026-11-20) walked the already signed-in account in the T3 preview and added [login-review.json](login-review.json) plus `screenshots/signed-in-*.png`. It did not rebuild tokens. The account hub, empty orders, Premier pitch, vouchers unavailable page, contact preferences, social accounts, empty address form, payment-method gate, empty saved list, empty bag, and the returns landing are in that review. My details was opened and its screenshot was discarded because it shows the account email and date of birth. Sign out, preference confirm, address add, payment add, Premier signup, return start, and checkout were not submitted.
+
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **One theme only.** The `dark` probe resolves to the same `:root` values — nothing paints dark. `tokens.json` ships no dark set.
 - **Var names are build hashes.** `--1fot7dv` and friends will change on the next site deploy; treat the aliases in `tokens.json` as the stable names and the hash names as provenance.
 - **Roles are verified, not declared.** Every `light` role pairs a var with the component that was measured wearing it; the site itself declares no semantic names. The declared error/sale/purple palette members (`--1mii22u`, `--1xvrmqx`, `--1ffq8ns`) appear in no component reading, so they stay under `core.color` — claiming `status.*` or `accent.*` roles for them would be an inference, not a measurement. Likewise `core.measured.anchor-inherit` is the wrapper anchor's unused inherited `#0000ee`, not the product-link colour (the link text is `text.primary`).
 - **`component.*` tokens are measured**, not site variables. The shop declares no spacing or radius scale — corners are simply 0px.
 - **Channel triplets.** `--18bniqv` ("45,45,45") and `--1cripqf` ("255,255,255") are rgb() channels composed into `rgba(var(--x), α)` — tokenised under `core.color.channel` as composed colours.
-- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from tokens or `raw/full/`.
+- **Quantised screenshots.** `screenshots/` are 256-colour PNGs; read exact colours from the tokens.
 - **The PDP is a sample**, not a fixed product — see `pdp_url`. Prices are SGD (Singapore geo).
+- **`tile-badge` was read from the wrong element.** Its selector caught the whole 335 x 100 tile text block (the product name and price), not the SELLING FAST / MORE COLOURS label, so its Tile badge entry in `components.md` is not the badge. The capture script now targets the label text itself (not run since); the component needs a recapture.
 - **Focus on the header search button did not land** on this pass (recorded as an error state on `search-button`, not evidence). Flyout links have no focus/press states: the flyout closes when focus leaves the nav button.
 
 ## Fonts
@@ -140,15 +145,15 @@ Nothing was bought, added to bag, joined, subscribed, searched or signed into. T
 | Card | captured | `product-tile`, `grid-tile`, `hub-tile`, `hub-card`, `m-feature-tile` |
 | List row | captured | `m-nav-link` side-panel rows; flyout link rows |
 | Table | not present | none on the public surface |
-| Avatar | not present | none on the public surface |
+| Avatar | captured | signed-in account hub initials, [signed-in-my-account-desktop](screenshots/signed-in-my-account-desktop.png) |
 | Badge | captured | `tile-badge` (SELLING FAST / MORE COLOURS), `rating` star button |
 | States: default, hover, focus-visible, pressed | captured | every interactive entry; pressed via CDP |
 | States: selected | captured | `size-select` picked; `nav-mega`, `pdp-accordion-open`, `m-menu-open` |
 | States: disabled, error | partly | none surfaced on the public surface; `search-button` focus is an honest error record |
 | App shell and navigation | captured | [home-light-default](screenshots/home-light-default.png), [patterns.md](patterns.md) |
 | Form with a validation error | not captured | the login form was never submitted |
-| Empty state | captured | `bag-empty`, `saved-empty` — the signed-out bag and saved lists |
-| Checkout, account, order flow | not captured | nothing was added to the bag; behind sign-in |
+| Empty state | captured | signed-out `bag-empty` and `saved-empty`; signed-in empty bag, saved list, and orders in `screenshots/signed-in-*` |
+| Checkout, account, order flow | partly | signed-in account nav, empty orders, empty bag, and the returns landing are in [login-review.json](login-review.json). Checkout was not started. My details is omitted because the screenshot showed the account email and date of birth. |
 | Themes: light, dark | partly | light is the only painted theme |
 | Widths: 1440, 390 | captured | desktop + `mobile-*` shots and the Mobile group |
 
@@ -176,6 +181,9 @@ PLAYWRIGHT=~/.design-systems/pw/node_modules/playwright/index.mjs \
   node tools/capture/vars.mjs                     # raw/css-vars.json
 PLAYWRIGHT=... PYTHON=<python with Pillow> node tools/capture/public/measure.mjs   # raw/components-computed.json + crops
 python3 tools/capture/quantize.py ~/.design-systems/asos/raw-shots   # -> screenshots/
+python3 ../../tools/redact_images.py apply ../asos --rules ../../tools/redact-rules/asos.json   # repaint the masks over the new screenshots
+# The rules' boxes are pixel positions on the committed screenshots, size-gated, so a fresh capture of another
+# size or layout is silently skipped: re-place the boxes for every new shot and open each image before committing.
 node tools/capture/public/build-measurements.mjs  # raw/measurements.md
 python3 tools/build_component_tokens.py           # raw/component-tokens.json
 python3 tools/build_tokens.py                     # tokens.json

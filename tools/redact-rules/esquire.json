@@ -1,0 +1,14 @@
+{
+ "_note": "Rules for systems/esquire. A fully public signed-out capture: no owner data on any surface; nothing was filled, submitted, signed into or bought. The OCR email net is kept, with the product's own published addresses allowed (the About page prints esquirestaff@hearst.com as its public contact).",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@hearst\\.com$",
+   "@hearst\\.com\\.$",
+   "@example\\.com$",
+   "@example\\.org$",
+   "@esquire\\.com$"
+  ]
+ },
+ "families": []
+}

@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MonoDesk style guide</title>
+<meta name="description" content="MonoDesk public and signed-out tokens, rendered from tokens.json.">
+<style>
+:root {
+  --font-family-geist: Geist, system-ui, sans-serif;
+  --font-family-geistApp: Geist, -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-geistMono: "Geist Mono", ui-monospace, monospace;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-size-badge: 10px;
+  --font-size-plan: 13px;
+  --font-size-nav: 14px;
+  --font-size-body: 16px;
+  --font-size-appHeading: 22px;
+  --font-size-price: 32px;
+  --font-size-section: 36px;
+  --font-size-hero: 72px;
+  --radius-field: 9px;
+  --radius-google: 7px;
+  --radius-login: 12px;
+  --radius-card: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 30px;
+  --radius-pill: 100px;
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 40px;
+  --spacing-xl: 60px;
+  --spacing-2xl: 80px;
+  --layout-pageMax: 1320px;
+  --layout-centered: 1200px;
+  --layout-insetSm: 24px;
+  --motion-duration-nav: 200ms;
+  --motion-duration-menu: 150ms;
+  --motion-easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --typography-hero: var(--font-weight-regular) var(--font-size-hero)/1.05 var(--font-family-geist);
+  --typography-section: var(--font-weight-semibold) var(--font-size-section)/1.2 var(--font-family-geist);
+  --typography-body: var(--font-weight-regular) var(--font-size-body)/1.5 var(--font-family-geist);
+  --typography-nav: var(--font-weight-medium) var(--font-size-nav)/1.2 var(--font-family-geist);
+  --typography-price: var(--font-weight-bold) var(--font-size-price)/1.1 var(--font-family-geist);
+  --typography-appHeading: var(--font-weight-medium) var(--font-size-appHeading)/30px var(--font-family-geistApp);
+  --typography-label: var(--font-weight-medium) 12px/20px var(--font-family-geistApp);
+  --component-button-primary-background: #d1ff6e;
+  --component-button-primary-text: #026232;
+  --component-button-primary-radius: 100px;
+  --component-button-primary-height: 40px;
+  --component-button-plan-background: #d1ff6e;
+  --component-button-plan-text: #026232;
+  --component-button-plan-hoverBackground: #026232;
+  --component-button-plan-hoverText: #ffffff;
+  --component-button-plan-radius: 100px;
+  --component-button-plan-height: 37.5px;
+  --component-button-login-background: #161616;
+  --component-button-login-text: #ffffff;
+  --component-button-login-radius: 12px;
+  --component-button-login-height: 40px;
+  --component-button-login-size: 13px;
+  --component-button-google-background: #ffffff;
+  --component-button-google-hoverBackground: #f6f6f6;
+  --component-button-google-text: #000000;
+  --component-button-google-radius: 7px;
+  --component-button-google-height: 44px;
+  --component-button-google-border: #e2e2e2;
+  --component-field-background: #f8f8f8;
+  --component-field-text: #161616;
+  --component-field-radius: 9px;
+  --component-field-height: 44px;
+  --component-field-border: #ebebeb;
+  --component-field-fontSize: 16px;
+  --component-search-background: #ffffff;
+  --component-search-radius: 100px;
+  --component-search-height: 54px;
+  --component-search-heightFocus: 54px;
+  --component-card-login-background: #ffffff;
+  --component-card-login-radius: 16px;
+  --component-card-login-width: 450px;
+  --component-card-help-background: #ffffff;
+  --component-card-help-radius: 16px;
+  --component-badge-background: #026232;
+  --component-badge-text: #ffffff;
+  --component-badge-radius: 100px;
+  --background-page: #1c64f5;
+  --background-pageInk: #212121;
+  --background-surface: #ffffff;
+  --background-tint: #eef2f5;
+  --background-canvas: #dadee1;
+  --background-app: #e5eaed;
+  --background-field: #f8f8f8;
+  --background-action: #d1ff6e;
+  --background-actionHover: #026232;
+  --background-inkButton: #161616;
+  --text-onBlue: #ffffff;
+  --text-onBlueMuted: rgba(255, 255, 255, 0.85);
+  --text-primary: #161616;
+  --text-secondary: rgba(22, 22, 22, 0.6);
+  --text-light: #e7e7e7;
+  --text-onAction: #026232;
+  --text-link: #1c64f5;
+  --text-muted: #515151;
+  --border-stroke: #ebebeb;
+  --border-google: #e2e2e2;
+  --border-ghost: rgba(255, 255, 255, 0.15);
+  --brand-blue: #1c64f5;
+  --brand-highlighter: #d1ff6e;
+  --brand-funGreen: #026232;
+  --brand-orange: #ff5b26;
+  --brand-grey: #94959a;
+  --brand-almostBlack: #272727;
+  --brand-white: #ffffff;
+  --brand-appOrange: #f14e13;
+  --sg-sans: var(--font-family-geist, Geist, system-ui, sans-serif);
+  --sg-mono: var(--font-family-geistMono, ui-monospace, Menlo, monospace);
+}
+[data-mode="dark"], .dark {
+  --background-page: #15181c;
+  --background-surface: #1c2025;
+  --background-strong: #25292e;
+  --text-primary: #ffffff;
+  --text-secondary: #dbdfe2;
+  --text-muted: #c5cdd2;
+  --border-stroke: #424a53;
+  --brand-blue: #1c64f5;
+  --brand-highlighter: #d1ff6e;
+  --brand-orange: #f14e13;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #161616); background: var(--background-canvas, #dadee1); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.15 var(--sg-sans); margin: 0 0 4px; color: var(--text-primary, #161616); }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted, #515151); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-stroke, #ebebeb); }
+.lead { max-width: 66ch; color: var(--text-primary, #161616); }
+.note { font-size: 13px; color: var(--text-muted, #515151); max-width: 70ch; }
+code { font-family: var(--sg-mono); font-size: .9em; color: var(--brand-blue, #1c64f5); }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted, #515151); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { padding: 10px; border-radius: 10px; background: var(--background-page, #15181c); color: var(--text-primary, #fff); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-stroke, #ebebeb); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); color: inherit; }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); opacity: .7; color: inherit; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { opacity: .7; }
+.mock { border: 1px solid var(--border-stroke, #ebebeb); overflow: hidden; background: var(--background-page, #1c64f5); color: #fff; border-radius: 16px; }
+.header { display: flex; align-items: center; gap: 16px; height: 66px; margin: 16px; padding: 0 20px; font-size: 14px; background: #1e54c0; color: #fff; border-radius: 16px; }
+.header .wm { font-weight: 600; font-size: 18px; }
+.header .nav { display: flex; gap: 16px; color: rgba(255,255,255,.85); font-weight: 500; font-size: 14px; }
+.header .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 16px; font-size: 14px; font-weight: 500; border-radius: 100px; border: 0; }
+.btn.primary { background: var(--background-action, #d1ff6e); color: var(--text-onAction, #026232); }
+.btn.ghost { background: rgba(255,255,255,.15); color: #fff; }
+.btn.ink { background: var(--background-inkButton, #161616); color: #fff; border-radius: 12px; height: 40px; }
+.hero { padding: 48px 40px 40px; text-align: center; }
+.hero h3 { font: 400 40px/1.05 var(--sg-sans); margin: 0 auto 14px; max-width: 16ch; color: #fff; }
+.hero p { margin: 0 auto 24px; color: #fff; }
+.herorow { display: flex; gap: 12px; justify-content: center; }
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 28px; background: #fff; color: var(--text-primary, #161616); }
+.plan { border: 1px solid var(--border-stroke, #ebebeb); background: #fff; padding: 20px; border-radius: 16px; min-height: 160px; }
+.plan .name { font-weight: 600; }
+.plan .price { font-size: 32px; font-weight: 700; margin: 8px 0; }
+.plan .sub { font-size: 12px; color: var(--text-secondary, rgba(22,22,22,.6)); margin-bottom: 16px; }
+.plan.pro { outline: 2px solid var(--brand-highlighter, #d1ff6e); }
+.login { max-width: 450px; margin: 28px auto; padding: 32px; background: #fff; color: var(--text-primary, #161616); border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,.15); }
+.login h3 { font: 500 22px/30px var(--sg-sans); margin: 0 0 18px; }
+.login .btn { width: 100%; margin-bottom: 8px; }
+.login .field { height: 44px; border-radius: 9px; border: 1px solid #ebebeb; background: #f8f8f8; display: flex; align-items: center; padding: 0 12px; color: #94959a; font-size: 16px; margin-bottom: 8px; }
+table.cmp { border-collapse: collapse; font-size: 14px; width: 100%; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-stroke, #ebebeb); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-stroke, #ebebeb); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; opacity: .65; font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <h1>MonoDesk style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>. Every swatch is a token. The mock is a reconstruction from those tokens, not captured pixels. The real captures are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+
+  <h2 class="sh">Measured surfaces</h2>
+  <p class="lead">www.monodesk.com paints a blue grid wash (<code>--brand-blue</code> #1c64f5) with a highlighter pill (<code>--brand-highlighter</code> #d1ff6e) and green ink (<code>--brand-fun-green</code> #026232). app.monodesk.com/login and /create, signed out, paint a white card on a grey canvas.</p>
+  <p class="note">Read on 2026-11-19 in headless Chromium at 1440×900, with a 390×844 pass. Geist is licensed and not bundled, so samples fall back to system fonts.</p>
+
+  <h2 class="sh">Marketing hero</h2>
+  <div class="mock">
+    <div class="header">
+      <span class="wm">MonoDesk</span>
+      <span class="nav"><span>Creative Pros</span><span>Features</span><span>Pricing</span><span>About</span></span>
+      <span class="sp"></span>
+      <span>Log in</span>
+      <span class="btn primary">Get started free</span>
+    </div>
+    <div class="hero">
+      <h3>Stuck on the boring bits of your creative business?</h3>
+      <p>MonoDesk can handle that for you</p>
+      <div class="herorow"><span class="btn primary">Get started free</span><span class="btn ghost">Log in</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <div class="mock"><div class="plans">
+    <div class="plan"><div class="name">Free</div><div class="price">$0</div><div class="sub">Always free</div><span class="btn primary">Get started</span></div>
+    <div class="plan"><div class="name">Core</div><div class="price">$19</div><div class="sub">Free until end of 2026</div><span class="btn primary">Get started</span></div>
+    <div class="plan pro"><div class="name">Pro</div><div class="price">$29</div><div class="sub">Most popular</div><span class="btn primary">Get started</span></div>
+  </div></div>
+
+  <h2 class="sh">Signed-out login</h2>
+  <p class="lead">app.monodesk.com/login, signed out. White card, 16px radius, grey field, ink Login button. Nothing on this card was submitted.</p>
+  <div class="mock" style="background:#e5eaed; padding: 8px 0 24px;">
+    <div class="login">
+      <h3>Login to your account</h3>
+      <span class="btn" style="background:#fff;color:#000;border:1px solid #e2e2e2;border-radius:7px;">Login with Google</span>
+      <div class="field">your@email.com</div>
+      <span class="btn ink">Login</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead"><code>light.*</code> is what the marketing site and the signed-out app paint. <code>dark.*</code> is the app's declared Tamagui dark scale, present on the document even while the login stayed light. Swatches in the dark block sit inside <code>.dark</code>.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius, layout and motion</h2>
+  <p class="lead">Spacing and radius come from the marketing <code>:root</code> custom properties and from computed control geometry. Motion durations are the header link transitions (0.2s and 0.15s, ease).</p>
+  <div id="spacing-out" class="kv"></div>
+  <div id="motion-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Geist is the marketing and app face. Geist Mono is declared. Samples fall back to system fonts because the licensed files are not bundled.</p>
+  <div id="type-out"></div>
+  <div id="typ-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Reading</th><th>Where it landed</th></tr><tr><td>Stylesheet harvest</td><td>Declared <code>--background</code>, <code>--primary</code>, <code>--font-*</code> and the rest of the semantic layer, resolved under light and under <code>.dark</code></td></tr><tr><td>Live DOM</td><td>Hover, focus-visible, DevTools-forced pressed, and opened states, each named with the element it was read from</td></tr><tr><td>Withdrawn readings</td><td>FAQ, prose link, plan card, contact row and the mobile drawer matched navigation or a label. Those tokens are not published.</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"geist":{"v":"Geist, system-ui, sans-serif","t":"fontFamily","s":"computed font-family on www.monodesk.com body, 1440px, 2026-11-19","d":"Marketing face. Variable Geist (woff2) is licensed and not shipped."},"geistApp":{"v":"Geist, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif","t":"fontFamily","s":"computed font-family on app.monodesk.com/login heading, 2026-11-19","d":"App face. Same Geist, longer system fallback stack."},"geistMono":{"v":"\"Geist Mono\", ui-monospace, monospace","t":"fontFamily","s":"@font-face Geist Mono on www.monodesk.com/_astro/geist-mono-latin-wght-normal, 2026-11-19","d":"Declared on the marketing site. Not used as body text."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed font-weight on marketing body"},"medium":{"v":500,"t":"fontWeight","s":"computed font-weight on plan CTA and nav links"},"semibold":{"v":600,"t":"fontWeight","s":"computed font-weight on pricing h1 and Create account link"},"bold":{"v":700,"t":"fontWeight","s":"computed font-weight on the $0 price"}},"size":{"badge":{"v":"10px","t":"dimension","s":"computed font-size on MOST POPULAR badge"},"plan":{"v":"13px","t":"dimension","s":"computed font-size on pricing Get started"},"nav":{"v":"14px","t":"dimension","s":"computed font-size on header Log in"},"body":{"v":"16px","t":"dimension","s":"computed font-size on marketing body"},"appHeading":{"v":"22px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: computed font-size on Login to your account"},"price":{"v":"32px","t":"dimension","s":"computed font-size on $0"},"section":{"v":"36px","t":"dimension","s":"computed font-size on pricing h2 How pricing will work"},"hero":{"v":"72px","t":"dimension","s":"computed font-size on home h1 at 1440px"}}},"radius":{"field":{"v":"9px","t":"dimension","s":"computed border-radius on login email input"},"google":{"v":"7px","t":"dimension","s":"computed border-radius on Login with Google"},"login":{"v":"12px","t":"dimension","s":"computed border-radius on Login button"},"card":{"v":"16px","t":"dimension","s":"computed border-radius on login card and help card; also --radius-lg"},"xl":{"v":"20px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: declared --radius-xl on :root"},"2xl":{"v":"30px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: declared --radius-2xl on :root"},"pill":{"v":"100px","t":"dimension","s":"computed border-radius 100px on Get started free and search"}},"spacing":{"xs":{"v":"8px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: declared --spacing-xs"},"sm":{"v":"16px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: declared --spacing-sm"},"md":{"v":"24px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: declared --spacing-md"},"lg":{"v":"40px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: declared --spacing-lg"},"xl":{"v":"60px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: declared --spacing-xl"},"2xl":{"v":"80px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: declared --spacing-2xl"}},"layout":{"pageMax":{"v":"1320px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: declared --layout-page-max"},"centered":{"v":"1200px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: declared --layout-max-centered"},"insetSm":{"v":"24px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: declared --layout-inset-fluid-sm"}},"motion":{"duration":{"nav":{"v":"200ms","t":"duration","s":"computed transition-duration 0.2s on header nav links"},"menu":{"v":"150ms","t":"duration","s":"computed transition-duration 0.15s on header menu items"}},"easing":{"ease":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":"Derived: CSS ease keyword expanded to its control points. Computed timing-function on header links was the keyword ease."}}},"typography":{"hero":{"v":{"fontFamily":"{font.family.geist}","fontSize":"{font.size.hero}","fontWeight":"{font.weight.regular}","lineHeight":"1.05","letterSpacing":"0"},"t":"typography","s":"computed h1 on www.monodesk.com/ at 1440px (72px / 400 / Geist / #ffffff)"},"section":{"v":{"fontFamily":"{font.family.geist}","fontSize":"{font.size.section}","fontWeight":"{font.weight.semibold}","lineHeight":"1.2","letterSpacing":"0"},"t":"typography","s":"computed h2 on /pricing (36px / 600)"},"body":{"v":{"fontFamily":"{font.family.geist}","fontSize":"{font.size.body}","fontWeight":"{font.weight.regular}","lineHeight":"1.5","letterSpacing":"0"},"t":"typography","s":"computed body on www.monodesk.com (16px / 400 / Geist)"},"nav":{"v":{"fontFamily":"{font.family.geist}","fontSize":"{font.size.nav}","fontWeight":"{font.weight.medium}","lineHeight":"1.2","letterSpacing":"0"},"t":"typography","s":"computed header Log in link (14px / 500)"},"price":{"v":{"fontFamily":"{font.family.geist}","fontSize":"{font.size.price}","fontWeight":"{font.weight.bold}","lineHeight":"1.1","letterSpacing":"0"},"t":"typography","s":"computed $0 on /pricing (32px / 700 / #161616)"},"appHeading":{"v":{"fontFamily":"{font.family.geistApp}","fontSize":"{font.size.appHeading}","fontWeight":"{font.weight.medium}","lineHeight":"30px","letterSpacing":"-0.015px"},"t":"typography","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: computed Login to your account (22px / 500 / line-height 30px)"},"label":{"v":{"fontFamily":"{font.family.geistApp}","fontSize":"12px","fontWeight":"{font.weight.medium}","lineHeight":"20px","letterSpacing":"-0.015px"},"t":"typography","s":"computed Email label on the login form (12px / 500)"}},"component":{"button":{"primary":{"background":{"v":"#d1ff6e","t":"color","s":"computed background-color on Get started free pill"},"text":{"v":"#026232","t":"color","s":"computed color on Get started free pill"},"radius":{"v":"100px","t":"dimension","s":"computed border-radius 100px on Get started free"},"height":{"v":"40px","t":"dimension","s":"bounding box height of Get started free pill"}},"plan":{"background":{"v":"#d1ff6e","t":"color","s":"computed background-color on pricing Get started"},"text":{"v":"#026232","t":"color","s":"computed color on pricing Get started"},"hoverBackground":{"v":"#026232","t":"color","s":"computed background-color on pricing Get started :hover"},"hoverText":{"v":"#ffffff","t":"color","s":"computed color on pricing Get started :hover"},"radius":{"v":"100px","t":"dimension","s":"computed border-radius on pricing Get started"},"height":{"v":"37.5px","t":"dimension","s":"computed height of pricing Get started (raw/components-computed.json plan-cta-default)"}},"login":{"background":{"v":"#161616","t":"color","s":"computed background-color on Login button"},"text":{"v":"#ffffff","t":"color","s":"computed color on Login button"},"radius":{"v":"12px","t":"dimension","s":"computed border-radius on Login button"},"height":{"v":"40px","t":"dimension","s":"bounding box height of Login button"},"size":{"v":"13px","t":"dimension","s":"computed font-size 13.333px on Login button, rounded to 13px"}},"google":{"background":{"v":"#ffffff","t":"color","s":"computed background-color on Login with Google"},"hoverBackground":{"v":"#f6f6f6","t":"color","s":"computed background-color on Login with Google :hover"},"text":{"v":"#000000","t":"color","s":"computed color on Login with Google"},"radius":{"v":"7px","t":"dimension","s":"computed border-radius on Login with Google"},"height":{"v":"44px","t":"dimension","s":"bounding box height of Login with Google"},"border":{"v":"#e2e2e2","t":"color","s":"computed border-top-color rgb(226, 226, 226) on Login with Google"}}},"field":{"background":{"v":"#f8f8f8","t":"color","s":"computed background-color on login email input"},"text":{"v":"#161616","t":"color","s":"computed color on login email input"},"radius":{"v":"9px","t":"dimension","s":"computed border-radius on login email input"},"height":{"v":"44px","t":"dimension","s":"bounding box height of login email input"},"border":{"v":"#ebebeb","t":"color","s":"computed border-top-color rgb(235, 235, 235) on login email input"},"fontSize":{"v":"16px","t":"dimension","s":"computed font-size on login email input"}},"search":{"background":{"v":"#ffffff","t":"color","s":"computed background-color on help search"},"radius":{"v":"100px","t":"dimension","s":"computed border-radius on help search"},"height":{"v":"54px","t":"dimension","s":"bounding box height of help search"},"heightFocus":{"v":"54px","t":"dimension","s":"bounding box height of help search while focused"}},"card":{"login":{"background":{"v":"#ffffff","t":"color","s":"computed background-color on login card"},"radius":{"v":"16px","t":"dimension","s":"computed border-radius on login card"},"width":{"v":"450px","t":"dimension","s":"bounding box width of login card at 1440px"}},"help":{"background":{"v":"#ffffff","t":"color","s":"computed background-color on help category card"},"radius":{"v":"16px","t":"dimension","s":"computed border-radius on help category card"}}},"badge":{"background":{"v":"#026232","t":"color","s":"computed background-color on MOST POPULAR"},"text":{"v":"#ffffff","t":"color","s":"computed color on MOST POPULAR"},"radius":{"v":"100px","t":"dimension","s":"computed border-radius on MOST POPULAR"}}}},"light":{"background":{"page":{"v":"#1c64f5","t":"color","s":"computed page fill rgb(28, 100, 245) on www.monodesk.com; declared --brand-blue","d":"Marketing page wash."},"pageInk":{"v":"#212121","t":"color","s":"computed background-color rgb(33, 33, 33) on marketing body","d":"Body background under the blue wash. Header and footer sit on this."},"surface":{"v":"#ffffff","t":"color","s":"computed background-color on help cards and the login card"},"tint":{"v":"#eef2f5","t":"color","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: declared --surface-tint"},"canvas":{"v":"#dadee1","t":"color","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: declared --background on marketing :root"},"app":{"v":"#e5eaed","t":"color","s":"computed background-color rgb(229, 234, 237) on app.monodesk.com/login body"},"field":{"v":"#f8f8f8","t":"color","s":"computed background-color on login inputs"},"action":{"v":"#d1ff6e","t":"color","s":"declared --brand-highlighter; computed fill of Get started free"},"actionHover":{"v":"#026232","t":"color","s":"computed background-color on pricing Get started :hover; declared --brand-fun-green"},"inkButton":{"v":"#161616","t":"color","s":"computed background-color on the Login button"}},"text":{"onBlue":{"v":"#ffffff","t":"color","s":"computed color on home h1"},"onBlueMuted":{"v":"rgba(255, 255, 255, 0.85)","t":"color","s":"computed color on header Log in at rest"},"primary":{"v":"#161616","t":"color","s":"declared --type; computed color on pricing prices and login labels"},"secondary":{"v":"rgba(22, 22, 22, 0.6)","t":"color","s":"declared --type-60; computed color on struck-through $19"},"light":{"v":"#e7e7e7","t":"color","s":"declared --type-light; computed color on marketing body"},"onAction":{"v":"#026232","t":"color","s":"computed color on Get started free"},"link":{"v":"#1c64f5","t":"color","s":"computed color on Create account and Forgot password?"},"muted":{"v":"#515151","t":"color","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: computed color rgb(81, 81, 81) on or continue with"}},"border":{"stroke":{"v":"#ebebeb","t":"color","s":"computed border-top-color on login inputs"},"google":{"v":"#e2e2e2","t":"color","s":"computed border-top-color on Login with Google"},"ghost":{"v":"rgba(255, 255, 255, 0.15)","t":"color","s":"computed background-color of the hero Log in pill"}},"brand":{"blue":{"v":"#1c64f5","t":"color","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: declared --brand-blue"},"highlighter":{"v":"#d1ff6e","t":"color","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: declared --brand-highlighter"},"funGreen":{"v":"#026232","t":"color","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: declared --brand-fun-green"},"orange":{"v":"#ff5b26","t":"color","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: declared --brand-orange"},"grey":{"v":"#94959a","t":"color","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: declared --brand-grey"},"almostBlack":{"v":"#272727","t":"color","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: declared --brand-almost-black"},"white":{"v":"#ffffff","t":"color","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: declared --brand-white"},"appOrange":{"v":"#f14e13","t":"color","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: computed custom property --brandOrange on app.monodesk.com/login"}}},"dark":{"background":{"page":{"v":"#15181c","t":"color","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: computed --background on app.monodesk.com/login documentElement. The login page itself stayed rgb(229, 234, 237) under prefers-color-scheme: dark."},"surface":{"v":"#1c2025","t":"color","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: computed --backgroundHover / --surfaceTint on the app documentElement"},"strong":{"v":"#25292e","t":"color","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: computed --backgroundStrong on the app documentElement"}},"text":{"primary":{"v":"#ffffff","t":"color","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: computed --type on the app documentElement"},"secondary":{"v":"#dbdfe2","t":"color","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: computed --type60 on the app documentElement"},"muted":{"v":"#c5cdd2","t":"color","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: computed --type40 on the app documentElement"}},"border":{"stroke":{"v":"#424a53","t":"color","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: computed --borderColor on the app documentElement"}},"brand":{"blue":{"v":"#1c64f5","t":"color","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: computed --blue on the app documentElement"},"highlighter":{"v":"#d1ff6e","t":"color","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: computed --highlighter on the app documentElement"},"orange":{"v":"#f14e13","t":"color","s":"Reconstruction: entered by hand at capture time; no file in raw/ holds this reading (raw/css-vars.json dumps are empty). Capture note: computed --brandOrange on the app documentElement"}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles, the painted default'], ['dark', 'dark roles, the app OS preference and nested .dark panels']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.breakpoint || {}, 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.ease || {}, 'ease.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v.join ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.animation || {}, 'animation.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  const sh = (t) => Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v;
+  let e = '';
+  for (const [n, t] of flat((TOK.core || {}).shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(sh(t))}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m || '<div><b>none measured</b></div>';
+})();
+
+(function motion() {
+  const g = TOK.core.motion || {};
+  let m = '';
+  for (const [n, t] of flat(g.duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(g.easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  const tr = Object.keys(g.transition || {}).length, an = Object.keys(g.animation || {}).length;
+  if (tr || an) m += `<div><b>measured</b> <span>${tr} transition tokens, ${an} animation tokens (tokens.json, core.motion)</span></div>`;
+  const rm = (g._extensions || {}).reducedMotion;
+  if (rm) m += `<div><b>reduced motion</b> <span>${esc(rm.behaviour)} — ${esc(String(rm.removed))} removed, ${esc(String(rm.kept))} kept across ${esc(String(rm.pages))} pages</span></div>`;
+  $('#motion-out').innerHTML = m || '<div><b>no motion probe</b></div>';
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v)) * (String(resolveVal(t.v)).endsWith('rem') ? 16 : 1);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — MonoDesk</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — MonoDesk</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).leading || {}, 'font.leading.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+
+(function typ() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core || {}).typography || {}, 'typography.')) {
+    const v = t.v || {};
+    const fs = parseFloat(v.fontSize) || 14;
+    const mono = /mono/i.test(String(v.fontFamily));
+    const meta = [v.fontSize, v.lineHeight, 'w' + v.fontWeight, v.letterSpacing].filter(Boolean).join(' / ');
+    h += `<div class="tr"><span class="ts" style="font-family:${mono ? 'var(--sg-mono)' : 'var(--sg-sans)'};font-size:${Math.min(fs, 44)}px;font-weight:${esc(String(v.fontWeight || 400))};line-height:${esc(v.lineHeight || 'normal')}">${esc(n)} — MonoDesk 0123</span><span class="tv">${esc(meta)}</span></div>`;
+  }
+  $('#typ-out').innerHTML = h;
+})();
+</script>
+</body>
+</html>

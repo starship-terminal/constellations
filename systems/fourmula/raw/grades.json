@@ -1,0 +1,98 @@
+{
+ "F1": {
+  "grade": "meets",
+  "evidence": "Two real palettes captured: the app's declared Tailwind @theme ramp under appColor — a neutral base-100..base-900 set with 625/650/750 half-steps, two orange accents (accent-500/-600), success/error/warning families plus blue/red/gray and overlay-black utilities; the marketing site's five-step --fonts-10/20/30/50/64 alpha ink ramp is retained as the per-theme text.muted/dim/faint/hairlineInk and border roles, resolved in both paints."
+ },
+ "F2": {
+  "grade": "meets",
+  "evidence": "background.page/menu/counter/chip/aiButton/surface resolve in both marketing paints (light #fff/#020108-menu, dark #020108/#272727-menu) and the app's base-800/750 card+dialog fills are declared under component.app.* plus appColor.base-*."
+ },
+ "F3": {
+  "grade": "meets",
+  "evidence": "text.ink/muted/overlayLink + action.ink/inkInverse resolve per theme (#020108 ink and white inverse in light, swapped in dark; muted is the fonts-64 alpha); the app's dim-ink #b0b4ba, muted-ink #686a6e and format-item-ink #ff6b02 are measured under component.app.*."
+ },
+ "F4": {
+  "grade": "meets",
+  "evidence": "border.rule (#d7d7d6 / #2a2a30), border.hairline (the fonts-20 alpha per theme), border.toggleRing, border.iconRing and border.menuRing resolve in both paints; the app card's 1px #1a1a1a border is measured."
+ },
+ "F5": {
+  "grade": "meets",
+  "evidence": "Default+hover+pressed measured on the marketing CTAs (header-cta, step-cta, how-cta), account-link, menu-pill and the app controls (app-create-btn, app-signin-btn, auth-submit, pdp-start-bottom); selected paints measured on pdp-format-static and the opened FAQ/menu states."
+ },
+ "F6": {
+  "grade": "partly",
+  "evidence": "The app's @theme declares success #46fea5, error #ff173f and a warning family under appColor, but no error/success state paints on the signed-out surfaces - declarations captured, painted states absent rather than measured."
+ },
+ "F7": {
+  "grade": "meets",
+  "evidence": "Both marketing paints are complete parallel sets (24 light + 17 dark tokens, same roles, documented inverted class names); the app's dark-only layer is captured under core.appColor/component.app and documented as having no public light theme."
+ },
+ "F8": {
+  "grade": "meets",
+  "evidence": "font.size.marketing.* is the declared --_fonts---* fluid ramp, font.size.measured.* the painted px at 1440/390 (73.2px hero, 40.3px mobile), font.size.app.* the declared 12-52px app scale; families and tracking captured for both systems."
+ },
+ "F9": {
+  "grade": "missing",
+  "evidence": "Neither surface declares a spacing scale on one base unit - the Webflow marketing stylesheet has no spacing tokens and the app uses Tailwind utilities directly; spacing exists only as measured component geometry (component.*-pad entries)."
+ },
+ "F10": {
+  "grade": "meets",
+  "evidence": "radius.app.sm..7xl is the app's declared 4-40px ramp; marketing radii are measured (6.65px chips, 26.6px icon rings, 28px app cards/dialogs, 16px format cards, fluid ~1318px pill sentinel values)."
+ },
+ "F11": {
+  "grade": "meets",
+  "evidence": "component.marketing.* and component.app.* carry measured heights/widths for 78 components (92.5px header, 40px CTAs, 384px auth card, 280x60 format cards, mobile 104px header)."
+ },
+ "F12": {
+  "grade": "missing",
+  "evidence": "No 3-5 level elevation scale exists: the marketing site is flat hairlines, the app card uses a 1px border + 24px backdrop blur rather than a shadow ramp; only the cookie modal's one-off shadow was measured."
+ },
+ "F13": {
+  "grade": "meets",
+  "evidence": "The two-pass motion probe found 337 moving elements; core.motion carries the measured 0.2s ease marketing control, the app's declared 150ms cubic-bezier(.4,0,.2,1) and 0.2s transitions, plus the honest reduced-motion finding (behaviour: ignores - nothing honours prefers-reduced-motion)."
+ },
+ "F14": {
+  "grade": "partly",
+  "evidence": "Widths 1440/390 and container.header-width/legal-width are captured and the mobile breakpoints were exercised; grid columns and z-index layers are not declared tokens on either surface - recorded as measured geometry only."
+ },
+ "C1": {
+  "grade": "partly",
+  "evidence": "78 components cover 12 of 19 checklist items: button (header-cta/step-cta/how-cta, cookie-accept/save, auth-submit, pdp-upload/shopify-cta/start-bottom), icon button (theme-toggle, account-link, app-menu-btn), link (nav-overlay/footer/legal links, pdp-dash-link), text field (auth email/password), checkbox (cookie-check), radio (pdp-format group), switch (theme-toggle), menu (menu-pill + nav-overlay), dialog (cookie-settings, pdp-reco/what dialogs), card (auth-card, format items), list row (faq-item), badge (prc-counter, hero chips, pdp-signedin-chip). Missing: text area, select, tabs, tooltip, toast, table, avatar - none paints signed out."
+ },
+ "C2": {
+  "grade": "meets",
+  "evidence": "176 states across 78 components (one — the auth reset view — is recorded as uncaptured rather than measured): real hover, focus-visible, focused and typed-then-cleared filled fields, DevTools-forced pressed, opened states (menu overlay, FAQ, consent manager, both PDP dialogs), selected (format radio) and disabled-look (format-video 0.5 opacity)."
+ },
+ "C3": {
+  "grade": "partly",
+  "evidence": "Keyboard focus was delivered to 19 interactive components and the state captured; none paints a visible focus change - no outline ring, shadow or border delta (an honest absence recorded in components.md). The consent buttons' #146ef5 paint is their hover state; no focus state was captured on them, so no focus treatment is claimed there."
+ },
+ "C4": {
+  "grade": "meets",
+  "evidence": "component.marketing.*/component.app.* tokenize the measured geometry, fills, inks, borders and radii per component, each with $extensions.source."
+ },
+ "C5": {
+  "grade": "partly",
+  "evidence": "Local keyboard/UI behaviour is documented per component (Escape dismisses dialogs, accordion opens, switchers swap auth views, Enter-safe guards never submit); screen-reader output and submission behaviour are absent because nothing was submitted and AT was not driven."
+ },
+ "P1": {
+  "grade": "meets",
+  "evidence": "patterns.md covers the marketing chrome and inverted theme, home, legal, app shell, start, auth card, create-PDP, mobile and motion/focus, each tied to tokens.json values and crops."
+ },
+ "V1": {
+  "grade": "meets",
+  "evidence": "The README's Do and don't lists 9 evidenced rules (invert with the theme, spend orange only in the app, keep the two systems apart, name the paint not the class, honest pill radii, no signed-in styling, no fabricated form outcomes, declared-vs-measured type, no brand copying), each linked to a crop."
+ },
+ "V2": {
+  "grade": "missing",
+  "evidence": "Marketing and legal copy is visible in the screenshots but no tone/capitalisation/vocabulary formula was distilled - recorded honestly as unwritten rather than fabricated."
+ },
+ "A1": {
+  "grade": "partly",
+  "evidence": "Fonts named with real stacks ('Sf Pro Display', Arial on marketing; the app's local sfProFont next/font build) with the proprietary-face caveat; no standalone SVG icon set was lifted - the layoutGaps entry records it."
+ },
+ "K1": {
+  "grade": "meets",
+  "evidence": "The README states the surfaces, both themes and the inverted class names, the read method, the boundaries (auth wall, uploads, Shopify, generation, consent), the two-token-layer warning and the distrust list."
+ }
+}

@@ -1,0 +1,258 @@
+{
+  "captured": "2026-11-19",
+  "harness": "T3 preview browser, read-only evaluate. Screenshots unavailable: The browser is not producing screenshot frames.",
+  "semantic": {
+    "--backgroundAccent": "#276ef1",
+    "--backgroundAccentLight": "#eff4fe",
+    "--backgroundAlwaysDark": "#000000",
+    "--backgroundAlwaysLight": "#ffffff",
+    "--backgroundInversePrimary": "#000000",
+    "--backgroundInverseSecondary": "#282828",
+    "--backgroundNegative": "#de1135",
+    "--backgroundNegativeLight": "#fff0ee",
+    "--backgroundOverlay": "rgba(0, 0, 0, .15)",
+    "--backgroundOverlayArt": "rgba(0, 0, 0, 0)",
+    "--backgroundOverlayDark": "rgba(0, 0, 0, .5)",
+    "--backgroundOverlayElevation": "rgba(255, 255, 255, 0)",
+    "--backgroundOverlayLight": "rgba(0, 0, 0, .8)",
+    "--backgroundPositive": "#0e8345",
+    "--backgroundPositiveLight": "#eaf6ed",
+    "--backgroundPrimary": "#ffffff",
+    "--backgroundSecondary": "#f3f3f3",
+    "--backgroundStateDisabled": "#f3f3f3",
+    "--backgroundTertiary": "#e8e8e8",
+    "--backgroundWarning": "#f6bc2f",
+    "--backgroundWarningLight": "#fdf2dc",
+    "--borderAccent": "#276ef1",
+    "--borderAccentLight": "#dee9fe",
+    "--borderAccessible": "#868686",
+    "--borderInverseOpaque": "#4b4b4b",
+    "--borderInverseSelected": "#ffffff",
+    "--borderInverseTransparent": "rgba(255, 255, 255, .2)",
+    "--borderNegative": "#de1135",
+    "--borderNegativeLight": "#ffe1de",
+    "--borderOpaque": "#f3f3f3",
+    "--borderPositive": "#0e8345",
+    "--borderPositiveLight": "#d3efda",
+    "--borderSelected": "#000000",
+    "--borderStateDisabled": "#f3f3f3",
+    "--borderTransparent": "rgba(0, 0, 0, .08)",
+    "--borderWarning": "#9f6402",
+    "--borderWarningLight": "#fbe5b6",
+    "--brandBackgroundDisabled": "#eff4fe",
+    "--brandBackgroundGradient": "linear-gradient( 90deg, #1304aa 0%, #0249c5 50%, #246af9 100% )",
+    "--brandBackgroundPrimary": "#276ef1",
+    "--brandBackgroundSecondary": "#eff4fe",
+    "--brandBackgroundTertiary": "#ffffff",
+    "--brandBorderAccessible": "#276ef1",
+    "--brandBorderSubtle": "#dee9fe",
+    "--brandContentDisabled": "#a9c9ff",
+    "--brandContentOnGradient": "#ffffff",
+    "--brandContentOnPrimary": "#ffffff",
+    "--brandContentOnSecondary": "#175bcc",
+    "--brandContentOnTertiary": "#000000",
+    "--brandContentPrimary": "#276ef1",
+    "--contentAccent": "#276ef1",
+    "--contentInversePrimary": "#ffffff",
+    "--contentInverseSecondary": "#dddddd",
+    "--contentInverseTertiary": "#a6a6a6",
+    "--contentNegative": "#de1135",
+    "--contentOnColor": "#ffffff",
+    "--contentOnColorInverse": "#000000",
+    "--contentPositive": "#0e8345",
+    "--contentPrimary": "#000000",
+    "--contentSecondary": "#4b4b4b",
+    "--contentStateDisabled": "#a6a6a6",
+    "--contentTertiary": "#5e5e5e",
+    "--contentWarning": "#9f6402"
+  },
+  "ramps": {
+    "black": "#000000",
+    "white": "#ffffff",
+    "gray50": "#f3f3f3",
+    "gray100": "#e8e8e8",
+    "gray200": "#dddddd",
+    "gray300": "#bbbbbb",
+    "gray400": "#a6a6a6",
+    "gray500": "#868686",
+    "gray600": "#727272",
+    "gray700": "#5e5e5e",
+    "gray800": "#4b4b4b",
+    "gray900": "#282828",
+    "blue50": "#eff4fe",
+    "blue100": "#dee9fe",
+    "blue200": "#cddeff",
+    "blue300": "#a9c9ff",
+    "blue400": "#6daafb",
+    "blue500": "#068bee",
+    "blue600": "#276ef1",
+    "blue700": "#175bcc",
+    "blue800": "#1948a3",
+    "blue900": "#002661",
+    "green50": "#eaf6ed",
+    "green100": "#d3efda",
+    "green200": "#b1eac2",
+    "green300": "#7fd99a",
+    "green400": "#06c167",
+    "green500": "#009a51",
+    "green600": "#0e8345",
+    "green700": "#166c3b",
+    "green800": "#0d572d",
+    "green900": "#002f14",
+    "red50": "#fff0ee",
+    "red100": "#ffe1de",
+    "red200": "#ffd2cd",
+    "red300": "#ffb2ab",
+    "red400": "#fc7f79",
+    "red500": "#f83446",
+    "red600": "#de1135",
+    "red700": "#bb032a",
+    "red800": "#950f22",
+    "red900": "#520810"
+  },
+  "darkRampNamesPresent": {
+    "gray50Dark": "#161616",
+    "gray100Dark": "#292929",
+    "gray200Dark": "#383838",
+    "gray300Dark": "#484848",
+    "gray400Dark": "#5d5d5d",
+    "gray500Dark": "#717171",
+    "gray600Dark": "#8c8c8c",
+    "gray700Dark": "#ababab",
+    "gray800Dark": "#c4c4c4",
+    "gray900Dark": "#dedede",
+    "blue50Dark": "#09152c",
+    "blue600Dark": "#5e8bdb",
+    "blue700Dark": "#93b4ee",
+    "green600Dark": "#5c9d70",
+    "red600Dark": "#de5b5d"
+  },
+  "computed": {
+    "viewport": {
+      "innerWidth": 1169,
+      "innerHeight": 731,
+      "devicePixelRatio": 2,
+      "visualViewport": {
+        "width": 1169,
+        "height": 731,
+        "scale": 1
+      },
+      "note": "Requested 1440 and 390 were not applied. The preview viewport was fill and stayed 1169x731. No screenshot frames were produced."
+    },
+    "body": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(17, 17, 17)",
+      "fontFamily": "UberMoveText, UberMove, system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "fontSize": "16px",
+      "colorScheme": "light",
+      "dataTheme": "light",
+      "class": "eats-web text-contentPrimary bg-backgroundPrimary"
+    },
+    "header": {
+      "height": "64px",
+      "padding": "0px 64px",
+      "background": "transparent"
+    },
+    "h1": {
+      "text": "Order delivery near you",
+      "fontFamily": "UberMove",
+      "fontSize": "52px",
+      "fontWeight": "700",
+      "lineHeight": "64px",
+      "color": "rgb(17, 17, 17)",
+      "marginBottom": "24px"
+    },
+    "h2Category": {
+      "fontFamily": "UberMove",
+      "fontSize": "32px",
+      "fontWeight": "700",
+      "lineHeight": "40px",
+      "color": "rgb(17, 17, 17)"
+    },
+    "pillSecondary": {
+      "examples": [
+        "Get a ride",
+        "Log in",
+        "Find restaurants"
+      ],
+      "background": "rgb(246, 246, 246)",
+      "color": "rgb(17, 17, 17)",
+      "fontSize": "14px or 16px",
+      "fontWeight": "500",
+      "radius": "9999px or 500px",
+      "padding": "10px 12px (36px tall) or 14px 16px (48px tall)"
+    },
+    "pillPrimary": {
+      "examples": [
+        "Sign up",
+        "Search"
+      ],
+      "background": "rgb(17, 17, 17)",
+      "color": "rgb(252, 252, 252)",
+      "fontWeight": "500",
+      "radius": "500px or 50%"
+    },
+    "searchShell": {
+      "width": "540px",
+      "height": "48px",
+      "background": "rgb(255, 255, 255)",
+      "radius": "32px",
+      "border": "3px solid rgba(0, 0, 0, 0)"
+    },
+    "searchInput": {
+      "placeholder": "Enter your address to find local favorites",
+      "fontFamily": "Arial",
+      "fontSize": "16px",
+      "color": "rgb(17, 17, 17)",
+      "background": "rgb(255, 255, 255)",
+      "role": "combobox"
+    },
+    "focusVisible": {
+      "outline": "rgb(17, 117, 221) solid 2px",
+      "outlineOffset": "0px",
+      "element": "Log in link"
+    },
+    "ctaTransition": {
+      "property": "background-color",
+      "duration": "0.2s",
+      "easing": "ease-out",
+      "element": "Find restaurants"
+    },
+    "footer": {
+      "background": "rgb(255, 255, 255)",
+      "padding": "64px 64px 48px",
+      "height": "512px"
+    },
+    "promoLink": {
+      "text": "$0 Delivery Fee with Uber One",
+      "color": "rgb(252, 252, 252)",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "note": "Parent fill was not isolated. Link itself is transparent."
+    },
+    "locationHero": {
+      "background": "rgb(250, 146, 105)",
+      "findFood": {
+        "background": "rgb(17, 17, 17)",
+        "color": "rgb(252, 252, 252)",
+        "radius": "8px",
+        "padding": "12px 16px",
+        "height": "56px",
+        "fontSize": "18px",
+        "fontWeight": "500"
+      },
+      "addressShell": {
+        "background": "rgb(255, 255, 255)",
+        "radius": "8px",
+        "height": "56px",
+        "insetShadow": "rgb(243, 243, 243) 0px -1px 0px 0px inset"
+      }
+    },
+    "pages": {
+      "home": "https://www.ubereats.com/",
+      "promo": "https://www.ubereats.com/promo",
+      "location": "https://www.ubereats.com/location",
+      "near-me": "https://www.ubereats.com/near-me"
+    }
+  }
+}

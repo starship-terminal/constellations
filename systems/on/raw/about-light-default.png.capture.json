@@ -1,0 +1,18 @@
+{
+  "href": "https://www.on.com/en-sg/explore/about-on",
+  "title": "About On | On Singapore",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 2,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "name": "about-light-default",
+  "png": {
+    "w": 2880,
+    "h": 1800
+  },
+  "capturedAt": "2026-11-18T17:05:31.074Z"
+}

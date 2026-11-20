@@ -1,0 +1,43 @@
+file	inferred_name	hash	sizes	viewBox	style	seen_on	place	text_or_label
+star-on-github-47-961.svg	star-on-github-47-961	5bcee020	16x16 17x17 20x20	0 0 16 16	fill	home; desktop; cli; ai; docs; docs-desktop; docs-cli; jobs; blog; blog-post; download; about; search dialog; mobile; light	a SocialIcon_socialIcon; button Button_iconWrapper; a CLIHero_starButtonIcon	Star on GitHub 47,961 / Star 38,722 / Edit on GitHub
+share-on-twitter.svg	share-on-twitter	d7be6201	16x13 17x14 20x20 28x23	0 0 16 13	fill	home; desktop; cli; ai; docs; docs-desktop; docs-cli; jobs; blog; blog-post; download; about; search dialog; mobile; light	a SocialIcon_socialIcon; button Button_iconWrapper; div CompanyLogo_twitter	Share on Twitter / Follow @httpie / Twitter
+discord.svg	discord	d813e16b	16x19 17x20	0 0 16 19	fill	home; desktop; cli; ai; docs; docs-desktop; docs-cli; jobs; blog; blog-post; download; about; search dialog; mobile; light	a SocialIcon_socialIcon; button Button_iconWrapper	Discord
+socialicon-3df105f6.svg	socialicon	3df105f6	16x16	0 0 16 16	fill	home; desktop; cli; docs; docs-desktop; docs-cli; jobs; blog; blog-post; download; about; search dialog; mobile; light	a SocialIcon_socialIcon	
+socialicon-6d0eaa0e.svg	socialicon	6d0eaa0e	16x18	0 0 448 512	fill	home; desktop; cli; docs; docs-desktop; docs-cli; jobs; blog; blog-post; download; about; search dialog; mobile; light	a SocialIcon_socialIcon	
+linkedin.svg	linkedin	216b849b	16x16 20x20 26x26	0 0 16 16	fill	home; desktop; cli; download; about; mobile; light	div CompanyLogo_linkedin; a AboutTeam_socialIcon	
+show-more-love.svg	show-more-love	643edbec	16x14	0 0 16 14	fill	home; desktop; cli; jobs; download; mobile; light	button Button_iconWrapper	Show more love / See more
+icon-0070315b.svg	icon	0070315b	10x13 14x18	0 0 17 22	fill	home; cli; docs-desktop; docs-cli; mobile; light	div CopyButton_icon	
+get-the-mac-app.svg	get-the-mac-app	2051f325	14x17 17x21 23x29	0 0 16 20	fill	home; desktop; cli; download; mobile; light	div CompanyLogo_apple; button Button_iconWrapper	Get the Mac App / Download for Mac (Intel) / Download for Mac (Apple Silicon)
+facebook.svg	facebook	437138ba	18x18 30x30	0 0 16 16	fill	home; desktop; cli; download; mobile; light	div CompanyLogo_facebook	
+google.svg	google	954c02b4	17x17 28x28	0 0 16 16	fill	home; desktop; cli; download; mobile; light	div CompanyLogo_google	
+amazon.svg	amazon	a66255e4	22x20 36x34	0 0 16 15	fill	home; desktop; cli; download; mobile; light	div CompanyLogo_amazon	
+brew.svg	brew	a8650eeb	12x10 12x22 17x14	0 0 12 10	fill	home; cli; docs-cli; blog-post; mobile; light	span InstallationSelect_icon; div DocsSelect_icon; button Button_iconWrapper	brew / Version: 3.2.4 2024-11-01 (latest) / Download
+spotify.svg	spotify	50968f93	30x30	0 0 16 16	fill	home; desktop; cli; download; light	div CompanyLogo_spotify	
+collapse.svg	collapse	0602c867	12x12	0 0 12 12	fill	app; app method menu	button Icon_icon	Collapse
+collection.svg	collection	0adf1a49	12x12	0 0 12 12	stroke	app; app method menu	button Icon_icon	Collection
+icon-1d0b1e6a.svg	icon	1d0b1e6a	16x16	0 0 16 16	stroke	app; app method menu	button Icon_icon	
+icon-302559ca.svg	icon	302559ca	16x16	0 0 16 16	stroke	app; app method menu	button Icon_icon	
+avatar.svg	avatar	43b39087	24x24	0 0 24 24	fill	app; app method menu	button SyncingAvatarTrigger_avatar	
+icon-52db8db9.svg	icon	52db8db9	48x48	0 0 48 48	stroke	app; app method menu	div Icon_icon	
+get-5bbeb224.svg	get	5bbeb224	12x12	0 0 12 12	fill	app; app method menu	button Icon_icon	GET
+environments.svg	environments	5cc94571	16x16	0 0 16 16	fill	app; app method menu	button EnvironmentIcon_icon	Environments
+icon-6344bfb8.svg	icon	6344bfb8	16x16	0 0 16 16	stroke	app; app method menu	button Icon_icon	
+icon-6409cde8.svg	icon	6409cde8	24x24	0 0 24 24	fill	app; app method menu	button Icon_icon	
+incognito-space.svg	incognito-space	65e0ba07	16x16	0 0 16 16	fill	app; app method menu	button Icon_icon	Incognito space
+loader.svg	loader	66dd29bf	24x24	0 0 24 24	fill	app; app method menu	button SyncingAvatarTrigger_loader	
+icon-7005be5a.svg	icon	7005be5a	16x16	0 0 16 16	fill	app; app method menu	span Icon_icon	
+close-tab.svg	close-tab	73dfc9ad	12x12	0 0 12 12	stroke	app; app method menu	button Icon_icon	Close tab
+icon-78f95929.svg	icon	78f95929	16x16	0 0 16 16	fill	app; app method menu	button Icon_icon	
+icon-8d193ae6.svg	icon	8d193ae6	16x16	0 0 16 16	fill	app; app method menu	button Icon_icon	
+logo.svg	logo	c030e260	30x32	0 0 22 24	fill	app; app method menu	span Layout_logo	
+icon-eafe1641.svg	icon	eafe1641	24x24	0 0 24 24	fill	app; app method menu	button Icon_icon	
+icon-fb9960e8.svg	icon	fb9960e8	24x24	0 0 24 24	fill	app; app method menu	button Icon_icon	
+closeicon.svg	closeicon	1b996fde	36x36	0 0 12 12	fill	mobile	div Navigation_closeIcon	
+footer-icon.svg	footer-icon	27da468b	16x16	0 0 16 16	fill	ai	a AIFooter_footer-icon	Read HTTPie AI 1.0 announcement
+download-for-windows.svg	download-for-windows	3222e13a	16x16	0 0 16 16	fill	download	button Button_iconWrapper	Download for Windows
+get-3a8487e9.svg	get	3a8487e9	16x16	0 0 16 16	stroke	app method menu	button Icon_icon	GET
+featuredicon.svg	featuredicon	5d2d2d08	18x10	0 0 16 9	fill	mobile	div Navigation_featuredIcon	
+download-for-linux.svg	download-for-linux	6ea3ec35	16x18	0 0 16 18	fill	download	button Button_iconWrapper	Download for Linux
+icon-9809fee7.svg	icon	9809fee7	26x26	0 0 24 24	stroke	app	div Icon_icon	
+custom.svg	custom	b9977661	16x16	0 0 16 16	stroke	app method menu	li Icon_icon	Custom
+httpie-ai.svg	httpie-ai	ea9c7669	24x24	0 0 24 24	fill	app	span Icon_icon	HTTPie AI

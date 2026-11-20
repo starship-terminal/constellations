@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matter style guide</title>
+<meta name="description" content="Matter design tokens and the public signed-out surface's components, rendered from tokens.json.">
+<style>
+:root {
+  --color-black: #0d0d0d;
+  --color-dark-2: #1e1f22;
+  --color-dark-3: #2f3034;
+  --color-gray: #969698;
+  --color-gray-light: #dfdfdf;
+  --color-light-2: #f4f4f4;
+  --color-light-3: #f8f8f8;
+  --color-white: #ffffff;
+  --color-blurple: #6d7eec;
+  --color-content-200: rgba(0, 0, 0, 0.53);
+  --color-content-300: rgba(0, 0, 0, 0.75);
+  --color-content-400: rgba(0, 0, 0, 0.95);
+  --font-family-system: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  --font-family-camphor: MR-Camphor, -apple-system, "system-ui", "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --radius-s: 8px;
+  --radius-m: 30px;
+  --radius-pill: 100px;
+  --spacing-hero: 121px;
+  --spacing-hero-text: 39px;
+  --spacing-xl: 88px;
+  --spacing-xxl: 120px;
+  --spacing-margin-s: 100px;
+  --spacing-margin-m: 300px;
+  --layout-column: 40px;
+  --layout-bp-mobile: 428px;
+  --layout-bp-tablet: 600px;
+  --layout-bp-laptop-small: 1280px;
+  --layout-bp-laptop-medium: 1440px;
+  --layout-phone-width: 280px;
+  --layout-logos-width: 600px;
+  --layout-col-13: 650px;
+  --page: #ffffff;
+  --surface: #f4f4f4;
+  --text: rgba(0, 0, 0, 0.95);
+  --muted: #969698;
+  --accent: #6d7eec;
+  --border: #dfdfdf;
+  --sg-sans: "MR-Camphor", -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --page: #0d0d0d;
+  --surface: #1e1f22;
+  --text: #ffffff;
+  --muted: #969698;
+  --accent: #6d7eec;
+  --border: #2f3034;
+  --component-button-radius: 100px;
+  --component-button-font-size: 14px;
+  --component-header-height: 62px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #fff); background: var(--page, #0d0d0d); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 44px/1.05 var(--sg-sans); margin: 0 0 4px; }
+h2.sh { font: 700 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted, #969698); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border, #2f3034); }
+.lead { max-width: 66ch; color: var(--text, #fff); opacity: .85; }
+.note { font-size: 13px; color: var(--muted, #969698); max-width: 66ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, #969698); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, #2f3034); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--muted, #969698); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--muted, #969698); }
+.mock { border: 1px solid var(--border, #2f3034); overflow: hidden; background: var(--page, #0d0d0d); }
+.navbar { display: flex; align-items: center; gap: 22px; height: 62px; padding: 0 24px; font-size: 14px; color: var(--muted, #969698); }
+.navbar .wm { color: var(--text, #fff); font-weight: 700; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 18px; font-size: 14px; font-weight: 500; border-radius: 100px; border: 1px solid transparent; color: #fff; background: var(--accent, #6d7eec); }
+.btn.ghost { background: transparent; color: var(--muted, #969698); }
+.hero { padding: 72px 40px 48px; text-align: center; }
+.hero h2 { margin: 0; font: 700 48px/1.05 var(--sg-sans); }
+.hero p { max-width: 62ch; margin: 16px auto 24px; color: var(--muted, #969698); }
+.chip { display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: 100px; background: var(--surface, #1e1f22); color: var(--text, #fff); font-size: 13px; }
+.card { background: #fff; color: #111; border-radius: 16px; padding: 28px; max-width: 420px; margin: 0 auto; text-align: center; }
+.card h3 { margin: 8px 0 4px; }
+.card .sub { color: #666; font-size: 14px; margin-bottom: 16px; }
+.card .row { display: flex; align-items: center; justify-content: center; height: 44px; border: 1px solid #e6e6e6; border-radius: 12px; margin: 8px 0; font-size: 14px; color: #111; }
+.field { height: 44px; border: 1px solid #e6e6e6; border-radius: 12px; padding: 0 12px; display: flex; align-items: center; font-size: 14px; color: #888; text-align: left; }
+.tr { display: flex; justify-content: space-between; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border, #2f3034); }
+.tr .tv { font-size: 12px; color: var(--muted, #969698); font-family: var(--sg-mono); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border, #2f3034); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Matter style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>. The boxed mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Matter, measured</h2>
+  <p class="lead">getmatter.com paints one near-black marketing theme: page <code>#0d0d0d</code>, white Camphor display, gray nav text <code>#969698</code>, and a blurple pill <code>#6d7eec</code> at a 100px radius. The public article on words.getmatter.com is a cream Substack page. The web reader at web.getmatter.com is a white sign-in card. The reader itself sits behind sign-in.</p>
+  <p class="note">Read signed out in headless Chromium at 1440 x 900 and 390 x 844. Consent overlays were hidden, never clicked. Nothing was signed into, purchased or submitted.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The marketing header is a 62px bar: wordmark, Overview, Developer, Words That Matter, X, a Sign In link, and the blurple Get Matter pill.</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm">M Matter</span><span>Overview</span><span>Developer</span><span>Words That Matter</span><span class="sp"></span><span class="btn ghost">Sign In</span><span class="btn">Get Matter</span></div>
+    <div class="hero"><span class="chip">Welcome Pocket Readers</span><h2>Save. Read. Grow.</h2><p>Matter is the modern read-later app for iPhone, iPad, and web.</p><span class="btn">Get Matter</span></div>
+  </div>
+
+  <h2 class="sh">The sign-in card</h2>
+  <p class="lead">web.getmatter.com is a white card: Continue with Google, Continue with Apple, an email field, and an arrow that was never pressed.</p>
+  <div class="mock" style="padding:28px;background:#fff">
+    <div class="card"><strong>M</strong><h3>Welcome to Matter</h3><div class="sub">A reading app for the modern internet</div><div class="row">Continue with Google</div><div class="row">Continue with Apple</div><div class="field">Email address</div></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+</main>
+<script>
+const TOK = {"core":{"color":{"black":{"v":"#0d0d0d","t":"color","s":"css-var --mr-color-black (light)"},"dark-2":{"v":"#1e1f22","t":"color","s":"css-var --mr-color-dark-2 (light)"},"dark-3":{"v":"#2f3034","t":"color","s":"css-var --mr-color-dark-3 (light)"},"gray":{"v":"#969698","t":"color","s":"css-var --mr-color-gray (light)"},"gray-light":{"v":"#dfdfdf","t":"color","s":"css-var --mr-color-gray-light (light)"},"light-2":{"v":"#f4f4f4","t":"color","s":"css-var --mr-color-light-2 (light)"},"light-3":{"v":"#f8f8f8","t":"color","s":"css-var --mr-color-light-3 (light)"},"white":{"v":"#ffffff","t":"color","s":"css-var --mr-color-white (light)"},"blurple":{"v":"#6d7eec","t":"color","s":"css-var --mr-color-blurple (light)"},"content-200":{"v":"rgba(0, 0, 0, 0.53)","t":"color","s":"css-var --mr-content-200 (light)"},"content-300":{"v":"rgba(0, 0, 0, 0.75)","t":"color","s":"css-var --mr-content-300 (light)"},"content-400":{"v":"rgba(0, 0, 0, 0.95)","t":"color","s":"css-var --mr-content-400 (light)"}},"font":{"family":{"system":{"v":"-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\"","t":"fontFamily","s":"css-var --mr-font-system (light)"},"camphor":{"v":"MR-Camphor, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"","t":"fontFamily","s":"computed font-family on the marketing h1, raw/components-computed.json hero-h1 (MR-Camphor, loaded from the site)"}}},"radius":{"s":{"v":"8px","t":"dimension","s":"css-var --mr-border-radius-s (light)"},"m":{"v":"30px","t":"dimension","s":"css-var --mr-border-radius-m (light)"},"pill":{"v":"100px","t":"dimension","s":"computed border-radius on GetMatterCTAButton (100px pill)"}},"spacing":{"hero":{"v":"121px","t":"dimension","s":"css-var --mr-spacer-hero (light)"},"hero-text":{"v":"39px","t":"dimension","s":"css-var --mr-spacer-hero-text (light)"},"xl":{"v":"88px","t":"dimension","s":"css-var --mr-spacer-xl (light)"},"xxl":{"v":"120px","t":"dimension","s":"css-var --mr-spacer-xxl (light)"},"margin-s":{"v":"100px","t":"dimension","s":"css-var --mr-horizontal-margin-s (light)"},"margin-m":{"v":"300px","t":"dimension","s":"css-var --mr-horizontal-margin-m (light)"}},"layout":{"column":{"v":"40px","t":"dimension","s":"css-var --mr-column (light)"},"bp-mobile":{"v":"428px","t":"dimension","s":"css-var --mr-bp-mobile (light)"},"bp-tablet":{"v":"600px","t":"dimension","s":"css-var --mr-bp-tablet-portrait (light)"},"bp-laptop-small":{"v":"1280px","t":"dimension","s":"css-var --mr-bp-laptop-small (light)"},"bp-laptop-medium":{"v":"1440px","t":"dimension","s":"css-var --mr-bp-laptop-medium (light)"},"phone-width":{"v":"280px","t":"dimension","s":"css-var --mr-phone-width (light)"},"logos-width":{"v":"600px","t":"dimension","s":"css-var --mr-logos-width (light)"},"col-13":{"v":"650px","t":"dimension","s":"css-var --mr-col-13 (light)"}}},"light":{"page":{"v":"#ffffff","t":"color","s":"css-var --mr-color-white (light)"},"surface":{"v":"#f4f4f4","t":"color","s":"css-var --mr-color-light-2 (light)"},"text":{"v":"rgba(0, 0, 0, 0.95)","t":"color","s":"css-var --mr-content-400 (light)"},"muted":{"v":"#969698","t":"color","s":"css-var --mr-color-gray (light)"},"accent":{"v":"#6d7eec","t":"color","s":"css-var --mr-color-blurple (light)"},"border":{"v":"#dfdfdf","t":"color","s":"css-var --mr-color-gray-light (light)"}},"dark":{"page":{"v":"#0d0d0d","t":"color","s":"css-var --mr-color-black (dark)"},"surface":{"v":"#1e1f22","t":"color","s":"css-var --mr-color-dark-2 (dark)"},"text":{"v":"#ffffff","t":"color","s":"css-var --mr-color-white (dark)"},"muted":{"v":"#969698","t":"color","s":"css-var --mr-color-gray (dark)"},"accent":{"v":"#6d7eec","t":"color","s":"css-var --mr-color-blurple (dark)"},"border":{"v":"#2f3034","t":"color","s":"css-var --mr-color-dark-3 (dark)"},"component":{"button":{"radius":{"v":"100px","t":"dimension","s":"computed border-radius on the header Get Matter pill"},"font-size":{"v":"14px","t":"dimension","s":"computed font-size on the header Get Matter pill"}},"header":{"height":{"v":"62px","t":"dimension","s":"measured header height on getmatter.com at 1440"}}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+function flat(node, prefix) {
+  const out = [];
+  if (!node || typeof node !== 'object') return out;
+  for (const [k, v] of Object.entries(node)) {
+    if (k.startsWith('$')) continue;
+    const p = prefix ? prefix + k : k;
+    if (v && typeof v === 'object' && 'v' in v) out.push([p, v]);
+    else out.push(...flat(v, p + '.'));
+  }
+  return out;
+}
+function swatch(name, t) {
+  const color = typeof t.v === 'string' ? t.v : '#000';
+  return `<div class="sw"><span class="dot"><i style="background:${esc(color)}"></i></span><span><span class="nm">${esc(name)}</span><br><span class="vl">${esc(color)}</span></span></div>`;
+}
+function paint() {
+  if (!TOK) return;
+  const colors = flat(TOK.core && TOK.core.color, 'color.');
+  const roles = [...flat(TOK.light, ''), ...flat(TOK.dark, 'dark.')].filter(([, t]) => t.t === 'color');
+  const box = $('#roles-out');
+  if (box) {
+    box.innerHTML = '<div class="pal-h">Core</div><div class="pal">' + colors.filter(([, t]) => t.t === 'color').map(([n, t]) => swatch(n, t)).join('') + '</div>'
+      + '<div class="pal-h">Roles</div><div class="pal">' + roles.map(([n, t]) => swatch(n, t)).join('') + '</div>';
+  }
+  const space = $('#spacing-out');
+  if (space) space.innerHTML = [...flat(TOK.core && TOK.core.radius, 'radius.'), ...flat(TOK.core && TOK.core.spacing, 'spacing.'), ...flat(TOK.core && TOK.core.layout, 'layout.')].map(([n, t]) => `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`).join('');
+  const elev = $('#elev-out');
+  if (elev) elev.innerHTML = flat(TOK.core && TOK.core.shadow, 'shadow.').map(([n, t]) => `<div><b>${esc(n)}</b> <span>${esc(JSON.stringify(t.v)).slice(0, 80)}</span></div>`).join('') || '<div>No shadow tokens.</div>';
+  const type = $('#type-out');
+  if (type) type.innerHTML = flat(TOK.core && TOK.core.typography, 'type.').map(([n, t]) => `<div class="tr"><span>${esc(n)}</span><span class="tv">${esc(typeof t.v === 'string' ? t.v : JSON.stringify(t.v))}</span></div>`).join('');
+  const fam = $('#fam-out');
+  if (fam) fam.innerHTML = flat(TOK.core && TOK.core.font, 'font.').map(([n, t]) => `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'string' ? t.v : JSON.stringify(t.v)).slice(0, 90)}</span></div>`).join('');
+  const meas = $('#meas-out');
+  if (meas) meas.innerHTML = flat(TOK.dark && TOK.dark.component, 'component.').map(([n, t]) => `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'string' ? t.v : JSON.stringify(t.v))}</span></div>`).join('') || '<div>No measured component tokens.</div>';
+}
+paint();
+</script>
+</body>
+</html>

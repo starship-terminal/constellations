@@ -1,0 +1,23 @@
+{
+  "_note": "Rules for systems/gladia. Public signed-out capture of gladia.io: no surface paints machine-private data — there is no live demo panel, and the only text entered was the placeholder 'name@example.com' typed into fields during measurement then cleared (the committed screenshots never show it). Published contact addresses are Gladia's own marketing content.",
+  "families": [],
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "name@example\\.com",
+      "sales@gladia\\.io",
+      "support@gladia\\.io",
+      "privacy@gladia\\.io",
+      "dpo@gladia\\.io",
+      "contact@gladia\\.io",
+      "hello@gladia\\.io",
+      "legal@gladia\\.io",
+      "security@gladia\\.io",
+      "@gladia\\.i",
+      "jobs@gladia\\.io",
+      "press@gladia\\.io",
+      "partners@gladia\\.io",
+      "copyright@gladia\\.io"
+    ]
+  }
+}

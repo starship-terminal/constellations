@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weekrise style guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap">
+<style>
+:root {
+  --page: #ffffff;
+  --surface: #fafafa;
+  --text: #000000;
+  --muted: #666666;
+  --legal: #888888;
+  --accent: #2481ff;
+  --on-accent: #ffffff;
+  --border: #e8e8e8;
+  --team: #a55eea;
+  --auth: #417ff7;
+  --footer: #fcfcfc;
+  --inverse: #1a1a1a;
+  --danger: #ee0000;
+  --pomodoro: #ee5253;
+  --radius-button: 10px;
+  --radius-field: 7px;
+  --radius-card: 20px;
+  --radius-price: 15px;
+  --font: Inter, -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+  --display: "Playfair Display", serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/1.15 var(--font); }
+header { padding: 20px 28px; border-bottom: 1px solid var(--border); display: flex; align-items: baseline; gap: 16px; }
+h1 { font: 600 18px/1.15 var(--font); margin: 0; }
+header p { margin: 0; color: var(--muted); font-size: 13px; }
+main { max-width: 1080px; margin: 0 auto; padding: 32px 28px 80px; }
+h2 { font: 600 24px/1.15 var(--font); margin: 40px 0 12px; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.sw { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.sw i { display: block; height: 56px; }
+.sw span { display: block; padding: 8px 10px; font-size: 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+button.primary, a.primary {
+  background: var(--accent); color: var(--on-accent); border: 1px solid var(--accent);
+  height: 46px; padding: 0 17px; border-radius: var(--radius-button); font: 400 20px/20px var(--font);
+}
+button.secondary {
+  background: transparent; color: var(--accent); border: 1px solid var(--accent);
+  height: 46px; padding: 0 17px; border-radius: var(--radius-button); font: 400 20px/20px var(--font);
+}
+button.auth {
+  background: var(--auth); color: #fff; border: 1px solid var(--auth);
+  height: 36px; padding: 0 13px; border-radius: 8px; font: 400 16px/16px var(--font); width: 280px;
+}
+.field { width: 280px; }
+.field label { display: block; font: 500 13px/14.95px var(--font); margin-bottom: 6px; }
+.field .box { height: 36px; border: 1px solid var(--border); border-radius: var(--radius-field); display: flex; align-items: center; padding: 0 12px; color: #757575; font-size: 14px; }
+.cards { display: flex; gap: 30px; flex-wrap: wrap; }
+.card { width: 220px; min-height: 180px; padding: 24px; border-radius: var(--radius-price); }
+.card.free { border: 1px solid var(--border); }
+.card.pro { background: var(--accent); color: #fff; }
+.card.team { background: var(--team); color: #fff; }
+.card b { display: block; font-size: 36px; line-height: 1.15; }
+.hero-sample { padding: 32px; border-radius: 16px; background: linear-gradient(19deg, #ddddff 20%, #ffcccc 100%); }
+.hero-sample h3 { font: 700 40px/1.15 var(--font); margin: 0 0 8px; }
+.hero-sample em { font: 700 40px/1.15 var(--display); font-style: normal; }
+.note { color: var(--muted); font-size: 13px; max-width: 70ch; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Weekrise</h1>
+  <p>Light only. Values from tokens.json, measured 2026-11-19.</p>
+</header>
+<main>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:#ffffff"></i><span>page #ffffff</span></div>
+    <div class="sw"><i style="background:#fafafa"></i><span>surface #fafafa</span></div>
+    <div class="sw"><i style="background:#000000"></i><span>text #000000</span></div>
+    <div class="sw"><i style="background:#666666"></i><span>secondary #666666</span></div>
+    <div class="sw"><i style="background:#888888"></i><span>legal muted #888888</span></div>
+    <div class="sw"><i style="background:#2481ff"></i><span>accent #2481ff</span></div>
+    <div class="sw"><i style="background:#417ff7"></i><span>auth link #417ff7</span></div>
+    <div class="sw"><i style="background:#a55eea"></i><span>team #a55eea</span></div>
+    <div class="sw"><i style="background:#e8e8e8"></i><span>border #e8e8e8</span></div>
+    <div class="sw"><i style="background:#1a1a1a"></i><span>inverse band #1a1a1a</span></div>
+    <div class="sw"><i style="background:#ee5253"></i><span>pomodoro #ee5253</span></div>
+    <div class="sw"><i style="background:#ee0000"></i><span>error token #ee0000</span></div>
+  </div>
+  <h2>Type</h2>
+  <p style="font:700 48px/1.15 var(--font); margin:0">Task management.</p>
+  <p style="font:700 48px/1.15 var(--display); margin:8px 0 0">productivity</p>
+  <p style="font:500 24px/1.15 var(--font)">Weekrise is a simple weekly task planner.</p>
+  <p style="font:400 16px/1.15 var(--font)">Body 16px / 400, line-height 18.4px.</p>
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="primary" type="button">Get Started</button>
+    <button class="secondary" type="button">Learn more</button>
+    <button class="auth" type="button">Continue</button>
+  </div>
+  <p class="note">Marketing primary is #2481ff. The auth Continue button measured #417ff7. Hover colour was not declared.</p>
+  <h2>Field</h2>
+  <div class="field">
+    <label>Email</label>
+    <div class="box">Enter your email</div>
+  </div>
+  <p class="note">36px wrapper, 7px radius, 1px #e8e8e8. Focus did not change the border.</p>
+  <h2>Pricing cards</h2>
+  <div class="cards">
+    <div class="card free"><span>Free</span><b>$0</b><span>/month</span></div>
+    <div class="card pro"><span>Pro</span><b>$4</b><span>/month</span></div>
+    <div class="card team"><span>Team</span><b>$12</b><span>/month</span></div>
+  </div>
+  <h2>Hero wash</h2>
+  <div class="hero-sample">
+    <h3>Made <em>easy</em>.</h3>
+    <p>Gradient 19deg from #ddddff at 20% to #ffcccc. Display word in Playfair Display.</p>
+  </div>
+</main>
+</body>
+</html>

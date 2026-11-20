@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ElevenReader style guide</title>
+<meta name="description" content="ElevenReader design tokens and the public signed-out surface's components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: Inter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-display: Waldenburg, "Waldenburg HF", ui-serif, Georgia, "Times New Roman", serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-default, #000); background: var(--surface-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 44px/1.05 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.03em; }
+h2.sh { font: 700 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-default, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-default, #e5e5e5); }
+.lead { max-width: 62ch; color: var(--text-default, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--text-default, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-default, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--surface-page, #000); padding: 12px; border-radius: 8px; }
+.pal.dark .nm, .pal.dark .vl { color: var(--text-default, #fff); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-default, #e5e5e5); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-default, #000); opacity: .65; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-default, #000); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border-default, #e5e5e5); overflow: hidden; background: var(--surface-page, #fff); }
+.banner { background: var(--surface-banner, #f5f3f1); border-bottom: 1px solid rgba(0,0,0,.1); font-size: 13px; padding: 8px 16px; display: flex; align-items: center; justify-content: center; gap: 12px; }
+.banner .cta { height: 32px; padding: 0 14px; display: inline-flex; align-items: center; border-radius: var(--radius-pill, 9999px); background: var(--surface-page, #fff); box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04), 0 2px 4px rgba(0,0,0,.04); font-size: 13px; }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 64px); padding: 0 12px 0 22px; font-size: 15px; color: var(--text-default, #000); }
+.navbar .wm { font-family: var(--sg-display); font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height-cta, 52px); padding: 0 24px; font-size: 16px; font-weight: 400; letter-spacing: .01em; border-radius: var(--radius-pill, 9999px); border: 1px solid transparent; }
+.btn.primary { background: var(--surface-inverse, #000); color: var(--text-inverse, #fff); }
+.btn.primary:hover { background: var(--surface-primaryHover, #6e6e6e); }
+.btn.secondary { background: var(--surface-page, #fff); color: var(--text-default, #000); box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04), 0 2px 4px rgba(0,0,0,.04); }
+.btn.nav { height: var(--component-button-height-nav, 36px); padding: 0 16px; font-size: 14px; }
+.btn.outline { background: var(--surface-page, #fff); border-color: var(--border-default, #e5e5e5); color: var(--text-default, #000); }
+.btn.sso { height: var(--component-button-height-sso, 40px); padding: 0 16px; font-size: 14px; font-weight: 500; background: var(--surface-sunken, #f2f2f2); color: var(--text-default, #000); }
+/* A dedicated variant class: `.dark` would also scope the dark token block
+   ([data-mode="dark"], .dark {}) and paint the button white instead of the
+   captured black Apple pill. */
+.btn.sso.apple { background: var(--surface-inverse, #000); color: var(--text-inverse, #fff); }
+.btn.field-o { height: var(--component-button-height-sso, 40px); font-size: 14px; font-weight: 500; background: var(--surface-page, #fff); border-color: var(--border-default, #e5e5e5); color: var(--text-default, #000); }
+.hero { color: var(--text-default, #000); padding: 72px 40px; font: 400 60px/1 var(--sg-display); letter-spacing: -1.8px; text-align: left; }
+.hero small { display: block; font: 400 18px/1.6 var(--sg-sans); color: var(--text-default, #000); opacity: .6; letter-spacing: 0; margin: 16px 0 22px; max-width: 46ch; }
+.seg { display: inline-flex; border-radius: var(--radius-pill, 9999px); background: var(--surface-sunken, #f2f2f2); padding: 4px; gap: 4px; font-size: 15px; align-items: center; }
+.seg span { height: 40px; padding: 0 20px; display: inline-flex; align-items: center; border-radius: var(--radius-pill, 9999px); color: var(--text-default, #57534f); }
+.seg span.on { background: var(--surface-page, #fff); color: var(--text-default, #000); box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04), 0 2px 4px rgba(0,0,0,.04); }
+.seg .save { display: inline-flex; align-items: center; height: 20px; padding: 0 8px; margin-left: 6px; border-radius: var(--radius-pill, 9999px); background: var(--surface-saveBadge, #e1f5e0); color: var(--text-saveBadge, #307d18); font-size: 12px; font-weight: 500; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border-planCard, #eae9e9); border-radius: var(--radius-plan-card, 40px); padding: 20px; font-size: 13px; background: var(--surface-planCard, #fdfcfc); }
+.tile b { display: block; font: 375 22px/1.3 var(--sg-display); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.tile .price { display: block; font: 375 36px/1 var(--sg-display); letter-spacing: -0.36px; margin: 12px 0; }
+.chip { display: inline-flex; align-items: center; height: var(--component-button-height-chip, 44px); padding: 0 20px; border-radius: var(--radius-pill, 9999px); background: var(--surface-page, #fff); color: var(--text-default, #000); box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04), 0 2px 4px rgba(0,0,0,.04); font-size: 15px; margin: 0 6px 6px 0; }
+.faq { border-radius: var(--radius-faq, 20px); background: var(--surface-faq, #faf8f8); padding: 14px 20px; font: 400 20px/1.35 var(--sg-display); margin-bottom: 8px; }
+.field { height: var(--component-field-height, 40px); border: 1px solid var(--border-default, #e5e5e5); border-radius: var(--radius-pill, 9999px); padding: 0 12px; display: flex; align-items: center; font-size: 15px; color: var(--text-default, #000); opacity: .65; }
+.auth { width: var(--component-auth-card-width, 360px); max-width: 100%; margin: 0 auto; text-align: center; display: flex; flex-direction: column; gap: 10px; }
+.auth .wm { font: 700 22px/1 var(--sg-display); letter-spacing: -0.02em; margin-bottom: 6px; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-default, #e5e5e5); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--text-default, #000); opacity: .65; font-family: var(--sg-mono); }
+.tspec { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 10px 0; border-bottom: 1px solid var(--border-default, #e5e5e5); }
+.tspec .tv { font-size: 12px; color: var(--text-default, #000); opacity: .65; font-family: var(--sg-mono); white-space: nowrap; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-default, #e5e5e5); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>ElevenReader style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">ElevenReader, measured</h2>
+  <p class="lead">elevenreader.io is a Next.js site over Tailwind v4 whose public surface paints one light theme: a near-monochrome field (black ink on white, a #F5F3F1 promo band, #FAF8F8 FAQ tints) with pill geometry everywhere — every button, chip, input and badge is a 9999px rounded-full, cards step up to 20-40px radii. The declared token layer carries a full themed palette (the --themed-* triplets bound into --color-* roles, a blue accent #4680fd the marketing surface barely uses), the --f-* type scale (display/heading in Waldenburg, everything else in Inter) and the reader app's own --reader-* palette. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from elevenreader.io on 2026-11-13, signed out, in headless Chromium. The reader app behind /reader/sign-in is a documented boundary; the email credential forms were revealed by their own toggles and never submitted. Inter and Waldenburg are served faces and are not loaded here: samples fall back to system fonts. The <code>.dark</code> scope below is a declared inversion — no public page paints it.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">Every page carries the same chrome: the #F5F3F1 promo band with its white pill CTA, then the 64px header — wordmark, plain nav links (transparent pill, hover surface fill), the Discover mega-menu trigger, a 1px-outlined Sign-in pill and the black Start-listening pill. Keyboard focus draws a 2px solid black outline at 2px offset.</p>
+  <div class="mock">
+    <div class="banner"><strong>Limited offer</strong><span>Save on a year of Ultra</span><span class="cta">Get this offer</span></div>
+    <div class="navbar"><span class="wm">&#10073;&#10073;ElevenReader</span><span>Explore</span><span>Discover &#9662;</span><span>Pricing</span><span class="sp"></span><span class="btn outline nav">Sign in</span><span class="btn primary nav">Start listening free</span></div>
+    <div class="hero">Every book. Every voice.<small>Listen to any audiobook, article or PDF in voices you love.</small><span class="btn primary">Start listening free</span>&nbsp;<span class="btn secondary">Explore the library</span></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing centres a Monthly/Annual segment pill — the selected segment is a white pill on the sunken track carrying the green Save-25% chip — above #FDFCFC plan cards at a 40px painted radius and a 1px #EAE9E9 hairline; each card's action is the black pill at 52px.</p>
+  <div class="mock" style="padding:20px">
+    <div style="text-align:center;margin-bottom:18px"><span class="seg"><span>Monthly</span><span class="on">Annual<span class="save">Save 25%</span></span></span></div>
+    <div class="grid">
+      <div class="tile"><b>Free</b><span class="sub">For casual listening</span><span class="price">$0</span><span class="btn primary" style="height:44px;font-size:15px">Get started</span></div>
+      <div class="tile"><b>Ultra</b><span class="sub">Everything unlocked</span><span class="price">$11.99<span style="font-size:16px">/mo</span></span><span class="btn primary" style="height:44px;font-size:15px">Start 3 day free trial</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The auth cards</h2>
+  <p class="lead">/reader/sign-in and /reader/sign-up are bare centred columns on the page field — a 360px max-w-90 card of OAuth pills (sunken Google, inverse Apple, outlined email) over 40px pill inputs; the credential form is screen-reader-only until the "…with email" toggle expands it.</p>
+  <div class="mock" style="padding:28px">
+    <div class="auth"><span class="wm">&#10073;&#10073;ElevenReader</span><span class="btn sso">Sign in with Google</span><span class="btn sso apple">Sign in with Apple</span><span class="btn field-o">Sign in with email</span><span class="field">Enter your email address</span><span class="btn primary" style="height:40px;font-size:14px;font-weight:500">Sign in</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared --color-* layer carries the themed ramps (neutral, blue, cyan, green, yellow, magenta, red — each inverted on .dark), the named brand hues, the Tailwind default palette, the alpha overlays and the reader app's own colours; the painted group holds measured fills no variable names (the promo band, the FAQ tint, the plan card, the Save badge). Light and dark roles are the same declared variables, re-bound by the .dark scope — declared, unpainted.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">The --spacing unit is 4px with 20px inner / 64px outer gutters at desktop; geometry is pill-first — 9999px on every control, 20px FAQ, 40px plan cards, 16px orbit covers, the declared 8px shadcn radius on media.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two faces: <code>Waldenburg</code> on display and headings (the f-heading scale declares 700 but paints the book weight, ~375-400, with negative tracking), <code>Inter</code> on everything else. The <code>--f-*</code> roles are the type ramp — sizes below resolve at 1440px and step down under 80rem and 64rem.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --color-*/--f-* variables from the live stylesheets and computed styles on the public pages</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open and focused states measured per component, plus the billing toggle and the revealed email forms</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const lightRoles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (lightRoles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of lightRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // The dark set's custom properties only resolve inside a .dark scope:
+  // swatch dots must live under it or they paint the light values/unset.
+  const darkRoles = flat(TOK.dark || {}, '').filter(([n, t]) => t.t === 'color');
+  if (darkRoles.length) {
+    h += `<div class="pal-h">dark roles (declared .dark scope — unpainted on the public surface)</div><div class="pal dark">`;
+    for (const [n, t] of darkRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  // the f-* composites are DTCG typography leaves: {fontFamily, fontSize,
+  // fontWeight, lineHeight, letterSpacing} resolved at 1440px.
+  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
+    const v = t.v || {};
+    // Render the token's own metrics: capping the size or substituting a
+    // line-height would make the label's printed values lie about the sample.
+    const px = parseFloat(v.fontSize) || 14;
+    const fam = /waldenburg/i.test(String(v.fontFamily)) ? 'var(--sg-display)' : 'var(--sg-sans)';
+    h += `<div class="tspec"><span style="font:${v.fontWeight} ${px}px/${v.lineHeight} ${fam};letter-spacing:${v.letterSpacing}">${esc(n)} — The quick brown fox</span><span class="tv">${esc(v.fontSize)} / lh ${esc(String(v.lineHeight))} / w ${esc(String(v.fontWeight))}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — ElevenReader</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

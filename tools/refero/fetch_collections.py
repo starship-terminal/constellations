@@ -2,7 +2,7 @@
 """Fetch Refero's curated collections into refero/collections.json + db tables.
 
 Reads https://styles.refero.design/sitemaps/collections.xml, fetches every
-listed page (except the homepage), and parses each collection's sections and
+listed page on that host over https (except the homepage), and parses each collection's sections and
 ordered style references out of the page's __next_f.push flight payload.
 
 Flight structure (verified 2026-10): each editorial section is an h2 with
@@ -18,6 +18,11 @@ and two refero.db tables — collections(slug, url, title, description) and
 collection_styles(collection_slug, section, rank, style_uuid) — rebuilt in
 one transaction each run.
 
+The store is rebuilt from the pages fetched, so a run writes nothing unless
+every listed page fetched: a failed page exits non-zero with the store left
+as it was, and so does a sitemap that lists no pages. --limit N fetches only
+the first N pages as a dry run and never writes the store.
+
 Usage:
     python3 tools/refero/fetch_collections.py [--workers 4] [--limit N]
 """
@@ -26,13 +31,14 @@ import argparse
 import concurrent.futures
 import html as html_lib
 import json
-import os
 import re
 import sqlite3
 import sys
-import time
-import urllib.request
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import dump as refero_dump  # noqa: E402  (refreshes refero/.dump/ after a write)
+import fetch as refero_fetch  # noqa: E402  (its get(): retries and a size cap)
 
 ROOT = Path(__file__).resolve().parents[2]
 REFERO = ROOT / "refero"
@@ -40,12 +46,6 @@ DB = REFERO / "refero.db"
 OUT = REFERO / "collections.json"
 BASE = "https://styles.refero.design"
 SITEMAP = BASE + "/sitemaps/collections.xml"
-
-UA = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-                  "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml",
-}
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS collections (
@@ -84,16 +84,31 @@ ITEMLIST_RE = re.compile(
     r'"position":\d+,"url":"https://styles\.refero\.design/style/([0-9a-f-]{36})"')
 
 
+def on_base(url):
+    """True for an https URL on BASE: the only pages, and redirect targets,
+    this tool fetches."""
+    return url.startswith(BASE + "/")
+
+
 def get(url, binary=True, tries=4):
-    for i in range(tries):
-        try:
-            req = urllib.request.Request(url, headers=UA)
-            data = urllib.request.urlopen(req, timeout=90).read()
-            return data if binary else data.decode("utf-8", "replace")
-        except Exception:
-            if i == tries - 1:
-                raise
-            time.sleep(2 ** i)
+    """fetch.get (retries, a size cap) that follows redirects only on BASE."""
+    return refero_fetch.get(url, binary, tries, allowed=on_base)
+
+
+def collection_urls(xml):
+    """The sitemap's page URLs, minus the homepage and anything off-site.
+
+    The sitemap is third-party data, so only https URLs on BASE are fetched:
+    a file://, plain-http or other-host <loc> is reported and skipped."""
+    urls = []
+    for u in (u.strip() for u in LOC_RE.findall(xml)):
+        if u.rstrip("/") == BASE:  # the homepage
+            continue
+        if on_base(u):
+            urls.append(u)
+        else:
+            print(f"SKIP off-site sitemap url {u!r}", file=sys.stderr)
+    return urls
 
 
 def flight_blob(page):
@@ -202,24 +217,23 @@ def fetch_page(url):
     return parsed
 
 
-def write_atomic(path, text):
-    tmp = path.with_name(path.name + ".tmp")
-    tmp.write_text(text)
-    os.replace(tmp, path)
+write_atomic = refero_dump.write_atomic
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--workers", type=int, default=4)
-    ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--limit", type=int, default=0,
+                    help="fetch only the first N pages; a dry run that "
+                         "never writes the store")
     args = ap.parse_args()
 
-    xml = get(SITEMAP).decode()
-    urls = [u.strip() for u in LOC_RE.findall(xml)]
-    urls = [u for u in urls if u.rstrip("/") != BASE]  # skip homepage
+    urls = collection_urls(get(SITEMAP).decode())
     if args.limit:
         urls = urls[:args.limit]
     print(f"sitemap: {len(urls)} collection pages")
+    if not urls:
+        sys.exit("sitemap lists no collection pages; store left unchanged")
 
     results, failures = {}, []
     with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as pool:
@@ -233,9 +247,17 @@ def main():
                 failures.append((slug, url, str(ex)[:200]))
                 print(f"FAIL {slug}: {ex}", file=sys.stderr)
 
+    # The tables and collections.json are rebuilt from `results` alone, so a
+    # page missing from it would delete that collection from the store.
+    if failures:
+        sys.exit(f"failed {len(failures)} pages: "
+                 + ", ".join(s for s, _, _ in failures)
+                 + "; store left unchanged")
+
     db = sqlite3.connect(DB)
     db.execute("PRAGMA busy_timeout=30000")
-    db.executescript(SCHEMA)
+    if not args.limit:  # a dry run leaves the db exactly as it was
+        db.executescript(SCHEMA)
     slug_of = {u: s for u, s in db.execute("SELECT uuid, slug FROM styles")}
 
     collections, skipped, total_styles = [], [], 0
@@ -268,6 +290,12 @@ def main():
                 for sec in clean
             ],
         })
+
+    if args.limit:
+        db.close()
+        print(f"\n--limit {args.limit}: dry run, {len(collections)} collections "
+              f"parsed; store not written")
+        return
 
     doc = {
         "version": 1,
@@ -303,10 +331,8 @@ def main():
     if skipped:
         print(f"skipped {len(skipped)} pages with no styles: "
               + ", ".join(s for s, _ in skipped))
-    if failures:
-        print(f"failed {len(failures)} pages: "
-              + ", ".join(s for s, _, _ in failures))
     db.close()
+    refero_dump.refresh(DB)
 
 
 if __name__ == "__main__":

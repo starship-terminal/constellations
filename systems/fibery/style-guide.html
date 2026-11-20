@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fibery style guide</title>
+<meta name="description" content="Fibery design tokens and the public surfaces' components, rendered from tokens.json with the declared and measured values. Light only: the public site paints one theme.">
+<style>
+:root {
+  --color-named-milk: #fffdfa;
+  --color-named-cream: #fdf7ef;
+  --color-named-soup: #faebd6;
+  --color-named-peachSoup: #eed0bf;
+  --color-named-tea: #f6d3a0;
+  --color-named-rusty: #c17b58;
+  --color-named-rustyPeach: #f0b89b;
+  --color-named-rustyText: #a26e51;
+  --color-named-terracotta: #e89469;
+  --color-named-architectRust: #cb5800;
+  --color-named-mudText: #9f8b7f;
+  --color-named-greyhound: #3c3c3b;
+  --color-named-greenOlives: #66753d;
+  --color-named-websiteBlue: #3b758c;
+  --color-basic-red: #d74242;
+  --color-basic-yellow: #fc9f28;
+  --color-basic-blue: #5171a2;
+  --color-basic-pink: #cd5872;
+  --color-basic-orange: #d27133;
+  --color-basic-green: #66753d;
+  --color-basic-violet: #916fbe;
+  --color-basic-mint: #309fb6;
+  --color-basic-black: #251d1a;
+  --color-basic-white: #fffdfa;
+  --color-secondary-red: #e89e9e;
+  --color-secondary-yellow: #fbcc91;
+  --color-secondary-blue: #a6b6ce;
+  --color-secondary-pink: #e4a9b6;
+  --color-secondary-orange: #e6b697;
+  --color-secondary-green: #b0b89c;
+  --color-secondary-violet: #c6b5dc;
+  --color-secondary-mint: #95ccd8;
+  --color-tertiary-red: #f1cccc;
+  --color-tertiary-yellow: #fae3c5;
+  --color-tertiary-blue: #cfd7e4;
+  --color-tertiary-pink: #eed1d8;
+  --color-tertiary-orange: #f0d7c8;
+  --color-tertiary-green: #d5d8ca;
+  --color-tertiary-violet: #dfd7ea;
+  --color-tertiary-mint: #c7e3e8;
+  --color-quaternary-red: #f6e5e5;
+  --color-quaternary-yellow: #fbf0e1;
+  --color-quaternary-blue: #e6eaf0;
+  --color-quaternary-pink: #f5e7ea;
+  --color-quaternary-orange: #f6eae3;
+  --color-quaternary-green: #e9ebe4;
+  --color-quaternary-violet: #eeeaf3;
+  --color-quaternary-mint: #e2f0f2;
+  --color-form-white: #ffffff;
+  --shadow-m: rgba(20, 21, 26, 0.08) 0px 10px 16px -3px, rgba(20, 21, 26, 0.05) 0px 1px 2px 0px;
+  --font-family-suisse: "Suisse Intl", sans-serif;
+  --font-family-fraunces: "Fraunces Var", sans-serif;
+  --font-family-casuar: "Casuar", sans-serif;
+  --font-family-inter: "Inter Var", sans-serif;
+  --font-size-display: 64px;
+  --font-size-h2: 48px;
+  --font-size-lede: 18px;
+  --font-size-nav: 16px;
+  --font-size-body: 16px;
+  --font-size-displayMobile: 46px;
+  --font-weight-display: 800;
+  --font-weight-h2: 800;
+  --font-weight-nav: 500;
+  --font-weight-button: 600;
+  --font-weight-body: 400;
+  --radius-pill: 6px;
+  --radius-card: 12px;
+  --radius-field: 20px;
+  --radius-menu: 12px;
+  --motion-control: all 0.3s ease;
+  --motion-navItem: color 0.3s ease;
+  --component-header-height: 88px;
+  --component-logo-width: 127px;
+  --component-nav-item-height: 34px;
+  --component-nav-button-height: 40px;
+  --component-dropdown-width: 740px;
+  --component-dropdown-height: 383px;
+  --component-hero-measure: 440.23px;
+  --component-hero-cta-height: 40px;
+  --component-plan-card-width: 282px;
+  --component-plan-card-height: 559.27px;
+  --component-faq-head-height: 73px;
+  --component-signup-panel-width: 560px;
+  --component-prompt-field-height: 164px;
+  --component-login-panel-width: 360px;
+  --component-oauth-height: 36px;
+  --component-mobile-topbar-height: 77px;
+  --component-mobile-menu-size: 20px;
+  --fibery-business-blue-color: #3b758c;
+  --fibery-form-button-blue-color: #3b758c;
+  --fibery-gray-background-color: #dedede;
+  --fibery-gray-icon-color: #5f5f5f;
+  --fibery-light-gray-background-color: #fdf7ef;
+  --fibery-light-gray-border-color: rgba(37, 29, 26, 0.1);
+  --fibery-light-gray-icon-color: rgba(37, 29, 26, 0.25);
+  --fibery-medium-gray-background-color: #f6f6f6;
+  --fibery-menu-bg-color: #fff5e8;
+  --fibery-page-body-color: #faebd6;
+  --fibery-page-main-color: #309fb6;
+  --fibery-page-secondary-color: undefined;
+  --fibery-text-default-color: #251d1a;
+  --fibery-text-opposite-color: #fffdfa;
+  --fibery-text-secondary-color: rgba(37, 29, 26, 0.5);
+  --fibery-text-selection-color: undefined;
+  --text-ink: var(--color-basic-black);
+  --text-muted: var(--color-basic-black);
+  --text-link: var(--color-basic-black);
+  --text-fieldInk: #000000;
+  --action-ctaFill: var(--color-basic-black);
+  --action-ctaInk: var(--color-named-soup);
+  --border-ctaOutline: var(--color-basic-black);
+  --border-focusRing: #101010;
+  --background-planTint: var(--color-named-cream);
+  --background-field: var(--color-form-white);
+  --background-menuBg: var(--fibery-menu-bg-color);
+  --background-page: var(--fibery-page-body-color);
+  --sg-sans: "Suisse Intl", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Fraunces Var", Fraunces, Georgia, serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--fibery-text-default-color, #251d1a); background: var(--fibery-page-body-color-light, #fdf7ef); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.01em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--fibery-text-default-color, #251d1a); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--fibery-light-gray-border-color, rgba(37,29,26,.1)); }
+.lead { max-width: 62ch; color: var(--fibery-text-default-color, #251d1a); opacity: .8; }
+.note { font-size: 13px; color: var(--fibery-text-default-color, #251d1a); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--fibery-text-default-color, #251d1a); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--fibery-light-gray-border-color, rgba(37,29,26,.1)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--fibery-text-default-color, #251d1a); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--fibery-light-gray-border-color, rgba(37,29,26,.1)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--fibery-text-default-color, #251d1a); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--fibery-light-gray-border-color, rgba(37,29,26,.1)); overflow: hidden; background: var(--color-form-white, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 88px); padding: 0 12px 0 22px; font-size: 15px; color: var(--fibery-text-default-color, #251d1a); background: var(--fibery-page-body-color-light, #fdf7ef); border-bottom: 1px solid var(--fibery-light-gray-border-color, rgba(37,29,26,.1)); }
+.navbar .wm { font-weight: 600; font-size: 17px; letter-spacing: -0.01em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-hero-cta-height, 40px); padding: 0 16px; font-size: 14px; font-weight: 500; border-radius: var(--radius-pill, 999px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-ctaFill, var(--fibery-basic-black, #251d1a)); color: var(--action-ctaInk, var(--fibery-basic-white, #fffdfa)); }
+.btn.ghost { border-color: var(--border-ctaOutline, var(--fibery-basic-black, #251d1a)); color: var(--fibery-text-default-color, #251d1a); }
+.btn.small { height: var(--component-nav-button-height, 40px); font-size: 13px; font-weight: 500; }
+.hero { color: var(--fibery-text-default-color, #251d1a); padding: 72px 40px; font: 400 var(--font-size-display, 64px)/1.05 var(--sg-serif); letter-spacing: -0.01em; text-align: left; background: var(--fibery-page-body-color, #faebd6); }
+.hero small { display: block; font: 400 var(--font-size-lede, 20px)/1.5 var(--sg-sans); color: var(--fibery-text-secondary-color, rgba(37,29,26,.5)); margin: 16px 0 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--fibery-light-gray-border-color, rgba(37,29,26,.1)); padding: 14px; font-size: 13px; background: var(--color-form-white, #fff); border-radius: var(--radius-card, 12px); }
+.tile .img { height: 140px; background: var(--fibery-menu-bg-color, #fff5e8); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: calc(var(--radius-card, 12px) - 4px); }
+.tile b { display: block; font: 400 var(--font-size-h2, 24px)/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.plan { background: var(--color-quaternary-yellow, #fbf0e1); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--fibery-light-gray-border-color, rgba(37,29,26,.1)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--fibery-light-gray-border-color, rgba(37,29,26,.1)); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--fibery-text-default-color, #251d1a); opacity: .65; font-family: var(--sg-mono); }
+.field { border: 1px solid var(--fibery-light-gray-border-color, rgba(37,29,26,.1)); background: var(--background-field, var(--color-form-white, #fff)); border-radius: var(--radius-field, 12px); padding: 14px 16px; color: var(--fibery-text-secondary-color, rgba(37,29,26,.5)); font-size: 15px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Fibery style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Fibery, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the site's declared <code>--fibery-*</code> token layer — the milk/cream/soup/peach-soup/tea warm neutrals and the rust family, the four-tier <code>--fibery-basic/secondary/tertiary/quaternary-*</code> hue ramp, the <code>--fibery-page-*</code>/<code>--fibery-text-*</code>/<code>--fibery-gray-*</code> semantic roles and <code>--fibery-shadow-m</code> — plus the measured type steps, radii, control transitions and component sizes the CSS layer does not declare. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from fibery.com and fibery.io, signed out, in headless Chromium. The public site paints one light theme — there is no theme toggle and no dark scope on the marketing pages, the sign-up wizard or the sign-in, so this guide has no dark mode and <code>tokens.json</code> ships core + light only (the signed-in app's dark/system theme is behind sign-in and was not captured). The sign-up and login forms were measured, never submitted. Suisse Intl and Fraunces are served faces and are not loaded here: samples fall back to system fonts.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The 88px header sits on the cream <code>--fibery-page-body-color-light</code> field: the wordmark, the Solutions/Platform/Support dropdown triggers, Pricing, Log in and the dark <code>--fibery-basic-black</code> "Sign up for free" pill. The hero pairs the dark pill with a hairline-outlined "Book a Demo" under the Fraunces display headline, on the soup <code>--fibery-page-body-color</code> field.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">Fibery</span><span>Solutions</span><span>Platform</span><span>Support</span><span>Pricing</span><span class="sp"></span><span>Log in</span><span class="btn small primary">Sign up for free</span></div>
+    <div class="hero">Operating system<br>for orgs run by nerds<small>A modular work platform that replaces scattered tools.</small><span class="btn primary">Sign up</span> <span class="btn ghost">Book a Demo</span></div>
+  </div>
+
+  <h2 class="sh">Pricing and sign-up</h2>
+  <p class="lead">The pricing plans ride on tinted cards — the Free plan on <code>--fibery-quaternary-yellow</code> — with the same dark pill CTAs. The public wizard at fibery.io/sign-up carries the AI prompt field (rounded, on the form white) with premade-solution chips and the disabled-until-filled "Create workspace" submit; the sign-in at fibery.io/login/ rows the outlined OAuth buttons.</p>
+  <div class="mock" style="padding:20px;background:var(--fibery-page-body-color-light,#fdf7ef)">
+    <div class="grid">
+      <div class="tile plan"><b>Free</b><span class="sub">For personal use and tiny teams.</span><div style="margin-top:10px"><span class="btn small primary">Start for free</span></div></div>
+      <div class="tile"><b>Standard</b><span class="sub">For teams that need structure.</span><div style="margin-top:10px"><span class="btn small ghost">Try for free</span></div></div>
+      <div class="tile"><b>Pro</b><span class="sub">For companies that scale.</span><div style="margin-top:10px"><span class="btn small ghost">Try for free</span></div></div>
+    </div>
+    <div class="field" style="margin-top:18px">Create a workspace for _____ that includes _____</div>
+    <div style="margin-top:12px"><span class="btn primary" style="opacity:.5">Create workspace</span> <span class="btn ghost">Start without AI</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared <code>--fibery-*</code> palette: the warm named neutrals and rust family, the four-tier hue ramp (basic saturated, secondary mid, tertiary light, quaternary lightest), and the page/text/gray/menu/form/business semantic roles. Measured roles alias the declared values they match; two declarations ship the literal <code>undefined</code> and resolve to nothing.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">The CSS layer declares no spacing or radius scale — corners and control transitions are measured on the real components: full pills on the FiberyButton variants, rounded cards and fields, and the hover transitions on pills and nav items.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Served faces: <code>Suisse Intl</code> (100–900 static weights) carries every control, nav item and body line; <code>Fraunces Var</code> draws the serif display headlines and quotes; <code>Casuar</code> and <code>Inter Var</code> are declared for special and embedded surfaces. The ramp is measured, not declared. Samples fall back to system fonts.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --fibery-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, toggled, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"named":{"milk":{"v":"#fffdfa","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-milk","d":"The declared `--fibery-milk`."},"cream":{"v":"#fdf7ef","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-cream","d":"The declared `--fibery-cream`."},"soup":{"v":"#faebd6","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-soup","d":"The declared `--fibery-soup`."},"peachSoup":{"v":"#eed0bf","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-peach-soup","d":"The declared `--fibery-peach-soup`."},"tea":{"v":"#f6d3a0","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-tea","d":"The declared `--fibery-tea`."},"rusty":{"v":"#c17b58","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-rusty","d":"The declared `--fibery-rusty`."},"rustyPeach":{"v":"#f0b89b","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-rusty-peach","d":"The declared `--fibery-rusty-peach`."},"rustyText":{"v":"#a26e51","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-rusty-text","d":"The declared `--fibery-rusty-text`."},"terracotta":{"v":"#e89469","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-terracotta","d":"The declared `--fibery-terracotta`."},"architectRust":{"v":"#cb5800","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-architect-rust","d":"The declared `--fibery-architect-rust`."},"mudText":{"v":"#9f8b7f","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-mud-text","d":"The declared `--fibery-mud-text`."},"greyhound":{"v":"#3c3c3b","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-greyhound","d":"The declared `--fibery-greyhound`."},"greenOlives":{"v":"#66753d","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-green-olives","d":"The declared `--fibery-green-olives`."},"websiteBlue":{"v":"#3b758c","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-website-blue","d":"The declared `--fibery-website-blue`."}},"basic":{"red":{"v":"#d74242","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-basic-red","d":"The saturated brand ramp — plan icons, chart accents, tag fills."},"yellow":{"v":"#fc9f28","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-basic-yellow","d":"The saturated brand ramp — plan icons, chart accents, tag fills."},"blue":{"v":"#5171a2","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-basic-blue","d":"The saturated brand ramp — plan icons, chart accents, tag fills."},"pink":{"v":"#cd5872","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-basic-pink","d":"The saturated brand ramp — plan icons, chart accents, tag fills."},"orange":{"v":"#d27133","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-basic-orange","d":"The saturated brand ramp — plan icons, chart accents, tag fills."},"green":{"v":"#66753d","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-basic-green","d":"The saturated brand ramp — plan icons, chart accents, tag fills."},"violet":{"v":"#916fbe","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-basic-violet","d":"The saturated brand ramp — plan icons, chart accents, tag fills."},"mint":{"v":"#309fb6","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-basic-mint","d":"The saturated brand ramp — plan icons, chart accents, tag fills."},"black":{"v":"#251d1a","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-basic-black","d":"The saturated brand ramp — plan icons, chart accents, tag fills."},"white":{"v":"#fffdfa","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-basic-white","d":"The saturated brand ramp — plan icons, chart accents, tag fills."}},"secondary":{"red":{"v":"#e89e9e","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-secondary-red","d":"The mid tint of each hue."},"yellow":{"v":"#fbcc91","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-secondary-yellow","d":"The mid tint of each hue."},"blue":{"v":"#a6b6ce","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-secondary-blue","d":"The mid tint of each hue."},"pink":{"v":"#e4a9b6","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-secondary-pink","d":"The mid tint of each hue."},"orange":{"v":"#e6b697","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-secondary-orange","d":"The mid tint of each hue."},"green":{"v":"#b0b89c","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-secondary-green","d":"The mid tint of each hue."},"violet":{"v":"#c6b5dc","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-secondary-violet","d":"The mid tint of each hue."},"mint":{"v":"#95ccd8","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-secondary-mint","d":"The mid tint of each hue."}},"tertiary":{"red":{"v":"#f1cccc","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-tertiary-red","d":"The light tint of each hue."},"yellow":{"v":"#fae3c5","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-tertiary-yellow","d":"The light tint of each hue."},"blue":{"v":"#cfd7e4","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-tertiary-blue","d":"The light tint of each hue."},"pink":{"v":"#eed1d8","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-tertiary-pink","d":"The light tint of each hue."},"orange":{"v":"#f0d7c8","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-tertiary-orange","d":"The light tint of each hue."},"green":{"v":"#d5d8ca","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-tertiary-green","d":"The light tint of each hue."},"violet":{"v":"#dfd7ea","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-tertiary-violet","d":"The light tint of each hue."},"mint":{"v":"#c7e3e8","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-tertiary-mint","d":"The light tint of each hue."}},"quaternary":{"red":{"v":"#f6e5e5","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-quaternary-red","d":"The lightest tint — quaternary-yellow tints the pricing plan cards."},"yellow":{"v":"#fbf0e1","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-quaternary-yellow","d":"The lightest tint — quaternary-yellow tints the pricing plan cards."},"blue":{"v":"#e6eaf0","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-quaternary-blue","d":"The lightest tint — quaternary-yellow tints the pricing plan cards."},"pink":{"v":"#f5e7ea","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-quaternary-pink","d":"The lightest tint — quaternary-yellow tints the pricing plan cards."},"orange":{"v":"#f6eae3","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-quaternary-orange","d":"The lightest tint — quaternary-yellow tints the pricing plan cards."},"green":{"v":"#e9ebe4","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-quaternary-green","d":"The lightest tint — quaternary-yellow tints the pricing plan cards."},"violet":{"v":"#eeeaf3","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-quaternary-violet","d":"The lightest tint — quaternary-yellow tints the pricing plan cards."},"mint":{"v":"#e2f0f2","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-quaternary-mint","d":"The lightest tint — quaternary-yellow tints the pricing plan cards."}},"form":{"white":{"v":"#ffffff","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-form-white","d":"The declared `--fibery-form-white`."}}},"shadow":{"m":{"v":"rgba(20, 21, 26, 0.08) 0px 10px 16px -3px, rgba(20, 21, 26, 0.05) 0px 1px 2px 0px","t":"other","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-shadow-m","d":"The one declared elevation: 0 10px 16px -3px rgba(20,21,26,.08), 0 1px 2px rgba(20,21,26,.05)."}},"font":{"family":{"suisse":{"v":"\"Suisse Intl\", sans-serif","t":"fontFamily","s":"@font-face for \"Suisse Intl\" in the /_next/static/css/ bundle (raw/css-vars.json fonts); computed fontFamily of hero-cta default","d":"Suisse Intl — every control, nav item and body copy (100–900 static weights in the bundle)."},"fraunces":{"v":"\"Fraunces Var\", sans-serif","t":"fontFamily","s":"@font-face for \"Fraunces Var\" in the /_next/static/css/ bundle (raw/css-vars.json fonts)","d":"Fraunces Var — the serif display on headlines, section titles and quotes (a variable face, wght 100–900)."},"casuar":{"v":"\"Casuar\", sans-serif","t":"fontFamily","s":"@font-face for \"Casuar\" in the /_next/static/css/ bundle (raw/css-vars.json fonts)","d":"Casuar — a display face declared in the bundle for special surfaces."},"inter":{"v":"\"Inter Var\", sans-serif","t":"fontFamily","s":"@font-face for \"Inter Var\" in the /_next/static/css/ bundle (raw/css-vars.json fonts)","d":"Inter Var — declared for embedded/widget surfaces."}},"size":{"display":{"v":"64px","t":"dimension","s":"computed fontSize of hero-h1 default (raw/components-computed.json)","d":"The hero headline step — Fraunces at the top of the ramp. Line-height 64px."},"h2":{"v":"48px","t":"dimension","s":"computed fontSize of section-h2 default (raw/components-computed.json)","d":"The section-heading step. Line-height 48px."},"lede":{"v":"18px","t":"dimension","s":"computed fontSize of hero-lede default (raw/components-computed.json)","d":"The supporting-paragraph step. Line-height 23.4px."},"nav":{"v":"16px","t":"dimension","s":"computed fontSize of nav-item default (raw/components-computed.json)","d":"The nav-pill/button text step. Line-height 34px."},"body":{"v":"16px","t":"dimension","s":"computed fontSize of faq-item default (raw/components-computed.json)","d":"The body copy step on the pricing FAQ. Line-height 19.2px."},"displayMobile":{"v":"46px","t":"dimension","s":"computed fontSize of m-hero-h1 default (raw/components-computed.json)","d":"The hero headline at 390 wide. Line-height 46px."}},"weight":{"display":{"v":800,"t":"fontWeight","s":"computed fontWeight of hero-h1 default (raw/components-computed.json)","d":"The hero display weight."},"h2":{"v":800,"t":"fontWeight","s":"computed fontWeight of section-h2 default (raw/components-computed.json)","d":"The section-heading weight."},"nav":{"v":500,"t":"fontWeight","s":"computed fontWeight of nav-item default (raw/components-computed.json)","d":"The nav-pill weight."},"button":{"v":600,"t":"fontWeight","s":"computed fontWeight of hero-cta default (raw/components-computed.json)","d":"The button label weight."},"body":{"v":400,"t":"fontWeight","s":"computed fontWeight of faq-item default (raw/components-computed.json)","d":"The body copy weight."}}},"radius":{"pill":{"v":"6px","t":"dimension","s":"computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)","d":"The fully-rounded button/nav pill (FiberyButton)."},"card":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of plan-card default (raw/components-computed.json)","d":"The plan-card corner."},"field":{"v":"20px","t":"dimension","s":"computed borderTopLeftRadius of su-field default (raw/components-computed.json)","d":"The sign-up prompt field corner."},"menu":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of nav-panel default (raw/components-computed.json)","d":"The dropdown panel corner."}},"motion":{"control":{"v":"all 0.3s ease","t":"other","s":"computed transition of hero-cta default (raw/components-computed.json)","d":"The button/pill hover transition."},"navItem":{"v":"color 0.3s ease","t":"other","s":"computed transition of nav-item default (raw/components-computed.json)","d":"The nav-link hover transition."}},"component":{"header-height":{"v":"88px","t":"dimension","s":"measured h of mkt-header default (raw/components-computed.json)","d":"The marketing header bar height."},"logo-width":{"v":"127px","t":"dimension","s":"measured w of mkt-logo default (raw/components-computed.json)","d":"The Fibery wordmark width."},"nav-item-height":{"v":"34px","t":"dimension","s":"measured h of nav-item default (raw/components-computed.json)","d":"The nav-link height."},"nav-button-height":{"v":"40px","t":"dimension","s":"measured h of nav-signup default (raw/components-computed.json)","d":"The header button height."},"dropdown-width":{"v":"740px","t":"dimension","s":"measured w of nav-panel default (raw/components-computed.json)","d":"The open dropdown panel width."},"dropdown-height":{"v":"383px","t":"dimension","s":"measured h of nav-panel default (raw/components-computed.json)","d":"The open dropdown panel height."},"hero-measure":{"v":"440.23px","t":"dimension","s":"measured w of hero-h1 default (raw/components-computed.json)","d":"The hero headline measure."},"hero-cta-height":{"v":"40px","t":"dimension","s":"measured h of hero-cta default (raw/components-computed.json)","d":"The hero button height."},"plan-card-width":{"v":"282px","t":"dimension","s":"measured w of plan-card default (raw/components-computed.json)","d":"The plan-card width."},"plan-card-height":{"v":"559.27px","t":"dimension","s":"measured h of plan-card default (raw/components-computed.json)","d":"The plan-card height."},"faq-head-height":{"v":"73px","t":"dimension","s":"measured h of faq-item default (raw/components-computed.json)","d":"A closed FAQ row height."},"signup-panel-width":{"v":"560px","t":"dimension","s":"measured w of su-panel default (raw/components-computed.json)","d":"The sign-up wizard panel width."},"prompt-field-height":{"v":"164px","t":"dimension","s":"measured h of su-field default (raw/components-computed.json)","d":"The AI prompt textarea height."},"login-panel-width":{"v":"360px","t":"dimension","s":"measured w of login-panel default (raw/components-computed.json)","d":"The sign-in panel width."},"oauth-height":{"v":"36px","t":"dimension","s":"measured h of login-google default (raw/components-computed.json)","d":"The OAuth button height."},"mobile-topbar-height":{"v":"77px","t":"dimension","s":"measured h of m-topbar default (raw/components-computed.json)","d":"The phone top bar height."},"mobile-menu-size":{"v":"20px","t":"dimension","s":"measured w of m-menu-btn default (raw/components-computed.json)","d":"The sandwich button size."}}},"light":{"fibery":{"business":{"blue":{"color":{"v":"#3b758c","t":"color","s":"css-var --fibery-business-blue-color (light)"}}},"form":{"button":{"blue":{"color":{"v":"#3b758c","t":"color","s":"css-var --fibery-form-button-blue-color (light)"}}}},"gray":{"background":{"color":{"v":"#dedede","t":"color","s":"css-var --fibery-gray-background-color (light)"}},"icon":{"color":{"v":"#5f5f5f","t":"color","s":"css-var --fibery-gray-icon-color (light)"}}},"light":{"gray":{"background":{"color":{"v":"#fdf7ef","t":"color","s":"css-var --fibery-light-gray-background-color (light)"}},"border":{"color":{"v":"rgba(37, 29, 26, 0.1)","t":"color","s":"css-var --fibery-light-gray-border-color (light)"}},"icon":{"color":{"v":"rgba(37, 29, 26, 0.25)","t":"color","s":"css-var --fibery-light-gray-icon-color (light)"}}}},"medium":{"gray":{"background":{"color":{"v":"#f6f6f6","t":"color","s":"css-var --fibery-medium-gray-background-color (light)"}}}},"menu":{"bg":{"color":{"v":"#fff5e8","t":"color","s":"css-var --fibery-menu-bg-color (light)"}}},"page":{"body":{"color":{"v":"#faebd6","t":"color","s":"css-var --fibery-page-body-color (light)"}},"main":{"color":{"v":"#309fb6","t":"color","s":"css-var --fibery-page-main-color (light)"}},"secondary":{"color":{"v":"undefined","t":"other","s":"css-var --fibery-page-secondary-color (light)"}}},"text":{"default":{"color":{"v":"#251d1a","t":"color","s":"css-var --fibery-text-default-color (light)"}},"opposite":{"color":{"v":"#fffdfa","t":"color","s":"css-var --fibery-text-opposite-color (light)"}},"secondary":{"color":{"v":"rgba(37, 29, 26, 0.5)","t":"color","s":"css-var --fibery-text-secondary-color (light)"}},"selection":{"color":{"v":"undefined","t":"other","s":"css-var --fibery-text-selection-color (light)"}}}},"text":{"ink":{"v":"{color.basic.black}","t":"color","s":"computed color of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.basic.black","d":"The #251d1a near-black on display copy, headings and controls (text-default-color)."},"muted":{"v":"{color.basic.black}","t":"color","s":"computed color of hero-lede default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.basic.black","d":"The secondary ink on lede copy."},"link":{"v":"{color.basic.black}","t":"color","s":"computed color of footer-link default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.basic.black","d":"The footer link ink."},"fieldInk":{"v":"#000000","t":"color","s":"computed color of su-field default — the first text node's reading where the kit recorded one (raw/components-computed.json)","d":"The field text ink."}},"action":{"ctaFill":{"v":"{color.basic.black}","t":"color","s":"computed backgroundColor of hero-cta default (raw/components-computed.json); matches declared color.basic.black","d":"The fill of the dark 'Sign up' pill buttons."},"ctaInk":{"v":"{color.named.soup}","t":"color","s":"computed color of hero-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.named.soup","d":"The text on the dark pill buttons."}},"border":{"ctaOutline":{"v":"{color.basic.black}","t":"color","s":"computed borderTopColor of hero-cta2 default (raw/components-computed.json); matches declared color.basic.black","d":"The border of the outlined 'Book a Demo' button."},"focusRing":{"v":"#101010","t":"color","s":"computed outlineColor of nav-item focus-visible (raw/components-computed.json)","d":"The keyboard focus ring colour."}},"background":{"planTint":{"v":"{color.named.cream}","t":"color","s":"computed backgroundColor of plan-card default (raw/components-computed.json); matches declared color.named.cream","d":"The tinted plan-card surface (quaternary-yellow on the Free plan)."},"field":{"v":"{color.form.white}","t":"color","s":"computed backgroundColor of su-field default (raw/components-computed.json); matches declared color.form.white","d":"The sign-up prompt field fill."},"menuBg":{"v":"{fibery.menu.bg.color}","t":"color","s":"computed backgroundColor of nav-panel default (raw/components-computed.json); matches declared fibery.menu.bg.color","d":"The open dropdown panel fill (menu-bg cream)."},"page":{"v":"{fibery.page.body.color}","t":"color","s":"declared :root variable in fibery.com's /_next/static/css/ bundle (raw/css-vars.json): --fibery-page-body-color; visible as the warm soup field behind the marketing pages (screenshots/home-light-*.png)","d":"The warm soup page field."}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m || '<div><b>none declared or measured</b></div>';
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat((TOK.core || {}).shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  for (const setname of ['light', 'dark']) {
+    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.breakpoint || {}), 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.aspect || {}), 'aspect.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}), 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Aliases are set-relative: palette scales live under TOK.core, semantic
+  // roles under TOK.light / TOK.dark. Try each root.
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Fibery</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

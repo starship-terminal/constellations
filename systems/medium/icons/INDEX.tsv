@@ -1,0 +1,2 @@
+file	role
+wordmark.svg	Medium wordmark. Authored path fill was #242424; computed fill is var(--color-fg-neutral-primary) via the .bv path rule, so this copy uses currentColor.

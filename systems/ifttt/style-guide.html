@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IFTTT style guide</title>
+<meta name="description" content="IFTTT (ifttt.com / ifttt.ai) design tokens and the signed-out public surfaces' components — marketing, explore gallery, plans and the service/applet/connect detail pages — rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --palette-pba1717: rgba(17, 17, 17, 0.1);
+  --palette-pba0000: rgba(0, 0, 0, 0);
+  --palette-grey: rgba(17, 17, 17, 0.6);
+  --palette-grey2: #eeeeee;
+  --palette-grey22: #999999;
+  --palette-pff5e19: #ff5e19;
+  --palette-pba17172: rgba(17, 17, 17, 0.3);
+  --palette-pba2552: rgba(255, 255, 255, 0.1);
+  --palette-pba25522: rgba(255, 255, 255, 0.6);
+  --palette-p0099ff: #0099ff;
+  --palette-pba255222: rgba(255, 255, 255, 0.2);
+  --palette-pba2552222: rgba(255, 255, 255, 0.25);
+  --palette-pba25522222: rgba(255, 255, 255, 0.5);
+  --palette-grey222: #666666;
+  --palette-pba00002: rgba(0, 0, 0, 0.05);
+  --palette-p2299dd: #2299dd;
+  --palette-pd0011b: #d0011b;
+  --palette-pf5f5f5: #f5f5f5;
+  --palette-pba171722: rgba(17, 17, 17, 0.2);
+  --palette-saveGreen: #0dd14e;
+  --palette-p585858: #585858;
+  --palette-pba255222222: rgba(255, 255, 255, 0.08);
+  --palette-pba2552222222: rgba(255, 255, 255, 0.85);
+  --palette-pba25522222222: rgba(255, 255, 255, 0.12);
+  --palette-pba255222222222: rgba(255, 255, 255, 0.15);
+  --palette-pba2552222222222: rgba(255, 255, 255, 0.4);
+  --palette-p2cbe60: #2cbe60;
+  --palette-pba000022: rgba(0, 0, 0, 0.24);
+  --palette-p333333: #333333;
+  --palette-pf3f3f3: #f3f3f3;
+  --palette-pd4545c: #d4545c;
+  --palette-pba1717222: rgba(17, 17, 17, 0.15);
+  --palette-pe9e9e9: #e9e9e9;
+  --palette-p888888: #888888;
+  --palette-pe7e7e7: #e7e7e7;
+  --palette-pba25522222222222: rgba(255, 255, 255, 0.7);
+  --palette-pba0000222: rgba(0, 0, 0, 0.25);
+  --palette-p0089da: #0089da;
+  --palette-pba17172222: rgba(17, 17, 17, 0.08);
+  --palette-pba00002222: rgba(0, 0, 0, 0.5);
+  --palette-p000000: #000000;
+  --palette-pdfdfdf: #dfdfdf;
+  --palette-pffe4fb: #ffe4fb;
+  --palette-pf5d8da: #f5d8da;
+  --palette-pff9900: #ff9900;
+  --palette-pba000022222: rgba(0, 0, 0, 0.14);
+  --palette-pba171722222: rgba(17, 17, 17, 0.03);
+  --palette-pee4332: #ee4332;
+  --palette-pe4f9e7: #e4f9e7;
+  --palette-pddff00: #ddff00;
+  --palette-pba0000222222: rgba(0, 0, 0, 0.2);
+  --palette-pba1717222222: rgba(17, 17, 17, 0.5);
+  --palette-pbfefc4: #bfefc4;
+  --palette-pcccccc: #cccccc;
+  --palette-p3b579d: #3b579d;
+  --typography-hero: 900 79.3296px/79.3296px "Museo Sans Rounded", "Museo Sans Rounded Fallback", "Avenir Next", helvetica, arial, sans-serif;
+  --typography-exploreHero: 700 32px/41.6px "Museo Sans Rounded", "Museo Sans Rounded Fallback", "Avenir Next", helvetica, arial, sans-serif;
+  --typography-pageTitle: 900 64px/64px "Museo Sans Rounded", "Museo Sans Rounded Fallback", "Avenir Next", helvetica, arial, sans-serif;
+  --typography-sectionTitle: 900 50px/50px "Museo Sans Rounded", "Museo Sans Rounded Fallback", "Avenir Next", helvetica, arial, sans-serif;
+  --typography-body: 600 18px/23.4px "Museo Sans Rounded", "Museo Sans Rounded Fallback", "Avenir Next", helvetica, arial, sans-serif;
+  --typography-bodyLink: 900 16px/20.8px "Museo Sans Rounded", "Museo Sans Rounded Fallback", "Avenir Next", helvetica, arial, sans-serif;
+  --typography-navLink: 900 20px/22px "Museo Sans Rounded", "Museo Sans Rounded Fallback", "Avenir Next", helvetica, arial, sans-serif;
+  --typography-button: 900 20px/22px "Museo Sans Rounded", "Museo Sans Rounded Fallback", "Avenir Next", helvetica, arial, sans-serif;
+  --typography-buttonHero: 900 34px/37.4px "Museo Sans Rounded", "Museo Sans Rounded Fallback", "Avenir Next", helvetica, arial, sans-serif;
+  --typography-price: 900 50px/50px "Museo Sans Rounded", "Museo Sans Rounded Fallback", "Avenir Next", helvetica, arial, sans-serif;
+  --typography-appletMeta: 900 16px/20.8px "Museo Sans Rounded", "Museo Sans Rounded Fallback", "Avenir Next", helvetica, arial, sans-serif;
+  --typography-tab: 700 18px/24px "Museo Sans Rounded", "Museo Sans Rounded Fallback", "Avenir Next", helvetica, arial, sans-serif;
+  --typography-footerLink: 900 34px/37.4px "Museo Sans Rounded", "Museo Sans Rounded Fallback", "Avenir Next", helvetica, arial, sans-serif;
+  --typography-serviceChip: 700 32px/41.6px "Museo Sans Rounded", "Museo Sans Rounded Fallback", "Avenir Next", helvetica, arial, sans-serif;
+  --font-family-brand: "Museo Sans Rounded", "Museo Sans Rounded Fallback", "Avenir Next", helvetica, arial, sans-serif;
+  --font-family-fallback: ui-sans-serif, system-ui, sans-serif;
+  --component-header-height: 99px;
+  --component-button-small-height: 54px;
+  --component-button-small-radius: 64px;
+  --component-button-small-outlinedRadius: 64px;
+  --component-button-hero-height: 101px;
+  --component-button-hero-radius: 64px;
+  --component-button-secondary-height: 79px;
+  --component-button-secondary-radius: 64px;
+  --component-button-planCta-height: 54px;
+  --component-button-planCta-radius: 64px;
+  --component-button-share-radius: 64px;
+  --component-button-back-radius: 64px;
+  --component-connectToggle-height: 95.94px;
+  --component-connectToggle-width: 480.05px;
+  --component-connectToggle-radius: 47.97px;
+  --component-input-search-height: 48px;
+  --component-input-search-radius: 32px;
+  --component-input-gallerySearch-height: 55px;
+  --component-input-shareField-height: 55px;
+  --component-input-shareField-radius: 16px;
+  --component-promptField-height: 78px;
+  --component-promptField-radius: 0px;
+  --component-tab-height: 48px;
+  --component-tab-radius: 8px;
+  --component-switch-height: 32px;
+  --component-switch-width: 48px;
+  --component-switch-radius: 16px;
+  --component-serviceChip-height: 42px;
+  --component-serviceChip-radius: 0px;
+  --component-serviceIcon-size: 110px;
+  --component-serviceIcon-radius: 12px;
+  --component-mobileHeader-height: 64px;
+  --component-menuButton-height: 48px;
+  --component-backButton-height: 54px;
+  --component-card-applet-radius: 24px;
+  --component-card-applet-shadow: rgba(0, 0, 0, 0.24) 0px 1.5px 6px 0px;
+  --component-card-service-radius: 24px;
+  --component-card-service-shadow: rgba(0, 0, 0, 0.24) 0px 1.5px 6px 0px;
+  --component-card-plan-radius: 16px;
+  --component-card-planRecommended-radius: 16px;
+  --component-card-example-radius: 0px;
+  --component-card-story-radius: 24px;
+  --motion-duration-0ms: 0ms;
+  --motion-duration-100ms: 100ms;
+  --motion-duration-120ms: 120ms;
+  --motion-duration-150ms: 150ms;
+  --motion-duration-200ms: 200ms;
+  --motion-duration-300ms: 300ms;
+  --motion-duration-400ms: 400ms;
+  --motion-duration-cycle-lag: 500ms;
+  --motion-duration-1200ms: 1200ms;
+  --motion-duration-1400ms: 1400ms;
+  --motion-duration-20000ms: 20000ms;
+  --motion-duration-30000ms: 30000ms;
+  --motion-duration-30330ms: 30330ms;
+  --motion-duration-240000ms: 240000ms;
+  --motion-easing-bezier-0-455-0-03-0-515-0-955: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --motion-easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-ease-in: cubic-bezier(0.42, 0, 1, 1);
+  --motion-easing-ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+  --motion-easing-ease-out: cubic-bezier(0, 0, 0.58, 1);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --motion-transition-color-200ms-ease: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-opacity-150ms-ease-out: {'duration': 'var(--motion-duration-150ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-out)'};
+  --motion-transition-opacity-300ms-ease: {'duration': 'var(--motion-duration-300ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-visibility-0ms-linear-delay300ms: {'duration': 'var(--motion-duration-0ms)', 'delay': '300ms', 'timingFunction': 'var(--motion-easing-linear)'};
+  --motion-transition-opacity-200ms-ease: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-border-color-200ms-ease: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-border-200ms-ease: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-opacity-150ms-ease-in-out: {'duration': 'var(--motion-duration-150ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
+  --motion-transition-background-color-200ms-ease: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-color-500ms-ease: {'duration': 'var(--motion-duration-cycle-lag)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-opacity-150ms-ease: {'duration': 'var(--motion-duration-150ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-transform-150ms-ease-in-out: {'duration': 'var(--motion-duration-150ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
+  --motion-transition-transform-200ms-ease: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-background-color-120ms-ease-in-out: {'duration': 'var(--motion-duration-120ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
+  --motion-transition-flex-basis-300ms-ease: {'duration': 'var(--motion-duration-300ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-grid-template-columns-300ms-ease: {'duration': 'var(--motion-duration-300ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-transform-120ms-ease-in-out: {'duration': 'var(--motion-duration-120ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
+  --motion-animation-brand-scroll: {'name': 'brand-scroll', 'duration': 'var(--motion-duration-30000ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-linear)', 'iterationCount': 'infinite', 'direction': 'normal', 'fillMode': 'none'};
+  --motion-animation-explore-hero-service-10: {'name': 'explore-hero-service-10', 'duration': 'var(--motion-duration-30330ms)', 'delay': '-790ms', 'timingFunction': 'var(--motion-easing-ease-in-out)', 'iterationCount': 'infinite', 'direction': 'normal', 'fillMode': 'both'};
+  --motion-animation-hero-collage-orbit: {'name': 'hero-collage-orbit', 'duration': 'var(--motion-duration-240000ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-linear)', 'iterationCount': 'infinite', 'direction': 'normal', 'fillMode': 'none'};
+  --motion-animation-hero-collage-spin: {'name': 'hero-collage-spin', 'duration': 'var(--motion-duration-240000ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-linear)', 'iterationCount': 'infinite', 'direction': 'normal', 'fillMode': 'none'};
+  --misc-baseFontFamily: "Museo Sans Rounded", "Museo Sans Rounded Fallback", "Avenir Next", helvetica, arial, sans-serif;
+  --misc-codeFontFamily: "Menlo", "SFMono-Regular", "Consolas", "Liberation Mono", monospace;
+  --misc-defaultFontSize: 20px;
+  --misc-phoneFontSize: 16px;
+  --misc-primaryText: #111111;
+  --misc-screenLgMax: 1919px;
+  --misc-screenLgMin: 1440px;
+  --misc-screenMdMax: 1199px;
+  --misc-screenMdMin: 992px;
+  --misc-screenMlMax: 1439px;
+  --misc-screenMlMin: 1200px;
+  --misc-screenSmMax: 991px;
+  --misc-screenSmMin: 768px;
+  --misc-screenXlMin: 1920px;
+  --misc-screenXsMax: 767px;
+  --misc-screenXsMin: 480px;
+  --misc-screenXxsMax: 479px;
+  --misc-screenXxsMin: 320px;
+  --misc-smallDesktopFontSize: 18px;
+  --color-text-body: #111111;
+  --color-text-muted: rgba(17, 17, 17, 0.7);
+  --color-text-display: #111111;
+  --color-text-onColorSubtle: #ffffff;
+  --color-text-footer: #111111;
+  --color-text-link: #01b6ff;
+  --color-bg-page: #ffffff;
+  --color-action-fill: #111111;
+  --color-action-onFill: #ffffff;
+  --color-action-hoverFill: #111111;
+  --color-action-outline: #111111;
+  --color-action-outlineInk: #111111;
+  --color-action-secondaryOutline: #ffffff;
+  --color-action-secondaryInk: #ffffff;
+  --component-dark-navInk: #ffffff;
+  --component-dark-ground: #111111;
+  --component-dark-outline: #ffffff;
+  --component-dark-outlineInk: #ffffff;
+  --component-dark-navFill: #ffffff;
+  --component-dark-navFillInk: #111111;
+  --component-dark-heroBg: #111111;
+  --component-dark-chipInk: #ee831e;
+  --component-dark-actionFill: #ffffff;
+  --component-dark-actionInk: #111111;
+  --component-dark-linkInk: #ffffff;
+  --component-planCard-ctaBorder: #111111;
+  --component-planCard-recommendedBg: #ffffff;
+  --component-input-searchBg: #111111;
+  --component-input-searchBorder: rgba(255, 255, 255, 0.3);
+  --component-input-shareFieldBg: rgba(17, 17, 17, 0.05);
+  --component-card-appletBg: #1db954;
+  --component-card-serviceBg: #14223d;
+  --component-switch-trackOn: #01b6ff;
+  --component-switch-trackOff: rgba(17, 17, 17, 0.4);
+  --component-tab-fill: rgba(17, 17, 17, 0.05);
+  --component-tab-activeFill: #111111;
+  --component-tab-activeInk: #ffffff;
+  --sg-sans: ui-rounded, "SF Pro Rounded", "Arial Rounded MT Bold", "Helvetica Rounded", ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.6 var(--sg-sans); color: var(--color-text-body, #222); background: var(--color-bg-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.01em; }
+h2.sh { font: 700 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-action-outline, #e2e4e8); }
+.lead { max-width: 62ch; opacity: .8; }
+.note { font-size: 13px; opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; color: var(--color-text-link, #09f); }
+.pal-h { font: 700 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.onDark { padding: 10px; border-radius: 12px; background: var(--component-dark-ground, #111); color: #fff; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(0,0,0,.12); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); color: inherit; }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); opacity: .65; color: inherit; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 600; }
+.kv span { opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-action-outline, #e2e4e8); overflow: hidden; background: var(--color-bg-page, #fff); color: var(--color-text-body, #222); border-radius: var(--component-card-plan-radius, 16px); }
+.topbar { display: flex; align-items: center; gap: 14px; height: var(--component-header-height, 64px); padding: 0 20px; font-size: 14px; border-bottom: 1px solid var(--color-action-outline, #e2e4e8); background: var(--color-bg-page, #fff); }
+.topbar .wm { font-weight: 900; font-size: 19px; letter-spacing: -0.02em; }
+.topbar .nav { opacity: .8; display: flex; gap: 16px; font-size: 13px; }
+.topbar .search { flex: 1; display: flex; align-items: center; gap: 8px; height: var(--component-input-search-height, 40px); padding: 0 14px; border: 1px solid var(--component-input-searchBorder, #e2e4e8); border-radius: var(--component-input-search-radius, 20px); background: var(--component-input-searchBg, #fff); color: var(--color-text-muted, #666); font-size: 13px; max-width: 380px; margin: 0 12px; }
+.topbar .sp { flex: 0 0 auto; margin-left: auto; display: flex; gap: 10px; align-items: center; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-small-height, 40px); padding: 0 18px; font-size: 14px; font-weight: 700; border-radius: 9999px; border: 1px solid transparent; font-family: var(--sg-sans); }
+.btn.primary { background: var(--color-action-fill, #111); color: var(--color-action-onFill, #fff); }
+.btn.outlined { background: transparent; border-color: var(--color-action-outline, #111); color: var(--color-action-outlineInk, #111); }
+.btn.big { height: var(--component-button-hero-height, 52px); padding: 0 28px; font-size: 16px; }
+.hero { padding: 44px 40px 36px; }
+.hero h3 { font: 900 44px/1.12 var(--sg-sans); letter-spacing: -0.01em; margin: 0 0 14px; max-width: 14ch; }
+.prompt { display: flex; align-items: center; gap: 10px; padding: 14px 18px; border: 1px solid var(--color-action-outline, #e2e4e8); border-radius: var(--component-promptField-radius, 20px); background: var(--component-promptCard-fieldBg, #fff); color: var(--color-text-muted, #666); font-size: 15px; margin: 0 0 16px; max-width: 520px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+.tab { display: inline-flex; align-items: center; height: var(--component-tab-height, 40px); padding: 0 16px; border-radius: var(--component-tab-radius, 9999px); border: 1px solid var(--color-action-outline, #e2e4e8); background: var(--component-tab-fill, #fff); font-size: 13px; font-weight: 600; }
+.tab.on { background: var(--component-tab-activeFill, #111); color: var(--component-tab-activeInk, #fff); border-color: transparent; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; padding: 22px 40px 40px; }
+.acard { border: 1px solid var(--color-action-outline, #eee); border-radius: var(--component-card-applet-radius, 16px); padding: 18px; background: var(--component-card-appletBg, #fff); }
+.acard .svc { display: flex; gap: 6px; margin-bottom: 12px; }
+.chip { width: var(--component-serviceIcon-size, 40px); height: var(--component-serviceIcon-size, 40px); border-radius: var(--component-serviceIcon-radius, 10px); display: inline-flex; align-items: center; justify-content: center; font: 700 12px/1 var(--sg-sans); color: #fff; }
+.acard b { display: block; font: 700 15px/1.45 var(--sg-sans); margin-bottom: 8px; }
+.acard .sub { font-size: 12.5px; opacity: .6; }
+/* the dark painted surfaces, as the explore hero and detail heroes paint them */
+.darkhero { background: var(--component-dark-ground, #111); color: #fff; padding: 40px; border-radius: 0; }
+.darkhero h3 { font: 900 34px/1.15 var(--sg-sans); margin: 0 0 18px; }
+.darkhero .svc-chip { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: var(--component-serviceChip-radius, 9999px); background: var(--component-dark-chipBg, #222); color: var(--component-dark-chipInk, #fff); font-size: 13px; font-weight: 600; margin: 0 6px 6px 0; }
+.darkhero .pc { margin-top: 18px; padding: 16px 18px; border-radius: var(--component-promptCard-radius, 20px); background: #fff; color: var(--color-text-muted, #666); font-size: 14px; max-width: 460px; }
+.darkhero .wbtn { margin-top: 16px; display: inline-flex; align-items: center; height: 44px; padding: 0 22px; border-radius: 9999px; background: var(--component-dark-actionFill, #fff); color: var(--component-dark-actionInk, #111); font-weight: 700; font-size: 14px; }
+/* plans */
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; padding: 0; }
+.pcard { border: 1px solid var(--color-action-outline, #e2e4e8); border-radius: var(--component-card-plan-radius, 16px); padding: 20px; background: #fff; }
+.pcard.rec { background: var(--component-planCard-recommendedBg, #fff); }
+.pcard .ribbon { display: inline-block; font: 700 10px/1 var(--sg-sans); letter-spacing: .1em; color: #fff; background: var(--color-action-fill, #111); padding: 5px 10px; border-radius: 9999px; margin-bottom: 10px; }
+.pcard .price { font: 900 30px/1.1 var(--sg-sans); margin: 6px 0 2px; }
+.pcard ul { margin: 12px 0; padding: 0; list-style: none; font-size: 13px; }
+.pcard li { padding: 3px 0 3px 20px; position: relative; }
+.pcard li::before { content: "✓"; position: absolute; left: 0; font-weight: 700; }
+.switchrow { display: flex; align-items: center; gap: 12px; margin: 0 0 14px; font-size: 14px; font-weight: 600; }
+.sw-field { width: var(--component-switch-width, 52px); height: var(--component-switch-height, 28px); border-radius: var(--component-switch-radius, 9999px); background: var(--component-switch-trackOn, #111); position: relative; display: inline-block; }
+.sw-field i { position: absolute; top: 3px; right: 3px; width: 22px; height: 22px; border-radius: 50%; background: #fff; }
+.badge { display: inline-block; font: 700 11px/1 var(--sg-sans); padding: 5px 9px; border-radius: 9999px; background: var(--component-badge-bg, #d7f5e0); color: var(--component-badge-ink, #0a7a3f); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-action-outline, #e2e4e8); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-action-outline, #e2e4e8); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; opacity: .65; font-family: var(--sg-mono); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>IFTTT style guide</h1>
+  <p class="note">ifttt.com / ifttt.ai — the signed-out public surfaces. Signed-out public evidence only.</p>
+
+  <h2 class="sh">IFTTT, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the few real custom properties the site declares (<code>light.misc.*</code> — <code>--card-color</code>, <code>--hero-unit</code>, <code>--primary-text</code>, the explore cycler's <code>--cycle-*</code>), the <code>light.color.*</code> semantic roles measured off the painted components (the white ground, the near-black ink, the black action pill, the outlined secondary, the hairline borders), the <code>core.palette.*</code> literals the Sass-compiled classes hard-code, the proprietary Museo Sans Rounded face as a name (never shipped), and the measured geometry (<code>component.*</code>) read off the live DOM — the header, the pills, the prompt card, the switch and the cards. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from ifttt.com and ifttt.ai, signed out, in headless Chromium at 1440&times;900 (mobile pass at 390&times;844). IFTTT paints <b>one theme</b>: there is no theme control on any surface, and the dark grounds on /explore and the service/applet/connect heroes are painted sections — their values live under <code>light.component.dark</code> as the measured values they are; no dark set was fabricated. Museo Sans Rounded is licensed and not bundled: samples fall back to a rounded system face. Sign-in, the &lsquo;Connect&rsquo; install control, checkout, help.ifttt.com (403 to automation) and the app-store links are documented boundaries, not captures.</p>
+
+  <h2 class="sh">The surface</h2>
+  <p class="lead">IFTTT is a light-on-white marketing system built on rounded shapes and one strong action: near-black filled pills (&ldquo;Get started&rdquo;, &ldquo;Start building&rdquo;, &ldquo;Connect&rdquo;) against white grounds and pastel section tints, with dark painted heroes on /explore and the detail pages where the same components invert (&ldquo;Get started today&rdquo; is a white pill on near-black). The frame is <code>header.unified-header</code> (wordmark, search field, Explore / Plans, Log in, Get started) and the content primitives are the service-icon tile, the applet and service cards, the prompt card, the featured tabs, the billing switch and the plan cards.</p>
+  <div class="mock">
+    <div class="topbar"><span class="wm">IFTTT.ai</span><span class="nav"><span>Explore</span><span>Plans</span></span><span class="search">Search for Applets, services, etc.</span><span class="sp"><span class="btn outlined">Log in</span><span class="btn primary">Get started</span></span></div>
+    <div class="hero"><h3>The easiest way to automate anything</h3>
+      <div class="prompt">Describe what you'd like to build&hellip;</div>
+      <span class="btn big primary">Start building</span>
+      <div class="tabs"><span class="tab on">Popular</span><span class="tab">Business</span><span class="tab">Productivity</span><span class="tab">AI-powered</span><span class="tab">Smart home</span></div>
+    </div>
+    <div class="cards">
+      <div class="acard"><span class="svc"><span class="chip" style="background:#e60023">P</span><span class="chip" style="background:#1a1a1a">T</span></span><b>Start iRobot cleaning when you leave home</b><span class="sub">iRobot &middot; 20.8k</span></div>
+      <div class="acard"><span class="svc"><span class="chip" style="background:#0060df">T</span><span class="chip" style="background:#333">S</span></span><b>If there&rsquo;s a new Tweet with keyword, add to sheets</b><span class="sub">Twitter &middot; 4.2k</span></div>
+    </div>
+  </div>
+  <div class="mock" style="margin-top:14px">
+    <div class="darkhero"><h3>Automate X with Y</h3>
+      <span class="svc-chip">Pinterest</span><span class="svc-chip">Spotify</span><span class="svc-chip">Philips Hue</span><span class="svc-chip">Google Sheets</span>
+      <div class="pc">tell us what you'd like to automate&hellip;</div>
+      <span class="wbtn">Get started today</span>
+    </div>
+  </div>
+  <div class="mock" style="margin-top:14px;padding:28px 32px">
+    <div class="switchrow"><span>Monthly</span><span class="sw-field"><i></i></span><span>Yearly</span><span class="badge">SAVE 30%</span></div>
+    <div class="plans">
+      <div class="pcard"><b>Free</b><div class="price">$0.00</div><span class="sub" style="opacity:.6">per month</span><ul><li>2 Applets</li><li>Core features</li></ul><span class="btn outlined" style="height:36px;font-size:13px">Get started</span></div>
+      <div class="pcard rec"><span class="ribbon">RECOMMENDED</span><div class="price">$3.49</div><span style="opacity:.6">per month</span><ul><li>Unlimited Applets</li><li>All features unlocked</li></ul><span class="btn primary" style="height:36px;font-size:13px">Get started</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The semantic roles under <code>light.*</code> are the painted surface — the white ground, the near-black ink ramp, the black action fill and the outlined secondary. <code>light.component.dark.*</code> holds the dark painted sections (the /explore ground and the detail heroes, the on-dark chips and white-pill action) measured in place, and <code>core.palette.*</code> the literals the Sass-compiled classes declare outside the thin token layer — near-blacks, the off-white tints and the brand-pastel section colours.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius, layout and motion</h2>
+  <p class="lead">IFTTT declares no spacing scale — the stack is Sass classes — so spacing, radius and control geometry are <b>measured</b>: <code>component.*</code> carries the header height, button and field heights, card and control corners (the pills clamp to 9999px), the switch track and the service-icon tile. <code>motion.*</code> is the measured set from the reduced-motion probe: the durations and easing curves elements actually run, the transitions and animations (the explore cycler included), and what <code>prefers-reduced-motion</code> changes.</p>
+  <div id="spacing-out" class="kv"></div>
+  <div id="motion-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">One proprietary face, recorded by name only: <code>Museo Sans Rounded</code> in weights 300/500/700/900 plus italics, served from web-assets.ifttt.com — the 900 black carries the display headlines, 700 the buttons and card titles, 500/400 body text. No type ramp is declared; the <code>core.typography.*</code> composites carry the measured styles — the hero, the explore display, headings, body, buttons, tabs and the applet byline. Samples fall back to a rounded system face because Museo Sans Rounded is licensed and never shipped.</p>
+  <div id="typ-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared custom properties from the live stylesheets, harvested the literal colours, and measured computed styles on the real elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, focused and toggled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"palette":{"pba1717":{"v":"rgba(17, 17, 17, 0.1)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 709 declarations; e.g. .button-tiny.button-outlined; .button-tiny.button-outlined; .button-tiny.button-outlined)"},"pba0000":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 385 declarations; e.g. .button-outlined; .button-outlined:disabled, .button-outlined[aria-disabled=\"true\"]; .button-outlined.button-on-color)"},"grey":{"v":"rgba(17, 17, 17, 0.6)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 253 declarations; e.g. .connect-button-outline.small-flavor .connect-button .service-icon; .button-primary:focus-visible, .button-primary:active, .button-secondary:focus-visible, .button-secondary:acti; .button-tertiary:focus-visible, .button-tertiary:active, .button-mobile-large:focus-visible, .button-mobile-la)"},"grey2":{"v":"#eeeeee","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 182 declarations; e.g. .table th, .table td; .table thead th; header.unified-header.on-color a.sign-up:hover, header.unified-header.on-color a.sign-up:focus)"},"grey22":{"v":"#999999","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 157 declarations; e.g. .ifttt-search .ifttt-search-input:focus::placeholder; .ifttt-search span.icon.search svg > path; body:not(.mobile-universal-search-enabled) .ifttt-search:hover.on-dark input)"},"pff5e19":{"v":"#ff5e19","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 142 declarations; e.g. .form-section p.warning; :is(.form .field:has(.inline-errors) input, .form .field:has(.inline-errors) select, .form .field:has(.inline-; :is(.form .field:has(.inline-errors) input, .form .field:has(.inline-errors) select, .form .field:has(.inline-)"},"pba17172":{"v":"rgba(17, 17, 17, 0.3)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 121 declarations; e.g. .button-tiny.button-outlined:hover, .button-tiny.button-outlined:focus; .button-tiny.button-outlined:hover, .button-tiny.button-outlined:focus; .button-tiny.button-outlined:hover, .button-tiny.button-outlined:focus)"},"pba2552":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 58 declarations; e.g. .button-outlined.button-on-color:hover, .button-outlined.button-on-color:focus; .button-outlined.button-on-color:active; .button-tiny.button-on-color.button-outlined:hover, .button-tiny.button-on-color.button-outlined:focus)"},"pba25522":{"v":"rgba(255, 255, 255, 0.6)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 57 declarations; e.g. .button-primary.button-on-color:focus-visible, .button-primary.button-on-color:active, .button-secondary.butto; .button-tertiary.button-on-color:focus-visible, .button-tertiary.button-on-color:active, .button-mobile-large.; .button-tiny.button-on-color:focus-visible, .button-tiny.button-on-color:active)"},"p0099ff":{"v":"#0099ff","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 56 declarations; e.g. .form .action .secondary-action:link, .form .action .secondary-action:visited, .form .actions .secondary-actio; body:not(.mobile-universal-search-enabled) .ifttt-search.on-dark .ifttt-search-input:focus; body:not(.mobile-universal-search-enabled) .ifttt-search.on-color .ifttt-search-input:focus)"},"pba255222":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 48 declarations; e.g. body:not(.mobile-universal-search-enabled) .ifttt-search:hover.on-color input; body:not(.mobile-universal-search-enabled) .ifttt-search.on-color .ifttt-search-input; body:not(.mobile-universal-search-enabled) .ifttt-search.on-color .ifttt-search-input)"},"pba2552222":{"v":"rgba(255, 255, 255, 0.25)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 44 declarations; e.g. .connect-button-outline:not(.small-flavor) .connect-button .alt-brand-color; .connect-button-outline.small-flavor .connect-button .alt-brand-color; .prosumer-home .connect-button-outline:not(.small-flavor) .connect-button .alt-brand-color)"},"pba25522222":{"v":"rgba(255, 255, 255, 0.5)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 42 declarations; e.g. .button-tiny.button-on-color.button-outlined:hover, .button-tiny.button-on-color.button-outlined:focus; .button-tiny.button-on-color.button-outlined:hover, .button-tiny.button-on-color.button-outlined:focus; .button-tiny.button-on-color.button-outlined:hover, .button-tiny.button-on-color.button-outlined:focus)"},"grey222":{"v":"#666666","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 42 declarations; e.g. .ifttt-search:hover input::placeholder; .ifttt-search:hover .icon.search > svg > path; .ifttt-search:hover input::placeholder)"},"pba00002":{"v":"rgba(0, 0, 0, 0.05)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 36 declarations; e.g. .modal .modal-background .modal-content; .modal .modal-background .modal-content; .modal .modal-background .modal-content)"},"p2299dd":{"v":"#2299dd","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 35 declarations; e.g. #nprogress .bar; #nprogress .peg; #nprogress .peg)"},"pd0011b":{"v":"#d0011b","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 35 declarations; e.g. .flash-msg.alert-danger, .flash-msg.error; .flash-msg.alert-danger, .flash-msg.error; .flash-msg.alert-danger, .flash-msg.error)"},"pf5f5f5":{"v":"#f5f5f5","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 29 declarations; e.g. hr; hr; hr)"},"pba171722":{"v":"rgba(17, 17, 17, 0.2)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 28 declarations; e.g. header.unified-header.on-color.on-image .nav-link, header.unified-header.on-color.on-image .sign-in; header.unified-header.on-color.on-image .nav-link, header.unified-header.on-color.on-image .sign-in; header.unified-header.on-color.on-image .nav-link, header.unified-header.on-color.on-image .sign-in)"},"saveGreen":{"v":"#0dd14e","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 27 declarations; e.g. .flash-msg.alert; .flash-msg.alert; .flash-msg.alert)"},"p585858":{"v":"#585858","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 27 declarations; e.g. .build-automation-module .dropdown-field; .build-automation-module .dropdown-field; .build-automation-module .dropdown-field)"},"pba255222222":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 26 declarations; e.g. .connect-button-outline:not(.small-flavor) .connect-button .service-icon; .prosumer-home .connect-button-outline:not(.small-flavor) .connect-button .service-icon; .connect-button-outline:not(.small-flavor) .connect-button .service-icon)"},"pba2552222222":{"v":"rgba(255, 255, 255, 0.85)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 26 declarations; e.g. .prosumer-home .story-spotlight__panel .story-box .category p; .prosumer-home .upgrade-with-ifttt-pro ul.upgrade-benefits li span; .prosumer-home .story-spotlight__panel .story-box .category p)"},"pba25522222222":{"v":"rgba(255, 255, 255, 0.12)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 25 declarations; e.g. body:not(.mobile-universal-search-enabled) .ifttt-search.on-dark span.icon.clean-search svg rect; body:not(.mobile-universal-search-enabled) .ifttt-search.on-dark span.icon.clean-search svg rect; body:not(.mobile-universal-search-enabled) .ifttt-search.on-dark span.icon.clean-search svg rect)"},"pba255222222222":{"v":"rgba(255, 255, 255, 0.15)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 20 declarations; e.g. .mcp-page .mcp-agent-showcase__tab; .mcp-page .mcp-agent-showcase__tab; .mcp-page .mcp-agent-showcase__tab)"},"pba2552222222222":{"v":"rgba(255, 255, 255, 0.4)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 20 declarations; e.g. .mcp-page .mcp-agent-showcase__tab:hover; .mcp-page .mcp-agent-showcase__tab:hover; .mcp-page .mcp-agent-showcase__tab:hover)"},"p2cbe60":{"v":"#2cbe60","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 18 declarations; e.g. .promo_code_form__promo-code-field___VtO5u.promo_code_form__success___VtO5u input[type=\"text\"]; .promo_code_form__promo-code-field___VtO5u.promo_code_form__success___VtO5u input[type=\"text\"]; .promo_code_form__promo-code-field___VtO5u.promo_code_form__success___VtO5u input[type=\"text\"])"},"pba000022":{"v":"rgba(0, 0, 0, 0.24)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 17 declarations; e.g. .web-applet-card .applet-card-body; .web-applet-card .applet-card-body; .service-card)"},"p333333":{"v":"#333333","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 17 declarations; e.g. .tool-tip--dark; .about-service-detail-card .service-detail-content .similar-services .similar-services-list .similar-service-i; .tool-tip--dark)"},"pf3f3f3":{"v":"#f3f3f3","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 16 declarations; e.g. section.get-started.background-neutral; .tqa-card .tqa-card-actions a.tqa-card-try:hover, .tqa-card .tqa-card-actions a.tqa-card-try:focus, .tqa-card ; section.get-started.background-neutral)"},"pd4545c":{"v":"#d4545c","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 14 declarations; e.g. .warning-box; .warning-box a, .warning-box a:visited; .warning-box)"},"pba1717222":{"v":"rgba(17, 17, 17, 0.15)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 14 declarations; e.g. header.unified-header.on-color.on-image .logo svg:not(.ifttt-logo-ai) path, header.unified-header.on-color.on-; .account-menu .account-menu-panel; header.unified-header.on-color.on-image .logo svg:not(.ifttt-logo-ai) path, header.unified-header.on-color.on-)"},"pe9e9e9":{"v":"#e9e9e9","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 12 declarations; e.g. .mcp-page .mcp-how-works__card; .mcp-page .mcp-how-works__card; .mcp-page .mcp-how-works__card)"},"p888888":{"v":"#888888","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 12 declarations; e.g. .build-automation-module .dropdown-field:hover:not(.open); .build-automation-module .dropdown-field:hover:not(.open); .build-automation-module .dropdown-field:hover:not(.open))"},"pe7e7e7":{"v":"#e7e7e7","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 11 declarations; e.g. .credits-plans-table th, .credits-plans-table td; .credits-plans-table td; .generator_modal__ai-generator-modal___SAkkO .generator_modal__connector-line___SAkkO)"},"pba25522222222222":{"v":"rgba(255, 255, 255, 0.7)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 11 declarations; e.g. .mcp-page .mcp-agent-showcase__subtitle; .sdk-configure-page-content .field input[type=\"text\"]:focus, .sdk-configure-page-content .field select:focus, ; .sdk-configure-page-content .field input[type=\"text\"]:focus, .sdk-configure-page-content .field select:focus, )"},"pba0000222":{"v":"rgba(0, 0, 0, 0.25)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 11 declarations; e.g. .modal .modal-background .modal-content; .tool-tip--dark; .tool-tip--dark)"},"p0089da":{"v":"#0089da","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 10 declarations; e.g. .link-standalone:hover, .link-caption:hover; .link-standalone:hover, .link-caption:hover; .link-standalone:hover, .link-caption:hover)"},"pba17172222":{"v":"rgba(17, 17, 17, 0.08)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 10 declarations; e.g. .universal-search-helper ul.universal-search-helper-list li .recent-search-icon; .universal-search-helper ul.universal-search-helper-list li .recent-search-icon; .universal-search-helper ul.universal-search-helper-list li .recent-search-icon)"},"pba00002222":{"v":"rgba(0, 0, 0, 0.5)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 10 declarations; e.g. .modal .modal-background; .services-body.triggers-action .service-action-info dt, .services-body.queries-action .service-action-info dt,; .services-body.triggers-action .service-action-info .type-definition, .services-body.queries-action .service-a)"},"p000000":{"v":"#000000","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 9 declarations; e.g. .story-box .cta.shadow; .story-box .cta.shadow; .story-box .cta.shadow)"},"pdfdfdf":{"v":"#dfdfdf","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 8 declarations; e.g. .shared-content-body main.container.web .shared-content .note-content; .shared-content-body main.container.web .shared-content .note-content; .shared-content-body main.container.web .shared-content .note-content)"},"pffe4fb":{"v":"#ffe4fb","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 7 declarations; e.g. .ifttt-logo-ai-on-dark .cap; .ifttt-logo-ai-on-dark .cap; .ifttt-logo-ai-on-dark .cap)"},"pf5d8da":{"v":"#f5d8da","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 7 declarations; e.g. .warning-box; .warning-box; .warning-box)"},"pff9900":{"v":"#ff9900","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 7 declarations; e.g. .flash-msg.alert-warning; .flash-msg.alert-warning; .flash-msg.alert-warning)"},"pba000022222":{"v":"rgba(0, 0, 0, 0.14)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 7 declarations; e.g. .universal-search-helper; .universal-search-helper; .universal-search-helper)"},"pba171722222":{"v":"rgba(17, 17, 17, 0.03)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 7 declarations; e.g. .universal-search-helper .search-navigation:hover, .universal-search-helper .search-navigation.highlighted; .universal-search-helper .search-navigation:hover, .universal-search-helper .search-navigation.highlighted; .universal-search-helper .search-navigation:hover, .universal-search-helper .search-navigation.highlighted)"},"pee4332":{"v":"#ee4332","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 7 declarations; e.g. body.services-body.group-location-setup-action form .email-field .email-input input[type=\"email\"].invalid; body.services-body.group-location-setup-action form .email-field .email-input input[type=\"email\"].invalid; body.services-body.group-location-setup-action form .email-field .email-input input[type=\"email\"].invalid)"},"pe4f9e7":{"v":"#e4f9e7","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. section.use-case .content-wrapper; section.use-case .content-wrapper; section.use-case .content-wrapper)"},"pddff00":{"v":"#ddff00","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .ingredients-text-field .ingredient-pill-warning; .hint_pill__warning___fVRuU .hint_pill__icon___fVRuU svg path; .ingredients-text-field .ingredient-pill-warning)"},"pba0000222222":{"v":"rgba(0, 0, 0, 0.2)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .returning_user_flow__returning_user_flow___YStCM .returning_user_flow__connection-status-container___YStCM .r; .connect_url__email-input___bcf_H .connect_url__verify-button___bcf_H; .connect_url__verify-service___bcf_H .connect_url__big-button___bcf_H, .connect_url__connect-cta___bcf_H .conn)"},"pba1717222222":{"v":"rgba(17, 17, 17, 0.5)","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .new-diy-composer .diy-on-color :is(input[type=\"text\"]:not(.ifttt-search-input), input[type=\"password\"], input; .new-diy-composer .diy-on-color :is(input[type=\"text\"]:not(.ifttt-search-input), input[type=\"password\"], input; .new-diy-composer .diy-on-color :is(input[type=\"text\"]:not(.ifttt-search-input), input[type=\"password\"], input)"},"pbfefc4":{"v":"#bfefc4","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 3 declarations; e.g. section.use-case .connect-header span; section.use-case .connect-header span; section.use-case .connect-header span)"},"pcccccc":{"v":"#cccccc","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 3 declarations; e.g. .ingredients-text-field .ingredients-button:disabled; .ingredients-text-field .ingredients-button:disabled; .ifttt-next-profile-body .profile-container .profile-header .profile-avatar-container)"},"p3b579d":{"v":"#3b579d","t":"color","s":"literal in the site's stylesheets (raw/css-vars.json palette, 3 declarations; e.g. .monaco-editor-wrapper-outer .monaco-editor .suggest-widget:not(.frozen) .monaco-highlighted-label .highlight; .sign_in_page__sso-button-facebook___QExol; .monaco-editor-wrapper-outer .monaco-editor .suggest-widget:not(.frozen) .monaco-highlighted-label .highlight)"}},"typography":{"hero":{"v":{"fontFamily":"\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif","fontSize":"79.3296px","fontWeight":900,"lineHeight":"79.3296px"},"t":"typography","s":"measured hero-headline on home (default state)","d":"the home hero display — Museo Sans Rounded 900"},"exploreHero":{"v":{"fontFamily":"\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif","fontSize":"32px","fontWeight":700,"lineHeight":"41.6px"},"t":"typography","s":"measured explore-hero on explore (default state)","d":"the explore 'Automate X with Y' display"},"pageTitle":{"v":{"fontFamily":"\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif","fontSize":"64px","fontWeight":900,"lineHeight":"64px"},"t":"typography","s":"measured marketing-h1 on mcp (default state)","d":"a marketing page headline"},"sectionTitle":{"v":{"fontFamily":"\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif","fontSize":"50px","fontWeight":900,"lineHeight":"50px"},"t":"typography","s":"measured section-heading on home (default state)","d":"a home section heading"},"body":{"v":{"fontFamily":"\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif","fontSize":"18px","fontWeight":600,"lineHeight":"23.4px"},"t":"typography","s":"measured prose-p on mcp (default state)","d":"body prose — Museo Sans Rounded"},"bodyLink":{"v":{"fontFamily":"\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif","fontSize":"16px","fontWeight":900,"lineHeight":"20.8px"},"t":"typography","s":"measured prose-link on terms (default state)","d":"a body-text link"},"navLink":{"v":{"fontFamily":"\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif","fontSize":"20px","fontWeight":900,"lineHeight":"22px"},"t":"typography","s":"measured nav-link on explore (default state)","d":"a nav link"},"button":{"v":{"fontFamily":"\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif","fontSize":"20px","fontWeight":900,"lineHeight":"22px"},"t":"typography","s":"measured nav-signup on explore (default state)","d":"the header button label"},"buttonHero":{"v":{"fontFamily":"\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif","fontSize":"34px","fontWeight":900,"lineHeight":"37.4px"},"t":"typography","s":"measured hero-submit on home (default state)","d":"the hero action label"},"price":{"v":{"fontFamily":"\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif","fontSize":"50px","fontWeight":900,"lineHeight":"50px"},"t":"typography","s":"measured plan-price on plans (default state)","d":"the plan price figure"},"appletMeta":{"v":{"fontFamily":"\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif","fontSize":"16px","fontWeight":900,"lineHeight":"20.8px"},"t":"typography","s":"measured applet-meta on applet (default state)","d":"the applet byline"},"tab":{"v":{"fontFamily":"\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif","fontSize":"18px","fontWeight":700,"lineHeight":"24px"},"t":"typography","s":"measured featured-tab on home (default state)","d":"a featured category tab"},"footerLink":{"v":{"fontFamily":"\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif","fontSize":"34px","fontWeight":900,"lineHeight":"37.4px"},"t":"typography","s":"measured footer-link on explore (default state)","d":"a footer link"},"serviceChip":{"v":{"fontFamily":"\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif","fontSize":"32px","fontWeight":700,"lineHeight":"41.6px"},"t":"typography","s":"measured explore-service-chip on explore (default state)","d":"a service chip label"}},"font":{"family":{"brand":{"v":"\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif","t":"fontFamily","s":"computed fontFamily of site-header default (raw/components-computed.json), verbatim; 'Museo Sans Rounded' weights 300/500/700/900 + italics are declared by @font-face in the site's sheets, served from web-assets.ifttt.com — the name is evidence, the font file is not shipped","d":"the brand face — every weight the site ships"},"fallback":{"v":"ui-sans-serif, system-ui, sans-serif","t":"fontFamily","s":"Reconstruction — entered by hand at capture time: a hand-written fallback stack for consumers without the licensed face; nothing on the site declares it","d":"fallback for consumers without the licensed face"}}},"component":{"header":{"height":{"v":"99px","t":"dimension","s":"measured site-header default on explore (the unified header)"}},"button":{"small":{"height":{"v":"54px","t":"dimension","s":"measured nav-login default on explore (header 'Log in' pill)"},"radius":{"v":"64px","t":"dimension","s":"measured nav-signup default on explore (header pill corner)"},"outlinedRadius":{"v":"64px","t":"dimension","s":"measured nav-login default on explore (outlined pill corner)"}},"hero":{"height":{"v":"101px","t":"dimension","s":"measured hero-submit default on home ('Start building')"},"radius":{"v":"64px","t":"dimension","s":"measured hero-submit default on home ('Start building' corner)"}},"secondary":{"height":{"v":"79px","t":"dimension","s":"measured secondary-cta default on home ('Join today' secondary)"},"radius":{"v":"64px","t":"dimension","s":"measured secondary-cta default on home (secondary CTA corner)"}},"planCta":{"height":{"v":"54px","t":"dimension","s":"measured plan-cta default on plans (plan card CTA)"},"radius":{"v":"64px","t":"dimension","s":"measured plan-cta default on plans (plan CTA corner)"}},"share":{"radius":{"v":"64px","t":"dimension","s":"measured share-button default on connect (Share pill corner)"}},"back":{"radius":{"v":"64px","t":"dimension","s":"measured back-button default on connect (Back pill corner)"}}},"connectToggle":{"height":{"v":"95.94px","t":"dimension","s":"measured connect-toggle default on applet (the Applet Connect toggle)"},"width":{"v":"480.05px","t":"dimension","s":"measured connect-toggle default on applet (the Applet Connect toggle)"},"radius":{"v":"47.97px","t":"dimension","s":"measured connect-toggle default on applet (Connect toggle corner)"}},"input":{"search":{"height":{"v":"48px","t":"dimension","s":"measured nav-search default on explore (header search field)"},"radius":{"v":"32px","t":"dimension","s":"measured nav-search default on explore (search field corner)"}},"gallerySearch":{"height":{"v":"55px","t":"dimension","s":"measured gallery-search default on explore ('Search automations' field)"}},"shareField":{"height":{"v":"55px","t":"dimension","s":"measured share-url-field default on connect (share URL field)"},"radius":{"v":"16px","t":"dimension","s":"measured share-url-field default on connect (share URL field corner)"}}},"promptField":{"height":{"v":"78px","t":"dimension","s":"measured hero-prompt default on home (hero prompt textarea)"},"radius":{"v":"0px","t":"dimension","s":"measured hero-prompt default on home (prompt textarea corner)"}},"tab":{"height":{"v":"48px","t":"dimension","s":"measured featured-tab default on home (featured category tab)"},"radius":{"v":"8px","t":"dimension","s":"measured featured-tab default on home (featured tab corner)"}},"switch":{"height":{"v":"32px","t":"dimension","s":"measured billing-toggle default on plans (billing switch track)"},"width":{"v":"48px","t":"dimension","s":"measured billing-toggle default on plans (billing switch track)"},"radius":{"v":"16px","t":"dimension","s":"measured billing-toggle default on plans (billing switch corner)"}},"serviceChip":{"height":{"v":"42px","t":"dimension","s":"measured explore-service-chip default on explore (explore hero service chip)"},"radius":{"v":"0px","t":"dimension","s":"measured explore-service-chip default on explore (explore chip corner)"}},"serviceIcon":{"size":{"v":"110px","t":"dimension","s":"measured service-icon default on connect (service icon tile)"},"radius":{"v":"12px","t":"dimension","s":"measured service-chip default on home (service icon tile corner)"}},"mobileHeader":{"height":{"v":"64px","t":"dimension","s":"measured m-header default on mobile (mobile header)"}},"menuButton":{"height":{"v":"48px","t":"dimension","s":"measured m-menu-button default on mobile (mobile hamburger)"}},"backButton":{"height":{"v":"54px","t":"dimension","s":"measured back-button default on connect (detail 'Back' pill)"}},"card":{"applet":{"radius":{"v":"24px","t":"dimension","s":"measured applet-card default on explore (applet card corner)"},"shadow":{"v":"rgba(0, 0, 0, 0.24) 0px 1.5px 6px 0px","t":"other","s":"measured applet-card default on explore (applet card shadow)"}},"service":{"radius":{"v":"24px","t":"dimension","s":"measured service-card default on explore (service card corner)"},"shadow":{"v":"rgba(0, 0, 0, 0.24) 0px 1.5px 6px 0px","t":"other","s":"measured service-card default on explore (service card shadow)"}},"plan":{"radius":{"v":"16px","t":"dimension","s":"measured plan-card default on plans (plan card corner)"}},"planRecommended":{"radius":{"v":"16px","t":"dimension","s":"measured plan-card-recommended default on plans (recommended plan card corner)"}},"example":{"radius":{"v":"0px","t":"dimension","s":"measured example-prompt-card default on explore (example prompt card corner)"}},"story":{"radius":{"v":"24px","t":"dimension","s":"measured story-card default on explore (story card corner)"}}}},"motion":{"duration":{"0ms":{"v":"0ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 52 elements."},"100ms":{"v":"100ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"120ms":{"v":"120ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"150ms":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 72 elements."},"200ms":{"v":"200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 190 elements."},"300ms":{"v":"300ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 54 elements."},"400ms":{"v":"400ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"cycle-lag":{"v":"500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--cycle-lag"},"d":"Custom property --cycle-lag, declared on .explore-prompt-hero-ifttt-ai .explore-hero-cycle ~ .explore-hero-cycle."},"1200ms":{"v":"1200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1400ms":{"v":"1400ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"20000ms":{"v":"20000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"30000ms":{"v":"30000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"30330ms":{"v":"30330ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 20 elements."},"240000ms":{"v":"240000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 233 elements."}},"easing":{"bezier-0_455-0_03-0_515-0_955":{"v":[0.455,0.03,0.515,0.955],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"ease":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease`, expanded to its control points."},"ease-in":{"v":[0.42,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `ease-in`, expanded to its control points."},"ease-in-out":{"v":[0.42,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease-in-out`, expanded to its control points."},"ease-out":{"v":[0,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease-out`, expanded to its control points."},"linear":{"v":[0,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `linear`, expanded to its control points."}},"transition":{"color-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 112 elements."},"opacity-150ms-ease-out":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 59 elements."},"opacity-300ms-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 52 elements."},"visibility-0ms-linear-delay300ms":{"v":{"duration":"{motion.duration.0ms}","delay":"300ms","timingFunction":"{motion.easing.linear}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 52 elements."},"opacity-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 46 elements."},"border-color-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 16 elements."},"border-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"opacity-150ms-ease-in-out":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"background-color-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"color-500ms-ease":{"v":{"duration":"{motion.duration.cycle-lag}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"opacity-150ms-ease":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"transform-150ms-ease-in-out":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"transform-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"background-color-120ms-ease-in-out":{"v":{"duration":"{motion.duration.120ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"flex-basis-300ms-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"grid-template-columns-300ms-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"transform-120ms-ease-in-out":{"v":{"duration":"{motion.duration.120ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."}},"animation":{"brand-scroll":{"v":{"name":"brand-scroll","duration":"{motion.duration.30000ms}","delay":"0ms","timingFunction":"{motion.easing.linear}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `brand-scroll`."},"explore-hero-service-10":{"v":{"name":"explore-hero-service-10","duration":"{motion.duration.30330ms}","delay":"-790ms","timingFunction":"{motion.easing.ease-in-out}","iterationCount":"infinite","direction":"normal","fillMode":"both"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `explore-hero-service-10`."},"hero-collage-orbit":{"v":{"name":"hero-collage-orbit","duration":"{motion.duration.240000ms}","delay":"0ms","timingFunction":"{motion.easing.linear}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `hero-collage-orbit`."},"hero-collage-spin":{"v":{"name":"hero-collage-spin","duration":"{motion.duration.240000ms}","delay":"0ms","timingFunction":"{motion.easing.linear}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `hero-collage-spin`."}},"_extensions":{"reducedMotion":{"probe":"page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page","verified":true,"pages":5,"behaviour":"partial","moving":565,"removed":254,"reduced":0,"kept":311,"partial":0,"increased":0,"added":0,"loops":[],"authoredRules":[{"media":"@media (prefers-reduced-motion: reduce)","selector":".hero-collage-ring, .hero-collage-icon","declarations":{"animation-play-state":"paused"}},{"media":"@media (prefers-reduced-motion: reduce)","selector":".credits-usage-card-usage .credits-usage-card-placeholder","declarations":{"animation-duration":"auto","animation-timing-function":"ease","animation-delay":"0s","animation-iteration-count":"1","animation-direction":"normal","animation-fill-mode":"none","animation-play-state":"running","animation-name":"none","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: reduce)","selector":".prosumer-home .home-hero .hero-collage-ring, .prosumer-home .home-hero .hero-collage-icon","declarations":{"animation-play-state":"paused"}},{"media":"@media (prefers-reduced-motion: reduce)","selector":".prosumer-home .brand-testimonials","declarations":{"scrollbar-width":"none","padding-top":"0px","padding-right":"48px","padding-bottom":"0px","padding-left":"48px","animation-duration":"auto","animation-timing-function":"ease","animation-delay":"0s","animation-iteration-count":"1","animation-direction":"normal","animation-fill-mode":"none","animation-play-state":"running","animation-name":"none","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal","overflow-x":"auto"}},{"media":"@media (prefers-reduced-motion: reduce)","selector":".prosumer-home .brand-testimonials::-webkit-scrollbar","declarations":{"display":"none"}},{"media":"@media (prefers-reduced-motion: reduce)","selector":".how-it-works-animation-inner","declarations":{"background-image":"url(…)","background-position-x":"50%","background-position-y":"center","background-size":"cover","background-repeat":"no-repeat","background-attachment":"initial","background-origin":"initial","background-clip":"initial","background-color":"initial"}},{"media":"@media (prefers-reduced-motion: reduce)","selector":".explore-prompt-hero-ifttt-ai .explore-hero-service","declarations":{"visibility":"hidden","animation-duration":"auto","animation-timing-function":"ease","animation-delay":"0s","animation-iteration-count":"1","animation-direction":"normal","animation-fill-mode":"none","animation-play-state":"running","animation-name":"none","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: reduce)","selector":".explore-prompt-hero-ifttt-ai .explore-hero-service:first-child","declarations":{"visibility":"visible"}}]},"propertyUsage":{"opacity":168,"color":115,"visibility":52,"border-color":16,"border":8,"background-color":7,"transform":5,"flex-basis":1,"grid-template-columns":1},"smoothScrollElements":0,"unusedKeyframes":["explore-hero-service-2","explore-hero-service-3","explore-hero-service-4","explore-hero-service-5","explore-hero-service-6","explore-hero-service-7","explore-hero-service-8","explore-hero-service-9","fadein","fadeout","fb_transform","nprogress-spinner","rotateSpinner","shake","skeleton-pulse","spinner-line-fade-default","spinner-line-fade-more","spinner-line-fade-quick","spinner-line-shrink"]}}},"light":{"misc":{"baseFontFamily":{"v":"\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif","t":"fontFamily","s":"css-var --base-font-family (light)"},"codeFontFamily":{"v":"\"Menlo\", \"SFMono-Regular\", \"Consolas\", \"Liberation Mono\", monospace","t":"fontFamily","s":"css-var --code-font-family (light)"},"defaultFontSize":{"v":"20px","t":"dimension","s":"css-var --default-font-size (light)"},"phoneFontSize":{"v":"16px","t":"dimension","s":"css-var --phone-font-size (light)"},"primaryText":{"v":"#111111","t":"color","s":"css-var --primary-text (light)"},"screenLgMax":{"v":"1919px","t":"dimension","s":"css-var --screen-lg-max (light)"},"screenLgMin":{"v":"1440px","t":"dimension","s":"css-var --screen-lg-min (light)"},"screenMdMax":{"v":"1199px","t":"dimension","s":"css-var --screen-md-max (light)"},"screenMdMin":{"v":"992px","t":"dimension","s":"css-var --screen-md-min (light)"},"screenMlMax":{"v":"1439px","t":"dimension","s":"css-var --screen-ml-max (light)"},"screenMlMin":{"v":"1200px","t":"dimension","s":"css-var --screen-ml-min (light)"},"screenSmMax":{"v":"991px","t":"dimension","s":"css-var --screen-sm-max (light)"},"screenSmMin":{"v":"768px","t":"dimension","s":"css-var --screen-sm-min (light)"},"screenXlMin":{"v":"1920px","t":"dimension","s":"css-var --screen-xl-min (light)"},"screenXsMax":{"v":"767px","t":"dimension","s":"css-var --screen-xs-max (light)"},"screenXsMin":{"v":"480px","t":"dimension","s":"css-var --screen-xs-min (light)"},"screenXxsMax":{"v":"479px","t":"dimension","s":"css-var --screen-xxs-max (light)"},"screenXxsMin":{"v":"320px","t":"dimension","s":"css-var --screen-xxs-min (light)"},"smallDesktopFontSize":{"v":"18px","t":"dimension","s":"css-var --small-desktop-font-size (light)"}},"color":{"text":{"body":{"v":"#111111","t":"color","s":"measured prose-p default on mcp (body ink)","d":"body ink"},"muted":{"v":"rgba(17, 17, 17, 0.7)","t":"color","s":"measured plan-feature default on plans (secondary ink (the plan feature lines))","d":"secondary ink (the plan feature lines)"},"display":{"v":"#111111","t":"color","s":"measured hero-headline default on home (headline ink)","d":"headline ink"},"onColorSubtle":{"v":"#ffffff","t":"color","s":"measured applet-meta default on applet (secondary ink on brand-coloured heroes)","d":"secondary ink on brand-coloured heroes"},"footer":{"v":"#111111","t":"color","s":"measured footer-link default on explore (footer link ink)","d":"footer link ink"},"link":{"v":"#01b6ff","t":"color","s":"measured prose-link default on terms (link ink in prose)","d":"link ink in prose"}},"bg":{"page":{"v":"#ffffff","t":"color","s":"document body computed background on ifttt.ai/ (raw/layout.json home@1440)","d":"the page ground"}},"action":{"fill":{"v":"#111111","t":"color","s":"measured hero-submit default on home (primary action fill)","d":"primary action fill"},"onFill":{"v":"#ffffff","t":"color","s":"measured hero-submit default on home (ink on the primary fill)","d":"ink on the primary fill"},"hoverFill":{"v":"#111111","t":"color","s":"measured hero-submit hover on home (primary fill on hover)","d":"primary fill on hover"},"outline":{"v":"#111111","t":"color","s":"measured plan-cta default on plans (outlined pill border)","d":"outlined pill border"},"outlineInk":{"v":"#111111","t":"color","s":"measured plan-cta default on plans (outlined pill ink)","d":"outlined pill ink"},"secondaryOutline":{"v":"#ffffff","t":"color","s":"measured secondary-cta default on home (secondary CTA border)","d":"secondary CTA border"},"secondaryInk":{"v":"#ffffff","t":"color","s":"measured secondary-cta default on home (secondary CTA ink)","d":"secondary CTA ink"}}},"component":{"dark":{"navInk":{"v":"#ffffff","t":"color","s":"measured nav-link default on explore (nav-link ink on the dark heroes)","d":"nav-link ink on the dark heroes"},"ground":{"v":"#111111","t":"color","s":"document body computed background on /explore (raw/layout.json explore@1440) — the dark painted explore ground","d":"the dark painted ground behind /explore"},"outline":{"v":"#ffffff","t":"color","s":"measured nav-login default on explore (outlined pill border on the dark heroes)","d":"outlined pill border on the dark heroes"},"outlineInk":{"v":"#ffffff","t":"color","s":"measured nav-login default on explore (outlined pill ink on the dark heroes)","d":"outlined pill ink on the dark heroes"},"navFill":{"v":"#ffffff","t":"color","s":"measured nav-signup default on explore (header 'Get started' fill on the dark heroes)","d":"header 'Get started' fill on the dark heroes"},"navFillInk":{"v":"#111111","t":"color","s":"measured nav-signup default on explore (header 'Get started' ink on the dark heroes)","d":"header 'Get started' ink on the dark heroes"},"heroBg":{"v":"#111111","t":"color","s":"measured explore-hero default on explore (explore dark hero ground)","d":"explore dark hero ground"},"chipInk":{"v":"#ee831e","t":"color","s":"measured explore-service-chip default on explore (service chip ink on the dark hero)","d":"service chip ink on the dark hero"},"actionFill":{"v":"#ffffff","t":"color","s":"measured get-started-today default on connect (action fill on the dark heroes)","d":"action fill on the dark heroes"},"actionInk":{"v":"#111111","t":"color","s":"measured get-started-today default on connect (action ink on the dark heroes)","d":"action ink on the dark heroes"},"linkInk":{"v":"#ffffff","t":"color","s":"measured author-link default on applet (link ink on the applet hero)","d":"link ink on the applet hero"}},"planCard":{"ctaBorder":{"v":"#111111","t":"color","s":"measured plan-cta default on plans (plan card CTA border)","d":"plan card CTA border"},"recommendedBg":{"v":"#ffffff","t":"color","s":"measured plan-card-recommended default on plans (recommended plan card ground)","d":"recommended plan card ground"}},"input":{"searchBg":{"v":"#111111","t":"color","s":"measured nav-search default on explore (header search field fill)","d":"header search field fill"},"searchBorder":{"v":"rgba(255, 255, 255, 0.3)","t":"color","s":"measured nav-search default on explore (header search field border)","d":"header search field border"},"shareFieldBg":{"v":"rgba(17, 17, 17, 0.05)","t":"color","s":"measured share-url-field default on connect (share URL field fill)","d":"share URL field fill"}},"card":{"appletBg":{"v":"#1db954","t":"color","s":"measured applet-card default on explore (applet card ground)","d":"applet card ground"},"serviceBg":{"v":"#14223d","t":"color","s":"measured service-card default on explore (service card ground)","d":"service card ground"}},"switch":{"trackOn":{"v":"#01b6ff","t":"color","s":"measured billing-toggle default on plans (billing switch track (on))","d":"billing switch track (on)"},"trackOff":{"v":"rgba(17, 17, 17, 0.4)","t":"color","s":"measured billing-toggle toggled on plans (billing switch track (off))","d":"billing switch track (off)"}},"tab":{"fill":{"v":"rgba(17, 17, 17, 0.05)","t":"color","s":"measured featured-tab default on home (featured tab fill)","d":"featured tab fill"},"activeFill":{"v":"#111111","t":"color","s":"measured featured-tab selected on home (featured tab fill, active)","d":"featured tab fill, active"},"activeInk":{"v":"#ffffff","t":"color","s":"measured featured-tab selected on home (featured tab ink, active)","d":"featured tab ink, active"}}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  const core = TOK.core || {};
+  for (const [g, grp] of Object.entries({ palette: core.palette, color: core.color })) {
+    const items = flat(grp || {}, g + '.').filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">core.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // The light set's own roles, then the dark painted sections, each scoped
+  // so a dark-painted swatch reads its token against its own ground.
+  const lset = TOK.light || {};
+  const swatch = (n, t) => `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+  const roles = flat(lset.color || {}, 'color.').filter(([, t]) => t.t === 'color');
+  if (roles.length) {
+    h += `<div class="pal-h">light roles — the only theme: white ground, near-black ink, the black action pill</div><div class="pal">`;
+    for (const [n, t] of roles) h += swatch(n, t);
+    h += '</div>';
+  }
+  const dark = flat((lset.component || {}).dark || {}, 'component.dark.').filter(([, t]) => t.t === 'color');
+  if (dark.length) {
+    h += `<div class="pal-h">dark painted sections — /explore and the detail heroes (component tokens, not a theme)</div><div class="pal onDark">`;
+    for (const [n, t] of dark) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const rest = flat(lset.component || {}, 'component.').filter(([n, t]) => t.t === 'color' && !n.startsWith('component.dark.'));
+  if (rest.length) {
+    h += `<div class="pal-h">component roles — cards, fields, the switch, the badge</div><div class="pal">`;
+    for (const [n, t] of rest) h += swatch(n, t);
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.breakpoint || {}, 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.ease || {}, 'ease.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v.join ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.animation || {}, 'animation.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  const misc = flat((TOK.light || {}).misc || {}, 'light.misc.');
+  if (misc.length) {
+    m += `<div style="grid-column:1/-1;opacity:.6;margin-top:8px"><b>light misc — the few real custom properties</b></div>`;
+    for (const [n, t] of misc) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  }
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  const sh = (t) => Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v;
+  let e = '';
+  for (const [n, t] of flat((TOK.core || {}).shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(sh(t))}</span></div>`;
+  const comp = flat((TOK.core || {}).component || {}, 'component.').filter(([n, t]) => t.t === 'other' && (n.endsWith('.shadow') || n.endsWith('Shadow')));
+  for (const [n, t] of comp) e += `<div><b>${esc(n)}</b> <span>${esc(sh(t))}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m || '<div><b>none measured</b></div>';
+})();
+
+(function motion() {
+  const g = TOK.core.motion || {};
+  let m = '';
+  for (const [n, t] of flat(g.duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(g.easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  const tr = Object.keys(g.transition || {}).length, an = Object.keys(g.animation || {}).length;
+  if (tr || an) m += `<div><b>measured</b> <span>${tr} transition tokens, ${an} animation tokens (tokens.json, core.motion)</span></div>`;
+  const rm = (g._extensions || {}).reducedMotion;
+  if (rm) m += `<div><b>reduced motion</b> <span>${esc(rm.behaviour)} — ${esc(String(rm.removed))} removed, ${esc(String(rm.kept))} kept across ${esc(String(rm.pages))} pages</span></div>`;
+  $('#motion-out').innerHTML = m || '<div><b>no motion probe</b></div>';
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  const typs = flat((TOK.core.typography || {}), 'typography.');
+  for (const [n, t] of typs) {
+    if (t.t !== 'typography') continue;
+    const v = t.v, css = cssname(n);
+    h += `<div class="tr"><span class="ts" style="font-family:var(--sg-sans);font-size:${esc(v.fontSize)};line-height:${esc(v.lineHeight)};font-weight:${esc(v.fontWeight)};${v.letterSpacing ? 'letter-spacing:' + esc(v.letterSpacing) : ''}">IFTTT makes anything happen</span><span class="tv">${esc(n)} &middot; ${esc(v.fontSize)}/${esc(v.lineHeight)} ${esc(v.fontWeight)}</span></div>`;
+  }
+  $('#typ-out').innerHTML = h;
+})();
+
+(function fams() {
+  let m = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = m;
+})();
+</script>
+</body>
+</html>

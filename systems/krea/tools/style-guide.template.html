@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Krea style guide</title>
+<meta name="description" content="Krea design tokens and the public signed-out surface, rendered from tokens.json. The painted theme is html.dark.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Suisse Intl", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: "Suisse Intl Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-text, #fafafa); background: var(--color-page-950, #101010); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.1 var(--sg-sans); margin: 0 0 8px; letter-spacing: -0.03em; }
+h2.sh { font: 500 13px/1 var(--sg-sans); letter-spacing: 0; color: var(--color-text-muted, #a1a1a1); margin: 48px 0 8px; padding-bottom: 8px; border-bottom: 1px solid var(--color-border, #262626); }
+.lead { max-width: 68ch; color: var(--color-text, #fafafa); opacity: .85; }
+.note { font-size: 13px; color: var(--color-text-muted, #a1a1a1); max-width: 68ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 12px/1 var(--sg-sans); color: var(--color-text-muted, #a1a1a1); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 180px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-border, #333); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-text-muted, #a1a1a1); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-text-muted, #a1a1a1); }
+.mock { border: 1px solid var(--color-border, #262626); overflow: hidden; background: var(--color-page-950, #101010); border-radius: 12px; }
+.shell { display: flex; min-height: 280px; }
+.side { width: 255px; background: var(--color-sidebar, #171717); padding: 16px 12px; display: flex; flex-direction: column; gap: 6px; }
+.side .item { height: 36px; border-radius: 10px; display: flex; align-items: center; padding: 0 12px; font-size: 14px; color: var(--color-text, #fafafa); }
+.side .item.on { background: var(--color-sidebar-accent, #262626); }
+.side .signin { margin-top: auto; height: 48px; border-radius: 10px; background: var(--color-on-dark, #fff); color: #111; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.mainpane { flex: 1; padding: 24px; }
+.composer { height: 48px; border-radius: 16px; border: 1px solid var(--color-border, #333); display: flex; align-items: center; padding: 0 12px 0 16px; color: var(--color-text-muted, #888); font-size: 14px; }
+.gen { margin-left: auto; width: 31px; height: 31px; border-radius: 8px; background: var(--color-accent, #006eff); }
+.plans { display: flex; gap: 12px; padding: 16px; }
+.plan { flex: 1; background: var(--color-surface, #171717); border: 1px solid var(--color-border, #333); border-radius: 16px; padding: 16px; }
+.plan .cta { display: flex; align-items: center; justify-content: center; height: 40px; border-radius: 999px; background: #fff; color: #111; font-size: 14px; margin-top: 16px; }
+.badge { display: inline-flex; background: var(--color-accent, #006eff); color: #fff; border-radius: 999px; font-size: 12px; padding: 2px 8px; }
+.login { max-width: 352px; margin: 16px auto; display: flex; flex-direction: column; gap: 8px; }
+.oauth { height: 46px; border-radius: 12px; background: var(--color-surface, #1c1c1c); border: 1px solid var(--color-border, #333); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.emailcta { height: 46px; border-radius: 12px; background: var(--color-accent, #006eff); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-border, #262626); }
+.tr .tv { font-size: 12px; color: var(--color-text-muted, #a1a1a1); font-family: var(--sg-mono); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-border, #333); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Krea style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>. Swatches and sizes below are tokens. The boxed mocks are reconstructions drawn with those tokens, not captured pixels. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+
+  <h2 class="sh">What was measured</h2>
+  <p class="lead">Read from www.krea.ai on 2026-11-18, signed out, in headless Chromium. The public app paints one theme, <code>html.dark</code>: a #101010 field, white Sign in and plan buttons, and a #006eff action blue, set in Suisse Intl. Those painted roles are the token file's dark set; there is no light set. There is no public light switch.</p>
+  <p class="note">Sign in, Sign up, Continue with Google, Apple and SSO, Book a call, Get Pro and Generate were measured, never followed. Continue with Email was submitted once and stopped on Cloudflare Turnstile captcha_failed. Consent overlays were hidden, never answered. Suisse Intl is served by the site. Samples fall back to system faces.</p>
+
+  <h2 class="sh">App shell</h2>
+  <p class="lead">A 255px sidebar holds 36px nav rows and a 48px white Sign in button. The composer is a 48px field with a 31px blue Generate control. Generate was never clicked.</p>
+  <div class="mock">
+    <div class="shell">
+      <div class="side">
+        <div class="item on">Home</div>
+        <div class="item">Image</div>
+        <div class="item">Video</div>
+        <div class="item">Pricing</div>
+        <div class="signin">Sign in</div>
+      </div>
+      <div class="mainpane">
+        <div class="composer">Describe an idea or upload an image to edit it<span class="gen"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">Four plan columns on the dark field. Yearly is selected by default, with a blue 40% off badge. Plan buttons are white pills. Checkout was never followed.</p>
+  <div class="mock">
+    <div class="plans">
+      <div class="plan"><b>Free</b><div class="note">$0</div><div class="cta">Get Free</div></div>
+      <div class="plan"><b>Pro</b> <span class="badge">40% off</span><div class="note">Most popular</div><div class="cta">Get Pro</div></div>
+      <div class="plan"><b>Max</b><div class="note">Yearly</div><div class="cta">Get Max</div></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Login boundary</h2>
+  <p class="lead">Welcome to Krea: three dark OAuth rows and a blue Continue with Email button. Email continue was submitted once and stopped on captcha_failed.</p>
+  <div class="mock" style="padding:24px">
+    <div class="login">
+      <div class="oauth">Continue with Google</div>
+      <div class="oauth">Continue with Apple</div>
+      <div class="oauth">SSO</div>
+      <div class="emailcta">Continue with Email</div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The primary ramp is the product grey, from white to black, with primary-950 as the app field. Action blue is #006eff. Semantic roles (page, surface, text, border, sidebar) come from the dark shadcn layer.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Spacing is a 4px base. Radius runs from 2px to 32px, with a 10px default on Sign in and sidebar rows.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">One voice: Suisse Intl for UI and display, Suisse Intl Mono for code. Weights include book at 450. Samples fall back to system faces.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Reading</th><th>What it is</th></tr><tr><td>Stylesheets</td><td>Tailwind v4 theme layer on :root,:host, semantic roles on .dark, resolved in raw/css-vars.json</td></tr><tr><td>Components</td><td>Computed styles on the signed-out DOM, hover and keyboard focus, pressed forced with DevTools</td></tr><tr><td>Provenance</td><td>Every token names its custom property or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['dark', 'painted roles (dark)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${label}</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.join(', ') : t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none declared as a shadow token</b> <span>cards sit on the dark field with a hairline border</span></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.dark.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)}  Describe an idea</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)}  Welcome to Krea</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

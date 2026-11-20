@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTTPie style guide</title>
+<meta name="description" content="httpie.io design tokens and the signed-out surfaces' components — the marketing pages and the /app incognito client — rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: var(--font-family-body, ui-sans-serif, system-ui, sans-serif);
+  --sg-mono: var(--font-family-mono, ui-monospace, "SF Mono", Menlo, monospace);
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.6 var(--sg-sans); color: var(--text-primary, #f5f5f0); background: var(--bg-z0, #191515); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-default, rgba(255,255,255,.08)); }
+.lead { max-width: 62ch; opacity: .8; }
+.note { font-size: 13px; opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; color: var(--accent-default, #73dc8c); }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { padding: 10px; border-radius: 10px; background: var(--bg-z0, #191515); color: var(--text-primary, #f5f5f0); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-default, #e2e4e8); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); color: inherit; }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); opacity: .65; color: inherit; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border-default, #e2e4e8); overflow: hidden; background: var(--bg-z0, #191515); color: var(--text-primary, #f5f5f0); border-radius: 12px; }
+.topbar { display: flex; align-items: center; gap: 14px; height: var(--component-mobileHeader-height, 56px); padding: 0 16px 0 20px; font-size: 14px; border-bottom: 1px solid var(--border-default, #e2e4e8); background: var(--bg-z0, #191515); }
+.topbar .wm { font-weight: 600; font-size: 15px; letter-spacing: -0.02em; }
+.topbar .nav { opacity: .75; display: flex; gap: 14px; font-size: 13px; }
+.topbar .sp { flex: 1; }
+.topbar .pill { display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border: 1px solid var(--border-default, #e2e4e8); border-radius: 999px; font-size: 12px; color: var(--text-secondary, rgba(245,245,240,.6)); background: var(--bg-z1, #1c1818); }
+.topbar .pill b { border: 1px solid var(--border-default, #e2e4e8); border-radius: 4px; padding: 1px 5px; font-weight: 500; font-size: 10px; }
+.topbar .theme { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-default, #e2e4e8); display: inline-flex; align-items: center; justify-content: center; color: var(--text-primary, #f5f5f0); background: transparent; font: inherit; cursor: pointer; padding: 0; }
+.topbar .theme:hover { background: var(--item-hover, rgba(255,255,255,.03)); }
+.shell { display: flex; }
+/* The real /app pairs a 49px icon rail (component.appSidebar.width) with a
+   ~300px side panel when it opens; the mock paints the labelled panel, so it
+   keeps a fixed mock width rather than the rail's. The panel itself paints
+   transparent — bg.z0 shows through, exactly as the token records. */
+.sb { width: 240px; flex: 0 0 auto; border-right: 1px solid var(--border-default, rgba(255,255,255,.04)); padding: 18px 14px; font-size: 13px; background: var(--component-appSidebar-bg, transparent); color: var(--text-primary, #f5f5f0); }
+.sb .grp { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; opacity: .55; margin: 14px 6px 6px; }
+.sb .ln { display: block; padding: 5px 10px; border-radius: var(--radius-base, .5rem); opacity: .8; }
+.sb .ln.on { opacity: 1; font-weight: 500; background: var(--item-selected, rgba(255,255,255,.06)); }
+.art { flex: 1; padding: 28px 34px 40px; min-width: 0; }
+.art h3 { font: 500 30px/1.25 var(--sg-sans); letter-spacing: -0.02em; margin: 0 0 10px; }
+.art p { font-size: 14.5px; line-height: 1.7; color: var(--text-primary, #f5f5f0); margin: 0 0 14px; max-width: 62ch; }
+.art .ic { font-family: var(--sg-mono); font-size: .88em; color: var(--altAccent-default, #4b78e6); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 36px; padding: 0 16px; font-size: 13.5px; font-weight: 500; border-radius: var(--radius-base, .5rem); border: 1px solid transparent; }
+.btn.primary { background: var(--component-sendButton-bg, var(--accent-default, #73dc8c)); color: var(--text-invertedPrimary, #1c1818); }
+.btn.ghost { background: transparent; border-color: var(--border-default, rgba(255,255,255,.12)); color: var(--text-primary, #f5f5f0); }
+.codeblk { background: var(--bg-z2, #201c1c); color: var(--code-primary, #d1d1cf); border-radius: var(--component-codeblock-radius, 8px); font: 400 12.5px/1.7 var(--sg-mono); padding: 14px 16px; margin: 16px 0; }
+.codeblk .tab { display: inline-block; padding: 3px 10px; border-radius: 6px; font-size: 11px; margin: 0 4px 10px 0; background: rgba(255,255,255,.08); }
+.codeblk .tab.on { background: rgba(255,255,255,.2); font-weight: 600; }
+.codeblk .kw { color: var(--code-blue, #4b78e6); }
+.codeblk .str { color: var(--code-green, #73dc8c); }
+.codeblk .fn { color: var(--code-pink, #fa9bfa); }
+.codeblk .cm { color: var(--code-gray, #7d7d7d); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-default, #e2e4e8); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-default, #e2e4e8); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; opacity: .65; font-family: var(--sg-mono); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.tile { border: 1px solid var(--border-default, #e2e4e8); border-radius: var(--component-tabCard-radius, 8px); padding: 16px; font-size: 13px; background: var(--bg-z1, #1c1818); color: var(--text-primary, #f5f5f0); }
+.tile b { display: block; font: 600 15px/1.4 var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>HTTPie style guide</h1>
+  <p class="note">httpie.io — the marketing surface and the signed-out /app client. Signed-out public evidence only.</p>
+
+  <h2 class="sh">httpie.io, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the hand-written semantic layer (<code>--color-bg-z0..z3</code> surfaces, <code>--color-primary</code>/<code>-secondary</code>/<code>-tertiary</code>/<code>-placeholders</code> ink, the <code>--color-accent</code> green and <code>--color-alt-accent</code> blue, <code>--color-warning</code>, <code>--color-focus</code>, <code>--color-borders</code>, the <code>--color-item-*</code> list states, <code>--color-selection</code>/<code>-backdrop</code>/<code>-shadows</code>, and the <code>--color-code-*</code> syntax palette), the <code>core.palette.*</code> literals the marketing utility classes hard-code (the warm darks and off-whites, the pink pill), the proprietary Pie faces as names (never shipped), and the measured geometry (<code>component.*</code>) read off the live DOM — the nav, the buttons, the request builder and the tab strip. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from httpie.io, signed out, in headless Chromium at 1440&times;900 (mobile pass at 390&times;844). The site paints <b>dark by default</b> — <code>html.dark</code> is the boot and AUTO resolves dark — and the footer&rsquo;s own ThemeToggle radios (LIGHT MODE / AUTO / DARK MODE) repaint <code>html.light</code>, persisted to <code>localStorage.theme</code>; the <code>dark</code> token set is the painted surface, <code>light</code> the switched one. The Pie faces (Pie Headline / FK Screamer, Pie Body / PolyPie, Pie Monospace, Pie Symbols) are licensed and not bundled: samples fall back to system fonts. Sign-in, the HTTPie AI &ldquo;Try it out&rdquo; action, and the desktop/CLI binaries behind /download are documented boundaries, not captures.</p>
+
+  <h2 class="sh">The surface</h2>
+  <p class="lead">httpie.io is a dark-on-warm marketing surface over the HTTPie-for-Web client: <code>/app</code> runs signed out as an &ldquo;Incognito space&rdquo; — a <code>bg.z1</code> rail (the space switcher, Collection/Drafts, the draft list) beside a tab strip of request cards, the request line (method menu, <span class="ic">httpie.io/hello</span> URL field in Pie Monospace, the <code>accent</code> Send) and the Params/Headers/Auth/Body panel tabs above request and response panes. The marketing pages wrap it in a site nav (wordmark, Desktop / Terminal / AI / Docs / Jobs / Blog links, the solid &ldquo;Go to App&rdquo; primary button) and a footer carrying the LIGHT MODE / AUTO / DARK MODE radio stack.</p>
+  <div class="mock" id="docs-mock" data-mode="dark">
+    <div class="topbar"><span class="wm">HTTPie</span><span class="nav"><span>Desktop</span><span>Terminal</span><span>AI</span><span>Docs</span><span>Blog</span></span><span class="sp"></span><span class="btn primary" style="height:30px;padding:0 14px;font-size:12.5px">Go to App &rarr;</span><button type="button" class="theme" id="theme-toggle" aria-pressed="true" title="Switch to light theme">&#9789;</button></div>
+    <div class="shell">
+      <div class="sb"><div class="grp">Incognito space</div><span class="ln on">Collection</span><span class="ln">Drafts</span><div class="grp">Requests</div><span class="ln"><b style="color:var(--code-green,#73dc8c)">GET</b>&ensp;untitled</span></div>
+      <div class="art"><h3>Flow through APIs.</h3><p>The request builder: a method menu, the URL field and Send on <span class="ic">bg.z0</span>, the response pane below — the draft&rsquo;s <span class="ic">GET</span> chip inks <span class="ic">code.green</span>.</p>
+        <div class="codeblk"><span class="tab on">Params</span><span class="tab">Headers</span><span class="tab">Auth</span><span class="tab">Body</span><br>
+        <span class="kw">https</span> <span class="cm">//</span> <span class="fn">httpie.io</span><span class="str">/hello</span> <span class="cm"># the incognito draft</span></div>
+        <span class="btn primary">Send</span>&nbsp;&nbsp;<span class="btn ghost">Environments</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The semantic roles under <code>dark.*</code> are the painted default (#191515 warm-black ground, #f5f5f0 warm-white ink, the <code>#73dc8c</code> green and <code>#4b78e6</code> blue accents); <code>light.*</code> resolves the same declarations inside <code>html.light</code> (#edede8 warm-paper ground, #1c1818 ink, the darker #52ab66 / #4b78e6 accents). <code>bg.z0&ndash;z3</code> is the surface stack, <code>text.*</code> the ink ramp, <code>code.*</code> the ten-hue syntax palette, and <code>core.palette.*</code> the literals the marketing utility classes hard-code outside the token layer.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius, layout and motion</h2>
+  <p class="lead">httpie.io declares no spacing scale — the stack is old Tailwind utilities — so spacing and radius are <b>measured</b>: <code>component.*</code> carries the chrome geometry (nav height, the /app rail width, button and field heights, card corners; pills clamp to 9999px). <code>motion.*</code> is the measured set from the reduced-motion probe (docs/decisions/0001): the durations and easing curves elements actually run, the transitions and animations, and what <code>prefers-reduced-motion</code> changes.</p>
+  <div id="spacing-out" class="kv"></div>
+  <div id="motion-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Four proprietary faces, recorded by name only: <code>Pie Headline</code> (FK Screamer — the display face), <code>Pie Body</code> (PolyPie — text and UI), <code>Pie Monospace</code> (code, the URL field) and <code>Pie Symbols</code> (icons). No type ramp is declared; the <code>core.typography.*</code> composites carry the measured styles — the 109px hero, the section headings, body and code. Samples fall back to system fonts because the Pie faces are licensed and never shipped.</p>
+  <div id="type-out"></div>
+  <div id="typ-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --background/--foreground/--primary/--font-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, focused and dark states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || TOK.core.palette ? { palette: TOK.core.palette, ...(TOK.core.color || {}) } : {})) {
+    const items = (grp && grp.t ? [[g + '.' + g, grp]] : flat(grp, g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles — the footer LIGHT MODE radio repaints html.light'], ['dark', 'dark roles — the painted default: the site boots html.dark']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.breakpoint || {}, 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.ease || {}, 'ease.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v.join ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.animation || {}, 'animation.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const setname of ['light', 'dark']) {
+    const misc = flat((TOK[setname] || {}).misc || {}, setname + '.misc.');
+    if (!misc.length) continue;
+    m += `<div style="grid-column:1/-1;opacity:.6;margin-top:8px"><b>${setname} misc</b></div>`;
+    for (const [n, t] of misc) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  }
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  const sh = (t) => Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v;
+  let e = '';
+  for (const [n, t] of flat((TOK.core || {}).shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(sh(t))}</span></div>`;
+  // The product's five-level --elevation-* stacks live per theme, not in
+  // core.shadow — render both so the real scale is inspectable.
+  for (const setname of ['light', 'dark']) {
+    const group = flat((TOK[setname] || {}).elevation || {}, setname + '.elevation.');
+    if (!group.length) continue;
+    e += `<div style="grid-column:1/-1;opacity:.6;margin-top:8px"><b>${setname} elevation</b></div>`;
+    for (const [n, t] of group) e += `<div><b>${esc(n)}</b> <span>${esc(sh(t))}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m || '<div><b>none measured</b></div>';
+})();
+
+(function motion() {
+  const g = TOK.core.motion || {};
+  let m = '';
+  for (const [n, t] of flat(g.duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(g.easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  const tr = Object.keys(g.transition || {}).length, an = Object.keys(g.animation || {}).length;
+  if (tr || an) m += `<div><b>measured</b> <span>${tr} transition tokens, ${an} animation tokens (tokens.json, core.motion)</span></div>`;
+  const rm = (g._extensions || {}).reducedMotion;
+  if (rm) m += `<div><b>reduced motion</b> <span>${esc(rm.behaviour)} — ${esc(String(rm.removed))} removed, ${esc(String(rm.kept))} kept across ${esc(String(rm.pages))} pages</span></div>`;
+  $('#motion-out').innerHTML = m || '<div><b>no motion probe</b></div>';
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v)) * (String(resolveVal(t.v)).endsWith('rem') ? 16 : 1);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — Flow through APIs</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).leading || {}, 'font.leading.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — HTTPie</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  // the package declares no font.size/lineHeight/weight scales today; drop the
+  // empty block rather than show nothing under the heading
+  const to = $('#type-out');
+  if (h) to.innerHTML = h; else to.remove();
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+
+// The measured core.typography.* composites — the styles the live DOM paints,
+// not just the declared scales. Samples fall back to system fonts (Inter is
+// not bundled).
+(function typ() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core || {}).typography || {}, 'typography.')) {
+    const v = t.v || {};
+    const fs = parseFloat(v.fontSize) || 14;
+    const mono = /mono/i.test(String(v.fontFamily));
+    const meta = [v.fontSize, v.lineHeight, 'w' + v.fontWeight, v.letterSpacing].filter(Boolean).join(' / ');
+    h += `<div class="tr"><span class="ts" style="font-family:${mono ? 'var(--sg-mono)' : 'var(--sg-sans)'};font-size:${Math.min(fs, 44)}px;font-weight:${esc(String(v.fontWeight || 400))};line-height:${esc(v.lineHeight || 'normal')}">${esc(n)} — Flow through APIs 0123</span><span class="tv">${esc(meta)}</span></div>`;
+  }
+  $('#typ-out').innerHTML = h;
+})();
+
+// The mock's theme button flips data-mode the way httpie's footer ThemeToggle flips
+// html.light — the mock starts dark because that is the painted default.
+(function themeToggle() {
+  const btn = $('#theme-toggle'), mock = $('#docs-mock');
+  if (!btn || !mock) return;
+  btn.addEventListener('click', () => {
+    const dark = mock.getAttribute('data-mode') !== 'dark';
+    mock.setAttribute('data-mode', dark ? 'dark' : 'light');
+    btn.setAttribute('aria-pressed', String(dark));
+    btn.title = dark ? 'Switch to light theme' : 'Switch to dark theme';
+  });
+})();
+</script>
+</body>
+</html>

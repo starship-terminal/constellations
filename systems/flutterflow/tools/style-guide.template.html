@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlutterFlow style guide</title>
+<meta name="description" content="FlutterFlow (flutterflow.io) design tokens and signed-out components, rendered from tokens.json with the measured values, in both of its themes.">
+<!--
+   FlutterFlow's Inter is self-hosted and variable (wght 100-900); the guide loads the same face
+   from Google Fonts. The mono roles use the ui-monospace stack, exactly as the site does.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+<style>
+:root {
+/*CORE*/
+}
+:root, [data-theme="light"] {
+/*LIGHT*/
+}
+[data-theme="dark"] {
+/*DARK*/
+}
+
+* { box-sizing: border-box; }
+html { color-scheme: light dark; }
+body { margin: 0; background: var(--color-page); color: var(--color-ink); font: var(--typography-body); letter-spacing: var(--typography-body-ls, normal); }
+code { font-family: var(--fontFamily-mono); font-size: 12.5px; color: var(--color-ink-2); }
+header { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 16px; height: 64px; padding: 0 24px; background: color-mix(in srgb, var(--color-page) 86%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-line); }
+h1 { font: var(--typography-nav); letter-spacing: var(--typography-nav-ls, normal); font-weight: 510; font-size: 17px; display: flex; align-items: center; gap: 10px; margin: 0; }
+header .sp { flex: 1; }
+.tsw { display: inline-flex; align-items: center; gap: 4px; padding: 3px; border-radius: var(--radius-pill); box-shadow: inset 0 0 0 1px var(--color-line); font-size: 13px; color: var(--color-muted); cursor: pointer; user-select: none; }
+.tsw input { position: absolute; opacity: 0; }
+.tsw .pick { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: var(--radius-pill); }
+.tsw .pick.on { background: var(--color-card); color: var(--color-ink); box-shadow: 0 0 0 1px var(--color-selected-ring, var(--color-line)); }
+main { max-width: 1100px; margin: 0 auto; padding: 40px 24px 120px; }
+h2.sh { font: var(--typography-heading-sm); letter-spacing: var(--typography-heading-sm-ls, -0.022em); margin: 72px 0 18px; }
+h2.sh:first-of-type { margin-top: 0; }
+h3 { font: var(--typography-card-title); letter-spacing: var(--typography-card-title-ls, normal); font-size: 15px; margin: 36px 0 12px; }
+p.lead { max-width: 72ch; font: var(--typography-lede); letter-spacing: var(--typography-lede-ls, normal); color: var(--color-ink-2); margin: 0 0 18px; }
+p.note { max-width: 72ch; font: var(--typography-small); letter-spacing: var(--typography-small-ls, normal); color: var(--color-muted); }
+.kick { font: var(--typography-label); letter-spacing: var(--typography-label-ls, normal); color: var(--color-muted); text-transform: none; margin: 0 0 6px; }
+.ic { display: inline-block; vertical-align: -0.15em; }
+
+/* swatches */
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+.sw { display: flex; gap: 10px; align-items: center; padding: 8px; border-radius: 12px; border: 1px solid var(--color-line); background: var(--color-card); }
+.sw .dot { width: 34px; height: 34px; flex: none; border-radius: 9px; box-shadow: inset 0 0 0 1px var(--color-line); }
+.sw .nm { font: 500 12px/1.3 var(--fontFamily-mono); color: var(--color-ink); }
+.sw .vl { font: 11px/1.3 var(--fontFamily-mono); color: var(--color-muted); margin-top: 2px; }
+.grp { margin: 26px 0 8px; font: var(--typography-label); letter-spacing: var(--typography-label-ls, normal); color: var(--color-muted); }
+
+/* type rows */
+.typerow { display: grid; grid-template-columns: 220px 1fr; gap: 18px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--color-line); }
+.typerow .k { font: 500 12px/1.4 var(--fontFamily-mono); color: var(--color-ink-2); }
+.typerow .k small { display: block; color: var(--color-muted); font-weight: 400; margin-top: 2px; }
+.typerow .sample { color: var(--color-ink); }
+
+/* bars + radius + shadow */
+.bars .b { display: flex; align-items: center; gap: 10px; margin: 4px 0; font: 11.5px var(--fontFamily-mono); color: var(--color-muted); }
+.bars .b span { width: 190px; flex: none; }
+.bars .b i { height: 10px; border-radius: 5px; background: var(--color-accent); display: block; }
+.bxs { display: flex; flex-wrap: wrap; gap: 10px; }
+.bx { width: 96px; height: 64px; border: 1px solid var(--color-line); background: var(--color-card-2); display: flex; align-items: flex-end; padding: 7px; font: 10.5px var(--fontFamily-mono); color: var(--color-ink-2); }
+.shs { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 18px; }
+.shs .box { height: 74px; border-radius: 14px; background: var(--color-card); border: 1px solid var(--color-line); }
+.shs .k { font: 11px var(--fontFamily-mono); color: var(--color-muted); margin-top: 7px; }
+
+/* motion tracks */
+.track { position: relative; height: 30px; border-radius: 15px; background: var(--color-well); box-shadow: inset 0 0 0 1px var(--color-line); cursor: pointer; overflow: hidden; }
+.track .dot { position: absolute; left: 4px; top: 4px; width: 22px; height: 22px; border-radius: 50%; background: var(--color-contrast); }
+.track.go .dot { left: calc(100% - 26px); }
+.mrow { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 16px; }
+.cap { font: 11px var(--fontFamily-mono); color: var(--color-muted); display: block; margin-top: 6px; }
+
+/* components drawn from the tokens */
+.cells { display: flex; flex-wrap: wrap; gap: 22px; }
+.cell { flex: 1 1 300px; }
+.frame { border: 1px solid var(--color-line); border-radius: var(--radius-card); background: var(--color-well); padding: 22px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; min-height: 120px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; border: 0; font: 510 15px/1.55 var(--fontFamily-sans); letter-spacing: -0.011em; cursor: pointer; transition: transform var(--duration-fast) var(--easing-ui), box-shadow var(--duration-fast) var(--easing-ui), background-color var(--duration-fast) var(--easing-ui); }
+.btn:active { transform: scale(.965); }
+.btn:focus-visible { outline: var(--focus-width) solid var(--color-focus); outline-offset: var(--focus-offset); }
+.btn.pri { height: var(--component-button-primary-height); padding: 0 var(--component-button-primary-padding-x); border-radius: var(--component-button-primary-radius); background: var(--component-button-primary-bg); color: var(--component-button-primary-ink); }
+.btn.pri.sm { height: var(--component-button-primary-height-sm); padding: 0 var(--component-button-primary-padding-x-sm); font-size: 13px; }
+.btn.sec { height: var(--component-button-primary-height); padding: 0 var(--component-button-primary-padding-x); border-radius: var(--component-button-primary-radius); background: var(--component-button-secondary-bg); color: var(--component-button-secondary-ink); box-shadow: inset 0 0 0 .5px var(--color-line), 0 1px 2px rgba(0,0,0,.04); }
+.fld { width: 100%; max-width: 340px; height: var(--component-field-height); border-radius: var(--component-field-radius); border: 1px solid var(--component-field-border); background: var(--component-field-bg); box-shadow: var(--shadow-field); font: var(--typography-body); letter-spacing: var(--typography-body-ls, normal); color: var(--component-field-ink); padding: 0 var(--component-field-padding-x); }
+.fld::placeholder { color: var(--component-field-placeholder); }
+.fld.is-focus { box-shadow: var(--shadow-field-focus); outline: none; }
+.err { font: var(--typography-small); letter-spacing: var(--typography-small-ls, normal); color: var(--color-danger); display: flex; gap: 6px; align-items: center; }
+.comp { width: 100%; max-width: var(--size-composer-close); border-radius: var(--radius-card); border: 1px solid var(--color-line); background: var(--color-card); box-shadow: var(--shadow-field); padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; }
+.comp .ghost { font: var(--typography-prompt); letter-spacing: var(--typography-prompt-ls, normal); color: var(--color-muted); }
+.comp .bar { display: flex; align-items: center; gap: 10px; }
+.comp .key { font: 500 12px/18px var(--fontFamily-mono); padding: 0 7px; border-radius: 6px; border: 1px solid var(--component-composer-key-border); color: var(--color-ink-2); }
+.comp .sp { flex: 1; }
+.comp .go { width: var(--component-composer-go-size); height: var(--component-composer-go-size); border-radius: 50%; border: 0; background: var(--component-composer-go-bg); color: var(--component-composer-go-ink); display: grid; place-items: center; }
+.seg { display: inline-flex; gap: 2px; padding: var(--component-segmented-padding); border-radius: var(--radius-pill); box-shadow: inset 0 0 0 1px var(--color-line); }
+.seg span { height: var(--component-segmented-option-height); display: inline-flex; align-items: center; padding: 0 14px; border-radius: var(--radius-pill); font: 510 14px/1.55 var(--fontFamily-sans); color: var(--component-segmented-ink); }
+.seg span.on { background: var(--color-card); color: var(--color-ink); box-shadow: 0 0 0 1px var(--color-line), 0 1px 2px rgba(0,0,0,.05); }
+.tag { display: inline-flex; align-items: center; gap: 6px; height: var(--component-tag-height); padding: 0 var(--component-tag-padding-x); border-radius: var(--component-tag-radius); background: var(--color-studio-tint); color: var(--color-studio-ink); font: 510 12px/16px var(--fontFamily-sans); }
+.tag i { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.card { border-radius: var(--radius-card); background: var(--color-card); border: 1px solid var(--color-line); box-shadow: var(--shadow-resting-sm); padding: var(--space-cell); width: 100%; max-width: 320px; }
+.card h4 { margin: 0 0 4px; font: var(--typography-card-title); letter-spacing: var(--typography-card-title-ls, normal); }
+.card p { margin: 0; font: var(--typography-card-body); letter-spacing: var(--typography-card-body-ls, normal); color: var(--color-muted); }
+.pop { width: 260px; border-radius: var(--component-select-popup-radius); background: var(--color-card); box-shadow: var(--shadow-floating); padding: 6px; }
+.pop .opt { height: var(--component-select-popup-option-height); display: flex; align-items: center; padding: 0 14px; border-radius: 10px; font: var(--typography-body); letter-spacing: var(--typography-body-ls, normal); color: var(--color-muted); }
+.pop .opt.on { color: var(--color-ink); background: var(--color-card-2); }
+.nav { display: flex; align-items: center; gap: 18px; height: var(--size-bar); padding: 0 18px; border-radius: var(--radius-page); background: var(--color-card); box-shadow: var(--shadow-resting-sm); font: var(--typography-nav); letter-spacing: var(--typography-nav-ls, normal); }
+.nav a { color: var(--color-muted); text-decoration: none; padding: 8px 12px; border-radius: 10px; }
+.nav a:hover { color: var(--color-ink); }
+.nav .brand { display: flex; align-items: center; gap: 8px; font-weight: 510; color: var(--color-ink); }
+.nav .sp { flex: 1; }
+table.tok { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.tok td, table.tok th { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--color-line); vertical-align: top; }
+table.tok th { font: var(--typography-label); letter-spacing: var(--typography-label-ls, normal); color: var(--color-muted); }
+table.tok td:first-child { font: 500 12px var(--fontFamily-mono); color: var(--color-ink); }
+table.tok td:last-child { font: 11px var(--fontFamily-mono); color: var(--color-muted); max-width: 46ch; }
+</style>
+</head>
+<body>
+<header>
+  <h1><!--icon:product:18--> FlutterFlow style guide</h1>
+  <span class="sp"></span>
+  <label class="tsw"><input type="checkbox" id="theme"><span class="pick on" data-p="l"><!--icon:light:13--> Light</span><span class="pick" data-p="d"><!--icon:dark:13--> Dark</span></label>
+</header>
+<main>
+<section>
+  <h2 class="sh">FlutterFlow, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>, read signed-out from flutterflow.io: the <code>--ff-*</code> design layer (colour roles, type, radii, space, sizes, shadows, motion, the <code>.ff-drip</code> widget kit and z-order), the legacy shorthand the home page's earlier skin still reads, and the values measured on the real components. The header's pick sets <code>data-theme</code> on <code>&lt;html&gt;</code> — the same mechanism as the site's footer switch. The mock controls below are rebuilt from the tokens; the real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Each token's provenance (the declaring selector, or the measurement it came from) is in the tables at the bottom and in <code>tokens.json</code> under <code>$extensions.source</code>. Inter is self-hosted by the site and loaded here from Google Fonts; the mono roles use the platform's ui-monospace stack.</p>
+</section>
+
+<section>
+  <h2 class="sh">Colour</h2>
+  <p class="lead"><code>color.*</code> is the semantic layer every page reads (rebound per theme); <code>legacy.*</code> is the shorthand the home page's earlier skin declares and the <code>legacy</code> sheet re-binds per theme; <code>drip.*</code> belongs to the <code>.ff-drip</code> UI kit used inside the site's own demos and widgets. Flip the theme pick to watch the sets move.</p>
+  <div class="grp">color (themed)</div>
+  <div class="swatches" id="color-out"></div>
+  <div class="grp">legacy shorthand (home skin)</div>
+  <div class="swatches" id="legacy-out"></div>
+  <div class="grp">ff-drip UI kit</div>
+  <div class="swatches" id="drip-out"></div>
+</section>
+
+<section>
+  <h2 class="sh">Type</h2>
+  <p class="lead">One face, Inter, in every role: the <code>--ff-text-*</code> shorthands are parsed into <code>typography.*</code> tokens. Sizes written as <code>clamp()</code> are shown resolved at 1440px; the 390px reading is on each token's <code>$extensions.responsive</code>.</p>
+  <div id="type-out"></div>
+</section>
+
+<section>
+  <h2 class="sh">Radius, space and size</h2>
+  <p class="lead">Radii are pill-led (fields and buttons are 999px), cards 20px, page sheets 16. The spacing and content sizes are single-purpose names rather than a numbered scale.</p>
+  <div class="bxs" id="radius-out"></div>
+  <div class="bars" id="space-out" style="margin-top:18px"></div>
+</section>
+
+<section>
+  <h2 class="sh">Elevation</h2>
+  <p class="lead">Ring-plus-drop shadows: the field lift, its focus variant (a 4px ink ring added), resting and floating chrome.</p>
+  <div class="shs" id="shadow-out"></div>
+</section>
+
+<section>
+  <h2 class="sh">Motion</h2>
+  <p class="lead">Two durations — 120ms fast (hovers, presses) and 240ms base (panels) — over two bezier easings and a <code>linear()</code> spring. Click a track to run it. The measured group is what the elements actually run; prefers-reduced-motion strips most of it (<code>raw/motion.json</code>).</p>
+  <div class="mrow" id="motion-out"></div>
+</section>
+
+<section>
+  <h2 class="sh">Components, rebuilt from the tokens</h2>
+  <p class="note">Mocked here from the measured component tokens: the real crops are in <code>components/crops/</code> and the per-state tables in <code>components.md</code>.</p>
+  <div class="cells">
+    <div class="cell"><div class="frame">
+      <div class="nav"><span class="brand"><!--icon:product:16--> FlutterFlow</span><a>Product ▾</a><a>Solutions</a><a>Pricing</a><span class="sp"></span><a>Sign in</a><button class="btn pri sm">Start building</button></div>
+      <span class="cap">top bar — 64px, translucent page + blur over the content</span>
+    </div></div>
+    <div class="cell"><div class="frame">
+      <div><button class="btn pri">Start building free</button> <button class="btn sec">Talk to sales</button></div>
+      <div><button class="btn pri sm">Start building</button> <button class="btn pri sm" style="background:var(--color-accent)">Install the app</button></div>
+      <span class="cap">contrast fill + ink; sm is 32px/13px; accent blue is for links and the composer send</span>
+    </div></div>
+  </div>
+  <div class="cells" style="margin-top:22px">
+    <div class="cell"><div class="frame">
+      <input class="fld" placeholder="Work email">
+      <input class="fld is-focus" value="Kai Rivers" readonly>
+      <span class="err"><!--icon:dismiss:12--> Work email is required</span>
+      <span class="cap">field — pill radius, ink-12% edge, field shadow; focus adds the 4px ink ring. The error line is the declared slot colour (#field-error), never seen painted.</span>
+    </div></div>
+    <div class="cell"><div class="frame">
+      <div class="comp">
+        <div class="ghost">Describe the app you want to build…</div>
+        <div class="bar"><button class="btn" style="padding:0;color:var(--color-muted)"><!--icon:previous-idea-2502261d:15--></button><button class="btn" style="padding:0;color:var(--color-muted)"><!--icon:next-idea-65b32117:15--></button><span class="key">Tab</span><span class="sp"></span><button class="go"><!--icon:next-idea-3f2d41a6:15--></button></div>
+      </div>
+      <span class="cap">prompt composer — ghost idea text, idea arrows, Tab chip, 36px send at 8% ink (arms to accent once text is entered)</span>
+    </div></div>
+  </div>
+  <div class="cells" style="margin-top:22px">
+    <div class="cell"><div class="frame">
+      <div class="seg"><span>Monthly</span><span class="on">Yearly</span></div>
+      <div class="tag"><i></i> Studio</div>
+      <div class="pop"><div class="opt">Individual</div><div class="opt on">Team</div><div class="opt">Enterprise</div></div>
+      <span class="cap">billing segmented control · studio tag chip · select popup (floating shadow, 20px radius)</span>
+    </div></div>
+    <div class="cell"><div class="frame">
+      <div class="card"><h4>Standard</h4><p>Visual development, testing and deployment from one canvas.</p><div style="margin-top:12px"><button class="btn pri sm">Start for free</button></div></div>
+      <span class="cap">plan card — 20px radius, cell padding</span>
+    </div></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="sh">Every token, with its source</h2>
+  <table class="tok"><thead><tr><th>Token</th><th>Value (this theme)</th><th>Source</th></tr></thead><tbody id="tok-out"></tbody></table>
+</section>
+</main>
+
+<script>
+const TOK = /*TOKENS*/null;
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const flat = (o, p='') => Object.entries(o||{}).flatMap(([k,v]) => k.startsWith('$') ? [] : (v && typeof v === 'object' && 'v' in v) ? [[p+k, v]] : flat(v, p+k+'.'));
+const cssname = (p) => '--' + p.replace(/[^a-zA-Z0-9-]/g, '-').replace(/\./g, '-');
+const theme = () => document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+
+// Swatch names come from the light set (both sets carry every themed colour), but each
+// value label must be the active theme's: re-rendered by setTheme() on every flip.
+function swatches(out, grp) {
+  const cur = {};
+  for (const [n, t] of flat((TOK[theme()]||{})[grp]||{}, grp+'.')) cur[n] = t;
+  let h = '';
+  for (const [n, t] of flat(TOK.light[grp]||{}, grp+'.')) {
+    if (t.t !== 'color') continue;
+    const vt = cur[n] || t;
+    h += `<div class="sw" title="${esc(t.s)}"><span class="dot"><i style="display:block;width:100%;height:100%;border-radius:8px;background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(typeof vt.v==='string'?vt.v:'')}</div></div></div>`;
+  }
+  document.getElementById(out).innerHTML = h;
+}
+function paintSwatches() { swatches('color-out', 'color'); swatches('legacy-out', 'legacy'); swatches('drip-out', 'drip'); }
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography, 'typography.')) {
+    const v = t.v;
+    h += `<div class="typerow" title="${esc(t.s)}"><div class="k">${esc(n.replace('typography.',''))}<small>${esc(v.fontWeight)} ${esc(String(v.fontSize))}/${esc(String(v.lineHeight))}${v.letterSpacing && v.letterSpacing!=='0px' ? ' · ls ' + esc(String(v.letterSpacing)) : ''}</small></div><div class="sample" style="font:var(${cssname(n)});letter-spacing:var(${cssname(n)}-ls, normal)">Build something real</div></div>`;
+  }
+  document.getElementById('type-out').innerHTML = h;
+})();
+
+(function scales() {
+  let r = '';
+  for (const [n, t] of flat(TOK.core.radius, 'radius.')) r += `<div class="bx" style="border-radius:min(var(${cssname(n)}),40px)" title="${esc(t.s)}">${esc(n.replace('radius.',''))}<br>${esc(t.v)}</div>`;
+  document.getElementById('radius-out').innerHTML = r;
+  let h = '';
+  for (const grp of ['space', 'size']) {
+    for (const [n, t] of flat(TOK.core[grp]||{}, grp+'.')) {
+      const px = parseFloat(t.v);
+      h += `<div class="b" title="${esc(t.s)}"><span>${esc(n)} <b style="color:var(--color-ink-2)">${esc(t.v)}</b></span><i style="width:${Math.min(100, px/13.44)}%"></i></div>`;
+    }
+  }
+  for (const [n, t] of [...flat(TOK.core.border||{},'border.'), ...flat(TOK.core.focus||{},'focus.')]) {
+    h += `<div class="b" title="${esc(t.s)}"><span>${esc(n)} <b style="color:var(--color-ink-2)">${esc(t.v)}</b></span><i style="width:${Math.min(100, parseFloat(t.v)*8)}%"></i></div>`;
+  }
+  document.getElementById('space-out').innerHTML = h;
+})();
+
+// shadow.* splits: shadow.field is theme-independent (core), the other four are themed
+// (a white ring and a deeper drop in dark) and ride in each theme set.
+function shadows() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.shadow, 'shadow.')) h += `<div><div class="box" style="box-shadow:var(${cssname(n)})"></div><div class="k">${esc(n)}</div></div>`;
+  for (const [n, t] of flat((TOK[theme()]||{}).shadow || {}, 'shadow.')) h += `<div><div class="box" style="box-shadow:var(${cssname(n)})"></div><div class="k">${esc(n)}</div></div>`;
+  for (const [n, t] of flat((TOK[theme()]||{}).drip || {}, 'drip.')) if (t.t === 'shadow') h += `<div><div class="box" style="box-shadow:var(${cssname(n)})"></div><div class="k">${esc(n)}</div></div>`;
+  document.getElementById('shadow-out').innerHTML = h;
+}
+shadows();
+
+(function motion() {
+  let h = '';
+  const eb = (n) => `var(${cssname(n)})`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) h += `<div><div class="track" style="--e:${eb('easing-ui')}"><div class="dot" style="transition:left ${esc(t.v)} ${eb('easing-ui')}"></div></div><span class="cap">${esc(n)} · ${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) {
+    if (t.t !== 'cubicBezier') continue;
+    h += `<div><div class="track"><div class="dot" style="transition:left 600ms ${eb(n)}"></div></div><span class="cap">${esc(n)} · cubic-bezier(${esc(t.v.join(', '))})</span></div>`;
+  }
+  const M = TOK.core.motion;
+  if (M && M.duration) for (const [n, t] of flat(M.duration, 'motion.duration.')) h += `<div><div class="track"><div class="dot" style="transition:left ${esc(t.v)} ${eb('easing-ui')}"></div></div><span class="cap">measured · ${esc(n)} · ${esc(t.v)}</span></div>`;
+  document.getElementById('motion-out').innerHTML = h;
+  document.querySelectorAll('.track').forEach((tr) => tr.addEventListener('click', () => tr.classList.toggle('go')));
+})();
+
+// A token's source is a string, except the motion group's {evidence, capture} pairs.
+const srcText = (s) => (s && typeof s === 'object')
+  ? [s.evidence, s.capture].filter(Boolean).join(' ') || JSON.stringify(s)
+  : (s || '');
+
+(function table() {
+  const rows = [];
+  for (const set of ['core', 'light', 'dark']) for (const [n, t] of flat(TOK[set]||{}, '')) {
+    const val = typeof t.v === 'object' ? JSON.stringify(t.v).slice(0, 110) : String(t.v);
+    rows.push([`${set}.${n}`, val.slice(0, 110), srcText(t.s)]);
+  }
+  document.getElementById('tok-out').innerHTML = rows.map((r) => `<tr><td>${esc(r[0])}</td><td style="font:11px var(--fontFamily-mono)">${esc(r[1])}</td><td>${esc(r[2])}</td></tr>`).join('');
+})();
+
+function setTheme(dark) {
+  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  document.getElementById('theme').checked = dark;
+  document.querySelectorAll('.tsw .pick').forEach((p) => p.classList.toggle('on', (p.dataset.p === 'd') === dark));
+  paintSwatches();
+  shadows();
+}
+document.getElementById('theme').addEventListener('change', (e) => setTheme(e.target.checked));
+// The picks sit inside the <label> that wraps the checkbox: without preventDefault the
+// label's own activation would toggle the checkbox right back and setTheme() would run
+// again with the old theme (clicking Dark landed on light).
+document.querySelectorAll('.tsw .pick').forEach((p) => p.addEventListener('click', (e) => { e.preventDefault(); document.getElementById('theme').checked = p.dataset.p === 'd'; setTheme(p.dataset.p === 'd'); }));
+setTheme(window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
+</script>
+</body>
+</html>

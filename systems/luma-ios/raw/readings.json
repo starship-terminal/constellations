@@ -3380,7 +3380,7 @@
    ],
    "capture": "screenshots/dark/01-home-your-events-calendars.png",
    "evidence": "Sampled (text)",
-   "note": "Event row host line ('Spice King')",
+   "note": "Event row host line (a host's name)",
    "op": "text",
    "value": "#CACACA"
   },
@@ -3393,7 +3393,7 @@
    ],
    "capture": "screenshots/light/01-home-your-events-calendars.png",
    "evidence": "Sampled (text)",
-   "note": "Event row host line ('Spice King')",
+   "note": "Event row host line (a host's name)",
    "op": "text",
    "value": "#727272"
   }

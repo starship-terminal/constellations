@@ -1,0 +1,14 @@
+{
+  "_note": "Cartesia's public forms use example.com placeholders (name@example.com in the sign-in card, jane@example.com in the contact form) and the docs page publishes support@cartesia.ai — the product's own public copy, allowed. The /agents page's published demo artwork shows a fictional phone number inside its outbound-calls UI mock; painted out wherever it renders (agents-light-full).",
+  "ocr": {
+    "emails": true,
+    "email_allow": ["@example\\.com$", "@cartesia\\.ai$"]
+  },
+  "families": [
+    {
+      "name": "agents demo artwork phone number",
+      "files": ["screenshots/agents-light-full.png"],
+      "rects": [[955, 3063, 1100, 3087, "rows"]]
+    }
+  ]
+}

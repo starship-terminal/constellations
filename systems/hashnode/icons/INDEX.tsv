@@ -1,0 +1,119 @@
+file	inferred_name	hash	sizes	viewBox	style	seen_on	place	text_or_label
+i-text-muted-foreground-c25d23da.svg	i-text-muted-foreground	c25d23da	12x12 16x16 18x18 20x20	0 0 24 24	stroke	home; feed; post; profile; pro; agents; changelog; brand; alt-medium; onboard; th-home; th-post; th-archive; search dialog; sidebar; nav; dark	button [&_i]:text-muted-foreground; li; button	Structured data and sitemaps / Search and read Search your posts, open  / Open search (press Control or Command an
+the-foreword-by-hashnode.svg	the-foreword-by-hashnode	0d53e009	16x16 18x18	0 0 40 40	fill	home; feed; post; profile; pro; agents; changelog; brand; alt-medium; onboard; search dialog; sidebar; nav; dark	a [&_i]:text-muted-foreground	The foreword by Hashnode
+in-the-hashnode-feed.svg	in-the-hashnode-feed	2ea35384	16x16 18x18	0 0 24 24	stroke	home; feed; post; profile; pro; agents; changelog; brand; alt-medium; onboard; search dialog; sidebar; nav; dark	a [&_i]:text-muted-foreground; li	In the Hashnode feed / Feed
+more.svg	more	31db4bc1	16x16	0 0 24 24	stroke	home; feed; post; profile; pro; agents; changelog; brand; alt-medium; onboard; search dialog; sidebar; nav; dark	button [&_i]:text-muted-foreground	More
+sign-in.svg	sign-in	42a86ab8	16x16 18x18	0 0 24 24	stroke	home; feed; post; profile; pro; agents; changelog; brand; alt-medium; onboard; search dialog; sidebar; nav; dark	a [&_i]:text-muted-foreground	Sign in
+home-feed.svg	home-feed	582b29de	16x16 18x18	0 0 24 24	stroke	home; feed; post; profile; pro; agents; changelog; brand; alt-medium; onboard; search dialog; sidebar; nav; dark	a [&_i]:text-muted-foreground; div [&_svg:not([class*='text-'])]:text-muted-foreground	Home feed / Home
+hashnode-pro.svg	hashnode-pro	aad2525c	14x14 16x16 18x18	0 0 24 24	fill	home; feed; post; profile; pro; agents; changelog; brand; alt-medium; onboard; search dialog; sidebar; nav; dark	a [&_i]:text-muted-foreground; span; a [&_svg]:pointer-events-none	Hashnode Pro / Hashnode Growth Pro included / Get Hashnode Pro
+hashnode-for-agents.svg	hashnode-for-agents	b365f725	16x16 18x18	0 0 24 24	stroke	home; feed; post; profile; pro; agents; changelog; brand; alt-medium; onboard; search dialog; sidebar; nav; dark	a [&_i]:text-muted-foreground	Hashnode for Agents
+toggle-sidebar.svg	toggle-sidebar	cc6c5bc9	16x16	0 0 24 24	stroke	home; feed; post; profile; pro; agents; changelog; brand; alt-medium; onboard; search dialog; sidebar; nav; dark	button [&_svg]:pointer-events-none	Toggle Sidebar
+theme.svg	theme	96bb4d8b	16x16 18x18	0 0 24 24	stroke	home; feed; post; profile; pro; agents; changelog; brand; alt-medium; onboard; search dialog; sidebar; nav	button [&_i]:text-muted-foreground	Theme
+see-what-pro-includes.svg	see-what-pro-includes	2bca1178	12x12 14x14 16x16	0 0 24 24	stroke	home; feed; pro; th-post; th-archive; search dialog; sidebar; nav; dark	a; button; a [&_svg]:pointer-events-none	See what Pro includes / See what Growth includes / See everything in the feed
+icon-9da8b27f.svg	icon-9da8b27f	9da8b27f	14x14 16x16 20x20	0 0 24 24	stroke	home; changelog; alt-medium; onboard; th-post; search dialog; sidebar; nav; dark	div; a [&_svg]:pointer-events-none; a	🪶 cover.png 3200 × 1680 · 2.4 MB 🪶 cov / 🎯 Improvement October 7, 2026 AEO toolk / See all alternatives
+markdown-editor.svg	markdown-editor	f05e8ad5	16x16 20x20	0 0 24 24	stroke	home; agents; th-home; th-post; th-archive; search dialog; sidebar; nav; dark	li; a [&_svg]:pointer-events-none; div [&_svg:not([class*='text-'])]:text-muted-foreground	Markdown editor / Edit published posts Change a title, sub / Write
+scheduled-posts-pro.svg	scheduled-posts-pro	266e65f0	14x14 16x16	0 0 24 24	stroke	home; feed; post; profile; search dialog; sidebar; nav; dark	li; span; a	Scheduled posts Pro / 4 min read / 8 min read
+custom-domain-pro.svg	custom-domain-pro	5a03f0ea	14x14 16x16	0 0 24 24	stroke	home; profile; th-home; th-post; search dialog; sidebar; nav; dark	li; a [&_svg]:pointer-events-none; a	Custom domain Pro / Website
+upvote-5.svg	upvote-5	85a131a8	14x14 16x16	0 0 24 24	stroke	home; feed; post; profile; search dialog; sidebar; nav; dark	button	Upvote (5) / Upvote (4) / Upvote (3)
+bookmark-this-post.svg	bookmark-this-post	21c01b32	16x16	0 0 24 24	stroke	home; feed; post; search dialog; sidebar; nav; dark	button; div [&_svg:not([class*='text-'])]:text-muted-foreground	Bookmark this post / Bookmarks
+series-tags-pages.svg	series-tags-pages	5d8e0206	14x14 16x16 18x18	0 0 24 24	stroke	home; pro; th-post; search dialog; sidebar; nav; dark	li; a	Series, tags, pages / Up to 10 publications Upgrading one publ / Part of series The 101 Series
+live.svg	live	81918fef	14x14 20x20	0 0 24 24	stroke	home; pro; agents; search dialog; sidebar; nav; dark	span; li	Live / Read docs/launch.md / Uploaded cover.png
+comments.svg	comments	dd75d751	16x16	0 0 24 24	stroke	home; feed; profile; search dialog; sidebar; nav; dark	li; a	Comments / 4 comments / 3 comments
+icon-10a2e36b.svg	icon-10a2e36b	10a2e36b	12x12 13x13 14x14 16x16 22x22	0 0 24 24	fill	home; pro; search dialog; sidebar; nav; dark	span; li	9.5B Visits to AI assistants every month / vs 25.7% How much fresher AI-cited pages / Perplexity Cites you
+medium.svg	medium	1b9a0864	14x14 16x16 18x18	0 0 24 24	stroke	home; agents; search dialog; sidebar; nav; dark	a; a [&_svg:not([class*='text-'])]:text-muted-foreground; a [&_i]:text-muted-foreground	Medium / Substack / Ghost
+nuxt.svg	nuxt	398eeca7	14x14	0 3.9 24 16	fill	home; pro; search dialog; sidebar; nav; dark	li	Nuxt
+what-agents-read.svg	what-agents-read	47ac7592	14x14 16x16 18x18	0 0 24 24	stroke	home; pro; agents; search dialog; sidebar; dark	span; li	What agents read / Agent skill for the API One command teac / AI crawler controls and llms.txt Per-bot
+ga-plausible-7.svg	ga-plausible-7	47b1747b	16x16 18x18	0 0 24 24	stroke	home; agents; search dialog; sidebar; nav; dark	li; span	GA, Plausible, +7
+icon-49bede3f.svg	icon-49bede3f	49bede3f	14x14 16x16 22x22	0 0 24 24	fill	home; pro; search dialog; sidebar; nav; dark	li; div; span	9.5B Visits to AI assistants every month / Claude Code ~/alexrivera-blog / Claude Code
+substack.svg	substack	4e55c6ac	18x20 21x24	0 0 448 511.471	fill	home; alt-medium; search dialog; sidebar; nav; dark	a	Substack / Hashnode vs Substack Own your domain, pu
+ghost.svg	ghost	51a25616	20x20 24x24	0 0 24 24	stroke	home; alt-medium; search dialog; sidebar; nav; dark	a	Ghost / Hashnode vs Ghost Ownership and headless
+astro.svg	astro	57b0dc77	14x14	0 0 24 24	fill	home; pro; search dialog; sidebar; nav; dark	li	Astro
+icon-7009b37d.svg	icon-7009b37d	7009b37d	14x14 16x16 22x22	0 0 24 24	fill	home; pro; search dialog; sidebar; nav; dark	li	9.5B Visits to AI assistants every month / vs 25.7% How much fresher AI-cited pages / ChatGPT · Codex
+ask-ai.svg	ask-ai	721b0ef7	12x12 14x14	0 0 24 24	stroke	home; pro; search dialog; sidebar; nav; dark	span; li	Ask AI / Tighten the intro / Rewrite
+612.svg	612	8535059e	14x14 15x15	0 0 24 24	fill	home; pro; search dialog; sidebar; nav; dark	span	612
+next-js.svg	next-js	9627453b	14x14	0 0 24 24	fill	home; pro; search dialog; sidebar; nav; dark	li	Next.js
+icon-9808f451.svg	icon-9808f451	9808f451	14x14 16x16 22x22	0 0 24 24	fill	home; pro; search dialog; sidebar; nav; dark	li; span	AI Overview 15% → 8% Google visits that  / 9.5B Visits to AI assistants every month / Gemini Not yet
+no-branding-pro.svg	no-branding-pro	b0fc114d	16x16 18x18	0 0 24 24	stroke	home; pro; search dialog; sidebar; nav; dark	li	No branding Pro / Hide Hashnode branding Remove the "Power
+notion.svg	notion	be2ac1ec	20x20 24x24	0 0 100 100	fill	home; alt-medium; search dialog; sidebar; nav; dark	a	Notion / Hashnode vs Notion A blog built to rank,
+react.svg	react	e1b689c5	14x14	-11.5 -10.23 23 20.46	fill	home; pro; search dialog; sidebar; nav; dark	li	React
+hashnode-e41312cb.svg	hashnode	e41312cb	12x12 16x16 22x22 24x24	0 0 39 39	fill	home; alt-medium; search dialog; sidebar; nav; dark	li; span; a	Hashnode
+ai-rephrase.svg	ai-rephrase	e4b8de4c	14x14 16x16 18x18	0 0 24 24	stroke	home; pro; search dialog; sidebar; nav; dark	button; li	AI Rephrase / AI writing tools Pro / Rewrite as Q&A One click restructures an
+cover.svg	cover	02bb86aa	14x14 16x16	0 0 24 24	stroke	home; search dialog; sidebar; nav; dark	span; li	Cover / Embeds, tables, images
+webhooks-pro.svg	webhooks-pro	1d22273b	16x16	0 0 24 24	stroke	home; search dialog; sidebar; nav; dark	li	Webhooks Pro
+built-in-analytics.svg	built-in-analytics	1ed47c57	16x16	0 0 24 24	stroke	home; search dialog; sidebar; nav; dark	li	Built-in analytics
+team-roles-review.svg	team-roles-review	216d857a	16x16	0 0 24 24	stroke	home; search dialog; sidebar; nav; dark	li	Team roles, review
+icon-2b9ebaf8.svg	icon-2b9ebaf8	2b9ebaf8	16x16	0 0 24 24	stroke	home; search dialog; sidebar; nav; dark	li	Hosted blog, live in a minute / Unlimited posts, Markdown editor / Agent-ready and search-ready
+800-420-64-kb.svg	800-420-64-kb	2cd552b6	12x12	0 0 24 24	stroke	home; search dialog; sidebar; nav; dark	span	800 × 420 · 64 KB
+suggest-three-titles.svg	suggest-three-titles	2ddc3b95	14x14	0 0 24 24	stroke	home; search dialog; sidebar; nav; dark	li	Suggest three titles
+bulk-import-pro.svg	bulk-import-pro	3dc8ee10	16x16	0 0 24 24	stroke	home; search dialog; sidebar; nav; dark	li	Bulk import Pro
+start-your-blog-free.svg	start-your-blog-free	4817e690	18x18	0 0 24 24	stroke	home; search dialog; sidebar; nav; dark	a [&_svg]:pointer-events-none	Start your blog, free
+free-forever.svg	free-forever	4e34fdea	14x14	0 0 24 24	stroke	home; search dialog; sidebar; nav; dark	li	Free forever / No card needed / Export your posts any time
+copilot.svg	copilot	69bf25d5	14x14	0 0 24 24	fill	home; search dialog; sidebar; nav; dark	li	Copilot
+github-backup-pro.svg	github-backup-pro	854369f7	16x16	0 0 24 24	stroke	home; search dialog; sidebar; nav; dark	li	GitHub backup Pro
+posts-as-markdown.svg	posts-as-markdown	8b150bd4	16x16	0 0 24 24	stroke	home; search dialog; sidebar; nav; dark	li	Posts as Markdown / A Markdown copy of every post
+social-cards-built-in.svg	social-cards-built-in	91784ce0	16x16	0 0 24 24	stroke	home; search dialog; sidebar; nav; dark	li	Social cards, built in / RSS and social cards, built in
+code-in-25-languages.svg	code-in-25-languages	96d1b602	16x16	0 0 24 24	stroke	home; search dialog; sidebar; nav; dark	li	Code in 25 languages
+icon-9e48ceb8.svg	icon-9e48ceb8	9e48ceb8	16x16 17x17 22x22	0 0 24 24	fill	home; search dialog; sidebar; nav; dark	span; li	AI Overview 15% → 8% Google visits that  / vs 25.7% How much fresher AI-cited pages
+cursor.svg	cursor	a4d1c45c	14x14	0 0 24 24	fill	home; search dialog; sidebar; nav; dark	li	Cursor
+what-readers-see.svg	what-readers-see	c734a195	14x14	0 0 24 24	stroke	home; search dialog; sidebar; nav; dark	span	What readers see
+sitemap-rss-json-ld.svg	sitemap-rss-json-ld	d7a7fa19	16x16	0 0 24 24	stroke	home; search dialog; sidebar; nav; dark	li	Sitemap, RSS, JSON-LD
+latex-and-mermaid.svg	latex-and-mermaid	ed26b702	16x16	0 0 24 24	stroke	home; search dialog; sidebar; nav; dark	li	LaTeX and Mermaid
+icon-04ec9756.svg	icon-04ec9756	04ec9756	44x44	0 0 24 24	fill	home; search dialog; sidebar; nav	div	
+alternatives.svg	alternatives	1503180e	12x12 14x14	0 0 24 24	stroke	feed; th-home; th-post; th-archive	summary; button	Alternatives / More
+icon-42a73ac0.svg	icon-42a73ac0	42a73ac0	14x14	0 0 24 24	stroke	home; search dialog; sidebar; dark	span	
+icon-774f8134.svg	icon-774f8134	774f8134	14x14	0 0 24 24	stroke	home; search dialog; sidebar; dark	span	
+icon-7aecc7ab.svg	icon-7aecc7ab	7aecc7ab	14x14	0 0 24 24	stroke	home; search dialog; sidebar; dark	span	
+icon-7c47e0bb.svg	icon-7c47e0bb	7c47e0bb	14x14	0 0 24 24	stroke	home; search dialog; sidebar; dark	span	
+icon-90440096.svg	icon-90440096	90440096	14x14	0 0 24 24	stroke	home; search dialog; sidebar; dark	span	
+icon-9f73d1c0.svg	icon-9f73d1c0	9f73d1c0	14x14 15x15	0 0 24 24	fill	home; search dialog; sidebar; nav	span	
+icon-b6c1e5b2.svg	icon-b6c1e5b2	b6c1e5b2	14x14	0 0 24 24	stroke	home; search dialog; sidebar; dark	span	
+icon-bbbcf79b.svg	icon-bbbcf79b	bbbcf79b	14x14	0 0 24 24	stroke	home; search dialog; sidebar; dark	span	
+icon-d0bea0aa.svg	icon-d0bea0aa	d0bea0aa	14x14	0 0 24 24	stroke	home; search dialog; sidebar; dark	span	
+subheading.svg	subheading	d444fee2	14x14	0 0 24 24	stroke	home; search dialog; sidebar; dark	span	Subheading
+icon-fd33dc78.svg	icon-fd33dc78	fd33dc78	14x14	0 0 24 24	stroke	home; search dialog; sidebar; dark	span	
+icon-fee419d5.svg	icon-fee419d5	fee419d5	14x14	0 0 24 24	stroke	home; search dialog; sidebar; dark	span	
+hashnode-10fd3b40.svg	hashnode	10fd3b40	14x14 22x22	0 0 39 39	fill	th-home; th-post; th-archive	a	Hashnode / Powered by Hashnode (opens in a new tab)
+icon-4ee09870.svg	icon-4ee09870	4ee09870	16x16	0 0 24 24	stroke	pro; agents; alt-medium	button	Is Pro per publication or per account? / How does pricing work for teams? / What is the Growth Plan?
+toggle-theme.svg	toggle-theme	72c1c711	16x16	0 0 24 24	stroke	th-home; th-post; th-archive	button [&_svg]:pointer-events-none	Toggle theme
+what-do-i-get-with-pro.svg	what-do-i-get-with-pro	883b9e16	16x16	0 0 24 24	stroke	pro; agents; alt-medium	button	What do I get with Pro? / Which one should I use? / Can I move my Medium posts to Hashnode?
+prev.svg	prev	1b626c45	14x14 16x16	0 0 24 24	stroke	feed; th-archive	button; button [&_svg]:pointer-events-none	Prev / Previous
+contact-us.svg	contact-us	62bc65f1	16x16	0 0 24 24	stroke	changelog; search dialog	a [&_svg]:pointer-events-none; div [&_svg:not([class*='text-'])]:text-muted-foreground	Contact us / Support: hello@hashnode.com
+kathmandu-nepal.svg	kathmandu-nepal	641d0fe2	14x14 16x16	0 0 24 24	stroke	profile; onboard	span; div	kathmandu, Nepal
+view-all-posts.svg	view-all-posts	7cd0576d	12x12 14x14	0 0 24 24	stroke	feed; th-post	a	View all posts / Join the discussion
+feed.svg	feed	d6b3f829	14x14 16x16	0 0 24 24	stroke	post; alt-medium	a	Feed / Alternatives
+share-this-post.svg	share-this-post	ff75ceaf	16x16	0 0 24 24	stroke	post; profile	button; button [&_svg]:pointer-events-none	Share this post / Share
+icon-0794474b.svg	icon-0794474b	0794474b	16x16	0 0 24 24	stroke	th-post	a	Copy link to this section
+icon-148c97b8.svg	icon-148c97b8	148c97b8	44x44	0 0 24 24	fill	dark	div	
+icon-16a9bf4c.svg	icon-16a9bf4c	16a9bf4c	20x20	0 0 24 24	stroke	agents	li	Publish posts Publish markdown with tags
+i-text-muted-foreground-182a5d05.svg	i-text-muted-foreground	182a5d05	16x16	0 0 24 24	stroke	dark	button [&_i]:text-muted-foreground	
+set-up-your-agent.svg	set-up-your-agent	19952028	18x18	0 0 24 24	stroke	agents	a [&_svg]:pointer-events-none	Set up your agent
+upload-photo.svg	upload-photo	214bbbf3	20x20	0 0 24 24	stroke	onboard	button	Upload photo
+theme-set-to-dark.svg	theme-set-to-dark	2188ee4a	16x16	0 0 24 24	stroke	dark	li	Theme set to dark
+open-menu.svg	open-menu	21fbd0c2	16x16	0 0 24 24	stroke	nav	button [&_svg]:pointer-events-none	Open menu
+icon-2f2f3802.svg	icon-2f2f3802	2f2f3802	64x14	0 0 64 14	stroke	alt-medium	a	Hashnode vs WordPress Own your domain an / Hashnode vs Ghost Ownership and headless / Hashnode vs Substack Own your domain, pu
+svg-not-class-text-text-muted-fo-33728032.svg	svg-not-class-text-text-muted-fo	33728032	18x18	14 13.2 36 36	fill	sidebar	a [&_svg:not([class*='text-'])]:text-muted-foreground	Buildful New AI coding agent that delive
+support.svg	support	3c8ad439	16x16	0 0 24 24	stroke	sidebar	a [&_svg:not([class*='text-'])]:text-muted-foreground	Support
+joined-december-2020.svg	joined-december-2020	4641ff71	14x14	0 0 24 24	stroke	profile	span	Joined December 2020
+icon-470ff566.svg	icon-470ff566	470ff566	18x18	0 0 24 24	stroke	agents	span	
+brand.svg	brand	47152cd1	16x16	0 0 24 24	fill	search dialog	div [&_svg:not([class*='text-'])]:text-muted-foreground	Brand
+2px.svg	2px	54ceeb44	14x14	0 0 30 10	fill	dark	span translate-y-[calc(-50%_-_2px)]	
+icon-582a162a.svg	icon-582a162a	582a162a	20x20	0 0 24 24	stroke	agents	li	Draft first Save a draft, review it, the
+icon-6168cd16.svg	icon-6168cd16	6168cd16	18x18	0 0 24 24	stroke	pro	li	FAQ blocks with structured data Add up t
+close-toast.svg	close-toast	71fcab60	12x12	0 0 24 24	stroke	dark	button	Close toast
+svg-not-class-text-text-muted-fo-7e154a3f.svg	svg-not-class-text-text-muted-fo	7e154a3f	18x18	0 0 300 300	fill	sidebar	a [&_svg:not([class*='text-'])]:text-muted-foreground	Bug0 The AI-native e2e QA regression tes
+icon-8379f2bb.svg	icon-8379f2bb	8379f2bb	18x18	0 0 24 24	stroke	pro	li	Scheduled publishing Schedule drafts to  / Freshness queue Every article scored and
+svg.svg	svg	88f093af	16x16	0 0 24 24	stroke	brand	button [&_svg]:pointer-events-none	SVG
+icon-8b65ef96.svg	icon-8b65ef96	8b65ef96	20x20	0 0 24 24	stroke	agents	li	Review team drafts Submit a draft for re
+drafts.svg	drafts	8c4c00f1	16x16	0 0 24 24	stroke	search dialog	div [&_svg:not([class*='text-'])]:text-muted-foreground	Drafts
+terms.svg	terms	9682292b	16x16	0 0 24 24	stroke	search dialog	div [&_svg:not([class*='text-'])]:text-muted-foreground	Terms / Privacy Policy / Code of Conduct
+more-options.svg	more-options	9987f5b2	14x14	0 0 24 24	stroke	post	button	More options
+icon-bff2ed0b.svg	icon-bff2ed0b	bff2ed0b	18x18	0 0 24 24	stroke	pro	li	Bulk markdown import Bring an existing p
+icon-c204ec86.svg	icon-c204ec86	c204ec86	18x18	0 0 24 24	stroke	pro	li	Posts are never auto-deleted Off-topic p
+icon-d79bc653.svg	icon-d79bc653	d79bc653	16x16	0 0 24 24	stroke	search dialog	div	
+settings.svg	settings	d957321d	16x16	0 0 24 24	stroke	search dialog	div [&_svg:not([class*='text-'])]:text-muted-foreground	Settings / General settings / Account
+ai-writing-tools.svg	ai-writing-tools	dd554341	19x19	0 0 24 24	fill	pro	span	AI writing tools
+reply.svg	reply	edf7177c	16x16	0 0 24 24	stroke	post	button	Reply
+copy-to-clipboard.svg	copy-to-clipboard	f1307ec3	14x14	0 0 24 24	stroke	agents	button	Copy to clipboard
+icon-f3132b32.svg	icon-f3132b32	f3132b32	12x12	0 0 24 24	stroke	th-home	a	Pinned May 18, 2026 · 2 min read · 371 v
+close.svg	close	f6adc5e0	16x16	0 0 24 24	stroke	search dialog	button [&_svg]:pointer-events-none	Close
+icon-fc37157e.svg	icon-fc37157e	fc37157e	20x20	0 0 24 24	stroke	agents	li	Upload images Upload a local image and g

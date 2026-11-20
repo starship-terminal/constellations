@@ -640,6 +640,8 @@ function ResearchConversation({ initial }: { initial: Conversation }) {
         steeringState.current = { pinned: nextPinned, excluded: nextExcluded };
         setPinned(nextPinned);
         setExcluded(nextExcluded);
+        // The save moved updatedAt, which orders the sidebar history.
+        window.dispatchEvent(new Event("research-history"));
       })
       .catch((e) => setLocalError((e as Error).message));
     return steeringQueue.current;

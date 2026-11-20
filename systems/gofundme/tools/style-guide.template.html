@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GoFundMe style guide</title>
+<meta name="description" content="GoFundMe design tokens and the public surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --sg-serif: var(--sg-sans);
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+/* gofundme.com paints one theme — the :root-declared --hrt-* consumer light
+   palette — so the guide's body carries no theme scope at all. */
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-text-default, #232323); background: var(--color-surface-default, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 600 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-text-subtle, #666); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-border-default, #dcdcdc); }
+.lead { max-width: 62ch; color: var(--color-text-subtle, #666); }
+.note { font-size: 13px; color: var(--color-text-extra-subtle, #888); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 600 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-text-extra-subtle, #888); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-border-default, #dcdcdc); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-text-extra-subtle, #888); }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-border-default, #dcdcdc); background: var(--color-surface-subtle, #f7f7f7); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-text-extra-subtle, #888); }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-border-default, #dcdcdc); overflow: hidden; background: var(--color-surface-default, #fff); border-radius: var(--radius-measured-card, 12px); }
+.promo { display: flex; align-items: center; justify-content: center; height: var(--component-promo-height, 36px); font-size: 13px; font-weight: 500; color: var(--color-text-on-strong, #274a34); background: var(--color-surface-brand-medium, #ccf88e); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 72px); padding: 0 12px 0 22px; font-size: 15px; color: var(--color-text-default, #232323); background: var(--color-surface-default, #fff); border-bottom: 1px solid var(--color-border-default, #dcdcdc); }
+.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; color: var(--color-surface-brand, #4a9d44); }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 48px); padding: 0 24px; font-size: 16px; font-weight: 600; border-radius: var(--radius-measured-cta, 9999px); border: 1px solid transparent; }
+.btn.primary { background: var(--color-button-primary-surface, #274a34); color: var(--color-button-primary-text, #ccf88e); }
+.btn.secondary { background: var(--color-button-secondary-surface, transparent); color: var(--color-button-secondary-text, #274a34); border-color: var(--color-button-secondary-border, #274a34); }
+.btn.strong { background: var(--color-button-primary-surface-strong-default, #ccf88e); color: var(--color-button-primary-surface-default, #274a34); }
+.btn.small { height: 36px; font-size: 14px; }
+.hero { color: var(--color-text-default, #232323); padding: 72px 40px; font: 700 var(--font-size-measured-hero, 56px)/1.1 var(--sg-serif); letter-spacing: -0.02em; text-align: center; background: var(--color-surface-default, #fff); }
+.hero small { display: block; font: 400 20px/1.5 var(--sg-sans); color: var(--color-text-subtle, #666); margin: 20px auto 26px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-border-default, #dcdcdc); border-radius: var(--radius-measured-card, 12px); padding: 14px; font-size: 13px; background: var(--color-surface-default, #fff); }
+.tile .img { height: 140px; background: var(--color-surface-subtle, #f7f7f7); border-radius: 8px; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--color-text-extra-subtle, #888); }
+.tile b { display: block; font: 600 16px/1.3 var(--sg-serif); margin-bottom: 4px; color: var(--color-text-default, #232323); }
+.tile .sub { color: var(--color-text-extra-subtle, #888); font-size: 12px; }
+.tile .bar { height: var(--component-goal-bar-height, 8px); border-radius: 9999px; background: var(--color-data-brand-fill, var(--color-surface-brand, #4a9d44)); margin-top: 10px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-border-default, #dcdcdc); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-border-subtle, #eee); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-text-extra-subtle, #888); font-family: var(--sg-mono); }
+.field { display: block; width: 280px; height: var(--component-field-height, 48px); padding: 0 14px; border: 1px solid var(--color-border-default, #999); border-radius: var(--radius-measured-field, 8px); background: var(--color-surface-default, #fff); font-size: 16px; color: var(--color-text-default, #232323); }
+.chip { display: inline-flex; align-items: center; gap: 6px; height: var(--component-pill-height, 36px); padding: 0 14px; border-radius: 9999px; border: 1px solid var(--color-border-default, #ccc); background: var(--color-surface-default, #fff); color: var(--color-text-default, #232323); font-size: 14px; }
+.tag { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: var(--radius-measured-tag, 4px); background: var(--color-surface-brand-medium, #ccf88e); color: var(--color-text-on-medium, #274a34); font-size: 12px; font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <h1>GoFundMe style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">GoFundMe, declared and measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the site's declared token layer is the hrt design system — ~700 <code>--hrt-*</code> semantic custom properties on <code>:root</code> / <code>[data-theme="consumer"]</code> (the brand greens #4A9D44 / #274A34 / #CCF88E, neutral ramps, blue/pink/purple/yellow accents, the size, spacing, radius, type and motion scales). The consumer site paints exactly one theme; the declared <code>[data-theme="pro"]</code> layer never paints here. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from gofundme.com, signed out, in headless Chromium. The signed-in dashboard and donation checkout are documented boundaries; "Donate now", "Continue" and every CTA was measured, never pressed. The /c/* marketing pages are the WordPress content stack (an older hrt-base-*/wp-* layer); /sign-in is the auth boundary — its Welcome card measured signed-out, never submitted.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The consumer pages open under the promo banner (brand-medium fill) and the white sticky header: the GoFundMe mark, Search, Donate/Fundraise dropdowns on the left, About, "Sign in" and the pill "Start a GoFundMe" on the right. Below, the hero — "Where successful fundraisers start." — pairs the bold display face with the primary button on the white field.</p>
+  <div class="mock" style="padding:0">
+    <div class="promo">Introducing the Kind 50: Real stories of those who defy the doomscroll. See the list.</div>
+    <div class="navbar"><span>🔍 Search</span><span>Donate ▾</span><span>Fundraise ▾</span><span class="wm">gofundme</span><span class="sp"></span><span>About ▾</span><span>Sign in</span><span class="btn small secondary">Start a GoFundMe</span></div>
+    <div class="hero">Where successful<br>fundraisers start<small>Everything you need to help your fundraiser succeed is here.</small><span class="btn primary">Start a GoFundMe</span></div>
+  </div>
+
+  <h2 class="sh">Discover, fundraiser and the auth boundary</h2>
+  <p class="lead">/discover is the card grid: media, location tag, title, raised line and the hrt-goal-bar; a fundraiser page puts "Donate now" (primary) beside "Share" and "Message"; the wizard's category pills and postcode field sit under the country select; /sign-in is the auth shell's card — an empty form in headless.</p>
+  <div class="mock" style="padding:20px">
+    <div style="margin-bottom:14px;display:flex;gap:8px;flex-wrap:wrap"><span class="chip">Medical</span><span class="chip">Emergency</span><span class="chip">Memorial</span><span class="chip">Education</span><span class="tag">NEW</span></div>
+    <div class="grid" style="margin-top:16px">
+      <div class="tile"><div class="img">photo</div><b>Help Jong Pil Kim keep Mun Korean Steakhouse alive</b><span class="sub">$12,345 raised of $20,000 goal</span><div class="bar" style="width:62%"></div></div>
+      <div class="tile"><div class="img">photo</div><b>Pattie Gonia $5M bike hike fundraiser</b><span class="sub">$1,200,000 raised</span><div class="bar" style="width:24%"></div></div>
+      <div class="tile"><div class="img">photo</div><b>Legal support for Christian A. Claudio</b><span class="sub">$8,900 raised</span><div class="bar" style="width:44%"></div></div>
+    </div>
+    <div style="margin-top:18px;display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="btn strong">Donate now</span><span class="btn primary">Share</span><span class="btn secondary">Message</span></div>
+    <div style="margin-top:18px"><input class="field" placeholder="Zip code"></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared <code>--hrt-color-*</code> roles are the palette: surface/text/border/icon/button/data/texture families with <code>-hover</code>, <code>-pressed</code>, <code>-subtle</code>, <code>-strong</code>, <code>-on-strong</code> state suffixes — brand greens, the neutral ramp, and the blue/pink/purple/yellow/informative/negative/positive accents. Measured roles alias the declared values they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">The <code>--hrt-spacing-*</code>, <code>--hrt-radius-*</code>, <code>--hrt-motion-*</code>/<code>--hrt-time-*</code>/<code>--hrt-ease-*</code> and <code>--hrt-size-*</code> scales are declared; the <code>measured.*</code> entries anchor them to real controls.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">The hrt type system (<code>--hrt-type-*</code>/<code>--hrt-typography-*</code>/<code>--hrt-text-*</code> with <code>--hrt-font-*</code>/<code>--hrt-line-height-*</code>/<code>--hrt-letter-spacing-*</code>) is declared on <code>:root</code>; the measured steps anchor the ramp to the hero, nav and footer of the live pages.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Component-scoped vars</h2>
+  <p class="lead"><code>--hrt-header-*</code>, <code>--hrt-tooltip-*</code>, <code>--hrt-dropdown-*</code>, <code>--hrt-popover-*</code>, <code>--hrt-bubble-*</code>, <code>--hrt-toast-*</code>, <code>--hrt-goal-bar-*</code>, <code>--hrt-choice-*</code> and friends — declared per component in the same sheets.</p>
+  <div id="compvars-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --hrt-* semantic tokens from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => (s !== null && typeof s === 'object' ? JSON.stringify(s) : String(s)).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  // gofundme.com paints one theme: the light set is the declared palette,
+  // resolved on :root.
+  for (const [setname, label] of [['light', 'the consumer light roles — the only theme the site paints']]) {
+    for (const [g, grp] of Object.entries(TOK[setname] || {})) {
+      const items = (grp && grp.t ? [[setname + '.' + g, grp]] : flat(grp, setname + '.' + g + '.')).filter(([, t]) => t.t === 'color');
+      if (!items.length) continue;
+      h += `<div class="pal-h">${esc(setname)}.${esc(g)}</div><div class="pal">`;
+      for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+      h += '</div>';
+    }
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.size || {}, 'size.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.zIndex || {}, 'zIndex.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.grid || {}, 'grid.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).ease || {}, 'motion.ease.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat((TOK.light || {}).shadow || {}, 'shadow.')) {
+    e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : String(t.v).slice(0, 140))}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core || {}).shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : String(t.v).slice(0, 140))}</span></div>`;
+  for (const [n, t] of flat((TOK.core || {}).elevation || {}, 'elevation.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function compvars() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.componentVars || {}, 'componentVars.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 80))}</span></div>`;
+  $('#compvars-out').innerHTML = m || '<div><b>none</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}), 'motion.')) {
+    if (n.startsWith('motion.ease') || n.startsWith('motion.duration')) continue;
+    m += `<div><b>${esc(n)}</b> <span>${esc((typeof t.v === 'object' ? JSON.stringify(t.v) : String(t.v)).slice(0, 90))}…</span></div>`;
+  }
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Aliases are set-relative: scales live under TOK.core, the roles under
+  // TOK.light. Try each root.
+  for (const root of [TOK.core, TOK.light, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.type || {}), 'type.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(String(t.v).slice(0, 60))}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).height || {}, 'font.height.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — GoFundMe</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc((typeof t.v === 'object' ? JSON.stringify(t.v) : String(t.v)).slice(0, 90))}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+ "_note": "Rules for systems/dropbox. A fully public signed-out capture: no account exists and no owner data appears on any surface. The login/register email fields were focused and sample-filled with the throwaway name@example.com, then cleared; nothing was submitted. The consent banner, CCPA iframe and Google One Tap were hidden or aborted, never answered. All names, prices and copy in the screenshots are Dropbox's published public-page content. The OCR email net is kept with example.com allowed.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@example\\.com$",
+   "@example\\.org$"
+  ]
+ },
+ "families": []
+}

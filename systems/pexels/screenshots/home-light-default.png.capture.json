@@ -1,0 +1,29 @@
+{
+  "capturedAt": "2026-11-18T17:28:01.503Z",
+  "sanitizedSourceUrl": "https://www.pexels.com/",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "vw": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    },
+    "title": "Free Stock Photos, Royalty Free Stock Images & Copyright Free Pictures · Pexels"
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "status": 200,
+  "title": "Free Stock Photos, Royalty Free Stock Images & Copyright Free Pictures · Pexels",
+  "note": "Headless Chromium. T3 preview browser did not produce screenshot frames. Cookie banner rejected when present. No form submitted."
+}

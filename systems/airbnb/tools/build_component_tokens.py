@@ -53,6 +53,15 @@ def src(name):
     return f"css-var {name} (:root)"
 
 
+def dark_decl(name):
+    """The value the always-dark .c12bynq4 class declares for name (the dark
+    set's first-ranked scope, as build_tokens.py ranks it)."""
+    vals = {d["value"] for d in V["decls"] if d["name"] == name and d["selector"] == ".c12bynq4" and not d["media"]}
+    if len(vals) != 1:
+        raise KeyError(f"{name}: expected one .c12bynq4 declaration, found {sorted(vals)}")
+    return vals.pop()
+
+
 # ---------------------------------------------------------------- colour helpers
 
 
@@ -243,10 +252,13 @@ for name in sorted(k for k in R1440 if k.startswith("--elevation-")):
         grp, step = ("level", label) if re.fullmatch(r"(dark-)?elevation\d", label) else ("named", label)
         SPEC["core"].setdefault("elevation", {}).setdefault(grp, {})[step] = node
     elif label.endswith("-border"):
-        for side in ("light", "dark"):
+        # light is the :root value the home page resolves; dark is the value the
+        # always-dark .c12bynq4 class declares (1px solid #313131), not a copy
+        # of the light one
+        for side, decl, where in (("light", val(name), ":root"), ("dark", dark_decl(name), ".c12bynq4")):
             SPEC[side].setdefault("elevation", {}).setdefault("named", {})[label] = \
-                {"value": norm_color(val(name).split("solid")[-1].strip()), "type": "color",
-                 "source": src(name), "description": "1px solid, from " + name}
+                {"value": norm_color(decl.split("solid")[-1].strip()), "type": "color",
+                 "source": f"css-var {name} ({where})", "description": "1px solid, from " + name}
 
 # ------------------------------------------------------------------- material
 
@@ -390,13 +402,16 @@ meas["focus-ring"] = {"$value": ring_layers,
 
 # The wishlist heart over a card photo: the glyph is black at 50% with a white
 # stroke, so it reads on any image; no --palette name holds the pairing.
-ic = state_style("card-heart", "default").get("icon", {})
-meas["heart-idle"] = {"value": norm_color(ic.get("fill", "rgba(0,0,0,0.5)")), "type": "color",
-                      "source": "measured card-heart default icon fill, raw/components-computed.json",
-                      "description": "The wishlist heart glyph's resting fill over a photo."}
-meas["heart-stroke"] = {"value": norm_color(ic.get("stroke", "rgb(255,255,255)")), "type": "color",
-                        "source": "measured card-heart default icon stroke, raw/components-computed.json",
-                        "description": "The white stroke that keeps the heart readable over photos."}
+# The capture records the glyph's paint on the state itself (state["icon"]),
+# not inside its computed style; a missing reading publishes nothing.
+ic = C["card-heart"]["states"]["default"].get("icon") or {}
+if ic.get("fill") and ic.get("stroke"):
+    meas["heart-idle"] = {"value": norm_color(ic["fill"]), "type": "color",
+                          "source": "measured card-heart default icon fill, raw/components-computed.json",
+                          "description": "The wishlist heart glyph's resting fill over a photo."}
+    meas["heart-stroke"] = {"value": norm_color(ic["stroke"]), "type": "color",
+                            "source": "measured card-heart default icon stroke, raw/components-computed.json",
+                            "description": "The white stroke that keeps the heart readable over photos."}
 
 
 # ------------------------------------------------------------------ write

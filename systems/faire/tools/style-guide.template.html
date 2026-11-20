@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faire style guide</title>
+<meta name="description" content="Faire design tokens and the public signed-out surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Graphik_fix", "Graphik", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Nantes_fix", "Nantes", "GT Canon", Georgia, "Times New Roman", serif;
+  --sg-mono: "GT Standard M", ui-monospace, "SF Mono", Menlo, monospace;
+  --ink: var(--color-text-primary-default, #333333);
+  --paper: var(--color-surface-primary-default, #ffffff);
+  --hair: var(--color-border-muted, #dadada);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--ink, #333); background: var(--paper, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink, #333); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--hair, #ddd); }
+.lead { max-width: 62ch; color: var(--ink, #333); opacity: .8; }
+.note { font-size: 13px; color: var(--ink, #333); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink, #333); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--hair, #ddd); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--ink, #333); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--hair, #ddd); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--ink, #333); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--hair, #ddd); overflow: hidden; background: var(--paper, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: 60px; padding: 0 12px 0 22px; font-size: 14px; color: var(--ink, #333); background: #fff; border-bottom: 1px solid var(--hair, #ddd); }
+.navbar .wm { font: 400 18px/1 var(--sg-serif); letter-spacing: .28em; }
+.navbar .cat { border: 1px solid var(--hair, #ddd); border-radius: var(--radius-component-filter, 999px); padding: 8px 14px; font-size: 14px; }
+.navbar .find { flex: 0 0 300px; border: 1px solid var(--hair, #ddd); border-radius: var(--radius-component-filter, 999px); padding: 8px 14px; font-size: 14px; color: var(--color-text-subdued, #6c6a6a); }
+.navbar .sp { flex: 1; }
+.navbar .loc { font-size: 13px; color: var(--color-text-subdued, #6c6a6a); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height-medium, 48px); padding: 0 var(--component-button-paddingX-medium, 20px); font-size: 14px; font-weight: 400; border-radius: var(--component-button-radius, 4px); border: 1px solid transparent; }
+.btn.small { height: var(--component-button-height-small, 40px); padding: 0 var(--component-button-paddingX-small, 16px); }
+.btn.primary { background: var(--color-action-surface-default, #333333); color: var(--color-action-text-inverse, #fff); }
+.btn.ghost { border-color: var(--color-button-border-secondary, #dadada); color: var(--color-action-text-default, #333); }
+.btn.plain { color: var(--color-action-text-default, #333); }
+.btn:focus-visible, .cat:focus-visible { outline: var(--component-focusRing-width, 2px) solid var(--component-focusRing-color, #275ec5); outline-offset: var(--component-focusRing-offset, 1px); }
+.hero { color: #fff; padding: 72px 40px; font: 400 52px/64px var(--sg-serif); letter-spacing: 0; text-align: left; background: #333333; }
+.hero small { display: block; font: 400 14px/20px var(--sg-sans); letter-spacing: .15px; color: rgba(255,255,255,.85); margin: 16px 0 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--hair, #ddd); padding: 14px; font-size: 13px; background: #fff; }
+.tile .img { height: 140px; background: #eee; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 400 16px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.dlg { width: var(--component-dialog-width-signIn, 420px); margin: 0 auto; padding: 28px; border: 1px solid var(--hair, #ddd); background: #fff; }
+.dlg h3 { font: 400 30px/38px "GT Canon", var(--sg-serif); margin: 0 0 18px; }
+.dlg .field { display: block; height: 40px; border: 1px solid var(--hair, #ddd); border-radius: 0; padding: 0 12px; margin: 10px 0; font: 400 14px/20px var(--sg-sans); color: var(--color-action-text-placeholder, #6c6a6a); }
+.dlg .field b { font-weight: 400; color: var(--ink, #333); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--hair, #ddd); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--hair, #ddd); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--ink, #333); opacity: .65; font-family: var(--sg-mono); }
+.pill { display: inline-block; border-radius: var(--radius-component-filter, 999px); padding: 8px 16px; font-size: 14px; border: 1px solid var(--hair, #ddd); margin: 0 6px 6px 0; }
+.pill.on { background: var(--color-action-surface-default, #333); color: var(--color-action-text-inverse, #fff); border-color: var(--color-action-surface-default, #333); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Faire style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Faire, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the Slate design-token layer faire.com declares in its cdn.faire.com bundles — the <code>--slate-color-*</code> grey/neutral/bsr ramps and the text/surface/border/icon/action/button/message/tag/toggle/expressive/program roles they feed, the <code>--slate-typography-*</code> Graphik/Nantes ramp and the older <code>--f_t_*</code> ramp still on the page, the 4px spacing base, the 2–24px radii and 999px pills, the two <code>--slate-elevation-*</code> shadows, the .fs-mode-on-surface inverse scope, and the measured component sizes. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from faire.com on 2026-11-14, signed out, in headless Chromium. Everything past the sign-up/sign-in dialogs — search results, product detail, cart, checkout, account — is a documented boundary; the application and auth forms were measured and typed into then cleared, never submitted. Graphik/Nantes/GT Canon/GT Standard are served faces and are not loaded here: samples fall back to system sans and serif.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The white header carries the FAIRE wordmark, the rounded "All categories" dropdown, the pill search field, EN-US locale, Blog, "Sign up to sell", "Sign in" and the dark "Sign up to buy" fs-button; below it the sub-header category strip. The hero pairs the serif display masthead over media with sign-up CTAs; the featured-brands row uses rounded pill tabs (the selected one paints dark).</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">F A I R E</span><span class="cat">All categories</span><span class="find">Search wholesale products or brands</span><span class="sp"></span><span class="loc">EN-US</span><span>Blog</span><span>Sign up to sell</span><span>Sign in</span><span class="btn small primary">Sign up to buy</span></div>
+    <div class="hero">Find your next bestseller<small>Sign up to unlock wholesale pricing with over 100,000 brands.</small><span class="btn ghost" style="border-color:#fff;color:#fff">Sign up to buy</span></div>
+    <div style="padding:16px"><span class="pill">Home decor</span><span class="pill">Food &amp; drink</span><span class="pill on">Women</span><span class="pill">Beauty &amp; wellness</span><span class="pill">Jewelry</span><span class="pill">Paper &amp; novelty</span></div>
+  </div>
+
+  <h2 class="sh">The auth dialogs</h2>
+  <p class="lead">The sign-in (<code>?signIn=1</code>, 420px) and sign-up (<code>?signUp=1</code>, 500px) fs-modals are the deepest public surface: a GT Canon title, boxed fields, the dark submit and Google/Apple SSO. Measured at rest, never submitted.</p>
+  <div class="mock" style="padding:24px">
+    <div class="dlg"><h3>Sign in to Faire</h3><span class="field"><b>name@company.com</b></span><span class="field">Enter your password</span><span class="btn primary" style="width:100%">Sign in</span><span class="btn ghost" style="width:100%;margin-top:8px">Sign in with Google</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The Slate ramps: <code>--slate-color-grey-*</code>/<code>--slate-color-neutral-*</code> run white #ffffff to near-black, beside blue/green/orange/red/teal/yellow accents and the seasonal <code>--slate-color-bsr-*</code> ramp. The semantic layer — text/surface/border/icon roles, the action.* state matrix, button/message/tag/toggle/progress/expressive/program roles — resolves to them on the only theme the site paints. The <code>onSurface</code> group is the same roles remapped inside <code>.fs-mode-on-surface</code> for controls over dark media.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">Everything sits on the 4px <code>--spacing</code> base with the <code>--slate-spacing-element/group/layout/section-*</code> roles and the 4–80px <code>--slate-dimensions-*</code> ramp. Radii are small — 4px on buttons and fields, 999px on filter pills and round controls. Controls transition over 150ms <code>cubic-bezier(.4,0,.2,1)</code>.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Elevation</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead"><code>Graphik_fix</code> carries the UI — body, controls, fields at 14/20 with +0.15px tracking; <code>Nantes_fix</code> draws the marketing display (52/64 mastheads); <code>GT Canon</code> draws the category masthead and dialog titles; <code>GT Standard</code> the large CTAs. The declared <code>--slate-typography-*</code> ramp runs 100–800; the older <code>--f_t_*</code> ramp (sizes 12–72) is still resolved on the page.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --slate-*/--f_t_*/Tailwind theme variables from the live stylesheets (network bodies — the sheets are cross-origin) and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles (the only theme faire.com paints)'], ['dark', 'dark roles']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${label}</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.dimension || {}, 'dimension.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.ease || {}, 'ease.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.elevation || {}, 'elevation.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.aspect || {}, 'aspect.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).animation || {}, 'motion.animation.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
+    const v = t.v || {};
+    const px = parseFloat(v.fontSize);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — Find your next bestseller</span><span class="tv">${esc(v.fontFamily)} ${esc(v.fontSize)}/${esc(v.lineHeight)} ${esc(v.fontWeight)}${v.letterSpacing && v.letterSpacing !== 'normal' ? ' ls ' + esc(v.letterSpacing) : ''}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px;font-family:var(--sg-sans)">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts" style="font-family:var(--sg-sans)">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-family:var(--sg-sans);font-weight:${esc(t.v)}">${esc(n)} — Faire</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).letterSpacing || {}, 'font.letterSpacing.')) h += `<div class="tr"><span class="ts" style="font-family:var(--sg-sans)">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).utilitySize || {}, 'font.utilitySize.')) h += `<div class="tr"><span class="ts" style="font-family:var(--sg-sans)">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).legacySize || {}, 'font.legacySize.')) h += `<div class="tr"><span class="ts" style="font-family:var(--sg-sans)">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts" style="font-family:var(--sg-sans)">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).face || {}, 'font.face.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

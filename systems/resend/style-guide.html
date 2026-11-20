@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resend style guide</title>
+<style>
+:root {
+  --color-gray-1: #141517;
+  --color-gray-2: #191b1e;
+  --color-gray-3: #212629;
+  --color-gray-4: #293034;
+  --color-gray-5: #333b3e;
+  --color-gray-6: #3b4345;
+  --color-gray-7: #434a4d;
+  --color-gray-8: #52595b;
+  --color-gray-9: #6e7679;
+  --color-gray-10: #878d8f;
+  --color-gray-11: #a1a4a5;
+  --color-gray-12: #f0f0f0;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-forge-green: #44ffa4;
+  --color-forge-red: #fe4e54;
+  --color-automationOrange: #8f3e1e;
+  --color-code: #ebeced;
+  --dark-surface-page: #000000;
+  --dark-surface-raised: #141517;
+  --dark-surface-overlay: #000000;
+  --dark-text-primary: #f0f0f0;
+  --dark-text-secondary: #a1a4a5;
+  --dark-text-placeholder: #52595b;
+  --dark-text-onAccent: #000000;
+  --dark-accent: #ffffff;
+  --dark-accentHover: #f0f0f0;
+  --dark-border-default: #293034;
+  --dark-border-subtle: #212629;
+  --dark-status-forgeGreen: #44ffa4;
+  --dark-status-forgeRed: #fe4e54;
+  --dark-component-button-bg: #fdfdfd0d;
+  --dark-component-button-text: #ffffff;
+  --dark-component-field-text: #ffffff;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "aBCFavorit", "Inter", ui-sans-serif, sans-serif;
+  --font-mono: "Commit Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--dark-surface-page);
+  color: var(--dark-text-primary);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
+}
+main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+h1 { font-weight: 400; font-size: 56px; line-height: 1.2; letter-spacing: -0.05em; margin: 0 0 8px; }
+h2 { font-weight: 400; font-size: 28px; letter-spacing: -0.025em; margin: 40px 0 12px; }
+p { color: var(--dark-text-secondary); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 120px; }
+.swatch i { display: block; height: 64px; border-radius: 16px; border: 1px solid var(--dark-border-default); }
+.swatch span { display: block; font-size: 12px; margin-top: 6px; color: var(--dark-text-secondary); }
+button, .ghost {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 16px;
+  font: 600 14px/20px var(--font-sans);
+  color: #fff;
+}
+.primary {
+  border: 2px solid rgba(255,255,255,0.05);
+  background-image: linear-gradient(104deg, rgba(253,253,253,0.05) 5%, rgba(240,240,228,0.1) 100%);
+  background-color: transparent;
+}
+.ghost {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--dark-text-secondary);
+}
+.field {
+  display: block;
+  width: 320px;
+  height: 48px;
+  margin-top: 12px;
+  padding: 0 16px;
+  border-radius: 16px;
+  border: 2px solid rgba(255,255,255,0.05);
+  background: transparent;
+  color: #fff;
+  font: 400 16px/24px var(--font-sans);
+}
+code { font-family: var(--font-mono); font-size: 14px; color: var(--color-code); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Resend</h1>
+  <p>Measured on 2026-11-19 from resend.com. Dark marketing page. Docs light is a second set in tokens.json.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><i style="background:#000"></i><span>page #000000</span></div>
+    <div class="swatch"><i style="background:#141517"></i><span>raised #141517</span></div>
+    <div class="swatch"><i style="background:#f0f0f0"></i><span>text #f0f0f0</span></div>
+    <div class="swatch"><i style="background:#a1a4a5"></i><span>muted #a1a4a5</span></div>
+    <div class="swatch"><i style="background:#fff"></i><span>accent #ffffff</span></div>
+    <div class="swatch"><i style="background:#293034"></i><span>border #293034</span></div>
+    <div class="swatch"><i style="background:#44ffa4"></i><span>forge green #44ffa4</span></div>
+    <div class="swatch"><i style="background:#fe4e54"></i><span>forge red #fe4e54</span></div>
+  </div>
+  <h2>Button and field</h2>
+  <button class="primary" type="button">Get started</button>
+  <button class="ghost" type="button">Log in</button>
+  <input class="field" placeholder="alan.turing@example.com" aria-label="Email">
+  <h2>Code</h2>
+  <code>import { Resend } from 'resend';</code>
+</main>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+ "_note": "Public signed-out capture. hello@kitchenstories.de is the published contact address and is allowed. The published phone number is masked because the image check treats phone numbers as personal data.",
+ "ocr": {
+  "emails": true,
+  "net": true,
+  "email_allow": [
+   "@kitchenstories\\.de$",
+   "@kitchenstories\\.de\\.$",
+   "@kitchenstories\\.com$"
+  ]
+ }
+}

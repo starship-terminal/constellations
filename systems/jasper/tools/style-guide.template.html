@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jasper style guide</title>
+<meta name="description" content="Jasper (jasper.ai) design tokens and the public site's components, rendered from tokens.json.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+}
+[data-mode="dark"] {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font: 450 16px/1.4 var(--font-family-primary);
+  padding: 32px;
+}
+h1 { font: 500 38px/1.1 var(--font-family-display); letter-spacing: -0.02em; margin: 0 0 8px; }
+h2 { font: 500 24px/1.2 var(--font-family-display); margin: 40px 0 8px; }
+p { max-width: 68ch; }
+code { font-family: var(--font-family-mono); font-size: 13px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0 24px; }
+.swatch { width: 140px; }
+.swatch i { display: block; height: 64px; border-radius: var(--radius-small); border: 1px solid var(--border); }
+.swatch b { display: block; margin-top: 6px; font-size: 13px; }
+.swatch span { display: block; font-size: 12px; opacity: 0.7; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 0 20px; border-radius: var(--radius-small);
+  font: 500 16px/1 var(--font-family-primary); text-decoration: none;
+}
+.primary { background: var(--button-primary-background); color: var(--button-primary-text); border: 1px solid var(--button-primary-border); }
+.secondary { background: var(--button-secondary-background); color: var(--button-secondary-text); border: 1px solid var(--button-secondary-border); }
+.tertiary { background: var(--button-tertiary-background); color: var(--button-tertiary-text); border: 1px solid var(--button-tertiary-border); }
+.island { background: var(--background); color: var(--text); padding: 24px; border-radius: var(--radius-main); }
+header.bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+button.toggle { background: transparent; color: inherit; border: 1px solid currentColor; border-radius: var(--radius-small); padding: 8px 12px; font: inherit; }
+</style>
+</head>
+<body>
+<header class="bar">
+  <div>
+    <h1>Jasper style guide</h1>
+    <p>Rendered from tokens.json. The toggle sets data-mode, which is how this page shows the declared .u-theme-dark rebinding. The marketing site itself stays light and uses dark as islands.</p>
+  </div>
+  <button class="toggle" type="button" id="mode">Dark island tokens</button>
+</header>
+<h2>Colour roles</h2>
+<div class="row" id="roles"></div>
+<h2>Buttons</h2>
+<div class="row">
+  <a class="btn primary">Get a Demo</a>
+  <a class="btn secondary">Start Free Trial</a>
+  <a class="btn tertiary">Log In</a>
+</div>
+<h2>Type</h2>
+<p style="font: 500 54px/1.05 var(--font-family-display); letter-spacing: -0.02em;">Applied AI for Enterprise Marketing</p>
+<p>Body copy sits in ABC ROM at 16px, weight 450, colour text. Display lines sit in Feature.</p>
+<script>
+const TOKENS = /*TOKENS*/null;
+const roles = ["background","background-secondary","border","text","button-primary-background","button-secondary-background","button-tertiary-background","selection-background"];
+const box = document.getElementById("roles");
+function paint() {
+  const dark = document.documentElement.getAttribute("data-mode") === "dark";
+  const set = dark ? TOKENS.dark : TOKENS.light;
+  box.innerHTML = roles.map((k) => {
+    const t = set[k];
+    if (!t) return "";
+    return `<div class="swatch"><i style="background:${t.v}"></i><b>${k}</b><span>${t.v}</span></div>`;
+  }).join("");
+}
+document.getElementById("mode").onclick = () => {
+  const on = document.documentElement.getAttribute("data-mode") === "dark";
+  if (on) document.documentElement.removeAttribute("data-mode");
+  else document.documentElement.setAttribute("data-mode", "dark");
+  paint();
+};
+paint();
+</script>
+</body>
+</html>

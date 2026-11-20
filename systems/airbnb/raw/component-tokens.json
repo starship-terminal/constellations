@@ -4460,27 +4460,27 @@
   "elevation": {
    "named": {
     "high-border": {
-     "value": "rgba(0, 0, 0, 0.04)",
+     "value": "#313131",
      "type": "color",
-     "source": "css-var --elevation-high-border (:root)",
+     "source": "css-var --elevation-high-border (.c12bynq4)",
      "description": "1px solid, from --elevation-high-border"
     },
     "primary-border": {
-     "value": "rgba(0, 0, 0, 0.04)",
+     "value": "#313131",
      "type": "color",
-     "source": "css-var --elevation-primary-border (:root)",
+     "source": "css-var --elevation-primary-border (.c12bynq4)",
      "description": "1px solid, from --elevation-primary-border"
     },
     "secondary-border": {
-     "value": "rgba(0, 0, 0, 0.04)",
+     "value": "#313131",
      "type": "color",
-     "source": "css-var --elevation-secondary-border (:root)",
+     "source": "css-var --elevation-secondary-border (.c12bynq4)",
      "description": "1px solid, from --elevation-secondary-border"
     },
     "tertiary-border": {
-     "value": "rgba(0, 0, 0, 0.08)",
+     "value": "#313131",
      "type": "color",
-     "source": "css-var --elevation-tertiary-border (:root)",
+     "source": "css-var --elevation-tertiary-border (.c12bynq4)",
      "description": "1px solid, from --elevation-tertiary-border"
     }
    }

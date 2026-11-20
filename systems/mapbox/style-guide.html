@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapbox style guide</title>
+<style>
+:root {
+  --color-gray-5: #f7f9fc;
+  --color-gray-10: #eceff5;
+  --color-gray-20: #d5dae2;
+  --color-gray-30: #bbc2ce;
+  --color-gray-40: #a0aaba;
+  --color-gray-50: #8b96aa;
+  --color-gray-60: #566171;
+  --color-gray-70: #333943;
+  --color-gray-80: #23262d;
+  --color-gray-90: #15171b;
+  --color-blue-5: #eff7ff;
+  --color-blue-10: #cbe4ff;
+  --color-blue-20: #98caff;
+  --color-blue-30: #64afff;
+  --color-blue-40: #3195ff;
+  --color-blue-50: #007afc;
+  --color-blue-60: #0062ca;
+  --color-blue-70: #004997;
+  --color-blue-80: #013165;
+  --color-blue-90: #001832;
+  --color-primary-5: #eff7ff;
+  --color-primary-10: #cbe4ff;
+  --color-primary-20: #98caff;
+  --color-primary-30: #64afff;
+  --color-primary-40: #3195ff;
+  --color-primary-50: #007afc;
+  --color-primary-60: #0062ca;
+  --color-primary-70: #004997;
+  --color-primary-80: #013165;
+  --color-primary-90: #001832;
+  --color-primary-base: #007afc;
+  --color-green-5: #e9faf1;
+  --color-green-10: #c9f2dd;
+  --color-green-20: #93e4bb;
+  --color-green-30: #5cd79a;
+  --color-green-40: #2fc078;
+  --color-green-50: #228a56;
+  --color-green-60: #1b6e45;
+  --color-green-70: #145334;
+  --color-green-80: #0e3722;
+  --color-green-90: #071c11;
+  --color-orange-5: #fff5ea;
+  --color-orange-10: #ffe6cb;
+  --color-orange-20: #ffcd98;
+  --color-orange-30: #ffb464;
+  --color-orange-40: #ff9b31;
+  --color-orange-50: #fc8200;
+  --color-orange-60: #ca6800;
+  --color-orange-70: #974e00;
+  --color-orange-80: #653400;
+  --color-orange-90: #321a00;
+  --color-red-5: #fcefed;
+  --color-red-10: #fcd6d1;
+  --color-red-20: #f9ada3;
+  --color-red-30: #f78475;
+  --color-red-40: #f45b47;
+  --color-red-50: #f13219;
+  --color-red-60: #c9220c;
+  --color-red-70: #961a09;
+  --color-red-80: #641106;
+  --color-red-90: #320903;
+  --color-yellow-5: #fffced;
+  --color-yellow-10: #fff7d3;
+  --color-yellow-20: #ffefa7;
+  --color-yellow-30: #fee67a;
+  --color-yellow-40: #fede4e;
+  --color-yellow-50: #fed622;
+  --color-yellow-60: #e5bc01;
+  --color-yellow-70: #ac8d01;
+  --color-yellow-80: #735e01;
+  --color-yellow-90: #392f00;
+  --color-white-0: #ffffff;
+  --font-family-display: Cera Pro, "Trebuchet MS", sans-serif;
+  --font-family-body: Open Sans, sans-serif;
+  --font-size-xxsmall: 12px;
+  --font-size-xsmall: 14px;
+  --font-size-small: 16px;
+  --font-size-regular: 18px;
+  --font-size-medium: 20px;
+  --font-size-large: 22px;
+  --font-size-xlarge: 24px;
+  --font-size-xxlarge: 28px;
+  --font-size-display: 56px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-lineHeight-display: 70px;
+  --background-page: #ffffff;
+  --background-surface: #f7f9fc;
+  --background-raised: #eceff5;
+  --background-accent: #007afc;
+  --background-accentHover: #3195ff;
+  --text-primary: #0e1012;
+  --text-secondary: #333943;
+  --text-muted: #566171;
+  --text-disabled: #a0aaba;
+  --text-onAccent: #ffffff;
+  --text-link: #007afc;
+  --border-default: #d5dae2;
+  --border-strong: #a0aaba;
+  --border-focus: #007afc;
+  --status-success: #228a56;
+  --status-warning: #fed622;
+  --status-danger: #f13219;
+  --status-info: #007afc;
+  --control-navHeight: 37.9844px;
+  --control-ctaHeight: 51.5938px;
+  --control-pillRadius: 100px;
+
+  --sg-sans: "Cera Pro", "Trebuchet MS", sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #0e1012); background: var(--background-page, #fff); }
+main { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 700 40px/1.15 var(--sg-sans); margin: 0 0 8px; }
+h2 { font: 700 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted, #566171); margin: 40px 0 10px; border-bottom: 1px solid var(--border-default, #d5dae2); padding-bottom: 8px; }
+.note { color: var(--text-secondary, #333943); max-width: 68ch; }
+.pill { display: inline-flex; align-items: center; height: 38px; padding: 0 16px; border-radius: 100px; background: var(--background-accent, #007afc); color: var(--text-onAccent, #fff); font-weight: 700; font-size: 14px; }
+.pill.stroke { background: transparent; color: var(--text-primary, #0e1012); box-shadow: inset 0 0 0 1px var(--border-strong, #a0aaba); }
+.nav { display: flex; align-items: center; gap: 16px; height: 64px; }
+.nav .sp { flex: 1; }
+.swatches { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { width: 92px; }
+.sw i { display: block; height: 40px; border-radius: 8px; border: 1px solid var(--border-default, #d5dae2); }
+.sw b, .sw span { display: block; font: 500 11px/1.3 var(--sg-sans); }
+.sw span { font-weight: 400; color: var(--text-muted, #566171); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Mapbox</h1>
+  <p class="note">Public signed-out surfaces of mapbox.com, rendered from tokens.json. The mock uses the measured blue pill and the Cera Pro stack. Screenshots are the evidence for layout.</p>
+  <div class="nav"><b>Mapbox</b><span>Products</span><span>Pricing</span><span class="sp"></span><span class="pill stroke">Log in</span><span class="pill">Sign up</span></div>
+  <h2>Roles</h2>
+  <div id="roles" class="swatches"></div>
+  <h2>Ramps</h2>
+  <div id="ramps"></div>
+</main>
+<script>
+const TOK = {"core": {"color": {"gray": {"5": {"v": "#f7f9fc", "t": "color"}, "10": {"v": "#eceff5", "t": "color"}, "20": {"v": "#d5dae2", "t": "color"}, "30": {"v": "#bbc2ce", "t": "color"}, "40": {"v": "#a0aaba", "t": "color"}, "50": {"v": "#8b96aa", "t": "color"}, "60": {"v": "#566171", "t": "color"}, "70": {"v": "#333943", "t": "color"}, "80": {"v": "#23262d", "t": "color"}, "90": {"v": "#15171b", "t": "color"}}, "blue": {"5": {"v": "#eff7ff", "t": "color"}, "10": {"v": "#cbe4ff", "t": "color"}, "20": {"v": "#98caff", "t": "color"}, "30": {"v": "#64afff", "t": "color"}, "40": {"v": "#3195ff", "t": "color"}, "50": {"v": "#007afc", "t": "color"}, "60": {"v": "#0062ca", "t": "color"}, "70": {"v": "#004997", "t": "color"}, "80": {"v": "#013165", "t": "color"}, "90": {"v": "#001832", "t": "color"}}, "primary": {"5": {"v": "#eff7ff", "t": "color"}, "10": {"v": "#cbe4ff", "t": "color"}, "20": {"v": "#98caff", "t": "color"}, "30": {"v": "#64afff", "t": "color"}, "40": {"v": "#3195ff", "t": "color"}, "50": {"v": "#007afc", "t": "color"}, "60": {"v": "#0062ca", "t": "color"}, "70": {"v": "#004997", "t": "color"}, "80": {"v": "#013165", "t": "color"}, "90": {"v": "#001832", "t": "color"}, "base": {"v": "#007afc", "t": "color"}}, "green": {"5": {"v": "#e9faf1", "t": "color"}, "10": {"v": "#c9f2dd", "t": "color"}, "20": {"v": "#93e4bb", "t": "color"}, "30": {"v": "#5cd79a", "t": "color"}, "40": {"v": "#2fc078", "t": "color"}, "50": {"v": "#228a56", "t": "color"}, "60": {"v": "#1b6e45", "t": "color"}, "70": {"v": "#145334", "t": "color"}, "80": {"v": "#0e3722", "t": "color"}, "90": {"v": "#071c11", "t": "color"}}, "orange": {"5": {"v": "#fff5ea", "t": "color"}, "10": {"v": "#ffe6cb", "t": "color"}, "20": {"v": "#ffcd98", "t": "color"}, "30": {"v": "#ffb464", "t": "color"}, "40": {"v": "#ff9b31", "t": "color"}, "50": {"v": "#fc8200", "t": "color"}, "60": {"v": "#ca6800", "t": "color"}, "70": {"v": "#974e00", "t": "color"}, "80": {"v": "#653400", "t": "color"}, "90": {"v": "#321a00", "t": "color"}}, "red": {"5": {"v": "#fcefed", "t": "color"}, "10": {"v": "#fcd6d1", "t": "color"}, "20": {"v": "#f9ada3", "t": "color"}, "30": {"v": "#f78475", "t": "color"}, "40": {"v": "#f45b47", "t": "color"}, "50": {"v": "#f13219", "t": "color"}, "60": {"v": "#c9220c", "t": "color"}, "70": {"v": "#961a09", "t": "color"}, "80": {"v": "#641106", "t": "color"}, "90": {"v": "#320903", "t": "color"}}, "yellow": {"5": {"v": "#fffced", "t": "color"}, "10": {"v": "#fff7d3", "t": "color"}, "20": {"v": "#ffefa7", "t": "color"}, "30": {"v": "#fee67a", "t": "color"}, "40": {"v": "#fede4e", "t": "color"}, "50": {"v": "#fed622", "t": "color"}, "60": {"v": "#e5bc01", "t": "color"}, "70": {"v": "#ac8d01", "t": "color"}, "80": {"v": "#735e01", "t": "color"}, "90": {"v": "#392f00", "t": "color"}}, "white": {"0": {"v": "#ffffff", "t": "color"}}}, "font": {"family": {"display": {"v": "Cera Pro, \"Trebuchet MS\", sans-serif", "t": "fontFamily"}, "body": {"v": "Open Sans, sans-serif", "t": "fontFamily"}}, "size": {"xxsmall": {"v": "12px", "t": "dimension"}, "xsmall": {"v": "14px", "t": "dimension"}, "small": {"v": "16px", "t": "dimension"}, "regular": {"v": "18px", "t": "dimension"}, "medium": {"v": "20px", "t": "dimension"}, "large": {"v": "22px", "t": "dimension"}, "xlarge": {"v": "24px", "t": "dimension"}, "xxlarge": {"v": "28px", "t": "dimension"}, "display": {"v": "56px", "t": "dimension"}}, "weight": {"regular": {"v": 400, "t": "number"}, "medium": {"v": 500, "t": "number"}, "bold": {"v": 700, "t": "number"}}, "lineHeight": {"display": {"v": "70px", "t": "dimension"}}}}, "light": {"background": {"page": {"v": "#ffffff", "t": "color"}, "surface": {"v": "#f7f9fc", "t": "color"}, "raised": {"v": "#eceff5", "t": "color"}, "accent": {"v": "#007afc", "t": "color"}, "accentHover": {"v": "#3195ff", "t": "color"}}, "text": {"primary": {"v": "#0e1012", "t": "color"}, "secondary": {"v": "#333943", "t": "color"}, "muted": {"v": "#566171", "t": "color"}, "disabled": {"v": "#a0aaba", "t": "color"}, "onAccent": {"v": "#ffffff", "t": "color"}, "link": {"v": "#007afc", "t": "color"}}, "border": {"default": {"v": "#d5dae2", "t": "color"}, "strong": {"v": "#a0aaba", "t": "color"}, "focus": {"v": "#007afc", "t": "color"}}, "status": {"success": {"v": "#228a56", "t": "color"}, "warning": {"v": "#fed622", "t": "color"}, "danger": {"v": "#f13219", "t": "color"}, "info": {"v": "#007afc", "t": "color"}}, "control": {"navHeight": {"v": "37.9844px", "t": "dimension"}, "ctaHeight": {"v": "51.5938px", "t": "dimension"}, "pillRadius": {"v": "100px", "t": "dimension"}}}};
+const css = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
+const flat = (node, prefix='') => Object.entries(node||{}).flatMap(([k,v]) => v && v.t ? [[prefix+k, v]] : (v && typeof v === 'object' ? flat(v, prefix+k+'.') : []));
+const roles = document.getElementById('roles');
+for (const [n, t] of flat(TOK.light, '')) {
+  if (t.t !== 'color') continue;
+  roles.insertAdjacentHTML('beforeend', `<div class="sw"><i style="background:var(${css(n)})"></i><b>${esc(n)}</b><span>${esc(t.v)}</span></div>`);
+}
+const ramps = document.getElementById('ramps');
+for (const [g, grp] of Object.entries((TOK.core && TOK.core.color) || {})) {
+  let html = `<h2>${esc(g)}</h2><div class="swatches">`;
+  for (const [n, t] of flat(grp, g + '.')) {
+    if (t.t !== 'color') continue;
+    html += `<div class="sw"><i style="background:${esc(t.v)}"></i><b>${esc(n)}</b><span>${esc(t.v)}</span></div>`;
+  }
+  ramps.insertAdjacentHTML('beforeend', html + '</div>');
+}
+</script>
+</body>
+</html>

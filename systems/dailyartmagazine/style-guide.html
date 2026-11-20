@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dailyartmagazine.com style guide</title>
+<meta name="description" content="dailyartmagazine.com design tokens and the public magazine surface's components, rendered from tokens.json with measured computed styles (the theme declares only stock WordPress presets).">
+<style>
+:root {
+  --font-family-sans: Basier, sans-serif;
+  --font-family-display: RoslindaleCondensed, sans-serif;
+  --font-family-narrow: RoslindaleNarrow, sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-size-chip: 10px;
+  --font-size-ui: 14px;
+  --font-size-body: 16px;
+  --font-size-article: 18px;
+  --font-size-card-title: 20px;
+  --font-size-tab: 28px;
+  --font-size-section: 32px;
+  --font-size-display: 56px;
+  --font-lineHeight-article: 24px;
+  --font-lineHeight-display: 60px;
+  --font-lineHeight-modal-copy: 21.6px;
+  --wp-preset-aspect-ratio-16-9: 16/9;
+  --wp-preset-aspect-ratio-2-3: 2/3;
+  --wp-preset-aspect-ratio-3-2: 3/2;
+  --wp-preset-aspect-ratio-3-4: 3/4;
+  --wp-preset-aspect-ratio-4-3: 4/3;
+  --wp-preset-aspect-ratio-9-16: 9/16;
+  --wp-preset-aspect-ratio-square: 1;
+  --wp-preset-color-black: #000000;
+  --wp-preset-color-cyan-bluish-gray: #abb8c3;
+  --wp-preset-color-light-green-cyan: #7bdcb5;
+  --wp-preset-color-luminous-vivid-amber: #fcb900;
+  --wp-preset-color-luminous-vivid-orange: #ff6900;
+  --wp-preset-color-pale-cyan-blue: #8ed1fc;
+  --wp-preset-color-pale-pink: #f78da7;
+  --wp-preset-color-vivid-cyan-blue: #0693e3;
+  --wp-preset-color-vivid-green-cyan: #00d084;
+  --wp-preset-color-vivid-purple: #9b51e0;
+  --wp-preset-color-vivid-red: #cf2e2e;
+  --wp-preset-color-white: #ffffff;
+  --wp-preset-font-size-large: 36px;
+  --wp-preset-font-size-medium: 20px;
+  --wp-preset-font-size-small: 13px;
+  --wp-preset-font-size-x-large: 42px;
+  --wp-preset-gradient-blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);
+  --wp-preset-gradient-blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);
+  --wp-preset-gradient-cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);
+  --wp-preset-gradient-electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);
+  --wp-preset-gradient-light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);
+  --wp-preset-gradient-luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);
+  --wp-preset-gradient-luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);
+  --wp-preset-gradient-luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);
+  --wp-preset-gradient-midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);
+  --wp-preset-gradient-pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);
+  --wp-preset-gradient-very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);
+  --wp-preset-gradient-vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);
+  --wp-preset-shadow-crisp: rgb(0, 0, 0) 6px 6px 0px 0px;
+  --wp-preset-shadow-deep: rgba(0, 0, 0, 0.4) 12px 12px 50px 0px;
+  --wp-preset-shadow-natural: rgba(0, 0, 0, 0.2) 6px 6px 9px 0px;
+  --wp-preset-shadow-outlined: rgb(255, 255, 255) 6px 6px 0px -3px, rgb(0, 0, 0) 6px 6px 0px 0px;
+  --wp-preset-shadow-sharp: rgba(0, 0, 0, 0.2) 6px 6px 0px 0px;
+  --wp-preset-spacing-20: 7.03125px;
+  --wp-preset-spacing-30: 10.7188px;
+  --wp-preset-spacing-40: 16px;
+  --wp-preset-spacing-50: 24px;
+  --wp-preset-spacing-60: 36px;
+  --wp-preset-spacing-70: 54.0781px;
+  --wp-preset-spacing-80: 80.9531px;
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --shadow-menu: rgba(0, 0, 0, 0.25) 0px 16px 48px 0px;
+  --motion-hover: all 0.3s ease;
+  --background-dark-band: #19191c;
+  --background-page: #ffffff;
+  --background-menu-panel: #ffffff;
+  --background-field-surface: #ffffff;
+  --background-scrim: rgba(0, 0, 0, 0.9);
+  --text-ink: #000000;
+  --text-muted: #4d5761;
+  --text-on-dark: #ffffff;
+  --action-accent: #c6002f;
+  --action-link-bright: #f3003a;
+  --border-accent-ghost-border: #c6002f;
+  --border-hairline-dark: #2e2e32;
+  --border-submit-border: #989da7;
+  --component-nav-height: 65px;
+  --component-nav-cluster-width: 300.08px;
+  --component-logo-width: 111px;
+  --component-hamburger-size: 15px;
+  --component-cat-nav-height: 633px;
+  --component-cat-nav-item-height: 59px;
+  --component-search-btn-height: 38px;
+  --component-hero-height: 798.75px;
+  --component-chip-height: 20.25px;
+  --component-card-h-width: 760px;
+  --component-card-h-height: 194px;
+  --component-card-img-width: 260px;
+  --component-card-v-height: 292.75px;
+  --component-load-more-height: 38px;
+  --component-nl-send-height: 38px;
+  --component-nl-email-height: 40px;
+  --component-nl-checkbox-input: 13px;
+  --component-nl-modal-width: 720px;
+  --component-article-column: 648px;
+  --component-article-header-width: 1152px;
+  --component-figure-width: 648px;
+  --component-contact-form-width: 669px;
+  --component-contact-input-width: 319.5px;
+  --component-contact-send-height: 46px;
+  --component-footer-height: 842px;
+  --component-ad-slot-height: 98px;
+  --component-nl-checkbox-box: 16px;
+  --component-chip-flanking-rule: 41px x 1px;
+  --component-focus-ring: dotted rgb(255, 255, 255);
+  --sg-sans: "Basier", "basier_circleregular", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "RoslindaleCondensed", "RoslindaleNarrow", Georgia, "Times New Roman", serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-ink, #000); background: var(--background-field-surface, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.1 var(--sg-serif); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #0f1015); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #0f1015); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--color-brand-ink, #030302); padding: 12px; border-radius: 12px; }
+.pal.dark .nm, .pal.dark .vl { color: rgba(255, 255, 255, 0.898); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); overflow: hidden; background: var(--surface-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 20px; height: var(--component-nav-height, 65px); padding: 0 10px 0 18px; font-size: 16px; color: var(--color-brand-ink, #030302); background: #fff; border-radius: var(--radius-nav, 26px); box-shadow: 0 1px 3px rgba(3,3,2,.08); margin: 12px 18px; }
+.navbar .wm { font-weight: 800; font-size: 18px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.navbar .link { color: var(--color-brand-ink, #030302); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-load-more-height, 38px); padding: 0 24px; font-size: 16px; font-weight: 500; border-radius: var(--radius-full, 9999px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-accent, #c6002f); color: var(--text-on-dark, #fff); height: var(--component-search-btn-height, 38px); font-size: 14px; }
+.btn.light { background: var(--background-field-surface, #fff); color: var(--color-brand-ink, #030302); box-shadow: 0 1px 4px rgba(3,3,2,.12); }
+.btn.outline { background: transparent; color: var(--color-brand-ink, #030302); box-shadow: inset 0 0 0 1px var(--border-hairline-dark, #2e2e32); }
+.hero { color: var(--color-brand-ink, #030302); padding: 96px 40px 90px; font: 400 52px/1 var(--sg-serif); text-align: center; background: linear-gradient(180deg, #bfe0ee 0%, #dceef7 60%, var(--background-page, #fff) 100%); }
+.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); color: var(--text-muted-foreground, rgba(3,3,2,.5)); margin: 18px auto 26px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border-hairline-dark, #2e2e32); padding: 18px; font-size: 13px; background: var(--background-field-surface, #fff); border-radius: var(--radius-2xl, 16px); }
+.tile .img { height: 100px; background: var(--background-page, #fff); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: var(--radius-default, 10px); }
+.tile b { display: block; font: 400 20px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .price { font: 400 40px/1.1 var(--sg-serif); margin: 8px 0 2px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-hairline-dark, #2e2e32); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-border, #e0e0e0); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #171717); opacity: .65; font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: var(--background-page, #fff); border-radius: var(--radius-full, 9999px); padding: 4px; gap: 0; font-size: 16px; }
+.toggle span { padding: 10px 28px; border-radius: var(--radius-full, 9999px); font-weight: 500; color: var(--color-brand-ink, #030302); }
+.toggle .on { background: var(--background-field-surface, #fff); box-shadow: 0 1px 3px rgba(3,3,2,.12); }
+</style>
+</head>
+<body>
+<main>
+  <h1>dailyartmagazine.com style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">dailyartmagazine.com, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the #19191c near-black bands, the #c6002f crimson chips and ghost-button borders, the #f3003a inline-link red, the #4d5761 slate body text, and RoslindaleCondensed display over a Basier UI. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from dailyartmagazine.com on 2026-11-14, signed out, in headless Chromium. The magazine is read-only — Shop and Courses lead off-domain and were never followed, and the newsletter and Contact Form 7 forms were measured but never submitted. Basier and the Roslindale cuts are self-hosted; samples fall back to system faces.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A 65px fixed #19191c bar carries the wordmark, 14px/600 white Basier links (Stories, Shop, Courses), a hamburger that drops a 1440x633 white Art-Movements mega-menu (rgba(0,0,0,.25) 0 16px 48px), and an 87x38 Search ghost button — transparent with a 1px #c6002f border that fills crimson on hover.</p>
+  <div class="mock" style="background:#fff">
+    <div class="navbar" style="height:65px;border-radius:0;margin:0;box-shadow:none;background:var(--background-dark-band,#19191c);color:#fff"><span class="wm" style="font-family:var(--sg-serif);font-weight:500">DailyArt Magazine</span><span class="link" style="color:#fff">Stories</span><span class="link" style="color:#fff">Shop</span><span class="link" style="color:#fff">Courses</span><span class="sp"></span><span class="link" style="color:#fff">&#9776;</span><span class="btn" style="height:38px;font-size:14px;font-weight:600;border-radius:3px;border:1px solid var(--action-accent,#c6002f);color:#fff;background:transparent">Search</span></div>
+    <div style="background:#fff;box-shadow:0 16px 48px rgba(0,0,0,.25);padding:14px 18px;display:flex;gap:18px;flex-wrap:wrap;font:600 16px var(--sg-serif);color:#000"><span style="width:240px;border-bottom:1px solid #2e2e32;padding-bottom:8px">Renaissance</span><span style="width:240px;border-bottom:1px solid #2e2e32;padding-bottom:8px">Impressionism</span><span style="width:240px;border-bottom:1px solid #2e2e32;padding-bottom:8px">Baroque</span></div>
+  </div>
+
+  <h2 class="sh">The dark hero</h2>
+  <p class="lead">The home opens on a ~799px #19191c band: a 56px/500 RoslindaleCondensed headline in white under a 10px/700 crimson category chip flanked by 41x1 #2e2e32 rules, beside a 275x293 featured card. The same dark ink returns mid-page as the donation and long-reads bands.</p>
+  <div class="mock" style="padding:56px 40px;background:var(--background-dark-band,#19191c);text-align:center">
+    <span style="display:inline-block;background:var(--action-accent,#c6002f);color:#fff;font:700 10px/1.4 var(--sg-sans);letter-spacing:.08em;padding:4px 10px;border-radius:3px">ART HISTORY</span>
+    <div style="color:#fff;font:500 44px/1.1 var(--sg-serif);margin:18px 0 0">Ten Japanese Woodblock Prints You Need to See</div>
+  </div>
+
+  <h2 class="sh">The feed</h2>
+  <p class="lead">Below the hero the page goes white: 28px RoslindaleCondensed feed tabs, 760x194 horizontal cards (260x177 thumbnail, 20px/700 RoslindaleNarrow title, crimson category chip, 14px meta), then 275x293 vertical cards, the donation band and a 760x38 Load more ghost button.</p>
+  <div class="mock" style="padding:20px">
+    <div style="display:flex;gap:14px;align-items:flex-start">
+      <div class="img" style="width:260px;height:177px;background:var(--background-dark-band,#19191c);flex:0 0 auto"></div>
+      <div><span style="display:inline-block;background:var(--action-accent,#c6002f);color:#fff;font:700 10px/1.4 var(--sg-sans);padding:4px 10px;border-radius:3px">PAINTING</span>
+      <b style="display:block;font:700 20px/1.2 var(--sg-serif);margin:10px 0 6px">A Sunday Afternoon on the Island of La Grande Jatte</b>
+      <span class="sub" style="font:400 14px var(--sg-sans);color:var(--text-muted,#4d5761)">by the DailyArt editors &middot; 14 November 2026</span></div>
+    </div>
+    <div style="margin-top:18px;text-align:center"><span class="btn" style="height:38px;font-size:14px;font-weight:600;border-radius:3px;border:1px solid var(--action-accent,#c6002f);color:var(--text-ink,#000);width:320px">Load more</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The light roles carry the measured editorial palette — #19191c dark bands, #c6002f accent, #f3003a link red, #4d5761 muted slate, #2e2e32 dark hairlines — and the wp-preset group holds the stock WordPress Gutenberg presets the theme declares but barely uses. The page paints one theme; the dark set is empty.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">A square design: 3px radius on chips, ghost buttons and inputs; 2px on the black contact Send; everything else paints at 0. The 648px article column and 760px feed row sit inside the measured component set below.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Three voices: <code>Basier</code> for UI and body (14px/600 nav, 18px/400 article text, 10px/700 chips), <code>RoslindaleCondensed</code> for display (56px/500 headlines, 32px sections, 28px tabs) and <code>RoslindaleNarrow</code> for card titles and menu items. Samples fall back to system faces.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read computed styles off the live WordPress DOM on every captured route</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened (mega-menu, modal) and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"sans":{"v":"Basier, sans-serif","t":"fontFamily","s":"computed fontFamily of nav-link, art-para, nl-send (raw/components-computed.json); @font-face Basier in idvetmp-child style.css","d":"Basier — every UI string, body copy, buttons, chips, meta."},"display":{"v":"RoslindaleCondensed, sans-serif","t":"fontFamily","s":"computed fontFamily of hero-h1, art-h1, section-heading, feed-tab (raw/components-computed.json); @font-face RoslindaleCondensed in style.css","d":"RoslindaleCondensed — hero/article 56px, section headings 32px, feed tabs 28px."},"narrow":{"v":"RoslindaleNarrow, sans-serif","t":"fontFamily","s":"computed fontFamily of post-card-title, cat-nav-item (raw/components-computed.json); @font-face RoslindaleNarrow in style.css","d":"RoslindaleNarrow — card titles 20px/700, category-menu items 16px/600."}},"weight":{"normal":{"v":400,"t":"fontWeight","s":"computed fontWeight of art-para default (raw/components-computed.json)","d":"400 — body copy, inputs."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of hero-h1 default (raw/components-computed.json)","d":"500 — every display heading."},"semibold":{"v":600,"t":"fontWeight","s":"computed fontWeight of nav-link default (raw/components-computed.json)","d":"600 — nav links, buttons, card meta labels."},"bold":{"v":700,"t":"fontWeight","s":"computed fontWeight of hero-tag default (raw/components-computed.json)","d":"700 — chips/tags, card titles (RoslindaleNarrow)."}},"size":{"chip":{"v":"10px","t":"fontSize","s":"computed fontSize of hero-tag default (raw/components-computed.json)","d":"The 10px/700 uppercase chip text."},"ui":{"v":"14px","t":"fontSize","s":"computed fontSize of nav-link default (raw/components-computed.json)","d":"The 14px nav/button/meta size."},"body":{"v":"16px","t":"fontSize","s":"computed fontSize of nl-modal default (raw/components-computed.json)","d":"The 16px body size (modal copy, menus)."},"article":{"v":"18px","t":"fontSize","s":"computed fontSize of art-para default (raw/components-computed.json)","d":"The 18px article paragraph."},"card-title":{"v":"20px","t":"fontSize","s":"computed fontSize of post-card-title default (raw/components-computed.json)","d":"The 20px RoslindaleNarrow card title."},"tab":{"v":"28px","t":"fontSize","s":"computed fontSize of feed-tab default (raw/components-computed.json)","d":"The 28px RoslindaleCondensed feed tab."},"section":{"v":"32px","t":"fontSize","s":"computed fontSize of section-heading default (raw/components-computed.json)","d":"The 32px section heading."},"display":{"v":"56px","t":"fontSize","s":"computed fontSize of hero-h1 default (raw/components-computed.json)","d":"The 56px hero/article display heading."}},"lineHeight":{"article":{"v":"24px","t":"other","s":"computed lineHeight of art-para default (raw/components-computed.json)","d":"Article paragraph line-height."},"display":{"v":"60px","t":"other","s":"computed lineHeight of hero-h1 default (raw/components-computed.json)","d":"Display heading line-height."},"modal-copy":{"v":"21.6px","t":"other","s":"computed lineHeight of nl-modal default (raw/components-computed.json)","d":"The 21.6px modal copy line-height (textStyle)."}}},"wp-preset":{"aspect_ratio":{"16_9":{"v":"16/9","t":"other","s":"css-var --wp--preset--aspect-ratio--16-9 (light); css-var --wp--preset--aspect-ratio--16-9 resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--aspect-ratio--16-9 — declared for the block editor; theme styles do not consume it."},"2_3":{"v":"2/3","t":"other","s":"css-var --wp--preset--aspect-ratio--2-3 (light); css-var --wp--preset--aspect-ratio--2-3 resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--aspect-ratio--2-3 — declared for the block editor; theme styles do not consume it."},"3_2":{"v":"3/2","t":"other","s":"css-var --wp--preset--aspect-ratio--3-2 (light); css-var --wp--preset--aspect-ratio--3-2 resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--aspect-ratio--3-2 — declared for the block editor; theme styles do not consume it."},"3_4":{"v":"3/4","t":"other","s":"css-var --wp--preset--aspect-ratio--3-4 (light); css-var --wp--preset--aspect-ratio--3-4 resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--aspect-ratio--3-4 — declared for the block editor; theme styles do not consume it."},"4_3":{"v":"4/3","t":"other","s":"css-var --wp--preset--aspect-ratio--4-3 (light); css-var --wp--preset--aspect-ratio--4-3 resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--aspect-ratio--4-3 — declared for the block editor; theme styles do not consume it."},"9_16":{"v":"9/16","t":"other","s":"css-var --wp--preset--aspect-ratio--9-16 (light); css-var --wp--preset--aspect-ratio--9-16 resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--aspect-ratio--9-16 — declared for the block editor; theme styles do not consume it."},"square":{"v":1,"t":"other","s":"css-var --wp--preset--aspect-ratio--square (light); css-var --wp--preset--aspect-ratio--square resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--aspect-ratio--square — declared for the block editor; theme styles do not consume it."}},"color":{"black":{"v":"#000000","t":"color","s":"css-var --wp--preset--color--black (light); css-var --wp--preset--color--black resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--color--black — declared for the block editor; theme styles do not consume it."},"cyan_bluish_gray":{"v":"#abb8c3","t":"color","s":"css-var --wp--preset--color--cyan-bluish-gray (light); css-var --wp--preset--color--cyan-bluish-gray resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--color--cyan-bluish-gray — declared for the block editor; theme styles do not consume it."},"light_green_cyan":{"v":"#7bdcb5","t":"color","s":"css-var --wp--preset--color--light-green-cyan (light); css-var --wp--preset--color--light-green-cyan resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--color--light-green-cyan — declared for the block editor; theme styles do not consume it."},"luminous_vivid_amber":{"v":"#fcb900","t":"color","s":"css-var --wp--preset--color--luminous-vivid-amber (light); css-var --wp--preset--color--luminous-vivid-amber resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--color--luminous-vivid-amber — declared for the block editor; theme styles do not consume it."},"luminous_vivid_orange":{"v":"#ff6900","t":"color","s":"css-var --wp--preset--color--luminous-vivid-orange (light); css-var --wp--preset--color--luminous-vivid-orange resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--color--luminous-vivid-orange — declared for the block editor; theme styles do not consume it."},"pale_cyan_blue":{"v":"#8ed1fc","t":"color","s":"css-var --wp--preset--color--pale-cyan-blue (light); css-var --wp--preset--color--pale-cyan-blue resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--color--pale-cyan-blue — declared for the block editor; theme styles do not consume it."},"pale_pink":{"v":"#f78da7","t":"color","s":"css-var --wp--preset--color--pale-pink (light); css-var --wp--preset--color--pale-pink resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--color--pale-pink — declared for the block editor; theme styles do not consume it."},"vivid_cyan_blue":{"v":"#0693e3","t":"color","s":"css-var --wp--preset--color--vivid-cyan-blue (light); css-var --wp--preset--color--vivid-cyan-blue resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--color--vivid-cyan-blue — declared for the block editor; theme styles do not consume it."},"vivid_green_cyan":{"v":"#00d084","t":"color","s":"css-var --wp--preset--color--vivid-green-cyan (light); css-var --wp--preset--color--vivid-green-cyan resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--color--vivid-green-cyan — declared for the block editor; theme styles do not consume it."},"vivid_purple":{"v":"#9b51e0","t":"color","s":"css-var --wp--preset--color--vivid-purple (light); css-var --wp--preset--color--vivid-purple resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--color--vivid-purple — declared for the block editor; theme styles do not consume it."},"vivid_red":{"v":"#cf2e2e","t":"color","s":"css-var --wp--preset--color--vivid-red (light); css-var --wp--preset--color--vivid-red resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--color--vivid-red — declared for the block editor; theme styles do not consume it."},"white":{"v":"#ffffff","t":"color","s":"css-var --wp--preset--color--white (light); css-var --wp--preset--color--white resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--color--white — declared for the block editor; theme styles do not consume it."}},"font_size":{"large":{"v":"36px","t":"dimension","s":"css-var --wp--preset--font-size--large (light); css-var --wp--preset--font-size--large resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--font-size--large — declared for the block editor; theme styles do not consume it."},"medium":{"v":"20px","t":"dimension","s":"css-var --wp--preset--font-size--medium (light); css-var --wp--preset--font-size--medium resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--font-size--medium — declared for the block editor; theme styles do not consume it."},"small":{"v":"13px","t":"dimension","s":"css-var --wp--preset--font-size--small (light); css-var --wp--preset--font-size--small resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--font-size--small — declared for the block editor; theme styles do not consume it."},"x_large":{"v":"42px","t":"dimension","s":"css-var --wp--preset--font-size--x-large (light); css-var --wp--preset--font-size--x-large resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--font-size--x-large — declared for the block editor; theme styles do not consume it."}},"gradient":{"blush_bordeaux":{"v":"linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%)","t":"other","s":"css-var --wp--preset--gradient--blush-bordeaux (light); css-var --wp--preset--gradient--blush-bordeaux resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--gradient--blush-bordeaux — declared for the block editor; theme styles do not consume it."},"blush_light_purple":{"v":"linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%)","t":"other","s":"css-var --wp--preset--gradient--blush-light-purple (light); css-var --wp--preset--gradient--blush-light-purple resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--gradient--blush-light-purple — declared for the block editor; theme styles do not consume it."},"cool_to_warm_spectrum":{"v":"linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%)","t":"other","s":"css-var --wp--preset--gradient--cool-to-warm-spectrum (light); css-var --wp--preset--gradient--cool-to-warm-spectrum resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--gradient--cool-to-warm-spectrum — declared for the block editor; theme styles do not consume it."},"electric_grass":{"v":"linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%)","t":"other","s":"css-var --wp--preset--gradient--electric-grass (light); css-var --wp--preset--gradient--electric-grass resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--gradient--electric-grass — declared for the block editor; theme styles do not consume it."},"light_green_cyan_to_vivid_green_cyan":{"v":"linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%)","t":"other","s":"css-var --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan (light); css-var --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan — declared for the block editor; theme styles do not consume it."},"luminous_dusk":{"v":"linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%)","t":"other","s":"css-var --wp--preset--gradient--luminous-dusk (light); css-var --wp--preset--gradient--luminous-dusk resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--gradient--luminous-dusk — declared for the block editor; theme styles do not consume it."},"luminous_vivid_amber_to_luminous_vivid_orange":{"v":"linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%)","t":"other","s":"css-var --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange (light); css-var --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange — declared for the block editor; theme styles do not consume it."},"luminous_vivid_orange_to_vivid_red":{"v":"linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%)","t":"other","s":"css-var --wp--preset--gradient--luminous-vivid-orange-to-vivid-red (light); css-var --wp--preset--gradient--luminous-vivid-orange-to-vivid-red resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--gradient--luminous-vivid-orange-to-vivid-red — declared for the block editor; theme styles do not consume it."},"midnight":{"v":"linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%)","t":"other","s":"css-var --wp--preset--gradient--midnight (light); css-var --wp--preset--gradient--midnight resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--gradient--midnight — declared for the block editor; theme styles do not consume it."},"pale_ocean":{"v":"linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%)","t":"other","s":"css-var --wp--preset--gradient--pale-ocean (light); css-var --wp--preset--gradient--pale-ocean resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--gradient--pale-ocean — declared for the block editor; theme styles do not consume it."},"very_light_gray_to_cyan_bluish_gray":{"v":"linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%)","t":"other","s":"css-var --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray (light); css-var --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray — declared for the block editor; theme styles do not consume it."},"vivid_cyan_blue_to_vivid_purple":{"v":"linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%)","t":"other","s":"css-var --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple (light); css-var --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple — declared for the block editor; theme styles do not consume it."}},"shadow":{"crisp":{"v":"rgb(0, 0, 0) 6px 6px 0px 0px","t":"other","s":"css-var --wp--preset--shadow--crisp (light); css-var --wp--preset--shadow--crisp resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--shadow--crisp — declared for the block editor; theme styles do not consume it."},"deep":{"v":"rgba(0, 0, 0, 0.4) 12px 12px 50px 0px","t":"other","s":"css-var --wp--preset--shadow--deep (light); css-var --wp--preset--shadow--deep resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--shadow--deep — declared for the block editor; theme styles do not consume it."},"natural":{"v":"rgba(0, 0, 0, 0.2) 6px 6px 9px 0px","t":"other","s":"css-var --wp--preset--shadow--natural (light); css-var --wp--preset--shadow--natural resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--shadow--natural — declared for the block editor; theme styles do not consume it."},"outlined":{"v":"rgb(255, 255, 255) 6px 6px 0px -3px, rgb(0, 0, 0) 6px 6px 0px 0px","t":"other","s":"css-var --wp--preset--shadow--outlined (light); css-var --wp--preset--shadow--outlined resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--shadow--outlined — declared for the block editor; theme styles do not consume it."},"sharp":{"v":"rgba(0, 0, 0, 0.2) 6px 6px 0px 0px","t":"other","s":"css-var --wp--preset--shadow--sharp (light); css-var --wp--preset--shadow--sharp resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--shadow--sharp — declared for the block editor; theme styles do not consume it."}},"spacing":{"20":{"v":"7.03125px","t":"dimension","s":"css-var --wp--preset--spacing--20 (light); css-var --wp--preset--spacing--20 resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--spacing--20 — declared for the block editor; theme styles do not consume it."},"30":{"v":"10.7188px","t":"dimension","s":"css-var --wp--preset--spacing--30 (light); css-var --wp--preset--spacing--30 resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--spacing--30 — declared for the block editor; theme styles do not consume it."},"40":{"v":"16px","t":"dimension","s":"css-var --wp--preset--spacing--40 (light); css-var --wp--preset--spacing--40 resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--spacing--40 — declared for the block editor; theme styles do not consume it."},"50":{"v":"24px","t":"dimension","s":"css-var --wp--preset--spacing--50 (light); css-var --wp--preset--spacing--50 resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--spacing--50 — declared for the block editor; theme styles do not consume it."},"60":{"v":"36px","t":"dimension","s":"css-var --wp--preset--spacing--60 (light); css-var --wp--preset--spacing--60 resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--spacing--60 — declared for the block editor; theme styles do not consume it."},"70":{"v":"54.0781px","t":"dimension","s":"css-var --wp--preset--spacing--70 (light); css-var --wp--preset--spacing--70 resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--spacing--70 — declared for the block editor; theme styles do not consume it."},"80":{"v":"80.9531px","t":"dimension","s":"css-var --wp--preset--spacing--80 (light); css-var --wp--preset--spacing--80 resolved (raw/css-vars.json)","d":"Stock WordPress Gutenberg preset --wp--preset--spacing--80 — declared for the block editor; theme styles do not consume it."}}},"radius":{"sm":{"v":"2px","t":"dimension","s":"computed borderTopLeftRadius of cf7-send default (raw/components-computed.json)","d":"The 2px contact-submit radius."},"md":{"v":"3px","t":"dimension","s":"computed borderTopLeftRadius of hero-tag default (raw/components-computed.json)","d":"The 3px chip/button/input radius."}},"shadow":{"menu":{"v":"rgba(0, 0, 0, 0.25) 0px 16px 48px 0px","t":"other","s":"computed boxShadow of cat-nav opened (raw/components-computed.json)","d":"The rgba(0,0,0,.25) 0 16px 48px drop under the mega-menu."}},"motion":{"hover":{"v":"all 0.3s ease","t":"other","s":"computed transition of search-btn default (raw/components-computed.json)","d":"The hover fill transition shared by the ghost buttons."}}},"light":{"background":{"dark-band":{"v":"#19191c","t":"color","s":"computed backgroundColor of nav-bar default (raw/components-computed.json)","d":"The #19191c near-black behind the top nav, the hero band and the mid-page dark sections."},"page":{"v":"#ffffff","t":"color","s":"computed backgroundColor of cat-nav opened (raw/components-computed.json)","d":"The #fff page field — body declares no background and paints the default canvas white; verified against the white mega-menu, feed and field surfaces."},"menu-panel":{"v":"#ffffff","t":"color","s":"computed backgroundColor of cat-nav opened (raw/components-computed.json)","d":"The white mega-menu panel the Art Movements dropdown paints (#fff, over the dark bar)."},"field-surface":{"v":"#ffffff","t":"color","s":"computed backgroundColor of nl-email default (raw/components-computed.json)","d":"White input fill (newsletter email, contact fields)."},"scrim":{"v":"rgba(0, 0, 0, 0.9)","t":"color","s":"computed backgroundColor of the .modal-r overlay ancestor of nl-modal default (raw/components-computed.json)","d":"The rgba(0,0,0,.9) overlay the newsletter modal's ancestor paints behind the panel."}},"text":{"ink":{"v":"#000000","t":"color","s":"computed color of post-card-title default (raw/components-computed.json)","d":"The #000 ink on every light-surface heading and label."},"muted":{"v":"#4d5761","t":"color","s":"computed color of art-para default (raw/components-computed.json)","d":"The #4d5761 slate of article paragraphs, card excerpts and meta."},"on-dark":{"v":"#ffffff","t":"color","s":"computed color of nav-link default (raw/components-computed.json)","d":"White text on the #19191c bands."}},"action":{"accent":{"v":"#c6002f","t":"color","s":"computed backgroundColor of hero-tag default (raw/components-computed.json)","d":"The #c6002f crimson — chips, tags, ghost-button borders, footer links, hover fills."},"link-bright":{"v":"#f3003a","t":"color","s":"computed color of art-inline-link default (raw/components-computed.json)","d":"The #f3003a brighter red the theme paints on inline article links."}},"border":{"accent-ghost-border":{"v":"#c6002f","t":"color","s":"computed borderTopColor of search-btn default (raw/components-computed.json)","d":"The 1px #c6002f border of the ghost buttons (Search, Send, Load more)."},"hairline-dark":{"v":"#2e2e32","t":"color","s":"computed borderTopColor of cat-nav-item default (raw/components-computed.json)","d":"The #2e2e32 dark hairline — menu-item rules and the hero-tag flanking lines."},"submit-border":{"v":"#989da7","t":"color","s":"computed borderTopColor of cf7-send default (raw/components-computed.json)","d":"The #989da7 grey border on the black contact-submit button."}},"component":{"nav-height":{"v":"65px","t":"dimension","s":"computed h of nav-bar default (raw/components-computed.json)","d":"The 65px fixed top nav."},"nav-cluster-width":{"v":"300.08px","t":"dimension","s":"computed w of nav-cluster default (raw/components-computed.json)","d":"The 300px primary-nav cluster."},"logo-width":{"v":"111px","t":"dimension","s":"computed w of nav-logo default (raw/components-computed.json)","d":"The 111px wordmark."},"hamburger-size":{"v":"15px","t":"dimension","s":"computed h of hamburger default (raw/components-computed.json)","d":"The 20x15 hamburger trigger."},"cat-nav-height":{"v":"633px","t":"dimension","s":"computed h of cat-nav opened (raw/components-computed.json)","d":"The 633px mega-menu panel."},"cat-nav-item-height":{"v":"59px","t":"dimension","s":"computed h of cat-nav-item default (raw/components-computed.json)","d":"The 59px category-menu row."},"search-btn-height":{"v":"38px","t":"dimension","s":"computed h of search-btn default (raw/components-computed.json)","d":"The 38px header Search button."},"hero-height":{"v":"798.75px","t":"dimension","s":"computed h of hero-block default (raw/components-computed.json)","d":"The ~799px dark hero band."},"chip-height":{"v":"20.25px","t":"dimension","s":"computed h of hero-tag default (raw/components-computed.json)","d":"The 20.25px crimson category chip."},"card-h-width":{"v":"760px","t":"dimension","s":"computed w of post-card-h default (raw/components-computed.json)","d":"The 760px horizontal feed card."},"card-h-height":{"v":"194px","t":"dimension","s":"computed h of post-card-h default (raw/components-computed.json)","d":"The 194px feed card height."},"card-img-width":{"v":"260px","t":"dimension","s":"computed w of post-card-img default (raw/components-computed.json)","d":"The 260x177 card thumbnail."},"card-v-height":{"v":"292.75px","t":"dimension","s":"computed h of post-card-v default (raw/components-computed.json)","d":"The 292.75px vertical card."},"load-more-height":{"v":"38px","t":"dimension","s":"computed h of load-more default (raw/components-computed.json)","d":"The 38px full-width Load more ghost button."},"nl-send-height":{"v":"38px","t":"dimension","s":"computed h of nl-send default (raw/components-computed.json)","d":"The 38px newsletter Send button."},"nl-email-height":{"v":"40px","t":"dimension","s":"computed h of nl-email default (raw/components-computed.json)","d":"The 40px email input."},"nl-checkbox-input":{"v":"13px","t":"dimension","s":"computed w of nl-checkbox default (raw/components-computed.json)","d":"The 13px invisible input box (opacity:0); the painted checkbox is the label's ::after."},"nl-modal-width":{"v":"720px","t":"dimension","s":"computed w of nl-modal default (raw/components-computed.json)","d":"The 720px slide-down newsletter modal."},"article-column":{"v":"648px","t":"dimension","s":"computed w of art-para default (raw/components-computed.json)","d":"The 648px article text column."},"article-header-width":{"v":"1152px","t":"dimension","s":"computed w of art-h1 default (raw/components-computed.json)","d":"The 1152px article header row."},"figure-width":{"v":"648px","t":"dimension","s":"computed w of art-figure default (raw/components-computed.json)","d":"The 648px article figure."},"contact-form-width":{"v":"669px","t":"dimension","s":"computed w of cf7-form default (raw/components-computed.json)","d":"The 669px Contact Form 7 form."},"contact-input-width":{"v":"319.5px","t":"dimension","s":"computed w of cf7-name default (raw/components-computed.json)","d":"The half-width 319.5px name/email field."},"contact-send-height":{"v":"46px","t":"dimension","s":"computed h of cf7-send default (raw/components-computed.json)","d":"The 46px black Send button."},"footer-height":{"v":"842px","t":"dimension","s":"computed h of footer default (raw/components-computed.json)","d":"The 842px footer block."},"ad-slot-height":{"v":"98px","t":"dimension","s":"computed h of ad-slot default (raw/components-computed.json)","d":"The 98px leaderboard ad slot."},"nl-checkbox-box":{"v":"16px","t":"dimension","s":"entered by hand at capture time, not measured: a probe of the .checkbox-style label's ::after (16x16 #fff, 1px solid #989da7, 2px radius) was never saved to raw/; raw/components-computed.json holds only the 13x13 input (nl-checkbox); recapture needed","d":"The 16px painted checkbox box (white, 1px #989da7 border, 2px radius) — the 13px input is opacity:0."},"chip-flanking-rule":{"v":"41px x 1px","t":"other","s":"computed ::before/::after of hero-tag default (raw/components-computed.json)","d":"The 41x1 #2e2e32 rules the hero tag paints on both sides."},"state-track":{"ghost-dark-track":{"v":{"default":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(255, 255, 255)","transform":"none","outlineStyle":"none"},"hover":{"backgroundColor":"rgb(198, 0, 47)","color":"rgb(255, 255, 255)","transform":"none","outlineStyle":"none"},"pressed":{"backgroundColor":"rgb(198, 0, 47)","color":"rgb(255, 255, 255)","transform":"none","outlineStyle":"none"},"focus-visible":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(255, 255, 255)","transform":"none","outlineStyle":"none"}},"t":"other","s":"computed styles of search-btn across states (raw/components-computed.json)","d":"Ghost button on the dark bar (Search): transparent + 1px #c6002f border with WHITE text at rest, fills #c6002f on hover/pressed."},"ghost-light-track":{"v":{"default":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(0, 0, 0)","transform":"none","outlineStyle":"none"},"hover":{"backgroundColor":"rgb(198, 0, 47)","color":"rgb(255, 255, 255)","transform":"none","outlineStyle":"none"},"pressed":{"backgroundColor":"rgb(198, 0, 47)","color":"rgb(255, 255, 255)","transform":"none","outlineStyle":"none"},"focus-visible":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(0, 0, 0)","transform":"none","outlineStyle":"none"}},"t":"other","s":"computed styles of nl-send across states (raw/components-computed.json)","d":"Ghost button on white (newsletter Send, Load more): transparent + 1px #c6002f border with #000 text at rest, fills #c6002f with white text on hover/pressed."},"nav-link-state-track":{"v":{"default":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(255, 255, 255)","transform":"none","outlineStyle":"none"},"hover":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(255, 255, 255)","transform":"none","outlineStyle":"none"},"pressed":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(255, 255, 255)","transform":"none","outlineStyle":"none"},"focus-visible":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(255, 255, 255)","transform":"none","outlineStyle":"dotted"}},"t":"other","s":"computed styles of nav-link across states (raw/components-computed.json)","d":"Nav link: white at rest; no background/color change on hover or pressed — focus shows a dotted white outline."},"cat-item-state-track":{"v":{"default":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(0, 0, 0)","transform":"none","outlineStyle":"none"},"pressed":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(0, 0, 0)","transform":"none","outlineStyle":"none"},"focus-visible":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(0, 0, 0)","transform":"none","outlineStyle":"dotted"}},"t":"other","s":"computed styles of cat-nav-item across states (raw/components-computed.json)","d":"Category-menu item: #000 RoslindaleNarrow on the white panel with a #2e2e32 1px bottom rule; hover state not captured (item leaves the viewport as the panel opens)."}},"focus-ring":{"v":"dotted rgb(255, 255, 255)","t":"other","s":"computed outline of nav-link/footer-link/art-inline-link focus-visible (raw/components-computed.json)","d":"The browser's dotted outline in the element's own colour — no custom focus ring is painted."}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the .theme.dark band)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — The Starry Night</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

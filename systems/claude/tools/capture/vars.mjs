@@ -30,7 +30,8 @@ const SNAPS = process.env.SNAPS;
 if (!SNAPS) { console.error('SNAPS=<dir of page copies> is required'); process.exit(2); }
 
 const blocks = new Map();
-for (const f of fs.readdirSync(SNAPS).filter((n) => n.endsWith('.html')).sort()) {
+const COPIES = fs.readdirSync(SNAPS).filter((n) => n.endsWith('.html')).sort();
+for (const f of COPIES) {
   const html = fs.readFileSync(path.join(SNAPS, f), 'utf8');
   for (const m of html.matchAll(/<style([^>]*)>([\s\S]*?)<\/style>/g)) {
     const css = m[2].replace(/<\\\/style/gi, '</style');
@@ -62,7 +63,7 @@ const result = await page.evaluate((sheets) => {
     for (const r of list) {
       if (r.type === CSSRule.FONT_FACE_RULE) {
         const o = { file };
-        for (let i = 0; i < r.style.length; i++) o[r.style[i]] = r.style.getPropertyValue(r.style[i]).trim();
+        for (let i = 0; i < r.style.length; i++) o[r.style[i]] = noUrl(r.style.getPropertyValue(r.style[i]).trim());
         fonts.push(o);
         continue;
       }
@@ -198,9 +199,9 @@ for (const r of ok) {
 }
 const names = (bin) => [...new Set(ok.filter((r) => r.bin === bin).flatMap((r) => Object.keys(r.properties)))].sort();
 const out = {
-  readAt: '2026-10-04',
+  readAt: process.env.READ_DATE || new Date().toLocaleDateString('en-CA'), // the run's local date; READ_DATE keeps a copy's day
   source: 'the <style> blocks snapshot.js inlined into each signed-in page copy (claude.ai\'s CSS from assets-proxy.anthropic.com), deduplicated by content',
-  sheets: sheets.map(({ name, media, bytes, copies }) => ({ name, media, bytes, copies: copies.length === 20 ? 'all 20 copies' : copies })),
+  sheets: sheets.map(({ name, media, bytes, copies }) => ({ name, media, bytes, copies: new Set(copies).size === COPIES.length ? `all ${COPIES.length} copies` : copies })),
   counts: {
     rules: ok.length,
     fonts: result.fonts.length,

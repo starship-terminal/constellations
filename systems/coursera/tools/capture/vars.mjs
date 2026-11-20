@@ -9,7 +9,9 @@ const b = await chromium.launch();
 const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA });
 const p = await ctx.newPage();
 const fonts = new Set();
-p.on('response', (r) => { if (/\.(woff2?|ttf|otf)(\?|$)/.test(r.url())) fonts.add(r.url()); });
+// A font response URL can carry a signed or per-account query: keep the path only.
+const bare = (u) => u.split(/[?#]/)[0];
+p.on('response', (r) => { if (/\.(woff2?|ttf|otf)(\?|$)/.test(r.url())) fonts.add(bare(r.url())); });
 await p.goto('https://www.coursera.org/learn/machine-learning', { waitUntil: 'domcontentloaded', timeout: 60000 });
 await p.waitForTimeout(7000);
 const out = await p.evaluate(() => {
@@ -21,7 +23,7 @@ const out = await p.evaluate(() => {
     for (const r of rules) {
       if (r.type === 4) { walk(r.cssRules, [...media, r.conditionText]); continue; }
       if (r.cssRules && !r.style) { walk(r.cssRules, media); continue; }
-      if (r.type === 5) { fontfaces.push(r.cssText); continue; }
+      if (r.type === 5) { fontfaces.push(noUrl(r.cssText)); continue; }
       if (r.type === 7) { keyframes.add(r.name); continue; }
       if (!r.style) continue;
       const sel = r.selectorText || '';
@@ -51,6 +53,6 @@ const probe = await p.evaluate((ns) => {
 }, names.filter((n) => n.includes('color')));
 // root: authored values of the base :root rule; resolved: computed at 1440 wide
 const root = Object.fromEntries(out.decls.filter((d) => d.selector === ':root' && !d.media).map((d) => [d.name, d.value]));
-fs.writeFileSync(process.env.OUT, JSON.stringify({ url: p.url(), read: new Date().toISOString().slice(0, 10), root, resolved: resolved[1440], resolvedByWidth: resolved, ...out, colorProbe: probe, fonts: [...fonts] }, null, 1));
+fs.writeFileSync(process.env.OUT, JSON.stringify({ url: bare(p.url()), read: new Date().toISOString().slice(0, 10), root, resolved: resolved[1440], resolvedByWidth: resolved, ...out, colorProbe: probe, fonts: [...fonts] }, null, 1));
 console.log(out.decls.length, names.length, [...new Set(out.decls.map((d) => d.media))]);
 await b.close();

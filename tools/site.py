@@ -7,9 +7,9 @@ one markdown file wrapped in the same bar the web app uses — a fixed left rail
 with the mark, the site nav, the section's own links, and the Settings link,
 ds-theme toggle and collapse toggle at its foot — plus the
 Settings page (settings/, its Preferences hold the app icon). site/ is
-gitignored; the Pages workflow builds it and encrypts the rest. The gallery and
-its chat live only in the Next.js app (web/), which the published site never
-ships — it shows the captures.
+gitignored; the home-server deployment serves it. The gallery and its chat live
+only in the Next.js app (web/), which the docs site never ships — it shows the
+captures.
 """
 import argparse
 import html
@@ -127,7 +127,7 @@ SETTINGS_BODY = """<h1>Settings</h1>
       </div>
       <p class="pref-note">The template fills Base URL and the auth style; every field stays editable. Model unlocks once a test against the endpoint succeeds, and the fetched list fills the dropdown. Anthropic keys also work from .env as ANTHROPIC_API_KEY with no setup here.</p>
     </div>
-    <p id="pf-off" hidden>Agent chat runs in the Next.js app (<code>make dev</code>); this section is inactive on the published site.</p>
+    <p id="pf-off" hidden>Agent chat runs in the Next.js app (<code>make dev</code>); this section is inactive on the docs site.</p>
   </fieldset>
 </div>
 <script>
@@ -335,13 +335,21 @@ def pages() -> list[Page]:
     return out
 
 
-def rail(page: Page, rel: str) -> str:
-    """The section's own links, rendered inside the side rail below the site nav."""
+def newest_audit() -> dict:
+    """The newest scorecard snapshot. scorecard.load() parses every snapshot,
+    so build() calls this once and hands the result to every page."""
+    _, audits = scorecard.load()
+    return audits[-1]
+
+
+def rail(page: Page, rel: str, audit: dict | None = None) -> str:
+    """The section's own links, rendered inside the side rail below the site nav.
+    `audit` is the newest snapshot; loaded when not given."""
     if page.section == "scorecard":
-        _, audits = scorecard.load()
+        audit = audit or newest_audit()
         items = [("Overview", "scorecard/")]
         items += [(scorecard.short(s), f"scorecard/systems/{s['slug']}/")
-                  for s in scorecard.ranked(audits[-1]["systems"])]
+                  for s in scorecard.ranked(audit["systems"])]
         items += [("Criteria and method", "scorecard/criteria/"), ("Changelog", "scorecard/changelog/")]
     else:
         items = [(title, f"{Path(path).stem}/") for title, path in scorecard.LIBRARY_DOCS]
@@ -352,12 +360,12 @@ def rail(page: Page, rel: str) -> str:
     return f'<aside class="rail"><nav aria-label="Section">{links}</nav></aside>'
 
 
-def render(page: Page, rendered: str, hidden: set[str]) -> str:
+def render(page: Page, rendered: str, hidden: set[str], audit: dict | None = None) -> str:
     rel = "../" * page.url.count("/")
     home = rel if rel else "./"
     current = lambda sec: ' aria-current="page"' if page.section == sec or (sec == "home" and not page.url) else ""
     body = f'<main class="doc">{rendered}</main>'
-    section = rail(page, rel) if page.section and "navigation" not in hidden else ""
+    section = rail(page, rel, audit) if page.section and "navigation" not in hidden else ""
     nav = [(home, "Home", "home", current("home")),
            (f"{rel}scorecard/", "Scorecard", "scorecard", current("scorecard")),
             (f"{rel}DESIGN-SYSTEM/", "Docs", "docs", current("docs"))]
@@ -459,8 +467,7 @@ def dashboard(catalog: dict | None = None, audit: dict | None = None,
     only what the published scorecard pages already say. Arguments default to
     the repository's data so tests can drive it with fixed input."""
     if audit is None:
-        _, audits = scorecard.load()
-        audit = audits[-1]
+        audit = newest_audit()
     catalog = catalog or json.loads((ROOT / "catalog.json").read_text())
     systems = catalog["systems"]
     if refero is None:
@@ -530,6 +537,7 @@ def build() -> None:
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(src, dst)
 
+    audit = newest_audit()  # once: every scorecard page's rail and the home dashboard
     count = 0
     for page in pages():
         if not page.src.exists():
@@ -538,10 +546,10 @@ def build() -> None:
         page.title = page_title(md, page.src.stem)
         body = rewrite_links(markdown.markdown(md, extensions=MD_EXTENSIONS, extension_configs=MD_CONFIGS), page)
         if not page.url:
-            body += dashboard()
+            body += dashboard(audit=audit)
         dest = OUT / page.url / "index.html" if page.url else OUT / "index.html"
         dest.parent.mkdir(parents=True, exist_ok=True)
-        atomic_write(dest, render(page, body, hidden))
+        atomic_write(dest, render(page, body, hidden, audit))
         count += 1
 
     settings = Page(DOCS / "index.md", "settings/", "settings")
@@ -552,16 +560,13 @@ def build() -> None:
     count += 1
 
     # A 404 is served at the missing URL, whatever its depth, so the page's
-    # relative links would resolve inside the missing directory. The script
-    # writes <base> before the stylesheet links: the site sits at / on the
-    # deploy host and under /design-systems/ on GitHub Pages.
+    # relative links would resolve inside the missing directory. A <base>
+    # before the stylesheet links points them at the site root, where the
+    # site sits on the deploy host.
     not_found = Page(DOCS / "index.md", "", None)
     not_found.title = "Page not found"
-    base_fix = ("<script>\n  var __seg = location.pathname.split('/').filter(Boolean);\n"
-                "  document.write('<base href=\"/' + (__seg[0] === 'design-systems' ? 'design-systems/' : '') + '\">');\n"
-                "</script>")
     html_404 = render(not_found, "<h1>Page not found</h1><p><a href='./'>Back to the library home</a>.</p>",
-                      {"navigation"}).replace("<head>", "<head>\n" + base_fix, 1)
+                      {"navigation"}).replace("<head>", '<head>\n<base href="/">', 1)
     atomic_write(OUT / "404.html", html_404)
     print(f"site: wrote {count} pages to {os.path.relpath(OUT, ROOT)}/")
 

@@ -1,0 +1,274 @@
+{
+  "source": "computed styles, public signed-out pages, 2026-11-19. No signup, no SSO, no booking, no card.",
+  "viewports": {
+    "desktop": {
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "dpr": 2,
+      "visualViewportScale": 1,
+      "pages": [
+        "https://navan.com/",
+        "https://navan.com/pricing",
+        "https://navan.com/product/expense-management"
+      ]
+    },
+    "phone": {
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "dpr": 2,
+      "visualViewportScale": 1,
+      "page": "https://navan.com/product/expense-management",
+      "note": "h1 computed 25px/30px at this width"
+    }
+  },
+  "body": {
+    "fontFamily": "Inter, Inter Fallback, ui-sans-serif, system-ui",
+    "fontSize": "16px",
+    "fontWeight": "300",
+    "lineHeight": "24px",
+    "letterSpacing": "-2%",
+    "color": "rgb(0,0,0)",
+    "background": "transparent"
+  },
+  "h1": {
+    "fontFamily": "Sanomat, ui-serif",
+    "fontSize": "45px",
+    "fontWeight": "600",
+    "lineHeight": "54px",
+    "color": "rgb(21, 0, 44)",
+    "letterSpacing": "normal",
+    "phone": {
+      "fontSize": "25px",
+      "lineHeight": "30px"
+    }
+  },
+  "h2": {
+    "fontFamily": "Sanomat, ui-serif",
+    "fontSize": "45px",
+    "fontWeight": "600",
+    "lineHeight": "54px",
+    "color": "rgb(21, 0, 44)"
+  },
+  "nav": {
+    "height": "77px",
+    "background": "rgba(255, 255, 255, 0.867)",
+    "shadow": "rgba(0,0,0,0.02) 0px 1.9px 2.2px, rgba(0,0,0,0.05) 0px 4.5px 5.3px",
+    "item": {
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "color": "rgb(21, 0, 44)",
+      "letterSpacing": "-2%",
+      "lineHeight": "19px"
+    },
+    "gap": "28px"
+  },
+  "announcement": {
+    "height": "50px",
+    "backgroundImage": "linear-gradient(117deg, rgb(124, 81, 250), rgb(27, 0, 95), rgb(124, 81, 250))",
+    "textColor": "rgb(255,255,255)",
+    "textSize": "17px",
+    "linkWeight": "700"
+  },
+  "buttonPrimary": {
+    "background": "rgb(99, 7, 248)",
+    "color": "rgb(255,255,255)",
+    "border": "2px solid rgb(99, 7, 248)",
+    "radius": "9999px",
+    "padding": "10px 28px",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "letterSpacing": "-2%",
+    "height": "44px",
+    "transition": "0.15s color, background-color, border-color cubic-bezier(0.4, 0, 0.2, 1)",
+    "outlineOffset": "4px"
+  },
+  "buttonDark": {
+    "background": "rgb(21, 0, 44)",
+    "color": "rgb(255,255,255)",
+    "border": "2px solid rgb(21, 0, 44)",
+    "radius": "9999px",
+    "padding": "10px 28px",
+    "fontSize": "14px",
+    "height": "44px"
+  },
+  "buttonSecondary": {
+    "background": "rgb(255,255,255)",
+    "color": "rgb(21, 0, 44)",
+    "border": "1px solid rgb(21, 0, 44)",
+    "radius": "9999px",
+    "padding": "0px 20px",
+    "fontSize": "14px",
+    "height": "40px",
+    "fontWeight": "400"
+  },
+  "link": {
+    "color": "rgb(99, 7, 248)",
+    "fontSize": "14px",
+    "fontWeight": "700",
+    "letterSpacing": "-2%"
+  },
+  "choiceTile": {
+    "backgroundDefault": "rgb(240, 240, 255)",
+    "backgroundSelected": "rgb(225, 226, 254)",
+    "radius": "12px",
+    "height": "80px",
+    "fontSize": "17px",
+    "labelSize": "15px",
+    "labelColor": "rgb(21, 0, 44)",
+    "labelWeight": "300",
+    "transition": "0.2s all cubic-bezier(0.4, 0, 0.2, 1)"
+  },
+  "card": {
+    "background": "rgb(255,255,255)",
+    "radius": "14px"
+  },
+  "pricingCard": {
+    "background": "rgb(255,255,255)",
+    "border": "1px solid rgb(99, 7, 248)",
+    "radius": "20px",
+    "padding": "30px 42px 17px",
+    "width": "509px",
+    "height": "776px",
+    "name": {
+      "size": "21px",
+      "color": "rgb(99, 7, 248)",
+      "weight": "300"
+    },
+    "price": {
+      "size": "30px",
+      "weight": "700",
+      "color": "rgb(21, 0, 44)"
+    },
+    "feature": {
+      "size": "15px",
+      "color": "rgb(90, 90, 114)",
+      "weight": "300"
+    },
+    "featureHeading": {
+      "size": "15px",
+      "weight": "700",
+      "color": "rgb(90, 90, 114)"
+    }
+  },
+  "quoteLink": {
+    "color": "rgb(21, 0, 44)",
+    "fontSize": "15px",
+    "fontWeight": "400",
+    "border": "1px solid rgb(21, 0, 44)",
+    "radius": "9999px"
+  },
+  "faq": {
+    "question": {
+      "fontSize": "19px",
+      "fontWeight": "300",
+      "color": "rgb(21, 0, 44)"
+    },
+    "heading": {
+      "fontSize": "28px",
+      "fontWeight": "700",
+      "color": "rgb(21, 0, 44)"
+    }
+  },
+  "cookieSheet": {
+    "background": "rgb(255,255,255)",
+    "radius": "12px 12px 0 0",
+    "shadow": "rgba(0,0,0,0.16) 0px -8px 24px",
+    "padding": "40px 64px",
+    "title": {
+      "fontFamily": "Sanomat",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "lineHeight": "16px",
+      "color": "rgb(21, 0, 44)"
+    },
+    "body": {
+      "fontSize": "14px",
+      "fontWeight": "300",
+      "lineHeight": "20px",
+      "color": "rgb(21, 0, 44)"
+    }
+  },
+  "footer": {
+    "background": "rgb(21, 0, 44)",
+    "paddingTop": "48px",
+    "link": {
+      "color": "rgb(255,255,255)",
+      "fontSize": "13px",
+      "fontWeight": "300"
+    }
+  },
+  "login": {
+    "url": "https://login.navan.com/u/login/identifier",
+    "note": "Reached by following /signin. Email field was not filled. No Continue, no SSO, no passkey, no Google, no Apple.",
+    "pageBackground": "rgb(245, 245, 248)",
+    "heading": {
+      "text": "Welcome to Navan!",
+      "fontFamily": "nvn-heading, serif",
+      "fontSize": "40px",
+      "fontWeight": "600",
+      "color": "rgb(30, 33, 42)"
+    },
+    "label": {
+      "fontSize": "13.92px",
+      "fontWeight": "400",
+      "color": "rgb(30, 33, 42)",
+      "fontFamily": "nvn-regular, Helvetica"
+    },
+    "input": {
+      "height": "52px",
+      "width": "490px",
+      "background": "transparent",
+      "border": "1px solid rgb(161, 75, 227)",
+      "radius": "10px",
+      "padding": "20px 16px 6px",
+      "fontSize": "16px",
+      "shadow": "rgb(161, 75, 227) 0px 0px 0px 1px",
+      "fontFamily": "nvn-regular"
+    },
+    "continue": {
+      "background": "rgb(19, 19, 22)",
+      "color": "rgb(255,255,255)",
+      "height": "52px",
+      "radius": "100px",
+      "fontSize": "15.84px",
+      "fontWeight": "400",
+      "padding": "4px 16px"
+    },
+    "social": {
+      "background": "rgb(255,255,255)",
+      "color": "rgb(30, 33, 42)",
+      "border": "1px solid rgb(15, 20, 25)",
+      "height": "52px",
+      "radius": "100px",
+      "fontSize": "16px"
+    },
+    "link": {
+      "color": "rgb(115, 0, 205)",
+      "fontWeight": "600",
+      "fontSize": "16px"
+    },
+    "signupLink": {
+      "color": "rgb(118, 16, 198)",
+      "fontWeight": "600",
+      "fontSize": "16px"
+    },
+    "or": {
+      "color": "rgb(199, 198, 214)",
+      "fontSize": "14px",
+      "fontWeight": "500"
+    },
+    "card": {
+      "width": "570px",
+      "radius": "12px",
+      "padding": "0 40px 40px"
+    },
+    "errorHidden": {
+      "text": "Please enter an email address / Email is not valid.",
+      "display": "none",
+      "color": "rgb(30, 33, 42)",
+      "fontSize": "13.92px"
+    },
+    "fontsLoaded": "nvn-regular and nvn-heading declared; @font-face src points at Sanomat on a cloudfront host. Computed family names are nvn-regular and nvn-heading."
+  }
+}

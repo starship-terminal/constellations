@@ -166,11 +166,14 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **PDP readings taken past a bot check.** aesop.com's Cloudflare Turnstile challenges the second document a browser context loads. The committed product-page readings (15 entries measured on `pdp`, the footer among them, and the mobile `accordion`) and the five `pdp-light-*` and `mobile-pdp-light-*` screenshots were taken by opening the product page as the first document of a fresh context, which got past the challenge. The capture scripts no longer do this (not run since): [tools/capture/public/gate.mjs](tools/capture/public/gate.mjs) loads each page once, a recapture reaches the PDP from the catalogue in the same context, and a challenged page is recorded as blocked and never measured or shot, with the earlier readings kept. [tools/capture/public/test_gate.mjs](tools/capture/public/test_gate.mjs) drives that with a stub page. A recapture may therefore leave the PDP as a boundary.
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - The capture is the US storefront; other regions (different assortment, promos, footer copy) were not visited.
 - The ADD TO CART bar was caught mid-hydration labelled "Loading …" — the resting label state was not captured.
 - The sign-up modal's remote fragment never rendered in headless; the dialog was measured as an empty shell.
 - The cart drawer's body logs a JSON parse warning in headless; the drawer chrome measured fine.
 - Several components were re-measured after selector fixes; `search-panel` (its container) and `cart-close` (no measurable close button) are honest misses, and `qty-select` does not exist on a one-variant PDP.
+- **`pdp-subtitle` was read from the wrong element.** Its text search matched the breadcrumb crumb ("Seasonal Gift Kits"), not the descriptor line under the product name. Needs a recapture.
 
 ### Do and don't (from README.md)
 

@@ -1,0 +1,182 @@
+[
+  {
+    "name": "home",
+    "width": 1440,
+    "status": "ok",
+    "finalUrl": "https://skiff.com/",
+    "title": "Skiff - Private, encrypted, secure email - 10 GB free",
+    "h1": "We are excited to share that Skiff has joined Notion.",
+    "scrollH": 1573,
+    "textHead": "Product\nResources\nWe are excited to share that Skiff has joined Notion.\nOn Feb 9th, we announced that Skiff was acquired by Notion and that services would be sunset on August 9th w"
+  },
+  {
+    "name": "mail",
+    "width": 1440,
+    "status": "ok",
+    "finalUrl": "https://skiff.com/mail",
+    "title": "Skiff – Private, Encrypted Email - Read more",
+    "h1": "Private, End-to-End Encrypted \nMail",
+    "scrollH": 3553,
+    "textHead": "Product\nResources\nSKIFF MAIL\n01\nPrivate, End-to-End Encrypted \nMail\nSkiff Mail protects your inbox by keeping your messages end-to-end encrypted. That means that no one but you has"
+  },
+  {
+    "name": "pages",
+    "width": 1440,
+    "status": "ok",
+    "finalUrl": "https://skiff.com/pages",
+    "title": "Skiff – Private, Encrypted Documents, Notes, and Wikis - Read more",
+    "h1": "Private, End-to-End Encrypted \nPages",
+    "scrollH": 2826,
+    "textHead": "Product\nResources\nSKIFF PAGES\n02\nPrivate, End-to-End Encrypted \nPages\nProtect your notes, documents, and wikis with Skiff Pages - end-to-end encrypted and fully collaborative.\nSkif"
+  },
+  {
+    "name": "drive",
+    "width": 1440,
+    "status": "ok",
+    "finalUrl": "https://skiff.com/drive",
+    "title": "Skiff – Private, Encrypted, Decentralized Cloud Storage - Read more",
+    "h1": "Private, End-to-End Encrypted \nDrive",
+    "scrollH": 2872,
+    "textHead": "Product\nResources\nSKIFF DRIVE\n03\nPrivate, End-to-End Encrypted \nDrive\nSkiff Drive protects your files, documents, and photos with end-to-end encryption.\nSkiff Drive\nNightwatch\nUplo"
+  },
+  {
+    "name": "calendar",
+    "width": 1440,
+    "status": "ok",
+    "finalUrl": "https://skiff.com/calendar",
+    "title": "Skiff – Private, Encrypted Calendar - Read more",
+    "h1": "Private, End-to-End Encrypted \nCalendar",
+    "scrollH": 2826,
+    "textHead": "Product\nResources\nSKIFF CALENDAR\n04\nPrivate, End-to-End Encrypted \nCalendar\nSkiff Calendar protects your personal and professional life by keeping your schedule end-to-end encrypte"
+  },
+  {
+    "name": "changelog",
+    "width": 1440,
+    "status": "ok",
+    "finalUrl": "https://skiff.com/#CA22CImLUO8bU%2Fp0wLDk4FYEm%2B%2FaRdhTMqXAZ5lwMMk%3D",
+    "title": "Skiff - Private, encrypted, secure email - 10 GB free",
+    "h1": "We are excited to share that Skiff has joined Notion.",
+    "scrollH": 1573,
+    "textHead": "Product\nResources\nWe are excited to share that Skiff has joined Notion.\nOn Feb 9th, we announced that Skiff was acquired by Notion and that services would be sunset on August 9th w"
+  },
+  {
+    "name": "security",
+    "width": 1440,
+    "status": "ok",
+    "finalUrl": "https://skiff.com/security-model",
+    "title": "Skiff – Security Whitepaper - Read more",
+    "h1": "Security whitepaper",
+    "scrollH": 12433,
+    "textHead": "Product\nResources\nSecurity whitepaper\nSkiff uses the latest in privacy, cryptography, and decentralization to keep your work and personal data private and truly owned by you. We ex"
+  },
+  {
+    "name": "privacy",
+    "width": 1440,
+    "status": "ok",
+    "finalUrl": "https://skiff.com/#tyGksN9rkqbo2uGYASxsA6HVLjUoly/wTYK8tncTto8=",
+    "title": "Skiff - Private, encrypted, secure email - 10 GB free",
+    "h1": "We are excited to share that Skiff has joined Notion.",
+    "scrollH": 1573,
+    "textHead": "Product\nResources\nWe are excited to share that Skiff has joined Notion.\nOn Feb 9th, we announced that Skiff was acquired by Notion and that services would be sunset on August 9th w"
+  },
+  {
+    "name": "report",
+    "width": 1440,
+    "status": "ok",
+    "finalUrl": "https://skiff.com/report",
+    "title": "Skiff – Contact us - Read more",
+    "h1": "Report an Issue",
+    "scrollH": 900,
+    "textHead": "Product\nResources\nReport an Issue\nIf you're experiencing any issues or have feedback, we're here to help. You can also email us at support@skiff.org.\nReport issue\n© 2024. All right"
+  },
+  {
+    "name": "home",
+    "width": 390,
+    "status": "ok",
+    "finalUrl": "https://skiff.com/",
+    "title": "Skiff - Private, encrypted, secure email - 10 GB free",
+    "h1": "We are excited to share that Skiff has joined Notion.",
+    "scrollH": 1960,
+    "textHead": "We are excited to share that Skiff has joined Notion.\nOn Feb 9th, we announced that Skiff was acquired by Notion and that services would be sunset on August 9th with email forwardi"
+  },
+  {
+    "name": "mail",
+    "width": 390,
+    "status": "ok",
+    "finalUrl": "https://skiff.com/mail",
+    "title": "Skiff – Private, Encrypted Email - Read more",
+    "h1": "Private, End-to-End Encrypted \nMail",
+    "scrollH": 5268,
+    "textHead": "Private, End-to-End Encrypted \nMail\nSkiff Mail protects your inbox by keeping your messages end-to-end encrypted. That means that no one but you has access to your data.\nInbox 12\nM"
+  },
+  {
+    "name": "pages",
+    "width": 390,
+    "status": "ok",
+    "finalUrl": "https://skiff.com/pages",
+    "title": "Skiff – Private, Encrypted Documents, Notes, and Wikis - Read more",
+    "h1": "Private, End-to-End Encrypted \nPages",
+    "scrollH": 4611,
+    "textHead": "Private, End-to-End Encrypted \nPages\nProtect your notes, documents, and wikis with Skiff Pages - end-to-end encrypted and fully collaborative.\nGeneral\nDesign\nPublish\nShare\nbody cop"
+  },
+  {
+    "name": "drive",
+    "width": 390,
+    "status": "ok",
+    "finalUrl": "https://skiff.com/drive",
+    "title": "Skiff – Private, Encrypted, Decentralized Cloud Storage - Read more",
+    "h1": "Private, End-to-End Encrypted \nDrive",
+    "scrollH": 4666,
+    "textHead": "Private, End-to-End Encrypted \nDrive\nSkiff Drive protects your files, documents, and photos with end-to-end encryption.\nDesign\nShare\nUpload\nName\nType\nQ1 overview\nFOLDER\nTeam review"
+  },
+  {
+    "name": "calendar",
+    "width": 390,
+    "status": "ok",
+    "finalUrl": "https://skiff.com/calendar",
+    "title": "Skiff – Private, Encrypted Calendar - Read more",
+    "h1": "Private, End-to-End Encrypted \nCalendar",
+    "scrollH": 4611,
+    "textHead": "Private, End-to-End Encrypted \nCalendar\nSkiff Calendar protects your personal and professional life by keeping your schedule end-to-end encrypted.\nNovember 2026\nToday\nAll-day\nJason"
+  },
+  {
+    "name": "changelog",
+    "width": 390,
+    "status": "ok",
+    "finalUrl": "https://skiff.com/#CA22CImLUO8bU%2Fp0wLDk4FYEm%2B%2FaRdhTMqXAZ5lwMMk%3D",
+    "title": "Skiff - Private, encrypted, secure email - 10 GB free",
+    "h1": "We are excited to share that Skiff has joined Notion.",
+    "scrollH": 1960,
+    "textHead": "We are excited to share that Skiff has joined Notion.\nOn Feb 9th, we announced that Skiff was acquired by Notion and that services would be sunset on August 9th with email forwardi"
+  },
+  {
+    "name": "security",
+    "width": 390,
+    "status": "ok",
+    "finalUrl": "https://skiff.com/security-model",
+    "title": "Skiff – Security Whitepaper - Read more",
+    "h1": "Security whitepaper",
+    "scrollH": 18983,
+    "textHead": "Security whitepaper\nSkiff uses the latest in privacy, cryptography, and decentralization to keep your work and personal data private and truly owned by you. We explain how Skiff's "
+  },
+  {
+    "name": "privacy",
+    "width": 390,
+    "status": "ok",
+    "finalUrl": "https://skiff.com/#tyGksN9rkqbo2uGYASxsA6HVLjUoly/wTYK8tncTto8=",
+    "title": "Skiff - Private, encrypted, secure email - 10 GB free",
+    "h1": "We are excited to share that Skiff has joined Notion.",
+    "scrollH": 1960,
+    "textHead": "We are excited to share that Skiff has joined Notion.\nOn Feb 9th, we announced that Skiff was acquired by Notion and that services would be sunset on August 9th with email forwardi"
+  },
+  {
+    "name": "report",
+    "width": 390,
+    "status": "ok",
+    "finalUrl": "https://skiff.com/report",
+    "title": "Skiff – Contact us - Read more",
+    "h1": "Report an Issue",
+    "scrollH": 1190,
+    "textHead": "Report an Issue\nIf you're experiencing any issues or have feedback, we're here to help. You can also email us at support@skiff.org.\nReport issue\n© 2024. All rights reserved.\nPRODUC"
+  }
+]

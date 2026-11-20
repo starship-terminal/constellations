@@ -1,0 +1,11 @@
+{
+ "_note": "Rules for systems/care. A fully public signed-out capture: /babysitters paints public marketplace listing rows (caregiver first name + last initial, photos, rates, tags) which are allowed under repo policy; no contact details are reachable signed out. name@example.com is the login field's painted placeholder, not captured PII.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@care\\.com$",
+   "@example\\.com$"
+  ]
+ },
+ "families": []
+}

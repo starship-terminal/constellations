@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-19",
+  "harness": "Grok Build",
+  "model": "grok-4.7",
+  "route": "public-web",
+  "browser": "T3 preview tab, reuseExistingTab false",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {"width": 1169, "height": 731, "scale": 1}
+  },
+  "screenshotError": "The browser is not producing screenshot frames",
+  "pages": [
+    "https://resend.com/",
+    "https://resend.com/login",
+    "https://resend.com/signup",
+    "https://resend.com/pricing",
+    "https://resend.com/brand",
+    "https://resend.com/docs/introduction"
+  ],
+  "notEntered": [
+    "signup submitted",
+    "Google OAuth",
+    "GitHub OAuth",
+    "API key",
+    "card",
+    "signed-in dashboard"
+  ]
+}

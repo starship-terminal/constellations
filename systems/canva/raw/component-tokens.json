@@ -1,0 +1,676 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. canva.com's public surface is a StyleX app whose hashed custom-property layer (raw/css-vars.json — .light/.dark redeclarations on the site's own theme classes) is var-referenced where it declares the brand colours, and measured computed values (raw/components-computed.json) cover the ink/white neutrals, the #8b3dff action ramp, the ink-wash and white state layers, the inset hairline ring, Canva Sans, the pill/12px radii and the 0.1s/0.2s control motion. The 'dark' set is the dark-painted header/hero band and dark feature sections the light page shows — the site paints it through .theme.dark elements, not a user toggle.",
+ "core": {
+  "font": {
+   "family": {
+    "sans": {
+     "value": "\"Canva Sans\", \"IBM Plex Sans Arabic\", \"Noto Sans Variable\", \"Noto Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of plan-cta default (raw/components-computed.json); the @font-face blocks are served from static.canva.com (raw/css-vars.json fonts)",
+     "description": "The one family the styled surface paints: Canva Sans, falling back to system sans."
+    }
+   },
+   "weight": {
+    "regular": {
+     "value": 400,
+     "type": "fontWeight",
+     "source": "computed fontWeight of hero-sub default (raw/components-computed.json)",
+     "description": "Body and display weight (400)."
+    },
+    "medium": {
+     "value": 500,
+     "type": "fontWeight",
+     "source": "computed fontWeight of m-nav-item default (raw/components-computed.json)",
+     "description": "The 500 weight on menu rows, footer links and plan prices."
+    },
+    "semibold": {
+     "value": 600,
+     "type": "fontWeight",
+     "source": "computed fontWeight of plan-cta default (raw/components-computed.json)",
+     "description": "The 600 weight on every button, nav label and section label."
+    }
+   },
+   "size": {
+    "display-hero": {
+     "type": "dimension",
+     "value": "80px",
+     "source": "computed fontSize of hero-title default (raw/components-computed.json)",
+     "description": "The 80px hero display (home)."
+    },
+    "display": {
+     "type": "dimension",
+     "value": "64px",
+     "source": "computed fontSize of pricing-h1 default (raw/components-computed.json)",
+     "description": "The 64px page-title display (pricing, templates)."
+    },
+    "display-mobile": {
+     "type": "dimension",
+     "value": "45px",
+     "source": "computed fontSize of m-hero default (raw/components-computed.json)",
+     "description": "The 45px display at 390 wide."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "56px",
+     "source": "computed fontSize of section-h2 default (raw/components-computed.json)",
+     "description": "The 56px section heading."
+    },
+    "card-title": {
+     "type": "dimension",
+     "value": "28px",
+     "source": "computed fontSize of tool-panel default (raw/components-computed.json)",
+     "description": "The 28px card/panel title (tool panel, feature card)."
+    },
+    "price": {
+     "type": "dimension",
+     "value": "28.8px",
+     "source": "computed fontSize of plan-price default (raw/components-computed.json)",
+     "description": "The ~29px plan price figure."
+    },
+    "lede": {
+     "type": "dimension",
+     "value": "24px",
+     "source": "computed fontSize of hero-sub default (raw/components-computed.json)",
+     "description": "The 24px hero lede / card titles."
+    },
+    "menu-item": {
+     "type": "dimension",
+     "value": "21px",
+     "source": "computed fontSize of m-nav-item default (raw/components-computed.json)",
+     "description": "The 21px mobile-menu rows."
+    },
+    "section-label": {
+     "type": "dimension",
+     "value": "18px",
+     "source": "computed fontSize of feature-accordion default (raw/components-computed.json)",
+     "description": "The 18px comparison-row / tab label."
+    },
+    "body": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of hero-cta default (raw/components-computed.json)",
+     "description": "The 16px body/button size."
+    },
+    "control": {
+     "type": "dimension",
+     "value": "14px",
+     "source": "computed fontSize of plan-cta default (raw/components-computed.json)",
+     "description": "The 14px control/nav text."
+    },
+    "meta": {
+     "type": "dimension",
+     "value": "12px",
+     "source": "computed fontSize of plan-card default (raw/components-computed.json)",
+     "description": "The 12px plan-card meta text."
+    }
+   },
+   "lineHeight": {
+    "display-hero": {
+     "type": "dimension",
+     "value": "88px",
+     "source": "computed lineHeight of hero-title default (raw/components-computed.json)",
+     "description": "Hero display leading (88px on 80px)."
+    },
+    "display": {
+     "type": "dimension",
+     "value": "70.4px",
+     "source": "computed lineHeight of pricing-h1 default (raw/components-computed.json)",
+     "description": "Page-title leading (70.4px on 64px)."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "61.6px",
+     "source": "computed lineHeight of section-h2 default (raw/components-computed.json)",
+     "description": "Heading leading (61.6px on 56px)."
+    },
+    "card-title": {
+     "type": "dimension",
+     "value": "35px",
+     "source": "computed lineHeight of tool-panel default (raw/components-computed.json)",
+     "description": "Card-title leading (35px on 28px)."
+    },
+    "lede": {
+     "type": "dimension",
+     "value": "33.6px",
+     "source": "computed lineHeight of hero-sub default (raw/components-computed.json)",
+     "description": "Lede leading (33.6px on 24px)."
+    },
+    "control": {
+     "type": "dimension",
+     "value": "22px",
+     "source": "computed lineHeight of plan-cta default (raw/components-computed.json)",
+     "description": "Control leading (22px on 14px)."
+    },
+    "meta": {
+     "type": "dimension",
+     "value": "20px",
+     "source": "computed lineHeight of plan-card default (raw/components-computed.json)",
+     "description": "Meta leading (20px on 12px)."
+    }
+   }
+  },
+  "color": {
+   "brand": {
+    "purple": {
+     "type": "color",
+     "source": "computed backgroundColor of plan-cta default (raw/components-computed.json); css-var --8jnd6g",
+     "description": "The Canva purple #8b3dff: the Sign up pill, every plan CTA, the billing switch and the mobile Log in fill.",
+     "var": "--8jnd6g"
+    },
+    "purple-hover": {
+     "type": "color",
+     "source": "computed backgroundColor of plan-cta hover (raw/components-computed.json); css-var ---2QwGw",
+     "description": "The #7630d7 hover step every purple button takes.",
+     "var": "---2QwGw"
+    },
+    "purple-pressed": {
+     "type": "color",
+     "source": "computed backgroundColor of plan-cta pressed (raw/components-computed.json); css-var --KgLrHA",
+     "description": "The #612dae pressed step.",
+     "var": "--KgLrHA"
+    },
+    "purple-deep": {
+     "var": "--GhUolA",
+     "type": "color",
+     "source": "css-var --GhUolA resolved light (raw/css-vars.json)",
+     "description": "The declared deep purple #4a2e7e in the StyleX layer."
+    },
+    "gradient": {
+     "value": [
+      {
+       "color": "#00c4cc",
+       "position": 0
+      },
+      {
+       "color": "#7d2ae8",
+       "position": 1
+      }
+     ],
+     "type": "gradient",
+     "source": "css-var --9v5PLg resolved light (raw/css-vars.json): the #00c4cc -> #7d2ae8 brand gradient the Canva logo mark carries",
+     "description": "The teal-to-purple Canva brand gradient."
+    }
+   },
+   "status": {
+    "error": {
+     "var": "--43wRQw",
+     "type": "color",
+     "source": "css-var --43wRQw resolved light (raw/css-vars.json)",
+     "description": "The declared error red #db142c."
+    },
+    "warning-text": {
+     "var": "--Am6Phw",
+     "type": "color",
+     "source": "css-var --Am6Phw resolved light (raw/css-vars.json)",
+     "description": "The declared warning text #ad5a00."
+    },
+    "info": {
+     "var": "--4DkvNQ",
+     "type": "color",
+     "source": "css-var --4DkvNQ resolved light (raw/css-vars.json)",
+     "description": "The declared info blue #3d8bff."
+    }
+   },
+   "neutral": {
+    "ink": {
+     "value": "#0f1015",
+     "type": "color",
+     "source": "computed color of oauth-button default (raw/components-computed.json)",
+     "description": "The #0f1015 ink: all body text, button labels on white fills, field borders' colour base."
+    },
+    "white": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed ancestor-white of search-field default (raw/components-computed.json)",
+     "description": "The #ffffff surface: page field, plan cards, flyout panel, auth card, the switch thumb."
+    },
+    "muted": {
+     "value": "rgba(16, 18, 25, 0.698)",
+     "type": "color",
+     "source": "computed muted-text of plan-card default (raw/components-computed.json)",
+     "description": "The rgba(16,18,25,0.698) secondary text (plan card labels, flyout description)."
+    },
+    "footer-fade": {
+     "value": "rgb(246, 247, 248)",
+     "type": "color",
+     "source": "computed footer-bg of footer default (raw/components-computed.json)",
+     "description": "The #f6f7f8 the footer fades to."
+    },
+    "wash-hover": {
+     "value": "rgba(64, 79, 109, 0.06)",
+     "type": "color",
+     "source": "computed backgroundColor of oauth-button hover (raw/components-computed.json)",
+     "description": "The rgba(64,79,109,0.06) hover wash on secondary actions and tabs."
+    },
+    "wash-pressed": {
+     "value": "rgba(57, 70, 96, 0.14)",
+     "type": "color",
+     "source": "computed backgroundColor of oauth-button pressed (raw/components-computed.json)",
+     "description": "The rgba(57,70,96,0.14) pressed wash on secondary actions and accordion rows."
+    },
+    "hairline": {
+     "value": "rgba(53, 65, 90, 0.2)",
+     "type": "color",
+     "source": "computed hairline of oauth-button default (raw/components-computed.json)",
+     "description": "The rgba(53,65,90,0.2) 1px inset ring secondary buttons and fields carry instead of a border."
+    },
+    "scrim": {
+     "var": "--6Hmmng",
+     "type": "color",
+     "source": "css-var --6Hmmng resolved light (raw/css-vars.json)",
+     "description": "The rgba(19,22,32,0.6) overlay the StyleX layer declares for scrims."
+    }
+   }
+  },
+  "radius": {
+   "button": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of plan-cta default (raw/components-computed.json)",
+    "description": "The 12px radius on buttons, links, fields and cards."
+   },
+   "header-control": {
+    "value": "10px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of signup-cta default (raw/components-computed.json)",
+    "description": "The 10px radius on header actions."
+   },
+   "cta": {
+    "value": "20px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)",
+    "description": "The 20px radius on the hero CTA."
+   },
+   "row": {
+    "value": "14px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of feature-accordion default (raw/components-computed.json)",
+    "description": "The 14px radius on comparison rows."
+   },
+   "pill": {
+    "value": "9999px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of tool-tab default (raw/components-computed.json)",
+    "description": "The 9999px pill on tabs and the billing switch."
+   },
+   "flyout-panel": {
+    "value": "32px",
+    "type": "dimension",
+    "source": "painted layer radius inside nav-dropdown (raw/components-computed.json): '32px 0px 0px 32px'",
+    "description": "The 32px radius the mega-menu's white column paints on its left corners."
+   }
+  },
+  "measured": {
+   "focus-ring-dark": {
+    "value": "#99c8ff",
+    "type": "color",
+    "source": "computed outlineColor of signup-cta focus-visible (raw/components-computed.json)",
+    "description": "The #99c8ff light-blue keyboard ring on the dark band (1-2px auto)."
+   },
+   "focus-ring-light": {
+    "value": "#005fcc",
+    "type": "color",
+    "source": "computed outlineColor of plan-cta focus-visible (raw/components-computed.json)",
+    "description": "The #005fcc blue keyboard ring on light surfaces (1px auto)."
+   },
+   "focus-ring-mobile": {
+    "value": "#e59700",
+    "type": "color",
+    "source": "computed outlineColor of m-nav-item focus-visible (raw/components-computed.json)",
+    "description": "The #e59700 amber keyboard ring inside the mobile menu (1px auto)."
+   },
+   "hairline": {
+    "value": [
+     {
+      "color": "rgba(53, 65, 90, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "1px",
+      "inset": true
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of oauth-button default (raw/components-computed.json)",
+    "description": "The inset 1px rgba(53,65,90,0.2) ring secondary buttons and fields draw instead of a border."
+   },
+   "switch-thumb-shadow": {
+    "value": [
+     {
+      "color": "rgba(64, 79, 109, 0.06)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "0.5px",
+      "inset": false
+     },
+     {
+      "color": "rgba(21, 30, 130, 0.12)",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "2px",
+      "spread": "0px",
+      "inset": false
+     },
+     {
+      "color": "rgba(21, 30, 130, 0.06)",
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "4px",
+      "spread": "0px",
+      "inset": false
+     }
+    ],
+    "type": "shadow",
+    "source": "painted layer shadow inside billing-switch default (raw/components-computed.json)",
+    "description": "The layered elevation the switch thumb paints."
+   },
+   "control-transition": {
+    "value": "0.1s",
+    "type": "duration",
+    "source": "computed transition of hero-cta default (raw/components-computed.json)",
+    "description": "The 0.1s control transition (background-color, box-shadow, color) with a 0.07s transform. (background-color, box-shadow, color, transform)"
+   },
+   "pressed-scale": {
+    "value": 0.99,
+    "type": "number",
+    "source": "pressed rect / default rect of hero-cta (raw/components-computed.json)",
+    "description": "The ~0.99 scale a pressed button takes."
+   }
+  }
+ },
+ "light": {
+  "text": {
+   "primary": {
+    "value": "{color.neutral.ink}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Body and display ink on light."
+   },
+   "muted": {
+    "value": "{color.neutral.muted}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Secondary text on light."
+   },
+   "on": {
+    "action": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed color of plan-cta / oauth-button labels (raw/components-computed.json)",
+     "description": "White labels on the purple fill."
+    }
+   }
+  },
+  "surface": {
+   "page": {
+    "value": "{color.neutral.white}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The white page field."
+   },
+   "card": {
+    "value": "{color.neutral.white}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Plan cards, the flyout panel, the auth card."
+   },
+   "footer": {
+    "value": "{color.neutral.footer-fade}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The footer's #f6f7f8 fade."
+   }
+  },
+  "action": {
+   "primary": {
+    "default": {
+     "value": "{color.brand.purple}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The #8b3dff action fill."
+    },
+    "hover": {
+     "value": "{color.brand.purple-hover}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The hover step."
+    },
+    "pressed": {
+     "value": "{color.brand.purple-pressed}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The pressed step."
+    }
+   }
+  },
+  "state": {
+   "hover": {
+    "value": "{color.neutral.wash-hover}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The 6% ink wash on hover."
+   },
+   "pressed": {
+    "value": "{color.neutral.wash-pressed}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The 14% ink wash on pressed."
+   }
+  },
+  "border": {
+   "hairline": {
+    "value": "{color.neutral.hairline}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The inset hairline ring on secondary actions."
+   }
+  },
+  "scrim": {
+   "value": "{color.neutral.scrim}",
+   "type": "color",
+   "source": "role alias over the core palette",
+   "description": "The declared 60% ink scrim."
+  }
+ },
+ "dark": {
+  "text": {
+   "primary": {
+    "value": "rgba(255, 255, 255, 0.898)",
+    "type": "color",
+    "source": "computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)",
+    "description": "The rgba(255,255,255,0.898) on-dark text — white at 90%, never pure."
+   },
+   "strong": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)",
+    "description": "Pure white reserved for the nav triggers' labels."
+   },
+   "on": {
+    "action": {
+     "value": "{color.neutral.ink}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "Ink labels on the white fills."
+    }
+   }
+  },
+  "surface": {
+   "page": {
+    "value": "#16171d",
+    "type": "color",
+    "source": "Reconstruction: entered by hand at capture time as the .theme.dark surface; raw/css-vars.json resolves no variable to it",
+    "description": "The darkest surface the .dark layer declares; the hero band itself is a gradient media layer, not a flat fill — see patterns.md."
+   }
+  },
+  "action": {
+   "ghost": {
+    "default": {
+     "value": "rgba(255, 255, 255, 0)",
+     "type": "color",
+     "source": "computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)",
+     "description": "Ghost buttons on dark start fully transparent."
+    },
+    "hover": {
+     "value": "rgba(255, 255, 255, 0.07)",
+     "type": "color",
+     "source": "computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)",
+     "description": "The 7% white fill a dark ghost button takes on hover (signup-cta)."
+    },
+    "pressed": {
+     "value": "rgba(255, 255, 255, 0.15)",
+     "type": "color",
+     "source": "computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)",
+     "description": "The 15% white fill on pressed (nav triggers, ghost buttons)."
+    },
+    "tint": {
+     "value": "rgba(163, 112, 252, 0.2)",
+     "type": "color",
+     "source": "computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)",
+     "description": "The 20% purple-tint hover the nav triggers take."
+    }
+   },
+   "secondary": {
+    "default": {
+     "value": "rgba(255, 255, 255, 0.898)",
+     "type": "color",
+     "source": "computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)",
+     "description": "The 90% white fill the secondary buttons on dark carry (Log in, hero CTA, Explore)."
+    },
+    "hover": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)",
+     "description": "Hover takes the white fill to 100%."
+    },
+    "pressed": {
+     "value": "rgba(255, 255, 255, 0.8)",
+     "type": "color",
+     "source": "computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)",
+     "description": "Pressed drops the fill to 80%."
+    }
+   }
+  },
+  "border": {
+   "ghost": {
+    "value": "rgba(255, 255, 255, 0.2)",
+    "type": "color",
+    "source": "computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)",
+    "description": "The 20% white inset ring ghost buttons carry (signup-cta shadow)."
+   }
+  }
+ },
+ "component": {
+  "button": {
+   "height": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of plan-cta default (raw/components-computed.json)",
+    "description": "The 40px standard button height (plan CTAs, auth buttons, mobile actions)."
+   }
+  },
+  "button-cta": {
+   "height": {
+    "type": "dimension",
+    "value": "56px",
+    "source": "computed height of hero-cta default (raw/components-computed.json)",
+    "description": "The 56px hero CTA height."
+   }
+  },
+  "field": {
+   "height": {
+    "type": "dimension",
+    "value": "38px",
+    "source": "computed height of username-input default (raw/components-computed.json)",
+    "description": "The 38px auth-field height."
+   }
+  },
+  "field-search": {
+   "height": {
+    "type": "dimension",
+    "value": "46px",
+    "source": "computed height of search-field default (raw/components-computed.json)",
+    "description": "The 46px template-search field."
+   }
+  },
+  "switch": {
+   "height": {
+    "type": "dimension",
+    "value": "24px",
+    "source": "computed height of billing-switch default (raw/components-computed.json)",
+    "description": "The 24px billing-switch pill (40 wide)."
+   }
+  },
+  "navcontrol": {
+   "height": {
+    "type": "dimension",
+    "value": "32px",
+    "source": "computed height of nav-trigger default (raw/components-computed.json)",
+    "description": "The 32px header controls."
+   }
+  },
+  "menurow": {
+   "height": {
+    "type": "dimension",
+    "value": "42px",
+    "source": "computed height of m-nav-item default (raw/components-computed.json)",
+    "description": "The 42px mobile-menu row."
+   }
+  },
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "80px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The 80px desktop header."
+   },
+   "height-mobile": {
+    "type": "dimension",
+    "value": "80px",
+    "source": "computed height of m-header default (raw/components-computed.json)",
+    "description": "The 80px mobile header."
+   }
+  },
+  "flyout": {
+   "height": {
+    "type": "dimension",
+    "value": "478px",
+    "source": "computed height of nav-dropdown default (raw/components-computed.json)",
+    "description": "The 478px mega-menu panel."
+   }
+  },
+  "plancard": {
+   "height": {
+    "type": "dimension",
+    "value": "353px",
+    "source": "computed height of plan-card default (raw/components-computed.json)",
+    "description": "The 353px plan card (measured inner column; the white surface is ~308 wide, 16px radius)."
+   }
+  },
+  "accordionrow": {
+   "height": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "computed height of feature-accordion default (raw/components-computed.json)",
+    "description": "The 64px comparison-row height."
+   }
+  },
+  "categorycard": {
+   "height": {
+    "type": "dimension",
+    "value": "80px",
+    "source": "computed height of category-card default (raw/components-computed.json)",
+    "description": "The 80px template-category card."
+   }
+  },
+  "authcard": {
+   "height": {
+    "type": "dimension",
+    "value": "348px",
+    "source": "computed height of auth-card default (raw/components-computed.json)",
+    "description": "The ~350px auth card."
+   }
+  }
+ }
+}

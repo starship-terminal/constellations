@@ -227,17 +227,17 @@
      "description": "Futura PT everywhere — the ASOS face."
     },
     "legacy": {
-     "value": "FuturaStd, \"Futura Std\", Arial, sans-serif",
+     "value": "Futura-pt, \"Futura Std\", Arial, Verdana, sans-serif",
      "type": "fontFamily",
      "source": "computed fontFamily of promo-strip/promo-tab (raw/components-computed.json)",
-     "description": "The older FuturaStd stack on promo furniture."
+     "description": "The promo furniture's stack, with \"Futura Std\" second."
     }
    },
    "weight": {
     "regular": {
      "value": "400",
      "type": "fontWeight",
-     "source": "computed fontWeight of body copy (pdp-title, tiles)"
+     "source": "computed fontWeight of body copy (pdp-title)"
     },
     "demi": {
      "value": "500",

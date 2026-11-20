@@ -1,0 +1,90 @@
+{
+  "title": "Login - Relume",
+  "href": "https://www.relume.ai/app/login",
+  "bg": "rgb(241, 240, 238)",
+  "color": "rgb(16, 16, 16)",
+  "font": "Geist, sans-serif, sans-serif",
+  "inputs": [
+    {
+      "tag": "A",
+      "type": null,
+      "name": null,
+      "placeholder": null,
+      "text": "",
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "name": null,
+      "placeholder": null,
+      "text": "Sign up",
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "name": null,
+      "placeholder": null,
+      "text": "Continue with Google",
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "name": null,
+      "placeholder": null,
+      "text": "Continue with SSO",
+      "autocomplete": null
+    },
+    {
+      "tag": "INPUT",
+      "type": "email",
+      "name": null,
+      "placeholder": "Email address...",
+      "text": "",
+      "autocomplete": "email"
+    },
+    {
+      "tag": "INPUT",
+      "type": "password",
+      "name": null,
+      "placeholder": "Password...",
+      "text": "",
+      "autocomplete": "current-password"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "name": null,
+      "placeholder": null,
+      "text": "",
+      "autocomplete": null
+    },
+    {
+      "tag": "INPUT",
+      "type": "hidden",
+      "name": "cf-turnstile-response",
+      "placeholder": null,
+      "text": "",
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "name": null,
+      "placeholder": null,
+      "text": "Continue",
+      "autocomplete": null
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "name": null,
+      "placeholder": null,
+      "text": "Forgot password",
+      "autocomplete": null
+    }
+  ],
+  "text": "Sign up Log in Welcome back Continue with Google Continue with SSO or Continue Forgot password"
+}

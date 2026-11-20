@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cosmos.so style guide</title>
+<meta name="description" content="cosmos.so design tokens and the public signed-out surface's components, rendered from tokens.json with the declared --light-*/--dark-* semantic layer and the measured computed styles.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "cosmosOracle", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-serif); color: var(--color-text-primary, var(--light-color-text-primary, #0a0a0a)); background: var(--light-color-background-primary, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 40px/1 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.03em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #0f1015); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #0f1015); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--dark-color-background-primary, #101010); padding: 12px; border-radius: 12px; }
+.pal.dark .nm, .pal.dark .vl { color: rgba(255, 255, 255, 0.898); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); overflow: hidden; background: var(--surface-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-spacing-header-h, 92px); padding: 0 32px; font-size: 15px; color: var(--light-color-text-primary, #0a0a0a); background: #fff; }
+.navbar .mark { width: 32px; height: 32px; border-radius: 8px; background: var(--light-color-background-inverted, #0a0a0a); display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: 15px; }
+.navbar .sp { flex: 1; }
+.navbar .link { color: var(--light-color-text-secondary, #71716f); font-weight: 500; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height-medium, 48px); padding: 0 24px; font-size: 15px; font-weight: 500; border-radius: var(--radius-full, 9999px); border: 1px solid transparent; }
+.btn.primary { background: var(--light-color-button-primary, #0a0a0a); color: var(--light-color-text-inverted, #fff); }
+.btn.secondary { background: var(--light-color-button-secondary, var(--light-color-background-elevation, #f0f0f0)); color: var(--light-color-text-primary, #0a0a0a); }
+.btn.disabled { background: var(--light-color-background-elevation, #f0f0f0); color: var(--light-color-text-tertiary, #9e9d9c); cursor: default; }
+.btn.outline { background: transparent; color: var(--light-color-text-primary, #0a0a0a); box-shadow: inset 0 0 0 1px var(--light-color-border-primary, rgba(10,10,10,.12)); }
+.hero { color: var(--light-color-text-primary, #0a0a0a); padding: 72px 40px 80px; font: 700 56px/1 var(--sg-serif); letter-spacing: -0.03em; text-align: center; }
+.hero small { display: block; font: 400 16px/1.5 var(--sg-serif); color: var(--light-color-text-secondary, #71716f); margin: 18px auto 26px; max-width: 46ch; }
+.search-pill { display: flex; align-items: center; height: var(--component-hero-search-height, 82px); max-width: var(--component-hero-search-width, 640px); margin: 0 auto; padding: 0 28px; border-radius: var(--radius-full, 9999px); background: var(--light-color-background-elevation, rgba(245,245,245,.9)); box-shadow: inset 0 0 0 1px var(--light-color-border-primary, rgba(10,10,10,.12)); color: var(--light-color-text-tertiary, #9e9d9c); font-size: 16px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--light-color-border-secondary, rgba(10,10,10,.1)); padding: 14px; font-size: 13px; background: var(--light-color-background-card, #fff); border-radius: var(--radius-lg, 8px); }
+.tile .img { height: 120px; background: var(--light-color-background-paper, #f6f5f4); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: var(--radius-element, 3px); }
+.tile b { display: block; font: 500 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--light-color-border-secondary, rgba(10,10,10,.1)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-border, #e0e0e0); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #171717); opacity: .65; font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: var(--light-color-background-card, #fff); border-radius: var(--radius-full, 9999px); padding: 4px; gap: 4px; font-size: 14px; box-shadow: var(--shadow-dynamic-island, 0 6px 44px rgba(0,0,0,.15)); border: 1px solid var(--light-color-border-secondary, rgba(10,10,10,.1)); }
+.toggle span { padding: 8px 22px; border-radius: var(--radius-full, 9999px); font-weight: 500; color: var(--light-color-text-secondary, #71716f); }
+.toggle .on { background: var(--light-color-background-elevation, #f0f0f0); color: var(--light-color-text-primary, #0a0a0a); }
+</style>
+</head>
+<body>
+<main>
+  <h1>cosmos.so style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">cosmos.so, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the near-black ink (lab 3.6%) that fills every pill button and paints all text, the warm paper gray on element tiles, the full declared --light-*/--dark-* semantic layer, cosmosOracle from 88px display down to 14px tabs, and rounded-full pills on every control. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from cosmos.so on 2026-11-12, signed out, in headless Chromium. The saved-element product behind the public login card is a documented boundary; dark mode is a declared var set the public surface never paints (data-theme stays light). cosmosOracle is a served face, not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A 92px white header carries the 32px mark, text links in secondary gray, a pill Log in and a black 48px Sign up. The hero is 72px cosmosOracle in ink; its 82px search pill sits on a hairline ring, and a black Join Cosmos for free pill closes the fold. On mobile the header drops to 68px with a 44px menu button.</p>
+  <div class="mock">
+    <div class="navbar"><span class="mark">✳</span><span class="link">Sequence</span><span class="link">Instagram</span><span class="link">TikTok</span><span class="link">X</span><span class="sp"></span><span class="link">Log in</span><span class="btn primary">Sign up</span></div>
+    <div class="hero">Discover and organize the world's taste<small>A home for saving and curating elements across the internet.</small><div class="search-pill">Search for outfits, fonts, people...</div><br><span class="btn primary">Join Cosmos for free</span></div>
+  </div>
+
+  <h2 class="sh">Explore</h2>
+  <p class="lead">/explore runs a floating tab bar (40px radius-full pills, elevation-gray inactive) over a masonry of element tiles on the paper surface: 3px-radius tiles carry images, and section H2s hold at 20px/400. Search and brand pages reuse the same 56px floating pill and tab language.</p>
+  <div class="mock" style="padding:20px">
+    <div style="text-align:center;margin-bottom:18px"><span class="toggle"><span class="on">For you</span><span>Following</span><span>Elements</span><span>People</span></span></div>
+    <div class="grid">
+      <div class="tile"><div class="img"></div><b>Selected works</b><span class="sub">Elements saved by the community</span></div>
+      <div class="tile"><div class="img"></div><b>Type specimens</b><span class="sub">Fonts and specimens</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The auth card</h2>
+  <p class="lead">/login paints a 344px card: username-or-email and password fields, a password visibility toggle, a Forgot password link in secondary gray, and the 56px Next pill — which sits disabled in elevation gray with tertiary text and only inverts to ink + white once both fields hold text. Measured, never submitted.</p>
+  <div class="mock" style="padding:24px;display:flex;justify-content:center;background:var(--light-color-background-paper,#f6f5f4)">
+    <div style="background:var(--light-color-background-card,#fff);border:1px solid var(--light-color-border-secondary,rgba(10,10,10,.1));border-radius:var(--radius-2xl,16px);padding:24px;width:var(--component-card-width-auth,344px)">
+      <b style="font:500 20px/1.3 var(--sg-serif)">Log in to Cosmos</b>
+      <p class="note" style="margin:6px 0 14px">Enter your username or email to continue.</p>
+      <div style="display:grid;gap:10px"><span class="btn disabled" style="height:var(--component-button-height-large,56px)">Next</span><span class="btn primary" style="height:var(--component-button-height-large,56px)">Next — enabled</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The core set carries the declared --color-* primitives (the gray-0→1000 ramp, blue/green/amber/orange/red steps and the warm grays); light and dark sets mirror the declared --light-* and --dark-* roles one for one. The public surface paints light only — dark is the declared, un-painted twin.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Cosmos is a pill system: rounded-full (the measured 3.36e7px maximum) on every CTA, tab, menu button and search field; the declared ramp runs --radius-xs .125rem through --radius-4xl 2rem plus the 3px --radius-element on tiles; the QR card alone paints a 25% radius. Borders are 12%/10% ink color-mix hairlines.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">One family: <code>cosmosOracle</code> carries everything — 72/72 and 88px display, 32px mobile hero, 20px section heads, 15-16px UI and 14px tabs. The declared ramp pairs --text-display-xxlarge 4.5rem through --text-body-numerical .625rem with -3% to -1% tracking; weights run 400 body, 500 controls, 700 display. Samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --light-*/--dark-* and --color-* layer off the same-origin Next.js sheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => (s !== null && typeof s === 'object' ? JSON.stringify(s) : String(s)).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the .theme.dark band)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — cosmos</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

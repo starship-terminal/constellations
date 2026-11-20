@@ -19,6 +19,43 @@ def _load(name, path):
 library = _load("agent_library", "library.py")
 chat = _load("agent_chat", "chat.py")
 
+# The tests stand up providers on loopback and name invented *.test hosts;
+# list them, as an owner with a self-hosted model would. ProviderHostTest
+# checks the unlisted defaults.
+# The other keys server/ copies from the repo's .env (chat.py's and api.py's
+# load_env calls) are pinned empty: load_env never overrides a variable that is
+# set, and an empty one reads as unset, so no test reads the owner's .env and
+# nothing from it stays in os.environ.
+DOTENV_KEYS = ("ANTHROPIC_API_KEY", "DS_CHAT_MODEL", "DESIGN_SYSTEMS_ALLOWED_HOSTS")
+_HOSTS = mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_PROVIDER_HOSTS": "x.test,p.test,127.0.0.1,localhost,::1",
+                                      **dict.fromkeys(DOTENV_KEYS, "")})
+
+
+def setUpModule():
+    _HOSTS.start()
+
+
+def tearDownModule():
+    _HOSTS.stop()
+
+
+class DotenvIsolationTest(unittest.TestCase):
+    def test_no_server_key_is_taken_from_a_dotenv(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            env = Path(d) / ".env"
+            env.write_text("".join(f"{k}=from-dotenv\n" for k in DOTENV_KEYS + ("DESIGN_SYSTEMS_PROVIDER_HOSTS",)))
+            self.assertEqual(chat._env.load_env(DOTENV_KEYS + ("DESIGN_SYSTEMS_PROVIDER_HOSTS",), env_file=env), [])
+        self.assertFalse(any("from-dotenv" in os.environ.get(k, "") for k in DOTENV_KEYS))
+
+    def test_a_dotenv_is_not_even_opened_when_every_key_is_pinned(self):
+        # Bytes no locale decodes: reading the file at all would raise.
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            env = Path(d) / ".env"
+            env.write_bytes(b"\xff\xfe\x00 not text")
+            self.assertEqual(chat._env.load_env(DOTENV_KEYS + ("DESIGN_SYSTEMS_PROVIDER_HOSTS",), env_file=env), [])
+
 
 class SearchTest(unittest.TestCase):
     def test_systems_hits(self):
@@ -107,6 +144,63 @@ class PackageFileTest(unittest.TestCase):
         out = library.handoff_prompt(self.SLUG)
         self.assertIn("tokens", out["prompt"])
         self.assertIn(self.SLUG, out["prompt"])
+
+
+class CatalogCacheTest(unittest.TestCase):
+    """library.py is re-executed per /api/ request; catalog.json (~1.5 MB) is
+    parsed once per change of the file, not once per tool call."""
+
+    def test_parsed_once_until_the_file_changes(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            path = Path(d) / "catalog.json"
+            path.write_text(json.dumps({"systems": [{"slug": "a"}]}))
+            with mock.patch.object(library.catalog, "ROOT", Path(d)), \
+                    mock.patch.object(library.catalog, "_library_cache", None, create=True):
+                first = library._catalog()
+                # A fresh copy of library.py, as the next request gets, shares the parse.
+                again = _load("agent_library_again", "library.py")._catalog()
+                self.assertIs(first, again)
+                path.write_text(json.dumps({"systems": [{"slug": "a"}, {"slug": "b"}]}))
+                self.assertEqual([s["slug"] for s in library._catalog()["systems"]], ["a", "b"])
+
+    def test_repeated_searches_parse_once(self):
+        # search_styles ranks with catalog.find, which must use the cached parse too.
+        real = library.catalog.load_catalog
+        calls = []
+
+        def counted():
+            calls.append(1)
+            return real()
+        with mock.patch.object(library.catalog, "_library_cache", None, create=True), \
+                mock.patch.object(library.catalog, "load_catalog", counted):
+            first = library.search_styles("dark dense", store="systems")
+            for _ in range(3):
+                self.assertEqual(library.search_styles("dark dense", store="systems"), first)
+        self.assertEqual(len(calls), 1)
+
+    def test_concurrent_requests_parse_once(self):
+        import tempfile
+        import threading
+        import time
+        with tempfile.TemporaryDirectory() as d:
+            (Path(d) / "catalog.json").write_text(json.dumps({"systems": []}))
+            calls = []
+            real = library.catalog.load_catalog
+
+            def slow():
+                calls.append(1)
+                time.sleep(0.2)
+                return real()
+            with mock.patch.object(library.catalog, "ROOT", Path(d)), \
+                    mock.patch.object(library.catalog, "_library_cache", None, create=True), \
+                    mock.patch.object(library.catalog, "load_catalog", slow):
+                threads = [threading.Thread(target=library._catalog) for _ in range(5)]
+                for t in threads:
+                    t.start()
+                for t in threads:
+                    t.join()
+            self.assertEqual(len(calls), 1)
 
 
 class ProviderTest(unittest.TestCase):
@@ -489,6 +583,58 @@ class ProviderUrlTest(unittest.TestCase):
         self.assertFalse(out["ok"])
         self.assertIn("origin", out["error"])
         self.assertEqual(self.hits.count("/models"), 0)
+
+
+class ProviderHostTest(unittest.TestCase):
+    """A provider URL comes from the request body and is fetched server-side
+    with the key, so only known model APIs and listed hosts may be named."""
+
+    def _allowed(self, url, listed=""):
+        with mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_PROVIDER_HOSTS": listed}):
+            try:
+                chat.check_url(url)
+                return True
+            except chat.ProviderError as e:
+                if "not allowed" in str(e):
+                    self.assertIn("DESIGN_SYSTEMS_PROVIDER_HOSTS", str(e))
+                return False
+
+    def test_known_provider_apis_pass_unlisted(self):
+        for url in ("https://api.anthropic.com/v1/models", "https://api.openai.com/v1/models",
+                    "https://generativelanguage.googleapis.com/v1beta/openai/models",
+                    "https://api.x.ai/v1/models", "https://openrouter.ai/api/v1/models",
+                    "https://my-res.openai.azure.com/openai/models", "https://API.OPENAI.COM./v1"):
+            self.assertTrue(self._allowed(url), url)
+
+    def test_internal_hosts_are_refused_unlisted(self):
+        for url in ("https://intranet.corp.test/models", "https://10.0.0.5/models",
+                    "https://169.254.169.254/latest/meta-data", "https://127.0.0.1:8443/models",
+                    "https://localhost/models", "http://127.0.0.1:11434/v1/models",
+                    "http://[::1]:8000/models", "https://evilopenai.com/v1",
+                    "https://openai.com.evil.test/v1"):
+            self.assertFalse(self._allowed(url), url)
+
+    def test_listed_hosts_opt_in(self):
+        listed = "models.corp.test, 127.0.0.1,[::1]"
+        self.assertTrue(self._allowed("https://models.corp.test/v1", listed))
+        self.assertTrue(self._allowed("https://eu.models.corp.test/v1", listed))
+        self.assertTrue(self._allowed("http://127.0.0.1:11434/v1/models", listed))
+        self.assertTrue(self._allowed("http://[::1]:8000/models", listed))
+        # A listed IP covers itself only, and listing never allows plain http off-box.
+        self.assertFalse(self._allowed("http://models.corp.test/v1", listed))
+        self.assertFalse(self._allowed("http://127.0.0.2/v1", listed))
+
+    def test_listed_ipv6_matches_in_any_spelling(self):
+        self.assertTrue(self._allowed("http://[0:0:0:0:0:0:0:1]:11434/v1", "0:0:0:0:0:0:0:1"))
+        self.assertTrue(self._allowed("http://[::1]:11434/v1", "0:0:0:0:0:0:0:1"))
+        self.assertTrue(self._allowed("http://[0:0:0:0:0:0:0:1]/v1", "[::1]"))
+
+    def test_refused_host_is_never_fetched(self):
+        with mock.patch.dict(os.environ, {"DESIGN_SYSTEMS_PROVIDER_HOSTS": ""}), \
+                mock.patch.object(chat._opener, "open", side_effect=AssertionError("fetched")):
+            out = chat.list_models({"api": "openai", "api_key": "k", "base_url": "https://10.1.2.3/v1"})
+        self.assertFalse(out["ok"])
+        self.assertIn("not allowed", out["error"])
 
 
 class InstallScriptHostTest(unittest.TestCase):

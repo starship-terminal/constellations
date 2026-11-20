@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gladia style guide</title>
+<meta name="description" content="Gladia design tokens and the public surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #727272;
+  --color-neutral-600: #515151;
+  --color-neutral-700: #252525;
+  --color-neutral-800: #1c1c1e;
+  --color-neutral-900: #0c0c0c;
+  --color-neutral-1000: #000000;
+  --color-purple-100: #ede9fe;
+  --color-purple-200: #beb4ff;
+  --color-purple-300: #a87cff;
+  --color-purple-400: #947afc;
+  --color-purple-500: #925bff;
+  --color-purple-600: #7c3aed;
+  --color-purple-700: #6d28d9;
+  --color-purple-default: #947afc;
+  --color-blue-100: #bae0ff;
+  --color-blue-200: #7ec8ff;
+  --color-blue-300: #45b0ff;
+  --color-blue-400: #1a9eff;
+  --color-blue-500: #008cff;
+  --color-blue-600: #0070cc;
+  --color-blue-700: #005499;
+  --color-blue-default: #008cff;
+  --color-green-100: #dcfce7;
+  --color-green-400: #4ade80;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+  --color-red-100: #fee2e2;
+  --color-red-400: #f87171;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-yellow-100: #fef9c3;
+  --color-yellow-400: #f2cb45;
+  --color-yellow-500: #eab308;
+  --color-yellow-default: #f2cb45;
+  --color-orange-500: #ff630f;
+  --color-orange-default: #ff630f;
+  --color-pink-400: #ff5fb0;
+  --color-pink-default: #ff5fb0;
+  --color-white: #ffffff;
+  --color-alpha-black24: rgba(0, 0, 0, 0.24);
+  --color-alpha-white12: rgba(255, 255, 255, 0.12);
+  --color-alpha-white14: rgba(255, 255, 255, 0.14);
+  --color-alpha-white24: rgba(255, 255, 255, 0.24);
+  --color-alpha-white8: rgba(255, 255, 255, 0.08);
+  --color-label-blue: #1a9eff;
+  --color-label-green: #22c55e;
+  --color-label-neutral: #a3a3a3;
+  --color-label-orange: #ff630f;
+  --color-label-pink: #ff5fb0;
+  --color-label-purple: #947afc;
+  --color-label-red: #ef4444;
+  --color-label-yellow: #f2cb45;
+  --color-badge-green-fg: #22c55e;
+  --color-badge-green-bg: rgba(34, 197, 94, 0.2);
+  --color-badge-orange-fg: #f97316;
+  --color-badge-orange-bg: rgba(249, 115, 22, 0.2);
+  --color-badge-pink-fg: #ec4899;
+  --color-badge-pink-bg: rgba(236, 72, 153, 0.2);
+  --color-badge-red-fg: #ef4444;
+  --color-badge-red-bg: rgba(239, 68, 68, 0.2);
+  --color-badge-yellow-fg: #f59e0b;
+  --color-badge-yellow-bg: rgba(245, 158, 11, 0.2);
+  --font-family-mono: 'Geist Mono','JetBrains Mono',monospace;
+  --font-family-sans: 'Suisse Intl',-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-size-10: 10px;
+  --font-size-11: 11px;
+  --font-size-12: 12px;
+  --font-size-13: 13px;
+  --font-size-14: 14px;
+  --font-size-15: 15px;
+  --font-size-16: 16px;
+  --font-size-17: 17px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-24: 24px;
+  --font-size-28: 28px;
+  --font-size-32: 32px;
+  --font-size-40: 40px;
+  --font-size-48: 48px;
+  --font-size-56: 56px;
+  --font-size-60: 60px;
+  --font-size-64: 64px;
+  --font-size-80: 80px;
+  --font-weight-book: 450;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-lineHeight-loose: 1.6;
+  --font-lineHeight-none: 1;
+  --font-lineHeight-normal: 1.4;
+  --font-lineHeight-relaxed: 1.5;
+  --font-lineHeight-snug: 1.3;
+  --font-lineHeight-tight: 1.2;
+  --font-letterSpacing-hero: 0.3rem;
+  --font-letterSpacing-normal: 0;
+  --font-letterSpacing-tight: -0.02em;
+  --font-letterSpacing-tighter: -0.04em;
+  --font-letterSpacing-wide: 0.02em;
+  --font-letterSpacing-wider: 0.08em;
+  --font-letterSpacing-widest: 0.16em;
+  --font-text-body-lg: 20px;
+  --font-text-body-md: 18px;
+  --font-text-body-size: 18px;
+  --font-text-body-sm: 16px;
+  --font-text-body-lh: 1.5;
+  --font-text-body-color: #a3a3a3;
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-9: 36px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --space-16: 64px;
+  --space-18: 72px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-28: 112px;
+  --space-30: 120px;
+  --space-32: 128px;
+  --space-40: 160px;
+  --space-48: 192px;
+  --space-cardGap: 16px;
+  --space-pageX: 24px;
+  --space-sectionY: 64px;
+  --space-sectionYSm: 48px;
+  --radius-0: 0px;
+  --radius-1: 8px;
+  --radius-2: 16px;
+  --radius-3: 24px;
+  --radius-4: 32px;
+  --radius-5: 40px;
+  --radius-6: 48px;
+  --radius-full: 9999px;
+  --shadow-lg: rgba(0, 0, 0, 0.1) 0px 8px 16px -4px;
+  --shadow-md: rgba(0, 0, 0, 0.1) 0px 4px 8px -2px;
+  --shadow-none: none;
+  --shadow-sm: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  --shadow-xl: rgba(0, 0, 0, 0.15) 0px 16px 32px -8px;
+  --duration-0: 0ms;
+  --duration-80: 80ms;
+  --duration-160: 160ms;
+  --duration-240: 240ms;
+  --duration-320: 320ms;
+  --duration-480: 480ms;
+  --ease-in: cubic-bezier(0.4, 0.0, 1.0, 1.0);
+  --ease-in-out: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --ease-linear: cubic-bezier(0, 0, 1, 1);
+  --ease-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1.0);
+  --layout-maxW-container: 1200px;
+  --layout-maxW-lead: 820px;
+  --layout-navbar-dropdownTop: 115px;
+  --layout-navbar-gap: 8px;
+  --layout-navbar-height: 70px;
+  --layout-navbar-side: 316px;
+  --layout-navbar-top: 37px;
+  --layout-hero-contentMax: 860px;
+  --layout-hero-illustrationSize: 480px;
+  --layout-hero-minHeight: 900px;
+  --layout-hero-minHeightCompact: 468px;
+  --layout-hero-offsetTop: 147px;
+  --layout-hero-pbCentered: 120px;
+  --layout-hero-pbSplit: 80px;
+  --layout-hero-splitContentMax: 592px;
+  --layout-hero-subtitleMax: 640px;
+  --layout-hero-titleSizeCentered: 80px;
+  --layout-hero-titleSizeCompact: 64px;
+  --layout-hero-titleSizeSplit: 51.8281px;
+  --layout-cta-closingAspect: 12 / 5;
+  --layout-cta-closingMaxW: 1200px;
+  --layout-cta-closingMinH: 500px;
+  --layout-cta-closingPadX: 48px;
+  --layout-cta-closingPadY: 80px;
+  --filter-icon-brand: brightness(0) saturate(100%) invert(67%) sepia(78%) saturate(4379%) hue-rotate(219deg) brightness(97%) contrast(105%);
+  --filter-icon-white: brightness(0) invert(1);
+  --gradient-bentoScrim: linear-gradient( 160deg,rgba(10,10,14,0.75) 0%,rgba(10,10,14,0.45) 55%,rgba(10,10,14,0.15) 100% );
+  --misc-gladiaDraw: 0deg;
+  --misc-borderAngle: 0deg;
+  --component-header-height: 72px;
+  --component-header-width: 1200px;
+  --component-megaMenu-width: 1080px;
+  --component-button-headerCta-height: 32px;
+  --component-button-headerCta-radius: 40px;
+  --component-planCard-width: 428px;
+  --component-planCard-radius: 24px;
+  --component-field-height: 44px;
+  --component-range-height: 20px;
+  --component-mobileHeader-height: 56px;
+  --text-brand: #947afc;
+  --text-disabled: #a3a3a3;
+  --text-error: #dc2626;
+  --text-inverse: #ffffff;
+  --text-link: #515151;
+  --text-primary: #000000;
+  --text-secondary: #515151;
+  --text-success: #16a34a;
+  --text-tertiary: #727272;
+  --text-warning: #eab308;
+  --bg-brand: #947afc;
+  --bg-elevated: #fafafa;
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --bg-glassLight: rgba(0, 0, 0, 0.05);
+  --bg-inverse: #000000;
+  --bg-primary: #ffffff;
+  --bg-secondary: #fafafa;
+  --bg-sunken: #f5f5f5;
+  --bg-tertiary: #f5f5f5;
+  --border-active: rgba(0, 0, 0, 0.24);
+  --border-brand: #947afc;
+  --border-card: #e5e5e5;
+  --border-focus: #1a9eff;
+  --border-primary: #e5e5e5;
+  --border-secondary: #d4d4d4;
+  --border-subtle: #333333;
+  --border-tertiary: #f5f5f5;
+  --border-transparent: rgba(0, 0, 0, 0.12);
+  --border-transparentSubtle: rgba(0, 0, 0, 0.08);
+  --sg-sans: "Suisse Intl", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: "Geist Mono", "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --text-brand: #947afc;
+  --text-disabled: #a3a3a3;
+  --text-error: #dc2626;
+  --text-inverse: #000000;
+  --text-link: #d4d4d4;
+  --text-primary: #ffffff;
+  --text-secondary: #a3a3a3;
+  --text-success: #16a34a;
+  --text-tertiary: #727272;
+  --text-warning: #eab308;
+  --bg-brand: #947afc;
+  --bg-elevated: #252525;
+  --bg-glass: rgba(12, 12, 12, 0.55);
+  --bg-glassLight: rgba(255, 255, 255, 0.08);
+  --bg-inverse: #ffffff;
+  --bg-primary: #000000;
+  --bg-secondary: #0c0c0c;
+  --bg-sunken: #0c0c0c;
+  --bg-tertiary: #1c1c1e;
+  --border-active: rgba(255, 255, 255, 0.24);
+  --border-brand: #947afc;
+  --border-card: rgba(255, 255, 255, 0.08);
+  --border-focus: #1a9eff;
+  --border-primary: #252525;
+  --border-secondary: #515151;
+  --border-subtle: #333333;
+  --border-tertiary: #1c1c1e;
+  --border-transparent: rgba(255, 255, 255, 0.12);
+  --border-transparentSubtle: rgba(255, 255, 255, 0.08);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #171816); background: var(--bg-primary, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-primary, #e5e5e5); }
+.lead { max-width: 62ch; opacity: .8; }
+.note { font-size: 13px; opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { padding: 10px; border-radius: 10px; background: var(--bg-secondary, #0c0c0c); color: var(--text-primary, #fff); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-primary, #e5e5e5); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); opacity: .65; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border-primary, #e5e5e5); overflow: hidden; background: var(--bg-primary, #000); color: var(--text-primary, #fff); }
+.navbar { display: flex; align-items: center; gap: 18px; height: var(--layout-navbar-height, 70px); padding: 0 12px 0 22px; font-size: 14px; color: var(--text-primary, #fff); background: var(--bg-glass, rgba(12,12,12,.55)); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-transparentSubtle, rgba(255,255,255,.08)); }
+.navbar .wm { font-weight: 600; font-size: 17px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 40px; padding: 0 18px; font-size: 14px; font-weight: 500; border-radius: var(--radius-full, 9999px); border: 1px solid transparent; }
+.btn.primary { background: var(--bg-brand, #925bff); color: var(--color-white, #fff); }
+.btn.ghost { background: transparent; border-color: var(--border-secondary, #515151); color: var(--text-primary, #fff); }
+.btn.small { height: 32px; font-size: 13px; font-weight: 500; }
+.hero { color: var(--text-primary, #fff); padding: 80px 40px; font: 500 var(--font-size-64, 64px)/var(--font-lineHeight-tight, 1.1) var(--sg-sans); letter-spacing: var(--font-letterSpacing-tighter, -0.03em); text-align: left; background: var(--bg-primary, #000); }
+.hero small { display: block; font: 400 var(--font-size-18, 18px)/var(--font-lineHeight-normal, 1.5) var(--sg-sans); color: var(--text-secondary, #a3a3a3); margin: 20px 0 26px; max-width: 46ch; }
+.hero .new { display: inline-flex; align-items: center; gap: 8px; font: 500 13px/1 var(--sg-sans); color: var(--text-primary, #fff); border: 1px solid var(--border-transparent, rgba(255,255,255,.12)); border-radius: var(--radius-full, 9999px); padding: 7px 14px; margin-bottom: 24px; }
+.hero .new b { color: var(--text-brand, #947afc); }
+.hero .code-line { display: flex; align-items: center; justify-content: space-between; max-width: 560px; border: 1px solid var(--border-card, rgba(255,255,255,.08)); border-radius: var(--radius-2, 16px); background: var(--bg-tertiary, #1c1c1e); font: 400 13px/1.4 var(--sg-mono); padding: 12px 14px; margin: 0 0 26px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border-card, rgba(255,255,255,.08)); border-radius: var(--radius-2, 16px); padding: 14px; font-size: 13px; background: var(--bg-secondary, #0c0c0c); }
+.tile .img { height: 140px; background: var(--bg-tertiary, #1c1c1e); border-radius: var(--radius-1, 8px); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 600 var(--font-size-20, 20px)/var(--font-lineHeight-snug, 1.3) var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { color: var(--text-secondary, #a3a3a3); font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-primary, #e5e5e5); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-primary, #e5e5e5); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; opacity: .65; font-family: var(--sg-mono); }
+.slider { display: flex; align-items: center; gap: 14px; font: 500 12px/1 var(--sg-mono); color: var(--text-secondary, #a3a3a3); }
+.slider .track { flex: 1; height: 6px; border-radius: var(--radius-full, 9999px); background: var(--bg-tertiary, #1c1c1e); position: relative; }
+.slider .track i { position: absolute; left: 0; top: 0; bottom: 0; width: 40%; border-radius: var(--radius-full, 9999px); background: var(--bg-brand, #925bff); display: block; }
+.field { display: inline-block; width: 280px; height: var(--component-field-height, 48px); padding: 0 14px; border: 1px solid var(--border-secondary, #515151); border-radius: var(--radius-1, 8px); background: var(--bg-secondary, #0c0c0c); font-size: 14px; color: var(--text-primary, #fff); }
+.code { background: var(--bg-tertiary, #1c1c1e); color: var(--text-primary, #fff); border: 1px solid var(--border-card, rgba(255,255,255,.08)); border-radius: var(--radius-1, 8px); font: 400 13px/1.7 var(--sg-mono); padding: 14px 16px; }
+.code .kw { color: var(--color-purple-300, #c4b5fd); }
+.code .str { color: var(--color-green-500, #22c55e); }
+.code .fn { color: var(--color-blue-500, #008cff); }
+.code .cm { color: var(--text-tertiary, #737373); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Gladia style guide</h1>
+  <p class="note">Audio-transcription API marketing surface — signed-out public evidence only.</p>
+
+  <h2 class="sh">Gladia, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared <code>--color-neutral-0..1000</code> ramp and <code>--color-&lt;hue&gt;-*</code> purple/blue/green/red/yellow/orange/pink ramps (with the <code>--color-purple</code> <code>#947afc</code> brand hue), the <code>--alpha-white/black-*</code> translucents that build the glass surfaces, the <code>--space-*</code> 4px spacing scale, <code>--radius-*</code> (8/16px and the <code>full</code> pill), <code>--shadow-*</code>, the <code>--font-size-10..80</code> type ramp in 'Suisse Intl' with 'Geist Mono' for code, <code>--font-weight-*/--line-height-*/--letter-spacing-*</code>, the <code>--duration-*</code> ramp and <code>--ease-*</code> curves, and the semantic <code>--text-*/--bg-*/--border-*</code> roles every component consumes. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from gladia.io, signed out, in headless Chromium. The signed-in app is a documented boundary — only app.gladia.io / and /signup paint without credentials. The demo-request, calculator and auth fields were typed into and cleared, never submitted; every CTA, SSO and submit control was measured, never followed. The marketing site paints <b>dark by default</b> — the <code>dark</code> token set is that painted surface — and <code>body.light-mode</code> (the /library page) re-points the roles to the <code>light</code> set. 'Suisse Intl' and 'Geist Mono' are served faces and are not loaded here: samples fall back to system fonts.</p>
+
+  <h2 class="sh">The surface</h2>
+  <p class="lead">The marketing header is a floating frosted-glass bar on the black page (<code>--bg-glass</code> + blur + a hairline <code>--border-transparent-subtle</code>): the Gladia wordmark, the Product/Solutions/Developers/Resources/Company mega-menu triggers, Pricing, "Request a demo" and the purple signup pill (<code>--bg-brand</code> <code>#925bff</code>). Below, the hero pairs an announcement badge with a display headline at <code>--font-size-80</code>.</p>
+  <div class="mock dark">
+    <div class="navbar"><span class="wm">Gladia</span><span>Product</span><span>Solutions</span><span>Developers</span><span>Resources</span><span>Company</span><span>Pricing</span><span class="sp"></span><span>Request a demo</span><span class="btn small primary">Start for free</span></div>
+    <div class="hero"><span class="new"><b>New</b> Solaria-3 →</span>Speech-to-text, reimagined<small>Accurate, low-latency speech-to-text and audio intelligence APIs — real-time and async.</small><div class="code-line"><span>$ curl -X POST api.gladia.io/v2/transcription</span><span>Python ▾</span></div><span class="btn primary">Start for free</span>&nbsp;&nbsp;<span class="btn ghost">Read the docs</span></div>
+  </div>
+
+  <h2 class="sh">Pricing, docs and the auth shell</h2>
+  <p class="lead">/pricing arranges plan cards beside an Async/Real-time mode toggle and a calculator (hours-per-month range, feature checkboxes). docs.gladia.io is a Mintlify stack with its own tokens and a real light/dark preference; app.gladia.io / and /signup are the product auth cards — three stacks, kept as measured component tokens.</p>
+  <div class="mock dark" style="padding:20px">
+    <div class="slider"><span>0h</span><span class="track"><i></i></span><span>1000h of audio / month</span></div>
+    <div class="grid" style="margin-top:16px">
+      <div class="tile"><div class="img">Pro</div><b>0.16&euro;/hour</b><span class="sub">Async · Start with 50&euro; free credits</span></div>
+      <div class="tile"><div class="img">Enterprise</div><b>Custom</b><span class="sub">SSO, SLA · Talk to sales</span></div>
+      <div class="tile"><div class="img">Free</div><b>50&euro; credits</b><span class="sub">No card required</span></div>
+    </div>
+    <div style="margin-top:16px"><input class="field" placeholder="Work email">&nbsp;<span class="btn primary">Request a demo</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead"><code>color.*</code> is the declared ramp — the neutral gray scale and the hue ramps whose <code>--color-purple</code> default <code>#947afc</code> is the brand. <code>color.alpha.*</code> holds the white/black translucents that paint the glass nav and cards; <code>color.label.*</code>/<code>color.badge.*</code> are the chip colours. The semantic roles under <code>dark.*</code> are the painted :root surface (black bg, white text); <code>light.*</code> resolves the same declarations inside <code>body.light-mode</code>, the scope /library paints.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius, layout and motion</h2>
+  <p class="lead">The space scale is a 4px system (<code>--space-1</code> to <code>--space-48</code>) plus the page/section/card-gap aliases. Radii run 0-24px with a <code>full</code> pill step. Content width caps at <code>--max-w-container</code>; the navbar geometry (<code>--nb-*</code>, <code>--nav-bar-*</code>), hero sizing (<code>--hero-*</code>) and the closing-CTA block (<code>--cta-*</code>) travel as layout tokens. Durations run <code>--duration-0..480</code>ms; easings include a spring curve.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two served faces: <code>'Suisse Intl'</code> carries every heading, control and body (<code>--font-sans</code>, weights book/regular/medium/semibold); <code>'Geist Mono'</code> draws code (<code>--font-mono</code>). The <code>--font-size-*</code> ramp runs 10-80px with six line-height steps and em-tracking. Sizes are the declared steps; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --color-*/--space-*/--font-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"neutral":{"0":{"v":"#ffffff","t":"color","s":"css-var --color-neutral-0 (dark)"},"50":{"v":"#fafafa","t":"color","s":"css-var --color-neutral-50 (dark)"},"100":{"v":"#f5f5f5","t":"color","s":"css-var --color-neutral-100 (dark)"},"200":{"v":"#e5e5e5","t":"color","s":"css-var --color-neutral-200 (dark)"},"300":{"v":"#d4d4d4","t":"color","s":"css-var --color-neutral-300 (dark)"},"400":{"v":"#a3a3a3","t":"color","s":"css-var --color-neutral-400 (dark)"},"500":{"v":"#727272","t":"color","s":"css-var --color-neutral-500 (dark)"},"600":{"v":"#515151","t":"color","s":"css-var --color-neutral-600 (dark)"},"700":{"v":"#252525","t":"color","s":"css-var --color-neutral-700 (dark)"},"800":{"v":"#1c1c1e","t":"color","s":"css-var --color-neutral-800 (dark)"},"900":{"v":"#0c0c0c","t":"color","s":"css-var --color-neutral-900 (dark)"},"1000":{"v":"#000000","t":"color","s":"css-var --color-neutral-1000 (dark)"}},"purple":{"100":{"v":"#ede9fe","t":"color","s":"css-var --color-purple-100 (dark)"},"200":{"v":"#beb4ff","t":"color","s":"css-var --color-purple-200 (dark)"},"300":{"v":"#a87cff","t":"color","s":"css-var --color-purple-300 (dark)"},"400":{"v":"#947afc","t":"color","s":"css-var --color-purple-400 (dark)"},"500":{"v":"#925bff","t":"color","s":"css-var --color-purple-500 (dark)"},"600":{"v":"#7c3aed","t":"color","s":"css-var --color-purple-600 (dark)"},"700":{"v":"#6d28d9","t":"color","s":"css-var --color-purple-700 (dark)"},"default":{"v":"#947afc","t":"color","s":"css-var --color-purple (dark)"}},"blue":{"100":{"v":"#bae0ff","t":"color","s":"css-var --color-blue-100 (dark)"},"200":{"v":"#7ec8ff","t":"color","s":"css-var --color-blue-200 (dark)"},"300":{"v":"#45b0ff","t":"color","s":"css-var --color-blue-300 (dark)"},"400":{"v":"#1a9eff","t":"color","s":"css-var --color-blue-400 (dark)"},"500":{"v":"#008cff","t":"color","s":"css-var --color-blue-500 (dark)"},"600":{"v":"#0070cc","t":"color","s":"css-var --color-blue-600 (dark)"},"700":{"v":"#005499","t":"color","s":"css-var --color-blue-700 (dark)"},"default":{"v":"#008cff","t":"color","s":"css-var --color-blue (dark)"}},"green":{"100":{"v":"#dcfce7","t":"color","s":"css-var --color-green-100 (dark)"},"400":{"v":"#4ade80","t":"color","s":"css-var --color-green-400 (dark)"},"500":{"v":"#22c55e","t":"color","s":"css-var --color-green-500 (dark)"},"600":{"v":"#16a34a","t":"color","s":"css-var --color-green-600 (dark)"}},"red":{"100":{"v":"#fee2e2","t":"color","s":"css-var --color-red-100 (dark)"},"400":{"v":"#f87171","t":"color","s":"css-var --color-red-400 (dark)"},"500":{"v":"#ef4444","t":"color","s":"css-var --color-red-500 (dark)"},"600":{"v":"#dc2626","t":"color","s":"css-var --color-red-600 (dark)"}},"yellow":{"100":{"v":"#fef9c3","t":"color","s":"css-var --color-yellow-100 (dark)"},"400":{"v":"#f2cb45","t":"color","s":"css-var --color-yellow-400 (dark)"},"500":{"v":"#eab308","t":"color","s":"css-var --color-yellow-500 (dark)"},"default":{"v":"#f2cb45","t":"color","s":"css-var --color-yellow (dark)"}},"orange":{"500":{"v":"#ff630f","t":"color","s":"css-var --color-orange-500 (dark)"},"default":{"v":"#ff630f","t":"color","s":"css-var --color-orange (dark)"}},"pink":{"400":{"v":"#ff5fb0","t":"color","s":"css-var --color-pink-400 (dark)"},"default":{"v":"#ff5fb0","t":"color","s":"css-var --color-pink (dark)"}},"white":{"v":"#ffffff","t":"color","s":"css-var --color-white (dark)"},"alpha":{"black24":{"v":"rgba(0, 0, 0, 0.24)","t":"color","s":"css-var --alpha-black-24 (dark)"},"white12":{"v":"rgba(255, 255, 255, 0.12)","t":"color","s":"css-var --alpha-white-12 (dark)"},"white14":{"v":"rgba(255, 255, 255, 0.14)","t":"color","s":"css-var --alpha-white-14 (dark)"},"white24":{"v":"rgba(255, 255, 255, 0.24)","t":"color","s":"css-var --alpha-white-24 (dark)"},"white8":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --alpha-white-8 (dark)"}},"label":{"blue":{"v":"#1a9eff","t":"color","s":"css-var --label-blue (dark)"},"green":{"v":"#22c55e","t":"color","s":"css-var --label-green (dark)"},"neutral":{"v":"#a3a3a3","t":"color","s":"css-var --label-neutral (dark)"},"orange":{"v":"#ff630f","t":"color","s":"css-var --label-orange (dark)"},"pink":{"v":"#ff5fb0","t":"color","s":"css-var --label-pink (dark)"},"purple":{"v":"#947afc","t":"color","s":"css-var --label-purple (dark)"},"red":{"v":"#ef4444","t":"color","s":"css-var --label-red (dark)"},"yellow":{"v":"#f2cb45","t":"color","s":"css-var --label-yellow (dark)"}},"badge":{"green":{"fg":{"v":"#22c55e","t":"color","s":"css-var --badge-green (dark)"},"bg":{"v":"rgba(34, 197, 94, 0.2)","t":"color","s":"css-var --badge-green-bg (dark)"}},"orange":{"fg":{"v":"#f97316","t":"color","s":"css-var --badge-orange (dark)"},"bg":{"v":"rgba(249, 115, 22, 0.2)","t":"color","s":"css-var --badge-orange-bg (dark)"}},"pink":{"fg":{"v":"#ec4899","t":"color","s":"css-var --badge-pink (dark)"},"bg":{"v":"rgba(236, 72, 153, 0.2)","t":"color","s":"css-var --badge-pink-bg (dark)"}},"red":{"fg":{"v":"#ef4444","t":"color","s":"css-var --badge-red (dark)"},"bg":{"v":"rgba(239, 68, 68, 0.2)","t":"color","s":"css-var --badge-red-bg (dark)"}},"yellow":{"fg":{"v":"#f59e0b","t":"color","s":"css-var --badge-yellow (dark)"},"bg":{"v":"rgba(245, 158, 11, 0.2)","t":"color","s":"css-var --badge-yellow-bg (dark)"}}}},"font":{"family":{"mono":{"v":"'Geist Mono','JetBrains Mono',monospace","t":"fontFamily","s":"css-var --font-mono (dark)"},"sans":{"v":"'Suisse Intl',-apple-system,BlinkMacSystemFont,sans-serif","t":"fontFamily","s":"css-var --font-sans (dark)"}},"size":{"10":{"v":"10px","t":"dimension","s":"css-var --font-size-10 (dark)"},"11":{"v":"11px","t":"dimension","s":"css-var --font-size-11 (dark)"},"12":{"v":"12px","t":"dimension","s":"css-var --font-size-12 (dark)"},"13":{"v":"13px","t":"dimension","s":"css-var --font-size-13 (dark)"},"14":{"v":"14px","t":"dimension","s":"css-var --font-size-14 (dark)"},"15":{"v":"15px","t":"dimension","s":"css-var --font-size-15 (dark)"},"16":{"v":"16px","t":"dimension","s":"css-var --font-size-16 (dark)"},"17":{"v":"17px","t":"dimension","s":"css-var --font-size-17 (dark)"},"18":{"v":"18px","t":"dimension","s":"css-var --font-size-18 (dark)"},"20":{"v":"20px","t":"dimension","s":"css-var --font-size-20 (dark)"},"24":{"v":"24px","t":"dimension","s":"css-var --font-size-24 (dark)"},"28":{"v":"28px","t":"dimension","s":"css-var --font-size-28 (dark)"},"32":{"v":"32px","t":"dimension","s":"css-var --font-size-32 (dark)"},"40":{"v":"40px","t":"dimension","s":"css-var --font-size-40 (dark)"},"48":{"v":"48px","t":"dimension","s":"css-var --font-size-48 (dark)"},"56":{"v":"56px","t":"dimension","s":"css-var --font-size-56 (dark)"},"60":{"v":"60px","t":"dimension","s":"css-var --font-size-60 (dark)"},"64":{"v":"64px","t":"dimension","s":"css-var --font-size-64 (dark)"},"80":{"v":"80px","t":"dimension","s":"css-var --font-size-80 (dark)"}},"weight":{"book":{"v":450,"t":"fontWeight","s":"css-var --font-weight-book (dark)"},"medium":{"v":500,"t":"fontWeight","s":"css-var --font-weight-medium (dark)"},"regular":{"v":400,"t":"fontWeight","s":"css-var --font-weight-regular (dark)"},"semibold":{"v":600,"t":"fontWeight","s":"css-var --font-weight-semibold (dark)"}},"lineHeight":{"loose":{"v":1.6,"t":"number","s":"css-var --line-height-loose (dark)"},"none":{"v":1,"t":"number","s":"css-var --line-height-none (dark)"},"normal":{"v":1.4,"t":"number","s":"css-var --line-height-normal (dark)"},"relaxed":{"v":1.5,"t":"number","s":"css-var --line-height-relaxed (dark)"},"snug":{"v":1.3,"t":"number","s":"css-var --line-height-snug (dark)"},"tight":{"v":1.2,"t":"number","s":"css-var --line-height-tight (dark)"}},"letterSpacing":{"hero":{"v":"0.3rem","t":"other","s":"css-var --letter-spacing-hero (dark)"},"normal":{"v":0,"t":"other","s":"css-var --letter-spacing-normal (dark)"},"tight":{"v":"-0.02em","t":"other","s":"css-var --letter-spacing-tight (dark)"},"tighter":{"v":"-0.04em","t":"other","s":"css-var --letter-spacing-tighter (dark)"},"wide":{"v":"0.02em","t":"other","s":"css-var --letter-spacing-wide (dark)"},"wider":{"v":"0.08em","t":"other","s":"css-var --letter-spacing-wider (dark)"},"widest":{"v":"0.16em","t":"other","s":"css-var --letter-spacing-widest (dark)"}},"text":{"body":{"lg":{"v":"20px","t":"dimension","s":"css-var --text-body-lg (dark)"},"md":{"v":"18px","t":"dimension","s":"css-var --text-body-md (dark)"},"size":{"v":"18px","t":"dimension","s":"css-var --text-body-size (dark)"},"sm":{"v":"16px","t":"dimension","s":"css-var --text-body-sm (dark)"},"lh":{"v":1.5,"t":"number","s":"css-var --text-body-lh (dark)"},"color":{"v":"#a3a3a3","t":"color","s":"css-var --text-body-color (dark)"}}}},"space":{"0":{"v":"0px","t":"dimension","s":"css-var --space-0 (dark)"},"1":{"v":"4px","t":"dimension","s":"css-var --space-1 (dark)"},"2":{"v":"8px","t":"dimension","s":"css-var --space-2 (dark)"},"3":{"v":"12px","t":"dimension","s":"css-var --space-3 (dark)"},"4":{"v":"16px","t":"dimension","s":"css-var --space-4 (dark)"},"5":{"v":"20px","t":"dimension","s":"css-var --space-5 (dark)"},"6":{"v":"24px","t":"dimension","s":"css-var --space-6 (dark)"},"7":{"v":"28px","t":"dimension","s":"css-var --space-7 (dark)"},"8":{"v":"32px","t":"dimension","s":"css-var --space-8 (dark)"},"9":{"v":"36px","t":"dimension","s":"css-var --space-9 (dark)"},"10":{"v":"40px","t":"dimension","s":"css-var --space-10 (dark)"},"12":{"v":"48px","t":"dimension","s":"css-var --space-12 (dark)"},"14":{"v":"56px","t":"dimension","s":"css-var --space-14 (dark)"},"16":{"v":"64px","t":"dimension","s":"css-var --space-16 (dark)"},"18":{"v":"72px","t":"dimension","s":"css-var --space-18 (dark)"},"20":{"v":"80px","t":"dimension","s":"css-var --space-20 (dark)"},"24":{"v":"96px","t":"dimension","s":"css-var --space-24 (dark)"},"28":{"v":"112px","t":"dimension","s":"css-var --space-28 (dark)"},"30":{"v":"120px","t":"dimension","s":"css-var --space-30 (dark)"},"32":{"v":"128px","t":"dimension","s":"css-var --space-32 (dark)"},"40":{"v":"160px","t":"dimension","s":"css-var --space-40 (dark)"},"48":{"v":"192px","t":"dimension","s":"css-var --space-48 (dark)"},"cardGap":{"v":"16px","t":"dimension","s":"css-var --space-card-gap (dark)"},"pageX":{"v":"24px","t":"dimension","s":"css-var --space-page-x (dark)"},"sectionY":{"v":"64px","t":"dimension","s":"css-var --space-section-y (dark)"},"sectionYSm":{"v":"48px","t":"dimension","s":"css-var --space-section-y-sm (dark)"}},"radius":{"0":{"v":"0px","t":"dimension","s":"css-var --radius-0 (dark)"},"1":{"v":"8px","t":"dimension","s":"css-var --radius-1 (dark)"},"2":{"v":"16px","t":"dimension","s":"css-var --radius-2 (dark)"},"3":{"v":"24px","t":"dimension","s":"css-var --radius-3 (dark)"},"4":{"v":"32px","t":"dimension","s":"css-var --radius-4 (dark)"},"5":{"v":"40px","t":"dimension","s":"css-var --radius-5 (dark)"},"6":{"v":"48px","t":"dimension","s":"css-var --radius-6 (dark)"},"full":{"v":"9999px","t":"dimension","s":"css-var --radius-full (dark)"}},"shadow":{"lg":{"v":"rgba(0, 0, 0, 0.1) 0px 8px 16px -4px","t":"other","s":"css-var --shadow-lg (dark)","d":"Box-shadow stack, kept as the computed string — the site declares single-layer rgba shadows."},"md":{"v":"rgba(0, 0, 0, 0.1) 0px 4px 8px -2px","t":"other","s":"css-var --shadow-md (dark)","d":"Box-shadow stack, kept as the computed string — the site declares single-layer rgba shadows."},"none":{"v":"none","t":"other","s":"css-var --shadow-none (dark)","d":"Box-shadow stack, kept as the computed string — the site declares single-layer rgba shadows."},"sm":{"v":"rgba(0, 0, 0, 0.05) 0px 1px 2px 0px","t":"other","s":"css-var --shadow-sm (dark)","d":"Box-shadow stack, kept as the computed string — the site declares single-layer rgba shadows."},"xl":{"v":"rgba(0, 0, 0, 0.15) 0px 16px 32px -8px","t":"other","s":"css-var --shadow-xl (dark)","d":"Box-shadow stack, kept as the computed string — the site declares single-layer rgba shadows."}},"duration":{"0":{"v":"0ms","t":"duration","s":"css-var --duration-0 (dark)"},"80":{"v":"80ms","t":"duration","s":"css-var --duration-80 (dark)"},"160":{"v":"160ms","t":"duration","s":"css-var --duration-160 (dark)"},"240":{"v":"240ms","t":"duration","s":"css-var --duration-240 (dark)"},"320":{"v":"320ms","t":"duration","s":"css-var --duration-320 (dark)"},"480":{"v":"480ms","t":"duration","s":"css-var --duration-480 (dark)"}},"ease":{"in":{"v":[0.4,0.0,1.0,1.0],"t":"cubicBezier","s":"css-var --ease-in (dark)"},"in-out":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-in-out (dark)"},"linear":{"v":[0,0,1,1],"t":"cubicBezier","s":"css-var --ease-linear (dark)"},"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-out (dark)"},"spring":{"v":[0.34,1.56,0.64,1.0],"t":"cubicBezier","s":"css-var --ease-spring (dark)"}},"layout":{"maxW":{"container":{"v":"1200px","t":"dimension","s":"css-var --max-w-container (dark)"},"lead":{"v":"820px","t":"dimension","s":"css-var --max-w-lead (dark)"}},"navbar":{"dropdownTop":{"v":"115px","t":"dimension","s":"css-var --nb-dropdown-top (dark)"},"gap":{"v":"8px","t":"dimension","s":"css-var --nb-gap (dark)"},"height":{"v":"70px","t":"dimension","s":"css-var --nav-bar-height (dark)"},"side":{"v":"316px","t":"dimension","s":"css-var --nb-side (dark)"},"top":{"v":"37px","t":"dimension","s":"css-var --nav-bar-top (dark)"}},"hero":{"contentMax":{"v":"860px","t":"dimension","s":"css-var --hero-content-max (dark)"},"illustrationSize":{"v":"480px","t":"dimension","s":"css-var --hero-illustration-size (dark)"},"minHeight":{"v":"900px","t":"dimension","s":"css-var --hero-min-height (dark)"},"minHeightCompact":{"v":"468px","t":"dimension","s":"css-var --hero-min-height-compact (dark)"},"offsetTop":{"v":"147px","t":"dimension","s":"css-var --hero-offset-top (dark)"},"pbCentered":{"v":"120px","t":"dimension","s":"css-var --hero-pb-centered (dark)"},"pbSplit":{"v":"80px","t":"dimension","s":"css-var --hero-pb-split (dark)"},"splitContentMax":{"v":"592px","t":"dimension","s":"css-var --hero-split-content-max (dark)"},"subtitleMax":{"v":"640px","t":"dimension","s":"css-var --hero-subtitle-max (dark)"},"titleSizeCentered":{"v":"80px","t":"dimension","s":"css-var --hero-title-size-centered (dark)"},"titleSizeCompact":{"v":"64px","t":"dimension","s":"css-var --hero-title-size-compact (dark)"},"titleSizeSplit":{"v":"51.8281px","t":"dimension","s":"css-var --hero-title-size-split (dark)"}},"cta":{"closingAspect":{"v":"12 / 5","t":"other","s":"css-var --cta-closing-aspect (dark)"},"closingMaxW":{"v":"1200px","t":"dimension","s":"css-var --cta-closing-max-w (dark)"},"closingMinH":{"v":"500px","t":"dimension","s":"css-var --cta-closing-min-h (dark)"},"closingPadX":{"v":"48px","t":"dimension","s":"css-var --cta-closing-pad-x (dark)"},"closingPadY":{"v":"80px","t":"dimension","s":"css-var --cta-closing-pad-y (dark)"}}},"filter":{"icon":{"brand":{"v":"brightness(0) saturate(100%) invert(67%) sepia(78%) saturate(4379%) hue-rotate(219deg) brightness(97%) contrast(105%)","t":"other","s":"css-var --filter-icon-brand (dark)","d":"A CSS filter() that recolours a raster icon to the role."},"white":{"v":"brightness(0) invert(1)","t":"other","s":"css-var --filter-icon-white (dark)","d":"A CSS filter() that recolours a raster icon to the role."}}},"gradient":{"bentoScrim":{"v":"linear-gradient( 160deg,rgba(10,10,14,0.75) 0%,rgba(10,10,14,0.45) 55%,rgba(10,10,14,0.15) 100% )","t":"other","s":"css-var --gradient-bento-scrim (dark)"}},"misc":{"gladiaDraw":{"v":"0deg","t":"other","s":"css-var --gladia-draw (dark)"},"borderAngle":{"v":"0deg","t":"other","s":"css-var --border-angle (dark)"}},"component":{"header":{"height":{"v":"72px","t":"dimension","s":"measured mkt-header default on home (site header height)"},"width":{"v":"1200px","t":"dimension","s":"measured mkt-header default on home (site header width)"}},"megaMenu":{"width":{"v":"1080px","t":"dimension","s":"measured mega-panel default on home (opened mega-menu panel)"}},"button":{"headerCta":{"height":{"v":"32px","t":"dimension","s":"measured nav-cta default on home (header CTA)"},"radius":{"v":"40px","t":"dimension","s":"measured nav-cta default on home (header CTA corner)"}}},"planCard":{"width":{"v":"428px","t":"dimension","s":"measured plan-card default on pricing (pricing plan card)"},"radius":{"v":"24px","t":"dimension","s":"measured plan-card default on pricing (plan card corner)"}},"field":{"height":{"v":"44px","t":"dimension","s":"measured demo-email default on demo (demo-request e-mail field)"}},"range":{"height":{"v":"20px","t":"dimension","s":"measured calc-range default on pricing (calculator range input)"}},"mobileHeader":{"height":{"v":"56px","t":"dimension","s":"measured m-topbar default on mobile (mobile top bar)"}}}},"light":{"text":{"brand":{"v":"#947afc","t":"color","s":"css-var --text-brand (light)"},"disabled":{"v":"#a3a3a3","t":"color","s":"css-var --text-disabled (light)"},"error":{"v":"#dc2626","t":"color","s":"css-var --text-error (light)"},"inverse":{"v":"#ffffff","t":"color","s":"css-var --text-inverse (light)"},"link":{"v":"#515151","t":"color","s":"css-var --text-link (light)"},"primary":{"v":"#000000","t":"color","s":"css-var --text-primary (light)"},"secondary":{"v":"#515151","t":"color","s":"css-var --text-secondary (light)"},"success":{"v":"#16a34a","t":"color","s":"css-var --text-success (light)"},"tertiary":{"v":"#727272","t":"color","s":"css-var --text-tertiary (light)"},"warning":{"v":"#eab308","t":"color","s":"css-var --text-warning (light)"}},"bg":{"brand":{"v":"#947afc","t":"color","s":"css-var --bg-brand (light)"},"elevated":{"v":"#fafafa","t":"color","s":"css-var --bg-elevated (light)"},"glass":{"v":"rgba(255, 255, 255, 0.85)","t":"color","s":"css-var --bg-glass (light)"},"glassLight":{"v":"rgba(0, 0, 0, 0.05)","t":"color","s":"css-var --bg-glass-light (light)"},"inverse":{"v":"#000000","t":"color","s":"css-var --bg-inverse (light)"},"primary":{"v":"#ffffff","t":"color","s":"css-var --bg-primary (light)"},"secondary":{"v":"#fafafa","t":"color","s":"css-var --bg-secondary (light)"},"sunken":{"v":"#f5f5f5","t":"color","s":"css-var --bg-sunken (light)"},"tertiary":{"v":"#f5f5f5","t":"color","s":"css-var --bg-tertiary (light)"}},"border":{"active":{"v":"rgba(0, 0, 0, 0.24)","t":"color","s":"css-var --border-active (light)"},"brand":{"v":"#947afc","t":"color","s":"css-var --border-brand (light)"},"card":{"v":"#e5e5e5","t":"color","s":"css-var --border-card (light)"},"focus":{"v":"#1a9eff","t":"color","s":"css-var --border-focus (light)"},"primary":{"v":"#e5e5e5","t":"color","s":"css-var --border-primary (light)"},"secondary":{"v":"#d4d4d4","t":"color","s":"css-var --border-secondary (light)"},"subtle":{"v":"#333333","t":"color","s":"css-var --border-subtle (light)"},"tertiary":{"v":"#f5f5f5","t":"color","s":"css-var --border-tertiary (light)"},"transparent":{"v":"rgba(0, 0, 0, 0.12)","t":"color","s":"css-var --border-transparent (light)"},"transparentSubtle":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --border-transparent-subtle (light)"}}},"dark":{"text":{"brand":{"v":"#947afc","t":"color","s":"css-var --text-brand (dark)"},"disabled":{"v":"#a3a3a3","t":"color","s":"css-var --text-disabled (dark)"},"error":{"v":"#dc2626","t":"color","s":"css-var --text-error (dark)"},"inverse":{"v":"#000000","t":"color","s":"css-var --text-inverse (dark)"},"link":{"v":"#d4d4d4","t":"color","s":"css-var --text-link (dark)"},"primary":{"v":"#ffffff","t":"color","s":"css-var --text-primary (dark)"},"secondary":{"v":"#a3a3a3","t":"color","s":"css-var --text-secondary (dark)"},"success":{"v":"#16a34a","t":"color","s":"css-var --text-success (dark)"},"tertiary":{"v":"#727272","t":"color","s":"css-var --text-tertiary (dark)"},"warning":{"v":"#eab308","t":"color","s":"css-var --text-warning (dark)"}},"bg":{"brand":{"v":"#947afc","t":"color","s":"css-var --bg-brand (dark)"},"elevated":{"v":"#252525","t":"color","s":"css-var --bg-elevated (dark)"},"glass":{"v":"rgba(12, 12, 12, 0.55)","t":"color","s":"css-var --bg-glass (dark)"},"glassLight":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --bg-glass-light (dark)"},"inverse":{"v":"#ffffff","t":"color","s":"css-var --bg-inverse (dark)"},"primary":{"v":"#000000","t":"color","s":"css-var --bg-primary (dark)"},"secondary":{"v":"#0c0c0c","t":"color","s":"css-var --bg-secondary (dark)"},"sunken":{"v":"#0c0c0c","t":"color","s":"css-var --bg-sunken (dark)"},"tertiary":{"v":"#1c1c1e","t":"color","s":"css-var --bg-tertiary (dark)"}},"border":{"active":{"v":"rgba(255, 255, 255, 0.24)","t":"color","s":"css-var --border-active (dark)"},"brand":{"v":"#947afc","t":"color","s":"css-var --border-brand (dark)"},"card":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --border-card (dark)"},"focus":{"v":"#1a9eff","t":"color","s":"css-var --border-focus (dark)"},"primary":{"v":"#252525","t":"color","s":"css-var --border-primary (dark)"},"secondary":{"v":"#515151","t":"color","s":"css-var --border-secondary (dark)"},"subtle":{"v":"#333333","t":"color","s":"css-var --border-subtle (dark)"},"tertiary":{"v":"#1c1c1e","t":"color","s":"css-var --border-tertiary (dark)"},"transparent":{"v":"rgba(255, 255, 255, 0.12)","t":"color","s":"css-var --border-transparent (dark)"},"transparentSubtle":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --border-transparent-subtle (dark)"}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['dark', 'dark roles — the painted :root surface (every marketing page)'], ['light', 'light roles — the body.light-mode scope (/library)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.ease || {}, 'ease.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v.join ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.misc || {}, 'misc.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.gradient || {}, 'gradient.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  for (const [n, t] of flat(TOK.core.filter || {}, 'filter.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat((TOK.core || {}).shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m || '<div><b>none measured</b></div>';
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — Speech-to-text, reimagined</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Gladia</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).letterSpacing || {}, 'font.letterSpacing.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).text || {}, 'font.text.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

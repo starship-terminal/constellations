@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clipchamp style guide</title>
+<meta name="description" content="Clipchamp (clipchamp.com) design tokens and the public site's components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --color-purple-60: #433ac7;
+  --color-purple-70: #4d43de;
+  --color-purple-80: #6453e4;
+  --color-purple-160: #f3f0ff;
+  --color-blue-50: #242da0;
+  --color-blue-80: #3a5af4;
+  --color-blue-110: #8893ff;
+  --color-blue-150: #dee2ff;
+  --color-pink-50: #6e006c;
+  --color-pink-80: #b50ac1;
+  --color-pink-110: #e560ff;
+  --color-pink-150: #f6d9ff;
+  --color-grey-18: #2c2d3c;
+  --color-grey-20: #313242;
+  --color-grey-40: #64647c;
+  --color-grey-44: #6e6e86;
+  --color-offWhite: #fbfbfc;
+  --color-collapsible-header: #5d6276;
+  --color-collapsible-content: rgba(28, 28, 38, 0.7);
+  --sampled-surfaceDark: var(--color-grey-20);
+  --radius-small: 2px;
+  --radius-medium: 4px;
+  --radius-large: 6px;
+  --radius-xlarge: 8px;
+  --radius-circular: 10000px;
+  --motion-duration-ultraFast: 50ms;
+  --motion-duration-faster: 100ms;
+  --motion-duration-fast: 150ms;
+  --motion-duration-normal: 200ms;
+  --motion-duration-gentle: 250ms;
+  --motion-duration-slow: 300ms;
+  --motion-duration-slower: 400ms;
+  --motion-duration-ultraSlow: 500ms;
+  --motion-curve-linear: cubic-bezier(0.0, 0.0, 1.0, 1.0);
+  --motion-curve-easyEase: cubic-bezier(0.33, 0.0, 0.67, 1.0);
+  --motion-curve-easyEaseMax: cubic-bezier(0.8, 0.0, 0.2, 1.0);
+  --motion-curve-accelerateMin: cubic-bezier(0.8, 0.0, 0.78, 1.0);
+  --motion-curve-accelerateMid: cubic-bezier(1.0, 0.0, 1.0, 1.0);
+  --motion-curve-accelerateMax: cubic-bezier(0.9, 0.1, 1.0, 0.2);
+  --motion-curve-decelerateMin: cubic-bezier(0.33, 0.0, 0.1, 1.0);
+  --motion-curve-decelerateMid: cubic-bezier(0.0, 0.0, 0.0, 1.0);
+  --motion-curve-decelerateMax: cubic-bezier(0.1, 0.9, 0.2, 1.0);
+  --spacing-none: 0px;
+  --spacing-xxs: 2px;
+  --spacing-xs: 4px;
+  --spacing-snudge: 6px;
+  --spacing-s: 8px;
+  --spacing-mnudge: 10px;
+  --spacing-m: 12px;
+  --spacing-l: 16px;
+  --spacing-xl: 20px;
+  --spacing-xxl: 24px;
+  --spacing-xxxl: 32px;
+  --fontSize-100: 10px;
+  --fontSize-200: 12px;
+  --fontSize-300: 1rem;
+  --fontSize-400: 16px;
+  --fontSize-500: 1.25rem;
+  --fontSize-600: 24px;
+  --fontSize-h700: 28px;
+  --fontSize-h800: 32px;
+  --fontSize-h900: 2.25rem;
+  --fontSize-h1000: 2.5rem;
+  --fontWeight-regular: 400;
+  --fontWeight-medium: 600;
+  --fontWeight-semibold: 700;
+  --fontWeight-bold: 700;
+  --font-family-ui: "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  --font-family-display: segoeVariableFont, "segoeVariableFont Fallback", segoeFont, "segoeFont Fallback", sans-serif;
+  --font-size-hero: 40px;
+  --font-size-h2: 36px;
+  --font-size-mHero: 28px;
+  --font-size-nav: 18px;
+  --font-size-footer: 16px;
+  --font-size-subtitle: 20px;
+  --component-control-heightNavCta: 42px;
+  --component-control-heightNavItem: 44px;
+  --component-control-heightHeroCta: 42px;
+  --component-control-heightOutlineCta: 42px;
+  --component-control-radiusCta: 10px;
+  --component-card-radiusLink: 12px;
+  --component-nav-height: 62px;
+  --component-footer-height: 1062.41px;
+  --component-drawer-width: 390px;
+  --component-heroTitle-width: 359px;
+  --component-table-width: 1280px;
+  --surface-page: #ffffff;
+  --surface-offWhite: var(--color-offWhite);
+  --text-primary: var(--color-grey-20);
+  --text-muted: var(--color-grey-40);
+  --text-nav: #545472;
+  --text-onAccent: #ffffff;
+  --text-link: var(--color-purple-70);
+  --text-linkHover: var(--color-purple-60);
+  --accent: var(--color-purple-80);
+  --accentHover: var(--color-purple-70);
+  --border-outlineCta: var(--color-purple-80);
+  --focus: #000000;
+  --shadow-card: 0px 4px 8px 0px rgba(28, 28, 40, 0.1), 0px 0px 2px 0px rgba(28, 28, 40, 0.1);
+  --sg-sans: var(--font-family-ui, "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif);
+  --sg-display: var(--font-family-display, segoeVariableFont, "Segoe UI Variable", "Segoe UI", sans-serif);
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: #313242; background: #ffffff; }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 40px/1.1 var(--sg-display); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: #64647c; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid #dfdfe8; }
+.lead { max-width: 62ch; color: #64647c; }
+.note { font-size: 13px; color: #64647c; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: #64647c; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid #dfdfe8; display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: #64647c; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: #64647c; }
+/* ---- site mock: the marketing surface ---- */
+.mock { border: 1px solid #dfdfe8; border-radius: var(--radius-xlarge, 8px); overflow: hidden; }
+.mock.light { background: var(--surface-page, #fff); color: var(--text-primary, #313242); }
+.navbar { display: flex; align-items: center; gap: 14px; height: var(--component-nav-height, 62px); padding: 0 32px; font-size: 16px; font-weight: 400; color: var(--text-nav, #545472); background: var(--surface-page, #fff); }
+.navbar .wm { font-family: var(--sg-display); font-size: 20px; font-weight: 700; color: var(--accent, #6453e4); }
+.navbar .sp { flex: 1; }
+.navbar .lk { height: var(--component-control-heightNavItem, 44px); display: inline-flex; align-items: center; padding: 0 14px; border-radius: var(--component-control-radiusCta, 10px); }
+.navbar .lk:hover { color: var(--accent, #6453e4); }
+.navbar .osn { height: var(--component-control-heightOutlineCta, 42px); display: inline-flex; align-items: center; padding: 0 24px; border-radius: var(--component-control-radiusCta, 10px); border: 1px solid var(--border-outlineCta, #6453e4); color: var(--border-outlineCta, #6453e4); background: transparent; }
+.navbar .osn:hover { border-color: var(--accentHover, #4d43de); color: var(--accentHover, #4d43de); transform: scale(1.05); transition: all 0.2s ease; }
+.navbar .cta { height: var(--component-control-heightNavCta, 42px); display: inline-flex; align-items: center; padding: 0 24px; border-radius: var(--component-control-radiusCta, 10px); background: var(--accent, #6453e4); border: 1px solid var(--accent, #6453e4); color: var(--text-onAccent, #fff); font-weight: 500; transition: all 0.2s ease; }
+.navbar .cta:hover { background: var(--accentHover, #4d43de); border-color: var(--accentHover, #4d43de); transform: scale(1.05); }
+.hero { padding: 72px 40px 64px; text-align: center; background: var(--accent, #6453e4); color: var(--text-onAccent, #fff); }
+.hero h3 { font: 700 var(--font-size-h700, 48px)/1.15 var(--sg-display); margin: 0 0 14px; }
+.hero p { margin: 0 0 36px; color: rgba(255,255,255,.87); }
+.bigcta { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightHeroCta, 42px); padding: 0 30px; border-radius: var(--component-control-radiusCta, 10px); background: #fff; border: 1px solid #fff; color: var(--color-pink-50, #6e006c); font-size: 16px; font-weight: 500; box-shadow: 0 16px 24px -8px rgba(28,28,40,.2); transition: all 0.2s ease; }
+.bigcta:hover { color: var(--color-pink-80, #b50ac1); transform: scale(1.05); box-shadow: 0 16px 24px -8px rgba(28,28,40,.4); }
+/* ---- content cards + dark band ---- */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; padding: 24px; background: var(--surface-offWhite, #fbfbfc); }
+.fcard { border-radius: var(--radius-large, 6px); background: var(--surface-page, #fff); padding: 24px; font-weight: 500; }
+.fcard .cap { font-size: 14px; color: var(--text-muted, #64647c); font-weight: 400; }
+.fcard a { color: var(--text-link, #4d43de); text-decoration: none; }
+.fcard a:hover { color: var(--text-linkHover, #433ac7); }
+.darkband { margin: 0 24px 24px; border-radius: var(--radius-large, 6px); background: var(--sampled-surfaceDark, #313242); color: var(--text-onAccent, #fff); padding: 28px; }
+.darkband .h { font: 700 28px/1.2 var(--sg-display); }
+.darkband .wcta { display: inline-flex; align-items: center; height: 42px; padding: 0 30px; margin-top: 14px; border-radius: var(--component-control-radiusCta, 10px); background: #fff; color: var(--accentHover, #433ac7); font-weight: 500; }
+/* ---- pricing ---- */
+.darkhero { border-radius: var(--radius-large, 6px) var(--radius-large, 6px) 0 0; background: linear-gradient(115deg, #433ac7, #6453e4 55%, #8a5be2); color: #fff; padding: 32px 28px; }
+.darkhero .h { font: 700 40px/1.2 var(--sg-display); margin-bottom: 16px; }
+.darkhero .wcta { display: inline-flex; align-items: center; height: 40px; padding: 0 24px; border-radius: var(--component-control-radiusCta, 10px); background: #fff; color: var(--accentHover, #433ac7); font-weight: 500; }
+.ptable { width: calc(100% - 48px); margin: 0 24px 24px; border-collapse: collapse; font-size: 14px; }
+.ptable th, .ptable td { border-bottom: 1px solid #dfdfe8; padding: 12px 16px; text-align: left; }
+.ptable td.y { color: var(--accent, #6453e4); font-weight: 600; }
+.ptable td.m { color: var(--text-muted, #64647c); }
+details.faq { margin: 0 24px 24px; border-bottom: 1px solid #dfdfe8; padding: 14px 0; font-size: 20px; }
+details.faq summary { cursor: pointer; color: #5d6276; }
+details.faq[open] summary { color: var(--accent, #6453e4); }
+/* ---- the sign-in card (app boundary) ---- */
+.signin { max-width: 460px; margin: 28px auto; padding: 28px; background: var(--surface-page, #fff); border: 1px solid #dfdfe8; border-radius: var(--radius-large, 6px); font-size: 14px; color: var(--text-primary, #232330); }
+.signin .h { font-size: 32px; font-weight: 600; color: var(--text-primary, #232330); margin-bottom: 16px; text-align: center; }
+.obtn { display: flex; align-items: center; justify-content: center; height: var(--component-control-heightSignin, 60px); border-radius: var(--radius-medium, 4px); margin-bottom: 10px; font-size: 18px; font-weight: 600; background: rgba(19,19,27,.05); border: 2px solid #dfdfe8; color: var(--text-primary, #232330); }
+.obtn:hover { background: rgba(19,19,27,.1); border-color: #d0d0dd; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid #dfdfe8; padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Clipchamp style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The mock is a reconstruction from tokens, not captured pixels — the real captures are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+
+  <h2 class="sh">Clipchamp, declared and measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>. clipchamp.com declares TWO token layers — its own <code>--color-*</code> marketing ramps (the #6453e4 purple brand, blue and pink accents, the grey ink steps) and a full Fluent v9 set on <code>.fui-FluentProvider</code> already themed to purple-80 — so the core colors are those declarations resolved, and the roles are measured on the painted chrome: the solid-purple CTAs (the class is named GradientButton but paints solid), the outline Sign-in button, the purple link ladder and the off-white ground. Every button runs the same 1.05 hover scale on a 0.2s ease.</p>
+  <p class="note">One light theme across the marketing routes, with #313242 dark bands inside it; app.clipchamp.com/login is a separate styled-components/Fluent surface measured at rest as the sign-in boundary — the email path holding the only field was never crossed. Read from clipchamp.com on 2026-11-17, signed out, in headless Chromium. Nothing was signed into, paid for or submitted.</p>
+
+  <h2 class="sh">The marketing surface</h2>
+  <p class="lead">The white sticky nav with its outline Sign-in and solid-purple Try-for-free, the purple hero band and the inverted white-pill CTA with the deep pink label — every button scales 1.05 on hover.</p>
+  <div class="mock light">
+    <div class="navbar"><span class="wm">Clipchamp</span><span class="lk">Features</span><span class="lk">Templates</span><span class="sp"></span><span class="osn">Sign in</span><span class="cta">Try for free</span></div>
+    <div class="hero">
+      <h3>Online video editor</h3>
+      <p>Create stunning videos for free, in your browser</p>
+      <span class="bigcta">Create a video</span>
+    </div>
+    <div class="cards">
+      <div class="fcard"><b>Record</b><div class="cap">Screen, camera and audio in the browser — <a href="#">screen recorder</a></div></div>
+      <div class="fcard"><b>Edit</b><div class="cap">Trim, crop and caption — <a href="#">video editor</a></div></div>
+      <div class="fcard"><b>Share</b><div class="cap">Export MP4 for social — <a href="#">templates</a></div></div>
+    </div>
+    <div class="darkband"><div class="h">Create videos for work</div><span class="wcta">Create a video</span></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">The dark gradient hero with its WhiteButton, the Free/Premium comparison table and the FAQ accordion whose title flips purple when open.</p>
+  <div class="mock light">
+    <div class="darkhero"><div class="h">Clipchamp pricing</div><span class="wcta">Create videos for free</span></div>
+    <table class="ptable"><tr><th>Feature</th><th>Free</th><th>Premium</th></tr><tr><td>Exports</td><td class="y">1080p HD</td><td class="y">4K</td></tr><tr><td>Stock media</td><td class="m">Basic</td><td class="y">Full library</td></tr><tr><td>Brand kit</td><td class="m">—</td><td class="y">✓</td></tr></table>
+    <details class="faq" open><summary>Is Clipchamp free?</summary><p>Yes — the free plan covers 1080p exports; Premium adds 4K and the full stock library.</p></details>
+  </div>
+
+  <h2 class="sh">The sign-in card</h2>
+  <p class="lead">app.clipchamp.com/login is a separate styled-components/Fluent surface — plain Segoe UI, 4px-radius provider buttons on tinted fills; measured at rest, never submitted.</p>
+  <div class="mock light"><div class="signin">
+    <div class="h">Sign in to Clipchamp</div>
+    <div class="obtn">Continue with Microsoft</div>
+    <div class="obtn">Continue with Google</div>
+    <div class="obtn">Continue with email</div>
+  </div></div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The page ground is <code>light.surface.page</code> #ffffff; secondary bands are <code>light.surface.offWhite</code> #fbfbfc (<code>color.offWhite</code>) and the dark band <code>core.sampled.surfaceDark</code> #313242 (<code>color.grey.20</code>, a pixel sample). Brand controls take <code>light.accent</code> #6453e4 (<code>color.purple.80</code> = Fluent <code>colorBrandBackground</code>) with <code>light.accentHover</code> #4d43de (<code>color.purple.70</code>) on hover and pressed; links sit at <code>light.text.link</code> #4d43de and hover to <code>light.text.linkHover</code> #433ac7.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <p class="lead">Measured boxes: the 42px CTAs, the 44px nav items, the 62px nav bar and 72px mobile bar, the 10px button radius, the 12px submenu-link pill, the 248px nav dropdown and the 1280px plan table.</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared CSS variables (both the :root marketing layer and the scoped .fui-FluentProvider layer) and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component — the nav dropdown held open by its own trigger's hover</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from; the dark band's fill is labelled pixel-sampled because the band element itself paints transparent</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"purple":{"60":{"v":"#433ac7","t":"color","s":"declared --color-purple-60 (raw/css-vars.json)","d":"Declared purple-60 (#433ac7) — brand-dark, the pressed/hover-deep step and hover link colour."},"70":{"v":"#4d43de","t":"color","s":"declared --color-purple-70 (raw/css-vars.json)","d":"Declared purple-70 (#4d43de) — brand-light, the hover step and inactive link colour."},"80":{"v":"#6453e4","t":"color","s":"declared --color-purple-80 (raw/css-vars.json)","d":"Declared purple-80 (#6453e4) — the brand purple: primary CTAs, logo mark, Fluent colorBrandBackground."},"160":{"v":"#f3f0ff","t":"color","s":"declared --color-purple-160 (raw/css-vars.json)","d":"Declared purple-160 (#f3f0ff) — brand-background, the purple tint wash."}},"blue":{"50":{"v":"#242da0","t":"color","s":"declared --color-blue-50 (raw/css-vars.json)","d":"Declared blue-50 (#242da0) — accent-2 dark."},"80":{"v":"#3a5af4","t":"color","s":"declared --color-blue-80 (raw/css-vars.json)","d":"Declared blue-80 (#3a5af4) — accent-2 standard, the second brand family."},"110":{"v":"#8893ff","t":"color","s":"declared --color-blue-110 (raw/css-vars.json)","d":"Declared blue-110 (#8893ff) — accent-2 light."},"150":{"v":"#dee2ff","t":"color","s":"declared --color-blue-150 (raw/css-vars.json)","d":"Declared blue-150 (#dee2ff) — accent-2 background tint."}},"pink":{"50":{"v":"#6e006c","t":"color","s":"declared --color-pink-50 (raw/css-vars.json)","d":"Declared pink-50 (#6e006c) — accent-1 dark."},"80":{"v":"#b50ac1","t":"color","s":"declared --color-pink-80 (raw/css-vars.json)","d":"Declared pink-80 (#b50ac1) — accent-1 standard."},"110":{"v":"#e560ff","t":"color","s":"declared --color-pink-110 (raw/css-vars.json)","d":"Declared pink-110 (#e560ff) — accent-1 light."},"150":{"v":"#f6d9ff","t":"color","s":"declared --color-pink-150 (raw/css-vars.json)","d":"Declared pink-150 (#f6d9ff) — accent-1 background tint."}},"grey":{"18":{"v":"#2c2d3c","t":"color","s":"declared --color-grey-18 (raw/css-vars.json)","d":"Declared grey-18 (#2c2d3c) — the deepest ink."},"20":{"v":"#313242","t":"color","s":"declared --color-grey-20 (raw/css-vars.json)","d":"Declared grey-20 (#313242) — color-text-dark, the primary ink."},"40":{"v":"#64647c","t":"color","s":"declared --color-grey-40 (raw/css-vars.json)","d":"Declared grey-40 (#64647c) — color-text-light, muted text."},"44":{"v":"#6e6e86","t":"color","s":"declared --color-grey-44 (raw/css-vars.json)","d":"Declared grey-44 (#6e6e86) — the lightest grey step."}},"offWhite":{"v":"#fbfbfc","t":"color","s":"declared --color-background-off-white (raw/css-vars.json)","d":"Declared off-white (#fbfbfc) — the secondary page ground."},"collapsible":{"header":{"v":"#5d6276","t":"color","s":"declared --color-collapsible-header (raw/css-vars.json)","d":"Declared collapsible-header (#5d6276) — FAQ header ink."},"content":{"v":"rgba(28, 28, 38, 0.7)","t":"color","s":"declared --color-collapsible-content (raw/css-vars.json)","d":"Declared collapsible-content (#1c1c26b3) — FAQ body ink at alpha."}}},"sampled":{"surfaceDark":{"v":"{color.grey.20}","t":"color","s":"Sampled: a screenshot pixel of the full-colour home capture (kept outside the repo) at (720, 3520), not a reading of any element; the band's own element is transparent and the section wrapper that paints it was not measured; the sample equals declared --color-grey-20","d":"The dark content band's fill inside the single light theme (#313242 = grey-20), from a pixel sample."}},"measured":{},"radius":{"small":{"v":"2px","t":"dimension","s":"declared --borderRadiusSmall (raw/css-vars.json)","d":"Fluent borderRadiusSmall (2px)."},"medium":{"v":"4px","t":"dimension","s":"declared --borderRadiusMedium (raw/css-vars.json)","d":"Fluent borderRadiusMedium (4px) — buttons, cards."},"large":{"v":"6px","t":"dimension","s":"declared --borderRadiusLarge (raw/css-vars.json)","d":"Fluent borderRadiusLarge (6px)."},"xlarge":{"v":"8px","t":"dimension","s":"declared --borderRadiusXLarge (raw/css-vars.json)","d":"Fluent borderRadiusXLarge (8px)."},"circular":{"v":"10000px","t":"dimension","s":"declared --borderRadiusCircular (raw/css-vars.json)","d":"Fluent borderRadiusCircular (10000px) — the pill cap."}},"motion":{"duration":{"ultraFast":{"v":"50ms","t":"duration","s":"declared --durationUltraFast (raw/css-vars.json)","d":"Fluent durationUltraFast."},"faster":{"v":"100ms","t":"duration","s":"declared --durationFaster (raw/css-vars.json)","d":"Fluent durationFaster."},"fast":{"v":"150ms","t":"duration","s":"declared --durationFast (raw/css-vars.json)","d":"Fluent durationFast."},"normal":{"v":"200ms","t":"duration","s":"declared --durationNormal (raw/css-vars.json)","d":"Fluent durationNormal."},"gentle":{"v":"250ms","t":"duration","s":"declared --durationGentle (raw/css-vars.json)","d":"Fluent durationGentle."},"slow":{"v":"300ms","t":"duration","s":"declared --durationSlow (raw/css-vars.json)","d":"Fluent durationSlow."},"slower":{"v":"400ms","t":"duration","s":"declared --durationSlower (raw/css-vars.json)","d":"Fluent durationSlower."},"ultraSlow":{"v":"500ms","t":"duration","s":"declared --durationUltraSlow (raw/css-vars.json)","d":"Fluent durationUltraSlow."}},"curve":{"linear":{"v":[0.0,0.0,1.0,1.0],"t":"cubicBezier","s":"declared --curveLinear (raw/css-vars.json)","d":"Fluent curveLinear."},"easyEase":{"v":[0.33,0.0,0.67,1.0],"t":"cubicBezier","s":"declared --curveEasyEase (raw/css-vars.json)","d":"Fluent curveEasyEase."},"easyEaseMax":{"v":[0.8,0.0,0.2,1.0],"t":"cubicBezier","s":"declared --curveEasyEaseMax (raw/css-vars.json)","d":"Fluent curveEasyEaseMax."},"accelerateMin":{"v":[0.8,0.0,0.78,1.0],"t":"cubicBezier","s":"declared --curveAccelerateMin (raw/css-vars.json)","d":"Fluent curveAccelerateMin."},"accelerateMid":{"v":[1.0,0.0,1.0,1.0],"t":"cubicBezier","s":"declared --curveAccelerateMid (raw/css-vars.json)","d":"Fluent curveAccelerateMid."},"accelerateMax":{"v":[0.9,0.1,1.0,0.2],"t":"cubicBezier","s":"declared --curveAccelerateMax (raw/css-vars.json)","d":"Fluent curveAccelerateMax."},"decelerateMin":{"v":[0.33,0.0,0.1,1.0],"t":"cubicBezier","s":"declared --curveDecelerateMin (raw/css-vars.json)","d":"Fluent curveDecelerateMin."},"decelerateMid":{"v":[0.0,0.0,0.0,1.0],"t":"cubicBezier","s":"declared --curveDecelerateMid (raw/css-vars.json)","d":"Fluent curveDecelerateMid."},"decelerateMax":{"v":[0.1,0.9,0.2,1.0],"t":"cubicBezier","s":"declared --curveDecelerateMax (raw/css-vars.json)","d":"Fluent curveDecelerateMax."}}},"spacing":{"none":{"v":"0px","t":"dimension","s":"declared --spacingHorizontalNone (raw/css-vars.json)","d":"Fluent spacingHorizontalNone (the horizontal ladder; the vertical ladder matches)."},"xxs":{"v":"2px","t":"dimension","s":"declared --spacingHorizontalXXS (raw/css-vars.json)","d":"Fluent spacingHorizontalXXS (the horizontal ladder; the vertical ladder matches)."},"xs":{"v":"4px","t":"dimension","s":"declared --spacingHorizontalXS (raw/css-vars.json)","d":"Fluent spacingHorizontalXS (the horizontal ladder; the vertical ladder matches)."},"snudge":{"v":"6px","t":"dimension","s":"declared --spacingHorizontalSNudge (raw/css-vars.json)","d":"Fluent spacingHorizontalSNudge (the horizontal ladder; the vertical ladder matches)."},"s":{"v":"8px","t":"dimension","s":"declared --spacingHorizontalS (raw/css-vars.json)","d":"Fluent spacingHorizontalS (the horizontal ladder; the vertical ladder matches)."},"mnudge":{"v":"10px","t":"dimension","s":"declared --spacingHorizontalMNudge (raw/css-vars.json)","d":"Fluent spacingHorizontalMNudge (the horizontal ladder; the vertical ladder matches)."},"m":{"v":"12px","t":"dimension","s":"declared --spacingHorizontalM (raw/css-vars.json)","d":"Fluent spacingHorizontalM (the horizontal ladder; the vertical ladder matches)."},"l":{"v":"16px","t":"dimension","s":"declared --spacingHorizontalL (raw/css-vars.json)","d":"Fluent spacingHorizontalL (the horizontal ladder; the vertical ladder matches)."},"xl":{"v":"20px","t":"dimension","s":"declared --spacingHorizontalXL (raw/css-vars.json)","d":"Fluent spacingHorizontalXL (the horizontal ladder; the vertical ladder matches)."},"xxl":{"v":"24px","t":"dimension","s":"declared --spacingHorizontalXXL (raw/css-vars.json)","d":"Fluent spacingHorizontalXXL (the horizontal ladder; the vertical ladder matches)."},"xxxl":{"v":"32px","t":"dimension","s":"declared --spacingHorizontalXXXL (raw/css-vars.json)","d":"Fluent spacingHorizontalXXXL (the horizontal ladder; the vertical ladder matches)."}},"fontSize":{"100":{"v":"10px","t":"dimension","s":"declared --fontSizeBase100 (raw/css-vars.json)","d":"Fluent fontSizeBase100."},"200":{"v":"12px","t":"dimension","s":"declared --fontSizeBase200 (raw/css-vars.json)","d":"Fluent fontSizeBase200."},"300":{"v":"1rem","t":"dimension","s":"declared --fontSizeBase300 (raw/css-vars.json)","d":"Fluent fontSizeBase300."},"400":{"v":"16px","t":"dimension","s":"declared --fontSizeBase400 (raw/css-vars.json)","d":"Fluent fontSizeBase400."},"500":{"v":"1.25rem","t":"dimension","s":"declared --fontSizeBase500 (raw/css-vars.json)","d":"Fluent fontSizeBase500."},"600":{"v":"24px","t":"dimension","s":"declared --fontSizeBase600 (raw/css-vars.json)","d":"Fluent fontSizeBase600."},"h700":{"v":"28px","t":"dimension","s":"declared --fontSizeHero700 (raw/css-vars.json)","d":"Fluent fontSizeHero700."},"h800":{"v":"32px","t":"dimension","s":"declared --fontSizeHero800 (raw/css-vars.json)","d":"Fluent fontSizeHero800."},"h900":{"v":"2.25rem","t":"dimension","s":"declared --fontSizeHero900 (raw/css-vars.json)","d":"Fluent fontSizeHero900."},"h1000":{"v":"2.5rem","t":"dimension","s":"declared --fontSizeHero1000 (raw/css-vars.json)","d":"Fluent fontSizeHero1000."}},"fontWeight":{"regular":{"v":400,"t":"fontWeight","s":"declared --fontWeightRegular (raw/css-vars.json)","d":"Fluent fontWeightRegular."},"medium":{"v":600,"t":"fontWeight","s":"declared --fontWeightMedium (raw/css-vars.json)","d":"Fluent fontWeightMedium."},"semibold":{"v":700,"t":"fontWeight","s":"declared --fontWeightSemibold (raw/css-vars.json)","d":"Fluent fontWeightSemibold."},"bold":{"v":700,"t":"fontWeight","s":"declared --fontWeightBold (raw/css-vars.json)","d":"Fluent fontWeightBold."}},"font":{"family":{"ui":{"v":"\"Segoe UI\", \"Segoe UI Web (West European)\", -apple-system, BlinkMacSystemFont, Roboto, \"Helvetica Neue\", sans-serif","t":"fontFamily","s":"declared --fontFamilyBase (raw/css-vars.json)","d":"Segoe UI stack — the declared Fluent base family."},"display":{"v":"segoeVariableFont, \"segoeVariableFont Fallback\", segoeFont, \"segoeFont Fallback\", sans-serif","t":"fontFamily","s":"computed fontFamily of hero-title default (raw/components-computed.json)","d":"The display face on the hero headline."}},"size":{"hero":{"v":"40px","t":"dimension","s":"computed fontSize of hero-title default (raw/components-computed.json)","d":"The hero display headline at 1440px."},"h2":{"v":"36px","t":"dimension","s":"computed fontSize of section-title default (raw/components-computed.json)","d":"Section headings."},"mHero":{"v":"28px","t":"dimension","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The hero headline at 390px."},"nav":{"v":"18px","t":"dimension","s":"computed fontSize of nav-item default (raw/components-computed.json)","d":"Nav labels and buttons."},"footer":{"v":"16px","t":"dimension","s":"computed fontSize of footer-link default (raw/components-computed.json)","d":"Footer links."},"subtitle":{"v":"20px","t":"dimension","s":"computed fontSize of hero-subtitle default (raw/components-computed.json)","d":"The hero subline."}}},"component":{"control":{"heightNavCta":{"v":"42px","t":"dimension","s":"computed height of nav-cta default (raw/components-computed.json)","d":"The nav Try-for-free button."},"heightNavItem":{"v":"44px","t":"dimension","s":"computed height of nav-item default (raw/components-computed.json)","d":"Nav menu triggers."},"heightHeroCta":{"v":"42px","t":"dimension","s":"computed height of hero-cta default (raw/components-computed.json)","d":"The hero Create-a-video button."},"heightOutlineCta":{"v":"42px","t":"dimension","s":"computed height of cta-secondary default (raw/components-computed.json)","d":"The outline secondary button."},"radiusCta":{"v":"10px","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)","d":"Button corner radius."}},"card":{"radiusLink":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of feature-card default (raw/components-computed.json)","d":"Feature link-card corners."}},"nav":{"height":{"v":"62px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The sticky nav bar at 1440px (declared --header-height 3.75rem = 60px)."}},"footer":{"height":{"v":"1062.41px","t":"dimension","s":"computed height of footer default (raw/components-computed.json)","d":"The footer block at 1440px."}},"drawer":{"width":{"v":"390px","t":"dimension","s":"computed width of m-menu-open default (raw/components-computed.json)","d":"The mobile side-bar drawer at 390px."}},"heroTitle":{"width":{"v":"359px","t":"dimension","s":"computed width of hero-title default (raw/components-computed.json)","d":"The hero headline's measure."}},"table":{"width":{"v":"1280px","t":"dimension","s":"computed width of plan-table default (raw/components-computed.json)","d":"The pricing comparison table at 1440px."}}}},"light":{"surface":{"page":{"v":"#ffffff","t":"color","s":"computed backgroundColor of page-ground default (raw/components-computed.json)","d":"The page ground — painted by the body."},"offWhite":{"v":"{color.offWhite}","t":"color","s":"declared --color-background-off-white (raw/css-vars.json); the secondary band ground — sections only, no component's bg reads it","d":"The off-white secondary band ground (#fbfbfc)."}},"text":{"primary":{"v":"{color.grey.20}","t":"color","s":"computed color of section-title default (raw/components-computed.json); same value as core.color.grey.20","d":"The primary ink (declared --color-text-dark = grey-20 #313242)."},"muted":{"v":"{color.grey.40}","t":"color","s":"computed color of feature-cell default (raw/components-computed.json); same value as core.color.grey.40","d":"Muted text (declared --color-text-light = grey-40 #64647c)."},"nav":{"v":"#545472","t":"color","s":"computed color of nav-item default (raw/components-computed.json)","d":"The nav-item ink at rest — lighter than body ink."},"onAccent":{"v":"#ffffff","t":"color","s":"computed color of nav-cta default (raw/components-computed.json)","d":"White text on the purple controls."},"link":{"v":"{color.purple.70}","t":"color","s":"computed color of inline-link default (raw/components-computed.json); same value as core.color.purple.70","d":"Link ink at rest (declared --color-inactive-links = purple-70)."},"linkHover":{"v":"{color.purple.60}","t":"color","s":"computed color of inline-link hover (raw/components-computed.json); same value as core.color.purple.60","d":"Link ink on hover (declared --color-hover-links = purple-60)."}},"accent":{"v":"{color.purple.80}","t":"color","s":"computed backgroundColor of nav-cta default (raw/components-computed.json); same value as core.color.purple.80","d":"The brand purple where a solid fill shows (declared --color-brand-standard = purple-80 #6453e4 = Fluent colorBrandBackground)."},"accentHover":{"v":"{color.purple.70}","t":"color","s":"computed backgroundColor of cta-secondary hover (raw/components-computed.json); same value as core.color.purple.70","d":"The hover fill on the solid-purple controls (#4d43de = purple-70)."},"border":{"outlineCta":{"v":"{color.purple.80}","t":"color","s":"computed borderTopColor of cta-secondary default (raw/components-computed.json); same value as core.color.purple.80","d":"The outline button's border colour."}},"focus":{"v":"#000000","t":"color","s":"computed outlineColor of nav-cta focus-visible (raw/components-computed.json)","d":"The focus ring on the surface's controls (Fluent colorStrokeFocus2 = #000000)."},"shadow":{"card":{"v":[{"color":"rgba(28, 28, 40, 0.1)","offsetX":"0px","offsetY":"4px","blur":"8px","spread":"0px"},{"color":"rgba(28, 28, 40, 0.1)","offsetX":"0px","offsetY":"0px","blur":"2px","spread":"0px"}],"t":"shadow","s":"computed boxShadow of feature-card default (raw/components-computed.json)","d":"The feature-card's drop shadow — the surface's painted elevation."}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [set, toks] of [['light', TOK.light], ['dark', TOK.dark]]) {
+    const roles = flat(toks || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${set} roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const grads = flat(TOK.core && TOK.core.gradient || {}, 'gradient.');
+  if (grads.length) {
+    h += `<div class="pal-h">gradients</div><div class="pal">`;
+    for (const [n, t] of grads) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc((t.v||[]).map(s=>s.color).join(' → '))}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core && TOK.core.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+</script>
+</body>
+</html>

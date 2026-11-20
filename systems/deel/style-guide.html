@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>deel.com style guide</title>
+<meta name="description" content="deel.com design tokens and the public marketing surface's components, rendered from tokens.json with measured computed styles (the site declares only --font-* vars on :root).">
+<style>
+:root {
+  --font-family-sans: Inter, "Inter Fallback", Arial, Helvetica, sans-serif;
+  --font-family-brand: BagossStandardVF, "BagossStandardVF Fallback", Arial, Helvetica, sans-serif;
+  --font-family-display: BagossCondensedFont, "BagossCondensedFont Fallback", Arial, Helvetica, sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-size-text-2xl: 24px;
+  --font-size-text-3xl: 30px;
+  --font-size-text-4xl: 36px;
+  --font-size-text-5xl: 48px;
+  --font-size-text-6xl: 60px;
+  --font-size-text-7xl: 72px;
+  --font-size-text-base: 16px;
+  --font-size-text-lg: 18px;
+  --font-size-text-sm: 14px;
+  --font-size-text-xl: 20px;
+  --font-size-text-xs: 12px;
+  --font-size-heading-h0: 64px;
+  --font-size-heading-h00: 80px;
+  --font-size-heading-h1: 56px;
+  --font-size-heading-h2: 44px;
+  --font-size-heading-h3: 36px;
+  --font-size-heading-h4: 28px;
+  --font-size-heading-h5: 24px;
+  --font-size-heading-h6: 20px;
+  --font-size-heading-h7: 16px;
+  --font-size-heading-mobile-h0: 42px;
+  --font-size-heading-mobile-h00: 48px;
+  --font-size-heading-mobile-h1: 36px;
+  --font-size-heading-mobile-h2: 28px;
+  --font-size-heading-mobile-h3: 24px;
+  --font-size-heading-mobile-h4: 22px;
+  --font-size-heading-mobile-h5: 20px;
+  --font-size-heading-mobile-h6: 18px;
+  --font-size-heading-mobile-h7: 16px;
+  --font-size-chip: var(--font-size-text-xs);
+  --font-size-button: var(--font-size-text-sm);
+  --font-size-nav: 15px;
+  --font-size-body: var(--font-size-text-base);
+  --font-size-cta: var(--font-size-text-lg);
+  --font-size-section: var(--font-size-heading-h2);
+  --font-size-hero: var(--font-size-text-6xl);
+  --font-size-about-display: 160px;
+  --font-tracking-heading-h0: -.005em;
+  --font-tracking-heading-h00: -.01em;
+  --font-tracking-heading-h1: -.005em;
+  --font-tracking-heading-h2: -.005em;
+  --font-tracking-heading-h3: -.005em;
+  --font-tracking-heading-h4: -.005em;
+  --font-tracking-heading-h5: 0;
+  --font-tracking-heading-h6: 0;
+  --font-tracking-heading-h7: 0;
+  --font-tracking-normal: 0px;
+  --font-tracking-wider: 0.796875px;
+  --font-leading-normal: 1.5;
+  --font-leading-snug: 1.375;
+  --font-leading-tight: 1.25;
+  --font-lineHeight-body: 24px;
+  --font-lineHeight-hero: 63px;
+  --color-akai-banner-gradient: linear-gradient(180deg,#c4b1f9,#f2ebde);
+  --color-black: #000000;
+  --color-blue-100: #edf3fa;
+  --color-blue-150: #d8ebff;
+  --color-blue-325: #b1d8fc;
+  --color-blue-600: #2187cf;
+  --color-blue-750: #0067df;
+  --color-blue-825: #192253;
+  --color-blue-900: #163462;
+  --color-border-error: #e30004;
+  --color-border-highlight-dark: #8a827e;
+  --color-border-highlight-mid: #b3aba4;
+  --color-border-primary: rgba(27, 27, 27, 0.16);
+  --color-border-primary-on-dark: rgba(250, 244, 238, 0.16);
+  --color-border-secondary: rgba(27, 27, 27, 0.4);
+  --color-border-secondary-on-dark: rgba(250, 244, 238, 0.4);
+  --color-border-table: #dedede;
+  --color-chip-neutral: #7d5bc9;
+  --color-content-accessory: rgba(27, 27, 27, 0.55);
+  --color-content-disabled: rgba(27, 27, 27, 0.4);
+  --color-content-on-color: #ffffff;
+  --color-content-on-dark: #faf4ee;
+  --color-content-on-dark-accessory: rgba(250, 244, 238, 0.65);
+  --color-content-on-dark-primary: #faf4ee;
+  --color-content-on-dark-secondary: rgba(250, 244, 238, 0.85);
+  --color-content-on-dark-terciary: rgba(250, 244, 238, 0.75);
+  --color-content-on-dark-tertiary: rgba(250, 244, 238, 0.75);
+  --color-content-primary: #141414;
+  --color-content-secondary: rgba(27, 27, 27, 0.85);
+  --color-content-tertiary: rgba(27, 27, 27, 0.7);
+  --color-core-acai: #5938b7;
+  --color-core-blue-berry: #00499d;
+  --color-core-cornbread: #ffcf25;
+  --color-core-tangelo: #ed5e2a;
+  --color-cornbread-150: #f5ecc9;
+  --color-cornbread-300: #ffe27c;
+  --color-cornbread-400: #ffcf25;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5dc;
+  --color-gray-400: #99a1af;
+  --color-gray-600: #4a5565;
+  --color-gray-900: #101828;
+  --color-green-100: #e6f7e0;
+  --color-green-250: #c2eeb5;
+  --color-green-375: #8cca82;
+  --color-green-400: #83d072;
+  --color-green-600: #3f9532;
+  --color-green-675: #15740f;
+  --color-green-75: #dce9da;
+  --color-green-750: #005b01;
+  --color-green-875: #004b01;
+  --color-latte-125: #faf4ee;
+  --color-neutral-100: #f2f2f2;
+  --color-neutral-200: #e6e6e6;
+  --color-neutral-275: #cfcfcf;
+  --color-neutral-300: #cccccc;
+  --color-neutral-400: #a6a6a6;
+  --color-neutral-50: #fafafa;
+  --color-neutral-500: #808080;
+  --color-neutral-600: #808080;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #404040;
+  --color-neutral-900: #141414;
+  --color-orange-50: #fff7ed;
+  --color-primary: #1b1b1b;
+  --color-purple-100: #f6f0fe;
+  --color-purple-200: #e9d4ff;
+  --color-purple-25: #faf6ff;
+  --color-purple-250: #e1d7fb;
+  --color-purple-325: #d6c9fd;
+  --color-purple-400: #c4b1f9;
+  --color-purple-475: #b59cf7;
+  --color-purple-525: #a98df6;
+  --color-purple-600: #926ede;
+  --color-purple-675: #724ec9;
+  --color-purple-750: #5938b7;
+  --color-purple-825: #452995;
+  --color-purple-950: #201547;
+  --color-purple-gradient: radial-gradient(175.07% 171.43% at 28.58% -31.46%,#3445c8 0%,#5f4e8e 38.14%,#9d7ba8 58.6%,#d4a8c3 74.47%,#fed 100%),#fff;
+  --color-purple-gradient-dark: linear-gradient(118deg,#5938b700 48.33%,#5938b7 92.96%),#201547;
+  --color-red-200: #ffc9c9;
+  --color-red-325: #ffbfb7;
+  --color-red-50: #fef2f2;
+  --color-red-500: #fb2c36;
+  --color-red-600: #f95250;
+  --color-red-675: #b52f31;
+  --color-red-700: #c10007;
+  --color-red-750: #8e2626;
+  --color-secondary: rgba(27, 27, 27, 0.85);
+  --color-surface-brand-blue-01: #dbeeff;
+  --color-surface-brand-blue-02: #c7e2fe;
+  --color-surface-brand-blue-03: #b1d8fc;
+  --color-surface-brand-cream: #f2ede4;
+  --color-surface-brand-dark-purple: #201547;
+  --color-surface-brand-purple-01: #e1d7fb;
+  --color-surface-brand-purple-02: #c4b1f9;
+  --color-surface-brand-purple-03: #a98df6;
+  --color-surface-brand-purple-04: #5938b7;
+  --color-surface-brand-seltzer-01: #b1d8fc;
+  --color-surface-brand-tangelo-1: #f1d5ca;
+  --color-surface-brand-yellow-01: #ffeba6;
+  --color-surface-brand-yellow-02: #ffe27c;
+  --color-surface-brand-yellow-03: #ffcf25;
+  --color-surface-card-on-dark: rgba(255, 255, 255, 0.05);
+  --color-surface-dark: #1b1b1b;
+  --color-surface-dark-subtle: #343434;
+  --color-surface-highlight-01: #faf4ee;
+  --color-surface-highlight-02: #f1e8e1;
+  --color-surface-highlight-warm: rgba(254, 240, 216, 0.5);
+  --color-surface-latte-light: #f7f5f2;
+  --color-surface-primary: #ffffff;
+  --color-surface-secondary: #fffbf4;
+  --color-surface-secondary-linear: linear-gradient(0deg,#fef0d899,#fef0d899),#fffbf4;
+  --color-surface-white: #ffffff;
+  --color-tangelo-100: #f1d5ca;
+  --color-tangelo-175: #e7a288;
+  --color-tangelo-50: #faefeb;
+  --color-tangelo-500: #ed5e2a;
+  --color-tangelo-600: #cd4311;
+  --color-tangelo-700: #98320d;
+  --color-tertiary: rgba(27, 27, 27, 0.7);
+  --color-white: #ffffff;
+  --spacing-unit: 4px;
+  --spacing-big: 96px;
+  --spacing-container: 1312px;
+  --spacing-giant: 200px;
+  --spacing-huge: 128px;
+  --spacing-lg: 40px;
+  --spacing-md: 32px;
+  --spacing-nano: 8px;
+  --spacing-quark: 4px;
+  --spacing-sm: 24px;
+  --spacing-tiny: 2px;
+  --spacing-xl: 48px;
+  --spacing-xs: 20px;
+  --spacing-xxl: 64px;
+  --spacing-xxs: 16px;
+  --spacing-xxxl: 80px;
+  --spacing-xxxs: 12px;
+  --radius-2xl: 16px;
+  --radius-circular: 200px;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-none: 0px;
+  --radius-quark: 4px;
+  --radius-sm: 8px;
+  --radius-xl: 24px;
+  --radius-chip: 2px;
+  --radius-card: var(--radius-md);
+  --radius-pill: var(--radius-circular);
+  --radius-full: 3.35544e+07px;
+  --radius-circle: 50%;
+  --breakpoint-lg: 1024px;
+  --breakpoint-md: 959px;
+  --shadow-card: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(27, 27, 27, 0.04) 0px 8px 16px 0px, rgba(27, 27, 27, 0.04) 0px 2px 8px 0px;
+  --motion-hover: all 0.1s ease-in-out;
+  --background-page: var(--color-content-on-color);
+  --background-promo-strip: var(--color-primary);
+  --background-hero-panel: var(--color-purple-950);
+  --background-video-card: var(--color-content-primary);
+  --background-tile-glass: rgba(255, 255, 255, 0.04);
+  --text-ink: var(--color-primary);
+  --text-body: rgba(0, 0, 0, 0.87);
+  --text-on-dark: var(--color-content-on-color);
+  --text-cream: var(--color-content-on-dark);
+  --border-focus: #005fcc;
+  --border-tile-glass: rgba(255, 255, 255, 0.1);
+  --border-hairline: var(--color-border-primary-on-dark);
+  --action-accent-chip: var(--color-blue-325);
+  --action-pressed-fill: #3f3f3f;
+  --action-hover-fill: #4e4e4e;
+  --component-promo-banner-height: 64px;
+  --component-nav-height: 80px;
+  --component-logo-width: 78px;
+  --component-nav-item-height: 40px;
+  --component-nav-demo-height: 40px;
+  --component-promo-cta-height: 32px;
+  --component-hero-panel-height: 732px;
+  --component-hero-h1-width: 574.59px;
+  --component-hero-tile-size: 80px;
+  --component-hero-demo-width: 375px;
+  --component-product-card-size: 438px;
+  --component-price-card-size: 928.31px;
+  --component-faq-item-height: 80.2px;
+  --component-review-band-height: 1205.88px;
+  --component-footer-height: 1015.38px;
+  --component-m-nav-height: 64px;
+  --component-m-hamburger-size: 40px;
+  --component-m-hero-h1: 119.67px;
+  --component-promo-strip-paint: var(--color-primary);
+  --component-focus-ring: auto rgb(0, 95, 204);
+  --sg-sans: "Inter", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "BagossCondensedFont", "Arial Narrow", "Helvetica Neue Condensed", Impact, sans-serif;
+  --sg-pill: "BagossStandardVF", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-body, rgba(0,0,0,.87)); background: var(--background-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.1 var(--sg-serif); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #0f1015); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #0f1015); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--color-brand-ink, #030302); padding: 12px; border-radius: 12px; }
+.pal.dark .nm, .pal.dark .vl { color: rgba(255, 255, 255, 0.898); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); overflow: hidden; background: var(--surface-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 20px; height: var(--component-nav-height, 65px); padding: 0 10px 0 18px; font-size: 16px; color: var(--color-brand-ink, #030302); background: #fff; border-radius: var(--radius-nav, 26px); box-shadow: 0 1px 3px rgba(3,3,2,.08); margin: 12px 18px; }
+.navbar .wm { font-weight: 800; font-size: 18px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.navbar .link { color: var(--color-brand-ink, #030302); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-load-more-height, 38px); padding: 0 24px; font-size: 16px; font-weight: 500; border-radius: var(--radius-full, 9999px); border: 1px solid transparent; }
+.btn.primary { background: var(--text-ink, #1b1b1b); color: var(--text-on-dark, #fff); height: var(--component-nav-demo-height, 40px); font-size: 14px; font-family: var(--sg-pill); border-radius: var(--radius-pill, 200px); }
+.btn.light { background: var(--background-field-surface, #fff); color: var(--color-brand-ink, #030302); box-shadow: 0 1px 4px rgba(3,3,2,.12); }
+.btn.outline { background: transparent; color: var(--color-brand-ink, #030302); box-shadow: inset 0 0 0 1px var(--border-hairline-dark, #2e2e32); }
+.hero { color: var(--color-brand-ink, #030302); padding: 96px 40px 90px; font: 400 52px/1 var(--sg-serif); text-align: center; background: linear-gradient(180deg, #bfe0ee 0%, #dceef7 60%, var(--background-page, #fff) 100%); }
+.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); color: var(--text-muted-foreground, rgba(3,3,2,.5)); margin: 18px auto 26px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border-hairline-dark, #2e2e32); padding: 18px; font-size: 13px; background: var(--background-field-surface, #fff); border-radius: var(--radius-2xl, 16px); }
+.tile .img { height: 100px; background: var(--background-page, #fff); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: var(--radius-default, 10px); }
+.tile b { display: block; font: 400 20px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .price { font: 400 40px/1.1 var(--sg-serif); margin: 8px 0 2px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-hairline-dark, #2e2e32); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-border, #e0e0e0); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #171717); opacity: .65; font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: var(--background-page, #fff); border-radius: var(--radius-full, 9999px); padding: 4px; gap: 0; font-size: 16px; }
+.toggle span { padding: 10px 28px; border-radius: var(--radius-full, 9999px); font-weight: 500; color: var(--color-brand-ink, #030302); }
+.toggle .on { background: var(--background-field-surface, #fff); box-shadow: 0 1px 3px rgba(3,3,2,.12); }
+</style>
+</head>
+<body>
+<main>
+  <h1>deel.com style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">deel.com, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the #1b1b1b ink and promo strip, the #201547 purple hero panel, the #b1d8fc sky accent chip, the #faf4ee cream details, and BagossCondensed display over an Inter/BagossStandardVF UI. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from deel.com on 2026-11-13, signed out, in headless Chromium. The product lives behind app.deel.com — an authenticated boundary never reached; Book a demo, Claim offer and Log in were measured, never followed, and the Cookiebot banner was hidden, never answered. Inter and the Bagoss cuts are served by the site; samples fall back to system faces.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A 64px #1b1b1b promo strip (a #b1d8fc SPECIAL OFFER chip, a white Claim-offer pill, a close control) sits over an 80px white nav: the 78px wordmark, 15px/500 BagossStandardVF dropdown items, Pricing, EN, Log in and a 118x40 #1b1b1b Book-a-demo pill.</p>
+  <div class="mock" style="background:#fff;padding:0">
+    <div style="display:flex;align-items:center;gap:10px;height:64px;padding:0 20px;background:var(--background-promo-strip,#1b1b1b);color:#fff;font-size:12px"><span style="background:var(--action-accent-chip,#b1d8fc);color:var(--text-ink,#1b1b1b);border-radius:var(--radius-chip,2px);padding:4px 8px;font-weight:600;letter-spacing:.04em">SPECIAL OFFER</span><span>Get 3 months free of PEO*</span><span class="sp" style="flex:1"></span><span class="btn" style="height:32px;font-size:12px;font-weight:500;padding:0 12px;border-radius:var(--radius-pill,200px);background:#fff;color:var(--text-ink,#1b1b1b);font-family:var(--sg-pill)">Claim offer</span><span style="color:#fff;opacity:.8">&#10005;</span></div>
+    <div class="navbar" style="height:80px;border-radius:0;margin:0;box-shadow:none;background:var(--background-page,#fff)"><span class="wm" style="font-weight:800;font-size:20px;color:var(--text-ink,#1b1b1b)">deel.</span><span class="link" style="font-family:var(--sg-pill);font-size:15px;font-weight:500;color:var(--text-ink,#1b1b1b)">Solutions &#9662;</span><span class="link" style="font-family:var(--sg-pill);font-size:15px;font-weight:500;color:var(--text-ink,#1b1b1b)">Use cases &#9662;</span><span class="link" style="font-family:var(--sg-pill);font-size:15px;font-weight:500;color:var(--text-ink,#1b1b1b)">Pricing</span><span class="sp"></span><span class="link" style="font-family:var(--sg-pill);font-size:15px;color:var(--text-ink,#1b1b1b)">EN</span><span class="link" style="font-family:var(--sg-pill);font-size:15px;color:var(--text-ink,#1b1b1b)">Log in</span><span class="btn primary">Book a demo</span></div>
+  </div>
+
+  <h2 class="sh">The purple hero</h2>
+  <p class="lead">The home opens on a 732px #201547 purple panel: a 60px/500 white BagossCondensed headline, five glass action tiles (4%-white fill, 10%-white hairline, 12px radius) that switch a preview panel, and the 375x51 rounded-full white Book-a-demo pill.</p>
+  <div class="mock" style="padding:56px 40px;background:var(--background-hero-panel,#201547);text-align:center">
+    <div style="color:#fff;font:500 52px/1.05 var(--sg-serif);letter-spacing:-.3px">Hire, manage, pay, &amp; equip<br>anyone, anywhere.</div>
+    <div style="display:flex;gap:10px;justify-content:center;margin:26px 0">
+      <span style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-card,12px);color:#fff;font:600 14px var(--sg-sans);padding:14px 20px">Hire anywhere</span>
+      <span style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-card,12px);color:#fff;font:600 14px var(--sg-sans);padding:14px 20px">Run payroll</span>
+      <span style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-card,12px);color:#fff;font:600 14px var(--sg-sans);padding:14px 20px">Secure visas</span>
+      <span style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-card,12px);color:#fff;font:600 14px var(--sg-sans);padding:14px 20px">Ship equipment</span>
+    </div>
+    <span class="btn" style="height:51px;font-size:18px;font-weight:600;border-radius:var(--radius-full,9999px);background:#fff;color:var(--text-ink,#1b1b1b);width:375px;max-width:100%">Book a demo</span>
+  </div>
+
+  <h2 class="sh">Pricing and accordions</h2>
+  <p class="lead">/pricing/ runs 56px BagossCondensed on a dark hero into 459x928 white tier cards on elevation-2dp — a 16px #b1d8fc top strip, a full-width #1b1b1b pill CTA — then a MUI FAQ accordion whose 952x80 summary rows split on a 16%-cream hairline.</p>
+  <div class="mock" style="padding:20px;display:flex;gap:16px;align-items:flex-start">
+    <div style="width:260px;background:#fff;border-radius:var(--radius-card,12px);box-shadow:var(--shadow-card,0 1px 3px rgba(0,0,0,.12));overflow:hidden">
+      <div style="height:16px;background:var(--action-accent-chip,#b1d8fc)"></div>
+      <div style="padding:18px"><b style="font:500 22px var(--sg-serif);color:var(--text-ink,#1b1b1b)">Hire employees</b><div class="sub" style="font:400 13px var(--sg-sans);opacity:.6;margin:6px 0 14px">Most popular</div><span class="btn primary" style="width:100%">Book a demo</span></div>
+    </div>
+    <div style="flex:1;background:var(--background-hero-panel,#201547);border-radius:var(--radius-card,12px);padding:4px 18px">
+      <div style="display:flex;justify-content:space-between;align-items:center;height:80px;border-bottom:1px solid rgba(250,244,238,.16);font:440 24px var(--sg-serif);color:var(--text-cream,#faf4ee)"><span>What is Deel?</span><span style="width:32px;height:32px;border-radius:50%;background:rgba(250,244,238,.4);display:inline-flex;align-items:center;justify-content:center;color:var(--text-cream,#faf4ee)">+</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;height:80px;font:440 24px var(--sg-serif);color:var(--text-cream,#faf4ee)"><span>How does pricing work?</span><span style="width:32px;height:32px;border-radius:50%;background:rgba(250,244,238,.4);display:inline-flex;align-items:center;justify-content:center;color:var(--text-cream,#faf4ee)">+</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The light roles carry the measured palette — #1b1b1b ink, #201547 hero purple, #141414 video-card dark, #b1d8fc sky accents, #faf4ee cream text and hairlines, rgba(0,0,0,.87) MUI body text. The page paints one theme; the dark set is empty.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">A rounded design: 2px chips, 12px cards and tiles, 200px small pills, full-radius hero CTAs and a 50% hamburger circle. The measured component set below holds nav/banner/hero/card sizes.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Three voices: <code>Inter</code> for UI and body (16px/400 copy, 18px/600 CTAs, 14px/600 tiles), <code>BagossStandardVF</code> for nav items and small pill buttons (14-15px/500) and <code>BagossCondensedFont</code> for every display heading (hero 60px/500, sections 44px, the 160px about numeral). Samples fall back to system faces.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read computed styles off the live Next.js + MUI DOM on every captured route</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and opened (dropdown, drawer, accordion) states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"sans":{"v":"Inter, \"Inter Fallback\", Arial, Helvetica, sans-serif","t":"fontFamily","s":"computed fontFamily of promo-banner, hero-demo, price-card, footer-link (raw/components-computed.json); --font-inter on :root (raw/css-vars.json)","d":"Inter — body copy, CTAs, tiles, footer links and every form control."},"brand":{"v":"BagossStandardVF, \"BagossStandardVF Fallback\", Arial, Helvetica, sans-serif","t":"fontFamily","s":"computed fontFamily of nav-link, nav-demo, price-cta, promo-cta (raw/components-computed.json); --font-bagoss-standard on :root (raw/css-vars.json)","d":"Bagoss Standard VF — the nav items and small pill buttons."},"display":{"v":"BagossCondensedFont, \"BagossCondensedFont Fallback\", Arial, Helvetica, sans-serif","t":"fontFamily","s":"computed fontFamily of hero-h1, section-heading, price-h1, about-h1, footer-heading (raw/components-computed.json); --font-bagoss-condensed on :root (raw/css-vars.json)","d":"Bagoss Condensed — every display heading, hero 60px to about 160px."}},"weight":{"normal":{"v":400,"t":"fontWeight","s":"computed fontWeight of footer-link default (raw/components-computed.json)","d":"400 — body copy and footer links (Inter)."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of nav-link default (raw/components-computed.json)","d":"500 — nav items, pill buttons, every display heading."},"semibold":{"v":600,"t":"fontWeight","s":"computed fontWeight of hero-demo default (raw/components-computed.json)","d":"600 — CTAs, hero tiles, the about display heading."},"bold":{"v":700,"t":"fontWeight","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-weight-bold","d":"The declared `--font-weight-bold`."}},"size":{"text":{"2xl":{"v":"24px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-2xl","d":"The declared `--text-2xl`."},"3xl":{"v":"30px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-3xl","d":"The declared `--text-3xl`."},"4xl":{"v":"36px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-4xl","d":"The declared `--text-4xl`."},"5xl":{"v":"48px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-5xl","d":"The declared `--text-5xl`."},"6xl":{"v":"60px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-6xl","d":"The declared `--text-6xl`."},"7xl":{"v":"72px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-7xl","d":"The declared `--text-7xl`."},"base":{"v":"16px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-base","d":"The declared `--text-base`."},"lg":{"v":"18px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-lg","d":"The declared `--text-lg`."},"sm":{"v":"14px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-sm","d":"The declared `--text-sm`."},"xl":{"v":"20px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-xl","d":"The declared `--text-xl`."},"xs":{"v":"12px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-xs","d":"The declared `--text-xs`."}},"heading":{"h0":{"v":"64px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h0-xxlarge-size","d":"The declared `--font-heading-h0-xxlarge-size`."},"h00":{"v":"80px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h00-display-size","d":"The declared `--font-heading-h00-display-size`."},"h1":{"v":"56px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h1-xlarge-size","d":"The declared `--font-heading-h1-xlarge-size`."},"h2":{"v":"44px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h2-large-size","d":"The declared `--font-heading-h2-large-size`."},"h3":{"v":"36px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h3-medium-size","d":"The declared `--font-heading-h3-medium-size`."},"h4":{"v":"28px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h4-small-size","d":"The declared `--font-heading-h4-small-size`."},"h5":{"v":"24px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h5-xsmall-size","d":"The declared `--font-heading-h5-xsmall-size`."},"h6":{"v":"20px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h6-xxsmall-size","d":"The declared `--font-heading-h6-xxsmall-size`."},"h7":{"v":"16px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h7-xxxsmall-size","d":"The declared `--font-heading-h7-xxxsmall-size`."}},"heading-mobile":{"h0":{"v":"42px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h0-xxlarge-size-mobile","d":"The declared `--font-heading-h0-xxlarge-size-mobile`."},"h00":{"v":"48px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h00-display-size-mobile","d":"The declared `--font-heading-h00-display-size-mobile`."},"h1":{"v":"36px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h1-xlarge-size-mobile","d":"The declared `--font-heading-h1-xlarge-size-mobile`."},"h2":{"v":"28px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h2-large-size-mobile","d":"The declared `--font-heading-h2-large-size-mobile`."},"h3":{"v":"24px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h3-medium-size-mobile","d":"The declared `--font-heading-h3-medium-size-mobile`."},"h4":{"v":"22px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h4-small-size-mobile","d":"The declared `--font-heading-h4-small-size-mobile`."},"h5":{"v":"20px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h5-xsmall-size-mobile","d":"The declared `--font-heading-h5-xsmall-size-mobile`."},"h6":{"v":"18px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h6-xxsmall-size-mobile","d":"The declared `--font-heading-h6-xxsmall-size-mobile`."},"h7":{"v":"16px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h7-xxxsmall-size-mobile","d":"The declared `--font-heading-h7-xxxsmall-size-mobile`."}},"chip":{"v":"{font.size.text.xs}","t":"fontSize","s":"computed fontSize of promo-cta default (raw/components-computed.json); matches declared --text-xs","d":"The 12px promo chip button."},"button":{"v":"{font.size.text.sm}","t":"fontSize","s":"computed fontSize of nav-demo default (raw/components-computed.json); matches declared --text-sm","d":"The 14px pill-button/nav-demo size."},"nav":{"v":"15px","t":"fontSize","s":"computed fontSize of nav-link default (raw/components-computed.json)","d":"The 15px nav item."},"body":{"v":"{font.size.text.base}","t":"fontSize","s":"computed fontSize of price-card default (raw/components-computed.json); matches declared --text-base","d":"The 16px body/footer-link size."},"cta":{"v":"{font.size.text.lg}","t":"fontSize","s":"computed fontSize of hero-demo default (raw/components-computed.json); matches declared --text-lg","d":"The 18px hero/section CTA."},"section":{"v":"{font.size.heading.h2}","t":"fontSize","s":"computed fontSize of section-heading default (raw/components-computed.json); matches declared --font-heading-h2-large-size","d":"The 44px Bagoss section heading."},"hero":{"v":"{font.size.text.6xl}","t":"fontSize","s":"computed fontSize of hero-h1 default (raw/components-computed.json); matches declared --text-6xl","d":"The 60px BagossCondensed hero display."},"about-display":{"v":"160px","t":"fontSize","s":"computed fontSize of about-h1 default (raw/components-computed.json)","d":"The 160px about-page display numeral."}},"tracking":{"heading":{"h0":{"v":"-.005em","t":"other","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h0-xxlarge-letter-spacing","d":"The declared `--font-heading-h0-xxlarge-letter-spacing`."},"h00":{"v":"-.01em","t":"other","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h00-display-letter-spacing","d":"The declared `--font-heading-h00-display-letter-spacing`."},"h1":{"v":"-.005em","t":"other","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h1-xlarge-letter-spacing","d":"The declared `--font-heading-h1-xlarge-letter-spacing`."},"h2":{"v":"-.005em","t":"other","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h2-large-letter-spacing","d":"The declared `--font-heading-h2-large-letter-spacing`."},"h3":{"v":"-.005em","t":"other","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h3-medium-letter-spacing","d":"The declared `--font-heading-h3-medium-letter-spacing`."},"h4":{"v":"-.005em","t":"other","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h4-small-letter-spacing","d":"The declared `--font-heading-h4-small-letter-spacing`."},"h5":{"v":0,"t":"other","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h5-xsmall-letter-spacing","d":"The declared `--font-heading-h5-xsmall-letter-spacing`."},"h6":{"v":0,"t":"other","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h6-xxsmall-letter-spacing","d":"The declared `--font-heading-h6-xxsmall-letter-spacing`."},"h7":{"v":0,"t":"other","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h7-xxxsmall-letter-spacing","d":"The declared `--font-heading-h7-xxxsmall-letter-spacing`."}},"normal":{"v":"0px","t":"other","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --tracking-normal","d":"The declared `--tracking-normal`."},"wider":{"v":"0.796875px","t":"other","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --tracking-wider","d":"The declared `--tracking-wider`."}},"leading":{"normal":{"v":1.5,"t":"number","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --leading-normal","d":"The declared `--leading-normal`."},"snug":{"v":1.375,"t":"number","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --leading-snug","d":"The declared `--leading-snug`."},"tight":{"v":1.25,"t":"number","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --leading-tight","d":"The declared `--leading-tight`."}},"lineHeight":{"body":{"v":"24px","t":"other","s":"computed lineHeight of price-card default (raw/components-computed.json)","d":"The 24px body line-height."},"hero":{"v":"63px","t":"other","s":"computed lineHeight of hero-h1 default (raw/components-computed.json)","d":"The 63px hero display line-height (1.05x)."}}},"color":{"akai":{"banner-gradient":{"v":"linear-gradient(180deg,#c4b1f9,#f2ebde)","t":"other","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-akai-banner-gradient","d":"The declared `--color-akai-banner-gradient`."}},"black":{"v":"#000000","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-black","d":"The declared `--color-black`."},"blue":{"100":{"v":"#edf3fa","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-blue-100","d":"The declared `--color-blue-100`."},"150":{"v":"#d8ebff","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-blue-150","d":"The declared `--color-blue-150`."},"325":{"v":"#b1d8fc","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-blue-325","d":"The declared `--color-blue-325`."},"600":{"v":"#2187cf","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-blue-600","d":"The declared `--color-blue-600`."},"750":{"v":"#0067df","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-blue-750","d":"The declared `--color-blue-750`."},"825":{"v":"#192253","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-blue-825","d":"The declared `--color-blue-825`."},"900":{"v":"#163462","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-blue-900","d":"The declared `--color-blue-900`."}},"border":{"error":{"v":"#e30004","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-border-error","d":"The declared `--color-border-error`."},"highlight-dark":{"v":"#8a827e","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-border-highlight-dark","d":"The declared `--color-border-highlight-dark`."},"highlight-mid":{"v":"#b3aba4","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-border-highlight-mid","d":"The declared `--color-border-highlight-mid`."},"primary":{"v":"rgba(27, 27, 27, 0.16)","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-border-primary","d":"The declared `--color-border-primary`."},"primary-on-dark":{"v":"rgba(250, 244, 238, 0.16)","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-border-primary-on-dark","d":"The declared `--color-border-primary-on-dark`."},"secondary":{"v":"rgba(27, 27, 27, 0.4)","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-border-secondary","d":"The declared `--color-border-secondary`."},"secondary-on-dark":{"v":"rgba(250, 244, 238, 0.4)","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-border-secondary-on-dark","d":"The declared `--color-border-secondary-on-dark`."},"table":{"v":"#dedede","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-border-table","d":"The declared `--color-border-table`."}},"chip":{"neutral":{"v":"#7d5bc9","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-chip-neutral","d":"The declared `--color-chip-neutral`."}},"content":{"accessory":{"v":"rgba(27, 27, 27, 0.55)","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-accessory","d":"The declared `--color-content-accessory`."},"disabled":{"v":"rgba(27, 27, 27, 0.4)","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-disabled","d":"The declared `--color-content-disabled`."},"on-color":{"v":"#ffffff","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-on-color","d":"The declared `--color-content-on-color`."},"on-dark":{"v":"#faf4ee","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-on-dark","d":"The declared `--color-content-on-dark`."},"on-dark-accessory":{"v":"rgba(250, 244, 238, 0.65)","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-on-dark-accessory","d":"The declared `--color-content-on-dark-accessory`."},"on-dark-primary":{"v":"#faf4ee","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-on-dark-primary","d":"The declared `--color-content-on-dark-primary`."},"on-dark-secondary":{"v":"rgba(250, 244, 238, 0.85)","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-on-dark-secondary","d":"The declared `--color-content-on-dark-secondary`."},"on-dark-terciary":{"v":"rgba(250, 244, 238, 0.75)","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-on-dark-terciary","d":"The declared `--color-content-on-dark-terciary`."},"on-dark-tertiary":{"v":"rgba(250, 244, 238, 0.75)","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-on-dark-tertiary","d":"The declared `--color-content-on-dark-tertiary`."},"primary":{"v":"#141414","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-primary","d":"The declared `--color-content-primary`."},"secondary":{"v":"rgba(27, 27, 27, 0.85)","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-secondary","d":"The declared `--color-content-secondary`."},"tertiary":{"v":"rgba(27, 27, 27, 0.7)","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-tertiary","d":"The declared `--color-content-tertiary`."}},"core":{"acai":{"v":"#5938b7","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-core-acai","d":"The declared `--color-core-acai`."},"blue-berry":{"v":"#00499d","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-core-blue-berry","d":"The declared `--color-core-blue-berry`."},"cornbread":{"v":"#ffcf25","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-core-cornbread","d":"The declared `--color-core-cornbread`."},"tangelo":{"v":"#ed5e2a","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-core-tangelo","d":"The declared `--color-core-tangelo`."}},"cornbread":{"150":{"v":"#f5ecc9","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-cornbread-150","d":"The declared `--color-cornbread-150`."},"300":{"v":"#ffe27c","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-cornbread-300","d":"The declared `--color-cornbread-300`."},"400":{"v":"#ffcf25","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-cornbread-400","d":"The declared `--color-cornbread-400`."}},"gray":{"200":{"v":"#e5e7eb","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-gray-200","d":"The declared `--color-gray-200`."},"300":{"v":"#d1d5dc","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-gray-300","d":"The declared `--color-gray-300`."},"400":{"v":"#99a1af","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-gray-400","d":"The declared `--color-gray-400`."},"600":{"v":"#4a5565","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-gray-600","d":"The declared `--color-gray-600`."},"900":{"v":"#101828","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-gray-900","d":"The declared `--color-gray-900`."}},"green":{"100":{"v":"#e6f7e0","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-green-100","d":"The declared `--color-green-100`."},"250":{"v":"#c2eeb5","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-green-250","d":"The declared `--color-green-250`."},"375":{"v":"#8cca82","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-green-375","d":"The declared `--color-green-375`."},"400":{"v":"#83d072","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-green-400","d":"The declared `--color-green-400`."},"600":{"v":"#3f9532","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-green-600","d":"The declared `--color-green-600`."},"675":{"v":"#15740f","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-green-675","d":"The declared `--color-green-675`."},"75":{"v":"#dce9da","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-green-75","d":"The declared `--color-green-75`."},"750":{"v":"#005b01","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-green-750","d":"The declared `--color-green-750`."},"875":{"v":"#004b01","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-green-875","d":"The declared `--color-green-875`."}},"latte":{"125":{"v":"#faf4ee","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-latte-125","d":"The declared `--color-latte-125`."}},"neutral":{"100":{"v":"#f2f2f2","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-100","d":"The declared `--color-neutral-100`."},"200":{"v":"#e6e6e6","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-200","d":"The declared `--color-neutral-200`."},"275":{"v":"#cfcfcf","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-275","d":"The declared `--color-neutral-275`."},"300":{"v":"#cccccc","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-300","d":"The declared `--color-neutral-300`."},"400":{"v":"#a6a6a6","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-400","d":"The declared `--color-neutral-400`."},"50":{"v":"#fafafa","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-50","d":"The declared `--color-neutral-50`."},"500":{"v":"#808080","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-500","d":"The declared `--color-neutral-500`."},"600":{"v":"#808080","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-600","d":"The declared `--color-neutral-600`."},"700":{"v":"#404040","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-700","d":"The declared `--color-neutral-700`."},"800":{"v":"#404040","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-800","d":"The declared `--color-neutral-800`."},"900":{"v":"#141414","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-900","d":"The declared `--color-neutral-900`."}},"orange":{"50":{"v":"#fff7ed","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-orange-50","d":"The declared `--color-orange-50`."}},"primary":{"v":"#1b1b1b","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-primary","d":"The declared `--color-primary`."},"purple":{"100":{"v":"#f6f0fe","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-100","d":"The declared `--color-purple-100`."},"200":{"v":"#e9d4ff","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-200","d":"The declared `--color-purple-200`."},"25":{"v":"#faf6ff","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-25","d":"The declared `--color-purple-25`."},"250":{"v":"#e1d7fb","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-250","d":"The declared `--color-purple-250`."},"325":{"v":"#d6c9fd","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-325","d":"The declared `--color-purple-325`."},"400":{"v":"#c4b1f9","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-400","d":"The declared `--color-purple-400`."},"475":{"v":"#b59cf7","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-475","d":"The declared `--color-purple-475`."},"525":{"v":"#a98df6","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-525","d":"The declared `--color-purple-525`."},"600":{"v":"#926ede","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-600","d":"The declared `--color-purple-600`."},"675":{"v":"#724ec9","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-675","d":"The declared `--color-purple-675`."},"750":{"v":"#5938b7","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-750","d":"The declared `--color-purple-750`."},"825":{"v":"#452995","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-825","d":"The declared `--color-purple-825`."},"950":{"v":"#201547","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-950","d":"The declared `--color-purple-950`."},"gradient":{"v":"radial-gradient(175.07% 171.43% at 28.58% -31.46%,#3445c8 0%,#5f4e8e 38.14%,#9d7ba8 58.6%,#d4a8c3 74.47%,#fed 100%),#fff","t":"other","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-gradient","d":"The declared `--color-purple-gradient`."},"gradient-dark":{"v":"linear-gradient(118deg,#5938b700 48.33%,#5938b7 92.96%),#201547","t":"other","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-gradient-dark","d":"The declared `--color-purple-gradient-dark`."}},"red":{"200":{"v":"#ffc9c9","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-red-200","d":"The declared `--color-red-200`."},"325":{"v":"#ffbfb7","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-red-325","d":"The declared `--color-red-325`."},"50":{"v":"#fef2f2","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-red-50","d":"The declared `--color-red-50`."},"500":{"v":"#fb2c36","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-red-500","d":"The declared `--color-red-500`."},"600":{"v":"#f95250","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-red-600","d":"The declared `--color-red-600`."},"675":{"v":"#b52f31","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-red-675","d":"The declared `--color-red-675`."},"700":{"v":"#c10007","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-red-700","d":"The declared `--color-red-700`."},"750":{"v":"#8e2626","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-red-750","d":"The declared `--color-red-750`."}},"secondary":{"v":"rgba(27, 27, 27, 0.85)","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-secondary","d":"The declared `--color-secondary`."},"surface":{"brand-blue-01":{"v":"#dbeeff","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-blue-01","d":"The declared `--color-surface-brand-blue-01`."},"brand-blue-02":{"v":"#c7e2fe","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-blue-02","d":"The declared `--color-surface-brand-blue-02`."},"brand-blue-03":{"v":"#b1d8fc","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-blue-03","d":"The declared `--color-surface-brand-blue-03`."},"brand-cream":{"v":"#f2ede4","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-cream","d":"The declared `--color-surface-brand-cream`."},"brand-dark-purple":{"v":"#201547","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-dark-purple","d":"The declared `--color-surface-brand-dark-purple`."},"brand-purple-01":{"v":"#e1d7fb","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-purple-01","d":"The declared `--color-surface-brand-purple-01`."},"brand-purple-02":{"v":"#c4b1f9","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-purple-02","d":"The declared `--color-surface-brand-purple-02`."},"brand-purple-03":{"v":"#a98df6","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-purple-03","d":"The declared `--color-surface-brand-purple-03`."},"brand-purple-04":{"v":"#5938b7","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-purple-04","d":"The declared `--color-surface-brand-purple-04`."},"brand-seltzer-01":{"v":"#b1d8fc","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-seltzer-01","d":"The declared `--color-surface-brand-seltzer-01`."},"brand-tangelo-1":{"v":"#f1d5ca","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-tangelo-1","d":"The declared `--color-surface-brand-tangelo-1`."},"brand-yellow-01":{"v":"#ffeba6","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-yellow-01","d":"The declared `--color-surface-brand-yellow-01`."},"brand-yellow-02":{"v":"#ffe27c","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-yellow-02","d":"The declared `--color-surface-brand-yellow-02`."},"brand-yellow-03":{"v":"#ffcf25","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-yellow-03","d":"The declared `--color-surface-brand-yellow-03`."},"card-on-dark":{"v":"rgba(255, 255, 255, 0.05)","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-card-on-dark","d":"The declared `--color-surface-card-on-dark`."},"dark":{"v":"#1b1b1b","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-dark","d":"The declared `--color-surface-dark`."},"dark-subtle":{"v":"#343434","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-dark-subtle","d":"The declared `--color-surface-dark-subtle`."},"highlight-01":{"v":"#faf4ee","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-highlight-01","d":"The declared `--color-surface-highlight-01`."},"highlight-02":{"v":"#f1e8e1","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-highlight-02","d":"The declared `--color-surface-highlight-02`."},"highlight-warm":{"v":"rgba(254, 240, 216, 0.5)","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-highlight-warm","d":"The declared `--color-surface-highlight-warm`."},"latte-light":{"v":"#f7f5f2","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-latte-light","d":"The declared `--color-surface-latte-light`."},"primary":{"v":"#ffffff","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-primary","d":"The declared `--color-surface-primary`."},"secondary":{"v":"#fffbf4","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-secondary","d":"The declared `--color-surface-secondary`."},"secondary-linear":{"v":"linear-gradient(0deg,#fef0d899,#fef0d899),#fffbf4","t":"other","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-secondary-linear","d":"The declared `--color-surface-secondary-linear`."},"white":{"v":"#ffffff","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-white","d":"The declared `--color-surface-white`."}},"tangelo":{"100":{"v":"#f1d5ca","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-tangelo-100","d":"The declared `--color-tangelo-100`."},"175":{"v":"#e7a288","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-tangelo-175","d":"The declared `--color-tangelo-175`."},"50":{"v":"#faefeb","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-tangelo-50","d":"The declared `--color-tangelo-50`."},"500":{"v":"#ed5e2a","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-tangelo-500","d":"The declared `--color-tangelo-500`."},"600":{"v":"#cd4311","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-tangelo-600","d":"The declared `--color-tangelo-600`."},"700":{"v":"#98320d","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-tangelo-700","d":"The declared `--color-tangelo-700`."}},"tertiary":{"v":"rgba(27, 27, 27, 0.7)","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-tertiary","d":"The declared `--color-tertiary`."},"white":{"v":"#ffffff","t":"color","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-white","d":"The declared `--color-white`."}},"spacing":{"unit":{"v":"4px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing","d":"The declared `--spacing`."},"big":{"v":"96px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-big","d":"The declared `--spacing-big`."},"container":{"v":"1312px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-container","d":"The declared `--spacing-container`."},"giant":{"v":"200px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-giant","d":"The declared `--spacing-giant`."},"huge":{"v":"128px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-huge","d":"The declared `--spacing-huge`."},"lg":{"v":"40px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-lg","d":"The declared `--spacing-lg`."},"md":{"v":"32px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-md","d":"The declared `--spacing-md`."},"nano":{"v":"8px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-nano","d":"The declared `--spacing-nano`."},"quark":{"v":"4px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-quark","d":"The declared `--spacing-quark`."},"sm":{"v":"24px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-sm","d":"The declared `--spacing-sm`."},"tiny":{"v":"2px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-tiny","d":"The declared `--spacing-tiny`."},"xl":{"v":"48px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-xl","d":"The declared `--spacing-xl`."},"xs":{"v":"20px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-xs","d":"The declared `--spacing-xs`."},"xxl":{"v":"64px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-xxl","d":"The declared `--spacing-xxl`."},"xxs":{"v":"16px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-xxs","d":"The declared `--spacing-xxs`."},"xxxl":{"v":"80px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-xxxl","d":"The declared `--spacing-xxxl`."},"xxxs":{"v":"12px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-xxxs","d":"The declared `--spacing-xxxs`."}},"radius":{"2xl":{"v":"16px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --radius-2xl","d":"The declared `--radius-2xl`."},"circular":{"v":"200px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --radius-circular","d":"The declared `--radius-circular`."},"lg":{"v":"16px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --radius-lg","d":"The declared `--radius-lg`."},"md":{"v":"12px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --radius-md","d":"The declared `--radius-md`."},"none":{"v":"0px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --radius-none","d":"The declared `--radius-none`."},"quark":{"v":"4px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --radius-quark","d":"The declared `--radius-quark`."},"sm":{"v":"8px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --radius-sm","d":"The declared `--radius-sm`."},"xl":{"v":"24px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --radius-xl","d":"The declared `--radius-xl`."},"chip":{"v":"2px","t":"dimension","s":"painted radius of the SPECIAL OFFER chip inside promo-banner default (raw/components-computed.json)","d":"The 2px SPECIAL OFFER chip radius."},"card":{"v":"{radius.md}","t":"dimension","s":"computed borderTopLeftRadius of price-card default (raw/components-computed.json); matches declared --radius-md","d":"The 12px card/tile radius."},"pill":{"v":"{radius.circular}","t":"dimension","s":"computed borderTopLeftRadius of nav-demo default (raw/components-computed.json); matches declared --radius-circular","d":"The 200px small-pill radius (nav CTAs, promo button)."},"full":{"v":"3.35544e+07px","t":"other","s":"computed borderTopLeftRadius of hero-demo default (raw/components-computed.json)","d":"The rounded-full on hero CTAs — computed as a huge px value (Tailwind !rounded-full)."},"circle":{"v":"50%","t":"other","s":"computed borderTopLeftRadius of m-hamburger default (raw/components-computed.json)","d":"The 50% icon-button circle."}},"breakpoint":{"lg":{"v":"1024px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --breakpoint-lg","d":"The declared `--breakpoint-lg`."},"md":{"v":"959px","t":"dimension","s":"declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --breakpoint-md","d":"The declared `--breakpoint-md`."}},"shadow":{"card":{"v":"rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(27, 27, 27, 0.04) 0px 8px 16px 0px, rgba(27, 27, 27, 0.04) 0px 2px 8px 0px","t":"other","s":"computed boxShadow of price-card default (raw/components-computed.json)","d":"The MUI elevation-2dp shadow the pricing tier cards carry."}},"motion":{"hover":{"v":"all 0.1s ease-in-out","t":"other","s":"computed transition of promo-cta default (raw/components-computed.json)","d":"The 0.1s ease-in-out all-transition the pill buttons run on hover/press."}}},"light":{"background":{"page":{"v":"{color.content.on-color}","t":"color","s":"computed backgroundColor of header-nav default (raw/components-computed.json); matches declared --color-content-on-color","d":"The #fff field the nav, price cards and page paint."},"promo-strip":{"v":"{color.primary}","t":"color","s":"painted background of the promo-banner MuiBox child (raw/components-computed.json); matches declared --color-primary","d":"The #1b1b1b promo strip."},"hero-panel":{"v":"{color.purple.950}","t":"color","s":"painted background of the hero panel inside hero-block default (raw/components-computed.json); matches declared --color-purple-950","d":"The #201547 deep-purple panel behind the home h1 and action tiles."},"video-card":{"v":"{color.content.primary}","t":"color","s":"painted background of the video card inside review-band default (raw/components-computed.json); matches declared --color-content-primary","d":"The #141414 near-black review video card."},"tile-glass":{"v":"rgba(255, 255, 255, 0.04)","t":"color","s":"painted oklab background of hero-tile default (raw/components-computed.json); hero-tile was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run","d":"The 4% white glass fill on the hero action tiles over the purple panel."}},"text":{"ink":{"v":"{color.primary}","t":"color","s":"computed color of nav-link default (raw/components-computed.json); matches declared --color-primary","d":"The #1b1b1b ink — nav text, pill-button fills, footer links."},"body":{"v":"rgba(0, 0, 0, 0.87)","t":"color","s":"computed color of price-card default (raw/components-computed.json)","d":"MUI's rgba(0,0,0,.87) body text on white."},"on-dark":{"v":"{color.content.on-color}","t":"color","s":"computed color of hero-h1 default (raw/components-computed.json); matches declared --color-content-on-color","d":"White text on the #201547 hero panel and dark surfaces."},"cream":{"v":"{color.content.on-dark}","t":"color","s":"computed color of footer-heading default (raw/components-computed.json); matches declared --color-content-on-dark","d":"The #faf4ee latte/cream — footer column headings and icon fills."}},"border":{"focus":{"v":"#005fcc","t":"color","s":"computed outlineColor of promo-cta focus-visible (raw/components-computed.json)","d":"The #101010 1px auto focus outline on light controls."},"tile-glass":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"computed borderTopColor of hero-tile default (raw/components-computed.json); hero-tile was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run","d":"The 10% white hairline on the hero action tiles."},"hairline":{"v":"{color.border.primary-on-dark}","t":"color","s":"computed borderTopColor of faq-item default (raw/components-computed.json); matches declared --color-border-primary-on-dark","d":"The 1px latte-at-16% hairline the FAQ accordion items separate with."}},"action":{"accent-chip":{"v":"{color.blue.325}","t":"color","s":"painted background of the SPECIAL OFFER chip inside promo-banner default (raw/components-computed.json); matches declared --color-blue-325","d":"The #b1d8fc sky-blue accent — the promo chip and the price-card top strip."},"pressed-fill":{"v":"#3f3f3f","t":"color","s":"computed backgroundColor of promo-cta pressed (raw/components-computed.json)","d":"The #3f3f3f grey the light pill buttons take on hover/pressed."},"hover-fill":{"v":"#4e4e4e","t":"color","s":"computed backgroundColor of nav-demo/price-cta hover (raw/components-computed.json)","d":"The #4e4e4e grey the dark #1b1b1b pill buttons lift to on hover/pressed."}},"component":{"promo-banner-height":{"v":"64px","t":"dimension","s":"computed h of promo-banner default (raw/components-computed.json)","d":"The 64px promo strip."},"nav-height":{"v":"80px","t":"dimension","s":"computed h of header-nav default (raw/components-computed.json)","d":"The 80px sticky nav."},"logo-width":{"v":"78px","t":"dimension","s":"computed w of nav-logo default (raw/components-computed.json)","d":"The 78px Deel wordmark."},"nav-item-height":{"v":"40px","t":"dimension","s":"computed h of nav-link default (raw/components-computed.json)","d":"The 40px nav-item hit area."},"nav-demo-height":{"v":"40px","t":"dimension","s":"computed h of nav-demo default (raw/components-computed.json)","d":"The 40px nav Book-a-demo pill."},"promo-cta-height":{"v":"32px","t":"dimension","s":"computed h of promo-cta default (raw/components-computed.json)","d":"The 32px Claim-offer button."},"hero-panel-height":{"v":"732px","t":"dimension","s":"computed h of hero-block default (raw/components-computed.json)","d":"The 732px purple hero block."},"hero-h1-width":{"v":"574.59px","t":"dimension","s":"computed w of hero-h1 default (raw/components-computed.json)","d":"The ~575px hero heading column."},"hero-tile-size":{"v":"80px","t":"dimension","s":"computed h of hero-tile default (raw/components-computed.json); hero-tile was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run","d":"The 80px hero action tile (181px wide)."},"hero-demo-width":{"v":"375px","t":"dimension","s":"computed w of hero-demo default (raw/components-computed.json)","d":"The 375px hero Book-a-demo pill."},"product-card-size":{"v":"438px","t":"dimension","s":"computed h of product-card default (raw/components-computed.json)","d":"The 438px-tall product card (419px wide)."},"price-card-size":{"v":"928.31px","t":"dimension","s":"computed h of price-card default (raw/components-computed.json)","d":"The 928px pricing tier card (459px wide)."},"faq-item-height":{"v":"80.2px","t":"dimension","s":"computed h of faq-item default (raw/components-computed.json)","d":"The 80px FAQ accordion summary row."},"review-band-height":{"v":"1205.88px","t":"dimension","s":"computed h of review-band default (raw/components-computed.json)","d":"The 1206px review video-carousel band."},"footer-height":{"v":"1015.38px","t":"dimension","s":"computed h of footer default (raw/components-computed.json)","d":"The 1015px footer block."},"m-nav-height":{"v":"64px","t":"dimension","s":"computed h of m-nav-bar default (raw/components-computed.json)","d":"The 64px mobile nav."},"m-hamburger-size":{"v":"40px","t":"dimension","s":"computed w of m-hamburger default (raw/components-computed.json)","d":"The 40px mobile hamburger circle."},"m-hero-h1":{"v":"119.67px","t":"dimension","s":"computed h of m-h1 default (raw/components-computed.json)","d":"The mobile hero heading at 38px."},"promo-strip-paint":{"v":"{color.primary}","t":"color","s":"painted background of the promo-banner MuiBox child (raw/components-computed.json); matches declared --color-primary","d":"The #1b1b1b fill the 64px promo strip paints."},"state-track":{"pill-light-track":{"v":{"default":{"backgroundColor":"rgb(255, 255, 255)","color":"rgb(27, 27, 27)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(27, 27, 27)","borderRightColor":"rgb(27, 27, 27)","borderBottomColor":"rgb(27, 27, 27)","borderLeftColor":"rgb(27, 27, 27)","outlineColor":"rgb(27, 27, 27)","outlineStyle":"none","outlineWidth":"3px","outlineOffset":"0px"},"hover":{"backgroundColor":"rgb(63, 63, 63)","color":"rgb(255, 255, 255)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(255, 255, 255)","borderRightColor":"rgb(255, 255, 255)","borderBottomColor":"rgb(255, 255, 255)","borderLeftColor":"rgb(255, 255, 255)","outlineColor":"rgb(255, 255, 255)","outlineStyle":"none","outlineWidth":"3px","outlineOffset":"0px"},"pressed":{"backgroundColor":"rgb(63, 63, 63)","color":"rgb(255, 255, 255)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(255, 255, 255)","borderRightColor":"rgb(255, 255, 255)","borderBottomColor":"rgb(255, 255, 255)","borderLeftColor":"rgb(255, 255, 255)","outlineColor":"rgb(255, 255, 255)","outlineStyle":"none","outlineWidth":"3px","outlineOffset":"0px"},"focus-visible":{"backgroundColor":"rgb(255, 255, 255)","color":"rgb(27, 27, 27)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(27, 27, 27)","borderRightColor":"rgb(27, 27, 27)","borderBottomColor":"rgb(27, 27, 27)","borderLeftColor":"rgb(27, 27, 27)","outlineColor":"rgb(0, 95, 204)","outlineStyle":"auto","outlineWidth":"1px","outlineOffset":"0px"}},"t":"other","s":"computed styles of promo-cta across states (raw/components-computed.json)","d":"Light pill (Claim offer): #fff fill/#1b1b1b text at rest; hover+pressed invert to #3f3f3f fill/#fff text; focus shows the 1px auto outline."},"pill-dark-track":{"v":{"default":{"backgroundColor":"rgb(27, 27, 27)","color":"rgb(255, 255, 255)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(255, 255, 255)","borderRightColor":"rgb(255, 255, 255)","borderBottomColor":"rgb(255, 255, 255)","borderLeftColor":"rgb(255, 255, 255)","outlineColor":"rgb(255, 255, 255)","outlineStyle":"none","outlineWidth":"3px","outlineOffset":"0px"},"hover":{"backgroundColor":"rgb(78, 78, 78)","color":"rgb(255, 255, 255)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(255, 255, 255)","borderRightColor":"rgb(255, 255, 255)","borderBottomColor":"rgb(255, 255, 255)","borderLeftColor":"rgb(255, 255, 255)","outlineColor":"rgb(255, 255, 255)","outlineStyle":"none","outlineWidth":"3px","outlineOffset":"0px"},"pressed":{"backgroundColor":"rgb(78, 78, 78)","color":"rgb(255, 255, 255)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(255, 255, 255)","borderRightColor":"rgb(255, 255, 255)","borderBottomColor":"rgb(255, 255, 255)","borderLeftColor":"rgb(255, 255, 255)","outlineColor":"rgb(255, 255, 255)","outlineStyle":"none","outlineWidth":"3px","outlineOffset":"0px"},"focus-visible":{"backgroundColor":"rgb(27, 27, 27)","color":"rgb(255, 255, 255)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(255, 255, 255)","borderRightColor":"rgb(255, 255, 255)","borderBottomColor":"rgb(255, 255, 255)","borderLeftColor":"rgb(255, 255, 255)","outlineColor":"rgb(0, 95, 204)","outlineStyle":"auto","outlineWidth":"1px","outlineOffset":"0px"}},"t":"other","s":"computed styles of nav-demo across states (raw/components-computed.json)","d":"Dark pill (nav Book a demo): #1b1b1b fill/#fff text at rest; tracks across hover/pressed."},"nav-link-state-track":{"v":{"default":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(27, 27, 27)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(27, 27, 27)","borderRightColor":"rgb(27, 27, 27)","borderBottomColor":"rgb(27, 27, 27)","borderLeftColor":"rgb(27, 27, 27)","outlineColor":"rgb(27, 27, 27)","outlineStyle":"none","outlineWidth":"3px","outlineOffset":"0px"},"hover":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(27, 27, 27)","opacity":"0.7","transform":"none","boxShadow":"none","borderTopColor":"rgb(27, 27, 27)","borderRightColor":"rgb(27, 27, 27)","borderBottomColor":"rgb(27, 27, 27)","borderLeftColor":"rgb(27, 27, 27)","outlineColor":"rgb(27, 27, 27)","outlineStyle":"none","outlineWidth":"3px","outlineOffset":"0px"},"pressed":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(27, 27, 27)","opacity":"0.7","transform":"none","boxShadow":"none","borderTopColor":"rgb(27, 27, 27)","borderRightColor":"rgb(27, 27, 27)","borderBottomColor":"rgb(27, 27, 27)","borderLeftColor":"rgb(27, 27, 27)","outlineColor":"rgb(27, 27, 27)","outlineStyle":"none","outlineWidth":"3px","outlineOffset":"0px"},"focus-visible":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(27, 27, 27)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgb(27, 27, 27)","borderRightColor":"rgb(27, 27, 27)","borderBottomColor":"rgb(27, 27, 27)","borderLeftColor":"rgb(27, 27, 27)","outlineColor":"rgb(0, 95, 204)","outlineStyle":"auto","outlineWidth":"1px","outlineOffset":"0px"},"opened":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgb(27, 27, 27)","opacity":"0.7","transform":"none","boxShadow":"none","borderTopColor":"rgb(27, 27, 27)","borderRightColor":"rgb(27, 27, 27)","borderBottomColor":"rgb(27, 27, 27)","borderLeftColor":"rgb(27, 27, 27)","outlineColor":"rgb(27, 27, 27)","outlineStyle":"none","outlineWidth":"3px","outlineOffset":"0px"}},"t":"other","s":"computed styles of nav-link across states (raw/components-computed.json)","d":"Nav item: #1b1b1b Bagoss text at rest; tracks across hover/pressed/focus."},"tile-state-track":{"v":{"default":{"backgroundColor":"oklab(0.999994 0.0000455678 0.0000200868 / 0.04)","color":"rgb(255, 255, 255)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"oklab(0.999994 0.0000455678 0.0000200868 / 0.1)","borderRightColor":"oklab(0.999994 0.0000455678 0.0000200868 / 0.1)","borderBottomColor":"oklab(0.999994 0.0000455678 0.0000200868 / 0.1)","borderLeftColor":"oklab(0.999994 0.0000455678 0.0000200868 / 0.1)","outlineColor":"rgb(255, 255, 255)","outlineStyle":"none","outlineWidth":"3px","outlineOffset":"0px"},"hover":{"backgroundColor":"oklab(0.999994 0.0000455678 0.0000200868 / 0.04)","color":"rgb(255, 255, 255)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"oklab(0.999994 0.0000455678 0.0000200868 / 0.1)","borderRightColor":"oklab(0.999994 0.0000455678 0.0000200868 / 0.1)","borderBottomColor":"oklab(0.999994 0.0000455678 0.0000200868 / 0.1)","borderLeftColor":"oklab(0.999994 0.0000455678 0.0000200868 / 0.1)","outlineColor":"rgb(255, 255, 255)","outlineStyle":"none","outlineWidth":"3px","outlineOffset":"0px"},"pressed":{"backgroundColor":"oklab(0.999994 0.0000455678 0.0000200868 / 0.08)","color":"rgb(255, 255, 255)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"oklab(0.999994 0.0000455678 0.0000200868 / 0.2)","borderRightColor":"oklab(0.999994 0.0000455678 0.0000200868 / 0.2)","borderBottomColor":"oklab(0.999994 0.0000455678 0.0000200868 / 0.2)","borderLeftColor":"oklab(0.999994 0.0000455678 0.0000200868 / 0.2)","outlineColor":"rgb(255, 255, 255)","outlineStyle":"none","outlineWidth":"3px","outlineOffset":"0px"},"focus-visible":{"backgroundColor":"oklab(0.999994 0.0000455678 0.0000200868 / 0.04)","color":"rgb(255, 255, 255)","opacity":"1","transform":"none","boxShadow":"rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.999994 0.0000455677 0.0000200868 / 0.7) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px","borderTopColor":"oklab(0.999994 0.0000455678 0.0000200868 / 0.1)","borderRightColor":"oklab(0.999994 0.0000455678 0.0000200868 / 0.1)","borderBottomColor":"oklab(0.999994 0.0000455678 0.0000200868 / 0.1)","borderLeftColor":"oklab(0.999994 0.0000455678 0.0000200868 / 0.1)","outlineColor":"rgb(0, 95, 204)","outlineStyle":"none","outlineWidth":"1px","outlineOffset":"0px"}},"t":"other","s":"computed styles of hero-tile across states (raw/components-computed.json); hero-tile was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run","d":"Hero tile: 4%-white glass at rest on the purple panel; tracks across hover/pressed/focus."},"faq-state-track":{"v":{"default":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgba(0, 0, 0, 0.87)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgba(250, 244, 238, 0.16)","borderRightColor":"rgba(0, 0, 0, 0.87)","borderBottomColor":"rgba(0, 0, 0, 0.87)","borderLeftColor":"rgba(0, 0, 0, 0.87)","outlineColor":"rgba(0, 0, 0, 0.87)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"focus-visible":{"backgroundColor":"rgba(0, 0, 0, 0.12)","color":"rgba(0, 0, 0, 0.87)","opacity":"1","transform":"none","boxShadow":"none","borderTopColor":"rgba(250, 244, 238, 0.16)","borderRightColor":"rgba(0, 0, 0, 0.87)","borderBottomColor":"rgba(0, 0, 0, 0.87)","borderLeftColor":"rgba(0, 0, 0, 0.87)","outlineColor":"rgba(0, 0, 0, 0.87)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"},"opened":{"backgroundColor":"rgba(0, 0, 0, 0)","color":"rgba(0, 0, 0, 0.87)","opacity":"0.6","transform":"none","boxShadow":"none","borderTopColor":"rgba(250, 244, 238, 0.16)","borderRightColor":"rgba(0, 0, 0, 0.87)","borderBottomColor":"rgba(0, 0, 0, 0.87)","borderLeftColor":"rgba(0, 0, 0, 0.87)","outlineColor":"rgba(0, 0, 0, 0.87)","outlineStyle":"none","outlineWidth":"0px","outlineOffset":"0px"}},"t":"other","s":"computed styles of faq-item across states (raw/components-computed.json)","d":"FAQ accordion summary: MUI MuiAccordionSummary at rest and opened via its own click toggle."}},"focus-ring":{"v":"auto rgb(0, 95, 204)","t":"other","s":"computed outline of promo-cta/nav controls focus-visible (raw/components-computed.json)","d":"The browser's 1px auto outline in #101010/own colour — no custom focus ring is painted."}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the .theme.dark band)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Hire anyone, anywhere</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

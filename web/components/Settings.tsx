@@ -10,8 +10,11 @@ import { readSavedPaths, readStoredProvider } from "@/components/storage";
 import { PROVIDER_EVENT } from "@/components/Chat";
 import { setCollapsed, setTheme, usePrefs, type Theme } from "@/components/prefs";
 import { baseUrlOf } from "@/lib/provider-defaults";
+import { agentSnippets } from "@/lib/agent-snippets";
+import { SnippetCopyButton } from "@/components/CopyButton";
 
 export interface SettingsStats {
+  /** The checkout's folder name, never its absolute path. */
   repo: string;
   systems: number | null;
   refero: number | null;
@@ -151,7 +154,7 @@ export function Settings({ stats }: { stats: SettingsStats }) {
       </div>
 
       <div className="prefs">
-        <fieldset className="pref">
+        <fieldset className="pref" id="model-provider">
           <legend className="pref-name">Model provider</legend>
           <p className="pref-help">The chat&rsquo;s brain: which wire format, endpoint, key and model it talks to.</p>
           <div className="pf-grid">
@@ -213,7 +216,13 @@ export function Settings({ stats }: { stats: SettingsStats }) {
           {models.length ? (
             <div className="pf-chips">
               {models.slice(0, 12).map((m) => (
-                <button key={m.id} type="button" className="pf-chip" onClick={() => setCfg((c) => ({ ...c, model: m.id }))}>
+                <button
+                  key={m.id}
+                  type="button"
+                  className="pf-chip"
+                  aria-pressed={cfg.model.trim() === m.id}
+                  onClick={() => setCfg((c) => ({ ...c, model: m.id }))}
+                >
                   {m.label}
                 </button>
               ))}
@@ -245,11 +254,14 @@ export function Settings({ stats }: { stats: SettingsStats }) {
             <div className="pf-field">
               <span>Theme</span>
               <div className="seg" role="group" aria-label="Theme">
-                <button type="button" aria-pressed={theme === "light"} onClick={() => applyTheme("light")}>
-                  Light
+                <button type="button" aria-pressed={theme === "system"} onClick={() => applyTheme("system")}>
+                  System
                 </button>
                 <button type="button" aria-pressed={theme === "dark"} onClick={() => applyTheme("dark")}>
                   Dark
+                </button>
+                <button type="button" aria-pressed={theme === "light"} onClick={() => applyTheme("light")}>
+                  Light
                 </button>
               </div>
             </div>
@@ -273,31 +285,16 @@ export function Settings({ stats }: { stats: SettingsStats }) {
             Install the ds CLI or point a coding agent at the remote MCP endpoint — both read this
             library over the same /api/mcp transport, read-only.
           </p>
-          <dl className="meta">
-            <dt>CLI</dt>
-            <dd>
-              <code>curl -fsSL {origin || "https://<this-site>"}/api/install.sh | sh</code>
-            </dd>
-            <dt>MCP URL</dt>
-            <dd>
-              <code>{origin || "https://<this-site>"}/api/mcp</code>
-            </dd>
-            <dt>Claude</dt>
-            <dd>
-              <code>claude mcp add --transport http design-systems {origin}/api/mcp</code>
-            </dd>
-            <dt>swe</dt>
-            <dd>
-              <code>swe mcp add design-systems --url={origin}/api/mcp</code>
-            </dd>
-            <dt>Codex</dt>
-            <dd>
-              <code>[mcp_servers.design-systems] url = &quot;{origin}/api/mcp&quot;</code>
-            </dd>
-            <dt>OpenCode</dt>
-            <dd>
-              <code>{`"design-systems": { "type": "remote", "url": "${origin}/api/mcp" }`}</code>
-            </dd>
+          <dl className="meta snippets">
+            {agentSnippets(origin).map((s) => (
+              <div className="snip-row" key={s.label}>
+                <dt>{s.label}</dt>
+                <dd>
+                  <code>{s.text}</code>
+                  <SnippetCopyButton text={s.text} what={`${s.label} setup`} />
+                </dd>
+              </div>
+            ))}
           </dl>
           <p className="pref-note">
             Any harness that takes a remote (streamable-HTTP) MCP URL works. On a machine with the

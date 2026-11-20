@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Make style guide</title>
+<meta name="description" content="Make public-site tokens, rendered from tokens.json. One light theme.">
+<style>
+:root {
+  --color-brand-100: #f3ecfd;
+  --color-brand-200: #e9dcfb;
+  --color-brand-300: #d8c0f6;
+  --color-brand-400: #bf98ec;
+  --color-brand-50: #faf7fe;
+  --color-brand-500: #a66ee2;
+  --color-brand-600: #8f4bd2;
+  --color-brand-700: #803bbf;
+  --color-brand-800: #683496;
+  --color-brand-900: #552c79;
+  --color-brand-950: #3a1559;
+  --color-neutral-100: #f3f2f3;
+  --color-neutral-200: #e9e6e9;
+  --color-neutral-300: #dad4da;
+  --color-neutral-400: #b0a6b1;
+  --color-neutral-50: #fafafa;
+  --color-neutral-500: #867489;
+  --color-neutral-600: #69586c;
+  --color-neutral-700: #58475a;
+  --color-neutral-800: #3d2f40;
+  --color-neutral-900: #342237;
+  --color-neutral-950: #221528;
+  --color-accent-100: #f6e9fe;
+  --color-accent-200: #eed8fc;
+  --color-accent-300: #e1b9f9;
+  --color-accent-400: #cf8bf5;
+  --color-accent-50: #fbf6fe;
+  --color-accent-500: #bc5fed;
+  --color-accent-600: #b251e2;
+  --color-accent-700: #932cc4;
+  --color-accent-800: #7b29a0;
+  --color-accent-900: #652380;
+  --color-accent-950: #460d5e;
+  --color-green-100: #dcfce7;
+  --color-green-200: #bbf7d0;
+  --color-green-300: #86efac;
+  --color-green-400: #4ade80;
+  --color-green-50: #f0fdf4;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+  --color-green-700: #15803d;
+  --color-green-750: #12a37f;
+  --color-green-800: #166534;
+  --color-green-900: #14532d;
+  --color-green-950: #052e16;
+  --color-red-100: #fee2e2;
+  --color-red-200: #fecaca;
+  --color-red-300: #fca5a5;
+  --color-red-400: #f87171;
+  --color-red-50: #fef2f2;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-red-700: #b91c1c;
+  --color-red-800: #991b1b;
+  --color-red-900: #7f1d1d;
+  --color-red-950: #450a0a;
+  --color-yellow-100: #fef9c3;
+  --color-yellow-200: #fef08a;
+  --color-yellow-300: #fde047;
+  --color-yellow-400: #facc15;
+  --color-yellow-50: #fefce8;
+  --color-yellow-500: #eab308;
+  --color-yellow-600: #ca8a04;
+  --color-yellow-700: #a16207;
+  --color-yellow-800: #854d0e;
+  --color-yellow-900: #713f12;
+  --color-yellow-950: #422006;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-50: #f9fafb;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-gray-950: #030712;
+  --color-white: #ffffff;
+  --color-ink: #342237;
+  --color-signinGradientStart: #ff00ff;
+  --color-signinGradientEnd: #724ebf;
+  --color-googleInk: #1d1d1d;
+  --font-family-sans: Satoshi, Arial, sans-serif;
+  --font-family-fallback: Arial, Helvetica, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 800;
+  --font-size-chip: 14px;
+  --font-size-body: 16px;
+  --font-size-price: 30px;
+  --font-size-credits: 36px;
+  --font-size-heading: 48px;
+  --font-size-display: 60px;
+  --font-lineHeight-display: 72px;
+  --font-lineHeight-body: 24px;
+  --font-tracking-display: -1.2px;
+  --radius-small: 8px;
+  --radius-medium: 12px;
+  --radius-signin: 10px;
+  --radius-search: 16px;
+  --radius-main: 16px;
+  --radius-pill: 9999px;
+  --radius-chip: 38px;
+  --space-2: 8px;
+  --space-4: 16px;
+  --space-5: 18px;
+  --elevation-search: 0px 5px 10px 0px rgba(0, 0, 0, 0.12);
+  --typography-display: var(--font-weight-medium) var(--font-size-display)/var(--font-lineHeight-display) var(--font-family-sans);
+  --typography-heading: var(--font-weight-medium) var(--font-size-heading)/60px var(--font-family-sans);
+  --typography-body: var(--font-weight-regular) var(--font-size-body)/var(--font-lineHeight-body) var(--font-family-sans);
+  --typography-label: var(--font-weight-regular) var(--font-size-chip)/20px var(--font-family-sans);
+  --layout-desktop: 1440px;
+  --layout-phone: 390px;
+  --motion-duration-0ms: 0ms;
+  --motion-duration-100ms: 100ms;
+  --motion-duration-dur-fast: 140ms;
+  --motion-duration-btn-motion-duration: 150ms;
+  --motion-duration-checkbox-motion-duration: 150ms;
+  --motion-duration-chip-motion-duration: 150ms;
+  --motion-duration-combobox-motion-duration: 150ms;
+  --motion-duration-default-transition-duration: 150ms;
+  --motion-duration-dropdown-motion-duration: 150ms;
+  --motion-duration-input-motion-duration: 150ms;
+  --motion-duration-popover-motion-duration: 150ms;
+  --motion-duration-sep-motion-duration: 150ms;
+  --motion-duration-switch-motion-duration: 150ms;
+  --motion-duration-toast-motion-duration: 150ms;
+  --motion-duration-tooltip-motion-duration: 150ms;
+  --motion-duration-160ms: 160ms;
+  --motion-duration-200ms: 200ms;
+  --motion-duration-250ms: 250ms;
+  --motion-duration-dur: 260ms;
+  --motion-duration-280ms: 280ms;
+  --motion-duration-card-hover-duration: 300ms;
+  --motion-duration-progress-bar-motion-duration: 300ms;
+  --motion-duration-320ms: 320ms;
+  --motion-duration-nav-promo-duration: 350ms;
+  --motion-duration-396ms: 396ms;
+  --motion-duration-400ms: 400ms;
+  --motion-duration-420ms: 420ms;
+  --motion-duration-432ms: 432ms;
+  --motion-duration-450ms: 450ms;
+  --motion-duration-theme-dur: 480ms;
+  --motion-duration-500ms: 500ms;
+  --motion-duration-600ms: 600ms;
+  --motion-duration-hero-swap-duration: 720ms;
+  --motion-duration-800ms: 800ms;
+  --motion-duration-1000ms: 1000ms;
+  --motion-duration-1300ms: 1300ms;
+  --motion-duration-1400ms: 1400ms;
+  --motion-duration-animation-duration: 1500ms;
+  --motion-duration-1618ms: 1618ms;
+  --motion-duration-2500ms: 2500ms;
+  --motion-easing-bezier-0-16-1-0-3-1: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-easing-bezier-0-21-0-47-0-32-0-98: cubic-bezier(0.21, 0.47, 0.32, 0.98);
+  --motion-easing-bezier-0-215-0-61-0-355-1: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --motion-easing-bezier-0-22-0-61-0-36-1: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --motion-easing-bezier-0-33-1-0-68-1: cubic-bezier(0.33, 1, 0.68, 1);
+  --motion-easing-bezier-0-39-0-575-0-565-1: cubic-bezier(0.39, 0.575, 0.565, 1);
+  --motion-easing-card-hover-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-combobox-motion-easing: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --motion-easing-default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-dropdown-motion-easing: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --motion-easing-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-easing-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --motion-easing-ease-in-2: cubic-bezier(0.42, 0, 1, 1);
+  --motion-easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-ease-in-out-2: cubic-bezier(0.42, 0, 0.58, 1);
+  --motion-easing-ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --motion-easing-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --motion-easing-ease-out-2: cubic-bezier(0, 0, 0.58, 1);
+  --motion-easing-ease-spring: cubic-bezier(0.34, 1.42, 0.64, 1);
+  --motion-easing-hero-color-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-hero-swap-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --motion-easing-nav-promo-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-popover-motion-easing: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --motion-easing-theme-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-tooltip-motion-easing: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --page: var(--color-white);
+  --surface: var(--color-white);
+  --surfaceMuted: var(--color-neutral-100);
+  --text: var(--color-ink);
+  --textBody: #69586c;
+  --textMuted: #867489;
+  --textTertiary: #58475a;
+  --textOnAccent: var(--color-white);
+  --link: #803bbf;
+  --accent: #8f4bd2;
+  --accentHover: #803bbf;
+  --border: #dad4da;
+  --borderStrong: #b0a6b1;
+  --focus: #a66ee2;
+  --successFill: var(--color-green-50);
+  --successText: var(--color-green-800);
+  --badgeFill: var(--color-brand-50);
+  --badgeText: var(--color-brand-700);
+  --signinGradientStart: var(--color-signinGradientStart);
+  --signinGradientEnd: var(--color-signinGradientEnd);
+  --sg-sans: Satoshi, Arial, sans-serif;
+  --sg-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--sg-sans); }
+main { max-width: 1040px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font: 500 40px/48px var(--sg-sans); letter-spacing: -1px; margin: 0 0 8px; }
+h2 { font: 500 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--textBody); margin: 48px 0 12px; }
+p { max-width: 68ch; color: var(--textBody); }
+code { font-family: var(--sg-mono); font-size: 13px; color: var(--link); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 148px; }
+.sw i { display: block; height: 48px; border-radius: 8px; border: 1px solid var(--border); }
+.sw b, .sw span { display: block; font: 500 12px/1.4 var(--sg-mono); }
+.sw span { font-weight: 400; color: var(--textBody); }
+.bar { display: flex; align-items: center; gap: 18px; height: 64px; padding: 0 20px; border-bottom: 1px solid var(--border); }
+.bar .mark { font-weight: 800; color: var(--accent); }
+.bar a { color: var(--textTertiary); text-decoration: none; font-size: 14px; }
+.bar .sp { flex: 1; }
+.hero { text-align: center; padding: 48px 16px; }
+.hero h3 { margin: 0; font: 500 48px/58px var(--sg-sans); letter-spacing: -1.2px; color: var(--text); }
+.btn { display: inline-flex; align-items: center; height: 47px; padding: 0 18px; border-radius: 8px; background: var(--accent); color: var(--textOnAccent); border: 0; font: 400 16px/1 var(--sg-sans); }
+.btn-secondary { display: inline-flex; align-items: center; height: 47px; padding: 0 18px; border-radius: 8px; background: var(--page); color: var(--textBody); border: 1px solid var(--border); font: 400 16px/1 var(--sg-sans); margin-left: 8px; }
+.badge { display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: 9999px; background: var(--badgeFill); color: var(--badgeText); font-size: 14px; }
+.save { display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: 9999px; background: var(--successFill); color: var(--successText); font-size: 14px; margin-left: 8px; }
+.field { display: flex; align-items: center; height: 56px; padding: 0 16px; border-radius: 16px; border: 1px solid var(--border); background: var(--surface); color: var(--textMuted); box-shadow: 0 5px 10px rgba(0,0,0,.12); max-width: 520px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+th { color: var(--textBody); font-weight: 500; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Make</h1>
+  <p>Public marketing, pricing and templates, captured 2026-11-18. One light theme. Satoshi is licensed and not loaded here; the page uses Arial.</p>
+
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>white</span></div>
+    <div class="sw"><i style="background:var(--text)"></i><b>text</b><span>neutral 900</span></div>
+    <div class="sw"><i style="background:var(--textBody)"></i><b>body</b><span>neutral 600</span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><b>accent</b><span>brand 600</span></div>
+    <div class="sw"><i style="background:var(--accentHover)"></i><b>accent hover</b><span>brand 700</span></div>
+    <div class="sw"><i style="background:var(--link)"></i><b>link</b><span>brand 700</span></div>
+    <div class="sw"><i style="background:var(--surfaceMuted)"></i><b>muted</b><span>neutral 100</span></div>
+    <div class="sw"><i style="background:var(--successText)"></i><b>success</b><span>green 800</span></div>
+  </div>
+
+  <h2>Chrome</h2>
+  <div class="bar">
+    <span class="mark">make</span>
+    <a>Product</a><a>Pricing</a><a>Templates</a>
+    <span class="sp"></span>
+    <a>Sign in</a>
+  </div>
+  <div class="hero">
+    <h3>Plans that grow with you</h3>
+    <p>Display is 60px medium, tracking -1.2px, neutral 900.</p>
+    <button class="btn">Try it free</button>
+    <button class="btn-secondary">Talk to sales</button>
+  </div>
+  <p><span class="badge">Popular</span><span class="save">Save 15%</span></p>
+  <p><span class="field">Search templates...</span></p>
+
+  <h2>Type</h2>
+  <table>
+    <tr><th>Role</th><th>Size</th><th>Use</th></tr>
+    <tr><td>Display</td><td>60 / 72</td><td>Home headline</td></tr>
+    <tr><td>Heading</td><td>48</td><td>Pricing headline</td></tr>
+    <tr><td>Credits</td><td>36</td><td>10,000 credits/mo</td></tr>
+    <tr><td>Price</td><td>30</td><td>Plan price</td></tr>
+    <tr><td>Body</td><td>16 / 24</td><td>Buttons and copy</td></tr>
+  </table>
+</main>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-20T14:58:00Z",
+  "screenshot": "signed-in-address-empty-desktop.png",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "png": {
+    "width": 2879,
+    "height": 1800
+  },
+  "note": "PNG is 2879px wide, one pixel under 2x of 1440. Recapture failed: preview stopped producing screenshot frames.",
+  "theme": "light",
+  "quantized": "256-colour sRGB via systems/asos/tools/capture/quantize.py"
+}

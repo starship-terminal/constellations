@@ -1,0 +1,464 @@
+{
+  "captured": "2026-11-19",
+  "source": "https://www.westelm.com/",
+  "harness": "T3 preview browser, live DOM getComputedStyle and same-origin stylesheet fetch",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {"width": 1169, "height": 731, "scale": 1},
+    "note": "The preview pane filled the window. These are the measured CSS pixels, not a requested 1440 or 390 viewport. Screenshots were not saved: preview_snapshot returned 'The browser is not producing screenshot frames'."
+  },
+  "pages": [
+    {"path": "/", "title": "West Elm: Modern Furniture, Home Decor, Lighting & More"},
+    {"path": "/shop/new/winter-collection/", "title": "The Winter Edit | West Elm"},
+    {"path": "/products/hyde-dining-chair-h12159/", "title": "Hyde Dining Chair – Solid Wood, Durable | West Elm"},
+    {"path": "/account/login.html", "title": "Your Account | West Elm"}
+  ],
+  "stylesheets": [
+    "https://www.westelm.com/.static/dist/css/global/we/global-we-486d7fda434f11c2ad3eb0e98c1067c705836808.css",
+    "https://www.westelm.com/.static/dist/css/content/we/content-we-534fcc0714be69e51163ae92750dfff97dbcb28c.css"
+  ],
+  "theme": "light only. html has no data-theme or dark class. No dark surface was shown on the public pages.",
+  "body": {
+    "color": "rgb(33, 33, 33)",
+    "fontFamily": "\"GT Eesti Text\", Helvetica, Arial, sans-serif",
+    "fontSize": "12px",
+    "fontWeight": "300",
+    "backgroundColor": "rgba(0, 0, 0, 0)"
+  },
+  "computed": {
+    "brandBar": {
+      "selector": "header section (cross-brand strip)",
+      "backgroundColor": "rgb(244, 244, 244)",
+      "height": "32px",
+      "color": "rgb(33, 33, 33)"
+    },
+    "brandSelected": {
+      "selector": "li.sub-brand.selected",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(33, 33, 33)",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "letterSpacing": "0.24px",
+      "lineHeight": "20px",
+      "padding": "0px 6px 0px 20px"
+    },
+    "sisterBrand": {
+      "selector": "cross-brand link (Pottery Barn)",
+      "color": "rgb(100, 100, 100)",
+      "fontSize": "10px",
+      "fontWeight": "300",
+      "letterSpacing": "0.3px",
+      "lineHeight": "13px"
+    },
+    "utilityLink": {
+      "selector": "header a ACCOUNT",
+      "color": "rgb(33, 33, 33)",
+      "fontSize": "9px",
+      "fontWeight": "375",
+      "letterSpacing": "0.72px",
+      "lineHeight": "11.7px",
+      "textTransform": "uppercase"
+    },
+    "secondaryNavLink": {
+      "selector": "#nav-secondary-container a (Room Inspiration)",
+      "color": "rgb(100, 100, 100)",
+      "fontSize": "12px",
+      "fontWeight": "300",
+      "letterSpacing": "0.36px",
+      "lineHeight": "18.2px"
+    },
+    "categoryNav": {
+      "selector": ".nav-menu > li > a (NEW)",
+      "color": "rgb(33, 33, 33)",
+      "fontSize": "10px",
+      "fontWeight": "300",
+      "letterSpacing": "0.4px",
+      "lineHeight": "40px",
+      "height": "40px",
+      "textTransform": "uppercase",
+      "textDecorationLine": "none"
+    },
+    "categoryNavRule": {
+      "selector": "nav under the utility row",
+      "borderTop": "1px solid rgb(217, 217, 217)",
+      "padding": "0px 20px"
+    },
+    "searchInput": {
+      "selector": "header input[type=search]",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(33, 33, 33)",
+      "border": "1px solid rgb(200, 200, 200)",
+      "borderRadius": "0px",
+      "fontSize": "14px",
+      "fontWeight": "300",
+      "letterSpacing": "0.42px",
+      "lineHeight": "18.2px",
+      "padding": "6px 35px 6px 16px",
+      "height": "36px",
+      "width": "300px"
+    },
+    "searchSubmit": {
+      "selector": "header search submit",
+      "backgroundColor": "rgb(77, 77, 77)",
+      "border": "1px solid rgb(200, 200, 200)",
+      "width": "36px",
+      "height": "36px",
+      "borderRadius": "0px"
+    },
+    "heroTitle": {
+      "selector": "#content-app h1 (The Winter Edit), also collection h1",
+      "fontFamily": "Sanomat, Georgia, Times, serif",
+      "fontSize": "48px",
+      "fontWeight": "300",
+      "lineHeight": "60px",
+      "letterSpacing": "0.96px",
+      "color": "rgb(33, 33, 33)"
+    },
+    "heroCta": {
+      "selector": "a containing SHOP NEW ARRIVALS",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(33, 33, 33)",
+      "border": "1px solid rgb(255, 255, 255)",
+      "borderRadius": "0px",
+      "fontSize": "14px",
+      "fontWeight": "375",
+      "letterSpacing": "1.4px",
+      "lineHeight": "16.8px",
+      "padding": "12px 24px",
+      "height": "43px",
+      "textTransform": "uppercase"
+    },
+    "sectionTitle": {
+      "selector": "homepage h4 (Delivered in 1–4 Weeks)",
+      "fontFamily": "Sanomat",
+      "fontSize": "28px",
+      "fontWeight": "300",
+      "color": "rgb(33, 33, 33)"
+    },
+    "serviceTitle": {
+      "selector": "homepage h4 (Key Rewards)",
+      "fontFamily": "Sanomat",
+      "fontSize": "20px",
+      "fontWeight": "300",
+      "color": "rgb(33, 33, 33)"
+    },
+    "familyTitle": {
+      "selector": "homepage h4 (Discover Even More…)",
+      "fontFamily": "Sanomat",
+      "fontSize": "36px",
+      "fontWeight": "300",
+      "lineHeight": "about 61px box",
+      "color": "rgb(33, 33, 33)"
+    },
+    "promoBar": {
+      "selector": ".parsys_column.bg-bloedworst-5b0819",
+      "backgroundColor": "rgb(91, 8, 25)",
+      "height": "54px",
+      "linkColor": "rgb(255, 255, 255)",
+      "linkFontSize": "10px",
+      "linkFontWeight": "375",
+      "linkLetterSpacing": "1px",
+      "linkTextTransform": "uppercase",
+      "stylesheet": ".bg-bloedworst-5b0819{background-color:#5b0819}"
+    },
+    "productName": {
+      "selector": ".product-name",
+      "color": "rgb(33, 33, 33)",
+      "fontSize": "16px",
+      "fontWeight": "300",
+      "lineHeight": "20.8px",
+      "letterSpacing": "0.48px",
+      "padding": "0px 0px 8px"
+    },
+    "productPrice": {
+      "selector": ".currency / .amount on a grid card",
+      "color": "rgb(33, 33, 33)",
+      "fontSize": "14px",
+      "fontWeight": "300",
+      "letterSpacing": "0.42px"
+    },
+    "flagNew": {
+      "selector": ".flagInner inside .flag-text.flag-newcore",
+      "color": "rgb(33, 33, 33)",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "letterSpacing": "1.2px",
+      "text": "NEW"
+    },
+    "gridItem": {
+      "selector": ".grid-item",
+      "padding": "5px",
+      "width": "370px",
+      "image": {"width": "360px", "height": "359px", "borderRadius": "0px", "objectFit": "fill"}
+    },
+    "filterButton": {
+      "selector": "button.more-filters-button",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "border": "1px solid rgb(33, 33, 33)",
+      "borderRadius": "0px",
+      "fontFamily": "GT-Eesti",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "letterSpacing": "0.5px",
+      "height": "36px",
+      "padding": "0px 12px"
+    },
+    "productTitle": {
+      "selector": "h1.heading-title-pip",
+      "fontFamily": "Sanomat",
+      "fontSize": "32px",
+      "fontWeight": "300",
+      "lineHeight": "40px",
+      "letterSpacing": "0.64px",
+      "color": "rgb(33, 33, 33)"
+    },
+    "saleLabel": {
+      "selector": ".our-price",
+      "color": "rgb(175, 26, 49)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "letterSpacing": "1px",
+      "lineHeight": "14px",
+      "textTransform": "uppercase",
+      "padding": "0px 0px 4px"
+    },
+    "salePrice": {
+      "selector": ".amount on the product page sale price",
+      "color": "rgb(175, 26, 49)",
+      "fontSize": "24px",
+      "fontWeight": "300",
+      "lineHeight": "28px",
+      "letterSpacing": "0.72px"
+    },
+    "comparePrice": {
+      "selector": ".suggested-price",
+      "color": "rgb(33, 33, 33)",
+      "fontSize": "16px",
+      "fontWeight": "300",
+      "letterSpacing": "0.72px",
+      "textDecorationLine": "line-through",
+      "padding": "0px 0px 0px 8px"
+    },
+    "addToCart": {
+      "selector": "button.btn-conversion",
+      "backgroundColor": "rgb(175, 26, 49)",
+      "color": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(175, 26, 49)",
+      "borderRadius": "0px",
+      "fontSize": "14px",
+      "fontWeight": "300",
+      "letterSpacing": "1.4px",
+      "lineHeight": "18.2px",
+      "padding": "8px",
+      "height": "52px",
+      "width": "452px",
+      "textTransform": "uppercase",
+      "stylesheet": ".design-platform .btn-conversion{background-color:#af1a31;border-color:#af1a31;border-radius:0;border-width:1px;color:#fff;font-size:.875rem;font-weight:300;letter-spacing:…}",
+      "hover": "stylesheet .design-platform .btn-conversion:hover{background-color:#7a0000;border-color:#af1a31;color:#fff}",
+      "disabled": "stylesheet .design-platform .btn-conversion:disabled{background-color:#d48c8c;border-color:#d48c…}"
+    },
+    "attributeLabel": {
+      "selector": "product page div whose text is Fabric and Color",
+      "color": "rgb(33, 33, 33)",
+      "fontSize": "18px",
+      "fontWeight": "300",
+      "letterSpacing": "0.48px"
+    },
+    "swatchThumb": {
+      "selector": ".thumb-swatch img",
+      "width": "132px",
+      "height": "132px",
+      "border": "1px solid rgb(217, 217, 217)",
+      "borderRadius": "0px",
+      "alt": "Graphite"
+    },
+    "quantityButton": {
+      "selector": "button.quantity-decrease",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(166, 166, 166)",
+      "border": "1px solid rgb(200, 200, 200)",
+      "borderRadius": "2px 0px 0px 2px",
+      "width": "44px",
+      "height": "44px",
+      "fontSize": "16px"
+    },
+    "quantityInput": {
+      "selector": "quantity input",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(33, 33, 33)",
+      "border": "1px solid rgb(200, 200, 200)",
+      "width": "44px",
+      "height": "44px",
+      "fontSize": "14px",
+      "borderRadius": "0px"
+    },
+    "select": {
+      "selector": "product page select (Fabric)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(33, 33, 33)",
+      "border": "1px solid rgb(118, 118, 118)",
+      "borderRadius": "0px",
+      "height": "40px",
+      "fontSize": "14px",
+      "letterSpacing": "0.42px",
+      "padding": "8px"
+    },
+    "accordion": {
+      "selector": "button Details",
+      "color": "rgb(33, 33, 33)",
+      "fontSize": "16px",
+      "fontWeight": "300",
+      "letterSpacing": "0.48px",
+      "lineHeight": "20.8px",
+      "height": "69px",
+      "backgroundColor": "rgba(0, 0, 0, 0)"
+    },
+    "footer": {
+      "selector": "footer",
+      "backgroundColor": "rgb(244, 244, 244)",
+      "color": "rgb(33, 33, 33)",
+      "fontSize": "12px",
+      "fontWeight": "300",
+      "letterSpacing": "0.36px",
+      "lineHeight": "18px",
+      "padding": "0px 20px 20px"
+    },
+    "footerHeading": {
+      "selector": "footer h3",
+      "fontSize": "12px",
+      "fontWeight": "300",
+      "letterSpacing": "1.2px",
+      "textTransform": "uppercase",
+      "color": "rgb(33, 33, 33)"
+    },
+    "footerLink": {
+      "selector": "footer a (Contact Us)",
+      "color": "rgb(100, 100, 100)",
+      "fontSize": "12px",
+      "fontWeight": "300",
+      "letterSpacing": "0.36px",
+      "textDecorationLine": "none"
+    },
+    "emailOverlay": {
+      "selector": "dialog.modal_component on first homepage load",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "boxShadow": "rgba(0, 0, 0, 0.16) 0px 0px 11px 0px",
+      "borderRadius": "0px",
+      "width": "726px",
+      "scrim": "div.shader background rgba(0, 0, 0, 0.4)",
+      "padding": "60px 83px on .email-campaign-wrapper",
+      "title": {
+        "selector": "h4 inside the overlay",
+        "text": "Find out first: New arrivals, sales & more to your inbox",
+        "fontFamily": "Sanomat, Georgia, Times, serif",
+        "fontSize": "36px",
+        "fontWeight": "300",
+        "lineHeight": "45px",
+        "letterSpacing": "0.72px",
+        "color": "rgb(33, 33, 33)"
+      },
+      "body": {
+        "fontSize": "18px",
+        "lineHeight": "23.4px",
+        "letterSpacing": "0.54px",
+        "fontWeight": "300",
+        "color": "rgb(0, 0, 0)"
+      },
+      "emailField": {
+        "selector": "input.emailField",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(54, 54, 54)",
+        "border": "1px solid rgb(33, 33, 33)",
+        "borderRadius": "0px",
+        "height": "56px",
+        "padding": "0px 16px",
+        "fontSize": "14px",
+        "width": "419px"
+      },
+      "primary": {
+        "selector": "button.btn-primary SIGN UP NOW",
+        "backgroundColor": "rgb(33, 33, 33)",
+        "color": "rgb(255, 255, 255)",
+        "border": "1px solid rgb(33, 33, 33)",
+        "borderRadius": "0px",
+        "height": "42px",
+        "padding": "8px 16px",
+        "fontSize": "14px",
+        "fontWeight": "300",
+        "letterSpacing": "1.4px",
+        "textTransform": "uppercase"
+      },
+      "quaternary": {
+        "selector": "button.btn-quaternary NO THANKS",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(33, 33, 33)",
+        "height": "42px",
+        "fontSize": "14px",
+        "letterSpacing": "1.4px",
+        "textTransform": "uppercase",
+        "borderRadius": "0px"
+      }
+    },
+    "loginEmail": {
+      "selector": "/account/login.html email input",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(33, 33, 33)",
+      "border": "1px solid rgb(33, 33, 33)",
+      "borderRadius": "0px",
+      "height": "59px",
+      "padding": "28px 16px 8px",
+      "fontSize": "16px",
+      "letterSpacing": "0.48px",
+      "width": "768px"
+    },
+    "loginLabel": {
+      "selector": "label Enter Email",
+      "color": "rgb(102, 102, 102)",
+      "fontSize": "16px",
+      "fontWeight": "300",
+      "letterSpacing": "0.48px"
+    },
+    "loginSubmit": {
+      "selector": "button.btn-primary CONTINUE WITH EMAIL",
+      "backgroundColor": "rgb(33, 33, 33)",
+      "color": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(33, 33, 33)",
+      "borderRadius": "0px",
+      "height": "42px",
+      "padding": "8px",
+      "fontSize": "14px",
+      "fontWeight": "300",
+      "letterSpacing": "1.4px",
+      "textTransform": "uppercase"
+    }
+  },
+  "stylesheetRules": {
+    "btnPrimary": ".btn-primary{background-color:#fff;border-color:#212121;border-radius:0;color:#212121;padding:.75rem 2.5rem}",
+    "btnPrimaryHover": ".design-platform .btn-primary:hover{background-color:#858585;border-color:#858585;color:#fff} (a collection-card variant uses #565458)",
+    "btnSecondary": ".btn-secondary{color:#212121;border-color:#212121;background-color:rgba(0,0,0,0);border-radius:0}",
+    "btnConversion": "background #af1a31, hover #7a0000, disabled #d48c8c, radius 0, font-size .875rem, font-weight 300",
+    "focusVisible": [
+      "outline:solid 2px #2563eb",
+      "outline:dotted 1px currentColor",
+      "outline:.125rem solid #1a1a1a"
+    ],
+    "transition": "background-color .5s cubic-bezier(0.4, 0.8, 0.4, 0.8), and transition:all .5s",
+    "reducedMotion": "prefers-reduced-motion did not appear in the global stylesheet (0 matches)",
+    "radius": "border-radius:0 is the repeated authored value. The only non-zero radius measured on a control was the quantity stepper's 2px left corners."
+  },
+  "fonts": {
+    "ui": "GT Eesti Text (weights 300, 375, 400, 500) from westelm.com/netstorage/fonts/design-system/. Proprietary. Fallback Helvetica, Arial, sans-serif.",
+    "display": "Sanomat (weights 300, 400, 500) from the same netstorage path. Fallback Georgia, Times, serif.",
+    "alsoLoaded": "Karla (Google Fonts) and freight-display-pro (Adobe Typekit) are declared on the homepage. They were not the computed family of any measured heading, nav link, button, price or field.",
+    "filterFace": "button.more-filters-button computed font-family GT-Eesti (the older shop face), not GT Eesti Text."
+  },
+  "notEntered": [
+    "Did not submit the email overlay (it also asks for a mobile number).",
+    "Did not add to cart, open checkout, or enter a card.",
+    "Did not submit the account email form or continue with Apple.",
+    "Did not choose a store, enter a zip, or open favorites behind an account."
+  ]
+}

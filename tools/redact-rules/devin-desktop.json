@@ -3,6 +3,13 @@
     {"name": "Settings > Connections: the linked Slack account's address",
      "files": ["screenshots/*/settings-connections.png"],
      "size": [[2880, 1800]],
-     "rects": [[1140, 880, 1440, 940, "rows"]]}
+     "rects": [[1140, 880, 1440, 940, "rows"]]},
+    {"name": "Notifications panel: the two access-request rows' requester usernames and initial avatars (other people)",
+     "files": ["screenshots/*/notifications.png"],
+     "size": [[2880, 1800]],
+     "rects": [[630, 182, 678, 230, "rows"],
+               [688, 230, 755, 264, "rows"],
+               [630, 366, 678, 414, "rows"],
+               [688, 410, 788, 452, "rows"]]}
   ]
 }

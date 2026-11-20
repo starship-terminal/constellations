@@ -1,0 +1,188 @@
+{
+  "captured": "2026-11-19",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1169,
+      "height": 731,
+      "scale": 1
+    }
+  },
+  "note": "Live T3 preview tab. Screenshot frames failed ('The browser is not producing screenshot frames'), so no PNG was saved. Values are computed styles and declared custom properties.",
+  "pages": {
+    "https://rive.app/": {
+      "theme": "dark marketing (Framer). prefers-color-scheme was dark. body tokens flip some values under that media query.",
+      "bodyBackground": "rgb(0, 0, 0)",
+      "framerTokensOnBody": {
+        "--token-1cbd7960-7f2e-4f29-b1d4-3d91cd8ebd36": {
+          "light": "#aaa"
+        },
+        "--token-1e1b0c01-3afb-4f52-884c-dd87b6f3f02e": {
+          "light": "#171717"
+        },
+        "--token-20a4dcd8-6161-4334-a12f-4459c5a78913": {
+          "light": "#0d0d0c"
+        },
+        "--token-4bc907cf-0ec8-4967-8973-9af027b6efeb": {
+          "light": "#000",
+          "dark": "#fff"
+        },
+        "--token-4e7c69f6-f476-4e8e-93a5-c61fc6947430": {
+          "light": "#555",
+          "dark": "#bbb"
+        },
+        "--token-54614138-4b91-4557-a780-3470c199f600": {
+          "light": "#ffa41c"
+        },
+        "--token-571bda9b-8e69-4213-95fb-416c4c675f74": {
+          "light": "#000"
+        },
+        "--token-635223de-b637-4ffa-b704-2034ba9ec369": {
+          "light": "#0c0c0c"
+        },
+        "--token-67615b29-3199-4222-a6b8-ae47c4407d71": {
+          "light": "#121212"
+        },
+        "--token-75acc5c3-4fc7-4da4-90f3-9be85e4b5893": {
+          "light": "#f30058"
+        },
+        "--token-7ef6dc17-a7ae-4e2d-a24d-69315105cab3": {
+          "light": "#71ff19"
+        },
+        "--token-86ae4b96-3efe-494a-9017-a49e6bc2738d": {
+          "light": "#ffa41c"
+        },
+        "--token-8d4002ad-6c6c-4555-859d-70ecbe360b00": {
+          "light": "#222"
+        },
+        "--token-b0402e74-e1d0-4ce5-8e93-52c31493861e": {
+          "light": "#ff483c"
+        },
+        "--token-b0653460-7eb3-4b6c-a21c-a27d9436b029": {
+          "light": "#3084ff"
+        },
+        "--token-b5648487-7126-41b0-9b9e-3f6068c422b6": {
+          "light": "#f2f0f0",
+          "dark": "#f2f0f0"
+        },
+        "--token-c3dfa815-35ac-4c58-9eba-a814549f9617": {
+          "light": "#181818"
+        },
+        "--token-c4bc4c3c-cbb3-49b1-b5a6-cf8d87e00e69": {
+          "light": "#666",
+          "dark": "#999"
+        },
+        "--token-c99e19d0-c303-4d9c-be83-14338c373acd": {
+          "light": "#fff",
+          "dark": "#000"
+        },
+        "--token-cd6ba710-2745-41bd-a4bf-b282d3bcf927": {
+          "light": "#222"
+        },
+        "--token-d10bb52c-9409-4bc4-b798-1b73d3195b1e": {
+          "light": "#333",
+          "dark": "#fff"
+        },
+        "--token-db0d4e85-12b2-426f-893b-65375c084c5e": {
+          "light": "#222",
+          "dark": "#f1f1f1"
+        },
+        "--token-e4e2ddf5-2582-4a83-aaad-75cf1a15072d": {
+          "light": "#0000001a",
+          "dark": "#ffffff26"
+        },
+        "--token-eda745b2-f80b-42b9-84c2-c64be53f805c": {
+          "light": "#a1a1aa"
+        },
+        "--token-f03fb86e-906a-4c75-821b-587006042a1c": {
+          "light": "#19f2ff"
+        },
+        "--token-f5fde02c-046c-45fe-9816-79aeb7b07132": {
+          "light": "#1d1d1d"
+        },
+        "--token-fdb9edb8-2dbb-4ebd-9b7d-f36fe240f522": {
+          "light": "#000"
+        }
+      }
+    },
+    "https://rive.app/login/": {
+      "title": "Rive - Log in",
+      "shell": "site-refresh",
+      "rootColorTokens": {
+        "--color-amber": "#f6c566",
+        "--color-blue": "#33a7ff",
+        "--color-divider": "#323232",
+        "--color-field": "#1d1d1d",
+        "--color-green": "#4cbe9c",
+        "--color-red": "#ff3b58",
+        "--color-text-default": "#888888",
+        "--color-text-disabled": "#444444",
+        "--color-text-light": "#f1f1f1",
+        "--color-text-value": "#cccccc"
+      },
+      "siteRefresh": {
+        "--s-accent": "#3084ff",
+        "--s-accent-hover": "#5a9dff",
+        "--s-active": "#2a2a2a",
+        "--s-bg": "#000000",
+        "--s-border": "rgba(255,255,255,0.09)",
+        "--s-border-strong": "rgba(255,255,255,0.15)",
+        "--s-border-subtle": "rgba(255,255,255,0.06)",
+        "--s-card": "#141414",
+        "--s-focus": "0 0 0 2px #000000, 0 0 0 4px #ffa41c",
+        "--s-font-body": "\"Inter\", system-ui, sans-serif",
+        "--s-font-display": "\"Orbitron\", \"Inter\", system-ui, sans-serif",
+        "--s-font-mono": "\"JetBrains Mono\", ui-monospace, monospace",
+        "--s-hairline": "rgba(255,255,255,0.08)",
+        "--s-header-h": "64px",
+        "--s-highlight": "#ffa41c",
+        "--s-label": "#8f8f8f",
+        "--s-radius": "2px",
+        "--s-text": "#ffffff",
+        "--s-text-faint": "#999999",
+        "--s-text-muted": "#aaaaaa",
+        "--s-text-secondary": "#e0e0e0"
+      },
+      "loginPanelOverride": {
+        "--s-accent": "#1f6fe5",
+        "--s-accent-hover": "#1a5bc4",
+        "--s-bg": "#ffffff",
+        "--s-border": "rgba(0,0,0,0.2)",
+        "--s-border-strong": "rgba(0,0,0,0.2)",
+        "--s-card": "#ffffff",
+        "--s-danger": "#d42a1f",
+        "--s-focus": "0 0 0 2px #ffffff, 0 0 0 4px var(--s-highlight)",
+        "--s-hairline": "rgba(0,0,0,0.1)",
+        "--s-highlight": "#b86e00",
+        "--s-text": "#000000",
+        "--s-text-faint": "#666666",
+        "--s-text-muted": "#555555"
+      }
+    },
+    "https://rive.app/docs/getting-started/introduction": {
+      "host": "Mintlify",
+      "htmlBackground": "rgb(14, 12, 11)",
+      "resolved": {
+        "--primary": "255 164 28",
+        "--background-dark": "14 12 11",
+        "--background-light": "255 255 255",
+        "--gray-50": "250 247 243",
+        "--gray-100": "245 243 238",
+        "--gray-200": "230 227 223",
+        "--gray-300": "213 211 206",
+        "--gray-400": "166 163 159",
+        "--gray-500": "119 116 112",
+        "--gray-600": "87 85 80",
+        "--gray-700": "70 67 63",
+        "--gray-800": "45 42 38",
+        "--gray-900": "30 27 23",
+        "--gray-950": "17 15 11",
+        "--font-inter": "Inter",
+        "--font-family-headings-custom": "Tomorrow Placeholder, system-ui",
+        "--font-paper-mono": "Paper Mono, ui-monospace"
+      }
+    }
+  }
+}

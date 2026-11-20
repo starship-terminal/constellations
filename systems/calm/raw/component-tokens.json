@@ -1,0 +1,1506 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. calm.com compiles its styled-components theme into literals, so the product's own pages declare no --* token layer to alias; the only declared layers the captured surfaces carry are third-party: Zendesk Garden's --zd-* set on the /faq/web help center (emitted under core.zd) and WordPress presets on health.calm.com (raw only). Both the light marketing set and the dark app-shell set are built from measured computed styles (raw/components-computed.json).",
+ "core": {
+  "font": {
+   "family": {
+    "body": {
+     "value": "Figtree, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-sub default (raw/components-computed.json)",
+     "description": "The Figtree stack on marketing body text."
+    },
+    "display": {
+     "value": "Figtree, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-title default (raw/components-computed.json)",
+     "description": "The Figtree display stack on the hero headline."
+    },
+    "app": {
+     "value": "Figtree, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of rail-item default (raw/components-computed.json)",
+     "description": "The Figtree stack inside the dark app shell."
+    },
+    "health": {
+     "value": "Figtree, Helvetica, Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of h-hero default (raw/components-computed.json)",
+     "description": "The stack the WordPress B2B surface serves."
+    }
+   },
+   "size": {
+    "display": {
+     "type": "dimension",
+     "value": "49.5px",
+     "source": "computed fontSize of hero-title default (raw/components-computed.json)",
+     "description": "The marketing display size (Calm your mind.)."
+    },
+    "display-mobile": {
+     "type": "dimension",
+     "value": "24px",
+     "source": "computed fontSize of m-hero default (raw/components-computed.json)",
+     "description": "The display size at 390px."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "36px",
+     "source": "computed fontSize of section-h2 default (raw/components-computed.json)",
+     "description": "The marketing section-heading size."
+    },
+    "lede": {
+     "type": "dimension",
+     "value": "22.5px",
+     "source": "computed fontSize of hero-sub default (raw/components-computed.json)",
+     "description": "The hero lede size."
+    },
+    "body": {
+     "type": "dimension",
+     "value": "18px",
+     "source": "computed fontSize of header default (raw/components-computed.json)",
+     "description": "The page base size."
+    },
+    "nav": {
+     "type": "dimension",
+     "value": "18px",
+     "source": "computed fontSize of nav-link default (raw/components-computed.json)",
+     "description": "Nav link / button label size."
+    },
+    "meta": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of footer-link default (raw/components-computed.json)",
+     "description": "Footer-link text."
+    },
+    "app-section": {
+     "type": "dimension",
+     "value": "31.5px",
+     "source": "computed fontSize of med-title default (raw/components-computed.json)",
+     "description": "The dark shell's section title."
+    },
+    "app-nav": {
+     "type": "dimension",
+     "value": "18px",
+     "source": "computed fontSize of rail-item default (raw/components-computed.json)",
+     "description": "The rail item label."
+    },
+    "app-tab": {
+     "type": "dimension",
+     "value": "18px",
+     "source": "computed fontSize of tab default (raw/components-computed.json)",
+     "description": "The category pill text."
+    },
+    "app-meta": {
+     "type": "dimension",
+     "value": "18px",
+     "source": "computed fontSize of see-all default (raw/components-computed.json)",
+     "description": "The See-All / card-meta size."
+    },
+    "health-display": {
+     "type": "dimension",
+     "value": "56px",
+     "source": "computed fontSize of h-hero default (raw/components-computed.json)",
+     "description": "The B2B hero size."
+    }
+   },
+   "lineHeight": {
+    "display": {
+     "type": "dimension",
+     "value": "74.25px",
+     "source": "computed lineHeight of hero-title default (raw/components-computed.json)",
+     "description": "Display leading."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "60px",
+     "source": "computed lineHeight of section-h2 default (raw/components-computed.json)",
+     "description": "Heading leading."
+    }
+   },
+   "weight": {
+    "display": {
+     "type": "fontWeight",
+     "value": "700",
+     "source": "computed fontWeight of hero-title default (raw/components-computed.json)",
+     "description": "The display weight."
+    },
+    "nav": {
+     "type": "fontWeight",
+     "value": "700",
+     "source": "computed fontWeight of nav-link default (raw/components-computed.json)",
+     "description": "Nav link weight."
+    },
+    "cta": {
+     "type": "fontWeight",
+     "value": "700",
+     "source": "computed fontWeight of nav-cta default (raw/components-computed.json)",
+     "description": "The pill label weight."
+    }
+   }
+  },
+  "color": {
+   "neutral": {
+    "ink": {
+     "value": "#1a3e6f",
+     "type": "color",
+     "source": "computed color of section-h2 default (raw/components-computed.json)",
+     "description": "The deep-navy ink on marketing headings."
+    },
+    "muted": {
+     "value": "rgba(0, 0, 0, 0.8)",
+     "type": "color",
+     "source": "computed color of hero-sub default (raw/components-computed.json)",
+     "description": "The muted black of the hero sub-copy and secondary text."
+    },
+    "paper": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed paint of nav-cta default (raw/components-computed.json)",
+     "description": "The white of the header pill and the auth cards."
+    },
+    "on-paper": {
+     "value": "#383838",
+     "type": "color",
+     "source": "computed color of nav-cta default (raw/components-computed.json)",
+     "description": "The navy label inside the white pills."
+    },
+    "field": {
+     "value": "#f7f7f7",
+     "type": "color",
+     "source": "computed paint of cookie-banner default (raw/components-computed.json)",
+     "description": "The field the consent bottom sheet paints."
+    },
+    "link": {
+     "value": "#000000",
+     "type": "color",
+     "source": "computed color of learn-more default (raw/components-computed.json)",
+     "description": "The near-black text of the section cards and inline links."
+    },
+    "hairline": {
+     "value": "#aaaaaa",
+     "type": "color",
+     "source": "computed borderTopColor of login-social-btn default (raw/components-computed.json)",
+     "description": "The hairline on the outline social buttons."
+    },
+    "footer-panel": {
+     "value": "#1b2250",
+     "type": "color",
+     "source": "computed paint of footer default (raw/components-computed.json)",
+     "description": "The deep-navy footer panel at the bottom of the light page."
+    },
+    "on-footer": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed color of footer-link default (raw/components-computed.json)",
+     "description": "The white links on the navy footer panel."
+    },
+    "scrim": {
+     "value": [
+      {
+       "color": "#176293",
+       "position": 0.0
+      },
+      {
+       "color": "rgba(23, 98, 147, 0.337)",
+       "position": 0.71
+      },
+      {
+       "color": "rgba(23, 98, 147, 0)",
+       "position": 1.0
+      }
+     ],
+     "type": "gradient",
+     "angle": null,
+     "source": "computed backgroundImage of header default (raw/components-computed.json)",
+     "description": "The navy scrim the header paints over the hero photograph so the white nav stays legible."
+    }
+   },
+   "brand": {
+    "blue": {
+     "value": "#2477aa",
+     "type": "color",
+     "source": "first stop of the painted linear-gradient on the Sign-up-today pill / logo tile (raw/components-computed.json)",
+     "description": "The calm-blue gradient start."
+    },
+    "violet": {
+     "value": "#6461e0",
+     "type": "color",
+     "source": "last stop of the painted linear-gradient on the Sign-up-today pill / logo tile (raw/components-computed.json)",
+     "description": "The violet gradient end."
+    },
+    "cta-ink": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed color of signup-button default (raw/components-computed.json)",
+     "description": "The white text on the gradient pill."
+    },
+    "hero-ink": {
+     "value": "#1a3e6f",
+     "type": "color",
+     "source": "computed color of hero-title default (raw/components-computed.json)",
+     "description": "The navy the hero headline paints over the photograph."
+    },
+    "menu": {
+     "value": [
+      {
+       "color": "#60b4e7",
+       "position": 0.0
+      },
+      {
+       "color": "#6461e0",
+       "position": 1.0
+      }
+     ],
+     "type": "gradient",
+     "angle": null,
+     "source": "computed backgroundImage of m-menu-open default (raw/components-computed.json)",
+     "description": "The lighter calm-blue to violet ramp the mobile menu paints."
+    }
+   },
+   "app": {
+    "scene": {
+     "value": [
+      {
+       "color": "#156494",
+       "position": 0.0
+      },
+      {
+       "color": "#2f2f7e",
+       "position": 1.0
+      }
+     ],
+     "type": "gradient",
+     "angle": null,
+     "source": "computed backgroundImage of the live SceneGradient div, persisted from the standalone probe (raw/scene-probe.json)",
+     "description": "The scene gradient the /app/* preview shell paints behind everything."
+    },
+    "canvas": {
+     "value": "#2f2f7e",
+     "type": "color",
+     "source": "deep stop of the painted scene gradient (raw/scene-probe.json)",
+     "description": "The deep end of the scene gradient the rail and content sit over."
+    },
+    "rail": {
+     "value": "rgba(0, 0, 0, 0.3)",
+     "type": "color",
+     "source": "computed backgroundColor of rail default (raw/components-computed.json)",
+     "description": "The left rail fill (black at 30% over the scene gradient)."
+    },
+    "text": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed textStyle-color of rail-item default (raw/components-computed.json)",
+     "description": "The near-white shell text."
+    },
+    "card-scrim": {
+     "value": "rgba(72, 72, 72, 0.4)",
+     "type": "color",
+     "source": "computed paint of content-card default (raw/components-computed.json)",
+     "description": "The artwork tile's overlay scrim."
+    },
+    "pill": {
+     "value": "rgba(0, 0, 0, 0.3)",
+     "type": "color",
+     "source": "computed backgroundColor of tab default (raw/components-computed.json)",
+     "description": "The unselected category pill field."
+    },
+    "pill-text": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed color of tab default (raw/components-computed.json)",
+     "description": "The unselected tab's label."
+    },
+    "active": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed backgroundColor of tab-active default (raw/components-computed.json)",
+     "description": "The selected white category pill."
+    },
+    "active-ink": {
+     "value": "#002152",
+     "type": "color",
+     "source": "computed color of tab-active default (raw/components-computed.json)",
+     "description": "The dark label on the selected pill."
+    },
+    "raised": {
+     "value": "rgba(255, 255, 255, 0.1)",
+     "type": "color",
+     "source": "computed backgroundColor of d-login default (raw/components-computed.json)",
+     "description": "The raised dark Login pill on the shell top bar."
+    },
+    "upsell": {
+     "value": "rgba(255, 255, 255, 0.1)",
+     "type": "color",
+     "source": "computed paint of upsell default (raw/components-computed.json)",
+     "description": "The upsell bar's painted field."
+    },
+    "bar": {
+     "value": [
+      {
+       "color": "#f1f5fe",
+       "position": 0.0789
+      },
+      {
+       "color": "#c7def8",
+       "position": 0.33
+      },
+      {
+       "color": "#d9ecf6",
+       "position": 0.625
+      },
+      {
+       "color": "#f1f5fe",
+       "position": 1.0
+      }
+     ],
+     "type": "gradient",
+     "source": "computed backgroundImage of signup-bar default (raw/components-computed.json)",
+     "angle": "113.79deg",
+     "description": "The light-blue gradient the bottom signup bar paints."
+    },
+    "icon-ramp": {
+     "value": [
+      {
+       "color": "#75f0f0",
+       "position": 0.0
+      },
+      {
+       "color": "#7575f0",
+       "position": 1.0
+      }
+     ],
+     "type": "gradient",
+     "angle": "135deg",
+     "source": "computed backgroundImage of the TimeIconWrapper inside upsell default (raw/components-computed.json)",
+     "description": "The cyan-to-violet gradient the clock icon inside the upsell banner paints."
+    }
+   }
+  },
+  "radius": {
+   "pill": {
+    "value": "100px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)",
+    "description": "The fully-rounded nav/hero pills."
+   },
+   "tab": {
+    "value": "100px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of tab default (raw/components-computed.json)",
+    "description": "The category-pill radius."
+   },
+   "tile": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "measured borderRadius of the imagewrapper layer painted inside content-card default (raw/components-computed.json)",
+    "description": "The content-tile artwork radius."
+   },
+   "rail-item": {
+    "value": "0px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of rail-item default (raw/components-computed.json)",
+    "description": "The rail-item radius."
+   },
+   "card": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of login-dialog default (raw/components-computed.json)",
+    "description": "The auth-card radius."
+   },
+   "badge": {
+    "value": "999px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of card-badge default (raw/components-computed.json)",
+    "description": "The New-badge radius."
+   },
+   "menu": {
+    "value": "100px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of m-menu-button default (raw/components-computed.json)",
+    "description": "The menu-button radius."
+   }
+  },
+  "measured": {
+   "focus-ring": {
+    "value": {
+     "width": "1px",
+     "style": "auto",
+     "color": "#101010",
+     "offset": "0px"
+    },
+    "type": "other",
+    "source": "computed outline of nav-link focus-visible (raw/components-computed.json)",
+    "description": "The keyboard-focus ring."
+   },
+   "nav-transition": {
+    "value": "0.3s",
+    "type": "duration",
+    "source": "computed transitionDuration of nav-link default (raw/components-computed.json)",
+    "description": "The nav link's transition."
+   },
+   "cta-transition": {
+    "value": "0.3s",
+    "type": "duration",
+    "source": "computed transitionDuration of nav-cta default (raw/components-computed.json)",
+    "description": "The CTA pill's transition."
+   }
+  },
+  "shadow": {
+   "card": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.08)",
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "12px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of h-card default (raw/components-computed.json)",
+    "description": "The B2B card's lift."
+   },
+   "dialog": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.25)",
+      "offsetX": "0px",
+      "offsetY": "8px",
+      "blur": "24px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of login-dialog default (raw/components-computed.json)",
+    "description": "The auth card's elevation over the scrim."
+   },
+   "tile": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.2)",
+      "offsetX": "0px",
+      "offsetY": "4px",
+      "blur": "12px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "measured boxShadow of the ImageWrapper layer painted inside content-card default (raw/components-computed.json)",
+    "description": "The content tile's lift, painted on its artwork layer."
+   }
+  },
+  "zd": {
+   "color": {
+    "black": {
+     "var": "--zd-color-black",
+     "type": "color",
+     "description": "The Zendesk Garden token the /faq/web help center declares."
+    },
+    "blue": {
+     "100": {
+      "var": "--zd-color-blue-100",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "200": {
+      "var": "--zd-color-blue-200",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "300": {
+      "var": "--zd-color-blue-300",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "400": {
+      "var": "--zd-color-blue-400",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "500": {
+      "var": "--zd-color-blue-500",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "600": {
+      "var": "--zd-color-blue-600",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "700": {
+      "var": "--zd-color-blue-700",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "800": {
+      "var": "--zd-color-blue-800",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     }
+    },
+    "chat": {
+     "orange": {
+      "var": "--zd-color-chat-orange",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     }
+    },
+    "connect": {
+     "red": {
+      "var": "--zd-color-connect-red",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     }
+    },
+    "explore": {
+     "blue": {
+      "var": "--zd-color-explore-blue",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     }
+    },
+    "gather": {
+     "pink": {
+      "var": "--zd-color-gather-pink",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     }
+    },
+    "green": {
+     "100": {
+      "var": "--zd-color-green-100",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "200": {
+      "var": "--zd-color-green-200",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "300": {
+      "var": "--zd-color-green-300",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "400": {
+      "var": "--zd-color-green-400",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "500": {
+      "var": "--zd-color-green-500",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "600": {
+      "var": "--zd-color-green-600",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "700": {
+      "var": "--zd-color-green-700",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "800": {
+      "var": "--zd-color-green-800",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     }
+    },
+    "grey": {
+     "100": {
+      "var": "--zd-color-grey-100",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "200": {
+      "var": "--zd-color-grey-200",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "300": {
+      "var": "--zd-color-grey-300",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "400": {
+      "var": "--zd-color-grey-400",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "500": {
+      "var": "--zd-color-grey-500",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "600": {
+      "var": "--zd-color-grey-600",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "700": {
+      "var": "--zd-color-grey-700",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "800": {
+      "var": "--zd-color-grey-800",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     }
+    },
+    "guide": {
+     "pink": {
+      "var": "--zd-color-guide-pink",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     }
+    },
+    "kale": {
+     "100": {
+      "var": "--zd-color-kale-100",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "200": {
+      "var": "--zd-color-kale-200",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "300": {
+      "var": "--zd-color-kale-300",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "400": {
+      "var": "--zd-color-kale-400",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "500": {
+      "var": "--zd-color-kale-500",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "600": {
+      "var": "--zd-color-kale-600",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "700": {
+      "var": "--zd-color-kale-700",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "800": {
+      "var": "--zd-color-kale-800",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     }
+    },
+    "message": {
+     "green": {
+      "var": "--zd-color-message-green",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     }
+    },
+    "red": {
+     "100": {
+      "var": "--zd-color-red-100",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "200": {
+      "var": "--zd-color-red-200",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "300": {
+      "var": "--zd-color-red-300",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "400": {
+      "var": "--zd-color-red-400",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "500": {
+      "var": "--zd-color-red-500",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "600": {
+      "var": "--zd-color-red-600",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "700": {
+      "var": "--zd-color-red-700",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "800": {
+      "var": "--zd-color-red-800",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     }
+    },
+    "secondary": {
+     "azure": {
+      "400": {
+       "var": "--zd-color-secondary-azure-400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "600": {
+       "var": "--zd-color-secondary-azure-600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M400": {
+       "var": "--zd-color-secondary-azure-M400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M600": {
+       "var": "--zd-color-secondary-azure-M600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      }
+     },
+     "crimson": {
+      "400": {
+       "var": "--zd-color-secondary-crimson-400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "600": {
+       "var": "--zd-color-secondary-crimson-600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M400": {
+       "var": "--zd-color-secondary-crimson-M400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M600": {
+       "var": "--zd-color-secondary-crimson-M600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      }
+     },
+     "fuschia": {
+      "400": {
+       "var": "--zd-color-secondary-fuschia-400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "600": {
+       "var": "--zd-color-secondary-fuschia-600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M400": {
+       "var": "--zd-color-secondary-fuschia-M400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M600": {
+       "var": "--zd-color-secondary-fuschia-M600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      }
+     },
+     "lemon": {
+      "400": {
+       "var": "--zd-color-secondary-lemon-400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "600": {
+       "var": "--zd-color-secondary-lemon-600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M400": {
+       "var": "--zd-color-secondary-lemon-M400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M600": {
+       "var": "--zd-color-secondary-lemon-M600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      }
+     },
+     "lime": {
+      "400": {
+       "var": "--zd-color-secondary-lime-400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "600": {
+       "var": "--zd-color-secondary-lime-600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M400": {
+       "var": "--zd-color-secondary-lime-M400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M600": {
+       "var": "--zd-color-secondary-lime-M600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      }
+     },
+     "mint": {
+      "400": {
+       "var": "--zd-color-secondary-mint-400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "600": {
+       "var": "--zd-color-secondary-mint-600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M400": {
+       "var": "--zd-color-secondary-mint-M400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M600": {
+       "var": "--zd-color-secondary-mint-M600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      }
+     },
+     "orange": {
+      "400": {
+       "var": "--zd-color-secondary-orange-400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "600": {
+       "var": "--zd-color-secondary-orange-600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M400": {
+       "var": "--zd-color-secondary-orange-M400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M600": {
+       "var": "--zd-color-secondary-orange-M600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      }
+     },
+     "pink": {
+      "400": {
+       "var": "--zd-color-secondary-pink-400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "600": {
+       "var": "--zd-color-secondary-pink-600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M400": {
+       "var": "--zd-color-secondary-pink-M400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M600": {
+       "var": "--zd-color-secondary-pink-M600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      }
+     },
+     "purple": {
+      "400": {
+       "var": "--zd-color-secondary-purple-400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "600": {
+       "var": "--zd-color-secondary-purple-600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M400": {
+       "var": "--zd-color-secondary-purple-M400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M600": {
+       "var": "--zd-color-secondary-purple-M600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      }
+     },
+     "royal": {
+      "400": {
+       "var": "--zd-color-secondary-royal-400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "600": {
+       "var": "--zd-color-secondary-royal-600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M400": {
+       "var": "--zd-color-secondary-royal-M400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M600": {
+       "var": "--zd-color-secondary-royal-M600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      }
+     },
+     "teal": {
+      "400": {
+       "var": "--zd-color-secondary-teal-400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "600": {
+       "var": "--zd-color-secondary-teal-600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M400": {
+       "var": "--zd-color-secondary-teal-M400",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "M600": {
+       "var": "--zd-color-secondary-teal-M600",
+       "type": "color",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      }
+     }
+    },
+    "sell": {
+     "gold": {
+      "var": "--zd-color-sell-gold",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     }
+    },
+    "support": {
+     "green": {
+      "var": "--zd-color-support-green",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     }
+    },
+    "talk": {
+     "yellow": {
+      "var": "--zd-color-talk-yellow",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     }
+    },
+    "white": {
+     "var": "--zd-color-white",
+     "type": "color",
+     "description": "The Zendesk Garden token the /faq/web help center declares."
+    },
+    "yellow": {
+     "100": {
+      "var": "--zd-color-yellow-100",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "200": {
+      "var": "--zd-color-yellow-200",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "300": {
+      "var": "--zd-color-yellow-300",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "400": {
+      "var": "--zd-color-yellow-400",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "500": {
+      "var": "--zd-color-yellow-500",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "600": {
+      "var": "--zd-color-yellow-600",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "700": {
+      "var": "--zd-color-yellow-700",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "800": {
+      "var": "--zd-color-yellow-800",
+      "type": "color",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     }
+    }
+   },
+   "font": {
+    "family": {
+     "monospace": {
+      "var": "--zd-font-family-monospace",
+      "type": "fontFamily",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "system": {
+      "var": "--zd-font-family-system",
+      "type": "fontFamily",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     }
+    },
+    "size": {
+     "lg": {
+      "default": {
+       "var": "--zd-font-size-lg",
+       "type": "dimension",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "monospace": {
+       "var": "--zd-font-size-lg-monospace",
+       "type": "dimension",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      }
+     },
+     "md": {
+      "default": {
+       "var": "--zd-font-size-md",
+       "type": "dimension",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "monospace": {
+       "var": "--zd-font-size-md-monospace",
+       "type": "dimension",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      }
+     },
+     "sm": {
+      "default": {
+       "var": "--zd-font-size-sm",
+       "type": "dimension",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      },
+      "monospace": {
+       "var": "--zd-font-size-sm-monospace",
+       "type": "dimension",
+       "description": "The Zendesk Garden token the /faq/web help center declares."
+      }
+     },
+     "xl": {
+      "var": "--zd-font-size-xl",
+      "type": "dimension",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "xs": {
+      "var": "--zd-font-size-xs",
+      "type": "dimension",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "xxl": {
+      "var": "--zd-font-size-xxl",
+      "type": "dimension",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "xxxl": {
+      "var": "--zd-font-size-xxxl",
+      "type": "dimension",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     }
+    },
+    "weight": {
+     "black": {
+      "var": "--zd-font-weight-black",
+      "type": "fontWeight",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "bold": {
+      "var": "--zd-font-weight-bold",
+      "type": "fontWeight",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "extrabold": {
+      "var": "--zd-font-weight-extrabold",
+      "type": "fontWeight",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "extralight": {
+      "var": "--zd-font-weight-extralight",
+      "type": "fontWeight",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "heavy": {
+      "var": "--zd-font-weight-heavy",
+      "type": "fontWeight",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "light": {
+      "var": "--zd-font-weight-light",
+      "type": "fontWeight",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "medium": {
+      "var": "--zd-font-weight-medium",
+      "type": "fontWeight",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "regular": {
+      "var": "--zd-font-weight-regular",
+      "type": "fontWeight",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "semibold": {
+      "var": "--zd-font-weight-semibold",
+      "type": "fontWeight",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "thin": {
+      "var": "--zd-font-weight-thin",
+      "type": "fontWeight",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "ultrabold": {
+      "var": "--zd-font-weight-ultrabold",
+      "type": "fontWeight",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "ultralight": {
+      "var": "--zd-font-weight-ultralight",
+      "type": "fontWeight",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     }
+    }
+   },
+   "line": {
+    "height": {
+     "lg": {
+      "var": "--zd-line-height-lg",
+      "type": "dimension",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "md": {
+      "var": "--zd-line-height-md",
+      "type": "dimension",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "sm": {
+      "var": "--zd-line-height-sm",
+      "type": "dimension",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "xl": {
+      "var": "--zd-line-height-xl",
+      "type": "dimension",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "xxl": {
+      "var": "--zd-line-height-xxl",
+      "type": "dimension",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     },
+     "xxxl": {
+      "var": "--zd-line-height-xxxl",
+      "type": "dimension",
+      "description": "The Zendesk Garden token the /faq/web help center declares."
+     }
+    }
+   },
+   "spacing": {
+    "default": {
+     "var": "--zd-spacing",
+     "type": "dimension",
+     "description": "The Zendesk Garden token the /faq/web help center declares."
+    },
+    "lg": {
+     "var": "--zd-spacing-lg",
+     "type": "dimension",
+     "description": "The Zendesk Garden token the /faq/web help center declares."
+    },
+    "sm": {
+     "var": "--zd-spacing-sm",
+     "type": "dimension",
+     "description": "The Zendesk Garden token the /faq/web help center declares."
+    },
+    "xl": {
+     "var": "--zd-spacing-xl",
+     "type": "dimension",
+     "description": "The Zendesk Garden token the /faq/web help center declares."
+    },
+    "xs": {
+     "var": "--zd-spacing-xs",
+     "type": "dimension",
+     "description": "The Zendesk Garden token the /faq/web help center declares."
+    },
+    "xxl": {
+     "var": "--zd-spacing-xxl",
+     "type": "dimension",
+     "description": "The Zendesk Garden token the /faq/web help center declares."
+    },
+    "xxs": {
+     "var": "--zd-spacing-xxs",
+     "type": "dimension",
+     "description": "The Zendesk Garden token the /faq/web help center declares."
+    }
+   }
+  }
+ },
+ "light": {
+  "text": {
+   "primary": {
+    "value": "{color.neutral.ink}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Body and heading ink."
+   },
+   "secondary": {
+    "value": "{color.neutral.muted}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Secondary text: the muted hero sub-copy."
+   },
+   "on": {
+    "action": {
+     "value": "{color.neutral.on-paper}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The navy label inside the white pills."
+    },
+    "footer": {
+     "value": "{color.neutral.on-footer}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The white links on the navy footer panel."
+    }
+   },
+   "hero": {
+    "value": "{color.brand.hero-ink}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The headline colour over hero photography."
+   }
+  },
+  "surface": {
+   "page": {
+    "value": "{color.neutral.paper}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The white marketing field behind the auth cards and page sections."
+   },
+   "field": {
+    "value": "{color.neutral.field}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The consent-sheet field."
+   },
+   "footer": {
+    "value": "{color.neutral.footer-panel}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The navy footer panel closing the light page."
+   }
+  },
+  "action": {
+   "primary": {
+    "value": "{color.neutral.paper}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The white pill actions carry the navy label."
+   },
+   "accent": {
+    "value": "{color.brand.blue}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The brand gradient start used on accent pills."
+   }
+  },
+  "link": {
+   "value": "{color.neutral.link}",
+   "type": "color",
+   "source": "role alias over the core palette",
+   "description": "Inline and section-card links."
+  },
+  "border": {
+   "field": {
+    "value": "{color.neutral.hairline}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The outline-button hairline."
+   }
+  }
+ },
+ "dark": {
+  "text": {
+   "primary": {
+    "value": "{color.app.text}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Shell text."
+   },
+   "pill": {
+    "value": "{color.app.pill-text}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The unselected tab label."
+   },
+   "on": {
+    "active": {
+     "value": "{color.app.active-ink}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The dark label on the selected pill."
+    }
+   }
+  },
+  "surface": {
+   "page": {
+    "value": "{color.app.canvas}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The app-preview canvas."
+   },
+   "rail": {
+    "value": "{color.app.rail}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The left rail fill."
+   },
+   "pill": {
+    "value": "{color.app.pill}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The unselected category pill."
+   },
+   "active": {
+    "value": "{color.app.active}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The selected white pill."
+   },
+   "raised": {
+    "value": "{color.app.raised}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The raised dark Login pill."
+   }
+  },
+  "action": {
+   "primary": {
+    "value": "{color.app.text}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The white Try-Calm-for-Free pill on the dark top bar."
+   }
+  }
+ },
+ "component": {
+  "control": {
+   "height": {
+    "type": "dimension",
+    "value": "56px",
+    "source": "computed height of nav-cta default (raw/components-computed.json)",
+    "description": "The header pill height."
+   }
+  },
+  "hero-cta": {
+   "height": {
+    "type": "dimension",
+    "value": "58px",
+    "source": "computed height of hero-cta default (raw/components-computed.json)",
+    "description": "The hero action height."
+   }
+  },
+  "tab": {
+   "height": {
+    "type": "dimension",
+    "value": "26px",
+    "source": "computed height of tab default (raw/components-computed.json)",
+    "description": "A category pill's height."
+   }
+  },
+  "card": {
+   "radius": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "computed borderTopLeftRadius of login-dialog default (raw/components-computed.json)",
+    "description": "The auth-card corner radius."
+   }
+  },
+  "tile": {
+   "radius": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "measured borderRadius of the imagewrapper layer painted inside content-card default (raw/components-computed.json)",
+    "description": "A content tile's artwork corner radius."
+   }
+  },
+  "rail": {
+   "width": {
+    "type": "dimension",
+    "value": "240px",
+    "source": "computed width of rail default (raw/components-computed.json)",
+    "description": "The app rail's width."
+   }
+  },
+  "rail-item": {
+   "height": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of rail-item default (raw/components-computed.json)",
+    "description": "A rail item's height."
+   }
+  },
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "100px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The marketing header height."
+   },
+   "height-mobile": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "computed height of m-header default (raw/components-computed.json)",
+    "description": "The marketing header at 390px."
+   }
+  },
+  "banner": {
+   "height": {
+    "type": "dimension",
+    "value": "147px",
+    "source": "computed height of cookie-banner default (raw/components-computed.json)",
+    "description": "The consent bottom-sheet height."
+   }
+  },
+  "signup-bar": {
+   "height": {
+    "type": "dimension",
+    "value": "92px",
+    "source": "computed height of signup-bar default (raw/components-computed.json)",
+    "description": "The bottom signup bar's height."
+   }
+  }
+ }
+}

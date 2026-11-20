@@ -1,0 +1,560 @@
+{
+  "home-components": {
+    "shop": {
+      "text": "Shop",
+      "cls": "nds-btn inline-flx-btn dz_xjzja _2minRfAM _3p27lmat css-vhpoxs ex41m6f0 btn-primary-light ",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(17, 17, 17)",
+      "font": "\"Helvetica Now Text Medium\", Helvetica, Arial, sans-serif",
+      "size": "16px",
+      "weight": "500",
+      "lh": "24px",
+      "radius": "30px",
+      "bw": "0px",
+      "bc": "rgb(17, 17, 17)",
+      "h": 0,
+      "w": 0,
+      "pad": "6px 16px",
+      "shadow": "none",
+      "td": "none"
+    },
+    "search": {
+      "text": "Search Products",
+      "cls": "search-input",
+      "bg": "rgb(245, 245, 245)",
+      "color": "rgb(17, 17, 17)",
+      "font": "\"Helvetica Now Text Medium\", Helvetica, Arial, sans-serif",
+      "size": "16px",
+      "weight": "500",
+      "lh": "24px",
+      "radius": "24px",
+      "bw": "0px",
+      "bc": "rgb(17, 17, 17)",
+      "h": 36,
+      "w": 124,
+      "pad": "7px 0px 9px 2px",
+      "shadow": "none",
+      "td": "none"
+    },
+    "searchBox": {
+      "text": "",
+      "cls": "search-input-container",
+      "bg": "rgb(245, 245, 245)",
+      "color": "rgb(17, 17, 17)",
+      "font": "\"Helvetica Now Text\", Helvetica, Arial, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "lh": "28px",
+      "radius": "24px",
+      "bw": "0px",
+      "bc": "rgb(17, 17, 17)",
+      "h": 36,
+      "w": 168,
+      "pad": "0px",
+      "shadow": "none",
+      "td": "none"
+    },
+    "header": {
+      "text": "New & Featured Men Women Kids NikeSKIMS Sale Gifts SNKRS",
+      "cls": "no-animation nav-css-gpek3",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(17, 17, 17)",
+      "font": "\"Helvetica Now Text\", Helvetica, Arial, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "lh": "28px",
+      "radius": "0px",
+      "bw": "0px",
+      "bc": "rgb(17, 17, 17)",
+      "h": 60,
+      "w": 1440,
+      "pad": "0px",
+      "shadow": "none",
+      "td": "none"
+    },
+    "h1": {
+      "text": "Featured",
+      "cls": "nds-text _2PzKMD0A card css-14baf2u e1yhcai00 appearance-title3 color-primary weight-regular",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(17, 17, 17)",
+      "font": "\"Helvetica Now Display Medium\", Helvetica, Arial, sans-serif",
+      "size": "24px",
+      "weight": "500",
+      "lh": "28.8px",
+      "radius": "0px",
+      "bw": "0px",
+      "bc": "rgb(17, 17, 17)",
+      "h": 29,
+      "w": 1344,
+      "pad": "0px",
+      "shadow": "none",
+      "td": "none"
+    },
+    "card": {
+      "text": "Preview on SNKRS",
+      "cls": "nds-btn inline-flx-btn dz_xjzja _2minRfAM _3p27lmat css-vhpoxs ex41m6f0 btn-primary-light ",
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(17, 17, 17)",
+      "font": "\"Helvetica Now Text Medium\", Helvetica, Arial, sans-serif",
+      "size": "16px",
+      "weight": "500",
+      "lh": "24px",
+      "radius": "30px",
+      "bw": "0px",
+      "bc": "rgb(17, 17, 17)",
+      "h": 36,
+      "w": 173,
+      "pad": "6px 16px",
+      "shadow": "none",
+      "td": "none"
+    },
+    "cardImg": null,
+    "join": {
+      "text": "Join Us",
+      "cls": "interactive-profile-element",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(17, 17, 17)",
+      "font": "\"Helvetica Now Text Medium\", Helvetica, Arial, sans-serif",
+      "size": "16px",
+      "weight": "500",
+      "lh": "28px",
+      "radius": "0px",
+      "bw": "0px",
+      "bc": "rgb(17, 17, 17)",
+      "h": 18,
+      "w": 42,
+      "pad": "0px",
+      "shadow": "none",
+      "td": "none"
+    },
+    "sign": {
+      "text": "Sign In",
+      "cls": "interactive-profile-element profile-link",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(17, 17, 17)",
+      "font": "\"Helvetica Now Text Medium\", Helvetica, Arial, sans-serif",
+      "size": "16px",
+      "weight": "500",
+      "lh": "28px",
+      "radius": "0px",
+      "bw": "0px",
+      "bc": "rgb(17, 17, 17)",
+      "h": 18,
+      "w": 39,
+      "pad": "0px",
+      "shadow": "none",
+      "td": "none"
+    },
+    "promo": {
+      "text": "Shop Now",
+      "cls": "_2trpWJ_I",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(17, 17, 17)",
+      "font": "\"Helvetica Now Text Medium\", Helvetica, Arial, sans-serif",
+      "size": "12px",
+      "weight": "500",
+      "lh": "24px",
+      "radius": "0px",
+      "bw": "0px",
+      "bc": "rgb(17, 17, 17)",
+      "h": 13,
+      "w": 57,
+      "pad": "0px",
+      "shadow": "none",
+      "td": "underline"
+    },
+    "price": null
+  },
+  "plp": {
+    "title": {
+      "text": "Men's Shoes",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(17, 17, 17)",
+      "size": "24px",
+      "weight": "500",
+      "font": "\"Helvetica Now Text Medium\", Helvetica, Arial, sans-serif",
+      "radius": "0px",
+      "h": 31,
+      "w": 144
+    },
+    "card": {
+      "text": "",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(17, 17, 17)",
+      "size": "16px",
+      "weight": "500",
+      "font": "\"Helvetica Now Text Medium\", Helvetica, Arial, sans-serif",
+      "radius": "0px",
+      "h": 348,
+      "w": 348
+    },
+    "filter": {
+      "text": "Hide Filters",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "size": "24px",
+      "weight": "400",
+      "font": "Arial",
+      "radius": "0px",
+      "h": 26,
+      "w": 142
+    },
+    "badge": {
+      "text": "Just In",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(211, 57, 24)",
+      "size": "16px",
+      "weight": "500",
+      "font": "\"Helvetica Now Text Medium\", Helvetica, Arial, sans-serif",
+      "radius": "0px",
+      "h": 24,
+      "w": 50
+    },
+    "n": 23,
+    "href": "https://www.nike.com/sg/t/air-force-1-07-lx-mens-shoes-9BAc6JtU/IV6822-399"
+  },
+  "pdp": {
+    "url": "https://www.nike.com/sg/t/air-force-1-07-lx-mens-shoes-9BAc6JtU/IV6822-399",
+    "h1": {
+      "text": "Nike Air Force 1 '07 LX",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(17, 17, 17)",
+      "size": "20px",
+      "weight": "500",
+      "font": "\"Helvetica Now Display Medium\", Helvetica, Arial, sans-serif",
+      "radius": "0px",
+      "h": 24,
+      "w": 400,
+      "pad": "0px",
+      "bw": "0px",
+      "bc": "rgb(17, 17, 17)",
+      "shadow": "none"
+    },
+    "price": {
+      "text": "S$199",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(17, 17, 17)",
+      "size": "16px",
+      "weight": "500",
+      "font": "\"Helvetica Now Text Medium\", Helvetica, Arial, sans-serif",
+      "radius": "0px",
+      "h": 24,
+      "w": 49,
+      "pad": "0px",
+      "bw": "0px",
+      "bc": "rgb(17, 17, 17)",
+      "shadow": "none"
+    },
+    "add": {
+      "text": "Add to Bag",
+      "bg": "rgb(17, 17, 17)",
+      "color": "rgb(255, 255, 255)",
+      "size": "16px",
+      "weight": "500",
+      "font": "\"Helvetica Now Text Medium\", Helvetica, Arial, sans-serif",
+      "radius": "30px",
+      "h": 60,
+      "w": 400,
+      "pad": "18px 24px",
+      "bw": "0px",
+      "bc": "rgb(255, 255, 255)",
+      "shadow": "none"
+    },
+    "fav": {
+      "text": "Favourite",
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(17, 17, 17)",
+      "size": "16px",
+      "weight": "500",
+      "font": "\"Helvetica Now Text Medium\", Helvetica, Arial, sans-serif",
+      "radius": "30px",
+      "h": 60,
+      "w": 400,
+      "pad": "18px 24px",
+      "bw": "0px",
+      "bc": "rgb(17, 17, 17)",
+      "shadow": "none"
+    },
+    "size": null
+  },
+  "search-focus": {
+    "found": true,
+    "placeholder": "Search",
+    "bg": "rgb(245, 245, 245)",
+    "color": "rgb(17, 17, 17)",
+    "radius": "24px",
+    "outline": "rgb(17, 17, 17) none 0px",
+    "shadow": "none",
+    "size": "16px",
+    "font": "\"Helvetica Now Text Medium\", Helvetica, Arial, sans-serif",
+    "weight": "500",
+    "h": 36,
+    "w": 808,
+    "box": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "radius": "0px",
+      "h": 0,
+      "w": 0,
+      "bw": "0px",
+      "bc": "rgb(17, 17, 17)"
+    }
+  },
+  "menu": {
+    "headerLink": {
+      "x": 571.25,
+      "y": 66,
+      "before": "rgb(17, 17, 17)"
+    },
+    "after": {
+      "color": "rgb(17, 17, 17)",
+      "td": "none",
+      "bg": "rgba(0, 0, 0, 0)",
+      "panel": {
+        "bg": "rgb(255, 255, 255)",
+        "h": 417,
+        "shadow": "none",
+        "text": "Featured New Arrivals Bestsellers ACG Shop All Sale Shoes All Shoes Lifestyle Jordan Running Football Basketball Gym & Training Tennis Skate"
+      }
+    }
+  },
+  "sizes": {
+    "n": 15,
+    "sample": [
+      {
+        "text": "US M 6 / W 7.5",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(158, 158, 160)",
+        "radius": "0px",
+        "bw": "0px",
+        "bc": "rgb(158, 158, 160)",
+        "h": 46,
+        "w": 194,
+        "size": "16px",
+        "weight": "400",
+        "font": "\"Helvetica Now Text\", Helvetica, Arial, sans-serif",
+        "pad": "0px"
+      },
+      {
+        "text": "US M 6.5 / W 8",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(17, 17, 17)",
+        "radius": "0px",
+        "bw": "0px",
+        "bc": "rgb(17, 17, 17)",
+        "h": 46,
+        "w": 194,
+        "size": "16px",
+        "weight": "400",
+        "font": "\"Helvetica Now Text\", Helvetica, Arial, sans-serif",
+        "pad": "0px"
+      },
+      {
+        "text": "US M 7 / W 8.5",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(17, 17, 17)",
+        "radius": "0px",
+        "bw": "0px",
+        "bc": "rgb(17, 17, 17)",
+        "h": 46,
+        "w": 194,
+        "size": "16px",
+        "weight": "400",
+        "font": "\"Helvetica Now Text\", Helvetica, Arial, sans-serif",
+        "pad": "0px"
+      },
+      {
+        "text": "US M 7.5 / W 9",
+        "bg": "rgba(0, 0, 0, 0)",
+        "color": "rgb(158, 158, 160)",
+        "radius": "0px",
+        "bw": "0px",
+        "bc": "rgb(158, 158, 160)",
+        "h": 46,
+        "w": 194,
+        "size": "16px",
+        "weight": "400",
+        "font": "\"Helvetica Now Text\", Helvetica, Arial, sans-serif",
+        "pad": "0px"
+      }
+    ],
+    "disabled": null,
+    "classes": [
+      "u-full-width u-full-height d-sm-flx flx-jc-sm-c flx-ai-sm-c",
+      "u-full-width u-full-height d-sm-flx flx-jc-sm-c flx-ai-sm-c"
+    ]
+  },
+  "size-chain": {
+    "chain": [
+      {
+        "tag": "DIV",
+        "cls": " css-ovr0gm nds-grid-item",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "4px",
+        "bw": "1px",
+        "bc": "rgb(202, 202, 203)",
+        "h": 48,
+        "w": 196,
+        "color": "rgb(17, 17, 17)"
+      },
+      {
+        "tag": "DIV",
+        "cls": "nds-grid pt3-sm pdp-grid-selector-grid  css-fq3zwn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "4px",
+        "bw": "1px",
+        "bc": "rgba(0, 0, 0, 0)",
+        "h": 447,
+        "w": 400,
+        "color": "rgb(17, 17, 17)"
+      },
+      {
+        "tag": "DIV",
+        "cls": "d-sm-flx flx-dir-sm-c flx-dir-lg-cr",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "bw": "0px",
+        "bc": "rgb(17, 17, 17)",
+        "h": 447,
+        "w": 400,
+        "color": "rgb(17, 17, 17)"
+      },
+      {
+        "tag": "FIELDSET",
+        "cls": "pdp-grid-selector ",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "bw": "0px",
+        "bc": "rgb(17, 17, 17)",
+        "h": 471,
+        "w": 400,
+        "color": "rgb(17, 17, 17)"
+      },
+      {
+        "tag": "DIV",
+        "cls": "size-selector-wrapper mt5-sm mb8-sm",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "bw": "0px",
+        "bc": "rgb(17, 17, 17)",
+        "h": 471,
+        "w": 400,
+        "color": "rgb(17, 17, 17)"
+      }
+    ],
+    "dchain": [
+      {
+        "tag": "DIV",
+        "cls": " disabled css-ovr0gm nds-grid-item",
+        "bg": "rgb(245, 245, 245)",
+        "radius": "4px",
+        "bw": "1px",
+        "bc": "rgb(202, 202, 203)",
+        "color": "rgb(158, 158, 160)"
+      },
+      {
+        "tag": "DIV",
+        "cls": "nds-grid pt3-sm pdp-grid-selector-grid  css-fq3zwn",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "4px",
+        "bw": "1px",
+        "bc": "rgba(0, 0, 0, 0)",
+        "color": "rgb(17, 17, 17)"
+      },
+      {
+        "tag": "DIV",
+        "cls": "d-sm-flx flx-dir-sm-c flx-dir-lg-cr",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "bw": "0px",
+        "bc": "rgb(17, 17, 17)",
+        "color": "rgb(17, 17, 17)"
+      },
+      {
+        "tag": "FIELDSET",
+        "cls": "pdp-grid-selector ",
+        "bg": "rgba(0, 0, 0, 0)",
+        "radius": "0px",
+        "bw": "0px",
+        "bc": "rgb(17, 17, 17)",
+        "color": "rgb(17, 17, 17)"
+      }
+    ]
+  },
+  "size-selected": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(17, 17, 17)",
+    "bw": "0px",
+    "bc": "rgb(17, 17, 17)",
+    "radius": "0px",
+    "aria": null
+  },
+  "add-hover": {
+    "bg": "rgb(112, 112, 114)",
+    "color": "rgb(255, 255, 255)",
+    "shadow": "none"
+  },
+  "fav": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(17, 17, 17)",
+    "radius": "30px",
+    "bw": "0px",
+    "bc": "rgb(17, 17, 17)",
+    "bs": "none",
+    "h": 60,
+    "pad": "18px 24px"
+  },
+  "mobile": {
+    "vw": 390,
+    "headerH": 60,
+    "headerBg": "rgb(255, 255, 255)",
+    "menu": {
+      "label": "menu",
+      "h": 36
+    }
+  },
+  "help": {
+    "title": "Nike Customer Service. Nike SG",
+    "h1": "Festive Season Delivery"
+  },
+  "stores": {
+    "title": "Find Your Nearest Nike Store. Nike.com SG",
+    "h1": "Find a Nike Store",
+    "text": "Skip to main content\n\nFind a Store\n\nHelp\n\nJoin Us\n\nSign In\n\nNew & Featured\nMen\nWomen\nKids\nNikeSKIMS\nSale\nGifts\nSNKRS\n\nFind a Nike Store\nSearch Location\n\n15 Stores Near You\n\nFilter\n"
+  },
+  "help-field": {
+    "sub": {
+      "color": "rgb(112, 112, 114)",
+      "size": "16px",
+      "weight": "400"
+    },
+    "help": {
+      "placeholder": "Search",
+      "h": 36,
+      "radius": "24px",
+      "bg": "rgb(245, 245, 245)",
+      "bw": "0px",
+      "bc": "rgb(17, 17, 17)",
+      "size": "16px",
+      "box": {
+        "radius": "24px",
+        "bw": "0px",
+        "bc": "rgb(17, 17, 17)",
+        "h": 36,
+        "bg": "rgb(245, 245, 245)"
+      }
+    }
+  },
+  "motion-scan": {
+    "sheets": 257,
+    "blocked": 3,
+    "reduceRules": 9,
+    "samples": [
+      "screen and (prefers-reduced-motion: reduce), (update: slow) :: @media screen and (prefers-reduced-motion: reduce), (update: slow) {\n  * { animation-duration: 0s !important; animation-iteration-count: 1 !",
+      "(prefers-reduced-motion: reduce) :: @media (prefers-reduced-motion: reduce) {\n  .css-av9b0z { transition: none; }\n}",
+      "screen and (prefers-reduced-motion: reduce), (update: slow) :: @media screen and (prefers-reduced-motion: reduce), (update: slow) {\n  .glitch-effect::before, .glitch-effect::after { content: none; }\n}",
+      "screen and (prefers-reduced-motion: reduce), (update: slow) :: @media screen and (prefers-reduced-motion: reduce), (update: slow) {\n  .nav-shimmer { animation: auto ease 0s 1 normal none running none; ba",
+      "(prefers-reduced-motion: reduce) :: @media (prefers-reduced-motion: reduce) {\n  .css-cp4a7r { animation: auto ease 0s 1 normal none running none; transform: none; }\n  .css-cp4a",
+      "(prefers-reduced-motion: reduce) :: @media (prefers-reduced-motion: reduce) {\n  .css-1yi2h7l { transition: none; }\n}"
+    ]
+  }
+}

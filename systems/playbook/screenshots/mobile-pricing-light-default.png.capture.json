@@ -1,0 +1,23 @@
+{
+  "capturedAt": "2026-11-18T17:48:34.550Z",
+  "requested": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2
+  },
+  "viewport": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0
+    }
+  },
+  "url": "https://www.playbook.com/pricing/",
+  "title": "Pricing — Plans for Creatives, Teams & Enterprise | Playbook",
+  "note": "Headless Playwright. The T3 preview tab loaded this URL with no Cloudflare challenge, then could not produce screenshot frames."
+}

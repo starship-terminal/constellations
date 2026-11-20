@@ -1,0 +1,18 @@
+{
+  "capturedAt": "2026-11-18T19:00:25.020Z",
+  "name": "products-light-default",
+  "url": "https://teenage.engineering/products",
+  "title": "products - teenage engineering",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 1,
+  "vv": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1,
+    "offsetLeft": 0,
+    "offsetTop": 0
+  },
+  "colorScheme": "normal",
+  "scrollH": 26809
+}

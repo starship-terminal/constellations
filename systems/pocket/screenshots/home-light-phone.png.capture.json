@@ -1,0 +1,29 @@
+{
+  "sourceUrl": "https://getpocket.com/home",
+  "captured": "2026-11-19",
+  "title": "Pocket",
+  "theme": "colormode-light",
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "dpr": 2
+  },
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    },
+    "scrollHeight": 3743
+  },
+  "png": {
+    "w": 780,
+    "h": 7486
+  },
+  "note": "Preview browser could not produce screenshot frames. Captured headless with Playwright against the public shutdown page, which loaded without a challenge. Quantized to 256 colours."
+}

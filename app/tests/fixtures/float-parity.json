@@ -1,0 +1,69 @@
+{
+  "generatedBy": "python3 app/scripts/build-float-parity-fixture.py",
+  "json": [
+    {
+      "name": "whole floats stay floats",
+      "text": "[1.0, 0.0, 2.0, -3.0, 100.0, 1.00, 12.50]",
+      "python": "[1.0,0.0,2.0,-3.0,100.0,1.0,12.5]"
+    },
+    {
+      "name": "negative zero",
+      "text": "[-0.0, 0.0]",
+      "python": "[-0.0,0.0]"
+    },
+    {
+      "name": "integers stay integers",
+      "text": "[0, 1, -1, 100, 9007199254740991]",
+      "python": "[0,1,-1,100,9007199254740991]"
+    },
+    {
+      "name": "exponent spellings of whole numbers",
+      "text": "[1e2, 1E+2, 1.0e0, 5e0, -2E1]",
+      "python": "[100.0,100.0,1.0,5.0,-20.0]"
+    },
+    {
+      "name": "plain fractions",
+      "text": "[0.5, 0.25, 0.1, 0.0001, 123.456, 3.14159]",
+      "python": "[0.5,0.25,0.1,0.0001,123.456,3.14159]"
+    },
+    {
+      "name": "small floats switch to an exponent",
+      "text": "[0.00001, 1e-5, 1.5e-7, 0.00001234, 1e-10, -2.5e-05]",
+      "python": "[1e-05,1e-05,1.5e-07,1.234e-05,1e-10,-2.5e-05]"
+    },
+    {
+      "name": "large floats switch to an exponent",
+      "text": "[1e15, 1e16, 1.5e16, 12345678901234567.0, 1e22, 123456789012345.0]",
+      "python": "[1000000000000000.0,1e+16,1.5e+16,1.2345678901234568e+16,1e+22,123456789012345.0]"
+    },
+    {
+      "name": "floats in objects and nesting",
+      "text": "{\"a\": 1.0, \"b\": [0.0, {\"c\": 2.0, \"d\": 0.5}], \"e\": 1}",
+      "python": "{\"a\":1.0,\"b\":[0.0,{\"c\":2.0,\"d\":0.5}],\"e\":1}"
+    },
+    {
+      "name": "strings and other scalars are untouched",
+      "text": "{\"s\": \"1.0\", \"t\": \"café \\u00e9\", \"n\": null, \"b\": [true, false], \"u\": \"\\n\\t\\\"\"}",
+      "python": "{\"s\":\"1.0\",\"t\":\"café é\",\"n\":null,\"b\":[true,false],\"u\":\"\\n\\t\\\"\"}"
+    },
+    {
+      "name": "empty containers",
+      "text": "{\"a\": [], \"b\": {}}",
+      "python": "{\"a\":[],\"b\":{}}"
+    }
+  ],
+  "tokens": {
+    "text": "{\n  \"core\": {\n    \"opacity\": {\"$value\": 1.0, \"$type\": \"number\"},\n    \"lineHeight\": {\"$value\": 1.50, \"$type\": \"number\"},\n    \"weight\": {\"$value\": 600, \"$type\": \"number\"},\n    \"tiny\": {\"$value\": 0.00001, \"$type\": \"number\"},\n    \"alias\": {\"$value\": \"{core.opacity}\", \"$type\": \"number\"},\n    \"ease\": {\"$value\": [0.0, 0.0, 1.0, 1.0], \"$type\": \"cubicBezier\"},\n    \"legacy\": {\"value\": 2.0, \"type\": \"number\"},\n    \"wash\": {\n      \"$value\": {\"colorSpace\": \"srgb\", \"components\": [1.0, 0.5, 0.0], \"alpha\": 1.0},\n      \"$type\": \"color\"\n    },\n    \"half\": {\n      \"$value\": {\"colorSpace\": \"srgb\", \"components\": [0.3, 0.7, 0.5], \"alpha\": 0.3},\n      \"$type\": \"color\"\n    }\n  }\n}\n",
+    "python": {
+      "--opacity": "1.0",
+      "--lineHeight": "1.5",
+      "--weight": "600",
+      "--tiny": "1e-05",
+      "--alias": "1.0",
+      "--ease": "cubic-bezier(0.0, 0.0, 1.0, 1.0)",
+      "--legacy": "2.0",
+      "--wash": "#ff8000",
+      "--half": "#4cb2804c"
+    }
+  }
+}

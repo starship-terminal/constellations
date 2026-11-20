@@ -1,0 +1,5 @@
+{
+  "source": "headless Chromium via Playwright, 2026-11-19",
+  "file": "docs-faq-light-theme-menu.png",
+  "note": "interaction screenshot; viewport 1440x900 dpr 2 unless the name starts with mobile (390x844 dpr 2)"
+}

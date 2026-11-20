@@ -1,0 +1,9 @@
+{
+  "_note": "FlutterFlow: signed-out marketing capture, nothing typed was kept. The emails the OCR finds are the enterprise form's own placeholder (you@company.com) and FlutterFlow's published sales contact (enterprise@flutterflow.io, printed on the page) — product copy, not an account's address; allowed below as whole addresses only.",
+  "ocr": {
+    "email_allow": [
+      "you@company\\.com",
+      "enterprise@flutterflow\\.io"
+    ]
+  }
+}

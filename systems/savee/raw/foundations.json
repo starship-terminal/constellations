@@ -1,0 +1,237 @@
+{
+  "source": "getComputedStyle on savee.com, 2026-11-19, T3 preview tab, viewport 1169x731 at devicePixelRatio 2, visualViewport scale 1",
+  "redirect": "https://savee.it/ redirected to https://savee.com/",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {"width": 1169, "height": 731, "scale": 1}
+  },
+  "themes": {
+    "light": {
+      "htmlClass": "theme-light",
+      "pages": ["https://savee.com/", "https://savee.com/features/", "https://savee.com/upgrade/?source=nav_bar", "https://savee.com/login/"]
+    },
+    "dark": {
+      "htmlClass": "theme-dark",
+      "pages": ["https://savee.com/faq/", "https://savee.com/contact/", "https://savee.com/team/create/"]
+    }
+  },
+  "screenshotFrames": "preview_snapshot returned The browser is not producing screenshot frames, twice. No screenshots were invented.",
+  "colors": {
+    "light": {
+      "page": "#fdfdfd",
+      "pageNote": "html and body background rgb(253, 253, 253), --color-base-white 253,253,253",
+      "shell": "#f3f3f3",
+      "shellNote": "home main child class bg-[#F3F3F3], computed rgb(243, 243, 243). Not a custom property.",
+      "text": "#0a0a0a",
+      "textNote": "h1, footer, primary button face, --color-base-black and --color-white under theme-light",
+      "body": "#404040",
+      "bodyNote": "body color and --color-foreground 64,64,64",
+      "muted": "#a3a3a3",
+      "mutedNote": "--color-muted-foreground 163,163,163. Login lede and placeholder.",
+      "footerLink": "#464646",
+      "footerLinkNote": "footer link color rgb(70, 70, 70), --color-gray-300 under theme-light",
+      "secondaryButton": "#dadada",
+      "secondaryButtonNote": "See plans background rgb(218, 218, 218), --color-accent and --color-secondary",
+      "secondaryButtonText": "#464646",
+      "border": "#dadada",
+      "borderNote": "nav border-border computed rgb(218, 218, 218)",
+      "card": "#e4e4e4",
+      "cardNote": "--color-card and --color-muted 228,228,228. Save tiles.",
+      "popover": "#eeeeee",
+      "ring": "#5f5f5f",
+      "ringNote": "--color-ring 95,95,95",
+      "inputBorder": "#0a0a0a",
+      "socialRing": "#c4c4c4",
+      "brand": "#3e46ff",
+      "brand2": "#6b5eff",
+      "destructive": "#f43f5e",
+      "like": "#f91880",
+      "available": "#15803d",
+      "navScrim": "oklab(0.994042 0.0000453293 0.000019908 / 0.8)",
+      "navScrimNote": "fixed nav scrim bg-background/80 backdrop-blur-xl. Not tokenised as a flat colour."
+    },
+    "dark": {
+      "page": "#0e0e0e",
+      "pageNote": "body background on faq, contact and team, --color-base-page-dark 14,14,14 and --color-black under theme-dark",
+      "text": "#fdfdfd",
+      "textNote": "h1 on contact, Join for free face, --color-white under theme-dark",
+      "heading": "#e5e5e5",
+      "headingNote": "faq h1 color rgb(229, 229, 229)",
+      "body": "#d4d4d4",
+      "bodyNote": "--color-foreground 212,212,212",
+      "muted": "#a3a3a3",
+      "quiet": "#737373",
+      "quietNote": "faq answer lede rgb(115, 115, 115)",
+      "border": "#2f2f2f",
+      "borderNote": "--color-border 47,47,47",
+      "card": "#1e1e1e",
+      "cardNote": "--color-card 30,30,30. Contact fields.",
+      "popover": "#151515",
+      "ring": "#a3a3a3",
+      "focusRing": "#e5e5e5",
+      "focusRingNote": "contact field focus box-shadow rgb(229, 229, 229) 0 0 0 2px",
+      "placeholder": "#404040",
+      "brand": "#3e46ff",
+      "onAccent": "#0e0e0e"
+    },
+    "baseGray": {
+      "50": "#fafafa",
+      "100": "#f5f5f5",
+      "200": "#e5e5e5",
+      "300": "#d4d4d4",
+      "400": "#a3a3a3",
+      "500": "#737373",
+      "600": "#525252",
+      "700": "#404040",
+      "800": "#2f2f2f",
+      "900": "#1e1e1e",
+      "950": "#151515"
+    },
+    "named": {
+      "destructive": "#f43f5e",
+      "like": "#f91880",
+      "available": "#15803d",
+      "brand": "#3e46ff",
+      "brand2": "#6b5eff"
+    }
+  },
+  "type": {
+    "family": "saveeFont, \"saveeFont Fallback\", Savee, sans-serif",
+    "familyShort": "saveeFont, \"saveeFont Fallback\"",
+    "italicFamily": "saveeFontItalic, \"saveeFontItalic Fallback\"",
+    "italicStatus": "unloaded on the home page",
+    "weights": {"regular": 400, "medium": 500, "semibold": 600, "navDark": 550},
+    "roles": {
+      "body": {"size": "16px", "weight": 400, "lineHeight": "24px", "letterSpacing": "normal", "where": "body on home and faq"},
+      "nav": {"size": "16px", "weight": 500, "lineHeight": "22px", "letterSpacing": "-0.16px", "where": "Features, Teams, Pricing on home"},
+      "buttonSm": {"size": "14px", "weight": 500, "lineHeight": "14px", "letterSpacing": "-0.14px", "where": "Join for free in the nav"},
+      "buttonMd": {"size": "16px", "weight": 500, "lineHeight": "16px", "letterSpacing": "-0.16px", "where": "hero Join for free and Continue"},
+      "lede": {"size": "21px", "weight": 400, "lineHeight": "28.875px", "letterSpacing": "-0.63px", "where": "home lede"},
+      "hero": {"size": "77.7385px", "weight": 500, "lineHeight": "77.7385px", "letterSpacing": "-2.72085px", "where": "home h1 at 1169px, clamp(2.85rem, 6.65vw, 8.1rem)"},
+      "section": {"size": "52.605px", "weight": 500, "lineHeight": "55.2352px", "letterSpacing": "-1.31512px", "where": "home h2 at 1169px, clamp(2.25rem, 4.5vw, 4.5rem) leading 1.05"},
+      "featuresHero": {"size": "70.14px", "weight": 500, "lineHeight": "73.647px", "letterSpacing": "-2.4549px", "where": "features h1"},
+      "authTitle": {"size": "35.07px", "weight": 500, "lineHeight": "43.8375px", "letterSpacing": "-0.87675px", "where": "login h1"},
+      "faqTitle": {"size": "60px", "weight": 600, "lineHeight": "60px", "letterSpacing": "-1.5px", "where": "faq and contact h1"},
+      "faqQuestion": {"size": "30px", "weight": 500, "lineHeight": "34px", "letterSpacing": "-1.2px", "where": "faq h3"},
+      "faqAnswer": {"size": "21px", "weight": 500, "lineHeight": "25.2px", "letterSpacing": "-0.63px", "where": "faq answer"},
+      "price": {"size": "48px", "weight": 500, "lineHeight": "48px", "letterSpacing": "-1.2px", "where": "pricing $9"},
+      "field": {"size": "16px", "weight": 400, "lineHeight": "24px", "letterSpacing": "-0.16px", "where": "login email"},
+      "contactField": {"size": "16px", "weight": 500, "lineHeight": "22px", "letterSpacing": "-0.16px", "where": "contact input"},
+      "legal": {"size": "13px", "weight": 400, "lineHeight": "19px", "letterSpacing": "0.13px", "where": "login terms line"},
+      "badge": {"size": "13px", "weight": 500, "where": "Popular badge"},
+      "tooltip": {"size": "11px", "where": "Download Savee for iOS tooltip, opacity 0 at rest"}
+    }
+  },
+  "radius": {
+    "pill": "16777200px",
+    "pillNote": "computed border-radius 1.67772e+07px on every pill button, badge and billing toggle",
+    "tile": "16px",
+    "plan": "24px",
+    "field": "14px",
+    "saveTileAlt": "8px",
+    "tooltip": "8px",
+    "gridCorner": "6px",
+    "scale": {
+      "xs": "0.125rem",
+      "sm": "0.25rem",
+      "md": "0.375rem",
+      "lg": "0.5rem",
+      "xl": "0.75rem",
+      "2xl": "1rem",
+      "3xl": "1.5rem",
+      "4xl": "2rem"
+    }
+  },
+  "spacing": {
+    "unit": "0.25rem",
+    "navHeightToken": "100px",
+    "navHeightRendered": "64px",
+    "pageMargin": "33px",
+    "pageMarginNote": "body --page-margin round(calc(100px / 3), 1px)",
+    "buttonSmPad": "16px 20px",
+    "buttonMdPad": "20px 40px",
+    "socialPad": "14px 32px",
+    "fieldPad": "12px 16px",
+    "planPad": "32px",
+    "badgePad": "4px 10px",
+    "togglePad": "10px 20px",
+    "toggleWrapPad": "4px",
+    "loginFieldPad": "12px 0px"
+  },
+  "elevation": {
+    "planPopular": "rgba(0, 0, 0, 0.25) 0px 25px 50px -12px",
+    "plan": "rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px",
+    "socialRing": "rgb(196, 196, 196) 0px 0px 0px 1.25px",
+    "outlineButton": "rgb(196, 196, 196) 0px 0px 0px 2px inset",
+    "fieldFocusDark": "rgb(229, 229, 229) 0px 0px 0px 2px",
+    "navBlur": "blur(24px)",
+    "dropShadowXl": "0 9px 7px #0000001a"
+  },
+  "motion": {
+    "reducedMotion": false,
+    "prefersColorSchemeDark": true,
+    "htmlClassIgnoredScheme": "theme-light on home while prefers-color-scheme was dark",
+    "durations": {
+      "default": "0.15s",
+      "over": "0.18s",
+      "overLong": "0.3s",
+      "slide": "0.35s"
+    },
+    "easings": {
+      "default": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "inOut": "cubic-bezier(0.3, 0, 0, 1)",
+      "out": "cubic-bezier(0.25, 0.25, 0, 1)",
+      "in": "cubic-bezier(0.875, 0, 0.05, 1)",
+      "outExpo": "cubic-bezier(0.16, 1, 0.3, 1)"
+    },
+    "computedOnTeam": [
+      {"property": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke", "duration": "0.15s", "easing": "cubic-bezier(0.4, 0, 0.2, 1)"},
+      {"property": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke", "duration": "0.18s", "easing": "cubic-bezier(0.25, 0.25, 0, 1)"},
+      {"property": "all", "duration": "0.18s", "easing": "cubic-bezier(0.25, 0.25, 0, 1)"},
+      {"property": "opacity", "duration": "0.18s", "easing": "cubic-bezier(0.4, 0, 0.2, 1)"}
+    ],
+    "animation": {"name": "scroll", "duration": "35s", "timing": "linear", "iteration": "infinite", "where": "team logo strip, class animate-scroll"},
+    "reduceProbe": "Not run. preview_evaluate cannot emulate prefers-reduced-motion. Classes include motion-reduce:transition-none on the nav scrim and the floating player."
+  },
+  "components": {
+    "primaryButtonNav": {"bg": "#0a0a0a", "color": "#fdfdfd", "radius": "pill", "pad": "16px 20px", "height": 46, "size": "14px", "weight": 500, "where": "Join for free, light"},
+    "primaryButtonHero": {"bg": "#0a0a0a", "color": "#fdfdfd", "radius": "pill", "pad": "20px 40px", "height": 56, "size": "16px", "weight": 500, "where": "home hero Join for free"},
+    "secondaryButton": {"bg": "#dadada", "color": "#464646", "radius": "pill", "pad": "20px 40px", "height": 56, "size": "16px", "weight": 400, "where": "See plans"},
+    "loginGhost": {"bg": "transparent", "color": "#404040", "radius": "pill", "pad": "16px 20px", "height": 46, "size": "14px", "weight": 400, "where": "Log in, light"},
+    "social": {"bg": "transparent", "color": "#0a0a0a", "ring": "1.25px #c4c4c4", "radius": "pill", "pad": "14px 32px", "height": 44, "size": "16px", "weight": 400, "where": "Continue with Google and Continue with Apple"},
+    "outline": {"bg": "transparent", "color": "#0a0a0a", "ring": "2px inset #c4c4c4", "radius": "pill", "pad": "14px 32px", "height": 44, "where": "Get Portfolio and Create team"},
+    "primaryDark": {"bg": "#fdfdfd", "color": "#0e0e0e", "radius": "pill", "pad": "16px 20px", "height": 46, "where": "Join for free on faq"},
+    "primaryDarkLg": {"bg": "#fdfdfd", "color": "#0e0e0e", "radius": "pill", "pad": "20px 40px", "height": 56, "where": "Contact us submit and Create your team"},
+    "loginField": {"bg": "transparent", "color": "#0a0a0a", "placeholder": "#a3a3a3", "borderBottom": "1px solid #0a0a0a", "radius": "0px", "pad": "12px 0px", "height": 49, "width": 328, "caret": "#0a0a0a"},
+    "loginContinueEmpty": {"opacity": "0.6", "cursor": "default", "ariaDisabled": "true", "bg": "#0a0a0a", "color": "#fdfdfd"},
+    "loginContinueFilled": {"opacity": "1", "cursor": "pointer", "ariaDisabled": "false"},
+    "contactField": {"bg": "#1e1e1e", "color": "#a3a3a3", "placeholder": "#404040", "radius": "14px", "pad": "12px 16px", "height": 46, "width": 320, "weight": 500},
+    "contactTextarea": {"bg": "#1e1e1e", "radius": "14px", "pad": "12px 16px", "height": 128, "width": 320},
+    "contactFocus": {"shadow": "rgb(229, 229, 229) 0px 0px 0px 2px"},
+    "tile": {"bg": "#e4e4e4", "radius": "16px", "height": 320, "width": 256, "where": "features and home Save tiles"},
+    "plan": {"bg": "#fdfdfd", "radius": "24px", "pad": "32px", "width": 352, "height": 482},
+    "badge": {"bg": "#0a0a0a", "color": "#fdfdfd", "radius": "pill", "pad": "4px 10px", "size": "13px", "weight": 500, "text": "Popular"},
+    "billingToggle": {"wrapBg": "#e4e4e4", "wrapRadius": "pill", "wrapPad": "4px", "wrapHeight": 48, "selectedBg": "#323232", "selectedColor": "#e4e4e4", "idleColor": "#5f5f5f", "height": 40, "pad": "10px 20px", "size": "14px", "weight": 500},
+    "nav": {"height": 64, "position": "fixed", "scrim": "oklab white 80% plus blur(24px)", "border": "1px #dadada bottom"},
+    "tooltip": {"bg": "#fdfdfd", "color": "#0e0e0e", "radius": "8px", "pad": "4px 8px", "size": "11px", "opacity": "0", "where": "team page, at rest"}
+  },
+  "pages": {
+    "home": "https://savee.com/",
+    "features": "https://savee.com/features/",
+    "pricing": "https://savee.com/upgrade/?source=nav_bar",
+    "login": "https://savee.com/login/",
+    "faq": "https://savee.com/faq/",
+    "contact": "https://savee.com/contact/",
+    "team": "https://savee.com/team/ redirected to https://savee.com/team/create/"
+  },
+  "notEntered": [
+    "Continue on login was not clicked. The email field was filled with kaichen@agentmail.to, then cleared.",
+    "Continue with Google was not clicked.",
+    "Continue with Apple was not clicked.",
+    "Get Pro, Get Portfolio and Create team were not clicked. No card was entered.",
+    "Contact us was not submitted. The form includes a Google reCAPTCHA iframe.",
+    "No phone number, government ID, wallet or KYC field appeared on the pages opened."
+  ]
+}

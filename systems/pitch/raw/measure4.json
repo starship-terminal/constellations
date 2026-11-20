@@ -1,0 +1,289 @@
+{
+  "pricing": [
+    {
+      "t": "FREE",
+      "color": "rgb(40, 15, 98)",
+      "font": "\"Space Mono\"",
+      "size": "14px",
+      "weight": "700",
+      "lh": "19.6px",
+      "ls": "0.5px",
+      "bg": {
+        "name": null,
+        "w": 287,
+        "h": 107,
+        "bg": "rgb(235, 227, 254)",
+        "radius": "32px 32px 0px 0px",
+        "pad": "16px 16px 64px",
+        "border": ""
+      }
+    },
+    {
+      "t": "$0",
+      "color": "rgb(12, 2, 28)",
+      "font": "\"Mark Pro Bold\"",
+      "size": "40px",
+      "weight": "700",
+      "lh": "44px",
+      "ls": "-0.96px",
+      "bg": {
+        "name": null,
+        "w": 287,
+        "h": 479,
+        "bg": "rgb(255, 255, 255)",
+        "radius": "32px",
+        "pad": "16px 16px 32px",
+        "border": "1px solid rgb(235, 227, 254)"
+      }
+    },
+    {
+      "t": "forever",
+      "color": "rgb(83, 24, 235)",
+      "font": "\"Mark Pro Bold\"",
+      "size": "24px",
+      "weight": "700",
+      "lh": "28.8px",
+      "ls": "-0.56px",
+      "bg": {
+        "name": null,
+        "w": 287,
+        "h": 479,
+        "bg": "rgb(255, 255, 255)",
+        "radius": "32px",
+        "pad": "16px 16px 32px",
+        "border": "1px solid rgb(235, 227, 254)"
+      }
+    },
+    {
+      "t": "PLUS",
+      "color": "rgb(12, 2, 28)",
+      "font": "\"Space Mono\"",
+      "size": "14px",
+      "weight": "700",
+      "lh": "19.6px",
+      "ls": "0.5px",
+      "bg": {
+        "name": null,
+        "w": 287,
+        "h": 107,
+        "bg": "rgb(198, 165, 255)",
+        "radius": "32px 32px 0px 0px",
+        "pad": "16px 16px 64px",
+        "border": ""
+      }
+    },
+    {
+      "t": "$10",
+      "color": "rgb(12, 2, 28)",
+      "font": "\"Mark Pro Bold\"",
+      "size": "40px",
+      "weight": "700",
+      "lh": "44px",
+      "ls": "-0.96px",
+      "bg": {
+        "name": null,
+        "w": 287,
+        "h": 479,
+        "bg": "rgb(255, 255, 255)",
+        "radius": "32px",
+        "pad": "16px 16px 32px",
+        "border": "1px solid rgb(235, 227, 254)"
+      }
+    },
+    {
+      "t": "month",
+      "color": "rgb(83, 24, 235)",
+      "font": "\"Mark Pro Bold\"",
+      "size": "24px",
+      "weight": "700",
+      "lh": "28.8px",
+      "ls": "-0.56px",
+      "bg": {
+        "name": null,
+        "w": 287,
+        "h": 479,
+        "bg": "rgb(255, 255, 255)",
+        "radius": "32px",
+        "pad": "16px 16px 32px",
+        "border": "1px solid rgb(235, 227, 254)"
+      }
+    },
+    {
+      "t": "TEAM",
+      "color": "rgb(255, 255, 255)",
+      "font": "\"Space Mono\"",
+      "size": "14px",
+      "weight": "700",
+      "lh": "19.6px",
+      "ls": "0.5px",
+      "bg": {
+        "name": null,
+        "w": 287,
+        "h": 107,
+        "bg": "rgb(83, 24, 235)",
+        "radius": "32px 32px 0px 0px",
+        "pad": "16px 16px 64px",
+        "border": ""
+      }
+    },
+    {
+      "t": "$15",
+      "color": "rgb(12, 2, 28)",
+      "font": "\"Mark Pro Bold\"",
+      "size": "40px",
+      "weight": "700",
+      "lh": "44px",
+      "ls": "-0.96px",
+      "bg": {
+        "name": null,
+        "w": 287,
+        "h": 479,
+        "bg": "rgb(255, 255, 255)",
+        "radius": "32px",
+        "pad": "16px 16px 32px",
+        "border": "1px solid rgb(235, 227, 254)"
+      }
+    },
+    {
+      "t": "BUSINESS",
+      "color": "rgb(255, 255, 255)",
+      "font": "\"Space Mono\"",
+      "size": "14px",
+      "weight": "700",
+      "lh": "19.6px",
+      "ls": "0.5px",
+      "bg": {
+        "name": null,
+        "w": 287,
+        "h": 107,
+        "bg": "rgb(40, 15, 98)",
+        "radius": "32px 32px 0px 0px",
+        "pad": "16px 16px 64px",
+        "border": ""
+      }
+    },
+    {
+      "t": "$20",
+      "color": "rgb(12, 2, 28)",
+      "font": "\"Mark Pro Bold\"",
+      "size": "40px",
+      "weight": "700",
+      "lh": "44px",
+      "ls": "-0.96px",
+      "bg": {
+        "name": null,
+        "w": 287,
+        "h": 479,
+        "bg": "rgb(255, 255, 255)",
+        "radius": "32px",
+        "pad": "16px 16px 32px",
+        "border": "1px solid rgb(235, 227, 254)"
+      }
+    }
+  ],
+  "chips": {
+    "all": {
+      "color": "rgb(63, 66, 80)",
+      "size": "14px",
+      "weight": "400",
+      "walk": [
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "0px",
+          "cls": "",
+          "h": 34
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "0px",
+          "cls": "categories-carousel--items",
+          "h": 34
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "0px",
+          "cls": "categories-carousel--items--container",
+          "h": 34
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "0px",
+          "cls": "categories-carousel--container right-sha",
+          "h": 34
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "0px",
+          "cls": "categories-carousel",
+          "h": 52
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "0px",
+          "cls": "category-filters always-white-background",
+          "h": 52
+        }
+      ],
+      "html": "<div><a data-category-name=\"All\" class=\"pitch-templates-category-filter transparent medium grey-text active button\" href=\"/templates\" aria-current=\"page\">All</a></div>"
+    },
+    "neu": {
+      "color": "rgb(255, 255, 255)",
+      "walk": [
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "30px",
+          "cls": "template-badge",
+          "h": 16
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "0px",
+          "cls": "template-preview-title-container",
+          "h": 17
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "0px",
+          "cls": "template-preview-footer-info",
+          "h": 36
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "0px",
+          "cls": "template-preview-footer",
+          "h": 60
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "0px",
+          "cls": "template-preview",
+          "h": 367
+        },
+        {
+          "bg": "rgba(0, 0, 0, 0)",
+          "radius": "0px",
+          "cls": "platform--templates-grid--template-wrapp",
+          "h": 367
+        }
+      ],
+      "html": "<span class=\"template-badge\">New</span>"
+    }
+  },
+  "login": {
+    "url": "https://auth.pitch.com/login",
+    "title": "Login to Pitch",
+    "rest": {
+      "input": {
+        "border": "1px solid rgba(43, 42, 53, 0.12)",
+        "shadow": "none",
+        "bg": "rgb(255, 255, 255)"
+      },
+      "buttonDisabled": true,
+      "button": {
+        "bg": "rgb(107, 83, 255)",
+        "color": "rgb(255, 255, 255)",
+        "opacity": "0.5"
+      }
+    }
+  }
+}

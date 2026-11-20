@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xbox style guide</title>
+<style>
+:root {
+  --lime: #9bf00b;
+  --green-ink: #054b16;
+  --xbox-green: #107c10;
+  --store-green: #008746;
+  --buy: #484e58;
+  --yellow: #ffd800;
+  --header: #1b1d1b;
+  --page: #ffffff;
+  --footer: #f2f2f2;
+  --muted: #616161;
+  --store: #1a1b1e;
+  --card: #f9f9f9;
+  --segoe: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --display: SegoeProBlack, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+body { margin: 0; font: 16px/24px var(--segoe); color: #000; background: var(--page); }
+header.bar { background: var(--header); color: #fff; height: 54px; display: flex; align-items: center; gap: 16px; padding: 0 24px; font-size: 13px; }
+main { padding: 32px 24px 64px; max-width: 960px; }
+h1 { font: 700 30px/34px var(--segoe); letter-spacing: -0.01em; margin: 0 0 8px; }
+h2 { font: 700 20px/28px var(--segoe); margin: 32px 0 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.swatch { width: 88px; height: 56px; border: 1px solid #e5e5e5; }
+.swatch span { display: block; font-size: 11px; padding: 4px; background: #fff; }
+.cta { display: inline-block; background: var(--lime); color: var(--green-ink); font: 900 15px/19.5px var(--display); padding: 5px 20px 5px 22px; text-decoration: none; border: 1px solid transparent; }
+.cta-light { display: inline-block; color: var(--xbox-green); font: 900 15px/19.5px var(--display); padding: 10px 3px 7px 0; text-decoration: none; }
+.store { background: var(--store); color: #fff; padding: 24px; margin-top: 16px; }
+.gp { background: var(--store-green); color: #fff; font: 600 14px/20px var(--segoe); padding: 12px 20px; border-radius: 4px; display: inline-block; }
+.buy { background: var(--buy); color: #fff; font: 600 14px/20px var(--segoe); padding: 12px 20px; border-radius: 4px; display: inline-block; }
+.badge { background: var(--yellow); color: #000; font: 700 13px/18px var(--segoe); letter-spacing: 0.075em; padding: 0 7px 1px; display: inline-block; }
+.card { width: 176px; background: var(--card); border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,.11), 0 3px 7px rgba(0,0,0,.13); overflow: hidden; color: #3d465a; font-size: 14px; }
+.card .art { height: 176px; background: #2f3032; }
+.card .info { padding: 7px 10px 12px; }
+.card strong { font-weight: 600; }
+footer.note { background: var(--footer); color: var(--muted); font-size: 11px; line-height: 16px; padding: 24px; }
+</style>
+</head>
+<body>
+<header class="bar"><strong>XBOX</strong><span>Game Pass</span><span>Games</span><span>Devices</span></header>
+<main>
+  <h1>Xbox public surfaces</h1>
+  <p>Values from tokens.json. Segoe Pro Black and Bahnschrift are not loaded here, so display type falls back to Segoe UI.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch" style="background:#9bf00b"><span>#9bf00b</span></div>
+    <div class="swatch" style="background:#107c10"><span>#107c10</span></div>
+    <div class="swatch" style="background:#008746"><span>#008746</span></div>
+    <div class="swatch" style="background:#054b16"><span>#054b16</span></div>
+    <div class="swatch" style="background:#ffd800"><span>#ffd800</span></div>
+    <div class="swatch" style="background:#1b1d1b"><span>#1b1d1b</span></div>
+    <div class="swatch" style="background:#1a1b1e"><span>#1a1b1e</span></div>
+    <div class="swatch" style="background:#484e58"><span>#484e58</span></div>
+  </div>
+  <h2>Marketing CTA</h2>
+  <div class="row">
+    <a class="cta" href="#cta">PRE-ORDER NOW</a>
+    <a class="cta-light" href="#cta">EXPLORE MORE</a>
+    <span class="badge">SEASON 1</span>
+  </div>
+  <h2>Store controls</h2>
+  <div class="store">
+    <div style="font: 400 40px/40px Bahnschrift, 'Segoe UI', sans-serif; margin-bottom: 16px;">Halo Infinite</div>
+    <div class="row">
+      <span class="gp">GET GAME PASS</span>
+      <span class="buy">BUY SG$81.90+</span>
+    </div>
+  </div>
+  <h2>Search card</h2>
+  <div class="card"><div class="art"></div><div class="info"><strong>Halo Infinite</strong><div>SG$81.90+</div></div></div>
+</main>
+<footer class="note">Browse · XBOX consoles · XBOX games · XBOX Game Pass</footer>
+</body>
+</html>

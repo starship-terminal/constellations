@@ -1,0 +1,64 @@
+{
+  "status": "partial",
+  "note": "Manifest login-extracted stays not-started in this PR. catalog.json and webapps-manifest.json are deferred. A done review needs every offered item opened; this walk stopped when the preview stopped producing frames and when settings hit an unrecognized-device wall.",
+  "offered": {
+    "nav": {
+      "items": [
+        "My profile",
+        "My purchases",
+        "My collections",
+        "My likes",
+        "Messages",
+        "Notifications",
+        "Shop updates",
+        "Settings"
+      ],
+      "reached": [
+        "My profile",
+        "My purchases"
+      ]
+    },
+    "settings": {
+      "items": [
+        "no settings area: /account/settings redirects to /account/unauthorized-device"
+      ],
+      "reached": []
+    },
+    "create": {
+      "items": [
+        "Add a new product (shop menu, not opened)"
+      ],
+      "reached": []
+    }
+  },
+  "screens": [
+    {
+      "name": "Account menu",
+      "file": "screenshots/signed-in-account-menu-light-desktop.png"
+    },
+    {
+      "name": "My purchases",
+      "file": "screenshots/signed-in-purchases-light-desktop.png"
+    },
+    {
+      "name": "My profile",
+      "file": "screenshots/signed-in-profile-light-desktop.png"
+    }
+  ],
+  "gaps": [
+    "Settings, shop settings, and payouts: /account/settings redirects to /account/unauthorized-device. The page asks this browser to be authorized from an email. That email was not opened, and Send it again was not clicked.",
+    "My collections, My likes, Messages, Notifications, and Shop updates: listed in the account menu. The preview stopped producing screenshot frames after the profile shot, before those pages could be saved.",
+    "Shop menu (Shop profiles, Dashboard, Sales, Products, Marketing tools, Discounts, Add a new product): present in the DOM, never painted. Hover did not open it.",
+    "Phone 390x844: not captured. The three shots are desktop. Measured CSS viewport 1440x900, devicePixelRatio 2, visualViewport 1440x900 scale 1. PNG 2880x1800.",
+    "Purchases is empty (NO PURCHASES FOUND), so a download and a purchase detail were not on screen.",
+    "The unauthorized-device page was read, not screenshotted: frame capture failed on that URL.",
+    "Profile tabs Likes, Collections, and About were on the profile page and were not opened as their own shots."
+  ],
+  "not_submitted": [
+    "no purchase, cart checkout, or membership join",
+    "no product created, published, or added",
+    "no settings, profile, payout, or Dropbox connection saved",
+    "device-authorization email was not requested again and was not opened",
+    "Log out was not clicked"
+  ]
+}

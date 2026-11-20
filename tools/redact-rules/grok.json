@@ -1,0 +1,13 @@
+{
+  "_note": "Rules for systems/grok. Public signed-out capture of docs.x.ai: no surface paints machine-private data — nothing was signed into, typed, searched or submitted. The rate-limits page publishes the product's own sales contact (sales@x.ai) as marketing copy; x.ai is the product's public domain, allowed. The Grok Build and X Subscription pages publish sales/contact addresses on the same domain.",
+  "families": [],
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@x\\.ai$",
+      "sales@x\\.ai",
+      "support@x\\.ai",
+      "@example\\.com$"
+    ]
+  }
+}

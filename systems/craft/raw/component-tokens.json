@@ -1,0 +1,1169 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. copy.ai's public surface is a Webflow site whose small --colors--* declaration (raw/css-vars.json — the brand palette plus the legacy --old-swatches--* set) is var-referenced where it names the brand and neutral values, and measured computed values (raw/components-computed.json) cover the ink/white neutrals, the #693ee0 action purple and its auth-host ramp, the black-button hover-to-purple state move, the hairline borders, the inset shadows, ABC Normal and Inter type, the 4/4.5/5/8/40/48px radii and the 0.1-0.4s control motion. The 'dark' set is the ink banner and the deep-purple card bands the light pages paint, not a user toggle.",
+ "core": {
+  "font": {
+   "family": {
+    "serif": {
+     "value": "UntitledSerifFont, \"UntitledSerifFont Fallback\", apple-system-ui-serif, ui-serif, Georgia, \"serif\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-h1 default (raw/components-computed.json); the @font-face blocks are served same-origin (raw/css-vars.json fonts)",
+     "description": "Untitled Serif (Klim, licensed, not distributed) — every display heading, 400 weight only."
+    },
+    "sans": {
+     "value": "UntitledSansFont, \"UntitledSansFont Fallback\", apple-system, InterFont, \"InterFont Fallback\", \"system-ui\", \"Helvetica Neue\", Helvetica, Arial, \"sans-serif\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of nav-link default (raw/components-computed.json)",
+     "description": "Untitled Sans — all UI text, body and controls."
+    },
+    "mono": {
+     "var": "--default-mono-font-family",
+     "type": "fontFamily",
+     "source": "css-var --default-mono-font-family resolved (raw/css-vars.json)",
+     "description": "Declared mono fallback stack."
+    }
+   },
+   "weight": {
+    "light": {
+     "var": "--font-weight-light",
+     "type": "fontWeight",
+     "source": "css-var --font-weight-light resolved (raw/css-vars.json)",
+     "description": "Declared 300."
+    },
+    "regular": {
+     "var": "--font-weight-normal",
+     "type": "fontWeight",
+     "source": "css-var --font-weight-normal resolved (raw/css-vars.json)",
+     "description": "Declared 400 — body and every display heading."
+    },
+    "medium": {
+     "var": "--font-weight-medium",
+     "type": "fontWeight",
+     "source": "css-var --font-weight-medium resolved (raw/css-vars.json)",
+     "description": "Declared 500 — buttons, nav pills, FAQ rows."
+    },
+    "semibold": {
+     "var": "--font-weight-semibold",
+     "type": "fontWeight",
+     "source": "css-var --font-weight-semibold resolved (raw/css-vars.json)",
+     "description": "Declared 600."
+    },
+    "bold": {
+     "var": "--font-weight-bold",
+     "type": "fontWeight",
+     "source": "css-var --font-weight-bold resolved (raw/css-vars.json)",
+     "description": "Declared 700."
+    },
+    "extrabold": {
+     "var": "--font-weight-extrabold",
+     "type": "fontWeight",
+     "source": "css-var --font-weight-extrabold resolved (raw/css-vars.json)",
+     "description": "Declared 800."
+    }
+   },
+   "size": {
+    "2xl": {
+     "var": "--text-2xl",
+     "type": "fontSize",
+     "source": "css-var --text-2xl resolved (raw/css-vars.json)",
+     "description": "Declared type size 2xl. Declared line-height calc(2 / 1.5)."
+    },
+    "3xl": {
+     "var": "--text-3xl",
+     "type": "fontSize",
+     "source": "css-var --text-3xl resolved (raw/css-vars.json)",
+     "description": "Declared type size 3xl. Declared line-height calc(2.25 / 1.875)."
+    },
+    "4xl": {
+     "var": "--text-4xl",
+     "type": "fontSize",
+     "source": "css-var --text-4xl resolved (raw/css-vars.json)",
+     "description": "Declared type size 4xl. Declared line-height calc(2.5 / 2.25)."
+    },
+    "5xl": {
+     "var": "--text-5xl",
+     "type": "fontSize",
+     "source": "css-var --text-5xl resolved (raw/css-vars.json)",
+     "description": "Declared type size 5xl. Declared line-height 1."
+    },
+    "6xl": {
+     "var": "--text-6xl",
+     "type": "fontSize",
+     "source": "css-var --text-6xl resolved (raw/css-vars.json)",
+     "description": "Declared type size 6xl. Declared line-height 1."
+    },
+    "7xl": {
+     "var": "--text-7xl",
+     "type": "fontSize",
+     "source": "css-var --text-7xl resolved (raw/css-vars.json)",
+     "description": "Declared type size 7xl. Declared line-height 1."
+    },
+    "base": {
+     "var": "--text-base",
+     "type": "fontSize",
+     "source": "css-var --text-base resolved (raw/css-vars.json)",
+     "description": "Declared type size base. Declared line-height calc(1.5 / 1)."
+    },
+    "lg": {
+     "var": "--text-lg",
+     "type": "fontSize",
+     "source": "css-var --text-lg resolved (raw/css-vars.json)",
+     "description": "Declared type size lg. Declared line-height calc(1.75 / 1.125)."
+    },
+    "sm": {
+     "var": "--text-sm",
+     "type": "fontSize",
+     "source": "css-var --text-sm resolved (raw/css-vars.json)",
+     "description": "Declared type size sm. Declared line-height calc(1.25 / .875)."
+    },
+    "xl": {
+     "var": "--text-xl",
+     "type": "fontSize",
+     "source": "css-var --text-xl resolved (raw/css-vars.json)",
+     "description": "Declared type size xl. Declared line-height calc(1.75 / 1.25)."
+    },
+    "xs": {
+     "var": "--text-xs",
+     "type": "fontSize",
+     "source": "css-var --text-xs resolved (raw/css-vars.json)",
+     "description": "Declared type size xs. Declared line-height calc(1 / .75)."
+    },
+    "hero": {
+     "value": "66px",
+     "type": "fontSize",
+     "source": "computed fontSize of hero-h1 default (raw/components-computed.json)",
+     "description": "The home hero's measured 66px serif."
+    },
+    "page-title": {
+     "value": "54px",
+     "type": "fontSize",
+     "source": "computed fontSize of price-h1 default (raw/components-computed.json)",
+     "description": "The 54px serif page headings (pricing, download, imagine)."
+    },
+    "page-title-large": {
+     "value": "70px",
+     "type": "fontSize",
+     "source": "computed fontSize of learn-h1 default (raw/components-computed.json)",
+     "description": "Learn's measured 70px serif."
+    },
+    "price": {
+     "value": "16px",
+     "type": "fontSize",
+     "source": "computed fontSize of plan-price default (raw/components-computed.json)",
+     "description": "The serif price figure on plan cards."
+    },
+    "hero-mobile": {
+     "value": "48px",
+     "type": "fontSize",
+     "source": "computed fontSize of m-hero default (raw/components-computed.json)",
+     "description": "The mobile hero's measured 48px."
+    }
+   }
+  },
+  "color": {
+   "palette": {
+    "amber-100": {
+     "var": "--color-amber-100",
+     "type": "color",
+     "source": "css-var --color-amber-100 resolved (raw/css-vars.json)",
+     "description": "Declared primitive amber-100."
+    },
+    "amber-200": {
+     "var": "--color-amber-200",
+     "type": "color",
+     "source": "css-var --color-amber-200 resolved (raw/css-vars.json)",
+     "description": "Declared primitive amber-200."
+    },
+    "amber-300": {
+     "var": "--color-amber-300",
+     "type": "color",
+     "source": "css-var --color-amber-300 resolved (raw/css-vars.json)",
+     "description": "Declared primitive amber-300."
+    },
+    "amber-400": {
+     "var": "--color-amber-400",
+     "type": "color",
+     "source": "css-var --color-amber-400 resolved (raw/css-vars.json)",
+     "description": "Declared primitive amber-400."
+    },
+    "amber-50": {
+     "var": "--color-amber-50",
+     "type": "color",
+     "source": "css-var --color-amber-50 resolved (raw/css-vars.json)",
+     "description": "Declared primitive amber-50."
+    },
+    "amber-500": {
+     "var": "--color-amber-500",
+     "type": "color",
+     "source": "css-var --color-amber-500 resolved (raw/css-vars.json)",
+     "description": "Declared primitive amber-500."
+    },
+    "amber-700": {
+     "var": "--color-amber-700",
+     "type": "color",
+     "source": "css-var --color-amber-700 resolved (raw/css-vars.json)",
+     "description": "Declared primitive amber-700."
+    },
+    "amber-800": {
+     "var": "--color-amber-800",
+     "type": "color",
+     "source": "css-var --color-amber-800 resolved (raw/css-vars.json)",
+     "description": "Declared primitive amber-800."
+    },
+    "amber-900": {
+     "var": "--color-amber-900",
+     "type": "color",
+     "source": "css-var --color-amber-900 resolved (raw/css-vars.json)",
+     "description": "Declared primitive amber-900."
+    },
+    "beige": {
+     "var": "--color-beige",
+     "type": "color",
+     "source": "css-var --color-beige resolved (raw/css-vars.json)",
+     "description": "Declared primitive beige."
+    },
+    "black": {
+     "var": "--color-black",
+     "type": "color",
+     "source": "css-var --color-black resolved (raw/css-vars.json)",
+     "description": "Declared primitive black."
+    },
+    "black-100": {
+     "var": "--color-black-100",
+     "type": "color",
+     "source": "css-var --color-black-100 resolved (raw/css-vars.json)",
+     "description": "Declared primitive black-100."
+    },
+    "black-200": {
+     "var": "--color-black-200",
+     "type": "color",
+     "source": "css-var --color-black-200 resolved (raw/css-vars.json)",
+     "description": "Declared primitive black-200."
+    },
+    "black-50": {
+     "var": "--color-black-50",
+     "type": "color",
+     "source": "css-var --color-black-50 resolved (raw/css-vars.json)",
+     "description": "Declared primitive black-50."
+    },
+    "black-500": {
+     "var": "--color-black-500",
+     "type": "color",
+     "source": "css-var --color-black-500 resolved (raw/css-vars.json)",
+     "description": "Declared primitive black-500."
+    },
+    "black-900": {
+     "var": "--color-black-900",
+     "type": "color",
+     "source": "css-var --color-black-900 resolved (raw/css-vars.json)",
+     "description": "Declared primitive black-900."
+    },
+    "blue-100": {
+     "var": "--color-blue-100",
+     "type": "color",
+     "source": "css-var --color-blue-100 resolved (raw/css-vars.json)",
+     "description": "Declared primitive blue-100."
+    },
+    "blue-200": {
+     "var": "--color-blue-200",
+     "type": "color",
+     "source": "css-var --color-blue-200 resolved (raw/css-vars.json)",
+     "description": "Declared primitive blue-200."
+    },
+    "blue-300": {
+     "var": "--color-blue-300",
+     "type": "color",
+     "source": "css-var --color-blue-300 resolved (raw/css-vars.json)",
+     "description": "Declared primitive blue-300."
+    },
+    "blue-4": {
+     "var": "--color-blue-4",
+     "type": "color",
+     "source": "css-var --color-blue-4 resolved (raw/css-vars.json)",
+     "description": "Declared primitive blue-4."
+    },
+    "blue-400": {
+     "var": "--color-blue-400",
+     "type": "color",
+     "source": "css-var --color-blue-400 resolved (raw/css-vars.json)",
+     "description": "Declared primitive blue-400."
+    },
+    "blue-50": {
+     "var": "--color-blue-50",
+     "type": "color",
+     "source": "css-var --color-blue-50 resolved (raw/css-vars.json)",
+     "description": "Declared primitive blue-50."
+    },
+    "blue-500": {
+     "var": "--color-blue-500",
+     "type": "color",
+     "source": "css-var --color-blue-500 resolved (raw/css-vars.json)",
+     "description": "Declared primitive blue-500."
+    },
+    "blue-600": {
+     "var": "--color-blue-600",
+     "type": "color",
+     "source": "css-var --color-blue-600 resolved (raw/css-vars.json)",
+     "description": "Declared primitive blue-600."
+    },
+    "blue-700": {
+     "var": "--color-blue-700",
+     "type": "color",
+     "source": "css-var --color-blue-700 resolved (raw/css-vars.json)",
+     "description": "Declared primitive blue-700."
+    },
+    "blue-800": {
+     "var": "--color-blue-800",
+     "type": "color",
+     "source": "css-var --color-blue-800 resolved (raw/css-vars.json)",
+     "description": "Declared primitive blue-800."
+    },
+    "gray-100": {
+     "var": "--color-gray-100",
+     "type": "color",
+     "source": "css-var --color-gray-100 resolved (raw/css-vars.json)",
+     "description": "Declared primitive gray-100."
+    },
+    "gray-200": {
+     "var": "--color-gray-200",
+     "type": "color",
+     "source": "css-var --color-gray-200 resolved (raw/css-vars.json)",
+     "description": "Declared primitive gray-200."
+    },
+    "gray-300": {
+     "var": "--color-gray-300",
+     "type": "color",
+     "source": "css-var --color-gray-300 resolved (raw/css-vars.json)",
+     "description": "Declared primitive gray-300."
+    },
+    "gray-400": {
+     "var": "--color-gray-400",
+     "type": "color",
+     "source": "css-var --color-gray-400 resolved (raw/css-vars.json)",
+     "description": "Declared primitive gray-400."
+    },
+    "gray-50": {
+     "var": "--color-gray-50",
+     "type": "color",
+     "source": "css-var --color-gray-50 resolved (raw/css-vars.json)",
+     "description": "Declared primitive gray-50."
+    },
+    "gray-500": {
+     "var": "--color-gray-500",
+     "type": "color",
+     "source": "css-var --color-gray-500 resolved (raw/css-vars.json)",
+     "description": "Declared primitive gray-500."
+    },
+    "gray-600": {
+     "var": "--color-gray-600",
+     "type": "color",
+     "source": "css-var --color-gray-600 resolved (raw/css-vars.json)",
+     "description": "Declared primitive gray-600."
+    },
+    "gray-700": {
+     "var": "--color-gray-700",
+     "type": "color",
+     "source": "css-var --color-gray-700 resolved (raw/css-vars.json)",
+     "description": "Declared primitive gray-700."
+    },
+    "gray-800": {
+     "var": "--color-gray-800",
+     "type": "color",
+     "source": "css-var --color-gray-800 resolved (raw/css-vars.json)",
+     "description": "Declared primitive gray-800."
+    },
+    "gray-900": {
+     "var": "--color-gray-900",
+     "type": "color",
+     "source": "css-var --color-gray-900 resolved (raw/css-vars.json)",
+     "description": "Declared primitive gray-900."
+    },
+    "green-4": {
+     "var": "--color-green-4",
+     "type": "color",
+     "source": "css-var --color-green-4 resolved (raw/css-vars.json)",
+     "description": "Declared primitive green-4."
+    },
+    "green-400": {
+     "var": "--color-green-400",
+     "type": "color",
+     "source": "css-var --color-green-400 resolved (raw/css-vars.json)",
+     "description": "Declared primitive green-400."
+    },
+    "green-50": {
+     "var": "--color-green-50",
+     "type": "color",
+     "source": "css-var --color-green-50 resolved (raw/css-vars.json)",
+     "description": "Declared primitive green-50."
+    },
+    "green-500": {
+     "var": "--color-green-500",
+     "type": "color",
+     "source": "css-var --color-green-500 resolved (raw/css-vars.json)",
+     "description": "Declared primitive green-500."
+    },
+    "green-600": {
+     "var": "--color-green-600",
+     "type": "color",
+     "source": "css-var --color-green-600 resolved (raw/css-vars.json)",
+     "description": "Declared primitive green-600."
+    },
+    "green-700": {
+     "var": "--color-green-700",
+     "type": "color",
+     "source": "css-var --color-green-700 resolved (raw/css-vars.json)",
+     "description": "Declared primitive green-700."
+    },
+    "neutral-200": {
+     "var": "--color-neutral-200",
+     "type": "color",
+     "source": "css-var --color-neutral-200 resolved (raw/css-vars.json)",
+     "description": "Declared primitive neutral-200."
+    },
+    "neutral-400": {
+     "var": "--color-neutral-400",
+     "type": "color",
+     "source": "css-var --color-neutral-400 resolved (raw/css-vars.json)",
+     "description": "Declared primitive neutral-400."
+    },
+    "neutral-500": {
+     "var": "--color-neutral-500",
+     "type": "color",
+     "source": "css-var --color-neutral-500 resolved (raw/css-vars.json)",
+     "description": "Declared primitive neutral-500."
+    },
+    "neutral-600": {
+     "var": "--color-neutral-600",
+     "type": "color",
+     "source": "css-var --color-neutral-600 resolved (raw/css-vars.json)",
+     "description": "Declared primitive neutral-600."
+    },
+    "neutral-700": {
+     "var": "--color-neutral-700",
+     "type": "color",
+     "source": "css-var --color-neutral-700 resolved (raw/css-vars.json)",
+     "description": "Declared primitive neutral-700."
+    },
+    "neutral-800": {
+     "var": "--color-neutral-800",
+     "type": "color",
+     "source": "css-var --color-neutral-800 resolved (raw/css-vars.json)",
+     "description": "Declared primitive neutral-800."
+    },
+    "neutral-900": {
+     "var": "--color-neutral-900",
+     "type": "color",
+     "source": "css-var --color-neutral-900 resolved (raw/css-vars.json)",
+     "description": "Declared primitive neutral-900."
+    },
+    "orange-100": {
+     "var": "--color-orange-100",
+     "type": "color",
+     "source": "css-var --color-orange-100 resolved (raw/css-vars.json)",
+     "description": "Declared primitive orange-100."
+    },
+    "orange-4": {
+     "var": "--color-orange-4",
+     "type": "color",
+     "source": "css-var --color-orange-4 resolved (raw/css-vars.json)",
+     "description": "Declared primitive orange-4."
+    },
+    "orange-400": {
+     "var": "--color-orange-400",
+     "type": "color",
+     "source": "css-var --color-orange-400 resolved (raw/css-vars.json)",
+     "description": "Declared primitive orange-400."
+    },
+    "orange-500": {
+     "var": "--color-orange-500",
+     "type": "color",
+     "source": "css-var --color-orange-500 resolved (raw/css-vars.json)",
+     "description": "Declared primitive orange-500."
+    },
+    "pink-4": {
+     "var": "--color-pink-4",
+     "type": "color",
+     "source": "css-var --color-pink-4 resolved (raw/css-vars.json)",
+     "description": "Declared primitive pink-4."
+    },
+    "purple-4": {
+     "var": "--color-purple-4",
+     "type": "color",
+     "source": "css-var --color-purple-4 resolved (raw/css-vars.json)",
+     "description": "Declared primitive purple-4."
+    },
+    "purple-500": {
+     "var": "--color-purple-500",
+     "type": "color",
+     "source": "css-var --color-purple-500 resolved (raw/css-vars.json)",
+     "description": "Declared primitive purple-500."
+    },
+    "purple-900": {
+     "var": "--color-purple-900",
+     "type": "color",
+     "source": "css-var --color-purple-900 resolved (raw/css-vars.json)",
+     "description": "Declared primitive purple-900."
+    },
+    "red-100": {
+     "var": "--color-red-100",
+     "type": "color",
+     "source": "css-var --color-red-100 resolved (raw/css-vars.json)",
+     "description": "Declared primitive red-100."
+    },
+    "red-4": {
+     "var": "--color-red-4",
+     "type": "color",
+     "source": "css-var --color-red-4 resolved (raw/css-vars.json)",
+     "description": "Declared primitive red-4."
+    },
+    "red-400": {
+     "var": "--color-red-400",
+     "type": "color",
+     "source": "css-var --color-red-400 resolved (raw/css-vars.json)",
+     "description": "Declared primitive red-400."
+    },
+    "red-50": {
+     "var": "--color-red-50",
+     "type": "color",
+     "source": "css-var --color-red-50 resolved (raw/css-vars.json)",
+     "description": "Declared primitive red-50."
+    },
+    "red-500": {
+     "var": "--color-red-500",
+     "type": "color",
+     "source": "css-var --color-red-500 resolved (raw/css-vars.json)",
+     "description": "Declared primitive red-500."
+    },
+    "red-600": {
+     "var": "--color-red-600",
+     "type": "color",
+     "source": "css-var --color-red-600 resolved (raw/css-vars.json)",
+     "description": "Declared primitive red-600."
+    },
+    "red-700": {
+     "var": "--color-red-700",
+     "type": "color",
+     "source": "css-var --color-red-700 resolved (raw/css-vars.json)",
+     "description": "Declared primitive red-700."
+    },
+    "sky-500": {
+     "var": "--color-sky-500",
+     "type": "color",
+     "source": "css-var --color-sky-500 resolved (raw/css-vars.json)",
+     "description": "Declared primitive sky-500."
+    },
+    "white": {
+     "var": "--color-white",
+     "type": "color",
+     "source": "css-var --color-white resolved (raw/css-vars.json)",
+     "description": "Declared primitive white."
+    },
+    "yellow-100": {
+     "var": "--color-yellow-100",
+     "type": "color",
+     "source": "css-var --color-yellow-100 resolved (raw/css-vars.json)",
+     "description": "Declared primitive yellow-100."
+    },
+    "yellow-200": {
+     "var": "--color-yellow-200",
+     "type": "color",
+     "source": "css-var --color-yellow-200 resolved (raw/css-vars.json)",
+     "description": "Declared primitive yellow-200."
+    },
+    "yellow-300": {
+     "var": "--color-yellow-300",
+     "type": "color",
+     "source": "css-var --color-yellow-300 resolved (raw/css-vars.json)",
+     "description": "Declared primitive yellow-300."
+    },
+    "yellow-4": {
+     "var": "--color-yellow-4",
+     "type": "color",
+     "source": "css-var --color-yellow-4 resolved (raw/css-vars.json)",
+     "description": "Declared primitive yellow-4."
+    },
+    "yellow-50": {
+     "var": "--color-yellow-50",
+     "type": "color",
+     "source": "css-var --color-yellow-50 resolved (raw/css-vars.json)",
+     "description": "Declared primitive yellow-50."
+    },
+    "yellow-600": {
+     "var": "--color-yellow-600",
+     "type": "color",
+     "source": "css-var --color-yellow-600 resolved (raw/css-vars.json)",
+     "description": "Declared primitive yellow-600."
+    },
+    "yellow-700": {
+     "var": "--color-yellow-700",
+     "type": "color",
+     "source": "css-var --color-yellow-700 resolved (raw/css-vars.json)",
+     "description": "Declared primitive yellow-700."
+    },
+    "yellow-900": {
+     "var": "--color-yellow-900",
+     "type": "color",
+     "source": "css-var --color-yellow-900 resolved (raw/css-vars.json)",
+     "description": "Declared primitive yellow-900."
+    },
+    "zinc-200": {
+     "var": "--color-zinc-200",
+     "type": "color",
+     "source": "css-var --color-zinc-200 resolved (raw/css-vars.json)",
+     "description": "Declared primitive zinc-200."
+    },
+    "zinc-300": {
+     "var": "--color-zinc-300",
+     "type": "color",
+     "source": "css-var --color-zinc-300 resolved (raw/css-vars.json)",
+     "description": "Declared primitive zinc-300."
+    }
+   },
+   "brand": {
+    "ink": {
+     "var": "--color-black-900",
+     "type": "color",
+     "source": "css-var --color-black-900 resolved (raw/css-vars.json)",
+     "description": "The #030302 ink — all text, the black CTA fills, the footer."
+    },
+    "black": {
+     "var": "--color-black",
+     "type": "color",
+     "source": "css-var --color-black resolved (raw/css-vars.json)",
+     "description": "Declared black #030302."
+    },
+    "white": {
+     "var": "--color-white",
+     "type": "color",
+     "source": "css-var --color-white resolved (raw/css-vars.json)",
+     "description": "Declared white — cards, popovers, inputs, the nav pill."
+    },
+    "beige": {
+     "var": "--color-beige",
+     "type": "color",
+     "source": "css-var --color-beige resolved (raw/css-vars.json)",
+     "description": "The #fcf9f7 warm page beige (--background)."
+    },
+    "accent": {
+     "var": "--accent",
+     "type": "color",
+     "source": "css-var --accent resolved (raw/css-vars.json)",
+     "description": "The #427e8a teal accent."
+    },
+    "destructive": {
+     "var": "--destructive",
+     "type": "color",
+     "source": "css-var --destructive resolved (raw/css-vars.json)",
+     "description": "The #bb433a destructive red."
+    }
+   },
+   "chart": {
+    "1": {
+     "var": "--chart-1",
+     "type": "color",
+     "source": "css-var --chart-1 resolved (raw/css-vars.json)",
+     "description": "Declared chart colour --chart-1."
+    },
+    "2": {
+     "var": "--chart-2",
+     "type": "color",
+     "source": "css-var --chart-2 resolved (raw/css-vars.json)",
+     "description": "Declared chart colour --chart-2."
+    },
+    "3": {
+     "var": "--chart-3",
+     "type": "color",
+     "source": "css-var --chart-3 resolved (raw/css-vars.json)",
+     "description": "Declared chart colour --chart-3."
+    },
+    "4": {
+     "var": "--chart-4",
+     "type": "color",
+     "source": "css-var --chart-4 resolved (raw/css-vars.json)",
+     "description": "Declared chart colour --chart-4."
+    },
+    "5": {
+     "var": "--chart-5",
+     "type": "color",
+     "source": "css-var --chart-5 resolved (raw/css-vars.json)",
+     "description": "Declared chart colour --chart-5."
+    }
+   }
+  },
+  "radius": {
+   "default": {
+    "var": "--radius",
+    "type": "dimension",
+    "source": "css-var --radius resolved (raw/css-vars.json)",
+    "description": "Declared 10px base radius."
+   },
+   "2xl": {
+    "var": "--radius-2xl",
+    "type": "dimension",
+    "source": "css-var --radius-2xl resolved (raw/css-vars.json)",
+    "description": "Declared 16px — cards, the mobile download pill."
+   },
+   "3xl": {
+    "var": "--radius-3xl",
+    "type": "dimension",
+    "source": "css-var --radius-3xl resolved (raw/css-vars.json)",
+    "description": "Declared 24px — the team card and footer panel."
+   },
+   "4xl": {
+    "var": "--radius-4xl",
+    "type": "dimension",
+    "source": "css-var --radius-4xl resolved (raw/css-vars.json)",
+    "description": "Declared 32px."
+   },
+   "full": {
+    "value": "9999px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of try-cta default (raw/components-computed.json); the reading 3.35544e+07px is the browser's maximum radius, written as the kit's 9999px pill",
+    "description": "rounded-full computes to the CSS maximum — every pill control (CTAs, the billing toggle, platform buttons)."
+   },
+   "nav": {
+    "value": "26px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of header default (raw/components-computed.json)",
+    "description": "The floating nav pill's 26px radius."
+   }
+  },
+  "border": {
+   "hairline": {
+    "width": {
+     "value": "1px",
+     "type": "dimension",
+     "source": "Reconstruction: entered by hand at capture time; --border declares only the colour and no raw reading holds this width (the shadcn convention pairs it with 1px)",
+     "description": "The 9% ink hairline width."
+    }
+   }
+  },
+  "shadow": {
+   "block": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.01)",
+      "offsetX": "0px",
+      "offsetY": "50px",
+      "blur": "40px",
+      "spread": "0px",
+      "inset": false
+     },
+     {
+      "color": "rgba(0, 0, 0, 0.02)",
+      "offsetX": "0px",
+      "offsetY": "50px",
+      "blur": "40px",
+      "spread": "0px",
+      "inset": false
+     },
+     {
+      "color": "rgba(0, 0, 0, 0.05)",
+      "offsetX": "0px",
+      "offsetY": "20px",
+      "blur": "40px",
+      "spread": "0px",
+      "inset": false
+     },
+     {
+      "color": "rgba(0, 0, 0, 0.08)",
+      "offsetX": "0px",
+      "offsetY": "3px",
+      "blur": "10px",
+      "spread": "0px",
+      "inset": false
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of team-card default (raw/components-computed.json); read on the first element carrying .shadow-block, the 1400 x 1546 pricing section, not the TEAM card",
+    "description": "The .shadow-block utility's elevation. The capture read it on the pricing section, not on a card, so where cards paint it needs a recapture."
+   },
+   "drop": {
+    "drop-sm": {
+     "var": "--drop-shadow-sm",
+     "type": "other",
+     "source": "css-var --drop-shadow-sm resolved (raw/css-vars.json)",
+     "description": "Declared 0 1 2 15% drop shadow."
+    },
+    "drop-2xl": {
+     "var": "--drop-shadow-2xl",
+     "type": "other",
+     "source": "css-var --drop-shadow-2xl resolved (raw/css-vars.json)",
+     "description": "Declared 0 25 25 15% drop shadow."
+    }
+   },
+   "focus-ring": {
+    "value": [
+     {
+      "color": "oklab(0.0959089 -0.00155481 0.00499368 / 0.0607843)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "3px",
+      "inset": false
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of faq-row focus-visible (raw/components-computed.json)",
+    "description": "The 3px 6% ink ring controls paint on keyboard focus."
+   }
+  },
+  "spacing": {
+   "base": {
+    "var": "--spacing",
+    "type": "dimension",
+    "source": "css-var --spacing resolved (raw/css-vars.json)",
+    "description": "Declared 4px spacing unit."
+   },
+   "container": {
+    "2xl": {
+     "var": "--container-2xl",
+     "type": "dimension",
+     "source": "css-var --container-2xl resolved (raw/css-vars.json)",
+     "description": "Declared container 2xl."
+    },
+    "3xl": {
+     "var": "--container-3xl",
+     "type": "dimension",
+     "source": "css-var --container-3xl resolved (raw/css-vars.json)",
+     "description": "Declared container 3xl."
+    },
+    "4xl": {
+     "var": "--container-4xl",
+     "type": "dimension",
+     "source": "css-var --container-4xl resolved (raw/css-vars.json)",
+     "description": "Declared container 4xl."
+    },
+    "5xl": {
+     "var": "--container-5xl",
+     "type": "dimension",
+     "source": "css-var --container-5xl resolved (raw/css-vars.json)",
+     "description": "Declared container 5xl."
+    },
+    "6xl": {
+     "var": "--container-6xl",
+     "type": "dimension",
+     "source": "css-var --container-6xl resolved (raw/css-vars.json)",
+     "description": "Declared container 6xl."
+    },
+    "7xl": {
+     "var": "--container-7xl",
+     "type": "dimension",
+     "source": "css-var --container-7xl resolved (raw/css-vars.json)",
+     "description": "Declared container 7xl."
+    },
+    "lg": {
+     "var": "--container-lg",
+     "type": "dimension",
+     "source": "css-var --container-lg resolved (raw/css-vars.json)",
+     "description": "Declared container lg."
+    },
+    "md": {
+     "var": "--container-md",
+     "type": "dimension",
+     "source": "css-var --container-md resolved (raw/css-vars.json)",
+     "description": "Declared container md."
+    },
+    "sm": {
+     "var": "--container-sm",
+     "type": "dimension",
+     "source": "css-var --container-sm resolved (raw/css-vars.json)",
+     "description": "Declared container sm."
+    },
+    "xl": {
+     "var": "--container-xl",
+     "type": "dimension",
+     "source": "css-var --container-xl resolved (raw/css-vars.json)",
+     "description": "Declared container xl."
+    },
+    "xs": {
+     "var": "--container-xs",
+     "type": "dimension",
+     "source": "css-var --container-xs resolved (raw/css-vars.json)",
+     "description": "Declared container xs."
+    }
+   },
+   "header-h": {
+    "value": "52px",
+    "type": "dimension",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The floating nav pill height (52px)."
+   },
+   "header-rad": {
+    "value": "26px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of header default (raw/components-computed.json)",
+    "description": "The nav pill's 26px radius."
+   }
+  },
+  "motion": {
+   "ping": {
+    "var": "--animate-ping",
+    "type": "other",
+    "source": "css-var --animate-ping resolved (raw/css-vars.json)",
+    "description": "Declared animation ping."
+   },
+   "pulse": {
+    "var": "--animate-pulse",
+    "type": "other",
+    "source": "css-var --animate-pulse resolved (raw/css-vars.json)",
+    "description": "Declared animation pulse."
+   },
+   "spin": {
+    "var": "--animate-spin",
+    "type": "other",
+    "source": "css-var --animate-spin resolved (raw/css-vars.json)",
+    "description": "Declared animation spin."
+   },
+   "default": {
+    "duration": {
+     "var": "--default-transition-duration",
+     "type": "other",
+     "source": "css-var --default-transition-duration resolved (raw/css-vars.json)",
+     "description": "Declared default transition duration."
+    },
+    "easing": {
+     "var": "--default-transition-timing-function",
+     "type": "other",
+     "source": "css-var --default-transition-timing-function resolved (raw/css-vars.json)",
+     "description": "Declared default transition easing."
+    }
+   }
+  }
+ },
+ "light": {
+  "color": {
+   "background": {
+    "page": {
+     "var": "--background",
+     "type": "color",
+     "source": "css-var --background resolved (raw/css-vars.json)",
+     "description": "The #fcf9f7 warm beige page."
+    },
+    "card": {
+     "var": "--card",
+     "type": "color",
+     "source": "css-var --card resolved (raw/css-vars.json)",
+     "description": "The #fff card surface."
+    },
+    "popover": {
+     "var": "--popover",
+     "type": "color",
+     "source": "css-var --popover resolved (raw/css-vars.json)",
+     "description": "The #fff popover surface."
+    },
+    "input": {
+     "var": "--input",
+     "type": "color",
+     "source": "css-var --input resolved (raw/css-vars.json)",
+     "description": "The #fff field fill."
+    },
+    "sidebar": {
+     "var": "--sidebar",
+     "type": "color",
+     "source": "css-var --sidebar resolved (raw/css-vars.json)",
+     "description": "The #fafafa sidebar surface."
+    },
+    "sidebar-accent": {
+     "var": "--sidebar-accent",
+     "type": "color",
+     "source": "css-var --sidebar-accent resolved (raw/css-vars.json)",
+     "description": "The #f5f5f5 sidebar accent."
+    },
+    "muted": {
+     "var": "--muted",
+     "type": "color",
+     "source": "css-var --muted resolved (raw/css-vars.json)",
+     "description": "The 4% ink muted fill."
+    }
+   },
+   "action": {
+    "primary": {
+     "var": "--primary",
+     "type": "color",
+     "source": "css-var --primary resolved (raw/css-vars.json)",
+     "description": "The #030302 primary action fill."
+    },
+    "secondary": {
+     "var": "--secondary",
+     "type": "color",
+     "source": "css-var --secondary resolved (raw/css-vars.json)",
+     "description": "The #fff secondary action fill."
+    },
+    "accent": {
+     "var": "--accent",
+     "type": "color",
+     "source": "css-var --accent resolved (raw/css-vars.json)",
+     "description": "The #427e8a teal accent."
+    },
+    "destructive": {
+     "var": "--destructive",
+     "type": "color",
+     "source": "css-var --destructive resolved (raw/css-vars.json)",
+     "description": "The #bb433a destructive fill."
+    },
+    "sidebar-primary": {
+     "var": "--sidebar-primary",
+     "type": "color",
+     "source": "css-var --sidebar-primary resolved (raw/css-vars.json)",
+     "description": "The #171717 sidebar primary."
+    }
+   },
+   "text": {
+    "foreground": {
+     "var": "--foreground",
+     "type": "color",
+     "source": "css-var --foreground resolved (raw/css-vars.json)",
+     "description": "The #030302 primary text."
+    },
+    "card-foreground": {
+     "var": "--card-foreground",
+     "type": "color",
+     "source": "css-var --card-foreground resolved (raw/css-vars.json)",
+     "description": "Card text #030302."
+    },
+    "popover-foreground": {
+     "var": "--popover-foreground",
+     "type": "color",
+     "source": "css-var --popover-foreground resolved (raw/css-vars.json)",
+     "description": "Popover text #030302."
+    },
+    "primary-foreground": {
+     "var": "--primary-foreground",
+     "type": "color",
+     "source": "css-var --primary-foreground resolved (raw/css-vars.json)",
+     "description": "Declared #030302 (light surfaces read white text on the black pills — the measured pairing)."
+    },
+    "accent-foreground": {
+     "var": "--accent-foreground",
+     "type": "color",
+     "source": "css-var --accent-foreground resolved (raw/css-vars.json)",
+     "description": "Declared #030302."
+    },
+    "secondary-foreground": {
+     "var": "--secondary-foreground",
+     "type": "color",
+     "source": "css-var --secondary-foreground resolved (raw/css-vars.json)",
+     "description": "Declared #030302."
+    },
+    "muted-foreground": {
+     "var": "--muted-foreground",
+     "type": "color",
+     "source": "css-var --muted-foreground resolved (raw/css-vars.json)",
+     "description": "The 50% ink muted text."
+    },
+    "sidebar-foreground": {
+     "var": "--sidebar-foreground",
+     "type": "color",
+     "source": "css-var --sidebar-foreground resolved (raw/css-vars.json)",
+     "description": "The #0a0a0a sidebar text."
+    },
+    "sidebar-accent-foreground": {
+     "var": "--sidebar-accent-foreground",
+     "type": "color",
+     "source": "css-var --sidebar-accent-foreground resolved (raw/css-vars.json)",
+     "description": "The #171717 sidebar accent text."
+    },
+    "sidebar-primary-foreground": {
+     "var": "--sidebar-primary-foreground",
+     "type": "color",
+     "source": "css-var --sidebar-primary-foreground resolved (raw/css-vars.json)",
+     "description": "The #fafafa text on sidebar primary."
+    },
+    "on-primary": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed color of try-cta default (raw/components-computed.json)",
+     "description": "The white text the black pills paint (declared --primary-foreground is #030302, so the pairing is measured here)."
+    },
+    "footer": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed color of footer-link default (raw/components-computed.json)",
+     "description": "The white text inside the black footer."
+    }
+   },
+   "border": {
+    "border": {
+     "var": "--border",
+     "type": "color",
+     "source": "css-var --border resolved (raw/css-vars.json)",
+     "description": "The 9% ink hairline."
+    },
+    "ring": {
+     "var": "--ring",
+     "type": "color",
+     "source": "css-var --ring resolved (raw/css-vars.json)",
+     "description": "The 12% ink focus ring."
+    },
+    "sidebar-border": {
+     "var": "--sidebar-border",
+     "type": "color",
+     "source": "css-var --sidebar-border resolved (raw/css-vars.json)",
+     "description": "The #e5e5e5 sidebar border."
+    },
+    "sidebar-ring": {
+     "var": "--sidebar-ring",
+     "type": "color",
+     "source": "css-var --sidebar-ring resolved (raw/css-vars.json)",
+     "description": "The #a1a1a1 sidebar ring."
+    }
+   }
+  }
+ },
+ "dark": {},
+ "component": {
+  "button-height-nav": {
+   "value": "36px",
+   "type": "dimension",
+   "source": "computed height of try-cta default (raw/components-computed.json)",
+   "description": "The 36px header CTA."
+  },
+  "button-height-large": {
+   "value": "48px",
+   "type": "dimension",
+   "source": "computed height of hero-cta default (raw/components-computed.json)",
+   "description": "The 48px hero/platform CTA."
+  },
+  "toggle-segment": {
+   "value": "112px",
+   "type": "dimension",
+   "source": "computed width of billing-toggle default (raw/components-computed.json)",
+   "description": "A billing-toggle segment (112px)."
+  },
+  "menu-button": {
+   "value": "24px",
+   "type": "dimension",
+   "source": "computed width of m-menu-button default (raw/components-computed.json)",
+   "description": "The 24px mobile menu glyph."
+  },
+  "faq-row": {
+   "value": "57.2031px",
+   "type": "dimension",
+   "source": "computed height of faq-row default (raw/components-computed.json)",
+   "description": "The FAQ accordion row height."
+  },
+  "nav-link-size": {
+   "value": "16px",
+   "type": "dimension",
+   "source": "computed fontSize of nav-link default (raw/components-computed.json)",
+   "description": "Nav link 16px."
+  },
+  "button": {
+   "state-move": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgb(3, 3, 2)",
+      "color": "rgb(255, 255, 255)"
+     },
+     "hover": {
+      "backgroundColor": "rgba(3, 3, 2, 0.75)",
+      "color": "rgb(255, 255, 255)"
+     }
+    },
+    "source": "computed styles of try-cta default vs hover (raw/components-computed.json)",
+    "description": "The black pill's signature move: the fill lifts to 75% ink on hover."
+   }
+  }
+ }
+}

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SeatGeek style guide</title>
+<style>
+:root {
+  --page: #ffffff;
+  --surface: #f5f5f4;
+  --text: #181818;
+  --muted: #767575;
+  --secondary: #525252;
+  --accent: #ff5b49;
+  --border: #dedddb;
+  --inverse: #181818;
+  --on-inverse: #ffffff;
+  --hero: #120100;
+  --success: #0b6f46;
+  --danger: #ba2626;
+  --warning: #b84d00;
+  --font: RoobertVF, "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color-scheme: light;
+}
+[data-mode="dark"] {
+  --page: #0a0a0a;
+  --surface: #1d1d1d;
+  --text: #ffffff;
+  --muted: #939393;
+  --secondary: #b6b6b6;
+  --accent: #ff5b49;
+  --border: #4a4a4a;
+  --inverse: #ffffff;
+  --on-inverse: #2a2a2a;
+  --hero: #0a0a0a;
+  --success: #35c182;
+  --danger: #dd3c3c;
+  --warning: #f48731;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--font); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 28px; }
+h1 { font-size: 32px; line-height: 46px; letter-spacing: -0.32px; margin: 0; }
+h2 { font-size: 22px; line-height: 32px; margin: 36px 0 12px; }
+p { color: var(--secondary); max-width: 70ch; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 148px; }
+.swatch i { display: block; height: 64px; border-radius: 12px; border: 1px solid var(--border); }
+.swatch span { display: block; font-size: 12px; margin-top: 6px; }
+button, .chip, .pill { font: inherit; border: 0; cursor: default; }
+.btn-primary { background: #000; color: #fff; border-radius: 8px; height: 56px; padding: 16px 24px; font-weight: 650; }
+.btn-brand { background: #ff5b49; color: #fff; border-radius: 12px; height: 44px; padding: 0 24px; font-weight: 650; }
+.btn-glass { background: rgba(255,255,255,.12); color: #fff; border: 0.5px solid rgba(255,255,255,.08); border-radius: 100px; height: 40px; padding: 0 16px; }
+.hero { background: #120100; color: #fff; border-radius: 16px; padding: 28px; }
+.chip { background: #fff; color: #181818; border: 1px solid #dedddb; border-radius: 100px; height: 32px; padding: 0 15px; }
+.chip.on { background: #181818; color: #fff; }
+.pill { background: #181818; color: #fff; border-radius: 6px; height: 36px; padding: 0 16px; font-weight: 650; font-size: 14px; display: inline-flex; align-items: center; }
+.field { background: #fff; color: #181818; border: 2px solid #dedddb; border-radius: 20px; height: 48px; padding: 0 16px; width: min(100%, 420px); }
+.toggle { margin-left: auto; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 100px; height: 32px; padding: 0 14px; cursor: pointer; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+.note { font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>SeatGeek</h1>
+  <button class="toggle" type="button" id="theme">Dark tokens</button>
+</header>
+<p>Values from the public signed-out pages and the stylesheets those pages loaded on 19 November 2026. The dark toggle shows the declared <code>[data-theme=dark]</code> set. The live marketing pages did not paint that theme.</p>
+
+<h2>Colour</h2>
+<div class="row" id="swatches"></div>
+
+<h2>Type</h2>
+<p style="font-size:32px;line-height:46px;letter-spacing:-0.32px;font-weight:700;color:var(--text)">Be good at seats</p>
+<p style="font-size:48px;line-height:56px;font-weight:750;color:var(--text);margin:0">NFL Tickets</p>
+<p style="font-size:18px;line-height:28px;font-weight:500">The best tickets at the best prices</p>
+<p class="note">RoobertVF is SeatGeek's variable face. This page falls back to Helvetica Neue, Arial, Helvetica. Weights measured: 400, 500, 650, 700, 750, 800.</p>
+
+<h2>Controls</h2>
+<div class="hero">
+  <div class="row">
+    <button class="btn-glass" type="button">Sign in</button>
+    <button class="btn-brand" type="button">Chat with us</button>
+  </div>
+</div>
+<div class="row" style="margin-top:16px">
+  <button class="btn-primary" type="button">Get updates</button>
+  <button class="chip" type="button">Filter by date</button>
+  <button class="chip on" type="button">Singapore</button>
+  <span class="pill">From $42</span>
+</div>
+<p><input class="field" placeholder="Search or ask anything" aria-label="Search"></p>
+
+<h2>Radius and space</h2>
+<table>
+  <tr><th>Token</th><th>Value</th></tr>
+  <tr><td>radius 1 to 8</td><td>4, 8, 12, 16, 20, 24, 36, 999 px</td></tr>
+  <tr><td>spacing 0 to 20</td><td>0, 2, 4, 6, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 64, 72, 80, 96 px</td></tr>
+  <tr><td>border</td><td>0.5, 1, 1.5, 2 px</td></tr>
+  <tr><td>header</td><td>80 px at 1169 px wide, 68 px at 390 px wide</td></tr>
+</table>
+<p class="note">Screenshots were not captured. The preview browser returned "The browser is not producing screenshot frames".</p>
+</div>
+<script>
+const roles = [
+  ["page", "--page"], ["surface", "--surface"], ["text", "--text"],
+  ["muted", "--muted"], ["accent", "--accent"], ["border", "--border"],
+  ["hero", "--hero"], ["success", "--success"], ["danger", "--danger"], ["warning", "--warning"]
+];
+const box = document.getElementById("swatches");
+for (const [name, v] of roles) {
+  const el = document.createElement("div");
+  el.className = "swatch";
+  el.innerHTML = "<i style='background:var(" + v + ")'></i><span>" + name + "</span>";
+  box.appendChild(el);
+}
+document.getElementById("theme").addEventListener("click", () => {
+  const html = document.documentElement;
+  const next = html.getAttribute("data-mode") === "dark" ? "light" : "dark";
+  html.setAttribute("data-mode", next);
+  document.getElementById("theme").textContent = next === "dark" ? "Light tokens" : "Dark tokens";
+});
+</script>
+</body>
+</html>

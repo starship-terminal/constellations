@@ -1,5 +1,5 @@
 {
   "_note": "URL query or fragment parameters that carry a credential (presigned S3/GCS/CloudFront/Azure URLs, OAuth tokens and codes). Read by unsnap.py beside this file and by tools/catalog.py scan; snapshot.js runs in a browser console and carries a copy, which tools/test_kit_privacy.py keeps identical. A parameter matches case-insensitively after ?, & (or &amp;), # or their %-encodings; a prefix matches any parameter that starts with it.",
   "prefixes": ["X-Amz-", "X-Goog-"],
-  "params": ["Signature", "Key-Pair-Id", "Policy", "Expires", "sig", "token", "access_token", "id_token", "refresh_token", "code", "auth"]
+  "params": ["Signature", "Key-Pair-Id", "Policy", "Expires", "sig", "token", "access_token", "id_token", "refresh_token", "code", "auth", "key", "api_key", "apikey", "api-key", "access_key", "client_secret", "jwt", "session", "session_id", "sessionid", "hmac", "hdnts", "__token__", "auth_token", "oauth_token", "csrf_token", "xsrf_token", "session_token", "api_token", "sas_token"]
 }

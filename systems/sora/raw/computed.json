@@ -1,0 +1,139 @@
+{
+  "computed": {
+    "source": "getComputedStyle on https://sora.chatgpt.com/sunset in the T3 preview tab, 2026-11-19. Viewport innerWidth 1440, innerHeight 900, devicePixelRatio 2, visualViewport scale 1.",
+    "htmlClassObserved": "dark",
+    "body": {
+      "dark": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(0, 0, 0)",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "20px",
+        "fontFamily": "ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif"
+      },
+      "lightClassApplied": {
+        "color": "rgb(25, 25, 25)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "fontSize": "14px",
+        "lineHeight": "20px"
+      }
+    },
+    "copy": {
+      "selector": "main p.text-base.text-token-text-secondary",
+      "text": "Sora is no longer available. You can export your data at any time.",
+      "dark": {
+        "color": "rgba(255, 255, 255, 0.6)",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "width": "448px",
+        "height": "48px"
+      },
+      "lightClassApplied": {
+        "color": "rgba(25, 25, 25, 0.5)",
+        "fontSize": "16px",
+        "lineHeight": "24px"
+      }
+    },
+    "exportLink": {
+      "selector": "main a",
+      "className": "inline-flex gap-1.5 items-center justify-center whitespace-nowrap text-sm font-semibold focus-visible:outline-none ... bg-token-bg-inverse text-token-text-inverse hover:bg-token-bg-inverse/80 ... px-3 py-2 h-9 rounded-xl",
+      "href": "/exports/me",
+      "text": "Export",
+      "dark": {
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "lineHeight": "20px",
+        "borderRadius": "12px",
+        "padding": "8px 12px",
+        "height": "36px",
+        "gap": "6px",
+        "borderWidth": "0px",
+        "boxShadow": "none",
+        "letterSpacing": "normal"
+      },
+      "lightClassApplied": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(0, 0, 0)",
+        "borderRadius": "12px",
+        "padding": "8px 12px",
+        "height": "36px"
+      },
+      "focusVisible": {
+        "outline": "rgba(0, 0, 0, 0) solid 2px",
+        "outlineOffset": "2px",
+        "note": "focus() on the Export link after restoring .dark. The class focus-visible:outline-none suppresses the ring."
+      }
+    },
+    "column": {
+      "selector": "main > div.flex.max-w-md",
+      "dark": {
+        "width": "448px",
+        "gap": "24px",
+        "height": "108px"
+      }
+    },
+    "main": {
+      "padding": "0px 24px",
+      "display": "flex",
+      "alignItems": "center",
+      "justifyContent": "center",
+      "minHeight": "100vh"
+    }
+  },
+  "utilityRules": {
+    "font-sans": ".font-sans{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji}",
+    "text-base": ".text-base{font-size:1rem;line-height:1.5rem}",
+    "text-sm": ".text-sm{font-size:.875rem;line-height:1.25rem}",
+    "text-xs": ".text-xs{font-size:.75rem;line-height:1rem}",
+    "text-lg": ".text-lg{font-size:1.125rem;line-height:1.75rem}",
+    "text-xl": ".text-xl{font-size:1.25rem;line-height:1.75rem}",
+    "text-2xl": ".text-2xl{font-size:1.5rem;line-height:2rem}",
+    "font-semibold": ".font-semibold{font-weight:600}",
+    "font-normal": ".font-normal{font-weight:400}",
+    "antialiased": ".antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}",
+    "h-9": ".h-9{height:2.25rem}",
+    "px-3": ".px-3{padding-left:.75rem;padding-right:.75rem}",
+    "py-2": ".py-2{padding-bottom:.5rem;padding-top:.5rem}",
+    "px-6": ".px-6{padding-left:1.5rem;padding-right:1.5rem}",
+    "gap-6": ".gap-6{gap:1.5rem}",
+    "gap-1.5": ".gap-1\\.5{gap:.375rem}",
+    "rounded-xl": ".rounded-xl{border-radius:.75rem}",
+    "rounded-lg": ".rounded-lg{border-radius:.5rem}",
+    "rounded-md": ".rounded-md{border-radius:.375rem}",
+    "rounded-full": ".rounded-full{border-radius:9999px}",
+    "rounded-2xl": ".rounded-2xl{border-radius:1rem}",
+    "rounded-3xl": ".rounded-3xl{border-radius:1.5rem}",
+    "rounded": ".rounded{border-radius:.25rem}",
+    "max-w-md": ".max-w-md{max-width:28rem}",
+    "min-h-screen": ".min-h-screen{min-height:100vh;min-height:100dvh}",
+    "hover-inverse-80": ".hover\\:bg-token-bg-inverse\\/80:hover{background-color:rgba(0,0,0,.8);background-color:rgb(var(--bg-inverse)/.8)}",
+    "focus-visible-outline-none": ".focus-visible\\:outline-none:focus-visible{outline:2px solid transparent;outline-offset:2px}",
+    "placeholder-card-radius": null,
+    "placeholderCard": ".placeholderCard{animation:cardFade 3s cubic-bezier(.45,0,.4,1) infinite both;background:#1f1f1f;border-radius:28px;box-shadow:0 1px 2px rgba(0,0,0,.18),0 6px 16px rgba(0,0,0,.24);contain:layout paint;isolation:isolate;overflow:hidden;position:relative;will-change:opacity}"
+  },
+  "reducedMotion": [
+    "nth-child(3){animation-delay:1s}@media (prefers-reduced-motion:reduce){.placeholderCard{animation:none}}.spin_loader{animation:spinrotation 1s linear infinite;aspect-ratio:1/1;border:.2rem solid #d9d9d9;border-bottom-color:#2e2e2e;border-radius:50%;box-sizing:",
+    "r(--emoji-y,-40px)) scale(1.2)}}@media (prefers-reduced-motion:reduce){.emoji-firework-center,.emoji-firework-particle{animation:none}}.no-scrollbar::-webkit-scrollbar{display:none}.no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}.scrollbar-thin-prim"
+  ],
+  "keyframes": {
+    "pulse": "@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(.4,0,.6,1) infinite}@keyframes spin{to{transform:rotate(1turn)}}.animate-spin{animation:spin 1s linear infinite}.cursor-col-resize{cursor:co",
+    "spin": "@keyframes spin{to{transform:rotate(1turn)}}.animate-spin{animation:spin 1s linear infinite}.cursor-col-resize{cursor:col-resize}.cursor-crosshair{cursor:crosshair}.cursor-default{cursor:default}.cursor-e-resize{cursor:e",
+    "enter": "@keyframes enter{0%{opacity:1;opacity:var(--tw-enter-opacity,1);transform:translateZ(0) scaleX(1) rotate(0);transform:translate3d(var(--tw-enter-translate-x,0),var(--tw-enter-translate-y,0),0) scale3d(var(--tw-enter-scal",
+    "exit": "@keyframes exit{to{opacity:1;opacity:var(--tw-exit-opacity,1);transform:translateZ(0) scaleX(1) rotate(0);transform:translate3d(var(--tw-exit-translate-x,0),var(--tw-exit-translate-y,0),0) scale3d(var(--tw-exit-scale,1),",
+    "progress-bar-indeterminate": "@keyframes progress-bar-indeterminate{0%{transform:translateX(-125%)}to{transform:translateX(325%)}}.progress-bar-indeterminate{animation:progress-bar-indeterminate 1.2s linear infinite}.h-screen{height:100vh;height:100d",
+    "cardFade": "@keyframes cardFade{0%{opacity:1}50%{opacity:.01}to{opacity:1}}.placeholderCard{animation:cardFade 3s cubic-bezier(.45,0,.4,1) infinite both;background:#1f1f1f;border-radius:28px;box-shadow:0 1px 2px rgba(0,0,0,.18),0 6p",
+    "caret-blink": "@keyframes caret-blink{0%{opacity:1}50%{opacity:0}}@keyframes spinrotation{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.emoji-firework{align-items:center;bottom:0;display:flex;justify-content:center;left:0;poin",
+    "spinrotation": "@keyframes spinrotation{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.emoji-firework{align-items:center;bottom:0;display:flex;justify-content:center;left:0;pointer-events:none;position:absolute;right:0;top:0}.em",
+    "emoji-firework-center": "@keyframes emoji-firework-center{0%{opacity:0;transform:scale(.4)}40%{opacity:1;transform:scale(1.8)}to{opacity:0;transform:scale(1)}}@keyframes emoji-firework-particle{0%{opacity:0;transform:translate(0) scale(.4)}20%{o",
+    "emoji-firework-particle": "@keyframes emoji-firework-particle{0%{opacity:0;transform:translate(0) scale(.4)}20%{opacity:1}to{opacity:0;transform:translateY(-40px) scale(1.2);transform:translate(var(--emoji-x,0),var(--emoji-y,-40px)) scale(1.2)}}@m",
+    "loading-shimmer": "@keyframes loading-shimmer{0%{background-position:-100% top}to{background-position:250% top}}@keyframes cardFade{0%{opacity:1}50%{opacity:.01}to{opacity:1}}.placeholderCard{animation:cardFade 3s cubic-bezier(.45,0,.4,1) "
+  },
+  "declaredDisabled": {
+    "data-disabled-true-bg-token-bg-secondary": "background-color: #e3e3e3; background-color: rgb(var(--bg-secondary))",
+    "data-disabled-true-opacity-on-export-class": "class lists data-[disabled=true]:opacity-100, data-[disabled=true]:bg-token-bg-secondary, data-[disabled=true]:text-token-text-primary/30. Not rendered on the sunset page."
+  },
+  "screenshots": "preview_snapshot failed twice with: The browser is not producing screenshot frames. Headless Playwright against https://sora.com/ returned HTTP 403 and a Cloudflare interstitial titled Just a moment. No screenshot was saved."
+}

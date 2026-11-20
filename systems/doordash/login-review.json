@@ -1,0 +1,99 @@
+{
+  "captured": "2026-11-20",
+  "signed_in": true,
+  "viewport": {
+    "desktop": {"requested": "1440x900", "measured": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewport": "1440x900", "scale": 1}, "png": "2880x1800"},
+    "phone": {"requested": "390x844", "measured": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2, "visualViewport": "390x844", "scale": 1}, "png": "780x1688"}
+  },
+  "offered": {
+    "nav": {
+      "items": [
+        "Home",
+        "Grocery",
+        "Retail",
+        "Convenience",
+        "Browse All",
+        "Orders",
+        "Account",
+        "Pickup",
+        "My rewards",
+        "Gift card",
+        "Help"
+      ],
+      "reached": [
+        "Home",
+        "Grocery",
+        "Retail",
+        "Convenience",
+        "Browse All",
+        "Orders",
+        "Account",
+        "Pickup",
+        "My rewards",
+        "Gift card",
+        "Help"
+      ]
+    },
+    "settings": {
+      "items": [
+        "Profile",
+        "Change password",
+        "Manage account",
+        "Payment"
+      ],
+      "reached": [
+        "Profile",
+        "Change password",
+        "Manage account",
+        "Payment"
+      ]
+    },
+    "create": {
+      "items": [
+        "Gift card buy and redeem"
+      ],
+      "reached": [
+        "Gift card buy and redeem"
+      ]
+    }
+  },
+  "screens": [
+    {"name": "Account menu", "file": "screenshots/signed-in-account-menu-desktop.png"},
+    {"name": "Profile", "file": "screenshots/signed-in-profile-desktop.png"},
+    {"name": "Change password", "file": "screenshots/signed-in-password-desktop.png"},
+    {"name": "Manage account", "file": "screenshots/signed-in-manage-account-desktop.png"},
+    {"name": "Orders", "file": "screenshots/signed-in-orders-desktop.png"},
+    {"name": "Orders, phone", "file": "screenshots/signed-in-orders-phone.png", "width": "narrow"},
+    {"name": "My rewards", "file": "screenshots/signed-in-rewards-desktop.png"},
+    {"name": "Gift card", "file": "screenshots/signed-in-gift-cards-desktop.png"},
+    {"name": "Help", "file": "screenshots/signed-in-help-desktop.png"}
+  ],
+  "gaps": [
+    "Home feed compositor frames were blurred after the app promo overlay; the accessibility tree showed a signed-in store feed, but no home PNG was committed.",
+    "Saved stores was offered in the account menu and bounced back to home when opened.",
+    "Grocery tab painted a footer-only page on this pass.",
+    "Pickup opened a map search with no stores; the map was not committed because it shows a place.",
+    "Notifications bell click did not open a panel.",
+    "Group Order was visible on a closed store page and was not opened.",
+    "Business profile Create profile was visible on Profile and was not opened.",
+    "DashPass purchase, checkout, cart add, and address entry were not started.",
+    "Payment methods page was opened and not screenshotted, so card art would not be committed.",
+    "Phone width is the orders empty state only. The account shell did not repaint a header at 390x844."
+  ],
+  "not_submitted": [
+    "No order placed",
+    "No cart item added",
+    "No address entered or saved",
+    "No DashPass subscription",
+    "No gift card bought or redeemed",
+    "No password change",
+    "No profile save",
+    "No business profile created",
+    "No archive requested",
+    "No account deleted",
+    "No sign-out",
+    "No group order started",
+    "No invite sent",
+    "No review submitted"
+  ]
+}

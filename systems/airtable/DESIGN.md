@@ -314,6 +314,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **Screenshots are 256-colour PNGs.** Gradients and photography band slightly; read exact colours from tokens.json or the raw files.
 - **Type varies by page.** Most pages run Haas/ATSeasonSans, but /pricing is Inter Display and /marketplace GT Eesti Display — check `core.typography.display-pricing` before styling a pricing page.
 - **Field borders are painted by the container.** The contact-sales fields' visible border sits on the field box, not the `<input>`; `component.field-border` is the measured `rgba(0, 14, 38, 0.23)` of that container, not a reading of the input itself.
@@ -321,6 +322,9 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **`layout.json`'s whatsnew content column reads 350px** — the gallery iframe's internal max-width, not the page's.
 - **Hover reads "same" on several controls by design** (the tile cards, tab list). The entries are not missing a state.
 - **`component.embed-card-shadow` is a placeholder note**, not a shadow token: the real stack is `core.shadow.low`.
+- **`about-card` was read from the wrong element.** It is the 1342 x 116 stats list on /about ("50M+ apps and agents ..."), not a card. Needs a recapture; the script now skips lists and full-width blocks (not run since).
+- **The FAQ readings and the script disagree.** The committed `faq-item` and `faq-item-open` were read on /platform/ai (their `page` and `url`), but the committed script measures those keys on the home page only, so a rerun would replace them with a different FAQ. Rerun, or restore the platform-ai FAQ probe, before trusting a rebuild against them.
+- **Five icons are blank.** `add-on.svg`, `icon-57cfd5d9.svg`, `icon-8c4f578a.svg`, `icon-2e816604.svg` and `icon-8c628be4.svg` hold only a `<use>` pointing at the page's `/icons/icon_definitions.svg` sprite, which the harvest did not copy, so they render nothing on their own. Each `<use>` still names the sprite glyph it stood for (`#Plus`, `#MagnifyingGlass`, `#Buildings`, `#ChevronDown`, `#Check`, in that order); a recapture with a harvester that inlines `<use>` targets is needed.
 
 ### Do and don't (from README.md)
 

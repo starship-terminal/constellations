@@ -1,0 +1,290 @@
+{
+  "packs": {
+    ".ds-tokyo-ui__PkpFv": 623,
+    ".ds-tokyo-ui__PkpFv.ds-scheme--base": 251
+  },
+  "fonts": [
+    {
+      "family": "PreplyInterV",
+      "weight": "400 700",
+      "style": "oblique 0deg 10deg",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "PreplyInterV",
+      "weight": "400 700",
+      "style": "oblique 0deg 10deg",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "PreplyInterV",
+      "weight": "400 700",
+      "style": "oblique 0deg 10deg",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "PreplyInter",
+      "weight": "400",
+      "style": "normal",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "PreplyInter",
+      "weight": "500",
+      "style": "normal",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "PreplyInter",
+      "weight": "700",
+      "style": "normal",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "PreplyInter",
+      "weight": "400",
+      "style": "oblique 10deg",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "PreplyInter",
+      "weight": "500",
+      "style": "oblique 10deg",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "PreplyInter",
+      "weight": "700",
+      "style": "oblique 10deg",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "PreplyInter",
+      "weight": "400",
+      "style": "normal",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "PreplyInter",
+      "weight": "500",
+      "style": "normal",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "PreplyInter",
+      "weight": "700",
+      "style": "normal",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "PreplyInter",
+      "weight": "400",
+      "style": "oblique 10deg",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "PreplyInter",
+      "weight": "500",
+      "style": "oblique 10deg",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "PreplyInter",
+      "weight": "700",
+      "style": "oblique 10deg",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "PreplyInter",
+      "weight": "400",
+      "style": "normal",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "PreplyInter",
+      "weight": "500",
+      "style": "normal",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "PreplyInter",
+      "weight": "700",
+      "style": "normal",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "PreplyInter",
+      "weight": "400",
+      "style": "oblique 10deg",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "PreplyInter",
+      "weight": "500",
+      "style": "oblique 10deg",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "PreplyInter",
+      "weight": "700",
+      "style": "oblique 10deg",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "Platform",
+      "weight": "700",
+      "style": "normal",
+      "display": "swap",
+      "srcHost": "https://preply.com"
+    },
+    {
+      "family": "Figtree",
+      "weight": "400",
+      "style": "italic",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "Figtree",
+      "weight": "400",
+      "style": "italic",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "Figtree",
+      "weight": "400",
+      "style": "normal",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "Figtree",
+      "weight": "400",
+      "style": "normal",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "Figtree",
+      "weight": "600",
+      "style": "normal",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "Figtree",
+      "weight": "600",
+      "style": "normal",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "Noto Sans",
+      "weight": "400",
+      "style": "italic",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    },
+    {
+      "family": "Noto Sans",
+      "weight": "400",
+      "style": "italic",
+      "display": "swap",
+      "srcHost": "https://static.preply.com"
+    }
+  ],
+  "motion": [
+    {
+      "name": "spin__6opuF",
+      "css": "@keyframes spin__6opuF { \n  0% { transform: rotate(0deg); }\n  100% { transform: rotate(1turn); }\n}"
+    },
+    {
+      "name": "opacityIn__p29KJ",
+      "css": "@keyframes opacityIn__p29KJ { \n  0% { opacity: 0; }\n  100% { opacity: 1; }\n}"
+    },
+    {
+      "name": "opacityOut__4QmKk",
+      "css": "@keyframes opacityOut__4QmKk { \n  0% { opacity: 1; }\n  100% { opacity: 0; }\n}"
+    },
+    {
+      "name": "slideInUp__Ni5JT",
+      "css": "@keyframes slideInUp__Ni5JT { \n  0% { transform: translateY(var(--slide-animation-distance)); }\n  100% { transform: translateY(0px); }\n}"
+    },
+    {
+      "name": "slideOutDown__g4ZMG",
+      "css": "@keyframes slideOutDown__g4ZMG { \n  0% { transform: translateY(0px); }\n  100% { transform: translateY(var(--slide-animation-distance)); }\n}"
+    },
+    {
+      "name": "slideOutUp__FRb6L",
+      "css": "@keyframes slideOutUp__FRb6L { \n  0% { transform: translateY(0px); }\n  100% { transform: translateY(calc(-1 * var(--slide-animation-distance))); }\n}"
+    },
+    {
+      "name": "appear__G3E6P",
+      "css": "@keyframes appear__G3E6P { \n  0% { opacity: 0; transform: scale(0); }\n  100% { opacity: 1; transform: scale(1); }\n}"
+    },
+    {
+      "name": "disappear__Y33gr",
+      "css": "@keyframes disappear__Y33gr { \n  0% { opacity: 1; transform: scale(1); }\n  100% { opacity: 0; transform: scale(0); }\n}"
+    },
+    {
+      "name": "styles_flickerAnimation__fegUy",
+      "css": "@keyframes styles_flickerAnimation__fegUy { \n  0% { opacity: 1; }\n  50% { opacity: 0.3; }\n  100% { opacity: 1; }\n}"
+    },
+    {
+      "name": "styles_marquee__uLcwz",
+      "css": "@keyframes styles_marquee__uLcwz { \n  0% { transform: translateX(0px); }\n  100% { transform: translateX(-50%); }\n}"
+    },
+    {
+      "name": "styles_fade-in__iqVxA",
+      "css": "@keyframes styles_fade-in__iqVxA { \n  0% { opacity: 0; }\n  100% { opacity: 1; }\n}"
+    }
+  ],
+  "media": [
+    {
+      "cond": "(prefers-reduced-motion)",
+      "n": 2,
+      "sample": "@media (prefers-reduced-motion) {\n  .Spinner--static__3-otL { display: inline-flex; }\n  .Spinner--animated__K3vs3 { display: none; }\n}"
+    },
+    {
+      "cond": "(prefers-reduced-motion: no-preference)",
+      "n": 3,
+      "sample": "@media (prefers-reduced-motion: no-preference) {\n  .dialog__80F7X { animation-duration: var(--970975); animation-timing-function: var(--1f4492); animation-fill-mode: forwards; }\n  .dialog__80F7X[data-"
+    },
+    {
+      "cond": "(prefers-reduced-motion: no-preference)",
+      "n": 3,
+      "sample": "@media (prefers-reduced-motion: no-preference) {\n  .overlay__otkvG { animation-duration: var(--970975); animation-timing-function: var(--1f4492); animation-fill-mode: forwards; }\n  .overlay__otkvG[dat"
+    },
+    {
+      "cond": "(prefers-reduced-motion: reduce)",
+      "n": 1,
+      "sample": "@media (prefers-reduced-motion: reduce) {\n  .styles_track__C2spC { animation: auto ease 0s 1 normal none running none; }\n}"
+    }
+  ],
+  "selectors": [
+    ".ds-tokyo-ui__PkpFv",
+    ".ds-tokyo-ui__PkpFv.ds-scheme--base"
+  ]
+}

@@ -1,0 +1,1466 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. The two public surfaces of endlesstools.io (Tailwind v4 marketing one-pager) and app.endlesstools.io (Tailwind v3 /login and /legal/* shell) both paint a single dark theme over the same grey ramp. Declared @theme variables become var leaves resolved in the dark pass; the arbitrary-value accents and card fills are measured leaves from raw/components-computed.json. Semantic roles land in the dark set.",
+ "core": {
+  "font": {
+   "family": {
+    "sans": {
+     "value": "Inter, \"Inter Fallback\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of every measured component, one stack (raw/components-computed.json); the Inter @font-face faces are in raw/css-vars.json fonts",
+     "description": "Inter variable (100-900, woff2, swap) with next/font's Arial-metric 'Inter Fallback'; the only family any measured text paints."
+    },
+    "system": {
+     "var": "--font-sans",
+     "type": "fontFamily",
+     "description": "The plain ui-sans-serif system stack Tailwind v4 declares; painted as the login legal line's font."
+    },
+    "mono": {
+     "var": "--font-mono",
+     "type": "fontFamily",
+     "description": "The ui-monospace system stack (declared; no measured text paints it on the public surfaces)."
+    },
+    "skeleton": {
+     "value": "\"Flow Rounded\", \"Flow Rounded Fallback\"",
+     "type": "fontFamily",
+     "source": "declared --font-skeleton on .__variable_86b611 in the app bundle (raw/css-vars.json theme; the Flow Rounded @font-face is in its fonts)",
+     "description": "Flow Rounded: the geometric placeholder face the app bundles for skeleton/loading text; no measured component paints it."
+    }
+   },
+   "size": {
+    "title-primary": {
+     "var": "--text-title-primary",
+     "type": "dimension",
+     "description": "42px: hero, section and newsletter titles."
+    },
+    "title-secondary": {
+     "var": "--text-title-secondary",
+     "type": "dimension",
+     "description": "24px: asset/section sub-heads; the mobile hero size."
+    },
+    "subtitle": {
+     "var": "--text-subtitle",
+     "type": "dimension",
+     "description": "18px subtitle step (declared; no measured component paints it on the public pages)."
+    },
+    "body-primary": {
+     "var": "--text-body-primary",
+     "type": "dimension",
+     "description": "14px: lede, footer and consent text."
+    },
+    "body-secondary": {
+     "var": "--text-body-secondary",
+     "type": "dimension",
+     "description": "12px: pill buttons, chips and small labels."
+    },
+    "price": {
+     "value": "42px",
+     "type": "dimension",
+     "source": "computed fontSize of plan-price default (raw/components-computed.json)",
+     "description": "42px price figure on the plan cards."
+    },
+    "login-title": {
+     "value": "23px",
+     "type": "dimension",
+     "source": "computed fontSize of login-title default (raw/components-computed.json)",
+     "description": "23px login card title."
+    },
+    "legal-title": {
+     "value": "42px",
+     "type": "dimension",
+     "source": "computed fontSize of legal-title default (raw/components-computed.json)",
+     "description": "42px legal document title."
+    },
+    "toggle": {
+     "value": "16px",
+     "type": "dimension",
+     "source": "computed fontSize of billing-yearly default (raw/components-computed.json)",
+     "description": "16px billing toggle label."
+    },
+    "body": {
+     "value": "14px",
+     "type": "dimension",
+     "source": "computed fontSize of footer-link default (raw/components-computed.json)",
+     "description": "14px footer/body text."
+    },
+    "login-body": {
+     "value": "14px",
+     "type": "dimension",
+     "source": "computed fontSize of login-field default (raw/components-computed.json)",
+     "description": "14px login field text (its own 15px leading)."
+    },
+    "login-small": {
+     "value": "12px",
+     "type": "dimension",
+     "source": "computed fontSize of login-forgot default (raw/components-computed.json)",
+     "description": "12px login helper text (13px leading)."
+    },
+    "chip": {
+     "value": "14px",
+     "type": "dimension",
+     "source": "computed fontSize of plan-chip default (raw/components-computed.json)",
+     "description": "14px plan chip label at 35px leading."
+    }
+   },
+   "lineHeight": {
+    "title-primary": {
+     "var": "--text-title-primary--line-height",
+     "type": "dimension"
+    },
+    "title-secondary": {
+     "var": "--text-title-secondary--line-height",
+     "type": "dimension"
+    },
+    "subtitle": {
+     "var": "--text-subtitle--line-height",
+     "type": "dimension"
+    },
+    "body-primary": {
+     "var": "--text-body-primary--line-height",
+     "type": "dimension"
+    },
+    "body-secondary": {
+     "var": "--text-body-secondary--line-height",
+     "type": "dimension"
+    },
+    "price": {
+     "value": "42px",
+     "type": "dimension",
+     "source": "computed lineHeight of plan-price default (raw/components-computed.json)",
+     "description": "42px flat leading on the price figure."
+    },
+    "login-title": {
+     "value": "25px",
+     "type": "dimension",
+     "source": "computed lineHeight of login-title default (raw/components-computed.json)",
+     "description": "25px on the login card title."
+    },
+    "legal-title": {
+     "value": "40px",
+     "type": "dimension",
+     "source": "computed lineHeight of legal-title default (raw/components-computed.json)",
+     "description": "40px on the legal title."
+    },
+    "toggle": {
+     "value": "24px",
+     "type": "dimension",
+     "source": "computed lineHeight of billing-yearly default (raw/components-computed.json)",
+     "description": "24px on the billing toggle."
+    },
+    "body": {
+     "value": "18px",
+     "type": "dimension",
+     "source": "computed lineHeight of footer-link default (raw/components-computed.json)",
+     "description": "18px on footer text."
+    },
+    "login-body": {
+     "value": "15px",
+     "type": "dimension",
+     "source": "computed lineHeight of login-field default (raw/components-computed.json)",
+     "description": "15px on login field text."
+    },
+    "login-small": {
+     "value": "13px",
+     "type": "dimension",
+     "source": "computed lineHeight of login-forgot default (raw/components-computed.json)",
+     "description": "13px on login helper text."
+    },
+    "chip": {
+     "value": "35px",
+     "type": "dimension",
+     "source": "computed lineHeight of plan-chip default (raw/components-computed.json)",
+     "description": "35px on the plan chips (full line-height pill)."
+    },
+    "save-pill": {
+     "value": "25px",
+     "type": "dimension",
+     "source": "computed lineHeight of save-pill default (raw/components-computed.json)",
+     "description": "25px on the save pill."
+    }
+   },
+   "weight": {
+    "medium": {
+     "var": "--font-weight-medium",
+     "type": "fontWeight",
+     "description": "500: every title, button and label — no lighter or bolder weight paints."
+    },
+    "title-primary": {
+     "var": "--text-title-primary--font-weight",
+     "type": "fontWeight",
+     "description": "500 on the 42px titles."
+    },
+    "title-secondary": {
+     "var": "--text-title-secondary--font-weight",
+     "type": "fontWeight",
+     "description": "500 on the 24px heads."
+    },
+    "regular": {
+     "value": 400,
+     "type": "fontWeight",
+     "source": "computed fontWeight of hero-lede default (raw/components-computed.json)",
+     "description": "400 body copy weight."
+    },
+    "legal": {
+     "value": 400,
+     "type": "fontWeight",
+     "source": "computed fontWeight of legal-title default (raw/components-computed.json)",
+     "description": "400 on the legal document title."
+    },
+    "login-label": {
+     "value": 500,
+     "type": "fontWeight",
+     "source": "computed fontWeight of login-field default (raw/components-computed.json)",
+     "description": "500 on login fields and buttons."
+    }
+   },
+   "tracking": {
+    "title": {
+     "var": "--text-title-primary--letter-spacing",
+     "type": "other",
+     "description": "-0.03em: the tight tracking on both title steps."
+    },
+    "tight": {
+     "var": "--tracking-tight",
+     "type": "other",
+     "description": "-0.025em Tailwind tracking-tight (billing toggle, login labels)."
+    },
+    "price": {
+     "value": "-1.26px",
+     "type": "other",
+     "source": "computed letterSpacing of plan-price default (raw/components-computed.json)",
+     "description": "-0.03em on the price figure."
+    },
+    "login-label": {
+     "value": "-0.35px",
+     "type": "other",
+     "source": "computed letterSpacing of login-field default (raw/components-computed.json)",
+     "description": "-0.025em on the login labels."
+    }
+   }
+  },
+  "color": {
+   "neutral": {
+    "black": {
+     "var": "--color-black",
+     "type": "color",
+     "description": "#0a0a0a: the app-shell page field (body.bg-back) and the ink on white controls."
+    },
+    "white": {
+     "var": "--color-white",
+     "type": "color",
+     "description": "#fff: marketing ink and the white controls."
+    },
+    "secondary": {
+     "var": "--color-secondary",
+     "type": "color",
+     "description": "#1e1e1e: input fills and translucent nav pills."
+    },
+    "grey-1": {
+     "var": "--color-grey-1",
+     "type": "color",
+     "description": "#373737: hover fills and focused field borders."
+    },
+    "grey-2": {
+     "var": "--color-grey-2",
+     "type": "color",
+     "description": "#2a2a2a: field borders, sign-in pill, switch hover."
+    },
+    "grey-3": {
+     "var": "--color-grey-3",
+     "type": "color",
+     "description": "#555: secondary greys."
+    },
+    "grey-4": {
+     "var": "--color-grey-4",
+     "type": "color",
+     "description": "#959595: muted text — ledes, footer, placeholders, helpers."
+    },
+    "page": {
+     "value": "rgb(0, 0, 0)",
+     "type": "color",
+     "source": "computed body fill (ancestor) of header default (raw/components-computed.json)",
+     "description": "#000 marketing page field (Tailwind black, not the --color-black #0a0a0a)."
+    },
+    "card": {
+     "value": "rgb(18, 18, 18)",
+     "type": "color",
+     "source": "computed backgroundColor of plan-card default (raw/components-computed.json)",
+     "description": "#121212 plan/testimonial card fill."
+    },
+    "card-hover": {
+     "value": "rgb(29, 29, 29)",
+     "type": "color",
+     "source": "computed backgroundColor of plan-card hover (raw/components-computed.json)",
+     "description": "#1d1d1d card hover fill."
+    },
+    "inset": {
+     "value": "rgb(8, 8, 8)",
+     "type": "color",
+     "source": "computed backgroundColor of social-card default (raw/components-computed.json)",
+     "description": "#080808 testimonial card fill."
+    },
+    "ring": {
+     "value": "rgb(34, 34, 34)",
+     "type": "color",
+     "source": "computed boxShadow ring colour of plan-card default (raw/components-computed.json)",
+     "description": "#222 card hairline ring."
+    },
+    "thumb-border": {
+     "value": "rgb(52, 52, 52)",
+     "type": "color",
+     "source": "computed borderTopColor of asset-thumb default (raw/components-computed.json)",
+     "description": "#343434 asset thumbnail border."
+    },
+    "ink": {
+     "value": "rgb(239, 239, 239)",
+     "type": "color",
+     "source": "computed color of login-field default (raw/components-computed.json)",
+     "description": "#efefef app-shell text white (bg-white utility, not --color-white #fff)."
+    },
+    "hover-white": {
+     "value": "rgb(196, 196, 196)",
+     "type": "color",
+     "source": "computed backgroundColor of plan-cta hover (raw/components-computed.json)",
+     "description": "#c4c4c4 white-button hover fill."
+    },
+    "alpha": {
+     "veil-5": {
+      "value": "rgba(239, 239, 239, 0.05)",
+      "type": "color",
+      "source": "computed backgroundColor of login-card default (raw/components-computed.json)",
+      "description": "5% app-ink veil: the login card fill."
+     },
+     "ink-75": {
+      "value": "rgba(239, 239, 239, 0.75)",
+      "type": "color",
+      "source": "computed color of legal-signin hover and legal-link default (raw/components-computed.json)",
+      "description": "75% app ink on hover/legal links."
+     },
+     "ink-90": {
+      "value": "rgba(239, 239, 239, 0.9)",
+      "type": "color",
+      "source": "computed backgroundColor of send-code hover (raw/components-computed.json)",
+      "description": "90% app ink: app-button hover fill."
+     },
+     "white-30": {
+      "value": "oklab(0.999994 0.0000455678 0.0000200868 / 0.3)",
+      "type": "color",
+      "source": "computed color of billing-monthly default (raw/components-computed.json)",
+      "description": "30% white: unselected toggle label."
+     },
+     "white-75": {
+      "value": "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+      "type": "color",
+      "source": "computed color of billing-monthly hover (raw/components-computed.json)",
+      "description": "75% white on text hover."
+     },
+     "white-85": {
+      "value": "oklab(0.999994 0.0000455678 0.0000200868 / 0.85)",
+      "type": "color",
+      "source": "computed backgroundColor of news-submit hover (raw/components-computed.json)",
+      "description": "85% white: marketing button hover."
+     },
+     "black-50": {
+      "value": "oklab(0.144787 0.00000661612 0.00000289828 / 0.5)",
+      "type": "color",
+      "source": "computed backgroundColor of carousel-prev default (raw/components-computed.json)",
+      "description": "50% black: carousel arrow rest fill."
+     },
+     "black-80": {
+      "value": "oklab(0.144787 0.00000661612 0.00000289828 / 0.8)",
+      "type": "color",
+      "source": "computed backgroundColor of carousel-prev hover (raw/components-computed.json)",
+      "description": "80% black: carousel arrow hover fill."
+     },
+     "placeholder-50": {
+      "value": "oklab(0.999994 0.0000455678 0.0000200868 / 0.5)",
+      "type": "color",
+      "source": "computed placeholder color of news-field default (raw/components-computed.json)",
+      "description": "50% white: newsletter field placeholder."
+     }
+    }
+   },
+   "accent": {
+    "pink": {
+     "value": "rgb(255, 19, 177)",
+     "type": "color",
+     "source": "computed backgroundColor of hero-cta default (raw/components-computed.json)",
+     "description": "#ff13b1 magenta: the hero Start-creating fill."
+    },
+    "pink-hover": {
+     "value": "rgb(255, 75, 196)",
+     "type": "color",
+     "source": "computed backgroundColor of hero-cta hover (raw/components-computed.json)",
+     "description": "#ff4bc4 pink hover/pressed."
+    },
+    "pill": {
+     "value": "rgb(255, 61, 174)",
+     "type": "color",
+     "source": "computed backgroundColor of save-pill default (raw/components-computed.json)",
+     "description": "#ff3dae pink: the 'Save 20%' pill."
+    },
+    "blue": {
+     "value": "rgb(44, 92, 255)",
+     "type": "color",
+     "source": "computed backgroundColor of plan-chip-edu default and edu-cta default (raw/components-computed.json)",
+     "description": "#2c5cff blue: education chip and CTA."
+    },
+    "blue-hover": {
+     "value": "rgb(90, 101, 255)",
+     "type": "color",
+     "source": "computed backgroundColor of edu-cta hover (raw/components-computed.json)",
+     "description": "#5a65ff blue hover/pressed."
+    },
+    "focus": {
+     "value": "rgb(0, 95, 204)",
+     "type": "color",
+     "source": "computed outlineColor of footer-link focus-visible and plan-cta focus-visible (raw/components-computed.json); outline-style auto, so the UA draws the ring and this colour is not painted as recorded",
+     "description": "#005fcc: the outline colour Chrome reports under outline-style auto (its -webkit-focus-ring-color). The browser draws its own focus ring there, so this is the UA default, not a colour the product paints."
+    }
+   }
+  },
+  "gradient": {
+   "nav": {
+    "value": "linear-gradient(rgb(0, 0, 0) 14.73%, rgba(0, 10, 10, 0) 100%)",
+    "type": "other",
+    "source": "computed backgroundImage of header default (raw/components-computed.json)",
+    "description": "The black veil the sticky header fades from."
+   },
+   "overlay": {
+    "value": "linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 85.27%)",
+    "type": "other",
+    "source": "entered by hand at capture time, not measured: no rule named .ui-overlay-gradient and no component painting it is in raw/; recapture needed",
+    "description": "The bottom fade over media tiles."
+   }
+  },
+  "radius": {
+   "base": {
+    "var": "--radius-base",
+    "type": "dimension",
+    "description": "10px: app-shell fields and buttons."
+   },
+   "fill": {
+    "var": "--radius-fill",
+    "type": "dimension",
+    "description": "12px: inner tiles and card fills."
+   },
+   "thumb": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of asset-thumb default (raw/components-computed.json)",
+    "description": "16px asset thumbnails."
+   },
+   "login": {
+    "value": "20px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of login-card default (raw/components-computed.json)",
+    "description": "20px login card."
+   },
+   "card": {
+    "value": "33px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of plan-card default (raw/components-computed.json)",
+    "description": "33px plan/testimonial cards."
+   },
+   "pill": {
+    "value": "9999px",
+    "type": "dimension",
+    "source": "derived: computed borderTopLeftRadius of hero-cta default is 3.35544e+07px, Chrome's rounded-full (raw/components-computed.json); stored as 9999px",
+    "description": "Fully rounded: buttons, chips, pills, checkboxes."
+   }
+  },
+  "spacing": {
+   "unit": {
+    "var": "--spacing",
+    "type": "dimension",
+    "description": "Tailwind v4's 4px spacing unit."
+   },
+   "control-x": {
+    "value": "20px",
+    "type": "dimension",
+    "source": "computed paddingLeft of nav-cta default (raw/components-computed.json)",
+    "description": "20px inline padding on pill buttons and the newsletter field."
+   },
+   "chip-x": {
+    "value": "15px",
+    "type": "dimension",
+    "source": "computed paddingLeft of plan-chip default (raw/components-computed.json)",
+    "description": "15px chip padding."
+   },
+   "pill-x": {
+    "value": "10px",
+    "type": "dimension",
+    "source": "computed paddingLeft of save-pill default (raw/components-computed.json)",
+    "description": "10px save-pill padding."
+   },
+   "field-x": {
+    "value": "15px",
+    "type": "dimension",
+    "source": "computed paddingLeft of login-field default (raw/components-computed.json)",
+    "description": "15px app-field padding."
+   },
+   "switch-x": {
+    "value": "25px",
+    "type": "dimension",
+    "source": "computed paddingLeft of login-switch default (raw/components-computed.json)",
+    "description": "25px secondary-button padding."
+   },
+   "signin-x": {
+    "value": "30px",
+    "type": "dimension",
+    "source": "computed paddingLeft of legal-signin default (raw/components-computed.json)",
+    "description": "30px legal sign-in padding."
+   },
+   "card": {
+    "value": "15px",
+    "type": "dimension",
+    "source": "computed paddingTop of plan-card default (raw/components-computed.json)",
+    "description": "15px plan-card padding."
+   },
+   "login-card": {
+    "value": "50px",
+    "type": "dimension",
+    "source": "computed paddingTop of login-card default (raw/components-computed.json)",
+    "description": "50px login-card padding."
+   },
+   "footer-y": {
+    "value": "150px",
+    "type": "dimension",
+    "source": "computed paddingTop of footer default (raw/components-computed.json)",
+    "description": "150px above and below the footer."
+   }
+  },
+  "motion": {
+   "duration": {
+    "default": {
+     "var": "--default-transition-duration",
+     "type": "duration",
+     "description": "150ms: the default transition duration on buttons and pills."
+    },
+    "fast": {
+     "value": ".2s",
+     "type": "duration",
+     "source": "declared --tw-duration of .duration-200 in the readable sheets (raw/css-vars.json tailwind)",
+     "description": "200ms duration used on toggles."
+    },
+    "slow": {
+     "value": ".3s",
+     "type": "duration",
+     "source": "declared --tw-duration of .duration-300 in the readable sheets (raw/css-vars.json tailwind)",
+     "description": "300ms duration used on cards."
+    }
+   },
+   "easing": {
+    "in-out": {
+     "var": "--ease-in-out",
+     "type": "cubicBezier",
+     "description": "cubic-bezier(.4,0,.2,1): the default transition timing."
+    }
+   },
+   "press": {
+    "scale": {
+     "value": "scale(0.95)",
+     "type": "other",
+     "source": "declared --tw-scale-x/-y of .active:scale-95 in the readable sheets (raw/css-vars.json tailwind)",
+     "description": "Buttons scale to 95% while pressed."
+    }
+   },
+   "animation": {
+    "gradient-flow": {
+     "value": "1.5s ease-in-out 0s infinite alternate none running move-gradient",
+     "type": "other",
+     "source": "recorded animation of the .animate-gradient-flow rule (raw/components-computed.json _meta.sheets.home)",
+     "description": "The gradient drift on the hero title's marks."
+    },
+    "orbit": {
+     "value": "et-orbit var(--orbit-duration,28s)linear infinite",
+     "type": "other",
+     "source": "recorded animation of the .animate-orbit rule (raw/components-computed.json _meta.sheets.home)",
+     "description": "The hero's orbiting asset marks."
+    },
+    "skeleton": {
+     "value": "1s linear 0s infinite alternate none running SkeletonLoading",
+     "type": "other",
+     "source": "recorded animation of the .ui-skeleton__field, .ui-skeleton__unit rule (raw/components-computed.json _meta.sheets.login)",
+     "description": "The app shell's skeleton shimmer (the Flow Rounded placeholder face)."
+    },
+    "pulse": {
+     "value": "2s cubic-bezier(0.4, 0, 0.6, 1) 0s infinite normal none running pulse",
+     "type": "other",
+     "source": "recorded animation of the .animate-pulse rule (raw/components-computed.json _meta.sheets.login)",
+     "description": "Tailwind's pulse on the app shell."
+    },
+    "spin": {
+     "value": "1s linear 0s infinite normal none running spin",
+     "type": "other",
+     "source": "recorded animation of the .animate-spin rule (raw/components-computed.json _meta.sheets.login)",
+     "description": "Tailwind's spin on the app shell."
+    }
+   }
+  },
+  "typography": {
+   "title-primary": {
+    "$value": {
+     "fontFamily": "{font.family.sans}",
+     "fontSize": "{font.size.title-primary}",
+     "lineHeight": "{font.lineHeight.title-primary}",
+     "fontWeight": "{font.weight.title-primary}",
+     "letterSpacing": "{font.tracking.title}"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "declared --text-title-primary composite (raw/css-vars.json)"
+    },
+    "$description": "Hero, section and newsletter titles: 42/46, 500, -0.03em."
+   },
+   "title-secondary": {
+    "$value": {
+     "fontFamily": "{font.family.sans}",
+     "fontSize": "{font.size.title-secondary}",
+     "lineHeight": "{font.lineHeight.title-secondary}",
+     "fontWeight": "{font.weight.title-secondary}",
+     "letterSpacing": "{font.tracking.title}"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "declared --text-title-secondary composite (raw/css-vars.json)"
+    },
+    "$description": "Sub-heads and the mobile hero: 24/26, 500, -0.03em."
+   },
+   "subtitle": {
+    "$value": {
+     "fontFamily": "{font.family.sans}",
+     "fontSize": "{font.size.subtitle}",
+     "lineHeight": "{font.lineHeight.subtitle}",
+     "fontWeight": "{font.weight.medium}",
+     "letterSpacing": "normal"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "declared --text-subtitle composite (raw/css-vars.json)"
+    },
+    "$description": "18/20 subtitle step."
+   },
+   "body": {
+    "$value": {
+     "fontFamily": "{font.family.sans}",
+     "fontSize": "{font.size.body-primary}",
+     "lineHeight": "{font.lineHeight.body-primary}",
+     "fontWeight": "{font.weight.regular}",
+     "letterSpacing": "normal"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "declared --text-body-primary composite (raw/css-vars.json)"
+    },
+    "$description": "14/18 lede, footer and consent text."
+   },
+   "label": {
+    "$value": {
+     "fontFamily": "{font.family.sans}",
+     "fontSize": "{font.size.body-secondary}",
+     "lineHeight": "{font.lineHeight.body-secondary}",
+     "fontWeight": "{font.weight.medium}",
+     "letterSpacing": "normal"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "declared --text-body-secondary composite (raw/css-vars.json)"
+    },
+    "$description": "12/14 pill buttons and small labels."
+   },
+   "price": {
+    "$value": {
+     "fontFamily": "{font.family.sans}",
+     "fontSize": "{font.size.price}",
+     "lineHeight": "{font.lineHeight.price}",
+     "fontWeight": "{font.weight.title-primary}",
+     "letterSpacing": "{font.tracking.price}"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed text style of plan-price default (raw/components-computed.json)"
+    },
+    "$description": "42/42 price figure."
+   },
+   "login-title": {
+    "$value": {
+     "fontFamily": "{font.family.sans}",
+     "fontSize": "{font.size.login-title}",
+     "lineHeight": "{font.lineHeight.login-title}",
+     "fontWeight": "{font.weight.medium}",
+     "letterSpacing": "normal"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed text style of login-title default (raw/components-computed.json)"
+    },
+    "$description": "23/25 app card title."
+   },
+   "legal-title": {
+    "$value": {
+     "fontFamily": "{font.family.sans}",
+     "fontSize": "{font.size.legal-title}",
+     "lineHeight": "{font.lineHeight.legal-title}",
+     "fontWeight": "{font.weight.legal}",
+     "letterSpacing": "normal"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed text style of legal-title default (raw/components-computed.json)"
+    },
+    "$description": "42/40 legal document title."
+   },
+   "toggle": {
+    "$value": {
+     "fontFamily": "{font.family.sans}",
+     "fontSize": "{font.size.toggle}",
+     "lineHeight": "{font.lineHeight.toggle}",
+     "fontWeight": "{font.weight.medium}",
+     "letterSpacing": "{font.tracking.tight}"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed text style of billing-yearly default (raw/components-computed.json)"
+    },
+    "$description": "16/24 billing toggle."
+   },
+   "login-label": {
+    "$value": {
+     "fontFamily": "{font.family.sans}",
+     "fontSize": "{font.size.login-body}",
+     "lineHeight": "{font.lineHeight.login-body}",
+     "fontWeight": "{font.weight.login-label}",
+     "letterSpacing": "{font.tracking.login-label}"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed text style of login-field default (raw/components-computed.json)"
+    },
+    "$description": "14/15 app labels and fields."
+   },
+   "login-small": {
+    "$value": {
+     "fontFamily": "{font.family.sans}",
+     "fontSize": "{font.size.login-small}",
+     "lineHeight": "{font.lineHeight.login-small}",
+     "fontWeight": "{font.weight.login-label}",
+     "letterSpacing": "normal"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed text style of login-forgot default (raw/components-computed.json)"
+    },
+    "$description": "12/13 app helper text."
+   },
+   "chip": {
+    "$value": {
+     "fontFamily": "{font.family.sans}",
+     "fontSize": "{font.size.chip}",
+     "lineHeight": "{font.lineHeight.chip}",
+     "fontWeight": "{font.weight.medium}",
+     "letterSpacing": "normal"
+    },
+    "$type": "typography",
+    "$extensions": {
+     "source": "computed text style of plan-chip default (raw/components-computed.json)"
+    },
+    "$description": "14/35 plan chip label."
+   }
+  }
+ },
+ "light": {},
+ "dark": {
+  "surface": {
+   "page": {
+    "value": "{color.neutral.page}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "#000 marketing page field."
+   },
+   "app": {
+    "value": "{color.neutral.black}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "#0a0a0a app-shell page field (body.bg-back)."
+   },
+   "header-veil": {
+    "value": "{gradient.nav}",
+    "type": "other",
+    "source": "role alias over the core palette",
+    "description": "The black fade behind the sticky header."
+   },
+   "card": {
+    "value": "{color.neutral.card}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#121212 card fill."
+   },
+   "card-hover": {
+    "value": "{color.neutral.card-hover}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#1d1d1d card hover fill."
+   },
+   "inset": {
+    "value": "{color.neutral.inset}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#080808 testimonial card fill."
+   },
+   "field": {
+    "value": "{color.neutral.secondary}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#1e1e1e field fill."
+   },
+   "raised": {
+    "value": "{color.neutral.grey-2}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#2a2a2a raised fill (sign-in pill, switch hover)."
+   },
+   "hover": {
+    "value": "{color.neutral.grey-1}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#373737 hover/focused fill."
+   },
+   "veil": {
+    "value": "{color.neutral.alpha.veil-5}",
+    "type": "color",
+    "source": "role alias",
+    "description": "5% ink veil (login card)."
+   },
+   "overlay": {
+    "value": "{color.neutral.alpha.black-50}",
+    "type": "color",
+    "source": "role alias",
+    "description": "50% black overlay (carousel arrow)."
+   },
+   "overlay-hover": {
+    "value": "{color.neutral.alpha.black-80}",
+    "type": "color",
+    "source": "role alias",
+    "description": "80% black overlay hover."
+   }
+  },
+  "text": {
+   "primary": {
+    "value": "{color.neutral.white}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#fff marketing text (body text-white)."
+   },
+   "app": {
+    "value": "{color.neutral.ink}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#efefef app-shell text."
+   },
+   "muted": {
+    "value": "{color.neutral.grey-4}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#959595 muted text (ledes, footer, helpers)."
+   },
+   "dim": {
+    "value": "{color.neutral.alpha.white-30}",
+    "type": "color",
+    "source": "role alias",
+    "description": "30% white: unselected labels."
+   },
+   "app-dim": {
+    "value": "{color.neutral.alpha.ink-75}",
+    "type": "color",
+    "source": "role alias",
+    "description": "75% app ink: legal links, sign-in hover."
+   },
+   "on-light": {
+    "value": "{color.neutral.black}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#0a0a0a on white controls."
+   },
+   "on-accent": {
+    "value": "{color.neutral.white}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#fff on the pink/blue accents."
+   },
+   "placeholder": {
+    "value": "{color.neutral.alpha.placeholder-50}",
+    "type": "color",
+    "source": "role alias",
+    "description": "50% white placeholder on marketing fields."
+   },
+   "placeholder-app": {
+    "value": "{color.neutral.grey-4}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#959595 placeholder on app fields."
+   }
+  },
+  "border": {
+   "card": {
+    "value": "{color.neutral.ring}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#222 card hairline (1px ring)."
+   },
+   "field": {
+    "value": "{color.neutral.grey-2}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#2a2a2a field border."
+   },
+   "field-focus": {
+    "value": "{color.neutral.grey-1}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#373737 focused field border/ring."
+   },
+   "thumb": {
+    "value": "{color.neutral.thumb-border}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#343434 asset thumbnail border."
+   },
+   "muted": {
+    "value": "{color.neutral.grey-4}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#959595 consent box border (border-current on muted text)."
+   }
+  },
+  "action": {
+   "bg": {
+    "value": "{color.neutral.white}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#fff primary controls (nav CTA, plan CTA, newsletter submit)."
+   },
+   "fg": {
+    "value": "{color.neutral.black}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#0a0a0a on the white controls."
+   },
+   "bg-hover": {
+    "value": "{color.neutral.hover-white}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#c4c4c4 white-control hover."
+   },
+   "bg-hover-soft": {
+    "value": "{color.neutral.alpha.white-85}",
+    "type": "color",
+    "source": "role alias",
+    "description": "85% white hover (newsletter submit)."
+   },
+   "app-bg": {
+    "value": "{color.neutral.ink}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#efefef app-shell buttons (bg-white utility)."
+   },
+   "app-bg-hover": {
+    "value": "{color.neutral.alpha.ink-90}",
+    "type": "color",
+    "source": "role alias",
+    "description": "90% app-ink button hover."
+   },
+   "nav-bg-hover": {
+    "value": "{color.neutral.grey-1}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#373737 nav-action hover fill: the header's white pill flips dark."
+   },
+   "nav-fg-hover": {
+    "value": "{color.neutral.white}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#fff nav-action hover text."
+   }
+  },
+  "accent": {
+   "pink": {
+    "value": "{color.accent.pink}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#ff13b1 primary accent CTA."
+   },
+   "pink-hover": {
+    "value": "{color.accent.pink-hover}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#ff4bc4 accent hover/pressed."
+   },
+   "pill": {
+    "value": "{color.accent.pill}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#ff3dae save/discount pill."
+   },
+   "blue": {
+    "value": "{color.accent.blue}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#2c5cff education accent."
+   },
+   "blue-hover": {
+    "value": "{color.accent.blue-hover}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#5a65ff education hover/pressed."
+   }
+  },
+  "focus": {
+   "ua": {
+    "value": "{color.accent.focus}",
+    "type": "color",
+    "source": "role alias",
+    "description": "#005fcc: the UA keyboard focus ring on marketing links (1px auto outline, 1px offset)."
+   }
+  }
+ },
+ "component": {
+  "button": {
+   "height": {
+    "type": "dimension",
+    "value": "35px",
+    "source": "computed height of nav-cta default (raw/components-computed.json)",
+    "description": "35px nav pill buttons."
+   },
+   "bg": {
+    "type": "color",
+    "value": "{action.bg}",
+    "source": "role alias",
+    "description": "White plan/team card pill (plan-cta, team-cta)."
+   },
+   "text": {
+    "type": "color",
+    "value": "{action.fg}",
+    "source": "role alias",
+    "description": "Dark ink on the white pills."
+   },
+   "bg-hover": {
+    "type": "color",
+    "value": "{action.bg-hover}",
+    "source": "role alias",
+    "description": "#c4c4c4 hover on the white card pills."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "{radius.pill}",
+    "source": "role alias",
+    "description": "Fully rounded."
+   },
+   "padding": {
+    "type": "dimension",
+    "value": "{spacing.control-x}",
+    "source": "role alias",
+    "description": "20px inline padding."
+   }
+  },
+  "button-lg": {
+   "height": {
+    "type": "dimension",
+    "value": "36px",
+    "source": "computed height of hero-cta default (raw/components-computed.json)",
+    "description": "36px marketing CTAs."
+   }
+  },
+  "button-mobile": {
+   "height": {
+    "type": "dimension",
+    "value": "38px",
+    "source": "computed height of m-cta default (raw/components-computed.json)",
+    "description": "38px mobile CTA."
+   }
+  },
+  "button-app": {
+   "height": {
+    "type": "dimension",
+    "value": "35px",
+    "source": "computed height of send-code default (raw/components-computed.json)",
+    "description": "35px app buttons."
+   },
+   "bg": {
+    "type": "color",
+    "value": "{action.app-bg}",
+    "source": "role alias",
+    "description": "#efefef app button."
+   },
+   "bg-hover": {
+    "type": "color",
+    "value": "{action.app-bg-hover}",
+    "source": "role alias",
+    "description": "90% ink hover."
+   },
+   "text": {
+    "type": "color",
+    "value": "rgb(0, 0, 0)",
+    "source": "computed color of send-code default (raw/components-computed.json)",
+    "description": "Black text on the app button."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "{radius.base}",
+    "source": "role alias",
+    "description": "10px app radius."
+   }
+  },
+  "field": {
+   "height": {
+    "type": "dimension",
+    "value": "35px",
+    "source": "computed height of login-field default (raw/components-computed.json)",
+    "description": "35px app fields."
+   },
+   "bg": {
+    "type": "color",
+    "value": "{surface.field}",
+    "source": "role alias",
+    "description": "#1e1e1e app field."
+   },
+   "text": {
+    "type": "color",
+    "value": "{text.app}",
+    "source": "role alias",
+    "description": "#efefef field text."
+   },
+   "border": {
+    "type": "color",
+    "value": "{border.field}",
+    "source": "role alias",
+    "description": "#2a2a2a field border."
+   },
+   "border-focus": {
+    "type": "color",
+    "value": "{border.field-focus}",
+    "source": "role alias",
+    "description": "#373737 focused border."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "{radius.base}",
+    "source": "role alias",
+    "description": "10px app radius."
+   },
+   "padding": {
+    "type": "dimension",
+    "value": "{spacing.field-x}",
+    "source": "role alias",
+    "description": "15px inline padding."
+   }
+  },
+  "field-news": {
+   "height": {
+    "type": "dimension",
+    "value": "35px",
+    "source": "computed height of news-field default (raw/components-computed.json)",
+    "description": "35px newsletter field."
+   }
+  },
+  "chip": {
+   "height": {
+    "type": "dimension",
+    "value": "35px",
+    "source": "computed height of plan-chip default (raw/components-computed.json)",
+    "description": "35px plan chips."
+   }
+  },
+  "pill": {
+   "height": {
+    "type": "dimension",
+    "value": "25px",
+    "source": "computed height of save-pill default (raw/components-computed.json)",
+    "description": "25px save pill."
+   }
+  },
+  "signin": {
+   "height": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of legal-signin default (raw/components-computed.json)",
+    "description": "40px legal sign-in pill."
+   }
+  },
+  "carousel": {
+   "size": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed width of carousel-prev default (raw/components-computed.json)",
+    "description": "40px round carousel arrows."
+   }
+  },
+  "consent": {
+   "size": {
+    "type": "dimension",
+    "value": "18px",
+    "source": "computed width of news-consent default (raw/components-computed.json)",
+    "description": "18px consent checkbox."
+   }
+  },
+  "thumb": {
+   "size": {
+    "type": "dimension",
+    "value": "144px",
+    "source": "computed width of asset-thumb default (raw/components-computed.json)",
+    "description": "144px asset thumbnails."
+   }
+  },
+  "logo": {
+   "height": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of logo default (raw/components-computed.json)",
+    "description": "40px logo block."
+   }
+  },
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "80px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "80px sticky header."
+   }
+  },
+  "card-plan": {
+   "width": {
+    "type": "dimension",
+    "value": "356.656px",
+    "source": "computed width of plan-card default (raw/components-computed.json)",
+    "description": "357px plan card column."
+   }
+  },
+  "card-login": {
+   "width": {
+    "type": "dimension",
+    "value": "450px",
+    "source": "computed width of login-card default (raw/components-computed.json)",
+    "description": "450px login card."
+   }
+  },
+  "button-nav": {
+   "bg": {
+    "type": "color",
+    "value": "{action.bg}",
+    "source": "role alias",
+    "description": "The header's white Start-for-free pill."
+   },
+   "text": {
+    "type": "color",
+    "value": "{action.fg}",
+    "source": "role alias",
+    "description": "Dark ink at rest."
+   },
+   "bg-hover": {
+    "type": "color",
+    "value": "{action.nav-bg-hover}",
+    "source": "role alias",
+    "description": "#373737 hover: the nav pill inverts dark, unlike the card pills."
+   },
+   "text-hover": {
+    "type": "color",
+    "value": "{action.nav-fg-hover}",
+    "source": "role alias",
+    "description": "#fff hover text on the nav pill."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "{radius.pill}",
+    "source": "role alias",
+    "description": "Fully rounded."
+   },
+   "padding": {
+    "type": "dimension",
+    "value": "{spacing.control-x}",
+    "source": "role alias",
+    "description": "20px inline padding."
+   }
+  },
+  "button-news": {
+   "bg": {
+    "type": "color",
+    "value": "{action.bg}",
+    "source": "role alias",
+    "description": "White newsletter submit pill."
+   },
+   "text": {
+    "type": "color",
+    "value": "{action.fg}",
+    "source": "role alias",
+    "description": "Dark ink on the submit."
+   },
+   "bg-hover": {
+    "type": "color",
+    "value": "{action.bg-hover-soft}",
+    "source": "role alias",
+    "description": "85% white hover on the submit."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "{radius.pill}",
+    "source": "role alias",
+    "description": "Fully rounded."
+   },
+   "padding": {
+    "type": "dimension",
+    "value": "{spacing.control-x}",
+    "source": "role alias",
+    "description": "20px inline padding."
+   }
+  },
+  "button-accent": {
+   "bg": {
+    "type": "color",
+    "value": "{accent.pink}",
+    "source": "role alias",
+    "description": "Pink hero CTA."
+   },
+   "bg-hover": {
+    "type": "color",
+    "value": "{accent.pink-hover}",
+    "source": "role alias",
+    "description": "#ff4bc4 hover."
+   },
+   "text": {
+    "type": "color",
+    "value": "{text.on-accent}",
+    "source": "role alias",
+    "description": "White on pink."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "{radius.pill}",
+    "source": "role alias",
+    "description": "Fully rounded."
+   }
+  },
+  "button-edu": {
+   "bg": {
+    "type": "color",
+    "value": "{accent.blue}",
+    "source": "role alias",
+    "description": "Blue education CTA."
+   },
+   "bg-hover": {
+    "type": "color",
+    "value": "{accent.blue-hover}",
+    "source": "role alias",
+    "description": "#5a65ff hover."
+   },
+   "text": {
+    "type": "color",
+    "value": "{text.on-accent}",
+    "source": "role alias",
+    "description": "White on blue."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "{radius.pill}",
+    "source": "role alias",
+    "description": "Fully rounded."
+   }
+  },
+  "field-pill": {
+   "bg": {
+    "type": "color",
+    "value": "{surface.field}",
+    "source": "role alias",
+    "description": "#1e1e1e newsletter field."
+   },
+   "text": {
+    "type": "color",
+    "value": "{text.primary}",
+    "source": "role alias",
+    "description": "#fff field text."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "{radius.pill}",
+    "source": "role alias",
+    "description": "Fully rounded pill field."
+   },
+   "padding": {
+    "type": "dimension",
+    "value": "{spacing.control-x}",
+    "source": "role alias",
+    "description": "20px inline padding."
+   }
+  },
+  "card": {
+   "bg": {
+    "type": "color",
+    "value": "{surface.card}",
+    "source": "role alias",
+    "description": "#121212 plan card."
+   },
+   "bg-hover": {
+    "type": "color",
+    "value": "{surface.card-hover}",
+    "source": "role alias",
+    "description": "#1d1d1d card hover."
+   },
+   "border": {
+    "type": "color",
+    "value": "{border.card}",
+    "source": "role alias",
+    "description": "#222 hairline ring."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "{radius.card}",
+    "source": "role alias",
+    "description": "33px card radius."
+   },
+   "padding": {
+    "type": "dimension",
+    "value": "{spacing.card}",
+    "source": "role alias",
+    "description": "15px card padding."
+   }
+  },
+  "card-social": {
+   "bg": {
+    "type": "color",
+    "value": "{surface.inset}",
+    "source": "role alias",
+    "description": "#080808 testimonial card."
+   },
+   "border": {
+    "type": "color",
+    "value": "{color.neutral.grey-1}",
+    "source": "role alias",
+    "description": "#373737 inset ring (a box-shadow ring, not a border)."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "{radius.fill}",
+    "source": "role alias",
+    "description": "12px fill radius on the testimonial card."
+   }
+  },
+  "card-app": {
+   "bg": {
+    "type": "color",
+    "value": "{surface.veil}",
+    "source": "role alias",
+    "description": "5% ink veil login card."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "{radius.login}",
+    "source": "role alias",
+    "description": "20px login card radius."
+   },
+   "padding": {
+    "type": "dimension",
+    "value": "{spacing.login-card}",
+    "source": "role alias",
+    "description": "50px login card padding."
+   }
+  }
+ }
+}

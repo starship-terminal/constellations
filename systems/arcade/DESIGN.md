@@ -32,37 +32,37 @@ typography:
     fontSize: "56px"
     fontWeight: 400
     lineHeight: "67.2px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   title:
     fontFamily: "Inter Display"
     fontSize: "48px"
     fontWeight: 400
     lineHeight: "57.6px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   price:
     fontFamily: "Inter Display"
     fontSize: "36px"
     fontWeight: 400
     lineHeight: "36px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   body:
     fontFamily: "Inter Variable"
     fontSize: "16px"
     fontWeight: 400
     lineHeight: "24px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   ui:
     fontFamily: "Inter Variable"
     fontSize: "14px"
     fontWeight: 500
     lineHeight: "20px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   small:
     fontFamily: "Inter Variable"
     fontSize: "12px"
     fontWeight: 500
     lineHeight: "16px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   mobile-nav:
     fontFamily: "Inter Variable"
     fontSize: "24px"
@@ -99,7 +99,7 @@ Captured 2026-11-10, signed out (every captured surface is public; the app behin
 
 A token set and component reference for Arcade's public marketing site (https://www.arcade.software), a Webflow build selling an AI video generator for marketing teams. Use it to build a web page or marketing surface that borrows its look: a pure-white page, black-on-white chrome, Inter Display 56px display lines over Inter Variable UI, black 12px-radius pill CTAs, `#f4f4f4` 24px plan cards, a hairline `#e5e7eb` border system, pastel `--card-bg-*` washes, and a `#2142e7` brand blue kept for the demo pages. It was captured signed out, in headless Chromium at 1440 x 900 (mobile pages at 390 x 844) on 2026-11-10.
 
-It holds 28 screenshots across nine desktop routes and three phone routes — home, /pricing, /product/interactive-demo, /agents, /enterprise, /ai-video-examples, /blog, /changelog, /contact-sales — plus transient states (prompt suggestion applied, spotlight quote advanced, FAQ open, the mobile menu), and 49 measured components with 126 states and one crop each. The product itself (the demo editor, agents) sits behind sign-up and was never reached: the app is recorded as a boundary, and nothing here claims its functionality (see [components.md](components.md) > Gaps).
+It holds 28 screenshots across nine desktop routes and three phone routes — home, /pricing, /product/interactive-demo, /agents, /enterprise, /ai-video-examples, /blog, /changelog, /contact-sales — plus transient states (prompt suggestion applied, spotlight quote advanced, FAQ open, the mobile menu), and 49 measured components with 126 states and 125 crops. The product itself (the demo editor, agents) sits behind sign-up and was never reached: the app is recorded as a boundary, and nothing here claims its functionality (see [components.md](components.md) > Gaps).
 
 This package contains no Arcade code, and none of its artwork has been redrawn. The screenshots, video stills and visual system they show belong to Arcade ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the logo, artwork or brand assets.
 
@@ -153,6 +153,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **The app is absent.** Sign up / Log in lead to the product behind an account; no editor, agent or dashboard screen is in this package — only the marketing site that links to it.
 - **The brand blue is not the site's main action colour.** On the marketing surface every primary CTA is black `ink`; `--primary-*` shows on the demo pages (url-to-demo button, signup pair) and in links. Do not paint primary actions blue.
 - **Hover values are mild.** Nav ghosts lift to a 6%-black wash and black CTAs to `#404040`; pressed states shrink ~3% (a Webflow transform). Nothing changes colour.

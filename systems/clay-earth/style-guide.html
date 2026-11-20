@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mesh style guide</title>
+<meta name="description" content="Mesh (me.sh, reached through clay.earth) design tokens and the public site's components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+  --color-ink-950: #000000;
+  --color-ink-900: #0f0f10;
+  --color-ink-800: #1f1f1f;
+  --color-ink-750: #1f1f1e;
+  --color-ink-700: #1d1d1f;
+  --color-gray-500: #48494a;
+  --color-gray-400: #86868b;
+  --color-paper-0: #fdfcfa;
+  --color-paper-50: #f9f8f6;
+  --color-paper-100: #ffffff;
+  --color-cream-0: #fefef7;
+  --color-orange-500: #fb7232;
+  --color-orange-alpha24: rgba(251, 114, 50, 0.24);
+  --color-orange-app-500: #ff6821;
+  --color-tan-300: #f2b98b;
+  --color-tan-400: #efab74;
+  --color-google-500: #5383ec;
+  --color-google-600: rgba(83, 131, 236, 0.87);
+  --color-white-alpha-3: rgba(255, 255, 255, 0.03);
+  --color-white-alpha-6: rgba(255, 255, 255, 0.06);
+  --color-white-alpha-8: rgba(255, 255, 255, 0.08);
+  --color-white-alpha-24: rgba(255, 255, 255, 0.24);
+  --color-white-alpha-40: rgba(255, 255, 255, 0.4);
+  --color-white-alpha-60: rgba(255, 255, 255, 0.6);
+  --color-white-alpha-64: rgba(255, 255, 255, 0.64);
+  --color-white-alpha-70: rgba(255, 255, 255, 0.7);
+  --color-gray-alpha-6: rgba(149, 149, 149, 0.06);
+  --color-ink-alpha-4: rgba(72, 73, 74, 0.04);
+  --color-ink-alpha-6: rgba(31, 31, 31, 0.06);
+  --color-ink-alpha-10: rgba(72, 73, 74, 0.1);
+  --color-ink-alpha-40: rgba(31, 31, 31, 0.4);
+  --color-glow-cta: rgba(255, 255, 255, 0.98);
+  --measured-drawer-fill: rgba(31, 31, 30, 0.06);
+  --gradient-ctaRing: linear-gradient(225, #32c5ff 0%, #b620e0 51.0%, #f7b500 100%);
+  --gradient-filterWash: linear-gradient(90, rgba(29, 29, 31, 0.06) 0%, rgba(29, 29, 31, 0.03) 100%);
+  --gradient-cardSheen: linear-gradient(180, #ffffff 0%, rgba(255, 255, 255, 0.5) 100%);
+  --gradient-drawerSheen: linear-gradient(180, rgba(31, 31, 30, 0.8) 2.0%, rgba(31, 31, 30, 0) 100%);
+  --font-family-ui: Verlag, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-display: VerlagCondensed, Verlag, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-serif: ChronicleCondensed, ChronicleTextG1Roman, "IBM Plex Serif", serif;
+  --font-family-app: SFProText, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-size-display: 64px;
+  --font-size-h1: 48px;
+  --font-size-h2: 48px;
+  --font-size-signin: 32px;
+  --font-size-sub: 20px;
+  --font-size-body: 20px;
+  --font-size-planLabel: 14px;
+  --font-size-nav: 12px;
+  --font-size-footer: 12px;
+  --component-control-heightCta: 54px;
+  --component-control-heightCtaBottom: 52px;
+  --component-control-heightNavCta: 32.0312px;
+  --component-control-heightSigninLink: 34px;
+  --component-control-heightPlanCta: 44px;
+  --component-control-heightField: 40px;
+  --component-control-heightOauth: 44px;
+  --component-control-heightToggle: 40px;
+  --component-control-heightFilter: 48px;
+  --component-control-heightHamburger: 32px;
+  --component-control-radiusCta: 14px;
+  --component-control-radiusCtaBottom: 16px;
+  --component-control-radiusPlanCta: 10px;
+  --component-control-radiusNavCta: 8px;
+  --component-control-radiusHamburger: 8px;
+  --component-control-radiusSigninLink: 8px;
+  --component-control-radiusField: 6px;
+  --component-control-radiusSigninBtn: 12px;
+  --component-control-radiusToggle: 12px;
+  --component-control-radiusFilter: 16px;
+  --component-card-radiusPlan: 16px;
+  --component-card-radiusDrawer: 12px;
+  --component-nav-height: 48px;
+  --component-nav-width: 388px;
+  --component-menuPanel-width: 556px;
+  --component-footer-height: 335px;
+  --component-drawer-height: 762px;
+  --component-planCard-height: 196px;
+  --surface-page: var(--color-paper-50);
+  --surface-card: var(--color-gray-alpha-6);
+  --surface-chip: var(--color-ink-alpha-6);
+  --text-primary: var(--color-ink-800);
+  --text-muted: var(--color-gray-500);
+  --text-accent: var(--color-orange-500);
+  --text-onAccent: var(--color-paper-100);
+  --accent: var(--color-orange-500);
+  --accentRing: var(--color-orange-alpha24);
+  --accentApp: var(--color-orange-app-500);
+  --field-fill: var(--color-ink-alpha-4);
+  --border-subtle: #eceae8;
+  --border-control: var(--color-ink-alpha-40);
+  --border-field: var(--color-ink-alpha-10);
+  --oauth-ink: var(--color-ink-750);
+  --oauth-google: var(--color-google-500);
+  --oauth-googleHover: var(--color-google-600);
+  --shadow-popularRing: 0px 0px 0px 3px rgba(251, 114, 50, 0.24);
+  --sg-sans: var(--font-family-ui, "Verlag", -apple-system, BlinkMacSystemFont, "SF Pro", system-ui, sans-serif);
+  --sg-display: var(--font-family-display, "VerlagCondensed", "Arial Narrow", Impact, sans-serif);
+  --sg-serif: var(--font-family-serif, "ChronicleDisplayCondensed", Georgia, "Times New Roman", serif);
+  --sg-app: var(--font-family-app, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif);
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"] {
+  --surface-page: var(--color-ink-950);
+  --surface-band: var(--color-ink-900);
+  --surface-pill: var(--color-white-alpha-3);
+  --surface-control: var(--color-white-alpha-6);
+  --text-primary: var(--color-cream-0);
+  --text-body: var(--color-white-alpha-70);
+  --text-muted: var(--color-white-alpha-64);
+  --text-faint: var(--color-white-alpha-40);
+  --text-accent: var(--color-tan-300);
+  --text-accentHover: var(--color-tan-400);
+  --text-onInverted: var(--color-ink-950);
+  --accent: var(--color-orange-500);
+  --fill-inverted: var(--color-paper-0);
+  --fill-invertedStrong: var(--color-paper-100);
+  --navHover: var(--color-white-alpha-8);
+  --ring-control: var(--color-white-alpha-24);
+  --focus: #101010;
+  --shadow-ctaGlow: 0px 0px 4px 1px rgba(255, 255, 255, 0.98);
+  --shadow-navPill: 0px 0px 0px 0.5px rgba(0, 0, 0, 0.06), 0px 2px 4px -2px rgba(0, 0, 0, 0.1), 0px 8px 16px -8px rgba(0, 0, 0, 0.06);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: #1f1f1f; background: #f9f8f6; }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 44px/1.1 var(--sg-display); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: #86868b; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid #eceae8; }
+.lead { max-width: 62ch; color: #48494a; }
+.note { font-size: 13px; color: #86868b; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: #86868b; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid #eceae8; display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: #86868b; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: #86868b; }
+/* ---- site mock: dark marketing surface ---- */
+.mock { border: 1px solid #eceae8; border-radius: 16px; overflow: hidden; }
+.mock.dark { background: var(--surface-page, #000); color: var(--text-body, rgba(255,255,255,.7)); border-color: #1f1f1f; }
+.navpill { display: flex; align-items: center; gap: 18px; height: var(--component-nav-height, 48px); padding: 0 24px; margin: 24px auto 0; max-width: 388px; border-radius: 16px; background: var(--surface-pill, rgba(255,255,255,.03)); box-shadow: var(--shadow-navPill, 0 0 0 .5px rgba(0,0,0,.06)); font-size: var(--font-size-nav, 12px); font-weight: 700; color: #fff; }
+.navpill .wm { color: var(--text-accent, #f2b98b); letter-spacing: .02em; }
+.navpill .sp { flex: 1; }
+.navpill .signin { height: var(--component-control-heightSigninLink, 34px); display: inline-flex; align-items: center; padding: 0 16px; border-radius: var(--component-control-radiusSigninLink, 8px); color: var(--text-muted, rgba(255,255,255,.64)); }
+.navpill .signin:hover { background: var(--navHover, rgba(255,255,255,.08)); color: #fff; }
+.navpill .gs { height: var(--component-control-heightNavCta, 32px); display: inline-flex; align-items: center; padding: 0 14px; border-radius: var(--component-control-radiusNavCta, 8px); box-shadow: var(--ring-control, inset 0 0 0 1px rgba(255,255,255,.24)); color: var(--text-body, rgba(255,255,255,.7)); font-size: 11px; }
+.hero { padding: 72px 40px 64px; text-align: center; }
+.hero .stat { font-size: var(--font-size-planLabel, 14px); font-weight: 700; letter-spacing: .08em; color: #fff; margin-bottom: 28px; }
+.hero .stat span { color: var(--text-body, rgba(255,255,255,.7)); font-weight: 400; }
+.hero h3 { font: 700 var(--font-size-display, 64px)/1 var(--sg-display); color: var(--text-primary, #fefef7); margin: 0; letter-spacing: -.01em; }
+.hero .lede { font: 400 var(--font-size-sub, 20px)/1.6 var(--sg-sans); color: var(--gray-400, #86868b); max-width: 44ch; margin: 22px auto 32px; }
+.cta { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightCta, 54px); padding: 0 27px; border-radius: var(--component-control-radiusCta, 14px); background: var(--fill-inverted, #fdfcfa); color: var(--text-onInverted, #000); font-size: var(--font-size-body, 18px); font-weight: 600; box-shadow: var(--shadow-ctaGlow, 0 0 4px 1px rgba(255,255,255,.98)); position: relative; }
+.cta::before { content: ""; position: absolute; inset: -27px -9px; border-radius: 999px; background: var(--gradient-ctaRing, linear-gradient(225deg, #32c5ff, #b620e0, #f7b500)); z-index: -1; opacity: .9; }
+/* ---- site mock: light pricing surface ---- */
+.mock.light { background: var(--surface-page, #f9f8f6); color: var(--text-primary, #1f1f1f); }
+.toggle { width: 226px; height: var(--component-control-heightToggle, 40px); margin: 24px auto; border-radius: var(--component-control-radiusToggle, 12px); background: var(--surface-chip, rgba(31,31,31,.06)); display: flex; align-items: center; justify-content: center; gap: 14px; font-size: 11px; font-weight: 600; letter-spacing: .06em; color: var(--text-primary, #1f1f1f); }
+.toggle b { background: #fff; border-radius: 8px; padding: 4px 8px; font-weight: 600; }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; padding: 20px 24px 28px; }
+.plan { border: 1px solid var(--border-subtle, #eceae8); border-radius: var(--component-card-radiusPlan, 16px); padding: 22px 24px; background: linear-gradient(#fff, rgba(255,255,255,.5)), var(--surface-card, rgba(149,149,149,.06)); }
+.plan.popular { border-color: var(--accent, #fb7232); box-shadow: var(--shadow-popularRing, 0 0 0 3px rgba(251,114,50,.24)); position: relative; }
+.plan .tag { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: var(--accent, #fb7232); color: #fff; border-radius: 999px; padding: 3px 10px; font: 600 10px/1.4 var(--sg-sans); letter-spacing: .05em; }
+.plan .lbl { font: 600 var(--font-size-planLabel, 14px)/1 var(--sg-sans); color: var(--text-accent, #fb7232); letter-spacing: .08em; }
+.plan .price { font: 400 40px/1.1 var(--sg-serif); color: var(--text-primary, #1f1f1f); margin: 10px 0 14px; }
+.plan .price small { font: 400 14px/1 var(--sg-serif); color: var(--text-primary, #1f1f1f); }
+.pbtn { display: flex; align-items: center; justify-content: center; height: var(--component-control-heightPlanCta, 44px); border-radius: var(--component-control-radiusPlanCta, 10px); font-size: 12px; font-weight: 600; letter-spacing: .06em; }
+.pbtn.outline { border: 1px solid var(--border-control, rgba(31,31,31,.4)); color: var(--text-primary, #1f1f1f); }
+.pbtn.fill { background: var(--accent, #fb7232); color: var(--text-onAccent, #fff); }
+/* ---- sign-in card ---- */
+.signin { max-width: 340px; margin: 28px auto; padding: 28px; background: #fcfcfc; border: 1px solid #eceae8; border-radius: 16px; font-family: var(--sg-app); font-size: 14px; color: var(--text-muted, #48494a); }
+.signin .h { font-size: var(--font-size-signin, 32px); color: var(--text-muted, #48494a); margin-bottom: 16px; }
+.field { height: var(--component-control-heightField, 40px); border-radius: var(--component-control-radiusField, 6px); background: var(--field-fill, rgba(72,73,74,.04)); border: 1px solid var(--border-field, rgba(72,73,74,.1)); display: flex; align-items: center; padding: 0 12px; color: var(--text-muted, #48494a); margin-bottom: 12px; }
+.obtn { display: flex; align-items: center; justify-content: center; height: var(--component-control-heightOauth, 44px); border-radius: var(--component-control-radiusSigninBtn, 12px); color: #fff; margin-bottom: 10px; }
+.obtn.apple { background: var(--oauth-ink, #1f1f1e); }
+.obtn.google { background: var(--oauth-google, #5383ec); }
+.obtn.google:hover { background: var(--oauth-googleHover, rgba(83,131,236,.87)); }
+.obtn.email { background: var(--accentApp, #ff6821); color: rgba(255,255,255,.6); height: var(--component-control-heightField, 40px); }
+.signin .tgl { text-align: center; font-size: 12px; color: var(--text-muted, #48494a); margin-top: 6px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid #eceae8; padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Mesh style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The mock is a reconstruction from tokens, not captured pixels — the real captures are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+
+  <h2 class="sh">Mesh, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>. me.sh (clay.earth's redirect target — the Clay product rebranded to Mesh, an Automattic product) declares no design-token CSS variables (its nine custom properties are Bulma column gaps and orb positions), so the whole palette is measured on the painted chrome: the black ground and its translucent whites, the #fb7232 marketing orange, the #f2b98b wordmark tan, the warm creams and the app surface's own #ff6821.</p>
+  <p class="note">Two page themes on different routes, not a toggle: / and the dark routes paint black; /pricing and the app.me.sh sign-in card paint warm light surfaces. Read from me.sh on 2026-11-16, signed out, in headless Chromium; library.me.sh (the Terms/Privacy host) sits behind a human-verification gate and was not captured. Nothing was signed into, paid for or submitted.</p>
+
+  <h2 class="sh">The dark marketing surface</h2>
+  <p class="lead">A floating glass nav pill on the black ground, VerlagCondensed display type in warm off-white, the animated counter and the inverted white CTA ringed by the blue-violet-amber gradient.</p>
+  <div class="mock dark" data-mode="dark">
+    <div class="navpill"><span class="wm">mesh</span><span>Releases</span><span>Resources</span><span>Company</span><span class="sp"></span><span class="signin">Sign In</span><span class="gs">Get Started</span></div>
+    <div class="hero">
+      <div class="stat">RELATIONSHIPS MANAGED: <span>193,249,849</span></div>
+      <h3>Every relationship, organized.</h3>
+      <div class="lede">Mesh brings together everyone you've ever met. Automatically organized, intelligently searchable, always up to date. For you and your team.</div>
+      <span class="cta">Get Mesh Free</span>
+    </div>
+  </div>
+
+  <h2 class="sh">The light pricing surface</h2>
+  <p class="lead">The warm-cream pricing route: a gray billing-toggle chip, hairline plan cards under a white sheen, the Chronicle-serif prices and the popular card's orange ring.</p>
+  <div class="mock light">
+    <div class="toggle">Pay monthly <b>Pay annually</b></div>
+    <div class="plans">
+      <div class="plan"><div class="lbl">PERSONAL</div><div class="price">Free <small>with credit card</small></div><span class="pbtn outline">Get started</span></div>
+      <div class="plan"><div class="lbl">PRO</div><div class="price">$10 <small>/ month</small></div><span class="pbtn outline">Try it free</span></div>
+      <div class="plan popular"><span class="tag">POPULAR</span><div class="lbl">TEAM</div><div class="price">$40 <small>per seat / month</small></div><span class="pbtn fill">Try it free</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The sign-in card</h2>
+  <p class="lead">app.me.sh's boundary surface is a third stack — SF Pro Text on a #fcfcfc card, the app's own orange and the OAuth pair.</p>
+  <div class="mock light"><div class="signin">
+    <div class="h">Sign in to Mesh</div>
+    <div class="obtn apple">Sign in with Apple</div>
+    <div class="obtn google">Sign in with Google</div>
+    <div class="field">Enter your email</div>
+    <div class="obtn email">Sign in with email</div>
+    <div class="tgl">Don't have a Mesh account? Create account</div>
+  </div></div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The dark surface's ground is <code>dark.surface.page</code> #000 (<code>color.ink.950</code>) with translucent-white text and controls; the light surface's ground is <code>light.surface.page</code> #f9f8f6 (<code>color.paper.50</code>). The shared accent is <code>color.orange.500</code> #fb7232; the app stack's own orange is <code>color.orange-app.500</code> #ff6821; the wordmark tan is <code>color.tan.300</code> #f2b98b.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <p class="lead">Measured boxes: the 54/52px CTA pills, the 44px plan and OAuth buttons, the 40px field and toggle, the 48px nav pill and filter pills, and the 6-16px radius ladder (fields 6, pills 8, plan buttons 10, buttons and toggles 12, CTAs and cards 14-16).</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live stylesheet and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, filled and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"ink":{"950":{"v":"#000000","t":"color","s":"computed backgroundColor of page-ground default (raw/components-computed.json)","d":"Black — the html element's painted ground under the whole dark site."},"900":{"v":"#0f0f10","t":"color","s":"computed backgroundColor of footer default (raw/components-computed.json)","d":"The footer band's #0f0f10, a half-step up from the ground."},"800":{"v":"#1f1f1f","t":"color","s":"computed color of plan-card default (raw/components-computed.json)","d":"Ink text on the light routes — plan cards, pricing headings."},"750":{"v":"#1f1f1e","t":"color","s":"computed backgroundColor of signin-apple default (raw/components-computed.json)","d":"#1f1f1e — the Apple sign-in button's fill on the app surface."},"700":{"v":"#1d1d1f","t":"color","s":"computed color of section-title default (raw/components-computed.json)","d":"#1d1d1f — section headings and the filter pills' text."}},"gray":{"500":{"v":"#48494a","t":"color","s":"computed color of signin-toggle default (raw/components-computed.json)","d":"#48494a — the app surface's body/text grey."},"400":{"v":"#86868b","t":"color","s":"computed color of hero-sub default (raw/components-computed.json)","d":"#86868b — the muted body grey, read on the first paragraph after the hero h1 (a section paragraph, \"Set reminders...\"; the hero has no lede)."}},"paper":{"0":{"v":"#fdfcfa","t":"color","s":"computed backgroundColor of cta default (raw/components-computed.json)","d":"#fdfcfa — the hero CTA's warm off-white fill."},"50":{"v":"#f9f8f6","t":"color","s":"computed backgroundColor of pricing-ground default (raw/components-computed.json)","d":"#f9f8f6 — the pricing route's warm-cream ground."},"100":{"v":"#ffffff","t":"color","s":"computed backgroundColor of cta-bottom default (raw/components-computed.json)","d":"#ffffff — the bottom CTA's pure-white fill."}},"cream":{"0":{"v":"#fefef7","t":"color","s":"computed color of hero-title default (raw/components-computed.json)","d":"#fefef7 — the display headline's warm off-white."}},"orange":{"500":{"v":"#fb7232","t":"color","s":"computed backgroundColor of plan-cta-filled default (raw/components-computed.json)","d":"#fb7232 — the marketing accent: filled plan CTAs, plan-label eyebrows, the popular card's ring, menu-link hover."},"alpha24":{"v":"rgba(251, 114, 50, 0.24)","t":"color","s":"computed ringShadow of plan-card-popular default (raw/components-computed.json)","d":"The 24% orange glow ring around the popular plan card."}},"orange-app":{"500":{"v":"#ff6821","t":"color","s":"computed backgroundColor of signin-email-btn default (raw/components-computed.json)","d":"#ff6821 — the app surface's own orange (the Sign-in-with-email button)."}},"tan":{"300":{"v":"#f2b98b","t":"color","s":"computed color of logo default (raw/components-computed.json)","d":"#f2b98b — the wordmark and social-icon accent."},"400":{"v":"#efab74","t":"color","s":"computed color of cta-bottom hover (raw/components-computed.json)","d":"#efab74 — the tan accent's hover step."}},"google":{"500":{"v":"#5383ec","t":"color","s":"computed backgroundColor of signin-google default (raw/components-computed.json)","d":"#5383ec — the Google sign-in button."},"600":{"v":"rgba(83, 131, 236, 0.87)","t":"color","s":"computed backgroundColor of signin-google hover (raw/components-computed.json)","d":"The Google blue at 87% — its hover/pressed step."}},"white-alpha":{"3":{"v":"rgba(255, 255, 255, 0.03)","t":"color","s":"computed paint.0.bg of header default (raw/components-computed.json)","d":"The nav pill's 3% white fill (under a white sheen gradient)."},"6":{"v":"rgba(255, 255, 255, 0.06)","t":"color","s":"computed backgroundColor of m-menu-button default (raw/components-computed.json)","d":"The 6% white scrim on dark controls — hamburger, drawer rows."},"8":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"computed backgroundColor of nav-signin hover (raw/components-computed.json)","d":"The nav Sign-In hover wash."},"24":{"v":"rgba(255, 255, 255, 0.24)","t":"color","s":"computed paint.0.shadow of nav-cta default (raw/components-computed.json)","d":"The nav GET STARTED pill's 24% white inset ring."},"40":{"v":"rgba(255, 255, 255, 0.4)","t":"color","s":"computed color of footer-link default (raw/components-computed.json)","d":"Faint text on the dark surface — footer links."},"60":{"v":"rgba(255, 255, 255, 0.6)","t":"color","s":"computed color of signin-email-btn default (raw/components-computed.json)","d":"The disabled-looking 60% white label on the orange button."},"64":{"v":"rgba(255, 255, 255, 0.64)","t":"color","s":"computed color of nav-signin default (raw/components-computed.json)","d":"The nav Sign-In label's resting grey."},"70":{"v":"rgba(255, 255, 255, 0.7)","t":"color","s":"computed color of header default (raw/components-computed.json)","d":"The dark surface's body text shade."}},"gray-alpha":{"6":{"v":"rgba(149, 149, 149, 0.06)","t":"color","s":"computed backgroundColor of plan-card default (raw/components-computed.json)","d":"The plan card's 6% grey fill under its white sheen gradient."}},"ink-alpha":{"4":{"v":"rgba(72, 73, 74, 0.04)","t":"color","s":"computed backgroundColor of signin-input default (raw/components-computed.json)","d":"The sign-in field's 4% ink fill."},"6":{"v":"rgba(31, 31, 31, 0.06)","t":"color","s":"computed backgroundColor of billing-toggle default (raw/components-computed.json)","d":"The billing toggle's 6% ink chip fill."},"10":{"v":"rgba(72, 73, 74, 0.1)","t":"color","s":"computed borderTopColor of signin-input default (raw/components-computed.json)","d":"The sign-in field's 10% ink border."},"40":{"v":"rgba(31, 31, 31, 0.4)","t":"color","s":"computed borderTopColor of plan-cta default (raw/components-computed.json)","d":"The outline plan button's 40% ink border."}},"glow":{"cta":{"v":"rgba(255, 255, 255, 0.98)","t":"color","s":"computed boxShadow of cta default (raw/components-computed.json)","d":"The near-white glow the hero CTA carries (0 0 4px 1px, 98% white)."}}},"measured":{"drawer-fill":{"v":"rgba(31, 31, 30, 0.06)","t":"color","s":"computed paint.0.bg of m-menu-open default (raw/components-computed.json)","d":"The mobile drawer's near-black glass fill over the page."}},"gradient":{"ctaRing":{"v":[{"color":"#32c5ff","position":0},{"color":"#b620e0","position":0.51},{"color":"#f7b500","position":1}],"t":"gradient","s":"computed paint.1.bgImage of cta default (raw/components-computed.json)","d":"The blue-violet-amber ring gradient painted proud of the hero and bottom CTAs."},"filterWash":{"v":[{"color":"rgba(29, 29, 31, 0.06)","position":0},{"color":"rgba(29, 29, 31, 0.03)","position":1}],"t":"gradient","s":"computed paint.0.bgImage of filter-button default (raw/components-computed.json)","d":"The filter pill's ::after ink wash over the 480x48 button."},"cardSheen":{"v":[{"color":"#ffffff","position":0},{"color":"rgba(255, 255, 255, 0.5)","position":1}],"t":"gradient","s":"computed paint.0.bgImage of plan-card default (raw/components-computed.json)","d":"The plan card's white sheen over its 6% grey fill."},"drawerSheen":{"v":[{"color":"rgba(31, 31, 30, 0.8)","position":0.02},{"color":"rgba(31, 31, 30, 0)","position":1}],"t":"gradient","s":"computed paint.0.bgImage of m-menu-open default (raw/components-computed.json)","d":"The mobile drawer's dark sheen — near-black easing to transparent."}},"font":{"family":{"ui":{"v":"Verlag, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif","t":"fontFamily","s":"computed fontFamily of nav-item default (raw/components-computed.json)","d":"Verlag across the dark marketing surface: nav, body, controls."},"display":{"v":"VerlagCondensed, Verlag, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif","t":"fontFamily","s":"computed fontFamily of hero-title default (raw/components-computed.json)","d":"VerlagCondensed — the condensed display face of the hero and section headings."},"serif":{"v":"ChronicleCondensed, ChronicleTextG1Roman, \"IBM Plex Serif\", serif","t":"fontFamily","s":"computed textStyle.fontFamily of plan-price default (raw/components-computed.json)","d":"ChronicleDisplayCondensed — the serif face the plan prices and editorial headings set in."},"app":{"v":"SFProText, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif","t":"fontFamily","s":"computed fontFamily of signin-input default (raw/components-computed.json)","d":"SF Pro Text — the app.me.sh sign-in card's UI font (a different stack)."}},"size":{"display":{"v":"64px","t":"dimension","s":"computed fontSize of hero-title default (raw/components-computed.json)","d":"The hero display headline, 64px VerlagCondensed."},"h1":{"v":"48px","t":"dimension","s":"computed fontSize of pricing-h1 default (raw/components-computed.json)","d":"Page headings on the light routes, 48px VerlagCondensed."},"h2":{"v":"48px","t":"dimension","s":"computed fontSize of section-title default (raw/components-computed.json)","d":"Section headings in the light bands, 48px/900 VerlagCondensed."},"signin":{"v":"32px","t":"dimension","s":"computed fontSize of signin-title default (raw/components-computed.json)","d":"The sign-in card's 32px headline."},"sub":{"v":"20px","t":"dimension","s":"computed fontSize of hero-sub default (raw/components-computed.json)","d":"The 20px section body paragraph, read on the first paragraph after the hero h1 (\"Set reminders...\"; the hero has no lede)."},"body":{"v":"20px","t":"dimension","s":"computed fontSize of filter-button default (raw/components-computed.json)","d":"Body-size controls and copy, 18-20px (filter pills set 20px)."},"planLabel":{"v":"14px","t":"dimension","s":"computed fontSize of plan-name default (raw/components-computed.json)","d":"Plan eyebrows and menu links, 14px."},"nav":{"v":"12px","t":"dimension","s":"computed fontSize of nav-item default (raw/components-computed.json)","d":"Nav labels — 12px at weight 700."},"footer":{"v":"12px","t":"dimension","s":"computed fontSize of footer-link default (raw/components-computed.json)","d":"Footer links — 12px at weight 700."}}},"component":{"control":{"heightCta":{"v":"54px","t":"dimension","s":"computed height of cta default (raw/components-computed.json)","d":"The hero CTA's 54px pill."},"heightCtaBottom":{"v":"52px","t":"dimension","s":"computed height of cta-bottom default (raw/components-computed.json)","d":"The bottom CTA's 52px pill."},"heightNavCta":{"v":"32.0312px","t":"dimension","s":"computed height of nav-cta default (raw/components-computed.json)","d":"The nav GET STARTED pill, 32px."},"heightSigninLink":{"v":"34px","t":"dimension","s":"computed height of nav-signin default (raw/components-computed.json)","d":"The nav Sign-In action, 34px."},"heightPlanCta":{"v":"44px","t":"dimension","s":"computed height of plan-cta default (raw/components-computed.json)","d":"The plan cards' action button, 44px."},"heightField":{"v":"40px","t":"dimension","s":"computed height of signin-input default (raw/components-computed.json)","d":"The sign-in field, 40px."},"heightOauth":{"v":"44px","t":"dimension","s":"computed height of signin-apple default (raw/components-computed.json)","d":"The OAuth buttons, 44px."},"heightToggle":{"v":"40px","t":"dimension","s":"computed height of billing-toggle default (raw/components-computed.json)","d":"The billing toggle, 40px."},"heightFilter":{"v":"48px","t":"dimension","s":"computed height of filter-button default (raw/components-computed.json)","d":"The feature filter pills, 48px."},"heightHamburger":{"v":"32px","t":"dimension","s":"computed height of m-menu-button default (raw/components-computed.json)","d":"The mobile hamburger, 32px."},"radiusCta":{"v":"14px","t":"dimension","s":"computed borderTopLeftRadius of cta default (raw/components-computed.json)","d":"Hero CTA corners, 14px."},"radiusCtaBottom":{"v":"16px","t":"dimension","s":"computed borderTopLeftRadius of cta-bottom default (raw/components-computed.json)","d":"Bottom CTA corners, 16px."},"radiusPlanCta":{"v":"10px","t":"dimension","s":"computed borderTopLeftRadius of plan-cta default (raw/components-computed.json)","d":"Plan button corners, 10px."},"radiusNavCta":{"v":"8px","t":"dimension","s":"computed paint.0.radius of nav-cta default (raw/components-computed.json)","d":"Nav pill corners, 8px."},"radiusHamburger":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of m-menu-button default (raw/components-computed.json)","d":"Hamburger corners, 8px."},"radiusSigninLink":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of nav-signin default (raw/components-computed.json)","d":"Sign-In action corners, 8px."},"radiusField":{"v":"6px","t":"dimension","s":"computed borderTopLeftRadius of signin-input default (raw/components-computed.json)","d":"Sign-in field corners, 6px."},"radiusSigninBtn":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of signin-email-btn default (raw/components-computed.json)","d":"Sign-in button corners, 12px."},"radiusToggle":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of billing-toggle default (raw/components-computed.json)","d":"Billing toggle corners, 12px."},"radiusFilter":{"v":"16px","t":"dimension","s":"computed paint.0.radius of filter-button default (raw/components-computed.json)","d":"Filter pill corners, 16px."}},"card":{"radiusPlan":{"v":"16px","t":"dimension","s":"computed paint.0.radius of plan-card default (raw/components-computed.json)","d":"Plan card corners, 16px."},"radiusDrawer":{"v":"12px","t":"dimension","s":"computed paint.0.radius of m-menu-open default (raw/components-computed.json)","d":"Mobile drawer corners, 12px."}},"nav":{"height":{"v":"48px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The nav pill at 1440px, 48px."},"width":{"v":"388px","t":"dimension","s":"computed width of header default (raw/components-computed.json)","d":"The nav pill's width, 388px."}},"menuPanel":{"width":{"v":"556px","t":"dimension","s":"computed width of menu-panel default (raw/components-computed.json); read from the wrong element (the closed Company panel, opacity 0, not the open dropdown); recapture needed","d":"The width of a nav dropdown panel, 556px. Read from the wrong element: the closed Company panel (opacity 0), not the open dropdown; recapture needed."}},"footer":{"height":{"v":"335px","t":"dimension","s":"computed height of footer default (raw/components-computed.json)","d":"The footer block at 1440px, 335px."}},"drawer":{"height":{"v":"762px","t":"dimension","s":"computed height of m-menu-open default (raw/components-computed.json)","d":"The mobile drawer at 390px, 762px."}},"planCard":{"height":{"v":"196px","t":"dimension","s":"computed height of plan-card default (raw/components-computed.json)","d":"The plan card's inner height, 196px."}}}},"light":{"surface":{"page":{"v":"{color.paper.50}","t":"color","s":"computed backgroundColor of pricing-ground default (raw/components-computed.json); same value as core.color.paper.50","d":"The pricing route's warm-cream ground."},"card":{"v":"{color.gray-alpha.6}","t":"color","s":"computed backgroundColor of plan-card default (raw/components-computed.json); same value as core.color.gray-alpha.6","d":"The plan card's 6% grey fill under its white sheen gradient."},"chip":{"v":"{color.ink-alpha.6}","t":"color","s":"computed backgroundColor of billing-toggle default (raw/components-computed.json); same value as core.color.ink-alpha.6","d":"The billing toggle's 6% ink chip fill."}},"text":{"primary":{"v":"{color.ink.800}","t":"color","s":"computed color of pricing-h1 default (raw/components-computed.json); same value as core.color.ink.800","d":"Heading ink on the light routes."},"muted":{"v":"{color.gray.500}","t":"color","s":"computed color of signin-toggle default (raw/components-computed.json); same value as core.color.gray.500","d":"The sign-in card's grey text — 'Create account'."},"accent":{"v":"{color.orange.500}","t":"color","s":"computed color of plan-name default (raw/components-computed.json); same value as core.color.orange.500","d":"The orange eyebrow labels on the plan cards."},"onAccent":{"v":"{color.paper.100}","t":"color","s":"computed color of plan-cta-filled default (raw/components-computed.json); same value as core.color.paper.100","d":"White text on the filled orange CTA."}},"accent":{"v":"{color.orange.500}","t":"color","s":"computed backgroundColor of plan-cta-filled default (raw/components-computed.json); same value as core.color.orange.500","d":"The marketing orange — the filled Try-it-free button."},"accentRing":{"v":"{color.orange.alpha24}","t":"color","s":"computed ringShadow of plan-card-popular default (raw/components-computed.json); same value as core.color.orange.alpha24","d":"The 24% orange glow ring around the popular card."},"accentApp":{"v":"{color.orange-app.500}","t":"color","s":"computed backgroundColor of signin-email-btn default (raw/components-computed.json); same value as core.color.orange-app.500","d":"The app surface's own orange — Sign in with email."},"field":{"fill":{"v":"{color.ink-alpha.4}","t":"color","s":"computed backgroundColor of signin-input default (raw/components-computed.json); same value as core.color.ink-alpha.4","d":"The sign-in field's 4% ink fill."}},"border":{"subtle":{"v":"#eceae8","t":"color","s":"computed paint.0.border of plan-card default (raw/components-computed.json)","d":"The plan card's #eceae8 hairline."},"control":{"v":"{color.ink-alpha.40}","t":"color","s":"computed borderTopColor of plan-cta default (raw/components-computed.json); same value as core.color.ink-alpha.40","d":"The outline plan button's 40% ink border."},"field":{"v":"{color.ink-alpha.10}","t":"color","s":"computed borderTopColor of signin-input default (raw/components-computed.json); same value as core.color.ink-alpha.10","d":"The sign-in field's 10% ink border."}},"oauth":{"ink":{"v":"{color.ink.750}","t":"color","s":"computed backgroundColor of signin-apple default (raw/components-computed.json); same value as core.color.ink.750","d":"The Apple sign-in button."},"google":{"v":"{color.google.500}","t":"color","s":"computed backgroundColor of signin-google default (raw/components-computed.json); same value as core.color.google.500","d":"The Google sign-in button."},"googleHover":{"v":"{color.google.600}","t":"color","s":"computed backgroundColor of signin-google hover (raw/components-computed.json); same value as core.color.google.600","d":"The Google blue at 87% — hover/pressed."}},"shadow":{"popularRing":{"v":[{"offsetX":"0px","offsetY":"0px","blur":"0px","spread":"3px","color":"rgba(251, 114, 50, 0.24)"}],"t":"shadow","s":"computed boxShadow of plan-card-popular default (raw/components-computed.json)","d":"The orange glow ring around the popular plan card."}}},"dark":{"surface":{"page":{"v":"{color.ink.950}","t":"color","s":"computed backgroundColor of page-ground default (raw/components-computed.json); same value as core.color.ink.950","d":"The black page ground — painted by the html element (body itself is transparent)."},"band":{"v":"{color.ink.900}","t":"color","s":"computed backgroundColor of footer default (raw/components-computed.json); same value as core.color.ink.900","d":"The #0f0f10 band — the site footer and the bottom-CTA section."},"pill":{"v":"{color.white-alpha.3}","t":"color","s":"computed paint.0.bg of header default (raw/components-computed.json); same value as core.color.white-alpha.3","d":"The nav pill's glass fill — 3% white under a white sheen gradient."},"control":{"v":"{color.white-alpha.6}","t":"color","s":"computed backgroundColor of m-menu-button default (raw/components-computed.json); same value as core.color.white-alpha.6","d":"The 6% white scrim on dark controls (hamburger, drawer)."}},"text":{"primary":{"v":"{color.cream.0}","t":"color","s":"computed color of hero-title default (raw/components-computed.json); same value as core.color.cream.0","d":"The display headline's warm off-white."},"body":{"v":"{color.white-alpha.70}","t":"color","s":"computed color of header default (raw/components-computed.json); same value as core.color.white-alpha.70","d":"Body text on the dark surface — 70% white."},"muted":{"v":"{color.white-alpha.64}","t":"color","s":"computed color of nav-signin default (raw/components-computed.json); same value as core.color.white-alpha.64","d":"Muted actions on the dark surface — the Sign-In label."},"faint":{"v":"{color.white-alpha.40}","t":"color","s":"computed color of footer-link default (raw/components-computed.json); same value as core.color.white-alpha.40","d":"Faint text on the dark surface — footer links, secondary rows."},"accent":{"v":"{color.tan.300}","t":"color","s":"computed color of logo default (raw/components-computed.json); same value as core.color.tan.300","d":"The tan accent — wordmark, social icons, the bottom CTA's label."},"accentHover":{"v":"{color.tan.400}","t":"color","s":"computed color of cta-bottom hover (raw/components-computed.json); same value as core.color.tan.400","d":"The tan accent's hover step."},"onInverted":{"v":"{color.ink.950}","t":"color","s":"computed color of cta default (raw/components-computed.json); same value as core.color.ink.950","d":"Black text on the inverted off-white CTA."}},"accent":{"v":"{color.orange.500}","t":"color","s":"computed color of m-menu-link hover (raw/components-computed.json); same value as core.color.orange.500","d":"The marketing orange — hover text on menu links."},"fill":{"inverted":{"v":"{color.paper.0}","t":"color","s":"computed backgroundColor of cta default (raw/components-computed.json); same value as core.color.paper.0","d":"The hero CTA's off-white fill — the primary action on the dark surface."},"invertedStrong":{"v":"{color.paper.100}","t":"color","s":"computed backgroundColor of cta-bottom default (raw/components-computed.json); same value as core.color.paper.100","d":"The bottom CTA's pure-white fill."}},"navHover":{"v":"{color.white-alpha.8}","t":"color","s":"computed backgroundColor of nav-signin hover (raw/components-computed.json); same value as core.color.white-alpha.8","d":"The dark controls' 8% hover wash."},"ring":{"control":{"v":"{color.white-alpha.24}","t":"color","s":"computed paint.0.shadow of nav-cta default (raw/components-computed.json); same value as core.color.white-alpha.24","d":"The 24% white inset ring on the nav GET STARTED pill."}},"focus":{"v":"#101010","t":"color","s":"computed outlineColor of nav-signin focus-visible (raw/components-computed.json)","d":"Focus rings on this surface keep the browser's auto ring (dark ink on the glass controls) — recorded per entry; the 3px outline colour is the element's own text shade elsewhere."},"shadow":{"ctaGlow":{"v":[{"offsetX":"0px","offsetY":"0px","blur":"4px","spread":"1px","color":"rgba(255, 255, 255, 0.98)"}],"t":"shadow","s":"computed boxShadow of cta default (raw/components-computed.json)","d":"The near-white glow under the hero CTA."},"navPill":{"v":[{"offsetX":"0px","offsetY":"0px","blur":"0px","spread":"0.5px","color":"rgba(0, 0, 0, 0.06)"},{"offsetX":"0px","offsetY":"2px","blur":"4px","spread":"-2px","color":"rgba(0, 0, 0, 0.1)"},{"offsetX":"0px","offsetY":"8px","blur":"16px","spread":"-8px","color":"rgba(0, 0, 0, 0.06)"}],"t":"shadow","s":"computed paint.0.shadow of header default (raw/components-computed.json)","d":"The nav pill's layered glass shadow (hairline ring + two soft drops; the inset sheen layers are omitted)."}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [set, toks] of [['dark', TOK.dark], ['light', TOK.light]]) {
+    const roles = flat(toks || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${set} roles</div><div class="pal" data-mode="${set}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const grads = flat(TOK.core && TOK.core.gradient || {}, 'gradient.');
+  if (grads.length) {
+    h += `<div class="pal-h">gradients</div><div class="pal">`;
+    for (const [n, t] of grads) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc((t.v||[]).map(s=>s.color).join(' → '))}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat(TOK.dark && TOK.dark.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+</script>
+</body>
+</html>

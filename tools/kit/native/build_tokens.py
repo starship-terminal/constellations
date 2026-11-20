@@ -16,6 +16,7 @@ The builder refuses a token without a source, an alias that points at nothing, a
 Standard library only. Deterministic: the same readings give the same bytes.
 """
 import json
+import os
 import pathlib
 import re
 
@@ -23,6 +24,9 @@ PKG = pathlib.Path(__file__).resolve().parent.parent
 _READINGS = PKG / "raw" / "readings.json"
 READ = json.loads(_READINGS.read_text()) if _READINGS.exists() else {}  # empty in the kit copy, for its tests
 MEASURED = f"raw/{PKG.name}-measured.md"
+
+
+SCALE = 2   # capture pixels per pt: the iPhone Mirroring stills are 2x, as measure.py reads them
 
 
 class Missing(Exception):
@@ -41,12 +45,20 @@ def tok(value, typ, desc, evidence, capture):
             "$extensions": {"source": {"evidence": evidence, "capture": capture}}}
 
 
+def evidence_of(r):
+    """A reading's label. A fill reading (it has a share) is a sampled pixel however mixed the box: an
+    older readings.json labelled a mixed box Derived."""
+    return "Sampled" if r.get("share") is not None else r["evidence"]
+
+
 def from_reading(rid, theme, typ, desc):
     r = rd(rid, theme)
     note = desc
-    if r.get("share") is not None and r["evidence"] == "Derived":
-        note += f" The box's dominant colour covers {round(r['share'] * 100)}% of it (a gradient, glass or a thin mark), so it is a reading, not an exact fill."
-    return tok(r["value"], typ, note, r["evidence"], r["capture"])
+    evidence = evidence_of(r)
+    if r.get("share") is not None:
+        if r["share"] < 0.9:
+            note += f" The box's dominant colour covers {round(r['share'] * 100)}% of it (a gradient, glass or a thin mark), so it is a reading, not an exact fill."
+    return tok(r["value"], typ, note, evidence, r["capture"])
 
 
 def px(v):
@@ -61,6 +73,25 @@ def pt_of(rid, theme="dark", index=0):
 
 def derived(value, typ, desc, capture=MEASURED):
     return tok(value, typ, desc, "Derived", capture)
+
+
+def estimated(value, typ, desc, capture=MEASURED):
+    """A value judged by eye (a font weight from stroke width): a suggestion, not a reading."""
+    return tok(value, typ, desc, "Reconstruction", capture)
+
+
+def row_pitch(rows):
+    """The commonest distance between consecutive row edges of a `find` reading, in pt. Each edge spans
+    a pixel or three of anti-aliasing, so a run of adjacent values is one edge."""
+    edges, last = [], None
+    for y in sorted(rows):
+        if last is None or y - last > 3:
+            edges.append(y)
+        last = y
+    gaps = [b - a for a, b in zip(edges, edges[1:])]
+    if not gaps:
+        raise SystemExit(f"rows.profile: {len(edges)} row edge(s), so no row pitch can be read; widen the reading")
+    return max(sorted(set(gaps)), key=gaps.count) / SCALE
 
 
 def alias(path, typ, desc):
@@ -85,7 +116,7 @@ def neutral_ramp():
             v = r["value"]
             rr, gg, bb = int(v[1:3], 16), int(v[3:5], 16), int(v[5:7], 16)
             if max(rr, gg, bb) - min(rr, gg, bb) <= 12:     # neutral enough
-                seen.setdefault(v, []).append((f"{theme} {rid}", r["evidence"], r["capture"]))
+                seen.setdefault(v, []).append((f"{theme} {rid}", evidence_of(r), r["capture"]))
     lum = lambda h: sum(int(h[i:i + 2], 16) for i in (1, 3, 5))
     rank = ["Sampled", "Sampled (text)", "Derived"]   # the most exact reading of the value wins
     out = {}
@@ -116,8 +147,7 @@ def core():
         "sheet": derived("36px", "dimension", f"Top corners of a sheet: {rd('radius.sheet')['value']} dark, {rd('radius.sheet', 'light')['value']} light."),
         "capsule": derived("999px", "dimension", f"Fully round ends: buttons ({rd('radius.button')['value']} on a 42 pt button), chips ({rd('radius.chip')['value']} on 25 pt), the 'Added' button ({rd('radius.secondaryButton')['value']} on 34 pt), the composer ({rd('radius.composer')['value']} on 48 pt), the Edit pill, glass nav buttons and the search bar."),
     }
-    rows = [y for y in rd("rows.profile")["value"]]
-    pitch = (921 - 821) / 2 if 821 in rows and 921 in rows else None
+    pitch = row_pitch(rd("rows.profile")["value"])
     card = rd("size.cardSettings")["box"]
     prof = rd("size.cardProfile")["box"]
     c["space"] = {
@@ -130,7 +160,7 @@ def core():
         "screenMargin": alias("space.lg", "dimension", "Left and right margin of cards, bubbles and the home grid."),
     }
     c["size"] = {
-        "row": tok(px(pitch or 50), "dimension", "Single-line grouped row (bot profile rows, settings rows), divider to divider.", "Sampled", rd("rows.profile")["capture"]),
+        "row": tok(px(pitch), "dimension", "Single-line grouped row (bot profile rows, settings rows), divider to divider.", "Sampled", rd("rows.profile")["capture"]),
         "rowTwoLine": derived("70px", "dimension", "Grouped row with a subtitle (Connect apps, Auto-review): about 70 pt in dark/19-account-menu."),
         "navButton": tok(px(pt_of("size.navButton.w")), "dimension", "Round glass back, close and more buttons (a circle). The reading includes the glass rim's soft edge; the touch target is at least this.", "Sampled", rd("size.navButton.w")["capture"]),
         "searchBar": tok(px(round(pt_of("size.searchBar.h"))), "dimension", "Height of the home search bar (glass capsule).", "Sampled", rd("size.searchBar.h")["capture"]),
@@ -162,9 +192,9 @@ def core():
     }}
     c["fontFamily"] = {"base": tok("system", "fontFamily", "Not determinable from pixels. The letterforms are a neo-grotesque close to the iOS system face; use the platform font.", "Not captured", MEASURED)}
     c["fontWeight"] = {
-        "regular": derived(400, "fontWeight", "Body text, settings rows, previews. Judged by stroke width, not measured."),
-        "medium": derived(500, "fontWeight", "Home row titles and nav titles. Judged by stroke width."),
-        "semibold": derived(600, "fontWeight", "The bot name on its profile and the primary button label. Judged by stroke width."),
+        "regular": estimated(400, "fontWeight", "Body text, settings rows, previews. Judged by stroke width, not measured."),
+        "medium": estimated(500, "fontWeight", "Home row titles and nav titles. Judged by stroke width."),
+        "semibold": estimated(600, "fontWeight", "The bot name on its profile and the primary button label. Judged by stroke width."),
     }
 
     def ty(size_rid, weight, lh, desc, extra=()):
@@ -372,7 +402,14 @@ def build():
     print(f"tokens.json: {n} tokens")
 
 
+# PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+# for it. While this is None the script stops when run: the kit's copy is Grok Bot's example and
+# would write Grok Bot's values. KIT_EXAMPLE=1 runs the example as it is.
+ADAPTED_FOR = None
+
 if __name__ == "__main__":
+    if ADAPTED_FOR is None and not os.environ.get("KIT_EXAMPLE"):
+        raise SystemExit("build_tokens.py is the kit's Grok Bot example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR")
     if not READ:
         raise SystemExit("no raw/readings.json: run tools/measure.py first")
     build()

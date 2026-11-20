@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jitter style guide</title>
+<style>
+  :root {
+  --color-ink: #19171c;
+  --color-page: #ffffff;
+  --color-pink: #fba6ec;
+  --color-muted: #6e6e73;
+  --color-white: #ffffff;
+  --color-violet: #b593ff;
+  --color-yellow: #f5ff63;
+  --color-blue: #50b8ff;
+  --color-blue-strong: #29a9ff;
+  --color-grey: #f2f1f3;
+  --color-violet-export: #9262f0;
+  --color-violet-upgrade: #7a40ed;
+  --font-family-ui: TWK Lausanne, sans-serif;
+  --font-family-body: Inter, sans-serif;
+  --font-family-display: Euclid Circular B, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-size-body: 16px;
+  --font-size-button: 18px;
+  --font-size-button-md: 20px;
+  --radius-pill: 50px;
+  --radius-sheet: 80px;
+  --space-header-offset: 48px;
+  --space-header-offset-phone: 20px;
+  --space-logo-offset: 73px;
+  --size-button-sm: 52px;
+  --size-button-md: 60px;
+  --size-button-share: 32px;
+  --size-button-export: 48px;
+  --size-desktop: 1440px;
+  --size-phone: 390px;
+  --motion-duration-0ms: 0ms;
+  --motion-duration-50ms: 50ms;
+  --motion-duration-80ms: 80ms;
+  --motion-duration-100ms: 100ms;
+  --motion-duration-120ms: 120ms;
+  --motion-duration-130ms: 130ms;
+  --motion-duration-150ms: 150ms;
+  --motion-duration-dialog-panel-exit-duration: 160ms;
+  --motion-duration-180ms: 180ms;
+  --motion-duration-200ms: 200ms;
+  --motion-duration-240ms: 240ms;
+  --motion-duration-250ms: 250ms;
+  --motion-duration-260ms: 260ms;
+  --motion-duration-280ms: 280ms;
+  --motion-duration-300ms: 300ms;
+  --motion-duration-320ms: 320ms;
+  --motion-duration-350ms: 350ms;
+  --motion-duration-400ms: 400ms;
+  --motion-duration-420ms: 420ms;
+  --motion-duration-450ms: 450ms;
+  --motion-duration-500ms: 500ms;
+  --motion-duration-550ms: 550ms;
+  --motion-duration-600ms: 600ms;
+  --motion-duration-800ms: 800ms;
+  --motion-duration-900ms: 900ms;
+  --motion-duration-1000ms: 1000ms;
+  --motion-duration-1200ms: 1200ms;
+  --motion-duration-1350ms: 1350ms;
+  --motion-duration-1400ms: 1400ms;
+  --motion-duration-1500ms: 1500ms;
+  --motion-duration-1600ms: 1600ms;
+  --motion-duration-1900ms: 1900ms;
+  --motion-duration-2000ms: 2000ms;
+  --motion-duration-2200ms: 2200ms;
+  --motion-duration-2300ms: 2300ms;
+  --motion-duration-2500ms: 2500ms;
+  --motion-duration-2600ms: 2600ms;
+  --motion-duration-2800ms: 2800ms;
+  --motion-duration-3000ms: 3000ms;
+  --motion-duration-3600ms: 3600ms;
+  --motion-duration-3800ms: 3800ms;
+  --motion-duration-4000ms: 4000ms;
+  --motion-duration-6000ms: 6000ms;
+  --motion-duration-9500ms: 9500ms;
+  --motion-duration-90000ms: 90000ms;
+  --motion-easing-bezier-0-0-0-1: cubic-bezier(0, 0, 0, 1);
+  --motion-easing-bezier-0-0-54-0-1: cubic-bezier(0, 0.54, 0, 1);
+  --motion-easing-bezier-0-11-0-89-0-28-1-2: cubic-bezier(0.11, 0.89, 0.28, 1.2);
+  --motion-easing-bezier-0-16-1-0-3-1: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-easing-bezier-0-175-0-885-0-32-1-275: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --motion-easing-bezier-0-175-0-885-0-32-1-3: cubic-bezier(0.175, 0.885, 0.32, 1.3);
+  --motion-easing-bezier-0-19-1-0-22-1: cubic-bezier(0.19, 1, 0.22, 1);
+  --motion-easing-bezier-0-2-0-0-1: cubic-bezier(0.2, 0, 0, 1);
+  --motion-easing-bezier-0-2-0-8-0-4-1: cubic-bezier(0.2, 0.8, 0.4, 1);
+  --motion-easing-bezier-0-22-0-73-0-3-1-39: cubic-bezier(0.22, 0.73, 0.3, 1.39);
+  --motion-easing-bezier-0-25-0-46-0-45-0-94: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --motion-easing-bezier-0-25-1-0-5-1: cubic-bezier(0.25, 1, 0.5, 1);
+  --motion-easing-bezier-0-29-0-34-0-12-1-42: cubic-bezier(0.29, 0.34, 0.12, 1.42);
+  --motion-easing-bezier-0-3-0-0-1: cubic-bezier(0.3, 0, 0, 1);
+  --motion-easing-bezier-0-33-1-0-68-1: cubic-bezier(0.33, 1, 0.68, 1);
+  --motion-easing-bezier-0-33-1-42-0-05-0-96: cubic-bezier(0.33, 1.42, 0.05, 0.96);
+  --motion-easing-bezier-0-34-1-2-0-64-1: cubic-bezier(0.34, 1.2, 0.64, 1);
+  --motion-easing-bezier-0-34-1-56-0-64-1: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --motion-easing-bezier-0-39-2-72-0-97-0-98: cubic-bezier(0.39, 2.72, 0.97, 0.98);
+  --motion-easing-bezier-0-4-0-0-2-1: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-bezier-0-5-0-0-1: cubic-bezier(0.5, 0, 0, 1);
+  --motion-easing-bezier-0-6-0-2-0-1: cubic-bezier(0.6, 0.2, 0, 1);
+  --motion-easing-bezier-0-8-0-0-2-1: cubic-bezier(0.8, 0, 0.2, 1);
+  --motion-easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-ease-in: cubic-bezier(0.42, 0, 1, 1);
+  --motion-easing-ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+  --motion-easing-ease-out: cubic-bezier(0, 0, 0.58, 1);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --surface-page: var(--color-page);
+  --surface-ink: var(--color-ink);
+  --text-primary: var(--color-ink);
+  --text-muted: var(--color-muted);
+  --text-onAccent: var(--color-ink);
+  --text-onInk: var(--color-white);
+  --accent: var(--color-violet);
+  --border-subtle: #d7d7db;
+  --focus: var(--color-ink);
+  --button-black: var(--color-ink);
+  --button-violet: var(--color-violet);
+  --button-yellow: var(--color-yellow);
+  --button-white: var(--color-white);
+  --button-export: var(--color-violet-export);
+  --button-upgrade: var(--color-violet-upgrade);
+  --button-share: var(--color-blue-strong);
+  --button-radius: var(--radius-pill);
+  --button-height: var(--size-button-sm);
+    --sg-sans: var(--font-family-body, Inter, sans-serif);
+    --sg-ui: var(--font-family-ui, "TWK Lausanne", sans-serif);
+    --sg-display: var(--font-family-display, "Euclid Circular B", sans-serif);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--surface-page); color: var(--text-primary); }
+  body { font: 400 16px/1.5 var(--sg-sans); }
+  header.top {
+    position: sticky; top: 0; z-index: 2;
+    display: flex; align-items: baseline; gap: 16px;
+    padding: 20px 32px;
+    background: var(--color-grey);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  header.top h1 { margin: 0; font: 600 20px/1 var(--sg-ui); letter-spacing: -0.02em; }
+  header.top p { margin: 0; color: var(--text-muted); font-size: 14px; }
+  main { max-width: 1080px; margin: 0 auto; padding: 40px 32px 80px; }
+  h2 { margin: 48px 0 8px; font: 600 28px/1.15 var(--sg-ui); letter-spacing: -0.03em; }
+  h2:first-child { margin-top: 0; }
+  .lead { margin: 0 0 20px; max-width: 68ch; color: var(--text-muted); }
+  .swatches, .pills, .type { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch {
+    width: 148px; min-height: 96px; padding: 12px; border-radius: 16px;
+    border: 1px solid var(--border-subtle);
+    display: flex; flex-direction: column; justify-content: flex-end; gap: 2px;
+  }
+  .swatch b { font: 600 13px/1.2 var(--sg-ui); }
+  .swatch small { font-size: 11px; opacity: 0.72; }
+  .pill {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: var(--button-height); padding: 0 22px; border: 0; border-radius: var(--button-radius);
+    font: 600 16px/1 var(--sg-ui); color: var(--text-primary);
+  }
+  .pill.ink { background: var(--button-black); color: var(--text-onInk); }
+  .pill.violet { background: var(--button-violet); }
+  .pill.yellow { background: var(--button-yellow); }
+  .pill.blue { background: var(--color-blue); }
+  .pill.grey { background: var(--color-grey); }
+  .typerow { width: 100%; padding: 12px 0; border-bottom: 1px solid var(--border-subtle); }
+  .typerow .k { color: var(--text-muted); font-size: 12px; }
+  .sample-display { font: 600 40px/1.1 var(--sg-display); letter-spacing: -0.03em; }
+  .sample-ui { font: 600 20px/1.2 var(--sg-ui); }
+  .sample-body { font: 400 16px/1.5 var(--sg-sans); }
+  .card {
+    margin-top: 16px; max-width: 420px; padding: 28px; border-radius: 24px;
+    background: var(--surface-page); border: 1px solid var(--border-subtle);
+  }
+  .card h3 { margin: 0 0 8px; font: 600 22px/1.2 var(--sg-ui); }
+  .card p { margin: 0 0 16px; color: var(--text-muted); }
+  .field {
+    width: 100%; height: 48px; margin: 0 0 10px; padding: 0 14px;
+    border-radius: 0; border: 1px solid var(--border-subtle);
+    background: var(--surface-page); color: var(--text-primary); font: 400 16px/1 var(--sg-sans);
+  }
+  .field:focus { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .note { margin-top: 28px; color: var(--text-muted); font-size: 13px; max-width: 72ch; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border-subtle); vertical-align: top; }
+  th { font: 600 12px/1.3 var(--sg-ui); color: var(--text-muted); }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>Jitter style guide</h1>
+  <p>Public marketing surface, captured 2026-11-18, one light theme</p>
+</header>
+<main>
+  <h2>Colour</h2>
+  <p class="lead">Page white, ink near-black, a grey header band, and four button fills. Values are CSS custom properties from tokens.json. Screenshots are 256-colour PNGs; read colour from these swatches.</p>
+  <div class="swatches">
+    <div class="swatch" style="background:var(--surface-page);color:var(--text-primary)"><b>page</b><small>#ffffff</small></div>
+    <div class="swatch" style="background:var(--color-grey);color:var(--text-primary)"><b>grey</b><small>#f2f1f3</small></div>
+    <div class="swatch" style="background:var(--color-ink);color:var(--text-onInk)"><b>ink</b><small>#19171c</small></div>
+    <div class="swatch" style="background:var(--color-violet);color:var(--text-onAccent)"><b>violet</b><small>#b593ff</small></div>
+    <div class="swatch" style="background:var(--color-yellow);color:var(--text-onAccent)"><b>yellow</b><small>#f5ff63</small></div>
+    <div class="swatch" style="background:var(--color-blue);color:var(--text-primary)"><b>blue</b><small>#50b8ff</small></div>
+    <div class="swatch" style="background:var(--color-blue-strong);color:var(--text-primary)"><b>blue strong</b><small>#29a9ff</small></div>
+    <div class="swatch" style="background:var(--color-pink);color:var(--text-primary)"><b>pink</b><small>#fba6ec</small></div>
+    <div class="swatch" style="background:var(--surface-page);color:var(--text-muted)"><b>muted</b><small>#6e6e73</small></div>
+  </div>
+
+  <h2>Buttons</h2>
+  <p class="lead">Pills. The fill paints on an inner span on the live site. Radius is 50px. Small height is 52px, medium is 60px. Hover does not recolour the marketing fills.</p>
+  <div class="pills">
+    <span class="pill ink">Sign up</span>
+    <span class="pill violet">Start for free</span>
+    <span class="pill yellow">See stories</span>
+    <span class="pill blue">Get started</span>
+    <span class="pill grey">Continue with Google</span>
+  </div>
+
+  <h2>Type</h2>
+  <p class="lead">TWK Lausanne on controls, Inter on body, Euclid Circular B in the display faces. The files are proprietary and are not in this package, so a machine without them falls back to sans-serif.</p>
+  <div class="type">
+    <div class="typerow"><div class="k">display · Euclid Circular B · 600 · 40px</div><div class="sample-display">A fast and simple motion design tool</div></div>
+    <div class="typerow"><div class="k">ui · TWK Lausanne · 600 · 20px</div><div class="sample-ui">Sign up</div></div>
+    <div class="typerow"><div class="k">body · Inter · 400 · 16px</div><div class="sample-body">We'll sign you in, or create an account if you don't have one yet.</div></div>
+  </div>
+
+  <h2>Login card</h2>
+  <p class="lead">The public boundary. Measured empty. Google, SSO and email were never clicked.</p>
+  <div class="card">
+    <h3>Log in</h3>
+    <p>We'll sign you in, or create an account if you don't have one yet.</p>
+    <span class="pill grey" style="width:100%;margin-bottom:8px">Continue with Google</span>
+    <span class="pill" style="width:100%;margin-bottom:8px;background:var(--color-blue-strong)">Continue with SSO</span>
+    <input class="field" placeholder="Email" readonly>
+    <span class="pill violet" style="width:100%">Continue with email</span>
+  </div>
+
+  <h2>Space, size, radius</h2>
+  <table>
+    <thead><tr><th>Token</th><th>Value</th><th>Where</th></tr></thead>
+    <tbody>
+      <tr><td><code>radius.pill</code></td><td>50px</td><td>button-inner</td></tr>
+      <tr><td><code>radius.sheet</code></td><td>80px</td><td>footer inner, bottom corners only</td></tr>
+      <tr><td><code>space.header-offset</code></td><td>48px</td><td>--top-bar-offset at 1025px and up</td></tr>
+      <tr><td><code>space.header-offset-phone</code></td><td>20px</td><td>--top-bar-offset below 1025px</td></tr>
+      <tr><td><code>size.button-sm</code></td><td>52px</td><td>small pill</td></tr>
+      <tr><td><code>size.button-md</code></td><td>60px</td><td>medium pill</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Motion durations and curves live in tokens.json under core.motion. The spring <code>--ease-overshoot-linear</code> is a linear() curve and stays in motionNotTokenised. Reduced motion is partial on the home page and ignored on pricing and login. One theme only: there is no dark set.</p>
+</main>
+<script type="application/json" id="tokens">{"core":{"color":{"ink":{"v":"#19171c","t":"color","s":"css-var --primary-color on body"},"page":{"v":"#ffffff","t":"color","s":"css-var --bg-color on body"},"pink":{"v":"#fba6ec","t":"color","s":"css-var --primary-color-alt on body"},"muted":{"v":"#6e6e73","t":"color","s":"css-var --secondary-color on body"},"white":{"v":"#ffffff","t":"color","s":"css-var --bg-color on body; also the painted page"},"violet":{"v":"#b593ff","t":"color","s":"computed background of span.button-inner on hero-cta"},"yellow":{"v":"#f5ff63","t":"color","s":"computed background of span.button-inner on stories-link"},"blue":{"v":"#50b8ff","t":"color","s":"computed background of span.button-inner on plan-free"},"blue-strong":{"v":"#29a9ff","t":"color","s":"computed background of Continue with SSO, and of the editor Share button, rgb(41, 169, 255)"},"grey":{"v":"#f2f1f3","t":"color","s":"computed background of the header and the light-grey auth buttons, 2026-11-18"},"violet-export":{"v":"#9262f0","t":"color","s":"computed background of the editor Export button, rgb(146, 98, 240)"},"violet-upgrade":{"v":"#7a40ed","t":"color","s":"computed background of the editor Upgrade now chip, rgb(122, 64, 237)"}},"font":{"family":{"ui":{"v":"TWK Lausanne, sans-serif","t":"fontFamily","s":"computed font-family on button controls, jitter.video 2026-11-18"},"body":{"v":"Inter, sans-serif","t":"fontFamily","s":"computed font-family on body, jitter.video 2026-11-18"},"display":{"v":"Euclid Circular B, sans-serif","t":"fontFamily","s":"@font-face family harvested from the marketing stylesheet"}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"body text weight"},"medium":{"v":500,"t":"fontWeight","s":"computed font-weight on the editor Share button"},"semibold":{"v":600,"t":"fontWeight","s":"computed font-weight on button controls"}},"size":{"body":{"v":"16px","t":"dimension","s":"body text size on the marketing pages"},"button":{"v":"18px","t":"dimension","s":"computed font-size on the small button"},"button-md":{"v":"20px","t":"dimension","s":"computed font-size on the medium hero CTA"}}},"radius":{"pill":{"v":"50px","t":"dimension","s":"computed border-radius on span.button-inner"},"sheet":{"v":"80px","t":"dimension","s":"computed border-radius on the footer inner, bottom corners only (0 0 80px 80px)"}},"space":{"header-offset":{"v":"48px","t":"dimension","s":"css-var --top-bar-offset on body at width >= 1025px"},"header-offset-phone":{"v":"20px","t":"dimension","s":"css-var --top-bar-offset on body below 1025px"},"logo-offset":{"v":"73px","t":"dimension","s":"css-var --top-logo-offset on body at width >= 1025px"}},"size":{"button-sm":{"v":"52px","t":"dimension","s":"computed height of the small pill"},"button-md":{"v":"60px","t":"dimension","s":"computed height of the medium pill"},"button-share":{"v":"32px","t":"dimension","s":"computed height of the editor Share button"},"button-export":{"v":"48px","t":"dimension","s":"computed height of the editor Export button"},"desktop":{"v":"1440px","t":"dimension","s":"capture viewport width"},"phone":{"v":"390px","t":"dimension","s":"capture viewport width"}},"motion":{"duration":{"0ms":{"v":"0ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"50ms":{"v":"50ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"80ms":{"v":"80ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"100ms":{"v":"100ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"120ms":{"v":"120ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"130ms":{"v":"130ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"150ms":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"dialog-panel-exit-duration":{"v":"160ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--dialog-panel-exit-duration"},"d":"Custom property --dialog-panel-exit-duration, declared on ._sendExit_osp3a_65."},"180ms":{"v":"180ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"200ms":{"v":"200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 186 elements."},"240ms":{"v":"240ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"250ms":{"v":"250ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 11 elements."},"260ms":{"v":"260ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"280ms":{"v":"280ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"300ms":{"v":"300ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 727 elements."},"320ms":{"v":"320ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"350ms":{"v":"350ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"400ms":{"v":"400ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 161 elements."},"420ms":{"v":"420ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"450ms":{"v":"450ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"500ms":{"v":"500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 177 elements."},"550ms":{"v":"550ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"600ms":{"v":"600ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"800ms":{"v":"800ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 21 elements."},"900ms":{"v":"900ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 16 elements."},"1000ms":{"v":"1000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1200ms":{"v":"1200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"1350ms":{"v":"1350ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1400ms":{"v":"1400ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1500ms":{"v":"1500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1600ms":{"v":"1600ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1900ms":{"v":"1900ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2000ms":{"v":"2000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2200ms":{"v":"2200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2300ms":{"v":"2300ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2500ms":{"v":"2500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2600ms":{"v":"2600ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2800ms":{"v":"2800ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"3000ms":{"v":"3000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"3600ms":{"v":"3600ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"3800ms":{"v":"3800ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"4000ms":{"v":"4000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"6000ms":{"v":"6000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"9500ms":{"v":"9500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"90000ms":{"v":"90000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."}},"easing":{"bezier-0-0-0-1":{"v":[0,0,0,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0-0_54-0-1":{"v":[0,0.54,0,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_11-0_89-0_28-1_2":{"v":[0.11,0.89,0.28,1.2],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_16-1-0_3-1":{"v":[0.16,1,0.3,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_175-0_885-0_32-1_275":{"v":[0.175,0.885,0.32,1.275],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_175-0_885-0_32-1_3":{"v":[0.175,0.885,0.32,1.3],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_19-1-0_22-1":{"v":[0.19,1,0.22,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#pages"}},"bezier-0_2-0-0-1":{"v":[0.2,0,0,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_2-0_8-0_4-1":{"v":[0.2,0.8,0.4,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_22-0_73-0_3-1_39":{"v":[0.22,0.73,0.3,1.39],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#pages"}},"bezier-0_25-0_46-0_45-0_94":{"v":[0.25,0.46,0.45,0.94],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#pages"}},"bezier-0_25-1-0_5-1":{"v":[0.25,1,0.5,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_29-0_34-0_12-1_42":{"v":[0.29,0.34,0.12,1.42],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_3-0-0-1":{"v":[0.3,0,0,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_33-1-0_68-1":{"v":[0.33,1,0.68,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_33-1_42-0_05-0_96":{"v":[0.33,1.42,0.05,0.96],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#pages"}},"bezier-0_34-1_2-0_64-1":{"v":[0.34,1.2,0.64,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_34-1_56-0_64-1":{"v":[0.34,1.56,0.64,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#pages"}},"bezier-0_39-2_72-0_97-0_98":{"v":[0.39,2.72,0.97,0.98],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_4-0-0_2-1":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_5-0-0-1":{"v":[0.5,0,0,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_6-0_2-0-1":{"v":[0.6,0.2,0,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#pages"}},"bezier-0_8-0-0_2-1":{"v":[0.8,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"ease":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease`, expanded to its control points."},"ease-in":{"v":[0.42,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `ease-in`, expanded to its control points."},"ease-in-out":{"v":[0.42,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease-in-out`, expanded to its control points."},"ease-out":{"v":[0,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease-out`, expanded to its control points."},"linear":{"v":[0,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `linear`, expanded to its control points."}},"transition":{"color-300ms-bezier-0_25-0_46-0_45-0_94":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_25-0_46-0_45-0_94}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 182 elements."},"opacity-500ms-ease-in-out":{"v":{"duration":"{motion.duration.500ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 169 elements."},"opacity-300ms-bezier-0_25-0_46-0_45-0_94":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_25-0_46-0_45-0_94}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 160 elements."},"border-color-300ms-bezier-0_25-0_46-0_45-0_94":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_25-0_46-0_45-0_94}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 143 elements."},"transform-300ms-linear-0-0-0-255-1-0-4449-2-0-6018-3-0-7355-4-0-8513-5-0-9525-6-1-0413-7-1-1195-8-1-1881-9-1-2484-10-1-3011-11-1-3468-12-1-3862-13-1-4198-14-1-4479-15-1-4709-16-1-4892-17-1-503-18-1-5126-19-1-5182-20-1-52-21-1-5189-22-1-5156-23-1-5101-24-1-5025-25-1-4929-26-1-4817-27-1-469-28-1-4552-29-1-4406-30-1-4254-31-1-4099-32-1-3943-33-1-3787-34-1-3633-35-1-3481-36-1-3333-37-1-3188-38-1-3048-39-1-2912-40-1-278-41-1-2653-42-1-253-43-1-2412-44-1-2298-45-1-2188-46-1-2083-47-1-1981-48-1-1883-49-1-1789-50-1-1698-51-1-1611-52-1-1528-53-1-1447-54-1-137-55-1-1296-56-1-1225-57-1-1156-58-1-1091-59-1-1028-60-1-0967-61-1-0909-62-1-0854-63-1-0801-64-1-075-65-1-0701-66-1-0654-67-1-061-68-1-0567-69-1-0526-70-1-0488-71-1-0451-72-1-0415-73-1-0382-74-1-035-75-1-032-76-1-0292-77-1-0265-78-1-0239-79-1-0215-80-1-0193-81-1-0172-82-1-0152-83-1-0134-84-1-0117-85-1-0101-86-1-0086-87-1-0073-88-1-0061-89-1-005-90-1-004-91-1-0032-92-1-0024-93-1-0018-94-1-0012-95-1-0008-96-1-0004-97-1-0002-98-1-99-1-100":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"linear(0 0%, 0.255 1%, 0.4449 2%, 0.6018 3%, 0.7355 4%, 0.8513 5%, 0.9525 6%, 1.0413 7%, 1.1195 8%, 1.1881 9%, 1.2484 10%, 1.3011 11%, 1.3468 12%, 1.3862 13%, 1.4198 14%, 1.4479 15%, 1.4709 16%, 1.4892 17%, 1.503 18%, 1.5126 19%, 1.5182 20%, 1.52 21%, 1.5189 22%, 1.5156 23%, 1.5101 24%, 1.5025 25%, 1.4929 26%, 1.4817 27%, 1.469 28%, 1.4552 29%, 1.4406 30%, 1.4254 31%, 1.4099 32%, 1.3943 33%, 1.3787 34%, 1.3633 35%, 1.3481 36%, 1.3333 37%, 1.3188 38%, 1.3048 39%, 1.2912 40%, 1.278 41%, 1.2653 42%, 1.253 43%, 1.2412 44%, 1.2298 45%, 1.2188 46%, 1.2083 47%, 1.1981 48%, 1.1883 49%, 1.1789 50%, 1.1698 51%, 1.1611 52%, 1.1528 53%, 1.1447 54%, 1.137 55%, 1.1296 56%, 1.1225 57%, 1.1156 58%, 1.1091 59%, 1.1028 60%, 1.0967 61%, 1.0909 62%, 1.0854 63%, 1.0801 64%, 1.075 65%, 1.0701 66%, 1.0654 67%, 1.061 68%, 1.0567 69%, 1.0526 70%, 1.0488 71%, 1.0451 72%, 1.0415 73%, 1.0382 74%, 1.035 75%, 1.032 76%, 1.0292 77%, 1.0265 78%, 1.0239 79%, 1.0215 80%, 1.0193 81%, 1.0172 82%, 1.0152 83%, 1.0134 84%, 1.0117 85%, 1.0101 86%, 1.0086 87%, 1.0073 88%, 1.0061 89%, 1.005 90%, 1.004 91%, 1.0032 92%, 1.0024 93%, 1.0018 94%, 1.0012 95%, 1.0008 96%, 1.0004 97%, 1.0002 98%, 1 99%, 1 100%)"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 143 elements."},"transform-400ms-linear-0-0-0-255-1-0-4449-2-0-6018-3-0-7355-4-0-8513-5-0-9525-6-1-0413-7-1-1195-8-1-1881-9-1-2484-10-1-3011-11-1-3468-12-1-3862-13-1-4198-14-1-4479-15-1-4709-16-1-4892-17-1-503-18-1-5126-19-1-5182-20-1-52-21-1-5189-22-1-5156-23-1-5101-24-1-5025-25-1-4929-26-1-4817-27-1-469-28-1-4552-29-1-4406-30-1-4254-31-1-4099-32-1-3943-33-1-3787-34-1-3633-35-1-3481-36-1-3333-37-1-3188-38-1-3048-39-1-2912-40-1-278-41-1-2653-42-1-253-43-1-2412-44-1-2298-45-1-2188-46-1-2083-47-1-1981-48-1-1883-49-1-1789-50-1-1698-51-1-1611-52-1-1528-53-1-1447-54-1-137-55-1-1296-56-1-1225-57-1-1156-58-1-1091-59-1-1028-60-1-0967-61-1-0909-62-1-0854-63-1-0801-64-1-075-65-1-0701-66-1-0654-67-1-061-68-1-0567-69-1-0526-70-1-0488-71-1-0451-72-1-0415-73-1-0382-74-1-035-75-1-032-76-1-0292-77-1-0265-78-1-0239-79-1-0215-80-1-0193-81-1-0172-82-1-0152-83-1-0134-84-1-0117-85-1-0101-86-1-0086-87-1-0073-88-1-0061-89-1-005-90-1-004-91-1-0032-92-1-0024-93-1-0018-94-1-0012-95-1-0008-96-1-0004-97-1-0002-98-1-99-1-100":{"v":{"duration":"{motion.duration.400ms}","delay":"0ms","timingFunction":"linear(0 0%, 0.255 1%, 0.4449 2%, 0.6018 3%, 0.7355 4%, 0.8513 5%, 0.9525 6%, 1.0413 7%, 1.1195 8%, 1.1881 9%, 1.2484 10%, 1.3011 11%, 1.3468 12%, 1.3862 13%, 1.4198 14%, 1.4479 15%, 1.4709 16%, 1.4892 17%, 1.503 18%, 1.5126 19%, 1.5182 20%, 1.52 21%, 1.5189 22%, 1.5156 23%, 1.5101 24%, 1.5025 25%, 1.4929 26%, 1.4817 27%, 1.469 28%, 1.4552 29%, 1.4406 30%, 1.4254 31%, 1.4099 32%, 1.3943 33%, 1.3787 34%, 1.3633 35%, 1.3481 36%, 1.3333 37%, 1.3188 38%, 1.3048 39%, 1.2912 40%, 1.278 41%, 1.2653 42%, 1.253 43%, 1.2412 44%, 1.2298 45%, 1.2188 46%, 1.2083 47%, 1.1981 48%, 1.1883 49%, 1.1789 50%, 1.1698 51%, 1.1611 52%, 1.1528 53%, 1.1447 54%, 1.137 55%, 1.1296 56%, 1.1225 57%, 1.1156 58%, 1.1091 59%, 1.1028 60%, 1.0967 61%, 1.0909 62%, 1.0854 63%, 1.0801 64%, 1.075 65%, 1.0701 66%, 1.0654 67%, 1.061 68%, 1.0567 69%, 1.0526 70%, 1.0488 71%, 1.0451 72%, 1.0415 73%, 1.0382 74%, 1.035 75%, 1.032 76%, 1.0292 77%, 1.0265 78%, 1.0239 79%, 1.0215 80%, 1.0193 81%, 1.0172 82%, 1.0152 83%, 1.0134 84%, 1.0117 85%, 1.0101 86%, 1.0086 87%, 1.0073 88%, 1.0061 89%, 1.005 90%, 1.004 91%, 1.0032 92%, 1.0024 93%, 1.0018 94%, 1.0012 95%, 1.0008 96%, 1.0004 97%, 1.0002 98%, 1 99%, 1 100%)"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 114 elements."},"opacity-200ms-bezier-0_25-0_46-0_45-0_94":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_25-0_46-0_45-0_94}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 88 elements."},"transform-300ms-bezier-0_25-0_46-0_45-0_94":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_25-0_46-0_45-0_94}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 66 elements."},"fill-200ms-bezier-0_25-0_46-0_45-0_94":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_25-0_46-0_45-0_94}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 42 elements."},"all-300ms-bezier-0_34-1_56-0_64-1":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_34-1_56-0_64-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 24 elements."},"transform-400ms-bezier-0_22-0_73-0_3-1_39":{"v":{"duration":"{motion.duration.400ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_22-0_73-0_3-1_39}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 24 elements."},"background-color-200ms-bezier-0_25-0_46-0_45-0_94":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_25-0_46-0_45-0_94}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 22 elements."},"color-200ms-bezier-0_25-0_46-0_45-0_94":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_25-0_46-0_45-0_94}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 22 elements."},"transform-800ms-bezier-0_33-1_42-0_05-0_96":{"v":{"duration":"{motion.duration.800ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_33-1_42-0_05-0_96}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 18 elements."},"opacity-900ms-bezier-0_19-1-0_22-1":{"v":{"duration":"{motion.duration.900ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_19-1-0_22-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 16 elements."},"max-height-400ms-ease":{"v":{"duration":"{motion.duration.400ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 11 elements."},"opacity-250ms-ease":{"v":{"duration":"{motion.duration.250ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 11 elements."},"transform-400ms-bezier-0_6-0_2-0-1":{"v":{"duration":"{motion.duration.400ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_6-0_2-0-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 11 elements."},"filter-200ms-bezier-0_25-0_46-0_45-0_94":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_25-0_46-0_45-0_94}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 10 elements."},"all-300ms-bezier-0_25-0_46-0_45-0_94":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_25-0_46-0_45-0_94}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"all-350ms-bezier-0_25-0_46-0_45-0_94":{"v":{"duration":"{motion.duration.350ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_25-0_46-0_45-0_94}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"background-color-100ms-bezier-0_6-0_2-0-1":{"v":{"duration":"{motion.duration.100ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_6-0_2-0-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"border-radius-500ms-bezier-0_25-0_46-0_45-0_94":{"v":{"duration":"{motion.duration.500ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_25-0_46-0_45-0_94}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"box-shadow-500ms-bezier-0_25-0_46-0_45-0_94":{"v":{"duration":"{motion.duration.500ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_25-0_46-0_45-0_94}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"opacity-100ms-linear":{"v":{"duration":"{motion.duration.100ms}","delay":"0ms","timingFunction":"{motion.easing.linear}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"transform-600ms-bezier-0_33-1_42-0_05-0_96":{"v":{"duration":"{motion.duration.600ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_33-1_42-0_05-0_96}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"background-color-300ms-linear":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.linear}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"background-color-160ms-linear":{"v":{"duration":"{motion.duration.dialog-panel-exit-duration}","delay":"0ms","timingFunction":"{motion.easing.linear}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"border-350ms-bezier-0_25-0_46-0_45-0_94":{"v":{"duration":"{motion.duration.350ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_25-0_46-0_45-0_94}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"opacity-600ms-bezier-0_25-0_46-0_45-0_94":{"v":{"duration":"{motion.duration.600ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_25-0_46-0_45-0_94}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"transform-200ms-bezier-0_25-0_46-0_45-0_94":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_25-0_46-0_45-0_94}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"transform-1200ms-bezier-0_19-1-0_22-1":{"v":{"duration":"{motion.duration.1200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_19-1-0_22-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"all-150ms-ease-out":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"all-800ms-bezier-0_33-1_42-0_05-0_96":{"v":{"duration":"{motion.duration.800ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_33-1_42-0_05-0_96}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"opacity-0ms-bezier-0_33-1_42-0_05-0_96-delay450ms":{"v":{"duration":"{motion.duration.0ms}","delay":"450ms","timingFunction":"{motion.easing.bezier-0_33-1_42-0_05-0_96}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"opacity-400ms-bezier-0_25-0_46-0_45-0_94-delay300ms":{"v":{"duration":"{motion.duration.400ms}","delay":"300ms","timingFunction":"{motion.easing.bezier-0_25-0_46-0_45-0_94}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"transform-550ms-bezier-0_22-0_73-0_3-1_39-delay300ms":{"v":{"duration":"{motion.duration.550ms}","delay":"300ms","timingFunction":"{motion.easing.bezier-0_22-0_73-0_3-1_39}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"transform-800ms-bezier-0_33-1_42-0_05-0_96-delay200ms":{"v":{"duration":"{motion.duration.800ms}","delay":"200ms","timingFunction":"{motion.easing.bezier-0_33-1_42-0_05-0_96}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"transform-800ms-bezier-0_33-1_42-0_05-0_96-delay450ms":{"v":{"duration":"{motion.duration.800ms}","delay":"450ms","timingFunction":"{motion.easing.bezier-0_33-1_42-0_05-0_96}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."}}}},"light":{"surface":{"page":{"v":"{color.page}","t":"color","s":"alias of body --bg-color"},"ink":{"v":"{color.ink}","t":"color","s":"alias of body --primary-color, used as the black button fill"}},"text":{"primary":{"v":"{color.ink}","t":"color","s":"computed color on body"},"muted":{"v":"{color.muted}","t":"color","s":"css-var --secondary-color"},"onAccent":{"v":"{color.ink}","t":"color","s":"computed color on the violet and yellow pills"},"onInk":{"v":"{color.white}","t":"color","s":"computed color on the black Sign up pill"}},"accent":{"v":"{color.violet}","t":"color","s":"hero CTA fill"},"border":{"subtle":{"v":"#d7d7db","t":"color","s":"computed border-top-color on the login email field, rgb(215, 215, 219)"}},"focus":{"v":"{color.ink}","t":"color","s":"keyboard focus ring colour on buttons"},"button":{"black":{"v":"{color.ink}","t":"color","s":"Sign up pill fill"},"violet":{"v":"{color.violet}","t":"color","s":"hero CTA fill"},"yellow":{"v":"{color.yellow}","t":"color","s":"stories and subscribe fill"},"white":{"v":"{color.white}","t":"color","s":"white pill fill"},"export":{"v":"{color.violet-export}","t":"color","s":"editor Export fill"},"upgrade":{"v":"{color.violet-upgrade}","t":"color","s":"editor Upgrade now fill"},"share":{"v":"{color.blue-strong}","t":"color","s":"editor Share fill"},"radius":{"v":"{radius.pill}","t":"dimension","s":"pill radius"},"height":{"v":"{size.button-sm}","t":"dimension","s":"small button height"}}},"dark":{}}</script>
+</body>
+</html>

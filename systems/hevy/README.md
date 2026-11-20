@@ -61,7 +61,7 @@ Read [components.md](components.md) for the component inventory; no patterns.md 
 | light | 19.54:1 pass | 19.54:1 pass | 3.82:1 fail | 3.82:1 fail |
 | dark | 20.82:1 pass | 17.23:1 pass | 3.65:1 fail | 3.02:1 fail |
 
-4 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `core.border.width.focus` 1.5px; `dark.color.accent.focus` #0077E4; `light.color.accent.focus` #0082F9.
+4 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `core.border.width.focus` 1.5px; `dark.color.accent.focus` #0077E4 (Sampled, not measured); `light.color.accent.focus` #0082F9.
 
 <!-- brief:end -->
 

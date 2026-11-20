@@ -16,11 +16,13 @@ Re-run after fetch.py.
 
 import argparse
 import json
-import os
 import re
 import sqlite3
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import dump as refero_dump  # noqa: E402  (refreshes refero/.dump/ after a write)
 
 ROOT = Path(__file__).resolve().parents[2]
 REFERO = ROOT / "refero"
@@ -107,12 +109,24 @@ def make_resolver(slugs, by_name):
     return resolve
 
 
-def write_atomic(path, text):
-    """Write text to path via a sibling .tmp file and rename, so a crash can
-    never leave a truncated file behind."""
-    tmp = path.with_name(path.name + ".tmp")
-    tmp.write_text(text)
-    os.replace(tmp, path)
+def names_by_lower(rows):
+    """Lower-cased style name -> slug, for names exactly one style carries.
+
+    A name several styles share (Apple x6) is left out, so a business with
+    that name links only through an exact slug match: picking one of them
+    would follow the db's row order, which a dump reload or a refetch changes
+    with no change in the data. catalog.py's build_refero applies the same
+    rule to the names it resolves."""
+    count, slug_of = {}, {}
+    for _, slug, name, _ in rows:
+        if name:
+            key = name.lower()
+            count[key] = count.get(key, 0) + 1
+            slug_of[key] = slug
+    return {key: slug for key, slug in slug_of.items() if count[key] == 1}
+
+
+write_atomic = refero_dump.write_atomic
 
 
 def open_db(refero: Path):
@@ -123,7 +137,9 @@ def open_db(refero: Path):
         if f.read(64).startswith(b"version https://git-lfs"):
             sys.exit(f"error: {path} is a Git LFS pointer; "
                      "run: git lfs install && git lfs pull")
-    db = sqlite3.connect(path)
+    # Autocommit mode: main() opens its one write transaction itself, since
+    # the legacy implicit transactions never cover DROP or CREATE.
+    db = sqlite3.connect(path, isolation_level=None)
     db.execute("PRAGMA busy_timeout=30000")
     return db
 
@@ -140,10 +156,7 @@ def main():
     rows = db.execute(
         "SELECT uuid, slug, name, result_json FROM styles").fetchall()
     slugs = {slug for _, slug, _, _ in rows}
-    by_name = {}
-    for _, slug, name, _ in rows:
-        if name:
-            by_name.setdefault(name.lower(), slug)
+    by_name = names_by_lower(rows)
     resolve = make_resolver(slugs, by_name)
 
     edges = []          # (uuid, business, why, rank, matched_slug)
@@ -177,8 +190,10 @@ def main():
     json_styles.sort(key=lambda s: s["slug"])
     matched_count = sum(1 for e in edges if e[4] is not None)
 
-    # One short transaction: other agents write refero.db concurrently.
-    with db:
+    # One short transaction around the DROP, CREATE and INSERTs, so a failed
+    # insert leaves the old table: other agents write refero.db concurrently.
+    db.execute("BEGIN IMMEDIATE")
+    try:
         db.execute("DROP TABLE IF EXISTS similar")
         db.execute("""CREATE TABLE similar (
             uuid TEXT, business TEXT, why TEXT, rank INTEGER,
@@ -186,7 +201,13 @@ def main():
         db.executemany(
             "INSERT INTO similar (uuid, business, why, rank, matched_slug)"
             " VALUES (?,?,?,?,?)", edges)
-    db.close()
+        db.execute("COMMIT")
+    except BaseException:
+        db.execute("ROLLBACK")
+        raise
+    finally:
+        db.close()
+    refero_dump.refresh(args.refero / "refero.db")
 
     write_atomic(args.refero / "similar.json", json.dumps({
         "version": 1,

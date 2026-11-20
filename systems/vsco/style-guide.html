@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VSCO style guide</title>
+<style>
+  :root {
+    --white: #ffffff;
+    --black: #000000;
+    --black-ish: #111111;
+    --ink-525: #525252;
+    --grey-737: #737373;
+    --grey-aaa: #aaaaaa;
+    --border-d9: #d9d9d9;
+    --border-dd: #dddddd;
+    --light-grey: #f2f2f2;
+    --gold: #ffbc3c;
+    --label-yellow: #edba58;
+    --pink: #ff0877;
+    --badge-blue: #e9f8ff;
+    --badge-blue-text: #386584;
+    --page: var(--white);
+    --surface: var(--light-grey);
+    --text: var(--black);
+    --muted: var(--grey-737);
+    --accent: var(--gold);
+    --on-accent: var(--black);
+    --border: var(--border-d9);
+    --focus: var(--ink-525);
+    --radius-pill: 999px;
+    --radius-field: 4px;
+    --radius-card: 8.79287px;
+    --font: "VSCO Gothic", -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 14.0686px/21.1029px var(--font); }
+  header { background: var(--white); padding: 24px 40px; border-bottom: 1px solid var(--border); }
+  header h1 { margin: 0; font-size: 31.6543px; font-weight: 500; line-height: 31.6543px; text-transform: uppercase; }
+  header p { margin: 8px 0 0; color: var(--muted); max-width: 68ch; }
+  main { max-width: 1080px; margin: 0 auto; padding: 32px 40px 80px; }
+  h2 { font-size: 24px; font-weight: 500; line-height: 24px; margin: 40px 0 12px; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+  .swatch { border: 1px solid var(--border); border-radius: var(--radius-field); overflow: hidden; }
+  .swatch i { display: block; height: 56px; }
+  .swatch span { display: block; padding: 8px 10px; font-size: 12px; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 12px 0; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; height: 35px; padding: 1.75857px 24.62px; border-radius: var(--radius-pill); border: 0; font: 600 11.4307px/12.5738px var(--font); letter-spacing: 1.14307px; text-transform: uppercase; text-decoration: none; }
+  .btn.gold { background: var(--gold); color: var(--black); }
+  .btn.solid { background: var(--black); color: var(--white); border: 2px solid var(--black); }
+  .btn.outline { background: transparent; color: var(--black); border: 1px solid var(--black); }
+  .btn.nav { height: 32px; padding: 1.75857px 16px; font-weight: 500; font-size: 13px; letter-spacing: 0; line-height: 14.3px; }
+  .btn.pink { height: 30px; padding: 1.75857px 22.4218px; background: var(--pink); color: var(--white); font-weight: 700; }
+  .btn.disabled { background: var(--grey-aaa); color: var(--black); }
+  .badge { display: inline-flex; padding: 3.51715px 5.27572px; border-radius: var(--radius-field); font-size: 9.67216px; font-weight: 600; letter-spacing: 0.483608px; text-transform: uppercase; }
+  .badge.blue { background: var(--badge-blue); color: var(--badge-blue-text); }
+  .badge.yellow { background: var(--label-yellow); color: var(--black); }
+  .card { width: 358px; max-width: 100%; background: var(--white); color: var(--black); border: 1px solid rgba(0,0,0,0.1); border-radius: var(--radius-card); padding: 17.5857px; }
+  .card.ink { background: var(--black); color: var(--white); border-color: var(--black); }
+  .field { width: 328px; max-width: 100%; }
+  .field label { display: block; color: var(--ink-525); font-size: 11px; font-weight: 500; line-height: 14px; margin-bottom: 4px; }
+  .field .box { height: 40px; border: 1px solid var(--border-d9); border-radius: var(--radius-field); background: var(--white); padding: 0 16px; display: flex; align-items: center; color: var(--text); font-size: 14px; }
+  .field .box.focus { border-color: var(--focus); }
+  .ink-band { background: var(--black-ish); color: var(--white); padding: 24px; margin-top: 16px; }
+  .ink-band h3 { margin: 0; font-size: 47.4815px; font-weight: 500; line-height: 43.9644px; text-transform: uppercase; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  code { font-family: ui-monospace, Menlo, monospace; font-size: 12px; }
+  .note { color: var(--muted); max-width: 72ch; }
+</style>
+</head>
+<body>
+<header>
+  <h1>VSCO</h1>
+  <p>Public marketing and signed-out login, measured 2026-11-19. VSCO Gothic is not loaded here. Values come from tokens.json.</p>
+</header>
+<main>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><i style="background:#ffffff"></i><span>page #ffffff</span></div>
+    <div class="swatch"><i style="background:#f2f2f2"></i><span>surface #f2f2f2</span></div>
+    <div class="swatch"><i style="background:#111111"></i><span>ink #111111</span></div>
+    <div class="swatch"><i style="background:#000000"></i><span>text #000000</span></div>
+    <div class="swatch"><i style="background:#737373"></i><span>muted #737373</span></div>
+    <div class="swatch"><i style="background:#ffbc3c"></i><span>accent #ffbc3c</span></div>
+    <div class="swatch"><i style="background:#d9d9d9"></i><span>border #d9d9d9</span></div>
+    <div class="swatch"><i style="background:#525252"></i><span>focus #525252</span></div>
+    <div class="swatch"><i style="background:#ff0877"></i><span>pink #ff0877</span></div>
+    <div class="swatch"><i style="background:#aaaaaa"></i><span>disabled #aaaaaa</span></div>
+  </div>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <a class="btn gold">Try VSCO for free</a>
+    <a class="btn solid">Explore VSCO</a>
+    <a class="btn outline">Explore creative tools</a>
+    <a class="btn nav solid">Try for free</a>
+    <a class="btn nav outline">Log in</a>
+    <a class="btn pink">Learn more</a>
+    <span class="btn disabled">Log in</span>
+  </div>
+  <p class="note">Gold and pink were painted. Hover fills are declared in CSS and were not forced on a live control. The grey submit is the empty login form.</p>
+
+  <h2>Badges and plans</h2>
+  <div class="row">
+    <span class="badge blue">Best for business</span>
+    <span class="badge yellow">Most popular</span>
+  </div>
+  <div class="row">
+    <article class="card ink">
+      <span class="badge blue">Best for business</span>
+      <h3 style="margin:12px 0 4px;font-size:24.62px;font-weight:500">VSCO One</h3>
+      <p>Run your whole photography business, from first inquiry to final payment.</p>
+    </article>
+    <article class="card">
+      <span class="badge yellow">Most popular</span>
+      <h3 style="margin:12px 0 4px;font-size:24.62px;font-weight:500">Pro</h3>
+      <p>$4.99/month. The billed-annually line is #737373.</p>
+    </article>
+  </div>
+
+  <h2>Login field</h2>
+  <div class="field">
+    <label>Email*</label>
+    <div class="box">identity</div>
+  </div>
+  <div class="field" style="margin-top:12px">
+    <label>Email*</label>
+    <div class="box focus">focused</div>
+  </div>
+  <p class="note">Focus changes the box border from #d9d9d9 to #525252. Outline stays none. Blurring an invalid email did not paint an error.</p>
+
+  <h2>Home band</h2>
+  <div class="ink-band">
+    <h3>Your home for photography</h3>
+    <p>Body text on this band is #ffffff. The page background is #111111.</p>
+  </div>
+
+  <h2>Type</h2>
+  <table>
+    <tr><th>Role</th><th>Size</th><th>Weight</th><th>Where</th></tr>
+    <tr><td>Display</td><td>87.9287px / 79.1359px</td><td>500</td><td>Home h1 at 1169px</td></tr>
+    <tr><td>Title</td><td>47.4815px / 43.9644px</td><td>500</td><td>Your home for photography</td></tr>
+    <tr><td>Plans</td><td>38.6886px / 34.8198px</td><td>500</td><td>Plans for every photographer</td></tr>
+    <tr><td>Login title</td><td>24px / 24px</td><td>400</td><td>Log into VSCO</td></tr>
+    <tr><td>Body</td><td>14.0686px / 21.1029px</td><td>400</td><td>Marketing body</td></tr>
+    <tr><td>Field</td><td>14px / 18px</td><td>400</td><td>Login input</td></tr>
+  </table>
+</main>
+</body>
+</html>

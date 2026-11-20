@@ -1,0 +1,14 @@
+{
+ "_note": "Rules for systems/elevenmusic. A fully public signed-out capture of elevenmusic.io: no account exists and no owner data appears on any surface. The login email field was focused and filled once with the site's own placeholder-style example address, then cleared; nothing was submitted and no OAuth button was pressed. Artist names, track titles, playlist names and marketing copy in the screenshots are ElevenMusic's published public-page content. The OCR email net is kept with elevenmusic.io's own published addresses, ElevenLabs support and example.com allowed.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@elevenmusic\\.io$",
+   "@elevenlabs\\.io$",
+   "@elevenlabs\\.com$",
+   "@example\\.com$",
+   "@example\\.org$"
+  ]
+ },
+ "families": []
+}

@@ -1,0 +1,815 @@
+{
+ "readAt": "2026-11-17",
+ "source": "the stylesheet bodies read during live signed-out loads of hitchd.com /, /login, /zoeandnoah, /blog/what-is-a-honeymoon-registry and /trips/australia — the linked marketing/css/*.min.css and cdn.jsdelivr.net Foundation sheets from network responses plus the Angular apps' injected <style> blocks through the CSSOM, re-parsed with CSSStyleSheet; resolved in a probe carrying the real sheets and the live home page's html/body classes in the single light theme (no dark variant or theme control exists), each name applied to a real typed property at 1440 x 900",
+ "sheets": [
+  "https://www.hitchd.com/marketing/css/styles.min.css (601532 bytes)",
+  "https://www.hitchd.com/marketing/css/foundation.min.css (116389 bytes)",
+  "https://tags.srv.stackadapt.com/sa.css (65 bytes)",
+  "https://cdn.jsdelivr.net/foundation/5.3.3/css/foundation.css (163432 bytes)",
+  "https://fonts.googleapis.com/css (12535 bytes)",
+  "https://www.gstatic.com/recaptcha/releases/4i3aN5wAweL7i3ADI7BSX4B-/styles__ltr.css (75062 bytes)",
+  "https://fonts.googleapis.com/css2 (1475 bytes)",
+  "https://api.fontshare.com/v2/css (617 bytes)",
+  "home:inline-0 (1372 bytes)",
+  "login:inline-2 (421647 bytes)",
+  "login:inline-3 (14332 bytes)",
+  "login:inline-4 (136434 bytes)",
+  "login:inline-5 (88550 bytes)",
+  "login:inline-6 (80014 bytes)",
+  "login:inline-7 (63301 bytes)",
+  "login:inline-8 (57239 bytes)",
+  "login:inline-9 (59938 bytes)",
+  "login:inline-10 (99472 bytes)",
+  "login:inline-11 (69539 bytes)",
+  "login:inline-12 (49808 bytes)",
+  "login:inline-13 (52435 bytes)",
+  "login:inline-14 (89666 bytes)",
+  "login:inline-15 (75986 bytes)",
+  "login:inline-16 (84147 bytes)",
+  "login:inline-17 (3614 bytes)",
+  "login:inline-18 (84804 bytes)",
+  "login:inline-19 (209 bytes)",
+  "login:inline-21 (234 bytes)",
+  "login:inline-22 (231 bytes)",
+  "login:inline-23 (209 bytes)",
+  "login:inline-24 (201 bytes)",
+  "login:inline-25 (220 bytes)",
+  "login:inline-26 (217 bytes)",
+  "login:inline-27 (213 bytes)",
+  "login:inline-28 (210 bytes)",
+  "login:inline-30 (212 bytes)",
+  "login:inline-31 (237 bytes)",
+  "login:inline-32 (217 bytes)",
+  "login:inline-33 (219 bytes)",
+  "login:inline-34 (209 bytes)",
+  "login:inline-36 (222 bytes)",
+  "login:inline-37 (227 bytes)",
+  "login:inline-39 (219 bytes)",
+  "login:inline-40 (211 bytes)",
+  "login:inline-42 (232 bytes)",
+  "login:inline-176 (206 bytes)",
+  "login:inline-177 (209 bytes)",
+  "login:inline-189 (225 bytes)",
+  "login:inline-226 (382 bytes)",
+  "login:inline-228 (228 bytes)",
+  "login:inline-270 (4496 bytes)",
+  "registry:inline-2 (421647 bytes)",
+  "registry:inline-4 (136434 bytes)",
+  "registry:inline-5 (80014 bytes)",
+  "registry:inline-6 (3576 bytes)",
+  "registry:inline-7 (497480 bytes)",
+  "registry:inline-8 (209 bytes)",
+  "registry:inline-9 (4486 bytes)",
+  "registry:inline-11 (43498 bytes)"
+ ],
+ "counts": {
+  "rules": 11,
+  "fonts": 75,
+  "names": {
+   "app": 1,
+   "vendor": 1,
+   "framework": 0,
+   "utility": 0
+  },
+  "bySelector": {
+   "[vendor] :root": 1,
+   "[app] .profile-pic-top[_ngcontent-c2] .col-sel[_ngcontent-c2] input[type=\"radio\"][_ngcontent-c2]:checked": 1,
+   "[app] .profile-pic-top[_ngcontent-c2] .col-sel[_ngcontent-c2] label[_ngcontent-c2] span[_ngcontent-c2]": 1,
+   "[app] .neu-controls[_ngcontent-c2] .col-sel[_ngcontent-c2] input[type=\"radio\"][_ngcontent-c2]:checked": 1,
+   "[app] .neu-controls[_ngcontent-c2] .col-sel[_ngcontent-c2] label[_ngcontent-c2] span[_ngcontent-c2]": 1,
+   "[app] .maya-layout[_ngcontent-c2] .profile-pic-top[_ngcontent-c2] .cover-image[_ngcontent-c2] .col-sel[_ngcontent-c2] input[type=\"radio\"][_ngcontent-c2]:checked": 1,
+   "[app] .maya-layout[_ngcontent-c2] .profile-pic-top[_ngcontent-c2] .cover-image[_ngcontent-c2] .col-sel[_ngcontent-c2] label[_ngcontent-c2] span[_ngcontent-c2]": 1,
+   "[app] .col-sel[_ngcontent-c2] input[type=\"radio\"][_ngcontent-c2]:checked": 1,
+   "[app] .col-sel[_ngcontent-c2] label[_ngcontent-c2] span[_ngcontent-c2]": 1,
+   "[app] .classic-layout[_ngcontent-c2] .col-sel[_ngcontent-c2] input[type=\"radio\"][_ngcontent-c2]:checked": 1,
+   "[app] .classic-layout[_ngcontent-c2] .col-sel[_ngcontent-c2] label[_ngcontent-c2] span[_ngcontent-c2]": 1
+  }
+ },
+ "errors": [],
+ "app": [
+  {
+   "file": "registry:inline-7",
+   "selector": ".profile-pic-top[_ngcontent-c2] .col-sel[_ngcontent-c2] input[type=\"radio\"][_ngcontent-c2]:checked",
+   "context": [],
+   "properties": {
+    "--display": "block"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "registry:inline-7",
+   "selector": ".profile-pic-top[_ngcontent-c2] .col-sel[_ngcontent-c2] label[_ngcontent-c2] span[_ngcontent-c2]",
+   "context": [],
+   "properties": {
+    "--display": "none"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "registry:inline-7",
+   "selector": ".neu-controls[_ngcontent-c2] .col-sel[_ngcontent-c2] input[type=\"radio\"][_ngcontent-c2]:checked",
+   "context": [],
+   "properties": {
+    "--display": "block"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "registry:inline-7",
+   "selector": ".neu-controls[_ngcontent-c2] .col-sel[_ngcontent-c2] label[_ngcontent-c2] span[_ngcontent-c2]",
+   "context": [],
+   "properties": {
+    "--display": "none"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "registry:inline-7",
+   "selector": ".maya-layout[_ngcontent-c2] .profile-pic-top[_ngcontent-c2] .cover-image[_ngcontent-c2] .col-sel[_ngcontent-c2] input[type=\"radio\"][_ngcontent-c2]:checked",
+   "context": [],
+   "properties": {
+    "--display": "block"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "registry:inline-7",
+   "selector": ".maya-layout[_ngcontent-c2] .profile-pic-top[_ngcontent-c2] .cover-image[_ngcontent-c2] .col-sel[_ngcontent-c2] label[_ngcontent-c2] span[_ngcontent-c2]",
+   "context": [],
+   "properties": {
+    "--display": "none"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "registry:inline-7",
+   "selector": ".col-sel[_ngcontent-c2] input[type=\"radio\"][_ngcontent-c2]:checked",
+   "context": [],
+   "properties": {
+    "--display": "block"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "registry:inline-7",
+   "selector": ".col-sel[_ngcontent-c2] label[_ngcontent-c2] span[_ngcontent-c2]",
+   "context": [],
+   "properties": {
+    "--display": "none"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "registry:inline-7",
+   "selector": ".classic-layout[_ngcontent-c2] .col-sel[_ngcontent-c2] input[type=\"radio\"][_ngcontent-c2]:checked",
+   "context": [],
+   "properties": {
+    "--display": "block"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "registry:inline-7",
+   "selector": ".classic-layout[_ngcontent-c2] .col-sel[_ngcontent-c2] label[_ngcontent-c2] span[_ngcontent-c2]",
+   "context": [],
+   "properties": {
+    "--display": "none"
+   },
+   "bin": "app"
+  }
+ ],
+ "vendor": [
+  {
+   "file": "https://tags.srv.stackadapt.com/sa.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--sa-uid": "<identifier omitted>"
+   },
+   "bin": "vendor"
+  }
+ ],
+ "framework": [],
+ "utility": [],
+ "fonts": [
+  {
+   "file": "https://www.hitchd.com/marketing/css/styles.min.css",
+   "font-display": "swap",
+   "font-family": "\"Inter Variable\"",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "https://www.hitchd.com/marketing/css/styles.min.css",
+   "font-display": "swap",
+   "font-family": "DDNR",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "300",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "600",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"PT Serif\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"PT Serif\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"PT Serif\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://fonts.googleapis.com/css2",
+   "font-family": "\"PT Serif\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://api.fontshare.com/v2/css",
+   "font-family": "\"Plus Jakarta Sans\"",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\"), url(…) format(\"truetype\")",
+   "font-weight": "600",
+   "font-display": "swap",
+   "font-style": "normal"
+  },
+  {
+   "file": "login:inline-2",
+   "font-family": "\"Inter Variable\"",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "font-style": "normal",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "login:inline-19",
+   "font-family": "classic",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-21",
+   "font-family": "formal",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-22",
+   "font-family": "elegant",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-23",
+   "font-family": "graceful",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-24",
+   "font-family": "bold",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-25",
+   "font-family": "vintage",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-26",
+   "font-family": "olde",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-27",
+   "font-family": "display-font",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-28",
+   "font-family": "nostalgia",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-30",
+   "font-family": "rustic",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-31",
+   "font-family": "luxurious",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-32",
+   "font-family": "clean",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-33",
+   "font-family": "neue",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-34",
+   "font-family": "poised",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-36",
+   "font-family": "editorial",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-37",
+   "font-family": "harmonious",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-39",
+   "font-family": "trustworthy",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-40",
+   "font-family": "dramatic",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-42",
+   "font-family": "romantic",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-176",
+   "font-family": "\"Noto Sans Arabic\"",
+   "src": "url(…)",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-177",
+   "font-family": "\"Noto Sans Display\"",
+   "src": "url(…)",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-189",
+   "font-family": "\"Nunito Sans\"",
+   "src": "url(…)",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-226",
+   "font-family": "\"Roboto Flex\"",
+   "src": "url(…)",
+   "font-display": "swap"
+  },
+  {
+   "file": "login:inline-228",
+   "font-family": "\"Roboto Serif\"",
+   "src": "url(…)",
+   "font-display": "swap"
+  },
+  {
+   "file": "registry:inline-2",
+   "font-family": "\"Inter Variable\"",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "font-style": "normal",
+   "src": "url(…) format(\"woff2\")"
+  },
+  {
+   "file": "registry:inline-7",
+   "font-family": "ValkySemibold",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "registry:inline-7",
+   "font-family": "Dirtyline",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "registry:inline-7",
+   "font-family": "Chino",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "registry:inline-7",
+   "font-family": "ValkySemibold",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "registry:inline-7",
+   "font-family": "Dirtyline",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "registry:inline-7",
+   "font-family": "Chino",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")"
+  },
+  {
+   "file": "registry:inline-8",
+   "font-family": "classic",
+   "src": "url(…) format(\"woff2\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  }
+ ],
+ "resolved": {
+  "light": {
+   "--sa-uid": {
+    "kind": "fontFamily",
+    "value": "<identifier omitted>"
+   }
+  }
+ }
+}

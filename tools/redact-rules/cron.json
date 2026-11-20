@@ -1,0 +1,17 @@
+{
+ "_note": "Rules for systems/cron. A fully public signed-out capture: no owner data on any surface. Nothing was filled, submitted or signed into; all names and copy in the screenshots are Cron's published public-page content. One rect: a changelog entry embeds Cron's own product screenshot whose demo-account popup shows two email addresses of a named person (a work address on the product's domain and a personal webmail one) - the vendor's published demo data, painted out so no addresses ship. The OCR email net is kept with example.com allowed.",
+ "families": [
+  {
+   "name": "changelog demo-account popup",
+   "files": ["screenshots/changelog-light-full.png"],
+   "rects": [[800, 25385, 1115, 25520]]
+  }
+ ],
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@example\\.com$",
+   "@example\\.org$"
+  ]
+ }
+}

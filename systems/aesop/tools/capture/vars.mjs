@@ -25,14 +25,30 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { BASE, launch } from './public/lib.mjs';
+import { loadOnce, pageState } from './public/gate.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const REF = path.resolve(here, '..', '..');
 
 const { browser, context } = await launch();
 const page = await context.newPage();
-await page.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 90000 });
+// One load: a challenged or failed home page is a boundary (public/gate.mjs),
+// so the run stops and writes nothing rather than harvest the interstitial.
+const loaded = await loadOnce(page, BASE + '/');
+if (!loaded.ok) {
+  console.log(`BLOCKED ${BASE}/: ${loaded.reason}; raw/css-vars.json left as it was`);
+  await browser.close();
+  process.exit(1);
+}
 await page.waitForTimeout(6000);
+// A late challenge or error can replace the page during the settle wait: stop
+// then too, so its styles are never written as the product's.
+const settled = await pageState(page);
+if (settled !== 'ok') {
+  console.log(`BLOCKED ${BASE}/: the page showed ${settled === 'empty' ? 'no content' : settled === 'error' ? 'an error' : 'a challenge'} after the settle wait; raw/css-vars.json left as it was`);
+  await browser.close();
+  process.exit(1);
+}
 
 // ---- harvest: every rule with --* declarations, live CSSOM ----
 const result = await page.evaluate(() => {
@@ -46,7 +62,7 @@ const result = await page.evaluate(() => {
     for (const r of list) {
       if (r.type === CSSRule.FONT_FACE_RULE) {
         const o = { file };
-        for (let i = 0; i < r.style.length; i++) o[r.style[i]] = r.style.getPropertyValue(r.style[i]).trim();
+        for (let i = 0; i < r.style.length; i++) o[r.style[i]] = noUrl(r.style.getPropertyValue(r.style[i]).trim());
         fonts.push(o);
         continue;
       }

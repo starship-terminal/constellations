@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elektron style guide</title>
+<meta name="description" content="Elektron (elektron.se) design tokens and the public signed-out surface's components, rendered from tokens.json with the declared thedock variables and the measured computed styles.">
+<style>
+:root {
+  --font-family-text: "Neue Haas Grotesk Text Pro";
+  --font-family-display: 'Neue Haas Grotesk Display Pro';
+  --font-family-button: "digi one v2";
+  --font-family-search: "Analog One V2.";
+  --font-family-mono: ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  --font-weight-regular: 400;
+  --font-weight-book: 450;
+  --font-weight-medium: 500;
+  --font-size-display: 64.05px;
+  --font-size-display-mid: 44.3912px;
+  --font-size-title: 30.8px;
+  --font-size-heading: 24.01px;
+  --font-size-title-mobile: 23.8px;
+  --font-size-product: 17.99px;
+  --font-size-body: 14px;
+  --font-lineHeight-display: 60.8475px;
+  --font-lineHeight-display-mid: 42.1716px;
+  --font-lineHeight-title: 40.964px;
+  --font-lineHeight-heading: 36.015px;
+  --font-lineHeight-title-mobile: 31.654px;
+  --font-lineHeight-product: 26.985px;
+  --font-lineHeight-body: 21px;
+  --font-lineHeight-search: 17.5px;
+  --font-letterSpacing-display: -0.6405px;
+  --font-letterSpacing-display-mid: -0.443912px;
+  --font-letterSpacing-title: 1.232px;
+  --font-letterSpacing-heading: 0.9604px;
+  --font-letterSpacing-title-mobile: 0.952px;
+  --font-letterSpacing-product: 0.7196px;
+  --font-letterSpacing-field: 0.56px;
+  --font-letterSpacing-control: 0.462px;
+  --color-neutral-ink: #151515;
+  --color-neutral-surface: #1e1e1e;
+  --color-neutral-raised: #212121;
+  --color-neutral-paper: #eeeef2;
+  --color-neutral-muted: #97979a;
+  --color-neutral-muted2: #b8b8bb;
+  --color-neutral-border: #363636;
+  --color-neutral-border2: #444444;
+  --color-neutral-border-control: #777778;
+  --color-neutral-scrim: rgba(0, 0, 0, 0.5);
+  --color-neutral-grey: #cccccc;
+  --color-neutral-placeholder: #757575;
+  --color-neutral-sweep: #333333;
+  --color-neutral-rule: #808080;
+  --color-neutral-white: #ffffff;
+  --color-status-error: #d63638;
+  --color-status-success: #1e7a3c;
+  --spacing-s1: 3.5px;
+  --spacing-s2: 7px;
+  --spacing-s3: 10.5px;
+  --spacing-s4: 14px;
+  --spacing-s5: 17.5px;
+  --spacing-s6: 21px;
+  --spacing-s7: 35px;
+  --spacing-s8: 44px;
+  --spacing-s9: 70px;
+  --radius-none: 0px;
+  --radius-search: 7px;
+  --border-control: 2px;
+  --border-search: 1px;
+  --shadow-drawer: -7px 0px 35px 0px rgba(0, 0, 0, 0.18);
+  --easing-standard: cubic-bezier(0.365, 0.305, 0.0, 1.0);
+  --easing-bounce: cubic-bezier(0.0, 1.05, 0.65, 1.01);
+  --easing-sweep: cubic-bezier(0.77, 0.0, 0.175, 1.0);
+  --measured-focus-ring: 0px 0px 0px 2px #ffffff;
+  --measured-transition-control: 300ms;
+  --measured-transition-sweep: 400ms;
+  --measured-transition-header: 800ms;
+  --page: var(--color-neutral-ink);
+  --surface: var(--color-neutral-surface);
+  --surface-raised: var(--color-neutral-raised);
+  --text: var(--color-neutral-paper);
+  --text-muted: var(--color-neutral-muted);
+  --text-muted2: var(--color-neutral-muted2);
+  --border: var(--color-neutral-border);
+  --control-border: var(--color-neutral-border-control);
+  --accent: var(--color-neutral-paper);
+  --accent-text: var(--color-neutral-ink);
+  --field: var(--color-neutral-paper);
+  --field-text: var(--color-neutral-ink);
+  --secondary: var(--color-neutral-grey);
+  --secondary-hover: var(--color-neutral-ink);
+  --secondary-hover-text: var(--color-neutral-grey);
+  --scrim: var(--color-neutral-scrim);
+  --placeholder: var(--color-neutral-placeholder);
+  --sweep: var(--color-neutral-sweep);
+  --rule: var(--color-neutral-rule);
+  --focus-ring: var(--color-neutral-white);
+  --focus-outline: #000000;
+  --component-header-height: 56px;
+  --component-header-height-mobile: 63px;
+  --component-control-height: 46px;
+  --component-control-height-field: 42px;
+  --component-control-height-nav: 28px;
+  --component-control-height-search: 40.5px;
+  --component-menu-row-height: 36.0156px;
+  --component-drawer-panel-width: 420px;
+  --component-drawer-content-width: 392px;
+  --component-icon-nav: 28px;
+  --component-icon-menu: 35px;
+  --component-layout-width: 1100px;
+  --sg-sans: "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sg-display: "Neue Haas Grotesk Display Pro", "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, var(--color-neutral-paper, #eeeef2)); background: var(--page, #151515); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.1 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.01em; }
+h2.sh { font: 400 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted, var(--color-neutral-muted, #97979a)); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border, var(--color-neutral-border, #363636)); }
+.lead { max-width: 62ch; color: var(--text-muted2, var(--color-neutral-muted2, #b8b8bb)); }
+.note { font-size: 13px; color: var(--text-muted, var(--color-neutral-muted, #97979a)); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 400 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted, var(--color-neutral-muted, #97979a)); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, var(--color-neutral-border, #363636)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 400 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-muted, var(--color-neutral-muted, #97979a)); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-muted, var(--color-neutral-muted, #97979a)); }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border, var(--color-neutral-border, #363636)); overflow: hidden; background: var(--page, #151515); }
+.navbar { display: flex; align-items: center; gap: 26px; height: 56px; padding: 0 20px; font: 400 14px/21px var(--sg-sans); letter-spacing: .033em; color: var(--text, #eeeef2); border-bottom: 1px solid var(--border, #363636); }
+.navbar .wm { font: 700 17px/1 var(--sg-sans); letter-spacing: .28em; }
+.navbar .sp { flex: 1; }
+.navbar .ic { font-size: 15px; opacity: .9; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-height, 46px); padding: 0 17.5px; font: 400 14px/21px var(--sg-sans); letter-spacing: .033em; text-transform: uppercase; border-radius: var(--radius-none, 0px); border: 2px solid transparent; }
+.btn.outline { border-color: var(--accent, var(--color-neutral-paper, #eeeef2)); color: var(--accent, #eeeef2); background: transparent; }
+.btn.outline:hover { background: var(--accent, #eeeef2); color: var(--accent-text, #151515); }
+.btn.secondary { background: var(--secondary, var(--color-neutral-grey, #cccccc)); color: var(--accent-text, #151515); height: 42px; }
+.field { display: flex; align-items: center; height: var(--component-control-height-field, 42px); padding: 0 14px; background: var(--field, var(--color-neutral-paper, #eeeef2)); color: var(--field-text, #151515); font: 400 14px/21px var(--sg-sans); letter-spacing: .04em; border-radius: 0; }
+.field .ph { color: var(--placeholder, #757575); }
+.prow { display: flex; align-items: baseline; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--border, #363636); }
+.prow b { font: 400 18px/27px var(--sg-sans); letter-spacing: .04em; }
+.prow .sub { font: 400 14px/21px var(--sg-sans); color: var(--text, #eeeef2); }
+.prow .price { margin-left: auto; font: 400 18px/27px var(--sg-sans); }
+.drawer { background: var(--surface-raised, var(--color-neutral-raised, #212121)); padding: 20px 14px; width: 300px; box-shadow: var(--shadow-drawer, -7px 0 35px rgba(0,0,0,.18)); }
+.drawer h3 { font: 400 18px/27px var(--sg-sans); letter-spacing: .04em; margin: 0 0 12px; }
+.focusdemo { display: inline-block; padding: 6px 10px; box-shadow: 0 0 0 2px var(--focus-ring, #ffffff); outline: 2px solid var(--focus-outline, #000000); outline-offset: 2px; font: 400 14px/21px var(--sg-sans); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border, var(--color-neutral-border, #363636)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border, var(--color-neutral-border, #363636)); }
+.tr .ts { font-family: var(--sg-display); }
+.tr .tv { font-size: 12px; color: var(--text-muted, var(--color-neutral-muted, #97979a)); font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Elektron style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Elektron, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the inverted monochrome — a #151515 ground, #eeeef2 paper text that doubles as the action fill, #1e1e1e/#212121 raised surfaces, #363636/#444444 hairlines — plus the measured greys (#cccccc secondary buttons, #757575 placeholders, #333333 underline-sweep), Neue Haas Grotesk Text/Display with digi one v2 button labels, square corners everywhere, a 7px space rhythm and the double focus ring (2px white spread + 2px black outline). The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from elektron.se on 2026-11-13, signed out, in headless Chromium. The account, checkout and serial-registered downloads behind the magic-login card are a documented boundary. Neue Haas Grotesk, digi one v2 and Analog One V2 are licensed served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A 56px transparent header (63px on phone) over the #151515 page: 14px Neue Haas Text labels with 28px icons, the wordmark centred. Every text link carries a #333333 gradient layer that sweeps in on hover over 0.4s of background-size.</p>
+  <div class="mock">
+    <div class="navbar"><span>Catalog</span><span>Shop</span><span>Kulture</span><span class="ic">&#9906;</span><span class="wm sp" style="text-align:center">ELEKTRON</span><span>Support</span><span class="ic">&#9826;</span><span class="ic">&#8856;</span></div>
+    <div style="padding:34px 20px"><div style="font:400 30.8px/41px var(--sg-display);letter-spacing:.04em">Machines for music</div><p class="note" style="margin:8px 0 18px">A 2px paper-outline block-button inverts to a paper fill with ink text on hover and pressed.</p><span class="btn outline">Explore Digitakt II</span>&ensp;<span class="btn secondary">Send me a code</span>&ensp;<span class="focusdemo">focused link</span></div>
+  </div>
+
+  <h2 class="sh">Shop and login drawer</h2>
+  <p class="lead">The product row is 18px Neue Haas Text with a 14px descriptor and the price; the account/cart surfaces slide in as right drawers — #212121 on a 50% scrim, a 392px content column — carrying the 42px light fields and the grey secondary actions.</p>
+  <div class="mock" style="display:flex;gap:0">
+    <div style="flex:1;padding:14px 20px">
+      <div class="prow"><b>Digitakt II</b><span class="sub">16-track drum computer and sampler</span><span class="price">1149 $</span></div>
+      <div class="prow"><b>PL-2</b><span class="sub">Protective lid</span><span class="price">349 $</span></div>
+    </div>
+    <div class="drawer"><h3>Log in</h3><div class="field"><span class="ph">Email</span></div><p style="height:10px;margin:0"></p><span class="btn secondary" style="width:100%">Send me a code</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The core set carries the monochrome ramp, var-referenced to the <code>--thedock-*</code>/<code>--tdc-*</code> layer where it declares the same value and measured where it does not; the roles alias the palette. There is one painted theme: dark.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and borders</h2>
+  <p class="lead">A 7px rhythm — 3.5/7/10.5/14/17.5/21/35/44/70 — on square corners: every button, field and drawer is 0px; the only rounded control is the 7px header search field. Borders are 2px on the outline actions, 1px self-coloured on the search field.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Neue Haas Grotesk Text Pro for UI and body (400), Neue Haas Grotesk Display Pro for headings and big links (450/500, tighter tracking on the 64/44px display), digi one v2 on block-button labels and Analog One V2 in the search field. The ramp runs 64/60.8 display down to 14/21 controls. Samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the thedock custom-property layer off the same-origin sheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, filled and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"text":{"v":"\"Neue Haas Grotesk Text Pro\"","t":"fontFamily","s":"css-var --thedock-font; css-var --thedock-font (raw/css-vars.json); computed fontFamily of nav-link default agrees","d":"Body, navigation and heading-adjacent text: Neue Haas Grotesk Text Pro."},"display":{"v":"'Neue Haas Grotesk Display Pro'","t":"fontFamily","s":"css-var --tdc-font-heading; css-var --tdc-font-heading (raw/css-vars.json); computed fontFamily of section-h2 default agrees","d":"Display headings and the big footer/accordion/menu links: Neue Haas Grotesk Display Pro."},"button":{"v":"\"digi one v2\"","t":"fontFamily","s":"computed fontFamily of submit-button default (raw/components-computed.json)","d":"The digi one v2 face every block-button label paints (the block-button text style), with text-transform capitals on the outline actions."},"search":{"v":"\"Analog One V2.\"","t":"fontFamily","s":"computed fontFamily of search-field default (raw/components-computed.json)","d":"The Analog One V2. face the header search field paints."},"mono":{"v":"ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace","t":"fontFamily","s":"css-var --thedock-mono; css-var --thedock-mono (raw/css-vars.json)","d":"The declared monospace stack for code and technical text."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of nav-link default (raw/components-computed.json)","d":"Body and display weight (400) — the whole face set."},"book":{"v":450,"t":"fontWeight","s":"computed fontWeight of footer-link default (raw/components-computed.json)","d":"The 450 weight on big display links (footer, accordion, mobile menu)."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of section-h2 default (raw/components-computed.json)","d":"The 500 weight on display headings and explore rows."}},"size":{"display":{"v":"64.05px","t":"dimension","s":"computed fontSize of section-h2 default (raw/components-computed.json)","d":"The 64px display of page titles and section headings."},"display-mid":{"v":"44.3912px","t":"dimension","s":"computed fontSize of explore-link default (raw/components-computed.json)","d":"The 44px explore index rows."},"title":{"v":"30.8px","t":"dimension","s":"computed fontSize of hero-h1 default (raw/components-computed.json)","d":"The 31px home hero heading."},"heading":{"v":"24.01px","t":"dimension","s":"computed fontSize of footer-link default (raw/components-computed.json)","d":"The 24px display links: footer columns, accordion rows, mobile menu."},"title-mobile":{"v":"23.8px","t":"dimension","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The 24px mobile hero heading."},"product":{"v":"17.99px","t":"dimension","s":"computed fontSize of pdp-title default (raw/components-computed.json)","d":"The 18px product names and prices."},"body":{"v":"14px","t":"dimension","s":"computed fontSize of nav-link default (raw/components-computed.json)","d":"The 14px control, nav, field and body size."}},"lineHeight":{"display":{"v":"60.8475px","t":"dimension","s":"computed lineHeight of section-h2 default (raw/components-computed.json)","d":"Display leading (60.8px on 64px — tighter than the em)."},"display-mid":{"v":"42.1716px","t":"dimension","s":"computed lineHeight of explore-link default (raw/components-computed.json)","d":"Explore-row leading (42.2px on 44.4px)."},"title":{"v":"40.964px","t":"dimension","s":"computed lineHeight of hero-h1 default (raw/components-computed.json)","d":"Hero heading leading (41px on 30.8px)."},"heading":{"v":"36.015px","t":"dimension","s":"computed lineHeight of footer-link default (raw/components-computed.json)","d":"Display-link leading (36px on 24px)."},"title-mobile":{"v":"31.654px","t":"dimension","s":"computed lineHeight of m-hero default (raw/components-computed.json)","d":"Mobile hero leading (31.7px on 23.8px)."},"product":{"v":"26.985px","t":"dimension","s":"computed lineHeight of pdp-title default (raw/components-computed.json)","d":"Product-title leading (27px on 18px)."},"body":{"v":"21px","t":"dimension","s":"computed lineHeight of nav-link default (raw/components-computed.json)","d":"Control/body leading (21px on 14px)."},"search":{"v":"17.5px","t":"dimension","s":"computed lineHeight of search-field default (raw/components-computed.json)","d":"The search field's tighter 17.5px on 14px."}},"letterSpacing":{"display":{"v":"-0.6405px","t":"dimension","s":"computed letterSpacing of section-h2 default (raw/components-computed.json)","d":"The -0.64px the 64px display tightens."},"display-mid":{"v":"-0.443912px","t":"dimension","s":"computed letterSpacing of explore-link default (raw/components-computed.json)","d":"The -0.44px the 44px rows tighten."},"title":{"v":"1.232px","t":"dimension","s":"computed letterSpacing of hero-h1 default (raw/components-computed.json)","d":"The +1.23px the hero heading opens."},"heading":{"v":"0.9604px","t":"dimension","s":"computed letterSpacing of footer-link default (raw/components-computed.json)","d":"The +0.96px the 24px display links open."},"title-mobile":{"v":"0.952px","t":"dimension","s":"computed letterSpacing of m-hero default (raw/components-computed.json)","d":"The +0.95px the mobile hero opens."},"product":{"v":"0.7196px","t":"dimension","s":"computed letterSpacing of pdp-title default (raw/components-computed.json)","d":"The +0.72px the 18px product text opens."},"field":{"v":"0.56px","t":"dimension","s":"computed letterSpacing of text-field default (raw/components-computed.json)","d":"The +0.56px inside the contact fields."},"control":{"v":"0.462px","t":"dimension","s":"computed letterSpacing of nav-link default (raw/components-computed.json)","d":"The +0.46px the 14px UI text opens."}}},"color":{"neutral":{"ink":{"v":"#151515","t":"color","s":"css-var --thedock-bg; css-var --thedock-bg (raw/css-vars.json); computed ancestors.0.bg of cart-drawer default agrees (raw/components-computed.json)","d":"The #151515 ground: page background and the label colour on paper fills."},"surface":{"v":"#1e1e1e","t":"color","s":"css-var --thedock-surface; css-var --thedock-surface (raw/css-vars.json)","d":"The #1e1e1e raised surface (secondary panels, footer layer)."},"raised":{"v":"#212121","t":"color","s":"css-var --tdc-surface; css-var --tdc-surface (raw/css-vars.json); computed paint.1.bg of account-modal opened agrees (raw/components-computed.json)","d":"The #212121 raised fill the account drawer paints."},"paper":{"v":"#eeeef2","t":"color","s":"css-var --thedock-text; css-var --thedock-text (raw/css-vars.json); computed color of nav-link default agrees (raw/components-computed.json)","d":"The #eeeef2 paper: all text, icon colour and the fill an outline button takes on hover."},"muted":{"v":"#97979a","t":"color","s":"css-var --thedock-muted; css-var --thedock-muted (raw/css-vars.json)","d":"The #97979a muted text the theme layer declares."},"muted2":{"v":"#b8b8bb","t":"color","s":"css-var --tdc-muted; css-var --tdc-muted (raw/css-vars.json)","d":"The #b8b8bb secondary muted the component layer declares."},"border":{"v":"#363636","t":"color","s":"css-var --thedock-border; css-var --thedock-border (raw/css-vars.json)","d":"The #363636 hairline the theme layer declares."},"border2":{"v":"#444444","t":"color","s":"css-var --tdc-border; css-var --tdc-border (raw/css-vars.json)","d":"The #444444 hairline the component layer declares."},"border-control":{"v":"#777778","t":"color","s":"css-var --tdc-border-control; css-var --tdc-border-control (raw/css-vars.json)","d":"The #777778 control border the component layer declares."},"scrim":{"v":"rgba(0, 0, 0, 0.5)","t":"color","s":"css-var --thedock-overlay; css-var --thedock-overlay (raw/css-vars.json)","d":"The rgba(0,0,0,0.5) drawer/modal scrim."},"grey":{"v":"#cccccc","t":"color","s":"computed backgroundColor of magic-send default (raw/components-computed.json)","d":"The #cccccc secondary-button fill (Send me a code, Create New Account)."},"placeholder":{"v":"#757575","t":"color","s":"computed placeholder.color of search-field default (raw/components-computed.json)","d":"The #757575 placeholder text inside the light fields."},"sweep":{"v":"#333333","t":"color","s":"computed paint.0.bgImage of nav-link default (raw/components-computed.json)","d":"The #333333 of the linear-gradient underline-sweep every text link paints as a background layer."},"rule":{"v":"#808080","t":"color","s":"computed paint.2.bg of account-modal opened (raw/components-computed.json)","d":"The #808080 hr separator inside the account drawer."},"white":{"v":"#ffffff","t":"color","s":"computed boxShadow of nav-link focus-visible (raw/components-computed.json): the colour of its 2px spread layer","d":"Pure white, used only as the focus ring's 2px spread layer and the lightest field borders."}},"status":{"error":{"v":"#d63638","t":"color","s":"css-var --tdc-danger (raw/css-vars.json) resolves to a color-mix over this base hue","d":"The declared danger red: --tdc-danger paints color-mix(in srgb, #d63638 70%, currentColor)."},"success":{"v":"#1e7a3c","t":"color","s":"css-var --tdc-success (raw/css-vars.json) resolves to a color-mix over this base hue","d":"The declared success green: --tdc-success paints color-mix(in srgb, #1e7a3c 70%, currentColor)."}}},"spacing":{"s1":{"v":"3.5px","t":"dimension","s":"css-var --tdc-space-1; css-var --tdc-space-1 (raw/css-vars.json)","d":"3.5px — half the 7px rhythm."},"s2":{"v":"7px","t":"dimension","s":"css-var --tdc-space-2; css-var --tdc-space-2 (raw/css-vars.json); computed gap of nav-link default agrees (raw/components-computed.json)","d":"7px — the icon/label gap inside buttons and links."},"s3":{"v":"10.5px","t":"dimension","s":"computed paddingTop of submit-button default (raw/components-computed.json)","d":"10.5px — the vertical padding inside 42-46px controls."},"s4":{"v":"14px","t":"dimension","s":"css-var --tdc-space-3; css-var --tdc-space-3 (raw/css-vars.json); computed paddingRight of text-field default agrees (raw/components-computed.json)","d":"14px — the field's horizontal padding."},"s5":{"v":"17.5px","t":"dimension","s":"computed paddingRight of submit-button default (raw/components-computed.json)","d":"17.5px — the button's horizontal padding and the search field's."},"s6":{"v":"21px","t":"dimension","s":"css-var --tdc-space-4; css-var --tdc-space-4 (raw/css-vars.json)","d":"21px — the declared component space step."},"s7":{"v":"35px","t":"dimension","s":"css-var --tdc-space-5; css-var --tdc-space-5 (raw/css-vars.json)","d":"35px — the declared large component step; also the 35px menu icons."},"s8":{"v":"44px","t":"dimension","s":"computed paddingRight of magic-email default (raw/components-computed.json)","d":"44px — the login field's right padding for the inline icon."},"s9":{"v":"70px","t":"dimension","s":"computed paddingLeft of support-title default (raw/components-computed.json)","d":"70px — the page-title indent under the hanging bullet."}},"radius":{"none":{"v":"0px","t":"dimension","s":"css-var --tdc-radius; css-var --tdc-radius (raw/css-vars.json); the computed border radius of buttons, fields and drawers agrees (raw/components-computed.json)","d":"Square: every button, field, card and drawer paints 0px corners."},"search":{"v":"7px","t":"dimension","s":"computed borderTopLeftRadius of search-field default (raw/components-computed.json)","d":"The only rounded control found: the 7px header search field."}},"border":{"control":{"v":"2px","t":"dimension","s":"css-var --tdc-border-width; css-var --tdc-border-width (raw/css-vars.json); computed borderTopWidth of submit-button default agrees (raw/components-computed.json)","d":"The 2px stroke of the outline block-buttons (EXPLORE, ADD TO CART, SUBMIT, CONTINUE SHOPPING)."},"search":{"v":"1px","t":"dimension","s":"computed borderTopWidth of search-field default (raw/components-computed.json): 1px solid #151515 — a self-coloured stroke","d":"The 1px same-colour border the desktop search field draws."}},"shadow":{"drawer":{"v":[{"color":"rgba(0, 0, 0, 0.18)","offsetX":"-7px","offsetY":"0px","blur":"35px","spread":"0px"}],"t":"shadow","s":"painted shadow on the cart drawer's panel ancestor (raw/components-computed.json)","d":"The -7px/35px drop the cart and account drawers cast leftward over the page."}},"easing":{"standard":{"v":[0.365,0.305,0.0,1.0],"t":"cubicBezier","s":"computed transitionTimingFunction of header default (raw/components-computed.json)","d":"The site's own easing on colour, transform and header transitions."},"bounce":{"v":[0.0,1.05,0.65,1.01],"t":"cubicBezier","s":"computed transitionTimingFunction of m-header default (raw/components-computed.json)","d":"The slight-overshoot ease the mobile header height transition uses."},"sweep":{"v":[0.77,0.0,0.175,1.0],"t":"cubicBezier","s":"declared transition in the same-origin theme sheets (raw/components-computed.json _meta.sheets)","d":"The dramatic ease the 1.5s line/word reveal animations declare."}},"measured":{"focus-ring":{"v":[{"color":"#ffffff","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"2px"}],"t":"shadow","s":"computed boxShadow of nav-link focus-visible (raw/components-computed.json)","d":"The white half of the double focus ring: #ffffff 0 0 0 2px spread (the 2px black outline half is dark.focus-outline)."},"transition-control":{"v":"300ms","t":"duration","s":"computed transition of nav-link default (raw/components-computed.json)","d":"The 0.3s ease on link colour, border, background and opacity. (border)"},"transition-sweep":{"v":"400ms","t":"duration","s":"computed transition of submit-button default (raw/components-computed.json)","d":"The 0.4s background-size ease that drives the underline-sweep and the outline-button fill. (background-size)"},"transition-header":{"v":"800ms","t":"duration","s":"computed transition of m-header default (raw/components-computed.json)","d":"The 0.8s box-shadow bounce the header takes. (box-shadow)"}}},"light":{},"dark":{"page":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the core palette","d":"The #151515 page ground."},"surface":{"v":"{color.neutral.surface}","t":"color","s":"role alias over the core palette","d":"The #1e1e1e raised surface."},"surface-raised":{"v":"{color.neutral.raised}","t":"color","s":"role alias over the core palette","d":"The #212121 drawer fill."},"text":{"v":"{color.neutral.paper}","t":"color","s":"role alias over the core palette","d":"The #eeeef2 all-purpose text."},"text-muted":{"v":"{color.neutral.muted}","t":"color","s":"role alias over the core palette","d":"Secondary text."},"text-muted2":{"v":"{color.neutral.muted2}","t":"color","s":"role alias over the core palette","d":"The lighter secondary text the component layer declares."},"border":{"v":"{color.neutral.border}","t":"color","s":"role alias over the core palette","d":"The #363636 hairline."},"control-border":{"v":"{color.neutral.border-control}","t":"color","s":"role alias over the core palette","d":"The #777778 control border."},"accent":{"v":"{color.neutral.paper}","t":"color","s":"role alias over the core palette","d":"The inverted action colour: the paper fill a button takes, and its default 2px border."},"accent-text":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the core palette","d":"The #151515 label painted on a paper fill."},"field":{"v":"{color.neutral.paper}","t":"color","s":"role alias over the core palette","d":"The light #eeeef2 fill of the 42px block inputs."},"field-text":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the core palette","d":"The #151515 text inside the light fields."},"secondary":{"v":"{color.neutral.grey}","t":"color","s":"role alias over the core palette","d":"The #cccccc secondary-button fill."},"secondary-hover":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the core palette","d":"Secondary buttons invert to #151515 on hover."},"secondary-hover-text":{"v":"{color.neutral.grey}","t":"color","s":"role alias over the core palette","d":"…with the #cccccc label staying."},"scrim":{"v":"{color.neutral.scrim}","t":"color","s":"role alias over the core palette","d":"The 50% black modal scrim."},"placeholder":{"v":"{color.neutral.placeholder}","t":"color","s":"role alias over the core palette","d":"The #757575 field placeholder."},"sweep":{"v":"{color.neutral.sweep}","t":"color","s":"role alias over the core palette","d":"The #333333 underline-sweep links paint on hover."},"rule":{"v":"{color.neutral.rule}","t":"color","s":"role alias over the core palette","d":"The #808080 separator rule."},"focus-ring":{"v":"{color.neutral.white}","t":"color","s":"role alias over the core palette","d":"The white 2px spread half of the double focus ring."},"focus-outline":{"v":"#000000","t":"color","s":"computed outlineColor of nav-link focus-visible (raw/components-computed.json): 2px solid offset 2px, paired with the white spread ring","d":"The black 2px outline half of the double focus ring."},"component":{"header":{"height":{"v":"56px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The 56px desktop header bar."},"height-mobile":{"v":"63px","t":"dimension","s":"computed height of m-header default (raw/components-computed.json)","d":"The 63px mobile header bar."}},"control":{"height":{"v":"46px","t":"dimension","s":"computed height of submit-button default (raw/components-computed.json)","d":"The 46px block-button height (EXPLORE, ADD TO CART, SUBMIT, CONTINUE SHOPPING)."},"height-field":{"v":"42px","t":"dimension","s":"computed height of text-field default (raw/components-computed.json)","d":"The 42px block-input height."},"height-nav":{"v":"28px","t":"dimension","s":"computed height of nav-link default (raw/components-computed.json)","d":"The 28px header link row."},"height-search":{"v":"40.5px","t":"dimension","s":"computed height of search-field default (raw/components-computed.json)","d":"The 40.5px desktop header search field."}},"menu":{"row-height":{"v":"36.0156px","t":"dimension","s":"computed height of m-nav-item default (raw/components-computed.json)","d":"The 36px mobile menu row."}},"drawer":{"panel-width":{"v":"420px","t":"dimension","s":"computed paint.1.size of account-modal opened (raw/components-computed.json)","d":"The 420px right drawer the account modal paints."},"content-width":{"v":"392px","t":"dimension","s":"computed width of magic-email default (raw/components-computed.json)","d":"The 392px drawer content column."}},"icon":{"nav":{"v":"28px","t":"dimension","s":"computed icon.w of nav-link default (raw/components-computed.json)","d":"The 28px header icons."},"menu":{"v":"35px","t":"dimension","s":"computed icon.w of m-menu-button default (raw/components-computed.json)","d":"The 35px menu/drawer icons."}},"layout":{"width":{"v":"1100px","t":"dimension","s":"css-var --tdc-layout-width; css-var --tdc-layout-width (raw/css-vars.json)","d":"The 1100px content column the component layer declares."}}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.dark || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (roles.length) {
+    h += `<div class="pal-h">roles (the one painted theme)</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat((TOK.dark && TOK.dark.component) || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).letterSpacing || {}, 'font.letterSpacing.')) h += `<div class="tr"><span class="ts" style="letter-spacing:${esc(t.v)}">${esc(n)} — Elektron</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Elektron</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

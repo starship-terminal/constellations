@@ -1,0 +1,2696 @@
+{
+ "readAt": "2026-11-12",
+ "source": "the stylesheet bodies read during a live home load on creativemarket.com (the cross-origin d3ui957tjb5bqd.cloudfront.net sheets captured as network responses plus the inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets at 1440 x 900 — the page paints a single legacy theme",
+ "sheets": [
+  "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css (77991 bytes)",
+  "https://d3ui957tjb5bqd.cloudfront.net/css/global-refresh.css (12897 bytes)",
+  "https://d3ui957tjb5bqd.cloudfront.net/css/global_slim.css (165182 bytes)",
+  "https://d3ui957tjb5bqd.cloudfront.net/css/homepage.css (49276 bytes)",
+  "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css (46805 bytes)",
+  "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_397.bbd5c5974bfdd72b7619.css (186 bytes)",
+  "https://d3ui957tjb5bqd.cloudfront.net/css/global_async.css (146698 bytes)",
+  "inline-0 (25682 bytes)"
+ ],
+ "counts": {
+  "rules": 203,
+  "fonts": 8,
+  "names": {
+   "theme": 20,
+   "app": 131,
+   "skins": 0,
+   "vendor": 2,
+   "utility": 0,
+   "tailwind": 0
+  },
+  "bySelector": {
+   "[app] :root": 27,
+   "[app] .ui-button--primary[data-v-69931b70]": 6,
+   "[app] .ui-button--accent[data-v-69931b70]": 6,
+   "[app] .ui-button--neutral[data-v-69931b70]": 6,
+   "[app] .ui-button--danger[data-v-69931b70]": 6,
+   "[app] .ui-button--inverse[data-v-69931b70]": 10,
+   "[app] .ui-button--filled[data-v-69931b70]": 10,
+   "[app] .ui-button--outlined[data-v-69931b70]": 10,
+   "[app] .ui-button--ghost[data-v-69931b70]": 10,
+   "[app] .ui-button--sm[data-v-69931b70]": 6,
+   "[app] .ui-button--md[data-v-69931b70]": 6,
+   "[app] .ui-button--lg[data-v-69931b70]": 6,
+   "[app] .ui-button--square[data-v-69931b70], .ui-button--circle[data-v-69931b70]": 2,
+   "[app] .search-suggestion": 2,
+   "[app] .ui-select[data-v-28d58430]": 30,
+   "[app] .ui-select--primary[data-v-28d58430]": 4,
+   "[app] .ui-select--accent[data-v-28d58430]": 10,
+   "[app] .ui-select--ghost[data-v-28d58430]": 14,
+   "[app] .ui-select--sm[data-v-28d58430]": 4,
+   "[app] .ui-select--md[data-v-28d58430]": 4,
+   "[app] .ui-select--lg[data-v-28d58430]": 8,
+   "[app] .ui-select--pill[data-v-28d58430]": 4,
+   "[app] .ui-select--invalid[data-v-28d58430]": 8,
+   "[app] .ui-select[data-v-28d58430]:hover": 4,
+   "[app] .ui-select[data-v-28d58430]:focus-visible, .ui-select.multiselect--active[data-v-28d58430]": 6,
+   "[app] [data-overlayscrollbars-viewport]:not([data-overlayscrollbars])": 2,
+   "[app] [data-overlayscrollbars-viewport]": 2,
+   "[app] [data-overlayscrollbars-viewport~=\"overflowXVisible\"]": 1,
+   "[app] [data-overlayscrollbars-viewport~=\"overflowXHidden\"]": 1,
+   "[app] [data-overlayscrollbars-viewport~=\"overflowXScroll\"]": 1,
+   "[app] [data-overlayscrollbars-viewport~=\"overflowYVisible\"]": 1,
+   "[app] [data-overlayscrollbars-viewport~=\"overflowYHidden\"]": 1,
+   "[app] [data-overlayscrollbars-viewport~=\"overflowYScroll\"]": 1,
+   "[app] .os-scrollbar": 27,
+   "[app] .os-theme-dark, .os-theme-light": 6,
+   "[app] .os-theme-dark": 3,
+   "[app] .os-theme-light": 3,
+   "[app] .recently-viewed-products-container .os-scrollbar": 7,
+   "[app] .recently-viewed-product-cards-container": 2,
+   "[app] @media (min-width: 1200px) .recently-viewed-product-cards-container": 2,
+   "[app] .search-discover-content .font-finder__link": 1,
+   "[app] .badge--green[data-v-031b8b66]": 1,
+   "[app] .badge--pink[data-v-031b8b66]": 1,
+   "[app] .badge--small[data-v-031b8b66]": 2,
+   "[app] .badge--medium[data-v-031b8b66]": 2,
+   "[app] .badge--round[data-v-031b8b66]": 3,
+   "[app] html[data-theme=\"legacy\"]": 21,
+   "[app] .pill--secondary[data-v-51e3b174]": 4,
+   "[app] .pill--tertiary[data-v-51e3b174]": 6,
+   "[app] .pill--quarternary[data-v-51e3b174]": 6,
+   "[app] .pill--small[data-v-51e3b174]": 3,
+   "[app] .pill--extra-small[data-v-51e3b174]": 3,
+   "[app] .pill--full-width[data-v-51e3b174]": 2,
+   "[app] @media (min-width: 1200px) .site-header .user-link": 1,
+   "[app] .site-header .user-link:last-child": 1,
+   "[app] .site-header .user-link--no-margin-right": 1,
+   "[theme] :root": 18,
+   "[theme] html[data-theme=\"legacy\"]": 10,
+   "[theme] html[data-theme=\"legacy\"] .fonts-dropdown__browse-all--sale[data-v-7a7a27c8]": 1,
+   "[app] .btn--primary[data-v-5e31f9cb]": 6,
+   "[app] html[data-theme=\"legacy\"] .btn--primary[data-v-5e31f9cb]": 10,
+   "[app] .btn--secondary[data-v-5e31f9cb]": 6,
+   "[app] html[data-theme=\"legacy\"] .btn--secondary[data-v-5e31f9cb]": 10,
+   "[app] html[data-theme=\"legacy\"] .btn--secondary-alternative[data-v-5e31f9cb]": 10,
+   "[app] .btn--tertiary[data-v-5e31f9cb]": 6,
+   "[app] html[data-theme=\"legacy\"] .btn--tertiary[data-v-5e31f9cb]": 12,
+   "[app] .btn--tertiary-alternative[data-v-5e31f9cb]": 6,
+   "[app] html[data-theme=\"legacy\"] .btn--tertiary-alternative[data-v-5e31f9cb]": 12,
+   "[app] .btn--ghost[data-v-5e31f9cb]": 10,
+   "[app] html[data-theme=\"legacy\"] .btn--ghost[data-v-5e31f9cb]": 6,
+   "[app] html[data-theme=\"legacy\"] .btn--font-alternatives[data-v-5e31f9cb]": 6,
+   "[app] .btn--pill-transparent[data-v-5e31f9cb]": 4,
+   "[app] .btn--pill-transparent[data-v-5e31f9cb]:hover, .btn--pill-transparent[data-v-5e31f9cb]:focus-visible": 4,
+   "[app] .btn--small[data-v-5e31f9cb]": 6,
+   "[app] .btn--smallMedium[data-v-5e31f9cb]": 8,
+   "[app] .btn--medium[data-v-5e31f9cb]": 6,
+   "[app] .btn--large[data-v-5e31f9cb]": 6,
+   "[app] .btn--round[data-v-5e31f9cb]": 6,
+   "[app] .btn--full-width[data-v-5e31f9cb]": 2,
+   "[app] .btn--borderless[data-v-5e31f9cb]": 2,
+   "[app] .btn--no-padding[data-v-5e31f9cb]": 2,
+   "[app] .btn--svgButton[data-v-5e31f9cb]": 4,
+   "[app] .mobile-nav--mobile-menu-open[data-v-cc35cc14]": 4,
+   "[app] .chat-popup.v-leave-active[data-v-46680c16]": 1,
+   "[app] .seat-selector__btn": 2,
+   "[app] .seat-selector__btn:hover:not(:disabled), .seat-selector__btn:focus-visible:not([disabled])": 1,
+   "[app] .cart-license-row__remove-license-button": 2,
+   "[app] .cart-license-row__remove-license-button:hover": 1,
+   "[app] .cart-license-row__remove-license-button:hover:not(:disabled), .cart-license-row__remove-license-button:focus-visible:not([disabled])": 1,
+   "[app] .cart-license-list__add-license-button": 3,
+   "[app] .cart-license-list__add-license-button:hover:not(:disabled), .cart-license-list__add-license-button:focus-visible:not([disabled])": 2,
+   "[app] .cart-actions__button": 3,
+   "[app] .cart-actions__button:hover": 1,
+   "[theme] .u-container": 1,
+   "[theme] @media (min-width: 1024px) .u-container": 1,
+   "[theme] @media (min-width: 1546px) .u-container": 1,
+   "[app] .search-field": 4,
+   "[app] .search-dropdown": 1,
+   "[app] @media (hover: hover) .category-landing-page .btn:not(.btn--font-alternatives):not(.btn--ghost):focus-visible:not([disabled]), .category-landing-page .btn:not(.btn--font-alternatives):not(.btn--ghost):hover:not([disabled])": 2,
+   "[app] @media (hover: hover) .category-landing-page .btn--font-alternatives:focus-visible:not([disabled]), .category-landing-page .btn--font-alternatives:hover:not([disabled]), .category-page-header .btn--font-alternatives:focus-": 3,
+   "[app] .category-landing-page .btn--pill-transparent, .category-page-header .btn--pill-transparent, .search__body .btn--pill-transparent": 2,
+   "[app] .category-landing-page .btn--pill-transparent:focus-visible, .category-landing-page .btn--pill-transparent:hover, .category-page-header .btn--pill-transparent:focus-visible, .category-page-header .btn": 2,
+   "[app] .category-landing-page .btn--small, .category-page-header .btn--small, .search__body .btn--small": 3,
+   "[app] .category-landing-page .btn--smallMedium, .category-page-header .btn--smallMedium, .search__body .btn--smallMedium": 4,
+   "[app] .category-landing-page .btn--medium, .category-page-header .btn--medium, .search__body .btn--medium": 3,
+   "[app] .category-landing-page .btn--large, .category-page-header .btn--large, .search__body .btn--large": 3,
+   "[app] .category-landing-page .btn--full-width, .category-page-header .btn--full-width, .search__body .btn--full-width": 1,
+   "[vendor] .discount-corner-badge": 1,
+   "[vendor] .discount-corner-badge .discount-text": 1,
+   "[app] .ui-alert--info[data-v-2198c2ac]": 2,
+   "[app] .ui-alert--success[data-v-2198c2ac]": 2,
+   "[app] .ui-alert--warning[data-v-2198c2ac]": 2,
+   "[app] .ui-alert--danger[data-v-2198c2ac]": 2,
+   "[app] .ui-text-field[data-v-164b79cc]": 5,
+   "[app] @media (hover: hover) .ui-text-field[data-v-164b79cc]:hover": 1,
+   "[app] .ui-text-field[data-v-164b79cc]:focus-within": 2,
+   "[app] .ui-text-field--disabled[data-v-164b79cc]": 1,
+   "[app] .ui-text-field--invalid[data-v-164b79cc]": 4,
+   "[app] .ui-text-field--sm[data-v-164b79cc]": 2,
+   "[app] .ui-text-field--md[data-v-164b79cc]": 2,
+   "[app] .ui-text-field--lg[data-v-164b79cc]": 2,
+   "[app] .like-button[data-v-31a0d1d4]": 2,
+   "[app] @media (hover: hover) .like-button:hover .like-icon[data-v-31a0d1d4]": 1,
+   "[app] .like-button:focus-visible .like-icon[data-v-31a0d1d4]": 1,
+   "[app] .like-button .like-icon[data-v-31a0d1d4]": 2,
+   "[app] .like-button--liked .like-icon[data-v-31a0d1d4] .like-icon__svg": 2,
+   "[vendor] .discount-corner-badge[data-v-eb870dde]": 1,
+   "[vendor] .discount-corner-badge .discount-text[data-v-eb870dde]": 1,
+   "[app] .product-card[data-v-e2e65bbc]": 1,
+   "[vendor] .product-card__inner-container[data-v-e2e65bbc]": 1,
+   "[app] .card-grid[data-v-48dea3f7]": 2,
+   "[app] @media (max-width: 479px) .card-grid[data-v-48dea3f7]": 3,
+   "[app] @media (min-width: 480px) and (max-width: 767px) .card-grid[data-v-48dea3f7]": 1,
+   "[app] @media (min-width: 768px) and (max-width: 1023px) .card-grid[data-v-48dea3f7]": 1,
+   "[app] @media (min-width: 1024px) .card-grid[data-v-48dea3f7]": 2,
+   "[app] .slide-fade-enter .cart-drawer, .slide-fade-leave-to .cart-drawer": 1,
+   "[app] .cart-drawer": 3,
+   "[app] @media (max-width: 768px) .cart-drawer": 1,
+   "[app] @media screen and (min-width: 768px) .cart-drawer": 1,
+   "[app] @media (prefers-reduced-motion) .cart-drawer": 2,
+   "[vendor] .cart-drawer .line-item": 1,
+   "[theme] .mobile-nav-categories .nav-item__link--sale span": 1
+  }
+ },
+ "errors": [],
+ "theme": [
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--site-banner-bg-color": "#f9d1e7"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "html[data-theme=\"legacy\"]",
+   "context": [],
+   "properties": {
+    "--site-banner-bg-color": "#dff8f6"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "html[data-theme=\"legacy\"] .fonts-dropdown__browse-all--sale[data-v-7a7a27c8]",
+   "context": [],
+   "properties": {
+    "--default-color": "#d53a9d"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global-refresh.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--default-color": "#303538",
+    "--default-font-family": "Averta,sans-serif",
+    "--default-link-color": "inherit",
+    "--default-link-hover-color": "inherit",
+    "--default-link-text-decoration": "none",
+    "--default-input-placeholder-color": "#899298",
+    "--default-input-color": "var(--default-color)",
+    "--default-input-transition": "0.4s cubic-bezier(0.25, 1, 0.5, 1)",
+    "--default-input-bg-color": "#fafdff",
+    "--default-input-border-color": "#fafdff",
+    "--default-input-border-width": "2px",
+    "--default-input-border-radius": "12px",
+    "--default-input-active-bg-color": "#ffffff",
+    "--default-input-active-border-color": "#303538",
+    "--accessible-outline-color": "#e06868",
+    "--container-content-width": "1450px",
+    "--header-bg-color": "#ffffff"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global-refresh.css",
+   "selector": "html[data-theme=\"legacy\"]",
+   "context": [],
+   "properties": {
+    "--default-color": "#303538",
+    "--default-link-hover-color": "#003a37",
+    "--default-link-text-decoration": "none",
+    "--default-input-border-radius": "3px",
+    "--default-input-bg-color": "#fafdff",
+    "--default-input-border-color": "#899298",
+    "--default-input-border-width": "1px",
+    "--default-input-active-bg-color": "var(--default-input-bg-color)",
+    "--default-input-active-border-color": "var(--default-input-border-color)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global-refresh.css",
+   "selector": ".u-container",
+   "context": [],
+   "properties": {
+    "--container-outer-width": "calc(1450px + var(--container-gutter, 16px) * 2)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global-refresh.css",
+   "selector": ".u-container",
+   "context": [
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--container-gutter": "32px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global-refresh.css",
+   "selector": ".u-container",
+   "context": [
+    "@media (min-width: 1546px)"
+   ],
+   "properties": {
+    "--container-gutter": "48px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global_async.css",
+   "selector": ".mobile-nav-categories .nav-item__link--sale span",
+   "context": [],
+   "properties": {
+    "--default-color": "#d53a9d"
+   },
+   "bin": "theme"
+  }
+ ],
+ "app": [
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--dialog-horizontal-padding": "8px",
+    "--dialog-close-icon-size": "24px",
+    "--dialog-close-padding": "8px",
+    "--dialog-close-gap": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-button--primary[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_color": "#088178",
+    "--_color-hover": "#003a37",
+    "--_color-soft": "#dff8f6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-button--accent[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_color": "#4e42a1",
+    "--_color-hover": "#281f6b",
+    "--_color-soft": "#edeeff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-button--neutral[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_color": "#303538",
+    "--_color-hover": "#000000",
+    "--_color-soft": "#edf2f5"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-button--danger[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_color": "#e06868",
+    "--_color-hover": "#a02828",
+    "--_color-soft": "#ffebe9"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-button--inverse[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_color": "#ffffff",
+    "--_color-hover": "#edf2f5",
+    "--_color-soft": "#ffffff",
+    "--_on-color": "#303538",
+    "--_on-soft": "#303538"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-button--filled[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_bg": "var(--_color)",
+    "--_bg-hover": "var(--_color-hover)",
+    "--_border-color": "var(--_color)",
+    "--_border-color-hover": "var(--_color-hover)",
+    "--_text": "var(--_on-color, #ffffff)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-button--outlined[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_bg": "transparent",
+    "--_bg-hover": "var(--_color-soft)",
+    "--_border-color": "var(--_color)",
+    "--_text": "var(--_color)",
+    "--_text-hover": "var(--_on-soft, var(--_color-hover))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-button--ghost[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_bg": "transparent",
+    "--_bg-hover": "var(--_color-soft)",
+    "--_border-color": "transparent",
+    "--_text": "var(--_color)",
+    "--_text-hover": "var(--_on-soft, var(--_color-hover))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-button--sm[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_height": "32px",
+    "--_padding": "12px",
+    "--_font-size": "14px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-button--md[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_height": "45px",
+    "--_padding": "12px",
+    "--_font-size": "14px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-button--lg[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_height": "50px",
+    "--_padding": "24px",
+    "--_font-size": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-button--square[data-v-69931b70], .ui-button--circle[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_padding": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".search-suggestion",
+   "context": [],
+   "properties": {
+    "--overlap": "2px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-select[data-v-28d58430]",
+   "context": [],
+   "properties": {
+    "--_border-color": "#ccd4da",
+    "--_hover-border-color": "#899298",
+    "--_active-border-color": "#088178",
+    "--_ring-color": "transparent",
+    "--_active-ring-color": "#b6e7e4",
+    "--_caret-color": "#899298",
+    "--_check-color": "#088178",
+    "--_highlight-bg": "#edf2f5",
+    "--_highlight-color": "#303538",
+    "--_bg": "#ffffff",
+    "--_radius": "8px",
+    "--_trigger-padding": "var(--_padding)",
+    "--_caret-width": "40px",
+    "--_row-height": "36px",
+    "--_row-padding-y": "8px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-select--primary[data-v-28d58430]",
+   "context": [],
+   "properties": {
+    "--_highlight-bg": "#088178",
+    "--_highlight-color": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-select--accent[data-v-28d58430]",
+   "context": [],
+   "properties": {
+    "--_active-border-color": "#4e42a1",
+    "--_active-ring-color": "#cecff2",
+    "--_check-color": "#4e42a1",
+    "--_highlight-bg": "#4e42a1",
+    "--_highlight-color": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-select--ghost[data-v-28d58430]",
+   "context": [],
+   "properties": {
+    "--_border-color": "transparent",
+    "--_hover-border-color": "transparent",
+    "--_active-border-color": "transparent",
+    "--_active-ring-color": "transparent",
+    "--_bg": "transparent",
+    "--_trigger-padding": "0",
+    "--_caret-width": "20px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-select--sm[data-v-28d58430]",
+   "context": [],
+   "properties": {
+    "--_height": "32px",
+    "--_padding": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-select--md[data-v-28d58430]",
+   "context": [],
+   "properties": {
+    "--_height": "45px",
+    "--_padding": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-select--lg[data-v-28d58430]",
+   "context": [],
+   "properties": {
+    "--_height": "50px",
+    "--_padding": "16px",
+    "--_row-height": "48px",
+    "--_row-padding-y": "14px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-select--pill[data-v-28d58430]",
+   "context": [],
+   "properties": {
+    "--_radius": "999999999999px",
+    "--_padding": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-select--invalid[data-v-28d58430]",
+   "context": [],
+   "properties": {
+    "--_border-color": "#a02828",
+    "--_hover-border-color": "#a02828",
+    "--_active-border-color": "#a02828",
+    "--_active-ring-color": "#fecac1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-select[data-v-28d58430]:hover",
+   "context": [],
+   "properties": {
+    "--_border-color": "var(--_hover-border-color)",
+    "--_caret-color": "#303538"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".ui-select[data-v-28d58430]:focus-visible, .ui-select.multiselect--active[data-v-28d58430]",
+   "context": [],
+   "properties": {
+    "--_border-color": "var(--_active-border-color)",
+    "--_ring-color": "var(--_active-ring-color)",
+    "--_caret-color": "#303538"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "[data-overlayscrollbars-viewport]:not([data-overlayscrollbars])",
+   "context": [],
+   "properties": {
+    "--os-vaw": "0",
+    "--os-vah": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "[data-overlayscrollbars-viewport]",
+   "context": [],
+   "properties": {
+    "--os-viewport-overflow-x": "hidden",
+    "--os-viewport-overflow-y": "hidden"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "[data-overlayscrollbars-viewport~=\"overflowXVisible\"]",
+   "context": [],
+   "properties": {
+    "--os-viewport-overflow-x": "visible"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "[data-overlayscrollbars-viewport~=\"overflowXHidden\"]",
+   "context": [],
+   "properties": {
+    "--os-viewport-overflow-x": "hidden"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "[data-overlayscrollbars-viewport~=\"overflowXScroll\"]",
+   "context": [],
+   "properties": {
+    "--os-viewport-overflow-x": "scroll"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "[data-overlayscrollbars-viewport~=\"overflowYVisible\"]",
+   "context": [],
+   "properties": {
+    "--os-viewport-overflow-y": "visible"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "[data-overlayscrollbars-viewport~=\"overflowYHidden\"]",
+   "context": [],
+   "properties": {
+    "--os-viewport-overflow-y": "hidden"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "[data-overlayscrollbars-viewport~=\"overflowYScroll\"]",
+   "context": [],
+   "properties": {
+    "--os-viewport-overflow-y": "scroll"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".os-scrollbar",
+   "context": [],
+   "properties": {
+    "--os-viewport-percent": "0",
+    "--os-scroll-percent": "0",
+    "--os-scroll-direction": "0",
+    "--os-scroll-percent-directional": "calc(\n    var(--os-scroll-percent) - (var(--os-scroll-percent) + (1 - var(--os-scroll-percent)) * -1) *\n      var(--os-scroll-direction)\n  )"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".os-scrollbar",
+   "context": [],
+   "properties": {
+    "--os-size": "0",
+    "--os-padding-perpendicular": "0",
+    "--os-padding-axis": "0",
+    "--os-track-border-radius": "0",
+    "--os-track-bg": "none",
+    "--os-track-bg-hover": "none",
+    "--os-track-bg-active": "none",
+    "--os-track-border": "none",
+    "--os-track-border-hover": "none",
+    "--os-track-border-active": "none",
+    "--os-handle-border-radius": "0",
+    "--os-handle-bg": "none",
+    "--os-handle-bg-hover": "none",
+    "--os-handle-bg-active": "none",
+    "--os-handle-border": "none",
+    "--os-handle-border-hover": "none",
+    "--os-handle-border-active": "none",
+    "--os-handle-min-size": "33px",
+    "--os-handle-max-size": "none",
+    "--os-handle-perpendicular-size": "100%",
+    "--os-handle-perpendicular-size-hover": "100%",
+    "--os-handle-perpendicular-size-active": "100%",
+    "--os-handle-interactive-area-offset": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".os-theme-dark, .os-theme-light",
+   "context": [],
+   "properties": {
+    "--os-size": "10px",
+    "--os-padding-perpendicular": "2px",
+    "--os-padding-axis": "2px",
+    "--os-track-border-radius": "10px",
+    "--os-handle-interactive-area-offset": "4px",
+    "--os-handle-border-radius": "10px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".os-theme-dark",
+   "context": [],
+   "properties": {
+    "--os-handle-bg": "rgba(0, 0, 0, 0.44)",
+    "--os-handle-bg-hover": "rgba(0, 0, 0, 0.55)",
+    "--os-handle-bg-active": "rgba(0, 0, 0, 0.66)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".os-theme-light",
+   "context": [],
+   "properties": {
+    "--os-handle-bg": "rgba(255, 255, 255, 0.44)",
+    "--os-handle-bg-hover": "rgba(255, 255, 255, 0.55)",
+    "--os-handle-bg-active": "rgba(255, 255, 255, 0.66)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".recently-viewed-products-container .os-scrollbar",
+   "context": [],
+   "properties": {
+    "--os-size": "8px",
+    "--os-padding-perpendicular": "0",
+    "--os-padding-axis": "0",
+    "--os-track-border-radius": "6px",
+    "--os-handle-border-radius": "6px",
+    "--os-track-bg": "#e2e9ee",
+    "--os-handle-bg": "#afbac0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".recently-viewed-product-cards-container",
+   "context": [],
+   "properties": {
+    "--cards-in-view": "2",
+    "--card-spacing": "10px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".recently-viewed-product-cards-container",
+   "context": [
+    "@media (min-width: 1200px)"
+   ],
+   "properties": {
+    "--cards-in-view": "4",
+    "--card-spacing": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".search-discover-content .font-finder__link",
+   "context": [],
+   "properties": {
+    "--overlap": "2px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".badge--green[data-v-031b8b66]",
+   "context": [],
+   "properties": {
+    "--badge-bg-color": "#39b4ac"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".badge--pink[data-v-031b8b66]",
+   "context": [],
+   "properties": {
+    "--badge-bg-color": "#e06868"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".badge--small[data-v-031b8b66]",
+   "context": [],
+   "properties": {
+    "--badge-height": "10px",
+    "--badge-padding": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".badge--medium[data-v-031b8b66]",
+   "context": [],
+   "properties": {
+    "--badge-height": "16px",
+    "--badge-padding": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".badge--round[data-v-031b8b66]",
+   "context": [],
+   "properties": {
+    "--badge-width": "var(--badge-height)",
+    "--badge-padding": "0",
+    "--badge-border-radius": "999999999999px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--user-dropdown-border-color": "#303538",
+    "--user-dropdown-border-radius": "16px",
+    "--user-dropdown-box-shadow": "4px 4px 0 rgba(0, 0, 0, 0.9)",
+    "--user-dropdown-earnings-bg-color": "#f9d1e7",
+    "--user-dropdown-divider-color": "#e2e9ee"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "html[data-theme=\"legacy\"]",
+   "context": [],
+   "properties": {
+    "--user-dropdown-border-color": "transparent",
+    "--user-dropdown-border-radius": "4px",
+    "--user-dropdown-box-shadow": "0 4px 8px rgba(0, 0, 0, 0.1)",
+    "--user-dropdown-earnings-bg-color": "#dff8f6",
+    "--user-dropdown-divider-color": "#e2e9ee"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--overflow-dropdown-border-color": "#303538",
+    "--overflow-dropdown-border-radius": "16px",
+    "--overflow-dropdown-box-shadow": "4px 4px 0 rgba(0, 0, 0, 0.9)",
+    "--overflow-dropdown-earnings-bg-color": "#f9d1e7",
+    "--overflow-dropdown-divider-color": "#e2e9ee"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "html[data-theme=\"legacy\"]",
+   "context": [],
+   "properties": {
+    "--overflow-dropdown-border-color": "transparent",
+    "--overflow-dropdown-border-radius": "4px",
+    "--overflow-dropdown-box-shadow": "0 4px 8px rgba(0, 0, 0, 0.1)",
+    "--overflow-dropdown-earnings-bg-color": "#dff8f6",
+    "--overflow-dropdown-divider-color": "#e2e9ee"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--user-dropdown-border-color": "#303538",
+    "--user-dropdown-border-radius": "16px",
+    "--user-dropdown-box-shadow": "4px 4px 0 rgba(0, 0, 0, 0.9)",
+    "--user-dropdown-earnings-bg-color": "#f9d1e7"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "html[data-theme=\"legacy\"]",
+   "context": [],
+   "properties": {
+    "--user-dropdown-border-color": "transparent",
+    "--user-dropdown-border-radius": "4px",
+    "--user-dropdown-box-shadow": "0 4px 8px rgba(0, 0, 0, 0.1)",
+    "--user-dropdown-earnings-bg-color": "#dff8f6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".pill--secondary[data-v-51e3b174]",
+   "context": [],
+   "properties": {
+    "--pill-bg-color": "#edf2f5",
+    "--pill-border-radius": "190px",
+    "--pill-border-color": "var(--pill-bg-color)",
+    "--pill-hover-border-color": "var(--pill-bg-color)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".pill--tertiary[data-v-51e3b174]",
+   "context": [],
+   "properties": {
+    "--pill-bg-color": "#ffeaf6",
+    "--pill-border-radius": "190px",
+    "--pill-border-color": "var(--pill-bg-color)",
+    "--pill-hover-border-color": "transparent",
+    "--pill-hover-bg-color": "#ba609c",
+    "--btn-text-color": "#4e42a1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".pill--quarternary[data-v-51e3b174]",
+   "context": [],
+   "properties": {
+    "--pill-bg-color": "#edeeff",
+    "--pill-border-radius": "190px",
+    "--pill-border-color": "var(--pill-bg-color)",
+    "--pill-hover-bg-color": "#4e42a1",
+    "--pill-hover-border-color": "var(--pill-bg-color)",
+    "--pill-hover-text-color": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".pill--small[data-v-51e3b174]",
+   "context": [],
+   "properties": {
+    "--pill-height": "34px",
+    "--pill-padding-v": "10px",
+    "--pill-padding-h": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".pill--extra-small[data-v-51e3b174]",
+   "context": [],
+   "properties": {
+    "--pill-height": "24px",
+    "--pill-padding-v": "10px",
+    "--pill-padding-h": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".pill--full-width[data-v-51e3b174]",
+   "context": [],
+   "properties": {
+    "--pill-width": "100%",
+    "--pill-max-width": "none"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--user-dropdown-border-color": "#303538",
+    "--user-dropdown-border-radius": "16px",
+    "--user-dropdown-box-shadow": "4px 4px 0 rgba(0, 0, 0, 0.9)",
+    "--user-dropdown-earnings-bg-color": "#f9d1e7",
+    "--user-dropdown-divider-color": "#e2e9ee"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "html[data-theme=\"legacy\"]",
+   "context": [],
+   "properties": {
+    "--user-dropdown-border-color": "transparent",
+    "--user-dropdown-border-radius": "4px",
+    "--user-dropdown-box-shadow": "0 4px 8px rgba(0, 0, 0, 0.1)",
+    "--user-dropdown-earnings-bg-color": "#dff8f6",
+    "--user-dropdown-divider-color": "#e2e9ee"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".site-header .user-link",
+   "context": [
+    "@media (min-width: 1200px)"
+   ],
+   "properties": {
+    "--user-link-gap": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".site-header .user-link:last-child",
+   "context": [],
+   "properties": {
+    "--user-link-gap": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".site-header .user-link--no-margin-right",
+   "context": [],
+   "properties": {
+    "--user-link-gap": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--btn-height": "50px",
+    "--btn-border-radius": "999999999999px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "html[data-theme=\"legacy\"]",
+   "context": [],
+   "properties": {
+    "--btn-border-radius": "8px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".btn--primary[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "#303538",
+    "--btn-text-color": "#ffffff",
+    "--btn-border-color": "#303538"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "html[data-theme=\"legacy\"] .btn--primary[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "#088178",
+    "--btn-bg-color-hover": "#003a37",
+    "--btn-border-color": "#088178",
+    "--btn-border-color-hover": "#003a37",
+    "--btn-text-color-hover": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".btn--secondary[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "#ffffff",
+    "--btn-text-color": "#303538",
+    "--btn-border-color": "#303538"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "html[data-theme=\"legacy\"] .btn--secondary[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-text-color": "#088178",
+    "--btn-text-color-hover": "#003a37",
+    "--btn-border-color": "#088178",
+    "--btn-border-color-hover": "#088178",
+    "--btn-bg-color-hover": "#dff8f6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "html[data-theme=\"legacy\"] .btn--secondary-alternative[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-text-color": "#303538",
+    "--btn-text-color-hover": "#303538",
+    "--btn-border-color": "#e2e9ee",
+    "--btn-border-color-hover": "#303538",
+    "--btn-bg-color-hover": "#fafdff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".btn--tertiary[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "#ffffff",
+    "--btn-text-color": "#303538",
+    "--btn-border-color": "#303538"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "html[data-theme=\"legacy\"] .btn--tertiary[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "#4e42a1",
+    "--btn-bg-color-hover": "#281f6b",
+    "--btn-border-color": "#4e42a1",
+    "--btn-border-color-hover": "#281f6b",
+    "--btn-text-color": "#ffffff",
+    "--btn-text-color-hover": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".btn--tertiary-alternative[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "#ffffff",
+    "--btn-text-color": "#303538",
+    "--btn-border-color": "#303538"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "html[data-theme=\"legacy\"] .btn--tertiary-alternative[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "#edeeff",
+    "--btn-border-color": "#edeeff",
+    "--btn-border-color-hover": "#4e42a1",
+    "--btn-bg-color-hover": "#4e42a1",
+    "--btn-text-color": "#4e42a1",
+    "--btn-text-color-hover": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".btn--ghost[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "transparent",
+    "--btn-border-color": "transparent",
+    "--btn-text-color": "#303538",
+    "--btn-text-color-hover": "#303538",
+    "--btn-bg-color-hover": "#edf2f5"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "html[data-theme=\"legacy\"] .btn--ghost[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-text-color": "#088178",
+    "--btn-border-color": "transparent",
+    "--btn-bg-color-hover": "#dff8f6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": "html[data-theme=\"legacy\"] .btn--font-alternatives[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "#ffffff",
+    "--btn-text-color": "#000000",
+    "--btn-border-color": "#4b5258"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".btn--pill-transparent[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "none",
+    "--btn-text-color": "#000000"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".btn--pill-transparent[data-v-5e31f9cb]:hover, .btn--pill-transparent[data-v-5e31f9cb]:focus-visible",
+   "context": [],
+   "properties": {
+    "--btn-border-color-hover": "#6e777d",
+    "--btn-bg-color-hover": "none"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".btn--small[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-height": "32px",
+    "--btn-font-size": "14px",
+    "--btn-padding": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".btn--smallMedium[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-height": "40px",
+    "--btn-font-size": "14px",
+    "--btn-padding": "10px",
+    "--btn-border-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".btn--medium[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-height": "45px",
+    "--btn-font-size": "14px",
+    "--btn-padding": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".btn--large[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-height": "50px",
+    "--btn-font-size": "14px",
+    "--btn-padding": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".btn--round[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-width": "var(--btn-height)",
+    "--btn-padding": "0",
+    "--btn-border-radius": "999999999999px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".btn--full-width[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-width": "100%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".btn--borderless[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-border-color": "var(--btn-bg-color)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".btn--no-padding[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-padding": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".btn--svgButton[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-width": "45px",
+    "--btn-height": "45px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".mobile-nav--mobile-menu-open[data-v-cc35cc14]",
+   "context": [],
+   "properties": {
+    "--mobile-nav-mobile-bg-opacity": "0.6",
+    "--mobile-nav-mobile-bg-pointer-events": "initial",
+    "--mobile-nav-mobile-menu-x": "0",
+    "--mobile-nav-mobile-menu-visibility": "visible"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".chat-popup.v-leave-active[data-v-46680c16]",
+   "context": [],
+   "properties": {
+    "--size": "calc(100% - 64px / 2)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".seat-selector__btn",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "#f4f8fb",
+    "--btn-text-color": "#303538"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".seat-selector__btn:hover:not(:disabled), .seat-selector__btn:focus-visible:not([disabled])",
+   "context": [],
+   "properties": {
+    "--btn-bg-color-hover": "#dceefc"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".cart-license-row__remove-license-button",
+   "context": [],
+   "properties": {
+    "--btn-width": "32px",
+    "--btn-text-color": "#4b5258"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".cart-license-row__remove-license-button:hover",
+   "context": [],
+   "properties": {
+    "--btn-text-color": "#303538"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".cart-license-row__remove-license-button:hover:not(:disabled), .cart-license-row__remove-license-button:focus-visible:not([disabled])",
+   "context": [],
+   "properties": {
+    "--btn-bg-color-hover": "#dceefc"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".cart-license-list__add-license-button",
+   "context": [],
+   "properties": {
+    "--btn-font-weight": "400",
+    "--btn-bg-color": "#f4f8fb",
+    "--btn-text-color": "#4b5258"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".cart-license-list__add-license-button:hover:not(:disabled), .cart-license-list__add-license-button:focus-visible:not([disabled])",
+   "context": [],
+   "properties": {
+    "--btn-text-color": "#303538",
+    "--btn-bg-color-hover": "#dceefc"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".cart-actions__button",
+   "context": [],
+   "properties": {
+    "--btn-font-weight": "400",
+    "--btn-padding": "0px",
+    "--btn-text-color": "#4b5258"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_global_refresh.css",
+   "selector": ".cart-actions__button:hover",
+   "context": [],
+   "properties": {
+    "--btn-text-color": "#303538"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global_slim.css",
+   "selector": ".search-field",
+   "context": [],
+   "properties": {
+    "--dropdown-focus-color": "#ccd4da",
+    "--dropdown-border-radius": "24px",
+    "--dropdown-box-shadow": "0 0px 8px rgba(0, 0, 0, 0.15)",
+    "--dropdown-divider-color": "#e2e9ee"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global_slim.css",
+   "selector": ".search-dropdown",
+   "context": [],
+   "properties": {
+    "--search-dropdown-inline-padding": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global_slim.css",
+   "selector": ".category-landing-page .btn:not(.btn--font-alternatives):not(.btn--ghost):focus-visible:not([disabled]), .category-landing-page .btn:not(.btn--font-alternatives):not(.btn--ghost):hover:not([disabled])",
+   "context": [
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--btn-border-color-hover": "#6e777d",
+    "--btn-bg-color-hover": "none"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global_slim.css",
+   "selector": ".category-landing-page .btn--font-alternatives:focus-visible:not([disabled]), .category-landing-page .btn--font-alternatives:hover:not([disabled]), .category-page-header .btn--font-alternatives:focus-",
+   "context": [
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--btn-bg-color-hover": "#000000",
+    "--btn-text-color-hover": "#ffffff",
+    "--btn-border-color-hover": "transparent"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global_slim.css",
+   "selector": ".category-landing-page .btn--pill-transparent, .category-page-header .btn--pill-transparent, .search__body .btn--pill-transparent",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "none",
+    "--btn-text-color": "#000000"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global_slim.css",
+   "selector": ".category-landing-page .btn--pill-transparent:focus-visible, .category-landing-page .btn--pill-transparent:hover, .category-page-header .btn--pill-transparent:focus-visible, .category-page-header .btn",
+   "context": [],
+   "properties": {
+    "--btn-border-color-hover": "#6e777d",
+    "--btn-bg-color-hover": "none"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global_slim.css",
+   "selector": ".category-landing-page .btn--small, .category-page-header .btn--small, .search__body .btn--small",
+   "context": [],
+   "properties": {
+    "--btn-height": "32px",
+    "--btn-font-size": "14px",
+    "--btn-padding": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global_slim.css",
+   "selector": ".category-landing-page .btn--smallMedium, .category-page-header .btn--smallMedium, .search__body .btn--smallMedium",
+   "context": [],
+   "properties": {
+    "--btn-height": "40px",
+    "--btn-font-size": "14px",
+    "--btn-padding": "10px",
+    "--btn-border-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global_slim.css",
+   "selector": ".category-landing-page .btn--medium, .category-page-header .btn--medium, .search__body .btn--medium",
+   "context": [],
+   "properties": {
+    "--btn-height": "45px",
+    "--btn-font-size": "14px",
+    "--btn-padding": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global_slim.css",
+   "selector": ".category-landing-page .btn--large, .category-page-header .btn--large, .search__body .btn--large",
+   "context": [],
+   "properties": {
+    "--btn-height": "50px",
+    "--btn-font-size": "14px",
+    "--btn-padding": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global_slim.css",
+   "selector": ".category-landing-page .btn--full-width, .category-page-header .btn--full-width, .search__body .btn--full-width",
+   "context": [],
+   "properties": {
+    "--btn-width": "100%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-alert--info[data-v-2198c2ac]",
+   "context": [],
+   "properties": {
+    "--_bg": "rgba(215, 239, 227, 0.4)",
+    "--_icon": "#73c6a8"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-alert--success[data-v-2198c2ac]",
+   "context": [],
+   "properties": {
+    "--_bg": "#eaf4d1",
+    "--_icon": "#69803a"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-alert--warning[data-v-2198c2ac]",
+   "context": [],
+   "properties": {
+    "--_bg": "rgba(255, 234, 212, 0.6)",
+    "--_icon": "#efa645"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-alert--danger[data-v-2198c2ac]",
+   "context": [],
+   "properties": {
+    "--_bg": "rgba(220, 108, 88, 0.1)",
+    "--_icon": "#dc6c58"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-text-field[data-v-164b79cc]",
+   "context": [],
+   "properties": {
+    "--_border-color": "#ccd4da",
+    "--_hover-border-color": "#899298",
+    "--_color": "#088178",
+    "--_ring-color": "transparent",
+    "--_active-ring-color": "#b6e7e4"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-text-field[data-v-164b79cc]:hover",
+   "context": [
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--_border-color": "var(--_hover-border-color)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-text-field[data-v-164b79cc]:focus-within",
+   "context": [],
+   "properties": {
+    "--_border-color": "var(--_color)",
+    "--_ring-color": "var(--_active-ring-color)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-text-field--disabled[data-v-164b79cc]",
+   "context": [],
+   "properties": {
+    "--_hover-border-color": "#ccd4da"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-text-field--invalid[data-v-164b79cc]",
+   "context": [],
+   "properties": {
+    "--_border-color": "#a02828",
+    "--_hover-border-color": "#a02828",
+    "--_color": "#a02828",
+    "--_active-ring-color": "#fecac1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-text-field--sm[data-v-164b79cc]",
+   "context": [],
+   "properties": {
+    "--_height": "32px",
+    "--_padding": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-text-field--md[data-v-164b79cc]",
+   "context": [],
+   "properties": {
+    "--_height": "45px",
+    "--_padding": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-text-field--lg[data-v-164b79cc]",
+   "context": [],
+   "properties": {
+    "--_height": "50px",
+    "--_padding": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".like-button[data-v-31a0d1d4]",
+   "context": [],
+   "properties": {
+    "--spring-duration": "0.833s",
+    "--spring-easing": "linear( 0, 0.037, 0.15 3.6%, 0.989 13.5%, 1.131, 1.198 19.5%, 1.205 21.4%, 1.19 23.6%, 1.01 34%, 0.976 37.1%, 0.96 40.4%, 0.961 44.7%, 0.997 54.9%, 1.008 60.9%, 0.999 81.2%, 1 )"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".like-button:hover .like-icon[data-v-31a0d1d4]",
+   "context": [
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--stroke": "#39b4ac"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".like-button:focus-visible .like-icon[data-v-31a0d1d4]",
+   "context": [],
+   "properties": {
+    "--stroke": "#39b4ac"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".like-button .like-icon[data-v-31a0d1d4]",
+   "context": [],
+   "properties": {
+    "--fill": "transparent",
+    "--stroke": "#000000"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".like-button--liked .like-icon[data-v-31a0d1d4] .like-icon__svg",
+   "context": [],
+   "properties": {
+    "--fill": "#39b4ac",
+    "--stroke": "#39b4ac"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".product-card[data-v-e2e65bbc]",
+   "context": [],
+   "properties": {
+    "--border-radius": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-button--primary[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_color": "#088178",
+    "--_color-hover": "#003a37",
+    "--_color-soft": "#dff8f6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-button--accent[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_color": "#4e42a1",
+    "--_color-hover": "#281f6b",
+    "--_color-soft": "#edeeff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-button--neutral[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_color": "#303538",
+    "--_color-hover": "#000000",
+    "--_color-soft": "#edf2f5"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-button--danger[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_color": "#e06868",
+    "--_color-hover": "#a02828",
+    "--_color-soft": "#ffebe9"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-button--inverse[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_color": "#ffffff",
+    "--_color-hover": "#edf2f5",
+    "--_color-soft": "#ffffff",
+    "--_on-color": "#303538",
+    "--_on-soft": "#303538"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-button--filled[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_bg": "var(--_color)",
+    "--_bg-hover": "var(--_color-hover)",
+    "--_border-color": "var(--_color)",
+    "--_border-color-hover": "var(--_color-hover)",
+    "--_text": "var(--_on-color, #ffffff)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-button--outlined[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_bg": "transparent",
+    "--_bg-hover": "var(--_color-soft)",
+    "--_border-color": "var(--_color)",
+    "--_text": "var(--_color)",
+    "--_text-hover": "var(--_on-soft, var(--_color-hover))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-button--ghost[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_bg": "transparent",
+    "--_bg-hover": "var(--_color-soft)",
+    "--_border-color": "transparent",
+    "--_text": "var(--_color)",
+    "--_text-hover": "var(--_on-soft, var(--_color-hover))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-button--sm[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_height": "32px",
+    "--_padding": "12px",
+    "--_font-size": "14px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-button--md[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_height": "45px",
+    "--_padding": "12px",
+    "--_font-size": "14px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-button--lg[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_height": "50px",
+    "--_padding": "24px",
+    "--_font-size": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-button--square[data-v-69931b70], .ui-button--circle[data-v-69931b70]",
+   "context": [],
+   "properties": {
+    "--_padding": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".search-suggestion",
+   "context": [],
+   "properties": {
+    "--overlap": "2px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-select[data-v-28d58430]",
+   "context": [],
+   "properties": {
+    "--_border-color": "#ccd4da",
+    "--_hover-border-color": "#899298",
+    "--_active-border-color": "#088178",
+    "--_ring-color": "transparent",
+    "--_active-ring-color": "#b6e7e4",
+    "--_caret-color": "#899298",
+    "--_check-color": "#088178",
+    "--_highlight-bg": "#edf2f5",
+    "--_highlight-color": "#303538",
+    "--_bg": "#ffffff",
+    "--_radius": "8px",
+    "--_trigger-padding": "var(--_padding)",
+    "--_caret-width": "40px",
+    "--_row-height": "36px",
+    "--_row-padding-y": "8px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-select--primary[data-v-28d58430]",
+   "context": [],
+   "properties": {
+    "--_highlight-bg": "#088178",
+    "--_highlight-color": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-select--accent[data-v-28d58430]",
+   "context": [],
+   "properties": {
+    "--_active-border-color": "#4e42a1",
+    "--_active-ring-color": "#cecff2",
+    "--_check-color": "#4e42a1",
+    "--_highlight-bg": "#4e42a1",
+    "--_highlight-color": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-select--ghost[data-v-28d58430]",
+   "context": [],
+   "properties": {
+    "--_border-color": "transparent",
+    "--_hover-border-color": "transparent",
+    "--_active-border-color": "transparent",
+    "--_active-ring-color": "transparent",
+    "--_bg": "transparent",
+    "--_trigger-padding": "0",
+    "--_caret-width": "20px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-select--sm[data-v-28d58430]",
+   "context": [],
+   "properties": {
+    "--_height": "32px",
+    "--_padding": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-select--md[data-v-28d58430]",
+   "context": [],
+   "properties": {
+    "--_height": "45px",
+    "--_padding": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-select--lg[data-v-28d58430]",
+   "context": [],
+   "properties": {
+    "--_height": "50px",
+    "--_padding": "16px",
+    "--_row-height": "48px",
+    "--_row-padding-y": "14px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-select--pill[data-v-28d58430]",
+   "context": [],
+   "properties": {
+    "--_radius": "999999999999px",
+    "--_padding": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-select--invalid[data-v-28d58430]",
+   "context": [],
+   "properties": {
+    "--_border-color": "#a02828",
+    "--_hover-border-color": "#a02828",
+    "--_active-border-color": "#a02828",
+    "--_active-ring-color": "#fecac1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-select[data-v-28d58430]:hover",
+   "context": [],
+   "properties": {
+    "--_border-color": "var(--_hover-border-color)",
+    "--_caret-color": "#303538"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".ui-select[data-v-28d58430]:focus-visible, .ui-select.multiselect--active[data-v-28d58430]",
+   "context": [],
+   "properties": {
+    "--_border-color": "var(--_active-border-color)",
+    "--_ring-color": "var(--_active-ring-color)",
+    "--_caret-color": "#303538"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".card-grid[data-v-48dea3f7]",
+   "context": [],
+   "properties": {
+    "--gap": "20",
+    "--overflow-correction": "4px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".card-grid[data-v-48dea3f7]",
+   "context": [
+    "@media (max-width: 479px)"
+   ],
+   "properties": {
+    "--inline-gutters": "15px",
+    "--scrollbar-offset": "20px",
+    "--next-card-peak": "25px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".card-grid[data-v-48dea3f7]",
+   "context": [
+    "@media (min-width: 480px) and (max-width: 767px)"
+   ],
+   "properties": {
+    "--grid-columns": "2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".card-grid[data-v-48dea3f7]",
+   "context": [
+    "@media (min-width: 768px) and (max-width: 1023px)"
+   ],
+   "properties": {
+    "--grid-columns": "3"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".card-grid[data-v-48dea3f7]",
+   "context": [
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--grid-columns": "var(--grid-columns, 4)",
+    "--gap": "30"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--btn-height": "50px",
+    "--btn-border-radius": "999999999999px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": "html[data-theme=\"legacy\"]",
+   "context": [],
+   "properties": {
+    "--btn-border-radius": "8px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".btn--primary[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "#303538",
+    "--btn-text-color": "#ffffff",
+    "--btn-border-color": "#303538"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": "html[data-theme=\"legacy\"] .btn--primary[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "#088178",
+    "--btn-bg-color-hover": "#003a37",
+    "--btn-border-color": "#088178",
+    "--btn-border-color-hover": "#003a37",
+    "--btn-text-color-hover": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".btn--secondary[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "#ffffff",
+    "--btn-text-color": "#303538",
+    "--btn-border-color": "#303538"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": "html[data-theme=\"legacy\"] .btn--secondary[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-text-color": "#088178",
+    "--btn-text-color-hover": "#003a37",
+    "--btn-border-color": "#088178",
+    "--btn-border-color-hover": "#088178",
+    "--btn-bg-color-hover": "#dff8f6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": "html[data-theme=\"legacy\"] .btn--secondary-alternative[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-text-color": "#303538",
+    "--btn-text-color-hover": "#303538",
+    "--btn-border-color": "#e2e9ee",
+    "--btn-border-color-hover": "#303538",
+    "--btn-bg-color-hover": "#fafdff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".btn--tertiary[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "#ffffff",
+    "--btn-text-color": "#303538",
+    "--btn-border-color": "#303538"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": "html[data-theme=\"legacy\"] .btn--tertiary[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "#4e42a1",
+    "--btn-bg-color-hover": "#281f6b",
+    "--btn-border-color": "#4e42a1",
+    "--btn-border-color-hover": "#281f6b",
+    "--btn-text-color": "#ffffff",
+    "--btn-text-color-hover": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".btn--tertiary-alternative[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "#ffffff",
+    "--btn-text-color": "#303538",
+    "--btn-border-color": "#303538"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": "html[data-theme=\"legacy\"] .btn--tertiary-alternative[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "#edeeff",
+    "--btn-border-color": "#edeeff",
+    "--btn-border-color-hover": "#4e42a1",
+    "--btn-bg-color-hover": "#4e42a1",
+    "--btn-text-color": "#4e42a1",
+    "--btn-text-color-hover": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".btn--ghost[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "transparent",
+    "--btn-border-color": "transparent",
+    "--btn-text-color": "#303538",
+    "--btn-text-color-hover": "#303538",
+    "--btn-bg-color-hover": "#edf2f5"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": "html[data-theme=\"legacy\"] .btn--ghost[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-text-color": "#088178",
+    "--btn-border-color": "transparent",
+    "--btn-bg-color-hover": "#dff8f6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": "html[data-theme=\"legacy\"] .btn--font-alternatives[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "#ffffff",
+    "--btn-text-color": "#000000",
+    "--btn-border-color": "#4b5258"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".btn--pill-transparent[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-bg-color": "none",
+    "--btn-text-color": "#000000"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".btn--pill-transparent[data-v-5e31f9cb]:hover, .btn--pill-transparent[data-v-5e31f9cb]:focus-visible",
+   "context": [],
+   "properties": {
+    "--btn-border-color-hover": "#6e777d",
+    "--btn-bg-color-hover": "none"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".btn--small[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-height": "32px",
+    "--btn-font-size": "14px",
+    "--btn-padding": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".btn--smallMedium[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-height": "40px",
+    "--btn-font-size": "14px",
+    "--btn-padding": "10px",
+    "--btn-border-width": "1px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".btn--medium[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-height": "45px",
+    "--btn-font-size": "14px",
+    "--btn-padding": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".btn--large[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-height": "50px",
+    "--btn-font-size": "14px",
+    "--btn-padding": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".btn--round[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-width": "var(--btn-height)",
+    "--btn-padding": "0",
+    "--btn-border-radius": "999999999999px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".btn--full-width[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-width": "100%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".btn--borderless[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-border-color": "var(--btn-bg-color)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".btn--no-padding[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-padding": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".btn--svgButton[data-v-5e31f9cb]",
+   "context": [],
+   "properties": {
+    "--btn-width": "45px",
+    "--btn-height": "45px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global_async.css",
+   "selector": ".slide-fade-enter .cart-drawer, .slide-fade-leave-to .cart-drawer",
+   "context": [],
+   "properties": {
+    "--transform": "var(--offscreen-position)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global_async.css",
+   "selector": ".cart-drawer",
+   "context": [],
+   "properties": {
+    "--transition": "transform 300ms ease-out,opacity 300ms ease-out",
+    "--transform": "none",
+    "--side-padding": "20px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global_async.css",
+   "selector": ".cart-drawer",
+   "context": [
+    "@media (max-width: 768px)"
+   ],
+   "properties": {
+    "--offscreen-position": "translateY(100%)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global_async.css",
+   "selector": ".cart-drawer",
+   "context": [
+    "@media screen and (min-width: 768px)"
+   ],
+   "properties": {
+    "--offscreen-position": "translateX(100%)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global_async.css",
+   "selector": ".cart-drawer",
+   "context": [
+    "@media (prefers-reduced-motion)"
+   ],
+   "properties": {
+    "--transition": "opacity 300ms ease-out",
+    "--offscreen-position": "none"
+   },
+   "bin": "app"
+  }
+ ],
+ "skins": [],
+ "vendor": [
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/homepage.css",
+   "selector": ".discount-corner-badge",
+   "context": [],
+   "properties": {
+    "--offset": "clamp(-4px, -2%, -2px)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/homepage.css",
+   "selector": ".discount-corner-badge .discount-text",
+   "context": [],
+   "properties": {
+    "--offset": "35%"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".discount-corner-badge[data-v-eb870dde]",
+   "context": [],
+   "properties": {
+    "--offset": "clamp(-4px, -2%, -2px)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".discount-corner-badge .discount-text[data-v-eb870dde]",
+   "context": [],
+   "properties": {
+    "--offset": "35%"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/js/extracted-scoped-styles/extracted_landing_page.css",
+   "selector": ".product-card__inner-container[data-v-e2e65bbc]",
+   "context": [],
+   "properties": {
+    "--offset": "-4px"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global_async.css",
+   "selector": ".cart-drawer .line-item",
+   "context": [],
+   "properties": {
+    "--gap": "8px"
+   },
+   "bin": "vendor"
+  }
+ ],
+ "utility": [],
+ "tailwind": [],
+ "fonts": [
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global-refresh.css",
+   "font-family": "Averta",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"../fonts/averta/averta-regular.woff2?v=2\") format(\"woff2\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global-refresh.css",
+   "font-family": "Averta",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(\"../fonts/averta/averta-regular-italic.woff2?v=2\") format(\"woff2\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global-refresh.css",
+   "font-family": "Averta",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"../fonts/averta/averta-semibold.woff2?v=2\") format(\"woff2\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global-refresh.css",
+   "font-family": "Averta",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"../fonts/averta/averta-bold.woff2?v=2\") format(\"woff2\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global-refresh.css",
+   "font-family": "Brule",
+   "font-style": "normal",
+   "font-weight": "600",
+   "src": "url(\"../fonts/brule/brule-semibold.woff2?v=2\") format(\"woff2\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global-refresh.css",
+   "font-family": "Brule",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"../fonts/brule/brule-bold.woff2?v=2\") format(\"woff2\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global-refresh.css",
+   "font-family": "Lyon",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(\"../fonts/lyon-display/lyon-display-bold.woff2?v=2\") format(\"woff2\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://d3ui957tjb5bqd.cloudfront.net/css/global-refresh.css",
+   "font-family": "\"Camera Obscura\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"../fonts/camera-obscura/camera-obscura-regular.woff2?v=2\") format(\"woff2\")",
+   "font-display": "swap"
+  }
+ ],
+ "resolved": {
+  "light": {
+   "--accessible-outline-color": {
+    "raw": "#e06868",
+    "kind": "color",
+    "value": "#e06868"
+   },
+   "--btn-border-radius": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--btn-height": {
+    "raw": "50px",
+    "kind": "dimension",
+    "value": "50px"
+   },
+   "--container-content-width": {
+    "raw": "1450px",
+    "kind": "dimension",
+    "value": "1450px"
+   },
+   "--default-color": {
+    "raw": "#303538",
+    "kind": "color",
+    "value": "#303538"
+   },
+   "--default-font-family": {
+    "raw": "Averta,sans-serif",
+    "kind": "fontFamily",
+    "value": "Averta,sans-serif"
+   },
+   "--default-input-active-bg-color": {
+    "raw": "#fafdff",
+    "kind": "color",
+    "value": "#fafdff"
+   },
+   "--default-input-active-border-color": {
+    "raw": "#899298",
+    "kind": "color",
+    "value": "#899298"
+   },
+   "--default-input-bg-color": {
+    "raw": "#fafdff",
+    "kind": "color",
+    "value": "#fafdff"
+   },
+   "--default-input-border-color": {
+    "raw": "#899298",
+    "kind": "color",
+    "value": "#899298"
+   },
+   "--default-input-border-radius": {
+    "raw": "3px",
+    "kind": "dimension",
+    "value": "3px"
+   },
+   "--default-input-border-width": {
+    "raw": "1px",
+    "kind": "dimension",
+    "value": "1px"
+   },
+   "--default-input-color": {
+    "raw": "#303538",
+    "kind": "color",
+    "value": "#303538"
+   },
+   "--default-input-placeholder-color": {
+    "raw": "#899298",
+    "kind": "color",
+    "value": "#899298"
+   },
+   "--default-input-transition": {
+    "raw": "0.4s cubic-bezier(0.25, 1, 0.5, 1)",
+    "kind": "other"
+   },
+   "--default-link-hover-color": {
+    "raw": "#003a37",
+    "kind": "color",
+    "value": "#003a37"
+   },
+   "--default-link-text-decoration": {
+    "raw": "none",
+    "kind": "shadow",
+    "value": "none"
+   },
+   "--dialog-close-gap": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--dialog-close-icon-size": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--dialog-close-padding": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--dialog-horizontal-padding": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--header-bg-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--os-scroll-percent": {
+    "raw": "0",
+    "kind": "number",
+    "value": 0
+   },
+   "--os-viewport-percent": {
+    "raw": "0",
+    "kind": "number",
+    "value": 0
+   },
+   "--overflow-dropdown-border-color": {
+    "raw": "transparent",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--overflow-dropdown-border-radius": {
+    "raw": "4px",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--overflow-dropdown-box-shadow": {
+    "raw": "0 4px 8px rgba(0, 0, 0, 0.1)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.1) 0px 4px 8px 0px"
+   },
+   "--overflow-dropdown-divider-color": {
+    "raw": "#e2e9ee",
+    "kind": "color",
+    "value": "#e2e9ee"
+   },
+   "--overflow-dropdown-earnings-bg-color": {
+    "raw": "#dff8f6",
+    "kind": "color",
+    "value": "#dff8f6"
+   },
+   "--site-banner-bg-color": {
+    "raw": "#dff8f6",
+    "kind": "color",
+    "value": "#dff8f6"
+   },
+   "--user-dropdown-border-color": {
+    "raw": "transparent",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--user-dropdown-border-radius": {
+    "raw": "4px",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--user-dropdown-box-shadow": {
+    "raw": "0 4px 8px rgba(0, 0, 0, 0.1)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.1) 0px 4px 8px 0px"
+   },
+   "--user-dropdown-divider-color": {
+    "raw": "#e2e9ee",
+    "kind": "color",
+    "value": "#e2e9ee"
+   },
+   "--user-dropdown-earnings-bg-color": {
+    "raw": "#dff8f6",
+    "kind": "color",
+    "value": "#dff8f6"
+   }
+  }
+ }
+}

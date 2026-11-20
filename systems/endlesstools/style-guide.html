@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Endless Tools style guide</title>
+<meta name="description" content="Endless Tools design tokens and the public marketing plus signed-out app-shell surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-sans: Inter, "Inter Fallback";
+  --font-family-system: ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  --font-family-mono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --font-family-skeleton: "Flow Rounded", "Flow Rounded Fallback";
+  --font-size-title-primary: 42px;
+  --font-size-title-secondary: 24px;
+  --font-size-subtitle: 18px;
+  --font-size-body-primary: 14px;
+  --font-size-body-secondary: 12px;
+  --font-size-price: 42px;
+  --font-size-login-title: 23px;
+  --font-size-legal-title: 42px;
+  --font-size-toggle: 16px;
+  --font-size-body: 14px;
+  --font-size-login-body: 14px;
+  --font-size-login-small: 12px;
+  --font-size-chip: 14px;
+  --font-lineHeight-title-primary: 46px;
+  --font-lineHeight-title-secondary: 26px;
+  --font-lineHeight-subtitle: 20px;
+  --font-lineHeight-body-primary: 18px;
+  --font-lineHeight-body-secondary: 14px;
+  --font-lineHeight-price: 42px;
+  --font-lineHeight-login-title: 25px;
+  --font-lineHeight-legal-title: 40px;
+  --font-lineHeight-toggle: 24px;
+  --font-lineHeight-body: 18px;
+  --font-lineHeight-login-body: 15px;
+  --font-lineHeight-login-small: 13px;
+  --font-lineHeight-chip: 35px;
+  --font-lineHeight-save-pill: 25px;
+  --font-weight-medium: 500;
+  --font-weight-title-primary: 500;
+  --font-weight-title-secondary: 500;
+  --font-weight-regular: 400;
+  --font-weight-legal: 400;
+  --font-weight-login-label: 500;
+  --font-tracking-title: -.03em;
+  --font-tracking-tight: -.025em;
+  --font-tracking-price: -1.26px;
+  --font-tracking-login-label: -0.35px;
+  --color-neutral-black: #0a0a0a;
+  --color-neutral-white: #ffffff;
+  --color-neutral-secondary: #1e1e1e;
+  --color-neutral-grey-1: #373737;
+  --color-neutral-grey-2: #2a2a2a;
+  --color-neutral-grey-3: #555555;
+  --color-neutral-grey-4: #959595;
+  --color-neutral-page: #000000;
+  --color-neutral-card: #121212;
+  --color-neutral-card-hover: #1d1d1d;
+  --color-neutral-inset: #080808;
+  --color-neutral-ring: #222222;
+  --color-neutral-thumb-border: #343434;
+  --color-neutral-ink: #efefef;
+  --color-neutral-hover-white: #c4c4c4;
+  --color-neutral-alpha-veil-5: rgba(239, 239, 239, 0.05);
+  --color-neutral-alpha-ink-75: rgba(239, 239, 239, 0.75);
+  --color-neutral-alpha-ink-90: rgba(239, 239, 239, 0.9);
+  --color-neutral-alpha-white-30: rgba(255, 255, 255, 0.3);
+  --color-neutral-alpha-white-75: rgba(255, 255, 255, 0.75);
+  --color-neutral-alpha-white-85: rgba(255, 255, 255, 0.85);
+  --color-neutral-alpha-black-50: rgba(10, 10, 10, 0.5);
+  --color-neutral-alpha-black-80: rgba(10, 10, 10, 0.8);
+  --color-neutral-alpha-placeholder-50: rgba(255, 255, 255, 0.5);
+  --color-accent-pink: #ff13b1;
+  --color-accent-pink-hover: #ff4bc4;
+  --color-accent-pill: #ff3dae;
+  --color-accent-blue: #2c5cff;
+  --color-accent-blue-hover: #5a65ff;
+  --color-accent-focus: #005fcc;
+  --gradient-nav: linear-gradient(rgb(0, 0, 0) 14.73%, rgba(0, 10, 10, 0) 100%);
+  --gradient-overlay: linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 85.27%);
+  --radius-base: 10px;
+  --radius-fill: 12px;
+  --radius-thumb: 16px;
+  --radius-login: 20px;
+  --radius-card: 33px;
+  --radius-pill: 9999px;
+  --spacing-unit: 4px;
+  --spacing-control-x: 20px;
+  --spacing-chip-x: 15px;
+  --spacing-pill-x: 10px;
+  --spacing-field-x: 15px;
+  --spacing-switch-x: 25px;
+  --spacing-signin-x: 30px;
+  --spacing-card: 15px;
+  --spacing-login-card: 50px;
+  --spacing-footer-y: 150px;
+  --motion-duration-default: 150ms;
+  --motion-duration-fast: 200ms;
+  --motion-duration-slow: 300ms;
+  --motion-easing-in-out: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --motion-press-scale: scale(0.95);
+  --motion-animation-gradient-flow: 1.5s ease-in-out 0s infinite alternate none running move-gradient;
+  --motion-animation-orbit: et-orbit var(--orbit-duration,28s)linear infinite;
+  --motion-animation-skeleton: 1s linear 0s infinite alternate none running SkeletonLoading;
+  --motion-animation-pulse: 2s cubic-bezier(0.4, 0, 0.6, 1) 0s infinite normal none running pulse;
+  --motion-animation-spin: 1s linear 0s infinite normal none running spin;
+  --typography-title-primary: var(--font-weight-title-primary) var(--font-size-title-primary)/var(--font-lineHeight-title-primary) var(--font-family-sans);
+  --typography-title-secondary: var(--font-weight-title-secondary) var(--font-size-title-secondary)/var(--font-lineHeight-title-secondary) var(--font-family-sans);
+  --typography-subtitle: var(--font-weight-medium) var(--font-size-subtitle)/var(--font-lineHeight-subtitle) var(--font-family-sans);
+  --typography-body: var(--font-weight-regular) var(--font-size-body-primary)/var(--font-lineHeight-body-primary) var(--font-family-sans);
+  --typography-label: var(--font-weight-medium) var(--font-size-body-secondary)/var(--font-lineHeight-body-secondary) var(--font-family-sans);
+  --typography-price: var(--font-weight-title-primary) var(--font-size-price)/var(--font-lineHeight-price) var(--font-family-sans);
+  --typography-login-title: var(--font-weight-medium) var(--font-size-login-title)/var(--font-lineHeight-login-title) var(--font-family-sans);
+  --typography-legal-title: var(--font-weight-legal) var(--font-size-legal-title)/var(--font-lineHeight-legal-title) var(--font-family-sans);
+  --typography-toggle: var(--font-weight-medium) var(--font-size-toggle)/var(--font-lineHeight-toggle) var(--font-family-sans);
+  --typography-login-label: var(--font-weight-login-label) var(--font-size-login-body)/var(--font-lineHeight-login-body) var(--font-family-sans);
+  --typography-login-small: var(--font-weight-login-label) var(--font-size-login-small)/var(--font-lineHeight-login-small) var(--font-family-sans);
+  --typography-chip: var(--font-weight-medium) var(--font-size-chip)/var(--font-lineHeight-chip) var(--font-family-sans);
+
+  --sg-sans: Inter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: Inter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --surface-page: var(--color-neutral-page);
+  --surface-app: var(--color-neutral-black);
+  --surface-header-veil: var(--gradient-nav);
+  --surface-card: var(--color-neutral-card);
+  --surface-card-hover: var(--color-neutral-card-hover);
+  --surface-inset: var(--color-neutral-inset);
+  --surface-field: var(--color-neutral-secondary);
+  --surface-raised: var(--color-neutral-grey-2);
+  --surface-hover: var(--color-neutral-grey-1);
+  --surface-veil: var(--color-neutral-alpha-veil-5);
+  --surface-overlay: var(--color-neutral-alpha-black-50);
+  --surface-overlay-hover: var(--color-neutral-alpha-black-80);
+  --text-primary: var(--color-neutral-white);
+  --text-app: var(--color-neutral-ink);
+  --text-muted: var(--color-neutral-grey-4);
+  --text-dim: var(--color-neutral-alpha-white-30);
+  --text-app-dim: var(--color-neutral-alpha-ink-75);
+  --text-on-light: var(--color-neutral-black);
+  --text-on-accent: var(--color-neutral-white);
+  --text-placeholder: var(--color-neutral-alpha-placeholder-50);
+  --text-placeholder-app: var(--color-neutral-grey-4);
+  --border-card: var(--color-neutral-ring);
+  --border-field: var(--color-neutral-grey-2);
+  --border-field-focus: var(--color-neutral-grey-1);
+  --border-thumb: var(--color-neutral-thumb-border);
+  --border-muted: var(--color-neutral-grey-4);
+  --action-bg: var(--color-neutral-white);
+  --action-fg: var(--color-neutral-black);
+  --action-bg-hover: var(--color-neutral-hover-white);
+  --action-bg-hover-soft: var(--color-neutral-alpha-white-85);
+  --action-app-bg: var(--color-neutral-ink);
+  --action-app-bg-hover: var(--color-neutral-alpha-ink-90);
+  --action-nav-bg-hover: var(--color-neutral-grey-1);
+  --action-nav-fg-hover: var(--color-neutral-white);
+  --accent-pink: var(--color-accent-pink);
+  --accent-pink-hover: var(--color-accent-pink-hover);
+  --accent-pill: var(--color-accent-pill);
+  --accent-blue: var(--color-accent-blue);
+  --accent-blue-hover: var(--color-accent-blue-hover);
+  --focus-ua: var(--color-accent-focus);
+  --component-button-height: 35px;
+  --component-button-bg: var(--action-bg);
+  --component-button-text: var(--action-fg);
+  --component-button-bg-hover: var(--action-bg-hover);
+  --component-button-radius: var(--radius-pill);
+  --component-button-padding: var(--spacing-control-x);
+  --component-button-lg-height: 36px;
+  --component-button-mobile-height: 38px;
+  --component-button-app-height: 35px;
+  --component-button-app-bg: var(--action-app-bg);
+  --component-button-app-bg-hover: var(--action-app-bg-hover);
+  --component-button-app-text: #000000;
+  --component-button-app-radius: var(--radius-base);
+  --component-field-height: 35px;
+  --component-field-bg: var(--surface-field);
+  --component-field-text: var(--text-app);
+  --component-field-border: var(--border-field);
+  --component-field-border-focus: var(--border-field-focus);
+  --component-field-radius: var(--radius-base);
+  --component-field-padding: var(--spacing-field-x);
+  --component-field-news-height: 35px;
+  --component-chip-height: 35px;
+  --component-pill-height: 25px;
+  --component-signin-height: 40px;
+  --component-carousel-size: 40px;
+  --component-consent-size: 18px;
+  --component-thumb-size: 144px;
+  --component-logo-height: 40px;
+  --component-header-height: 80px;
+  --component-card-plan-width: 356.656px;
+  --component-card-login-width: 450px;
+  --component-button-nav-bg: var(--action-bg);
+  --component-button-nav-text: var(--action-fg);
+  --component-button-nav-bg-hover: var(--action-nav-bg-hover);
+  --component-button-nav-text-hover: var(--action-nav-fg-hover);
+  --component-button-nav-radius: var(--radius-pill);
+  --component-button-nav-padding: var(--spacing-control-x);
+  --component-button-news-bg: var(--action-bg);
+  --component-button-news-text: var(--action-fg);
+  --component-button-news-bg-hover: var(--action-bg-hover-soft);
+  --component-button-news-radius: var(--radius-pill);
+  --component-button-news-padding: var(--spacing-control-x);
+  --component-button-accent-bg: var(--accent-pink);
+  --component-button-accent-bg-hover: var(--accent-pink-hover);
+  --component-button-accent-text: var(--text-on-accent);
+  --component-button-accent-radius: var(--radius-pill);
+  --component-button-edu-bg: var(--accent-blue);
+  --component-button-edu-bg-hover: var(--accent-blue-hover);
+  --component-button-edu-text: var(--text-on-accent);
+  --component-button-edu-radius: var(--radius-pill);
+  --component-field-pill-bg: var(--surface-field);
+  --component-field-pill-text: var(--text-primary);
+  --component-field-pill-radius: var(--radius-pill);
+  --component-field-pill-padding: var(--spacing-control-x);
+  --component-card-bg: var(--surface-card);
+  --component-card-bg-hover: var(--surface-card-hover);
+  --component-card-border: var(--border-card);
+  --component-card-radius: var(--radius-card);
+  --component-card-padding: var(--spacing-card);
+  --component-card-social-bg: var(--surface-inset);
+  --component-card-social-border: var(--color-neutral-grey-1);
+  --component-card-social-radius: var(--radius-fill);
+  --component-card-app-bg: var(--surface-veil);
+  --component-card-app-radius: var(--radius-login);
+  --component-card-app-padding: var(--spacing-login-card);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #fff); background: var(--surface-page, #000); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.1 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.03em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-primary, #fff); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-card, #222); }
+.lead { max-width: 62ch; color: var(--text-primary, #fff); opacity: .8; }
+.note { font-size: 13px; color: var(--text-primary, #fff); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-primary, #fff); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--surface-app, #0a0a0a); padding: 12px; border-radius: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-card, #222); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-primary, #fff); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-card, #222); background: var(--surface-card, #121212); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-primary, #fff); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border-card, #222); overflow: hidden; background: var(--surface-page, #000); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 80px); padding: 0 22px; font-size: 14px; color: var(--text-primary, #fff); background: var(--surface-header-veil, linear-gradient(#000 14.73%, rgba(0,10,10,0) 100%)); }
+.navbar .wm { font-weight: 700; font-size: 18px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 35px); padding: 0 var(--component-button-padding, 20px); font-size: 12px; font-weight: 500; border-radius: var(--component-button-radius, 9999px); border: 1px solid transparent; }
+.btn.primary { background: var(--component-button-bg, #fff); color: var(--component-button-text, #0a0a0a); }
+.btn.accent { height: var(--component-button-lg-height, 36px); background: var(--component-button-accent-bg, #ff13b1); color: var(--component-button-accent-text, #fff); }
+.btn.edu { height: 36px; background: var(--component-button-edu-bg, #2c5cff); color: var(--component-button-edu-text, #fff); }
+.btn.app { height: 35px; border-radius: var(--component-button-app-radius, 10px); background: var(--component-button-app-bg, #efefef); color: var(--component-button-app-text, #000); }
+.btn.ghost { background: transparent; color: var(--text-muted, #959595); border-color: var(--border-card, #222); }
+.hero { color: var(--text-primary, #fff); padding: 72px 40px 56px; font: 500 var(--font-size-title-primary, 42px)/var(--font-lineHeight-title-primary, 46px) var(--sg-sans); letter-spacing: -0.03em; text-align: center; }
+.hero small { display: block; font: 400 14px/18px var(--sg-sans); color: var(--text-muted, #959595); letter-spacing: 0; margin: 14px auto 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border-card, #222); padding: 14px; font-size: 13px; background: var(--surface-card, #121212); border-radius: var(--component-card-radius, 33px); }
+.tile b { display: block; font: 500 18px/1.25 var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.tile .price { display: block; font: 500 var(--font-size-price, 42px)/1 var(--sg-sans); letter-spacing: -0.03em; margin: 10px 0; }
+.chip { display: inline-flex; align-items: center; height: var(--component-chip-height, 35px); padding: 0 15px; border-radius: 9999px; font: 500 14px/1 var(--sg-sans); }
+.chip.dark { background: var(--surface-card, #121212); box-shadow: 0 0 0 1px var(--border-card, #222); color: var(--text-primary, #fff); }
+.chip.pro { background: #fff; color: #0a0a0a; }
+.chip.edu { background: var(--component-button-edu-bg, #2c5cff); color: #fff; }
+.pill-save { display: inline-flex; align-items: center; height: var(--component-pill-height, 25px); padding: 0 10px; border-radius: 9999px; background: var(--accent-pill, #ff3dae); color: #fff; font: 500 12px/1 var(--sg-sans); letter-spacing: -0.4px; }
+.field { display: flex; align-items: center; height: var(--component-field-height, 35px); padding: 0 var(--component-field-padding, 15px); border-radius: var(--component-field-radius, 10px); background: var(--component-field-bg, #1e1e1e); border: 1px solid var(--component-field-border, #2a2a2a); color: var(--component-field-text, #efefef); font: 500 14px/15px var(--sg-sans); letter-spacing: -0.35px; }
+.field .ph { color: var(--text-placeholder-app, #959595); }
+.field.pill { border-radius: 9999px; border: none; padding: 0 20px; color: var(--text-primary, #fff); }
+.field.pill .ph { color: var(--text-placeholder, rgba(255,255,255,.5)); }
+.card-login { background: var(--component-card-app-bg, rgba(239,239,239,.05)); border-radius: var(--component-card-app-radius, 20px); padding: var(--component-card-app-padding, 50px); color: var(--text-app, #efefef); max-width: 450px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-card, #222); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-card, #222); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--text-primary, #fff); opacity: .65; font-family: var(--sg-mono); }
+.bill { display: inline-flex; gap: 10px; font: 500 16px/24px var(--sg-sans); letter-spacing: -0.4px; align-items: center; }
+.bill.on { color: var(--text-primary, #fff); }
+.bill.off { color: var(--text-dim, rgba(255,255,255,.3)); }
+.arrow { width: var(--component-carousel-size, 40px); height: var(--component-carousel-size, 40px); border-radius: 50%; background: var(--surface-overlay, rgba(0,0,0,.5)); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Endless Tools style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Endless Tools, measured</h2>
+  <p class="lead">endlesstools.io is a Next.js + Tailwind v4 marketing one-pager for a canvas editor, and app.endlesstools.io is the app host whose /login card and /legal/* documents paint signed out. Both paint a single dark theme over the same grey ramp: #000 marketing field under #fff ink with grey-4 #959595 muted text, and the app shell's #0a0a0a field under #efefef ink. The marketing sheet declares its @theme layer — --color-*, the --text-* ramp from 42/46 title-primary to 12/14 body-secondary, --radius-base/fill — but paints the accents as arbitrary values: the pink CTA #ff13b1 (hover #ff4bc4), the #ff3dae save pill and the blue education #2c5cff (hover #5a65ff), all measured off the live components. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from endlesstools.io and app.endlesstools.io on 2026-11-13, signed out, in headless Chromium. The editor behind sign-in is a documented boundary; the newsletter and login forms were never submitted, and the only presses were local UI toggles (the billing switch, the password-login switch, the consent checkbox). Inter is a served face and is not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The marketing header is an 80px sticky bar under a black veil gradient: the wordmark, a translucent Log-in pill on grey-2, and the solid white Start-for-free pill — 12/14 labels, 20px inline padding, fully rounded. The hero pairs the 42/46 title with the grey lede and the pink #ff13b1 Start-creating pill.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">Endless Tools</span><span class="sp"></span><span class="btn ghost">Log in</span><span class="btn primary">Start for free</span></div>
+    <div class="hero">A visual exploration tool<small>for graphic designers. Bring your assets. Try materials, effects, type, 3D, AI and motion.</small><span class="btn accent">Start creating</span></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">The billing toggle dims the unselected label to white/30 and hangs the pink #ff3dae 'Save 20%' pill off Yearly. Plan cards are 33px-radius #121212 tiles with a #222 hairline ring (hover #1d1d1d), 14/35 chips, the 42px price and a full-width white CTA.</p>
+  <div class="mock" style="padding:20px">
+    <div style="text-align:center;margin-bottom:18px"><span class="bill on">Yearly <span class="pill-save">Save 20%</span></span> &nbsp; <span class="bill off">Monthly</span></div>
+    <div class="grid">
+      <div class="tile"><span class="chip dark">Starter</span><span class="price">$9</span><span class="sub">per month, billed yearly</span><br><br><span class="btn primary" style="width:100%">Start for free</span></div>
+      <div class="tile"><span class="chip pro">Pro</span><span class="price">$19</span><span class="sub">per month, billed yearly</span><br><br><span class="btn primary" style="width:100%">Start for free</span></div>
+      <div class="tile"><span class="chip edu">Education</span><span class="price">Free</span><span class="sub">for students and teachers</span><br><br><span class="btn edu" style="width:100%">Apply for education</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The app shell</h2>
+  <p class="lead">app.endlesstools.io paints the same ramp one step darker: a #0a0a0a field, #efefef ink, and the 450px login card as a 5% ink veil at 20px radius with 50px padding. Fields are #1e1e1e with #2a2a2a borders at 10px radius (grey-1 #373737 when focused); buttons are #efefef ink at the same radius.</p>
+  <div class="mock" style="padding:40px;background:var(--surface-app,#0a0a0a)">
+    <div class="card-login">
+      <b style="font:500 23px/25px var(--sg-sans)">Welcome to Endless Tools!</b>
+      <p style="font-size:12px;color:var(--text-muted,#959595)">Sign in or create an account with your email.</p>
+      <div class="field"><span class="ph">Email</span></div>
+      <br><span class="btn app" style="width:100%">Send Code</span><br><br>
+      <span class="btn" style="border-color:var(--text-app,#efefef);color:var(--text-app,#efefef);border-radius:10px;height:35px;padding:0 25px;width:100%">Log in with password</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Newsletter and footer</h2>
+  <p class="lead">The signup band keeps the pill shape for its field — #1e1e1e fill, white/50 placeholder — beside a white submit pill that drops to white/85 on hover. Footer links run grey-4 at 14/18 and brighten to white on hover.</p>
+  <div class="mock" style="padding:20px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+    <span class="field pill" style="width:310px"><span class="ph">Enter your email</span></span>
+    <span class="btn primary">Subscribe</span>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The neutral ramp is the declared --color-* layer plus the painted card greys (#121212, #1d1d1d, #080808, #222, #343434) and the oklab translucencies Tailwind v4 computes from white and black. The accents are arbitrary-value utilities, never declared: pink #ff13b1/#ff4bc4/#ff3dae and blue #2c5cff/#5a65ff.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Controls are fully rounded pills at 35-38px tall (10-20px inline padding); surfaces step through 10px app radius, 12px fill, 16px thumbnails, 20px login card and 33px plan cards. Padding runs 15px cards, 20px pills, 50px login card, 150px footer.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Gradients and overlays</h2>
+  <div id="grad-out" class="kv"></div>
+
+  <h2 class="sh">Motion</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">One family: Inter variable (100-900) with next/font's Arial-metric fallback, subset woff2 on both hosts. The declared ramp runs title-primary 42/46 through body-secondary 12/14, all at 500 for titles and labels, 400 for body; the app shell measures its own 23/25 card title, 14/15 labels and 42/40 legal title.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --color-*/--text-* variables from the live stylesheets and computed styles on the elements of both surfaces</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, focused, filled and selected states measured per component; the billing toggle, password switch and consent box exercised without submitting anything</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"sans":{"v":"Inter, \"Inter Fallback\"","t":"fontFamily","s":"computed fontFamily of every measured component, one stack (raw/components-computed.json); the Inter @font-face faces are in raw/css-vars.json fonts","d":"Inter variable (100-900, woff2, swap) with next/font's Arial-metric 'Inter Fallback'; the only family any measured text paints."},"system":{"v":"ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"","t":"fontFamily","s":"css-var --font-sans (dark)","d":"The plain ui-sans-serif system stack Tailwind v4 declares; painted as the login legal line's font."},"mono":{"v":"ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace","t":"fontFamily","s":"css-var --font-mono (dark)","d":"The ui-monospace system stack (declared; no measured text paints it on the public surfaces)."},"skeleton":{"v":"\"Flow Rounded\", \"Flow Rounded Fallback\"","t":"fontFamily","s":"declared --font-skeleton on .__variable_86b611 in the app bundle (raw/css-vars.json theme; the Flow Rounded @font-face is in its fonts)","d":"Flow Rounded: the geometric placeholder face the app bundles for skeleton/loading text; no measured component paints it."}},"size":{"title-primary":{"v":"42px","t":"dimension","s":"css-var --text-title-primary (dark)","d":"42px: hero, section and newsletter titles."},"title-secondary":{"v":"24px","t":"dimension","s":"css-var --text-title-secondary (dark)","d":"24px: asset/section sub-heads; the mobile hero size."},"subtitle":{"v":"18px","t":"dimension","s":"css-var --text-subtitle (dark)","d":"18px subtitle step (declared; no measured component paints it on the public pages)."},"body-primary":{"v":"14px","t":"dimension","s":"css-var --text-body-primary (dark)","d":"14px: lede, footer and consent text."},"body-secondary":{"v":"12px","t":"dimension","s":"css-var --text-body-secondary (dark)","d":"12px: pill buttons, chips and small labels."},"price":{"v":"42px","t":"dimension","s":"computed fontSize of plan-price default (raw/components-computed.json)","d":"42px price figure on the plan cards."},"login-title":{"v":"23px","t":"dimension","s":"computed fontSize of login-title default (raw/components-computed.json)","d":"23px login card title."},"legal-title":{"v":"42px","t":"dimension","s":"computed fontSize of legal-title default (raw/components-computed.json)","d":"42px legal document title."},"toggle":{"v":"16px","t":"dimension","s":"computed fontSize of billing-yearly default (raw/components-computed.json)","d":"16px billing toggle label."},"body":{"v":"14px","t":"dimension","s":"computed fontSize of footer-link default (raw/components-computed.json)","d":"14px footer/body text."},"login-body":{"v":"14px","t":"dimension","s":"computed fontSize of login-field default (raw/components-computed.json)","d":"14px login field text (its own 15px leading)."},"login-small":{"v":"12px","t":"dimension","s":"computed fontSize of login-forgot default (raw/components-computed.json)","d":"12px login helper text (13px leading)."},"chip":{"v":"14px","t":"dimension","s":"computed fontSize of plan-chip default (raw/components-computed.json)","d":"14px plan chip label at 35px leading."}},"lineHeight":{"title-primary":{"v":"46px","t":"dimension","s":"css-var --text-title-primary--line-height (dark)"},"title-secondary":{"v":"26px","t":"dimension","s":"css-var --text-title-secondary--line-height (dark)"},"subtitle":{"v":"20px","t":"dimension","s":"css-var --text-subtitle--line-height (dark)"},"body-primary":{"v":"18px","t":"dimension","s":"css-var --text-body-primary--line-height (dark)"},"body-secondary":{"v":"14px","t":"dimension","s":"css-var --text-body-secondary--line-height (dark)"},"price":{"v":"42px","t":"dimension","s":"computed lineHeight of plan-price default (raw/components-computed.json)","d":"42px flat leading on the price figure."},"login-title":{"v":"25px","t":"dimension","s":"computed lineHeight of login-title default (raw/components-computed.json)","d":"25px on the login card title."},"legal-title":{"v":"40px","t":"dimension","s":"computed lineHeight of legal-title default (raw/components-computed.json)","d":"40px on the legal title."},"toggle":{"v":"24px","t":"dimension","s":"computed lineHeight of billing-yearly default (raw/components-computed.json)","d":"24px on the billing toggle."},"body":{"v":"18px","t":"dimension","s":"computed lineHeight of footer-link default (raw/components-computed.json)","d":"18px on footer text."},"login-body":{"v":"15px","t":"dimension","s":"computed lineHeight of login-field default (raw/components-computed.json)","d":"15px on login field text."},"login-small":{"v":"13px","t":"dimension","s":"computed lineHeight of login-forgot default (raw/components-computed.json)","d":"13px on login helper text."},"chip":{"v":"35px","t":"dimension","s":"computed lineHeight of plan-chip default (raw/components-computed.json)","d":"35px on the plan chips (full line-height pill)."},"save-pill":{"v":"25px","t":"dimension","s":"computed lineHeight of save-pill default (raw/components-computed.json)","d":"25px on the save pill."}},"weight":{"medium":{"v":500,"t":"fontWeight","s":"css-var --font-weight-medium (dark)","d":"500: every title, button and label — no lighter or bolder weight paints."},"title-primary":{"v":500,"t":"fontWeight","s":"css-var --text-title-primary--font-weight (dark)","d":"500 on the 42px titles."},"title-secondary":{"v":500,"t":"fontWeight","s":"css-var --text-title-secondary--font-weight (dark)","d":"500 on the 24px heads."},"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of hero-lede default (raw/components-computed.json)","d":"400 body copy weight."},"legal":{"v":400,"t":"fontWeight","s":"computed fontWeight of legal-title default (raw/components-computed.json)","d":"400 on the legal document title."},"login-label":{"v":500,"t":"fontWeight","s":"computed fontWeight of login-field default (raw/components-computed.json)","d":"500 on login fields and buttons."}},"tracking":{"title":{"v":"-.03em","t":"other","s":"css-var --text-title-primary--letter-spacing (dark)","d":"-0.03em: the tight tracking on both title steps."},"tight":{"v":"-.025em","t":"other","s":"css-var --tracking-tight (dark)","d":"-0.025em Tailwind tracking-tight (billing toggle, login labels)."},"price":{"v":"-1.26px","t":"other","s":"computed letterSpacing of plan-price default (raw/components-computed.json)","d":"-0.03em on the price figure."},"login-label":{"v":"-0.35px","t":"other","s":"computed letterSpacing of login-field default (raw/components-computed.json)","d":"-0.025em on the login labels."}}},"color":{"neutral":{"black":{"v":"#0a0a0a","t":"color","s":"css-var --color-black (dark)","d":"#0a0a0a: the app-shell page field (body.bg-back) and the ink on white controls."},"white":{"v":"#ffffff","t":"color","s":"css-var --color-white (dark)","d":"#fff: marketing ink and the white controls."},"secondary":{"v":"#1e1e1e","t":"color","s":"css-var --color-secondary (dark)","d":"#1e1e1e: input fills and translucent nav pills."},"grey-1":{"v":"#373737","t":"color","s":"css-var --color-grey-1 (dark)","d":"#373737: hover fills and focused field borders."},"grey-2":{"v":"#2a2a2a","t":"color","s":"css-var --color-grey-2 (dark)","d":"#2a2a2a: field borders, sign-in pill, switch hover."},"grey-3":{"v":"#555555","t":"color","s":"css-var --color-grey-3 (dark)","d":"#555: secondary greys."},"grey-4":{"v":"#959595","t":"color","s":"css-var --color-grey-4 (dark)","d":"#959595: muted text — ledes, footer, placeholders, helpers."},"page":{"v":"#000000","t":"color","s":"computed body fill (ancestor) of header default (raw/components-computed.json)","d":"#000 marketing page field (Tailwind black, not the --color-black #0a0a0a)."},"card":{"v":"#121212","t":"color","s":"computed backgroundColor of plan-card default (raw/components-computed.json)","d":"#121212 plan/testimonial card fill."},"card-hover":{"v":"#1d1d1d","t":"color","s":"computed backgroundColor of plan-card hover (raw/components-computed.json)","d":"#1d1d1d card hover fill."},"inset":{"v":"#080808","t":"color","s":"computed backgroundColor of social-card default (raw/components-computed.json)","d":"#080808 testimonial card fill."},"ring":{"v":"#222222","t":"color","s":"computed boxShadow ring colour of plan-card default (raw/components-computed.json)","d":"#222 card hairline ring."},"thumb-border":{"v":"#343434","t":"color","s":"computed borderTopColor of asset-thumb default (raw/components-computed.json)","d":"#343434 asset thumbnail border."},"ink":{"v":"#efefef","t":"color","s":"computed color of login-field default (raw/components-computed.json)","d":"#efefef app-shell text white (bg-white utility, not --color-white #fff)."},"hover-white":{"v":"#c4c4c4","t":"color","s":"computed backgroundColor of plan-cta hover (raw/components-computed.json)","d":"#c4c4c4 white-button hover fill."},"alpha":{"veil-5":{"v":"rgba(239, 239, 239, 0.05)","t":"color","s":"computed backgroundColor of login-card default (raw/components-computed.json)","d":"5% app-ink veil: the login card fill."},"ink-75":{"v":"rgba(239, 239, 239, 0.75)","t":"color","s":"computed color of legal-signin hover and legal-link default (raw/components-computed.json)","d":"75% app ink on hover/legal links."},"ink-90":{"v":"rgba(239, 239, 239, 0.9)","t":"color","s":"computed backgroundColor of send-code hover (raw/components-computed.json)","d":"90% app ink: app-button hover fill."},"white-30":{"v":"rgba(255, 255, 255, 0.3)","t":"color","s":"computed color of billing-monthly default (raw/components-computed.json)","d":"30% white: unselected toggle label."},"white-75":{"v":"rgba(255, 255, 255, 0.75)","t":"color","s":"computed color of billing-monthly hover (raw/components-computed.json)","d":"75% white on text hover."},"white-85":{"v":"rgba(255, 255, 255, 0.85)","t":"color","s":"computed backgroundColor of news-submit hover (raw/components-computed.json)","d":"85% white: marketing button hover."},"black-50":{"v":"rgba(10, 10, 10, 0.5)","t":"color","s":"computed backgroundColor of carousel-prev default (raw/components-computed.json)","d":"50% black: carousel arrow rest fill."},"black-80":{"v":"rgba(10, 10, 10, 0.8)","t":"color","s":"computed backgroundColor of carousel-prev hover (raw/components-computed.json)","d":"80% black: carousel arrow hover fill."},"placeholder-50":{"v":"rgba(255, 255, 255, 0.5)","t":"color","s":"computed placeholder color of news-field default (raw/components-computed.json)","d":"50% white: newsletter field placeholder."}}},"accent":{"pink":{"v":"#ff13b1","t":"color","s":"computed backgroundColor of hero-cta default (raw/components-computed.json)","d":"#ff13b1 magenta: the hero Start-creating fill."},"pink-hover":{"v":"#ff4bc4","t":"color","s":"computed backgroundColor of hero-cta hover (raw/components-computed.json)","d":"#ff4bc4 pink hover/pressed."},"pill":{"v":"#ff3dae","t":"color","s":"computed backgroundColor of save-pill default (raw/components-computed.json)","d":"#ff3dae pink: the 'Save 20%' pill."},"blue":{"v":"#2c5cff","t":"color","s":"computed backgroundColor of plan-chip-edu default and edu-cta default (raw/components-computed.json)","d":"#2c5cff blue: education chip and CTA."},"blue-hover":{"v":"#5a65ff","t":"color","s":"computed backgroundColor of edu-cta hover (raw/components-computed.json)","d":"#5a65ff blue hover/pressed."},"focus":{"v":"#005fcc","t":"color","s":"computed outlineColor of footer-link focus-visible and plan-cta focus-visible (raw/components-computed.json); outline-style auto, so the UA draws the ring and this colour is not painted as recorded","d":"#005fcc: the outline colour Chrome reports under outline-style auto (its -webkit-focus-ring-color). The browser draws its own focus ring there, so this is the UA default, not a colour the product paints."}}},"gradient":{"nav":{"v":"linear-gradient(rgb(0, 0, 0) 14.73%, rgba(0, 10, 10, 0) 100%)","t":"other","s":"computed backgroundImage of header default (raw/components-computed.json)","d":"The black veil the sticky header fades from."},"overlay":{"v":"linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 85.27%)","t":"other","s":"entered by hand at capture time, not measured: no rule named .ui-overlay-gradient and no component painting it is in raw/; recapture needed","d":"The bottom fade over media tiles."}},"radius":{"base":{"v":"10px","t":"dimension","s":"css-var --radius-base (dark)","d":"10px: app-shell fields and buttons."},"fill":{"v":"12px","t":"dimension","s":"css-var --radius-fill (dark)","d":"12px: inner tiles and card fills."},"thumb":{"v":"16px","t":"dimension","s":"computed borderTopLeftRadius of asset-thumb default (raw/components-computed.json)","d":"16px asset thumbnails."},"login":{"v":"20px","t":"dimension","s":"computed borderTopLeftRadius of login-card default (raw/components-computed.json)","d":"20px login card."},"card":{"v":"33px","t":"dimension","s":"computed borderTopLeftRadius of plan-card default (raw/components-computed.json)","d":"33px plan/testimonial cards."},"pill":{"v":"9999px","t":"dimension","s":"derived: computed borderTopLeftRadius of hero-cta default is 3.35544e+07px, Chrome's rounded-full (raw/components-computed.json); stored as 9999px","d":"Fully rounded: buttons, chips, pills, checkboxes."}},"spacing":{"unit":{"v":"4px","t":"dimension","s":"css-var --spacing (dark)","d":"Tailwind v4's 4px spacing unit."},"control-x":{"v":"20px","t":"dimension","s":"computed paddingLeft of nav-cta default (raw/components-computed.json)","d":"20px inline padding on pill buttons and the newsletter field."},"chip-x":{"v":"15px","t":"dimension","s":"computed paddingLeft of plan-chip default (raw/components-computed.json)","d":"15px chip padding."},"pill-x":{"v":"10px","t":"dimension","s":"computed paddingLeft of save-pill default (raw/components-computed.json)","d":"10px save-pill padding."},"field-x":{"v":"15px","t":"dimension","s":"computed paddingLeft of login-field default (raw/components-computed.json)","d":"15px app-field padding."},"switch-x":{"v":"25px","t":"dimension","s":"computed paddingLeft of login-switch default (raw/components-computed.json)","d":"25px secondary-button padding."},"signin-x":{"v":"30px","t":"dimension","s":"computed paddingLeft of legal-signin default (raw/components-computed.json)","d":"30px legal sign-in padding."},"card":{"v":"15px","t":"dimension","s":"computed paddingTop of plan-card default (raw/components-computed.json)","d":"15px plan-card padding."},"login-card":{"v":"50px","t":"dimension","s":"computed paddingTop of login-card default (raw/components-computed.json)","d":"50px login-card padding."},"footer-y":{"v":"150px","t":"dimension","s":"computed paddingTop of footer default (raw/components-computed.json)","d":"150px above and below the footer."}},"motion":{"duration":{"default":{"v":"150ms","t":"duration","s":"css-var --default-transition-duration (dark)","d":"150ms: the default transition duration on buttons and pills."},"fast":{"v":"200ms","t":"duration","s":"declared --tw-duration of .duration-200 in the readable sheets (raw/css-vars.json tailwind)","d":"200ms duration used on toggles."},"slow":{"v":"300ms","t":"duration","s":"declared --tw-duration of .duration-300 in the readable sheets (raw/css-vars.json tailwind)","d":"300ms duration used on cards."}},"easing":{"in-out":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-in-out (dark)","d":"cubic-bezier(.4,0,.2,1): the default transition timing."}},"press":{"scale":{"v":"scale(0.95)","t":"other","s":"declared --tw-scale-x/-y of .active:scale-95 in the readable sheets (raw/css-vars.json tailwind)","d":"Buttons scale to 95% while pressed."}},"animation":{"gradient-flow":{"v":"1.5s ease-in-out 0s infinite alternate none running move-gradient","t":"other","s":"recorded animation of the .animate-gradient-flow rule (raw/components-computed.json _meta.sheets.home)","d":"The gradient drift on the hero title's marks."},"orbit":{"v":"et-orbit var(--orbit-duration,28s)linear infinite","t":"other","s":"recorded animation of the .animate-orbit rule (raw/components-computed.json _meta.sheets.home)","d":"The hero's orbiting asset marks."},"skeleton":{"v":"1s linear 0s infinite alternate none running SkeletonLoading","t":"other","s":"recorded animation of the .ui-skeleton__field, .ui-skeleton__unit rule (raw/components-computed.json _meta.sheets.login)","d":"The app shell's skeleton shimmer (the Flow Rounded placeholder face)."},"pulse":{"v":"2s cubic-bezier(0.4, 0, 0.6, 1) 0s infinite normal none running pulse","t":"other","s":"recorded animation of the .animate-pulse rule (raw/components-computed.json _meta.sheets.login)","d":"Tailwind's pulse on the app shell."},"spin":{"v":"1s linear 0s infinite normal none running spin","t":"other","s":"recorded animation of the .animate-spin rule (raw/components-computed.json _meta.sheets.login)","d":"Tailwind's spin on the app shell."}}},"typography":{"title-primary":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.title-primary}","lineHeight":"{font.lineHeight.title-primary}","fontWeight":"{font.weight.title-primary}","letterSpacing":"{font.tracking.title}"},"t":"typography","s":"declared --text-title-primary composite (raw/css-vars.json)","d":"Hero, section and newsletter titles: 42/46, 500, -0.03em."},"title-secondary":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.title-secondary}","lineHeight":"{font.lineHeight.title-secondary}","fontWeight":"{font.weight.title-secondary}","letterSpacing":"{font.tracking.title}"},"t":"typography","s":"declared --text-title-secondary composite (raw/css-vars.json)","d":"Sub-heads and the mobile hero: 24/26, 500, -0.03em."},"subtitle":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.subtitle}","lineHeight":"{font.lineHeight.subtitle}","fontWeight":"{font.weight.medium}","letterSpacing":"normal"},"t":"typography","s":"declared --text-subtitle composite (raw/css-vars.json)","d":"18/20 subtitle step."},"body":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.body-primary}","lineHeight":"{font.lineHeight.body-primary}","fontWeight":"{font.weight.regular}","letterSpacing":"normal"},"t":"typography","s":"declared --text-body-primary composite (raw/css-vars.json)","d":"14/18 lede, footer and consent text."},"label":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.body-secondary}","lineHeight":"{font.lineHeight.body-secondary}","fontWeight":"{font.weight.medium}","letterSpacing":"normal"},"t":"typography","s":"declared --text-body-secondary composite (raw/css-vars.json)","d":"12/14 pill buttons and small labels."},"price":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.price}","lineHeight":"{font.lineHeight.price}","fontWeight":"{font.weight.title-primary}","letterSpacing":"{font.tracking.price}"},"t":"typography","s":"computed text style of plan-price default (raw/components-computed.json)","d":"42/42 price figure."},"login-title":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.login-title}","lineHeight":"{font.lineHeight.login-title}","fontWeight":"{font.weight.medium}","letterSpacing":"normal"},"t":"typography","s":"computed text style of login-title default (raw/components-computed.json)","d":"23/25 app card title."},"legal-title":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.legal-title}","lineHeight":"{font.lineHeight.legal-title}","fontWeight":"{font.weight.legal}","letterSpacing":"normal"},"t":"typography","s":"computed text style of legal-title default (raw/components-computed.json)","d":"42/40 legal document title."},"toggle":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.toggle}","lineHeight":"{font.lineHeight.toggle}","fontWeight":"{font.weight.medium}","letterSpacing":"{font.tracking.tight}"},"t":"typography","s":"computed text style of billing-yearly default (raw/components-computed.json)","d":"16/24 billing toggle."},"login-label":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.login-body}","lineHeight":"{font.lineHeight.login-body}","fontWeight":"{font.weight.login-label}","letterSpacing":"{font.tracking.login-label}"},"t":"typography","s":"computed text style of login-field default (raw/components-computed.json)","d":"14/15 app labels and fields."},"login-small":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.login-small}","lineHeight":"{font.lineHeight.login-small}","fontWeight":"{font.weight.login-label}","letterSpacing":"normal"},"t":"typography","s":"computed text style of login-forgot default (raw/components-computed.json)","d":"12/13 app helper text."},"chip":{"v":{"fontFamily":"{font.family.sans}","fontSize":"{font.size.chip}","lineHeight":"{font.lineHeight.chip}","fontWeight":"{font.weight.medium}","letterSpacing":"normal"},"t":"typography","s":"computed text style of plan-chip default (raw/components-computed.json)","d":"14/35 plan chip label."}}},"light":{},"dark":{"surface":{"page":{"v":"{color.neutral.page}","t":"color","s":"role alias over the core palette","d":"#000 marketing page field."},"app":{"v":"{color.neutral.black}","t":"color","s":"role alias over the core palette","d":"#0a0a0a app-shell page field (body.bg-back)."},"header-veil":{"v":"{gradient.nav}","t":"other","s":"role alias over the core palette","d":"The black fade behind the sticky header."},"card":{"v":"{color.neutral.card}","t":"color","s":"role alias","d":"#121212 card fill."},"card-hover":{"v":"{color.neutral.card-hover}","t":"color","s":"role alias","d":"#1d1d1d card hover fill."},"inset":{"v":"{color.neutral.inset}","t":"color","s":"role alias","d":"#080808 testimonial card fill."},"field":{"v":"{color.neutral.secondary}","t":"color","s":"role alias","d":"#1e1e1e field fill."},"raised":{"v":"{color.neutral.grey-2}","t":"color","s":"role alias","d":"#2a2a2a raised fill (sign-in pill, switch hover)."},"hover":{"v":"{color.neutral.grey-1}","t":"color","s":"role alias","d":"#373737 hover/focused fill."},"veil":{"v":"{color.neutral.alpha.veil-5}","t":"color","s":"role alias","d":"5% ink veil (login card)."},"overlay":{"v":"{color.neutral.alpha.black-50}","t":"color","s":"role alias","d":"50% black overlay (carousel arrow)."},"overlay-hover":{"v":"{color.neutral.alpha.black-80}","t":"color","s":"role alias","d":"80% black overlay hover."}},"text":{"primary":{"v":"{color.neutral.white}","t":"color","s":"role alias","d":"#fff marketing text (body text-white)."},"app":{"v":"{color.neutral.ink}","t":"color","s":"role alias","d":"#efefef app-shell text."},"muted":{"v":"{color.neutral.grey-4}","t":"color","s":"role alias","d":"#959595 muted text (ledes, footer, helpers)."},"dim":{"v":"{color.neutral.alpha.white-30}","t":"color","s":"role alias","d":"30% white: unselected labels."},"app-dim":{"v":"{color.neutral.alpha.ink-75}","t":"color","s":"role alias","d":"75% app ink: legal links, sign-in hover."},"on-light":{"v":"{color.neutral.black}","t":"color","s":"role alias","d":"#0a0a0a on white controls."},"on-accent":{"v":"{color.neutral.white}","t":"color","s":"role alias","d":"#fff on the pink/blue accents."},"placeholder":{"v":"{color.neutral.alpha.placeholder-50}","t":"color","s":"role alias","d":"50% white placeholder on marketing fields."},"placeholder-app":{"v":"{color.neutral.grey-4}","t":"color","s":"role alias","d":"#959595 placeholder on app fields."}},"border":{"card":{"v":"{color.neutral.ring}","t":"color","s":"role alias","d":"#222 card hairline (1px ring)."},"field":{"v":"{color.neutral.grey-2}","t":"color","s":"role alias","d":"#2a2a2a field border."},"field-focus":{"v":"{color.neutral.grey-1}","t":"color","s":"role alias","d":"#373737 focused field border/ring."},"thumb":{"v":"{color.neutral.thumb-border}","t":"color","s":"role alias","d":"#343434 asset thumbnail border."},"muted":{"v":"{color.neutral.grey-4}","t":"color","s":"role alias","d":"#959595 consent box border (border-current on muted text)."}},"action":{"bg":{"v":"{color.neutral.white}","t":"color","s":"role alias","d":"#fff primary controls (nav CTA, plan CTA, newsletter submit)."},"fg":{"v":"{color.neutral.black}","t":"color","s":"role alias","d":"#0a0a0a on the white controls."},"bg-hover":{"v":"{color.neutral.hover-white}","t":"color","s":"role alias","d":"#c4c4c4 white-control hover."},"bg-hover-soft":{"v":"{color.neutral.alpha.white-85}","t":"color","s":"role alias","d":"85% white hover (newsletter submit)."},"app-bg":{"v":"{color.neutral.ink}","t":"color","s":"role alias","d":"#efefef app-shell buttons (bg-white utility)."},"app-bg-hover":{"v":"{color.neutral.alpha.ink-90}","t":"color","s":"role alias","d":"90% app-ink button hover."},"nav-bg-hover":{"v":"{color.neutral.grey-1}","t":"color","s":"role alias","d":"#373737 nav-action hover fill: the header's white pill flips dark."},"nav-fg-hover":{"v":"{color.neutral.white}","t":"color","s":"role alias","d":"#fff nav-action hover text."}},"accent":{"pink":{"v":"{color.accent.pink}","t":"color","s":"role alias","d":"#ff13b1 primary accent CTA."},"pink-hover":{"v":"{color.accent.pink-hover}","t":"color","s":"role alias","d":"#ff4bc4 accent hover/pressed."},"pill":{"v":"{color.accent.pill}","t":"color","s":"role alias","d":"#ff3dae save/discount pill."},"blue":{"v":"{color.accent.blue}","t":"color","s":"role alias","d":"#2c5cff education accent."},"blue-hover":{"v":"{color.accent.blue-hover}","t":"color","s":"role alias","d":"#5a65ff education hover/pressed."}},"focus":{"ua":{"v":"{color.accent.focus}","t":"color","s":"role alias","d":"#005fcc: the UA keyboard focus ring on marketing links (1px auto outline, 1px offset)."}},"component":{"button":{"height":{"v":"35px","t":"dimension","s":"computed height of nav-cta default (raw/components-computed.json)","d":"35px nav pill buttons."},"bg":{"v":"{action.bg}","t":"color","s":"role alias","d":"White plan/team card pill (plan-cta, team-cta)."},"text":{"v":"{action.fg}","t":"color","s":"role alias","d":"Dark ink on the white pills."},"bg-hover":{"v":"{action.bg-hover}","t":"color","s":"role alias","d":"#c4c4c4 hover on the white card pills."},"radius":{"v":"{radius.pill}","t":"dimension","s":"role alias","d":"Fully rounded."},"padding":{"v":"{spacing.control-x}","t":"dimension","s":"role alias","d":"20px inline padding."}},"button-lg":{"height":{"v":"36px","t":"dimension","s":"computed height of hero-cta default (raw/components-computed.json)","d":"36px marketing CTAs."}},"button-mobile":{"height":{"v":"38px","t":"dimension","s":"computed height of m-cta default (raw/components-computed.json)","d":"38px mobile CTA."}},"button-app":{"height":{"v":"35px","t":"dimension","s":"computed height of send-code default (raw/components-computed.json)","d":"35px app buttons."},"bg":{"v":"{action.app-bg}","t":"color","s":"role alias","d":"#efefef app button."},"bg-hover":{"v":"{action.app-bg-hover}","t":"color","s":"role alias","d":"90% ink hover."},"text":{"v":"#000000","t":"color","s":"computed color of send-code default (raw/components-computed.json)","d":"Black text on the app button."},"radius":{"v":"{radius.base}","t":"dimension","s":"role alias","d":"10px app radius."}},"field":{"height":{"v":"35px","t":"dimension","s":"computed height of login-field default (raw/components-computed.json)","d":"35px app fields."},"bg":{"v":"{surface.field}","t":"color","s":"role alias","d":"#1e1e1e app field."},"text":{"v":"{text.app}","t":"color","s":"role alias","d":"#efefef field text."},"border":{"v":"{border.field}","t":"color","s":"role alias","d":"#2a2a2a field border."},"border-focus":{"v":"{border.field-focus}","t":"color","s":"role alias","d":"#373737 focused border."},"radius":{"v":"{radius.base}","t":"dimension","s":"role alias","d":"10px app radius."},"padding":{"v":"{spacing.field-x}","t":"dimension","s":"role alias","d":"15px inline padding."}},"field-news":{"height":{"v":"35px","t":"dimension","s":"computed height of news-field default (raw/components-computed.json)","d":"35px newsletter field."}},"chip":{"height":{"v":"35px","t":"dimension","s":"computed height of plan-chip default (raw/components-computed.json)","d":"35px plan chips."}},"pill":{"height":{"v":"25px","t":"dimension","s":"computed height of save-pill default (raw/components-computed.json)","d":"25px save pill."}},"signin":{"height":{"v":"40px","t":"dimension","s":"computed height of legal-signin default (raw/components-computed.json)","d":"40px legal sign-in pill."}},"carousel":{"size":{"v":"40px","t":"dimension","s":"computed width of carousel-prev default (raw/components-computed.json)","d":"40px round carousel arrows."}},"consent":{"size":{"v":"18px","t":"dimension","s":"computed width of news-consent default (raw/components-computed.json)","d":"18px consent checkbox."}},"thumb":{"size":{"v":"144px","t":"dimension","s":"computed width of asset-thumb default (raw/components-computed.json)","d":"144px asset thumbnails."}},"logo":{"height":{"v":"40px","t":"dimension","s":"computed height of logo default (raw/components-computed.json)","d":"40px logo block."}},"header":{"height":{"v":"80px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"80px sticky header."}},"card-plan":{"width":{"v":"356.656px","t":"dimension","s":"computed width of plan-card default (raw/components-computed.json)","d":"357px plan card column."}},"card-login":{"width":{"v":"450px","t":"dimension","s":"computed width of login-card default (raw/components-computed.json)","d":"450px login card."}},"button-nav":{"bg":{"v":"{action.bg}","t":"color","s":"role alias","d":"The header's white Start-for-free pill."},"text":{"v":"{action.fg}","t":"color","s":"role alias","d":"Dark ink at rest."},"bg-hover":{"v":"{action.nav-bg-hover}","t":"color","s":"role alias","d":"#373737 hover: the nav pill inverts dark, unlike the card pills."},"text-hover":{"v":"{action.nav-fg-hover}","t":"color","s":"role alias","d":"#fff hover text on the nav pill."},"radius":{"v":"{radius.pill}","t":"dimension","s":"role alias","d":"Fully rounded."},"padding":{"v":"{spacing.control-x}","t":"dimension","s":"role alias","d":"20px inline padding."}},"button-news":{"bg":{"v":"{action.bg}","t":"color","s":"role alias","d":"White newsletter submit pill."},"text":{"v":"{action.fg}","t":"color","s":"role alias","d":"Dark ink on the submit."},"bg-hover":{"v":"{action.bg-hover-soft}","t":"color","s":"role alias","d":"85% white hover on the submit."},"radius":{"v":"{radius.pill}","t":"dimension","s":"role alias","d":"Fully rounded."},"padding":{"v":"{spacing.control-x}","t":"dimension","s":"role alias","d":"20px inline padding."}},"button-accent":{"bg":{"v":"{accent.pink}","t":"color","s":"role alias","d":"Pink hero CTA."},"bg-hover":{"v":"{accent.pink-hover}","t":"color","s":"role alias","d":"#ff4bc4 hover."},"text":{"v":"{text.on-accent}","t":"color","s":"role alias","d":"White on pink."},"radius":{"v":"{radius.pill}","t":"dimension","s":"role alias","d":"Fully rounded."}},"button-edu":{"bg":{"v":"{accent.blue}","t":"color","s":"role alias","d":"Blue education CTA."},"bg-hover":{"v":"{accent.blue-hover}","t":"color","s":"role alias","d":"#5a65ff hover."},"text":{"v":"{text.on-accent}","t":"color","s":"role alias","d":"White on blue."},"radius":{"v":"{radius.pill}","t":"dimension","s":"role alias","d":"Fully rounded."}},"field-pill":{"bg":{"v":"{surface.field}","t":"color","s":"role alias","d":"#1e1e1e newsletter field."},"text":{"v":"{text.primary}","t":"color","s":"role alias","d":"#fff field text."},"radius":{"v":"{radius.pill}","t":"dimension","s":"role alias","d":"Fully rounded pill field."},"padding":{"v":"{spacing.control-x}","t":"dimension","s":"role alias","d":"20px inline padding."}},"card":{"bg":{"v":"{surface.card}","t":"color","s":"role alias","d":"#121212 plan card."},"bg-hover":{"v":"{surface.card-hover}","t":"color","s":"role alias","d":"#1d1d1d card hover."},"border":{"v":"{border.card}","t":"color","s":"role alias","d":"#222 hairline ring."},"radius":{"v":"{radius.card}","t":"dimension","s":"role alias","d":"33px card radius."},"padding":{"v":"{spacing.card}","t":"dimension","s":"role alias","d":"15px card padding."}},"card-social":{"bg":{"v":"{surface.inset}","t":"color","s":"role alias","d":"#080808 testimonial card."},"border":{"v":"{color.neutral.grey-1}","t":"color","s":"role alias","d":"#373737 inset ring (a box-shadow ring, not a border)."},"radius":{"v":"{radius.fill}","t":"dimension","s":"role alias","d":"12px fill radius on the testimonial card."}},"card-app":{"bg":{"v":"{surface.veil}","t":"color","s":"role alias","d":"5% ink veil login card."},"radius":{"v":"{radius.login}","t":"dimension","s":"role alias","d":"20px login card radius."},"padding":{"v":"{spacing.login-card}","t":"dimension","s":"role alias","d":"50px login card padding."}}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.dark || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (roles.length) {
+    h += `<div class="pal-h">dark roles</div><div class="pal dark">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function grads() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.gradient || {}, 'gradient.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#grad-out').innerHTML = m || '<div><b>none measured</b></div>';
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat((TOK.core.motion || {}).duration || {}, 'motion.duration.')) e += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).press || {}, 'motion.press.')) e += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.dark.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Endless Tools</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

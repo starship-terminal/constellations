@@ -1,9 +1,18 @@
 // Shared helpers for the Gauth captures (adapted from the Coursera kit).
 // Run with PLAYWRIGHT pointing at a Playwright install (index.mjs) when this
 // directory has no node_modules of its own.
+// PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+// for it. While this is null the script stops: the kit's copy is Gauth's example and would
+// read or write Gauth's values. KIT_EXAMPLE=1 runs the example as it is.
+const ADAPTED_FOR = null;
+if (!ADAPTED_FOR && !process.env.KIT_EXAMPLE) {
+  console.error('lib.mjs is the kit\'s Gauth example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR');
+  process.exit(2);
+}
 import fs from 'node:fs';
 import path from 'node:path';
-import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+import { quantizeCrop } from '../crop.mjs';
 
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 export const { chromium } = pw.default ?? pw;
@@ -18,7 +27,7 @@ export const UA_MOBILE =
   'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1';
 export const BASE = 'https://www.gauth.com';
 
-export const HERE = path.dirname(new URL(import.meta.url).pathname);
+export const HERE = path.dirname(fileURLToPath(import.meta.url));   // decoded: a checkout path may hold a space
 export const REF = path.resolve(HERE, '..', '..', '..'); // systems/<slug>, from tools/capture/public
 export const CROPS = path.join(REF, 'components', 'crops');
 export const RAW = path.join(REF, 'raw');
@@ -102,6 +111,9 @@ export async function styleOf(locator) {
     // A url() in a computed value (a background photo, a cursor) can be a signed URL: recorded as
     // url(…), only data: and #fragment references kept.
     const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\(\s*(?!['"]?(?:data:|#))(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|[^)]*)\s*\)/g, 'url(…)') : v);
+    // An email address in recorded text (a field's placeholder showing a product's inbox, a label naming
+    // an account) is recorded as <email>, so no address reaches the package.
+    const noEmail = (v) => (typeof v === 'string' ? v.replace(/[\w.+%-]+@[\w-]+(?:\.[\w-]+)+/g, '<email>') : v);
     const pick = (cs) => {
       const o = {};
       for (const p of props) o[p] = noUrl(cs[p]);
@@ -112,7 +124,8 @@ export async function styleOf(locator) {
     const out = {
       tag: el.tagName.toLowerCase(),
       classes: cls(el).slice(0, 4).join(' '),
-      text: (el.innerText || el.getAttribute('aria-label') || el.getAttribute('placeholder') || '').trim().replace(/\s+/g, ' ').slice(0, 80),
+      // a field's placeholder is not its text: it is recorded under placeholder.text below
+      text: noEmail((el.innerText || el.getAttribute('aria-label') || '').trim().replace(/\s+/g, ' ')).slice(0, 80),
       rect: { x: +r.x.toFixed(1), y: +r.y.toFixed(1), w: +r.width.toFixed(2), h: +r.height.toFixed(2) },
       style: pick(cs),
     };
@@ -166,11 +179,11 @@ export async function styleOf(locator) {
     if (tn && tn.parentElement !== el) {
       const t = tn.parentElement;
       const tc = getComputedStyle(t);
-      out.textStyle = { node: t.tagName.toLowerCase() + cls(t).slice(0, 2).map((x) => '.' + x).join(''), text: tn.textContent.trim().slice(0, 40), fontFamily: tc.fontFamily, fontSize: tc.fontSize, lineHeight: tc.lineHeight, fontWeight: tc.fontWeight, letterSpacing: tc.letterSpacing, color: tc.color, textDecorationLine: tc.textDecorationLine, textTransform: tc.textTransform };
+      out.textStyle = { node: t.tagName.toLowerCase() + cls(t).slice(0, 2).map((x) => '.' + x).join(''), text: noEmail(tn.textContent.trim()).slice(0, 40), fontFamily: tc.fontFamily, fontSize: tc.fontSize, lineHeight: tc.lineHeight, fontWeight: tc.fontWeight, letterSpacing: tc.letterSpacing, color: tc.color, textDecorationLine: tc.textDecorationLine, textTransform: tc.textTransform };
     }
     if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
       const ph = getComputedStyle(el, '::placeholder');
-      out.placeholder = { color: ph.color, opacity: ph.opacity, fontSize: ph.fontSize };
+      out.placeholder = { text: noEmail((el.getAttribute('placeholder') || '').trim()).slice(0, 80), color: ph.color, opacity: ph.opacity, fontSize: ph.fontSize };
     }
     const svg = el.tagName.toLowerCase() === 'svg' ? el : el.querySelector('svg');
     if (svg) {
@@ -227,14 +240,9 @@ export async function centre(locator) {
   await locator.page().waitForTimeout(350);
 }
 
-// 256 colours, and a crop larger than about 1.2 megapixels (a whole sidebar or
-// section at 2x) is halved, so the folder stays small.
+// 256 colours, halved past the shared size rule (../crop.mjs, the same on every route).
 export function quantize(file) {
-  execFileSync(PYTHON, [
-    '-c',
-    'import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert("RGB")\nif im.width*im.height>1200000: im=im.resize((im.width//2, im.height//2), Image.LANCZOS)\nim.quantize(256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(f, optimize=True)',
-    file,
-  ]);
+  return quantizeCrop(file, PYTHON);
 }
 
 export function slug(s) {

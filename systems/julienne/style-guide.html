@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Julienne style guide</title>
+<!-- No web font is fetched: opening the guide contacts no third party. EB Garamond and Inter
+     render when installed locally, otherwise the token stacks fall back to system faces. -->
+<style>
+:root {
+  --font-family-display: "EB Garamond", serif;
+  --font-family-body: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-ui: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-size-caption: 12px;
+  --font-size-label: 14px;
+  --font-size-body: 16px;
+  --font-size-title: 24px;
+  --font-size-display-sm: 32px;
+  --font-size-display: 48px;
+  --font-lineHeight-caption: 18px;
+  --font-lineHeight-body: 24px;
+  --font-lineHeight-display-sm: 32px;
+  --font-lineHeight-display: 56px;
+  --radius-none: 0px;
+  --radius-control: 20px;
+  --radius-pill: 9999px;
+  --space-2: 8px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-11: 44px;
+  --space-14: 56px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --border-hairline: 1px;
+  --size-header: 80px;
+  --size-glass: 44px;
+  --size-field: 56px;
+  --size-button: 64px;
+  --size-chip: 40px;
+  --size-icon-logo: 24px;
+  --shadow-glassLift: 0px 1px 2px 0px rgba(0, 0, 0, 0.04);
+  --shadow-glassRim: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.95), inset -1px -1px 0px 0px rgba(255, 255, 255, 0.45);
+  --motion-duration-150ms: 150ms;
+  --motion-duration-200ms: 200ms;
+  --motion-duration-240ms: 240ms;
+  --motion-duration-300ms: 300ms;
+  --motion-duration-350ms: 350ms;
+  --motion-duration-500ms: 500ms;
+  --motion-duration-1000ms: 1000ms;
+  --motion-duration-1400ms: 1400ms;
+  --motion-duration-2000ms: 2000ms;
+  --motion-duration-2500ms: 2500ms;
+  --motion-duration-5850ms: 5850ms;
+  --motion-duration-15000ms: 15000ms;
+  --motion-duration-20000ms: 20000ms;
+  --motion-easing-bezier-0-0-0-2-1: cubic-bezier(0, 0, 0.2, 1);
+  --motion-easing-bezier-0-4-0-0-2-1: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-bezier-0-4-0-0-6-1: cubic-bezier(0.4, 0, 0.6, 1);
+  --motion-easing-bezier-0-4-0-1-1: cubic-bezier(0.4, 0, 1, 1);
+  --motion-easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+  --motion-easing-ease-out: cubic-bezier(0, 0, 0.58, 1);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --color-page: #ffffff;
+  --color-ink: #000000;
+  --color-nav: #1d1d1d;
+  --color-muted: #7a7a7a;
+  --color-prose: rgba(0, 0, 0, 0.7);
+  --color-brand: #3c1518;
+  --color-onBrand: #ffffff;
+  --color-link: #3c1518;
+  --color-footer: #f6f6f6;
+  --color-field: #ffffff;
+  --color-fieldBorder: #e5e5e5;
+  --color-disabledFill: #f6f6f6;
+  --color-disabledInk: #7a7a7a;
+  --color-glass: rgba(255, 255, 255, 0.3);
+  --color-chipOn: #3c1518;
+  --color-cook: rgba(60, 21, 24, 0.96);
+  --color-darkPage: #131313;
+  --color-darkInk: #ffffff;
+  --color-darkNav: #ffffff;
+  --color-darkGlass: rgba(255, 255, 255, 0.07);
+  color-scheme: light;
+}
+[data-theme="dark"] {
+  --color-page: #131313;
+  --color-ink: #ffffff;
+  --color-nav: #ffffff;
+  --color-muted: #a3a3a3;
+  --color-prose: #ffffff;
+  --color-brand: #3c1518;
+  --color-onBrand: #ffffff;
+  --color-link: #ff9d75;
+  --color-footer: #131313;
+  --color-field: #2a2a2a;
+  --color-fieldBorder: #3a3a3a;
+  --color-disabledFill: #f6f6f6;
+  --color-disabledInk: #7a7a7a;
+  --color-glass: rgba(255, 255, 255, 0.07);
+  --color-chipOn: #3c1518;
+  --color-cook: rgba(60, 21, 24, 0.96);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-page); color: var(--color-ink); font: 400 16px/24px Inter, ui-sans-serif, system-ui, sans-serif; }
+header { display: flex; align-items: center; gap: 16px; height: var(--size-header); padding: 0 24px; border-bottom: 1px solid var(--color-fieldBorder); position: sticky; top: 0; background: var(--color-page); }
+header h1 { font: 400 28px/32px "EB Garamond", serif; margin: 0; }
+header button { margin-left: auto; height: 44px; padding: 0 16px; border-radius: var(--radius-pill); border: 1px solid var(--color-fieldBorder); background: var(--color-glass); color: var(--color-ink); }
+main { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+h2 { font: 400 32px/36px "EB Garamond", serif; margin: 40px 0 12px; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.swatch { border: 1px solid var(--color-fieldBorder); border-radius: 12px; overflow: hidden; }
+.swatch i { display: block; height: 64px; }
+.swatch span { display: block; padding: 8px; font-size: 12px; color: var(--color-muted); }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
+.brand { background: var(--color-brand); color: var(--color-onBrand); height: var(--size-button); padding: 0 20px; border: 0; border-radius: var(--radius-control); font: 400 14px/20px Inter, sans-serif; }
+.pill { background: var(--color-glass); color: var(--color-ink); height: var(--size-glass); padding: 0 16px; border-radius: var(--radius-pill); border: 1px solid var(--color-fieldBorder); box-shadow: var(--shadow-glassLift); }
+.chip { background: var(--color-chipOn); color: var(--color-onBrand); height: var(--size-chip); padding: 0 14px; border: 0; border-radius: var(--radius-pill); }
+.field { height: var(--size-field); width: 280px; border-radius: var(--radius-control); border: var(--border-hairline) solid var(--color-fieldBorder); background: var(--color-field); padding: 0 16px; color: var(--color-ink); }
+.card { background: var(--color-footer); padding: 16px; border-radius: 16px; max-width: 280px; }
+.display { font: 400 var(--font-size-display)/var(--font-lineHeight-display) "EB Garamond", serif; margin: 0; }
+.small { font: 400 var(--font-size-display-sm)/var(--font-lineHeight-display-sm) "EB Garamond", serif; }
+.caption { color: var(--color-muted); font-size: var(--font-size-caption); }
+a { color: var(--color-link); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Julienne</h1>
+  <button type="button" id="theme">Toggle theme</button>
+</header>
+<main>
+  <p>Rendered from tokens.json. Light is the boot theme. Dark is the header Toggle theme control.</p>
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+  <h2>Type</h2>
+  <p class="display">Creamy leek and mushroom soup</p>
+  <p class="small">Discover and save the latest trending recipes.</p>
+  <p>Body copy sits in the system sans. Filter labels and auth buttons use Inter.</p>
+  <p class="caption">30m Total Time</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="brand" type="button">See more recipes</button>
+    <button class="pill" type="button">Search all recipes</button>
+    <button class="chip" type="button">Breakfast</button>
+  </div>
+  <div class="row">
+    <input class="field" placeholder="Your email" aria-label="Email">
+  </div>
+  <div class="card">
+    <p class="small" style="margin:0">Newest recipes</p>
+    <p class="caption">Footer surface</p>
+  </div>
+</main>
+<script>
+const root = document.documentElement;
+document.getElementById("theme").onclick = () => {
+  root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+};
+const roles = ["page","ink","nav","muted","prose","brand","onBrand","link","footer","field","fieldBorder","disabledFill","disabledInk","glass","chipOn","cook"];
+const box = document.getElementById("swatches");
+for (const role of roles) {
+  const el = document.createElement("div");
+  el.className = "swatch";
+  el.innerHTML = "<i></i><span></span>";
+  el.querySelector("i").style.background = "var(--color-" + role + ")";
+  el.querySelector("span").textContent = role;
+  box.appendChild(el);
+}
+</script>
+</body>
+</html>

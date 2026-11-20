@@ -1,0 +1,856 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exa style guide</title>
+<meta name="description" content="Exa design tokens and the public marketing, sign-in and docs surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --color-brand-dark: #0d2189;
+  --color-brand-darker: #000a40;
+  --color-brand-default: #1f40ed;
+  --color-brand-default-rgb: 31,64,237;
+  --color-brand-faint: #c6cfff;
+  --color-brand-fainter: #e7ebfd;
+  --color-brand-muted: #4d87e7;
+  --color-brand-subtle: #a1aff7;
+  --color-secondary-accent: #d4d4d4;
+  --color-secondary-accent2x: #a3a3a3;
+  --color-secondary-dark: #f5f5f5;
+  --color-secondary-darker: #efefef;
+  --color-secondary-darkest: #e5e5e5;
+  --color-secondary-default: #ffffff;
+  --color-secondary-faint: #fafafa;
+  --color-secondary-fainter: #fcfcfc;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #a3a3a3;
+  --color-gray-50: #fafafa;
+  --color-gray-500: #737373;
+  --color-gray-600: #525252;
+  --color-gray-700: #404040;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717;
+  --color-gray-950: #0a0a0a;
+  --color-neutral-cream: #faf9f7;
+  --color-neutral-cream-darker: #f0ece8;
+  --color-neutral-greige: #58544e;
+  --color-neutral-greige-light: #787572;
+  --color-neutral-greige-lightest: #c2bfbb;
+  --color-neutral-gold: #89661a;
+  --color-neutral-charcoal: #111111;
+  --color-neutral-black: #000000;
+  --color-neutral-white: #ffffff;
+  --color-neutral-background: #ffffff;
+  --color-named-blood-burst: #ff4b4b;
+  --color-named-burnished-metal: #c9c9c8;
+  --color-named-carbon: #333333;
+  --color-named-cerebral-grey: #cccccc;
+  --color-named-light-shojin-blue: #2043f9;
+  --color-named-lucky-grey: #777777;
+  --color-named-orchid: #788ff6;
+  --color-named-paper-white: #f0f0f4;
+  --color-named-pauper: #343447;
+  --color-named-pearl-necklace: #fbf7ec;
+  --color-named-pouty-purple: #e9d9f8;
+  --color-named-raven: #0c0c09;
+  --color-named-thamar-black: #191919;
+  --color-named-virtual-violet: #675181;
+  --color-named-winter-park: #96948d;
+  --color-accent-default: #1f40ed;
+  --color-accent-background: #1f40ed;
+  --color-accent-darkgreen-dark: #065f46;
+  --color-accent-darkgreen-light: #d1fae5;
+  --color-accent-green: #50b40a;
+  --color-accent-maroon-dark: #991b1b;
+  --color-accent-maroon-light: #fee2e2;
+  --color-accent-pink-dark: #9d174d;
+  --color-accent-pink-light: #fce7f3;
+  --color-accent-purple-dark: #5b21b6;
+  --color-accent-purple-light: #ede9fe;
+  --color-accent-red: #d32f2f;
+  --color-accent-skyblue-dark: #1e40af;
+  --color-accent-skyblue-light: #dbeafe;
+  --color-accent-yellow-dark: #92400e;
+  --color-accent-yellow-light: #fef3c7;
+  --color-darkAccent-green-dark: #014737;
+  --color-darkAccent-green-light: #77d1ae;
+  --color-darkAccent-maroon-dark: #771d1d;
+  --color-darkAccent-maroon-light: #f8b4b3;
+  --color-darkAccent-pink-dark: #751a3d;
+  --color-darkAccent-pink-light: #f8b4d9;
+  --color-darkAccent-purple-dark: #4a1d96;
+  --color-darkAccent-purple-light: #bfb1f4;
+  --color-darkAccent-skyblue-dark: #243876;
+  --color-darkAccent-skyblue-light: #a5cafd;
+  --color-darkAccent-yellow-dark: #623112;
+  --color-darkAccent-yellow-light: #faca16;
+  --color-text-dark-default: #e5e7eb;
+  --color-text-dark-faint: #6b7280;
+  --color-text-dark-link: #a1aff7;
+  --color-text-dark-muted: #d1d5db;
+  --color-text-dark-subtle: #9ca3af;
+  --color-text-light-default: #111827;
+  --color-text-light-faint: #e5e7eb;
+  --color-text-light-link: #1f40ed;
+  --color-text-light-muted: #787572;
+  --color-text-light-subtle: #9ca3af;
+  --color-auth-text-light-default: #1a1a1a;
+  --color-auth-text-light-faint: #e5e7eb;
+  --color-auth-text-light-link: #1f40ed;
+  --color-auth-text-light-muted: #6b7280;
+  --color-auth-text-light-subtle: #9ca3af;
+  --color-auth-secondary-accent: #9f9672;
+  --color-auth-secondary-accent2x: #89805d;
+  --color-auth-secondary-dark: #f4f1e7;
+  --color-auth-secondary-darker: #efebdc;
+  --color-auth-secondary-darkest: #ece1b7;
+  --color-auth-secondary-default: #faf7ec;
+  --color-auth-background: #ffffff;
+  --color-auth-foreground: #171717;
+  --color-docs-gray-100: #eeeff5;
+  --color-docs-gray-200: #dfe0e5;
+  --color-docs-gray-300: #cecfd5;
+  --color-docs-gray-400: #9fa0a5;
+  --color-docs-gray-50: #f3f4fa;
+  --color-docs-gray-500: #707177;
+  --color-docs-gray-600: #505157;
+  --color-docs-gray-700: #3f4045;
+  --color-docs-gray-800: #26272c;
+  --color-docs-gray-900: #17181e;
+  --color-docs-gray-950: #0a0c11;
+  --color-docs-primary: #1840ed;
+  --color-docs-primary-light: #5f7cff;
+  --color-docs-primary-dark: #2751f6;
+  --color-docs-background-light: #ffffff;
+  --color-docs-background-dark: #0b0b10;
+  --color-docs-default-border: #eeeff5;
+  --color-docs-tooltip-foreground: #ffffff;
+  --color-docs-docs-accent: #1840ed;
+  --color-docs-mintlify-amber-100: #fff7ec;
+  --color-docs-mintlify-amber-1000: #342302;
+  --color-docs-mintlify-amber-200: #fef0d8;
+  --color-docs-mintlify-amber-300: #fee0ae;
+  --color-docs-mintlify-amber-400: #ffc763;
+  --color-docs-mintlify-amber-500: #e4a40a;
+  --color-docs-mintlify-amber-600: #b78306;
+  --color-docs-mintlify-amber-700: #906604;
+  --color-docs-mintlify-amber-800: #7e5903;
+  --color-docs-mintlify-amber-900: #755703;
+  --color-docs-mintlify-background-primary: #ffffff;
+  --color-docs-mintlify-background-secondary: #fafafa;
+  --color-docs-mintlify-black-default: #000000;
+  --color-docs-mintlify-blue-600: #2563eb;
+  --color-docs-mintlify-brand-border: #c4d1ed;
+  --color-docs-mintlify-brand-border-active: #6089f2;
+  --color-docs-mintlify-brand-border-hover: #96b0eb;
+  --color-docs-mintlify-brand-foreground-primary: #0e236f;
+  --color-docs-mintlify-brand-foreground-secondary: #1326d2;
+  --color-docs-mintlify-brand-on-solid: #f7f8fc;
+  --color-docs-mintlify-brand-solid: #2751f6;
+  --color-docs-mintlify-brand-solid-hover: #1622ed;
+  --color-docs-mintlify-brand-subtle: #f7f8fc;
+  --color-docs-mintlify-brand-subtle-active: #dce5f7;
+  --color-docs-mintlify-brand-subtle-hover: #eef2fa;
+  --color-docs-mintlify-cream-default: #faf9f7;
+  --color-docs-mintlify-cream-dark: #f0ece8;
+  --color-docs-mintlify-danger-border: #fdbfb9;
+  --color-docs-mintlify-danger-border-active: #fc333c;
+  --color-docs-mintlify-danger-border-hover: #fc8c84;
+  --color-docs-mintlify-danger-foreground-primary: #4d0509;
+  --color-docs-mintlify-danger-foreground-secondary: #970918;
+  --color-docs-mintlify-danger-on-solid: #fef6f5;
+  --color-docs-mintlify-danger-solid: #ce0c24;
+  --color-docs-mintlify-danger-solid-hover: #b5091e;
+  --color-docs-mintlify-danger-subtle: #fef6f5;
+  --color-docs-mintlify-danger-subtle-active: #fddbd8;
+  --color-docs-mintlify-danger-subtle-hover: #feedec;
+  --color-docs-mintlify-emerald-100: #effdee;
+  --color-docs-mintlify-emerald-1000: #043004;
+  --color-docs-mintlify-emerald-200: #defcdb;
+  --color-docs-mintlify-emerald-300: #b6f9b1;
+  --color-docs-mintlify-emerald-400: #66f463;
+  --color-docs-mintlify-emerald-500: #51d04f;
+  --color-docs-mintlify-emerald-600: #38a838;
+  --color-docs-mintlify-emerald-700: #248424;
+  --color-docs-mintlify-emerald-800: #1b741c;
+  --color-docs-mintlify-emerald-900: #156015;
+  --color-docs-mintlify-exa-blue: #1840ed;
+  --color-docs-mintlify-exa-blue-100: #f7f8fc;
+  --color-docs-mintlify-exa-blue-1000: #0e236f;
+  --color-docs-mintlify-exa-blue-200: #eef2fa;
+  --color-docs-mintlify-exa-blue-300: #dce5f7;
+  --color-docs-mintlify-exa-blue-400: #c4d1ed;
+  --color-docs-mintlify-exa-blue-500: #96b0eb;
+  --color-docs-mintlify-exa-blue-600: #6089f2;
+  --color-docs-mintlify-exa-blue-700: #2751f6;
+  --color-docs-mintlify-exa-blue-800: #1622ed;
+  --color-docs-mintlify-exa-blue-900: #1326d2;
+  --color-docs-mintlify-exa-gray-100: #f8f8f9;
+  --color-docs-mintlify-exa-gray-1000: #0b0b0d;
+  --color-docs-mintlify-exa-gray-200: #f3f3f4;
+  --color-docs-mintlify-exa-gray-300: #e6e6e8;
+  --color-docs-mintlify-exa-gray-400: #d4d4d8;
+  --color-docs-mintlify-exa-gray-500: #aaaab2;
+  --color-docs-mintlify-exa-gray-600: #85858e;
+  --color-docs-mintlify-exa-gray-700: #62626c;
+  --color-docs-mintlify-exa-gray-800: #4f4f57;
+  --color-docs-mintlify-exa-gray-900: #3f3f46;
+  --color-docs-mintlify-green-400: #4ade80;
+  --color-docs-mintlify-green-600: #16a34a;
+  --color-docs-mintlify-neutral-border: #e6e6e8;
+  --color-docs-mintlify-neutral-border-active: #85858e;
+  --color-docs-mintlify-neutral-border-hover: #aaaab2;
+  --color-docs-mintlify-neutral-foreground-primary: #0b0b0d;
+  --color-docs-mintlify-neutral-foreground-secondary: #3f3f46;
+  --color-docs-mintlify-neutral-on-solid: #ffffff;
+  --color-docs-mintlify-neutral-solid: #62626c;
+  --color-docs-mintlify-neutral-solid-hover: #4f4f57;
+  --color-docs-mintlify-neutral-subtle: #f8f8f9;
+  --color-docs-mintlify-neutral-subtle-active: #e6e6e8;
+  --color-docs-mintlify-neutral-subtle-hover: #f3f3f4;
+  --color-docs-mintlify-overlay-default: rgba(0, 0, 0, 0.35);
+  --color-docs-mintlify-primary-default: #1840ed;
+  --color-docs-mintlify-rose-100: #fef6f5;
+  --color-docs-mintlify-rose-1000: #4d0509;
+  --color-docs-mintlify-rose-200: #feedec;
+  --color-docs-mintlify-rose-300: #fddbd8;
+  --color-docs-mintlify-rose-400: #fdbfb9;
+  --color-docs-mintlify-rose-500: #fc8c84;
+  --color-docs-mintlify-rose-600: #fc333c;
+  --color-docs-mintlify-rose-700: #ce0c24;
+  --color-docs-mintlify-rose-800: #b5091e;
+  --color-docs-mintlify-rose-900: #970918;
+  --color-docs-mintlify-success-border: #66f463;
+  --color-docs-mintlify-success-border-active: #38a838;
+  --color-docs-mintlify-success-border-hover: #51d04f;
+  --color-docs-mintlify-success-foreground-primary: #043004;
+  --color-docs-mintlify-success-foreground-secondary: #156015;
+  --color-docs-mintlify-success-on-solid: #effdee;
+  --color-docs-mintlify-success-solid: #248424;
+  --color-docs-mintlify-success-solid-hover: #1b741c;
+  --color-docs-mintlify-success-subtle: #effdee;
+  --color-docs-mintlify-success-subtle-active: #b6f9b1;
+  --color-docs-mintlify-success-subtle-hover: #defcdb;
+  --color-docs-mintlify-warning-border: #ffc763;
+  --color-docs-mintlify-warning-border-active: #b78306;
+  --color-docs-mintlify-warning-border-hover: #e4a40a;
+  --color-docs-mintlify-warning-foreground-primary: #342302;
+  --color-docs-mintlify-warning-foreground-secondary: #755703;
+  --color-docs-mintlify-warning-on-solid: #fff7ec;
+  --color-docs-mintlify-warning-solid: #906604;
+  --color-docs-mintlify-warning-solid-hover: #7e5903;
+  --color-docs-mintlify-warning-subtle: #fff7ec;
+  --color-docs-mintlify-warning-subtle-active: #fee0ae;
+  --color-docs-mintlify-warning-subtle-hover: #fef0d8;
+  --color-docs-mintlify-white-default: #ffffff;
+  --color-docs-vars-accent: #1840ed;
+  --color-docs-vars-code-action-hover: rgba(9, 9, 11, 0.05);
+  --color-docs-vars-code-header: rgba(9, 9, 11, 0.024);
+  --color-docs-vars-code-surface: #ffffff;
+  --color-docs-vars-code-tab-hover: rgba(9, 9, 11, 0.05);
+  --color-docs-vars-nav-tab-hover: rgba(9, 9, 11, 0.04);
+  --color-docs-vars-nav-tab-pill: #f3f3f4;
+  --color-docs-vars-nav-tab-ring: rgba(9, 9, 11, 0.07);
+  --color-docs-vars-nav-tab-text: #4f4f57;
+  --color-docs-vars-nav-tab-text-selected: #0b0b0d;
+  --color-docs-vars-sidebar-search-border: rgba(9, 9, 11, 0.14);
+  --color-docs-vars-sidebar-search-border-hover: rgba(9, 9, 11, 0.28);
+  --color-docs-vars-sidebar-search-key: rgba(9, 9, 11, 0.05);
+  --color-docs-vars-tab-accent: #1840ed;
+  --color-docs-vars-tab-control-border: rgba(9, 9, 11, 0.14);
+  --color-docs-vars-tab-control-border-hover: rgba(9, 9, 11, 0.24);
+  --color-docs-vars-tab-line: rgba(9, 9, 11, 0.14);
+  --color-docs-vars-tab-menu-bg: #ffffff;
+  --color-docs-vars-tab-pill: #ffffff;
+  --color-docs-vars-tab-ring: rgba(9, 9, 11, 0.07);
+  --color-docs-vars-tab-text: #4f4f57;
+  --color-docs-vars-tab-text-selected: #0b0b0d;
+  --color-docs-vars-tab-track: #f3f3f4;
+  --font-family-diatype: "ABCDiatype","Trebuchet MS",sans-serif;
+  --font-family-arizona: "Arizona",Georgia,serif;
+  --font-family-mono: "SuisseIntlMono",monospace;
+  --font-family-auth-sans: "ABC Diatype Unlicensed Trial", "Trebuchet MS", sans-serif;
+  --font-family-auth-flare: "ABC Arizona Flare", serif;
+  --font-family-geist-mono: "Geist Mono", monospace;
+  --font-family-inter: "Inter";
+  --font-family-paper-mono: "Paper Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family-docs-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-docs-mono: "Paper Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-family-docs-headings: "ABCDiatype", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-headings: 700;
+  --font-size-nav: 15px;
+  --font-size-small: 11.5px;
+  --font-size-docs-body: 16.6667px;
+  --font-size-docs-code: 14px;
+  --font-size-field: 16px;
+  --font-size-body: 18.4px;
+  --font-size-auth: 16px;
+  --font-size-docs-h1: 32px;
+  --font-size-pricing-h1: 48px;
+  --font-size-mobile-display: 38.4px;
+  --font-size-display: 63.2px;
+  --font-lineHeight-tight: 1.25;
+  --font-lineHeight-normal: 1.5;
+  --font-lineHeight-relaxed: 1.625;
+  --font-lineHeight-display: 45.504px;
+  --font-lineHeight-body: 25.76px;
+  --font-lineHeight-docs-body: 28px;
+  --font-lineHeight-nav: 24px;
+  --font-lineHeight-auth: 24px;
+  --font-tracking-tighter: -.05em;
+  --font-tracking-tight: -.025em;
+  --font-tracking-normal: 0px;
+  --font-tracking-wide: 0.390625px;
+  --font-tracking-display: -1.896px;
+  --size-nav: 55px;
+  --size-header: 55px;
+  --size-banner: 48px;
+  --size-docs-banner: 0px;
+  --size-docs-header: 56px;
+  --size-docs-base: 4px;
+  --size-docs-scroll-mt: 100.797px;
+  --size-container-about-page-container: 1000px;
+  --size-container-blog-container: 1364px;
+  --size-container-blog-container-gap: 32px;
+  --size-container-careers-page-container: 1100px;
+  --size-container-faq-page-container: 711.875px;
+  --size-container-features-section-container: 1040px;
+  --size-container-home-page-container: 1040px;
+  --size-container-pricing-page-container: 1100px;
+  --size-container-waitlist-form-container: 800px;
+  --size-container-websets-container: 1400px;
+  --size-container-container-2xl: 672px;
+  --size-container-container-3xl: 768px;
+  --size-container-container-4xl: 896px;
+  --size-container-container-5xl: 1024px;
+  --size-container-container-6xl: 1152px;
+  --size-container-container-lg: 512px;
+  --size-container-container-sm: 384px;
+  --size-container-container-xl: 576px;
+  --size-container-container-xs: 320px;
+  --radius-default: 2px;
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-20: 20px;
+  --radius-pill: 1000px;
+  --radius-base: 8px;
+  --radius-docs: 6px;
+  --radius-docs-xl: 12px;
+  --radius-control-measured: 0px;
+  --radius-field-measured: 0px;
+  --radius-menu-measured: 8px;
+  --radius-cta-measured: 4px;
+  --radius-auth-field-measured: 4px;
+  --radius-search-measured: 6px;
+  --shadow-menu: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
+  --shadow-docs-code-shadow: rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  --shadow-docs-tab-menu-shadow: rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.08) 0px 8px 24px 0px;
+  --shadow-docs-tab-pill-shadow: rgba(0, 0, 0, 0.12) 0px 1px 2px 0px;
+  --shadow-twoslash-popup-shadow: rgba(0, 0, 0, 0.08) 0px 1px 4px 0px;
+  --motion-duration: 150ms;
+  --motion-easing: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --motion-ease-in: cubic-bezier(0.4, 0.0, 1.0, 1.0);
+  --motion-ease-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --motion-ease-in-out: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --motion-docs-duration: 150ms;
+  --motion-docs-fast: 100ms;
+  --motion-docs-slow: 220ms;
+  --motion-docs-drawer: 300ms;
+  --motion-docs-easing: cubic-bezier(0.2, 0.0, 0.0, 1.0);
+  --motion-docs-ease-out: cubic-bezier(0.23, 1.0, 0.32, 1.0);
+  --motion-docs-ease-in-out: cubic-bezier(0.77, 0.0, 0.175, 1.0);
+  --motion-docs-drawer-ease: cubic-bezier(0.32, 0.72, 0.0, 1.0);
+  --motion-digit: 500ms;
+  --motion-control: color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --breakpoint-max-1023: 1023px;
+  --breakpoint-min-1024: 1024px;
+  --breakpoint-min-640: 640px;
+  --breakpoint-min-768: 768px;
+  --component-header-height: 55px;
+  --component-banner-height: 20px;
+  --component-mobile-header-height: 64px;
+  --component-menu-width: 380px;
+  --component-hero-cta-height: 40px;
+  --component-demo-widget-width: 700px;
+  --component-demo-field-height: 24px;
+  --component-demo-pill-height: 22.8px;
+  --component-signup-height: 31.59px;
+  --component-plan-card-width: 1216px;
+  --component-auth-card-width: 360px;
+  --component-auth-field-height: 44px;
+  --component-auth-button-height: 50px;
+  --component-docs-sidebar-width: 288px;
+  --component-docs-nav-item-height: 32px;
+  --component-docs-search-height: 36px;
+  --component-hamburger: 32px;
+  --docs-surface: #ffffff;
+  --docs-border: #eeeff5;
+  --docs-primary: #1840ed;
+  --docs-accent: #1840ed;
+  --docs-twoslash-border-color: #dbdfde;
+  --docs-twoslash-code-font-size: 16px;
+  --docs-twoslash-cursor-color: rgba(136, 136, 136, 0.533);
+  --docs-twoslash-docs-tag-style: italic;
+  --docs-twoslash-error-bg: rgba(212, 86, 86, 0.125);
+  --docs-twoslash-error-color: #d45656;
+  --docs-twoslash-highlighted-bg: rgba(195, 125, 13, 0.125);
+  --docs-twoslash-highlighted-border: rgba(195, 125, 13, 0.314);
+  --docs-twoslash-popup-bg: #f3f7f6;
+  --docs-twoslash-popup-shadow: rgba(0, 0, 0, 0.08) 0px 1px 4px 0px;
+  --docs-twoslash-tag-annotate-bg: rgba(27, 166, 115, 0.125);
+  --docs-twoslash-tag-annotate-color: #1ba673;
+  --docs-twoslash-tag-bg: rgba(55, 114, 207, 0.125);
+  --docs-twoslash-tag-color: #3772cf;
+  --docs-twoslash-tag-warn-bg: rgba(195, 125, 13, 0.125);
+  --docs-twoslash-tag-warn-color: #c37d0d;
+  --docs-twoslash-text-size: 12.7969px;
+  --docs-twoslash-underline-color: currentColor;
+  --docs-twoslash-unmatched-color: #888888;
+  --docs-twoslash-warn-bg: rgba(195, 125, 13, 0.125);
+  --docs-twoslash-warn-color: #c37d0d;
+  --docs-vars-accent: #1840ed;
+  --docs-vars-code-action-hover: rgba(9, 9, 11, 0.05);
+  --docs-vars-code-header: rgba(9, 9, 11, 0.024);
+  --docs-vars-code-surface: #ffffff;
+  --docs-vars-code-tab-hover: rgba(9, 9, 11, 0.05);
+  --docs-vars-nav-tab-hover: rgba(9, 9, 11, 0.04);
+  --docs-vars-nav-tab-pill: #f3f3f4;
+  --docs-vars-nav-tab-ring: rgba(9, 9, 11, 0.07);
+  --docs-vars-nav-tab-text: #4f4f57;
+  --docs-vars-nav-tab-text-selected: #0b0b0d;
+  --docs-vars-sidebar-search-border: rgba(9, 9, 11, 0.14);
+  --docs-vars-sidebar-search-border-hover: rgba(9, 9, 11, 0.28);
+  --docs-vars-sidebar-search-key: rgba(9, 9, 11, 0.05);
+  --docs-vars-tab-accent: #1840ed;
+  --docs-vars-tab-control-border: rgba(9, 9, 11, 0.14);
+  --docs-vars-tab-control-border-hover: rgba(9, 9, 11, 0.24);
+  --docs-vars-tab-line: rgba(9, 9, 11, 0.14);
+  --docs-vars-tab-menu-bg: #ffffff;
+  --docs-vars-tab-pill: #ffffff;
+  --docs-vars-tab-ring: rgba(9, 9, 11, 0.07);
+  --docs-vars-tab-text: #4f4f57;
+  --docs-vars-tab-text-selected: #0b0b0d;
+  --docs-vars-tab-track: #f3f3f4;
+  --docs-text: var(--color-docs-gray-900);
+  --docs-body-text: rgba(0, 0, 0, 0.6);
+  --docs-link: rgba(0, 0, 0, 0.6);
+  --docs-nav-text: var(--color-neutral-black);
+  --docs-nav-active: var(--color-docs-mintlify-exa-gray-200);
+  --docs-focus: var(--color-docs-vars-nav-tab-ring);
+  --docs-rail-line: var(--color-docs-gray-100);
+  --docs-cta-surface: #002f96;
+  --marketing-surface: var(--color-secondary-default);
+  --marketing-header-line: var(--color-text-dark-default);
+  --marketing-text: #5f5a54;
+  --marketing-muted: rgba(0, 0, 0, 0.6);
+  --marketing-action: var(--color-neutral-black);
+  --marketing-on-action: var(--color-secondary-default);
+  --marketing-sales-border: var(--color-text-dark-default);
+  --marketing-menu-surface: var(--color-secondary-default);
+  --marketing-demo-pill-active: rgba(0, 0, 0, 0.45);
+  --marketing-run-fill: var(--color-text-dark-muted);
+  --marketing-announce-surface: #eef8ff;
+  --marketing-action-hover: #1f2937;
+  --marketing-placeholder: rgba(0, 0, 0, 0.4);
+  --signin-heading: var(--color-auth-text-light-default);
+  --signin-field-border: #e0e0e0;
+  --signin-field-focus: var(--color-brand-default);
+  --signin-text: var(--color-gray-900);
+  --signin-action: var(--color-brand-default);
+  --signin-on-action: var(--color-secondary-default);
+  --signin-google-border: #e0e0e0;
+  --signin-code-bg: #27282c;
+  --signin-placeholder: #99a1af;
+  --sg-sans: "ABCDiatype", "ABC Diatype Unlicensed Trial", "Trebuchet MS", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: Arizona, "ABC Arizona Flare", Georgia, "Times New Roman", serif;
+  --sg-mono: SuisseIntlMono, "Paper Mono", "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --docs-surface: #0b0b10;
+  --docs-border: #26272c;
+  --docs-primary: #1840ed;
+  --docs-accent: #5f7cff;
+  --docs-twoslash-border-color: #222526;
+  --docs-twoslash-code-font-size: 16px;
+  --docs-twoslash-cursor-color: rgba(187, 187, 187, 0.733);
+  --docs-twoslash-docs-tag-style: italic;
+  --docs-twoslash-error-bg: rgba(255, 107, 107, 0.19);
+  --docs-twoslash-error-color: #ff6b6b;
+  --docs-twoslash-highlighted-bg: rgba(255, 165, 0, 0.19);
+  --docs-twoslash-highlighted-border: rgba(255, 165, 0, 0.5);
+  --docs-twoslash-popup-bg: #151819;
+  --docs-twoslash-popup-shadow: rgba(0, 0, 0, 0.08) 0px 1px 4px 0px;
+  --docs-twoslash-tag-annotate-bg: rgba(74, 222, 128, 0.19);
+  --docs-twoslash-tag-annotate-color: #4ade80;
+  --docs-twoslash-tag-bg: rgba(107, 182, 255, 0.19);
+  --docs-twoslash-tag-color: #6bb6ff;
+  --docs-twoslash-tag-warn-bg: rgba(255, 165, 0, 0.19);
+  --docs-twoslash-tag-warn-color: #ffa500;
+  --docs-twoslash-text-size: 12.7969px;
+  --docs-twoslash-underline-color: currentColor;
+  --docs-twoslash-unmatched-color: #aaaaaa;
+  --docs-twoslash-warn-bg: rgba(255, 165, 0, 0.19);
+  --docs-twoslash-warn-color: #ffa500;
+  --docs-vars-accent: #5f7cff;
+  --docs-vars-code-action-hover: rgba(250, 250, 250, 0.06);
+  --docs-vars-code-header: rgba(250, 250, 250, 0.03);
+  --docs-vars-code-surface: #111114;
+  --docs-vars-code-tab-hover: rgba(250, 250, 250, 0.06);
+  --docs-vars-nav-tab-hover: rgba(255, 255, 255, 0.06);
+  --docs-vars-nav-tab-pill: #26262a;
+  --docs-vars-nav-tab-ring: rgba(250, 250, 250, 0.09);
+  --docs-vars-nav-tab-text: #bababf;
+  --docs-vars-nav-tab-text-selected: #f5f5f6;
+  --docs-vars-sidebar-search-border: rgba(250, 250, 250, 0.16);
+  --docs-vars-sidebar-search-border-hover: rgba(250, 250, 250, 0.32);
+  --docs-vars-sidebar-search-key: rgba(250, 250, 250, 0.08);
+  --docs-vars-tab-accent: #5f7cff;
+  --docs-vars-tab-control-border: rgba(250, 250, 250, 0.16);
+  --docs-vars-tab-control-border-hover: rgba(250, 250, 250, 0.24);
+  --docs-vars-tab-line: rgba(250, 250, 250, 0.16);
+  --docs-vars-tab-menu-bg: #000000;
+  --docs-vars-tab-pill: #26262a;
+  --docs-vars-tab-ring: rgba(250, 250, 250, 0.09);
+  --docs-vars-tab-text: #bababf;
+  --docs-vars-tab-text-selected: #f5f5f6;
+  --docs-vars-tab-track: #1a1a1d;
+  --docs-mintlify-background-primary: #000000;
+  --docs-mintlify-background-secondary: #0d0d10;
+  --docs-mintlify-brand-border: #0c2e8b;
+  --docs-mintlify-brand-border-active: #205bf6;
+  --docs-mintlify-brand-border-hover: #0b3bc2;
+  --docs-mintlify-brand-foreground-primary: #eaebed;
+  --docs-mintlify-brand-foreground-secondary: #95b7fc;
+  --docs-mintlify-brand-on-solid: #030a1f;
+  --docs-mintlify-brand-solid: #6192fd;
+  --docs-mintlify-brand-solid-hover: #7aa4fd;
+  --docs-mintlify-brand-subtle: #030a1f;
+  --docs-mintlify-brand-subtle-active: #09205b;
+  --docs-mintlify-brand-subtle-hover: #051336;
+  --docs-mintlify-danger-border: #700a12;
+  --docs-mintlify-danger-border-active: #cd1125;
+  --docs-mintlify-danger-border-hover: #960c19;
+  --docs-mintlify-danger-foreground-primary: #edeaea;
+  --docs-mintlify-danger-foreground-secondary: #fd978f;
+  --docs-mintlify-danger-on-solid: #1c0202;
+  --docs-mintlify-danger-solid: #fd5150;
+  --docs-mintlify-danger-solid-hover: #fd7871;
+  --docs-mintlify-danger-subtle: #1c0202;
+  --docs-mintlify-danger-subtle-active: #4d060a;
+  --docs-mintlify-danger-subtle-hover: #300304;
+  --docs-mintlify-neutral-border: #26262a;
+  --docs-mintlify-neutral-border-active: #6e6e76;
+  --docs-mintlify-neutral-border-hover: #4a4a50;
+  --docs-mintlify-neutral-foreground-primary: #f5f5f6;
+  --docs-mintlify-neutral-foreground-secondary: #bababf;
+  --docs-mintlify-neutral-on-solid: #000000;
+  --docs-mintlify-neutral-solid: #8b8b93;
+  --docs-mintlify-neutral-solid-hover: #a1a1a8;
+  --docs-mintlify-neutral-subtle: #111114;
+  --docs-mintlify-neutral-subtle-active: #26262a;
+  --docs-mintlify-neutral-subtle-hover: #1a1a1d;
+  --docs-mintlify-success-border: #164615;
+  --docs-mintlify-success-border-active: #278427;
+  --docs-mintlify-success-border-hover: #1f5f1e;
+  --docs-mintlify-success-foreground-primary: #e6eee5;
+  --docs-mintlify-success-foreground-secondary: #41da41;
+  --docs-mintlify-success-on-solid: #030f03;
+  --docs-mintlify-success-solid: #2fb430;
+  --docs-mintlify-success-solid-hover: #35c736;
+  --docs-mintlify-success-subtle: #030f03;
+  --docs-mintlify-success-subtle-active: #0d2f0c;
+  --docs-mintlify-success-subtle-hover: #061c06;
+  --docs-mintlify-warning-border: #4e3504;
+  --docs-mintlify-warning-border-active: #926504;
+  --docs-mintlify-warning-border-hover: #6a4904;
+  --docs-mintlify-warning-foreground-primary: #edebe7;
+  --docs-mintlify-warning-foreground-secondary: #efa80b;
+  --docs-mintlify-warning-on-solid: #110901;
+  --docs-mintlify-warning-solid: #c58a08;
+  --docs-mintlify-warning-solid-hover: #da9909;
+  --docs-mintlify-warning-subtle: #110901;
+  --docs-mintlify-warning-subtle-active: #342303;
+  --docs-mintlify-warning-subtle-hover: #1f1402;
+  --docs-text: var(--color-docs-gray-200);
+  --docs-body-text: rgba(255, 255, 255, 0.6);
+  --docs-link: rgba(255, 255, 255, 0.72);
+  --docs-nav-text: #f5f5f6;
+  --docs-nav-active: rgba(255, 255, 255, 0.08);
+  --docs-focus: rgba(250, 250, 250, 0.09);
+  --docs-rail-line: rgba(255, 255, 255, 0.1);
+  --docs-cta-surface: #002f96;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-neutral-charcoal, #111); background: var(--color-neutral-cream, #faf9f7); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 48px/1 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.01em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-charcoal, #111); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); }
+.lead { max-width: 62ch; color: var(--color-neutral-charcoal, #111); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-charcoal, #111); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-charcoal, #111); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--docs-surface, #0b0b10); padding: 10px; border-radius: 8px; }
+.pal.dark .nm, .pal.dark .vl { color: #e5e5ea; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-charcoal, #111); opacity: .65; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-charcoal, #111); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); overflow: hidden; background: var(--marketing-surface, #faf9f7); }
+.ann { display: flex; align-items: center; justify-content: center; height: var(--component-banner-height, 48px); font-size: 13px; color: var(--color-brand-default, #1f40ed); background: var(--marketing-announce-surface, var(--color-brand-fainter, #e7ebfd)); }
+.mnav { display: flex; align-items: center; gap: 22px; height: var(--size-nav, 55px); padding: 0 12px 0 22px; font-size: 14px; color: var(--marketing-text, #111); background: var(--marketing-surface, #faf9f7); border-bottom: 1px solid var(--marketing-header-line, rgba(0,0,0,.07)); }
+.mnav .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+.mnav .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-signup-height, 34px); padding: 0 18px; font-size: 13px; font-weight: 500; border-radius: var(--radius-pill, 1000px); border: 1px solid transparent; }
+.btn.black { background: var(--marketing-action, #111); color: var(--marketing-on-action, #fff); }
+.btn.sales { border-color: var(--marketing-sales-border, rgba(0,0,0,.12)); color: var(--marketing-text, #111); }
+.btn.blue { background: var(--marketing-run-fill, var(--color-brand-default, #1f40ed)); color: #fff; }
+.hero { color: var(--marketing-text, #111); padding: 72px 40px; font: 400 64px/1 var(--sg-serif); letter-spacing: -0.01em; text-align: center; background: var(--marketing-surface, #faf9f7); }
+.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--marketing-muted, rgba(0,0,0,.6)); margin: 16px auto 22px; max-width: 46ch; }
+.caprow { display: flex; gap: 8px; justify-content: center; margin-top: 8px; }
+/* demo widget mock */
+.demo { max-width: 640px; margin: 26px auto 56px; border: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); border-radius: var(--radius-10, 10px); background: var(--marketing-demo-surface, #fff); padding: 14px; font-size: 13px; text-align: left; }
+.demo .q { height: var(--component-demo-field-height, 56px); display: flex; align-items: center; padding: 0 14px; border: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); border-radius: var(--radius-8, 8px); color: var(--marketing-placeholder, rgba(0,0,0,.55)); margin-bottom: 10px; }
+.demo .modes { display: inline-flex; gap: 4px; padding: 3px; background: var(--color-gray-100, #f5f5f5); border-radius: var(--radius-8, 8px); margin-bottom: 12px; }
+.demo .modes span { padding: 4px 12px; border-radius: 6px; font-weight: 500; }
+.demo .modes .on { background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+.demo .lbl { font: 500 10px/1.6 var(--sg-sans); letter-spacing: .08em; color: var(--marketing-muted, rgba(0,0,0,.5)); }
+.demo .pills { display: flex; gap: 6px; margin: 2px 0 10px; }
+.demo .pill { height: var(--component-demo-pill-height, 30px); display: inline-flex; align-items: center; padding: 0 12px; border-radius: var(--radius-pill, 1000px); border: 1px solid var(--color-gray-200, rgba(0,0,0,.1)); font-weight: 500; color: var(--marketing-muted, rgba(0,0,0,.6)); }
+.demo .pill.on { background: var(--color-neutral-charcoal, #111); color: #fff; border-color: transparent; }
+.demo .run { float: right; width: 30px; height: 30px; border-radius: var(--radius-8, 8px); }
+.eyebrow { font: 500 12px/1.8 var(--sg-mono); letter-spacing: .02em; color: var(--color-brand-default, #1f40ed); text-transform: uppercase; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); padding: 24px; font-size: 13px; background: var(--color-neutral-white, #fff); border-radius: var(--radius-10, 10px); }
+.tile b { display: block; font: 400 30px/1.1 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+/* pricing table mock — one row-divided grid, not three cards */
+.usecases { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 0 0 14px; }
+.usecases .cap { font: 500 10px/1.6 var(--sg-sans); letter-spacing: .08em; color: var(--marketing-muted, rgba(0,0,0,.5)); margin-right: 4px; }
+.usecases .pill { height: 28px; display: inline-flex; align-items: center; padding: 0 12px; border-radius: var(--radius-docs, 6px); border: 1px solid rgba(17,17,17,.12); font-size: 12px; font-weight: 500; color: rgb(75,85,99); }
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); font-size: 13px; color: var(--marketing-text, #111); background: var(--color-neutral-white, #fff); }
+.plans .pcol { display: flex; flex-direction: column; padding: 0 18px 18px; border-left: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); }
+.plans .pcol:first-child { border-left: 0; padding-left: 0; }
+.plans .pcol:last-child { padding-right: 0; }
+.phead { border-radius: var(--radius-10, 10px); padding: 16px 18px; background: rgb(245,244,241); margin-bottom: 14px; }
+.phead.blue { background: var(--color-brand-default, #1f40ed); color: #fff; }
+.phead .tier { display: block; font: 500 11px/1 var(--sg-sans); letter-spacing: .1em; opacity: .75; margin-bottom: 10px; }
+.phead .price { display: block; font: 400 32px/1.1 var(--sg-serif); margin-bottom: 10px; }
+.phead .pdesc { display: block; font-size: 12px; line-height: 1.45; opacity: .8; }
+.pact { display: flex; gap: 8px; padding: 0 0 14px; border-bottom: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); }
+.pact .btn { flex: 1; }
+.pfeat { padding-top: 12px; }
+.pfeat .fl { font: 500 10px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; opacity: .5; margin-bottom: 4px; }
+.pfeat span { display: block; padding: 6px 0; border-bottom: 1px solid var(--color-gray-200, rgba(0,0,0,.07)); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-charcoal, #111); opacity: .65; font-family: var(--sg-mono); }
+/* sign-in mock */
+.sgw { background: var(--signin-card, #fff); border: 1px solid var(--color-gray-200, rgba(0,0,0,.08)); padding: 28px; display: flex; justify-content: center; }
+.sgcard { width: var(--component-auth-card-width, 340px); font-family: var(--sg-sans); color: var(--signin-text, #1a1a1a); }
+.sgcard h3 { font-size: 22px; font-weight: 500; margin: 0 0 4px; color: var(--signin-heading, #1a1a1a); font-family: var(--sg-serif); }
+.sgcard p { font-size: 12px; color: var(--signin-text, #6b7280); margin: 0 0 14px; opacity: .8; }
+.sgbtn { height: var(--component-auth-button-height, 36px); border-radius: var(--radius-8, 8px); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; margin-bottom: 8px; }
+.sgbtn.google { border: 1px solid var(--signin-google-border, rgba(0,0,0,.12)); color: var(--signin-text, #1a1a1a); background: #fff; }
+.sgbtn.mail { background: var(--signin-action, var(--color-brand-default, #1f40ed)); color: var(--signin-on-action, #fff); }
+.sgfield { height: var(--component-auth-field-height, 36px); border-radius: var(--radius-auth-field, 8px); border: 1px solid var(--signin-field-border, rgba(0,0,0,.12)); background: var(--signin-field, #fff); display: flex; align-items: center; padding: 0 10px; font-size: 13px; color: var(--signin-placeholder, #9ca3af); margin-bottom: 8px; }
+/* docs mock */
+.dgw { display: flex; border: 1px solid var(--docs-border, #eeeff5); border-radius: var(--radius-10, 10px); overflow: hidden; background: var(--docs-surface, #fff); font-family: Inter, var(--sg-sans); }
+.dgw .dsb { width: var(--component-docs-sidebar-width, 270px); border-right: 1px solid var(--docs-rail-line, var(--docs-border, #eeeff5)); padding: 12px; font-size: 13px; }
+.dgw .dni { height: var(--component-docs-nav-item-height, 30px); display: flex; align-items: center; padding: 0 10px; border-radius: var(--radius-4, 4px); color: var(--docs-nav-text, #5c5c66); }
+.dgw .dni.on { background: var(--docs-nav-active, rgba(24,64,237,.08)); color: var(--docs-primary, #1840ed); }
+.dgw .dse { height: var(--component-docs-search-height, 32px); border-radius: var(--radius-pill, 1000px); background: var(--docs-field, rgba(0,0,0,.03)); display: flex; align-items: center; padding: 0 14px; font-size: 13px; color: var(--docs-nav-text, #5c5c66); margin-bottom: 10px; }
+.dgw .dco { flex: 1; padding: 20px 28px; }
+.dgw .dco h3 { font-size: 24px; font-weight: 600; margin: 0 0 8px; color: var(--docs-text, #1a1a1d); }
+.dgw .dco p { font-size: 14px; color: var(--docs-body-text, #3c3c42); margin: 0 0 10px; }
+.dgw .dco code.ic { background: var(--docs-code-bg, rgba(0,0,0,.04)); color: var(--docs-link, var(--docs-primary, #1840ed)); border-radius: var(--radius-4, 4px); padding: 1px 5px; font-family: var(--sg-mono); }
+.dgw.dark { background: var(--docs-surface, #0b0b10); border-color: var(--docs-border, #26272c); }
+.dgw.dark .dsb { border-right-color: var(--docs-border, #26272c); }
+.dgw.dark .dni { color: var(--docs-nav-text, #a1a1aa); }
+.dgw.dark .dni.on { background: var(--docs-nav-active, rgba(24,64,237,.16)); }
+.dgw.dark .dse { color: var(--docs-nav-text, #a1a1aa); background: var(--docs-field, rgba(255,255,255,.05)); }
+.dgw.dark .dco h3 { color: var(--docs-text, #e4e4e7); }
+.dgw.dark .dco p { color: var(--docs-body-text, #a1a1aa); }
+.dgw.dark .dco code.ic { background: var(--docs-code-bg, rgba(255,255,255,.06)); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Exa style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Exa, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared <code>--brand-*</code>/<code>--gray-*</code>/<code>--secondary-*</code>/<code>--cream</code> marketing layer, the auth.exa.ai sign-in card's <code>--text-light-*</code>/<code>--secondary-*</code> layer, and the docs' Mintlify <code>--primary</code>/<code>--gray-*</code>/<code>--color-*</code>/<code>--docs-*</code>/<code>--twoslash-*</code> layer — ABCDiatype and Arizona on marketing, ABC Diatype Unlicensed Trial and Geist Mono on the auth card, Inter and Paper Mono on the docs — plus the measured control heights, radii and component geometry. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from exa.ai, auth.exa.ai and exa.ai/docs on 2026-11-14, signed out, in headless Chromium. Everything behind the sign-in — dashboard, API keys, playground, websets — is a documented boundary; the fields were measured and filled then cleared, never submitted; the demo's Run-preview arrow was never pressed. The named faces are served trial fonts and are not loaded here: samples fall back to system sans, Georgia and ui-monospace.</p>
+
+  <h2 class="sh">Marketing chrome and the search demo</h2>
+  <p class="lead">The exa.ai header is a 55px bar under the 48px Exa 3.0 announcement strip; the hero sets 'The world's data for AI agents' in Arizona, above the black 'Try API for free' pill and the live demo widget — query field, Search/Agent toggle, LATENCY and CATEGORY pills, OUTPUT tabs and the blue Run-preview arrow.</p>
+  <div class="mock">
+    <div class="ann">Introducing Exa 3.0: Our largest ever improvement to search quality · Learn more</div>
+    <div class="mnav"><span class="wm">exa</span><span>Products</span><span>Solutions</span><span>Resources</span><span>Docs</span><span>Pricing</span><span class="sp"></span><span>Sign in</span><span class="btn sales">Contact sales</span><span class="btn black">Sign up</span></div>
+    <div class="hero">The world's data for AI agents<small>Search the largest index of public web and private information.</small>
+      <div class="caprow"><span class="btn black">Try API for free</span></div>
+      <div class="demo">
+        <div class="q">Find anything…</div>
+        <div class="modes"><span class="on">Search</span><span>Agent</span></div>
+        <div class="lbl">LATENCY</div>
+        <div class="pills"><span class="pill">Lite 300ms</span><span class="pill on">Auto 1s</span><span class="pill">Deep ~10s</span><span class="btn blue run">&#8593;</span></div>
+        <div class="lbl">CATEGORY</div>
+        <div class="pills"><span class="pill on">Full Web</span><span class="pill">News</span><span class="pill">Companies</span><span class="pill">Research</span></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing keeps the cream field; the use-case pills switch the scenario locally, and the plans paint as one row-divided table rather than three cards — a tinted header tile per tier (the Starter tile in the brand blue, the others on the greige field), the price set in Arizona, a black action row and checkmarked Includes rows.</p>
+  <div class="mock" style="padding:20px">
+    <div class="usecases"><span class="cap">USE CASES</span><span class="pill">Coding agents</span><span class="pill">Chatbots</span><span class="pill">News monitoring</span><span class="pill">Enrichments</span><span class="pill">Voice agents</span><span class="pill">People search</span><span class="pill">Company search</span></div>
+    <div class="plans">
+      <div class="pcol">
+        <div class="phead blue"><span class="tier">STARTER</span><span class="price">Free</span><span class="pdesc">$10 credits every month plus a $10 onboarding bonus. No payment method required.</span></div>
+        <div class="pact"><span class="btn black" style="height:38px">Start building for free</span></div>
+        <div class="pfeat"><div class="fl">Includes:</div><span>&#10003; Free $10 credits per month</span><span>&#10003; MCP server access</span><span>&#10003; Claude Connector</span><span>&#10003; 10 Search Queries Per Second (QPS)</span></div>
+      </div>
+      <div class="pcol">
+        <div class="phead"><span class="tier">DEVELOPER</span><span class="price">Pay as you go</span><span class="pdesc">Use the Search API with no commitment with our flexible per-request pricing</span></div>
+        <div class="pact"><span class="btn black" style="height:38px">Get an API key</span></div>
+        <div class="pfeat"><div class="fl">Includes:</div><span>&#10003; Everything in Starter</span><span>&#10003; PAYGO usage-based billing</span><span>&#10003; Standard email support</span><span>&#10003; Up to 25 Search QPS</span></div>
+      </div>
+      <div class="pcol">
+        <div class="phead"><span class="tier">ENTERPRISE</span><span class="price">Custom</span><span class="pdesc">Tailored for your organization to solve for large scale requirements and enterprise needs</span></div>
+        <div class="pact"><span class="btn black" style="height:38px">Upgrade now</span><span class="btn sales" style="height:38px">Talk to sales</span></div>
+        <div class="pfeat"><div class="fl">Includes:</div><span>&#10003; Everything in Developer</span><span>&#10003; Zero data retention</span><span>&#10003; 25 Search QPS</span></div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sh">Sign in</h2>
+  <p class="lead">dashboard.exa.ai redirects to a single signed-out card on auth.exa.ai: 'Start building with Exa' in Arizona Flare, a bordered Continue-with-Google button, a black Continue-with-email action and the e-mail field — measured, never submitted.</p>
+  <div class="mock sgw">
+    <div class="sgcard"><h3>Start building with Exa</h3><p>Sign in to get your API key.</p><span class="sgbtn google">Continue with Google</span><span class="sgbtn mail">Continue with email</span><div class="sgfield">Email</div><p style="margin-top:10px">Single sign-on for teams →</p></div>
+  </div>
+
+  <h2 class="sh">Docs shell</h2>
+  <p class="lead">exa.ai/docs is the one surface with a real theme switch: the light shell paints a rail on white with Inter text and the #1840ed primary; html.dark flips to the #0b0b10 canvas, #26272c borders and washed code surfaces, keeping the same primary.</p>
+  <div class="dgw"><div class="dsb"><div class="dse">Search…</div><div class="dni on">Quickstart</div><div class="dni">Search</div><div class="dni">Agent</div></div><div class="dco"><h3>Start building with Exa</h3><p>Exa is a search engine built for AI. Call <code class="ic">exa.search()</code> to get clean web content.</p><p>Read the <a style="color:var(--docs-link,var(--docs-primary,#1840ed))">quickstart</a> first.</p></div></div>
+  <div class="dgw dark" style="margin-top:14px"><div class="dsb"><div class="dse">Search…</div><div class="dni on">Quickstart</div><div class="dni">Search</div><div class="dni">Agent</div></div><div class="dco"><h3>Start building with Exa</h3><p>Exa is a search engine built for AI. Call <code class="ic">exa.search()</code> to get clean web content.</p><p>Read the <a style="color:var(--docs-link,#96b0eb)">quickstart</a> first.</p></div></div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead"><code>core.color.brand</code> is the marketing #1f40ed scale, <code>core.color.neutral</code> the cream/greige/gold/charcoal field colours, <code>core.color.gray</code>/<code>core.color.secondary</code>/<code>core.color.accent</code>/<code>core.color.darkAccent</code>/<code>core.color.text</code>/<code>core.color.named</code> the rest of the declared marketing layer, <code>core.color.auth</code> the sign-in card's own values, and <code>core.color.docs</code> the Mintlify layer — its own cool <code>gray.*</code> ramp, the <code>primary</code> triplet and the <code>mintlify.*</code> design roles. The light set carries the measured <code>marketing.*</code>/<code>signin.*</code>/<code>docs.*</code> roles — each aliases the declared token it matches — and the dark set the docs' dark roles.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Metrics and radius</h2>
+  <p class="lead">The header is 55px under a 48px announcement strip; pills use the declared 1000px radius, cards 10px, fields 8px and the docs' chip radius is 6px. Containers are the declared page widths; breakpoints are the declared @media widths of the public sheets.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Motion</h2>
+  <div id="motion-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Marketing runs ABCDiatype for UI and Arizona for display; the sign-in card sets ABC Diatype Unlicensed Trial with ABC Arizona Flare and Geist Mono; the docs set Inter with Paper Mono code and the marketing face for headings. Sizes are the measured steps; samples fall back to system faces.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --brand-*/--gray-*/--primary/--color-* layer from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, filled and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"brand":{"dark":{"v":"#0d2189","t":"color","s":"css-var --brand-dark (marketing)","d":"The declared `--brand-dark` — the marketing brand scale (#1f40ed blue)."},"darker":{"v":"#000a40","t":"color","s":"css-var --brand-darker (marketing)","d":"The declared `--brand-darker` — the marketing brand scale (#1f40ed blue)."},"default":{"v":"#1f40ed","t":"color","s":"css-var --brand-default (marketing)","d":"The declared `--brand-default` — the marketing brand scale (#1f40ed blue)."},"default-rgb":{"v":"31,64,237","t":"other","s":"css-var --brand-default-rgb (marketing)","d":"The declared `--brand-default-rgb` — the marketing brand scale (#1f40ed blue)."},"faint":{"v":"#c6cfff","t":"color","s":"css-var --brand-faint (marketing)","d":"The declared `--brand-faint` — the marketing brand scale (#1f40ed blue)."},"fainter":{"v":"#e7ebfd","t":"color","s":"css-var --brand-fainter (marketing)","d":"The declared `--brand-fainter` — the marketing brand scale (#1f40ed blue)."},"muted":{"v":"#4d87e7","t":"color","s":"css-var --brand-muted (marketing)","d":"The declared `--brand-muted` — the marketing brand scale (#1f40ed blue)."},"subtle":{"v":"#a1aff7","t":"color","s":"css-var --brand-subtle (marketing)","d":"The declared `--brand-subtle` — the marketing brand scale (#1f40ed blue)."}},"secondary":{"accent":{"v":"#d4d4d4","t":"color","s":"css-var --secondary-accent (marketing)","d":"The declared `--secondary-accent` — the marketing secondary scale."},"accent2x":{"v":"#a3a3a3","t":"color","s":"css-var --secondary-accent2x (marketing)","d":"The declared `--secondary-accent2x` — the marketing secondary scale."},"dark":{"v":"#f5f5f5","t":"color","s":"css-var --secondary-dark (marketing)","d":"The declared `--secondary-dark` — the marketing secondary scale."},"darker":{"v":"#efefef","t":"color","s":"css-var --secondary-darker (marketing)","d":"The declared `--secondary-darker` — the marketing secondary scale."},"darkest":{"v":"#e5e5e5","t":"color","s":"css-var --secondary-darkest (marketing)","d":"The declared `--secondary-darkest` — the marketing secondary scale."},"default":{"v":"#ffffff","t":"color","s":"css-var --secondary-default (marketing)","d":"The declared `--secondary-default` — the marketing secondary scale."},"faint":{"v":"#fafafa","t":"color","s":"css-var --secondary-faint (marketing)","d":"The declared `--secondary-faint` — the marketing secondary scale."},"fainter":{"v":"#fcfcfc","t":"color","s":"css-var --secondary-fainter (marketing)","d":"The declared `--secondary-fainter` — the marketing secondary scale."}},"gray":{"100":{"v":"#f5f5f5","t":"color","s":"css-var --gray-100 (marketing)","d":"The declared `--gray-100` — the marketing neutral ramp."},"200":{"v":"#e5e5e5","t":"color","s":"css-var --gray-200 (marketing)","d":"The declared `--gray-200` — the marketing neutral ramp."},"300":{"v":"#d4d4d4","t":"color","s":"css-var --gray-300 (marketing)","d":"The declared `--gray-300` — the marketing neutral ramp."},"400":{"v":"#a3a3a3","t":"color","s":"css-var --gray-400 (marketing)","d":"The declared `--gray-400` — the marketing neutral ramp."},"50":{"v":"#fafafa","t":"color","s":"css-var --gray-50 (marketing)","d":"The declared `--gray-50` — the marketing neutral ramp."},"500":{"v":"#737373","t":"color","s":"css-var --gray-500 (marketing)","d":"The declared `--gray-500` — the marketing neutral ramp."},"600":{"v":"#525252","t":"color","s":"css-var --gray-600 (marketing)","d":"The declared `--gray-600` — the marketing neutral ramp."},"700":{"v":"#404040","t":"color","s":"css-var --gray-700 (marketing)","d":"The declared `--gray-700` — the marketing neutral ramp."},"800":{"v":"#262626","t":"color","s":"css-var --gray-800 (marketing)","d":"The declared `--gray-800` — the marketing neutral ramp."},"900":{"v":"#171717","t":"color","s":"css-var --gray-900 (marketing)","d":"The declared `--gray-900` — the marketing neutral ramp."},"950":{"v":"#0a0a0a","t":"color","s":"css-var --gray-950 (marketing)","d":"The declared `--gray-950` — the marketing neutral ramp."}},"neutral":{"cream":{"v":"#faf9f7","t":"color","s":"css-var --cream (marketing)","d":"The cream #faf9f7 page field."},"cream-darker":{"v":"#f0ece8","t":"color","s":"css-var --cream-darker (marketing)","d":"The darker cream #f0ece8 band."},"greige":{"v":"#58544e","t":"color","s":"css-var --greige (marketing)","d":"The #58544e greige body ink."},"greige-light":{"v":"#787572","t":"color","s":"css-var --greige-light (marketing)","d":"The #787572 lighter greige."},"greige-lightest":{"v":"#c2bfbb","t":"color","s":"css-var --greige-lightest (marketing)","d":"The #c2bfbb lightest greige."},"gold":{"v":"#89661a","t":"color","s":"css-var --gold (marketing)","d":"The #89661a gold (the announcement strip, rating stars)."},"charcoal":{"v":"#111111","t":"color","s":"css-var --charcoal (marketing)","d":"The #111111 charcoal ink."},"black":{"v":"#000000","t":"color","s":"css-var --black (marketing)","d":"Pure black."},"white":{"v":"#ffffff","t":"color","s":"css-var --white (marketing)","d":"Pure white."},"background":{"v":"#ffffff","t":"color","s":"css-var --background (marketing)","d":"The declared white surface."}},"named":{"blood-burst":{"v":"#ff4b4b","t":"color","s":"css-var --blood-burst (marketing)","d":"The declared `--blood-burst` — a named marketing colour."},"burnished-metal":{"v":"#c9c9c8","t":"color","s":"css-var --burnished-metal (marketing)","d":"The declared `--burnished-metal` — a named marketing colour."},"carbon":{"v":"#333333","t":"color","s":"css-var --carbon (marketing)","d":"The declared `--carbon` — a named marketing colour."},"cerebral-grey":{"v":"#cccccc","t":"color","s":"css-var --cerebral-grey (marketing)","d":"The declared `--cerebral-grey` — a named marketing colour."},"light-shojin-blue":{"v":"#2043f9","t":"color","s":"css-var --light-shojin-blue (marketing)","d":"The declared `--light-shojin-blue` — a named marketing colour."},"lucky-grey":{"v":"#777777","t":"color","s":"css-var --lucky-grey (marketing)","d":"The declared `--lucky-grey` — a named marketing colour."},"orchid":{"v":"#788ff6","t":"color","s":"css-var --orchid (marketing)","d":"The declared `--orchid` — a named marketing colour."},"paper-white":{"v":"#f0f0f4","t":"color","s":"css-var --paper-white (marketing)","d":"The declared `--paper-white` — a named marketing colour."},"pauper":{"v":"#343447","t":"color","s":"css-var --pauper (marketing)","d":"The declared `--pauper` — a named marketing colour."},"pearl-necklace":{"v":"#fbf7ec","t":"color","s":"css-var --pearl-necklace (marketing)","d":"The declared `--pearl-necklace` — a named marketing colour."},"pouty-purple":{"v":"#e9d9f8","t":"color","s":"css-var --pouty-purple (marketing)","d":"The declared `--pouty-purple` — a named marketing colour."},"raven":{"v":"#0c0c09","t":"color","s":"css-var --raven (marketing)","d":"The declared `--raven` — a named marketing colour."},"thamar-black":{"v":"#191919","t":"color","s":"css-var --thamar-black (marketing)","d":"The declared `--thamar-black` — a named marketing colour."},"virtual-violet":{"v":"#675181","t":"color","s":"css-var --virtual-violet (marketing)","d":"The declared `--virtual-violet` — a named marketing colour."},"winter-park":{"v":"#96948d","t":"color","s":"css-var --winter-park (marketing)","d":"The declared `--winter-park` — a named marketing colour."}},"accent":{"default":{"v":"#1f40ed","t":"color","s":"css-var --accent (marketing)","d":"The declared `--accent` — a light-theme badge accent pair member."},"background":{"v":"#1f40ed","t":"color","s":"css-var --accent-background (marketing)","d":"The declared `--accent-background` — a light-theme badge accent pair member."},"darkgreen-dark":{"v":"#065f46","t":"color","s":"css-var --accent-darkgreen-dark (marketing)","d":"The declared `--accent-darkgreen-dark` — a light-theme badge accent pair member."},"darkgreen-light":{"v":"#d1fae5","t":"color","s":"css-var --accent-darkgreen-light (marketing)","d":"The declared `--accent-darkgreen-light` — a light-theme badge accent pair member."},"green":{"v":"#50b40a","t":"color","s":"css-var --accent-green (marketing)","d":"The declared `--accent-green` — a light-theme badge accent pair member."},"maroon-dark":{"v":"#991b1b","t":"color","s":"css-var --accent-maroon-dark (marketing)","d":"The declared `--accent-maroon-dark` — a light-theme badge accent pair member."},"maroon-light":{"v":"#fee2e2","t":"color","s":"css-var --accent-maroon-light (marketing)","d":"The declared `--accent-maroon-light` — a light-theme badge accent pair member."},"pink-dark":{"v":"#9d174d","t":"color","s":"css-var --accent-pink-dark (marketing)","d":"The declared `--accent-pink-dark` — a light-theme badge accent pair member."},"pink-light":{"v":"#fce7f3","t":"color","s":"css-var --accent-pink-light (marketing)","d":"The declared `--accent-pink-light` — a light-theme badge accent pair member."},"purple-dark":{"v":"#5b21b6","t":"color","s":"css-var --accent-purple-dark (marketing)","d":"The declared `--accent-purple-dark` — a light-theme badge accent pair member."},"purple-light":{"v":"#ede9fe","t":"color","s":"css-var --accent-purple-light (marketing)","d":"The declared `--accent-purple-light` — a light-theme badge accent pair member."},"red":{"v":"#d32f2f","t":"color","s":"css-var --accent-red (marketing)","d":"The declared `--accent-red` — a light-theme badge accent pair member."},"skyblue-dark":{"v":"#1e40af","t":"color","s":"css-var --accent-skyblue-dark (marketing)","d":"The declared `--accent-skyblue-dark` — a light-theme badge accent pair member."},"skyblue-light":{"v":"#dbeafe","t":"color","s":"css-var --accent-skyblue-light (marketing)","d":"The declared `--accent-skyblue-light` — a light-theme badge accent pair member."},"yellow-dark":{"v":"#92400e","t":"color","s":"css-var --accent-yellow-dark (marketing)","d":"The declared `--accent-yellow-dark` — a light-theme badge accent pair member."},"yellow-light":{"v":"#fef3c7","t":"color","s":"css-var --accent-yellow-light (marketing)","d":"The declared `--accent-yellow-light` — a light-theme badge accent pair member."}},"darkAccent":{"green-dark":{"v":"#014737","t":"color","s":"css-var --dark-accent-green-dark (marketing)","d":"The declared `--dark-accent-green-dark` — a dark-theme badge accent pair member."},"green-light":{"v":"#77d1ae","t":"color","s":"css-var --dark-accent-green-light (marketing)","d":"The declared `--dark-accent-green-light` — a dark-theme badge accent pair member."},"maroon-dark":{"v":"#771d1d","t":"color","s":"css-var --dark-accent-maroon-dark (marketing)","d":"The declared `--dark-accent-maroon-dark` — a dark-theme badge accent pair member."},"maroon-light":{"v":"#f8b4b3","t":"color","s":"css-var --dark-accent-maroon-light (marketing)","d":"The declared `--dark-accent-maroon-light` — a dark-theme badge accent pair member."},"pink-dark":{"v":"#751a3d","t":"color","s":"css-var --dark-accent-pink-dark (marketing)","d":"The declared `--dark-accent-pink-dark` — a dark-theme badge accent pair member."},"pink-light":{"v":"#f8b4d9","t":"color","s":"css-var --dark-accent-pink-light (marketing)","d":"The declared `--dark-accent-pink-light` — a dark-theme badge accent pair member."},"purple-dark":{"v":"#4a1d96","t":"color","s":"css-var --dark-accent-purple-dark (marketing)","d":"The declared `--dark-accent-purple-dark` — a dark-theme badge accent pair member."},"purple-light":{"v":"#bfb1f4","t":"color","s":"css-var --dark-accent-purple-light (marketing)","d":"The declared `--dark-accent-purple-light` — a dark-theme badge accent pair member."},"skyblue-dark":{"v":"#243876","t":"color","s":"css-var --dark-accent-skyblue-dark (marketing)","d":"The declared `--dark-accent-skyblue-dark` — a dark-theme badge accent pair member."},"skyblue-light":{"v":"#a5cafd","t":"color","s":"css-var --dark-accent-skyblue-light (marketing)","d":"The declared `--dark-accent-skyblue-light` — a dark-theme badge accent pair member."},"yellow-dark":{"v":"#623112","t":"color","s":"css-var --dark-accent-yellow-dark (marketing)","d":"The declared `--dark-accent-yellow-dark` — a dark-theme badge accent pair member."},"yellow-light":{"v":"#faca16","t":"color","s":"css-var --dark-accent-yellow-light (marketing)","d":"The declared `--dark-accent-yellow-light` — a dark-theme badge accent pair member."}},"text":{"dark-default":{"v":"#e5e7eb","t":"color","s":"css-var --text-dark-default (marketing)","d":"The declared `--text-dark-default` — the text roles for dark surfaces."},"dark-faint":{"v":"#6b7280","t":"color","s":"css-var --text-dark-faint (marketing)","d":"The declared `--text-dark-faint` — the text roles for dark surfaces."},"dark-link":{"v":"#a1aff7","t":"color","s":"css-var --text-dark-link (marketing)","d":"The declared `--text-dark-link` — the text roles for dark surfaces."},"dark-muted":{"v":"#d1d5db","t":"color","s":"css-var --text-dark-muted (marketing)","d":"The declared `--text-dark-muted` — the text roles for dark surfaces."},"dark-subtle":{"v":"#9ca3af","t":"color","s":"css-var --text-dark-subtle (marketing)","d":"The declared `--text-dark-subtle` — the text roles for dark surfaces."},"light-default":{"v":"#111827","t":"color","s":"css-var --text-light-default (marketing)","d":"The declared `--text-light-default` — the text roles for light surfaces."},"light-faint":{"v":"#e5e7eb","t":"color","s":"css-var --text-light-faint (marketing)","d":"The declared `--text-light-faint` — the text roles for light surfaces."},"light-link":{"v":"#1f40ed","t":"color","s":"css-var --text-light-link (marketing)","d":"The declared `--text-light-link` — the text roles for light surfaces."},"light-muted":{"v":"#787572","t":"color","s":"css-var --text-light-muted (marketing)","d":"The declared `--text-light-muted` — the text roles for light surfaces."},"light-subtle":{"v":"#9ca3af","t":"color","s":"css-var --text-light-subtle (marketing)","d":"The declared `--text-light-subtle` — the text roles for light surfaces."}},"auth":{"text-light":{"default":{"v":"#1a1a1a","t":"color","s":"css-var --text-light-default (auth)","d":"The declared `--text-light-default` — the sign-in card's own text roles."},"faint":{"v":"#e5e7eb","t":"color","s":"css-var --text-light-faint (auth)","d":"The declared `--text-light-faint` — the sign-in card's own text roles."},"link":{"v":"#1f40ed","t":"color","s":"css-var --text-light-link (auth)","d":"The declared `--text-light-link` — the sign-in card's own text roles."},"muted":{"v":"#6b7280","t":"color","s":"css-var --text-light-muted (auth)","d":"The declared `--text-light-muted` — the sign-in card's own text roles."},"subtle":{"v":"#9ca3af","t":"color","s":"css-var --text-light-subtle (auth)","d":"The declared `--text-light-subtle` — the sign-in card's own text roles."}},"secondary":{"accent":{"v":"#9f9672","t":"color","s":"css-var --secondary-accent (auth)","d":"The declared `--secondary-accent` — the auth card's cream-toned secondary scale (different values from marketing's)."},"accent2x":{"v":"#89805d","t":"color","s":"css-var --secondary-accent2x (auth)","d":"The declared `--secondary-accent2x` — the auth card's cream-toned secondary scale (different values from marketing's)."},"dark":{"v":"#f4f1e7","t":"color","s":"css-var --secondary-dark (auth)","d":"The declared `--secondary-dark` — the auth card's cream-toned secondary scale (different values from marketing's)."},"darker":{"v":"#efebdc","t":"color","s":"css-var --secondary-darker (auth)","d":"The declared `--secondary-darker` — the auth card's cream-toned secondary scale (different values from marketing's)."},"darkest":{"v":"#ece1b7","t":"color","s":"css-var --secondary-darkest (auth)","d":"The declared `--secondary-darkest` — the auth card's cream-toned secondary scale (different values from marketing's)."},"default":{"v":"#faf7ec","t":"color","s":"css-var --secondary-default (auth)","d":"The declared `--secondary-default` — the auth card's cream-toned secondary scale (different values from marketing's)."}},"background":{"v":"#ffffff","t":"color","s":"css-var --background (auth)","d":"The declared `--background` — the sign-in card's surface role."},"foreground":{"v":"#171717","t":"color","s":"css-var --foreground (auth)","d":"The declared `--foreground` — the sign-in card's surface role."}},"docs":{"gray":{"100":{"v":"#eeeff5","t":"color","s":"css-var --gray-100 (docs-light)","d":"The declared `--gray-100` — the docs' cool-toned grey ramp (different values from marketing's)."},"200":{"v":"#dfe0e5","t":"color","s":"css-var --gray-200 (docs-light)","d":"The declared `--gray-200` — the docs' cool-toned grey ramp (different values from marketing's)."},"300":{"v":"#cecfd5","t":"color","s":"css-var --gray-300 (docs-light)","d":"The declared `--gray-300` — the docs' cool-toned grey ramp (different values from marketing's)."},"400":{"v":"#9fa0a5","t":"color","s":"css-var --gray-400 (docs-light)","d":"The declared `--gray-400` — the docs' cool-toned grey ramp (different values from marketing's)."},"50":{"v":"#f3f4fa","t":"color","s":"css-var --gray-50 (docs-light)","d":"The declared `--gray-50` — the docs' cool-toned grey ramp (different values from marketing's)."},"500":{"v":"#707177","t":"color","s":"css-var --gray-500 (docs-light)","d":"The declared `--gray-500` — the docs' cool-toned grey ramp (different values from marketing's)."},"600":{"v":"#505157","t":"color","s":"css-var --gray-600 (docs-light)","d":"The declared `--gray-600` — the docs' cool-toned grey ramp (different values from marketing's)."},"700":{"v":"#3f4045","t":"color","s":"css-var --gray-700 (docs-light)","d":"The declared `--gray-700` — the docs' cool-toned grey ramp (different values from marketing's)."},"800":{"v":"#26272c","t":"color","s":"css-var --gray-800 (docs-light)","d":"The declared `--gray-800` — the docs' cool-toned grey ramp (different values from marketing's)."},"900":{"v":"#17181e","t":"color","s":"css-var --gray-900 (docs-light)","d":"The declared `--gray-900` — the docs' cool-toned grey ramp (different values from marketing's)."},"950":{"v":"#0a0c11","t":"color","s":"css-var --gray-950 (docs-light)","d":"The declared `--gray-950` — the docs' cool-toned grey ramp (different values from marketing's)."}},"primary":{"v":"#1840ed","t":"color","s":"css-var --primary (docs-light)","d":"The declared `--primary` — the docs theme vars."},"primary-light":{"v":"#5f7cff","t":"color","s":"css-var --primary-light (docs-light)","d":"The declared `--primary-light` — the docs theme vars."},"primary-dark":{"v":"#2751f6","t":"color","s":"css-var --primary-dark (docs-light)","d":"The declared `--primary-dark` — the docs theme vars."},"background-light":{"v":"#ffffff","t":"color","s":"css-var --background-light (docs-light)","d":"The declared `--background-light` — the docs theme vars."},"background-dark":{"v":"#0b0b10","t":"color","s":"css-var --background-dark (docs-light)","d":"The declared `--background-dark` — the docs theme vars."},"default-border":{"v":"#eeeff5","t":"color","s":"css-var --default-border-color (docs-light)","d":"The declared `--default-border-color` — the docs theme vars."},"tooltip-foreground":{"v":"#ffffff","t":"color","s":"css-var --tooltip-foreground (docs-light)","d":"The declared `--tooltip-foreground` — the docs theme vars."},"docs-accent":{"v":"#1840ed","t":"color","s":"css-var --docs-accent (docs-light)","d":"The declared `--docs-accent` — the docs theme vars."},"mintlify":{"amber":{"100":{"v":"#fff7ec","t":"color","s":"css-var --color-amber-100 (docs-light)","d":"The declared `--color-amber-100` — the docs' Mintlify design layer."},"1000":{"v":"#342302","t":"color","s":"css-var --color-amber-1000 (docs-light)","d":"The declared `--color-amber-1000` — the docs' Mintlify design layer."},"200":{"v":"#fef0d8","t":"color","s":"css-var --color-amber-200 (docs-light)","d":"The declared `--color-amber-200` — the docs' Mintlify design layer."},"300":{"v":"#fee0ae","t":"color","s":"css-var --color-amber-300 (docs-light)","d":"The declared `--color-amber-300` — the docs' Mintlify design layer."},"400":{"v":"#ffc763","t":"color","s":"css-var --color-amber-400 (docs-light)","d":"The declared `--color-amber-400` — the docs' Mintlify design layer."},"500":{"v":"#e4a40a","t":"color","s":"css-var --color-amber-500 (docs-light)","d":"The declared `--color-amber-500` — the docs' Mintlify design layer."},"600":{"v":"#b78306","t":"color","s":"css-var --color-amber-600 (docs-light)","d":"The declared `--color-amber-600` — the docs' Mintlify design layer."},"700":{"v":"#906604","t":"color","s":"css-var --color-amber-700 (docs-light)","d":"The declared `--color-amber-700` — the docs' Mintlify design layer."},"800":{"v":"#7e5903","t":"color","s":"css-var --color-amber-800 (docs-light)","d":"The declared `--color-amber-800` — the docs' Mintlify design layer."},"900":{"v":"#755703","t":"color","s":"css-var --color-amber-900 (docs-light)","d":"The declared `--color-amber-900` — the docs' Mintlify design layer."}},"background":{"primary":{"v":"#ffffff","t":"color","s":"css-var --color-background-primary (docs-light)","d":"The declared `--color-background-primary` — the docs' Mintlify design layer."},"secondary":{"v":"#fafafa","t":"color","s":"css-var --color-background-secondary (docs-light)","d":"The declared `--color-background-secondary` — the docs' Mintlify design layer."}},"black":{"default":{"v":"#000000","t":"color","s":"css-var --color-black (docs-light)","d":"The declared `--color-black` — the docs' Mintlify design layer."}},"blue":{"600":{"v":"#2563eb","t":"color","s":"css-var --color-blue-600 (docs-light)","d":"The declared `--color-blue-600` — the docs' Mintlify design layer."}},"brand":{"border":{"v":"#c4d1ed","t":"color","s":"css-var --color-brand-border (docs-light)","d":"The declared `--color-brand-border` — the docs' Mintlify design layer."},"border-active":{"v":"#6089f2","t":"color","s":"css-var --color-brand-border-active (docs-light)","d":"The declared `--color-brand-border-active` — the docs' Mintlify design layer."},"border-hover":{"v":"#96b0eb","t":"color","s":"css-var --color-brand-border-hover (docs-light)","d":"The declared `--color-brand-border-hover` — the docs' Mintlify design layer."},"foreground-primary":{"v":"#0e236f","t":"color","s":"css-var --color-brand-foreground-primary (docs-light)","d":"The declared `--color-brand-foreground-primary` — the docs' Mintlify design layer."},"foreground-secondary":{"v":"#1326d2","t":"color","s":"css-var --color-brand-foreground-secondary (docs-light)","d":"The declared `--color-brand-foreground-secondary` — the docs' Mintlify design layer."},"on-solid":{"v":"#f7f8fc","t":"color","s":"css-var --color-brand-on-solid (docs-light)","d":"The declared `--color-brand-on-solid` — the docs' Mintlify design layer."},"solid":{"v":"#2751f6","t":"color","s":"css-var --color-brand-solid (docs-light)","d":"The declared `--color-brand-solid` — the docs' Mintlify design layer."},"solid-hover":{"v":"#1622ed","t":"color","s":"css-var --color-brand-solid-hover (docs-light)","d":"The declared `--color-brand-solid-hover` — the docs' Mintlify design layer."},"subtle":{"v":"#f7f8fc","t":"color","s":"css-var --color-brand-subtle (docs-light)","d":"The declared `--color-brand-subtle` — the docs' Mintlify design layer."},"subtle-active":{"v":"#dce5f7","t":"color","s":"css-var --color-brand-subtle-active (docs-light)","d":"The declared `--color-brand-subtle-active` — the docs' Mintlify design layer."},"subtle-hover":{"v":"#eef2fa","t":"color","s":"css-var --color-brand-subtle-hover (docs-light)","d":"The declared `--color-brand-subtle-hover` — the docs' Mintlify design layer."}},"cream":{"default":{"v":"#faf9f7","t":"color","s":"css-var --color-cream (docs-light)","d":"The declared `--color-cream` — the docs' Mintlify design layer."},"dark":{"v":"#f0ece8","t":"color","s":"css-var --color-cream-dark (docs-light)","d":"The declared `--color-cream-dark` — the docs' Mintlify design layer."}},"danger":{"border":{"v":"#fdbfb9","t":"color","s":"css-var --color-danger-border (docs-light)","d":"The declared `--color-danger-border` — the docs' Mintlify design layer."},"border-active":{"v":"#fc333c","t":"color","s":"css-var --color-danger-border-active (docs-light)","d":"The declared `--color-danger-border-active` — the docs' Mintlify design layer."},"border-hover":{"v":"#fc8c84","t":"color","s":"css-var --color-danger-border-hover (docs-light)","d":"The declared `--color-danger-border-hover` — the docs' Mintlify design layer."},"foreground-primary":{"v":"#4d0509","t":"color","s":"css-var --color-danger-foreground-primary (docs-light)","d":"The declared `--color-danger-foreground-primary` — the docs' Mintlify design layer."},"foreground-secondary":{"v":"#970918","t":"color","s":"css-var --color-danger-foreground-secondary (docs-light)","d":"The declared `--color-danger-foreground-secondary` — the docs' Mintlify design layer."},"on-solid":{"v":"#fef6f5","t":"color","s":"css-var --color-danger-on-solid (docs-light)","d":"The declared `--color-danger-on-solid` — the docs' Mintlify design layer."},"solid":{"v":"#ce0c24","t":"color","s":"css-var --color-danger-solid (docs-light)","d":"The declared `--color-danger-solid` — the docs' Mintlify design layer."},"solid-hover":{"v":"#b5091e","t":"color","s":"css-var --color-danger-solid-hover (docs-light)","d":"The declared `--color-danger-solid-hover` — the docs' Mintlify design layer."},"subtle":{"v":"#fef6f5","t":"color","s":"css-var --color-danger-subtle (docs-light)","d":"The declared `--color-danger-subtle` — the docs' Mintlify design layer."},"subtle-active":{"v":"#fddbd8","t":"color","s":"css-var --color-danger-subtle-active (docs-light)","d":"The declared `--color-danger-subtle-active` — the docs' Mintlify design layer."},"subtle-hover":{"v":"#feedec","t":"color","s":"css-var --color-danger-subtle-hover (docs-light)","d":"The declared `--color-danger-subtle-hover` — the docs' Mintlify design layer."}},"emerald":{"100":{"v":"#effdee","t":"color","s":"css-var --color-emerald-100 (docs-light)","d":"The declared `--color-emerald-100` — the docs' Mintlify design layer."},"1000":{"v":"#043004","t":"color","s":"css-var --color-emerald-1000 (docs-light)","d":"The declared `--color-emerald-1000` — the docs' Mintlify design layer."},"200":{"v":"#defcdb","t":"color","s":"css-var --color-emerald-200 (docs-light)","d":"The declared `--color-emerald-200` — the docs' Mintlify design layer."},"300":{"v":"#b6f9b1","t":"color","s":"css-var --color-emerald-300 (docs-light)","d":"The declared `--color-emerald-300` — the docs' Mintlify design layer."},"400":{"v":"#66f463","t":"color","s":"css-var --color-emerald-400 (docs-light)","d":"The declared `--color-emerald-400` — the docs' Mintlify design layer."},"500":{"v":"#51d04f","t":"color","s":"css-var --color-emerald-500 (docs-light)","d":"The declared `--color-emerald-500` — the docs' Mintlify design layer."},"600":{"v":"#38a838","t":"color","s":"css-var --color-emerald-600 (docs-light)","d":"The declared `--color-emerald-600` — the docs' Mintlify design layer."},"700":{"v":"#248424","t":"color","s":"css-var --color-emerald-700 (docs-light)","d":"The declared `--color-emerald-700` — the docs' Mintlify design layer."},"800":{"v":"#1b741c","t":"color","s":"css-var --color-emerald-800 (docs-light)","d":"The declared `--color-emerald-800` — the docs' Mintlify design layer."},"900":{"v":"#156015","t":"color","s":"css-var --color-emerald-900 (docs-light)","d":"The declared `--color-emerald-900` — the docs' Mintlify design layer."}},"exa":{"blue":{"v":"#1840ed","t":"color","s":"css-var --color-exa-blue (docs-light)","d":"The declared `--color-exa-blue` — the docs' Mintlify design layer."}},"exa-blue":{"100":{"v":"#f7f8fc","t":"color","s":"css-var --color-exa-blue-100 (docs-light)","d":"The declared `--color-exa-blue-100` — the docs' Mintlify design layer."},"1000":{"v":"#0e236f","t":"color","s":"css-var --color-exa-blue-1000 (docs-light)","d":"The declared `--color-exa-blue-1000` — the docs' Mintlify design layer."},"200":{"v":"#eef2fa","t":"color","s":"css-var --color-exa-blue-200 (docs-light)","d":"The declared `--color-exa-blue-200` — the docs' Mintlify design layer."},"300":{"v":"#dce5f7","t":"color","s":"css-var --color-exa-blue-300 (docs-light)","d":"The declared `--color-exa-blue-300` — the docs' Mintlify design layer."},"400":{"v":"#c4d1ed","t":"color","s":"css-var --color-exa-blue-400 (docs-light)","d":"The declared `--color-exa-blue-400` — the docs' Mintlify design layer."},"500":{"v":"#96b0eb","t":"color","s":"css-var --color-exa-blue-500 (docs-light)","d":"The declared `--color-exa-blue-500` — the docs' Mintlify design layer."},"600":{"v":"#6089f2","t":"color","s":"css-var --color-exa-blue-600 (docs-light)","d":"The declared `--color-exa-blue-600` — the docs' Mintlify design layer."},"700":{"v":"#2751f6","t":"color","s":"css-var --color-exa-blue-700 (docs-light)","d":"The declared `--color-exa-blue-700` — the docs' Mintlify design layer."},"800":{"v":"#1622ed","t":"color","s":"css-var --color-exa-blue-800 (docs-light)","d":"The declared `--color-exa-blue-800` — the docs' Mintlify design layer."},"900":{"v":"#1326d2","t":"color","s":"css-var --color-exa-blue-900 (docs-light)","d":"The declared `--color-exa-blue-900` — the docs' Mintlify design layer."}},"exa-gray":{"100":{"v":"#f8f8f9","t":"color","s":"css-var --color-exa-gray-100 (docs-light)","d":"The declared `--color-exa-gray-100` — the docs' Mintlify design layer."},"1000":{"v":"#0b0b0d","t":"color","s":"css-var --color-exa-gray-1000 (docs-light)","d":"The declared `--color-exa-gray-1000` — the docs' Mintlify design layer."},"200":{"v":"#f3f3f4","t":"color","s":"css-var --color-exa-gray-200 (docs-light)","d":"The declared `--color-exa-gray-200` — the docs' Mintlify design layer."},"300":{"v":"#e6e6e8","t":"color","s":"css-var --color-exa-gray-300 (docs-light)","d":"The declared `--color-exa-gray-300` — the docs' Mintlify design layer."},"400":{"v":"#d4d4d8","t":"color","s":"css-var --color-exa-gray-400 (docs-light)","d":"The declared `--color-exa-gray-400` — the docs' Mintlify design layer."},"500":{"v":"#aaaab2","t":"color","s":"css-var --color-exa-gray-500 (docs-light)","d":"The declared `--color-exa-gray-500` — the docs' Mintlify design layer."},"600":{"v":"#85858e","t":"color","s":"css-var --color-exa-gray-600 (docs-light)","d":"The declared `--color-exa-gray-600` — the docs' Mintlify design layer."},"700":{"v":"#62626c","t":"color","s":"css-var --color-exa-gray-700 (docs-light)","d":"The declared `--color-exa-gray-700` — the docs' Mintlify design layer."},"800":{"v":"#4f4f57","t":"color","s":"css-var --color-exa-gray-800 (docs-light)","d":"The declared `--color-exa-gray-800` — the docs' Mintlify design layer."},"900":{"v":"#3f3f46","t":"color","s":"css-var --color-exa-gray-900 (docs-light)","d":"The declared `--color-exa-gray-900` — the docs' Mintlify design layer."}},"green":{"400":{"v":"#4ade80","t":"color","s":"css-var --color-green-400 (docs-light)","d":"The declared `--color-green-400` — the docs' Mintlify design layer."},"600":{"v":"#16a34a","t":"color","s":"css-var --color-green-600 (docs-light)","d":"The declared `--color-green-600` — the docs' Mintlify design layer."}},"neutral":{"border":{"v":"#e6e6e8","t":"color","s":"css-var --color-neutral-border (docs-light)","d":"The declared `--color-neutral-border` — the docs' Mintlify design layer."},"border-active":{"v":"#85858e","t":"color","s":"css-var --color-neutral-border-active (docs-light)","d":"The declared `--color-neutral-border-active` — the docs' Mintlify design layer."},"border-hover":{"v":"#aaaab2","t":"color","s":"css-var --color-neutral-border-hover (docs-light)","d":"The declared `--color-neutral-border-hover` — the docs' Mintlify design layer."},"foreground-primary":{"v":"#0b0b0d","t":"color","s":"css-var --color-neutral-foreground-primary (docs-light)","d":"The declared `--color-neutral-foreground-primary` — the docs' Mintlify design layer."},"foreground-secondary":{"v":"#3f3f46","t":"color","s":"css-var --color-neutral-foreground-secondary (docs-light)","d":"The declared `--color-neutral-foreground-secondary` — the docs' Mintlify design layer."},"on-solid":{"v":"#ffffff","t":"color","s":"css-var --color-neutral-on-solid (docs-light)","d":"The declared `--color-neutral-on-solid` — the docs' Mintlify design layer."},"solid":{"v":"#62626c","t":"color","s":"css-var --color-neutral-solid (docs-light)","d":"The declared `--color-neutral-solid` — the docs' Mintlify design layer."},"solid-hover":{"v":"#4f4f57","t":"color","s":"css-var --color-neutral-solid-hover (docs-light)","d":"The declared `--color-neutral-solid-hover` — the docs' Mintlify design layer."},"subtle":{"v":"#f8f8f9","t":"color","s":"css-var --color-neutral-subtle (docs-light)","d":"The declared `--color-neutral-subtle` — the docs' Mintlify design layer."},"subtle-active":{"v":"#e6e6e8","t":"color","s":"css-var --color-neutral-subtle-active (docs-light)","d":"The declared `--color-neutral-subtle-active` — the docs' Mintlify design layer."},"subtle-hover":{"v":"#f3f3f4","t":"color","s":"css-var --color-neutral-subtle-hover (docs-light)","d":"The declared `--color-neutral-subtle-hover` — the docs' Mintlify design layer."}},"overlay":{"default":{"v":"rgba(0, 0, 0, 0.35)","t":"color","s":"css-var --color-overlay (docs-light)","d":"The declared `--color-overlay` — the docs' Mintlify design layer."}},"primary":{"default":{"v":"#1840ed","t":"color","s":"css-var --color-primary (docs-light)","d":"The declared `--color-primary` — the docs' Mintlify design layer."}},"rose":{"100":{"v":"#fef6f5","t":"color","s":"css-var --color-rose-100 (docs-light)","d":"The declared `--color-rose-100` — the docs' Mintlify design layer."},"1000":{"v":"#4d0509","t":"color","s":"css-var --color-rose-1000 (docs-light)","d":"The declared `--color-rose-1000` — the docs' Mintlify design layer."},"200":{"v":"#feedec","t":"color","s":"css-var --color-rose-200 (docs-light)","d":"The declared `--color-rose-200` — the docs' Mintlify design layer."},"300":{"v":"#fddbd8","t":"color","s":"css-var --color-rose-300 (docs-light)","d":"The declared `--color-rose-300` — the docs' Mintlify design layer."},"400":{"v":"#fdbfb9","t":"color","s":"css-var --color-rose-400 (docs-light)","d":"The declared `--color-rose-400` — the docs' Mintlify design layer."},"500":{"v":"#fc8c84","t":"color","s":"css-var --color-rose-500 (docs-light)","d":"The declared `--color-rose-500` — the docs' Mintlify design layer."},"600":{"v":"#fc333c","t":"color","s":"css-var --color-rose-600 (docs-light)","d":"The declared `--color-rose-600` — the docs' Mintlify design layer."},"700":{"v":"#ce0c24","t":"color","s":"css-var --color-rose-700 (docs-light)","d":"The declared `--color-rose-700` — the docs' Mintlify design layer."},"800":{"v":"#b5091e","t":"color","s":"css-var --color-rose-800 (docs-light)","d":"The declared `--color-rose-800` — the docs' Mintlify design layer."},"900":{"v":"#970918","t":"color","s":"css-var --color-rose-900 (docs-light)","d":"The declared `--color-rose-900` — the docs' Mintlify design layer."}},"success":{"border":{"v":"#66f463","t":"color","s":"css-var --color-success-border (docs-light)","d":"The declared `--color-success-border` — the docs' Mintlify design layer."},"border-active":{"v":"#38a838","t":"color","s":"css-var --color-success-border-active (docs-light)","d":"The declared `--color-success-border-active` — the docs' Mintlify design layer."},"border-hover":{"v":"#51d04f","t":"color","s":"css-var --color-success-border-hover (docs-light)","d":"The declared `--color-success-border-hover` — the docs' Mintlify design layer."},"foreground-primary":{"v":"#043004","t":"color","s":"css-var --color-success-foreground-primary (docs-light)","d":"The declared `--color-success-foreground-primary` — the docs' Mintlify design layer."},"foreground-secondary":{"v":"#156015","t":"color","s":"css-var --color-success-foreground-secondary (docs-light)","d":"The declared `--color-success-foreground-secondary` — the docs' Mintlify design layer."},"on-solid":{"v":"#effdee","t":"color","s":"css-var --color-success-on-solid (docs-light)","d":"The declared `--color-success-on-solid` — the docs' Mintlify design layer."},"solid":{"v":"#248424","t":"color","s":"css-var --color-success-solid (docs-light)","d":"The declared `--color-success-solid` — the docs' Mintlify design layer."},"solid-hover":{"v":"#1b741c","t":"color","s":"css-var --color-success-solid-hover (docs-light)","d":"The declared `--color-success-solid-hover` — the docs' Mintlify design layer."},"subtle":{"v":"#effdee","t":"color","s":"css-var --color-success-subtle (docs-light)","d":"The declared `--color-success-subtle` — the docs' Mintlify design layer."},"subtle-active":{"v":"#b6f9b1","t":"color","s":"css-var --color-success-subtle-active (docs-light)","d":"The declared `--color-success-subtle-active` — the docs' Mintlify design layer."},"subtle-hover":{"v":"#defcdb","t":"color","s":"css-var --color-success-subtle-hover (docs-light)","d":"The declared `--color-success-subtle-hover` — the docs' Mintlify design layer."}},"warning":{"border":{"v":"#ffc763","t":"color","s":"css-var --color-warning-border (docs-light)","d":"The declared `--color-warning-border` — the docs' Mintlify design layer."},"border-active":{"v":"#b78306","t":"color","s":"css-var --color-warning-border-active (docs-light)","d":"The declared `--color-warning-border-active` — the docs' Mintlify design layer."},"border-hover":{"v":"#e4a40a","t":"color","s":"css-var --color-warning-border-hover (docs-light)","d":"The declared `--color-warning-border-hover` — the docs' Mintlify design layer."},"foreground-primary":{"v":"#342302","t":"color","s":"css-var --color-warning-foreground-primary (docs-light)","d":"The declared `--color-warning-foreground-primary` — the docs' Mintlify design layer."},"foreground-secondary":{"v":"#755703","t":"color","s":"css-var --color-warning-foreground-secondary (docs-light)","d":"The declared `--color-warning-foreground-secondary` — the docs' Mintlify design layer."},"on-solid":{"v":"#fff7ec","t":"color","s":"css-var --color-warning-on-solid (docs-light)","d":"The declared `--color-warning-on-solid` — the docs' Mintlify design layer."},"solid":{"v":"#906604","t":"color","s":"css-var --color-warning-solid (docs-light)","d":"The declared `--color-warning-solid` — the docs' Mintlify design layer."},"solid-hover":{"v":"#7e5903","t":"color","s":"css-var --color-warning-solid-hover (docs-light)","d":"The declared `--color-warning-solid-hover` — the docs' Mintlify design layer."},"subtle":{"v":"#fff7ec","t":"color","s":"css-var --color-warning-subtle (docs-light)","d":"The declared `--color-warning-subtle` — the docs' Mintlify design layer."},"subtle-active":{"v":"#fee0ae","t":"color","s":"css-var --color-warning-subtle-active (docs-light)","d":"The declared `--color-warning-subtle-active` — the docs' Mintlify design layer."},"subtle-hover":{"v":"#fef0d8","t":"color","s":"css-var --color-warning-subtle-hover (docs-light)","d":"The declared `--color-warning-subtle-hover` — the docs' Mintlify design layer."}},"white":{"default":{"v":"#ffffff","t":"color","s":"css-var --color-white (docs-light)","d":"The declared `--color-white` — the docs' Mintlify design layer."}}},"vars":{"accent":{"v":"#1840ed","t":"color","s":"css-var --docs-accent (docs-light)","d":"The declared `--docs-accent` — a docs component colour."},"code-action-hover":{"v":"rgba(9, 9, 11, 0.05)","t":"color","s":"css-var --docs-code-action-hover (docs-light)","d":"The declared `--docs-code-action-hover` — a docs component colour."},"code-header":{"v":"rgba(9, 9, 11, 0.024)","t":"color","s":"css-var --docs-code-header (docs-light)","d":"The declared `--docs-code-header` — a docs component colour."},"code-surface":{"v":"#ffffff","t":"color","s":"css-var --docs-code-surface (docs-light)","d":"The declared `--docs-code-surface` — a docs component colour."},"code-tab-hover":{"v":"rgba(9, 9, 11, 0.05)","t":"color","s":"css-var --docs-code-tab-hover (docs-light)","d":"The declared `--docs-code-tab-hover` — a docs component colour."},"nav-tab-hover":{"v":"rgba(9, 9, 11, 0.04)","t":"color","s":"css-var --docs-nav-tab-hover (docs-light)","d":"The declared `--docs-nav-tab-hover` — a docs component colour."},"nav-tab-pill":{"v":"#f3f3f4","t":"color","s":"css-var --docs-nav-tab-pill (docs-light)","d":"The declared `--docs-nav-tab-pill` — a docs component colour."},"nav-tab-ring":{"v":"rgba(9, 9, 11, 0.07)","t":"color","s":"css-var --docs-nav-tab-ring (docs-light)","d":"The declared `--docs-nav-tab-ring` — a docs component colour."},"nav-tab-text":{"v":"#4f4f57","t":"color","s":"css-var --docs-nav-tab-text (docs-light)","d":"The declared `--docs-nav-tab-text` — a docs component colour."},"nav-tab-text-selected":{"v":"#0b0b0d","t":"color","s":"css-var --docs-nav-tab-text-selected (docs-light)","d":"The declared `--docs-nav-tab-text-selected` — a docs component colour."},"sidebar-search-border":{"v":"rgba(9, 9, 11, 0.14)","t":"color","s":"css-var --docs-sidebar-search-border (docs-light)","d":"The declared `--docs-sidebar-search-border` — a docs component colour."},"sidebar-search-border-hover":{"v":"rgba(9, 9, 11, 0.28)","t":"color","s":"css-var --docs-sidebar-search-border-hover (docs-light)","d":"The declared `--docs-sidebar-search-border-hover` — a docs component colour."},"sidebar-search-key":{"v":"rgba(9, 9, 11, 0.05)","t":"color","s":"css-var --docs-sidebar-search-key (docs-light)","d":"The declared `--docs-sidebar-search-key` — a docs component colour."},"tab-accent":{"v":"#1840ed","t":"color","s":"css-var --docs-tab-accent (docs-light)","d":"The declared `--docs-tab-accent` — a docs component colour."},"tab-control-border":{"v":"rgba(9, 9, 11, 0.14)","t":"color","s":"css-var --docs-tab-control-border (docs-light)","d":"The declared `--docs-tab-control-border` — a docs component colour."},"tab-control-border-hover":{"v":"rgba(9, 9, 11, 0.24)","t":"color","s":"css-var --docs-tab-control-border-hover (docs-light)","d":"The declared `--docs-tab-control-border-hover` — a docs component colour."},"tab-line":{"v":"rgba(9, 9, 11, 0.14)","t":"color","s":"css-var --docs-tab-line (docs-light)","d":"The declared `--docs-tab-line` — a docs component colour."},"tab-menu-bg":{"v":"#ffffff","t":"color","s":"css-var --docs-tab-menu-bg (docs-light)","d":"The declared `--docs-tab-menu-bg` — a docs component colour."},"tab-pill":{"v":"#ffffff","t":"color","s":"css-var --docs-tab-pill (docs-light)","d":"The declared `--docs-tab-pill` — a docs component colour."},"tab-ring":{"v":"rgba(9, 9, 11, 0.07)","t":"color","s":"css-var --docs-tab-ring (docs-light)","d":"The declared `--docs-tab-ring` — a docs component colour."},"tab-text":{"v":"#4f4f57","t":"color","s":"css-var --docs-tab-text (docs-light)","d":"The declared `--docs-tab-text` — a docs component colour."},"tab-text-selected":{"v":"#0b0b0d","t":"color","s":"css-var --docs-tab-text-selected (docs-light)","d":"The declared `--docs-tab-text-selected` — a docs component colour."},"tab-track":{"v":"#f3f3f4","t":"color","s":"css-var --docs-tab-track (docs-light)","d":"The declared `--docs-tab-track` — a docs component colour."}}}},"font":{"family":{"diatype":{"v":"\"ABCDiatype\",\"Trebuchet MS\",sans-serif","t":"fontFamily","s":"css-var --font-family-sans (marketing)","d":"ABCDiatype — the marketing body/UI face."},"arizona":{"v":"\"Arizona\",Georgia,serif","t":"fontFamily","s":"css-var --font-family-serif (marketing)","d":"Arizona (ABC Arizona Flare) — the marketing display face ('The world's data for AI agents')."},"mono":{"v":"\"SuisseIntlMono\",monospace","t":"fontFamily","s":"css-var --font-family-monospace (marketing)","d":"SuisseIntlMono — the marketing mono."},"auth-sans":{"v":"\"ABC Diatype Unlicensed Trial\", \"Trebuchet MS\", sans-serif","t":"fontFamily","s":"css-var --font-family-sans (auth)","d":"ABC Diatype Unlicensed Trial — the sign-in card's face."},"auth-flare":{"v":"\"ABC Arizona Flare\", serif","t":"fontFamily","s":"css-var --font-family-arizona-flare (auth)","d":"ABC Arizona Flare — the sign-in card's display face."},"geist-mono":{"v":"\"Geist Mono\", monospace","t":"fontFamily","s":"css-var --font-family-geist-mono (auth)","d":"Geist Mono — the sign-in card's code face."},"inter":{"v":"\"Inter\"","t":"fontFamily","s":"css-var --font-inter (docs-light)","d":"Inter — the docs body/UI face."},"paper-mono":{"v":"\"Paper Mono\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace","t":"fontFamily","s":"css-var --font-paper-mono (docs-light)","d":"Paper Mono — the docs code face."},"docs-sans":{"v":"\"Inter\", ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"","t":"fontFamily","s":"css-var --default-font-family (docs-light)","d":"The docs' declared default stack (Inter first)."},"docs-mono":{"v":"\"Paper Mono\", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace","t":"fontFamily","s":"css-var --default-mono-font-family (docs-light)","d":"The docs' declared default mono stack (Paper Mono first)."},"docs-headings":{"v":"\"ABCDiatype\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", system-ui, sans-serif","t":"fontFamily","s":"css-var --font-family-headings-custom (docs-light)","d":"The docs' headings stack — ABCDiatype first, the marketing face reused."}},"weight":{"normal":{"v":400,"t":"fontWeight","s":"css-var --font-weight-normal (docs-light)","d":"400 — body and UI text everywhere."},"medium":{"v":500,"t":"fontWeight","s":"css-var --font-weight-medium (docs-light)","d":"500 — nav items, labels, docs code."},"semibold":{"v":600,"t":"fontWeight","s":"css-var --font-weight-semibold (docs-light)","d":"600 — docs headings."},"bold":{"v":700,"t":"fontWeight","s":"css-var --font-weight-bold (docs-light)","d":"700 — declared."},"extrabold":{"v":800,"t":"fontWeight","s":"css-var --font-weight-extrabold (docs-light)","d":"800 — declared."},"headings":{"v":700,"t":"fontWeight","s":"css-var --font-weight-headings-custom (docs-light)","d":"The docs headings' declared weight."}},"size":{"nav":{"v":"15px","t":"dimension","s":"computed fontSize of mkt-nav-link default (raw/components-computed.json)","d":"The marketing header-link size."},"small":{"v":"11.5px","t":"dimension","s":"computed fontSize of demo-output default (raw/components-computed.json)","d":"The small copy size inside the demo output."},"docs-body":{"v":"16.6667px","t":"dimension","s":"computed fontSize of docs-para default (raw/components-computed.json)","d":"The docs paragraph size."},"docs-code":{"v":"14px","t":"dimension","s":"computed fontSize of docs-code default (raw/components-computed.json)","d":"The docs code size."},"field":{"v":"16px","t":"dimension","s":"computed fontSize of demo-textarea default (raw/components-computed.json)","d":"The demo query field size."},"body":{"v":"18.4px","t":"dimension","s":"computed fontSize of hero-sub default (raw/components-computed.json)","d":"The hero lede size."},"auth":{"v":"16px","t":"dimension","s":"computed fontSize of auth-google default (raw/components-computed.json)","d":"The sign-in button text size."},"docs-h1":{"v":"32px","t":"dimension","s":"computed fontSize of docs-h1 default (raw/components-computed.json)","d":"The docs page heading size."},"pricing-h1":{"v":"48px","t":"dimension","s":"computed fontSize of pricing-h1 default (raw/components-computed.json)","d":"The pricing page heading size."},"mobile-display":{"v":"38.4px","t":"dimension","s":"computed fontSize of m-hero-h1 default (raw/components-computed.json)","d":"The display size at 390px."},"display":{"v":"63.2px","t":"dimension","s":"computed fontSize of hero-h1 default (raw/components-computed.json)","d":"The marketing display size ('The world's data for AI agents')."}},"lineHeight":{"tight":{"v":1.25,"t":"number","s":"css-var --leading-tight (docs-light)","d":"The declared tight leading."},"normal":{"v":1.5,"t":"number","s":"css-var --leading-normal (docs-light)","d":"The declared normal leading."},"relaxed":{"v":1.625,"t":"number","s":"css-var --leading-relaxed (docs-light)","d":"The declared relaxed leading."},"display":{"v":"45.504px","t":"dimension","s":"computed lineHeight of hero-h1 default (raw/components-computed.json)","d":"The display's own leading."},"body":{"v":"25.76px","t":"dimension","s":"computed lineHeight of hero-sub default (raw/components-computed.json)","d":"The lede's leading."},"docs-body":{"v":"28px","t":"dimension","s":"computed lineHeight of docs-para default (raw/components-computed.json)","d":"The docs paragraph leading."},"nav":{"v":"24px","t":"dimension","s":"computed lineHeight of mkt-nav-link default (raw/components-computed.json)","d":"The header link's leading."},"auth":{"v":"24px","t":"dimension","s":"computed lineHeight of auth-google default (raw/components-computed.json)","d":"The sign-in button's leading."}},"tracking":{"tighter":{"v":"-.05em","t":"other","s":"css-var --tracking-tighter (docs-light)","d":"The declared tighter tracking."},"tight":{"v":"-.025em","t":"other","s":"css-var --tracking-tight (docs-light)","d":"The declared tight tracking."},"normal":{"v":"0px","t":"other","s":"css-var --tracking-normal (docs-light)","d":"The declared normal tracking."},"wide":{"v":"0.390625px","t":"other","s":"css-var --tracking-wide (docs-light)","d":"The declared wide tracking."},"display":{"v":"-1.896px","t":"dimension","s":"computed letterSpacing of hero-h1 default (raw/components-computed.json)","d":"The display's tracking."}}},"size":{"nav":{"v":"55px","t":"dimension","s":"css-var --nav-height (marketing)","d":"The declared 55px marketing header."},"header":{"v":"55px","t":"dimension","s":"css-var --total-header-height (marketing)","d":"The declared 55px total header height."},"banner":{"v":"48px","t":"dimension","s":"css-var --announcement-banner-height (marketing)","d":"The declared 48px announcement strip."},"docs-banner":{"v":"0px","t":"dimension","s":"css-var --banner-height (docs-light)","d":"The docs' banner slot."},"docs-header":{"v":"56px","t":"dimension","s":"css-var --mintlify-slot-header-height (docs-light)","d":"The docs' declared header slot."},"docs-base":{"v":"4px","t":"dimension","s":"css-var --spacing (docs-light)","d":"The docs/Tailwind 4px spacing base."},"docs-scroll-mt":{"v":"100.797px","t":"dimension","s":"css-var --scroll-mt (docs-light)","d":"The docs' scroll offset for anchors."},"container":{"about-page-container":{"v":"1000px","t":"dimension","s":"css-var --about-page-container (marketing)","d":"The declared `--about-page-container` container/page width (marketing)."},"blog-container":{"v":"1364px","t":"dimension","s":"css-var --blog-container (marketing)","d":"The declared `--blog-container` container/page width (marketing)."},"blog-container-gap":{"v":"32px","t":"dimension","s":"css-var --blog-container-gap (marketing)","d":"The declared `--blog-container-gap` container/page width (marketing)."},"careers-page-container":{"v":"1100px","t":"dimension","s":"css-var --careers-page-container (marketing)","d":"The declared `--careers-page-container` container/page width (marketing)."},"faq-page-container":{"v":"711.875px","t":"dimension","s":"css-var --faq-page-container (marketing)","d":"The declared `--faq-page-container` container/page width (marketing)."},"features-section-container":{"v":"1040px","t":"dimension","s":"css-var --features-section-container (marketing)","d":"The declared `--features-section-container` container/page width (marketing)."},"home-page-container":{"v":"1040px","t":"dimension","s":"css-var --home-page-container (marketing)","d":"The declared `--home-page-container` container/page width (marketing)."},"pricing-page-container":{"v":"1100px","t":"dimension","s":"css-var --pricing-page-container (marketing)","d":"The declared `--pricing-page-container` container/page width (marketing)."},"waitlist-form-container":{"v":"800px","t":"dimension","s":"css-var --waitlist-form-container (marketing)","d":"The declared `--waitlist-form-container` container/page width (marketing)."},"websets-container":{"v":"1400px","t":"dimension","s":"css-var --websets-container (marketing)","d":"The declared `--websets-container` container/page width (marketing)."},"container-2xl":{"v":"672px","t":"dimension","s":"css-var --container-2xl (docs-light)","d":"The declared `--container-2xl` container/page width (docs-light)."},"container-3xl":{"v":"768px","t":"dimension","s":"css-var --container-3xl (docs-light)","d":"The declared `--container-3xl` container/page width (docs-light)."},"container-4xl":{"v":"896px","t":"dimension","s":"css-var --container-4xl (docs-light)","d":"The declared `--container-4xl` container/page width (docs-light)."},"container-5xl":{"v":"1024px","t":"dimension","s":"css-var --container-5xl (docs-light)","d":"The declared `--container-5xl` container/page width (docs-light)."},"container-6xl":{"v":"1152px","t":"dimension","s":"css-var --container-6xl (docs-light)","d":"The declared `--container-6xl` container/page width (docs-light)."},"container-lg":{"v":"512px","t":"dimension","s":"css-var --container-lg (docs-light)","d":"The declared `--container-lg` container/page width (docs-light)."},"container-sm":{"v":"384px","t":"dimension","s":"css-var --container-sm (docs-light)","d":"The declared `--container-sm` container/page width (docs-light)."},"container-xl":{"v":"576px","t":"dimension","s":"css-var --container-xl (docs-light)","d":"The declared `--container-xl` container/page width (docs-light)."},"container-xs":{"v":"320px","t":"dimension","s":"css-var --container-xs (docs-light)","d":"The declared `--container-xs` container/page width (docs-light)."}}},"radius":{"default":{"v":"2px","t":"dimension","s":"css-var --border-radius-default (marketing)","d":"The declared 2px default radius."},"4":{"v":"4px","t":"dimension","s":"css-var --border-radius-4 (marketing)","d":"The declared 4px radius."},"8":{"v":"8px","t":"dimension","s":"css-var --border-radius-8 (marketing)","d":"The declared 8px radius (matches --radius)."},"10":{"v":"10px","t":"dimension","s":"css-var --border-radius-10 (marketing)","d":"The declared 10px radius."},"20":{"v":"20px","t":"dimension","s":"css-var --border-radius-20 (marketing)","d":"The declared 20px radius."},"pill":{"v":"1000px","t":"dimension","s":"css-var --border-radius-1000 (marketing)","d":"The declared 1000px pill radius."},"base":{"v":"8px","t":"dimension","s":"css-var --radius (marketing)","d":"The declared 8px base radius."},"docs":{"v":"6px","t":"dimension","s":"css-var --docs-radius (docs-light)","d":"The docs' declared 6px radius."},"docs-xl":{"v":"12px","t":"dimension","s":"css-var --radius-xl (docs-light)","d":"The docs' declared 12px extra-large radius."},"control-measured":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of demo-pill default (raw/components-computed.json)","d":"The demo pill radius."},"field-measured":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of demo-textarea default (raw/components-computed.json)","d":"The demo field's radius."},"menu-measured":{"v":"8px","t":"dimension","s":"the painted radius of mkt-menu's rounded child default (raw/components-computed.json paint list)","d":"The mega-menu card radius — the rounded child paints 8px; the wrapper itself is unrounded."},"cta-measured":{"v":"4px","t":"dimension","s":"computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)","d":"The CTA pill radius."},"auth-field-measured":{"v":"4px","t":"dimension","s":"computed borderTopLeftRadius of auth-email default (raw/components-computed.json)","d":"The sign-in field radius."},"search-measured":{"v":"6px","t":"dimension","s":"computed borderTopLeftRadius of docs-search default (raw/components-computed.json)","d":"The docs search pill radius."}},"shadow":{"menu":{"v":"rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px","t":"other","s":"the painted shadow of mkt-menu's rounded child default (raw/components-computed.json paint list)","d":"The mega-menu's drop shadow — painted on the rounded child; the wrapper itself is an unshadowed positioning box."},"docs-code-shadow":{"v":"rgba(0, 0, 0, 0.06) 0px 1px 2px 0px","t":"other","s":"css-var --docs-code-shadow (docs-light)","d":"The declared `--docs-code-shadow`."},"docs-tab-menu-shadow":{"v":"rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 1px 2px 0px, rgba(0, 0, 0, 0.08) 0px 8px 24px 0px","t":"other","s":"css-var --docs-tab-menu-shadow (docs-light)","d":"The declared `--docs-tab-menu-shadow`."},"docs-tab-pill-shadow":{"v":"rgba(0, 0, 0, 0.12) 0px 1px 2px 0px","t":"other","s":"css-var --docs-tab-pill-shadow (docs-light)","d":"The declared `--docs-tab-pill-shadow`."},"twoslash-popup-shadow":{"v":"rgba(0, 0, 0, 0.08) 0px 1px 4px 0px","t":"other","s":"css-var --twoslash-popup-shadow (docs-light)","d":"The declared `--twoslash-popup-shadow`."}},"motion":{"duration":{"v":"150ms","t":"duration","s":"css-var --default-transition-duration (docs-light)","d":"The declared 150ms default transition duration."},"easing":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --default-transition-timing-function (docs-light)","d":"The declared default curve."},"ease-in":{"v":[0.4,0.0,1.0,1.0],"t":"cubicBezier","s":"css-var --ease-in (docs-light)","d":"The declared ease-in curve."},"ease-out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-out (docs-light)","d":"The declared ease-out curve."},"ease-in-out":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-in-out (docs-light)","d":"The declared ease-in-out curve."},"docs-duration":{"v":"150ms","t":"duration","s":"css-var --motion-duration (docs-light)","d":"The docs' declared motion duration."},"docs-fast":{"v":"100ms","t":"duration","s":"css-var --motion-duration-fast (docs-light)","d":"The docs' fast motion duration."},"docs-slow":{"v":"220ms","t":"duration","s":"css-var --motion-duration-slow (docs-light)","d":"The docs' slow motion duration."},"docs-drawer":{"v":"300ms","t":"duration","s":"css-var --motion-duration-drawer (docs-light)","d":"The docs' drawer motion duration."},"docs-easing":{"v":[0.2,0.0,0.0,1.0],"t":"cubicBezier","s":"css-var --motion-easing-standard (docs-light)","d":"The docs' standard curve."},"docs-ease-out":{"v":[0.23,1.0,0.32,1.0],"t":"cubicBezier","s":"css-var --motion-easing-out (docs-light)","d":"The docs' ease-out."},"docs-ease-in-out":{"v":[0.77,0.0,0.175,1.0],"t":"cubicBezier","s":"css-var --motion-easing-in-out (docs-light)","d":"The docs' ease-in-out."},"docs-drawer-ease":{"v":[0.32,0.72,0.0,1.0],"t":"cubicBezier","s":"css-var --motion-easing-drawer (docs-light)","d":"The docs' drawer easing."},"digit":{"v":"500ms","t":"duration","s":"css-var --digit-dur (marketing)","d":"The stat digits' roll duration."},"control":{"v":"color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1)","t":"other","s":"computed transition of mkt-nav-link default (raw/components-computed.json)","d":"The marketing nav control's transition."}},"breakpoint":{"max-1023":{"v":"1023px","t":"dimension","s":"`@media (max-width: 1023px)` in a public stylesheet (raw/css-vars.json rules)","d":"A declared breakpoint in the public CSS."},"min-1024":{"v":"1024px","t":"dimension","s":"`@media (width >= 1024px)` in a public stylesheet (raw/css-vars.json rules)","d":"A declared breakpoint in the public CSS."},"min-640":{"v":"640px","t":"dimension","s":"`@media (min-width: 640px)` in a public stylesheet (raw/css-vars.json rules)","d":"A declared breakpoint in the public CSS."},"min-768":{"v":"768px","t":"dimension","s":"`@media (min-width: 768px)` in a public stylesheet (raw/css-vars.json rules)","d":"A declared breakpoint in the public CSS."}},"component":{"header-height":{"v":"55px","t":"dimension","s":"measured h of mkt-header default (raw/components-computed.json)","d":"The marketing header height (the 55px --nav-height bar; the 48px --announcement-banner-height strip sits above it as a sibling)."},"banner-height":{"v":"20px","t":"dimension","s":"measured h of mkt-announce default (raw/components-computed.json)","d":"The announcement strip's text row height (the strip itself is --announcement-banner-height 48px)."},"mobile-header-height":{"v":"64px","t":"dimension","s":"measured h of m-header default (raw/components-computed.json)","d":"The phone header height."},"menu-width":{"v":"380px","t":"dimension","s":"measured w of mkt-menu default (raw/components-computed.json)","d":"The Products mega-menu width."},"hero-cta-height":{"v":"40px","t":"dimension","s":"measured h of hero-cta default (raw/components-computed.json)","d":"The Try-API CTA height."},"demo-widget-width":{"v":"700px","t":"dimension","s":"measured w of demo-widget default (raw/components-computed.json)","d":"The demo widget width."},"demo-field-height":{"v":"24px","t":"dimension","s":"measured h of demo-textarea default (raw/components-computed.json)","d":"The demo query field height."},"demo-pill-height":{"v":"22.8px","t":"dimension","s":"measured h of demo-pill default (raw/components-computed.json)","d":"The demo pill height."},"signup-height":{"v":"31.59px","t":"dimension","s":"measured h of mkt-signup default (raw/components-computed.json)","d":"The Sign-up pill height."},"plan-card-width":{"v":"1216px","t":"dimension","s":"measured w of plan-card default (raw/components-computed.json)","d":"A pricing plan card's width."},"auth-card-width":{"v":"360px","t":"dimension","s":"Reconstruction: read from the wrong element (auth-card measured the 360 x 98 e-mail form inside the card, not the card; recapture needed); measured w of auth-card default (raw/components-computed.json)","d":"The sign-in card width."},"auth-field-height":{"v":"44px","t":"dimension","s":"measured h of auth-email default (raw/components-computed.json)","d":"The sign-in field height."},"auth-button-height":{"v":"50px","t":"dimension","s":"measured h of auth-google default (raw/components-computed.json)","d":"The sign-in button height."},"docs-sidebar-width":{"v":"288px","t":"dimension","s":"measured w of docs-sidebar default (raw/components-computed.json)","d":"The docs rail width."},"docs-nav-item-height":{"v":"32px","t":"dimension","s":"measured h of docs-nav-item default (raw/components-computed.json)","d":"The docs nav item height."},"docs-search-height":{"v":"36px","t":"dimension","s":"measured h of docs-search default (raw/components-computed.json)","d":"The docs search pill height."},"hamburger":{"v":"32px","t":"dimension","s":"measured h of m-hamburger default (raw/components-computed.json)","d":"The phone hamburger hit area."}}},"light":{"docs":{"surface":{"v":"#ffffff","t":"color","s":"css-var --background-light (docs-light)","d":"The declared `--background-light` on the docs light theme."},"border":{"v":"#eeeff5","t":"color","s":"css-var --default-border-color (docs-light)","d":"The declared `--default-border-color` on the docs light theme."},"primary":{"v":"#1840ed","t":"color","s":"css-var --primary (docs-light)","d":"The declared `--primary` on the docs light theme."},"accent":{"v":"#1840ed","t":"color","s":"css-var --docs-accent (docs-light)","d":"The declared `--docs-accent` on the docs light theme."},"twoslash":{"border-color":{"v":"#dbdfde","t":"color","s":"css-var --twoslash-border-color (docs-light)"},"code-font-size":{"v":"16px","t":"other","s":"css-var --twoslash-code-font-size (docs-light)"},"cursor-color":{"v":"rgba(136, 136, 136, 0.533)","t":"color","s":"css-var --twoslash-cursor-color (docs-light)"},"docs-tag-style":{"v":"italic","t":"other","s":"css-var --twoslash-docs-tag-style (docs-light)"},"error-bg":{"v":"rgba(212, 86, 86, 0.125)","t":"color","s":"css-var --twoslash-error-bg (docs-light)"},"error-color":{"v":"#d45656","t":"color","s":"css-var --twoslash-error-color (docs-light)"},"highlighted-bg":{"v":"rgba(195, 125, 13, 0.125)","t":"color","s":"css-var --twoslash-highlighted-bg (docs-light)"},"highlighted-border":{"v":"rgba(195, 125, 13, 0.314)","t":"color","s":"css-var --twoslash-highlighted-border (docs-light)"},"popup-bg":{"v":"#f3f7f6","t":"color","s":"css-var --twoslash-popup-bg (docs-light)"},"popup-shadow":{"v":"rgba(0, 0, 0, 0.08) 0px 1px 4px 0px","t":"other","s":"css-var --twoslash-popup-shadow (docs-light)"},"tag-annotate-bg":{"v":"rgba(27, 166, 115, 0.125)","t":"color","s":"css-var --twoslash-tag-annotate-bg (docs-light)"},"tag-annotate-color":{"v":"#1ba673","t":"color","s":"css-var --twoslash-tag-annotate-color (docs-light)"},"tag-bg":{"v":"rgba(55, 114, 207, 0.125)","t":"color","s":"css-var --twoslash-tag-bg (docs-light)"},"tag-color":{"v":"#3772cf","t":"color","s":"css-var --twoslash-tag-color (docs-light)"},"tag-warn-bg":{"v":"rgba(195, 125, 13, 0.125)","t":"color","s":"css-var --twoslash-tag-warn-bg (docs-light)"},"tag-warn-color":{"v":"#c37d0d","t":"color","s":"css-var --twoslash-tag-warn-color (docs-light)"},"text-size":{"v":"12.7969px","t":"other","s":"css-var --twoslash-text-size (docs-light)"},"underline-color":{"v":"currentColor","t":"other","s":"css-var --twoslash-underline-color (docs-light)"},"unmatched-color":{"v":"#888888","t":"color","s":"css-var --twoslash-unmatched-color (docs-light)"},"warn-bg":{"v":"rgba(195, 125, 13, 0.125)","t":"color","s":"css-var --twoslash-warn-bg (docs-light)"},"warn-color":{"v":"#c37d0d","t":"color","s":"css-var --twoslash-warn-color (docs-light)"}},"vars":{"accent":{"v":"#1840ed","t":"color","s":"css-var --docs-accent (docs-light)"},"code-action-hover":{"v":"rgba(9, 9, 11, 0.05)","t":"color","s":"css-var --docs-code-action-hover (docs-light)"},"code-header":{"v":"rgba(9, 9, 11, 0.024)","t":"color","s":"css-var --docs-code-header (docs-light)"},"code-surface":{"v":"#ffffff","t":"color","s":"css-var --docs-code-surface (docs-light)"},"code-tab-hover":{"v":"rgba(9, 9, 11, 0.05)","t":"color","s":"css-var --docs-code-tab-hover (docs-light)"},"nav-tab-hover":{"v":"rgba(9, 9, 11, 0.04)","t":"color","s":"css-var --docs-nav-tab-hover (docs-light)"},"nav-tab-pill":{"v":"#f3f3f4","t":"color","s":"css-var --docs-nav-tab-pill (docs-light)"},"nav-tab-ring":{"v":"rgba(9, 9, 11, 0.07)","t":"color","s":"css-var --docs-nav-tab-ring (docs-light)"},"nav-tab-text":{"v":"#4f4f57","t":"color","s":"css-var --docs-nav-tab-text (docs-light)"},"nav-tab-text-selected":{"v":"#0b0b0d","t":"color","s":"css-var --docs-nav-tab-text-selected (docs-light)"},"sidebar-search-border":{"v":"rgba(9, 9, 11, 0.14)","t":"color","s":"css-var --docs-sidebar-search-border (docs-light)"},"sidebar-search-border-hover":{"v":"rgba(9, 9, 11, 0.28)","t":"color","s":"css-var --docs-sidebar-search-border-hover (docs-light)"},"sidebar-search-key":{"v":"rgba(9, 9, 11, 0.05)","t":"color","s":"css-var --docs-sidebar-search-key (docs-light)"},"tab-accent":{"v":"#1840ed","t":"color","s":"css-var --docs-tab-accent (docs-light)"},"tab-control-border":{"v":"rgba(9, 9, 11, 0.14)","t":"color","s":"css-var --docs-tab-control-border (docs-light)"},"tab-control-border-hover":{"v":"rgba(9, 9, 11, 0.24)","t":"color","s":"css-var --docs-tab-control-border-hover (docs-light)"},"tab-line":{"v":"rgba(9, 9, 11, 0.14)","t":"color","s":"css-var --docs-tab-line (docs-light)"},"tab-menu-bg":{"v":"#ffffff","t":"color","s":"css-var --docs-tab-menu-bg (docs-light)"},"tab-pill":{"v":"#ffffff","t":"color","s":"css-var --docs-tab-pill (docs-light)"},"tab-ring":{"v":"rgba(9, 9, 11, 0.07)","t":"color","s":"css-var --docs-tab-ring (docs-light)"},"tab-text":{"v":"#4f4f57","t":"color","s":"css-var --docs-tab-text (docs-light)"},"tab-text-selected":{"v":"#0b0b0d","t":"color","s":"css-var --docs-tab-text-selected (docs-light)"},"tab-track":{"v":"#f3f3f4","t":"color","s":"css-var --docs-tab-track (docs-light)"}},"text":{"v":"{color.docs.gray.900}","t":"color","s":"computed color of docs-h1 default (raw/components-computed.json); matches declared color.docs.gray.900","d":"The docs heading ink."},"body-text":{"v":"rgba(0, 0, 0, 0.6)","t":"color","s":"computed color of docs-para default (raw/components-computed.json)","d":"The docs paragraph colour."},"link":{"v":"rgba(0, 0, 0, 0.6)","t":"color","s":"computed color of docs-link default (raw/components-computed.json)","d":"The docs body-link colour."},"nav-text":{"v":"{color.neutral.black}","t":"color","s":"computed color of docs-nav-item default (raw/components-computed.json); matches declared color.neutral.black","d":"The sidebar nav item ink."},"nav-active":{"v":"{color.docs.mintlify.exa-gray.200}","t":"color","s":"computed backgroundColor of docs-nav-item default (raw/components-computed.json); matches declared color.docs.mintlify.exa-gray.200","d":"The active nav item's field."},"focus":{"v":"{color.docs.vars.nav-tab-ring}","t":"color","s":"the box-shadow 3px spread focus ring of docs-search focus-visible (raw/components-computed.json); its outline is 0px none; matches declared color.docs.vars.nav-tab-ring","d":"The focus ring on docs controls."},"rail-line":{"v":"{color.docs.gray.100}","t":"color","s":"computed borderRightColor of docs-sidebar default (raw/components-computed.json); matches declared color.docs.gray.100","d":"The sidebar's hairline."},"cta-surface":{"v":"#002f96","t":"color","s":"the background of docs-cta's parent div.docs-home-quickstart default (raw/components-computed.json ancestors); docs-cta itself computes a transparent backgroundColor","d":"The 'Add Exa to your agent' banner's field."}},"marketing":{"surface":{"v":"{color.secondary.default}","t":"color","s":"computed backgroundColor of mkt-header default (raw/components-computed.json); matches declared color.secondary.default","d":"The marketing field behind the header."},"header-line":{"v":"{color.text.dark-default}","t":"color","s":"computed borderBottomColor of mkt-header default (raw/components-computed.json); matches declared color.text.dark-default","d":"The header's hairline."},"text":{"v":"#5f5a54","t":"color","s":"computed color of mkt-nav-link default (raw/components-computed.json)","d":"The marketing header ink."},"muted":{"v":"rgba(0, 0, 0, 0.6)","t":"color","s":"computed color of demo-output default (raw/components-computed.json)","d":"The muted text inside the demo output."},"action":{"v":"{color.neutral.black}","t":"color","s":"computed backgroundColor of mkt-signup default (raw/components-computed.json); matches declared color.neutral.black","d":"The black Sign-up pill fill."},"on-action":{"v":"{color.secondary.default}","t":"color","s":"computed color of mkt-signup default (raw/components-computed.json); matches declared color.secondary.default","d":"White text on the Sign-up pill."},"sales-border":{"v":"{color.text.dark-default}","t":"color","s":"computed borderTopColor of mkt-sales default (raw/components-computed.json); matches declared color.text.dark-default","d":"The Contact-sales button's border."},"menu-surface":{"v":"{color.secondary.default}","t":"color","s":"the painted background of mkt-menu's rounded child default (raw/components-computed.json paint list); matches declared color.secondary.default","d":"The mega-menu surface — painted on the rounded child; the wrapper is a transparent positioning box."},"demo-pill-active":{"v":"rgba(0, 0, 0, 0.45)","t":"color","s":"computed color of demo-pill default (raw/components-computed.json)","d":"The active demo pill's ink."},"run-fill":{"v":"{color.text.dark-muted}","t":"color","s":"computed backgroundColor of demo-run default (raw/components-computed.json); matches declared color.text.dark-muted","d":"The blue Run-preview arrow fill."},"announce-surface":{"v":"#eef8ff","t":"color","s":"the background of mkt-announce's parent div.relative.flex default (raw/components-computed.json ancestors); mkt-announce itself computes a transparent backgroundColor","d":"The announcement strip's field."},"action-hover":{"v":"#1f2937","t":"color","s":"computed backgroundColor of mkt-signup hover (raw/components-computed.json)","d":"The Sign-up pill's hover fill."},"placeholder":{"v":"rgba(0, 0, 0, 0.4)","t":"color","s":"computed placeholder colour of demo-textarea default (raw/components-computed.json)","d":"The demo query field's placeholder."}},"signin":{"heading":{"v":"{color.auth.text-light.default}","t":"color","s":"computed color of auth-heading default (raw/components-computed.json); matches declared color.auth.text-light.default","d":"The 'Start building with Exa' heading ink."},"field-border":{"v":"#e0e0e0","t":"color","s":"computed borderTopColor of auth-email default (raw/components-computed.json)","d":"The e-mail field's border."},"field-focus":{"v":"{color.brand.default}","t":"color","s":"computed borderTopColor of auth-email focused (raw/components-computed.json); matches declared color.brand.default","d":"The border the field draws when focused."},"text":{"v":"{color.gray.900}","t":"color","s":"computed color of auth-email default (raw/components-computed.json); matches declared color.gray.900","d":"The field text colour."},"action":{"v":"{color.brand.default}","t":"color","s":"computed backgroundColor of auth-email-btn default (raw/components-computed.json); matches declared color.brand.default","d":"The 'Continue with email' button fill."},"on-action":{"v":"{color.secondary.default}","t":"color","s":"computed color of auth-email-btn default (raw/components-computed.json); matches declared color.secondary.default","d":"The text on the e-mail button."},"google-border":{"v":"#e0e0e0","t":"color","s":"computed borderTopColor of auth-google default (raw/components-computed.json)","d":"The Google button's border."},"code-bg":{"v":"#27282c","t":"color","s":"the background of auth-code's parent div.flex.h-full default (raw/components-computed.json ancestors); auth-code itself computes a transparent backgroundColor","d":"The code sample's surface."},"placeholder":{"v":"#99a1af","t":"color","s":"computed placeholder colour of auth-email default (raw/components-computed.json)","d":"The sign-in field's placeholder."}}},"dark":{"docs":{"surface":{"v":"#0b0b10","t":"color","s":"css-var --background-dark (docs-dark)","d":"The declared `--background-dark` on the docs dark theme."},"border":{"v":"#26272c","t":"color","s":"css-var --default-border-color (docs-dark)","d":"The declared `--default-border-color` on the docs dark theme."},"primary":{"v":"#1840ed","t":"color","s":"css-var --primary (docs-dark)","d":"The declared `--primary` on the docs dark theme."},"accent":{"v":"#5f7cff","t":"color","s":"css-var --docs-accent (docs-dark)","d":"The declared `--docs-accent` on the docs dark theme."},"twoslash":{"border-color":{"v":"#222526","t":"color","s":"css-var --twoslash-border-color (docs-dark)"},"code-font-size":{"v":"16px","t":"other","s":"css-var --twoslash-code-font-size (docs-dark)"},"cursor-color":{"v":"rgba(187, 187, 187, 0.733)","t":"color","s":"css-var --twoslash-cursor-color (docs-dark)"},"docs-tag-style":{"v":"italic","t":"other","s":"css-var --twoslash-docs-tag-style (docs-dark)"},"error-bg":{"v":"rgba(255, 107, 107, 0.19)","t":"color","s":"css-var --twoslash-error-bg (docs-dark)"},"error-color":{"v":"#ff6b6b","t":"color","s":"css-var --twoslash-error-color (docs-dark)"},"highlighted-bg":{"v":"rgba(255, 165, 0, 0.19)","t":"color","s":"css-var --twoslash-highlighted-bg (docs-dark)"},"highlighted-border":{"v":"rgba(255, 165, 0, 0.5)","t":"color","s":"css-var --twoslash-highlighted-border (docs-dark)"},"popup-bg":{"v":"#151819","t":"color","s":"css-var --twoslash-popup-bg (docs-dark)"},"popup-shadow":{"v":"rgba(0, 0, 0, 0.08) 0px 1px 4px 0px","t":"other","s":"css-var --twoslash-popup-shadow (docs-dark)"},"tag-annotate-bg":{"v":"rgba(74, 222, 128, 0.19)","t":"color","s":"css-var --twoslash-tag-annotate-bg (docs-dark)"},"tag-annotate-color":{"v":"#4ade80","t":"color","s":"css-var --twoslash-tag-annotate-color (docs-dark)"},"tag-bg":{"v":"rgba(107, 182, 255, 0.19)","t":"color","s":"css-var --twoslash-tag-bg (docs-dark)"},"tag-color":{"v":"#6bb6ff","t":"color","s":"css-var --twoslash-tag-color (docs-dark)"},"tag-warn-bg":{"v":"rgba(255, 165, 0, 0.19)","t":"color","s":"css-var --twoslash-tag-warn-bg (docs-dark)"},"tag-warn-color":{"v":"#ffa500","t":"color","s":"css-var --twoslash-tag-warn-color (docs-dark)"},"text-size":{"v":"12.7969px","t":"other","s":"css-var --twoslash-text-size (docs-dark)"},"underline-color":{"v":"currentColor","t":"other","s":"css-var --twoslash-underline-color (docs-dark)"},"unmatched-color":{"v":"#aaaaaa","t":"color","s":"css-var --twoslash-unmatched-color (docs-dark)"},"warn-bg":{"v":"rgba(255, 165, 0, 0.19)","t":"color","s":"css-var --twoslash-warn-bg (docs-dark)"},"warn-color":{"v":"#ffa500","t":"color","s":"css-var --twoslash-warn-color (docs-dark)"}},"vars":{"accent":{"v":"#5f7cff","t":"color","s":"css-var --docs-accent (docs-dark)"},"code-action-hover":{"v":"rgba(250, 250, 250, 0.06)","t":"color","s":"css-var --docs-code-action-hover (docs-dark)"},"code-header":{"v":"rgba(250, 250, 250, 0.03)","t":"color","s":"css-var --docs-code-header (docs-dark)"},"code-surface":{"v":"#111114","t":"color","s":"css-var --docs-code-surface (docs-dark)"},"code-tab-hover":{"v":"rgba(250, 250, 250, 0.06)","t":"color","s":"css-var --docs-code-tab-hover (docs-dark)"},"nav-tab-hover":{"v":"rgba(255, 255, 255, 0.06)","t":"color","s":"css-var --docs-nav-tab-hover (docs-dark)"},"nav-tab-pill":{"v":"#26262a","t":"color","s":"css-var --docs-nav-tab-pill (docs-dark)"},"nav-tab-ring":{"v":"rgba(250, 250, 250, 0.09)","t":"color","s":"css-var --docs-nav-tab-ring (docs-dark)"},"nav-tab-text":{"v":"#bababf","t":"color","s":"css-var --docs-nav-tab-text (docs-dark)"},"nav-tab-text-selected":{"v":"#f5f5f6","t":"color","s":"css-var --docs-nav-tab-text-selected (docs-dark)"},"sidebar-search-border":{"v":"rgba(250, 250, 250, 0.16)","t":"color","s":"css-var --docs-sidebar-search-border (docs-dark)"},"sidebar-search-border-hover":{"v":"rgba(250, 250, 250, 0.32)","t":"color","s":"css-var --docs-sidebar-search-border-hover (docs-dark)"},"sidebar-search-key":{"v":"rgba(250, 250, 250, 0.08)","t":"color","s":"css-var --docs-sidebar-search-key (docs-dark)"},"tab-accent":{"v":"#5f7cff","t":"color","s":"css-var --docs-tab-accent (docs-dark)"},"tab-control-border":{"v":"rgba(250, 250, 250, 0.16)","t":"color","s":"css-var --docs-tab-control-border (docs-dark)"},"tab-control-border-hover":{"v":"rgba(250, 250, 250, 0.24)","t":"color","s":"css-var --docs-tab-control-border-hover (docs-dark)"},"tab-line":{"v":"rgba(250, 250, 250, 0.16)","t":"color","s":"css-var --docs-tab-line (docs-dark)"},"tab-menu-bg":{"v":"#000000","t":"color","s":"css-var --docs-tab-menu-bg (docs-dark)"},"tab-pill":{"v":"#26262a","t":"color","s":"css-var --docs-tab-pill (docs-dark)"},"tab-ring":{"v":"rgba(250, 250, 250, 0.09)","t":"color","s":"css-var --docs-tab-ring (docs-dark)"},"tab-text":{"v":"#bababf","t":"color","s":"css-var --docs-tab-text (docs-dark)"},"tab-text-selected":{"v":"#f5f5f6","t":"color","s":"css-var --docs-tab-text-selected (docs-dark)"},"tab-track":{"v":"#1a1a1d","t":"color","s":"css-var --docs-tab-track (docs-dark)"}},"mintlify":{"background":{"primary":{"v":"#000000","t":"color","s":"css-var --color-background-primary (docs-dark)"},"secondary":{"v":"#0d0d10","t":"color","s":"css-var --color-background-secondary (docs-dark)"}},"brand":{"border":{"v":"#0c2e8b","t":"color","s":"css-var --color-brand-border (docs-dark)"},"border-active":{"v":"#205bf6","t":"color","s":"css-var --color-brand-border-active (docs-dark)"},"border-hover":{"v":"#0b3bc2","t":"color","s":"css-var --color-brand-border-hover (docs-dark)"},"foreground-primary":{"v":"#eaebed","t":"color","s":"css-var --color-brand-foreground-primary (docs-dark)"},"foreground-secondary":{"v":"#95b7fc","t":"color","s":"css-var --color-brand-foreground-secondary (docs-dark)"},"on-solid":{"v":"#030a1f","t":"color","s":"css-var --color-brand-on-solid (docs-dark)"},"solid":{"v":"#6192fd","t":"color","s":"css-var --color-brand-solid (docs-dark)"},"solid-hover":{"v":"#7aa4fd","t":"color","s":"css-var --color-brand-solid-hover (docs-dark)"},"subtle":{"v":"#030a1f","t":"color","s":"css-var --color-brand-subtle (docs-dark)"},"subtle-active":{"v":"#09205b","t":"color","s":"css-var --color-brand-subtle-active (docs-dark)"},"subtle-hover":{"v":"#051336","t":"color","s":"css-var --color-brand-subtle-hover (docs-dark)"}},"danger":{"border":{"v":"#700a12","t":"color","s":"css-var --color-danger-border (docs-dark)"},"border-active":{"v":"#cd1125","t":"color","s":"css-var --color-danger-border-active (docs-dark)"},"border-hover":{"v":"#960c19","t":"color","s":"css-var --color-danger-border-hover (docs-dark)"},"foreground-primary":{"v":"#edeaea","t":"color","s":"css-var --color-danger-foreground-primary (docs-dark)"},"foreground-secondary":{"v":"#fd978f","t":"color","s":"css-var --color-danger-foreground-secondary (docs-dark)"},"on-solid":{"v":"#1c0202","t":"color","s":"css-var --color-danger-on-solid (docs-dark)"},"solid":{"v":"#fd5150","t":"color","s":"css-var --color-danger-solid (docs-dark)"},"solid-hover":{"v":"#fd7871","t":"color","s":"css-var --color-danger-solid-hover (docs-dark)"},"subtle":{"v":"#1c0202","t":"color","s":"css-var --color-danger-subtle (docs-dark)"},"subtle-active":{"v":"#4d060a","t":"color","s":"css-var --color-danger-subtle-active (docs-dark)"},"subtle-hover":{"v":"#300304","t":"color","s":"css-var --color-danger-subtle-hover (docs-dark)"}},"neutral":{"border":{"v":"#26262a","t":"color","s":"css-var --color-neutral-border (docs-dark)"},"border-active":{"v":"#6e6e76","t":"color","s":"css-var --color-neutral-border-active (docs-dark)"},"border-hover":{"v":"#4a4a50","t":"color","s":"css-var --color-neutral-border-hover (docs-dark)"},"foreground-primary":{"v":"#f5f5f6","t":"color","s":"css-var --color-neutral-foreground-primary (docs-dark)"},"foreground-secondary":{"v":"#bababf","t":"color","s":"css-var --color-neutral-foreground-secondary (docs-dark)"},"on-solid":{"v":"#000000","t":"color","s":"css-var --color-neutral-on-solid (docs-dark)"},"solid":{"v":"#8b8b93","t":"color","s":"css-var --color-neutral-solid (docs-dark)"},"solid-hover":{"v":"#a1a1a8","t":"color","s":"css-var --color-neutral-solid-hover (docs-dark)"},"subtle":{"v":"#111114","t":"color","s":"css-var --color-neutral-subtle (docs-dark)"},"subtle-active":{"v":"#26262a","t":"color","s":"css-var --color-neutral-subtle-active (docs-dark)"},"subtle-hover":{"v":"#1a1a1d","t":"color","s":"css-var --color-neutral-subtle-hover (docs-dark)"}},"success":{"border":{"v":"#164615","t":"color","s":"css-var --color-success-border (docs-dark)"},"border-active":{"v":"#278427","t":"color","s":"css-var --color-success-border-active (docs-dark)"},"border-hover":{"v":"#1f5f1e","t":"color","s":"css-var --color-success-border-hover (docs-dark)"},"foreground-primary":{"v":"#e6eee5","t":"color","s":"css-var --color-success-foreground-primary (docs-dark)"},"foreground-secondary":{"v":"#41da41","t":"color","s":"css-var --color-success-foreground-secondary (docs-dark)"},"on-solid":{"v":"#030f03","t":"color","s":"css-var --color-success-on-solid (docs-dark)"},"solid":{"v":"#2fb430","t":"color","s":"css-var --color-success-solid (docs-dark)"},"solid-hover":{"v":"#35c736","t":"color","s":"css-var --color-success-solid-hover (docs-dark)"},"subtle":{"v":"#030f03","t":"color","s":"css-var --color-success-subtle (docs-dark)"},"subtle-active":{"v":"#0d2f0c","t":"color","s":"css-var --color-success-subtle-active (docs-dark)"},"subtle-hover":{"v":"#061c06","t":"color","s":"css-var --color-success-subtle-hover (docs-dark)"}},"warning":{"border":{"v":"#4e3504","t":"color","s":"css-var --color-warning-border (docs-dark)"},"border-active":{"v":"#926504","t":"color","s":"css-var --color-warning-border-active (docs-dark)"},"border-hover":{"v":"#6a4904","t":"color","s":"css-var --color-warning-border-hover (docs-dark)"},"foreground-primary":{"v":"#edebe7","t":"color","s":"css-var --color-warning-foreground-primary (docs-dark)"},"foreground-secondary":{"v":"#efa80b","t":"color","s":"css-var --color-warning-foreground-secondary (docs-dark)"},"on-solid":{"v":"#110901","t":"color","s":"css-var --color-warning-on-solid (docs-dark)"},"solid":{"v":"#c58a08","t":"color","s":"css-var --color-warning-solid (docs-dark)"},"solid-hover":{"v":"#da9909","t":"color","s":"css-var --color-warning-solid-hover (docs-dark)"},"subtle":{"v":"#110901","t":"color","s":"css-var --color-warning-subtle (docs-dark)"},"subtle-active":{"v":"#342303","t":"color","s":"css-var --color-warning-subtle-active (docs-dark)"},"subtle-hover":{"v":"#1f1402","t":"color","s":"css-var --color-warning-subtle-hover (docs-dark)"}}},"text":{"v":"{color.docs.gray.200}","t":"color","s":"computed color of d-docs-h1 default (raw/components-computed.json); matches declared color.docs.gray.200","d":"The docs dark heading ink."},"body-text":{"v":"rgba(255, 255, 255, 0.6)","t":"color","s":"computed color of d-docs-para default (raw/components-computed.json)","d":"The docs dark paragraph colour."},"link":{"v":"rgba(255, 255, 255, 0.72)","t":"color","s":"computed color of d-docs-link default (raw/components-computed.json)","d":"The docs dark body-link colour."},"nav-text":{"v":"#f5f5f6","t":"color","s":"computed color of d-docs-nav-item default (raw/components-computed.json)","d":"The dark sidebar nav item ink."},"nav-active":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"computed backgroundColor of d-docs-nav-item default (raw/components-computed.json)","d":"The active nav item's field on dark."},"focus":{"v":"rgba(250, 250, 250, 0.09)","t":"color","s":"the box-shadow 3px spread focus ring of d-docs-search focus-visible (raw/components-computed.json); its outline is 0px none","d":"The focus ring on dark."},"rail-line":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"computed borderRightColor of d-docs-sidebar default (raw/components-computed.json); the browser painted oklab(0.999994 0.0000455678 0.0000200868 / 0.1), converted here","d":"The sidebar's hairline on dark."},"cta-surface":{"v":"#002f96","t":"color","s":"the background of d-docs-cta's parent div.docs-home-quickstart default (raw/components-computed.json ancestors); d-docs-cta itself computes a transparent backgroundColor","d":"The CTA banner's field on dark."}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles (marketing / sign-in / docs)'], ['dark', 'dark roles (docs only)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.size || {}, 'size.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.breakpoint || {}, 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function motion() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  $('#motion-out').innerHTML = m || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  let node = TOK, seen = [];
+  for (const k of m[1].split('.')) { node = node && node[k]; seen.push(k); }
+  return node && node.v !== undefined ? resolveVal(node.v, (depth || 0) + 1) : v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Exa</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts" style="letter-spacing:${esc(t.v)}">${esc(n)} — Tracked</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) h += `<div class="tr"><span class="ts" style="font-family:${esc(resolveVal(t.v))}">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+})();
+</script>
+</body>
+</html>

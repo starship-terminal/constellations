@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Typeform style guide</title>
+<style>
+  :root {
+    --page: #FAF9FB;
+    --surface: #FFFFFF;
+    --ink: #2A222B;
+    --muted: #655D67;
+    --accent: #2A222B;
+    --accent-text: #FAF9FB;
+    --border: #E5E1E5;
+    --inverse: #2A222B;
+    --inverse-text: #FAF9FB;
+    --eyebrow: #ECCFFA;
+    --focus: #E59700;
+    --purple: #A25FBA;
+    --green: #428A47;
+    --auth: #3C323E;
+    --auth-page: #F7F7F8;
+  }
+  html[data-theme="dark"] {
+    --page: #2A222B;
+    --surface: #251C27;
+    --ink: #FAF9FB;
+    --muted: #655D67;
+    --accent: #FAF9FB;
+    --accent-text: #2A222B;
+    --border: #E5E1E5;
+    --inverse: #FAF9FB;
+    --inverse-text: #2A222B;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.3;
+  }
+  header, main { max-width: 960px; margin: 0 auto; padding: 32px 24px; }
+  h1 { font-weight: 400; font-size: 48px; letter-spacing: -1px; line-height: 1; margin: 0 0 8px; }
+  h2 { font-weight: 400; font-size: 24px; margin: 32px 0 12px; }
+  p { color: var(--muted); }
+  button.toggle {
+    background: var(--accent);
+    color: var(--accent-text);
+    border: 0;
+    border-radius: 12px;
+    padding: 8px 20px;
+    font: inherit;
+    cursor: pointer;
+  }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 64px; border-radius: 12px; border: 1px solid var(--border); }
+  .name { font-size: 12px; margin-top: 4px; }
+  .hero {
+    background: var(--inverse);
+    color: var(--inverse-text);
+    border-radius: 12px;
+    padding: 48px 32px;
+    margin-top: 24px;
+  }
+  .hero h3 { font-weight: 400; font-size: 48px; letter-spacing: -1px; line-height: 1; margin: 8px 0; }
+  .eyebrow { color: var(--eyebrow); font-size: 14px; letter-spacing: 0; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 16px;
+    line-height: 16px;
+    text-decoration: none;
+    margin-right: 8px;
+  }
+  .btn-fill { background: var(--accent-text); color: var(--accent); }
+  .hero .btn-fill { background: #FAF9FB; color: #2A222B; }
+  .btn-line { background: transparent; color: var(--inverse-text); border: 1px solid #FAF9FB; }
+  .card {
+    background: #FFFFFF;
+    color: #2A222B;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    width: 280px;
+  }
+  .card strong { font-weight: 400; font-size: 24px; }
+  .card .price { font-size: 36px; margin: 12px 0 4px; }
+  .save { color: var(--green); font-size: 14px; }
+  .plan-btn {
+    display: inline-block;
+    margin-top: 16px;
+    background: #2A222B;
+    color: #FAF9FB;
+    border-radius: 12px;
+    padding: 8px 24px;
+    height: 48px;
+    line-height: 32px;
+  }
+  .field {
+    width: 320px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(81, 76, 84, 0.15);
+    background: #FAFAFA;
+    padding: 0 12px;
+    font: inherit;
+  }
+  .field:focus { outline: 2px solid #3C323E; border-color: #3C323E; }
+  .auth-btn {
+    display: block;
+    width: 320px;
+    margin-top: 8px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(81, 76, 84, 0.15);
+    background: rgba(255, 255, 255, 0.8);
+    color: #655D67;
+    font: inherit;
+  }
+  .auth-submit {
+    background: #3C323E;
+    color: #FFFFFF;
+    border-color: transparent;
+  }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<header>
+  <button class="toggle" type="button" id="theme">Dark hero</button>
+  <h1>Typeform</h1>
+  <p>Values measured on www.typeform.com and the signed-out login on 19 November 2026. Tobias and Twklausanne are not in this page, so type falls back to Arial.</p>
+</header>
+<main>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <div class="hero">
+    <div class="eyebrow">AI FORMS &amp; AUTOMATION</div>
+    <h3>Your favorite forms.</h3>
+    <p style="color:#FAF9FB">Combine AI forms and automated workflows to drive revenue growth.</p>
+    <a class="btn btn-fill" href="#">Get started—it’s free</a>
+    <a class="btn btn-line" href="#">Contact sales</a>
+  </div>
+  <h2>Plan card</h2>
+  <div class="card">
+    <strong>Basic</strong>
+    <div class="price">28 USD<span style="font-size:16px">/mo</span></div>
+    <div class="save">Save 132 USD /yr</div>
+    <span class="plan-btn">Get Basic</span>
+  </div>
+  <h2>Login field</h2>
+  <label>Email<br><input class="field" type="email" placeholder="Email"></label>
+  <button class="auth-btn" type="button">Continue with Google</button>
+  <button class="auth-btn auth-submit" type="button">Continue with email</button>
+  <h2>Radius and spacing</h2>
+  <table>
+    <tr><th>Token</th><th>Value</th></tr>
+    <tr><td>radius xs</td><td>4px</td></tr>
+    <tr><td>radius sm</td><td>12px</td></tr>
+    <tr><td>radius md</td><td>24px</td></tr>
+    <tr><td>radius lg</td><td>48px</td></tr>
+    <tr><td>button height, nav</td><td>40px</td></tr>
+    <tr><td>button height, hero and plan</td><td>48px</td></tr>
+    <tr><td>field height</td><td>44px</td></tr>
+    <tr><td>page gutter</td><td>48px</td></tr>
+  </table>
+</main>
+<script>
+  const colours = [
+    ["page", "#FAF9FB"],
+    ["ink", "#2A222B"],
+    ["muted", "#655D67"],
+    ["border", "#E5E1E5"],
+    ["eyebrow", "#ECCFFA"],
+    ["focus", "#E59700"],
+    ["purple", "#A25FBA"],
+    ["green", "#428A47"],
+    ["auth", "#3C323E"],
+    ["auth page", "#F7F7F8"]
+  ];
+  const row = document.getElementById("swatches");
+  for (const [name, hex] of colours) {
+    const d = document.createElement("div");
+    d.className = "swatch";
+    d.innerHTML = '<div class="chip" style="background:' + hex + '"></div><div class="name">' + name + ' ' + hex + '</div>';
+    row.appendChild(d);
+  }
+  document.getElementById("theme").addEventListener("click", () => {
+    const html = document.documentElement;
+    const next = html.getAttribute("data-theme") === "dark" ? "" : "dark";
+    if (next) html.setAttribute("data-theme", next);
+    else html.removeAttribute("data-theme");
+  });
+</script>
+</body>
+</html>

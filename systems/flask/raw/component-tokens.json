@@ -1,0 +1,1584 @@
+{
+  "_about": "The token tree build_tokens.py turns into tokens.json. flask.do declares its design-token layer in the inline ds-theme stylesheet and the linked root-*.css bundle (raw/css-vars.json): the --ds-* roles held as rgb channel lists, plus --ds-font-sans, --ds-radius(-control), --radius and the --ease-* curves. The dark set is the only theme the site ships — every public page paints it. Measured roles alias to the declared values where they match.",
+  "core": {
+    "font": {
+      "family": {
+        "sans": {
+          "var": "--ds-font-sans",
+          "type": "fontFamily",
+          "description": "The --ds-font-sans stack: ui-sans-serif/system-ui plus the emoji fallbacks — every heading, control and body on the public surface."
+        }
+      },
+      "size": {
+        "measured": {
+          "hero": {
+            "value": "64px",
+            "type": "dimension",
+            "source": "computed fontSize of hero-h1 default (raw/components-computed.json)",
+            "description": "The hero display heading size."
+          },
+          "section": {
+            "value": "44px",
+            "type": "dimension",
+            "source": "computed fontSize of section-h2 default (raw/components-computed.json)",
+            "description": "A section heading size."
+          }
+        }
+      },
+      "weight": {
+        "measured": {
+          "hero": {
+            "value": 500,
+            "type": "fontWeight",
+            "source": "computed fontWeight of hero-h1 default (raw/components-computed.json)",
+            "description": "The hero display heading weight."
+          },
+          "body": {
+            "value": 400,
+            "type": "fontWeight",
+            "source": "computed fontWeight of nav-pricing default (raw/components-computed.json)",
+            "description": "The header link weight."
+          }
+        }
+      }
+    },
+    "radius": {
+      "default": {
+        "var": "--ds-radius",
+        "type": "dimension",
+        "description": "The 12px card/panel radius."
+      },
+      "control": {
+        "var": "--ds-radius-control",
+        "type": "dimension",
+        "description": "The 9999px full-pill radius on buttons and chips."
+      },
+      "base": {
+        "var": "--radius",
+        "type": "dimension",
+        "description": "The shared --radius alias the Tailwind-style utilities read (12px)."
+      },
+      "measured": {
+        "cta": {
+          "value": "{radius.control}",
+          "type": "dimension",
+          "source": "computed borderTopLeftRadius of nav-cta default (raw/components-computed.json); matches declared radius.control",
+          "description": "The header CTA radius (the full control pill)."
+        },
+        "button": {
+          "value": "{radius.control}",
+          "type": "dimension",
+          "source": "computed borderTopLeftRadius of hero-copy-prompt default (raw/components-computed.json); matches declared radius.control",
+          "description": "The secondary button radius (the hero 'Copy Prompt' pill)."
+        },
+        "navLink": {
+          "value": "{radius.default}",
+          "type": "dimension",
+          "source": "computed borderTopLeftRadius of nav-pricing default (raw/components-computed.json); matches declared radius.default",
+          "description": "The header link radius."
+        },
+        "card": {
+          "value": "0px",
+          "type": "dimension",
+          "source": "computed borderTopLeftRadius of demo-share-popover default (raw/components-computed.json)",
+          "description": "A demo popover/card radius."
+        },
+        "field": {
+          "value": "{radius.control}",
+          "type": "dimension",
+          "source": "computed borderTopLeftRadius of login-email default (raw/components-computed.json); matches declared radius.control",
+          "description": "The sign-in field radius."
+        },
+        "switch": {
+          "value": "{radius.control}",
+          "type": "dimension",
+          "source": "computed borderTopLeftRadius of billing-switch default (raw/components-computed.json); matches declared radius.control",
+          "description": "The billing switch track radius."
+        }
+      }
+    },
+    "motion": {
+      "ease": {
+        "out": {
+          "var": "--ease-out",
+          "type": "cubicBezier",
+          "description": "The declared --ease-out curve."
+        },
+        "inOut": {
+          "var": "--ease-in-out",
+          "type": "cubicBezier",
+          "description": "The declared --ease-in-out curve."
+        }
+      },
+      "control": {
+        "value": "color 0.15s cubic-bezier(0.23, 1, 0.32, 1), transform 0.15s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.15s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.15s cubic-bezier(0.23, 1, 0.32, 1)",
+        "type": "other",
+        "source": "computed transition of nav-cta default (raw/components-computed.json); the --ease-* steps are the declared curves",
+        "description": "The control transition on the header CTA."
+      }
+    }
+  },
+  "dark": {
+    "brand": {
+      "default": {
+        "value": "#adadad",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-brand; the channel list `173 173 173` normalised to #adadad",
+        "description": "The declared `--ds-brand`."
+      },
+      "fg": {
+        "default": {
+          "value": "#090909",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-brand-fg; the channel list `9 9 9` normalised to #090909",
+          "description": "The declared `--ds-brand-fg`."
+        },
+        "hover": {
+          "value": "#242424",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-brand-fg-hover; the channel list `36 36 36` normalised to #242424",
+          "description": "The declared `--ds-brand-fg-hover`."
+        }
+      },
+      "highlight": {
+        "value": "#cacaca",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-brand-highlight; the channel list `202 202 202` normalised to #cacaca",
+        "description": "The declared `--ds-brand-highlight`."
+      },
+      "text": {
+        "value": "#adadad",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-brand-text; the channel list `173 173 173` normalised to #adadad",
+        "description": "The declared `--ds-brand-text`."
+      },
+      "tint": {
+        "value": "rgba(173, 173, 173, 0.18)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-brand-tint; the channel list `173 173 173 / 0.18` normalised to rgba(173, 173, 173, 0.18)",
+        "description": "The declared `--ds-brand-tint`."
+      }
+    },
+    "card": {
+      "veil": {
+        "value": "rgba(24, 24, 24, 0.55)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-card-veil; the channel list `24 24 24 / 0.55` normalised to rgba(24, 24, 24, 0.55)",
+        "description": "The declared `--ds-card-veil`."
+      }
+    },
+    "chip": {
+      "fg": {
+        "unselected": {
+          "value": "#868686",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-chip-fg-unselected; the channel list `134 134 134` normalised to #868686",
+          "description": "The declared `--ds-chip-fg-unselected`."
+        }
+      }
+    },
+    "control": {
+      "fg": {
+        "default": {
+          "value": "rgba(250, 250, 250, 0.7)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-control-fg; the channel list `250 250 250 / 0.7` normalised to rgba(250, 250, 250, 0.7)",
+          "description": "The declared `--ds-control-fg`."
+        },
+        "hover": {
+          "value": "rgba(250, 250, 250, 0.95)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-control-fg-hover; the channel list `250 250 250 / 0.95` normalised to rgba(250, 250, 250, 0.95)",
+          "description": "The declared `--ds-control-fg-hover`."
+        }
+      },
+      "fill": {
+        "value": "rgba(160, 160, 160, 0.0625)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-control-fill; the channel list `160 160 160 / 0.0625` normalised to rgba(160, 160, 160, 0.0625)",
+        "description": "The declared `--ds-control-fill`."
+      },
+      "light": {
+        "default": {
+          "value": "rgba(250, 250, 250, 0.06)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-control-light; the channel list `250 250 250 / 0.06` normalised to rgba(250, 250, 250, 0.06)",
+          "description": "The declared `--ds-control-light`."
+        },
+        "pressed": {
+          "default": {
+            "value": "rgba(250, 250, 250, 0.1)",
+            "type": "color",
+            "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-control-light-pressed; the channel list `250 250 250 / 0.1` normalised to rgba(250, 250, 250, 0.1)",
+            "description": "The declared `--ds-control-light-pressed`."
+          },
+          "sm": {
+            "value": "rgba(250, 250, 250, 0.16)",
+            "type": "color",
+            "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-control-light-pressed-sm; the channel list `250 250 250 / 0.16` normalised to rgba(250, 250, 250, 0.16)",
+            "description": "The declared `--ds-control-light-pressed-sm`."
+          }
+        }
+      }
+    },
+    "danger": {
+      "default": {
+        "value": "#dc2626",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-danger; the channel list `220 38 38` normalised to #dc2626",
+        "description": "The declared `--ds-danger`."
+      },
+      "bevel": {
+        "default": {
+          "value": "rgba(255, 255, 255, 0.4)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-danger-bevel; the channel list `255 255 255 / 0.4` normalised to rgba(255, 255, 255, 0.4)",
+          "description": "The declared `--ds-danger-bevel`."
+        },
+        "pressed": {
+          "value": "rgba(255, 255, 255, 0.28)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-danger-bevel-pressed; the channel list `255 255 255 / 0.28` normalised to rgba(255, 255, 255, 0.28)",
+          "description": "The declared `--ds-danger-bevel-pressed`."
+        }
+      },
+      "edge": {
+        "value": "rgba(220, 38, 38, 0.35)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-danger-edge; the channel list `220 38 38 / 0.35` normalised to rgba(220, 38, 38, 0.35)",
+        "description": "The declared `--ds-danger-edge`."
+      },
+      "fg": {
+        "value": "#fafafa",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-danger-fg; the channel list `250 250 250` normalised to #fafafa",
+        "description": "The declared `--ds-danger-fg`."
+      },
+      "highlight": {
+        "value": "#e4413a",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-danger-highlight; the channel list `228 65 58` normalised to #e4413a",
+        "description": "The declared `--ds-danger-highlight`."
+      },
+      "shade": {
+        "value": "#7b1010",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-danger-shade; the channel list `123 16 16` normalised to #7b1010",
+        "description": "The declared `--ds-danger-shade`."
+      },
+      "text": {
+        "value": "#f03e38",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-danger-text; the channel list `240 62 56` normalised to #f03e38",
+        "description": "The declared `--ds-danger-text`."
+      },
+      "tint": {
+        "value": "rgba(220, 38, 38, 0.12)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-danger-tint; the channel list `220 38 38 / 0.12` normalised to rgba(220, 38, 38, 0.12)",
+        "description": "The declared `--ds-danger-tint`."
+      }
+    },
+    "dot": {
+      "glow": {
+        "value": "rgba(250, 250, 250, 0.25)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-dot-glow; the channel list `250 250 250 / 0.25` normalised to rgba(250, 250, 250, 0.25)",
+        "description": "The declared `--ds-dot-glow`."
+      }
+    },
+    "drop": {
+      "default": {
+        "value": "rgba(0, 0, 0, 0.3)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-drop; the channel list `0 0 0 / 0.3` normalised to rgba(0, 0, 0, 0.3)",
+        "description": "The declared `--ds-drop`."
+      },
+      "soft": {
+        "value": "rgba(0, 0, 0, 0.15)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-drop-soft; the channel list `0 0 0 / 0.15` normalised to rgba(0, 0, 0, 0.15)",
+        "description": "The declared `--ds-drop-soft`."
+      },
+      "strong": {
+        "value": "rgba(0, 0, 0, 0.5)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-drop-strong; the channel list `0 0 0 / 0.5` normalised to rgba(0, 0, 0, 0.5)",
+        "description": "The declared `--ds-drop-strong`."
+      }
+    },
+    "edge": {
+      "sweep": {
+        "default": {
+          "value": "rgba(250, 250, 250, 0.32)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-edge-sweep; the channel list `250 250 250 / 0.32` normalised to rgba(250, 250, 250, 0.32)",
+          "description": "The declared `--ds-edge-sweep`."
+        },
+        "bloom": {
+          "value": "rgba(250, 250, 250, 0.025)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-edge-sweep-bloom; the channel list `250 250 250 / 0.025` normalised to rgba(250, 250, 250, 0.025)",
+          "description": "The declared `--ds-edge-sweep-bloom`."
+        }
+      }
+    },
+    "fg": {
+      "1": {
+        "value": "#fafafa",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-fg-1; the channel list `250 250 250` normalised to #fafafa",
+        "description": "The declared `--ds-fg-1`."
+      },
+      "2": {
+        "default": {
+          "value": "#a0a0a0",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-fg-2; the channel list `160 160 160` normalised to #a0a0a0",
+          "description": "The declared `--ds-fg-2`."
+        },
+        "hover": {
+          "value": "rgba(250, 250, 250, 0.8)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-fg-2-hover; the channel list `250 250 250 / 0.8` normalised to rgba(250, 250, 250, 0.8)",
+          "description": "The declared `--ds-fg-2-hover`."
+        }
+      },
+      "3": {
+        "value": "#6f6f6f",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-fg-3; the channel list `111 111 111` normalised to #6f6f6f",
+        "description": "The declared `--ds-fg-3`."
+      },
+      "4": {
+        "value": "#505050",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-fg-4; the channel list `80 80 80` normalised to #505050",
+        "description": "The declared `--ds-fg-4`."
+      },
+      "lead": {
+        "value": "rgba(250, 250, 250, 0.82)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-fg-lead; the channel list `250 250 250 / 0.82` normalised to rgba(250, 250, 250, 0.82)",
+        "description": "The declared `--ds-fg-lead`."
+      },
+      "placeholder": {
+        "value": "rgba(250, 250, 250, 0.5)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-fg-placeholder; the channel list `250 250 250 / 0.5` normalised to rgba(250, 250, 250, 0.5)",
+        "description": "The declared `--ds-fg-placeholder`."
+      },
+      "subhead": {
+        "value": "rgba(250, 250, 250, 0.72)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-fg-subhead; the channel list `250 250 250 / 0.72` normalised to rgba(250, 250, 250, 0.72)",
+        "description": "The declared `--ds-fg-subhead`."
+      }
+    },
+    "fill": {
+      "default": {
+        "value": "rgba(250, 250, 250, 0.0485)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-fill; the channel list `250 250 250 / 0.0485` normalised to rgba(250, 250, 250, 0.0485)",
+        "description": "The declared `--ds-fill`."
+      },
+      "strong": {
+        "value": "rgba(250, 250, 250, 0.0873)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-fill-strong; the channel list `250 250 250 / 0.0873` normalised to rgba(250, 250, 250, 0.0873)",
+        "description": "The declared `--ds-fill-strong`."
+      },
+      "subtle": {
+        "value": "rgba(250, 250, 250, 0.0243)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-fill-subtle; the channel list `250 250 250 / 0.0243` normalised to rgba(250, 250, 250, 0.0243)",
+        "description": "The declared `--ds-fill-subtle`."
+      }
+    },
+    "flair": {
+      "1": {
+        "value": "#d15dff",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-flair-1; the channel list `209 93 255` normalised to #d15dff",
+        "description": "The declared `--ds-flair-1`."
+      },
+      "2": {
+        "value": "#f78264",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-flair-2; the channel list `247 130 100` normalised to #f78264",
+        "description": "The declared `--ds-flair-2`."
+      },
+      "3": {
+        "value": "#efd7a4",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-flair-3; the channel list `239 215 164` normalised to #efd7a4",
+        "description": "The declared `--ds-flair-3`."
+      }
+    },
+    "focus": {
+      "default": {
+        "value": "#adadad",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-focus; the channel list `173 173 173` normalised to #adadad",
+        "description": "The declared `--ds-focus`."
+      },
+      "ring": {
+        "value": "rgba(173, 173, 173, 0.5)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-focus-ring; the channel list `173 173 173 / 0.5` normalised to rgba(173, 173, 173, 0.5)",
+        "description": "The declared `--ds-focus-ring`."
+      }
+    },
+    "glass": {
+      "default": {
+        "value": "rgba(42, 42, 42, 0.5)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-glass; the channel list `42 42 42 / 0.5` normalised to rgba(42, 42, 42, 0.5)",
+        "description": "The declared `--ds-glass`."
+      },
+      "edge": {
+        "default": {
+          "value": "rgba(173, 173, 173, 0.0725)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-glass-edge; the channel list `173 173 173 / 0.0725` normalised to rgba(173, 173, 173, 0.0725)",
+          "description": "The declared `--ds-glass-edge`."
+        },
+        "hover": {
+          "value": "rgba(173, 173, 173, 0.1595)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-glass-edge-hover; the channel list `173 173 173 / 0.1595` normalised to rgba(173, 173, 173, 0.1595)",
+          "description": "The declared `--ds-glass-edge-hover`."
+        },
+        "selected": {
+          "value": "rgba(173, 173, 173, 0.1305)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-glass-edge-selected; the channel list `173 173 173 / 0.1305` normalised to rgba(173, 173, 173, 0.1305)",
+          "description": "The declared `--ds-glass-edge-selected`."
+        }
+      },
+      "fill": {
+        "value": "rgba(31, 31, 31, 0.7)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-glass-fill; the channel list `31 31 31 / 0.7` normalised to rgba(31, 31, 31, 0.7)",
+        "description": "The declared `--ds-glass-fill`."
+      },
+      "gradient": {
+        "1": {
+          "value": "rgba(173, 173, 173, 0.0768)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-glass-gradient-1; the channel list `173 173 173 / 0.0768` normalised to rgba(173, 173, 173, 0.0768)",
+          "description": "The declared `--ds-glass-gradient-1`."
+        },
+        "2": {
+          "value": "rgba(239, 215, 164, 0.0832)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-glass-gradient-2; the channel list `239 215 164 / 0.0832` normalised to rgba(239, 215, 164, 0.0832)",
+          "description": "The declared `--ds-glass-gradient-2`."
+        },
+        "3": {
+          "value": "rgba(247, 130, 100, 0.16)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-glass-gradient-3; the channel list `247 130 100 / 0.16` normalised to rgba(247, 130, 100, 0.16)",
+          "description": "The declared `--ds-glass-gradient-3`."
+        },
+        "4": {
+          "value": "rgba(209, 93, 255, 0.2048)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-glass-gradient-4; the channel list `209 93 255 / 0.2048` normalised to rgba(209, 93, 255, 0.2048)",
+          "description": "The declared `--ds-glass-gradient-4`."
+        }
+      },
+      "popover": {
+        "value": "rgba(31, 31, 31, 0.95)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-glass-popover; the channel list `31 31 31 / 0.95` normalised to rgba(31, 31, 31, 0.95)",
+        "description": "The declared `--ds-glass-popover`."
+      },
+      "ring": {
+        "value": "rgba(111, 111, 111, 0.256)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-glass-ring; the channel list `111 111 111 / 0.256` normalised to rgba(111, 111, 111, 0.256)",
+        "description": "The declared `--ds-glass-ring`."
+      },
+      "thin": {
+        "value": "rgba(42, 42, 42, 0.15)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-glass-thin; the channel list `42 42 42 / 0.15` normalised to rgba(42, 42, 42, 0.15)",
+        "description": "The declared `--ds-glass-thin`."
+      }
+    },
+    "glow": {
+      "cool": {
+        "value": "rgba(209, 93, 255, 0.35)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-glow-cool; the channel list `209 93 255 / 0.35` normalised to rgba(209, 93, 255, 0.35)",
+        "description": "The declared `--ds-glow-cool`."
+      },
+      "edge": {
+        "value": "rgba(247, 130, 100, 0.9)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-glow-edge; the channel list `247 130 100 / 0.9` normalised to rgba(247, 130, 100, 0.9)",
+        "description": "The declared `--ds-glow-edge`."
+      },
+      "inner": {
+        "value": "rgba(209, 93, 255, 0.45)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-glow-inner; the channel list `209 93 255 / 0.45` normalised to rgba(209, 93, 255, 0.45)",
+        "description": "The declared `--ds-glow-inner`."
+      },
+      "warm": {
+        "value": "rgba(247, 130, 100, 0.35)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-glow-warm; the channel list `247 130 100 / 0.35` normalised to rgba(247, 130, 100, 0.35)",
+        "description": "The declared `--ds-glow-warm`."
+      }
+    },
+    "highlight": {
+      "value": "rgba(250, 250, 250, 0.08)",
+      "type": "color",
+      "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-highlight; the channel list `250 250 250 / 0.08` normalised to rgba(250, 250, 250, 0.08)",
+      "description": "The declared `--ds-highlight`."
+    },
+    "hover": {
+      "value": "rgba(250, 250, 250, 0.0582)",
+      "type": "color",
+      "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-hover; the channel list `250 250 250 / 0.0582` normalised to rgba(250, 250, 250, 0.0582)",
+      "description": "The declared `--ds-hover`."
+    },
+    "info": {
+      "default": {
+        "value": "#3b82f6",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-info; the channel list `59 130 246` normalised to #3b82f6",
+        "description": "The declared `--ds-info`."
+      },
+      "edge": {
+        "value": "rgba(59, 130, 246, 0.35)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-info-edge; the channel list `59 130 246 / 0.35` normalised to rgba(59, 130, 246, 0.35)",
+        "description": "The declared `--ds-info-edge`."
+      },
+      "fg": {
+        "value": "#fafafa",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-info-fg; the channel list `250 250 250` normalised to #fafafa",
+        "description": "The declared `--ds-info-fg`."
+      },
+      "highlight": {
+        "value": "#4d8ffc",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-info-highlight; the channel list `77 143 252` normalised to #4d8ffc",
+        "description": "The declared `--ds-info-highlight`."
+      },
+      "shade": {
+        "value": "#1d468a",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-info-shade; the channel list `29 70 138` normalised to #1d468a",
+        "description": "The declared `--ds-info-shade`."
+      },
+      "text": {
+        "value": "#3b82f6",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-info-text; the channel list `59 130 246` normalised to #3b82f6",
+        "description": "The declared `--ds-info-text`."
+      },
+      "tint": {
+        "value": "rgba(59, 130, 246, 0.12)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-info-tint; the channel list `59 130 246 / 0.12` normalised to rgba(59, 130, 246, 0.12)",
+        "description": "The declared `--ds-info-tint`."
+      }
+    },
+    "line": {
+      "1": {
+        "value": "#1c1c1c",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-line-1; the channel list `28 28 28` normalised to #1c1c1c",
+        "description": "The declared `--ds-line-1`."
+      },
+      "2": {
+        "value": "#282828",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-line-2; the channel list `40 40 40` normalised to #282828",
+        "description": "The declared `--ds-line-2`."
+      },
+      "3": {
+        "value": "#333333",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-line-3; the channel list `51 51 51` normalised to #333333",
+        "description": "The declared `--ds-line-3`."
+      },
+      "edge": {
+        "value": "#2b2b2b",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-line-edge; the channel list `43 43 43` normalised to #2b2b2b",
+        "description": "The declared `--ds-line-edge`."
+      }
+    },
+    "live": {
+      "default": {
+        "value": "#ff2d20",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-live; the channel list `255 45 32` normalised to #ff2d20",
+        "description": "The declared `--ds-live`."
+      },
+      "edge": {
+        "value": "rgba(255, 45, 32, 0.55)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-live-edge; the channel list `255 45 32 / 0.55` normalised to rgba(255, 45, 32, 0.55)",
+        "description": "The declared `--ds-live-edge`."
+      },
+      "fg": {
+        "value": "#fafafa",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-live-fg; the channel list `250 250 250` normalised to #fafafa",
+        "description": "The declared `--ds-live-fg`."
+      },
+      "glow": {
+        "default": {
+          "value": "rgba(255, 45, 32, 0.4)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-live-glow; the channel list `255 45 32 / 0.4` normalised to rgba(255, 45, 32, 0.4)",
+          "description": "The declared `--ds-live-glow`."
+        },
+        "edge": {
+          "value": "rgba(255, 45, 32, 0.9)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-live-glow-edge; the channel list `255 45 32 / 0.9` normalised to rgba(255, 45, 32, 0.9)",
+          "description": "The declared `--ds-live-glow-edge`."
+        },
+        "inner": {
+          "value": "rgba(255, 45, 32, 0.45)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-live-glow-inner; the channel list `255 45 32 / 0.45` normalised to rgba(255, 45, 32, 0.45)",
+          "description": "The declared `--ds-live-glow-inner`."
+        }
+      },
+      "highlight": {
+        "value": "#ff4b3a",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-live-highlight; the channel list `255 75 58` normalised to #ff4b3a",
+        "description": "The declared `--ds-live-highlight`."
+      },
+      "shade": {
+        "value": "#8f140d",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-live-shade; the channel list `143 20 13` normalised to #8f140d",
+        "description": "The declared `--ds-live-shade`."
+      },
+      "text": {
+        "value": "#ff2d20",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-live-text; the channel list `255 45 32` normalised to #ff2d20",
+        "description": "The declared `--ds-live-text`."
+      }
+    },
+    "marker": {
+      "default": {
+        "value": "rgba(250, 250, 250, 0.45)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-marker; the channel list `250 250 250 / 0.45` normalised to rgba(250, 250, 250, 0.45)",
+        "description": "The declared `--ds-marker`."
+      },
+      "container": {
+        "value": "rgba(250, 250, 250, 0.1)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-marker-container; the channel list `250 250 250 / 0.1` normalised to rgba(250, 250, 250, 0.1)",
+        "description": "The declared `--ds-marker-container`."
+      },
+      "draft": {
+        "value": "rgba(250, 250, 250, 0.25)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-marker-draft; the channel list `250 250 250 / 0.25` normalised to rgba(250, 250, 250, 0.25)",
+        "description": "The declared `--ds-marker-draft`."
+      },
+      "hover": {
+        "value": "rgba(250, 250, 250, 0.75)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-marker-hover; the channel list `250 250 250 / 0.75` normalised to rgba(250, 250, 250, 0.75)",
+        "description": "The declared `--ds-marker-hover`."
+      },
+      "selected": {
+        "value": "rgba(250, 250, 250, 0.9)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-marker-selected; the channel list `250 250 250 / 0.9` normalised to rgba(250, 250, 250, 0.9)",
+        "description": "The declared `--ds-marker-selected`."
+      }
+    },
+    "media": {
+      "backdrop": {
+        "value": "#000000",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-media-backdrop; the channel list `0 0 0 / 1` normalised to #000000",
+        "description": "The declared `--ds-media-backdrop`."
+      },
+      "edge": {
+        "default": {
+          "value": "rgba(255, 255, 255, 0.2)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-media-edge; the channel list `255 255 255 / 0.2` normalised to rgba(255, 255, 255, 0.2)",
+          "description": "The declared `--ds-media-edge`."
+        },
+        "faint": {
+          "value": "rgba(255, 255, 255, 0.06)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-media-edge-faint; the channel list `255 255 255 / 0.06` normalised to rgba(255, 255, 255, 0.06)",
+          "description": "The declared `--ds-media-edge-faint`."
+        }
+      },
+      "ring": {
+        "value": "rgba(255, 255, 255, 0.45)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-media-ring; the channel list `255 255 255 / 0.45` normalised to rgba(255, 255, 255, 0.45)",
+        "description": "The declared `--ds-media-ring`."
+      }
+    },
+    "metal": {
+      "body": {
+        "value": "rgba(255, 255, 255, 0.66)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-metal-body; the channel list `255 255 255 / 0.66` normalised to rgba(255, 255, 255, 0.66)",
+        "description": "The declared `--ds-metal-body`."
+      },
+      "edge": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-metal-edge; the channel list `255 255 255 / 1` normalised to #ffffff",
+        "description": "The declared `--ds-metal-edge`."
+      },
+      "rim": {
+        "value": "rgba(0, 0, 0, 0.3)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-metal-rim; the channel list `0 0 0 / 0.3` normalised to rgba(0, 0, 0, 0.3)",
+        "description": "The declared `--ds-metal-rim`."
+      },
+      "sheen": {
+        "value": "rgba(255, 255, 255, 0.93)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-metal-sheen; the channel list `255 255 255 / 0.93` normalised to rgba(255, 255, 255, 0.93)",
+        "description": "The declared `--ds-metal-sheen`."
+      }
+    },
+    "on": {
+      "media": {
+        "default": {
+          "value": "#ffffff",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-on-media; the channel list `255 255 255 / 1` normalised to #ffffff",
+          "description": "The declared `--ds-on-media`."
+        },
+        "faint": {
+          "value": "rgba(255, 255, 255, 0.5)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-on-media-faint; the channel list `255 255 255 / 0.5` normalised to rgba(255, 255, 255, 0.5)",
+          "description": "The declared `--ds-on-media-faint`."
+        },
+        "muted": {
+          "value": "rgba(255, 255, 255, 0.75)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-on-media-muted; the channel list `255 255 255 / 0.75` normalised to rgba(255, 255, 255, 0.75)",
+          "description": "The declared `--ds-on-media-muted`."
+        }
+      }
+    },
+    "pressed": {
+      "value": "rgba(250, 250, 250, 0.097)",
+      "type": "color",
+      "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-pressed; the channel list `250 250 250 / 0.097` normalised to rgba(250, 250, 250, 0.097)",
+      "description": "The declared `--ds-pressed`."
+    },
+    "primary": {
+      "glow": {
+        "1": {
+          "value": "rgba(209, 93, 255, 0.3)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-primary-glow-1; the channel list `209 93 255 / 0.3` normalised to rgba(209, 93, 255, 0.3)",
+          "description": "The declared `--ds-primary-glow-1`."
+        },
+        "2": {
+          "value": "rgba(247, 130, 100, 0.3)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-primary-glow-2; the channel list `247 130 100 / 0.3` normalised to rgba(247, 130, 100, 0.3)",
+          "description": "The declared `--ds-primary-glow-2`."
+        },
+        "3": {
+          "value": "rgba(239, 215, 164, 0.3)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-primary-glow-3; the channel list `239 215 164 / 0.3` normalised to rgba(239, 215, 164, 0.3)",
+          "description": "The declared `--ds-primary-glow-3`."
+        }
+      },
+      "highlight": {
+        "default": {
+          "value": "rgba(255, 255, 255, 0.85)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-primary-highlight; the channel list `255 255 255 / 0.85` normalised to rgba(255, 255, 255, 0.85)",
+          "description": "The declared `--ds-primary-highlight`."
+        },
+        "pressed": {
+          "value": "rgba(255, 255, 255, 0.6)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-primary-highlight-pressed; the channel list `255 255 255 / 0.6` normalised to rgba(255, 255, 255, 0.6)",
+          "description": "The declared `--ds-primary-highlight-pressed`."
+        }
+      },
+      "light": {
+        "value": "rgba(255, 255, 255, 0.4)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-primary-light; the channel list `255 255 255 / 0.4` normalised to rgba(255, 255, 255, 0.4)",
+        "description": "The declared `--ds-primary-light`."
+      },
+      "ring": {
+        "value": "rgba(0, 0, 0, 0.55)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-primary-ring; the channel list `0 0 0 / 0.55` normalised to rgba(0, 0, 0, 0.55)",
+        "description": "The declared `--ds-primary-ring`."
+      },
+      "shade": {
+        "value": "rgba(0, 0, 0, 0.06)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-primary-shade; the channel list `0 0 0 / 0.06` normalised to rgba(0, 0, 0, 0.06)",
+        "description": "The declared `--ds-primary-shade`."
+      }
+    },
+    "raised": {
+      "accent": {
+        "edge": {
+          "value": "rgba(209, 93, 255, 0.128)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-raised-accent-edge; the channel list `209 93 255 / 0.128` normalised to rgba(209, 93, 255, 0.128)",
+          "description": "The declared `--ds-raised-accent-edge`."
+        }
+      },
+      "edge": {
+        "value": "rgba(250, 250, 250, 0.0464)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-raised-edge; the channel list `250 250 250 / 0.0464` normalised to rgba(250, 250, 250, 0.0464)",
+        "description": "The declared `--ds-raised-edge`."
+      },
+      "fill": {
+        "value": "rgba(111, 111, 111, 0.16)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-raised-fill; the channel list `111 111 111 / 0.16` normalised to rgba(111, 111, 111, 0.16)",
+        "description": "The declared `--ds-raised-fill`."
+      },
+      "ring": {
+        "value": "rgba(250, 250, 250, 0.1024)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-raised-ring; the channel list `250 250 250 / 0.1024` normalised to rgba(250, 250, 250, 0.1024)",
+        "description": "The declared `--ds-raised-ring`."
+      },
+      "sheen": {
+        "value": "rgba(250, 250, 250, 0.04)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-raised-sheen; the channel list `250 250 250 / 0.04` normalised to rgba(250, 250, 250, 0.04)",
+        "description": "The declared `--ds-raised-sheen`."
+      }
+    },
+    "ring": {
+      "soft": {
+        "value": "rgba(250, 250, 250, 0.0512)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-ring-soft; the channel list `250 250 250 / 0.0512` normalised to rgba(250, 250, 250, 0.0512)",
+        "description": "The declared `--ds-ring-soft`."
+      }
+    },
+    "row": {
+      "hover": {
+        "value": "rgba(250, 250, 250, 0.034)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-row-hover; the channel list `250 250 250 / 0.034` normalised to rgba(250, 250, 250, 0.034)",
+        "description": "The declared `--ds-row-hover`."
+      },
+      "selected": {
+        "value": "rgba(250, 250, 250, 0.0485)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-row-selected; the channel list `250 250 250 / 0.0485` normalised to rgba(250, 250, 250, 0.0485)",
+        "description": "The declared `--ds-row-selected`."
+      }
+    },
+    "scrim": {
+      "default": {
+        "value": "rgba(0, 0, 0, 0.45)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-scrim; the channel list `0 0 0 / 0.45` normalised to rgba(0, 0, 0, 0.45)",
+        "description": "The declared `--ds-scrim`."
+      },
+      "faint": {
+        "value": "rgba(0, 0, 0, 0.05)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-scrim-faint; the channel list `0 0 0 / 0.05` normalised to rgba(0, 0, 0, 0.05)",
+        "description": "The declared `--ds-scrim-faint`."
+      },
+      "sheet": {
+        "value": "rgba(0, 0, 0, 0.85)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-scrim-sheet; the channel list `0 0 0 / 0.85` normalised to rgba(0, 0, 0, 0.85)",
+        "description": "The declared `--ds-scrim-sheet`."
+      },
+      "soft": {
+        "value": "rgba(0, 0, 0, 0.3)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-scrim-soft; the channel list `0 0 0 / 0.3` normalised to rgba(0, 0, 0, 0.3)",
+        "description": "The declared `--ds-scrim-soft`."
+      },
+      "strong": {
+        "value": "rgba(0, 0, 0, 0.7)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-scrim-strong; the channel list `0 0 0 / 0.7` normalised to rgba(0, 0, 0, 0.7)",
+        "description": "The declared `--ds-scrim-strong`."
+      }
+    },
+    "scrollbar": {
+      "default": {
+        "value": "rgba(250, 250, 250, 0.2)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-scrollbar; the channel list `250 250 250 / 0.2` normalised to rgba(250, 250, 250, 0.2)",
+        "description": "The declared `--ds-scrollbar`."
+      },
+      "hover": {
+        "value": "rgba(250, 250, 250, 0.3)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-scrollbar-hover; the channel list `250 250 250 / 0.3` normalised to rgba(250, 250, 250, 0.3)",
+        "description": "The declared `--ds-scrollbar-hover`."
+      },
+      "strong": {
+        "default": {
+          "value": "rgba(250, 250, 250, 0.25)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-scrollbar-strong; the channel list `250 250 250 / 0.25` normalised to rgba(250, 250, 250, 0.25)",
+          "description": "The declared `--ds-scrollbar-strong`."
+        },
+        "hover": {
+          "value": "rgba(250, 250, 250, 0.4)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-scrollbar-strong-hover; the channel list `250 250 250 / 0.4` normalised to rgba(250, 250, 250, 0.4)",
+          "description": "The declared `--ds-scrollbar-strong-hover`."
+        }
+      }
+    },
+    "search": {
+      "border": {
+        "value": "rgba(28, 28, 28, 0.6)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-search-border; the channel list `28 28 28 / 0.6` normalised to rgba(28, 28, 28, 0.6)",
+        "description": "The declared `--ds-search-border`."
+      }
+    },
+    "selected": {
+      "value": "rgba(250, 250, 250, 0.1455)",
+      "type": "color",
+      "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-selected; the channel list `250 250 250 / 0.1455` normalised to rgba(250, 250, 250, 0.1455)",
+      "description": "The declared `--ds-selected`."
+    },
+    "selection": {
+      "outline": {
+        "value": "rgba(250, 250, 250, 0.25)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-selection-outline; the channel list `250 250 250 / 0.25` normalised to rgba(250, 250, 250, 0.25)",
+        "description": "The declared `--ds-selection-outline`."
+      }
+    },
+    "shadow": {
+      "color": {
+        "ambient": {
+          "value": "rgba(0, 0, 0, 0.22)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-shadow-ambient; the channel list `0 0 0 / 0.22` normalised to rgba(0, 0, 0, 0.22)",
+          "description": "The declared `--ds-shadow-ambient`."
+        },
+        "ambient-hover": {
+          "value": "rgba(0, 0, 0, 0.28)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-shadow-ambient-hover; the channel list `0 0 0 / 0.28` normalised to rgba(0, 0, 0, 0.28)",
+          "description": "The declared `--ds-shadow-ambient-hover`."
+        },
+        "asset": {
+          "value": "rgba(0, 0, 0, 0.3)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-shadow-asset; the channel list `0 0 0 / 0.3` normalised to rgba(0, 0, 0, 0.3)",
+          "description": "The declared `--ds-shadow-asset`."
+        },
+        "chip": {
+          "value": "rgba(0, 0, 0, 0.55)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-shadow-chip; the channel list `0 0 0 / 0.55` normalised to rgba(0, 0, 0, 0.55)",
+          "description": "The declared `--ds-shadow-chip`."
+        },
+        "contact": {
+          "value": "rgba(0, 0, 0, 0.35)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-shadow-contact; the channel list `0 0 0 / 0.35` normalised to rgba(0, 0, 0, 0.35)",
+          "description": "The declared `--ds-shadow-contact`."
+        },
+        "knob": {
+          "value": "rgba(0, 0, 0, 0.65)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-shadow-knob; the channel list `0 0 0 / 0.65` normalised to rgba(0, 0, 0, 0.65)",
+          "description": "The declared `--ds-shadow-knob`."
+        },
+        "lifted": {
+          "value": "rgba(0, 0, 0, 0.45)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-shadow-lifted; the channel list `0 0 0 / 0.45` normalised to rgba(0, 0, 0, 0.45)",
+          "description": "The declared `--ds-shadow-lifted`."
+        },
+        "pressed": {
+          "value": "rgba(0, 0, 0, 0.3)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-shadow-pressed; the channel list `0 0 0 / 0.3` normalised to rgba(0, 0, 0, 0.3)",
+          "description": "The declared `--ds-shadow-pressed`."
+        },
+        "raised": {
+          "value": "rgba(0, 0, 0, 0.18)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-shadow-raised; the channel list `0 0 0 / 0.18` normalised to rgba(0, 0, 0, 0.18)",
+          "description": "The declared `--ds-shadow-raised`."
+        },
+        "tight": {
+          "value": "rgba(0, 0, 0, 0.5)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-shadow-tight; the channel list `0 0 0 / 0.5` normalised to rgba(0, 0, 0, 0.5)",
+          "description": "The declared `--ds-shadow-tight`."
+        }
+      },
+      "card": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "2px",
+            "spread": "0px"
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-shadow-card; the declared shadow, resolved verbatim",
+        "description": "The declared `--ds-shadow-card` shadow."
+      },
+      "float": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0)",
+            "offsetX": "0px",
+            "offsetY": "10px",
+            "blur": "15px",
+            "spread": "-3px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0)",
+            "offsetX": "0px",
+            "offsetY": "4px",
+            "blur": "6px",
+            "spread": "-4px"
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-shadow-float; the declared shadow, resolved verbatim",
+        "description": "The declared `--ds-shadow-float` shadow."
+      },
+      "overlay": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0)",
+            "offsetX": "0px",
+            "offsetY": "20px",
+            "blur": "25px",
+            "spread": "-5px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0)",
+            "offsetX": "0px",
+            "offsetY": "8px",
+            "blur": "10px",
+            "spread": "-6px"
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-shadow-overlay; the declared shadow, resolved verbatim",
+        "description": "The declared `--ds-shadow-overlay` shadow."
+      },
+      "popover": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.4)",
+            "offsetX": "0px",
+            "offsetY": "2px",
+            "blur": "8px",
+            "spread": "-2px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.5)",
+            "offsetX": "0px",
+            "offsetY": "16px",
+            "blur": "40px",
+            "spread": "-8px"
+          }
+        ],
+        "type": "shadow",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-shadow-popover; the declared shadow, resolved verbatim",
+        "description": "The declared `--ds-shadow-popover` shadow."
+      }
+    },
+    "shimmer": {
+      "peak": {
+        "value": "rgba(250, 250, 250, 0.2)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-shimmer-peak; the channel list `250 250 250 / 0.2` normalised to rgba(250, 250, 250, 0.2)",
+        "description": "The declared `--ds-shimmer-peak`."
+      }
+    },
+    "showcase": {
+      "bloom": {
+        "value": "rgba(250, 250, 250, 0.07)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-showcase-bloom; the channel list `250 250 250 / 0.07` normalised to rgba(250, 250, 250, 0.07)",
+        "description": "The declared `--ds-showcase-bloom`."
+      },
+      "drop": {
+        "default": {
+          "value": "rgba(0, 0, 0, 0.55)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-showcase-drop; the channel list `0 0 0 / 0.55` normalised to rgba(0, 0, 0, 0.55)",
+          "description": "The declared `--ds-showcase-drop`."
+        },
+        "far": {
+          "value": "rgba(0, 0, 0, 0.85)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-showcase-drop-far; the channel list `0 0 0 / 0.85` normalised to rgba(0, 0, 0, 0.85)",
+          "description": "The declared `--ds-showcase-drop-far`."
+        }
+      },
+      "edge": {
+        "default": {
+          "value": "rgba(250, 250, 250, 0.1)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-showcase-edge; the channel list `250 250 250 / 0.1` normalised to rgba(250, 250, 250, 0.1)",
+          "description": "The declared `--ds-showcase-edge`."
+        },
+        "dim": {
+          "value": "rgba(250, 250, 250, 0.03)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-showcase-edge-dim; the channel list `250 250 250 / 0.03` normalised to rgba(250, 250, 250, 0.03)",
+          "description": "The declared `--ds-showcase-edge-dim`."
+        },
+        "lit": {
+          "value": "rgba(250, 250, 250, 0.4)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-showcase-edge-lit; the channel list `250 250 250 / 0.4` normalised to rgba(250, 250, 250, 0.4)",
+          "description": "The declared `--ds-showcase-edge-lit`."
+        }
+      },
+      "shade": {
+        "value": "rgba(0, 0, 0, 0.3)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-showcase-shade; the channel list `0 0 0 / 0.3` normalised to rgba(0, 0, 0, 0.3)",
+        "description": "The declared `--ds-showcase-shade`."
+      }
+    },
+    "success": {
+      "default": {
+        "value": "#22c55e",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-success; the channel list `34 197 94` normalised to #22c55e",
+        "description": "The declared `--ds-success`."
+      },
+      "edge": {
+        "value": "rgba(34, 197, 94, 0.35)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-success-edge; the channel list `34 197 94 / 0.35` normalised to rgba(34, 197, 94, 0.35)",
+        "description": "The declared `--ds-success-edge`."
+      },
+      "fg": {
+        "value": "#090909",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-success-fg; the channel list `9 9 9` normalised to #090909",
+        "description": "The declared `--ds-success-fg`."
+      },
+      "highlight": {
+        "value": "#47d070",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-success-highlight; the channel list `71 208 112` normalised to #47d070",
+        "description": "The declared `--ds-success-highlight`."
+      },
+      "shade": {
+        "value": "#0e6d31",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-success-shade; the channel list `14 109 49` normalised to #0e6d31",
+        "description": "The declared `--ds-success-shade`."
+      },
+      "text": {
+        "value": "#22c55e",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-success-text; the channel list `34 197 94` normalised to #22c55e",
+        "description": "The declared `--ds-success-text`."
+      },
+      "tint": {
+        "value": "rgba(34, 197, 94, 0.12)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-success-tint; the channel list `34 197 94 / 0.12` normalised to rgba(34, 197, 94, 0.12)",
+        "description": "The declared `--ds-success-tint`."
+      }
+    },
+    "surface": {
+      "0": {
+        "value": "#0c0c0c",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-surface-0; the channel list `12 12 12` normalised to #0c0c0c",
+        "description": "The declared `--ds-surface-0`."
+      },
+      "1": {
+        "value": "#121212",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-surface-1; the channel list `18 18 18` normalised to #121212",
+        "description": "The declared `--ds-surface-1`."
+      },
+      "2": {
+        "value": "#181818",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-surface-2; the channel list `24 24 24` normalised to #181818",
+        "description": "The declared `--ds-surface-2`."
+      },
+      "3": {
+        "value": "#1f1f1f",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-surface-3; the channel list `31 31 31` normalised to #1f1f1f",
+        "description": "The declared `--ds-surface-3`."
+      },
+      "4": {
+        "value": "#2a2a2a",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-surface-4; the channel list `42 42 42` normalised to #2a2a2a",
+        "description": "The declared `--ds-surface-4`."
+      }
+    },
+    "toast": {
+      "sweep": {
+        "value": "rgba(250, 250, 250, 0.22)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-toast-sweep; the channel list `250 250 250 / 0.22` normalised to rgba(250, 250, 250, 0.22)",
+        "description": "The declared `--ds-toast-sweep`."
+      }
+    },
+    "track": {
+      "default": {
+        "value": "rgba(173, 173, 173, 0.3)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-track; the channel list `173 173 173 / 0.3` normalised to rgba(173, 173, 173, 0.3)",
+        "description": "The declared `--ds-track`."
+      },
+      "faint": {
+        "value": "rgba(173, 173, 173, 0.1)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-track-faint; the channel list `173 173 173 / 0.1` normalised to rgba(173, 173, 173, 0.1)",
+        "description": "The declared `--ds-track-faint`."
+      }
+    },
+    "warning": {
+      "default": {
+        "value": "#f59e0b",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-warning; the channel list `245 158 11` normalised to #f59e0b",
+        "description": "The declared `--ds-warning`."
+      },
+      "bevel": {
+        "default": {
+          "value": "rgba(255, 255, 255, 0.55)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-warning-bevel; the channel list `255 255 255 / 0.55` normalised to rgba(255, 255, 255, 0.55)",
+          "description": "The declared `--ds-warning-bevel`."
+        },
+        "pressed": {
+          "value": "rgba(255, 255, 255, 0.4)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-warning-bevel-pressed; the channel list `255 255 255 / 0.4` normalised to rgba(255, 255, 255, 0.4)",
+          "description": "The declared `--ds-warning-bevel-pressed`."
+        }
+      },
+      "edge": {
+        "value": "rgba(245, 158, 11, 0.35)",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-warning-edge; the channel list `245 158 11 / 0.35` normalised to rgba(245, 158, 11, 0.35)",
+        "description": "The declared `--ds-warning-edge`."
+      },
+      "fg": {
+        "value": "#090909",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-warning-fg; the channel list `9 9 9` normalised to #090909",
+        "description": "The declared `--ds-warning-fg`."
+      },
+      "highlight": {
+        "value": "#feac3c",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-warning-highlight; the channel list `254 172 60` normalised to #feac3c",
+        "description": "The declared `--ds-warning-highlight`."
+      },
+      "shade": {
+        "value": "#895603",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-warning-shade; the channel list `137 86 3` normalised to #895603",
+        "description": "The declared `--ds-warning-shade`."
+      },
+      "text": {
+        "value": "#f59e0b",
+        "type": "color",
+        "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-warning-text; the channel list `245 158 11` normalised to #f59e0b",
+        "description": "The declared `--ds-warning-text`."
+      },
+      "tint": {
+        "default": {
+          "value": "rgba(245, 158, 11, 0.12)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-warning-tint; the channel list `245 158 11 / 0.12` normalised to rgba(245, 158, 11, 0.12)",
+          "description": "The declared `--ds-warning-tint`."
+        },
+        "hover": {
+          "value": "rgba(245, 158, 11, 0.18)",
+          "type": "color",
+          "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-warning-tint-hover; the channel list `245 158 11 / 0.18` normalised to rgba(245, 158, 11, 0.18)",
+          "description": "The declared `--ds-warning-tint-hover`."
+        }
+      }
+    },
+    "well": {
+      "value": "rgba(0, 0, 0, 0.2)",
+      "type": "color",
+      "source": "declared design-system variable in the ds-theme stylesheets (raw/css-vars.json): --ds-well; the channel list `0 0 0 / 0.2` normalised to rgba(0, 0, 0, 0.2)",
+      "description": "The declared `--ds-well`."
+    },
+    "text": {
+      "ink": {
+        "value": "{fg.1}",
+        "type": "color",
+        "source": "computed color of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared fg.1",
+        "description": "The bright ink on display copy, headings and body — the fg-1 role."
+      },
+      "navInk": {
+        "value": "{fg.2.default}",
+        "type": "color",
+        "source": "computed color of nav-pricing default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared fg.2.default",
+        "description": "The header link ink — the fg-2 role."
+      },
+      "demoTabInk": {
+        "value": "{fg.2.default}",
+        "type": "color",
+        "source": "computed color of demo-tab-context default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared fg.2.default",
+        "description": "The demo's active tab ink."
+      },
+      "shareRowInk": {
+        "value": "{control.fg.default}",
+        "type": "color",
+        "source": "computed color of demo-acme-btn default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared control.fg.default",
+        "description": "The 'ACME Studios' share-popover button ink."
+      },
+      "faqInk": {
+        "value": "{fg.1}",
+        "type": "color",
+        "source": "computed color of faq-acc default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared fg.1",
+        "description": "The FAQ question ink."
+      }
+    },
+    "action": {
+      "ctaFill": {
+        "value": "rgba(160, 160, 160, 0.063)",
+        "type": "color",
+        "source": "computed backgroundColor of nav-cta default (raw/components-computed.json)",
+        "description": "The header CTA button fill (the primary-button face, usually the light brand grey)."
+      },
+      "ctaInk": {
+        "value": "{control.fg.default}",
+        "type": "color",
+        "source": "computed color of nav-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared control.fg.default",
+        "description": "The text on the header CTA button."
+      },
+      "ctaHover": {
+        "value": "rgba(160, 160, 160, 0.063)",
+        "type": "color",
+        "source": "computed backgroundColor of nav-cta hover (raw/components-computed.json)",
+        "description": "The header CTA's hover fill."
+      },
+      "heroCtaFill": {
+        "value": [
+          {
+            "color": "#adadad",
+            "position": 0.2
+          },
+          {
+            "color": "#cacaca",
+            "position": 0.8
+          }
+        ],
+        "type": "gradient",
+        "angle": "0deg",
+        "source": "computed backgroundImage of hero-cta default (linear-gradient(to top, rgb(173, 173, 173) 20%, rgb(202, 202, 202) 80%)); its backgroundColor reads transparent (raw/components-computed.json)",
+        "description": "The hero CTA fill (button-primary in the marketing demo style)."
+      },
+      "heroCtaInk": {
+        "value": "{brand.fg.default}",
+        "type": "color",
+        "source": "computed color of hero-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared brand.fg.default",
+        "description": "The hero CTA text."
+      },
+      "googleFill": {
+        "value": [
+          {
+            "color": "#adadad",
+            "position": 0.2
+          },
+          {
+            "color": "#cacaca",
+            "position": 0.8
+          }
+        ],
+        "type": "gradient",
+        "angle": "0deg",
+        "source": "computed backgroundImage of login-google default (linear-gradient(to top, rgb(173, 173, 173) 20%, rgb(202, 202, 202) 80%)); its backgroundColor reads transparent (raw/components-computed.json)",
+        "description": "The 'Continue with Google' button fill on the login card."
+      },
+      "googleInk": {
+        "value": "{brand.fg.default}",
+        "type": "color",
+        "source": "computed color of login-google default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared brand.fg.default",
+        "description": "The 'Continue with Google' button text."
+      },
+      "switchTrack": {
+        "value": "{fg.1}",
+        "type": "color",
+        "source": "computed backgroundColor of billing-switch default (raw/components-computed.json); matches declared fg.1",
+        "description": "The billing switch track fill when on."
+      },
+      "planCtaFill": {
+        "value": [
+          {
+            "color": "#adadad",
+            "position": 0.2
+          },
+          {
+            "color": "#cacaca",
+            "position": 0.8
+          }
+        ],
+        "type": "gradient",
+        "angle": "0deg",
+        "source": "computed backgroundImage of plan-cta default (linear-gradient(to top, rgb(173, 173, 173) 20%, rgb(202, 202, 202) 80%)); its backgroundColor reads transparent (raw/components-computed.json)",
+        "description": "The 'Get Started' plan button fill."
+      },
+      "planCtaInk": {
+        "value": "{brand.fg.default}",
+        "type": "color",
+        "source": "computed color of plan-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared brand.fg.default",
+        "description": "The 'Get Started' plan button text."
+      },
+      "bookCallFill": {
+        "value": "rgba(160, 160, 160, 0.063)",
+        "type": "color",
+        "source": "computed backgroundColor of book-call default (raw/components-computed.json)",
+        "description": "The 'Book Call' button fill."
+      }
+    },
+    "border": {
+      "focusRing": {
+        "value": "{focus.ring}",
+        "type": "color",
+        "source": "computed boxShadow ring of nav-cta focus-visible (2px spread; the outline is none 0px) (raw/components-computed.json); matches declared focus.ring",
+        "description": "The keyboard focus ring colour on the header CTA."
+      }
+    },
+    "form": {
+      "fieldBg": {
+        "value": "rgba(250, 250, 250, 0.047)",
+        "type": "color",
+        "source": "computed backgroundColor of login-email default (raw/components-computed.json)",
+        "description": "The sign-in e-mail field fill."
+      },
+      "fieldInk": {
+        "value": "{fg.1}",
+        "type": "color",
+        "source": "computed color of login-email default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared fg.1",
+        "description": "The field text ink."
+      },
+      "placeholder": {
+        "value": "{fg.4}",
+        "type": "color",
+        "source": "computed ::placeholder color of login-email default (raw/components-computed.json); matches declared fg.4",
+        "description": "The placeholder ink ('han@solo.com')."
+      }
+    },
+    "background": {
+      "page": {
+        "value": "{surface.0}",
+        "type": "color",
+        "source": "the :root --ds-surface-0 resolved on the public pages (raw/css-vars.json); visible as the near-black field behind every page (screenshots/*-dark-*.png)",
+        "description": "The near-black page field — --ds-surface-0."
+      }
+    }
+  },
+  "component": {
+    "topbar-height": {
+      "value": "56px",
+      "type": "dimension",
+      "source": "measured h of mkt-header default (raw/components-computed.json)",
+      "description": "The site header bar height."
+    },
+    "cta-height": {
+      "value": "32px",
+      "type": "dimension",
+      "source": "measured h of nav-cta default (raw/components-computed.json)",
+      "description": "The header CTA pill height."
+    },
+    "button-height": {
+      "value": "40px",
+      "type": "dimension",
+      "source": "measured h of hero-copy-prompt default (raw/components-computed.json)",
+      "description": "The secondary button height (the 'Copy Prompt' pill)."
+    },
+    "chip-height": {
+      "value": "30.38px",
+      "type": "dimension",
+      "source": "measured h of demo-version-chip default (raw/components-computed.json)",
+      "description": "The demo version chip height."
+    },
+    "hero-headline-width": {
+      "value": "1200px",
+      "type": "dimension",
+      "source": "measured w of hero-h1 default (raw/components-computed.json)",
+      "description": "The hero display heading's measure."
+    },
+    "login-panel-width": {
+      "value": "288px",
+      "type": "dimension",
+      "source": "measured w of login-panel default (raw/components-computed.json)",
+      "description": "The sign-in card width on /login."
+    },
+    "login-field-height": {
+      "value": "44px",
+      "type": "dimension",
+      "source": "measured h of login-email default (raw/components-computed.json)",
+      "description": "The sign-in e-mail field height."
+    },
+    "login-button-height": {
+      "value": "44px",
+      "type": "dimension",
+      "source": "measured h of login-google default (raw/components-computed.json)",
+      "description": "The 'Continue with Google' button height."
+    },
+    "switch-width": {
+      "value": "36px",
+      "type": "dimension",
+      "source": "measured w of billing-switch default (raw/components-computed.json)",
+      "description": "The billing switch track width."
+    },
+    "switch-height": {
+      "value": "20px",
+      "type": "dimension",
+      "source": "measured h of billing-switch default (raw/components-computed.json)",
+      "description": "The billing switch track height."
+    },
+    "mobile-topbar-height": {
+      "value": "32px",
+      "type": "dimension",
+      "source": "measured h of m-topbar default (raw/components-computed.json)",
+      "description": "The phone header bar height."
+    }
+  }
+}

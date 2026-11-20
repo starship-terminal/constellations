@@ -1,0 +1,27 @@
+{
+  "capturedAt": "2026-11-18T16:33:37.622Z",
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  },
+  "measured": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "w": 390,
+      "h": 844,
+      "scale": 1
+    },
+    "scrollHeight": 4231
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "sourceUrl": "https://mschf.com/",
+  "theme": "dark"
+}

@@ -1,0 +1,1736 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. cartesia.ai's marketing site declares a shadcn-style semantic layer (--background/--foreground/--primary/--card/\u2026) over a --cartesia-*/--color-cartesia-* palette plus --control-* sizing, --motion-* ramps and --site-* layout vars in its Astro/Tailwind stylesheets, paints it light and re-binds the same roles under .dark (a declared scope the public pages paint only in .dark islands). Declared variables become var leaves resolved per theme; measured values come from raw/components-computed.json (the sign-in surface on play.cartesia.ai shares the same layer). The docs surface (docs.cartesia.ai) is a Mintlify app in Inter \u2014 a separate system recorded in raw/css-vars-docs.json, not merged here.",
+ "core": {
+  "font": {
+   "family": {
+    "sans": {
+     "var": "--font-sans",
+     "type": "fontFamily",
+     "description": "ABC Diatype: body text, nav, buttons and most UI."
+    },
+    "display": {
+     "var": "--font-display",
+     "type": "fontFamily",
+     "description": "PP Kyoto: the display face for headlines (h1/h2) and brand moments."
+    },
+    "mono": {
+     "var": "--font-mono",
+     "type": "fontFamily",
+     "description": "IBM Plex Mono: code, figures and technical labels."
+    },
+    "handwriting": {
+     "var": "--font-handwriting",
+     "type": "fontFamily",
+     "description": "Homemade Apple: the annotation/handwriting accent."
+    },
+    "docs": {
+     "value": "Inter, -apple-system, \"system-ui\", \"Segoe UI\", system-ui, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of docs-nav-item default (raw/components-computed.json)",
+     "description": "Inter: the Mintlify docs app's stack \u2014 a separate surface, not the marketing fonts."
+    }
+   },
+   "size": {
+    "xs": {
+     "var": "--text-xs",
+     "type": "dimension",
+     "description": "Declared --text-xs (12px)."
+    },
+    "sm": {
+     "var": "--text-sm",
+     "type": "dimension",
+     "description": "Declared --text-sm (14px)."
+    },
+    "base": {
+     "var": "--text-base",
+     "type": "dimension",
+     "description": "Declared --text-base (16px)."
+    },
+    "lg": {
+     "var": "--text-lg",
+     "type": "dimension",
+     "description": "Declared --text-lg (18px)."
+    },
+    "xl": {
+     "var": "--text-xl",
+     "type": "dimension",
+     "description": "Declared --text-xl (20px)."
+    },
+    "2xl": {
+     "var": "--text-2xl",
+     "type": "dimension",
+     "description": "Declared --text-2xl (24px)."
+    },
+    "3xl": {
+     "var": "--text-3xl",
+     "type": "dimension",
+     "description": "Declared --text-3xl (30px)."
+    },
+    "4xl": {
+     "var": "--text-4xl",
+     "type": "dimension",
+     "description": "Declared --text-4xl (36px)."
+    },
+    "5xl": {
+     "var": "--text-5xl",
+     "type": "dimension",
+     "description": "Declared --text-5xl (48px)."
+    },
+    "6xl": {
+     "var": "--text-6xl",
+     "type": "dimension",
+     "description": "Declared --text-6xl (60px)."
+    },
+    "control-xs": {
+     "var": "--control-font-size-xs",
+     "type": "dimension",
+     "description": "Control label size xs (12px)."
+    },
+    "control-sm": {
+     "var": "--control-font-size-sm",
+     "type": "dimension",
+     "description": "Control label size sm (13px)."
+    },
+    "control-default": {
+     "var": "--control-font-size-default",
+     "type": "dimension",
+     "description": "Control label size default (14px \u2014 nav buttons, chips, CTAs)."
+    },
+    "control-lg": {
+     "var": "--control-font-size-lg",
+     "type": "dimension",
+     "description": "Control label size lg (15px \u2014 the sign-in submit)."
+    },
+    "control-xl": {
+     "var": "--control-font-size-xl",
+     "type": "dimension",
+     "description": "Control label size xl (16px)."
+    },
+    "control-2xl": {
+     "var": "--control-font-size-2xl",
+     "type": "dimension",
+     "description": "Control label size 2xl (18px)."
+    },
+    "hero": {
+     "value": "40px",
+     "source": "computed fontSize of hero-title default (raw/components-computed.json)",
+     "type": "dimension",
+     "description": "The PP-Kyoto hero headline."
+    },
+    "section-h2": {
+     "value": "26px",
+     "source": "computed fontSize of h2-display default (raw/components-computed.json)",
+     "type": "dimension",
+     "description": "The display section heading."
+    },
+    "mobile-hero": {
+     "value": "32px",
+     "source": "computed fontSize of m-hero default (raw/components-computed.json)",
+     "type": "dimension",
+     "description": "The hero size at 390px."
+    },
+    "docs-title": {
+     "value": "36px",
+     "source": "computed fontSize of docs-h1 default (raw/components-computed.json)",
+     "type": "dimension",
+     "description": "The Mintlify docs page title (Inter)."
+    }
+   },
+   "lineHeight": {
+    "xs": {
+     "var": "--text-xs--line-height",
+     "type": "number",
+     "description": "Declared leading for --text-xs."
+    },
+    "sm": {
+     "var": "--text-sm--line-height",
+     "type": "number",
+     "description": "Declared leading for --text-sm."
+    },
+    "base": {
+     "var": "--text-base--line-height",
+     "type": "number",
+     "description": "Declared leading for --text-base."
+    },
+    "lg": {
+     "var": "--text-lg--line-height",
+     "type": "number",
+     "description": "Declared leading for --text-lg."
+    },
+    "xl": {
+     "var": "--text-xl--line-height",
+     "type": "number",
+     "description": "Declared leading for --text-xl."
+    },
+    "2xl": {
+     "var": "--text-2xl--line-height",
+     "type": "number",
+     "description": "Declared leading for --text-2xl."
+    },
+    "3xl": {
+     "var": "--text-3xl--line-height",
+     "type": "number",
+     "description": "Declared leading for --text-3xl."
+    },
+    "4xl": {
+     "var": "--text-4xl--line-height",
+     "type": "number",
+     "description": "Declared leading for --text-4xl."
+    },
+    "5xl": {
+     "var": "--text-5xl--line-height",
+     "type": "number",
+     "description": "Declared leading for --text-5xl (1)."
+    },
+    "6xl": {
+     "var": "--text-6xl--line-height",
+     "type": "number",
+     "description": "Declared leading for --text-6xl (1)."
+    },
+    "tight": {
+     "var": "--leading-tight",
+     "type": "number",
+     "description": "Declared --leading-tight (1.25)."
+    },
+    "snug": {
+     "var": "--leading-snug",
+     "type": "number",
+     "description": "Declared --leading-snug (1.375)."
+    },
+    "normal": {
+     "var": "--leading-normal",
+     "type": "number",
+     "description": "Declared --leading-normal (1.5)."
+    },
+    "relaxed": {
+     "var": "--leading-relaxed",
+     "type": "number",
+     "description": "Declared --leading-relaxed (1.625)."
+    },
+    "header": {
+     "var": "--leading-header",
+     "type": "number",
+     "description": "Declared --leading-header (1.3)."
+    },
+    "header-1": {
+     "var": "--leading-header-1",
+     "type": "number",
+     "description": "Declared --leading-header-1 (1.15)."
+    },
+    "control-default": {
+     "var": "--control-line-height-default",
+     "type": "dimension",
+     "description": "Control label leading (20px on 14px)."
+    },
+    "control-sm": {
+     "var": "--control-line-height-sm",
+     "type": "dimension",
+     "description": "Control label leading sm (18px)."
+    },
+    "control-2xl": {
+     "var": "--control-line-height-2xl",
+     "type": "dimension",
+     "description": "Control label leading 2xl (24px)."
+    },
+    "hero": {
+     "value": "46px",
+     "source": "computed lineHeight of hero-title default (raw/components-computed.json)",
+     "type": "dimension",
+     "description": "The hero headline leading."
+    }
+   },
+   "tracking": {
+    "tight": {
+     "value": -0.025,
+     "type": "number",
+     "source": "css-var --tracking-tight -.025em (declared em ratio; multiply by the font size \u2014 -0.4px at 16px)",
+     "description": "The -0.025em tight tracking."
+    },
+    "normal": {
+     "var": "--tracking-normal",
+     "type": "dimension",
+     "description": "Zero tracking."
+    },
+    "wide": {
+     "value": 0.025,
+     "type": "number",
+     "source": "css-var --tracking-wide .025em (declared em ratio; 0.4px at 16px)",
+     "description": "The +0.025em wide tracking."
+    },
+    "wider": {
+     "value": 0.05,
+     "type": "number",
+     "source": "css-var --tracking-wider .05em (declared em ratio; 0.8px at 16px)",
+     "description": "The +0.05em wider tracking."
+    },
+    "widest": {
+     "value": 0.1,
+     "type": "number",
+     "source": "css-var --tracking-widest .1em (declared em ratio; 1.6px at 16px)",
+     "description": "The +0.1em widest tracking."
+    }
+   },
+   "weight": {
+    "normal": {
+     "var": "--font-weight-normal",
+     "type": "fontWeight",
+     "description": "400 body weight."
+    },
+    "medium": {
+     "var": "--font-weight-medium",
+     "type": "fontWeight",
+     "description": "500 \u2014 headings, nav and button labels."
+    },
+    "semibold": {
+     "var": "--font-weight-semibold",
+     "type": "fontWeight",
+     "description": "600."
+    },
+    "bold": {
+     "var": "--font-weight-bold",
+     "type": "fontWeight",
+     "description": "700."
+    }
+   }
+  },
+  "color": {
+   "brand": {
+    "forest": {
+     "var": "--cartesia-forest",
+     "type": "color",
+     "description": "Forest #004e23: the deep brand green (dark accents, the wordmark's alt tone)."
+    },
+    "verdant": {
+     "var": "--cartesia-verdant",
+     "type": "color",
+     "description": "Verdant #309d4b: the primary action green (Try Cartesia, Play, selected markers)."
+    },
+    "growth": {
+     "var": "--cartesia-growth",
+     "type": "color",
+     "description": "Growth #abd49e: the light green tint \u2014 the .dark primary."
+    },
+    "canvas": {
+     "var": "--cartesia-canvas",
+     "type": "color",
+     "description": "Canvas #e4e3db: the warm grey field and border tone."
+    },
+    "field": {
+     "var": "--cartesia-field",
+     "type": "color",
+     "description": "Field #f4f4f1: the light warm-grey surface."
+    },
+    "mist": {
+     "var": "--cartesia-mist",
+     "type": "color",
+     "description": "Mist #d1e2e8: the cool blue-grey tint."
+    },
+    "carbon": {
+     "var": "--cartesia-carbon",
+     "type": "color",
+     "description": "Carbon #1e1e1e: the near-black ink."
+    },
+    "memory": {
+     "var": "--cartesia-memory",
+     "type": "color",
+     "description": "Memory #99b0c8: the muted blue accent."
+    }
+   },
+   "green": {
+    "50": {
+     "var": "--color-cartesia-green-50",
+     "type": "color"
+    },
+    "100": {
+     "var": "--color-cartesia-green-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-cartesia-green-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-cartesia-green-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-cartesia-green-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-cartesia-green-500",
+     "type": "color",
+     "description": "Green 500 = verdant #309d4b."
+    },
+    "600": {
+     "var": "--color-cartesia-green-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-cartesia-green-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-cartesia-green-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-cartesia-green-900",
+     "type": "color",
+     "description": "Green 900 = forest #004e23."
+    },
+    "950": {
+     "var": "--color-cartesia-green-950",
+     "type": "color"
+    }
+   },
+   "blue": {
+    "50": {
+     "var": "--color-cartesia-blue-50",
+     "type": "color"
+    },
+    "100": {
+     "var": "--color-cartesia-blue-100",
+     "type": "color",
+     "description": "Blue 100 = mist #d1e2e8."
+    },
+    "200": {
+     "var": "--color-cartesia-blue-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-cartesia-blue-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-cartesia-blue-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-cartesia-blue-500",
+     "type": "color",
+     "description": "Blue 500 = memory #99b0c8."
+    },
+    "600": {
+     "var": "--color-cartesia-blue-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-cartesia-blue-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-cartesia-blue-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-cartesia-blue-900",
+     "type": "color"
+    },
+    "950": {
+     "var": "--color-cartesia-blue-950",
+     "type": "color"
+    }
+   },
+   "orange": {
+    "50": {
+     "var": "--color-cartesia-orange-50",
+     "type": "color"
+    },
+    "100": {
+     "var": "--color-cartesia-orange-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-cartesia-orange-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-cartesia-orange-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-cartesia-orange-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-cartesia-orange-500",
+     "type": "color",
+     "description": "Orange 500 #fc7a37 \u2014 the warm accent (chart-1)."
+    },
+    "600": {
+     "var": "--color-cartesia-orange-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-cartesia-orange-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-cartesia-orange-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-cartesia-orange-900",
+     "type": "color"
+    },
+    "950": {
+     "var": "--color-cartesia-orange-950",
+     "type": "color"
+    }
+   },
+   "neutral": {
+    "10": {
+     "var": "--cartesia-neutral-10",
+     "type": "color",
+     "description": "Neutral ramp 10 #f4f4f1."
+    },
+    "20": {
+     "var": "--cartesia-neutral-20",
+     "type": "color",
+     "description": "Neutral ramp 20 #f0efe9."
+    },
+    "30": {
+     "var": "--cartesia-neutral-30",
+     "type": "color",
+     "description": "Neutral ramp 30 #e4e3db."
+    },
+    "40": {
+     "var": "--cartesia-neutral-40",
+     "type": "color",
+     "description": "Neutral ramp 40 #cdc8c1 \u2014 the .dark foreground."
+    },
+    "50": {
+     "var": "--cartesia-neutral-50",
+     "type": "color",
+     "description": "Neutral ramp 50 #9fa09f."
+    },
+    "60": {
+     "var": "--cartesia-neutral-60",
+     "type": "color",
+     "description": "Neutral ramp 60 #525150 \u2014 muted-foreground."
+    },
+    "70": {
+     "var": "--cartesia-neutral-70",
+     "type": "color",
+     "description": "Neutral ramp 70 #39342f."
+    },
+    "80": {
+     "var": "--cartesia-neutral-80",
+     "type": "color",
+     "description": "Neutral ramp 80 #282523."
+    },
+    "90": {
+     "var": "--cartesia-neutral-90",
+     "type": "color",
+     "description": "Neutral ramp 90 #1e1e1e \u2014 carbon."
+    },
+    "100": {
+     "var": "--cartesia-neutral-100",
+     "type": "color",
+     "description": "Neutral ramp 100 #1e1c1a \u2014 the light foreground."
+    },
+    "scale-50": {
+     "var": "--color-cartesia-neutral-50",
+     "type": "color",
+     "description": "Neutral scale 50 #fefefe \u2014 the page field."
+    },
+    "scale-100": {
+     "var": "--color-cartesia-neutral-100",
+     "type": "color",
+     "description": "Neutral scale 100 #f9f9f8 \u2014 card."
+    },
+    "scale-200": {
+     "var": "--color-cartesia-neutral-200",
+     "type": "color",
+     "description": "Neutral scale 200 #f3f2ef \u2014 muted/accent."
+    },
+    "scale-300": {
+     "var": "--color-cartesia-neutral-300",
+     "type": "color",
+     "description": "Neutral scale 300 #f0efe9."
+    },
+    "scale-400": {
+     "var": "--color-cartesia-neutral-400",
+     "type": "color",
+     "description": "Neutral scale 400 #e4e3db \u2014 border/canvas."
+    },
+    "scale-500": {
+     "var": "--color-cartesia-neutral-500",
+     "type": "color"
+    },
+    "scale-600": {
+     "var": "--color-cartesia-neutral-600",
+     "type": "color"
+    },
+    "scale-700": {
+     "var": "--color-cartesia-neutral-700",
+     "type": "color"
+    },
+    "scale-800": {
+     "var": "--color-cartesia-neutral-800",
+     "type": "color"
+    },
+    "scale-900": {
+     "var": "--color-cartesia-neutral-900",
+     "type": "color",
+     "description": "Neutral scale 900 #1e1c1a \u2014 foreground."
+    },
+    "scale-950": {
+     "var": "--color-cartesia-neutral-950",
+     "type": "color"
+    }
+   },
+   "named": {
+    "white": {
+     "var": "--color-white",
+     "type": "color",
+     "description": "Pure white: the sign-in field fill."
+    },
+    "black": {
+     "var": "--color-black",
+     "type": "color",
+     "description": "Pure black."
+    },
+    "servicenow": {
+     "var": "--color-servicenow",
+     "type": "color",
+     "description": "Partner green #62d84e (customer logo accents)."
+    },
+    "artificial-analysis": {
+     "var": "--color-artificial-analysis",
+     "type": "color",
+     "description": "Artificial Analysis purple #8842fd (benchmark logo accents)."
+    }
+   }
+  },
+  "radius": {
+   "xs": {
+    "var": "--radius-xs",
+    "type": "dimension",
+    "description": "Declared --radius-xs (2px)."
+   },
+   "sm": {
+    "var": "--radius-sm",
+    "type": "dimension",
+    "description": "Declared --radius-sm (4px)."
+   },
+   "md": {
+    "var": "--radius-md",
+    "type": "dimension",
+    "description": "Declared --radius-md (6px \u2014 menu links)."
+   },
+   "lg": {
+    "var": "--radius-lg",
+    "type": "dimension",
+    "description": "Declared --radius-lg (8px \u2014 buttons, fields, cards' base radius)."
+   },
+   "xl": {
+    "var": "--radius-xl",
+    "type": "dimension",
+    "description": "Declared --radius-xl (12px \u2014 the sign-in submit, docs nav items)."
+   },
+   "2xl": {
+    "var": "--radius-2xl",
+    "type": "dimension",
+    "description": "Declared --radius-2xl (16px)."
+   },
+   "3xl": {
+    "var": "--radius-3xl",
+    "type": "dimension",
+    "description": "Declared --radius-3xl (20px)."
+   },
+   "4xl": {
+    "var": "--radius-4xl",
+    "type": "dimension",
+    "description": "Declared --radius-4xl (24px)."
+   },
+   "full": {
+    "value": "9999px",
+    "source": "computed borderTopLeftRadius of usecase-chip default (raw/components-computed.json): rounded-full resolves to the browser's clamp",
+    "type": "dimension",
+    "description": "rounded-full: chips, the voice orb and chooser buttons, the docs search pill. The globe dots paint a 50% circle instead (percentage radii are not length-scale entries)."
+   }
+  },
+  "spacing": {
+   "unit": {
+    "var": "--spacing",
+    "type": "dimension",
+    "description": "The 4px spacing unit the Tailwind scale multiplies."
+   },
+   "hairline": {
+    "var": "--theme-border-width-hairline",
+    "type": "dimension",
+    "description": "The 1px hairline border width."
+   }
+  },
+  "layout": {
+   "content-max": {
+    "var": "--site-content-max",
+    "type": "dimension",
+    "description": "The 1280px content column."
+   },
+   "gutter": {
+    "var": "--site-gutter",
+    "type": "dimension",
+    "description": "The 48px page gutter at desktop."
+   },
+   "nav-height": {
+    "var": "--site-nav-height",
+    "type": "dimension",
+    "description": "The 64px sticky header height."
+   },
+   "breakpoint-sm": {
+    "var": "--breakpoint-sm",
+    "type": "dimension",
+    "description": "The 640px small breakpoint."
+   },
+   "container-xs": {
+    "var": "--container-xs",
+    "type": "dimension",
+    "description": "Container xs (320px)."
+   },
+   "container-sm": {
+    "var": "--container-sm",
+    "type": "dimension",
+    "description": "Container sm (384px)."
+   },
+   "container-md": {
+    "var": "--container-md",
+    "type": "dimension",
+    "description": "Container md (448px)."
+   },
+   "container-lg": {
+    "var": "--container-lg",
+    "type": "dimension",
+    "description": "Container lg (512px)."
+   },
+   "container-xl": {
+    "var": "--container-xl",
+    "type": "dimension",
+    "description": "Container xl (576px)."
+   },
+   "container-2xl": {
+    "var": "--container-2xl",
+    "type": "dimension",
+    "description": "Container 2xl (672px)."
+   },
+   "container-3xl": {
+    "var": "--container-3xl",
+    "type": "dimension",
+    "description": "Container 3xl (768px)."
+   },
+   "container-4xl": {
+    "var": "--container-4xl",
+    "type": "dimension",
+    "description": "Container 4xl (896px)."
+   },
+   "container-5xl": {
+    "var": "--container-5xl",
+    "type": "dimension",
+    "description": "Container 5xl (1024px)."
+   },
+   "container-6xl": {
+    "var": "--container-6xl",
+    "type": "dimension",
+    "description": "Container 6xl (1152px)."
+   }
+  },
+  "control": {
+   "height-xs": {
+    "var": "--control-height-xs",
+    "type": "dimension",
+    "description": "Control height xs (24px)."
+   },
+   "height-sm": {
+    "var": "--control-height-sm",
+    "type": "dimension",
+    "description": "Control height sm (32px)."
+   },
+   "height-default": {
+    "var": "--control-height-default",
+    "type": "dimension",
+    "description": "Control height default (36px \u2014 nav buttons, CTAs, play)."
+   },
+   "height-lg": {
+    "var": "--control-height-lg",
+    "type": "dimension",
+    "description": "Control height lg (36px)."
+   },
+   "height-xl": {
+    "var": "--control-height-xl",
+    "type": "dimension",
+    "description": "Control height xl (44px \u2014 sign-in fields and submit)."
+   },
+   "height-2xl": {
+    "var": "--control-height-2xl",
+    "type": "dimension",
+    "description": "Control height 2xl (48px)."
+   },
+   "icon-xs": {
+    "var": "--control-icon-size-xs",
+    "type": "dimension",
+    "description": "Control icon xs."
+   },
+   "icon-sm": {
+    "var": "--control-icon-size-sm",
+    "type": "dimension",
+    "description": "Control icon sm."
+   },
+   "icon-default": {
+    "var": "--control-icon-size-default",
+    "type": "dimension",
+    "description": "Control icon default."
+   },
+   "icon-xl": {
+    "var": "--control-icon-size-xl",
+    "type": "dimension",
+    "description": "Control icon xl."
+   },
+   "padding-xs": {
+    "var": "--control-padding-xs",
+    "type": "dimension",
+    "description": "Control inline padding xs."
+   },
+   "padding-sm": {
+    "var": "--control-padding-sm",
+    "type": "dimension",
+    "description": "Control inline padding sm."
+   },
+   "padding-default": {
+    "var": "--control-padding-default",
+    "type": "dimension",
+    "description": "Control inline padding default."
+   },
+   "padding-lg": {
+    "var": "--control-padding-lg",
+    "type": "dimension",
+    "description": "Control inline padding lg."
+   },
+   "padding-2xl": {
+    "var": "--control-padding-2xl",
+    "type": "dimension",
+    "description": "Control inline padding 2xl."
+   },
+   "field-default": {
+    "var": "--field-padding-default",
+    "type": "dimension",
+    "description": "Field padding default."
+   },
+   "field-sm": {
+    "var": "--field-padding-sm",
+    "type": "dimension",
+    "description": "Field padding sm."
+   }
+  },
+  "motion": {
+   "duration-fast": {
+    "var": "--motion-duration-fast",
+    "type": "duration",
+    "description": "100ms \u2014 the fastest feedback."
+   },
+   "duration-label": {
+    "var": "--motion-duration-label",
+    "type": "duration",
+    "description": "120ms \u2014 label fades."
+   },
+   "duration-normal": {
+    "var": "--motion-duration-normal",
+    "type": "duration",
+    "description": "150ms \u2014 the default transition (--default-transition-duration)."
+   },
+   "duration-panel": {
+    "var": "--motion-duration-panel",
+    "type": "duration",
+    "description": "200ms \u2014 panels/menus."
+   },
+   "ease-out": {
+    "var": "--motion-ease-out",
+    "type": "cubicBezier",
+    "description": "The standard ease-out cubic-bezier(.23,1,.32,1)."
+   },
+   "ease-layout": {
+    "var": "--motion-ease-layout",
+    "type": "cubicBezier",
+    "description": "The layout ease cubic-bezier(.2,0,0,1)."
+   },
+   "ease-in": {
+    "var": "--ease-in",
+    "type": "cubicBezier",
+    "description": "Tailwind ease-in."
+   },
+   "ease-out-tw": {
+    "var": "--ease-out",
+    "type": "cubicBezier",
+    "description": "Tailwind ease-out."
+   },
+   "default-ease": {
+    "var": "--default-transition-timing-function",
+    "type": "cubicBezier",
+    "description": "The default transition timing cubic-bezier(.4,0,.2,1)."
+   },
+   "disclosure-ease": {
+    "var": "--motion-disclosure-ease",
+    "type": "cubicBezier",
+    "description": "Disclosure ease (same curve as ease-out)."
+   },
+   "disclosure-enter": {
+    "var": "--motion-disclosure-enter-duration",
+    "type": "duration",
+    "description": "Disclosure enter 200ms."
+   },
+   "disclosure-exit": {
+    "var": "--motion-disclosure-exit-duration",
+    "type": "duration",
+    "description": "Disclosure exit 200ms."
+   },
+   "feedback-enter": {
+    "var": "--motion-feedback-enter-duration",
+    "type": "duration",
+    "description": "Feedback enter 100ms."
+   },
+   "feedback-exit": {
+    "var": "--motion-feedback-exit-duration",
+    "type": "duration",
+    "description": "Feedback exit 100ms."
+   },
+   "overlay-enter": {
+    "var": "--motion-overlay-enter-duration",
+    "type": "duration",
+    "description": "Overlay enter 150ms."
+   },
+   "overlay-exit": {
+    "var": "--motion-overlay-exit-duration",
+    "type": "duration",
+    "description": "Overlay exit 100ms."
+   },
+   "panel-enter": {
+    "var": "--motion-panel-enter-duration",
+    "type": "duration",
+    "description": "Panel enter 200ms."
+   },
+   "panel-exit": {
+    "var": "--motion-panel-exit-duration",
+    "type": "duration",
+    "description": "Panel exit 150ms."
+   },
+   "sidebar-ease": {
+    "var": "--motion-sidebar-ease",
+    "type": "cubicBezier",
+    "description": "Sidebar ease cubic-bezier(.2,0,0,1)."
+   },
+   "sidebar-enter": {
+    "var": "--motion-sidebar-enter-duration",
+    "type": "duration",
+    "description": "Sidebar enter 200ms."
+   },
+   "sidebar-exit": {
+    "var": "--motion-sidebar-exit-duration",
+    "type": "duration",
+    "description": "Sidebar exit 200ms."
+   },
+   "site-accordion-duration": {
+    "var": "--site-accordion-duration",
+    "type": "duration",
+    "description": "The marketing accordion's 350ms."
+   },
+   "site-accordion-ease": {
+    "var": "--site-accordion-ease",
+    "type": "cubicBezier",
+    "description": "The marketing accordion ease (ease keyword)."
+   },
+   "site-reveal-duration": {
+    "var": "--site-reveal-duration",
+    "type": "duration",
+    "description": "The scroll-reveal 700ms."
+   },
+   "site-reveal-ease": {
+    "var": "--site-reveal-ease",
+    "type": "cubicBezier",
+    "description": "The scroll-reveal ease cubic-bezier(.32,.72,0,1)."
+   },
+   "site-reveal-step": {
+    "var": "--site-reveal-step",
+    "type": "duration",
+    "description": "The 60ms stagger between reveal items."
+   }
+  },
+  "blur": {
+   "xs": {
+    "var": "--blur-xs",
+    "type": "dimension",
+    "description": "Blur xs."
+   },
+   "sm": {
+    "var": "--blur-sm",
+    "type": "dimension",
+    "description": "Blur sm."
+   },
+   "md": {
+    "var": "--blur-md",
+    "type": "dimension",
+    "description": "Blur md."
+   }
+  },
+  "measured": {
+   "focus-ring": {
+    "value": "#a1a1a1",
+    "source": "computed outlineColor of faq-trigger focus-visible (raw/components-computed.json): 2px solid var(--ring)",
+    "type": "color",
+    "description": "The default 2px focus ring (--ring)."
+   },
+   "focus-ring-width": {
+    "value": "2px",
+    "source": "computed outlineWidth of faq-trigger focus-visible (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Focus ring width."
+   },
+   "focus-ring-verdant": {
+    "value": "#309d4b",
+    "source": "computed outlineColor of voice-row focus-visible (raw/components-computed.json)",
+    "type": "color",
+    "description": "The verdant 2px focus ring on voice-list rows."
+   },
+   "hover-dim": {
+    "value": 0.9,
+    "type": "number",
+    "source": "computed backgroundColor of nav-cta hover (raw/components-computed.json): the primary fill at reduced opacity",
+    "description": "Primary buttons hover at a fraction of the verdant fill."
+   }
+  }
+ },
+ "light": {
+  "color": {
+   "background": {
+    "var": "--background",
+    "type": "color",
+    "description": "The page field #fefefe."
+   },
+   "foreground": {
+    "var": "--foreground",
+    "type": "color",
+    "description": "Body/headline ink #1e1c1a."
+   },
+   "primary": {
+    "var": "--primary",
+    "type": "color",
+    "description": "Verdant #309d4b \u2014 solid CTAs and selections."
+   },
+   "primary-foreground": {
+    "var": "--primary-foreground",
+    "type": "color",
+    "description": "Text on primary."
+   },
+   "secondary": {
+    "var": "--secondary",
+    "type": "color",
+    "description": "Secondary fill."
+   },
+   "secondary-foreground": {
+    "var": "--secondary-foreground",
+    "type": "color",
+    "description": "Text on secondary."
+   },
+   "accent": {
+    "var": "--accent",
+    "type": "color",
+    "description": "Accent/hover fill."
+   },
+   "accent-foreground": {
+    "var": "--accent-foreground",
+    "type": "color",
+    "description": "Text on accent."
+   },
+   "card": {
+    "var": "--card",
+    "type": "color",
+    "description": "Card fill."
+   },
+   "card-foreground": {
+    "var": "--card-foreground",
+    "type": "color",
+    "description": "Text on card."
+   },
+   "muted": {
+    "var": "--muted",
+    "type": "color",
+    "description": "Muted fill (hover surfaces)."
+   },
+   "muted-foreground": {
+    "var": "--muted-foreground",
+    "type": "color",
+    "description": "Secondary text #525150."
+   },
+   "surface": {
+    "var": "--surface",
+    "type": "color",
+    "description": "Raised surface."
+   },
+   "surface-foreground": {
+    "var": "--surface-foreground",
+    "type": "color",
+    "description": "Text on surface."
+   },
+   "field": {
+    "var": "--field",
+    "type": "color",
+    "description": "Input fill (#ffffff light, white/4.5% dark)."
+   },
+   "popover": {
+    "var": "--popover",
+    "type": "color",
+    "description": "Popover/menu fill."
+   },
+   "popover-foreground": {
+    "var": "--popover-foreground",
+    "type": "color",
+    "description": "Popover text."
+   },
+   "popover-border": {
+    "var": "--popover-border",
+    "type": "color",
+    "description": "Popover hairline."
+   },
+   "border": {
+    "var": "--border",
+    "type": "color",
+    "description": "The border tone (#e4e3db light, white/10% dark)."
+   },
+   "boundary": {
+    "var": "--boundary",
+    "type": "color",
+    "description": "The hairline (header underline, column rules)."
+   },
+   "input": {
+    "var": "--input",
+    "type": "color",
+    "description": "Input border."
+   },
+   "ring": {
+    "var": "--ring",
+    "type": "color",
+    "description": "Focus ring."
+   },
+   "focus": {
+    "var": "--focus",
+    "type": "color",
+    "description": "Focus border (focus-visible:border-focus)."
+   },
+   "placeholder": {
+    "var": "--placeholder",
+    "type": "color",
+    "description": "Placeholder ink."
+   },
+   "subtle-foreground": {
+    "var": "--subtle-foreground",
+    "type": "color",
+    "description": "Subtle text."
+   },
+   "destructive": {
+    "var": "--destructive",
+    "type": "color",
+    "description": "Error/destructive."
+   },
+   "destructive-foreground": {
+    "var": "--destructive-foreground",
+    "type": "color",
+    "description": "Text on destructive."
+   },
+   "success": {
+    "var": "--success",
+    "type": "color",
+    "description": "Success."
+   },
+   "success-foreground": {
+    "var": "--success-foreground",
+    "type": "color",
+    "description": "Text on success."
+   },
+   "warning": {
+    "var": "--warning",
+    "type": "color",
+    "description": "Warning."
+   },
+   "warning-foreground": {
+    "var": "--warning-foreground",
+    "type": "color",
+    "description": "Text on warning."
+   },
+   "sidebar": {
+    "var": "--sidebar",
+    "type": "color",
+    "description": "Sidebar fill (declared; the app shell behind sign-in)."
+   },
+   "sidebar-foreground": {
+    "var": "--sidebar-foreground",
+    "type": "color",
+    "description": "Sidebar text."
+   },
+   "sidebar-border": {
+    "var": "--sidebar-border",
+    "type": "color",
+    "description": "Sidebar border."
+   },
+   "sidebar-accent": {
+    "var": "--sidebar-accent",
+    "type": "color",
+    "description": "Sidebar hover fill."
+   },
+   "sidebar-primary": {
+    "var": "--sidebar-primary",
+    "type": "color",
+    "description": "Sidebar primary."
+   },
+   "sidebar-ring": {
+    "var": "--sidebar-ring",
+    "type": "color",
+    "description": "Sidebar focus ring."
+   },
+   "sidebar-raised": {
+    "var": "--sidebar-raised",
+    "type": "color",
+    "description": "Sidebar raised fill."
+   },
+   "chart-1": {
+    "var": "--chart-1",
+    "type": "color",
+    "description": "Chart 1 (declared chart ramp)."
+   },
+   "chart-2": {
+    "var": "--chart-2",
+    "type": "color",
+    "description": "Chart 2."
+   },
+   "chart-3": {
+    "var": "--chart-3",
+    "type": "color",
+    "description": "Chart 3."
+   },
+   "chart-4": {
+    "var": "--chart-4",
+    "type": "color",
+    "description": "Chart 4."
+   },
+   "chart-5": {
+    "var": "--chart-5",
+    "type": "color",
+    "description": "Chart 5."
+   }
+  },
+  "action": {
+   "link-verdant": {
+    "value": "{color.brand.verdant}",
+    "type": "color",
+    "source": "alias of core.color.brand.verdant (css-var --cartesia-verdant); the Tools breadcrumb measured text-cartesia-verdant",
+    "description": "Inline verdant links (the Tools breadcrumb, text accents)."
+   }
+  }
+ },
+ "dark": {
+  "color": {
+   "background": {
+    "var": "--background",
+    "type": "color",
+    "description": "The .dark field #171715."
+   },
+   "foreground": {
+    "var": "--foreground",
+    "type": "color",
+    "description": "Dark-surface text #cdc8c1 (neutral-40)."
+   },
+   "primary": {
+    "var": "--primary",
+    "type": "color",
+    "description": "Growth #abd49e \u2014 the .dark primary."
+   },
+   "primary-foreground": {
+    "var": "--primary-foreground",
+    "type": "color",
+    "description": "Text on dark primary #0a0a0a."
+   },
+   "secondary": {
+    "var": "--secondary",
+    "type": "color",
+    "description": "Secondary fill."
+   },
+   "secondary-foreground": {
+    "var": "--secondary-foreground",
+    "type": "color",
+    "description": "Text on secondary."
+   },
+   "accent": {
+    "var": "--accent",
+    "type": "color",
+    "description": "Accent/hover fill."
+   },
+   "accent-foreground": {
+    "var": "--accent-foreground",
+    "type": "color",
+    "description": "Text on accent."
+   },
+   "card": {
+    "var": "--card",
+    "type": "color",
+    "description": "Dark card #171717."
+   },
+   "card-foreground": {
+    "var": "--card-foreground",
+    "type": "color",
+    "description": "Text on card."
+   },
+   "muted": {
+    "var": "--muted",
+    "type": "color",
+    "description": "Muted fill (hover surfaces)."
+   },
+   "muted-foreground": {
+    "var": "--muted-foreground",
+    "type": "color",
+    "description": "Dark secondary text #a1a1a1."
+   },
+   "surface": {
+    "var": "--surface",
+    "type": "color",
+    "description": "Dark raised surface #262421."
+   },
+   "surface-foreground": {
+    "var": "--surface-foreground",
+    "type": "color",
+    "description": "Text on surface."
+   },
+   "field": {
+    "var": "--field",
+    "type": "color",
+    "description": "Dark input fill white/4.5%."
+   },
+   "popover": {
+    "var": "--popover",
+    "type": "color",
+    "description": "Popover/menu fill."
+   },
+   "popover-foreground": {
+    "var": "--popover-foreground",
+    "type": "color",
+    "description": "Popover text."
+   },
+   "popover-border": {
+    "var": "--popover-border",
+    "type": "color",
+    "description": "Popover hairline."
+   },
+   "border": {
+    "var": "--border",
+    "type": "color",
+    "description": "Dark border white/10%."
+   },
+   "boundary": {
+    "var": "--boundary",
+    "type": "color",
+    "description": "Dark hairline white/6%."
+   },
+   "input": {
+    "var": "--input",
+    "type": "color",
+    "description": "Dark input border white/15%."
+   },
+   "ring": {
+    "var": "--ring",
+    "type": "color",
+    "description": "Dark focus ring #737373."
+   },
+   "focus": {
+    "var": "--focus",
+    "type": "color",
+    "description": "Focus border (focus-visible:border-focus)."
+   },
+   "placeholder": {
+    "var": "--placeholder",
+    "type": "color",
+    "description": "Placeholder ink."
+   },
+   "subtle-foreground": {
+    "var": "--subtle-foreground",
+    "type": "color",
+    "description": "Subtle text."
+   },
+   "destructive": {
+    "var": "--destructive",
+    "type": "color",
+    "description": "Dark error #ff6467."
+   },
+   "destructive-foreground": {
+    "var": "--destructive-foreground",
+    "type": "color",
+    "description": "Text on destructive."
+   },
+   "success": {
+    "var": "--success",
+    "type": "color",
+    "description": "Dark success #56da7d."
+   },
+   "success-foreground": {
+    "var": "--success-foreground",
+    "type": "color",
+    "description": "Text on success."
+   },
+   "warning": {
+    "var": "--warning",
+    "type": "color",
+    "description": "Dark warning #fe9a00."
+   },
+   "warning-foreground": {
+    "var": "--warning-foreground",
+    "type": "color",
+    "description": "Text on warning."
+   },
+   "sidebar": {
+    "var": "--sidebar",
+    "type": "color",
+    "description": "Sidebar fill (declared; the app shell behind sign-in)."
+   },
+   "sidebar-foreground": {
+    "var": "--sidebar-foreground",
+    "type": "color",
+    "description": "Sidebar text."
+   },
+   "sidebar-border": {
+    "var": "--sidebar-border",
+    "type": "color",
+    "description": "Sidebar border."
+   },
+   "sidebar-accent": {
+    "var": "--sidebar-accent",
+    "type": "color",
+    "description": "Sidebar hover fill."
+   },
+   "sidebar-primary": {
+    "var": "--sidebar-primary",
+    "type": "color",
+    "description": "Sidebar primary."
+   },
+   "sidebar-ring": {
+    "var": "--sidebar-ring",
+    "type": "color",
+    "description": "Sidebar focus ring."
+   },
+   "sidebar-raised": {
+    "var": "--sidebar-raised",
+    "type": "color",
+    "description": "Sidebar raised fill."
+   },
+   "chart-1": {
+    "var": "--chart-1",
+    "type": "color",
+    "description": "Chart 1 (declared chart ramp)."
+   },
+   "chart-2": {
+    "var": "--chart-2",
+    "type": "color",
+    "description": "Chart 2."
+   },
+   "chart-3": {
+    "var": "--chart-3",
+    "type": "color",
+    "description": "Chart 3."
+   },
+   "chart-4": {
+    "var": "--chart-4",
+    "type": "color",
+    "description": "Chart 4."
+   },
+   "chart-5": {
+    "var": "--chart-5",
+    "type": "color",
+    "description": "Chart 5."
+   }
+  },
+  "action": {
+   "link-verdant": {
+    "value": "{color.brand.growth}",
+    "type": "color",
+    "source": "alias of core.color.brand.growth (css-var --cartesia-growth); on the .dark scope --primary rebinds to growth",
+    "description": "On the .dark scope the accent reads growth."
+   }
+  }
+ },
+ "component": {
+  "header": {
+   "height": {
+    "value": "64px",
+    "source": "measured header default (raw/components-computed.json); --site-nav-height",
+    "type": "dimension",
+    "description": "Sticky header height."
+   }
+  },
+  "banner": {
+   "height": {
+    "value": "36.8px",
+    "source": "computed height of banner default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Announcement banner height."
+   }
+  },
+  "button": {
+   "height": {
+    "value": "36px",
+    "source": "measured nav-cta/nav-sales/play-btn default",
+    "type": "dimension",
+    "description": "The standard control height (control-height-default)."
+   },
+   "radius": {
+    "value": "8px",
+    "source": "measured nav-cta/play-btn default; --radius-lg",
+    "type": "dimension",
+    "description": "Button radius."
+   },
+   "padding-x": {
+    "value": "16px",
+    "source": "computed paddingLeft of nav-cta default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Button inline padding."
+   },
+   "label-size": {
+    "value": "14px",
+    "source": "measured nav-cta/play-btn default",
+    "type": "dimension",
+    "description": "Button label size."
+   },
+   "height-lg": {
+    "value": "40px",
+    "source": "measured pd-cta/pd-secondary default",
+    "type": "dimension",
+    "description": "Hero CTA height on product pages."
+   },
+   "height-auth": {
+    "value": "44px",
+    "source": "measured continue-btn/email-field default",
+    "type": "dimension",
+    "description": "Sign-in control height (control-height-xl)."
+   },
+   "radius-auth": {
+    "value": "12px",
+    "source": "measured continue-btn/sso-btn default",
+    "type": "dimension",
+    "description": "Sign-in control radius."
+   }
+  },
+  "nav": {
+   "link-height": {
+    "value": "36px",
+    "source": "measured nav-link/nav-trigger default",
+    "type": "dimension",
+    "description": "Nav item height."
+   },
+   "menu-width": {
+    "value": "624px",
+    "source": "computed width of nav-dropdown default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find nav-dropdown)",
+    "type": "dimension",
+    "description": "Products mega-menu panel width."
+   },
+   "menu-radius": {
+    "value": "6px",
+    "source": "computed borderTopLeftRadius of menu-link default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Menu item radius (--radius-md)."
+   },
+   "menu-pad": {
+    "value": "12px",
+    "source": "computed paddingTop of nav-dropdown default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find nav-dropdown)",
+    "type": "dimension",
+    "description": "Menu panel padding."
+   }
+  },
+  "field": {
+   "height": {
+    "value": "44px",
+    "source": "computed height of email-field default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Sign-in field height."
+   },
+   "radius": {
+    "value": "8px",
+    "source": "computed borderTopLeftRadius of email-field default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Sign-in field radius."
+   },
+   "padding-x": {
+    "value": "14px",
+    "source": "computed paddingLeft of email-field default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Field inline padding."
+   }
+  },
+  "auth": {
+   "column-width": {
+    "value": "640px",
+    "source": "measured login-card/signup-card default",
+    "type": "dimension",
+    "description": "The centred sign-in column."
+   },
+   "field-width": {
+    "value": "420px",
+    "source": "measured email-field/continue-btn default",
+    "type": "dimension",
+    "description": "The auth form width."
+   },
+   "sso-width": {
+    "value": "206px",
+    "source": "computed width of sso-btn default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "The SSO/passkey button width (the two buttons split the 420px form with a gap)."
+   }
+  },
+  "orb": {
+   "size": {
+    "value": "244.8px",
+    "source": "computed width of hero-orb default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "The Talk-to-Skylar orb diameter."
+   },
+   "chooser-size": {
+    "value": "58.75px",
+    "source": "bounding-rect of voice-choose default (raw/components-computed.json): the buttons are scale-transformed, so the computed width is the pre-scale length and the rect is what paints",
+    "type": "dimension",
+    "description": "A voice-chooser button diameter as displayed (ring of voices around the orb)."
+   },
+   "arrow-size": {
+    "value": "40px",
+    "source": "computed width of voice-nav default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Voice carousel arrow size."
+   }
+  },
+  "chip": {
+   "height": {
+    "value": "30px",
+    "source": "computed height of usecase-chip default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Use-case chip height."
+   },
+   "voice-height": {
+    "value": "34px",
+    "source": "computed height of voice-chip default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Voice/locale chip height."
+   },
+   "label-size": {
+    "value": "12px",
+    "source": "computed fontSize of usecase-chip default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Chip label size."
+   }
+  },
+  "card": {
+   "product-width": {
+    "value": "571px",
+    "source": "computed width of product-card default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find product-card)",
+    "type": "dimension",
+    "description": "Product card width (half of the two-up grid)."
+   },
+   "product-height": {
+    "value": "377.59px",
+    "source": "computed height of product-card default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-12 recapture did not find product-card)",
+    "type": "dimension",
+    "description": "Product card height."
+   },
+   "story-tile": {
+    "value": "559px",
+    "source": "measured media-frame/story-card default",
+    "type": "dimension",
+    "description": "Customer-story media tile (square)."
+   },
+   "plan-width": {
+    "value": "254.8px",
+    "source": "computed width of plan-card default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Plan card cell width."
+   },
+   "plan-padding": {
+    "value": "24px",
+    "source": "computed paddingLeft of plan-card default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Plan card inline padding (40px top)."
+   }
+  },
+  "play": {
+   "sample-size": {
+    "value": "32px",
+    "source": "computed width of word-play default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Square pronunciation/clone play button."
+   },
+   "globe-dot": {
+    "value": "19.08px",
+    "source": "computed width of globe-dot default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Voices-globe locale dot."
+   },
+   "globe-play": {
+    "value": "81px",
+    "source": "computed width of globe-play default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Globe play button diameter."
+   },
+   "globe-voice-height": {
+    "value": "38px",
+    "source": "computed height of globe-voice default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Globe voice row height."
+   }
+  },
+  "accordion": {
+   "height": {
+    "value": "74px",
+    "source": "computed height of accordion-trigger default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Deployment accordion row height."
+   },
+   "faq-padding": {
+    "value": "48px",
+    "source": "computed paddingLeft of faq-trigger default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "FAQ summary inline padding (56px top)."
+   }
+  },
+  "docs": {
+   "search-width": {
+    "value": "277.56px",
+    "source": "computed width of docs-search default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Docs search input width (Mintlify surface)."
+   },
+   "nav-height": {
+    "value": "32px",
+    "source": "computed height of docs-nav-item default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Docs sidebar item height."
+   },
+   "nav-radius": {
+    "value": "12px",
+    "source": "computed borderTopLeftRadius of docs-nav-item default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Docs sidebar item radius."
+   }
+  },
+  "mobile": {
+   "menu-height": {
+    "value": "844px",
+    "source": "computed height of m-menu-open default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Mobile menu covers the full viewport."
+   },
+   "nav-item-height": {
+    "value": "56px",
+    "source": "computed height of m-nav-item default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Mobile nav item height."
+   },
+   "menu-button": {
+    "value": "36px",
+    "source": "computed width of m-menu-button default (raw/components-computed.json)",
+    "type": "dimension",
+    "description": "Mobile menu toggle size."
+   }
+  }
+ }
+}

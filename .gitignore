@@ -26,11 +26,19 @@ systems/duolingo/tools/capture/css-stats.md
 /site/
 /web/data/
 docs/scorecard/
-/.venv/
-# Local secrets. StatiCrypt reads STATICRYPT_PASSWORD from here.
-.env
+/.venv
+# Local secrets (API keys, R2 credentials); see .env.example. `.env*` also
+# covers web/.env.local and app/.env.local, which Next loads.
+.env*
+!.env.example
+*.key
+secrets/
 __pycache__/
 systems/*/raw/*.partial.json
+# Full-colour page captures a capture run writes before quantizing. AGENTS.md keeps
+# raw page copies outside the repo; the package wave deleted the committed ones.
+systems/*/raw/full/
+systems/*/raw/signed-in/*.png
 
 # Refero fetch working files (result JSONs are also stored in refero.db).
 /refero/.work/

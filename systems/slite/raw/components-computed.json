@@ -1,0 +1,175 @@
+{
+  "captured": "2026-11-19",
+  "url": "https://slite.com/",
+  "viewport": {
+    "desktop": {
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2,
+      "visualViewport": {
+        "width": 1440,
+        "height": 900,
+        "scale": 1
+      }
+    },
+    "phone": {
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "visualViewport": {
+        "width": 390,
+        "height": 844,
+        "scale": 1
+      }
+    }
+  },
+  "note": "preview_snapshot failed with 'The browser is not producing screenshot frames'. Values are from preview_evaluate on the attached page. PNGs are headless Playwright captures of the public marketing pages, which returned HTTP 200 and no Cloudflare challenge. devicePixelRatio on those PNGs is 1. The preview page reported 2.",
+  "pages": [
+    "https://slite.com/",
+    "https://slite.com/pricing",
+    "https://slite.com/features",
+    "https://slite.com/organization/select",
+    "https://slite.com/organization/create"
+  ],
+  "computed": {
+    "body": {
+      "background": "rgb(253, 253, 253)",
+      "color": "rgb(63, 67, 74)",
+      "fontSize": "16px",
+      "fontFamily": "UniversalSans, Roboto, -apple-system, system-ui, Segoe UI, Helvetica, Arial, sans-serif"
+    },
+    "h1": {
+      "fontSize": "56px",
+      "lineHeight": "67.2px",
+      "fontWeight": "500",
+      "fontFamily": "Garnett",
+      "color": "rgb(63, 67, 74)",
+      "width": 900
+    },
+    "startForFree": {
+      "background": "rgb(45, 47, 52)",
+      "color": "rgb(253, 253, 253)",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "height": 38,
+      "padding": "0px 16px",
+      "borderRadius": "999px"
+    },
+    "bookDemo": {
+      "background": "transparent",
+      "color": "rgb(45, 47, 52)",
+      "border": "2px solid",
+      "height": 38,
+      "borderRadius": "999px",
+      "padding": "0px 16px"
+    },
+    "talkToUs": {
+      "background": "rgb(246, 119, 72)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "17px",
+      "fontWeight": "600",
+      "height": 64,
+      "padding": "0px 32px",
+      "borderRadius": "999px"
+    },
+    "newBadge": {
+      "background": "rgb(246, 119, 72)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "12px",
+      "fontWeight": "600",
+      "padding": "0px 6px",
+      "borderRadius": "6px",
+      "height": 20
+    },
+    "header": {
+      "background": "rgb(253, 249, 244)",
+      "height": 64
+    },
+    "emailField": {
+      "placeholder": "name@company.com",
+      "fontSize": "13px",
+      "padding": "0px 12px",
+      "labelBorder": "1px solid rgb(216, 218, 223)",
+      "labelRadius": "8px",
+      "labelHeight": 42,
+      "placeholderColor": "rgb(106, 112, 124)"
+    },
+    "emailFocus": {
+      "labelOutline": "rgb(69, 136, 237) solid 2px"
+    },
+    "signinCard": {
+      "background": "rgb(253, 253, 253)",
+      "padding": "48px 60px",
+      "borderRadius": "16px",
+      "width": 560
+    },
+    "authPage": {
+      "background": "rgb(249, 239, 228)"
+    },
+    "planPro": {
+      "background": "rgb(246, 119, 72)",
+      "padding": "32px 2px 2px",
+      "borderRadius": "18px",
+      "width": 389
+    },
+    "switchYearly": {
+      "track": "rgb(45, 47, 52)",
+      "thumb": "rgb(253, 253, 253)",
+      "width": 29,
+      "height": 16,
+      "radius": "16px",
+      "price": "$10"
+    },
+    "switchMonthly": {
+      "track": "rgb(106, 112, 124)",
+      "thumb": "rgb(253, 253, 253)",
+      "price": "$12"
+    },
+    "continueEmail": {
+      "background": "rgb(46, 119, 229)",
+      "color": "rgb(253, 253, 253)",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "height": 36,
+      "radius": "8px",
+      "padding": "8px 12px"
+    },
+    "continueOauth": {
+      "background": "rgba(104, 111, 125, 0.06)",
+      "color": "rgb(94, 100, 110)",
+      "border": "1px solid rgba(120, 132, 155, 0.12)",
+      "height": 36,
+      "radius": "8px"
+    },
+    "menuRow": {
+      "fontSize": "18px",
+      "fontWeight": "600",
+      "height": 48,
+      "padding": "0px 25px 0px 20px",
+      "color": "rgb(63, 67, 74)"
+    },
+    "featuresTabSelected": {
+      "border": "1px solid rgb(63, 67, 74)",
+      "radius": "50px",
+      "fontSize": "19.2px",
+      "fontWeight": "500",
+      "padding": "12px 16px",
+      "height": 53
+    }
+  },
+  "notEntered": [
+    "Continue with Google, Apple, Slack and email were not pressed",
+    "Find your workspaces was not submitted",
+    "Book demo, Get started, Contact Sales and checkout were not pressed",
+    "No card, phone, government ID or company SSO was entered",
+    "AgentMail was not used because the email form was not submitted"
+  ],
+  "gaps": [
+    "No dark theme was found. prefers-color-scheme: dark matched the OS, and the page still painted the light palette. Zero prefers-color-scheme: dark rules in the readable sheets.",
+    "Signed-in app, editor, settings and sidebar were not entered. Sidebar custom properties exist on :root and were not seen on a live sidebar.",
+    "Hover of Start for free was not forced. The sheets contain hover rules, including a chevron translateX(8px).",
+    "No error, disabled or loading state was on the public pages.",
+    "Text area, select, checkbox, radio, tooltip, toast and table were not present on the captured pages. The billing control is a checkbox styled as a switch.",
+    "Garnett, UniversalSans, FixEmoji, PolySans and Geist Mono are proprietary and are not in the package."
+  ]
+}

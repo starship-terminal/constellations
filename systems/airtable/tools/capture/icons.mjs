@@ -87,7 +87,7 @@ async function tryDo(label, fn) { try { await fn(); } catch (e) { failed.push(la
 
 const b = await chromium.launch();
 const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA });
-await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+// bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
 const p = await ctx.newPage();
 
 await open(p, BASE + '/');

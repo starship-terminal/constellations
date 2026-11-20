@@ -1,0 +1,32 @@
+{
+  "capturedAt": "2026-11-18T16:33:59.919Z",
+  "name": "cowork-dark-default",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "measured": {
+    "href": "https://copilot.com/cowork",
+    "title": "Cowork | Microsoft Copilot",
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "dpr": 1,
+    "vv": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "theme": null,
+    "colorScheme": "normal",
+    "scrollH": 3393,
+    "bodyBg": "rgba(0, 0, 0, 0)"
+  },
+  "png": {
+    "width": 1440,
+    "height": 900
+  },
+  "source": "https://copilot.com/cowork"
+}

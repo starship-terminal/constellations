@@ -1,0 +1,17 @@
+{
+  "_note": "Public signed-out capture. name@email.com is the login field placeholder. name@example.com was typed into the search field and cleared; that crop is deleted. A creator contact address printed on the project page is painted out.",
+  "delete": [
+    "components/crops/search-filled.png"
+  ],
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "^name@email\\.com$",
+      "^name@example\\.com$"
+    ],
+    "boost": [
+      "screenshots/*project*"
+    ]
+  },
+  "families": []
+}

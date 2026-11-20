@@ -1,0 +1,607 @@
+{
+ "readAt": "2026-11-14",
+ "source": "the stylesheet bodies read during a live signed-out load of fibery.com / (the linked CSS-module bundles from network responses plus any inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets at 1440 x 900 (fibery.com paints one light theme; fibery.io/sign-up and /login serve the same sheets)",
+ "sheets": [
+  "https://fibery.com/_next/static/css/cf48edebb7788e55.css (89673 bytes)",
+  "https://fibery.com/_next/static/css/2d733038ed6808b4.css (25764 bytes)",
+  "https://fibery.com/_next/static/css/a9b03fd3a704b2c0.css (118205 bytes)",
+  "inline-0 (336 bytes)",
+  "inline-1 (205 bytes)",
+  "inline-2 (206 bytes)"
+ ],
+ "counts": {
+  "rules": 1,
+  "fonts": 22,
+  "names": {
+   "theme": 67,
+   "app": 0,
+   "skins": 0,
+   "vendor": 0,
+   "utility": 0,
+   "tailwind": 0
+  },
+  "bySelector": {
+   "[theme] :root": 67
+  }
+ },
+ "errors": [],
+ "theme": [
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--fibery-milk": "#fffdfa",
+    "--fibery-cream": "#fdf7ef",
+    "--fibery-soup": "#faebd6",
+    "--fibery-peach-soup": "#eed0bf",
+    "--fibery-tea": "#f6d3a0",
+    "--fibery-rusty": "#c17b58",
+    "--fibery-rusty-peach": "#f0b89b",
+    "--fibery-rusty-text": "#a26e51",
+    "--fibery-terracotta": "#e89469",
+    "--fibery-mud-text": "#9f8b7f",
+    "--fibery-greyhound": "#3c3c3b",
+    "--fibery-architect-rust": "#cb5800",
+    "--fibery-green-olives": "#66753d",
+    "--fibery-website-blue": "#3b758c",
+    "--fibery-page-body-color": "#faebd6",
+    "--fibery-page-body-color-light": "#fdf7ef",
+    "--fibery-menu-bg-color": "#fff5e8",
+    "--fibery-page-main-color": "#309fb6",
+    "--fibery-page-secondary-color": "undefined",
+    "--fibery-text-selection-color": "undefined",
+    "--fibery-text-default-color": "#251d1a",
+    "--fibery-text-secondary-color": "color-mix(in oklab,#251d1a 50%,transparent 50%)",
+    "--fibery-text-opposite-color": "#fffdfa",
+    "--fibery-gray-icon-color": "#5f5f5f",
+    "--fibery-light-gray-icon-color": "color-mix(in oklab,#251d1a 25%,transparent 75%)",
+    "--fibery-light-gray-border-color": "color-mix(in oklab,#251d1a 10%,transparent 90%)",
+    "--fibery-gray-background-color": "#dedede",
+    "--fibery-medium-gray-background-color": "#f6f6f6",
+    "--fibery-light-gray-background-color": "#fdf7ef",
+    "--fibery-form-button-blue-color": "#3b758c",
+    "--fibery-business-blue-color": "#3b758c",
+    "--fibery-basic-black": "#251d1a",
+    "--fibery-basic-white": "#fffdfa",
+    "--fibery-form-white": "#fff",
+    "--fibery-basic-red": "#d74242",
+    "--fibery-secondary-red": "#e89e9e",
+    "--fibery-tertiary-red": "#f1cccc",
+    "--fibery-quaternary-red": "#f6e5e5",
+    "--fibery-basic-yellow": "#fc9f28",
+    "--fibery-secondary-yellow": "#fbcc91",
+    "--fibery-tertiary-yellow": "#fae3c5",
+    "--fibery-quaternary-yellow": "#fbf0e1",
+    "--fibery-basic-blue": "#5171a2",
+    "--fibery-secondary-blue": "#a6b6ce",
+    "--fibery-tertiary-blue": "#cfd7e4",
+    "--fibery-quaternary-blue": "#e6eaf0",
+    "--fibery-basic-pink": "#cd5872",
+    "--fibery-secondary-pink": "#e4a9b6",
+    "--fibery-tertiary-pink": "#eed1d8",
+    "--fibery-quaternary-pink": "#f5e7ea",
+    "--fibery-basic-orange": "#d27133",
+    "--fibery-secondary-orange": "#e6b697",
+    "--fibery-tertiary-orange": "#f0d7c8",
+    "--fibery-quaternary-orange": "#f6eae3",
+    "--fibery-basic-green": "#66753d",
+    "--fibery-secondary-green": "#b0b89c",
+    "--fibery-tertiary-green": "#d5d8ca",
+    "--fibery-quaternary-green": "#e9ebe4",
+    "--fibery-basic-violet": "#916fbe",
+    "--fibery-secondary-violet": "#c6b5dc",
+    "--fibery-tertiary-violet": "#dfd7ea",
+    "--fibery-quaternary-violet": "#eeeaf3",
+    "--fibery-basic-mint": "#309fb6",
+    "--fibery-secondary-mint": "#95ccd8",
+    "--fibery-tertiary-mint": "#c7e3e8",
+    "--fibery-quaternary-mint": "#e2f0f2",
+    "--fibery-shadow-m": "0 10px 16px -3px rgba(20,21,26,.08),0 1px 2px 0 rgba(20,21,26,.05)"
+   },
+   "bin": "theme"
+  }
+ ],
+ "app": [],
+ "skins": [],
+ "vendor": [],
+ "utility": [],
+ "tailwind": [],
+ "fonts": [
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "\"Fraunces Var\"",
+   "src": "url(\"/_next/static/media/Fraunces-Variable.6747323c.ttf\") format(\"truetype\")",
+   "font-weight": "100 900",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "Fraunces",
+   "src": "url(\"/_next/static/media/Fraunces_72pt_SuperSoft-Italic.59515715.ttf\") format(\"truetype\")",
+   "font-weight": "400",
+   "font-style": "italic"
+  },
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "Casuar",
+   "src": "url(\"/_next/static/media/Casuar.24c0acf5.ttf\") format(\"truetype\"), url(\"/_next/static/media/Casuar.3aaffc03.woff2\") format(\"woff2\")",
+   "font-weight": "400",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "\"Suisse Intl\"",
+   "src": "url(\"/_next/static/media/SuisseIntl-HairlineIt.eadd86a2.woff2\") format(\"woff2\")",
+   "font-weight": "100",
+   "font-style": "italic"
+  },
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "\"Suisse Intl\"",
+   "src": "url(\"/_next/static/media/SuisseIntl-Hairline.9b811b59.woff2\") format(\"woff2\")",
+   "font-weight": "100",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "\"Suisse Intl\"",
+   "src": "url(\"/_next/static/media/SuisseIntl-ThinIt.422617c9.woff2\") format(\"woff2\")",
+   "font-weight": "200",
+   "font-style": "italic"
+  },
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "\"Suisse Intl\"",
+   "src": "url(\"/_next/static/media/SuisseIntl-Thin.117afc6f.woff2\") format(\"woff2\")",
+   "font-weight": "200",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "\"Suisse Intl\"",
+   "src": "url(\"/_next/static/media/SuisseIntl-LightIt.d2de662c.woff2\") format(\"woff2\")",
+   "font-weight": "300",
+   "font-style": "italic"
+  },
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "\"Suisse Intl\"",
+   "src": "url(\"/_next/static/media/SuisseIntl-Light.c438ad49.woff2\") format(\"woff2\")",
+   "font-weight": "300",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "\"Suisse Intl\"",
+   "src": "url(\"/_next/static/media/SuisseIntl-RegularIt.d9cd7618.woff2\") format(\"woff2\")",
+   "font-weight": "400",
+   "font-style": "italic"
+  },
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "\"Suisse Intl\"",
+   "src": "url(\"/_next/static/media/SuisseIntl-Regular.c86b497a.woff2\") format(\"woff2\")",
+   "font-weight": "400",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "\"Suisse Intl\"",
+   "src": "url(\"/_next/static/media/SuisseIntl-BookIt.8c68ba68.woff2\") format(\"woff2\")",
+   "font-weight": "500",
+   "font-style": "italic"
+  },
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "\"Suisse Intl\"",
+   "src": "url(\"/_next/static/media/SuisseIntl-Book.2e041c06.woff2\") format(\"woff2\")",
+   "font-weight": "500",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "\"Suisse Intl\"",
+   "src": "url(\"/_next/static/media/SuisseIntl-MediumIt.707228f0.woff2\") format(\"woff2\")",
+   "font-weight": "600",
+   "font-style": "italic"
+  },
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "\"Suisse Intl\"",
+   "src": "url(\"/_next/static/media/SuisseIntl-Medium.c2578398.woff2\") format(\"woff2\")",
+   "font-weight": "600",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "\"Suisse Intl\"",
+   "src": "url(\"/_next/static/media/SuisseIntl-SemiboldIt.fde6a32e.woff2\") format(\"woff2\")",
+   "font-weight": "700",
+   "font-style": "italic"
+  },
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "\"Suisse Intl\"",
+   "src": "url(\"/_next/static/media/SuisseIntl-Semibold.38077b82.woff2\") format(\"woff2\")",
+   "font-weight": "700",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "\"Suisse Intl\"",
+   "src": "url(\"/_next/static/media/SuisseIntl-BoldIt.304eba2d.woff2\") format(\"woff2\")",
+   "font-weight": "800",
+   "font-style": "italic"
+  },
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "\"Suisse Intl\"",
+   "src": "url(\"/_next/static/media/SuisseIntl-Bold.f4e6f3e2.woff2\") format(\"woff2\")",
+   "font-weight": "800",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "\"Suisse Intl\"",
+   "src": "url(\"/_next/static/media/SuisseIntl-BlackIt.481954dd.woff2\") format(\"woff2\")",
+   "font-weight": "900",
+   "font-style": "italic"
+  },
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "\"Suisse Intl\"",
+   "src": "url(\"/_next/static/media/SuisseIntl-Black.0eff0304.woff2\") format(\"woff2\")",
+   "font-weight": "900",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://fibery.com/_next/static/css/cf48edebb7788e55.css",
+   "font-family": "\"Inter Var\"",
+   "src": "url(\"/_next/static/media/InterVar.0336a89f.woff2\") format(\"woff2\")",
+   "font-weight": "100 900",
+   "font-style": "italic",
+   "font-display": "swap"
+  }
+ ],
+ "resolved": {
+  "light": {
+   "--fibery-architect-rust": {
+    "raw": "#cb5800",
+    "kind": "color",
+    "value": "#cb5800"
+   },
+   "--fibery-basic-black": {
+    "raw": "#251d1a",
+    "kind": "color",
+    "value": "#251d1a"
+   },
+   "--fibery-basic-blue": {
+    "raw": "#5171a2",
+    "kind": "color",
+    "value": "#5171a2"
+   },
+   "--fibery-basic-green": {
+    "raw": "#66753d",
+    "kind": "color",
+    "value": "#66753d"
+   },
+   "--fibery-basic-mint": {
+    "raw": "#309fb6",
+    "kind": "color",
+    "value": "#309fb6"
+   },
+   "--fibery-basic-orange": {
+    "raw": "#d27133",
+    "kind": "color",
+    "value": "#d27133"
+   },
+   "--fibery-basic-pink": {
+    "raw": "#cd5872",
+    "kind": "color",
+    "value": "#cd5872"
+   },
+   "--fibery-basic-red": {
+    "raw": "#d74242",
+    "kind": "color",
+    "value": "#d74242"
+   },
+   "--fibery-basic-violet": {
+    "raw": "#916fbe",
+    "kind": "color",
+    "value": "#916fbe"
+   },
+   "--fibery-basic-white": {
+    "raw": "#fffdfa",
+    "kind": "color",
+    "value": "#fffdfa"
+   },
+   "--fibery-basic-yellow": {
+    "raw": "#fc9f28",
+    "kind": "color",
+    "value": "#fc9f28"
+   },
+   "--fibery-business-blue-color": {
+    "raw": "#3b758c",
+    "kind": "color",
+    "value": "#3b758c"
+   },
+   "--fibery-cream": {
+    "raw": "#fdf7ef",
+    "kind": "color",
+    "value": "#fdf7ef"
+   },
+   "--fibery-form-button-blue-color": {
+    "raw": "#3b758c",
+    "kind": "color",
+    "value": "#3b758c"
+   },
+   "--fibery-form-white": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--fibery-gray-background-color": {
+    "raw": "#dedede",
+    "kind": "color",
+    "value": "#dedede"
+   },
+   "--fibery-gray-icon-color": {
+    "raw": "#5f5f5f",
+    "kind": "color",
+    "value": "#5f5f5f"
+   },
+   "--fibery-green-olives": {
+    "raw": "#66753d",
+    "kind": "color",
+    "value": "#66753d"
+   },
+   "--fibery-greyhound": {
+    "raw": "#3c3c3b",
+    "kind": "color",
+    "value": "#3c3c3b"
+   },
+   "--fibery-light-gray-background-color": {
+    "raw": "#fdf7ef",
+    "kind": "color",
+    "value": "#fdf7ef"
+   },
+   "--fibery-light-gray-border-color": {
+    "raw": "color-mix(in oklab,#251d1a 10%,transparent 90%)",
+    "kind": "color",
+    "value": "rgba(37, 29, 26, 0.1)"
+   },
+   "--fibery-light-gray-icon-color": {
+    "raw": "color-mix(in oklab,#251d1a 25%,transparent 75%)",
+    "kind": "color",
+    "value": "rgba(37, 29, 26, 0.25)"
+   },
+   "--fibery-medium-gray-background-color": {
+    "raw": "#f6f6f6",
+    "kind": "color",
+    "value": "#f6f6f6"
+   },
+   "--fibery-menu-bg-color": {
+    "raw": "#fff5e8",
+    "kind": "color",
+    "value": "#fff5e8"
+   },
+   "--fibery-milk": {
+    "raw": "#fffdfa",
+    "kind": "color",
+    "value": "#fffdfa"
+   },
+   "--fibery-mud-text": {
+    "raw": "#9f8b7f",
+    "kind": "color",
+    "value": "#9f8b7f"
+   },
+   "--fibery-page-body-color": {
+    "raw": "#faebd6",
+    "kind": "color",
+    "value": "#faebd6"
+   },
+   "--fibery-page-body-color-light": {
+    "raw": "#fdf7ef",
+    "kind": "color",
+    "value": "#fdf7ef"
+   },
+   "--fibery-page-main-color": {
+    "raw": "#309fb6",
+    "kind": "color",
+    "value": "#309fb6"
+   },
+   "--fibery-page-secondary-color": {
+    "raw": "undefined",
+    "kind": "fontFamily",
+    "value": "undefined"
+   },
+   "--fibery-peach-soup": {
+    "raw": "#eed0bf",
+    "kind": "color",
+    "value": "#eed0bf"
+   },
+   "--fibery-quaternary-blue": {
+    "raw": "#e6eaf0",
+    "kind": "color",
+    "value": "#e6eaf0"
+   },
+   "--fibery-quaternary-green": {
+    "raw": "#e9ebe4",
+    "kind": "color",
+    "value": "#e9ebe4"
+   },
+   "--fibery-quaternary-mint": {
+    "raw": "#e2f0f2",
+    "kind": "color",
+    "value": "#e2f0f2"
+   },
+   "--fibery-quaternary-orange": {
+    "raw": "#f6eae3",
+    "kind": "color",
+    "value": "#f6eae3"
+   },
+   "--fibery-quaternary-pink": {
+    "raw": "#f5e7ea",
+    "kind": "color",
+    "value": "#f5e7ea"
+   },
+   "--fibery-quaternary-red": {
+    "raw": "#f6e5e5",
+    "kind": "color",
+    "value": "#f6e5e5"
+   },
+   "--fibery-quaternary-violet": {
+    "raw": "#eeeaf3",
+    "kind": "color",
+    "value": "#eeeaf3"
+   },
+   "--fibery-quaternary-yellow": {
+    "raw": "#fbf0e1",
+    "kind": "color",
+    "value": "#fbf0e1"
+   },
+   "--fibery-rusty": {
+    "raw": "#c17b58",
+    "kind": "color",
+    "value": "#c17b58"
+   },
+   "--fibery-rusty-peach": {
+    "raw": "#f0b89b",
+    "kind": "color",
+    "value": "#f0b89b"
+   },
+   "--fibery-rusty-text": {
+    "raw": "#a26e51",
+    "kind": "color",
+    "value": "#a26e51"
+   },
+   "--fibery-secondary-blue": {
+    "raw": "#a6b6ce",
+    "kind": "color",
+    "value": "#a6b6ce"
+   },
+   "--fibery-secondary-green": {
+    "raw": "#b0b89c",
+    "kind": "color",
+    "value": "#b0b89c"
+   },
+   "--fibery-secondary-mint": {
+    "raw": "#95ccd8",
+    "kind": "color",
+    "value": "#95ccd8"
+   },
+   "--fibery-secondary-orange": {
+    "raw": "#e6b697",
+    "kind": "color",
+    "value": "#e6b697"
+   },
+   "--fibery-secondary-pink": {
+    "raw": "#e4a9b6",
+    "kind": "color",
+    "value": "#e4a9b6"
+   },
+   "--fibery-secondary-red": {
+    "raw": "#e89e9e",
+    "kind": "color",
+    "value": "#e89e9e"
+   },
+   "--fibery-secondary-violet": {
+    "raw": "#c6b5dc",
+    "kind": "color",
+    "value": "#c6b5dc"
+   },
+   "--fibery-secondary-yellow": {
+    "raw": "#fbcc91",
+    "kind": "color",
+    "value": "#fbcc91"
+   },
+   "--fibery-shadow-m": {
+    "raw": "0 10px 16px -3px rgba(20,21,26,.08),0 1px 2px 0 rgba(20,21,26,.05)",
+    "kind": "shadow",
+    "value": "rgba(20, 21, 26, 0.08) 0px 10px 16px -3px, rgba(20, 21, 26, 0.05) 0px 1px 2px 0px"
+   },
+   "--fibery-soup": {
+    "raw": "#faebd6",
+    "kind": "color",
+    "value": "#faebd6"
+   },
+   "--fibery-tea": {
+    "raw": "#f6d3a0",
+    "kind": "color",
+    "value": "#f6d3a0"
+   },
+   "--fibery-terracotta": {
+    "raw": "#e89469",
+    "kind": "color",
+    "value": "#e89469"
+   },
+   "--fibery-tertiary-blue": {
+    "raw": "#cfd7e4",
+    "kind": "color",
+    "value": "#cfd7e4"
+   },
+   "--fibery-tertiary-green": {
+    "raw": "#d5d8ca",
+    "kind": "color",
+    "value": "#d5d8ca"
+   },
+   "--fibery-tertiary-mint": {
+    "raw": "#c7e3e8",
+    "kind": "color",
+    "value": "#c7e3e8"
+   },
+   "--fibery-tertiary-orange": {
+    "raw": "#f0d7c8",
+    "kind": "color",
+    "value": "#f0d7c8"
+   },
+   "--fibery-tertiary-pink": {
+    "raw": "#eed1d8",
+    "kind": "color",
+    "value": "#eed1d8"
+   },
+   "--fibery-tertiary-red": {
+    "raw": "#f1cccc",
+    "kind": "color",
+    "value": "#f1cccc"
+   },
+   "--fibery-tertiary-violet": {
+    "raw": "#dfd7ea",
+    "kind": "color",
+    "value": "#dfd7ea"
+   },
+   "--fibery-tertiary-yellow": {
+    "raw": "#fae3c5",
+    "kind": "color",
+    "value": "#fae3c5"
+   },
+   "--fibery-text-default-color": {
+    "raw": "#251d1a",
+    "kind": "color",
+    "value": "#251d1a"
+   },
+   "--fibery-text-opposite-color": {
+    "raw": "#fffdfa",
+    "kind": "color",
+    "value": "#fffdfa"
+   },
+   "--fibery-text-secondary-color": {
+    "raw": "color-mix(in oklab,#251d1a 50%,transparent 50%)",
+    "kind": "color",
+    "value": "rgba(37, 29, 26, 0.5)"
+   },
+   "--fibery-text-selection-color": {
+    "raw": "undefined",
+    "kind": "fontFamily",
+    "value": "undefined"
+   },
+   "--fibery-website-blue": {
+    "raw": "#3b758c",
+    "kind": "color",
+    "value": "#3b758c"
+   }
+  }
+ }
+}

@@ -1,0 +1,81 @@
+{
+  "source": "https://static.soundtrap.com/website-react/_next/static/css/2e9a6afac7e3a0d9.css and the pricing sheet https://static.soundtrap.com/app/styles.9e42af9b384c9ff4.css. Sets used on the captured pages are marked usedOn.",
+  "primary": {
+    "selector": ".st-light-theme .st-primary-set and .st-dark-theme .st-primary-set (identical in both themes)",
+    "usedOn": "Skip link, login submit, pricing Music Production card",
+    "background-base": "#6551ff",
+    "background-highlight": "#5944ff",
+    "background-press": "#4c35ff",
+    "text-base": "#ffffff",
+    "decorative-subdued": "#7a68ff"
+  },
+  "negative": {
+    "selector": ".st-light-theme .st-negative-set and .st-dark-theme .st-negative-set",
+    "usedOn": "Pricing FAQ section computed rgb(180, 7, 75)",
+    "background-base": "#b4074b",
+    "background-highlight": "#a50645",
+    "background-press": "#96063f",
+    "text-base": "#ffffff",
+    "decorative-subdued": "#d60859"
+  },
+  "positive": {
+    "background-base": "#008744",
+    "background-highlight": "#007d3f",
+    "background-press": "#00743a",
+    "text-base": "#ffffff",
+    "decorative-subdued": "#009b4e",
+    "usedOn": "Declared. Not seen as a section fill on the captured pages."
+  },
+  "spotlight": {
+    "background-base": "#ff780a",
+    "background-highlight": "#ff8b2d",
+    "background-press": "#f36d00",
+    "text-base": "#000000",
+    "decorative-subdued": "#e26500",
+    "usedOn": "Declared. Not seen as a section fill on the captured pages."
+  },
+  "invertedLight": {
+    "selector": ".st-light-theme .st-inverted-set",
+    "background-base": "#28282e",
+    "background-highlight": "#1e1e23",
+    "background-press": "#121214",
+    "text-base": "#e6e6e6",
+    "text-subdued": "#a8a8b3",
+    "essential-subdued": "#878796",
+    "decorative-subdued": "#3d3d46"
+  },
+  "invertedDark": {
+    "selector": ".st-dark-theme .st-inverted-set",
+    "background-base": "#eeeeee",
+    "background-highlight": "#fcfcfc",
+    "background-press": "#e1e1e1",
+    "text-base": "#2d2d2d",
+    "essential-subdued": "#7b7b7b",
+    "decorative-subdued": "#cfcfcf",
+    "usedOn": "Marketing pill buttons compute rgb(238, 238, 238) / rgb(45, 45, 45), which matches this inverted dark set sitting inside the dark nav and hero."
+  },
+  "purpleRain": {
+    "source": "pricing stylesheet .st-purple-rain-set",
+    "usedOn": "Sound Starter plan card, computed rgb(94, 73, 255)",
+    "background-base": "#5e49ff",
+    "background-highlight": "#5640ff",
+    "background-press": "#462eff",
+    "text-base": "#ffffff",
+    "decorative-subdued": "#7361ff"
+  },
+  "simplyRed": {
+    "source": "pricing stylesheet .st-simply-red-set",
+    "usedOn": "Production & Vocals card, computed rgb(223, 45, 71). The marketing sheet's simply-red set is a different hex (#e85c5c) and was not the one painted.",
+    "background-base": "#df2d47",
+    "note": "Computed rgb(223, 45, 71) is #df2d47. The pricing sheet block that was extracted started at --background-base:#e85c5c for a different simply-red declaration. The painted card is the computed value."
+  },
+  "maroon": {
+    "source": "pricing stylesheet .st-maroon-set",
+    "usedOn": "Music Makers plan card, computed rgb(185, 53, 121)",
+    "background-base": "#b93579",
+    "background-highlight": "#b03273",
+    "background-press": "#a02e69",
+    "text-base": "#ffffff",
+    "decorative-subdued": "#cc4c8d"
+  }
+}

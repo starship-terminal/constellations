@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pattern Brands style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #ffffff;
+    --text: #1e1e1e;
+    --muted: #084935;
+    --accent: #084935;
+    --on-accent: #ffffff;
+    --border: #eeeeee;
+    --hover: #1d9671;
+    --blue: #2d62ff;
+    --pink: #dd23bb;
+    --focus: #4d65ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+    font-size: 16px;
+    line-height: 20.8px;
+    font-weight: 400;
+  }
+  main { max-width: 736px; margin: 0 auto; padding: 40px 40px 80px; }
+  h1 { font-size: 48px; line-height: 52.8px; font-weight: 400; margin: 0 0 16px; }
+  h2 { font-size: 24px; line-height: 28.8px; font-weight: 400; margin: 40px 0 12px; }
+  p.note { font-size: 14px; line-height: 18.2px; font-family: Arial, sans-serif; }
+  .swatches, .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; border: 1px solid var(--border); }
+  .swatch i { display: block; height: 64px; }
+  .swatch span { display: block; padding: 10px 12px 12px; font-size: 12px; font-family: Arial, sans-serif; }
+  .hero {
+    background: var(--page);
+    padding: 32px 0;
+  }
+  .display { font-size: 28.8px; line-height: 31.68px; margin: 0 0 16px; max-width: 377px; }
+  .button {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--on-accent);
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 24px;
+    font-size: 16px;
+    line-height: 20.8px;
+  }
+  .pill {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--on-accent);
+    text-decoration: none;
+    padding: 8px 24px;
+    border-radius: 1600px;
+    margin-left: 12px;
+  }
+  .cards { display: grid; grid-template-columns: repeat(3, 160px); gap: 8px; margin-top: 24px; }
+  .card { display: grid; gap: 16px; }
+  .card .img { height: 96px; background: var(--border); }
+  .card a { color: var(--muted); text-decoration: none; }
+  footer.band {
+    margin-top: 48px;
+    background: var(--accent);
+    color: var(--on-accent);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 18.2px;
+    padding: 24px;
+  }
+  footer.band a { color: inherit; text-decoration: none; margin-right: 16px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Pattern Brands</h1>
+  <p class="note">Specimens use the measured tokens. P22 Mackinac Pro and Cadiz are not in this package, so Georgia and Arial stand in.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><i style="background:#ffffff;border-bottom:1px solid #eee"></i><span>page #ffffff</span></div>
+    <div class="swatch"><i style="background:#1e1e1e"></i><span>text #1e1e1e</span></div>
+    <div class="swatch"><i style="background:#084935"></i><span>green #084935</span></div>
+    <div class="swatch"><i style="background:#1d9671"></i><span>hover circle #1d9671</span></div>
+    <div class="swatch"><i style="background:#2d62ff"></i><span>blue token #2d62ff</span></div>
+    <div class="swatch"><i style="background:#dd23bb"></i><span>pink token #dd23bb</span></div>
+    <div class="swatch"><i style="background:#eeeeee"></i><span>border #eeeeee</span></div>
+    <div class="swatch"><i style="background:#4d65ff"></i><span>focus #4d65ff</span></div>
+  </div>
+
+  <h2>Home</h2>
+  <div class="hero">
+    <p class="display">Where thoughtful products meet thoughtful living</p>
+    <p>Explore our family of consumer brands, designed to elevate the home.</p>
+    <p><a class="button" href="#contact">Contact Us</a><a class="pill" href="#home">Go Home</a></p>
+    <div class="cards">
+      <div class="card"><div class="img"></div><span>Modern waffle towels that dry fast.</span><a href="#onsen">Visit Onsen</a></div>
+      <div class="card"><div class="img"></div><span>Sleep technology made simple.</span><a href="#miracle">Visit Miracle Made</a></div>
+      <div class="card"><div class="img"></div><span>Silicone kitchen tools built to last.</span><a href="#gir">Visit GIR</a></div>
+    </div>
+  </div>
+
+  <footer class="band">
+    <a href="#contact">Contact Us</a>
+    <a href="#careers">Careers</a>
+    <a href="#terms">Terms of Service</a>
+    <a href="#privacy">Privacy Policy</a>
+  </footer>
+</main>
+</body>
+</html>

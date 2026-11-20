@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dribbble style guide</title>
+<meta name="description" content="Dribbble design tokens and the public signed-out surface's components, rendered from tokens.json with the declared Shoelace and measured mini-master values.">
+<style>
+:root {
+  --font-family-sans: "Mona Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-shoelace-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-shoelace-serif: Georgia, "Times New Roman", serif;
+  --font-family-shoelace-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  --font-face-mona-sans: Mona Sans;
+  --font-face-wf-visual-sans: WF Visual Sans;
+  --font-face-inter-regular: Inter Regular;
+  --font-face-inter-semibold: Inter Semibold;
+  --font-face-walsheim: Walsheim;
+  --font-face-ibm-plex-mono: IBM Plex Mono;
+  --font-face-source-serif-4: Source Serif 4;
+  --font-size-2x-small: 10px;
+  --font-size-x-small: 12px;
+  --font-size-small: 14px;
+  --font-size-medium: 16px;
+  --font-size-large: 20px;
+  --font-size-x-large: 24px;
+  --font-size-2x-large: 36px;
+  --font-size-3x-large: 48px;
+  --font-size-4x-large: 72px;
+  --font-size-hero: 52px;
+  --font-size-h1-page: 32px;
+  --font-size-body: 14px;
+  --font-size-meta: 12px;
+  --font-size-mobile-hero: 27px;
+  --font-lineHeight-denser: 1;
+  --font-lineHeight-dense: 1.4;
+  --font-lineHeight-normal: 1.8;
+  --font-lineHeight-loose: 2.2;
+  --font-lineHeight-looser: 2.6;
+  --font-lineHeight-hero: 62.4px;
+  --font-tracking-denser: -0.03;
+  --font-tracking-dense: -0.015;
+  --font-tracking-normal: 0;
+  --font-tracking-loose: 0.075;
+  --font-tracking-looser: 0.15;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 500;
+  --font-weight-bold: 700;
+  --font-weight-hero: 600;
+  --font-weight-button: 600;
+  --color-pink-50: #fef8fa;
+  --color-pink-100: #fce7ef;
+  --color-pink-200: #fad4e3;
+  --color-pink-300: #f8bfd5;
+  --color-pink-400: #f4a2c2;
+  --color-pink-500: #ea4c89;
+  --color-pink-600: #e44a85;
+  --color-pink-700: #bb3d6e;
+  --color-pink-800: #9b325b;
+  --color-pink-900: #6f2441;
+  --color-pink-950: #451628;
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f9f9f9;
+  --color-neutral-100: #f4f4f5;
+  --color-neutral-200: #e4e4e7;
+  --color-neutral-300: #d4d4d8;
+  --color-neutral-400: #a1a1aa;
+  --color-neutral-500: #71717a;
+  --color-neutral-600: #52525b;
+  --color-neutral-700: #3f3f46;
+  --color-neutral-800: #27272a;
+  --color-neutral-900: #18181b;
+  --color-neutral-950: #131316;
+  --color-neutral-1000: #000000;
+  --color-gray-50: #f9f9f9;
+  --color-gray-100: #f4f4f5;
+  --color-gray-200: #e4e4e7;
+  --color-gray-300: #d4d4d8;
+  --color-gray-400: #a1a1aa;
+  --color-gray-500: #71717a;
+  --color-gray-600: #52525b;
+  --color-gray-700: #3f3f46;
+  --color-gray-800: #27272a;
+  --color-gray-900: #18181b;
+  --color-gray-950: #131316;
+  --color-hue-red-50: #fef2f2;
+  --color-hue-red-100: #fee2e2;
+  --color-hue-red-200: #fecaca;
+  --color-hue-red-300: #fca5a5;
+  --color-hue-red-400: #f87171;
+  --color-hue-red-500: #ef4444;
+  --color-hue-red-600: #dc2626;
+  --color-hue-red-700: #b91c1c;
+  --color-hue-red-800: #991b1b;
+  --color-hue-red-900: #7f1d1d;
+  --color-hue-red-950: #501414;
+  --color-hue-orange-50: #fff7ed;
+  --color-hue-orange-100: #ffedd5;
+  --color-hue-orange-200: #fed7aa;
+  --color-hue-orange-300: #fdba74;
+  --color-hue-orange-400: #fb923c;
+  --color-hue-orange-500: #f97316;
+  --color-hue-orange-600: #ea580c;
+  --color-hue-orange-700: #c2410c;
+  --color-hue-orange-800: #9a3412;
+  --color-hue-orange-900: #7c2d12;
+  --color-hue-orange-950: #52200f;
+  --color-hue-amber-50: #fffbeb;
+  --color-hue-amber-100: #fef3c7;
+  --color-hue-amber-200: #fde68a;
+  --color-hue-amber-300: #fcd34d;
+  --color-hue-amber-400: #fbbf24;
+  --color-hue-amber-500: #f59e0b;
+  --color-hue-amber-600: #d97706;
+  --color-hue-amber-700: #b45309;
+  --color-hue-amber-800: #92400e;
+  --color-hue-amber-900: #78350f;
+  --color-hue-amber-950: #4a230b;
+  --color-hue-yellow-50: #fefce8;
+  --color-hue-yellow-100: #fef9c3;
+  --color-hue-yellow-200: #fef08a;
+  --color-hue-yellow-300: #fde047;
+  --color-hue-yellow-400: #facc15;
+  --color-hue-yellow-500: #eab308;
+  --color-hue-yellow-600: #ca8a04;
+  --color-hue-yellow-700: #a16207;
+  --color-hue-yellow-800: #854d0e;
+  --color-hue-yellow-900: #713f12;
+  --color-hue-yellow-950: #3c260b;
+  --color-hue-lime-50: #f7fee7;
+  --color-hue-lime-100: #ecfccb;
+  --color-hue-lime-200: #d9f99d;
+  --color-hue-lime-300: #bef264;
+  --color-hue-lime-400: #a3e635;
+  --color-hue-lime-500: #84cc16;
+  --color-hue-lime-600: #65a30d;
+  --color-hue-lime-700: #4d7c0f;
+  --color-hue-lime-800: #3f6212;
+  --color-hue-lime-900: #365314;
+  --color-hue-lime-950: #26390e;
+  --color-hue-green-50: #f0fdf4;
+  --color-hue-green-100: #dcfce7;
+  --color-hue-green-200: #bbf7d0;
+  --color-hue-green-300: #86efac;
+  --color-hue-green-400: #4ade80;
+  --color-hue-green-500: #22c55e;
+  --color-hue-green-600: #16a34a;
+  --color-hue-green-700: #15803d;
+  --color-hue-green-800: #166534;
+  --color-hue-green-900: #14532d;
+  --color-hue-green-950: #0c311b;
+  --color-hue-emerald-50: #ecfdf5;
+  --color-hue-emerald-100: #d1fae5;
+  --color-hue-emerald-200: #a7f3d0;
+  --color-hue-emerald-300: #6ee7b7;
+  --color-hue-emerald-400: #34d399;
+  --color-hue-emerald-500: #10b981;
+  --color-hue-emerald-600: #059669;
+  --color-hue-emerald-700: #047857;
+  --color-hue-emerald-800: #065f46;
+  --color-hue-emerald-900: #064e3b;
+  --color-hue-emerald-950: #032d22;
+  --color-hue-teal-50: #f0fdfa;
+  --color-hue-teal-100: #ccfbf1;
+  --color-hue-teal-200: #99f6e4;
+  --color-hue-teal-300: #5eead4;
+  --color-hue-teal-400: #2dd4bf;
+  --color-hue-teal-500: #14b8a6;
+  --color-hue-teal-600: #0d9488;
+  --color-hue-teal-700: #0f766e;
+  --color-hue-teal-800: #115e59;
+  --color-hue-teal-900: #134e4a;
+  --color-hue-teal-950: #0c2e2c;
+  --color-hue-cyan-50: #ecfeff;
+  --color-hue-cyan-100: #cffafe;
+  --color-hue-cyan-200: #a5f3fc;
+  --color-hue-cyan-300: #67e8f9;
+  --color-hue-cyan-400: #22d3ee;
+  --color-hue-cyan-500: #06b6d4;
+  --color-hue-cyan-600: #0891b2;
+  --color-hue-cyan-700: #0e7490;
+  --color-hue-cyan-800: #155e75;
+  --color-hue-cyan-900: #164e63;
+  --color-hue-cyan-950: #103442;
+  --color-hue-sky-50: #f0f9ff;
+  --color-hue-sky-100: #e0f2fe;
+  --color-hue-sky-200: #bae6fd;
+  --color-hue-sky-300: #7dd3fc;
+  --color-hue-sky-400: #38bdf8;
+  --color-hue-sky-500: #0ea5e9;
+  --color-hue-sky-600: #0284c7;
+  --color-hue-sky-700: #0369a1;
+  --color-hue-sky-800: #075985;
+  --color-hue-sky-900: #0c4a6e;
+  --color-hue-sky-950: #0b3249;
+  --color-hue-blue-50: #eff6ff;
+  --color-hue-blue-100: #dbeafe;
+  --color-hue-blue-200: #bfdbfe;
+  --color-hue-blue-300: #93c5fd;
+  --color-hue-blue-400: #60a5fa;
+  --color-hue-blue-500: #3b82f6;
+  --color-hue-blue-600: #2563eb;
+  --color-hue-blue-700: #1d4ed8;
+  --color-hue-blue-800: #1e40af;
+  --color-hue-blue-900: #1e3a8a;
+  --color-hue-blue-950: #152149;
+  --color-hue-indigo-50: #eef2ff;
+  --color-hue-indigo-100: #e0e7ff;
+  --color-hue-indigo-200: #c7d2fe;
+  --color-hue-indigo-300: #a5b4fc;
+  --color-hue-indigo-400: #818cf8;
+  --color-hue-indigo-500: #6366f1;
+  --color-hue-indigo-600: #4f46e5;
+  --color-hue-indigo-700: #4338ca;
+  --color-hue-indigo-800: #3730a3;
+  --color-hue-indigo-900: #312e81;
+  --color-hue-indigo-950: #242154;
+  --color-hue-violet-50: #f5f3ff;
+  --color-hue-violet-100: #ede9fe;
+  --color-hue-violet-200: #ddd6fe;
+  --color-hue-violet-300: #c4b5fd;
+  --color-hue-violet-400: #a78bfa;
+  --color-hue-violet-500: #8b5cf6;
+  --color-hue-violet-600: #7c3aed;
+  --color-hue-violet-700: #6d28d9;
+  --color-hue-violet-800: #5b21b6;
+  --color-hue-violet-900: #4c1d95;
+  --color-hue-violet-950: #311558;
+  --color-hue-purple-50: #faf5ff;
+  --color-hue-purple-100: #f3e8ff;
+  --color-hue-purple-200: #e9d5ff;
+  --color-hue-purple-300: #d8b4fe;
+  --color-hue-purple-400: #c084fc;
+  --color-hue-purple-500: #a855f7;
+  --color-hue-purple-600: #9333ea;
+  --color-hue-purple-700: #7e22ce;
+  --color-hue-purple-800: #6b21a8;
+  --color-hue-purple-900: #581c87;
+  --color-hue-purple-950: #2f1143;
+  --color-hue-fuchsia-50: #fdf4ff;
+  --color-hue-fuchsia-100: #fae8ff;
+  --color-hue-fuchsia-200: #f5d0fe;
+  --color-hue-fuchsia-300: #f0abfc;
+  --color-hue-fuchsia-400: #e879f9;
+  --color-hue-fuchsia-500: #d946ef;
+  --color-hue-fuchsia-600: #c026d3;
+  --color-hue-fuchsia-700: #a21caf;
+  --color-hue-fuchsia-800: #86198f;
+  --color-hue-fuchsia-900: #701a75;
+  --color-hue-fuchsia-950: #38103a;
+  --color-hue-pink-50: #fdf2f8;
+  --color-hue-pink-100: #fce7f3;
+  --color-hue-pink-200: #fbcfe8;
+  --color-hue-pink-300: #f9a8d4;
+  --color-hue-pink-400: #f472b6;
+  --color-hue-pink-500: #ec4899;
+  --color-hue-pink-600: #db2777;
+  --color-hue-pink-700: #be185d;
+  --color-hue-pink-800: #9d174d;
+  --color-hue-pink-900: #831843;
+  --color-hue-pink-950: #430e23;
+  --color-hue-rose-50: #fff1f2;
+  --color-hue-rose-100: #ffe4e6;
+  --color-hue-rose-200: #fecdd3;
+  --color-hue-rose-300: #fda4af;
+  --color-hue-rose-400: #fb7185;
+  --color-hue-rose-500: #f43f5e;
+  --color-hue-rose-600: #e11d48;
+  --color-hue-rose-700: #be123c;
+  --color-hue-rose-800: #9f1239;
+  --color-hue-rose-900: #881337;
+  --color-hue-rose-950: #4a0d20;
+  --color-status-danger-50: #fef2f2;
+  --color-status-danger-100: #fee2e2;
+  --color-status-danger-200: #fecaca;
+  --color-status-danger-300: #fca5a5;
+  --color-status-danger-400: #f87171;
+  --color-status-danger-500: #ef4444;
+  --color-status-danger-600: #dc2626;
+  --color-status-danger-700: #b91c1c;
+  --color-status-success-50: #f0fdf4;
+  --color-status-success-100: #dcfce7;
+  --color-status-success-200: #bbf7d0;
+  --color-status-success-300: #86efac;
+  --color-status-success-400: #4ade80;
+  --color-status-success-500: #22c55e;
+  --color-status-success-600: #16a34a;
+  --color-status-success-700: #15803d;
+  --color-status-warning-50: #fffbeb;
+  --color-status-warning-100: #fef3c7;
+  --color-status-warning-200: #fde68a;
+  --color-status-warning-300: #fcd34d;
+  --color-status-warning-400: #fbbf24;
+  --color-status-warning-500: #f59e0b;
+  --color-status-warning-600: #d97706;
+  --color-status-warning-700: #b45309;
+  --color-measured-ink: #0d0c22;
+  --color-measured-ink-deep: #0d0c22;
+  --color-measured-ink-on-dark: #ffffff;
+  --color-measured-muted: #3a3546;
+  --color-measured-muted-2: #6e6d7a;
+  --color-measured-pink: #ea4c89;
+  --color-measured-pink-hover: #ec5e95;
+  --color-measured-promo-surface: rgba(244, 215, 243, 0.3);
+  --color-measured-chip-surface: #ffffff;
+  --color-measured-chip-dark: #3a3546;
+  --color-measured-chip-dark-text: #ffffff;
+  --color-measured-field-bg: #ffffff;
+  --color-measured-field-border: rgba(219, 218, 222, 0.9);
+  --color-measured-pill-border: #0d0c22;
+  --color-measured-pink-text: #ea4c89;
+  --color-measured-link: #060318;
+  --color-measured-footer-bg: #ffffff;
+  --color-measured-footer-text: #0d0c22;
+  --color-measured-page: #ffffff;
+  --color-measured-surface: #ffffff;
+  --color-measured-border: rgba(219, 218, 222, 0.9);
+  --radius-small: 3px;
+  --radius-medium: 4px;
+  --radius-large: 8px;
+  --radius-x-large: 16px;
+  --radius-circle: 50%;
+  --radius-pill: 9999px;
+  --radius-card: 8px;
+  --radius-field: 8px;
+  --radius-search: 12px;
+  --radius-button-pill: 10000000px;
+  --radius-chip: 10000000px;
+  --radius-search-go: 50%;
+  --duration-x-slow: 1000ms;
+  --duration-slow: 500ms;
+  --duration-medium: 250ms;
+  --duration-fast: 150ms;
+  --duration-x-fast: 50ms;
+  --spacing-3x-small: 2px;
+  --spacing-2x-small: 4px;
+  --spacing-x-small: 8px;
+  --spacing-small: 12px;
+  --spacing-medium: 16px;
+  --spacing-large: 20px;
+  --spacing-x-large: 28px;
+  --spacing-2x-large: 36px;
+  --spacing-3x-large: 48px;
+  --spacing-4x-large: 72px;
+  --border-width-input: 1px;
+  --border-width-panel: 1px;
+  --zIndex-drawer: 700;
+  --zIndex-dialog: 10000;
+  --zIndex-dropdown: 1000;
+  --zIndex-toast: 950;
+  --zIndex-tooltip: 1000;
+  --zIndex-header: 9996;
+  --zIndex-filter: 1000;
+  --zIndex-jobs-bg-effect: 10;
+  --zIndex-playbook-head: 2;
+  --dribbble-button-height: 40px;
+  --dribbble-button-font-size: 13px;
+  --dribbble-button-padding: 20px;
+  --dribbble-button-icon-size: 16px;
+  --dribbble-button-bg: #0d0c22;
+  --dribbble-button-bg-hover: #3d3d4e;
+  --dribbble-button-border: #0d0c22;
+  --dribbble-button-border-hover: #3d3d4e;
+  --dribbble-button-text: #ffffff;
+  --dribbble-button-text-hover: #ffffff;
+  --dribbble-nav-height: 92px;
+  --dribbble-nav-gutter: 40px;
+  --dribbble-nav-search-height: 56px;
+  --dribbble-nav-link-hover: #7b7194;
+  --dribbble-header-total-height: 92px;
+  --dribbble-banner-gutter: 72px;
+  --dribbble-input-padding-left: 12px;
+  --dribbble-input-padding-right: 12px;
+  --dribbble-clearable-input-size: 16px;
+  --dribbble-clearable-input-padding: 8px;
+  --dribbble-attachment-max-height: 252px;
+  --dribbble-attachment-min-height: 100px;
+  --layout-container-max-home: 1650px;
+  --layout-container-max-designers: 1622px;
+  --layout-container-gutter: 72px;
+  --shadow-x-small: 0px 1px 2px 0px rgba(113, 113, 122, 0.06);
+  --shadow-small: 0px 1px 2px 0px rgba(113, 113, 122, 0.12);
+  --shadow-medium: 0px 2px 4px 0px rgba(113, 113, 122, 0.12);
+  --shadow-large: 0px 2px 8px 0px rgba(113, 113, 122, 0.12);
+  --shadow-x-large: 0px 4px 16px 0px rgba(113, 113, 122, 0.12);
+  --shadow-card: 0px 1px 10px 0px rgba(18, 22, 25, 0.02);
+  --shadow-dropdown: 0px 15px 50px 0px rgba(27, 32, 50, 0.1);
+  --focusRing-color: #e44a85;
+  --focusRing-width: 3px;
+  --focusRing-offset: 1px;
+  --focusRing-style: solid;
+  --focusRing-measured-color: #f3afe4;
+  --focusRing-measured-width: 2px;
+  --measured-dropdown-transition: 200ms;
+  --color-page: var(--color-measured-page);
+  --color-surface: var(--color-measured-surface);
+  --color-surface-alt: var(--color-measured-promo-surface);
+  --color-text: var(--color-measured-ink);
+  --color-muted: var(--color-measured-muted);
+  --color-accent: var(--color-measured-pink);
+  --color-accent-hover: var(--color-measured-pink-hover);
+  --color-on-accent: var(--color-measured-ink-on-dark);
+  --color-border: var(--color-measured-border);
+  --color-link: var(--color-measured-link);
+  --component-header-height: 92px;
+  --component-header-height-mobile: 58px;
+  --component-logo-width: 89px;
+  --component-button-height: 48px;
+  --component-button-radius: 10000000px;
+  --component-nav-link-height: 30px;
+  --component-dropdown-width: 230px;
+  --component-hero-title-width: 618px;
+  --component-hero-cta-height: 49px;
+  --component-search-height: 54px;
+  --component-search-radius: 12px;
+  --component-search-go-size: 40px;
+  --component-chip-height: 31px;
+  --component-shot-card-width: 297px;
+  --component-wall-cta-height: 40px;
+  --component-designer-card-width: 1238px;
+  --component-designer-cta-height: 40px;
+  --component-skill-chip-height: 31px;
+  --component-auth-card-width: 1024px;
+  --component-field-height: 47px;
+  --component-field-radius: 8px;
+  --component-continue-height: 48px;
+  --component-footer-height: 508px;
+  --sg-sans: "Mona Sans", "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
+  --sg-serif: "Source Serif 4", ui-serif, Georgia, "Times New Roman", serif;
+  --sg-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --color-surface: var(--color-measured-ink-deep);
+  --color-text: var(--color-measured-ink-on-dark);
+  --color-surface-chip: var(--color-measured-chip-dark);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-text, #0d0c22); background: var(--color-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.1 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-text, #0d0c22); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-border, #e7e7e9); }
+.lead { max-width: 62ch; color: var(--color-text, #0d0c22); opacity: .8; }
+.note { font-size: 13px; color: var(--color-text, #0d0c22); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-text, #0d0c22); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: #0d0c22; padding: 12px; border-radius: 8px; }
+.pal.dark .nm, .pal.dark .vl { color: #fff; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-border, #e7e7e9); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-text, #0d0c22); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-border, #e7e7e9); background: var(--color-surface, #fff); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-text, #0d0c22); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-border, #e7e7e9); overflow: hidden; background: var(--color-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 68px); padding: 0 12px 0 22px; font-size: 15px; color: var(--color-text, #0d0c22); }
+.navbar .wm { font-weight: 700; font-size: 24px; font-family: var(--sg-serif); font-style: italic; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 48px); padding: 0 16px; font-size: 15px; font-weight: 500; border-radius: var(--radius-button-pill, 20px); border: 1px solid transparent; }
+.btn.dark { background: var(--color-measured-ink-deep, #060318); color: var(--color-on-accent, #fff); }
+.btn.plain { color: var(--color-text, #0d0c22); }
+.btn.pink { background: var(--color-accent, #ea4c89); color: var(--color-on-accent, #fff); }
+.promo { background: var(--color-surface-alt, #f8f8fc); color: var(--color-muted, #6e6d7a); font-size: 12px; height: 30px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+.hero { color: var(--color-text, #0d0c22); padding: 56px 40px 32px; font: 600 52px/1.2 var(--sg-sans); letter-spacing: -0.02em; text-align: left; }
+.hero .pk { color: var(--color-accent, #ea4c89); }
+.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: var(--color-muted, #6e6d7a); letter-spacing: 0; margin: 16px 0 22px; max-width: 46ch; }
+.searchbar { display: flex; align-items: center; gap: 8px; height: var(--component-search-height, 56px); border: 1px solid var(--color-border, #e7e7e9); border-radius: var(--radius-search, 12px); padding: 0 6px 0 18px; background: var(--color-surface, #fff); font-size: 14px; color: var(--color-muted, #6e6d7a); margin: 0 40px 24px; }
+.searchbar .sp { flex: 1; }
+.searchbar .go { width: var(--component-search-go-size, 40px); height: var(--component-search-go-size, 40px); border-radius: 50%; background: var(--color-accent, #ea4c89); display: inline-flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 40px 32px; }
+.chip { display: inline-flex; align-items: center; height: var(--component-chip-height, 32px); padding: 0 14px; border-radius: var(--radius-chip, 8px); background: var(--color-surface-alt, #f8f8fc); color: var(--color-text, #0d0c22); font-size: 13px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-border, #e7e7e9); border-radius: var(--radius-card, 8px); padding: 14px; font-size: 13px; background: var(--color-surface, #fff); }
+.tile b { display: block; font: 500 18px/1.25 var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.shot { border-radius: var(--radius-card, 8px); overflow: hidden; border: 1px solid var(--color-border, #e7e7e9); background: var(--color-surface, #fff); }
+.shot .art { height: 120px; background: linear-gradient(135deg, #f8f8fc, #fde7f0 55%, #ea4c89 160%); }
+.shot .who { display: flex; align-items: center; gap: 8px; padding: 10px 12px; font-size: 13px; font-weight: 500; }
+.shot .av { width: 24px; height: 24px; border-radius: 50%; background: var(--color-surface-alt, #f8f8fc); border: 1px solid var(--color-border, #e7e7e9); }
+.shot .pro { font-size: 10px; font-weight: 700; background: var(--color-accent, #ea4c89); color: #fff; border-radius: 4px; padding: 1px 5px; }
+.shot .stats { margin-left: auto; font-size: 12px; color: var(--color-muted, #6e6d7a); font-weight: 400; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-border, #e7e7e9); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-border, #e7e7e9); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--color-text, #0d0c22); opacity: .65; font-family: var(--sg-mono); }
+.wall { margin: 0 40px 32px; border: 1px solid var(--color-border, #e7e7e9); border-radius: var(--radius-card, 8px); background: var(--color-surface, #fff); padding: 28px; text-align: center; font-size: 14px; color: var(--color-muted, #6e6d7a); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Dribbble style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Dribbble, measured</h2>
+  <p class="lead">dribbble.com is a Rails app in three CSS eras painting one light surface. Its declared token layer is Shoelace's — the --sl-* set with the --sl-color-primary-* ramp re-bound to the Dribbble pink (#ea4c89), plus neutral and gray ramps, radii, spacing, shadows, transitions and the focus ring. Most of the signed-out surface is styled by the older mini-master bundle instead: Mona Sans at 52px/600 on the hero, the #0d0c22 ink, #6e6d7a muted text, the #f8f8fc promo and chip tint, 8px cards, the 12px search field, 20px pills and the 40px pink Go circle — measured off the live components. The dark set names the ink surfaces the page paints (the dark pills, the certified chip), not a user theme. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from dribbble.com, signed out, in headless Chromium (the capture date is in README.md and raw/css-vars.json). The signed-out feed ends at a Sign-up-to-continue wall — a documented boundary; nothing was signed into, filled, followed, liked or submitted. Mona Sans, Source Serif 4 and IBM Plex Mono are served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">Every page carries the same header on white: the script wordmark, the Explore / Hire Talent / Get Hired / Community dropdowns, a plain Sign up and the deep-ink Log-in pill. Under it on the home page the WELCOME20 strip sits on the #f8f8fc tint.</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm">dribbble</span><span>Explore &#9662;</span><span>Hire Talent &#9662;</span><span>Get Hired &#9662;</span><span>Community &#9662;</span><span class="sp"></span><span class="btn plain" style="height:40px;font-size:14px">Sign up</span><span class="btn dark" style="height:40px;font-size:14px">Log in</span></div>
+    <div class="promo">Get 20% off Dribbble Pro with code WELCOME20 — offer ends soon. Get Started</div>
+  </div>
+
+  <h2 class="sh">The hero and search</h2>
+  <p class="lead">The hire-focused hero runs 52px/600 in Mona Sans with one rotating word in the pink; below it the big search field carries a 12px radius and the 40px pink Go circle, over a row of Popular-search tag chips.</p>
+  <div class="mock">
+    <div class="hero">Work with the world's best in <span class="pk">web design</span><small>Join the world's leading designers, agencies and brands on Dribbble.</small></div>
+    <div class="searchbar">What type of design are you interested in?<span class="sp"></span><span class="go">&#8594;</span></div>
+    <div class="chips"><span class="chip">dashboard</span><span class="chip">landing page</span><span class="chip">mobile app</span><span class="chip">ecommerce</span><span class="chip">animation</span><span class="chip">illustration</span></div>
+  </div>
+
+  <h2 class="sh">The feed and the wall</h2>
+  <p class="lead">Shot cards paint an 8px radius with the designer's avatar, name, a pink PRO chip and heart/eye counts. Signed out, the feed paints a teaser then the Sign-up-to-continue wall — the public boundary.</p>
+  <div class="mock" style="padding:20px 0 0">
+    <div class="grid" style="padding:0 40px 20px">
+      <div class="shot"><div class="art"></div><div class="who"><span class="av"></span>Studio Name <span class="pro">PRO+</span><span class="stats">&#9825; 128 &nbsp; &#128065; 3.2k</span></div></div>
+      <div class="shot"><div class="art"></div><div class="who"><span class="av"></span>Designer <span class="pro">PRO</span><span class="stats">&#9825; 64 &nbsp; &#128065; 1.1k</span></div></div>
+    </div>
+    <div class="wall">Sign up to continue — the signed-in feed is behind this wall.</div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">core.color.pink is the declared Shoelace primary ramp re-bound to Dribbble's pinks; neutral and gray are the declared ramps; hue holds the full Shoelace hue set; measured holds the mini-master values the page actually paints. Light roles name the semantic reads; the dark set names the ink surfaces inside the light page.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Spacing is the declared --sl-spacing scale (4px-64px); radii run 2-16px on the declared scale, with the measured 12px search field, 20px pills, 8px cards and the circle on top.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead"><code>Mona Sans</code> is the whole product stack (52px/600 hero down to 12px tags); <code>Source Serif 4</code> and <code>IBM Plex Mono</code> are served on the newer surfaces. Sizes mix the declared --sl-font-size steps with the measured mini-master sizes; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Motion, focus, stacking and the rest</h2>
+  <p class="lead">The declared --sl-transition duration scale, the focus-ring bindings (declared plus the measured outline), the --zi-* and --sl-z-index layers, the scoped container widths, Dribbble's own --btn-*/--site-nav-*/--input-* declared layer, and the measured extras — every remaining token group.</p>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --sl-* variables from the live stylesheets and computed styles on the components across the public routes</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component, plus the Explore dropdown and mobile menu opened by their own toggles</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"sans":{"v":"\"Mona Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif","t":"fontFamily","s":"computed fontFamily of hero-title default (raw/components-computed.json)","d":"Mona Sans: headings, body, nav, buttons — the product stack."},"shoelace-sans":{"v":"-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"","t":"fontFamily","s":"css-var --sl-font-sans (light)","d":"The Shoelace sans fallback stack (declared)."},"shoelace-serif":{"v":"Georgia, \"Times New Roman\", serif","t":"fontFamily","s":"css-var --sl-font-serif (light)","d":"The Shoelace serif stack (declared)."},"shoelace-mono":{"v":"SFMono-Regular, Consolas, \"Liberation Mono\", Menlo, monospace","t":"fontFamily","s":"css-var --sl-font-mono (light)","d":"The Shoelace mono stack (declared)."}},"face":{"mona-sans":{"v":"Mona Sans","t":"fontFamily","s":"@font-face declared in https://cdn.dribbble.com/assets/designer-search-ea497002012e3714d974bac78ce90a918933e4bcaaf413cd58379be6cc0d424b.css (raw/css-vars.json)","d":"Served face Mona Sans 200 900 (provenance: the font file, not a stack)."},"wf-visual-sans":{"v":"WF Visual Sans","t":"fontFamily","s":"@font-face declared in https://cdn.dribbble.com/assets/designer-search-ea497002012e3714d974bac78ce90a918933e4bcaaf413cd58379be6cc0d424b.css (raw/css-vars.json)","d":"Served face WF Visual Sans 600 (provenance: the font file, not a stack)."},"inter-regular":{"v":"Inter Regular","t":"fontFamily","s":"@font-face declared in https://cdn.dribbble.com/assets/designer-search-ea497002012e3714d974bac78ce90a918933e4bcaaf413cd58379be6cc0d424b.css (raw/css-vars.json)","d":"Served face Inter Regular normal (provenance: the font file, not a stack)."},"inter-semibold":{"v":"Inter Semibold","t":"fontFamily","s":"@font-face declared in https://cdn.dribbble.com/assets/designer-search-ea497002012e3714d974bac78ce90a918933e4bcaaf413cd58379be6cc0d424b.css (raw/css-vars.json)","d":"Served face Inter Semibold 600 (provenance: the font file, not a stack)."},"walsheim":{"v":"Walsheim","t":"fontFamily","s":"@font-face declared in https://cdn.dribbble.com/assets/designer-search-ea497002012e3714d974bac78ce90a918933e4bcaaf413cd58379be6cc0d424b.css (raw/css-vars.json)","d":"Served face Walsheim 400 (provenance: the font file, not a stack)."},"ibm-plex-mono":{"v":"IBM Plex Mono","t":"fontFamily","s":"@font-face declared in https://fonts.googleapis.com/css2 (raw/css-vars.json)","d":"Served face IBM Plex Mono 500 (provenance: the font file, not a stack)."},"source-serif-4":{"v":"Source Serif 4","t":"fontFamily","s":"@font-face declared in https://fonts.googleapis.com/css2 (raw/css-vars.json)","d":"Served face Source Serif 4 600 (provenance: the font file, not a stack)."}},"size":{"2x-small":{"v":"10px","t":"dimension","s":"css-var --sl-font-size-2x-small (light)","d":"Declared --sl-font-size-2x-small."},"x-small":{"v":"12px","t":"dimension","s":"css-var --sl-font-size-x-small (light)","d":"Declared --sl-font-size-x-small."},"small":{"v":"14px","t":"dimension","s":"css-var --sl-font-size-small (light)","d":"Declared --sl-font-size-small."},"medium":{"v":"16px","t":"dimension","s":"css-var --sl-font-size-medium (light)","d":"Declared --sl-font-size-medium."},"large":{"v":"20px","t":"dimension","s":"css-var --sl-font-size-large (light)","d":"Declared --sl-font-size-large."},"x-large":{"v":"24px","t":"dimension","s":"css-var --sl-font-size-x-large (light)","d":"Declared --sl-font-size-x-large."},"2x-large":{"v":"36px","t":"dimension","s":"css-var --sl-font-size-2x-large (light)","d":"Declared --sl-font-size-2x-large."},"3x-large":{"v":"48px","t":"dimension","s":"css-var --sl-font-size-3x-large (light)","d":"Declared --sl-font-size-3x-large."},"4x-large":{"v":"72px","t":"dimension","s":"css-var --sl-font-size-4x-large (light)","d":"Declared --sl-font-size-4x-large."},"hero":{"v":"52px","t":"dimension","s":"computed fontSize of hero-title default (raw/components-computed.json)","d":"The 52px Mona Sans hero."},"h1-page":{"v":"32px","t":"dimension","s":"computed fontSize of search-h1 default (raw/components-computed.json)","d":"The page h1 (search/directory title)."},"body":{"v":"14px","t":"dimension","s":"computed fontSize of designer-meta default (raw/components-computed.json)","d":"The 14px card meta text."},"meta":{"v":"12px","t":"dimension","s":"computed fontSize of stat-count default (raw/components-computed.json)","d":"The 12-13px count/tag size."},"mobile-hero":{"v":"27px","t":"dimension","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The hero size at 390px."}},"lineHeight":{"denser":{"v":1,"t":"number","s":"css-var --sl-line-height-denser (light)","d":"Declared --sl-line-height-denser."},"dense":{"v":1.4,"t":"number","s":"css-var --sl-line-height-dense (light)","d":"Declared --sl-line-height-dense."},"normal":{"v":1.8,"t":"number","s":"css-var --sl-line-height-normal (light)","d":"Declared --sl-line-height-normal."},"loose":{"v":2.2,"t":"number","s":"css-var --sl-line-height-loose (light)","d":"Declared --sl-line-height-loose."},"looser":{"v":2.6,"t":"number","s":"css-var --sl-line-height-looser (light)","d":"Declared --sl-line-height-looser."},"hero":{"v":"62.4px","t":"dimension","s":"computed lineHeight of hero-title default (raw/components-computed.json)","d":"The hero leading (62.4px on 52px)."}},"tracking":{"denser":{"v":-0.03,"t":"number","s":"css-var --sl-letter-spacing-denser (light); declared value -.03em is em","d":"Declared --sl-letter-spacing-denser as an em multiplier on font size."},"dense":{"v":-0.015,"t":"number","s":"css-var --sl-letter-spacing-dense (light); declared value -.015em is em","d":"Declared --sl-letter-spacing-dense as an em multiplier on font size."},"normal":{"v":0,"t":"number","s":"css-var --sl-letter-spacing-normal (light); declared 'normal' — the font's own spacing","d":"Declared --sl-letter-spacing-normal ('normal'): zero extra tracking."},"loose":{"v":0.075,"t":"number","s":"css-var --sl-letter-spacing-loose (light); declared value .075em is em","d":"Declared --sl-letter-spacing-loose as an em multiplier on font size."},"looser":{"v":0.15,"t":"number","s":"css-var --sl-letter-spacing-looser (light); declared value .15em is em","d":"Declared --sl-letter-spacing-looser as an em multiplier on font size."}},"weight":{"light":{"v":300,"t":"fontWeight","s":"css-var --sl-font-weight-light (light)","d":"Declared --sl-font-weight-light."},"normal":{"v":400,"t":"fontWeight","s":"css-var --sl-font-weight-normal (light)","d":"Declared --sl-font-weight-normal."},"semibold":{"v":500,"t":"fontWeight","s":"css-var --sl-font-weight-semibold (light)","d":"Declared --sl-font-weight-semibold."},"bold":{"v":700,"t":"fontWeight","s":"css-var --sl-font-weight-bold (light)","d":"Declared --sl-font-weight-bold."},"hero":{"v":600,"t":"fontWeight","s":"computed fontWeight of hero-title default (raw/components-computed.json)","d":"The 600 hero weight."},"button":{"v":600,"t":"fontWeight","s":"computed fontWeight of login-btn default (raw/components-computed.json)","d":"The button label weight."}}},"color":{"pink":{"50":{"v":"#fef8fa","t":"color","s":"css-var --sl-color-primary-50 (light)","d":"Declared --sl-color-primary-50 — the Shoelace primary ramp re-bound to the Dribbble pink (#fef8fa)."},"100":{"v":"#fce7ef","t":"color","s":"css-var --sl-color-primary-100 (light)","d":"Declared --sl-color-primary-100 — the Shoelace primary ramp re-bound to the Dribbble pink (#fce7ef)."},"200":{"v":"#fad4e3","t":"color","s":"css-var --sl-color-primary-200 (light)","d":"Declared --sl-color-primary-200 — the Shoelace primary ramp re-bound to the Dribbble pink (#fad4e3)."},"300":{"v":"#f8bfd5","t":"color","s":"css-var --sl-color-primary-300 (light)","d":"Declared --sl-color-primary-300 — the Shoelace primary ramp re-bound to the Dribbble pink (#f8bfd5)."},"400":{"v":"#f4a2c2","t":"color","s":"css-var --sl-color-primary-400 (light)","d":"Declared --sl-color-primary-400 — the Shoelace primary ramp re-bound to the Dribbble pink (#f4a2c2)."},"500":{"v":"#ea4c89","t":"color","s":"css-var --sl-color-primary-500 (light)","d":"Declared --sl-color-primary-500 — the Shoelace primary ramp re-bound to the Dribbble pink (#ea4c89)."},"600":{"v":"#e44a85","t":"color","s":"css-var --sl-color-primary-600 (light)","d":"Declared --sl-color-primary-600 — the Shoelace primary ramp re-bound to the Dribbble pink (#e44a85)."},"700":{"v":"#bb3d6e","t":"color","s":"css-var --sl-color-primary-700 (light)","d":"Declared --sl-color-primary-700 — the Shoelace primary ramp re-bound to the Dribbble pink (#bb3d6e)."},"800":{"v":"#9b325b","t":"color","s":"css-var --sl-color-primary-800 (light)","d":"Declared --sl-color-primary-800 — the Shoelace primary ramp re-bound to the Dribbble pink (#9b325b)."},"900":{"v":"#6f2441","t":"color","s":"css-var --sl-color-primary-900 (light)","d":"Declared --sl-color-primary-900 — the Shoelace primary ramp re-bound to the Dribbble pink (#6f2441)."},"950":{"v":"#451628","t":"color","s":"css-var --sl-color-primary-950 (light)","d":"Declared --sl-color-primary-950 — the Shoelace primary ramp re-bound to the Dribbble pink (#451628)."}},"neutral":{"0":{"v":"#ffffff","t":"color","s":"css-var --sl-color-neutral-0 (light)","d":"Declared --sl-color-neutral-0."},"50":{"v":"#f9f9f9","t":"color","s":"css-var --sl-color-neutral-50 (light)","d":"Declared --sl-color-neutral-50."},"100":{"v":"#f4f4f5","t":"color","s":"css-var --sl-color-neutral-100 (light)","d":"Declared --sl-color-neutral-100."},"200":{"v":"#e4e4e7","t":"color","s":"css-var --sl-color-neutral-200 (light)","d":"Declared --sl-color-neutral-200."},"300":{"v":"#d4d4d8","t":"color","s":"css-var --sl-color-neutral-300 (light)","d":"Declared --sl-color-neutral-300."},"400":{"v":"#a1a1aa","t":"color","s":"css-var --sl-color-neutral-400 (light)","d":"Declared --sl-color-neutral-400."},"500":{"v":"#71717a","t":"color","s":"css-var --sl-color-neutral-500 (light)","d":"Declared --sl-color-neutral-500."},"600":{"v":"#52525b","t":"color","s":"css-var --sl-color-neutral-600 (light)","d":"Declared --sl-color-neutral-600."},"700":{"v":"#3f3f46","t":"color","s":"css-var --sl-color-neutral-700 (light)","d":"Declared --sl-color-neutral-700."},"800":{"v":"#27272a","t":"color","s":"css-var --sl-color-neutral-800 (light)","d":"Declared --sl-color-neutral-800."},"900":{"v":"#18181b","t":"color","s":"css-var --sl-color-neutral-900 (light)","d":"Declared --sl-color-neutral-900."},"950":{"v":"#131316","t":"color","s":"css-var --sl-color-neutral-950 (light)","d":"Declared --sl-color-neutral-950."},"1000":{"v":"#000000","t":"color","s":"css-var --sl-color-neutral-1000 (light)","d":"Declared --sl-color-neutral-1000."}},"gray":{"50":{"v":"#f9f9f9","t":"color","s":"css-var --sl-color-gray-50 (light)","d":"Declared --sl-color-gray-50."},"100":{"v":"#f4f4f5","t":"color","s":"css-var --sl-color-gray-100 (light)","d":"Declared --sl-color-gray-100."},"200":{"v":"#e4e4e7","t":"color","s":"css-var --sl-color-gray-200 (light)","d":"Declared --sl-color-gray-200."},"300":{"v":"#d4d4d8","t":"color","s":"css-var --sl-color-gray-300 (light)","d":"Declared --sl-color-gray-300."},"400":{"v":"#a1a1aa","t":"color","s":"css-var --sl-color-gray-400 (light)","d":"Declared --sl-color-gray-400."},"500":{"v":"#71717a","t":"color","s":"css-var --sl-color-gray-500 (light)","d":"Declared --sl-color-gray-500."},"600":{"v":"#52525b","t":"color","s":"css-var --sl-color-gray-600 (light)","d":"Declared --sl-color-gray-600."},"700":{"v":"#3f3f46","t":"color","s":"css-var --sl-color-gray-700 (light)","d":"Declared --sl-color-gray-700."},"800":{"v":"#27272a","t":"color","s":"css-var --sl-color-gray-800 (light)","d":"Declared --sl-color-gray-800."},"900":{"v":"#18181b","t":"color","s":"css-var --sl-color-gray-900 (light)","d":"Declared --sl-color-gray-900."},"950":{"v":"#131316","t":"color","s":"css-var --sl-color-gray-950 (light)","d":"Declared --sl-color-gray-950."}},"hue":{"red":{"50":{"v":"#fef2f2","t":"color","s":"css-var --sl-color-red-50 (light)","d":"Declared --sl-color-red-50."},"100":{"v":"#fee2e2","t":"color","s":"css-var --sl-color-red-100 (light)","d":"Declared --sl-color-red-100."},"200":{"v":"#fecaca","t":"color","s":"css-var --sl-color-red-200 (light)","d":"Declared --sl-color-red-200."},"300":{"v":"#fca5a5","t":"color","s":"css-var --sl-color-red-300 (light)","d":"Declared --sl-color-red-300."},"400":{"v":"#f87171","t":"color","s":"css-var --sl-color-red-400 (light)","d":"Declared --sl-color-red-400."},"500":{"v":"#ef4444","t":"color","s":"css-var --sl-color-red-500 (light)","d":"Declared --sl-color-red-500."},"600":{"v":"#dc2626","t":"color","s":"css-var --sl-color-red-600 (light)","d":"Declared --sl-color-red-600."},"700":{"v":"#b91c1c","t":"color","s":"css-var --sl-color-red-700 (light)","d":"Declared --sl-color-red-700."},"800":{"v":"#991b1b","t":"color","s":"css-var --sl-color-red-800 (light)","d":"Declared --sl-color-red-800."},"900":{"v":"#7f1d1d","t":"color","s":"css-var --sl-color-red-900 (light)","d":"Declared --sl-color-red-900."},"950":{"v":"#501414","t":"color","s":"css-var --sl-color-red-950 (light)","d":"Declared --sl-color-red-950."}},"orange":{"50":{"v":"#fff7ed","t":"color","s":"css-var --sl-color-orange-50 (light)","d":"Declared --sl-color-orange-50."},"100":{"v":"#ffedd5","t":"color","s":"css-var --sl-color-orange-100 (light)","d":"Declared --sl-color-orange-100."},"200":{"v":"#fed7aa","t":"color","s":"css-var --sl-color-orange-200 (light)","d":"Declared --sl-color-orange-200."},"300":{"v":"#fdba74","t":"color","s":"css-var --sl-color-orange-300 (light)","d":"Declared --sl-color-orange-300."},"400":{"v":"#fb923c","t":"color","s":"css-var --sl-color-orange-400 (light)","d":"Declared --sl-color-orange-400."},"500":{"v":"#f97316","t":"color","s":"css-var --sl-color-orange-500 (light)","d":"Declared --sl-color-orange-500."},"600":{"v":"#ea580c","t":"color","s":"css-var --sl-color-orange-600 (light)","d":"Declared --sl-color-orange-600."},"700":{"v":"#c2410c","t":"color","s":"css-var --sl-color-orange-700 (light)","d":"Declared --sl-color-orange-700."},"800":{"v":"#9a3412","t":"color","s":"css-var --sl-color-orange-800 (light)","d":"Declared --sl-color-orange-800."},"900":{"v":"#7c2d12","t":"color","s":"css-var --sl-color-orange-900 (light)","d":"Declared --sl-color-orange-900."},"950":{"v":"#52200f","t":"color","s":"css-var --sl-color-orange-950 (light)","d":"Declared --sl-color-orange-950."}},"amber":{"50":{"v":"#fffbeb","t":"color","s":"css-var --sl-color-amber-50 (light)","d":"Declared --sl-color-amber-50."},"100":{"v":"#fef3c7","t":"color","s":"css-var --sl-color-amber-100 (light)","d":"Declared --sl-color-amber-100."},"200":{"v":"#fde68a","t":"color","s":"css-var --sl-color-amber-200 (light)","d":"Declared --sl-color-amber-200."},"300":{"v":"#fcd34d","t":"color","s":"css-var --sl-color-amber-300 (light)","d":"Declared --sl-color-amber-300."},"400":{"v":"#fbbf24","t":"color","s":"css-var --sl-color-amber-400 (light)","d":"Declared --sl-color-amber-400."},"500":{"v":"#f59e0b","t":"color","s":"css-var --sl-color-amber-500 (light)","d":"Declared --sl-color-amber-500."},"600":{"v":"#d97706","t":"color","s":"css-var --sl-color-amber-600 (light)","d":"Declared --sl-color-amber-600."},"700":{"v":"#b45309","t":"color","s":"css-var --sl-color-amber-700 (light)","d":"Declared --sl-color-amber-700."},"800":{"v":"#92400e","t":"color","s":"css-var --sl-color-amber-800 (light)","d":"Declared --sl-color-amber-800."},"900":{"v":"#78350f","t":"color","s":"css-var --sl-color-amber-900 (light)","d":"Declared --sl-color-amber-900."},"950":{"v":"#4a230b","t":"color","s":"css-var --sl-color-amber-950 (light)","d":"Declared --sl-color-amber-950."}},"yellow":{"50":{"v":"#fefce8","t":"color","s":"css-var --sl-color-yellow-50 (light)","d":"Declared --sl-color-yellow-50."},"100":{"v":"#fef9c3","t":"color","s":"css-var --sl-color-yellow-100 (light)","d":"Declared --sl-color-yellow-100."},"200":{"v":"#fef08a","t":"color","s":"css-var --sl-color-yellow-200 (light)","d":"Declared --sl-color-yellow-200."},"300":{"v":"#fde047","t":"color","s":"css-var --sl-color-yellow-300 (light)","d":"Declared --sl-color-yellow-300."},"400":{"v":"#facc15","t":"color","s":"css-var --sl-color-yellow-400 (light)","d":"Declared --sl-color-yellow-400."},"500":{"v":"#eab308","t":"color","s":"css-var --sl-color-yellow-500 (light)","d":"Declared --sl-color-yellow-500."},"600":{"v":"#ca8a04","t":"color","s":"css-var --sl-color-yellow-600 (light)","d":"Declared --sl-color-yellow-600."},"700":{"v":"#a16207","t":"color","s":"css-var --sl-color-yellow-700 (light)","d":"Declared --sl-color-yellow-700."},"800":{"v":"#854d0e","t":"color","s":"css-var --sl-color-yellow-800 (light)","d":"Declared --sl-color-yellow-800."},"900":{"v":"#713f12","t":"color","s":"css-var --sl-color-yellow-900 (light)","d":"Declared --sl-color-yellow-900."},"950":{"v":"#3c260b","t":"color","s":"css-var --sl-color-yellow-950 (light)","d":"Declared --sl-color-yellow-950."}},"lime":{"50":{"v":"#f7fee7","t":"color","s":"css-var --sl-color-lime-50 (light)","d":"Declared --sl-color-lime-50."},"100":{"v":"#ecfccb","t":"color","s":"css-var --sl-color-lime-100 (light)","d":"Declared --sl-color-lime-100."},"200":{"v":"#d9f99d","t":"color","s":"css-var --sl-color-lime-200 (light)","d":"Declared --sl-color-lime-200."},"300":{"v":"#bef264","t":"color","s":"css-var --sl-color-lime-300 (light)","d":"Declared --sl-color-lime-300."},"400":{"v":"#a3e635","t":"color","s":"css-var --sl-color-lime-400 (light)","d":"Declared --sl-color-lime-400."},"500":{"v":"#84cc16","t":"color","s":"css-var --sl-color-lime-500 (light)","d":"Declared --sl-color-lime-500."},"600":{"v":"#65a30d","t":"color","s":"css-var --sl-color-lime-600 (light)","d":"Declared --sl-color-lime-600."},"700":{"v":"#4d7c0f","t":"color","s":"css-var --sl-color-lime-700 (light)","d":"Declared --sl-color-lime-700."},"800":{"v":"#3f6212","t":"color","s":"css-var --sl-color-lime-800 (light)","d":"Declared --sl-color-lime-800."},"900":{"v":"#365314","t":"color","s":"css-var --sl-color-lime-900 (light)","d":"Declared --sl-color-lime-900."},"950":{"v":"#26390e","t":"color","s":"css-var --sl-color-lime-950 (light)","d":"Declared --sl-color-lime-950."}},"green":{"50":{"v":"#f0fdf4","t":"color","s":"css-var --sl-color-green-50 (light)","d":"Declared --sl-color-green-50."},"100":{"v":"#dcfce7","t":"color","s":"css-var --sl-color-green-100 (light)","d":"Declared --sl-color-green-100."},"200":{"v":"#bbf7d0","t":"color","s":"css-var --sl-color-green-200 (light)","d":"Declared --sl-color-green-200."},"300":{"v":"#86efac","t":"color","s":"css-var --sl-color-green-300 (light)","d":"Declared --sl-color-green-300."},"400":{"v":"#4ade80","t":"color","s":"css-var --sl-color-green-400 (light)","d":"Declared --sl-color-green-400."},"500":{"v":"#22c55e","t":"color","s":"css-var --sl-color-green-500 (light)","d":"Declared --sl-color-green-500."},"600":{"v":"#16a34a","t":"color","s":"css-var --sl-color-green-600 (light)","d":"Declared --sl-color-green-600."},"700":{"v":"#15803d","t":"color","s":"css-var --sl-color-green-700 (light)","d":"Declared --sl-color-green-700."},"800":{"v":"#166534","t":"color","s":"css-var --sl-color-green-800 (light)","d":"Declared --sl-color-green-800."},"900":{"v":"#14532d","t":"color","s":"css-var --sl-color-green-900 (light)","d":"Declared --sl-color-green-900."},"950":{"v":"#0c311b","t":"color","s":"css-var --sl-color-green-950 (light)","d":"Declared --sl-color-green-950."}},"emerald":{"50":{"v":"#ecfdf5","t":"color","s":"css-var --sl-color-emerald-50 (light)","d":"Declared --sl-color-emerald-50."},"100":{"v":"#d1fae5","t":"color","s":"css-var --sl-color-emerald-100 (light)","d":"Declared --sl-color-emerald-100."},"200":{"v":"#a7f3d0","t":"color","s":"css-var --sl-color-emerald-200 (light)","d":"Declared --sl-color-emerald-200."},"300":{"v":"#6ee7b7","t":"color","s":"css-var --sl-color-emerald-300 (light)","d":"Declared --sl-color-emerald-300."},"400":{"v":"#34d399","t":"color","s":"css-var --sl-color-emerald-400 (light)","d":"Declared --sl-color-emerald-400."},"500":{"v":"#10b981","t":"color","s":"css-var --sl-color-emerald-500 (light)","d":"Declared --sl-color-emerald-500."},"600":{"v":"#059669","t":"color","s":"css-var --sl-color-emerald-600 (light)","d":"Declared --sl-color-emerald-600."},"700":{"v":"#047857","t":"color","s":"css-var --sl-color-emerald-700 (light)","d":"Declared --sl-color-emerald-700."},"800":{"v":"#065f46","t":"color","s":"css-var --sl-color-emerald-800 (light)","d":"Declared --sl-color-emerald-800."},"900":{"v":"#064e3b","t":"color","s":"css-var --sl-color-emerald-900 (light)","d":"Declared --sl-color-emerald-900."},"950":{"v":"#032d22","t":"color","s":"css-var --sl-color-emerald-950 (light)","d":"Declared --sl-color-emerald-950."}},"teal":{"50":{"v":"#f0fdfa","t":"color","s":"css-var --sl-color-teal-50 (light)","d":"Declared --sl-color-teal-50."},"100":{"v":"#ccfbf1","t":"color","s":"css-var --sl-color-teal-100 (light)","d":"Declared --sl-color-teal-100."},"200":{"v":"#99f6e4","t":"color","s":"css-var --sl-color-teal-200 (light)","d":"Declared --sl-color-teal-200."},"300":{"v":"#5eead4","t":"color","s":"css-var --sl-color-teal-300 (light)","d":"Declared --sl-color-teal-300."},"400":{"v":"#2dd4bf","t":"color","s":"css-var --sl-color-teal-400 (light)","d":"Declared --sl-color-teal-400."},"500":{"v":"#14b8a6","t":"color","s":"css-var --sl-color-teal-500 (light)","d":"Declared --sl-color-teal-500."},"600":{"v":"#0d9488","t":"color","s":"css-var --sl-color-teal-600 (light)","d":"Declared --sl-color-teal-600."},"700":{"v":"#0f766e","t":"color","s":"css-var --sl-color-teal-700 (light)","d":"Declared --sl-color-teal-700."},"800":{"v":"#115e59","t":"color","s":"css-var --sl-color-teal-800 (light)","d":"Declared --sl-color-teal-800."},"900":{"v":"#134e4a","t":"color","s":"css-var --sl-color-teal-900 (light)","d":"Declared --sl-color-teal-900."},"950":{"v":"#0c2e2c","t":"color","s":"css-var --sl-color-teal-950 (light)","d":"Declared --sl-color-teal-950."}},"cyan":{"50":{"v":"#ecfeff","t":"color","s":"css-var --sl-color-cyan-50 (light)","d":"Declared --sl-color-cyan-50."},"100":{"v":"#cffafe","t":"color","s":"css-var --sl-color-cyan-100 (light)","d":"Declared --sl-color-cyan-100."},"200":{"v":"#a5f3fc","t":"color","s":"css-var --sl-color-cyan-200 (light)","d":"Declared --sl-color-cyan-200."},"300":{"v":"#67e8f9","t":"color","s":"css-var --sl-color-cyan-300 (light)","d":"Declared --sl-color-cyan-300."},"400":{"v":"#22d3ee","t":"color","s":"css-var --sl-color-cyan-400 (light)","d":"Declared --sl-color-cyan-400."},"500":{"v":"#06b6d4","t":"color","s":"css-var --sl-color-cyan-500 (light)","d":"Declared --sl-color-cyan-500."},"600":{"v":"#0891b2","t":"color","s":"css-var --sl-color-cyan-600 (light)","d":"Declared --sl-color-cyan-600."},"700":{"v":"#0e7490","t":"color","s":"css-var --sl-color-cyan-700 (light)","d":"Declared --sl-color-cyan-700."},"800":{"v":"#155e75","t":"color","s":"css-var --sl-color-cyan-800 (light)","d":"Declared --sl-color-cyan-800."},"900":{"v":"#164e63","t":"color","s":"css-var --sl-color-cyan-900 (light)","d":"Declared --sl-color-cyan-900."},"950":{"v":"#103442","t":"color","s":"css-var --sl-color-cyan-950 (light)","d":"Declared --sl-color-cyan-950."}},"sky":{"50":{"v":"#f0f9ff","t":"color","s":"css-var --sl-color-sky-50 (light)","d":"Declared --sl-color-sky-50."},"100":{"v":"#e0f2fe","t":"color","s":"css-var --sl-color-sky-100 (light)","d":"Declared --sl-color-sky-100."},"200":{"v":"#bae6fd","t":"color","s":"css-var --sl-color-sky-200 (light)","d":"Declared --sl-color-sky-200."},"300":{"v":"#7dd3fc","t":"color","s":"css-var --sl-color-sky-300 (light)","d":"Declared --sl-color-sky-300."},"400":{"v":"#38bdf8","t":"color","s":"css-var --sl-color-sky-400 (light)","d":"Declared --sl-color-sky-400."},"500":{"v":"#0ea5e9","t":"color","s":"css-var --sl-color-sky-500 (light)","d":"Declared --sl-color-sky-500."},"600":{"v":"#0284c7","t":"color","s":"css-var --sl-color-sky-600 (light)","d":"Declared --sl-color-sky-600."},"700":{"v":"#0369a1","t":"color","s":"css-var --sl-color-sky-700 (light)","d":"Declared --sl-color-sky-700."},"800":{"v":"#075985","t":"color","s":"css-var --sl-color-sky-800 (light)","d":"Declared --sl-color-sky-800."},"900":{"v":"#0c4a6e","t":"color","s":"css-var --sl-color-sky-900 (light)","d":"Declared --sl-color-sky-900."},"950":{"v":"#0b3249","t":"color","s":"css-var --sl-color-sky-950 (light)","d":"Declared --sl-color-sky-950."}},"blue":{"50":{"v":"#eff6ff","t":"color","s":"css-var --sl-color-blue-50 (light)","d":"Declared --sl-color-blue-50."},"100":{"v":"#dbeafe","t":"color","s":"css-var --sl-color-blue-100 (light)","d":"Declared --sl-color-blue-100."},"200":{"v":"#bfdbfe","t":"color","s":"css-var --sl-color-blue-200 (light)","d":"Declared --sl-color-blue-200."},"300":{"v":"#93c5fd","t":"color","s":"css-var --sl-color-blue-300 (light)","d":"Declared --sl-color-blue-300."},"400":{"v":"#60a5fa","t":"color","s":"css-var --sl-color-blue-400 (light)","d":"Declared --sl-color-blue-400."},"500":{"v":"#3b82f6","t":"color","s":"css-var --sl-color-blue-500 (light)","d":"Declared --sl-color-blue-500."},"600":{"v":"#2563eb","t":"color","s":"css-var --sl-color-blue-600 (light)","d":"Declared --sl-color-blue-600."},"700":{"v":"#1d4ed8","t":"color","s":"css-var --sl-color-blue-700 (light)","d":"Declared --sl-color-blue-700."},"800":{"v":"#1e40af","t":"color","s":"css-var --sl-color-blue-800 (light)","d":"Declared --sl-color-blue-800."},"900":{"v":"#1e3a8a","t":"color","s":"css-var --sl-color-blue-900 (light)","d":"Declared --sl-color-blue-900."},"950":{"v":"#152149","t":"color","s":"css-var --sl-color-blue-950 (light)","d":"Declared --sl-color-blue-950."}},"indigo":{"50":{"v":"#eef2ff","t":"color","s":"css-var --sl-color-indigo-50 (light)","d":"Declared --sl-color-indigo-50."},"100":{"v":"#e0e7ff","t":"color","s":"css-var --sl-color-indigo-100 (light)","d":"Declared --sl-color-indigo-100."},"200":{"v":"#c7d2fe","t":"color","s":"css-var --sl-color-indigo-200 (light)","d":"Declared --sl-color-indigo-200."},"300":{"v":"#a5b4fc","t":"color","s":"css-var --sl-color-indigo-300 (light)","d":"Declared --sl-color-indigo-300."},"400":{"v":"#818cf8","t":"color","s":"css-var --sl-color-indigo-400 (light)","d":"Declared --sl-color-indigo-400."},"500":{"v":"#6366f1","t":"color","s":"css-var --sl-color-indigo-500 (light)","d":"Declared --sl-color-indigo-500."},"600":{"v":"#4f46e5","t":"color","s":"css-var --sl-color-indigo-600 (light)","d":"Declared --sl-color-indigo-600."},"700":{"v":"#4338ca","t":"color","s":"css-var --sl-color-indigo-700 (light)","d":"Declared --sl-color-indigo-700."},"800":{"v":"#3730a3","t":"color","s":"css-var --sl-color-indigo-800 (light)","d":"Declared --sl-color-indigo-800."},"900":{"v":"#312e81","t":"color","s":"css-var --sl-color-indigo-900 (light)","d":"Declared --sl-color-indigo-900."},"950":{"v":"#242154","t":"color","s":"css-var --sl-color-indigo-950 (light)","d":"Declared --sl-color-indigo-950."}},"violet":{"50":{"v":"#f5f3ff","t":"color","s":"css-var --sl-color-violet-50 (light)","d":"Declared --sl-color-violet-50."},"100":{"v":"#ede9fe","t":"color","s":"css-var --sl-color-violet-100 (light)","d":"Declared --sl-color-violet-100."},"200":{"v":"#ddd6fe","t":"color","s":"css-var --sl-color-violet-200 (light)","d":"Declared --sl-color-violet-200."},"300":{"v":"#c4b5fd","t":"color","s":"css-var --sl-color-violet-300 (light)","d":"Declared --sl-color-violet-300."},"400":{"v":"#a78bfa","t":"color","s":"css-var --sl-color-violet-400 (light)","d":"Declared --sl-color-violet-400."},"500":{"v":"#8b5cf6","t":"color","s":"css-var --sl-color-violet-500 (light)","d":"Declared --sl-color-violet-500."},"600":{"v":"#7c3aed","t":"color","s":"css-var --sl-color-violet-600 (light)","d":"Declared --sl-color-violet-600."},"700":{"v":"#6d28d9","t":"color","s":"css-var --sl-color-violet-700 (light)","d":"Declared --sl-color-violet-700."},"800":{"v":"#5b21b6","t":"color","s":"css-var --sl-color-violet-800 (light)","d":"Declared --sl-color-violet-800."},"900":{"v":"#4c1d95","t":"color","s":"css-var --sl-color-violet-900 (light)","d":"Declared --sl-color-violet-900."},"950":{"v":"#311558","t":"color","s":"css-var --sl-color-violet-950 (light)","d":"Declared --sl-color-violet-950."}},"purple":{"50":{"v":"#faf5ff","t":"color","s":"css-var --sl-color-purple-50 (light)","d":"Declared --sl-color-purple-50."},"100":{"v":"#f3e8ff","t":"color","s":"css-var --sl-color-purple-100 (light)","d":"Declared --sl-color-purple-100."},"200":{"v":"#e9d5ff","t":"color","s":"css-var --sl-color-purple-200 (light)","d":"Declared --sl-color-purple-200."},"300":{"v":"#d8b4fe","t":"color","s":"css-var --sl-color-purple-300 (light)","d":"Declared --sl-color-purple-300."},"400":{"v":"#c084fc","t":"color","s":"css-var --sl-color-purple-400 (light)","d":"Declared --sl-color-purple-400."},"500":{"v":"#a855f7","t":"color","s":"css-var --sl-color-purple-500 (light)","d":"Declared --sl-color-purple-500."},"600":{"v":"#9333ea","t":"color","s":"css-var --sl-color-purple-600 (light)","d":"Declared --sl-color-purple-600."},"700":{"v":"#7e22ce","t":"color","s":"css-var --sl-color-purple-700 (light)","d":"Declared --sl-color-purple-700."},"800":{"v":"#6b21a8","t":"color","s":"css-var --sl-color-purple-800 (light)","d":"Declared --sl-color-purple-800."},"900":{"v":"#581c87","t":"color","s":"css-var --sl-color-purple-900 (light)","d":"Declared --sl-color-purple-900."},"950":{"v":"#2f1143","t":"color","s":"css-var --sl-color-purple-950 (light)","d":"Declared --sl-color-purple-950."}},"fuchsia":{"50":{"v":"#fdf4ff","t":"color","s":"css-var --sl-color-fuchsia-50 (light)","d":"Declared --sl-color-fuchsia-50."},"100":{"v":"#fae8ff","t":"color","s":"css-var --sl-color-fuchsia-100 (light)","d":"Declared --sl-color-fuchsia-100."},"200":{"v":"#f5d0fe","t":"color","s":"css-var --sl-color-fuchsia-200 (light)","d":"Declared --sl-color-fuchsia-200."},"300":{"v":"#f0abfc","t":"color","s":"css-var --sl-color-fuchsia-300 (light)","d":"Declared --sl-color-fuchsia-300."},"400":{"v":"#e879f9","t":"color","s":"css-var --sl-color-fuchsia-400 (light)","d":"Declared --sl-color-fuchsia-400."},"500":{"v":"#d946ef","t":"color","s":"css-var --sl-color-fuchsia-500 (light)","d":"Declared --sl-color-fuchsia-500."},"600":{"v":"#c026d3","t":"color","s":"css-var --sl-color-fuchsia-600 (light)","d":"Declared --sl-color-fuchsia-600."},"700":{"v":"#a21caf","t":"color","s":"css-var --sl-color-fuchsia-700 (light)","d":"Declared --sl-color-fuchsia-700."},"800":{"v":"#86198f","t":"color","s":"css-var --sl-color-fuchsia-800 (light)","d":"Declared --sl-color-fuchsia-800."},"900":{"v":"#701a75","t":"color","s":"css-var --sl-color-fuchsia-900 (light)","d":"Declared --sl-color-fuchsia-900."},"950":{"v":"#38103a","t":"color","s":"css-var --sl-color-fuchsia-950 (light)","d":"Declared --sl-color-fuchsia-950."}},"pink":{"50":{"v":"#fdf2f8","t":"color","s":"css-var --sl-color-pink-50 (light)","d":"Declared --sl-color-pink-50."},"100":{"v":"#fce7f3","t":"color","s":"css-var --sl-color-pink-100 (light)","d":"Declared --sl-color-pink-100."},"200":{"v":"#fbcfe8","t":"color","s":"css-var --sl-color-pink-200 (light)","d":"Declared --sl-color-pink-200."},"300":{"v":"#f9a8d4","t":"color","s":"css-var --sl-color-pink-300 (light)","d":"Declared --sl-color-pink-300."},"400":{"v":"#f472b6","t":"color","s":"css-var --sl-color-pink-400 (light)","d":"Declared --sl-color-pink-400."},"500":{"v":"#ec4899","t":"color","s":"css-var --sl-color-pink-500 (light)","d":"Declared --sl-color-pink-500."},"600":{"v":"#db2777","t":"color","s":"css-var --sl-color-pink-600 (light)","d":"Declared --sl-color-pink-600."},"700":{"v":"#be185d","t":"color","s":"css-var --sl-color-pink-700 (light)","d":"Declared --sl-color-pink-700."},"800":{"v":"#9d174d","t":"color","s":"css-var --sl-color-pink-800 (light)","d":"Declared --sl-color-pink-800."},"900":{"v":"#831843","t":"color","s":"css-var --sl-color-pink-900 (light)","d":"Declared --sl-color-pink-900."},"950":{"v":"#430e23","t":"color","s":"css-var --sl-color-pink-950 (light)","d":"Declared --sl-color-pink-950."}},"rose":{"50":{"v":"#fff1f2","t":"color","s":"css-var --sl-color-rose-50 (light)","d":"Declared --sl-color-rose-50."},"100":{"v":"#ffe4e6","t":"color","s":"css-var --sl-color-rose-100 (light)","d":"Declared --sl-color-rose-100."},"200":{"v":"#fecdd3","t":"color","s":"css-var --sl-color-rose-200 (light)","d":"Declared --sl-color-rose-200."},"300":{"v":"#fda4af","t":"color","s":"css-var --sl-color-rose-300 (light)","d":"Declared --sl-color-rose-300."},"400":{"v":"#fb7185","t":"color","s":"css-var --sl-color-rose-400 (light)","d":"Declared --sl-color-rose-400."},"500":{"v":"#f43f5e","t":"color","s":"css-var --sl-color-rose-500 (light)","d":"Declared --sl-color-rose-500."},"600":{"v":"#e11d48","t":"color","s":"css-var --sl-color-rose-600 (light)","d":"Declared --sl-color-rose-600."},"700":{"v":"#be123c","t":"color","s":"css-var --sl-color-rose-700 (light)","d":"Declared --sl-color-rose-700."},"800":{"v":"#9f1239","t":"color","s":"css-var --sl-color-rose-800 (light)","d":"Declared --sl-color-rose-800."},"900":{"v":"#881337","t":"color","s":"css-var --sl-color-rose-900 (light)","d":"Declared --sl-color-rose-900."},"950":{"v":"#4a0d20","t":"color","s":"css-var --sl-color-rose-950 (light)","d":"Declared --sl-color-rose-950."}}},"status":{"danger":{"50":{"v":"#fef2f2","t":"color","s":"css-var --sl-color-danger-50 (light)","d":"Declared --sl-color-danger-50 — a ramp step, never painted signed out."},"100":{"v":"#fee2e2","t":"color","s":"css-var --sl-color-danger-100 (light)","d":"Declared --sl-color-danger-100 — a ramp step, never painted signed out."},"200":{"v":"#fecaca","t":"color","s":"css-var --sl-color-danger-200 (light)","d":"Declared --sl-color-danger-200 — a ramp step, never painted signed out."},"300":{"v":"#fca5a5","t":"color","s":"css-var --sl-color-danger-300 (light)","d":"Declared --sl-color-danger-300 — a ramp step, never painted signed out."},"400":{"v":"#f87171","t":"color","s":"css-var --sl-color-danger-400 (light)","d":"Declared --sl-color-danger-400 — a ramp step, never painted signed out."},"500":{"v":"#ef4444","t":"color","s":"css-var --sl-color-danger-500 (light)","d":"Declared --sl-color-danger-500 — a ramp step, never painted signed out."},"600":{"v":"#dc2626","t":"color","s":"css-var --sl-color-danger-600 (light)","d":"Declared --sl-color-danger-600 — a ramp step, never painted signed out."},"700":{"v":"#b91c1c","t":"color","s":"css-var --sl-color-danger-700 (light)","d":"Declared --sl-color-danger-700 — a ramp step, never painted signed out."}},"success":{"50":{"v":"#f0fdf4","t":"color","s":"css-var --sl-color-success-50 (light)","d":"Declared --sl-color-success-50 — a ramp step, never painted signed out."},"100":{"v":"#dcfce7","t":"color","s":"css-var --sl-color-success-100 (light)","d":"Declared --sl-color-success-100 — a ramp step, never painted signed out."},"200":{"v":"#bbf7d0","t":"color","s":"css-var --sl-color-success-200 (light)","d":"Declared --sl-color-success-200 — a ramp step, never painted signed out."},"300":{"v":"#86efac","t":"color","s":"css-var --sl-color-success-300 (light)","d":"Declared --sl-color-success-300 — a ramp step, never painted signed out."},"400":{"v":"#4ade80","t":"color","s":"css-var --sl-color-success-400 (light)","d":"Declared --sl-color-success-400 — a ramp step, never painted signed out."},"500":{"v":"#22c55e","t":"color","s":"css-var --sl-color-success-500 (light)","d":"Declared --sl-color-success-500 — a ramp step, never painted signed out."},"600":{"v":"#16a34a","t":"color","s":"css-var --sl-color-success-600 (light)","d":"Declared --sl-color-success-600 — a ramp step, never painted signed out."},"700":{"v":"#15803d","t":"color","s":"css-var --sl-color-success-700 (light)","d":"Declared --sl-color-success-700 — a ramp step, never painted signed out."}},"warning":{"50":{"v":"#fffbeb","t":"color","s":"css-var --sl-color-warning-50 (light)","d":"Declared --sl-color-warning-50 — a ramp step, never painted signed out."},"100":{"v":"#fef3c7","t":"color","s":"css-var --sl-color-warning-100 (light)","d":"Declared --sl-color-warning-100 — a ramp step, never painted signed out."},"200":{"v":"#fde68a","t":"color","s":"css-var --sl-color-warning-200 (light)","d":"Declared --sl-color-warning-200 — a ramp step, never painted signed out."},"300":{"v":"#fcd34d","t":"color","s":"css-var --sl-color-warning-300 (light)","d":"Declared --sl-color-warning-300 — a ramp step, never painted signed out."},"400":{"v":"#fbbf24","t":"color","s":"css-var --sl-color-warning-400 (light)","d":"Declared --sl-color-warning-400 — a ramp step, never painted signed out."},"500":{"v":"#f59e0b","t":"color","s":"css-var --sl-color-warning-500 (light)","d":"Declared --sl-color-warning-500 — a ramp step, never painted signed out."},"600":{"v":"#d97706","t":"color","s":"css-var --sl-color-warning-600 (light)","d":"Declared --sl-color-warning-600 — a ramp step, never painted signed out."},"700":{"v":"#b45309","t":"color","s":"css-var --sl-color-warning-700 (light)","d":"Declared --sl-color-warning-700 — a ramp step, never painted signed out."}}},"measured":{"ink":{"v":"#0d0c22","t":"color","s":"computed color of hero-title default (raw/components-computed.json)","d":"The #0d0c22 near-black product ink (headings, body)."},"ink-deep":{"v":"#0d0c22","t":"color","s":"computed bg of login-btn default (raw/components-computed.json)","d":"The #0d0c22 deep ink the dark pills fill."},"ink-on-dark":{"v":"#ffffff","t":"color","s":"computed color of login-btn default (raw/components-computed.json)","d":"White text on the dark pills."},"muted":{"v":"#3a3546","t":"color","s":"computed color of designer-meta default (raw/components-computed.json)","d":"The #3a3546 muted meta tone."},"muted-2":{"v":"#6e6d7a","t":"color","s":"computed color of profile-stat default (raw/components-computed.json)","d":"The #6e6d7a lighter muted stat tone."},"pink":{"v":"#ea4c89","t":"color","s":"computed bg of search-go default (raw/components-computed.json)","d":"The #ea4c89 Dribbble pink: search Go, accents, PRO badges."},"pink-hover":{"v":"#ec5e95","t":"color","s":"computed bg of search-go hover (raw/components-computed.json)","d":"The hover tint on the pink action."},"promo-surface":{"v":"rgba(244, 215, 243, 0.3)","t":"color","s":"computed bg of promo-banner default (raw/components-computed.json)","d":"The rgba(244, 215, 243, 0.3) promo-strip fill."},"chip-surface":{"v":"#ffffff","t":"color","s":"computed bg of skill-chip default (raw/components-computed.json)","d":"The light skill-chip fill."},"chip-dark":{"v":"#3a3546","t":"color","s":"computed bg of skill-chip-dark default (raw/components-computed.json)","d":"The dark certified-chip fill (Webflow Expert)."},"chip-dark-text":{"v":"#ffffff","t":"color","s":"computed color of skill-chip-dark default (raw/components-computed.json)","d":"Text on the dark certified chip."},"field-bg":{"v":"#ffffff","t":"color","s":"computed bg of email-field default (raw/components-computed.json)","d":"The auth field fill."},"field-border":{"v":"rgba(219, 218, 222, 0.9)","t":"color","s":"computed borderTopColor of email-field default (raw/components-computed.json)","d":"The auth field border tone."},"pill-border":{"v":"#0d0c22","t":"color","s":"computed borderTopColor of login-btn default (raw/components-computed.json)","d":"The dark pill's painted 1px border (same ink as its fill)."},"pink-text":{"v":"#ea4c89","t":"color","s":"computed color of the text node inside hero-accent default (raw/components-computed.json)","d":"The pink the rotating hero word paints."},"link":{"v":"#060318","t":"color","s":"computed color of menu-link default (raw/components-computed.json)","d":"The header dropdown link ink."},"footer-bg":{"v":"#ffffff","t":"color","s":"computed bg of footer default (raw/components-computed.json)","d":"The footer field, if painted."},"footer-text":{"v":"#0d0c22","t":"color","s":"computed color of footer-link default (raw/components-computed.json)","d":"The footer link tone."},"page":{"v":"#ffffff","t":"color","s":"computed page-bg of promo-banner default (raw/components-computed.json)","d":"The white page field."},"surface":{"v":"#ffffff","t":"color","s":"computed paint of designer-card default (raw/components-computed.json)","d":"Card white."},"border":{"v":"rgba(219, 218, 222, 0.9)","t":"color","s":"computed borderTopColor of email-field default (raw/components-computed.json)","d":"The field hairline rgba(219, 218, 222, 0.9)."}}},"radius":{"small":{"v":"3px","t":"dimension","s":"css-var --sl-border-radius-small (light)","d":"Declared --sl-border-radius-small (2px)."},"medium":{"v":"4px","t":"dimension","s":"css-var --sl-border-radius-medium (light)","d":"Declared --sl-border-radius-medium (4px)."},"large":{"v":"8px","t":"dimension","s":"css-var --sl-border-radius-large (light)","d":"Declared --sl-border-radius-large (8px)."},"x-large":{"v":"16px","t":"dimension","s":"css-var --sl-border-radius-x-large (light)","d":"Declared --sl-border-radius-x-large (16px)."},"circle":{"v":"50%","t":"other","s":"css-var --sl-border-radius-circle (light)","d":"Declared --sl-border-radius-circle (50%): a percentage radius — half the element's own size, not a fixed length."},"pill":{"v":"9999px","t":"dimension","s":"css-var --sl-border-radius-pill (light)","d":"Declared --sl-border-radius-pill."},"card":{"v":"8px","t":"dimension","s":"computed borderRadius of div.shot-thumbnail-overlay inside shot-card default (raw/components-computed.json)","d":"The 8px shot-card radius."},"field":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of email-field default (raw/components-computed.json)","d":"The input radius."},"search":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of home-search default (raw/components-computed.json)","d":"The big search field radius (12px)."},"button-pill":{"v":"10000000px","t":"dimension","s":"computed borderTopLeftRadius of login-btn default (raw/components-computed.json)","d":"The pill radius on header/dark buttons: a 10000000px cap, so the ends are fully round."},"chip":{"v":"10000000px","t":"dimension","s":"computed borderTopLeftRadius of tag-chip default (raw/components-computed.json)","d":"The tag-chip radius."},"search-go":{"v":"50%","t":"other","s":"computed borderTopLeftRadius of search-go default (raw/components-computed.json)","d":"The pink Go circle (50%). A percentage radius — relative to the element's own size."}},"duration":{"x-slow":{"v":"1000ms","t":"duration","s":"css-var --sl-transition-x-slow (light)","d":"Declared --sl-transition-x-slow."},"slow":{"v":"500ms","t":"duration","s":"css-var --sl-transition-slow (light)","d":"Declared --sl-transition-slow."},"medium":{"v":"250ms","t":"duration","s":"css-var --sl-transition-medium (light)","d":"Declared --sl-transition-medium."},"fast":{"v":"150ms","t":"duration","s":"css-var --sl-transition-fast (light)","d":"Declared --sl-transition-fast."},"x-fast":{"v":"50ms","t":"duration","s":"css-var --sl-transition-x-fast (light)","d":"Declared --sl-transition-x-fast."}},"spacing":{"3x-small":{"v":"2px","t":"dimension","s":"css-var --sl-spacing-3x-small (light)","d":"Declared --sl-spacing-3x-small."},"2x-small":{"v":"4px","t":"dimension","s":"css-var --sl-spacing-2x-small (light)","d":"Declared --sl-spacing-2x-small."},"x-small":{"v":"8px","t":"dimension","s":"css-var --sl-spacing-x-small (light)","d":"Declared --sl-spacing-x-small."},"small":{"v":"12px","t":"dimension","s":"css-var --sl-spacing-small (light)","d":"Declared --sl-spacing-small."},"medium":{"v":"16px","t":"dimension","s":"css-var --sl-spacing-medium (light)","d":"Declared --sl-spacing-medium."},"large":{"v":"20px","t":"dimension","s":"css-var --sl-spacing-large (light)","d":"Declared --sl-spacing-large."},"x-large":{"v":"28px","t":"dimension","s":"css-var --sl-spacing-x-large (light)","d":"Declared --sl-spacing-x-large."},"2x-large":{"v":"36px","t":"dimension","s":"css-var --sl-spacing-2x-large (light)","d":"Declared --sl-spacing-2x-large."},"3x-large":{"v":"48px","t":"dimension","s":"css-var --sl-spacing-3x-large (light)","d":"Declared --sl-spacing-3x-large."},"4x-large":{"v":"72px","t":"dimension","s":"css-var --sl-spacing-4x-large (light)","d":"Declared --sl-spacing-4x-large."}},"border":{"width":{"input":{"v":"1px","t":"dimension","s":"css-var --sl-input-border-width (light)","d":"Declared --sl-input-border-width."},"panel":{"v":"1px","t":"dimension","s":"css-var --sl-panel-border-width (light)","d":"Declared --sl-panel-border-width."}}},"zIndex":{"drawer":{"v":700,"t":"number","s":"css-var --sl-z-index-drawer (light)","d":"Declared --sl-z-index-drawer."},"dialog":{"v":10000,"t":"number","s":"css-var --sl-z-index-dialog (light)","d":"Declared --sl-z-index-dialog."},"dropdown":{"v":1000,"t":"number","s":"css-var --zi-dropdown (light)","d":"Declared --zi-dropdown (1000)."},"toast":{"v":950,"t":"number","s":"css-var --sl-z-index-toast (light)","d":"Declared --sl-z-index-toast."},"tooltip":{"v":1000,"t":"number","s":"css-var --sl-z-index-tooltip (light)","d":"Declared --sl-z-index-tooltip."},"header":{"v":9996,"t":"number","s":"css-var --zi-header (light)","d":"Declared --zi-header (9996): the site nav layer."},"filter":{"v":1000,"t":"number","s":"css-var --zi-filter (light)","d":"Declared --zi-filter (1000)."},"jobs-bg-effect":{"v":10,"t":"number","s":"css-var --zi-jobs-bg-effect (light)","d":"Declared --zi-jobs-bg-effect (10)."},"playbook-head":{"v":2,"t":"number","s":"css-var --zi-playbook-head (light)","d":"Declared --zi-playbook-head (2)."}},"dribbble":{"button":{"height":{"v":"40px","t":"dimension","s":"css-var --btn-height (light)","d":"Declared --btn-height (40px): the standard button height."},"font-size":{"v":"13px","t":"dimension","s":"css-var --btn-font-size (light)","d":"Declared --btn-font-size (13px)."},"padding":{"v":"20px","t":"dimension","s":"css-var --btn-padding (light)","d":"Declared --btn-padding (20px horizontal)."},"icon-size":{"v":"16px","t":"dimension","s":"css-var --btn-icon-size (light)","d":"Declared --btn-icon-size (16px)."},"bg":{"v":"#0d0c22","t":"color","s":"css-var --btn-bg-color (light)","d":"Declared --btn-bg-color (#0d0c22): the dark pill fill."},"bg-hover":{"v":"#3d3d4e","t":"color","s":"css-var --btn-bg-color-hover (light)","d":"Declared --btn-bg-color-hover (#3d3d4e)."},"border":{"v":"#0d0c22","t":"color","s":"css-var --btn-border-color (light)","d":"Declared --btn-border-color (the fill colour)."},"border-hover":{"v":"#3d3d4e","t":"color","s":"css-var --btn-border-color-hover (light)","d":"Declared --btn-border-color-hover."},"text":{"v":"#ffffff","t":"color","s":"css-var --btn-text-color (light)","d":"Declared --btn-text-color (white)."},"text-hover":{"v":"#ffffff","t":"color","s":"css-var --btn-text-color-hover (light)","d":"Declared --btn-text-color-hover (white)."}},"nav":{"height":{"v":"92px","t":"dimension","s":"css-var --site-nav-height (light)","d":"Declared --site-nav-height (92px with the announcement strip; 58px bare)."},"gutter":{"v":"40px","t":"dimension","s":"css-var --site-nav-gutter (light)","d":"Declared --site-nav-gutter (40px)."},"search-height":{"v":"56px","t":"dimension","s":"css-var --site-nav-search-height (light)","d":"Declared --site-nav-search-height (56px)."},"link-hover":{"v":"#7b7194","t":"color","s":"css-var --site-nav-link-hover-color (light)","d":"Declared --site-nav-link-hover-color (#7b7194)."}},"header":{"total-height":{"v":"92px","t":"dimension","s":"css-var --total-header-height (light)","d":"Declared --total-header-height (nav + flash + announcement = 92px)."}},"banner":{"gutter":{"v":"72px","t":"dimension","s":"css-var --banner-gutter (light)","d":"Declared --banner-gutter (72px at desktop)."}},"input":{"padding-left":{"v":"12px","t":"dimension","s":"css-var --input-padding-left (light)","d":"Declared --input-padding-left (12px)."},"padding-right":{"v":"12px","t":"dimension","s":"css-var --input-padding-right (light)","d":"Declared --input-padding-right (12px)."}},"clearable-input":{"size":{"v":"16px","t":"dimension","s":"css-var --clearable-input-size (light)","d":"Declared --clearable-input-size (16px)."},"padding":{"v":"8px","t":"dimension","s":"css-var --clearable-input-padding (light)","d":"Declared --clearable-input-padding (8px)."}},"attachment":{"max-height":{"v":"252px","t":"dimension","s":"css-var --attachment-max-height (light)","d":"Declared --attachment-max-height (252px)."},"min-height":{"v":"100px","t":"dimension","s":"css-var --attachment-min-height (light)","d":"Declared --attachment-min-height (100px)."}}},"layout":{"container-max-home":{"v":"1650px","t":"dimension","s":"declared --container-max-width on .home-header (raw/css-vars.json)","d":"Declared --container-max-width on .home-header (1650px)."},"container-max-designers":{"v":"1622px","t":"dimension","s":"declared --container-max-width on body#designers (raw/css-vars.json)","d":"Declared --container-max-width on the designers directory body (1622px)."},"container-gutter":{"v":"72px","t":"dimension","s":"declared --container-gutter on .container2--large-fill (raw/css-vars.json)","d":"Declared --container-gutter at ≥1200px (72px)."}},"shadow":{"x-small":{"v":[{"color":"rgba(113, 113, 122, 0.06)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px"}],"t":"shadow","s":"css-var --sl-shadow-x-small (light)","d":"Declared --sl-shadow-x-small."},"small":{"v":[{"color":"rgba(113, 113, 122, 0.12)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px"}],"t":"shadow","s":"css-var --sl-shadow-small (light)","d":"Declared --sl-shadow-small."},"medium":{"v":[{"color":"rgba(113, 113, 122, 0.12)","offsetX":"0px","offsetY":"2px","blur":"4px","spread":"0px"}],"t":"shadow","s":"css-var --sl-shadow-medium (light)","d":"Declared --sl-shadow-medium."},"large":{"v":[{"color":"rgba(113, 113, 122, 0.12)","offsetX":"0px","offsetY":"2px","blur":"8px","spread":"0px"}],"t":"shadow","s":"css-var --sl-shadow-large (light)","d":"Declared --sl-shadow-large."},"x-large":{"v":[{"color":"rgba(113, 113, 122, 0.12)","offsetX":"0px","offsetY":"4px","blur":"16px","spread":"0px"}],"t":"shadow","s":"css-var --sl-shadow-x-large (light)","d":"Declared --sl-shadow-x-large."},"card":{"v":[{"color":"rgba(18, 22, 25, 0.02)","offsetX":"0px","offsetY":"1px","blur":"10px","spread":"0px"}],"t":"shadow","s":"computed boxShadow of designer-card default (raw/components-computed.json)","d":"The designer-card elevation."},"dropdown":{"v":[{"color":"rgba(27, 32, 50, 0.1)","offsetX":"0px","offsetY":"15px","blur":"50px","spread":"0px"}],"t":"shadow","s":"computed boxShadow of nav-dropdown default (raw/components-computed.json)","d":"The header dropdown elevation."}},"focusRing":{"color":{"v":"#e44a85","t":"color","s":"css-var --sl-focus-ring-color (light)","d":"Declared --sl-focus-ring-color."},"width":{"v":"3px","t":"dimension","s":"css-var --sl-focus-ring-width (light)","d":"Declared --sl-focus-ring-width."},"offset":{"v":"1px","t":"dimension","s":"css-var --sl-focus-ring-offset (light)","d":"Declared --sl-focus-ring-offset."},"style":{"v":"solid","t":"fontFamily","s":"css-var --sl-focus-ring-style (light)","d":"Declared --sl-focus-ring-style (the 'solid' keyword; typed fontFamily only to carry a plain string)."},"measured":{"color":{"v":"#f3afe4","t":"color","s":"computed outline of login-btn focus-visible (raw/components-computed.json)","d":"The 2px solid #f3afe4 keyboard-focus outline."},"width":{"v":"2px","t":"dimension","s":"computed outlineWidth of login-btn focus-visible (raw/components-computed.json)","d":"The focus outline width."}}},"measured":{"dropdown-transition":{"v":"200ms","t":"duration","s":"computed transition of nav-dropdown default (raw/components-computed.json)","d":"The Explore dropdown open transition. (opacity, visibility, transform, -webkit-transform)"}}},"light":{"color":{"page":{"v":"{color.measured.page}","t":"color","s":"measured role off the live page (raw/components-computed.json)","d":"The white page field."},"surface":{"v":"{color.measured.surface}","t":"color","s":"measured role off the live page (raw/components-computed.json)","d":"Card and panel white."},"surface-alt":{"v":"{color.measured.promo-surface}","t":"color","s":"measured role off the live page (raw/components-computed.json)","d":"The promo/chip rgba(244, 215, 243, 0.3) tint."},"text":{"v":"{color.measured.ink}","t":"color","s":"measured role off the live page (raw/components-computed.json)","d":"The #0d0c22 product ink."},"muted":{"v":"{color.measured.muted}","t":"color","s":"measured role off the live page (raw/components-computed.json)","d":"The #3a3546 muted text."},"accent":{"v":"{color.measured.pink}","t":"color","s":"measured role off the live page (raw/components-computed.json)","d":"The #ea4c89 Dribbble pink."},"accent-hover":{"v":"{color.measured.pink-hover}","t":"color","s":"measured role off the live page (raw/components-computed.json)","d":"The pink hover tint."},"on-accent":{"v":"{color.measured.ink-on-dark}","t":"color","s":"measured role off the live page (raw/components-computed.json)","d":"White on pink and on the dark pills."},"border":{"v":"{color.measured.border}","t":"color","s":"measured role off the live page (raw/components-computed.json)","d":"The rgba(219, 218, 222, 0.9) field/card hairline."},"link":{"v":"{color.measured.link}","t":"color","s":"measured role off the live page (raw/components-computed.json)","d":"The link ink (same near-black, underlined on hover)."}},"component":{"header":{"height":{"v":"92px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The desktop header height."},"height-mobile":{"v":"58px","t":"dimension","s":"computed height of m-header default (raw/components-computed.json)","d":"The mobile header height."}},"logo":{"width":{"v":"89px","t":"dimension","s":"computed width of logo default (raw/components-computed.json)","d":"The script wordmark width."}},"button":{"height":{"v":"48px","t":"dimension","s":"computed height of login-btn default (raw/components-computed.json)","d":"The dark pill button height."},"radius":{"v":"10000000px","t":"dimension","s":"computed borderTopLeftRadius of login-btn default (raw/components-computed.json)","d":"The pill radius."}},"nav-link":{"height":{"v":"30px","t":"dimension","s":"computed height of nav-link default (raw/components-computed.json)","d":"Nav item height."}},"dropdown":{"width":{"v":"230px","t":"dimension","s":"computed width of nav-dropdown default (raw/components-computed.json)","d":"The Explore dropdown panel width."}},"hero-title":{"width":{"v":"618px","t":"dimension","s":"computed width of hero-title default (raw/components-computed.json)","d":"The hero heading measure."}},"hero-cta":{"height":{"v":"49px","t":"dimension","s":"computed height of hero-cta default (raw/components-computed.json)","d":"The Start-Your-Project-Brief pill height."}},"search":{"height":{"v":"54px","t":"dimension","s":"computed height of home-search default (raw/components-computed.json)","d":"The big search field height."},"radius":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of home-search default (raw/components-computed.json)","d":"The big search field radius."}},"search-go":{"size":{"v":"40px","t":"dimension","s":"computed height of search-go default (raw/components-computed.json)","d":"The 40px pink Go circle."}},"chip":{"height":{"v":"31px","t":"dimension","s":"computed height of tag-chip default (raw/components-computed.json)","d":"The tag-chip height."}},"shot-card":{"width":{"v":"297px","t":"dimension","s":"computed width of shot-card default (raw/components-computed.json)","d":"The shot-card width in the feed."}},"wall-cta":{"height":{"v":"40px","t":"dimension","s":"computed height of wall-cta default (raw/components-computed.json)","d":"The Sign-up-to-continue pill height."}},"designer-card":{"width":{"v":"1238px","t":"dimension","s":"computed width of designer-card default (raw/components-computed.json)","d":"The directory designer-card width."}},"designer-cta":{"height":{"v":"40px","t":"dimension","s":"computed height of designer-cta default (raw/components-computed.json)","d":"The Get-in-touch pill height."}},"skill-chip":{"height":{"v":"31px","t":"dimension","s":"computed height of skill-chip default (raw/components-computed.json)","d":"The skill-chip height."}},"auth-card":{"width":{"v":"1024px","t":"dimension","s":"computed width of login-card default (raw/components-computed.json)","d":"The login card width."}},"field":{"height":{"v":"47px","t":"dimension","s":"computed height of email-field default (raw/components-computed.json)","d":"Auth input height."},"radius":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of email-field default (raw/components-computed.json)","d":"Auth input radius."}},"continue":{"height":{"v":"48px","t":"dimension","s":"computed height of continue-btn default (raw/components-computed.json)","d":"The Continue button height."}},"footer":{"height":{"v":"508px","t":"dimension","s":"computed height of footer default (raw/components-computed.json)","d":"The footer block height."}}}},"dark":{"color":{"surface":{"v":"{color.measured.ink-deep}","t":"color","s":"role alias over the palette","d":"The dark pill fill (#0d0c22)."},"text":{"v":"{color.measured.ink-on-dark}","t":"color","s":"role alias over the palette","d":"Text on the ink pills."},"surface-chip":{"v":"{color.measured.chip-dark}","t":"color","s":"role alias over the palette","d":"The dark certified-chip fill."}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const lightRoles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (lightRoles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of lightRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // The dark set's custom properties only resolve inside a .dark scope:
+  // swatch dots must live under it or they paint the light values/unset.
+  const darkRoles = flat(TOK.dark || {}, '').filter(([n, t]) => t.t === 'color');
+  if (darkRoles.length) {
+    h += `<div class="pal-h">dark roles (the ink surfaces)</div><div class="pal dark">`;
+    for (const [n, t] of darkRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const grp of ['duration', 'focusRing', 'zIndex', 'layout', 'dribbble', 'measured']) {
+    const items = flat(TOK.core[grp] || {}, grp + '.');
+    if (!items.length) continue;
+    m += `<div class="pal-h" style="grid-column:1/-1;margin:14px 0 0">${esc(grp)}</div>`;
+    for (const [n, t] of items) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  }
+  const comp = flat((TOK.light.component || {}), 'component.');
+  if (comp.length) {
+    m += `<div class="pal-h" style="grid-column:1/-1;margin:14px 0 0">component</div>`;
+    for (const [n, t] of comp) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  }
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts" style="letter-spacing:${esc(t.v)}em">${esc(n)} — Dribbble</span><span class="tv">${esc(t.v)}em on font size</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Dribbble</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).face || {}, 'font.face.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

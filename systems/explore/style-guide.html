@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explore style guide</title>
+<meta name="description" content="Explore (explore.family) design tokens and public signed-out components, rendered from tokens.json — values mined from the archived 2023-02-23 build.">
+<style>
+:root {
+  --color-white: #ffffff;
+  --color-paper: #fafafa;
+  --color-grey-950: #262626;
+  --color-grey-900: #2c2c2c;
+  --color-grey-800: #333333;
+  --color-grey-750: #3a3a3a;
+  --color-grey-700: #717171;
+  --color-grey-600: #868686;
+  --color-grey-500: #9d9d9d;
+  --color-grey-450: #b7b7b7;
+  --color-grey-400: #c1c1c1;
+  --color-grey-300: #d0d0d0;
+  --color-grey-200: #e6e6e6;
+  --color-grey-150: #ebebeb;
+  --color-grey-100: #efefef;
+  --color-grey-50: #f8f8f8;
+  --color-accent-DEFAULT: #ffc60a;
+  --color-accent-hover: #ffcc24;
+  --color-danger-DEFAULT: #f13939;
+  --color-danger-hover: #f35151;
+  --color-danger-tint: #fdd6d6;
+  --color-success-DEFAULT: #2bd170;
+  --color-success-tint: #dffdd6;
+  --color-success-border: #d2e5cc;
+  --color-success-ink: #4f8a10;
+  --color-info-DEFAULT: #3198ff;
+  --color-info-dark: #01558d;
+  --color-info-ink: #00529b;
+  --color-info-tint: #add8e6;
+  --color-warning-tint: #fdf4d6;
+  --color-warning-ink: #9f6000;
+  --color-overlay-scrim: rgba(0, 0, 0, 0.04);
+  --color-overlay-modal: rgba(113, 113, 113, 0.95);
+  --color-overlay-header-dim: rgba(113, 113, 113, 0.3);
+  --color-black: #000000;
+  --font-family-sans: UntitledSans;
+  --font-family-sans-medium: UntitledSansMedium;
+  --font-family-display: LabilGrotesk-Medium;
+  --font-family-system: system;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-size-10: 10px;
+  --font-size-12: 12px;
+  --font-size-13: 13px;
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-18: 18px;
+  --font-size-21: 21px;
+  --font-size-24: 24px;
+  --font-size-32: 32px;
+  --font-size-40: 40px;
+  --font-size-41: 41px;
+  --font-lineHeight-tight: 1.025;
+  --font-lineHeight-snug: 1.1875;
+  --font-lineHeight-base: 1.375;
+  --font-lineHeight-loose: 1.5;
+  --font-letterSpacing-none: 0px;
+  --radius-sm: 3px;
+  --radius-card: 7px;
+  --radius-input: 8px;
+  --radius-lg: 10px;
+  --radius-pill: 20px;
+  --radius-button: 50px;
+  --radius-avatar: 34px;
+  --radius-avatar-lg: 150px;
+  --spacing-2: 2px;
+  --spacing-4: 4px;
+  --spacing-5: 5px;
+  --spacing-6: 6px;
+  --spacing-8: 8px;
+  --spacing-10: 10px;
+  --spacing-12: 12px;
+  --spacing-13: 13px;
+  --spacing-15: 15px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-23: 23px;
+  --spacing-24: 24px;
+  --spacing-30: 30px;
+  --spacing-40: 40px;
+  --spacing-50: 50px;
+  --spacing-60: 60px;
+  --spacing-100: 100px;
+  --container-page: 1640px;
+  --container-footer: 990px;
+  --container-form: 424px;
+  --container-legal: 760px;
+  --breakpoint-sm: 650px;
+  --breakpoint-md: 980px;
+  --breakpoint-lg: 1280px;
+  --duration-fast: 200ms;
+  --duration-base: 300ms;
+  --duration-slow: 500ms;
+  --easing-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --easing-out: cubic-bezier(0, 0, 0.58, 1);
+  --zIndex-header: 300;
+  --zIndex-modal: 999;
+  --shadow-none: none;
+  --component-header-height: 60px;
+  --component-header-heightMobile: 56px;
+  --component-header-logoHeight: 31px;
+  --component-button-signupPill-height: 38px;
+  --component-button-signupPill-minWidth: 121px;
+  --component-button-submit-height: 47px;
+  --component-button-submit-formWidth: 424px;
+  --component-button-icon-size: 16px;
+  --component-button-aboutCta-width: 294px;
+  --component-button-aboutCta-height: 47px;
+  --component-field-width: 388px;
+  --component-field-inputHeight: 20px;
+  --component-field-padding: 0px 0px;
+  --component-pill-height: 36px;
+  --component-pill-gap: 10px;
+  --component-post-cardWidth: 476px;
+  --component-post-galleryHeight: 334.5px;
+  --component-post-avatarSize: 28px;
+  --component-post-gridColumns: calc(33.3333% - .5px);
+  --component-mobile-postWidth: 390px;
+  --color-background-page: var(--color-white);
+  --color-background-field: var(--color-grey-500);
+  --color-background-surface: var(--color-grey-100);
+  --color-background-hairline: var(--color-grey-150);
+  --color-text-primary: var(--color-grey-950);
+  --color-text-on-field: var(--color-white);
+  --color-text-secondary: var(--color-grey-700);
+  --color-text-muted: var(--color-grey-500);
+  --color-text-faint: var(--color-grey-400);
+  --color-text-inverse-soft: var(--color-grey-50);
+  --color-action-accent: var(--color-accent-DEFAULT);
+  --color-action-accent-hover: var(--color-accent-hover);
+  --color-action-on-accent: var(--color-grey-950);
+  --color-action-primary: var(--color-grey-950);
+  --color-action-primary-hover: var(--color-grey-800);
+  --color-action-on-primary: var(--color-white);
+  --color-action-neutral: var(--color-grey-100);
+  --color-action-neutral-hover: #e7e7e7;
+  --color-action-danger: var(--color-danger-DEFAULT);
+  --color-action-danger-hover: var(--color-danger-hover);
+  --color-action-outline: var(--color-grey-150);
+  --color-border-hairline: var(--color-grey-150);
+  --color-border-field: var(--color-grey-100);
+  --color-border-strong: var(--color-grey-950);
+  --color-border-on-field: var(--color-grey-450);
+  --color-link: var(--color-grey-950);
+  --sg-sans: "UntitledSans", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "LabilGrotesk-Medium", "UntitledSansMedium", ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-grey-950, #262626); background: #fff; }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.2 var(--sg-serif); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-grey-700, #717171); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-grey-150, #ebebeb); }
+.lead { max-width: 62ch; color: var(--color-grey-950, #262626); opacity: .85; }
+.note { font-size: 13px; color: var(--color-grey-700, #717171); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-grey-700, #717171); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-grey-150, #ebebeb); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-grey-700, #717171); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-grey-700, #717171); }
+/* ---- mocks (reconstructions drawn with the tokens, not captured pixels) ---- */
+.mock { border: 1px solid var(--color-grey-150, #ebebeb); overflow: hidden; background: #fff; }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 60px); padding: 0 22px; font-size: 14px; color: #fff; background: var(--color-grey-500, #9d9d9d); }
+.navbar .wm { font: 500 18px/1 var(--sg-serif); letter-spacing: .02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-submit-height, 47px); padding: 0 22px; font-size: 14px; font-weight: 500; border-radius: var(--radius-card, 7px); border: 1px solid transparent; }
+.btn.yellow { background: var(--color-accent-DEFAULT, #ffc60a); color: var(--color-grey-950, #262626); }
+.btn.dark { background: var(--color-grey-950, #262626); color: #fff; }
+.btn.grey { background: var(--color-grey-100, #efefef); color: var(--color-grey-950, #262626); }
+.btn.small { height: var(--component-button-signupPill-height, 38px); font-size: 14px; border-radius: var(--radius-button, 50px); }
+.hero { background: var(--color-grey-500, #9d9d9d); color: #fff; padding: 48px 40px; }
+.hero .hi { font: 400 16px/1.5 var(--sg-sans); color: #e0e0e0; }
+.hero h3 { font: 500 var(--font-size-40, 40px)/var(--font-lineHeight-tight, 1.02) var(--sg-serif); margin: 12px 0 20px; max-width: 20ch; }
+.tag { display: inline-flex; align-items: center; padding: 11px 23px; border: 1px solid var(--color-grey-450, #b7b7b7); border-radius: var(--radius-card, 7px); color: #fff; font: 500 14px/1 var(--sg-sans); margin: 0 8px 8px 0; }
+.feed { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 30px; padding: 24px; }
+.card .img { aspect-ratio: 4/3; border-radius: var(--radius-card, 7px); background: var(--color-grey-500, #9d9d9d); display: flex; align-items: flex-end; padding: 12px; }
+.card .who { display: flex; align-items: center; gap: 12px; margin: 14px 0 4px; font: 500 14px/1 var(--sg-sans); }
+.card .av { width: var(--component-post-avatarSize, 28px); height: var(--component-post-avatarSize, 28px); border-radius: 50%; background: var(--color-grey-500, #9d9d9d); }
+.card .pro { background: var(--color-accent-DEFAULT, #ffc60a); border-radius: 20px; font: 700 10px/1 var(--sg-sans); padding: 4px 7px; }
+.card .age { color: var(--color-grey-500, #9d9d9d); font-weight: 400; }
+.card .ttl { font: 500 16px/1.4 var(--sg-sans); color: var(--color-grey-950, #262626); }
+.pill { display: inline-flex; padding: 6px 13px 7px; border: 1px solid var(--color-grey-100, #efefef); border-radius: var(--radius-pill, 20px); font-size: 14px; margin: 0 5px 9px; }
+.pill.on { border-color: var(--color-grey-950, #262626); }
+.field { border: 1px solid var(--color-grey-150, #ebebeb); border-radius: var(--radius-input, 8px); padding: 13px 17px; font-size: 16px; color: var(--color-grey-400, #c1c1c1); margin: 0 0 10px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-grey-150, #ebebeb); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-grey-150, #ebebeb); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-grey-700, #717171); font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Explore style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and size below is a token, not a restated number. The boxed mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Explore, measured</h2>
+  <p class="lead">explore.family was an ad-free social platform for creatives — a white feed under a signature mid-grey field (<code>#9d9d9d</code>: fixed header, hero, media placeholders; the auth welcome panel is the darker <code>#717171</code>), one yellow accent (<code>#ffc60a</code>: Sign up free, the about-page CTA, the PRO badge), dark 7px-cornered submits (<code>#262626</code>), UntitledSans for UI with UntitledSansMedium post titles and LabilGrotesk-Medium display. Every value is a hardcoded literal mined from the compiled stylesheet or a computed-style measurement — the site declared no design-token layer.</p>
+  <p class="note">Read on 2026-11-14 from the archived 2023-02-23 build (the product closed 2023-04-19 and the domain later lapsed); every page was replayed locally from an Internet Archive mirror, signed out, in headless Chromium. Auth forms were measured, never submitted. UntitledSans/LabilGrotesk are proprietary served faces: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The fixed 60px grey header pairs the E wordmark with "Sign in" and the yellow "Sign up free" pill; the hero carries the positioning sentence in LabilGrotesk-Medium over the same grey field with hairline feature tags.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">EXPLORE</span><span class="sp"></span><span>Sign in</span><span class="btn small yellow">Sign up free</span></div>
+    <div class="hero"><span class="hi">Welcome</span><h3>Explore is an emotionally intelligent ad-free social media platform for creatives</h3><span class="tag">Free</span><span class="tag">For creatives</span><span class="tag">No ads</span><span class="tag">All features</span></div>
+  </div>
+
+  <h2 class="sh">The feed</h2>
+  <p class="lead">Discover is a 3-up card grid on white: rounded media tile, author row (28px avatar, name, yellow PRO badge, age), the UntitledSansMedium title and the icon action row. Category filters are 20px pills — hairline when idle, ink-bordered when active.</p>
+  <div class="mock">
+    <div style="padding:18px 24px 4px"><span class="pill on">All</span><span class="pill">3D Design</span><span class="pill">Animation</span><span class="pill">Art</span><span class="pill">Branding</span></div>
+    <div class="feed">
+      <div class="card"><div class="img"></div><div class="who"><span class="av"></span>Fiveshorts <span class="pro">PRO</span> <span class="age">4yr</span></div><div class="ttl">WW1 lifers</div></div>
+      <div class="card"><div class="img" style="background:var(--color-grey-300,#d0d0d0)"></div><div class="who"><span class="av"></span>Nik Brovkin <span class="age">4yr</span></div><div class="ttl">Hello Explore.</div></div>
+      <div class="card"><div class="img" style="background:var(--color-grey-400,#c1c1c1)"></div><div class="who"><span class="av"></span>Malika Favre <span class="age">3yr</span></div><div class="ttl">Terrain Vague</div></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Auth</h2>
+  <p class="lead">The split auth screen: community welcome over a darker #717171 panel left (hidden under 650px, leaving only the form), a 424px form column right — 8px-radius hairline inputs and full-width dark submits with 7px corners; "Log in", "Sign up" and "Reset Password" share the one style.</p>
+  <div class="mock" style="padding:24px;max-width:480px">
+    <div class="field">Email</div><div class="field">Password</div>
+    <span class="btn dark" style="width:100%">Log in</span>
+    <div style="margin-top:14px"><span class="btn dark" style="width:100%">Sign up</span></div>
+    <div style="margin-top:14px"><span class="btn dark" style="width:100%">Reset Password</span></div>
+    <div style="margin-top:14px"><span class="btn grey" style="width:100%">Grey button (.btn--grey)</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">A warm-neutral ramp (<code>#262626</code> ink through <code>#9d9d9d</code> field grey to <code>#fff</code> paper) with one brand yellow, plus small status accents (red, green, blue) used by form alerts and icon states.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">Small radii (7–8px) on cards/inputs/tags/submits against full pills (20px categories, 50px CTA pills) and round avatars; the feed is a 1640px-max 3-column grid with 15px gutters and a 50px row pitch. Controls ease over 0.2s (alerts 0.35s, media fades 0.5s).</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead"><code>UntitledSans</code> (Klim) carries UI text at 16px/22px base, <code>UntitledSansMedium</code> the post titles and tags, and <code>LabilGrotesk-Medium</code> (Labil Grotesk / Kometa) the 40–41px display lines and the wordmark. Weights: 300/400/700, medium expressed through the medium families.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Mined every declaration in the archived app.4ef09b07.css and measured computed styles on the replayed pages</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names the selector or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"white":{"v":"#ffffff","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): body{background:#fff}, .input{background:#fff}"},"paper":{"v":"#fafafa","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .section/background #fafafa"},"grey":{"950":{"v":"#262626","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): body{color:#262626} — the primary ink"},"900":{"v":"#2c2c2c","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): #2c2c2c"},"800":{"v":"#333333","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .btn-submit{background:#333}"},"750":{"v":"#3a3a3a","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .profile__image{background:#3a3a3a}"},"700":{"v":"#717171","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): #717171 — secondary copy"},"600":{"v":"#868686","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): #868686"},"500":{"v":"#9d9d9d","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .header{background:#9d9d9d} — the signature grey field"},"450":{"v":"#b7b7b7","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .hero__tag{border-color:#b7b7b7}"},"400":{"v":"#c1c1c1","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .auth__left{color:#c1c1c1}"},"300":{"v":"#d0d0d0","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .page--arrow{background:#d0d0d0}"},"200":{"v":"#e6e6e6","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): #e6e6e6"},"150":{"v":"#ebebeb","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .input{border-color:#ebebeb} — the hairline"},"100":{"v":"#efefef","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .section--grey{background:#efefef}, .btn--grey{background:#efefef}"},"50":{"v":"#f8f8f8","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): #f8f8f8"}},"accent":{"DEFAULT":{"v":"#ffc60a","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .btn-submit, .btn--yellow{background:#ffc60a} — the brand yellow"},"hover":{"v":"#ffcc24","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): #ffcc24 — yellow hover variant"}},"danger":{"DEFAULT":{"v":"#f13939","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .btn--red{background:#f13939}, .svg-error{color:#f13939}"},"hover":{"v":"#f35151","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .btn--red:hover{background:#f35151}"},"tint":{"v":"#fdd6d6","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): #fdd6d6 — error alert background"}},"success":{"DEFAULT":{"v":"#2bd170","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .svg-success{color:#2bd170}"},"tint":{"v":"#dffdd6","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): #dffdd6 — success alert background"},"border":{"v":"#d2e5cc","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): #d2e5cc — success alert border"},"ink":{"v":"#4f8a10","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): #4f8a10 — success alert text"}},"info":{"DEFAULT":{"v":"#3198ff","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): #3198ff — link/notice blue"},"dark":{"v":"#01558d","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): #01558d"},"ink":{"v":"#00529b","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): #00529b — info alert text"},"tint":{"v":"#add8e6","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): #add8e6 — info alert background"}},"warning":{"tint":{"v":"#fdf4d6","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): #fdf4d6 — warning alert background"},"ink":{"v":"#9f6000","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): #9f6000 — warning alert text"}},"overlay":{"scrim":{"v":"rgba(0, 0, 0, 0.04)","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): rgba(0,0,0,.04) — feed tile hover scrim"},"modal":{"v":"rgba(113, 113, 113, 0.95)","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .v--modal-overlay background — the modal veil"},"header-dim":{"v":"rgba(113, 113, 113, 0.3)","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): hsla(0,0%,44.3%,.3)"}},"black":{"v":"#000000","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): #000"}},"font":{"family":{"sans":{"v":"UntitledSans","t":"fontFamily","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): @font-face UntitledSans; body{font-family:UntitledSans}","d":"UI text."},"sans-medium":{"v":"UntitledSansMedium","t":"fontFamily","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): @font-face UntitledSansMedium; .post__title, .hero__tag","d":"Medium cut for post titles, tags, strong UI."},"display":{"v":"LabilGrotesk-Medium","t":"fontFamily","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): @font-face LabilGrotesk-Medium; .hero__title, .feature__title, the EXPLORE wordmark","d":"Display/brand face."},"system":{"v":"system","t":"fontFamily","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): @font-face system — local() fallbacks for system UI"}},"weight":{"light":{"v":300,"t":"fontWeight","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): @font-face system{font-weight:300} — the only 300 the sheet declares; no rule sets font-weight:300"},"regular":{"v":400,"t":"fontWeight","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): font-weight:400 — body/buttons"},"medium":{"v":500,"t":"fontWeight","s":"Reconstruction: entered by hand at capture time; the sheet declares no font-weight:500 — the medium cut is carried by the UntitledSansMedium/LabilGrotesk-Medium families","d":"Medium weight, expressed through the medium families."},"bold":{"v":700,"t":"fontWeight","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): font-weight:700 — strong, .page--current"}},"size":{"10":{"v":"10px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): font-size:10px"},"12":{"v":"12px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): font-size:12px — pills, micro labels"},"13":{"v":"13px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): font-size:13px"},"14":{"v":"14px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): font-size:14px — buttons, secondary"},"16":{"v":"16px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): body{font-size:16px} — base"},"18":{"v":"18px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): font-size:18px"},"21":{"v":"21px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): font-size:21px — post/product titles"},"24":{"v":"24px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): font-size:24px"},"32":{"v":"32px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): font-size:32px"},"40":{"v":"40px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .hero__title{font-size:40px}"},"41":{"v":"41px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .feature title{font-size:41px}"}},"lineHeight":{"tight":{"v":1.025,"t":"number","s":"derived: line-height 41px / font-size 40px, both declared in app.4ef09b07.css (raw/css-declarations.json); .hero__title","d":"Display leading."},"snug":{"v":1.1875,"t":"number","s":"derived: line-height 19px / font-size 16px, both declared in app.4ef09b07.css (raw/css-declarations.json); buttons"},"base":{"v":1.375,"t":"number","s":"derived: line-height 22px / font-size 16px, both declared in app.4ef09b07.css (raw/css-declarations.json); body","d":"Body leading."},"loose":{"v":1.5,"t":"number","s":"derived: line-height 24px / font-size 16px, both declared in app.4ef09b07.css (raw/css-declarations.json); legal/longform copy"}},"letterSpacing":{"none":{"v":"0px","t":"dimension","s":"derived: no measured component computes a letter-spacing other than normal (raw/components-computed.json); the sheet's two declarations (.auth__stripe 0.2em, a header-menu span 0.3px) sit on elements the capture did not measure"}}},"radius":{"sm":{"v":"3px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): border-radius:3px"},"card":{"v":"7px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): border-radius:7px — .hero__tag, feed cards","d":"Card/tag radius."},"input":{"v":"8px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .input{border-radius:8px}"},"lg":{"v":"10px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): border-radius:10px"},"pill":{"v":"20px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .pill{border-radius:20px}","d":"Category pill radius."},"button":{"v":"50px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .btn-submit, .btn--rounded{border-radius:50px}","d":"Fully rounded buttons."},"avatar":{"v":"34px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .post__author-image{border-radius:34px}","d":"Round avatars (circle at any size)."},"avatar-lg":{"v":"150px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .profile__image{border-radius:150px}","d":"Large round profile image."}},"spacing":{"2":{"v":"2px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): padding/gap histogram"},"4":{"v":"4px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): padding/gap histogram"},"5":{"v":"5px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .pill{margin:0 5px}"},"6":{"v":"6px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .pill{padding:6px …}"},"8":{"v":"8px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): padding histogram"},"10":{"v":"10px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): padding histogram"},"12":{"v":"12px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .post__content{margin:12px 0 0}"},"13":{"v":"13px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .pill{padding:6px 13px 7px}"},"15":{"v":"15px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .post{padding:0 15px 50px} — feed column gutter"},"16":{"v":"16px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): padding histogram"},"20":{"v":"20px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .content{padding:0 20px}"},"23":{"v":"23px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .hero__tag{padding:11px 23px}"},"24":{"v":"24px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .discover{padding:21px 24px 0}"},"30":{"v":"30px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): padding histogram"},"40":{"v":"40px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): padding histogram"},"50":{"v":"50px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .post{padding-bottom:50px} — feed row pitch"},"60":{"v":"60px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): padding histogram"},"100":{"v":"100px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .posts{margin-bottom:100px}"}},"container":{"page":{"v":"1640px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .content{max-width:1640px}","d":"Max content width."},"footer":{"v":"990px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .footer{max-width:990px}"},"form":{"v":"424px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .auth__right{max-width:424px}","d":"Auth form column."},"legal":{"v":"760px","t":"dimension","s":"measured legal-body default rect.w (raw/components-computed.json)","d":"Legal/statement copy column."}},"breakpoint":{"sm":{"v":"650px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): @media (max-width:650px) — the mobile cutover, 169 rules in the sheet"},"md":{"v":"980px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): @media (max-width:980px) and @media (max-width:980px) and (min-width:650px) — the tablet cutover (.text-center--tablet, .activity, .subscribe)"},"lg":{"v":"1280px","t":"dimension","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): @media (max-width:1280px) — the tablet-big cutover (.hide-tablet-big/.show-tablet-big)"}},"duration":{"fast":{"v":"200ms","t":"duration","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .btn,.btn-icon,.btn-submit{transition-duration:0.2s} and a{transition:color 0.2s} — links and buttons"},"base":{"v":"300ms","t":"duration","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .default-transition / transition .3s"},"slow":{"v":"500ms","t":"duration","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): transition .5s on hero/reveal"}},"easing":{"standard":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): ease — declared transitions"},"out":{"v":[0,0,0.58,1],"t":"cubicBezier","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): ease-out transitions"}},"zIndex":{"header":{"v":300,"t":"number","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .header{z-index:300}"},"modal":{"v":999,"t":"number","s":"Reconstruction: entered by hand at capture time; raw/css-declarations.json declares no z-index of 999 (the sheet's highest is 2000, on .alert)"}},"shadow":{"none":{"v":"none","t":"other","s":"derived: no measured component computes a box-shadow (raw/components-computed.json); the sheet's .box-shadow/.panel utility shadows sit on surfaces the capture did not measure","d":"Flat UI — no shadows on the measured public surface."}},"component":{"header":{"height":{"v":"60px","t":"dimension","s":"measured mkt-header default rect.h (raw/components-computed.json)"},"heightMobile":{"v":"56px","t":"dimension","s":"measured m-header default rect.h (raw/components-computed.json)"},"logoHeight":{"v":"31px","t":"dimension","s":"measured mkt-logo default rect.h (raw/components-computed.json)"}},"button":{"signupPill":{"height":{"v":"38px","t":"dimension","s":"measured nav-signup default rect.h (raw/components-computed.json)"},"minWidth":{"v":"121px","t":"dimension","s":"measured nav-signup default rect.w (raw/components-computed.json)"}},"submit":{"height":{"v":"47px","t":"dimension","s":"measured login-submit default rect.h (raw/components-computed.json)"},"formWidth":{"v":"424px","t":"dimension","s":"measured login-submit default rect.w (raw/components-computed.json)"}},"icon":{"size":{"v":"16px","t":"dimension","s":"measured password-eye default rect.h (raw/components-computed.json)"}},"aboutCta":{"width":{"v":"294px","t":"dimension","s":"measured about-cta default rect.w (raw/components-computed.json)"},"height":{"v":"47px","t":"dimension","s":"measured about-cta default rect.h (raw/components-computed.json)"}}},"field":{"width":{"v":"388px","t":"dimension","s":"measured field-email default rect.w (raw/components-computed.json)"},"inputHeight":{"v":"20px","t":"dimension","s":"measured field-email default style.height (raw/components-computed.json)"},"padding":{"v":"0px 0px","t":"other","s":"measured field-email default style.padding (raw/components-computed.json)","d":"Block and inline padding."}},"pill":{"height":{"v":"36px","t":"dimension","s":"measured pill default rect.h (raw/components-computed.json)"},"gap":{"v":"10px","t":"dimension","s":"derived: two .pill{margin:0 5px 9px} side margins of 5px make a 10px column gap (raw/css-declarations.json)"}},"post":{"cardWidth":{"v":"476px","t":"dimension","s":"measured post-card default rect.w (raw/components-computed.json)"},"galleryHeight":{"v":"334.5px","t":"dimension","s":"measured post-gallery default rect.h (raw/components-computed.json)"},"avatarSize":{"v":"28px","t":"dimension","s":"measured post-avatar default rect.w (raw/components-computed.json)"},"gridColumns":{"v":"calc(33.3333% - .5px)","t":"other","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .post{width:calc(33.3333% - .5px)}","d":"3-up feed grid."}},"mobile":{"postWidth":{"v":"390px","t":"dimension","s":"measured m-post default rect.w (raw/components-computed.json)"}}}},"light":{"color":{"background":{"page":{"v":"{color.white}","t":"color","s":"body{background:#fff}; measured page field","d":"The page surface under feed and forms."},"field":{"v":"{color.grey.500}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .header{background:#9d9d9d}, .section--hero{background:#9d9d9d}","d":"The signature mid-grey field: fixed header bar, hero, media placeholders (the auth welcome panel is the darker #717171)."},"surface":{"v":"{color.grey.100}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .section--grey{background:#efefef}, .btn--grey","d":"Recessed grey surfaces (footer band, grey buttons)."},"hairline":{"v":"{color.grey.150}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .input, .pill{border-color:#ebebeb/#efefef}","d":"The 1px hairline on inputs, pills and separators."}},"text":{"primary":{"v":"{color.grey.950}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): body{color:#262626}","d":"Primary ink."},"on-field":{"v":"{color.white}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .section--hero{color:#fff}","d":"Text on the grey field."},"secondary":{"v":"{color.grey.700}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): #717171 — footer/form secondary copy","d":"Secondary copy."},"muted":{"v":"{color.grey.500}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .discover__title{color:#9d9d9d}","d":"Muted copy (discover subtitle, post age)."},"faint":{"v":"{color.grey.400}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .auth__left{color:#c1c1c1}","d":"Faint copy on the grey field."},"inverse-soft":{"v":"{color.grey.50}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .hero__tag/.pill{color:#f8f8f8}","d":"Soft white on grey (hero tags, dark-mode text)."}},"action":{"accent":{"v":"{color.accent.DEFAULT}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .btn--yellow, .btn-submit{background:#ffc60a}","d":"The yellow CTA field (the Sign up free pill, the about-page Sign up CTA, PRO badge — auth submits are the dark .btn, not this)."},"accent-hover":{"v":"{color.accent.hover}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .btn--yellow:hover/#ffcc24","d":"Yellow hover."},"on-accent":{"v":"{color.grey.950}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .btn--yellow{color:#262626}","d":"Ink on the yellow CTA."},"primary":{"v":"{color.grey.950}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .btn-submit--dark, .btn--dark{background:#262626}","d":"The dark submit (Log in, Sign up, Reset password — all three auth submits measured #262626 with 7px corners)."},"primary-hover":{"v":"{color.grey.800}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .btn--dark:hover{background:#333}","d":"Dark submit hover."},"on-primary":{"v":"{color.white}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .btn--dark{color:#fff}","d":"Text on the dark submit."},"neutral":{"v":"{color.grey.100}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .btn--grey{background:#efefef}","d":"Grey button field."},"neutral-hover":{"v":"#e7e7e7","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .btn--grey:hover{background:#e7e7e7}","d":"Grey button hover."},"danger":{"v":"{color.danger.DEFAULT}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .btn--red{background:#f13939}","d":"Destructive red."},"danger-hover":{"v":"{color.danger.hover}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .btn--red:hover{background:#f35151}","d":"Destructive hover."},"outline":{"v":"{color.grey.150}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .btn--outline{border:1px solid #ebebeb}","d":"Outline button hairline."}},"border":{"hairline":{"v":"{color.grey.150}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .input{border:1px solid #ebebeb}"},"field":{"v":"{color.grey.100}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .pill{border:1px solid #efefef}","d":"Idle pill border."},"strong":{"v":"{color.grey.950}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .pill.router-link-active{border-color:#262626}","d":"Active pill border."},"on-field":{"v":"{color.grey.450}","t":"color","s":"stylesheet declaration in app.4ef09b07.css (raw/css-declarations.json): .hero__tag, .section--hero{border-color:#b7b7b7}","d":"Borders on the grey field."}},"link":{"v":"{color.grey.950}","t":"color","s":"measured signup-link default color (raw/components-computed.json): ink with an underline; the forgot-password link paints the muted #9d9d9d without one","d":"Inline links."}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color');
+  if (roles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v.join ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.zIndex || {}, 'zIndex.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) m += `<div><b>${esc(n)}</b> <span>${esc(JSON.stringify(t.v))}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.breakpoint || {}), 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Explore</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

@@ -23,6 +23,13 @@ T = json.load(open("tokens.json"))
 # --------------------------------------------------------------------------- colours and tokens
 
 
+
+def focus_not_captured(v):
+    """D4, as the kit's builder: a skipped state, or a focus-visible reading taken where keyboard focus
+    never landed (via "focus failed") or did not match :focus-visible, is the element at rest. It is
+    left out of every table and tally and listed as "focus could not be captured"."""
+    return bool(v.get("skipped")) or v.get("via") == "focus failed" or (v.get("focus") or {}).get("matches") is False
+
 def flat(node, prefix=""):
     for k, v in node.items():
         if k.startswith("$"):
@@ -179,7 +186,7 @@ ORDER = ["size", "padding", "border", "radius", "background", "image", "shadow",
 
 
 def state_rows(c):
-    states = [s for s in c["states"] if "style" in c["states"][s]]
+    states = [s for s in c["states"] if "style" in c["states"][s] and not focus_not_captured(c["states"][s])]
     if not states:
         return [], states
     base = props(c["states"][states[0]])
@@ -328,9 +335,13 @@ W()
 
 # ------------------------------------------------ checklist coverage
 def states_of(*names):
+    """The states captured across these entries. A failed or skipped focus is the element at rest, so
+    it is not a captured state here either (D4, as in the entry tables)."""
     seen = []
     for n in names:
-        for s in C.get(n, {}).get("states", {}):
+        for s, v in C.get(n, {}).get("states", {}).items():
+            if focus_not_captured(v):
+                continue
             if s not in seen:
                 seen.append(s)
     return ", ".join(seen) if seen else "-"
@@ -383,9 +394,12 @@ W("## Shared values")
 W()
 W("Values that apply across entries, from the measurement files.")
 W()
-foc = []
+foc, unfocused = [], []
 for k, c in C.items():
     st = c["states"].get("focus-visible")
+    if st and focus_not_captured(st):
+        unfocused.append(f"`{k}`")
+        continue
     if not st or "style" not in st:
         continue
     s = st["style"]
@@ -395,7 +409,7 @@ for k, c in C.items():
     foc.append((k, f"{s['outlineWidth']} {s['outlineStyle']} {colour(s['outlineColor'])}, offset {s['outlineOffset']}" if ring else ("ring shadow " + colour(s["boxShadow"], tokens=False) if ring_shadow else None)))
 with_ring = [f"`{k}` ({r})" for k, r in foc if r]
 without = [f"`{k}`" for k, r in foc if not r]
-W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} show a change: {', '.join(with_ring)}. The other {len(without)} draw nothing new (the research input and the result card among them): {', '.join(without)}. The two hosts focus differently: on refero.design the browser's own `auto` outline (1px #005fcc) appears on CTAs and links, plus the research chips' custom `rgba(1, 17, 88, 0.24)` ring shadow; on styles.refero.design the controls draw their own 2-3px ring shadow in `rgba(111, 113, 121, 0.4-0.5)` (the --ring colour at half alpha).")
+W(f"**Focus.** {len(foc)} components were given a real keyboard focus. {len(with_ring)} show a change: {', '.join(with_ring)}. The other {len(without)} draw nothing new (the research input and the result card among them): {', '.join(without)}.{f" Focus could not be captured on {len(unfocused)} more (keyboard focus never landed on them, so their readings are left out): {', '.join(unfocused)}." if unfocused else ""} The two hosts focus differently: on refero.design the browser's own `auto` outline (1px #005fcc) appears on CTAs and links, plus the research chips' custom `rgba(1, 17, 88, 0.24)` ring shadow; on styles.refero.design the controls draw their own 2-3px ring shadow in `rgba(111, 113, 121, 0.4-0.5)` (the --ring colour at half alpha).")
 W()
 W("**Pressed.** Pressed was forced with DevTools, so it is the :active styles only: the research chips and entity tabs go from muted to ink on press exactly as on hover, the MCP card's Close fills #ddddea, and the promo card's plain link takes the browser's default :active red (an artefact of the forced state, not a design colour).")
 W()

@@ -56,8 +56,8 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Header](#header) | 1440 x 132 | - | 9999px | #145fe4 | none | 0 |
-| [Mobile header](#mobile-header) | 390 x 825.56 | - | 9999px | #ffffff `paper.DEFAULT` | none | 128px 0px 0px 0px |
+| [Header](#header) | 1440 x 132 | - | - | #ffffff `paper.DEFAULT` | none | 0 |
+| [Mobile header](#mobile-header) | 390 x 825.56 | - | - | #1d1d21 `ink.footer` | none | 128px 0px 0px 0px |
 
 ## Components
 

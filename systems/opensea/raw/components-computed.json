@@ -1,0 +1,105 @@
+{
+  "source": "getComputedStyle on live signed-out elements, T3 preview browser, 2026-11-19. Theme dark (html.dark). Desktop viewport 1440x900 unless noted. Nothing was submitted. No wallet was connected.",
+  "pages": {
+    "home": "https://opensea.io/",
+    "collection": "https://opensea.io/collection/cryptopunks",
+    "activity": "https://opensea.io/activity",
+    "discover": "https://opensea.io/discover/art",
+    "drops": "https://opensea.io/drops",
+    "tools": "https://opensea.io/tools",
+    "tos": "https://opensea.io/tos",
+    "help": "https://support.opensea.io/en/",
+    "blocked": [
+      "https://opensea.io/rewards redirected to a Connect with OpenSea dialog",
+      "https://opensea.io/settings/customize redirected to the same dialog",
+      "https://opensea.io/feed was linked in the nav and not opened after rewards and settings both gated"
+    ]
+  },
+  "shell": {
+    "page-background": "#080808",
+    "banner": {"text": "OpenSea Mobile is live", "h": 48, "bg": "#0c0c0c", "color": "#ffffff", "pad": "6px 12px", "gap": "12px", "size": "16px", "weight": "400"},
+    "get-the-app": {"h": 24, "bg": "#0f0f0f", "border": "1px solid #202020", "radius": "16777200px", "pad": "0 6px", "size": "16px", "weight": "400", "gap": "4px"},
+    "nav": {"h": 64, "pad": "12px 0", "y": 48, "font": "gtAmerica", "size": "16px"},
+    "nav-phone": {"h": 68, "w": 390, "y": 48, "note": "390x844"},
+    "logo": {"w": 30, "h": 30, "fill": "#0086ff", "rx": 180, "viewBox": "0 0 360 360"},
+    "footer": {"h": 32, "bg": "#080808", "border": "1px solid #202020", "size": "16px"}
+  },
+  "controls": {
+    "nav-item-selected": {"example": "Home", "h": 32, "bg": "#161616", "color": "#ffffff", "size": "14px", "weight": "500", "lh": "21px", "pad": "0 12px 0 8px", "radius": "16777200px", "gap": "6px", "transition": "0.2s ease-out", "properties": "scale, colors"},
+    "nav-item-rest": {"example": "Explore", "h": 32, "bg": "transparent", "color": "#ffffff", "size": "14px", "weight": "500", "pad": "0 12px 0 8px", "radius": "16777200px", "gap": "6px", "transition": "0.2s ease-out"},
+    "sign-in-desktop": {"h": 32, "w": 76, "bg": "transparent", "color": "#ffffff", "size": "14px", "weight": "500", "pad": "0 16px", "radius": "16777200px", "gap": "12px", "transition": "0.2s ease-out"},
+    "sign-in-phone": {"h": 32, "w": 68, "bg": "#0086ff", "color": "#ffffff", "size": "14px", "weight": "500", "radius": "16777200px", "note": "390x844. The same label is a filled blue pill on the phone nav."},
+    "filter-selected": {"example": "All on collection, Sale on activity, Live & Upcoming on drops", "h": 28, "bg": "#161616", "color": "#ffffff", "border": "1px solid #2c2c2c", "size": "14px", "weight": "500", "pad": "0 10px", "radius": "16777200px"},
+    "filter-rest": {"example": "Listed", "h": 28, "bg": "#0c0c0c", "color": "#acacac", "border": "1px solid #202020", "size": "14px", "weight": "400", "pad": "0 10px", "radius": "16777200px"},
+    "chain-pill": {"example": "All chains", "h": 32, "bg": "rgba(255,255,255,0.02)", "border": "1px solid rgba(255,255,255,0.08)", "color": "#ffffff", "size": "14px", "weight": "500", "pad": "0 8px 0 12px", "radius": "16777200px", "gap": "4px", "transition": "0.2s ease-out"},
+    "search-field": {"placeholder": "Search by item or trait", "wrap-h": 32, "wrap-bg": "#0c0c0c", "wrap-border": "1px solid #202020", "wrap-radius": "16777200px", "wrap-pad": "0 12px 0 8px", "input-size": "14px", "input-weight": "400", "input-color": "#ffffff", "transition": "0.2s cubic-bezier(0.4, 0, 0.2, 1)"},
+    "buy-now": {"text": "Buy Now", "h": 49, "bg": "#0086ff", "color": "#ffffff", "size": "14px", "weight": "500", "radius": "0px", "note": "Item card footer. Not pressed."}
+  },
+  "type": {
+    "collection-title": {"size": "32px", "weight": "500", "lh": "48px", "font": "gtAmerica", "color": "#ffffff"},
+    "drops-title": {"size": "24px", "weight": "500", "lh": "30px", "font": "gtAmerica"},
+    "tools-hero": {"size": "60px", "weight": "500", "lh": "63px", "ls": "-1.5px", "font": "gtAmerica", "text": "Equip your AI agents"},
+    "tos-h1": {"size": "32px", "weight": "500", "lh": "40px"},
+    "tos-body": {"size": "16px", "weight": "400", "lh": "24px"},
+    "tos-link": {"color": "#83c3ff", "size": "16px"},
+    "stat-label": {"size": "12px", "weight": "400", "lh": "15px", "font": "gtAmericaMono", "example": "FLOOR PRICE"},
+    "change-up": {"color": "#47bb64", "font": "gtAmericaMono", "size": "14px", "weight": "400", "lh": "21px"},
+    "change-down": {"color": "#e24756", "font": "gtAmericaMono", "size": "14px", "weight": "400"},
+    "body": {"size": "16px", "weight": "400", "lh": "24px", "font": "gtAmerica"},
+    "nav-label": {"size": "14px", "weight": "500", "lh": "21px"}
+  },
+  "collection-card": {
+    "media": {"w": 257, "h": 257, "radius": "0px", "bg": "#161616"},
+    "card-shell": {"w": 257, "radius": "8px"},
+    "avatar": {"w": 63, "h": 63, "radius": "4px"}
+  },
+  "dialog": {
+    "name": "Connect with OpenSea",
+    "opened-by": "Sign in button. Closed with Escape. No provider was pressed. Email was not typed or submitted.",
+    "box": {"w": 480, "h": 706, "bg": "#080808", "border": "1px solid #202020", "radius": "12px", "shadow": "none"},
+    "overlay": "rgba(0, 0, 0, 0.6)",
+    "title": {"tag": "H4", "size": "24px", "weight": "500", "lh": "30px"},
+    "email-label": {"size": "16px", "weight": "500"},
+    "email-wrap": {"h": 56, "bg": "#0c0c0c", "border": "1px solid #202020", "radius": "12px", "pad": "0 12px"},
+    "email-input": {"placeholder": "Continue with email", "size": "14px", "weight": "400", "color": "#ffffff", "placeholder-color": "#acacac", "caret": "#ffffff"},
+    "email-focus": "outline none 1px #99c8ff on the input. Wrapper border stayed 1px #202020.",
+    "oauth": {"example": "Continue with Google", "h": 48, "bg": "#0c0c0c", "border": "1px solid #202020", "radius": "12px", "size": "14px", "weight": "500", "gap": "8px", "pad": "0 12px", "hover-bg": "#161616", "hover-border": "#2c2c2c"},
+    "wallet-row": {"example": "MetaMask", "h": 57, "pad": "16px", "size": "16px", "weight": "400", "gap": "12px", "radius-first": "12px 12px 0 0"},
+    "wallet-list": {"bg": "#0c0c0c", "border": "1px solid #2c2c2c", "radius": "12px"},
+    "legal": {"size": "12px", "color": "#acacac", "lh": "18px"},
+    "divider": {"size": "12px", "color": "#acacac", "text": "or continue with an external wallet"},
+    "close": {"w": 34, "h": 34, "border": "1px solid #202020", "radius": "16777200px", "pad": "4px", "hover": "no computed change"}
+  },
+  "menu": {
+    "more": {"w": 200, "bg": "#0c0c0c", "border": "1px solid #202020", "radius": "12px", "pad": "4px", "item-h": 33, "item-size": "14px", "item-weight": "400", "item-pad": "6px 8px", "item-radius": "8px"},
+    "settings-submenu": {"w": 176, "h": 307, "same": true, "note": "Links to /settings/* . Opening /settings/customize bounced to the connect dialog."},
+    "more-selected-button": {"bg": "#202020", "radius": "16777200px"}
+  },
+  "help-center": {
+    "host": "support.opensea.io",
+    "note": "Separate Zendesk skin. Not the marketplace token layer.",
+    "h1": {"size": "28px", "weight": "700", "color": "#ffffff", "font": "system-ui"},
+    "search": {"h": 63, "bg": "rgba(255,255,255,0.20)", "border": "1px solid rgba(0,0,0,0.08)", "radius": "19px", "size": "18px", "color": "#ffffff"},
+    "card": {"bg": "#ffffff", "color": "#1a1a1a", "border": "1px solid rgba(26,26,26,0.15)", "radius": "20px"},
+    "body-primary": "#1a1a1a"
+  },
+  "motion": {
+    "nav-pill": "0.2s ease-out on scale, colors",
+    "search-wrap": "0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+    "keyframes-count": 39,
+    "keyframes-sample": {
+      "fadeIn": "0% opacity 0; 100% opacity 1",
+      "spin": "100% rotate(360deg)",
+      "live-animation-bg": "0% background rgb(var(--color-bg-additional-3)); 100% background initial",
+      "positive-change-bg": "0% background rgb(var(--color-success-1) / .2)",
+      "slideFromBottom": "0% translate3d(0, var(--initial-transform, 100%), 0); 100% translate3d(0,0,0)"
+    },
+    "reduced-motion": [
+      ".rewards-ring { animation: none !important } under prefers-reduced-motion: reduce",
+      "#cc-main { --cc-modal-transition-duration: 0s } under prefers-reduced-motion",
+      "sonner toast transition none and animation none under prefers-reduced-motion"
+    ],
+    "gap": "No page.emulateMedia reduced-motion pass. The live computed read cannot say whether marketplace animations stop. Cookiebot and Sonner do declare reduce rules."
+  },
+  "screenshots": "preview_snapshot failed twice: The browser is not producing screenshot frames. No live PNG was saved. The files under screenshots/ and components/crops/ are reconstructions drawn from these boxes."
+}

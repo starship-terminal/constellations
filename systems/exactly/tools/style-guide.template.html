@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exactly.ai style guide</title>
+<meta name="description" content="Exactly.ai design tokens and the public marketing, pricing, showcase, help-center and scheduler surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Inter Variable", Inter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: Inter, "Inter Variable", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--ink, #1e1e1e); background: var(--canvas, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink, #1e1e1e); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--surface-chip, rgba(124,124,124,.1)); }
+.lead { max-width: 62ch; color: var(--ink, #1e1e1e); opacity: .8; }
+.note { font-size: 13px; color: var(--ink, #1e1e1e); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink, #1e1e1e); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--surface-chip, rgba(124,124,124,.1)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--ink, #1e1e1e); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--surface-chip, rgba(124,124,124,.1)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--ink, #1e1e1e); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--surface-chip, rgba(124,124,124,.1)); overflow: hidden; background: var(--canvas, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-nav-height, 68px); padding: 0 12px 0 22px; font-size: 15px; color: var(--on-image-ink, #fff); background: #333; }
+.navbar .wm { font-weight: 600; font-size: 20px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn.glass { background: var(--on-image-glass, rgba(255,255,255,.1)); color: var(--on-image-ink,#fff); border-color: var(--on-image-line, rgba(255,255,255,.2)); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 56px); padding: 0 var(--component-cta-padding-x, 24px); font-size: var(--font-size-ui, 14px); font-weight: var(--font-weight-regular, 400); border-radius: var(--radius-pill, 1000px); border: 1px solid transparent; }
+.btn.primary { background: var(--accent, #fb411f); color: var(--on-accent, #fff); }
+.btn.dark { background: var(--pill-dark, #1e1e1e); color: var(--pill-dark-ink, #fff); }
+.btn.small { height: var(--component-nav-pill-height, 36px); border-radius: var(--radius-pill, 1000px); font-size: var(--font-size-ui, 14px); font-weight: var(--font-weight-regular, 400); }
+.hero { color: var(--on-image-ink, #fff); padding: 72px 40px; font: 300 47px/60px var(--sg-serif); letter-spacing: -1.88px; text-align: center; background: linear-gradient(160deg,#3a3a3a,#111); }
+.hero small { display: block; font: 400 21px/32px var(--sg-sans); color: var(--on-image-muted, rgba(255,255,255,.6)); margin: 16px auto 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--surface-chip, rgba(124,124,124,.1)); padding: 14px; font-size: 13px; background: #fff; }
+.tile .img { height: 140px; background: #ddd; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 400 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--surface-chip, rgba(124,124,124,.1)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--surface-chip, rgba(124,124,124,.1)); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--ink, #1e1e1e); opacity: .65; font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: var(--background-toggle, #29282d); border-radius: 999px; padding: 4px; gap: 4px; font-size: 15px; color: var(--text-text, #fdfcfe); }
+.toggle span { padding: 8px 22px; border-radius: 999px; }
+.toggle .on { background: var(--action-accent, #ad47ff); color: #fdfcfe; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Exactly.ai style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Exactly.ai, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared Framer <code>--token-*</code> palette (the #fb411f accent, #1e1e1e ink, the #404040 and #7c7c7c washes, the translucent whites), Inter and Inter Variable at the measured 47-13px sizes, the 1000px pills and 40/100px card radii, and the measured light roles under <code>light.*</code>. Exactly.ai paints one light theme on every signed-out surface; there is no dark set. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from exactly.ai on 2026-11-14, signed out, in headless Chromium. Everything behind threads.exactly.ai is a documented boundary; Log in, Start for free and Book a demo were measured, never followed. Inter and Inter Variable are served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">Over the home photo-hero the header inverts: white wordmark, white nav links, a white Start-for-free pill and a translucent Book-a-demo pill under it. On interior pages the same links are dark ink and the CTA fills #fb411f.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">exactly.ai</span><span>Industries</span><span>Showcase</span><span>Case studies</span><span>Pricing</span><span class="sp"></span><span>Log in</span><span class="btn small" style="background:#fff;color:#000">Start for free</span></div>
+    <div class="hero">Bespoke AI models built for your brand.<small>Train a private model on your own work and generate on-brand images.</small><span class="btn" style="background:#fff;color:#000">Start for free</span> <span class="btn glass">Book a demo</span></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing lists Pilot, Team and Enterprise on #f7f7f7 cards at 40px radius; every plan's action is the dark #1e1e1e pill, and the sticky compare bar is white on a 1000px outline.</p>
+  <div class="mock" style="padding:20px;background:var(--canvas,#fff)">
+    <div class="grid">
+      <div class="tile" style="border-radius:var(--radius-card,40px);background:var(--surface-card,#f7f7f7);border:none;color:var(--ink,#1e1e1e)"><b style="font-family:var(--sg-sans)">Pilot</b><span class="sub" style="color:var(--muted,rgba(64,64,64,.48))">For individuals</span><div style="margin-top:10px"><span class="btn dark" style="border-radius:var(--radius-cta,100px)">Start for free</span></div></div>
+      <div class="tile" style="border-radius:var(--radius-card,40px);background:var(--surface-card,#f7f7f7);border:none;color:var(--ink,#1e1e1e)"><b style="font-family:var(--sg-sans)">Team</b><span class="sub" style="color:var(--muted,rgba(64,64,64,.48))">For studios and teams</span><div style="margin-top:10px"><span class="btn dark" style="border-radius:var(--radius-cta,100px)">Book a demo</span></div></div>
+      <div class="tile" style="border-radius:var(--radius-card,40px);background:var(--surface-card,#f7f7f7);border:none;color:var(--ink,#1e1e1e)"><b style="font-family:var(--sg-sans)">Enterprise</b><span class="sub" style="color:var(--muted,rgba(64,64,64,.48))">Custom</span><div style="margin-top:10px"><span class="btn dark" style="border-radius:var(--radius-cta,100px)">Contact us</span></div></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Footer</h2>
+  <p class="lead">The page ends in a near-black footer: white link columns at 60% and full white, over #000, with the watermark wordmark under them.</p>
+  <div class="mock dark" style="padding:20px;background:var(--footer-bg,#000);color:var(--footer-ink,#fff)">
+    <div style="display:flex;gap:60px;font-size:14px">
+      <div>Product<div style="color:var(--footer-muted,rgba(255,255,255,.6))">Showcase<br>Pricing<br>Case studies</div></div>
+      <div>Company<div style="color:var(--footer-muted,rgba(255,255,255,.6))">About<br>Careers<br>Help center</div></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared <code>--token-*</code> layer carries the palette in <code>core.color.palette.*</code>; the measured roles (canvas, ink, the two pill paints, the on-image whites, the footer paint, the two focus rings) resolve in the light set. Measured roles alias the declared values they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Pills are 1000px (nav CTAs, hero actions, chips), cards 40px, the mobile drawer shell 100px; the plan icons and avatars are 100px/full circles. Focus is a 1px ring: #101010 on desktop, #e59700 in the mobile top bar.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two served faces: <code>Inter</code> at wght 300 on the 47px display and the article/help prose, and <code>Inter Variable</code> on nav, CTAs, card titles and the footer. Sizes are the measured steps; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --token-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and the search/drawer open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || TOK.core.spacing || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  let node = TOK, seen = [];
+  for (const k of m[1].split('.')) { node = node && node[k]; seen.push(k); }
+  return node && node.v !== undefined ? resolveVal(node.v, (depth || 0) + 1) : v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Exactly.ai</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) h += `<div class="tr"><span class="ts" style="font-size:12px">${esc(n)}</span><span class="tv">${esc(JSON.stringify(t.v))}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

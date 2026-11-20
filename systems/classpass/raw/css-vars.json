@@ -1,0 +1,188 @@
+{
+ "readAt": "2026-11-16",
+ "source": "classpass.com's inline <style> bundles and same-origin sheets (a React/styled-components app), read through the CSSOM on the live home page and re-parsed in a probe document",
+ "sheets": [
+  {
+   "name": "inline-0",
+   "media": "",
+   "bytes": 53
+  },
+  {
+   "name": "inline-1",
+   "media": "",
+   "bytes": 157
+  },
+  {
+   "name": "inline-2",
+   "media": "",
+   "bytes": 35
+  },
+  {
+   "name": "inline-3",
+   "media": "",
+   "bytes": 4172
+  },
+  {
+   "name": "https://cdn9.classpass.com/dist/gfe-v2/_next/static/css/c1772423ef321f83.css",
+   "media": "",
+   "bytes": 29240
+  },
+  {
+   "name": "https://cdn9.classpass.com/dist/gfe-v2/_next/static/css/718450efc6784b01.css",
+   "media": "",
+   "bytes": 24429
+  },
+  {
+   "name": "https://cdn9.classpass.com/dist/gfe-v2/_next/static/css/e43b03532b9a1405.css",
+   "media": "",
+   "bytes": 129928
+  },
+  {
+   "name": "https://cdn9.classpass.com/dist/gfe-v2/_next/static/css/05294c1f7e12e5ab.css",
+   "media": "",
+   "bytes": 16876
+  },
+  {
+   "name": "inline-8",
+   "media": "",
+   "bytes": 242
+  },
+  {
+   "name": "inline-9",
+   "media": "",
+   "bytes": 58
+  },
+  {
+   "name": "inline-10",
+   "media": "",
+   "bytes": 3126
+  }
+ ],
+ "counts": {
+  "rules": 4,
+  "fonts": 9,
+  "names": {
+   "token": 0,
+   "app": 2,
+   "framework": 1,
+   "utility": 0
+  },
+  "bySelector": {
+   "[framework] .CmsLogoTicker_height-small__Nhdur": 1,
+   "[framework] .CmsLogoTicker_height-medium__1aY97": 1,
+   "[app] .CmsTestimonialsCarousel_dotsWrapper__X_wHB": 2,
+   "[app] @supports (color:color-mix(in srgb,currentColor 20%,transparent)) .CmsTestimonialsCarousel_dotsWrapper__X_wHB": 1
+  }
+ },
+ "errors": [],
+ "token": [],
+ "app": [
+  {
+   "file": "https://cdn9.classpass.com/dist/gfe-v2/_next/static/css/e43b03532b9a1405.css",
+   "selector": ".CmsTestimonialsCarousel_dotsWrapper__X_wHB",
+   "context": [],
+   "properties": {
+    "--carousel-dot-active-color": "currentColor",
+    "--carousel-dot-color": "rgba(255,255,255,0.2)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://cdn9.classpass.com/dist/gfe-v2/_next/static/css/e43b03532b9a1405.css",
+   "selector": ".CmsTestimonialsCarousel_dotsWrapper__X_wHB",
+   "context": [
+    "@supports (color:color-mix(in srgb,currentColor 20%,transparent))"
+   ],
+   "properties": {
+    "--carousel-dot-color": "color-mix(in srgb,currentColor 20%,transparent)"
+   },
+   "bin": "app"
+  }
+ ],
+ "framework": [
+  {
+   "file": "https://cdn9.classpass.com/dist/gfe-v2/_next/static/css/e43b03532b9a1405.css",
+   "selector": ".CmsLogoTicker_height-small__Nhdur",
+   "context": [],
+   "properties": {
+    "--ticker-height": "32px"
+   },
+   "bin": "framework"
+  },
+  {
+   "file": "https://cdn9.classpass.com/dist/gfe-v2/_next/static/css/e43b03532b9a1405.css",
+   "selector": ".CmsLogoTicker_height-medium__1aY97",
+   "context": [],
+   "properties": {
+    "--ticker-height": "55px"
+   },
+   "bin": "framework"
+  }
+ ],
+ "utility": [],
+ "fonts": [
+  {
+   "file": "https://cdn9.classpass.com/dist/gfe-v2/_next/static/css/c1772423ef321f83.css",
+   "font-family": "norms",
+   "font-display": "swap",
+   "src": "url(\"https://cdn9.classpass.com/dist/gfe-v2/_next/static/media/36D769_F_0.2d6a93cb.woff2\") format(\"woff2\"), url(\"https://cdn9.classpass.com/dist/gfe-v2/_next/static/media/36D769_F_0.85d07ba4.woff\") format(\"woff\"), url(\"https://cdn9.classpass.com/dist/gfe-v2/_next/static/media/36D769_F_0.f85afc4a.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://cdn9.classpass.com/dist/gfe-v2/_next/static/css/c1772423ef321f83.css",
+   "font-family": "norms",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(\"https://cdn9.classpass.com/dist/gfe-v2/_next/static/media/36D769_E_0.394660f4.woff2\") format(\"woff2\"), url(\"https://cdn9.classpass.com/dist/gfe-v2/_next/static/media/36D769_E_0.9c5bfa38.woff\") format(\"woff\"), url(\"https://cdn9.classpass.com/dist/gfe-v2/_next/static/media/36D769_E_0.81cf0f18.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://cdn9.classpass.com/dist/gfe-v2/_next/static/css/c1772423ef321f83.css",
+   "font-family": "norms",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"https://cdn9.classpass.com/dist/gfe-v2/_next/static/media/36D769_4_0.75d30ed8.woff2\") format(\"woff2\"), url(\"https://cdn9.classpass.com/dist/gfe-v2/_next/static/media/36D769_4_0.13bcea28.woff\") format(\"woff\"), url(\"https://cdn9.classpass.com/dist/gfe-v2/_next/static/media/36D769_4_0.cb6257a6.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://cdn9.classpass.com/dist/gfe-v2/_next/static/css/c1772423ef321f83.css",
+   "font-family": "circuit",
+   "font-display": "fallback",
+   "src": "url(\"https://cdn9.classpass.com/dist/gfe-v2/_next/static/media/Circuit.f3416158.woff2\") format(\"woff2\"), url(\"https://cdn9.classpass.com/dist/gfe-v2/_next/static/media/Circuit.97ab738b.woff\") format(\"woff\"), url(\"https://cdn9.classpass.com/dist/gfe-v2/_next/static/media/Circuit.f883f2d4.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://cdn9.classpass.com/dist/gfe-v2/_next/static/css/c1772423ef321f83.css",
+   "font-family": "circuit",
+   "font-style": "italic",
+   "font-display": "fallback",
+   "src": "url(\"https://cdn9.classpass.com/dist/gfe-v2/_next/static/media/CircuitOutlineS.474d01de.woff2\") format(\"woff2\"), url(\"https://cdn9.classpass.com/dist/gfe-v2/_next/static/media/CircuitOutlineS.1293a833.woff\") format(\"woff\"), url(\"https://cdn9.classpass.com/dist/gfe-v2/_next/static/media/CircuitOutlineS.84742425.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "https://cdn9.classpass.com/dist/gfe-v2/_next/static/css/c1772423ef321f83.css",
+   "font-family": "hiragino",
+   "font-display": "swap",
+   "src": "url(\"https://cdn9.classpass.com/dist/gfe-v2/_next/static/media/HiraginoSans-Regular-W4.01b010d5.otf\") format(\"opentype\")"
+  },
+  {
+   "file": "https://cdn9.classpass.com/dist/gfe-v2/_next/static/css/c1772423ef321f83.css",
+   "font-family": "hiragino",
+   "font-weight": "500",
+   "font-display": "swap",
+   "src": "url(\"https://cdn9.classpass.com/dist/gfe-v2/_next/static/media/HiraginoSans-SemiBold-W6.b6ec14a6.otf\") format(\"opentype\")"
+  },
+  {
+   "file": "https://cdn9.classpass.com/dist/gfe-v2/_next/static/css/c1772423ef321f83.css",
+   "font-family": "hiragino",
+   "font-weight": "700",
+   "font-display": "swap",
+   "src": "url(\"https://cdn9.classpass.com/dist/gfe-v2/_next/static/media/HiraginoSans-Bold-W7.7be24d3c.otf\") format(\"opentype\")"
+  },
+  {
+   "file": "https://cdn9.classpass.com/dist/gfe-v2/_next/static/css/c1772423ef321f83.css",
+   "font-family": "hiragino",
+   "font-weight": "800",
+   "font-display": "swap",
+   "src": "url(\"https://cdn9.classpass.com/dist/gfe-v2/_next/static/media/HiraginoSans-ExtraBold-W8.3bf1a825.otf\") format(\"opentype\")"
+  }
+ ],
+ "resolved": {
+  "light": {}
+ }
+}

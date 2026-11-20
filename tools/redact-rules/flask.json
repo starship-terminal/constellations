@@ -1,0 +1,12 @@
+{
+  "_note": "Rules for systems/flask. Public signed-out capture (marketing home + embedded demo, pricing, /mcp docs, about, security, legal, login at rest); no private data expected. Flask's own published addresses and the public demo personas are allow-listed.",
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@flask\\.do$",
+      "@example\\.com$",
+      "han@solo\\.com"
+    ]
+  },
+  "families": []
+}

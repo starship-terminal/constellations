@@ -143,6 +143,9 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 - **The persona crops are video frames.** Each card is a live talking face; a crop shows whichever frame the page was painting.
 - **Mobile docs.** The docs sidebar is not reachable at 390 wide without opening the menu sheet; `m-docs-sidebar` is missing by design.
 - **Pressed is forced.** `:active` was applied by DevTools, so a state a script adds on real mousedown (if any) is missing; the plan CTA's scale-press was captured, other controls paint no change.
+- **Six gallery cards were read from the wrong element.** `avatar-card`, `about-card`, `research-card`, `case-card`, `post-card` and `changelog-entry` are all the nav's mounted Company submenu ("Company Team Research Security", 222 x 128.91 at the top of the page), not a card on their pages; the components.md Focus summary's claim that these cards draw nothing new on focus rests on that node. Each needs a recapture; the capture script now searches the page body outside header, nav and footer and records the card as missing when none matches (not run since).
+- **`nav-sub-link` is a footer link.** It was read at y=3856 ("documentation" in the footer) because the submenu had closed before the link search, which then fell back to the whole page. Needs a recapture; the script now keeps the pointer on the nav item and finds nothing when the submenu is gone (not run since).
+- **Some `via` labels are wrong.** `nav-submenu`, `persona-chip-selected`, `docs-search-dialog`, `docs-assistant-panel` and `docs-dark-main` record "at rest", though they were opened by hover, a press, Meta+K, Meta+I and the theme menu; the capture script dropped the caller's label. The readings themselves were taken in the opened state. The script keeps the label now (not run since).
 
 ### Do and don't (from README.md)
 

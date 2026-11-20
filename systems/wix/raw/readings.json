@@ -1,0 +1,164 @@
+{
+  "capturedAt": "2026-11-18T20:45:00Z",
+  "harness": "T3 Code preview browser",
+  "screenshotNote": "preview_snapshot failed twice with: Preview automation snapshot failed: The browser is not producing screenshot frames. For a desktop tab, show or restore the T3 Code window and try again. No screenshot was invented. Values below are computed styles and published page text.",
+  "viewports": {
+    "desktop": {
+      "requested": {"width": 1440, "height": 900},
+      "measured": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewport": {"width": 1440, "height": 900, "scale": 1}}
+    },
+    "phone": {
+      "requested": {"width": 390, "height": 844},
+      "measured": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2, "visualViewport": {"width": 390, "height": 844, "scale": 1}}
+    }
+  },
+  "pages": {
+    "home": {
+      "url": "https://www.wix.com/",
+      "title": "Wix.com - The platform trusted by millions of businesses",
+      "theme": "light",
+      "colorSchemeMedia": "prefers-color-scheme: dark was true and the page stayed light (header rgb(255,255,255), h1 rgb(0,0,0))",
+      "documentHeight": 17397
+    },
+    "plans": {
+      "url": "https://www.wix.com/plans",
+      "title": "Wix Pricing Information | Upgrade to a Premium Plan | Wix.com",
+      "h1": "Find the right plan for you"
+    },
+    "login": {
+      "url": "https://users.wix.com/signin?view=sign-up&loginDialogContext=login&originUrl=https%3A%2F%2Fwww.wix.com%2F",
+      "title": "Log In to Your Wix Account - Wix.com",
+      "visibleText": "Log in. Don't have an account? Sign Up. Email. Forgot Email? Continue with Email. Continue with Google. Continue with Facebook. Continue with Apple. Continue with SSO. reCAPTCHA Enterprise and hCaptcha notices.",
+      "submitted": false,
+      "reason": "Email-only form exists, but Continue with Email is a submit that leaves the page. Not submitted. No phone, card, or SSO credentials entered."
+    },
+    "designSystem": {
+      "url": "https://www.wixdesignsystem.com/",
+      "title": "Home | Wix Design System",
+      "docsUrl": "https://www.wix-pages.com/design-system-documentation/#/page/foundations/colors",
+      "version": "v1.352.0",
+      "colorsUpdated": "2026-10-29",
+      "note": "Public docs for the Wix app design system. Separate from the wix.com marketing theme. Login link present; not used."
+    }
+  },
+  "marketing": {
+    "source": "computed style on https://www.wix.com/ at 1440x900, light, signed out",
+    "customProperties": {
+      "--wst-color-fill-background-primary": "rgb(255, 255, 255)",
+      "--wst-color-fill-background-secondary": "rgb(240, 240, 240)",
+      "--wst-color-fill-base-1": "rgb(255, 255, 255)",
+      "--wst-color-fill-base-2": "rgb(0, 0, 0)",
+      "--wst-color-fill-base-shade-1": "rgb(240, 240, 240)",
+      "--wst-color-fill-base-shade-2": "rgb(194, 194, 194)",
+      "--wst-color-fill-base-shade-3": "rgb(110, 110, 110)",
+      "--wst-color-text-primary": "rgb(0, 0, 0)",
+      "--wst-color-text-secondary": "rgb(110, 110, 110)",
+      "--wst-color-title": "rgb(0, 0, 0)",
+      "--wst-color-subtitle": "rgb(110, 110, 110)",
+      "--wst-color-action": "rgb(26, 106, 255)",
+      "--wst-color-line": "rgb(0, 0, 0)",
+      "--wst-color-disabled": "rgb(194, 194, 194)",
+      "--wst-button-color-fill-primary": "rgb(26, 106, 255)",
+      "--wst-button-color-text-primary": "rgb(255, 255, 255)",
+      "--wst-button-color-fill-primary-disabled": "rgb(194, 194, 194)",
+      "--wst-button-color-fill-secondary": "rgb(255, 255, 255)",
+      "--wst-button-color-text-secondary": "rgb(26, 106, 255)",
+      "--wst-button-color-text-secondary-disabled": "rgb(194, 194, 194)",
+      "--color_15": "0,0,0",
+      "--color_11": "255,255,255",
+      "--color_12": "240,240,240",
+      "--color_14": "110,110,110",
+      "--color_18": "26,106,255",
+      "--color_19": "9,75,204",
+      "--color_16": "220,232,255",
+      "--color_17": "149,185,255",
+      "--color_20": "8,47,123",
+      "--color_21": "243,248,240",
+      "--color_22": "210,228,199",
+      "--color_23": "146,176,121",
+      "--color_24": "97,135,65",
+      "--color_25": "57,100,29",
+      "--color_31": "255,233,223",
+      "--color_33": "250,133,79",
+      "--color_34": "234,96,32",
+      "--color_35": "201,64,1",
+      "--color_39": "194,194,194"
+    },
+    "computed": {
+      "headerBar": {"position": "fixed", "backgroundColor": "rgb(255, 255, 255)", "height": "72px", "padding": "0px 20px", "boxShadow": "none", "width": 1440},
+      "navLabel": {"fontFamily": "Madefor-Display", "fontSize": "16px", "fontWeight": "400", "color": "rgb(0, 0, 0)", "padding": "0px 12px"},
+      "navFocus": {"element": "Product button", "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 1px, rgb(0, 0, 0) 0px 0px 0px 3px", "outline": "none"},
+      "headerCta": {"text": "Start for free", "backgroundColor": "rgb(22, 106, 234)", "color": "rgb(255, 255, 255)", "fontFamily": "Madefor-Display", "fontSize": "16px", "fontWeight": "400", "lineHeight": "24px", "padding": "8px 30px", "borderRadius": "42px", "height": "40px", "border": "0"},
+      "headerLogin": {"text": "Log In", "color": "rgb(0, 0, 0)", "fontSize": "16px", "fontFamily": "Madefor-Display", "textDecorationLine": "underline", "backgroundColor": "rgba(0, 0, 0, 0)"},
+      "heroH1": {"text": "Create your future on the leading website builder", "fontFamily": "wix-madefor-display-v2, sans-serif", "fontSize": "82.5px", "fontWeight": "400", "lineHeight": "99.0001px", "letterSpacing": "-1.65px", "color": "rgb(0, 0, 0)"},
+      "sectionH2": {"text": "Website creation, as natural as thinking", "fontFamily": "wix-madefor-display-v2, sans-serif", "fontSize": "48px", "fontWeight": "400", "lineHeight": "54.72px", "letterSpacing": "-0.48px", "color": "rgb(0, 0, 0)"},
+      "body": {"fontFamily": "wix-madefor-text-v2, sans-serif", "fontSize": "16px", "fontWeight": "400", "lineHeight": "20.8px", "color": "rgb(0, 0, 0)"},
+      "bodyLoose": {"fontSize": "16px", "lineHeight": "23.04px", "fontFamily": "wix-madefor-text-v2, sans-serif"},
+      "menuEyebrow": {"text": "CREATION", "fontFamily": "Madefor-Display", "fontSize": "14px", "color": "rgb(94, 94, 94)"},
+      "menuBody": {"fontFamily": "Madefor-Text", "fontSize": "16px", "lineHeight": "24px", "color": "rgb(94, 94, 94)"},
+      "menuPanel": {"backgroundColor": "rgb(255, 255, 255)", "top": 72, "height": 609, "width": 1440, "transition": "height, opacity, border-top 0.3s, 0.1s, 0.1s"},
+      "scrim": {"backgroundColor": "rgba(0, 0, 0, 0.5)", "transition": "background-color 0.3s"},
+      "domainInput": {"placeholder": "Type the domain you want", "backgroundColor": "rgb(255, 255, 255)", "color": "rgb(0, 0, 0)", "fontFamily": "wix-madefor-text-v2", "fontSize": "22px", "lineHeight": "35.2px", "borderRadius": "999px", "height": "65px", "padding": "3px 194.4px 3px 52px", "border": "1px solid rgba(78, 135, 180, 0)", "boxShadow": "rgba(133, 154, 255, 0.4) 0px 30px 250px 20px, rgba(139, 142, 238, 0.16) 0px 16px 50px 0px"},
+      "pillCta": {"text": "Get Started", "backgroundColor": "rgb(0, 0, 0)", "labelColor": "rgb(255, 255, 255)", "labelFont": "madefor-text-mediumbold", "labelSize": "20px", "borderRadius": "50px", "height": "54px", "padding": "0px 10px 0px 34px"},
+      "sectionFills": ["rgb(189, 234, 213)", "rgb(210, 228, 199)", "rgb(240, 240, 240)", "rgb(255, 255, 255)"],
+      "linkBlue": "rgb(26, 106, 255)",
+      "footerLink": {"fontFamily": "Madefor-Text", "fontSize": "14px", "lineHeight": "24px", "color": "rgb(0, 0, 0)"}
+    },
+    "plans": {
+      "h1": {"fontFamily": "madefor-display", "fontSize": "60px", "fontWeight": "400", "lineHeight": "66.0001px", "color": "rgb(16, 21, 133)"},
+      "planName": {"text": "Free", "fontFamily": "madefor-display", "fontSize": "21px", "lineHeight": "29.3999px", "color": "rgb(16, 21, 133)", "fontWeight": "400"},
+      "planColumnPadding": "45px 26.25px 48.75px",
+      "planColumnWidth": 245,
+      "recommended": {"text": "RECOMMENDED", "fontFamily": "madefor-text-bold", "fontSize": "12px", "color": "rgb(16, 21, 133)", "backgroundColor": "rgba(0, 0, 0, 0)"},
+      "navyCta": {"text": "Start for Free", "backgroundColor": "rgb(16, 21, 133)", "labelColor": "rgb(255, 255, 255)", "labelFont": "madefor-text-mediumbold", "labelSize": "20px", "borderRadius": "99px", "height": "52px"},
+      "outlineButton": {"text": "Compare Plan Features", "backgroundColor": "rgba(255, 255, 255, 0)", "border": "1px solid rgb(16, 21, 133)", "borderRadius": "99px", "height": "54px", "padding": "0px 34px"},
+      "ink": "rgb(0, 6, 36)"
+    }
+  },
+  "login": {
+    "source": "computed style on users.wix.com/signin, signed out, not submitted",
+    "desktop": {"width": 1440, "height": 900},
+    "phone": {"width": 390, "height": 844},
+    "pageBackground": "rgb(244, 241, 242)",
+    "phonePageBackground": "rgb(255, 255, 255)",
+    "h1": {"text": "Log in", "fontFamily": "Madefor Display", "fontSize": "36px", "fontWeight": "500", "color": "rgb(0, 6, 36)", "phoneFontSize": "28px"},
+    "field": {"backgroundColor": "rgb(255, 255, 255)", "border": "1px solid rgb(134, 138, 165)", "borderRadius": "6px", "height": "52px", "phoneHeight": "50px"},
+    "input": {"fontFamily": "Madefor", "fontSize": "18px", "fontWeight": "400", "color": "rgb(0, 6, 36)", "padding": "18px 0px 0px 4px"},
+    "primaryButton": {"text": "Continue with Email", "backgroundColor": "rgb(47, 93, 255)", "color": "rgb(255, 255, 255)", "fontFamily": "Madefor", "fontSize": "14px", "fontWeight": "530", "lineHeight": "24px", "padding": "9px 30px", "borderRadius": "6px", "height": "43px", "desktopWidth": 320, "phoneWidth": 294},
+    "primaryFocus": {"outline": "rgb(27, 115, 232) solid 2px", "outlineOffset": "2px"},
+    "socialButton": {"backgroundColor": "rgb(255, 255, 255)", "border": "1px solid rgb(0, 0, 0)", "labelColor": "rgb(0, 6, 36)", "labelFont": "Madefor", "labelSize": "14px", "labelWeight": "500", "borderRadius": "6px", "height": "43px"},
+    "textButton": {"text": "Continue with SSO", "color": "rgb(47, 93, 255)", "fontSize": "14px", "fontWeight": "500"},
+    "link": {"text": "Sign Up", "color": "rgb(47, 93, 255)", "fontSize": "14px", "fontWeight": "500"},
+    "caption": {"fontSize": "12px", "lineHeight": "15px", "color": "rgb(0, 6, 36)"}
+  },
+  "motion": {
+    "prefersReducedMotion": false,
+    "computedOnHome": [
+      {"name": "circle4Cycle", "duration": "7.2s", "easing": "linear", "iteration": "infinite"},
+      {"name": "motion-slideIn, motion-fadeIn", "duration": "1.2s", "easing": "cubic-bezier(0.645, incomplete control points)", "iteration": "1"},
+      {"name": "motion-revealIn", "duration": "1.2s", "easing": "cubic-bezier(0.645, incomplete)", "iteration": "1"},
+      {"name": "scrollWords", "duration": "12s", "easing": "cubic-bezier(0.2, incomplete)", "iteration": "infinite"},
+      {"name": "wiggle-soft", "duration": "3s", "easing": "ease-in-out", "iteration": "infinite"},
+      {"name": "moving-grad", "duration": "10s", "easing": "ease", "iteration": "infinite"},
+      {"name": "marqueeHorizontal", "duration": "54s", "easing": "linear", "iteration": "infinite"}
+    ],
+    "transitions": [
+      {"property": "all, visibility", "duration": "0.2s", "easing": "ease", "count": 88},
+      {"property": "all, visibility", "duration": "0.3s", "easing": "ease-in-out", "count": 56},
+      {"property": "max-height", "duration": "0.5s", "easing": "ease", "count": 48},
+      {"property": "transform, opacity", "duration": "0.15s, 0.3s", "easing": "cubic-bezier(0.12, incomplete)", "count": 30},
+      {"property": "opacity", "duration": "0.2s", "easing": "cubic-bezier(0.12, incomplete)", "count": 17},
+      {"property": "background-color", "duration": "0.3s", "easing": "ease", "element": "menu scrim"}
+    ],
+    "reducedMotionPass": "not run. The preview tab cannot emulate prefers-reduced-motion, and a headless session was not started.",
+    "designSystemGuide": {
+      "url": "https://www.wix-pages.com/design-system-documentation/#/page/guidelines/motion",
+      "fast": "50 to 100ms",
+      "moderate": "150 to 250ms",
+      "slow": "300 to 500ms",
+      "easingsNamed": ["ease-out", "ease-in", "ease-in-out", "linear"],
+      "note": "Published ranges and keyword names. No cubic-bezier control points on the page."
+    }
+  },
+  "wdsColorsNote": "Foundation and semantic colour rows were read from the public Colors page (v1.352.0, updated 2026-10-29). The full 476-row table is summarised in raw/wds-colors.md. Tokens below use the solid foundation steps and the semantic roles that resolve to them."
+}

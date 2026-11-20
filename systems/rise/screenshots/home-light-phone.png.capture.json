@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-18T18:07:00.141Z",
+  "screenshot": "home-light-phone.png",
+  "sanitizedSourceUrl": "https://risecalendar.com/",
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "title": "Rise — Projects, tasks, time. Together.",
+    "theme": {
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0
+    },
+    "documentSize": {
+      "width": 390,
+      "height": 23213
+    }
+  },
+  "png": {
+    "width": 780,
+    "height": 46426
+  },
+  "capture": {
+    "mode": "fullPage",
+    "scale": "device"
+  },
+  "note": "Headless Playwright after the preview browser returned: The browser is not producing screenshot frames. No Cloudflare challenge.",
+  "visualReview": {
+    "status": "pending"
+  }
+}

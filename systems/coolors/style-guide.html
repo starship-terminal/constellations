@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coolors style guide</title>
+<style>
+:root {
+  --core-color-ink: #0a0a0a;
+  --core-color-page: #ffffff;
+  --core-color-muted: #525252;
+  --core-color-primary: #2563eb;
+  --core-color-on-primary: #ffffff;
+  --core-color-pro: #ec4899;
+  --core-color-gray-fill: #0000000f;
+  --core-color-hairline: #00000012;
+  --light-page: #ffffff;
+  --light-surface: #ffffff;
+  --light-text: #0a0a0a;
+  --light-muted: #525252;
+  --light-accent: #2563eb;
+  --light-border: #00000012;
+  --light-on-accent: #ffffff;
+  --light-pro: #ec4899;
+  color-scheme: light;
+  --ink: var(--light-text);
+  --page: var(--light-page);
+  --line: var(--light-border);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.45 system-ui, sans-serif; }
+main { max-width: 880px; margin: 0 auto; padding: 32px 20px 64px; }
+h1 { font-size: 28px; margin: 0 0 8px; }
+p { max-width: 68ch; }
+.note { border: 1px solid var(--line); padding: 12px 16px; }
+.swatches { display: grid; gap: 16px; margin-top: 24px; }
+.sw { display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-items: start; }
+.sw i { display: block; width: 56px; height: 56px; border: 1px solid var(--line); }
+code { font-family: ui-monospace, monospace; font-size: 13px; }
+small, .sw p { display: block; color: var(--light-muted); font-size: 13px; margin: 4px 0 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Coolors</h1>
+  <p class="note">This page renders tokens.json: colours read with getComputedStyle on coolors.co in the signed-in preview tab (each token's source names the element and page). The headless Playwright probe got a Cloudflare managed challenge (HTTP 403, title Just a moment...) and measured nothing, so no value here comes from it.</p>
+  <div class="swatches">
+    <div class="sw"><i style="background:var(--core-color-ink)"></i><div><code>core.color.ink</code><small>#0a0a0a</small><p>getComputedStyle(document.body).color and h1 color on https://coolors.co/ at 1169x731, attached preview browser, 2026-11-18. rgb(10, 10, 10).</p></div></div>
+<div class="sw"><i style="background:var(--core-color-page)"></i><div><code>core.color.page</code><small>#ffffff</small><p>getComputedStyle(document.body).backgroundColor and header background on https://coolors.co/, 2026-11-18. rgb(255, 255, 255).</p></div></div>
+<div class="sw"><i style="background:var(--core-color-muted)"></i><div><code>core.color.muted</code><small>#525252</small><p>Hint 'Press the spacebar to generate color palettes!' color on /generate, and the explore lede at 390px. rgb(82, 82, 82).</p></div></div>
+<div class="sw"><i style="background:var(--core-color-primary)"></i><div><code>core.color.primary</code><small>#2563eb</small><p>a.btn.btn--primary 'Start the Generator' backgroundColor rgb(37, 99, 235) on https://coolors.co/. The same fill paints 'I accept' and 'Let's go!'. :root --color-primary-600 is #2563eb.</p></div></div>
+<div class="sw"><i style="background:var(--core-color-on-primary)"></i><div><code>core.color.on-primary</code><small>#ffffff</small><p>Start the Generator color rgb(255, 255, 255).</p></div></div>
+<div class="sw"><i style="background:var(--core-color-pro)"></i><div><code>core.color.pro</code><small>#ec4899</small><p>Header 'Go Pro' (.btn--accent-transparent) color rgb(236, 72, 153) on the signed-in homepage.</p></div></div>
+<div class="sw"><i style="background:var(--core-color-gray-fill)"></i><div><code>core.color.gray-fill</code><small>#0000000f</small><p>Explore 10M+ Palettes backgroundColor rgba(0, 0, 0, 0.06).</p></div></div>
+<div class="sw"><i style="background:var(--core-color-hairline)"></i><div><code>core.color.hairline</code><small>#00000012</small><p>header boxShadow rgba(0, 0, 0, 0.07) 0px 1px 0px 0px. Modal .modal_element boxShadow rgba(0, 0, 0, 0.07) 0px 0px 0px 1px.</p></div></div>
+<div class="sw"><i style="background:var(--light-page)"></i><div><code>light.page</code><small>{color.page}</small><p>Alias of core.color.page, measured on the signed-in homepage.</p></div></div>
+<div class="sw"><i style="background:var(--light-surface)"></i><div><code>light.surface</code><small>{color.page}</small><p>header and .modal_element backgroundColor rgb(255, 255, 255).</p></div></div>
+<div class="sw"><i style="background:var(--light-text)"></i><div><code>light.text</code><small>{color.ink}</small><p>Alias of core.color.ink.</p></div></div>
+<div class="sw"><i style="background:var(--light-muted)"></i><div><code>light.muted</code><small>{color.muted}</small><p>Alias of core.color.muted.</p></div></div>
+<div class="sw"><i style="background:var(--light-accent)"></i><div><code>light.accent</code><small>{color.primary}</small><p>Alias of core.color.primary.</p></div></div>
+<div class="sw"><i style="background:var(--light-border)"></i><div><code>light.border</code><small>{color.hairline}</small><p>Alias of core.color.hairline.</p></div></div>
+<div class="sw"><i style="background:var(--light-on-accent)"></i><div><code>light.on-accent</code><small>{color.on-primary}</small><p>Alias of core.color.on-primary.</p></div></div>
+<div class="sw"><i style="background:var(--light-pro)"></i><div><code>light.pro</code><small>{color.pro}</small><p>Alias of core.color.pro.</p></div></div>
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Melius style guide</title>
+<meta name="description" content="Melius public signed-out tokens, rendered from tokens.json. One light theme.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-display: recklessStandard, Georgia, serif;
+  --sg-sans: easeStandard, ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: "Geist Mono", ui-monospace, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--sg-sans); }
+main { max-width: 1040px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font: 400 56px/56px var(--sg-display); letter-spacing: -1.12px; margin: 0 0 8px; }
+h2 { font: 400 13px/1 var(--sg-sans); letter-spacing: .06em; color: var(--textMuted); margin: 48px 0 12px; }
+p { max-width: 68ch; color: var(--textMuted); }
+code { font-family: var(--sg-mono); font-size: 13px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 148px; }
+.sw i { display: block; height: 48px; border-radius: 6px; border: 1px solid var(--border); }
+.sw b, .sw span { display: block; font: 400 12px/1.4 var(--sg-mono); }
+.sw span { color: var(--textMuted); }
+.ramp { margin: 0 0 20px; }
+.ramp h3 { margin: 0 0 8px; font: 400 14px/1 var(--sg-sans); color: var(--text); }
+.bars i { display: block; height: 8px; background: var(--accent); border-radius: 4px; }
+.bars div { margin: 0 0 8px; }
+.bars span { display: block; font: 400 12px/1.4 var(--sg-mono); color: var(--textMuted); margin-bottom: 4px; }
+.radii { display: flex; flex-wrap: wrap; gap: 12px; }
+.radii div { width: 96px; height: 72px; border: 1px solid var(--border); background: var(--surface); display: flex; align-items: flex-end; padding: 6px; font: 400 11px/1.3 var(--sg-mono); }
+.bar { display: flex; align-items: center; gap: 16px; height: 56px; padding: 0 16px; background: var(--nav); color: var(--textOnDark); }
+.bar a { color: var(--textOnDark); text-decoration: none; font-size: 13.6px; }
+.bar .sp { flex: 1; }
+.banner { background: var(--banner); color: var(--text); text-align: center; font-size: 14px; padding: 8px; }
+.hero { padding: 48px 0 16px; }
+.hero h3 { margin: 0; font: 400 56px/56px var(--sg-display); letter-spacing: -1.12px; max-width: 16ch; }
+.btn { display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 6px; background: var(--accent); color: var(--textOnAccent); border: 0; font: 400 12.8px/1 var(--sg-sans); }
+.sign { display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 6px; background: var(--signIn); color: var(--text); font: 400 12.8px/1 var(--sg-sans); }
+.ghost { display: inline-flex; align-items: center; height: 48px; padding: 0 24px; border-radius: 6px; background: var(--surface); color: var(--text); border: 1px solid var(--border); font: 400 16px/1 var(--sg-sans); }
+.field { display: flex; align-items: center; height: 44px; width: 320px; padding: 0 12px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface); color: var(--textMuted); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+th { color: var(--textMuted); font-weight: 400; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Melius</h1>
+  <p>Public marketing site and the signed-out app login and signup cards, captured 2026-11-19. One light marketing theme. Reckless, Ease and Geist Mono are licensed and not loaded here; the page uses the system fallback.</p>
+
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>offwhite</span></div>
+    <div class="sw"><i style="background:var(--surface)"></i><b>surface</b><span>white</span></div>
+    <div class="sw"><i style="background:var(--nav)"></i><b>nav</b><span>gray dark 1</span></div>
+    <div class="sw"><i style="background:var(--banner)"></i><b>banner</b><span>yellow</span></div>
+    <div class="sw"><i style="background:var(--text)"></i><b>text</b><span>black</span></div>
+    <div class="sw"><i style="background:var(--textMuted)"></i><b>muted</b><span>gray</span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><b>accent</b><span>orange</span></div>
+    <div class="sw"><i style="background:var(--signIn)"></i><b>sign in</b><span>yellow</span></div>
+  </div>
+
+  <h2>Chrome</h2>
+  <div class="banner">New: Ditto swaps in any avatar or style in any video</div>
+  <div class="bar">
+    <span>Melius</span>
+    <a>Product</a><a>Pricing</a>
+    <span class="sp"></span>
+    <span class="sign">Sign In</span>
+    <span class="btn">Start for Free</span>
+  </div>
+  <div class="hero">
+    <h3>Create anything you imagine</h3>
+    <p>Display is Reckless at 56px. The hero action is orange at 6px radius. Sign In is the same yellow as the banner.</p>
+    <span class="btn" style="height:48px;padding:0 24px;font-size:16px">Get started for free</span>
+    <span class="ghost">Connect your agent</span>
+  </div>
+
+  <h2>Field</h2>
+  <div class="field">you@company.com</div>
+
+  <h2>Radius</h2>
+  <div class="radii" id="radii"></div>
+  <h2>Space</h2>
+  <div class="bars" id="space"></div>
+  <h2>Type</h2>
+  <table id="type"></table>
+</main>
+<script>
+const T = /*TOKENS*/null;
+const css = (p) => '--' + p.replaceAll('.', '-');
+function val(path) {
+  const parts = path.split('.');
+  let n = T;
+  for (const p of parts) n = n[p];
+  return n && n.v;
+}
+const radii = document.getElementById('radii');
+for (const [k, t] of Object.entries(T.core.radius)) {
+  const d = document.createElement('div');
+  d.style.borderRadius = t.v;
+  d.textContent = k + ' ' + t.v;
+  radii.appendChild(d);
+}
+const space = document.getElementById('space');
+for (const [k, t] of Object.entries(T.core.space)) {
+  // Built with textContent and style properties, not innerHTML: names and values come from a
+  // third-party stylesheet.
+  const d = document.createElement('div');
+  const label = document.createElement('span');
+  label.textContent = k + ' ' + t.v;
+  const bar = document.createElement('i');
+  bar.style.width = t.v;
+  d.append(label, bar);
+  space.appendChild(d);
+}
+const type = document.getElementById('type');
+const row = (cells, tag) => {
+  const tr = document.createElement('tr');
+  for (const c of cells) { const td = document.createElement(tag); td.textContent = c; tr.appendChild(td); }
+  return tr;
+};
+type.appendChild(row(['role', 'family'], 'th'));
+for (const [k, t] of Object.entries(T.core.font.family)) type.appendChild(row([k, t.v], 'td'));
+</script>
+</body>
+</html>

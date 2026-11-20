@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Melius style guide</title>
+<meta name="description" content="Melius public signed-out tokens, rendered from tokens.json. One light theme.">
+<style>
+:root {
+  --color-black: #0e0e0e;
+  --color-white: #ffffff;
+  --color-offwhite: #fafafa;
+  --color-offblack: #1a1616;
+  --color-orange: #f04e23;
+  --color-yellow: #fff78b;
+  --color-amber: #ea9e1a;
+  --color-gray: #676767;
+  --color-grayDark1: #202020;
+  --color-grayDark2: #2a2a2a;
+  --color-grayDark3: #3e3e3e;
+  --color-grayLight1: #9c9996;
+  --color-grayLight2: #b9b9b9;
+  --color-grayLight3: #d9d9d9;
+  --color-grayBackground: #e3e3e3;
+  --color-lavender: #c7adff;
+  --color-purple: #a37aff;
+  --color-periwinkle: #b0e3e8;
+  --color-navy: #4164b9;
+  --color-lime: #e0e07b;
+  --color-olive: #9d9d25;
+  --color-red500: #fb2c36;
+  --color-green600: #00a544;
+  --font-family-display: recklessStandard, "recklessStandard Fallback", ui-serif, Georgia, serif;
+  --font-family-ui: easeStandard, "easeStandard Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-family-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+  --font-family-app: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+  --font-size-hero: 56px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --layout-page: 1440px;
+  --layout-phone: 390px;
+  --layout-navHeight: 56px;
+  --layout-content: 1200px;
+  --layout-max: 2000px;
+  --motion-duration-tw-animation-delay: 0ms;
+  --motion-duration-75ms: 75ms;
+  --motion-duration-c15t-duration-fast: 80ms;
+  --motion-duration-consent-banner-animation-duration: 80ms;
+  --motion-duration-100ms: 100ms;
+  --motion-duration-140ms: 140ms;
+  --motion-duration-accordion-duration: 150ms;
+  --motion-duration-c15t-duration-normal: 150ms;
+  --motion-duration-collapsible-duration: 150ms;
+  --motion-duration-consent-dialog-animation-duration: 150ms;
+  --motion-duration-consent-widget-accordion-duration: 150ms;
+  --motion-duration-default-transition-duration: 150ms;
+  --motion-duration-preference-item-duration: 150ms;
+  --motion-duration-160ms: 160ms;
+  --motion-duration-180ms: 180ms;
+  --motion-duration-c15t-duration-slow: 200ms;
+  --motion-duration-218ms: 218ms;
+  --motion-duration-pixel-step-duration: 250ms;
+  --motion-duration-260ms: 260ms;
+  --motion-duration-280ms: 280ms;
+  --motion-duration-300ms: 300ms;
+  --motion-duration-320ms: 320ms;
+  --motion-duration-340ms: 340ms;
+  --motion-duration-350ms: 350ms;
+  --motion-duration-360ms: 360ms;
+  --motion-duration-400ms: 400ms;
+  --motion-duration-420ms: 420ms;
+  --motion-duration-450ms: 450ms;
+  --motion-duration-460ms: 460ms;
+  --motion-duration-500ms: 500ms;
+  --motion-duration-550ms: 550ms;
+  --motion-duration-600ms: 600ms;
+  --motion-duration-700ms: 700ms;
+  --motion-duration-800ms: 800ms;
+  --motion-duration-pixel-cycle-duration: 900ms;
+  --motion-duration-1000ms: 1000ms;
+  --motion-duration-1100ms: 1100ms;
+  --motion-duration-1200ms: 1200ms;
+  --motion-duration-1400ms: 1400ms;
+  --motion-duration-1800ms: 1800ms;
+  --motion-duration-2000ms: 2000ms;
+  --motion-duration-2200ms: 2200ms;
+  --motion-duration-2500ms: 2500ms;
+  --motion-duration-3000ms: 3000ms;
+  --motion-duration-3200ms: 3200ms;
+  --motion-duration-3250ms: 3250ms;
+  --motion-duration-3500ms: 3500ms;
+  --motion-duration-3600ms: 3600ms;
+  --motion-duration-4000ms: 4000ms;
+  --motion-duration-5000ms: 5000ms;
+  --motion-duration-6000ms: 6000ms;
+  --motion-duration-8000ms: 8000ms;
+  --motion-duration-12000ms: 12000ms;
+  --motion-duration-60000ms: 60000ms;
+  --motion-easing-accordion-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-bezier-0-2-0-9-0-3-1-2: cubic-bezier(0.2, 0.9, 0.3, 1.2);
+  --motion-easing-bezier-0-2-0-9-0-3-1-35: cubic-bezier(0.2, 0.9, 0.3, 1.35);
+  --motion-easing-bezier-0-23-1-0-32-1: cubic-bezier(0.23, 1, 0.32, 1);
+  --motion-easing-bezier-0-32-0-72-0-1: cubic-bezier(0.32, 0.72, 0, 1);
+  --motion-easing-bezier-0-45-0-05-0-35-1: cubic-bezier(0.45, 0.05, 0.35, 1);
+  --motion-easing-bezier-0-65-0-0-35-1: cubic-bezier(0.65, 0, 0.35, 1);
+  --motion-easing-bezier-0-97-0-1-0-2: cubic-bezier(0.97, 0, 1, 0.2);
+  --motion-easing-c15t-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-c15t-easing-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --motion-easing-c15t-easing-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --motion-easing-c15t-easing-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --motion-easing-collapsible-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-consent-banner-animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-consent-dialog-animation-timing: cubic-bezier(0, 0, 0.58, 1);
+  --motion-easing-consent-widget-accordion-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --motion-easing-ease-in-2: cubic-bezier(0.42, 0, 1, 1);
+  --motion-easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-ease-in-out-2: cubic-bezier(0.42, 0, 0.58, 1);
+  --motion-easing-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --motion-easing-ease-quad-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+  --motion-easing-ease-quart-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --motion-easing-ease-sin-in-out: cubic-bezier(0.37, 0, 0.63, 1);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --motion-easing-preference-item-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-rin-ease-dissolve: cubic-bezier(0.64, 0, 0.78, 0);
+  --motion-easing-rin-ease-open: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-easing-rin-ease-reveal: cubic-bezier(0.22, 1, 0.36, 1);
+  --page: var(--color-offwhite);
+  --surface: var(--color-white);
+  --nav: var(--color-grayDark1);
+  --banner: var(--color-yellow);
+  --text: var(--color-black);
+  --textOnDark: var(--color-offwhite);
+  --textMuted: var(--color-gray);
+  --textOnAccent: var(--color-offwhite);
+  --accent: var(--color-orange);
+  --signIn: var(--color-yellow);
+  --border: var(--color-grayLight3);
+  --focus: #476cff;
+  --error: var(--color-red500);
+  --success: var(--color-green600);
+  --sg-display: recklessStandard, Georgia, serif;
+  --sg-sans: easeStandard, ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: "Geist Mono", ui-monospace, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--sg-sans); }
+main { max-width: 1040px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font: 400 56px/56px var(--sg-display); letter-spacing: -1.12px; margin: 0 0 8px; }
+h2 { font: 400 13px/1 var(--sg-sans); letter-spacing: .06em; color: var(--textMuted); margin: 48px 0 12px; }
+p { max-width: 68ch; color: var(--textMuted); }
+code { font-family: var(--sg-mono); font-size: 13px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 148px; }
+.sw i { display: block; height: 48px; border-radius: 6px; border: 1px solid var(--border); }
+.sw b, .sw span { display: block; font: 400 12px/1.4 var(--sg-mono); }
+.sw span { color: var(--textMuted); }
+.ramp { margin: 0 0 20px; }
+.ramp h3 { margin: 0 0 8px; font: 400 14px/1 var(--sg-sans); color: var(--text); }
+.bars i { display: block; height: 8px; background: var(--accent); border-radius: 4px; }
+.bars div { margin: 0 0 8px; }
+.bars span { display: block; font: 400 12px/1.4 var(--sg-mono); color: var(--textMuted); margin-bottom: 4px; }
+.radii { display: flex; flex-wrap: wrap; gap: 12px; }
+.radii div { width: 96px; height: 72px; border: 1px solid var(--border); background: var(--surface); display: flex; align-items: flex-end; padding: 6px; font: 400 11px/1.3 var(--sg-mono); }
+.bar { display: flex; align-items: center; gap: 16px; height: 56px; padding: 0 16px; background: var(--nav); color: var(--textOnDark); }
+.bar a { color: var(--textOnDark); text-decoration: none; font-size: 13.6px; }
+.bar .sp { flex: 1; }
+.banner { background: var(--banner); color: var(--text); text-align: center; font-size: 14px; padding: 8px; }
+.hero { padding: 48px 0 16px; }
+.hero h3 { margin: 0; font: 400 56px/56px var(--sg-display); letter-spacing: -1.12px; max-width: 16ch; }
+.btn { display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 6px; background: var(--accent); color: var(--textOnAccent); border: 0; font: 400 12.8px/1 var(--sg-sans); }
+.sign { display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border-radius: 6px; background: var(--signIn); color: var(--text); font: 400 12.8px/1 var(--sg-sans); }
+.ghost { display: inline-flex; align-items: center; height: 48px; padding: 0 24px; border-radius: 6px; background: var(--surface); color: var(--text); border: 1px solid var(--border); font: 400 16px/1 var(--sg-sans); }
+.field { display: flex; align-items: center; height: 44px; width: 320px; padding: 0 12px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface); color: var(--textMuted); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+th { color: var(--textMuted); font-weight: 400; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Melius</h1>
+  <p>Public marketing site and the signed-out app login and signup cards, captured 2026-11-19. One light marketing theme. Reckless, Ease and Geist Mono are licensed and not loaded here; the page uses the system fallback.</p>
+
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>offwhite</span></div>
+    <div class="sw"><i style="background:var(--surface)"></i><b>surface</b><span>white</span></div>
+    <div class="sw"><i style="background:var(--nav)"></i><b>nav</b><span>gray dark 1</span></div>
+    <div class="sw"><i style="background:var(--banner)"></i><b>banner</b><span>yellow</span></div>
+    <div class="sw"><i style="background:var(--text)"></i><b>text</b><span>black</span></div>
+    <div class="sw"><i style="background:var(--textMuted)"></i><b>muted</b><span>gray</span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><b>accent</b><span>orange</span></div>
+    <div class="sw"><i style="background:var(--signIn)"></i><b>sign in</b><span>yellow</span></div>
+  </div>
+
+  <h2>Chrome</h2>
+  <div class="banner">New: Ditto swaps in any avatar or style in any video</div>
+  <div class="bar">
+    <span>Melius</span>
+    <a>Product</a><a>Pricing</a>
+    <span class="sp"></span>
+    <span class="sign">Sign In</span>
+    <span class="btn">Start for Free</span>
+  </div>
+  <div class="hero">
+    <h3>Create anything you imagine</h3>
+    <p>Display is Reckless at 56px. The hero action is orange at 6px radius. Sign In is the same yellow as the banner.</p>
+    <span class="btn" style="height:48px;padding:0 24px;font-size:16px">Get started for free</span>
+    <span class="ghost">Connect your agent</span>
+  </div>
+
+  <h2>Field</h2>
+  <div class="field">you@company.com</div>
+
+  <h2>Radius</h2>
+  <div class="radii" id="radii"></div>
+  <h2>Space</h2>
+  <div class="bars" id="space"></div>
+  <h2>Type</h2>
+  <table id="type"></table>
+</main>
+<script>
+const T = {"core":{"color":{"black":{"v":"#0e0e0e","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-black on the marketing sheet; the hero ink measured rgb(14, 14, 14)."},"white":{"v":"#ffffff","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-white-2. Marketing --color-white is #fafafa, kept as offwhite."},"offwhite":{"v":"#fafafa","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: marketing --color-white"},"offblack":{"v":"#1a1616","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-offblack"},"orange":{"v":"#f04e23","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-orange, also --color-accent"},"yellow":{"v":"#fff78b","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-yellow"},"amber":{"v":"#ea9e1a","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-amber"},"gray":{"v":"#676767","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-gray"},"grayDark1":{"v":"#202020","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-gray-dark-1"},"grayDark2":{"v":"#2a2a2a","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-gray-dark-2"},"grayDark3":{"v":"#3e3e3e","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-gray-dark-3"},"grayLight1":{"v":"#9c9996","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-gray-light-1"},"grayLight2":{"v":"#b9b9b9","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-gray-light-2"},"grayLight3":{"v":"#d9d9d9","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-gray-light-3"},"grayBackground":{"v":"#e3e3e3","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-gray-background"},"lavender":{"v":"#c7adff","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-lavender"},"purple":{"v":"#a37aff","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-purple"},"periwinkle":{"v":"#b0e3e8","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-periwinkle"},"navy":{"v":"#4164b9","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-navy"},"lime":{"v":"#e0e07b","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-lime"},"olive":{"v":"#9d9d25","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-olive"},"red500":{"v":"#fb2c36","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-red-500 on the marketing sheet. Browsers with lab() support paint the @supports override instead."},"green600":{"v":"#00a544","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-green-600 on the marketing sheet. Browsers with lab() support paint the @supports override instead."}},"font":{"family":{"display":{"v":"recklessStandard, \"recklessStandard Fallback\", ui-serif, Georgia, serif","t":"fontFamily","s":"Measured computed style, public Melius pages, 2026-11-19, light, 1440: h1 fontFamily recklessStandard. @font-face in 398ln9hj2tk0d.css, weight 400. Files not shipped."},"ui":{"v":"easeStandard, \"easeStandard Fallback\", ui-sans-serif, system-ui, sans-serif","t":"fontFamily","s":"Measured computed style, public Melius pages, 2026-11-19, light, 1440: nav and button fontFamily easeStandard. @font-face weight 400. Files not shipped."},"mono":{"v":"\"Geist Mono\", \"Geist Mono Fallback\", ui-monospace, monospace","t":"fontFamily","s":"Declared on the www.melius.com :root, 2026-11-19: --font-geist-mono on the marketing sheet. Files not shipped."},"app":{"v":"Inter, ui-sans-serif, system-ui, sans-serif","t":"fontFamily","s":"Declared on the app.melius.com and docs.melius.com sheets, 2026-11-19: --font-inter \"Inter\". The fallbacks after Inter are hand-written."}},"weight":{"regular":{"v":400,"t":"number","s":"Declared on the www.melius.com :root, 2026-11-19: --font-weight-normal"},"medium":{"v":500,"t":"number","s":"Declared on the www.melius.com :root, 2026-11-19: --font-weight-medium"},"semibold":{"v":600,"t":"number","s":"Declared on the www.melius.com :root, 2026-11-19: --font-weight-semibold"},"bold":{"v":700,"t":"number","s":"Declared on the app.melius.com and docs.melius.com sheets, 2026-11-19: --font-weight-bold 700. The marketing sheet declares no bold weight."}},"size":{"xs":{"v":"12px","t":"dimension","s":"Declared on the www.melius.com :root, 2026-11-19: --text-xs"},"sm":{"v":"14px","t":"dimension","s":"Declared on the www.melius.com :root, 2026-11-19: --text-sm"},"base":{"v":"16px","t":"dimension","s":"Declared on the www.melius.com :root, 2026-11-19: --text-base"},"lg":{"v":"18px","t":"dimension","s":"Declared on the www.melius.com :root, 2026-11-19: --text-lg"},"2xl":{"v":"24px","t":"dimension","s":"Declared on the www.melius.com :root, 2026-11-19: --text-2xl"},"3xl":{"v":"30px","t":"dimension","s":"Declared on the www.melius.com :root, 2026-11-19: --text-3xl"},"hero":{"v":"56px","t":"dimension","s":"Measured computed style, public Melius pages, 2026-11-19, light, 1440: h1 font-size 56px, line-height 56px, letter-spacing -1.12px"}}},"space":{"1":{"v":"4px","t":"dimension","s":"Declared on the www.melius.com :root, 2026-11-19: --spacing, the 4px unit"},"2":{"v":"8px","t":"dimension","s":"Derived: --spacing times 2"},"3":{"v":"12px","t":"dimension","s":"Derived: --spacing times 3"},"4":{"v":"16px","t":"dimension","s":"Derived: --spacing times 4"},"6":{"v":"24px","t":"dimension","s":"Derived: --spacing times 6. Hero CTA padding-inline."},"8":{"v":"32px","t":"dimension","s":"Derived: --spacing times 8"},"10":{"v":"40px","t":"dimension","s":"Derived: --spacing times 10. Nav Sign In height."},"12":{"v":"48px","t":"dimension","s":"Derived: --spacing times 12. Hero CTA height."},"14":{"v":"56px","t":"dimension","s":"Derived: --spacing times 14. Nav bar height."}},"radius":{"xs":{"v":"2px","t":"dimension","s":"Declared on the www.melius.com :root, 2026-11-19: --radius-xs"},"sm":{"v":"4px","t":"dimension","s":"Declared on the www.melius.com :root, 2026-11-19: --radius-sm"},"md":{"v":"6px","t":"dimension","s":"Declared on the www.melius.com :root, 2026-11-19: --radius-md. Nav and hero buttons measure 6px."},"lg":{"v":"8px","t":"dimension","s":"Declared on the www.melius.com :root, 2026-11-19: --radius-lg"},"xl":{"v":"12px","t":"dimension","s":"Declared on the www.melius.com :root, 2026-11-19: --radius-xl"},"2xl":{"v":"16px","t":"dimension","s":"Declared on the www.melius.com :root, 2026-11-19: --radius-2xl"},"3xl":{"v":"24px","t":"dimension","s":"Declared on the www.melius.com :root, 2026-11-19: --radius-3xl"}},"layout":{"page":{"v":"1440px","t":"dimension","s":"Desktop capture width"},"phone":{"v":"390px","t":"dimension","s":"Phone capture width"},"navHeight":{"v":"56px","t":"dimension","s":"Measured computed style, public Melius pages, 2026-11-19, light, 1440: nav height 56px"},"content":{"v":"1200px","t":"dimension","s":"Declared on the www.melius.com :root, 2026-11-19: --container-xl"},"max":{"v":"2000px","t":"dimension","s":"Declared on the www.melius.com :root, 2026-11-19: --container-max"}},"motion":{"duration":{"tw-animation-delay":{"v":"0ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--tw-animation-delay"},"d":"Custom property --tw-animation-delay, declared on *, ::before, ::after, ::backdrop."},"75ms":{"v":"75ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"c15t-duration-fast":{"v":"80ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--c15t-duration-fast"},"d":"Custom property --c15t-duration-fast, declared on :root, .c15t-theme-root."},"consent-banner-animation-duration":{"v":"80ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--consent-banner-animation-duration"},"d":"Custom property --consent-banner-animation-duration, declared on :root."},"100ms":{"v":"100ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"140ms":{"v":"140ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 18 elements."},"accordion-duration":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--accordion-duration"},"d":"Custom property --accordion-duration, declared on :root."},"c15t-duration-normal":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--c15t-duration-normal"},"d":"Custom property --c15t-duration-normal, declared on :root, .c15t-theme-root."},"collapsible-duration":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--collapsible-duration"},"d":"Custom property --collapsible-duration, declared on :root."},"consent-dialog-animation-duration":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--consent-dialog-animation-duration"},"d":"Custom property --consent-dialog-animation-duration, declared on :root."},"consent-widget-accordion-duration":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--consent-widget-accordion-duration"},"d":"Custom property --consent-widget-accordion-duration, declared on :root."},"default-transition-duration":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--default-transition-duration"},"d":"Custom property --default-transition-duration, declared on :root, :host."},"preference-item-duration":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--preference-item-duration"},"d":"Custom property --preference-item-duration, declared on :root."},"160ms":{"v":"160ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"180ms":{"v":"180ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"c15t-duration-slow":{"v":"200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--c15t-duration-slow"},"d":"Custom property --c15t-duration-slow, declared on :root, .c15t-theme-root."},"218ms":{"v":"218ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"pixel-step-duration":{"v":"250ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--pixel-step-duration"},"d":"Custom property --pixel-step-duration, declared on .\\[--pixel-step-duration\\:0\\.25s\\]."},"260ms":{"v":"260ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"280ms":{"v":"280ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"300ms":{"v":"300ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 267 elements."},"320ms":{"v":"320ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"340ms":{"v":"340ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"350ms":{"v":"350ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"360ms":{"v":"360ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"400ms":{"v":"400ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"420ms":{"v":"420ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"450ms":{"v":"450ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 13 elements."},"460ms":{"v":"460ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"500ms":{"v":"500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 12 elements."},"550ms":{"v":"550ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"600ms":{"v":"600ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"700ms":{"v":"700ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"800ms":{"v":"800ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"pixel-cycle-duration":{"v":"900ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--pixel-cycle-duration"},"d":"Custom property --pixel-cycle-duration, declared on .\\[--pixel-cycle-duration\\:0\\.9s\\]."},"1000ms":{"v":"1000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 60 elements."},"1100ms":{"v":"1100ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1200ms":{"v":"1200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1400ms":{"v":"1400ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1800ms":{"v":"1800ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2000ms":{"v":"2000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2200ms":{"v":"2200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2500ms":{"v":"2500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"3000ms":{"v":"3000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"3200ms":{"v":"3200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"3250ms":{"v":"3250ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"3500ms":{"v":"3500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"3600ms":{"v":"3600ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"4000ms":{"v":"4000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"5000ms":{"v":"5000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"6000ms":{"v":"6000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"8000ms":{"v":"8000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"12000ms":{"v":"12000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"60000ms":{"v":"60000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."}},"easing":{"accordion-ease":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--accordion-ease"},"d":"Custom property --accordion-ease, declared on :root."},"bezier-0_2-0_9-0_3-1_2":{"v":[0.2,0.9,0.3,1.2],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_2-0_9-0_3-1_35":{"v":[0.2,0.9,0.3,1.35],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_23-1-0_32-1":{"v":[0.23,1,0.32,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_32-0_72-0-1":{"v":[0.32,0.72,0,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#pages"}},"bezier-0_45-0_05-0_35-1":{"v":[0.45,0.05,0.35,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_65-0-0_35-1":{"v":[0.65,0,0.35,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#pages"}},"bezier-0_97-0-1-0_2":{"v":[0.97,0,1,0.2],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"c15t-easing":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--c15t-easing"},"d":"Custom property --c15t-easing, declared on :root, .c15t-theme-root."},"c15t-easing-in-out":{"v":[0.645,0.045,0.355,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--c15t-easing-in-out"},"d":"Custom property --c15t-easing-in-out, declared on :root, .c15t-theme-root."},"c15t-easing-out":{"v":[0.215,0.61,0.355,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--c15t-easing-out"},"d":"Custom property --c15t-easing-out, declared on :root, .c15t-theme-root."},"c15t-easing-spring":{"v":[0.34,1.56,0.64,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--c15t-easing-spring"},"d":"Custom property --c15t-easing-spring, declared on :root, .c15t-theme-root."},"collapsible-ease":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--collapsible-ease"},"d":"Custom property --collapsible-ease, declared on :root."},"consent-banner-animation-timing":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--consent-banner-animation-timing"},"d":"Custom property --consent-banner-animation-timing, declared on :root."},"consent-dialog-animation-timing":{"v":[0,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#customProperties/--consent-dialog-animation-timing"},"d":"Custom property --consent-dialog-animation-timing, declared on :root."},"consent-widget-accordion-ease":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--consent-widget-accordion-ease"},"d":"Custom property --consent-widget-accordion-ease, declared on :root."},"default-transition-timing-function":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--default-transition-timing-function"},"d":"Custom property --default-transition-timing-function, declared on :root, :host."},"ease":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease`, expanded to its control points."},"ease-in":{"v":[0.4,0,1,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-in"},"d":"Custom property --ease-in, declared on :root, :host."},"ease-in-2":{"v":[0.42,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `ease-in`, expanded to its control points."},"ease-in-out":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-in-out"},"d":"Custom property --ease-in-out, declared on :root, :host."},"ease-in-out-2":{"v":[0.42,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease-in-out`, expanded to its control points."},"ease-out":{"v":[0,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-out"},"d":"Custom property --ease-out, declared on :root, :host."},"ease-quad-in-out":{"v":[0.45,0,0.55,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-quad-in-out"},"d":"Custom property --ease-quad-in-out, declared on :root, :host."},"ease-quart-in-out":{"v":[0.76,0,0.24,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-quart-in-out"},"d":"Custom property --ease-quart-in-out, declared on :root, :host."},"ease-sin-in-out":{"v":[0.37,0,0.63,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-sin-in-out"},"d":"Custom property --ease-sin-in-out, declared on :root, :host."},"linear":{"v":[0,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `linear`, expanded to its control points."},"preference-item-ease":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--preference-item-ease"},"d":"Custom property --preference-item-ease, declared on :root."},"rin-ease-dissolve":{"v":[0.64,0,0.78,0],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--rin-ease-dissolve"},"d":"Custom property --rin-ease-dissolve, declared on :root."},"rin-ease-open":{"v":[0.16,1,0.3,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--rin-ease-open"},"d":"Custom property --rin-ease-open, declared on :root."},"rin-ease-reveal":{"v":[0.22,1,0.36,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--rin-ease-reveal"},"d":"Custom property --rin-ease-reveal, declared on :root."}},"transition":{"tw-gradient-from-150ms-accordion-ease":{"v":{"duration":"{motion.duration.accordion-duration}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 123 elements."},"tw-gradient-to-150ms-accordion-ease":{"v":{"duration":"{motion.duration.accordion-duration}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 123 elements."},"tw-gradient-via-150ms-accordion-ease":{"v":{"duration":"{motion.duration.accordion-duration}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 123 elements."},"background-color-150ms-accordion-ease":{"v":{"duration":"{motion.duration.accordion-duration}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 123 elements."},"border-color-150ms-accordion-ease":{"v":{"duration":"{motion.duration.accordion-duration}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 123 elements."},"color-150ms-accordion-ease":{"v":{"duration":"{motion.duration.accordion-duration}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 123 elements."},"fill-150ms-accordion-ease":{"v":{"duration":"{motion.duration.accordion-duration}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 123 elements."},"outline-color-150ms-accordion-ease":{"v":{"duration":"{motion.duration.accordion-duration}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 123 elements."},"stroke-150ms-accordion-ease":{"v":{"duration":"{motion.duration.accordion-duration}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 123 elements."},"text-decoration-color-150ms-accordion-ease":{"v":{"duration":"{motion.duration.accordion-duration}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 123 elements."},"opacity-150ms-accordion-ease":{"v":{"duration":"{motion.duration.accordion-duration}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 99 elements."},"background-color-200ms-ease-sin-in-out":{"v":{"duration":"{motion.duration.c15t-duration-slow}","delay":"0ms","timingFunction":"{motion.easing.ease-sin-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 77 elements."},"border-color-200ms-ease-sin-in-out":{"v":{"duration":"{motion.duration.c15t-duration-slow}","delay":"0ms","timingFunction":"{motion.easing.ease-sin-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 77 elements."},"color-200ms-ease-sin-in-out":{"v":{"duration":"{motion.duration.c15t-duration-slow}","delay":"0ms","timingFunction":"{motion.easing.ease-sin-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 77 elements."},"opacity-200ms-ease-sin-in-out":{"v":{"duration":"{motion.duration.c15t-duration-slow}","delay":"0ms","timingFunction":"{motion.easing.ease-sin-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 77 elements."},"opacity-1000ms-ease":{"v":{"duration":"{motion.duration.1000ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 59 elements."},"all-200ms-ease-sin-in-out":{"v":{"duration":"{motion.duration.c15t-duration-slow}","delay":"0ms","timingFunction":"{motion.easing.ease-sin-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 52 elements."},"tw-gradient-from-200ms-accordion-ease":{"v":{"duration":"{motion.duration.c15t-duration-slow}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 32 elements."},"tw-gradient-to-200ms-accordion-ease":{"v":{"duration":"{motion.duration.c15t-duration-slow}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 32 elements."},"tw-gradient-via-200ms-accordion-ease":{"v":{"duration":"{motion.duration.c15t-duration-slow}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 32 elements."},"background-color-200ms-accordion-ease":{"v":{"duration":"{motion.duration.c15t-duration-slow}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 32 elements."},"border-color-200ms-accordion-ease":{"v":{"duration":"{motion.duration.c15t-duration-slow}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 32 elements."},"color-200ms-accordion-ease":{"v":{"duration":"{motion.duration.c15t-duration-slow}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 32 elements."},"fill-200ms-accordion-ease":{"v":{"duration":"{motion.duration.c15t-duration-slow}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 32 elements."},"outline-color-200ms-accordion-ease":{"v":{"duration":"{motion.duration.c15t-duration-slow}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 32 elements."},"stroke-200ms-accordion-ease":{"v":{"duration":"{motion.duration.c15t-duration-slow}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 32 elements."},"text-decoration-color-200ms-accordion-ease":{"v":{"duration":"{motion.duration.c15t-duration-slow}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 32 elements."},"rotate-300ms-accordion-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 25 elements."},"scale-300ms-accordion-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 25 elements."},"transform-300ms-accordion-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 25 elements."},"translate-300ms-accordion-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 25 elements."},"all-450ms-ease-quart-in-out":{"v":{"duration":"{motion.duration.450ms}","delay":"0ms","timingFunction":"{motion.easing.ease-quart-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 13 elements."},"rotate-150ms-accordion-ease":{"v":{"duration":"{motion.duration.accordion-duration}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 13 elements."},"scale-150ms-accordion-ease":{"v":{"duration":"{motion.duration.accordion-duration}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 13 elements."},"transform-150ms-accordion-ease":{"v":{"duration":"{motion.duration.accordion-duration}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 13 elements."},"translate-150ms-accordion-ease":{"v":{"duration":"{motion.duration.accordion-duration}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 13 elements."},"all-200ms-ease":{"v":{"duration":"{motion.duration.c15t-duration-slow}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 10 elements."},"background-color-140ms-ease":{"v":{"duration":"{motion.duration.140ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 9 elements."},"color-140ms-ease":{"v":{"duration":"{motion.duration.140ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 9 elements."},"rotate-200ms-accordion-ease":{"v":{"duration":"{motion.duration.c15t-duration-slow}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"scale-200ms-accordion-ease":{"v":{"duration":"{motion.duration.c15t-duration-slow}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"transform-200ms-accordion-ease":{"v":{"duration":"{motion.duration.c15t-duration-slow}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"translate-200ms-accordion-ease":{"v":{"duration":"{motion.duration.c15t-duration-slow}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"tw-gradient-from-300ms-accordion-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"tw-gradient-to-300ms-accordion-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"tw-gradient-via-300ms-accordion-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"background-color-300ms-accordion-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"border-color-300ms-accordion-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"color-300ms-accordion-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"fill-300ms-accordion-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"outline-color-300ms-accordion-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"stroke-300ms-accordion-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"text-decoration-color-300ms-accordion-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.accordion-ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"tw-gradient-from-300ms-bezier-0_65-0-0_35-1-delay100ms":{"v":{"duration":"{motion.duration.300ms}","delay":"100ms","timingFunction":"{motion.easing.bezier-0_65-0-0_35-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"tw-gradient-to-300ms-bezier-0_65-0-0_35-1-delay100ms":{"v":{"duration":"{motion.duration.300ms}","delay":"100ms","timingFunction":"{motion.easing.bezier-0_65-0-0_35-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"tw-gradient-via-300ms-bezier-0_65-0-0_35-1-delay100ms":{"v":{"duration":"{motion.duration.300ms}","delay":"100ms","timingFunction":"{motion.easing.bezier-0_65-0-0_35-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"background-color-300ms-bezier-0_65-0-0_35-1-delay100ms":{"v":{"duration":"{motion.duration.300ms}","delay":"100ms","timingFunction":"{motion.easing.bezier-0_65-0-0_35-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"border-color-300ms-bezier-0_65-0-0_35-1-delay100ms":{"v":{"duration":"{motion.duration.300ms}","delay":"100ms","timingFunction":"{motion.easing.bezier-0_65-0-0_35-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"color-300ms-bezier-0_65-0-0_35-1-delay100ms":{"v":{"duration":"{motion.duration.300ms}","delay":"100ms","timingFunction":"{motion.easing.bezier-0_65-0-0_35-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"fill-300ms-bezier-0_65-0-0_35-1-delay100ms":{"v":{"duration":"{motion.duration.300ms}","delay":"100ms","timingFunction":"{motion.easing.bezier-0_65-0-0_35-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."}},"animation":{"accordion-up":{"v":{"name":"accordion-up","duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-quart-in-out}","iterationCount":"1","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `accordion-up`."},"enter":{"v":{"name":"enter","duration":"{motion.duration.accordion-duration}","delay":"0ms","timingFunction":"{motion.easing.ease}","iterationCount":"1","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `enter`."},"mark-cycle":{"v":{"name":"mark-cycle","duration":"{motion.duration.4000ms}","delay":"-2000ms","timingFunction":"{motion.easing.ease-quad-in-out}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `mark-cycle`."},"noise":{"v":{"name":"noise","duration":"{motion.duration.3000ms}","delay":"0ms","timingFunction":"steps(5, end)","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `noise`."},"pricing-card-glow-breathe":{"v":{"name":"pricing-card-glow-breathe","duration":"{motion.duration.3500ms}","delay":"0ms","timingFunction":"{motion.easing.ease-sin-in-out}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `pricing-card-glow-breathe`."},"rin-tag-new-sweep":{"v":{"name":"rin-tag-new-sweep","duration":"{motion.duration.1000ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out-2}","iterationCount":"1","direction":"normal","fillMode":"forwards"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `rin-tag-new-sweep`."},"shimmer-sweep":{"v":{"name":"shimmer-sweep","duration":"{motion.duration.2500ms}","delay":"0ms","timingFunction":"{motion.easing.linear}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `shimmer-sweep`."}}}},"light":{"page":{"v":"{color.offwhite}","t":"color","s":"Measured computed style, public Melius pages, 2026-11-19, light, 1440: html background rgb(250, 250, 250), marketing --color-white"},"surface":{"v":"{color.white}","t":"color","s":"Measured computed style, public Melius pages, 2026-11-19, light, 1440: Connect your agent button and auth Google button sit on white"},"nav":{"v":"{color.grayDark1}","t":"color","s":"Measured computed style, public Melius pages, 2026-11-19, light, 1440: nav background rgb(32, 32, 32), --color-gray-dark-1"},"banner":{"v":"{color.yellow}","t":"color","s":"Measured computed style, public Melius pages, 2026-11-19, light, 1440: announcement bar is the yellow token"},"text":{"v":"{color.black}","t":"color","s":"Measured computed style, public Melius pages, 2026-11-19, light, 1440: body and h1 color rgb(14, 14, 14)"},"textOnDark":{"v":"{color.offwhite}","t":"color","s":"Measured computed style, public Melius pages, 2026-11-19, light, 1440: nav labels rgb(250, 250, 250)"},"textMuted":{"v":"{color.gray}","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-gray, used for secondary copy"},"textOnAccent":{"v":"{color.offwhite}","t":"color","s":"Measured computed style, public Melius pages, 2026-11-19, light, 1440: Start for Free label rgb(250, 250, 250)"},"accent":{"v":"{color.orange}","t":"color","s":"Measured computed style, public Melius pages, 2026-11-19, light, 1440: Start for Free and Get started for free background rgb(240, 78, 35)"},"signIn":{"v":"{color.yellow}","t":"color","s":"Measured computed style, public Melius pages, 2026-11-19, light, 1440: Sign In background rgb(255, 247, 139)"},"border":{"v":"{color.grayLight3}","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-gray-light-3"},"focus":{"v":"#476cff","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: consent --legal-links-focus-color and accordion focus ring. Marketing buttons showed no focus ring at rest."},"error":{"v":"{color.red500}","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-red-500"},"success":{"v":"{color.green600}","t":"color","s":"Declared on the www.melius.com :root, 2026-11-19: --color-green-600"}},"dark":{}};
+const css = (p) => '--' + p.replaceAll('.', '-');
+function val(path) {
+  const parts = path.split('.');
+  let n = T;
+  for (const p of parts) n = n[p];
+  return n && n.v;
+}
+const radii = document.getElementById('radii');
+for (const [k, t] of Object.entries(T.core.radius)) {
+  const d = document.createElement('div');
+  d.style.borderRadius = t.v;
+  d.textContent = k + ' ' + t.v;
+  radii.appendChild(d);
+}
+const space = document.getElementById('space');
+for (const [k, t] of Object.entries(T.core.space)) {
+  // Built with textContent and style properties, not innerHTML: names and values come from a
+  // third-party stylesheet.
+  const d = document.createElement('div');
+  const label = document.createElement('span');
+  label.textContent = k + ' ' + t.v;
+  const bar = document.createElement('i');
+  bar.style.width = t.v;
+  d.append(label, bar);
+  space.appendChild(d);
+}
+const type = document.getElementById('type');
+const row = (cells, tag) => {
+  const tr = document.createElement('tr');
+  for (const c of cells) { const td = document.createElement(tag); td.textContent = c; tr.appendChild(td); }
+  return tr;
+};
+type.appendChild(row(['role', 'family'], 'th'));
+for (const [k, t] of Object.entries(T.core.font.family)) type.appendChild(row([k, t.v], 'td'));
+</script>
+</body>
+</html>

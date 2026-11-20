@@ -1,0 +1,12 @@
+{
+ "_note": "Rules for systems/fiverr. Public signed-out marketplace capture (home, categories, search results, a public gig and its seller profile, join/login, marketing pages); no private data expected. Gig and seller screenshots show product-published seller names and avatars (public marketplace content). Fiverr's own published addresses and example values are allow-listed.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@fiverr\\.com$",
+   "@example\\.com$",
+   "@example\\.org$"
+  ]
+ },
+ "families": []
+}

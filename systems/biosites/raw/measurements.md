@@ -425,22 +425,23 @@ Page: home. Selector: `h2:has-text("BIO.SITE/YOURNAME")`. States: default, hover
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 776.55 x 98 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Clarkson 70px/98px 500 | = | = | = |
-| Letter spacing | -0.5px | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Text node | span: Clarkson 70px/98px 500, #ffffff, ls -0.5px | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 776.55 x 98 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Clarkson 70px/98px 500 | = | - | = |
+| Letter spacing | -0.5px | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Text node | span: Clarkson 70px/98px 500, #ffffff, ls -0.5px | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `footer-cta-default.png`, `footer-cta-hover.png`, `footer-cta-focus-visible.png`, `footer-cta-pressed.png`.
+Crops: `footer-cta-default.png`, `footer-cta-hover.png`, `footer-cta-pressed.png`.
 
 #### footer-link
 
@@ -598,23 +599,24 @@ Page: claim. Selector: `button.UsernameSearch__submit`. States: default, hover, 
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 53 x 53 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 100% | = | = | = |
-| Background | #2a2a2a | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Clarkson 10px/normal 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #1b1b1b | = | = | = |
-| Transition | none | = | = | = |
-| Opacity | 0.2 | = | = | = |
-| Icon | 28 x 28, colour #e6e6e6 | = | = | = |
-| Painted layers | button.Editor-pages-CreateSite-_pages-UsernameSearch-UsernameSearch__submit--L6wVx 53.0x53.0 bg #2a2a2a r 100% | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 53 x 53 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 100% | = | - | = |
+| Background | #2a2a2a | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Clarkson 10px/normal 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #1b1b1b | = | - | = |
+| Transition | none | = | - | = |
+| Opacity | 0.2 | = | - | = |
+| Icon | 28 x 28, colour #e6e6e6 | = | - | = |
+| Painted layers | button.Editor-pages-CreateSite-_pages-UsernameSearch-UsernameSearch__submit--L6wVx 53.0x53.0 bg #2a2a2a r 100% | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `claim-submit-default.png`, `claim-submit-hover.png`, `claim-submit-focus-visible.png`, `claim-submit-pressed.png`.
+Crops: `claim-submit-default.png`, `claim-submit-hover.png`, `claim-submit-pressed.png`.
 
 #### claim-login
 

@@ -1,0 +1,82 @@
+{
+ "readAt": "2026-11-12",
+ "source": "the stylesheet bodies read during a live home load on care.com (the linked _next chunk CSS from network responses plus the inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets, plain (:root) and with a .dark class, at 1440 x 900",
+ "sheets": [
+  "https://www.care.com/app/vhp/_next/static/chunks/0jn10lp733lt4.css (3508 bytes)",
+  "https://accounts.google.com/gsi/style (696 bytes)",
+  "inline-0 (1909 bytes)",
+  "inline-1 (249 bytes)",
+  "inline-2 (52246 bytes)",
+  "inline-3 (55339 bytes)",
+  "inline-4 (9538 bytes)",
+  "inline-5 (121754 bytes)"
+ ],
+ "counts": {
+  "rules": 1,
+  "fonts": 5,
+  "names": {
+   "theme": 0,
+   "app": 1,
+   "skins": 0,
+   "vendor": 0,
+   "utility": 0,
+   "tailwind": 0
+  },
+  "bySelector": {
+   "[app] #onetrust-pc-sdk": 1
+  }
+ },
+ "errors": [],
+ "theme": [],
+ "app": [
+  {
+   "file": "inline-5",
+   "selector": "#onetrust-pc-sdk",
+   "context": [],
+   "properties": {
+    "--ot-footer-space": "160px"
+   },
+   "bin": "app"
+  }
+ ],
+ "skins": [],
+ "vendor": [],
+ "utility": [],
+ "tailwind": [],
+ "fonts": [
+  {
+   "file": "https://www.care.com/app/vhp/_next/static/chunks/0jn10lp733lt4.css",
+   "font-family": "slick",
+   "font-weight": "400",
+   "font-style": "normal",
+   "src": "url(\"../media/slick.1vsdartgie2p6.woff\") format(\"woff\"), url(\"../media/slick.31nmwotl_nifp.ttf\") format(\"truetype\")"
+  },
+  {
+   "file": "inline-0",
+   "font-family": "\"Oceanic Grotesk\"",
+   "src": "url(\"https://www.care.com/css/cms/font-face/OceanicGrotesk/OceanicGrotesk-Regular.woff2\") format(\"woff2\"), url(\"https://www.care.com/css/cms/font-face/OceanicGrotesk/OceanicGrotesk-Regular.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline-0",
+   "font-family": "\"Oceanic Grotesk\"",
+   "font-weight": "500 700",
+   "src": "url(\"https://www.care.com/css/cms/font-face/OceanicGrotesk/OceanicGrotesk-Medium.woff2\") format(\"woff2\"), url(\"https://www.care.com/css/cms/font-face/OceanicGrotesk/OceanicGrotesk-Medium.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline-0",
+   "font-family": "\"Oceanic Text Semibold\"",
+   "font-weight": "450",
+   "src": "url(\"https://www.care.com/css/cms/font-face/OceanicText/OceanicText-Book.woff2\") format(\"woff2\"), url(\"https://www.care.com/css/cms/font-face/OceanicText/OceanicText-Book.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline-0",
+   "font-family": "\"NaN Druid Sans\"",
+   "font-weight": "550",
+   "src": "url(\"https://www.care.com/css/cms/font-face/NaNDruid-Sans/NaNDruid-Sans.woff2\") format(\"woff2\")"
+  }
+ ],
+ "resolved": {
+  "dark": {},
+  "light": {}
+ }
+}

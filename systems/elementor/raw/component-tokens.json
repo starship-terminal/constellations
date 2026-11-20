@@ -1,0 +1,375 @@
+{
+ "$meta": {
+  "built": "2026-11-13",
+  "from": "raw/components-computed.json (computed styles read live on elementor.com)"
+ },
+ "light": {
+  "page": {
+   "$value": "#ffffff",
+   "$type": "color",
+   "$extensions": {
+    "source": "declared --Blank-Canvas-White (resolved on :root, raw/css-vars.json); html/body compute to transparent, so the page shows this white"
+   }
+  },
+  "surface": {
+   "$value": "#f6f6f6",
+   "$type": "color",
+   "$extensions": {
+    "source": "computed backgroundColor on contact-card (the Key-contact-options tile), /contact"
+   }
+  },
+  "surfaceRaised": {
+   "$value": "#ffffff",
+   "$type": "color",
+   "$extensions": {
+    "source": "computed backgroundColor on the header pill bar, header.elementor-location-header"
+   }
+  },
+  "text": {
+   "$value": "#000000",
+   "$type": "color",
+   "$extensions": {
+    "source": "computed color on the page headings/buttons (contact-h1, nav-cta, plan-cta) \u2014 Kernel-Black"
+   }
+  },
+  "textStrong": {
+   "$value": "#212121",
+   "$type": "color",
+   "$extensions": {
+    "source": "computed color on FAQ answers, the nav trigger and mobile nav items \u2014 Grey-800 #212121"
+   }
+  },
+  "textMuted": {
+   "$value": "#7a7a7a",
+   "$type": "color",
+   "$extensions": {
+    "source": "declared --e-global-color-text on .elementor-kit-35 (the kit's text global, raw/css-vars.json theme rules)"
+   }
+  },
+  "iconMuted": {
+   "$value": "#69727d",
+   "$type": "color",
+   "$extensions": {
+    "source": "computed color on the footer social icons at rest"
+   }
+  },
+  "border": {
+   "$value": "#d1d1d1",
+   "$type": "color",
+   "$extensions": {
+    "source": "computed borderTopColor on the form fields \u2014 Grey-500 #d1d1d1"
+   }
+  },
+  "borderStrong": {
+   "$value": "#000000",
+   "$type": "color",
+   "$extensions": {
+    "source": "computed borderTopColor on a focused field and the outline plan-cta \u2014 Kernel-Black"
+   }
+  },
+  "accent": {
+   "$value": "#000000",
+   "$type": "color",
+   "$extensions": {
+    "source": "computed backgroundColor on the Get-started pill and Submit \u2014 Kernel-Black"
+   }
+  },
+  "accentOn": {
+   "$value": "#ffffff",
+   "$type": "color",
+   "$extensions": {
+    "source": "computed color on the Get-started pill"
+   }
+  },
+  "accentHover": {
+   "$value": "#ed01ee",
+   "$type": "color",
+   "$extensions": {
+    "source": "computed backgroundColor on hover of the Get-started pill, Submit and the plan CTA \u2014 Neon-Loop"
+   }
+  },
+  "tintHover": {
+   "$value": "#fae4fa",
+   "$type": "color",
+   "$extensions": {
+    "source": "computed hover background on the nav trigger and mega-menu links \u2014 Syntax-Glow"
+   }
+  },
+  "focusRing": {
+   "$value": "#005fcc",
+   "$type": "color",
+   "$extensions": {
+    "source": "computed outlineColor on keyboard focus \u2014 the browser focus ring the site leaves in place"
+   }
+  },
+  "focusRingWidth": {
+   "$value": "2px",
+   "$type": "dimension",
+   "$extensions": {
+    "source": "computed outlineWidth on keyboard focus"
+   }
+  },
+  "link": {
+   "$value": "#0000ee",
+   "$type": "color",
+   "$extensions": {
+    "source": "computed color on the plain header link \u2014 the unvisited-link blue elementor.com leaves unset"
+   }
+  },
+  "menuPanel": {
+   "$value": "#ffffff",
+   "$type": "color",
+   "$extensions": {
+    "source": "the opened mega-menu panel's first painted layer (nav-dropdown paint[0] bg; radius 24px, ::before hairline #d1d1d1, the header pill's shadow)"
+   }
+  },
+  "fieldSurface": {
+   "$value": "#ffffff",
+   "$type": "color",
+   "$extensions": {
+    "source": "computed backgroundColor on the contact form inputs"
+   }
+  },
+  "overlayScrim": {
+   "$value": "rgba(0, 0, 0, 0.4)",
+   "$type": "color",
+   "$extensions": {
+    "source": "observed on the contact form popup: the page dims behind the open dialog (the modal layer's backdrop; the crop shows the dimmed page)",
+    "sampled": true
+   }
+  }
+ },
+ "dark": {
+  "$description": "The .dark-mode island scope (photo/video hero, dark sections, the dsm-footer): `.dark-mode *` re-binds --Kernel-Black to #fff, --Blank-Canvas-White to #000 and --Grey-800 to --Grey-200, so the same named vars paint dark.",
+  "page": {
+   "$value": "#000000",
+   "$type": "color",
+   "$extensions": {
+    "source": "computed backgroundColor on .dsm-footer and the hero stage (section.dark-mode) \u2014 Kernel-Black"
+   }
+  },
+  "surface": {
+   "$value": "#000000",
+   "$type": "color",
+   "$extensions": {
+    "source": "computed backgroundColor on the dark stat card (the 22M+ tile)"
+   }
+  },
+  "text": {
+   "$value": "#ffffff",
+   "$type": "color",
+   "$extensions": {
+    "source": "computed color on the hero headline and dark-section headings \u2014 --Kernel-Black rebound to #fff"
+   }
+  },
+  "textMuted": {
+   "$value": "#f6f6f6",
+   "$type": "color",
+   "$extensions": {
+    "source": "computed color on the hero lede \u2014 Grey-200"
+   }
+  },
+  "accent": {
+   "$value": "#ffffff",
+   "$type": "color",
+   "$extensions": {
+    "source": "declared --Kernel-Black resolved in the .dark-mode scope (raw/css-vars.json): dsm-button-primary reads it (the white Get-started pill in the hero)"
+   }
+  },
+  "accentOn": {
+   "$value": "#000000",
+   "$type": "color",
+   "$extensions": {
+    "source": "declared --Blank-Canvas-White resolved in the .dark-mode scope (raw/css-vars.json): the pill's text"
+   }
+  },
+  "border": {
+   "$value": "#484848",
+   "$type": "color",
+   "$extensions": {
+    "source": "declared --Grey-700 resolved in the .dark-mode scope (raw/css-vars.json), the scale step for hairlines on dark ground"
+   }
+  }
+ },
+ "component": {
+  "header": {
+   "radius": {
+    "$value": "24px",
+    "$type": "dimension",
+    "$extensions": {
+     "source": "computed borderRadius on the header pill bar"
+    }
+   },
+   "height": {
+    "$value": "72px",
+    "$type": "dimension",
+    "$extensions": {
+     "source": "computed height on the header pill bar"
+    }
+   },
+   "shadow": {
+    "$value": "rgba(0, 0, 0, 0.05) 0px 0px 15.008px 3.008px",
+    "$type": "shadow",
+    "$extensions": {
+     "source": "computed boxShadow on the header pill bar"
+    }
+   }
+  },
+  "buttonPrimary": {
+   "radius": {
+    "$value": "8px",
+    "$type": "dimension",
+    "$extensions": {
+     "source": "computed borderRadius on the Get-started pill / Submit"
+    }
+   },
+   "height": {
+    "$value": "48px",
+    "$type": "dimension",
+    "$extensions": {
+     "source": "computed height on the header Get-started pill"
+    }
+   }
+  },
+  "buttonHero": {
+   "height": {
+    "$value": "48px",
+    "$type": "dimension",
+    "$extensions": {
+     "source": "computed height on the hero Get-started pill"
+    }
+   }
+  },
+  "planCta": {
+   "border": {
+    "$value": "2px solid #000000",
+    "$type": "other",
+    "$extensions": {
+     "source": "computed border on the outline Buy-now button"
+    }
+   }
+  },
+  "field": {
+   "radius": {
+    "$value": "4px",
+    "$type": "dimension",
+    "$extensions": {
+     "source": "computed borderRadius on the contact form inputs"
+    }
+   },
+   "height": {
+    "$value": "40.4062px",
+    "$type": "dimension",
+    "$extensions": {
+     "source": "computed height on the name input"
+    }
+   },
+   "border": {
+    "$value": "1px solid #d1d1d1",
+    "$type": "other",
+    "$extensions": {
+     "source": "computed border on the contact form inputs"
+    }
+   }
+  },
+  "card": {
+   "radius": {
+    "$value": "16px",
+    "$type": "dimension",
+    "$extensions": {
+     "source": "computed borderRadius on the dsm card tiles (stat tile, contact card, menu feature tile)"
+    }
+   }
+  },
+  "planCard": {
+   "radius": {
+    "$value": "8px",
+    "$type": "dimension",
+    "$extensions": {
+     "source": "computed borderRadius on the pricing plan card"
+    }
+   }
+  },
+  "checkbox": {
+   "size": {
+    "$value": "16px",
+    "$type": "dimension",
+    "$extensions": {
+     "source": "computed size of the acceptance checkbox"
+    }
+   },
+   "border": {
+    "$value": "0px none #000000",
+    "$type": "other",
+    "$extensions": {
+     "source": "computed border on the acceptance checkbox"
+    }
+   }
+  },
+  "type": {
+   "display": {
+    "$value": "88px",
+    "$type": "dimension",
+    "$extensions": {
+     "source": "computed fontSize on the hero h1 (Roobert 600)",
+     "weight": "600",
+     "lineHeight": "96.8px"
+    }
+   },
+   "section": {
+    "$value": "24px",
+    "$type": "dimension",
+    "$extensions": {
+     "source": "computed fontSize on the section h2",
+     "weight": "400"
+    }
+   },
+   "planPrice": {
+    "$value": "40px",
+    "$type": "dimension",
+    "$extensions": {
+     "source": "computed fontSize on the plan price figure",
+     "weight": "600"
+    }
+   },
+   "body": {
+    "$value": "16px",
+    "$type": "dimension",
+    "$extensions": {
+     "source": "computed fontSize on body copy (faq-answer)",
+     "lineHeight": "22.4px"
+    }
+   },
+   "small": {
+    "$value": "14px",
+    "$type": "dimension",
+    "$extensions": {
+     "source": "computed fontSize on small copy (mobile nav items)"
+    }
+   }
+  },
+  "motion": {
+   "button": {
+    "$value": "0.2s ease",
+    "$type": "other",
+    "$extensions": {
+     "source": "computed transition (background-color) on hero-cta default: the dsm primary buttons"
+    }
+   },
+   "link": {
+    "$value": "0.3s ease-in-out",
+    "$type": "other",
+    "$extensions": {
+     "source": "computed transition (opacity) on nav-login default: the header links"
+    }
+   },
+   "panel": {
+    "$value": "0.5s ease",
+    "$type": "other",
+    "$extensions": {
+     "source": "computed transition (grid-template-rows) on faq-answer default: the FAQ answer reveal (the mobile menu's max-height runs 0.3s)"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PayPal style guide</title>
+<style>
+  :root {
+    --page: #FFFFFF;
+    --canvas: #F1EFEA;
+    --surface: #F5F7FA;
+    --ink: #000000;
+    --navy: #002991;
+    --cyan: #60CDFF;
+    --link: #0066F5;
+    --muted: #686A6D;
+    --login: #001435;
+    --action: #0551B5;
+    --border: #EAECED;
+    --sans: "PayPal Pro Text VF", Helvetica, Arial, sans-serif;
+    --display: "PayPal Pro", "Century Gothic", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--canvas); color: var(--ink); font: 400 16px/1.4 var(--sans); }
+  main { max-width: 880px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-family: var(--display); font-weight: 900; letter-spacing: -0.03em; font-size: 40px; margin: 0 0 8px; }
+  h2 { font-family: var(--display); font-weight: 900; font-size: 22px; margin: 32px 0 12px; }
+  p { max-width: 68ch; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .sw { width: 140px; }
+  .sw i { display: block; height: 64px; border-radius: 12px; border: 1px solid var(--border); }
+  .sw span { display: block; font-size: 12px; margin-top: 6px; }
+  .btn { display: inline-block; background: #000; color: #fff; text-decoration: none; font-weight: 700; letter-spacing: -0.015em; padding: 12px 20px; border-radius: 1000px; line-height: 24px; }
+  .btn-login { display: inline-block; background: #0551B5; color: #fff; border: 2px solid #0551B5; border-radius: 100px; padding: 12px 32px; font-weight: 500; }
+  .field { display: block; width: 364px; max-width: 100%; background: #fff; border: 1px solid #CFD3D8; border-radius: 6px; padding: 20px 12px 8px; font: 400 16px/24px var(--sans); }
+  .card { background: #fff; border: 1px solid #EAECED; border-radius: 12px; padding: 30px 46px 50px; max-width: 460px; }
+  .plate { background: var(--navy); color: #fff; border-radius: 0; padding: 28px; }
+  code { font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>PayPal</h1>
+  <p>Light tokens from the public signed-out pages, 2026-11-19. Proprietary faces fall back to Helvetica when they are not installed.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:#FFFFFF"></i><span>page #FFFFFF</span></div>
+    <div class="sw"><i style="background:#F1EFEA"></i><span>canvas #F1EFEA</span></div>
+    <div class="sw"><i style="background:#F5F7FA"></i><span>surface #F5F7FA</span></div>
+    <div class="sw"><i style="background:#000000"></i><span>ink #000000</span></div>
+    <div class="sw"><i style="background:#002991"></i><span>navy #002991</span></div>
+    <div class="sw"><i style="background:#60CDFF"></i><span>cyan #60CDFF</span></div>
+    <div class="sw"><i style="background:#0066F5"></i><span>link #0066F5</span></div>
+    <div class="sw"><i style="background:#0551B5"></i><span>login action #0551B5</span></div>
+    <div class="sw"><i style="background:#001435"></i><span>login ink #001435</span></div>
+    <div class="sw"><i style="background:#686A6D"></i><span>muted #686A6D</span></div>
+  </div>
+  <h2>Type</h2>
+  <p style="font-family:var(--display);font-weight:900;font-size:43px;letter-spacing:-0.03em;line-height:1.1">The secure way to pay and get paid</p>
+  <p>Body is PayPal Pro Text VF at 16px. This paragraph uses the fallback stack.</p>
+  <h2>Controls</h2>
+  <p><a class="btn" href="#button">Learn More</a></p>
+  <div class="card">
+    <p style="color:#001435;font-size:24px;line-height:32px;margin-top:0">Log in to your PayPal account</p>
+    <input class="field" placeholder="Email or mobile number" aria-label="Email or mobile number" readonly>
+    <p><span class="btn-login">Next</span></p>
+  </div>
+  <h2>Plate</h2>
+  <div class="plate">
+    <p style="font-family:var(--display);font-weight:900;font-size:32px;margin:0">Send money to just about anyone</p>
+  </div>
+</main>
+</body>
+</html>

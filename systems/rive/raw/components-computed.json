@@ -1,0 +1,385 @@
+{
+  "captured": "2026-11-19",
+  "viewportCss": {
+    "width": 1169,
+    "height": 731,
+    "devicePixelRatio": 2,
+    "visualViewportScale": 1
+  },
+  "screenshotFrames": "The browser is not producing screenshot frames. No PNG saved.",
+  "home": {
+    "url": "https://rive.app/",
+    "title": "Rive: agent-native 2D and 3D engine for games, apps, and UI",
+    "scrollHeight": 20015,
+    "body": {
+      "background": "rgb(0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "font": "sans-serif",
+      "fontSize": "12px"
+    },
+    "nav": {
+      "height": 63,
+      "paddingInline": "40px",
+      "barHeight": 64,
+      "background": "rgb(0, 0, 0)"
+    },
+    "display": {
+      "h1": {
+        "text": "BUILD GAMES, APPS, AND INTERACTIVE UI",
+        "font": "Orbitron",
+        "size": "48px",
+        "weight": "900",
+        "lineHeight": "48.96px",
+        "letterSpacing": "-1.44px",
+        "color": "rgb(255, 255, 255)",
+        "transform": "uppercase"
+      },
+      "h2": {
+        "size": "34px",
+        "weight": "900",
+        "lineHeight": "36.72px",
+        "letterSpacing": "-0.34px",
+        "font": "Orbitron",
+        "color": "rgb(255, 255, 255)",
+        "transform": "uppercase"
+      }
+    },
+    "navLink": {
+      "font": "Inter",
+      "size": "12px",
+      "weight": "500",
+      "letterSpacing": "0.96px",
+      "color": "rgba(255, 255, 255, 0.85)",
+      "transform": "uppercase",
+      "transition": "color 0.15s ease"
+    },
+    "cta": {
+      "text": "GET STARTED",
+      "font": "PragmataPro VF Variable Regular",
+      "size": "12px",
+      "weight": "500",
+      "lineHeight": "15.6px",
+      "letterSpacing": "1.2px",
+      "color": "rgb(0, 0, 0)",
+      "background": "rgb(255, 255, 255)",
+      "padding": "5px 9px 6px",
+      "radius": "4px",
+      "height": 27,
+      "shadow": "rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
+      "hoverBackground": "rgb(223, 224, 227)",
+      "focusVisibleBackground": "rgb(223, 224, 227)",
+      "transition": "background 0.15s ease",
+      "transform": "uppercase"
+    },
+    "ghost": {
+      "background": "rgba(255, 255, 255, 0.05)",
+      "padding": "5px 9px 6px",
+      "radius": "4px",
+      "height": 27
+    },
+    "copyButton": {
+      "background": "rgba(255, 255, 255, 0.9)",
+      "color": "rgb(0, 0, 0)",
+      "border": "1px solid rgb(255, 255, 255)",
+      "radius": "4px",
+      "padding": "5px 9px 6px",
+      "height": 29,
+      "font": "PragmataPro",
+      "size": "12px",
+      "letterSpacing": "1.2px"
+    },
+    "email": {
+      "background": "rgba(255, 255, 255, 0.05)",
+      "color": "rgb(255, 255, 255)",
+      "height": 40,
+      "padding": "0px 14px",
+      "radius": "4px",
+      "shadow": "rgba(255, 255, 255, 0.15) 0px 0px 0px 1px inset",
+      "font": "Inter",
+      "size": "15px",
+      "placeholder": "email@rive.app"
+    },
+    "bodyCopy": {
+      "font": "Inter",
+      "size": "16px",
+      "weight": "400",
+      "lineHeight": "24.8px",
+      "color": "rgba(255, 255, 255, 0.75)"
+    },
+    "eyebrow": {
+      "font": "Inter",
+      "size": "12px",
+      "weight": "500",
+      "letterSpacing": "0.96px",
+      "transform": "uppercase",
+      "color": "rgba(255, 255, 255, 0.8)"
+    },
+    "radiiSeen": [
+      "2px",
+      "4px",
+      "6px",
+      "8px",
+      "10px"
+    ],
+    "surfacesSeen": [
+      "rgb(0, 0, 0)",
+      "rgb(3, 3, 4)",
+      "rgb(5, 5, 6)",
+      "rgb(9, 9, 11)",
+      "rgb(11, 11, 13)",
+      "rgb(13, 13, 15)",
+      "rgb(14, 14, 14)",
+      "rgb(17, 17, 17)",
+      "rgb(17, 17, 20)",
+      "rgba(255, 255, 255, 0.024)",
+      "rgba(255, 255, 255, 0.05)",
+      "rgba(255, 255, 255, 0.07)"
+    ]
+  },
+  "login": {
+    "url": "https://rive.app/login/",
+    "title": "Rive - Log in",
+    "notSubmitted": true,
+    "bodyBackground": "rgb(48, 48, 48)",
+    "split": {
+      "canvas": "rgb(60, 43, 75)",
+      "panel": "rgb(255, 255, 255)",
+      "panelWidth": 585
+    },
+    "heading": {
+      "text": "LOG IN",
+      "font": "Orbitron",
+      "size": "32px",
+      "weight": "800",
+      "lineHeight": "38px",
+      "letterSpacing": "-0.32px",
+      "color": "rgb(0, 0, 0)",
+      "transform": "uppercase"
+    },
+    "label": {
+      "font": "Inter",
+      "size": "12px",
+      "weight": "500",
+      "lineHeight": "16px",
+      "color": "rgb(85, 85, 85)"
+    },
+    "field": {
+      "height": 44,
+      "width": 360,
+      "background": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "border": "1px solid rgba(0, 0, 0, 0.2)",
+      "radius": "2px",
+      "padding": "0px 12px",
+      "font": "Inter",
+      "size": "16px",
+      "hoverBorder": "rgba(0, 0, 0, 0.4)"
+    },
+    "google": {
+      "height": 44,
+      "background": "transparent",
+      "color": "rgb(0, 0, 0)",
+      "border": "1px solid rgba(0, 0, 0, 0.2)",
+      "radius": "2px",
+      "font": "Orbitron",
+      "size": "12px",
+      "letterSpacing": "0.96px",
+      "weight": "500"
+    },
+    "submit": {
+      "text": "LOG IN",
+      "height": 44,
+      "background": "rgb(31, 111, 229)",
+      "color": "rgb(255, 255, 255)",
+      "radius": "2px",
+      "font": "Orbitron",
+      "size": "12px",
+      "letterSpacing": "0.96px",
+      "weight": "500",
+      "hoverBackground": "var(--s-accent-hover) which resolves to #1a5bc4 on the panel"
+    },
+    "show": {
+      "font": "JetBrains Mono",
+      "size": "11px",
+      "letterSpacing": "0.88px",
+      "color": "rgb(85, 85, 85)",
+      "height": 36,
+      "padding": "0px 10px",
+      "radius": "2px"
+    },
+    "errorRule": {
+      "selector": ".LoginForm_Error__uMJV4",
+      "color": "var(--s-danger)",
+      "resolved": "#d42a1f",
+      "fontSize": "13px",
+      "fontWeight": "500",
+      "lineHeight": "18px",
+      "state": "rule only; form was not submitted so the error was not shown"
+    },
+    "focusVisible": {
+      "selector": ".LoginPage_LoginInputContainer :focus-visible:not(input)",
+      "boxShadow": "var(--s-focus)",
+      "panelHighlight": "#b86e00"
+    },
+    "caption": {
+      "background": "rgb(255, 255, 255)",
+      "color": "rgb(34, 34, 34)",
+      "radius": "2px",
+      "padding": "16px 20px",
+      "font": "Inter",
+      "size": "14px"
+    },
+    "footer": {
+      "background": "rgb(0, 0, 0)",
+      "linkColor": "rgb(170, 170, 170)",
+      "legalColor": "rgb(153, 153, 153)",
+      "padding": "48px 32px 32px"
+    },
+    "link": {
+      "size": "13px",
+      "color": "rgb(0, 0, 0)",
+      "font": "Inter"
+    }
+  },
+  "signup": {
+    "url": "https://rive.app/signup/",
+    "title": "Rive - Sign up",
+    "notSubmitted": true,
+    "heading": {
+      "text": "CREATE ACCOUNT",
+      "font": "Orbitron",
+      "size": "32px",
+      "weight": "800",
+      "letterSpacing": "-0.32px",
+      "lineHeight": "38px"
+    },
+    "fields": [
+      "email",
+      "password"
+    ],
+    "checkbox": {
+      "width": 16,
+      "height": 16,
+      "accentColor": "rgb(31, 111, 229)",
+      "checkedByDefault": true,
+      "label": "Send me emails with the latest updates from Rive",
+      "labelSize": "13px"
+    },
+    "submit": {
+      "text": "SIGN UP",
+      "background": "rgb(31, 111, 229)",
+      "color": "rgb(255, 255, 255)",
+      "height": 44,
+      "radius": "2px",
+      "font": "Orbitron",
+      "size": "12px",
+      "letterSpacing": "0.96px"
+    },
+    "finePrint": {
+      "color": "rgb(102, 102, 102)",
+      "size": "12px",
+      "font": "Inter"
+    }
+  },
+  "pricing": {
+    "url": "https://rive.app/pricing",
+    "h1": {
+      "text": "BUILD AND SHIP FOR FREE",
+      "font": "Orbitron",
+      "size": "34px",
+      "weight": "900",
+      "lineHeight": "36.72px",
+      "letterSpacing": "-0.34px",
+      "color": "rgb(255, 255, 255)"
+    },
+    "planName": {
+      "font": "Orbitron",
+      "size": "20px",
+      "weight": "600",
+      "lineHeight": "23px",
+      "letterSpacing": "0.4px",
+      "transform": "uppercase",
+      "color": "rgb(255, 255, 255)"
+    },
+    "price": {
+      "font": "Orbitron",
+      "size": "32px",
+      "weight": "600",
+      "lineHeight": "36.8px",
+      "letterSpacing": "0.64px",
+      "color": "rgb(255, 255, 255)"
+    },
+    "freePriceColor": "rgb(241, 241, 241)",
+    "card": {
+      "width": 257,
+      "radius": "8px",
+      "padding": "16px",
+      "background": "rgba(255, 255, 255, 0)"
+    },
+    "planButton": {
+      "background": "rgb(29, 29, 29)",
+      "height": 40,
+      "radius": "4px",
+      "padding": "0px 16px",
+      "width": 225,
+      "note": "computed color was rgb(0,0,0) on a #1d1d1d face; the label is likely a child. Color not promoted to a token."
+    },
+    "toggle": {
+      "yearly": {
+        "color": "rgb(255, 255, 255)",
+        "size": "11px",
+        "weight": "500",
+        "letterSpacing": "0.88px",
+        "font": "Inter"
+      },
+      "monthly": {
+        "color": "rgb(170, 170, 170)",
+        "size": "11px",
+        "weight": "500",
+        "letterSpacing": "0.88px"
+      }
+    },
+    "plans": [
+      "Free $0",
+      "Cadet $9",
+      "Voyager $32",
+      "Enterprise $120"
+    ],
+    "notEntered": "Get started and Get in touch were not clicked. No checkout."
+  },
+  "docs": {
+    "url": "https://rive.app/docs/getting-started/introduction",
+    "title": "Introduction - Rive",
+    "pageBackground": "rgb(14, 12, 11)",
+    "h1": {
+      "text": "Introduction",
+      "font": "Tomorrow Placeholder",
+      "size": "36px",
+      "weight": "600",
+      "color": "rgb(230, 227, 223)"
+    },
+    "navLink": {
+      "font": "Inter",
+      "size": "14px",
+      "weight": "500",
+      "color": "rgb(166, 163, 159)",
+      "current": "rgb(230, 227, 223)"
+    },
+    "body": {
+      "font": "Inter",
+      "size": "14px",
+      "color": "rgb(255, 255, 255)"
+    },
+    "search": {
+      "height": 36,
+      "radius": "12px",
+      "background": "rgb(14, 12, 11)",
+      "borderColor": "rgb(45, 42, 38)",
+      "padding": "0px 12px 0px 14px",
+      "font": "Inter",
+      "size": "14px"
+    },
+    "sidebarWidth": 288,
+    "notOpened": "Search dialog (\u2318K) was not opened."
+  }
+}

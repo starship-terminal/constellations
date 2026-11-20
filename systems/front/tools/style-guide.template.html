@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Front style guide</title>
+<meta name="description" content="Front design tokens and the public surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+}
+[data-set="violet"], .violet {
+/*VIOLET*/
+}
+[data-set="gray"] {
+/*GRAY*/
+}
+[data-set="app"] {
+/*APP*/
+}
+[data-set="dark"], .dark {
+/*DARK*/
+}
+[data-set="companion"] {
+/*COMPANION*/
+}
+[data-set="companionDark"] {
+/*COMPANIONDARK*/
+}
+[data-set="help"] {
+/*HELP*/
+}
+:root {
+  --sg-sans: "Suisse Intl", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Suisse Works", ui-serif, Georgia, "Times New Roman", serif;
+  --sg-mono: "Suisse Intl Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #0d1d39); background: var(--surface-l0, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-secondary, #5b5d63); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--palette-gray-200, #dedfe2); }
+.lead { max-width: 62ch; color: var(--text-primary, #0d1d39); opacity: .8; }
+.note { font-size: 13px; color: var(--text-secondary, #5b5d63); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-secondary, #5b5d63); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--palette-gray-200, #dedfe2); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-secondary, #5b5d63); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--palette-gray-200, #dedfe2); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-secondary, #5b5d63); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--palette-gray-200, #dedfe2); overflow: hidden; background: var(--surface-l0, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-marketing-header-height, 80px); padding: 0 12px 0 22px; font-size: 14px; color: var(--text-primary, #0d1d39); background: var(--surface-l0, #fff); box-shadow: var(--palette-gray-200, #dedfe2) 0 1px 0 0; }
+.navbar .wm { font-weight: 600; font-size: 17px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-marketing-button-header-height, 40px); padding: 0 18px; font-size: 14px; font-weight: 500; border-radius: var(--component-marketing-button-header-radius, var(--radius-8, 8px)); border: 1px solid transparent; }
+.btn.primary { background: var(--button-surface, #8034bf); color: var(--button-textDefault, #f8f1fe); }
+.btn.plum { background: var(--surface-highlight, #dee948); color: var(--button-textDefault, #0d1d39); }
+.btn.ghost { background: transparent; border-color: var(--palette-gray-200, #dedfe2); color: var(--text-primary, #0d1d39); }
+.btn.small { height: 32px; font-size: 13px; font-weight: 500; }
+.hero { color: var(--text-primary, #f8f1fe); padding: 80px 40px; font: 500 var(--font-size-display1, 62px)/var(--font-lineHeight-display1, 68px) var(--sg-sans); letter-spacing: var(--font-tracking-display1, -0.02em); text-align: left; background: var(--surface-l0, #300c41); }
+.hero small { display: block; font: 400 var(--font-size-p1, 20px)/var(--font-lineHeight-p1, 28px) var(--sg-sans); letter-spacing: 0; color: var(--text-secondary, #e2dcf6); margin: 20px 0 26px; max-width: 46ch; }
+.hero .kick { display: inline-block; font: 500 12px/16px var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--text-secondary, #e2dcf6); margin-bottom: 24px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--palette-gray-200, #dedfe2); border-radius: var(--component-marketing-planCard-radius, var(--radius-12, 12px)); padding: 14px; font-size: 13px; background: var(--surface-l1, #f3f3f4); }
+.tile b { display: block; font-size: 17px; margin: 8px 0 2px; }
+.tile .sub { color: var(--text-secondary, #5b5d63); font-size: 12px; }
+.tile .img { height: 72px; border-radius: var(--radius-8, 8px); display: flex; align-items: center; justify-content: center; font: 600 13px/1 var(--sg-sans); }
+table.cmp { border-collapse: collapse; margin-top: 10px; font-size: 13px; }
+table.cmp td, table.cmp th { border: 1px solid var(--palette-gray-200, #dedfe2); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--palette-gray-200, #dedfe2); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--text-secondary, #5b5d63); font-family: var(--sg-mono); }
+.switch { display: inline-flex; border: 1px solid var(--palette-gray-200, #dedfe2); border-radius: var(--radius-19, 19px); overflow: hidden; font: 500 13px/1 var(--sg-sans); }
+.switch span { padding: 10px 16px; }
+.switch .on { background: var(--surface-l0, #300c41); color: var(--text-primary, #f8f1fe); }
+.field { display: inline-block; width: 280px; height: var(--component-app-field-height, 44px); padding: 0 14px; border: 1px solid var(--palette-gray-200, #dedfe2); border-radius: var(--component-app-field-radius, var(--radius-8, 8px)); background: var(--surface-l0, #fff); font-size: 14px; color: var(--text-primary, #0d1d39); }
+.code.violet { background: var(--surface-l0, #300c41); color: var(--text-secondary, #e2dcf6); border-radius: var(--radius-8, 8px); font: 400 13px/1.7 var(--sg-mono); padding: 14px 16px; }
+.code.violet .kw { color: var(--palette-violet-300, #a857f1); }
+.code.violet .str { color: var(--palette-citron-500, #dee948); }
+.code.violet .cm { color: var(--palette-gray-400, #a1a5ad); }
+.mock.dark, .mock[data-set="dark"] { background: var(--color-bg-base-default, #15131b); }
+[data-set="app"] .field { background: var(--component-app-field-bg, #fff); }
+[data-set="dark"] .field, .dark .field { background: var(--component-appDark-field-bg, #15131b); }
+.auth { border: 1px solid var(--palette-gray-200, #dedfe2); border-radius: var(--component-app-panel-radius, var(--radius-12, 12px)); background: var(--color-bg-surface-primary-default, #fff); padding: 22px; max-width: 380px; font-size: 14px; }
+.auth b { display: block; font-size: 17px; margin-bottom: 14px; color: var(--color-text-primary, #0d1d39); }
+.auth .sso { display: block; text-align: center; padding: 9px 0; border: 1px solid var(--palette-gray-200, #dedfe2); border-radius: var(--radius-8, 8px); margin-bottom: 8px; }
+.auth .go { display: block; text-align: center; padding: 9px 0; border-radius: var(--radius-8, 8px); background: var(--color-bg-fill-brand-default, #6f3ff5); color: var(--color-text-on-bg-fill-default, #fff); font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Front style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Front, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>. The marketing site's layer is compiled into classes — the hue-utility palette (<code>core.palette.*</code>: violet 50-1000, citron, blue, gray, green, pink, salmon, orange, yellow), the type ramp (<code>core.font.size.*</code>: display1 62px to micro3), the radius and motion scales — and its three section themes ship as the <code>violet</code>, <code>light</code> and <code>gray</code> role tables (surface-l0..l3, text-primary/secondary, the button-* state layer). The product's real token layer is Froyo: the app signin shell's resolved <code>--color-*</code> semantics (<code>app</code>/<code>dark</code> sets, 206 roles over the <code>core.primitive.*</code> ramps) and the full Froyo build the Companion messenger embeds (<code>core.froyo.*</code> scales + the <code>companion</code>/<code>companionDark</code> --colors-* semantics). help.front.com's Knowledge Base vars are the <code>help</code> set. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from front.com, app.frontapp.com, help.front.com and dev.frontapp.com, signed out, in headless Chromium. The workspace and every signed-in product surface is a documented boundary; the demo, signup, auth and search fields were typed into and cleared, never submitted. Suisse Intl, Suisse Intl Mono, Suisse Works and the app's Indivisible are served faces and are not loaded here: samples fall back to system fonts.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The marketing header is a white bar on the white page: the Front wordmark, the Product/Solutions/Resources mega-menu triggers, Pricing, then Sign in, the bordered "Request a demo" and "Try for free" (the violet <code>light.button.surface</code> #8034bf on light sections; the same role repaints citron <code>violet.button.surface</code> #dee948 on the plum sections). Below, the hero sits on the plum <code>violet.surface.l0</code> field under [data-theme=theme-dark-violet].</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">Front</span><span>Product</span><span>Solutions</span><span>Resources</span><span>Pricing</span><span class="sp"></span><span>Sign in</span><span class="btn small ghost">Request a demo</span><span class="btn small primary">Try for free</span></div>
+    <div class="hero violet"><span class="kick">The AI customer operations platform</span>All your teams. All your AI agents. One place to …<small>Bring every channel, every teammate and every AI agent into one shared inbox.</small><span class="btn plum">Try for free</span>&nbsp;&nbsp;<span class="btn ghost" style="color:var(--text-primary);border-color:rgba(226,220,246,.4)">Request a demo</span></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing leads with the "Billed Annually" switch (a local UI toggle that repaints the per-seat prices, <code>component.marketing.billingSwitch.*</code>), the plan cards (<code>component.marketing.planCard.*</code>) on the theme-white field, and FAQ disclosures — all measured as components.</p>
+  <div class="mock" style="padding:20px">
+    <div class="switch"><span class="on violet">Billed Annually</span><span>Billed Monthly</span></div>
+    <div class="grid" style="margin-top:16px">
+      <div class="tile"><div class="img violet" style="background:var(--surface-l0,#300c41);color:var(--text-primary,#f8f1fe)">Starter</div><b>$19/seat</b><span class="sub">Try for Free</span></div>
+      <div class="tile"><div class="img" style="background:var(--button-surface,#8034bf);color:var(--button-textDefault,#f8f1fe)">Growth</div><b>$59/seat</b><span class="sub">Try for Free · SAVE 24%</span></div>
+      <div class="tile"><div class="img violet" style="background:var(--surface-highlight,#dee948);color:var(--button-textDefault,#0d1d39)">Enterprise</div><b>Custom</b><span class="sub">Talk to sales</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The app shell's auth cards</h2>
+  <p class="lead">app.frontapp.com /signin paints the real Froyo <code>--color-*</code> layer (the <code>app</code> set): the card on <code>app.color.bg.surface.primary.default</code>, the e-mail field, the SSO buttons and Continue on <code>app.color.bg.fill.brand.default</code>. The same card repaints under <code>[data-theme="dark"]</code> — the <code>dark</code> set, reached by the shell's own front-theme-preference key.</p>
+  <div class="mock" data-set="app" style="padding:20px">
+    <div class="auth"><b>Sign in to Front</b><span class="sso">Continue with Google</span><input class="field" style="width:100%;margin-bottom:8px" placeholder="name@example.com"><span class="go">Continue</span></div>
+  </div>
+  <div class="mock dark" data-set="dark" style="padding:20px">
+    <div class="auth"><b>Sign in to Front</b><span class="sso">Continue with Google</span><input class="field" style="width:100%;margin-bottom:8px" placeholder="name@example.com"><span class="go">Continue</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">Three honest layers: <code>core.palette.*</code> is the marketing site's class-declared hue ramp; <code>core.primitive.*</code> is the app shell's resolved <code>--color-primitive-*</code> ramps; <code>core.froyo.ramp.*</code> is the Froyo sheet's light/dark/alpha values. The <code>violet</code>/<code>light</code>/<code>gray</code> sets are the marketing section roles, <code>app</code>/<code>dark</code> the signin shell's resolved semantics, <code>companion</code>/<code>companionDark</code> the messenger's, <code>help</code> the Knowledge Base's.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius, layout and motion</h2>
+  <p class="lead">The marketing radius scale runs 4-40px (<code>.rounded-*</code>); the motion layer is <code>.duration-100..1000</code> over the <code>.ease-appear</code> curve (0.16,1,0.3,1). The Froyo scales (<code>core.froyo.*</code>) carry the product's spacing/sizes/radii/easings/durations/breakpoints.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Three served Suisse faces on the marketing site: <code>Suisse Intl</code> carries every heading, control and body; <code>Suisse Intl Mono</code> draws figures and code; <code>Suisse Works</code> is the serif display face. The app shell sets "Indivisible" with Inter fallbacks. The type ramp pairs each role with its size, line-height, tracking and weight. Sizes are the declared steps; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the class-declared design layer verbatim plus the resolved --color-*/--colors-* variables on the live app/help/dev pages and the Froyo token sheet</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its class, variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  const setwrap = (setname, inner) => `<div data-set="${setname}">${inner}</div>`;
+  for (const [g, grp] of Object.entries(TOK.core.palette || {})) {
+    const items = flat(grp, 'palette.' + g + '.').filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">marketing palette.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [g, grp] of Object.entries(TOK.core.primitive || {})) {
+    const items = flat(grp, 'primitive.' + g + '.').filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">app primitive.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [mode, grp] of Object.entries((TOK.core.froyo || {}).ramp || {})) {
+    for (const [g, sub] of Object.entries(grp)) {
+      const items = flat(sub, `froyo.ramp.${mode}.${g}.`).filter(([, t]) => t.t === 'color');
+      if (!items.length) continue;
+      h += `<div class="pal-h">froyo ramp ${esc(mode)}.${esc(g)}</div><div class="pal">`;
+      for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+      h += '</div>';
+    }
+  }
+  const THEMESETS = [
+    ['violet', 'violet — marketing [data-theme=theme-dark-violet] roles'],
+    ['light', 'light — marketing [data-theme=theme-white] roles'],
+    ['gray', 'gray — marketing [data-theme=theme-gray] roles'],
+    ['app', 'app — app.frontapp.com signin, resolved --color-* (light)'],
+    ['dark', 'dark — the same shell under [data-theme="dark"]'],
+    ['companion', 'companion — the Froyo messenger layer, [data-theme="light"]'],
+    ['companionDark', 'companionDark — the Froyo messenger layer, [data-theme="dark"]'],
+    ['help', 'help — help.front.com\'s :root block'],
+  ];
+  for (const [setname, label] of THEMESETS) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${label}</div>` + setwrap(setname, `<div class="pal">` +
+      roles.map(([n, t]) => `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`).join('') +
+      `</div>`);
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const ns of ['size', 'spacing', 'breakpoint', 'blur', 'aspectRatio', 'duration', 'easing', 'animation', 'border']) {
+    const grp = (TOK.core.froyo || {})[ns];
+    if (!grp) continue;
+    for (const [n, t] of flat(grp, `froyo.${ns}.`)) m += `<div><b>${esc(n)}</b> <span>${esc(t.v.join ? t.v.join(', ') : t.v)}</span></div>`;
+  }
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat((TOK.core.froyo || {}).shadow || {}, 'froyo.shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  for (const setname of ['violet', 'light', 'gray']) {
+    for (const [n, t] of flat(((TOK[setname] || {}).button || {}), 'button.')) {
+      if (t.t !== 'shadow') continue;
+      e += `<div><b>${esc(setname + '.' + n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+    }
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Aliases are set-relative: try each root in turn.
+  for (const root of [TOK.core, TOK.light, TOK.violet, TOK.app, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — All your teams. All your AI agents.</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Front</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.froyo || {}).fontSize || {}, 'froyo.fontSize.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.froyo || {}).fontFamily || {}, 'froyo.fontFamily.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.froyo || {}).fontWeight || {}, 'froyo.fontWeight.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>

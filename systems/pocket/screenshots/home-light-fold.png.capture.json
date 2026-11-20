@@ -1,0 +1,28 @@
+{
+  "sourceUrl": "https://getpocket.com/home",
+  "captured": "2026-11-19",
+  "title": "Pocket",
+  "theme": "colormode-light",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "dpr": 2
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "png": {
+    "w": 2880,
+    "h": 1800
+  },
+  "note": "Above-the-fold crop of the same 1440x900 capture. Quantized."
+}

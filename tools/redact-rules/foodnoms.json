@@ -1,0 +1,15 @@
+{
+ "_note": "Rules for systems/foodnoms. A fully public signed-out capture: every route is public marketing, pricing, help, news, press, article or legal content for an iOS/macOS app; there is no web sign-in. The newsletter field was typed into with name@example.com and cleared before shots, never submitted; the help search was typed into with public query words and cleared. Every email OCR finds is published content: the support@ / press@ contact addresses printed on the help and press pages, and the name@example.com placeholder. App Store IDs and the published app store URLs are public product links. No regions need masking.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@foodnoms\\.com$",
+   "@example\\.com$",
+   "@example\\.inc$",
+   "@example\\.org$",
+   "@everyone$",
+   "@here$"
+  ]
+ },
+ "families": []
+}

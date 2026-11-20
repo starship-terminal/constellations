@@ -1,0 +1,761 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ElevenMusic style guide</title>
+<meta name="description" content="ElevenMusic design tokens and the public signed-out surface's components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-sans: "Inter", "Inter Fallback";
+  --font-family-display: "waldenburg", "waldenburg Fallback", Arial;
+  --font-family-mono: "GeistMono", ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+  --font-size-4xl: 36px;
+  --font-size-5xl: 48px;
+  --font-size-6xl: 60px;
+  --font-size-7xl: 72px;
+  --font-lineHeight-xs: 1.3333;
+  --font-lineHeight-sm: 1.4286;
+  --font-lineHeight-base: 1.5;
+  --font-lineHeight-lg: 1.5556;
+  --font-lineHeight-xl: 1.4;
+  --font-lineHeight-2xl: 1.3333;
+  --font-lineHeight-3xl: 1.2;
+  --font-lineHeight-4xl: 1.1111;
+  --font-lineHeight-5xl: 1;
+  --font-lineHeight-6xl: 1;
+  --font-lineHeight-7xl: 1;
+  --font-lineHeight-tight: 1.25;
+  --font-lineHeight-snug: 1.375;
+  --font-lineHeight-normal: 1.5;
+  --font-lineHeight-relaxed: 1.625;
+  --color-tailwind-amber-100: #fef3c6;
+  --color-tailwind-amber-200: #fee685;
+  --color-tailwind-amber-300: #ffd230;
+  --color-tailwind-amber-400: #ffb900;
+  --color-tailwind-amber-500: #fe9a00;
+  --color-tailwind-amber-600: #e17100;
+  --color-tailwind-amber-700: #bb4d00;
+  --color-tailwind-amber-800: #973c00;
+  --color-tailwind-amber-950: #461901;
+  --color-tailwind-blue-500: #2b7fff;
+  --color-tailwind-blue-600: #155dfc;
+  --color-tailwind-cyan-500: #00b8db;
+  --color-tailwind-emerald-200: #a4f4cf;
+  --color-tailwind-emerald-300: #5ee9b5;
+  --color-tailwind-emerald-400: #00d492;
+  --color-tailwind-emerald-500: #00bc7d;
+  --color-tailwind-emerald-600: #009966;
+  --color-tailwind-emerald-700: #007a55;
+  --color-tailwind-fuchsia-500: #e12afb;
+  --color-tailwind-gray-100: #f5f3f1;
+  --color-tailwind-gray-200: #ebe8e4;
+  --color-tailwind-gray-25: #fdfcfb;
+  --color-tailwind-gray-300: #d7d2cc;
+  --color-tailwind-gray-400: #a59f97;
+  --color-tailwind-gray-50: #faf8f7;
+  --color-tailwind-gray-500: #777169;
+  --color-tailwind-gray-600: #59544f;
+  --color-tailwind-gray-700: #44403b;
+  --color-tailwind-gray-800: #292524;
+  --color-tailwind-gray-900: #1c1917;
+  --color-tailwind-gray-950: #0c0a09;
+  --color-tailwind-green-400: #05df72;
+  --color-tailwind-green-500: #00c950;
+  --color-tailwind-green-600: #00a63e;
+  --color-tailwind-indigo-500: #615fff;
+  --color-tailwind-lime-500: #7ccf00;
+  --color-tailwind-neutral-200: #e5e5e5;
+  --color-tailwind-neutral-300: #d4d4d4;
+  --color-tailwind-neutral-400: #a1a1a1;
+  --color-tailwind-neutral-600: #525252;
+  --color-tailwind-neutral-700: #404040;
+  --color-tailwind-neutral-900: #171717;
+  --color-tailwind-neutral-950: #0a0a0a;
+  --color-tailwind-orange-500: #ff6900;
+  --color-tailwind-orange-600: #f54900;
+  --color-tailwind-orange-950: #441306;
+  --color-tailwind-pink-500: #f6339a;
+  --color-tailwind-purple-500: #ad46ff;
+  --color-tailwind-red-100: #ffe2e2;
+  --color-tailwind-red-400: #ff6467;
+  --color-tailwind-red-50: #fef2f2;
+  --color-tailwind-red-500: #fb2c36;
+  --color-tailwind-red-600: #e7000b;
+  --color-tailwind-red-700: #c10007;
+  --color-tailwind-red-800: #9f0712;
+  --color-tailwind-red-950: #460809;
+  --color-tailwind-rose-500: #ff2056;
+  --color-tailwind-rose-800: #a50036;
+  --color-tailwind-sky-500: #00a6f4;
+  --color-tailwind-stone-800: #292524;
+  --color-tailwind-teal-500: #00bba7;
+  --color-tailwind-violet-500: #8e51ff;
+  --color-tailwind-yellow-500: #f0b100;
+  --color-tailwind-yellow-600: #d08700;
+  --color-tailwind-zinc-600: #52525c;
+  --color-tailwind-zinc-700: #3f3f46;
+  --color-tailwind-zinc-800: #27272a;
+  --color-tailwind-zinc-900: #18181b;
+  --color-tailwind-zinc-950: #09090b;
+  --color-tailwind-black-default: #000000;
+  --color-tailwind-white-default: #ffffff;
+  --color-tailwind-overlay-darken-100: rgba(83, 54, 10, 0.047);
+  --color-tailwind-overlay-darken-150: rgba(83, 54, 10, 0.08);
+  --color-tailwind-overlay-darken-200: rgba(83, 54, 10, 0.11);
+  --color-tailwind-overlay-darken-300: rgba(28, 25, 23, 0.16);
+  --color-tailwind-overlay-darken-400: rgba(28, 25, 23, 0.35);
+  --color-tailwind-overlay-darken-50: rgba(83, 54, 10, 0.024);
+  --color-tailwind-overlay-darken-500: rgba(28, 25, 23, 0.53);
+  --color-tailwind-overlay-darken-600: rgba(28, 25, 23, 0.643);
+  --color-tailwind-overlay-darken-700: rgba(28, 25, 23, 0.714);
+  --color-tailwind-overlay-darken-800: rgba(28, 25, 23, 0.804);
+  --color-tailwind-overlay-darken-900: rgba(28, 25, 23, 0.86);
+  --color-tailwind-overlay-darken-950: rgba(28, 25, 23, 0.89);
+  --spacing-base: 4px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-default: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --blur-xs: 4px;
+  --blur-sm: 8px;
+  --blur-md: 12px;
+  --blur-lg: 16px;
+  --blur-xl: 24px;
+  --blur-2xl: 40px;
+  --blur-3xl: 64px;
+  --container-xs: 320px;
+  --container-sm: 384px;
+  --container-md: 448px;
+  --container-lg: 512px;
+  --container-xl: 576px;
+  --container-2xl: 672px;
+  --container-3xl: 768px;
+  --container-4xl: 896px;
+  --container-5xl: 1024px;
+  --container-6xl: 1152px;
+  --motion-ease-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --motion-ease-in-out: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --motion-duration: 150ms;
+  --motion-timing: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --shadow-drop-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  --color-surface-background: #fdfcfb;
+  --color-surface-card: #ffffff;
+  --color-surface-elevated: #ffffff;
+  --color-surface-elevated-hover: #fdfcfb;
+  --color-surface-muted: #f5f3f1;
+  --color-surface-secondary: #f5f3f1;
+  --color-surface-secondary-hover: #ebe8e4;
+  --color-surface-accent: #f5f3f1;
+  --color-surface-popover: #ffffff;
+  --color-surface-popover-solid: #ffffff;
+  --color-surface-surface-1: #faf8f7;
+  --color-surface-surface-2: #f5f3f1;
+  --color-surface-sidebar: #faf8f7;
+  --color-surface-overlay: rgba(245, 243, 241, 0.45);
+  --color-surface-overlay-backdrop: rgba(28, 25, 23, 0.4);
+  --color-surface-composer: rgba(255, 255, 255, 0.9);
+  --color-surface-composer-panel: #ffffff;
+  --color-surface-composer-panel-inset: #f5f3f1;
+  --color-surface-composer-surface: #ffffff;
+  --color-surface-composer-solid: #ffffff;
+  --color-surface-composer-chip: #f5f3f1;
+  --color-surface-composer-chip-hover: #ebe8e4;
+  --color-surface-composer-button: #f5f3f1;
+  --color-surface-destructive-soft: #fff0ee;
+  --color-ink-foreground: #000000;
+  --color-ink-card-foreground: #000000;
+  --color-ink-muted-foreground: #777169;
+  --color-ink-primary-foreground: #ffffff;
+  --color-ink-secondary-foreground: #000000;
+  --color-ink-accent-foreground: #000000;
+  --color-ink-popover-foreground: #000000;
+  --color-ink-sidebar-foreground: #59544f;
+  --color-ink-sidebar-accent-foreground: #000000;
+  --color-ink-sidebar-primary-foreground: #ffffff;
+  --color-ink-composer-fg-muted: #59544f;
+  --color-ink-destructive-foreground: #f9fafb;
+  --color-ink-destructive-soft-foreground: #cc2827;
+  --color-ink-subtle: rgba(28, 25, 23, 0.35);
+  --color-action-primary: #000000;
+  --color-action-primary-hover: #44403b;
+  --color-action-brand: #4c75d2;
+  --color-action-brand-foreground: #fafafa;
+  --color-action-destructive: #ef4444;
+  --color-action-success: #007a55;
+  --color-action-sidebar-primary: #000000;
+  --color-border-border: rgba(83, 54, 10, 0.08);
+  --color-border-input: #ebe8e4;
+  --color-border-outline: #d7d2cc;
+  --color-border-sidebar-border: #ebe8e4;
+  --color-border-composer-hairline: #ebe8e4;
+  --color-border-composer-ring: #ebe8e4;
+  --color-border-slider-track: #ebe8e4;
+  --color-border-field-border-focus: #777169;
+  --color-focus-ring: #000000;
+  --color-focus-sidebar-ring: #000000;
+  --color-role-background: #fdfcfb;
+  --color-role-foreground: #000000;
+  --color-role-primary: #000000;
+  --color-role-muted-foreground: #777169;
+  --color-role-border: rgba(83, 54, 10, 0.08);
+  --color-role-destructive: #ef4444;
+  --color-chart-1: #f54900;
+  --color-chart-2: #009689;
+  --color-chart-3: #104e64;
+  --color-chart-4: #ffb900;
+  --color-chart-5: #fe9a00;
+  --color-alpha-gray-100: rgba(83, 54, 10, 0.047);
+  --color-alpha-gray-150: rgba(83, 54, 10, 0.08);
+  --color-alpha-gray-200: rgba(83, 54, 10, 0.11);
+  --color-alpha-gray-300: rgba(28, 25, 23, 0.16);
+  --color-alpha-gray-400: rgba(28, 25, 23, 0.35);
+  --color-alpha-gray-50: rgba(83, 54, 10, 0.024);
+  --color-alpha-gray-500: rgba(28, 25, 23, 0.53);
+  --color-alpha-gray-600: rgba(28, 25, 23, 0.643);
+  --color-alpha-gray-700: rgba(28, 25, 23, 0.714);
+  --color-alpha-gray-800: rgba(28, 25, 23, 0.804);
+  --color-alpha-gray-900: rgba(28, 25, 23, 0.86);
+  --color-alpha-gray-950: rgba(28, 25, 23, 0.89);
+  --shadow-e1: 0px 0px 1px 0px rgba(0, 0, 0, 0.4), 0px 1px 1px 0px rgba(0, 0, 0, 0.04), 0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+  --shadow-e2: 0px 20px 24px 0px rgba(25, 25, 25, 0.05), 0px 5px 8px 0px rgba(25, 25, 25, 0.027), 0px 0px 0px 0.5px rgba(25, 25, 25, 0.06);
+  --shadow-lift-1: 0px 0px 1px 0px rgba(0, 0, 0, 0.4), 0px 1px 1px 0px rgba(0, 0, 0, 0.04), 0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+  --shadow-lift-2: 0px 20px 24px 0px rgba(25, 25, 25, 0.05), 0px 5px 8px 0px rgba(25, 25, 25, 0.027), 0px 0px 0px 0.5px rgba(25, 25, 25, 0.06);
+  --shadow-lift-3: 0px 0px 1px 0px rgba(0, 0, 0, 0.4), 0px 2px 4px 0px rgba(0, 0, 0, 0.04), 0px 6px 16px 0px rgba(0, 0, 0, 0.04);
+  --shadow-surface: 0px 0px 1px 0px rgba(0, 0, 0, 0.4), 0px 2px 4px 0px rgba(0, 0, 0, 0.04), 0px 6px 16px 0px rgba(0, 0, 0, 0.04);
+  --shadow-popover: 0px 20px 24px 0px rgba(25, 25, 25, 0.05), 0px 5px 8px 0px rgba(25, 25, 25, 0.027), 0px 0px 0px 0.5px rgba(25, 25, 25, 0.06);
+  --shadow-elevated: 0px 0px 1px 0px rgba(0, 0, 0, 0.4), 0px 1px 1px 0px rgba(0, 0, 0, 0.04), 0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+  --shadow-app-card: 0px 0px 0px 0.5px rgba(0, 0, 0, 0.09), 0px 1px 1px -0.5px rgba(0, 0, 0, 0.09), 0px 3px 3px -1.5px rgba(0, 0, 0, 0.09);
+  --component-geometry-sidebar-width: 248px;
+  --component-geometry-header-height: 52px;
+  --component-geometry-nav-row-height: 36px;
+  --component-geometry-nav-pill-height: 28px;
+  --component-geometry-button-height: 32px;
+  --component-geometry-icon-button: 30px;
+  --component-geometry-icon-button-lg: 32px;
+  --component-geometry-play-circle: 48px;
+  --component-geometry-chip-height: 28px;
+  --component-geometry-tab-height: 40px;
+  --component-geometry-field-height: 36px;
+  --component-geometry-track-row-height: 52px;
+  --component-geometry-track-card-width: 208px;
+  --component-geometry-auth-button-height: 40px;
+  --component-geometry-mobile-tabbar: 56px;
+  --component-radius-button: 9999px;
+  --component-radius-nav-pill: 9999px;
+  --component-radius-chip: 9999px;
+  --component-radius-field: 0px;
+  --component-radius-tab: 9999px;
+  --component-radius-track-card: 0px;
+  --component-radius-plan-card: 24px;
+  --component-radius-auth-card: 0px;
+  --component-radius-dropdown: 14px;
+  --component-typography-display-fontFamily: waldenburg, "waldenburg Fallback", Arial;
+  --component-typography-display-fontSize: 40px;
+  --component-typography-display-fontWeight: 300;
+  --component-typography-display-letterSpacing: -0.8px;
+  --component-typography-page-title-fontFamily: waldenburg, "waldenburg Fallback", Arial;
+  --component-typography-page-title-fontSize: 40px;
+  --component-typography-page-title-fontWeight: 300;
+  --component-typography-page-title-letterSpacing: -0.8px;
+  --component-typography-body-fontFamily: Inter, "Inter Fallback";
+  --component-typography-body-fontSize: 14px;
+  --component-typography-body-fontWeight: 400;
+  --component-typography-label-fontFamily: Inter, "Inter Fallback";
+  --component-typography-label-fontSize: 13px;
+  --component-typography-label-fontWeight: 500;
+  --component-typography-meta-fontFamily: Inter, "Inter Fallback";
+  --component-typography-meta-fontSize: 15px;
+  --component-typography-meta-fontWeight: 500;
+  --component-typography-meta-letterSpacing: -0.15px;
+  --component-state-transition: 150ms;
+  --sg-sans: Inter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-display: waldenburg, Inter, ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: GeistMono, ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --color-surface-background: #000000;
+  --color-surface-card: #000000;
+  --color-surface-elevated: #222222;
+  --color-surface-elevated-hover: #2b2b2b;
+  --color-surface-muted: #171717;
+  --color-surface-secondary: #1e1e1e;
+  --color-surface-secondary-hover: #2b2b2b;
+  --color-surface-accent: #1e1e1e;
+  --color-surface-popover: #2e2e2e;
+  --color-surface-popover-solid: #2e2e2e;
+  --color-surface-surface-1: #131313;
+  --color-surface-surface-2: #1c1c1c;
+  --color-surface-sidebar: #000000;
+  --color-surface-overlay: rgba(0, 0, 0, 0.3);
+  --color-surface-overlay-backdrop: rgba(0, 0, 0, 0.6);
+  --color-surface-composer: rgba(38, 38, 38, 0.9);
+  --color-surface-composer-panel: #1c1c1c;
+  --color-surface-composer-panel-inset: #131313;
+  --color-surface-composer-surface: #151515;
+  --color-surface-composer-solid: #262626;
+  --color-surface-composer-chip: #1c1c1c;
+  --color-surface-composer-chip-hover: #292929;
+  --color-surface-composer-button: #333333;
+  --color-surface-destructive-soft: rgba(79, 26, 24, 0.45);
+  --color-ink-foreground: #fafafa;
+  --color-ink-card-foreground: #fafafa;
+  --color-ink-muted-foreground: #868686;
+  --color-ink-primary-foreground: #0a0a0a;
+  --color-ink-secondary-foreground: #fafafa;
+  --color-ink-accent-foreground: #fafafa;
+  --color-ink-popover-foreground: #fafafa;
+  --color-ink-sidebar-foreground: #a1a1a1;
+  --color-ink-sidebar-accent-foreground: #fafafa;
+  --color-ink-sidebar-primary-foreground: #0a0a0a;
+  --color-ink-composer-fg-muted: #a3a5a8;
+  --color-ink-destructive-foreground: #f9fafb;
+  --color-ink-destructive-soft-foreground: #ff958d;
+  --color-ink-subtle: rgba(255, 255, 255, 0.4);
+  --color-action-primary: #fafafa;
+  --color-action-primary-hover: #faf8f7;
+  --color-action-brand: #5d88e7;
+  --color-action-brand-foreground: #fafafa;
+  --color-action-destructive: #7f1d1d;
+  --color-action-success: #007a55;
+  --color-action-sidebar-primary: #fafafa;
+  --color-border-border: rgba(255, 255, 255, 0.1);
+  --color-border-input: rgba(255, 255, 255, 0.12);
+  --color-border-outline: rgba(255, 255, 255, 0.2);
+  --color-border-sidebar-border: rgba(255, 255, 255, 0.08);
+  --color-border-composer-hairline: #2b2b2b;
+  --color-border-composer-ring: #404040;
+  --color-border-slider-track: #404040;
+  --color-border-field-border-focus: rgba(255, 255, 255, 0.5);
+  --color-focus-ring: #ffffff;
+  --color-focus-sidebar-ring: #ffffff;
+  --color-role-background: #000000;
+  --color-role-foreground: #fafafa;
+  --color-role-primary: #fafafa;
+  --color-role-muted-foreground: #868686;
+  --color-role-border: rgba(255, 255, 255, 0.1);
+  --color-role-destructive: #7f1d1d;
+  --color-chart-1: #1447e6;
+  --color-chart-2: #00bc7d;
+  --color-chart-3: #fe9a00;
+  --color-chart-4: #ad46ff;
+  --color-chart-5: #ff2056;
+  --color-alpha-gray-100: rgba(255, 255, 255, 0.08);
+  --color-alpha-gray-150: rgba(255, 255, 255, 0.114);
+  --color-alpha-gray-200: rgba(255, 255, 255, 0.15);
+  --color-alpha-gray-300: rgba(255, 255, 255, 0.18);
+  --color-alpha-gray-400: rgba(255, 255, 255, 0.28);
+  --color-alpha-gray-50: rgba(255, 255, 255, 0.043);
+  --color-alpha-gray-500: rgba(255, 255, 255, 0.4);
+  --color-alpha-gray-600: rgba(255, 255, 255, 0.55);
+  --color-alpha-gray-700: rgba(255, 255, 255, 0.7);
+  --color-alpha-gray-800: rgba(255, 255, 255, 0.82);
+  --color-alpha-gray-900: rgba(255, 255, 255, 0.92);
+  --color-alpha-gray-950: rgba(255, 255, 255, 0.96);
+  --color-alpha-lighten-100: rgba(255, 255, 255, 0.08);
+  --color-alpha-lighten-150: rgba(255, 255, 255, 0.114);
+  --color-alpha-lighten-200: rgba(255, 255, 255, 0.15);
+  --color-alpha-lighten-300: rgba(255, 255, 255, 0.18);
+  --color-alpha-lighten-400: rgba(255, 255, 255, 0.28);
+  --color-alpha-lighten-50: rgba(255, 255, 255, 0.043);
+  --color-alpha-lighten-500: rgba(255, 255, 255, 0.4);
+  --color-alpha-lighten-600: rgba(255, 255, 255, 0.55);
+  --color-alpha-lighten-700: rgba(255, 255, 255, 0.7);
+  --color-alpha-lighten-800: rgba(255, 255, 255, 0.82);
+  --color-alpha-lighten-900: rgba(255, 255, 255, 0.92);
+  --color-alpha-lighten-950: rgba(255, 255, 255, 0.96);
+  --shadow-e1: 0px 0px 0px 1px rgba(255, 255, 255, 0.07), 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+  --shadow-e2: 0px 20px 24px 0px rgba(0, 0, 0, 0.35), 0px 5px 8px 0px rgba(0, 0, 0, 0.18), 0px 0px 0px 0.5px rgba(255, 255, 255, 0.06);
+  --shadow-lift-1: 0px 0px 0px 1px rgba(255, 255, 255, 0.07), 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+  --shadow-lift-2: 0px 20px 24px 0px rgba(0, 0, 0, 0.35), 0px 5px 8px 0px rgba(0, 0, 0, 0.18), 0px 0px 0px 0.5px rgba(255, 255, 255, 0.06);
+  --shadow-lift-3: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.15), inset 0px 0px 0px 1px lab(17.64 -0.0000149012 0), inset 0px -1px 0px 0px rgba(255, 255, 255, 0.08), 0px 1px 2px -1px rgba(28, 25, 23, 0.53), 0px 10px 24px -10px rgba(28, 25, 23, 0.53);
+  --shadow-surface: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.15), inset 0px 0px 0px 1px lab(17.64 -0.0000149012 0), inset 0px -1px 0px 0px rgba(255, 255, 255, 0.08), 0px 1px 2px -1px rgba(28, 25, 23, 0.53), 0px 10px 24px -10px rgba(28, 25, 23, 0.53);
+  --shadow-popover: 0px 20px 24px 0px rgba(0, 0, 0, 0.35), 0px 5px 8px 0px rgba(0, 0, 0, 0.18), 0px 0px 0px 0.5px rgba(255, 255, 255, 0.06);
+  --shadow-elevated: 0px 0px 0px 1px rgba(255, 255, 255, 0.07), 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+  --shadow-app-card: 0px 0px 0px 0.5px rgba(255, 255, 255, 0.16), 0px 1px 2px 0px rgba(0, 0, 0, 0.45), 0px 4px 8px -2px rgba(0, 0, 0, 0.4), 0px 12px 24px -6px rgba(0, 0, 0, 0.35);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-ink-foreground, #fafafa); background: var(--color-surface-background, #000); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.1 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.01em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-ink-foreground, #fafafa); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-border-border, rgba(255,255,255,.1)); }
+.lead { max-width: 62ch; color: var(--color-ink-foreground, #fafafa); opacity: .8; }
+.note { font-size: 13px; color: var(--color-ink-foreground, #fafafa); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-ink-foreground, #fafafa); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+/* The light palette re-binds the token names to their light values inside
+   its own scope: the page paints dark, so :root's light bindings are
+   overridden everywhere else and the dots would read the dark set. */
+.pal.light {
+  --color-surface-background: #fdfcfb;
+  --color-surface-card: #ffffff;
+  --color-surface-elevated: #ffffff;
+  --color-surface-elevated-hover: #fdfcfb;
+  --color-surface-muted: #f5f3f1;
+  --color-surface-secondary: #f5f3f1;
+  --color-surface-secondary-hover: #ebe8e4;
+  --color-surface-accent: #f5f3f1;
+  --color-surface-popover: #ffffff;
+  --color-surface-popover-solid: #ffffff;
+  --color-surface-surface-1: #faf8f7;
+  --color-surface-surface-2: #f5f3f1;
+  --color-surface-sidebar: #faf8f7;
+  --color-surface-overlay: rgba(245, 243, 241, 0.45);
+  --color-surface-overlay-backdrop: rgba(28, 25, 23, 0.4);
+  --color-surface-composer: rgba(255, 255, 255, 0.9);
+  --color-surface-composer-panel: #ffffff;
+  --color-surface-composer-panel-inset: #f5f3f1;
+  --color-surface-composer-surface: #ffffff;
+  --color-surface-composer-solid: #ffffff;
+  --color-surface-composer-chip: #f5f3f1;
+  --color-surface-composer-chip-hover: #ebe8e4;
+  --color-surface-composer-button: #f5f3f1;
+  --color-surface-destructive-soft: #fff0ee;
+  --color-ink-foreground: #000000;
+  --color-ink-card-foreground: #000000;
+  --color-ink-muted-foreground: #777169;
+  --color-ink-primary-foreground: #ffffff;
+  --color-ink-secondary-foreground: #000000;
+  --color-ink-accent-foreground: #000000;
+  --color-ink-popover-foreground: #000000;
+  --color-ink-sidebar-foreground: #59544f;
+  --color-ink-sidebar-accent-foreground: #000000;
+  --color-ink-sidebar-primary-foreground: #ffffff;
+  --color-ink-composer-fg-muted: #59544f;
+  --color-ink-destructive-foreground: #f9fafb;
+  --color-ink-destructive-soft-foreground: #cc2827;
+  --color-ink-subtle: rgba(28, 25, 23, 0.35);
+  --color-action-primary: #000000;
+  --color-action-primary-hover: #44403b;
+  --color-action-brand: #4c75d2;
+  --color-action-brand-foreground: #fafafa;
+  --color-action-destructive: #ef4444;
+  --color-action-success: #007a55;
+  --color-action-sidebar-primary: #000000;
+  --color-border-border: rgba(83, 54, 10, 0.08);
+  --color-border-input: #ebe8e4;
+  --color-border-outline: #d7d2cc;
+  --color-border-sidebar-border: #ebe8e4;
+  --color-border-composer-hairline: #ebe8e4;
+  --color-border-composer-ring: #ebe8e4;
+  --color-border-slider-track: #ebe8e4;
+  --color-border-field-border-focus: #777169;
+  --color-focus-ring: #000000;
+  --color-focus-sidebar-ring: #000000;
+  --color-role-background: #fdfcfb;
+  --color-role-foreground: #000000;
+  --color-role-primary: #000000;
+  --color-role-muted-foreground: #777169;
+  --color-role-border: rgba(83, 54, 10, 0.08);
+  --color-role-destructive: #ef4444;
+  --color-chart-1: #f54900;
+  --color-chart-2: #009689;
+  --color-chart-3: #104e64;
+  --color-chart-4: #ffb900;
+  --color-chart-5: #fe9a00;
+  --color-alpha-gray-100: rgba(83, 54, 10, 0.047);
+  --color-alpha-gray-150: rgba(83, 54, 10, 0.08);
+  --color-alpha-gray-200: rgba(83, 54, 10, 0.11);
+  --color-alpha-gray-300: rgba(28, 25, 23, 0.16);
+  --color-alpha-gray-400: rgba(28, 25, 23, 0.35);
+  --color-alpha-gray-50: rgba(83, 54, 10, 0.024);
+  --color-alpha-gray-500: rgba(28, 25, 23, 0.53);
+  --color-alpha-gray-600: rgba(28, 25, 23, 0.643);
+  --color-alpha-gray-700: rgba(28, 25, 23, 0.714);
+  --color-alpha-gray-800: rgba(28, 25, 23, 0.804);
+  --color-alpha-gray-900: rgba(28, 25, 23, 0.86);
+  --color-alpha-gray-950: rgba(28, 25, 23, 0.89);
+  --shadow-e1: 0px 0px 1px 0px rgba(0, 0, 0, 0.4), 0px 1px 1px 0px rgba(0, 0, 0, 0.04), 0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+  --shadow-e2: 0px 20px 24px 0px rgba(25, 25, 25, 0.05), 0px 5px 8px 0px rgba(25, 25, 25, 0.027), 0px 0px 0px 0.5px rgba(25, 25, 25, 0.06);
+  --shadow-lift-1: 0px 0px 1px 0px rgba(0, 0, 0, 0.4), 0px 1px 1px 0px rgba(0, 0, 0, 0.04), 0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+  --shadow-lift-2: 0px 20px 24px 0px rgba(25, 25, 25, 0.05), 0px 5px 8px 0px rgba(25, 25, 25, 0.027), 0px 0px 0px 0.5px rgba(25, 25, 25, 0.06);
+  --shadow-lift-3: 0px 0px 1px 0px rgba(0, 0, 0, 0.4), 0px 2px 4px 0px rgba(0, 0, 0, 0.04), 0px 6px 16px 0px rgba(0, 0, 0, 0.04);
+  --shadow-surface: 0px 0px 1px 0px rgba(0, 0, 0, 0.4), 0px 2px 4px 0px rgba(0, 0, 0, 0.04), 0px 6px 16px 0px rgba(0, 0, 0, 0.04);
+  --shadow-popover: 0px 20px 24px 0px rgba(25, 25, 25, 0.05), 0px 5px 8px 0px rgba(25, 25, 25, 0.027), 0px 0px 0px 0.5px rgba(25, 25, 25, 0.06);
+  --shadow-elevated: 0px 0px 1px 0px rgba(0, 0, 0, 0.4), 0px 1px 1px 0px rgba(0, 0, 0, 0.04), 0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+  --shadow-app-card: 0px 0px 0px 0.5px rgba(0, 0, 0, 0.09), 0px 1px 1px -0.5px rgba(0, 0, 0, 0.09), 0px 3px 3px -1.5px rgba(0, 0, 0, 0.09);
+  --component-geometry-sidebar-width: 248px;
+  --component-geometry-header-height: 52px;
+  --component-geometry-nav-row-height: 36px;
+  --component-geometry-nav-pill-height: 28px;
+  --component-geometry-button-height: 32px;
+  --component-geometry-icon-button: 30px;
+  --component-geometry-icon-button-lg: 32px;
+  --component-geometry-play-circle: 48px;
+  --component-geometry-chip-height: 28px;
+  --component-geometry-tab-height: 40px;
+  --component-geometry-field-height: 36px;
+  --component-geometry-track-row-height: 52px;
+  --component-geometry-track-card-width: 208px;
+  --component-geometry-auth-button-height: 40px;
+  --component-geometry-mobile-tabbar: 56px;
+  --component-radius-button: 9999px;
+  --component-radius-nav-pill: 9999px;
+  --component-radius-chip: 9999px;
+  --component-radius-field: 0px;
+  --component-radius-tab: 9999px;
+  --component-radius-track-card: 0px;
+  --component-radius-plan-card: 24px;
+  --component-radius-auth-card: 0px;
+  --component-radius-dropdown: 14px;
+  --component-typography-display-fontFamily: waldenburg, "waldenburg Fallback", Arial;
+  --component-typography-display-fontSize: 40px;
+  --component-typography-display-fontWeight: 300;
+  --component-typography-display-letterSpacing: -0.8px;
+  --component-typography-page-title-fontFamily: waldenburg, "waldenburg Fallback", Arial;
+  --component-typography-page-title-fontSize: 40px;
+  --component-typography-page-title-fontWeight: 300;
+  --component-typography-page-title-letterSpacing: -0.8px;
+  --component-typography-body-fontFamily: Inter, "Inter Fallback";
+  --component-typography-body-fontSize: 14px;
+  --component-typography-body-fontWeight: 400;
+  --component-typography-label-fontFamily: Inter, "Inter Fallback";
+  --component-typography-label-fontSize: 13px;
+  --component-typography-label-fontWeight: 500;
+  --component-typography-meta-fontFamily: Inter, "Inter Fallback";
+  --component-typography-meta-fontSize: 15px;
+  --component-typography-meta-fontWeight: 500;
+  --component-typography-meta-letterSpacing: -0.15px;
+  --component-state-transition: 150ms;
+  background: var(--color-surface-background, #fdfcfb); padding: 12px; border-radius: 8px; }
+.pal.light .nm, .pal.light .vl { color: var(--color-ink-foreground, #000); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-border-border, rgba(255,255,255,.1)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-ink-foreground, #fafafa); opacity: .65; }
+.pal.light .sw .vl { opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-border-border, rgba(255,255,255,.1)); background: var(--color-surface-card, #000); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-ink-foreground, #fafafa); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-border-border, rgba(255,255,255,.1)); overflow: hidden; background: var(--color-surface-background, #000); border-radius: var(--radius-lg, 8px); }
+.shell { display: grid; grid-template-columns: var(--component-geometry-sidebar-width, 248px) 1fr; }
+.rail { background: var(--color-surface-sidebar, #000); border-right: 1px solid var(--color-border-sidebar-border, rgba(255,255,255,.08)); padding: 14px 12px; font-size: 13px; }
+.rail .brand { font: 600 15px/1 var(--sg-sans); letter-spacing: -.01em; margin: 4px 0 14px; display: flex; align-items: center; gap: 8px; }
+.rail .brand i { width: 20px; height: 20px; border-radius: 6px; background: var(--color-action-primary, #fafafa); display: inline-block; }
+.rail .row { display: flex; align-items: center; gap: 10px; height: var(--component-geometry-nav-row-height, 36px); border-radius: var(--radius-md, 6px); padding: 0 10px; color: var(--color-ink-sidebar-foreground, #a1a1a1); font-weight: 500; }
+.rail .row.on { background: var(--color-surface-surface-1, #131313); color: var(--color-ink-foreground, #fafafa); }
+.hdr { display: flex; align-items: center; gap: 8px; height: var(--component-geometry-header-height, 52px); padding: 0 16px; border-bottom: 1px solid var(--color-border-border, rgba(255,255,255,.1)); }
+.hdr .pill { height: var(--component-geometry-nav-pill-height, 28px); padding: 0 12px; display: inline-flex; align-items: center; border-radius: var(--radius-lg, 8px); font-size: 13px; font-weight: 500; color: var(--color-ink-foreground, #fafafa); }
+.hdr .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-geometry-button-height, 32px); padding: 0 14px; font-size: 13px; font-weight: 500; border-radius: var(--component-radius-button, 999px); border: 1px solid transparent; }
+.btn.primary { background: var(--color-action-primary, #fafafa); color: var(--color-ink-primary-foreground, #0a0a0a); }
+.btn.ghost { background: var(--color-surface-surface-2, #1c1c1c); color: var(--color-ink-foreground, #fafafa); }
+.hero { padding: 56px 40px 40px; font: 300 44px/1.05 var(--sg-display); letter-spacing: -.01em; color: var(--color-ink-foreground, #fafafa); }
+.hero small { display: block; font: 400 14px/1.5 var(--sg-sans); color: var(--color-ink-muted-foreground, #868686); letter-spacing: 0; margin: 12px 0 20px; max-width: 46ch; }
+.composer { display: flex; align-items: center; gap: 8px; background: var(--color-surface-composer-panel, #1c1c1c); border: 1px solid var(--color-border-composer-hairline, #2b2b2b); border-radius: var(--component-radius-field, 999px); padding: 4px; max-width: 660px; }
+.composer .plus, .composer .send { width: var(--component-geometry-auth-button-height, 36px); height: 36px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+.composer .plus { background: var(--color-surface-composer-button, #333); color: var(--color-ink-foreground, #fafafa); }
+.composer .send { background: var(--color-action-primary, #fafafa); color: var(--color-ink-primary-foreground, #0a0a0a); }
+.composer .fld { flex: 1; height: var(--component-geometry-field-height, 36px); padding: 0 8px; font-size: 14px; color: var(--color-ink-composer-fg-muted, #a3a5a8); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.chip { height: var(--component-geometry-chip-height, 28px); padding: 0 12px; border-radius: var(--component-radius-chip, 999px); background: var(--color-surface-composer-chip, #1c1c1c); font-size: 12px; color: var(--color-ink-foreground, #fafafa); display: inline-flex; align-items: center; }
+.shelf { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; padding: 4px 0; }
+.tcard { border-radius: var(--component-radius-track-card, 12px); background: var(--color-surface-surface-1, #131313); padding: 10px; }
+.tcard .art { aspect-ratio: 1; border-radius: var(--radius-md, 6px); background: var(--color-surface-surface-2, #1c1c1c); margin-bottom: 8px; position: relative; }
+.tcard .art i { position: absolute; right: 6px; bottom: 6px; width: 32px; height: 32px; border-radius: 50%; background: var(--color-action-primary, #fafafa); display: block; }
+.tcard b { display: block; font-size: 13px; font-weight: 500; }
+.tcard .sub { font-size: 12px; color: var(--color-ink-muted-foreground, #868686); }
+.plans { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.plan { border-radius: var(--component-radius-plan-card, 16px); border: 1px solid var(--color-border-border, rgba(255,255,255,.1)); padding: 22px; background: var(--color-surface-surface-1, #131313); }
+.plan.inv { background: var(--color-action-primary, #fafafa); color: var(--color-ink-primary-foreground, #0a0a0a); border: none; }
+.plan b { font: 400 22px/1.2 var(--sg-display); display: block; }
+.plan .pr { font-size: 30px; font-weight: 500; margin: 10px 0; }
+.plan li { font-size: 13px; margin: 6px 0; list-style: none; }
+.plan li::before { content: "✓ "; }
+.auth { max-width: 400px; margin: 0 auto; background: var(--color-surface-card, #0a0a0a); border: 1px solid var(--color-border-border, rgba(255,255,255,.1)); border-radius: var(--component-radius-auth-card, 16px); padding: 26px; text-align: center; }
+.auth h3 { font: 400 20px/1.2 var(--sg-display); margin: 0 0 16px; }
+.auth .sso { display: flex; align-items: center; justify-content: center; gap: 8px; height: 40px; border-radius: var(--radius-lg, 8px); background: var(--color-surface-surface-1, #131313); border: 1px solid var(--color-border-border, rgba(255,255,255,.1)); font-size: 14px; margin-bottom: 10px; }
+.pbar { display: flex; align-items: center; gap: 12px; height: 72px; padding: 0 16px; background: var(--color-surface-surface-1, #131313); border-top: 1px solid var(--color-border-border, rgba(255,255,255,.1)); }
+.pbar .art { width: 40px; height: 40px; border-radius: var(--radius-sm, 4px); background: var(--color-surface-surface-2, #1c1c1c); }
+.pbar .play { width: 36px; height: 36px; border-radius: 50%; background: var(--color-action-primary, #fafafa); }
+.pbar .rail-ck { flex: 1; height: 4px; border-radius: 2px; background: var(--color-border-slider-track, #404040); }
+.pbar .rail-ck i { display: block; width: 34%; height: 100%; border-radius: 2px; background: var(--color-action-primary, #fafafa); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-border-border, rgba(255,255,255,.1)); padding: 14px; font-size: 13px; background: var(--color-surface-surface-1, #131313); border-radius: var(--radius-md, 6px); }
+.tile b { display: block; font: 500 18px/1.25 var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-border-border, rgba(255,255,255,.1)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-border-border, rgba(255,255,255,.1)); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .ts.dsp { font-family: var(--sg-display); }
+.tr .tv { font-size: 12px; color: var(--color-ink-foreground, #fafafa); opacity: .65; font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <h1>ElevenMusic style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">ElevenMusic, measured</h2>
+  <p class="lead">elevenmusic.io is one Next.js app shell over Tailwind v4, painting <b>dark by default</b> (<code>html.dark</code>) on a true-black field with white-alpha ramps — and a real warm-paper light theme flipped by the footer's own System/Light/Dark control. It declares a shadcn-style semantic layer (<code>--background/--foreground/--card/--primary/--muted/--border/--sidebar-*</code>) plus its own <code>--surface-*</code>, <code>--lighten-*</code>, <code>--lift-*</code>, <code>--composer-*</code> and <code>--gray-alpha-*</code> extensions. Type is Inter variable for the UI and waldenburg light for display. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from elevenmusic.io, signed out, in headless Chromium. Everything behind sign-in — Create, Composer, Library, Chat, publishing, Likes, Remixes and Shares — is a documented boundary; the email field was filled and cleared without submitting, and no OAuth or Create button was ever pressed. Inter, waldenburg and GeistMono are served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The shell</h2>
+  <p class="lead">Every page carries the same chrome: a fixed 248px rail (logo, Search, nav rows, the Publish promo, playlists) and a 52px header with nav pills and the Sign-in / Start-free pair — the inverted primary, white on black.</p>
+  <div class="mock">
+    <div class="shell">
+      <div class="rail">
+        <div class="brand"><i></i>ElevenMusic</div>
+        <div class="row on">Explore</div><div class="row">Create</div><div class="row">Library</div><div class="row">Tools</div><div class="row">Sounds</div>
+      </div>
+      <div>
+        <div class="hdr"><span class="pill">Explore</span><span class="pill">Resources &#9662;</span><span class="pill">Pricing</span><span class="sp"></span><span class="btn ghost">Sign in</span><span class="btn primary">Start free</span></div>
+        <div class="hero">Make music yours.<small>Describe a sound, remix a track or start from a loop.</small>
+          <div class="composer"><span class="plus">+</span><span class="fld">Describe your song…</span><span class="send">&#8593;</span></div>
+          <div class="chips"><span class="chip">Trap beat</span><span class="chip">Loop to chop</span><span class="chip">Topline</span><span class="chip">Amapiano</span><span class="chip">Trailer cue</span><span class="chip">Techno</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sh">Shelves and cards</h2>
+  <p class="lead">Track shelves on the surface-1 field: artwork squares, a title line over a muted artist line, and the white play circle raised on hover. The version badge and the Remix chip ride the cards.</p>
+  <div class="mock" style="padding:20px">
+    <div class="shelf">
+      <div class="tcard"><div class="art"><i></i></div><b>Track title</b><span class="sub">Artist — v2.5</span></div>
+      <div class="tcard"><div class="art"><i></i></div><b>Track title</b><span class="sub">Artist</span></div>
+      <div class="tcard"><div class="art"><i></i></div><b>Track title</b><span class="sub">Artist</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing pairs a dark Free card with an inverted white Pro island — the product's one large light surface inside the dark theme.</p>
+  <div class="mock" style="padding:20px">
+    <div class="plans">
+      <div class="plan"><b>Free</b><div class="pr">$0</div><li>25 songs a day</li><li>Personal use</li><span class="btn primary" style="margin-top:12px">Start free</span></div>
+      <div class="plan inv"><b>Pro</b><div class="pr">$9.99<span style="font-size:13px;font-weight:400">/mo</span></div><li>1,000 songs a month</li><li>Commercial use</li><span class="btn" style="margin-top:12px;background:#0a0a0a;color:#fafafa">Get Pro</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The auth boundary</h2>
+  <p class="lead">The centred card on the black field: SSO buttons on surface-1 with a hairline, the muted legal line, and the options toggle that reveals the email form — measured, never submitted.</p>
+  <div class="mock" style="padding:24px">
+    <div class="auth"><h3>Log in or sign up</h3><div class="sso">Continue with Google</div><div class="sso">Continue with Apple</div><div class="sso" style="height:36px">Show other options</div></div>
+  </div>
+
+  <h2 class="sh">The player</h2>
+  <p class="lead">A card's own Play mounts the 72px bottom transport — art, title, the white pause circle, prev/next, repeat, volume and the queue — over the page field.</p>
+  <div class="mock">
+    <div class="pbar"><span class="art"></span><div style="font-size:13px"><b>Track title</b><div class="sub" style="opacity:.65;font-size:12px">Artist</div></div><span style="flex:0 0 auto;width:32px"></span><span class="play"></span><span style="flex:0 0 auto;width:32px"></span><span class="rail-ck"><i></i></span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The Tailwind <code>--color-*</code> palette and the shared <code>--darken-*</code> overlay ramp are identical in both themes and live in core; the semantic roles re-bind per theme — the dark set is the app's default paint, the light set the warm-paper remap (its <code>--lighten-*</code> steps resolve in dark only).</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">A 4px spacing base, the <code>--radius-*</code> scale from 2px to 24px, and the components painting inside it — pills and full circles on controls, 6-16px on cards. Borders are quiet: white at 8-12% on the dark field.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <p class="lead">Shadows re-bind per theme: the dark set pairs near-invisible drops with white hairline insets, the light set uses soft warm drops.</p>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two served faces plus a mono: <code>waldenburg</code> light on display headlines, <code>Inter</code> variable on the UI, <code>GeistMono</code> for code and IDs. Sizes are the declared Tailwind <code>--text-*</code> steps 12-72px.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared semantic variables from the live stylesheets and computed styles on the elements of both painted themes</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component, plus the mounted player bar and the expanded auth form</td></tr><tr><td>No provenance</td><td>Every token names its variable (and the theme it was resolved in) or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"sans":{"v":"\"Inter\", \"Inter Fallback\"","t":"fontFamily","s":"declared --font-inter (1jj-z3nt2o826.css .C3Inkq_variable)","d":"Inter variable (100-900): the UI face — nav, labels, fields, track titles. --font-sans resolves to it."},"display":{"v":"\"waldenburg\", \"waldenburg Fallback\", Arial","t":"fontFamily","s":"declared --font-waldenburg (1jj-z3nt2o826.css .CCd5nq_variable)","d":"waldenburg light/regular: the display face — the hero headline and page titles."},"mono":{"v":"\"GeistMono\", ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace","t":"fontFamily","s":"declared --font-geist-mono (1jj-z3nt2o826.css .i8lDNW_variable)","d":"GeistMono variable: the declared mono stack for IDs and code."}},"weight":{"light":{"v":300,"t":"fontWeight","s":"css-var --font-weight-light (light)","d":"300: the display headline weight."},"normal":{"v":400,"t":"fontWeight","s":"css-var --font-weight-normal (light)","d":"400: body and labels."},"medium":{"v":500,"t":"fontWeight","s":"css-var --font-weight-medium (light)","d":"500: nav rows, buttons and track titles."},"semibold":{"v":600,"t":"fontWeight","s":"css-var --font-weight-semibold (light)","d":"600: headings and emphasis."},"bold":{"v":700,"t":"fontWeight","s":"css-var --font-weight-bold (light)","d":"700: declared, little used."}},"size":{"xs":{"v":"12px","t":"dimension","s":"css-var --text-xs (light)","d":"Declared --text-xs."},"sm":{"v":"14px","t":"dimension","s":"css-var --text-sm (light)","d":"Declared --text-sm."},"base":{"v":"16px","t":"dimension","s":"css-var --text-base (light)","d":"Declared --text-base."},"lg":{"v":"18px","t":"dimension","s":"css-var --text-lg (light)","d":"Declared --text-lg."},"xl":{"v":"20px","t":"dimension","s":"css-var --text-xl (light)","d":"Declared --text-xl."},"2xl":{"v":"24px","t":"dimension","s":"css-var --text-2xl (light)","d":"Declared --text-2xl."},"3xl":{"v":"30px","t":"dimension","s":"css-var --text-3xl (light)","d":"Declared --text-3xl."},"4xl":{"v":"36px","t":"dimension","s":"css-var --text-4xl (light)","d":"Declared --text-4xl."},"5xl":{"v":"48px","t":"dimension","s":"css-var --text-5xl (light)","d":"Declared --text-5xl."},"6xl":{"v":"60px","t":"dimension","s":"css-var --text-6xl (light)","d":"Declared --text-6xl."},"7xl":{"v":"72px","t":"dimension","s":"css-var --text-7xl (light)","d":"Declared --text-7xl."}},"lineHeight":{"xs":{"v":1.3333,"t":"number","s":"css-var --text-xs--line-height (light)","d":"Declared line-height ratio for --text-xs."},"sm":{"v":1.4286,"t":"number","s":"css-var --text-sm--line-height (light)","d":"Declared line-height ratio for --text-sm."},"base":{"v":1.5,"t":"number","s":"css-var --text-base--line-height (light)","d":"Declared line-height ratio for --text-base."},"lg":{"v":1.5556,"t":"number","s":"css-var --text-lg--line-height (light)","d":"Declared line-height ratio for --text-lg."},"xl":{"v":1.4,"t":"number","s":"css-var --text-xl--line-height (light)","d":"Declared line-height ratio for --text-xl."},"2xl":{"v":1.3333,"t":"number","s":"css-var --text-2xl--line-height (light)","d":"Declared line-height ratio for --text-2xl."},"3xl":{"v":1.2,"t":"number","s":"css-var --text-3xl--line-height (light)","d":"Declared line-height ratio for --text-3xl."},"4xl":{"v":1.1111,"t":"number","s":"css-var --text-4xl--line-height (light)","d":"Declared line-height ratio for --text-4xl."},"5xl":{"v":1,"t":"number","s":"css-var --text-5xl--line-height (light)","d":"Declared line-height ratio for --text-5xl."},"6xl":{"v":1,"t":"number","s":"css-var --text-6xl--line-height (light)","d":"Declared line-height ratio for --text-6xl."},"7xl":{"v":1,"t":"number","s":"css-var --text-7xl--line-height (light)","d":"Declared line-height ratio for --text-7xl."},"tight":{"v":1.25,"t":"number","s":"css-var --leading-tight (light)","d":"Declared --leading-tight."},"snug":{"v":1.375,"t":"number","s":"css-var --leading-snug (light)","d":"Declared --leading-snug."},"normal":{"v":1.5,"t":"number","s":"css-var --leading-normal (light)","d":"Declared --leading-normal."},"relaxed":{"v":1.625,"t":"number","s":"css-var --leading-relaxed (light)","d":"Declared --leading-relaxed."}}},"color":{"tailwind":{"amber":{"100":{"v":"#fef3c6","t":"color","s":"css-var --color-amber-100 (light)","d":"Tailwind amber 100 (declared palette, identical in both themes)."},"200":{"v":"#fee685","t":"color","s":"css-var --color-amber-200 (light)","d":"Tailwind amber 200 (declared palette, identical in both themes)."},"300":{"v":"#ffd230","t":"color","s":"css-var --color-amber-300 (light)","d":"Tailwind amber 300 (declared palette, identical in both themes)."},"400":{"v":"#ffb900","t":"color","s":"css-var --color-amber-400 (light)","d":"Tailwind amber 400 (declared palette, identical in both themes)."},"500":{"v":"#fe9a00","t":"color","s":"css-var --color-amber-500 (light)","d":"Tailwind amber 500 (declared palette, identical in both themes)."},"600":{"v":"#e17100","t":"color","s":"css-var --color-amber-600 (light)","d":"Tailwind amber 600 (declared palette, identical in both themes)."},"700":{"v":"#bb4d00","t":"color","s":"css-var --color-amber-700 (light)","d":"Tailwind amber 700 (declared palette, identical in both themes)."},"800":{"v":"#973c00","t":"color","s":"css-var --color-amber-800 (light)","d":"Tailwind amber 800 (declared palette, identical in both themes)."},"950":{"v":"#461901","t":"color","s":"css-var --color-amber-950 (light)","d":"Tailwind amber 950 (declared palette, identical in both themes)."}},"blue":{"500":{"v":"#2b7fff","t":"color","s":"css-var --color-blue-500 (light)","d":"Tailwind blue 500 (declared palette, identical in both themes)."},"600":{"v":"#155dfc","t":"color","s":"css-var --color-blue-600 (light)","d":"Tailwind blue 600 (declared palette, identical in both themes)."}},"cyan":{"500":{"v":"#00b8db","t":"color","s":"css-var --color-cyan-500 (light)","d":"Tailwind cyan 500 (declared palette, identical in both themes)."}},"emerald":{"200":{"v":"#a4f4cf","t":"color","s":"css-var --color-emerald-200 (light)","d":"Tailwind emerald 200 (declared palette, identical in both themes)."},"300":{"v":"#5ee9b5","t":"color","s":"css-var --color-emerald-300 (light)","d":"Tailwind emerald 300 (declared palette, identical in both themes)."},"400":{"v":"#00d492","t":"color","s":"css-var --color-emerald-400 (light)","d":"Tailwind emerald 400 (declared palette, identical in both themes)."},"500":{"v":"#00bc7d","t":"color","s":"css-var --color-emerald-500 (light)","d":"Tailwind emerald 500 (declared palette, identical in both themes)."},"600":{"v":"#009966","t":"color","s":"css-var --color-emerald-600 (light)","d":"Tailwind emerald 600 (declared palette, identical in both themes)."},"700":{"v":"#007a55","t":"color","s":"css-var --color-emerald-700 (light)","d":"Tailwind emerald 700 (declared palette, identical in both themes)."}},"fuchsia":{"500":{"v":"#e12afb","t":"color","s":"css-var --color-fuchsia-500 (light)","d":"Tailwind fuchsia 500 (declared palette, identical in both themes)."}},"gray":{"100":{"v":"#f5f3f1","t":"color","s":"css-var --color-gray-100 (light)","d":"Tailwind gray 100 (declared palette, identical in both themes)."},"200":{"v":"#ebe8e4","t":"color","s":"css-var --color-gray-200 (light)","d":"Tailwind gray 200 (declared palette, identical in both themes)."},"25":{"v":"#fdfcfb","t":"color","s":"css-var --color-gray-25 (light)","d":"Tailwind gray 25 (declared palette, identical in both themes)."},"300":{"v":"#d7d2cc","t":"color","s":"css-var --color-gray-300 (light)","d":"Tailwind gray 300 (declared palette, identical in both themes)."},"400":{"v":"#a59f97","t":"color","s":"css-var --color-gray-400 (light)","d":"Tailwind gray 400 (declared palette, identical in both themes)."},"50":{"v":"#faf8f7","t":"color","s":"css-var --color-gray-50 (light)","d":"Tailwind gray 50 (declared palette, identical in both themes)."},"500":{"v":"#777169","t":"color","s":"css-var --color-gray-500 (light)","d":"Tailwind gray 500 (declared palette, identical in both themes)."},"600":{"v":"#59544f","t":"color","s":"css-var --color-gray-600 (light)","d":"Tailwind gray 600 (declared palette, identical in both themes)."},"700":{"v":"#44403b","t":"color","s":"css-var --color-gray-700 (light)","d":"Tailwind gray 700 (declared palette, identical in both themes)."},"800":{"v":"#292524","t":"color","s":"css-var --color-gray-800 (light)","d":"Tailwind gray 800 (declared palette, identical in both themes)."},"900":{"v":"#1c1917","t":"color","s":"css-var --color-gray-900 (light)","d":"Tailwind gray 900 (declared palette, identical in both themes)."},"950":{"v":"#0c0a09","t":"color","s":"css-var --color-gray-950 (light)","d":"Tailwind gray 950 (declared palette, identical in both themes)."}},"green":{"400":{"v":"#05df72","t":"color","s":"css-var --color-green-400 (light)","d":"Tailwind green 400 (declared palette, identical in both themes)."},"500":{"v":"#00c950","t":"color","s":"css-var --color-green-500 (light)","d":"Tailwind green 500 (declared palette, identical in both themes)."},"600":{"v":"#00a63e","t":"color","s":"css-var --color-green-600 (light)","d":"Tailwind green 600 (declared palette, identical in both themes)."}},"indigo":{"500":{"v":"#615fff","t":"color","s":"css-var --color-indigo-500 (light)","d":"Tailwind indigo 500 (declared palette, identical in both themes)."}},"lime":{"500":{"v":"#7ccf00","t":"color","s":"css-var --color-lime-500 (light)","d":"Tailwind lime 500 (declared palette, identical in both themes)."}},"neutral":{"200":{"v":"#e5e5e5","t":"color","s":"css-var --color-neutral-200 (light)","d":"Tailwind neutral 200 (declared palette, identical in both themes)."},"300":{"v":"#d4d4d4","t":"color","s":"css-var --color-neutral-300 (light)","d":"Tailwind neutral 300 (declared palette, identical in both themes)."},"400":{"v":"#a1a1a1","t":"color","s":"css-var --color-neutral-400 (light)","d":"Tailwind neutral 400 (declared palette, identical in both themes)."},"600":{"v":"#525252","t":"color","s":"css-var --color-neutral-600 (light)","d":"Tailwind neutral 600 (declared palette, identical in both themes)."},"700":{"v":"#404040","t":"color","s":"css-var --color-neutral-700 (light)","d":"Tailwind neutral 700 (declared palette, identical in both themes)."},"900":{"v":"#171717","t":"color","s":"css-var --color-neutral-900 (light)","d":"Tailwind neutral 900 (declared palette, identical in both themes)."},"950":{"v":"#0a0a0a","t":"color","s":"css-var --color-neutral-950 (light)","d":"Tailwind neutral 950 (declared palette, identical in both themes)."}},"orange":{"500":{"v":"#ff6900","t":"color","s":"css-var --color-orange-500 (light)","d":"Tailwind orange 500 (declared palette, identical in both themes)."},"600":{"v":"#f54900","t":"color","s":"css-var --color-orange-600 (light)","d":"Tailwind orange 600 (declared palette, identical in both themes)."},"950":{"v":"#441306","t":"color","s":"css-var --color-orange-950 (light)","d":"Tailwind orange 950 (declared palette, identical in both themes)."}},"pink":{"500":{"v":"#f6339a","t":"color","s":"css-var --color-pink-500 (light)","d":"Tailwind pink 500 (declared palette, identical in both themes)."}},"purple":{"500":{"v":"#ad46ff","t":"color","s":"css-var --color-purple-500 (light)","d":"Tailwind purple 500 (declared palette, identical in both themes)."}},"red":{"100":{"v":"#ffe2e2","t":"color","s":"css-var --color-red-100 (light)","d":"Tailwind red 100 (declared palette, identical in both themes)."},"400":{"v":"#ff6467","t":"color","s":"css-var --color-red-400 (light)","d":"Tailwind red 400 (declared palette, identical in both themes)."},"50":{"v":"#fef2f2","t":"color","s":"css-var --color-red-50 (light)","d":"Tailwind red 50 (declared palette, identical in both themes)."},"500":{"v":"#fb2c36","t":"color","s":"css-var --color-red-500 (light)","d":"Tailwind red 500 (declared palette, identical in both themes)."},"600":{"v":"#e7000b","t":"color","s":"css-var --color-red-600 (light)","d":"Tailwind red 600 (declared palette, identical in both themes)."},"700":{"v":"#c10007","t":"color","s":"css-var --color-red-700 (light)","d":"Tailwind red 700 (declared palette, identical in both themes)."},"800":{"v":"#9f0712","t":"color","s":"css-var --color-red-800 (light)","d":"Tailwind red 800 (declared palette, identical in both themes)."},"950":{"v":"#460809","t":"color","s":"css-var --color-red-950 (light)","d":"Tailwind red 950 (declared palette, identical in both themes)."}},"rose":{"500":{"v":"#ff2056","t":"color","s":"css-var --color-rose-500 (light)","d":"Tailwind rose 500 (declared palette, identical in both themes)."},"800":{"v":"#a50036","t":"color","s":"css-var --color-rose-800 (light)","d":"Tailwind rose 800 (declared palette, identical in both themes)."}},"sky":{"500":{"v":"#00a6f4","t":"color","s":"css-var --color-sky-500 (light)","d":"Tailwind sky 500 (declared palette, identical in both themes)."}},"stone":{"800":{"v":"#292524","t":"color","s":"css-var --color-stone-800 (light)","d":"Tailwind stone 800 (declared palette, identical in both themes)."}},"teal":{"500":{"v":"#00bba7","t":"color","s":"css-var --color-teal-500 (light)","d":"Tailwind teal 500 (declared palette, identical in both themes)."}},"violet":{"500":{"v":"#8e51ff","t":"color","s":"css-var --color-violet-500 (light)","d":"Tailwind violet 500 (declared palette, identical in both themes)."}},"yellow":{"500":{"v":"#f0b100","t":"color","s":"css-var --color-yellow-500 (light)","d":"Tailwind yellow 500 (declared palette, identical in both themes)."},"600":{"v":"#d08700","t":"color","s":"css-var --color-yellow-600 (light)","d":"Tailwind yellow 600 (declared palette, identical in both themes)."}},"zinc":{"600":{"v":"#52525c","t":"color","s":"css-var --color-zinc-600 (light)","d":"Tailwind zinc 600 (declared palette, identical in both themes)."},"700":{"v":"#3f3f46","t":"color","s":"css-var --color-zinc-700 (light)","d":"Tailwind zinc 700 (declared palette, identical in both themes)."},"800":{"v":"#27272a","t":"color","s":"css-var --color-zinc-800 (light)","d":"Tailwind zinc 800 (declared palette, identical in both themes)."},"900":{"v":"#18181b","t":"color","s":"css-var --color-zinc-900 (light)","d":"Tailwind zinc 900 (declared palette, identical in both themes)."},"950":{"v":"#09090b","t":"color","s":"css-var --color-zinc-950 (light)","d":"Tailwind zinc 950 (declared palette, identical in both themes)."}},"black":{"default":{"v":"#000000","t":"color","s":"css-var --color-black (light)","d":"Declared --color-black (identical in both themes)."}},"white":{"default":{"v":"#ffffff","t":"color","s":"css-var --color-white (light)","d":"Declared --color-white (identical in both themes)."}},"overlay":{"darken":{"100":{"v":"rgba(83, 54, 10, 0.047)","t":"color","s":"css-var --darken-100 (light)","d":"Declared black-alpha overlay step (identical in both themes)."},"150":{"v":"rgba(83, 54, 10, 0.08)","t":"color","s":"css-var --darken-150 (light)","d":"Declared black-alpha overlay step (identical in both themes)."},"200":{"v":"rgba(83, 54, 10, 0.11)","t":"color","s":"css-var --darken-200 (light)","d":"Declared black-alpha overlay step (identical in both themes)."},"300":{"v":"rgba(28, 25, 23, 0.16)","t":"color","s":"css-var --darken-300 (light)","d":"Declared black-alpha overlay step (identical in both themes)."},"400":{"v":"rgba(28, 25, 23, 0.35)","t":"color","s":"css-var --darken-400 (light)","d":"Declared black-alpha overlay step (identical in both themes)."},"50":{"v":"rgba(83, 54, 10, 0.024)","t":"color","s":"css-var --darken-50 (light)","d":"Declared black-alpha overlay step (identical in both themes)."},"500":{"v":"rgba(28, 25, 23, 0.53)","t":"color","s":"css-var --darken-500 (light)","d":"Declared black-alpha overlay step (identical in both themes)."},"600":{"v":"rgba(28, 25, 23, 0.643)","t":"color","s":"css-var --darken-600 (light)","d":"Declared black-alpha overlay step (identical in both themes)."},"700":{"v":"rgba(28, 25, 23, 0.714)","t":"color","s":"css-var --darken-700 (light)","d":"Declared black-alpha overlay step (identical in both themes)."},"800":{"v":"rgba(28, 25, 23, 0.804)","t":"color","s":"css-var --darken-800 (light)","d":"Declared black-alpha overlay step (identical in both themes)."},"900":{"v":"rgba(28, 25, 23, 0.86)","t":"color","s":"css-var --darken-900 (light)","d":"Declared black-alpha overlay step (identical in both themes)."},"950":{"v":"rgba(28, 25, 23, 0.89)","t":"color","s":"css-var --darken-950 (light)","d":"Declared black-alpha overlay step (identical in both themes)."}}}}},"spacing":{"base":{"v":"4px","t":"dimension","s":"css-var --spacing (light)","d":"The 4px spacing base."}},"radius":{"xs":{"v":"2px","t":"dimension","s":"css-var --radius-xs (light)","d":"Declared --radius-xs."},"sm":{"v":"4px","t":"dimension","s":"css-var --radius-sm (light)","d":"Declared --radius-sm."},"md":{"v":"6px","t":"dimension","s":"css-var --radius-md (light)","d":"Declared --radius-md."},"lg":{"v":"8px","t":"dimension","s":"css-var --radius-lg (light)","d":"Declared --radius-lg."},"default":{"v":"8px","t":"dimension","s":"css-var --radius (light)","d":"Declared --radius."},"xl":{"v":"12px","t":"dimension","s":"css-var --radius-xl (light)","d":"Declared --radius-xl."},"2xl":{"v":"16px","t":"dimension","s":"css-var --radius-2xl (light)","d":"Declared --radius-2xl."},"3xl":{"v":"24px","t":"dimension","s":"css-var --radius-3xl (light)","d":"Declared --radius-3xl."}},"blur":{"xs":{"v":"4px","t":"dimension","s":"css-var --blur-xs (light)","d":"Declared --blur-xs (backdrop and glow blurs)."},"sm":{"v":"8px","t":"dimension","s":"css-var --blur-sm (light)","d":"Declared --blur-sm (backdrop and glow blurs)."},"md":{"v":"12px","t":"dimension","s":"css-var --blur-md (light)","d":"Declared --blur-md (backdrop and glow blurs)."},"lg":{"v":"16px","t":"dimension","s":"css-var --blur-lg (light)","d":"Declared --blur-lg (backdrop and glow blurs)."},"xl":{"v":"24px","t":"dimension","s":"css-var --blur-xl (light)","d":"Declared --blur-xl (backdrop and glow blurs)."},"2xl":{"v":"40px","t":"dimension","s":"css-var --blur-2xl (light)","d":"Declared --blur-2xl (backdrop and glow blurs)."},"3xl":{"v":"64px","t":"dimension","s":"css-var --blur-3xl (light)","d":"Declared --blur-3xl (backdrop and glow blurs)."}},"container":{"xs":{"v":"320px","t":"dimension","s":"css-var --container-xs (light)","d":"Declared --container-xs max width."},"sm":{"v":"384px","t":"dimension","s":"css-var --container-sm (light)","d":"Declared --container-sm max width."},"md":{"v":"448px","t":"dimension","s":"css-var --container-md (light)","d":"Declared --container-md max width."},"lg":{"v":"512px","t":"dimension","s":"css-var --container-lg (light)","d":"Declared --container-lg max width."},"xl":{"v":"576px","t":"dimension","s":"css-var --container-xl (light)","d":"Declared --container-xl max width."},"2xl":{"v":"672px","t":"dimension","s":"css-var --container-2xl (light)","d":"Declared --container-2xl max width."},"3xl":{"v":"768px","t":"dimension","s":"css-var --container-3xl (light)","d":"Declared --container-3xl max width."},"4xl":{"v":"896px","t":"dimension","s":"css-var --container-4xl (light)","d":"Declared --container-4xl max width."},"5xl":{"v":"1024px","t":"dimension","s":"css-var --container-5xl (light)","d":"Declared --container-5xl max width."},"6xl":{"v":"1152px","t":"dimension","s":"css-var --container-6xl (light)","d":"Declared --container-6xl max width."}},"motion":{"ease-out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-out (light)","d":"The default out-curve."},"ease-in-out":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-in-out (light)","d":"The in-out curve."},"duration":{"v":"150ms","t":"duration","s":"css-var --default-transition-duration (light)","d":"The default 150ms transition duration."},"timing":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --default-transition-timing-function (light)","d":"The default transition curve."}},"shadow":{"drop-sm":{"v":[{"color":"rgba(0, 0, 0, 0.15)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px"}],"t":"shadow","s":"css-var --drop-shadow-sm (light)","d":"Declared --drop-shadow-sm (identical in both themes)."}}},"light":{"color":{"surface":{"background":{"v":"#fdfcfb","t":"color","s":"css-var --background (light)","d":"The page field: true black in dark, warm paper #fdfcfb in light."},"card":{"v":"#ffffff","t":"color","s":"css-var --card (light)","d":"Card surfaces."},"elevated":{"v":"#ffffff","t":"color","s":"css-var --elevated (light)","d":"Elevated surface (popovers, raised panels)."},"elevated-hover":{"v":"#fdfcfb","t":"color","s":"css-var --elevated-hover (light)","d":"Elevated surface, hovered."},"muted":{"v":"#f5f3f1","t":"color","s":"css-var --muted (light)","d":"Muted fill: quiet rows and chips."},"secondary":{"v":"#f5f3f1","t":"color","s":"css-var --secondary (light)","d":"Secondary fill."},"secondary-hover":{"v":"#ebe8e4","t":"color","s":"css-var --secondary-hover (light)","d":"Secondary fill, hovered."},"accent":{"v":"#f5f3f1","t":"color","s":"css-var --accent (light)","d":"Accent fill (hover washes)."},"popover":{"v":"#ffffff","t":"color","s":"css-var --popover (light)","d":"Popover/dropdown surface."},"popover-solid":{"v":"#ffffff","t":"color","s":"css-var --popover-solid (light)","d":"Solid popover surface."},"surface-1":{"v":"#faf8f7","t":"color","s":"css-var --surface-1 (light)","d":"The app's first raised surface."},"surface-2":{"v":"#f5f3f1","t":"color","s":"css-var --surface-2 (light)","d":"The app's second raised surface."},"sidebar":{"v":"#faf8f7","t":"color","s":"css-var --sidebar (light)","d":"The left-rail field."},"overlay":{"v":"rgba(245, 243, 241, 0.45)","t":"color","s":"css-var --overlay (light)","d":"Translucent overlay wash."},"overlay-backdrop":{"v":"rgba(28, 25, 23, 0.4)","t":"color","s":"css-var --overlay-backdrop (light)","d":"The modal scrim."},"composer":{"v":"rgba(255, 255, 255, 0.9)","t":"color","s":"css-var --composer (light)","d":"The composer's translucent field."},"composer-panel":{"v":"#ffffff","t":"color","s":"css-var --composer-panel (light)","d":"The composer panel surface."},"composer-panel-inset":{"v":"#f5f3f1","t":"color","s":"css-var --composer-panel-inset (light)","d":"The composer panel's inset."},"composer-surface":{"v":"#ffffff","t":"color","s":"css-var --composer-surface (light)","d":"The composer surface."},"composer-solid":{"v":"#ffffff","t":"color","s":"css-var --composer-solid (light)","d":"The solid composer surface."},"composer-chip":{"v":"#f5f3f1","t":"color","s":"css-var --composer-chip (light)","d":"Prompt-chip fill."},"composer-chip-hover":{"v":"#ebe8e4","t":"color","s":"css-var --composer-chip-hover (light)","d":"Prompt-chip fill, hovered."},"composer-button":{"v":"#f5f3f1","t":"color","s":"css-var --composer-button (light)","d":"The composer buttons' fill."},"destructive-soft":{"v":"#fff0ee","t":"color","s":"css-var --destructive-soft (light)","d":"Soft destructive surface."}},"ink":{"foreground":{"v":"#000000","t":"color","s":"css-var --foreground (light)","d":"Primary text and glyphs."},"card-foreground":{"v":"#000000","t":"color","s":"css-var --card-foreground (light)","d":"Text on cards."},"muted-foreground":{"v":"#777169","t":"color","s":"css-var --muted-foreground (light)","d":"Muted text: subtitles, metadata."},"primary-foreground":{"v":"#ffffff","t":"color","s":"css-var --primary-foreground (light)","d":"Text on the primary fill."},"secondary-foreground":{"v":"#000000","t":"color","s":"css-var --secondary-foreground (light)","d":"Text on the secondary fill."},"accent-foreground":{"v":"#000000","t":"color","s":"css-var --accent-foreground (light)","d":"Text on the accent fill."},"popover-foreground":{"v":"#000000","t":"color","s":"css-var --popover-foreground (light)","d":"Text on popovers."},"sidebar-foreground":{"v":"#59544f","t":"color","s":"css-var --sidebar-foreground (light)","d":"Rail text (the muted row labels)."},"sidebar-accent-foreground":{"v":"#000000","t":"color","s":"css-var --sidebar-accent-foreground (light)","d":"Text on the rail's accent fill."},"sidebar-primary-foreground":{"v":"#ffffff","t":"color","s":"css-var --sidebar-primary-foreground (light)","d":"Text on the rail's primary fill."},"composer-fg-muted":{"v":"#59544f","t":"color","s":"css-var --composer-fg-muted (light)","d":"Muted text inside the composer."},"destructive-foreground":{"v":"#f9fafb","t":"color","s":"css-var --destructive-foreground (light)","d":"Text on the destructive fill."},"destructive-soft-foreground":{"v":"#cc2827","t":"color","s":"css-var --destructive-soft-foreground (light)","d":"Text on the soft destructive surface."},"subtle":{"v":"rgba(28, 25, 23, 0.35)","t":"color","s":"css-var --subtle (light)","d":"The most quiet text/line tint."}},"action":{"primary":{"v":"#000000","t":"color","s":"css-var --primary (light)","d":"The primary fill — white in dark (inverted), black in light."},"primary-hover":{"v":"#44403b","t":"color","s":"css-var --primary-hover (light)","d":"The primary fill, hovered."},"brand":{"v":"#4c75d2","t":"color","s":"css-var --brand (light)","d":"The ElevenLabs brand blue (charts, links, the badge)."},"brand-foreground":{"v":"#fafafa","t":"color","s":"css-var --brand-foreground (light)","d":"Text on the brand fill."},"destructive":{"v":"#ef4444","t":"color","s":"css-var --destructive (light)","d":"Destructive fill."},"success":{"v":"#007a55","t":"color","s":"css-var --success (light)","d":"Success green."},"sidebar-primary":{"v":"#000000","t":"color","s":"css-var --sidebar-primary (light)","d":"The rail's primary fill."}},"border":{"border":{"v":"rgba(83, 54, 10, 0.08)","t":"color","s":"css-var --border (light)","d":"The hairline: white 10% in dark, warm-brown 8% in light."},"input":{"v":"#ebe8e4","t":"color","s":"css-var --input (light)","d":"Field and control outlines."},"outline":{"v":"#d7d2cc","t":"color","s":"css-var --outline (light)","d":"The --outline hairline."},"sidebar-border":{"v":"#ebe8e4","t":"color","s":"css-var --sidebar-border (light)","d":"The rail's hairline."},"composer-hairline":{"v":"#ebe8e4","t":"color","s":"css-var --composer-hairline (light)","d":"The composer's hairline."},"composer-ring":{"v":"#ebe8e4","t":"color","s":"css-var --composer-ring (light)","d":"The composer's ring."},"slider-track":{"v":"#ebe8e4","t":"color","s":"css-var --slider-track (light)","d":"The slider/progress track."},"field-border-focus":{"v":"#777169","t":"color","s":"css-var --field-border-focus (light)","d":"The field border on focus."}},"focus":{"ring":{"v":"#000000","t":"color","s":"css-var --ring (light)","d":"The focus-ring ink."},"sidebar-ring":{"v":"#000000","t":"color","s":"css-var --sidebar-ring (light)","d":"The rail's focus ring."}},"role":{"background":{"v":"#fdfcfb","t":"color","s":"css-var --color-background (light)","d":"Tailwind alias of --background."},"foreground":{"v":"#000000","t":"color","s":"css-var --color-foreground (light)","d":"Tailwind alias of --foreground."},"primary":{"v":"#000000","t":"color","s":"css-var --color-primary (light)","d":"Tailwind alias of --primary."},"muted-foreground":{"v":"#777169","t":"color","s":"css-var --color-muted-foreground (light)","d":"Tailwind alias of --muted-foreground."},"border":{"v":"rgba(83, 54, 10, 0.08)","t":"color","s":"css-var --color-border (light)","d":"Tailwind alias of --border."},"destructive":{"v":"#ef4444","t":"color","s":"css-var --color-destructive (light)","d":"Tailwind alias of --destructive."}},"chart":{"1":{"v":"#f54900","t":"color","s":"css-var --chart-1 (light)","d":"Declared chart colour 1."},"2":{"v":"#009689","t":"color","s":"css-var --chart-2 (light)","d":"Declared chart colour 2."},"3":{"v":"#104e64","t":"color","s":"css-var --chart-3 (light)","d":"Declared chart colour 3."},"4":{"v":"#ffb900","t":"color","s":"css-var --chart-4 (light)","d":"Declared chart colour 4."},"5":{"v":"#fe9a00","t":"color","s":"css-var --chart-5 (light)","d":"Declared chart colour 5."}},"alpha":{"gray-100":{"v":"rgba(83, 54, 10, 0.047)","t":"color","s":"css-var --gray-alpha-100 (light)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-150":{"v":"rgba(83, 54, 10, 0.08)","t":"color","s":"css-var --gray-alpha-150 (light)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-200":{"v":"rgba(83, 54, 10, 0.11)","t":"color","s":"css-var --gray-alpha-200 (light)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-300":{"v":"rgba(28, 25, 23, 0.16)","t":"color","s":"css-var --gray-alpha-300 (light)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-400":{"v":"rgba(28, 25, 23, 0.35)","t":"color","s":"css-var --gray-alpha-400 (light)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-50":{"v":"rgba(83, 54, 10, 0.024)","t":"color","s":"css-var --gray-alpha-50 (light)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-500":{"v":"rgba(28, 25, 23, 0.53)","t":"color","s":"css-var --gray-alpha-500 (light)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-600":{"v":"rgba(28, 25, 23, 0.643)","t":"color","s":"css-var --gray-alpha-600 (light)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-700":{"v":"rgba(28, 25, 23, 0.714)","t":"color","s":"css-var --gray-alpha-700 (light)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-800":{"v":"rgba(28, 25, 23, 0.804)","t":"color","s":"css-var --gray-alpha-800 (light)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-900":{"v":"rgba(28, 25, 23, 0.86)","t":"color","s":"css-var --gray-alpha-900 (light)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-950":{"v":"rgba(28, 25, 23, 0.89)","t":"color","s":"css-var --gray-alpha-950 (light)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."}}},"shadow":{"e1":{"v":[{"color":"rgba(0, 0, 0, 0.4)","offsetX":"0px","offsetY":"0px","blur":"1px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.04)","offsetX":"0px","offsetY":"1px","blur":"1px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.04)","offsetX":"0px","offsetY":"2px","blur":"4px","spread":"0px"}],"t":"shadow","s":"css-var --shadow-e1 (light)","d":"Elevation 1: the hairline-plus-drop pairing."},"e2":{"v":[{"color":"rgba(25, 25, 25, 0.05)","offsetX":"0px","offsetY":"20px","blur":"24px","spread":"0px"},{"color":"rgba(25, 25, 25, 0.027)","offsetX":"0px","offsetY":"5px","blur":"8px","spread":"0px"},{"color":"rgba(25, 25, 25, 0.06)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"0.5px"}],"t":"shadow","s":"css-var --shadow-e2 (light)","d":"Elevation 2: the popover/card drop."},"lift-1":{"v":[{"color":"rgba(0, 0, 0, 0.4)","offsetX":"0px","offsetY":"0px","blur":"1px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.04)","offsetX":"0px","offsetY":"1px","blur":"1px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.04)","offsetX":"0px","offsetY":"2px","blur":"4px","spread":"0px"}],"t":"shadow","s":"css-var --lift-1 (light)","d":"Lift 1."},"lift-2":{"v":[{"color":"rgba(25, 25, 25, 0.05)","offsetX":"0px","offsetY":"20px","blur":"24px","spread":"0px"},{"color":"rgba(25, 25, 25, 0.027)","offsetX":"0px","offsetY":"5px","blur":"8px","spread":"0px"},{"color":"rgba(25, 25, 25, 0.06)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"0.5px"}],"t":"shadow","s":"css-var --lift-2 (light)","d":"Lift 2: the card drop."},"lift-3":{"v":[{"color":"rgba(0, 0, 0, 0.4)","offsetX":"0px","offsetY":"0px","blur":"1px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.04)","offsetX":"0px","offsetY":"2px","blur":"4px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.04)","offsetX":"0px","offsetY":"6px","blur":"16px","spread":"0px"}],"t":"shadow","s":"css-var --lift-3 (light)","d":"Lift 3: the composer/dialog elevation."},"surface":{"v":[{"color":"rgba(0, 0, 0, 0.4)","offsetX":"0px","offsetY":"0px","blur":"1px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.04)","offsetX":"0px","offsetY":"2px","blur":"4px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.04)","offsetX":"0px","offsetY":"6px","blur":"16px","spread":"0px"}],"t":"shadow","s":"css-var --surface-shadow (light)","d":"The surface shadow."},"popover":{"v":[{"color":"rgba(25, 25, 25, 0.05)","offsetX":"0px","offsetY":"20px","blur":"24px","spread":"0px"},{"color":"rgba(25, 25, 25, 0.027)","offsetX":"0px","offsetY":"5px","blur":"8px","spread":"0px"},{"color":"rgba(25, 25, 25, 0.06)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"0.5px"}],"t":"shadow","s":"css-var --popover-shadow (light)","d":"The popover drop."},"elevated":{"v":[{"color":"rgba(0, 0, 0, 0.4)","offsetX":"0px","offsetY":"0px","blur":"1px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.04)","offsetX":"0px","offsetY":"1px","blur":"1px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.04)","offsetX":"0px","offsetY":"2px","blur":"4px","spread":"0px"}],"t":"shadow","s":"css-var --elevated-shadow (light)","d":"The elevated-surface shadow."},"app-card":{"v":[{"color":"rgba(0, 0, 0, 0.09)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"0.5px"},{"color":"rgba(0, 0, 0, 0.09)","offsetX":"0px","offsetY":"1px","blur":"1px","spread":"-0.5px"},{"color":"rgba(0, 0, 0, 0.09)","offsetX":"0px","offsetY":"3px","blur":"3px","spread":"-1.5px"}],"t":"shadow","s":"css-var --app-card-shadow (light)","d":"The app-card shadow."}},"component":{"geometry":{"sidebar-width":{"v":"248px","t":"dimension","s":"computed rect of sidebar default (raw/components-computed.json)","d":"The fixed left rail's width."},"header-height":{"v":"52px","t":"dimension","s":"computed rect of header default (raw/components-computed.json)","d":"The app header's height."},"nav-row-height":{"v":"36px","t":"dimension","s":"computed rect of sidebar-nav default (raw/components-computed.json)","d":"A primary nav row's height."},"nav-pill-height":{"v":"28px","t":"dimension","s":"computed rect of nav-link default (raw/components-computed.json)","d":"A header nav pill's height."},"button-height":{"v":"32px","t":"dimension","s":"computed rect of signin-btn default (raw/components-computed.json)","d":"The 32px button step (Sign in, Start free)."},"icon-button":{"v":"30px","t":"dimension","s":"computed rect of icon-button default (raw/components-computed.json)","d":"The 30px icon-button step."},"icon-button-lg":{"v":"32px","t":"dimension","s":"computed rect of sidebar-collapse default (raw/components-computed.json)","d":"The 32px icon-button step."},"play-circle":{"v":"48px","t":"dimension","s":"computed rect of play-hero default (raw/components-computed.json)","d":"The round play button's diameter."},"chip-height":{"v":"28px","t":"dimension","s":"computed rect of prompt-chip default (raw/components-computed.json)","d":"The prompt chip's height."},"tab-height":{"v":"40px","t":"dimension","s":"computed rect of seg-tab-on default (raw/components-computed.json)","d":"The segmented tab's height."},"field-height":{"v":"36px","t":"dimension","s":"computed rect of composer-field default (raw/components-computed.json)","d":"The composer field's height."},"track-row-height":{"v":"52px","t":"dimension","s":"computed rect of track-row default (raw/components-computed.json)","d":"A song row's height."},"track-card-width":{"v":"208px","t":"dimension","s":"computed rect of track-card default (raw/components-computed.json)","d":"A shelf track card's width."},"auth-button-height":{"v":"40px","t":"dimension","s":"computed rect of sso-google default (raw/components-computed.json)","d":"The SSO button's height."},"mobile-tabbar":{"v":"56px","t":"dimension","s":"computed rect of m-tab-bar default (raw/components-computed.json)","d":"The phone bottom tab bar's height."}},"radius":{"button":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of signin-btn default (raw/components-computed.json)","d":"The 32px buttons' radius."},"nav-pill":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of nav-link default (raw/components-computed.json)","d":"The nav pills' radius."},"chip":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of prompt-chip default (raw/components-computed.json)","d":"The prompt chips' radius."},"field":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of composer-field default (raw/components-computed.json)","d":"The composer field's radius."},"tab":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of seg-tab-on default (raw/components-computed.json)","d":"The segmented tab's radius."},"track-card":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of track-card default (raw/components-computed.json)","d":"The track card's radius."},"plan-card":{"v":"24px","t":"dimension","s":"computed borderTopLeftRadius of plan-card default (raw/components-computed.json)","d":"The plan card's radius."},"auth-card":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of auth-card default (raw/components-computed.json)","d":"The auth column's radius."},"dropdown":{"v":"14px","t":"dimension","s":"computed borderTopLeftRadius of nav-dropdown default (raw/components-computed.json)","d":"The dropdown panel's radius."}},"typography":{"display":{"fontFamily":{"v":"waldenburg, \"waldenburg Fallback\", Arial","t":"fontFamily","s":"computed fontFamily of hero-title default (raw/components-computed.json)","d":"The waldenburg display headline."},"fontSize":{"v":"40px","t":"dimension","s":"computed fontSize of hero-title default (raw/components-computed.json)","d":"The waldenburg display headline."},"fontWeight":{"v":300,"t":"fontWeight","s":"computed fontWeight of hero-title default (raw/components-computed.json)","d":"The waldenburg display headline."},"letterSpacing":{"v":"-0.8px","t":"dimension","s":"computed letterSpacing of hero-title default (raw/components-computed.json)","d":"The waldenburg display headline."}},"page-title":{"fontFamily":{"v":"waldenburg, \"waldenburg Fallback\", Arial","t":"fontFamily","s":"computed fontFamily of explore-title default (raw/components-computed.json)","d":"A page heading."},"fontSize":{"v":"40px","t":"dimension","s":"computed fontSize of explore-title default (raw/components-computed.json)","d":"A page heading."},"fontWeight":{"v":300,"t":"fontWeight","s":"computed fontWeight of explore-title default (raw/components-computed.json)","d":"A page heading."},"letterSpacing":{"v":"-0.8px","t":"dimension","s":"computed letterSpacing of explore-title default (raw/components-computed.json)","d":"A page heading."}},"body":{"fontFamily":{"v":"Inter, \"Inter Fallback\"","t":"fontFamily","s":"computed fontFamily of hero-lede default (raw/components-computed.json)","d":"The muted lede/body text."},"fontSize":{"v":"14px","t":"dimension","s":"computed fontSize of hero-lede default (raw/components-computed.json)","d":"The muted lede/body text."},"fontWeight":{"v":400,"t":"fontWeight","s":"computed fontWeight of hero-lede default (raw/components-computed.json)","d":"The muted lede/body text."}},"label":{"fontFamily":{"v":"Inter, \"Inter Fallback\"","t":"fontFamily","s":"computed fontFamily of nav-link default (raw/components-computed.json)","d":"A nav/button label."},"fontSize":{"v":"13px","t":"dimension","s":"computed fontSize of nav-link default (raw/components-computed.json)","d":"A nav/button label."},"fontWeight":{"v":500,"t":"fontWeight","s":"computed fontWeight of nav-link default (raw/components-computed.json)","d":"A nav/button label."}},"meta":{"fontFamily":{"v":"Inter, \"Inter Fallback\"","t":"fontFamily","s":"computed fontFamily of artist-link default (raw/components-computed.json)","d":"Small metadata text."},"fontSize":{"v":"15px","t":"dimension","s":"computed fontSize of artist-link default (raw/components-computed.json)","d":"Small metadata text."},"fontWeight":{"v":500,"t":"fontWeight","s":"computed fontWeight of artist-link default (raw/components-computed.json)","d":"Small metadata text."},"letterSpacing":{"v":"-0.15px","t":"dimension","s":"computed letterSpacing of artist-link default (raw/components-computed.json)","d":"Small metadata text."}}},"state":{"transition":{"v":"150ms","t":"duration","s":"computed transitionDuration of prompt-chip default (raw/components-computed.json)","d":"A measured control transition."}}}},"dark":{"color":{"surface":{"background":{"v":"#000000","t":"color","s":"css-var --background (dark)","d":"The page field: true black in dark, warm paper #fdfcfb in light."},"card":{"v":"#000000","t":"color","s":"css-var --card (dark)","d":"Card surfaces."},"elevated":{"v":"#222222","t":"color","s":"css-var --elevated (dark)","d":"Elevated surface (popovers, raised panels)."},"elevated-hover":{"v":"#2b2b2b","t":"color","s":"css-var --elevated-hover (dark)","d":"Elevated surface, hovered."},"muted":{"v":"#171717","t":"color","s":"css-var --muted (dark)","d":"Muted fill: quiet rows and chips."},"secondary":{"v":"#1e1e1e","t":"color","s":"css-var --secondary (dark)","d":"Secondary fill."},"secondary-hover":{"v":"#2b2b2b","t":"color","s":"css-var --secondary-hover (dark)","d":"Secondary fill, hovered."},"accent":{"v":"#1e1e1e","t":"color","s":"css-var --accent (dark)","d":"Accent fill (hover washes)."},"popover":{"v":"#2e2e2e","t":"color","s":"css-var --popover (dark)","d":"Popover/dropdown surface."},"popover-solid":{"v":"#2e2e2e","t":"color","s":"css-var --popover-solid (dark)","d":"Solid popover surface."},"surface-1":{"v":"#131313","t":"color","s":"css-var --surface-1 (dark)","d":"The app's first raised surface."},"surface-2":{"v":"#1c1c1c","t":"color","s":"css-var --surface-2 (dark)","d":"The app's second raised surface."},"sidebar":{"v":"#000000","t":"color","s":"css-var --sidebar (dark)","d":"The left-rail field."},"overlay":{"v":"rgba(0, 0, 0, 0.3)","t":"color","s":"css-var --overlay (dark)","d":"Translucent overlay wash."},"overlay-backdrop":{"v":"rgba(0, 0, 0, 0.6)","t":"color","s":"css-var --overlay-backdrop (dark)","d":"The modal scrim."},"composer":{"v":"rgba(38, 38, 38, 0.9)","t":"color","s":"css-var --composer (dark)","d":"The composer's translucent field."},"composer-panel":{"v":"#1c1c1c","t":"color","s":"css-var --composer-panel (dark)","d":"The composer panel surface."},"composer-panel-inset":{"v":"#131313","t":"color","s":"css-var --composer-panel-inset (dark)","d":"The composer panel's inset."},"composer-surface":{"v":"#151515","t":"color","s":"css-var --composer-surface (dark)","d":"The composer surface."},"composer-solid":{"v":"#262626","t":"color","s":"css-var --composer-solid (dark)","d":"The solid composer surface."},"composer-chip":{"v":"#1c1c1c","t":"color","s":"css-var --composer-chip (dark)","d":"Prompt-chip fill."},"composer-chip-hover":{"v":"#292929","t":"color","s":"css-var --composer-chip-hover (dark)","d":"Prompt-chip fill, hovered."},"composer-button":{"v":"#333333","t":"color","s":"css-var --composer-button (dark)","d":"The composer buttons' fill."},"destructive-soft":{"v":"rgba(79, 26, 24, 0.45)","t":"color","s":"css-var --destructive-soft (dark)","d":"Soft destructive surface."}},"ink":{"foreground":{"v":"#fafafa","t":"color","s":"css-var --foreground (dark)","d":"Primary text and glyphs."},"card-foreground":{"v":"#fafafa","t":"color","s":"css-var --card-foreground (dark)","d":"Text on cards."},"muted-foreground":{"v":"#868686","t":"color","s":"css-var --muted-foreground (dark)","d":"Muted text: subtitles, metadata."},"primary-foreground":{"v":"#0a0a0a","t":"color","s":"css-var --primary-foreground (dark)","d":"Text on the primary fill."},"secondary-foreground":{"v":"#fafafa","t":"color","s":"css-var --secondary-foreground (dark)","d":"Text on the secondary fill."},"accent-foreground":{"v":"#fafafa","t":"color","s":"css-var --accent-foreground (dark)","d":"Text on the accent fill."},"popover-foreground":{"v":"#fafafa","t":"color","s":"css-var --popover-foreground (dark)","d":"Text on popovers."},"sidebar-foreground":{"v":"#a1a1a1","t":"color","s":"css-var --sidebar-foreground (dark)","d":"Rail text (the muted row labels)."},"sidebar-accent-foreground":{"v":"#fafafa","t":"color","s":"css-var --sidebar-accent-foreground (dark)","d":"Text on the rail's accent fill."},"sidebar-primary-foreground":{"v":"#0a0a0a","t":"color","s":"css-var --sidebar-primary-foreground (dark)","d":"Text on the rail's primary fill."},"composer-fg-muted":{"v":"#a3a5a8","t":"color","s":"css-var --composer-fg-muted (dark)","d":"Muted text inside the composer."},"destructive-foreground":{"v":"#f9fafb","t":"color","s":"css-var --destructive-foreground (dark)","d":"Text on the destructive fill."},"destructive-soft-foreground":{"v":"#ff958d","t":"color","s":"css-var --destructive-soft-foreground (dark)","d":"Text on the soft destructive surface."},"subtle":{"v":"rgba(255, 255, 255, 0.4)","t":"color","s":"css-var --subtle (dark)","d":"The most quiet text/line tint."}},"action":{"primary":{"v":"#fafafa","t":"color","s":"css-var --primary (dark)","d":"The primary fill — white in dark (inverted), black in light."},"primary-hover":{"v":"#faf8f7","t":"color","s":"css-var --primary-hover (dark)","d":"The primary fill, hovered."},"brand":{"v":"#5d88e7","t":"color","s":"css-var --brand (dark)","d":"The ElevenLabs brand blue (charts, links, the badge)."},"brand-foreground":{"v":"#fafafa","t":"color","s":"css-var --brand-foreground (dark)","d":"Text on the brand fill."},"destructive":{"v":"#7f1d1d","t":"color","s":"css-var --destructive (dark)","d":"Destructive fill."},"success":{"v":"#007a55","t":"color","s":"css-var --success (dark)","d":"Success green."},"sidebar-primary":{"v":"#fafafa","t":"color","s":"css-var --sidebar-primary (dark)","d":"The rail's primary fill."}},"border":{"border":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"css-var --border (dark)","d":"The hairline: white 10% in dark, warm-brown 8% in light."},"input":{"v":"rgba(255, 255, 255, 0.12)","t":"color","s":"css-var --input (dark)","d":"Field and control outlines."},"outline":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"css-var --outline (dark)","d":"The --outline hairline."},"sidebar-border":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --sidebar-border (dark)","d":"The rail's hairline."},"composer-hairline":{"v":"#2b2b2b","t":"color","s":"css-var --composer-hairline (dark)","d":"The composer's hairline."},"composer-ring":{"v":"#404040","t":"color","s":"css-var --composer-ring (dark)","d":"The composer's ring."},"slider-track":{"v":"#404040","t":"color","s":"css-var --slider-track (dark)","d":"The slider/progress track."},"field-border-focus":{"v":"rgba(255, 255, 255, 0.5)","t":"color","s":"css-var --field-border-focus (dark)","d":"The field border on focus."}},"focus":{"ring":{"v":"#ffffff","t":"color","s":"css-var --ring (dark)","d":"The focus-ring ink."},"sidebar-ring":{"v":"#ffffff","t":"color","s":"css-var --sidebar-ring (dark)","d":"The rail's focus ring."}},"role":{"background":{"v":"#000000","t":"color","s":"css-var --color-background (dark)","d":"Tailwind alias of --background."},"foreground":{"v":"#fafafa","t":"color","s":"css-var --color-foreground (dark)","d":"Tailwind alias of --foreground."},"primary":{"v":"#fafafa","t":"color","s":"css-var --color-primary (dark)","d":"Tailwind alias of --primary."},"muted-foreground":{"v":"#868686","t":"color","s":"css-var --color-muted-foreground (dark)","d":"Tailwind alias of --muted-foreground."},"border":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"css-var --color-border (dark)","d":"Tailwind alias of --border."},"destructive":{"v":"#7f1d1d","t":"color","s":"css-var --color-destructive (dark)","d":"Tailwind alias of --destructive."}},"chart":{"1":{"v":"#1447e6","t":"color","s":"css-var --chart-1 (dark)","d":"Declared chart colour 1."},"2":{"v":"#00bc7d","t":"color","s":"css-var --chart-2 (dark)","d":"Declared chart colour 2."},"3":{"v":"#fe9a00","t":"color","s":"css-var --chart-3 (dark)","d":"Declared chart colour 3."},"4":{"v":"#ad46ff","t":"color","s":"css-var --chart-4 (dark)","d":"Declared chart colour 4."},"5":{"v":"#ff2056","t":"color","s":"css-var --chart-5 (dark)","d":"Declared chart colour 5."}},"alpha":{"gray-100":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --gray-alpha-100 (dark)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-150":{"v":"rgba(255, 255, 255, 0.114)","t":"color","s":"css-var --gray-alpha-150 (dark)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-200":{"v":"rgba(255, 255, 255, 0.15)","t":"color","s":"css-var --gray-alpha-200 (dark)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-300":{"v":"rgba(255, 255, 255, 0.18)","t":"color","s":"css-var --gray-alpha-300 (dark)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-400":{"v":"rgba(255, 255, 255, 0.28)","t":"color","s":"css-var --gray-alpha-400 (dark)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-50":{"v":"rgba(255, 255, 255, 0.043)","t":"color","s":"css-var --gray-alpha-50 (dark)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-500":{"v":"rgba(255, 255, 255, 0.4)","t":"color","s":"css-var --gray-alpha-500 (dark)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-600":{"v":"rgba(255, 255, 255, 0.55)","t":"color","s":"css-var --gray-alpha-600 (dark)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-700":{"v":"rgba(255, 255, 255, 0.7)","t":"color","s":"css-var --gray-alpha-700 (dark)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-800":{"v":"rgba(255, 255, 255, 0.82)","t":"color","s":"css-var --gray-alpha-800 (dark)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-900":{"v":"rgba(255, 255, 255, 0.92)","t":"color","s":"css-var --gray-alpha-900 (dark)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"gray-950":{"v":"rgba(255, 255, 255, 0.96)","t":"color","s":"css-var --gray-alpha-950 (dark)","d":"The warm-grey alpha ramp (light) / white-alpha ramp (dark)."},"lighten-100":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --lighten-100 (dark)","d":"White-alpha lift step; resolves in the dark theme only."},"lighten-150":{"v":"rgba(255, 255, 255, 0.114)","t":"color","s":"css-var --lighten-150 (dark)","d":"White-alpha lift step; resolves in the dark theme only."},"lighten-200":{"v":"rgba(255, 255, 255, 0.15)","t":"color","s":"css-var --lighten-200 (dark)","d":"White-alpha lift step; resolves in the dark theme only."},"lighten-300":{"v":"rgba(255, 255, 255, 0.18)","t":"color","s":"css-var --lighten-300 (dark)","d":"White-alpha lift step; resolves in the dark theme only."},"lighten-400":{"v":"rgba(255, 255, 255, 0.28)","t":"color","s":"css-var --lighten-400 (dark)","d":"White-alpha lift step; resolves in the dark theme only."},"lighten-50":{"v":"rgba(255, 255, 255, 0.043)","t":"color","s":"css-var --lighten-50 (dark)","d":"White-alpha lift step; resolves in the dark theme only."},"lighten-500":{"v":"rgba(255, 255, 255, 0.4)","t":"color","s":"css-var --lighten-500 (dark)","d":"White-alpha lift step; resolves in the dark theme only."},"lighten-600":{"v":"rgba(255, 255, 255, 0.55)","t":"color","s":"css-var --lighten-600 (dark)","d":"White-alpha lift step; resolves in the dark theme only."},"lighten-700":{"v":"rgba(255, 255, 255, 0.7)","t":"color","s":"css-var --lighten-700 (dark)","d":"White-alpha lift step; resolves in the dark theme only."},"lighten-800":{"v":"rgba(255, 255, 255, 0.82)","t":"color","s":"css-var --lighten-800 (dark)","d":"White-alpha lift step; resolves in the dark theme only."},"lighten-900":{"v":"rgba(255, 255, 255, 0.92)","t":"color","s":"css-var --lighten-900 (dark)","d":"White-alpha lift step; resolves in the dark theme only."},"lighten-950":{"v":"rgba(255, 255, 255, 0.96)","t":"color","s":"css-var --lighten-950 (dark)","d":"White-alpha lift step; resolves in the dark theme only."}}},"shadow":{"e1":{"v":[{"color":"rgba(255, 255, 255, 0.07)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px"},{"color":"rgba(0, 0, 0, 0.5)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px"}],"t":"shadow","s":"css-var --shadow-e1 (dark)","d":"Elevation 1: the hairline-plus-drop pairing."},"e2":{"v":[{"color":"rgba(0, 0, 0, 0.35)","offsetX":"0px","offsetY":"20px","blur":"24px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.18)","offsetX":"0px","offsetY":"5px","blur":"8px","spread":"0px"},{"color":"rgba(255, 255, 255, 0.06)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"0.5px"}],"t":"shadow","s":"css-var --shadow-e2 (dark)","d":"Elevation 2: the popover/card drop."},"lift-1":{"v":[{"color":"rgba(255, 255, 255, 0.07)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px"},{"color":"rgba(0, 0, 0, 0.5)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px"}],"t":"shadow","s":"css-var --lift-1 (dark)","d":"Lift 1."},"lift-2":{"v":[{"color":"rgba(0, 0, 0, 0.35)","offsetX":"0px","offsetY":"20px","blur":"24px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.18)","offsetX":"0px","offsetY":"5px","blur":"8px","spread":"0px"},{"color":"rgba(255, 255, 255, 0.06)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"0.5px"}],"t":"shadow","s":"css-var --lift-2 (dark)","d":"Lift 2: the card drop."},"lift-3":{"v":[{"color":"rgba(255, 255, 255, 0.15)","offsetX":"0px","offsetY":"1px","blur":"0px","spread":"0px","inset":true},{"color":"lab(17.64 -0.0000149012 0)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","inset":true},{"color":"rgba(255, 255, 255, 0.08)","offsetX":"0px","offsetY":"-1px","blur":"0px","spread":"0px","inset":true},{"color":"rgba(28, 25, 23, 0.53)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"-1px"},{"color":"rgba(28, 25, 23, 0.53)","offsetX":"0px","offsetY":"10px","blur":"24px","spread":"-10px"}],"t":"shadow","s":"css-var --lift-3 (dark)","d":"Lift 3: the composer/dialog elevation."},"surface":{"v":[{"color":"rgba(255, 255, 255, 0.15)","offsetX":"0px","offsetY":"1px","blur":"0px","spread":"0px","inset":true},{"color":"lab(17.64 -0.0000149012 0)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","inset":true},{"color":"rgba(255, 255, 255, 0.08)","offsetX":"0px","offsetY":"-1px","blur":"0px","spread":"0px","inset":true},{"color":"rgba(28, 25, 23, 0.53)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"-1px"},{"color":"rgba(28, 25, 23, 0.53)","offsetX":"0px","offsetY":"10px","blur":"24px","spread":"-10px"}],"t":"shadow","s":"css-var --surface-shadow (dark)","d":"The surface shadow."},"popover":{"v":[{"color":"rgba(0, 0, 0, 0.35)","offsetX":"0px","offsetY":"20px","blur":"24px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.18)","offsetX":"0px","offsetY":"5px","blur":"8px","spread":"0px"},{"color":"rgba(255, 255, 255, 0.06)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"0.5px"}],"t":"shadow","s":"css-var --popover-shadow (dark)","d":"The popover drop."},"elevated":{"v":[{"color":"rgba(255, 255, 255, 0.07)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px"},{"color":"rgba(0, 0, 0, 0.5)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px"}],"t":"shadow","s":"css-var --elevated-shadow (dark)","d":"The elevated-surface shadow."},"app-card":{"v":[{"color":"rgba(255, 255, 255, 0.16)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"0.5px"},{"color":"rgba(0, 0, 0, 0.45)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.4)","offsetX":"0px","offsetY":"4px","blur":"8px","spread":"-2px"},{"color":"rgba(0, 0, 0, 0.35)","offsetX":"0px","offsetY":"12px","blur":"24px","spread":"-6px"}],"t":"shadow","s":"css-var --app-card-shadow (dark)","d":"The app-card shadow."}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // The dark set is the app's default paint: its roles resolve under .dark.
+  const darkRoles = flat(TOK.dark || {}, '').filter(([n, t]) => t.t === 'color');
+  if (darkRoles.length) {
+    h += `<div class="pal-h">dark roles (the default paint)</div><div class="pal">`;
+    for (const [n, t] of darkRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // The light set's custom properties resolve on :root: the swatch dots for
+  // them read the :root bindings, shown on the warm-paper field.
+  const lightRoles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (lightRoles.length) {
+    h += `<div class="pal-h">light roles (the footer toggled theme)</div><div class="pal light">`;
+    for (const [n, t] of lightRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.dark.shadow || {}, 'shadow.')) e += `<div><b>dark ${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.light.shadow || {}, 'shadow.')) e += `<div><b>light ${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts ${parseFloat(t.v) >= 30 ? 'dsp' : ''}" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts" style="letter-spacing:${esc(t.v)}">${esc(n)} — ElevenMusic</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — ElevenMusic</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

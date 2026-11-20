@@ -38,6 +38,16 @@ RAW = HERE / "raw"
 V = json.loads((RAW / "css-vars.json").read_text())
 RL = V["resolved"]["light"]
 C = json.loads((RAW / "components-computed.json").read_text())["components"]
+
+
+def current(comp):
+    """The component's entry, refused when the last run did not read it: missing
+    (no states) or recaptureMissed (earlier states kept under their own
+    provenance) is not a current reading, so it cannot source a role."""
+    c = C[comp]
+    if c.get("missing") or c.get("recaptureMissed"):
+        raise KeyError(f"{comp}: not a current reading (missing or recaptureMissed)")
+    return c
 R = {n: v.get("value", v.get("raw")) for n, v in RL.items()}
 
 
@@ -146,16 +156,14 @@ SPEC["core"]["font"] = {
     "size": {},
     "tracking": {},
 }
-for comp, key, desc in [
-    ("m-nav-link", "regular", "400 on nav links and body copy."),
-    ("pdp-title", "medium", "500 on avnier-font titles."),
-    ("nav-item", "regularCaps", "400 uppercase nav/button labels."),
-]:
-    pass
-weights = {"regular": ("400", "computed fontWeight of nav/body text"),
-           "medium": ("500", "computed fontWeight of avnier-font titles")}
-for k, (v, src) in weights.items():
-    SPEC["core"]["font"]["weight"][k] = {"value": v, "type": "fontWeight", "source": src}
+# Read from the components the sources name; they must agree.
+for k, comps, src in (("regular", ("m-nav-link", "nav-item", "header"), "computed fontWeight of nav/body text"),
+                      ("medium", ("pdp-title",), "computed fontWeight of avnier-font titles")):
+    vals = {current(c)["states"]["default"]["style"]["fontWeight"] for c in comps}
+    if len(vals) != 1:
+        raise ValueError(f"{k}: fontWeight readings differ: {sorted(vals)}")
+    SPEC["core"]["font"]["weight"][k] = {"value": vals.pop(), "type": "fontWeight",
+                                         "source": f"{src} ({' / '.join(comps)}, raw/components-computed.json)"}
 for comp, key, desc in [
     ("card-price", "xxs", "12px uppercase card prices."),
     ("header", "xs", "13px body/nav copy."),

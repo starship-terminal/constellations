@@ -1,0 +1,47 @@
+{
+  "capturedAt": "2026-11-19",
+  "harness": "T3 Code preview browser, live DOM via preview_evaluate",
+  "viewport": {
+    "requestedDesktop": {
+      "width": 1440,
+      "height": 900
+    },
+    "measured": {
+      "innerWidth": 1169,
+      "innerHeight": 731,
+      "devicePixelRatio": 2,
+      "visualViewport": {
+        "width": 1169,
+        "height": 731,
+        "scale": 1
+      }
+    },
+    "note": "preview_resize freeform 1440x900 reported viewport 1280x800, then window.innerWidth stayed 1169. Not labelled as a 1440 capture."
+  },
+  "screenshots": "unavailable. preview_snapshot returned: The browser is not producing screenshot frames. No PNG was invented.",
+  "stylesheetVersion": "https://static.zara.net/stdstatic/10.21.1/",
+  "accountAppVersion": "10.21.1",
+  "colorScheme": "light (html color-scheme: normal; account.zara.com device payload colorScheme: light). No dark theme control was found on the public storefront.",
+  "pages": [
+    "https://www.zara.com/ (location gate)",
+    "https://www.zara.com/us/",
+    "https://www.zara.com/us/en/woman-new-in-l1180.html?v1=2546081",
+    "https://www.zara.com/us/en/faux-shearling-long-coat-p01255730.html",
+    "https://www.zara.com/us/en/search/home",
+    "https://www.zara.com/us/en/help-center",
+    "https://www.zara.com/us/en/shop/cart (empty, nothing added)",
+    "https://account.zara.com/login/two-step (form measured, not submitted)",
+    "https://www.zara.com/us/en/this-page-does-not-exist-capture-9f3a"
+  ],
+  "notEntered": [
+    "add to bag",
+    "checkout",
+    "card",
+    "phone",
+    "address",
+    "account creation",
+    "email submit on logon",
+    "newsletter signup",
+    "wishlist"
+  ]
+}

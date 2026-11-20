@@ -1,0 +1,307 @@
+{
+  "homepage": "https://www.skyscanner.com.sg/",
+  "redirectFrom": "https://www.skyscanner.com/",
+  "help": "https://help.skyscanner.net/hc/en-gb",
+  "hero": {
+    "bg": "rgb(5, 32, 60)",
+    "padDesktop": "not isolated",
+    "padPhone": "16px",
+    "hDesktop": 476,
+    "hPhone": 420
+  },
+  "page": {
+    "bg": "rgb(255, 255, 255)"
+  },
+  "heading2": {
+    "size": "32px",
+    "weight": "700",
+    "lh": "40px",
+    "color": "rgb(255, 255, 255)"
+  },
+  "heading3": {
+    "size": "24px",
+    "weight": "700",
+    "lh": "28px",
+    "color": "rgb(22, 22, 22)"
+  },
+  "hero6": {
+    "size": "40px",
+    "weight": "900",
+    "lh": "40px",
+    "color": "rgb(22, 22, 22)",
+    "where": "login modal title"
+  },
+  "promoHeadlineDesktop": {
+    "size": "48px",
+    "weight": "900",
+    "lh": "48px",
+    "ls": "-1.92px"
+  },
+  "promoHeadlinePhone": {
+    "size": "32px",
+    "weight": "700",
+    "lh": "not separately read"
+  },
+  "caption": {
+    "size": "12px",
+    "weight": "400",
+    "lh": "16px"
+  },
+  "footnote": {
+    "size": "14px",
+    "weight": "400",
+    "lh": "20px"
+  },
+  "label1": {
+    "size": "16px",
+    "weight": "700",
+    "lh": "24px"
+  },
+  "label2": {
+    "size": "14px",
+    "weight": "700",
+    "lh": "20px"
+  },
+  "label3": {
+    "size": "12px",
+    "weight": "700",
+    "lh": "16px"
+  },
+  "bodyDefault": {
+    "size": "14px",
+    "weight": "700",
+    "lh": "20px",
+    "note": "first painted body-default was a field label, weight 700"
+  },
+  "searchButtonDesktop": {
+    "bg": "rgb(0, 98, 227)",
+    "color": "rgb(255, 255, 255)",
+    "h": 72,
+    "w": 84,
+    "radius": "12px",
+    "pad": "12px 16px",
+    "weight": "700",
+    "size": "16px"
+  },
+  "searchButtonPhone": {
+    "bg": "rgb(0, 98, 227)",
+    "h": 48,
+    "w": 358,
+    "radius": "12px",
+    "pad": "12px 16px"
+  },
+  "loginButton": {
+    "bg": "rgb(239, 243, 248)",
+    "color": "rgb(22, 22, 22)",
+    "h": 36,
+    "radius": "8px",
+    "pad": "6px 16px",
+    "weight": "700"
+  },
+  "secondaryButton": {
+    "bg": "rgb(224, 228, 233)",
+    "color": "rgb(22, 22, 22)",
+    "h": 40,
+    "radius": "8px",
+    "pad": "6px 16px"
+  },
+  "primaryButton": {
+    "bg": "rgb(5, 32, 60)",
+    "color": "rgb(255, 255, 255)",
+    "h": 40,
+    "radius": "8px",
+    "pad": "6px 16px"
+  },
+  "largeFeatured": {
+    "bg": "rgb(0, 98, 227)",
+    "h": 48,
+    "radius": "8px",
+    "pad": "12px 16px",
+    "weight": "700"
+  },
+  "iconButton": {
+    "h": 36,
+    "w": 36,
+    "radius": "8px",
+    "pad": "6px 10px",
+    "bg": "rgb(224, 228, 233)"
+  },
+  "disabledIcon": {
+    "color": "rgba(0, 0, 0, 0.2)",
+    "bg": "rgb(224, 228, 233)"
+  },
+  "chipOffDark": {
+    "h": 32,
+    "radius": "8px",
+    "pad": "0px 16px",
+    "shadow": "rgba(255, 255, 255, 0.5) 0px 0px 0px 1px inset",
+    "color": "rgb(255, 255, 255)",
+    "size": "16px",
+    "weight": "400"
+  },
+  "chipOn": {
+    "bg": "rgb(5, 32, 60)",
+    "color": "rgb(255, 255, 255)",
+    "h": 32,
+    "radius": "8px",
+    "pad": "0px 16px"
+  },
+  "chipOff": {
+    "shadow": "rgb(193, 199, 207) 0px 0px 0px 1px inset",
+    "color": "rgb(22, 22, 22)"
+  },
+  "tabSelected": {
+    "bg": "rgb(0, 98, 227)",
+    "color": "rgb(255, 255, 255)",
+    "h": 36,
+    "radius": "18px",
+    "pad": "0px 16px",
+    "shadow": "rgb(0, 98, 227) 0px 0px 0px 1px inset"
+  },
+  "tabIdle": {
+    "shadow": "rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset",
+    "color": "rgb(255, 255, 255)",
+    "radius": "18px",
+    "h": 36
+  },
+  "tabGap": "8px",
+  "field": {
+    "bg": "rgb(255, 255, 255)",
+    "h": 72,
+    "pad": "0px 16px",
+    "radiusOrigin": "12px 0px 0px 12px",
+    "radiusTraveller": "0px 12px 12px 0px",
+    "focusShadow": "rgb(255, 255, 255) 0px 0px 0px 2px"
+  },
+  "fieldPhone": {
+    "h": 48,
+    "radius": "12px 12px 0px 0px",
+    "w": 358
+  },
+  "input": {
+    "size": "16px",
+    "color": "rgb(0, 0, 0)",
+    "placeholder": "Country, city or airport"
+  },
+  "placeholder": {
+    "color": "rgb(98, 105, 113)",
+    "size": "16px",
+    "lh": "24px"
+  },
+  "checkbox": {
+    "h": 20,
+    "w": 20,
+    "radius": "4px",
+    "border": "3px solid rgb(98, 105, 113)",
+    "bg": "rgb(255, 255, 255)",
+    "checked": {
+      "bg": "rgb(0, 98, 227)",
+      "border": "3px solid rgb(0, 98, 227)"
+    }
+  },
+  "swap": {
+    "h": 40,
+    "w": 40,
+    "radius": "50%",
+    "border": "3px solid rgb(5, 32, 60)",
+    "bg": "rgb(255, 255, 255)",
+    "transition": "transform 0.4s ease"
+  },
+  "cardNav": {
+    "bg": "rgb(5, 32, 60)",
+    "radius": "12px",
+    "shadow": "rgba(37, 32, 31, 0.3) 0px 1px 3px 0px",
+    "h": 72,
+    "transition": "background-color 0.2s ease, box-shadow 0.2s ease-in-out"
+  },
+  "promoCard": {
+    "bg": "rgb(239, 243, 248)",
+    "radius": "12px",
+    "h": 460
+  },
+  "popover": {
+    "bg": "rgb(255, 255, 255)",
+    "radius": "12px",
+    "shadow": "rgba(37, 32, 31, 0.25) 0px 4px 14px 0px",
+    "w": 392,
+    "h": 360
+  },
+  "modal": {
+    "bg": "rgb(255, 255, 255)",
+    "radius": "12px",
+    "shadow": "rgba(37, 32, 31, 0.25) 0px 12px 50px 0px"
+  },
+  "cookieBanner": {
+    "bg": "rgb(241, 242, 248)",
+    "shadow": "rgba(37, 32, 31, 0.25) 0px 4px 14px 0px",
+    "h": 372
+  },
+  "close": {
+    "h": 32,
+    "w": 32,
+    "radius": "100%",
+    "bg": "rgb(255, 255, 255)"
+  },
+  "focus": {
+    "outline": "rgb(0, 98, 227) auto 2px",
+    "outlineOffset": "2px",
+    "on": "Search button"
+  },
+  "footer": {
+    "bg": "rgb(5, 32, 60)",
+    "color": "rgb(239, 243, 248)",
+    "padDesktop": "0px 48px",
+    "padPhone": "0px 16px"
+  },
+  "linkHelp": {
+    "color": "rgb(255, 255, 255)",
+    "decoration": "none"
+  },
+  "linkModal": {
+    "color": "rgb(98, 105, 113)",
+    "size": "12px",
+    "lh": "16px",
+    "decoration": "not read"
+  },
+  "accordion": {
+    "rowH": 55,
+    "color": "rgb(22, 22, 22)"
+  },
+  "helpPage": {
+    "url": "https://help.skyscanner.net/hc/en-gb",
+    "body": {
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(5, 32, 60)",
+      "size": "20px",
+      "lh": "30px"
+    },
+    "h1": {
+      "size": "32px",
+      "weight": "700",
+      "lh": "48px",
+      "color": "rgb(5, 32, 60)"
+    },
+    "search": {
+      "bg": "rgb(255, 255, 255)",
+      "h": 60,
+      "radius": "24px",
+      "border": "0"
+    },
+    "link": {
+      "color": "rgb(10, 108, 255)",
+      "decoration": "none"
+    },
+    "viewport": {
+      "innerWidth": 1169,
+      "innerHeight": 731,
+      "devicePixelRatio": 2
+    }
+  },
+  "motion": {
+    "swap": "transform 400ms ease",
+    "navCard": "background-color 200ms ease, box-shadow 200ms ease-in-out",
+    "reduceRules": 18,
+    "reduceSample": "collapsible, context menu, bottom sheet and modal set transition/animation to none under prefers-reduced-motion: reduce"
+  },
+  "screenshotFrames": "The browser is not producing screenshot frames"
+}

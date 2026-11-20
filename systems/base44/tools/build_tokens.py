@@ -65,24 +65,42 @@ def norm_color(v):
 
 
 DIM = re.compile(r"-?\d+(\.\d+)?(px|rem)")
-PX = re.compile(r"(-?\d+(?:\.\d+)?)px")
 COL = re.compile(r"rgba?\([^)]*\)|#[0-9a-fA-F]{3,8}")
 
 
 def parse_shadow(v):
-    """A computed box-shadow string -> the DTCG shadow object list."""
+    """A computed box-shadow string -> the DTCG shadow object list. Keeps `inset` (in either
+    position), reads a unitless 0 as 0px, and raises on a layer it cannot read in full (no colour,
+    fewer than two or more than four lengths, any other word) instead of guessing."""
     layers = [x.strip() for x in re.split(r",(?![^(]*\))", v) if x.strip() and x.strip() != "none"]
     out = []
     for layer in layers:
         m = COL.search(layer)
-        color = m.group(0) if m else "#000000"
-        nums = [float(x) for x in PX.findall(layer)]
+        if not m:
+            raise ValueError(f"shadow layer without a colour: {layer!r}")
+        rest = (layer[:m.start()] + " " + layer[m.end():]).split()
+        inset = "inset" in rest
+        words = [w for w in rest if w != "inset"]
+        nums = []
+        for w in words:
+            pm = re.fullmatch(r"(-?\d*\.?\d+)px", w)
+            if pm:
+                nums.append(float(pm.group(1)))
+            elif w in ("0", "-0"):
+                nums.append(0.0)
+            else:
+                raise ValueError(f"shadow layer {layer!r}: cannot read {w!r}")
+        if not 2 <= len(nums) <= 4:
+            raise ValueError(f"shadow layer {layer!r}: {len(nums)} lengths")
         nums = (nums + [0.0] * 4)[:4]
-        out.append({
+        d = {
             "offsetX": "%gpx" % nums[0], "offsetY": "%gpx" % nums[1],
             "blur": "%gpx" % nums[2], "spread": "%gpx" % nums[3],
-            "color": norm_color(color),
-        })
+            "color": norm_color(m.group(0)),
+        }
+        if inset:
+            d["inset"] = True
+        out.append(d)
     return out
 
 

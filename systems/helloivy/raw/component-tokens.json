@@ -1,0 +1,705 @@
+{
+ "core": {
+  "app": {
+   "color": {
+    "primary": {
+     "type": "color",
+     "value": "#fff",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --primary; the same values the app's CSS names alias",
+     "description": "the primary role — white"
+    },
+    "brand": {
+     "type": "color",
+     "value": "#3F40F2",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --main-color; the same values the app's CSS names alias",
+     "description": "the brand indigo — --main-color, --link-color and --checkbox all paint it"
+    },
+    "mainColor": {
+     "type": "color",
+     "value": "#3F40F2",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --main-color; the same values the app's CSS names alias",
+     "description": "--main-color — links, primary actions, the checked accent"
+    },
+    "linkColor": {
+     "type": "color",
+     "value": "#3F40F2",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --link-color; the same values the app's CSS names alias",
+     "description": "--link-color"
+    },
+    "checkbox": {
+     "type": "color",
+     "value": "#3F40F2",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --checkbox; the same values the app's CSS names alias",
+     "description": "--checkbox — checked state fill"
+    },
+    "ink": {
+     "type": "color",
+     "value": "#37352f",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --app-color; the same values the app's CSS names alias",
+     "description": "--app-color — the product ink"
+    },
+    "canvasInk": {
+     "type": "color",
+     "value": "#323235",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --canvas-color; the same values the app's CSS names alias",
+     "description": "--canvas-color — the document canvas' ink"
+    },
+    "canvas": {
+     "type": "color",
+     "value": "#fff",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --canvas; the same values the app's CSS names alias",
+     "description": "--canvas — the document/page ground"
+    },
+    "sidebar": {
+     "type": "color",
+     "value": "#F5F6F4",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --sidebar; the same values the app's CSS names alias",
+     "description": "--sidebar — the sidebar ground"
+    },
+    "hover": {
+     "type": "color",
+     "value": "#F3F5F7",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --hover; the same values the app's CSS names alias",
+     "description": "--hover — hover row fill"
+    },
+    "book": {
+     "type": "color",
+     "value": "#F5F6FA",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --book; the same values the app's CSS names alias",
+     "description": "--book — the book/page-list ground"
+    },
+    "hoverBook": {
+     "type": "color",
+     "value": "#F1F3F5",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --hover-book; the same values the app's CSS names alias",
+     "description": "--hover-book"
+    },
+    "comment": {
+     "type": "color",
+     "value": "#fdffe4",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --comment; the same values the app's CSS names alias",
+     "description": "--comment — comment pin tint"
+    },
+    "selection": {
+     "type": "color",
+     "value": "#F3F5F7",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --selection; the same values the app's CSS names alias",
+     "description": "--selection — selected-row fill"
+    },
+    "textSelection": {
+     "type": "color",
+     "value": "#e4f2ff",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --text-selection; the same values the app's CSS names alias",
+     "description": "--text-selection — text selection tint"
+    },
+    "project": {
+     "type": "color",
+     "value": "#ECEDF1",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --project; the same values the app's CSS names alias",
+     "description": "--project — project chip fill"
+    },
+    "projectHover": {
+     "type": "color",
+     "value": "#F1F1F5",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --projectHover; the same values the app's CSS names alias",
+     "description": "--projectHover"
+    },
+    "scrollBar": {
+     "type": "color",
+     "value": "#eee",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --scrollBarColor; the same values the app's CSS names alias",
+     "description": "--scrollBarColor — the scrollbar track"
+    },
+    "scrollBarThumb": {
+     "type": "color",
+     "value": "#CCCCCC",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --scrollBarThumbColor; the same values the app's CSS names alias",
+     "description": "--scrollBarThumbColor"
+    },
+    "scrollBarThumbHover": {
+     "type": "color",
+     "value": "#9e9d9d",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --scrollBarThumbHover; the same values the app's CSS names alias",
+     "description": "--scrollBarThumbHover"
+    },
+    "imageShadow": {
+     "type": "color",
+     "value": "#e7e7e7",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --image-shadow; the same values the app's CSS names alias",
+     "description": "--image-shadow — image drop line"
+    },
+    "bookIcon": {
+     "type": "color",
+     "value": "#323232",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --book-icon; the same values the app's CSS names alias",
+     "description": "--book-icon — icon ink in the book list"
+    }
+   },
+   "font": {
+    "family": {
+     "type": "fontFamily",
+     "value": "Inter",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --main-font-family; the same values the app's CSS names alias",
+     "description": "the product face — --main-font-family"
+    }
+   },
+   "layout": {
+    "sidebarWidth": {
+     "type": "dimension",
+     "value": "242px",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --sidebar-width; the same values the app's CSS names alias",
+     "description": "--sidebar-width — the workspace rail"
+    },
+    "headerHeight": {
+     "type": "dimension",
+     "value": "66px",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --header-height; the same values the app's CSS names alias",
+     "description": "--header-height — the document header strip"
+    },
+    "mainHeaderHeight": {
+     "type": "dimension",
+     "value": "65px",
+     "source": "the app product layer — section.main_section's inline workspace theme on the public share (app.helloivy.co/…/share), --main-header-height; the same values the app's CSS names alias",
+     "description": "--main-header-height — the app header strip"
+    }
+   }
+  },
+  "font": {
+   "family": {
+    "display": {
+     "type": "fontFamily",
+     "value": "Unbounded, \"Unbounded Placeholder\", sans-serif",
+     "source": "computed fontFamily of hero-heading default on home (raw/components-computed.json)",
+     "description": "Unbounded — the marketing display face; headings only"
+    },
+    "body": {
+     "type": "fontFamily",
+     "value": "Inter, \"Inter Placeholder\", sans-serif",
+     "source": "computed fontFamily of nav-link default on home (raw/components-computed.json)",
+     "description": "Inter — the marketing UI face; nav, body copy, buttons"
+    },
+    "docs": {
+     "type": "fontFamily",
+     "value": "\"General Sans\", \"General Sans Placeholder\", sans-serif",
+     "source": "computed fontFamily of docs-link default on doc-post (raw/components-computed.json)",
+     "description": "General Sans — the docs surface's face (a different platform than the marketing site)"
+    }
+   },
+   "weight": {
+    "regular": {
+     "type": "fontWeight",
+     "value": 400,
+     "source": "computed fontWeight of hero-copy default on home (raw/components-computed.json)"
+    },
+    "medium": {
+     "type": "fontWeight",
+     "value": 500,
+     "source": "computed fontWeight of faq-question default on pricing (raw/components-computed.json)"
+    },
+    "semibold": {
+     "type": "fontWeight",
+     "value": 600,
+     "source": "computed fontWeight of nav-link default on home (raw/components-computed.json)"
+    },
+    "bold": {
+     "type": "fontWeight",
+     "value": 700,
+     "source": "Reconstruction — entered by hand at capture time, no raw reading behind it (no captured element paints 700; the plan-card title is 500)"
+    }
+   },
+   "size": {
+    "xs": {
+     "type": "dimension",
+     "value": "12px",
+     "source": "Reconstruction — entered by hand at capture time, no raw reading behind it (the footer and docs wrappers compute 12px, but no text node paints it)"
+    },
+    "sm": {
+     "type": "dimension",
+     "value": "13px",
+     "source": "computed fontSize of login-forgot default on login (raw/components-computed.json)"
+    },
+    "smMd": {
+     "type": "dimension",
+     "value": "14px",
+     "source": "computed fontSize of docs-link default on doc-post (raw/components-computed.json)"
+    },
+    "md": {
+     "type": "dimension",
+     "value": "15px",
+     "source": "computed fontSize of login-input-email default on login (raw/components-computed.json)"
+    },
+    "base": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of nav-link default on home (raw/components-computed.json)"
+    },
+    "lg": {
+     "type": "dimension",
+     "value": "17px",
+     "source": "computed fontSize of login-continue default on login (raw/components-computed.json)"
+    },
+    "xl": {
+     "type": "dimension",
+     "value": "20px",
+     "source": "computed fontSize of plan-card default on pricing (raw/components-computed.json)"
+    },
+    "title2": {
+     "type": "dimension",
+     "value": "23px",
+     "source": "computed fontSize of login-card default on login (raw/components-computed.json)"
+    },
+    "lead": {
+     "type": "dimension",
+     "value": "27px",
+     "source": "computed fontSize of hero-copy default on home (raw/components-computed.json)"
+    },
+    "displaySm": {
+     "type": "dimension",
+     "value": "32px",
+     "source": "computed fontSize of m-hero-heading default on home (raw/components-computed.json)"
+    },
+    "displayMd": {
+     "type": "dimension",
+     "value": "34px",
+     "source": "computed fontSize of feature-card default on features (raw/components-computed.json)"
+    },
+    "displayLg": {
+     "type": "dimension",
+     "value": "62px",
+     "source": "computed fontSize of section-heading default on home (raw/components-computed.json)"
+    },
+    "displayXl": {
+     "type": "dimension",
+     "value": "82px",
+     "source": "computed fontSize of hero-heading default on home (raw/components-computed.json)"
+    }
+   }
+  },
+  "radius": {
+   "field": {
+    "type": "dimension",
+    "value": "10px",
+    "source": "computed borderTopLeftRadius of login-input-email default on app/login (raw/components-computed.json); login-continue and login-google match",
+    "description": "the product's control corner — inputs and buttons"
+   },
+   "pill": {
+    "type": "dimension",
+    "value": "9999px",
+    "source": "computed borderTopLeftRadius of nav-cta default on / (raw/components-computed.json); hero-cta matches — a pill",
+    "description": "the marketing pill — every marketing button"
+   }
+  },
+  "typography": {
+   "display": {
+    "$value": {
+     "fontFamily": "Unbounded, \"Unbounded Placeholder\", sans-serif",
+     "fontSize": "82px",
+     "fontWeight": 500,
+     "lineHeight": "90.2px"
+    },
+    "$type": "typography",
+    "$description": "the marketing hero — Unbounded 82/90",
+    "$extensions": {
+     "source": "measured hero-heading default on home"
+    }
+   },
+   "h2": {
+    "$value": {
+     "fontFamily": "Unbounded, \"Unbounded Placeholder\", sans-serif",
+     "fontSize": "62px",
+     "fontWeight": 500,
+     "lineHeight": "68.2px"
+    },
+    "$type": "typography",
+    "$description": "a mid-page section heading — Unbounded 62/68",
+    "$extensions": {
+     "source": "measured section-heading default on home"
+    }
+   },
+   "displayMobile": {
+    "$value": {
+     "fontFamily": "Unbounded, \"Unbounded Placeholder\", sans-serif",
+     "fontSize": "32px",
+     "fontWeight": 500,
+     "lineHeight": "38.4px"
+    },
+    "$type": "typography",
+    "$description": "the hero at 390px — Unbounded 32/38",
+    "$extensions": {
+     "source": "measured m-hero-heading default on home"
+    }
+   },
+   "lead": {
+    "$value": {
+     "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
+     "fontSize": "27px",
+     "fontWeight": 400,
+     "lineHeight": "40.5px",
+     "letterSpacing": "-0.54px"
+    },
+    "$type": "typography",
+    "$description": "the hero supporting paragraph — Inter 27/41",
+    "$extensions": {
+     "source": "measured hero-copy default on home"
+    }
+   },
+   "navLink": {
+    "$value": {
+     "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
+     "fontSize": "16px",
+     "fontWeight": 600,
+     "lineHeight": "19.2px"
+    },
+    "$type": "typography",
+    "$description": "a marketing nav link — Inter 16/19 600",
+    "$extensions": {
+     "source": "measured nav-link default on home"
+    }
+   },
+   "faqQuestion": {
+    "$value": {
+     "fontFamily": "Inter-Medium, Inter, \"Inter Placeholder\", sans-serif",
+     "fontSize": "16px",
+     "fontWeight": 500,
+     "lineHeight": "25.6px"
+    },
+    "$type": "typography",
+    "$description": "a pricing FAQ row — Inter-Medium 16/26",
+    "$extensions": {
+     "source": "measured faq-question default on pricing"
+    }
+   },
+   "cardTitle": {
+    "$value": {
+     "fontFamily": "Unbounded, \"Unbounded Placeholder\", sans-serif",
+     "fontSize": "34px",
+     "fontWeight": 500,
+     "lineHeight": "40.8px",
+     "letterSpacing": "0.34px"
+    },
+    "$type": "typography",
+    "$description": "a feature tile title — Unbounded 34/41",
+    "$extensions": {
+     "source": "measured feature-card default on features"
+    }
+   },
+   "small": {
+    "$value": {
+     "fontFamily": "Inter, sans-serif",
+     "fontSize": "14px",
+     "fontWeight": 400,
+     "lineHeight": "21px"
+    },
+    "$type": "typography",
+    "$description": "the footer control label — Inter 14/21",
+    "$extensions": {
+     "source": "measured theme-control default on home"
+    }
+   },
+   "appTitle": {
+    "$value": {
+     "fontFamily": "Inter, sans-serif",
+     "fontSize": "23px",
+     "fontWeight": 600,
+     "lineHeight": "27.6px"
+    },
+    "$type": "typography",
+    "$description": "the app login heading — Inter 23/28 600",
+    "$extensions": {
+     "source": "measured login-card default on login"
+    }
+   },
+   "appButton": {
+    "$value": {
+     "fontFamily": "Inter, sans-serif",
+     "fontSize": "17px",
+     "fontWeight": 500,
+     "lineHeight": "21.25px"
+    },
+    "$type": "typography",
+    "$description": "the app's primary button label — Inter 17/21 500",
+    "$extensions": {
+     "source": "measured login-continue default on login"
+    }
+   },
+   "field": {
+    "$value": {
+     "fontFamily": "Inter, sans-serif",
+     "fontSize": "15px",
+     "fontWeight": 400,
+     "lineHeight": "22.5px"
+    },
+    "$type": "typography",
+    "$description": "an app text field — Inter 15/23",
+    "$extensions": {
+     "source": "measured login-input-email default on login"
+    }
+   },
+   "docsNav": {
+    "$value": {
+     "fontFamily": "\"General Sans\", \"General Sans Placeholder\", sans-serif",
+     "fontSize": "14px",
+     "fontWeight": 600,
+     "lineHeight": "19.6px"
+    },
+    "$type": "typography",
+    "$description": "a docs nav link — General Sans 14/20 600",
+    "$extensions": {
+     "source": "measured docs-link default on doc-post"
+    }
+   },
+   "docBody": {
+    "$value": {
+     "fontFamily": "Inter",
+     "fontSize": "16px",
+     "fontWeight": 400,
+     "lineHeight": "25.6px"
+    },
+    "$type": "typography",
+    "$description": "the share document body — Inter 16/26",
+    "$extensions": {
+     "source": "measured share-doc default on share"
+    }
+   }
+  }
+ },
+ "light": {
+  "color": {
+   "ground": {
+    "type": "color",
+    "var": "--token-8cbad9a1-8614-4d19-b13a-92f1480b19cb",
+    "description": "the page ground — the cream #faf6f0 field; dark re-points it to #16161a"
+   },
+   "ink": {
+    "type": "color",
+    "var": "--token-3ea41072-e4a3-4fbd-afee-986fdaa2559f",
+    "description": "the primary ink — black on the cream ground; dark re-points it to #edecda"
+   },
+   "muted": {
+    "type": "color",
+    "var": "--token-38cd3004-b4ac-4a01-8a89-0d1effb0d55a",
+    "description": "the muted ink — black in light (the site keeps one ink weight); #666662 in dark"
+   },
+   "inverseSurface": {
+    "type": "color",
+    "var": "--token-fb7fb35d-7178-4772-a7d9-bc61bb13cc4d",
+    "description": "the inverse surface — white in light, black in dark; the CTA/footer pills paint it"
+   },
+   "inverseInk": {
+    "type": "color",
+    "var": "--token-c6b5aded-e7a1-4e90-a38d-5c70a03600db",
+    "description": "the inverse ink — black in light, cream #faf6f0 in dark; text on the inverse surface"
+   },
+   "link": {
+    "type": "color",
+    "value": "#0099ff",
+    "source": "declared --framer-link-text-color #0099ff on five rich-text preset rules (raw/css-vars.json); two other presets point it at the ink tokens, and which preset paints a body link was not measured",
+    "description": "in-body link blue (#0099ff) on the default rich-text preset"
+   },
+   "linkHover": {
+    "type": "color",
+    "value": "#555555",
+    "source": "declared --framer-link-hover-text-color #555555 on one rich-text preset rule (raw/css-vars.json); another points it at the ink token",
+    "description": "link hover grey"
+   }
+  },
+  "component": {
+   "button": {
+    "cta": {
+     "bg": {
+      "type": "color",
+      "value": "{color.ink}",
+      "source": "measured nav-cta default backgroundColor rgb(0, 0, 0) on / (the ink role)",
+      "description": "the marketing pill fill — paints the ink role in light, the inverse ink in dark"
+     },
+     "fg": {
+      "type": "color",
+      "value": "{color.inverseSurface}",
+      "source": "measured nav-cta default text color rgb(255, 255, 255) on / (the inverse surface role)",
+      "description": "the marketing pill label colour"
+     }
+    }
+   }
+  }
+ },
+ "dark": {
+  "color": {
+   "ground": {
+    "type": "color",
+    "var": "--token-8cbad9a1-8614-4d19-b13a-92f1480b19cb",
+    "description": "the page ground — the cream #faf6f0 field; dark re-points it to #16161a"
+   },
+   "ink": {
+    "type": "color",
+    "var": "--token-3ea41072-e4a3-4fbd-afee-986fdaa2559f",
+    "description": "the primary ink — black on the cream ground; dark re-points it to #edecda"
+   },
+   "muted": {
+    "type": "color",
+    "var": "--token-38cd3004-b4ac-4a01-8a89-0d1effb0d55a",
+    "description": "the muted ink — black in light (the site keeps one ink weight); #666662 in dark"
+   },
+   "inverseSurface": {
+    "type": "color",
+    "var": "--token-fb7fb35d-7178-4772-a7d9-bc61bb13cc4d",
+    "description": "the inverse surface — white in light, black in dark; the CTA/footer pills paint it"
+   },
+   "inverseInk": {
+    "type": "color",
+    "var": "--token-c6b5aded-e7a1-4e90-a38d-5c70a03600db",
+    "description": "the inverse ink — black in light, cream #faf6f0 in dark; text on the inverse surface"
+   },
+   "link": {
+    "type": "color",
+    "value": "#0099ff",
+    "source": "declared --framer-link-text-color #0099ff on five rich-text preset rules (raw/css-vars.json); two other presets point it at the ink tokens, and which preset paints a body link was not measured",
+    "description": "in-body link blue (#0099ff) on the default rich-text preset"
+   },
+   "linkHover": {
+    "type": "color",
+    "value": "#555555",
+    "source": "declared --framer-link-hover-text-color #555555 on one rich-text preset rule (raw/css-vars.json); another points it at the ink token",
+    "description": "link hover grey"
+   }
+  },
+  "component": {
+   "button": {
+    "cta": {
+     "bg": {
+      "type": "color",
+      "value": "{color.inverseInk}",
+      "source": "measured nav-cta dark backgroundColor rgb(250, 246, 240) on / (the inverse ink role)",
+      "description": "the marketing pill fill — paints the ink role in light, the inverse ink in dark"
+     },
+     "fg": {
+      "type": "color",
+      "value": "{color.inverseSurface}",
+      "source": "measured nav-cta dark text color rgb(0, 0, 0) on / (the inverse surface role — the label stays black)",
+      "description": "the marketing pill label colour"
+     }
+    }
+   }
+  }
+ },
+ "component": {
+  "navBar": {
+   "height": {
+    "type": "dimension",
+    "value": "116px",
+    "source": "measured nav-bar default on home (the marketing top strip)"
+   }
+  },
+  "button": {
+   "cta": {
+    "height": {
+     "type": "dimension",
+     "value": "56px",
+     "source": "measured nav-cta default on home (marketing pill button)"
+    },
+    "width": {
+     "type": "dimension",
+     "value": "154px",
+     "source": "measured nav-cta default on home (marketing pill button)"
+    },
+    "padding": {
+     "type": "other",
+     "value": "15px 30px 15px 30px",
+     "source": "measured nav-cta default on home (marketing pill padding)"
+    }
+   },
+   "appHeight": {
+    "type": "dimension",
+    "value": "53.25px",
+    "source": "measured login-continue default on login (the app's primary button)"
+   },
+   "app": {
+    "padding": {
+     "type": "other",
+     "value": "16px 0px 16px 0px",
+     "source": "measured login-continue default on login (the app's primary button padding)"
+    },
+    "bg": {
+     "type": "color",
+     "value": "rgb(34, 34, 34)",
+     "source": "measured login-continue default backgroundColor on app/login",
+     "description": "the app's primary button fill"
+    },
+    "bgHover": {
+     "type": "color",
+     "value": "rgb(0, 0, 0)",
+     "source": "measured login-continue hover backgroundColor on app/login"
+    }
+   }
+  },
+  "menuBox": {
+   "height": {
+    "type": "dimension",
+    "value": "116px",
+    "source": "measured nav-menu-box default on home (the nav menu box)"
+   }
+  },
+  "loginCard": {
+   "width": {
+    "type": "dimension",
+    "value": "500px",
+    "source": "measured login-card default on login (the app login card)"
+   }
+  },
+  "input": {
+   "height": {
+    "type": "dimension",
+    "value": "48.5px",
+    "source": "measured login-input-email default on login (app text field)"
+   },
+   "padding": {
+    "type": "other",
+    "value": "12px 20px 12px 20px",
+    "source": "measured login-input-email default on login (app field padding)"
+   },
+   "bg": {
+    "type": "color",
+    "value": "rgb(252, 252, 252)",
+    "source": "measured login-input default backgroundColor on app/login",
+    "description": "the app's field fill"
+   },
+   "border": {
+    "type": "color",
+    "value": "rgb(196, 196, 196)",
+    "source": "measured login-input default borderTopColor on app/login"
+   },
+   "borderFocused": {
+    "type": "color",
+    "value": "rgb(119, 119, 119)",
+    "source": "measured login-input focused borderTopColor on app/login (the field clicked into)"
+   }
+  },
+  "shareHeader": {
+   "height": {
+    "type": "dimension",
+    "value": "68.75px",
+    "source": "measured share-header default on share (the share page top strip)"
+   }
+  },
+  "postCard": {
+   "width": {
+    "type": "dimension",
+    "value": "464px",
+    "source": "measured post-card default on blog (a blog index card)"
+   }
+  },
+  "planCard": {
+   "width": {
+    "type": "dimension",
+    "value": "464px",
+    "source": "measured plan-card default on pricing (a pricing plan column)"
+   }
+  },
+  "mobileNav": {
+   "height": {
+    "type": "dimension",
+    "value": "116px",
+    "source": "measured m-nav-bar default on home (the phone top strip)"
+   }
+  }
+ }
+}

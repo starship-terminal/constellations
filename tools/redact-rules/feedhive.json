@@ -1,0 +1,12 @@
+{
+ "_note": "Rules for systems/feedhive. A fully public signed-out capture: no owner data on any surface. The sign-in, sign-up and bio-generator fields were focused and filled once with throwaway example text (name@example.com, not-a-real-password, a sample bio), then cleared; nothing was submitted and no account exists. All names, prices and copy in the screenshots are FeedHive's published public-page content, including the support@feedhive.com contact address the privacy and terms pages publish (three mentions each). The OCR email net is kept with example.com and feedhive.com allowed.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@example\\.com$",
+   "@example\\.org$",
+   "@feedhive\\.com$"
+  ]
+ },
+ "families": []
+}

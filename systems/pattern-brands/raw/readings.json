@@ -1,0 +1,137 @@
+{
+  "captured": "2026-11-19",
+  "harness": "T3 preview browser, getComputedStyle on the live page",
+  "startUrl": "https://patternbrands.com/",
+  "landed": "https://www.patternbrands.com/",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1169, "height": 731, "scale": 1 },
+    "note": "Fill viewport of the preview tab. Not a 1440 or 390 capture. Phone sizes below are stylesheet rules at max-width 767px, not a live 390 viewport."
+  },
+  "screenshot": "The browser is not producing screenshot frames",
+  "pages": [
+    {
+      "url": "https://www.patternbrands.com/",
+      "title": "Home | Pattern Brands",
+      "body": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(30, 30, 30)",
+        "fontFamily": "\"P22 Mackinac Pro\", Georgia, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "20.8px",
+        "letterSpacing": "normal"
+      }
+    },
+    {
+      "url": "https://www.patternbrands.com/terms-of-service",
+      "title": "Terms of Service",
+      "h1": { "fontSize": "48px", "lineHeight": "52.8px", "fontWeight": "400", "color": "rgb(30, 30, 30)", "margin": "0px 0px 16px" }
+    },
+    {
+      "url": "https://www.patternbrands.com/privacy-policy",
+      "title": "Privacy Policy",
+      "note": "Redirected from /pattern-privacy-policy. H1 48px, same footer green.",
+      "h1": "Pattern Privacy Policy",
+      "updated": "Updated January 26, 2024"
+    },
+    {
+      "url": "https://www.patternbrands.com/this-page-does-not-exist",
+      "title": "Not Found",
+      "copy": "Page Not Found. The page you are looking for doesn't exist or has been moved. Go Home"
+    }
+  ],
+  "computed": {
+    "buttonFill": { "selector": ".btn__bg", "backgroundColor": "rgb(8, 73, 53)", "borderRadius": "24px", "height": 44, "width": 123 },
+    "buttonLink": { "selector": ".btn", "color": "rgb(255, 255, 255)", "padding": "12px 20px", "fontSize": "16px", "borderRadius": "0px" },
+    "buttonCircle": { "selector": ".btn__circle", "backgroundColor": "rgb(29, 150, 113)", "borderRadius": "50%", "note": "collapsed at rest (0x0); hover rule scales it" },
+    "productLink": { "selector": ".product_link", "color": "rgb(8, 73, 53)", "fontSize": "16px" },
+    "footer": { "selector": ".footer_component", "backgroundColor": "rgb(8, 73, 53)", "color": "rgb(255, 255, 255)", "fontFamily": "Cadiz, Arial, sans-serif" },
+    "footerLink": { "selector": ".footer_link", "fontSize": "14px", "lineHeight": "18.2px", "color": "rgb(255, 255, 255)" },
+    "headingHome": { "selector": ".heading-style-h4", "fontSize": "28.8px", "lineHeight": "31.68px", "fontWeight": "400" },
+    "utilityButton": { "selector": ".button.w-button", "backgroundColor": "rgb(8, 73, 53)", "color": "rgb(255, 255, 255)", "padding": "8px 24px", "borderRadius": "1600px", "height": 37, "width": 320, "fontSize": "16px" },
+    "notFoundHeading": { "fontSize": "32px", "lineHeight": "38.4px", "fontWeight": "400" },
+    "richTextLink": { "color": "rgb(30, 30, 30)", "textDecorationLine": "underline" },
+    "productGrid": { "gridTemplateColumns": "301.328px 376.672px", "gap": "90px 58px" },
+    "productList": { "gridTemplateColumns": "240px 240px 240px", "gap": "8px" },
+    "footerGrid": { "gridTemplateColumns": "141.992px 142px 141.992px 160.008px", "gap": "50px" },
+    "sectionSmall": { "padding": "32px 0px" },
+    "sectionLarge": { "padding": "128px 0px" },
+    "paddingGlobal": { "padding": "0px 40px" },
+    "containerLarge": { "maxWidth": "46rem" }
+  },
+  "rootCustomProperties": {
+    "--base-color-brand--green": "#084935",
+    "--base-color-brand--blue": "#2d62ff",
+    "--base-color-brand--black": "#1e1e1e",
+    "--base-color-brand--pink-light": "#ffaefe",
+    "--base-color-brand--pink": "#dd23bb",
+    "--base-color-brand--pink-dark": "#3c043b",
+    "--base-color-neutral--black": "#000",
+    "--base-color-neutral--white": "#fff",
+    "--base-color-neutral--neutral-lightest": "#eee",
+    "--base-color-neutral--neutral-lighter": "#ccc",
+    "--base-color-neutral--neutral-light": "#aaa",
+    "--base-color-neutral--neutral": "#666",
+    "--base-color-neutral--neutral-dark": "#444",
+    "--base-color-neutral--neutral-darker": "#222",
+    "--base-color-neutral--neutral-darkest": "#111",
+    "--base-color-system--success-green": "#cef5ca",
+    "--base-color-system--success-green-dark": "#114e0b",
+    "--base-color-system--warning-yellow": "#fcf8d8",
+    "--base-color-system--warning-yellow-dark": "#5e5515",
+    "--base-color-system--error-red": "#f8e4e4",
+    "--base-color-system--error-red-dark": "#3b0b0b",
+    "--base-color-system--focus-state": "#2d62ff",
+    "--text-color--text-primary": "#1e1e1e",
+    "--text-color--text-alternate": "#fff",
+    "--text-color--text-secondary": "#084935",
+    "--text-color--text-success": "#114e0b",
+    "--text-color--text-error": "#3b0b0b",
+    "--text-color--text-warning": "#5e5515",
+    "--background-color--background-primary": "#084935",
+    "--background-color--background-alternate": "#fff",
+    "--background-color--background-secondary": "#2d62ff",
+    "--background-color--background-tertiary": "#dd23bb",
+    "--background-color--background-success": "#cef5ca",
+    "--background-color--background-error": "#f8e4e4",
+    "--background-color--background-warning": "#fcf8d8",
+    "--border-color--border-primary": "#eee",
+    "--border-color--border-alternate": "#222",
+    "--border-color--border-secondary": "#2d62ff",
+    "--link-color--link-primary": "#2d62ff",
+    "--link-color--link-secondary": "#000",
+    "--link-color--link-alternate": "#fff"
+  },
+  "buttonCircleAuthored": "rgb(29, 150, 113)",
+  "webflowInputFocusBorder": "rgb(56, 152, 236)",
+  "focusVisible": {
+    "selector": "[tabindex]:focus-visible, input[type=file]:focus-visible",
+    "outline": "0.125rem solid rgb(77, 101, 255)",
+    "outlineOffset": "0.125rem"
+  },
+  "fonts": [
+    { "family": "P22 Mackinac Pro", "weight": "400", "file": "696937f69a2b30949122e0bc_IHOF - P22MackinacProBook.woff2" },
+    { "family": "Cadiz", "weight": "400", "file": "6969395ccb7e4b7fef9f84d9_Cadiz-Regular.woff2" }
+  ],
+  "motion": {
+    "buttonText": "color 0.7s cubic-bezier(0.625, 0.05, 0, 1)",
+    "buttonCircle": "transform 0.7s cubic-bezier(0.625, 0.05, 0, 1), background-color 0.4s cubic-bezier(0.625, 0.05, 0, 1)",
+    "richTextLink": "opacity 0.3s",
+    "underline": "transform 0.735s cubic-bezier(0.625, 0.05, 0, 1)",
+    "reducedMotionRules": 0,
+    "colorScheme": "normal"
+  },
+  "stylesheets": [
+    "https://cdn.prod.website-files.com/69614e7f5fb09ee578dd272d/css/pattern-staging.webflow.shared.580bebc07.min.css",
+    "https://cdn.prod.website-files.com/69614e7f5fb09ee578dd272d/css/pattern-staging.webflow.69614e7f5fb09ee578dd2728-14b37f2c9.min.css"
+  ],
+  "notEntered": [
+    "No purchase, no card, no checkout.",
+    "Contact Us is a mailto:help@patternbrands.com link. No email was sent.",
+    "Careers leaves the site for LinkedIn. Not opened.",
+    "Brand stores (Onsen, Miracle Made, GIR) leave the site. Not opened."
+  ]
+}

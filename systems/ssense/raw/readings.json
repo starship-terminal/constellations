@@ -1,0 +1,447 @@
+{
+  "captured": "2026-11-19",
+  "product": "SSENSE",
+  "startUrl": "https://www.ssense.com/",
+  "locale": "en-sg",
+  "signedIn": false,
+  "themeObserved": "light",
+  "darkTheme": "not present on the signed-out surfaces that loaded",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": { "width": 1169, "height": 731, "scale": 1 },
+    "note": "The preview tab filled the available pane. This is not a 1440 or 390 capture. Phone width was not measured."
+  },
+  "screenshots": "The T3 preview browser loaded the pages and returned computed styles, then preview_snapshot failed twice with: The browser is not producing screenshot frames. No screenshot was invented.",
+  "pages": [
+    {
+      "name": "home",
+      "url": "https://www.ssense.com/en-sg",
+      "title": "Luxury fashion & independent designers | SSENSE"
+    },
+    {
+      "name": "menswear-plp",
+      "url": "https://www.ssense.com/en-sg/men",
+      "title": "Designer Clothes, Shoes & Bags for Men | SSENSE Singapore"
+    },
+    {
+      "name": "pdp",
+      "url": "https://www.ssense.com/en-sg/men/product/rick-owens/black-adidas-edition-springblade-sneakers/715859867",
+      "title": "Rick Owens: Black adidas Edition Springblade Sneakers | SSENSE Singapore"
+    },
+    {
+      "name": "login",
+      "url": "https://www.ssense.com/en-sg/account/login",
+      "title": "Login | SSENSE",
+      "note": "Email field was focused and blurred. Continue was not clicked. No account was created."
+    },
+    {
+      "name": "search-results",
+      "url": "https://www.ssense.com/en-sg/men?q=rick",
+      "title": "Designer Clothes, Shoes & Bags for Men | SSENSE Singapore",
+      "note": "Opened from a public query string. The search dialog was opened and closed. No text was typed into the field."
+    },
+    {
+      "name": "faq",
+      "url": "https://www.ssense.com/en-sg/customer-service",
+      "title": "FAQ | SSENSE"
+    },
+    {
+      "name": "editorial",
+      "url": "https://www.ssense.com/en-sg/editorial/culture/ruby-justice-thelot-in-defense-of-being-on-line",
+      "title": "Ruby Justice Thelot Knows How We Can Build a Better Relationship with Our Phones | SSENSE"
+    }
+  ],
+  "fonts": {
+    "favoritInter": {
+      "computed": "\"Favorit SSENSE Inter\"",
+      "faces": "normal / normal, woff2 then woff",
+      "where": "Storefront chrome on the homepage, login, and customer-service pages: body, header, footer, nav links"
+    },
+    "favoritInter1": {
+      "computed": "\"Favorit SSENSE Inter1\"",
+      "where": "Editorial utility classes u-font--label-sans, u-font--normal-light-sans, u-font--xsmall-sans, article h1"
+    },
+    "favoritRegular": {
+      "computed": "\"Favorit SSENSE Regular\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "where": "Login Continue button (.s-button)"
+    },
+    "timesNow": {
+      "computed": "\"JHA Times Now\"",
+      "where": "Editorial serif: hero, article body, tile subheads, category labels"
+    },
+    "interFont": {
+      "computed": "interFont, \"interFont Fallback\"",
+      "where": "Menswear listing, product page, and search results (the newer storefront)"
+    },
+    "ssenseFonts": {
+      "computed": "ssense-fonts",
+      "status": "declared as a font-face, unloaded on the homepage"
+    }
+  },
+  "colors": {
+    "white": { "value": "rgb(255, 255, 255)", "where": "body background and header background on the homepage; search dialog background" },
+    "black": { "value": "rgb(0, 0, 0)", "where": "body text, header links, logo fill, Add to bag background, Continue background, size-field border on the product page" },
+    "whiteOnBlack": { "value": "rgb(255, 255, 255)", "where": "Add to bag label, Continue label" },
+    "editorialInk": { "value": "rgb(51, 51, 51)", "where": "editorial tile, hero, article body, Shop menswear label" },
+    "grey2": { "value": "rgb(136, 136, 136)", "where": "struck-through sale price (.text-ssense-grey-2) and the product-page line 'Taxes and duties included.'" },
+    "grey1": { "value": "rgb(182, 182, 182)", "where": "search dialog border (border-ssense-grey-1), search placeholder, declared disabled button (.s-button--disabled background and border)" },
+    "fieldBorder": { "value": "rgb(119, 119, 119)", "where": "product size select border (border-[#777]), footer email input border" },
+    "editorialCtaBorder": { "value": "rgb(151, 151, 151)", "where": ".ed-ButtonCTA 1px solid border on the homepage" },
+    "loaderDot": { "value": "rgb(153, 153, 153)", "where": "declared .s-loader__dot color" },
+    "focusOutline": { "value": "rgb(229, 151, 0)", "where": "size select while focused: outline-color, with outline-style none and width 1px, so it does not paint" },
+    "designerSearchFill": { "value": "rgb(251, 251, 251)", "where": "sidebar 'Search Designers' input background (#fbfbfb)" }
+  },
+  "type": {
+    "chrome": {
+      "font": "Favorit SSENSE Inter",
+      "size": "11px",
+      "weight": "400",
+      "lineHeight": "15px",
+      "letterSpacing": "normal",
+      "transform": "uppercase",
+      "where": "header nav links, footer links, homepage body"
+    },
+    "storefront": {
+      "font": "interFont, interFont Fallback",
+      "size": "11px",
+      "weight": "400",
+      "lineHeight": "15px",
+      "letterSpacing": "normal",
+      "where": "listing body, brand, product name, price, Add to bag, wishlist, search dialog"
+    },
+    "loginHeading": {
+      "font": "Favorit SSENSE Inter, Helvetica Neue, Helvetica, Arial, sans-serif",
+      "size": "11px",
+      "weight": "400",
+      "lineHeight": "14.96px",
+      "letterSpacing": "0.09px",
+      "transform": "uppercase",
+      "where": ".s-text.s-text--uppercase 'LOGIN OR CREATE ACCOUNT'"
+    },
+    "loginLabel": {
+      "font": "Favorit SSENSE Inter",
+      "size": "11px",
+      "weight": "500",
+      "lineHeight": "15px",
+      "marginBottom": "5px",
+      "where": ".s-text-field__label"
+    },
+    "loginField": {
+      "font": "Favorit SSENSE Inter",
+      "size": "11px",
+      "weight": "400",
+      "lineHeight": "12.65px",
+      "padding": "0px 6px",
+      "height": "30px",
+      "width": "380px",
+      "where": "#email"
+    },
+    "faqTitle": {
+      "font": "Favorit SSENSE Inter",
+      "size": "15px",
+      "weight": "400",
+      "lineHeight": "20px",
+      "where": "FAQ h1"
+    },
+    "faqGroup": {
+      "font": "Favorit SSENSE Inter",
+      "size": "13px",
+      "weight": "700",
+      "lineHeight": "20px",
+      "where": "customer-service sidebar h2 (Help, Shopping)"
+    },
+    "faqQuestion": {
+      "font": "Favorit SSENSE Inter",
+      "size": "11px",
+      "weight": "700",
+      "lineHeight": "15px",
+      "where": "strong inside the FAQ answer block"
+    },
+    "faqAnswer": {
+      "font": "Favorit SSENSE Inter",
+      "size": "11px",
+      "weight": "400",
+      "lineHeight": "15px",
+      "marginBottom": "10px",
+      "where": "FAQ answer paragraph"
+    },
+    "editorialHero": {
+      "font": "Favorit SSENSE Inter1",
+      "size": "49.875px",
+      "weight": "100",
+      "lineHeight": "56px",
+      "letterSpacing": "-2px",
+      "transform": "uppercase",
+      "color": "rgb(51, 51, 51)",
+      "where": "article h1 at the measured 1169px viewport"
+    },
+    "editorialDeck": {
+      "font": "JHA Times Now",
+      "size": "40px",
+      "weight": "100",
+      "lineHeight": "44px",
+      "letterSpacing": "-1px",
+      "where": "article h2 deck"
+    },
+    "editorialBody": {
+      "font": "JHA Times Now",
+      "size": "30px",
+      "weight": "100",
+      "lineHeight": "34px",
+      "letterSpacing": "-0.65px",
+      "where": "article paragraph beginning 'These are the rules'"
+    },
+    "editorialByline": {
+      "font": "JHA Times Now",
+      "size": "20px",
+      "weight": "100",
+      "lineHeight": "26px",
+      "letterSpacing": "-0.05px",
+      "where": ".ed-HeaderRowCredits"
+    },
+    "tileHeadline": {
+      "font": "Favorit SSENSE Inter1",
+      "size": "19px",
+      "weight": "400",
+      "lineHeight": "26px",
+      "letterSpacing": "-0.25px",
+      "transform": "uppercase",
+      "where": ".ed-ArticleTileText-headline.u-font--normal-light-sans"
+    },
+    "tileLabelSerif": {
+      "font": "JHA Times Now",
+      "size": "13px",
+      "weight": "100",
+      "lineHeight": "16px",
+      "letterSpacing": "normal",
+      "where": ".u-font--label-serif category label, 68px wide, margin-left -68px"
+    },
+    "tileLabelSans": {
+      "font": "Favorit SSENSE Inter1",
+      "size": "12.35px",
+      "weight": "100",
+      "lineHeight": "16px",
+      "letterSpacing": "-0.05px",
+      "transform": "uppercase",
+      "where": ".u-font--label-sans (RECENT, Shop menswear label)"
+    },
+    "rowTitle": {
+      "font": "Favorit SSENSE Inter1",
+      "size": "28.5px",
+      "weight": "400",
+      "lineHeight": "34px",
+      "letterSpacing": "-0.5px",
+      "transform": "uppercase",
+      "where": ".ed-Row-title.u-font--xsmall-sans 'FASHION 101'"
+    },
+    "xlargeSansDeclared": {
+      "font": "Favorit SSENSE Inter1",
+      "weight": "lighter",
+      "steps": [
+        { "fontSize": "4.15625rem", "lineHeight": "4.5rem", "letterSpacing": "-0.125rem" },
+        { "fontSize": "5.9375rem", "lineHeight": "5.875rem", "letterSpacing": "-0.28125rem" },
+        { "fontSize": "8.90625rem", "lineHeight": "8.5rem", "letterSpacing": "-0.4375rem" },
+        { "fontSize": "11.875rem", "lineHeight": "11.25rem", "letterSpacing": "-0.5rem" }
+      ],
+      "where": "four .u-font--xlarge-sans rules, breakpoint order not recorded as a media query text"
+    }
+  },
+  "components": {
+    "header": {
+      "height": "55px",
+      "background": "rgb(255, 255, 255)",
+      "position": "fixed",
+      "padding": "0px",
+      "radius": "0px",
+      "shadow": "none",
+      "navGap": "20px",
+      "navDisplay": "flex",
+      "linkY": 18,
+      "linkHeight": "15px"
+    },
+    "logo": {
+      "width": "104px",
+      "height": "21.2px",
+      "x": 532,
+      "y": 14,
+      "fill": "rgb(0, 0, 0)",
+      "viewBox": "0 0 540 110"
+    },
+    "productCard": {
+      "width": "237.3px",
+      "imageHeight": "356px",
+      "imageMarginBottom": "10px",
+      "aspect": "2 / 3",
+      "nameLineHeight": "15px",
+      "priceGap": "5px",
+      "radius": "0px"
+    },
+    "productGrid": {
+      "padding": "0px at this width (lg:px-0)",
+      "cardColumnsObserved": "the first card sat at x 219 and was 237.3px wide inside a 732px grid"
+    },
+    "addToBag": {
+      "background": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(0, 0, 0)",
+      "minHeight": "35px",
+      "height": "35px",
+      "width": "255.1px",
+      "radius": "0px",
+      "fontSize": "11px",
+      "lineHeight": "15px",
+      "transform": "uppercase",
+      "cursor": "pointer",
+      "transition": "all",
+      "notClicked": true
+    },
+    "addToWishlist": {
+      "background": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "border": "0px",
+      "height": "35px",
+      "minWidth": "130px",
+      "padding": "10px 18px",
+      "transform": "uppercase",
+      "notClicked": true
+    },
+    "sizeSelect": {
+      "border": "1px solid rgb(119, 119, 119)",
+      "height": "36px",
+      "padding": "7px 25px 7px 6px",
+      "fontSize": "11px",
+      "lineHeight": "20px",
+      "radius": "0px",
+      "width": "385.1px",
+      "marginTop": "12px",
+      "placeholderOptionDisabled": true,
+      "focusOutlineColor": "rgb(229, 151, 0)",
+      "focusOutlineStyle": "none",
+      "valueNotChanged": true
+    },
+    "editorialCta": {
+      "border": "1px solid rgb(151, 151, 151)",
+      "height": "36px",
+      "padding": "0px 18px",
+      "radius": "10px",
+      "lineHeight": "36px",
+      "labelSize": "12.35px",
+      "labelLineHeight": "16px",
+      "labelLetterSpacing": "-0.05px"
+    },
+    "loginButton": {
+      "background": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(0, 0, 0)",
+      "height": "37px",
+      "width": "380px",
+      "radius": "0px",
+      "font": "Favorit SSENSE Regular, Helvetica Neue, Helvetica, Arial, sans-serif",
+      "fontSize": "11px",
+      "lineHeight": "12.65px",
+      "transform": "uppercase",
+      "notClicked": true
+    },
+    "loginField": {
+      "border": "1px solid rgb(0, 0, 0)",
+      "height": "30px",
+      "width": "380px",
+      "padding": "0px 6px",
+      "radius": "0px",
+      "focusOutline": "none",
+      "focusShadow": "none",
+      "gapToButton": "25px"
+    },
+    "searchDialog": {
+      "background": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(182, 182, 182)",
+      "padding": "20px",
+      "width": "450px",
+      "height": "151px",
+      "radius": "0px",
+      "fieldBorder": "1px solid rgb(0, 0, 0)",
+      "fieldHeight": "39px",
+      "fieldPaddingLeft": "9px",
+      "placeholder": "rgb(182, 182, 182)",
+      "close": "uppercase 11px, height 39px"
+    },
+    "designerSearch": {
+      "background": "rgb(251, 251, 251)",
+      "height": "30px",
+      "width": "150px",
+      "padding": "0px 14px",
+      "border": "0px",
+      "radius": "0px",
+      "placeholder": "Search Designers"
+    },
+    "salePrice": {
+      "current": { "color": "rgb(0, 0, 0)", "decoration": "none", "size": "11px" },
+      "was": { "color": "rgb(136, 136, 136)", "decoration": "line-through", "size": "11px", "class": "text-ssense-grey-2" },
+      "gap": "5px"
+    },
+    "checkbox": {
+      "width": "12px",
+      "height": "12px",
+      "appearance": "none",
+      "marginRight": "10px",
+      "radius": "0px",
+      "where": "SALE ONLY in the search dialog and the listing SALE filter"
+    },
+    "underline": {
+      "rule": ".background-underline { cursor: pointer; background-image: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.75) 50%); background-position: 0px 1.1em; background-repeat: repeat-x; background-size: 2px 2px; }",
+      "hover": ".hover\\:background-underline:hover uses the same gradient"
+    },
+    "disabledButtonDeclared": {
+      "background": "rgb(182, 182, 182)",
+      "color": "rgb(255, 255, 255)",
+      "border": "rgb(182, 182, 182)",
+      "where": ".s-button--disabled rule. Not observed on a painted control."
+    }
+  },
+  "spacing": {
+    "headerHeight": "55px",
+    "navGap": "20px",
+    "pageInset": "20px",
+    "cardImageGap": "10px",
+    "priceGap": "5px",
+    "loginLabelGap": "5px",
+    "loginFieldToButton": "25px",
+    "sizeSelectMarginTop": "12px",
+    "searchDialogPadding": "20px",
+    "searchFieldPaddingLeft": "9px",
+    "wishlistPaddingX": "18px",
+    "ctaPaddingX": "18px",
+    "faqAnswerMargin": "10px",
+    "checkboxGap": "10px",
+    "tileLabelOffset": "68px"
+  },
+  "radius": {
+    "square": "0px",
+    "editorialCta": "10px",
+    "onetrust": "2px"
+  },
+  "motion": {
+    "prefersReducedMotion": false,
+    "authoredReduceRules": "none found while walking stylesheets on the editorial page",
+    "headerTransition": "all",
+    "addToBagTransition": "all",
+    "mainTransform": "0.35s transform",
+    "drawer": "0.2s on .s-drawer enter and leave (top-down, bottom-up, left-to-right)",
+    "carouselDot": "width 0.1s",
+    "keyframes": ["s-loader-blink", "s-loader-dash", "blink", "onetrust-fade-in", "sk-scaleout"],
+    "note": "A full motion-probe.mjs pass was not run. Durations above are computed or declared on the live page. Reduced-motion behaviour is a gap."
+  },
+  "notEntered": [
+    "Add to bag was measured and not clicked",
+    "Add to wishlist was measured and not clicked",
+    "Login Continue was not clicked; the email field was focused empty and blurred",
+    "No account was created",
+    "No card, phone, address, or checkout step was opened",
+    "The size select was focused and blurred; its value was not changed",
+    "The search field was not typed into; results came from the public ?q=rick URL, and the dialog was closed",
+    "Shopping bag was not opened",
+    "Wishlist was not opened"
+  ]
+}

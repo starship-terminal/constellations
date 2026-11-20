@@ -1,0 +1,33 @@
+{
+  "source": "Computed style of document.documentElement on https://www.soundtrap.com/musicmakers, plus the :root and html rules in 2e9a6afac7e3a0d9.css. Tailwind --tw-* empties omitted.",
+  "root": {
+    "--white": "#ffffff",
+    "--black": "#000000",
+    "--focus": "#3c95ff",
+    "--dialog-shadow-light": "rgba(0,0,0,0.15)",
+    "--dialog-shadow-dark": "rgba(0,0,0,0.45)",
+    "--disabled-opacity": "0.4",
+    "--space-nano": "4px",
+    "--space-tiny": "8px",
+    "--space-tiny-1": "12px",
+    "--space-small": "16px",
+    "--space-small-1": "20px",
+    "--space-medium": "24px",
+    "--space-medium-1": "28px",
+    "--space-medium-2": "32px",
+    "--space-large": "40px",
+    "--space-large-1": "48px",
+    "--space-large-2": "56px",
+    "--space-huge": "64px",
+    "--space-huge-1": "80px",
+    "--space-huge-2": "96px",
+    "--space-huge-3": "120px",
+    "--transition-colors": "background-color 0.1s ease-out, color 0.1s ease-out",
+    "--transition-colors-time": "0.1s",
+    "--transition-colors-easing": "ease-out",
+    "--nav-height": "90px",
+    "--tw-ring-color": "#3c95ff",
+    "--tw-ring-offset-color": "#fff"
+  },
+  "navHeightNote": "html { --nav-height: 90px }. html.has-inset-macos-title-bar sets --nav-height: 110px. The live nav measured 90px at both 1440 and 390."
+}

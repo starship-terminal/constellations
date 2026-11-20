@@ -1,0 +1,14 @@
+{
+ "_note": "Rules for systems/endless. A fully public signed-out capture of endless.app: no owner data on any surface. The contact fields and tool prompts were focused and filled once with deleted sample text; nothing was submitted and no account exists. All names, model labels and marketing copy in the screenshots are Endless's published public-page content. The OCR email net is kept with endless.app's own published addresses and example.com allowed.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@endless\\.app$",
+   "@endless\\.com$",
+   "@endless\\.io$",
+   "@example\\.com$",
+   "@example\\.org$"
+  ]
+ },
+ "families": []
+}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Limitless style guide</title>
+<meta name="description" content="Limitless public-site tokens, rendered from tokens.json. One light theme.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: Greycliff, system-ui, -apple-system, Roboto, sans-serif;
+  --sg-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--sg-sans); }
+main { max-width: 1040px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font: 600 40px/44px var(--sg-sans); letter-spacing: -1px; margin: 0 0 8px; }
+h2 { font: 600 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--textBody); margin: 48px 0 12px; }
+p { max-width: 68ch; color: var(--textBody); }
+code { font-family: var(--sg-mono); font-size: 13px; color: var(--link); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 148px; }
+.sw i { display: block; height: 48px; border-radius: 8px; border: 1px solid var(--border); }
+.sw b, .sw span { display: block; font: 500 12px/1.4 var(--sg-mono); }
+.sw span { font-weight: 400; color: var(--textBody); }
+.bar { display: flex; align-items: center; gap: 18px; height: 64px; padding: 0 20px; border-bottom: 1px solid var(--border); }
+.bar .mark { font-weight: 700; }
+.bar a { color: var(--textBody); font-weight: 600; text-decoration: none; font-size: 16px; }
+.bar .sp { flex: 1; }
+.bar .signin { color: var(--textMuted); font-weight: 500; }
+.hero { text-align: center; padding: 48px 16px; }
+.hero h3 { margin: 0; font: 600 48px/48px var(--sg-sans); letter-spacing: -1.2px; }
+.card { max-width: 640px; margin: 16px auto; padding: 28px; border-radius: var(--radius-card); box-shadow: var(--elevation-card); background: var(--surface); }
+.btn { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: 4px; background: var(--accent); color: var(--textOnAccent); border: 0; font: 400 14px/1 var(--sg-sans); }
+.pill { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: var(--radius-pill); color: var(--textBody); font-weight: 600; }
+.field { display: flex; align-items: center; height: 48px; padding: 0 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--textMuted); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+th { color: var(--textBody); font-weight: 500; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Limitless</h1>
+  <p>Public marketing site, developer docs, help center and the sign-in wall, captured 2026-11-18. One light theme. Greycliff is licensed and not loaded here; the page uses the system fallback.</p>
+
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>white</span></div>
+    <div class="sw"><i style="background:var(--text)"></i><b>text</b><span>slate 900</span></div>
+    <div class="sw"><i style="background:var(--textBody)"></i><b>body</b><span>slate 600</span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><b>accent</b><span>purple 500</span></div>
+    <div class="sw"><i style="background:var(--accentHover)"></i><b>accent hover</b><span>purple 600</span></div>
+    <div class="sw"><i style="background:var(--link)"></i><b>link</b><span>purple 500</span></div>
+    <div class="sw"><i style="background:var(--surfaceMuted)"></i><b>muted surface</b><span>gray 100</span></div>
+    <div class="sw"><i style="background:var(--helpBand)"></i><b>help band</b><span>help purple</span></div>
+  </div>
+
+  <h2>Chrome</h2>
+  <div class="bar">
+    <span class="mark">Limitless</span>
+    <a>Home</a><a>Privacy</a><a>Developers</a>
+    <span class="sp"></span>
+    <span class="signin">Sign In</span>
+  </div>
+  <div class="hero">
+    <h3>Limitless has been acquired by Meta</h3>
+    <p>Display is 60px semibold, tracking -1.5px, slate 900.</p>
+  </div>
+  <div class="card">
+    <p style="margin-top:0">The letter card is a 24px radius on white, with a soft slate shadow. Body copy is 18px slate 600.</p>
+    <button class="btn">Copy</button>
+    <span class="pill">Solutions</span>
+  </div>
+  <p><span class="field">Continue with your email</span></p>
+
+  <h2>Type</h2>
+  <table>
+    <tr><th>Role</th><th>Size</th><th>Weight</th></tr>
+    <tr><td>Display</td><td>60px</td><td>600</td></tr>
+    <tr><td>Heading</td><td>36px</td><td>700</td></tr>
+    <tr><td>Body large</td><td>18px</td><td>400</td></tr>
+    <tr><td>Body / label</td><td>16px</td><td>400 / 600</td></tr>
+    <tr><td>Caption / code</td><td>14px</td><td>500 / 400</td></tr>
+  </table>
+  <p class="note">Values are the measured public surface. See <code>tokens.json</code> for provenance.</p>
+</main>
+</body>
+</html>

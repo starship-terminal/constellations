@@ -1,0 +1,1545 @@
+{
+ "readAt": "2026-11-13",
+ "source": "the stylesheet bodies read during a live home load on elektron.se (the same-origin thedock-child theme and plugin sheets captured as network responses plus the inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets under plain <html> — the site paints one dark theme, with no theme switch — at 1440 x 900",
+ "sheets": [
+  "https://www.elektron.se/wp-content/plugins/woocommerce-paypal-payments/assets/ppcp-blocks-css-mini-cart-buttons.css (608 bytes)",
+  "https://www.elektron.se/wp-content/plugins/thedock-cookie/assets/css/public.css (68134 bytes)",
+  "https://www.elektron.se/wp-content/plugins/elektron-freshdesk/assets/withdrawal.css (2819 bytes)",
+  "https://www.elektron.se/wp-content/plugins/woocommerce/assets/css/select2.css (14789 bytes)",
+  "https://www.elektron.se/wp-content/plugins/elektron-orders/assets/css/cart-pixel-fx.css (1776 bytes)",
+  "https://www.elektron.se/wp-content/plugins/elektron-magic-login/assets/css/magic-login.css (7467 bytes)",
+  "https://www.elektron.se/wp-content/themes/thedock-child/style.css (892819 bytes)",
+  "https://www.elektron.se/wp-content/themes/thedock-child/custom.css (36933 bytes)",
+  "https://www.elektron.se/wp-content/themes/thedock-child/elements.css (840707 bytes)",
+  "https://www.elektron.se/wp-content/plugins/flexible-shipping/assets/dist/css/free-shipping.css (762 bytes)",
+  "https://www.elektron.se/wp-content/plugins/thedock-smart-search/assets/build/frontend.css (9139 bytes)",
+  "https://www.elektron.se/wp-content/plugins/thedock-checkout/assets/build/cart.css (11370 bytes)",
+  "inline-0 (87 bytes)",
+  "inline-1 (137 bytes)",
+  "inline-2 (138 bytes)",
+  "inline-3 (62 bytes)",
+  "inline-4 (529 bytes)",
+  "inline-5 (813 bytes)",
+  "inline-6 (77 bytes)",
+  "inline-7 (2845 bytes)",
+  "inline-8 (119 bytes)",
+  "inline-9 (119 bytes)",
+  "inline-10 (87 bytes)",
+  "inline-11 (119 bytes)",
+  "inline-12 (119 bytes)",
+  "inline-13 (119 bytes)",
+  "inline-14 (119 bytes)",
+  "inline-15 (119 bytes)",
+  "inline-16 (119 bytes)",
+  "inline-17 (119 bytes)",
+  "inline-18 (119 bytes)",
+  "inline-19 (87 bytes)",
+  "inline-20 (119 bytes)",
+  "inline-21 (119 bytes)",
+  "inline-22 (40 bytes)"
+ ],
+ "counts": {
+  "rules": 59,
+  "fonts": 27,
+  "names": {
+   "theme": 2,
+   "app": 65,
+   "vendor": 77,
+   "utility": 0,
+   "tailwind": 0
+  },
+  "bySelector": {
+   "[vendor] :root": 76,
+   "[vendor] @media (max-width: 480px) .thedock-cookie-banner.thedock-bar": 1,
+   "[vendor] .thedock-cookie-banner.thedock-banner--modal": 1,
+   "[vendor] .thedock-modal-header": 1,
+   "[app] :root": 49,
+   "[app] .is-modal-section.is-page-modal.modal-layout-drawer-bottom, .is-modal-section.is-page-modal.modal-layout-drawer-left, .is-modal-section.is-page-modal.modal-layout-drawer-right": 2,
+   "[theme] .grid-small-spacing": 2,
+   "[theme] .grid-normal-spacing": 2,
+   "[theme] .grid-large-spacing": 2,
+   "[theme] .grid-huge-spacing": 2,
+   "[app] .has-primary-surface": 1,
+   "[app] .has-primary-shade0-surface": 1,
+   "[app] .has-primary-shade1-surface": 1,
+   "[app] .has-primary-shade2-surface": 1,
+   "[app] .has-primary-shade3-surface": 1,
+   "[app] .has-primary-shade4-surface": 1,
+   "[app] .has-primary-shade5-surface": 1,
+   "[app] .has-secondary-surface": 1,
+   "[app] .has-secondary-shade0-surface": 1,
+   "[app] .has-secondary-shade1-surface": 1,
+   "[app] .has-secondary-shade2-surface": 1,
+   "[app] .has-secondary-shade3-surface": 1,
+   "[app] .has-secondary-shade4-surface": 1,
+   "[app] .has-secondary-shade5-surface": 1,
+   "[app] .has-accent-surface": 1,
+   "[app] .has-accent-shade0-surface": 1,
+   "[app] .has-accent-shade1-surface": 1,
+   "[app] .has-accent-shade2-surface": 1,
+   "[app] .has-accent-shade3-surface": 1,
+   "[app] .has-accent-shade4-surface": 1,
+   "[app] .has-accent-shade5-surface": 1,
+   "[app] .has-primary-variant-surface": 1,
+   "[app] .has-primary-variant-shade0-surface": 1,
+   "[app] .has-primary-variant-shade1-surface": 1,
+   "[app] .has-primary-variant-shade2-surface": 1,
+   "[app] .has-primary-variant-shade3-surface": 1,
+   "[app] .has-primary-variant-shade4-surface": 1,
+   "[app] .has-primary-variant-shade5-surface": 1,
+   "[app] .has-secondary-variant-surface": 1,
+   "[app] .has-secondary-variant-shade0-surface": 1,
+   "[app] .has-secondary-variant-shade1-surface": 1,
+   "[app] .has-secondary-variant-shade2-surface": 1,
+   "[app] .has-secondary-variant-shade3-surface": 1,
+   "[app] .has-secondary-variant-shade4-surface": 1,
+   "[app] .has-secondary-variant-shade5-surface": 1,
+   "[app] .has-light-surface": 1,
+   "[app] .has-dark-surface": 1,
+   "[app] @media (min-width: 1024px) .blocks-wrapper:has(> .catalog-trigger)": 7,
+   "[app] .rich-text > table": 7,
+   "[app] @media (max-width: 782px) .rich-text > table": 2,
+   "[vendor] .tdc :is(.woocommerce-error, .woocommerce-message, .woocommerce-info)": 1,
+   "[vendor] .tdc .woocommerce-error": 1,
+   "[vendor] .tdc .woocommerce-message": 1
+  }
+ },
+ "errors": [],
+ "theme": [
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".grid-small-spacing",
+   "context": [],
+   "properties": {
+    "--gridGap": "0.1rem",
+    "--gridGapMobile": "1rem"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".grid-normal-spacing",
+   "context": [],
+   "properties": {
+    "--gridGap": "1rem",
+    "--gridGapMobile": "1rem"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".grid-large-spacing",
+   "context": [],
+   "properties": {
+    "--gridGap": "3rem",
+    "--gridGapMobile": "3rem"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".grid-huge-spacing",
+   "context": [],
+   "properties": {
+    "--gridGap": "4.5rem",
+    "--gridGapMobile": "3rem"
+   },
+   "bin": "theme"
+  }
+ ],
+ "app": [
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--carousel-time-slow": "6000",
+    "--carousel-time-normal": "3000",
+    "--carousel-time-fast": "2000",
+    "--animation-delay": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".is-modal-section.is-page-modal.modal-layout-drawer-bottom, .is-modal-section.is-page-modal.modal-layout-drawer-left, .is-modal-section.is-page-modal.modal-layout-drawer-right",
+   "context": [],
+   "properties": {
+    "--pageModalDrawerWidth": "min(560px, 92vw)",
+    "--pageModalDrawerHeight": "80vh"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-primary-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#151515"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-primary-shade0-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#212121"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-primary-shade1-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#2c2c2c"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-primary-shade2-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#383838"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-primary-shade3-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#444444"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-primary-shade4-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#505050"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-primary-shade5-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#5b5b5b"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-secondary-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#eeeef2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-secondary-shade0-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#e2e2e6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-secondary-shade1-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#d6d6da"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-secondary-shade2-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#cacace"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-secondary-shade3-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#bebec2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-secondary-shade4-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#b3b3b6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-secondary-shade5-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#a7a7a9"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-accent-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#eeeef2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-accent-shade0-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#e2e2e6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-accent-shade1-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#d6d6da"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-accent-shade2-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#cacace"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-accent-shade3-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#bebec2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-accent-shade4-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#b3b3b6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-accent-shade5-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#a7a7a9"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-primary-variant-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#222222"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-primary-variant-shade0-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#2d2d2d"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-primary-variant-shade1-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#383838"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-primary-variant-shade2-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#434343"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-primary-variant-shade3-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#4e4e4e"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-primary-variant-shade4-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#595959"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-primary-variant-shade5-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#646464"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-secondary-variant-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#cccccc"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-secondary-variant-shade0-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#f2f2f2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-secondary-variant-shade1-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#e6e6e6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-secondary-variant-shade2-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#d9d9d9"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-secondary-variant-shade3-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#bfbfbf"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-secondary-variant-shade4-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#b3b3b3"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-secondary-variant-shade5-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#a6a6a6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-light-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ".has-dark-surface",
+   "context": [],
+   "properties": {
+    "--td-surface": "#0c0c0c"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--td-motion-controls": "1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/custom.css",
+   "selector": ".blocks-wrapper:has(> .catalog-trigger)",
+   "context": [
+    "@media (min-width: 1024px)"
+   ],
+   "properties": {
+    "--explore-items": "13",
+    "--explore-leading": "0.95",
+    "--explore-gap": "0.33",
+    "--explore-min": "1.5rem",
+    "--explore-max": "4.575rem",
+    "--explore-chrome": "calc(var(--header-height, 4rem) + 8.57rem)",
+    "--explore-size": "clamp(\n      var(--explore-min),\n      calc(\n        (100svh - var(--explore-chrome)) /\n        (var(--explore-items) * var(--explore-leading) +\n         (var(--explore-items) - 1) * var(--explore-gap))\n      ),\n      var(--explore-max)\n    )"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/custom.css",
+   "selector": ".rich-text > table",
+   "context": [],
+   "properties": {
+    "--elk-line": "#f2f2f2",
+    "--elk-grid": "#3f3f3f",
+    "--elk-bg": "#151515",
+    "--elk-dot": "8px",
+    "--elk-cell": "70px",
+    "--elk-name": "160px",
+    "--elk-row": "var(--elk-cell)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/custom.css",
+   "selector": ".rich-text > table",
+   "context": [
+    "@media (max-width: 782px)"
+   ],
+   "properties": {
+    "--elk-cell": "72px",
+    "--elk-name": "150px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-1",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--wp-internal-comment": "\"Placeholder for wp_hoist_late_printed_styles() to replace with the block styles printed at wp_footer.\""
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-2",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--wp-internal-comment": "\"Placeholder for wp_hoist_late_printed_styles() to replace with the global-styles printed at wp_footer.\""
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-4",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--thedock-bg": "#151515",
+    "--thedock-surface": "#1e1e1e",
+    "--thedock-text": "#eeeef2",
+    "--thedock-muted": "#97979a",
+    "--thedock-border": "#363636",
+    "--thedock-accent": "#eeeef2",
+    "--thedock-accent-text": "#151515",
+    "--thedock-accent-hover": "#eeeef2",
+    "--thedock-radius": "0",
+    "--thedock-radius-btn": "0",
+    "--thedock-font": "\"Neue Haas Grotesk Text Pro\"",
+    "--thedock-shadow": "none",
+    "--thedock-overlay": "rgba(0, 0, 0, 0.5)",
+    "--thedock-focus": "#eeeef2",
+    "--thedock-btn-bg": "#eeeef2",
+    "--thedock-btn-text": "#151515",
+    "--thedock-btn-border": "transparent",
+    "--thedock-shadow-up": "none"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-5",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--tdc-font": "'Neue Haas Grotesk Text Pro'",
+    "--tdc-font-heading": "'Neue Haas Grotesk Display Pro'",
+    "--tdc-text": "#eeeef2",
+    "--tdc-muted": "color-mix(in srgb, #eeeef2 75%, #151515)",
+    "--tdc-bg": "#151515",
+    "--tdc-surface": "#212121",
+    "--tdc-border": "#444444",
+    "--tdc-border-control": "color-mix(in srgb, #eeeef2 45%, #151515)",
+    "--tdc-accent": "#eeeef2",
+    "--tdc-accent-contrast": "#151515",
+    "--tdc-danger": "color-mix(in srgb, #d63638 70%, currentColor)",
+    "--tdc-success": "color-mix(in srgb, #1e7a3c 70%, currentColor)",
+    "--tdc-radius": "0px",
+    "--tdc-radius-control": "0px",
+    "--tdc-border-width": "2px",
+    "--tdc-border-width-control": "2px",
+    "--tdc-control-height": "3rem",
+    "--tdc-space-1": "0.25rem",
+    "--tdc-space-2": "0.5rem",
+    "--tdc-space-3": "1rem",
+    "--tdc-space-4": "1.5rem",
+    "--tdc-space-5": "2.5rem",
+    "--tdc-focus-ring": "var(--tdc-accent, currentColor)",
+    "--tdc-layout-width": "1100px"
+   },
+   "bin": "app"
+  }
+ ],
+ "vendor": [
+  {
+   "file": "https://www.elektron.se/wp-content/plugins/thedock-cookie/assets/css/public.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--thedock-bg": "#ffffff",
+    "--thedock-surface": "#f5f5f5",
+    "--thedock-text": "#333333",
+    "--thedock-muted": "#666666",
+    "--thedock-border": "#e5e5e5",
+    "--thedock-accent": "#1e73be",
+    "--thedock-accent-text": "#ffffff",
+    "--thedock-accent-hover": "#135e96",
+    "--thedock-btn-bg": "var(--thedock-accent)",
+    "--thedock-btn-text": "var(--thedock-accent-text)",
+    "--thedock-btn-border": "transparent",
+    "--thedock-radius": "12px",
+    "--thedock-radius-btn": "8px",
+    "--thedock-font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif",
+    "--thedock-shadow": "0 2px 10px rgba(0, 0, 0, 0.1)",
+    "--thedock-shadow-up": "0 -2px 10px rgba(0, 0, 0, 0.1)",
+    "--thedock-overlay": "rgba(0, 0, 0, 0.5)",
+    "--thedock-focus": "var(--thedock-accent)",
+    "--thedock-logo-h": "32px",
+    "--thedock-mono": "ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace",
+    "--thedock-primary-color": "var(--thedock-accent)",
+    "--thedock-primary-hover": "var(--thedock-accent-hover)",
+    "--thedock-text-color": "var(--thedock-text)",
+    "--thedock-text-light": "var(--thedock-muted)",
+    "--thedock-text-lighter": "var(--thedock-muted)",
+    "--thedock-bg-color": "var(--thedock-bg)",
+    "--thedock-bg-secondary": "var(--thedock-surface)",
+    "--thedock-bg-tertiary": "var(--thedock-surface)",
+    "--thedock-border-color": "var(--thedock-border)",
+    "--thedock-border-hover": "var(--thedock-border)",
+    "--thedock-overlay-color": "var(--thedock-overlay)",
+    "--thedock-btn-secondary-bg": "var(--thedock-surface)",
+    "--thedock-btn-secondary-hover": "var(--thedock-border)",
+    "--thedock-btn-secondary-border": "var(--thedock-border)",
+    "--thedock-shadow-sm": "rgba(0, 0, 0, 0.1)",
+    "--thedock-shadow-md": "rgba(0, 0, 0, 0.15)",
+    "--thedock-shadow-lg": "rgba(0, 0, 0, 0.2)",
+    "--thedock-blocked-bg-start": "#f8f9fa",
+    "--thedock-blocked-bg-end": "#f0f2f5",
+    "--thedock-blocked-border": "#d0d5dd",
+    "--thedock-blocked-border-hover": "#b5bac4"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/plugins/thedock-cookie/assets/css/public.css",
+   "selector": ".thedock-cookie-banner.thedock-bar",
+   "context": [
+    "@media (max-width: 480px)"
+   ],
+   "properties": {
+    "--thedock-logo-h": "24px"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/plugins/thedock-cookie/assets/css/public.css",
+   "selector": ".thedock-cookie-banner.thedock-banner--modal",
+   "context": [],
+   "properties": {
+    "--thedock-logo-h": "40px"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/plugins/thedock-cookie/assets/css/public.css",
+   "selector": ".thedock-modal-header",
+   "context": [],
+   "properties": {
+    "--thedock-logo-h": "28px"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/plugins/thedock-smart-search/assets/build/frontend.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--tdss-font-family": "inherit",
+    "--tdss-font-size": "inherit",
+    "--tdss-line-height": "1.45",
+    "--tdss-color-text": "#1e1e1e",
+    "--tdss-color-muted": "color-mix(in srgb,currentcolor 62%,transparent)",
+    "--tdss-color-border": "color-mix(in srgb,currentcolor 15%,transparent)",
+    "--tdss-color-accent": "currentcolor",
+    "--tdss-color-hover": "color-mix(in srgb,currentcolor 7%,transparent)",
+    "--tdss-color-mark": "color-mix(in srgb,currentcolor 14%,transparent)",
+    "--tdss-color-surface": "#fff",
+    "--tdss-space": "0.75rem",
+    "--tdss-radius": "6px",
+    "--tdss-field-padding": "0.5rem 0.75rem",
+    "--tdss-field-border": "var(--tdss-color-border)",
+    "--tdss-field-background": "transparent",
+    "--tdss-field-color": "inherit",
+    "--tdss-field-radius": "var(--tdss-radius)",
+    "--tdss-shadow": "0 8px 24px rgba(0,0,0,.12)",
+    "--tdss-transition": "120ms ease",
+    "--tdss-loading-opacity": "0.55",
+    "--tdss-loading-delay": "150ms",
+    "--tdss-z-index": "100000",
+    "--tdss-max-height": "70vh",
+    "--tdss-media-size": "3rem",
+    "--tdss-media-size-large": "7rem",
+    "--tdss-media-ratio": "1",
+    "--tdss-media-radius": "calc(var(--tdss-radius)*0.5)",
+    "--tdss-grid-min": "12rem",
+    "--tdss-showcase-min": "18rem",
+    "--tdss-toggle-size": "1.25em",
+    "--tdss-toggle-padding": "0.25em",
+    "--tdss-toggle-width": "20rem",
+    "--tdss-overlay-width": "40rem",
+    "--tdss-overlay-top": "12vh",
+    "--tdss-overlay-backdrop": "rgba(0,0,0,.45)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-7",
+   "selector": ".tdc :is(.woocommerce-error, .woocommerce-message, .woocommerce-info)",
+   "context": [],
+   "properties": {
+    "--tdc-notice-tone": "var(--tdc-accent, currentColor)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-7",
+   "selector": ".tdc .woocommerce-error",
+   "context": [],
+   "properties": {
+    "--tdc-notice-tone": "var(--tdc-danger)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-7",
+   "selector": ".tdc .woocommerce-message",
+   "context": [],
+   "properties": {
+    "--tdc-notice-tone": "var(--tdc-success)"
+   },
+   "bin": "vendor"
+  }
+ ],
+ "utility": [],
+ "tailwind": [],
+ "fonts": [
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"Neue Haas Grotesk Display Pro\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/Linotype - NHaasGroteskDSPro-46LtIt.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"Neue Haas Grotesk Display Pro\"",
+   "font-style": "italic",
+   "font-weight": "450",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/Linotype - NHaasGroteskDSPro-56It.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"Neue Haas Grotesk Display Pro\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/Linotype - NHaasGroteskDSPro-65Md.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"Neue Haas Grotesk Display Pro\"",
+   "font-style": "normal",
+   "font-weight": "450",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/Linotype - NHaasGroteskDSPro-55Rg.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"Neue Haas Grotesk Display Pro\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/Linotype - NHaasGroteskDSPro-76BdIt.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"Neue Haas Grotesk Display Pro\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/Linotype - NHaasGroteskDSPro-66MdIt.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"Neue Haas Grotesk Display Pro\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/Linotype - NHaasGroteskDSPro-75Bd.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"Neue Haas Grotesk Display Pro\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/Linotype - NHaasGroteskDSPro-45Lt.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"Neue Haas Grotesk Display Pro\"",
+   "font-style": "normal",
+   "font-weight": "300",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/Linotype - NHaasGroteskDSPro-25Th.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"Neue Haas Grotesk Display Pro\"",
+   "font-style": "italic",
+   "font-weight": "300",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/Linotype - NHaasGroteskDSPro-26ThIt.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"Neue Haas Grotesk Display Pro\"",
+   "font-style": "italic",
+   "font-weight": "350",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/Linotype - NHaasGroteskDSPro-36XLtIt.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"Neue Haas Grotesk Display Pro\"",
+   "font-style": "normal",
+   "font-weight": "350",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/Linotype - NHaasGroteskDSPro-35XLt.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"Neue Haas Grotesk Text Pro\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/Linotype - NHaasGroteskTXPro-66MdIt.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"Neue Haas Grotesk Text Pro\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/Linotype - NHaasGroteskTXPro-55Rg.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"Neue Haas Grotesk Text Pro\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/Linotype - NHaasGroteskTXPro-56It.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"Neue Haas Grotesk Text Pro\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/Linotype - NHaasGroteskTXPro-76BdIt.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"Neue Haas Grotesk Text Pro\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/Linotype - NHaasGroteskTXPro-75Bd.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"Neue Haas Grotesk Text Pro\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/Linotype - NHaasGroteskTXPro-65Md.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"Analog One V2.\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/AnalogOneV2.-Regular.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"digi one v2\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/digi-one-v2.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"digi slim\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/digi-slim.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "swap",
+   "font-family": "\"octa one international 12px\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "unicode-range": "U+0-10FFFF",
+   "src": "url(\"/wp-content/uploads/thedock-data/fonts/octa-one-international-12px.woff2\") format(\"woff2\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/style.css",
+   "font-display": "block",
+   "font-family": "skeleton",
+   "src": "url(\"data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAAYAAA0AAAAAESgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABoAAAAclcTxx09TLzIAAAFMAAAASwAAAGBRtV1jY21hcAAAAZgAAAC9AAABamglddJjdnQgAAACWAAAAAQAAAAEABEBRGdhc3AAAAJcAAAACAAAAAj//wADZ2x5ZgAAAmQAAACTAAAJdL6KsfZoZWFkAAAC+AAAAC4AAAA2GgvLb2hoZWEAAAMoAAAAGgAAACQC8ADFaG10eAAAA0QAAAATAAAAtAMAABFsb2NhAAADWAAAAK4AAACuaF5mEm1heHAAAAQIAAAAHwAAACAAmgA5bmFtZQAABCgAAAE5AAACNKbyxURwb3N0AAAFZAAAAJkAAADOCL0Ic3icY2BgYGQAgts30q6A6DvfXCthNABZwwgPAAB4nGNgYWRgnMDAysDA6MOYxsDA4A6lvzJIMrQwMDAxsHIywAAjAxIISHNNYWhgUGCoZTzw/wCDHuMBBgeYGsYDQB4DUI4RAOnYC70AeJxjYGBgZoBgGQZGBhBIAfIYwXwWBg8gzcfAwcDEwMagxKDFYM0QyxDPUPv/P1BcgUGNQYfBEchP/P///+P/D/7f/3/r/83/N6DmIAFGNga4ICMTkGBCVwB0AgsrkMHGzsHJxcDNw8vHLyAoJCwiKiYuISkFViMtIysnr6CopKyiqqauoamlraOrp29gaGRsYmpmzmDBYGllbWNrZ+/g6OTs4urm7uHp5e3j6+cfEBgUHBKK7iL6AwBJLiG7AAAAABEBRAAAAAH//wACeJztzrENwjAUBNA7O4nrXzBAREEHEm5dsERWyApZIStkBip7ggzCCmyAEmxCQYNESfG7r3un04eBAJjYwcLhGIlTSK7C/Ryb+haSNflEtCWuS5xcw0dILLkXLwcvexmHvme3XIU+rxFYZ4Jz3sROWiEuBgug9tXMh7lN21djxbu1Nf/pZzU1NTU1NbWf7QnZ5mwOAHicY2BkYGAAYrZdrHLx/DZfGbiZGEDgzjfXSgT9/wAjA+MBIJeDASwNAA4cCj0AAHicY2BkYGA88P8Agx6QAQSMYIQCWABQZgK3AAB4nGNkYBBkAAJGKB4KAAAOfQAVAAAAACoAKgAqADgARgBUAGIAcAB+AIwAmgCoALYAxADYAOYA9AECARABHgEsAToBSAFWAWQBcgGAAY4BnAGqAbgBxgHUAeIB8AH+AgwCGgIoAjYCRAJSAmACbgJ8AooCmAKmArQCwgLQAt4C7AL6AwgDFgMkAzIDQANOA1wDagN4A4YDlAOiA7ADvgPMA9oD6AP2BAQEEgQgBC4EPARKBFgEZgR0BIIEkASeBKwEugAAeJxjYGRgYAhj4GBgYgABEMnIABJzYNADCQAADScA1AB4nH2PvW7CMBSFj/krXSpeoJKHDiAR6mRAFStSVIkFMWToFhErWCQkMmFAVR+hax+hY5+vY0+MWTqQ6Mqfj4/vPQbwgB8IXL4xNp4Fhvj03MEdvj138YRfzz0MxbPnPkbizfOA+gedonfP3drdallghHfPHc798tzFKzNcuMc+j577kOLF84D6HktUqHGGhUGOHRpIZt5iwjWCYoWYkhMUSJHRVbIslRXdKanVS/Yw7hTLqj5bk+8aOd5OZKSicCqTIs1Maaxc7VJbpGVtMjqP2EPzuubQCgcKe13opiJtKOY4ud6WW52fipQQO2PjVkuHdilnzCmxYP1veVHbNwSYs64vQlwdmriyuZbRTMmFvI4mRmEwD9rcNxMmFC0Nxs9R/EOXRLk0SLQ9GjZUKpwppeStbn/Mg1tYAAAAeJxdzlkzggEARuGn1EXUWEJFubJU1iyRJcbQJoRC9t/dn8k3XXZu3plz8c4RNmI4kAkmZJzXkQ2bEBEVM2lKXMK0GbPmJM1bsCglHTwsWZaVs2LVmnUb8gqKNm3ZtmPXnpJ9Bw4dKTt2ouLUmXMXqi5duXbjVk1dQ1PLnbZ7Dx51PHn2oqsXdL151/fh05dvP379/QOXKRMwAAAA\") format(\"woff\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/custom.css",
+   "font-family": "elektron",
+   "src": "url(\"/wp-content/themes/thedock-child/fonts/elektron.ttf?85fbl7\") format(\"truetype\"), url(\"/wp-content/themes/thedock-child/fonts/elektron.woff?85fbl7\") format(\"woff\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "block"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/elements.css",
+   "font-family": "VideoJS",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"data:application/font-woff;charset=utf-8;base64,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\") format(\"woff\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/elements.css",
+   "font-display": "swap",
+   "font-family": "feather",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"/wp-content/themes/thedock-child/fonts/feather.woff2?v=2606\") format(\"woff\")"
+  },
+  {
+   "file": "https://www.elektron.se/wp-content/themes/thedock-child/elements.css",
+   "font-display": "swap",
+   "font-family": "brandicons",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(\"/wp-content/themes/thedock-child/fonts/brandicons.woff2?v=2606\") format(\"woff\")"
+  }
+ ],
+ "resolved": {
+  "dark": {
+   "--animation-delay": {
+    "raw": "0",
+    "kind": "number",
+    "value": 0
+   },
+   "--carousel-time-fast": {
+    "raw": "2000",
+    "kind": "number",
+    "value": 2000
+   },
+   "--carousel-time-normal": {
+    "raw": "3000",
+    "kind": "number",
+    "value": 3000
+   },
+   "--carousel-time-slow": {
+    "raw": "6000",
+    "kind": "number",
+    "value": 6000
+   },
+   "--td-motion-controls": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--tdc-accent": {
+    "raw": "#eeeef2",
+    "kind": "color",
+    "value": "#eeeef2"
+   },
+   "--tdc-accent-contrast": {
+    "raw": "#151515",
+    "kind": "color",
+    "value": "#151515"
+   },
+   "--tdc-bg": {
+    "raw": "#151515",
+    "kind": "color",
+    "value": "#151515"
+   },
+   "--tdc-border": {
+    "raw": "#444444",
+    "kind": "color",
+    "value": "#444444"
+   },
+   "--tdc-border-control": {
+    "raw": "color-mix(in srgb, #eeeef2 45%, #151515)",
+    "kind": "color",
+    "value": "#777778"
+   },
+   "--tdc-border-width": {
+    "raw": "2px",
+    "kind": "dimension",
+    "value": "2px"
+   },
+   "--tdc-border-width-control": {
+    "raw": "2px",
+    "kind": "dimension",
+    "value": "2px"
+   },
+   "--tdc-control-height": {
+    "raw": "3rem",
+    "kind": "dimension",
+    "value": "42px"
+   },
+   "--tdc-danger": {
+    "raw": "color-mix(in srgb, #d63638 70%, currentColor)",
+    "kind": "other",
+    "note": "depends on currentColor"
+   },
+   "--tdc-focus-ring": {
+    "raw": "#eeeef2",
+    "kind": "color",
+    "value": "#eeeef2"
+   },
+   "--tdc-font": {
+    "raw": "'Neue Haas Grotesk Text Pro'",
+    "kind": "fontFamily",
+    "value": "'Neue Haas Grotesk Text Pro'"
+   },
+   "--tdc-font-heading": {
+    "raw": "'Neue Haas Grotesk Display Pro'",
+    "kind": "fontFamily",
+    "value": "'Neue Haas Grotesk Display Pro'"
+   },
+   "--tdc-layout-width": {
+    "raw": "1100px",
+    "kind": "dimension",
+    "value": "1100px"
+   },
+   "--tdc-muted": {
+    "raw": "color-mix(in srgb, #eeeef2 75%, #151515)",
+    "kind": "color",
+    "value": "#b8b8bb"
+   },
+   "--tdc-radius": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--tdc-radius-control": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--tdc-space-1": {
+    "raw": "0.25rem",
+    "kind": "dimension",
+    "value": "3.5px"
+   },
+   "--tdc-space-2": {
+    "raw": "0.5rem",
+    "kind": "dimension",
+    "value": "7px"
+   },
+   "--tdc-space-3": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--tdc-space-4": {
+    "raw": "1.5rem",
+    "kind": "dimension",
+    "value": "21px"
+   },
+   "--tdc-space-5": {
+    "raw": "2.5rem",
+    "kind": "dimension",
+    "value": "35px"
+   },
+   "--tdc-success": {
+    "raw": "color-mix(in srgb, #1e7a3c 70%, currentColor)",
+    "kind": "other",
+    "note": "depends on currentColor"
+   },
+   "--tdc-surface": {
+    "raw": "#212121",
+    "kind": "color",
+    "value": "#212121"
+   },
+   "--tdc-text": {
+    "raw": "#eeeef2",
+    "kind": "color",
+    "value": "#eeeef2"
+   },
+   "--tdss-color-accent": {
+    "raw": "currentcolor",
+    "kind": "other",
+    "note": "depends on currentColor"
+   },
+   "--tdss-color-border": {
+    "raw": "color-mix(in srgb,currentcolor 15%,transparent)",
+    "kind": "other",
+    "note": "depends on currentColor"
+   },
+   "--tdss-color-hover": {
+    "raw": "color-mix(in srgb,currentcolor 7%,transparent)",
+    "kind": "other",
+    "note": "depends on currentColor"
+   },
+   "--tdss-color-mark": {
+    "raw": "color-mix(in srgb,currentcolor 14%,transparent)",
+    "kind": "other",
+    "note": "depends on currentColor"
+   },
+   "--tdss-color-muted": {
+    "raw": "color-mix(in srgb,currentcolor 62%,transparent)",
+    "kind": "other",
+    "note": "depends on currentColor"
+   },
+   "--tdss-color-surface": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--tdss-color-text": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--tdss-field-background": {
+    "raw": "transparent",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--tdss-field-border": {
+    "raw": "color-mix(in srgb,currentcolor 15%,transparent)",
+    "kind": "other",
+    "note": "depends on currentColor"
+   },
+   "--tdss-field-padding": {
+    "raw": "0.5rem 0.75rem",
+    "kind": "shadow",
+    "value": "rgb(238, 238, 242) 7px 10.5px 0px 0px"
+   },
+   "--tdss-field-radius": {
+    "raw": "6px",
+    "kind": "dimension",
+    "value": "6px"
+   },
+   "--tdss-grid-min": {
+    "raw": "12rem",
+    "kind": "dimension",
+    "value": "168px"
+   },
+   "--tdss-line-height": {
+    "raw": "1.45",
+    "kind": "number",
+    "value": 1.45
+   },
+   "--tdss-loading-delay": {
+    "raw": "150ms",
+    "kind": "duration",
+    "value": "0.15s"
+   },
+   "--tdss-loading-opacity": {
+    "raw": "0.55",
+    "kind": "number",
+    "value": 0.55
+   },
+   "--tdss-max-height": {
+    "raw": "70vh",
+    "kind": "dimension",
+    "value": "504px",
+    "note": "viewport-relative, resolved at 1440 x 900"
+   },
+   "--tdss-media-radius": {
+    "raw": "calc(6px*0.5)",
+    "kind": "dimension",
+    "value": "3px"
+   },
+   "--tdss-media-ratio": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--tdss-media-size": {
+    "raw": "3rem",
+    "kind": "dimension",
+    "value": "42px"
+   },
+   "--tdss-media-size-large": {
+    "raw": "7rem",
+    "kind": "dimension",
+    "value": "98px"
+   },
+   "--tdss-overlay-backdrop": {
+    "raw": "rgba(0,0,0,.45)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.45)"
+   },
+   "--tdss-overlay-top": {
+    "raw": "12vh",
+    "kind": "dimension",
+    "value": "86.3906px",
+    "note": "viewport-relative, resolved at 1440 x 900"
+   },
+   "--tdss-overlay-width": {
+    "raw": "40rem",
+    "kind": "dimension",
+    "value": "560px"
+   },
+   "--tdss-radius": {
+    "raw": "6px",
+    "kind": "dimension",
+    "value": "6px"
+   },
+   "--tdss-shadow": {
+    "raw": "0 8px 24px rgba(0,0,0,.12)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.12) 0px 8px 24px 0px"
+   },
+   "--tdss-showcase-min": {
+    "raw": "18rem",
+    "kind": "dimension",
+    "value": "252px"
+   },
+   "--tdss-space": {
+    "raw": "0.75rem",
+    "kind": "dimension",
+    "value": "10.5px"
+   },
+   "--tdss-toggle-padding": {
+    "raw": "0.25em",
+    "kind": "dimension",
+    "value": "3.5px"
+   },
+   "--tdss-toggle-size": {
+    "raw": "1.25em",
+    "kind": "dimension",
+    "value": "17.5px"
+   },
+   "--tdss-toggle-width": {
+    "raw": "20rem",
+    "kind": "dimension",
+    "value": "280px"
+   },
+   "--tdss-transition": {
+    "raw": "120ms ease",
+    "kind": "other"
+   },
+   "--tdss-z-index": {
+    "raw": "100000",
+    "kind": "number",
+    "value": 100000
+   },
+   "--thedock-accent": {
+    "raw": "#eeeef2",
+    "kind": "color",
+    "value": "#eeeef2"
+   },
+   "--thedock-accent-hover": {
+    "raw": "#eeeef2",
+    "kind": "color",
+    "value": "#eeeef2"
+   },
+   "--thedock-accent-text": {
+    "raw": "#151515",
+    "kind": "color",
+    "value": "#151515"
+   },
+   "--thedock-bg": {
+    "raw": "#151515",
+    "kind": "color",
+    "value": "#151515"
+   },
+   "--thedock-bg-color": {
+    "raw": "#151515",
+    "kind": "color",
+    "value": "#151515"
+   },
+   "--thedock-bg-secondary": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--thedock-bg-tertiary": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--thedock-blocked-bg-end": {
+    "raw": "#f0f2f5",
+    "kind": "color",
+    "value": "#f0f2f5"
+   },
+   "--thedock-blocked-bg-start": {
+    "raw": "#f8f9fa",
+    "kind": "color",
+    "value": "#f8f9fa"
+   },
+   "--thedock-blocked-border": {
+    "raw": "#d0d5dd",
+    "kind": "color",
+    "value": "#d0d5dd"
+   },
+   "--thedock-blocked-border-hover": {
+    "raw": "#b5bac4",
+    "kind": "color",
+    "value": "#b5bac4"
+   },
+   "--thedock-border": {
+    "raw": "#363636",
+    "kind": "color",
+    "value": "#363636"
+   },
+   "--thedock-border-color": {
+    "raw": "#363636",
+    "kind": "color",
+    "value": "#363636"
+   },
+   "--thedock-border-hover": {
+    "raw": "#363636",
+    "kind": "color",
+    "value": "#363636"
+   },
+   "--thedock-btn-bg": {
+    "raw": "#eeeef2",
+    "kind": "color",
+    "value": "#eeeef2"
+   },
+   "--thedock-btn-border": {
+    "raw": "transparent",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--thedock-btn-secondary-bg": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--thedock-btn-secondary-border": {
+    "raw": "#363636",
+    "kind": "color",
+    "value": "#363636"
+   },
+   "--thedock-btn-secondary-hover": {
+    "raw": "#363636",
+    "kind": "color",
+    "value": "#363636"
+   },
+   "--thedock-btn-text": {
+    "raw": "#151515",
+    "kind": "color",
+    "value": "#151515"
+   },
+   "--thedock-focus": {
+    "raw": "#eeeef2",
+    "kind": "color",
+    "value": "#eeeef2"
+   },
+   "--thedock-font": {
+    "raw": "\"Neue Haas Grotesk Text Pro\"",
+    "kind": "fontFamily",
+    "value": "\"Neue Haas Grotesk Text Pro\""
+   },
+   "--thedock-logo-h": {
+    "raw": "32px",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--thedock-mono": {
+    "raw": "ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace",
+    "kind": "fontFamily",
+    "value": "ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace"
+   },
+   "--thedock-muted": {
+    "raw": "#97979a",
+    "kind": "color",
+    "value": "#97979a"
+   },
+   "--thedock-overlay": {
+    "raw": "rgba(0, 0, 0, 0.5)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.5)"
+   },
+   "--thedock-overlay-color": {
+    "raw": "rgba(0, 0, 0, 0.5)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.5)"
+   },
+   "--thedock-primary-color": {
+    "raw": "#eeeef2",
+    "kind": "color",
+    "value": "#eeeef2"
+   },
+   "--thedock-primary-hover": {
+    "raw": "#eeeef2",
+    "kind": "color",
+    "value": "#eeeef2"
+   },
+   "--thedock-radius": {
+    "raw": "0",
+    "kind": "number",
+    "value": 0
+   },
+   "--thedock-radius-btn": {
+    "raw": "0",
+    "kind": "number",
+    "value": 0
+   },
+   "--thedock-shadow": {
+    "raw": "none",
+    "kind": "shadow",
+    "value": "none"
+   },
+   "--thedock-shadow-lg": {
+    "raw": "rgba(0, 0, 0, 0.2)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.2)"
+   },
+   "--thedock-shadow-md": {
+    "raw": "rgba(0, 0, 0, 0.15)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.15)"
+   },
+   "--thedock-shadow-sm": {
+    "raw": "rgba(0, 0, 0, 0.1)",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0.1)"
+   },
+   "--thedock-shadow-up": {
+    "raw": "none",
+    "kind": "shadow",
+    "value": "none"
+   },
+   "--thedock-surface": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--thedock-text": {
+    "raw": "#eeeef2",
+    "kind": "color",
+    "value": "#eeeef2"
+   },
+   "--thedock-text-color": {
+    "raw": "#eeeef2",
+    "kind": "color",
+    "value": "#eeeef2"
+   },
+   "--thedock-text-light": {
+    "raw": "#97979a",
+    "kind": "color",
+    "value": "#97979a"
+   },
+   "--thedock-text-lighter": {
+    "raw": "#97979a",
+    "kind": "color",
+    "value": "#97979a"
+   },
+   "--wp-internal-comment": {
+    "raw": "\"Placeholder for wp_hoist_late_printed_styles() to replace with the global-styles printed at wp_footer.\"",
+    "kind": "fontFamily",
+    "value": "\"Placeholder for wp_hoist_late_printed_styles() to replace with the global-styles printed at wp_footer.\""
+   }
+  }
+ }
+}

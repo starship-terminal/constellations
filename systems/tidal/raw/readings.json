@@ -1,0 +1,25 @@
+{
+  "captured": "2026-11-19",
+  "harness": "T3 preview browser, grok-4.7",
+  "route": "web-inspector",
+  "viewport": {
+    "desktop": {"innerWidth": 1440, "innerHeight": 900, "devicePixelRatio": 2, "visualViewportScale": 1},
+    "fill": {"innerWidth": 1169, "innerHeight": 731, "devicePixelRatio": 2, "visualViewportScale": 1},
+    "phone": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2, "visualViewportScale": 1}
+  },
+  "pages": [
+    "https://tidal.com/",
+    "https://tidal.com/view/pages/explore",
+    "https://login.tidal.com/authorize",
+    "https://offer.tidal.com/download"
+  ],
+  "screenshot": "The preview browser returned: The browser is not producing screenshot frames. Headless Playwright against https://tidal.com/ returned HTTP 403 and a block page. No screenshot is stored.",
+  "theme": "dark only. prefers-color-scheme matched dark. No light theme switch was on the public chrome.",
+  "notEntered": [
+    "No paid plan started",
+    "No card entered",
+    "Continue, Continue with Passkey, Continue with Google and Continue with Apple were not clicked",
+    "No email submitted on the authorize form",
+    "Cookie Accept and Reject were not clicked"
+  ]
+}

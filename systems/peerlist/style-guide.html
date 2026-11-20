@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Peerlist style guide</title>
+<style>
+  body { margin: 0; font: 400 16px/24px Geist, ui-sans-serif, system-ui, sans-serif; color: #0d0d0d; background: #fff; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+  h1 { font-weight: 400; font-size: 40px; line-height: 48px; margin: 0 0 8px; }
+  h2 { font-size: 20px; margin: 32px 0 12px; }
+  p { color: #334155; max-width: 68ch; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .sw { display: flex; gap: 10px; align-items: center; }
+  .sw i { width: 36px; height: 36px; border-radius: 8px; border: 1px solid #e2e8f0; display: block; }
+  .sw b { display: block; font-size: 13px; }
+  .sw span { font-size: 12px; color: #64748b; }
+  .btn { display: inline-flex; align-items: center; height: 32px; padding: 6px 16px; border-radius: 12px; font-weight: 600; font-size: 14px; }
+  .primary { background: rgb(0 170 69); color: #fff; border: 1px solid rgb(30 135 75); }
+  .secondary { background: #fff; color: rgb(13 13 13); border: 1px solid rgb(226 232 240); }
+  .dark { background: rgb(15 23 42); color: #fff; border: 1px solid rgb(13 13 13); height: 40px; border-radius: 16px; padding: 8px 24px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e2e8f0; }
+  code { font-family: ui-monospace, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Peerlist</h1>
+  <p>Public signed-out surfaces measured on 18 November 2026. The live pages stayed on the light class. Dark gray tokens are declared in the stylesheet and listed in tokens.json, not painted here.</p>
+  <h2>Colour</h2>
+  <div class="grid"><div class="sw"><i style="background:#ffffff"></i><div><b>gray.00</b><span>#ffffff</span></div></div><div class="sw"><i style="background:#f8f9fb"></i><div><b>gray.25</b><span>#f8f9fb</span></div></div><div class="sw"><i style="background:#f8fafc"></i><div><b>gray.50</b><span>#f8fafc</span></div></div><div class="sw"><i style="background:#f1f5f9"></i><div><b>gray.100</b><span>#f1f5f9</span></div></div><div class="sw"><i style="background:#e2e8f0"></i><div><b>gray.200</b><span>#e2e8f0</span></div></div><div class="sw"><i style="background:#cbd5e1"></i><div><b>gray.300</b><span>#cbd5e1</span></div></div><div class="sw"><i style="background:#94a3b8"></i><div><b>gray.400</b><span>#94a3b8</span></div></div><div class="sw"><i style="background:#64748b"></i><div><b>gray.500</b><span>#64748b</span></div></div><div class="sw"><i style="background:#475569"></i><div><b>gray.600</b><span>#475569</span></div></div><div class="sw"><i style="background:#334155"></i><div><b>gray.700</b><span>#334155</span></div></div><div class="sw"><i style="background:#1e293b"></i><div><b>gray.800</b><span>#1e293b</span></div></div><div class="sw"><i style="background:#0f172a"></i><div><b>gray.900</b><span>#0f172a</span></div></div><div class="sw"><i style="background:#0d0d0d"></i><div><b>gray.1k</b><span>#0d0d0d</span></div></div><div class="sw"><i style="background:#171717"></i><div><b>gray-dark.00</b><span>#171717</span></div></div><div class="sw"><i style="background:#1e1e1e"></i><div><b>gray-dark.25</b><span>#1e1e1e</span></div></div><div class="sw"><i style="background:#262626"></i><div><b>gray-dark.50</b><span>#262626</span></div></div><div class="sw"><i style="background:#333333"></i><div><b>gray-dark.100</b><span>#333333</span></div></div><div class="sw"><i style="background:#404040"></i><div><b>gray-dark.200</b><span>#404040</span></div></div><div class="sw"><i style="background:#525252"></i><div><b>gray-dark.300</b><span>#525252</span></div></div><div class="sw"><i style="background:#737373"></i><div><b>gray-dark.400</b><span>#737373</span></div></div><div class="sw"><i style="background:#8a8a8a"></i><div><b>gray-dark.500</b><span>#8a8a8a</span></div></div><div class="sw"><i style="background:#a3a3a3"></i><div><b>gray-dark.600</b><span>#a3a3a3</span></div></div><div class="sw"><i style="background:#d4d4d4"></i><div><b>gray-dark.700</b><span>#d4d4d4</span></div></div><div class="sw"><i style="background:#e5e5e5"></i><div><b>gray-dark.800</b><span>#e5e5e5</span></div></div><div class="sw"><i style="background:#f5f5f5"></i><div><b>gray-dark.900</b><span>#f5f5f5</span></div></div><div class="sw"><i style="background:#fafafa"></i><div><b>gray-dark.1k</b><span>#fafafa</span></div></div><div class="sw"><i style="background:#00aa45"></i><div><b>green</b><span>#00aa45</span></div></div><div class="sw"><i style="background:#e3f5ea"></i><div><b>green-00</b><span>#e3f5ea</span></div></div><div class="sw"><i style="background:#6fcf97"></i><div><b>green-100</b><span>#6fcf97</span></div></div><div class="sw"><i style="background:#52c078"></i><div><b>green-200</b><span>#52c078</span></div></div><div class="sw"><i style="background:#1e874b"></i><div><b>green-500</b><span>#1e874b</span></div></div><div class="sw"><i style="background:#015300"></i><div><b>green-800</b><span>#015300</span></div></div><div class="sw"><i style="background:#219653"></i><div><b>mark-stroke</b><span>#219653</span></div></div><div class="sw"><i style="background:#eb5757"></i><div><b>red</b><span>#eb5757</span></div></div><div class="sw"><i style="background:#ffeaea"></i><div><b>red-00</b><span>#ffeaea</span></div></div><div class="sw"><i style="background:#f47974"></i><div><b>red-200</b><span>#f47974</span></div></div><div class="sw"><i style="background:#c20d0d"></i><div><b>red-600</b><span>#c20d0d</span></div></div><div class="sw"><i style="background:#f97316"></i><div><b>orange</b><span>#f97316</span></div></div><div class="sw"><i style="background:#2f80ed"></i><div><b>blue</b><span>#2f80ed</span></div></div><div class="sw"><i style="background:#1b86ff"></i><div><b>blue-figma</b><span>#1b86ff</span></div></div><div class="sw"><i style="background:#ffffff"></i><div><b>white</b><span>#ffffff</span></div></div><div class="sw"><i style="background:#000000"></i><div><b>ink</b><span>#000000</span></div></div></div>
+  <h2>Buttons</h2>
+  <p>
+    <span class="btn primary">Create Profile</span>
+    <span class="btn secondary">Log in</span>
+    <span class="btn dark">Login</span>
+  </p>
+  <h2>Type</h2>
+  <table><tr><th>Role</th><th>Value</th></tr>
+  <tr><td><code>body</code></td><td>fontFamily {font.family.ui} / fontSize 16px / fontWeight 400 / lineHeight 24px</td></tr><tr><td><code>display</code></td><td>fontFamily {font.family.display} / fontSize 48px / fontWeight 400 / lineHeight 57.6px</td></tr><tr><td><code>section</code></td><td>fontFamily {font.family.display} / fontSize 40px / fontWeight 400 / lineHeight 48px</td></tr><tr><td><code>title</code></td><td>fontFamily {font.family.ui} / fontSize 20px / fontWeight 600 / lineHeight 28px</td></tr><tr><td><code>subhead</code></td><td>fontFamily {font.family.ui} / fontSize 18px / fontWeight 400 / lineHeight 28px</td></tr><tr><td><code>ui</code></td><td>fontFamily {font.family.ui} / fontSize 14px / fontWeight 500 / lineHeight 20px</td></tr><tr><td><code>label</code></td><td>fontFamily {font.family.ui} / fontSize 14px / fontWeight 600 / lineHeight 20px</td></tr><tr><td><code>field</code></td><td>fontFamily {font.family.ui} / fontSize 14px / fontWeight 400 / lineHeight 20px</td></tr><tr><td><code>username</code></td><td>fontFamily {font.family.ui} / fontSize 20px / fontWeight 400 / lineHeight 28px</td></tr><tr><td><code>fine</code></td><td>fontFamily {font.family.ui} / fontSize 12px / fontWeight 600 / lineHeight 16px</td></tr><tr><td><code>app-title</code></td><td>fontFamily {font.family.ui} / fontSize 16px / fontWeight 600 / lineHeight 22px</td></tr>
+  </table>
+  <h2>Radius</h2>
+  <table><tr><th>Step</th><th>Value</th></tr>
+  <tr><td><code>sm</code></td><td>2px</td></tr><tr><td><code>md</code></td><td>6px</td></tr><tr><td><code>control</code></td><td>8px</td></tr><tr><td><code>button</code></td><td>12px</td></tr><tr><td><code>card</code></td><td>16px</td></tr><tr><td><code>nav</code></td><td>24px</td></tr><tr><td><code>pill</code></td><td>9999px</td></tr><tr><td><code>check</code></td><td>4px</td></tr>
+  </table>
+  <h2>Spacing</h2>
+  <table><tr><th>Step</th><th>Value</th></tr>
+  <tr><td><code>1</code></td><td>4px</td></tr><tr><td><code>2</code></td><td>8px</td></tr><tr><td><code>3</code></td><td>12px</td></tr><tr><td><code>4</code></td><td>16px</td></tr><tr><td><code>5</code></td><td>20px</td></tr><tr><td><code>6</code></td><td>24px</td></tr><tr><td><code>header</code></td><td>56px</td></tr><tr><td><code>control</code></td><td>32px</td></tr><tr><td><code>control-lg</code></td><td>40px</td></tr><tr><td><code>shell</code></td><td>568px</td></tr><tr><td><code>auth</code></td><td>380px</td></tr><tr><td><code>field</code></td><td>446px</td></tr><tr><td><code>feed</code></td><td>640px</td></tr>
+  </table>
+</main>
+</body>
+</html>

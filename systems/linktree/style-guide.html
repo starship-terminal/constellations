@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linktree style guide</title>
+<meta name="description" content="Linktree (linktr.ee) design tokens and the public site's components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-shade: #1e2330;
+  --color-forest: #254f1a;
+  --color-dahlia: #502274;
+  --color-chartreuse: #d2e823;
+  --color-lavender: #e9c0e9;
+  --color-marble: #f3f3f1;
+  --typography-display-fontFamily: Linksans;
+  --typography-display-fontSize: 80px;
+  --typography-display-fontWeight: 800;
+  --typography-display-lineHeight: 85.6px;
+  --typography-body-fontFamily: Linksans;
+  --typography-body-fontSize: 16px;
+  --typography-body-fontWeight: 400;
+  --typography-body-lineHeight: 20.8px;
+  --typography-label-fontFamily: Linksans;
+  --typography-label-fontSize: 16px;
+  --typography-label-fontWeight: 400;
+  --typography-label-lineHeight: 24px;
+  --typography-caption-fontFamily: Link Sans Product;
+  --typography-caption-fontSize: 24px;
+  --typography-caption-fontWeight: 600;
+  --typography-caption-lineHeight: 28.8px;
+  --layout-sm: 480px;
+  --layout-md: 768px;
+  --layout-lg: 992px;
+  --layout-xl: 1280px;
+  --page: #ffffff;
+  --surface: #ffffff;
+  --band: #502274;
+  --hero: #d2e823;
+  --text: #1e2330;
+  --textInverse: #ffffff;
+  --muted: rgba(0, 0, 0, 0.75);
+  --accent: #254f1a;
+  --border: #e5e7eb;
+  --link: #676b5f;
+  --focus: #1e2330;
+  --button: #1e2330;
+  --buttonText: #ffffff;
+  --component-control-radiusPill: 9999px;
+  --component-control-heightNav: 62px;
+  --component-control-heightField: 60px;
+  --component-header-height: 138px;
+  --component-motion-duration: 150ms;
+  --sg-sans: "Linksans", "Link Sans Product", system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #1e2330); background: var(--page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 800 48px/1.07 var(--sg-sans); margin: 0 0 8px; color: var(--accent, #254f1a); letter-spacing: -0.03em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--muted, rgba(0,0,0,.75)); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border, #e5e7eb); }
+.lead { max-width: 68ch; color: var(--text, #1e2330); }
+.note { font-size: 13px; color: var(--link, #676b5f); max-width: 68ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--link, #676b5f); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 180px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, #e5e7eb); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--link, #676b5f); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--link, #676b5f); }
+.mock { border: 1px solid var(--border, #e5e7eb); border-radius: 24px; overflow: hidden; background: var(--page, #fff); }
+.navbar { display: flex; align-items: center; gap: 10px; min-height: 72px; padding: 16px 28px; background: var(--surface, #fff); font-size: 16px; }
+.navbar .wm { margin-right: auto; font: 800 22px/1 var(--sg-sans); color: var(--accent, #254f1a); }
+.pill { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 22px; border-radius: var(--component-control-radiusPill, 9999px); font: 400 16px/1 var(--sg-sans); }
+.pill.ink { background: var(--button, #1e2330); color: var(--buttonText, #fff); }
+.pill.ghost { color: var(--text, #1e2330); }
+.hero { padding: 48px 40px 36px; }
+.hero .t { font: 800 56px/1.07 var(--sg-sans); color: var(--accent, #254f1a); max-width: 14ch; letter-spacing: -0.03em; }
+.hero .row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+.field { display: flex; align-items: center; height: var(--component-control-heightField, 60px); min-width: 240px; border-radius: 8px; padding: 0 16px; background: var(--surface, #fff); border: 1px solid var(--border, #e5e7eb); color: var(--link, #676b5f); }
+.band { background: var(--band, #502274); color: var(--color-lavender, #e9c0e9); padding: 36px 40px; font: 800 32px/1.1 var(--sg-sans); }
+.sp { border-top: 1px solid var(--border, #e5e7eb); padding: 14px 0 18px; }
+.sp-nm { font: 500 11px/1 var(--sg-mono); color: var(--link, #676b5f); }
+.sp-vl { font: 400 11px/1.6 var(--sg-mono); color: var(--link, #676b5f); margin: 2px 0 10px; }
+.sp-sample { overflow-wrap: anywhere; color: var(--text, #1e2330); }
+@media (max-width: 700px) {
+  .navbar { flex-wrap: wrap; padding: 12px 16px; }
+  .hero { padding: 28px 20px; }
+  .hero .t { font-size: 36px; }
+  .band { padding: 24px 20px; font-size: 24px; }
+}
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border, #e5e7eb); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Linktree style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch and metric below is a token, not a restated number.</p>
+
+  <h2 class="sh">Linktree, measured</h2>
+  <p class="lead">Every value on this page is a computed style or a resolved custom property recorded in <code>tokens.json</code>. The public site paints one light theme: a white page, forest-green display type, an ink pill for Sign up free, and a dahlia footer. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from linktr.ee on 2026-11-18, signed out, in headless Chromium. Consent overlays were hidden, never clicked. The login wall was measured and not submitted. No claim, checkout or share was sent.</p>
+
+  <h2 class="sh">The site chrome</h2>
+  <p class="lead">The marketing nav sits on the white page: the wordmark, text links, and a 9999px-radius ink pill. The hero title is forest green. The footer is a dahlia band.</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm">Linktree</span><span class="pill ghost">Pricing</span><span class="pill ghost">Log in</span><span class="pill ink">Sign up free</span></div>
+    <div class="hero">
+      <div class="t">A link in bio built for you.</div>
+      <div class="row"><span class="pill ink">Get started for free</span><span class="field">linktr.ee/yourname</span></div>
+    </div>
+    <div class="band">Jumpstart your corner of the internet</div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead"><code>light.page</code> and <code>light.surface</code> are the painted white. <code>light.text</code> and <code>light.button</code> are the ink shade. <code>light.accent</code> is the forest hero colour. <code>light.band</code> is the dahlia footer. Brand names under <code>core.color</code> are resolved Tailwind theme variables.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Styles under <code>core.typography</code>, rendered at their measured size, weight and line-height. The guide falls back to the system stack when Linksans is absent.</p>
+  <div id="type-out"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <p class="lead">The signup pill radius and height, the claim field height, the marketing nav height, and the signup transition.</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read computed styles on the elements of the live page</td></tr><tr><td>No states</td><td>Hover, focus-visible and pressed (CDP-forced) states measured per component</td></tr><tr><td>No provenance</td><td>Every token names the measurement or CSS variable it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"black":{"v":"#000000","t":"color","s":"css-var --color-black resolved on the light probe","d":"Tailwind theme --color-black"},"white":{"v":"#ffffff","t":"color","s":"css-var --color-white resolved on the light probe","d":"Tailwind theme --color-white"},"shade":{"v":"#1e2330","t":"color","s":"css-var --color-shade resolved on the light probe","d":"Tailwind theme --color-shade"},"forest":{"v":"#254f1a","t":"color","s":"css-var --color-forest resolved on the light probe","d":"Tailwind theme --color-forest"},"dahlia":{"v":"#502274","t":"color","s":"css-var --color-dahlia resolved on the light probe","d":"Tailwind theme --color-dahlia"},"chartreuse":{"v":"#d2e823","t":"color","s":"css-var --color-chartreuse resolved on the light probe","d":"Tailwind theme --color-chartreuse"},"lavender":{"v":"#e9c0e9","t":"color","s":"css-var --color-lavender resolved on the light probe","d":"Tailwind theme --color-lavender"},"marble":{"v":"#f3f3f1","t":"color","s":"css-var --color-marble resolved on the light probe","d":"Tailwind theme --color-marble"}},"typography":{"display":{"v":{"fontFamily":"Linksans","fontSize":"80px","fontWeight":800,"lineHeight":"85.6px"},"t":"typography","s":"computed fontFamily of hero-title default text; computed fontSize of hero-title default text; computed fontWeight of hero-title default text; computed lineHeight of hero-title default text"},"body":{"v":{"fontFamily":"Linksans","fontSize":"16px","fontWeight":400,"lineHeight":"20.8px"},"t":"typography","s":"computed fontFamily of nav-link default text; computed fontSize of nav-link default text; computed fontWeight of nav-link default text; computed lineHeight of nav-link default text"},"label":{"v":{"fontFamily":"Linksans","fontSize":"16px","fontWeight":400,"lineHeight":"24px"},"t":"typography","s":"computed fontFamily of nav-signup default text; computed fontSize of nav-signup default text; computed fontWeight of nav-signup default text; computed lineHeight of nav-signup default text"},"caption":{"v":{"fontFamily":"Link Sans Product","fontSize":"24px","fontWeight":600,"lineHeight":"28.8px"},"t":"typography","s":"computed fontFamily of profile-title default text; computed fontSize of profile-title default text; computed fontWeight of profile-title default text; computed lineHeight of profile-title default text"}},"layout":{"sm":{"v":"480px","t":"dimension","s":"css-var --breakpoint-sm resolved on the light probe","d":"Tailwind --breakpoint-sm"},"md":{"v":"768px","t":"dimension","s":"css-var --breakpoint-md resolved on the light probe","d":"Tailwind --breakpoint-md"},"lg":{"v":"992px","t":"dimension","s":"css-var --breakpoint-lg resolved on the light probe","d":"Tailwind --breakpoint-lg"},"xl":{"v":"1280px","t":"dimension","s":"css-var --breakpoint-xl resolved on the light probe","d":"Tailwind --breakpoint-xl"}}},"light":{"page":{"v":"#ffffff","t":"color","s":"computed backgroundColor of claim-field default","d":"Claim field fill, the painted page ground"},"surface":{"v":"#ffffff","t":"color","s":"computed backgroundColor of claim-field default","d":"Claim field fill"},"band":{"v":"#502274","t":"color","s":"computed backgroundColor of footer default","d":"Footer band fill"},"hero":{"v":"#d2e823","t":"color","s":"css-var --color-chartreuse resolved on the light probe","d":"Hero band fill on the marketing home"},"text":{"v":"#1e2330","t":"color","s":"computed color of nav-link default","d":"Nav link ink"},"textInverse":{"v":"#ffffff","t":"color","s":"computed color of nav-signup default","d":"Ink on the signup pill"},"muted":{"v":"rgba(0, 0, 0, 0.75)","t":"color","s":"computed color of profile-badge default","d":"Verified badge ink"},"accent":{"v":"#254f1a","t":"color","s":"computed color of hero-title default","d":"Hero title colour"},"border":{"v":"#e5e7eb","t":"color","s":"computed borderTopColor of login-field default","d":"Login field border"},"link":{"v":"#676b5f","t":"color","s":"computed color of footer-link default","d":"Footer link ink"},"focus":{"v":"#1e2330","t":"color","s":"computed focus ring (box-shadow 4px spread, outermost layer) of nav-login focus-visible","d":"Keyboard focus ring on the Log in link (the Sign up pill, hero and claim buttons draw the same ring)"},"button":{"v":"#1e2330","t":"color","s":"computed backgroundColor of nav-signup default","d":"Sign up free pill fill"},"buttonText":{"v":"#ffffff","t":"color","s":"computed color of nav-signup default","d":"Sign up free pill label"},"component":{"control":{"radiusPill":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of nav-signup default","d":"Signup pill radius"},"heightNav":{"v":"62px","t":"dimension","s":"computed height of nav-signup default","d":"Signup pill height"},"heightField":{"v":"60px","t":"dimension","s":"computed height of claim-field default","d":"Claim field height"}},"header":{"height":{"v":"138px","t":"dimension","s":"computed height of navbar default","d":"Marketing nav height"}},"motion":{"duration":{"v":"150ms","t":"duration","s":"computed transitionDuration of nav-signup default","d":"Signup pill transition"}}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (roles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
+    const v = t.v;
+    const family = v.fontFamily || 'Linksans';
+    const weight = v.fontWeight || 400;
+    const size = v.fontSize || '16px';
+    const lh = v.lineHeight || '1.3';
+    h += `<div class="sp"><div class="sp-nm">${esc(n)}</div><div class="sp-vl">${esc(family)} ${esc(weight)} ${esc(size)}/${esc(lh)}</div>`
+      + `<div class="sp-sample" style="font-family:${esc(family)}, var(--sg-sans);font-weight:${esc(weight)};font-size:${esc(size)};line-height:${esc(lh)}">A link in bio built for you.</div></div>`;
+  }
+  $('#type-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat(TOK.light && TOK.light.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+</script>
+</body>
+</html>

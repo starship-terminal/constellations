@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doppler style guide</title>
+<meta name="description" content="Doppler design tokens and the public signed-out marketing surface's components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Doppler Repro", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: "Doppler Repro Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --sg-inter: Inter, "Doppler Repro", ui-sans-serif, system-ui, sans-serif;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #f1f0ec); background: var(--page, #1c1624); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 450 40px/1.1 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 450 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted, #d0c9c4); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border, rgba(255,255,255,0.08)); }
+.lead { max-width: 62ch; color: var(--text, #f1f0ec); }
+.note { font-size: 13px; color: var(--muted, #d0c9c4); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; color: var(--code, #f55c15); }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, #d0c9c4); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--warm-basalt, #241e2c); padding: 12px; border-radius: 8px; }
+.pal.dark .nm, .pal.dark .vl { color: var(--text, #f1f0ec); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, rgba(255,255,255,0.08)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); color: var(--text, #f1f0ec); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--muted, #d0c9c4); }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border, rgba(255,255,255,0.08)); background: var(--surface, rgba(242,241,237,0.04)); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--muted, #d0c9c4); }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border, rgba(255,255,255,0.08)); overflow: hidden; background: var(--page, #1c1624); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 72px); padding: 0 12px 0 22px; font: 700 15px/15px var(--sg-sans); letter-spacing: .15px; color: var(--text, #f1f0ec); background: var(--page, #1c1624); border: 1px solid var(--borderStrong, #55505b); border-top: none; border-radius: 0 0 var(--component-header-radiusBottom, 16px) var(--component-header-radiusBottom, 16px); }
+.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+.navbar .ln { color: var(--muted, #d0c9c4); }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightButton, 45px); padding: 0 16px; font-size: 15px; font-weight: 700; border-radius: var(--component-radius-button, 12px); border: 1px solid transparent; }
+.btn.nav { height: var(--component-control-heightNavCta, 36px); font-size: 15px; }
+.btn.primary { background: var(--accent, #00f575); color: var(--accentText, #1c1624); }
+.btn.outline { border-color: var(--text, #f1f0ec); color: var(--text, #f1f0ec); }
+.hero { color: var(--text, #f1f0ec); padding: 64px 40px; font: 450 var(--font-size-h3, 48px)/1.2 var(--sg-sans); letter-spacing: -0.96px; text-align: left; }
+.hero .grad { background: var(--gradient-headline, linear-gradient(91deg, #855aff 14.92%, #ff5632 90.53%)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero small { display: block; font: 400 var(--font-size-p2, 18px)/1.4 var(--sg-sans); color: var(--muted, #d0c9c4); letter-spacing: -0.18px; margin: 16px 0 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border, rgba(255,255,255,0.08)); padding: 14px; font-size: 13px; background: var(--surface, rgba(242,241,237,0.04)); border-radius: var(--component-radius-card, 20px); position: relative; overflow: hidden; }
+.tile::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--gradient-cardSheen, linear-gradient(100deg, rgba(255,255,255,0.16) -7%, rgba(255,255,255,0) 28%)); pointer-events: none; }
+.tile b { display: block; font: 450 18px/1.25 var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { color: var(--muted, #d0c9c4); font-size: 12px; }
+.chip { display: inline-flex; align-items: center; height: var(--component-control-heightChip, 22px); padding: 0 10px; border-radius: 9999px; background: var(--chip, #2d2734); color: var(--text, #f1f0ec); font: 700 10px/10px var(--sg-sans); letter-spacing: 1px; text-transform: uppercase; }
+.chip.on { background: var(--chipActive, #b997ff); color: var(--chipActiveText, #1c1624); }
+.chip.badge { background: var(--badge, #302c37); }
+.field { display: block; width: 260px; height: var(--component-control-heightField, 43px); padding: 0 14px; border-radius: var(--component-radius-field, 16px); border: 1px solid var(--field, #8b877d); background: transparent; color: var(--text, #f1f0ec); font: 400 var(--font-size-p2, 18px)/1.4 var(--sg-sans); }
+.field.focus { border-color: var(--fieldFocus, #b997ff); }
+.codechip { display: inline-block; padding: 2px 8px; border-radius: var(--component-radius-codeChip, 6px); background: var(--codeSurface, rgba(242,241,237,0.04)); color: var(--code, #f55c15); font: 400 var(--font-size-code, 16px)/1.6 var(--sg-mono); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border, rgba(255,255,255,0.08)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border, rgba(255,255,255,0.08)); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--muted, #d0c9c4); font-family: var(--sg-mono); }
+.faq { border-bottom: 1px solid var(--border, rgba(255,255,255,0.08)); padding: 16px 0; }
+.faq .q { display: flex; justify-content: space-between; font: 500 var(--font-size-p2, 18px)/1.2 var(--sg-sans); }
+.faq .a { color: var(--muted, #d0c9c4); font: 400 var(--font-size-p2, 18px)/1.4 var(--sg-inter); margin-top: 10px; max-width: 60ch; }
+.ftr { background: var(--page, #1c1624); border: 1px solid var(--border, rgba(255,255,255,0.08)); border-radius: var(--component-footer-radiusTop, 20px) var(--component-footer-radiusTop, 20px) 0 0; padding: 32px; }
+.ftr .lnk { display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border: 2px solid var(--border, rgba(255,255,255,0.08)); border-radius: var(--component-radius-card, 20px); background: var(--surface, rgba(242,241,237,0.04)); font: 400 var(--font-size-small, 12px)/12px var(--sg-sans); letter-spacing: .36px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Doppler style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Doppler, measured</h2>
+  <p class="lead">doppler.com's public surface is a Next.js/Tailwind marketing site painting a single dark theme: a warm-black #1c1624 field, warm-white #f1f0ec text muted to silver #d0c9c4, a fluorescent-green #00f575 CTA that drops to #00bf5b on hover, lilac-to-carmine gradient headlines, and a named accent set (brand-orange #f55c15, purple #6b13f5, light-purple #b997ff). Cards are .interactive-card tiles — a 4% warm-white veil at 20px radius with a diagonal sheen; buttons are 12px radii; fields 16px with aluminum borders that turn light-purple on focus. The token layer lives in named utilities (.bg-warm-black, .text-silver, .text-h3, .text-labelSm), not custom properties — two root vars remain: --global-ease cubic-bezier(0.9,0.1,0.1,0.9) and --global-transition 350ms. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from doppler.com on 2026-11-13, signed out, in headless Chromium. The workspace behind dashboard.doppler.com is a documented boundary; the demo form's fields were focused and sample-filled then deleted, never submitted; the cookie-preferences banner was hidden, never answered. Doppler Repro, Doppler Repro Mono and Inter are served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">Every page carries the same floating header — a 72px warm-black bar inset 14px from the viewport edge, opaque #55505b hairline on three sides, 16px bottom corners. Inside: the asterisk wordmark, silver nav links that go warm-white on hover, the bordered Get-Demo and Sign-In actions, and the 36px fluorescent-green Start-for-Free pill with warm-black text.</p>
+  <div class="mock" style="padding:20px">
+    <div class="navbar"><span class="wm">&#10039; Doppler</span><span class="ln">Platform &#9662;</span><span class="ln">Solutions &#9662;</span><span class="ln">Pricing</span><span class="sp"></span><span class="ln">Get Demo</span><span class="btn primary nav">Start for Free</span><span class="btn outline nav">Sign In</span></div>
+    <div class="hero">Secrets management <span class="grad">for every identity</span><small>Centralize secrets across every engineer, pipeline, and AI agent with a platform your security team governs and your developers actually use.</small><span class="btn outline">Get Demo</span> <span class="btn primary">Start for Free</span></div>
+  </div>
+
+  <h2 class="sh">Cards, chips and controls</h2>
+  <p class="lead">Content sits on .interactive-card tiles — rgba(242,241,237,0.04) ground, 20px radius, a diagonal white sheen in ::before — while filters are 22px uppercase micro-label chips that flip from #2d2734 to light-purple #b997ff (warm-black text when active). Code is Doppler Repro Mono in brand-orange on the same 4% veil.</p>
+  <div class="mock" style="padding:20px">
+    <div style="margin-bottom:14px"><span class="chip on">All</span> <span class="chip">Engineering</span> <span class="chip">Product</span> <span class="chip badge">Most Popular</span></div>
+    <div class="grid">
+      <div class="tile"><b>Native AI integration</b><span class="sub">Doppler's MCP server lets AI agents request secrets natively without custom scripts.</span></div>
+      <div class="tile"><b>Single source of truth</b><span class="sub">Holistically manage through the hierarchical structure.</span></div>
+    </div>
+    <div style="margin-top:14px"><span class="codechip">doppler run</span> <span class="codechip">doppler secrets</span></div>
+  </div>
+
+  <h2 class="sh">Pricing and forms</h2>
+  <p class="lead">Plan cards are interactive-cards at 20px; their CTAs are 45px buttons with 1px warm-white borders at 12px radius — hover adds an 8% warm-white fill. Form fields are 43px with 16px corners and aluminum borders that swap to light-purple on focus.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile"><b>Developer</b><span class="sub">$8/mo per additional user</span><div style="margin-top:12px"><span class="btn outline" style="width:100%">Start for Free</span></div></div>
+      <div class="tile"><b>Team</b><span class="sub">$21/mo per user</span><div style="margin-top:12px"><span class="btn primary" style="width:100%">Start for Free</span></div></div>
+    </div>
+    <div style="margin-top:18px"><span class="field">Work email</span> <span class="field focus">Company size</span></div>
+    <div class="faq" style="margin-top:18px"><span class="q">What does Doppler do? <span>&#215;</span></span><span class="a">Doppler's secrets manager empowers engineers and their teams to quickly set up a secure way to store and manage their sensitive application secrets.</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The palette is declared entirely in named utilities: warm darks (warm-black, basalt, charcoal, stone), warm neutrals (warm-white, cloud, silver, aluminum), the brand hues (orange/carmine, purple, light-purple, lilac, fluorescent green and its darker hover step), status tints at 8%, and the warm-white alpha veils the bundle names 'black4/8/32/64'. Dark roles are measured off the painted components and alias the palette where the value matches.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">The radius scale runs 6-56px plus full: 12px buttons, 16px fields and header corners, 20px cards, circle pagination. The signature ease is cubic-bezier(0.9,0.1,0.1,0.9) at 350ms; state changes use Tailwind's 150-300ms steps, and interactive-cards fade their sheen over 500ms.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Three served faces: <code>Doppler Repro</code> everywhere (a variable face — every h* step paints weight 450), <code>Doppler Repro Mono</code> on code chips, and <code>Inter</code> on long-form copy. The declared scale runs 96px display h1 down to 10px labelSm micro-labels, tracking from -1.92px to +1px. Samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the named utility declarations from the live stylesheets plus computed styles on 60 components across nine public routes</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, focused and filled states measured per component; the mega-menu, mobile sheet and FAQ open state reached by their own toggles</td></tr><tr><td>No provenance</td><td>Every token names the utility class or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // The dark set's custom properties resolve under [data-mode="dark"], which
+  // is set on <html>; swatch dots still sit inside a .pal.dark panel so they
+  // read on a raised surface.
+  const darkRoles = flat(TOK.dark || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (darkRoles.length) {
+    h += `<div class="pal-h">dark roles (the only painted theme)</div><div class="pal dark">`;
+    for (const [n, t] of darkRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const lightRoles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (lightRoles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of lightRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.gradient || {}, 'gradient.')) m += `<div><b>${esc(n)}</b> <span>${esc(JSON.stringify(t.v))}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat(((TOK.dark || {}).component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  // Sizes can be declared in any CSS unit (font.size.8xl is 6.25rem); resolve
+  // rem/em against the 16px root before capping the sample, or a rem token
+  // renders a few pixels tall.
+  const toPx = (v) => {
+    const m = /^(-?[\d.]+)\s*(px|rem|em|%)?$/.exec(String(v).trim());
+    if (!m) return NaN;
+    const n = parseFloat(m[1]);
+    return m[2] === 'rem' || m[2] === 'em' ? n * 16 : n;
+  };
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = toPx(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Doppler</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

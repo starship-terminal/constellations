@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grow with Google style guide</title>
+<meta name="description" content="Grow with Google (grow.google) design tokens and the public surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Google Sans Flex", "Google Sans", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-ink-primary, #202124); background: var(--color-surface-base, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 48px/56px var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.5px; }
+h2.sh { font: 600 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-ink-primary, #202124); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-line-hairline, #dadce0); }
+.lead { max-width: 62ch; color: var(--color-ink-secondary, #3c4043); }
+.note { font-size: 13px; color: var(--color-ink-tertiary, #5f6368); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 600 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-ink-tertiary, #5f6368); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-line-hairline, #dadce0); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-ink-tertiary, #5f6368); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-ink-tertiary, #5f6368); }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-line-hairline, #dadce0); overflow: hidden; background: var(--color-surface-base, #fff); }
+/* The glue header: white bar, the "Grow with Google" lockup, medium-weight
+   nav and the Career Certificates dropdown that opens a full-bleed panel. */
+.navbar { display: flex; align-items: center; gap: 24px; height: var(--component-header-height, 64px); padding: 0 var(--space-nav-x, 12px) 0 20px; font-size: 16px; font-weight: 500; color: var(--color-ink-secondary, #3c4043); background: var(--color-surface-base, #fff); border-bottom: 1px solid var(--color-line-hairline, #dadce0); }
+.navbar .wm { font-weight: 500; font-size: 20px; color: var(--color-ink-primary, #202124); }
+.navbar .sp { flex: 1; }
+.navbar .dd { position: relative; }
+.navbar .dd::after { content: "▾"; margin-left: 4px; font-size: 10px; }
+/* The promo banner: a text link in the site's painted accent blue. */
+.promo { padding: 10px 20px; font-size: 16px; color: var(--color-link-default, #3186ff); }
+/* The mega-menu: a full-bleed white panel under the header. */
+.mega { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; padding: 20px; height: 120px; background: var(--color-surface-base, #fff); box-shadow: var(--shadow-elevation-1, none); font-size: 14px; }
+.mega b { display: block; font-weight: 500; color: var(--color-ink-primary, #202124); margin-bottom: 6px; }
+.mega span { color: var(--color-ink-tertiary, #5f6368); display: block; line-height: 24px; }
+/* The filled pill button — #3186ff, 48px radius, 12px/16px padding, 500. */
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 50px); padding: var(--space-button-y, 12px) var(--space-button-x, 16px); font-size: 16px; font-weight: 500; letter-spacing: .5px; border-radius: var(--radius-pill, 48px); border: 1px solid transparent; }
+.btn.primary { background: var(--button-primary-bg, #3186ff); color: var(--button-primary-fg, #fff); }
+.btn.primary:hover { background: var(--button-primary-bg-hover, #185abc); box-shadow: var(--shadow-elevation-1, none); }
+.btn.text { background: transparent; color: var(--color-link-default, #3186ff); height: auto; padding: 7px 8px; }
+.btn.text:hover { background: var(--color-link-hover-wash, rgba(26, 115, 232, 0.04)); box-shadow: none; }
+/* The home hero: headline type at 36/44, a video teaser beside it. */
+.hero { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; padding: 32px 24px; align-items: center; }
+.hero .tt { font: var(--type-headline, 400 36px/44px var(--sg-sans)); letter-spacing: -0.25px; color: var(--color-ink-primary, #202124); }
+.hero .vid { aspect-ratio: 16/9; border-radius: var(--radius-card, 8px); background: var(--color-surface-footer, #eff2f7); display: flex; align-items: center; justify-content: center; color: var(--color-ink-tertiary, #5f6368); font-size: 13px; }
+/* The jumplinks pill bar: white, fully round, elevation-1. */
+.jumplinks { display: inline-flex; gap: 8px; padding: 5px; border-radius: var(--radius-bar, 120px); background: var(--tab-bar-bg, #fff); box-shadow: var(--shadow-elevation-1, none); font-size: 16px; font-weight: 500; color: var(--tab-item-fg, #3c4043); }
+.jumplinks span { padding: var(--space-tab-y, 7px) var(--space-tab-x, 8px); border-radius: var(--radius-control, 4px); }
+.jumplinks span:hover { background: var(--tab-item-bg-hover, #f8f9fa); }
+/* The certificate cards: white cells on the light-blue band. */
+.band { background: var(--color-palette-blue-50, #e8f0fe); padding: 28px 20px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
+.tile { background: var(--color-surface-base, #fff); border-radius: var(--radius-card, 8px); padding: 20px; font-size: 14px; color: var(--color-ink-secondary, #3c4043); }
+.tile b { display: block; font-size: 18px; font-weight: 500; color: var(--color-ink-primary, #202124); margin-bottom: 6px; }
+.tile .stat { font: var(--type-stat, 700 48px/57.6px var(--sg-sans)); color: var(--stat-number, #202124); }
+/* The certificate dark hero: an editorial section paint, not a theme. */
+.darkhero { background: var(--surface-hero-bg, #18191d); color: var(--surface-hero-ink, #fff); padding: 48px 32px; }
+.darkhero .tt { font: var(--type-display-1, 400 60px/72px var(--sg-sans)); letter-spacing: -0.5px; color: var(--surface-hero-ink, #fff); margin-bottom: 20px; }
+/* Expansion rows: a hairline above each, the header row 93px. */
+.exp { border-top: 1px solid var(--color-line-hairline, #dadce0); padding: 20px 0; font-size: 16px; color: var(--color-ink-primary, #202124); display: flex; justify-content: space-between; }
+/* The footer band: the blue-grey ground. */
+.ft { background: var(--color-surface-footer, #eff2f7); padding: 24px; font-size: 14px; color: var(--color-ink-secondary, #3c4043); display: flex; gap: 24px; }
+.ft select { margin-left: auto; width: var(--component-select-width, 233px); font-size: 16px; color: var(--color-ink-secondary, #3c4043); }
+/* The phone bar: 390 wide, hamburger + lockup. */
+.mbar { display: flex; align-items: center; gap: 8px; width: 390px; height: var(--component-mobile-header-height, 64px); padding: 0 12px; background: var(--color-surface-base, #fff); border: 1px solid var(--color-line-hairline, #dadce0); font-size: 20px; font-weight: 500; color: var(--color-ink-primary, #202124); }
+.mbar .hb { width: var(--component-drawer-button-size, 48px); height: var(--component-drawer-button-size, 48px); display: inline-flex; align-items: center; justify-content: center; color: var(--color-ink-tertiary, #5f6368); font-size: 20px; }
+/* Focus ring: the 2px box-shadow, never an outline. */
+.foc { display: inline-flex; align-items: center; height: 48px; padding: 0 12px; border-radius: var(--radius-control, 4px); color: var(--color-link-default, #3186ff); background: var(--color-surface-muted, #f8f9fa); box-shadow: var(--focus-ring-color, #1a73e8) 0 0 0 var(--focus-ring-width, 2px); font-weight: 500; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-line-hairline, #dadce0); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-line-hairline, #dadce0); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--color-ink-tertiary, #5f6368); font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Grow with Google style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Grow with Google, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared glue colour layer (<code>--glue-blue-500</code> #4285f4, <code>--glue-blue-600</code> #1a73e8, the green/red/yellow/purple/grey ramps from the versioned gstatic marketing-cms bundle) and everything the measurement pass read as computed styles — the site's painted accent blue #3186ff, the #185abc hover, inks #202124/#3c4043/#5f6368, the #18191d editorial dark hero, the 48px pill radius, the 120px jumplinks bar, the 0.2s control transition and the measured component geometry. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from grow.google's US edition, signed out, in headless Chromium — bare contexts, because a real user agent or explicit locale is 302'd to the regional /intl/ALL_sg/ edition (kept as the apac-* screenshot variant). Nothing was enrolled in, followed outbound or submitted; the mega-menu, drawer, FAQ row and video modal were the only toggles pressed, and the YouTube embed was never played. Google Sans Flex is the served face; samples fall back to system sans. No dark theme exists — the dark hero is a section paint kept as a light-set surface.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A 64px white header carries the "Grow with Google" lockup, the Career Certificates dropdown (a full-bleed mega-menu panel), AI Training, For Partners and Stories &amp; Resources — nav text is 16px medium in secondary ink, 12px horizontal padding. Below it the blue promo banner, and the hero pairs headline type with a 16:9 video teaser and a filled pill CTA.</p>
+  <div class="mock" style="padding:0">
+    <div class="promo">New! Enroll in the AI Certificate and learn vibe coding → <b style="font-weight:500">Enroll now</b></div>
+    <div class="navbar"><span class="wm">Grow with Google</span><span class="dd">Career Certificates</span><span>AI Training</span><span>For Partners</span><span>Stories &amp; Resources</span><span class="sp"></span></div>
+    <div class="mega"><div><b>Foundational certificates</b><span>Cybersecurity</span><span>Data Analytics</span><span>Digital Marketing &amp; E-commerce</span></div><div><b>Advanced certificates</b><span>Advanced Data Analytics</span><span>Business Intelligence</span></div><div><b>Courses</b><span>Google AI Essentials</span><span>Prompting Essentials</span></div></div>
+    <div class="hero"><div><div class="tt">Grow your career or business at your own pace</div><br><span class="btn primary">Get started</span></div><div class="vid">▶ 16:9 video teaser</div></div>
+  </div>
+
+  <h2 class="sh">The catalog</h2>
+  <p class="lead">/certificates runs a 48px display heading over the four-stat band (700-weight figures in the brand hues), a Learn more anchor, the fully-round jumplinks pill bar (120px radius, elevation-1) and certificate cards — white cells with an 8px radius on the light-blue band.</p>
+  <div class="mock" style="padding:20px">
+    <div class="jumplinks"><span>Overview</span><span>Professional Certificates</span><span>Path to jobs</span><span>AI training</span><span>FAQs</span></div>
+    <div class="band" style="margin-top:18px"><div class="cards">
+      <div class="tile"><b>Cybersecurity</b><span class="sub">6-8 months · entry level</span><br><span class="btn text" style="padding:0">Get started on Coursera →</span></div>
+      <div class="tile"><b>Data Analytics</b><span class="sub">6-8 months · entry level</span><br><span class="btn text" style="padding:0">Get started on Coursera →</span></div>
+      <div class="tile"><span class="stat">1.7M+</span><br><span class="sub">graduates worldwide</span></div>
+    </div></div>
+  </div>
+
+  <h2 class="sh">The certificate page</h2>
+  <p class="lead">A certificate detail page opens on the #18191d editorial hero — white 60px display type, a photo with the graduate badge, and the filled "Get started on Coursera →" pill (measured, never followed). Below, the FAQ is a stack of glue-expansion-panel rows separated by #dadce0 hairlines, 93px closed / 213px open.</p>
+  <div class="mock darkhero">
+    <div class="tt">Google UX Design Certificate</div>
+    <span class="btn primary" style="width:254px">Get started on Coursera →</span>
+  </div>
+  <div class="mock" style="padding:0 24px;border-top:0">
+    <div class="exp"><span>What is a UX designer?</span><span>+</span></div>
+    <div class="exp"><span>What is the difference between UX and UI design?</span><span>+</span></div>
+    <div class="exp"><span>Who is this certificate for?</span><span>+</span></div>
+  </div>
+
+  <h2 class="sh">States</h2>
+  <p class="lead">Filled buttons darken to #185abc on hover and pressed and gain elevation-1 (deeper when pressed); text links keep their colour and pick up a 4% brand wash on hover, 10% on pressed. Keyboard focus is a 2px box-shadow ring in glue-blue-600 offset 1px — never an outline.</p>
+  <div class="mock" style="padding:20px;display:flex;gap:18px;align-items:center">
+    <span class="btn primary">Default</span>
+    <span class="btn primary" style="background:var(--button-primary-bg-hover,#185abc);box-shadow:var(--shadow-elevation-1,none)">Hover / pressed</span>
+    <span class="foc">Keyboard focus</span>
+  </div>
+
+  <h2 class="sh">The phone</h2>
+  <p class="lead">At 390 wide the header compresses to a 64px bar — a 48px hamburger button that opens the navigation drawer — and the hero headline steps to 24px.</p>
+  <div class="mbar"><span class="hb">☰</span><span>Grow with Google</span></div>
+
+  <h2 class="sh">The footer</h2>
+  <p class="lead">The footer sits on #eff2f7 — blue-grey, not the grey ramps' pure grey — with link columns, legal links and the 233px region/language select (measured, never changed: its form posts to services.google.com).</p>
+  <div class="ft"><span>About Google</span><span>Products</span><span>Privacy</span><span>Terms</span><select><option>English (United States)</option></select></div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared layer is the glue ramp family — blue/green/red/yellow/purple 50-900 plus the grey ramp — from the versioned gstatic bundle; it is the only custom-property vocabulary the site ships. Everything else is a compiled literal read as a computed style: the painted accent #3186ff (brighter than declared glue-blue-600 #1a73e8, which still paints card links and the focus ring), the hover #185abc, inks and surfaces.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Radius, spacing and motion</h2>
+  <p class="lead">Radii are the 48px pill (every button), the 120px jumplinks bar, 8px cards and 4px small controls. The control transition is the measured 0.2s glue timing on links, tabs and buttons.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Everything paints Google Sans Flex (variable opsz 6-144, wght 100-1000; the sheet also requests Google Sans Text, Google Sans, Google Sans Display and Product Sans faces). The measured ramp: 60/72 display on the dark hero, 48/56 on the catalog heading and the 700 stat figures, 36/44 home headline, 28/36 section titles, 16/24 body, 14/21 secondary copy, 14px/500 uppercase eyebrows, 12/20 captions.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared glue palette from the first-party stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and opened states measured per component; opened states are the page's own toggles</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => (s !== null && typeof s === 'object' ? JSON.stringify(s) : String(s)).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  // The declared glue ramp lives at core.color.palette.*; the measured
+  // semantic roles under light.
+  for (const [n, t] of flat((TOK.core || {}).color || {}, 'color.')) {
+    if (t.t !== 'color') continue;
+    h += '';
+  }
+  const fam = {};
+  for (const [n, t] of flat(((TOK.core || {}).color || {}).palette || {}, 'color.palette.')) {
+    if (t.t !== 'color') continue;
+    (fam[n.split('.')[2]] ??= []).push([n, t]);
+  }
+  for (const g of Object.keys(fam).sort()) {
+    h += `<div class="pal-h">glue ${esc(g)} ramp (declared)</div><div class="pal">`;
+    for (const [n, t] of fam[g]) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color');
+  if (roles.length) {
+    h += `<div class="pal-h">measured light roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.focusRing || {}, 'focusRing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc((typeof t.v === 'object' ? JSON.stringify(t.v) : String(t.v)).slice(0, 90))}…</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const setname of ['core', 'light']) {
+    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.type || {}, 'type.')) {
+    const v = t.v || {};
+    const px = parseFloat(v.fontSize);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px;font-weight:${v.fontWeight || 400}">${esc(n)} — The quick brown fox</span><span class="tv">${esc(v.fontSize || '')} / ${esc(v.lineHeight || '')} · ${esc(String(v.fontWeight || ''))}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Grow with Google</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

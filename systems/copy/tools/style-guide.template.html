@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>copy.ai style guide</title>
+<meta name="description" content="copy.ai design tokens and the public signed-out surface's components, rendered from tokens.json with the declared Webflow --colors-- values and the measured computed styles.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Inter", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "ABC Normal", "Inter", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, var(--color-neutral-ink, #0f1015)); background: var(--surface-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #0f1015); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #0f1015); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: #1a1630; padding: 12px; border-radius: 12px; }
+.pal.dark .nm, .pal.dark .vl { color: rgba(255, 255, 255, 0.898); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); overflow: hidden; background: var(--surface-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 18px; height: 88px; padding: 0 12px 0 22px; font-size: 14px; color: var(--color-neutral-ink, #171717); background: #fff; }
+.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.navbar .link { color: var(--color-neutral-nav-ink, #222222); }
+.strip { background: var(--color-neutral-ink, #171717); color: #fff; text-align: center; font-size: 14px; line-height: 48px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 47px); padding: 0 16px; font-size: 14px; font-weight: 700; border-radius: var(--radius-button, 8px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-primary, var(--color-brand-purple, #693ee0)); color: var(--text-on-action, #fff); border-radius: var(--radius-nav, 4px); height: var(--component-navcta-height, 47px); }
+.btn.dark { background: var(--action-dark, var(--color-neutral-ink, #171717)); color: #fff; }
+.btn.secondary { background: var(--action-secondary, #fff); color: var(--text-on-action, #171717); border-radius: var(--radius-button, 8px); }
+.btn.outline { background: transparent; color: var(--color-neutral-ink, #171717); box-shadow: inset 0 0 0 1px var(--color-neutral-border, #e0e0e0); }
+.hero { color: var(--color-neutral-ink, #171717); padding: 64px 40px 80px; font: 600 56px/1 var(--sg-serif); letter-spacing: 0; text-align: center; }
+.hero small { display: block; font: 400 14px/1.57 var(--sg-sans); color: var(--color-neutral-lede, #566b76); margin: 16px auto 22px; max-width: 46ch; }
+.hero .big-cta { height: var(--component-button-cta-height, 63px); padding: 0 20px; border-radius: var(--radius-button, 8px); font-size: 16px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-neutral-border, #e0e0e0); padding: 14px; font-size: 13px; background: #fff; border-radius: var(--radius-button, 8px); }
+.tile .img { height: 120px; background: #eee; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: 8px; }
+.tile b { display: block; font: 600 24px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.tile .price { font: 600 26px/1.2 var(--sg-sans); color: var(--color-brand-purple, #693ee0); margin: 10px 0 2px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-border, #e0e0e0); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-border, #e0e0e0); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #171717); opacity: .65; font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: #fff; border-radius: var(--radius-toggle, 48px); padding: 4px; gap: 4px; font-size: 15px; box-shadow: var(--core-measured-toggle-shadow, 0 28px 64px rgba(0,0,0,.06)); border: 1px solid var(--color-neutral-border, #e0e0e0); }
+.toggle span { padding: 8px 22px; border-radius: var(--radius-toggle, 48px); }
+.toggle .on { background: var(--color-neutral-ink, #171717); color: #fff; }
+.badge { display: inline-block; background: var(--action-primary, var(--color-brand-purple, #693ee0)); color: #fff; border-radius: var(--radius-badge, 40px); padding: 2px 10px; font-size: 12px; font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <h1>copy.ai style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">copy.ai, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the #693ee0 action purple (declared --colors--primary-purple, measured on the nav CTA and the auth Continue) and its auth-host ramp (#5b36c3 hover, #4e22b1 pressed), the #171717 ink and the signature move where a black button's fill lifts to purple on hover, the #f6fafb field fill and #e0e0e0 hairlines, ABC Normal display next to Inter UI, and the 4/8px radii next to the 40/48px pills. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from copy.ai on 2026-11-12, signed out, in headless Chromium. The workflows product behind the login.copy.ai card is a documented boundary. ABC Normal is a licensed served face and is not loaded here: display samples fall back to Inter/system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A 48px ink promo strip sits over an 88px sticky white nav: the copy.ai wordmark, the Platform / Use cases / Resources / Pricing / GTM AI mega-menu triggers, a text Login link and the purple 47px Get a Demo pill. The hero is 88px ABC Normal in ink on white; its email capture pairs a #f6fafb field with a 40px black submit that lifts to purple on hover.</p>
+  <div class="mock">
+    <div class="strip">Introducing GTM AI — the first AI-native go-to-market platform</div>
+    <div class="navbar"><span class="wm">copy.ai</span><span class="link">Platform</span><span class="link">Use cases</span><span class="link">Resources</span><span class="link">Pricing</span><span class="link">GTM AI</span><span class="sp"></span><span class="link">Login</span><span class="btn primary">Get a Demo</span></div>
+    <div class="hero">The First AI-Native GTM Platform<small>Prospecting, content, and go-to-market workflows in one AI platform.</small><span class="btn dark">Try for free</span></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/prices centres a 56px Self-Serve/Enterprise segmented pill (48px radius, a 0 28 64 / 6% float) over the Chat plan card: a checklist, a Monthly|Annually inline control, the 40px-radius SAVING 20% badge, the purple $29/mo price and the full-width black Get started — which lifts to purple on hover like every dark button.</p>
+  <div class="mock" style="padding:20px">
+    <div style="text-align:center;margin-bottom:18px"><span class="toggle"><span class="on">Self-Serve</span><span>Enterprise</span></span></div>
+    <div style="text-align:center;margin-bottom:18px;font-size:14px">Monthly | Annually <span class="badge">SAVING 20%</span></div>
+    <div class="grid">
+      <div class="tile"><b>Chat</b><span class="sub">Chat with AI models, plus workflows credits.</span><div class="price">$29/mo</div><span class="sub">billed annually</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn dark">Get started</span> <span class="btn outline">Contact Sales</span></div>
+  </div>
+
+  <h2 class="sh">The auth card</h2>
+  <p class="lead">app.copy.ai/login redirects to login.copy.ai's own card — a second system: #5753c6 links, a #e5e7eb card border, 4.5px button radii, OAuth buttons whose only edge is a 1px 19%-black inset ring that darkens to 27% on hover, and the #693ee0 Continue. Measured, never used.</p>
+  <div class="mock" style="padding:24px;display:flex;justify-content:center;background:#fbfbfc">
+    <div style="background:#fff;border:1px solid var(--color-neutral-auth-border,#e5e7eb);border-radius:8px;padding:24px;width:340px">
+      <b style="font:600 20px/1.3 var(--sg-sans)">Log in to copy.ai</b>
+      <p class="note" style="margin:6px 0 14px">Welcome back — enter your email or use a provider.</p>
+      <div style="display:grid;gap:8px"><span class="btn outline">Continue with Google</span><span class="btn outline">Continue with Microsoft</span><span class="btn primary" style="border-radius:4.5px;height:40px">Continue with email</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The core set carries the measured ink/white neutrals and the brand purples (var-referenced to the declared --colors--* layer where it names them); the legacy --old-swatches--* set is kept as provenance only. Light roles alias the palette; the "dark" set is the small role set the ink banner and the #29007a purple band paint — painted surfaces, not a user toggle.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">copy.ai mixes radii by control: 4px on the nav CTA and the mobile sales action, 4.5px on the auth buttons, 3.5px on the auth field, 5px on the contact fields, 8px on every big CTA and secondary, a 40px badge pill and a 48px segmented-control pill. Hairlines do the dividing — #e0e0e0 on cards and menu rows, #e4edf1 on fields, #ccd9e0 on the playbook chip.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two families: <code>ABC Normal</code> carries every display and card heading (88/88 hero, 72/82 contact, 64/74 page titles, 56/66 sections, 32/42 and 28px card titles, 24/33.6 H4s); <code>Inter</code> carries controls and body (16/24, 14/22 ledes, 12/22 badges). Weights run 400 body, 500 nav items and prices, 600 display, 700 buttons and the contact display. Samples fall back to Inter/system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --colors--* layer off the cross-origin Webflow bundles and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the .theme.dark band)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — copy.ai</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

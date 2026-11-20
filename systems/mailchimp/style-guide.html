@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mailchimp style guide</title>
+<meta name="description" content="Mailchimp design tokens and the public marketing surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --color-caviar: #231e15;
+  --color-yellow: #ffe01b;
+  --color-disabled: #dbd9d2;
+  --font-family-sans: "Tally","Graphik Web","Helvetica Neue",Helvetica,Arial,Verdana,sans-serif;
+  --font-weight-nav: 700;
+  --font-weight-copyBold: 700;
+  --font-weight-eyebrow: 700;
+  --font-weight-badge: 700;
+  --font-weight-cta: 700;
+  --font-size-legal: 11px;
+  --font-size-info: 13px;
+  --font-size-regular: 16px;
+  --font-size-small: 16px;
+  --font-size-medium: 20px;
+  --font-size-large: 24px;
+  --font-size-jumbo: 80px;
+  --font-size-cta: 13px;
+  --font-line-legal: 1.45455;
+  --font-line-info: 1.25;
+  --font-line-regular: 1.5;
+  --font-line-small: 1.75;
+  --font-line-medium: 1.4;
+  --font-line-large: 1.33333;
+  --font-line-jumbo: 1;
+  --font-line-cta: 1.5;
+  --spacing-s1: 4px;
+  --spacing-s2: 8px;
+  --spacing-s3: 16px;
+  --spacing-s4: 24px;
+  --spacing-s5: 40px;
+  --spacing-s6: 64px;
+  --spacing-s7: 80px;
+  --spacing-s8: 96px;
+  --spacing-module: 80px;
+  --radius-cta: 32px;
+  --motion-duration-0ms: 0ms;
+  --motion-duration-50ms: 50ms;
+  --motion-duration-100ms: 100ms;
+  --motion-duration-150ms: 150ms;
+  --motion-duration-mcav25widthduration: 180ms;
+  --motion-duration-200ms: 200ms;
+  --motion-duration-218ms: 218ms;
+  --motion-duration-250ms: 250ms;
+  --motion-duration-mcav25transformduration: 260ms;
+  --motion-duration-300ms: 300ms;
+  --motion-duration-320ms: 320ms;
+  --motion-duration-375ms: 375ms;
+  --motion-duration-mcav25motionduration: 380ms;
+  --motion-duration-400ms: 400ms;
+  --motion-duration-500ms: 500ms;
+  --motion-duration-550ms: 550ms;
+  --motion-duration-900ms: 900ms;
+  --motion-duration-1000ms: 1000ms;
+  --motion-duration-1200ms: 1200ms;
+  --motion-duration-1500ms: 1500ms;
+  --motion-duration-1800ms: 1800ms;
+  --motion-duration-3000ms: 3000ms;
+  --motion-duration-45000ms: 45000ms;
+  --motion-duration-50000ms: 50000ms;
+  --motion-duration-55000ms: 55000ms;
+  --motion-duration-duration: 60000ms;
+  --motion-duration-90000ms: 90000ms;
+  --motion-duration-100000ms: 100000ms;
+  --motion-duration-110000ms: 110000ms;
+  --motion-easing-bezier-0-0-0-1: cubic-bezier(0, 0, 0, 1);
+  --motion-easing-bezier-0-34-1-2-0-64-1: cubic-bezier(0.34, 1.2, 0.64, 1);
+  --motion-easing-bezier-0-4-0-0-2-1: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-bezier-0-5-2-5-0-7-0-7: cubic-bezier(0.5, 2.5, 0.7, 0.7);
+  --motion-easing-bezier-0-65-0-0-35-1: cubic-bezier(0.65, 0, 0.35, 1);
+  --motion-easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-ease-in: cubic-bezier(0.42, 0, 1, 1);
+  --motion-easing-ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+  --motion-easing-ease-out: cubic-bezier(0, 0, 0.58, 1);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --motion-easing-mcav25heightease: cubic-bezier(0.28, 1.4, 0.67, 0.96);
+  --motion-easing-mcav25motionease: cubic-bezier(0.33, 1, 0.68, 1);
+  --motion-easing-mcav25transformeasebounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --motion-transition-background-color-150ms-ease: {'duration': 'var(--motion-duration-150ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-opacity-200ms-bezier-0-0-0-1: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-bezier-0-0-0-1)'};
+  --motion-transition-transform-200ms-bezier-0-0-0-1: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-bezier-0-0-0-1)'};
+  --motion-transition-all-150ms-linear: {'duration': 'var(--motion-duration-150ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-linear)'};
+  --motion-transition-opacity-150ms-linear: {'duration': 'var(--motion-duration-150ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-linear)'};
+  --motion-transition-bottom-300ms-bezier-0-5-2-5-0-7-0-7: {'duration': 'var(--motion-duration-300ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-bezier-0-5-2-5-0-7-0-7)'};
+  --motion-transition-box-shadow-300ms-bezier-0-5-2-5-0-7-0-7: {'duration': 'var(--motion-duration-300ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-bezier-0-5-2-5-0-7-0-7)'};
+  --motion-transition-transform-300ms-bezier-0-5-2-5-0-7-0-7: {'duration': 'var(--motion-duration-300ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-bezier-0-5-2-5-0-7-0-7)'};
+  --motion-transition-box-shadow-200ms-ease: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-background-position-300ms-ease: {'duration': 'var(--motion-duration-300ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-left-300ms-bezier-0-34-1-2-0-64-1: {'duration': 'var(--motion-duration-300ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-bezier-0-34-1-2-0-64-1)'};
+  --motion-transition-right-300ms-ease: {'duration': 'var(--motion-duration-300ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-transform-300ms-ease: {'duration': 'var(--motion-duration-300ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-background-color-200ms-ease-in-out: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
+  --motion-transition-color-150ms-ease-in-out: {'duration': 'var(--motion-duration-150ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
+  --motion-transition-border-200ms-ease-in-out: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
+  --motion-transition-box-shadow-200ms-ease-in-out: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
+  --motion-transition-opacity-200ms-ease: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-all-200ms-ease: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-all-250ms-ease-out: {'duration': 'var(--motion-duration-250ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-out)'};
+  --motion-transition-color-200ms-ease: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-all-200ms-ease-in: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in)'};
+  --motion-transition-all-400ms-ease: {'duration': 'var(--motion-duration-400ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-ms-flex-positive-300ms-ease-in-out: {'duration': 'var(--motion-duration-300ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
+  --motion-transition-background-color-320ms-ease: {'duration': 'var(--motion-duration-320ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-border-radius-320ms-ease: {'duration': 'var(--motion-duration-320ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-flex-grow-300ms-ease-in-out: {'duration': 'var(--motion-duration-300ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
+  --motion-transition-opacity-300ms-ease-in-out: {'duration': 'var(--motion-duration-300ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
+  --motion-transition-transform-200ms-ease: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-webkit-clip-path-200ms-ease: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-all-500ms-ease: {'duration': 'var(--motion-duration-500ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-clip-path-200ms-ease: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-opacity-150ms-ease: {'duration': 'var(--motion-duration-150ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-ms-flex-preferred-size-300ms-ease-in-out: {'duration': 'var(--motion-duration-300ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
+  --motion-transition-box-shadow-320ms-ease: {'duration': 'var(--motion-duration-320ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-flex-basis-300ms-ease-in-out: {'duration': 'var(--motion-duration-300ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
+  --motion-transition-font-size-300ms-ease-in-out: {'duration': 'var(--motion-duration-300ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
+  --motion-transition-max-width-300ms-ease-in-out: {'duration': 'var(--motion-duration-300ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
+  --motion-transition-padding-300ms-ease-in-out: {'duration': 'var(--motion-duration-300ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
+  --motion-transition-width-320ms-ease: {'duration': 'var(--motion-duration-320ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-all-100ms-ease: {'duration': 'var(--motion-duration-100ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-opacity-400ms-ease-out: {'duration': 'var(--motion-duration-400ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-out)'};
+  --motion-transition-all-200ms-ease-in-out: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
+  --motion-transition-background-color-200ms-ease: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-transform-200ms-ease-in: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in)'};
+  --motion-transition-visibility-0ms-linear-delay200ms: {'duration': 'var(--motion-duration-0ms)', 'delay': '200ms', 'timingFunction': 'var(--motion-easing-linear)'};
+  --motion-transition-all-150ms-ease: {'duration': 'var(--motion-duration-150ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-opacity-150ms-ease-in-out: {'duration': 'var(--motion-duration-150ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
+  --motion-transition-opacity-200ms-ease-in-out: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)'};
+  --motion-transition-opacity-300ms-ease: {'duration': 'var(--motion-duration-300ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-opacity-500ms-ease-out: {'duration': 'var(--motion-duration-500ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-out)'};
+  --motion-transition-transform-500ms-ease-out: {'duration': 'var(--motion-duration-500ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-out)'};
+  --motion-transition-visibility-300ms-ease: {'duration': 'var(--motion-duration-300ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-animation-marquee-left: {'name': 'marquee-left', 'duration': 'var(--motion-duration-55000ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-linear)', 'iterationCount': 'infinite', 'direction': 'normal', 'fillMode': 'none'};
+  --motion-animation-marquee-right: {'name': 'marquee-right', 'duration': 'var(--motion-duration-45000ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-linear)', 'iterationCount': 'infinite', 'direction': 'normal', 'fillMode': 'none'};
+  --motion-animation-onetrust-fade-in: {'name': 'onetrust-fade-in', 'duration': 'var(--motion-duration-400ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease-in-out)', 'iterationCount': '1', 'direction': 'normal', 'fillMode': 'none'};
+  --motion-animation-scroll-x: {'name': 'scroll-x', 'duration': 'var(--motion-duration-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-linear)', 'iterationCount': 'infinite', 'direction': 'normal', 'fillMode': 'none'};
+  --background-page: #ffffff;
+  --background-cta: #ffe01b;
+  --background-ctaDisabled: #dbd9d2;
+  --background-selection: rgba(255, 224, 27, 0.15);
+  --text-primary: #231e15;
+  --text-copy: #231e15;
+  --text-muted: rgba(35, 30, 21, 0.65);
+  --text-onCta: #231e15;
+  --text-link: #231e15;
+  --border-cta: #231e15;
+  --border-ctaWidth: 1px;
+  --action-fill: #ffe01b;
+  --action-text: #231e15;
+  --action-stroke: #231e15;
+  --action-depth: #231e15;
+  --action-hoverLink: rgba(255, 224, 27, 0.65);
+  --elevation-shadow: rgba(35, 30, 21, 0.15);
+  color-scheme: light;
+  --sg-sans: "Graphik Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sg-serif: "Means Web", Georgia, Times, "Times New Roman", serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #231e15); background: var(--background-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.05 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.03em; color: var(--text-primary, #231e15); }
+h2.sh { font: 700 12px/1 var(--sg-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted, #666c77); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-rule, #e7e8ec); }
+.lead { max-width: 62ch; color: var(--text-body, #20232b); opacity: .85; }
+.note { font-size: 13px; color: var(--text-muted, #666c77); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 700 11px/1 var(--sg-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted, #666c77); opacity: .75; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-input, #dfdfe4); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-muted, #666c77); }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-input, #dfdfe4); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-muted, #666c77); }
+/* ---- toggle ---- */
+.mode { display: inline-flex; align-items: center; gap: 10px; font: 500 13px/1 var(--sg-sans); color: var(--text-muted, #666c77); user-select: none; cursor: pointer; }
+.mode input { position: absolute; opacity: 0; }
+.mode .trk { width: 36px; height: 20px; border-radius: 9999px; background: var(--background-card, #f6f6f8); border: 1px solid var(--border-input, #dfdfe4); position: relative; transition: background .15s; }
+.mode .trk::after { content: ""; position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: var(--action-fill, #ffe01b); transition: transform .15s; }
+.mode input:checked + .trk::after { transform: translateX(16px); }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border-input, #dfdfe4); border-radius: var(--radius-card, 16px); overflow: hidden; background: var(--background-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: 68px; padding: 0 22px; font-size: 13px; font-weight: 700; color: var(--text-primary, #231e15); background: #fff; }
+.navbar .wm { font-weight: 700; font-size: 18px; letter-spacing: -0.03em; color: var(--text-primary, #231e15); }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 16px; font-size: 13px; font-weight: 700; border-radius: var(--radius-cta, 32px); border: 1px solid var(--border-cta, #231e15); }
+.btn.primary { background: var(--action-fill, #ffe01b); color: var(--action-text, #231e15); }
+.btn.ghost { background: transparent; color: var(--text-primary, #231e15); }
+.hero { color: #fff; padding: 56px 40px 64px; font: 400 64px/1.2 var(--sg-serif); letter-spacing: -1.2px; text-align: center; background: var(--text-primary, #231e15); }
+.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); letter-spacing: 0; color: #fff; margin: 16px auto 22px; max-width: 46ch; }
+/* ---- sign-in card mock (login.mailchimp.com, a separate Graphik card) ---- */
+.auth { display: flex; justify-content: center; padding: 44px 20px; background: #f6f6f4; }
+.acard { width: min(422px, 100%); background: #fff; border: 1px solid #e6e6e4; border-radius: 8px; padding: 28px 24px 24px; font-family: var(--sg-sans); }
+.acard h3 { font: 500 20px/1.3 var(--sg-sans); color: #21262a; margin: 0 0 16px; text-align: center; }
+.acard .field { height: 46px; border-radius: 4px; border: 1px solid #017e89; background: #fff; margin-bottom: 12px; display: flex; align-items: center; padding: 0 14px; font-size: 17px; color: #8b8b8b; }
+.acard .go { height: 36px; border-radius: 4px; background: #017e89; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 500; font-size: 14px; margin-top: 4px; }
+.acard .forgot { text-align: center; margin-top: 14px; font-size: 14px; font-weight: 500; color: #017e89; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-input, #dfdfe4); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-rule, #e7e8ec); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--text-muted, #666c77); font-family: var(--sg-mono); }
+.pill-nav { display: inline-flex; background: var(--background-page, #fff); border: 1px solid var(--border-tab, #d8dbe2); border-radius: 9999px; padding: 4px; gap: 4px; font-size: 14px; font-weight: 500; letter-spacing: -0.02em; color: var(--text-gray, #757b86); }
+.pill-nav span { padding: 8px 20px; border-radius: 9999px; }
+.pill-nav .on { background: var(--action-selectedBg, #3347fb); color: #fff; }
+.tabrow { display: inline-flex; gap: 8px; font-size: 14px; font-weight: 500; letter-spacing: -0.02em; }
+.tabrow span { height: 30px; display: inline-flex; align-items: center; padding: 0 14px; border-radius: 9999px; border: 1px dashed var(--border-tab, #d8dbe2); background: var(--background-page, #fff); color: var(--text-gray, #757b86); }
+.tabrow .on { border: 1px solid var(--action-selectedBorder, #84a1ff); background: var(--background-selectedTint, #eef2ff); color: var(--action-selectedInk, #5a84ff); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Mailchimp style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.
+  <label class="mode" style="float:right;margin-top:-34px"><input type="checkbox" id="theme"><span class="trk"></span>Dark</label></p>
+
+  <h2 class="sh">Mailchimp, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the Plums/CXP roles (<code>--cta-background-color</code> yellow, <code>--cta-text-color</code> caviar, the copy sizes, the spacing steps, the CTA radius). The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from mailchimp.com on 2026-11-18, signed out, in headless Chromium. The marketing site ships light only. The Dark toggle switches the roles panel to the dark set, which is empty on purpose. Means Web and Graphik Web are served faces and are not loaded here: samples fall back to system fonts. login.mailchimp.com is a separate Graphik Web card measured as a boundary. Signup was not started.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A caviar announcement strip sits above a white header. The header carries the wordmark, Industries and Solutions, Integrations and Resources, then Pricing, an outlined Log In, and a yellow Start Free Trial pill. The home hero is a dark band with a white Means Web headline.</p>
+  <div class="mock" style="padding:0">
+    <div style="background:var(--text-primary,#231e15);color:#fff;text-align:center;font-size:13px;padding:12px">Join Mailchimp with a free 14-day trial. Start today.</div>
+    <div class="navbar"><span class="wm">Mailchimp</span><span>Resources</span><span>Pricing</span><span class="sp"></span><span class="btn ghost">Log In</span><span class="btn primary">Start Free Trial</span></div>
+    <div class="hero">Turn ideas into<br>emails that connect.<small>The home masthead, measured at 64px Means Web on the dark band.</small><span class="btn primary">Start Free Trial</span></div>
+  </div>
+
+  <h2 class="sh">The log-in card</h2>
+  <p class="lead">login.mailchimp.com is a separate signed-out card. The username field measured 422 x 46. The submit measured 422 x 36, teal <code>#017e89</code>, white type. It was measured and never clicked. Sign-in was not started. Signup was not started.</p>
+  <div class="auth">
+    <div class="acard"><h3>Log in to Mailchimp</h3><div class="field">Username or Email</div><div class="go">Log in</div><div class="forgot">Forgot username?</div></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">Action yellow <code>#ffe01b</code> with caviar <code>#231e15</code> type and a 1px caviar stroke. The log-in submit is a separate teal, measured on the card and not a marketing token.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">Declared spacing steps run <code>--spacing-1</code> (4px) through <code>--spacing-8</code> (96px). The marketing CTA radius is <code>--cta-border-radius</code> (32px). The Standard plan trial link measured 26px. The <code>--radius-*</code> scale and the 150ms ease curves are declared by the embedded Navattic demo and are not Mailchimp tokens.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead"><code>Means Web</code> draws the display headlines (64px on the home hero, 48px on interior mastheads, 36px on the phone). <code>Tally</code>, then <code>Graphik Web</code>, draws marketing UI. The log-in card uses <code>Graphik Web</code> alone. Samples here fall back to system fonts.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --radius-*/--text-*/--spacing variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, selected, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"caviar":{"v":"#231e15","t":"color","s":"css-var --cta-text-color (light)","d":"The ink the CTA text and stroke paint. Resolved #231e15."},"yellow":{"v":"#ffe01b","t":"color","s":"css-var --cta-background-color (light)","d":"The primary CTA fill. Resolved #ffe01b."},"disabled":{"v":"#dbd9d2","t":"color","s":"css-var --cta-background-color-disabled (light)"}},"font":{"family":{"sans":{"v":"\"Tally\",\"Graphik Web\",\"Helvetica Neue\",Helvetica,Arial,Verdana,sans-serif","t":"fontFamily","s":"css-var --typeface--base (light)","d":"The marketing UI stack: Tally, then Graphik Web."}},"weight":{"nav":{"v":700,"t":"fontWeight","s":"css-var --nav-label-weight (light)"},"copyBold":{"v":700,"t":"fontWeight","s":"css-var --copy-bold-weight (light)"},"eyebrow":{"v":700,"t":"fontWeight","s":"css-var --copy-eyebrow-weight (light)"},"badge":{"v":700,"t":"fontWeight","s":"css-var --badge-square-weight (light)"},"cta":{"v":700,"t":"fontWeight","s":"css-var --cta-text-weight (light)"}},"size":{"legal":{"v":"11px","t":"dimension","s":"css-var --copy-legal-size (light)"},"info":{"v":"13px","t":"dimension","s":"css-var --copy-info-size (light)"},"regular":{"v":"16px","t":"dimension","s":"css-var --copy-regular-size (light)"},"small":{"v":"16px","t":"dimension","s":"css-var --copy-small-size (light)"},"medium":{"v":"20px","t":"dimension","s":"css-var --copy-medium-size (light)"},"large":{"v":"24px","t":"dimension","s":"css-var --copy-large-size (light)"},"jumbo":{"v":"80px","t":"dimension","s":"css-var --copy-jumbo-size (light)"},"cta":{"v":"13px","t":"dimension","s":"css-var --cta-text-size (light)"}},"line":{"legal":{"v":1.45455,"t":"number","s":"css-var --copy-legal-line (light)"},"info":{"v":1.25,"t":"number","s":"css-var --copy-info-line (light)"},"regular":{"v":1.5,"t":"number","s":"css-var --copy-regular-line (light)"},"small":{"v":1.75,"t":"number","s":"css-var --copy-small-line (light)"},"medium":{"v":1.4,"t":"number","s":"css-var --copy-medium-line (light)"},"large":{"v":1.33333,"t":"number","s":"css-var --copy-large-line (light)"},"jumbo":{"v":1,"t":"number","s":"css-var --copy-jumbo-line (light)"},"cta":{"v":1.5,"t":"number","s":"css-var --cta-line-height (light)"}}},"spacing":{"s1":{"v":"4px","t":"dimension","s":"css-var --spacing-1 (light)"},"s2":{"v":"8px","t":"dimension","s":"css-var --spacing-2 (light)"},"s3":{"v":"16px","t":"dimension","s":"css-var --spacing-3 (light)"},"s4":{"v":"24px","t":"dimension","s":"css-var --spacing-4 (light)"},"s5":{"v":"40px","t":"dimension","s":"css-var --spacing-5 (light)"},"s6":{"v":"64px","t":"dimension","s":"css-var --spacing-6 (light)"},"s7":{"v":"80px","t":"dimension","s":"css-var --spacing-7 (light)"},"s8":{"v":"96px","t":"dimension","s":"css-var --spacing-8 (light)"},"module":{"v":"80px","t":"dimension","s":"css-var --module-padding (light)"}},"radius":{"cta":{"v":"32px","t":"dimension","s":"css-var --cta-border-radius (light)","d":"The marketing CTA pill radius. The --radius-* scale is declared by the embedded Navattic demo and is not tokenised."}},"component":{},"motion":{"duration":{"0ms":{"v":"0ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"50ms":{"v":"50ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"100ms":{"v":"100ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"150ms":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 540 elements."},"mcav25widthduration":{"v":"180ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--mcaV25WidthDuration"},"d":"Custom property --mcaV25WidthDuration, declared on .mcaV25Container."},"200ms":{"v":"200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 307 elements."},"218ms":{"v":"218ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"250ms":{"v":"250ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 12 elements."},"mcav25transformduration":{"v":"260ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--mcaV25TransformDuration"},"d":"Custom property --mcaV25TransformDuration, declared on .mcaV25Container."},"300ms":{"v":"300ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 305 elements."},"320ms":{"v":"320ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 24 elements."},"375ms":{"v":"375ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"mcav25motionduration":{"v":"380ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--mcaV25MotionDuration"},"d":"Custom property --mcaV25MotionDuration, declared on .mcaV25Container."},"400ms":{"v":"400ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 18 elements."},"500ms":{"v":"500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"550ms":{"v":"550ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"900ms":{"v":"900ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1000ms":{"v":"1000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1200ms":{"v":"1200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1500ms":{"v":"1500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1800ms":{"v":"1800ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"3000ms":{"v":"3000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"45000ms":{"v":"45000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"50000ms":{"v":"50000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"55000ms":{"v":"55000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"duration":{"v":"60000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--duration"},"d":"Custom property --duration, declared on .logoCarousel."},"90000ms":{"v":"90000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"100000ms":{"v":"100000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"110000ms":{"v":"110000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."}},"easing":{"bezier-0-0-0-1":{"v":[0,0,0,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#pages"}},"bezier-0_34-1_2-0_64-1":{"v":[0.34,1.2,0.64,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#pages"}},"bezier-0_4-0-0_2-1":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_5-2_5-0_7-0_7":{"v":[0.5,2.5,0.7,0.7],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#pages"}},"bezier-0_65-0-0_35-1":{"v":[0.65,0,0.35,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"ease":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease`, expanded to its control points."},"ease-in":{"v":[0.42,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease-in`, expanded to its control points."},"ease-in-out":{"v":[0.42,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease-in-out`, expanded to its control points."},"ease-out":{"v":[0,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease-out`, expanded to its control points."},"linear":{"v":[0,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `linear`, expanded to its control points."},"mcav25heightease":{"v":[0.28,1.4,0.67,0.96],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--mcaV25HeightEase"},"d":"Custom property --mcaV25HeightEase, declared on .mcaV25Container[data-prev-state=\"expanded\"], .mcaV25Container.mcaV25Container--expanded[data-prev-state=\"toolbar\"]."},"mcav25motionease":{"v":[0.33,1,0.68,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--mcaV25MotionEase"},"d":"Custom property --mcaV25MotionEase, declared on .mcaV25Container."},"mcav25transformeasebounce":{"v":[0.34,1.56,0.64,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--mcaV25TransformEaseBounce"},"d":"Custom property --mcaV25TransformEaseBounce, declared on .mcaV25Container."}},"transition":{"background-color-150ms-ease":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 382 elements."},"opacity-200ms-bezier-0-0-0-1":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0-0-0-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 68 elements."},"transform-200ms-bezier-0-0-0-1":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0-0-0-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 68 elements."},"all-150ms-linear":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.linear}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 66 elements."},"opacity-150ms-linear":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.linear}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 64 elements."},"bottom-300ms-bezier-0_5-2_5-0_7-0_7":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_5-2_5-0_7-0_7}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 56 elements."},"box-shadow-300ms-bezier-0_5-2_5-0_7-0_7":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_5-2_5-0_7-0_7}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 55 elements."},"transform-300ms-bezier-0_5-2_5-0_7-0_7":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_5-2_5-0_7-0_7}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 55 elements."},"box-shadow-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 34 elements."},"background-position-300ms-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 24 elements."},"left-300ms-bezier-0_34-1_2-0_64-1":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_34-1_2-0_64-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 24 elements."},"right-300ms-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 24 elements."},"transform-300ms-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 21 elements."},"background-color-200ms-ease-in-out":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 20 elements."},"color-150ms-ease-in-out":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 20 elements."},"border-200ms-ease-in-out":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 19 elements."},"box-shadow-200ms-ease-in-out":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 19 elements."},"opacity-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 17 elements."},"all-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 16 elements."},"all-250ms-ease-out":{"v":{"duration":"{motion.duration.250ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 12 elements."},"color-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 10 elements."},"all-200ms-ease-in":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 9 elements."},"all-400ms-ease":{"v":{"duration":"{motion.duration.400ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 9 elements."},"ms-flex-positive-300ms-ease-in-out":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"background-color-320ms-ease":{"v":{"duration":"{motion.duration.320ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"border-radius-320ms-ease":{"v":{"duration":"{motion.duration.320ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"flex-grow-300ms-ease-in-out":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"opacity-300ms-ease-in-out":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"transform-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"webkit-clip-path-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"all-500ms-ease":{"v":{"duration":"{motion.duration.500ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"clip-path-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"opacity-150ms-ease":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"ms-flex-preferred-size-300ms-ease-in-out":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"box-shadow-320ms-ease":{"v":{"duration":"{motion.duration.320ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"flex-basis-300ms-ease-in-out":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"font-size-300ms-ease-in-out":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"max-width-300ms-ease-in-out":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"padding-300ms-ease-in-out":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"width-320ms-ease":{"v":{"duration":"{motion.duration.320ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"all-100ms-ease":{"v":{"duration":"{motion.duration.100ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"opacity-400ms-ease-out":{"v":{"duration":"{motion.duration.400ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"all-200ms-ease-in-out":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"background-color-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"transform-200ms-ease-in":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"visibility-0ms-linear-delay200ms":{"v":{"duration":"{motion.duration.0ms}","delay":"200ms","timingFunction":"{motion.easing.linear}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"all-150ms-ease":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"opacity-150ms-ease-in-out":{"v":{"duration":"{motion.duration.150ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"opacity-200ms-ease-in-out":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"opacity-300ms-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"opacity-500ms-ease-out":{"v":{"duration":"{motion.duration.500ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"transform-500ms-ease-out":{"v":{"duration":"{motion.duration.500ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"visibility-300ms-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."}},"animation":{"marquee-left":{"v":{"name":"marquee-left","duration":"{motion.duration.55000ms}","delay":"0ms","timingFunction":"{motion.easing.linear}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `marquee-left`."},"marquee-right":{"v":{"name":"marquee-right","duration":"{motion.duration.45000ms}","delay":"0ms","timingFunction":"{motion.easing.linear}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `marquee-right`."},"onetrust-fade-in":{"v":{"name":"onetrust-fade-in","duration":"{motion.duration.400ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}","iterationCount":"1","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `onetrust-fade-in`."},"scroll-x":{"v":{"name":"scroll-x","duration":"{motion.duration.duration}","delay":"0ms","timingFunction":"{motion.easing.linear}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `scroll-x`."}}}},"light":{"background":{"page":{"v":"#ffffff","t":"color","s":"measured document.body backgroundColor on mailchimp.com /"},"cta":{"v":"#ffe01b","t":"color","s":"css-var --cta-background-color (light)"},"ctaDisabled":{"v":"#dbd9d2","t":"color","s":"css-var --cta-background-color-disabled (light)"},"selection":{"v":"rgba(255, 224, 27, 0.15)","t":"color","s":"css-var --selection-background-color (light)"}},"text":{"primary":{"v":"#231e15","t":"color","s":"css-var --heading-color (light)"},"copy":{"v":"#231e15","t":"color","s":"css-var --copy-color (light)"},"muted":{"v":"rgba(35, 30, 21, 0.65)","t":"color","s":"css-var --copy-color-light (light)"},"onCta":{"v":"#231e15","t":"color","s":"css-var --cta-text-color (light)"},"link":{"v":"#231e15","t":"color","s":"css-var --link-color (light)"}},"border":{"cta":{"v":"#231e15","t":"color","s":"css-var --cta-stroke-color (light)"},"ctaWidth":{"v":"1px","t":"dimension","s":"css-var --cta-stroke-width (light)"}},"action":{"fill":{"v":"#ffe01b","t":"color","s":"css-var --cta-background-color (light)"},"text":{"v":"#231e15","t":"color","s":"css-var --cta-text-color (light)"},"stroke":{"v":"#231e15","t":"color","s":"css-var --cta-stroke-color (light)"},"depth":{"v":"#231e15","t":"color","s":"css-var --cta-depth-color (light)"},"hoverLink":{"v":"rgba(255, 224, 27, 0.65)","t":"color","s":"css-var --link-background-hovered (light)"}},"elevation":{"shadow":{"v":"rgba(35, 30, 21, 0.15)","t":"color","s":"css-var --elevation-shadow-color (light)"}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // The roles panel obeys the Dark toggle: mailchimp.com ships no dark
+  // surface, so the dark set is empty and the panel says so instead of
+  // pretending.
+  const rolesHost = () => {
+    const dark = document.documentElement.dataset.mode === 'dark';
+    const roles = flat(TOK[dark ? 'dark' : 'light'] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    let hh = `<div class="pal-h">${dark ? 'dark roles' : 'light roles'}</div>`;
+    if (!roles.length) return hh + `<p class="note">Empty. mailchimp.com ships one light theme. There is no dark token set.</p>`;
+    hh += `<div class="pal${dark ? ' dark' : ''}">`;
+    for (const [n, t] of roles) hh += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    return hh + '</div>';
+  };
+  const host = document.createElement('div');
+  host.id = 'roles-panel';
+  $('#roles-out').insertAdjacentHTML('beforeend', h);
+  $('#roles-out').appendChild(host);
+  const refill = () => { host.innerHTML = rolesHost(); };
+  refill();
+  document.getElementById('theme').addEventListener('change', function () {
+    document.documentElement.dataset.mode = this.checked ? 'dark' : '';
+    refill();
+  });
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.ctaRing || {}, 'ctaRing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat(TOK.core.animate || {}, 'animate.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const setname of ['light', 'dark']) {
+    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.component || {}).login || {}, 'component.login.')) {
+    if (/shadow|glow/.test(n)) e += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 110))}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}), 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

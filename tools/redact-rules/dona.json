@@ -1,0 +1,14 @@
+{
+ "_note": "Rules for systems/dona. A fully public signed-out capture of dona.ai's four marketing routes: no owner data on any surface. The newsletter email field was focused and filled once with a throwaway address, then cleared; nothing was submitted and no account exists. Team names on /about and all legal/marketing copy in the screenshots are Dona's published public-page content. The OCR email net is kept with dona.ai's own published addresses and example.com allowed.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@dona\\.ai$",
+   "@getdona\\.ai$",
+   "@getdona\\.com$",
+   "@example\\.com$",
+   "@example\\.org$"
+  ]
+ },
+ "families": []
+}

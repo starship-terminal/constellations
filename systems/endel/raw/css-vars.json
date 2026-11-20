@@ -1,0 +1,2288 @@
+{
+ "readAt": "2026-11-13",
+ "source": "endel.io and app.endel.io's linked /_next/static/chunks/*.css bundles (Next.js builds), read through the CSSOM on the live home page and the live explore page, and re-parsed in a probe document per host",
+ "sheets": [
+  {
+   "name": "https://endel.io/_next/static/chunks/1gmk1w5b43367.css",
+   "media": "",
+   "host": "site",
+   "bytes": 72812
+  },
+  {
+   "name": "https://endel.io/_next/static/chunks/2lq5ar8gz5i5i.css",
+   "media": "",
+   "host": "site",
+   "bytes": 29204
+  },
+  {
+   "name": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "media": "",
+   "host": "site",
+   "bytes": 52540
+  },
+  {
+   "name": "https://endel.io/_next/static/chunks/3x4ucrb6__oqk.css",
+   "media": "",
+   "host": "site",
+   "bytes": 1365
+  },
+  {
+   "name": "https://endel.io/_next/static/chunks/2ah6mzokt0dp6.css",
+   "media": "",
+   "host": "site",
+   "bytes": 39099
+  },
+  {
+   "name": "https://cdn.paddle.com/paddle/v2/assets/css/paddle.css",
+   "media": "",
+   "host": "site",
+   "bytes": 0
+  },
+  {
+   "name": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
+   "media": "",
+   "host": "app",
+   "bytes": 74144
+  },
+  {
+   "name": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "media": "",
+   "host": "app",
+   "bytes": 160422
+  },
+  {
+   "name": "https://app.endel.io/_next/static/chunks/0g4_0nuxa-lzw.css",
+   "media": "",
+   "host": "app",
+   "bytes": 22632
+  },
+  {
+   "name": "https://app.endel.io/_next/static/chunks/38j8wfyvrxndc.css",
+   "media": "",
+   "host": "app",
+   "bytes": 16315
+  },
+  {
+   "name": "inline-4",
+   "media": "",
+   "host": "app",
+   "bytes": 16763
+  },
+  {
+   "name": "inline-5",
+   "media": "",
+   "host": "app",
+   "bytes": 6509
+  }
+ ],
+ "counts": {
+  "rules": 115,
+  "fonts": 6,
+  "names": {
+   "token": 32,
+   "app": 94,
+   "utility": 0
+  },
+  "bySelector": {
+   "[token] site :root": 28,
+   "[token] site @media (max-width: 1024px) :root": 16,
+   "[token] site @media (max-width: 940px) :root": 16,
+   "[token] site @media (max-width: 640px) :root": 14,
+   "[app] site :root": 16,
+   "[app] site @media (max-width: 1024px) :root": 2,
+   "[app] site @media (max-width: 940px) :root": 6,
+   "[app] site @media (max-width: 724px) :root": 1,
+   "[app] site @media (max-width: 640px) :root": 2,
+   "[app] site @media (max-width: 440px) :root": 2,
+   "[app] site .grd": 11,
+   "[app] site .HeaderWrap-module__xM7-Ra__header": 2,
+   "[app] site @media (max-width: 940px) .HeaderWrap-module__xM7-Ra__header": 1,
+   "[app] site .Button-module__zg_LDG__button": 5,
+   "[app] site .Button-module__zg_LDG__button.Button-module__zg_LDG__border-radius-basic": 1,
+   "[app] site .Button-module__zg_LDG__button.Button-module__zg_LDG__border-radius-full": 1,
+   "[app] site .Button-module__zg_LDG__button.Button-module__zg_LDG__size-big": 1,
+   "[app] site .Button-module__zg_LDG__button.Button-module__zg_LDG__size-medium": 1,
+   "[app] site .Button-module__zg_LDG__button.Button-module__zg_LDG__size-small": 1,
+   "[app] site .Button-module__zg_LDG__button.Button-module__zg_LDG__size-small.Button-module__zg_LDG__has-padding-true": 1,
+   "[app] site .Button-module__zg_LDG__button.Button-module__zg_LDG__size-medium.Button-module__zg_LDG__has-padding-true": 1,
+   "[app] site .Button-module__zg_LDG__button.Button-module__zg_LDG__size-big.Button-module__zg_LDG__has-padding-true": 1,
+   "[app] site .Button-module__zg_LDG__button.Button-module__zg_LDG__size-small .Button-module__zg_LDG__icon": 1,
+   "[app] site .Button-module__zg_LDG__button.Button-module__zg_LDG__size-medium .Button-module__zg_LDG__icon": 1,
+   "[app] site .Button-module__zg_LDG__button.Button-module__zg_LDG__size-big .Button-module__zg_LDG__icon": 1,
+   "[app] site @media (max-width: 1024px) .Button-module__zg_LDG__button.Button-module__zg_LDG__size-medium": 1,
+   "[app] site @media (max-width: 1024px) .Button-module__zg_LDG__button.Button-module__zg_LDG__size-big": 1,
+   "[app] site @media (max-width: 1024px) .Button-module__zg_LDG__button.Button-module__zg_LDG__size-small .Button-module__zg_LDG__icon": 1,
+   "[app] site @media (max-width: 940px) .Button-module__zg_LDG__button.Button-module__zg_LDG__size-big .Button-module__zg_LDG__icon": 1,
+   "[app] site @media (max-width: 940px) .Button-module__zg_LDG__button.Button-module__zg_LDG__size-small": 1,
+   "[app] site @media (max-width: 640px) .Button-module__zg_LDG__button.Button-module__zg_LDG__size-big .Button-module__zg_LDG__icon": 1,
+   "[app] site @media (max-width: 640px) .Button-module__zg_LDG__button.Button-module__zg_LDG__size-medium": 1,
+   "[app] site @media (max-width: 640px) .Button-module__zg_LDG__button.Button-module__zg_LDG__size-big": 1,
+   "[app] site .CardsCarousel-module__J56y7G__wrap": 2,
+   "[app] site @media (max-width: 940px) .CardsCarousel-module__J56y7G__wrap": 1,
+   "[app] site @media (max-width: 724px) .CardsCarousel-module__J56y7G__wrap": 2,
+   "[token] app .apercuproregular_a9416797-module__JzVbua__variable": 1,
+   "[token] app .apercupromedium_9a23281c-module__Ocel-G__variable": 1,
+   "[token] app :root": 30,
+   "[token] app @media (max-width: 1024px) :root": 16,
+   "[token] app @media (max-width: 940px) :root": 16,
+   "[token] app @media (max-width: 640px) :root": 14,
+   "[app] app :root": 16,
+   "[app] app @media (max-width: 1024px) :root": 2,
+   "[app] app @media (max-width: 940px) :root": 6,
+   "[app] app @media (max-width: 724px) :root": 1,
+   "[app] app @media (max-width: 640px) :root": 2,
+   "[app] app @media (max-width: 440px) :root": 2,
+   "[app] app .grd": 11,
+   "[app] app .Button-module__LFCFwa__button": 5,
+   "[app] app .Button-module__LFCFwa__button.Button-module__LFCFwa__border-radius-basic": 1,
+   "[app] app .Button-module__LFCFwa__button.Button-module__LFCFwa__border-radius-full": 1,
+   "[app] app .Button-module__LFCFwa__button.Button-module__LFCFwa__size-big": 1,
+   "[app] app .Button-module__LFCFwa__button.Button-module__LFCFwa__size-medium": 1,
+   "[app] app .Button-module__LFCFwa__button.Button-module__LFCFwa__size-small": 1,
+   "[app] app .Button-module__LFCFwa__button.Button-module__LFCFwa__size-small.Button-module__LFCFwa__has-padding-true": 1,
+   "[app] app .Button-module__LFCFwa__button.Button-module__LFCFwa__size-medium.Button-module__LFCFwa__has-padding-true": 1,
+   "[app] app .Button-module__LFCFwa__button.Button-module__LFCFwa__size-big.Button-module__LFCFwa__has-padding-true": 1,
+   "[app] app .Button-module__LFCFwa__button.Button-module__LFCFwa__size-small .Button-module__LFCFwa__icon": 1,
+   "[app] app .Button-module__LFCFwa__button.Button-module__LFCFwa__size-medium .Button-module__LFCFwa__icon": 1,
+   "[app] app .Button-module__LFCFwa__button.Button-module__LFCFwa__size-big .Button-module__LFCFwa__icon": 1,
+   "[app] app @media (max-width: 1024px) .Button-module__LFCFwa__button.Button-module__LFCFwa__size-medium": 1,
+   "[app] app @media (max-width: 1024px) .Button-module__LFCFwa__button.Button-module__LFCFwa__size-big": 1,
+   "[app] app @media (max-width: 1024px) .Button-module__LFCFwa__button.Button-module__LFCFwa__size-small .Button-module__LFCFwa__icon": 1,
+   "[app] app @media (max-width: 940px) .Button-module__LFCFwa__button.Button-module__LFCFwa__size-big .Button-module__LFCFwa__icon": 1,
+   "[app] app @media (max-width: 940px) .Button-module__LFCFwa__button.Button-module__LFCFwa__size-small": 1,
+   "[app] app @media (max-width: 640px) .Button-module__LFCFwa__button.Button-module__LFCFwa__size-big .Button-module__LFCFwa__icon": 1,
+   "[app] app @media (max-width: 640px) .Button-module__LFCFwa__button.Button-module__LFCFwa__size-medium": 1,
+   "[app] app @media (max-width: 640px) .Button-module__LFCFwa__button.Button-module__LFCFwa__size-big": 1,
+   "[app] app .FocusTimerForm-module__RgjinW__wrap": 4,
+   "[app] app @media (max-width: 724px) .FocusTimerForm-module__RgjinW__wrap": 3,
+   "[app] app @media (max-width: 640px) .FocusTimerForm-module__RgjinW__wrap": 2,
+   "[app] app @media (max-width: 540px) .FocusTimerForm-module__RgjinW__wrap": 1,
+   "[app] app .ScenarioForm-module__ccjb7q__wrap": 2,
+   "[app] app @media (max-width: 724px) .ScenarioForm-module__ccjb7q__wrap": 2,
+   "[app] app @media (max-width: 640px) .ScenarioForm-module__ccjb7q__wrap": 1,
+   "[app] app @media (max-width: 540px) .ScenarioForm-module__ccjb7q__wrap": 1,
+   "[app] app .BannerCarousel-module__mk6V2G__wrap": 5,
+   "[app] app @media (max-width: 1024px) .BannerCarousel-module__mk6V2G__wrap": 3,
+   "[app] app @media (max-width: 940px) .BannerCarousel-module__mk6V2G__wrap": 2,
+   "[app] app @media (max-width: 724px) .BannerCarousel-module__mk6V2G__wrap": 1,
+   "[app] app @media (max-width: 640px) .BannerCarousel-module__mk6V2G__wrap": 1,
+   "[app] app @media (max-width: 480px) .BannerCarousel-module__mk6V2G__wrap": 1,
+   "[app] app .Header-module__V2rH0G__header": 2,
+   "[app] app @media (max-width: 940px) .Header-module__V2rH0G__header": 1,
+   "[app] app @media (max-width: 640px) .Header-module__V2rH0G__header": 1,
+   "[app] app .Curtain-module__kvdHKa__curtain": 2,
+   "[app] app @media (max-width: 1024px) .Curtain-module__kvdHKa__curtain": 1,
+   "[app] app @media (max-width: 724px) .Curtain-module__kvdHKa__curtain": 2,
+   "[app] app .Header-module__iZZHxW__header": 2,
+   "[app] app @media (max-width: 940px) .Header-module__iZZHxW__header": 1,
+   "[app] app @media (max-width: 640px) .Header-module__iZZHxW__header": 1,
+   "[app] app .Banner-module__qXPcLq__banner": 4,
+   "[app] app @media (max-width: 724px) .Banner-module__qXPcLq__banner": 2,
+   "[app] app @media (max-width: 640px) .Banner-module__qXPcLq__banner": 2,
+   "[app] app [data-sonner-toaster][dir=\"ltr\"], html[dir=\"ltr\"]": 9,
+   "[app] app [data-sonner-toaster][dir=\"rtl\"], html[dir=\"rtl\"]": 9,
+   "[app] app [data-sonner-toaster]": 13,
+   "[app] app [data-sonner-toast]": 2,
+   "[app] app [data-sonner-toast][data-y-position=\"top\"]": 3,
+   "[app] app [data-sonner-toast][data-y-position=\"bottom\"]": 3,
+   "[app] app [data-sonner-toast][data-mounted=\"true\"]": 1,
+   "[app] app [data-sonner-toast][data-expanded=\"false\"][data-front=\"false\"]": 2,
+   "[app] app [data-sonner-toast][data-mounted=\"true\"][data-expanded=\"true\"]": 1,
+   "[app] app [data-sonner-toast][data-removed=\"true\"][data-front=\"true\"][data-swipe-out=\"false\"]": 1,
+   "[app] app [data-sonner-toast][data-removed=\"true\"][data-front=\"false\"][data-swipe-out=\"false\"][data-expanded=\"true\"]": 1,
+   "[app] app [data-sonner-toast][data-removed=\"true\"][data-front=\"false\"][data-swipe-out=\"false\"][data-expanded=\"false\"]": 1,
+   "[app] app [data-sonner-toaster][data-sonner-theme=\"light\"]": 15,
+   "[app] app [data-sonner-toaster][data-sonner-theme=\"light\"] [data-sonner-toast][data-invert=\"true\"]": 3,
+   "[app] app [data-sonner-toaster][data-sonner-theme=\"dark\"] [data-sonner-toast][data-invert=\"true\"]": 3,
+   "[app] app [data-sonner-toaster][data-sonner-theme=\"dark\"]": 17,
+   "[app] app .sonner-loading-wrapper": 1
+  }
+ },
+ "errors": [
+  {
+   "file": "https://cdn.paddle.com/paddle/v2/assets/css/paddle.css",
+   "host": "site",
+   "error": "cross-origin to the CSSOM"
+  }
+ ],
+ "token": [
+  {
+   "file": "https://endel.io/_next/static/chunks/1gmk1w5b43367.css",
+   "host": "site",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--color-white": "#fff",
+    "--color-black": "#000",
+    "--color-gray-1": "#191919",
+    "--color-gray-2": "#262626",
+    "--color-gray-3": "gray",
+    "--color-gray-4": "#bfbfbf",
+    "--color-gray-5": "#e0e0e0",
+    "--color-orange": "#ff7a00",
+    "--color-green": "#82d133",
+    "--color-gradient-1": "linear-gradient(180deg, #181818 0%, #0000 100%)"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1gmk1w5b43367.css",
+   "host": "site",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--title-h1": "60px",
+    "--line-height-h1": "72px",
+    "--title-h2": "44px",
+    "--line-height-h2": "56px",
+    "--title-h3": "36px",
+    "--line-height-h3": "42px",
+    "--title-h4": "28px",
+    "--line-height-h4": "36px",
+    "--text-1": "22px",
+    "--line-height-text-1": "28px",
+    "--text-2": "18px",
+    "--line-height-text-2": "24px",
+    "--text-3": "16px",
+    "--line-height-text-3": "24px",
+    "--text-4": "14px",
+    "--line-height-text-4": "20px",
+    "--text-5": "10px",
+    "--line-height-text-5": "14px"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1gmk1w5b43367.css",
+   "host": "site",
+   "selector": ":root",
+   "context": [
+    "@media (max-width: 1024px)"
+   ],
+   "properties": {
+    "--title-h1": "48px",
+    "--line-height-h1": "56px",
+    "--title-h2": "38px",
+    "--line-height-h2": "44px",
+    "--title-h3": "32px",
+    "--line-height-h3": "38px",
+    "--title-h4": "24px",
+    "--line-height-h4": "32px",
+    "--text-1": "20px",
+    "--line-height-text-1": "28px",
+    "--text-2": "16px",
+    "--line-height-text-2": "22px",
+    "--text-3": "14px",
+    "--line-height-text-3": "20px",
+    "--text-4": "12px",
+    "--line-height-text-4": "18px"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1gmk1w5b43367.css",
+   "host": "site",
+   "selector": ":root",
+   "context": [
+    "@media (max-width: 940px)"
+   ],
+   "properties": {
+    "--title-h1": "48px",
+    "--line-height-h1": "56px",
+    "--title-h2": "32px",
+    "--line-height-h2": "38px",
+    "--title-h3": "28px",
+    "--line-height-h3": "36px",
+    "--title-h4": "22px",
+    "--line-height-h4": "28px",
+    "--text-1": "18px",
+    "--line-height-text-1": "24px",
+    "--text-2": "14px",
+    "--line-height-text-2": "20px",
+    "--text-3": "12px",
+    "--line-height-text-3": "18px",
+    "--text-4": "10px",
+    "--line-height-text-4": "16px"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1gmk1w5b43367.css",
+   "host": "site",
+   "selector": ":root",
+   "context": [
+    "@media (max-width: 640px)"
+   ],
+   "properties": {
+    "--title-h1": "36px",
+    "--line-height-h1": "42px",
+    "--title-h2": "28px",
+    "--line-height-h2": "34px",
+    "--title-h3": "24px",
+    "--line-height-h3": "30px",
+    "--title-h4": "20px",
+    "--line-height-h4": "24px",
+    "--text-1": "16px",
+    "--line-height-text-1": "22px",
+    "--text-2": "14px",
+    "--line-height-text-2": "20px",
+    "--text-3": "12px",
+    "--line-height-text-3": "18px"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
+   "host": "app",
+   "selector": ".apercuproregular_a9416797-module__JzVbua__variable",
+   "context": [],
+   "properties": {
+    "--font-apercu-pro-regular": "\"apercuProRegular\", \"apercuProRegular Fallback\""
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
+   "host": "app",
+   "selector": ".apercupromedium_9a23281c-module__Ocel-G__variable",
+   "context": [],
+   "properties": {
+    "--font-apercu-pro-medium": "\"apercuProMedium\", \"apercuProMedium Fallback\""
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
+   "host": "app",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--color-white": "#fff",
+    "--color-black": "#000",
+    "--color-gray-1": "#191919",
+    "--color-gray-2": "#262626",
+    "--color-gray-3": "gray",
+    "--color-gray-4": "#bfbfbf",
+    "--color-gray-5": "#e0e0e0",
+    "--color-orange": "#ff7a00",
+    "--color-green": "#82d133",
+    "--color-gradient-1": "linear-gradient(180deg, #181818 0%, #0000 100%)"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
+   "host": "app",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--title-h1": "60px",
+    "--line-height-h1": "72px",
+    "--title-h2": "44px",
+    "--line-height-h2": "56px",
+    "--title-h3": "36px",
+    "--line-height-h3": "42px",
+    "--title-h4": "28px",
+    "--line-height-h4": "36px",
+    "--text-1": "22px",
+    "--line-height-text-1": "28px",
+    "--text-2": "18px",
+    "--line-height-text-2": "24px",
+    "--text-3": "16px",
+    "--line-height-text-3": "24px",
+    "--text-4": "14px",
+    "--line-height-text-4": "20px",
+    "--text-5": "10px",
+    "--line-height-text-5": "14px"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
+   "host": "app",
+   "selector": ":root",
+   "context": [
+    "@media (max-width: 1024px)"
+   ],
+   "properties": {
+    "--title-h1": "48px",
+    "--line-height-h1": "56px",
+    "--title-h2": "38px",
+    "--line-height-h2": "44px",
+    "--title-h3": "32px",
+    "--line-height-h3": "38px",
+    "--title-h4": "24px",
+    "--line-height-h4": "32px",
+    "--text-1": "20px",
+    "--line-height-text-1": "28px",
+    "--text-2": "16px",
+    "--line-height-text-2": "22px",
+    "--text-3": "14px",
+    "--line-height-text-3": "20px",
+    "--text-4": "12px",
+    "--line-height-text-4": "18px"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
+   "host": "app",
+   "selector": ":root",
+   "context": [
+    "@media (max-width: 940px)"
+   ],
+   "properties": {
+    "--title-h1": "48px",
+    "--line-height-h1": "56px",
+    "--title-h2": "32px",
+    "--line-height-h2": "38px",
+    "--title-h3": "28px",
+    "--line-height-h3": "36px",
+    "--title-h4": "22px",
+    "--line-height-h4": "28px",
+    "--text-1": "18px",
+    "--line-height-text-1": "24px",
+    "--text-2": "14px",
+    "--line-height-text-2": "20px",
+    "--text-3": "12px",
+    "--line-height-text-3": "18px",
+    "--text-4": "10px",
+    "--line-height-text-4": "16px"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
+   "host": "app",
+   "selector": ":root",
+   "context": [
+    "@media (max-width: 640px)"
+   ],
+   "properties": {
+    "--title-h1": "36px",
+    "--line-height-h1": "42px",
+    "--title-h2": "28px",
+    "--line-height-h2": "34px",
+    "--title-h3": "24px",
+    "--line-height-h3": "30px",
+    "--title-h4": "20px",
+    "--line-height-h4": "24px",
+    "--text-1": "16px",
+    "--line-height-text-1": "22px",
+    "--text-2": "14px",
+    "--line-height-text-2": "20px",
+    "--text-3": "12px",
+    "--line-height-text-3": "18px"
+   },
+   "bin": "token"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
+   "host": "app",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--color-accent-green": "#58ff5d",
+    "--color-accent-green-hover": "#3ee843"
+   },
+   "bin": "token"
+  }
+ ],
+ "app": [
+  {
+   "file": "https://endel.io/_next/static/chunks/1gmk1w5b43367.css",
+   "host": "site",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--max-cols": "12",
+    "--max-width": "1280px",
+    "--gutter": "64px",
+    "--gap": "24px",
+    "--cols-1": "calc((var(--max-width) - var(--gap) * (var(--max-cols) - 1) - var(--gutter) * 2) / var(--max-cols))",
+    "--cols-2": "calc(((var(--cols-1)) * 2) + var(--gap))",
+    "--cols-3": "calc(((var(--cols-1)) * 3) + var(--gap) * 2)",
+    "--cols-4": "calc(((var(--cols-1)) * 4) + var(--gap) * 3)",
+    "--cols-5": "calc(((var(--cols-1)) * 5) + var(--gap) * 4)",
+    "--cols-6": "calc(((var(--cols-1)) * 6) + var(--gap) * 5)",
+    "--cols-7": "calc(((var(--cols-1)) * 7) + var(--gap) * 6)",
+    "--cols-8": "calc(((var(--cols-1)) * 8) + var(--gap) * 7)",
+    "--cols-9": "calc(((var(--cols-1)) * 9) + var(--gap) * 8)",
+    "--cols-10": "calc(((var(--cols-1)) * 10) + var(--gap) * 9)",
+    "--cols-11": "calc(((var(--cols-1)) * 11) + var(--gap) * 10)",
+    "--cols-12": "calc(((var(--cols-1)) * 12) + var(--gap) * 11)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1gmk1w5b43367.css",
+   "host": "site",
+   "selector": ":root",
+   "context": [
+    "@media (max-width: 1024px)"
+   ],
+   "properties": {
+    "--gutter": "32px",
+    "--max-width": "1024px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1gmk1w5b43367.css",
+   "host": "site",
+   "selector": ":root",
+   "context": [
+    "@media (max-width: 940px)"
+   ],
+   "properties": {
+    "--gap": "16px",
+    "--gap-2": "12px",
+    "--gap-3": "8px",
+    "--gap-4": "6px",
+    "--gutter": "20px",
+    "--max-width": "940px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1gmk1w5b43367.css",
+   "host": "site",
+   "selector": ":root",
+   "context": [
+    "@media (max-width: 724px)"
+   ],
+   "properties": {
+    "--max-width": "724px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1gmk1w5b43367.css",
+   "host": "site",
+   "selector": ":root",
+   "context": [
+    "@media (max-width: 640px)"
+   ],
+   "properties": {
+    "--gutter": "16px",
+    "--max-width": "640px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1gmk1w5b43367.css",
+   "host": "site",
+   "selector": ":root",
+   "context": [
+    "@media (max-width: 440px)"
+   ],
+   "properties": {
+    "--max-cols": "6",
+    "--max-width": "440px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1gmk1w5b43367.css",
+   "host": "site",
+   "selector": ".grd",
+   "context": [],
+   "properties": {
+    "--grid-12": "repeat(12, 1fr)",
+    "--grid-11": "repeat(11, 1fr)",
+    "--grid-10": "repeat(10, 1fr)",
+    "--grid-9": "repeat(9, 1fr)",
+    "--grid-8": "repeat(8, 1fr)",
+    "--grid-7": "repeat(7, 1fr)",
+    "--grid-6": "repeat(6, 1fr)",
+    "--grid-4": "repeat(4, 1fr)",
+    "--grid-3": "repeat(3, 1fr)",
+    "--grid-2": "repeat(2, 1fr)",
+    "--grid-1": "repeat(1, 1fr)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".HeaderWrap-module__xM7-Ra__header",
+   "context": [],
+   "properties": {
+    "--header-gutter": "16px",
+    "--header-height": "72px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".HeaderWrap-module__xM7-Ra__header",
+   "context": [
+    "@media (max-width: 940px)"
+   ],
+   "properties": {
+    "--header-height": "56px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".Button-module__zg_LDG__button",
+   "context": [],
+   "properties": {
+    "--padding": "0",
+    "--border-radius": "0",
+    "--size": "auto",
+    "--icon-size": "auto",
+    "--border-size": "2px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".Button-module__zg_LDG__button.Button-module__zg_LDG__border-radius-basic",
+   "context": [],
+   "properties": {
+    "--border-radius": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".Button-module__zg_LDG__button.Button-module__zg_LDG__border-radius-full",
+   "context": [],
+   "properties": {
+    "--border-radius": "100px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".Button-module__zg_LDG__button.Button-module__zg_LDG__size-big",
+   "context": [],
+   "properties": {
+    "--size": "68px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".Button-module__zg_LDG__button.Button-module__zg_LDG__size-medium",
+   "context": [],
+   "properties": {
+    "--size": "52px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".Button-module__zg_LDG__button.Button-module__zg_LDG__size-small",
+   "context": [],
+   "properties": {
+    "--size": "40px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".Button-module__zg_LDG__button.Button-module__zg_LDG__size-small.Button-module__zg_LDG__has-padding-true",
+   "context": [],
+   "properties": {
+    "--padding": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".Button-module__zg_LDG__button.Button-module__zg_LDG__size-medium.Button-module__zg_LDG__has-padding-true",
+   "context": [],
+   "properties": {
+    "--padding": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".Button-module__zg_LDG__button.Button-module__zg_LDG__size-big.Button-module__zg_LDG__has-padding-true",
+   "context": [],
+   "properties": {
+    "--padding": "28px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".Button-module__zg_LDG__button.Button-module__zg_LDG__size-small .Button-module__zg_LDG__icon",
+   "context": [],
+   "properties": {
+    "--icon-size": "20px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".Button-module__zg_LDG__button.Button-module__zg_LDG__size-medium .Button-module__zg_LDG__icon",
+   "context": [],
+   "properties": {
+    "--icon-size": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".Button-module__zg_LDG__button.Button-module__zg_LDG__size-big .Button-module__zg_LDG__icon",
+   "context": [],
+   "properties": {
+    "--icon-size": "36px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".Button-module__zg_LDG__button.Button-module__zg_LDG__size-medium",
+   "context": [
+    "@media (max-width: 1024px)"
+   ],
+   "properties": {
+    "--size": "48px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".Button-module__zg_LDG__button.Button-module__zg_LDG__size-big",
+   "context": [
+    "@media (max-width: 1024px)"
+   ],
+   "properties": {
+    "--size": "60px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".Button-module__zg_LDG__button.Button-module__zg_LDG__size-small .Button-module__zg_LDG__icon",
+   "context": [
+    "@media (max-width: 1024px)"
+   ],
+   "properties": {
+    "--icon-size": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".Button-module__zg_LDG__button.Button-module__zg_LDG__size-big .Button-module__zg_LDG__icon",
+   "context": [
+    "@media (max-width: 940px)"
+   ],
+   "properties": {
+    "--icon-size": "32px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".Button-module__zg_LDG__button.Button-module__zg_LDG__size-small",
+   "context": [
+    "@media (max-width: 940px)"
+   ],
+   "properties": {
+    "--size": "32px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".Button-module__zg_LDG__button.Button-module__zg_LDG__size-big .Button-module__zg_LDG__icon",
+   "context": [
+    "@media (max-width: 640px)"
+   ],
+   "properties": {
+    "--icon-size": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".Button-module__zg_LDG__button.Button-module__zg_LDG__size-medium",
+   "context": [
+    "@media (max-width: 640px)"
+   ],
+   "properties": {
+    "--size": "40px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "selector": ".Button-module__zg_LDG__button.Button-module__zg_LDG__size-big",
+   "context": [
+    "@media (max-width: 640px)"
+   ],
+   "properties": {
+    "--size": "52px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/2ah6mzokt0dp6.css",
+   "host": "site",
+   "selector": ".CardsCarousel-module__J56y7G__wrap",
+   "context": [],
+   "properties": {
+    "--gutter": "64px",
+    "--gap": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/2ah6mzokt0dp6.css",
+   "host": "site",
+   "selector": ".CardsCarousel-module__J56y7G__wrap",
+   "context": [
+    "@media (max-width: 940px)"
+   ],
+   "properties": {
+    "--gutter": "20px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/2ah6mzokt0dp6.css",
+   "host": "site",
+   "selector": ".CardsCarousel-module__J56y7G__wrap",
+   "context": [
+    "@media (max-width: 724px)"
+   ],
+   "properties": {
+    "--gutter": "16px",
+    "--gap": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
+   "host": "app",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--max-cols": "12",
+    "--max-width": "1280px",
+    "--gutter": "64px",
+    "--gap": "24px",
+    "--cols-1": "calc((var(--max-width) - var(--gap) * (var(--max-cols) - 1) - var(--gutter) * 2) / var(--max-cols))",
+    "--cols-2": "calc(((var(--cols-1)) * 2) + var(--gap))",
+    "--cols-3": "calc(((var(--cols-1)) * 3) + var(--gap) * 2)",
+    "--cols-4": "calc(((var(--cols-1)) * 4) + var(--gap) * 3)",
+    "--cols-5": "calc(((var(--cols-1)) * 5) + var(--gap) * 4)",
+    "--cols-6": "calc(((var(--cols-1)) * 6) + var(--gap) * 5)",
+    "--cols-7": "calc(((var(--cols-1)) * 7) + var(--gap) * 6)",
+    "--cols-8": "calc(((var(--cols-1)) * 8) + var(--gap) * 7)",
+    "--cols-9": "calc(((var(--cols-1)) * 9) + var(--gap) * 8)",
+    "--cols-10": "calc(((var(--cols-1)) * 10) + var(--gap) * 9)",
+    "--cols-11": "calc(((var(--cols-1)) * 11) + var(--gap) * 10)",
+    "--cols-12": "calc(((var(--cols-1)) * 12) + var(--gap) * 11)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
+   "host": "app",
+   "selector": ":root",
+   "context": [
+    "@media (max-width: 1024px)"
+   ],
+   "properties": {
+    "--gutter": "32px",
+    "--max-width": "1024px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
+   "host": "app",
+   "selector": ":root",
+   "context": [
+    "@media (max-width: 940px)"
+   ],
+   "properties": {
+    "--gap": "16px",
+    "--gap-2": "12px",
+    "--gap-3": "8px",
+    "--gap-4": "6px",
+    "--gutter": "20px",
+    "--max-width": "940px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
+   "host": "app",
+   "selector": ":root",
+   "context": [
+    "@media (max-width: 724px)"
+   ],
+   "properties": {
+    "--max-width": "724px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
+   "host": "app",
+   "selector": ":root",
+   "context": [
+    "@media (max-width: 640px)"
+   ],
+   "properties": {
+    "--gutter": "16px",
+    "--max-width": "640px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
+   "host": "app",
+   "selector": ":root",
+   "context": [
+    "@media (max-width: 440px)"
+   ],
+   "properties": {
+    "--max-cols": "6",
+    "--max-width": "440px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
+   "host": "app",
+   "selector": ".grd",
+   "context": [],
+   "properties": {
+    "--grid-12": "repeat(12, 1fr)",
+    "--grid-11": "repeat(11, 1fr)",
+    "--grid-10": "repeat(10, 1fr)",
+    "--grid-9": "repeat(9, 1fr)",
+    "--grid-8": "repeat(8, 1fr)",
+    "--grid-7": "repeat(7, 1fr)",
+    "--grid-6": "repeat(6, 1fr)",
+    "--grid-4": "repeat(4, 1fr)",
+    "--grid-3": "repeat(3, 1fr)",
+    "--grid-2": "repeat(2, 1fr)",
+    "--grid-1": "repeat(1, 1fr)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Button-module__LFCFwa__button",
+   "context": [],
+   "properties": {
+    "--padding": "0",
+    "--border-radius": "0",
+    "--size": "auto",
+    "--icon-size": "auto",
+    "--border-size": "2px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Button-module__LFCFwa__button.Button-module__LFCFwa__border-radius-basic",
+   "context": [],
+   "properties": {
+    "--border-radius": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Button-module__LFCFwa__button.Button-module__LFCFwa__border-radius-full",
+   "context": [],
+   "properties": {
+    "--border-radius": "100px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Button-module__LFCFwa__button.Button-module__LFCFwa__size-big",
+   "context": [],
+   "properties": {
+    "--size": "68px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Button-module__LFCFwa__button.Button-module__LFCFwa__size-medium",
+   "context": [],
+   "properties": {
+    "--size": "52px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Button-module__LFCFwa__button.Button-module__LFCFwa__size-small",
+   "context": [],
+   "properties": {
+    "--size": "40px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Button-module__LFCFwa__button.Button-module__LFCFwa__size-small.Button-module__LFCFwa__has-padding-true",
+   "context": [],
+   "properties": {
+    "--padding": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Button-module__LFCFwa__button.Button-module__LFCFwa__size-medium.Button-module__LFCFwa__has-padding-true",
+   "context": [],
+   "properties": {
+    "--padding": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Button-module__LFCFwa__button.Button-module__LFCFwa__size-big.Button-module__LFCFwa__has-padding-true",
+   "context": [],
+   "properties": {
+    "--padding": "28px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Button-module__LFCFwa__button.Button-module__LFCFwa__size-small .Button-module__LFCFwa__icon",
+   "context": [],
+   "properties": {
+    "--icon-size": "20px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Button-module__LFCFwa__button.Button-module__LFCFwa__size-medium .Button-module__LFCFwa__icon",
+   "context": [],
+   "properties": {
+    "--icon-size": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Button-module__LFCFwa__button.Button-module__LFCFwa__size-big .Button-module__LFCFwa__icon",
+   "context": [],
+   "properties": {
+    "--icon-size": "36px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Button-module__LFCFwa__button.Button-module__LFCFwa__size-medium",
+   "context": [
+    "@media (max-width: 1024px)"
+   ],
+   "properties": {
+    "--size": "48px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Button-module__LFCFwa__button.Button-module__LFCFwa__size-big",
+   "context": [
+    "@media (max-width: 1024px)"
+   ],
+   "properties": {
+    "--size": "60px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Button-module__LFCFwa__button.Button-module__LFCFwa__size-small .Button-module__LFCFwa__icon",
+   "context": [
+    "@media (max-width: 1024px)"
+   ],
+   "properties": {
+    "--icon-size": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Button-module__LFCFwa__button.Button-module__LFCFwa__size-big .Button-module__LFCFwa__icon",
+   "context": [
+    "@media (max-width: 940px)"
+   ],
+   "properties": {
+    "--icon-size": "32px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Button-module__LFCFwa__button.Button-module__LFCFwa__size-small",
+   "context": [
+    "@media (max-width: 940px)"
+   ],
+   "properties": {
+    "--size": "32px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Button-module__LFCFwa__button.Button-module__LFCFwa__size-big .Button-module__LFCFwa__icon",
+   "context": [
+    "@media (max-width: 640px)"
+   ],
+   "properties": {
+    "--icon-size": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Button-module__LFCFwa__button.Button-module__LFCFwa__size-medium",
+   "context": [
+    "@media (max-width: 640px)"
+   ],
+   "properties": {
+    "--size": "40px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Button-module__LFCFwa__button.Button-module__LFCFwa__size-big",
+   "context": [
+    "@media (max-width: 640px)"
+   ],
+   "properties": {
+    "--size": "52px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".FocusTimerForm-module__RgjinW__wrap",
+   "context": [],
+   "properties": {
+    "--padding": "32px",
+    "--min-height": "620px",
+    "--inner-gap": "48px",
+    "--inner-width": "var(--cols-6)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".FocusTimerForm-module__RgjinW__wrap",
+   "context": [
+    "@media (max-width: 724px)"
+   ],
+   "properties": {
+    "--padding": "24px",
+    "--inner-width": "var(--cols-8)",
+    "--min-height": "540px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".FocusTimerForm-module__RgjinW__wrap",
+   "context": [
+    "@media (max-width: 640px)"
+   ],
+   "properties": {
+    "--inner-width": "var(--cols-10)",
+    "--min-height": "480px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".FocusTimerForm-module__RgjinW__wrap",
+   "context": [
+    "@media (max-width: 540px)"
+   ],
+   "properties": {
+    "--inner-width": "var(--cols-12)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".ScenarioForm-module__ccjb7q__wrap",
+   "context": [],
+   "properties": {
+    "--gutter": "32px",
+    "--inner-width": "var(--cols-6)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".ScenarioForm-module__ccjb7q__wrap",
+   "context": [
+    "@media (max-width: 724px)"
+   ],
+   "properties": {
+    "--gutter": "24px",
+    "--inner-width": "var(--cols-8)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".ScenarioForm-module__ccjb7q__wrap",
+   "context": [
+    "@media (max-width: 640px)"
+   ],
+   "properties": {
+    "--inner-width": "var(--cols-10)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".ScenarioForm-module__ccjb7q__wrap",
+   "context": [
+    "@media (max-width: 540px)"
+   ],
+   "properties": {
+    "--inner-width": "var(--cols-12)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".BannerCarousel-module__mk6V2G__wrap",
+   "context": [],
+   "properties": {
+    "--carousel-margin": "64px",
+    "--carousel-gap": "24px",
+    "--carousel-width": "var(--cols-10)",
+    "--carousel-slide-width": "100%",
+    "--carousel-slide-height": "320px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".BannerCarousel-module__mk6V2G__wrap",
+   "context": [
+    "@media (max-width: 1024px)"
+   ],
+   "properties": {
+    "--carousel-margin": "32px",
+    "--carousel-width": "var(--cols-12)",
+    "--carousel-slide-width": "calc(100% - var(--carousel-margin))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".BannerCarousel-module__mk6V2G__wrap",
+   "context": [
+    "@media (max-width: 940px)"
+   ],
+   "properties": {
+    "--carousel-margin": "20px",
+    "--carousel-gap": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".BannerCarousel-module__mk6V2G__wrap",
+   "context": [
+    "@media (max-width: 724px)"
+   ],
+   "properties": {
+    "--carousel-slide-height": "280px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".BannerCarousel-module__mk6V2G__wrap",
+   "context": [
+    "@media (max-width: 640px)"
+   ],
+   "properties": {
+    "--carousel-slide-height": "240px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".BannerCarousel-module__mk6V2G__wrap",
+   "context": [
+    "@media (max-width: 480px)"
+   ],
+   "properties": {
+    "--carousel-slide-height": "220px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Header-module__V2rH0G__header",
+   "context": [],
+   "properties": {
+    "--header-height": "72px",
+    "--header-padding": "32px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Header-module__V2rH0G__header",
+   "context": [
+    "@media (max-width: 940px)"
+   ],
+   "properties": {
+    "--header-padding": "20px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/3_83qv4udfe2-.css",
+   "host": "app",
+   "selector": ".Header-module__V2rH0G__header",
+   "context": [
+    "@media (max-width: 640px)"
+   ],
+   "properties": {
+    "--header-padding": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/0g4_0nuxa-lzw.css",
+   "host": "app",
+   "selector": ".Curtain-module__kvdHKa__curtain",
+   "context": [],
+   "properties": {
+    "--curtain-padding": "24px",
+    "--curtain-width": "var(--cols-6)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/0g4_0nuxa-lzw.css",
+   "host": "app",
+   "selector": ".Curtain-module__kvdHKa__curtain",
+   "context": [
+    "@media (max-width: 1024px)"
+   ],
+   "properties": {
+    "--curtain-width": "var(--cols-8)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/0g4_0nuxa-lzw.css",
+   "host": "app",
+   "selector": ".Curtain-module__kvdHKa__curtain",
+   "context": [
+    "@media (max-width: 724px)"
+   ],
+   "properties": {
+    "--curtain-padding": "24px",
+    "--curtain-width": "var(--cols-10)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/38j8wfyvrxndc.css",
+   "host": "app",
+   "selector": ".Header-module__iZZHxW__header",
+   "context": [],
+   "properties": {
+    "--header-height": "72px",
+    "--header-padding": "32px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/38j8wfyvrxndc.css",
+   "host": "app",
+   "selector": ".Header-module__iZZHxW__header",
+   "context": [
+    "@media (max-width: 940px)"
+   ],
+   "properties": {
+    "--header-padding": "20px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/38j8wfyvrxndc.css",
+   "host": "app",
+   "selector": ".Header-module__iZZHxW__header",
+   "context": [
+    "@media (max-width: 640px)"
+   ],
+   "properties": {
+    "--header-padding": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/38j8wfyvrxndc.css",
+   "host": "app",
+   "selector": ".Banner-module__qXPcLq__banner",
+   "context": [],
+   "properties": {
+    "--banner-title-size": "36px",
+    "--banner-text-size": "24px",
+    "--banner-info-padding": "20px",
+    "--banner-info-text-gap": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/38j8wfyvrxndc.css",
+   "host": "app",
+   "selector": ".Banner-module__qXPcLq__banner",
+   "context": [
+    "@media (max-width: 724px)"
+   ],
+   "properties": {
+    "--banner-title-size": "32px",
+    "--banner-text-size": "20px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/38j8wfyvrxndc.css",
+   "host": "app",
+   "selector": ".Banner-module__qXPcLq__banner",
+   "context": [
+    "@media (max-width: 640px)"
+   ],
+   "properties": {
+    "--banner-title-size": "28px",
+    "--banner-text-size": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-4",
+   "host": "app",
+   "selector": "[data-sonner-toaster][dir=\"ltr\"], html[dir=\"ltr\"]",
+   "context": [],
+   "properties": {
+    "--toast-icon-margin-start": "-3px",
+    "--toast-icon-margin-end": "4px",
+    "--toast-svg-margin-start": "-1px",
+    "--toast-svg-margin-end": "0px",
+    "--toast-button-margin-start": "auto",
+    "--toast-button-margin-end": "0",
+    "--toast-close-button-start": "0",
+    "--toast-close-button-end": "unset",
+    "--toast-close-button-transform": "translate(-35%, -35%)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-4",
+   "host": "app",
+   "selector": "[data-sonner-toaster][dir=\"rtl\"], html[dir=\"rtl\"]",
+   "context": [],
+   "properties": {
+    "--toast-icon-margin-start": "4px",
+    "--toast-icon-margin-end": "-3px",
+    "--toast-svg-margin-start": "0px",
+    "--toast-svg-margin-end": "-1px",
+    "--toast-button-margin-start": "0",
+    "--toast-button-margin-end": "auto",
+    "--toast-close-button-start": "unset",
+    "--toast-close-button-end": "0",
+    "--toast-close-button-transform": "translate(35%, -35%)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-4",
+   "host": "app",
+   "selector": "[data-sonner-toaster]",
+   "context": [],
+   "properties": {
+    "--gray1": "hsl(0, 0%, 99%)",
+    "--gray2": "hsl(0, 0%, 97.3%)",
+    "--gray3": "hsl(0, 0%, 95.1%)",
+    "--gray4": "hsl(0, 0%, 93%)",
+    "--gray5": "hsl(0, 0%, 90.9%)",
+    "--gray6": "hsl(0, 0%, 88.7%)",
+    "--gray7": "hsl(0, 0%, 85.8%)",
+    "--gray8": "hsl(0, 0%, 78%)",
+    "--gray9": "hsl(0, 0%, 56.1%)",
+    "--gray10": "hsl(0, 0%, 52.3%)",
+    "--gray11": "hsl(0, 0%, 43.5%)",
+    "--gray12": "hsl(0, 0%, 9%)",
+    "--border-radius": "8px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-4",
+   "host": "app",
+   "selector": "[data-sonner-toast]",
+   "context": [],
+   "properties": {
+    "--y": "translateY(100%)",
+    "--lift-amount": "calc(var(--lift) * var(--gap))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-4",
+   "host": "app",
+   "selector": "[data-sonner-toast][data-y-position=\"top\"]",
+   "context": [],
+   "properties": {
+    "--y": "translateY(-100%)",
+    "--lift": "1",
+    "--lift-amount": "calc(1 * var(--gap))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-4",
+   "host": "app",
+   "selector": "[data-sonner-toast][data-y-position=\"bottom\"]",
+   "context": [],
+   "properties": {
+    "--y": "translateY(100%)",
+    "--lift": "-1",
+    "--lift-amount": "calc(var(--lift) * var(--gap))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-4",
+   "host": "app",
+   "selector": "[data-sonner-toast][data-mounted=\"true\"]",
+   "context": [],
+   "properties": {
+    "--y": "translateY(0)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-4",
+   "host": "app",
+   "selector": "[data-sonner-toast][data-expanded=\"false\"][data-front=\"false\"]",
+   "context": [],
+   "properties": {
+    "--scale": "var(--toasts-before) * 0.05 + 1",
+    "--y": "translateY(calc(var(--lift-amount) * var(--toasts-before))) scale(calc(-1 * var(--scale)))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-4",
+   "host": "app",
+   "selector": "[data-sonner-toast][data-mounted=\"true\"][data-expanded=\"true\"]",
+   "context": [],
+   "properties": {
+    "--y": "translateY(calc(var(--lift) * var(--offset)))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-4",
+   "host": "app",
+   "selector": "[data-sonner-toast][data-removed=\"true\"][data-front=\"true\"][data-swipe-out=\"false\"]",
+   "context": [],
+   "properties": {
+    "--y": "translateY(calc(var(--lift) * -100%))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-4",
+   "host": "app",
+   "selector": "[data-sonner-toast][data-removed=\"true\"][data-front=\"false\"][data-swipe-out=\"false\"][data-expanded=\"true\"]",
+   "context": [],
+   "properties": {
+    "--y": "translateY(calc(var(--lift) * var(--offset) + var(--lift) * -100%))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-4",
+   "host": "app",
+   "selector": "[data-sonner-toast][data-removed=\"true\"][data-front=\"false\"][data-swipe-out=\"false\"][data-expanded=\"false\"]",
+   "context": [],
+   "properties": {
+    "--y": "translateY(40%)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-4",
+   "host": "app",
+   "selector": "[data-sonner-toaster][data-sonner-theme=\"light\"]",
+   "context": [],
+   "properties": {
+    "--normal-bg": "#fff",
+    "--normal-border": "var(--gray4)",
+    "--normal-text": "var(--gray12)",
+    "--success-bg": "hsl(143, 85%, 96%)",
+    "--success-border": "hsl(145, 92%, 87%)",
+    "--success-text": "hsl(140, 100%, 27%)",
+    "--info-bg": "hsl(208, 100%, 97%)",
+    "--info-border": "hsl(221, 91%, 93%)",
+    "--info-text": "hsl(210, 92%, 45%)",
+    "--warning-bg": "hsl(49, 100%, 97%)",
+    "--warning-border": "hsl(49, 91%, 84%)",
+    "--warning-text": "hsl(31, 92%, 45%)",
+    "--error-bg": "hsl(359, 100%, 97%)",
+    "--error-border": "hsl(359, 100%, 94%)",
+    "--error-text": "hsl(360, 100%, 45%)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-4",
+   "host": "app",
+   "selector": "[data-sonner-toaster][data-sonner-theme=\"light\"] [data-sonner-toast][data-invert=\"true\"]",
+   "context": [],
+   "properties": {
+    "--normal-bg": "#000",
+    "--normal-border": "hsl(0, 0%, 20%)",
+    "--normal-text": "var(--gray1)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-4",
+   "host": "app",
+   "selector": "[data-sonner-toaster][data-sonner-theme=\"dark\"] [data-sonner-toast][data-invert=\"true\"]",
+   "context": [],
+   "properties": {
+    "--normal-bg": "#fff",
+    "--normal-border": "var(--gray3)",
+    "--normal-text": "var(--gray12)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-4",
+   "host": "app",
+   "selector": "[data-sonner-toaster][data-sonner-theme=\"dark\"]",
+   "context": [],
+   "properties": {
+    "--normal-bg": "#000",
+    "--normal-bg-hover": "hsl(0, 0%, 12%)",
+    "--normal-border": "hsl(0, 0%, 20%)",
+    "--normal-border-hover": "hsl(0, 0%, 25%)",
+    "--normal-text": "var(--gray1)",
+    "--success-bg": "hsl(150, 100%, 6%)",
+    "--success-border": "hsl(147, 100%, 12%)",
+    "--success-text": "hsl(150, 86%, 65%)",
+    "--info-bg": "hsl(215, 100%, 6%)",
+    "--info-border": "hsl(223, 43%, 17%)",
+    "--info-text": "hsl(216, 87%, 65%)",
+    "--warning-bg": "hsl(64, 100%, 6%)",
+    "--warning-border": "hsl(60, 100%, 9%)",
+    "--warning-text": "hsl(46, 87%, 65%)",
+    "--error-bg": "hsl(358, 76%, 10%)",
+    "--error-border": "hsl(357, 89%, 16%)",
+    "--error-text": "hsl(358, 100%, 81%)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-4",
+   "host": "app",
+   "selector": ".sonner-loading-wrapper",
+   "context": [],
+   "properties": {
+    "--size": "16px"
+   },
+   "bin": "app"
+  }
+ ],
+ "utility": [],
+ "fonts": [
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "font-family": "apercuPro",
+   "src": "url(\"../media/ApercuPro_Regular-s.p.0v-mjl_okpoh0.woff2\") format(\"woff2\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://endel.io/_next/static/chunks/1sir62g-dc4lw.css",
+   "host": "site",
+   "font-family": "\"apercuPro Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "79.99%",
+   "descent-override": "21.52%",
+   "line-gap-override": "0%",
+   "size-adjust": "98.51%"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
+   "host": "app",
+   "font-family": "apercuProRegular",
+   "src": "url(\"../media/apercu_regular_pro-s.p.3lkgt8x1-sq_k.woff2\") format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "400"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
+   "host": "app",
+   "font-family": "\"apercuProRegular Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "99.48%",
+   "descent-override": "28.42%",
+   "line-gap-override": "0%",
+   "size-adjust": "98.51%"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
+   "host": "app",
+   "font-family": "apercuProMedium",
+   "src": "url(\"../media/apercu_medium_pro-s.p.1zmia-60yuaym.woff2\") format(\"woff2\")",
+   "font-display": "swap",
+   "font-weight": "500"
+  },
+  {
+   "file": "https://app.endel.io/_next/static/chunks/26jmusxppn7p4.css",
+   "host": "app",
+   "font-family": "\"apercuProMedium Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "97.31%",
+   "descent-override": "27.8%",
+   "line-gap-override": "0%",
+   "size-adjust": "100.71%"
+  }
+ ],
+ "resolved": {
+  "site": {
+   "--color-black": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--color-gradient-1": {
+    "raw": "linear-gradient(180deg, #181818 0%, #0000 100%)",
+    "kind": "other"
+   },
+   "--color-gray-1": {
+    "raw": "#191919",
+    "kind": "color",
+    "value": "#191919"
+   },
+   "--color-gray-2": {
+    "raw": "#262626",
+    "kind": "color",
+    "value": "#262626"
+   },
+   "--color-gray-3": {
+    "raw": "gray",
+    "kind": "color",
+    "value": "#808080"
+   },
+   "--color-gray-4": {
+    "raw": "#bfbfbf",
+    "kind": "color",
+    "value": "#bfbfbf"
+   },
+   "--color-gray-5": {
+    "raw": "#e0e0e0",
+    "kind": "color",
+    "value": "#e0e0e0"
+   },
+   "--color-green": {
+    "raw": "#82d133",
+    "kind": "color",
+    "value": "#82d133"
+   },
+   "--color-orange": {
+    "raw": "#ff7a00",
+    "kind": "color",
+    "value": "#ff7a00"
+   },
+   "--color-white": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--cols-1": {
+    "raw": "calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)",
+    "kind": "dimension",
+    "value": "74px"
+   },
+   "--cols-10": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 10) + 24px * 9)",
+    "kind": "dimension",
+    "value": "956px"
+   },
+   "--cols-11": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 11) + 24px * 10)",
+    "kind": "dimension",
+    "value": "1054px"
+   },
+   "--cols-12": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 12) + 24px * 11)",
+    "kind": "dimension",
+    "value": "1152px"
+   },
+   "--cols-2": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 2) + 24px)",
+    "kind": "dimension",
+    "value": "172px"
+   },
+   "--cols-3": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 3) + 24px * 2)",
+    "kind": "dimension",
+    "value": "270px"
+   },
+   "--cols-4": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 4) + 24px * 3)",
+    "kind": "dimension",
+    "value": "368px"
+   },
+   "--cols-5": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 5) + 24px * 4)",
+    "kind": "dimension",
+    "value": "466px"
+   },
+   "--cols-6": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 6) + 24px * 5)",
+    "kind": "dimension",
+    "value": "564px"
+   },
+   "--cols-7": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 7) + 24px * 6)",
+    "kind": "dimension",
+    "value": "662px"
+   },
+   "--cols-8": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 8) + 24px * 7)",
+    "kind": "dimension",
+    "value": "760px"
+   },
+   "--cols-9": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 9) + 24px * 8)",
+    "kind": "dimension",
+    "value": "858px"
+   },
+   "--gap": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--gutter": {
+    "raw": "64px",
+    "kind": "dimension",
+    "value": "64px"
+   },
+   "--line-height-h1": {
+    "raw": "72px",
+    "kind": "dimension",
+    "value": "72px"
+   },
+   "--line-height-h2": {
+    "raw": "56px",
+    "kind": "dimension",
+    "value": "56px"
+   },
+   "--line-height-h3": {
+    "raw": "42px",
+    "kind": "dimension",
+    "value": "42px"
+   },
+   "--line-height-h4": {
+    "raw": "36px",
+    "kind": "dimension",
+    "value": "36px"
+   },
+   "--line-height-text-1": {
+    "raw": "28px",
+    "kind": "dimension",
+    "value": "28px"
+   },
+   "--line-height-text-2": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--line-height-text-3": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--line-height-text-4": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--line-height-text-5": {
+    "raw": "14px",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--max-cols": {
+    "raw": "12",
+    "kind": "number",
+    "value": 12
+   },
+   "--max-width": {
+    "raw": "1280px",
+    "kind": "dimension",
+    "value": "1280px"
+   },
+   "--text-1": {
+    "raw": "22px",
+    "kind": "dimension",
+    "value": "22px"
+   },
+   "--text-2": {
+    "raw": "18px",
+    "kind": "dimension",
+    "value": "18px"
+   },
+   "--text-3": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--text-4": {
+    "raw": "14px",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--text-5": {
+    "raw": "10px",
+    "kind": "dimension",
+    "value": "10px"
+   },
+   "--title-h1": {
+    "raw": "60px",
+    "kind": "dimension",
+    "value": "60px"
+   },
+   "--title-h2": {
+    "raw": "44px",
+    "kind": "dimension",
+    "value": "44px"
+   },
+   "--title-h3": {
+    "raw": "36px",
+    "kind": "dimension",
+    "value": "36px"
+   },
+   "--title-h4": {
+    "raw": "28px",
+    "kind": "dimension",
+    "value": "28px"
+   }
+  },
+  "app": {
+   "--color-accent-green": {
+    "raw": "#58ff5d",
+    "kind": "color",
+    "value": "#58ff5d"
+   },
+   "--color-accent-green-hover": {
+    "raw": "#3ee843",
+    "kind": "color",
+    "value": "#3ee843"
+   },
+   "--color-black": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--color-gradient-1": {
+    "raw": "linear-gradient(180deg, #181818 0%, #0000 100%)",
+    "kind": "other"
+   },
+   "--color-gray-1": {
+    "raw": "#191919",
+    "kind": "color",
+    "value": "#191919"
+   },
+   "--color-gray-2": {
+    "raw": "#262626",
+    "kind": "color",
+    "value": "#262626"
+   },
+   "--color-gray-3": {
+    "raw": "gray",
+    "kind": "color",
+    "value": "#808080"
+   },
+   "--color-gray-4": {
+    "raw": "#bfbfbf",
+    "kind": "color",
+    "value": "#bfbfbf"
+   },
+   "--color-gray-5": {
+    "raw": "#e0e0e0",
+    "kind": "color",
+    "value": "#e0e0e0"
+   },
+   "--color-green": {
+    "raw": "#82d133",
+    "kind": "color",
+    "value": "#82d133"
+   },
+   "--color-orange": {
+    "raw": "#ff7a00",
+    "kind": "color",
+    "value": "#ff7a00"
+   },
+   "--color-white": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--cols-1": {
+    "raw": "calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)",
+    "kind": "dimension",
+    "value": "74px"
+   },
+   "--cols-10": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 10) + 24px * 9)",
+    "kind": "dimension",
+    "value": "956px"
+   },
+   "--cols-11": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 11) + 24px * 10)",
+    "kind": "dimension",
+    "value": "1054px"
+   },
+   "--cols-12": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 12) + 24px * 11)",
+    "kind": "dimension",
+    "value": "1152px"
+   },
+   "--cols-2": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 2) + 24px)",
+    "kind": "dimension",
+    "value": "172px"
+   },
+   "--cols-3": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 3) + 24px * 2)",
+    "kind": "dimension",
+    "value": "270px"
+   },
+   "--cols-4": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 4) + 24px * 3)",
+    "kind": "dimension",
+    "value": "368px"
+   },
+   "--cols-5": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 5) + 24px * 4)",
+    "kind": "dimension",
+    "value": "466px"
+   },
+   "--cols-6": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 6) + 24px * 5)",
+    "kind": "dimension",
+    "value": "564px"
+   },
+   "--cols-7": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 7) + 24px * 6)",
+    "kind": "dimension",
+    "value": "662px"
+   },
+   "--cols-8": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 8) + 24px * 7)",
+    "kind": "dimension",
+    "value": "760px"
+   },
+   "--cols-9": {
+    "raw": "calc(((calc((1280px - 24px * (12 - 1) - 64px * 2) / 12)) * 9) + 24px * 8)",
+    "kind": "dimension",
+    "value": "858px"
+   },
+   "--gap": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--gutter": {
+    "raw": "64px",
+    "kind": "dimension",
+    "value": "64px"
+   },
+   "--line-height-h1": {
+    "raw": "72px",
+    "kind": "dimension",
+    "value": "72px"
+   },
+   "--line-height-h2": {
+    "raw": "56px",
+    "kind": "dimension",
+    "value": "56px"
+   },
+   "--line-height-h3": {
+    "raw": "42px",
+    "kind": "dimension",
+    "value": "42px"
+   },
+   "--line-height-h4": {
+    "raw": "36px",
+    "kind": "dimension",
+    "value": "36px"
+   },
+   "--line-height-text-1": {
+    "raw": "28px",
+    "kind": "dimension",
+    "value": "28px"
+   },
+   "--line-height-text-2": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--line-height-text-3": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--line-height-text-4": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--line-height-text-5": {
+    "raw": "14px",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--max-cols": {
+    "raw": "12",
+    "kind": "number",
+    "value": 12
+   },
+   "--max-width": {
+    "raw": "1280px",
+    "kind": "dimension",
+    "value": "1280px"
+   },
+   "--text-1": {
+    "raw": "22px",
+    "kind": "dimension",
+    "value": "22px"
+   },
+   "--text-2": {
+    "raw": "18px",
+    "kind": "dimension",
+    "value": "18px"
+   },
+   "--text-3": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--text-4": {
+    "raw": "14px",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--text-5": {
+    "raw": "10px",
+    "kind": "dimension",
+    "value": "10px"
+   },
+   "--title-h1": {
+    "raw": "60px",
+    "kind": "dimension",
+    "value": "60px"
+   },
+   "--title-h2": {
+    "raw": "44px",
+    "kind": "dimension",
+    "value": "44px"
+   },
+   "--title-h3": {
+    "raw": "36px",
+    "kind": "dimension",
+    "value": "36px"
+   },
+   "--title-h4": {
+    "raw": "28px",
+    "kind": "dimension",
+    "value": "28px"
+   }
+  }
+ }
+}

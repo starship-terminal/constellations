@@ -1,0 +1,23 @@
+{
+  "capturedAt": "2026-11-18T16:33:00.849Z",
+  "note": "Computed custom properties on documentElement, per captured surface. Marketing :root is the small brand set. The app dump is the Tamagui scale as painted (dark tokens resolve even on the light login page).",
+  "dumps": {
+    "home-light": {},
+    "pricing-light": {},
+    "features-light": {},
+    "about-light": {},
+    "help-light": {},
+    "blog-light": {},
+    "for-freelancers-light": {},
+    "feature-projects-light": {},
+    "playground-light": {},
+    "app-login-light": {},
+    "app-create-light": {},
+    "mobile-home-light": {},
+    "mobile-pricing-light": {},
+    "mobile-app-login-light": {},
+    "mobile-app-create-light": {},
+    "app-login-dark": {},
+    "app-create-dark": {}
+  }
+}

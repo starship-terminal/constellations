@@ -711,20 +711,21 @@ Page: pricing. Selector: `compare link`. States: default, hover, focus-visible, 
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 851 x 60 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Poppins 57px/60px 700 | = | = | = |
-| Letter spacing | -1px | = | = | = |
-| Colour | #000000 | = | = | = |
-| Transition | background-color, color, border-color, box-shadow 0s, 0s, 0s, 0.2s ease-in-out, ease-in-out, ease-in-out, ease-in-out delay 0s, 0s, 0s, 0s | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 851 x 60 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Poppins 57px/60px 700 | = | - | = |
+| Letter spacing | -1px | = | - | = |
+| Colour | #000000 | = | - | = |
+| Transition | background-color, color, border-color, box-shadow 0s, 0s, 0s, 0.2s ease-in-out, ease-in-out, ease-in-out, ease-in-out delay 0s, 0s, 0s, 0s | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `compare-cta-default.png`, `compare-cta-hover.png`, `compare-cta-focus-visible.png`, `compare-cta-pressed.png`.
+Crops: `compare-cta-default.png`, `compare-cta-hover.png`, `compare-cta-pressed.png`.
 
 #### feature-table
 

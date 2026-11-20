@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New Balance style guide</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #fff; color: #000; font: 300 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  header, main { max-width: 960px; margin: 0 auto; padding: 24px 20px; }
+  header { background: #151415; color: #fff; max-width: none; }
+  header .in { max-width: 960px; margin: 0 auto; }
+  h1 { font-weight: 500; font-size: 32px; line-height: 40px; margin: 0 0 8px; }
+  h2 { font-weight: 500; font-size: 24px; margin: 32px 0 12px; }
+  p { max-width: 68ch; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .sw { display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: center; }
+  .sw i { width: 44px; height: 44px; border-radius: 2px; box-shadow: inset 0 0 0 1px #dee0e1; }
+  .sw code, .ty code { font: 12px/16px ui-monospace, Menlo, monospace; }
+  .sw span, .sw small, .ty span { display: block; color: #5c6268; font-size: 12px; }
+  .ty { padding: 12px 0; border-bottom: 1px solid #dee0e1; }
+  .ty p { margin: 4px 0 0; }
+  .btn { display: inline-block; margin: 0 8px 8px 0; padding: 16px 12px; border-radius: 2px; font: 300 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif; text-decoration: none; }
+  .primary { background: #151415; color: #fff; border: 1px solid #151415; }
+  .secondary { background: #fff; color: #151415; border: 1px solid #e5e7e8; }
+  .field { display: block; width: 328px; max-width: 100%; height: 58px; padding: 28px 12px 12px; border: 1px solid #abb0b4; border-radius: 4px; font: 500 16px/23px "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .note { color: #5c6268; font-size: 13px; }
+</style>
+</head>
+<body>
+<header><div class="in"><h1>New Balance</h1><p>Signed-out UK storefront, measured 2026-11-19. One light theme. Proxima Nova and ITC Garamond are licensed faces and are not loaded here.</p></div></header>
+<main>
+  <h2>Roles</h2>
+  <div class="grid"><div class="sw"><i style="background:#ffffff"></i><div><code>page</code><span>#ffffff</span><small>light.background.page</small></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><code>surface</code><span>#ffffff</span><small>light.background.surface</small></div></div>
+<div class="sw"><i style="background:#000000"></i><div><code>text</code><span>#000000</span><small>light.text.primary</small></div></div>
+<div class="sw"><i style="background:#5c6268"></i><div><code>muted</code><span>#5c6268</span><small>light.text.muted</small></div></div>
+<div class="sw"><i style="background:#151415"></i><div><code>accent</code><span>#151415</span><small>light.action.primary</small></div></div>
+<div class="sw"><i style="background:#cf0a2c"></i><div><code>brand</code><span>#cf0a2c</span><small>light.action.brand</small></div></div>
+<div class="sw"><i style="background:#abb0b4"></i><div><code>border</code><span>#abb0b4</span><small>light.border.default</small></div></div></div>
+  <h2>Palette</h2>
+  <div class="grid"><div class="sw"><i style="background:#151415"></i><div><code>nb-black</code><span>#151415</span><small>core.color.nb-black</small></div></div>
+<div class="sw"><i style="background:#151415"></i><div><code>ink</code><span>#151415</span><small>core.color.ink</small></div></div>
+<div class="sw"><i style="background:#cf0a2c"></i><div><code>red</code><span>#cf0a2c</span><small>core.color.red</small></div></div>
+<div class="sw"><i style="background:#92071f"></i><div><code>red-hover</code><span>#92071f</span><small>core.color.red-hover</small></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><code>white</code><span>#ffffff</span><small>core.color.white</small></div></div>
+<div class="sw"><i style="background:#f2f2f3"></i><div><code>neutral-100</code><span>#f2f2f3</span><small>core.color.neutral-100</small></div></div>
+<div class="sw"><i style="background:#dee0e1"></i><div><code>neutral-200</code><span>#dee0e1</span><small>core.color.neutral-200</small></div></div>
+<div class="sw"><i style="background:#abb0b4"></i><div><code>neutral-400</code><span>#abb0b4</span><small>core.color.neutral-400</small></div></div>
+<div class="sw"><i style="background:#737b82"></i><div><code>gray</code><span>#737b82</span><small>core.color.gray</small></div></div>
+<div class="sw"><i style="background:#767676"></i><div><code>ada-gray</code><span>#767676</span><small>core.color.ada-gray</small></div></div>
+<div class="sw"><i style="background:#cccccc"></i><div><code>gray-ccc</code><span>#cccccc</span><small>core.color.gray-ccc</small></div></div>
+<div class="sw"><i style="background:#abb0b4"></i><div><code>field-border</code><span>#abb0b4</span><small>core.color.field-border</small></div></div>
+<div class="sw"><i style="background:#bec0c3"></i><div><code>size-border</code><span>#bec0c3</span><small>core.color.size-border</small></div></div>
+<div class="sw"><i style="background:#e5e7e8"></i><div><code>secondary-border</code><span>#e5e7e8</span><small>core.color.secondary-border</small></div></div>
+<div class="sw"><i style="background:#e5e7e8"></i><div><code>disabled-fill</code><span>#e5e7e8</span><small>core.color.disabled-fill</small></div></div>
+<div class="sw"><i style="background:#7c7c7c"></i><div><code>disabled-text</code><span>#7c7c7c</span><small>core.color.disabled-text</small></div></div>
+<div class="sw"><i style="background:#5c6268"></i><div><code>label</code><span>#5c6268</span><small>core.color.label</small></div></div>
+<div class="sw"><i style="background:#999999"></i><div><code>strike</code><span>#999999</span><small>core.color.strike</small></div></div>
+<div class="sw"><i style="background:#015ecc"></i><div><code>focus</code><span>#015ecc</span><small>core.color.focus</small></div></div>
+<div class="sw"><i style="background:#343538"></i><div><code>primary-hover</code><span>#343538</span><small>core.color.primary-hover</small></div></div>
+<div class="sw"><i style="background:#12823b"></i><div><code>success</code><span>#12823b</span><small>core.color.success</small></div></div>
+<div class="sw"><i style="background:#ffc107"></i><div><code>warning</code><span>#ffc107</span><small>core.color.warning</small></div></div>
+<div class="sw"><i style="background:#17a2b8"></i><div><code>info</code><span>#17a2b8</span><small>core.color.info</small></div></div>
+<div class="sw"><i style="background:#000000"></i><div><code>footer</code><span>#000000</span><small>core.color.footer</small></div></div>
+<div class="sw"><i style="background:#000000"></i><div><code>body</code><span>#000000</span><small>core.color.body</small></div></div></div>
+  <h2>Type</h2>
+  <div class="ty" style="font-family:&quot;Proxima Nova W01&quot;, -apple-system, system-ui, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-weight:300;font-size:14px;line-height:20px"><code>body</code><span>14px / 20px · 300</span><p>New Balance</p></div><div class="ty" style="font-family:&quot;Proxima Nova W01&quot;, -apple-system, system-ui, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-weight:300;font-size:16px;line-height:20px"><code>nav</code><span>16px / 20px · 300</span><p>New Balance</p></div><div class="ty" style="font-family:&quot;Proxima Nova W01&quot;, -apple-system, system-ui, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-weight:300;font-size:14px;line-height:20px"><code>button</code><span>14px / 20px · 300</span><p>New Balance</p></div><div class="ty" style="font-family:&quot;Proxima Nova W01&quot;, -apple-system, system-ui, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-weight:500;font-size:16px;line-height:23px"><code>field</code><span>16px / 23px · 500</span><p>New Balance</p></div><div class="ty" style="font-family:&quot;Proxima Nova W01&quot;, -apple-system, system-ui, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-weight:500;font-size:32px;line-height:40px"><code>product-title</code><span>32px / 40px · 500</span><p>New Balance</p></div><div class="ty" style="font-family:ITC Garamond W01;font-weight:500;font-size:40px;line-height:40px"><code>category-title</code><span>40px / 40px · 500</span><p>New Balance</p></div><div class="ty" style="font-family:ITC Garamond W01;font-weight:500;font-size:56px;line-height:60px"><code>display</code><span>56px / 60px · 500</span><p>New Balance</p></div><div class="ty" style="font-family:&quot;Proxima Nova W01&quot;, -apple-system, system-ui, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-weight:700;font-size:18px;line-height:24px"><code>price</code><span>18px / 24px · 700</span><p>New Balance</p></div>
+  <h2>Controls</h2>
+  <a class="btn primary" href="#controls">Add to Bag</a>
+  <a class="btn secondary" href="#controls">Shop now</a>
+  <input class="field" placeholder="Email" aria-label="Email">
+  <p class="note">Button radius 2px, field radius 4px, primary height 54px, field height 58px. Focus ring on keyboard focus is 2px solid #015ecc. No dark theme was on the captured pages.</p>
+</main>
+</body>
+</html>

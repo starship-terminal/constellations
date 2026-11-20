@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Washington Post style guide</title>
+<style>
+:root {
+  --page: #141414;
+  --surface: #202020;
+  --text: #ffffff;
+  --muted: #a1a1a1;
+  --accent: #166dfc;
+  --border: #ffffff1a;
+  --on-accent: #ffffff;
+  --light-page: #ffffff;
+  --light-text: #111111;
+  --light-muted: #595959;
+  --field: #5784c5;
+  --sans: Franklin, Franklin-fallback, Arial, Helvetica, sans-serif;
+  --serif: Postoni, Postoni-fallback, Georgia, "Times New Roman", serif;
+  --body: georgia, "Times New Roman", serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/1.5 var(--sans); }
+main { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font: 700 32px/1.1 var(--serif); margin: 0 0 8px; }
+h2 { font: 700 20px/1.25 var(--sans); margin: 40px 0 12px; }
+p { color: var(--muted); max-width: 68ch; }
+code { font: 12px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: center; }
+.sw i { width: 44px; height: 44px; border-radius: 4px; box-shadow: inset 0 0 0 1px var(--border); display: block; }
+.sw span, .sw code { display: block; }
+.sw span { color: var(--muted); font-size: 12px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { color: var(--muted); font-weight: 400; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 12px 0 20px; }
+.pill { display: inline-flex; align-items: center; height: 32px; padding: 8px 16px; border-radius: 9999px; background: var(--accent); color: var(--on-accent); font: 700 16px/16px var(--sans); text-decoration: none; }
+.ghost { display: inline-flex; align-items: center; height: 40px; padding: 8px 16px; border-radius: 9999px; color: var(--text); font: 700 16px/16px var(--sans); }
+.navpill { display: inline-flex; align-items: center; height: 30px; padding: 8px 16px; border-radius: 9999px; background: var(--page); color: var(--text); font: 700 16px/16px var(--sans); }
+.icon { width: 36px; height: 36px; border-radius: 9999px; display: inline-flex; align-items: center; justify-content: center; color: var(--text); font-size: 0; }
+.card { width: 460px; max-width: 100%; background: var(--light-page); color: var(--light-text); border: 1px solid #e9e9e9; box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 0px 0px; padding: 16px 0 20px; }
+.card .badge { display: inline-block; margin-left: 16px; border: 1px solid #111111; padding: 0 8px 0 4px; font: 700 12px/15px var(--sans); }
+.card h3 { margin: 12px 0 8px; padding: 0 24px; font: 700 32px/35.2px var(--serif); color: #2a2a2a; }
+.card p { color: var(--light-text); font-size: 12px; line-height: 15px; padding: 0 24px; }
+.field { margin: 12px 16px; height: 50px; border: 1px solid var(--field); border-radius: 2px; background: #fff; color: #595959; font: 400 16px/48px var(--sans); padding: 0 8px; }
+.next { display: block; margin: 12px 16px; height: 40px; border: 0; border-radius: 9999px; background: var(--accent); color: #fff; font: 700 16px/40px var(--sans); }
+.oauth { display: block; margin: 8px 16px; height: 40px; border-radius: 9999px; border: 1px solid rgba(0, 0, 0, 0.1); background: #fff; color: #111; font: 700 16px/40px var(--sans); text-align: center; }
+.story { max-width: 640px; }
+.story h3 { margin: 0 0 8px; font: 700 26px/28.6px var(--serif); color: #dedede; }
+.story .by { color: #a1a1a1; font-size: 14px; line-height: 17.5px; }
+.article h3 { margin: 0; font: 700 48px/52.8px var(--serif); }
+.article .dek { font: 300 20px/25px var(--sans); color: var(--text); }
+.article .body { font: 400 20px/32px var(--body); color: var(--text); max-width: 640px; }
+.slogan { font: 400 18px/22.5px Georgia, "Times New Roman", serif; color: #a1a1a1; }
+</style>
+</head>
+<body>
+<main>
+<h1>The Washington Post</h1>
+<p>Public signed-out surfaces, measured on 2026-11-19 from washingtonpost.com with the html class wpds-dark. Franklin and Postoni are the product's fonts and are not loaded here.</p>
+
+<h2>Dark roles</h2>
+<div class="swatches">
+<div class="sw"><i style="background:#141414"></i><div><code>dark.page</code><span>#141414</span></div></div>
+<div class="sw"><i style="background:#202020"></i><div><code>dark.surface</code><span>#202020</span></div></div>
+<div class="sw"><i style="background:#333333"></i><div><code>dark.surface-highest</code><span>#333333</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><code>dark.text</code><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#a1a1a1"></i><div><code>dark.muted</code><span>#a1a1a1</span></div></div>
+<div class="sw"><i style="background:#dedede"></i><div><code>dark.headline</code><span>#dedede</span></div></div>
+<div class="sw"><i style="background:#7f7f7f"></i><div><code>dark.timestamp</code><span>#7f7f7f</span></div></div>
+<div class="sw"><i style="background:#166dfc"></i><div><code>dark.accent</code><span>#166dfc</span></div></div>
+<div class="sw"><i style="background:#455670"></i><div><code>dark.accent-hover</code><span>#455670</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><code>dark.on-accent</code><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#ffffff1a"></i><div><code>dark.border</code><span>#ffffff1a</span></div></div>
+<div class="sw"><i style="background:#ffffff0d"></i><div><code>dark.border-subtle</code><span>#ffffff0d</span></div></div>
+<div class="sw"><i style="background:#a1a1a1"></i><div><code>dark.slogan</code><span>#a1a1a1</span></div></div>
+<div class="sw"><i style="background:#5892c9"></i><div><code>dark.link</code><span>#5892c9</span></div></div>
+<div class="sw"><i style="background:#b85345"></i><div><code>dark.error</code><span>#b85345</span></div></div>
+<div class="sw"><i style="background:#3e7d21"></i><div><code>dark.success</code><span>#3e7d21</span></div></div>
+<div class="sw"><i style="background:#854b23"></i><div><code>dark.warning</code><span>#854b23</span></div></div>
+<div class="sw"><i style="background:#ed4a1c"></i><div><code>dark.opinions</code><span>#ed4a1c</span></div></div>
+<div class="sw"><i style="background:#ffffff0d"></i><div><code>dark.disabled</code><span>#ffffff0d</span></div></div>
+<div class="sw"><i style="background:#ffffff4c"></i><div><code>dark.on-disabled</code><span>#ffffff4c</span></div></div>
+</div>
+
+<h2>Light card roles</h2>
+<div class="swatches">
+<div class="sw"><i style="background:#ffffff"></i><div><code>light.page</code><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><code>light.surface</code><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#111111"></i><div><code>light.text</code><span>#111111</span></div></div>
+<div class="sw"><i style="background:#595959"></i><div><code>light.muted</code><span>#595959</span></div></div>
+<div class="sw"><i style="background:#2a2a2a"></i><div><code>light.headline</code><span>#2a2a2a</span></div></div>
+<div class="sw"><i style="background:#166dfc"></i><div><code>light.accent</code><span>#166dfc</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><code>light.on-accent</code><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#e9e9e9"></i><div><code>light.border</code><span>#e9e9e9</span></div></div>
+<div class="sw"><i style="background:#5784c5"></i><div><code>light.field-focus</code><span>#5784c5</span></div></div>
+<div class="sw"><i style="background:#0000001a"></i><div><code>light.oauth-border</code><span>#0000001a</span></div></div>
+<div class="sw"><i style="background:#737373"></i><div><code>light.sso</code><span>#737373</span></div></div>
+<div class="sw"><i style="background:#000000"></i><div><code>light.logo</code><span>#000000</span></div></div>
+</div>
+
+<h2>Core colour</h2>
+<div class="swatches">
+<div class="sw"><i style="background:#ffffff"></i><div><code>core.color.gray.0</code><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#f2f2f2"></i><div><code>core.color.gray.20</code><span>#f2f2f2</span></div></div>
+<div class="sw"><i style="background:#dedede"></i><div><code>core.color.gray.40</code><span>#dedede</span></div></div>
+<div class="sw"><i style="background:#b1b1b1"></i><div><code>core.color.gray.60</code><span>#b1b1b1</span></div></div>
+<div class="sw"><i style="background:#a1a1a1"></i><div><code>core.color.gray.80</code><span>#a1a1a1</span></div></div>
+<div class="sw"><i style="background:#7f7f7f"></i><div><code>core.color.gray.100</code><span>#7f7f7f</span></div></div>
+<div class="sw"><i style="background:#4f4f4f"></i><div><code>core.color.gray.200</code><span>#4f4f4f</span></div></div>
+<div class="sw"><i style="background:#333333"></i><div><code>core.color.gray.300</code><span>#333333</span></div></div>
+<div class="sw"><i style="background:#252525"></i><div><code>core.color.gray.400</code><span>#252525</span></div></div>
+<div class="sw"><i style="background:#202020"></i><div><code>core.color.gray.500</code><span>#202020</span></div></div>
+<div class="sw"><i style="background:#1a1a1a"></i><div><code>core.color.gray.600</code><span>#1a1a1a</span></div></div>
+<div class="sw"><i style="background:#141414"></i><div><code>core.color.gray.700</code><span>#141414</span></div></div>
+<div class="sw"><i style="background:#166dfc"></i><div><code>core.color.blue.100</code><span>#166dfc</span></div></div>
+<div class="sw"><i style="background:#5892c9"></i><div><code>core.color.blue.80</code><span>#5892c9</span></div></div>
+<div class="sw"><i style="background:#166dfc"></i><div><code>core.color.cta</code><span>#166dfc</span></div></div>
+<div class="sw"><i style="background:#455670"></i><div><code>core.color.cta-hover</code><span>#455670</span></div></div>
+<div class="sw"><i style="background:#b85345"></i><div><code>core.color.error</code><span>#b85345</span></div></div>
+<div class="sw"><i style="background:#3e7d21"></i><div><code>core.color.success</code><span>#3e7d21</span></div></div>
+<div class="sw"><i style="background:#854b23"></i><div><code>core.color.warning</code><span>#854b23</span></div></div>
+<div class="sw"><i style="background:#ed4a1c"></i><div><code>core.color.opinions</code><span>#ed4a1c</span></div></div>
+<div class="sw"><i style="background:#5892c9"></i><div><code>core.color.link</code><span>#5892c9</span></div></div>
+</div>
+
+<h2>Type</h2>
+<div class="story">
+<div class="slogan">Democracy Dies in Darkness</div>
+<h3>Trump's dream of nuclear deal meets reality of unwilling Russia, China</h3>
+<div class="by">By Joshua Keating and Cate Cadell</div>
+</div>
+<div class="article" style="margin-top:24px">
+<div style="font:700 16px/20px var(--sans)">Video Games</div>
+<h3>Grand Theft Auto VI is an astonishing American epic</h3>
+<p class="dek">The game, a rags-to-riches crime epic in which players pilot both halves of an outlaw couple, is revolutionary because of its attention to human behavior.</p>
+<p class="body">Early while playing Grand Theft Auto VI, I caught myself minding my manners.</p>
+</div>
+
+<h2>Controls</h2>
+<div class="row">
+<span class="pill">Save and subscribe</span>
+<span class="ghost">Sign in</span>
+<span class="navpill">Politics</span>
+<span class="icon" aria-hidden="true">search</span>
+</div>
+<div class="card">
+<div class="badge">BLACK FRIDAY SALE</div>
+<h3>Black Friday savings: 99 cents USD every four weeks</h3>
+<p>Unlimited access on the web and in our apps</p>
+<div class="field">Add your email address</div>
+<button class="next" type="button">Next</button>
+<div class="oauth">Continue with Google</div>
+</div>
+
+<h2>Space</h2>
+<table><tr><th>Token</th><th>Value</th></tr><tr><td><code>core.space.025</code></td><td>0.25rem</td></tr>
+<tr><td><code>core.space.050</code></td><td>0.5rem</td></tr>
+<tr><td><code>core.space.075</code></td><td>0.75rem</td></tr>
+<tr><td><code>core.space.100</code></td><td>1rem</td></tr>
+<tr><td><code>core.space.125</code></td><td>1.25rem</td></tr>
+<tr><td><code>core.space.150</code></td><td>1.5rem</td></tr>
+<tr><td><code>core.space.175</code></td><td>1.75rem</td></tr>
+<tr><td><code>core.space.200</code></td><td>2rem</td></tr>
+<tr><td><code>core.space.225</code></td><td>2.25rem</td></tr>
+<tr><td><code>core.space.250</code></td><td>2.5rem</td></tr>
+<tr><td><code>core.space.275</code></td><td>2.75rem</td></tr>
+<tr><td><code>core.space.300</code></td><td>3rem</td></tr>
+<tr><td><code>core.space.350</code></td><td>3.5rem</td></tr>
+<tr><td><code>core.space.400</code></td><td>4rem</td></tr>
+<tr><td><code>core.space.450</code></td><td>4.5rem</td></tr>
+<tr><td><code>core.space.500</code></td><td>5rem</td></tr></table>
+<h2>Radius</h2>
+<table><tr><th>Token</th><th>Value</th></tr><tr><td><code>core.radius.012</code></td><td>0.125rem</td></tr>
+<tr><td><code>core.radius.025</code></td><td>0.25rem</td></tr>
+<tr><td><code>core.radius.050</code></td><td>0.5rem</td></tr>
+<tr><td><code>core.radius.075</code></td><td>0.75rem</td></tr>
+<tr><td><code>core.radius.100</code></td><td>1rem</td></tr>
+<tr><td><code>core.radius.125</code></td><td>1.25rem</td></tr>
+<tr><td><code>core.radius.150</code></td><td>1.5rem</td></tr>
+<tr><td><code>core.radius.round</code></td><td>9999px</td></tr></table>
+<h2>Type scale</h2>
+<table><tr><th>Token</th><th>Value</th></tr><tr><td><code>core.font.size.075</code></td><td>0.75rem</td></tr>
+<tr><td><code>core.font.size.087</code></td><td>0.875rem</td></tr>
+<tr><td><code>core.font.size.100</code></td><td>1rem</td></tr>
+<tr><td><code>core.font.size.112</code></td><td>1.125rem</td></tr>
+<tr><td><code>core.font.size.125</code></td><td>1.25rem</td></tr>
+<tr><td><code>core.font.size.150</code></td><td>1.5rem</td></tr>
+<tr><td><code>core.font.size.162</code></td><td>1.625rem</td></tr>
+<tr><td><code>core.font.size.175</code></td><td>1.75rem</td></tr>
+<tr><td><code>core.font.size.200</code></td><td>2rem</td></tr>
+<tr><td><code>core.font.size.225</code></td><td>2.25rem</td></tr>
+<tr><td><code>core.font.size.250</code></td><td>2.5rem</td></tr>
+<tr><td><code>core.font.size.275</code></td><td>2.75rem</td></tr>
+<tr><td><code>core.font.size.300</code></td><td>3rem</td></tr>
+<tr><td><code>core.font.size.350</code></td><td>3.5rem</td></tr>
+<tr><td><code>core.font.size.400</code></td><td>4rem</td></tr>
+<tr><td><code>core.font.size.450</code></td><td>4.5rem</td></tr>
+<tr><td><code>core.font.size.500</code></td><td>5rem</td></tr></table>
+</main>
+</body>
+</html>

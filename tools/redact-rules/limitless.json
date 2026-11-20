@@ -1,0 +1,24 @@
+{
+  "_note": "Rules for systems/limitless. Public signed-out capture of limitless.ai: nothing was signed into, typed, searched, sent or submitted. The privacy policy and terms publish support@limitless.ai and privacy@limitless.ai as company contact addresses. Those are product-published content and are kept. The terms also print a Denver street address, a Sacramento street address, and an AAA telephone number. Those rectangles mask the street and the phone. The published email on the same lines is covered by the same rectangles.",
+  "families": [
+    {
+      "name": "terms street and phone",
+      "files": ["screenshots/terms-light-full.png"],
+      "rects": [
+        [455, 6790, 980, 6855, "solid"],
+        [455, 11980, 980, 12040, "solid"],
+        [455, 12245, 980, 12300, "solid"],
+        [455, 12465, 980, 12515, "solid"],
+        [455, 14885, 980, 14945, "solid"],
+        [455, 15065, 980, 15120, "solid"]
+      ]
+    }
+  ],
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@limitless\\.ai$",
+      "@limitless\\.ci$"
+    ]
+  }
+}

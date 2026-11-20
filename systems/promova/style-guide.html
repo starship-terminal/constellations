@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Promova style guide</title>
+<style>
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-ink-30: rgba(0, 0, 0, 0.3);
+  --color-ink-50: rgba(0, 0, 0, 0.5);
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e0e0e0;
+  --color-gray-300: #eeeeee;
+  --color-gray-400: #f4f4f4;
+  --color-ink-hover: #262626;
+  --color-ink-pressed: #404040;
+  --color-lavender: #bec8ff;
+  --color-lavender-soft: #dfe3ff;
+  --color-lilac: #d7d4e2;
+  --color-yellow: #fff584;
+  --color-yellow-soft: #fff8a7;
+  --color-mint: #bcf0d0;
+  --color-lime: #e3efc3;
+  --color-lime-soft: #eef5db;
+  --color-blush: #f5a3d0;
+  --color-sand: #ebe0d3;
+  --color-ice: #f2f4ff;
+  --color-progress: #fffd00;
+  --font-family-display: nekst, Rubik, Arial, Lucida Grande, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-ui: manrope, Manrope, Rubik, Arial, Lucida Grande, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-size-nav: 14px;
+  --font-size-body-2: 15px;
+  --font-size-body: 16px;
+  --font-size-body-1: 18px;
+  --font-size-hero-phone: 50px;
+  --font-size-course: 60px;
+  --font-size-display: 70px;
+  --font-size-auth-title: 35px;
+  --typography-display: 700 70px/70px var(--core-font-family-display);
+  --typography-display-phone: 700 50px/50px var(--core-font-family-display);
+  --typography-section: 400 24px/24px var(--core-font-family-display);
+  --typography-body: 400 16px/26px var(--core-font-family-ui);
+  --typography-body-lg: 400 24px/34px var(--core-font-family-ui);
+  --typography-nav: 400 15px/18px var(--core-font-family-display);
+  --typography-button: 700 18px/18px var(--core-font-family-display);
+  --typography-field: 500 15px/22px var(--core-font-family-ui);
+  --typography-auth-title: 400 35px/35px var(--core-font-family-display);
+  --radius-none: 0px;
+  --radius-field: 5px;
+  --radius-auth-button: 10px;
+  --radius-card-phone: 20px;
+  --radius-auth-card: 20px;
+  --radius-section: 30px;
+  --spacing-gutter: 20px;
+  --spacing-nav-pad: 30px;
+  --spacing-field-pad: 20px;
+  --spacing-section-pad: 60px;
+  --spacing-auth-card-pad: 15px;
+  --spacing-modal-pad: 30px;
+  --motion-nav-hover: 0.2s;
+  --motion-button: 0.25s;
+  --motion-page: 0.5s;
+  --background-page: var(--core-color-black);
+  --background-surface: var(--core-color-white);
+  --background-hero: var(--core-color-lavender);
+  --background-muted: var(--core-color-gray-100);
+  --background-auth: var(--core-color-gray-300);
+  --background-action: var(--core-color-black);
+  --background-action-hover: var(--core-color-ink-hover);
+  --background-action-pressed: var(--core-color-ink-pressed);
+  --background-announcement: var(--core-color-yellow);
+  --text-primary: var(--core-color-black);
+  --text-on-action: var(--core-color-white);
+  --text-secondary: var(--core-color-ink-50);
+  --text-muted: var(--core-color-ink-30);
+  --border-stroke: var(--core-color-ink-30);
+  --border-strong: var(--core-color-black);
+  --component-button-nav-height: 40px;
+  --component-button-nav-padding: 10px;
+  --component-button-nav-radius: var(--core-radius-none);
+  --component-button-nav-font-size: 14px;
+  --component-button-cta-height: 60px;
+  --component-button-cta-radius: var(--core-radius-none);
+  --component-button-cta-font-size: 18px;
+  --component-button-auth-height: 60px;
+  --component-button-auth-radius: var(--core-radius-auth-button);
+  --component-button-auth-font-size: 18px;
+  --component-button-oauth-height: 50px;
+  --component-button-oauth-radius: var(--core-radius-none);
+  --component-field-height: 50px;
+  --component-field-radius: var(--core-radius-field);
+  --component-field-padding: 20px;
+  --component-nav-height: 100px;
+  --component-nav-radius: var(--core-radius-section);
+  --component-nav-inset: var(--core-spacing-gutter);
+  --component-card-auth-radius: var(--core-radius-auth-card);
+  --component-card-section-radius: var(--core-radius-section);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--background-page);
+  color: var(--text-on-action);
+  font: 16px/1.45 var(--font-family-ui);
+  padding: 24px;
+}
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  background: var(--background-surface);
+  color: var(--text-primary);
+  border-radius: var(--radius-section);
+  padding: 32px;
+}
+h1 { font-family: var(--font-family-display); font-weight: 700; font-size: 40px; line-height: 1; margin: 0 0 8px; }
+h2 { font-family: var(--font-family-display); font-weight: 400; font-size: 24px; margin: 32px 0 12px; }
+p { margin: 0 0 16px; }
+.swatches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.sw { display: flex; gap: 10px; align-items: center; }
+.sw i { width: 48px; height: 48px; border-radius: 8px; border: 1px solid rgba(0,0,0,.2); display: block; }
+code { display: block; font-size: 12px; color: rgba(0,0,0,.55); }
+.hero {
+  background: var(--background-hero);
+  border-radius: var(--radius-section);
+  padding: 28px;
+  margin-top: 16px;
+}
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: var(--component-button-cta-height);
+  padding: 0 28px;
+  background: var(--background-action);
+  color: var(--text-on-action);
+  font-family: var(--font-family-display);
+  font-size: var(--component-button-cta-font-size);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius-none);
+  border: 0;
+}
+.btn-line {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 40px; padding: 0 10px;
+  background: var(--background-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-none);
+  font-family: var(--font-family-display);
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.field {
+  display: block; width: 280px; height: var(--component-field-height);
+  border: 1px solid var(--border-stroke);
+  border-radius: var(--radius-field);
+  padding: 0 var(--spacing-field-pad);
+  font: 500 15px/22px var(--font-family-ui);
+}
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Promova</h1>
+  <p>Public signed-out surfaces, measured 2026-11-19. One light theme on a black page. Values come from tokens.json.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:var(--light-background-page)"></i><div><b>page</b><code>light.background.page</code></div></div>
+<div class="sw"><i style="background:var(--light-background-surface)"></i><div><b>surface</b><code>light.background.surface</code></div></div>
+<div class="sw"><i style="background:var(--light-background-hero)"></i><div><b>hero</b><code>light.background.hero</code></div></div>
+<div class="sw"><i style="background:var(--light-background-action)"></i><div><b>action</b><code>light.background.action</code></div></div>
+<div class="sw"><i style="background:var(--light-background-announcement)"></i><div><b>announcement</b><code>light.background.announcement</code></div></div>
+<div class="sw"><i style="background:var(--light-border-stroke)"></i><div><b>field border</b><code>light.border.stroke</code></div></div>
+  </div>
+  <h2>Hero island</h2>
+  <div class="hero">
+    <h1 style="font-size:40px">Speak before you're ready</h1>
+    <p>Speaking isn't the final step of learning a language.</p>
+    <div class="row">
+      <span class="btn">Try now</span>
+      <span class="btn-line">Sign up</span>
+    </div>
+  </div>
+  <h2>Field</h2>
+  <input class="field" placeholder="example@gmail.com" aria-label="Email example">
+</main>
+</body>
+</html>

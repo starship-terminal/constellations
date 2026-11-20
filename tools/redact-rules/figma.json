@@ -1,0 +1,11 @@
+{
+  "_note": "Rules for systems/figma. Public signed-out marketing capture (home, product pages, pricing, community, downloads, auth dialogs); no private data expected. Figma's own published contact/support addresses are allow-listed.",
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@figma\\.com$",
+      "@example\\.com$"
+    ]
+  },
+  "families": []
+}

@@ -34,6 +34,14 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { chromium, REF, RAW, CROPS, SNAPS, SCROLL, metaOf, newContext, openSnap } from './lib.mjs';
 
+// The snapshot URL and title are written into raw/, which is public: keep the origin and route
+// words only, and never the page title (a chat or task name), as the chatgpt base redacted them.
+function maskUrl(u) {
+  let x;
+  try { x = new URL(u); } catch { return '<url>'; }
+  return x.origin + x.pathname.split('/').map((s) => (!s || /^[a-z]+(?:[-_][a-z]+)?$/.test(s) ? s : '<id>')).join('/');
+}
+
 if (!SNAPS) { console.error('SNAPS=<snapshot dir> is required'); process.exit(2); }
 const OUT = path.join(RAW, 'components-computed.json');
 const args = process.argv.slice(2);
@@ -233,7 +241,7 @@ function styleOf(el, props) {
   const pp = el.querySelector('[contenteditable=true] p[data-placeholder], [contenteditable=true] p.is-editor-empty') || (el.matches('p[data-placeholder]') ? el : null);
   if (pp) {
     const b = getComputedStyle(pp, '::before');
-    out.placeholder = { text: pp.getAttribute('data-placeholder') || b.content, color: b.color, opacity: b.opacity, fontSize: b.fontSize, lineHeight: b.lineHeight, float: b.cssFloat, height: b.height };
+    out.placeholder = { text: pp.getAttribute('data-placeholder') || noUrl(b.content).slice(0, 80), color: b.color, opacity: b.opacity, fontSize: b.fontSize, lineHeight: b.lineHeight, float: b.cssFloat, height: b.height };
   }
   const svg = el.tagName.toLowerCase() === 'svg' ? el : [...el.querySelectorAll('svg')].find((s) => s.getBoundingClientRect().width > 1);
   if (svg) {
@@ -248,7 +256,8 @@ function styleOf(el, props) {
   if (names.size) {
     out.vars = {};
     const root = getComputedStyle(el);
-    for (const n of [...names].sort()) out.vars[n] = noUrl(root.getPropertyValue(n).trim());
+    // An unresolved variable reads as an empty string; skip it, as the chatgpt base did.
+    for (const n of [...names].sort()) { const v = root.getPropertyValue(n).trim(); if (v) out.vars[n] = noUrl(v); }
   }
   return out;
 }
@@ -759,7 +768,10 @@ out._meta = {
     other: 'active / selected / checked / open / typed / enabled / ... are other elements or snapshots captured in that state',
   },
   tokens: '`vars` lists every var(--x) named in the classes of the element and its first descendants, resolved in that state\'s theme.',
-  snapshots: { ...(out._meta && out._meta.snapshots), ...Object.fromEntries(labels.map((l) => { const m = metaOf(l); return [l, { url: m.url, title: m.title, w: m.w, h: m.h, ...(SCROLL[l] ? { scroll: SCROLL[l] } : {}) }]; })) },
+  // Entries kept from an earlier file pass through the same mask, so a partial rerun cannot carry an
+  // unmasked URL or title written by an older script into the public output.
+  snapshots: Object.fromEntries(Object.entries({ ...(out._meta && out._meta.snapshots), ...Object.fromEntries(labels.map((l) => { const m = metaOf(l); return [l, { url: m.url, title: m.title, w: m.w, h: m.h, ...(SCROLL[l] ? { scroll: SCROLL[l] } : {}) }]; })) })
+    .map(([l, e]) => [l, { ...e, url: maskUrl(e.url), ...(e.title ? { title: '<page title>' } : {}) }])),
 };
 out.components ??= {};
 fs.mkdirSync(CROPS, { recursive: true });

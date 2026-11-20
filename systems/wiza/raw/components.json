@@ -1,0 +1,231 @@
+{
+  "source": "Computed styles on public wiza.co pages, T3 preview browser, 2026-11-19. Desktop CSS viewport 1440x900, devicePixelRatio 2. Login measured on https://wiza.co/auth/login. Signup (https://wiza.co/auth/signup) returned a Cloudflare 'Just a moment...' page and was not driven.",
+  "components": {
+    "buttonPrimary": {
+      "source": "computed style of .button_main_wrap (filled variant) wrapping 'Get started for free' on https://wiza.co/ at 1440px",
+      "types": {"background": "color", "text": "color", "radius": "dimension", "paddingY": "dimension", "paddingX": "dimension", "fontSize": "dimension", "height": "dimension"},
+      "values": {
+        "background": "#26114a",
+        "text": "#ffffff",
+        "radius": "8px",
+        "paddingY": "8px",
+        "paddingX": "14px",
+        "fontSize": "16px",
+        "height": "36px"
+      }
+    },
+    "buttonSecondary": {
+      "source": "computed style of .button_main_wrap wrapping 'Log in' and 'Get a demo' on https://wiza.co/ at 1440px",
+      "types": {"background": "color", "text": "color", "radius": "dimension", "paddingY": "dimension", "paddingX": "dimension", "height": "dimension"},
+      "values": {
+        "background": "#ffffff",
+        "text": "#26114a",
+        "radius": "8px",
+        "paddingY": "8px",
+        "paddingX": "14px",
+        "height": "36px"
+      }
+    },
+    "navLink": {
+      "source": "computed style of a.nav_link1 'Pricing' on https://wiza.co/ at 1440px",
+      "types": {"text": "color", "fontSize": "dimension", "lineHeight": "dimension", "paddingY": "dimension"},
+      "values": {
+        "text": "#26114a",
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "paddingY": "18px"
+      }
+    },
+    "footerLink": {
+      "source": "computed style of .footer_link_wrap on https://wiza.co/pricing",
+      "types": {"text": "color", "fontSize": "dimension", "paddingY": "dimension"},
+      "values": {
+        "text": "#615e6e",
+        "fontSize": "16px",
+        "paddingY": "6px"
+      }
+    },
+    "proseLink": {
+      "source": "computed style of an underlined link in the privacy notice on https://wiza.co/privacy",
+      "types": {"text": "color", "fontSize": "dimension"},
+      "values": {
+        "text": "#7e43ff",
+        "fontSize": "16px"
+      }
+    },
+    "emailField": {
+      "source": "computed style of input[name=email] placeholder 'Work email' on https://wiza.co/ at 1440px. The field sits in the page, not in a form element",
+      "types": {"background": "color", "text": "color", "radius": "dimension", "height": "dimension", "paddingX": "dimension", "fontSize": "dimension", "borderWidth": "dimension"},
+      "values": {
+        "background": "#ffffff",
+        "text": "#3e0079",
+        "radius": "10px",
+        "height": "40px",
+        "paddingX": "14px",
+        "fontSize": "14px",
+        "borderWidth": "1px"
+      }
+    },
+    "problemCard": {
+      "source": "computed style of .tp_card_item on https://wiza.co/",
+      "types": {"background": "color", "text": "color", "radius": "dimension", "paddingY": "dimension", "paddingX": "dimension"},
+      "values": {
+        "background": "rgba(255, 255, 255, 0.8)",
+        "text": "#312749",
+        "radius": "14px",
+        "paddingY": "16px",
+        "paddingX": "20px"
+      }
+    },
+    "pricingCard": {
+      "source": "computed style of .pricing_card_content on https://wiza.co/pricing at 1440px",
+      "types": {"background": "color", "text": "color", "radius": "dimension", "padding": "dimension", "borderWidth": "dimension"},
+      "values": {
+        "background": "rgba(255, 255, 255, 0.6)",
+        "text": "#391b50",
+        "radius": "16px",
+        "padding": "4px",
+        "borderWidth": "1px"
+      }
+    },
+    "pricingCardFeatured": {
+      "source": "computed style of .pricing_card_content.is-unique on https://wiza.co/pricing (the Email plan)",
+      "types": {"background": "color", "radius": "dimension"},
+      "values": {
+        "background": "#ffffff",
+        "radius": "16px"
+      }
+    },
+    "pricingToggle": {
+      "source": "computed style of .pricing_toggle_list and .pricing_toggle_active on https://wiza.co/pricing. Annual is the selected state",
+      "types": {"track": "color", "thumb": "color", "radius": "dimension", "height": "dimension", "padding": "dimension"},
+      "values": {
+        "track": "rgba(56, 5, 116, 0.04)",
+        "thumb": "rgba(255, 255, 255, 0.95)",
+        "radius": "1440px",
+        "height": "46px",
+        "padding": "4px"
+      }
+    },
+    "pricingBadge": {
+      "source": "computed style of .pricing_tag_wrap 'Unlimited' on https://wiza.co/pricing",
+      "types": {"text": "color", "fontSize": "dimension", "radius": "dimension", "paddingY": "dimension", "paddingX": "dimension"},
+      "values": {
+        "text": "#26114a",
+        "fontSize": "12px",
+        "radius": "1440px",
+        "paddingY": "2px",
+        "paddingX": "6px"
+      }
+    },
+    "ratingPill": {
+      "source": "computed style of .home_hero_ratings_pill_wrap on https://wiza.co/pricing",
+      "types": {"background": "color", "text": "color", "radius": "dimension", "fontSize": "dimension"},
+      "values": {
+        "background": "#ecedf3",
+        "text": "#26114a",
+        "radius": "1440px",
+        "fontSize": "14px"
+      }
+    },
+    "sectionCard": {
+      "source": "computed border-radius of .c-background.is-section-bg on https://wiza.co/ (the problem section). Fill is a gradient, recorded as a gap rather than flattened to one colour",
+      "types": {"radius": "dimension"},
+      "values": {
+        "radius": "56px"
+      }
+    },
+    "featureTile": {
+      "source": "computed style of .col3_item on https://wiza.co/",
+      "types": {"background": "color", "radius": "dimension"},
+      "values": {
+        "background": "#f6f7fa",
+        "radius": "40px"
+      }
+    },
+    "testimonial": {
+      "source": "computed style of .testimonial_slider_item on https://wiza.co/",
+      "types": {"background": "color", "radius": "dimension"},
+      "values": {
+        "background": "#ffffff",
+        "radius": "24px"
+      }
+    },
+    "customerStory": {
+      "source": "computed style of .cl_item on https://wiza.co/customers",
+      "types": {"background": "color", "radius": "dimension"},
+      "values": {
+        "background": "#f6f8fa",
+        "radius": "8px"
+      }
+    },
+    "heroVideo": {
+      "source": "computed style of .home_hero_video_wrap on https://wiza.co/",
+      "types": {"radius": "dimension"},
+      "values": {
+        "radius": "28px"
+      }
+    },
+    "authField": {
+      "source": "computed style of the email input on https://wiza.co/auth/login at 1440px. Placeholder text is the product's own example and is not an entered value",
+      "types": {"background": "color", "text": "color", "radius": "dimension", "height": "dimension", "fontSize": "dimension", "paddingY": "dimension", "paddingX": "dimension"},
+      "values": {
+        "background": "#ffffff",
+        "text": "#000000",
+        "radius": "6px",
+        "height": "32px",
+        "fontSize": "14px",
+        "paddingY": "5px",
+        "paddingX": "10px"
+      }
+    },
+    "authSubmit": {
+      "source": "computed style of the Log in submit button on https://wiza.co/auth/login. Not clicked",
+      "types": {"background": "color", "text": "color", "radius": "dimension", "height": "dimension", "fontSize": "dimension", "fontWeight": "fontWeight"},
+      "values": {
+        "background": "#7e43ff",
+        "text": "#ffffff",
+        "radius": "6px",
+        "height": "32px",
+        "fontSize": "14px",
+        "fontWeight": 500
+      }
+    },
+    "authGoogle": {
+      "source": "computed style of the 'Log in via Google' button on https://wiza.co/auth/login. Not clicked. Company SSO was not entered",
+      "types": {"background": "color", "text": "color", "radius": "dimension", "height": "dimension"},
+      "values": {
+        "background": "#ffffff",
+        "text": "#353849",
+        "radius": "6px",
+        "height": "32px"
+      }
+    },
+    "authPanel": {
+      "source": "computed style of the login card (.rounded-xl.bg-white) on https://wiza.co/auth/login",
+      "types": {"background": "color", "radius": "dimension"},
+      "values": {
+        "background": "#ffffff",
+        "radius": "12px"
+      }
+    },
+    "authLink": {
+      "source": "computed style of the 'Get started' link on https://wiza.co/auth/login. Not followed",
+      "types": {"text": "color", "fontSize": "dimension"},
+      "values": {
+        "text": "#7e43ff",
+        "fontSize": "14px"
+      }
+    },
+    "blogChip": {
+      "source": "computed style of the Blog Home chip on https://wiza.co/blog/. The blog is a separate WordPress theme (Work Sans), not the marketing token layer",
+      "types": {"background": "color", "text": "color", "radius": "dimension", "fontSize": "dimension"},
+      "values": {
+        "background": "#ffacac",
+        "text": "#000000",
+        "radius": "6px",
+        "fontSize": "14px"
+      }
+    }
+  }
+}

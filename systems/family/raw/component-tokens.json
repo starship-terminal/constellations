@@ -1,0 +1,1545 @@
+{
+  "_about": "The token tree build_tokens.py turns into tokens.json. family.co and the app.family.co login declare their token layers in their stylesheets (raw/css-vars.json, raw/app-css-vars.json): the marketing role layer and the app's --family-*/--wallet-*/--overlay-* product layer. Theme-invariant names land under core.*; names the app switches under [data-theme=\"dark\"] are emitted under both light.* and dark.* as {var} leaves — the dark theme is declared, never painted while signed out. Measured roles under light.* alias the declared values where they match.",
+  "core": {
+    "font": {
+      "family": {
+        "display": {
+          "value": "Family, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+          "type": "fontFamily",
+          "source": "computed fontFamily of hero-h1 default (raw/components-computed.json)",
+          "description": "The proprietary \"Family\" display face — every page title, hero and section heading."
+        },
+        "ui": {
+          "value": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+          "type": "fontFamily",
+          "source": "computed fontFamily of nav-developers default (raw/components-computed.json)",
+          "description": "The marketing/UI stack — nav labels, buttons and body copy (Inter with system fallbacks)."
+        },
+        "app": {
+          "value": "inter, \"inter Fallback\"",
+          "type": "fontFamily",
+          "source": "computed fontFamily of login-field default (raw/components-computed.json)",
+          "description": "The app surface's variable Inter — the login card and its field."
+        },
+        "code": {
+          "value": "\"SF Mono\", \"SFMono-Regular\", \"Consolas\", \"Liberation Mono\", Menlo, Courier, monospace",
+          "type": "fontFamily",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --font-code",
+          "description": "The declared `--font-code` stack."
+        },
+        "secondary": {
+          "value": "\"SF Pro Rounded\", ui-rounded, \"Nunito\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, \"Apple Color Emoji\", Arial, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+          "type": "fontFamily",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --font-secondary",
+          "description": "The declared `--font-secondary` stack."
+        }
+      },
+      "weight": {
+        "regular": {
+          "value": 400,
+          "type": "fontWeight",
+          "source": "computed fontWeight of feature-body default (raw/components-computed.json)",
+          "description": "400 — body and feature copy."
+        },
+        "medium": {
+          "value": 500,
+          "type": "fontWeight",
+          "source": "computed fontWeight of nav-developers default (raw/components-computed.json)",
+          "description": "500 — nav labels, control text and the Family display headings."
+        },
+        "semibold": {
+          "value": 600,
+          "type": "fontWeight",
+          "source": "computed fontWeight of feature-label default (raw/components-computed.json)",
+          "description": "600 — feature labels/kickers and entry headings; the heaviest weight painted signed out."
+        }
+      },
+      "size": {
+        "measured": {
+          "xs": {
+            "value": "15px",
+            "type": "dimension",
+            "source": "computed fontSize of blog-date default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+            "description": "The small meta/date line."
+          },
+          "sm": {
+            "value": "19px",
+            "type": "dimension",
+            "source": "computed fontSize of faq-item default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+            "description": "The FAQ item copy."
+          },
+          "control": {
+            "value": "15px",
+            "type": "dimension",
+            "source": "computed fontSize of nav-developers default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+            "description": "The nav/button label size."
+          },
+          "body": {
+            "value": "15px",
+            "type": "dimension",
+            "source": "computed fontSize of feature-body default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+            "description": "The body/feature copy size."
+          },
+          "lg": {
+            "value": "16px",
+            "type": "dimension",
+            "source": "computed fontSize of login-field default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+            "description": "The app field and larger body size."
+          },
+          "section": {
+            "value": "44px",
+            "type": "dimension",
+            "source": "computed fontSize of feature-h2 default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+            "description": "The marketing section heading."
+          },
+          "article": {
+            "value": "44px",
+            "type": "dimension",
+            "source": "computed fontSize of post-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+            "description": "The article title size."
+          },
+          "mobile-display": {
+            "value": "44px",
+            "type": "dimension",
+            "source": "computed fontSize of m-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+            "description": "The mobile display size at 390px."
+          },
+          "display": {
+            "value": "68px",
+            "type": "dimension",
+            "source": "computed fontSize of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+            "description": "The hero display size."
+          }
+        }
+      }
+    },
+    "color": {
+      "app": {
+        "blue": {
+          "value": "#0090ff",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --app-blue",
+          "description": "The declared `--app-blue`."
+        },
+        "gray": {
+          "value": "#747485",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --app-gray",
+          "description": "The declared `--app-gray`."
+        },
+        "green": {
+          "value": "#00ca48",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --app-green",
+          "description": "The declared `--app-green`."
+        },
+        "pink": {
+          "value": "#ff58ae",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --app-pink",
+          "description": "The declared `--app-pink`."
+        },
+        "primary": {
+          "value": "#9896ff",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --primary",
+          "description": "The declared `--primary`."
+        },
+        "valid": {
+          "value": "#00ca48",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --valid",
+          "description": "The declared `--valid`."
+        },
+        "warning": {
+          "value": "#ff8600",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --warning",
+          "description": "The declared `--warning`."
+        }
+      },
+      "background": {
+        "invalid": {
+          "value": "#fff0f0",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --background-invalid",
+          "description": "The declared `--background-invalid`."
+        },
+        "valid": {
+          "value": "rgba(0, 196, 84, 0.1)",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --background-valid",
+          "description": "The declared `--background-valid`."
+        },
+        "warning": {
+          "value": "#fefae6",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --background-warning",
+          "description": "The declared `--background-warning`."
+        }
+      },
+      "beige": {
+        "default": {
+          "value": "#fbfaf9",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --beige",
+          "description": "The declared `--beige`."
+        },
+        "dark": {
+          "value": "#eaeaea",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --beige-dark",
+          "description": "The declared `--beige-dark`."
+        }
+      },
+      "blue": {
+        "default": {
+          "value": "#0086fc",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --blue",
+          "description": "The declared `--blue`."
+        },
+        "light": {
+          "value": "#ebfcfd",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --blue-light",
+          "description": "The declared `--blue-light`."
+        }
+      },
+      "body": {
+        "default": {
+          "value": "#4a443f",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --body",
+          "description": "The declared `--body`."
+        },
+        "muted": {
+          "value": "#848281",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --body-muted",
+          "description": "The declared `--body-muted`."
+        }
+      },
+      "card": {
+        "teal": {
+          "01": {
+            "value": "#00d0ce",
+            "type": "color",
+            "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --card-teal-01",
+            "description": "The declared `--card-teal-01`."
+          },
+          "02": {
+            "value": "#00dcdb",
+            "type": "color",
+            "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --card-teal-02",
+            "description": "The declared `--card-teal-02`."
+          }
+        },
+        "yellow": {
+          "01": {
+            "value": "#feaa00",
+            "type": "color",
+            "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --card-yellow-01",
+            "description": "The declared `--card-yellow-01`."
+          },
+          "02": {
+            "value": "#ffbe00",
+            "type": "color",
+            "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --card-yellow-02",
+            "description": "The declared `--card-yellow-02`."
+          }
+        }
+      },
+      "anchor": {
+        "value": "#6187fe",
+        "type": "color",
+        "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --color-anchor",
+        "description": "The declared `--color-anchor`."
+      },
+      "border": {
+        "value": "#e8e8e8",
+        "type": "color",
+        "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --color-border",
+        "description": "The declared `--color-border`."
+      },
+      "invalid": {
+        "value": "#ff4e4e",
+        "type": "color",
+        "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --color-invalid",
+        "description": "The declared `--color-invalid`."
+      },
+      "marketing": {
+        "primary": {
+          "value": "#343433",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --color-primary",
+          "description": "The declared `--color-primary`."
+        },
+        "valid": {
+          "value": "#00c454",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --color-valid",
+          "description": "The declared `--color-valid`."
+        },
+        "warning": {
+          "value": "#f6c30f",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --color-warning",
+          "description": "The declared `--color-warning`."
+        }
+      },
+      "text": {
+        "value": "#343433",
+        "type": "color",
+        "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --color-text",
+        "description": "The declared `--color-text`."
+      },
+      "danger": {
+        "default": {
+          "value": "#ff0c18",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --danger",
+          "description": "The declared `--danger`."
+        },
+        "100": {
+          "value": "#ffeae9",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --danger-100",
+          "description": "The declared `--danger-100`."
+        },
+        "200": {
+          "value": "#ffd6d5",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --danger-200",
+          "description": "The declared `--danger-200`."
+        },
+        "300": {
+          "value": "#ff9795",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --danger-300",
+          "description": "The declared `--danger-300`."
+        },
+        "400": {
+          "value": "#ff0c18",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --danger-400",
+          "description": "The declared `--danger-400`."
+        },
+        "500": {
+          "value": "#fb0c16",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --danger-500",
+          "description": "The declared `--danger-500`."
+        },
+        "600": {
+          "value": "#de0e14",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --danger-600",
+          "description": "The declared `--danger-600`."
+        },
+        "700": {
+          "value": "#c30d14",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --danger-700",
+          "description": "The declared `--danger-700`."
+        },
+        "800": {
+          "value": "#8c0e0f",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --danger-800",
+          "description": "The declared `--danger-800`."
+        }
+      },
+      "family": {
+        "default": {
+          "value": "#9896ff",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --family",
+          "description": "The declared `--family`."
+        },
+        "100": {
+          "value": "#f5f5ff",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --family-100",
+          "description": "The declared `--family-100`."
+        },
+        "200": {
+          "value": "#eaeaff",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --family-200",
+          "description": "The declared `--family-200`."
+        },
+        "300": {
+          "value": "#cccbff",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --family-300",
+          "description": "The declared `--family-300`."
+        },
+        "400": {
+          "value": "#9896ff",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --family-400",
+          "description": "The declared `--family-400`."
+        },
+        "500": {
+          "value": "#8987ed",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --family-500",
+          "description": "The declared `--family-500`."
+        },
+        "600": {
+          "value": "#7a78d2",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --family-600",
+          "description": "The declared `--family-600`."
+        },
+        "700": {
+          "value": "#6a69b8",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --family-700",
+          "description": "The declared `--family-700`."
+        },
+        "800": {
+          "value": "#4c4b84",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --family-800",
+          "description": "The declared `--family-800`."
+        }
+      },
+      "focus": {
+        "default": {
+          "value": "#848281",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --focus",
+          "description": "The declared `--focus`."
+        },
+        "color": {
+          "value": "rgba(0, 122, 255, 0.5)",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --focus-color",
+          "description": "The declared `--focus-color`."
+        }
+      },
+      "gold": {
+        "value": "#d48f00",
+        "type": "color",
+        "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --gold",
+        "description": "The declared `--gold`."
+      },
+      "graphic": {
+        "black": {
+          "value": "#343433",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-black",
+          "description": "The declared `--graphic-black`."
+        },
+        "blue": {
+          "default": {
+            "value": "#64c6ff",
+            "type": "color",
+            "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-blue",
+            "description": "The declared `--graphic-blue`."
+          },
+          "alt": {
+            "value": "#00b2ff",
+            "type": "color",
+            "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-blue-alt",
+            "description": "The declared `--graphic-blue-alt`."
+          },
+          "pale": {
+            "default": {
+              "value": "#7aceff",
+              "type": "color",
+              "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-blue-pale",
+              "description": "The declared `--graphic-blue-pale`."
+            },
+            "alt": {
+              "value": "#4cbfff",
+              "type": "color",
+              "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-blue-pale-alt",
+              "description": "The declared `--graphic-blue-pale-alt`."
+            }
+          }
+        },
+        "gold": {
+          "default": {
+            "value": "#ffb112",
+            "type": "color",
+            "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-gold",
+            "description": "The declared `--graphic-gold`."
+          },
+          "alt": {
+            "value": "#ffa100",
+            "type": "color",
+            "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-gold-alt",
+            "description": "The declared `--graphic-gold-alt`."
+          }
+        },
+        "gray": {
+          "value": "#e5d5c3",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-gray",
+          "description": "The declared `--graphic-gray`."
+        },
+        "green": {
+          "value": "#00c978",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-green",
+          "description": "The declared `--graphic-green`."
+        },
+        "orange": {
+          "value": "#ff3e00",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-orange",
+          "description": "The declared `--graphic-orange`."
+        },
+        "outline": {
+          "value": "#b4a798",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-outline",
+          "description": "The declared `--graphic-outline`."
+        },
+        "purple": {
+          "value": "#5f5def",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-purple",
+          "description": "The declared `--graphic-purple`."
+        },
+        "stone": {
+          "value": "#f4ebdf",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-stone",
+          "description": "The declared `--graphic-stone`."
+        },
+        "yellow": {
+          "default": {
+            "value": "#ffcd6c",
+            "type": "color",
+            "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-yellow",
+            "description": "The declared `--graphic-yellow`."
+          },
+          "pale": {
+            "value": "#f6f4ee",
+            "type": "color",
+            "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --graphic-yellow-pale",
+            "description": "The declared `--graphic-yellow-pale`."
+          }
+        }
+      },
+      "gray": {
+        "default": {
+          "value": "#747485",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --gray",
+          "description": "The declared `--gray`."
+        },
+        "light": {
+          "value": "#f2f0ed",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --gray-light",
+          "description": "The declared `--gray-light`."
+        }
+      },
+      "green": {
+        "value": "#00c978",
+        "type": "color",
+        "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --green",
+        "description": "The declared `--green`."
+      },
+      "heading": {
+        "value": "#343433",
+        "type": "color",
+        "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --heading",
+        "description": "The declared `--heading`."
+      },
+      "hyperlink": {
+        "color": {
+          "value": "#9896ff",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --hyperlink-color",
+          "description": "The declared `--hyperlink-color`."
+        }
+      },
+      "icon": {
+        "color": {
+          "secondary": {
+            "value": "#747474",
+            "type": "color",
+            "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --icon-color-secondary",
+            "description": "The declared `--icon-color-secondary`."
+          },
+          "tertiary": {
+            "value": "#adadad",
+            "type": "color",
+            "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --icon-color-tertiary",
+            "description": "The declared `--icon-color-tertiary`."
+          }
+        }
+      },
+      "orange": {
+        "default": {
+          "value": "#ff3e00",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --orange",
+          "description": "The declared `--orange`."
+        },
+        "dark": {
+          "value": "#ff0000",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --orange-dark",
+          "description": "The declared `--orange-dark`."
+        }
+      },
+      "overlay": {
+        "background": {
+          "value": "#171717",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-background",
+          "description": "The declared `--overlay-background`."
+        },
+        "color": {
+          "value": "#ffffff",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-color",
+          "description": "The declared `--overlay-color`."
+        },
+        "secondary": {
+          "backdrop": {
+            "value": "rgba(0, 0, 0, 0.4)",
+            "type": "color",
+            "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-secondary-backdrop",
+            "description": "The declared `--overlay-secondary-backdrop`."
+          },
+          "background": {
+            "value": "rgba(255, 255, 255, 0.98)",
+            "type": "color",
+            "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-secondary-background",
+            "description": "The declared `--overlay-secondary-background`."
+          },
+          "color": {
+            "default": {
+              "value": "rgba(0, 0, 0, 0.85)",
+              "type": "color",
+              "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-secondary-color",
+              "description": "The declared `--overlay-secondary-color`."
+            },
+            "muted": {
+              "value": "rgba(0, 0, 0, 0.5)",
+              "type": "color",
+              "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-secondary-color-muted",
+              "description": "The declared `--overlay-secondary-color-muted`."
+            }
+          },
+          "selection": {
+            "color": {
+              "value": "rgba(0, 0, 0, 0.85)",
+              "type": "color",
+              "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-secondary-selection-color",
+              "description": "The declared `--overlay-secondary-selection-color`."
+            }
+          }
+        },
+        "selection": {
+          "background": {
+            "value": "rgba(255, 255, 255, 0.1)",
+            "type": "color",
+            "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-selection-background",
+            "description": "The declared `--overlay-selection-background`."
+          },
+          "color": {
+            "default": {
+              "value": "#ffffff",
+              "type": "color",
+              "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-selection-color",
+              "description": "The declared `--overlay-selection-color`."
+            },
+            "muted": {
+              "value": "rgba(255, 255, 255, 0.5)",
+              "type": "color",
+              "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-selection-color-muted",
+              "description": "The declared `--overlay-selection-color-muted`."
+            }
+          }
+        }
+      },
+      "pocket": {
+        "value": "#00ce44",
+        "type": "color",
+        "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --pocket",
+        "description": "The declared `--pocket`."
+      },
+      "primary": {
+        "100": {
+          "value": "#f5f5ff",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --primary-100",
+          "description": "The declared `--primary-100`."
+        },
+        "200": {
+          "value": "#eaeaff",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --primary-200",
+          "description": "The declared `--primary-200`."
+        },
+        "300": {
+          "value": "#cccbff",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --primary-300",
+          "description": "The declared `--primary-300`."
+        },
+        "400": {
+          "value": "#9896ff",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --primary-400",
+          "description": "The declared `--primary-400`."
+        },
+        "500": {
+          "value": "#8987ed",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --primary-500",
+          "description": "The declared `--primary-500`."
+        },
+        "600": {
+          "value": "#7a78d2",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --primary-600",
+          "description": "The declared `--primary-600`."
+        },
+        "700": {
+          "value": "#6a69b8",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --primary-700",
+          "description": "The declared `--primary-700`."
+        },
+        "800": {
+          "value": "#4c4b84",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --primary-800",
+          "description": "The declared `--primary-800`."
+        }
+      },
+      "purple": {
+        "value": "#9f4fff",
+        "type": "color",
+        "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --purple",
+        "description": "The declared `--purple`."
+      },
+      "red": {
+        "value": "#ff2b3a",
+        "type": "color",
+        "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --red",
+        "description": "The declared `--red`."
+      },
+      "twitter": {
+        "blue": {
+          "value": "#343433",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --twitter-blue",
+          "description": "The declared `--twitter-blue`."
+        }
+      },
+      "txn": {
+        "speed": {
+          "high": {
+            "value": "#ff3500",
+            "type": "color",
+            "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --txn-speed-high",
+            "description": "The declared `--txn-speed-high`."
+          },
+          "low": {
+            "value": "#007eff",
+            "type": "color",
+            "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --txn-speed-low",
+            "description": "The declared `--txn-speed-low`."
+          },
+          "medium": {
+            "value": "#ffbb0c",
+            "type": "color",
+            "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --txn-speed-medium",
+            "description": "The declared `--txn-speed-medium`."
+          }
+        }
+      },
+      "valid": {
+        "100": {
+          "value": "#e8faed",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --valid-100",
+          "description": "The declared `--valid-100`."
+        },
+        "200": {
+          "value": "#cef5dc",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --valid-200",
+          "description": "The declared `--valid-200`."
+        },
+        "300": {
+          "value": "#82e5a7",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --valid-300",
+          "description": "The declared `--valid-300`."
+        },
+        "400": {
+          "value": "#00ca48",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --valid-400",
+          "description": "The declared `--valid-400`."
+        },
+        "500": {
+          "value": "#00b641",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --valid-500",
+          "description": "The declared `--valid-500`."
+        },
+        "600": {
+          "value": "#00a239",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --valid-600",
+          "description": "The declared `--valid-600`."
+        },
+        "700": {
+          "value": "#008d32",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --valid-700",
+          "description": "The declared `--valid-700`."
+        },
+        "800": {
+          "value": "#006625",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --valid-800",
+          "description": "The declared `--valid-800`."
+        }
+      },
+      "verified": {
+        "value": "#00b2ff",
+        "type": "color",
+        "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --verified",
+        "description": "The declared `--verified`."
+      },
+      "wallet": {
+        "black": {
+          "value": "#1a1a1a",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-black",
+          "description": "The declared `--wallet-black`."
+        },
+        "blue": {
+          "value": "#00a8ef",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-blue",
+          "description": "The declared `--wallet-blue`."
+        },
+        "bluePurple": {
+          "value": "#5946f9",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-bluePurple",
+          "description": "The declared `--wallet-bluePurple`."
+        },
+        "burntOrange": {
+          "value": "#ff6800",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-burntOrange",
+          "description": "The declared `--wallet-burntOrange`."
+        },
+        "copper": {
+          "value": "#ce8949",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-copper",
+          "description": "The declared `--wallet-copper`."
+        },
+        "darkBlue": {
+          "value": "#0082ff",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-darkBlue",
+          "description": "The declared `--wallet-darkBlue`."
+        },
+        "darkPurple": {
+          "value": "#9f4fff",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-darkPurple",
+          "description": "The declared `--wallet-darkPurple`."
+        },
+        "emerald": {
+          "value": "#00beca",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-emerald",
+          "description": "The declared `--wallet-emerald`."
+        },
+        "grassGreen": {
+          "value": "#00bc7c",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-grassGreen",
+          "description": "The declared `--wallet-grassGreen`."
+        },
+        "gray": {
+          "value": "#808080",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-gray",
+          "description": "The declared `--wallet-gray`."
+        },
+        "green": {
+          "value": "#00ca48",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-green",
+          "description": "The declared `--wallet-green`."
+        },
+        "lime": {
+          "value": "#6bce00",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-lime",
+          "description": "The declared `--wallet-lime`."
+        },
+        "navy": {
+          "value": "#003468",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-navy",
+          "description": "The declared `--wallet-navy`."
+        },
+        "offYellow": {
+          "value": "#f4b000",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-offYellow",
+          "description": "The declared `--wallet-offYellow`."
+        },
+        "orange": {
+          "value": "#ff9900",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-orange",
+          "description": "The declared `--wallet-orange`."
+        },
+        "pink": {
+          "value": "#ff329b",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-pink",
+          "description": "The declared `--wallet-pink`."
+        },
+        "purple": {
+          "value": "#ec34f7",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-purple",
+          "description": "The declared `--wallet-purple`."
+        },
+        "red": {
+          "value": "#ff2b3a",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-red",
+          "description": "The declared `--wallet-red`."
+        },
+        "redPink": {
+          "value": "#ff2d5e",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-redPink",
+          "description": "The declared `--wallet-redPink`."
+        },
+        "seaBlue": {
+          "value": "#00b2ff",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-seaBlue",
+          "description": "The declared `--wallet-seaBlue`."
+        },
+        "yellowBrown": {
+          "value": "#d2b24e",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --wallet-yellowBrown",
+          "description": "The declared `--wallet-yellowBrown`."
+        }
+      },
+      "warning": {
+        "100": {
+          "value": "#fff4e4",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --warning-100",
+          "description": "The declared `--warning-100`."
+        },
+        "200": {
+          "value": "#ffe7c8",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --warning-200",
+          "description": "The declared `--warning-200`."
+        },
+        "300": {
+          "value": "#ffc473",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --warning-300",
+          "description": "The declared `--warning-300`."
+        },
+        "400": {
+          "value": "#ff8600",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --warning-400",
+          "description": "The declared `--warning-400`."
+        },
+        "500": {
+          "value": "#f67900",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --warning-500",
+          "description": "The declared `--warning-500`."
+        },
+        "600": {
+          "value": "#da6c00",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --warning-600",
+          "description": "The declared `--warning-600`."
+        },
+        "700": {
+          "value": "#c05e00",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --warning-700",
+          "description": "The declared `--warning-700`."
+        },
+        "800": {
+          "value": "#894300",
+          "type": "color",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --warning-800",
+          "description": "The declared `--warning-800`."
+        }
+      },
+      "white": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --white",
+        "description": "The declared `--white`."
+      },
+      "yellow": {
+        "value": "#ffbb26",
+        "type": "color",
+        "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --yellow",
+        "description": "The declared `--yellow`."
+      }
+    },
+    "duration": {
+      "overshoot": {
+        "out": {
+          "value": "0.8s",
+          "type": "duration",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --duration-overshoot-out",
+          "description": "The declared `--duration-overshoot-out`."
+        }
+      },
+      "snappy": {
+        "out": {
+          "value": "0.3s",
+          "type": "duration",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --duration-snappy-out",
+          "description": "The declared `--duration-snappy-out`."
+        }
+      },
+      "swift": {
+        "out": {
+          "value": "0.22s",
+          "type": "duration",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --duration-swift-out",
+          "description": "The declared `--duration-swift-out`."
+        }
+      }
+    },
+    "easing": {
+      "overshoot": {
+        "out": {
+          "value": "cubic-bezier(.175, .885, .32, 1.275)",
+          "type": "cubicBezier",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --ease-overshoot-out",
+          "description": "The declared `--ease-overshoot-out`."
+        }
+      },
+      "snappy": {
+        "out": {
+          "value": "cubic-bezier(.19, 1, .22, 1)",
+          "type": "cubicBezier",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --ease-snappy-out",
+          "description": "The declared `--ease-snappy-out`."
+        }
+      },
+      "swift": {
+        "out": {
+          "value": "cubic-bezier(.175, .885, .32, 1.1)",
+          "type": "cubicBezier",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --ease-swift-out",
+          "description": "The declared `--ease-swift-out`."
+        }
+      }
+    },
+    "shadow": {
+      "overlay": {
+        "filter": {
+          "value": "none",
+          "type": "other",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-filter",
+          "description": "The declared `--overlay-filter`."
+        },
+        "secondary": {
+          "selection": {
+            "shadow": {
+              "value": "none",
+              "type": "other",
+              "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-secondary-selection-shadow",
+              "description": "The declared `--overlay-secondary-selection-shadow`."
+            }
+          },
+          "shadow": {
+            "value": "rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.07) 0px 6px 14px 0px, rgba(255, 255, 255, 0.1) 0px 0px 3px 0px inset",
+            "type": "other",
+            "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-secondary-shadow",
+            "description": "The declared `--overlay-secondary-shadow`."
+          }
+        },
+        "selection": {
+          "shadow": {
+            "value": "rgba(255, 255, 255, 0.02) 0px 0px 0px 0px inset",
+            "type": "other",
+            "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-selection-shadow",
+            "description": "The declared `--overlay-selection-shadow`."
+          }
+        },
+        "shadow": {
+          "value": "rgba(0, 0, 0, 0.2) 0px 2px 14px 0px",
+          "type": "other",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-shadow",
+          "description": "The declared `--overlay-shadow`."
+        }
+      },
+      "demo-overlay": {
+        "value": "none",
+        "type": "other",
+        "source": "computed boxShadow of demo-overlay default (raw/components-computed.json)",
+        "description": "The video overlay's own boxShadow — none; it dims the page with an 80% scrim layer instead."
+      }
+    },
+    "overlay": {
+      "secondary": {
+        "filter": {
+          "value": "blur(10px)",
+          "type": "other",
+          "source": "declared design-system variable in the site or app stylesheet (raw/css-vars.json, raw/app-css-vars.json): --overlay-secondary-filter",
+          "description": "The declared `--overlay-secondary-filter`."
+        }
+      }
+    },
+    "radius": {
+      "field": {
+        "value": "14px",
+        "type": "dimension",
+        "source": "the painted radius of login-field's wrapper ancestor default (raw/components-computed.json)",
+        "description": "The app input's painted shell radius — the input itself is borderless; its wrapper draws the rounded fill."
+      },
+      "card": {
+        "value": "10px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of tweet-card default (raw/components-computed.json)",
+        "description": "The testimonial card radius (post cards sit flat on hairlines)."
+      },
+      "item": {
+        "value": "0px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of faq-item default (raw/components-computed.json)",
+        "description": "The FAQ item radius — flat rows on hairlines."
+      },
+      "button": {
+        "value": "32px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of getstarted-btn default (raw/components-computed.json)",
+        "description": "The pill button radius — Get Started, Download on iOS, Log In."
+      }
+    },
+    "motion": {
+      "control": {
+        "value": "background-color 0.1s ease",
+        "type": "other",
+        "source": "computed transition of getstarted-btn default (raw/components-computed.json)",
+        "description": "The measured control transition."
+      }
+    }
+  },
+  "light": {
+    "color": {
+      "banner": {
+        "grey": {
+          "default": {
+            "var": "--banner-grey",
+            "type": "color"
+          },
+          "hover": {
+            "var": "--banner-grey-hover",
+            "type": "color"
+          }
+        }
+      },
+      "body": {
+        "bg": {
+          "default": {
+            "var": "--body-bg",
+            "type": "color"
+          },
+          "secondary": {
+            "var": "--body-bg-secondary",
+            "type": "color"
+          },
+          "tertiary": {
+            "var": "--body-bg-tertiary",
+            "type": "color"
+          },
+          "transparent": {
+            "var": "--body-bg-transparent",
+            "type": "color"
+          }
+        },
+        "color": {
+          "default": {
+            "var": "--body-color",
+            "type": "color"
+          },
+          "muted": {
+            "var": "--body-color-muted",
+            "type": "color"
+          },
+          "secondary": {
+            "var": "--body-color-secondary",
+            "type": "color"
+          }
+        }
+      },
+      "hr": {
+        "color": {
+          "var": "--hr-color",
+          "type": "color"
+        }
+      },
+      "icon": {
+        "color": {
+          "default": {
+            "var": "--icon-color",
+            "type": "color"
+          },
+          "hover": {
+            "var": "--icon-color-hover",
+            "type": "color"
+          }
+        }
+      },
+      "input": {
+        "background": {
+          "default": {
+            "var": "--input-background",
+            "type": "color"
+          },
+          "secondary": {
+            "var": "--input-background-secondary",
+            "type": "color"
+          }
+        },
+        "color": {
+          "var": "--input-color",
+          "type": "color"
+        },
+        "placeholder": {
+          "var": "--input-placeholder",
+          "type": "color"
+        }
+      },
+      "logo": {
+        "color": {
+          "var": "--logo-color",
+          "type": "color"
+        }
+      },
+      "overlay": {
+        "secondary": {
+          "selection": {
+            "background": {
+              "var": "--overlay-secondary-selection-background",
+              "type": "color"
+            }
+          }
+        }
+      },
+      "selection": {
+        "bg": {
+          "var": "--selection-bg",
+          "type": "color"
+        },
+        "color": {
+          "var": "--selection-color",
+          "type": "color"
+        }
+      }
+    },
+    "background": {
+      "page": {
+        "value": "{color.white}",
+        "type": "color",
+        "source": "the public surfaces paint a white field (screenshots/*-light-*.png; --color-background resolves #fff); matches declared --white",
+        "description": "The white field the whole public surface paints."
+      },
+      "card": {
+        "value": "{color.white}",
+        "type": "color",
+        "source": "computed backgroundColor of tweet-card default (raw/components-computed.json); matches declared --white",
+        "description": "The white testimonial card field (matches --white)."
+      },
+      "field": {
+        "value": "{color.input.background.default}",
+        "type": "color",
+        "source": "declared --input-background; login-field default itself paints backgroundColor transparent (raw/components-computed.json)",
+        "description": "The app input paints transparent over the card; the field fill it sits on is the declared light.color.input.background.default."
+      }
+    },
+    "text": {
+      "ink": {
+        "value": "{color.heading}",
+        "type": "color",
+        "source": "computed color of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared --heading",
+        "description": "The near-black ink on headings and body text (matches --heading)."
+      },
+      "muted": {
+        "value": "rgba(71, 70, 69, 0.7)",
+        "type": "color",
+        "source": "computed color of feature-body default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+        "description": "The muted body-copy colour (matches --body-muted/--body)."
+      },
+      "low": {
+        "value": "{color.body.muted}",
+        "type": "color",
+        "source": "computed color of blog-date default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.body.muted",
+        "description": "The low-emphasis meta text on post dates."
+      },
+      "kicker": {
+        "value": "#121212",
+        "type": "color",
+        "source": "computed color of feature-label default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+        "description": "The coloured feature label/kicker text."
+      },
+      "on-dark": {
+        "value": "{color.white}",
+        "type": "color",
+        "source": "computed color of download-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared --white",
+        "description": "White text on the dark/blue buttons."
+      }
+    },
+    "action": {
+      "accent": {
+        "value": "{color.overlay.background}",
+        "type": "color",
+        "source": "computed backgroundColor of download-cta default (raw/components-computed.json); matches declared --overlay-background",
+        "description": "The near-black pill fill on the primary CTAs (Download on iOS, Get Started) — matches the app's declared --overlay-background #171717."
+      },
+      "beige": {
+        "value": "#f6f4ef",
+        "type": "color",
+        "source": "the painted background of login-btn's layer default (raw/components-computed.json paint list)",
+        "description": "The warm beige pill fill on the secondary actions (the header Log In, the hero's Watch the Video) — #f6f4ef; the declared --beige #e7e1d5 is a deeper cream nothing sampled paints."
+      }
+    },
+    "border": {
+      "hairline": {
+        "value": "{color.gray.light}",
+        "type": "color",
+        "source": "computed borderBottomColor of blog-card default (raw/components-computed.json); matches declared --gray-light",
+        "description": "The bottom hairline under cards and list items (matches --gray-light)."
+      },
+      "field-border": {
+        "value": "{color.input.color}",
+        "type": "color",
+        "source": "computed borderTopColor of login-field default (raw/components-computed.json); matches declared --input-color",
+        "description": "The app input is borderless (0px); the recorded colour is the inherited text colour."
+      },
+      "focus": {
+        "value": "{color.focus.default}",
+        "type": "color",
+        "source": "computed outlineColor of nav-developers focus-visible (raw/components-computed.json); matches declared --focus",
+        "description": "The marketing focus-visible ring (matches --focus #848281; the app draws a blue --focus-color rgba(0,122,255,.5) ring)."
+      }
+    }
+  },
+  "dark": {
+    "color": {
+      "banner": {
+        "grey": {
+          "default": {
+            "var": "--banner-grey",
+            "type": "color"
+          },
+          "hover": {
+            "var": "--banner-grey-hover",
+            "type": "color"
+          }
+        }
+      },
+      "body": {
+        "bg": {
+          "default": {
+            "var": "--body-bg",
+            "type": "color"
+          },
+          "secondary": {
+            "var": "--body-bg-secondary",
+            "type": "color"
+          },
+          "tertiary": {
+            "var": "--body-bg-tertiary",
+            "type": "color"
+          },
+          "transparent": {
+            "var": "--body-bg-transparent",
+            "type": "color"
+          }
+        },
+        "color": {
+          "default": {
+            "var": "--body-color",
+            "type": "color"
+          },
+          "muted": {
+            "var": "--body-color-muted",
+            "type": "color"
+          },
+          "secondary": {
+            "var": "--body-color-secondary",
+            "type": "color"
+          }
+        }
+      },
+      "hr": {
+        "color": {
+          "var": "--hr-color",
+          "type": "color"
+        }
+      },
+      "icon": {
+        "color": {
+          "default": {
+            "var": "--icon-color",
+            "type": "color"
+          },
+          "hover": {
+            "var": "--icon-color-hover",
+            "type": "color"
+          }
+        }
+      },
+      "input": {
+        "background": {
+          "default": {
+            "var": "--input-background",
+            "type": "color"
+          },
+          "secondary": {
+            "var": "--input-background-secondary",
+            "type": "color"
+          }
+        },
+        "color": {
+          "var": "--input-color",
+          "type": "color"
+        },
+        "placeholder": {
+          "var": "--input-placeholder",
+          "type": "color"
+        }
+      },
+      "logo": {
+        "color": {
+          "var": "--logo-color",
+          "type": "color"
+        }
+      },
+      "overlay": {
+        "secondary": {
+          "selection": {
+            "background": {
+              "var": "--overlay-secondary-selection-background",
+              "type": "color"
+            },
+            "color": {
+              "muted": {
+                "var": "--overlay-secondary-selection-color-muted",
+                "type": "color"
+              }
+            }
+          }
+        },
+        "backdrop": {
+          "var": "--overlay-backdrop",
+          "type": "color"
+        },
+        "color": {
+          "muted": {
+            "var": "--overlay-color-muted",
+            "type": "color"
+          }
+        }
+      },
+      "selection": {
+        "bg": {
+          "var": "--selection-bg",
+          "type": "color"
+        },
+        "color": {
+          "var": "--selection-color",
+          "type": "color"
+        }
+      }
+    }
+  },
+  "component": {
+    "topbar-height": {
+      "value": "94px",
+      "type": "dimension",
+      "source": "measured h of mkt-header default (raw/components-computed.json)",
+      "description": "The public top bar height."
+    },
+    "logo-width": {
+      "value": "96px",
+      "type": "dimension",
+      "source": "measured w of mkt-logo default (raw/components-computed.json)",
+      "description": "The header wordmark width."
+    },
+    "faq-toggle": {
+      "value": "14px",
+      "type": "dimension",
+      "source": "measured w of faq-toggle default (raw/components-computed.json)",
+      "description": "The 14px FAQ collapse toggle."
+    },
+    "search-field-width": {
+      "value": "269px",
+      "type": "dimension",
+      "source": "measured w of sup-search default (raw/components-computed.json)",
+      "description": "The support search field width."
+    },
+    "control-height": {
+      "value": "48px",
+      "type": "dimension",
+      "source": "measured h of download-cta default (raw/components-computed.json)",
+      "description": "The 48px CTA pill height — Download on iOS, Get Started."
+    },
+    "login-field-width": {
+      "value": "380px",
+      "type": "dimension",
+      "source": "measured w of login-field default (raw/components-computed.json)",
+      "description": "The app login field width."
+    },
+    "login-field-height": {
+      "value": "48px",
+      "type": "dimension",
+      "source": "measured h of login-field default (raw/components-computed.json)",
+      "description": "The app login field height."
+    },
+    "login-card-width": {
+      "value": "380px",
+      "type": "dimension",
+      "source": "measured w of login-card default (raw/components-computed.json)",
+      "description": "The Aave Account login card."
+    },
+    "post-card-width": {
+      "value": "1024px",
+      "type": "dimension",
+      "source": "measured w of blog-card default (raw/components-computed.json)",
+      "description": "A post card on /blog."
+    },
+    "mobile-topbar-height": {
+      "value": "70px",
+      "type": "dimension",
+      "source": "measured h of m-header default (raw/components-computed.json)",
+      "description": "The phone top bar height."
+    }
+  }
+}

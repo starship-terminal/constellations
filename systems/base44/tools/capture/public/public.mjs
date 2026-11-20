@@ -11,11 +11,15 @@
 // menu, the pricing billing toggle and the mobile menu. The sign-in page lives on app.base44.com and is
 // measured, never used. No consent overlay mounts on these routes.
 import fs from 'fs';
+import os from 'node:os';
+import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { closePromo, clearChallenge, patch, chromium, UA, UA_MOBILE, BASE, APP } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+// Full-colour shots go to a scratch dir outside the repo (the kit's default), never into
+// systems/<slug>/raw/: quantize.py reads them from there and writes screenshots/.
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', path.basename(fileURLToPath(new URL('../../..', import.meta.url))), 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);

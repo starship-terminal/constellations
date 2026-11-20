@@ -28,7 +28,7 @@ Screenshots are named `{page}-light-{state}.png`: the shop paints one light them
 
 | State | Where | How it was reached | Captured |
 |---|---|---|---|
-| OneTrust consent dialog | every page, on load | captured as it arrives, then hidden (never answered: no Accept/Reject/Save is ever clicked) | [home-light-consent](screenshots/home-light-consent.png) |
+| Axeptio consent layer and shipping-country popup | every page, on load | the country popup captured as it arrives, then both hidden (never answered: no Accept/Reject is ever clicked) | [home-light-consent](screenshots/home-light-consent.png) |
 | Category mega-menu | category nav, shop grid | the first nav button hovered; the flyout shows in the crop | [nav-flyout](#category-flyout-panel), [nav-mega](#category-flyout-open) |
 | PDP size select | product page | a size option picked then restored; never added to bag | [size-select-picked](components/crops/size-select-picked.png), [size-select](#size-select) |
 | PDP accordion | product page | a disclosure row's own toggle | [pdp-accordion-open-opened](components/crops/pdp-accordion-open-opened.png), [pdp-accordion](#pdp-accordion) |
@@ -66,7 +66,7 @@ Values that apply across entries, from the measurement files.
 The header (wordmark, SHOP/MARQUE/SECONDE MAIN/ARCHIVE SALE, search, CONNEXION, PANIER) and the SHOP mega-menu.
 
 #### Skip link
-"IGNORER ET PASSER AU CONTENU" — off-screen until focused. Read as `skip-link` on the the home page page.
+"IGNORER ET PASSER AU CONTENU" — off-screen until focused. Read as `skip-link` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -76,7 +76,7 @@ The header (wordmark, SHOP/MARQUE/SECONDE MAIN/ARCHIVE SALE, search, CONNEXION, 
 ![Skip link default](components/crops/skip-link-default.png) ![Skip link focus-visible](components/crops/skip-link-focus-visible.png)
 
 #### Header
-The white bar: wordmark, SHOP/MARQUE/SECONDE MAIN/ARCHIVE SALE nav, search, CONNEXION and PANIER. Read as `header` on the the home page page.
+The white bar: wordmark, SHOP/MARQUE/SECONDE MAIN/ARCHIVE SALE nav, search, CONNEXION and PANIER. Read as `header` on the home page.
 
 **Values (default).** size 1440 x 60; padding 10px 50px; background transparent; text Space Mono 13/normal 400, #ffffff `color.neutral.background`; transition background-color 0.4s ease; layers div.mega-menu__dropdown 0.0x0.0 rgb(117, 117, 117) T:1px solid rgb(255, 255, 255) / R:1px solid rgb(255, 255, 255) / B:1px solid rgb(255, 255, 255) / L:1px solid rgb(255, 255, 255); a::after.dropdown-item__list-item-link 0pxx100% rgb(244, 255, 122); a::after.dropdown-item__list-item-link 0pxx100% rgb(244, 255, 122); a::after.dropdown-item__list-item-link 0pxx100% rgb(244, 255, 122); a::after.dropd.
 
@@ -85,14 +85,14 @@ Child layers that carry the look: div 0x0 background #757575 border 1px solid #f
 ![Header default](components/crops/header-default.png)
 
 #### Logo
-The wordmark link (a hidden drawer copy is filtered out). Read as `logo` on the the home page page.
+The wordmark link (a hidden drawer copy is filtered out). Read as `logo` on the home page.
 
 **Values (default).** size 155 x 38.5; padding 7.5px; background transparent; text avnier-font 14/0 500, #000000 `color.neutral.accent1`.
 
 ![Logo default](components/crops/logo-default.png)
 
 #### Nav link
-A top-level nav link (SECONDE MAIN). Measured, never followed. Read as `nav-item` on the the home page page.
+A top-level nav link (SECONDE MAIN). Measured, never followed. Read as `nav-item` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -101,19 +101,19 @@ A top-level nav link (SECONDE MAIN). Measured, never followed. Read as `nav-item
 ![Nav link default](components/crops/nav-item-default.png) ![Nav link hover](components/crops/nav-item-hover.png) ![Nav link focus-visible](components/crops/nav-item-focus-visible.png) ![Nav link pressed](components/crops/nav-item-pressed.png)
 
 #### SHOP menu item, hover
-The SHOP item while its mega-menu dropdown is open. Read as `nav-mega` on the the home page page.
+The SHOP item while its mega-menu dropdown is open. Read as `nav-mega` on the home page.
 
 **Values (hover).** size 85.83 x 64; padding 22px 27px; background transparent; text Space Mono 13/normal 400, #ffffff `color.neutral.background`.
 
 ![SHOP menu item, hover hover](components/crops/nav-mega-hover.png)
 
 #### Mega-menu dropdown
-The open SHOP dropdown panel. Read as `nav-dropdown` on the the page.
+The open SHOP dropdown panel. Read as `nav-dropdown` on the page.
 
 Not on the page when it was captured.
 
 #### Search icon
-The magnifier that opens the search modal. Measured, never submitted. Read as `search-toggle` on the the home page page.
+The magnifier that opens the search modal. Measured, never submitted. Read as `search-toggle` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -123,7 +123,7 @@ The magnifier that opens the search modal. Measured, never submitted. Read as `s
 ![Search icon default](components/crops/search-toggle-default.png) ![Search icon hover](components/crops/search-toggle-hover.png) ![Search icon focus-visible](components/crops/search-toggle-focus-visible.png) ![Search icon pressed](components/crops/search-toggle-pressed.png)
 
 #### Login link
-CONNEXION in the header. Measured, never followed. Read as `account-link` on the the home page page.
+CONNEXION in the header. Measured, never followed. Read as `account-link` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -133,7 +133,7 @@ CONNEXION in the header. Measured, never followed. Read as `account-link` on the
 ![Login link default](components/crops/account-link-default.png) ![Login link hover](components/crops/account-link-hover.png) ![Login link focus-visible](components/crops/account-link-focus-visible.png) ![Login link pressed](components/crops/account-link-pressed.png)
 
 #### Cart link
-PANIER in the header. Measured, never followed. Read as `cart-link` on the the home page page.
+PANIER in the header. Measured, never followed. Read as `cart-link` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -147,14 +147,14 @@ PANIER in the header. Measured, never followed. Read as `cart-link` on the the h
 The collaboration hero and the content tiles below.
 
 #### Hero
-The collection announcement block under the header. Read as `hero` on the the home page page.
+The collection announcement block under the header. Read as `hero` on the home page.
 
 **Values (default).** size 799 x 799; padding 799px 0px 0px 0px; background rgba(0, 0, 0, 0.1); text Space Mono 13/normal 400, #000000 `color.neutral.accent1`.
 
 ![Hero default](components/crops/hero-default.png)
 
 #### Hero CTA
-The first call-to-action on the home page. Measured, never followed. Read as `hero-cta` on the the home page page.
+The first call-to-action on the home page. Measured, never followed. Read as `hero-cta` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -170,14 +170,14 @@ Child layers that carry the look: span::after 0pxx1px background #f4ff7a `measur
 The collection grid: count, PRIX/COULEUR/TAILLE facets, sort and product cards.
 
 #### Collection count
-The "100 PRODUITS" count / collection heading. Read as `plp-title` on the the shop grid page.
+The "100 PRODUITS" count / collection heading. Read as `plp-title` on the shop grid page.
 
 **Values (default).** size 59.98 x 17.5; background transparent; text Space Mono 14/17.5 400, #7a7a7a `measured.text-muted`.
 
 ![Collection count default](components/crops/plp-title-default.png)
 
 #### Facet filter
-A PRIX/COULEUR/TAILLE filter disclosure; opened by its own summary. Read as `facet` on the the shop grid page.
+A PRIX/COULEUR/TAILLE filter disclosure; opened by its own summary. Read as `facet` on the shop grid page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -188,14 +188,14 @@ Child layers that carry the look: div 350x237 background #ffffff `color.neutral.
 ![Facet filter default](components/crops/facet-default.png) ![Facet filter opened](components/crops/facet-opened.png)
 
 #### Facet checkbox
-A checkbox row inside the open COULEUR facet. Read as `facet-checkbox` on the the shop grid page.
+A checkbox row inside the open COULEUR facet. Read as `facet-checkbox` on the shop grid page.
 
 **Values (default).** size 16 x 16; background transparent; text Space Mono 13.33/normal 400, #000000 `color.neutral.accent1`; placeholder #000000 `color.neutral.accent1`.
 
 ![Facet checkbox default](components/crops/facet-checkbox-default.png)
 
 #### Sort select
-The "Recommandés" sort dropdown. Read as `sort-select` on the the shop grid page.
+The "Recommandés" sort dropdown. Read as `sort-select` on the shop grid page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -204,7 +204,7 @@ The "Recommandés" sort dropdown. Read as `sort-select` on the the shop grid pag
 ![Sort select default](components/crops/sort-select-default.png) ![Sort select focused](components/crops/sort-select-focused.png)
 
 #### Product card
-A grid card: image, name, price. Read as `product-card` on the the shop grid page.
+A grid card: image, name, price. Read as `product-card` on the shop grid page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -215,7 +215,7 @@ Child layers that carry the look: a 72x36 background #ffffff `color.neutral.back
 ![Product card default](components/crops/product-card-default.png) ![Product card hover](components/crops/product-card-hover.png)
 
 #### Card link
-The product name/link inside a card. Read as `card-name` on the the shop grid page.
+The product name/link inside a card. Read as `card-name` on the shop grid page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -224,7 +224,7 @@ The product name/link inside a card. Read as `card-name` on the the shop grid pa
 ![Card link default](components/crops/card-name-default.png) ![Card link hover](components/crops/card-name-hover.png) ![Card link focus-visible](components/crops/card-name-focus-visible.png) ![Card link pressed](components/crops/card-name-pressed.png)
 
 #### Card price
-Read as `card-price` on the the shop grid page.
+Read as `card-price` on the shop grid page.
 
 **Values (default).** size 68.42 x 18; background transparent; text Space Mono 12/18 400, #000000 `color.neutral.accent1`.
 
@@ -235,21 +235,21 @@ Read as `card-price` on the the shop grid page.
 Title, price, TAILLE chips and the black AJOUTER AU PANIER button.
 
 #### Product title
-Read as `pdp-title` on the the product page page.
+Read as `pdp-title` on the product page.
 
 **Values (default).** size 440 x 18; background transparent; text avnier-font 15/18 500, #000000 `color.neutral.accent1`.
 
 ![Product title default](components/crops/pdp-title-default.png)
 
 #### Product price
-Read as `pdp-price` on the the product page page.
+Read as `pdp-price` on the product page.
 
 **Values (default).** size 440 x 27.5; background transparent; text avnier-font 15/22.5 400, #000000 `color.neutral.accent1`.
 
 ![Product price default](components/crops/pdp-price-default.png)
 
 #### Variant option
-A TAILLE size chip — the visible label of a visually hidden radio input. Read as `variant-radio` on the the product page page.
+A TAILLE size chip — the visible label of a visually hidden radio input. Read as `variant-radio` on the product page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -259,12 +259,12 @@ A TAILLE size chip — the visible label of a visually hidden radio input. Read 
 ![Variant option default](components/crops/variant-radio-default.png) ![Variant option hover](components/crops/variant-radio-hover.png)
 
 #### Quantity field
-Read as `qty-input` on the the page.
+Read as `qty-input` on the page.
 
 Not on the page when it was captured.
 
 #### Add to cart
-The AJOUTER AU PANIER buy button; measured in every state except a real press. Read as `add-to-cart` on the the product page page.
+The AJOUTER AU PANIER buy button; measured in every state except a real press. Read as `add-to-cart` on the product page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -275,7 +275,7 @@ The AJOUTER AU PANIER buy button; measured in every state except a real press. R
 ![Add to cart default](components/crops/add-to-cart-default.png) ![Add to cart hover](components/crops/add-to-cart-hover.png) ![Add to cart focus-visible](components/crops/add-to-cart-focus-visible.png) ![Add to cart pressed](components/crops/add-to-cart-pressed.png)
 
 #### PDP accordion
-A disclosure row (Description / Livraison…) — none on the captured product. Read as `accordion` on the the product page page.
+A disclosure row (Description / Livraison…) — none on the captured product. Read as `accordion` on the product page.
 
 Not on the page when it was captured.
 
@@ -284,21 +284,21 @@ Not on the page when it was captured.
 The public /cart page, empty signed out.
 
 #### /cart 404 title
-The 404 page /cart serves — the cart is the drawer, measured next. Read as `cart-title` on the the cart page.
+The 404 page /cart serves — the cart is the drawer, measured next. Read as `cart-title` on the cart page.
 
 **Values (default).** size 1440 x 188; background transparent; text avnier-font 188/188 500, rgba(10, 10, 10, 0).
 
 ![/cart 404 title default](components/crops/cart-title-default.png)
 
 #### Empty cart
-LE PANIER EST VIDE in the drawer. Read as `cart-empty` on the the cart page.
+LE PANIER EST VIDE in the drawer. Read as `cart-empty` on the cart page.
 
 **Values (default).** size 458 x 20; background transparent; text Space Mono 13/normal 400, #000000 `color.neutral.accent1`.
 
 ![Empty cart default](components/crops/cart-empty-default.png)
 
 #### Cart CTA
-Measured, never followed. Read as `cart-cta` on the the cart page.
+Measured, never followed. Read as `cart-cta` on the cart page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -309,7 +309,7 @@ Measured, never followed. Read as `cart-cta` on the the cart page.
 ![Cart CTA default](components/crops/cart-cta-default.png) ![Cart CTA hover](components/crops/cart-cta-hover.png) ![Cart CTA focus-visible](components/crops/cart-cta-focus-visible.png) ![Cart CTA pressed](components/crops/cart-cta-pressed.png)
 
 #### Cart drawer
-The side-cart opened by PANIER — "MON PANIER - 0 ARTICLE" empty. Read as `cart-drawer` on the the cart page.
+The side-cart opened by PANIER — "MON PANIER - 0 ARTICLE" empty. Read as `cart-drawer` on the cart page.
 
 **Values (default).** size 1440 x 900; background rgba(0, 0, 0, 0.55) `measured.border-field`; text avnier-font 14/20.02 500, #000000 `color.neutral.accent1`; transition background-color 0.24s ease; icon 16 x 16, #000000 `color.neutral.accent1`.
 
@@ -320,14 +320,14 @@ The side-cart opened by PANIER — "MON PANIER - 0 ARTICLE" empty. Read as `cart
 The public /account/login form; nothing was submitted.
 
 #### Login title
-Read as `login-title` on the the login gate page.
+Read as `login-title` on the login gate page.
 
 **Values (default).** size 448 x 223; background transparent; text avnier-font 220/220 500, rgba(10, 10, 10, 0).
 
 ![Login title default](components/crops/login-title-default.png)
 
 #### Email field
-Text was typed and deleted; the form was never submitted. Read as `email-input` on the the login gate page.
+Text was typed and deleted; the form was never submitted. Read as `email-input` on the login gate page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -336,7 +336,7 @@ Text was typed and deleted; the form was never submitted. Read as `email-input` 
 ![Email field default](components/crops/email-input-default.png) ![Email field focused](components/crops/email-input-focused.png)
 
 #### Password field
-Focused only; nothing typed. Read as `password-input` on the the login gate page.
+Focused only; nothing typed. Read as `password-input` on the login gate page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -346,7 +346,7 @@ Focused only; nothing typed. Read as `password-input` on the the login gate page
 ![Password field default](components/crops/password-input-default.png) ![Password field focused](components/crops/password-input-focused.png)
 
 #### Login button
-The submit; measured except a real press — the form was never submitted. Read as `login-button` on the the login gate page.
+The submit; measured except a real press — the form was never submitted. Read as `login-button` on the login gate page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -359,14 +359,14 @@ The submit; measured except a real press — the form was never submitted. Read 
 The page footer, social icons and newsletter field.
 
 #### Footer
-Read as `footer` on the the home page page.
+Read as `footer` on the home page.
 
 **Values (default).** size 1340 x 70; padding 20px 50px; border T: 1px solid rgba(255, 255, 255, 0.22); background transparent; text Space Mono 12/15 400, #ffffff `color.neutral.background`.
 
 ![Footer default](components/crops/footer-default.png)
 
 #### Footer link
-Read as `footer-link` on the the home page page.
+Read as `footer-link` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -376,7 +376,7 @@ Read as `footer-link` on the the home page page.
 ![Footer link default](components/crops/footer-link-default.png) ![Footer link hover](components/crops/footer-link-hover.png) ![Footer link focus-visible](components/crops/footer-link-focus-visible.png) ![Footer link pressed](components/crops/footer-link-pressed.png)
 
 #### Newsletter field
-Focused only; never subscribed. Read as `newsletter-input` on the the home page page.
+Focused only; never subscribed. Read as `newsletter-input` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -390,7 +390,7 @@ Focused only; never subscribed. Read as `newsletter-input` on the the home page 
 The same surface at phone width, with the side-panel menu open.
 
 #### Mobile header
-Read as `m-header` on the the home page page at 390 wide.
+Read as `m-header` on the home page at 390 wide.
 
 **Values (default).** size 390 x 50.94; padding 10px 15px; background transparent; text Space Mono 10/normal 400, #ffffff `color.neutral.background`; transition background-color 0.4s ease; layers div.mega-menu__dropdown 0.0x0.0 rgb(117, 117, 117) T:1px solid rgb(255, 255, 255) / R:1px solid rgb(255, 255, 255) / B:1px solid rgb(255, 255, 255) / L:1px solid rgb(255, 255, 255); a::after.dropdown-item__list-item-link 0pxx100% rgb(244, 255, 122); a::after.dropdown-item__list-item-link 0pxx100% rgb(244, 255, 122); a::after.dropdown-item__list-item-link 0pxx100% rgb(244, 255, 122); a::after.dropd.
 
@@ -399,7 +399,7 @@ Child layers that carry the look: div 0x0 background #757575 border 1px solid #f
 ![Mobile header default](components/crops/m-header-default.png)
 
 #### Mobile menu button
-Read as `m-menu-button` on the the home page page at 390 wide.
+Read as `m-menu-button` on the home page at 390 wide.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -409,21 +409,21 @@ Read as `m-menu-button` on the the home page page at 390 wide.
 ![Mobile menu button default](components/crops/m-menu-button-default.png) ![Mobile menu button hover](components/crops/m-menu-button-hover.png) ![Mobile menu button focus-visible](components/crops/m-menu-button-focus-visible.png) ![Mobile menu button pressed](components/crops/m-menu-button-pressed.png)
 
 #### Mobile menu, open
-The menu summary after its own toggle; the crop is the open drawer. Read as `m-menu-open` on the the home page page at 390 wide.
+The menu summary after its own toggle; the crop is the open drawer. Read as `m-menu-open` on the home page at 390 wide.
 
 **Values (opened).** size 35 x 30; background transparent; text Space Mono 10/normal 400, #ffffff `color.neutral.background`; icon 16 x 16, #ffffff `color.neutral.background`.
 
 ![Mobile menu, open opened](components/crops/m-menu-open-opened.png)
 
 #### Mobile nav link
-A row inside the opened drawer. Read as `m-nav-link` on the the home page page at 390 wide.
+A row inside the opened drawer. Read as `m-nav-link` on the home page at 390 wide.
 
 **Values (default).** size 388 x 59.11; padding 10px 10px 10px 20px; border T: 1px solid #ffffff `color.neutral.background`; B: 1px solid #ffffff `color.neutral.background`; background transparent; text avnier-font 20/22.8 500, #ffffff `color.neutral.background`; transition all 0.35s ease; icon 35 x 37.11, #000000 `color.neutral.accent1`.
 
 ![Mobile nav link default](components/crops/m-nav-link-default.png)
 
 #### Mobile content tile
-A content tile under the hero. Read as `m-feature-tile` on the the home page page at 390 wide.
+A content tile under the hero. Read as `m-feature-tile` on the home page at 390 wide.
 
 **Values (default).** size 390 x 390; padding 390px 0px 0px 0px; background rgba(0, 0, 0, 0.1); text Space Mono 12/normal 400, #000000 `color.neutral.accent1`.
 
@@ -452,7 +452,7 @@ No standalone SVG icon set was lifted on this pass; the icons in the crops and s
 - **Anything that buys, sends or joins.** No product was added to the bag, no form was submitted (the login email was typed into and cleared), no search was run, no account was created, no consent choice was made.
 - **The mega-menu columns, the account dropdown and the filter/sort panels** were opened or hovered but their innards were not measured beyond the first link.
 - **The home page's category nav** stays `display:none` on `/` — it is measured on the shop grid, where the row is visible, and the home screenshot records the nav-less layout as served.
-- **Headless access.** Akamai answers headless Chromium and headless Chrome with `403 Access Denied`; the whole capture ran in headed Chrome (channel `chrome`). That is a transport boundary, not a page one.
+- **Headless access.** avnier.com serves headless Chrome (channel `chrome`) a 200, so the whole capture ran headless; a challenge page, had one appeared, was waited out, never bypassed.
 
 ### States
 
@@ -462,7 +462,7 @@ No standalone SVG icon set was lifted on this pass; the icons in the crops and s
 
 ### Themes
 
-The site paints one light theme on every captured route; a `.dark` probe resolves every custom property identically. The only themed sheets are vendor — OneTrust's `--ot-*` (consent UI) and Swiper's `--swiper-*` — recorded in [raw/css-vars.json](raw/css-vars.json) and never tokenised. No dark or reduced-contrast mode is offered.
+The site paints one light theme on every captured route; a `.dark` probe resolves every custom property identically. The vendor custom properties (`--ll-*`, `--swiper-*`, 80 names: Loloyal's loyalty widget, which carries its own `.ll-dark-mode`, and Swiper's carousel) are recorded in [raw/css-vars.json](raw/css-vars.json) and never tokenised. No dark or reduced-contrast mode is offered.
 
 ### Fonts
 

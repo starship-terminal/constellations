@@ -1,0 +1,1295 @@
+{
+  "_about": "The token tree build_tokens.py turns into tokens.json. FlowMapp's two public surfaces declare separate vocabularies on :root (raw/css-vars.json): core.* carries the marketing site's flat legacy palette plus the Webflow _apps variable layer (including the declared but never-painted -dark twins), app.* carries the SPA's --primary-*/--secondary-*/--neutral-gray-* ramp that the signed-out auth forms and the public share viewer paint. Measured roles alias to the declared values they match, inside their own surface set.",
+  "core": {
+    "font": {
+      "family": {
+        "inter": {
+          "value": "Inter, sans-serif",
+          "type": "fontFamily",
+          "source": "computed fontFamily of hero-h1 default (raw/components-computed.json); the self-hosted Inter @font-face faces and the declared --_apps---typography--* vars in raw/css-vars.json",
+          "description": "Inter — the family every surface sets: self-hosted woff2 on the marketing site (400–700), Google-Fonts Inter 500 on the app."
+        }
+      },
+      "weight": {
+        "regular": {
+          "value": 400,
+          "type": "fontWeight",
+          "source": "computed fontWeight of plan-row default (raw/components-computed.json)",
+          "description": "The 400 body weight on plan rows, FAQ and app fields."
+        },
+        "medium": {
+          "value": 500,
+          "type": "fontWeight",
+          "source": "computed fontWeight of hero-eyebrow default (raw/components-computed.json)",
+          "description": "The 500 weight on the trust eyebrow and app headings."
+        },
+        "semibold": {
+          "value": 600,
+          "type": "fontWeight",
+          "source": "computed fontWeight of nav-cta default (raw/components-computed.json)",
+          "description": "The 600 weight on nav links, buttons and body lead-ins."
+        },
+        "bold": {
+          "value": 700,
+          "type": "fontWeight",
+          "source": "computed fontWeight of hero-h1 default (raw/components-computed.json)",
+          "description": "The display-heading weight: the 72px masthead and section headings are 700."
+        }
+      },
+      "size": {
+        "display": {
+          "value": "96px",
+          "type": "dimension",
+          "source": "computed fontSize of feat-h1 default (raw/components-computed.json)",
+          "description": "The 96px feature-page display heading."
+        },
+        "hero": {
+          "value": "72px",
+          "type": "dimension",
+          "source": "computed fontSize of hero-h1 default (raw/components-computed.json)",
+          "description": "The 72px hero masthead and section headings."
+        },
+        "planName": {
+          "value": "36px",
+          "type": "dimension",
+          "source": "computed fontSize of plan-card default (raw/components-computed.json)",
+          "description": "The 36px plan-name heading inside pricing cards."
+        },
+        "button": {
+          "value": "30px",
+          "type": "dimension",
+          "source": "computed fontSize of hero-cta default (raw/components-computed.json)",
+          "description": "The 30px hero-button size."
+        },
+        "tab": {
+          "value": "25.6px",
+          "type": "dimension",
+          "source": "computed fontSize of ptab-annual default (raw/components-computed.json)",
+          "description": "The 25.6px billing-tab size."
+        },
+        "planCta": {
+          "value": "24px",
+          "type": "dimension",
+          "source": "computed fontSize of plan-cta default (raw/components-computed.json)",
+          "description": "The 24px plan-CTA size."
+        },
+        "faq": {
+          "value": "20px",
+          "type": "dimension",
+          "source": "computed fontSize of faq-q default (raw/components-computed.json)",
+          "description": "The 20px FAQ-question and contact-field size."
+        },
+        "body": {
+          "value": "16px",
+          "type": "dimension",
+          "source": "computed fontSize of plan-row default (raw/components-computed.json)",
+          "description": "The 16px body/nav size."
+        },
+        "eyebrow": {
+          "value": "12px",
+          "type": "dimension",
+          "source": "computed fontSize of hero-eyebrow default (raw/components-computed.json)",
+          "description": "The 12px trust-eyebrow size."
+        },
+        "mobileHero": {
+          "value": "33.228px",
+          "type": "dimension",
+          "source": "computed fontSize of m-hero-h1 default (raw/components-computed.json)",
+          "description": "The masthead at 390 wide."
+        }
+      },
+      "lineHeight": {
+        "hero": {
+          "value": 1.0,
+          "type": "number",
+          "source": "computed lineHeight/fontSize of hero-h1 default (72px over 72px, raw/components-computed.json)",
+          "description": "The hero masthead leading (72/72)."
+        },
+        "body": {
+          "value": 1.4,
+          "type": "number",
+          "source": "computed lineHeight/fontSize of plan-row default (22.4px over 16px, raw/components-computed.json)",
+          "description": "The body leading."
+        },
+        "eyebrow": {
+          "value": 1.4,
+          "type": "number",
+          "source": "computed lineHeight/fontSize of hero-eyebrow default (16.8px over 12px, raw/components-computed.json)",
+          "description": "The trust-eyebrow leading."
+        }
+      }
+    },
+    "apps": {
+      "charts": {
+        "chart": {
+          "1": {
+            "default": {
+              "var": "--_apps---charts--chart-1",
+              "type": "color"
+            },
+            "dark": {
+              "var": "--_apps---charts--chart-1-dark",
+              "type": "color"
+            }
+          },
+          "2": {
+            "default": {
+              "var": "--_apps---charts--chart-2",
+              "type": "color"
+            },
+            "dark": {
+              "var": "--_apps---charts--chart-2-dark",
+              "type": "color"
+            }
+          },
+          "3": {
+            "default": {
+              "var": "--_apps---charts--chart-3",
+              "type": "color"
+            },
+            "dark": {
+              "var": "--_apps---charts--chart-3-dark",
+              "type": "color"
+            }
+          },
+          "4": {
+            "default": {
+              "var": "--_apps---charts--chart-4",
+              "type": "color"
+            },
+            "dark": {
+              "var": "--_apps---charts--chart-4-dark",
+              "type": "color"
+            }
+          },
+          "5": {
+            "default": {
+              "var": "--_apps---charts--chart-5",
+              "type": "color"
+            },
+            "dark": {
+              "var": "--_apps---charts--chart-5-dark",
+              "type": "color"
+            }
+          }
+        }
+      },
+      "colors": {
+        "accent": {
+          "default": {
+            "var": "--_apps---colors--accent",
+            "type": "color"
+          },
+          "dark": {
+            "var": "--_apps---colors--accent-dark",
+            "type": "color"
+          },
+          "foreground": {
+            "default": {
+              "var": "--_apps---colors--accent-foreground",
+              "type": "color"
+            },
+            "dark": {
+              "var": "--_apps---colors--accent-foreground-dark",
+              "type": "color"
+            }
+          }
+        },
+        "background": {
+          "default": {
+            "var": "--_apps---colors--background",
+            "type": "color"
+          },
+          "dark": {
+            "var": "--_apps---colors--background-dark",
+            "type": "color"
+          }
+        },
+        "border": {
+          "default": {
+            "var": "--_apps---colors--border",
+            "type": "color"
+          },
+          "dark": {
+            "var": "--_apps---colors--border-dark",
+            "type": "color"
+          }
+        },
+        "card": {
+          "default": {
+            "var": "--_apps---colors--card",
+            "type": "color"
+          },
+          "dark": {
+            "var": "--_apps---colors--card-dark",
+            "type": "color"
+          },
+          "foreground": {
+            "default": {
+              "var": "--_apps---colors--card-foreground",
+              "type": "color"
+            },
+            "dark": {
+              "var": "--_apps---colors--card-foreground-dark",
+              "type": "color"
+            }
+          }
+        },
+        "destructive": {
+          "default": {
+            "var": "--_apps---colors--destructive",
+            "type": "color"
+          },
+          "dark": {
+            "var": "--_apps---colors--destructive-dark",
+            "type": "color"
+          }
+        },
+        "foreground": {
+          "default": {
+            "var": "--_apps---colors--foreground",
+            "type": "color"
+          },
+          "dark": {
+            "var": "--_apps---colors--foreground-dark",
+            "type": "color"
+          }
+        },
+        "input": {
+          "default": {
+            "var": "--_apps---colors--input",
+            "type": "color"
+          },
+          "dark": {
+            "var": "--_apps---colors--input-dark",
+            "type": "color"
+          }
+        },
+        "muted": {
+          "default": {
+            "var": "--_apps---colors--muted",
+            "type": "color"
+          },
+          "dark": {
+            "var": "--_apps---colors--muted-dark",
+            "type": "color"
+          },
+          "foreground": {
+            "default": {
+              "var": "--_apps---colors--muted-foreground",
+              "type": "color"
+            },
+            "dark": {
+              "var": "--_apps---colors--muted-foreground-dark",
+              "type": "color"
+            }
+          }
+        },
+        "popover": {
+          "default": {
+            "var": "--_apps---colors--popover",
+            "type": "color"
+          },
+          "dark": {
+            "var": "--_apps---colors--popover-dark",
+            "type": "color"
+          },
+          "foreground": {
+            "default": {
+              "var": "--_apps---colors--popover-foreground",
+              "type": "color"
+            },
+            "dark": {
+              "var": "--_apps---colors--popover-foreground-dark",
+              "type": "color"
+            }
+          }
+        },
+        "primary": {
+          "default": {
+            "var": "--_apps---colors--primary",
+            "type": "color"
+          },
+          "dark": {
+            "var": "--_apps---colors--primary-dark",
+            "type": "color"
+          },
+          "foreground": {
+            "default": {
+              "var": "--_apps---colors--primary-foreground",
+              "type": "color"
+            },
+            "dark": {
+              "var": "--_apps---colors--primary-foreground-dark",
+              "type": "color"
+            }
+          }
+        },
+        "ring": {
+          "default": {
+            "var": "--_apps---colors--ring",
+            "type": "color"
+          },
+          "dark": {
+            "var": "--_apps---colors--ring-dark",
+            "type": "color"
+          }
+        },
+        "secondary": {
+          "default": {
+            "var": "--_apps---colors--secondary",
+            "type": "color"
+          },
+          "dark": {
+            "var": "--_apps---colors--secondary-dark",
+            "type": "color"
+          },
+          "foreground": {
+            "default": {
+              "var": "--_apps---colors--secondary-foreground",
+              "type": "color"
+            },
+            "dark": {
+              "var": "--_apps---colors--secondary-foreground-dark",
+              "type": "color"
+            }
+          }
+        }
+      },
+      "sidebar": {
+        "sidebar": {
+          "default": {
+            "var": "--_apps---sidebar--sidebar",
+            "type": "color"
+          },
+          "accent": {
+            "default": {
+              "var": "--_apps---sidebar--sidebar-accent",
+              "type": "color"
+            },
+            "dark": {
+              "var": "--_apps---sidebar--sidebar-accent-dark",
+              "type": "color"
+            },
+            "foreground": {
+              "default": {
+                "var": "--_apps---sidebar--sidebar-accent-foreground",
+                "type": "color"
+              },
+              "dark": {
+                "var": "--_apps---sidebar--sidebar-accent-foreground-dark",
+                "type": "color"
+              }
+            }
+          },
+          "border": {
+            "default": {
+              "var": "--_apps---sidebar--sidebar-border",
+              "type": "color"
+            },
+            "dark": {
+              "var": "--_apps---sidebar--sidebar-border-dark",
+              "type": "color"
+            }
+          },
+          "dark": {
+            "var": "--_apps---sidebar--sidebar-dark",
+            "type": "color"
+          },
+          "foreground": {
+            "default": {
+              "var": "--_apps---sidebar--sidebar-foreground",
+              "type": "color"
+            },
+            "dark": {
+              "var": "--_apps---sidebar--sidebar-foreground-dark",
+              "type": "color"
+            }
+          },
+          "primary": {
+            "default": {
+              "var": "--_apps---sidebar--sidebar-primary",
+              "type": "color"
+            },
+            "dark": {
+              "var": "--_apps---sidebar--sidebar-primary-dark",
+              "type": "color"
+            },
+            "foreground": {
+              "default": {
+                "var": "--_apps---sidebar--sidebar-primary-foreground",
+                "type": "color"
+              },
+              "dark": {
+                "var": "--_apps---sidebar--sidebar-primary-foreground-dark",
+                "type": "color"
+              }
+            }
+          },
+          "ring": {
+            "default": {
+              "var": "--_apps---sidebar--sidebar-ring",
+              "type": "color"
+            },
+            "dark": {
+              "var": "--_apps---sidebar--sidebar-ring-dark",
+              "type": "color"
+            }
+          }
+        }
+      },
+      "sizes": {
+        "radius": {
+          "var": "--_apps---sizes--radius",
+          "type": "dimension"
+        }
+      },
+      "typography": {
+        "body": {
+          "font": {
+            "var": "--_apps---typography--body-font",
+            "type": "other"
+          }
+        },
+        "button": {
+          "font": {
+            "var": "--_apps---typography--button-font",
+            "type": "other"
+          }
+        },
+        "heading": {
+          "font": {
+            "var": "--_apps---typography--heading-font",
+            "type": "other"
+          }
+        }
+      }
+    },
+    "alice": {
+      "blue": {
+        "var": "--alice-blue",
+        "type": "color"
+      }
+    },
+    "basic": {
+      "blue": {
+        "var": "--basic-blue",
+        "type": "color"
+      }
+    },
+    "bg": {
+      "var": "--bg",
+      "type": "color"
+    },
+    "black": {
+      "var": "--black",
+      "type": "color"
+    },
+    "dark": {
+      "grey": {
+        "var": "--dark-grey",
+        "type": "color"
+      }
+    },
+    "dodger": {
+      "blue": {
+        "default": {
+          "var": "--dodger-blue",
+          "type": "color"
+        },
+        "20": {
+          "var": "--dodger-blue-20",
+          "type": "color"
+        }
+      }
+    },
+    "gainsboro": {
+      "var": "--gainsboro",
+      "type": "color"
+    },
+    "light": {
+      "steel": {
+        "blue": {
+          "var": "--light-steel-blue",
+          "type": "color"
+        }
+      }
+    },
+    "pale": {
+      "violet": {
+        "red": {
+          "var": "--pale-violet-red",
+          "type": "color"
+        }
+      }
+    },
+    "primary": {
+      "blue": {
+        "var": "--primary-blue",
+        "type": "color"
+      }
+    },
+    "service": {
+      "grey": {
+        "var": "--service-grey",
+        "type": "color"
+      }
+    },
+    "white": {
+      "var": "--white",
+      "type": "color"
+    },
+    "yellow": {
+      "green": {
+        "var": "--yellow-green",
+        "type": "color"
+      }
+    },
+    "radius": {
+      "control": {
+        "value": "8px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of nav-link default (raw/components-computed.json)",
+        "description": "The 8px radius on nav links and flyout rows."
+      },
+      "button": {
+        "value": "12px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)",
+        "description": "The 12px radius on the header pill buttons."
+      },
+      "app-button": {
+        "value": "12px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of sh-menu default (raw/components-computed.json)",
+        "description": "The 12px radius on the share viewer's buttons."
+      },
+      "field": {
+        "value": "16px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of login-field default (raw/components-computed.json)",
+        "description": "The 16px radius on the app auth fields and submit."
+      },
+      "share-card": {
+        "value": "16px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of sh-card default (raw/components-computed.json)",
+        "description": "The 16px radius on the shared sitemap page cards."
+      },
+      "card": {
+        "value": "24px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of plan-card default (raw/components-computed.json)",
+        "description": "The 24px pricing-card radius."
+      },
+      "pill": {
+        "value": "1600px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)",
+        "description": "The pill radius on the big CTAs — the sheets set it to 1600px, far past any rendered length."
+      },
+      "popup": {
+        "value": "14px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of sh-popup default (raw/components-computed.json)",
+        "description": "The 14px radius on the share viewer's sign-up toast."
+      }
+    },
+    "motion": {
+      "control": {
+        "value": "background-color 0.3s ease",
+        "type": "other",
+        "source": "computed transition of nav-link default (raw/components-computed.json)",
+        "description": "The control transition the site puts on nav links, buttons and cards."
+      }
+    }
+  },
+  "light": {
+    "text": {
+      "ink": {
+        "value": "{black}",
+        "type": "color",
+        "source": "computed color of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared black",
+        "description": "The black ink on headings and body copy (the declared --black)."
+      },
+      "muted": {
+        "value": "#222222",
+        "type": "color",
+        "source": "computed color of nav-link default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+        "description": "The #222 nav-link ink — one step off pure black."
+      }
+    },
+    "action": {
+      "cta-ring": {
+        "value": "{dodger.blue.20}",
+        "type": "color",
+        "source": "computed backgroundColor of hero-cta default (raw/components-computed.json); matches declared dodger.blue.20",
+        "description": "The translucent dodger-blue halo the pill buttons paint as their outer box (the declared --dodger-blue-20)."
+      },
+      "cta-fill": {
+        "value": "{dodger.blue.default}",
+        "type": "color",
+        "source": "the first opaque painted layer inside hero-cta default (raw/components-computed.json paint list); matches declared dodger.blue.default",
+        "description": "The solid #0080ff fill the CTA's inner .btn__wrapper paints (the declared --dodger-blue)."
+      },
+      "cta-ink": {
+        "value": "{white}",
+        "type": "color",
+        "source": "computed color of hero-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared white",
+        "description": "The white text on the blue pills (the declared --white)."
+      },
+      "nav-fill": {
+        "value": "{black}",
+        "type": "color",
+        "source": "computed backgroundColor of nav-cta default (raw/components-computed.json); matches declared black",
+        "description": "The near-black fill of the header 'Try for free' pill (the declared --black)."
+      },
+      "nav-ink": {
+        "value": "{white}",
+        "type": "color",
+        "source": "computed color of nav-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared white",
+        "description": "The white text on the black header pill."
+      }
+    },
+    "surface": {
+      "card": {
+        "value": "{white}",
+        "type": "color",
+        "source": "computed backgroundColor of plan-card default (raw/components-computed.json); matches declared white",
+        "description": "The white pricing-card surface (the declared --white)."
+      },
+      "card-featured": {
+        "value": "{black}",
+        "type": "color",
+        "source": "computed backgroundColor of plan-card-paid default (raw/components-computed.json); matches declared black",
+        "description": "The inverted black featured-plan card (Team)."
+      },
+      "field": {
+        "value": "{white}",
+        "type": "color",
+        "source": "computed backgroundColor of contact-field default (raw/components-computed.json); matches declared white",
+        "description": "The white contact-field surface."
+      }
+    },
+    "border": {
+      "focus-ring": {
+        "value": "{white}",
+        "type": "color",
+        "source": "computed outlineColor of nav-cta focus-visible (raw/components-computed.json); matches declared white",
+        "description": "The keyboard focus ring on controls, where the browser paints one."
+      }
+    },
+    "background": {
+      "page": {
+        "value": "{bg}",
+        "type": "color",
+        "source": "the body/html field behind every marketing page (screenshots/*-light-*.png); the declared --bg",
+        "description": "The #f6f8fa page field the marketing pages paint on."
+      }
+    }
+  },
+  "app": {
+    "neutral": {
+      "gray": {
+        "120": {
+          "var": "--neutral-gray-120",
+          "type": "color"
+        },
+        "160": {
+          "var": "--neutral-gray-160",
+          "type": "color"
+        },
+        "320": {
+          "var": "--neutral-gray-320",
+          "type": "color"
+        },
+        "40": {
+          "var": "--neutral-gray-40",
+          "type": "color"
+        },
+        "400": {
+          "var": "--neutral-gray-400",
+          "type": "color"
+        },
+        "80": {
+          "var": "--neutral-gray-80",
+          "type": "color"
+        },
+        "gray": {
+          "400": {
+            "var": "--neutral-gray-gray-400",
+            "type": "color"
+          }
+        },
+        "opacity": {
+          "120": {
+            "var": "--neutral-gray-opacity-120",
+            "type": "color"
+          },
+          "40": {
+            "var": "--neutral-gray-opacity-40",
+            "type": "color"
+          },
+          "60": {
+            "var": "--neutral-gray-opacity-60",
+            "type": "color"
+          },
+          "80": {
+            "var": "--neutral-gray-opacity-80",
+            "type": "color"
+          }
+        }
+      }
+    },
+    "primary": {
+      "basic": {
+        "blue": {
+          "var": "--primary-basic-blue",
+          "type": "color"
+        },
+        "gray": {
+          "default": {
+            "var": "--primary-basic-gray",
+            "type": "color"
+          },
+          "40": {
+            "var": "--primary-basic-gray-40",
+            "type": "color"
+          },
+          "400": {
+            "var": "--primary-basic-gray-400",
+            "type": "color"
+          },
+          "560": {
+            "var": "--primary-basic-gray-560",
+            "type": "color"
+          },
+          "880": {
+            "var": "--primary-basic-gray-880",
+            "type": "color"
+          }
+        },
+        "white": {
+          "var": "--primary-basic-white",
+          "type": "color"
+        }
+      },
+      "red": {
+        "500": {
+          "var": "--primary-red-500",
+          "type": "color"
+        }
+      }
+    },
+    "secondary": {
+      "blue": {
+        "default": {
+          "var": "--secondary-blue",
+          "type": "color"
+        },
+        "20": {
+          "var": "--secondary-blue-20",
+          "type": "color"
+        },
+        "32": {
+          "var": "--secondary-blue-32",
+          "type": "color"
+        },
+        "56": {
+          "var": "--secondary-blue-56",
+          "type": "color"
+        },
+        "64": {
+          "var": "--secondary-blue-64",
+          "type": "color"
+        },
+        "8": {
+          "var": "--secondary-blue-8",
+          "type": "color"
+        }
+      },
+      "electric": {
+        "default": {
+          "var": "--secondary-electric",
+          "type": "color"
+        },
+        "20": {
+          "var": "--secondary-electric-20",
+          "type": "color"
+        },
+        "32": {
+          "var": "--secondary-electric-32",
+          "type": "color"
+        },
+        "56": {
+          "var": "--secondary-electric-56",
+          "type": "color"
+        },
+        "64": {
+          "var": "--secondary-electric-64",
+          "type": "color"
+        },
+        "8": {
+          "var": "--secondary-electric-8",
+          "type": "color"
+        }
+      },
+      "gray": {
+        "default": {
+          "var": "--secondary-gray",
+          "type": "color"
+        },
+        "20": {
+          "var": "--secondary-gray-20",
+          "type": "color"
+        },
+        "32": {
+          "var": "--secondary-gray-32",
+          "type": "color"
+        },
+        "56": {
+          "var": "--secondary-gray-56",
+          "type": "color"
+        },
+        "64": {
+          "var": "--secondary-gray-64",
+          "type": "color"
+        },
+        "8": {
+          "var": "--secondary-gray-8",
+          "type": "color"
+        },
+        "80": {
+          "var": "--secondary-gray-80",
+          "type": "color"
+        },
+        "800": {
+          "var": "--secondary-gray-800",
+          "type": "color"
+        }
+      },
+      "green": {
+        "default": {
+          "var": "--secondary-green",
+          "type": "color"
+        },
+        "20": {
+          "var": "--secondary-green-20",
+          "type": "color"
+        },
+        "32": {
+          "var": "--secondary-green-32",
+          "type": "color"
+        },
+        "500": {
+          "var": "--secondary-green-500",
+          "type": "color"
+        },
+        "56": {
+          "var": "--secondary-green-56",
+          "type": "color"
+        },
+        "64": {
+          "var": "--secondary-green-64",
+          "type": "color"
+        },
+        "8": {
+          "var": "--secondary-green-8",
+          "type": "color"
+        },
+        "800": {
+          "var": "--secondary-green-800",
+          "type": "color"
+        }
+      },
+      "orange": {
+        "default": {
+          "var": "--secondary-orange",
+          "type": "color"
+        },
+        "20": {
+          "var": "--secondary-orange-20",
+          "type": "color"
+        },
+        "32": {
+          "var": "--secondary-orange-32",
+          "type": "color"
+        },
+        "56": {
+          "var": "--secondary-orange-56",
+          "type": "color"
+        },
+        "64": {
+          "var": "--secondary-orange-64",
+          "type": "color"
+        },
+        "8": {
+          "var": "--secondary-orange-8",
+          "type": "color"
+        }
+      },
+      "pink": {
+        "default": {
+          "var": "--secondary-pink",
+          "type": "color"
+        },
+        "20": {
+          "var": "--secondary-pink-20",
+          "type": "color"
+        },
+        "32": {
+          "var": "--secondary-pink-32",
+          "type": "color"
+        },
+        "56": {
+          "var": "--secondary-pink-56",
+          "type": "color"
+        },
+        "64": {
+          "var": "--secondary-pink-64",
+          "type": "color"
+        },
+        "8": {
+          "var": "--secondary-pink-8",
+          "type": "color"
+        }
+      },
+      "purple": {
+        "default": {
+          "var": "--secondary-purple",
+          "type": "color"
+        },
+        "20": {
+          "var": "--secondary-purple-20",
+          "type": "color"
+        },
+        "32": {
+          "var": "--secondary-purple-32",
+          "type": "color"
+        },
+        "56": {
+          "var": "--secondary-purple-56",
+          "type": "color"
+        },
+        "64": {
+          "var": "--secondary-purple-64",
+          "type": "color"
+        },
+        "8": {
+          "var": "--secondary-purple-8",
+          "type": "color"
+        }
+      },
+      "red": {
+        "default": {
+          "var": "--secondary-red",
+          "type": "color"
+        },
+        "20": {
+          "var": "--secondary-red-20",
+          "type": "color"
+        },
+        "32": {
+          "var": "--secondary-red-32",
+          "type": "color"
+        },
+        "56": {
+          "var": "--secondary-red-56",
+          "type": "color"
+        },
+        "64": {
+          "var": "--secondary-red-64",
+          "type": "color"
+        },
+        "8": {
+          "var": "--secondary-red-8",
+          "type": "color"
+        }
+      },
+      "yellow": {
+        "default": {
+          "var": "--secondary-yellow",
+          "type": "color"
+        },
+        "20": {
+          "var": "--secondary-yellow-20",
+          "type": "color"
+        },
+        "32": {
+          "var": "--secondary-yellow-32",
+          "type": "color"
+        },
+        "56": {
+          "var": "--secondary-yellow-56",
+          "type": "color"
+        },
+        "64": {
+          "var": "--secondary-yellow-64",
+          "type": "color"
+        },
+        "8": {
+          "var": "--secondary-yellow-8",
+          "type": "color"
+        }
+      }
+    },
+    "transparent": {
+      "var": "--transparent",
+      "type": "color"
+    },
+    "text": {
+      "ink": {
+        "value": "{primary.basic.gray.default}",
+        "type": "color",
+        "source": "computed color of login-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared primary.basic.gray.default",
+        "description": "The app's heading ink #1f1f1f (the declared --primary-basic-gray-880)."
+      },
+      "muted": {
+        "value": "{neutral.gray.gray.400}",
+        "type": "color",
+        "source": "computed color of login-field default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared neutral.gray.gray.400",
+        "description": "The field placeholder/hint ink #999 (the declared --primary-basic-gray-400)."
+      },
+      "link": {
+        "value": "{neutral.gray.gray.400}",
+        "type": "color",
+        "source": "computed color of login-forgot default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared neutral.gray.gray.400",
+        "description": "The 'Forgot password?' grey link ink."
+      },
+      "viewer-ink": {
+        "value": "{primary.basic.gray.560}",
+        "type": "color",
+        "source": "computed color of sh-menu default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared primary.basic.gray.560",
+        "description": "The share viewer's #707070 button ink (the declared --primary-basic-gray-560)."
+      }
+    },
+    "surface": {
+      "field-bg": {
+        "value": "{neutral.gray.40}",
+        "type": "color",
+        "source": "computed backgroundColor of login-field default (raw/components-computed.json); matches declared neutral.gray.40",
+        "description": "The #f5f5f5 auth-field fill (the declared --neutral-gray-40 / --primary-basic-gray-40)."
+      },
+      "popup": {
+        "value": "rgba(0, 0, 0, 0.56)",
+        "type": "color",
+        "source": "computed backgroundColor of sh-popup default (raw/components-computed.json)",
+        "description": "The sign-up nudge's rgba(0,0,0,0.56) dark toast fill."
+      },
+      "share-card": {
+        "value": "{primary.basic.white}",
+        "type": "color",
+        "source": "computed backgroundColor of sh-card default (raw/components-computed.json); matches declared primary.basic.white",
+        "description": "The white sitemap page-card fill on the shared canvas."
+      }
+    },
+    "border": {
+      "oauth-border": {
+        "value": "{neutral.gray.opacity.120}",
+        "type": "color",
+        "source": "computed borderTopColor of login-google default (raw/components-computed.json); matches declared neutral.gray.opacity.120",
+        "description": "The OAuth button's 1px rgba(0,0,0,0.12) hairline (the declared --neutral-gray-opacity-120)."
+      },
+      "share-card-border": {
+        "value": "{primary.basic.gray.default}",
+        "type": "color",
+        "source": "computed borderTopColor of sh-card default (raw/components-computed.json); matches declared primary.basic.gray.default",
+        "description": "The page card's 2px #1f1f1f outline (the declared --primary-basic-gray-880)."
+      }
+    },
+    "action": {
+      "primary-fill": {
+        "value": "{primary.basic.blue}",
+        "type": "color",
+        "source": "computed backgroundColor of login-submit enabled (raw/components-computed.json); matches declared primary.basic.blue",
+        "description": "The enabled submit fill #0050ff (the declared --primary-basic-blue), painted once sample text sits in both fields — never submitted."
+      },
+      "primary-fill-disabled": {
+        "value": "#9fb8f9",
+        "type": "color",
+        "source": "computed backgroundColor of login-submit default (raw/components-computed.json)",
+        "description": "The submit's disabled fill #9fb8f9 at rest — a desaturated blue no declared name holds."
+      },
+      "primary-ink": {
+        "value": "{primary.basic.white}",
+        "type": "color",
+        "source": "computed color of login-submit enabled — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared primary.basic.white",
+        "description": "The white text on the app primary button."
+      }
+    },
+    "background": {
+      "page": {
+        "value": "{primary.basic.white}",
+        "type": "color",
+        "source": "the body field behind the signed-out auth cards and the share viewer chrome (screenshots/login-*, share-*); the declared --primary-basic-white",
+        "description": "The white app page field."
+      }
+    }
+  },
+  "component": {
+    "topbar-height": {
+      "value": "82.06px",
+      "type": "dimension",
+      "source": "measured h of mkt-header default (raw/components-computed.json)",
+      "description": "The marketing header bar height."
+    },
+    "nav-link-height": {
+      "value": "44.47px",
+      "type": "dimension",
+      "source": "measured h of nav-link default (raw/components-computed.json)",
+      "description": "The nav-link hit height."
+    },
+    "nav-cta-height": {
+      "value": "38.47px",
+      "type": "dimension",
+      "source": "measured h of nav-cta default (raw/components-computed.json)",
+      "description": "The header pill height."
+    },
+    "nav-pop-width": {
+      "value": "353px",
+      "type": "dimension",
+      "source": "measured w of nav-pop-item default (raw/components-computed.json)",
+      "description": "The Features flyout row width."
+    },
+    "hero-cta-height": {
+      "value": "120.06px",
+      "type": "dimension",
+      "source": "measured h of hero-cta default (raw/components-computed.json)",
+      "description": "The hero pill height including its halo."
+    },
+    "hero-cta-width": {
+      "value": "477.91px",
+      "type": "dimension",
+      "source": "measured w of hero-cta default (raw/components-computed.json)",
+      "description": "The hero pill width."
+    },
+    "hero-width": {
+      "value": "1280px",
+      "type": "dimension",
+      "source": "measured w of hero-h1 default (raw/components-computed.json)",
+      "description": "The hero masthead measure."
+    },
+    "ptab-height": {
+      "value": "59.91px",
+      "type": "dimension",
+      "source": "measured h of ptab-annual default (raw/components-computed.json)",
+      "description": "The billing-tab pill height."
+    },
+    "plan-card-width": {
+      "value": "305px",
+      "type": "dimension",
+      "source": "measured w of plan-card default (raw/components-computed.json)",
+      "description": "The pricing-card width."
+    },
+    "plan-card-height": {
+      "value": "435.09px",
+      "type": "dimension",
+      "source": "measured h of plan-card default (raw/components-computed.json)",
+      "description": "The pricing-card height."
+    },
+    "plan-cta-height": {
+      "value": "75.66px",
+      "type": "dimension",
+      "source": "measured h of plan-cta default (raw/components-computed.json)",
+      "description": "The plan-CTA pill height."
+    },
+    "faq-row-height": {
+      "value": "69px",
+      "type": "dimension",
+      "source": "measured h of faq-q default (raw/components-computed.json)",
+      "description": "The closed FAQ row height."
+    },
+    "contact-field-width": {
+      "value": "492px",
+      "type": "dimension",
+      "source": "measured w of contact-field default (raw/components-computed.json)",
+      "description": "The contact-field width."
+    },
+    "mobile-topbar-height": {
+      "value": "54.69px",
+      "type": "dimension",
+      "source": "measured h of m-topbar default (raw/components-computed.json)",
+      "description": "The phone header height."
+    },
+    "mobile-cta-height": {
+      "value": "78.17px",
+      "type": "dimension",
+      "source": "measured h of m-hero-cta default (raw/components-computed.json)",
+      "description": "The hero pill at 390 wide."
+    },
+    "app": {
+      "card-width": {
+        "value": "440px",
+        "type": "dimension",
+        "source": "measured w of login-card default on app.flowmapp.com (raw/components-computed.json)",
+        "description": "The auth card width."
+      },
+      "card-height": {
+        "value": "640px",
+        "type": "dimension",
+        "source": "measured h of login-card default on app.flowmapp.com (raw/components-computed.json)",
+        "description": "The auth card height."
+      },
+      "field-height": {
+        "value": "56px",
+        "type": "dimension",
+        "source": "measured h of login-field default on app.flowmapp.com (raw/components-computed.json)",
+        "description": "The auth field height."
+      },
+      "field-width": {
+        "value": "374px",
+        "type": "dimension",
+        "source": "measured w of login-field default on app.flowmapp.com (raw/components-computed.json)",
+        "description": "The auth field width."
+      },
+      "submit-height": {
+        "value": "56px",
+        "type": "dimension",
+        "source": "measured h of login-submit default on app.flowmapp.com (raw/components-computed.json)",
+        "description": "The primary submit height."
+      },
+      "share-menu-width": {
+        "value": "141.64px",
+        "type": "dimension",
+        "source": "measured w of sh-menu default on app.flowmapp.com (raw/components-computed.json)",
+        "description": "The share viewer 'Demo Project' button width."
+      },
+      "share-toolbar-btn": {
+        "value": "36px",
+        "type": "dimension",
+        "source": "measured h of sh-toolbar-btn default on app.flowmapp.com (raw/components-computed.json)",
+        "description": "The canvas toolbar icon-button size."
+      },
+      "share-card-width": {
+        "value": "95.07px",
+        "type": "dimension",
+        "source": "measured w of sh-card default on app.flowmapp.com (raw/components-computed.json)",
+        "description": "The sitemap page-card width at the captured zoom."
+      },
+      "share-card-height": {
+        "value": "104.35px",
+        "type": "dimension",
+        "source": "measured h of sh-card default on app.flowmapp.com (raw/components-computed.json)",
+        "description": "The sitemap page-card height at the captured zoom."
+      },
+      "share-popup-width": {
+        "value": "251.58px",
+        "type": "dimension",
+        "source": "measured w of sh-popup default on app.flowmapp.com (raw/components-computed.json)",
+        "description": "The sign-up nudge toast width."
+      },
+      "userflow-card-width": {
+        "value": "139.22px",
+        "type": "dimension",
+        "source": "measured w of uf-card default on app.flowmapp.com (raw/components-computed.json)",
+        "description": "The user-flow card width at the captured zoom."
+      },
+      "userflow-card-height": {
+        "value": "191.43px",
+        "type": "dimension",
+        "source": "measured h of uf-card default on app.flowmapp.com (raw/components-computed.json)",
+        "description": "The user-flow card height at the captured zoom."
+      }
+    }
+  }
+}

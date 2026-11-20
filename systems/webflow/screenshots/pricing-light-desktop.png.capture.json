@@ -1,0 +1,28 @@
+{
+  "name": "pricing-light-desktop",
+  "theme": "light",
+  "requested": {
+    "name": "pricing-light-desktop",
+    "url": "https://webflow.com/pricing",
+    "theme": "light",
+    "width": 1440,
+    "height": 900
+  },
+  "href": "https://webflow.com/pricing",
+  "title": "Plans & pricing | Webflow",
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "dpr": 2,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "colorScheme": "normal",
+  "className": "w-mod-js wf-inconsolata-n4-active wf-inconsolata-n7-active wf-active w-mod-ix w-mod-ix3",
+  "bodyBg": "rgb(255, 255, 255)",
+  "denied": false,
+  "textStart": "SKIP TO MAIN CONTENT\nPlatform\nSource\nSolutions\nResources\nEnterprise\nPricing\nLog in\nContact Sales\nStart for free\nOur pricing\nMonthly\nToggle between yearly and monthly pricing\nYearly",
+  "status": 200,
+  "png": "(2880, 1800)"
+}

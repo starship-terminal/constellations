@@ -1,0 +1,2113 @@
+{
+ "_meta": {
+  "readAt": "2026-11-16",
+  "probe": "page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page",
+  "source": "public pages, headless Chromium, read at rest",
+  "notes": "Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial."
+ },
+ "summary": {
+  "moving": 121,
+  "removed": 16,
+  "reduced": 0,
+  "kept": 105,
+  "partial": 0,
+  "increased": 0,
+  "added": 0,
+  "behaviour": "partial",
+  "loops": []
+ },
+ "pages": {
+  "page-1": {
+   "url": "https://www.framer.com/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 4260,
+   "capped": false,
+   "unreadableSheets": 1,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 17,
+    "removed": 16,
+    "reduced": 0,
+    "kept": 1,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "partial",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "ghostFlow",
+        "durationMs": 750,
+        "delayMs": -187.5,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "ghostFlow",
+        "durationMs": 750,
+        "delayMs": -187.5,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "paused"
+       }
+      ]
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "ghostFlow",
+       "outcome": "removed",
+       "from": 750,
+       "to": 0
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "span"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "ghostFlow",
+        "durationMs": 750,
+        "delayMs": -375,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "ghostFlow",
+        "durationMs": 750,
+        "delayMs": -375,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "paused"
+       }
+      ]
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "ghostFlow",
+       "outcome": "removed",
+       "from": 750,
+       "to": 0
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "span"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "ghostFlow",
+        "durationMs": 750,
+        "delayMs": -562.5,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "ghostFlow",
+        "durationMs": 750,
+        "delayMs": -562.5,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "paused"
+       }
+      ]
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "ghostFlow",
+       "outcome": "removed",
+       "from": 750,
+       "to": 0
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "span"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "ghostFlow",
+        "durationMs": 750,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "ghostFlow",
+        "durationMs": 750,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "paused"
+       }
+      ]
+     },
+     "outcome": "removed",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "ghostFlow",
+       "outcome": "removed",
+       "from": 750,
+       "to": 0
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "span"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "__framer-blink-input",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "shimmer-Raqqqhlrael5dp",
+     "steps": [
+      {
+       "offset": "0%, 0%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      }
+     ],
+     "properties": [
+      "background-position-x",
+      "background-position-y"
+     ]
+    },
+    {
+     "name": "__framer-editorbar-spinner-spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "ghostFlow",
+     "steps": [
+      {
+       "offset": "0%, 18%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "35%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "50%, 100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "doubleSlow",
+     "steps": [
+      {
+       "offset": "0%, 100%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "8%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "16%, 24%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "34%, 50%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "58%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "66%, 74%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "84%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "danceSpark",
+     "steps": [
+      {
+       "offset": "0%, 6%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "18%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "24%, 100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    }
+   ],
+   "reducedMotionRules": [],
+   "declared": [
+    {
+     "selector": ".-search-modal-container input:focus",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "__framer-blink-input",
+       "durationMs": 10,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".framer-xLYSD .framer-styles-preset-1jhmnrw:not(.rich-text-wrapper), .framer-xLYSD .framer-styles-preset-1jhmnrw.rich-text-wrapper a",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.44, 0, 0.56, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".framer-wpoP3 .framer-styles-preset-1si2ozi:not(.rich-text-wrapper), .framer-wpoP3 .framer-styles-preset-1si2ozi.rich-text-wrapper a",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0, 0, 1, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".text-shimmer-Raqqqhlrael5dp",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "shimmer-Raqqqhlrael5dp",
+       "durationMs": 5000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".framer-form-input-wrapper::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-color"
+      },
+      {
+       "property": "border-width"
+      },
+      {
+       "property": "border-style"
+      },
+      {
+       "property": "border-top-left-radius"
+      },
+      {
+       "property": "border-top-right-radius"
+      },
+      {
+       "property": "border-bottom-right-radius"
+      },
+      {
+       "property": "border-bottom-left-radius"
+      },
+      {
+       "property": "corner-shape"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".framer-form-input-wrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background"
+      },
+      {
+       "property": "box-shadow"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".framer-form-text-input-clear",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".P1ekSe-ZMv3u",
+     "context": [],
+     "transitions": [
+      {
+       "property": "height",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "linear"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".P1ekSe-ZMv3u > div:first-child",
+     "context": [],
+     "transitions": [
+      {
+       "property": "width",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "linear"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".nsm7Bb-HzV7m-LgbsSe",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 218,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 218,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-MJoBVe",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 218,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#-editorbar-label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".-editorbar-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "__framer-editorbar-spinner-spin",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#-flap",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    }
+   ],
+   "customProperties": []
+  },
+  "page-2": {
+   "url": "https://www.framer.com/pricing",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 1707,
+   "capped": false,
+   "unreadableSheets": 1,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 1,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 1,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "ignores",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "__framer-blink-input",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "__framer-editorbar-spinner-spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [],
+   "declared": [
+    {
+     "selector": ".-search-modal-container input:focus",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "__framer-blink-input",
+       "durationMs": 10,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".framer-xLYSD .framer-styles-preset-1jhmnrw:not(.rich-text-wrapper), .framer-xLYSD .framer-styles-preset-1jhmnrw.rich-text-wrapper a",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.44, 0, 0.56, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".framer-wpoP3 .framer-styles-preset-1si2ozi:not(.rich-text-wrapper), .framer-wpoP3 .framer-styles-preset-1si2ozi.rich-text-wrapper a",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 0,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0, 0, 1, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".framer-form-input-wrapper::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-color"
+      },
+      {
+       "property": "border-width"
+      },
+      {
+       "property": "border-style"
+      },
+      {
+       "property": "border-top-left-radius"
+      },
+      {
+       "property": "border-top-right-radius"
+      },
+      {
+       "property": "border-bottom-right-radius"
+      },
+      {
+       "property": "border-bottom-left-radius"
+      },
+      {
+       "property": "corner-shape"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".framer-form-select-wrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background"
+      },
+      {
+       "property": "box-shadow"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".P1ekSe-ZMv3u",
+     "context": [],
+     "transitions": [
+      {
+       "property": "height",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "linear"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".P1ekSe-ZMv3u > div:first-child",
+     "context": [],
+     "transitions": [
+      {
+       "property": "width",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "linear"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".nsm7Bb-HzV7m-LgbsSe",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 218,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 218,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-MJoBVe",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 218,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#-editorbar-label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".-editorbar-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "__framer-editorbar-spinner-spin",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#-flap",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    }
+   ],
+   "customProperties": []
+  },
+  "page-3": {
+   "url": "https://www.framer.com/community/gallery/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 784,
+   "capped": false,
+   "unreadableSheets": 1,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 101,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 101,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "ignores",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 33,
+     "nodes": [
+      "a.XYMghq_label.aj4q-q_categoryLink.aj4q-q_mainCategory",
+      "a.XYMghq_label.aj4q-q_categoryLink.aj4q-q_subcategory",
+      "a.XYMghq_label.aj4q-q_categoryLink.aj4q-q_directoryRoot"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 31,
+     "nodes": [
+      "button.AZdcjW_root.AZdcjW_variant-default.AZdcjW_size-medium",
+      "button.AZdcjW_root.AZdcjW_variant-filter.AZdcjW_size-medium",
+      "a[role=button].AZdcjW_root.AZdcjW_variant-default.AZdcjW_size-medium"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 140,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 140,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 140,
+       "to": 140
+      }
+     ],
+     "count": 28,
+     "nodes": [
+      "div.QYH33q_surface.tPr4JW_thumbnail"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "color",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 7,
+     "nodes": [
+      "button.DFz--G_root.DFz--G_active",
+      "button.DFz--G_root",
+      "a.DFz--G_root"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0, 0.2, 1)"
+       },
+       {
+        "property": "transform",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0, 0.2, 1)"
+       },
+       {
+        "property": "transform",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 100,
+       "to": 100
+      },
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 100,
+       "to": 100
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div[role=menu].t_iqDa_panel.q0Xw5q_panel.iYOVSW_popoverMotion"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "nsaqKq_progress-gradient",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      }
+     ],
+     "properties": [
+      "background-position-x",
+      "background-position-y"
+     ]
+    },
+    {
+     "name": "z8pT-a_spin",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "q0Xw5q_badge-in",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "scale"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "scale"
+       ]
+      }
+     ],
+     "properties": [
+      "scale"
+     ]
+    },
+    {
+     "name": "q0Xw5q_badge-out",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "scale"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "scale"
+       ]
+      }
+     ],
+     "properties": [
+      "scale"
+     ]
+    },
+    {
+     "name": "cXKnyG_open",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "scale"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "scale"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "scale"
+     ]
+    },
+    {
+     "name": "cXKnyG_close",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "_4aSaxG_new-posts-pill-enter",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "tVMpMq_media-dialog-fade-in",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "tVMpMq_media-dialog-draw",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "stroke-dashoffset"
+       ]
+      }
+     ],
+     "properties": [
+      "stroke-dashoffset"
+     ]
+    },
+    {
+     "name": "vYEatG_skeleton-pulse",
+     "steps": [
+      {
+       "offset": "0%, 100%",
+       "properties": [
+        "background-color"
+       ]
+      },
+      {
+       "offset": "50%",
+       "properties": [
+        "background-color"
+       ]
+      }
+     ],
+     "properties": [
+      "background-color"
+     ]
+    },
+    {
+     "name": "BZaQeW_banner-in",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    },
+    {
+     "name": "_4lSpFa_popup-in",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity",
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity",
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": "._4aSaxG_pill",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".BZaQeW_banner",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": "._4lSpFa_popup",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    }
+   ],
+   "declared": [
+    {
+     "selector": ".nsaqKq_progressBar .nsaqKq_bar",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".nsaqKq_progressBar[data-processing] .nsaqKq_bar",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "nsaqKq_progress-gradient",
+       "durationMs": 2000,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".z8pT-a_spinnerInner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "z8pT-a_spin",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".NkU_nG_playButtonPath",
+     "context": [],
+     "transitions": [
+      {
+       "property": "fill",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.4, 0, 1, 1)"
+      },
+      {
+       "property": "fill-opacity",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.4, 0, 1, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".LRxDxG_tabs",
+     "context": [
+      "@layer fr-unified-community"
+     ],
+     "transitions": [
+      {
+       "property": "-webkit-mask",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "mask",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".cXKnyG_root[data-state=\"open\"]",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "cXKnyG_open",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.18, 0.89, 0.32, 1.27)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".cXKnyG_root[data-state=\"closed\"]",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "cXKnyG_close",
+       "durationMs": 500,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".tPr4JW_avatar",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ec7VfG_actorLink",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ec7VfG_targetLink",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".ERKANq_root > svg",
+     "context": [
+      "@layer fr-unified-community"
+     ],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "._1AYMfq_dialog[data-ending-style]",
+     "context": [
+      "@layer fr-unified-community"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationRaw": "var(--uc-duration-instant)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".tVMpMq_closeLine",
+     "context": [
+      "@layer fr-unified-community"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "tVMpMq_media-dialog-draw",
+       "durationMs": 700,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.2, 0.9, 0.3, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".tVMpMq_closeLine + .tVMpMq_closeLine",
+     "context": [
+      "@layer fr-unified-community"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "delayMs": 200
+      }
+     ]
+    },
+    {
+     "selector": ".tVMpMq_stage",
+     "context": [
+      "@layer fr-unified-community"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "tVMpMq_media-dialog-fade-in",
+       "durationMs": 400,
+       "delayMs": 300,
+       "easing": "cubic-bezier(0.12, 0.23, 0.5, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "both",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".iYOVSW_popoverMotion[data-instant]",
+     "context": [
+      "@layer fr-unified-community"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "durationRaw": "var(--uc-duration-instant)"
+      }
+     ],
+     "animations": [],
+     "viaVar": true
+    },
+    {
+     "selector": ".vYEatG_root",
+     "context": [
+      "@layer fr-unified-community"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "vYEatG_skeleton-pulse",
+       "durationMs": 2000,
+       "delayMs": 0,
+       "easing": "ease-in-out",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".edIyHG_upvoted .edIyHG_icon",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".P1ekSe-ZMv3u",
+     "context": [],
+     "transitions": [
+      {
+       "property": "height",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "linear"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".P1ekSe-ZMv3u > div:first-child",
+     "context": [],
+     "transitions": [
+      {
+       "property": "width",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "linear"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".nsm7Bb-HzV7m-LgbsSe",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 218,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 218,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-MJoBVe",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 218,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#-flap",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    }
+   ],
+   "customProperties": [
+    {
+     "name": "--tile-transition-duration",
+     "declared": ".14s",
+     "selector": ".tPr4JW_thumbnail",
+     "resolved": ""
+    },
+    {
+     "name": "--tile-transition-easing",
+     "declared": "var(--uc-ease-out)",
+     "selector": ".tPr4JW_thumbnail",
+     "resolved": ""
+    },
+    {
+     "name": "--uc-duration-base",
+     "declared": ".15s",
+     "selector": ":root",
+     "resolved": ".15s"
+    },
+    {
+     "name": "--uc-duration-fast",
+     "declared": ".1s",
+     "selector": ":root",
+     "resolved": ".1s"
+    },
+    {
+     "name": "--uc-duration-instant",
+     "declared": "0s",
+     "selector": ":root",
+     "resolved": "0s"
+    },
+    {
+     "name": "--uc-duration-slow",
+     "declared": ".2s",
+     "selector": ":root",
+     "resolved": ".2s"
+    },
+    {
+     "name": "--uc-ease-bounce",
+     "declared": "cubic-bezier(.175, .885, .32, 1.275)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(.175, .885, .32, 1.275)"
+    },
+    {
+     "name": "--uc-ease-out",
+     "declared": "cubic-bezier(.4, 0, .2, 1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(.4, 0, .2, 1)"
+    },
+    {
+     "name": "--uc-ease-popup",
+     "declared": "cubic-bezier(0, 0, .2, 1)",
+     "selector": ":root",
+     "resolved": "cubic-bezier(0, 0, .2, 1)"
+    },
+    {
+     "name": "--uc-transition-base",
+     "declared": "var(--uc-duration-base) var(--uc-ease-out)",
+     "selector": ":root",
+     "resolved": ".15s cubic-bezier(.4, 0, .2, 1)"
+    },
+    {
+     "name": "--uc-transition-bounce",
+     "declared": "var(--uc-duration-slow) var(--uc-ease-bounce)",
+     "selector": ":root",
+     "resolved": ".2s cubic-bezier(.175, .885, .32, 1.275)"
+    },
+    {
+     "name": "--uc-transition-fast",
+     "declared": "var(--uc-duration-fast) var(--uc-ease-out)",
+     "selector": ":root",
+     "resolved": ".1s cubic-bezier(.4, 0, .2, 1)"
+    },
+    {
+     "name": "--uc-transition-popup-enter",
+     "declared": "var(--uc-duration-fast) var(--uc-ease-popup)",
+     "selector": ":root",
+     "resolved": ".1s cubic-bezier(0, 0, .2, 1)"
+    }
+   ]
+  },
+  "page-4": {
+   "url": "https://www.framer.com/login",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 167,
+   "capped": false,
+   "unreadableSheets": 1,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 2,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 2,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "ignores",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "button.b1rdbf0o.bygx14j.b1vrtm7g",
+      "button.b1rdbf0o.fwwdn1t"
+     ]
+    }
+   ],
+   "keyframes": [],
+   "reducedMotionRules": [],
+   "declared": [],
+   "customProperties": []
+  }
+ }
+}

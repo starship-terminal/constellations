@@ -1,11 +1,19 @@
 {
-  "reason": "Product-published example.com samples and Sentry learning contact are allowed by repository policy. Rectangles mask DSN credential strings in setup instructions; no literal credentials are stored. The ownership-rule editor uses person@sentry.io as product example text. Boosted OCR reads the published learn address as leam; both spellings are allowlisted only at sentry.io. Account-menu OCR adds a leading c or confuses i/l in the allowed owner email; the exact observed variants are allowed.",
+  "_reason": "Product-published example.com samples and Sentry learning contact are allowed by repository policy. Rectangles mask DSN credential strings in setup instructions; no literal credentials are stored. The ownership-rule editor uses person@sentry.io as product example text. Boosted OCR reads the published learn address as leam; both spellings are allowlisted only at sentry.io. Account-menu OCR adds a leading c or confuses i/l in the allowed owner email; the exact observed variants are allowed.",
   "ocr": {
     "email_allow": [
       "@example\\.com$",
-      "^lea(?:rn|m)@sentry\\.io$",
+      "^leam@sentry\\.io$",
+      "^learn@sentry\\.io$",
       "^person@sentry\\.io$",
-      "^c?chenwenlongoffic[il]al@gma[il]l\\.com$"
+      "^chenwenlongofficial@gmail\\.com$",
+      "^chenwenlongofficlal@gmail\\.com$",
+      "^cchenwenlongofficial@gmail\\.com$",
+      "^cchenwenlongofficlal@gmail\\.com$",
+      "^cchenwenlongofficial@gmall\\.com$",
+      "^cchenwenlongofficlal@gmall\\.com$",
+      "^chenwenlongofficial@gmall\\.com$",
+      "^chenwenlongofficlal@gmall\\.com$"
     ]
   },
   "families": [

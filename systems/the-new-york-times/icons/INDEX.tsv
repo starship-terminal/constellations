@@ -1,0 +1,3 @@
+file	role	source
+wordmark.svg	The New York Times wordmark	Fetched from https://myaccount.nytimes.com/lire_ui/img/nyt-logo.svg on 2026-11-19. Fill rewritten from black to #000000. Homepage inline wordmark used viewBox 0 0 184 25 and fill #000.
+search.svg	Search	Inline SVG on the homepage search button. Path fill was #333.

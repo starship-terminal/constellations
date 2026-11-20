@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programa style guide</title>
+<style>
+  :root {
+    color-scheme: light;
+    --page: #ffffff;
+    --muted-bg: #fcfbf9;
+    --text: #1a1916;
+    --secondary: #7b736c;
+    --muted: #aaa59c;
+    --cta: #fcfda1;
+    --cta-ink: #7f2e1b;
+    --primary: #fdffa2;
+    --inverse: #1a1916;
+    --on-inverse: #ffffff;
+    --border: #eeece6;
+    --switch: #a7f3d0;
+    --app-title: #18181b;
+    --field: #fcfbf9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font: 400 16px/24px Inter, system-ui, sans-serif;
+  }
+  main { max-width: 980px; margin: 0 auto; padding: 40px 24px 80px; }
+  h1 {
+    font: 300 60px/64px Georgia, "Times New Roman", serif;
+    letter-spacing: -1.5px;
+    margin: 0 0 8px;
+  }
+  h2 { font: 300 36px/40px Georgia, serif; letter-spacing: -0.2px; margin: 40px 0 12px; }
+  p { max-width: 68ch; }
+  .note { color: var(--secondary); font-size: 13px; }
+  .swatches, .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 64px; border-radius: 6px; border: 1px solid var(--border); }
+  .label { font-size: 12px; margin-top: 6px; }
+  .label span { display: block; color: var(--secondary); }
+  button {
+    border: 0;
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 6px;
+    font: 400 16px/24px Inter, system-ui, sans-serif;
+  }
+  button.primary { background: var(--primary); color: #000; height: 31px; font-size: 12px; }
+  button.secondary { background: var(--inverse); color: var(--on-inverse); }
+  button.white { background: #fff; color: var(--text); box-shadow: 0 0 0 1px #00000014, 0 1px 2px #0000001f; }
+  button.cta { background: var(--cta); color: var(--cta-ink); height: 28px; font-size: 14px; padding: 4px 8px; }
+  button.app { background: var(--app-title); color: #fff; height: 40px; border-radius: 8px; font-weight: 500; }
+  .hero { font: 300 60px/64px Georgia, serif; letter-spacing: -1.5px; margin: 12px 0; }
+  .field {
+    width: 280px;
+    height: 32px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--field);
+    box-shadow: 0 1px 2px #0000001f, 0 0 0 1px #00000014;
+    padding: 0 8px;
+    font: 400 13px/20px Inter, sans-serif;
+  }
+  a { color: var(--text); }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  td, th { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Programa</h1>
+  <p class="note">Light marketing tokens from programa.design, plus the signed-out app form. Rhymes Display is not loaded here. Headlines fall back to Georgia.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">page <span>#ffffff</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#fcfbf9"></div><div class="label">muted surface <span>#fcfbf9</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#1a1916"></div><div class="label">text <span>#1a1916</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#7b736c"></div><div class="label">secondary <span>#7b736c</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#fdffa2"></div><div class="label">primary <span>#fdffa2</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#fcfda1"></div><div class="label">nav cta <span>#fcfda1</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#eeece6"></div><div class="label">border <span>#eeece6</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#a7f3d0"></div><div class="label">switch on <span>#a7f3d0</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#18181b"></div><div class="label">app title <span>#18181b</span></div></div>
+  </div>
+
+  <h2>Type</h2>
+  <p class="hero">Freedom, by design</p>
+  <p>The better, easier, way to run an interior design studio.</p>
+  <p class="note">Eyebrow uses Roboto Mono at 12px, uppercase on the page.</p>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="primary">Start 7 day trial</button>
+    <button class="secondary">Get started</button>
+    <button class="white">Watch a demo</button>
+    <button class="cta">Start free</button>
+    <button class="app">Log in</button>
+  </div>
+
+  <h2>Field</h2>
+  <input class="field" placeholder="Enter Email" aria-label="Email">
+
+  <h2>Radius and space</h2>
+  <table>
+    <tr><th>Token</th><th>Value</th></tr>
+    <tr><td>radius 6</td><td>6px, buttons and fields</td></tr>
+    <tr><td>radius 8</td><td>8px, login submit</td></tr>
+    <tr><td>radius 12</td><td>12px, testimonial cards</td></tr>
+    <tr><td>space 8 to 80</td><td>declared --spacing-spacing-* steps</td></tr>
+  </table>
+</main>
+</body>
+</html>

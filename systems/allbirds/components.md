@@ -66,16 +66,16 @@ Values that apply across entries, from the measurement files.
 | [Header](#header) | 1400 x 48 | - | 12px | #ffffff `white` | rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px | 0px 20px |
 | [Announcement bar](#announcement-bar) | 1440 x 32 | - | - | transparent | none | 0 |
 | [Mega-menu flyout](#mega-menu-flyout) | 155.72 x 202 | - | - | transparent | none | 0 |
-| [Cart drawer](#cart-drawer) | 531 x 900 | - | 4px | #e0dacf `natural-white.DEFAULT` | none | 0 |
+| [Cart drawer](#cart-drawer) | 531 x 900 | - | - | #ffffff `white` | rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px | 0 |
 | [Filter sheet](#filter-sheet) | 1280 x 628 | - | 20px | #ffffff `white` | rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px | 68px 24px 24px 24px |
 | [Mobile header](#mobile-header) | 390 x 46 | - | - | #212121 `ink.DEFAULT` | none | 0 |
-| [Mobile menu drawer](#mobile-menu-drawer) | 390 x 798 | - | 4px | #ffffff `white` | none | 0 |
+| [Mobile menu drawer](#mobile-menu-drawer) | 390 x 798 | - | - | #ece9e2 `natural-white.60` (on `span.bg-natural-white-60.fixed`) | none | 0 |
 | [Product card](#product-card) | 280.5 x 65 | - | - | transparent | none | 0 |
 | [Upsell card](#upsell-card) | 338 x 116 | 1px solid oklch(0.928 0.006 264.531) | 10px | #ffffff `white` | none | 10px |
 | [Tooltip pill](#tooltip-pill) | 273.73 x 40 | - | 3.35544e+07px | #242424 | rgba(0, 0, 0, 0.12) 0px 2px 20px 0px | 10px 12px |
-| [Shop with AI chip](#shop-with-ai-chip) | 199.73 x 64 | - | 3.35544e+07px | #ffffff `white` | none | 0 |
-| [Size button](#size-button) | 62.17 x 42 | 1px solid #cdcdcd `stroke` | 2px | - | none | 12px 0px |
-| [Swatch](#swatch) | 36 x 36 | 3px solid #ffffff `white` | 3.35544e+07px | - | transparent 0px 0px 0px 0px, rgba(87, 87, 87, 0.7) 0px 0px 0px 1px inset, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #212121 0px 0px 0px 1px | 0 |
+| [Shop with AI chip](#shop-with-ai-chip) | 199.73 x 64 | 2px solid oklab(0.260318 0.0000118539 0.00000520051 / 0.2) | 3.35544e+07px | transparent | rgba(0, 0, 0, 0.25) 0px 2px 20px 0px, rgba(0, 0, 0, 0.25) 0px 0px 1px 0px | 0 |
+| [Size button](#size-button) | 62.17 x 42 | 1px solid #cdcdcd `stroke` | 2px | transparent | none | 12px 0px |
+| [Swatch](#swatch) | 36 x 36 | 3px solid #ffffff `white` | 3.35544e+07px | - (on `span.inset-ring-light-charcoal-0.7.pointer-events-none`) | transparent 0px 0px 0px 0px, rgba(87, 87, 87, 0.7) 0px 0px 0px 1px inset, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #212121 0px 0px 0px 1px | 0 |
 
 ## Components
 

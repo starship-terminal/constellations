@@ -36,6 +36,18 @@ Who may POST:
   X-Designs-Redeploy header that a cross-site form or simple fetch cannot
   send without a CORS preflight, which this server never grants.
 
+The trust boundary is therefore network reach, not the token. Because nginx
+adds the token to every request it proxies, the token only keeps out a
+client that reaches the trigger's port directly; any non-browser client that
+can reach the site through nginx (it sends no Sec-Fetch-Site and can set
+X-Designs-Redeploy itself) can queue a redeploy. That is accepted because the
+site is meant to be reachable only from the owner's private network, and the
+worst it can do is pull and rebuild the current branch once per
+DEPLOY_TRIGGER_COOLDOWN. A site reachable from anywhere wider needs an auth
+layer in nginx in front of /api/redeploy. Refusals and failures answer with
+fixed text; the systemd-run output goes to this service's log, never to the
+client.
+
 Environment overrides: DESIGNS_REPO (working clone), DESIGNS_DEPLOY
 (deploy.sh), DESIGNS_STATE (built-sha file), DESIGNS_TRIGGER_PORT
 (default 8189), DEPLOY_TRIGGER_HOST (default 127.0.0.1),
@@ -54,7 +66,7 @@ import time
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
-REPO = os.environ.get("DESIGNS_REPO", os.path.expanduser("~/dev/design-systems"))
+REPO = os.environ.get("DESIGNS_REPO", os.path.expanduser("~/dev/constellations"))
 DEPLOY = os.environ.get("DESIGNS_DEPLOY",
                         os.path.expanduser("~/services/design-systems/bin/deploy.sh"))
 STATE = os.environ.get("DESIGNS_STATE",
@@ -112,14 +124,19 @@ def _run() -> tuple[int, dict]:
     try:
         p = subprocess.run(command(), capture_output=True, text=True, timeout=30)
     except OSError as ex:
-        return 500, {"error": f"systemd-run unavailable: {ex}"}
+        print(f"[trigger] systemd-run unavailable: {ex}", flush=True)
+        return 500, {"error": "systemd-run unavailable on the host"}
     except subprocess.TimeoutExpired:
         return 500, {"error": "systemd-run timed out"}
     if p.returncode == 0:
         return 202, {"queued": "redeploy", "unit": UNIT}
+    # The output names unit files, paths and the user's session; it stays in
+    # this service's log.
     detail = (p.stderr or p.stdout).strip()
-    busy = "already" in detail.lower() or "exists" in detail.lower()
-    return (409 if busy else 500), {"error": detail or "systemd-run failed"}
+    print(f"[trigger] systemd-run exited {p.returncode}: {detail}", flush=True)
+    if "already" in detail.lower() or "exists" in detail.lower():
+        return 409, {"error": "a redeploy is already running"}
+    return 500, {"error": "systemd-run failed; see the trigger's log on the host"}
 
 
 def info() -> dict:

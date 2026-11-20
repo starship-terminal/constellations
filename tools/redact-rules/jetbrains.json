@@ -1,0 +1,10 @@
+{
+  "_note": "Rules for systems/jetbrains. Public signed-out capture of jetbrains.com plus the empty signup email field. Continue after that email hit reCAPTCHA and the signed-in account was not reached. The privacy policy publishes privacy@jetbrains.com; that is product-published contact copy and is kept.",
+  "families": [],
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@jetbrains\\.com$"
+    ]
+  }
+}

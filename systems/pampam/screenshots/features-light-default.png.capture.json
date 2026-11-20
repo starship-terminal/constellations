@@ -1,0 +1,22 @@
+{
+  "capturedAt": "2026-11-19T01:40:00Z",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "sanitizedSourceUrl": "https://www.pampam.city/features",
+  "note": "Headless Chromium after the T3 preview browser returned 'The browser is not producing screenshot frames'. Same public URL, no Cloudflare challenge."
+}

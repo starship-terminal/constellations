@@ -1,0 +1,42 @@
+{
+  "href": "https://auth.uber.com/v2/",
+  "title": "Sign up or Log in with Uber",
+  "entered": "nothing. No phone, email, card, or continue click.",
+  "viewport": {
+    "iw": 1169,
+    "ih": 731,
+    "dpr": 2
+  },
+  "heading": {
+    "text": "What's your phone number or email?",
+    "font": "-apple-system",
+    "size": "24px",
+    "weight": "400",
+    "color": "rgb(0, 0, 0)"
+  },
+  "field": {
+    "bg": "rgb(246, 246, 246)",
+    "radius": "8px",
+    "height": 48,
+    "borderFocus": "2px rgb(0, 0, 0)",
+    "placeholder": "Enter phone number or email"
+  },
+  "continue": {
+    "bg": "rgba(224, 224, 224, 0.6)",
+    "color": "rgb(252, 252, 252)",
+    "radius": "8px",
+    "height": 48,
+    "pad": "14px 16px",
+    "note": "empty-field disabled fill, matches --base-background-disabled"
+  },
+  "social": {
+    "bg": "rgba(224, 224, 224, 0.6)",
+    "color": "rgb(0, 0, 0)",
+    "labels": [
+      "Continue with Google",
+      "Continue with Apple"
+    ]
+  },
+  "consent": "You consent to receive a verification code by text or Whatsapp. Message and data rates may apply.",
+  "gap": "Signup and login stop at a phone-or-email wall. Not entered."
+}

@@ -13,7 +13,7 @@ Placeholders in the template:
 
 Deterministic: same inputs, byte-identical output. Adapted from the Manus kit's builder.
 """
-import json, pathlib, re
+import json, os, pathlib, re
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 T = json.loads((HERE / "tokens.json").read_text())
@@ -39,6 +39,8 @@ def alias(v):
 
 def css_val(name, t):
     v, ty = t["$value"], t["$type"]
+    if ty in ("transition", "animation"):
+        return None   # composites with no single CSS value; the Motion section reads them from the token tree
     if ty == "cubicBezier":
         return "cubic-bezier(%s)" % ", ".join(str(x) for x in v)
     if ty == "shadow":
@@ -58,11 +60,17 @@ SETS = [s for s in ("core", "light", "dark") if s in T]
 THEMES = [s for s in SETS if s != "core"]
 
 
+# Only "</style" ends a <style> element early (an svg data URI's "<svg" or "</svg>" does not), so that
+# one sequence is written "<\/style": a CSS escape that reads back as the same "/" in a string or url().
+END_STYLE = re.compile(r"</(style)", re.I)
+ESCAPED = r"<\\/\1"
+
+
 def block(setname):
     """A set's custom properties; a set the product lacks renders as nothing."""
     if setname not in T:
         return ""
-    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]))
+    return "\n".join(f"  {cssname(n)}: {END_STYLE.sub(ESCAPED, css_val(n, t))};" for n, t in flat(T[setname]) if css_val(n, t) is not None)
 
 
 # a core name and a themed name must not land on the same custom property
@@ -115,6 +123,14 @@ def icon(m):
 
 
 tpl = (HERE / "tools" / "style-guide.template.html").read_text()
+# A template's ADAPTED_FOR line names the product it was adapted for. The kit's says none: it is
+# Claude's example, and a guide rendered from it would carry Claude's title and components. The line
+# itself never reaches style-guide.html. A template with no such line renders as before.
+adapted = re.search(r"^<!-- ADAPTED_FOR: ([^|]*?) *(?:\|.*)?-->\n", tpl, re.M)
+if adapted and adapted.group(1).strip().lower() in ("", "none") and not os.environ.get("KIT_EXAMPLE"):
+    raise SystemExit("style-guide.template.html is the kit's Claude example, not adapted: rewrite the parts marked PRODUCT (adapt), then name the product on its ADAPTED_FOR line")
+if adapted:
+    tpl = tpl[:adapted.start()] + tpl[adapted.end():]
 html = (tpl.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light")).replace("/*DARK*/", block("dark"))
         .replace("/*TOKENS*/null", data))
 html = re.sub(r"<!--icon:([a-z0-9-]+)(?::(\d+))?-->", icon, html)

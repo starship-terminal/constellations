@@ -1,0 +1,4711 @@
+{
+ "readAt": "2026-11-13",
+ "source": "the stylesheet bodies read during live loads of the home and a product page on drinkdouze.com (theme.css, douze-custom.css and the cross-origin checkout-button sheet from network responses plus the inline <style> blocks — the :root token block and the per-section scopes — re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets at :root at 1440 x 900; the site paints light only",
+ "sheets": [
+  "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css (353008 bytes)",
+  "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css (67103 bytes)",
+  "https://drinkdouze.com/cdn/shopifycloud/portable-wallets/latest/accelerated-checkout-backwards-compat.css (13728 bytes)",
+  "https://drinkdouze.com/cdn/shop/t/5/compiled_assets/styles.css (42505 bytes)",
+  "https://checkout-button-shopify.vercel.app/styles.css (0 bytes)",
+  "https://instafeed.nfcube.com/cdn/instafeed-20.0.0.css (50276 bytes)",
+  "https://static.klaviyo.com/onsite/js/4014.ccae962fcaa72.css (84274 bytes)",
+  "inline--0 (67 bytes)",
+  "inline--1 (6630 bytes)",
+  "inline--2 (421 bytes)",
+  "inline--3 (179 bytes)",
+  "inline--4 (0 bytes)",
+  "inline--5 (0 bytes)",
+  "inline--6 (15673 bytes)",
+  "inline--7 (2024 bytes)",
+  "inline--8 (1144 bytes)",
+  "inline--9 (2516 bytes)",
+  "inline--10 (4326 bytes)",
+  "inline--11 (610 bytes)",
+  "inline--12 (93 bytes)",
+  "inline--13 (1700 bytes)",
+  "inline--14 (405 bytes)",
+  "inline--15 (535 bytes)",
+  "inline--16 (340 bytes)",
+  "inline--17 (1205 bytes)",
+  "inline--18 (1215 bytes)",
+  "inline--19 (1215 bytes)",
+  "inline--20 (1215 bytes)",
+  "inline--21 (796 bytes)",
+  "inline--22 (323 bytes)",
+  "inline--23 (559 bytes)",
+  "inline--24 (522 bytes)",
+  "inline--25 (323 bytes)",
+  "inline--26 (557 bytes)",
+  "inline--27 (254 bytes)",
+  "inline--28 (525 bytes)",
+  "inline--29 (317 bytes)",
+  "inline--30 (796 bytes)",
+  "inline--31 (276 bytes)",
+  "inline--32 (323 bytes)",
+  "inline--33 (557 bytes)",
+  "inline--34 (323 bytes)",
+  "inline--35 (557 bytes)",
+  "inline--36 (95 bytes)",
+  "inline--37 (1044 bytes)",
+  "inline--38 (180 bytes)",
+  "inline--39 (0 bytes)",
+  "inline-productsorange-sanguine-piment-0 (67 bytes)",
+  "inline-productsorange-sanguine-piment-1 (6630 bytes)",
+  "inline-productsorange-sanguine-piment-2 (421 bytes)",
+  "inline-productsorange-sanguine-piment-3 (179 bytes)",
+  "inline-productsorange-sanguine-piment-4 (0 bytes)",
+  "inline-productsorange-sanguine-piment-5 (0 bytes)",
+  "inline-productsorange-sanguine-piment-6 (15673 bytes)",
+  "inline-productsorange-sanguine-piment-7 (2024 bytes)",
+  "inline-productsorange-sanguine-piment-8 (1144 bytes)",
+  "inline-productsorange-sanguine-piment-9 (2516 bytes)",
+  "inline-productsorange-sanguine-piment-10 (339 bytes)",
+  "inline-productsorange-sanguine-piment-11 (37465 bytes)",
+  "inline-productsorange-sanguine-piment-12 (153 bytes)",
+  "inline-productsorange-sanguine-piment-13 (144 bytes)",
+  "inline-productsorange-sanguine-piment-14 (80 bytes)",
+  "inline-productsorange-sanguine-piment-15 (132 bytes)",
+  "inline-productsorange-sanguine-piment-16 (283 bytes)",
+  "inline-productsorange-sanguine-piment-17 (113 bytes)",
+  "inline-productsorange-sanguine-piment-18 (88 bytes)",
+  "inline-productsorange-sanguine-piment-19 (70 bytes)",
+  "inline-productsorange-sanguine-piment-20 (303 bytes)",
+  "inline-productsorange-sanguine-piment-21 (0 bytes)",
+  "inline-productsorange-sanguine-piment-22 (870 bytes)",
+  "inline-productsorange-sanguine-piment-23 (4326 bytes)",
+  "inline-productsorange-sanguine-piment-24 (5267 bytes)",
+  "inline-productsorange-sanguine-piment-25 (610 bytes)",
+  "inline-productsorange-sanguine-piment-26 (93 bytes)",
+  "inline-productsorange-sanguine-piment-27 (1268 bytes)",
+  "inline-productsorange-sanguine-piment-28 (389 bytes)",
+  "inline-productsorange-sanguine-piment-29 (566 bytes)",
+  "inline-productsorange-sanguine-piment-30 (336 bytes)",
+  "inline-productsorange-sanguine-piment-31 (150 bytes)",
+  "inline-productsorange-sanguine-piment-32 (323 bytes)",
+  "inline-productsorange-sanguine-piment-33 (557 bytes)",
+  "inline-productsorange-sanguine-piment-34 (323 bytes)",
+  "inline-productsorange-sanguine-piment-35 (557 bytes)",
+  "inline-productsorange-sanguine-piment-36 (98 bytes)",
+  "inline-productsorange-sanguine-piment-37 (796 bytes)",
+  "inline-productsorange-sanguine-piment-38 (720 bytes)",
+  "inline-productsorange-sanguine-piment-39 (1215 bytes)",
+  "inline-productsorange-sanguine-piment-40 (1215 bytes)",
+  "inline-productsorange-sanguine-piment-41 (535 bytes)",
+  "inline-productsorange-sanguine-piment-42 (722 bytes)",
+  "inline-productsorange-sanguine-piment-43 (333 bytes)",
+  "inline-productsorange-sanguine-piment-44 (95 bytes)",
+  "inline-productsorange-sanguine-piment-45 (1923 bytes)",
+  "inline-productsorange-sanguine-piment-46 (95 bytes)",
+  "inline-productsorange-sanguine-piment-47 (215 bytes)",
+  "inline-productsorange-sanguine-piment-48 (180 bytes)",
+  "inline-productsorange-sanguine-piment-49 (0 bytes)"
+ ],
+ "counts": {
+  "rules": 238,
+  "fonts": 42,
+  "names": {
+   "theme": 35,
+   "app": 155,
+   "skins": 0,
+   "vendor": 111,
+   "utility": 0,
+   "tailwind": 10
+  },
+  "bySelector": {
+   "[app] .table, .rte table": 1,
+   "[app] .table--loose": 1,
+   "[app] @media screen and (min-width: 1000px) .table": 1,
+   "[app] @media screen and (min-width: 1000px) .table--loose": 1,
+   "[app] .container, .shopify-policy__container.shopify-policy__container": 1,
+   "[theme] .anchor.vertical-breather:not(.vertical-breather--margin)": 1,
+   "[theme] .anchor.vertical-breather--margin": 1,
+   "[theme] .anchor.vertical-breather--tight.vertical-breather--margin": 1,
+   "[theme] .banner--success": 1,
+   "[theme] .banner--error": 1,
+   "[app] .quantity-selector": 1,
+   "[app] .quantity-selector--small": 1,
+   "[app] .cart-notification": 3,
+   "[app] .cart-notification--error": 1,
+   "[app] .cart-notification--drawer": 1,
+   "[theme] @media screen and (max-width: 740px) .combo-box": 3,
+   "[theme] .button--primary, .shopify-challenge__button, #shopify-product-reviews .spr-summary-actions-newreview, #shopify-product-reviews .spr-button": 2,
+   "[theme] .button--secondary": 4,
+   "[theme] .button--ternary": 2,
+   "[theme] .button--outline": 2,
+   "[theme] .shopify-payment-button__button--unbranded": 2,
+   "[theme] @media screen and (pointer: fine) @supports (color: color-contrast(wheat vs black, white)) and (color: rgb(from wheat r g b / 0.07)) .button, .shopify-challenge__button, #shopify-product-reviews .spr-summary-actions-newreview, #shopify-product-reviews .spr-button, .shopify-payment-button__button": 1,
+   "[app] .drawer": 6,
+   "[app] .popover": 6,
+   "[theme] .modal": 3,
+   "[app] @media (min-aspect-ratio: 16 / 9) .video-wrapper--cover iframe": 1,
+   "[app] @media (max-aspect-ratio: 16 / 9) .video-wrapper--cover iframe": 1,
+   "[app] .article-list": 2,
+   "[app] @media screen and (min-width: 1000px) .article-list": 2,
+   "[app] .product-facet__main .promotion-block-list": 1,
+   "[app] @media screen and (max-width: 740px) .product-facet__main .promotion-block-list": 1,
+   "[theme] .faq__category": 1,
+   "[app] .gallery": 1,
+   "[app] @media screen and (min-width: 1000px) .gallery": 1,
+   "[app] @media screen and (min-width: 1200px) .gallery": 1,
+   "[app] @media screen and (min-width: 1400px) .gallery": 1,
+   "[app] .mega-menu": 2,
+   "[app] @media screen and (min-width: 1200px) .mega-menu": 1,
+   "[app] @media screen and (min-width: 1400px) .mega-menu": 2,
+   "[app] .image-with-text": 1,
+   "[app] .image-with-text--overlap-text::before": 2,
+   "[app] .image-overlay": 1,
+   "[app] .image-overlay--small": 1,
+   "[app] .image-overlay--medium": 1,
+   "[app] .image-overlay--large": 1,
+   "[app] .image-hero--video .image-overlay": 1,
+   "[app] @media screen and (min-width: 741px) .image-overlay--small": 1,
+   "[app] @media screen and (min-width: 741px) .image-overlay--medium": 1,
+   "[app] @media screen and (min-width: 741px) .image-overlay--large": 1,
+   "[app] @media screen and (min-width: 1500px) .image-overlay--small": 1,
+   "[app] .image-overlay--fit": 1,
+   "[app] @supports (min-height: 100svh) .image-overlay--fit": 1,
+   "[theme] .list-collections__item": 2,
+   "[app] @media screen and (min-width: 741px) .list-collections--collage": 1,
+   "[app] @media screen and (min-width: 1000px) .list-collections--collage": 1,
+   "[app] @media screen and (min-width: 1200px) .list-collections--collage": 1,
+   "[app] @media screen and (min-width: 1400px) .list-collections--collage": 1,
+   "[app] .logo-list__list": 2,
+   "[app] @media screen and (min-width: 741px) .logo-list__list": 2,
+   "[app] @media screen and (min-width: 1000px) .logo-list__list": 2,
+   "[app] .multi-column": 4,
+   "[app] .multi-column--spacing-tight": 1,
+   "[app] .multi-column--spacing-loose": 1,
+   "[app] .multi-column--pocket-medium, .multi-column--pocket-large": 1,
+   "[app] @media screen and (min-width: 741px) and (max-width: 999px) .multi-column--pocket-small": 1,
+   "[app] @media screen and (min-width: 741px) and (max-width: 999px) .multi-column--pocket-medium": 1,
+   "[app] @media screen and (min-width: 741px) and (max-width: 999px) .multi-column--pocket-large": 1,
+   "[app] @media screen and (min-width: 741px) .multi-column--spacing-normal": 1,
+   "[app] @media screen and (min-width: 741px) .multi-column--spacing-loose": 2,
+   "[app] @media screen and (min-width: 1000px) .multi-column--spacing-normal": 1,
+   "[app] @media screen and (min-width: 1000px) .multi-column--spacing-tight": 1,
+   "[app] @media screen and (min-width: 1000px) .multi-column--spacing-loose": 1,
+   "[app] @media screen and (min-width: 1000px) .multi-column--pico": 1,
+   "[app] @media screen and (min-width: 1000px) .multi-column--small": 1,
+   "[app] @media screen and (min-width: 1000px) .multi-column--medium": 1,
+   "[app] @media screen and (min-width: 1000px) .multi-column--large": 1,
+   "[app] @media screen and (min-width: 1200px) .multi-column--pico": 1,
+   "[app] @media screen and (min-width: 1200px) .multi-column--small": 1,
+   "[app] @media screen and (min-width: 1200px) .multi-column--medium": 1,
+   "[theme] @media screen and (min-width: 1000px) .product__media": 1,
+   "[theme] @media screen and (min-width: 1000px) .product__info": 1,
+   "[theme] @media screen and (min-width: 1000px) .shopify-section--featured-product .product__media": 1,
+   "[theme] @media screen and (min-width: 1000px) .shopify-section--featured-product .product__info": 1,
+   "[theme] @media screen and (min-width: 1200px) .product__media": 1,
+   "[theme] @media screen and (min-width: 1200px) .product__info": 1,
+   "[theme] @media screen and (min-width: 1200px) .shopify-section--featured-product .product__media": 1,
+   "[theme] @media screen and (min-width: 1200px) .shopify-section--featured-product .product__info": 1,
+   "[theme] @media screen and (min-width: 1400px) .product__media": 1,
+   "[theme] @media screen and (min-width: 1400px) .product__info": 1,
+   "[theme] @media screen and (min-width: 1400px) .product--thumbnails-bottom .product__media": 1,
+   "[theme] @media screen and (min-width: 1400px) .product--thumbnails-bottom .product__info": 1,
+   "[theme] @media screen and (min-width: 1400px) .shopify-section--featured-product .product__media, .shopify-section--featured-product .product--thumbnails-bottom .product__media": 1,
+   "[theme] @media screen and (min-width: 1400px) .shopify-section--featured-product .product__info, .shopify-section--featured-product .product--thumbnails-bottom .product__info": 1,
+   "[app] @media screen and (min-width: 1000px) .product__thumbnail-scroll-shadow": 5,
+   "[theme] @media screen and (max-width: 740px) .product-tabs__tab-item-wrapper": 1,
+   "[theme] .product-list": 1,
+   "[theme] @media screen and (max-width: 740px) .product-list": 1,
+   "[app] @media screen and (min-width: 1000px) .product-list": 1,
+   "[app] @media screen and (min-width: 1000px) @supports (width: max(1px, 2px)) .product-list": 1,
+   "[app] .promotion-block-list": 1,
+   "[app] .promotion-block": 2,
+   "[app] .promotion-block--medium": 1,
+   "[app] .promotion-block--large": 1,
+   "[app] .shopify-section--promotion-blocks .promotion-block--large": 1,
+   "[app] .promotion-block .video-wrapper": 1,
+   "[app] @media screen and (min-width: 1200px) .promotion-block": 2,
+   "[app] @media screen and (min-width: 1200px) .promotion-block--compact": 1,
+   "[app] @media screen and (min-width: 1200px) .promotion-block--medium": 1,
+   "[app] @media screen and (min-width: 1200px) .promotion-block--large": 1,
+   "[app] @media screen and (min-width: 1200px) .shopify-section--promotion-blocks .promotion-block--large": 1,
+   "[app] .main-search__form": 1,
+   "[app] @media screen and (min-width: 741px) .main-search__form": 1,
+   "[app] .slideshow": 1,
+   "[app] .slideshow--small": 1,
+   "[app] .slideshow--medium": 1,
+   "[app] .slideshow--large": 1,
+   "[app] .slideshow--fit": 1,
+   "[app] @supports (min-height: 100svh) .slideshow--fit": 1,
+   "[app] @media screen and (min-width: 741px) .slideshow--small": 1,
+   "[app] @media screen and (min-width: 741px) .slideshow--medium": 1,
+   "[app] @media screen and (min-width: 741px) .slideshow--large": 1,
+   "[app] @media screen and (min-width: 1000px) .slideshow--small": 1,
+   "[app] @media screen and (min-width: 1000px) .slideshow--medium": 1,
+   "[app] @media screen and (min-width: 1000px) .slideshow--large": 1,
+   "[app] @media screen and (min-width: 1200px) .slideshow--small": 1,
+   "[app] @media screen and (min-width: 1200px) .slideshow--medium": 1,
+   "[app] @media screen and (min-width: 1200px) .slideshow--large": 1,
+   "[app] @media screen and (max-width: 999px) .timeline": 2,
+   "[app] @media screen and (min-width: 741px) and (max-width: 999px) .timeline": 2,
+   "[app] .video-section--full .video-wrapper": 1,
+   "[app] .video-section--full.video-section--small": 1,
+   "[app] .video-section--full.video-section--medium": 1,
+   "[app] .video-section--full.video-section--large": 1,
+   "[app] @media screen and (min-width: 741px) and (max-width: 999px) .video-section--full.video-section--small": 1,
+   "[app] @media screen and (min-width: 741px) and (max-width: 999px) .video-section--full.video-section--medium": 1,
+   "[app] @media screen and (min-width: 741px) and (max-width: 999px) .video-section--full.video-section--large": 1,
+   "[app] @media screen and (min-width: 1000px) and (max-width: 1199px) .video-section--full.video-section--small": 1,
+   "[app] @media screen and (min-width: 1000px) and (max-width: 1199px) .video-section--full.video-section--medium": 1,
+   "[app] @media screen and (min-width: 1000px) and (max-width: 1199px) .video-section--full.video-section--large": 1,
+   "[app] @media screen and (min-width: 1200px) .video-section--full.video-section--small": 1,
+   "[app] @media screen and (min-width: 1200px) .video-section--full.video-section--medium": 1,
+   "[app] @media screen and (min-width: 1200px) .video-section--full.video-section--large": 1,
+   "[theme] :root": 21,
+   "[app] @media not (min-width: 500px) :root": 1,
+   "[app] .image-overlay--90\\%": 1,
+   "[app] @media not (min-width: 741px) .image-overlay-mobile--small": 1,
+   "[app] @media not (min-width: 741px) .image-overlay-mobile--medium": 1,
+   "[app] @media not (min-width: 741px) .image-overlay-mobile--large": 1,
+   "[app] @media not (min-width: 741px) .image-overlay-mobile--fit": 1,
+   "[app] @media not (min-width: 741px) @supports (min-height: 100svh) .image-overlay-mobile--fit": 1,
+   "[app] @media not (min-width: 741px) .image-overlay-mobile--50vh": 1,
+   "[app] @media not (min-width: 741px) .image-overlay-mobile--70vh": 1,
+   "[app] @media not (min-width: 741px) .image-overlay-mobile--90vh": 1,
+   "[app] @media not (min-width: 741px) @supports (min-height: 100svh) .image-overlay-mobile--50vh": 1,
+   "[app] @media not (min-width: 741px) @supports (min-height: 100svh) .image-overlay-mobile--70vh": 1,
+   "[app] @media not (min-width: 741px) @supports (min-height: 100svh) .image-overlay-mobile--90vh": 1,
+   "[vendor] #appstleSubscriptionCustomerPortal": 4,
+   "[tailwind] #appstleSubscriptionCustomerPortal [class*=\"as-ring-indigo\"]:focus, #appstleSubscriptionCustomerPortal [class*=\"as-ring-indigo\"]:focus-visible": 1,
+   "[app] #shopify-pc__banner #shopify-pc__banner__btn-accept, #shopify-pc__banner #shopify-pc__banner__btn-decline": 1,
+   "[app] #shopify-pc__banner #shopify-pc__banner__btn-decline": 1,
+   "[app] #shopify-pc__prefs__header-accept, #shopify-pc__prefs__header-decline, #shopify-pc__prefs__header-save": 1,
+   "[app] #shopify-pc__prefs__header-decline": 1,
+   "[app] #shopify-pc__prefs__header-save": 1,
+   "[app] :root": 185,
+   "[app] .instafeed-free-gift-progress": 5,
+   "[vendor] :root": 99,
+   "[tailwind] .kl_review_incentive_tooltip": 9,
+   "[tailwind] .kl_reviews__review_item.kl_reviews__review_item.kl_reviews__review_item .kl_reviews__review__edited .kl_reviews__review__edited__tooltip": 9,
+   "[app] @media screen and (min-width: 741px) :root": 36,
+   "[app] @media screen and (min-width: 1200px) :root": 20,
+   "[app] @media screen and (min-width: 1600px) :root": 4,
+   "[vendor] .oke-w, oke-modal": 12,
+   "[app] #shopify-section-sections--25477839454594__announcement-bar": 10,
+   "[app] #shopify-section-sections--25477839454594__header": 8,
+   "[app] .js #shopify-section-sections--25477839454594__header .header--transparent": 4,
+   "[app] #shopify-section-template--25477840863618__d055af7b-a03b-4055-9779-22dc10b9ca35": 6,
+   "[app] #shopify-section-template--25477840863618__slideshow_z4emUe": 3,
+   "[app] #block-template--25477840863618__slideshow_z4emUe-image_t98Pzb": 7,
+   "[app] #shopify-section-template--25477840863618__de5130c4-d6ad-413f-bd71-bbba3fc65f3c": 8,
+   "[app] @media screen and (min-width: 741px) #shopify-section-template--25477840863618__de5130c4-d6ad-413f-bd71-bbba3fc65f3c": 1,
+   "[app] @media screen and (min-width: 1200px) #shopify-section-template--25477840863618__de5130c4-d6ad-413f-bd71-bbba3fc65f3c": 1,
+   "[app] @media (width < 500px) #shopify-section-template--25477840863618__de5130c4-d6ad-413f-bd71-bbba3fc65f3c": 1,
+   "[app] #shopify-section-template--25477840863618__multi_column_PwtJiP": 5,
+   "[app] #shopify-section-template--25477840863618__image_with_text_HHXJq7": 7,
+   "[theme] #shopify-section-template--25477840863618__image_with_text_HHXJq7": 1,
+   "[app] #shopify-section-template--25477840863618__2d4489e7-fa56-4861-a7e5-385e14a64c72": 9,
+   "[app] #shopify-section-template--25477840863618__image_with_text_LeKaMg": 7,
+   "[theme] #shopify-section-template--25477840863618__image_with_text_LeKaMg": 1,
+   "[app] #shopify-section-template--25477840863618__testimonials_2_c98LVN": 1,
+   "[app] #shopify-section-template--25477840863618__slideshow_QbC4zf": 3,
+   "[app] #block-template--25477840863618__slideshow_QbC4zf-image_d3WVWJ": 7,
+   "[app] #shopify-section-template--25477840863618__multi_column_Qadyzw": 5,
+   "[app] #shopify-section-template--25477840863618__image_with_text_HTp78q": 7,
+   "[theme] #shopify-section-template--25477840863618__image_with_text_HTp78q": 1,
+   "[app] #shopify-section-template--25477840863618__image_with_text_zUQD8U": 7,
+   "[theme] #shopify-section-template--25477840863618__image_with_text_zUQD8U": 1,
+   "[theme] #shopify-section-sections--25477839356290__footer-new .footer": 8,
+   "[vendor] #appstle_subscription_widget0": 2,
+   "[vendor] #ui-datepicker-div": 2,
+   "[vendor] .as-cards .appstleSelectedSellingPlanOptionDescription": 1,
+   "[theme] .klaviyo-swiper-wrapper & :root": 1,
+   "[theme] .klaviyo-swiper-wrapper & .swiper-lazy-preloader-white": 1,
+   "[theme] .klaviyo-swiper-wrapper & .swiper-lazy-preloader-black": 1,
+   "[app] #shopify-section-template--25477840011650__main": 8,
+   "[vendor] @layer base :root": 47,
+   "[theme] #shopify-section-template--25477840011650__valeurs_nutri_fLhpkf .section": 1,
+   "[app] #shopify-section-template--25477840011650__image_with_text_JYgiFj": 7,
+   "[theme] #shopify-section-template--25477840011650__image_with_text_JYgiFj": 1,
+   "[app] #shopify-section-template--25477840011650__image_with_text_eYb3La": 7,
+   "[theme] #shopify-section-template--25477840011650__image_with_text_eYb3La": 1,
+   "[app] #shopify-section-template--25477840011650__multi_column_qdXKRb": 5,
+   "[app] #shopify-section-template--25477840011650__187dfdad-9753-46ff-872b-d62b8ba257b6": 6,
+   "[app] @media screen and (min-width: 741px) #shopify-section-template--25477840011650__187dfdad-9753-46ff-872b-d62b8ba257b6": 1,
+   "[app] @media screen and (min-width: 1200px) #shopify-section-template--25477840011650__187dfdad-9753-46ff-872b-d62b8ba257b6": 1,
+   "[app] #shopify-section-template--25477840011650__slideshow_t7r9gH": 3,
+   "[app] #block-template--25477840011650__slideshow_t7r9gH-image_9atcpt": 7,
+   "[app] #shopify-section-template--25477840011650__02cfc4b2-86ca-4122-88d6-da181275e797": 4
+  }
+ },
+ "errors": [],
+ "theme": [
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".anchor.vertical-breather:not(.vertical-breather--margin)",
+   "context": [],
+   "properties": {
+    "--anchor-offset": "0px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".anchor.vertical-breather--margin",
+   "context": [],
+   "properties": {
+    "--anchor-offset": "var(\n    --vertical-breather\n  )"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".anchor.vertical-breather--tight.vertical-breather--margin",
+   "context": [],
+   "properties": {
+    "--anchor-offset": "var(--vertical-breather-tight)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".banner--success",
+   "context": [],
+   "properties": {
+    "--text-color": "rgb(var(--success-color))"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".banner--error",
+   "context": [],
+   "properties": {
+    "--text-color": "rgb(var(--error-color))"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".combo-box",
+   "context": [
+    "@media screen and (max-width: 740px)"
+   ],
+   "properties": {
+    "--heading-color": "var(--root-heading-color)",
+    "--text-color": "var(--root-text-color)",
+    "--background": "var(--root-background)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".button--primary, .shopify-challenge__button, #shopify-product-reviews .spr-summary-actions-newreview, #shopify-product-reviews .spr-button",
+   "context": [],
+   "properties": {
+    "--button-background": "var(--primary-button-background)",
+    "--button-text-color": "var(--primary-button-text-color)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".button--secondary",
+   "context": [],
+   "properties": {
+    "--button-background": "var(--secondary-button-background)",
+    "--button-text-color": "var(--secondary-button-text-color)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".button--ternary",
+   "context": [],
+   "properties": {
+    "--button-background": "var(--secondary-background)",
+    "--button-text-color": "var(--root-text-color)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".button--outline",
+   "context": [],
+   "properties": {
+    "--button-background": "var(--background)",
+    "--button-text-color": "var(--root-text-color)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".shopify-payment-button__button--unbranded",
+   "context": [],
+   "properties": {
+    "--button-background": "var(--primary-button-background)",
+    "--button-text-color": "var(--primary-button-text-color)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".button, .shopify-challenge__button, #shopify-product-reviews .spr-summary-actions-newreview, #shopify-product-reviews .spr-button, .shopify-payment-button__button",
+   "context": [
+    "@media screen and (pointer: fine)",
+    "@supports (color: color-contrast(wheat vs black, white)) and (color: rgb(from wheat r g b / 0.07))"
+   ],
+   "properties": {
+    "--button-overlay-color": "rgb(\n        from color-contrast(rgb(var(--button-background)) vs white, black) r g b /\n          7%\n      )"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".modal",
+   "context": [],
+   "properties": {
+    "--heading-color": "var(--root-heading-color)",
+    "--text-color": "var(--root-text-color)",
+    "--background": "var(--root-background)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".faq__category",
+   "context": [],
+   "properties": {
+    "--anchor-offset": "20px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".list-collections__item",
+   "context": [],
+   "properties": {
+    "--heading-color": "255, 255, 255",
+    "--text-color": "255, 255, 255"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".product__media",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--product-media-width": "calc(\n      var(--grid-column-width) * 10 + var(--grid-gap) * 10\n    )"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".product__info",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--product-info-width": "calc(\n      var(--grid-column-width) * 9 + var(--grid-gap) * 8\n    )"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".shopify-section--featured-product .product__media",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--product-media-width": "50%"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".shopify-section--featured-product .product__info",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--product-info-width": "50%"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".product__media",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--product-media-width": "calc(\n      var(--grid-column-width) * 9 + var(--grid-gap) * 9\n    )"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".product__info",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--product-info-width": "calc(\n      var(--grid-column-width) * 8 + var(--grid-gap) * 7\n    )"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".shopify-section--featured-product .product__media",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--product-media-width": "50%"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".shopify-section--featured-product .product__info",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--product-info-width": "50%"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".product__media",
+   "context": [
+    "@media screen and (min-width: 1400px)"
+   ],
+   "properties": {
+    "--product-media-width": "calc(\n      var(--grid-column-width) * 10 + var(--grid-gap) * 10\n    )"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".product__info",
+   "context": [
+    "@media screen and (min-width: 1400px)"
+   ],
+   "properties": {
+    "--product-info-width": "calc(\n      var(--grid-column-width) * 7 + var(--grid-gap) * 6\n    )"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".product--thumbnails-bottom .product__media",
+   "context": [
+    "@media screen and (min-width: 1400px)"
+   ],
+   "properties": {
+    "--product-media-width": "calc(\n      var(--grid-column-width) * 9 + var(--grid-gap) * 8\n    )"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".product--thumbnails-bottom .product__info",
+   "context": [
+    "@media screen and (min-width: 1400px)"
+   ],
+   "properties": {
+    "--product-info-width": "calc(\n      var(--grid-column-width) * 8 + var(--grid-gap) * 7\n    )"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".shopify-section--featured-product .product__media, .shopify-section--featured-product .product--thumbnails-bottom .product__media",
+   "context": [
+    "@media screen and (min-width: 1400px)"
+   ],
+   "properties": {
+    "--product-media-width": "50%"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".shopify-section--featured-product .product__info, .shopify-section--featured-product .product--thumbnails-bottom .product__info",
+   "context": [
+    "@media screen and (min-width: 1400px)"
+   ],
+   "properties": {
+    "--product-info-width": "50%"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".product-tabs__tab-item-wrapper",
+   "context": [
+    "@media screen and (max-width: 740px)"
+   ],
+   "properties": {
+    "--anchor-offset": "0px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".product-list",
+   "context": [],
+   "properties": {
+    "--product-list-column-gap": "var(--grid-gap)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".product-list",
+   "context": [
+    "@media screen and (max-width: 740px)"
+   ],
+   "properties": {
+    "--product-list-column-gap": "12px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--color-dusk": "#301816",
+    "--color-sable": "#f6f2e9"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--font-boogy": "var(--heading-font-family)",
+    "--font-boogy-italic": "var(--heading-font-family-italic)",
+    "--font-base": "var(--text-font-family)",
+    "--font-robin-regular": "var(--text-font-family)",
+    "--font-robin-semibold": "var(--text-font-family-semibold)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--text-xxs": "10px",
+    "--text-xs": "12px",
+    "--text-sm": "14px",
+    "--text-base": "16px",
+    "--text-lg": "18px",
+    "--text-xl": "20px",
+    "--text-2xl": "24px",
+    "--text-3xl": "30px",
+    "--text-4xl": "36px",
+    "--text-5xl": "48px",
+    "--text-6xl": "60px",
+    "--text-7xl": "72px",
+    "--text-8xl": "96px",
+    "--text-9xl": "128px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": ".button--secondary",
+   "context": [],
+   "properties": {
+    "--button-background": "transparent",
+    "--button-text-color": "var(--text-color)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "inline--23",
+   "selector": "#shopify-section-template--25477840863618__image_with_text_HHXJq7",
+   "context": [],
+   "properties": {
+    "--list-color": "#f6a965"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "inline--26",
+   "selector": "#shopify-section-template--25477840863618__image_with_text_LeKaMg",
+   "context": [],
+   "properties": {
+    "--list-color": "#f6a965"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "inline--33",
+   "selector": "#shopify-section-template--25477840863618__image_with_text_HTp78q",
+   "context": [],
+   "properties": {
+    "--list-color": "#f3eea7"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "inline--35",
+   "selector": "#shopify-section-template--25477840863618__image_with_text_zUQD8U",
+   "context": [],
+   "properties": {
+    "--list-color": "#f6a965"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "inline--38",
+   "selector": "#shopify-section-sections--25477839356290__footer-new .footer",
+   "context": [],
+   "properties": {
+    "--background": "246, 242, 233",
+    "--heading-color": "48, 24, 22",
+    "--text-color": "48, 24, 22",
+    "--border-color": "216, 209, 201"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-24",
+   "selector": "& :root",
+   "context": [
+    ".klaviyo-swiper-wrapper"
+   ],
+   "properties": {
+    "--swiper-theme-color": "#007aff"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-24",
+   "selector": "& .swiper-lazy-preloader-white",
+   "context": [
+    ".klaviyo-swiper-wrapper"
+   ],
+   "properties": {
+    "--swiper-preloader-color": "#fff"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-24",
+   "selector": "& .swiper-lazy-preloader-black",
+   "context": [
+    ".klaviyo-swiper-wrapper"
+   ],
+   "properties": {
+    "--swiper-preloader-color": "#000"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-31",
+   "selector": "#shopify-section-template--25477840011650__valeurs_nutri_fLhpkf .section",
+   "context": [],
+   "properties": {
+    "--list-color": "#f26554"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-33",
+   "selector": "#shopify-section-template--25477840011650__image_with_text_JYgiFj",
+   "context": [],
+   "properties": {
+    "--list-color": "#f6a965"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-35",
+   "selector": "#shopify-section-template--25477840011650__image_with_text_eYb3La",
+   "context": [],
+   "properties": {
+    "--list-color": "#f26554"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-48",
+   "selector": "#shopify-section-sections--25477839356290__footer-new .footer",
+   "context": [],
+   "properties": {
+    "--background": "246, 242, 233",
+    "--heading-color": "48, 24, 22",
+    "--text-color": "48, 24, 22",
+    "--border-color": "216, 209, 201"
+   },
+   "bin": "theme"
+  }
+ ],
+ "app": [
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".table, .rte table",
+   "context": [],
+   "properties": {
+    "--table-spacing": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".table--loose",
+   "context": [],
+   "properties": {
+    "--table-spacing": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".table",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--table-spacing": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".table--loose",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--table-spacing": "32px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".container, .shopify-policy__container.shopify-policy__container",
+   "context": [],
+   "properties": {
+    "--container-outer-margin": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".quantity-selector",
+   "context": [],
+   "properties": {
+    "--quantity-selector-height": "46px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".quantity-selector--small",
+   "context": [],
+   "properties": {
+    "--quantity-selector-height": "28px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".cart-notification",
+   "context": [],
+   "properties": {
+    "--heading-color": "255, 255, 255",
+    "--text-color": "255, 255, 255",
+    "--cart-notification-background": "rgb(var(--success-color))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".cart-notification--error",
+   "context": [],
+   "properties": {
+    "--cart-notification-background": "rgb(var(--error-color))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".cart-notification--drawer",
+   "context": [],
+   "properties": {
+    "--cart-notification-offset": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".drawer",
+   "context": [],
+   "properties": {
+    "--heading-color": "var(--root-heading-color)",
+    "--text-color": "var(--root-text-color)",
+    "--background": "var(--root-background)",
+    "--primary-button-background": "var(--root-primary-button-background)",
+    "--primary-button-text-color": "var(--root-primary-button-text-color)",
+    "--section-background": "initial"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".popover",
+   "context": [],
+   "properties": {
+    "--heading-color": "var(--root-heading-color)",
+    "--text-color": "var(--root-text-color)",
+    "--background": "var(--root-background)",
+    "--primary-button-background": "var(--root-primary-button-background)",
+    "--primary-button-text-color": "var(--root-primary-button-text-color)",
+    "--section-background": "var(--root-background)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".video-wrapper--cover iframe",
+   "context": [
+    "@media (min-aspect-ratio: 16 / 9)"
+   ],
+   "properties": {
+    "--video-height": "56.25vw"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".video-wrapper--cover iframe",
+   "context": [
+    "@media (max-aspect-ratio: 16 / 9)"
+   ],
+   "properties": {
+    "--video-width": "177.78vh"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".article-list",
+   "context": [],
+   "properties": {
+    "--article-list-row-gap": "40px",
+    "--article-list-column-gap": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".article-list",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--article-list-row-gap": "48px",
+    "--article-list-column-gap": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".product-facet__main .promotion-block-list",
+   "context": [],
+   "properties": {
+    "--promotion-block-gutter": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".product-facet__main .promotion-block-list",
+   "context": [
+    "@media screen and (max-width: 740px)"
+   ],
+   "properties": {
+    "--promotion-block-gutter": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".gallery",
+   "context": [],
+   "properties": {
+    "--gallery-image-height": "370px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".gallery",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--gallery-image-height": "40vw"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".gallery",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--gallery-image-height": "35vw"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".gallery",
+   "context": [
+    "@media screen and (min-width: 1400px)"
+   ],
+   "properties": {
+    "--gallery-image-height": "30vw"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".mega-menu",
+   "context": [],
+   "properties": {
+    "--mega-menu-column-gap": "48px",
+    "--mega-menu-image-gap": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".mega-menu",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--mega-menu-column-gap": "64px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".mega-menu",
+   "context": [
+    "@media screen and (min-width: 1400px)"
+   ],
+   "properties": {
+    "--mega-menu-column-gap": "80px",
+    "--mega-menu-image-gap": "40px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".image-with-text",
+   "context": [],
+   "properties": {
+    "--image-height": "min(\n    var(--image-max-height),\n    (100vw - var(--container-gutter) * 4) * (1 / var(--image-aspect-ratio))\n  )"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".image-with-text--overlap-text::before",
+   "context": [],
+   "properties": {
+    "--image-height-difference": "calc(100% - var(--image-height))",
+    "--image-height-difference-abs": "max(\n    var(--image-height-difference),\n    -1 * var(--image-height-difference)\n  )"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".image-overlay",
+   "context": [],
+   "properties": {
+    "--image-height": "auto"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".image-overlay--small",
+   "context": [],
+   "properties": {
+    "--image-height": "375px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".image-overlay--medium",
+   "context": [],
+   "properties": {
+    "--image-height": "500px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".image-overlay--large",
+   "context": [],
+   "properties": {
+    "--image-height": "600px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".image-hero--video .image-overlay",
+   "context": [],
+   "properties": {
+    "--image-height": "auto"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".image-overlay--small",
+   "context": [
+    "@media screen and (min-width: 741px)"
+   ],
+   "properties": {
+    "--image-height": "400px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".image-overlay--medium",
+   "context": [
+    "@media screen and (min-width: 741px)"
+   ],
+   "properties": {
+    "--image-height": "550px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".image-overlay--large",
+   "context": [
+    "@media screen and (min-width: 741px)"
+   ],
+   "properties": {
+    "--image-height": "700px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".image-overlay--small",
+   "context": [
+    "@media screen and (min-width: 1500px)"
+   ],
+   "properties": {
+    "--image-height": "500px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".image-overlay--fit",
+   "context": [],
+   "properties": {
+    "--image-height": "calc(\n    var(--window-height) - var(--header-height, 0px) *\n      (-1 * (var(--enable-transparent-header) - 1)) -\n      var(--announcement-bar-height, 0px)\n  )"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".image-overlay--fit",
+   "context": [
+    "@supports (min-height: 100svh)"
+   ],
+   "properties": {
+    "--image-height": "calc(\n      100svh - var(--header-height, 0px) *\n        (-1 * (var(--enable-transparent-header) - 1)) -\n        var(--announcement-bar-height, 0px)\n    )"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".list-collections--collage",
+   "context": [
+    "@media screen and (min-width: 741px)"
+   ],
+   "properties": {
+    "--list-collections-collage-rows-height": "220px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".list-collections--collage",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--list-collections-collage-rows-height": "250px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".list-collections--collage",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--list-collections-collage-rows-height": "300px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".list-collections--collage",
+   "context": [
+    "@media screen and (min-width: 1400px)"
+   ],
+   "properties": {
+    "--list-collections-collage-rows-height": "350px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".logo-list__list",
+   "context": [],
+   "properties": {
+    "--logos-per-row": "1",
+    "--logos-gap": "8px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".logo-list__list",
+   "context": [
+    "@media screen and (min-width: 741px)"
+   ],
+   "properties": {
+    "--logos-per-row": "2",
+    "--logos-gap": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".logo-list__list",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--logos-per-row": "5",
+    "--logos-gap": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".multi-column",
+   "context": [],
+   "properties": {
+    "--multi-column-row-gap": "32px",
+    "--multi-column-column-gap": "24px",
+    "--section-items-per-row": "2",
+    "--item-width": "calc(\n    var(--container-inner-width) / var(--section-items-per-row) -\n      (\n        var(--multi-column-column-gap) / var(--section-items-per-row) *\n          (var(--section-items-per-row) - 1)\n      )\n  )"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".multi-column--spacing-tight",
+   "context": [],
+   "properties": {
+    "--multi-column-column-gap": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".multi-column--spacing-loose",
+   "context": [],
+   "properties": {
+    "--multi-column-column-gap": "32px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".multi-column--pocket-medium, .multi-column--pocket-large",
+   "context": [],
+   "properties": {
+    "--section-items-per-row": "1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".multi-column--pocket-small",
+   "context": [
+    "@media screen and (min-width: 741px) and (max-width: 999px)"
+   ],
+   "properties": {
+    "--section-items-per-row": "5"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".multi-column--pocket-medium",
+   "context": [
+    "@media screen and (min-width: 741px) and (max-width: 999px)"
+   ],
+   "properties": {
+    "--section-items-per-row": "4"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".multi-column--pocket-large",
+   "context": [
+    "@media screen and (min-width: 741px) and (max-width: 999px)"
+   ],
+   "properties": {
+    "--section-items-per-row": "3"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".multi-column--spacing-normal",
+   "context": [
+    "@media screen and (min-width: 741px)"
+   ],
+   "properties": {
+    "--multi-column-row-gap": "40px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".multi-column--spacing-loose",
+   "context": [
+    "@media screen and (min-width: 741px)"
+   ],
+   "properties": {
+    "--multi-column-row-gap": "48px",
+    "--multi-column-column-gap": "32px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".multi-column--spacing-normal",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--multi-column-column-gap": "40px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".multi-column--spacing-tight",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--multi-column-column-gap": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".multi-column--spacing-loose",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--multi-column-column-gap": "60px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".multi-column--pico",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--section-items-per-row": "6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".multi-column--small",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--section-items-per-row": "5"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".multi-column--medium",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--section-items-per-row": "4"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".multi-column--large",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--section-items-per-row": "3"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".multi-column--pico",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--section-items-per-row": "8"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".multi-column--small",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--section-items-per-row": "7"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".multi-column--medium",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--section-items-per-row": "5"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".product__thumbnail-scroll-shadow",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--scroll-shadow-size": "65px",
+    "--scroll-shadow-right": "linear-gradient(\n      to left,\n      rgb(var(--background)),\n      rgba(var(--background), 0)\n    )",
+    "--scroll-shadow-left": "linear-gradient(\n      to right,\n      rgb(var(--background)),\n      rgba(var(--background), 0)\n    )",
+    "--scroll-shadow-bottom": "linear-gradient(\n      to top,\n      rgb(var(--background)),\n      rgba(var(--background), 0)\n    )",
+    "--scroll-shadow-top": "linear-gradient(\n      to bottom,\n      rgb(var(--background)),\n      rgba(var(--background), 0)\n    )"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".product-list",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--item-width": "calc(\n      (var(--container-max-width-minus-gutters) - 56px) /\n        var(--section-products-per-row) -\n        (\n          var(--grid-gap) / var(--section-products-per-row) *\n            (var(--section-products-per-row) - 1)\n        )\n    )"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".product-list",
+   "context": [
+    "@media screen and (min-width: 1000px)",
+    "@supports (width: max(1px, 2px))"
+   ],
+   "properties": {
+    "--item-width": "calc(\n        (\n            min(\n                100vw - var(--container-gutter) * 2,\n                var(--container-max-width-minus-gutters)\n              ) - 56px\n          ) / var(--section-products-per-row) -\n          (\n            var(--grid-gap) / var(--section-products-per-row) *\n              (var(--section-products-per-row) - 1)\n          )\n      )"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".promotion-block-list",
+   "context": [],
+   "properties": {
+    "--promotion-block-gutter": "var(--container-gutter)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".promotion-block",
+   "context": [],
+   "properties": {
+    "--promotion-block-padding": "32px",
+    "--promotion-block-min-height": "180px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".promotion-block--medium",
+   "context": [],
+   "properties": {
+    "--promotion-block-min-height": "210px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".promotion-block--large",
+   "context": [],
+   "properties": {
+    "--promotion-block-min-height": "370px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".shopify-section--promotion-blocks .promotion-block--large",
+   "context": [],
+   "properties": {
+    "--promotion-block-min-height": "300px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".promotion-block .video-wrapper",
+   "context": [],
+   "properties": {
+    "--video-height": "calc(\n    var(--promotion-block-min-height) + 60px\n  )"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".promotion-block",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--promotion-block-min-height": "250px",
+    "--promotion-block-padding": "65px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".promotion-block--compact",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--promotion-block-padding": "40px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".promotion-block--medium",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--promotion-block-min-height": "320px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".promotion-block--large",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--promotion-block-min-height": "370px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".shopify-section--promotion-blocks .promotion-block--large",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--promotion-block-min-height": "500px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".main-search__form",
+   "context": [],
+   "properties": {
+    "--form-input-field-height": "60px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".main-search__form",
+   "context": [
+    "@media screen and (min-width: 741px)"
+   ],
+   "properties": {
+    "--form-input-field-height": "80px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".slideshow",
+   "context": [],
+   "properties": {
+    "--slideshow-min-height": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".slideshow--small",
+   "context": [],
+   "properties": {
+    "--slideshow-min-height": "120vw"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".slideshow--medium",
+   "context": [],
+   "properties": {
+    "--slideshow-min-height": "133vw"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".slideshow--large",
+   "context": [],
+   "properties": {
+    "--slideshow-min-height": "160vw"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".slideshow--fit",
+   "context": [],
+   "properties": {
+    "--slideshow-min-height": "calc(\n    var(--window-height) - var(--header-height, 0px) *\n      (-1 * (var(--enable-transparent-header) - 1)) -\n      var(--announcement-bar-height, 0px)\n  )"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".slideshow--fit",
+   "context": [
+    "@supports (min-height: 100svh)"
+   ],
+   "properties": {
+    "--slideshow-min-height": "calc(\n      100svh - var(--header-height, 0px) *\n        (-1 * (var(--enable-transparent-header) - 1)) -\n        var(--announcement-bar-height, 0px)\n    )"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".slideshow--small",
+   "context": [
+    "@media screen and (min-width: 741px)"
+   ],
+   "properties": {
+    "--slideshow-min-height": "70vw"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".slideshow--medium",
+   "context": [
+    "@media screen and (min-width: 741px)"
+   ],
+   "properties": {
+    "--slideshow-min-height": "90vw"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".slideshow--large",
+   "context": [
+    "@media screen and (min-width: 741px)"
+   ],
+   "properties": {
+    "--slideshow-min-height": "105vw"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".slideshow--small",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--slideshow-min-height": "42vw"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".slideshow--medium",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--slideshow-min-height": "48vw"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".slideshow--large",
+   "context": [
+    "@media screen and (min-width: 1000px)"
+   ],
+   "properties": {
+    "--slideshow-min-height": "54vw"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".slideshow--small",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--slideshow-min-height": "38vw"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".slideshow--medium",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--slideshow-min-height": "40vw"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".slideshow--large",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--slideshow-min-height": "48vw"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".timeline",
+   "context": [
+    "@media screen and (max-width: 999px)"
+   ],
+   "properties": {
+    "--timeline-image-max-width": "70vw",
+    "--timeline-content-max-width": "79vw"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".timeline",
+   "context": [
+    "@media screen and (min-width: 741px) and (max-width: 999px)"
+   ],
+   "properties": {
+    "--timeline-image-max-width": "50vw",
+    "--timeline-content-max-width": "54vw"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".video-section--full .video-wrapper",
+   "context": [],
+   "properties": {
+    "--video-width": "100vw"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".video-section--full.video-section--small",
+   "context": [],
+   "properties": {
+    "--video-height": "250px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".video-section--full.video-section--medium",
+   "context": [],
+   "properties": {
+    "--video-height": "350px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".video-section--full.video-section--large",
+   "context": [],
+   "properties": {
+    "--video-height": "450px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".video-section--full.video-section--small",
+   "context": [
+    "@media screen and (min-width: 741px) and (max-width: 999px)"
+   ],
+   "properties": {
+    "--video-height": "300px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".video-section--full.video-section--medium",
+   "context": [
+    "@media screen and (min-width: 741px) and (max-width: 999px)"
+   ],
+   "properties": {
+    "--video-height": "375px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".video-section--full.video-section--large",
+   "context": [
+    "@media screen and (min-width: 741px) and (max-width: 999px)"
+   ],
+   "properties": {
+    "--video-height": "425px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".video-section--full.video-section--small",
+   "context": [
+    "@media screen and (min-width: 1000px) and (max-width: 1199px)"
+   ],
+   "properties": {
+    "--video-height": "400px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".video-section--full.video-section--medium",
+   "context": [
+    "@media screen and (min-width: 1000px) and (max-width: 1199px)"
+   ],
+   "properties": {
+    "--video-height": "500px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".video-section--full.video-section--large",
+   "context": [
+    "@media screen and (min-width: 1000px) and (max-width: 1199px)"
+   ],
+   "properties": {
+    "--video-height": "570px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".video-section--full.video-section--small",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--video-height": "600px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".video-section--full.video-section--medium",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--video-height": "700px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "selector": ".video-section--full.video-section--large",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--video-height": "800px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": ":root",
+   "context": [
+    "@media not (min-width: 500px)"
+   ],
+   "properties": {
+    "--boxed-sections-margin": "15px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": ".image-overlay--90\\%",
+   "context": [],
+   "properties": {
+    "--image-height": "90vh"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": ".image-overlay-mobile--small",
+   "context": [
+    "@media not (min-width: 741px)"
+   ],
+   "properties": {
+    "--image-height": "375px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": ".image-overlay-mobile--medium",
+   "context": [
+    "@media not (min-width: 741px)"
+   ],
+   "properties": {
+    "--image-height": "500px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": ".image-overlay-mobile--large",
+   "context": [
+    "@media not (min-width: 741px)"
+   ],
+   "properties": {
+    "--image-height": "600px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": ".image-overlay-mobile--fit",
+   "context": [
+    "@media not (min-width: 741px)"
+   ],
+   "properties": {
+    "--image-height": "calc( var(--window-height) - var(--header-height, 0px) * (-1 * (var(--enable-transparent-header) - 1)) - var(--announcement-bar-height, 0px) )"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": ".image-overlay-mobile--fit",
+   "context": [
+    "@media not (min-width: 741px)",
+    "@supports (min-height: 100svh)"
+   ],
+   "properties": {
+    "--image-height": "calc( 100svh - var(--header-height, 0px) * (-1 * (var(--enable-transparent-header) - 1)) - var(--announcement-bar-height, 0px) )"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": ".image-overlay-mobile--50vh",
+   "context": [
+    "@media not (min-width: 741px)"
+   ],
+   "properties": {
+    "--image-height": "50vh"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": ".image-overlay-mobile--70vh",
+   "context": [
+    "@media not (min-width: 741px)"
+   ],
+   "properties": {
+    "--image-height": "70vh"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": ".image-overlay-mobile--90vh",
+   "context": [
+    "@media not (min-width: 741px)"
+   ],
+   "properties": {
+    "--image-height": "90vh"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": ".image-overlay-mobile--50vh",
+   "context": [
+    "@media not (min-width: 741px)",
+    "@supports (min-height: 100svh)"
+   ],
+   "properties": {
+    "--image-height": "50svh"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": ".image-overlay-mobile--70vh",
+   "context": [
+    "@media not (min-width: 741px)",
+    "@supports (min-height: 100svh)"
+   ],
+   "properties": {
+    "--image-height": "70svh"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": ".image-overlay-mobile--90vh",
+   "context": [
+    "@media not (min-width: 741px)",
+    "@supports (min-height: 100svh)"
+   ],
+   "properties": {
+    "--image-height": "90svh"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": "#shopify-pc__banner #shopify-pc__banner__btn-accept, #shopify-pc__banner #shopify-pc__banner__btn-decline",
+   "context": [],
+   "properties": {
+    "--cta-bg": "#301816"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": "#shopify-pc__banner #shopify-pc__banner__btn-decline",
+   "context": [],
+   "properties": {
+    "--cta-bg": "#C7DDC2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": "#shopify-pc__prefs__header-accept, #shopify-pc__prefs__header-decline, #shopify-pc__prefs__header-save",
+   "context": [],
+   "properties": {
+    "--cta-bg": "#301816"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": "#shopify-pc__prefs__header-decline",
+   "context": [],
+   "properties": {
+    "--cta-bg": "#C7DDC2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": "#shopify-pc__prefs__header-save",
+   "context": [],
+   "properties": {
+    "--cta-bg": "#C7DDC2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://instafeed.nfcube.com/cdn/instafeed-20.0.0.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--detailed-popup-top-bar-mobile-height": "42px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://instafeed.nfcube.com/cdn/instafeed-20.0.0.css",
+   "selector": ".instafeed-free-gift-progress",
+   "context": [],
+   "properties": {
+    "--ifg-ink": "#111111",
+    "--ifg-muted": "#757575",
+    "--ifg-accent": "#1a3c34",
+    "--ifg-track": "#e8e8e8",
+    "--ifg-card-border": "rgba(0, 0, 0, 0.08)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--1",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--heading-color": "48, 24, 22",
+    "--text-color": "48, 24, 22",
+    "--background": "255, 255, 255",
+    "--secondary-background": "246, 242, 233",
+    "--border-color": "50, 26, 24",
+    "--border-color-darker": "172, 163, 162",
+    "--success-color": "199, 221, 194",
+    "--success-background": "244, 248, 243",
+    "--error-color": "199, 221, 194",
+    "--error-background": "251, 253, 251",
+    "--primary-button-background": "48, 24, 22",
+    "--primary-button-text-color": "255, 255, 255",
+    "--secondary-button-background": "48, 24, 22",
+    "--secondary-button-text-color": "255, 255, 255",
+    "--product-star-rating": "48, 24, 22",
+    "--product-on-sale-accent": "48, 24, 22",
+    "--product-sold-out-accent": "91, 91, 91",
+    "--product-custom-label-background": "48, 24, 22",
+    "--product-custom-label-text-color": "255, 255, 255",
+    "--product-custom-label-2-background": "199, 221, 194",
+    "--product-custom-label-2-text-color": "0, 0, 0",
+    "--product-low-stock-text-color": "223, 100, 100",
+    "--product-in-stock-text-color": "46, 158, 123",
+    "--loading-bar-background": "48, 24, 22",
+    "--root-heading-color": "48, 24, 22",
+    "--root-text-color": "48, 24, 22",
+    "--root-background": "255, 255, 255",
+    "--root-border-color": "50, 26, 24",
+    "--root-primary-button-background": "48, 24, 22",
+    "--root-primary-button-text-color": "255, 255, 255",
+    "--color-flavor-abricot-zaatar": "#F4A765",
+    "--color-flavor-poire-anis": "#F3EEA7",
+    "--color-flavor-orange-piment": "#F26554",
+    "--base-font-size": "16px",
+    "--heading-font-family": "'Boogy', sans-serif",
+    "--heading-font-family-italic": "'Boogy Italic', sans-serif",
+    "--heading-font-weight": "300",
+    "--heading-font-style": "normal",
+    "--heading-text-transform": "normal",
+    "--text-font-family": "'Robin Regular', sans-serif",
+    "--text-font-family-semibold": "'Robin Semibold', sans-serif",
+    "--text-font-weight": "500",
+    "--text-font-style": "normal",
+    "--text-font-bold-weight": "600",
+    "--heading-xxsmall-font-size": "11px",
+    "--heading-xsmall-font-size": "11px",
+    "--heading-small-font-size": "12px",
+    "--heading-large-font-size": "13vw",
+    "--heading-h1-font-size": "52px",
+    "--heading-h2-font-size": "40px",
+    "--heading-h3-font-size": "26px",
+    "--heading-h4-font-size": "30px",
+    "--heading-h5-font-size": "12px",
+    "--heading-h6-font-size": "16px",
+    "--button-border-radius": "0px",
+    "--block-border-radius": "45px",
+    "--block-border-radius-reduced": "16px",
+    "--color-swatch-border-radius": "0px",
+    "--section-border-radius": "45px",
+    "--button-height": "48px",
+    "--button-small-height": "40px",
+    "--form-input-field-height": "48px",
+    "--form-input-gap": "16px",
+    "--form-submit-margin": "24px",
+    "--product-list-block-spacing": "32px",
+    "--play-button-background": "255, 255, 255",
+    "--play-button-arrow": "48, 24, 22",
+    "--transform-logical-flip": "1",
+    "--transform-origin-start": "left",
+    "--transform-origin-end": "right",
+    "--zoom-cursor-svg-url": "url(…)",
+    "--arrow-right-svg-url": "url(…)",
+    "--arrow-left-svg-url": "url(…)",
+    "--container-max-width": "1600px",
+    "--container-gutter": "24px",
+    "--container-max-width-minus-gutters": "calc(var(--container-max-width) - (var(--container-gutter)) * 2)",
+    "--container-outer-width": "max(calc((100vw - var(--container-max-width-minus-gutters)) / 2), var(--container-gutter))",
+    "--container-outer-margin": "var(--container-outer-width)",
+    "--container-inner-width": "calc(100vw - var(--container-outer-width) * 2)",
+    "--grid-column-count": "10",
+    "--grid-gap": "24px",
+    "--grid-column-width": "calc((100vw - var(--container-outer-width) * 2 - var(--grid-gap) * (var(--grid-column-count) - 1)) / var(--grid-column-count))",
+    "--vertical-breather": "36px",
+    "--vertical-breather-tight": "36px",
+    "--boxed-sections-enabled": "1",
+    "--boxed-sections-margin": "25px",
+    "--boxed-sections-background": "246, 242, 233",
+    "--payment-terms-background-color": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--1",
+   "selector": ":root",
+   "context": [
+    "@media screen and (min-width: 741px)"
+   ],
+   "properties": {
+    "--container-gutter": "73px",
+    "--grid-column-count": "20",
+    "--vertical-breather": "48px",
+    "--vertical-breather-tight": "48px",
+    "--heading-xsmall-font-size": "12px",
+    "--heading-small-font-size": "12px",
+    "--heading-large-font-size": "10vw",
+    "--heading-h1-font-size": "55px",
+    "--heading-h2-font-size": "45px",
+    "--heading-h3-font-size": "38px",
+    "--heading-h4-font-size": "35px",
+    "--heading-h5-font-size": "12px",
+    "--heading-h6-font-size": "18px",
+    "--form-input-field-height": "52px",
+    "--form-submit-margin": "32px",
+    "--button-height": "52px",
+    "--button-small-height": "44px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--1",
+   "selector": ":root",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--vertical-breather": "64px",
+    "--vertical-breather-tight": "48px",
+    "--product-list-block-spacing": "48px",
+    "--heading-large-font-size": "8vw",
+    "--heading-h1-font-size": "72px",
+    "--heading-h2-font-size": "52px",
+    "--heading-h3-font-size": "38px",
+    "--heading-h4-font-size": "35px",
+    "--heading-h5-font-size": "12px",
+    "--heading-h6-font-size": "18px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--1",
+   "selector": ":root",
+   "context": [
+    "@media screen and (min-width: 1600px)"
+   ],
+   "properties": {
+    "--vertical-breather": "64px",
+    "--vertical-breather-tight": "48px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--11",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--enable-sticky-announcement-bar": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--11",
+   "selector": "#shopify-section-sections--25477839454594__announcement-bar",
+   "context": [],
+   "properties": {
+    "--heading-color": "48, 24, 22",
+    "--text-color": "48, 24, 22",
+    "--primary-button-background": "48, 24, 22",
+    "--primary-button-text-color": "199, 221, 194",
+    "--section-background": "246, 242, 233"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--11",
+   "selector": ":root",
+   "context": [
+    "@media screen and (min-width: 741px)"
+   ],
+   "properties": {
+    "--enable-sticky-announcement-bar": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--13",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--enable-sticky-header": "1",
+    "--enable-transparent-header": "1",
+    "--loading-bar-background": "48, 24, 22"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--13",
+   "selector": "#shopify-section-sections--25477839454594__header",
+   "context": [],
+   "properties": {
+    "--header-background": "246, 242, 233",
+    "--header-text-color": "48, 24, 22",
+    "--header-border-color": "216, 209, 201",
+    "--reduce-header-padding": "1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--13",
+   "selector": ".js #shopify-section-sections--25477839454594__header .header--transparent",
+   "context": [],
+   "properties": {
+    "--header-background": "transparent",
+    "--header-text-color": "48, 24, 22",
+    "--header-border-color": "48, 24, 22, 0.15",
+    "--header-transparent-bubble-text-color": "246, 242, 233"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--14",
+   "selector": "#shopify-section-template--25477840863618__d055af7b-a03b-4055-9779-22dc10b9ca35",
+   "context": [],
+   "properties": {
+    "--heading-color": "246, 242, 233",
+    "--text-color": "246, 242, 233",
+    "--primary-button-background": "48, 24, 22",
+    "--primary-button-text-color": "255, 255, 255",
+    "--section-overlay-color": "0, 0, 0",
+    "--section-overlay-opacity": "0.0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--15",
+   "selector": "#shopify-section-template--25477840863618__slideshow_z4emUe",
+   "context": [],
+   "properties": {
+    "--progress-bar-color": "255, 255, 255",
+    "--section-autoplay-duration": "5s",
+    "--section-animation-play-state": "paused"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--15",
+   "selector": "#block-template--25477840863618__slideshow_z4emUe-image_t98Pzb",
+   "context": [],
+   "properties": {
+    "--heading-color": "255, 255, 255",
+    "--text-color": "255, 255, 255",
+    "--primary-button-background": "255, 255, 255",
+    "--primary-button-text-color": "0, 0, 0",
+    "--section-blocks-alignment": "center",
+    "--section-blocks-overlay-color": "0, 0, 0",
+    "--section-blocks-overlay-opacity": "0.0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--17",
+   "selector": "#shopify-section-template--25477840863618__de5130c4-d6ad-413f-bd71-bbba3fc65f3c",
+   "context": [],
+   "properties": {
+    "--heading-color": "48, 24, 22",
+    "--text-color": "48, 24, 22",
+    "--primary-button-background": "48, 24, 22",
+    "--primary-button-text-color": "255, 255, 255",
+    "--prev-next-button-background": "255, 255, 255",
+    "--prev-next-button-color": "48, 24, 22",
+    "--section-background": "255, 255, 255",
+    "--section-products-per-row": "2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--17",
+   "selector": "#shopify-section-template--25477840863618__de5130c4-d6ad-413f-bd71-bbba3fc65f3c",
+   "context": [
+    "@media screen and (min-width: 741px)"
+   ],
+   "properties": {
+    "--section-products-per-row": "2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--17",
+   "selector": "#shopify-section-template--25477840863618__de5130c4-d6ad-413f-bd71-bbba3fc65f3c",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--section-products-per-row": "3"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--17",
+   "selector": "#shopify-section-template--25477840863618__de5130c4-d6ad-413f-bd71-bbba3fc65f3c",
+   "context": [
+    "@media (width < 500px)"
+   ],
+   "properties": {
+    "--section-products-per-row": "1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--21",
+   "selector": "#shopify-section-template--25477840863618__multi_column_PwtJiP",
+   "context": [],
+   "properties": {
+    "--heading-color": "48, 24, 22",
+    "--text-color": "48, 24, 22",
+    "--prev-next-button-background": "255, 255, 255",
+    "--prev-next-button-color": "48, 24, 22",
+    "--section-background": "246, 242, 233"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--22",
+   "selector": "#shopify-section-template--25477840863618__image_with_text_HHXJq7",
+   "context": [],
+   "properties": {
+    "--heading-color": "48, 24, 22",
+    "--text-color": "48, 24, 22",
+    "--primary-button-background": "48, 24, 22",
+    "--primary-button-text-color": "255, 255, 255",
+    "--section-accent-background": "0 0 0 / 0.0",
+    "--section-autoplay-duration": "s",
+    "--section-animation-play-state": "paused"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--24",
+   "selector": "#shopify-section-template--25477840863618__2d4489e7-fa56-4861-a7e5-385e14a64c72",
+   "context": [],
+   "properties": {
+    "--heading-color": "48, 24, 22",
+    "--text-color": "48, 24, 22",
+    "--primary-button-background": "48, 24, 22",
+    "--primary-button-text-color": "255, 255, 255",
+    "--prev-next-button-background": "255, 255, 255",
+    "--prev-next-button-color": "48, 24, 22",
+    "--section-background": "255, 255, 255",
+    "--section-logo-background": "0 0 0 / 0.0",
+    "--section-logo-count": "8"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--25",
+   "selector": "#shopify-section-template--25477840863618__image_with_text_LeKaMg",
+   "context": [],
+   "properties": {
+    "--heading-color": "48, 24, 22",
+    "--text-color": "48, 24, 22",
+    "--primary-button-background": "48, 24, 22",
+    "--primary-button-text-color": "255, 255, 255",
+    "--section-accent-background": "0 0 0 / 0.0",
+    "--section-autoplay-duration": "s",
+    "--section-animation-play-state": "paused"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--27",
+   "selector": "#shopify-section-template--25477840863618__testimonials_2_c98LVN",
+   "context": [],
+   "properties": {
+    "--testimonials-gap": "var(--spacing-12)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--28",
+   "selector": "#shopify-section-template--25477840863618__slideshow_QbC4zf",
+   "context": [],
+   "properties": {
+    "--progress-bar-color": "0, 0, 0",
+    "--section-autoplay-duration": "5s",
+    "--section-animation-play-state": "paused"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--28",
+   "selector": "#block-template--25477840863618__slideshow_QbC4zf-image_d3WVWJ",
+   "context": [],
+   "properties": {
+    "--heading-color": "0, 0, 0",
+    "--text-color": "0, 0, 0",
+    "--primary-button-background": "246, 242, 233",
+    "--primary-button-text-color": "48, 24, 22",
+    "--section-blocks-alignment": "flex-start",
+    "--section-blocks-overlay-color": "0, 0, 0",
+    "--section-blocks-overlay-opacity": "0.11"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--30",
+   "selector": "#shopify-section-template--25477840863618__multi_column_Qadyzw",
+   "context": [],
+   "properties": {
+    "--heading-color": "48, 24, 22",
+    "--text-color": "48, 24, 22",
+    "--prev-next-button-background": "255, 255, 255",
+    "--prev-next-button-color": "48, 24, 22",
+    "--section-background": "255, 255, 255"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--32",
+   "selector": "#shopify-section-template--25477840863618__image_with_text_HTp78q",
+   "context": [],
+   "properties": {
+    "--heading-color": "48, 24, 22",
+    "--text-color": "48, 24, 22",
+    "--primary-button-background": "48, 24, 22",
+    "--primary-button-text-color": "255, 255, 255",
+    "--section-accent-background": "0 0 0 / 0.0",
+    "--section-autoplay-duration": "s",
+    "--section-animation-play-state": "paused"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline--34",
+   "selector": "#shopify-section-template--25477840863618__image_with_text_zUQD8U",
+   "context": [],
+   "properties": {
+    "--heading-color": "48, 24, 22",
+    "--text-color": "48, 24, 22",
+    "--primary-button-background": "48, 24, 22",
+    "--primary-button-text-color": "255, 255, 255",
+    "--section-accent-background": "0 0 0 / 0.0",
+    "--section-autoplay-duration": "s",
+    "--section-animation-play-state": "paused"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-1",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--heading-color": "48, 24, 22",
+    "--text-color": "48, 24, 22",
+    "--background": "255, 255, 255",
+    "--secondary-background": "246, 242, 233",
+    "--border-color": "50, 26, 24",
+    "--border-color-darker": "172, 163, 162",
+    "--success-color": "199, 221, 194",
+    "--success-background": "244, 248, 243",
+    "--error-color": "199, 221, 194",
+    "--error-background": "251, 253, 251",
+    "--primary-button-background": "48, 24, 22",
+    "--primary-button-text-color": "255, 255, 255",
+    "--secondary-button-background": "48, 24, 22",
+    "--secondary-button-text-color": "255, 255, 255",
+    "--product-star-rating": "48, 24, 22",
+    "--product-on-sale-accent": "48, 24, 22",
+    "--product-sold-out-accent": "91, 91, 91",
+    "--product-custom-label-background": "48, 24, 22",
+    "--product-custom-label-text-color": "255, 255, 255",
+    "--product-custom-label-2-background": "199, 221, 194",
+    "--product-custom-label-2-text-color": "0, 0, 0",
+    "--product-low-stock-text-color": "223, 100, 100",
+    "--product-in-stock-text-color": "46, 158, 123",
+    "--loading-bar-background": "48, 24, 22",
+    "--root-heading-color": "48, 24, 22",
+    "--root-text-color": "48, 24, 22",
+    "--root-background": "255, 255, 255",
+    "--root-border-color": "50, 26, 24",
+    "--root-primary-button-background": "48, 24, 22",
+    "--root-primary-button-text-color": "255, 255, 255",
+    "--color-flavor-abricot-zaatar": "#F4A765",
+    "--color-flavor-poire-anis": "#F3EEA7",
+    "--color-flavor-orange-piment": "#F26554",
+    "--base-font-size": "16px",
+    "--heading-font-family": "'Boogy', sans-serif",
+    "--heading-font-family-italic": "'Boogy Italic', sans-serif",
+    "--heading-font-weight": "300",
+    "--heading-font-style": "normal",
+    "--heading-text-transform": "normal",
+    "--text-font-family": "'Robin Regular', sans-serif",
+    "--text-font-family-semibold": "'Robin Semibold', sans-serif",
+    "--text-font-weight": "500",
+    "--text-font-style": "normal",
+    "--text-font-bold-weight": "600",
+    "--heading-xxsmall-font-size": "11px",
+    "--heading-xsmall-font-size": "11px",
+    "--heading-small-font-size": "12px",
+    "--heading-large-font-size": "13vw",
+    "--heading-h1-font-size": "52px",
+    "--heading-h2-font-size": "40px",
+    "--heading-h3-font-size": "26px",
+    "--heading-h4-font-size": "30px",
+    "--heading-h5-font-size": "12px",
+    "--heading-h6-font-size": "16px",
+    "--button-border-radius": "0px",
+    "--block-border-radius": "45px",
+    "--block-border-radius-reduced": "16px",
+    "--color-swatch-border-radius": "0px",
+    "--section-border-radius": "45px",
+    "--button-height": "48px",
+    "--button-small-height": "40px",
+    "--form-input-field-height": "48px",
+    "--form-input-gap": "16px",
+    "--form-submit-margin": "24px",
+    "--product-list-block-spacing": "32px",
+    "--play-button-background": "255, 255, 255",
+    "--play-button-arrow": "48, 24, 22",
+    "--transform-logical-flip": "1",
+    "--transform-origin-start": "left",
+    "--transform-origin-end": "right",
+    "--zoom-cursor-svg-url": "url(…)",
+    "--arrow-right-svg-url": "url(…)",
+    "--arrow-left-svg-url": "url(…)",
+    "--container-max-width": "1600px",
+    "--container-gutter": "24px",
+    "--container-max-width-minus-gutters": "calc(var(--container-max-width) - (var(--container-gutter)) * 2)",
+    "--container-outer-width": "max(calc((100vw - var(--container-max-width-minus-gutters)) / 2), var(--container-gutter))",
+    "--container-outer-margin": "var(--container-outer-width)",
+    "--container-inner-width": "calc(100vw - var(--container-outer-width) * 2)",
+    "--grid-column-count": "10",
+    "--grid-gap": "24px",
+    "--grid-column-width": "calc((100vw - var(--container-outer-width) * 2 - var(--grid-gap) * (var(--grid-column-count) - 1)) / var(--grid-column-count))",
+    "--vertical-breather": "36px",
+    "--vertical-breather-tight": "36px",
+    "--boxed-sections-enabled": "1",
+    "--boxed-sections-margin": "25px",
+    "--boxed-sections-background": "246, 242, 233",
+    "--payment-terms-background-color": "#ffffff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-1",
+   "selector": ":root",
+   "context": [
+    "@media screen and (min-width: 741px)"
+   ],
+   "properties": {
+    "--container-gutter": "73px",
+    "--grid-column-count": "20",
+    "--vertical-breather": "48px",
+    "--vertical-breather-tight": "48px",
+    "--heading-xsmall-font-size": "12px",
+    "--heading-small-font-size": "12px",
+    "--heading-large-font-size": "10vw",
+    "--heading-h1-font-size": "55px",
+    "--heading-h2-font-size": "45px",
+    "--heading-h3-font-size": "38px",
+    "--heading-h4-font-size": "35px",
+    "--heading-h5-font-size": "12px",
+    "--heading-h6-font-size": "18px",
+    "--form-input-field-height": "52px",
+    "--form-submit-margin": "32px",
+    "--button-height": "52px",
+    "--button-small-height": "44px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-1",
+   "selector": ":root",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--vertical-breather": "64px",
+    "--vertical-breather-tight": "48px",
+    "--product-list-block-spacing": "48px",
+    "--heading-large-font-size": "8vw",
+    "--heading-h1-font-size": "72px",
+    "--heading-h2-font-size": "52px",
+    "--heading-h3-font-size": "38px",
+    "--heading-h4-font-size": "35px",
+    "--heading-h5-font-size": "12px",
+    "--heading-h6-font-size": "18px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-1",
+   "selector": ":root",
+   "context": [
+    "@media screen and (min-width: 1600px)"
+   ],
+   "properties": {
+    "--vertical-breather": "64px",
+    "--vertical-breather-tight": "48px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-25",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--enable-sticky-announcement-bar": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-25",
+   "selector": "#shopify-section-sections--25477839454594__announcement-bar",
+   "context": [],
+   "properties": {
+    "--heading-color": "48, 24, 22",
+    "--text-color": "48, 24, 22",
+    "--primary-button-background": "48, 24, 22",
+    "--primary-button-text-color": "199, 221, 194",
+    "--section-background": "246, 242, 233"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-25",
+   "selector": ":root",
+   "context": [
+    "@media screen and (min-width: 741px)"
+   ],
+   "properties": {
+    "--enable-sticky-announcement-bar": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-27",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--enable-sticky-header": "1",
+    "--enable-transparent-header": "0",
+    "--loading-bar-background": "48, 24, 22"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-27",
+   "selector": "#shopify-section-sections--25477839454594__header",
+   "context": [],
+   "properties": {
+    "--header-background": "246, 242, 233",
+    "--header-text-color": "48, 24, 22",
+    "--header-border-color": "216, 209, 201",
+    "--reduce-header-padding": "1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-28",
+   "selector": "#shopify-section-template--25477840011650__main",
+   "context": [],
+   "properties": {
+    "--primary-button-background": "48,\n      24, 22",
+    "--primary-button-text-color": "255,\n      255, 255",
+    "--secondary-button-background": ",\n      ,",
+    "--secondary-button-text-color": ",\n      ,",
+    "--background-color-opacity": "#f2655478",
+    "--button-background-color": "#f26554",
+    "--product-variant-block-selected-bg-color": "#f26554",
+    "--appstle-dot-color": "#f26554"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-32",
+   "selector": "#shopify-section-template--25477840011650__image_with_text_JYgiFj",
+   "context": [],
+   "properties": {
+    "--heading-color": "48, 24, 22",
+    "--text-color": "48, 24, 22",
+    "--primary-button-background": "48, 24, 22",
+    "--primary-button-text-color": "255, 255, 255",
+    "--section-accent-background": "0 0 0 / 0.0",
+    "--section-autoplay-duration": "s",
+    "--section-animation-play-state": "paused"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-34",
+   "selector": "#shopify-section-template--25477840011650__image_with_text_eYb3La",
+   "context": [],
+   "properties": {
+    "--heading-color": "48, 24, 22",
+    "--text-color": "48, 24, 22",
+    "--primary-button-background": "48, 24, 22",
+    "--primary-button-text-color": "255, 255, 255",
+    "--section-accent-background": "0 0 0 / 0.0",
+    "--section-autoplay-duration": "s",
+    "--section-animation-play-state": "paused"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-37",
+   "selector": "#shopify-section-template--25477840011650__multi_column_qdXKRb",
+   "context": [],
+   "properties": {
+    "--heading-color": "48, 24, 22",
+    "--text-color": "48, 24, 22",
+    "--prev-next-button-background": "255, 255, 255",
+    "--prev-next-button-color": "48, 24, 22",
+    "--section-background": "246, 242, 233"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-38",
+   "selector": "#shopify-section-template--25477840011650__187dfdad-9753-46ff-872b-d62b8ba257b6",
+   "context": [],
+   "properties": {
+    "--heading-color": "48, 24, 22",
+    "--text-color": "48, 24, 22",
+    "--prev-next-button-background": "255, 255, 255",
+    "--prev-next-button-color": "48, 24, 22",
+    "--section-background": "255, 255, 255",
+    "--section-products-per-row": "2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-38",
+   "selector": "#shopify-section-template--25477840011650__187dfdad-9753-46ff-872b-d62b8ba257b6",
+   "context": [
+    "@media screen and (min-width: 741px)"
+   ],
+   "properties": {
+    "--section-products-per-row": "2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-38",
+   "selector": "#shopify-section-template--25477840011650__187dfdad-9753-46ff-872b-d62b8ba257b6",
+   "context": [
+    "@media screen and (min-width: 1200px)"
+   ],
+   "properties": {
+    "--section-products-per-row": "2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-41",
+   "selector": "#shopify-section-template--25477840011650__slideshow_t7r9gH",
+   "context": [],
+   "properties": {
+    "--progress-bar-color": "255, 255, 255",
+    "--section-autoplay-duration": "0s",
+    "--section-animation-play-state": "paused"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-41",
+   "selector": "#block-template--25477840011650__slideshow_t7r9gH-image_9atcpt",
+   "context": [],
+   "properties": {
+    "--heading-color": "255, 255, 255",
+    "--text-color": "255, 255, 255",
+    "--primary-button-background": "255, 255, 255",
+    "--primary-button-text-color": "0, 0, 0",
+    "--section-blocks-alignment": "center",
+    "--section-blocks-overlay-color": "0, 0, 0",
+    "--section-blocks-overlay-opacity": "0.0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-43",
+   "selector": "#shopify-section-template--25477840011650__02cfc4b2-86ca-4122-88d6-da181275e797",
+   "context": [],
+   "properties": {
+    "--secondary-background": "216, 209, 201",
+    "--heading-color": "48, 24, 22",
+    "--text-color": "48, 24, 22",
+    "--section-background": "246, 242, 233"
+   },
+   "bin": "app"
+  }
+ ],
+ "skins": [],
+ "vendor": [
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": "#appstleSubscriptionCustomerPortal",
+   "context": [],
+   "properties": {
+    "--primary-button-background": "var(--text-color)",
+    "--primary-button-text-color": "var(--background)",
+    "--root-primary-button-background": "var(--text-color)",
+    "--root-primary-button-text-color": "var(--background)"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "https://static.klaviyo.com/onsite/js/4014.ccae962fcaa72.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--kl-reviews-color-light-gray": "#e9e9eb"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline--7",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--oke-widget-spaceAbove": "20px",
+    "--oke-widget-spaceBelow": "20px",
+    "--oke-starRating-spaceAbove": "0",
+    "--oke-starRating-spaceBelow": "10px",
+    "--oke-button-backgroundColor": "#c7ddc2",
+    "--oke-button-backgroundColorHover": "#c7ddc2",
+    "--oke-button-backgroundColorActive": "#c7ddc2",
+    "--oke-button-textColor": "#301816",
+    "--oke-button-textColorHover": "#301816",
+    "--oke-button-textColorActive": "#301816",
+    "--oke-button-borderColor": "#c7ddc2",
+    "--oke-button-borderColorHover": "#c7ddc2",
+    "--oke-button-borderColorActive": "#c7ddc2",
+    "--oke-button-borderRadius": "0",
+    "--oke-button-borderWidth": "1px",
+    "--oke-button-fontWeight": "700",
+    "--oke-button-fontSize": "var(--oke-text-regular,14px)",
+    "--oke-button-fontFamily": "inherit",
+    "--oke-border-color": "#301816",
+    "--oke-border-width": "1px",
+    "--oke-text-primaryColor": "#301816",
+    "--oke-text-secondaryColor": "#301816",
+    "--oke-text-small": "12px",
+    "--oke-text-regular": "14px",
+    "--oke-text-large": "20px",
+    "--oke-text-fontFamily": "inherit",
+    "--oke-avatar-size": "undefined",
+    "--oke-avatar-backgroundColor": "undefined",
+    "--oke-avatar-placeholderTextColor": "undefined",
+    "--oke-highlightColor": "#301816",
+    "--oke-shadingColor": "#f6f2e9",
+    "--oke-productImageSize": "48px",
+    "--oke-attributeBar-shadingColor": "#9a9db1",
+    "--oke-attributeBar-borderColor": "undefined",
+    "--oke-attributeBar-backgroundColor": "#d3d4dd",
+    "--oke-attributeBar-markerColor": "#00caaa",
+    "--oke-filter-backgroundColor": "#f6f2e9",
+    "--oke-filter-backgroundColorActive": "#301816",
+    "--oke-filter-borderColor": "#301816",
+    "--oke-filter-borderColorActive": "#301816",
+    "--oke-filter-textColor": "#301816",
+    "--oke-filter-textColorActive": "#301816",
+    "--oke-filter-borderRadius": "100px",
+    "--oke-filter-searchHighlightColor": "#b2f9e9",
+    "--oke-mediaGrid-chevronColor": "#676986",
+    "--oke-stars-foregroundColor": "#301816",
+    "--oke-stars-backgroundColor": "#f6f2e9",
+    "--oke-stars-borderWidth": "1",
+    "--oke-stars-borderColor": "#301816"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline--7",
+   "selector": ".oke-w, oke-modal",
+   "context": [],
+   "properties": {
+    "--oke-title-fontWeight": "600",
+    "--oke-title-fontSize": "var(--oke-text-regular,14px)",
+    "--oke-title-fontFamily": "inherit",
+    "--oke-bodyText-fontWeight": "400",
+    "--oke-bodyText-fontSize": "var(--oke-text-regular,14px)",
+    "--oke-bodyText-fontFamily": "inherit"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-7",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--oke-widget-spaceAbove": "20px",
+    "--oke-widget-spaceBelow": "20px",
+    "--oke-starRating-spaceAbove": "0",
+    "--oke-starRating-spaceBelow": "10px",
+    "--oke-button-backgroundColor": "#c7ddc2",
+    "--oke-button-backgroundColorHover": "#c7ddc2",
+    "--oke-button-backgroundColorActive": "#c7ddc2",
+    "--oke-button-textColor": "#301816",
+    "--oke-button-textColorHover": "#301816",
+    "--oke-button-textColorActive": "#301816",
+    "--oke-button-borderColor": "#c7ddc2",
+    "--oke-button-borderColorHover": "#c7ddc2",
+    "--oke-button-borderColorActive": "#c7ddc2",
+    "--oke-button-borderRadius": "0",
+    "--oke-button-borderWidth": "1px",
+    "--oke-button-fontWeight": "700",
+    "--oke-button-fontSize": "var(--oke-text-regular,14px)",
+    "--oke-button-fontFamily": "inherit",
+    "--oke-border-color": "#301816",
+    "--oke-border-width": "1px",
+    "--oke-text-primaryColor": "#301816",
+    "--oke-text-secondaryColor": "#301816",
+    "--oke-text-small": "12px",
+    "--oke-text-regular": "14px",
+    "--oke-text-large": "20px",
+    "--oke-text-fontFamily": "inherit",
+    "--oke-avatar-size": "undefined",
+    "--oke-avatar-backgroundColor": "undefined",
+    "--oke-avatar-placeholderTextColor": "undefined",
+    "--oke-highlightColor": "#301816",
+    "--oke-shadingColor": "#f6f2e9",
+    "--oke-productImageSize": "48px",
+    "--oke-attributeBar-shadingColor": "#9a9db1",
+    "--oke-attributeBar-borderColor": "undefined",
+    "--oke-attributeBar-backgroundColor": "#d3d4dd",
+    "--oke-attributeBar-markerColor": "#00caaa",
+    "--oke-filter-backgroundColor": "#f6f2e9",
+    "--oke-filter-backgroundColorActive": "#301816",
+    "--oke-filter-borderColor": "#301816",
+    "--oke-filter-borderColorActive": "#301816",
+    "--oke-filter-textColor": "#301816",
+    "--oke-filter-textColorActive": "#301816",
+    "--oke-filter-borderRadius": "100px",
+    "--oke-filter-searchHighlightColor": "#b2f9e9",
+    "--oke-mediaGrid-chevronColor": "#676986",
+    "--oke-stars-foregroundColor": "#301816",
+    "--oke-stars-backgroundColor": "#f6f2e9",
+    "--oke-stars-borderWidth": "1",
+    "--oke-stars-borderColor": "#301816"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-7",
+   "selector": ".oke-w, oke-modal",
+   "context": [],
+   "properties": {
+    "--oke-title-fontWeight": "600",
+    "--oke-title-fontSize": "var(--oke-text-regular,14px)",
+    "--oke-title-fontFamily": "inherit",
+    "--oke-bodyText-fontWeight": "400",
+    "--oke-bodyText-fontSize": "var(--oke-text-regular,14px)",
+    "--oke-bodyText-fontFamily": "inherit"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-11",
+   "selector": "#appstle_subscription_widget0",
+   "context": [],
+   "properties": {
+    "--appstle-theme-fg": "48, 24, 22",
+    "--appstle-theme-bg": "255, 255, 255"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-11",
+   "selector": "#ui-datepicker-div",
+   "context": [],
+   "properties": {
+    "--appstle-dp-fg": "26, 26, 26",
+    "--appstle-dp-bg": "255, 255, 255"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-11",
+   "selector": ".as-cards .appstleSelectedSellingPlanOptionDescription",
+   "context": [],
+   "properties": {
+    "--as-plan-desc-margin": "6px 0 0"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-29",
+   "selector": ":root",
+   "context": [
+    "@layer base"
+   ],
+   "properties": {
+    "--kl-reviews-reviews-filter-button-corner-radius-fallback": "24px",
+    "--kl-reviews-stars-widget-margin-top": "0px",
+    "--kl-reviews-stars-widget-margin-right": "0px",
+    "--kl-reviews-stars-widget-margin-bottom": "0px",
+    "--kl-reviews-stars-widget-margin-left": "0px",
+    "--kl-reviews-stars-primary-font-font-family": "inherit",
+    "--kl-reviews-stars-primary-font-font-weight": "400",
+    "--kl-reviews-stars-primary-font-color": "#301816",
+    "--kl-reviews-stars-star-color": "rgba(48,24,22,1)",
+    "--kl-reviews-stars-empty-star-color": "rgba(48,24,22,0.3)",
+    "--kl-reviews-stars-star-spacing": "0px"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-45",
+   "selector": ":root",
+   "context": [
+    "@layer base"
+   ],
+   "properties": {
+    "--kl-reviews-reviews-filter-button-corner-radius-fallback": "24px",
+    "--kl-reviews-reviews-widget-margin-top": "0px",
+    "--kl-reviews-reviews-widget-margin-right": "0px",
+    "--kl-reviews-reviews-widget-margin-bottom": "0px",
+    "--kl-reviews-reviews-widget-margin-left": "0px",
+    "--kl-reviews-reviews-primary-background-color": "#F6F2E9",
+    "--kl-reviews-reviews-secondary-background-color": "#e9e9eb",
+    "--kl-reviews-reviews-accent-color": "#212B37",
+    "--kl-reviews-reviews-corner-radius": "8px",
+    "--kl-reviews-reviews-primary-font-font-family": "inherit",
+    "--kl-reviews-reviews-primary-font-font-weight": "400",
+    "--kl-reviews-reviews-primary-font-color": "#301816",
+    "--kl-reviews-reviews-secondary-font-font-family": "inherit",
+    "--kl-reviews-reviews-secondary-font-font-weight": "400",
+    "--kl-reviews-reviews-secondary-font-color": "rgba(52,22,21,0.7)",
+    "--kl-reviews-reviews-button-color": "#212B37",
+    "--kl-reviews-reviews-button-corner-radius": "8px",
+    "--kl-reviews-reviews-button-hover-color": "#63cdb9df9",
+    "--kl-reviews-reviews-button-inner-padding-top": "8px",
+    "--kl-reviews-reviews-button-inner-padding-right": "8px",
+    "--kl-reviews-reviews-button-inner-padding-bottom": "8px",
+    "--kl-reviews-reviews-button-inner-padding-left": "8px",
+    "--kl-reviews-reviews-button-font-font-family": "inherit",
+    "--kl-reviews-reviews-button-font-font-weight": "400",
+    "--kl-reviews-reviews-button-font-color": "#ffffff",
+    "--kl-reviews-reviews-star-color": "rgba(48,24,22,1)",
+    "--kl-reviews-reviews-empty-star-color": "rgba(48,24,22,0.3)",
+    "--kl-reviews-reviews-star-spacing": "0px",
+    "--kl-reviews-reviews-filter-corner-radius": "24px",
+    "--kl-reviews-reviews-filter-background-color": "rgba( 32, 34, 35, 0.1)",
+    "--kl-reviews-reviews-filter-placeholder-text-color": "#606A72",
+    "--kl-reviews-reviews-summary-images-corner-radius": "0px",
+    "--kl-reviews-reviews-review-images-corner-radius": "0px",
+    "--kl-reviews-reviews-review-images-size": "120px",
+    "--kl-reviews-reviews-filter-button-border-width": "1px",
+    "--kl-reviews-reviews-filter-button-letter-spacing": "0px"
+   },
+   "bin": "vendor"
+  }
+ ],
+ "utility": [],
+ "tailwind": [
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/douze-custom.css",
+   "selector": "#appstleSubscriptionCustomerPortal [class*=\"as-ring-indigo\"]:focus, #appstleSubscriptionCustomerPortal [class*=\"as-ring-indigo\"]:focus-visible",
+   "context": [],
+   "properties": {
+    "--tw-ring-color": "rgba(var(--text-color), .4)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://static.klaviyo.com/onsite/js/4014.ccae962fcaa72.css",
+   "selector": ".kl_review_incentive_tooltip",
+   "context": [],
+   "properties": {
+    "--tw-translate-x": "-50%",
+    "--tw-translate-y": "0",
+    "--tw-rotate": "0",
+    "--tw-skew-x": "0",
+    "--tw-skew-y": "0",
+    "--tw-scale-x": "1",
+    "--tw-scale-y": "1",
+    "--tw-bg-opacity": "1",
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://static.klaviyo.com/onsite/js/4014.ccae962fcaa72.css",
+   "selector": ".kl_reviews__review_item.kl_reviews__review_item.kl_reviews__review_item .kl_reviews__review__edited .kl_reviews__review__edited__tooltip",
+   "context": [],
+   "properties": {
+    "--tw-translate-x": "-50%",
+    "--tw-translate-y": "0",
+    "--tw-rotate": "0",
+    "--tw-skew-x": "0",
+    "--tw-skew-y": "0",
+    "--tw-scale-x": "1",
+    "--tw-scale-y": "1",
+    "--tw-bg-opacity": "1",
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  }
+ ],
+ "fonts": [
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "font-family": "\"Robin Regular\"",
+   "src": "url(\"/cdn/shop/files/RobinPro-Regular.ttf?v=1694095605\"), url(\"/cdn/shop/files/RobinPro-Regular.woff?v=1694095605\"), url(\"/cdn/shop/files/RobinPro-Regular.woff2?v=1694095605\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "font-family": "\"Robin Semibold\"",
+   "src": "url(\"/cdn/shop/files/RobinPro-SemiBold.ttf?v=1694095605\"), url(\"/cdn/shop/files/RobinPro-SemiBold.woff2?v=1694095605\"), url(\"/cdn/shop/files/RobinPro-SemiBold.woff?v=1694095605\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "font-family": "Boogy",
+   "src": "url(\"/cdn/shop/files/BoogyBrutPoster-White.ttf?v=1694095594\"), url(\"/cdn/shop/files/BoogyBrutPoster-White.woff2?v=1694095594\"), url(\"/cdn/shop/files/BoogyBrutPoster-White.woff?v=1694095594\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://drinkdouze.com/cdn/shop/t/5/assets/theme.css",
+   "font-family": "\"Boogy Italic\"",
+   "src": "url(\"/cdn/shop/files/BoogyBrutPoster-WhiteItalic.ttf?v=1694095594\"), url(\"/cdn/shop/files/BoogyBrutPoster-WhiteItalic.woff?v=1694095594\"), url(\"/cdn/shop/files/BoogyBrutPoster-WhiteItalic.woff2?v=1694095594\")",
+   "font-weight": "normal",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline--1",
+   "font-family": "Jost",
+   "font-weight": "300",
+   "font-style": "normal",
+   "font-display": "swap",
+   "src": "url(\"//drinkdouze.com/cdn/fonts/jost/jost_n3.a5df7448b5b8c9a76542f085341dff794ff2a59d.woff2\") format(\"woff2\"), url(\"//drinkdouze.com/cdn/fonts/jost/jost_n3.882941f5a26d0660f7dd135c08afc57fc6939a07.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline--1",
+   "font-family": "Jost",
+   "font-weight": "300",
+   "font-style": "italic",
+   "font-display": "swap",
+   "src": "url(\"//drinkdouze.com/cdn/fonts/jost/jost_i3.8d4e97d98751190bb5824cdb405ec5b0049a74c0.woff2\") format(\"woff2\"), url(\"//drinkdouze.com/cdn/fonts/jost/jost_i3.1b7a65a16099fd3de6fdf1255c696902ed952195.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline--1",
+   "font-family": "Barlow",
+   "font-weight": "500",
+   "font-style": "normal",
+   "font-display": "swap",
+   "src": "url(\"//drinkdouze.com/cdn/fonts/barlow/barlow_n5.a193a1990790eba0cc5cca569d23799830e90f07.woff2\") format(\"woff2\"), url(\"//drinkdouze.com/cdn/fonts/barlow/barlow_n5.ae31c82169b1dc0715609b8cc6a610b917808358.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline--1",
+   "font-family": "Barlow",
+   "font-weight": "500",
+   "font-style": "italic",
+   "font-display": "swap",
+   "src": "url(\"//drinkdouze.com/cdn/fonts/barlow/barlow_i5.714d58286997b65cd479af615cfa9bb0a117a573.woff2\") format(\"woff2\"), url(\"//drinkdouze.com/cdn/fonts/barlow/barlow_i5.0120f77e6447d3b5df4bbec8ad8c2d029d87fb21.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline--1",
+   "font-family": "Barlow",
+   "font-weight": "600",
+   "font-style": "normal",
+   "font-display": "swap",
+   "src": "url(\"//drinkdouze.com/cdn/fonts/barlow/barlow_n6.329f582a81f63f125e63c20a5a80ae9477df68e1.woff2\") format(\"woff2\"), url(\"//drinkdouze.com/cdn/fonts/barlow/barlow_n6.0163402e36247bcb8b02716880d0b39568412e9e.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline--1",
+   "font-family": "Barlow",
+   "font-weight": "600",
+   "font-style": "italic",
+   "font-display": "swap",
+   "src": "url(\"//drinkdouze.com/cdn/fonts/barlow/barlow_i6.5a22bd20fb27bad4d7674cc6e666fb9c77d813bb.woff2\") format(\"woff2\"), url(\"//drinkdouze.com/cdn/fonts/barlow/barlow_i6.1c8787fcb59f3add01a87f21b38c7ef797e3b3a1.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline--6",
+   "font-family": "oke-widget-icons",
+   "src": "url(\"https://d3hw6dc1ow8pp2.cloudfront.net/reviews-widget-plus/fonts/oke-widget-icons.ttf\") format(\"truetype\"), url(\"https://d3hw6dc1ow8pp2.cloudfront.net/reviews-widget-plus/fonts/oke-widget-icons.woff\") format(\"woff\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "block"
+  },
+  {
+   "file": "inline--9",
+   "font-family": "BoogyBrut",
+   "src": "url(\"https://drinkdouze.com/cdn/shop/files/BoogyBrutPoster-White.ttf?v=1694095594\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline--9",
+   "font-family": "BoogyBrut",
+   "src": "url(\"https://drinkdouze.com/cdn/shop/files/BoogyBrutPoster-WhiteItalic.ttf?v=1694095594\")",
+   "font-weight": "300",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline--9",
+   "font-family": "Nunito-Sans-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Nunito-Sans/latin/nunito-sans_latin_italic_400.woff2\")",
+   "font-weight": "400",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline--9",
+   "font-family": "Nunito-Sans-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Nunito-Sans/latin/nunito-sans_latin_italic_700.woff2\")",
+   "font-weight": "700",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline--9",
+   "font-family": "Nunito-Sans-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Nunito-Sans/latin/nunito-sans_latin_regular_400.woff2\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline--9",
+   "font-family": "Nunito-Sans-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Nunito-Sans/latin/nunito-sans_latin_regular_700.woff2\")",
+   "font-weight": "700",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline--9",
+   "font-family": "Poppins-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Poppins/latin/poppins_latin_italic_400.woff2\")",
+   "font-weight": "400",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline--9",
+   "font-family": "Poppins-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Poppins/latin/poppins_latin_italic_700.woff2\")",
+   "font-weight": "700",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline--9",
+   "font-family": "Poppins-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Poppins/latin/poppins_latin_regular_400_2.woff2\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline--9",
+   "font-family": "Poppins-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Poppins/latin/poppins_latin_regular_700.woff2\")",
+   "font-weight": "700",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline--9",
+   "font-family": "RobinPro",
+   "src": "url(\"https://drinkdouze.com/cdn/shop/files/RobinPro-Regular.ttf?v=1694095605\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline--9",
+   "font-family": "RobinPro",
+   "src": "url(\"https://drinkdouze.com/cdn/shop/files/RobinPro-SemiBold.ttf?v=1694095605\")",
+   "font-weight": "600",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-1",
+   "font-family": "Jost",
+   "font-weight": "300",
+   "font-style": "normal",
+   "font-display": "swap",
+   "src": "url(\"//drinkdouze.com/cdn/fonts/jost/jost_n3.a5df7448b5b8c9a76542f085341dff794ff2a59d.woff2\") format(\"woff2\"), url(\"//drinkdouze.com/cdn/fonts/jost/jost_n3.882941f5a26d0660f7dd135c08afc57fc6939a07.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-1",
+   "font-family": "Jost",
+   "font-weight": "300",
+   "font-style": "italic",
+   "font-display": "swap",
+   "src": "url(\"//drinkdouze.com/cdn/fonts/jost/jost_i3.8d4e97d98751190bb5824cdb405ec5b0049a74c0.woff2\") format(\"woff2\"), url(\"//drinkdouze.com/cdn/fonts/jost/jost_i3.1b7a65a16099fd3de6fdf1255c696902ed952195.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-1",
+   "font-family": "Barlow",
+   "font-weight": "500",
+   "font-style": "normal",
+   "font-display": "swap",
+   "src": "url(\"//drinkdouze.com/cdn/fonts/barlow/barlow_n5.a193a1990790eba0cc5cca569d23799830e90f07.woff2\") format(\"woff2\"), url(\"//drinkdouze.com/cdn/fonts/barlow/barlow_n5.ae31c82169b1dc0715609b8cc6a610b917808358.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-1",
+   "font-family": "Barlow",
+   "font-weight": "500",
+   "font-style": "italic",
+   "font-display": "swap",
+   "src": "url(\"//drinkdouze.com/cdn/fonts/barlow/barlow_i5.714d58286997b65cd479af615cfa9bb0a117a573.woff2\") format(\"woff2\"), url(\"//drinkdouze.com/cdn/fonts/barlow/barlow_i5.0120f77e6447d3b5df4bbec8ad8c2d029d87fb21.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-1",
+   "font-family": "Barlow",
+   "font-weight": "600",
+   "font-style": "normal",
+   "font-display": "swap",
+   "src": "url(\"//drinkdouze.com/cdn/fonts/barlow/barlow_n6.329f582a81f63f125e63c20a5a80ae9477df68e1.woff2\") format(\"woff2\"), url(\"//drinkdouze.com/cdn/fonts/barlow/barlow_n6.0163402e36247bcb8b02716880d0b39568412e9e.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-1",
+   "font-family": "Barlow",
+   "font-weight": "600",
+   "font-style": "italic",
+   "font-display": "swap",
+   "src": "url(\"//drinkdouze.com/cdn/fonts/barlow/barlow_i6.5a22bd20fb27bad4d7674cc6e666fb9c77d813bb.woff2\") format(\"woff2\"), url(\"//drinkdouze.com/cdn/fonts/barlow/barlow_i6.1c8787fcb59f3add01a87f21b38c7ef797e3b3a1.woff\") format(\"woff\")"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-6",
+   "font-family": "oke-widget-icons",
+   "src": "url(\"https://d3hw6dc1ow8pp2.cloudfront.net/reviews-widget-plus/fonts/oke-widget-icons.ttf\") format(\"truetype\"), url(\"https://d3hw6dc1ow8pp2.cloudfront.net/reviews-widget-plus/fonts/oke-widget-icons.woff\") format(\"woff\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "block"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-9",
+   "font-family": "BoogyBrut",
+   "src": "url(\"https://drinkdouze.com/cdn/shop/files/BoogyBrutPoster-White.ttf?v=1694095594\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-9",
+   "font-family": "BoogyBrut",
+   "src": "url(\"https://drinkdouze.com/cdn/shop/files/BoogyBrutPoster-WhiteItalic.ttf?v=1694095594\")",
+   "font-weight": "300",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-9",
+   "font-family": "Nunito-Sans-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Nunito-Sans/latin/nunito-sans_latin_italic_400.woff2\")",
+   "font-weight": "400",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-9",
+   "font-family": "Nunito-Sans-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Nunito-Sans/latin/nunito-sans_latin_italic_700.woff2\")",
+   "font-weight": "700",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-9",
+   "font-family": "Nunito-Sans-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Nunito-Sans/latin/nunito-sans_latin_regular_400.woff2\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-9",
+   "font-family": "Nunito-Sans-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Nunito-Sans/latin/nunito-sans_latin_regular_700.woff2\")",
+   "font-weight": "700",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-9",
+   "font-family": "Poppins-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Poppins/latin/poppins_latin_italic_400.woff2\")",
+   "font-weight": "400",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-9",
+   "font-family": "Poppins-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Poppins/latin/poppins_latin_italic_700.woff2\")",
+   "font-weight": "700",
+   "font-style": "italic",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-9",
+   "font-family": "Poppins-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Poppins/latin/poppins_latin_regular_400_2.woff2\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-9",
+   "font-family": "Poppins-Klaviyo-Hosted",
+   "src": "url(\"https://static.klaviyo.com/onsite/hosted-fonts/Poppins/latin/poppins_latin_regular_700.woff2\")",
+   "font-weight": "700",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-9",
+   "font-family": "RobinPro",
+   "src": "url(\"https://drinkdouze.com/cdn/shop/files/RobinPro-Regular.ttf?v=1694095605\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "inline-productsorange-sanguine-piment-9",
+   "font-family": "RobinPro",
+   "src": "url(\"https://drinkdouze.com/cdn/shop/files/RobinPro-SemiBold.ttf?v=1694095605\")",
+   "font-weight": "600",
+   "font-style": "normal",
+   "font-display": "swap"
+  }
+ ],
+ "resolved": {
+  "light": {
+   "--arrow-left-svg-url": {
+    "raw": "url(…)",
+    "kind": "other"
+   },
+   "--arrow-right-svg-url": {
+    "raw": "url(…)",
+    "kind": "other"
+   },
+   "--background": {
+    "raw": "255, 255, 255",
+    "kind": "color",
+    "value": "#ffffff",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--base-font-size": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--block-border-radius": {
+    "raw": "45px",
+    "kind": "dimension",
+    "value": "45px"
+   },
+   "--block-border-radius-reduced": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--border-color": {
+    "raw": "50, 26, 24",
+    "kind": "color",
+    "value": "#321a18",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--border-color-darker": {
+    "raw": "172, 163, 162",
+    "kind": "color",
+    "value": "#aca3a2",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--boxed-sections-background": {
+    "raw": "246, 242, 233",
+    "kind": "color",
+    "value": "#f6f2e9",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--boxed-sections-enabled": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--boxed-sections-margin": {
+    "raw": "25px",
+    "kind": "dimension",
+    "value": "25px"
+   },
+   "--button-border-radius": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--button-height": {
+    "raw": "52px",
+    "kind": "dimension",
+    "value": "52px"
+   },
+   "--button-small-height": {
+    "raw": "44px",
+    "kind": "dimension",
+    "value": "44px"
+   },
+   "--color-dusk": {
+    "raw": "#301816",
+    "kind": "color",
+    "value": "#301816"
+   },
+   "--color-flavor-abricot-zaatar": {
+    "raw": "#F4A765",
+    "kind": "color",
+    "value": "#f4a765"
+   },
+   "--color-flavor-orange-piment": {
+    "raw": "#F26554",
+    "kind": "color",
+    "value": "#f26554"
+   },
+   "--color-flavor-poire-anis": {
+    "raw": "#F3EEA7",
+    "kind": "color",
+    "value": "#f3eea7"
+   },
+   "--color-sable": {
+    "raw": "#f6f2e9",
+    "kind": "color",
+    "value": "#f6f2e9"
+   },
+   "--color-swatch-border-radius": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--container-gutter": {
+    "raw": "73px",
+    "kind": "dimension",
+    "value": "73px"
+   },
+   "--container-inner-width": {
+    "raw": "calc(100vw - max(calc((100vw - calc(1600px - (73px) * 2)) / 2), 73px) * 2)",
+    "kind": "dimension",
+    "value": "1294px",
+    "note": "viewport-relative; resolved at 1440 x 900 (the first probe pass ran on the 1280px default and wrote 1134px; this is the 1440px resolution)"
+   },
+   "--container-max-width": {
+    "raw": "1600px",
+    "kind": "dimension",
+    "value": "1600px"
+   },
+   "--container-max-width-minus-gutters": {
+    "raw": "calc(1600px - (73px) * 2)",
+    "kind": "dimension",
+    "value": "1454px"
+   },
+   "--container-outer-margin": {
+    "raw": "max(calc((100vw - calc(1600px - (73px) * 2)) / 2), 73px)",
+    "kind": "dimension",
+    "value": "73px",
+    "note": "viewport-relative, resolved at 1440 x 900"
+   },
+   "--container-outer-width": {
+    "raw": "max(calc((100vw - calc(1600px - (73px) * 2)) / 2), 73px)",
+    "kind": "dimension",
+    "value": "73px",
+    "note": "viewport-relative, resolved at 1440 x 900"
+   },
+   "--detailed-popup-top-bar-mobile-height": {
+    "raw": "42px",
+    "kind": "dimension",
+    "value": "42px"
+   },
+   "--enable-sticky-announcement-bar": {
+    "raw": "0",
+    "kind": "number",
+    "value": 0
+   },
+   "--enable-sticky-header": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--enable-transparent-header": {
+    "raw": "0",
+    "kind": "number",
+    "value": 0
+   },
+   "--error-background": {
+    "raw": "251, 253, 251",
+    "kind": "color",
+    "value": "#fbfdfb",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--error-color": {
+    "raw": "199, 221, 194",
+    "kind": "color",
+    "value": "#c7ddc2",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--font-base": {
+    "raw": "'Robin Regular', sans-serif",
+    "kind": "fontFamily",
+    "value": "'Robin Regular', sans-serif"
+   },
+   "--font-boogy": {
+    "raw": "'Boogy', sans-serif",
+    "kind": "fontFamily",
+    "value": "'Boogy', sans-serif"
+   },
+   "--font-boogy-italic": {
+    "raw": "'Boogy Italic', sans-serif",
+    "kind": "fontFamily",
+    "value": "'Boogy Italic', sans-serif"
+   },
+   "--font-robin-regular": {
+    "raw": "'Robin Regular', sans-serif",
+    "kind": "fontFamily",
+    "value": "'Robin Regular', sans-serif"
+   },
+   "--font-robin-semibold": {
+    "raw": "'Robin Semibold', sans-serif",
+    "kind": "fontFamily",
+    "value": "'Robin Semibold', sans-serif"
+   },
+   "--form-input-field-height": {
+    "raw": "52px",
+    "kind": "dimension",
+    "value": "52px"
+   },
+   "--form-input-gap": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--form-submit-margin": {
+    "raw": "32px",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--grid-column-count": {
+    "raw": "20",
+    "kind": "number",
+    "value": 20
+   },
+   "--grid-column-width": {
+    "raw": "calc((100vw - max(calc((100vw - calc(1600px - (73px) * 2)) / 2), 73px) * 2 - 24px * (20 - 1)) / 20)",
+    "kind": "dimension",
+    "value": "41.9px",
+    "note": "viewport-relative; resolved at 1440 x 900 (the first probe pass ran on the 1280px default and wrote 33.8906px; this is the 1440px resolution)"
+   },
+   "--grid-gap": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--heading-color": {
+    "raw": "48, 24, 22",
+    "kind": "color",
+    "value": "#301816",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--heading-font-family": {
+    "raw": "'Boogy', sans-serif",
+    "kind": "fontFamily",
+    "value": "'Boogy', sans-serif"
+   },
+   "--heading-font-family-italic": {
+    "raw": "'Boogy Italic', sans-serif",
+    "kind": "fontFamily",
+    "value": "'Boogy Italic', sans-serif"
+   },
+   "--heading-font-style": {
+    "raw": "normal",
+    "kind": "fontFamily",
+    "value": "normal"
+   },
+   "--heading-font-weight": {
+    "raw": "300",
+    "kind": "number",
+    "value": 300
+   },
+   "--heading-h1-font-size": {
+    "raw": "72px",
+    "kind": "dimension",
+    "value": "72px"
+   },
+   "--heading-h2-font-size": {
+    "raw": "52px",
+    "kind": "dimension",
+    "value": "52px"
+   },
+   "--heading-h3-font-size": {
+    "raw": "38px",
+    "kind": "dimension",
+    "value": "38px"
+   },
+   "--heading-h4-font-size": {
+    "raw": "35px",
+    "kind": "dimension",
+    "value": "35px"
+   },
+   "--heading-h5-font-size": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--heading-h6-font-size": {
+    "raw": "18px",
+    "kind": "dimension",
+    "value": "18px"
+   },
+   "--heading-large-font-size": {
+    "raw": "8vw",
+    "kind": "dimension",
+    "value": "115.2px",
+    "note": "viewport-relative; resolved at 1440 x 900 (the first probe pass ran on the 1280px default and wrote 102.391px; this is the 1440px resolution)"
+   },
+   "--heading-small-font-size": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--heading-text-transform": {
+    "raw": "normal",
+    "kind": "fontFamily",
+    "value": "normal"
+   },
+   "--heading-xsmall-font-size": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--heading-xxsmall-font-size": {
+    "raw": "11px",
+    "kind": "dimension",
+    "value": "11px"
+   },
+   "--kl-reviews-color-light-gray": {
+    "raw": "#e9e9eb",
+    "kind": "color",
+    "value": "#e9e9eb"
+   },
+   "--kl-reviews-reviews-accent-color": {
+    "raw": "#212B37",
+    "kind": "color",
+    "value": "#212b37"
+   },
+   "--kl-reviews-reviews-button-color": {
+    "raw": "#212B37",
+    "kind": "color",
+    "value": "#212b37"
+   },
+   "--kl-reviews-reviews-button-corner-radius": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--kl-reviews-reviews-button-font-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--kl-reviews-reviews-button-font-font-weight": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--kl-reviews-reviews-button-hover-color": {
+    "raw": "#63cdb9df9",
+    "kind": "other"
+   },
+   "--kl-reviews-reviews-button-inner-padding-bottom": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--kl-reviews-reviews-button-inner-padding-left": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--kl-reviews-reviews-button-inner-padding-right": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--kl-reviews-reviews-button-inner-padding-top": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--kl-reviews-reviews-corner-radius": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--kl-reviews-reviews-empty-star-color": {
+    "raw": "rgba(48,24,22,0.3)",
+    "kind": "color",
+    "value": "rgba(48, 24, 22, 0.3)"
+   },
+   "--kl-reviews-reviews-filter-background-color": {
+    "raw": "rgba( 32, 34, 35, 0.1)",
+    "kind": "color",
+    "value": "rgba(32, 34, 35, 0.1)"
+   },
+   "--kl-reviews-reviews-filter-button-border-width": {
+    "raw": "1px",
+    "kind": "dimension",
+    "value": "1px"
+   },
+   "--kl-reviews-reviews-filter-button-corner-radius-fallback": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--kl-reviews-reviews-filter-button-letter-spacing": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--kl-reviews-reviews-filter-corner-radius": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--kl-reviews-reviews-filter-placeholder-text-color": {
+    "raw": "#606A72",
+    "kind": "color",
+    "value": "#606a72"
+   },
+   "--kl-reviews-reviews-primary-background-color": {
+    "raw": "#F6F2E9",
+    "kind": "color",
+    "value": "#f6f2e9"
+   },
+   "--kl-reviews-reviews-primary-font-color": {
+    "raw": "#301816",
+    "kind": "color",
+    "value": "#301816"
+   },
+   "--kl-reviews-reviews-primary-font-font-weight": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--kl-reviews-reviews-review-images-corner-radius": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--kl-reviews-reviews-review-images-size": {
+    "raw": "120px",
+    "kind": "dimension",
+    "value": "120px"
+   },
+   "--kl-reviews-reviews-secondary-background-color": {
+    "raw": "#e9e9eb",
+    "kind": "color",
+    "value": "#e9e9eb"
+   },
+   "--kl-reviews-reviews-secondary-font-color": {
+    "raw": "rgba(52,22,21,0.7)",
+    "kind": "color",
+    "value": "rgba(52, 22, 21, 0.7)"
+   },
+   "--kl-reviews-reviews-secondary-font-font-weight": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--kl-reviews-reviews-star-color": {
+    "raw": "rgba(48,24,22,1)",
+    "kind": "color",
+    "value": "#301816"
+   },
+   "--kl-reviews-reviews-star-spacing": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--kl-reviews-reviews-summary-images-corner-radius": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--kl-reviews-reviews-widget-margin-bottom": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--kl-reviews-reviews-widget-margin-left": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--kl-reviews-reviews-widget-margin-right": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--kl-reviews-reviews-widget-margin-top": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--kl-reviews-stars-empty-star-color": {
+    "raw": "rgba(48,24,22,0.3)",
+    "kind": "color",
+    "value": "rgba(48, 24, 22, 0.3)"
+   },
+   "--kl-reviews-stars-primary-font-color": {
+    "raw": "#301816",
+    "kind": "color",
+    "value": "#301816"
+   },
+   "--kl-reviews-stars-primary-font-font-weight": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--kl-reviews-stars-star-color": {
+    "raw": "rgba(48,24,22,1)",
+    "kind": "color",
+    "value": "#301816"
+   },
+   "--kl-reviews-stars-star-spacing": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--kl-reviews-stars-widget-margin-bottom": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--kl-reviews-stars-widget-margin-left": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--kl-reviews-stars-widget-margin-right": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--kl-reviews-stars-widget-margin-top": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--loading-bar-background": {
+    "raw": "48, 24, 22",
+    "kind": "color",
+    "value": "#301816",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--oke-attributeBar-backgroundColor": {
+    "raw": "#d3d4dd",
+    "kind": "color",
+    "value": "#d3d4dd"
+   },
+   "--oke-attributeBar-borderColor": {
+    "raw": "undefined",
+    "kind": "fontFamily",
+    "value": "undefined"
+   },
+   "--oke-attributeBar-markerColor": {
+    "raw": "#00caaa",
+    "kind": "color",
+    "value": "#00caaa"
+   },
+   "--oke-attributeBar-shadingColor": {
+    "raw": "#9a9db1",
+    "kind": "color",
+    "value": "#9a9db1"
+   },
+   "--oke-avatar-backgroundColor": {
+    "raw": "undefined",
+    "kind": "fontFamily",
+    "value": "undefined"
+   },
+   "--oke-avatar-placeholderTextColor": {
+    "raw": "undefined",
+    "kind": "fontFamily",
+    "value": "undefined"
+   },
+   "--oke-avatar-size": {
+    "raw": "undefined",
+    "kind": "fontFamily",
+    "value": "undefined"
+   },
+   "--oke-border-color": {
+    "raw": "#301816",
+    "kind": "color",
+    "value": "#301816"
+   },
+   "--oke-border-width": {
+    "raw": "1px",
+    "kind": "dimension",
+    "value": "1px"
+   },
+   "--oke-button-backgroundColor": {
+    "raw": "#c7ddc2",
+    "kind": "color",
+    "value": "#c7ddc2"
+   },
+   "--oke-button-backgroundColorActive": {
+    "raw": "#c7ddc2",
+    "kind": "color",
+    "value": "#c7ddc2"
+   },
+   "--oke-button-backgroundColorHover": {
+    "raw": "#c7ddc2",
+    "kind": "color",
+    "value": "#c7ddc2"
+   },
+   "--oke-button-borderColor": {
+    "raw": "#c7ddc2",
+    "kind": "color",
+    "value": "#c7ddc2"
+   },
+   "--oke-button-borderColorActive": {
+    "raw": "#c7ddc2",
+    "kind": "color",
+    "value": "#c7ddc2"
+   },
+   "--oke-button-borderColorHover": {
+    "raw": "#c7ddc2",
+    "kind": "color",
+    "value": "#c7ddc2"
+   },
+   "--oke-button-borderRadius": {
+    "raw": "0",
+    "kind": "number",
+    "value": 0
+   },
+   "--oke-button-borderWidth": {
+    "raw": "1px",
+    "kind": "dimension",
+    "value": "1px"
+   },
+   "--oke-button-fontSize": {
+    "raw": "14px",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--oke-button-fontWeight": {
+    "raw": "700",
+    "kind": "number",
+    "value": 700
+   },
+   "--oke-button-textColor": {
+    "raw": "#301816",
+    "kind": "color",
+    "value": "#301816"
+   },
+   "--oke-button-textColorActive": {
+    "raw": "#301816",
+    "kind": "color",
+    "value": "#301816"
+   },
+   "--oke-button-textColorHover": {
+    "raw": "#301816",
+    "kind": "color",
+    "value": "#301816"
+   },
+   "--oke-filter-backgroundColor": {
+    "raw": "#f6f2e9",
+    "kind": "color",
+    "value": "#f6f2e9"
+   },
+   "--oke-filter-backgroundColorActive": {
+    "raw": "#301816",
+    "kind": "color",
+    "value": "#301816"
+   },
+   "--oke-filter-borderColor": {
+    "raw": "#301816",
+    "kind": "color",
+    "value": "#301816"
+   },
+   "--oke-filter-borderColorActive": {
+    "raw": "#301816",
+    "kind": "color",
+    "value": "#301816"
+   },
+   "--oke-filter-borderRadius": {
+    "raw": "100px",
+    "kind": "dimension",
+    "value": "100px"
+   },
+   "--oke-filter-searchHighlightColor": {
+    "raw": "#b2f9e9",
+    "kind": "color",
+    "value": "#b2f9e9"
+   },
+   "--oke-filter-textColor": {
+    "raw": "#301816",
+    "kind": "color",
+    "value": "#301816"
+   },
+   "--oke-filter-textColorActive": {
+    "raw": "#301816",
+    "kind": "color",
+    "value": "#301816"
+   },
+   "--oke-highlightColor": {
+    "raw": "#301816",
+    "kind": "color",
+    "value": "#301816"
+   },
+   "--oke-mediaGrid-chevronColor": {
+    "raw": "#676986",
+    "kind": "color",
+    "value": "#676986"
+   },
+   "--oke-productImageSize": {
+    "raw": "48px",
+    "kind": "dimension",
+    "value": "48px"
+   },
+   "--oke-shadingColor": {
+    "raw": "#f6f2e9",
+    "kind": "color",
+    "value": "#f6f2e9"
+   },
+   "--oke-starRating-spaceAbove": {
+    "raw": "0",
+    "kind": "number",
+    "value": 0
+   },
+   "--oke-starRating-spaceBelow": {
+    "raw": "10px",
+    "kind": "dimension",
+    "value": "10px"
+   },
+   "--oke-stars-backgroundColor": {
+    "raw": "#f6f2e9",
+    "kind": "color",
+    "value": "#f6f2e9"
+   },
+   "--oke-stars-borderColor": {
+    "raw": "#301816",
+    "kind": "color",
+    "value": "#301816"
+   },
+   "--oke-stars-borderWidth": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--oke-stars-foregroundColor": {
+    "raw": "#301816",
+    "kind": "color",
+    "value": "#301816"
+   },
+   "--oke-text-large": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--oke-text-primaryColor": {
+    "raw": "#301816",
+    "kind": "color",
+    "value": "#301816"
+   },
+   "--oke-text-regular": {
+    "raw": "14px",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--oke-text-secondaryColor": {
+    "raw": "#301816",
+    "kind": "color",
+    "value": "#301816"
+   },
+   "--oke-text-small": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--oke-widget-spaceAbove": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--oke-widget-spaceBelow": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--payment-terms-background-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--play-button-arrow": {
+    "raw": "48, 24, 22",
+    "kind": "color",
+    "value": "#301816",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--play-button-background": {
+    "raw": "255, 255, 255",
+    "kind": "color",
+    "value": "#ffffff",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--primary-button-background": {
+    "raw": "48, 24, 22",
+    "kind": "color",
+    "value": "#301816",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--primary-button-text-color": {
+    "raw": "255, 255, 255",
+    "kind": "color",
+    "value": "#ffffff",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--product-custom-label-2-background": {
+    "raw": "199, 221, 194",
+    "kind": "color",
+    "value": "#c7ddc2",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--product-custom-label-2-text-color": {
+    "raw": "0, 0, 0",
+    "kind": "color",
+    "value": "#000000",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--product-custom-label-background": {
+    "raw": "48, 24, 22",
+    "kind": "color",
+    "value": "#301816",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--product-custom-label-text-color": {
+    "raw": "255, 255, 255",
+    "kind": "color",
+    "value": "#ffffff",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--product-in-stock-text-color": {
+    "raw": "46, 158, 123",
+    "kind": "color",
+    "value": "#2e9e7b",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--product-list-block-spacing": {
+    "raw": "48px",
+    "kind": "dimension",
+    "value": "48px"
+   },
+   "--product-low-stock-text-color": {
+    "raw": "223, 100, 100",
+    "kind": "color",
+    "value": "#df6464",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--product-on-sale-accent": {
+    "raw": "48, 24, 22",
+    "kind": "color",
+    "value": "#301816",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--product-sold-out-accent": {
+    "raw": "91, 91, 91",
+    "kind": "color",
+    "value": "#5b5b5b",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--product-star-rating": {
+    "raw": "48, 24, 22",
+    "kind": "color",
+    "value": "#301816",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--root-background": {
+    "raw": "255, 255, 255",
+    "kind": "color",
+    "value": "#ffffff",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--root-border-color": {
+    "raw": "50, 26, 24",
+    "kind": "color",
+    "value": "#321a18",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--root-heading-color": {
+    "raw": "48, 24, 22",
+    "kind": "color",
+    "value": "#301816",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--root-primary-button-background": {
+    "raw": "48, 24, 22",
+    "kind": "color",
+    "value": "#301816",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--root-primary-button-text-color": {
+    "raw": "255, 255, 255",
+    "kind": "color",
+    "value": "#ffffff",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--root-text-color": {
+    "raw": "48, 24, 22",
+    "kind": "color",
+    "value": "#301816",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--secondary-background": {
+    "raw": "246, 242, 233",
+    "kind": "color",
+    "value": "#f6f2e9",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--secondary-button-background": {
+    "raw": "48, 24, 22",
+    "kind": "color",
+    "value": "#301816",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--secondary-button-text-color": {
+    "raw": "255, 255, 255",
+    "kind": "color",
+    "value": "#ffffff",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--section-border-radius": {
+    "raw": "45px",
+    "kind": "dimension",
+    "value": "45px"
+   },
+   "--success-background": {
+    "raw": "244, 248, 243",
+    "kind": "color",
+    "value": "#f4f8f3",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--success-color": {
+    "raw": "199, 221, 194",
+    "kind": "color",
+    "value": "#c7ddc2",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--text-2xl": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--text-3xl": {
+    "raw": "30px",
+    "kind": "dimension",
+    "value": "30px"
+   },
+   "--text-4xl": {
+    "raw": "36px",
+    "kind": "dimension",
+    "value": "36px"
+   },
+   "--text-5xl": {
+    "raw": "48px",
+    "kind": "dimension",
+    "value": "48px"
+   },
+   "--text-6xl": {
+    "raw": "60px",
+    "kind": "dimension",
+    "value": "60px"
+   },
+   "--text-7xl": {
+    "raw": "72px",
+    "kind": "dimension",
+    "value": "72px"
+   },
+   "--text-8xl": {
+    "raw": "96px",
+    "kind": "dimension",
+    "value": "96px"
+   },
+   "--text-9xl": {
+    "raw": "128px",
+    "kind": "dimension",
+    "value": "128px"
+   },
+   "--text-base": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--text-color": {
+    "raw": "48, 24, 22",
+    "kind": "color",
+    "value": "#301816",
+    "note": "declared as an RGB triplet; the sheets wrap it in rgb()"
+   },
+   "--text-font-bold-weight": {
+    "raw": "600",
+    "kind": "number",
+    "value": 600
+   },
+   "--text-font-family": {
+    "raw": "'Robin Regular', sans-serif",
+    "kind": "fontFamily",
+    "value": "'Robin Regular', sans-serif"
+   },
+   "--text-font-family-semibold": {
+    "raw": "'Robin Semibold', sans-serif",
+    "kind": "fontFamily",
+    "value": "'Robin Semibold', sans-serif"
+   },
+   "--text-font-style": {
+    "raw": "normal",
+    "kind": "fontFamily",
+    "value": "normal"
+   },
+   "--text-font-weight": {
+    "raw": "500",
+    "kind": "number",
+    "value": 500
+   },
+   "--text-lg": {
+    "raw": "18px",
+    "kind": "dimension",
+    "value": "18px"
+   },
+   "--text-sm": {
+    "raw": "14px",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--text-xl": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--text-xs": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--text-xxs": {
+    "raw": "10px",
+    "kind": "dimension",
+    "value": "10px"
+   },
+   "--transform-logical-flip": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--transform-origin-end": {
+    "raw": "right",
+    "kind": "fontFamily",
+    "value": "right"
+   },
+   "--transform-origin-start": {
+    "raw": "left",
+    "kind": "fontFamily",
+    "value": "left"
+   },
+   "--vertical-breather": {
+    "raw": "64px",
+    "kind": "dimension",
+    "value": "64px"
+   },
+   "--vertical-breather-tight": {
+    "raw": "48px",
+    "kind": "dimension",
+    "value": "48px"
+   },
+   "--zoom-cursor-svg-url": {
+    "raw": "url(…)",
+    "kind": "other"
+   }
+  }
+ }
+}

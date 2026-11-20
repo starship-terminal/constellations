@@ -1,0 +1,273 @@
+// Reads every custom property the editorx.com surface's stylesheets declare
+// and writes raw/css-vars.json.
+//
+//   PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/vars.mjs
+//
+// editorx.com is now a redirect shell for Wix Studio: every path 301s to
+// wix.com/studio, except /pricing which still serves on the domain. The
+// harvest opens editorx.com/ so the redirect itself is the evidence, then
+// reads the thunderbolt site's CSS: linked bundles from static.parastorage.com
+// (wix-studio-header / wix-studio-footer, cross-origin to the CSSOM, so every
+// body is read from network responses) plus dozens of inline <style> blocks.
+// The site declares a real custom-property layer on :root and on comp-* boxes:
+// --color_0 … --color_65 (the Wix site palette, "R,G,B" triplets consumed as
+// rgb(var(--color_N))), --font_0 … --font_10 (text-theme font shorthands) and
+// a large per-component paint/layout layer (--bg, --brd, --shd, --rd,
+// --alpha-*, --one-unit, --scaling-factor, --l_display …). Many more are set
+// as inline styles on elements at runtime, so resolution happens on the live
+// page, not on a probe document: each name is read raw on :root, then
+// classified by assigning it to a real property on a probe element in the
+// live document — a colour comes back as sRGB, a length as px, a --font_N
+// shorthand as its resolved font properties.
+//
+// Dark: the site ships one theme. The only "dark" evidence is painted dark
+// sections that rebind the palette on their own element — resolved.dark reads
+// the same names on the darkest painted element that carries inline --color_
+// overrides ({} when none exists).
+//
+// Bins:
+//   wix      the declared site-token layer: --color_N, --font_N, --wix-*,
+//            --theme-*, --one-unit, --scaling-factor, --static-spx, --l_*,
+//            --scrollbar-width and friends on root/body shells
+//   app      per-component paint and layout vars the sheets declare (--bg,
+//            --brd, --shd, --alpha-*, --display, --aspect-ratio, --rd …)
+//   vendor   third-party widget vars (consent, players, embeds)
+//   utility  a one-off `[--x:value]` arbitrary-property utility class
+//   tailwind Tailwind internals: --tw-*, @layer properties, --lightningcss-*
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { BASE, UA, launch, clearChallenge, patch } from './public/lib.mjs';
+
+const here = path.dirname(fileURLToPath(import.meta.url));
+const REF = path.resolve(here, '..', '..');
+
+const { browser } = await launch();
+// A redirect or challenge page can greet a fresh client: retry on a fresh
+// context until the real document (with its sheets) arrives, then harvest.
+const bodies = new Map();
+let page = null, inline = [];
+for (let tries = 0; tries < 6 && !page; tries++) {
+  const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US' });
+  await patch(context);
+  const p = await context.newPage();
+  p.on('response', async (r) => {
+    if (r.request().resourceType() !== 'stylesheet') return;
+    try { bodies.set(r.url().split('?')[0], await r.text()); } catch { /* body gone */ }
+  });
+  await p.goto(BASE + '/', { waitUntil: 'domcontentloaded', timeout: 90000 }).catch(() => {});
+  await p.waitForTimeout(8000);
+  if (await clearChallenge(p, { tries: 3, step: 1500 })) {
+    page = p;
+    inline = await p.evaluate(() => [...document.styleSheets].filter((s) => !s.href).map((s, i) => { try { return ['inline-' + i, [...s.cssRules].map((r) => r.cssText).join('\n')]; } catch { return null; } }).filter(Boolean));
+    break;
+  }
+  console.log('challenge page, fresh context (try ' + (tries + 1) + ')');
+  await context.close();
+}
+if (!page) { console.log('blocked by the edge on every try; css-vars.json not written'); await browser.close(); process.exit(2); }
+const finalUrl = page.url().split(/[?#]/)[0];
+// inline sheets read via CSSOM; link sheets via the captured bodies
+const sheets = [...bodies.entries()].concat(inline);
+
+// ---- harvest: every rule with --* declarations ----
+// The probe resolves vw/vh/dvh and @media at the 1440 x 900 the notes below claim; a bare
+// browser.newPage() would give Playwright's 1280 x 720 default (finding 19-1).
+const probe = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+const result = await probe.evaluate((sheets) => {
+  const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
+  const rules = [];
+  const fonts = [];
+  const errors = [];
+  const walk = (list, ctx, file) => {
+    for (const r of list) {
+      if (r.type === CSSRule.FONT_FACE_RULE) {
+        const o = { file };
+        for (let i = 0; i < r.style.length; i++) o[r.style[i]] = noUrl(r.style.getPropertyValue(r.style[i]).trim());
+        fonts.push(o);
+        continue;
+      }
+      if (r.cssRules && !r.style) {
+        const head = r.type === CSSRule.MEDIA_RULE ? '@media ' + r.media.mediaText
+          : r.type === CSSRule.SUPPORTS_RULE ? '@supports ' + r.conditionText
+          : r.constructor.name === 'CSSLayerBlockRule' ? '@layer ' + r.name
+          : r.constructor.name === 'CSSContainerRule' ? '@container ' + r.conditionText
+          : (r.cssText || '').split('{')[0].trim().slice(0, 120);
+        walk(r.cssRules, [...ctx, head], file);
+        continue;
+      }
+      if (!r.style) continue;
+      const props = {};
+      let n = 0;
+      for (let i = 0; i < r.style.length; i++) {
+        const k = r.style[i];
+        if (k && k.startsWith('--')) { props[k] = noUrl(r.style.getPropertyValue(k).trim()); n++; }
+      }
+      if (n) rules.push({ file, selector: (r.selectorText || '').slice(0, 200), context: ctx, properties: props });
+      if (r.cssRules && r.cssRules.length) walk(r.cssRules, [...ctx, (r.selectorText || '').slice(0, 120)], file);
+    }
+  };
+  for (const [name, text] of sheets) {
+    const ss = new CSSStyleSheet();
+    try { ss.replaceSync(text); } catch (e) { errors.push({ file: name, error: String(e) }); continue; }
+    walk(ss.cssRules, [], name);
+  }
+  return { rules, fonts, errors };
+}, sheets);
+await probe.close();
+
+// ---- resolution: on the live page itself ----
+// Wix sets much of the layer inline (theme vars and per-component paint), and
+// --font_N values reference --theme-spx-ratio which only the real page holds,
+// so every name is resolved on the live document: raw on :root (or on the
+// rebinding element for the dark pass), then classified through a probe
+// element that inherits the real context.
+const want = [...new Set(result.rules.filter((r) => !r.context.includes('@layer properties') && !/\\\[--/.test(r.selector || '')).flatMap((r) => Object.keys(r.properties)))]
+  .filter((n) => !/^--(tw-|_|lightningcss-|svg$|media-|controls$)/.test(n)).sort();
+// Wix also declares palette vars inline that no stylesheet lists (JS writes
+// them); fold every --color_N / --font_N seen in the live DOM into the set.
+const inlineNames = await page.evaluate(() => {
+  const names = new Set();
+  const scan = (el) => { for (let i = 0; i < el.style.length; i++) { const n = el.style[i]; if (/^--(color_\d+|font_\d+|wix-)/.test(n)) names.add(n); } };
+  scan(document.documentElement);
+  document.querySelectorAll('body *[style]').forEach(scan);
+  return [...names];
+});
+for (const n of inlineNames) if (!want.includes(n)) want.push(n);
+want.sort();
+
+const resolved = {};
+for (const pass of ['light', 'dark']) {
+  resolved[pass] = await page.evaluate(([names, dark]) => {
+    const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
+    // dark pass: the darkest painted element that rebinds the palette inline.
+    let host = document.documentElement;
+    let hostDesc = ':root';
+    if (dark) {
+      let best = null, bestL = 255;
+      for (const el of document.querySelectorAll('body *[style]')) {
+        const st = el.getAttribute('style') || '';
+        if (!/--color_(1[1-5]|4[0-9]|5[0-9]|6[0-5])\s*:/.test(st)) continue;
+        const cs = getComputedStyle(el);
+        const m = cs.backgroundColor.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/);
+        if (!m) continue;
+        const lum = 0.299 * +m[1] + 0.587 * +m[2] + 0.114 * +m[3];
+        const r = el.getBoundingClientRect();
+        if (r.width < 300 || r.height < 100) continue;
+        if (lum < bestL) { bestL = lum; best = el; }
+      }
+      if (!best) return {};
+      host = best;
+      hostDesc = 'element #' + (best.id || '?') + ' (bg ' + getComputedStyle(best).backgroundColor + ')';
+    }
+    const box = document.createElement('div');
+    box.style.cssText = 'position:absolute;left:0;top:0;width:10px;height:10px;visibility:hidden';
+    const p = document.createElement('div');
+    box.appendChild(p);
+    host.appendChild(box);
+    const lin = (c) => (c <= 0.0031308 ? 12.92 * c : 1.055 * Math.pow(c, 1 / 2.4) - 0.055);
+    const fromOklab = (L, a, b) => {
+      const l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3, m = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3, s = (L - 0.0894841775 * a - 1.2914855480 * b) ** 3;
+      return [4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s, -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s, -0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s].map((v) => Math.round(Math.min(1, Math.max(0, lin(v))) * 255));
+    };
+    const num = (x) => (x.endsWith('%') ? parseFloat(x) / 100 : parseFloat(x));
+    const norm = (c) => {
+      let m = c.match(/^rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\)$/);
+      let rgb, a = 1;
+      if (m) { rgb = [m[1], m[2], m[3]].map((v) => Math.round(+v)); a = m[4] === undefined ? 1 : +m[4]; }
+      else if ((m = c.match(/^color\(srgb ([-\d.e]+) ([-\d.e]+) ([-\d.e]+)(?: \/ ([\d.]+%?))?\)$/))) { rgb = [m[1], m[2], m[3]].map((v) => Math.round(Math.min(1, Math.max(0, +v)) * 255)); a = m[4] === undefined ? 1 : num(m[4]); }
+      else if ((m = c.match(/^oklab\(([-\d.e]+%?) ([-\d.e]+) ([-\d.e]+)(?: \/ ([\d.]+%?))?\)$/))) { rgb = fromOklab(num(m[1]), +m[2], +m[3]); a = m[4] === undefined ? 1 : num(m[4]); }
+      else if ((m = c.match(/^oklch\(([-\d.e]+%?) ([-\d.e]+) ([-\d.e]+)(?: \/ ([\d.]+%?))?\)$/))) { const h = (+m[3] * Math.PI) / 180; rgb = fromOklab(num(m[1]), +m[2] * Math.cos(h), +m[2] * Math.sin(h)); a = m[4] === undefined ? 1 : num(m[4]); }
+      else if ((m = c.match(/^lab\(([-\d.e]+%?) ([-\d.e]+) ([-\d.e]+)(?: \/ ([\d.]+%?))?\)$/))) {
+        const fy = (num(m[1]) + 16) / 116, fx = fy + (+m[2]) / 500, fz = fy - (+m[3]) / 200;
+        const eps = 216 / 24389, kap = 24389 / 27;
+        const f = (t) => (t ** 3 > eps ? t ** 3 : (116 * t - 16) / kap);
+        const X = 0.96422 * f(fx), Y = f(fy), Z = 0.82521 * f(fz);
+        const r = 3.1338561 * X - 1.6168667 * Y - 0.4906146 * Z, g = -0.9787684 * X + 1.9161415 * Y + 0.033454 * Z, bl = 0.0719453 * X - 0.2289914 * Y + 1.4052427 * Z;
+        rgb = [r, g, bl].map((v) => Math.round(Math.min(1, Math.max(0, lin(v))) * 255)); a = m[4] === undefined ? 1 : num(m[4]);
+      }
+      else return { unparsed: c };
+      a = Math.round(a * 1000) / 1000;
+      return a === 1 ? '#' + rgb.map((v) => v.toString(16).padStart(2, '0')).join('') : `rgba(${rgb.join(', ')}, ${a})`;
+    };
+    const out = { __host: hostDesc };
+    for (const name of names) {
+      const raw = noUrl(getComputedStyle(host).getPropertyValue(name).trim());
+      if (!raw) continue;
+      const r = { raw: raw.length > 300 ? raw.slice(0, 300) + '…' : raw };
+      p.removeAttribute('style');
+      // Wix palette vars are "R,G,B" channel triplets consumed as
+      // rgb(var(--color_N)); compose them before the generic checks.
+      const triplet = /^\d{1,3},\s*\d{1,3},\s*\d{1,3}$/.test(raw);
+      const asColor = triplet ? 'rgb(' + raw + ')' : raw;
+      if (/^-?\d*\.?\d+$/.test(raw)) { r.kind = 'number'; r.value = +raw; }
+      else if (/currentcolor/i.test(raw)) { r.kind = 'other'; r.note = 'depends on currentColor'; }
+      else if (CSS.supports('color', asColor) && !/^(inherit|initial|unset|revert)$/.test(raw)) {
+        p.style.color = asColor; r.kind = 'color'; r.value = norm(getComputedStyle(p).color); if (triplet) r.rgbTriplet = true;
+        if (typeof r.value === 'object') { r.kind = 'other'; r.note = 'colour space not converted: ' + r.value.unparsed; delete r.value; }
+      } else if (/^--font_\d+$/.test(name) || (CSS.supports('font', raw) && /\//.test(raw) && /[a-z]/i.test(raw))) {
+        // A text-theme font shorthand: assign var(--font_N) and read the
+        // resolved pieces (calc() sizes come back in px).
+        p.style.font = 'var(' + name + ')';
+        const cs = getComputedStyle(p);
+        r.kind = 'fontShorthand';
+        r.value = { fontStyle: cs.fontStyle, fontWeight: cs.fontWeight, fontSize: cs.fontSize, lineHeight: cs.lineHeight, fontFamily: cs.fontFamily, letterSpacing: cs.letterSpacing, textTransform: cs.textTransform };
+      } else if (!raw.includes('%') && CSS.supports('width', raw)) { p.style.width = raw; r.kind = 'dimension'; r.value = getComputedStyle(p).width; if (/vw|vh|dvh|one-unit|scaling-factor|theme-spx/.test(raw)) r.note = 'viewport- or unit-relative, resolved at 1440 x 900'; }
+      else if (CSS.supports('box-shadow', raw)) { p.style.boxShadow = raw; r.kind = 'shadow'; r.value = getComputedStyle(p).boxShadow; }
+      else if (CSS.supports('transition-duration', raw)) { p.style.transitionDuration = raw; r.kind = 'duration'; r.value = getComputedStyle(p).transitionDuration; }
+      else if (CSS.supports('transition-timing-function', raw) && !/^[a-z-]+$/.test(raw) || /^(ease|ease-in|ease-out|ease-in-out|linear)$/.test(raw)) { r.kind = 'easing'; r.value = raw; }
+      else if (/[A-Za-z]/.test(raw) && CSS.supports('font-family', raw)) { r.kind = 'fontFamily'; r.value = raw; }
+      else r.kind = 'other';
+      out[name] = r;
+    }
+    box.remove();
+    return out;
+  }, [want, pass === 'dark']);
+}
+resolved._darkHost = resolved.dark.__host || null;
+for (const pass of ['light', 'dark']) delete resolved[pass].__host;
+await page.close();
+await browser.close();
+
+const WIX = /^--(color_\d+|font_\d+|wix-|theme-|one-unit|scaling-factor|static-spx|l_display|l_|scrollbar-width|site-|page-|s_|usm)/;
+const VENDOR = /video-js|vjs-|stripe|sonner|--toast-|osano-cm|--s-|intercom|ketch|iubenda|onetrust|consent|cookie/;
+const binOf = (r) => {
+  const names = Object.keys(r.properties);
+  if (/\\\[--/.test(r.selector || '')) return 'utility';
+  if (names.every((n) => n.startsWith('--tw-')) || r.context.some((c) => c === '@layer properties')) return 'tailwind';
+  if (VENDOR.test(r.selector || '') || names.every((n) => VENDOR.test(n))) return 'vendor';
+  if (names.every((n) => WIX.test(n)) || names.some((n) => /^--(color_\d+|font_\d+)$/.test(n))) return 'wix';
+  return 'app';
+};
+const ok = result.rules;
+for (const r of ok) r.bin = binOf(r);
+const bySelector = {};
+for (const r of ok) {
+  const key = `[${r.bin}] ` + (r.context.length ? r.context.join(' ') + ' ' : '') + r.selector;
+  bySelector[key] = (bySelector[key] || 0) + Object.keys(r.properties).length;
+}
+const names = (bin) => [...new Set(ok.filter((r) => r.bin === bin).flatMap((r) => Object.keys(r.properties)))].sort();
+const out = {
+  readAt: new Date().toLocaleDateString('en-CA'),
+  source: `the stylesheet bodies read during a live load of ${finalUrl} (reached via www.editorx.com, which 301s there) — the linked thunderbolt bundles from static.parastorage.com captured as network responses plus the inline <style> blocks, re-parsed with CSSStyleSheet — resolved on the live page itself (raw on :root, classified through a probe element; "R,G,B" palette triplets composed as rgb(), --font_N shorthands resolved through the font property); "dark" is the darkest painted element rebinding the palette inline, not a theme, at 1440 x 900`,
+  sheets: sheets.map(([n, t]) => `${n} (${t.length} bytes)`),
+  counts: {
+    rules: ok.length,
+    fonts: result.fonts.length,
+    names: { wix: names('wix').length, app: names('app').length, vendor: names('vendor').length, utility: names('utility').length, tailwind: names('tailwind').length },
+    bySelector,
+  },
+  errors: result.errors,
+  wix: ok.filter((r) => r.bin === 'wix'),
+  app: ok.filter((r) => r.bin === 'app'),
+  vendor: ok.filter((r) => r.bin === 'vendor'),
+  utility: ok.filter((r) => r.bin === 'utility'),
+  tailwind: ok.filter((r) => r.bin === 'tailwind'),
+  fonts: result.fonts,
+  resolved,
+};
+fs.mkdirSync(path.join(REF, 'raw'), { recursive: true });
+fs.writeFileSync(path.join(REF, 'raw', 'css-vars.json'), JSON.stringify(out, null, 1) + '\n');
+console.log(`css-vars.json: ${ok.length} rules, ${result.fonts.length} font faces; names wix ${out.counts.names.wix}, app ${out.counts.names.app}, vendor ${out.counts.names.vendor}, utility ${out.counts.names.utility}, tailwind ${out.counts.names.tailwind}`);
+console.log(`resolved: light ${Object.keys(resolved.light).length}, dark ${Object.keys(resolved.dark).length} (host: ${resolved._darkHost || 'none'})`);
+for (const [k, v] of Object.entries(bySelector).sort((a, b) => b[1] - a[1]).slice(0, 25)) console.log(`  ${v}\t${k.slice(0, 150)}`);

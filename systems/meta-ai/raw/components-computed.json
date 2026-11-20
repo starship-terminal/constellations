@@ -1,0 +1,219 @@
+{
+  "source": "https://www.meta.ai/ signed out, T3 preview tab, 2026-11-19. Desktop readings at innerWidth 1440, innerHeight 900, devicePixelRatio 2. Phone readings at innerWidth 390, innerHeight 844, devicePixelRatio 2. Auth readings at auth.meta.com, same desktop viewport, nothing submitted.",
+  "components": {
+    "button-header-login": {
+      "default": {
+        "text": "Log in",
+        "width": 67,
+        "height": 36,
+        "padding": "0px 14px",
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "lineHeight": "20px",
+        "fontFamily": "optimisticAI",
+        "borderRadius": "9999px",
+        "border": "0px solid rgba(255, 255, 255, 0.12)"
+      }
+    },
+    "button-header-download": {
+      "default": {
+        "text": "Download app",
+        "width": 121,
+        "height": 36,
+        "padding": "0px 14px",
+        "background": "rgba(255, 255, 255, 0.12)",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "lineHeight": "20px",
+        "fontFamily": "optimisticAI",
+        "borderRadius": "9999px",
+        "border": "0px solid rgba(255, 255, 255, 0.12)"
+      }
+    },
+    "button-section": {
+      "default": {
+        "text": "Edit a photo",
+        "width": 106,
+        "height": 36,
+        "padding": "0px 14px",
+        "background": "rgba(0, 0, 0, 0)",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "borderRadius": "9999px",
+        "fontFamily": "optimisticAI"
+      },
+      "hover": {
+        "note": "Pointer hover at 957,536 did not change background, color, or transform from default."
+      },
+      "focus": {
+        "outlineColor": "rgb(23, 147, 255)",
+        "outlineStyle": "none",
+        "outlineWidth": "2px",
+        "outlineOffset": "2px",
+        "boxShadow": "none",
+        "note": "Focus sets an outline color but outline-style stays none, so no ring is painted."
+      }
+    },
+    "button-learn-more": {
+      "default": {
+        "text": "Learn more",
+        "height": 40,
+        "padding": "0px 12px 0px 14px",
+        "background": "rgba(56, 56, 56, 0.8)",
+        "color": "rgb(255, 255, 255)",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "borderRadius": "9999px",
+        "backdropFilter": "blur(36px)"
+      }
+    },
+    "button-icon": {
+      "default": {
+        "aria": "Open sidebar",
+        "width": 32,
+        "height": 32,
+        "background": "rgb(24, 24, 25)",
+        "borderRadius": "12px",
+        "color": "rgb(255, 255, 255)"
+      },
+      "send-disabled": {
+        "aria": "Send",
+        "width": 32,
+        "height": 32,
+        "opacity": "0.5",
+        "disabled": true,
+        "background": "rgba(0, 0, 0, 0)"
+      }
+    },
+    "text-field": {
+      "default": {
+        "aria": "Ask Meta AI",
+        "width": 728,
+        "height": 27,
+        "fontSize": "18px",
+        "lineHeight": "27px",
+        "fontWeight": "400",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "placeholderColor": "rgba(241, 246, 255, 0.38)",
+        "fontFamily": "optimisticAI"
+      },
+      "shell": {
+        "width": 768,
+        "height": 107,
+        "background": "rgba(56, 56, 56, 0.8)",
+        "borderRadius": "32px",
+        "padding": "0px 12px 12px",
+        "shadow": "elevation-01 token"
+      }
+    },
+    "sidebar": {
+      "collapsed": {
+        "width": 56,
+        "height": 900,
+        "background": "rgb(24, 24, 25)"
+      },
+      "expanded": {
+        "width": 256,
+        "height": 900,
+        "background": "rgb(24, 24, 25)",
+        "rows": "New chat and Vibes 232x32, radius 12px, padding 6px 12px 6px 4px, 14px white"
+      },
+      "signup": {
+        "text": "Sign up",
+        "width": 72,
+        "height": 32,
+        "background": "rgba(255, 255, 255, 0.12)",
+        "borderRadius": "9999px",
+        "padding": "0px 12px",
+        "fontSize": "14px"
+      }
+    },
+    "hero": {
+      "desktop": {
+        "fontSize": "48px",
+        "lineHeight": "51.84px",
+        "fontWeight": "400",
+        "color": "rgb(255, 255, 255)",
+        "width": 720
+      },
+      "phone": {
+        "fontSize": "28.08px",
+        "lineHeight": "30.3264px",
+        "width": 342,
+        "innerWidth": 390
+      }
+    },
+    "section-title": {
+      "default": {
+        "text": "Edit photos with ease",
+        "fontSize": "30px",
+        "lineHeight": "34px",
+        "fontWeight": "400",
+        "color": "rgb(255, 255, 255)"
+      }
+    },
+    "chat-bubble": {
+      "default": {
+        "text": "Change the background to a neutral blue",
+        "width": 277,
+        "height": 44,
+        "background": "rgba(255, 255, 255, 0.12)",
+        "borderRadius": "22px",
+        "padding": "10px 16px",
+        "fontSize": "16px",
+        "lineHeight": "24px",
+        "color": "rgb(255, 255, 255)"
+      }
+    },
+    "link-footer": {
+      "default": {
+        "text": "Muse",
+        "color": "rgba(242, 247, 255, 0.53)",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "textDecoration": "none"
+      }
+    },
+    "auth-button": {
+      "default": {
+        "text": "Continue with Facebook",
+        "width": 560,
+        "height": 54,
+        "background": "rgb(255, 255, 255)",
+        "border": "1px solid rgb(224, 226, 228)",
+        "borderRadius": "16px",
+        "host": "auth.meta.com"
+      }
+    },
+    "auth-field": {
+      "default": {
+        "label": "Mobile number or email address",
+        "width": 560,
+        "height": 60,
+        "background": "rgba(255, 255, 255, 0.2)",
+        "border": "1px solid rgb(104, 106, 110)",
+        "borderRadius": "16px",
+        "padding": "10px 16px",
+        "inputSize": "15px",
+        "inputWeight": "500",
+        "labelColor": "rgb(104, 106, 110)",
+        "note": "Focused only. No text typed. Continue not pressed."
+      }
+    },
+    "auth-heading": {
+      "default": {
+        "text": "What's your mobile number or email address?",
+        "fontSize": "24px",
+        "lineHeight": "28px",
+        "fontWeight": "600",
+        "color": "rgb(17, 17, 18)",
+        "fontFamily": "Optimistic"
+      }
+    }
+  }
+}

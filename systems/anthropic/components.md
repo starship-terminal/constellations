@@ -72,7 +72,7 @@ The 19 components of the library's checklist ([docs/DESIGN-SYSTEM.md](../../docs
 
 Values that apply across entries, from the measurement files.
 
-**Focus.** 13 components were given a real keyboard focus. 11 show a change: `nav-search` (2px solid #154c92 `brand.periwinkle-interactive`, offset 4px), `nav-cta` (2px solid #154c92 `brand.periwinkle-interactive`, offset 4px), `hero-cta` (2px solid #154c92 `brand.periwinkle-interactive`, offset 4px), `product-cta` (2px solid #c46849, offset 4px), `plan-tab` (2px solid #c46849, offset 2px), `plan-cta` (2px solid #c46849, offset 4px), `docs-nav-link` (ring shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px), `batch-toggle` (2px solid #c46849, offset 2px), `docs-search-field` (ring shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px), `nav-pill` (2px solid #154c92 `brand.periwinkle-interactive`, offset 4px), `nav-trigger` (2px solid #c46849, offset 2px). The other 2 draw nothing new - the marketing pills draw a deliberate 2px #154c92 periwinkle ring offset 4px, the product pages a 2px #c46849 clay-dark ring offset 2-4px, the docs outline in #2a78d6, and text links take the browser's ring: `footer-link`, `submit-button`.
+**Focus.** 13 components were given a real keyboard focus. 11 show a change: `nav-search` (2px solid #154c92 `brand.periwinkle-interactive`, offset 4px), `nav-cta` (2px solid #154c92 `brand.periwinkle-interactive`, offset 4px), `hero-cta` (2px solid #154c92 `brand.periwinkle-interactive`, offset 4px), `product-cta` (2px solid #c46849, offset 4px), `plan-tab` (2px solid #c46849, offset 2px), `plan-cta` (2px solid #c46849, offset 4px), `docs-nav-link` (ring shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px), `batch-toggle` (2px solid #c46849, offset 2px), `docs-search-field` (ring shadow transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, transparent 0px 0px 0px 0px, #fcfcfb 0px 0px 0px 1px inset, #2a78d6 0px 0px 0px 1px, #cde2fb 0px 0px 6px 1px), `nav-pill` (2px solid #154c92 `brand.periwinkle-interactive`, offset 4px), `nav-trigger` (2px solid #c46849, offset 2px). The other 2 draw nothing new - the marketing pills draw a deliberate 2px #154c92 periwinkle ring offset 4px, the product pages a 2px #c46849 clay-dark ring offset 2-4px, the docs outline in #2a78d6, and text links take the browser's ring: `footer-link`, `submit-button`. Focus could not be captured on 2 more (keyboard focus never landed on them, so their readings are left out): `api-cta`, `docs-tab`.
 
 **Pressed.** Pressed was forced with DevTools, so it is the :active styles only: the nav pills swap to their #e8e6dc pressed fill under :active, while the ink CTAs and docs controls keep their resting paint. The submit button and every sign-in link were never pressed for real.
 
@@ -113,12 +113,12 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Feature card](#feature-card) | 1440 x 810 | - | 10px | #f5f4ed `gray.100` | none | 224px 0px |
+| [Feature card](#feature-card) | 1440 x 810 | - | - | #f5f4ed `gray.100` | none | 224px 0px |
 | [News card](#news-card) | 632 x 104.17 | - | - | transparent | none | 0 |
 | [Product card](#product-card) | 480 x 270 | 1px solid #e8e6dc `gray.200` | 19px | #f0eee6 `gray.150` | none | 0 |
 | [Plan card](#plan-card) | 420 x 375.2 | 1px solid #f0eee6 `gray.150` | 24px | #ffffff `gray.000` | none | 40px 32px 48px 32px |
 | [Search dialog](#search-dialog) | 672 x 500 | - | 12px | #ffffff `gray.000` | rgba(11, 11, 11, 0.1) 0px 0px 0px 0px inset, rgba(11, 11, 11, 0.1) 0px 0px 0px 1px, rgba(11, 11, 11, 0.08) 0px 4px 8px 0px, rgba(11, 11, 11, 0.08) 0px 12px 28px -2px | 0 |
-| [Mobile nav sheet](#mobile-nav-sheet) | 390 x 844 | - | 8px | #141413 `gray.950` | none | 0 |
+| [Mobile nav sheet](#mobile-nav-sheet) | 390 x 844 | - | - | #141413 `gray.950` | none | 0 |
 
 ## Components
 

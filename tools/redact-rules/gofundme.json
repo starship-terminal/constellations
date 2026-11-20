@@ -1,0 +1,10 @@
+{
+  "_note": "Rules for systems/gofundme. Public signed-out capture (consumer pages, /c/* content stack, discover/search grids, a public fundraiser page, the create wizard at rest and the sign-in shell); no private data expected. Fundraiser titles, organiser names and campaign photos are public published content the product itself surfaces on /discover.",
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@gofundme\\.com$"
+    ]
+  },
+  "families": []
+}

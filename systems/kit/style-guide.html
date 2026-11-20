@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kit style guide</title>
+<meta name="description" content="Kit design tokens and the public marketing surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --color-black: #000000;
+  --color-blue-100: #bce1fa;
+  --color-blue-1000: #020a0f;
+  --color-blue-200: #a2d1f1;
+  --color-blue-400: #63bbf9;
+  --color-blue-50: #f0f9ff;
+  --color-blue-500: #44b1ff;
+  --color-blue-700: #2b7ab1;
+  --color-blue-800: #144264;
+  --color-blue-900: #0a2940;
+  --color-gray-100: #f0f0f0;
+  --color-gray-200: #e3e3e3;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #c4c4c4;
+  --color-gray-50: #f7f7f7;
+  --color-gray-500: #b8b8b8;
+  --color-gray-600: #919191;
+  --color-gray-700: #6e6e6e;
+  --color-gray-800: #3d3d3d;
+  --color-green-1000: #020f07;
+  --color-green-200: #b9e9c5;
+  --color-green-50: #f0fff3;
+  --color-green-500: #65dc8d;
+  --color-green-700: #27a14f;
+  --color-green-800: #157033;
+  --color-green-900: #083818;
+  --color-orange-100: #ffe7d6;
+  --color-orange-1000: #0f0700;
+  --color-orange-200: #ffd0ad;
+  --color-orange-500: #ff7647;
+  --color-orange-700: #a65821;
+  --color-orange-800: #c24013;
+  --color-orange-900: #5e2d00;
+  --color-purple-100: #f3e3f9;
+  --color-purple-1000: #0c050f;
+  --color-purple-200: #e7c9f1;
+  --color-purple-50: #fbf0ff;
+  --color-purple-500: #e4acff;
+  --color-purple-700: #965db2;
+  --color-purple-800: #4a265a;
+  --color-purple-900: #2b1136;
+  --color-red-500: #fc5c3f;
+  --color-red-600: #e05138;
+  --color-soft-black: #1e1e1e;
+  --color-twitter: #55acee;
+  --color-warm-white: #f2efe9;
+  --color-warm-white-100: #f9f7f4;
+  --color-warm-white-300: #eae5dc;
+  --color-white: #ffffff;
+  --color-yellow-100: #fef9c3;
+  --color-yellow-500: #f2ba41;
+  --color-youtube: #ff0000;
+  --font-family-display: "KitSansFont","KitSansFont Fallback";
+  --font-family-sans: "Libre Franklin","Libre Franklin Fallback";
+  --font-family-mono: "Menlo","Monaco","Consolas","Liberation Mono","Courier New","monospace";
+  --font-family-app: Inter, -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-weight-black: 900;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-size-10: 40px;
+  --font-size-11: 44px;
+  --font-size-12: 48px;
+  --font-size-14: 56px;
+  --font-size-16: 64px;
+  --font-size-18: 72px;
+  --font-size-20: 80px;
+  --font-size-24: 96px;
+  --font-size-25: 100px;
+  --font-size-28: 112px;
+  --font-size-2xl: 24px;
+  --font-size-3: 12px;
+  --font-size-30: 120px;
+  --font-size-32: 128px;
+  --font-size-35: 140px;
+  --font-size-36: 144px;
+  --font-size-37: 152px;
+  --font-size-3xl: 30px;
+  --font-size-4: 16px;
+  --font-size-40: 160px;
+  --font-size-44: 176px;
+  --font-size-48: 192px;
+  --font-size-4xl: 36px;
+  --font-size-5: 20px;
+  --font-size-50: 200px;
+  --font-size-5xl: 48px;
+  --font-size-6: 24px;
+  --font-size-7: 28px;
+  --font-size-8: 32px;
+  --font-size-9: 36px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-sm: 14px;
+  --font-size-xl: 20px;
+  --font-size-xs: 12px;
+  --font-size-measured-hero: 80px;
+  --font-size-measured-pricing: 64px;
+  --font-size-measured-features: 64px;
+  --font-size-measured-mobileHero: 48px;
+  --font-size-measured-nav: 14px;
+  --font-size-measured-cta: 14px;
+  --font-size-measured-body: 14px;
+  --font-lineHeight-tight: 1.25;
+  --font-lineHeight-snug: 1.375;
+  --font-lineHeight-normal: 1.5;
+  --spacing-base: 4px;
+  --spacing-s1: 4px;
+  --spacing-s2: 8px;
+  --spacing-s3: 12px;
+  --spacing-s4: 16px;
+  --spacing-s5: 24px;
+  --spacing-s6: 32px;
+  --spacing-s7: 48px;
+  --spacing-s8: 64px;
+  --spacing-s9: 80px;
+  --radius-1: 4px;
+  --radius-2xl: 16px;
+  --radius-3: 12px;
+  --radius-3xl: 24px;
+  --radius-5: 20px;
+  --radius-lg: 8px;
+  --radius-md: 6px;
+  --radius-sm: 4px;
+  --radius-xl: 12px;
+  --radius-xs: 2px;
+  --duration-default: 150ms;
+  --easing-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --easing-in: cubic-bezier(0.4, 0.0, 1.0, 1.0);
+  --easing-inOut: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --easing-default: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --container-2xl: 672px;
+  --container-3xl: 768px;
+  --container-4xl: 896px;
+  --container-5xl: 1024px;
+  --container-7xl: 1280px;
+  --container-lg: 512px;
+  --container-md: 448px;
+  --container-sm: 384px;
+  --container-xl: 576px;
+  --container-xs: 320px;
+  --component-navHeight: 58px;
+  --component-announceHeight: 48px;
+  --component-trialHeight: 32px;
+  --component-heroSize: 152px;
+  --component-loginSubmitHeight: 48px;
+  --component-trialRadius: 8px;
+  --component-loginRadius: 12px;
+  --motion-duration-tw-animation-delay: 0ms;
+  --motion-duration-25ms: 25ms;
+  --motion-duration-50ms: 50ms;
+  --motion-duration-75ms: 75ms;
+  --motion-duration-100ms: 100ms;
+  --motion-duration-120ms: 120ms;
+  --motion-duration-125ms: 125ms;
+  --motion-duration-default-transition-duration: 150ms;
+  --motion-duration-200ms: 200ms;
+  --motion-duration-button-transition-duration: 250ms;
+  --motion-duration-d-o: 300ms;
+  --motion-duration-400ms: 400ms;
+  --motion-duration-500ms: 500ms;
+  --motion-duration-550ms: 550ms;
+  --motion-duration-d-t: 600ms;
+  --motion-duration-800ms: 800ms;
+  --motion-duration-1000ms: 1000ms;
+  --motion-duration-2000ms: 2000ms;
+  --motion-duration-3000ms: 3000ms;
+  --motion-duration-5000ms: 5000ms;
+  --motion-duration-80000ms: 80000ms;
+  --motion-easing-bezier-0-5-0-0-5-1: cubic-bezier(0.5, 0, 0.5, 1);
+  --motion-easing-d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+  --motion-easing-default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --motion-easing-ease-in-2: cubic-bezier(0.42, 0, 1, 1);
+  --motion-easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-ease-in-out-2: cubic-bezier(0.42, 0, 0.58, 1);
+  --motion-easing-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --motion-easing-ease-out-2: cubic-bezier(0, 0, 0.58, 1);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --motion-transition-tw-gradient-from-300ms-default-transition-timing-function: {'duration': 'var(--motion-duration-d-o)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-tw-gradient-to-300ms-default-transition-timing-function: {'duration': 'var(--motion-duration-d-o)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-tw-gradient-via-300ms-default-transition-timing-function: {'duration': 'var(--motion-duration-d-o)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-background-color-300ms-default-transition-timing-function: {'duration': 'var(--motion-duration-d-o)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-border-color-300ms-default-transition-timing-function: {'duration': 'var(--motion-duration-d-o)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-color-300ms-default-transition-timing-function: {'duration': 'var(--motion-duration-d-o)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-fill-300ms-default-transition-timing-function: {'duration': 'var(--motion-duration-d-o)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-outline-color-300ms-default-transition-timing-function: {'duration': 'var(--motion-duration-d-o)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-stroke-300ms-default-transition-timing-function: {'duration': 'var(--motion-duration-d-o)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-text-decoration-color-300ms-default-transition-timing-function: {'duration': 'var(--motion-duration-d-o)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-tw-gradient-from-100ms-default-transition-timing-function: {'duration': 'var(--motion-duration-100ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-tw-gradient-to-100ms-default-transition-timing-function: {'duration': 'var(--motion-duration-100ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-tw-gradient-via-100ms-default-transition-timing-function: {'duration': 'var(--motion-duration-100ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-background-color-100ms-default-transition-timing-function: {'duration': 'var(--motion-duration-100ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-border-color-100ms-default-transition-timing-function: {'duration': 'var(--motion-duration-100ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-color-100ms-default-transition-timing-function: {'duration': 'var(--motion-duration-100ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-fill-100ms-default-transition-timing-function: {'duration': 'var(--motion-duration-100ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-outline-color-100ms-default-transition-timing-function: {'duration': 'var(--motion-duration-100ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-stroke-100ms-default-transition-timing-function: {'duration': 'var(--motion-duration-100ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-text-decoration-color-100ms-default-transition-timing-function: {'duration': 'var(--motion-duration-100ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-all-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-all-300ms-default-transition-timing-function: {'duration': 'var(--motion-duration-d-o)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-all-300ms-ease: {'duration': 'var(--motion-duration-d-o)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-border-color-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-box-shadow-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-all-200ms-default-transition-timing-function: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-rotate-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-scale-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-transform-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-translate-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-transform-250ms-ease: {'duration': 'var(--motion-duration-button-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-opacity-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-opacity-300ms-default-transition-timing-function: {'duration': 'var(--motion-duration-d-o)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-tw-gradient-from-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-tw-gradient-to-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-tw-gradient-via-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-background-color-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-color-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-fill-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-max-height-500ms-ease: {'duration': 'var(--motion-duration-500ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-outline-color-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-stroke-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-text-decoration-color-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-background-250ms-ease: {'duration': 'var(--motion-duration-button-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-bottom-250ms-ease-delay250ms: {'duration': 'var(--motion-duration-button-transition-duration)', 'delay': '250ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-rotate-300ms-default-transition-timing-function: {'duration': 'var(--motion-duration-d-o)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-scale-300ms-default-transition-timing-function: {'duration': 'var(--motion-duration-d-o)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-top-250ms-ease-delay250ms: {'duration': 'var(--motion-duration-button-transition-duration)', 'delay': '250ms', 'timingFunction': 'var(--motion-easing-ease)'};
+  --motion-transition-transform-300ms-default-transition-timing-function: {'duration': 'var(--motion-duration-d-o)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-translate-300ms-default-transition-timing-function: {'duration': 'var(--motion-duration-d-o)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-webkit-backdrop-filter-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-backdrop-filter-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-content-visibility-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-display-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-filter-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-overlay-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-pointer-events-150ms-default-transition-timing-function: {'duration': 'var(--motion-duration-default-transition-duration)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-tw-gradient-from-200ms-default-transition-timing-function: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-tw-gradient-to-200ms-default-transition-timing-function: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --motion-transition-tw-gradient-via-200ms-default-transition-timing-function: {'duration': 'var(--motion-duration-200ms)', 'delay': '0ms', 'timingFunction': 'var(--motion-easing-default-transition-timing-function)'};
+  --background-page: #ffffff;
+  --background-ink: #1e1e1e;
+  --background-warm: #f2efe9;
+  --background-warm100: #f9f7f4;
+  --background-warm300: #eae5dc;
+  --text-primary: #1e1e1e;
+  --text-onInk: #f2efe9;
+  --text-onAccent: #1e1e1e;
+  --text-muted: #6e6e6e;
+  --text-disabled: #b8b8b8;
+  --text-link: #1e1e1e;
+  --border-default: #d4d4d4;
+  --border-strong: #3d3d3d;
+  --border-focus: #44b1ff;
+  --action-fill: #44b1ff;
+  --action-ink: #1e1e1e;
+  --action-hover: #a2d1f1;
+  --status-danger: #fc5c3f;
+  --status-warning: #f2ba41;
+  --status-success: #65dc8d;
+  --status-info: #44b1ff;
+  color-scheme: light;
+  --sg-sans: "Libre Franklin", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: KitSansFont, "Libre Franklin", ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #1e1e1e); background: var(--background-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.05 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.03em; color: var(--text-primary, #1e1e1e); }
+h2.sh { font: 700 12px/1 var(--sg-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted, #666c77); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-rule, #e7e8ec); }
+.lead { max-width: 62ch; color: var(--text-body, #20232b); opacity: .85; }
+.note { font-size: 13px; color: var(--text-muted, #666c77); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 700 11px/1 var(--sg-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted, #666c77); opacity: .75; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-input, #dfdfe4); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-muted, #666c77); }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-input, #dfdfe4); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-muted, #666c77); }
+/* ---- toggle ---- */
+.mode { display: inline-flex; align-items: center; gap: 10px; font: 500 13px/1 var(--sg-sans); color: var(--text-muted, #666c77); user-select: none; cursor: pointer; }
+.mode input { position: absolute; opacity: 0; }
+.mode .trk { width: 36px; height: 20px; border-radius: 9999px; background: var(--background-card, #f6f6f8); border: 1px solid var(--border-input, #dfdfe4); position: relative; transition: background .15s; }
+.mode .trk::after { content: ""; position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: var(--action-fill, #44b1ff); transition: transform .15s; }
+.mode input:checked + .trk::after { transform: translateX(16px); }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border-input, #dfdfe4); border-radius: var(--radius-card, 16px); overflow: hidden; background: var(--background-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-navHeight, 58px); padding: 0 22px; font-size: 14px; font-weight: 600; color: var(--text-onInk, #f2efe9); background: var(--background-ink, #1e1e1e); }
+.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.04em; color: var(--text-onInk, #f2efe9); }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 32px; padding: 0 16px; font-size: 14px; font-weight: 600; border-radius: var(--component-trialRadius, 8px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-fill, #44b1ff); color: var(--text-onAccent, #1e1e1e); }
+.btn.ghost { border-color: var(--text-onInk, #f2efe9); color: var(--text-onInk, #f2efe9); background: transparent; }
+.btn.small { height: 32px; border-radius: 8px; font-size: 14px; padding: 0 14px; }
+.btn.neutral { background: transparent; color: var(--text-onInk, #f2efe9); border-color: var(--text-onInk, #f2efe9); height: 32px; border-radius: 8px; font-size: 14px; padding: 0 14px; font-weight: 600; }
+.hero { color: #fff; padding: 56px 40px 64px; font: 500 var(--font-size-measured-hero, 80px)/0.95 var(--sg-serif); letter-spacing: -0.03em; text-align: center; background: var(--background-ink, #1e1e1e); }
+.hero .badge { display: inline-flex; align-items: center; gap: 8px; font: 500 13px/1 var(--sg-sans); letter-spacing: -0.01em; color: var(--text-ink, #23252b); border: 1px solid var(--border-input, #dfdfe4); border-radius: 9999px; padding: 9px 14px; margin-bottom: 22px; }
+.hero .accent { color: var(--action-fill, #44b1ff); }
+.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); letter-spacing: -0.026em; color: var(--text-muted, #666c77); margin: 16px 0 22px; max-width: 46ch; }
+.hero .check { font: 400 16px/1.45 var(--sg-sans); letter-spacing: -0.026em; color: var(--text-body, #20232b); margin-top: 14px; }
+.hero .check b { font-weight: 600; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border-input, #dfdfe4); border-radius: var(--radius-card, 16px); padding: 14px; font-size: 13px; background: var(--background-card, #f6f6f8); }
+.tile .kick { display: block; font: 700 11px/1 var(--sg-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--action-fill, #44b1ff); margin-bottom: 10px; }
+.tile b { display: block; font: 600 18px/1.25 var(--sg-serif); letter-spacing: -0.02em; color: var(--text-ink, #23252b); margin-bottom: 4px; }
+.tile .sub { color: var(--text-muted, #666c77); font-size: 12px; }
+/* ---- sign-in card mock (app.kit.com, a separate Inter card) ---- */
+.auth { display: flex; justify-content: center; padding: 44px 20px; background: var(--background-warm100, #f9f7f4); }
+.acard { width: min(470px, 100%); background: transparent; padding: 8px 0 24px; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+.acard h3 { font: 600 16px/1.4 Inter, sans-serif; color: #1e1e1e; margin: 0 0 18px; border-bottom: 2px solid #1e1e1e; display: inline-block; padding-bottom: 8px; }
+.acard .field { height: 40px; border-radius: 10px; border: 1px solid #d4d4d4; background: #fff; margin-bottom: 10px; display: flex; align-items: center; padding: 0 14px; font-size: 14px; color: #8b8b8b; }
+.acard .go { height: var(--component-loginSubmitHeight, 48px); border-radius: var(--component-loginRadius, 12px); background: var(--action-ink, #1e1e1e); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 14px; margin-top: 14px; }
+.acard .forgot { text-align: center; margin-top: 14px; font-size: 14px; font-weight: 600; color: #1e1e1e; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-input, #dfdfe4); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-rule, #e7e8ec); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--text-muted, #666c77); font-family: var(--sg-mono); }
+.pill-nav { display: inline-flex; background: var(--background-page, #fff); border: 1px solid var(--border-tab, #d8dbe2); border-radius: 9999px; padding: 4px; gap: 4px; font-size: 14px; font-weight: 500; letter-spacing: -0.02em; color: var(--text-gray, #757b86); }
+.pill-nav span { padding: 8px 20px; border-radius: 9999px; }
+.pill-nav .on { background: var(--action-selectedBg, #3347fb); color: #fff; }
+.tabrow { display: inline-flex; gap: 8px; font-size: 14px; font-weight: 500; letter-spacing: -0.02em; }
+.tabrow span { height: 30px; display: inline-flex; align-items: center; padding: 0 14px; border-radius: 9999px; border: 1px dashed var(--border-tab, #d8dbe2); background: var(--background-page, #fff); color: var(--text-gray, #757b86); }
+.tabrow .on { border: 1px solid var(--action-selectedBorder, #84a1ff); background: var(--background-selectedTint, #eef2ff); color: var(--action-selectedInk, #5a84ff); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Kit style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.
+  <label class="mode" style="float:right;margin-top:-34px"><input type="checkbox" id="theme"><span class="trk"></span>Dark</label></p>
+
+  <h2 class="sh">Kit, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared Tailwind v4 theme ramp (<code>--color-soft-black</code>, <code>--color-warm-white*</code>, <code>--color-blue-500</code>, the gray, orange, green, purple, red and yellow steps), KitSansFont and Libre Franklin, the <code>--text-*</code> and <code>--radius-*</code> scales, the 150ms default transition, and the measured component geometry. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from kit.com on 2026-11-18, signed out, in headless Chromium. The marketing site ships light only. The Dark toggle switches the roles panel to the dark set, which is empty on purpose. KitSansFont and Libre Franklin are served faces and are not loaded here: samples fall back to system fonts. app.kit.com/users/login is a separate Inter card measured as a boundary. Signup was not captured.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A blue announcement strip sits above a fixed nav. The nav carries the wordmark, Features, Pricing, Use Cases and Resources, then Log in, Request a demo, and a blue Start free trial pill. The home hero is a soft-black band with a KitSansFont headline and warm-white type.</p>
+  <div class="mock" style="padding:0">
+    <div style="background:var(--action-fill,#44b1ff);color:var(--text-primary,#1e1e1e);text-align:center;font-size:14px;font-weight:600;padding:12px">See Kit's newest features in action</div>
+    <div class="navbar" style="background:var(--background-ink,#1e1e1e);color:var(--text-onInk,#f2efe9)"><span class="wm" style="color:var(--text-onInk,#f2efe9)">Kit</span><span>Features</span><span>Pricing</span><span>Use Cases</span><span>Resources</span><span class="sp"></span><span>Log in</span><span class="btn small primary">Start free trial</span></div>
+    <div class="hero" style="background:var(--background-ink,#1e1e1e);color:#fff">Turn your audience insights<br>into revenue.<small style="color:var(--text-onInk,#f2efe9)">Email marketing, automation and newsletters for creators.</small><span class="btn primary">Start free trial</span></div>
+  </div>
+
+  <h2 class="sh">The log-in card</h2>
+  <p class="lead">app.kit.com/users/login is a separate signed-out card on a warm-white field. It was measured and never submitted. Signup is behind a Cloudflare check and was not captured.</p>
+  <div class="auth" style="background:var(--background-warm100,#f9f7f4)">
+    <div class="acard"><h3>Log in</h3><div class="field">Email</div><div class="field">Password</div><div class="go" style="background:var(--action-ink,#1e1e1e);border-radius:12px">Log in</div><div class="forgot">I forgot my password</div></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">Action blue <code>#44b1ff</code> (<code>--color-blue-500</code>) on soft-black <code>#1e1e1e</code> and warm white <code>#f2efe9</code>. The gray, orange, green, purple, red and yellow ramps are declared in the theme layer. The log-in card paints the same soft-black as a fill, with white type.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">A 4px declared spacing base (<code>--spacing</code>). Declared radii run from <code>--radius-xs</code> (2px) to <code>--radius-3xl</code> (24px). Measured controls sit at 8px (nav and trial pills), 10px (log-in fields), and 12px (log-in submit and pricing CTAs). Controls transition over the declared 150ms cubic-bezier(0.4, 0, 0.2, 1).</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two served marketing faces: <code>KitSansFont</code> draws the display headlines (80px on the home hero, 64px on interior mastheads, 48px on the phone). <code>Libre Franklin</code> draws UI and body at 14px and 16px, weight 600 on controls. The log-in card uses <code>Inter</code> at 14px. Samples here fall back to system fonts.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --radius-*/--text-*/--spacing variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, selected, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"black":{"v":"#000000","t":"color","s":"css-var --color-black (light)"},"blue":{"100":{"v":"#bce1fa","t":"color","s":"css-var --color-blue-100 (light)"},"1000":{"v":"#020a0f","t":"color","s":"css-var --color-blue-1000 (light)"},"200":{"v":"#a2d1f1","t":"color","s":"css-var --color-blue-200 (light)"},"400":{"v":"#63bbf9","t":"color","s":"css-var --color-blue-400 (light)"},"50":{"v":"#f0f9ff","t":"color","s":"css-var --color-blue-50 (light)"},"500":{"v":"#44b1ff","t":"color","s":"css-var --color-blue-500 (light)"},"700":{"v":"#2b7ab1","t":"color","s":"css-var --color-blue-700 (light)"},"800":{"v":"#144264","t":"color","s":"css-var --color-blue-800 (light)"},"900":{"v":"#0a2940","t":"color","s":"css-var --color-blue-900 (light)"}},"gray":{"100":{"v":"#f0f0f0","t":"color","s":"css-var --color-gray-100 (light)"},"200":{"v":"#e3e3e3","t":"color","s":"css-var --color-gray-200 (light)"},"300":{"v":"#d4d4d4","t":"color","s":"css-var --color-gray-300 (light)"},"400":{"v":"#c4c4c4","t":"color","s":"css-var --color-gray-400 (light)"},"50":{"v":"#f7f7f7","t":"color","s":"css-var --color-gray-50 (light)"},"500":{"v":"#b8b8b8","t":"color","s":"css-var --color-gray-500 (light)"},"600":{"v":"#919191","t":"color","s":"css-var --color-gray-600 (light)"},"700":{"v":"#6e6e6e","t":"color","s":"css-var --color-gray-700 (light)"},"800":{"v":"#3d3d3d","t":"color","s":"css-var --color-gray-800 (light)"}},"green":{"1000":{"v":"#020f07","t":"color","s":"css-var --color-green-1000 (light)"},"200":{"v":"#b9e9c5","t":"color","s":"css-var --color-green-200 (light)"},"50":{"v":"#f0fff3","t":"color","s":"css-var --color-green-50 (light)"},"500":{"v":"#65dc8d","t":"color","s":"css-var --color-green-500 (light)"},"700":{"v":"#27a14f","t":"color","s":"css-var --color-green-700 (light)"},"800":{"v":"#157033","t":"color","s":"css-var --color-green-800 (light)"},"900":{"v":"#083818","t":"color","s":"css-var --color-green-900 (light)"}},"orange":{"100":{"v":"#ffe7d6","t":"color","s":"css-var --color-orange-100 (light)"},"1000":{"v":"#0f0700","t":"color","s":"css-var --color-orange-1000 (light)"},"200":{"v":"#ffd0ad","t":"color","s":"css-var --color-orange-200 (light)"},"500":{"v":"#ff7647","t":"color","s":"css-var --color-orange-500 (light)"},"700":{"v":"#a65821","t":"color","s":"css-var --color-orange-700 (light)"},"800":{"v":"#c24013","t":"color","s":"css-var --color-orange-800 (light)"},"900":{"v":"#5e2d00","t":"color","s":"css-var --color-orange-900 (light)"}},"purple":{"100":{"v":"#f3e3f9","t":"color","s":"css-var --color-purple-100 (light)"},"1000":{"v":"#0c050f","t":"color","s":"css-var --color-purple-1000 (light)"},"200":{"v":"#e7c9f1","t":"color","s":"css-var --color-purple-200 (light)"},"50":{"v":"#fbf0ff","t":"color","s":"css-var --color-purple-50 (light)"},"500":{"v":"#e4acff","t":"color","s":"css-var --color-purple-500 (light)"},"700":{"v":"#965db2","t":"color","s":"css-var --color-purple-700 (light)"},"800":{"v":"#4a265a","t":"color","s":"css-var --color-purple-800 (light)"},"900":{"v":"#2b1136","t":"color","s":"css-var --color-purple-900 (light)"}},"red":{"500":{"v":"#fc5c3f","t":"color","s":"css-var --color-red-500 (light)"},"600":{"v":"#e05138","t":"color","s":"css-var --color-red-600 (light)"}},"soft":{"black":{"v":"#1e1e1e","t":"color","s":"css-var --color-soft-black (light)"}},"twitter":{"v":"#55acee","t":"color","s":"css-var --color-twitter (light)"},"warm":{"white":{"v":"#f2efe9","t":"color","s":"css-var --color-warm-white (light)"},"white-100":{"v":"#f9f7f4","t":"color","s":"css-var --color-warm-white-100 (light)"},"white-300":{"v":"#eae5dc","t":"color","s":"css-var --color-warm-white-300 (light)"}},"white":{"v":"#ffffff","t":"color","s":"css-var --color-white (light)"},"yellow":{"100":{"v":"#fef9c3","t":"color","s":"css-var --color-yellow-100 (light)"},"500":{"v":"#f2ba41","t":"color","s":"css-var --color-yellow-500 (light)"}},"youtube":{"v":"#ff0000","t":"color","s":"css-var --color-youtube (light)"}},"font":{"family":{"display":{"v":"\"KitSansFont\",\"KitSansFont Fallback\"","t":"fontFamily","s":"css-var --font-kit-sans declared on a class, not resolved on :root","d":"KitSansFont, the display face on marketing headlines."},"sans":{"v":"\"Libre Franklin\",\"Libre Franklin Fallback\"","t":"fontFamily","s":"css-var --font-libre-franklin declared on a class, not resolved on :root","d":"Libre Franklin, the UI and body face on kit.com."},"mono":{"v":"\"Menlo\",\"Monaco\",\"Consolas\",\"Liberation Mono\",\"Courier New\",\"monospace\"","t":"fontFamily","s":"css-var --font-mono (light)","d":"The declared mono stack."},"app":{"v":"Inter, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"","t":"fontFamily","s":"computed fontFamily of login-email default on app.kit.com/users/login","d":"The log-in card's Inter stack. A different font layer from the marketing site."}},"weight":{"black":{"v":900,"t":"fontWeight","s":"declared custom property in the site's css bundle (raw/css-vars.json): --font-weight-black","d":"The declared `--font-weight-black`."},"bold":{"v":700,"t":"fontWeight","s":"declared custom property in the site's css bundle (raw/css-vars.json): --font-weight-bold","d":"The declared `--font-weight-bold`."},"extrabold":{"v":800,"t":"fontWeight","s":"declared custom property in the site's css bundle (raw/css-vars.json): --font-weight-extrabold","d":"The declared `--font-weight-extrabold`."},"medium":{"v":500,"t":"fontWeight","s":"declared custom property in the site's css bundle (raw/css-vars.json): --font-weight-medium","d":"The declared `--font-weight-medium`."},"normal":{"v":400,"t":"fontWeight","s":"declared custom property in the site's css bundle (raw/css-vars.json): --font-weight-normal","d":"The declared `--font-weight-normal`."},"semibold":{"v":600,"t":"fontWeight","s":"declared custom property in the site's css bundle (raw/css-vars.json): --font-weight-semibold","d":"The declared `--font-weight-semibold`."}},"size":{"10":{"v":"40px","t":"dimension","s":"css-var --text-10 (light)"},"11":{"v":"44px","t":"dimension","s":"css-var --text-11 (light)"},"12":{"v":"48px","t":"dimension","s":"css-var --text-12 (light)"},"14":{"v":"56px","t":"dimension","s":"css-var --text-14 (light)"},"16":{"v":"64px","t":"dimension","s":"css-var --text-16 (light)"},"18":{"v":"72px","t":"dimension","s":"css-var --text-18 (light)"},"20":{"v":"80px","t":"dimension","s":"css-var --text-20 (light)"},"24":{"v":"96px","t":"dimension","s":"css-var --text-24 (light)"},"25":{"v":"100px","t":"dimension","s":"css-var --text-25 (light)"},"28":{"v":"112px","t":"dimension","s":"css-var --text-28 (light)"},"2xl":{"v":"24px","t":"dimension","s":"css-var --text-2xl (light)"},"3":{"v":"12px","t":"dimension","s":"css-var --text-3 (light)"},"30":{"v":"120px","t":"dimension","s":"css-var --text-30 (light)"},"32":{"v":"128px","t":"dimension","s":"css-var --text-32 (light)"},"35":{"v":"140px","t":"dimension","s":"css-var --text-35 (light)"},"36":{"v":"144px","t":"dimension","s":"css-var --text-36 (light)"},"37":{"v":"152px","t":"dimension","s":"css-var --text-37 (light)"},"3xl":{"v":"30px","t":"dimension","s":"css-var --text-3xl (light)"},"4":{"v":"16px","t":"dimension","s":"css-var --text-4 (light)"},"40":{"v":"160px","t":"dimension","s":"css-var --text-40 (light)"},"44":{"v":"176px","t":"dimension","s":"css-var --text-44 (light)"},"48":{"v":"192px","t":"dimension","s":"css-var --text-48 (light)"},"4xl":{"v":"36px","t":"dimension","s":"css-var --text-4xl (light)"},"5":{"v":"20px","t":"dimension","s":"css-var --text-5 (light)"},"50":{"v":"200px","t":"dimension","s":"css-var --text-50 (light)"},"5xl":{"v":"48px","t":"dimension","s":"css-var --text-5xl (light)"},"6":{"v":"24px","t":"dimension","s":"css-var --text-6 (light)"},"7":{"v":"28px","t":"dimension","s":"css-var --text-7 (light)"},"8":{"v":"32px","t":"dimension","s":"css-var --text-8 (light)"},"9":{"v":"36px","t":"dimension","s":"css-var --text-9 (light)"},"base":{"v":"16px","t":"dimension","s":"css-var --text-base (light)"},"lg":{"v":"18px","t":"dimension","s":"css-var --text-lg (light)"},"sm":{"v":"14px","t":"dimension","s":"css-var --text-sm (light)"},"xl":{"v":"20px","t":"dimension","s":"css-var --text-xl (light)"},"xs":{"v":"12px","t":"dimension","s":"css-var --text-xs (light)"},"measured":{"hero":{"v":"80px","t":"dimension","s":"computed fontSize of hero-h1 default","d":"The home hero masthead, KitSansFont."},"pricing":{"v":"64px","t":"dimension","s":"computed fontSize of price-h1 default","d":"The pricing masthead."},"features":{"v":"64px","t":"dimension","s":"computed fontSize of feat-h1 default","d":"The features masthead."},"mobileHero":{"v":"48px","t":"dimension","s":"computed fontSize of m-hero default","d":"The home masthead at 390 wide."},"nav":{"v":"14px","t":"dimension","s":"computed fontSize of nav-link default","d":"The nav link size."},"cta":{"v":"14px","t":"dimension","s":"computed fontSize of nav-trial default","d":"The Start free trial pill size."},"body":{"v":"14px","t":"dimension","s":"computed fontSize of footer-link default","d":"A footer link size."}}},"lineHeight":{"tight":{"v":1.25,"t":"number","s":"declared custom property in the site's css bundle (raw/css-vars.json): --leading-tight","d":"The declared `--leading-tight`."},"snug":{"v":1.375,"t":"number","s":"declared custom property in the site's css bundle (raw/css-vars.json): --leading-snug","d":"The declared `--leading-snug`."},"normal":{"v":1.5,"t":"number","s":"declared custom property in the site's css bundle (raw/css-vars.json): --leading-normal","d":"The declared `--leading-normal`."}}},"spacing":{"base":{"v":"4px","t":"dimension","s":"declared custom property in the site's css bundle (raw/css-vars.json): --spacing","d":"The declared `--spacing`."},"s1":{"v":"4px","t":"dimension","s":"Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps","d":"Step 1 on the 4px base."},"s2":{"v":"8px","t":"dimension","s":"Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps","d":"Step 2 on the 4px base."},"s3":{"v":"12px","t":"dimension","s":"Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps","d":"Step 3 on the 4px base."},"s4":{"v":"16px","t":"dimension","s":"Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps","d":"Step 4 on the 4px base."},"s5":{"v":"24px","t":"dimension","s":"Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps","d":"Step 5 on the 4px base."},"s6":{"v":"32px","t":"dimension","s":"Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps","d":"Step 6 on the 4px base."},"s7":{"v":"48px","t":"dimension","s":"Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps","d":"Step 7 on the 4px base."},"s8":{"v":"64px","t":"dimension","s":"Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps","d":"Step 8 on the 4px base."},"s9":{"v":"80px","t":"dimension","s":"Reconstruction: entered by hand at capture time. The step list was chosen by hand on the declared --spacing of 4px (0.25rem); Tailwind multiplies --spacing by any integer, so no reading names these nine steps","d":"Step 9 on the 4px base."}},"radius":{"1":{"v":"4px","t":"dimension","s":"css-var --radius-1 (light)"},"2xl":{"v":"16px","t":"dimension","s":"css-var --radius-2xl (light)"},"3":{"v":"12px","t":"dimension","s":"css-var --radius-3 (light)"},"3xl":{"v":"24px","t":"dimension","s":"css-var --radius-3xl (light)"},"5":{"v":"20px","t":"dimension","s":"css-var --radius-5 (light)"},"lg":{"v":"8px","t":"dimension","s":"css-var --radius-lg (light)"},"md":{"v":"6px","t":"dimension","s":"css-var --radius-md (light)"},"sm":{"v":"4px","t":"dimension","s":"css-var --radius-sm (light)"},"xl":{"v":"12px","t":"dimension","s":"css-var --radius-xl (light)"},"xs":{"v":"2px","t":"dimension","s":"css-var --radius-xs (light)"}},"duration":{"default":{"v":"150ms","t":"duration","s":"declared custom property in the site's css bundle (raw/css-vars.json): --default-transition-duration","d":"The declared `--default-transition-duration`."}},"easing":{"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"declared custom property in the site's css bundle (raw/css-vars.json): --ease-out","d":"The declared `--ease-out`."},"in":{"v":[0.4,0.0,1.0,1.0],"t":"cubicBezier","s":"declared custom property in the site's css bundle (raw/css-vars.json): --ease-in","d":"The declared `--ease-in`."},"inOut":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"declared custom property in the site's css bundle (raw/css-vars.json): --ease-in-out","d":"The declared `--ease-in-out`."},"default":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"declared custom property in the site's css bundle (raw/css-vars.json): --default-transition-timing-function","d":"The declared `--default-transition-timing-function`."}},"container":{"2xl":{"v":"672px","t":"dimension","s":"css-var --container-2xl (light)"},"3xl":{"v":"768px","t":"dimension","s":"css-var --container-3xl (light)"},"4xl":{"v":"896px","t":"dimension","s":"css-var --container-4xl (light)"},"5xl":{"v":"1024px","t":"dimension","s":"css-var --container-5xl (light)"},"7xl":{"v":"1280px","t":"dimension","s":"css-var --container-7xl (light)"},"lg":{"v":"512px","t":"dimension","s":"css-var --container-lg (light)"},"md":{"v":"448px","t":"dimension","s":"css-var --container-md (light)"},"sm":{"v":"384px","t":"dimension","s":"css-var --container-sm (light)"},"xl":{"v":"576px","t":"dimension","s":"css-var --container-xl (light)"},"xs":{"v":"320px","t":"dimension","s":"css-var --container-xs (light)"}},"component":{"navHeight":{"v":"58px","t":"dimension","s":"measured height of mega-nav default","d":"The fixed #mega-nav height."},"announceHeight":{"v":"48px","t":"dimension","s":"measured height of announce-bar default","d":"The announcement strip height."},"trialHeight":{"v":"32px","t":"dimension","s":"measured height of nav-trial default","d":"The Start free trial pill height."},"heroSize":{"v":"152px","t":"dimension","s":"measured height of hero-h1 default","d":"The hero headline box height."},"loginSubmitHeight":{"v":"48px","t":"dimension","s":"measured height of login-submit default","d":"The log-in submit height."},"trialRadius":{"v":"8px","t":"dimension","s":"computed border radius of nav-trial default","d":"The trial pill radius."},"loginRadius":{"v":"12px","t":"dimension","s":"computed border radius of login-submit default","d":"The log-in submit radius."}},"motion":{"duration":{"tw-animation-delay":{"v":"0ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--tw-animation-delay"},"d":"Custom property --tw-animation-delay, declared on *, ::before, ::after."},"25ms":{"v":"25ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"50ms":{"v":"50ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"75ms":{"v":"75ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"100ms":{"v":"100ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2190 elements."},"120ms":{"v":"120ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"125ms":{"v":"125ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"default-transition-duration":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--default-transition-duration"},"d":"Custom property --default-transition-duration, declared on :host, :root."},"200ms":{"v":"200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 73 elements."},"button-transition-duration":{"v":"250ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--button-transition-duration"},"d":"Custom property --button-transition-duration, declared on .MobileMenuToggle_MenuToggle."},"d-o":{"v":"300ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--d-o"},"d":"Custom property --d-o, declared on .design-custom-box:checked."},"400ms":{"v":"400ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"500ms":{"v":"500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"550ms":{"v":"550ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"d-t":{"v":"600ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--d-t"},"d":"Custom property --d-t, declared on .design-custom-box:checked."},"800ms":{"v":"800ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1000ms":{"v":"1000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2000ms":{"v":"2000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"3000ms":{"v":"3000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"5000ms":{"v":"5000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"80000ms":{"v":"80000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."}},"easing":{"bezier-0_5-0-0_5-1":{"v":[0.5,0,0.5,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"d-t-e":{"v":[0.2,0.85,0.32,1.2],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--d-t-e"},"d":"Custom property --d-t-e, declared on .design-custom-box:checked."},"default-transition-timing-function":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--default-transition-timing-function"},"d":"Custom property --default-transition-timing-function, declared on :host, :root."},"ease":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease`, expanded to its control points."},"ease-in":{"v":[0.4,0,1,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-in"},"d":"Custom property --ease-in, declared on :host, :root."},"ease-in-2":{"v":[0.42,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `ease-in`, expanded to its control points."},"ease-in-out":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-in-out"},"d":"Custom property --ease-in-out, declared on :host, :root."},"ease-in-out-2":{"v":[0.42,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `ease-in-out`, expanded to its control points."},"ease-out":{"v":[0,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-out"},"d":"Custom property --ease-out, declared on :host, :root."},"ease-out-2":{"v":[0,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `ease-out`, expanded to its control points."},"linear":{"v":[0,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `linear`, expanded to its control points."}},"transition":{"tw-gradient-from-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.d-o}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 256 elements."},"tw-gradient-to-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.d-o}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 256 elements."},"tw-gradient-via-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.d-o}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 256 elements."},"background-color-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.d-o}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 256 elements."},"border-color-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.d-o}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 256 elements."},"color-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.d-o}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 256 elements."},"fill-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.d-o}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 256 elements."},"outline-color-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.d-o}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 256 elements."},"stroke-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.d-o}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 256 elements."},"text-decoration-color-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.d-o}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 256 elements."},"tw-gradient-from-100ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.100ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 219 elements."},"tw-gradient-to-100ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.100ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 219 elements."},"tw-gradient-via-100ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.100ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 219 elements."},"background-color-100ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.100ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 219 elements."},"border-color-100ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.100ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 219 elements."},"color-100ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.100ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 219 elements."},"fill-100ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.100ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 219 elements."},"outline-color-100ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.100ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 219 elements."},"stroke-100ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.100ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 219 elements."},"text-decoration-color-100ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.100ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 219 elements."},"all-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 134 elements."},"all-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.d-o}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 91 elements."},"all-300ms-ease":{"v":{"duration":"{motion.duration.d-o}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 75 elements."},"border-color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 49 elements."},"box-shadow-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 46 elements."},"all-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 29 elements."},"rotate-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 17 elements."},"scale-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 17 elements."},"transform-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 17 elements."},"translate-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 17 elements."},"transform-250ms-ease":{"v":{"duration":"{motion.duration.button-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 12 elements."},"opacity-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 11 elements."},"opacity-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.d-o}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 9 elements."},"tw-gradient-from-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"tw-gradient-to-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"tw-gradient-via-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"background-color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"fill-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"max-height-500ms-ease":{"v":{"duration":"{motion.duration.500ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"outline-color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"stroke-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"text-decoration-color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"background-250ms-ease":{"v":{"duration":"{motion.duration.button-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"bottom-250ms-ease-delay250ms":{"v":{"duration":"{motion.duration.button-transition-duration}","delay":"250ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"rotate-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.d-o}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"scale-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.d-o}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"top-250ms-ease-delay250ms":{"v":{"duration":"{motion.duration.button-transition-duration}","delay":"250ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"transform-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.d-o}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"translate-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.d-o}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"webkit-backdrop-filter-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"backdrop-filter-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"content-visibility-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"display-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"filter-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"overlay-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"pointer-events-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"tw-gradient-from-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"tw-gradient-to-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"tw-gradient-via-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."}}}},"light":{"background":{"page":{"v":"#ffffff","t":"color","s":"css-var --color-white (light)","d":"The marketing page field."},"ink":{"v":"#1e1e1e","t":"color","s":"css-var --color-soft-black (light)","d":"The dark hero and footer band."},"warm":{"v":"#f2efe9","t":"color","s":"css-var --color-warm-white (light)","d":"Warm white, used as on-ink text and the log-in page field."},"warm100":{"v":"#f9f7f4","t":"color","s":"css-var --color-warm-white-100 (light)","d":"The lighter warm surface."},"warm300":{"v":"#eae5dc","t":"color","s":"css-var --color-warm-white-300 (light)","d":"The deeper warm surface."}},"text":{"primary":{"v":"#1e1e1e","t":"color","s":"css-var --color-soft-black (light)","d":"Primary ink."},"onInk":{"v":"#f2efe9","t":"color","s":"css-var --color-warm-white (light)","d":"Text on the soft-black bands."},"onAccent":{"v":"#1e1e1e","t":"color","s":"css-var --color-soft-black (light)","d":"Text on the blue trial pill."},"muted":{"v":"#6e6e6e","t":"color","s":"css-var --color-gray-700 (light)","d":"Secondary gray text."},"disabled":{"v":"#b8b8b8","t":"color","s":"css-var --color-gray-500 (light)","d":"The lightest gray that still reads as disabled text."},"link":{"v":"#1e1e1e","t":"color","s":"css-var --color-soft-black (light)","d":"Links share the ink. Underline carries the link role."}},"border":{"default":{"v":"#d4d4d4","t":"color","s":"css-var --color-gray-300 (light)","d":"The default hairline."},"strong":{"v":"#3d3d3d","t":"color","s":"css-var --color-gray-800 (light)","d":"The strong border."},"focus":{"v":"#44b1ff","t":"color","s":"css-var --color-blue-500 (light)","d":"focus-visible:ring-blue-500 on the wordmark and controls."}},"action":{"fill":{"v":"#44b1ff","t":"color","s":"css-var --color-blue-500 (light)","d":"The Start free trial fill."},"ink":{"v":"#1e1e1e","t":"color","s":"css-var --color-soft-black (light)","d":"The ink fill on Request demo and the log-in submit."},"hover":{"v":"#a2d1f1","t":"color","s":"css-var --color-blue-200 (light); the measured fill of nav-trial hover (#a2d1f1, computed backgroundColor)","d":"The Start free trial fill on hover, as measured on the live pill."}},"status":{"danger":{"v":"#fc5c3f","t":"color","s":"css-var --color-red-500 (light)"},"warning":{"v":"#f2ba41","t":"color","s":"css-var --color-yellow-500 (light)"},"success":{"v":"#65dc8d","t":"color","s":"css-var --color-green-500 (light)"},"info":{"v":"#44b1ff","t":"color","s":"css-var --color-blue-500 (light)"}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // The roles panel obeys the Dark toggle: kit.com ships no dark
+  // surface, so the dark set is empty and the panel says so instead of
+  // pretending.
+  const rolesHost = () => {
+    const dark = document.documentElement.dataset.mode === 'dark';
+    const roles = flat(TOK[dark ? 'dark' : 'light'] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    let hh = `<div class="pal-h">${dark ? 'dark roles' : 'light roles'}</div>`;
+    if (!roles.length) return hh + `<p class="note">Empty. kit.com ships one light theme. There is no dark token set.</p>`;
+    hh += `<div class="pal${dark ? ' dark' : ''}">`;
+    for (const [n, t] of roles) hh += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    return hh + '</div>';
+  };
+  const host = document.createElement('div');
+  host.id = 'roles-panel';
+  $('#roles-out').insertAdjacentHTML('beforeend', h);
+  $('#roles-out').appendChild(host);
+  const refill = () => { host.innerHTML = rolesHost(); };
+  refill();
+  document.getElementById('theme').addEventListener('change', function () {
+    document.documentElement.dataset.mode = this.checked ? 'dark' : '';
+    refill();
+  });
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.ctaRing || {}, 'ctaRing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat(TOK.core.animate || {}, 'animate.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const setname of ['light', 'dark']) {
+    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.component || {}).login || {}, 'component.login.')) {
+    if (/shadow|glow/.test(n)) e += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 110))}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  // Transition tokens are objects (duration, timingFunction, delay): print them as JSON, not "[object Object]".
+  for (const [n, t] of flat((TOK.core.motion || {}), 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc((typeof t.v === 'object' ? JSON.stringify(t.v) : String(t.v)).slice(0, 90))}…</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Kit</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

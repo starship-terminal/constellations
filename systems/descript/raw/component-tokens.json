@@ -1,0 +1,1442 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. descript.com is a single-theme Next.js + Tailwind marketing site: a #fff7fa blush field, maroon CTAs and a deep-maroon hero band. Its stylesheet declares the Red/Maroon/Lilac/Neutral/Green/Gray palette scales plus Core canvas constants and Tools-Glow pastels (exported under core.color.*); the measured roles under light.* alias to the declared values where they match.",
+ "core": {
+  "font": {
+   "family": {
+    "sans": {
+     "value": "booton, \"booton Fallback\", system-ui, Roboto, Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of nav-link, signup-cta, flow-tab, pr-toggle (raw/components-computed.json); pr-card, pr-cta, site-footer and st-prose compute the same stack with Tailwind's fallback list repeated after it",
+     "description": "Booton — UI, body copy, nav, buttons and every form control on descript.com."
+    },
+    "auth": {
+     "value": "\"Booton VF\", system-ui, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of au-email, au-email-btn, au-google, au-password, au-sso (raw/components-computed.json)",
+     "description": "Booton VF — the auth card on web.descript.com names the variable face instead of booton."
+    },
+    "label": {
+     "value": "brett, \"brett Fallback\", system-ui, Roboto, Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-eyebrow, pr-eyebrow, m-eyebrow (raw/components-computed.json)",
+     "description": "Brett — the small uppercase eyebrow labels."
+    },
+    "display": {
+     "value": "gamuthDisplay, \"gamuthDisplay Fallback\", Georgia, serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-display, section-h2, pr-display, vid-h1, tpl-h1 (raw/components-computed.json)",
+     "description": "Gamuth Display — every display heading, hero 88px to section 56px."
+    }
+   },
+   "weight": {
+    "normal": {
+     "value": "400",
+     "type": "fontWeight",
+     "source": "computed fontWeight of hero-eyebrow default (raw/components-computed.json)",
+     "description": "400 — eyebrow labels and body copy."
+    },
+    "medium": {
+     "value": "500",
+     "type": "fontWeight",
+     "source": "computed fontWeight of au-email-btn default (raw/components-computed.json)",
+     "description": "500 — the auth card's Booton VF buttons."
+    },
+    "semibold": {
+     "value": "600",
+     "type": "fontWeight",
+     "source": "computed fontWeight of nav-link default (raw/components-computed.json)",
+     "description": "600 — nav items, CTAs, plan names, section h2s."
+    }
+   },
+   "size": {
+    "auth": {
+     "value": "15.75px",
+     "type": "fontSize",
+     "source": "computed fontSize of au-email-btn default (raw/components-computed.json)",
+     "description": "The 15.75px auth-card control size (Booton VF)."
+    },
+    "body": {
+     "value": "18px",
+     "type": "fontSize",
+     "source": "computed fontSize of st-prose default (raw/components-computed.json)",
+     "description": "The 16px body/nav/CTA size."
+    },
+    "eyebrow": {
+     "value": "18px",
+     "type": "fontSize",
+     "source": "computed fontSize of hero-eyebrow default (raw/components-computed.json)",
+     "description": "The 18px uppercase Brett eyebrow."
+    },
+    "mobile-display": {
+     "value": "48px",
+     "type": "fontSize",
+     "source": "computed fontSize of m-display default (raw/components-computed.json)",
+     "description": "The 48px mobile display heading."
+    },
+    "section": {
+     "value": "56px",
+     "type": "fontSize",
+     "source": "computed fontSize of section-h2 default (raw/components-computed.json)",
+     "description": "The 56px Gamuth section/pricing heading."
+    },
+    "page": {
+     "value": "72px",
+     "type": "fontSize",
+     "source": "computed fontSize of vid-h1 default (raw/components-computed.json)",
+     "description": "The 72px Gamuth page heading."
+    },
+    "hero": {
+     "value": "88px",
+     "type": "fontSize",
+     "source": "computed fontSize of hero-display default (raw/components-computed.json)",
+     "description": "The 88px Gamuth home display (clamped by viewport)."
+    }
+   },
+   "lineHeight": {
+    "body": {
+     "value": "27px",
+     "type": "other",
+     "source": "computed lineHeight of st-prose default (raw/components-computed.json)",
+     "description": "The 24px body line-height."
+    },
+    "section": {
+     "value": "61.6px",
+     "type": "other",
+     "source": "computed lineHeight of section-h2 default (raw/components-computed.json)",
+     "description": "The 61.6px section-heading line-height (1.1x)."
+    },
+    "page": {
+     "value": "79.2px",
+     "type": "other",
+     "source": "computed lineHeight of vid-h1 default (raw/components-computed.json)",
+     "description": "The 79.2px page-heading line-height (1.1x)."
+    }
+   }
+  },
+  "color": {
+   "gray": {
+    "100": {
+     "value": "#f2f2f2",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Gray-100",
+     "description": "The declared `--Gray-100`."
+    },
+    "200": {
+     "value": "#e6e6e6",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Gray-200",
+     "description": "The declared `--Gray-200`."
+    },
+    "300": {
+     "value": "#cccccc",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Gray-300",
+     "description": "The declared `--Gray-300`."
+    },
+    "400": {
+     "value": "#999999",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Gray-400",
+     "description": "The declared `--Gray-400`."
+    },
+    "600": {
+     "value": "#666666",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Gray-600",
+     "description": "The declared `--Gray-600`."
+    },
+    "700": {
+     "value": "#4d4d4d",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Gray-700",
+     "description": "The declared `--Gray-700`."
+    },
+    "800": {
+     "value": "#343434",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Gray-800",
+     "description": "The declared `--Gray-800`."
+    },
+    "900": {
+     "value": "#1a1a1a",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Gray-900",
+     "description": "The declared `--Gray-900`."
+    }
+   },
+   "green": {
+    "0": {
+     "value": "#f5fff7",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-0",
+     "description": "The declared `--Green-0`."
+    },
+    "100": {
+     "value": "#bbe3be",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-100",
+     "description": "The declared `--Green-100`."
+    },
+    "150": {
+     "value": "#9ed5a8",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-150",
+     "description": "The declared `--Green-150`."
+    },
+    "200": {
+     "value": "#84c696",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-200",
+     "description": "The declared `--Green-200`."
+    },
+    "300": {
+     "value": "#5baa7b",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-300",
+     "description": "The declared `--Green-300`."
+    },
+    "400": {
+     "value": "#3d8e66",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-400",
+     "description": "The declared `--Green-400`."
+    },
+    "50": {
+     "value": "#daf1da",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-50",
+     "description": "The declared `--Green-50`."
+    },
+    "500": {
+     "value": "#277154",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-500",
+     "description": "The declared `--Green-500`."
+    },
+    "600": {
+     "value": "#185542",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-600",
+     "description": "The declared `--Green-600`."
+    },
+    "700": {
+     "value": "#0e392e",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-700",
+     "description": "The declared `--Green-700`."
+    },
+    "800": {
+     "value": "#061c18",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-800",
+     "description": "The declared `--Green-800`."
+    },
+    "900": {
+     "value": "#000000",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Green-900",
+     "description": "The declared `--Green-900`."
+    }
+   },
+   "lilac": {
+    "0": {
+     "value": "#f9f9ff",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-0",
+     "description": "The declared `--Lilac-0`."
+    },
+    "100": {
+     "value": "#dcdcff",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-100",
+     "description": "The declared `--Lilac-100`."
+    },
+    "200": {
+     "value": "#cdcdfe",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-200",
+     "description": "The declared `--Lilac-200`."
+    },
+    "300": {
+     "value": "#a3a3ee",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-300",
+     "description": "The declared `--Lilac-300`."
+    },
+    "400": {
+     "value": "#8787e0",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-400",
+     "description": "The declared `--Lilac-400`."
+    },
+    "450": {
+     "value": "#7a79d6",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-450",
+     "description": "The declared `--Lilac-450`."
+    },
+    "50": {
+     "value": "#ebebff",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-50",
+     "description": "The declared `--Lilac-50`."
+    },
+    "500": {
+     "value": "#6b6bcf",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-500",
+     "description": "The declared `--Lilac-500`."
+    },
+    "600": {
+     "value": "#5050be",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-600",
+     "description": "The declared `--Lilac-600`."
+    },
+    "700": {
+     "value": "#3434ab",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-700",
+     "description": "The declared `--Lilac-700`."
+    },
+    "750": {
+     "value": "#2a2a96",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-750",
+     "description": "The declared `--Lilac-750`."
+    },
+    "800": {
+     "value": "#1c1c8a",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-800",
+     "description": "The declared `--Lilac-800`."
+    },
+    "900": {
+     "value": "#0c0b5f",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-900",
+     "description": "The declared `--Lilac-900`."
+    },
+    "950": {
+     "value": "#030331",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Lilac-950",
+     "description": "The declared `--Lilac-950`."
+    }
+   },
+   "maroon": {
+    "0": {
+     "value": "#fff7fd",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-0",
+     "description": "The declared `--Maroon-0`."
+    },
+    "100": {
+     "value": "#f4d7ea",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-100",
+     "description": "The declared `--Maroon-100`."
+    },
+    "200": {
+     "value": "#e5b6d5",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-200",
+     "description": "The declared `--Maroon-200`."
+    },
+    "300": {
+     "value": "#d597bf",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-300",
+     "description": "The declared `--Maroon-300`."
+    },
+    "400": {
+     "value": "#c576a7",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-400",
+     "description": "The declared `--Maroon-400`."
+    },
+    "450": {
+     "value": "#b96a96",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-450",
+     "description": "The declared `--Maroon-450`."
+    },
+    "50": {
+     "value": "#ffe5f7",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-50",
+     "description": "The declared `--Maroon-50`."
+    },
+    "500": {
+     "value": "#ab5c86",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-500",
+     "description": "The declared `--Maroon-500`."
+    },
+    "600": {
+     "value": "#90436a",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-600",
+     "description": "The declared `--Maroon-600`."
+    },
+    "700": {
+     "value": "#772a4d",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-700",
+     "description": "The declared `--Maroon-700`."
+    },
+    "750": {
+     "value": "#651a39",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-750",
+     "description": "The declared `--Maroon-750`."
+    },
+    "800": {
+     "value": "#5b142e",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-800",
+     "description": "The declared `--Maroon-800`."
+    },
+    "900": {
+     "value": "#390a1a",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-900",
+     "description": "The declared `--Maroon-900`."
+    },
+    "950": {
+     "value": "#190308",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Maroon-950",
+     "description": "The declared `--Maroon-950`."
+    }
+   },
+   "neutral": {
+    "0": {
+     "value": "#fff7fa",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-0",
+     "description": "The declared `--Neutral-0`."
+    },
+    "100": {
+     "value": "#e4dde0",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-100",
+     "description": "The declared `--Neutral-100`."
+    },
+    "200": {
+     "value": "#d1c7cb",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-200",
+     "description": "The declared `--Neutral-200`."
+    },
+    "300": {
+     "value": "#b8a5ad",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-300",
+     "description": "The declared `--Neutral-300`."
+    },
+    "400": {
+     "value": "#a28993",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-400",
+     "description": "The declared `--Neutral-400`."
+    },
+    "450": {
+     "value": "#987c87",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-450",
+     "description": "The declared `--Neutral-450`."
+    },
+    "50": {
+     "value": "#f1eaed",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-50",
+     "description": "The declared `--Neutral-50`."
+    },
+    "500": {
+     "value": "#8b6f7a",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-500",
+     "description": "The declared `--Neutral-500`."
+    },
+    "600": {
+     "value": "#715661",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-600",
+     "description": "The declared `--Neutral-600`."
+    },
+    "700": {
+     "value": "#583f4a",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-700",
+     "description": "The declared `--Neutral-700`."
+    },
+    "750": {
+     "value": "#4c343e",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-750",
+     "description": "The declared `--Neutral-750`."
+    },
+    "800": {
+     "value": "#3f2a32",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-800",
+     "description": "The declared `--Neutral-800`."
+    },
+    "900": {
+     "value": "#26171d",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-900",
+     "description": "The declared `--Neutral-900`."
+    },
+    "950": {
+     "value": "#110a0d",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Neutral-950",
+     "description": "The declared `--Neutral-950`."
+    }
+   },
+   "red": {
+    "0": {
+     "value": "#fff8f4",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-0",
+     "description": "The declared `--Red-0`."
+    },
+    "100": {
+     "value": "#ffd6c5",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-100",
+     "description": "The declared `--Red-100`."
+    },
+    "200": {
+     "value": "#ffb297",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-200",
+     "description": "The declared `--Red-200`."
+    },
+    "300": {
+     "value": "#ff8969",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-300",
+     "description": "The declared `--Red-300`."
+    },
+    "400": {
+     "value": "#ff5340",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-400",
+     "description": "The declared `--Red-400`."
+    },
+    "450": {
+     "value": "#f73b3b",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-450",
+     "description": "The declared `--Red-450`."
+    },
+    "50": {
+     "value": "#ffe8db",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-50",
+     "description": "The declared `--Red-50`."
+    },
+    "500": {
+     "value": "#e62324",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-500",
+     "description": "The declared `--Red-500`."
+    },
+    "600": {
+     "value": "#b81b1e",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-600",
+     "description": "The declared `--Red-600`."
+    },
+    "700": {
+     "value": "#8f0c10",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-700",
+     "description": "The declared `--Red-700`."
+    },
+    "750": {
+     "value": "#7a080b",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-750",
+     "description": "The declared `--Red-750`."
+    },
+    "800": {
+     "value": "#660607",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-800",
+     "description": "The declared `--Red-800`."
+    },
+    "900": {
+     "value": "#400303",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-900",
+     "description": "The declared `--Red-900`."
+    },
+    "950": {
+     "value": "#180101",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Red-950",
+     "description": "The declared `--Red-950`."
+    }
+   },
+   "core": {
+    "black": {
+     "value": "#000000",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Core-Black",
+     "description": "The declared `--Core-Black`."
+    },
+    "canvas-beige": {
+     "value": "#faf8f7",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Core-Canvas-Beige",
+     "description": "The declared `--Core-Canvas-Beige`."
+    },
+    "canvas-white": {
+     "value": "#fff7f2",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Core-Canvas-White",
+     "description": "The declared `--Core-Canvas-White`."
+    },
+    "screen-black": {
+     "value": "#27181e",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Core-Screen-Black",
+     "description": "The declared `--Core-Screen-Black`."
+    },
+    "white": {
+     "value": "#fffafc",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Core-White",
+     "description": "The declared `--Core-White`."
+    }
+   },
+   "tools": {
+    "glow-ai": {
+     "value": "#ebd6ff",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Tools-Glow-ai",
+     "description": "The declared `--Tools-Glow-ai`."
+    },
+    "glow-audio": {
+     "value": "#ffd4bf",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Tools-Glow-audio",
+     "description": "The declared `--Tools-Glow-audio`."
+    },
+    "glow-collaborate": {
+     "value": "#ffe5bf",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Tools-Glow-collaborate",
+     "description": "The declared `--Tools-Glow-collaborate`."
+    },
+    "glow-convert": {
+     "value": "#ffdbe6",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Tools-Glow-convert",
+     "description": "The declared `--Tools-Glow-convert`."
+    },
+    "glow-record": {
+     "value": "#ffbfbf",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Tools-Glow-record",
+     "description": "The declared `--Tools-Glow-record`."
+    },
+    "glow-transcribe": {
+     "value": "#c7e9c7",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Tools-Glow-transcribe",
+     "description": "The declared `--Tools-Glow-transcribe`."
+    },
+    "glow-video": {
+     "value": "#d9f3ff",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Tools-Glow-video",
+     "description": "The declared `--Tools-Glow-video`."
+    },
+    "glow-write": {
+     "value": "#bfd0f9",
+     "type": "color",
+     "source": "declared variable in the site stylesheet (raw/css-vars.json resolved.light): --Tools-Glow-write",
+     "description": "The declared `--Tools-Glow-write`."
+    }
+   }
+  },
+  "radius": {
+   "control": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of au-email-btn default (raw/components-computed.json)",
+    "description": "The 8px auth-card button/field radius."
+   },
+   "cta": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of signup-cta default (raw/components-computed.json)",
+    "description": "The 12px CTA/plan-card radius."
+   },
+   "nav-item": {
+    "value": "4px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of nav-link default (raw/components-computed.json)",
+    "description": "The 4px nav-item corner."
+   },
+   "toggle": {
+    "value": "42px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of pr-toggle default (raw/components-computed.json)",
+    "description": "The 42px billing-toggle track pill."
+   }
+  },
+  "shadow": {},
+  "motion": {
+   "tab": {
+    "value": "color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+    "type": "other",
+    "source": "computed transition of flow-tab default (raw/components-computed.json)",
+    "description": "The workflow-tab state transition."
+   }
+  }
+ },
+ "light": {
+  "background": {
+   "page": {
+    "value": "{color.neutral.0}",
+    "type": "color",
+    "source": "computed backgroundColor of mkt-header default (raw/components-computed.json); matches declared color.neutral.0",
+    "description": "The #fff7fa blush field (Neutral-0) the nav, cards and page paint."
+   },
+   "footer": {
+    "value": "{color.neutral.950}",
+    "type": "color",
+    "source": "computed backgroundColor of site-footer default (raw/components-computed.json); matches declared color.neutral.950",
+    "description": "The #110a0d near-black maroon footer."
+   },
+   "toggle-track": {
+    "value": "{color.neutral.50}",
+    "type": "color",
+    "source": "computed backgroundColor of pr-toggle default (raw/components-computed.json); matches declared color.neutral.50",
+    "description": "The #f1eaed warm-grey track behind the Monthly/Annual options — the same wash nav links take on hover."
+   }
+  },
+  "text": {
+   "ink": {
+    "value": "{color.neutral.900}",
+    "type": "color",
+    "source": "computed color of nav-link default (raw/components-computed.json); matches declared color.neutral.900",
+    "description": "The #26171d marketing ink (Neutral-900) — nav text, story prose, headings."
+   },
+   "body": {
+    "value": "{color.gray.900}",
+    "type": "color",
+    "source": "computed color of pr-card default (raw/components-computed.json); matches declared color.gray.900",
+    "description": "The #1a1a1a Gray-900 body text on pricing, templates and the auth card."
+   },
+   "accent": {
+    "value": "{color.red.450}",
+    "type": "color",
+    "source": "computed color of hero-eyebrow default (raw/components-computed.json); matches declared color.red.450",
+    "description": "The #f73b3b Red-450 — the uppercase eyebrow labels and red CTAs."
+   },
+   "on-dark": {
+    "value": "{color.red.0}",
+    "type": "color",
+    "source": "computed color of hero-display default (raw/components-computed.json); matches declared color.red.0",
+    "description": "The #fff8f4 near-white (Red-0) display text over the dark hero band."
+   },
+   "muted-on-dark": {
+    "value": "#c4b5bb",
+    "type": "color",
+    "source": "computed color of flow-tab default (raw/components-computed.json)",
+    "description": "The #c4b5bb muted mauve — unselected workflow-tab text over the dark band."
+   }
+  },
+  "border": {
+   "focus": {
+    "value": "#101010",
+    "type": "color",
+    "source": "computed outlineColor of signup-cta focus-visible (raw/components-computed.json)",
+    "description": "The #101010 1px auto focus outline on light controls."
+   }
+  },
+  "surface": {
+   "tab-selected": {
+    "value": "{color.maroon.800}",
+    "type": "color",
+    "source": "painted background of the selected workflow tab inside flow-tabs default (raw/components-computed.json); matches declared color.maroon.800",
+    "description": "The #5b142e Maroon-800 fill the selected workflow tab paints."
+   }
+  },
+  "action": {
+   "primary": {
+    "value": "{color.maroon.700}",
+    "type": "color",
+    "source": "computed backgroundColor of signup-cta default (raw/components-computed.json); matches declared color.maroon.700",
+    "description": "The #772a4d Maroon-700 — the Sign up button and primary CTA fill."
+   },
+   "primary-hover": {
+    "value": "{color.maroon.800}",
+    "type": "color",
+    "source": "computed backgroundColor of signup-cta hover (raw/components-computed.json); matches declared color.maroon.800",
+    "description": "The #5b142e Maroon-800 the maroon buttons deepen to on hover/pressed."
+   },
+   "deep": {
+    "value": "{color.maroon.900}",
+    "type": "color",
+    "source": "computed backgroundColor of pr-cta default (raw/components-computed.json); matches declared color.maroon.900",
+    "description": "The #390a1a Maroon-900 — the pricing plan CTAs."
+   },
+   "red": {
+    "value": "{color.red.450}",
+    "type": "color",
+    "source": "computed backgroundColor of vid-cta default (raw/components-computed.json); matches declared color.red.450",
+    "description": "The #f73b3b Red-450 — the red hero CTAs."
+   },
+   "red-hover": {
+    "value": "{color.red.600}",
+    "type": "color",
+    "source": "computed backgroundColor of vid-cta hover (raw/components-computed.json); matches declared color.red.600",
+    "description": "The #b81b1e the red CTAs deepen to on hover."
+   },
+   "red-pressed": {
+    "value": "{color.red.700}",
+    "type": "color",
+    "source": "computed backgroundColor of vid-cta pressed (raw/components-computed.json); matches declared color.red.700",
+    "description": "The #8f0c10 Red-700 the red CTAs deepen to when pressed."
+   },
+   "auth-primary": {
+    "value": "{color.neutral.800}",
+    "type": "color",
+    "source": "computed backgroundColor of au-email-btn default (raw/components-computed.json); matches declared color.neutral.800",
+    "description": "The #3f2a32 maroon-grey — the auth card's primary button."
+   },
+   "auth-outline": {
+    "value": "#fdfcfc",
+    "type": "color",
+    "source": "computed backgroundColor of au-google default (raw/components-computed.json)",
+    "description": "The #fdfcfc field/outline fill on the auth card's secondary buttons and input."
+   },
+   "hover-wash": {
+    "value": "{color.neutral.50}",
+    "type": "color",
+    "source": "computed backgroundColor of nav-link hover (raw/components-computed.json); matches declared color.neutral.50",
+    "description": "The #f1eaed warm-grey wash nav links take on hover — the same as the billing-toggle track."
+   }
+  }
+ },
+ "dark": {},
+ "component": {
+  "header-height": {
+   "value": 102.08,
+   "type": "dimension",
+   "source": "computed h of mkt-header default (raw/components-computed.json)",
+   "description": "The 102px floating header bar."
+  },
+  "logo-width": {
+   "value": 98,
+   "type": "dimension",
+   "source": "computed w of mkt-logo default (raw/components-computed.json)",
+   "description": "The 98px Descript wordmark."
+  },
+  "nav-item-height": {
+   "value": 32,
+   "type": "dimension",
+   "source": "computed h of nav-link default (raw/components-computed.json)",
+   "description": "The 32px nav-item hit area."
+  },
+  "signup-size": {
+   "value": 54.08,
+   "type": "dimension",
+   "source": "computed h of signup-cta default (raw/components-computed.json)",
+   "description": "The 54px Sign up button (108px wide)."
+  },
+  "flow-tab-height": {
+   "value": 44,
+   "type": "dimension",
+   "source": "computed h of flow-tab default (raw/components-computed.json)",
+   "description": "The 44px workflow tabs."
+  },
+  "flow-tabs-width": {
+   "value": 610,
+   "type": "dimension",
+   "source": "computed w of flow-tabs default (raw/components-computed.json)",
+   "description": "The 610px workflow tab strip."
+  },
+  "toggle-size": {
+   "value": 50,
+   "type": "dimension",
+   "source": "computed h of pr-toggle default (raw/components-computed.json)",
+   "description": "The 50px billing-toggle track (228px wide)."
+  },
+  "toggle-option": {
+   "value": 34,
+   "type": "dimension",
+   "source": "computed h of pr-toggle-annual default (raw/components-computed.json)",
+   "description": "The 34px toggle option (106px wide)."
+  },
+  "plan-card-size": {
+   "value": 708.19,
+   "type": "dimension",
+   "source": "computed h of pr-card default (raw/components-computed.json)",
+   "description": "The 708px-tall pricing plan card (284px wide)."
+  },
+  "plan-cta-size": {
+   "value": 56,
+   "type": "dimension",
+   "source": "computed h of pr-cta default (raw/components-computed.json)",
+   "description": "The 56px plan-card CTA."
+  },
+  "template-card": {
+   "value": 380.56,
+   "type": "dimension",
+   "source": "computed h of tpl-link default (raw/components-computed.json)",
+   "description": "The 381px-tall template card (336px wide)."
+  },
+  "hero-display-size": {
+   "value": 210,
+   "type": "dimension",
+   "source": "computed h of hero-display default (raw/components-computed.json)",
+   "description": "The 210px-tall hero display block (892px wide)."
+  },
+  "auth-control": {
+   "value": 40.48,
+   "type": "dimension",
+   "source": "computed h of au-email-btn default (raw/components-computed.json)",
+   "description": "The 40px auth-card buttons and field (308px wide)."
+  },
+  "footer-height": {
+   "value": 1145.81,
+   "type": "dimension",
+   "source": "computed h of site-footer default (raw/components-computed.json)",
+   "description": "The 1146px sitemap footer."
+  },
+  "m-header-height": {
+   "value": 84,
+   "type": "dimension",
+   "source": "computed h of m-header default (raw/components-computed.json)",
+   "description": "The 84px mobile header."
+  },
+  "m-toggle-option": {
+   "value": 32.5,
+   "type": "dimension",
+   "source": "computed h of mp-toggle default (raw/components-computed.json)",
+   "description": "The 32.5px mobile billing-toggle option."
+  },
+  "m-plan-cta": {
+   "value": 52.5,
+   "type": "dimension",
+   "source": "computed h of mp-cta default (raw/components-computed.json)",
+   "description": "The 52.5px mobile plan CTA (full-width)."
+  },
+  "state-track": {
+   "signup-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgb(119, 42, 77)",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "rgba(0, 0, 0, 0.16) 0px 2px 4px 0px",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "hover": {
+      "backgroundColor": "rgb(91, 20, 46)",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "rgba(0, 0, 0, 0.16) 0px 2px 4px 0px",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "pressed": {
+      "backgroundColor": "rgb(91, 20, 46)",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "rgba(0, 0, 0, 0.16) 0px 2px 4px 0px",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgb(119, 42, 77)",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "rgba(0, 0, 0, 0.16) 0px 2px 4px 0px",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(16, 16, 16)",
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "outlineOffset": "1px"
+     }
+    },
+    "source": "computed styles of signup-cta across states (raw/components-computed.json)",
+    "description": "Sign up button: #772a4d Maroon-700 fill/white text at rest; hover+pressed deepen to #5b142e Maroon-800; focus shows the 1px auto outline."
+   },
+   "red-cta-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgb(247, 59, 59)",
+      "color": "rgb(255, 247, 253)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(255, 247, 253)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "hover": {
+      "backgroundColor": "rgb(184, 27, 30)",
+      "color": "rgb(255, 247, 253)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(255, 247, 253)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "pressed": {
+      "backgroundColor": "rgb(143, 12, 16)",
+      "color": "rgb(255, 247, 253)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(255, 247, 253)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgb(247, 59, 59)",
+      "color": "rgb(255, 247, 253)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(16, 16, 16)",
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "outlineOffset": "1px"
+     }
+    },
+    "source": "computed styles of vid-cta across states (raw/components-computed.json)",
+    "description": "Red CTA: #f73b3b Red-450 at rest; #b81b1e on hover; #8f0c10 Red-700 pressed; focus shows the 1px auto outline."
+   },
+   "nav-link-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(38, 23, 29)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(38, 23, 29)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "hover": {
+      "backgroundColor": "rgb(241, 234, 237)",
+      "color": "rgb(38, 23, 29)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(38, 23, 29)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "pressed": {
+      "backgroundColor": "rgb(241, 234, 237)",
+      "color": "rgb(38, 23, 29)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(38, 23, 29)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(38, 23, 29)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(16, 16, 16)",
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "outlineOffset": "1px"
+     }
+    },
+    "source": "computed styles of nav-link across states (raw/components-computed.json)",
+    "description": "Nav item: transparent/#26171d at rest; the #f1eaed warm-grey wash on hover/pressed; focus shows the 1px auto outline."
+   },
+   "flow-tab-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(196, 181, 187)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(196, 181, 187)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "hover": {
+      "backgroundColor": "rgb(38, 23, 29)",
+      "color": "rgb(196, 181, 187)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(196, 181, 187)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "pressed": {
+      "backgroundColor": "rgb(38, 23, 29)",
+      "color": "rgb(196, 181, 187)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(196, 181, 187)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(196, 181, 187)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(16, 16, 16)",
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "outlineOffset": "0px"
+     },
+     "opened": {
+      "backgroundColor": "rgb(91, 20, 46)",
+      "color": "rgb(255, 247, 253)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(255, 247, 253)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     }
+    },
+    "source": "computed styles of flow-tab across states (raw/components-computed.json)",
+    "description": "Workflow tab: muted #c4b5bb text on the dark band at rest; #26171d ink wash on hover; opened selects the #5b142e Maroon-800 fill with #fff7fd text."
+   },
+   "toggle-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(26, 26, 26)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(26, 26, 26)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "hover": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(26, 26, 26)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(26, 26, 26)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "pressed": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(26, 26, 26)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(26, 26, 26)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(26, 26, 26)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(16, 16, 16)",
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "outlineOffset": "0px"
+     },
+     "opened": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(26, 26, 26)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(26, 26, 26)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     }
+    },
+    "source": "computed styles of pr-toggle-annual across states (raw/components-computed.json)",
+    "description": "Billing-toggle option: transparent/#1a1a1a at rest on the #f1eaed track; opened is the Annual-selected state; focus shows the 1px auto outline."
+   },
+   "auth-primary-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgb(63, 42, 50)",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 0px",
+      "borderTopColor": "rgb(63, 42, 50)",
+      "borderRightColor": "rgb(63, 42, 50)",
+      "borderBottomColor": "rgb(63, 42, 50)",
+      "borderLeftColor": "rgb(63, 42, 50)",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "hover": {
+      "backgroundColor": "oklab(0.313067 0.0335334 -0.00314325 / 0.9)",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 0px",
+      "borderTopColor": "oklab(0.313067 0.0335334 -0.00314325 / 0.9)",
+      "borderRightColor": "oklab(0.313067 0.0335334 -0.00314325 / 0.9)",
+      "borderBottomColor": "oklab(0.313067 0.0335334 -0.00314325 / 0.9)",
+      "borderLeftColor": "oklab(0.313067 0.0335334 -0.00314325 / 0.9)",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "pressed": {
+      "backgroundColor": "oklab(0.313067 0.0335334 -0.00314325 / 0.9)",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 0px",
+      "borderTopColor": "oklab(0.313067 0.0335334 -0.00314325 / 0.9)",
+      "borderRightColor": "oklab(0.313067 0.0335334 -0.00314325 / 0.9)",
+      "borderBottomColor": "oklab(0.313067 0.0335334 -0.00314325 / 0.9)",
+      "borderLeftColor": "oklab(0.313067 0.0335334 -0.00314325 / 0.9)",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgb(63, 42, 50)",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "rgb(163, 163, 238) 0px 0px 0px 1px, rgb(52, 52, 171) 0px 0px 0px 2px",
+      "borderTopColor": "rgb(52, 52, 171)",
+      "borderRightColor": "rgb(52, 52, 171)",
+      "borderBottomColor": "rgb(52, 52, 171)",
+      "borderLeftColor": "rgb(52, 52, 171)",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     }
+    },
+    "source": "computed styles of au-email-btn across states (raw/components-computed.json)",
+    "description": "Auth primary: #3f2a32 at rest; a 90%-alpha oklab shade on hover/pressed."
+   },
+   "template-card-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(26, 26, 26)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(26, 26, 26)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "hover": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(26, 26, 26)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(26, 26, 26)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "pressed": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(26, 26, 26)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgb(26, 26, 26)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(26, 26, 26)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "rgb(255, 255, 255) 0px 0px 0px 0px inset, rgb(247, 59, 59) 0px 0px 0px 2px inset, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+      "borderTopColor": "rgb(229, 231, 235)",
+      "borderRightColor": "rgb(229, 231, 235)",
+      "borderBottomColor": "rgb(229, 231, 235)",
+      "borderLeftColor": "rgb(229, 231, 235)",
+      "outlineColor": "rgba(0, 0, 0, 0)",
+      "outlineStyle": "solid",
+      "outlineWidth": "2px",
+      "outlineOffset": "2px"
+     }
+    },
+    "source": "computed styles of tpl-link across states (raw/components-computed.json)",
+    "description": "Template card overlay: no paint change across hover/pressed; focus-visible paints a 2px inset ring."
+   }
+  },
+  "focus-ring": {
+   "value": "auto rgb(16, 16, 16)",
+   "type": "other",
+   "source": "computed outline of signup-cta/nav controls focus-visible (raw/components-computed.json)",
+   "description": "The browser's 1px auto outline in #101010 — no custom focus ring is painted on buttons; template cards paint a 2px inset ring."
+  }
+ }
+}

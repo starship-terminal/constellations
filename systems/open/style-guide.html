@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open style guide</title>
+<style>
+/* Values copied from tokens.json, measured on o-p-e-n.com 2026-11-19.
+   Monument Grotesk is not shipped. The fallback is Helvetica Neue, Helvetica. */
+:root, [data-mode="dark"] {
+  --page: #000000;
+  --surface: #000000;
+  --text: #eeece7;
+  --muted: #8f8e8b;
+  --accent: #eeece7;
+  --on-accent: #000000;
+  --border: #eeece7;
+  --focus: #eeece7;
+  --place: #bf7d41;
+  --legal: #ffffff;
+}
+[data-mode="light"] {
+  --page: #eeece7;
+  --surface: #eeece7;
+  --text: #000000;
+  --muted: #5f5e5c;
+  --accent: #000000;
+  --on-accent: #eeece7;
+  --border: #000000;
+  --focus: #000000;
+  --place: #bf7d41;
+  --legal: #000000;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: -0.18px;
+}
+header, main { padding: 40px; }
+header { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; }
+h1 { margin: 0; font-size: 36px; line-height: 36px; letter-spacing: -0.36px; font-weight: 400; }
+h2 { margin: 40px 0 12px; font-size: 24px; line-height: 24px; font-weight: 400; }
+p { max-width: 62ch; }
+button.toggle {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  height: 60px;
+  padding: 0 40px;
+  font: inherit;
+  font-size: 12px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  cursor: pointer;
+}
+.swatches, .type, .space { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
+.swatch { border: 1px solid var(--border); min-height: 88px; padding: 10px; }
+.swatch i { display: block; height: 36px; margin-bottom: 8px; }
+.swatch span, .meta { font-size: 12px; line-height: 13.8px; text-transform: uppercase; }
+.row { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; }
+.pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 60px; padding: 0 40px; border-radius: 999px;
+  background: var(--accent); color: var(--on-accent);
+  font-size: 18px; letter-spacing: -0.18px; text-decoration: none;
+}
+.pill.ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.pill.tertiary {
+  height: auto; padding: 1px 6px; border-radius: 0; background: transparent;
+  color: var(--text); font-size: 12px; letter-spacing: 0; text-transform: uppercase; border: 0;
+}
+.field {
+  display: block; width: min(396px, 100%);
+  background: transparent; color: var(--text);
+  border: 0; border-bottom: 1px solid var(--border);
+  border-radius: 0; padding: 6px 0; font: inherit;
+}
+.field:focus { outline: none; }
+label.cap { display: block; margin-top: 6px; color: var(--muted); font-size: 12px; letter-spacing: -0.18px; text-transform: uppercase; }
+.book {
+  height: 50px; padding: 0 20px; border: 0; border-radius: 100px;
+  background: var(--accent); color: var(--on-accent); font-size: 14px;
+}
+.bar { height: 10px; background: var(--border); }
+.note { font-size: 14px; line-height: 16px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Open</h1>
+  <button class="toggle" type="button" id="theme">Light</button>
+</header>
+<main>
+  <p>Mindfulness studio marketing. Cream #eeece7 on black, or black on cream. Pill controls are 60px and 999px radius. Monument Grotesk is the product face and is not loaded here.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+
+  <h2>Type</h2>
+  <div class="type">
+    <div><div style="font-size:80px;line-height:96px">About</div><span class="meta">display-l 80/96</span></div>
+    <div><div style="font-size:36px;line-height:36px;letter-spacing:-0.36px">App →</div><span class="meta">title 36/36</span></div>
+    <div><div style="font-size:18px;line-height:20px;letter-spacing:-0.18px">Continue with your email address.</div><span class="meta">body 18/20</span></div>
+    <div><div class="meta">SIGN IN</div><span class="meta">label 12/13.8 uppercase</span></div>
+  </div>
+
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="pill" href="#try">Try for free →</a>
+    <a class="pill ghost" href="#email">Continue with email →</a>
+    <span class="pill tertiary">Sign in</span>
+    <button class="book" type="button">Book –&gt;</button>
+  </div>
+  <p>
+    <input class="field" type="email" placeholder="your@email.com" aria-label="Email">
+    <label class="cap">Email</label>
+  </p>
+
+  <h2>Space</h2>
+  <div class="space" id="space"></div>
+  <p class="note">Named ink colours that were not painted on the captured pages (steel blue, sage, piper, sepia, citrus, sapphire, red) live in tokens.json and are omitted from this page so it stays the surfaces that were seen.</p>
+</main>
+<script>
+const dark = {
+  page: "#000000", surface: "#000000", text: "#eeece7", muted: "#8f8e8b",
+  accent: "#eeece7", "on-accent": "#000000", border: "#eeece7", place: "#bf7d41"
+};
+const light = {
+  page: "#eeece7", surface: "#eeece7", text: "#000000", muted: "#5f5e5c",
+  accent: "#000000", "on-accent": "#eeece7", border: "#000000", place: "#bf7d41"
+};
+const steps = [2, 4, 6, 10, 20, 40, 60, 80, 120, 160];
+function paint() {
+  const mode = document.documentElement.getAttribute("data-mode");
+  const set = mode === "light" ? light : dark;
+  document.getElementById("swatches").innerHTML = Object.entries(set).map(([k, v]) =>
+    `<div class="swatch"><i style="background:${v}"></i><span class="meta">${k}<br>${v}</span></div>`
+  ).join("");
+  document.getElementById("space").innerHTML = steps.map(n =>
+    `<div><div class="bar" style="width:${n}px"></div><span class="meta">${n}px</span></div>`
+  ).join("");
+  document.getElementById("theme").textContent = mode === "light" ? "Dark" : "Light";
+}
+document.getElementById("theme").addEventListener("click", () => {
+  const cur = document.documentElement.getAttribute("data-mode");
+  document.documentElement.setAttribute("data-mode", cur === "light" ? "dark" : "light");
+  paint();
+});
+paint();
+</script>
+</body>
+</html>

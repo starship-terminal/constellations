@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meiro style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: dark;
+  --sg-display: "TT Hoves DemiBold", "TT Hoves DemiBold Placeholder", sans-serif;
+  --sg-ui: "TT Hoves Medium", "TT Hoves Medium Placeholder", sans-serif;
+  --sg-body: "TT Hoves Regular", "TT Hoves Regular Placeholder", sans-serif;
+  --sg-app: SFPro, system-ui, sans-serif;
+}
+[data-mode="dark"] {
+/*DARK*/
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--page); color: var(--text); font: 400 15px/22px var(--sg-body); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header.top { display: flex; align-items: baseline; gap: 16px; margin-bottom: 28px; }
+header.top h1 { margin: 0; font: 400 32px/40px var(--sg-display); }
+header.top p { margin: 0; color: var(--muted); }
+h2 { font: 400 24px/32px var(--sg-display); margin: 40px 0 12px; }
+h3 { font: 400 16px/22px var(--sg-ui); margin: 24px 0 8px; color: var(--muted); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 148px; }
+.sw i { display: block; height: 56px; border-radius: 12px; box-shadow: inset 0 0 0 1px var(--border); }
+.sw b, .sw span { display: block; font: 400 12px/16px var(--sg-ui); }
+.sw span { color: var(--muted); }
+.ty { padding: 10px 0; border-bottom: 1px solid var(--border); }
+.ty small { display: block; color: var(--muted); font: 12px/16px var(--sg-ui); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-primary-height); padding: 0 24px; border: 0; border-radius: var(--component-button-primary-radius); background: var(--component-button-primary-background); color: var(--component-button-primary-text); font: 400 16px/20px var(--sg-ui); }
+.btn-email { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-email-height); padding: 0 22px; border: 0; border-radius: var(--component-button-email-radius); background: var(--component-button-email-background); color: var(--component-button-email-text); font: 600 15px/20px var(--sg-app); }
+.btn-google { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-google-height); padding: 0 22px; border: 0; border-radius: var(--component-button-google-radius); background: var(--component-button-google-background); color: var(--component-button-google-text); font: 600 15px/20px var(--sg-app); }
+.field { display: block; width: 320px; height: var(--component-text-field-height); padding: 0 16px; border: 1px solid var(--border); border-radius: var(--component-text-field-radius); background: var(--component-text-field-background); color: var(--component-text-field-text); font: 500 15px/20px var(--sg-app); }
+.card { width: 360px; padding: 30px 40px; border-radius: var(--component-card-radius); background: var(--component-card-background); }
+.card h4 { margin: 0 0 8px; font: 600 24px/34px var(--sg-app); }
+.note { color: var(--muted); max-width: 68ch; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+td, th { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { color: var(--muted); font-weight: 400; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <h1>Meiro</h1>
+  <p>Measured from meiro.cc and the signed-out app, 2026-11-19. One dark theme.</p>
+</header>
+
+<section>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+</section>
+
+<section>
+  <h2>Type</h2>
+  <div id="type"></div>
+</section>
+
+<section>
+  <h2>Radius and size</h2>
+  <div class="row" id="radii"></div>
+</section>
+
+<section>
+  <h2>Components</h2>
+  <div class="row">
+    <button class="btn" type="button">Get started</button>
+    <button class="btn-email" type="button">Continue with email</button>
+    <button class="btn-google" type="button">Continue with Google</button>
+  </div>
+  <h3>Text field</h3>
+  <input class="field" placeholder="Enter your email" aria-label="Email">
+  <h3>Sign-in card</h3>
+  <div class="card">
+    <h4>Hey</h4>
+    <p class="note">Let's sign in or sign up</p>
+    <button class="btn-email" type="button">Continue with email</button>
+  </div>
+  <p class="note">Marketing buttons use TT Hoves Medium on lime #d5fe52 at an 18px radius. The app's email button uses SF Pro at 600 on lime-deep #c0ef2a at a 17px radius. Hover on the marketing pill did not change the computed fill.</p>
+</section>
+
+<section>
+  <h2>Tokens</h2>
+  <table id="tokens"><thead><tr><th>Token</th><th>Value</th><th>Source</th></tr></thead><tbody></tbody></table>
+</section>
+</div>
+<script>
+const TOK = /*TOKENS*/null;
+function flat(node, prefix, out) {
+  out = out || [];
+  Object.keys(node || {}).forEach(function (k) {
+    if (k.charAt(0) === "$") return;
+    var v = node[k];
+    var path = prefix ? prefix + "." + k : k;
+    if (v && v.v !== undefined) out.push([path, v]);
+    else if (v && typeof v === "object") flat(v, path, out);
+  });
+  return out;
+}
+var sw = document.getElementById("swatches");
+["page", "surface", "surface-raised", "text", "muted", "accent", "accent-deep", "on-accent", "border", "focus", "widget"].forEach(function (name) {
+  var t = TOK.dark[name];
+  if (!t) return;
+  var d = document.createElement("div");
+  d.className = "sw";
+  d.innerHTML = "<i></i><b>" + name + "</b><span></span>";
+  d.querySelector("i").style.background = t.v;
+  d.querySelector("span").textContent = t.v;
+  sw.appendChild(d);
+});
+var type = document.getElementById("type");
+flat(TOK.core.typography, "typography").forEach(function (row) {
+  var v = row[1].v;
+  var d = document.createElement("div");
+  d.className = "ty";
+  d.innerHTML = "<div>" + row[0] + "</div><small></small>";
+  d.firstChild.style.font = v.fontWeight + " " + v.fontSize + "/" + v.lineHeight + " " + v.fontFamily;
+  d.querySelector("small").textContent = v.fontSize + " / " + v.lineHeight + "  " + v.fontFamily;
+  type.appendChild(d);
+});
+var radii = document.getElementById("radii");
+flat(TOK.core.radius, "radius").forEach(function (row) {
+  var d = document.createElement("div");
+  d.className = "sw";
+  d.innerHTML = "<i></i><b></b><span></span>";
+  d.querySelector("i").style.borderRadius = row[1].v;
+  d.querySelector("i").style.background = "var(--surface)";
+  d.querySelector("b").textContent = row[0];
+  d.querySelector("span").textContent = row[1].v;
+  radii.appendChild(d);
+});
+var tb = document.querySelector("#tokens tbody");
+["core", "dark"].forEach(function (set) {
+  flat(TOK[set], set).forEach(function (row) {
+    var tr = document.createElement("tr");
+    var val = typeof row[1].v === "object" ? JSON.stringify(row[1].v) : String(row[1].v);
+    tr.innerHTML = "<td><code></code></td><td></td><td></td>";
+    tr.children[0].firstChild.textContent = row[0];
+    tr.children[1].textContent = val;
+    // Motion tokens carry their source as an object ({evidence, capture}), the others as text.
+    const src = row[1].s;
+    tr.children[2].textContent = (typeof src === "string" ? src : JSON.stringify(src || "")).slice(0, 140);
+    tb.appendChild(tr);
+  });
+});
+</script>
+</body>
+</html>

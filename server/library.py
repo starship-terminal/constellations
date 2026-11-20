@@ -18,6 +18,7 @@ import os
 import posixpath
 import sqlite3
 import sys
+import threading
 import urllib.parse
 from pathlib import Path
 
@@ -60,7 +61,24 @@ def _json_size(obj) -> int:
 
 
 def _catalog() -> dict:
-    return catalog.load_catalog()
+    """catalog.json, parsed once per change of the file rather than per tool
+    call (it is ~1.5 MB). library.py is re-executed on every /api/ request so
+    a deploy needs no restart (server/api.py), so the cache lives on the
+    long-lived catalog module, keyed on the file's mtime and size; a pull that
+    changes the file misses it. Callers only read the result."""
+    st = (catalog.ROOT / "catalog.json").stat()
+    key = (str(catalog.ROOT), st.st_mtime_ns, st.st_size)
+    cached = getattr(catalog, "_library_cache", None)
+    if cached is not None and cached[0] == key:
+        return cached[1]
+    # api.py serves requests on threads: one parses, the others wait for it.
+    # The lock lives on the catalog module too, so every copy of library.py
+    # shares it (setdefault is atomic under the GIL).
+    with catalog.__dict__.setdefault("_library_lock", threading.Lock()):
+        cached = getattr(catalog, "_library_cache", None)
+        if cached is None or cached[0] != key:
+            cached = catalog._library_cache = (key, catalog.load_catalog())
+    return cached[1]
 
 
 def _entry(slug: str) -> dict:
@@ -203,12 +221,15 @@ def search_styles(query: str, store: str = "all", platform: str | None = None,
     wanted = "mobile" if platform == "ios" else platform
     if store in ("all", "systems"):
         # One catalog read per call, not one per hit.
-        by_slug = {s["slug"]: s for s in _catalog()["systems"]}
-        for hit in catalog.find(words):
+        parsed = _catalog()
+        by_slug = {s["slug"]: s for s in parsed["systems"]}
+        for hit in catalog.find(words, parsed):
             e = by_slug.get(hit["slug"])
             if e is None:
                 continue
-            if platform and platform not in e.get("tags", []) and e.get("platform") != wanted:
+            # The platform field only: a tag such as `mobile` marks a 390px pass of a web
+            # package (mwm), which is not a mobile app.
+            if platform and e.get("platform") != wanted:
                 continue
             out.append({"store": "systems", "slug": hit["slug"], "name": hit["name"],
                         "score": hit["score"], "goodFor": hit["goodFor"], "tags": hit["tags"],
@@ -501,8 +522,16 @@ def call(name: str, args: dict) -> dict:
         result = spec["fn"](**args)
     except ToolError:
         raise
-    except Exception as e:
+    except (TypeError, ValueError) as e:
+        # A bad argument (int("x"), a wrong type): the message is about the
+        # caller's own input.
         raise ToolError(f"{name} failed: {e}")
+    except Exception as e:
+        # Anything else (an OSError names an absolute path, sqlite errors name
+        # the store) is logged here and reaches the caller, and through the
+        # chat a third-party model, only as its type.
+        print(f"library: {name}: {type(e).__name__}: {e}", file=sys.stderr)
+        raise ToolError(f"{name} failed ({type(e).__name__})")
     if "_image" in result:
         return result
     size = _json_size(result)

@@ -1,0 +1,30 @@
+{
+  "captured": "2026-11-19",
+  "browser": "T3 preview, tab opened with reuseExistingTab false",
+  "screenshotFrames": "preview_snapshot returned: The browser is not producing screenshot frames. For a desktop tab, show or restore the T3 Code window and try again.",
+  "cloudflare": false,
+  "signedOut": true,
+  "cookie": "Cookiebot banner was visible on first paint. Deny was clicked. The banner text was gone on the next read. Allow all was not clicked.",
+  "colorSchemeOverride": "preview_set_appearance light. matchMedia prefers-color-scheme dark was false. No prefers-color-scheme dark rule was found in the loaded stylesheets.",
+  "desktop": {
+    "requested": {"width": 1440, "height": 900},
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {"width": 1440, "height": 900, "scale": 1}
+  },
+  "phone": {
+    "requested": {"width": 390, "height": 844},
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2
+  },
+  "pages": [
+    "https://www.raus.life/",
+    "https://www.raus.life/about",
+    "https://www.raus.life/search",
+    "https://www.raus.life/journal",
+    "https://www.raus.life/help",
+    "https://www.raus.life/staying-with-us"
+  ]
+}

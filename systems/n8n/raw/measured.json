@@ -1,0 +1,351 @@
+{
+  "captured": "2026-11-19",
+  "harness": "T3 preview browser, preview_evaluate getComputedStyle",
+  "screenshotFrames": "preview_snapshot failed twice with: The browser is not producing screenshot frames. For a desktop tab, show or restore the T3 Code window and try again.",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1169,
+      "height": 731,
+      "scale": 1
+    }
+  },
+  "pages": {
+    "home": {
+      "url": "https://n8n.io/",
+      "title": "AI Workflow Automation Platform - n8n",
+      "challenge": false,
+      "body": {
+        "backgroundColor": "rgb(250, 250, 250)",
+        "color": "rgb(22, 22, 22)",
+        "fontFamily": "\"n8n Baumer Uniwidth\", Helvetica, system-ui, -apple-system, sans-serif",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px"
+      },
+      "h1": {
+        "text": "Build the agent. Understand its workflow.",
+        "color": "rgb(22, 22, 22)",
+        "fontSize": "64px",
+        "fontWeight": "500",
+        "lineHeight": "54.4px",
+        "letterSpacing": "-0.64px",
+        "fontFamily": "n8n Baumer Uniwidth",
+        "note": "class includes type-heading-3xl and lg:text-[64px] lg:leading-[0.85]. Token --text-heading-3xl is 80px; the live h1 at 1169px computed 64px."
+      },
+      "h2": {
+        "text": "The USB-C for your AI stack",
+        "fontSize": "48px",
+        "fontWeight": "500",
+        "lineHeight": "48px",
+        "letterSpacing": "-0.48px",
+        "color": "rgb(22, 22, 22)"
+      },
+      "h3": {
+        "text": "How Tom automated new user onboarding",
+        "fontSize": "24px",
+        "fontWeight": "500",
+        "lineHeight": "24px",
+        "color": "rgb(250, 250, 250)",
+        "note": "on a dark demo panel"
+      },
+      "announcementLink": {
+        "text": "Learn more \u2192",
+        "color": "rgb(255, 145, 172)",
+        "fontSize": "14px",
+        "fontWeight": "500",
+        "lineHeight": "18px",
+        "textDecoration": "underline",
+        "fontFamily": "n8n Baumer Uniwidth"
+      },
+      "primaryCta": {
+        "text": "GET STARTED",
+        "backgroundColor": "rgb(255, 188, 202)",
+        "color": "rgb(33, 33, 33)",
+        "fontFamily": "n8n Baumer Mono",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "18px",
+        "letterSpacing": "0.28px",
+        "textTransform": "uppercase",
+        "padding": "12px 16px",
+        "height": "42px",
+        "borderRadius": "9999px",
+        "border": "0",
+        "boxShadow": "none"
+      },
+      "secondaryCta": {
+        "text": "TALK TO SALES",
+        "backgroundColor": "rgb(217, 217, 217)",
+        "color": "rgb(22, 22, 22)",
+        "height": "42px",
+        "padding": "12px 16px",
+        "borderRadius": "9999px"
+      },
+      "selectedPill": {
+        "text": "TOM, IT",
+        "backgroundColor": "rgb(255, 188, 202)",
+        "color": "rgb(22, 22, 22)",
+        "height": "34px",
+        "padding": "8px 16px",
+        "borderRadius": "9999px",
+        "fontSize": "14px",
+        "transition": "0.15s cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      "unselectedPill": {
+        "text": "C\u00c9CILE, SECURITY",
+        "backgroundColor": "rgb(71, 71, 71)",
+        "color": "rgb(250, 250, 250)",
+        "height": "34px",
+        "padding": "8px 16px",
+        "borderRadius": "9999px"
+      },
+      "focus": {
+        "element": "GET STARTED a:focus-visible",
+        "outline": "rgb(255, 145, 172) solid 1px",
+        "outlineOffset": "4px",
+        "matchesFocusVisible": true
+      },
+      "cardSecondary": {
+        "backgroundColor": "rgb(240, 240, 240)",
+        "borderRadius": "24px",
+        "padding": "16px 32px 16px 16px",
+        "class": "card bg-surface-card-secondary rounded-xl"
+      },
+      "cardPrimary": {
+        "backgroundColor": "rgb(217, 217, 217)",
+        "borderRadius": "24px",
+        "padding": "32px",
+        "class": "card bg-surface-card-primary"
+      },
+      "header": {
+        "position": "fixed",
+        "height": "94px",
+        "transition": "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+        "backgroundColor": "transparent"
+      },
+      "nav": {
+        "note": "At 1169px the desktop nav links (Product, Use cases, Community, Enterprise, Pricing, Sign in) computed display none / height 0. A 32px hamburger was visible. Clicking it did not reveal labelled menu items in the accessibility text.",
+        "hamburger": {
+          "width": 32,
+          "height": 32
+        }
+      },
+      "documentScrollHeight": 11785,
+      "cookieBanner": {
+        "vendor": "CookieScript",
+        "measuredBeforeDecline": true,
+        "title": {
+          "fontFamily": "Inter",
+          "fontSize": "18px",
+          "fontWeight": "600"
+        },
+        "accept": {
+          "backgroundColor": "rgb(255, 188, 202)",
+          "color": "rgb(22, 22, 22)",
+          "borderRadius": "8px",
+          "padding": "10px",
+          "height": 47,
+          "fontFamily": "Inter",
+          "fontSize": "15px",
+          "fontWeight": "500"
+        },
+        "details": {
+          "backgroundColor": "rgb(217, 217, 217)",
+          "borderRadius": "8px"
+        },
+        "switchTrack": {
+          "backgroundColor": "rgb(7, 122, 199)",
+          "borderRadius": "100px",
+          "width": 38,
+          "height": 20
+        },
+        "action": "Decline all clicked. Not an n8n component."
+      }
+    },
+    "pricing": {
+      "url": "https://n8n.io/pricing/",
+      "title": "n8n Plans and Pricing - n8n.io",
+      "h1": {
+        "text": "Pricing",
+        "fontSize": "56px",
+        "fontWeight": "500",
+        "lineHeight": "56px",
+        "letterSpacing": "-0.56px",
+        "color": "rgb(22, 22, 22)"
+      },
+      "billingTrack": {
+        "backgroundColor": "rgb(240, 240, 240)",
+        "borderRadius": "9999px",
+        "padding": "4px",
+        "height": 52
+      },
+      "billingMonthly": {
+        "text": "Monthly",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "color": "rgb(22, 22, 22)",
+        "height": 44,
+        "padding": "0px 16px",
+        "borderRadius": "9999px",
+        "fontSize": "16px",
+        "fontWeight": "400"
+      },
+      "billingAnnually": {
+        "text": "Annually",
+        "color": "rgb(250, 250, 250)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "height": 44,
+        "note": "selected label is light on a dark indicator that was not separately boxed"
+      },
+      "planCard": {
+        "backgroundColor": "rgb(240, 240, 240)",
+        "borderRadius": "24px",
+        "padding": "32px 16px",
+        "width": 320
+      },
+      "planName": {
+        "fontSize": "24px",
+        "fontWeight": "500"
+      },
+      "price": {
+        "text": "20\u20ac",
+        "fontSize": "32px",
+        "fontWeight": "500",
+        "lineHeight": "36px"
+      },
+      "trial": {
+        "text": "START FREE TRIAL",
+        "backgroundColor": "rgb(255, 188, 202)",
+        "color": "rgb(33, 33, 33)",
+        "height": 42,
+        "padding": "12px 16px",
+        "borderRadius": "9999px"
+      },
+      "plansSeen": [
+        "Starter 20\u20ac /mo billed annually",
+        "Pro 50\u20ac /mo",
+        "Business 667 (truncated)",
+        "Enterprise CONTACT SALES"
+      ],
+      "notSubmitted": "No trial, checkout, or sales form was submitted."
+    },
+    "login": {
+      "url": "https://app.n8n.cloud/login",
+      "title": "Sign in - n8n.cloud",
+      "challenge": false,
+      "themeOnScreen": "dark page even though documentElement.colorScheme computed light and data-theme was null",
+      "body": {
+        "backgroundColor": "oklch(0.2046 0 89.88)",
+        "color": "oklch(1 0 89.88)",
+        "fontFamily": "Geist, -apple-system, system-ui, Segoe UI, Roboto, sans-serif",
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "fontWeight": "400"
+      },
+      "h1": {
+        "text": "Go to your instance",
+        "fontSize": "28px",
+        "fontWeight": "600",
+        "lineHeight": "36.4px",
+        "letterSpacing": "-0.28px",
+        "color": "oklch(1 0 89.88)"
+      },
+      "label": {
+        "text": "Instance name",
+        "fontSize": "12px",
+        "fontWeight": "500",
+        "lineHeight": "15.6px"
+      },
+      "field": {
+        "class": "auth-field__control",
+        "backgroundColor": "oklch(0.2686 0 89.88)",
+        "borderRadius": "4px",
+        "height": 40,
+        "boxShadow": "oklch(1 0 89.88 / 0.15) 0px 0px 0px 1px inset",
+        "inputPadding": "0px 12px"
+      },
+      "fieldFocused": {
+        "boxShadow": "oklab(1 0 0 / 0.15) 0px 0px 0px 1px inset"
+      },
+      "button": {
+        "text": "Sign in",
+        "backgroundColor": "oklch(0.7807 0.136 5.02)",
+        "color": "oklch(0 0 0)",
+        "height": 36,
+        "padding": "0px 16px",
+        "borderRadius": "9999px",
+        "fontWeight": "500",
+        "fontSize": "14px",
+        "boxShadow": "oklch(0.7807 0.136 5.02) 0px 0px 0px 1px inset, oklch(0 0 0 / 0.25) 0px 1px 2px -1px"
+      },
+      "link": {
+        "text": "Start a free trial",
+        "color": "oklch(0.8205 0.1071 4.98)",
+        "fontWeight": "450",
+        "fontSize": "14px"
+      },
+      "copy": "CLOUD. Go to your instance. Enter the name of your n8n Cloud instance. Instance name .app.n8n.cloud. Sign in. New here? Start a free trial. Don't know your instance name? Manage billing.",
+      "notEntered": "No instance name was submitted. No workflow was opened."
+    },
+    "register": {
+      "url": "https://app.n8n.cloud/register",
+      "title": "Create account - n8n.cloud",
+      "challenge": false,
+      "body": {
+        "backgroundColor": "oklch(0.2046 0 89.88)",
+        "color": "oklch(1 0 89.88)",
+        "fontFamily": "Geist",
+        "fontSize": "14px",
+        "lineHeight": "21px"
+      },
+      "h1": {
+        "text": "Start automating today",
+        "fontSize": "28px",
+        "fontWeight": "600",
+        "lineHeight": "36.4px",
+        "color": "oklch(1 0 89.88)"
+      },
+      "lede": {
+        "text": "Set up an n8n Cloud instance to run your workflows. Free 14-day trial, no credit card required.",
+        "color": "oklch(0.9219 0 89.88)",
+        "fontSize": "14px",
+        "fontWeight": "450",
+        "lineHeight": "18.9px"
+      },
+      "field": {
+        "label": "Company email",
+        "type": "email",
+        "autocomplete": "email",
+        "wrapBackground": "oklch(0.2686 0 89.88)",
+        "wrapRadius": "4px",
+        "wrapHeight": 40,
+        "restShadow": "oklch(1 0 89.88 / 0.7) 0px 0px 0px 1px inset, oklch(1 0 89.88 / 0.3) 0px 0px 0px 2px",
+        "note": "register field ring is stronger than the login field ring"
+      },
+      "button": {
+        "text": "Continue",
+        "backgroundColor": "oklch(0.7807 0.136 5.02)",
+        "color": "oklch(0 0 0)",
+        "height": 36,
+        "borderRadius": "9999px",
+        "fontWeight": "500",
+        "hover": "background unchanged while :hover matched"
+      },
+      "error": {
+        "trigger": "typed not-an-email and clicked Continue; not submitted as an account",
+        "text": "Value needs to be an email address",
+        "role": "alert",
+        "color": "oklch(0.7022 0.1892 22.23)",
+        "fontSize": "12px",
+        "fontWeight": "450",
+        "lineHeight": "16.2px",
+        "ariaInvalid": "true",
+        "fieldShadow": "oklch(0.6378 0.2373 25.44) 0px 0px 0px 1px inset, oklch(1 0 89.88 / 0.3) 0px 0px 0px 2px"
+      },
+      "emptySubmit": "HTML5 validity message 'Please fill out this field.' No custom alert.",
+      "notEntered": "A real email was not submitted. No card, phone, or KYC step was reached."
+    }
+  }
+}

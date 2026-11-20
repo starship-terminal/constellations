@@ -1,0 +1,94 @@
+{
+  "_note": "Host header cases every /api/ front door must agree on: server/routes.py (tools/test_routes.py) and web/proxy.ts (web/lib/request-guard.test.ts). allowedHosts is the DESIGN_SYSTEMS_ALLOWED_HOSTS value the cases run with.",
+  "allowedHosts": "designs.example.test, other.test:8108",
+  "hosts": [
+    {
+      "host": "127.0.0.1:8190",
+      "allowed": true
+    },
+    {
+      "host": "localhost:8800",
+      "allowed": true
+    },
+    {
+      "host": "LOCALHOST",
+      "allowed": true
+    },
+    {
+      "host": "[::1]:8190",
+      "allowed": true
+    },
+    {
+      "host": "app.localhost",
+      "allowed": true
+    },
+    {
+      "host": "100.64.0.7:8108",
+      "allowed": true
+    },
+    {
+      "host": "box.tail123.ts.net:8108",
+      "allowed": true
+    },
+    {
+      "host": "designs.example.test:443",
+      "allowed": true
+    },
+    {
+      "host": "designs.example.test",
+      "allowed": true
+    },
+    {
+      "host": "other.test:8108",
+      "allowed": true
+    },
+    {
+      "host": "",
+      "allowed": true
+    },
+    {
+      "host": "other.test:9999",
+      "allowed": false
+    },
+    {
+      "host": "other.test",
+      "allowed": false
+    },
+    {
+      "host": "evil.test",
+      "allowed": false
+    },
+    {
+      "host": "evil.test:8190",
+      "allowed": false
+    },
+    {
+      "host": "evil.ts.net.evil.test",
+      "allowed": false
+    },
+    {
+      "host": "127.0.0.1:1,evil.test",
+      "allowed": false
+    },
+    {
+      "host": "a@localhost",
+      "allowed": false
+    },
+    {
+      "host": "x:port",
+      "allowed": false
+    },
+    {
+      "host": "localhost:99999",
+      "allowed": false
+    },
+    {
+      "host": "localhost/x",
+      "allowed": false
+    },
+    {
+      "host": "999.1.1.1",
+      "allowed": false
+    }
+  ]
+}

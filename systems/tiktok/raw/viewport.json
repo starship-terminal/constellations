@@ -1,0 +1,35 @@
+{
+  "captured": "2026-11-19",
+  "url": "https://www.tiktok.com/",
+  "title": "TikTok - Make Your Day",
+  "signedOut": true,
+  "localeNote": "The login dialog said the account location is Singapore. English chrome.",
+  "theme": {
+    "data-theme": "dark",
+    "data-tux-color-scheme": "dark",
+    "lang": "en",
+    "dir": "ltr"
+  },
+  "desktop": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {"width": 1169, "height": 731, "scale": 1},
+    "requested": "fill",
+    "sideNavWidth": "15rem"
+  },
+  "phone": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {"width": 382, "height": 828, "scale": 1},
+    "requested": "preview_resize freeform 390 by 844",
+    "sideNavWidth": "4.5rem",
+    "note": "The tool reported viewport 1280 by 800 before the page settled. window.innerWidth was 390 after the resize."
+  },
+  "screenshot": {
+    "preview_snapshot": "The browser is not producing screenshot frames.",
+    "file": "screenshots/home-dark-unavailable.png",
+    "note": "Label only. Do not sample colours from it."
+  }
+}

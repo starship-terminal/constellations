@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teal style guide</title>
+<style>
+:root {
+  --font-marketing: Roobert, sans-serif;
+  --font-marketingNav: Roobert, Poppins, sans-serif;
+  --font-app: Inter, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --fontWeight-light: 300;
+  --fontWeight-regular: 400;
+  --fontWeight-medium: 500;
+  --fontWeight-semibold: 600;
+  --fontWeight-bold: 700;
+  --fontSize-body: 16px;
+  --fontSize-appBody: 14px;
+  --fontSize-nav: 16px;
+  --fontSize-headerButton: 15px;
+  --fontSize-heroLead: 24px;
+  --fontSize-h1: 64px;
+  --fontSize-h2: 40px;
+  --fontSize-display: 48px;
+  --fontSize-price: 84px;
+  --fontSize-cta: 20px;
+  --fontSize-checkerTitle: 67px;
+  --fontSize-authTitle: 24px;
+  --fontSize-footerLink: 13px;
+  --fontSize-legal: 12px;
+  --lineHeight-body: 20.8px;
+  --lineHeight-appBody: 20px;
+  --lineHeight-heroLead: 31.2px;
+  --lineHeight-h1: 64px;
+  --lineHeight-h2: 40px;
+  --lineHeight-display: 45.6px;
+  --lineHeight-price: 84px;
+  --lineHeight-authTitle: 32px;
+  --letterSpacing-h1: -2px;
+  --letterSpacing-h2: -1px;
+  --letterSpacing-cta: -0.4px;
+  --letterSpacing-nav: -0.16px;
+  --letterSpacing-tight: -0.025em;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --radius-xs: 3px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-menu: 8px;
+  --radius-lg: 8px;
+  --radius-card: 16px;
+  --radius-pricingCard: 24px;
+  --radius-testimonial: 13px;
+  --radius-pill: 100px;
+  --radius-authButton: 24px;
+  --radius-footer: 72px;
+  --size-header: 67px;
+  --size-headerSignup: 41px;
+  --size-headerLogin: 43px;
+  --size-cta: 53px;
+  --size-toolCta: 45px;
+  --size-field: 36px;
+  --size-authButton: 40px;
+  --size-authForm: 384px;
+  --size-logo: 32px;
+  --size-iconWell: 48px;
+  --borderWidth-hairline: 0.5px;
+  --borderWidth-login: 1px;
+  --shadow-fieldFocus: rgb(255, 255, 255) 0px 0px 0px 1px, rgb(0, 82, 73) 0px 0px 0px 2px, rgba(0, 82, 73, 0.25) 0px 0px 0px 4px;
+  --shadow-appSm: 0px 1px 2px -1px rgba(0, 0, 0, .1), 0px 1px 3px 0px rgba(0, 0, 0, .1);
+  --motion-durationFast: 150ms;
+  --motion-durationButton: 200ms;
+  --motion-durationPress: 75ms;
+  --motion-easeStandard: cubic-bezier(0.4, 0, 0.2, 1);
+  --color-page: #ffffff;
+  --color-surface: #ffffff;
+  --color-ink: #333333;
+  --color-inkStrong: #1a1a1a;
+  --color-muted: #787878;
+  --color-border: #e5e7eb;
+  --color-loginBorder: #2d2d2d;
+  --color-yellow: #f5b501;
+  --color-yellowSoft: #f9d367;
+  --color-teal: #005149;
+  --color-tealSoft: #e9f3f3;
+  --color-purple: #5a6fec;
+  --color-pheasant: #791e3f;
+  --color-chickadee: #f1f2f2;
+  --color-onYellow: #000000;
+  --color-onYellowHeader: #2d2d2d;
+  --color-onDark: #ffffff;
+  --color-menuHover: #f9fafb;
+  --color-navHover: #005149;
+  --color-canary: #f5e867;
+  --color-maroon: #e84e30;
+  --color-brown: #b58d47;
+  --component-button-primary-bg: #f5b501;
+  --component-button-primary-text: #000000;
+  --component-button-outline-bg: #ffffff;
+  --component-button-outline-text: #2d2d2d;
+}
+[data-mode="app"] {
+  --color-page: #ffffff;
+  --color-surface: #ffffff;
+  --color-ink: #0a0a0a;
+  --color-inkStrong: #171717;
+  --color-muted: #737373;
+  --color-border: #cccccc;
+  --color-brand: #005249;
+  --color-brandHover: #1d5851;
+  --color-accent: #f4b301;
+  --color-accentHover: #ffe042;
+  --color-onAccent: #171717;
+  --color-linkedin: #2427ab;
+  --color-onLinkedin: #fafafa;
+  --color-danger: #e84e30;
+  --color-focusRing: #005249;
+  --color-legal: oklch(0.707 0.022 261.325);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-page); color: var(--color-ink); font: 400 16px/20.8px var(--font-marketing); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
+h1 { font: 600 40px/40px var(--font-marketing); letter-spacing: -1px; margin: 0; }
+h2 { font: 600 24px/32px var(--font-marketing); margin: 40px 0 12px; }
+button.theme { margin-left: auto; height: 41px; padding: 10px 24px; border-radius: 100px; border: 1px solid var(--color-loginBorder); background: var(--color-surface); color: var(--color-loginBorder); font: 500 15px/20px var(--font-marketing); cursor: pointer; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 148px; }
+.sw i { display: block; height: 56px; border-radius: 16px; border: 1px solid var(--color-border); }
+.sw b, .sw span { display: block; font-size: 12px; line-height: 16px; }
+.sw span { color: var(--color-muted); }
+.btn { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+.btn.primary { height: 53px; padding: 16px 32px; border-radius: 100px; background: var(--color-yellow); color: var(--color-onYellow); font: 600 20px/20.8px var(--font-marketing); letter-spacing: -0.4px; }
+.btn.header { height: 41px; padding: 10px 24px; border-radius: 100px; background: var(--color-yellow); color: var(--color-onYellowHeader); font: 500 15px/20.8px var(--font-marketing); }
+.btn.outline { height: 43px; padding: 10px 24px; border-radius: 100px; background: var(--color-surface); color: var(--color-loginBorder); border: 1px solid var(--color-loginBorder); font: 500 15px/20.8px var(--font-marketing); }
+.field { width: 384px; height: 36px; padding: 8px 12px; border-radius: 3px; border: 0.5px solid #cccccc; font: 400 14px/20px var(--font-app); }
+[data-mode="app"] body { font-family: var(--font-app); color: var(--color-ink); }
+.note { max-width: 64ch; color: var(--color-muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Teal</h1>
+  <button class="theme" type="button" id="theme">App tokens</button>
+</header>
+<p class="note">Public marketing colours and the signed-out app colours, from live computed styles on 2026-11-19. The toggle swaps the swatch set. It does not invent a dark theme.</p>
+<h2>Colour</h2>
+<div class="row" id="swatches"></div>
+<h2>Controls</h2>
+<div class="row">
+  <a class="btn primary">Build My Resume</a>
+  <a class="btn header">Sign up</a>
+  <a class="btn outline">Log in</a>
+</div>
+<h2>App field</h2>
+<input class="field" placeholder="Email" readonly>
+</div>
+<script>
+const T = {"core":{"font":{"marketing":{"v":"Roobert, sans-serif","t":"fontFamily","s":"Measured. Computed style on document.body on https://www.tealhq.com/, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"marketingNav":{"v":"Roobert, Poppins, sans-serif","t":"fontFamily","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Computed style on header nav links on https://www.tealhq.com/, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"app":{"v":"Inter, system-ui, sans-serif","t":"fontFamily","s":"Measured. Computed style on document.body at https://app.tealhq.com/sign-in, 2026-11-19, innerWidth 1169, innerHeight 731, devicePixelRatio 2. Fields were left empty and the form was not submitted."},"mono":{"v":"ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace","t":"fontFamily","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --font-mono. Not the computed face of body text."}},"fontWeight":{"light":{"v":"300","t":"fontWeight","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --font-weight-light."},"regular":{"v":"400","t":"fontWeight","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --font-weight-normal. Body copy."},"medium":{"v":"500","t":"fontWeight","s":"Measured. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --font-weight-medium. Header Sign up."},"semibold":{"v":"600","t":"fontWeight","s":"Measured. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --font-weight-semibold. Headings and yellow CTAs."},"bold":{"v":"700","t":"fontWeight","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --font-weight-bold. Declared, not the computed weight of the measured headings."}},"fontSize":{"body":{"v":"16px","t":"dimension","s":"Measured. Computed style on document.body on the home page, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"appBody":{"v":"14px","t":"dimension","s":"Measured. Computed style on document.body at https://app.tealhq.com/sign-in, 2026-11-19, innerWidth 1169, innerHeight 731, devicePixelRatio 2. Fields were left empty and the form was not submitted."},"nav":{"v":"16px","t":"dimension","s":"Measured. Computed style on header nav link Job Tracker, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"headerButton":{"v":"15px","t":"dimension","s":"Measured. Computed style on header Sign up link, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"heroLead":{"v":"24px","t":"dimension","s":"Measured. Computed style on the div after h1 on the home page, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"h1":{"v":"64px","t":"dimension","s":"Measured. Computed style on h1 on the home page, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"h2":{"v":"40px","t":"dimension","s":"Measured. Computed style on the first feature h2 on the home page, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"display":{"v":"48px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Computed style on h2.n-h2-xl How it Works, and the pricing h1, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"price":{"v":"84px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Computed style on .text-size-huge.pricing $13 on /pricing, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"cta":{"v":"20px","t":"dimension","s":"Measured. Computed style on a.btn--yellow Build My Resume, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"checkerTitle":{"v":"67px","t":"dimension","s":"Measured. Computed style on h1 on /tool/resume-checker at innerWidth 1169, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"authTitle":{"v":"24px","t":"dimension","s":"Measured. Computed style on h1 Login at https://app.tealhq.com/sign-in, 2026-11-19, innerWidth 1169, innerHeight 731, devicePixelRatio 2. Fields were left empty and the form was not submitted."},"footerLink":{"v":"13px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Computed style on the first footer link, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"legal":{"v":"12px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Computed style of the terms line on https://app.tealhq.com/sign-up, 2026-11-19."}},"lineHeight":{"body":{"v":"20.8px","t":"dimension","s":"Measured. Computed style on document.body on the home page, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"appBody":{"v":"20px","t":"dimension","s":"Measured. Computed style on document.body at https://app.tealhq.com/sign-in, 2026-11-19, innerWidth 1169, innerHeight 731, devicePixelRatio 2. Fields were left empty and the form was not submitted."},"heroLead":{"v":"31.2px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Computed style on the div after h1 on the home page, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"h1":{"v":"64px","t":"dimension","s":"Measured. Computed style on h1 on the home page, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"h2":{"v":"40px","t":"dimension","s":"Measured. Computed style on the first feature h2 on the home page, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"display":{"v":"45.6px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Computed style on h2.n-h2-xl How it Works, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"price":{"v":"84px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Computed style on .text-size-huge.pricing $13 on /pricing, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"authTitle":{"v":"32px","t":"dimension","s":"Measured. Computed style on h1 Login at https://app.tealhq.com/sign-in, 2026-11-19, innerWidth 1169, innerHeight 731, devicePixelRatio 2. Fields were left empty and the form was not submitted."}},"letterSpacing":{"h1":{"v":"-2px","t":"dimension","s":"Measured. Computed style on h1 on the home page, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"h2":{"v":"-1px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Computed style on the first feature h2 on the home page, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"cta":{"v":"-0.4px","t":"dimension","s":"Measured. Computed style on a.btn--yellow Build My Resume, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"nav":{"v":"-0.16px","t":"dimension","s":"Measured. Computed style on header nav, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"tight":{"v":"-0.025em","t":"other","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --tracking-tight."}},"space":{"1":{"v":"4px","t":"dimension","s":"Measured. Declared custom property on https://app.tealhq.com/sign-in, read from getComputedStyle(document.documentElement) on 2026-11-19. The public marketing pages do not mount this sheet. Token --spacing is 0.25rem, computed as 4px at 16px root."},"2":{"v":"8px","t":"dimension","s":"Measured. Computed style on gap on a.btn--yellow, and the form gap on sign-in, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"3":{"v":"12px","t":"dimension","s":"Measured. Computed style on horizontal padding of the email field at https://app.tealhq.com/sign-in, 2026-11-19, innerWidth 1169, innerHeight 731, devicePixelRatio 2. Fields were left empty and the form was not submitted."},"4":{"v":"16px","t":"dimension","s":"Measured. Computed style on vertical padding of a.btn--yellow, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"5":{"v":"20px","t":"dimension","s":"Measured. Computed style on horizontal padding of header nav links, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"6":{"v":"24px","t":"dimension","s":"Measured. Computed style on section padding and header button horizontal padding, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"8":{"v":"32px","t":"dimension","s":"Measured. Computed style on main padding and the Sign in button horizontal padding at https://app.tealhq.com/sign-in, 2026-11-19, innerWidth 1169, innerHeight 731, devicePixelRatio 2. Fields were left empty and the form was not submitted."},"10":{"v":"40px","t":"dimension","s":"Measured. Computed style on section padding on .u--section, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."}},"radius":{"xs":{"v":"3px","t":"dimension","s":"Measured. Computed style on email and password fields, class rounded-xs at https://app.tealhq.com/sign-in, 2026-11-19, innerWidth 1169, innerHeight 731, devicePixelRatio 2. Fields were left empty and the form was not submitted."},"sm":{"v":"4px","t":"dimension","s":"Measured. Declared custom property on https://app.tealhq.com/sign-in, read from getComputedStyle(document.documentElement) on 2026-11-19. The public marketing pages do not mount this sheet. Token --radius-sm."},"md":{"v":"6px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Declared custom property on https://app.tealhq.com/sign-in, read from getComputedStyle(document.documentElement) on 2026-11-19. The public marketing pages do not mount this sheet. Token --radius-md."},"menu":{"v":"8px","t":"dimension","s":"Measured. Computed style on header mega-menu row, class rounded-lg, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"lg":{"v":"8px","t":"dimension","s":"Measured. Declared custom property on https://app.tealhq.com/sign-in, read from getComputedStyle(document.documentElement) on 2026-11-19. The public marketing pages do not mount this sheet. Token --radius-lg."},"card":{"v":"16px","t":"dimension","s":"Measured. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --radius-card. Also the computed radius of feature cards and the How it Works pane."},"pricingCard":{"v":"24px","t":"dimension","s":"Measured. Computed style on pricing-component--col bottom radius on the home page, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"testimonial":{"v":"13px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Computed style on .pricing-testimonial-block on /pricing, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"pill":{"v":"100px","t":"dimension","s":"Measured. Computed style on a.btn--yellow border-radius, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"authButton":{"v":"24px","t":"dimension","s":"Measured. Computed style on Sign in button and Continue with LinkedIn at https://app.tealhq.com/sign-in, 2026-11-19, innerWidth 1169, innerHeight 731, devicePixelRatio 2. Fields were left empty and the form was not submitted."},"footer":{"v":"72px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Computed style on footer top-left radius, class rounded-tl-[72px], 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."}},"size":{"header":{"v":"67px","t":"dimension","s":"Measured. Computed style on header on the home page, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"headerSignup":{"v":"41px","t":"dimension","s":"Measured. Computed style on header Sign up link, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"headerLogin":{"v":"43px","t":"dimension","s":"Measured. Computed style on header Log in link, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"cta":{"v":"53px","t":"dimension","s":"Measured. Computed style on a.btn--yellow Build My Resume, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"toolCta":{"v":"45px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Computed style on Check your resume score on /tool/resume-checker, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"field":{"v":"36px","t":"dimension","s":"Measured. Computed style on email field at https://app.tealhq.com/sign-in, 2026-11-19, innerWidth 1169, innerHeight 731, devicePixelRatio 2. Fields were left empty and the form was not submitted."},"authButton":{"v":"40px","t":"dimension","s":"Measured. Computed style on Sign in button at https://app.tealhq.com/sign-in, 2026-11-19, innerWidth 1169, innerHeight 731, devicePixelRatio 2. Fields were left empty and the form was not submitted."},"authForm":{"v":"384px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Computed style on the sign-in form, class max-w-96 at https://app.tealhq.com/sign-in, 2026-11-19, innerWidth 1169, innerHeight 731, devicePixelRatio 2. Fields were left empty and the form was not submitted."},"logo":{"v":"32px","t":"dimension","s":"Measured. Computed style on header logo image height, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"iconWell":{"v":"48px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Computed style on circular icon well, class w-[48px] h-[48px], 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."}},"borderWidth":{"hairline":{"v":"0.5px","t":"dimension","s":"Measured. Computed style on email field border-top-width at https://app.tealhq.com/sign-in, 2026-11-19, innerWidth 1169, innerHeight 731, devicePixelRatio 2. Fields were left empty and the form was not submitted."},"login":{"v":"1px","t":"dimension","s":"Measured. Computed style on header Log in border-top-width, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."}},"shadow":{"fieldFocus":{"v":"rgb(255, 255, 255) 0px 0px 0px 1px, rgb(0, 82, 73) 0px 0px 0px 2px, rgba(0, 82, 73, 0.25) 0px 0px 0px 4px","t":"shadow","s":"Measured. Computed style on email field after focus() at https://app.tealhq.com/sign-in, 2026-11-19, innerWidth 1169, innerHeight 731, devicePixelRatio 2. Fields were left empty and the form was not submitted."},"appSm":{"v":"0px 1px 2px -1px rgba(0, 0, 0, .1), 0px 1px 3px 0px rgba(0, 0, 0, .1)","t":"shadow","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Declared custom property on https://app.tealhq.com/sign-in, read from getComputedStyle(document.documentElement) on 2026-11-19. The public marketing pages do not mount this sheet. Token --shadow-sm. Not the computed shadow of the sign-in form, which was none."}},"motion":{"durationFast":{"v":"150ms","t":"duration","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --default-transition-duration is .15s."},"durationButton":{"v":"200ms","t":"duration","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Computed style on a.btn--yellow transition, reported as 0.2s, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"durationPress":{"v":"75ms","t":"duration","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Computed style on Sign in button transition-duration, class duration-75 at https://app.tealhq.com/sign-in, 2026-11-19, innerWidth 1169, innerHeight 731, devicePixelRatio 2. Fields were left empty and the form was not submitted."},"easeStandard":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --ease-in-out and --default-transition-timing-function."}}},"light":{"color":{"page":{"v":"#ffffff","t":"color","s":"Measured. Computed style on document.body background on the home page, rgb(255, 255, 255), 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"surface":{"v":"#ffffff","t":"color","s":"Measured. Computed style on header background, class bg-white, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"ink":{"v":"#333333","t":"color","s":"Measured. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --color-ink is #333. Computed body colour rgb(51, 51, 51)."},"inkStrong":{"v":"#1a1a1a","t":"color","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --color-ink-strong. Not the computed colour of the measured headings."},"muted":{"v":"#787878","t":"color","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --colors--grey-600."},"border":{"v":"#e5e7eb","t":"color","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --color-border-light. Header class border-[#e5e7eb]."},"loginBorder":{"v":"#2d2d2d","t":"color","s":"Measured. Computed style on header Log in border, class border-[#2D2D2D], rgb(45, 45, 45), 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"yellow":{"v":"#f5b501","t":"color","s":"Measured. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --color-teal-yellow and --colors--goldfinch-yellow. Computed Sign up and btn--yellow fill rgb(245, 181, 1)."},"yellowSoft":{"v":"#f9d367","t":"color","s":"Measured. Computed style on div.background-color--yellow on the home page, rgb(249, 211, 103), 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"teal":{"v":"#005149","t":"color","s":"Measured. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --color-teal-green and --colors--teal-700. Computed teal band rgb(0, 81, 73)."},"tealSoft":{"v":"#e9f3f3","t":"color","s":"Measured. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --colors--teal-100. Computed feature card rgb(233, 243, 243)."},"purple":{"v":"#5a6fec","t":"color","s":"Measured. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --color-teal-purple and --colors--blue-700. Computed feature panel rgb(90, 111, 236)."},"pheasant":{"v":"#791e3f","t":"color","s":"Measured. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --colors--pheasant-red. Computed footer rgb(121, 30, 63)."},"chickadee":{"v":"#f1f2f2","t":"color","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --colors--chickadee-grey and --color-surface-muted. Icon well fill."},"onYellow":{"v":"#000000","t":"color","s":"Measured. Computed style on a.btn--yellow text, rgb(0, 0, 0), 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"onYellowHeader":{"v":"#2d2d2d","t":"color","s":"Measured. Computed style on header Sign up text, class text-[#2D2D2D], 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"onDark":{"v":"#ffffff","t":"color","s":"Measured. Computed style on footer link, class text-white, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"menuHover":{"v":"#f9fafb","t":"color","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Declared hover fill on header mega-menu rows, class hover:bg-[#F9FAFB]. Not a computed rest state."},"navHover":{"v":"#005149","t":"color","s":"Measured. Declared hover colour on header nav links, class hover:text-[#005149]. Not a computed rest state."},"canary":{"v":"#f5e867","t":"color","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --colors--canary-yellow."},"maroon":{"v":"#e84e30","t":"color","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --colors--maroon-700 and --colors--red-700."},"brown":{"v":"#b58d47","t":"color","s":"Reconstruction: entered by hand at capture time; no raw/ file holds this reading. Declared custom property on www.tealhq.com, read from getComputedStyle(document.documentElement) on 2026-11-19. Token --colors--brown-700. Used as a fill in a header menu icon."}},"component":{"button-primary-bg":{"v":"#f5b501","t":"color","s":"Measured. Computed style on a.btn--yellow and header Sign up, rgb(245, 181, 1), 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"button-primary-text":{"v":"#000000","t":"color","s":"Measured. Computed style on a.btn--yellow text, rgb(0, 0, 0), 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"button-outline-bg":{"v":"#ffffff","t":"color","s":"Measured. Computed style on header Log in background, 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."},"button-outline-text":{"v":"#2d2d2d","t":"color","s":"Measured. Computed style on header Log in text, rgb(45, 45, 45), 2026-11-19. Marketing pages were read at innerWidth 1169, innerHeight 731, devicePixelRatio 2."}}},"dark":{}};
+const light = [
+  ["page", "--color-page"],
+  ["surface", "--color-surface"],
+  ["ink", "--color-ink"],
+  ["yellow", "--color-yellow"],
+  ["teal", "--color-teal"],
+  ["purple", "--color-purple"],
+  ["pheasant", "--color-pheasant"],
+  ["border", "--color-border"]
+];
+const app = [
+  ["page", "--color-page"],
+  ["ink", "--color-ink"],
+  ["muted", "--color-muted"],
+  ["brand", "--color-brand"],
+  ["accent", "--color-accent"],
+  ["linkedin", "--color-linkedin"],
+  ["border", "--color-border"],
+  ["focus", "--color-focusRing"]
+];
+// The builder emits each set's properties without the set name: light on :root, app on
+// [data-mode="app"], so the same --color-* names repaint when the toggle switches sets.
+function paint(rows) {
+  const box = document.getElementById("swatches");
+  box.replaceChildren(...rows.map(([name, v]) => {
+    const sw = document.createElement("div");
+    sw.className = "sw";
+    const dot = document.createElement("i");
+    dot.style.background = `var(${v})`;
+    const label = document.createElement("b");
+    label.textContent = name;
+    const prop = document.createElement("span");
+    prop.textContent = v;
+    sw.append(dot, label, prop);
+    return sw;
+  }));
+}
+paint(light);
+document.getElementById("theme").onclick = () => {
+  const html = document.documentElement;
+  const next = html.getAttribute("data-mode") === "app" ? "light" : "app";
+  html.setAttribute("data-mode", next);
+  paint(next === "app" ? app : light);
+};
+</script>
+</body>
+</html>

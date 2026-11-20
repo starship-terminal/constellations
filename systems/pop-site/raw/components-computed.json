@@ -1,0 +1,206 @@
+{
+  "source": "getComputedStyle, 2026-11-19, signed out. Marketing at https://pop.site/. Auth at https://app.pop.site/?signin and https://app.pop.site/.",
+  "marketing": {
+    "page": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "fontFamily": "sans-serif",
+      "fontSize": "12px"
+    },
+    "colorScheme": "light",
+    "h1": {
+      "fontFamily": "Satoshi, \"Satoshi Placeholder\", sans-serif",
+      "fontSize": "51px",
+      "fontWeight": "500",
+      "lineHeight": "51px",
+      "letterSpacing": "-3.82px",
+      "color": "rgb(23, 23, 23)"
+    },
+    "h1-64": {
+      "fontSize": "64px",
+      "fontWeight": "500",
+      "lineHeight": "57.6px",
+      "letterSpacing": "-3.22px",
+      "note": "seen on a later heading, same family"
+    },
+    "navLink": {
+      "fontFamily": "Satoshi, \"Satoshi Placeholder\", sans-serif",
+      "fontSize": "15px",
+      "fontWeight": "500",
+      "lineHeight": "19.5px",
+      "letterSpacing": "-0.45px",
+      "color": "rgb(23, 23, 23)"
+    },
+    "body19": {
+      "fontSize": "19px",
+      "fontWeight": "500",
+      "lineHeight": "26.6px",
+      "letterSpacing": "-0.57px",
+      "color": "rgb(84, 84, 84)"
+    },
+    "body15": {
+      "fontSize": "15px",
+      "fontWeight": "500",
+      "lineHeight": "19.5px",
+      "letterSpacing": "-0.45px",
+      "color": "rgb(23, 23, 23)"
+    },
+    "caption13": {
+      "fontSize": "13px",
+      "fontWeight": "400",
+      "lineHeight": "15.6px",
+      "letterSpacing": "-0.39px"
+    },
+    "claimButton": {
+      "height": "40px",
+      "padding": "16px 24px",
+      "borderRadius": "26px",
+      "gap": "7px",
+      "backgroundImage": "linear-gradient(110deg, rgb(0, 168, 245) 0%, rgb(59, 130, 246) 100%)",
+      "color": "rgb(255, 255, 255)",
+      "labelFont": "Satoshi 15px/500/-0.45px",
+      "note": "button backgroundColor is transparent; the gradient is backgroundImage"
+    },
+    "claimField": {
+      "height": "40px",
+      "inputPaddingLeft": "20px",
+      "suffixBackground": "rgb(250, 250, 252)",
+      "suffixPadding": "16px 20px 16px 12px",
+      "suffixRadius": "0px 9999px 9999px 0px",
+      "inputRadius": "999px 0px 0px 999px",
+      "inputFont": "Satoshi 15px/500/-0.15px/18px",
+      "placeholder": "yourname"
+    },
+    "eyebrowPill": {
+      "backgroundColor": "rgba(255, 255, 255, 0.3)",
+      "padding": "4px 12px 4px 6px",
+      "borderRadius": "10px",
+      "height": "39px"
+    },
+    "sectionCard": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "padding": "20px",
+      "borderRadius": "10px"
+    },
+    "header": {
+      "height": "72px",
+      "position": "relative",
+      "backgroundColor": "rgba(0, 0, 0, 0)"
+    },
+    "contentWidth": "1000px",
+    "linkBlue": {
+      "color": "rgb(59, 130, 246)",
+      "example": "oliur.pop.site"
+    },
+    "muted": {
+      "color": "rgb(110, 110, 115)"
+    },
+    "inkSoft": {
+      "color": "rgb(84, 84, 84)"
+    },
+    "radiiSeen": [
+      "6px",
+      "8px",
+      "10px",
+      "12px",
+      "22px",
+      "26px",
+      "100px",
+      "999px"
+    ],
+    "shadowsSeen": [
+      "rgba(0, 0, 0, 0.05) 0px 1px 11px 0px",
+      "rgba(0, 0, 0, 0.1) 0px 1px 10px 0px"
+    ],
+    "gradientsSeen": [
+      "linear-gradient(110deg, rgb(0, 168, 245) 0%, rgb(59, 130, 246) 100%)",
+      "linear-gradient(62deg, rgb(23, 23, 23) 0%, rgb(93, 0, 217) 100%)",
+      "radial-gradient(50% 75% at 50% 100%, rgb(245, 249, 255) 0%, rgb(255, 255, 255) 100%)"
+    ],
+    "fontFacesLoaded": "Google Sans Flex Variable (95 unicode-range faces). Not the computed family of visible text."
+  },
+  "auth": {
+    "htmlBackground": "rgb(243, 243, 243)",
+    "pageImage": "radial-gradient(50% 50%, rgb(239, 246, 255), rgb(255, 255, 255))",
+    "bodyFont": "satoshi, -apple-system, system-ui, sans-serif",
+    "bodySize": "16px",
+    "shell": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(226, 232, 240)",
+      "borderRadius": "20px",
+      "padding": "10px",
+      "width": "420px",
+      "height": "476px",
+      "boxShadow": "rgba(0, 0, 0, 0.04) 0px 8px 32px 0px"
+    },
+    "card": {
+      "backgroundImage": "linear-gradient(to right in oklab, rgb(255, 255, 255) 0%, rgb(248, 250, 252) 100%)",
+      "border": "0.5px solid rgb(226, 232, 240)",
+      "borderRadius": "10px",
+      "padding": "20px",
+      "width": "398px",
+      "height": "367px",
+      "boxShadow": "rgba(30, 58, 138, 0.1) 0px 4px 8px 0px"
+    },
+    "title": {
+      "tag": "h2",
+      "fontSize": "18px",
+      "fontWeight": "700",
+      "lineHeight": "27px",
+      "color": "rgb(30, 41, 59)",
+      "text": "Sign in to continue"
+    },
+    "label": {
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "21px",
+      "color": "rgb(100, 116, 139)"
+    },
+    "field": {
+      "height": "38px",
+      "padding": "8px 0px 8px 12px",
+      "border": "1px solid rgb(229, 229, 229)",
+      "borderRadius": "6px",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "color": "rgb(30, 41, 59)",
+      "width": "357px"
+    },
+    "fieldFocus": {
+      "boxShadow": "oklch(0.623 0.214 259.815) 0px 0px 0px 2px",
+      "outline": "rgb(153, 200, 255) none 1px",
+      "border": "1px solid rgb(229, 229, 229)"
+    },
+    "signin": {
+      "height": "36px",
+      "padding": "0px 16px",
+      "borderRadius": "16777200px",
+      "border": "1px solid rgb(71, 85, 105)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "backgroundImage": "linear-gradient(90.54deg, rgb(30, 41, 59) 6.97%, rgb(15, 23, 42) 93.03%)",
+      "transition": "0.15s cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "google": {
+      "height": "43px",
+      "padding": "8px 24px",
+      "borderRadius": "16777200px",
+      "backgroundColor": "rgba(23, 23, 23, 0.05)",
+      "labelColor": "oklch(0.373 0.034 259.733)",
+      "labelWeight": "500",
+      "fontSize": "16px"
+    },
+    "link": {
+      "color": "rgb(37, 99, 235)",
+      "fontSize": "16px",
+      "fontWeight": "500"
+    },
+    "bodyText": {
+      "color": "rgb(30, 41, 59)",
+      "fontSize": "16px",
+      "fontWeight": "500"
+    },
+    "placeholder": "oklab(0.279491 -0.00636676 -0.0362855 / 0.5)"
+  }
+}

@@ -1,0 +1,111 @@
+[
+  {
+    "name": "home",
+    "url": "https://preply.com/",
+    "status": 200,
+    "title": "Preply: Learn with the best online language tutors on app & web",
+    "inner": [
+      1440,
+      900
+    ],
+    "scrollH": 7146,
+    "dpr": 1
+  },
+  {
+    "name": "tutors",
+    "fullSkipped": 12067
+  },
+  {
+    "name": "tutors",
+    "url": "https://preply.com/en/online/english-tutors",
+    "status": 200,
+    "title": "Online English tutors & teachers for private classes",
+    "inner": [
+      1440,
+      900
+    ],
+    "scrollH": 12067,
+    "dpr": 1
+  },
+  {
+    "name": "teach",
+    "url": "https://preply.com/en/teach",
+    "status": 200,
+    "title": "Teach online: Become an online tutor at Preply",
+    "inner": [
+      1440,
+      900
+    ],
+    "scrollH": 4490,
+    "dpr": 1
+  },
+  {
+    "name": "business",
+    "url": "https://preply.com/en/business-language-training",
+    "status": 200,
+    "title": "Corporate language training for companies | Preply Business",
+    "inner": [
+      1440,
+      900
+    ],
+    "scrollH": 11824,
+    "dpr": 1
+  },
+  {
+    "name": "progress",
+    "url": "https://preply.com/en/proven-progress-platform",
+    "status": 200,
+    "title": "Preply Proven Progress Platform – Most Effective Way to Learn a Language",
+    "inner": [
+      1440,
+      900
+    ],
+    "scrollH": 8416,
+    "dpr": 1
+  },
+  {
+    "name": "ukraine",
+    "url": "https://preply.com/en/stand-with-ukraine",
+    "status": 200,
+    "title": "We stand with Ukraine",
+    "inner": [
+      1440,
+      900
+    ],
+    "scrollH": 2925,
+    "dpr": 1
+  },
+  {
+    "name": "notfound",
+    "url": "https://preply.com/en/this-page-does-not-exist-capture",
+    "status": 404,
+    "title": "",
+    "inner": [
+      1440,
+      900
+    ],
+    "scrollH": 1732,
+    "dpr": 1
+  },
+  {
+    "name": "login",
+    "url": "https://preply.com/en/login",
+    "status": 200,
+    "title": "Log in to your Preply account",
+    "inner": [
+      1440,
+      900
+    ],
+    "scrollH": 2024,
+    "dpr": 1
+  },
+  {
+    "name": "home-mobile",
+    "url": "https://preply.com/",
+    "inner": [
+      390,
+      844
+    ],
+    "dpr": 2
+  }
+]

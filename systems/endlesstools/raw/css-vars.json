@@ -1,0 +1,3104 @@
+{
+ "readAt": "2026-11-13",
+ "source": "the stylesheet bodies read during live loads of the endlesstools.io marketing one-pager and app.endlesstools.io/login (the linked /_next stylesheet bundles from network responses plus inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets at :root, the only scope either surface paints, at 1440 x 900",
+ "sheets": [
+  "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css (45060 bytes)",
+  "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css (66536 bytes)"
+ ],
+ "counts": {
+  "rules": 241,
+  "fonts": 22,
+  "names": {
+   "theme": 43,
+   "app": 0,
+   "vendor": 0,
+   "utility": 1,
+   "tailwind": 72
+  },
+  "bySelector": {
+   "[theme] .inter_fe4d0f8a-module__6kuHYW__variable": 1,
+   "[theme] @layer theme :root, :host": 42,
+   "[tailwind] @layer utilities .-translate-x-1\\/2": 1,
+   "[tailwind] @layer utilities .-translate-y-1\\/2": 1,
+   "[tailwind] @layer utilities .translate-y-\\[-25\\%\\]": 1,
+   "[tailwind] @layer utilities :where(.space-y-\\[10px\\] > :not(:last-child))": 1,
+   "[tailwind] @layer utilities :where(.space-y-\\[20px\\] > :not(:last-child))": 1,
+   "[tailwind] @layer utilities :where(.space-x-\\[20px\\] > :not(:last-child))": 1,
+   "[tailwind] @layer utilities .bg-gradient-to-b": 1,
+   "[tailwind] @layer utilities .from-black\\/0": 2,
+   "[tailwind] @layer utilities .to-black\\/70": 2,
+   "[tailwind] @layer utilities .leading-\\[10px\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[14px\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[16px\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[18px\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[20px\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[25px\\]": 1,
+   "[tailwind] @layer utilities .leading-\\[35px\\]": 1,
+   "[tailwind] @layer utilities .leading-none": 1,
+   "[tailwind] @layer utilities .leading-tight": 1,
+   "[tailwind] @layer utilities .font-medium": 1,
+   "[tailwind] @layer utilities .tracking-tight": 1,
+   "[tailwind] @layer utilities .ring-0": 1,
+   "[tailwind] @layer utilities .ring-1": 1,
+   "[tailwind] @layer utilities .ring-2": 1,
+   "[tailwind] @layer utilities .ring-\\[\\#222222\\]": 1,
+   "[tailwind] @layer utilities .ring-black": 1,
+   "[tailwind] @layer utilities .ring-grey-1": 1,
+   "[tailwind] @layer utilities .ring-grey-2": 1,
+   "[tailwind] @layer utilities .ring-white": 1,
+   "[tailwind] @layer utilities .ring-white\\/10": 1,
+   "[tailwind] @layer utilities .ring-white\\/15": 1,
+   "[tailwind] @layer utilities .ring-white\\/20": 1,
+   "[tailwind] @layer utilities .blur-xl": 1,
+   "[tailwind] @layer utilities .drop-shadow-\\[0_20px_60px_rgba\\(0\\,0\\,0\\,0\\.8\\)\\]": 1,
+   "[tailwind] @layer utilities .backdrop-blur": 1,
+   "[tailwind] @layer utilities .backdrop-blur-lg": 1,
+   "[tailwind] @layer utilities .backdrop-blur-md": 1,
+   "[tailwind] @layer utilities .backdrop-blur-xl": 1,
+   "[tailwind] @layer utilities .duration-200": 1,
+   "[tailwind] @layer utilities .duration-300": 1,
+   "[tailwind] @layer utilities .ease-in-out": 1,
+   "[tailwind] @layer utilities .outline-none": 1,
+   "[utility] @layer utilities .\\[--h\\:280px\\]": 1,
+   "[tailwind] @layer utilities .ring-inset": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:ring-1:hover": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:ring-white:hover": 1,
+   "[tailwind] @layer utilities @media (hover: hover) .hover\\:ring-white\\/40:hover": 1,
+   "[tailwind] @layer utilities .active\\:scale-95:active": 3,
+   "[utility] @layer utilities @media (min-width: 48rem) .md\\:\\[--h\\:400px\\]": 1,
+   "[tailwind] .ui-skeleton__unit": 1,
+   "[tailwind] .menu-bg": 4,
+   "[tailwind] .helper-title": 1,
+   "[tailwind] *, ::after, ::before": 51,
+   "[tailwind] ::backdrop": 51,
+   "[tailwind] ::after, ::before": 1,
+   "[tailwind] .aspect-h-16": 1,
+   "[tailwind] .aspect-h-2": 1,
+   "[tailwind] .aspect-w-3": 1,
+   "[tailwind] .aspect-w-9": 1,
+   "[tailwind] .editor strong": 1,
+   "[tailwind] .-translate-x-1\\/2, .-translate-x-\\[50\\%\\]": 1,
+   "[tailwind] .-translate-y-1\\/2, .-translate-y-\\[50\\%\\]": 1,
+   "[tailwind] .translate-y-\\[5px\\]": 1,
+   "[tailwind] .scale-\\[0\\.9\\]": 2,
+   "[tailwind] .-scale-x-100": 1,
+   "[tailwind] .space-x-3 > :not([hidden]) ~ :not([hidden])": 1,
+   "[tailwind] .space-x-\\[10px\\] > :not([hidden]) ~ :not([hidden])": 1,
+   "[tailwind] .space-x-\\[50px\\] > :not([hidden]) ~ :not([hidden])": 1,
+   "[tailwind] .space-x-\\[5px\\] > :not([hidden]) ~ :not([hidden])": 1,
+   "[tailwind] .space-y-\\[15px\\] > :not([hidden]) ~ :not([hidden])": 1,
+   "[tailwind] .space-y-\\[20px\\] > :not([hidden]) ~ :not([hidden])": 1,
+   "[tailwind] .space-y-\\[25px\\] > :not([hidden]) ~ :not([hidden])": 1,
+   "[tailwind] .space-y-\\[5px\\] > :not([hidden]) ~ :not([hidden])": 1,
+   "[tailwind] .border-\\[\\#373737\\]": 1,
+   "[tailwind] .border-grey-1": 1,
+   "[tailwind] .border-grey-2": 1,
+   "[tailwind] .border-grey-3": 1,
+   "[tailwind] .border-grey-4": 1,
+   "[tailwind] .border-orange": 1,
+   "[tailwind] .border-white": 1,
+   "[tailwind] .border-t-grey-1": 1,
+   "[tailwind] .bg-\\[\\#0B0B0B\\]": 1,
+   "[tailwind] .bg-\\[\\#0e0e0e\\]": 1,
+   "[tailwind] .bg-\\[\\#121212\\]": 1,
+   "[tailwind] .bg-\\[\\#171616\\]": 1,
+   "[tailwind] .bg-\\[\\#1A1919\\]": 1,
+   "[tailwind] .bg-\\[\\#1E1E1E\\]": 1,
+   "[tailwind] .bg-\\[\\#1e1e1e\\]": 1,
+   "[tailwind] .bg-\\[\\#201F1F\\]": 1,
+   "[tailwind] .bg-\\[\\#282727\\]": 1,
+   "[tailwind] .bg-\\[\\#2a2a2a\\]": 1,
+   "[tailwind] .bg-\\[\\#323131\\]": 1,
+   "[tailwind] .bg-\\[\\#393939\\]": 1,
+   "[tailwind] .bg-\\[\\#3C3C3C\\]": 1,
+   "[tailwind] .bg-\\[\\#43A6FE\\]": 1,
+   "[tailwind] .bg-\\[\\#4C4C4C\\]": 1,
+   "[tailwind] .bg-\\[\\#5C5C5C\\]": 1,
+   "[tailwind] .bg-\\[\\#5D5D5D\\]": 1,
+   "[tailwind] .bg-\\[\\#606060\\]": 1,
+   "[tailwind] .bg-\\[\\#B8FF46\\]": 1,
+   "[tailwind] .bg-\\[\\#DCDCDC\\]": 1,
+   "[tailwind] .bg-\\[\\#EEEDED\\]": 1,
+   "[tailwind] .bg-\\[\\#F4F4F3\\]": 1,
+   "[tailwind] .bg-\\[\\#FF3411\\]": 1,
+   "[tailwind] .bg-\\[\\#FF3DAE\\]": 1,
+   "[tailwind] .bg-\\[\\#FFE227\\]": 1,
+   "[tailwind] .bg-\\[\\#efefef\\]": 1,
+   "[tailwind] .bg-\\[\\#ff3dae\\]": 1,
+   "[tailwind] .bg-\\[\\#ffe227\\]": 1,
+   "[tailwind] .bg-\\[\\#fff\\]": 1,
+   "[tailwind] .bg-back": 1,
+   "[tailwind] .bg-black": 1,
+   "[tailwind] .bg-green": 1,
+   "[tailwind] .bg-grey-1": 1,
+   "[tailwind] .bg-grey-2": 1,
+   "[tailwind] .bg-grey-3": 1,
+   "[tailwind] .bg-grey-4": 1,
+   "[tailwind] .bg-primary": 1,
+   "[tailwind] .bg-red": 1,
+   "[tailwind] .bg-secondary": 1,
+   "[tailwind] .bg-white": 1,
+   "[tailwind] .bg-yellow-accent": 1,
+   "[tailwind] .bg-opacity-5": 1,
+   "[tailwind] .tabular-nums": 1,
+   "[tailwind] .text-\\[\\#45B1FF\\]": 1,
+   "[tailwind] .text-\\[\\#545454\\]": 1,
+   "[tailwind] .text-\\[\\#848484\\]": 1,
+   "[tailwind] .text-\\[\\#858585\\]": 1,
+   "[tailwind] .text-\\[\\#959595\\]": 1,
+   "[tailwind] .text-\\[\\#969696\\]": 1,
+   "[tailwind] .text-\\[\\#A5A5A5\\]": 1,
+   "[tailwind] .text-\\[\\#B7B7B7\\]": 1,
+   "[tailwind] .text-\\[\\#B8FF46\\]": 1,
+   "[tailwind] .text-\\[\\#EFEFEF\\]": 1,
+   "[tailwind] .text-\\[\\#FF0400\\]": 1,
+   "[tailwind] .text-\\[\\#FF3700\\]": 1,
+   "[tailwind] .text-\\[\\#FF6B6B\\]": 1,
+   "[tailwind] .text-\\[\\#FFE227\\]": 1,
+   "[tailwind] .text-black": 1,
+   "[tailwind] .text-grey-1": 1,
+   "[tailwind] .text-grey-2": 1,
+   "[tailwind] .text-grey-3": 1,
+   "[tailwind] .text-grey-4": 1,
+   "[tailwind] .text-orange": 1,
+   "[tailwind] .text-primary": 1,
+   "[tailwind] .text-secondary": 1,
+   "[tailwind] .text-white": 1,
+   "[tailwind] .placeholder-grey-3::placeholder": 1,
+   "[tailwind] .shadow": 2,
+   "[tailwind] .shadow-2xl": 2,
+   "[tailwind] .shadow-lg": 2,
+   "[tailwind] .shadow-xl": 2,
+   "[tailwind] .ring": 2,
+   "[tailwind] .ring-0": 2,
+   "[tailwind] .ring-1": 2,
+   "[tailwind] .ring-2": 2,
+   "[tailwind] .ring-\\[3px\\]": 2,
+   "[tailwind] .ring-inset": 1,
+   "[tailwind] .ring-\\[\\#222222\\]": 2,
+   "[tailwind] .ring-\\[\\#333333\\]": 2,
+   "[tailwind] .ring-\\[\\#505050\\]": 2,
+   "[tailwind] .ring-\\[\\#505050\\]\\/50": 1,
+   "[tailwind] .ring-\\[\\#606060\\]": 2,
+   "[tailwind] .ring-black": 2,
+   "[tailwind] .ring-grey-1": 2,
+   "[tailwind] .ring-grey-2": 2,
+   "[tailwind] .ring-grey-3": 2,
+   "[tailwind] .ring-grey-3\\/30": 1,
+   "[tailwind] .ring-grey-3\\/50": 1,
+   "[tailwind] .ring-grey-4": 2,
+   "[tailwind] .ring-orange": 2,
+   "[tailwind] .ring-transparent": 1,
+   "[tailwind] .ring-white": 2,
+   "[tailwind] .ring-white\\/20": 1,
+   "[tailwind] .blur": 1,
+   "[tailwind] .brightness-0": 1,
+   "[tailwind] .grayscale": 1,
+   "[tailwind] .invert": 1,
+   "[tailwind] .backdrop-blur": 1,
+   "[tailwind] .backdrop-blur-2xl": 1,
+   "[tailwind] .backdrop-blur-\\[20px\\]": 1,
+   "[tailwind] .backdrop-blur-lg": 1,
+   "[tailwind] .backdrop-blur-md": 1,
+   "[tailwind] .backdrop-blur-sm": 1,
+   "[tailwind] .backdrop-blur-xl": 1,
+   "[tailwind] .placeholder\\:text-grey-4::placeholder": 1,
+   "[tailwind] .before\\:backdrop-blur-sm::before": 1,
+   "[tailwind] .before\\:content-\\[\\'\\'\\]::before": 1,
+   "[tailwind] .focus-within\\:border-grey-1:focus-within": 1,
+   "[tailwind] .hover\\:border-grey-1:hover": 1,
+   "[tailwind] .hover\\:border-white:hover": 1,
+   "[tailwind] .hover\\:\\!bg-\\[\\#45B1FF\\]:hover": 1,
+   "[tailwind] .hover\\:\\!bg-\\[\\#B8FF46\\]:hover": 1,
+   "[tailwind] .hover\\:\\!bg-\\[\\#FF3700\\]:hover": 1,
+   "[tailwind] .hover\\:bg-\\[\\#1D1D1D\\]:hover": 1,
+   "[tailwind] .hover\\:bg-\\[\\#1E1E1E\\]:hover": 1,
+   "[tailwind] .hover\\:bg-\\[\\#FF0400\\]:hover": 1,
+   "[tailwind] .hover\\:bg-\\[\\#ebcc00\\]:hover": 1,
+   "[tailwind] .hover\\:bg-\\[\\#ff58b8\\]:hover": 1,
+   "[tailwind] .hover\\:bg-black:hover": 1,
+   "[tailwind] .hover\\:bg-grey-2:hover": 1,
+   "[tailwind] .hover\\:bg-grey-3:hover": 1,
+   "[tailwind] .hover\\:bg-grey-4:hover": 1,
+   "[tailwind] .hover\\:bg-white:hover": 1,
+   "[tailwind] .hover\\:bg-opacity-85:hover": 1,
+   "[tailwind] .hover\\:bg-opacity-95:hover": 1,
+   "[tailwind] .hover\\:text-black:hover": 1,
+   "[tailwind] .hover\\:text-grey-2:hover": 1,
+   "[tailwind] .hover\\:text-grey-4:hover": 1,
+   "[tailwind] .hover\\:text-primary:hover": 1,
+   "[tailwind] .hover\\:text-secondary:hover": 1,
+   "[tailwind] .hover\\:text-white:hover": 1,
+   "[tailwind] .hover\\:ring-1:hover": 2,
+   "[tailwind] .hover\\:ring-grey-3:hover": 2,
+   "[tailwind] .hover\\:ring-grey-4:hover": 2,
+   "[tailwind] .hover\\:ring-white:hover": 2,
+   "[tailwind] .hover\\:ring-white\\/30:hover": 1,
+   "[tailwind] .hover\\:before\\:scale-105:hover::before": 2,
+   "[tailwind] .focus\\:border-grey-1:focus": 1,
+   "[tailwind] .focus\\:bg-white:focus": 1,
+   "[tailwind] .focus\\:text-black:focus": 1,
+   "[tailwind] .focus\\:ring-grey-3:focus": 2,
+   "[tailwind] .focus\\:ring-white\\/30:focus": 1,
+   "[tailwind] .disabled\\:text-grey-4:disabled": 1,
+   "[tailwind] .disabled\\:text-white:disabled": 1,
+   "[tailwind] .disabled\\:hover\\:border-grey-1:hover:disabled": 1,
+   "[tailwind] .disabled\\:hover\\:border-grey-3:hover:disabled": 1,
+   "[tailwind] .disabled\\:hover\\:bg-white:hover:disabled": 1,
+   "[tailwind] .disabled\\:hover\\:text-grey-4:hover:disabled": 1,
+   "[tailwind] .group:hover .group-hover\\:translate-y-0": 1,
+   "[tailwind] .group:hover .group-hover\\:border-grey-3": 1,
+   "[tailwind] .group:hover .group-hover\\:bg-\\[\\#F5F5F5\\]": 1,
+   "[tailwind] .group:hover .group-hover\\:bg-primary": 1,
+   "[tailwind] .group\\/btn:hover .group-hover\\/btn\\:text-white, .group\\/menu:hover .group-hover\\/menu\\:text-white": 1,
+   "[tailwind] .group:hover .group-hover\\:text-black": 1,
+   "[tailwind] .group:hover .group-hover\\:text-grey-4": 1,
+   "[tailwind] .group:hover .group-hover\\:text-white": 1,
+   "[tailwind] .group:hover .group-hover\\:ring-1": 2,
+   "[tailwind] .group:hover .group-hover\\:hover\\:bg-\\[\\#fff\\]:hover": 1,
+   "[theme] .__variable_86b611": 1
+  }
+ },
+ "errors": [],
+ "theme": [
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".inter_fe4d0f8a-module__6kuHYW__variable",
+   "context": [],
+   "properties": {
+    "--font-inter": "\"Inter\",\"Inter Fallback\""
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ":root, :host",
+   "context": [
+    "@layer theme"
+   ],
+   "properties": {
+    "--font-sans": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+    "--font-mono": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
+    "--spacing": ".25rem",
+    "--font-weight-medium": "500",
+    "--tracking-tight": "-.025em",
+    "--leading-tight": "1.25",
+    "--ease-in-out": "cubic-bezier(.4,0,.2,1)",
+    "--blur-md": "12px",
+    "--blur-lg": "16px",
+    "--blur-xl": "24px",
+    "--default-transition-duration": ".15s",
+    "--default-transition-timing-function": "cubic-bezier(.4,0,.2,1)",
+    "--default-font-family": "var(--font-sans)",
+    "--default-font-feature-settings": "var(--font-sans--font-feature-settings)",
+    "--default-font-variation-settings": "var(--font-sans--font-variation-settings)",
+    "--default-mono-font-family": "var(--font-mono)",
+    "--default-mono-font-feature-settings": "var(--font-mono--font-feature-settings)",
+    "--default-mono-font-variation-settings": "var(--font-mono--font-variation-settings)",
+    "--color-white": "#fff",
+    "--color-black": "#0a0a0a",
+    "--color-grey-1": "#373737",
+    "--color-grey-2": "#2a2a2a",
+    "--color-grey-3": "#555",
+    "--color-grey-4": "#959595",
+    "--color-secondary": "#1e1e1e",
+    "--font-inter": "var(--font-inter)",
+    "--radius-base": "10px",
+    "--radius-fill": "12px",
+    "--text-body-secondary": "12px",
+    "--text-body-secondary--line-height": "14px",
+    "--text-body-primary": "14px",
+    "--text-body-primary--line-height": "18px",
+    "--text-subtitle": "18px",
+    "--text-subtitle--line-height": "20px",
+    "--text-title-secondary": "24px",
+    "--text-title-secondary--line-height": "26px",
+    "--text-title-secondary--font-weight": "500",
+    "--text-title-secondary--letter-spacing": "-.03em",
+    "--text-title-primary": "42px",
+    "--text-title-primary--line-height": "46px",
+    "--text-title-primary--font-weight": "500",
+    "--text-title-primary--letter-spacing": "-.03em"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".__variable_86b611",
+   "context": [],
+   "properties": {
+    "--font-skeleton": "\"Flow Rounded\",\"Flow Rounded Fallback\""
+   },
+   "bin": "theme"
+  }
+ ],
+ "app": [],
+ "vendor": [],
+ "utility": [
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".\\[--h\\:280px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--h": "280px"
+   },
+   "bin": "utility"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".md\\:\\[--h\\:400px\\]",
+   "context": [
+    "@layer utilities",
+    "@media (min-width: 48rem)"
+   ],
+   "properties": {
+    "--h": "400px"
+   },
+   "bin": "utility"
+  }
+ ],
+ "tailwind": [
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".-translate-x-1\\/2",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-x": "calc(calc(1/2*100%)*-1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".-translate-y-1\\/2",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "calc(calc(1/2*100%)*-1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".translate-y-\\[-25\\%\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-translate-y": "-25%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ":where(.space-y-\\[10px\\] > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ":where(.space-y-\\[20px\\] > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ":where(.space-x-\\[20px\\] > :not(:last-child))",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-space-x-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".bg-gradient-to-b",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-position": "to bottom in oklab"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".from-black\\/0",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-from": "color-mix(in oklab,var(--color-black)0%,transparent)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position),var(--tw-gradient-from)var(--tw-gradient-from-position),var(--tw-gradient-to)var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".to-black\\/70",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-gradient-to": "color-mix(in oklab,var(--color-black)70%,transparent)",
+    "--tw-gradient-stops": "var(--tw-gradient-via-stops,var(--tw-gradient-position),var(--tw-gradient-from)var(--tw-gradient-from-position),var(--tw-gradient-to)var(--tw-gradient-to-position))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".leading-\\[10px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "10px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".leading-\\[14px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "14px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".leading-\\[16px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "16px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".leading-\\[18px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "18px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".leading-\\[20px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "20px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".leading-\\[25px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "25px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".leading-\\[35px\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "35px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".leading-none",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".leading-tight",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-leading": "var(--leading-tight)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".font-medium",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-font-weight": "var(--font-weight-medium)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".tracking-tight",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-tracking": "var(--tracking-tight)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".ring-0",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,)0 0 0 calc(0px + var(--tw-ring-offset-width))var(--tw-ring-color,currentColor)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".ring-1",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,)0 0 0 calc(1px + var(--tw-ring-offset-width))var(--tw-ring-color,currentColor)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".ring-2",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,)0 0 0 calc(2px + var(--tw-ring-offset-width))var(--tw-ring-color,currentColor)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".ring-\\[\\#222222\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "#222"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".ring-black",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "var(--color-black)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".ring-grey-1",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "var(--color-grey-1)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".ring-grey-2",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "var(--color-grey-2)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".ring-white",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "var(--color-white)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".ring-white\\/10",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab,var(--color-white)10%,transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".ring-white\\/15",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab,var(--color-white)15%,transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".ring-white\\/20",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab,var(--color-white)20%,transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".blur-xl",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-blur": "blur(var(--blur-xl))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".drop-shadow-\\[0_20px_60px_rgba\\(0\\,0\\,0\\,0\\.8\\)\\]",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-drop-shadow": "drop-shadow(0 20px 60px #000c)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".backdrop-blur",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(8px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".backdrop-blur-lg",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(var(--blur-lg))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".backdrop-blur-md",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(var(--blur-md))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".backdrop-blur-xl",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-backdrop-blur": "blur(var(--blur-xl))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".duration-200",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".2s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".duration-300",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-duration": ".3s"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".ease-in-out",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ease": "var(--ease-in-out)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".outline-none",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-outline-style": "none"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".ring-inset",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-ring-inset": "inset"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".hover\\:ring-1:hover",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-ring-shadow": "var(--tw-ring-inset,)0 0 0 calc(1px + var(--tw-ring-offset-width))var(--tw-ring-color,currentColor)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".hover\\:ring-white:hover",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-ring-color": "var(--color-white)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".hover\\:ring-white\\/40:hover",
+   "context": [
+    "@layer utilities",
+    "@media (hover: hover)"
+   ],
+   "properties": {
+    "--tw-ring-color": "color-mix(in oklab,var(--color-white)40%,transparent)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "selector": ".active\\:scale-95:active",
+   "context": [
+    "@layer utilities"
+   ],
+   "properties": {
+    "--tw-scale-x": "95%",
+    "--tw-scale-y": "95%",
+    "--tw-scale-z": "95%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ui-skeleton__unit",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".menu-bg",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)",
+    "--tw-ring-opacity": "1",
+    "--tw-ring-color": "rgb(55 55 55/var(--tw-ring-opacity,1))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".helper-title",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": "*, ::after, ::before",
+   "context": [],
+   "properties": {
+    "--tw-border-spacing-x": "0",
+    "--tw-border-spacing-y": "0",
+    "--tw-translate-x": "0",
+    "--tw-translate-y": "0",
+    "--tw-rotate": "0",
+    "--tw-skew-x": "0",
+    "--tw-skew-y": "0",
+    "--tw-scale-x": "1",
+    "--tw-scale-y": "1",
+    "--tw-pan-x": "",
+    "--tw-pan-y": "",
+    "--tw-pinch-zoom": "",
+    "--tw-scroll-snap-strictness": "proximity",
+    "--tw-gradient-from-position": "",
+    "--tw-gradient-via-position": "",
+    "--tw-gradient-to-position": "",
+    "--tw-ordinal": "",
+    "--tw-slashed-zero": "",
+    "--tw-numeric-figure": "",
+    "--tw-numeric-spacing": "",
+    "--tw-numeric-fraction": "",
+    "--tw-ring-inset": "",
+    "--tw-ring-offset-width": "0px",
+    "--tw-ring-offset-color": "#fff",
+    "--tw-ring-color": "rgb(59 130 246/0.5)",
+    "--tw-ring-offset-shadow": "0 0 #0000",
+    "--tw-ring-shadow": "0 0 #0000",
+    "--tw-shadow": "0 0 #0000",
+    "--tw-shadow-colored": "0 0 #0000",
+    "--tw-blur": "",
+    "--tw-brightness": "",
+    "--tw-contrast": "",
+    "--tw-grayscale": "",
+    "--tw-hue-rotate": "",
+    "--tw-invert": "",
+    "--tw-saturate": "",
+    "--tw-sepia": "",
+    "--tw-drop-shadow": "",
+    "--tw-backdrop-blur": "",
+    "--tw-backdrop-brightness": "",
+    "--tw-backdrop-contrast": "",
+    "--tw-backdrop-grayscale": "",
+    "--tw-backdrop-hue-rotate": "",
+    "--tw-backdrop-invert": "",
+    "--tw-backdrop-opacity": "",
+    "--tw-backdrop-saturate": "",
+    "--tw-backdrop-sepia": "",
+    "--tw-contain-size": "",
+    "--tw-contain-layout": "",
+    "--tw-contain-paint": "",
+    "--tw-contain-style": ""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": "::backdrop",
+   "context": [],
+   "properties": {
+    "--tw-border-spacing-x": "0",
+    "--tw-border-spacing-y": "0",
+    "--tw-translate-x": "0",
+    "--tw-translate-y": "0",
+    "--tw-rotate": "0",
+    "--tw-skew-x": "0",
+    "--tw-skew-y": "0",
+    "--tw-scale-x": "1",
+    "--tw-scale-y": "1",
+    "--tw-pan-x": "",
+    "--tw-pan-y": "",
+    "--tw-pinch-zoom": "",
+    "--tw-scroll-snap-strictness": "proximity",
+    "--tw-gradient-from-position": "",
+    "--tw-gradient-via-position": "",
+    "--tw-gradient-to-position": "",
+    "--tw-ordinal": "",
+    "--tw-slashed-zero": "",
+    "--tw-numeric-figure": "",
+    "--tw-numeric-spacing": "",
+    "--tw-numeric-fraction": "",
+    "--tw-ring-inset": "",
+    "--tw-ring-offset-width": "0px",
+    "--tw-ring-offset-color": "#fff",
+    "--tw-ring-color": "rgb(59 130 246/0.5)",
+    "--tw-ring-offset-shadow": "0 0 #0000",
+    "--tw-ring-shadow": "0 0 #0000",
+    "--tw-shadow": "0 0 #0000",
+    "--tw-shadow-colored": "0 0 #0000",
+    "--tw-blur": "",
+    "--tw-brightness": "",
+    "--tw-contrast": "",
+    "--tw-grayscale": "",
+    "--tw-hue-rotate": "",
+    "--tw-invert": "",
+    "--tw-saturate": "",
+    "--tw-sepia": "",
+    "--tw-drop-shadow": "",
+    "--tw-backdrop-blur": "",
+    "--tw-backdrop-brightness": "",
+    "--tw-backdrop-contrast": "",
+    "--tw-backdrop-grayscale": "",
+    "--tw-backdrop-hue-rotate": "",
+    "--tw-backdrop-invert": "",
+    "--tw-backdrop-opacity": "",
+    "--tw-backdrop-saturate": "",
+    "--tw-backdrop-sepia": "",
+    "--tw-contain-size": "",
+    "--tw-contain-layout": "",
+    "--tw-contain-paint": "",
+    "--tw-contain-style": ""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": "::after, ::before",
+   "context": [],
+   "properties": {
+    "--tw-content": "\"\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".aspect-h-16",
+   "context": [],
+   "properties": {
+    "--tw-aspect-h": "16"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".aspect-h-2",
+   "context": [],
+   "properties": {
+    "--tw-aspect-h": "2"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".aspect-w-3",
+   "context": [],
+   "properties": {
+    "--tw-aspect-w": "3"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".aspect-w-9",
+   "context": [],
+   "properties": {
+    "--tw-aspect-w": "9"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".editor strong",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".-translate-x-1\\/2, .-translate-x-\\[50\\%\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-x": "-50%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".-translate-y-1\\/2, .-translate-y-\\[50\\%\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "-50%"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".translate-y-\\[5px\\]",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "5px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".scale-\\[0\\.9\\]",
+   "context": [],
+   "properties": {
+    "--tw-scale-x": "0.9",
+    "--tw-scale-y": "0.9"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".-scale-x-100",
+   "context": [],
+   "properties": {
+    "--tw-scale-x": "-1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".space-x-3 > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-x-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".space-x-\\[10px\\] > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-x-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".space-x-\\[50px\\] > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-x-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".space-x-\\[5px\\] > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-x-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".space-y-\\[15px\\] > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".space-y-\\[20px\\] > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".space-y-\\[25px\\] > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".space-y-\\[5px\\] > :not([hidden]) ~ :not([hidden])",
+   "context": [],
+   "properties": {
+    "--tw-space-y-reverse": "0"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".border-\\[\\#373737\\]",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".border-grey-1",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".border-grey-2",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".border-grey-3",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".border-grey-4",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".border-orange",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".border-white",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".border-t-grey-1",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#0B0B0B\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#0e0e0e\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#121212\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#171616\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#1A1919\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#1E1E1E\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#1e1e1e\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#201F1F\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#282727\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#2a2a2a\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#323131\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#393939\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#3C3C3C\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#43A6FE\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#4C4C4C\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#5C5C5C\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#5D5D5D\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#606060\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#B8FF46\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#DCDCDC\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#EEEDED\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#F4F4F3\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#FF3411\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#FF3DAE\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#FFE227\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#efefef\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#ff3dae\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#ffe227\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-\\[\\#fff\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-back",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-black",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-green",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-grey-1",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-grey-2",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-grey-3",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-grey-4",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-primary",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-red",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-secondary",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-white",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-yellow-accent",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".bg-opacity-5",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "0.05"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".tabular-nums",
+   "context": [],
+   "properties": {
+    "--tw-numeric-spacing": "tabular-nums"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-\\[\\#45B1FF\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-\\[\\#545454\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-\\[\\#848484\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-\\[\\#858585\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-\\[\\#959595\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-\\[\\#969696\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-\\[\\#A5A5A5\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-\\[\\#B7B7B7\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-\\[\\#B8FF46\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-\\[\\#EFEFEF\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-\\[\\#FF0400\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-\\[\\#FF3700\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-\\[\\#FF6B6B\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-\\[\\#FFE227\\]",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-black",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-grey-1",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-grey-2",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-grey-3",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-grey-4",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-orange",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-primary",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-secondary",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".text-white",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".placeholder-grey-3::placeholder",
+   "context": [],
+   "properties": {
+    "--tw-placeholder-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".shadow",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 1px 3px 0 rgb(0 0 0/0.1),0 1px 2px -1px rgb(0 0 0/0.1)",
+    "--tw-shadow-colored": "0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".shadow-2xl",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 25px 50px -12px rgb(0 0 0/0.25)",
+    "--tw-shadow-colored": "0 25px 50px -12px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".shadow-lg",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 10px 15px -3px rgb(0 0 0/0.1),0 4px 6px -4px rgb(0 0 0/0.1)",
+    "--tw-shadow-colored": "0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".shadow-xl",
+   "context": [],
+   "properties": {
+    "--tw-shadow": "0 20px 25px -5px rgb(0 0 0/0.1),0 8px 10px -6px rgb(0 0 0/0.1)",
+    "--tw-shadow-colored": "0 20px 25px -5px var(--tw-shadow-color),0 8px 10px -6px var(--tw-shadow-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring-0",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring-1",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring-2",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring-\\[3px\\]",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring-inset",
+   "context": [],
+   "properties": {
+    "--tw-ring-inset": "inset"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring-\\[\\#222222\\]",
+   "context": [],
+   "properties": {
+    "--tw-ring-opacity": "1",
+    "--tw-ring-color": "rgb(34 34 34/var(--tw-ring-opacity,1))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring-\\[\\#333333\\]",
+   "context": [],
+   "properties": {
+    "--tw-ring-opacity": "1",
+    "--tw-ring-color": "rgb(51 51 51/var(--tw-ring-opacity,1))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring-\\[\\#505050\\]",
+   "context": [],
+   "properties": {
+    "--tw-ring-opacity": "1",
+    "--tw-ring-color": "rgb(80 80 80/var(--tw-ring-opacity,1))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring-\\[\\#505050\\]\\/50",
+   "context": [],
+   "properties": {
+    "--tw-ring-color": "rgb(80 80 80/0.5)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring-\\[\\#606060\\]",
+   "context": [],
+   "properties": {
+    "--tw-ring-opacity": "1",
+    "--tw-ring-color": "rgb(96 96 96/var(--tw-ring-opacity,1))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring-black",
+   "context": [],
+   "properties": {
+    "--tw-ring-opacity": "1",
+    "--tw-ring-color": "rgb(0 0 0/var(--tw-ring-opacity,1))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring-grey-1",
+   "context": [],
+   "properties": {
+    "--tw-ring-opacity": "1",
+    "--tw-ring-color": "rgb(55 55 55/var(--tw-ring-opacity,1))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring-grey-2",
+   "context": [],
+   "properties": {
+    "--tw-ring-opacity": "1",
+    "--tw-ring-color": "rgb(42 42 42/var(--tw-ring-opacity,1))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring-grey-3",
+   "context": [],
+   "properties": {
+    "--tw-ring-opacity": "1",
+    "--tw-ring-color": "rgb(85 85 85/var(--tw-ring-opacity,1))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring-grey-3\\/30",
+   "context": [],
+   "properties": {
+    "--tw-ring-color": "rgb(85 85 85/0.3)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring-grey-3\\/50",
+   "context": [],
+   "properties": {
+    "--tw-ring-color": "rgb(85 85 85/0.5)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring-grey-4",
+   "context": [],
+   "properties": {
+    "--tw-ring-opacity": "1",
+    "--tw-ring-color": "rgb(149 149 149/var(--tw-ring-opacity,1))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring-orange",
+   "context": [],
+   "properties": {
+    "--tw-ring-opacity": "1",
+    "--tw-ring-color": "rgb(255 121 79/var(--tw-ring-opacity,1))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring-transparent",
+   "context": [],
+   "properties": {
+    "--tw-ring-color": "transparent"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring-white",
+   "context": [],
+   "properties": {
+    "--tw-ring-opacity": "1",
+    "--tw-ring-color": "rgb(239 239 239/var(--tw-ring-opacity,1))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".ring-white\\/20",
+   "context": [],
+   "properties": {
+    "--tw-ring-color": "rgb(239 239 239/0.2)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".blur",
+   "context": [],
+   "properties": {
+    "--tw-blur": "blur(8px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".brightness-0",
+   "context": [],
+   "properties": {
+    "--tw-brightness": "brightness(0)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".grayscale",
+   "context": [],
+   "properties": {
+    "--tw-grayscale": "grayscale(100%)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".invert",
+   "context": [],
+   "properties": {
+    "--tw-invert": "invert(100%)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".backdrop-blur",
+   "context": [],
+   "properties": {
+    "--tw-backdrop-blur": "blur(8px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".backdrop-blur-2xl",
+   "context": [],
+   "properties": {
+    "--tw-backdrop-blur": "blur(40px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".backdrop-blur-\\[20px\\]",
+   "context": [],
+   "properties": {
+    "--tw-backdrop-blur": "blur(20px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".backdrop-blur-lg",
+   "context": [],
+   "properties": {
+    "--tw-backdrop-blur": "blur(16px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".backdrop-blur-md",
+   "context": [],
+   "properties": {
+    "--tw-backdrop-blur": "blur(12px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".backdrop-blur-sm",
+   "context": [],
+   "properties": {
+    "--tw-backdrop-blur": "blur(4px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".backdrop-blur-xl",
+   "context": [],
+   "properties": {
+    "--tw-backdrop-blur": "blur(24px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".placeholder\\:text-grey-4::placeholder",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".before\\:backdrop-blur-sm::before",
+   "context": [],
+   "properties": {
+    "--tw-backdrop-blur": "blur(4px)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".before\\:content-\\[\\'\\'\\]::before",
+   "context": [],
+   "properties": {
+    "--tw-content": "\"\""
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".focus-within\\:border-grey-1:focus-within",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:border-grey-1:hover",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:border-white:hover",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:\\!bg-\\[\\#45B1FF\\]:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:\\!bg-\\[\\#B8FF46\\]:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:\\!bg-\\[\\#FF3700\\]:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:bg-\\[\\#1D1D1D\\]:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:bg-\\[\\#1E1E1E\\]:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:bg-\\[\\#FF0400\\]:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:bg-\\[\\#ebcc00\\]:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:bg-\\[\\#ff58b8\\]:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:bg-black:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:bg-grey-2:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:bg-grey-3:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:bg-grey-4:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:bg-white:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:bg-opacity-85:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "0.85"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:bg-opacity-95:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "0.95"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:text-black:hover",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:text-grey-2:hover",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:text-grey-4:hover",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:text-primary:hover",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:text-secondary:hover",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:text-white:hover",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:ring-1:hover",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:ring-grey-3:hover",
+   "context": [],
+   "properties": {
+    "--tw-ring-opacity": "1",
+    "--tw-ring-color": "rgb(85 85 85/var(--tw-ring-opacity,1))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:ring-grey-4:hover",
+   "context": [],
+   "properties": {
+    "--tw-ring-opacity": "1",
+    "--tw-ring-color": "rgb(149 149 149/var(--tw-ring-opacity,1))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:ring-white:hover",
+   "context": [],
+   "properties": {
+    "--tw-ring-opacity": "1",
+    "--tw-ring-color": "rgb(239 239 239/var(--tw-ring-opacity,1))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:ring-white\\/30:hover",
+   "context": [],
+   "properties": {
+    "--tw-ring-color": "rgb(239 239 239/0.3)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".hover\\:before\\:scale-105:hover::before",
+   "context": [],
+   "properties": {
+    "--tw-scale-x": "1.05",
+    "--tw-scale-y": "1.05"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".focus\\:border-grey-1:focus",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".focus\\:bg-white:focus",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".focus\\:text-black:focus",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".focus\\:ring-grey-3:focus",
+   "context": [],
+   "properties": {
+    "--tw-ring-opacity": "1",
+    "--tw-ring-color": "rgb(85 85 85/var(--tw-ring-opacity,1))"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".focus\\:ring-white\\/30:focus",
+   "context": [],
+   "properties": {
+    "--tw-ring-color": "rgb(239 239 239/0.3)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".disabled\\:text-grey-4:disabled",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".disabled\\:text-white:disabled",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".disabled\\:hover\\:border-grey-1:hover:disabled",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".disabled\\:hover\\:border-grey-3:hover:disabled",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".disabled\\:hover\\:bg-white:hover:disabled",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".disabled\\:hover\\:text-grey-4:hover:disabled",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".group:hover .group-hover\\:translate-y-0",
+   "context": [],
+   "properties": {
+    "--tw-translate-y": "0px"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".group:hover .group-hover\\:border-grey-3",
+   "context": [],
+   "properties": {
+    "--tw-border-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".group:hover .group-hover\\:bg-\\[\\#F5F5F5\\]",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".group:hover .group-hover\\:bg-primary",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".group\\/btn:hover .group-hover\\/btn\\:text-white, .group\\/menu:hover .group-hover\\/menu\\:text-white",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".group:hover .group-hover\\:text-black",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".group:hover .group-hover\\:text-grey-4",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".group:hover .group-hover\\:text-white",
+   "context": [],
+   "properties": {
+    "--tw-text-opacity": "1"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".group:hover .group-hover\\:ring-1",
+   "context": [],
+   "properties": {
+    "--tw-ring-offset-shadow": "var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color)",
+    "--tw-ring-shadow": "var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)"
+   },
+   "bin": "tailwind"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "selector": ".group:hover .group-hover\\:hover\\:bg-\\[\\#fff\\]:hover",
+   "context": [],
+   "properties": {
+    "--tw-bg-opacity": "1"
+   },
+   "bin": "tailwind"
+  }
+ ],
+ "fonts": [
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(\"../media/2c55a0e60120577a-s.2a48534a.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(\"../media/9c72aa0f40e4eef8-s.18a48cbc.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(\"../media/ad66f9afd8947f86-s.7a40eb73.woff2\") format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(\"../media/5476f68d60460930-s.c995e352.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(\"../media/2bbe8d2671613f1f-s.76dcb0b2.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(\"../media/1bffadaabf893a1e-s.7cd81963.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(\"../media/83afe278b6a6bb3c-s.p.3a6ba036.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://endlesstools.io/_next/static/chunks/62da1fcf20268712.css",
+   "font-family": "\"Inter Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "90.44%",
+   "descent-override": "22.52%",
+   "line-gap-override": "0%",
+   "size-adjust": "107.12%"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(\"/_next/static/media/ba9851c3c22cd980-s.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(\"/_next/static/media/21350d82a1f187e9-s.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(\"/_next/static/media/c5fe6dc8356a8c31-s.woff2\") format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(\"/_next/static/media/19cfc7226ec3afaa-s.woff2\") format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(\"/_next/static/media/df0a9ae256c0569c-s.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(\"/_next/static/media/8e9860b6e62d6359-s.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "font-family": "Inter",
+   "font-style": "normal",
+   "font-weight": "100 900",
+   "font-display": "swap",
+   "src": "url(\"/_next/static/media/e4af272ccee01ff0-s.p.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "font-family": "\"Inter Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "90.44%",
+   "descent-override": "22.52%",
+   "line-gap-override": "0%",
+   "size-adjust": "107.12%"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "font-family": "\"Flow Rounded\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"/_next/static/media/b6dedfb24f7bf6bf-s.woff2\") format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "font-family": "\"Flow Rounded\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"/_next/static/media/c64707b0f41bec9a-s.woff2\") format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "font-family": "\"Flow Rounded\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"/_next/static/media/2b2a9944e2813606-s.woff2\") format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "font-family": "\"Flow Rounded\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"/_next/static/media/47e330c27c1e2c05-s.woff2\") format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "font-family": "\"Flow Rounded\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "swap",
+   "src": "url(\"/_next/static/media/0fb1ac39da0f8ff2-s.p.woff2\") format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "https://app.endlesstools.io/_next/static/css/cf741b1875d64f19.css",
+   "font-family": "\"Flow Rounded Fallback\"",
+   "src": "local(\"Arial\")",
+   "ascent-override": "89.16%",
+   "descent-override": "17.83%",
+   "line-gap-override": "0%",
+   "size-adjust": "112.16%"
+  }
+ ],
+ "resolved": {
+  "dark": {
+   "--blur-lg": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--blur-md": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--blur-xl": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--color-black": {
+    "raw": "#0a0a0a",
+    "kind": "color",
+    "value": "#0a0a0a"
+   },
+   "--color-grey-1": {
+    "raw": "#373737",
+    "kind": "color",
+    "value": "#373737"
+   },
+   "--color-grey-2": {
+    "raw": "#2a2a2a",
+    "kind": "color",
+    "value": "#2a2a2a"
+   },
+   "--color-grey-3": {
+    "raw": "#555",
+    "kind": "color",
+    "value": "#555555"
+   },
+   "--color-grey-4": {
+    "raw": "#959595",
+    "kind": "color",
+    "value": "#959595"
+   },
+   "--color-secondary": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--color-white": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--default-font-family": {
+    "raw": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+    "kind": "fontFamily",
+    "value": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\""
+   },
+   "--default-mono-font-family": {
+    "raw": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
+    "kind": "fontFamily",
+    "value": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace"
+   },
+   "--default-transition-duration": {
+    "raw": ".15s",
+    "kind": "duration",
+    "value": "0.15s"
+   },
+   "--default-transition-timing-function": {
+    "raw": "cubic-bezier(.4,0,.2,1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.4,0,.2,1)"
+   },
+   "--ease-in-out": {
+    "raw": "cubic-bezier(.4,0,.2,1)",
+    "kind": "easing",
+    "value": "cubic-bezier(.4,0,.2,1)"
+   },
+   "--font-mono": {
+    "raw": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
+    "kind": "fontFamily",
+    "value": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace"
+   },
+   "--font-sans": {
+    "raw": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+    "kind": "fontFamily",
+    "value": "ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\""
+   },
+   "--font-weight-medium": {
+    "raw": "500",
+    "kind": "number",
+    "value": 500
+   },
+   "--leading-tight": {
+    "raw": "1.25",
+    "kind": "number",
+    "value": 1.25
+   },
+   "--radius-base": {
+    "raw": "10px",
+    "kind": "dimension",
+    "value": "10px"
+   },
+   "--radius-fill": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--spacing": {
+    "raw": ".25rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--text-body-primary": {
+    "raw": "14px",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--text-body-primary--line-height": {
+    "raw": "18px",
+    "kind": "dimension",
+    "value": "18px"
+   },
+   "--text-body-secondary": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--text-body-secondary--line-height": {
+    "raw": "14px",
+    "kind": "dimension",
+    "value": "14px"
+   },
+   "--text-subtitle": {
+    "raw": "18px",
+    "kind": "dimension",
+    "value": "18px"
+   },
+   "--text-subtitle--line-height": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--text-title-primary": {
+    "raw": "42px",
+    "kind": "dimension",
+    "value": "42px"
+   },
+   "--text-title-primary--font-weight": {
+    "raw": "500",
+    "kind": "number",
+    "value": 500
+   },
+   "--text-title-primary--letter-spacing": {
+    "raw": "-.03em",
+    "kind": "other"
+   },
+   "--text-title-primary--line-height": {
+    "raw": "46px",
+    "kind": "dimension",
+    "value": "46px"
+   },
+   "--text-title-secondary": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--text-title-secondary--font-weight": {
+    "raw": "500",
+    "kind": "number",
+    "value": 500
+   },
+   "--text-title-secondary--letter-spacing": {
+    "raw": "-.03em",
+    "kind": "other"
+   },
+   "--text-title-secondary--line-height": {
+    "raw": "26px",
+    "kind": "dimension",
+    "value": "26px"
+   },
+   "--tracking-tight": {
+    "raw": "-.025em",
+    "kind": "other"
+   }
+  }
+ }
+}

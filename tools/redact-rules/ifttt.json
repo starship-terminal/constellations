@@ -1,0 +1,15 @@
+{
+  "_note": "Rules for systems/ifttt. Public signed-out capture of ifttt.com and ifttt.ai: no surface paints machine-private data - nothing was signed into, typed, searched, shared or submitted. IFTTT publishes its own public contact addresses on the legal, about and careers pages (@ifttt.com addresses, plus IFTTT@gdpr-rep.com its published GDPR representative on /terms); they are product-published content and are kept. The /plans illustrations show IFTTT's own demo Applet content with acme.com example addresses (marketing@/sharon@acme.com); product-published demo content, kept. Service/applet pages render published partner brand names and public applet author handles - published content, kept.",
+  "families": [],
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@ifttt\\.com$",
+      "@gdpr-rep\\.com$",
+      "@acme\\.com$",
+      "@aacme\\.com$",
+      "@example\\.com$",
+      "@example\\.org$"
+    ]
+  }
+}

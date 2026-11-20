@@ -8,14 +8,23 @@
 // (CDN_CACHE, default <SNAPS>-cdn-cache beside the copies) and served from there afterwards, so a
 // re-run is offline and identical. Nothing is ever requested from claude.ai itself or any other
 // host: those requests are aborted.
+// PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+// for it. While this is null the script stops: the kit's copy is Claude's example and would
+// read or write Claude's values. KIT_EXAMPLE=1 runs the example as it is.
+const ADAPTED_FOR = null;
+if (!ADAPTED_FOR && !process.env.KIT_EXAMPLE) {
+  console.error('lib.mjs is the kit\'s Claude example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR');
+  process.exit(2);
+}
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { fileURLToPath } from 'node:url';
 
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 export const { chromium } = pw.default ?? pw;
 
-export const HERE = path.dirname(new URL(import.meta.url).pathname);
+export const HERE = path.dirname(fileURLToPath(import.meta.url));   // decoded: a checkout path may hold a space
 export const REF = path.resolve(HERE, '..', '..', '..');
 export const RAW = path.join(REF, 'raw');
 export const CROPS = path.join(REF, 'components', 'crops');

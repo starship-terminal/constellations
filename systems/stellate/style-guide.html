@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stellate style guide</title>
+<style>
+:root, [data-mode="light"] {
+  --page: #f8fafc;
+  --surface: #ffffff;
+  --inverse: #283448;
+  --text: #283448;
+  --secondary: #3b4c6a;
+  --muted: #7e8a9f;
+  --accent: #608bd8;
+  --accent-hover: #3e6ec1;
+  --on-accent: #ffffff;
+  --border: #ced2d9;
+  --magenta: #ff6b8b;
+  --red: #ff7752;
+  --green: #31c48f;
+  --yellow: #eb9b00;
+  --purple: #8d6acc;
+  --gray-150: #dbdfe7;
+  --github: #323a4d;
+  --gitlab: #9a70c2;
+  --font: "ttCommons", ui-sans-serif, system-ui, sans-serif;
+}
+[data-mode="dark"] {
+  --page: #18181b;
+  --surface: #18181b;
+  --inverse: #fafafa;
+  --text: #f1f5f9;
+  --secondary: #e2e8f0;
+  --muted: #99a1af;
+  --accent: #1aa3ff;
+  --accent-hover: #1aa3ff;
+  --on-accent: #ffffff;
+  --border: #262626;
+  --font: ui-sans-serif, system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 24px;
+}
+main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+h1 { font-weight: 650; font-size: 48px; line-height: 1.1; margin: 0 0 8px; }
+h2 { font-weight: 550; font-size: 24px; margin: 40px 0 12px; }
+p { color: var(--secondary); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 128px; }
+.swatch i { display: block; height: 64px; border-radius: 8px; border: 1px solid var(--border); }
+.swatch span { display: block; font-size: 12px; margin-top: 6px; color: var(--secondary); }
+button, .ghost {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 8px;
+  border: 0;
+  font: 550 15px/15px var(--font);
+}
+.primary { background: var(--accent); color: var(--on-accent); }
+.gray { background: var(--gray-150); color: var(--text); }
+.magenta { background: var(--magenta); color: #fff; }
+.red { background: var(--red); color: #fff; }
+.ghost { background: transparent; color: var(--secondary); }
+.field {
+  height: 48px;
+  width: 320px;
+  border: 0;
+  border-radius: 6px;
+  padding: 14px 17px;
+  background: #fff;
+  color: var(--accent);
+  font: 450 18px/20px var(--font);
+}
+.card {
+  width: 240px;
+  padding: 32px;
+  border-radius: 12px;
+  background: var(--accent);
+  color: #fff;
+}
+.banner {
+  margin-top: 16px;
+  padding: 32px;
+  border-radius: 12px;
+  background: #fff;
+  color: #3b4c6a;
+  border: 1px solid rgba(59, 76, 106, 0.15);
+}
+.toggle { margin-bottom: 24px; background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<main>
+  <button class="toggle" type="button" id="theme">Docs dark</button>
+  <h1>Stellate</h1>
+  <p>Measured public marketing and signed-out login. Marketing stays on #f8fafc. Docs use the other theme.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="gray" type="button">Get started for free</button>
+    <button class="primary" type="button">Learn more about Caching</button>
+    <button class="magenta" type="button">Learn more about Metrics</button>
+    <button class="red" type="button">Learn more about Security</button>
+    <button class="ghost" type="button">Pricing</button>
+  </div>
+  <h2>Field</h2>
+  <input class="field" value="Email Address" readonly>
+  <h2>Pricing card</h2>
+  <div class="card">
+    <strong>Business</strong>
+    <p style="color:#fff">14 days trial. 32px padding, 12px radius, blue fill.</p>
+  </div>
+  <div class="banner">
+    <strong>Cookie Preferences</strong>
+    <p>Accept All is blue. Reject All is red. Customize is a 1px neutral border.</p>
+  </div>
+</main>
+<script>
+const colors = [
+  ["page", "--page"],
+  ["text", "--text"],
+  ["secondary", "--secondary"],
+  ["accent", "--accent"],
+  ["magenta", "--magenta"],
+  ["red", "--red"],
+  ["green", "--green"],
+  ["yellow", "--yellow"],
+  ["purple", "--purple"],
+  ["github", "--github"],
+  ["gitlab", "--gitlab"],
+  ["gray 150", "--gray-150"]
+];
+const row = document.getElementById("swatches");
+for (const [name, variable] of colors) {
+  const item = document.createElement("div");
+  item.className = "swatch";
+  item.innerHTML = "<i></i><span></span>";
+  item.querySelector("i").style.background = "var(" + variable + ")";
+  item.querySelector("span").textContent = name;
+  row.appendChild(item);
+}
+document.getElementById("theme").addEventListener("click", () => {
+  const html = document.documentElement;
+  const next = html.dataset.mode === "dark" ? "light" : "dark";
+  html.dataset.mode = next;
+  document.getElementById("theme").textContent = next === "dark" ? "Marketing light" : "Docs dark";
+});
+</script>
+</body>
+</html>

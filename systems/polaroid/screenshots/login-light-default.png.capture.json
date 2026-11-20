@@ -1,0 +1,22 @@
+{
+  "capturedAt": "2026-11-18T17:48:23.534Z",
+  "name": "login-light-default",
+  "url": "https://www.polaroid.com/en_sg/account/login",
+  "title": "Log in or sign up | Polaroid EU",
+  "vw": 1440,
+  "vh": 900,
+  "dpr": 1,
+  "vv": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1,
+    "offsetLeft": 0,
+    "offsetTop": 0
+  },
+  "png": {
+    "w": 1440,
+    "h": 900,
+    "bytes": 183474
+  },
+  "note": "viewport screenshot, headless Chromium, public page, no Cloudflare challenge"
+}

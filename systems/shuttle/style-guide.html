@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shuttle style guide</title>
+<style>
+:root {
+  --page: #000000;
+  --text: #ffffff;
+  --muted: #d4d4d4;
+  --label2: rgba(235, 235, 245, 0.6);
+  --tint: #0077ff;
+  --grouped: #2c2c2e;
+  --grouped2: #3c3c3e;
+  --menu: #1c1c1e;
+  --panel: #262626;
+  --neutral500: #737373;
+  --font: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 24px;
+}
+main { max-width: 880px; margin: 0 auto; padding: 48px 24px 80px; }
+h1 { font-weight: 500; font-size: 62px; line-height: 72px; letter-spacing: -1.55px; margin: 0 0 8px; }
+h2 { font-weight: 500; font-size: 30px; letter-spacing: -0.75px; margin: 40px 0 12px; }
+p { color: var(--muted); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 128px; }
+.swatch i { display: block; height: 64px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2); }
+.swatch span { display: block; font-size: 12px; margin-top: 6px; color: var(--label2); }
+button, .ghost {
+  font-family: var(--font);
+  cursor: default;
+}
+.primary {
+  height: 32px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--tint);
+  color: #fff;
+  font: 600 12px/16px var(--font);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 1px 0px;
+}
+.secondary {
+  height: 32px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--grouped);
+  color: #fff;
+  font: 600 12px/16px var(--font);
+}
+.pill {
+  height: 36px;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 9999px;
+  background: var(--tint);
+  color: #fff;
+  font: 500 14px/20px var(--font);
+}
+.inverse {
+  height: 40px;
+  padding: 8px 20px;
+  border: 0;
+  border-radius: 9999px;
+  background: #fff;
+  color: #000;
+  font: 700 16px/24px var(--font);
+}
+.field {
+  display: flex;
+  align-items: center;
+  width: 320px;
+  height: 40px;
+  margin-top: 12px;
+  padding: 0 16px;
+  border-radius: 12px;
+  background: var(--grouped);
+  color: rgba(235, 235, 245, 0.3);
+  font-size: 16px;
+}
+.card {
+  width: 284px;
+  padding: 16px;
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: #000;
+  font-size: 14px;
+}
+.card strong { display: block; font-size: 16px; margin-bottom: 8px; }
+.pro { border-color: #007aff; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Shuttle</h1>
+  <p>Measured dark theme from shuttle.zip on 2026-11-19. Viewport was 1169 by 731. No screenshots.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><i style="background:#000"></i><span>Page #000000</span></div>
+    <div class="swatch"><i style="background:#ffffff"></i><span>Text #ffffff</span></div>
+    <div class="swatch"><i style="background:#d4d4d4"></i><span>Lede #d4d4d4</span></div>
+    <div class="swatch"><i style="background:#0077ff"></i><span>Tint #0077ff</span></div>
+    <div class="swatch"><i style="background:#2c2c2e"></i><span>Grouped #2c2c2e</span></div>
+    <div class="swatch"><i style="background:#1c1c1e"></i><span>Menu #1c1c1e</span></div>
+    <div class="swatch"><i style="background:#262626"></i><span>Panel #262626</span></div>
+    <div class="swatch"><i style="background:#737373"></i><span>FAQ #737373</span></div>
+  </div>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="primary">Share</button>
+    <button class="secondary">Log In</button>
+    <button class="pill">Sign up</button>
+    <button class="inverse">Contact us</button>
+  </div>
+  <div class="field">Your email</div>
+  <h2>Pricing</h2>
+  <div class="row">
+    <div class="card"><strong>Free</strong>Euro 0 / month. 1px white at 20 percent.</div>
+    <div class="card pro"><strong>Pro</strong>Euro 6 / user per month. 1px #007aff.</div>
+  </div>
+</main>
+</body>
+</html>

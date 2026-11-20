@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teal style guide</title>
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+}
+[data-mode="app"] {
+/*APP*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-page); color: var(--color-ink); font: 400 16px/20.8px var(--font-marketing); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
+h1 { font: 600 40px/40px var(--font-marketing); letter-spacing: -1px; margin: 0; }
+h2 { font: 600 24px/32px var(--font-marketing); margin: 40px 0 12px; }
+button.theme { margin-left: auto; height: 41px; padding: 10px 24px; border-radius: 100px; border: 1px solid var(--color-loginBorder); background: var(--color-surface); color: var(--color-loginBorder); font: 500 15px/20px var(--font-marketing); cursor: pointer; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 148px; }
+.sw i { display: block; height: 56px; border-radius: 16px; border: 1px solid var(--color-border); }
+.sw b, .sw span { display: block; font-size: 12px; line-height: 16px; }
+.sw span { color: var(--color-muted); }
+.btn { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+.btn.primary { height: 53px; padding: 16px 32px; border-radius: 100px; background: var(--color-yellow); color: var(--color-onYellow); font: 600 20px/20.8px var(--font-marketing); letter-spacing: -0.4px; }
+.btn.header { height: 41px; padding: 10px 24px; border-radius: 100px; background: var(--color-yellow); color: var(--color-onYellowHeader); font: 500 15px/20.8px var(--font-marketing); }
+.btn.outline { height: 43px; padding: 10px 24px; border-radius: 100px; background: var(--color-surface); color: var(--color-loginBorder); border: 1px solid var(--color-loginBorder); font: 500 15px/20.8px var(--font-marketing); }
+.field { width: 384px; height: 36px; padding: 8px 12px; border-radius: 3px; border: 0.5px solid #cccccc; font: 400 14px/20px var(--font-app); }
+[data-mode="app"] body { font-family: var(--font-app); color: var(--color-ink); }
+.note { max-width: 64ch; color: var(--color-muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Teal</h1>
+  <button class="theme" type="button" id="theme">App tokens</button>
+</header>
+<p class="note">Public marketing colours and the signed-out app colours, from live computed styles on 2026-11-19. The toggle swaps the swatch set. It does not invent a dark theme.</p>
+<h2>Colour</h2>
+<div class="row" id="swatches"></div>
+<h2>Controls</h2>
+<div class="row">
+  <a class="btn primary">Build My Resume</a>
+  <a class="btn header">Sign up</a>
+  <a class="btn outline">Log in</a>
+</div>
+<h2>App field</h2>
+<input class="field" placeholder="Email" readonly>
+</div>
+<script>
+const T = /*TOKENS*/null;
+const light = [
+  ["page", "--color-page"],
+  ["surface", "--color-surface"],
+  ["ink", "--color-ink"],
+  ["yellow", "--color-yellow"],
+  ["teal", "--color-teal"],
+  ["purple", "--color-purple"],
+  ["pheasant", "--color-pheasant"],
+  ["border", "--color-border"]
+];
+const app = [
+  ["page", "--color-page"],
+  ["ink", "--color-ink"],
+  ["muted", "--color-muted"],
+  ["brand", "--color-brand"],
+  ["accent", "--color-accent"],
+  ["linkedin", "--color-linkedin"],
+  ["border", "--color-border"],
+  ["focus", "--color-focusRing"]
+];
+// The builder emits each set's properties without the set name: light on :root, app on
+// [data-mode="app"], so the same --color-* names repaint when the toggle switches sets.
+function paint(rows) {
+  const box = document.getElementById("swatches");
+  box.replaceChildren(...rows.map(([name, v]) => {
+    const sw = document.createElement("div");
+    sw.className = "sw";
+    const dot = document.createElement("i");
+    dot.style.background = `var(${v})`;
+    const label = document.createElement("b");
+    label.textContent = name;
+    const prop = document.createElement("span");
+    prop.textContent = v;
+    sw.append(dot, label, prop);
+    return sw;
+  }));
+}
+paint(light);
+document.getElementById("theme").onclick = () => {
+  const html = document.documentElement;
+  const next = html.getAttribute("data-mode") === "app" ? "light" : "app";
+  html.setAttribute("data-mode", next);
+  paint(next === "app" ? app : light);
+};
+</script>
+</body>
+</html>

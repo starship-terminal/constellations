@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stocktwits style guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;900&display=swap">
+<style>
+:root, [data-mode="light"] {
+  --page: #ffffff;
+  --surface: #f2f2f7;
+  --text: #000000;
+  --muted: #636366;
+  --accent: #1b66e7;
+  --border: #e5e5ea;
+  --positive: #128760;
+  --negative: #dd331d;
+  --button: #1b66e7;
+  --button-text: #ffffff;
+  --field: #f2f2f7;
+  --disabled: #d1d1d6;
+}
+[data-mode="dark"] {
+  --page: #1c1c1e;
+  --surface: #000000;
+  --text: #ffffff;
+  --muted: #aeaeb2;
+  --accent: #008fff;
+  --border: #3a3a3c;
+  --positive: #19b682;
+  --negative: #fe433d;
+  --button: #1b66e7;
+  --button-text: #ffffff;
+  --field: #2c2c2e;
+  --disabled: #48484a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font-family: "Source Sans 3", "Source Sans 3 Fallback", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+main { max-width: 960px; margin: 0 auto; padding: 32px 20px 64px; }
+h1 { font-size: 36px; line-height: 42px; font-weight: 700; margin: 0 0 8px; }
+h2 { font-size: 20px; line-height: 28px; font-weight: 600; margin: 32px 0 12px; }
+p.note { color: var(--muted); font-size: 14px; line-height: 20px; }
+button.toggle {
+  height: 40px; padding: 0 20px; border-radius: 9999px;
+  border: 1px solid var(--border); background: var(--page); color: var(--text);
+  font: 600 15px/22.5px "Source Sans 3", Arial, sans-serif; cursor: pointer;
+}
+.swatches, .row { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 140px; }
+.chip { height: 56px; border-radius: 8px; border: 1px solid var(--border); }
+.swatch span { display: block; font-size: 12px; line-height: 16px; margin-top: 4px; color: var(--muted); }
+.pill {
+  display: inline-flex; align-items: center; height: 40px; padding: 0 20px; gap: 8px;
+  border-radius: 9999px; font-weight: 600; font-size: 15px; line-height: 22.5px;
+}
+.primary { background: var(--button); color: var(--button-text); border: 1px solid transparent; }
+.secondary { background: var(--page); color: var(--text); border: 1px solid var(--border); }
+.ink { background: #000000; color: #ffffff; border: 1px solid transparent; }
+.disabled { background: var(--disabled); color: #ffffff; border: 1px solid transparent; }
+.field {
+  width: 280px; height: 40px; border: 0; border-radius: 8px; background: var(--field);
+  padding: 8px 12px; font: 400 16px/24px "Source Sans 3", Arial, sans-serif; color: var(--text);
+}
+.badge { display: inline-flex; align-items: center; height: 24px; padding: 4px 8px; border-radius: 9999px; background: #efe8ff; color: #8146ff; font-size: 12px; font-weight: 600; }
+.up { color: var(--positive); font-weight: 600; }
+.down { color: var(--negative); font-weight: 600; }
+.card { width: 289px; padding: 40px 20px 20px; border-radius: 12px; background: var(--page); box-shadow: 0 10px 20px rgba(0,0,0,.05); border: 1px solid var(--border); }
+.hero {
+  margin-top: 16px; padding: 40px; border-radius: 0; color: #ffffff; background:
+    linear-gradient(rgba(0,0,0,0) 32.59%, rgba(0,0,0,.6)),
+    linear-gradient(291deg, rgba(150,102,255,.44), #000000);
+  background-color: #000000;
+}
+.hero h3 { margin: 0; font-size: 36px; line-height: 42px; font-weight: 700; letter-spacing: -1px; }
+</style>
+</head>
+<body>
+<main>
+  <button class="toggle" type="button" id="theme">Theme: light</button>
+  <h1>Stocktwits</h1>
+  <p class="note">Values from the public signed-out pages on 2026-11-19. Source Sans 3 is loaded here as a stand-in for the site's own woff2. Dark colours are the [data-theme=dark] custom properties, not a live dark screenshot.</p>
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+  <h2>Buttons</h2>
+  <div class="row">
+    <span class="pill primary">Primary</span>
+    <span class="pill secondary">Create Account</span>
+    <span class="pill ink">Sign up or log in</span>
+    <span class="pill disabled">Log In</span>
+    <span class="badge">1 Live Calls</span>
+  </div>
+  <h2>Field</h2>
+  <input class="field" placeholder="Email or Username" aria-label="Email or Username">
+  <h2>Price</h2>
+  <p><strong style="font-size:30px;line-height:34px">$354.14</strong> <span class="up">$2.23 (0.63%)</span> <span class="down">-8.84%</span></p>
+  <h2>Plan card</h2>
+  <div class="card">
+    <div style="font-size:36px;font-weight:700;line-height:42px">Ad Free</div>
+    <div style="font-size:24px;font-weight:700">$85.00 <span style="font-size:12px">/year</span></div>
+    <p class="note">billed every 12 months</p>
+    <span class="pill ink">Subscribe</span>
+  </div>
+  <h2>Marketing hero</h2>
+  <div class="hero"><h3>The Leading Social Platform for Investors and Traders</h3></div>
+</main>
+<script>
+const roles = ["page","surface","text","muted","accent","border","positive","negative","button","field","disabled"];
+const box = document.getElementById("swatches");
+function paint() {
+  const cs = getComputedStyle(document.documentElement);
+  box.innerHTML = roles.map(role => {
+    const value = cs.getPropertyValue("--" + role).trim();
+    return '<div class="swatch"><div class="chip" style="background:' + value + '"></div><span>' + role + ' ' + value + '</span></div>';
+  }).join("");
+}
+document.getElementById("theme").addEventListener("click", () => {
+  const html = document.documentElement;
+  const next = html.getAttribute("data-mode") === "dark" ? "light" : "dark";
+  html.setAttribute("data-mode", next);
+  document.getElementById("theme").textContent = "Theme: " + next;
+  paint();
+});
+paint();
+</script>
+</body>
+</html>

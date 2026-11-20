@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contra style guide</title>
+<style>
+  :root {
+    color-scheme: light;
+    --page: #ffffff;
+    --canvas: #f5f6f9;
+    --surface: #ffffff;
+    --action: #222834;
+    --action-soft: #1c212b;
+    --disabled: #f2f4f7;
+    --text: #14171f;
+    --muted: #677084;
+    --quiet: #9ba2b0;
+    --on-action: #ffffff;
+    --disabled-text: #d0d4dc;
+    --stroke: #373f51;
+    --subtle: #e5e7eb;
+    --green: #d2d943;
+    --purple: #8f6fdb;
+    --watermelon: #ff5a5e;
+    --yellow: #f2c94c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font: 400 16px/24px Arial, sans-serif;
+  }
+  main { max-width: 980px; margin: 0 auto; padding: 40px 24px 80px; }
+  h1 { font: 500 40px/42px Arial, sans-serif; letter-spacing: -0.4px; margin: 0 0 8px; }
+  h2 { font: 500 23px/32px Arial, sans-serif; letter-spacing: 0.46px; margin: 40px 0 12px; }
+  p { color: var(--muted); max-width: 68ch; }
+  .note { color: var(--quiet); font-size: 13px; }
+  .swatches, .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 64px; border-radius: 12px; border: 1px solid var(--subtle); }
+  .label { font-size: 12px; margin-top: 6px; }
+  .label span { display: block; color: var(--muted); }
+  button.primary, button.outline, button.soft, button.disabled {
+    height: 48px;
+    padding: 0 24px;
+    border-radius: 24px;
+    font: 600 16px/24px Arial, sans-serif;
+    letter-spacing: -0.16px;
+  }
+  button.primary { background: var(--action); color: var(--on-action); border: 1px solid var(--action); }
+  button.outline { background: var(--page); color: var(--stroke); border: 1px solid var(--stroke); }
+  button.soft { background: var(--action-soft); color: var(--on-action); border: 0; border-radius: 999px; height: 36px; font-weight: 500; font-size: 14px; }
+  button.disabled { background: var(--disabled); color: var(--disabled-text); border: 0; }
+  .field {
+    display: block;
+    width: 320px;
+    height: 56px;
+    border: 1px solid var(--action);
+    border-radius: 12px;
+    padding: 0 16px;
+    font: 400 16px/24px Arial, sans-serif;
+  }
+  a { color: var(--text); font-weight: 600; text-decoration: none; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--subtle); }
+  th { color: var(--muted); font-weight: 500; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Contra</h1>
+  <p>Public signed-out styles measured on contra.com on 19 November 2026. GT Standard is not loaded here, so type falls back to Arial, the stack the site already names.</p>
+  <p class="note">Values come from <a href="tokens.json">tokens.json</a>. The live pages stayed light when the browser asked for a dark colour scheme.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#ffffff"></div><div class="label">Page <span>#ffffff</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#f5f6f9"></div><div class="label">Canvas <span>#f5f6f9</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#222834"></div><div class="label">Action <span>#222834</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#1c212b"></div><div class="label">Let's go <span>#1c212b</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#14171f"></div><div class="label">Text <span>#14171f</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#677084"></div><div class="label">Muted <span>#677084</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#373f51"></div><div class="label">Stroke <span>#373f51</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#d2d943"></div><div class="label">Brand green <span>#d2d943</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#8f6fdb"></div><div class="label">Brand purple <span>#8f6fdb</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#ff5a5e"></div><div class="label">Watermelon <span>#ff5a5e</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#f2c94c"></div><div class="label">Brand yellow <span>#f2c94c</span></div></div>
+  </div>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="primary" type="button">Sign up</button>
+    <button class="outline" type="button">Post a job</button>
+    <button class="soft" type="button">Let's go</button>
+    <button class="disabled" type="button" disabled>Log in</button>
+  </div>
+  <p class="note">The disabled specimen matches the empty login submit. It is not a separate disabled token the stylesheet named.</p>
+
+  <h2>Field</h2>
+  <input class="field" placeholder="name@work-email.com" aria-label="Email example">
+
+  <h2>Type</h2>
+  <p class="hero" style="font:500 40px/42px Arial,sans-serif;letter-spacing:-0.4px;color:#14171f">Get more creative</p>
+  <p>The measured hero is 58px. This page caps the specimen so it fits the column. The token keeps 58px.</p>
+</main>
+</body>
+</html>

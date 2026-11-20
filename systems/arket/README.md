@@ -100,12 +100,15 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **The product page and the account are absent.** PDP URLs 403 for this client and /en-ww/account/ stops at the gate; no PDP, checkout, filled cart or signed-in screen is in this package — only the signed-out storefront that links to them.
 - **The root landing is the women landing.** `/en-ww/` was blocked at capture time; every shell, dialog and footer reading is labelled `/en-ww/women/` in the raw JSON.
 - **The focus ring is the browser's.** Every control shows the same 1px `auto` `#005fcc` outline on keyboard focus — arket.com declares no `:focus-visible` style of its own. `light.focus-ring` records it labelled as such.
 - **Hover is an inversion, not a tint.** Outlined controls and nav items flip to black fill with white text; black buttons barely lift (to `#080808`). Don't substitute a grey hover.
 - **Some font names differ per surface.** The shop shell paints `arketSansMono`; the consent card and account gate fall back to `"Arket Sans"`/`"Arket-Sans-Mono"` stacks. The `+N` colour chips use the small-caps `arketSCSansMono`.
 - **Screenshots are 256-colour PNGs** — read exact colours from tokens.json or the raw JSON, never from a screenshot pixel.
+- **`service-link` is the service page's ARKET logo.** Two specs share the key: the service page's loose `main a` probe overwrote the home page's Customer service link with the logo (43 x 40, "ARKET"). Needs a recapture; the script now gives the second probe its own key, `service-page-link` (not run since).
+- **`breadcrumb`, `gate-continue` and `m-search` were read from the wrong elements.** `breadcrumb` is the main category nav ("Women Men Children Homeware Gift shop"), `gate-continue` is the gate's "with Google" button, and `m-search` is the mobile menu button. Each needs a recapture; the script now targets the breadcrumb and the Continue button by their own markers (not run since).
 
 ## Fonts
 

@@ -1,0 +1,10 @@
+{
+  "source": "computed style at rest on the archived homepage. Webflow IX2 timelines are JavaScript-driven and are Not captured as durations.",
+  "pages": {
+    "page-1": {
+      "url": "https://web.archive.org/web/20250219221151/https://www.modyfi.com/",
+      "verdict": "no-motion",
+      "note": "At rest, interactive controls report transition none. Webflow IX2 (data-w-id) drives scroll and hover motion in JavaScript; those durations were not read from computed style."
+    }
+  }
+}

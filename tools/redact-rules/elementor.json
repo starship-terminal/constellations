@@ -1,0 +1,11 @@
+{
+ "_note": "Rules for systems/elementor. A fully public signed-out capture: no account exists and nothing was submitted. The contact form's name field was filled once with throwaway sample text (name@example.com), then cleared; the form was never sent. All names, prices and copy in the screenshots are Elementor's published public-page content. The OCR email net is kept with example.com allowed.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@example\\.com$",
+   "@example\\.org$"
+  ]
+ },
+ "families": []
+}

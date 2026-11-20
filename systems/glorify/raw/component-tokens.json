@@ -1,0 +1,2941 @@
+{
+  "_about": "The token tree build_tokens.py turns into tokens.json. Glorify's two public surfaces declare separate vocabularies on :root (raw/css-vars.json): core.* carries the marketing site's hashed Framer --token-* declarations, app.* carries the SPA's own semantic vocabulary (--light-*/--dark-*/--neutral-light-*/--active-*/--field-*/the accent ramps/--glori-gradient) that the signed-out auth cards and the anonymous editor paint. Measured roles alias to the declared values they match, inside their own surface set.",
+  "core": {
+    "font": {
+      "family": {
+        "display": {
+          "value": "\"PolySans Trial Median\", \"PolySans Trial Median Placeholder\", sans-serif",
+          "type": "fontFamily",
+          "source": "computed fontFamily of hero-h1 default (raw/components-computed.json); the host's @font-face faces in raw/css-vars.json",
+          "description": "The display family the marketing headings set, measured on the hero masthead."
+        },
+        "body": {
+          "value": "Inter, \"Inter Placeholder\", sans-serif",
+          "type": "fontFamily",
+          "source": "computed fontFamily of plan-row default (raw/components-computed.json); the host's @font-face faces in raw/css-vars.json",
+          "description": "The body family the marketing prose and nav set, measured on a pricing row."
+        }
+      },
+      "weight": {
+        "regular": {
+          "value": 400,
+          "type": "fontWeight",
+          "source": "computed fontWeight of hero-h1 default (raw/components-computed.json)",
+          "description": "The 400 weight, measured on the hero heading."
+        },
+        "medium": {
+          "value": 500,
+          "type": "fontWeight",
+          "source": "computed fontWeight of plan-row default, nav-link default, nav-cta default (raw/components-computed.json)",
+          "description": "The 500 weight, measured on pricing plan rows; header nav links; the header call to action."
+        }
+      },
+      "size": {
+        "display": {
+          "value": "64px",
+          "type": "dimension",
+          "source": "computed fontSize of feat-h1 default (raw/components-computed.json)",
+          "description": "The feature-page display heading."
+        },
+        "hero": {
+          "value": "64px",
+          "type": "dimension",
+          "source": "computed fontSize of hero-h1 default (raw/components-computed.json)",
+          "description": "The hero masthead."
+        },
+        "h2": {
+          "value": "24px",
+          "type": "dimension",
+          "source": "computed fontSize of home-h2 default (raw/components-computed.json)",
+          "description": "A home section heading."
+        },
+        "button": {
+          "value": "16px",
+          "type": "dimension",
+          "source": "computed fontSize of nav-cta default (raw/components-computed.json)",
+          "description": "The header button size."
+        },
+        "planName": {
+          "value": "32px",
+          "type": "dimension",
+          "source": "computed fontSize of plan-price default (raw/components-computed.json)",
+          "description": "The plan price figure."
+        },
+        "body": {
+          "value": "14px",
+          "type": "dimension",
+          "source": "computed fontSize of plan-row default (raw/components-computed.json)",
+          "description": "The body/prose size."
+        },
+        "eyebrow": {
+          "value": "12px",
+          "type": "dimension",
+          "source": "computed fontSize of learn-tag default (raw/components-computed.json)",
+          "description": "The article-tag and small-label size."
+        },
+        "mobileHero": {
+          "value": "36px",
+          "type": "dimension",
+          "source": "computed fontSize of m-hero-h1 default (raw/components-computed.json)",
+          "description": "The masthead at 390 wide."
+        }
+      },
+      "lineHeight": {
+        "hero": {
+          "value": 1.2,
+          "type": "number",
+          "source": "computed lineHeight/fontSize of hero-h1 default (76.8px over 64px, raw/components-computed.json)",
+          "description": "The hero masthead leading."
+        },
+        "body": {
+          "value": 1.0,
+          "type": "number",
+          "source": "computed lineHeight/fontSize of plan-row default (14px over 14px, raw/components-computed.json)",
+          "description": "The body leading."
+        },
+        "eyebrow": {
+          "value": 1.0,
+          "type": "number",
+          "source": "computed lineHeight/fontSize of learn-tag default (12px over 12px, raw/components-computed.json)",
+          "description": "The small-label leading."
+        }
+      },
+      "monospace": {
+        "var": "--font-monospace",
+        "type": "other"
+      },
+      "sans": {
+        "serif": {
+          "var": "--font-sans-serif",
+          "type": "other"
+        }
+      },
+      "serif": {
+        "var": "--font-serif",
+        "type": "other"
+      }
+    },
+    "agent": {
+      "bubble": {
+        "bg": {
+          "var": "--agent-bubble-bg",
+          "type": "color"
+        }
+      }
+    },
+    "chat": {
+      "bg": {
+        "color": {
+          "var": "--chat-bg-color",
+          "type": "color"
+        }
+      },
+      "transparent": {
+        "bg": {
+          "color": {
+            "var": "--chat-transparent-bg-color",
+            "type": "color"
+          }
+        }
+      }
+    },
+    "client": {
+      "bubble": {
+        "bg": {
+          "var": "--client-bubble-bg",
+          "type": "color"
+        }
+      },
+      "transparent": {
+        "bubble": {
+          "bg": {
+            "var": "--client-transparent-bubble-bg",
+            "type": "color"
+          }
+        }
+      }
+    },
+    "framer": {
+      "will": {
+        "change": {
+          "override": {
+            "var": "--framer-will-change-override",
+            "type": "other"
+          }
+        }
+      }
+    },
+    "token": {
+      "04ac5918": {
+        "97bb": {
+          "4b2b": {
+            "8b5d": {
+              "02aac8d3803d": {
+                "var": "--token-04ac5918-97bb-4b2b-8b5d-02aac8d3803d",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "0bf72244": {
+        "e448": {
+          "4725": {
+            "ab25": {
+              "338f97c28655": {
+                "var": "--token-0bf72244-e448-4725-ab25-338f97c28655",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "0e35e6f8": {
+        "6b64": {
+          "4e2d": {
+            "b3e1": {
+              "25708def14ef": {
+                "var": "--token-0e35e6f8-6b64-4e2d-b3e1-25708def14ef",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "10556817": {
+        "ac0a": {
+          "44f7": {
+            "ae26": {
+              "ccb76c9fd09b": {
+                "var": "--token-10556817-ac0a-44f7-ae26-ccb76c9fd09b",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "1a71ae8b": {
+        "0ebf": {
+          "47f2": {
+            "9b16": {
+              "91692b35aeb7": {
+                "var": "--token-1a71ae8b-0ebf-47f2-9b16-91692b35aeb7",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "1f32b964": {
+        "b083": {
+          "4151": {
+            "a439": {
+              "60e0ebb68cac": {
+                "var": "--token-1f32b964-b083-4151-a439-60e0ebb68cac",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "1fe56cfa": {
+        "d2fd": {
+          "419f": {
+            "acc6": {
+              "c63b3e1e5afa": {
+                "var": "--token-1fe56cfa-d2fd-419f-acc6-c63b3e1e5afa",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "2a937ac2": {
+        "f205": {
+          "4e9f": {
+            "8f26": {
+              "09e188da2517": {
+                "var": "--token-2a937ac2-f205-4e9f-8f26-09e188da2517",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "2ff71b15": {
+        "79ff": {
+          "4961": {
+            "a5d5": {
+              "3c255280b832": {
+                "var": "--token-2ff71b15-79ff-4961-a5d5-3c255280b832",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "3018db01": {
+        "3e23": {
+          "4a46": {
+            "af28": {
+              "646b230f2035": {
+                "var": "--token-3018db01-3e23-4a46-af28-646b230f2035",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "31149946": {
+        "8963": {
+          "4e9c": {
+            "bdaa": {
+              "02dc75a04e69": {
+                "var": "--token-31149946-8963-4e9c-bdaa-02dc75a04e69",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "3ed5b4bf": {
+        "5ff8": {
+          "4523": {
+            "a3ac": {
+              "20798aba2bbc": {
+                "var": "--token-3ed5b4bf-5ff8-4523-a3ac-20798aba2bbc",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "437b14b7": {
+        "0164": {
+          "40e6": {
+            "a64c": {
+              "c9076019a119": {
+                "var": "--token-437b14b7-0164-40e6-a64c-c9076019a119",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "472f6ab9": {
+        "ec2c": {
+          "4864": {
+            "b6a2": {
+              "2d2a311fc7ff": {
+                "var": "--token-472f6ab9-ec2c-4864-b6a2-2d2a311fc7ff",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "4afff1e1": {
+        "ad66": {
+          "4449": {
+            "a126": {
+              "34071669c871": {
+                "var": "--token-4afff1e1-ad66-4449-a126-34071669c871",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "4fd202e1": {
+        "7827": {
+          "496c": {
+            "b554": {
+              "00289bbf9780": {
+                "var": "--token-4fd202e1-7827-496c-b554-00289bbf9780",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "521d7dea": {
+        "ae19": {
+          "4cea": {
+            "a86f": {
+              "413df69ece62": {
+                "var": "--token-521d7dea-ae19-4cea-a86f-413df69ece62",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "54cafe5b": {
+        "e692": {
+          "45e1": {
+            "b4ac": {
+              "2d7cde74c178": {
+                "var": "--token-54cafe5b-e692-45e1-b4ac-2d7cde74c178",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "5ac40b79": {
+        "cc5c": {
+          "4030": {
+            "8e05": {
+              "057275d0ffd2": {
+                "var": "--token-5ac40b79-cc5c-4030-8e05-057275d0ffd2",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "5bffa828": {
+        "bc0f": {
+          "4d1b": {
+            "abe0": {
+              "51155e3a82a6": {
+                "var": "--token-5bffa828-bc0f-4d1b-abe0-51155e3a82a6",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "5da2a986": {
+        "5b77": {
+          "4490": {
+            "888b": {
+              "7fb3ea832ddc": {
+                "var": "--token-5da2a986-5b77-4490-888b-7fb3ea832ddc",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "5dd49439": {
+        "e215": {
+          "4b63": {
+            "80c0": {
+              "703cbaec2c75": {
+                "var": "--token-5dd49439-e215-4b63-80c0-703cbaec2c75",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "61ee874e": {
+        "76d3": {
+          "48bd": {
+            "99a3": {
+              "63db95dbfcec": {
+                "var": "--token-61ee874e-76d3-48bd-99a3-63db95dbfcec",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "623641a3": {
+        "48b3": {
+          "474a": {
+            "86ae": {
+              "2862d2044576": {
+                "var": "--token-623641a3-48b3-474a-86ae-2862d2044576",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "63aa41ff": {
+        "347f": {
+          "45e4": {
+            "b29c": {
+              "546aca5609e8": {
+                "var": "--token-63aa41ff-347f-45e4-b29c-546aca5609e8",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "63f7635c": {
+        "4044": {
+          "4753": {
+            "b791": {
+              "268bd3d1a479": {
+                "var": "--token-63f7635c-4044-4753-b791-268bd3d1a479",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "6cc30042": {
+        "9c6b": {
+          "4358": {
+            "af65": {
+              "6289c7ec229d": {
+                "var": "--token-6cc30042-9c6b-4358-af65-6289c7ec229d",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "6ee8de94": {
+        "3479": {
+          "49f3": {
+            "9e17": {
+              "b476618c2a8d": {
+                "var": "--token-6ee8de94-3479-49f3-9e17-b476618c2a8d",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "6fe48ea6": {
+        "97a5": {
+          "40f2": {
+            "8b4d": {
+              "17d3a6bb2684": {
+                "var": "--token-6fe48ea6-97a5-40f2-8b4d-17d3a6bb2684",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "71ff440c": {
+        "ed97": {
+          "42a2": {
+            "b452": {
+              "db1bf5b85fb7": {
+                "var": "--token-71ff440c-ed97-42a2-b452-db1bf5b85fb7",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "7212b58d": {
+        "6f97": {
+          "4cee": {
+            "a6e8": {
+              "062823c03725": {
+                "var": "--token-7212b58d-6f97-4cee-a6e8-062823c03725",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "72222110": {
+        "6151": {
+          "4c46": {
+            "b86b": {
+              "6c9b034c5d6e": {
+                "var": "--token-72222110-6151-4c46-b86b-6c9b034c5d6e",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "7788b5df": {
+        "cf66": {
+          "42e7": {
+            "bafa": {
+              "afaea26b1ff0": {
+                "var": "--token-7788b5df-cf66-42e7-bafa-afaea26b1ff0",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "7d224856": {
+        "e282": {
+          "4e11": {
+            "9723": {
+              "60d88a96a61b": {
+                "var": "--token-7d224856-e282-4e11-9723-60d88a96a61b",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "7e7c27c9": {
+        "d486": {
+          "4cbf": {
+            "9259": {
+              "1f39132a87d1": {
+                "var": "--token-7e7c27c9-d486-4cbf-9259-1f39132a87d1",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "81579d57": {
+        "17fe": {
+          "4831": {
+            "a16f": {
+              "bac7758d2ee8": {
+                "var": "--token-81579d57-17fe-4831-a16f-bac7758d2ee8",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "826e7cbf": {
+        "b01d": {
+          "4eb1": {
+            "8e1e": {
+              "98b360fb36bc": {
+                "var": "--token-826e7cbf-b01d-4eb1-8e1e-98b360fb36bc",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "89a22b54": {
+        "e29f": {
+          "49de": {
+            "91d6": {
+              "ddc01166c272": {
+                "var": "--token-89a22b54-e29f-49de-91d6-ddc01166c272",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "8ce0d4bb": {
+        "84b2": {
+          "4aa8": {
+            "b7fa": {
+              "cf8d27b8e0c7": {
+                "var": "--token-8ce0d4bb-84b2-4aa8-b7fa-cf8d27b8e0c7",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "9028fc19": {
+        "1549": {
+          "4d96": {
+            "91ca": {
+              "93572ae1ac06": {
+                "var": "--token-9028fc19-1549-4d96-91ca-93572ae1ac06",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "929f5058": {
+        "8d20": {
+          "42e0": {
+            "9d98": {
+              "fe0dafd54d43": {
+                "var": "--token-929f5058-8d20-42e0-9d98-fe0dafd54d43",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "94bddd81": {
+        "d247": {
+          "49ef": {
+            "8a6e": {
+              "55e00abc5cb8": {
+                "var": "--token-94bddd81-d247-49ef-8a6e-55e00abc5cb8",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "9533b59c": {
+        "1b56": {
+          "4be7": {
+            "93d3": {
+              "f9446c1e87c6": {
+                "var": "--token-9533b59c-1b56-4be7-93d3-f9446c1e87c6",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "992f6de2": {
+        "ff37": {
+          "4283": {
+            "999a": {
+              "88b68d4bc625": {
+                "var": "--token-992f6de2-ff37-4283-999a-88b68d4bc625",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "9c080050": {
+        "c197": {
+          "4d22": {
+            "857c": {
+              "662351924483": {
+                "var": "--token-9c080050-c197-4d22-857c-662351924483",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "a392612b": {
+        "78bb": {
+          "4d6b": {
+            "bbd0": {
+              "20d6b8f5a47a": {
+                "var": "--token-a392612b-78bb-4d6b-bbd0-20d6b8f5a47a",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "a4c9cff4": {
+        "c09a": {
+          "4573": {
+            "ac8b": {
+              "b10161e09446": {
+                "var": "--token-a4c9cff4-c09a-4573-ac8b-b10161e09446",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "ab954693": {
+        "ff86": {
+          "4dd0": {
+            "8db2": {
+              "dea632f7a00e": {
+                "var": "--token-ab954693-ff86-4dd0-8db2-dea632f7a00e",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "afaadb72": {
+        "5ed7": {
+          "4334": {
+            "8805": {
+              "75cb91a18f24": {
+                "var": "--token-afaadb72-5ed7-4334-8805-75cb91a18f24",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "b02d7c86": {
+        "46c1": {
+          "4ae6": {
+            "a226": {
+              "0784aba6273e": {
+                "var": "--token-b02d7c86-46c1-4ae6-a226-0784aba6273e",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "b2fe3658": {
+        "3bde": {
+          "4027": {
+            "8a2d": {
+              "5c69cb4736d3": {
+                "var": "--token-b2fe3658-3bde-4027-8a2d-5c69cb4736d3",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "c19f9397": {
+        "63ce": {
+          "4c09": {
+            "9404": {
+              "3632ec0d3f10": {
+                "var": "--token-c19f9397-63ce-4c09-9404-3632ec0d3f10",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "d37ad7dc": {
+        "b85f": {
+          "473e": {
+            "a78c": {
+              "5bc709346232": {
+                "var": "--token-d37ad7dc-b85f-473e-a78c-5bc709346232",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "d5502ce3": {
+        "c92d": {
+          "49ca": {
+            "ba19": {
+              "934ac1cb957d": {
+                "var": "--token-d5502ce3-c92d-49ca-ba19-934ac1cb957d",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "d68a1254": {
+        "a59d": {
+          "4e05": {
+            "9b1e": {
+              "5744db8cc3a4": {
+                "var": "--token-d68a1254-a59d-4e05-9b1e-5744db8cc3a4",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "dc395c47": {
+        "03b0": {
+          "47c8": {
+            "9692": {
+              "d39afdfb3d56": {
+                "var": "--token-dc395c47-03b0-47c8-9692-d39afdfb3d56",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "e1016172": {
+        "3722": {
+          "4f83": {
+            "8f01": {
+              "893dfcc06242": {
+                "var": "--token-e1016172-3722-4f83-8f01-893dfcc06242",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "e4a486da": {
+        "0f3e": {
+          "4f0f": {
+            "a156": {
+              "7359e80ab5ee": {
+                "var": "--token-e4a486da-0f3e-4f0f-a156-7359e80ab5ee",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "ec6de9b1": {
+        "c004": {
+          "4e71": {
+            "9eea": {
+              "00ef53e6bc7a": {
+                "var": "--token-ec6de9b1-c004-4e71-9eea-00ef53e6bc7a",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "ee0eb77a": {
+        "c5ba": {
+          "44dd": {
+            "80da": {
+              "78c21576ce6b": {
+                "var": "--token-ee0eb77a-c5ba-44dd-80da-78c21576ce6b",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "f308df2b": {
+        "2e59": {
+          "4e93": {
+            "8e97": {
+              "df348be19991": {
+                "var": "--token-f308df2b-2e59-4e93-8e97-df348be19991",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "f52c85c9": {
+        "4b46": {
+          "4081": {
+            "9ae2": {
+              "43cd4051929f": {
+                "var": "--token-f52c85c9-4b46-4081-9ae2-43cd4051929f",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "f89db159": {
+        "2d55": {
+          "481a": {
+            "856f": {
+              "4b4f2bdd6086": {
+                "var": "--token-f89db159-2d55-481a-856f-4b4f2bdd6086",
+                "type": "color"
+              }
+            }
+          }
+        }
+      },
+      "fa312d7f": {
+        "9ffe": {
+          "4913": {
+            "8337": {
+              "46686bcf3920": {
+                "var": "--token-fa312d7f-9ffe-4913-8337-46686bcf3920",
+                "type": "color"
+              }
+            }
+          }
+        }
+      }
+    },
+    "radius": {
+      "control": {
+        "value": "8px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of nav-link default (raw/components-computed.json)",
+        "description": "The radius on nav links and small controls."
+      },
+      "button": {
+        "value": "8px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of nav-play default (raw/components-computed.json)",
+        "description": "The radius on the header 'Play for free' button — an 8px rounded rectangle, not a pill."
+      },
+      "field": {
+        "value": "2px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of login-field default (raw/components-computed.json)",
+        "description": "The radius on the app auth fields and submit."
+      },
+      "app-button": {
+        "value": "8px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of login-submit default (raw/components-computed.json)",
+        "description": "The radius on the app primary submit."
+      },
+      "card": {
+        "value": "0px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of plan-card default (raw/components-computed.json)",
+        "description": "The pricing-card radius."
+      },
+      "dialog": {
+        "value": "16px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of ed-craft default (raw/components-computed.json)",
+        "description": "The Craft dialog's radius."
+      },
+      "cta": {
+        "value": "8px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)",
+        "description": "The hero CTA's radius — an 8px rounded rectangle."
+      },
+      "inspector": {
+        "value": "12px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of ed-inspector default (raw/components-computed.json)",
+        "description": "The inspector panel's radius."
+      }
+    },
+    "motion": {
+      "control": {
+        "value": "all 0.3s linear",
+        "type": "other",
+        "source": "computed transition of ed-tool default (raw/components-computed.json)",
+        "description": "The control transition the site puts on nav links, buttons and cards."
+      }
+    }
+  },
+  "light": {
+    "text": {
+      "ink": {
+        "value": "{token.4afff1e1.ad66.4449.a126.34071669c871}",
+        "type": "color",
+        "source": "computed color of feat-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared token.4afff1e1.ad66.4449.a126.34071669c871",
+        "description": "The marketing heading ink on the white field — the feature-page h1 (the hero h1 is white on the dark hero band instead)."
+      },
+      "body": {
+        "value": "{token.4afff1e1.ad66.4449.a126.34071669c871}",
+        "type": "color",
+        "source": "computed color of feat-prose default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared token.4afff1e1.ad66.4449.a126.34071669c871",
+        "description": "The marketing body-copy ink."
+      },
+      "muted": {
+        "value": "{token.8ce0d4bb.84b2.4aa8.b7fa.cf8d27b8e0c7}",
+        "type": "color",
+        "source": "computed color of hero-sub default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared token.8ce0d4bb.84b2.4aa8.b7fa.cf8d27b8e0c7",
+        "description": "The hero subline's ink — the quieter marketing text role."
+      },
+      "link": {
+        "value": "{token.f89db159.2d55.481a.856f.4b4f2bdd6086}",
+        "type": "color",
+        "source": "computed color of footer-link default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared token.f89db159.2d55.481a.856f.4b4f2bdd6086",
+        "description": "A footer link's ink — a muted gray on the dark footer band."
+      }
+    },
+    "action": {
+      "cta-fill": {
+        "value": "{token.63f7635c.4044.4753.b791.268bd3d1a479}",
+        "type": "color",
+        "source": "computed backgroundColor of nav-play default (raw/components-computed.json); matches declared token.63f7635c.4044.4753.b791.268bd3d1a479",
+        "description": "The header 'Play for free' button's fill — the same blue the 'Get Started Now' CTA paints inside its Button Wrap on /pricing."
+      },
+      "cta-ink": {
+        "value": "{token.1a71ae8b.0ebf.47f2.9b16.91692b35aeb7}",
+        "type": "color",
+        "source": "computed color of nav-play default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared token.1a71ae8b.0ebf.47f2.9b16.91692b35aeb7",
+        "description": "The text on the header CTA button."
+      },
+      "hero-cta-fill": {
+        "value": "rgba(0, 0, 0, 0)",
+        "type": "color",
+        "source": "computed backgroundColor of hero-cta default (raw/components-computed.json)",
+        "description": "The hero 'Play for free' action's fill — honestly transparent: it is an outlined ghost on the dark hero band (unlike the filled nav and feature CTAs)."
+      },
+      "hero-cta-ink": {
+        "value": "{token.81579d57.17fe.4831.a16f.bac7758d2ee8}",
+        "type": "color",
+        "source": "computed color of hero-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared token.81579d57.17fe.4831.a16f.bac7758d2ee8",
+        "description": "The white text on the hero action."
+      },
+      "hero-cta-border": {
+        "value": "{token.81579d57.17fe.4831.a16f.bac7758d2ee8}",
+        "type": "color",
+        "source": "the colour of the first painted border inside hero-cta default (raw/components-computed.json paint list); matches declared token.81579d57.17fe.4831.a16f.bac7758d2ee8",
+        "description": "The 1px white stroke the hero ghost CTA's ::after paints on the dark band."
+      }
+    },
+    "surface": {
+      "card": {
+        "value": "{token.81579d57.17fe.4831.a16f.bac7758d2ee8}",
+        "type": "color",
+        "source": "computed backgroundColor of plan-card default (raw/components-computed.json); matches declared token.81579d57.17fe.4831.a16f.bac7758d2ee8",
+        "description": "The pricing-card surface."
+      }
+    },
+    "border": {
+      "focus-ring": {
+        "value": "#000000",
+        "type": "color",
+        "source": "computed outlineColor of nav-cta focus-visible (raw/components-computed.json)",
+        "description": "The keyboard focus ring on controls, where the browser paints one."
+      }
+    },
+    "background": {
+      "page": {
+        "value": "{token.81579d57.17fe.4831.a16f.bac7758d2ee8}",
+        "type": "color",
+        "source": "computed backgroundColor of the marketing body (raw/components-computed.json page-bg default); the painted field behind every marketing page (screenshots/*-light-*.png); matches declared token.81579d57.17fe.4831.a16f.bac7758d2ee8",
+        "description": "The marketing page field."
+      }
+    }
+  },
+  "app": {
+    "active": {
+      "danger": {
+        "var": "--active-danger",
+        "type": "color"
+      },
+      "interactive": {
+        "var": "--active-interactive",
+        "type": "color"
+      },
+      "primary": {
+        "var": "--active-primary",
+        "type": "color"
+      },
+      "secondary": {
+        "var": "--active-secondary",
+        "type": "color"
+      },
+      "success": {
+        "var": "--active-success",
+        "type": "color"
+      },
+      "tertiary": {
+        "var": "--active-tertiary",
+        "type": "other"
+      },
+      "ui": {
+        "default": {
+          "var": "--active-ui",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--active-ui-dark",
+          "type": "color"
+        }
+      }
+    },
+    "alternative": {
+      "100": {
+        "var": "--alternative-100",
+        "type": "other"
+      },
+      "200": {
+        "var": "--alternative-200",
+        "type": "other"
+      },
+      "300": {
+        "var": "--alternative-300",
+        "type": "other"
+      },
+      "400": {
+        "var": "--alternative-400",
+        "type": "other"
+      },
+      "500": {
+        "var": "--alternative-500",
+        "type": "other"
+      },
+      "600": {
+        "var": "--alternative-600",
+        "type": "other"
+      },
+      "700": {
+        "var": "--alternative-700",
+        "type": "other"
+      },
+      "800": {
+        "var": "--alternative-800",
+        "type": "other"
+      }
+    },
+    "animate": {
+      "ping": {
+        "var": "--animate-ping",
+        "type": "other"
+      },
+      "spin": {
+        "var": "--animate-spin",
+        "type": "other"
+      }
+    },
+    "aspect": {
+      "video": {
+        "var": "--aspect-video",
+        "type": "other"
+      }
+    },
+    "assets": {
+      "default": {
+        "var": "--assets",
+        "type": "dimension"
+      },
+      "and": {
+        "toolbar": {
+          "default": {
+            "var": "--assets-and-toolbar",
+            "type": "dimension"
+          },
+          "and": {
+            "inspector": {
+              "var": "--assets-and-toolbar-and-inspector",
+              "type": "dimension"
+            },
+            "ruller": {
+              "var": "--assets-and-toolbar-and-ruller",
+              "type": "dimension"
+            }
+          }
+        }
+      }
+    },
+    "blur": {
+      "lg": {
+        "var": "--blur-lg",
+        "type": "dimension"
+      },
+      "sm": {
+        "var": "--blur-sm",
+        "type": "dimension"
+      }
+    },
+    "breakpoint": {
+      "md": {
+        "var": "--breakpoint-md",
+        "type": "dimension"
+      }
+    },
+    "color": {
+      "aqua": {
+        "default": {
+          "var": "--color-aqua",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--color-aqua-dark",
+          "type": "color"
+        }
+      },
+      "black": {
+        "var": "--color-black",
+        "type": "color"
+      },
+      "brand": {
+        "default": {
+          "var": "--color-brand",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--color-brand-dark",
+          "type": "color"
+        },
+        "text": {
+          "var": "--color-brand-text",
+          "type": "color"
+        }
+      },
+      "canvas": {
+        "var": "--color-canvas",
+        "type": "color"
+      },
+      "danger": {
+        "default": {
+          "var": "--color-danger",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--color-danger-dark",
+          "type": "color"
+        }
+      },
+      "frill": {
+        "default": {
+          "var": "--color-frill",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--color-frill-dark",
+          "type": "color"
+        },
+        "light": {
+          "var": "--color-frill-light",
+          "type": "color"
+        }
+      },
+      "highlight": {
+        "default": {
+          "var": "--color-highlight",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--color-highlight-dark",
+          "type": "color"
+        },
+        "light": {
+          "var": "--color-highlight-light",
+          "type": "color"
+        }
+      },
+      "info": {
+        "default": {
+          "var": "--color-info",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--color-info-dark",
+          "type": "color"
+        }
+      },
+      "orange": {
+        "default": {
+          "var": "--color-orange",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--color-orange-dark",
+          "type": "color"
+        }
+      },
+      "positive": {
+        "default": {
+          "var": "--color-positive",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--color-positive-dark",
+          "type": "color"
+        }
+      },
+      "purple": {
+        "var": "--color-purple",
+        "type": "color"
+      },
+      "selected": {
+        "var": "--color-selected",
+        "type": "color"
+      },
+      "shade": {
+        "0": {
+          "var": "--color-shade-0",
+          "type": "color"
+        },
+        "10": {
+          "var": "--color-shade-10",
+          "type": "color"
+        },
+        "100": {
+          "var": "--color-shade-100",
+          "type": "color"
+        },
+        "20": {
+          "var": "--color-shade-20",
+          "type": "color"
+        },
+        "30": {
+          "var": "--color-shade-30",
+          "type": "color"
+        },
+        "40": {
+          "var": "--color-shade-40",
+          "type": "color"
+        },
+        "5": {
+          "var": "--color-shade-5",
+          "type": "color"
+        }
+      },
+      "text": {
+        "default": {
+          "var": "--color-text",
+          "type": "color"
+        },
+        "invert": {
+          "var": "--color-text-invert",
+          "type": "color"
+        },
+        "low": {
+          "var": "--color-text-low",
+          "type": "color"
+        },
+        "medium": {
+          "var": "--color-text-medium",
+          "type": "color"
+        }
+      },
+      "warn": {
+        "default": {
+          "var": "--color-warn",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--color-warn-dark",
+          "type": "color"
+        }
+      },
+      "white": {
+        "var": "--color-white",
+        "type": "color"
+      },
+      "yellow": {
+        "default": {
+          "var": "--color-yellow",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--color-yellow-dark",
+          "type": "color"
+        }
+      }
+    },
+    "cta": {
+      "300": {
+        "var": "--cta-300",
+        "type": "color"
+      }
+    },
+    "dark": {
+      "100": {
+        "var": "--dark-100",
+        "type": "color"
+      },
+      "200": {
+        "var": "--dark-200",
+        "type": "color"
+      },
+      "300": {
+        "var": "--dark-300",
+        "type": "color"
+      },
+      "400": {
+        "var": "--dark-400",
+        "type": "color"
+      },
+      "500": {
+        "var": "--dark-500",
+        "type": "color"
+      },
+      "600": {
+        "var": "--dark-600",
+        "type": "color"
+      },
+      "700": {
+        "var": "--dark-700",
+        "type": "color"
+      },
+      "800": {
+        "var": "--dark-800",
+        "type": "color"
+      }
+    },
+    "default": {
+      "filled": {
+        "slider": {
+          "bg": {
+            "color": {
+              "var": "--default-filled-slider-bg-color",
+              "type": "color"
+            }
+          }
+        }
+      },
+      "font": {
+        "family": {
+          "var": "--default-font-family",
+          "type": "other"
+        }
+      },
+      "mono": {
+        "font": {
+          "family": {
+            "var": "--default-mono-font-family",
+            "type": "other"
+          }
+        }
+      },
+      "slider": {
+        "bg": {
+          "color": {
+            "var": "--default-slider-bg-color",
+            "type": "color"
+          }
+        }
+      },
+      "transition": {
+        "duration": {
+          "var": "--default-transition-duration",
+          "type": "duration"
+        },
+        "timing": {
+          "function": {
+            "var": "--default-transition-timing-function",
+            "type": "cubicBezier"
+          }
+        }
+      }
+    },
+    "disabled": {
+      "01": {
+        "default": {
+          "var": "--disabled-01",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--disabled-01-dark",
+          "type": "color"
+        }
+      },
+      "02": {
+        "default": {
+          "var": "--disabled-02",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--disabled-02-dark",
+          "type": "color"
+        }
+      },
+      "03": {
+        "default": {
+          "var": "--disabled-03",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--disabled-03-dark",
+          "type": "color"
+        }
+      },
+      "04": {
+        "var": "--disabled-04",
+        "type": "color"
+      }
+    },
+    "ease": {
+      "in": {
+        "out": {
+          "var": "--ease-in-out",
+          "type": "cubicBezier"
+        }
+      },
+      "out": {
+        "default": {
+          "var": "--ease-out",
+          "type": "cubicBezier"
+        },
+        "expo": {
+          "var": "--ease-out-expo",
+          "type": "cubicBezier"
+        }
+      }
+    },
+    "error": {
+      "100": {
+        "var": "--error-100",
+        "type": "color"
+      },
+      "200": {
+        "var": "--error-200",
+        "type": "color"
+      },
+      "300": {
+        "var": "--error-300",
+        "type": "color"
+      },
+      "400": {
+        "var": "--error-400",
+        "type": "color"
+      },
+      "500": {
+        "var": "--error-500",
+        "type": "color"
+      }
+    },
+    "fade": {
+      "gradient": {
+        "var": "--fade-gradient",
+        "type": "other"
+      }
+    },
+    "field": {
+      "01": {
+        "default": {
+          "var": "--field-01",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--field-01-dark",
+          "type": "color"
+        }
+      }
+    },
+    "font": {
+      "mono": {
+        "var": "--font-mono",
+        "type": "other"
+      },
+      "sans": {
+        "var": "--font-sans",
+        "type": "other"
+      },
+      "weight": {
+        "bold": {
+          "var": "--font-weight-bold",
+          "type": "other"
+        },
+        "medium": {
+          "var": "--font-weight-medium",
+          "type": "other"
+        },
+        "normal": {
+          "var": "--font-weight-normal",
+          "type": "other"
+        },
+        "semibold": {
+          "var": "--font-weight-semibold",
+          "type": "other"
+        }
+      }
+    },
+    "frill": {
+      "focus": {
+        "ring": {
+          "color": {
+            "var": "--frill-focus-ring-color",
+            "type": "color"
+          }
+        }
+      }
+    },
+    "glori": {
+      "gradient": {
+        "var": "--glori-gradient",
+        "type": "other"
+      }
+    },
+    "green": {
+      "100": {
+        "var": "--green-100",
+        "type": "color"
+      },
+      "200": {
+        "var": "--green-200",
+        "type": "color"
+      },
+      "300": {
+        "var": "--green-300",
+        "type": "color"
+      },
+      "400": {
+        "var": "--green-400",
+        "type": "color"
+      }
+    },
+    "header": {
+      "default": {
+        "var": "--header",
+        "type": "dimension"
+      },
+      "translate": {
+        "var": "--header-translate",
+        "type": "dimension"
+      }
+    },
+    "height": {
+      "header": {
+        "var": "--height-header",
+        "type": "dimension"
+      }
+    },
+    "hero": {
+      "var": "--hero",
+      "type": "dimension"
+    },
+    "hover": {
+      "danger": {
+        "var": "--hover-danger",
+        "type": "color"
+      },
+      "primary": {
+        "var": "--hover-primary",
+        "type": "color"
+      },
+      "secondary": {
+        "var": "--hover-secondary",
+        "type": "other"
+      },
+      "success": {
+        "var": "--hover-success",
+        "type": "color"
+      },
+      "ui": {
+        "default": {
+          "var": "--hover-ui",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--hover-ui-dark",
+          "type": "color"
+        }
+      }
+    },
+    "icon": {
+      "01": {
+        "var": "--icon-01",
+        "type": "color"
+      },
+      "02": {
+        "var": "--icon-02",
+        "type": "color"
+      },
+      "03": {
+        "default": {
+          "var": "--icon-03",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--icon-03-dark",
+          "type": "color"
+        }
+      },
+      "04": {
+        "var": "--icon-04",
+        "type": "color"
+      },
+      "danger": {
+        "01": {
+          "var": "--icon-danger-01",
+          "type": "color"
+        },
+        "02": {
+          "var": "--icon-danger-02",
+          "type": "color"
+        },
+        "03": {
+          "var": "--icon-danger-03",
+          "type": "color"
+        }
+      },
+      "primary": {
+        "01": {
+          "var": "--icon-primary-01",
+          "type": "color"
+        },
+        "02": {
+          "var": "--icon-primary-02",
+          "type": "color"
+        },
+        "03": {
+          "var": "--icon-primary-03",
+          "type": "color"
+        }
+      },
+      "secondary": {
+        "01": {
+          "var": "--icon-secondary-01",
+          "type": "color"
+        }
+      },
+      "slide": {
+        "btn": {
+          "var": "--icon-slide-btn",
+          "type": "color"
+        }
+      },
+      "success": {
+        "01": {
+          "var": "--icon-success-01",
+          "type": "color"
+        },
+        "02": {
+          "var": "--icon-success-02",
+          "type": "color"
+        },
+        "03": {
+          "var": "--icon-success-03",
+          "type": "color"
+        }
+      }
+    },
+    "info": {
+      "100": {
+        "var": "--info-100",
+        "type": "color"
+      },
+      "200": {
+        "var": "--info-200",
+        "type": "color"
+      },
+      "300": {
+        "var": "--info-300",
+        "type": "color"
+      },
+      "400": {
+        "var": "--info-400",
+        "type": "color"
+      }
+    },
+    "inspector": {
+      "var": "--inspector",
+      "type": "dimension"
+    },
+    "interactive": {
+      "01": {
+        "default": {
+          "var": "--interactive-01",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--interactive-01-dark",
+          "type": "color"
+        }
+      },
+      "02": {
+        "var": "--interactive-02",
+        "type": "other"
+      },
+      "03": {
+        "var": "--interactive-03",
+        "type": "color"
+      },
+      "04": {
+        "var": "--interactive-04",
+        "type": "color"
+      }
+    },
+    "leading": {
+      "normal": {
+        "var": "--leading-normal",
+        "type": "other"
+      },
+      "snug": {
+        "var": "--leading-snug",
+        "type": "other"
+      },
+      "tight": {
+        "var": "--leading-tight",
+        "type": "other"
+      }
+    },
+    "light": {
+      "100": {
+        "var": "--light-100",
+        "type": "color"
+      },
+      "200": {
+        "var": "--light-200",
+        "type": "color"
+      },
+      "300": {
+        "var": "--light-300",
+        "type": "color"
+      },
+      "400": {
+        "var": "--light-400",
+        "type": "color"
+      },
+      "500": {
+        "var": "--light-500",
+        "type": "color"
+      },
+      "600": {
+        "var": "--light-600",
+        "type": "color"
+      },
+      "700": {
+        "var": "--light-700",
+        "type": "color"
+      }
+    },
+    "neutral": {
+      "dark": {
+        "100": {
+          "var": "--neutral-dark-100",
+          "type": "color"
+        },
+        "200": {
+          "var": "--neutral-dark-200",
+          "type": "color"
+        },
+        "300": {
+          "var": "--neutral-dark-300",
+          "type": "color"
+        },
+        "400": {
+          "var": "--neutral-dark-400",
+          "type": "color"
+        },
+        "500": {
+          "var": "--neutral-dark-500",
+          "type": "color"
+        },
+        "600": {
+          "var": "--neutral-dark-600",
+          "type": "color"
+        },
+        "700": {
+          "var": "--neutral-dark-700",
+          "type": "color"
+        },
+        "800": {
+          "var": "--neutral-dark-800",
+          "type": "color"
+        }
+      },
+      "light": {
+        "100": {
+          "var": "--neutral-light-100",
+          "type": "color"
+        },
+        "200": {
+          "var": "--neutral-light-200",
+          "type": "color"
+        },
+        "300": {
+          "var": "--neutral-light-300",
+          "type": "color"
+        },
+        "400": {
+          "var": "--neutral-light-400",
+          "type": "color"
+        },
+        "500": {
+          "var": "--neutral-light-500",
+          "type": "color"
+        },
+        "600": {
+          "var": "--neutral-light-600",
+          "type": "color"
+        },
+        "700": {
+          "var": "--neutral-light-700",
+          "type": "color"
+        },
+        "800": {
+          "var": "--neutral-light-800",
+          "type": "color"
+        }
+      }
+    },
+    "orange": {
+      "100": {
+        "var": "--orange-100",
+        "type": "color"
+      },
+      "200": {
+        "var": "--orange-200",
+        "type": "color"
+      },
+      "300": {
+        "var": "--orange-300",
+        "type": "color"
+      },
+      "400": {
+        "var": "--orange-400",
+        "type": "color"
+      }
+    },
+    "pink": {
+      "100": {
+        "var": "--pink-100",
+        "type": "color"
+      },
+      "200": {
+        "var": "--pink-200",
+        "type": "color"
+      },
+      "300": {
+        "var": "--pink-300",
+        "type": "color"
+      },
+      "400": {
+        "var": "--pink-400",
+        "type": "color"
+      }
+    },
+    "primary": {
+      "100": {
+        "var": "--primary-100",
+        "type": "color"
+      },
+      "200": {
+        "var": "--primary-200",
+        "type": "color"
+      },
+      "300": {
+        "var": "--primary-300",
+        "type": "color"
+      },
+      "400": {
+        "var": "--primary-400",
+        "type": "color"
+      },
+      "500": {
+        "var": "--primary-500",
+        "type": "color"
+      },
+      "600": {
+        "var": "--primary-600",
+        "type": "color"
+      },
+      "700": {
+        "var": "--primary-700",
+        "type": "color"
+      }
+    },
+    "radius": {
+      "default": {
+        "var": "--radius",
+        "type": "dimension"
+      },
+      "lg": {
+        "var": "--radius-lg",
+        "type": "dimension"
+      },
+      "md": {
+        "var": "--radius-md",
+        "type": "dimension"
+      },
+      "sm": {
+        "var": "--radius-sm",
+        "type": "dimension"
+      },
+      "xl": {
+        "var": "--radius-xl",
+        "type": "dimension"
+      }
+    },
+    "red": {
+      "100": {
+        "var": "--red-100",
+        "type": "color"
+      },
+      "200": {
+        "var": "--red-200",
+        "type": "color"
+      },
+      "300": {
+        "var": "--red-300",
+        "type": "color"
+      },
+      "400": {
+        "var": "--red-400",
+        "type": "color"
+      }
+    },
+    "selected": {
+      "ui": {
+        "default": {
+          "var": "--selected-ui",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--selected-ui-dark",
+          "type": "color"
+        }
+      }
+    },
+    "shadow": {
+      "highlight": {
+        "var": "--shadow-highlight",
+        "type": "other"
+      }
+    },
+    "sidebar": {
+      "var": "--sidebar",
+      "type": "dimension"
+    },
+    "spacing": {
+      "default": {
+        "var": "--spacing",
+        "type": "dimension"
+      },
+      "announcement": {
+        "sidebar": {
+          "var": "--spacing-announcement-sidebar",
+          "type": "dimension"
+        }
+      },
+      "container": {
+        "default": {
+          "var": "--spacing-container",
+          "type": "dimension"
+        },
+        "lg": {
+          "var": "--spacing-container-lg",
+          "type": "dimension"
+        },
+        "md": {
+          "var": "--spacing-container-md",
+          "type": "dimension"
+        }
+      },
+      "header": {
+        "var": "--spacing-header",
+        "type": "dimension"
+      },
+      "roadmap": {
+        "column": {
+          "var": "--spacing-roadmap-column",
+          "type": "dimension"
+        }
+      },
+      "sidebar": {
+        "var": "--spacing-sidebar",
+        "type": "dimension"
+      }
+    },
+    "success": {
+      "100": {
+        "var": "--success-100",
+        "type": "color"
+      },
+      "200": {
+        "var": "--success-200",
+        "type": "color"
+      },
+      "300": {
+        "var": "--success-300",
+        "type": "color"
+      },
+      "400": {
+        "var": "--success-400",
+        "type": "color"
+      },
+      "500": {
+        "var": "--success-500",
+        "type": "color"
+      }
+    },
+    "text": {
+      "01": {
+        "default": {
+          "var": "--text-01",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--text-01-dark",
+          "type": "color"
+        }
+      },
+      "02": {
+        "default": {
+          "var": "--text-02",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--text-02-dark",
+          "type": "color"
+        }
+      },
+      "03": {
+        "var": "--text-03",
+        "type": "color"
+      },
+      "04": {
+        "var": "--text-04",
+        "type": "color"
+      },
+      "0_5": {
+        "var": "--text-0_5",
+        "type": "dimension"
+      },
+      "0_625": {
+        "var": "--text-0_625",
+        "type": "dimension"
+      },
+      "0_6875": {
+        "var": "--text-0_6875",
+        "type": "dimension"
+      },
+      "0_75": {
+        "var": "--text-0_75",
+        "type": "dimension"
+      },
+      "0_8125": {
+        "var": "--text-0_8125",
+        "type": "dimension"
+      },
+      "0_875": {
+        "var": "--text-0_875",
+        "type": "dimension"
+      },
+      "0_9375": {
+        "var": "--text-0_9375",
+        "type": "dimension"
+      },
+      "1": {
+        "var": "--text-1",
+        "type": "dimension"
+      },
+      "1_125": {
+        "var": "--text-1_125",
+        "type": "dimension"
+      },
+      "1_25": {
+        "var": "--text-1_25",
+        "type": "dimension"
+      },
+      "1_375": {
+        "var": "--text-1_375",
+        "type": "dimension"
+      },
+      "1_5": {
+        "var": "--text-1_5",
+        "type": "dimension"
+      },
+      "1_75": {
+        "var": "--text-1_75",
+        "type": "dimension"
+      },
+      "2": {
+        "var": "--text-2",
+        "type": "dimension"
+      },
+      "2_125": {
+        "var": "--text-2_125",
+        "type": "dimension"
+      },
+      "2_25": {
+        "var": "--text-2_25",
+        "type": "dimension"
+      },
+      "2_5": {
+        "var": "--text-2_5",
+        "type": "dimension"
+      },
+      "2_75": {
+        "var": "--text-2_75",
+        "type": "dimension"
+      },
+      "danger": {
+        "var": "--text-danger",
+        "type": "color"
+      },
+      "primary": {
+        "01": {
+          "var": "--text-primary-01",
+          "type": "color"
+        },
+        "02": {
+          "var": "--text-primary-02",
+          "type": "color"
+        }
+      },
+      "secondary": {
+        "01": {
+          "var": "--text-secondary-01",
+          "type": "color"
+        }
+      },
+      "ink": {
+        "value": "{color.brand.text}",
+        "type": "color",
+        "source": "computed color of login-title default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.brand.text",
+        "description": "The app heading ink on the dark chrome."
+      },
+      "body": {
+        "value": "{light.700}",
+        "type": "color",
+        "source": "computed color of ob-title default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared light.700",
+        "description": "The onboarding headline ink — the 'Create designs' headline sits on the white upload card inside the dark editor field."
+      },
+      "muted": {
+        "value": "{color.brand.text}",
+        "type": "color",
+        "source": "computed color of login-field default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.brand.text",
+        "description": "The auth field's typed-text ink."
+      },
+      "link": {
+        "value": "{color.brand.text}",
+        "type": "color",
+        "source": "computed color of login-forgot default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.brand.text",
+        "description": "The 'Forgot password?' link ink."
+      }
+    },
+    "theme": {
+      "aqua": {
+        "default": {
+          "var": "--theme-aqua",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--theme-aqua-dark",
+          "type": "color"
+        }
+      },
+      "brand": {
+        "default": {
+          "var": "--theme-brand",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--theme-brand-dark",
+          "type": "color"
+        },
+        "text": {
+          "var": "--theme-brand-text",
+          "type": "color"
+        }
+      },
+      "canvas": {
+        "var": "--theme-canvas",
+        "type": "color"
+      },
+      "danger": {
+        "default": {
+          "var": "--theme-danger",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--theme-danger-dark",
+          "type": "color"
+        }
+      },
+      "frill": {
+        "default": {
+          "var": "--theme-frill",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--theme-frill-dark",
+          "type": "color"
+        },
+        "light": {
+          "var": "--theme-frill-light",
+          "type": "color"
+        }
+      },
+      "highlight": {
+        "default": {
+          "var": "--theme-highlight",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--theme-highlight-dark",
+          "type": "color"
+        },
+        "light": {
+          "var": "--theme-highlight-light",
+          "type": "color"
+        }
+      },
+      "info": {
+        "default": {
+          "var": "--theme-info",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--theme-info-dark",
+          "type": "color"
+        }
+      },
+      "orange": {
+        "default": {
+          "var": "--theme-orange",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--theme-orange-dark",
+          "type": "color"
+        }
+      },
+      "positive": {
+        "default": {
+          "var": "--theme-positive",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--theme-positive-dark",
+          "type": "color"
+        }
+      },
+      "purple": {
+        "var": "--theme-purple",
+        "type": "color"
+      },
+      "selected": {
+        "var": "--theme-selected",
+        "type": "color"
+      },
+      "shade": {
+        "0": {
+          "var": "--theme-shade-0",
+          "type": "color"
+        },
+        "10": {
+          "var": "--theme-shade-10",
+          "type": "color"
+        },
+        "100": {
+          "var": "--theme-shade-100",
+          "type": "color"
+        },
+        "20": {
+          "var": "--theme-shade-20",
+          "type": "color"
+        },
+        "30": {
+          "var": "--theme-shade-30",
+          "type": "color"
+        },
+        "40": {
+          "var": "--theme-shade-40",
+          "type": "color"
+        },
+        "5": {
+          "var": "--theme-shade-5",
+          "type": "color"
+        }
+      },
+      "text": {
+        "default": {
+          "var": "--theme-text",
+          "type": "color"
+        },
+        "invert": {
+          "var": "--theme-text-invert",
+          "type": "color"
+        },
+        "low": {
+          "var": "--theme-text-low",
+          "type": "color"
+        },
+        "medium": {
+          "var": "--theme-text-medium",
+          "type": "color"
+        }
+      },
+      "warn": {
+        "default": {
+          "var": "--theme-warn",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--theme-warn-dark",
+          "type": "color"
+        }
+      },
+      "yellow": {
+        "default": {
+          "var": "--theme-yellow",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--theme-yellow-dark",
+          "type": "color"
+        }
+      }
+    },
+    "thumb": {
+      "outer": {
+        "color": {
+          "var": "--thumb-outer-color",
+          "type": "color"
+        }
+      }
+    },
+    "toolbar": {
+      "default": {
+        "var": "--toolbar",
+        "type": "dimension"
+      },
+      "and": {
+        "inspector": {
+          "var": "--toolbar-and-inspector",
+          "type": "dimension"
+        },
+        "ruller": {
+          "var": "--toolbar-and-ruller",
+          "type": "dimension"
+        }
+      }
+    },
+    "tracking": {
+      "tight": {
+        "var": "--tracking-tight",
+        "type": "other"
+      }
+    },
+    "transparent": {
+      "var": "--transparent",
+      "type": "color"
+    },
+    "ui": {
+      "01": {
+        "default": {
+          "var": "--ui-01",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--ui-01-dark",
+          "type": "color"
+        }
+      },
+      "02": {
+        "default": {
+          "var": "--ui-02",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--ui-02-dark",
+          "type": "color"
+        }
+      },
+      "03": {
+        "var": "--ui-03",
+        "type": "color"
+      },
+      "04": {
+        "default": {
+          "var": "--ui-04",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--ui-04-dark",
+          "type": "color"
+        }
+      },
+      "05": {
+        "default": {
+          "var": "--ui-05",
+          "type": "color"
+        },
+        "dark": {
+          "var": "--ui-05-dark",
+          "type": "color"
+        }
+      },
+      "06": {
+        "var": "--ui-06",
+        "type": "other"
+      },
+      "07": {
+        "var": "--ui-07",
+        "type": "color"
+      },
+      "background": {
+        "var": "--ui-background",
+        "type": "color"
+      },
+      "overlay": {
+        "01": {
+          "var": "--ui-overlay-01",
+          "type": "color"
+        },
+        "02": {
+          "var": "--ui-overlay-02",
+          "type": "color"
+        },
+        "03": {
+          "var": "--ui-overlay-03",
+          "type": "color"
+        },
+        "04": {
+          "var": "--ui-overlay-04",
+          "type": "color"
+        },
+        "05": {
+          "var": "--ui-overlay-05",
+          "type": "color"
+        }
+      }
+    },
+    "visited": {
+      "link": {
+        "var": "--visited-link",
+        "type": "color"
+      }
+    },
+    "warning": {
+      "100": {
+        "var": "--warning-100",
+        "type": "color"
+      },
+      "200": {
+        "var": "--warning-200",
+        "type": "color"
+      },
+      "300": {
+        "var": "--warning-300",
+        "type": "color"
+      },
+      "400": {
+        "var": "--warning-400",
+        "type": "color"
+      }
+    },
+    "yellow": {
+      "100": {
+        "var": "--yellow-100",
+        "type": "color"
+      },
+      "200": {
+        "var": "--yellow-200",
+        "type": "color"
+      },
+      "300": {
+        "var": "--yellow-300",
+        "type": "color"
+      },
+      "400": {
+        "var": "--yellow-400",
+        "type": "color"
+      }
+    },
+    "z": {
+      "index": {
+        "1": {
+          "var": "--z-index-1",
+          "type": "other"
+        },
+        "2": {
+          "var": "--z-index-2",
+          "type": "other"
+        },
+        "dnd": {
+          "var": "--z-index-dnd",
+          "type": "other"
+        },
+        "drawer": {
+          "var": "--z-index-drawer",
+          "type": "other"
+        },
+        "editor": {
+          "var": "--z-index-editor",
+          "type": "other"
+        },
+        "floating": {
+          "button": {
+            "var": "--z-index-floating-button",
+            "type": "other"
+          }
+        },
+        "header": {
+          "var": "--z-index-header",
+          "type": "other"
+        },
+        "mobile": {
+          "header": {
+            "var": "--z-index-mobile-header",
+            "type": "other"
+          }
+        },
+        "modal": {
+          "var": "--z-index-modal",
+          "type": "other"
+        },
+        "overlay": {
+          "var": "--z-index-overlay",
+          "type": "other"
+        },
+        "popover": {
+          "var": "--z-index-popover",
+          "type": "other"
+        },
+        "promo": {
+          "var": "--z-index-promo",
+          "type": "other"
+        },
+        "sidebar": {
+          "default": {
+            "var": "--z-index-sidebar",
+            "type": "other"
+          },
+          "shadow": {
+            "var": "--z-index-sidebar-shadow",
+            "type": "other"
+          }
+        },
+        "toasts": {
+          "var": "--z-index-toasts",
+          "type": "other"
+        },
+        "tooltip": {
+          "var": "--z-index-tooltip",
+          "type": "other"
+        }
+      }
+    },
+    "surface": {
+      "card": {
+        "value": "{dark.100}",
+        "type": "color",
+        "source": "the first opaque painted layer inside login-card default (raw/components-computed.json paint list); matches declared dark.100",
+        "description": "The auth card's painted surface on the dark field — the card's own box is transparent, the fill is its inner panel."
+      },
+      "field-bg": {
+        "value": "{dark.200}",
+        "type": "color",
+        "source": "the painted fill of the field-container layer inside login-card default (raw/components-computed.json paint list); matches declared dark.200",
+        "description": "The auth-field fill — the .field-container paint under the transparent inputs."
+      },
+      "chrome-fill": {
+        "value": "{dark.100}",
+        "type": "color",
+        "source": "the first opaque painted layer inside ed-header default (raw/components-computed.json paint list); matches declared dark.100",
+        "description": "The editor header bar's fill on the dark chrome — the header's own box is transparent, the fill is its inner panel."
+      },
+      "inspector-fill": {
+        "value": "{dark.100}",
+        "type": "color",
+        "source": "the first opaque painted layer inside ed-inspector default (raw/components-computed.json paint list); matches declared dark.100",
+        "description": "The inspector panel's fill."
+      },
+      "dialog-fill": {
+        "value": "{dark.100}",
+        "type": "color",
+        "source": "the first opaque painted layer inside ed-craft default (raw/components-computed.json paint list); matches declared dark.100",
+        "description": "The Craft dialog's painted surface — the modal box's own box is transparent, the fill is its inner panel."
+      }
+    },
+    "border": {
+      "field-border": {
+        "value": "{thumb.outer.color}",
+        "type": "color",
+        "source": "computed borderTopColor of login-field default (raw/components-computed.json); matches declared thumb.outer.color",
+        "description": "The auth-field border, where the field paints one."
+      },
+      "field-focus": {
+        "value": "{thumb.outer.color}",
+        "type": "color",
+        "source": "computed borderTopColor of login-field focused (raw/components-computed.json); matches declared thumb.outer.color",
+        "description": "The auth-field border or ring while focused."
+      },
+      "style-selected-border": {
+        "value": "#b53d11",
+        "type": "color",
+        "source": "computed borderTopColor of ed-craft-style opened (raw/components-computed.json)",
+        "description": "The border the picked Craft style card paints."
+      }
+    },
+    "action": {
+      "oauth-fill": {
+        "value": "{thumb.outer.color}",
+        "type": "color",
+        "source": "computed backgroundColor of login-google default (raw/components-computed.json); matches declared thumb.outer.color",
+        "description": "The Google OAuth button's fill — honestly transparent: it is an outlined ghost button with a blue border on the dark card."
+      },
+      "oauth-ink": {
+        "value": "#6a7ef1",
+        "type": "color",
+        "source": "computed color of login-google default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+        "description": "The text on the OAuth button."
+      },
+      "primary-fill": {
+        "value": "#6a7ef1",
+        "type": "color",
+        "source": "computed backgroundColor of login-submit enabled (raw/components-computed.json)",
+        "description": "The enabled submit fill, painted once sample text sits in both fields — never submitted."
+      },
+      "primary-fill-disabled": {
+        "value": "{dark.500}",
+        "type": "color",
+        "source": "computed backgroundColor of login-submit default (raw/components-computed.json); matches declared dark.500",
+        "description": "The submit's disabled fill at rest."
+      },
+      "primary-ink": {
+        "value": "{color.brand.text}",
+        "type": "color",
+        "source": "computed color of login-submit enabled — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.brand.text",
+        "description": "The text on the app primary button."
+      },
+      "tool-fill-active": {
+        "value": "{thumb.outer.color}",
+        "type": "color",
+        "source": "computed backgroundColor of ed-tool-active default (raw/components-computed.json); matches declared thumb.outer.color",
+        "description": "The selected tool's highlighted fill on the left rail."
+      },
+      "signup-fill": {
+        "value": "{default.filled.slider.bg.color}",
+        "type": "color",
+        "source": "computed backgroundColor of ed-signup default (raw/components-computed.json); matches declared default.filled.slider.bg.color",
+        "description": "The filled Signup button's paint in the editor header."
+      },
+      "signup-ink": {
+        "value": "{color.brand.text}",
+        "type": "color",
+        "source": "computed color of ed-signup default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.brand.text",
+        "description": "The text on the filled Signup button."
+      },
+      "craft-cta-fill": {
+        "value": "{default.filled.slider.bg.color}",
+        "type": "color",
+        "source": "computed backgroundColor of ed-add enabled (raw/components-computed.json); matches declared default.filled.slider.bg.color",
+        "description": "The 'Add to canvas' fill once a style is picked — measured at rest; the screenshot pass pressed it once (an AI generation), measure.mjs never did."
+      },
+      "craft-cta-disabled": {
+        "value": "{default.filled.slider.bg.color}",
+        "type": "color",
+        "source": "computed backgroundColor of ed-add default (raw/components-computed.json); matches declared default.filled.slider.bg.color",
+        "description": "The 'Add to canvas' fill before a style is picked — measured identical to the enabled fill, the button does not dim."
+      }
+    },
+    "background": {
+      "page": {
+        "value": "{token.71ff440c.ed97.42a2.b452.db1bf5b85fb7}",
+        "type": "color",
+        "source": "computed backgroundColor of the app body (raw/components-computed.json app-bg default); the dark field behind the auth cards and editor chrome (screenshots/*-app-*.png); matches declared token.71ff440c.ed97.42a2.b452.db1bf5b85fb7",
+        "description": "The app page field — the dark chrome."
+      }
+    }
+  },
+  "component": {
+    "topbar-height": {
+      "value": "64px",
+      "type": "dimension",
+      "source": "measured h of mkt-header default (raw/components-computed.json)",
+      "description": "The marketing header bar height."
+    },
+    "nav-link-height": {
+      "value": "30px",
+      "type": "dimension",
+      "source": "measured h of nav-link default (raw/components-computed.json)",
+      "description": "The nav-link hit height."
+    },
+    "nav-cta-height": {
+      "value": "42px",
+      "type": "dimension",
+      "source": "measured h of nav-cta default (raw/components-computed.json)",
+      "description": "The header button height."
+    },
+    "hero-cta-height": {
+      "value": "46px",
+      "type": "dimension",
+      "source": "measured h of hero-cta default (raw/components-computed.json)",
+      "description": "The hero action height."
+    },
+    "hero-cta-width": {
+      "value": "119.41px",
+      "type": "dimension",
+      "source": "measured w of hero-cta default (raw/components-computed.json)",
+      "description": "The hero action width."
+    },
+    "hero-width": {
+      "value": "838px",
+      "type": "dimension",
+      "source": "measured w of hero-h1 default (raw/components-computed.json)",
+      "description": "The hero masthead measure."
+    },
+    "billing-tab-height": {
+      "value": "20px",
+      "type": "dimension",
+      "source": "measured h of bill-yearly default (raw/components-computed.json)",
+      "description": "The billing-tab height."
+    },
+    "plan-card-width": {
+      "value": "230px",
+      "type": "dimension",
+      "source": "measured w of plan-card default (raw/components-computed.json)",
+      "description": "The pricing-card width."
+    },
+    "plan-card-height": {
+      "value": "149.41px",
+      "type": "dimension",
+      "source": "measured h of plan-card default (raw/components-computed.json)",
+      "description": "The pricing-card height."
+    },
+    "plan-cta-height": {
+      "value": "39.2px",
+      "type": "dimension",
+      "source": "measured h of plan-cta default (raw/components-computed.json)",
+      "description": "The plan-CTA height."
+    },
+    "tpl-card-width": {
+      "value": "193.93px",
+      "type": "dimension",
+      "source": "measured w of tpl-card default (raw/components-computed.json)",
+      "description": "The template card width."
+    },
+    "tpl-card-height": {
+      "value": "102.31px",
+      "type": "dimension",
+      "source": "measured h of tpl-card default (raw/components-computed.json)",
+      "description": "The template card height."
+    },
+    "learn-card-width": {
+      "value": "384px",
+      "type": "dimension",
+      "source": "measured w of learn-card default (raw/components-computed.json)",
+      "description": "The Learn article card width."
+    },
+    "mobile-topbar-height": {
+      "value": "64px",
+      "type": "dimension",
+      "source": "measured h of m-topbar default (raw/components-computed.json)",
+      "description": "The phone header height."
+    },
+    "mobile-cta-height": {
+      "value": "46px",
+      "type": "dimension",
+      "source": "measured h of m-hero-cta default (raw/components-computed.json)",
+      "description": "The hero action at 390 wide."
+    },
+    "app": {
+      "card-width": {
+        "value": "352px",
+        "type": "dimension",
+        "source": "measured w of login-card default on app.glorify.com (raw/components-computed.json)",
+        "description": "The auth card width."
+      },
+      "card-height": {
+        "value": "384px",
+        "type": "dimension",
+        "source": "measured h of login-card default on app.glorify.com (raw/components-computed.json)",
+        "description": "The auth card height."
+      },
+      "field-height": {
+        "value": "30px",
+        "type": "dimension",
+        "source": "measured h of login-field default on app.glorify.com (raw/components-computed.json)",
+        "description": "The auth field height."
+      },
+      "field-width": {
+        "value": "336px",
+        "type": "dimension",
+        "source": "measured w of login-field default on app.glorify.com (raw/components-computed.json)",
+        "description": "The auth field width."
+      },
+      "submit-height": {
+        "value": "32px",
+        "type": "dimension",
+        "source": "measured h of login-submit default on app.glorify.com (raw/components-computed.json)",
+        "description": "The primary submit height."
+      },
+      "header-height": {
+        "value": "56px",
+        "type": "dimension",
+        "source": "measured h of ed-header default on app.glorify.com (raw/components-computed.json)",
+        "description": "The editor header height."
+      },
+      "tool-btn": {
+        "value": "48px",
+        "type": "dimension",
+        "source": "measured h of ed-tool default on app.glorify.com (raw/components-computed.json)",
+        "description": "The tool-rail icon-button size."
+      },
+      "inspector-width": {
+        "value": "280px",
+        "type": "dimension",
+        "source": "measured w of ed-inspector default on app.glorify.com (raw/components-computed.json)",
+        "description": "The inspector panel width."
+      },
+      "inspector-height": {
+        "value": "824px",
+        "type": "dimension",
+        "source": "measured h of ed-inspector default on app.glorify.com (raw/components-computed.json)",
+        "description": "The inspector panel height."
+      },
+      "zoom-height": {
+        "value": "32px",
+        "type": "dimension",
+        "source": "measured h of ed-zoom default on app.glorify.com (raw/components-computed.json)",
+        "description": "The zoom control height."
+      },
+      "craft-cta-height": {
+        "value": "40px",
+        "type": "dimension",
+        "source": "measured h of ed-add default on app.glorify.com (raw/components-computed.json)",
+        "description": "The 'Add to canvas' button height."
+      }
+    }
+  }
+}

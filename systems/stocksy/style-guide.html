@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stocksy style guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+<style>
+  :root {
+    color-scheme: dark;
+    --page: #000000;
+    --surface: #1e1e1e;
+    --raised: #292929;
+    --nav: #131313;
+    --text: #ffffff;
+    --body: #d0d0d0;
+    --muted: #a3a3a3;
+    --soft: #909090;
+    --accent: #0ae47c;
+    --on-accent: #131313;
+    --outline: #cecece;
+    --info: #3692f2;
+    --selected: #5c5c5c;
+    --input: #ffffff;
+    --on-input: #131313;
+    --link: #0a2b7f;
+    --font: Poppins, system-ui, "Segoe UI", Helvetica, Arial, Roboto, sans-serif;
+  }
+  [data-mode="light"] {
+    color-scheme: light;
+    --page: #ffffff;
+    --surface: #ffffff;
+    --raised: #ffffff;
+    --nav: #ffffff;
+    --text: #131313;
+    --body: #131313;
+    --muted: #a3a3a3;
+    --soft: #a3a3a3;
+    --accent: #292929;
+    --on-accent: #ffffff;
+    --outline: #cecece;
+    --link: #0a2b7f;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--font); }
+  header { display: flex; gap: 16px; align-items: center; height: 60px; padding: 0 24px; background: var(--nav); border-bottom: 1px solid var(--raised); }
+  header strong { font-weight: 500; letter-spacing: 0.25px; font-size: 14px; }
+  header button { margin-left: auto; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+  h1 { font-weight: 300; font-size: 44px; line-height: 56px; letter-spacing: -1px; margin: 0 0 8px; }
+  h2 { font-weight: 400; font-size: 32px; line-height: 40px; margin: 40px 0 12px; }
+  p { color: var(--body); max-width: 68ch; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 148px; }
+  .swatch i { display: block; height: 64px; border-radius: 8px; border: 1px solid var(--raised); }
+  .swatch span { display: block; font-size: 12px; line-height: 16px; letter-spacing: 0.5px; color: var(--muted); margin-top: 6px; }
+  button, .pill { border: 2px solid var(--raised); background: var(--raised); color: var(--text); border-radius: 200px; height: 40px; padding: 8px 16px; font: 500 14px/20px var(--font); letter-spacing: 0.25px; }
+  button.green, .pill.green { background: #0ae47c; border-color: #0ae47c; color: #131313; }
+  button.cookie { border-radius: 30px; letter-spacing: 2px; text-transform: uppercase; height: auto; padding: 8.4px 23.8px; }
+  input, textarea { background: var(--input); color: var(--on-input); border: 1px solid #cecece; border-radius: 6px; height: 48px; padding: 0 12px; font: 400 16px/24px var(--font); }
+  .search { display: flex; gap: 0; align-items: center; }
+  .search input { border-radius: 8px 0 0 8px; border-width: 2px; border-color: #fff; }
+  .search .go { border-radius: 8px; background: #0ae47c; border: 3px solid #0ae47c; color: #000; height: 48px; }
+  .card { border-radius: 16px; border: 1px solid #1e1e1e; padding: 32px; max-width: 520px; }
+  .chip { background: #292929; color: #fff; border: 1px solid #292929; border-radius: 5px; height: 41px; padding: 0 15px; font: 500 14px/20px var(--font); }
+  .note { font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <img src="icons/logo.svg" alt="Stocksy" width="95" height="30">
+  <strong>Pricing</strong>
+  <strong>Log in</strong>
+  <button type="button" id="theme">Light page</button>
+</header>
+<main>
+  <h1>100% artist-owned</h1>
+  <p>Poppins on a black page. The green action is #0ae47c. These specimens use the measured tokens. They are not screenshots of stocksy.com.</p>
+
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+
+  <h2>Type</h2>
+  <p style="font-size:44px;line-height:56px;font-weight:300;letter-spacing:-1px;color:var(--text)">Hero 44 / 300</p>
+  <p style="font-size:32px;line-height:40px;font-weight:400;color:var(--body)">Title 32 / 400</p>
+  <p style="font-size:28px;line-height:36px;font-weight:600">Heading 28 / 600</p>
+  <p style="font-size:20px;line-height:28px">Lead 20 / 400</p>
+  <p>Body 16 / 24. The quick cooperative of artists.</p>
+  <p style="font-size:14px;line-height:20px;font-weight:500;letter-spacing:0.25px">Nav 14 / 500</p>
+  <p style="font-size:12px;line-height:16px;font-weight:500;letter-spacing:0.5px;color:var(--outline)">Footer 12 / 500</p>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="green" type="button">Add to Cart</button>
+    <button type="button">View Pricing</button>
+    <button class="green cookie" type="button">Accept all</button>
+  </div>
+
+  <h2>Search</h2>
+  <div class="search">
+    <input value="" placeholder="Search all" aria-label="Search">
+    <button class="go" type="button">Search</button>
+  </div>
+  <p class="note">Hero search is 48px with an 8px radius. The green submit has a 3px border in the same green.</p>
+
+  <h2>Field</h2>
+  <input aria-label="Email" placeholder="Email">
+
+  <h2>Chips</h2>
+  <div class="row">
+    <span class="chip">Photo</span>
+    <span class="chip">Video</span>
+    <span class="chip">Illustration</span>
+  </div>
+
+  <h2>Card</h2>
+  <div class="card">
+    <strong style="font-size:28px;line-height:36px;font-weight:600">What makes Stocksy different?</strong>
+    <p>Features panel: 32px padding, 16px radius, 1px #1e1e1e border.</p>
+  </div>
+</main>
+<script>
+const dark = [
+  ["Page", "#000000"],
+  ["Surface", "#1e1e1e"],
+  ["Raised", "#292929"],
+  ["Nav", "#131313"],
+  ["Text", "#ffffff"],
+  ["Body text", "#d0d0d0"],
+  ["Muted", "#a3a3a3"],
+  ["Accent", "#0ae47c"],
+  ["Outline", "#cecece"],
+  ["Info", "#3692f2"],
+  ["Selected", "#5c5c5c"],
+  ["Input", "#ffffff"]
+];
+const light = [
+  ["Page", "#ffffff"],
+  ["Text", "#131313"],
+  ["Muted", "#a3a3a3"],
+  ["Action", "#292929"],
+  ["Link", "#0a2b7f"],
+  ["Border", "#cecece"]
+];
+const box = document.getElementById("swatches");
+function paint(list) {
+  box.replaceChildren(...list.map(([name, hex]) => {
+    const el = document.createElement("div");
+    el.className = "swatch";
+    el.innerHTML = `<i style="background:${hex}"></i><span>${name}<br>${hex}</span>`;
+    return el;
+  }));
+}
+paint(dark);
+document.getElementById("theme").addEventListener("click", () => {
+  const root = document.documentElement;
+  const next = root.getAttribute("data-mode") === "dark" ? "light" : "dark";
+  root.setAttribute("data-mode", next);
+  paint(next === "dark" ? dark : light);
+  document.getElementById("theme").textContent = next === "dark" ? "Light page" : "Dark page";
+});
+</script>
+</body>
+</html>

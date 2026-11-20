@@ -33,6 +33,7 @@ API = "https://api.refero.design"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import fetch  # noqa: E402
+import dump as refero_dump  # noqa: E402  (refreshes refero/.dump/ after a write)
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS screens (
@@ -83,6 +84,24 @@ def app_store_id(store_url):
     return m.group(1) if m else None
 
 
+# Each listing is one request of up to PER_PAGE records. The endpoints are
+# not paged here, so a full page may have cut the listing short.
+PER_PAGE = 500
+
+
+def available(kind):
+    """The records of /v1/<kind>/available. Exits, before anything is
+    written, when the reply fills a whole page: the directory, the screens
+    table and coverage.json would silently drop every entry past it."""
+    records = json.loads(fetch.get(
+        f"{API}/v1/{kind}/available?per_page={PER_PAGE}"))["records"]
+    if len(records) >= PER_PAGE:
+        sys.exit(f"error: /v1/{kind}/available returned {len(records)} records, "
+                 f"a full page of {PER_PAGE}: the listing may be truncated. Raise "
+                 "PER_PAGE or page through it before refreshing the directory.")
+    return records
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--refero", type=Path, default=REFERO,
@@ -92,10 +111,8 @@ def main() -> None:
     db_path = refero / "refero.db"
 
     fetched_at = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-    ios = json.loads(fetch.get(
-        f"{API}/v1/apps/available?per_page=500"))["records"]
-    web = json.loads(fetch.get(
-        f"{API}/v1/sites/available?per_page=500"))["records"]
+    ios = available("apps")
+    web = available("sites")
     print(f"api: {len(ios)} iOS apps, {len(web)} web sites")
 
     screens, ios_apps, web_sites = [], [], []
@@ -133,11 +150,15 @@ def main() -> None:
             if f.read(64).startswith(b"version https://git-lfs"):
                 sys.exit("error: refero.db is a Git LFS pointer; "
                          "run: git lfs install && git lfs pull")
-    db = sqlite3.connect(db_path)
+    # Autocommit mode plus an explicit transaction: the legacy implicit one
+    # never covers DROP or CREATE (and executescript commits first), so a
+    # failed insert would leave the table dropped or empty.
+    db = sqlite3.connect(db_path, isolation_level=None)
     db.execute("PRAGMA busy_timeout=30000")
-    with db:
+    db.execute("BEGIN IMMEDIATE")
+    try:
         db.execute("DROP TABLE IF EXISTS screens")
-        db.executescript(SCHEMA)
+        db.execute(SCHEMA)
         db.executemany(
             """INSERT INTO screens
                (entry_type, entry_id, entry_key, shot_uuid, shot_url,
@@ -148,7 +169,13 @@ def main() -> None:
               s["shot_url"], s["thumb_url"], s["page_url"], s["page_id"],
               json.dumps(s["colors"]) if s["colors"] else None,
               s["shot_created_at"], s["fetched_at"]) for s in screens])
-    db.close()
+        db.execute("COMMIT")
+    except BaseException:
+        db.execute("ROLLBACK")
+        raise
+    finally:
+        db.close()
+    refero_dump.refresh(db_path)
 
     directory = {
         "version": 1,

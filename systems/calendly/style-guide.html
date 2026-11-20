@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendly style guide</title>
+<meta name="description" content="Calendly design tokens and the public marketing plus invitee booking surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-sans: "Calendly Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-family-body: "Geist",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-family-serif: "Wulkan Text",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-family-system: system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-family-mono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --font-family-booking: "Proxima Nova", sans-serif;
+  --font-size-huge: 72px;
+  --font-size-h1: 60px;
+  --font-size-h2: 48px;
+  --font-size-h3: 36px;
+  --font-size-h4: 28px;
+  --font-size-h5: 24px;
+  --font-size-h6: 20px;
+  --font-size-body-xl: 20px;
+  --font-size-body-lg: 18px;
+  --font-size-body-md: 16px;
+  --font-size-body-sm: 14px;
+  --font-size-body-xs: 12px;
+  --font-size-caption: 12px;
+  --font-size-overline: 12px;
+  --font-size-booking-body: 14px;
+  --font-size-booking-slot: 16px;
+  --font-size-mobile-hero: 40px;
+  --font-size-booking-body-large: 16px;
+  --font-size-booking-small: 12px;
+  --font-size-booking-headline-1: 32px;
+  --font-size-booking-headline-2: 28px;
+  --font-size-booking-headline-3: 24px;
+  --font-size-booking-title-large: 22px;
+  --font-size-booking-xsmall: 11px;
+  --font-lineHeight-huge: 1.1;
+  --font-lineHeight-h1: 1.1;
+  --font-lineHeight-h2: 1.1;
+  --font-lineHeight-h3: 1.1;
+  --font-lineHeight-h4: 1.2;
+  --font-lineHeight-h5: 1.4;
+  --font-lineHeight-h6: 1.4;
+  --font-lineHeight-body-xl: 1.4;
+  --font-lineHeight-body-lg: 1.4;
+  --font-lineHeight-body-md: 1.4;
+  --font-lineHeight-body-sm: 1.4;
+  --font-lineHeight-body-xs: 1.4;
+  --font-lineHeight-caption: 1.4;
+  --font-lineHeight-overline: 1;
+  --font-lineHeight-booking-body: 24px;
+  --font-lineHeight-booking-lineheight: 1.4286;
+  --font-tracking-tighter: -2px;
+  --font-tracking-tight: -1px;
+  --font-tracking-none: 0px;
+  --font-tracking-loose: 1px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-booking-button: 500;
+  --color-neutral-midnight: #071a31;
+  --color-neutral-magnolia: #fcfbf8;
+  --color-neutral-white: #ffffff;
+  --color-neutral-black: #000000;
+  --color-neutral-linen: #f5f3ee;
+  --color-neutral-ash: #e4e6e9;
+  --color-neutral-silver: #d8dce0;
+  --color-neutral-steel: #5f6d77;
+  --color-neutral-smoke: #f5f5f7;
+  --color-neutral-gray-50: #f9fafb;
+  --color-neutral-gray-200: #e5e7eb;
+  --color-neutral-gray-300: #d1d5dc;
+  --color-neutral-gray-500: #6a7282;
+  --color-neutral-gray-600: #4a5565;
+  --color-neutral-gray-700: #364153;
+  --color-neutral-gray-900: #101828;
+  --color-neutral-slate-100: #f1f5f9;
+  --color-neutral-slate-900: #0f172b;
+  --color-neutral-alpha-midnight-a05: rgba(7, 26, 49, 0.05);
+  --color-neutral-alpha-midnight-a10: rgba(7, 26, 49, 0.1);
+  --color-neutral-alpha-midnight-a20: rgba(7, 26, 49, 0.2);
+  --color-neutral-alpha-midnight-a40: rgba(7, 26, 49, 0.4);
+  --color-neutral-alpha-midnight-a50: rgba(7, 26, 49, 0.5);
+  --color-neutral-alpha-midnight-a60: rgba(7, 26, 49, 0.6);
+  --color-neutral-alpha-midnight-a90: rgba(7, 26, 49, 0.9);
+  --color-neutral-alpha-magnolia-a05: rgba(252, 251, 248, 0.05);
+  --color-neutral-alpha-magnolia-a10: rgba(252, 251, 248, 0.1);
+  --color-neutral-alpha-magnolia-a20: rgba(252, 251, 248, 0.2);
+  --color-neutral-alpha-magnolia-a30: rgba(252, 251, 248, 0.3);
+  --color-neutral-alpha-magnolia-a40: rgba(252, 251, 248, 0.4);
+  --color-neutral-alpha-magnolia-a70: rgba(252, 251, 248, 0.698);
+  --color-neutral-alpha-magnolia-a90: rgba(252, 251, 248, 0.9);
+  --color-brand-cobalt: #1e5ea7;
+  --color-brand-cornflower: #6bb1ff;
+  --color-brand-navy: #0e396a;
+  --color-brand-lake: #4890e3;
+  --color-brand-sky: #c1defe;
+  --color-brand-rain: #edf5ff;
+  --color-brand-cloud: #f4f9ff;
+  --color-brand-haze: #f7f4fc;
+  --color-brand-lavender: #eae3fa;
+  --color-brand-lilac: #b89ffa;
+  --color-brand-iris: #d4c2ff;
+  --color-brand-plum: #4d3589;
+  --color-brand-alpha-cornflower-a20: rgba(107, 177, 255, 0.2);
+  --color-brand-alpha-cornflower-a30: rgba(107, 177, 255, 0.3);
+  --color-brand-alpha-cornflower-a60: rgba(107, 177, 255, 0.6);
+  --color-brand-alpha-cornflower-a70: rgba(107, 177, 255, 0.698);
+  --color-hue-jade: #5ddfd7;
+  --color-hue-seafoam: #baf0ec;
+  --color-hue-lime: #dbee9f;
+  --color-hue-honeydew: #f2f8de;
+  --color-hue-olive: #556425;
+  --color-hue-avocado: #343c17;
+  --color-hue-sunbeam: #fcf1de;
+  --color-hue-peach: #ffd39d;
+  --color-hue-tangerine: #f8961f;
+  --color-hue-coffee: #5d3e20;
+  --color-ramp-blue-100: #d5e8fe;
+  --color-ramp-blue-150: #c1defe;
+  --color-ramp-blue-250: #84c1ff;
+  --color-ramp-blue-700: #114580;
+  --color-ramp-blue-800: #0c2d54;
+  --color-ramp-green-150: #cee67e;
+  --color-ramp-green-200: #bad855;
+  --color-ramp-green-700: #3f491b;
+  --color-ramp-neutral-200: #c6ccd2;
+  --color-ramp-neutral-300: #a4aeb7;
+  --color-ramp-neutral-350: #93a0aa;
+  --color-ramp-neutral-450: #748491;
+  --color-ramp-neutral-650: #49535c;
+  --color-ramp-neutral-700: #3d464e;
+  --color-ramp-neutral-750: #323a41;
+  --color-ramp-orange-025: #fcfbf8;
+  --color-ramp-red-100: #fedfda;
+  --color-ramp-red-150: #fcd1ca;
+  --color-ramp-red-500: #b32812;
+  --color-ramp-red-700: #841f0e;
+  --color-ramp-yellow-100: #ffe67c;
+  --color-ramp-yellow-150: #ffd843;
+  --color-ramp-yellow-750: #473700;
+  --color-status-error: #b32812;
+  --color-booking-blue-025: #f4f9ff;
+  --color-booking-blue-050: #edf5ff;
+  --color-booking-blue-100: #d5e8fe;
+  --color-booking-blue-150: #c1defe;
+  --color-booking-blue-200: #a3d0ff;
+  --color-booking-blue-250: #84c1ff;
+  --color-booking-blue-300: #6bb1ff;
+  --color-booking-blue-350: #58a1f2;
+  --color-booking-blue-400: #4890e3;
+  --color-booking-blue-450: #3c84d6;
+  --color-booking-blue-500: #3278c8;
+  --color-booking-blue-550: #286cb9;
+  --color-booking-blue-600: #1e5ea7;
+  --color-booking-blue-650: #175295;
+  --color-booking-blue-700: #114580;
+  --color-booking-primary: #3c84d6;
+  --color-booking-primary-alt: #3278c8;
+  --color-booking-primary-darker-10: #286cb9;
+  --color-booking-primary-darker-30: #175295;
+  --color-booking-primary-level2: #6bb1ff;
+  --color-booking-primary-level3: #d5e8fe;
+  --color-booking-primary-level4: #edf5ff;
+  --color-booking-primary-text: #ffffff;
+  --color-booking-text: #0b0d0f;
+  --color-booking-text-level2: #545f69;
+  --color-booking-static-text: #0b0d0f;
+  --color-booking-text-secondary-1: #272e33;
+  --color-booking-text-secondary-2: #286cb9;
+  --color-booking-text-secondary-3: #1e5ea7;
+  --color-booking-text-secondary-4: #ffffff;
+  --color-booking-grey-1: #545f69;
+  --color-booking-grey-2: #a4aeb7;
+  --color-booking-grey-3: #b5bdc4;
+  --color-booking-grey-4: #e4e6e9;
+  --color-booking-bg-grey: #f8f9f9;
+  --color-booking-bg-white-veil: rgba(255, 255, 255, 0.7);
+  --color-booking-ink: #0a2540;
+  --color-booking-blue: #006bff;
+  --color-booking-blue-text: #004eba;
+  --color-booking-day-fill: #f4f8ff;
+  --color-booking-hairline: #d4e0ed;
+  --color-booking-month-nav: #a6bbd1;
+  --radius-xxs: 4px;
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-3xl: 40px;
+  --radius-4xl: 48px;
+  --radius-full: 9999px;
+  --radius-btn-small: 8px;
+  --radius-btn-standard: 10px;
+  --radius-button-pill: 20px;
+  --radius-cta: 16px;
+  --radius-card-modal: 48px;
+  --radius-card-plan: 40px;
+  --radius-field: 16px;
+  --radius-day: 0.5;
+  --radius-slot: 8px;
+  --easing-in: cubic-bezier(0.4, 0.0, 1.0, 1.0);
+  --easing-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --easing-in-out: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --easing-default: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --duration-default: 150ms;
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 40px;
+  --spacing-3xl: 48px;
+  --spacing-4xl: 56px;
+  --spacing-5xl: 64px;
+  --spacing-section-default: 120px;
+  --spacing-section-large: 96px;
+  --spacing-section-medium: 64px;
+  --spacing-section-small: 48px;
+  --spacing-page-padding-horizontal: 120px;
+  --spacing-btn-vertical-standard: 12px;
+  --spacing-btn-vertical-small: 12px;
+  --spacing-btn-vertical-tertiary: 8px;
+  --spacing-ui-section-y: 96px;
+  --spacing-gap-xxs: 4px;
+  --spacing-gap-xs: 8px;
+  --spacing-gap-sm: 12px;
+  --spacing-gap-md: 16px;
+  --spacing-gap-lg: 24px;
+  --spacing-gap-xl: 32px;
+  --spacing-gap-2xl: 48px;
+  --spacing-gap-3xl: 56px;
+  --spacing-gap-4xl: 64px;
+  --spacing-gap-8xl: 128px;
+  --layout-max-width: 1920px;
+  --layout-header-height: 68px;
+  --layout-header-height-mobile: 56px;
+  --layout-mobile-nav-height: 64px;
+  --layout-header-panel-default: 924px;
+  --layout-header-panel-product: 576px;
+  --layout-header-panel-resources: 1005px;
+  --layout-max-width-heading: 640px;
+  --layout-max-width-subhead: 560px;
+  --layout-section-padding-x: 40px;
+  --layout-breakpoint-tb: 768px;
+  --layout-breakpoint-sdsk: 1024px;
+  --layout-breakpoint-dsk: 1280px;
+  --shadow-ui-sm: 0px 4px 5px 0px rgba(95, 109, 119, 0.04), 0px 6px 10px 0px rgba(95, 109, 119, 0.05);
+  --shadow-ui-md: 0px 4px 5px 0px rgba(95, 109, 119, 0.04), 0px 4px 10px 0px rgba(95, 109, 119, 0.03), 0px 10px 20px 0px rgba(95, 109, 119, 0.05);
+  --shadow-ui-lg: 0px 4px 5px 0px rgba(95, 109, 119, 0.04), 0px 8px 15px 0px rgba(95, 109, 119, 0.03), 0px 15px 30px 0px rgba(95, 109, 119, 0.06);
+  --shadow-ui-xl: 0px 4px 5px 0px rgba(95, 109, 119, 0.04), 0px 8px 15px 0px rgba(95, 109, 119, 0.03), 0px 30px 50px 0px rgba(95, 109, 119, 0.08);
+  --shadow-ui-2xl: 0px 4px 5px 0px rgba(95, 109, 119, 0.04), 0px 10px 15px 0px rgba(95, 109, 119, 0.04), 0px 40px 50px 0px rgba(95, 109, 119, 0.1);
+  --shadow-dark-sm: 0px 4px 5px 0px rgba(11, 13, 15, 0.2), 0px 6px 10px 0px rgba(11, 13, 15, 0.2);
+  --shadow-dark-md: 0px 4px 5px 0px rgba(11, 13, 15, 0.2), 0px 4px 10px 0px rgba(11, 13, 15, 0.2), 0px 10px 20px 0px rgba(11, 13, 15, 0.2);
+  --shadow-dark-lg: 0px 4px 5px 0px rgba(11, 13, 15, 0.2), 0px 8px 15px 0px rgba(11, 13, 15, 0.2), 0px 15px 30px 0px rgba(11, 13, 15, 0.2);
+  --shadow-dark-xl: 0px 4px 5px 0px rgba(11, 13, 15, 0.2), 0px 8px 15px 0px rgba(11, 13, 15, 0.2), 0px 30px 50px 0px rgba(11, 13, 15, 0.2);
+  --shadow-dark-2xl: 0px 4px 5px 0px rgba(11, 13, 15, 0.2), 0px 10px 15px 0px rgba(11, 13, 15, 0.2), 0px 40px 50px 0px rgba(11, 13, 15, 0.2);
+  --shadow-overlay: 0px 1px 5px 0px rgba(11, 13, 15, 0.1);
+  --shadow-spotlight: 0px 2px 6px 0px rgba(11, 13, 15, 0.1);
+  --shadow-modal: 0px 32px 96px 0px rgba(25, 72, 112, 0.08), 0px 0px 24px 0px rgba(25, 72, 112, 0.08);
+  --shadow-booking-card: 0px 1px 6px 0px rgba(11, 13, 15, 0.1);
+  --shadow-card-auth: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --measured-focus-ring: #6bb1ff;
+  --measured-focus-ring-width: 2px;
+  --measured-radio-checked: #071a31;
+  --measured-slot-transition: 300ms;
+  --color-text-primary: #071a31;
+  --color-text-secondary: #5f6d77;
+  --color-text-tertiary: #93a0aa;
+  --color-surface-bg-primary: #fcfbf8;
+  --color-surface-bg-secondary: #f5f3ee;
+  --color-surface-bg-cloud: #f4f9ff;
+  --color-surface-bg-honeydew: #f2f8de;
+  --color-surface-bg-rain: #edf5ff;
+  --color-surface-fg-secondary-emphasis: #ffffff;
+  --color-border-default: #c6ccd2;
+  --color-border-strong: #93a0aa;
+  --color-border-subtle: #d8dce0;
+  --color-divider: rgba(7, 26, 49, 0.1);
+  --color-action-primary-bg: #071a31;
+  --color-action-primary-text: #fcfbf8;
+  --color-action-secondary-border: #071a31;
+  --color-action-focus-border: #6bb1ff;
+  --color-iconbutton-bg-default: rgba(7, 26, 49, 0.05);
+  --color-iconbutton-bg-hover: rgba(7, 26, 49, 0.1);
+  --color-iconbutton-bg-pressed: rgba(7, 26, 49, 0.2);
+  --color-iconbutton-border: rgba(7, 26, 49, 0.05);
+  --color-iconbutton-text: #071a31;
+  --color-badge-error-bg-default: #fedfda;
+  --color-badge-error-bg-hover: #fcd1ca;
+  --color-badge-error-text: #841f0e;
+  --color-badge-info-bg: #d5e8fe;
+  --color-badge-neutral-bg-default: rgba(7, 26, 49, 0.05);
+  --color-badge-neutral-bg-hover: rgba(7, 26, 49, 0.1);
+  --color-badge-neutral-text: #3d464e;
+  --color-badge-success-bg-default: #dbee9f;
+  --color-badge-success-bg-hover: #cee67e;
+  --color-badge-success-text: #3f491b;
+  --color-badge-warning-bg-default: #ffe67c;
+  --color-badge-warning-bg-hover: #ffd843;
+  --color-badge-warning-text: #473700;
+  --text-on-dark: var(--color-neutral-magnolia);
+  --action-link: var(--color-brand-cobalt);
+  --booking-text-primary: var(--color-booking-ink);
+  --booking-text-link: var(--color-booking-blue-text);
+  --booking-action-primary: var(--color-booking-blue);
+  --booking-action-primary-text: var(--color-booking-primary-text);
+  --booking-surface-page: var(--color-neutral-white);
+  --booking-surface-alt: var(--color-booking-bg-grey);
+  --booking-surface-day: var(--color-booking-day-fill);
+  --booking-border-card: var(--color-booking-hairline);
+  --booking-action-muted: var(--color-booking-month-nav);
+  --booking-focus-ring: var(--color-brand-cornflower);
+  --booking-surface-scrim: rgba(11, 13, 15, 0.5);
+  --component-header-height: 68px;
+  --component-header-height-mobile: 64px;
+  --component-logo-width: 156.281px;
+  --component-button-height: 48px;
+  --component-button-radius: 16px;
+  --component-nav-link-height: 35.5938px;
+  --component-mega-menu-width: 304px;
+  --component-hero-title-width: 640px;
+  --component-hero-card-height: 408.844px;
+  --component-hero-card-radius: 48px;
+  --component-button-google-height: 50px;
+  --component-badge-height: 24.7969px;
+  --component-plan-card-width: 266px;
+  --component-plan-cta-height: 50px;
+  --component-icon-button-size: 32px;
+  --component-auth-card-width: 464px;
+  --component-auth-card-radius: 48px;
+  --component-signup-card-width: 912px;
+  --component-field-height: 48.3906px;
+  --component-field-radius: 16px;
+  --component-continue-height: 50.3906px;
+  --component-booking-panel-width: 1058px;
+  --component-booking-calendar-width: 399px;
+  --component-booking-day-size: 44px;
+  --component-booking-month-nav-size: 40px;
+  --component-booking-slot-height: 52px;
+  --component-booking-slot-width: 278.391px;
+  --component-booking-event-card-width: 360px;
+  --component-mobile-nav-item-height: 57px;
+  --sg-sans: Geist, "Calendly Sans", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Wulkan Text", "Calendly Sans", ui-serif, Georgia, "Times New Roman", serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --color-text-primary: #fcfbf8;
+  --color-text-secondary: #fcfbf8;
+  --color-text-tertiary: #93a0aa;
+  --color-surface-bg-primary: #071a31;
+  --color-surface-bg-secondary: #0c2d54;
+  --color-surface-bg-cloud: #f4f9ff;
+  --color-surface-bg-honeydew: #f2f8de;
+  --color-surface-bg-rain: #edf5ff;
+  --color-surface-fg-secondary-emphasis: #0e396a;
+  --color-border-default: #c6ccd2;
+  --color-border-strong: #93a0aa;
+  --color-border-subtle: #d8dce0;
+  --color-divider: rgba(7, 26, 49, 0.1);
+  --color-action-primary-bg: #fcfbf8;
+  --color-action-primary-text: #071a31;
+  --color-action-secondary-border: #fcfbf8;
+  --color-action-focus-border: #6bb1ff;
+  --color-iconbutton-bg-default: rgba(252, 251, 248, 0.05);
+  --color-iconbutton-bg-hover: rgba(252, 251, 248, 0.1);
+  --color-iconbutton-bg-pressed: rgba(252, 251, 248, 0.2);
+  --color-iconbutton-border: rgba(252, 251, 248, 0.1);
+  --color-iconbutton-text: #fcfbf8;
+  --color-badge-error-bg-default: #fedfda;
+  --color-badge-error-bg-hover: #fcd1ca;
+  --color-badge-error-text: #841f0e;
+  --color-badge-info-bg: rgba(107, 177, 255, 0.6);
+  --color-badge-neutral-bg-default: rgba(252, 251, 248, 0.2);
+  --color-badge-neutral-bg-hover: rgba(252, 251, 248, 0.3);
+  --color-badge-neutral-text: #fcfbf8;
+  --color-badge-success-bg-default: #dbee9f;
+  --color-badge-success-bg-hover: #cee67e;
+  --color-badge-success-text: #3f491b;
+  --color-badge-warning-bg-default: #ffe67c;
+  --color-badge-warning-bg-hover: #ffd843;
+  --color-badge-warning-text: #473700;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-text-primary, #071a31); background: var(--color-surface-bg-primary, #fcfbf8); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.1 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-text-primary, #071a31); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-border-subtle, #d8dce0); }
+.lead { max-width: 62ch; color: var(--color-text-primary, #071a31); opacity: .8; }
+.note { font-size: 13px; color: var(--color-text-primary, #071a31); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-text-primary, #071a31); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--color-surface-bg-primary, #071a31); padding: 12px; border-radius: 8px; }
+.pal.dark .nm, .pal.dark .vl { color: var(--color-text-primary, #fcfbf8); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-border-subtle, #d8dce0); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-text-primary, #071a31); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-border-subtle, #d8dce0); background: var(--color-neutral-white, #fff); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-text-primary, #071a31); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-border-subtle, #d8dce0); overflow: hidden; background: var(--color-surface-bg-primary, #fcfbf8); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 68px); padding: 0 12px 0 22px; font-size: 15px; color: var(--color-text-primary, #071a31); }
+.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 48px); padding: 0 16px; font-size: 16px; font-weight: 400; border-radius: var(--radius-cta, 16px); border: 1px solid transparent; }
+.btn.primary { background: var(--color-action-primary-bg, #071a31); color: var(--color-action-primary-text, #fcfbf8); }
+.btn.outline { border-color: var(--color-action-secondary-border, #071a31); color: var(--color-text-primary, #071a31); }
+.btn.google { height: var(--component-button-google-height, 50px); border-radius: var(--radius-button-pill, 20px); background: var(--color-surface-bg-primary, #fcfbf8); color: var(--color-text-primary, #071a31); border-color: var(--color-action-secondary-border, #071a31); font-weight: 500; }
+.hero { color: var(--color-text-primary, #071a31); padding: 72px 40px; font: 500 60px/1.1 var(--sg-sans); letter-spacing: -2px; text-align: left; }
+.hero small { display: block; font: 400 18px/1.4 var(--sg-sans); color: var(--color-text-secondary, #5f6d77); letter-spacing: 0; margin: 16px 0 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-border-default, #c6ccd2); padding: 14px; font-size: 13px; background: var(--color-neutral-white, #fff); }
+.tile b { display: block; font: 500 18px/1.25 var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-border-subtle, #d8dce0); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-border-subtle, #d8dce0); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--color-text-primary, #071a31); opacity: .65; font-family: var(--sg-mono); }
+.bill { display: inline-flex; gap: 10px; font-size: 15px; align-items: center; }
+.bill .dot { width: 20px; height: 20px; border-radius: 50%; border: 1px solid var(--color-border-default, #c6ccd2); background: var(--color-neutral-white, #fff); display: inline-flex; align-items: center; justify-content: center; }
+.bill .dot.on { border-color: var(--color-text-primary, #071a31); }
+.bill .dot.on i { width: 12px; height: 12px; border-radius: 50%; background: var(--color-text-primary, #071a31); display: block; }
+/* ---- booking mock ---- */
+.bk { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--booking-surface-page, #fff); font-family: "Proxima Nova", var(--sg-sans); }
+.bk-cal { padding: 18px; border-right: 1px solid var(--booking-border-card, #d4e0ed); color: var(--booking-text-primary, #0a2540); font-size: 14px; }
+.bk-cal .mo { display: flex; justify-content: space-between; align-items: center; font-weight: 700; margin-bottom: 10px; }
+.bk-cal .mo span { color: var(--booking-action-muted, #a6bbd1); }
+.bk-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.bk-days i { height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-style: normal; color: var(--booking-text-primary, #0a2540); font-size: 13px; }
+.bk-days i.on { background: var(--booking-surface-day, #f4f8ff); color: var(--booking-text-link, #004eba); }
+.bk-days i.sel { background: var(--booking-action-primary, #006bff); color: var(--booking-action-primary-text, #fff); font-weight: 700; }
+.bk-slots { padding: 18px; display: flex; flex-direction: column; gap: 8px; }
+.bk-slot { height: var(--component-booking-slot-height, 52px); border: 1px solid var(--booking-action-primary, #006bff); border-radius: var(--radius-slot, 8px); color: var(--booking-text-link, #004eba); font: 700 16px/1 "Proxima Nova", var(--sg-sans); display: flex; align-items: center; justify-content: center; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Calendly style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Calendly, measured</h2>
+  <p class="lead">calendly.com is two products signed out: an Astro/Tailwind marketing site and the public invitee booking pages (a separate booking-kit application). The marketing site declares its token layer — the named hues (midnight #071a31, magnolia #fcfbf8, cornflower #6bb1ff, cobalt #1e5ea7 and the tints), the --text-ui ramp from 72px huge to 12px overline, the --radius-ui scale, the --spacing/--gap scales and three served faces (Calendly Sans, Geist, Wulkan Text) — and paints it light with .dark islands. The booking surface declares its own camelCase layer (--coreColorBlue*, --primary-color*, --fontFamily*) and paints the calendar with blues the atomic CSS never names: #006bff, #004eba, #f4f8ff — measured off the live components. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from calendly.com on 2026-11-12, signed out, in headless Chromium. The workspace behind /app/login is a documented boundary; the invitee flow was captured read-only — a day was selected but no time slot was ever confirmed, and the login/signup forms were never filled. Calendly Sans, Geist, Wulkan Text and Proxima Nova are served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">Every marketing page carries the same chrome on the magnolia field: the wordmark, the Products/Solutions/Resources mega-menu triggers, Talk to sales, a bordered Log In and the midnight Get-started pill at 16px radius. The Google SSO button keeps the same field colour at a 20px radius; keyboard focus draws a 2px solid cornflower outline.</p>
+  <div class="mock" style="padding:20px">
+    <div class="navbar"><span class="wm">calendly</span><span>Products &#9662;</span><span>Solutions &#9662;</span><span>Enterprise</span><span>Resources &#9662;</span><span>Pricing</span><span class="sp"></span><span>Talk to sales</span><span class="btn outline" style="height:40px;font-size:14px">Log In</span><span class="btn primary" style="height:40px;font-size:14px">Get started</span></div>
+    <div class="hero">Easy scheduling ahead<small>Calendly is your scheduling automation platform for eliminating the back-and-forth emails for finding the perfect time.</small><span class="btn google">Sign up with Google</span></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing centres a Monthly/Yearly radio — a white circle with a midnight dot when checked — above white plan cards at a 40px painted radius; each card's action is the midnight pill at 50px high.</p>
+  <div class="mock" style="padding:20px">
+    <div style="text-align:center;margin-bottom:18px"><span class="bill"><span class="dot"><i></i></span>Monthly</span> <span class="bill"><span class="dot on"><i></i></span>Yearly</span></div>
+    <div class="grid">
+      <div class="tile" style="border-radius:var(--radius-card-plan,40px);border:none;box-shadow:var(--shadow-ui-md,0 4px 10px rgba(95,109,119,.1))"><b>Standard</b><span class="sub">$10/seat/mo</span></div>
+      <div class="tile" style="border-radius:var(--radius-card-plan,40px);border:none;box-shadow:var(--shadow-ui-md,0 4px 10px rgba(95,109,119,.1))"><b>Teams</b><span class="sub">$16/seat/mo</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn primary">Get started</span></div>
+  </div>
+
+  <h2 class="sh">The dark islands</h2>
+  <p class="lead">Dark sections — the hero gradient card, the footer card — scope a .dark class that re-binds the same role tokens: the field goes midnight, the primary button inverts to magnolia with midnight text, and the icon-button/badge fills switch to magnolia translucencies.</p>
+  <div class="mock dark" style="padding:20px;background:var(--color-surface-bg-primary,#071a31);color:var(--color-text-primary,#fcfbf8)">
+    <div class="grid">
+      <div class="tile" style="border-radius:var(--radius-card-modal,48px);background:var(--color-surface-bg-secondary,#0c2d54);border:none;color:var(--color-text-primary,#fcfbf8)"><b style="color:var(--color-text-primary,#fcfbf8)">Smarter scheduling</b><span class="sub" style="color:var(--color-text-primary,#fcfbf8);opacity:.75">for teams and enterprise</span></div>
+      <div class="tile" style="border-radius:var(--radius-card-modal,48px);background:var(--color-surface-fg-secondary-emphasis,#0e396a);border:none;color:var(--color-text-primary,#fcfbf8)"><b style="color:var(--color-text-primary,#fcfbf8)">Connect your tools</b><span class="sub" style="color:var(--color-text-primary,#fcfbf8);opacity:.75">100+ integrations</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn" style="height:44px;border-radius:var(--radius-cta,16px);background:var(--color-action-primary-bg,#fcfbf8);color:var(--color-action-primary-text,#071a31);padding:0 18px;font-size:14px">Learn more</span></div>
+  </div>
+
+  <h2 class="sh">The booking surface</h2>
+  <p class="lead">The invitee pages are a separate application: Proxima Nova at 14/21, the #0a2540 ink, enabled days on a #f4f8ff wash with #004eba numbers, the picked day locked solid #006bff, and time slots as 52px-tall 1px-blue outlines — never confirmed on this pass.</p>
+  <div class="mock" style="padding:0">
+    <div class="bk">
+      <div class="bk-cal"><div class="mo"><span>&#8249;</span> November 2026 <span>&#8250;</span></div>
+        <div class="bk-days"><i>Su</i><i>Mo</i><i>Tu</i><i>We</i><i>Th</i><i>Fr</i><i>Sa</i><i>8</i><i>9</i><i>10</i><i>11</i><i class="sel">12</i><i class="on">13</i><i class="on">14</i></div>
+      </div>
+      <div class="bk-slots"><span class="bk-slot">09:00</span><span class="bk-slot">10:00</span><span class="bk-slot">11:00</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared --color-* layer carries the named neutrals, brand blues, hue accents, ramps and status colours; the booking group holds the invitee application's own ramp plus its measured painted blues. Light and dark roles are the same declared variables, re-bound by the .dark scope.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">The --spacing/--gap scales run 4-128px with 96-120px section padding; the --radius-ui scale runs 4-48px, and the components paint inside it — 16px CTAs, 20px SSO pills, 40-48px cards, full-circle day cells. Borders are quiet: #d8dce0 subtle, #c6ccd2 default, #93a0aa strong.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Four served faces: <code>Calendly Sans</code> on headings and buttons, <code>Geist</code> on marketing body, <code>Wulkan Text</code> on editorial serif headings and <code>Proxima Nova</code> across the booking application. Sizes are the declared --text-ui steps and the booking bundle's own declarations; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --color-*/--text-ui-*/--coreColor* variables from the live stylesheets and computed styles on the elements of both applications</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component, plus the booking calendar's selected-day state</td></tr><tr><td>No provenance</td><td>Every token names its variable (and the surface it was resolved on) or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"sans":{"v":"\"Calendly Sans\",system-ui,-apple-system,\"Segoe UI\",Roboto,sans-serif","t":"fontFamily","s":"css-var --font-calendly-sans (light)","d":"Calendly Sans: headings, the wordmark, nav and button labels."},"body":{"v":"\"Geist\",system-ui,-apple-system,\"Segoe UI\",Roboto,sans-serif","t":"fontFamily","s":"css-var --font-geist (light)","d":"Geist: the marketing body and form-text stack."},"serif":{"v":"\"Wulkan Text\",system-ui,-apple-system,\"Segoe UI\",Roboto,sans-serif","t":"fontFamily","s":"css-var --font-wulkan (light)","d":"Wulkan Text: the editorial serif on section headings and pull quotes."},"system":{"v":"system-ui,-apple-system,\"Segoe UI\",Roboto,sans-serif","t":"fontFamily","s":"css-var --font-system (light)","d":"The plain system fallback stack."},"mono":{"v":"ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace","t":"fontFamily","s":"css-var --font-mono (light)","d":"The monospace stack (declared, used on code and IDs)."},"booking":{"v":"\"Proxima Nova\", sans-serif","t":"fontFamily","s":"computed fontFamily of bk-timeslot default (raw/components-computed.json)","d":"Proxima Nova: the booking application's stack."}},"size":{"huge":{"v":"72px","t":"dimension","s":"css-var --text-ui-huge (light)","d":"Declared --text-ui-huge step of the marketing type ramp."},"h1":{"v":"60px","t":"dimension","s":"css-var --text-ui-h1 (light)","d":"Declared --text-ui-h1 step of the marketing type ramp."},"h2":{"v":"48px","t":"dimension","s":"css-var --text-ui-h2 (light)","d":"Declared --text-ui-h2 step of the marketing type ramp."},"h3":{"v":"36px","t":"dimension","s":"css-var --text-ui-h3 (light)","d":"Declared --text-ui-h3 step of the marketing type ramp."},"h4":{"v":"28px","t":"dimension","s":"css-var --text-ui-h4 (light)","d":"Declared --text-ui-h4 step of the marketing type ramp."},"h5":{"v":"24px","t":"dimension","s":"css-var --text-ui-h5 (light)","d":"Declared --text-ui-h5 step of the marketing type ramp."},"h6":{"v":"20px","t":"dimension","s":"css-var --text-ui-h6 (light)","d":"Declared --text-ui-h6 step of the marketing type ramp."},"body-xl":{"v":"20px","t":"dimension","s":"css-var --text-ui-body-xl (light)","d":"Declared --text-ui-body-xl step of the marketing type ramp."},"body-lg":{"v":"18px","t":"dimension","s":"css-var --text-ui-body-lg (light)","d":"Declared --text-ui-body-lg step of the marketing type ramp."},"body-md":{"v":"16px","t":"dimension","s":"css-var --text-ui-body-md (light)","d":"Declared --text-ui-body-md step of the marketing type ramp."},"body-sm":{"v":"14px","t":"dimension","s":"css-var --text-ui-body-sm (light)","d":"Declared --text-ui-body-sm step of the marketing type ramp."},"body-xs":{"v":"12px","t":"dimension","s":"css-var --text-ui-body-xs (light)","d":"Declared --text-ui-body-xs step of the marketing type ramp."},"caption":{"v":"12px","t":"dimension","s":"css-var --text-ui-caption (light)","d":"Declared --text-ui-caption step of the marketing type ramp."},"overline":{"v":"12px","t":"dimension","s":"css-var --text-ui-overline (light)","d":"Declared --text-ui-overline step of the marketing type ramp."},"booking-body":{"v":"14px","t":"dimension","s":"css-var --fontSizeBodyMedium (bookingLight)","d":"Booking declared body size (14px)."},"booking-slot":{"v":"16px","t":"dimension","s":"computed fontSize of bk-timeslot default (raw/components-computed.json)","d":"The time-slot label size (16px)."},"mobile-hero":{"v":"40px","t":"dimension","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The hero size at 390px."},"booking-body-large":{"v":"16px","t":"dimension","s":"css-var --fontSizeBodyLarge (bookingLight)","d":"Booking declared large body (16px)."},"booking-small":{"v":"12px","t":"dimension","s":"css-var --fontSizeBodySmall (bookingLight)","d":"Booking declared small text (12px)."},"booking-headline-1":{"v":"32px","t":"dimension","s":"css-var --fontSizeHeadline1 (bookingLight)","d":"Booking headline 1 (32px)."},"booking-headline-2":{"v":"28px","t":"dimension","s":"css-var --fontSizeHeadline2 (bookingLight)","d":"Booking headline 2 (28px)."},"booking-headline-3":{"v":"24px","t":"dimension","s":"css-var --fontSizeHeadline3 (bookingLight)","d":"Booking headline 3 (24px)."},"booking-title-large":{"v":"22px","t":"dimension","s":"css-var --fontSizeTitleLarge (bookingLight)","d":"Booking title large (22px)."},"booking-xsmall":{"v":"11px","t":"dimension","s":"css-var --fontSizeXSmall (bookingLight)","d":"Booking extra small (11px)."}},"lineHeight":{"huge":{"v":1.1,"t":"number","s":"css-var --leading-ui-huge (light)","d":"Declared --leading-ui-huge (1.1)."},"h1":{"v":1.1,"t":"number","s":"css-var --leading-ui-h1 (light)","d":"Declared --leading-ui-h1 (1.1)."},"h2":{"v":1.1,"t":"number","s":"css-var --leading-ui-h2 (light)","d":"Declared --leading-ui-h2 (1.1)."},"h3":{"v":1.1,"t":"number","s":"css-var --leading-ui-h3 (light)","d":"Declared --leading-ui-h3 (1.1)."},"h4":{"v":1.2,"t":"number","s":"css-var --leading-ui-h4 (light)","d":"Declared --leading-ui-h4 (1.2)."},"h5":{"v":1.4,"t":"number","s":"css-var --leading-ui-h5 (light)","d":"Declared --leading-ui-h5 (1.4)."},"h6":{"v":1.4,"t":"number","s":"css-var --leading-ui-h6 (light)","d":"Declared --leading-ui-h6 (1.4)."},"body-xl":{"v":1.4,"t":"number","s":"css-var --leading-ui-body-xl (light)","d":"Declared --leading-ui-body-xl (1.4)."},"body-lg":{"v":1.4,"t":"number","s":"css-var --leading-ui-body-lg (light)","d":"Declared --leading-ui-body-lg (1.4)."},"body-md":{"v":1.4,"t":"number","s":"css-var --leading-ui-body-md (light)","d":"Declared --leading-ui-body-md (1.4)."},"body-sm":{"v":1.4,"t":"number","s":"css-var --leading-ui-body-sm (light)","d":"Declared --leading-ui-body-sm (1.4)."},"body-xs":{"v":1.4,"t":"number","s":"css-var --leading-ui-body-xs (light)","d":"Declared --leading-ui-body-xs (1.4)."},"caption":{"v":1.4,"t":"number","s":"css-var --leading-ui-caption (light)","d":"Declared --leading-ui-caption (1.4)."},"overline":{"v":1,"t":"number","s":"css-var --leading-ui-overline (light)","d":"Declared --leading-ui-overline (1)."},"booking-body":{"v":"24px","t":"dimension","s":"computed lineHeight of bk-panel default (raw/components-computed.json)","d":"The booking body leading (21px on 14px)."},"booking-lineheight":{"v":1.4286,"t":"number","s":"css-var --lineHeightBodyMedium (bookingLight)","d":"Booking body leading (1.4286)."}},"tracking":{"tighter":{"v":"-2px","t":"dimension","s":"css-var --tracking-ui-tighter (light)","d":"The -2px display tracking (hero and section heads)."},"tight":{"v":"-1px","t":"dimension","s":"css-var --tracking-ui-tight (light)","d":"The -1px tracking."},"none":{"v":"0px","t":"dimension","s":"css-var --tracking-ui-none (light)","d":"Zero tracking."},"loose":{"v":"1px","t":"dimension","s":"css-var --tracking-ui-loose (light)","d":"The +1px loose tracking (overlines)."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"css-var --font-weight-regular (light)","d":"400 body weight."},"medium":{"v":500,"t":"fontWeight","s":"css-var --font-weight-medium (light)","d":"500 heading/label weight."},"semibold":{"v":600,"t":"fontWeight","s":"css-var --font-weight-semibold (light)","d":"600."},"bold":{"v":700,"t":"fontWeight","s":"css-var --font-weight-bold (light)","d":"700 (booking time slots, strong text)."},"booking-button":{"v":500,"t":"fontWeight","s":"css-var --fontWeightButton (bookingLight)","d":"Booking button label weight (500)."}}},"color":{"neutral":{"midnight":{"v":"#071a31","t":"color","s":"css-var --color-midnight (light)","d":"Midnight #071a31: the brand ink, dark CTA fill and .dark island field."},"magnolia":{"v":"#fcfbf8","t":"color","s":"css-var --color-magnolia (light)","d":"Magnolia #fcfbf8: the warm off-white page field and text-on-dark."},"white":{"v":"#ffffff","t":"color","s":"css-var --color-white (light)","d":"Pure white: cards, fields and the booking surface."},"black":{"v":"#000000","t":"color","s":"css-var --color-black (light)","d":"Pure black (the computed body color before text vars paint)."},"linen":{"v":"#f5f3ee","t":"color","s":"css-var --color-linen (light)","d":"Linen #f5f3ee: the secondary surface tint."},"ash":{"v":"#e4e6e9","t":"color","s":"css-var --color-ash (light)","d":"Ash #e4e6e9: light grey fills."},"silver":{"v":"#d8dce0","t":"color","s":"css-var --color-silver (light)","d":"Silver #d8dce0: the subtle border tone."},"steel":{"v":"#5f6d77","t":"color","s":"css-var --color-steel (light)","d":"Steel #5f6d77: secondary text grey-blue."},"smoke":{"v":"#f5f5f7","t":"color","s":"css-var --color-smoke (light)","d":"Smoke #f5f5f7."},"gray-50":{"v":"#f9fafb","t":"color","s":"css-var --color-gray-50 (light)","d":"Tailwind gray 50."},"gray-200":{"v":"#e5e7eb","t":"color","s":"css-var --color-gray-200 (light)","d":"Tailwind gray 200 (field borders)."},"gray-300":{"v":"#d1d5dc","t":"color","s":"css-var --color-gray-300 (light)","d":"Tailwind gray 300."},"gray-500":{"v":"#6a7282","t":"color","s":"css-var --color-gray-500 (light)","d":"Tailwind gray 500."},"gray-600":{"v":"#4a5565","t":"color","s":"css-var --color-gray-600 (light)","d":"Tailwind gray 600."},"gray-700":{"v":"#364153","t":"color","s":"css-var --color-gray-700 (light)","d":"Tailwind gray 700."},"gray-900":{"v":"#101828","t":"color","s":"css-var --color-gray-900 (light)","d":"Tailwind gray 900."},"slate-100":{"v":"#f1f5f9","t":"color","s":"css-var --color-slate-100 (light)","d":"Tailwind slate 100."},"slate-900":{"v":"#0f172b","t":"color","s":"css-var --color-slate-900 (light)","d":"Tailwind slate 900."},"alpha":{"midnight-a05":{"v":"rgba(7, 26, 49, 0.05)","t":"color","s":"css-var --color-midnight-a05 (light)","d":"Declared translucency of the named neutral (badge, icon-button and veil fills)."},"midnight-a10":{"v":"rgba(7, 26, 49, 0.1)","t":"color","s":"css-var --color-midnight-a10 (light)","d":"Declared translucency of the named neutral (badge, icon-button and veil fills)."},"midnight-a20":{"v":"rgba(7, 26, 49, 0.2)","t":"color","s":"css-var --color-midnight-a20 (light)","d":"Declared translucency of the named neutral (badge, icon-button and veil fills)."},"midnight-a40":{"v":"rgba(7, 26, 49, 0.4)","t":"color","s":"css-var --color-midnight-a40 (light)","d":"Declared translucency of the named neutral (badge, icon-button and veil fills)."},"midnight-a50":{"v":"rgba(7, 26, 49, 0.5)","t":"color","s":"css-var --color-midnight-a50 (light)","d":"Declared translucency of the named neutral (badge, icon-button and veil fills)."},"midnight-a60":{"v":"rgba(7, 26, 49, 0.6)","t":"color","s":"css-var --color-midnight-a60 (light)","d":"Declared translucency of the named neutral (badge, icon-button and veil fills)."},"midnight-a90":{"v":"rgba(7, 26, 49, 0.9)","t":"color","s":"css-var --color-midnight-a90 (light)","d":"Declared translucency of the named neutral (badge, icon-button and veil fills)."},"magnolia-a05":{"v":"rgba(252, 251, 248, 0.05)","t":"color","s":"css-var --color-magnolia-a05 (light)","d":"Declared translucency of the named neutral (badge, icon-button and veil fills)."},"magnolia-a10":{"v":"rgba(252, 251, 248, 0.1)","t":"color","s":"css-var --color-magnolia-a10 (light)","d":"Declared translucency of the named neutral (badge, icon-button and veil fills)."},"magnolia-a20":{"v":"rgba(252, 251, 248, 0.2)","t":"color","s":"css-var --color-magnolia-a20 (light)","d":"Declared translucency of the named neutral (badge, icon-button and veil fills)."},"magnolia-a30":{"v":"rgba(252, 251, 248, 0.3)","t":"color","s":"css-var --color-magnolia-a30 (light)","d":"Declared translucency of the named neutral (badge, icon-button and veil fills)."},"magnolia-a40":{"v":"rgba(252, 251, 248, 0.4)","t":"color","s":"css-var --color-magnolia-a40 (light)","d":"Declared translucency of the named neutral (badge, icon-button and veil fills)."},"magnolia-a70":{"v":"rgba(252, 251, 248, 0.698)","t":"color","s":"css-var --color-magnolia-a70 (light)","d":"Declared translucency of the named neutral (badge, icon-button and veil fills)."},"magnolia-a90":{"v":"rgba(252, 251, 248, 0.9)","t":"color","s":"css-var --color-magnolia-a90 (light)","d":"Declared translucency of the named neutral (badge, icon-button and veil fills)."}}},"brand":{"cobalt":{"v":"#1e5ea7","t":"color","s":"css-var --color-cobalt (light)","d":"Cobalt #1e5ea7: deep brand blue."},"cornflower":{"v":"#6bb1ff","t":"color","s":"css-var --color-cornflower (light)","d":"Cornflower #6bb1ff: the focus-ring and info-badge blue."},"navy":{"v":"#0e396a","t":"color","s":"css-var --color-navy (light)","d":"Navy #0e396a: dark-island emphasis surface."},"lake":{"v":"#4890e3","t":"color","s":"css-var --color-lake (light)","d":"Lake #4890e3: mid brand blue."},"sky":{"v":"#c1defe","t":"color","s":"css-var --color-sky (light)","d":"Sky #c1defe: pale brand blue."},"rain":{"v":"#edf5ff","t":"color","s":"css-var --color-rain (light)","d":"Rain #edf5ff: section tint."},"cloud":{"v":"#f4f9ff","t":"color","s":"css-var --color-cloud (light)","d":"Cloud #f4f9ff: section tint."},"haze":{"v":"#f7f4fc","t":"color","s":"css-var --color-haze (light)","d":"Haze #f7f4fc: section tint."},"lavender":{"v":"#eae3fa","t":"color","s":"css-var --color-lavender (light)","d":"Lavender #eae3fa: section tint."},"lilac":{"v":"#b89ffa","t":"color","s":"css-var --color-lilac (light)","d":"Lilac #b89ffa."},"iris":{"v":"#d4c2ff","t":"color","s":"css-var --color-iris (light)","d":"Iris #d4c2ff."},"plum":{"v":"#4d3589","t":"color","s":"css-var --color-plum (light)","d":"Plum #4d3589: the purple accent in gradients."},"alpha":{"cornflower-a20":{"v":"rgba(107, 177, 255, 0.2)","t":"color","s":"css-var --color-cornflower-a20 (light)","d":"Declared cornflower translucency (info badge on dark, highlights)."},"cornflower-a30":{"v":"rgba(107, 177, 255, 0.3)","t":"color","s":"css-var --color-cornflower-a30 (light)","d":"Declared cornflower translucency (info badge on dark, highlights)."},"cornflower-a60":{"v":"rgba(107, 177, 255, 0.6)","t":"color","s":"css-var --color-cornflower-a60 (light)","d":"Declared cornflower translucency (info badge on dark, highlights)."},"cornflower-a70":{"v":"rgba(107, 177, 255, 0.698)","t":"color","s":"css-var --color-cornflower-a70 (light)","d":"Declared cornflower translucency (info badge on dark, highlights)."}}},"hue":{"jade":{"v":"#5ddfd7","t":"color","s":"css-var --color-jade (light)","d":"Jade #5ddfd7."},"seafoam":{"v":"#baf0ec","t":"color","s":"css-var --color-seafoam (light)","d":"Seafoam #baf0ec."},"lime":{"v":"#dbee9f","t":"color","s":"css-var --color-lime (light)","d":"Lime #dbee9f (the success-badge green)."},"honeydew":{"v":"#f2f8de","t":"color","s":"css-var --color-honeydew (light)","d":"Honeydew #f2f8de: section tint."},"olive":{"v":"#556425","t":"color","s":"css-var --color-olive (light)","d":"Olive #556425."},"avocado":{"v":"#343c17","t":"color","s":"css-var --color-avocado (light)","d":"Avocado #343c17."},"sunbeam":{"v":"#fcf1de","t":"color","s":"css-var --color-sunbeam (light)","d":"Sunbeam #fcf1de: warm section tint."},"peach":{"v":"#ffd39d","t":"color","s":"css-var --color-peach (light)","d":"Peach #ffd39d."},"tangerine":{"v":"#f8961f","t":"color","s":"css-var --color-tangerine (light)","d":"Tangerine #f8961f."},"coffee":{"v":"#5d3e20","t":"color","s":"css-var --color-coffee (light)","d":"Coffee #5d3e20."}},"ramp":{"blue":{"100":{"v":"#d5e8fe","t":"color","s":"css-var --color-ramp-blue-100 (light)","d":"Declared blue ramp step 100 (badge and status fills/text)."},"150":{"v":"#c1defe","t":"color","s":"css-var --color-ramp-blue-150 (light)","d":"Declared blue ramp step 150 (badge and status fills/text)."},"250":{"v":"#84c1ff","t":"color","s":"css-var --color-ramp-blue-250 (light)","d":"Declared blue ramp step 250 (badge and status fills/text)."},"700":{"v":"#114580","t":"color","s":"css-var --color-ramp-blue-700 (light)","d":"Declared blue ramp step 700 (badge and status fills/text)."},"800":{"v":"#0c2d54","t":"color","s":"css-var --color-ramp-blue-800 (light)","d":"Declared blue ramp step 800 (badge and status fills/text)."}},"green":{"150":{"v":"#cee67e","t":"color","s":"css-var --color-ramp-green-150 (light)","d":"Declared green ramp step 150 (badge and status fills/text)."},"200":{"v":"#bad855","t":"color","s":"css-var --color-ramp-green-200 (light)","d":"Declared green ramp step 200 (badge and status fills/text)."},"700":{"v":"#3f491b","t":"color","s":"css-var --color-ramp-green-700 (light)","d":"Declared green ramp step 700 (badge and status fills/text)."}},"neutral":{"200":{"v":"#c6ccd2","t":"color","s":"css-var --color-ramp-neutral-200 (light)","d":"Declared neutral ramp step 200 (badge and status fills/text)."},"300":{"v":"#a4aeb7","t":"color","s":"css-var --color-ramp-neutral-300 (light)","d":"Declared neutral ramp step 300 (badge and status fills/text)."},"350":{"v":"#93a0aa","t":"color","s":"css-var --color-ramp-neutral-350 (light)","d":"Declared neutral ramp step 350 (badge and status fills/text)."},"450":{"v":"#748491","t":"color","s":"css-var --color-ramp-neutral-450 (light)","d":"Declared neutral ramp step 450 (badge and status fills/text)."},"650":{"v":"#49535c","t":"color","s":"css-var --color-ramp-neutral-650 (light)","d":"Declared neutral ramp step 650 (badge and status fills/text)."},"700":{"v":"#3d464e","t":"color","s":"css-var --color-ramp-neutral-700 (light)","d":"Declared neutral ramp step 700 (badge and status fills/text)."},"750":{"v":"#323a41","t":"color","s":"css-var --color-ramp-neutral-750 (light)","d":"Declared neutral ramp step 750 (badge and status fills/text)."}},"orange":{"025":{"v":"#fcfbf8","t":"color","s":"css-var --color-ramp-orange-025 (light)","d":"Declared orange ramp step 025 (badge and status fills/text)."}},"red":{"100":{"v":"#fedfda","t":"color","s":"css-var --color-ramp-red-100 (light)","d":"Declared red ramp step 100 (badge and status fills/text)."},"150":{"v":"#fcd1ca","t":"color","s":"css-var --color-ramp-red-150 (light)","d":"Declared red ramp step 150 (badge and status fills/text)."},"500":{"v":"#b32812","t":"color","s":"css-var --color-ramp-red-500 (light)","d":"Declared red ramp step 500 (badge and status fills/text)."},"700":{"v":"#841f0e","t":"color","s":"css-var --color-ramp-red-700 (light)","d":"Declared red ramp step 700 (badge and status fills/text)."}},"yellow":{"100":{"v":"#ffe67c","t":"color","s":"css-var --color-ramp-yellow-100 (light)","d":"Declared yellow ramp step 100 (badge and status fills/text)."},"150":{"v":"#ffd843","t":"color","s":"css-var --color-ramp-yellow-150 (light)","d":"Declared yellow ramp step 150 (badge and status fills/text)."},"750":{"v":"#473700","t":"color","s":"css-var --color-ramp-yellow-750 (light)","d":"Declared yellow ramp step 750 (badge and status fills/text)."}}},"status":{"error":{"v":"#b32812","t":"color","s":"css-var --color-status-error (light)","d":"Error #b32812."}},"booking":{"blue-025":{"v":"#f4f9ff","t":"color","s":"css-var --coreColorBlue025 (bookingLight)","d":"Booking blue ramp 025 #f4f9ff."},"blue-050":{"v":"#edf5ff","t":"color","s":"css-var --coreColorBlue050 (bookingLight)","d":"Booking blue ramp 050 #edf5ff."},"blue-100":{"v":"#d5e8fe","t":"color","s":"css-var --coreColorBlue100 (bookingLight)","d":"Booking blue ramp 100 #d5e8fe."},"blue-150":{"v":"#c1defe","t":"color","s":"css-var --coreColorBlue150 (bookingLight)","d":"Booking blue ramp 150 #c1defe."},"blue-200":{"v":"#a3d0ff","t":"color","s":"css-var --coreColorBlue200 (bookingLight)","d":"Booking blue ramp 200 #a3d0ff."},"blue-250":{"v":"#84c1ff","t":"color","s":"css-var --coreColorBlue250 (bookingLight)","d":"Booking blue ramp 250 #84c1ff."},"blue-300":{"v":"#6bb1ff","t":"color","s":"css-var --coreColorBlue300 (bookingLight)","d":"Booking blue ramp 300 #6bb1ff."},"blue-350":{"v":"#58a1f2","t":"color","s":"css-var --coreColorBlue350 (bookingLight)","d":"Booking blue ramp 350 #58a1f2."},"blue-400":{"v":"#4890e3","t":"color","s":"css-var --coreColorBlue400 (bookingLight)","d":"Booking blue ramp 400 #4890e3."},"blue-450":{"v":"#3c84d6","t":"color","s":"css-var --coreColorBlue450 (bookingLight)","d":"Booking blue ramp 450 #3c84d6."},"blue-500":{"v":"#3278c8","t":"color","s":"css-var --coreColorBlue500 (bookingLight)","d":"Booking blue ramp 500 #3278c8."},"blue-550":{"v":"#286cb9","t":"color","s":"css-var --coreColorBlue550 (bookingLight)","d":"Booking blue ramp 550 #286cb9."},"blue-600":{"v":"#1e5ea7","t":"color","s":"css-var --coreColorBlue600 (bookingLight)","d":"Booking blue ramp 600 #1e5ea7."},"blue-650":{"v":"#175295","t":"color","s":"css-var --coreColorBlue650 (bookingLight)","d":"Booking blue ramp 650 #175295."},"blue-700":{"v":"#114580","t":"color","s":"css-var --coreColorBlue700 (bookingLight)","d":"Booking blue ramp 700 #114580."},"primary":{"v":"#3c84d6","t":"color","s":"css-var --primary-color (bookingLight)","d":"Declared booking primary #3c84d6."},"primary-alt":{"v":"#3278c8","t":"color","s":"css-var --primary-color-alternative (bookingLight)","d":"Booking primary alternative #3278c8."},"primary-darker-10":{"v":"#286cb9","t":"color","s":"css-var --primary-color-darker-10 (bookingLight)","d":"Booking primary darker 10% #286cb9."},"primary-darker-30":{"v":"#175295","t":"color","s":"css-var --primary-color-darker-30 (bookingLight)","d":"Booking primary darker 30% #175295."},"primary-level2":{"v":"#6bb1ff","t":"color","s":"css-var --primary-color-level2 (bookingLight)","d":"Booking primary level 2 #6bb1ff."},"primary-level3":{"v":"#d5e8fe","t":"color","s":"css-var --primary-color-level3 (bookingLight)","d":"Booking primary level 3 #d5e8fe."},"primary-level4":{"v":"#edf5ff","t":"color","s":"css-var --primary-color-level4 (bookingLight)","d":"Booking primary level 4 #edf5ff."},"primary-text":{"v":"#ffffff","t":"color","s":"css-var --primary-text-color (bookingLight)","d":"White text on the booking primary."},"text":{"v":"#0b0d0f","t":"color","s":"css-var --text-color (bookingLight)","d":"Booking text #0b0d0f."},"text-level2":{"v":"#545f69","t":"color","s":"css-var --text-color-level2 (bookingLight)","d":"Booking muted text #545f69."},"static-text":{"v":"#0b0d0f","t":"color","s":"css-var --static-text-color (bookingLight)","d":"Booking static text #0b0d0f."},"text-secondary-1":{"v":"#272e33","t":"color","s":"css-var --text-color-secondary-1 (bookingLight)","d":"Booking secondary text #272e33."},"text-secondary-2":{"v":"#286cb9","t":"color","s":"css-var --text-color-secondary-2 (bookingLight)","d":"Booking secondary blue #286cb9."},"text-secondary-3":{"v":"#1e5ea7","t":"color","s":"css-var --text-color-secondary-3 (bookingLight)","d":"Booking secondary deep blue #1e5ea7."},"text-secondary-4":{"v":"#ffffff","t":"color","s":"css-var --text-color-secondary-4 (bookingLight)","d":"Booking secondary white."},"grey-1":{"v":"#545f69","t":"color","s":"css-var --color-grey-1 (bookingLight)","d":"Booking grey 1 #545f69."},"grey-2":{"v":"#a4aeb7","t":"color","s":"css-var --color-grey-2 (bookingLight)","d":"Booking grey 2 #a4aeb7."},"grey-3":{"v":"#b5bdc4","t":"color","s":"css-var --color-grey-3 (bookingLight)","d":"Booking grey 3 #b5bdc4."},"grey-4":{"v":"#e4e6e9","t":"color","s":"css-var --color-grey-4 (bookingLight)","d":"Booking grey 4 #e4e6e9."},"bg-grey":{"v":"#f8f9f9","t":"color","s":"css-var --color-bg-grey-2 (bookingLight)","d":"Booking alt field #f8f9f9."},"bg-white-veil":{"v":"rgba(255, 255, 255, 0.7)","t":"color","s":"css-var --color-bg-white-l-2 (bookingLight)","d":"Booking white veil 70%."},"ink":{"v":"#0a2540","t":"color","s":"computed color of bk-panel default (raw/components-computed.json)","d":"The #0a2540 booking ink (not a declared var)."},"blue":{"v":"#006bff","t":"color","s":"computed borderTopColor of bk-timeslot default (raw/components-computed.json)","d":"The #006bff painted blue: time-slot border and selected-day fill."},"blue-text":{"v":"#004eba","t":"color","s":"computed color of bk-day default (raw/components-computed.json)","d":"The #004eba link/day-number blue."},"day-fill":{"v":"#f4f8ff","t":"color","s":"computed paint of bk-day default (raw/components-computed.json)","d":"The #f4f8ff enabled-day wash."},"hairline":{"v":"#d4e0ed","t":"color","s":"computed borderTopColor of bk-event default (raw/components-computed.json)","d":"The #d4e0ed card hairline on booking pages."},"month-nav":{"v":"#a6bbd1","t":"color","s":"computed color of bk-month-nav default (raw/components-computed.json)","d":"The #a6bbd1 month-nav grey-blue."}}},"radius":{"xxs":{"v":"4px","t":"dimension","s":"css-var --radius-ui-xxs (light)","d":"Declared --radius-ui-xxs (4px)."},"xs":{"v":"8px","t":"dimension","s":"css-var --radius-ui-xs (light)","d":"Declared --radius-ui-xs (8px)."},"sm":{"v":"12px","t":"dimension","s":"css-var --radius-ui-sm (light)","d":"Declared --radius-ui-sm (12px)."},"md":{"v":"16px","t":"dimension","s":"css-var --radius-ui-md (light)","d":"Declared --radius-ui-md (16px)."},"lg":{"v":"20px","t":"dimension","s":"css-var --radius-ui-lg (light)","d":"Declared --radius-ui-lg (20px)."},"xl":{"v":"24px","t":"dimension","s":"css-var --radius-ui-xl (light)","d":"Declared --radius-ui-xl (24px)."},"2xl":{"v":"32px","t":"dimension","s":"css-var --radius-ui-2xl (light)","d":"Declared --radius-ui-2xl (32px)."},"3xl":{"v":"40px","t":"dimension","s":"css-var --radius-ui-3xl (light)","d":"Declared --radius-ui-3xl (40px)."},"4xl":{"v":"48px","t":"dimension","s":"css-var --radius-ui-4xl (light)","d":"Declared --radius-ui-4xl (48px)."},"full":{"v":"9999px","t":"dimension","s":"css-var --radius-ui-full (light)","d":"Declared --radius-ui-full (9999px)."},"btn-small":{"v":"8px","t":"dimension","s":"css-var --radius-btn-small (light)","d":"Small button radius (8px)."},"btn-standard":{"v":"10px","t":"dimension","s":"css-var --radius-btn-standard (light)","d":"Standard button radius (10px) — declared; marketing buttons paint larger."},"button-pill":{"v":"20px","t":"dimension","s":"painted layer radius under signup-google default (raw/components-computed.json)","d":"The 20px pill the Google button paints."},"cta":{"v":"16px","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)","d":"The 16px radius on the header CTA / nav buttons."},"card-modal":{"v":"48px","t":"dimension","s":"painted layer radius under login-card default (raw/components-computed.json)","d":"The 48px radius the login/signup cards paint."},"card-plan":{"v":"40px","t":"dimension","s":"painted layer radius under plan-card default (raw/components-computed.json)","d":"The 40px radius plan cards paint."},"field":{"v":"16px","t":"dimension","s":"painted layer radius under email-field default (raw/components-computed.json)","d":"The 16px input radius."},"day":{"v":0.5,"t":"number","s":"painted layer radius under bk-day default (raw/components-computed.json)","d":"Booking day cells are full circles (50%)."},"slot":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of bk-timeslot default (raw/components-computed.json)","d":"The 8px time-slot radius."}},"easing":{"in":{"v":[0.4,0.0,1.0,1.0],"t":"cubicBezier","s":"css-var --ease-in (light)","d":"Declared ease-in (.4,0,1,1)."},"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-out (light)","d":"Declared ease-out (0,0,.2,1)."},"in-out":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-in-out (light)","d":"Declared ease-in-out (.4,0,.2,1)."},"default":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --default-transition-timing-function (light)","d":"The default transition curve."}},"duration":{"default":{"v":"150ms","t":"duration","s":"css-var --default-transition-duration (light)","d":"The declared default transition duration (0.15s)."}},"spacing":{"xxs":{"v":"4px","t":"dimension","s":"css-var --spacing-xxs (light)","d":"Declared --spacing-xxs (4px)."},"xs":{"v":"8px","t":"dimension","s":"css-var --spacing-xs (light)","d":"Declared --spacing-xs (8px)."},"sm":{"v":"12px","t":"dimension","s":"css-var --spacing-sm (light)","d":"Declared --spacing-sm (12px)."},"md":{"v":"16px","t":"dimension","s":"css-var --spacing-md (light)","d":"Declared --spacing-md (16px)."},"lg":{"v":"24px","t":"dimension","s":"css-var --spacing-lg (light)","d":"Declared --spacing-lg (24px)."},"xl":{"v":"32px","t":"dimension","s":"css-var --spacing-xl (light)","d":"Declared --spacing-xl (32px)."},"2xl":{"v":"40px","t":"dimension","s":"css-var --spacing-2xl (light)","d":"Declared --spacing-2xl (40px)."},"3xl":{"v":"48px","t":"dimension","s":"css-var --spacing-3xl (light)","d":"Declared --spacing-3xl (48px)."},"4xl":{"v":"56px","t":"dimension","s":"css-var --spacing-4xl (light)","d":"Declared --spacing-4xl (56px)."},"5xl":{"v":"64px","t":"dimension","s":"css-var --spacing-5xl (light)","d":"Declared --spacing-5xl (64px)."},"section-default":{"v":"120px","t":"dimension","s":"css-var --spacing-section-default (light)","d":"Default section padding (120px)."},"section-large":{"v":"96px","t":"dimension","s":"css-var --spacing-section-large (light)","d":"Large section padding (96px)."},"section-medium":{"v":"64px","t":"dimension","s":"css-var --spacing-section-medium (light)","d":"Medium section padding (64px)."},"section-small":{"v":"48px","t":"dimension","s":"css-var --spacing-section-small (light)","d":"Small section padding (48px)."},"page-padding-horizontal":{"v":"120px","t":"dimension","s":"css-var --spacing-page-padding-horizontal (light)","d":"Page horizontal padding (120px)."},"btn-vertical-standard":{"v":"12px","t":"dimension","s":"css-var --spacing-btn-vertical-standard (light)","d":"Button vertical padding (12px)."},"btn-vertical-small":{"v":"12px","t":"dimension","s":"css-var --spacing-btn-vertical-small (light)","d":"Small-button vertical padding (12px)."},"btn-vertical-tertiary":{"v":"8px","t":"dimension","s":"css-var --spacing-btn-vertical-tertiary (light)","d":"Tertiary-button vertical padding (8px)."},"ui-section-y":{"v":"96px","t":"dimension","s":"css-var --spacing-ui-section-y (light)","d":"UI section y padding (96px)."},"gap":{"xxs":{"v":"4px","t":"dimension","s":"css-var --gap-xxs (light)","d":"Declared --gap-xxs (4px)."},"xs":{"v":"8px","t":"dimension","s":"css-var --gap-xs (light)","d":"Declared --gap-xs (8px)."},"sm":{"v":"12px","t":"dimension","s":"css-var --gap-sm (light)","d":"Declared --gap-sm (12px)."},"md":{"v":"16px","t":"dimension","s":"css-var --gap-md (light)","d":"Declared --gap-md (16px)."},"lg":{"v":"24px","t":"dimension","s":"css-var --gap-lg (light)","d":"Declared --gap-lg (24px)."},"xl":{"v":"32px","t":"dimension","s":"css-var --gap-xl (light)","d":"Declared --gap-xl (32px)."},"2xl":{"v":"48px","t":"dimension","s":"css-var --gap-2xl (light)","d":"Declared --gap-2xl (48px)."},"3xl":{"v":"56px","t":"dimension","s":"css-var --gap-3xl (light)","d":"Declared --gap-3xl (56px)."},"4xl":{"v":"64px","t":"dimension","s":"css-var --gap-4xl (light)","d":"Declared --gap-4xl (64px)."},"8xl":{"v":"128px","t":"dimension","s":"css-var --gap-8xl (light)","d":"Declared --gap-8xl (128px)."}}},"layout":{"max-width":{"v":"1920px","t":"dimension","s":"css-var --layout-max-width (light)","d":"The 1920px layout cap."},"header-height":{"v":"68px","t":"dimension","s":"css-var --header-height (light)","d":"The 68px desktop header."},"header-height-mobile":{"v":"56px","t":"dimension","s":"css-var --header-height-mobile (light)","d":"The 56px compact header var (the measured mobile header is 64px)."},"mobile-nav-height":{"v":"64px","t":"dimension","s":"css-var --mobile-nav-height (light)","d":"The 64px mobile nav bar."},"header-panel-default":{"v":"924px","t":"dimension","s":"css-var --header-panel-width-default (light)","d":"Mega-menu panel width (924px)."},"header-panel-product":{"v":"576px","t":"dimension","s":"css-var --header-panel-width-product (light)","d":"Product menu panel width (576px)."},"header-panel-resources":{"v":"1005px","t":"dimension","s":"css-var --header-panel-width-resources (light)","d":"Resources menu panel width (1005px)."},"max-width-heading":{"v":"640px","t":"dimension","s":"css-var --max-width-heading (light)","d":"The 640px heading measure."},"max-width-subhead":{"v":"560px","t":"dimension","s":"css-var --max-width-subhead (light)","d":"The 560px subhead measure."},"section-padding-x":{"v":"40px","t":"dimension","s":"css-var --section-padding-x (light)","d":"Section horizontal padding (40px)."},"breakpoint-tb":{"v":"768px","t":"dimension","s":"css-var --breakpoint-ui-tb (light)","d":"Tablet breakpoint (768px)."},"breakpoint-sdsk":{"v":"1024px","t":"dimension","s":"css-var --breakpoint-ui-sdsk (light)","d":"Small-desktop breakpoint (1024px)."},"breakpoint-dsk":{"v":"1280px","t":"dimension","s":"css-var --breakpoint-ui-dsk (light)","d":"Desktop breakpoint (1280px)."}},"shadow":{"ui-sm":{"v":[{"color":"rgba(95, 109, 119, 0.04)","offsetX":"0px","offsetY":"4px","blur":"5px","spread":"0px"},{"color":"rgba(95, 109, 119, 0.05)","offsetX":"0px","offsetY":"6px","blur":"10px","spread":"0px"}],"t":"shadow","s":"css-var --var-shadow-ui-sm (light)","d":"Small UI elevation."},"ui-md":{"v":[{"color":"rgba(95, 109, 119, 0.04)","offsetX":"0px","offsetY":"4px","blur":"5px","spread":"0px"},{"color":"rgba(95, 109, 119, 0.03)","offsetX":"0px","offsetY":"4px","blur":"10px","spread":"0px"},{"color":"rgba(95, 109, 119, 0.05)","offsetX":"0px","offsetY":"10px","blur":"20px","spread":"0px"}],"t":"shadow","s":"css-var --var-shadow-ui-md (light)","d":"Medium UI elevation."},"ui-lg":{"v":[{"color":"rgba(95, 109, 119, 0.04)","offsetX":"0px","offsetY":"4px","blur":"5px","spread":"0px"},{"color":"rgba(95, 109, 119, 0.03)","offsetX":"0px","offsetY":"8px","blur":"15px","spread":"0px"},{"color":"rgba(95, 109, 119, 0.06)","offsetX":"0px","offsetY":"15px","blur":"30px","spread":"0px"}],"t":"shadow","s":"css-var --var-shadow-ui-lg (light)","d":"Large UI elevation (the plan cards paint this)."},"ui-xl":{"v":[{"color":"rgba(95, 109, 119, 0.04)","offsetX":"0px","offsetY":"4px","blur":"5px","spread":"0px"},{"color":"rgba(95, 109, 119, 0.03)","offsetX":"0px","offsetY":"8px","blur":"15px","spread":"0px"},{"color":"rgba(95, 109, 119, 0.08)","offsetX":"0px","offsetY":"30px","blur":"50px","spread":"0px"}],"t":"shadow","s":"css-var --var-shadow-ui-xl (light)","d":"Extra-large UI elevation."},"ui-2xl":{"v":[{"color":"rgba(95, 109, 119, 0.04)","offsetX":"0px","offsetY":"4px","blur":"5px","spread":"0px"},{"color":"rgba(95, 109, 119, 0.04)","offsetX":"0px","offsetY":"10px","blur":"15px","spread":"0px"},{"color":"rgba(95, 109, 119, 0.1)","offsetX":"0px","offsetY":"40px","blur":"50px","spread":"0px"}],"t":"shadow","s":"css-var --var-shadow-ui-2xl (light)","d":"2xl UI elevation."},"dark-sm":{"v":[{"color":"rgba(11, 13, 15, 0.2)","offsetX":"0px","offsetY":"4px","blur":"5px","spread":"0px"},{"color":"rgba(11, 13, 15, 0.2)","offsetX":"0px","offsetY":"6px","blur":"10px","spread":"0px"}],"t":"shadow","s":"css-var --var-shadow-ui-dark-sm (light)","d":"Small elevation on dark surfaces."},"dark-md":{"v":[{"color":"rgba(11, 13, 15, 0.2)","offsetX":"0px","offsetY":"4px","blur":"5px","spread":"0px"},{"color":"rgba(11, 13, 15, 0.2)","offsetX":"0px","offsetY":"4px","blur":"10px","spread":"0px"},{"color":"rgba(11, 13, 15, 0.2)","offsetX":"0px","offsetY":"10px","blur":"20px","spread":"0px"}],"t":"shadow","s":"css-var --var-shadow-ui-dark-md (light)","d":"Medium elevation on dark."},"dark-lg":{"v":[{"color":"rgba(11, 13, 15, 0.2)","offsetX":"0px","offsetY":"4px","blur":"5px","spread":"0px"},{"color":"rgba(11, 13, 15, 0.2)","offsetX":"0px","offsetY":"8px","blur":"15px","spread":"0px"},{"color":"rgba(11, 13, 15, 0.2)","offsetX":"0px","offsetY":"15px","blur":"30px","spread":"0px"}],"t":"shadow","s":"css-var --var-shadow-ui-dark-lg (light)","d":"Large elevation on dark."},"dark-xl":{"v":[{"color":"rgba(11, 13, 15, 0.2)","offsetX":"0px","offsetY":"4px","blur":"5px","spread":"0px"},{"color":"rgba(11, 13, 15, 0.2)","offsetX":"0px","offsetY":"8px","blur":"15px","spread":"0px"},{"color":"rgba(11, 13, 15, 0.2)","offsetX":"0px","offsetY":"30px","blur":"50px","spread":"0px"}],"t":"shadow","s":"css-var --var-shadow-ui-dark-xl (light)","d":"XL elevation on dark."},"dark-2xl":{"v":[{"color":"rgba(11, 13, 15, 0.2)","offsetX":"0px","offsetY":"4px","blur":"5px","spread":"0px"},{"color":"rgba(11, 13, 15, 0.2)","offsetX":"0px","offsetY":"10px","blur":"15px","spread":"0px"},{"color":"rgba(11, 13, 15, 0.2)","offsetX":"0px","offsetY":"40px","blur":"50px","spread":"0px"}],"t":"shadow","s":"css-var --var-shadow-ui-dark-2xl (light)","d":"2xl elevation on dark."},"overlay":{"v":[{"color":"rgba(11, 13, 15, 0.1)","offsetX":"0px","offsetY":"1px","blur":"5px","spread":"0px"}],"t":"shadow","s":"css-var --overlay-shadow (bookingLight)","d":"Overlay/dropdown elevation (booking bundle)."},"spotlight":{"v":[{"color":"rgba(11, 13, 15, 0.1)","offsetX":"0px","offsetY":"2px","blur":"6px","spread":"0px"}],"t":"shadow","s":"css-var --spotlight-shadow (bookingLight)","d":"Spotlight card elevation (booking bundle)."},"modal":{"v":[{"color":"rgba(25, 72, 112, 0.08)","offsetX":"0px","offsetY":"32px","blur":"96px","spread":"0px"},{"color":"rgba(25, 72, 112, 0.08)","offsetX":"0px","offsetY":"0px","blur":"24px","spread":"0px"}],"t":"shadow","s":"css-var --shadowModal (bookingLight)","d":"Modal elevation (booking bundle)."},"booking-card":{"v":[{"color":"rgba(11, 13, 15, 0.1)","offsetX":"0px","offsetY":"1px","blur":"6px","spread":"0px"}],"t":"shadow","s":"css-var --card-shadow (bookingLight)","d":"The booking card elevation rgba(11,13,15,.1) 0 1 6."},"card-auth":{"v":[{"color":"rgba(0, 0, 0, 0.1)","offsetX":"0px","offsetY":"20px","blur":"25px","spread":"-5px"},{"color":"rgba(0, 0, 0, 0.1)","offsetX":"0px","offsetY":"8px","blur":"10px","spread":"-6px"}],"t":"shadow","s":"computed boxShadow of login-card default (raw/components-computed.json)","d":"The shadow-xl the login and signup cards paint (0 20px 25px -5px + 0 8px 10px -6px, 10% black)."}},"measured":{"focus-ring":{"v":"#6bb1ff","t":"color","s":"computed outline of plan-cta focus-visible (raw/components-computed.json)","d":"The 2px solid #6bb1ff keyboard-focus outline (offset -2px)."},"focus-ring-width":{"v":"2px","t":"dimension","s":"computed outlineWidth of plan-cta focus-visible (raw/components-computed.json)","d":"The 2px focus outline width."},"radio-checked":{"v":"#071a31","t":"color","s":"painted checked dot under billing-radio default (raw/components-computed.json)","d":"The midnight dot inside a checked billing radio."},"slot-transition":{"v":"300ms","t":"duration","s":"computed transition of bk-timeslot default (raw/components-computed.json)","d":"The time-slot hover transition. (width, transform)"}}},"light":{"color":{"text":{"primary":{"v":"#071a31","t":"color","s":"css-var --color-text-primary (light); declared --color-* role on the marketing sheet","d":"Body and heading ink (#071a31)."},"secondary":{"v":"#5f6d77","t":"color","s":"css-var --color-text-secondary (light); declared --color-* role on the marketing sheet","d":"Secondary text (#5f6d77)."},"tertiary":{"v":"#93a0aa","t":"color","s":"css-var --color-text-tertiary (light); declared --color-* role on the marketing sheet","d":"Tertiary text (#93a0aa)."}},"surface":{"bg":{"primary":{"v":"#fcfbf8","t":"color","s":"css-var --color-surface-bg-primary (light); declared --color-* role on the marketing sheet","d":"The page field (#fcfbf8 magnolia)."},"secondary":{"v":"#f5f3ee","t":"color","s":"css-var --color-surface-bg-secondary (light); declared --color-* role on the marketing sheet","d":"The alt field (#f5f3ee linen)."},"cloud":{"v":"#f4f9ff","t":"color","s":"css-var --color-surface-bg-cloud (light); declared --color-* role on the marketing sheet","d":"Cloud-tinted section field."},"honeydew":{"v":"#f2f8de","t":"color","s":"css-var --color-surface-bg-honeydew (light); declared --color-* role on the marketing sheet","d":"Honeydew-tinted section field."},"rain":{"v":"#edf5ff","t":"color","s":"css-var --color-surface-bg-rain (light); declared --color-* role on the marketing sheet","d":"Rain-tinted section field."}},"fg":{"secondary":{"emphasis":{"v":"#ffffff","t":"color","s":"css-var --color-surface-fg-secondary-emphasis (light); declared --color-* role on the marketing sheet","d":"The raised secondary surface (#ffffff)."}}}},"border":{"default":{"v":"#c6ccd2","t":"color","s":"css-var --color-border-default (light); declared --color-* role on the marketing sheet","d":"Field and card borders (#c6ccd2)."},"strong":{"v":"#93a0aa","t":"color","s":"css-var --color-border-strong (light); declared --color-* role on the marketing sheet","d":"Strong borders (#93a0aa)."},"subtle":{"v":"#d8dce0","t":"color","s":"css-var --color-border-subtle (light); declared --color-* role on the marketing sheet","d":"Subtle borders (#d8dce0)."}},"divider":{"v":"rgba(7, 26, 49, 0.1)","t":"color","s":"css-var --color-divider (light); declared --color-* role on the marketing sheet","d":"Dividers (10% midnight)."},"action":{"primary":{"bg":{"v":"#071a31","t":"color","s":"css-var --color-action-primary-bg (light); declared --color-* role on the marketing sheet","d":"Primary button fill (#071a31)."},"text":{"v":"#fcfbf8","t":"color","s":"css-var --color-action-primary-text (light); declared --color-* role on the marketing sheet","d":"Text on the primary fill (#fcfbf8)."}},"secondary":{"border":{"v":"#071a31","t":"color","s":"css-var --color-action-secondary-border (light); declared --color-* role on the marketing sheet","d":"Secondary-button outline (#071a31)."}},"focus":{"border":{"v":"#6bb1ff","t":"color","s":"css-var --color-action-focus-border (light); declared --color-* role on the marketing sheet","d":"Focus ring (#6bb1ff cornflower)."}}},"iconbutton":{"bg":{"default":{"v":"rgba(7, 26, 49, 0.05)","t":"color","s":"css-var --color-iconbutton-bg (light); declared --color-* role on the marketing sheet","d":"Icon-button rest fill."},"hover":{"v":"rgba(7, 26, 49, 0.1)","t":"color","s":"css-var --color-iconbutton-bg-hover (light); declared --color-* role on the marketing sheet","d":"Icon-button hover fill."},"pressed":{"v":"rgba(7, 26, 49, 0.2)","t":"color","s":"css-var --color-iconbutton-bg-pressed (light); declared --color-* role on the marketing sheet","d":"Icon-button pressed fill."}},"border":{"v":"rgba(7, 26, 49, 0.05)","t":"color","s":"css-var --color-iconbutton-border (light); declared --color-* role on the marketing sheet","d":"Icon-button border."},"text":{"v":"#071a31","t":"color","s":"css-var --color-iconbutton-text (light); declared --color-* role on the marketing sheet","d":"Icon-button glyph."}},"badge":{"error":{"bg":{"default":{"v":"#fedfda","t":"color","s":"css-var --color-badge-error-bg (light); declared --color-* role on the marketing sheet","d":"Error badge fill."},"hover":{"v":"#fcd1ca","t":"color","s":"css-var --color-badge-error-bg-hover (light); declared --color-* role on the marketing sheet","d":"Error badge hover fill."}},"text":{"v":"#841f0e","t":"color","s":"css-var --color-badge-error-text (light); declared --color-* role on the marketing sheet","d":"Error badge text."}},"info":{"bg":{"v":"#d5e8fe","t":"color","s":"css-var --color-badge-info-bg (light); declared --color-* role on the marketing sheet","d":"Info badge fill."}},"neutral":{"bg":{"default":{"v":"rgba(7, 26, 49, 0.05)","t":"color","s":"css-var --color-badge-neutral-bg (light); declared --color-* role on the marketing sheet","d":"Neutral badge fill."},"hover":{"v":"rgba(7, 26, 49, 0.1)","t":"color","s":"css-var --color-badge-neutral-bg-hover (light); declared --color-* role on the marketing sheet","d":"Neutral badge hover fill."}},"text":{"v":"#3d464e","t":"color","s":"css-var --color-badge-neutral-text (light); declared --color-* role on the marketing sheet","d":"Neutral badge text."}},"success":{"bg":{"default":{"v":"#dbee9f","t":"color","s":"css-var --color-badge-success-bg (light); declared --color-* role on the marketing sheet","d":"Success badge fill."},"hover":{"v":"#cee67e","t":"color","s":"css-var --color-badge-success-bg-hover (light); declared --color-* role on the marketing sheet","d":"Success badge hover fill."}},"text":{"v":"#3f491b","t":"color","s":"css-var --color-badge-success-text (light); declared --color-* role on the marketing sheet","d":"Success badge text."}},"warning":{"bg":{"default":{"v":"#ffe67c","t":"color","s":"css-var --color-badge-warning-bg (light); declared --color-* role on the marketing sheet","d":"Warning badge fill."},"hover":{"v":"#ffd843","t":"color","s":"css-var --color-badge-warning-bg-hover (light); declared --color-* role on the marketing sheet","d":"Warning badge hover fill."}},"text":{"v":"#473700","t":"color","s":"css-var --color-badge-warning-text (light); declared --color-* role on the marketing sheet","d":"Warning badge text."}}}},"text":{"on":{"dark":{"v":"{color.neutral.magnolia}","t":"color","s":"role alias over the core palette","d":"Text on midnight fills (the .dark islands)."}}},"action":{"link":{"v":"{color.brand.cobalt}","t":"color","s":"role alias over the core palette","d":"Inline link blue (#1e5ea7)."}},"booking":{"text-primary":{"v":"{color.booking.ink}","t":"color","s":"role alias over the core palette","d":"The booking body ink (#0a2540)."},"text-link":{"v":"{color.booking.blue-text}","t":"color","s":"role alias over the core palette","d":"Booking link / day-number blue (#004eba)."},"action-primary":{"v":"{color.booking.blue}","t":"color","s":"role alias over the core palette","d":"The painted booking blue (#006bff): selected day, slot border, confirm button."},"action-primary-text":{"v":"{color.booking.primary-text}","t":"color","s":"role alias over the core palette","d":"White on the booking blue."},"surface-page":{"v":"{color.neutral.white}","t":"color","s":"role alias over the core palette","d":"The booking field (white)."},"surface-alt":{"v":"{color.booking.bg-grey}","t":"color","s":"role alias over the core palette","d":"The booking alt field (#f8f9f9)."},"surface-day":{"v":"{color.booking.day-fill}","t":"color","s":"role alias over the core palette","d":"The enabled-day wash (#f4f8ff)."},"border-card":{"v":"{color.booking.hairline}","t":"color","s":"role alias over the core palette","d":"Booking card hairline (#d4e0ed)."},"action-muted":{"v":"{color.booking.month-nav}","t":"color","s":"role alias over the core palette","d":"The month-nav grey-blue (#a6bbd1)."},"focus-ring":{"v":"{color.brand.cornflower}","t":"color","s":"role alias over the core palette","d":"Booking focus ring (cornflower)."},"surface-scrim":{"v":"rgba(11, 13, 15, 0.5)","t":"color","s":"css-var --modal-scrim-backdrop (bookingLight)","d":"The booking modal scrim (50% dark)."}},"component":{"header":{"height":{"v":"68px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The 68px marketing header."},"height-mobile":{"v":"64px","t":"dimension","s":"computed height of m-header default (raw/components-computed.json)","d":"The 64px mobile header."}},"logo":{"width":{"v":"156.281px","t":"dimension","s":"computed width of logo default (raw/components-computed.json)","d":"The Calendly wordmark width."}},"button":{"height":{"v":"48px","t":"dimension","s":"computed height of nav-cta default (raw/components-computed.json)","d":"The 48px header CTA (Get started)."},"radius":{"v":"16px","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)","d":"Header CTA radius (16px)."}},"nav-link":{"height":{"v":"35.5938px","t":"dimension","s":"computed height of nav-link default (raw/components-computed.json)","d":"Nav link height."}},"mega-menu":{"width":{"v":"304px","t":"dimension","s":"computed width of nav-dropdown default (raw/components-computed.json)","d":"The Products mega-menu panel width."}},"hero-title":{"width":{"v":"640px","t":"dimension","s":"computed width of hero-title default (raw/components-computed.json)","d":"The hero heading measure (640px)."}},"hero-card":{"height":{"v":"408.844px","t":"dimension","s":"computed height of hero-card default (raw/components-computed.json)","d":"The hero gradient card height."},"radius":{"v":"48px","t":"dimension","s":"painted layer radius under hero-card default (raw/components-computed.json)","d":"The hero card's 48px painted radius."}},"button-google":{"height":{"v":"50px","t":"dimension","s":"computed height of signup-google default (raw/components-computed.json)","d":"The 50px SSO button."}},"badge":{"height":{"v":"24.7969px","t":"dimension","s":"computed height of badge default (raw/components-computed.json)","d":"The badge chip height."}},"plan-card":{"width":{"v":"266px","t":"dimension","s":"computed width of plan-card default (raw/components-computed.json)","d":"Plan card width."}},"plan-cta":{"height":{"v":"50px","t":"dimension","s":"computed height of plan-cta default (raw/components-computed.json)","d":"The 50px plan CTA."}},"icon-button":{"size":{"v":"32px","t":"dimension","s":"computed height of icon-button default (raw/components-computed.json)","d":"The 32px square icon button."}},"auth-card":{"width":{"v":"464px","t":"dimension","s":"computed width of login-card default (raw/components-computed.json)","d":"The login card width (464px)."},"radius":{"v":"48px","t":"dimension","s":"painted layer radius under login-card default (raw/components-computed.json)","d":"The auth card's 48px radius."}},"signup-card":{"width":{"v":"912px","t":"dimension","s":"computed width of signup-card default (raw/components-computed.json)","d":"The wider two-column signup card (912px)."}},"field":{"height":{"v":"48.3906px","t":"dimension","s":"computed height of email-field default (raw/components-computed.json)","d":"Auth input height (48px)."},"radius":{"v":"16px","t":"dimension","s":"painted layer radius under email-field default (raw/components-computed.json)","d":"Auth input radius (16px)."}},"continue":{"height":{"v":"50.3906px","t":"dimension","s":"computed height of continue-btn default (raw/components-computed.json)","d":"The continue button height."}},"booking-panel":{"width":{"v":"1058px","t":"dimension","s":"computed width of bk-panel default (raw/components-computed.json)","d":"The booking dialog width (~1058px)."}},"booking-calendar":{"width":{"v":"399px","t":"dimension","s":"computed width of bk-calendar default (raw/components-computed.json)","d":"The month grid width (~399px)."}},"booking-day":{"size":{"v":"44px","t":"dimension","s":"computed height of bk-day default (raw/components-computed.json)","d":"The 44px day cell."}},"booking-month-nav":{"size":{"v":"40px","t":"dimension","s":"computed height of bk-month-nav default (raw/components-computed.json)","d":"The 40px month-nav button."}},"booking-slot":{"height":{"v":"52px","t":"dimension","s":"computed height of bk-timeslot default (raw/components-computed.json)","d":"The 52px time slot."},"width":{"v":"278.391px","t":"dimension","s":"computed width of bk-timeslot default (raw/components-computed.json)","d":"The time-slot width."}},"booking-event-card":{"width":{"v":"360px","t":"dimension","s":"computed width of bk-event default (raw/components-computed.json)","d":"The booking event card width."}},"mobile-nav-item":{"height":{"v":"57px","t":"dimension","s":"computed height of m-nav-item default (raw/components-computed.json)","d":"Mobile menu item height (57px)."}}}},"dark":{"color":{"text":{"primary":{"v":"#fcfbf8","t":"color","s":"css-var --color-text-primary (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Text on .dark islands (#fcfbf8)."},"secondary":{"v":"#fcfbf8","t":"color","s":"css-var --color-text-secondary (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Secondary text on dark (#fcfbf8 — same as primary here)."},"tertiary":{"v":"#93a0aa","t":"color","s":"css-var --color-text-tertiary (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Tertiary text on dark (unchanged: #93a0aa)."}},"surface":{"bg":{"primary":{"v":"#071a31","t":"color","s":"css-var --color-surface-bg-primary (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"The .dark island field (#071a31 midnight)."},"secondary":{"v":"#0c2d54","t":"color","s":"css-var --color-surface-bg-secondary (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"The .dark secondary field (#0c2d54)."},"cloud":{"v":"#f4f9ff","t":"color","s":"css-var --color-surface-bg-cloud (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Cloud-tinted section field (unchanged on dark)."},"honeydew":{"v":"#f2f8de","t":"color","s":"css-var --color-surface-bg-honeydew (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Honeydew-tinted section field (unchanged on dark)."},"rain":{"v":"#edf5ff","t":"color","s":"css-var --color-surface-bg-rain (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Rain-tinted section field (unchanged on dark)."}},"fg":{"secondary":{"emphasis":{"v":"#0e396a","t":"color","s":"css-var --color-surface-fg-secondary-emphasis (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"The .dark raised secondary surface (#0e396a navy)."}}}},"border":{"default":{"v":"#c6ccd2","t":"color","s":"css-var --color-border-default (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Field and card borders (unchanged on dark)."},"strong":{"v":"#93a0aa","t":"color","s":"css-var --color-border-strong (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Strong borders (unchanged on dark)."},"subtle":{"v":"#d8dce0","t":"color","s":"css-var --color-border-subtle (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Subtle borders (unchanged on dark)."}},"divider":{"v":"rgba(7, 26, 49, 0.1)","t":"color","s":"css-var --color-divider (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Dividers (unchanged on dark)."},"action":{"primary":{"bg":{"v":"#fcfbf8","t":"color","s":"css-var --color-action-primary-bg (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Primary fill inverted on dark (#fcfbf8)."},"text":{"v":"#071a31","t":"color","s":"css-var --color-action-primary-text (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Text on the inverted fill (#071a31)."}},"secondary":{"border":{"v":"#fcfbf8","t":"color","s":"css-var --color-action-secondary-border (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Secondary-button outline on dark (#fcfbf8)."}},"focus":{"border":{"v":"#6bb1ff","t":"color","s":"css-var --color-action-focus-border (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Focus ring (cornflower)."}}},"iconbutton":{"bg":{"default":{"v":"rgba(252, 251, 248, 0.05)","t":"color","s":"css-var --color-iconbutton-bg (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Icon-button rest fill on dark."},"hover":{"v":"rgba(252, 251, 248, 0.1)","t":"color","s":"css-var --color-iconbutton-bg-hover (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Icon-button hover fill on dark."},"pressed":{"v":"rgba(252, 251, 248, 0.2)","t":"color","s":"css-var --color-iconbutton-bg-pressed (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Icon-button pressed fill on dark."}},"border":{"v":"rgba(252, 251, 248, 0.1)","t":"color","s":"css-var --color-iconbutton-border (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Icon-button border on dark."},"text":{"v":"#fcfbf8","t":"color","s":"css-var --color-iconbutton-text (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Icon-button glyph on dark."}},"badge":{"error":{"bg":{"default":{"v":"#fedfda","t":"color","s":"css-var --color-badge-error-bg (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Error badge fill."},"hover":{"v":"#fcd1ca","t":"color","s":"css-var --color-badge-error-bg-hover (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Error badge hover fill."}},"text":{"v":"#841f0e","t":"color","s":"css-var --color-badge-error-text (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Error badge text."}},"info":{"bg":{"v":"rgba(107, 177, 255, 0.6)","t":"color","s":"css-var --color-badge-info-bg (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Info badge fill on dark (60% cornflower)."}},"neutral":{"bg":{"default":{"v":"rgba(252, 251, 248, 0.2)","t":"color","s":"css-var --color-badge-neutral-bg (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Neutral badge fill on dark (20% magnolia)."},"hover":{"v":"rgba(252, 251, 248, 0.3)","t":"color","s":"css-var --color-badge-neutral-bg-hover (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Neutral badge hover fill on dark."}},"text":{"v":"#fcfbf8","t":"color","s":"css-var --color-badge-neutral-text (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Neutral badge text on dark."}},"success":{"bg":{"default":{"v":"#dbee9f","t":"color","s":"css-var --color-badge-success-bg (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Success badge fill."},"hover":{"v":"#cee67e","t":"color","s":"css-var --color-badge-success-bg-hover (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Success badge hover fill."}},"text":{"v":"#3f491b","t":"color","s":"css-var --color-badge-success-text (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Success badge text."}},"warning":{"bg":{"default":{"v":"#ffe67c","t":"color","s":"css-var --color-badge-warning-bg (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Warning badge fill."},"hover":{"v":"#ffd843","t":"color","s":"css-var --color-badge-warning-bg-hover (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Warning badge hover fill."}},"text":{"v":"#473700","t":"color","s":"css-var --color-badge-warning-text (dark); declared --color-* role re-bound on the marketing sheet's .dark scope","d":"Warning badge text."}}}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const lightRoles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component') && !n.startsWith('booking'));
+  if (lightRoles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of lightRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // Booking roles are aliases over the booking palette and resolve on :root.
+  const bkRoles = flat(TOK.light.booking || {}, 'booking.').filter(([, t]) => t.t === 'color');
+  if (bkRoles.length) {
+    h += `<div class="pal-h">booking roles (invitee surface)</div><div class="pal">`;
+    for (const [n, t] of bkRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // The dark set's custom properties only resolve inside a .dark scope:
+  // swatch dots must live under it or they paint the light values/unset.
+  const darkRoles = flat(TOK.dark || {}, '').filter(([n, t]) => t.t === 'color');
+  if (darkRoles.length) {
+    h += `<div class="pal-h">dark roles (.dark islands)</div><div class="pal dark">`;
+    for (const [n, t] of darkRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Calendly</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

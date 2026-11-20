@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grammarly style guide</title>
+<meta name="description" content="Grammarly (grammarly.com) design tokens and signed-out components, rendered from tokens.json with the measured and declared values, in the painted light theme and the declared dark theme.">
+<!--
+   Grammarly's display face Matter and the Super Sans Mono VF in the Origin stacks are self-hosted brand faces and are
+   not loaded here: headings fall back to Inter, exactly as the token stacks order them. Inter is
+   not loaded either (the guide makes no network requests): it draws only where it is installed,
+   and the stacks' system fallbacks otherwise.
+-->
+<style>
+:root {
+/*CORE*/
+}
+:root, [data-theme="light"] {
+/*LIGHT*/
+}
+[data-theme="dark"] {
+/*DARK*/
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--color-background-base-default); color: var(--color-text-base-default); font: 400 16px/1.5 var(--fontFamily-sans); }
+code { font-family: var(--fontFamily-mono); font-size: 12.5px; color: var(--color-text-base-subdued); }
+header { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 16px; height: 64px; padding: 0 24px; background: color-mix(in srgb, var(--color-background-base-default) 86%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border-base-subdued); }
+h1 { font: 600 17px/1.4 var(--fontFamily-sans); display: flex; align-items: center; gap: 10px; margin: 0; }
+header .sp { flex: 1; }
+.tsw { display: inline-flex; align-items: center; gap: 4px; padding: 3px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--color-border-base-subdued); font-size: 13px; color: var(--color-text-base-subdued); cursor: pointer; user-select: none; }
+.tsw input { position: absolute; opacity: 0; }
+.tsw .pick { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px; }
+.tsw .pick.on { background: var(--color-fill-selected-default); color: var(--color-text-base-default); box-shadow: 0 0 0 1px var(--color-border-base-subdued); }
+main { max-width: 1100px; margin: 0 auto; padding: 40px 24px 120px; }
+h2.sh { font: 600 24px/30px var(--fontFamily-heading); margin: 72px 0 18px; }
+h2.sh:first-of-type { margin-top: 0; }
+h3 { font: 600 16px/20px var(--fontFamily-sans); margin: 36px 0 12px; }
+p.lead { max-width: 72ch; font: 400 18px/1.55 var(--fontFamily-sans); color: var(--color-text-base-default); margin: 0 0 18px; }
+p.note { max-width: 72ch; font: 400 14px/1.55 var(--fontFamily-sans); color: var(--color-text-base-subdued); }
+.kick { font: 500 13px/18px var(--fontFamily-sans); color: var(--color-text-base-subdued); margin: 0 0 6px; }
+.ic { display: inline-block; vertical-align: -0.15em; }
+
+/* swatches */
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+.sw { display: flex; gap: 10px; align-items: center; padding: 8px; border-radius: 12px; border: 1px solid var(--color-border-base-subdued); background: var(--color-background-base-default); }
+.sw .dot { width: 34px; height: 34px; flex: none; border-radius: 9px; box-shadow: inset 0 0 0 1px var(--color-border-base-subdued); overflow: hidden; }
+.sw .nm { font: 500 12px/1.3 var(--fontFamily-mono); color: var(--color-text-base-default); word-break: break-all; }
+.sw .vl { font: 11px/1.3 var(--fontFamily-mono); color: var(--color-text-base-subdued); margin-top: 2px; }
+.grp { margin: 26px 0 8px; font: 500 13px/18px var(--fontFamily-sans); color: var(--color-text-base-subdued); }
+
+/* type rows */
+.typerow { display: grid; grid-template-columns: 220px 1fr; gap: 18px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--color-border-base-subdued); }
+.typerow .k { font: 500 12px/1.4 var(--fontFamily-mono); color: var(--color-text-base-default); }
+.typerow .k small { display: block; color: var(--color-text-base-subdued); font-weight: 400; margin-top: 2px; }
+.typerow .sample { color: var(--color-text-base-default); }
+
+/* bars + radius + shadow */
+.bars .b { display: flex; align-items: center; gap: 10px; margin: 4px 0; font: 11.5px var(--fontFamily-mono); color: var(--color-text-base-subdued); }
+.bars .b span { width: 190px; flex: none; }
+.bars .b i { height: 10px; border-radius: 5px; background: var(--color-background-brand-default); display: block; }
+.bxs { display: flex; flex-wrap: wrap; gap: 10px; }
+.bx { width: 96px; height: 64px; border: 1px solid var(--color-border-base-subdued); background: var(--color-background-base-subdued); display: flex; align-items: flex-end; padding: 7px; font: 10.5px var(--fontFamily-mono); color: var(--color-text-base-subdued); }
+.shs { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 18px; }
+.shs .box { height: 74px; border-radius: 14px; background: var(--color-background-base-default); border: 1px solid var(--color-border-base-subdued); }
+.shs .k { font: 11px var(--fontFamily-mono); color: var(--color-text-base-subdued); margin-top: 7px; }
+
+/* motion tracks */
+.track { position: relative; height: 30px; border-radius: 15px; background: var(--color-background-base-subdued); box-shadow: inset 0 0 0 1px var(--color-border-base-subdued); cursor: pointer; overflow: hidden; }
+.track .dot { position: absolute; left: 4px; top: 4px; width: 22px; height: 22px; border-radius: 50%; background: var(--color-background-brand-default); }
+.track.go .dot { left: calc(100% - 26px); }
+.mrow { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 16px; }
+.cap { font: 11px var(--fontFamily-mono); color: var(--color-text-base-subdued); display: block; margin-top: 6px; }
+
+/* buttons drawn from the --button-* tokens */
+.btnrow { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 8px 0 18px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 40px; padding: 0 20px; border: 0; border-radius: 6px; font: 500 15px/1.5 var(--fontFamily-sans); cursor: pointer; transition: background-color var(--duration-fast) ease, color var(--duration-fast) ease; }
+.btn.pri { background: var(--button-primary-background-default); color: var(--button-primary-text-default); }
+.btn.pri:hover { background: var(--button-primary-background-hover); }
+.btn.pri:active { background: var(--button-primary-background-active); }
+.btn.sec { background: var(--button-secondary-background-default); color: var(--button-secondary-text-default); box-shadow: inset 0 0 0 1px var(--button-secondary-border-default); }
+.btn.sec:hover { background: var(--button-secondary-background-hover); }
+.btn.ter { background: var(--button-tertiary-background-default); color: var(--button-tertiary-text-default); }
+.btn.ter:hover { background: var(--button-tertiary-background-hover); }
+.btn.gho { background: var(--button-ghost-background-default); color: var(--button-ghost-text-default); }
+.btn.gho:hover { background: var(--button-ghost-background-hover); color: var(--button-ghost-text-hover); }
+.btn.pro { background: var(--button-pro-background-default); color: var(--button-pro-text-default); }
+.btn.pro:hover { background: var(--button-pro-background-hover); color: var(--button-pro-text-hover); }
+.btn.prem { background: var(--button-premium-background-default); color: var(--button-premium-text-default); }
+.btn.ent { background: var(--button-enterprise-background-default); color: var(--button-enterprise-text-default); }
+.btn.crit { background: var(--button-critical-background-default); color: var(--button-critical-text-default); }
+
+/* components drawn from the tokens */
+.cells { display: flex; flex-wrap: wrap; gap: 22px; }
+.cell { flex: 1 1 300px; }
+.frame { border: 1px solid var(--color-border-base-subdued); border-radius: var(--radius-3); background: var(--color-background-base-subdued); padding: 22px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; min-height: 120px; }
+.fld { width: 100%; max-width: 340px; height: var(--component-field-height, 40px); border-radius: var(--component-field-radius, 6px); border: 1px solid var(--component-field-border, var(--color-border-base-subdued)); background: var(--color-background-base-default); font: 400 15px/1.5 var(--fontFamily-sans); color: var(--color-text-base-default); padding: 0 12px; }
+.fld::placeholder { color: var(--color-text-base-subdued); }
+.fld.is-focus { border-color: var(--color-border-focus-default); outline: none; box-shadow: 0 0 0 1px var(--color-border-focus-default); }
+.tag { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; border-radius: 12px; font: 500 12px/16px var(--fontFamily-sans); }
+.nav { display: flex; align-items: center; gap: 18px; height: var(--component-header-height, 65px); padding: 0 18px; border-radius: var(--radius-3); background: var(--color-background-base-default); border: 1px solid var(--color-border-base-subdued); font: 500 14px/1.5 var(--fontFamily-sans); width: 100%; }
+.nav a { color: var(--color-text-base-default); text-decoration: none; padding: 8px 12px; border-radius: 6px; }
+.nav a:hover { color: var(--color-text-brand-default); }
+.nav .brand { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--color-text-base-default); }
+.nav .sp { flex: 1; }
+.card { border-radius: var(--radius-4); background: var(--color-background-base-default); border: 1px solid var(--color-border-base-subdued); box-shadow: var(--elevation-base-low); padding: var(--spacing-6); width: 100%; max-width: 320px; }
+.card h4 { margin: 0 0 4px; font: 600 18px/24px var(--fontFamily-heading); }
+.card p { margin: 0; font: 400 15px/1.55 var(--fontFamily-sans); color: var(--color-text-base-subdued); }
+.card .pop { display: inline-block; background: var(--color-background-brand-default); color: var(--color-text-base-inverse); font: 600 11px/1 var(--fontFamily-sans); letter-spacing: .04em; text-transform: uppercase; padding: 4px 8px; border-radius: 4px; margin-bottom: 10px; }
+table.tok { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.tok td, table.tok th { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--color-border-base-subdued); vertical-align: top; }
+table.tok th { font: 500 13px/18px var(--fontFamily-sans); color: var(--color-text-base-subdued); }
+table.tok td:first-child { font: 500 12px var(--fontFamily-mono); color: var(--color-text-base-default); }
+table.tok td:last-child { font: 11px var(--fontFamily-mono); color: var(--color-text-base-subdued); max-width: 46ch; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Grammarly style guide</h1>
+  <span class="sp"></span>
+  <label class="tsw"><input type="checkbox" id="theme"><span class="pick on" data-p="l">Light</span><span class="pick" data-p="d">Dark (declared)</span></label>
+</header>
+<main>
+<section>
+  <h2 class="sh">Grammarly, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>, read signed-out from grammarly.com. The stylesheets carry two layered systems: the legacy GDS layer (<code>--green-60</code> ramps, the <code>--color-*</code> semantic palette, <code>--button-*</code>, <code>--tag-*</code>, <code>--space-*</code>, <code>--radius-*</code>, <code>--elevation-*</code>, <code>--z-index-*</code>) and the newer Origin layer (<code>--origin-*</code> primitives and the <code>--origin-color-*</code> semantic palette). The header pick flips <code>data-theme</code> between the painted light theme and the dark values the stylesheets <em>declare</em> under <code>[data-gds-theme="dark"]</code>/<code>[data-origin-mode="dark"]</code> — no public page mounts those attributes, so dark is reconstruction, not painted evidence. The mock controls below are rebuilt from the tokens; the real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Each token's provenance (the declaring selector, the page it resolved on, or the measurement it came from) is in the tables at the bottom and in <code>tokens.json</code> under <code>$extensions.source</code>. Matter is Grammarly's display face; it is not loaded here, so the heading samples fall back to Inter — the same fallback the token stacks name.</p>
+</section>
+
+<section>
+  <h2 class="sh">Colour</h2>
+  <p class="lead"><code>color.*</code> is the GDS semantic palette the public pages read; <code>origin.*</code> is the Origin semantic palette declared beside it. Flip the theme pick to watch the declared dark values — base ground and ink invert, brand lifts from <code>#027e6f</code> to <code>#2cc9b6</code>, the subdued tints deepen instead of lightening.</p>
+  <div class="grp">color.* — the GDS semantic layer</div>
+  <div class="swatches" id="color-out"></div>
+  <div class="grp">origin.* — the Origin semantic layer</div>
+  <div class="swatches" id="origin-out"></div>
+  <div class="grp">button.* — the GDS button tokens</div>
+  <div class="swatches" id="button-out"></div>
+  <div class="grp">tag.* — the tag fills</div>
+  <div class="swatches" id="tag-out"></div>
+</section>
+
+<section>
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The Origin ramps feed the Origin semantic layer; the legacy GDS ramps (under <code>palette.gds</code>) feed the GDS one — <code>--button-primary-background-default</code> is literally <code>var(--green-60)</code>. Both live in <code>core</code> and do not change with the theme.</p>
+  <div class="swatches" id="palette-out"></div>
+</section>
+
+<section>
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two faces: Matter for the display roles (heading-xxsmall through heading-xlarge, 14–28px), Inter for the text roles (12–18px). Headings draw at weight 600, tracking 0 throughout. The larger paragraph sizes (24/36px) the marketing ledes use are in the font table below.</p>
+  <div id="type-out"></div>
+</section>
+
+<section>
+  <h2 class="sh">Radius, space and size</h2>
+  <p class="lead">A 4px-grid system: <code>space-N</code> and <code>radius-N</code> are N&times;4px (buttons sit at radius-2 8px on the Origin scale, 6px measured on the GDS-skinned controls). Controls come in five heights, 24–52px. The named roles (button-small/medium/large) hold 4/6/8px.</p>
+  <div class="bxs" id="radius-out"></div>
+  <div class="bars" id="space-out" style="margin-top:18px"></div>
+</section>
+
+<section>
+  <h2 class="sh">Elevation</h2>
+  <p class="lead">Origin elevations are a single soft layer — ink at 15%, low/medium/high by blur and offset — while the legacy GDS pairs a shadow with a 1px outline. Dropdowns and the sticky header ride the low pair.</p>
+  <div class="shs" id="shadow-out"></div>
+</section>
+
+<section>
+  <h2 class="sh">Motion</h2>
+  <p class="lead">The GDS transition is 200ms; the Origin accordion and multiselect run 300ms on a hard cubic-bezier(0.87, 0, 0.13, 1). Click a track to run it. What the pages actually run is measured in <code>raw/motion.json</code>; the stylesheets also declare a <code>prefers-reduced-motion</code> scope.</p>
+  <div class="mrow" id="motion-out"></div>
+</section>
+
+<section>
+  <h2 class="sh">Buttons, as declared</h2>
+  <p class="lead">Seven variants on the <code>--button-*</code> tokens: primary is the brand green with white ink, pro and premium the gold, enterprise the deep purple, ghost and tertiary transparent. Hover/active come from the same tokens — the site's buttons also shrink a touch on press, which the measurements record but the tokens do not declare.</p>
+  <div class="btnrow">
+    <button class="btn pri">Sign up — it's free</button>
+    <button class="btn sec">Create account</button>
+    <button class="btn ter">Log in</button>
+    <button class="btn gho">See plans</button>
+  </div>
+  <div class="btnrow">
+    <button class="btn pro">Try Grammarly Pro</button>
+    <button class="btn prem">Premium</button>
+    <button class="btn ent">Enterprise</button>
+    <button class="btn crit">Delete</button>
+  </div>
+</section>
+
+<section>
+  <h2 class="sh">Components, rebuilt from the tokens</h2>
+  <p class="note">Mocked here from the declared and measured tokens: the real crops are in <code>components/crops/</code> and the per-state tables in <code>components.md</code>.</p>
+  <div class="cells">
+    <div class="cell"><div class="frame">
+      <div class="nav"><span class="brand">Grammarly</span><a>Product ▾</a><a>Work</a><a>Education</a><a>Resources</a><span class="sp"></span><a>Log in</a><button class="btn pri" style="height:32px;padding:0 14px;font-size:14px">Sign Up</button></div>
+      <span class="cap">top bar — 65px on white, hairline-less; the Sign Up pill is button.primary</span>
+    </div></div>
+    <div class="cell"><div class="frame">
+      <input class="fld" placeholder="Work email">
+      <input class="fld is-focus" value="name@example.com" readonly>
+      <span class="cap">field — hairline border, 6px radius; focus paints the brand focus border (measured, components.md#form-input)</span>
+    </div></div>
+  </div>
+  <div class="cells" style="margin-top:22px">
+    <div class="cell"><div class="frame">
+      <div>
+        <span class="tag" style="background:var(--tag-pro-bg);color:var(--tag-pro-text)">PRO</span>
+        <span class="tag" style="background:var(--tag-brand-bg);color:var(--color-text-base-default)">BUSINESS</span>
+        <span class="tag" style="background:var(--tag-success-bg);color:var(--color-text-base-default)">SUCCESS</span>
+        <span class="tag" style="background:var(--tag-warning-bg);color:var(--color-text-base-default)">WARNING</span>
+        <span class="tag" style="background:var(--tag-critical-bg);color:var(--color-text-base-default)">CRITICAL</span>
+        <span class="tag" style="background:var(--tag-tip-bg);color:var(--color-text-base-default)">TIP</span>
+      </div>
+      <span class="cap">tag fills — the --tag-* tokens; PRO is ink-on-gold in dark declarations</span>
+    </div></div>
+    <div class="cell"><div class="frame">
+      <div class="card"><span class="pop">Most popular</span><h4>Grammarly Pro</h4><p>Full-sentence rewrites, tone and the Pro agents.</p><div style="margin-top:12px"><button class="btn pri" style="height:32px;padding:0 14px;font-size:14px">Try for $0</button></div></div>
+      <span class="cap">plan card — 16px radius, low elevation, the brand "Most popular" header</span>
+    </div></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="sh">Every token, with its source</h2>
+  <table class="tok"><thead><tr><th>Token</th><th>Value (this theme)</th><th>Source</th></tr></thead><tbody id="tok-out"></tbody></table>
+</section>
+</main>
+
+<script>
+const TOK = /*TOKENS*/null;
+// Escapes quotes too (values land in title="..." attributes) and shows an object as JSON, not [object Object].
+const esc = (s) => String(s && typeof s === 'object' ? JSON.stringify(s) : s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const flat = (o, p='') => Object.entries(o||{}).flatMap(([k,v]) => k.startsWith('$') ? [] : (v && typeof v === 'object' && 'v' in v) ? [[p+k, v]] : flat(v, p+k+'.'));
+const cssname = (p) => '--' + p.replace(/[^a-zA-Z0-9-]/g, '-').replace(/\./g, '-');
+const theme = () => document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+
+// Swatch names come from the light set (both sets carry every themed colour), but each
+// value label must be the active theme's: re-rendered by setTheme() on every flip.
+function swatches(out, grp, limit) {
+  const cur = {};
+  for (const [n, t] of flat((TOK[theme()]||{})[grp]||{}, grp+'.')) cur[n] = t;
+  let h = '', i = 0;
+  for (const [n, t] of flat(TOK.light[grp]||{}, grp+'.')) {
+    if (t.t !== 'color') continue;
+    if (limit && ++i > limit) { h += `<div class="sw"><div><div class="nm">… and ${flat(TOK.light[grp], grp+'.').filter(x=>x[1].t==='color').length - limit} more in the table below</div></div></div>`; break; }
+    const vt = cur[n] || t;
+    h += `<div class="sw" title="${esc(t.s)}"><span class="dot"><i style="display:block;width:100%;height:100%;background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(typeof vt.v==='string'?vt.v:'')}</div></div></div>`;
+  }
+  document.getElementById(out).innerHTML = h;
+}
+function paintSwatches() {
+  swatches('color-out', 'color');
+  swatches('origin-out', 'origin', 60);
+  swatches('button-out', 'button');
+  swatches('tag-out', 'tag');
+}
+
+(function palette() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.palette, 'palette.')) {
+    if (t.t !== 'color') continue;
+    h += `<div class="sw" title="${esc(t.s)}"><span class="dot"><i style="display:block;width:100%;height:100%;background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(typeof t.v==='string'?t.v:'')}</div></div></div>`;
+  }
+  document.getElementById('palette-out').innerHTML = h;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography, 'typography.')) {
+    const v = t.v;
+    h += `<div class="typerow" title="${esc(t.s)}"><div class="k">${esc(n.replace('typography.',''))}<small>${esc(v.fontWeight)} ${esc(String(v.fontSize))}/${esc(String(v.lineHeight))}${v.letterSpacing && v.letterSpacing!=='0px' ? ' · ls ' + esc(String(v.letterSpacing)) : ''}</small></div><div class="sample" style="font:var(${cssname(n)})">Make every word count</div></div>`;
+  }
+  document.getElementById('type-out').innerHTML = h;
+})();
+
+(function scales() {
+  let r = '';
+  for (const grp of ['radius', 'radiusGds']) {
+    for (const [n, t] of flat(TOK.core[grp]||{}, grp+'.')) r += `<div class="bx" style="border-radius:min(var(${cssname(n)}),40px)" title="${esc(t.s)}">${esc(n)}<br>${esc(t.v)}</div>`;
+  }
+  document.getElementById('radius-out').innerHTML = r;
+  let h = '';
+  for (const grp of ['spacing', 'size']) {
+    for (const [n, t] of flat(TOK.core[grp]||{}, grp+'.')) {
+      const px = parseFloat(t.v);
+      if (isNaN(px)) continue;
+      h += `<div class="b" title="${esc(t.s)}"><span>${esc(n)} <b style="color:var(--color-text-base-default)">${esc(t.v)}</b></span><i style="width:${Math.min(100, px/1.6)}%"></i></div>`;
+    }
+  }
+  document.getElementById('space-out').innerHTML = h;
+})();
+
+function shadows() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.elevation||{}, 'elevation.')) {
+    if (t.t !== 'other' || !/shadow|px/i.test(String(t.v))) continue;
+    if (!/blur|px/i.test(String(t.v))) continue;
+    h += `<div><div class="box" style="box-shadow:${esc(String(t.v))}"></div><div class="k">${esc(n)}</div></div>`;
+  }
+  document.getElementById('shadow-out').innerHTML = h;
+}
+shadows();
+
+(function motion() {
+  let h = '';
+  const eb = (n) => `var(${cssname(n)})`;
+  const e = eb('easing-accordion');
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) h += `<div><div class="track"><div class="dot" style="transition:left ${esc(t.v)} ${e}"></div></div><span class="cap">${esc(n)} · ${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) {
+    if (t.t !== 'cubicBezier') continue;
+    h += `<div><div class="track"><div class="dot" style="transition:left 600ms ${eb(n)}"></div></div><span class="cap">${esc(n)} · cubic-bezier(${esc(t.v.join(', '))})</span></div>`;
+  }
+  document.getElementById('motion-out').innerHTML = h;
+  document.querySelectorAll('.track').forEach((tr) => tr.addEventListener('click', () => tr.classList.toggle('go')));
+})();
+
+const srcText = (s) => (s && typeof s === 'object')
+  ? [s.evidence, s.capture].filter(Boolean).join(' ') || JSON.stringify(s)
+  : (s || '');
+
+(function table() {
+  const rows = [];
+  for (const set of ['core', 'light', 'dark']) for (const [n, t] of flat(TOK[set]||{}, '')) {
+    const val = typeof t.v === 'object' ? JSON.stringify(t.v).slice(0, 110) : String(t.v);
+    rows.push([`${set}.${n}`, val.slice(0, 110), srcText(t.s)]);
+  }
+  document.getElementById('tok-out').innerHTML = rows.map((r) => `<tr><td>${esc(r[0])}</td><td style="font:11px var(--fontFamily-mono)">${esc(r[1])}</td><td>${esc(r[2])}</td></tr>`).join('');
+})();
+
+function setTheme(dark) {
+  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  document.getElementById('theme').checked = dark;
+  document.querySelectorAll('.tsw .pick').forEach((p) => p.classList.toggle('on', (p.dataset.p === 'd') === dark));
+  paintSwatches();
+}
+document.getElementById('theme').addEventListener('change', (e) => setTheme(e.target.checked));
+document.querySelectorAll('.tsw .pick').forEach((p) => p.addEventListener('click', (e) => { e.preventDefault(); document.getElementById('theme').checked = p.dataset.p === 'd'; setTheme(p.dataset.p === 'd'); }));
+// No auto-dark: the public site never paints it, so the guide opens on the painted theme.
+setTheme(false);
+</script>
+</body>
+</html>

@@ -1,0 +1,1172 @@
+{
+ "components/crops/header-default.png": {
+  "component": "header",
+  "state": "default",
+  "pixels": [
+   2880,
+   208
+  ],
+  "scale": 2
+ },
+ "components/crops/logo-default.png": {
+  "component": "logo",
+  "state": "default",
+  "pixels": [
+   492,
+   112
+  ],
+  "scale": 2
+ },
+ "components/crops/nav-trigger-default.png": {
+  "component": "nav-trigger",
+  "state": "default",
+  "pixels": [
+   216,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/nav-trigger-hover.png": {
+  "component": "nav-trigger",
+  "state": "hover",
+  "pixels": [
+   216,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/nav-trigger-focus-visible.png": {
+  "component": "nav-trigger",
+  "state": "focus-visible",
+  "pixels": [
+   216,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/nav-trigger-pressed.png": {
+  "component": "nav-trigger",
+  "state": "pressed",
+  "pixels": [
+   216,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/login-link-default.png": {
+  "component": "login-link",
+  "state": "default",
+  "pixels": [
+   118,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/login-link-hover.png": {
+  "component": "login-link",
+  "state": "hover",
+  "pixels": [
+   118,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/login-link-focus-visible.png": {
+  "component": "login-link",
+  "state": "focus-visible",
+  "pixels": [
+   118,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/login-link-pressed.png": {
+  "component": "login-link",
+  "state": "pressed",
+  "pixels": [
+   118,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/join-cta-default.png": {
+  "component": "join-cta",
+  "state": "default",
+  "pixels": [
+   372,
+   112
+  ],
+  "scale": 2
+ },
+ "components/crops/join-cta-hover.png": {
+  "component": "join-cta",
+  "state": "hover",
+  "pixels": [
+   372,
+   112
+  ],
+  "scale": 2
+ },
+ "components/crops/join-cta-focus-visible.png": {
+  "component": "join-cta",
+  "state": "focus-visible",
+  "pixels": [
+   372,
+   112
+  ],
+  "scale": 2
+ },
+ "components/crops/join-cta-pressed.png": {
+  "component": "join-cta",
+  "state": "pressed",
+  "pixels": [
+   372,
+   112
+  ],
+  "scale": 2
+ },
+ "components/crops/nav-dropdown-default.png": {
+  "component": "nav-dropdown",
+  "state": "default",
+  "pixels": [
+   944,
+   376
+  ],
+  "scale": 1
+ },
+ "components/crops/menu-item-default.png": {
+  "component": "menu-item",
+  "state": "default",
+  "pixels": [
+   360,
+   128
+  ],
+  "scale": 2
+ },
+ "components/crops/menu-item-hover.png": {
+  "component": "menu-item",
+  "state": "hover",
+  "pixels": [
+   360,
+   128
+  ],
+  "scale": 2
+ },
+ "components/crops/menu-item-focus-visible.png": {
+  "component": "menu-item",
+  "state": "focus-visible",
+  "pixels": [
+   360,
+   128
+  ],
+  "scale": 2
+ },
+ "components/crops/menu-item-pressed.png": {
+  "component": "menu-item",
+  "state": "pressed",
+  "pixels": [
+   360,
+   128
+  ],
+  "scale": 2
+ },
+ "components/crops/menu-link-default.png": {
+  "component": "menu-link",
+  "state": "default",
+  "pixels": [
+   532,
+   120
+  ],
+  "scale": 2
+ },
+ "components/crops/menu-link-hover.png": {
+  "component": "menu-link",
+  "state": "hover",
+  "pixels": [
+   532,
+   120
+  ],
+  "scale": 2
+ },
+ "components/crops/menu-link-focus-visible.png": {
+  "component": "menu-link",
+  "state": "focus-visible",
+  "pixels": [
+   532,
+   120
+  ],
+  "scale": 2
+ },
+ "components/crops/menu-link-pressed.png": {
+  "component": "menu-link",
+  "state": "pressed",
+  "pixels": [
+   532,
+   120
+  ],
+  "scale": 2
+ },
+ "components/crops/hero-title-default.png": {
+  "component": "hero-title",
+  "state": "default",
+  "pixels": [
+   1432,
+   320
+  ],
+  "scale": 2
+ },
+ "components/crops/zip-field-default.png": {
+  "component": "zip-field",
+  "state": "default",
+  "pixels": [
+   572,
+   82
+  ],
+  "scale": 2
+ },
+ "components/crops/zip-field-focused.png": {
+  "component": "zip-field",
+  "state": "focused",
+  "pixels": [
+   572,
+   82
+  ],
+  "scale": 2
+ },
+ "components/crops/zip-field-filled.png": {
+  "component": "zip-field",
+  "state": "filled",
+  "pixels": [
+   572,
+   82
+  ],
+  "scale": 2
+ },
+ "components/crops/search-cta-default.png": {
+  "component": "search-cta",
+  "state": "default",
+  "pixels": [
+   720,
+   144
+  ],
+  "scale": 2
+ },
+ "components/crops/search-cta-hover.png": {
+  "component": "search-cta",
+  "state": "hover",
+  "pixels": [
+   720,
+   144
+  ],
+  "scale": 2
+ },
+ "components/crops/search-cta-focus-visible.png": {
+  "component": "search-cta",
+  "state": "focus-visible",
+  "pixels": [
+   720,
+   144
+  ],
+  "scale": 2
+ },
+ "components/crops/search-cta-pressed.png": {
+  "component": "search-cta",
+  "state": "pressed",
+  "pixels": [
+   720,
+   144
+  ],
+  "scale": 2
+ },
+ "components/crops/category-card-default.png": {
+  "component": "category-card",
+  "state": "default",
+  "pixels": [
+   432,
+   536
+  ],
+  "scale": 2
+ },
+ "components/crops/category-card-hover.png": {
+  "component": "category-card",
+  "state": "hover",
+  "pixels": [
+   432,
+   536
+  ],
+  "scale": 2
+ },
+ "components/crops/category-card-pressed.png": {
+  "component": "category-card",
+  "state": "pressed",
+  "pixels": [
+   432,
+   536
+  ],
+  "scale": 2
+ },
+ "components/crops/section-h2-default.png": {
+  "component": "section-h2",
+  "state": "default",
+  "pixels": [
+   1346,
+   112
+  ],
+  "scale": 2
+ },
+ "components/crops/cat-h1-default.png": {
+  "component": "cat-h1",
+  "state": "default",
+  "pixels": [
+   992,
+   320
+  ],
+  "scale": 2
+ },
+ "components/crops/service-card-default.png": {
+  "component": "service-card",
+  "state": "default",
+  "pixels": [
+   624,
+   528
+  ],
+  "scale": 1
+ },
+ "components/crops/service-card-hover.png": {
+  "component": "service-card",
+  "state": "hover",
+  "pixels": [
+   624,
+   528
+  ],
+  "scale": 1
+ },
+ "components/crops/service-card-pressed.png": {
+  "component": "service-card",
+  "state": "pressed",
+  "pixels": [
+   624,
+   528
+  ],
+  "scale": 1
+ },
+ "components/crops/service-cta-default.png": {
+  "component": "service-cta",
+  "state": "default",
+  "pixels": [
+   320,
+   112
+  ],
+  "scale": 2
+ },
+ "components/crops/service-cta-hover.png": {
+  "component": "service-cta",
+  "state": "hover",
+  "pixels": [
+   320,
+   112
+  ],
+  "scale": 2
+ },
+ "components/crops/service-cta-focus-visible.png": {
+  "component": "service-cta",
+  "state": "focus-visible",
+  "pixels": [
+   316,
+   112
+  ],
+  "scale": 2
+ },
+ "components/crops/service-cta-pressed.png": {
+  "component": "service-cta",
+  "state": "pressed",
+  "pixels": [
+   320,
+   112
+  ],
+  "scale": 2
+ },
+ "components/crops/review-card-default.png": {
+  "component": "review-card",
+  "state": "default",
+  "pixels": [
+   852,
+   544
+  ],
+  "scale": 2
+ },
+ "components/crops/cat-faq-default.png": {
+  "component": "cat-faq",
+  "state": "default",
+  "pixels": [
+   1476,
+   176
+  ],
+  "scale": 2
+ },
+ "components/crops/cat-faq-hover.png": {
+  "component": "cat-faq",
+  "state": "hover",
+  "pixels": [
+   1476,
+   176
+  ],
+  "scale": 2
+ },
+ "components/crops/cat-faq-focus-visible.png": {
+  "component": "cat-faq",
+  "state": "focus-visible",
+  "pixels": [
+   1476,
+   176
+  ],
+  "scale": 2
+ },
+ "components/crops/cat-faq-pressed.png": {
+  "component": "cat-faq",
+  "state": "pressed",
+  "pixels": [
+   1476,
+   176
+  ],
+  "scale": 2
+ },
+ "components/crops/listing-h1-default.png": {
+  "component": "listing-h1",
+  "state": "default",
+  "pixels": [
+   1312,
+   176
+  ],
+  "scale": 2
+ },
+ "components/crops/city-button-default.png": {
+  "component": "city-button",
+  "state": "default",
+  "pixels": [
+   536,
+   96
+  ],
+  "scale": 2
+ },
+ "components/crops/city-button-hover.png": {
+  "component": "city-button",
+  "state": "hover",
+  "pixels": [
+   536,
+   96
+  ],
+  "scale": 2
+ },
+ "components/crops/city-button-focus-visible.png": {
+  "component": "city-button",
+  "state": "focus-visible",
+  "pixels": [
+   536,
+   96
+  ],
+  "scale": 2
+ },
+ "components/crops/city-button-pressed.png": {
+  "component": "city-button",
+  "state": "pressed",
+  "pixels": [
+   536,
+   96
+  ],
+  "scale": 2
+ },
+ "components/crops/filter-button-default.png": {
+  "component": "filter-button",
+  "state": "default",
+  "pixels": [
+   272,
+   96
+  ],
+  "scale": 2
+ },
+ "components/crops/filter-button-hover.png": {
+  "component": "filter-button",
+  "state": "hover",
+  "pixels": [
+   272,
+   96
+  ],
+  "scale": 2
+ },
+ "components/crops/filter-button-focus-visible.png": {
+  "component": "filter-button",
+  "state": "focus-visible",
+  "pixels": [
+   272,
+   96
+  ],
+  "scale": 2
+ },
+ "components/crops/filter-button-pressed.png": {
+  "component": "filter-button",
+  "state": "pressed",
+  "pixels": [
+   272,
+   96
+  ],
+  "scale": 2
+ },
+ "components/crops/provider-card-default.png": {
+  "component": "provider-card",
+  "state": "default",
+  "pixels": [
+   1322,
+   352
+  ],
+  "scale": 2
+ },
+ "components/crops/provider-card-hover.png": {
+  "component": "provider-card",
+  "state": "hover",
+  "pixels": [
+   1322,
+   352
+  ],
+  "scale": 2
+ },
+ "components/crops/provider-card-focus-visible.png": {
+  "component": "provider-card",
+  "state": "focus-visible",
+  "pixels": [
+   1322,
+   352
+  ],
+  "scale": 2
+ },
+ "components/crops/provider-card-pressed.png": {
+  "component": "provider-card",
+  "state": "pressed",
+  "pixels": [
+   1322,
+   352
+  ],
+  "scale": 2
+ },
+ "components/crops/care-tag-default.png": {
+  "component": "care-tag",
+  "state": "default",
+  "pixels": [
+   174,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/care-tag-hover.png": {
+  "component": "care-tag",
+  "state": "hover",
+  "pixels": [
+   174,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/care-tag-pressed.png": {
+  "component": "care-tag",
+  "state": "pressed",
+  "pixels": [
+   174,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/read-more-default.png": {
+  "component": "read-more",
+  "state": "default",
+  "pixels": [
+   180,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/read-more-hover.png": {
+  "component": "read-more",
+  "state": "hover",
+  "pixels": [
+   180,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/read-more-focus-visible.png": {
+  "component": "read-more",
+  "state": "focus-visible",
+  "pixels": [
+   180,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/read-more-pressed.png": {
+  "component": "read-more",
+  "state": "pressed",
+  "pixels": [
+   180,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/pagination-default.png": {
+  "component": "pagination",
+  "state": "default",
+  "pixels": [
+   696,
+   96
+  ],
+  "scale": 2
+ },
+ "components/crops/page-item-default.png": {
+  "component": "page-item",
+  "state": "default",
+  "pixels": [
+   80,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/page-item-hover.png": {
+  "component": "page-item",
+  "state": "hover",
+  "pixels": [
+   80,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/page-item-focus-visible.png": {
+  "component": "page-item",
+  "state": "focus-visible",
+  "pixels": [
+   80,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/page-item-pressed.png": {
+  "component": "page-item",
+  "state": "pressed",
+  "pixels": [
+   80,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/learn-more-default.png": {
+  "component": "learn-more",
+  "state": "default",
+  "pixels": [
+   202,
+   68
+  ],
+  "scale": 2
+ },
+ "components/crops/learn-more-hover.png": {
+  "component": "learn-more",
+  "state": "hover",
+  "pixels": [
+   202,
+   68
+  ],
+  "scale": 2
+ },
+ "components/crops/learn-more-focus-visible.png": {
+  "component": "learn-more",
+  "state": "focus-visible",
+  "pixels": [
+   202,
+   68
+  ],
+  "scale": 2
+ },
+ "components/crops/learn-more-pressed.png": {
+  "component": "learn-more",
+  "state": "pressed",
+  "pixels": [
+   202,
+   68
+  ],
+  "scale": 2
+ },
+ "components/crops/list-faq-default.png": {
+  "component": "list-faq",
+  "state": "default",
+  "pixels": [
+   1524,
+   176
+  ],
+  "scale": 2
+ },
+ "components/crops/list-faq-hover.png": {
+  "component": "list-faq",
+  "state": "hover",
+  "pixels": [
+   1524,
+   176
+  ],
+  "scale": 2
+ },
+ "components/crops/list-faq-focus-visible.png": {
+  "component": "list-faq",
+  "state": "focus-visible",
+  "pixels": [
+   1524,
+   176
+  ],
+  "scale": 2
+ },
+ "components/crops/list-faq-pressed.png": {
+  "component": "list-faq",
+  "state": "pressed",
+  "pixels": [
+   1524,
+   176
+  ],
+  "scale": 2
+ },
+ "components/crops/login-card-default.png": {
+  "component": "login-card",
+  "state": "default",
+  "pixels": [
+   654,
+   536
+  ],
+  "scale": 2
+ },
+ "components/crops/login-email-default.png": {
+  "component": "login-email",
+  "state": "default",
+  "pixels": [
+   654,
+   132
+  ],
+  "scale": 2
+ },
+ "components/crops/login-email-focused.png": {
+  "component": "login-email",
+  "state": "focused",
+  "pixels": [
+   654,
+   132
+  ],
+  "scale": 2
+ },
+ "components/crops/login-button-default.png": {
+  "component": "login-button",
+  "state": "default",
+  "pixels": [
+   654,
+   132
+  ],
+  "scale": 2
+ },
+ "components/crops/login-button-hover.png": {
+  "component": "login-button",
+  "state": "hover",
+  "pixels": [
+   654,
+   132
+  ],
+  "scale": 2
+ },
+ "components/crops/login-button-focus-visible.png": {
+  "component": "login-button",
+  "state": "focus-visible",
+  "pixels": [
+   654,
+   132
+  ],
+  "scale": 2
+ },
+ "components/crops/login-button-pressed.png": {
+  "component": "login-button",
+  "state": "pressed",
+  "pixels": [
+   654,
+   132
+  ],
+  "scale": 2
+ },
+ "components/crops/passwordless-link-default.png": {
+  "component": "passwordless-link",
+  "state": "default",
+  "pixels": [
+   654,
+   132
+  ],
+  "scale": 2
+ },
+ "components/crops/passwordless-link-hover.png": {
+  "component": "passwordless-link",
+  "state": "hover",
+  "pixels": [
+   654,
+   132
+  ],
+  "scale": 2
+ },
+ "components/crops/passwordless-link-focus-visible.png": {
+  "component": "passwordless-link",
+  "state": "focus-visible",
+  "pixels": [
+   654,
+   132
+  ],
+  "scale": 2
+ },
+ "components/crops/passwordless-link-pressed.png": {
+  "component": "passwordless-link",
+  "state": "pressed",
+  "pixels": [
+   654,
+   132
+  ],
+  "scale": 2
+ },
+ "components/crops/join-card-default.png": {
+  "component": "join-card",
+  "state": "default",
+  "pixels": [
+   814,
+   784
+  ],
+  "scale": 2
+ },
+ "components/crops/join-option-default.png": {
+  "component": "join-option",
+  "state": "default",
+  "pixels": [
+   372,
+   112
+  ],
+  "scale": 2
+ },
+ "components/crops/join-option-hover.png": {
+  "component": "join-option",
+  "state": "hover",
+  "pixels": [
+   372,
+   112
+  ],
+  "scale": 2
+ },
+ "components/crops/join-option-focus-visible.png": {
+  "component": "join-option",
+  "state": "focus-visible",
+  "pixels": [
+   372,
+   112
+  ],
+  "scale": 2
+ },
+ "components/crops/join-option-pressed.png": {
+  "component": "join-option",
+  "state": "pressed",
+  "pixels": [
+   372,
+   112
+  ],
+  "scale": 2
+ },
+ "components/crops/pricing-h1-default.png": {
+  "component": "pricing-h1",
+  "state": "default",
+  "pixels": [
+   2368,
+   74
+  ],
+  "scale": 2
+ },
+ "components/crops/plan-card-default.png": {
+  "component": "plan-card",
+  "state": "default",
+  "pixels": [
+   778,
+   714
+  ],
+  "scale": 2
+ },
+ "components/crops/plan-price-default.png": {
+  "component": "plan-price",
+  "state": "default",
+  "pixels": [
+   250,
+   96
+  ],
+  "scale": 2
+ },
+ "components/crops/plan-cta-default.png": {
+  "component": "plan-cta",
+  "state": "default",
+  "pixels": [
+   374,
+   144
+  ],
+  "scale": 2
+ },
+ "components/crops/plan-cta-hover.png": {
+  "component": "plan-cta",
+  "state": "hover",
+  "pixels": [
+   374,
+   144
+  ],
+  "scale": 2
+ },
+ "components/crops/plan-cta-focus-visible.png": {
+  "component": "plan-cta",
+  "state": "focus-visible",
+  "pixels": [
+   374,
+   144
+  ],
+  "scale": 2
+ },
+ "components/crops/plan-cta-pressed.png": {
+  "component": "plan-cta",
+  "state": "pressed",
+  "pixels": [
+   374,
+   144
+  ],
+  "scale": 2
+ },
+ "components/crops/plan-alt-default.png": {
+  "component": "plan-alt",
+  "state": "default",
+  "pixels": [
+   398,
+   144
+  ],
+  "scale": 2
+ },
+ "components/crops/plan-alt-hover.png": {
+  "component": "plan-alt",
+  "state": "hover",
+  "pixels": [
+   398,
+   144
+  ],
+  "scale": 2
+ },
+ "components/crops/plan-alt-focus-visible.png": {
+  "component": "plan-alt",
+  "state": "focus-visible",
+  "pixels": [
+   398,
+   144
+  ],
+  "scale": 2
+ },
+ "components/crops/plan-alt-pressed.png": {
+  "component": "plan-alt",
+  "state": "pressed",
+  "pixels": [
+   398,
+   144
+  ],
+  "scale": 2
+ },
+ "components/crops/addon-card-default.png": {
+  "component": "addon-card",
+  "state": "default",
+  "pixels": [
+   1280,
+   408
+  ],
+  "scale": 2
+ },
+ "components/crops/pricing-faq-default.png": {
+  "component": "pricing-faq",
+  "state": "default",
+  "pixels": [
+   1506,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/pricing-faq-hover.png": {
+  "component": "pricing-faq",
+  "state": "hover",
+  "pixels": [
+   1506,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/pricing-faq-focus-visible.png": {
+  "component": "pricing-faq",
+  "state": "focus-visible",
+  "pixels": [
+   1506,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/pricing-faq-pressed.png": {
+  "component": "pricing-faq",
+  "state": "pressed",
+  "pixels": [
+   1506,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/footer-default.png": {
+  "component": "footer",
+  "state": "default",
+  "pixels": [
+   1440,
+   888
+  ],
+  "scale": 1
+ },
+ "components/crops/footer-link-default.png": {
+  "component": "footer-link",
+  "state": "default",
+  "pixels": [
+   144,
+   72
+  ],
+  "scale": 2
+ },
+ "components/crops/footer-link-hover.png": {
+  "component": "footer-link",
+  "state": "hover",
+  "pixels": [
+   144,
+   72
+  ],
+  "scale": 2
+ },
+ "components/crops/footer-link-focus-visible.png": {
+  "component": "footer-link",
+  "state": "focus-visible",
+  "pixels": [
+   144,
+   72
+  ],
+  "scale": 2
+ },
+ "components/crops/footer-link-pressed.png": {
+  "component": "footer-link",
+  "state": "pressed",
+  "pixels": [
+   144,
+   72
+  ],
+  "scale": 2
+ },
+ "components/crops/social-icon-default.png": {
+  "component": "social-icon",
+  "state": "default",
+  "pixels": [
+   128,
+   144
+  ],
+  "scale": 2
+ },
+ "components/crops/social-icon-hover.png": {
+  "component": "social-icon",
+  "state": "hover",
+  "pixels": [
+   128,
+   144
+  ],
+  "scale": 2
+ },
+ "components/crops/social-icon-focus-visible.png": {
+  "component": "social-icon",
+  "state": "focus-visible",
+  "pixels": [
+   128,
+   144
+  ],
+  "scale": 2
+ },
+ "components/crops/social-icon-pressed.png": {
+  "component": "social-icon",
+  "state": "pressed",
+  "pixels": [
+   128,
+   144
+  ],
+  "scale": 2
+ },
+ "components/crops/m-header-default.png": {
+  "component": "m-header",
+  "state": "default",
+  "pixels": [
+   780,
+   112
+  ],
+  "scale": 2
+ },
+ "components/crops/m-menu-button-default.png": {
+  "component": "m-menu-button",
+  "state": "default",
+  "pixels": [
+   80,
+   80
+  ],
+  "scale": 2
+ },
+ "components/crops/m-menu-open-default.png": {
+  "component": "m-menu-open",
+  "state": "default",
+  "pixels": [
+   390,
+   844
+  ],
+  "scale": 1
+ },
+ "components/crops/m-nav-item-default.png": {
+  "component": "m-nav-item",
+  "state": "default",
+  "pixels": [
+   780,
+   144
+  ],
+  "scale": 2
+ },
+ "components/crops/m-nav-item-hover.png": {
+  "component": "m-nav-item",
+  "state": "hover",
+  "pixels": [
+   780,
+   144
+  ],
+  "scale": 2
+ },
+ "components/crops/m-nav-item-focus-visible.png": {
+  "component": "m-nav-item",
+  "state": "focus-visible",
+  "pixels": [
+   780,
+   144
+  ],
+  "scale": 2
+ },
+ "components/crops/m-nav-item-pressed.png": {
+  "component": "m-nav-item",
+  "state": "pressed",
+  "pixels": [
+   780,
+   144
+  ],
+  "scale": 2
+ },
+ "components/crops/m-hero-default.png": {
+  "component": "m-hero",
+  "state": "default",
+  "pixels": [
+   692,
+   480
+  ],
+  "scale": 2
+ }
+}

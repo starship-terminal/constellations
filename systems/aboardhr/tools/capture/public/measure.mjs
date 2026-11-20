@@ -59,7 +59,7 @@ async function newPage(key, { mobile = false, promo = 'close', wait = 6000 } = {
     ? { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, userAgent: UA_MOBILE, isMobile: true, hasTouch: true, locale: 'en-US' }
     : { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, userAgent: UA, locale: 'en-US' });
   tempContexts.push(ctx);
-  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+  // bot check: recorded as a boundary, not bypassed (navigator.webdriver is left as Chromium sets it)
   page = await ctx.newPage();
   cdp = await ctx.newCDPSession(page);
   page.setDefaultTimeout(8000);
@@ -260,7 +260,8 @@ async function shell(ctxPage = 'home') {
   await S('nav-bar', nav, ['default'], { group: g, title: 'Top navigation bar', desc: 'The floating nav: logo, Product / Price / Resources links and the Sign-in / Book-a-demo actions.', sel: '[data-framer-name=Desktop]' }, { noScroll: true });
   await S('nav-logo', q('a').filter({ has: page.locator('[data-framer-name="Logo"], svg, img') }).first(), B4, { group: g, title: 'Logo', desc: 'The Aboard wordmark linking home.', sel: 'nav logo a' }, { noScroll: true });
   await S('nav-link', q('a').filter({ hasText: 'Product' }).first(), B4, { group: g, title: 'Nav link', desc: 'A section link in the top bar.', sel: 'nav a' }, { noScroll: true });
-  await S('nav-cta', q('a').filter({ hasText: /Book a demo|Sign in/ }).last(), B4, { group: g, title: 'Nav CTA', desc: 'The boxed action at the right of the nav (Sign in / Book a demo). Hovered and focused only; app.aboardhr.com is never opened.', sel: 'nav cta' }, { noScroll: true });
+  // inside the nav only: the page repeats Book a demo in the hero and the footer
+  await S('nav-cta', q('header a, nav a').filter({ hasText: /Book a demo|Sign in/ }).filter({ visible: true }).last(), B4, { group: g, title: 'Nav CTA', desc: 'The boxed action at the right of the nav (Sign in / Book a demo). Hovered and focused only; app.aboardhr.com is never opened.', sel: 'nav cta' }, { noScroll: true });
   await S('footer', await domFind(page, /© Teamtailor|Smooth sailing/, { sel: 'div,section,[data-framer-name]', tag: 'ft', minW: 600, minH: 120 }), ['default'], { group: g, title: 'Footer', desc: 'The "Smooth sailing" footer band: link columns (Price / What\'s new / Help center / legal) and the Teamtailor credit row.', sel: 'footer band' });
   await S('footer-heading', await domFind(page, /Smooth sailing/, { sel: 'h1,h2,h3,h4,p,div,span', tag: 'fh', minW: 40 }), ['default'], { group: g, title: 'Footer heading', desc: 'The "Smooth sailing." sign-off heading in the footer.', sel: 'footer heading' });
   await S('footer-link', q('a').filter({ hasText: /Help center|Privacy policy|Terms and conditions|What's new/ }).first(), B4, { group: g, title: 'Footer link', sel: 'footer a' });

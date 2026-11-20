@@ -1,0 +1,37 @@
+{
+  "capturedAt": "2026-11-19",
+  "source": "computed styles on https://www.tesla.com/ plus declared --tds-animate-* custom properties",
+  "reducedMotion": {
+    "matchMedia": false,
+    "emulated": false,
+    "verdict": "not captured",
+    "reason": "prefers-reduced-motion was false on the attached page. The motion probe's emulateMedia pass needs Playwright, and headless Playwright received HTTP 403 from tesla.com. The reduce verdict is a gap."
+  },
+  "computed": [
+    {
+      "selector": "header.tds-site-header",
+      "transition": "background-color 0.33s, box-shadow 0.33s"
+    },
+    {
+      "selector": "h1.tcl-text-line",
+      "transition": "font 0.33s, color 0.33s, opacity 0.33s, padding 0.33s"
+    },
+    {
+      "selector": "dialog.tds-modal",
+      "transition": "opacity 0.5s cubic-bezier(0.5, 0, 0, 0.75), transform 0.5s cubic-bezier(0.5, 0, 0, 0.75)"
+    }
+  ],
+  "tokens": {
+    "--tds-bezier": "cubic-bezier(0.5, 0, 0, 0.75)",
+    "--tds-animation-bezier-base": "cubic-bezier(0.5, 0, 0, 0.75)",
+    "--tds-animate-transition-function--base": "linear",
+    "--tds-animate-transition-function--mktg": "cubic-bezier(0.165, 0.84, 0.44, 1)",
+    "--tds-animate-transition-duration--short": "500ms",
+    "--tds-animate-transition-duration--medium": "600ms",
+    "--tds-animate-transition_duration--long": "1500ms",
+    "--tds-animate-transition-property": "opacity",
+    "--tds--fade-in": "tds--fade-in 1s ease",
+    "--tds--rotating": "tds--rotating 1.5s infinite linear",
+    "--tds--pulsing": "tds--pulsing 1.5s infinite ease-in-out"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "_note": "Rules for systems/frame. Public signed-out marketing capture (home, features, pricing, enterprise, customers, case studies, integrations, resources, contact, security, sign-in surface); no private data expected. Frame.io's own published contact addresses and its published toll-free sales line (the 'Talk to sales' number in the /pricing announcement banner) are the product's own published marketing content, allow-listed like figma's @figma.com addresses. One rect: the /enterprise page embeds Frame.io's own product screenshot whose member-management mock shows a demo user's email address in the member list (vendor-published demo data, same class as cron's demo popup) - painted out so no addresses ship.",
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@frame\\.io$",
+      "@example\\.com$"
+    ]
+  },
+  "families": [
+    {
+      "name": "enterprise member-mock demo email",
+      "files": ["screenshots/enterprise-dark-full.png"],
+      "rects": [[828, 4922, 992, 4948]]
+    }
+  ]
+}

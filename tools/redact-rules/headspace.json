@@ -1,0 +1,12 @@
+{
+ "_note": "Rules for systems/headspace. A fully public signed-out capture: every route is public marketing, the /content free preview, the /subscriptions plans block, the /code redeem form, the Auth0 universal login/signup cards, the checkout shell viewed at rest, and the organizations.headspace.com B2B pages. Nothing was signed into, filled, redeemed, bought or submitted; the OneTrust consent layer was hidden, never answered. Names, prices and quotes in screenshots are product-published page content. The OCR email net is kept, with the product's own published addresses and example placeholders allowed.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@headspace\\.com$",
+   "@example\\.com$",
+   "@example\\.org$"
+  ]
+ },
+ "families": []
+}

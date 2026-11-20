@@ -65,6 +65,8 @@ for (const [key, url] of Object.entries(PAGES)) {
     // A custom property can hold a url() with a signed or per-account query: record it as url(…).
     // Its value keeps the authored tokens, so this matches URL( too, escapes and space inside the parens.
     const noUrl = (v) => (typeof v === 'string' ? v.replace(/url\((?!\s*['"]?(?:data:|#))\s*(?:"(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*'|(?:[^)\\]|\\.)*)\s*\)/gi, 'url(…)') : v);
+    // The masked src of two faces can match (same family, weight and style, different files), so each face also keeps a hash of its src with the queries cut, only to tell them apart.
+    const srcId = (v) => { let h = 5381; for (const ch of v.replace(/\?[^"')\s]*/g, '')) h = ((h << 5) + h + ch.charCodeAt(0)) | 0; return (h >>> 0).toString(36); };
     const res = [], ff = [];
     for (const [name, text] of sheets) {
       const s = new CSSStyleSheet();
@@ -74,7 +76,7 @@ for (const [key, url] of Object.entries(PAGES)) {
           if (r instanceof CSSMediaRule) { walk(r.cssRules, [...media, r.conditionText]); continue; }
           if (typeof CSSScopeRule !== 'undefined' && r instanceof CSSScopeRule) { walk(r.cssRules, [...media, `@scope (${r.start})`]); continue; }
           if (typeof CSSLayerBlockRule !== 'undefined' && r instanceof CSSLayerBlockRule) { walk(r.cssRules, [...media, `@layer ${r.name}`]); continue; }
-          if (r instanceof CSSFontFaceRule) { ff.push({ family: r.style.getPropertyValue('font-family').replace(/["']/g, ''), weight: r.style.getPropertyValue('font-weight'), style: r.style.getPropertyValue('font-style'), src: noUrl(r.style.getPropertyValue('src')), sheet: name }); continue; }
+          if (r instanceof CSSFontFaceRule) { ff.push({ family: r.style.getPropertyValue('font-family').replace(/["']/g, ''), weight: r.style.getPropertyValue('font-weight'), style: r.style.getPropertyValue('font-style'), src: noUrl(r.style.getPropertyValue('src')), sid: srcId(r.style.getPropertyValue('src')), sheet: name }); continue; }
           if (r.cssRules && !r.style) { walk(r.cssRules, media); continue; }
           if (!r.style) continue;
           for (const n of r.style) if (n.startsWith('--')) res.push({ sheet: name, selector: (r.selectorText || '').slice(0, 200), media: media.join(' and ') || null, name: n, value: noUrl(r.style.getPropertyValue(n).trim()) });
@@ -93,8 +95,9 @@ for (const [key, url] of Object.entries(PAGES)) {
     decls.set(k, e);
   }
   for (const f of found.ff) {
-    const k = [f.family, f.weight, f.style, clean(f.src).replace(/data:[^)]*/, 'data:…').slice(0, 300)].join('|');
-    faces.set(k, { ...f, src: clean(f.src).replace(/url\("?data:[^)]*\)/g, 'url(data:…)').slice(0, 300), sheet: f.sheet.startsWith('inline-') ? 'inline' : f.sheet });
+    const k = [f.family, f.weight, f.style, f.sid, clean(f.src).replace(/data:[^)]*/, 'data:…').slice(0, 300)].join('|');
+    const { sid, ...face } = f;
+    faces.set(k, { ...face, src: clean(f.src).replace(/url\("?data:[^)]*\)/g, 'url(data:…)').slice(0, 300), sheet: f.sheet.startsWith('inline-') ? 'inline' : f.sheet });
   }
   fontsLoaded[key] = await page.evaluate(() => [...new Set([...document.fonts].filter((f) => f.status === 'loaded').map((f) => `${f.family.replace(/"/g, '')} ${f.weight} ${f.style}`))].sort());
   // dark theme: does anything set a theme attribute, and does the page change under prefers-color-scheme: dark?

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parallel style guide</title>
+<style>
+:root {
+  --page: #ffffff;
+  --surface: #ffffff;
+  --ink: #181818;
+  --muted: #858483;
+  --accent: #fb631b;
+  --on-accent: #ffffff;
+  --ink-button: #434343;
+  --border: #d6d6d6;
+  --link: #0d6ea5;
+  --login-page: #18181b;
+  --login-surface: #121212;
+  --login-text: #ffffff;
+  --login-muted: #a3a3a3;
+  --login-border: #404040;
+  color-scheme: light;
+}
+body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.5 system-ui, sans-serif; }
+main { max-width: 880px; margin: 0 auto; padding: 32px 20px 64px; }
+h1 { font-size: 36px; font-weight: 500; line-height: 1.11; margin: 0 0 8px; }
+h2 { font-size: 26px; font-weight: 500; margin: 32px 0 8px; }
+p { max-width: 68ch; }
+.note { border: 1px solid var(--border); padding: 12px 16px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0; }
+button, .btn { font: 13px/16px ui-monospace, monospace; letter-spacing: 0.16px; text-transform: uppercase; border-radius: 4px; height: 34px; padding: 9px 16px 7px; border: 1px solid transparent; }
+.brand { background: var(--accent); color: var(--on-accent); }
+.ink { background: var(--ink-button); color: var(--on-accent); }
+.ghost { background: #fff; color: var(--ink); border-color: var(--border); }
+.badge { display: inline-flex; align-items: center; height: 18px; padding: 0 7px 1px; border-radius: 2px; background: var(--accent); color: #fff; font: 11px/16px ui-monospace, monospace; text-transform: uppercase; }
+.swatches { display: grid; gap: 12px; margin-top: 16px; }
+.sw { display: grid; grid-template-columns: 48px 1fr; gap: 12px; align-items: center; }
+.sw i { display: block; width: 48px; height: 48px; border: 1px solid var(--border); }
+.login { background: var(--login-page); color: var(--login-text); padding: 20px; border-radius: 6px; max-width: 360px; }
+.login input, .login .sec { display: block; width: 100%; box-sizing: border-box; height: 40px; border-radius: 6px; border: 1px solid var(--login-border); background: var(--login-surface); color: var(--login-text); font: 14px/20px system-ui, sans-serif; padding: 0 12px; margin: 8px 0; }
+.login .go { background: #fff; color: #121212; border: 0; font-weight: 500; }
+code { font-family: ui-monospace, monospace; font-size: 13px; }
+small { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Parallel</h1>
+  <p class="note">Values are computed styles from parallel.ai, parallel.ai/pricing, platform.parallel.ai/login, and docs.parallel.ai on 2026-11-19. The preview browser did not produce screenshot frames, so this page has no product screenshot.</p>
+  <h2>Marketing buttons</h2>
+  <div class="row">
+    <button class="brand" type="button">Log in</button>
+    <button class="ink" type="button">Contact</button>
+    <button class="ghost" type="button">Start for free</button>
+    <span class="badge">Popular</span>
+  </div>
+  <p>Where agents find answers</p>
+  <p><small>Web infrastructure for AI to search, extract, monitor, and reason over the world's information</small></p>
+  <h2>Login shell</h2>
+  <div class="login">
+    <strong>Get started with Parallel</strong>
+    <button class="sec" type="button">Continue with Google</button>
+    <input placeholder="you@company.com" disabled>
+    <button class="go" type="button">Continue with email</button>
+  </div>
+  <h2>Swatches</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:#ffffff"></i><div><code>light.page</code> <small>#ffffff</small></div></div>
+    <div class="sw"><i style="background:#181818"></i><div><code>light.text</code> <small>#181818</small></div></div>
+    <div class="sw"><i style="background:#858483"></i><div><code>light.muted</code> <small>#858483</small></div></div>
+    <div class="sw"><i style="background:#fb631b"></i><div><code>light.accent</code> <small>#fb631b</small></div></div>
+    <div class="sw"><i style="background:#d6d6d6"></i><div><code>light.border</code> <small>#d6d6d6</small></div></div>
+    <div class="sw"><i style="background:#18181b"></i><div><code>dark.page</code> <small>#18181b login shell</small></div></div>
+    <div class="sw"><i style="background:#121212"></i><div><code>dark.surface</code> <small>#121212</small></div></div>
+  </div>
+</main>
+</body>
+</html>

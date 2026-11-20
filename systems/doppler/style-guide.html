@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doppler style guide</title>
+<meta name="description" content="Doppler design tokens and the public signed-out marketing surface's components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --color-warm-black: #1c1624;
+  --color-warm-basalt: #241e2c;
+  --color-warm-charcoal: #45403d;
+  --color-warm-stone: #44403c;
+  --color-warm-raised: #2d2734;
+  --color-warm-badge: #302c37;
+  --color-warm-glowStrokeLight: #55505b;
+  --color-neutral-warmWhite: #f1f0ec;
+  --color-neutral-cloud: #e5e8ed;
+  --color-neutral-silver: #d0c9c4;
+  --color-neutral-aluminum: #8b877d;
+  --color-neutral-white: #ffffff;
+  --color-neutral-black: #000000;
+  --color-brand-orange: #f55c15;
+  --color-brand-orange300: #fdba74;
+  --color-brand-purple: #6b13f5;
+  --color-brand-lightPurple: #b997ff;
+  --color-brand-lilac: #ff9efa;
+  --color-brand-green: #00f575;
+  --color-brand-greenDark: #00bf5b;
+  --color-brand-red: #ff5449;
+  --color-brand-redDark: #dc2626;
+  --color-brand-yellow: #fde047;
+  --color-tint-green: rgba(105, 252, 81, 0.08);
+  --color-tint-orange: rgba(252, 156, 81, 0.08);
+  --color-tint-red: rgba(252, 97, 81, 0.08);
+  --color-alpha-w4: rgba(242, 241, 237, 0.04);
+  --color-alpha-w8: rgba(242, 241, 237, 0.08);
+  --color-alpha-w32: rgba(242, 241, 237, 0.32);
+  --color-alpha-w64: rgba(242, 241, 237, 0.64);
+  --color-alpha-glow: rgba(255, 255, 255, 0.08);
+  --color-alpha-w8border: rgba(242, 241, 237, 0.08);
+  --font-family-sans: __DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76, sans-serif;
+  --font-family-mono: __DopplerReproMono_e3cbb4, __DopplerReproMono_Fallback_e3cbb4, monospace;
+  --font-family-inter: __Inter_516c7b, __Inter_Fallback_516c7b, sans-serif;
+  --font-size-h1: 96px;
+  --font-size-h1Mobile: 64px;
+  --font-size-h2: 64px;
+  --font-size-h2Mobile: 52px;
+  --font-size-h3: 48px;
+  --font-size-h3Mobile: 36px;
+  --font-size-h4: 32px;
+  --font-size-h4Mobile: 24px;
+  --font-size-h5: 24px;
+  --font-size-articleCard: 40px;
+  --font-size-p1: 24px;
+  --font-size-p2: 18px;
+  --font-size-p3: 14px;
+  --font-size-small: 12px;
+  --font-size-label: 14px;
+  --font-size-labelSm: 10px;
+  --font-size-navLink: 15px;
+  --font-size-code: 16px;
+  --font-size-8xl: 6.25rem;
+  --font-lineHeight-90: 0.9;
+  --font-lineHeight-100: 1.0;
+  --font-lineHeight-105: 1.05;
+  --font-lineHeight-115: 1.15;
+  --font-lineHeight-120: 1.2;
+  --font-lineHeight-140: 1.4;
+  --font-lineHeight-150: 1.5;
+  --font-lineHeight-160: 1.6;
+  --font-lineHeight-170: 1.7;
+  --font-tracking-h1: -1.92px;
+  --font-tracking-h2: -1.28px;
+  --font-tracking-h3: -0.96px;
+  --font-tracking-h4: -0.64px;
+  --font-tracking-h5: -0.48px;
+  --font-tracking-p1: -0.24px;
+  --font-tracking-p2: -0.18px;
+  --font-tracking-p3: 0.42px;
+  --font-tracking-small: 0.36px;
+  --font-tracking-label: 0px;
+  --font-tracking-labelSm: 1px;
+  --font-tracking-navLink: 0.15px;
+  --font-tracking-blog: -0.16px;
+  --font-tracking-zero: 0px;
+  --font-weight-regular: 400;
+  --font-weight-mid: 450;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --radius-6: 6px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-15: 15px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-56: 56px;
+  --radius-full: 9999px;
+  --shadow-mediumDark: 0px 8px 30px 0px rgba(0,0,0,.45);
+  --shadow-people: 0px 1.133px 3.398px 0px rgba(0,0,0,.1), 0px 6.797px 6.797px 0px rgba(0,0,0,.09), 0px 14.727px 9.062px 0px rgba(0,0,0,.05), 0px 26.055px 10.195px 0px rgba(0,0,0,.01);
+  --easing-global: cubic-bezier(0.9, 0.1, 0.1, 0.9);
+  --easing-globalUtility: cubic-bezier(0.8, 0.01, 0.11, 0.98);
+  --easing-inOut: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --easing-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --duration-global: 350ms;
+  --duration-150: 150ms;
+  --duration-200: 200ms;
+  --duration-300: 300ms;
+  --duration-350: 350ms;
+  --duration-400: 400ms;
+  --duration-500: 500ms;
+  --measured-hover-fill: rgba(242, 241, 237, 0.08);
+  --measured-page-hover: #00bf5b;
+  --measured-chip-text-active: #00f575;
+  --measured-link-hover-text: #f1f0ec;
+  --gradient-headline: linear-gradient(91deg, #855aff 14.92%, #ff5632 90.53%);
+  --gradient-cardSheen: linear-gradient(100.03deg, rgba(255, 255, 255, 0.16) -6.99%, rgba(255, 255, 255, 0) 27.95%, rgba(255, 255, 255, 0.16) 87.67%);
+  --gradient-brand: linear-gradient(120deg, #6b13f5 0%, #ff9efa 50.0%, #b997ff 100%);
+
+  --sg-sans: "Doppler Repro", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: "Doppler Repro Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --sg-inter: Inter, "Doppler Repro", ui-sans-serif, system-ui, sans-serif;
+}
+[data-mode="dark"], .dark {
+  --page: var(--color-warm-black);
+  --surface: var(--color-alpha-w4);
+  --surfaceRaised: var(--color-warm-raised);
+  --badge: var(--color-warm-badge);
+  --text: var(--color-neutral-warmWhite);
+  --muted: var(--color-neutral-silver);
+  --accent: var(--color-brand-green);
+  --accentText: var(--color-warm-black);
+  --accentHover: var(--color-brand-greenDark);
+  --link: var(--color-neutral-warmWhite);
+  --linkMuted: var(--color-neutral-silver);
+  --linkHover: var(--color-neutral-warmWhite);
+  --border: var(--color-alpha-glow);
+  --borderStrong: var(--color-warm-glowStrokeLight);
+  --field: var(--color-neutral-aluminum);
+  --fieldFocus: var(--color-brand-lightPurple);
+  --chip: var(--color-warm-raised);
+  --chipHover: var(--color-brand-lightPurple);
+  --chipActive: var(--color-brand-lightPurple);
+  --chipActiveText: var(--color-warm-black);
+  --code: var(--color-brand-orange);
+  --codeSurface: var(--color-alpha-w4);
+  --focus: #005fcc;
+  --purple: var(--color-brand-lightPurple);
+  --orange: var(--color-brand-orange);
+  --component-control-heightNavCta: 36.0469px;
+  --component-control-heightButton: 45px;
+  --component-control-heightSubmit: 43px;
+  --component-control-heightField: 43.2031px;
+  --component-control-heightChip: 22px;
+  --component-control-heightBadge: 22px;
+  --component-control-heightPagination: 30px;
+  --component-control-gap: 8px;
+  --component-header-height: 72px;
+  --component-header-widthInset: 14px;
+  --component-header-radiusBottom: 16px;
+  --component-menu-heightMobile: 789px;
+  --component-slider-height: 10px;
+  --component-logo-height: 31px;
+  --component-radius-button: 12px;
+  --component-radius-field: 16px;
+  --component-radius-card: 20px;
+  --component-radius-codeChip: 6px;
+  --component-radius-pagination: 9999px;
+  --component-dropdown-radiusBottom: 20px;
+  --component-footer-radiusTop: 20px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, #f1f0ec); background: var(--page, #1c1624); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 450 40px/1.1 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 450 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--muted, #d0c9c4); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border, rgba(255,255,255,0.08)); }
+.lead { max-width: 62ch; color: var(--text, #f1f0ec); }
+.note { font-size: 13px; color: var(--muted, #d0c9c4); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; color: var(--code, #f55c15); }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, #d0c9c4); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--warm-basalt, #241e2c); padding: 12px; border-radius: 8px; }
+.pal.dark .nm, .pal.dark .vl { color: var(--text, #f1f0ec); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, rgba(255,255,255,0.08)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); color: var(--text, #f1f0ec); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--muted, #d0c9c4); }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border, rgba(255,255,255,0.08)); background: var(--surface, rgba(242,241,237,0.04)); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--muted, #d0c9c4); }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border, rgba(255,255,255,0.08)); overflow: hidden; background: var(--page, #1c1624); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 72px); padding: 0 12px 0 22px; font: 700 15px/15px var(--sg-sans); letter-spacing: .15px; color: var(--text, #f1f0ec); background: var(--page, #1c1624); border: 1px solid var(--borderStrong, #55505b); border-top: none; border-radius: 0 0 var(--component-header-radiusBottom, 16px) var(--component-header-radiusBottom, 16px); }
+.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+.navbar .ln { color: var(--muted, #d0c9c4); }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightButton, 45px); padding: 0 16px; font-size: 15px; font-weight: 700; border-radius: var(--component-radius-button, 12px); border: 1px solid transparent; }
+.btn.nav { height: var(--component-control-heightNavCta, 36px); font-size: 15px; }
+.btn.primary { background: var(--accent, #00f575); color: var(--accentText, #1c1624); }
+.btn.outline { border-color: var(--text, #f1f0ec); color: var(--text, #f1f0ec); }
+.hero { color: var(--text, #f1f0ec); padding: 64px 40px; font: 450 var(--font-size-h3, 48px)/1.2 var(--sg-sans); letter-spacing: -0.96px; text-align: left; }
+.hero .grad { background: var(--gradient-headline, linear-gradient(91deg, #855aff 14.92%, #ff5632 90.53%)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero small { display: block; font: 400 var(--font-size-p2, 18px)/1.4 var(--sg-sans); color: var(--muted, #d0c9c4); letter-spacing: -0.18px; margin: 16px 0 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border, rgba(255,255,255,0.08)); padding: 14px; font-size: 13px; background: var(--surface, rgba(242,241,237,0.04)); border-radius: var(--component-radius-card, 20px); position: relative; overflow: hidden; }
+.tile::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--gradient-cardSheen, linear-gradient(100deg, rgba(255,255,255,0.16) -7%, rgba(255,255,255,0) 28%)); pointer-events: none; }
+.tile b { display: block; font: 450 18px/1.25 var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { color: var(--muted, #d0c9c4); font-size: 12px; }
+.chip { display: inline-flex; align-items: center; height: var(--component-control-heightChip, 22px); padding: 0 10px; border-radius: 9999px; background: var(--chip, #2d2734); color: var(--text, #f1f0ec); font: 700 10px/10px var(--sg-sans); letter-spacing: 1px; text-transform: uppercase; }
+.chip.on { background: var(--chipActive, #b997ff); color: var(--chipActiveText, #1c1624); }
+.chip.badge { background: var(--badge, #302c37); }
+.field { display: block; width: 260px; height: var(--component-control-heightField, 43px); padding: 0 14px; border-radius: var(--component-radius-field, 16px); border: 1px solid var(--field, #8b877d); background: transparent; color: var(--text, #f1f0ec); font: 400 var(--font-size-p2, 18px)/1.4 var(--sg-sans); }
+.field.focus { border-color: var(--fieldFocus, #b997ff); }
+.codechip { display: inline-block; padding: 2px 8px; border-radius: var(--component-radius-codeChip, 6px); background: var(--codeSurface, rgba(242,241,237,0.04)); color: var(--code, #f55c15); font: 400 var(--font-size-code, 16px)/1.6 var(--sg-mono); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border, rgba(255,255,255,0.08)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border, rgba(255,255,255,0.08)); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--muted, #d0c9c4); font-family: var(--sg-mono); }
+.faq { border-bottom: 1px solid var(--border, rgba(255,255,255,0.08)); padding: 16px 0; }
+.faq .q { display: flex; justify-content: space-between; font: 500 var(--font-size-p2, 18px)/1.2 var(--sg-sans); }
+.faq .a { color: var(--muted, #d0c9c4); font: 400 var(--font-size-p2, 18px)/1.4 var(--sg-inter); margin-top: 10px; max-width: 60ch; }
+.ftr { background: var(--page, #1c1624); border: 1px solid var(--border, rgba(255,255,255,0.08)); border-radius: var(--component-footer-radiusTop, 20px) var(--component-footer-radiusTop, 20px) 0 0; padding: 32px; }
+.ftr .lnk { display: inline-flex; align-items: center; height: 40px; padding: 0 14px; border: 2px solid var(--border, rgba(255,255,255,0.08)); border-radius: var(--component-radius-card, 20px); background: var(--surface, rgba(242,241,237,0.04)); font: 400 var(--font-size-small, 12px)/12px var(--sg-sans); letter-spacing: .36px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Doppler style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Doppler, measured</h2>
+  <p class="lead">doppler.com's public surface is a Next.js/Tailwind marketing site painting a single dark theme: a warm-black #1c1624 field, warm-white #f1f0ec text muted to silver #d0c9c4, a fluorescent-green #00f575 CTA that drops to #00bf5b on hover, lilac-to-carmine gradient headlines, and a named accent set (brand-orange #f55c15, purple #6b13f5, light-purple #b997ff). Cards are .interactive-card tiles — a 4% warm-white veil at 20px radius with a diagonal sheen; buttons are 12px radii; fields 16px with aluminum borders that turn light-purple on focus. The token layer lives in named utilities (.bg-warm-black, .text-silver, .text-h3, .text-labelSm), not custom properties — two root vars remain: --global-ease cubic-bezier(0.9,0.1,0.1,0.9) and --global-transition 350ms. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from doppler.com on 2026-11-13, signed out, in headless Chromium. The workspace behind dashboard.doppler.com is a documented boundary; the demo form's fields were focused and sample-filled then deleted, never submitted; the cookie-preferences banner was hidden, never answered. Doppler Repro, Doppler Repro Mono and Inter are served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">Every page carries the same floating header — a 72px warm-black bar inset 14px from the viewport edge, opaque #55505b hairline on three sides, 16px bottom corners. Inside: the asterisk wordmark, silver nav links that go warm-white on hover, the bordered Get-Demo and Sign-In actions, and the 36px fluorescent-green Start-for-Free pill with warm-black text.</p>
+  <div class="mock" style="padding:20px">
+    <div class="navbar"><span class="wm">&#10039; Doppler</span><span class="ln">Platform &#9662;</span><span class="ln">Solutions &#9662;</span><span class="ln">Pricing</span><span class="sp"></span><span class="ln">Get Demo</span><span class="btn primary nav">Start for Free</span><span class="btn outline nav">Sign In</span></div>
+    <div class="hero">Secrets management <span class="grad">for every identity</span><small>Centralize secrets across every engineer, pipeline, and AI agent with a platform your security team governs and your developers actually use.</small><span class="btn outline">Get Demo</span> <span class="btn primary">Start for Free</span></div>
+  </div>
+
+  <h2 class="sh">Cards, chips and controls</h2>
+  <p class="lead">Content sits on .interactive-card tiles — rgba(242,241,237,0.04) ground, 20px radius, a diagonal white sheen in ::before — while filters are 22px uppercase micro-label chips that flip from #2d2734 to light-purple #b997ff (warm-black text when active). Code is Doppler Repro Mono in brand-orange on the same 4% veil.</p>
+  <div class="mock" style="padding:20px">
+    <div style="margin-bottom:14px"><span class="chip on">All</span> <span class="chip">Engineering</span> <span class="chip">Product</span> <span class="chip badge">Most Popular</span></div>
+    <div class="grid">
+      <div class="tile"><b>Native AI integration</b><span class="sub">Doppler's MCP server lets AI agents request secrets natively without custom scripts.</span></div>
+      <div class="tile"><b>Single source of truth</b><span class="sub">Holistically manage through the hierarchical structure.</span></div>
+    </div>
+    <div style="margin-top:14px"><span class="codechip">doppler run</span> <span class="codechip">doppler secrets</span></div>
+  </div>
+
+  <h2 class="sh">Pricing and forms</h2>
+  <p class="lead">Plan cards are interactive-cards at 20px; their CTAs are 45px buttons with 1px warm-white borders at 12px radius — hover adds an 8% warm-white fill. Form fields are 43px with 16px corners and aluminum borders that swap to light-purple on focus.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile"><b>Developer</b><span class="sub">$8/mo per additional user</span><div style="margin-top:12px"><span class="btn outline" style="width:100%">Start for Free</span></div></div>
+      <div class="tile"><b>Team</b><span class="sub">$21/mo per user</span><div style="margin-top:12px"><span class="btn primary" style="width:100%">Start for Free</span></div></div>
+    </div>
+    <div style="margin-top:18px"><span class="field">Work email</span> <span class="field focus">Company size</span></div>
+    <div class="faq" style="margin-top:18px"><span class="q">What does Doppler do? <span>&#215;</span></span><span class="a">Doppler's secrets manager empowers engineers and their teams to quickly set up a secure way to store and manage their sensitive application secrets.</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The palette is declared entirely in named utilities: warm darks (warm-black, basalt, charcoal, stone), warm neutrals (warm-white, cloud, silver, aluminum), the brand hues (orange/carmine, purple, light-purple, lilac, fluorescent green and its darker hover step), status tints at 8%, and the warm-white alpha veils the bundle names 'black4/8/32/64'. Dark roles are measured off the painted components and alias the palette where the value matches.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">The radius scale runs 6-56px plus full: 12px buttons, 16px fields and header corners, 20px cards, circle pagination. The signature ease is cubic-bezier(0.9,0.1,0.1,0.9) at 350ms; state changes use Tailwind's 150-300ms steps, and interactive-cards fade their sheen over 500ms.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Three served faces: <code>Doppler Repro</code> everywhere (a variable face — every h* step paints weight 450), <code>Doppler Repro Mono</code> on code chips, and <code>Inter</code> on long-form copy. The declared scale runs 96px display h1 down to 10px labelSm micro-labels, tracking from -1.92px to +1px. Samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the named utility declarations from the live stylesheets plus computed styles on 60 components across nine public routes</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, focused and filled states measured per component; the mega-menu, mobile sheet and FAQ open state reached by their own toggles</td></tr><tr><td>No provenance</td><td>Every token names the utility class or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"warm":{"black":{"v":"#1c1624","t":"color","s":"declared .bg-warm-black background-color (raw/utility-classes.json)","d":"warm-black #1c1624: the page ground the whole surface paints."},"basalt":{"v":"#241e2c","t":"color","s":"declared .bg-basalt background-color (raw/utility-classes.json)","d":"basalt #241e2c: a slightly lifted warm-black (sections, overlays)."},"charcoal":{"v":"#45403d","t":"color","s":"declared .bg-charcoal background-color (raw/utility-classes.json)","d":"charcoal #45403d: raised warm fills and gradient ends."},"stone":{"v":"#44403c","t":"color","s":"declared .border-stone-700 border-color (raw/utility-classes.json)","d":"stone-700 #44403c: the spend field's border and dark UI lines."},"raised":{"v":"#2d2734","t":"color","s":"declared .bg-[#2D2734] background-color (raw/utility-classes.json)","d":"#2d2734: the inactive filter/category chip fill."},"badge":{"v":"#302c37","t":"color","s":"declared .bg-[#302C37] background-color (raw/utility-classes.json)","d":"#302c37: the plan badge's fill."},"glowStrokeLight":{"v":"#55505b","t":"color","s":"declared .border-glow-stroke-light border-color (raw/utility-classes.json)","d":"glow-stroke-light #55505b: the opaque header/dropdown hairline."}},"neutral":{"warmWhite":{"v":"#f1f0ec","t":"color","s":"declared .text-warm-white color (raw/utility-classes.json)","d":"warm-white #f1f0ec: primary text and borders."},"cloud":{"v":"#e5e8ed","t":"color","s":"declared .text-cloud color (raw/utility-classes.json)","d":"cloud #e5e8ed: near-white secondary text."},"silver":{"v":"#d0c9c4","t":"color","s":"declared .text-silver color (raw/utility-classes.json)","d":"silver #d0c9c4: muted body text, nav links, placeholders."},"aluminum":{"v":"#8b877d","t":"color","s":"declared .text-aluminum color (raw/utility-classes.json)","d":"aluminum #8b877d: deepest muted text and field borders."},"white":{"v":"#ffffff","t":"color","s":"declared .bg-white background-color (raw/utility-classes.json)","d":"pure white, used sparingly (logos, glows)."},"black":{"v":"#000000","t":"color","s":"declared .bg-black background-color (raw/utility-classes.json)","d":"pure black, used for deep fills."}},"brand":{"orange":{"v":"#f55c15","t":"color","s":"declared .bg-brand-orange background-color (raw/utility-classes.json)","d":"brand-orange / carmine #f55c15: Doppler's signature orange — inline code, gradient ends, accents (.border-carmine and .text-carmine resolve to the same value)."},"orange300":{"v":"#fdba74","t":"color","s":"declared .bg-orange-300 background-color (raw/utility-classes.json)","d":"orange-300 #fdba74: a soft orange tint."},"purple":{"v":"#6b13f5","t":"color","s":"declared .bg-purple background-color (raw/utility-classes.json)","d":"purple #6b13f5: the secondary brand hue (gradients, glows)."},"lightPurple":{"v":"#b997ff","t":"color","s":"declared .text-light-purple color (raw/utility-classes.json)","d":"light-purple #b997ff: section headings, chip hover, field focus, active filters."},"lilac":{"v":"#ff9efa","t":"color","s":"declared .text-lilac color (raw/utility-classes.json)","d":"lilac #ff9efa: gradient midpoint."},"green":{"v":"#00f575","t":"color","s":"declared .bg-flourescent-green background-color (raw/utility-classes.json)","d":"flourescent-green #00f575: the primary CTA fill (spelled 'flourescent' in the bundle)."},"greenDark":{"v":"#00bf5b","t":"color","s":"declared .active:bg-flourescent-green-dark:active background-color (raw/utility-classes.json)","d":"flourescent-green-dark #00bf5b: CTA hover/pressed fill and hover text."},"red":{"v":"#ff5449","t":"color","s":"declared .text-flourescent-red color (raw/utility-classes.json)","d":"flourescent-red #ff5449: errors and warnings."},"redDark":{"v":"#dc2626","t":"color","s":"declared .bg-red-600 background-color (raw/utility-classes.json)","d":"red-600 #dc2626."},"yellow":{"v":"#fde047","t":"color","s":"declared .bg-yellow-300 background-color (raw/utility-classes.json)","d":"yellow-300 #fde047."}},"tint":{"green":{"v":"rgba(105, 252, 81, 0.08)","t":"color","s":"declared .bg-subtle-green background-color (raw/utility-classes.json)","d":"subtle-green: #69fc51 at 8% — success surfaces."},"orange":{"v":"rgba(252, 156, 81, 0.08)","t":"color","s":"declared .bg-subtle-orange background-color (raw/utility-classes.json)","d":"subtle-orange: #fc9c51 at 8% — warning surfaces."},"red":{"v":"rgba(252, 97, 81, 0.08)","t":"color","s":"declared .bg-subtle-red background-color (raw/utility-classes.json)","d":"subtle-red: #fc6151 at 8% — error surfaces."}},"alpha":{"w4":{"v":"rgba(242, 241, 237, 0.04)","t":"color","s":"declared .bg-black4 background-color (raw/utility-classes.json)","d":"black4 rgba(242,241,237,0.04): card grounds, chip fills, code chips — a warm-white 4% veil."},"w8":{"v":"rgba(242, 241, 237, 0.08)","t":"color","s":"declared .bg-black8 background-color (raw/utility-classes.json)","d":"black8 rgba(242,241,237,0.08): hover fills."},"w32":{"v":"rgba(242, 241, 237, 0.32)","t":"color","s":"declared .bg-black32 background-color (raw/utility-classes.json)","d":"black32 rgba(242,241,237,0.32)."},"w64":{"v":"rgba(242, 241, 237, 0.64)","t":"color","s":"declared .text-black64 color (raw/utility-classes.json)","d":"black64 rgba(242,241,237,0.64): disabled/secondary text."},"glow":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"declared .border-glow-stroke border-top-color (raw/utility-classes.json)","d":"glow-stroke rgba(255,255,255,0.08): the translucent hairline on cards, footer links and dividers."},"w8border":{"v":"rgba(242, 241, 237, 0.08)","t":"color","s":"declared .border-black8 border-top-color (raw/utility-classes.json)","d":"black8 rgba(242,241,237,0.08) as a border colour."}}},"font":{"family":{"sans":{"v":"__DopplerRepro_a18e76, __DopplerRepro_Fallback_a18e76, sans-serif","t":"fontFamily","s":"computed fontFamily of header default (raw/components-computed.json); declared .font-sans -> var(--font-doppler-repro); 8 @font-face files (400/700, normal/italic) — a variable weight paints 450 (raw/css-vars.json theme + raw/utility-classes.json)","d":"Doppler Repro: headings, nav, buttons, body."},"mono":{"v":"__DopplerReproMono_e3cbb4, __DopplerReproMono_Fallback_e3cbb4, monospace","t":"fontFamily","s":"computed fontFamily of code-chip default (raw/components-computed.json); declared .font-mono -> var(--font-doppler-repro-mono); paints on span.text-code (raw/css-vars.json theme + raw/utility-classes.json)","d":"Doppler Repro Mono: inline code chips and CLI samples."},"inter":{"v":"__Inter_516c7b, __Inter_Fallback_516c7b, sans-serif","t":"fontFamily","s":"computed fontFamily of check-item default (raw/components-computed.json); declared .font-inter -> var(--font-inter); paints on the demo checklist copy (raw/css-vars.json theme + raw/utility-classes.json)","d":"Inter: long-form/supporting text where a more neutral sans is wanted."}},"size":{"h1":{"v":"96px","t":"dimension","s":"declared .md:text-h1 font-size (raw/utility-classes.json)","d":"Display h1: 96px at >=1023px (pricing/blog headlines paint it). (declared inside @media (min-width: 1023px))"},"h1Mobile":{"v":"64px","t":"dimension","s":"declared .text-h1Mobile font-size (raw/utility-classes.json)","d":"h1 below 1023px: 64px."},"h2":{"v":"64px","t":"dimension","s":"declared .md:text-h2 font-size (raw/utility-classes.json)","d":"h2: 64px at >=1023px. (declared inside @media (min-width: 1023px))"},"h2Mobile":{"v":"52px","t":"dimension","s":"declared .text-h2Mobile font-size (raw/utility-classes.json)","d":"h2 below 1023px: 52px."},"h3":{"v":"48px","t":"dimension","s":"declared .text-h3 font-size (raw/utility-classes.json)","d":"h3: 48px (the hero headline at 1440px)."},"h3Mobile":{"v":"36px","t":"dimension","s":"declared .text-h3Mobile font-size (raw/utility-classes.json)","d":"h3 below 1023px: 36px."},"h4":{"v":"32px","t":"dimension","s":"declared .text-h4 font-size (raw/utility-classes.json)","d":"h4: 32px."},"h4Mobile":{"v":"24px","t":"dimension","s":"declared .text-h4Mobile font-size (raw/utility-classes.json)","d":"h4 below 1023px: 24px."},"h5":{"v":"24px","t":"dimension","s":"declared .md:text-h5 font-size (raw/utility-classes.json)","d":"h5: 24px at >=1023px. (declared inside @media (min-width: 1023px))"},"articleCard":{"v":"40px","t":"dimension","s":"declared .md:text-articleCard font-size (raw/utility-classes.json)","d":"Article-card title: 40px at >=1023px (24px below). (declared inside @media (min-width: 1023px))"},"p1":{"v":"24px","t":"dimension","s":"declared .text-p1 font-size (raw/utility-classes.json)","d":"p1 lead: 24px."},"p2":{"v":"18px","t":"dimension","s":"declared .text-p2 font-size (raw/utility-classes.json)","d":"p2 body: 18px."},"p3":{"v":"14px","t":"dimension","s":"declared .text-p3 font-size (raw/utility-classes.json)","d":"p3 small body: 14px."},"small":{"v":"12px","t":"dimension","s":"declared .text-small font-size (raw/utility-classes.json)","d":"small: 12px."},"label":{"v":"14px","t":"dimension","s":"declared .text-label font-size (raw/utility-classes.json)","d":"label: 14px."},"labelSm":{"v":"10px","t":"dimension","s":"declared .text-labelSm font-size (raw/utility-classes.json)","d":"labelSm: 10px micro-label (chips, badges)."},"navLink":{"v":"15px","t":"dimension","s":"declared .text-navLink font-size (raw/utility-classes.json)","d":"navLink: 15px bold link text."},"code":{"v":"16px","t":"dimension","s":"declared .text-code font-size (raw/utility-classes.json)","d":"code/blog: 16px."},"8xl":{"v":"6.25rem","t":"dimension","s":"declared .text-8xl font-size (raw/utility-classes.json)","d":"Tailwind 8xl: 100px (the giant footer wordmark scale)."}},"lineHeight":{"90":{"v":0.9,"t":"number","s":"declared .text-h1Mobile line-height (raw/utility-classes.json)","d":"h1Mobile's 90% line-height."},"100":{"v":1.0,"t":"number","s":"declared .text-h2Mobile line-height (raw/utility-classes.json)","d":"100% line-height."},"105":{"v":1.05,"t":"number","s":"declared .md:text-h1 line-height (raw/utility-classes.json)","d":"Display h1's 105%."},"115":{"v":1.15,"t":"number","s":"declared .md:text-h2 line-height (raw/utility-classes.json)","d":"h2's 115%."},"120":{"v":1.2,"t":"number","s":"declared .text-h3 line-height (raw/utility-classes.json)","d":"120% line-height."},"140":{"v":1.4,"t":"number","s":"declared .md:text-p1 line-height (raw/utility-classes.json)","d":"Body text 140%."},"150":{"v":1.5,"t":"number","s":"declared .text-blog line-height (raw/utility-classes.json)","d":"Blog prose 150%."},"160":{"v":1.6,"t":"number","s":"declared .text-code line-height (raw/utility-classes.json)","d":"Code text 160%."},"170":{"v":1.7,"t":"number","s":"declared .leading-170 line-height (raw/utility-classes.json)","d":"Checklist copy 170%."}},"tracking":{"h1":{"v":"-1.92px","t":"dimension","s":"declared .md:text-h1 letter-spacing (raw/utility-classes.json)","d":"-1.92px on the 96px display step."},"h2":{"v":"-1.28px","t":"dimension","s":"declared .md:text-h2 letter-spacing (raw/utility-classes.json)","d":"-1.28px on the 64px step."},"h3":{"v":"-0.96px","t":"dimension","s":"declared .text-h3 letter-spacing (raw/utility-classes.json)","d":"-0.96px on the 48px step."},"h4":{"v":"-0.64px","t":"dimension","s":"declared .text-h4 letter-spacing (raw/utility-classes.json)","d":"-0.64px on the 32px step."},"h5":{"v":"-0.48px","t":"dimension","s":"declared .md:text-h5 letter-spacing (raw/utility-classes.json)","d":"-0.48px on the 24px step."},"p1":{"v":"-0.24px","t":"dimension","s":"declared .text-p1 letter-spacing (raw/utility-classes.json)","d":"-0.24px on the 24px lead."},"p2":{"v":"-0.18px","t":"dimension","s":"declared .text-p2 letter-spacing (raw/utility-classes.json)","d":"-0.18px on the 18px body."},"p3":{"v":"0.42px","t":"dimension","s":"declared .text-p3 letter-spacing (raw/utility-classes.json)","d":"+0.42px on the 14px small body."},"small":{"v":"0.36px","t":"dimension","s":"declared .text-small letter-spacing (raw/utility-classes.json)","d":"+0.36px on 12px."},"label":{"v":"0px","t":"dimension","s":"declared .text-label letter-spacing (raw/utility-classes.json)","d":"0px on labels."},"labelSm":{"v":"1px","t":"dimension","s":"declared .text-labelSm letter-spacing (raw/utility-classes.json)","d":"+1px on 10px micro-labels."},"navLink":{"v":"0.15px","t":"dimension","s":"declared .text-navLink letter-spacing (raw/utility-classes.json)","d":"+0.15px on 15px nav links."},"blog":{"v":"-0.16px","t":"dimension","s":"declared .text-blog letter-spacing (raw/utility-classes.json)","d":"-0.16px on blog prose."},"zero":{"v":"0px","t":"dimension","s":"declared .tracking-0 letter-spacing (raw/utility-classes.json)","d":"0px."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of hero-sub default (raw/components-computed.json)","d":".font-normal / the painted body weight; Doppler Repro also paints 450."},"mid":{"v":450,"t":"fontWeight","s":"computed fontWeight of hero-title default (raw/components-computed.json)","d":"The display weight: every h*/p* step declares font-weight:450 (a variable instance of Doppler Repro)."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of search-field default (raw/components-computed.json)","d":".font-medium / the .text-label weight."},"bold":{"v":700,"t":"fontWeight","s":"computed fontWeight of nav-link default (raw/components-computed.json)","d":".font-bold / .text-labelSm and .text-navLink weight."}}},"radius":{"6":{"v":"6px","t":"dimension","s":"declared .rounded-6 (raw/utility-classes.json)","d":"6px: code chips, spend field."},"8":{"v":"8px","t":"dimension","s":"declared .rounded-8 (raw/utility-classes.json)","d":"8px: small controls."},"12":{"v":"12px","t":"dimension","s":"declared .rounded-12 (raw/utility-classes.json)","d":"12px: buttons (the green CTA, Sign In, plan CTAs)."},"15":{"v":"15px","t":"dimension","s":"declared .rounded-15 (raw/utility-classes.json)","d":"15px."},"16":{"v":"16px","t":"dimension","s":"declared .rounded-16 (raw/utility-classes.json)","d":"16px: form fields; the header's bottom corners."},"20":{"v":"20px","t":"dimension","s":"declared .rounded-20 (raw/utility-classes.json)","d":"20px: .interactive-card tiles, footer links, dropdown bottom corners, footer top corners."},"56":{"v":"56px","t":"dimension","s":"declared .rounded-56 (raw/utility-classes.json)","d":"56px: large pill sections."},"full":{"v":"9999px","t":"dimension","s":"declared .rounded-full (raw/utility-classes.json)","d":"9999px: pagination buttons, avatars."}},"shadow":{"mediumDark":{"v":[{"offsetX":"0px","offsetY":"8px","blur":"30px","spread":"0px","color":"rgba(0,0,0,.45)"}],"t":"shadow","s":"declared .shadow-medium-dark --tw-shadow (raw/utility-classes.json)","d":"0 8px 30px rgba(0,0,0,.45): the medium drop on dark surfaces."},"people":{"v":[{"offsetX":"0px","offsetY":"1.133px","blur":"3.398px","spread":"0px","color":"rgba(0,0,0,.1)"},{"offsetX":"0px","offsetY":"6.797px","blur":"6.797px","spread":"0px","color":"rgba(0,0,0,.09)"},{"offsetX":"0px","offsetY":"14.727px","blur":"9.062px","spread":"0px","color":"rgba(0,0,0,.05)"},{"offsetX":"0px","offsetY":"26.055px","blur":"10.195px","spread":"0px","color":"rgba(0,0,0,.01)"}],"t":"shadow","s":"declared .shadow-people --tw-shadow (raw/utility-classes.json)","d":"The five-layer ambient shadow used on imagery."}},"easing":{"global":{"v":[0.9,0.1,0.1,0.9],"t":"cubicBezier","s":"css-var --global-ease (dark)","d":"The site's signature ease, cubic-bezier(0.9,0.1,0.1,0.9), declared on :root and used by --global-transition."},"globalUtility":{"v":[0.8,0.01,0.11,0.98],"t":"cubicBezier","s":"declared .ease-global (raw/utility-classes.json)","d":"The .ease-global utility curve, cubic-bezier(0.8,0.01,0.11,0.98) — a second, slightly different 'global' ease used by utility classes."},"inOut":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"declared .ease-in-out (raw/utility-classes.json)","d":"Tailwind in-out, cubic-bezier(0.4,0,0.2,1)."},"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"declared .ease-out (raw/utility-classes.json)","d":"Tailwind out, cubic-bezier(0,0,0.2,1)."}},"duration":{"global":{"v":"350ms","t":"duration","s":"declared --global-transition on :root resolves to 350ms var(--global-ease) (raw/css-vars.json resolved.dark)","d":"The declared --global-transition duration, 350ms."},"150":{"v":"150ms","t":"duration","s":"declared .duration-150 (raw/utility-classes.json)","d":"150ms quick transitions."},"200":{"v":"200ms","t":"duration","s":"declared .duration-200 (raw/utility-classes.json)","d":"200ms."},"300":{"v":"300ms","t":"duration","s":"declared .duration-300 (raw/utility-classes.json)","d":"300ms — the FAQ chevron rotation and link hovers."},"350":{"v":"350ms","t":"duration","s":"declared .duration-[350ms] (raw/utility-classes.json)","d":"350ms explicit steps."},"400":{"v":"400ms","t":"duration","s":"declared .duration-[400ms] (raw/utility-classes.json)","d":"400ms."},"500":{"v":"500ms","t":"duration","s":"declared .duration-500 (raw/utility-classes.json)","d":"500ms — the interactive-card hover sheen."}},"measured":{"hover-fill":{"v":"rgba(242, 241, 237, 0.08)","t":"color","s":"computed paint.0.bg of nav-signin hover (raw/components-computed.json)","d":"black8 rgba(242,241,237,0.08): the fill bordered buttons pick up on hover."},"page-hover":{"v":"#00bf5b","t":"color","s":"computed color of page-number hover (raw/components-computed.json)","d":"flourescent-green-dark #00bf5b pagination hover text."},"chip-text-active":{"v":"#00f575","t":"color","s":"computed textStyle.color of industry-chip default (raw/components-computed.json)","d":"The active industry chip's green text."},"link-hover-text":{"v":"#f1f0ec","t":"color","s":"computed color of nav-link hover (raw/components-computed.json)","d":"Nav links go warm-white on hover."}},"gradient":{"headline":{"v":[{"color":"#855aff","position":0.1492},{"color":"#ff5632","position":0.9053}],"t":"gradient","s":"computed paint.0.bgImage of hero-title default (raw/components-computed.json): the lilac-to-carmine gradient text span","d":"The display-headline gradient, ~91deg from #855aff to #ff5632."},"cardSheen":{"v":[{"color":"rgba(255, 255, 255, 0.16)","position":-0.0699},{"color":"rgba(255, 255, 255, 0)","position":0.2795},{"color":"rgba(255, 255, 255, 0.16)","position":0.8767}],"t":"gradient","s":"computed paint.1.bgImage of feature-card default (raw/components-computed.json): the interactive-card ::before sheen","d":"The diagonal sheen painted across .interactive-card tiles (white 16% fading out)."},"brand":{"v":[{"color":"#6b13f5","position":0},{"color":"#ff9efa","position":0.5},{"color":"#b997ff","position":1}],"t":"gradient","s":"declared .from-purple + .via-lilac + .to-light-purple stops (raw/utility-classes.json); direction from the computed 120deg brand gradient on demo-card/post-card (raw/components-computed.json)","d":"The brand gradient stops used on glows and text: purple -> lilac -> light-purple."}}},"light":{},"dark":{"page":{"v":"{color.warm.black}","t":"color","s":"computed backgroundColor of footer default (raw/components-computed.json); same value as core.color.warm.black","d":"warm-black #1c1624: every route's ground (the footer's own fill; html/body compute to the same value)."},"surface":{"v":"{color.alpha.w4}","t":"color","s":"computed backgroundColor of feature-card default (raw/components-computed.json); same value as core.color.alpha.w4","d":"The .interactive-card ground: a 4% warm-white veil (black4)."},"surfaceRaised":{"v":"{color.warm.raised}","t":"color","s":"computed paint.0.bg of cat-chip default (raw/components-computed.json); same value as core.color.warm.raised","d":"The raised chip fill #2d2734 (inactive category/filter chips)."},"badge":{"v":"{color.warm.badge}","t":"color","s":"computed paint.0.bg of plan-badge default (raw/components-computed.json); same value as core.color.warm.badge","d":"The plan badge fill #302c37."},"text":{"v":"{color.neutral.warmWhite}","t":"color","s":"computed color of menu-link default (raw/components-computed.json); same value as core.color.neutral.warmWhite","d":"warm-white #f1f0ec primary text."},"muted":{"v":"{color.neutral.silver}","t":"color","s":"computed color of nav-link default (raw/components-computed.json); same value as core.color.neutral.silver","d":"silver #d0c9c4 muted text (nav links, lede copy, Read-More)."},"accent":{"v":"{color.brand.green}","t":"color","s":"computed backgroundColor of nav-cta default (raw/components-computed.json); same value as core.color.brand.green","d":"flourescent-green #00f575: the primary CTA fill."},"accentText":{"v":"{color.warm.black}","t":"color","s":"computed textStyle.color of nav-cta default (raw/components-computed.json); same value as core.color.warm.black","d":"warm-black #1c1624 text on the green CTA."},"accentHover":{"v":"{color.brand.greenDark}","t":"color","s":"computed paint.0.bg of nav-cta hover (raw/components-computed.json); same value as core.color.brand.greenDark","d":"flourescent-green-dark #00bf5b: the CTA fill on hover/press."},"link":{"v":"{color.neutral.warmWhite}","t":"color","s":"computed color of footer-link default (raw/components-computed.json); same value as core.color.neutral.warmWhite","d":"warm-white link text."},"linkMuted":{"v":"{color.neutral.silver}","t":"color","s":"computed color of read-more default (raw/components-computed.json); same value as core.color.neutral.silver","d":"silver secondary links."},"linkHover":{"v":"{color.neutral.warmWhite}","t":"color","s":"computed color of read-more hover (raw/components-computed.json); same value as core.color.neutral.warmWhite","d":"Links brighten to warm-white on hover."},"border":{"v":"{color.alpha.glow}","t":"color","s":"computed borderTopColor of footer-link default (raw/components-computed.json); same value as core.color.alpha.glow","d":"glow-stroke rgba(255,255,255,0.08): the translucent hairline."},"borderStrong":{"v":"{color.warm.glowStrokeLight}","t":"color","s":"computed paint.0.border of header default (raw/components-computed.json); same value as core.color.warm.glowStrokeLight","d":"glow-stroke-light #55505b: the opaque 1px line on the header bar and mega-menu."},"field":{"v":"{color.neutral.aluminum}","t":"color","s":"computed borderTopColor of demo-field default (raw/components-computed.json); same value as core.color.neutral.aluminum","d":"aluminum #8b877d: form-field borders."},"fieldFocus":{"v":"{color.brand.lightPurple}","t":"color","s":"computed borderTopColor of demo-field focused (raw/components-computed.json); same value as core.color.brand.lightPurple","d":"light-purple #b997ff: the field border on focus (the site swaps the border colour instead of drawing a ring)."},"chip":{"v":"{color.warm.raised}","t":"color","s":"computed paint.0.bg of filter-chip default (raw/components-computed.json); same value as core.color.warm.raised","d":"Inactive chip fill #2d2734."},"chipHover":{"v":"{color.brand.lightPurple}","t":"color","s":"computed paint.0.bg of cat-chip hover (raw/components-computed.json); same value as core.color.brand.lightPurple","d":"light-purple #b997ff: chips light up on hover."},"chipActive":{"v":"{color.brand.lightPurple}","t":"color","s":"computed paint.0.bg of cat-chip-active default (raw/components-computed.json); same value as core.color.brand.lightPurple","d":"light-purple #b997ff: the selected filter chip."},"chipActiveText":{"v":"{color.warm.black}","t":"color","s":"computed textStyle.color of cat-chip-active default (raw/components-computed.json); same value as core.color.warm.black","d":"warm-black #1c1624 text on the active chip."},"code":{"v":"{color.brand.orange}","t":"color","s":"computed color of code-chip default (raw/components-computed.json); same value as core.color.brand.orange","d":"brand-orange #f55c15 inline-code text."},"codeSurface":{"v":"{color.alpha.w4}","t":"color","s":"computed backgroundColor of code-chip default (raw/components-computed.json); same value as core.color.alpha.w4","d":"The inline code chip's black4 ground."},"focus":{"v":"#005fcc","t":"color","s":"computed outlineColor of nav-cta focus-visible (raw/components-computed.json)","d":"The keyboard-focus ring is the browser's default auto outline (rgb(0,95,204) on links); doppler.com restyles fields with a light-purple border instead."},"purple":{"v":"{color.brand.lightPurple}","t":"color","s":"computed color of h2-section default (raw/components-computed.json); same value as core.color.brand.lightPurple","d":"light-purple #b997ff section headings."},"orange":{"v":"{color.brand.orange}","t":"color","s":"computed color of code-chip default (raw/components-computed.json); same value as core.color.brand.orange","d":"brand-orange #f55c15 accents."},"component":{"control":{"heightNavCta":{"v":"36.0469px","t":"dimension","s":"computed height of nav-cta default (raw/components-computed.json)","d":"The header's 36px green pill."},"heightButton":{"v":"45px","t":"dimension","s":"computed height of hero-cta default (raw/components-computed.json); an outlined 'Start for Free' link, not the green hero CTA the name says: read from the wrong element, recapture needed","d":"45px hero/plan buttons."},"heightSubmit":{"v":"43px","t":"dimension","s":"computed height of demo-submit default (raw/components-computed.json)","d":"The demo submit's 43px."},"heightField":{"v":"43.2031px","t":"dimension","s":"computed height of demo-field default (raw/components-computed.json)","d":"43px form fields."},"heightChip":{"v":"22px","t":"dimension","s":"computed height of cat-chip default (raw/components-computed.json)","d":"22px category/filter chips."},"heightBadge":{"v":"22px","t":"dimension","s":"computed height of plan-badge default (raw/components-computed.json)","d":"22px plan badge."},"heightPagination":{"v":"30px","t":"dimension","s":"computed height of page-number default (raw/components-computed.json)","d":"30px round pagination buttons."},"gap":{"v":"8px","t":"dimension","s":"computed gap of agents-cta default (raw/components-computed.json); the 2026-11-13 run did not find agents-cta, so these are its 2026-11-13 states (recaptureMissed); recapture needed","d":"8px icon gap inside buttons."}},"header":{"height":{"v":"72px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"72px sticky header bar."},"widthInset":{"v":"14px","t":"dimension","s":"computed rect.x of header default (raw/components-computed.json)","d":"The header is inset 14px from the viewport edge (1412px at 1440)."},"radiusBottom":{"v":"16px","t":"dimension","s":"computed painted radius of header default (raw/components-computed.json)","d":"16px bottom corners on the floating header bar."}},"menu":{"heightMobile":{"v":"789px","t":"dimension","s":"computed height of m-menu-open default (raw/components-computed.json)","d":"The mobile menu sheet below the 55px offset."}},"slider":{"height":{"v":"10px","t":"dimension","s":"computed height of seat-slider default (raw/components-computed.json)","d":"The 10px pricing seat slider track."}},"logo":{"height":{"v":"31px","t":"dimension","s":"computed height of logo default (raw/components-computed.json)","d":"The wordmark height in the header."}},"radius":{"button":{"v":"12px","t":"dimension","s":"computed radius of nav-cta default (raw/components-computed.json)","d":"12px button corners."},"field":{"v":"16px","t":"dimension","s":"computed radius of demo-field default (raw/components-computed.json)","d":"16px field corners."},"card":{"v":"20px","t":"dimension","s":"computed radius of feature-card default (raw/components-computed.json)","d":"20px card corners (.interactive-card)."},"codeChip":{"v":"6px","t":"dimension","s":"computed radius of code-chip default (raw/components-computed.json)","d":"6px code-chip corners."},"pagination":{"v":"9999px","t":"dimension","s":"computed radius of page-number default (raw/components-computed.json)","d":"9999px pagination circles."}},"dropdown":{"radiusBottom":{"v":"20px","t":"dimension","s":"computed painted radius of nav-dropdown default (raw/components-computed.json)","d":"20px bottom corners on the mega-menu panel."}},"footer":{"radiusTop":{"v":"20px","t":"dimension","s":"computed painted radius of footer default (raw/components-computed.json)","d":"20px top corners on the footer sheet."}}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // The dark set's custom properties resolve under [data-mode="dark"], which
+  // is set on <html>; swatch dots still sit inside a .pal.dark panel so they
+  // read on a raised surface.
+  const darkRoles = flat(TOK.dark || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (darkRoles.length) {
+    h += `<div class="pal-h">dark roles (the only painted theme)</div><div class="pal dark">`;
+    for (const [n, t] of darkRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const lightRoles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (lightRoles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of lightRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.gradient || {}, 'gradient.')) m += `<div><b>${esc(n)}</b> <span>${esc(JSON.stringify(t.v))}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat(((TOK.dark || {}).component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  // Sizes can be declared in any CSS unit (font.size.8xl is 6.25rem); resolve
+  // rem/em against the 16px root before capping the sample, or a rem token
+  // renders a few pixels tall.
+  const toPx = (v) => {
+    const m = /^(-?[\d.]+)\s*(px|rem|em|%)?$/.exec(String(v).trim());
+    if (!m) return NaN;
+    const n = parseFloat(m[1]);
+    return m[2] === 'rem' || m[2] === 'em' ? n * 16 : n;
+  };
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = toPx(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Doppler</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

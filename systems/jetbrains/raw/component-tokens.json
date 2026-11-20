@@ -1,0 +1,627 @@
+{
+ "_about": "Rescui tokens declared on jetbrains.com stylesheets, resolved in raw/css-vars.json, plus measured control sizes from the public pages.",
+ "core": {
+  "color": {
+   "black": {
+    "var": "--rs-color-black",
+    "type": "color",
+    "description": "Rescui black, the near-black ink #19191c"
+   },
+   "white": {
+    "var": "--rs-color-white",
+    "type": "color",
+    "description": "Rescui white"
+   },
+   "grey": {
+    "5": {
+     "var": "--rs-color-grey-5",
+     "type": "color",
+     "description": "Rescui grey 5"
+    },
+    "10": {
+     "var": "--rs-color-grey-10",
+     "type": "color",
+     "description": "Rescui grey 10"
+    },
+    "20": {
+     "var": "--rs-color-grey-20",
+     "type": "color",
+     "description": "Rescui grey 20"
+    },
+    "30": {
+     "var": "--rs-color-grey-30",
+     "type": "color",
+     "description": "Rescui grey 30"
+    },
+    "40": {
+     "var": "--rs-color-grey-40",
+     "type": "color",
+     "description": "Rescui grey 40"
+    },
+    "50": {
+     "var": "--rs-color-grey-50",
+     "type": "color",
+     "description": "Rescui grey 50"
+    },
+    "60": {
+     "var": "--rs-color-grey-60",
+     "type": "color",
+     "description": "Rescui grey 60"
+    },
+    "70": {
+     "var": "--rs-color-grey-70",
+     "type": "color",
+     "description": "Rescui grey 70"
+    },
+    "80": {
+     "var": "--rs-color-grey-80",
+     "type": "color",
+     "description": "Rescui grey 80"
+    },
+    "90": {
+     "var": "--rs-color-grey-90",
+     "type": "color",
+     "description": "Rescui grey 90"
+    },
+    "95": {
+     "var": "--rs-color-grey-95",
+     "type": "color",
+     "description": "Rescui grey 95"
+    }
+   },
+   "primary": {
+    "light": {
+     "var": "--rs-color-primary-light-theme",
+     "type": "color",
+     "description": "Brand purple on light pages"
+    },
+    "light-dim": {
+     "var": "--rs-color-primary-dim-light-theme",
+     "type": "color"
+    },
+    "light-fog": {
+     "var": "--rs-color-primary-fog-light-theme",
+     "type": "color"
+    },
+    "dark": {
+     "var": "--rs-color-primary-dark-theme",
+     "type": "color",
+     "description": "Brand purple on dark pages"
+    },
+    "dark-dim": {
+     "var": "--rs-color-primary-dim-dark-theme",
+     "type": "color"
+    },
+    "dark-fog": {
+     "var": "--rs-color-primary-fog-dark-theme",
+     "type": "color"
+    }
+   },
+   "pink": {
+    "value": "#f31199",
+    "type": "color",
+    "source": "declared --main-page-pink on ._page_KBeAC (raw/css-vars.json)",
+    "description": "Home campaign pink"
+   },
+   "danger": {
+    "light": {
+     "var": "--rs-color-danger-light-theme",
+     "type": "color"
+    },
+    "dark": {
+     "var": "--rs-color-danger-dark-theme",
+     "type": "color"
+    }
+   },
+   "danger_bg": {
+    "light": {
+     "var": "--rs-color-danger-bg-light-theme",
+     "type": "color"
+    },
+    "dark": {
+     "var": "--rs-color-danger-bg-dark-theme",
+     "type": "color"
+    }
+   },
+   "success": {
+    "var": "--rs-color-success",
+    "type": "color"
+   },
+   "success_bg": {
+    "var": "--rs-color-success-bg",
+    "type": "color"
+   },
+   "warning": {
+    "var": "--rs-color-warning",
+    "type": "color"
+   },
+   "warning_bg": {
+    "var": "--rs-color-warning-bg",
+    "type": "color"
+   },
+   "black-alpha": {
+    "5": {
+     "var": "--rs-color-black-t5",
+     "type": "color"
+    },
+    "10": {
+     "var": "--rs-color-black-t10",
+     "type": "color"
+    },
+    "20": {
+     "var": "--rs-color-black-t20",
+     "type": "color"
+    },
+    "30": {
+     "var": "--rs-color-black-t30",
+     "type": "color"
+    },
+    "40": {
+     "var": "--rs-color-black-t40",
+     "type": "color"
+    },
+    "50": {
+     "var": "--rs-color-black-t50",
+     "type": "color"
+    },
+    "60": {
+     "var": "--rs-color-black-t60",
+     "type": "color"
+    },
+    "70": {
+     "var": "--rs-color-black-t70",
+     "type": "color"
+    },
+    "80": {
+     "var": "--rs-color-black-t80",
+     "type": "color"
+    },
+    "90": {
+     "var": "--rs-color-black-t90",
+     "type": "color"
+    },
+    "95": {
+     "var": "--rs-color-black-t95",
+     "type": "color"
+    }
+   },
+   "white-alpha": {
+    "5": {
+     "var": "--rs-color-white-t5",
+     "type": "color"
+    },
+    "10": {
+     "var": "--rs-color-white-t10",
+     "type": "color"
+    },
+    "20": {
+     "var": "--rs-color-white-t20",
+     "type": "color"
+    },
+    "30": {
+     "var": "--rs-color-white-t30",
+     "type": "color"
+    },
+    "40": {
+     "var": "--rs-color-white-t40",
+     "type": "color"
+    },
+    "50": {
+     "var": "--rs-color-white-t50",
+     "type": "color"
+    },
+    "60": {
+     "var": "--rs-color-white-t60",
+     "type": "color"
+    },
+    "70": {
+     "var": "--rs-color-white-t70",
+     "type": "color"
+    },
+    "80": {
+     "var": "--rs-color-white-t80",
+     "type": "color"
+    },
+    "90": {
+     "var": "--rs-color-white-t90",
+     "type": "color"
+    },
+    "95": {
+     "var": "--rs-color-white-t95",
+     "type": "color"
+    }
+   }
+  },
+  "font": {
+   "family": {
+    "sans": {
+     "value": "\"JetBrains Sans\", Helvetica, Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of button-primary default (raw/components-computed.json); the header CTA on home",
+     "description": "JetBrains Sans, the marketing UI face"
+    },
+    "ui": {
+     "value": "\"JetBrains Sans\", Inter, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Droid Sans\", \"Helvetica Neue\", Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of email-field default (raw/components-computed.json); account.jetbrains.com/login, the --rs-font-family-ui fallback stack"
+    }
+   },
+   "weight": {
+    "regular": {
+     "value": 400,
+     "type": "fontWeight",
+     "source": "computed fontWeight of button-primary default (raw/components-computed.json)"
+    },
+    "medium": {
+     "value": 500,
+     "type": "fontWeight",
+     "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: nav and button labels; every measured label reads 400"
+    },
+    "bold": {
+     "value": 700,
+     "type": "fontWeight",
+     "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: display headings; no heading was measured"
+    }
+   },
+   "size": {
+    "caption": {
+     "value": "13px",
+     "type": "dimension",
+     "source": "computed fontSize of badge default (raw/components-computed.json)"
+    },
+    "body": {
+     "value": "16px",
+     "type": "dimension",
+     "source": "computed fontSize of button-primary default (raw/components-computed.json)"
+    },
+    "lead": {
+     "value": "18px",
+     "type": "dimension",
+     "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: lead on product pages"
+    },
+    "title": {
+     "value": "24px",
+     "type": "dimension",
+     "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: section titles"
+    },
+    "display": {
+     "value": "48px",
+     "type": "dimension",
+     "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: display size on the home hero"
+    }
+   },
+   "line-height": {
+    "body": {
+     "value": "24px",
+     "type": "dimension",
+     "source": "computed lineHeight of email-field default (raw/components-computed.json)"
+    },
+    "tight": {
+     "value": "1.1",
+     "type": "number",
+     "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: display headings"
+    }
+   }
+  },
+  "spacing": {
+   "2": {
+    "value": "2px",
+    "type": "dimension",
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: icon nudge"
+   },
+   "4": {
+    "value": "4px",
+    "type": "dimension",
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: base step"
+   },
+   "8": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: step"
+   },
+   "12": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: step"
+   },
+   "16": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: header gutters"
+   },
+   "24": {
+    "value": "24px",
+    "type": "dimension",
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: step"
+   },
+   "32": {
+    "value": "32px",
+    "type": "dimension",
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: step"
+   },
+   "48": {
+    "value": "48px",
+    "type": "dimension",
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: section gap"
+   },
+   "64": {
+    "value": "64px",
+    "type": "dimension",
+    "source": "declared --rs-card-padding on ._card_c-1N7 (raw/css-vars.json)"
+   }
+  },
+  "radius": {
+   "sm": {
+    "value": "4px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of badge default (raw/components-computed.json)"
+   },
+   "md": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "declared --rs-card-border-radius on ._toolCard_9A-4D (raw/css-vars.json)"
+   },
+   "pill": {
+    "value": "20px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of button-primary default (raw/components-computed.json); the Explore Air pill"
+   },
+   "round": {
+    "value": "999px",
+    "type": "dimension",
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: pill controls that resolve to a full capsule"
+   }
+  },
+  "borderWidth": {
+   "hairline": {
+    "value": "1px",
+    "type": "dimension",
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: borders on outline buttons and cards"
+   },
+   "focus": {
+    "value": "3px",
+    "type": "dimension",
+    "source": "declared --rs-card-focus-border-width on ._toolCard_9A-4D (raw/css-vars.json)"
+   }
+  }
+ },
+ "light": {
+  "background": {
+   "page": {
+    "var": "--rs-color-white",
+    "type": "color",
+    "description": "Store and help page field"
+   },
+   "surface": {
+    "var": "--rs-color-grey-5",
+    "type": "color",
+    "description": "Raised grey wash, education and cards"
+   },
+   "raised": {
+    "var": "--rs-color-white",
+    "type": "color"
+   },
+   "overlay": {
+    "var": "--rs-color-black-t40",
+    "type": "color"
+   },
+   "scrim": {
+    "var": "--rs-color-black-t50",
+    "type": "color"
+   }
+  },
+  "text": {
+   "primary": {
+    "value": "#343434",
+    "type": "color",
+    "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: store body text colour rgb(52, 52, 52); no raw file holds it"
+   },
+   "secondary": {
+    "var": "--rs-color-grey-60",
+    "type": "color"
+   },
+   "disabled": {
+    "var": "--rs-color-grey-40",
+    "type": "color"
+   },
+   "on-accent": {
+    "var": "--rs-color-white",
+    "type": "color"
+   },
+   "link": {
+    "var": "--rs-color-primary-light-theme",
+    "type": "color"
+   }
+  },
+  "border": {
+   "default": {
+    "var": "--rs-color-grey-20",
+    "type": "color"
+   },
+   "strong": {
+    "var": "--rs-color-grey-50",
+    "type": "color"
+   },
+   "focus": {
+    "var": "--rs-color-primary-light-theme",
+    "type": "color"
+   }
+  },
+  "accent": {
+   "var": "--rs-color-primary-light-theme",
+   "type": "color",
+   "description": "Light-theme brand purple #6b57ff"
+  },
+  "accent-hover": {
+   "var": "--rs-color-primary-dim-light-theme",
+   "type": "color"
+  },
+  "accent-pressed": {
+   "value": "#5646cc",
+   "type": "color",
+   "source": "Reconstruction \u2014 entered by hand at capture time, no raw reading behind it: a suggested pressed step darker than #6b57ff; no pressed primary was measured on a light page"
+  },
+  "focus": {
+   "var": "--rs-color-primary-light-theme",
+   "type": "color"
+  },
+  "status": {
+   "success": {
+    "var": "--rs-color-success",
+    "type": "color"
+   },
+   "warning": {
+    "var": "--rs-color-warning",
+    "type": "color"
+   },
+   "danger": {
+    "var": "--rs-color-danger-light-theme",
+    "type": "color"
+   },
+   "info": {
+    "var": "--rs-color-primary-light-theme",
+    "type": "color"
+   }
+  }
+ },
+ "dark": {
+  "background": {
+   "page": {
+    "var": "--rs-color-black",
+    "type": "color",
+    "description": "Home campaign field #19191c"
+   },
+   "surface": {
+    "var": "--rs-color-grey-90",
+    "type": "color",
+    "description": "Home audience cards #303033"
+   },
+   "raised": {
+    "var": "--rs-color-grey-95",
+    "type": "color"
+   },
+   "overlay": {
+    "var": "--rs-color-white-t20",
+    "type": "color"
+   },
+   "scrim": {
+    "var": "--rs-color-black-t80",
+    "type": "color"
+   }
+  },
+  "text": {
+   "primary": {
+    "var": "--rs-color-white",
+    "type": "color"
+   },
+   "secondary": {
+    "var": "--rs-color-white-t70",
+    "type": "color"
+   },
+   "disabled": {
+    "var": "--rs-color-white-t40",
+    "type": "color"
+   },
+   "on-accent": {
+    "var": "--rs-color-white",
+    "type": "color"
+   },
+   "link": {
+    "var": "--rs-color-primary-dark-theme",
+    "type": "color"
+   }
+  },
+  "border": {
+   "default": {
+    "var": "--rs-color-white-t20",
+    "type": "color"
+   },
+   "strong": {
+    "var": "--rs-color-white",
+    "type": "color"
+   },
+   "focus": {
+    "var": "--rs-color-white",
+    "type": "color"
+   }
+  },
+  "accent": {
+   "var": "--rs-color-primary-dark-theme",
+   "type": "color",
+   "description": "Dark-theme brand purple #8473ff"
+  },
+  "accent-hover": {
+   "var": "--rs-color-primary-dim-dark-theme",
+   "type": "color"
+  },
+  "accent-pressed": {
+   "var": "--rs-color-primary-dim-dark-theme",
+   "type": "color"
+  },
+  "focus": {
+   "var": "--rs-color-white",
+   "type": "color"
+  },
+  "status": {
+   "success": {
+    "var": "--rs-color-success",
+    "type": "color"
+   },
+   "warning": {
+    "var": "--rs-color-warning",
+    "type": "color"
+   },
+   "danger": {
+    "var": "--rs-color-danger-dark-theme",
+    "type": "color"
+   },
+   "info": {
+    "var": "--rs-color-primary-dark-theme",
+    "type": "color"
+   }
+  }
+ },
+ "component": {
+  "button": {
+   "radius": {
+    "value": "20px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of button-primary default (raw/components-computed.json); the Explore Air button"
+   },
+   "padding-x": {
+    "value": "24px",
+    "type": "dimension",
+    "source": "computed paddingLeft of button-primary default (raw/components-computed.json); the Explore Air button"
+   },
+   "height": {
+    "value": "40px",
+    "type": "dimension",
+    "source": "computed height of button-primary default (raw/components-computed.json); a size-M button"
+   },
+   "font-size": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "computed fontSize of button-primary default (raw/components-computed.json); the Explore Air button"
+   }
+  },
+  "card": {
+   "radius": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "declared --rs-card-border-radius on ._toolCard_9A-4D (raw/css-vars.json)"
+   },
+   "padding": {
+    "value": "64px",
+    "type": "dimension",
+    "source": "declared --rs-card-padding on ._card_c-1N7 (raw/css-vars.json)"
+   }
+  },
+  "nav": {
+   "height": {
+    "value": "72px",
+    "type": "dimension",
+    "source": "computed height of nav default (raw/components-computed.json); the sticky header on jetbrains.com"
+   }
+  }
+ }
+}

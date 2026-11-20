@@ -249,6 +249,18 @@ export function ChatDrawer() {
         </div>
         <p className="chat-note">Answers cite the library's own data; cards open the style.</p>
         <div className="chat-body" ref={body}>
+          {!turns.length && !enabled && (
+            <div className="chat-empty">
+              <p>
+                <b>No model is set up.</b> The librarian needs a model provider before it can answer.
+              </p>
+              <p>
+                <Link href="/settings#model-provider" onClick={close}>
+                  Set up a model in Settings
+                </Link>
+              </p>
+            </div>
+          )}
           {!turns.length && (
             <p className="chat-note">Ask for a style, mood or use — “a dark fintech dashboard”, “playful onboarding like Duolingo”.</p>
           )}

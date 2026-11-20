@@ -43,25 +43,25 @@ typography:
     fontSize: "56px"
     fontWeight: 700
     lineHeight: "67.2px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   heading:
     fontFamily: "Vend Sans"
     fontSize: "19.2px"
     fontWeight: 600
     lineHeight: "23.04px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   body:
     fontFamily: "Noto Color Emoji"
     fontSize: "16px"
     fontWeight: 400
     lineHeight: "16px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
   button:
     fontFamily: "Noto Color Emoji"
     fontSize: "16px"
     fontWeight: 400
     lineHeight: "24px"
-    letterSpacing: "0em"
+    letterSpacing: "0px"
 components:
   control:
     height: "42px"
@@ -138,12 +138,14 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **The editor is absent.** Signup and every editor link lead behind an account; no canvas, plugin UI or download surface is in this package — only the marketing site that links to them.
 - **Body text is not Vend Sans.** Headings set `"Vend Sans"`; controls, buttons and body copy paint with the generic `--font-sans-serif` stack. Don't set buttons in Vend Sans.
 - **The brand green is an editor accent.** `--mg-gree` #aaff00 belongs to the app chrome and the logo, not the marketing CTAs — every measured CTA is near-black `#0d1400`.
 - **The focus ring is mostly the browser's.** Most controls show the default 1px `#005fcc` auto outline; the menu button shows the site's own 2px `#4d65ff` ring, recorded as `light.focus-ring`.
 - **Scheme classes are washes, not themes.** `.color-scheme-2..10` swap the same five slots for different sections; the site does not bind a dark theme.
 - **Screenshots are 256-colour PNGs** — read exact colours from tokens.json or the raw JSON, never from a screenshot pixel.
+- **`tab-switched` is not the tab that was selected.** The `:not(.w--current)` locator re-resolved after the toggle, so the `selected` reading is another, still unselected tab. Needs a recapture; the script now pins the tab before the toggle (not run since).
 
 ### Do and don't (from README.md)
 

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spline style guide</title>
+<style>
+  :root {
+    --page: #000000;
+    --surface: #101010;
+    --nav: #000000d1;
+    --action: #eeeeee;
+    --chip: #ffffff0f;
+    --app: #1e1e1e;
+    --input: #ffffff0d;
+    --text: #eeeeee;
+    --heading: #ffffffe6;
+    --muted: #8a8a8a;
+    --on-action: #000000;
+    --stroke: #2e2e2e;
+    --line: #1e1e1e;
+    --focus: #8eb2f2;
+    --accent: #2589ff;
+    --success: #00a376;
+    --badge: #bfdec4;
+    --badge-text: #203a26;
+    --danger: #fd585b;
+    --display: Geist, "Helvetica Neue", Arial, sans-serif;
+    --app-font: "Spline Sans", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--display); }
+  header { display: flex; justify-content: space-between; align-items: center; height: 65px; padding: 0 48px; background: var(--nav); border-bottom: 1px solid transparent; }
+  header strong { font-weight: 500; }
+  main { max-width: 1320px; margin: 0 auto; padding: 48px; }
+  h1 { margin: 0 0 8px; font-weight: 450; font-size: 56px; line-height: 64px; letter-spacing: -3.36px; color: var(--heading); }
+  h2 { margin: 40px 0 12px; font-size: 24px; line-height: 30px; letter-spacing: -1.2px; font-weight: 450; color: var(--heading); }
+  p { color: var(--muted); }
+  .row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+  .swatch { width: 120px; }
+  .swatch i { display: block; height: 64px; border-radius: 8px; border: 1px solid var(--stroke); }
+  .swatch span { display: block; margin-top: 6px; font-size: 12px; color: var(--muted); }
+  button, .btn { border: 1px solid var(--stroke); height: 44px; color: var(--text); border-radius: 999px; padding: 0 20px; font: 500 16px/25px var(--display); background: transparent; }
+  .solid { background: var(--action); color: var(--on-action); border-color: var(--action); }
+  .chip { height: 44px; padding: 0 20px; border: 0; border-radius: 999px; background: var(--chip); color: var(--muted); font-size: 15px; }
+  input, select { height: 40px; width: 280px; padding: 4px 16px; border: 0; border-radius: 8px; background: var(--input); color: #ffffffb3; font: 400 14px/16px var(--app-font); }
+  input:focus { outline: none; box-shadow: inset 0 0 0 1px #fff; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 28px 20px 32px; width: 280px; }
+  .price { font-size: 48px; line-height: 52px; letter-spacing: -2.4px; font-weight: 400; }
+  .badge { background: var(--badge); color: var(--badge-text); border-radius: 999px; padding: 2px 6px; font-size: 11px; }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  td, th { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 400; }
+  a { color: var(--focus); }
+</style>
+</head>
+<body>
+<header>
+  <strong>Spline</strong>
+  <span class="row">
+    <button>Talk to sales</button>
+    <button class="solid">Start building</button>
+  </span>
+</header>
+<main>
+  <h1>The 3D design tool for your team and agents</h1>
+  <p>Free, in your browser. Values are the computed styles from the public site and the signed-out sign-in shell.</p>
+
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><i style="background:#000"></i><span>page #000</span></div>
+    <div class="swatch"><i style="background:#101010"></i><span>surface #101010</span></div>
+    <div class="swatch"><i style="background:#eee"></i><span>action #eee</span></div>
+    <div class="swatch"><i style="background:#8a8a8a"></i><span>muted #8a8a8a</span></div>
+    <div class="swatch"><i style="background:#2e2e2e"></i><span>stroke #2e2e2e</span></div>
+    <div class="swatch"><i style="background:#8eb2f2"></i><span>focus #8eb2f2</span></div>
+    <div class="swatch"><i style="background:#2589ff"></i><span>accent #2589ff</span></div>
+    <div class="swatch"><i style="background:#1e1e1e"></i><span>app #1e1e1e</span></div>
+    <div class="swatch"><i style="background:#bfdec4"></i><span>badge #bfdec4</span></div>
+  </div>
+
+  <h2>Type</h2>
+  <p style="font-size:72px;line-height:80px;letter-spacing:-4.32px;font-weight:450;color:var(--heading);margin:0">Display 72</p>
+  <p style="font-size:56px;line-height:64px;letter-spacing:-3.36px;font-weight:450;color:var(--heading)">Section 56</p>
+  <p style="font-size:24px;line-height:30px;letter-spacing:-1.2px;font-weight:450;color:var(--heading)">Title 24</p>
+  <p>Body 16 / 24 in Geist. UI copy is 14 / 20. The app shell uses Spline Sans at 11px.</p>
+
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="solid">Get started for free</button>
+    <button>Talk to sales</button>
+    <button class="chip">Interactive product design</button>
+    <span class="badge">Up to 20% off</span>
+  </div>
+  <p></p>
+  <div class="row">
+    <input placeholder="Email" value="">
+    <select><option>Company size</option></select>
+  </div>
+
+  <h2>Plan card</h2>
+  <div class="card">
+    <div style="font-size:24px;font-weight:450;letter-spacing:-1.2px">Pro</div>
+    <div class="price">$25</div>
+    <p>per seat / month</p>
+    <button class="solid" style="width:100%">Get Pro</button>
+  </div>
+
+  <h2>Spacing and radius</h2>
+  <table>
+    <tr><th>Token</th><th>Value</th></tr>
+    <tr><td>spacing 4 to 48</td><td>4, 8, 10, 14, 16, 20, 24, 28, 32, 48</td></tr>
+    <tr><td>radius</td><td>pill 999, card 16, media 14, control 8, checkbox 4</td></tr>
+    <tr><td>motion</td><td>150, 200, 250, 800 ms</td></tr>
+  </table>
+</main>
+</body>
+</html>

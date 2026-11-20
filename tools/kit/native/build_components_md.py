@@ -9,7 +9,15 @@ Every value in an entry is a token path; the builder refuses a path tokens.json 
 that is not on disk, so the page cannot drift from the package. Standard library only, deterministic.
 """
 import json
+import os
 import pathlib
+
+# PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+# for it. While this is None the script stops: the kit's copy is Grok Bot's example and
+# would write Grok Bot's values. KIT_EXAMPLE=1 runs the example as it is.
+ADAPTED_FOR = None
+if ADAPTED_FOR is None and not os.environ.get("KIT_EXAMPLE"):
+    raise SystemExit("build_components_md.py is the kit's Grok Bot example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR")
 
 PKG = pathlib.Path(__file__).resolve().parent.parent
 TOK = json.loads((PKG / "tokens.json").read_text())
@@ -26,7 +34,7 @@ def paths(node, pre=()):
                 yield from paths(v, pre + (k,))
 
 
-KNOWN = set(paths(TOK["core"])) | set(paths(TOK["dark"]))
+KNOWN = set().union(*(paths(TOK[s]) for s in ("core", "light", "dark") if s in TOK))   # a one-theme app has one set
 
 NAME = "Grok Bot"  # PRODUCT (adapt)
 
@@ -148,12 +156,14 @@ def main():
         out.append("")
         cells = []
         for state, stem in states:
+            found = 0
             for suffix, theme in (("", "dark"), ("-light", "light")):
                 f = CROPS / f"{stem}{suffix}.png"
                 if f.exists():
                     cells.append(f"[{state} ({theme})](components/crops/{f.name})")
-                elif not suffix:
-                    raise SystemExit(f"{name}: no crop {f.name}")
+                    found += 1
+            if not found:   # a light-only app has only the -light crop
+                raise SystemExit(f"{name}: no crop {stem}.png or {stem}-light.png")
         out += ["Crops: " + ", ".join(cells) + ".", ""]
         if notes:
             out += [notes, ""]

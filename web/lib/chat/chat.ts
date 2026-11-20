@@ -16,6 +16,7 @@
 // block in whichever shape the provider takes.
 import { call as callTool, SPECS } from "./library";
 import "../env";
+import { bareHost, PROVIDER_HOSTS_ENV, providerHostAllowed } from "./provider-hosts";
 
 type Obj = Record<string, unknown>;
 
@@ -107,9 +108,10 @@ function isLoopback(host: string): boolean {
 }
 
 export function checkUrl(url: string): void {
-  // Only https anywhere, or plain http to this machine (a self-hosted model).
-  // Anything else (file:, data:, http to another host) is refused before a
-  // socket opens, so the endpoint cannot reach internal plain-http services.
+  // https to an allowed provider host, or plain http to a listed loopback host
+  // (a self-hosted model). Anything else (file:, data:, http to another host,
+  // an unlisted host) is refused before a socket opens, so the endpoint cannot
+  // reach internal services.
   let u: URL;
   try {
     u = new URL(url);
@@ -117,8 +119,10 @@ export function checkUrl(url: string): void {
     throw new ProviderError("invalid provider URL");
   }
   if (!u.hostname) throw new ProviderError("invalid provider URL");
-  if (u.protocol === "https:" || (u.protocol === "http:" && isLoopback(u.hostname))) return;
-  throw new ProviderError("provider URL must be https (http only for localhost)");
+  if (!(u.protocol === "https:" || (u.protocol === "http:" && isLoopback(u.hostname))))
+    throw new ProviderError("provider URL must be https (http only for localhost)");
+  if (!providerHostAllowed(u.hostname, process.env[PROVIDER_HOSTS_ENV]))
+    throw new ProviderError(`provider host ${bareHost(u.hostname)} is not allowed; add it to ${PROVIDER_HOSTS_ENV}`);
 }
 
 function sameOrigin(a: string, b: string): boolean {

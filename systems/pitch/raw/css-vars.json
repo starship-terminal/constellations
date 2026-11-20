@@ -1,0 +1,28 @@
+{
+  "source": "Computed and stylesheet reads on https://pitch.com/ (Framer marketing) and https://auth.pitch.com/login (Pitch Auth0 page reached from https://app.pitch.com/), 2026-11-19. Marketing viewport in the T3 preview was 1169x731 at dpr 2; the 1440 and 390 reads are headless Playwright because the preview tab returned 'The browser is not producing screenshot frames'.",
+  "marketingFramerTokens": {
+    "--token-07c59440-fc5f-4fb7-9435-a7ff074e0d34": "#5318eb",
+    "--token-2659268f-dfd6-4f33-9625-999d245bc24a": "#363636",
+    "--token-46527d5a-f3d9-42a6-9441-45d24cc77dc3": "#5318eb",
+    "--token-4d0d31c7-6f7e-4c6a-a2be-10abc6becf5b": "#c6a5ff",
+    "--token-4fbfc342-89ce-48a8-822c-2888df55a915": "#fff",
+    "--token-5ac254b1-12f9-4813-84c2-f225d647b190": "#ff2344",
+    "--token-67863ceb-ad9c-470b-9f8c-f19ab61b5f55": "#fff",
+    "--token-690c6400-3bde-46a8-903a-d02119805b45": "#280f62",
+    "--token-70cecdac-9248-4f38-9d1d-564a7491e69a": "#c4ee87",
+    "--token-7419ce6b-752f-4a7f-acf1-14cf371f4474": "#fff",
+    "--token-7cd3dd22-9636-4551-ac3e-271ed57898cf": "#0c021c",
+    "--token-8f454f86-5f1a-4457-8cb3-210b70bc92be": "#f9f6ff",
+    "--token-9901daa9-338b-443a-abe5-f1d77f5d992c": "#280f62",
+    "--token-9f3d2b7e-2cad-488a-9e02-167a62e1c960": "#fff",
+    "--token-a9014e7d-2289-4cfd-ae9b-052fde9e3e48": "#c6a5ff",
+    "--token-b5c3b7eb-39a2-45cb-8ff8-5ca6c6129045": "#ebe3fe",
+    "--token-bf6e6ad9-0834-4bf8-9a9b-744c9d5daca8": "#280f62",
+    "--token-d023f303-d032-4951-b3c7-f7176b06c578": "#280f62",
+    "--token-d7ed0ca3-f22a-4402-ba2c-8b69989dc17e": "#c4ee87",
+    "--token-eb517067-e467-4a77-b781-a8cf38d12a9a": "#c6a5ff",
+    "--token-f00c3c0d-390f-4a8d-aee9-60c50c874549": "#5318eb",
+    "--token-ff50ebbc-da2b-4592-9f7a-9978fad0e005": "#c6a5ff"
+  },
+  "loginCustomProperties": "see login-vars in this file; declared on the auth page stylesheets and resolved in the live page"
+}

@@ -1,0 +1,35 @@
+{
+ "read": "2026-11-19",
+ "source": "stylesheet rules on https://www.tella.com/, not a motion-probe.mjs run",
+ "computed": {
+  "navLink": "transition-opacity 150ms",
+  "navButton": "transition transform, box-shadow, opacity 150ms ease-out",
+  "header": "transition background-color, border-color 200ms",
+  "switch": "transition-colors 200ms ease-out",
+  "footerLink": "transition-colors 150ms"
+ },
+ "declaredDurations": [
+  "150ms",
+  "200ms",
+  "300ms",
+  "400ms",
+  "600ms",
+  "650ms",
+  "700ms",
+  "800ms",
+  "1s",
+  "2s"
+ ],
+ "declaredEasings": [
+  "ease-out",
+  "ease-in-out",
+  "cubic-bezier(0.16, 1, 0.3, 1)",
+  "cubic-bezier(.4, 0, .2, 1)",
+  "cubic-bezier(.4, 0, 1, 1)",
+  "cubic-bezier(0, 0, .2, 1)"
+ ],
+ "reducedMotion": {
+  "verdict": "partial",
+  "evidence": "The sheet has prefers-reduced-motion: reduce rules that set animation-name:none, transition-property:none, and duration 1ms on motion-reduce utilities and on .tp-anim, .agent-canvas-shimmer, .shimmer-text, .agent-loading-dots, .glitch-404, .aMY-CG_overlay. Other animations are gated behind prefers-reduced-motion: no-preference (motion-safe:). A live emulateMedia pass was not run, so the page verdict is partial rather than honours."
+ }
+}

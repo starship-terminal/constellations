@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>craftwork.design style guide</title>
+<meta name="description" content="craftwork.design design tokens and the public signed-out surface's components, rendered from tokens.json with the declared --background-*/--text-icons-*/--stroke-* layer and the measured computed styles.">
+<style>
+:root {
+  --font-family-euclid: euclidCircularALightWebS, "euclidCircularALightWebS Fallback", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-family-system-fallback: sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-size-hero: 68px;
+  --font-size-price: 40px;
+  --font-size-hero-mobile: 38px;
+  --font-size-card-title: 18px;
+  --font-size-body: 20px;
+  --font-size-small: 14px;
+  --font-size-tiny: 13px;
+  --font-size-hero-lh: 70.72px;
+  --color-brand-lime: #cafc00;
+  --color-brand-lime-hover: #bceb00;
+  --color-brand-lime-pressed: #a4cc00;
+  --color-brand-circa: #063bf5;
+  --color-brand-copied: #4ade80;
+  --color-brand-orange: #f55611;
+  --color-brand-other-blue: #063af5;
+  --color-brand-other-pink: #c32cf8;
+  --color-brand-logo: #000000;
+  --color-category-blue: #0d99ff;
+  --color-category-blue-soft: rgba(12, 155, 255, 0.07);
+  --color-category-dark-green: #0fb148;
+  --color-category-dark-green-soft: rgba(5, 255, 93, 0.09);
+  --color-category-fuchsia: #df04e3;
+  --color-category-fuchsia-soft: rgba(255, 5, 255, 0.06);
+  --color-category-gray-soft: rgba(15, 15, 15, 0.05);
+  --color-category-green: #76b100;
+  --color-category-green-soft: rgba(170, 255, 1, 0.13);
+  --color-category-orange: #fc5621;
+  --color-category-orange-2: #ef910b;
+  --color-category-orange-2-soft: rgba(255, 155, 12, 0.07);
+  --color-category-orange-soft: rgba(255, 164, 19, 0.11);
+  --color-category-purple: #3b06d2;
+  --color-category-purple-soft: rgba(66, 11, 255, 0.09);
+  --color-category-red: #e30404;
+  --color-category-red-2: #de1e1e;
+  --color-category-red-2-soft: rgba(255, 12, 12, 0.09);
+  --color-category-red-soft: rgba(255, 12, 12, 0.07);
+  --color-category-turquoise: #1ba8d4;
+  --color-category-turquoise-soft: rgba(5, 255, 255, 0.08);
+  --color-category-yellow: #f4ce02;
+  --color-category-yellow-soft: rgba(255, 228, 2, 0.15);
+  --color-catalog-tint-blue: #2563eb;
+  --color-catalog-tint-blue-plate: #3b82f6;
+  --color-catalog-tint-gray: #525252;
+  --color-catalog-tint-gray-plate: #a3a3a3;
+  --color-catalog-tint-green: #16a34a;
+  --color-catalog-tint-green-plate: #22c55e;
+  --color-catalog-tint-indigo: #4f46e5;
+  --color-catalog-tint-indigo-plate: #6366f1;
+  --color-catalog-tint-lime: #5f9e0a;
+  --color-catalog-tint-lime-plate: #84cc16;
+  --color-catalog-tint-orange: #ea6a12;
+  --color-catalog-tint-orange-plate: #f97316;
+  --color-catalog-tint-pink: #db2777;
+  --color-catalog-tint-pink-plate: #ec4899;
+  --color-catalog-tint-purple: #7c3aed;
+  --color-catalog-tint-purple-plate: #8b5cf6;
+  --color-catalog-tint-red: #dc2626;
+  --color-catalog-tint-red-plate: #ef4444;
+  --color-catalog-tint-teal: #0d9488;
+  --color-catalog-tint-teal-plate: #14b8a6;
+  --color-catalog-tint-yellow: #b7791f;
+  --color-catalog-tint-yellow-plate: #f5b400;
+  --color-viz-axis: #d6d6d6;
+  --color-viz-grid: #ececec;
+  --color-viz-muted: #8a8a8a;
+  --color-viz-series-1: #2a78d6;
+  --color-viz-series-1-wash: rgba(42, 120, 214, 0.1);
+  --color-viz-series-2: #eb6834;
+  --color-viz-series-3: #1baf7a;
+  --color-viz-series-4: #eda100;
+  --color-status-danger: #f54811;
+  --color-status-danger-pastel: #ffdbcc;
+  --color-status-warning: #fab219;
+  --color-status-critical: #d03b3b;
+  --color-status-critical-text: #b3261e;
+  --color-status-good: #0ca30c;
+  --color-status-good-text: #006300;
+  --color-status-warning-text: #8a5a00;
+  --color-toast-default-bg: #1e1e1e;
+  --color-toast-default-fg: #ffffff;
+  --color-toast-error-bg: #e5484d;
+  --color-toast-fg: #ffffff;
+  --color-toast-success-bg: #4ade80;
+  --color-toast-success-fg: #111111;
+  --color-toast-warning-bg: #e8930c;
+  --gradient-grey-1: #f3f3f3;
+  --gradient-grey-2: rgba(243, 243, 243, 0);
+  --gradient-pro-benefits: linear-gradient(180deg, #faffe4 0%, #f1ffec 30%, #fff 100%);
+  --gradient-text-become-author: linear-gradient(180deg, #f1ffe4 0%, #ecfeff 70.5%, #fff 100%);
+  --gradient-text-become-author-2: linear-gradient(180deg, #fffdd8 0%, #fff4e3 30%, #fff 100%);
+  --gradient-text-become-author-3: linear-gradient(180deg, #faffe4 0%, #f1ffec 30%, #fff 100%);
+  --gradient-text-become-author-4: linear-gradient(180deg, #f8ffe8 0%, #fefbff 39.5%, #fff 100%);
+  --gradient-text-become-author-5: linear-gradient(180deg, #fee8ff 0%, #fefbff 39.5%, #fff 100%);
+  --gradient-text-become-author-6: linear-gradient(180deg, #fff0 0%, #fff 100%);
+  --gradient-text-become-author-7: linear-gradient(180deg, #ffe4ff 0%, #fffeec 70.5%, #fff 100%);
+  --gradient-text-become-author-instagram: linear-gradient(180deg, #6d46c3 0%, #e85f50 56%, #fade6d 100%);
+  --gradient-text-curated-pro: linear-gradient(180deg, #fdfeff 0%, #f7f9fa 100%);
+  --gradient-text-lead: linear-gradient(170deg, #fff 3.4%, #fff7f3 92.65%);
+  --gradient-text-main-page: linear-gradient(180deg, #edededb3 0%, #fafafa 30%, #fff 100%);
+  --gradient-text-main-page-2: linear-gradient(180deg, #faffe4 0%, #f1ffec 30%, #fff 100%);
+  --gradient-text-main-page-3: linear-gradient(180deg, #e4fff8 0%, #f8f5ff 30%, #fff 100%);
+  --gradient-text-main-page-4: linear-gradient(180deg, #f4edff 0%, #fdf2f2 50%, #fff 100%);
+  --gradient-text-pro: linear-gradient(180deg, #fff0 0%, #fff 78.65%);
+  --gradient-text-pro-1: linear-gradient(180deg, #f7f3ff00 0%, #f9f6ff 78.65%);
+  --gradient-text-pro-2: linear-gradient(180deg, #fffaf200 0%, #fff9ef 78.65%);
+  --gradient-text-pro-3: linear-gradient(180deg, #fffdd8 0%, #fff4e3 30%, #fff 100%);
+  --gradient-text-pro-4: linear-gradient(180deg, #e4fff8 0%, #f2ecff 30%, #fff 100%);
+  --gradient-text-pro-5: linear-gradient(180deg, #faffe4 0%, #f1ffec 30%, #fff 100%);
+  --gradient-text-pro-6: linear-gradient(180deg, #fff4ea 0%, #ecf7ff 30%, #fff 100%);
+  --radius-nav: 8px;
+  --radius-control: 10px;
+  --radius-pill: 9999px;
+  --border-hairline-width: 1px;
+  --shadow-toast: 0px 12px 32px -8px rgba(0, 0, 0, 0.28), 0px 2px 6px 0px rgba(0, 0, 0, 0.12);
+  --spacing-nav-h: 60px;
+  --spacing-promo-h: 36px;
+  --motion-hero-ease: cubic-bezier(.2, 0, 0, 1);
+  --motion-hero-horizon: 1.8s;
+  --motion-hero-rise: 0.9s;
+  --motion-hero-stagger: 0.09s;
+  --color-action-primary: #1e1e1e;
+  --color-action-primary-hover: #383838;
+  --color-action-primary-pressed: #000000;
+  --color-action-secondary: #efefef;
+  --color-action-secondary-hover: #e0e0e0;
+  --color-action-ghost: #ffffff;
+  --color-action-switcher-active: #ffffff;
+  --color-background-field: #fafafa;
+  --color-background-plate: #f4f4f4;
+  --color-background-surface-1: #ffffff;
+  --color-background-surface-3: #fafafa;
+  --color-background-surface-4: rgba(237, 237, 237, 0.698);
+  --color-background-catalog-fill: rgba(0, 0, 0, 0.04);
+  --color-background-catalog-fill-active: rgba(0, 0, 0, 0.07);
+  --color-background-switcher: #fafafa;
+  --color-background-indicator: #e0e0e0;
+  --color-background-promo: #161616;
+  --color-text-text-primary: #000000;
+  --color-text-text-secondary: #606060;
+  --color-text-text-tertiary: #999999;
+  --color-text-text-destructive: #f54911;
+  --color-text-text-info: #c42df9;
+  --color-text-text-reversed: #ffffff;
+  --color-text-on-primary: #ffffff;
+  --color-border-stroke-primary: rgba(0, 0, 0, 0.1);
+  --color-border-stroke-destructive: #ffdbcc;
+  --color-border-stroke-info: #e7ccfc;
+  --component-button-height-nav: 30px;
+  --component-button-height-large: 46px;
+  --component-search-pill-width: 350px;
+  --component-library-row: 34px;
+  --component-filter-field: 30px;
+  --component-login-field: 46px;
+  --component-plan-card: 547.188px;
+  --component-product-card: 362.672px;
+  --component-menu-button: 44px;
+  --component-theme-toggle: 32px;
+  --component-faq-row: 68px;
+  --component-promo-text: 13px;
+  --component-nav-link-size: 16px;
+  --component-button-state-move: {'default': var(---backgroundColor----rgb-30--30--30-----color----rgb-255--255--255--), 'hover': var(---backgroundColor----rgb-56--56--56-----color----rgb-255--255--255--), 'pressed': var(---backgroundColor----rgb-0--0--0-----color----rgb-255--255--255--)};
+  --sg-sans: "euclidCircularALightWebS", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "euclidCircularALightWebS", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --color-action-primary: #ffffff;
+  --color-action-secondary: #303030;
+  --color-action-brand: #cafc00;
+  --color-text-text-primary: #ffffff;
+  --color-text-text-secondary: #a0a0a0;
+  --color-border-stroke-primary: rgba(255, 255, 255, 0.1);
+  --color-background-surface-1: #111111;
+  --color-background-field: #141414;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--light-color-text-text-primary, #000); background: var(--light-color-background-surface-1, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.1 var(--sg-serif); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #0f1015); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #0f1015); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--color-brand-ink, #030302); padding: 12px; border-radius: 12px; }
+.pal.dark .nm, .pal.dark .vl { color: rgba(255, 255, 255, 0.898); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); overflow: hidden; background: var(--surface-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 20px; height: var(--component-spacing-header-h, 52px); padding: 0 10px 0 18px; font-size: 16px; color: var(--color-brand-ink, #030302); background: #fff; border-radius: var(--radius-nav, 26px); box-shadow: 0 1px 3px rgba(3,3,2,.08); margin: 12px 18px; }
+.navbar .wm { font-weight: 800; font-size: 18px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.navbar .link { color: var(--color-brand-ink, #030302); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height-large, 48px); padding: 0 24px; font-size: 16px; font-weight: 500; border-radius: var(--radius-full, 9999px); border: 1px solid transparent; }
+.btn.primary { background: var(--light-color-action-primary, #030302); color: var(--light-color-text-on-primary, #fff); height: var(--component-button-height-nav, 36px); font-size: 14px; }
+.btn.light { background: var(--light-color-background-card, #fff); color: var(--color-brand-ink, #030302); box-shadow: 0 1px 4px rgba(3,3,2,.12); }
+.btn.outline { background: transparent; color: var(--color-brand-ink, #030302); box-shadow: inset 0 0 0 1px var(--light-color-border-border, rgba(3,3,2,.09)); }
+.hero { color: var(--color-brand-ink, #030302); padding: 96px 40px 90px; font: 400 52px/1 var(--sg-serif); text-align: center; background: linear-gradient(180deg, #bfe0ee 0%, #dceef7 60%, var(--light-color-background-page, #fcf9f7) 100%); }
+.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); color: var(--light-color-text-muted-foreground, rgba(3,3,2,.5)); margin: 18px auto 26px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--light-color-border-border, rgba(3,3,2,.09)); padding: 18px; font-size: 13px; background: var(--light-color-background-card, #fff); border-radius: var(--radius-2xl, 16px); }
+.tile .img { height: 100px; background: var(--light-color-background-muted, rgba(3,3,2,.04)); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: var(--radius-default, 10px); }
+.tile b { display: block; font: 400 20px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .price { font: 400 40px/1.1 var(--sg-serif); margin: 8px 0 2px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--light-color-border-border, rgba(3,3,2,.09)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-border, #e0e0e0); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #171717); opacity: .65; font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: var(--light-color-background-muted, rgba(3,3,2,.04)); border-radius: var(--radius-full, 9999px); padding: 4px; gap: 0; font-size: 16px; }
+.toggle span { padding: 10px 28px; border-radius: var(--radius-full, 9999px); font-weight: 500; color: var(--color-brand-ink, #030302); }
+.toggle .on { background: var(--light-color-background-card, #fff); box-shadow: 0 1px 3px rgba(3,3,2,.12); }
+</style>
+</head>
+<body>
+<main>
+  <h1>craftwork.design style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">craftwork.design, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the #cafc00 lime brand, the #1e1e1e primary pill fills on white text, the white page with its #161616 promo bar, the 12-hue category palette, and Euclid Circular A at 600 for every heading. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from craftwork.design on 2026-11-12, signed out, in headless Chromium. The account, purchases and asset downloads sit behind the OTP card — Send code was never pressed. Euclid Circular A is a licensed face served same-origin, not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A 36px #161616 countdown bar sits over the 60px nav: the craftwork wordmark, Assets / Templates / Inspiration dropdowns, the 350px #fafafa search pill, the theme toggle, Sign in and a 30px #1e1e1e Connect agent pill. The hero is 68px Euclid 600 on white; 46px #1e1e1e and #efefef buttons sit under it, then a product rail of cards with "from $N" prices.</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm">craftwork</span><span class="link">Assets</span><span class="link">Templates</span><span class="link">Inspiration</span><span class="sp"></span><span class="link">Pricing</span><span class="link">Sign in</span><span class="btn primary" style="height:30px;font-size:13px">Connect agent</span></div>
+    <div class="hero" style="background:var(--light-color-background-surface-1,#fff);font-family:var(--sg-sans);font-weight:600">UI kits, templates and fonts<br>made by real designers<small>4,000+ packs for Figma, Framer, Webflow and code by 570+ independent designers.</small><span class="btn primary" style="height:46px;font-size:16px;border-radius:10px">Get full access</span> <span class="btn" style="height:46px;font-size:16px;border-radius:10px;background:var(--light-color-action-secondary,#efefef);color:#000">Browse the catalog</span></div>
+  </div>
+
+  <h2 class="sh">The catalog</h2>
+  <p class="lead">/components and /catalog run a 259px library list (34px rows on a 4-7% ink fill) beside an asset grid: filters sit in 30px fields and cards carry a title, a live count and a "from $N" price under a 16:9 preview.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile" style="border-radius:10px"><div class="img" style="border-radius:6px"></div><b style="font-family:var(--sg-sans);font-weight:500;font-size:18px">Blank 3 Pro</b><span class="sub">UI kit — from $89</span></div>
+      <div class="tile" style="border-radius:10px"><div class="img" style="border-radius:6px"></div><b style="font-family:var(--sg-sans);font-weight:500;font-size:18px">ElementX</b><span class="sub">Design system — from $78</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The dark furniture</h2>
+  <p class="lead">Craftwork paints its darks two ways: the #1e1e1e primary fills (Connect agent, Get full access, Log in with Google) that lift to #383838 on hover and #000 pressed, and the real dark theme — the nav toggle flips data-theme and the same semantic vars repaint: primary inverts to white, text to #fff.</p>
+  <div class="mock" style="padding:24px;background:var(--color-brand-ink,#030302);border-radius:var(--radius-3xl,24px)">
+    <div style="color:#fff;font:600 28px/1.2 var(--sg-sans);margin-bottom:14px">One plan opens all of them.</div>
+    <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:rgba(255,255,255,.8)"><span>Download app</span><span>Careers</span><span>Terms</span><span>Privacy</span><span>Instagram</span><span>X</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The core set carries the brand (#cafc00 lime, #063bf5 circa), the 12-hue --category-* palette, the --catalog-tint-* chips, --status-*/--indicators-*/--viz-* and the toast skin; the light roles alias the --background-*/--text-icons-*/--stroke-* semantic layer. A real dark set ships too — resolved under data-theme=dark.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Craftwork runs a tight radius language: 8px on the nav pill, 10px on every control (hero CTAs, login buttons, library rows, filter fields) and 9999px only on the search pill. Borders are a 10% ink hairline.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">One family: <code>Euclid Circular A</code> carries everything — 600 on every heading (68px hero, 40px prices, 38px mobile), 500 on buttons and card titles, 400 on body/nav text, 13-16px sizes throughout. Samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --color-* and semantic layer off the same-origin Next.js sheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"euclid":{"v":"euclidCircularALightWebS, \"euclidCircularALightWebS Fallback\", ui-sans-serif, system-ui, -apple-system, sans-serif","t":"fontFamily","s":"computed fontFamily of hero-h1 default (raw/components-computed.json); the @font-face blocks are served same-origin (raw/css-vars.json fonts)","d":"Euclid Circular A (Craftwork's own licensed face, served as euclidCircularA*WebS webfonts) — every heading and all UI text."},"system-fallback":{"v":"sans-serif","t":"fontFamily","s":"css-var --toastify-font-family (light); css-var --toastify-font-family resolved (raw/css-vars.json)","d":"The sans-serif fallback the vendor toast layer declares."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of nav-link default (raw/components-computed.json)","d":"Measured 400 — body and nav text."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of hero-cta default (raw/components-computed.json)","d":"Measured 500 — buttons, card titles, promo text."},"semibold":{"v":600,"t":"fontWeight","s":"computed fontWeight of hero-h1 default (raw/components-computed.json)","d":"Measured 600 — every heading, the logo wordmark."}},"size":{"hero":{"v":"68px","t":"fontSize","s":"computed fontSize of hero-h1 default (raw/components-computed.json)","d":"The home hero's measured 68px/70.72px Euclid 600."},"price":{"v":"40px","t":"fontSize","s":"computed fontSize of plan-price default (raw/components-computed.json)","d":"The 40px plan price figure (measured via textStyle)."},"hero-mobile":{"v":"38px","t":"fontSize","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The mobile hero's measured 38px."},"card-title":{"v":"18px","t":"fontSize","s":"computed fontSize of product-card default (raw/components-computed.json)","d":"The 18px 500 product-card title."},"body":{"v":"20px","t":"fontSize","s":"computed fontSize of nav default (raw/components-computed.json)","d":"The 16px UI/body size."},"small":{"v":"14px","t":"fontSize","s":"computed fontSize of library-row default (raw/components-computed.json)","d":"The 14px small UI size (library rows, plan copy)."},"tiny":{"v":"13px","t":"fontSize","s":"computed fontSize of promo-banner default (raw/components-computed.json)","d":"The 13px promo-bar size."},"hero-lh":{"v":"70.72px","t":"other","s":"computed lineHeight of hero-h1 default (raw/components-computed.json)","d":"The hero's 70.72px line-height (~1.04)."}}},"color":{"brand":{"lime":{"v":"#cafc00","t":"color","s":"css-var --background-brand (light); css-var --background-brand resolved (raw/css-vars.json)","d":"The #cafc00 signature lime — the brand fill."},"lime-hover":{"v":"#bceb00","t":"color","s":"css-var --background-brand-hover (light); css-var --background-brand-hover resolved (raw/css-vars.json)","d":"Declared hover #bceb00."},"lime-pressed":{"v":"#a4cc00","t":"color","s":"css-var --background-brand-pressed (light); css-var --background-brand-pressed resolved (raw/css-vars.json)","d":"Declared pressed #a4cc00."},"circa":{"v":"#063bf5","t":"color","s":"css-var --background-circa (light); css-var --background-circa resolved (raw/css-vars.json)","d":"The #063bf5 circa blue."},"copied":{"v":"#4ade80","t":"color","s":"css-var --background-copied (light); css-var --background-copied resolved (raw/css-vars.json)","d":"The #4ade80 copied-state green."},"orange":{"v":"#f55611","t":"color","s":"css-var --orange (light); css-var --orange resolved (raw/css-vars.json)","d":"Declared #f55611 orange."},"other-blue":{"v":"#063af5","t":"color","s":"css-var --other-blue (light); css-var --other-blue resolved (raw/css-vars.json)","d":"Declared #063af5."},"other-pink":{"v":"#c32cf8","t":"color","s":"css-var --other-pink (light); css-var --other-pink resolved (raw/css-vars.json)","d":"Declared #c32cf8."},"logo":{"v":"#000000","t":"color","s":"css-var --logo (light); css-var --logo resolved (raw/css-vars.json)","d":"The wordmark colour (black light, white dark)."}},"category":{"blue":{"v":"#0d99ff","t":"color","s":"css-var --category-blue (light); css-var --category-blue resolved (raw/css-vars.json)","d":"Declared asset-category hue blue."},"blue-soft":{"v":"rgba(12, 155, 255, 0.07)","t":"color","s":"css-var --category-blue-soft (light); css-var --category-blue-soft resolved (raw/css-vars.json)","d":"Declared asset-category hue blue-soft."},"dark-green":{"v":"#0fb148","t":"color","s":"css-var --category-dark-green (light); css-var --category-dark-green resolved (raw/css-vars.json)","d":"Declared asset-category hue dark-green."},"dark-green-soft":{"v":"rgba(5, 255, 93, 0.09)","t":"color","s":"css-var --category-dark-green-soft (light); css-var --category-dark-green-soft resolved (raw/css-vars.json)","d":"Declared asset-category hue dark-green-soft."},"fuchsia":{"v":"#df04e3","t":"color","s":"css-var --category-fuchsia (light); css-var --category-fuchsia resolved (raw/css-vars.json)","d":"Declared asset-category hue fuchsia."},"fuchsia-soft":{"v":"rgba(255, 5, 255, 0.06)","t":"color","s":"css-var --category-fuchsia-soft (light); css-var --category-fuchsia-soft resolved (raw/css-vars.json)","d":"Declared asset-category hue fuchsia-soft."},"gray-soft":{"v":"rgba(15, 15, 15, 0.05)","t":"color","s":"css-var --category-gray-soft (light); css-var --category-gray-soft resolved (raw/css-vars.json)","d":"Declared asset-category hue gray-soft."},"green":{"v":"#76b100","t":"color","s":"css-var --category-green (light); css-var --category-green resolved (raw/css-vars.json)","d":"Declared asset-category hue green."},"green-soft":{"v":"rgba(170, 255, 1, 0.13)","t":"color","s":"css-var --category-green-soft (light); css-var --category-green-soft resolved (raw/css-vars.json)","d":"Declared asset-category hue green-soft."},"orange":{"v":"#fc5621","t":"color","s":"css-var --category-orange (light); css-var --category-orange resolved (raw/css-vars.json)","d":"Declared asset-category hue orange."},"orange-2":{"v":"#ef910b","t":"color","s":"css-var --category-orange-2 (light); css-var --category-orange-2 resolved (raw/css-vars.json)","d":"Declared asset-category hue orange-2."},"orange-2-soft":{"v":"rgba(255, 155, 12, 0.07)","t":"color","s":"css-var --category-orange-2-soft (light); css-var --category-orange-2-soft resolved (raw/css-vars.json)","d":"Declared asset-category hue orange-2-soft."},"orange-soft":{"v":"rgba(255, 164, 19, 0.11)","t":"color","s":"css-var --category-orange-soft (light); css-var --category-orange-soft resolved (raw/css-vars.json)","d":"Declared asset-category hue orange-soft."},"purple":{"v":"#3b06d2","t":"color","s":"css-var --category-purple (light); css-var --category-purple resolved (raw/css-vars.json)","d":"Declared asset-category hue purple."},"purple-soft":{"v":"rgba(66, 11, 255, 0.09)","t":"color","s":"css-var --category-purple-soft (light); css-var --category-purple-soft resolved (raw/css-vars.json)","d":"Declared asset-category hue purple-soft."},"red":{"v":"#e30404","t":"color","s":"css-var --category-red (light); css-var --category-red resolved (raw/css-vars.json)","d":"Declared asset-category hue red."},"red-2":{"v":"#de1e1e","t":"color","s":"css-var --category-red-2 (light); css-var --category-red-2 resolved (raw/css-vars.json)","d":"Declared asset-category hue red-2."},"red-2-soft":{"v":"rgba(255, 12, 12, 0.09)","t":"color","s":"css-var --category-red-2-soft (light); css-var --category-red-2-soft resolved (raw/css-vars.json)","d":"Declared asset-category hue red-2-soft."},"red-soft":{"v":"rgba(255, 12, 12, 0.07)","t":"color","s":"css-var --category-red-soft (light); css-var --category-red-soft resolved (raw/css-vars.json)","d":"Declared asset-category hue red-soft."},"turquoise":{"v":"#1ba8d4","t":"color","s":"css-var --category-turquoise (light); css-var --category-turquoise resolved (raw/css-vars.json)","d":"Declared asset-category hue turquoise."},"turquoise-soft":{"v":"rgba(5, 255, 255, 0.08)","t":"color","s":"css-var --category-turquoise-soft (light); css-var --category-turquoise-soft resolved (raw/css-vars.json)","d":"Declared asset-category hue turquoise-soft."},"yellow":{"v":"#f4ce02","t":"color","s":"css-var --category-yellow (light); css-var --category-yellow resolved (raw/css-vars.json)","d":"Declared asset-category hue yellow."},"yellow-soft":{"v":"rgba(255, 228, 2, 0.15)","t":"color","s":"css-var --category-yellow-soft (light); css-var --category-yellow-soft resolved (raw/css-vars.json)","d":"Declared asset-category hue yellow-soft."}},"catalog-tint":{"blue":{"v":"#2563eb","t":"color","s":"css-var --catalog-tint-blue (light); css-var --catalog-tint-blue resolved (raw/css-vars.json)","d":"Declared library tint blue."},"blue-plate":{"v":"#3b82f6","t":"color","s":"css-var --catalog-tint-blue-plate (light); css-var --catalog-tint-blue-plate resolved (raw/css-vars.json)","d":"Declared library tint blue-plate."},"gray":{"v":"#525252","t":"color","s":"css-var --catalog-tint-gray (light); css-var --catalog-tint-gray resolved (raw/css-vars.json)","d":"Declared library tint gray."},"gray-plate":{"v":"#a3a3a3","t":"color","s":"css-var --catalog-tint-gray-plate (light); css-var --catalog-tint-gray-plate resolved (raw/css-vars.json)","d":"Declared library tint gray-plate."},"green":{"v":"#16a34a","t":"color","s":"css-var --catalog-tint-green (light); css-var --catalog-tint-green resolved (raw/css-vars.json)","d":"Declared library tint green."},"green-plate":{"v":"#22c55e","t":"color","s":"css-var --catalog-tint-green-plate (light); css-var --catalog-tint-green-plate resolved (raw/css-vars.json)","d":"Declared library tint green-plate."},"indigo":{"v":"#4f46e5","t":"color","s":"css-var --catalog-tint-indigo (light); css-var --catalog-tint-indigo resolved (raw/css-vars.json)","d":"Declared library tint indigo."},"indigo-plate":{"v":"#6366f1","t":"color","s":"css-var --catalog-tint-indigo-plate (light); css-var --catalog-tint-indigo-plate resolved (raw/css-vars.json)","d":"Declared library tint indigo-plate."},"lime":{"v":"#5f9e0a","t":"color","s":"css-var --catalog-tint-lime (light); css-var --catalog-tint-lime resolved (raw/css-vars.json)","d":"Declared library tint lime."},"lime-plate":{"v":"#84cc16","t":"color","s":"css-var --catalog-tint-lime-plate (light); css-var --catalog-tint-lime-plate resolved (raw/css-vars.json)","d":"Declared library tint lime-plate."},"orange":{"v":"#ea6a12","t":"color","s":"css-var --catalog-tint-orange (light); css-var --catalog-tint-orange resolved (raw/css-vars.json)","d":"Declared library tint orange."},"orange-plate":{"v":"#f97316","t":"color","s":"css-var --catalog-tint-orange-plate (light); css-var --catalog-tint-orange-plate resolved (raw/css-vars.json)","d":"Declared library tint orange-plate."},"pink":{"v":"#db2777","t":"color","s":"css-var --catalog-tint-pink (light); css-var --catalog-tint-pink resolved (raw/css-vars.json)","d":"Declared library tint pink."},"pink-plate":{"v":"#ec4899","t":"color","s":"css-var --catalog-tint-pink-plate (light); css-var --catalog-tint-pink-plate resolved (raw/css-vars.json)","d":"Declared library tint pink-plate."},"purple":{"v":"#7c3aed","t":"color","s":"css-var --catalog-tint-purple (light); css-var --catalog-tint-purple resolved (raw/css-vars.json)","d":"Declared library tint purple."},"purple-plate":{"v":"#8b5cf6","t":"color","s":"css-var --catalog-tint-purple-plate (light); css-var --catalog-tint-purple-plate resolved (raw/css-vars.json)","d":"Declared library tint purple-plate."},"red":{"v":"#dc2626","t":"color","s":"css-var --catalog-tint-red (light); css-var --catalog-tint-red resolved (raw/css-vars.json)","d":"Declared library tint red."},"red-plate":{"v":"#ef4444","t":"color","s":"css-var --catalog-tint-red-plate (light); css-var --catalog-tint-red-plate resolved (raw/css-vars.json)","d":"Declared library tint red-plate."},"teal":{"v":"#0d9488","t":"color","s":"css-var --catalog-tint-teal (light); css-var --catalog-tint-teal resolved (raw/css-vars.json)","d":"Declared library tint teal."},"teal-plate":{"v":"#14b8a6","t":"color","s":"css-var --catalog-tint-teal-plate (light); css-var --catalog-tint-teal-plate resolved (raw/css-vars.json)","d":"Declared library tint teal-plate."},"yellow":{"v":"#b7791f","t":"color","s":"css-var --catalog-tint-yellow (light); css-var --catalog-tint-yellow resolved (raw/css-vars.json)","d":"Declared library tint yellow."},"yellow-plate":{"v":"#f5b400","t":"color","s":"css-var --catalog-tint-yellow-plate (light); css-var --catalog-tint-yellow-plate resolved (raw/css-vars.json)","d":"Declared library tint yellow-plate."}},"viz":{"axis":{"v":"#d6d6d6","t":"color","s":"css-var --viz-axis (light); css-var --viz-axis resolved (raw/css-vars.json)","d":"Declared chart colour axis."},"grid":{"v":"#ececec","t":"color","s":"css-var --viz-grid (light); css-var --viz-grid resolved (raw/css-vars.json)","d":"Declared chart colour grid."},"muted":{"v":"#8a8a8a","t":"color","s":"css-var --viz-muted (light); css-var --viz-muted resolved (raw/css-vars.json)","d":"Declared chart colour muted."},"series-1":{"v":"#2a78d6","t":"color","s":"css-var --viz-series-1 (light); css-var --viz-series-1 resolved (raw/css-vars.json)","d":"Declared chart colour series-1."},"series-1-wash":{"v":"rgba(42, 120, 214, 0.1)","t":"color","s":"css-var --viz-series-1-wash (light); css-var --viz-series-1-wash resolved (raw/css-vars.json)","d":"Declared chart colour series-1-wash."},"series-2":{"v":"#eb6834","t":"color","s":"css-var --viz-series-2 (light); css-var --viz-series-2 resolved (raw/css-vars.json)","d":"Declared chart colour series-2."},"series-3":{"v":"#1baf7a","t":"color","s":"css-var --viz-series-3 (light); css-var --viz-series-3 resolved (raw/css-vars.json)","d":"Declared chart colour series-3."},"series-4":{"v":"#eda100","t":"color","s":"css-var --viz-series-4 (light); css-var --viz-series-4 resolved (raw/css-vars.json)","d":"Declared chart colour series-4."}},"status":{"danger":{"v":"#f54811","t":"color","s":"css-var --indicators-danger (light); css-var --indicators-danger resolved (raw/css-vars.json)","d":"Declared status/indicator colour danger."},"danger-pastel":{"v":"#ffdbcc","t":"color","s":"css-var --indicators-danger-pastel (light); css-var --indicators-danger-pastel resolved (raw/css-vars.json)","d":"Declared status/indicator colour danger-pastel."},"warning":{"v":"#fab219","t":"color","s":"css-var --status-warning (light); css-var --status-warning resolved (raw/css-vars.json)","d":"Declared status/indicator colour warning."},"critical":{"v":"#d03b3b","t":"color","s":"css-var --status-critical (light); css-var --status-critical resolved (raw/css-vars.json)","d":"Declared status/indicator colour critical."},"critical-text":{"v":"#b3261e","t":"color","s":"css-var --status-critical-text (light); css-var --status-critical-text resolved (raw/css-vars.json)","d":"Declared status/indicator colour critical-text."},"good":{"v":"#0ca30c","t":"color","s":"css-var --status-good (light); css-var --status-good resolved (raw/css-vars.json)","d":"Declared status/indicator colour good."},"good-text":{"v":"#006300","t":"color","s":"css-var --status-good-text (light); css-var --status-good-text resolved (raw/css-vars.json)","d":"Declared status/indicator colour good-text."},"warning-text":{"v":"#8a5a00","t":"color","s":"css-var --status-warning-text (light); css-var --status-warning-text resolved (raw/css-vars.json)","d":"Declared status/indicator colour warning-text."}},"toast":{"default-bg":{"v":"#1e1e1e","t":"color","s":"css-var --cw-toast-default-bg (light); css-var --cw-toast-default-bg resolved (raw/css-vars.json)","d":"Declared toast colour default-bg."},"default-fg":{"v":"#ffffff","t":"color","s":"css-var --cw-toast-default-fg (light); css-var --cw-toast-default-fg resolved (raw/css-vars.json)","d":"Declared toast colour default-fg."},"error-bg":{"v":"#e5484d","t":"color","s":"css-var --cw-toast-error-bg (light); css-var --cw-toast-error-bg resolved (raw/css-vars.json)","d":"Declared toast colour error-bg."},"fg":{"v":"#ffffff","t":"color","s":"css-var --cw-toast-fg (light); css-var --cw-toast-fg resolved (raw/css-vars.json)","d":"Declared toast colour fg."},"success-bg":{"v":"#4ade80","t":"color","s":"css-var --cw-toast-success-bg (light); css-var --cw-toast-success-bg resolved (raw/css-vars.json)","d":"Declared toast colour success-bg."},"success-fg":{"v":"#111111","t":"color","s":"css-var --cw-toast-success-fg (light); css-var --cw-toast-success-fg resolved (raw/css-vars.json)","d":"Declared toast colour success-fg."},"warning-bg":{"v":"#e8930c","t":"color","s":"css-var --cw-toast-warning-bg (light); css-var --cw-toast-warning-bg resolved (raw/css-vars.json)","d":"Declared toast colour warning-bg."}}},"gradient":{"grey-1":{"v":"#f3f3f3","t":"other","s":"css-var --gradient-grey-1 (light); css-var --gradient-grey-1 resolved (raw/css-vars.json)","d":"Declared gradient recipe --gradient-grey-1."},"grey-2":{"v":"rgba(243, 243, 243, 0)","t":"other","s":"css-var --gradient-grey-2 (light); css-var --gradient-grey-2 resolved (raw/css-vars.json)","d":"Declared gradient recipe --gradient-grey-2."},"pro-benefits":{"v":"linear-gradient(180deg, #faffe4 0%, #f1ffec 30%, #fff 100%)","t":"other","s":"css-var --gradient-pro-benefits (light); css-var --gradient-pro-benefits resolved (raw/css-vars.json)","d":"Declared gradient recipe --gradient-pro-benefits."},"text-become-author":{"v":"linear-gradient(180deg, #f1ffe4 0%, #ecfeff 70.5%, #fff 100%)","t":"other","s":"css-var --text-gradient-become-author (light); css-var --text-gradient-become-author resolved (raw/css-vars.json)","d":"Declared gradient recipe --text-gradient-become-author."},"text-become-author-2":{"v":"linear-gradient(180deg, #fffdd8 0%, #fff4e3 30%, #fff 100%)","t":"other","s":"css-var --text-gradient-become-author-2 (light); css-var --text-gradient-become-author-2 resolved (raw/css-vars.json)","d":"Declared gradient recipe --text-gradient-become-author-2."},"text-become-author-3":{"v":"linear-gradient(180deg, #faffe4 0%, #f1ffec 30%, #fff 100%)","t":"other","s":"css-var --text-gradient-become-author-3 (light); css-var --text-gradient-become-author-3 resolved (raw/css-vars.json)","d":"Declared gradient recipe --text-gradient-become-author-3."},"text-become-author-4":{"v":"linear-gradient(180deg, #f8ffe8 0%, #fefbff 39.5%, #fff 100%)","t":"other","s":"css-var --text-gradient-become-author-4 (light); css-var --text-gradient-become-author-4 resolved (raw/css-vars.json)","d":"Declared gradient recipe --text-gradient-become-author-4."},"text-become-author-5":{"v":"linear-gradient(180deg, #fee8ff 0%, #fefbff 39.5%, #fff 100%)","t":"other","s":"css-var --text-gradient-become-author-5 (light); css-var --text-gradient-become-author-5 resolved (raw/css-vars.json)","d":"Declared gradient recipe --text-gradient-become-author-5."},"text-become-author-6":{"v":"linear-gradient(180deg, #fff0 0%, #fff 100%)","t":"other","s":"css-var --text-gradient-become-author-6 (light); css-var --text-gradient-become-author-6 resolved (raw/css-vars.json)","d":"Declared gradient recipe --text-gradient-become-author-6."},"text-become-author-7":{"v":"linear-gradient(180deg, #ffe4ff 0%, #fffeec 70.5%, #fff 100%)","t":"other","s":"css-var --text-gradient-become-author-7 (light); css-var --text-gradient-become-author-7 resolved (raw/css-vars.json)","d":"Declared gradient recipe --text-gradient-become-author-7."},"text-become-author-instagram":{"v":"linear-gradient(180deg, #6d46c3 0%, #e85f50 56%, #fade6d 100%)","t":"other","s":"css-var --text-gradient-become-author-instagram (light); css-var --text-gradient-become-author-instagram resolved (raw/css-vars.json)","d":"Declared gradient recipe --text-gradient-become-author-instagram."},"text-curated-pro":{"v":"linear-gradient(180deg, #fdfeff 0%, #f7f9fa 100%)","t":"other","s":"css-var --text-gradient-curated-pro (light); css-var --text-gradient-curated-pro resolved (raw/css-vars.json)","d":"Declared gradient recipe --text-gradient-curated-pro."},"text-lead":{"v":"linear-gradient(170deg, #fff 3.4%, #fff7f3 92.65%)","t":"other","s":"css-var --text-gradient-lead (light); css-var --text-gradient-lead resolved (raw/css-vars.json)","d":"Declared gradient recipe --text-gradient-lead."},"text-main-page":{"v":"linear-gradient(180deg, #edededb3 0%, #fafafa 30%, #fff 100%)","t":"other","s":"css-var --text-gradient-main-page (light); css-var --text-gradient-main-page resolved (raw/css-vars.json)","d":"Declared gradient recipe --text-gradient-main-page."},"text-main-page-2":{"v":"linear-gradient(180deg, #faffe4 0%, #f1ffec 30%, #fff 100%)","t":"other","s":"css-var --text-gradient-main-page-2 (light); css-var --text-gradient-main-page-2 resolved (raw/css-vars.json)","d":"Declared gradient recipe --text-gradient-main-page-2."},"text-main-page-3":{"v":"linear-gradient(180deg, #e4fff8 0%, #f8f5ff 30%, #fff 100%)","t":"other","s":"css-var --text-gradient-main-page-3 (light); css-var --text-gradient-main-page-3 resolved (raw/css-vars.json)","d":"Declared gradient recipe --text-gradient-main-page-3."},"text-main-page-4":{"v":"linear-gradient(180deg, #f4edff 0%, #fdf2f2 50%, #fff 100%)","t":"other","s":"css-var --text-gradient-main-page-4 (light); css-var --text-gradient-main-page-4 resolved (raw/css-vars.json)","d":"Declared gradient recipe --text-gradient-main-page-4."},"text-pro":{"v":"linear-gradient(180deg, #fff0 0%, #fff 78.65%)","t":"other","s":"css-var --text-gradient-pro (light); css-var --text-gradient-pro resolved (raw/css-vars.json)","d":"Declared gradient recipe --text-gradient-pro."},"text-pro-1":{"v":"linear-gradient(180deg, #f7f3ff00 0%, #f9f6ff 78.65%)","t":"other","s":"css-var --text-gradient-pro-1 (light); css-var --text-gradient-pro-1 resolved (raw/css-vars.json)","d":"Declared gradient recipe --text-gradient-pro-1."},"text-pro-2":{"v":"linear-gradient(180deg, #fffaf200 0%, #fff9ef 78.65%)","t":"other","s":"css-var --text-gradient-pro-2 (light); css-var --text-gradient-pro-2 resolved (raw/css-vars.json)","d":"Declared gradient recipe --text-gradient-pro-2."},"text-pro-3":{"v":"linear-gradient(180deg, #fffdd8 0%, #fff4e3 30%, #fff 100%)","t":"other","s":"css-var --text-gradient-pro-3 (light); css-var --text-gradient-pro-3 resolved (raw/css-vars.json)","d":"Declared gradient recipe --text-gradient-pro-3."},"text-pro-4":{"v":"linear-gradient(180deg, #e4fff8 0%, #f2ecff 30%, #fff 100%)","t":"other","s":"css-var --text-gradient-pro-4 (light); css-var --text-gradient-pro-4 resolved (raw/css-vars.json)","d":"Declared gradient recipe --text-gradient-pro-4."},"text-pro-5":{"v":"linear-gradient(180deg, #faffe4 0%, #f1ffec 30%, #fff 100%)","t":"other","s":"css-var --text-gradient-pro-5 (light); css-var --text-gradient-pro-5 resolved (raw/css-vars.json)","d":"Declared gradient recipe --text-gradient-pro-5."},"text-pro-6":{"v":"linear-gradient(180deg, #fff4ea 0%, #ecf7ff 30%, #fff 100%)","t":"other","s":"css-var --text-gradient-pro-6 (light); css-var --text-gradient-pro-6 resolved (raw/css-vars.json)","d":"Declared gradient recipe --text-gradient-pro-6."}},"radius":{"nav":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of connect-cta default (raw/components-computed.json)","d":"The 8px nav-pill radius."},"control":{"v":"10px","t":"dimension","s":"computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)","d":"The 10px control radius — hero CTAs, login buttons, library rows."},"pill":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of search-field default (raw/components-computed.json)","d":"The 9999px search pill."}},"border":{"hairline":{"width":{"v":"1px","t":"dimension","s":"declared --stroke-primary pairs with 1px borders across the sheets","d":"The 10% ink hairline width."}}},"shadow":{"toast":{"v":[{"color":"rgba(0, 0, 0, 0.28)","offsetX":"0px","offsetY":"12px","blur":"32px","spread":"-8px","inset":false},{"color":"rgba(0, 0, 0, 0.12)","offsetX":"0px","offsetY":"2px","blur":"6px","spread":"0px","inset":false}],"t":"shadow","s":"css-var --cw-toast-shadow resolved (raw/css-vars.json)","d":"The declared toast elevation: 0 12 32 -8 28% + 0 2 6 12% ink."}},"spacing":{"nav-h":{"v":"60px","t":"dimension","s":"computed height of nav default (raw/components-computed.json)","d":"The 60px nav bar height."},"promo-h":{"v":"36px","t":"dimension","s":"computed height of promo-banner default (raw/components-computed.json)","d":"The 36px promo bar height."}},"motion":{"hero-ease":{"v":"cubic-bezier(.2, 0, 0, 1)","t":"other","s":"css-var --home-hero-ease (light); css-var --home-hero-ease resolved (raw/css-vars.json)","d":"The hero's cubic-bezier(.2,0,0,1) ease."},"hero-horizon":{"v":"1.8s","t":"other","s":"css-var --home-hero-horizon-duration (light); css-var --home-hero-horizon-duration resolved (raw/css-vars.json)","d":"The hero horizon's 1.8s drift."},"hero-rise":{"v":"0.9s","t":"other","s":"css-var --home-hero-rise-duration (light); css-var --home-hero-rise-duration resolved (raw/css-vars.json)","d":"The hero rise's .9s."},"hero-stagger":{"v":"0.09s","t":"other","s":"css-var --home-hero-stagger (light); css-var --home-hero-stagger resolved (raw/css-vars.json)","d":"The 90ms hero stagger."}}},"light":{"color":{"action":{"primary":{"v":"#1e1e1e","t":"color","s":"css-var --background-primary (light); css-var --background-primary resolved (raw/css-vars.json)","d":"The #1e1e1e primary button fill (inverts to #fff in dark)."},"primary-hover":{"v":"#383838","t":"color","s":"css-var --background-primary-hover (light); css-var --background-primary-hover resolved (raw/css-vars.json)","d":"Declared #383838 hover."},"primary-pressed":{"v":"#000000","t":"color","s":"css-var --background-primary-pressed (light); css-var --background-primary-pressed resolved (raw/css-vars.json)","d":"Declared #000 pressed."},"secondary":{"v":"#efefef","t":"color","s":"css-var --background-secondary (light); css-var --background-secondary resolved (raw/css-vars.json)","d":"The #efefef secondary/disabled fill (hero secondary, Send code)."},"secondary-hover":{"v":"#e0e0e0","t":"color","s":"css-var --background-secondary-hover (light); css-var --background-secondary-hover resolved (raw/css-vars.json)","d":"Declared #e0e0e0 hover."},"ghost":{"v":"#ffffff","t":"color","s":"css-var --background-ghost (light); css-var --background-ghost resolved (raw/css-vars.json)","d":"The #fff ghost fill."},"switcher-active":{"v":"#ffffff","t":"color","s":"css-var --controls-switcher-active (light); css-var --controls-switcher-active resolved (raw/css-vars.json)","d":"The #fff active switcher thumb."}},"background":{"field":{"v":"#fafafa","t":"color","s":"css-var --background-field (light); css-var --background-field resolved (raw/css-vars.json)","d":"The #fafafa field fill (the search pill)."},"plate":{"v":"#f4f4f4","t":"color","s":"css-var --background-plate (light); css-var --background-plate resolved (raw/css-vars.json)","d":"The #f4f4f4 plate."},"surface-1":{"v":"#ffffff","t":"color","s":"css-var --background-surface-1 (light); css-var --background-surface-1 resolved (raw/css-vars.json)","d":"Declared surface-1 #fff."},"surface-3":{"v":"#fafafa","t":"color","s":"css-var --background-surface-3 (light); css-var --background-surface-3 resolved (raw/css-vars.json)","d":"Declared surface-3 #fafafa."},"surface-4":{"v":"rgba(237, 237, 237, 0.698)","t":"color","s":"css-var --background-surface-4 (light); css-var --background-surface-4 resolved (raw/css-vars.json)","d":"Declared surface-4 70% translucent — the cookie notice fill."},"catalog-fill":{"v":"rgba(0, 0, 0, 0.04)","t":"color","s":"css-var --catalog-fill (light); css-var --catalog-fill resolved (raw/css-vars.json)","d":"The 4% ink catalog row fill."},"catalog-fill-active":{"v":"rgba(0, 0, 0, 0.07)","t":"color","s":"css-var --catalog-fill-active (light); css-var --catalog-fill-active resolved (raw/css-vars.json)","d":"The 7% ink active row fill (measured on library-row)."},"switcher":{"v":"#fafafa","t":"color","s":"css-var --controls-switcher-background (light); css-var --controls-switcher-background resolved (raw/css-vars.json)","d":"The #fafafa switcher track."},"indicator":{"v":"#e0e0e0","t":"color","s":"css-var --controls-indicator (light); css-var --controls-indicator resolved (raw/css-vars.json)","d":"The #e0e0e0 control indicator."},"promo":{"v":"#161616","t":"color","s":"computed backgroundColor of promo-banner default (raw/components-computed.json)","d":"The #161616 promo/countdown bar fill."}},"text":{"text-primary":{"v":"#000000","t":"color","s":"css-var --text-icons-primary (light); css-var --text-icons-primary resolved (raw/css-vars.json)","d":"The #000 primary text/icon."},"text-secondary":{"v":"#606060","t":"color","s":"css-var --text-icons-secondary (light); css-var --text-icons-secondary resolved (raw/css-vars.json)","d":"The #606060 secondary text (nav links, muted)."},"text-tertiary":{"v":"#999999","t":"color","s":"css-var --text-icons-tertiary (light); css-var --text-icons-tertiary resolved (raw/css-vars.json)","d":"The #999 tertiary text (footer small print, placeholders)."},"text-destructive":{"v":"#f54911","t":"color","s":"css-var --text-icons-destructive (light); css-var --text-icons-destructive resolved (raw/css-vars.json)","d":"The #f54911 destructive text."},"text-info":{"v":"#c42df9","t":"color","s":"css-var --text-icons-info (light); css-var --text-icons-info resolved (raw/css-vars.json)","d":"The #c42df9 info text."},"text-reversed":{"v":"#ffffff","t":"color","s":"css-var --text-icons-reversed (light); css-var --text-icons-reversed resolved (raw/css-vars.json)","d":"White text on primary fills."},"on-primary":{"v":"#ffffff","t":"color","s":"computed color of connect-cta default (raw/components-computed.json)","d":"The white text the #1e1e1e pills paint."}},"border":{"stroke-primary":{"v":"rgba(0, 0, 0, 0.1)","t":"color","s":"css-var --stroke-primary (light); css-var --stroke-primary resolved (raw/css-vars.json)","d":"The 10% ink hairline."},"stroke-destructive":{"v":"#ffdbcc","t":"color","s":"css-var --stroke-destructive (light); css-var --stroke-destructive resolved (raw/css-vars.json)","d":"The #ffdbcc destructive stroke."},"stroke-info":{"v":"#e7ccfc","t":"color","s":"css-var --stroke-info (light); css-var --stroke-info resolved (raw/css-vars.json)","d":"The #e7ccfc info stroke."}}},"component":{"button-height-nav":{"v":"30px","t":"dimension","s":"computed height of connect-cta default (raw/components-computed.json)","d":"The 30px nav CTA."},"button-height-large":{"v":"46px","t":"dimension","s":"computed height of hero-cta default (raw/components-computed.json)","d":"The 46px hero/login buttons."},"search-pill-width":{"v":"350px","t":"dimension","s":"computed width of search-field default (raw/components-computed.json)","d":"The 350px nav search pill."},"library-row":{"v":"34px","t":"dimension","s":"computed height of library-row default (raw/components-computed.json)","d":"The 34px library list row."},"filter-field":{"v":"30px","t":"dimension","s":"computed height of components-filter default (raw/components-computed.json)","d":"The 30px catalog filter field."},"login-field":{"v":"46px","t":"dimension","s":"computed height of login-field default (raw/components-computed.json)","d":"The 46px OTP email field."},"plan-card":{"v":"547.188px","t":"dimension","s":"computed width of plan-card default (raw/components-computed.json); read from the wrong element (a Rebuild FlowSuite promo card); recapture needed","d":"547px. Read from the wrong element: a \"Rebuild FlowSuite\" promo card, not a plan card; recapture needed."},"product-card":{"v":"362.672px","t":"dimension","s":"computed width of product-card default (raw/components-computed.json)","d":"The 363px product card."},"menu-button":{"v":"44px","t":"dimension","s":"computed width of m-menu-button default (raw/components-computed.json); read from the wrong element (the mobile Search button); recapture needed","d":"44px. Read from the wrong element: the mobile Search button, not the menu button; recapture needed."},"theme-toggle":{"v":"32px","t":"dimension","s":"computed width of theme-toggle default (raw/components-computed.json)","d":"The 32px theme toggle."},"faq-row":{"v":"68px","t":"dimension","s":"computed height of faq-row default (raw/components-computed.json)","d":"The 68px FAQ accordion row."},"promo-text":{"v":"13px","t":"dimension","s":"computed fontSize of promo-banner default (raw/components-computed.json)","d":"The 13px promo text."},"nav-link-size":{"v":"16px","t":"dimension","s":"computed fontSize of nav-link default (raw/components-computed.json)","d":"Nav link 16px."},"button":{"state-move":{"v":{"default":{"backgroundColor":"rgb(30, 30, 30)","color":"rgb(255, 255, 255)"},"hover":{"backgroundColor":"rgb(56, 56, 56)","color":"rgb(255, 255, 255)"},"pressed":{"backgroundColor":"rgb(0, 0, 0)","color":"rgb(255, 255, 255)"}},"t":"other","s":"computed styles of hero-cta default/hover/pressed (raw/components-computed.json)","d":"The primary pill's state track: #1e1e1e at rest, the declared #383838 hover and #000 pressed."}}}},"dark":{"color":{"action":{"primary":{"v":"#ffffff","t":"color","s":"css-var --background-primary (dark); css-var --background-primary resolved under data-theme=dark (raw/css-vars.json)","d":"Dark: the primary fill inverts to #fff."},"secondary":{"v":"#303030","t":"color","s":"css-var --background-secondary (dark); css-var --background-secondary resolved under data-theme=dark (raw/css-vars.json)","d":"Dark secondary fill."},"brand":{"v":"#cafc00","t":"color","s":"css-var --background-brand (dark); css-var --background-brand resolved under data-theme=dark (raw/css-vars.json)","d":"The #cafc00 lime stays put in dark."}},"text":{"text-primary":{"v":"#ffffff","t":"color","s":"css-var --text-icons-primary (dark); css-var --text-icons-primary resolved under data-theme=dark (raw/css-vars.json)","d":"Dark: primary text inverts to #fff."},"text-secondary":{"v":"#a0a0a0","t":"color","s":"css-var --text-icons-secondary (dark); css-var --text-icons-secondary resolved under data-theme=dark (raw/css-vars.json)","d":"Dark secondary text."}},"border":{"stroke-primary":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"css-var --stroke-primary (dark); css-var --stroke-primary resolved under data-theme=dark (raw/css-vars.json)","d":"Dark hairline (white alpha)."}},"background":{"surface-1":{"v":"#111111","t":"color","s":"css-var --background-surface-1 (dark); css-var --background-surface-1 resolved under data-theme=dark (raw/css-vars.json)","d":"Dark surface-1."},"field":{"v":"#141414","t":"color","s":"css-var --background-field (dark); css-var --background-field resolved under data-theme=dark (raw/css-vars.json)","d":"Dark field fill."}}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => (s !== null && typeof s === 'object' ? JSON.stringify(s) : String(s)).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the .theme.dark band)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — craftwork</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

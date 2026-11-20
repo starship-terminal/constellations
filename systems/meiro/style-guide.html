@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meiro style guide</title>
+<style>
+:root {
+  --color-ink: #0e0f0f;
+  --color-ink-raised: #171818;
+  --color-ink-card: #202222;
+  --color-ink-hover: #2e3030;
+  --color-line: #3b3e3e;
+  --color-muted-strong: #6e7171;
+  --color-muted: #787878;
+  --color-muted-soft: #808484;
+  --color-text-secondary: #ced1d1;
+  --color-text-on-dark: #f3f4f9;
+  --color-white: #ffffff;
+  --color-lime-soft: #e4ff8f;
+  --color-lime: #d5fe52;
+  --color-lime-deep: #c0ef2a;
+  --color-danger: #ff7c7c;
+  --color-widget: #a280ff;
+  --font-family-display: "TT Hoves DemiBold", "TT Hoves DemiBold Placeholder", sans-serif;
+  --font-family-medium: "TT Hoves Medium", "TT Hoves Medium Placeholder", sans-serif;
+  --font-family-regular: "TT Hoves Regular", "TT Hoves Regular Placeholder", sans-serif;
+  --font-family-app-display: TTHoves, sans-serif;
+  --font-family-app-ui: SFPro, system-ui, sans-serif;
+  --typography-display: 400 50px/70px var(--font-family-display);
+  --typography-display-mobile: 400 34px/44.2px var(--font-family-display);
+  --typography-title: 400 32px/44.8px var(--font-family-display);
+  --typography-eyebrow: 400 18px/23.4px var(--font-family-medium);
+  --typography-body: 400 20px/30px var(--font-family-regular);
+  --typography-body-secondary: 400 16px/24px var(--font-family-regular);
+  --typography-nav: 400 16px/20px var(--font-family-medium);
+  --typography-caption: 400 15px/21px var(--font-family-regular);
+  --typography-price: 400 34px/47.6px var(--font-family-display);
+  --typography-app-title: 600 24px/34px var(--font-family-app-display);
+  --typography-app-button: 600 15px/20px var(--font-family-app-ui);
+  --typography-app-legal: 400 13px/16px var(--font-family-app-ui);
+  --radius-header: 24px;
+  --radius-nav: 18px;
+  --radius-card: 20px;
+  --radius-plan: 18px;
+  --radius-billing: 90px;
+  --radius-app-card: 30px;
+  --radius-app-button: 17px;
+  --radius-app-field: 15px;
+  --radius-widget: 48px;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --size-header: 84px;
+  --size-header-mobile: 72px;
+  --size-button: 52px;
+  --size-button-hero: 56px;
+  --size-app-control: 50px;
+  --size-app-card: 520px;
+  --size-content: 1080px;
+  --border-field: 1px;
+  --motion-duration-0ms: 0ms;
+  --motion-duration-75ms: 75ms;
+  --motion-duration-100ms: 100ms;
+  --motion-duration-110ms: 110ms;
+  --motion-duration-120ms: 120ms;
+  --motion-duration-150ms: 150ms;
+  --motion-duration-180ms: 180ms;
+  --motion-duration-200ms: 200ms;
+  --motion-duration-220ms: 220ms;
+  --motion-duration-250ms: 250ms;
+  --motion-duration-260ms: 260ms;
+  --motion-duration-280ms: 280ms;
+  --motion-duration-300ms: 300ms;
+  --motion-duration-340ms: 340ms;
+  --motion-duration-350ms: 350ms;
+  --motion-duration-400ms: 400ms;
+  --motion-duration-420ms: 420ms;
+  --motion-duration-450ms: 450ms;
+  --motion-duration-500ms: 500ms;
+  --motion-duration-550ms: 550ms;
+  --motion-duration-600ms: 600ms;
+  --motion-duration-700ms: 700ms;
+  --motion-duration-1000ms: 1000ms;
+  --motion-duration-1100ms: 1100ms;
+  --motion-duration-1500ms: 1500ms;
+  --motion-duration-2000ms: 2000ms;
+  --motion-duration-5000ms: 5000ms;
+  --motion-duration-6000ms: 6000ms;
+  --motion-duration-7000ms: 7000ms;
+  --motion-easing-bezier-0-0-0-2-1: cubic-bezier(0, 0, 0.2, 1);
+  --motion-easing-bezier-0-1-2-1-1: cubic-bezier(0, 1.2, 1, 1);
+  --motion-easing-bezier-0-16-1-0-3-1: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-easing-bezier-0-2-0-0-4-1: cubic-bezier(0.2, 0, 0.4, 1);
+  --motion-easing-bezier-0-2-2-0-45-1: cubic-bezier(0.2, 2, 0.45, 1);
+  --motion-easing-bezier-0-22-0-21-0-36-1: cubic-bezier(0.22, 0.21, 0.36, 1);
+  --motion-easing-bezier-0-22-1-0-36-1: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-easing-bezier-0-22-1-2-0-36-1: cubic-bezier(0.22, 1.2, 0.36, 1);
+  --motion-easing-bezier-0-4-0-0-2-1: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-bezier-0-4-0-1-1: cubic-bezier(0.4, 0, 1, 1);
+  --motion-easing-bezier-0-54-1-5-0-38-1-11: cubic-bezier(0.54, 1.5, 0.38, 1.11);
+  --motion-easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-ease-in: cubic-bezier(0.42, 0, 1, 1);
+  --motion-easing-ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+  --motion-easing-ease-out: cubic-bezier(0, 0, 0.58, 1);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+
+  color-scheme: dark;
+  --sg-display: "TT Hoves DemiBold", "TT Hoves DemiBold Placeholder", sans-serif;
+  --sg-ui: "TT Hoves Medium", "TT Hoves Medium Placeholder", sans-serif;
+  --sg-body: "TT Hoves Regular", "TT Hoves Regular Placeholder", sans-serif;
+  --sg-app: SFPro, system-ui, sans-serif;
+}
+[data-mode="dark"] {
+  --page: var(--color-ink);
+  --surface: var(--color-ink-raised);
+  --surface-raised: var(--color-ink-card);
+  --surface-hover: #2c2e2e;
+  --text: var(--color-white);
+  --muted: var(--color-text-secondary);
+  --muted-soft: var(--color-muted-soft);
+  --on-accent: var(--color-ink);
+  --accent: var(--color-lime);
+  --accent-deep: var(--color-lime-deep);
+  --accent-text: var(--color-lime);
+  --border: var(--color-line);
+  --danger: var(--color-danger);
+  --focus: #005fcc;
+  --widget: var(--color-widget);
+  --component-button-primary-background: var(--color-lime);
+  --component-button-primary-text: var(--color-ink);
+  --component-button-primary-radius: var(--radius-nav);
+  --component-button-primary-height: var(--size-button);
+  --component-button-primary-padding: 16px;
+  --component-button-email-background: var(--color-lime-deep);
+  --component-button-email-text: var(--color-ink);
+  --component-button-email-radius: var(--radius-app-button);
+  --component-button-email-height: var(--size-app-control);
+  --component-button-google-background: var(--color-ink-card);
+  --component-button-google-text: var(--color-white);
+  --component-button-google-radius: var(--radius-app-button);
+  --component-button-google-height: var(--size-app-control);
+  --component-text-field-background: var(--color-ink-card);
+  --component-text-field-text: var(--color-white);
+  --component-text-field-radius: var(--radius-app-field);
+  --component-text-field-height: var(--size-app-control);
+  --component-card-background: var(--color-ink-raised);
+  --component-card-radius: var(--radius-app-card);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--page); color: var(--text); font: 400 15px/22px var(--sg-body); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header.top { display: flex; align-items: baseline; gap: 16px; margin-bottom: 28px; }
+header.top h1 { margin: 0; font: 400 32px/40px var(--sg-display); }
+header.top p { margin: 0; color: var(--muted); }
+h2 { font: 400 24px/32px var(--sg-display); margin: 40px 0 12px; }
+h3 { font: 400 16px/22px var(--sg-ui); margin: 24px 0 8px; color: var(--muted); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 148px; }
+.sw i { display: block; height: 56px; border-radius: 12px; box-shadow: inset 0 0 0 1px var(--border); }
+.sw b, .sw span { display: block; font: 400 12px/16px var(--sg-ui); }
+.sw span { color: var(--muted); }
+.ty { padding: 10px 0; border-bottom: 1px solid var(--border); }
+.ty small { display: block; color: var(--muted); font: 12px/16px var(--sg-ui); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-primary-height); padding: 0 24px; border: 0; border-radius: var(--component-button-primary-radius); background: var(--component-button-primary-background); color: var(--component-button-primary-text); font: 400 16px/20px var(--sg-ui); }
+.btn-email { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-email-height); padding: 0 22px; border: 0; border-radius: var(--component-button-email-radius); background: var(--component-button-email-background); color: var(--component-button-email-text); font: 600 15px/20px var(--sg-app); }
+.btn-google { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-google-height); padding: 0 22px; border: 0; border-radius: var(--component-button-google-radius); background: var(--component-button-google-background); color: var(--component-button-google-text); font: 600 15px/20px var(--sg-app); }
+.field { display: block; width: 320px; height: var(--component-text-field-height); padding: 0 16px; border: 1px solid var(--border); border-radius: var(--component-text-field-radius); background: var(--component-text-field-background); color: var(--component-text-field-text); font: 500 15px/20px var(--sg-app); }
+.card { width: 360px; padding: 30px 40px; border-radius: var(--component-card-radius); background: var(--component-card-background); }
+.card h4 { margin: 0 0 8px; font: 600 24px/34px var(--sg-app); }
+.note { color: var(--muted); max-width: 68ch; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+td, th { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { color: var(--muted); font-weight: 400; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <h1>Meiro</h1>
+  <p>Measured from meiro.cc and the signed-out app, 2026-11-19. One dark theme.</p>
+</header>
+
+<section>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+</section>
+
+<section>
+  <h2>Type</h2>
+  <div id="type"></div>
+</section>
+
+<section>
+  <h2>Radius and size</h2>
+  <div class="row" id="radii"></div>
+</section>
+
+<section>
+  <h2>Components</h2>
+  <div class="row">
+    <button class="btn" type="button">Get started</button>
+    <button class="btn-email" type="button">Continue with email</button>
+    <button class="btn-google" type="button">Continue with Google</button>
+  </div>
+  <h3>Text field</h3>
+  <input class="field" placeholder="Enter your email" aria-label="Email">
+  <h3>Sign-in card</h3>
+  <div class="card">
+    <h4>Hey</h4>
+    <p class="note">Let's sign in or sign up</p>
+    <button class="btn-email" type="button">Continue with email</button>
+  </div>
+  <p class="note">Marketing buttons use TT Hoves Medium on lime #d5fe52 at an 18px radius. The app's email button uses SF Pro at 600 on lime-deep #c0ef2a at a 17px radius. Hover on the marketing pill did not change the computed fill.</p>
+</section>
+
+<section>
+  <h2>Tokens</h2>
+  <table id="tokens"><thead><tr><th>Token</th><th>Value</th><th>Source</th></tr></thead><tbody></tbody></table>
+</section>
+</div>
+<script>
+const TOK = {"core":{"color":{"ink":{"v":"#0e0f0f","t":"color","s":"Declared on body as --token-af7f1007-a891-404b-a923-96f397ca18a3 in the Framer stylesheet; Measured on meiro.cc and app.meiro.cc, 2026-11-19, signed out, 1440x900 and 390x844"},"ink-raised":{"v":"#171818","t":"color","s":"Declared on body as --token-5e6ff635-baf9-4d5f-b7d3-3ea121a7b343 in the Framer stylesheet; Measured on meiro.cc and app.meiro.cc, 2026-11-19, signed out, 1440x900 and 390x844"},"ink-card":{"v":"#202222","t":"color","s":"Declared on body as --token-6ca14b64-8de1-4483-b242-dc1b60e851d4 in the Framer stylesheet; Measured on meiro.cc and app.meiro.cc, 2026-11-19, signed out, 1440x900 and 390x844"},"ink-hover":{"v":"#2e3030","t":"color","s":"Declared on body as --token-76f83a23-c2c8-42e5-b84a-3e4723900f33 in the Framer stylesheet; Measured on meiro.cc and app.meiro.cc, 2026-11-19, signed out, 1440x900 and 390x844"},"line":{"v":"#3b3e3e","t":"color","s":"Declared on body as --token-c53cbadf-9768-4d52-8708-bc48d4ef0139 in the Framer stylesheet; Measured on meiro.cc and app.meiro.cc, 2026-11-19, signed out, 1440x900 and 390x844"},"muted-strong":{"v":"#6e7171","t":"color","s":"Declared on body as --token-36f08672-fd87-4103-9f44-06f1274049c3 in the Framer stylesheet; Measured on meiro.cc and app.meiro.cc, 2026-11-19, signed out, 1440x900 and 390x844"},"muted":{"v":"#787878","t":"color","s":"Declared on body as --token-15e1f524-8540-4922-9db3-a1054b564935 in the Framer stylesheet; Measured on meiro.cc and app.meiro.cc, 2026-11-19, signed out, 1440x900 and 390x844"},"muted-soft":{"v":"#808484","t":"color","s":"Declared on body as --token-aedab33d-8442-4753-9f74-03d578a5e7d6 in the Framer stylesheet; Measured on meiro.cc and app.meiro.cc, 2026-11-19, signed out, 1440x900 and 390x844"},"text-secondary":{"v":"#ced1d1","t":"color","s":"Declared on body as --token-701b5db7-fa87-43a2-bdc2-258a39792047 in the Framer stylesheet; Measured on meiro.cc and app.meiro.cc, 2026-11-19, signed out, 1440x900 and 390x844"},"text-on-dark":{"v":"#f3f4f9","t":"color","s":"Declared on body as --token-c7d25ff6-d839-4357-a663-9119ff394b7c in the Framer stylesheet; Measured on meiro.cc and app.meiro.cc, 2026-11-19, signed out, 1440x900 and 390x844"},"white":{"v":"#ffffff","t":"color","s":"Declared on body as --token-cba57776-6077-412b-ad81-0f6ad78a69c7 in the Framer stylesheet; Measured on meiro.cc and app.meiro.cc, 2026-11-19, signed out, 1440x900 and 390x844"},"lime-soft":{"v":"#e4ff8f","t":"color","s":"Declared on body as --token-910a4c25-d6d3-4a02-b0ee-de8c71fab9f5 in the Framer stylesheet; Measured on meiro.cc and app.meiro.cc, 2026-11-19, signed out, 1440x900 and 390x844"},"lime":{"v":"#d5fe52","t":"color","s":"Declared on body as --token-e482d2e1-beb7-471b-8735-ba80bb36a684 in the Framer stylesheet; Measured on meiro.cc and app.meiro.cc, 2026-11-19, signed out, 1440x900 and 390x844"},"lime-deep":{"v":"#c0ef2a","t":"color","s":"Declared on body as --token-297d6991-d526-4209-bc7c-68148dc51b26 in the Framer stylesheet; Measured on meiro.cc and app.meiro.cc, 2026-11-19, signed out, 1440x900 and 390x844"},"danger":{"v":"#ff7c7c","t":"color","s":"Declared on body as --token-58f0f0dc-405d-4172-910c-f2559c870309 in the Framer stylesheet; Measured on meiro.cc and app.meiro.cc, 2026-11-19, signed out, 1440x900 and 390x844"},"widget":{"v":"#a280ff","t":"color","s":"Computed background of the Gleap launcher, rgb(162, 128, 255), on meiro.cc at 1440"}},"font":{"family":{"display":{"v":"\"TT Hoves DemiBold\", \"TT Hoves DemiBold Placeholder\", sans-serif","t":"fontFamily","s":"Computed font-family of h1 on meiro.cc"},"medium":{"v":"\"TT Hoves Medium\", \"TT Hoves Medium Placeholder\", sans-serif","t":"fontFamily","s":"Computed font-family of nav labels and primary button labels on meiro.cc"},"regular":{"v":"\"TT Hoves Regular\", \"TT Hoves Regular Placeholder\", sans-serif","t":"fontFamily","s":"Computed font-family of the hero body paragraph on meiro.cc"},"app-display":{"v":"TTHoves, sans-serif","t":"fontFamily","s":"Computed font-family of h2 on app.meiro.cc/login"},"app-ui":{"v":"SFPro, system-ui, sans-serif","t":"fontFamily","s":"Computed font-family of buttons and inputs on app.meiro.cc/login"}}},"typography":{"display":{"v":{"fontFamily":"{font.family.display}","fontSize":"50px","fontWeight":400,"lineHeight":"70px"},"t":"typography","s":"h1 on meiro.cc at 1440"},"display-mobile":{"v":{"fontFamily":"{font.family.display}","fontSize":"34px","fontWeight":400,"lineHeight":"44.2px"},"t":"typography","s":"Entered by hand at capture time; no file in raw/ holds this reading. h1 on meiro.cc at 390: raw/ holds the 34px size but no 390-wide line height; 44.2px is 34px x 1.3"},"title":{"v":{"fontFamily":"{font.family.display}","fontSize":"32px","fontWeight":400,"lineHeight":"44.8px"},"t":"typography","s":"h3 section titles on meiro.cc"},"eyebrow":{"v":{"fontFamily":"{font.family.medium}","fontSize":"18px","fontWeight":400,"lineHeight":"23.4px"},"t":"typography","s":"lime eyebrow on meiro.cc/pricing"},"body":{"v":{"fontFamily":"{font.family.regular}","fontSize":"20px","fontWeight":400,"lineHeight":"30px"},"t":"typography","s":"hero paragraph on meiro.cc"},"body-secondary":{"v":{"fontFamily":"{font.family.regular}","fontSize":"16px","fontWeight":400,"lineHeight":"24px"},"t":"typography","s":"plan description on meiro.cc/pricing"},"nav":{"v":{"fontFamily":"{font.family.medium}","fontSize":"16px","fontWeight":400,"lineHeight":"20px"},"t":"typography","s":"header nav labels on meiro.cc"},"caption":{"v":{"fontFamily":"{font.family.regular}","fontSize":"15px","fontWeight":400,"lineHeight":"21px"},"t":"typography","s":"trial note under the hero CTA"},"price":{"v":{"fontFamily":"{font.family.display}","fontSize":"34px","fontWeight":400,"lineHeight":"47.6px"},"t":"typography","s":"price figure on meiro.cc/pricing"},"app-title":{"v":{"fontFamily":"{font.family.app-display}","fontSize":"24px","fontWeight":600,"lineHeight":"34px"},"t":"typography","s":"h2 on app.meiro.cc/login"},"app-button":{"v":{"fontFamily":"{font.family.app-ui}","fontSize":"15px","fontWeight":600,"lineHeight":"20px"},"t":"typography","s":"Continue with email on app.meiro.cc/login"},"app-legal":{"v":{"fontFamily":"{font.family.app-ui}","fontSize":"13px","fontWeight":400,"lineHeight":"16px"},"t":"typography","s":"Terms of Use link on app.meiro.cc/login"}},"radius":{"header":{"v":"24px","t":"dimension","s":"header border-bottom radius on meiro.cc"},"nav":{"v":"18px","t":"dimension","s":"nav pill and primary marketing button on meiro.cc"},"card":{"v":"20px","t":"dimension","s":"review cards, data-framer-name Review 1, on meiro.cc"},"plan":{"v":"18px","t":"dimension","s":"Start for free button on meiro.cc/pricing"},"billing":{"v":"90px","t":"dimension","s":"selected Annual billing pill on meiro.cc/pricing"},"app-card":{"v":"30px","t":"dimension","s":"sign-in card on app.meiro.cc/login"},"app-button":{"v":"17px","t":"dimension","s":"Continue with email on app.meiro.cc/login"},"app-field":{"v":"15px","t":"dimension","s":"email input on app.meiro.cc/login"},"widget":{"v":"48px","t":"dimension","s":"Gleap launcher circle"}},"spacing":{"1":{"v":"4px","t":"dimension","s":"Entered by hand at capture time; no file in raw/ holds this reading. A 4px step chosen for the rhythm of the measured paddings (the 5px nav inset rounds to it)"},"2":{"v":"8px","t":"dimension","s":"gap between trial notes"},"3":{"v":"12px","t":"dimension","s":"input horizontal padding on the app field"},"4":{"v":"16px","t":"dimension","s":"primary button vertical padding on meiro.cc"},"5":{"v":"20px","t":"dimension","s":"section rhythm"},"6":{"v":"24px","t":"dimension","s":"primary button horizontal padding on meiro.cc"},"8":{"v":"32px","t":"dimension","s":"hero block gap"},"10":{"v":"40px","t":"dimension","s":"sign-in card horizontal padding"}},"size":{"header":{"v":"84px","t":"dimension","s":"header height on meiro.cc at 1440"},"header-mobile":{"v":"72px","t":"dimension","s":"header height on meiro.cc at 390"},"button":{"v":"52px","t":"dimension","s":"Get started button height on meiro.cc"},"button-hero":{"v":"56px","t":"dimension","s":"hero Get started button height on meiro.cc"},"app-control":{"v":"50px","t":"dimension","s":"email button and input height on app.meiro.cc/login"},"app-card":{"v":"520px","t":"dimension","s":"sign-in card width on app.meiro.cc/login at 1440"},"content":{"v":"1080px","t":"dimension","s":"Entered by hand at capture time; no file in raw/ holds this reading. A content width chosen for the plan row. The three 332px plan cards in raw/states.json start at x 144, 554 and 964, a 1152px span, so 1080px is not derived from them"}},"border":{"field":{"v":"1px","t":"dimension","s":"email input border width on app.meiro.cc/forgot-password"}},"motion":{"duration":{"0ms":{"v":"0ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"75ms":{"v":"75ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"100ms":{"v":"100ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"110ms":{"v":"110ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"120ms":{"v":"120ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"150ms":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"180ms":{"v":"180ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"200ms":{"v":"200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"220ms":{"v":"220ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"250ms":{"v":"250ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"260ms":{"v":"260ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"280ms":{"v":"280ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"300ms":{"v":"300ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 36 elements."},"340ms":{"v":"340ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"350ms":{"v":"350ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"400ms":{"v":"400ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"420ms":{"v":"420ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"450ms":{"v":"450ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"500ms":{"v":"500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"550ms":{"v":"550ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"600ms":{"v":"600ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"700ms":{"v":"700ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1000ms":{"v":"1000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1100ms":{"v":"1100ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1500ms":{"v":"1500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2000ms":{"v":"2000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"5000ms":{"v":"5000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"6000ms":{"v":"6000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"7000ms":{"v":"7000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."}},"easing":{"bezier-0-0-0_2-1":{"v":[0,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0-1_2-1-1":{"v":[0,1.2,1,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_16-1-0_3-1":{"v":[0.16,1,0.3,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_2-0-0_4-1":{"v":[0.2,0,0.4,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_2-2-0_45-1":{"v":[0.2,2,0.45,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_22-0_21-0_36-1":{"v":[0.22,0.21,0.36,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_22-1-0_36-1":{"v":[0.22,1,0.36,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_22-1_2-0_36-1":{"v":[0.22,1.2,0.36,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_4-0-0_2-1":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#pages"}},"bezier-0_4-0-1-1":{"v":[0.4,0,1,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"bezier-0_54-1_5-0_38-1_11":{"v":[0.54,1.5,0.38,1.11],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#declared"}},"ease":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease`, expanded to its control points."},"ease-in":{"v":[0.42,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `ease-in`, expanded to its control points."},"ease-in-out":{"v":[0.42,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease-in-out`, expanded to its control points."},"ease-out":{"v":[0,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `ease-out`, expanded to its control points."},"linear":{"v":[0,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `linear`, expanded to its control points."}},"transition":{"background-color-300ms-bezier-0_4-0-0_2-1":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_4-0-0_2-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"border-color-300ms-bezier-0_4-0-0_2-1":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_4-0-0_2-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"color-300ms-bezier-0_4-0-0_2-1":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_4-0-0_2-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"fill-300ms-bezier-0_4-0-0_2-1":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_4-0-0_2-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"stroke-300ms-bezier-0_4-0-0_2-1":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_4-0-0_2-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"text-decoration-color-300ms-bezier-0_4-0-0_2-1":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_4-0-0_2-1}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 5 elements."},"transform-200ms-ease-in-out":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"box-shadow-200ms-ease-in-out":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-in-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."}},"animation":{"bbzoomin":{"v":{"name":"bbZoomIn","duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}","iterationCount":"1","direction":"normal","fillMode":"both"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `bbZoomIn`."},"bbzoomout":{"v":{"name":"bbZoomOut","duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}","iterationCount":"1","direction":"normal","fillMode":"both"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `bbZoomOut`."}}}},"light":{},"dark":{"page":{"v":"{color.ink}","t":"color","s":"body background rgb(14, 15, 15) on meiro.cc; html background #0e0f0f on app.meiro.cc"},"surface":{"v":"{color.ink-raised}","t":"color","s":"nav pill and review cards rgb(23, 24, 24); sign-in card on app.meiro.cc"},"surface-raised":{"v":"{color.ink-card}","t":"color","s":"email field and Google button rgb(32, 34, 34) on app.meiro.cc/login"},"surface-hover":{"v":"#2c2e2e","t":"color","s":"Google button hover background rgb(44, 46, 46) on app.meiro.cc/login"},"text":{"v":"{color.white}","t":"color","s":"h1 color rgb(255, 255, 255) on meiro.cc"},"muted":{"v":"{color.text-secondary}","t":"color","s":"hero paragraph rgb(206, 209, 209) on meiro.cc"},"muted-soft":{"v":"{color.muted-soft}","t":"color","s":"legal links rgb(128, 132, 132) on app.meiro.cc/login"},"on-accent":{"v":"{color.ink}","t":"color","s":"primary button label rgb(14, 15, 15)"},"accent":{"v":"{color.lime}","t":"color","s":"Get started and Start for free fill rgb(213, 254, 82); pricing eyebrow"},"accent-deep":{"v":"{color.lime-deep}","t":"color","s":"Continue with email fill rgb(192, 239, 42) on app.meiro.cc/login"},"accent-text":{"v":"{color.lime}","t":"color","s":"Save $84 and legal-page links on meiro.cc"},"border":{"v":"{color.line}","t":"color","s":"email field border rgb(59, 62, 62) on app.meiro.cc/forgot-password"},"danger":{"v":"{color.danger}","t":"color","s":"declared --token danger #ff7c7c; not painted on a captured control"},"focus":{"v":"#005fcc","t":"color","s":"Chromium's default focus ring, not a Meiro colour: the forced focus-visible outline on the marketing Get started link reads rgb(0, 95, 204), the browser's -webkit-focus-ring-color. Meiro styles no ring of its own"},"widget":{"v":"{color.widget}","t":"color","s":"Gleap launcher"},"component":{"button-primary":{"background":{"v":"{color.lime}","t":"color","s":"Get started computed background"},"text":{"v":"{color.ink}","t":"color","s":"Get started label color"},"radius":{"v":"{radius.nav}","t":"dimension","s":"Get started border-radius 18px"},"height":{"v":"{size.button}","t":"dimension","s":"Get started height 52px"},"padding":{"v":"16px","t":"dimension","s":"Get started padding-block"}},"button-email":{"background":{"v":"{color.lime-deep}","t":"color","s":"Continue with email computed background"},"text":{"v":"{color.ink}","t":"color","s":"Continue with email label color"},"radius":{"v":"{radius.app-button}","t":"dimension","s":"17px"},"height":{"v":"{size.app-control}","t":"dimension","s":"50px"}},"button-google":{"background":{"v":"{color.ink-card}","t":"color","s":"Continue with Google computed background"},"text":{"v":"{color.white}","t":"color","s":"Continue with Google label color"},"radius":{"v":"{radius.app-button}","t":"dimension","s":"17px"},"height":{"v":"{size.app-control}","t":"dimension","s":"50px"}},"text-field":{"background":{"v":"{color.ink-card}","t":"color","s":"email input computed background"},"text":{"v":"{color.white}","t":"color","s":"email input color"},"radius":{"v":"{radius.app-field}","t":"dimension","s":"15px"},"height":{"v":"{size.app-control}","t":"dimension","s":"50px"}},"card":{"background":{"v":"{color.ink-raised}","t":"color","s":"sign-in card computed background"},"radius":{"v":"{radius.app-card}","t":"dimension","s":"30px"}}}}};
+function flat(node, prefix, out) {
+  out = out || [];
+  Object.keys(node || {}).forEach(function (k) {
+    if (k.charAt(0) === "$") return;
+    var v = node[k];
+    var path = prefix ? prefix + "." + k : k;
+    if (v && v.v !== undefined) out.push([path, v]);
+    else if (v && typeof v === "object") flat(v, path, out);
+  });
+  return out;
+}
+var sw = document.getElementById("swatches");
+["page", "surface", "surface-raised", "text", "muted", "accent", "accent-deep", "on-accent", "border", "focus", "widget"].forEach(function (name) {
+  var t = TOK.dark[name];
+  if (!t) return;
+  var d = document.createElement("div");
+  d.className = "sw";
+  d.innerHTML = "<i></i><b>" + name + "</b><span></span>";
+  d.querySelector("i").style.background = t.v;
+  d.querySelector("span").textContent = t.v;
+  sw.appendChild(d);
+});
+var type = document.getElementById("type");
+flat(TOK.core.typography, "typography").forEach(function (row) {
+  var v = row[1].v;
+  var d = document.createElement("div");
+  d.className = "ty";
+  d.innerHTML = "<div>" + row[0] + "</div><small></small>";
+  d.firstChild.style.font = v.fontWeight + " " + v.fontSize + "/" + v.lineHeight + " " + v.fontFamily;
+  d.querySelector("small").textContent = v.fontSize + " / " + v.lineHeight + "  " + v.fontFamily;
+  type.appendChild(d);
+});
+var radii = document.getElementById("radii");
+flat(TOK.core.radius, "radius").forEach(function (row) {
+  var d = document.createElement("div");
+  d.className = "sw";
+  d.innerHTML = "<i></i><b></b><span></span>";
+  d.querySelector("i").style.borderRadius = row[1].v;
+  d.querySelector("i").style.background = "var(--surface)";
+  d.querySelector("b").textContent = row[0];
+  d.querySelector("span").textContent = row[1].v;
+  radii.appendChild(d);
+});
+var tb = document.querySelector("#tokens tbody");
+["core", "dark"].forEach(function (set) {
+  flat(TOK[set], set).forEach(function (row) {
+    var tr = document.createElement("tr");
+    var val = typeof row[1].v === "object" ? JSON.stringify(row[1].v) : String(row[1].v);
+    tr.innerHTML = "<td><code></code></td><td></td><td></td>";
+    tr.children[0].firstChild.textContent = row[0];
+    tr.children[1].textContent = val;
+    // Motion tokens carry their source as an object ({evidence, capture}), the others as text.
+    const src = row[1].s;
+    tr.children[2].textContent = (typeof src === "string" ? src : JSON.stringify(src || "")).slice(0, 140);
+    tb.appendChild(tr);
+  });
+});
+</script>
+</body>
+</html>

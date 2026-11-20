@@ -1,0 +1,12 @@
+{
+  "_note": "Public marketing copy and the capture's own sample strings. support@jace.ai is the published press address. bank@acme.com, accounting@company.com, john.doe@company.com and someone@example.com are demo addresses printed on the marketing pages. name@example.com is the sample typed into the sales field and then deleted. None is a private inbox.",
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@jace\\.ai$",
+      "@example\\.com$",
+      "@acme\\.com$",
+      "@company\\.com$"
+    ]
+  }
+}

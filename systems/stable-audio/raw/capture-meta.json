@@ -1,0 +1,50 @@
+{
+  "product": "Stable Audio",
+  "url": "https://stableaudio.com/",
+  "captured": "2026-11-19",
+  "harness": "Grok Build",
+  "model": "grok-4.7",
+  "route": "public-web live T3 preview evaluate",
+  "viewportDesktop": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "viewportPhone": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "screenshotFrames": "The browser is not producing screenshot frames. For a desktop tab, show or restore the T3 Code window and try again.",
+  "cookie": "OneTrust Reject All clicked on home before measuring painted chrome. Pricing, plugin, terms and 404 were measured after a Reject All click when the banner was present.",
+  "pages": [
+    "https://stableaudio.com/",
+    "https://stableaudio.com/pricing",
+    "https://stableaudio.com/plugin",
+    "https://stableaudio.com/terms",
+    "https://stableaudio.com/does-not-exist-capture",
+    "https://generous-milk-49.authkit.app/ (sign-in, email field focused, nothing typed or submitted)"
+  ],
+  "notEntered": [
+    "email address",
+    "Google continue",
+    "signup",
+    "card",
+    "phone",
+    "paid plan CTA",
+    "newsletter subscribe",
+    "plugin download",
+    "platform.stability.ai API",
+    "kb.stability.ai"
+  ]
+}

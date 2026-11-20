@@ -1,0 +1,14 @@
+{
+ "_note": "Rules for systems/forhers. A public signed-out capture of forhers.com's marketing, catalogue, editorial and tool surfaces from Wayback SSR snapshots (the live origin holds a Cloudflare challenge): treatment verticals, product cards with prices, the BMI calculator, the lead-capture block, the blog and the drug index. No account, consultation, order or checkout surface was opened; fields were typed-and-cleared, nothing submitted. Names, prices, drug names and quotes in screenshots are product-published page content. The OCR email net is kept, with the product's own published addresses and example placeholders allowed.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@forhers\\.com$",
+   "@hims\\.com$",
+   "@himsandhers\\.com$",
+   "@example\\.com$",
+   "@example\\.org$"
+  ]
+ },
+ "families": []
+}

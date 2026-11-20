@@ -1,0 +1,22 @@
+{
+  "capturedAt": "2026-11-18T19:06:38.273Z",
+  "requested": {
+    "width": 1440,
+    "height": 900
+  },
+  "measured": {
+    "href": "https://theorg.com/this-page-does-not-exist-constellations",
+    "title": "Page Not Found",
+    "w": 1440,
+    "h": 900,
+    "dpr": 1,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    },
+    "challenge": false,
+    "text": "Platform\nEnrich\n\nPricing\n\nLog in\nSign up\nWhoops!\n\nThere's nothing here. Try to refresh the page or head back to home.\n\nCompany\nAbout\nContact\nBlog\nBusiness\nSolutions\nTrust\nPricing\nD"
+  },
+  "note": "Headless Playwright after the same public URL loaded in the T3 preview tab without a Cloudflare challenge. Preview screenshots failed with: The browser is not producing screenshot frames."
+}

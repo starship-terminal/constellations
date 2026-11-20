@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Homerun style guide</title>
+<meta name="description" content="Homerun (homerun.co) design tokens and the public site's components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: var(--font-family-sans, "GT America", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif);
+  --sg-display: var(--font-family-display, "GT Walsheim", var(--font-family-sans, "GT America"), sans-serif);
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: #4a3e3e; background: #ffffff; }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 900 40px/1.1 var(--sg-display); margin: 0 0 4px; color: #382d2d; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: #736b6b; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid #edebe7; }
+.lead { max-width: 62ch; color: #736b6b; }
+.note { font-size: 13px; color: #736b6b; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: #736b6b; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid #edebe7; display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: #736b6b; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: #736b6b; }
+/* ---- site mock: the marketing surface ---- */
+.mock { border: 1px solid #edebe7; border-radius: var(--radius-card, 32px); overflow: hidden; }
+.mock.light { background: var(--surface-page, #fff); color: var(--text-primary, #4a3e3e); }
+.navbar { display: flex; align-items: center; gap: 14px; height: var(--component-nav-height, 104px); padding: 0 32px; font-size: 16px; font-weight: 400; color: var(--nav-link, var(--text-primary, #4a3e3e)); background: var(--surface-page, #fff); border-bottom: 1px solid #edebe7; }
+.navbar .wm { font-family: var(--sg-display); font-size: 20px; font-weight: 900; color: var(--darkFill, #2d2323); }
+.navbar .sp { flex: 1; }
+.navbar .lk { height: 58px; display: inline-flex; align-items: center; padding: 0 14px; border-radius: 10px; }
+.navbar .demo { height: var(--component-control-heightNavCta, 72px); max-height: 58px; display: inline-flex; align-items: center; padding: 0 22px; border-radius: var(--radius-button, 12px); background: var(--darkFill, #2d2323); color: var(--text-onDark, #fff); }
+.navbar .demo:hover { background: var(--darkFillHover, #4a3e3e); }
+.navbar .cta { height: var(--component-control-heightNavCta, 72px); max-height: 58px; display: inline-flex; align-items: center; padding: 0 22px; border-radius: var(--radius-button, 12px); background: var(--accent, #4f75fe); color: var(--text-onAccent, #fff); }
+.navbar .cta:hover { background: var(--accentHover, #254cda); }
+.hero { padding: 72px 40px 64px; text-align: left; background: var(--surface-page, #fff); color: var(--text-primary, #4a3e3e); }
+.hero h3 { font: 900 var(--font-size-hero, 64px)/1.0 var(--sg-display); margin: 0 0 18px; color: var(--text-heading, #382d2d); }
+.hero p { margin: 0 0 36px; font-size: var(--font-size-heroSub, 22px); color: var(--text-primary, #4a3e3e); max-width: 34ch; }
+.bigcta { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightHeroCta, 52px); padding: 0 30px; border-radius: var(--radius-button, 12px); background: var(--accent, #4f75fe); color: var(--text-onAccent, #fff); font-size: var(--font-size-cta, 20px); margin-right: 12px; }
+.bigcta:hover { background: var(--accentHover, #254cda); }
+.bigcta:active { background: var(--accentPressed, #254cda); }
+.seccta { display: inline-flex; align-items: center; justify-content: center; height: 54px; padding: 0 26px; border-radius: var(--radius-button, 12px); background: var(--darkFill, #382d2d); border: 1px solid var(--border-demo, #edebe7); color: var(--text-onDark, #fff); font-size: var(--font-size-cta, 20px); }
+/* ---- feature accordion + testimonials on the beige band ---- */
+.band { padding: 32px 24px; background: var(--surface-band, #f5f1ec); }
+.acc { border-radius: var(--radius-accordion, 10px); background: var(--surface-card, #fff); padding: 16px 20px; margin-bottom: 10px; font-weight: 500; }
+.acc .body { font-size: 14px; color: var(--text-muted, #736b6b); font-weight: 400; margin-top: 8px; }
+.tcards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; padding: 0 24px 24px; background: var(--surface-band, #f5f1ec); }
+.tcard { border-radius: var(--radius-testimonial, 20px); background: var(--surface-card, #fff); padding: 24px; font-size: 14px; }
+.tcard .cap { color: var(--text-muted, #736b6b); margin-top: 10px; }
+.ctaband { margin: 24px; border-radius: var(--radius-band, 40px); background: var(--surface-dark, #2d2323); color: var(--text-onDark, #fff); padding: 40px 32px; }
+.ctaband .h { font: 900 var(--font-size-h2, 48px)/1.05 var(--sg-display); margin-bottom: 20px; }
+.ctaband .wcta { display: inline-flex; align-items: center; height: 52px; padding: 0 30px; border-radius: var(--radius-button, 12px); background: var(--accent, #4f75fe); color: var(--text-onAccent, #fff); font-size: 20px; }
+/* ---- pricing ---- */
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; padding: 24px; }
+.pcard { border: 1px solid var(--border-subtle, #e3e1dd); border-radius: var(--radius-card, 32px); padding: 28px; background: var(--surface-card, #fff); }
+.pcard .p { font: 900 28px/1.1 var(--sg-display); color: var(--text-heading, #382d2d); }
+.pcard .cap { font-size: 14px; color: var(--text-muted, #736b6b); margin: 8px 0 18px; }
+.pbtn { display: inline-flex; align-items: center; height: 52px; padding: 0 24px; border-radius: var(--radius-button, 12px); background: var(--darkFill, #2d2323); color: var(--text-onDark, #fff); }
+details.faq { margin: 0 24px 24px; border-radius: var(--radius-accordion, 10px); padding: 14px 18px; font-size: var(--font-size-faq, 25px); background: var(--surface-card, #fff); border: 1px solid #edebe7; }
+details.faq summary { cursor: pointer; color: var(--darkFill, #2d2323); }
+/* ---- the sign-in cards (app boundaries) ---- */
+.signin { max-width: 430px; margin: 28px auto; padding: 28px; background: var(--surface-page, #fff); font-size: 16px; color: var(--text-primary, #4a3e3e); }
+.signin .h { font-size: 24px; font-weight: 700; color: var(--text-heading, #382d2d); margin-bottom: 16px; }
+.obtn { display: flex; align-items: center; justify-content: center; height: var(--component-ui-heightButton, var(--component-control-heightSso, 44px)); border-radius: var(--radius-control, 10px); margin-bottom: 10px; font-size: 16px; border: 1px solid var(--app-ssoBorder, rgba(102,87,87,.2)); color: var(--text-primary, #4a3e3e); background: transparent; }
+.field { display: flex; align-items: center; height: var(--component-ui-heightInput, 44px); border-radius: var(--radius-control, 10px); margin-bottom: 10px; padding: 0 15px; background: var(--app-field, #f5f3ef); color: var(--text-primary, #4a3e3e); }
+.signin .go { display: flex; align-items: center; justify-content: center; height: 44px; border-radius: var(--radius-control, 10px); background: var(--app-accent, #4f75fe); color: #fff; }
+.hrsign .go { background: var(--app-hrAccent, #00b16b); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid #edebe7; padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Homerun style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The mock is a reconstruction from tokens, not captured pixels — the real captures are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+
+  <h2 class="sh">Homerun, declared and measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>. homerun.co is a Webflow build whose :root carries TWO palette layers — the current <code>--_updated-colors-v2---*</code> set (beige grounds, the #4f75fe blue ramp, the warm brown ink scale, secondary and tertiary accents) and a large legacy named layer it replaced — so the core colors are the updated declarations, with every legacy name kept under <code>color.named.*</code>, and the roles are measured on the painted chrome: the blue primary buttons, the dark #2d2323 demo buttons and CTA band, the beige-tinted bands and inputs.</p>
+  <p class="note">One light theme across every surface, with dark #2d2323 content bands inside it. jobs.homerun.co is the employer careers site on the same system (its own #466af6 button blue); app.homerun.co/login and app.homerun.hr/Account/Logon are sign-in boundaries measured at rest — nothing was typed, sent or submitted. Read on 2026-11-17, signed out, in headless Chromium.</p>
+
+  <h2 class="sh">The marketing surface</h2>
+  <p class="lead">The white nav with its dark Book-a-demo and blue Start-free-trial pair, the GT Walsheim hero with the blue primary and dark secondary CTAs, the beige band of cards and accordions, and the 40px-radius dark closing CTA band.</p>
+  <div class="mock light">
+    <div class="navbar"><span class="wm">Homerun</span><span class="lk">Product</span><span class="lk">Resources</span><span class="sp"></span><span class="demo">Book a demo</span><span class="cta">Start free trial</span></div>
+    <div class="hero">
+      <h3>Hiring software that moves your team forward</h3>
+      <p>Organise your hiring, manage your team and grow — all in one place.</p>
+      <span class="bigcta">Try free for 15 days</span><span class="seccta">Book a demo</span>
+    </div>
+    <div class="band">
+      <div class="acc"><b>Post jobs everywhere</b><div class="body">One opening, every board — measured as the feature accordion.</div></div>
+      <div class="acc"><b>Track every candidate</b><div class="body">The pipeline view behind the accordion.</div></div>
+    </div>
+    <div class="tcards">
+      <div class="tcard"><b>“Homerun made hiring feel human.”</b><div class="cap">Testimonial card, radius 20px</div></div>
+      <div class="tcard"><b>“The calmest ATS we tried.”</b><div class="cap">Beige band, card on white</div></div>
+    </div>
+    <div class="ctaband"><div class="h">Start hiring with Homerun</div><span class="wcta">Try free for 15 days</span></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">Plan cards on a 1px beige hairline with 32px corners and the FAQ accordion on 10px corners.</p>
+  <div class="mock light">
+    <div class="plans">
+      <div class="pcard"><div class="p">Light</div><div class="cap">For small teams starting out</div><span class="pbtn">Start free trial</span></div>
+      <div class="pcard"><div class="p">Plus</div><div class="cap">For growing teams</div><span class="pbtn">Start free trial</span></div>
+      <div class="pcard"><div class="p">Custom</div><div class="cap">For larger organisations</div><span class="pbtn">Book a demo</span></div>
+    </div>
+    <details class="faq" open><summary>How does the free trial work?</summary><p>Fifteen days, no card — measured as the pricing FAQ item.</p></details>
+  </div>
+
+  <h2 class="sh">The sign-in cards</h2>
+  <p class="lead">app.homerun.co/login: SSO buttons on a hairline, fields on the beige-500 fill, the blue Log in — the app's declared <code>--ui-*</code> roles (10px radius, 44px heights) paint exactly this. app.homerun.hr runs the same layout on the HR green. Both measured at rest, never submitted.</p>
+  <div class="mock light"><div class="signin">
+    <div class="h">Log in to Homerun</div>
+    <div class="obtn">Log in with Google</div>
+    <div class="obtn">Log in with Microsoft</div>
+    <div class="field">Email address</div>
+    <div class="field">Password</div>
+    <div class="go">Log in</div>
+  </div>
+  <div class="signin hrsign">
+    <div class="h">Homerun HR</div>
+    <div class="field">Email address</div>
+    <div class="field">Password</div>
+    <div class="go">Log in</div>
+  </div></div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The page ground is <code>light.surface.page</code> #ffffff (<code>color.white</code>); tinted bands take <code>light.surface.band</code> #f5f1ec, fields <code>light.app.field</code> #f5f3ef (<code>color.beige.500</code>) and the dark band <code>light.surface.dark</code> #2d2323 (<code>color.brown.500</code>). Brand controls take <code>light.accent</code> #4f75fe (<code>color.blue.500</code>) and darken to <code>light.accentHover</code>/<code>light.accentPressed</code> #254cda (<code>color.blue.600</code>); the dark buttons lift toward <code>light.darkFillHover</code> #4a3e3e (<code>color.brown.300</code>, also the body ink). The careers site runs its own <code>light.careers.accent</code> #466af6 and the HR card its <code>light.app.hrAccent</code> #00b16b.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <p class="lead">Measured boxes: the 104px nav bar at 1440 (72px on mobile), the 52px hero CTA, the 44px sign-in controls the app declares as <code>--ui-input-height</code>/<code>--ui-button-min-height</code>, the 436px Resources panel, the 358 x 451 mobile menu sheet, the plan card and job-card widths.</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared CSS variables on all four surfaces (the Webflow :root layers, the careers sheets and the app's --ui-* roles) and the computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component — the nav dropdowns held open by hover, the pricing FAQ by its own toggle, the mobile menu by an in-page click verified open</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from; declared and measured values are linked by alias only when they agree</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [set, toks] of [['light', TOK.light], ['dark', TOK.dark]]) {
+    const roles = flat(toks || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${set} roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core && TOK.core.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+ "_note": "Rules for systems/family. A fully public signed-out capture of family.co and the app.family.co login: no owner data on any surface. The OCR email net is kept, with product-published and example addresses allowed; the wagmi/viem entries pass only the complete npm version strings (wagmi@2.x, viem@2.x) in the public ConnectKit dependency table on /changelog — they must match a whole address, so a real address like wagmi.user@private.test is still flagged.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@family\\.co$",
+   "@aave\\.com$",
+   "@example\\.com$",
+   "@example\\.org$",
+   "^wagmi@2\\.x$",
+   "^viem@2\\.x$"
+  ]
+ },
+ "families": []
+}

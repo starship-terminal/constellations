@@ -1,0 +1,3496 @@
+{
+  "_about": "The token tree build_tokens.py turns into tokens.json. Exa's public surface is three sites: the exa.ai marketing pages (light only, a --brand-*/--gray-*/--secondary-*/--cream token layer), the auth.exa.ai sign-in card dashboard.exa.ai redirects to (light only, its own --text-light-*/--secondary-* values) and the exa.ai/docs Mintlify docs (a real light/dark pair: --primary/--gray-* triplets, --default-border-color flips, the Mintlify --color-* layer and --docs-*/--twoslash-* component vars). Declared scales under core.*; the marketing and sign-in roles under light.*; the docs roles under light.* and dark.*. Measured roles alias the declared values they match.",
+  "core": {
+    "color": {
+      "brand": {
+        "dark": {
+          "var": "--brand-dark",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--brand-dark` — the marketing brand scale (#1f40ed blue)."
+        },
+        "darker": {
+          "var": "--brand-darker",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--brand-darker` — the marketing brand scale (#1f40ed blue)."
+        },
+        "default": {
+          "var": "--brand-default",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--brand-default` — the marketing brand scale (#1f40ed blue)."
+        },
+        "default-rgb": {
+          "var": "--brand-default-rgb",
+          "type": "other",
+          "surface": "marketing",
+          "description": "The declared `--brand-default-rgb` — the marketing brand scale (#1f40ed blue)."
+        },
+        "faint": {
+          "var": "--brand-faint",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--brand-faint` — the marketing brand scale (#1f40ed blue)."
+        },
+        "fainter": {
+          "var": "--brand-fainter",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--brand-fainter` — the marketing brand scale (#1f40ed blue)."
+        },
+        "muted": {
+          "var": "--brand-muted",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--brand-muted` — the marketing brand scale (#1f40ed blue)."
+        },
+        "subtle": {
+          "var": "--brand-subtle",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--brand-subtle` — the marketing brand scale (#1f40ed blue)."
+        }
+      },
+      "secondary": {
+        "accent": {
+          "var": "--secondary-accent",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--secondary-accent` — the marketing secondary scale."
+        },
+        "accent2x": {
+          "var": "--secondary-accent2x",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--secondary-accent2x` — the marketing secondary scale."
+        },
+        "dark": {
+          "var": "--secondary-dark",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--secondary-dark` — the marketing secondary scale."
+        },
+        "darker": {
+          "var": "--secondary-darker",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--secondary-darker` — the marketing secondary scale."
+        },
+        "darkest": {
+          "var": "--secondary-darkest",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--secondary-darkest` — the marketing secondary scale."
+        },
+        "default": {
+          "var": "--secondary-default",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--secondary-default` — the marketing secondary scale."
+        },
+        "faint": {
+          "var": "--secondary-faint",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--secondary-faint` — the marketing secondary scale."
+        },
+        "fainter": {
+          "var": "--secondary-fainter",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--secondary-fainter` — the marketing secondary scale."
+        }
+      },
+      "gray": {
+        "100": {
+          "var": "--gray-100",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--gray-100` — the marketing neutral ramp."
+        },
+        "200": {
+          "var": "--gray-200",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--gray-200` — the marketing neutral ramp."
+        },
+        "300": {
+          "var": "--gray-300",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--gray-300` — the marketing neutral ramp."
+        },
+        "400": {
+          "var": "--gray-400",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--gray-400` — the marketing neutral ramp."
+        },
+        "50": {
+          "var": "--gray-50",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--gray-50` — the marketing neutral ramp."
+        },
+        "500": {
+          "var": "--gray-500",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--gray-500` — the marketing neutral ramp."
+        },
+        "600": {
+          "var": "--gray-600",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--gray-600` — the marketing neutral ramp."
+        },
+        "700": {
+          "var": "--gray-700",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--gray-700` — the marketing neutral ramp."
+        },
+        "800": {
+          "var": "--gray-800",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--gray-800` — the marketing neutral ramp."
+        },
+        "900": {
+          "var": "--gray-900",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--gray-900` — the marketing neutral ramp."
+        },
+        "950": {
+          "var": "--gray-950",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--gray-950` — the marketing neutral ramp."
+        }
+      },
+      "neutral": {
+        "cream": {
+          "var": "--cream",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The cream #faf9f7 page field."
+        },
+        "cream-darker": {
+          "var": "--cream-darker",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The darker cream #f0ece8 band."
+        },
+        "greige": {
+          "var": "--greige",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The #58544e greige body ink."
+        },
+        "greige-light": {
+          "var": "--greige-light",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The #787572 lighter greige."
+        },
+        "greige-lightest": {
+          "var": "--greige-lightest",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The #c2bfbb lightest greige."
+        },
+        "gold": {
+          "var": "--gold",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The #89661a gold (the announcement strip, rating stars)."
+        },
+        "charcoal": {
+          "var": "--charcoal",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The #111111 charcoal ink."
+        },
+        "black": {
+          "var": "--black",
+          "type": "color",
+          "surface": "marketing",
+          "description": "Pure black."
+        },
+        "white": {
+          "var": "--white",
+          "type": "color",
+          "surface": "marketing",
+          "description": "Pure white."
+        },
+        "background": {
+          "var": "--background",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared white surface."
+        }
+      },
+      "named": {
+        "blood-burst": {
+          "var": "--blood-burst",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--blood-burst` — a named marketing colour."
+        },
+        "burnished-metal": {
+          "var": "--burnished-metal",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--burnished-metal` — a named marketing colour."
+        },
+        "carbon": {
+          "var": "--carbon",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--carbon` — a named marketing colour."
+        },
+        "cerebral-grey": {
+          "var": "--cerebral-grey",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--cerebral-grey` — a named marketing colour."
+        },
+        "light-shojin-blue": {
+          "var": "--light-shojin-blue",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--light-shojin-blue` — a named marketing colour."
+        },
+        "lucky-grey": {
+          "var": "--lucky-grey",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--lucky-grey` — a named marketing colour."
+        },
+        "orchid": {
+          "var": "--orchid",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--orchid` — a named marketing colour."
+        },
+        "paper-white": {
+          "var": "--paper-white",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--paper-white` — a named marketing colour."
+        },
+        "pauper": {
+          "var": "--pauper",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--pauper` — a named marketing colour."
+        },
+        "pearl-necklace": {
+          "var": "--pearl-necklace",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--pearl-necklace` — a named marketing colour."
+        },
+        "pouty-purple": {
+          "var": "--pouty-purple",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--pouty-purple` — a named marketing colour."
+        },
+        "raven": {
+          "var": "--raven",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--raven` — a named marketing colour."
+        },
+        "thamar-black": {
+          "var": "--thamar-black",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--thamar-black` — a named marketing colour."
+        },
+        "virtual-violet": {
+          "var": "--virtual-violet",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--virtual-violet` — a named marketing colour."
+        },
+        "winter-park": {
+          "var": "--winter-park",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--winter-park` — a named marketing colour."
+        }
+      },
+      "accent": {
+        "default": {
+          "var": "--accent",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--accent` — a light-theme badge accent pair member."
+        },
+        "background": {
+          "var": "--accent-background",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--accent-background` — a light-theme badge accent pair member."
+        },
+        "darkgreen-dark": {
+          "var": "--accent-darkgreen-dark",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--accent-darkgreen-dark` — a light-theme badge accent pair member."
+        },
+        "darkgreen-light": {
+          "var": "--accent-darkgreen-light",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--accent-darkgreen-light` — a light-theme badge accent pair member."
+        },
+        "green": {
+          "var": "--accent-green",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--accent-green` — a light-theme badge accent pair member."
+        },
+        "maroon-dark": {
+          "var": "--accent-maroon-dark",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--accent-maroon-dark` — a light-theme badge accent pair member."
+        },
+        "maroon-light": {
+          "var": "--accent-maroon-light",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--accent-maroon-light` — a light-theme badge accent pair member."
+        },
+        "pink-dark": {
+          "var": "--accent-pink-dark",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--accent-pink-dark` — a light-theme badge accent pair member."
+        },
+        "pink-light": {
+          "var": "--accent-pink-light",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--accent-pink-light` — a light-theme badge accent pair member."
+        },
+        "purple-dark": {
+          "var": "--accent-purple-dark",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--accent-purple-dark` — a light-theme badge accent pair member."
+        },
+        "purple-light": {
+          "var": "--accent-purple-light",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--accent-purple-light` — a light-theme badge accent pair member."
+        },
+        "red": {
+          "var": "--accent-red",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--accent-red` — a light-theme badge accent pair member."
+        },
+        "skyblue-dark": {
+          "var": "--accent-skyblue-dark",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--accent-skyblue-dark` — a light-theme badge accent pair member."
+        },
+        "skyblue-light": {
+          "var": "--accent-skyblue-light",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--accent-skyblue-light` — a light-theme badge accent pair member."
+        },
+        "yellow-dark": {
+          "var": "--accent-yellow-dark",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--accent-yellow-dark` — a light-theme badge accent pair member."
+        },
+        "yellow-light": {
+          "var": "--accent-yellow-light",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--accent-yellow-light` — a light-theme badge accent pair member."
+        }
+      },
+      "darkAccent": {
+        "green-dark": {
+          "var": "--dark-accent-green-dark",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--dark-accent-green-dark` — a dark-theme badge accent pair member."
+        },
+        "green-light": {
+          "var": "--dark-accent-green-light",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--dark-accent-green-light` — a dark-theme badge accent pair member."
+        },
+        "maroon-dark": {
+          "var": "--dark-accent-maroon-dark",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--dark-accent-maroon-dark` — a dark-theme badge accent pair member."
+        },
+        "maroon-light": {
+          "var": "--dark-accent-maroon-light",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--dark-accent-maroon-light` — a dark-theme badge accent pair member."
+        },
+        "pink-dark": {
+          "var": "--dark-accent-pink-dark",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--dark-accent-pink-dark` — a dark-theme badge accent pair member."
+        },
+        "pink-light": {
+          "var": "--dark-accent-pink-light",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--dark-accent-pink-light` — a dark-theme badge accent pair member."
+        },
+        "purple-dark": {
+          "var": "--dark-accent-purple-dark",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--dark-accent-purple-dark` — a dark-theme badge accent pair member."
+        },
+        "purple-light": {
+          "var": "--dark-accent-purple-light",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--dark-accent-purple-light` — a dark-theme badge accent pair member."
+        },
+        "skyblue-dark": {
+          "var": "--dark-accent-skyblue-dark",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--dark-accent-skyblue-dark` — a dark-theme badge accent pair member."
+        },
+        "skyblue-light": {
+          "var": "--dark-accent-skyblue-light",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--dark-accent-skyblue-light` — a dark-theme badge accent pair member."
+        },
+        "yellow-dark": {
+          "var": "--dark-accent-yellow-dark",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--dark-accent-yellow-dark` — a dark-theme badge accent pair member."
+        },
+        "yellow-light": {
+          "var": "--dark-accent-yellow-light",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--dark-accent-yellow-light` — a dark-theme badge accent pair member."
+        }
+      },
+      "text": {
+        "dark-default": {
+          "var": "--text-dark-default",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--text-dark-default` — the text roles for dark surfaces."
+        },
+        "dark-faint": {
+          "var": "--text-dark-faint",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--text-dark-faint` — the text roles for dark surfaces."
+        },
+        "dark-link": {
+          "var": "--text-dark-link",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--text-dark-link` — the text roles for dark surfaces."
+        },
+        "dark-muted": {
+          "var": "--text-dark-muted",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--text-dark-muted` — the text roles for dark surfaces."
+        },
+        "dark-subtle": {
+          "var": "--text-dark-subtle",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--text-dark-subtle` — the text roles for dark surfaces."
+        },
+        "light-default": {
+          "var": "--text-light-default",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--text-light-default` — the text roles for light surfaces."
+        },
+        "light-faint": {
+          "var": "--text-light-faint",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--text-light-faint` — the text roles for light surfaces."
+        },
+        "light-link": {
+          "var": "--text-light-link",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--text-light-link` — the text roles for light surfaces."
+        },
+        "light-muted": {
+          "var": "--text-light-muted",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--text-light-muted` — the text roles for light surfaces."
+        },
+        "light-subtle": {
+          "var": "--text-light-subtle",
+          "type": "color",
+          "surface": "marketing",
+          "description": "The declared `--text-light-subtle` — the text roles for light surfaces."
+        }
+      },
+      "auth": {
+        "text-light": {
+          "default": {
+            "var": "--text-light-default",
+            "type": "color",
+            "surface": "auth",
+            "description": "The declared `--text-light-default` — the sign-in card's own text roles."
+          },
+          "faint": {
+            "var": "--text-light-faint",
+            "type": "color",
+            "surface": "auth",
+            "description": "The declared `--text-light-faint` — the sign-in card's own text roles."
+          },
+          "link": {
+            "var": "--text-light-link",
+            "type": "color",
+            "surface": "auth",
+            "description": "The declared `--text-light-link` — the sign-in card's own text roles."
+          },
+          "muted": {
+            "var": "--text-light-muted",
+            "type": "color",
+            "surface": "auth",
+            "description": "The declared `--text-light-muted` — the sign-in card's own text roles."
+          },
+          "subtle": {
+            "var": "--text-light-subtle",
+            "type": "color",
+            "surface": "auth",
+            "description": "The declared `--text-light-subtle` — the sign-in card's own text roles."
+          }
+        },
+        "secondary": {
+          "accent": {
+            "var": "--secondary-accent",
+            "type": "color",
+            "surface": "auth",
+            "description": "The declared `--secondary-accent` — the auth card's cream-toned secondary scale (different values from marketing's)."
+          },
+          "accent2x": {
+            "var": "--secondary-accent2x",
+            "type": "color",
+            "surface": "auth",
+            "description": "The declared `--secondary-accent2x` — the auth card's cream-toned secondary scale (different values from marketing's)."
+          },
+          "dark": {
+            "var": "--secondary-dark",
+            "type": "color",
+            "surface": "auth",
+            "description": "The declared `--secondary-dark` — the auth card's cream-toned secondary scale (different values from marketing's)."
+          },
+          "darker": {
+            "var": "--secondary-darker",
+            "type": "color",
+            "surface": "auth",
+            "description": "The declared `--secondary-darker` — the auth card's cream-toned secondary scale (different values from marketing's)."
+          },
+          "darkest": {
+            "var": "--secondary-darkest",
+            "type": "color",
+            "surface": "auth",
+            "description": "The declared `--secondary-darkest` — the auth card's cream-toned secondary scale (different values from marketing's)."
+          },
+          "default": {
+            "var": "--secondary-default",
+            "type": "color",
+            "surface": "auth",
+            "description": "The declared `--secondary-default` — the auth card's cream-toned secondary scale (different values from marketing's)."
+          }
+        },
+        "background": {
+          "var": "--background",
+          "type": "color",
+          "surface": "auth",
+          "description": "The declared `--background` — the sign-in card's surface role."
+        },
+        "foreground": {
+          "var": "--foreground",
+          "type": "color",
+          "surface": "auth",
+          "description": "The declared `--foreground` — the sign-in card's surface role."
+        }
+      },
+      "docs": {
+        "gray": {
+          "100": {
+            "var": "--gray-100",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--gray-100` — the docs' cool-toned grey ramp (different values from marketing's)."
+          },
+          "200": {
+            "var": "--gray-200",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--gray-200` — the docs' cool-toned grey ramp (different values from marketing's)."
+          },
+          "300": {
+            "var": "--gray-300",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--gray-300` — the docs' cool-toned grey ramp (different values from marketing's)."
+          },
+          "400": {
+            "var": "--gray-400",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--gray-400` — the docs' cool-toned grey ramp (different values from marketing's)."
+          },
+          "50": {
+            "var": "--gray-50",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--gray-50` — the docs' cool-toned grey ramp (different values from marketing's)."
+          },
+          "500": {
+            "var": "--gray-500",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--gray-500` — the docs' cool-toned grey ramp (different values from marketing's)."
+          },
+          "600": {
+            "var": "--gray-600",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--gray-600` — the docs' cool-toned grey ramp (different values from marketing's)."
+          },
+          "700": {
+            "var": "--gray-700",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--gray-700` — the docs' cool-toned grey ramp (different values from marketing's)."
+          },
+          "800": {
+            "var": "--gray-800",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--gray-800` — the docs' cool-toned grey ramp (different values from marketing's)."
+          },
+          "900": {
+            "var": "--gray-900",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--gray-900` — the docs' cool-toned grey ramp (different values from marketing's)."
+          },
+          "950": {
+            "var": "--gray-950",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--gray-950` — the docs' cool-toned grey ramp (different values from marketing's)."
+          }
+        },
+        "primary": {
+          "var": "--primary",
+          "type": "color",
+          "surface": "docs-light",
+          "description": "The declared `--primary` — the docs theme vars."
+        },
+        "primary-light": {
+          "var": "--primary-light",
+          "type": "color",
+          "surface": "docs-light",
+          "description": "The declared `--primary-light` — the docs theme vars."
+        },
+        "primary-dark": {
+          "var": "--primary-dark",
+          "type": "color",
+          "surface": "docs-light",
+          "description": "The declared `--primary-dark` — the docs theme vars."
+        },
+        "background-light": {
+          "var": "--background-light",
+          "type": "color",
+          "surface": "docs-light",
+          "description": "The declared `--background-light` — the docs theme vars."
+        },
+        "background-dark": {
+          "var": "--background-dark",
+          "type": "color",
+          "surface": "docs-light",
+          "description": "The declared `--background-dark` — the docs theme vars."
+        },
+        "default-border": {
+          "var": "--default-border-color",
+          "type": "color",
+          "surface": "docs-light",
+          "description": "The declared `--default-border-color` — the docs theme vars."
+        },
+        "tooltip-foreground": {
+          "var": "--tooltip-foreground",
+          "type": "color",
+          "surface": "docs-light",
+          "description": "The declared `--tooltip-foreground` — the docs theme vars."
+        },
+        "docs-accent": {
+          "var": "--docs-accent",
+          "type": "color",
+          "surface": "docs-light",
+          "description": "The declared `--docs-accent` — the docs theme vars."
+        },
+        "mintlify": {
+          "amber": {
+            "100": {
+              "var": "--color-amber-100",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-amber-100` — the docs' Mintlify design layer."
+            },
+            "1000": {
+              "var": "--color-amber-1000",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-amber-1000` — the docs' Mintlify design layer."
+            },
+            "200": {
+              "var": "--color-amber-200",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-amber-200` — the docs' Mintlify design layer."
+            },
+            "300": {
+              "var": "--color-amber-300",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-amber-300` — the docs' Mintlify design layer."
+            },
+            "400": {
+              "var": "--color-amber-400",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-amber-400` — the docs' Mintlify design layer."
+            },
+            "500": {
+              "var": "--color-amber-500",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-amber-500` — the docs' Mintlify design layer."
+            },
+            "600": {
+              "var": "--color-amber-600",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-amber-600` — the docs' Mintlify design layer."
+            },
+            "700": {
+              "var": "--color-amber-700",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-amber-700` — the docs' Mintlify design layer."
+            },
+            "800": {
+              "var": "--color-amber-800",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-amber-800` — the docs' Mintlify design layer."
+            },
+            "900": {
+              "var": "--color-amber-900",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-amber-900` — the docs' Mintlify design layer."
+            }
+          },
+          "background": {
+            "primary": {
+              "var": "--color-background-primary",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-background-primary` — the docs' Mintlify design layer."
+            },
+            "secondary": {
+              "var": "--color-background-secondary",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-background-secondary` — the docs' Mintlify design layer."
+            }
+          },
+          "black": {
+            "default": {
+              "var": "--color-black",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-black` — the docs' Mintlify design layer."
+            }
+          },
+          "blue": {
+            "600": {
+              "var": "--color-blue-600",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-blue-600` — the docs' Mintlify design layer."
+            }
+          },
+          "brand": {
+            "border": {
+              "var": "--color-brand-border",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-brand-border` — the docs' Mintlify design layer."
+            },
+            "border-active": {
+              "var": "--color-brand-border-active",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-brand-border-active` — the docs' Mintlify design layer."
+            },
+            "border-hover": {
+              "var": "--color-brand-border-hover",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-brand-border-hover` — the docs' Mintlify design layer."
+            },
+            "foreground-primary": {
+              "var": "--color-brand-foreground-primary",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-brand-foreground-primary` — the docs' Mintlify design layer."
+            },
+            "foreground-secondary": {
+              "var": "--color-brand-foreground-secondary",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-brand-foreground-secondary` — the docs' Mintlify design layer."
+            },
+            "on-solid": {
+              "var": "--color-brand-on-solid",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-brand-on-solid` — the docs' Mintlify design layer."
+            },
+            "solid": {
+              "var": "--color-brand-solid",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-brand-solid` — the docs' Mintlify design layer."
+            },
+            "solid-hover": {
+              "var": "--color-brand-solid-hover",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-brand-solid-hover` — the docs' Mintlify design layer."
+            },
+            "subtle": {
+              "var": "--color-brand-subtle",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-brand-subtle` — the docs' Mintlify design layer."
+            },
+            "subtle-active": {
+              "var": "--color-brand-subtle-active",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-brand-subtle-active` — the docs' Mintlify design layer."
+            },
+            "subtle-hover": {
+              "var": "--color-brand-subtle-hover",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-brand-subtle-hover` — the docs' Mintlify design layer."
+            }
+          },
+          "cream": {
+            "default": {
+              "var": "--color-cream",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-cream` — the docs' Mintlify design layer."
+            },
+            "dark": {
+              "var": "--color-cream-dark",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-cream-dark` — the docs' Mintlify design layer."
+            }
+          },
+          "danger": {
+            "border": {
+              "var": "--color-danger-border",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-danger-border` — the docs' Mintlify design layer."
+            },
+            "border-active": {
+              "var": "--color-danger-border-active",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-danger-border-active` — the docs' Mintlify design layer."
+            },
+            "border-hover": {
+              "var": "--color-danger-border-hover",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-danger-border-hover` — the docs' Mintlify design layer."
+            },
+            "foreground-primary": {
+              "var": "--color-danger-foreground-primary",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-danger-foreground-primary` — the docs' Mintlify design layer."
+            },
+            "foreground-secondary": {
+              "var": "--color-danger-foreground-secondary",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-danger-foreground-secondary` — the docs' Mintlify design layer."
+            },
+            "on-solid": {
+              "var": "--color-danger-on-solid",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-danger-on-solid` — the docs' Mintlify design layer."
+            },
+            "solid": {
+              "var": "--color-danger-solid",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-danger-solid` — the docs' Mintlify design layer."
+            },
+            "solid-hover": {
+              "var": "--color-danger-solid-hover",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-danger-solid-hover` — the docs' Mintlify design layer."
+            },
+            "subtle": {
+              "var": "--color-danger-subtle",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-danger-subtle` — the docs' Mintlify design layer."
+            },
+            "subtle-active": {
+              "var": "--color-danger-subtle-active",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-danger-subtle-active` — the docs' Mintlify design layer."
+            },
+            "subtle-hover": {
+              "var": "--color-danger-subtle-hover",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-danger-subtle-hover` — the docs' Mintlify design layer."
+            }
+          },
+          "emerald": {
+            "100": {
+              "var": "--color-emerald-100",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-emerald-100` — the docs' Mintlify design layer."
+            },
+            "1000": {
+              "var": "--color-emerald-1000",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-emerald-1000` — the docs' Mintlify design layer."
+            },
+            "200": {
+              "var": "--color-emerald-200",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-emerald-200` — the docs' Mintlify design layer."
+            },
+            "300": {
+              "var": "--color-emerald-300",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-emerald-300` — the docs' Mintlify design layer."
+            },
+            "400": {
+              "var": "--color-emerald-400",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-emerald-400` — the docs' Mintlify design layer."
+            },
+            "500": {
+              "var": "--color-emerald-500",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-emerald-500` — the docs' Mintlify design layer."
+            },
+            "600": {
+              "var": "--color-emerald-600",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-emerald-600` — the docs' Mintlify design layer."
+            },
+            "700": {
+              "var": "--color-emerald-700",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-emerald-700` — the docs' Mintlify design layer."
+            },
+            "800": {
+              "var": "--color-emerald-800",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-emerald-800` — the docs' Mintlify design layer."
+            },
+            "900": {
+              "var": "--color-emerald-900",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-emerald-900` — the docs' Mintlify design layer."
+            }
+          },
+          "exa": {
+            "blue": {
+              "var": "--color-exa-blue",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-exa-blue` — the docs' Mintlify design layer."
+            }
+          },
+          "exa-blue": {
+            "100": {
+              "var": "--color-exa-blue-100",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-exa-blue-100` — the docs' Mintlify design layer."
+            },
+            "1000": {
+              "var": "--color-exa-blue-1000",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-exa-blue-1000` — the docs' Mintlify design layer."
+            },
+            "200": {
+              "var": "--color-exa-blue-200",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-exa-blue-200` — the docs' Mintlify design layer."
+            },
+            "300": {
+              "var": "--color-exa-blue-300",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-exa-blue-300` — the docs' Mintlify design layer."
+            },
+            "400": {
+              "var": "--color-exa-blue-400",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-exa-blue-400` — the docs' Mintlify design layer."
+            },
+            "500": {
+              "var": "--color-exa-blue-500",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-exa-blue-500` — the docs' Mintlify design layer."
+            },
+            "600": {
+              "var": "--color-exa-blue-600",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-exa-blue-600` — the docs' Mintlify design layer."
+            },
+            "700": {
+              "var": "--color-exa-blue-700",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-exa-blue-700` — the docs' Mintlify design layer."
+            },
+            "800": {
+              "var": "--color-exa-blue-800",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-exa-blue-800` — the docs' Mintlify design layer."
+            },
+            "900": {
+              "var": "--color-exa-blue-900",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-exa-blue-900` — the docs' Mintlify design layer."
+            }
+          },
+          "exa-gray": {
+            "100": {
+              "var": "--color-exa-gray-100",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-exa-gray-100` — the docs' Mintlify design layer."
+            },
+            "1000": {
+              "var": "--color-exa-gray-1000",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-exa-gray-1000` — the docs' Mintlify design layer."
+            },
+            "200": {
+              "var": "--color-exa-gray-200",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-exa-gray-200` — the docs' Mintlify design layer."
+            },
+            "300": {
+              "var": "--color-exa-gray-300",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-exa-gray-300` — the docs' Mintlify design layer."
+            },
+            "400": {
+              "var": "--color-exa-gray-400",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-exa-gray-400` — the docs' Mintlify design layer."
+            },
+            "500": {
+              "var": "--color-exa-gray-500",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-exa-gray-500` — the docs' Mintlify design layer."
+            },
+            "600": {
+              "var": "--color-exa-gray-600",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-exa-gray-600` — the docs' Mintlify design layer."
+            },
+            "700": {
+              "var": "--color-exa-gray-700",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-exa-gray-700` — the docs' Mintlify design layer."
+            },
+            "800": {
+              "var": "--color-exa-gray-800",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-exa-gray-800` — the docs' Mintlify design layer."
+            },
+            "900": {
+              "var": "--color-exa-gray-900",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-exa-gray-900` — the docs' Mintlify design layer."
+            }
+          },
+          "green": {
+            "400": {
+              "var": "--color-green-400",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-green-400` — the docs' Mintlify design layer."
+            },
+            "600": {
+              "var": "--color-green-600",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-green-600` — the docs' Mintlify design layer."
+            }
+          },
+          "neutral": {
+            "border": {
+              "var": "--color-neutral-border",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-neutral-border` — the docs' Mintlify design layer."
+            },
+            "border-active": {
+              "var": "--color-neutral-border-active",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-neutral-border-active` — the docs' Mintlify design layer."
+            },
+            "border-hover": {
+              "var": "--color-neutral-border-hover",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-neutral-border-hover` — the docs' Mintlify design layer."
+            },
+            "foreground-primary": {
+              "var": "--color-neutral-foreground-primary",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-neutral-foreground-primary` — the docs' Mintlify design layer."
+            },
+            "foreground-secondary": {
+              "var": "--color-neutral-foreground-secondary",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-neutral-foreground-secondary` — the docs' Mintlify design layer."
+            },
+            "on-solid": {
+              "var": "--color-neutral-on-solid",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-neutral-on-solid` — the docs' Mintlify design layer."
+            },
+            "solid": {
+              "var": "--color-neutral-solid",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-neutral-solid` — the docs' Mintlify design layer."
+            },
+            "solid-hover": {
+              "var": "--color-neutral-solid-hover",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-neutral-solid-hover` — the docs' Mintlify design layer."
+            },
+            "subtle": {
+              "var": "--color-neutral-subtle",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-neutral-subtle` — the docs' Mintlify design layer."
+            },
+            "subtle-active": {
+              "var": "--color-neutral-subtle-active",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-neutral-subtle-active` — the docs' Mintlify design layer."
+            },
+            "subtle-hover": {
+              "var": "--color-neutral-subtle-hover",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-neutral-subtle-hover` — the docs' Mintlify design layer."
+            }
+          },
+          "overlay": {
+            "default": {
+              "var": "--color-overlay",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-overlay` — the docs' Mintlify design layer."
+            }
+          },
+          "primary": {
+            "default": {
+              "var": "--color-primary",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-primary` — the docs' Mintlify design layer."
+            }
+          },
+          "rose": {
+            "100": {
+              "var": "--color-rose-100",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-rose-100` — the docs' Mintlify design layer."
+            },
+            "1000": {
+              "var": "--color-rose-1000",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-rose-1000` — the docs' Mintlify design layer."
+            },
+            "200": {
+              "var": "--color-rose-200",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-rose-200` — the docs' Mintlify design layer."
+            },
+            "300": {
+              "var": "--color-rose-300",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-rose-300` — the docs' Mintlify design layer."
+            },
+            "400": {
+              "var": "--color-rose-400",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-rose-400` — the docs' Mintlify design layer."
+            },
+            "500": {
+              "var": "--color-rose-500",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-rose-500` — the docs' Mintlify design layer."
+            },
+            "600": {
+              "var": "--color-rose-600",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-rose-600` — the docs' Mintlify design layer."
+            },
+            "700": {
+              "var": "--color-rose-700",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-rose-700` — the docs' Mintlify design layer."
+            },
+            "800": {
+              "var": "--color-rose-800",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-rose-800` — the docs' Mintlify design layer."
+            },
+            "900": {
+              "var": "--color-rose-900",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-rose-900` — the docs' Mintlify design layer."
+            }
+          },
+          "success": {
+            "border": {
+              "var": "--color-success-border",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-success-border` — the docs' Mintlify design layer."
+            },
+            "border-active": {
+              "var": "--color-success-border-active",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-success-border-active` — the docs' Mintlify design layer."
+            },
+            "border-hover": {
+              "var": "--color-success-border-hover",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-success-border-hover` — the docs' Mintlify design layer."
+            },
+            "foreground-primary": {
+              "var": "--color-success-foreground-primary",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-success-foreground-primary` — the docs' Mintlify design layer."
+            },
+            "foreground-secondary": {
+              "var": "--color-success-foreground-secondary",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-success-foreground-secondary` — the docs' Mintlify design layer."
+            },
+            "on-solid": {
+              "var": "--color-success-on-solid",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-success-on-solid` — the docs' Mintlify design layer."
+            },
+            "solid": {
+              "var": "--color-success-solid",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-success-solid` — the docs' Mintlify design layer."
+            },
+            "solid-hover": {
+              "var": "--color-success-solid-hover",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-success-solid-hover` — the docs' Mintlify design layer."
+            },
+            "subtle": {
+              "var": "--color-success-subtle",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-success-subtle` — the docs' Mintlify design layer."
+            },
+            "subtle-active": {
+              "var": "--color-success-subtle-active",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-success-subtle-active` — the docs' Mintlify design layer."
+            },
+            "subtle-hover": {
+              "var": "--color-success-subtle-hover",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-success-subtle-hover` — the docs' Mintlify design layer."
+            }
+          },
+          "warning": {
+            "border": {
+              "var": "--color-warning-border",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-warning-border` — the docs' Mintlify design layer."
+            },
+            "border-active": {
+              "var": "--color-warning-border-active",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-warning-border-active` — the docs' Mintlify design layer."
+            },
+            "border-hover": {
+              "var": "--color-warning-border-hover",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-warning-border-hover` — the docs' Mintlify design layer."
+            },
+            "foreground-primary": {
+              "var": "--color-warning-foreground-primary",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-warning-foreground-primary` — the docs' Mintlify design layer."
+            },
+            "foreground-secondary": {
+              "var": "--color-warning-foreground-secondary",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-warning-foreground-secondary` — the docs' Mintlify design layer."
+            },
+            "on-solid": {
+              "var": "--color-warning-on-solid",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-warning-on-solid` — the docs' Mintlify design layer."
+            },
+            "solid": {
+              "var": "--color-warning-solid",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-warning-solid` — the docs' Mintlify design layer."
+            },
+            "solid-hover": {
+              "var": "--color-warning-solid-hover",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-warning-solid-hover` — the docs' Mintlify design layer."
+            },
+            "subtle": {
+              "var": "--color-warning-subtle",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-warning-subtle` — the docs' Mintlify design layer."
+            },
+            "subtle-active": {
+              "var": "--color-warning-subtle-active",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-warning-subtle-active` — the docs' Mintlify design layer."
+            },
+            "subtle-hover": {
+              "var": "--color-warning-subtle-hover",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-warning-subtle-hover` — the docs' Mintlify design layer."
+            }
+          },
+          "white": {
+            "default": {
+              "var": "--color-white",
+              "type": "color",
+              "surface": "docs-light",
+              "description": "The declared `--color-white` — the docs' Mintlify design layer."
+            }
+          }
+        },
+        "vars": {
+          "accent": {
+            "var": "--docs-accent",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-accent` — a docs component colour."
+          },
+          "code-action-hover": {
+            "var": "--docs-code-action-hover",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-code-action-hover` — a docs component colour."
+          },
+          "code-header": {
+            "var": "--docs-code-header",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-code-header` — a docs component colour."
+          },
+          "code-surface": {
+            "var": "--docs-code-surface",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-code-surface` — a docs component colour."
+          },
+          "code-tab-hover": {
+            "var": "--docs-code-tab-hover",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-code-tab-hover` — a docs component colour."
+          },
+          "nav-tab-hover": {
+            "var": "--docs-nav-tab-hover",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-nav-tab-hover` — a docs component colour."
+          },
+          "nav-tab-pill": {
+            "var": "--docs-nav-tab-pill",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-nav-tab-pill` — a docs component colour."
+          },
+          "nav-tab-ring": {
+            "var": "--docs-nav-tab-ring",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-nav-tab-ring` — a docs component colour."
+          },
+          "nav-tab-text": {
+            "var": "--docs-nav-tab-text",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-nav-tab-text` — a docs component colour."
+          },
+          "nav-tab-text-selected": {
+            "var": "--docs-nav-tab-text-selected",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-nav-tab-text-selected` — a docs component colour."
+          },
+          "sidebar-search-border": {
+            "var": "--docs-sidebar-search-border",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-sidebar-search-border` — a docs component colour."
+          },
+          "sidebar-search-border-hover": {
+            "var": "--docs-sidebar-search-border-hover",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-sidebar-search-border-hover` — a docs component colour."
+          },
+          "sidebar-search-key": {
+            "var": "--docs-sidebar-search-key",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-sidebar-search-key` — a docs component colour."
+          },
+          "tab-accent": {
+            "var": "--docs-tab-accent",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-tab-accent` — a docs component colour."
+          },
+          "tab-control-border": {
+            "var": "--docs-tab-control-border",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-tab-control-border` — a docs component colour."
+          },
+          "tab-control-border-hover": {
+            "var": "--docs-tab-control-border-hover",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-tab-control-border-hover` — a docs component colour."
+          },
+          "tab-line": {
+            "var": "--docs-tab-line",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-tab-line` — a docs component colour."
+          },
+          "tab-menu-bg": {
+            "var": "--docs-tab-menu-bg",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-tab-menu-bg` — a docs component colour."
+          },
+          "tab-pill": {
+            "var": "--docs-tab-pill",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-tab-pill` — a docs component colour."
+          },
+          "tab-ring": {
+            "var": "--docs-tab-ring",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-tab-ring` — a docs component colour."
+          },
+          "tab-text": {
+            "var": "--docs-tab-text",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-tab-text` — a docs component colour."
+          },
+          "tab-text-selected": {
+            "var": "--docs-tab-text-selected",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-tab-text-selected` — a docs component colour."
+          },
+          "tab-track": {
+            "var": "--docs-tab-track",
+            "type": "color",
+            "surface": "docs-light",
+            "description": "The declared `--docs-tab-track` — a docs component colour."
+          }
+        }
+      }
+    },
+    "font": {
+      "family": {
+        "diatype": {
+          "var": "--font-family-sans",
+          "type": "fontFamily",
+          "surface": "marketing",
+          "description": "ABCDiatype — the marketing body/UI face."
+        },
+        "arizona": {
+          "var": "--font-family-serif",
+          "type": "fontFamily",
+          "surface": "marketing",
+          "description": "Arizona (ABC Arizona Flare) — the marketing display face ('The world's data for AI agents')."
+        },
+        "mono": {
+          "var": "--font-family-monospace",
+          "type": "fontFamily",
+          "surface": "marketing",
+          "description": "SuisseIntlMono — the marketing mono."
+        },
+        "auth-sans": {
+          "var": "--font-family-sans",
+          "type": "fontFamily",
+          "surface": "auth",
+          "description": "ABC Diatype Unlicensed Trial — the sign-in card's face."
+        },
+        "auth-flare": {
+          "var": "--font-family-arizona-flare",
+          "type": "fontFamily",
+          "surface": "auth",
+          "description": "ABC Arizona Flare — the sign-in card's display face."
+        },
+        "geist-mono": {
+          "var": "--font-family-geist-mono",
+          "type": "fontFamily",
+          "surface": "auth",
+          "description": "Geist Mono — the sign-in card's code face."
+        },
+        "inter": {
+          "var": "--font-inter",
+          "type": "fontFamily",
+          "surface": "docs-light",
+          "description": "Inter — the docs body/UI face."
+        },
+        "paper-mono": {
+          "var": "--font-paper-mono",
+          "type": "fontFamily",
+          "surface": "docs-light",
+          "description": "Paper Mono — the docs code face."
+        },
+        "docs-sans": {
+          "var": "--default-font-family",
+          "type": "fontFamily",
+          "surface": "docs-light",
+          "description": "The docs' declared default stack (Inter first)."
+        },
+        "docs-mono": {
+          "var": "--default-mono-font-family",
+          "type": "fontFamily",
+          "surface": "docs-light",
+          "description": "The docs' declared default mono stack (Paper Mono first)."
+        },
+        "docs-headings": {
+          "var": "--font-family-headings-custom",
+          "type": "fontFamily",
+          "surface": "docs-light",
+          "description": "The docs' headings stack — ABCDiatype first, the marketing face reused."
+        }
+      },
+      "weight": {
+        "normal": {
+          "var": "--font-weight-normal",
+          "type": "fontWeight",
+          "surface": "docs-light",
+          "description": "400 — body and UI text everywhere."
+        },
+        "medium": {
+          "var": "--font-weight-medium",
+          "type": "fontWeight",
+          "surface": "docs-light",
+          "description": "500 — nav items, labels, docs code."
+        },
+        "semibold": {
+          "var": "--font-weight-semibold",
+          "type": "fontWeight",
+          "surface": "docs-light",
+          "description": "600 — docs headings."
+        },
+        "bold": {
+          "var": "--font-weight-bold",
+          "type": "fontWeight",
+          "surface": "docs-light",
+          "description": "700 — declared."
+        },
+        "extrabold": {
+          "var": "--font-weight-extrabold",
+          "type": "fontWeight",
+          "surface": "docs-light",
+          "description": "800 — declared."
+        },
+        "headings": {
+          "var": "--font-weight-headings-custom",
+          "type": "fontWeight",
+          "surface": "docs-light",
+          "description": "The docs headings' declared weight."
+        }
+      },
+      "size": {
+        "nav": {
+          "value": "15px",
+          "type": "dimension",
+          "source": "computed fontSize of mkt-nav-link default (raw/components-computed.json)",
+          "description": "The marketing header-link size."
+        },
+        "small": {
+          "value": "11.5px",
+          "type": "dimension",
+          "source": "computed fontSize of demo-output default (raw/components-computed.json)",
+          "description": "The small copy size inside the demo output."
+        },
+        "docs-body": {
+          "value": "16.6667px",
+          "type": "dimension",
+          "source": "computed fontSize of docs-para default (raw/components-computed.json)",
+          "description": "The docs paragraph size."
+        },
+        "docs-code": {
+          "value": "14px",
+          "type": "dimension",
+          "source": "computed fontSize of docs-code default (raw/components-computed.json)",
+          "description": "The docs code size."
+        },
+        "field": {
+          "value": "16px",
+          "type": "dimension",
+          "source": "computed fontSize of demo-textarea default (raw/components-computed.json)",
+          "description": "The demo query field size."
+        },
+        "body": {
+          "value": "18.4px",
+          "type": "dimension",
+          "source": "computed fontSize of hero-sub default (raw/components-computed.json)",
+          "description": "The hero lede size."
+        },
+        "auth": {
+          "value": "16px",
+          "type": "dimension",
+          "source": "computed fontSize of auth-google default (raw/components-computed.json)",
+          "description": "The sign-in button text size."
+        },
+        "docs-h1": {
+          "value": "32px",
+          "type": "dimension",
+          "source": "computed fontSize of docs-h1 default (raw/components-computed.json)",
+          "description": "The docs page heading size."
+        },
+        "pricing-h1": {
+          "value": "48px",
+          "type": "dimension",
+          "source": "computed fontSize of pricing-h1 default (raw/components-computed.json)",
+          "description": "The pricing page heading size."
+        },
+        "mobile-display": {
+          "value": "38.4px",
+          "type": "dimension",
+          "source": "computed fontSize of m-hero-h1 default (raw/components-computed.json)",
+          "description": "The display size at 390px."
+        },
+        "display": {
+          "value": "63.2px",
+          "type": "dimension",
+          "source": "computed fontSize of hero-h1 default (raw/components-computed.json)",
+          "description": "The marketing display size ('The world's data for AI agents')."
+        }
+      },
+      "lineHeight": {
+        "tight": {
+          "var": "--leading-tight",
+          "type": "number",
+          "surface": "docs-light",
+          "description": "The declared tight leading."
+        },
+        "normal": {
+          "var": "--leading-normal",
+          "type": "number",
+          "surface": "docs-light",
+          "description": "The declared normal leading."
+        },
+        "relaxed": {
+          "var": "--leading-relaxed",
+          "type": "number",
+          "surface": "docs-light",
+          "description": "The declared relaxed leading."
+        },
+        "display": {
+          "value": "45.504px",
+          "type": "dimension",
+          "source": "computed lineHeight of hero-h1 default (raw/components-computed.json)",
+          "description": "The display's own leading."
+        },
+        "body": {
+          "value": "25.76px",
+          "type": "dimension",
+          "source": "computed lineHeight of hero-sub default (raw/components-computed.json)",
+          "description": "The lede's leading."
+        },
+        "docs-body": {
+          "value": "28px",
+          "type": "dimension",
+          "source": "computed lineHeight of docs-para default (raw/components-computed.json)",
+          "description": "The docs paragraph leading."
+        },
+        "nav": {
+          "value": "24px",
+          "type": "dimension",
+          "source": "computed lineHeight of mkt-nav-link default (raw/components-computed.json)",
+          "description": "The header link's leading."
+        },
+        "auth": {
+          "value": "24px",
+          "type": "dimension",
+          "source": "computed lineHeight of auth-google default (raw/components-computed.json)",
+          "description": "The sign-in button's leading."
+        }
+      },
+      "tracking": {
+        "tighter": {
+          "var": "--tracking-tighter",
+          "type": "other",
+          "surface": "docs-light",
+          "description": "The declared tighter tracking."
+        },
+        "tight": {
+          "var": "--tracking-tight",
+          "type": "other",
+          "surface": "docs-light",
+          "description": "The declared tight tracking."
+        },
+        "normal": {
+          "var": "--tracking-normal",
+          "type": "other",
+          "surface": "docs-light",
+          "description": "The declared normal tracking."
+        },
+        "wide": {
+          "var": "--tracking-wide",
+          "type": "other",
+          "surface": "docs-light",
+          "description": "The declared wide tracking."
+        },
+        "display": {
+          "value": "-1.896px",
+          "type": "dimension",
+          "source": "computed letterSpacing of hero-h1 default (raw/components-computed.json)",
+          "description": "The display's tracking."
+        }
+      }
+    },
+    "size": {
+      "nav": {
+        "var": "--nav-height",
+        "type": "dimension",
+        "surface": "marketing",
+        "description": "The declared 55px marketing header."
+      },
+      "header": {
+        "var": "--total-header-height",
+        "type": "dimension",
+        "surface": "marketing",
+        "description": "The declared 55px total header height."
+      },
+      "banner": {
+        "var": "--announcement-banner-height",
+        "type": "dimension",
+        "surface": "marketing",
+        "description": "The declared 48px announcement strip."
+      },
+      "docs-banner": {
+        "var": "--banner-height",
+        "type": "dimension",
+        "surface": "docs-light",
+        "description": "The docs' banner slot."
+      },
+      "docs-header": {
+        "var": "--mintlify-slot-header-height",
+        "type": "dimension",
+        "surface": "docs-light",
+        "description": "The docs' declared header slot."
+      },
+      "docs-base": {
+        "var": "--spacing",
+        "type": "dimension",
+        "surface": "docs-light",
+        "description": "The docs/Tailwind 4px spacing base."
+      },
+      "docs-scroll-mt": {
+        "var": "--scroll-mt",
+        "type": "dimension",
+        "surface": "docs-light",
+        "description": "The docs' scroll offset for anchors."
+      },
+      "container": {
+        "about-page-container": {
+          "var": "--about-page-container",
+          "type": "dimension",
+          "surface": "marketing",
+          "description": "The declared `--about-page-container` container/page width (marketing)."
+        },
+        "blog-container": {
+          "var": "--blog-container",
+          "type": "dimension",
+          "surface": "marketing",
+          "description": "The declared `--blog-container` container/page width (marketing)."
+        },
+        "blog-container-gap": {
+          "var": "--blog-container-gap",
+          "type": "dimension",
+          "surface": "marketing",
+          "description": "The declared `--blog-container-gap` container/page width (marketing)."
+        },
+        "careers-page-container": {
+          "var": "--careers-page-container",
+          "type": "dimension",
+          "surface": "marketing",
+          "description": "The declared `--careers-page-container` container/page width (marketing)."
+        },
+        "faq-page-container": {
+          "var": "--faq-page-container",
+          "type": "dimension",
+          "surface": "marketing",
+          "description": "The declared `--faq-page-container` container/page width (marketing)."
+        },
+        "features-section-container": {
+          "var": "--features-section-container",
+          "type": "dimension",
+          "surface": "marketing",
+          "description": "The declared `--features-section-container` container/page width (marketing)."
+        },
+        "home-page-container": {
+          "var": "--home-page-container",
+          "type": "dimension",
+          "surface": "marketing",
+          "description": "The declared `--home-page-container` container/page width (marketing)."
+        },
+        "pricing-page-container": {
+          "var": "--pricing-page-container",
+          "type": "dimension",
+          "surface": "marketing",
+          "description": "The declared `--pricing-page-container` container/page width (marketing)."
+        },
+        "waitlist-form-container": {
+          "var": "--waitlist-form-container",
+          "type": "dimension",
+          "surface": "marketing",
+          "description": "The declared `--waitlist-form-container` container/page width (marketing)."
+        },
+        "websets-container": {
+          "var": "--websets-container",
+          "type": "dimension",
+          "surface": "marketing",
+          "description": "The declared `--websets-container` container/page width (marketing)."
+        },
+        "container-2xl": {
+          "var": "--container-2xl",
+          "type": "dimension",
+          "surface": "docs-light",
+          "description": "The declared `--container-2xl` container/page width (docs-light)."
+        },
+        "container-3xl": {
+          "var": "--container-3xl",
+          "type": "dimension",
+          "surface": "docs-light",
+          "description": "The declared `--container-3xl` container/page width (docs-light)."
+        },
+        "container-4xl": {
+          "var": "--container-4xl",
+          "type": "dimension",
+          "surface": "docs-light",
+          "description": "The declared `--container-4xl` container/page width (docs-light)."
+        },
+        "container-5xl": {
+          "var": "--container-5xl",
+          "type": "dimension",
+          "surface": "docs-light",
+          "description": "The declared `--container-5xl` container/page width (docs-light)."
+        },
+        "container-6xl": {
+          "var": "--container-6xl",
+          "type": "dimension",
+          "surface": "docs-light",
+          "description": "The declared `--container-6xl` container/page width (docs-light)."
+        },
+        "container-lg": {
+          "var": "--container-lg",
+          "type": "dimension",
+          "surface": "docs-light",
+          "description": "The declared `--container-lg` container/page width (docs-light)."
+        },
+        "container-sm": {
+          "var": "--container-sm",
+          "type": "dimension",
+          "surface": "docs-light",
+          "description": "The declared `--container-sm` container/page width (docs-light)."
+        },
+        "container-xl": {
+          "var": "--container-xl",
+          "type": "dimension",
+          "surface": "docs-light",
+          "description": "The declared `--container-xl` container/page width (docs-light)."
+        },
+        "container-xs": {
+          "var": "--container-xs",
+          "type": "dimension",
+          "surface": "docs-light",
+          "description": "The declared `--container-xs` container/page width (docs-light)."
+        }
+      }
+    },
+    "radius": {
+      "default": {
+        "var": "--border-radius-default",
+        "type": "dimension",
+        "surface": "marketing",
+        "description": "The declared 2px default radius."
+      },
+      "4": {
+        "var": "--border-radius-4",
+        "type": "dimension",
+        "surface": "marketing",
+        "description": "The declared 4px radius."
+      },
+      "8": {
+        "var": "--border-radius-8",
+        "type": "dimension",
+        "surface": "marketing",
+        "description": "The declared 8px radius (matches --radius)."
+      },
+      "10": {
+        "var": "--border-radius-10",
+        "type": "dimension",
+        "surface": "marketing",
+        "description": "The declared 10px radius."
+      },
+      "20": {
+        "var": "--border-radius-20",
+        "type": "dimension",
+        "surface": "marketing",
+        "description": "The declared 20px radius."
+      },
+      "pill": {
+        "var": "--border-radius-1000",
+        "type": "dimension",
+        "surface": "marketing",
+        "description": "The declared 1000px pill radius."
+      },
+      "base": {
+        "var": "--radius",
+        "type": "dimension",
+        "surface": "marketing",
+        "description": "The declared 8px base radius."
+      },
+      "docs": {
+        "var": "--docs-radius",
+        "type": "dimension",
+        "surface": "docs-light",
+        "description": "The docs' declared 6px radius."
+      },
+      "docs-xl": {
+        "var": "--radius-xl",
+        "type": "dimension",
+        "surface": "docs-light",
+        "description": "The docs' declared 12px extra-large radius."
+      },
+      "control-measured": {
+        "value": "0px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of demo-pill default (raw/components-computed.json)",
+        "description": "The demo pill radius."
+      },
+      "field-measured": {
+        "value": "0px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of demo-textarea default (raw/components-computed.json)",
+        "description": "The demo field's radius."
+      },
+      "menu-measured": {
+        "value": "8px",
+        "type": "dimension",
+        "source": "the painted radius of mkt-menu's rounded child default (raw/components-computed.json paint list)",
+        "description": "The mega-menu card radius — the rounded child paints 8px; the wrapper itself is unrounded."
+      },
+      "cta-measured": {
+        "value": "4px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)",
+        "description": "The CTA pill radius."
+      },
+      "auth-field-measured": {
+        "value": "4px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of auth-email default (raw/components-computed.json)",
+        "description": "The sign-in field radius."
+      },
+      "search-measured": {
+        "value": "6px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of docs-search default (raw/components-computed.json)",
+        "description": "The docs search pill radius."
+      }
+    },
+    "shadow": {
+      "menu": {
+        "value": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px",
+        "type": "other",
+        "source": "the painted shadow of mkt-menu's rounded child default (raw/components-computed.json paint list)",
+        "description": "The mega-menu's drop shadow — painted on the rounded child; the wrapper itself is an unshadowed positioning box."
+      },
+      "docs-code-shadow": {
+        "var": "--docs-code-shadow",
+        "type": "other",
+        "surface": "docs-light",
+        "description": "The declared `--docs-code-shadow`."
+      },
+      "docs-tab-menu-shadow": {
+        "var": "--docs-tab-menu-shadow",
+        "type": "other",
+        "surface": "docs-light",
+        "description": "The declared `--docs-tab-menu-shadow`."
+      },
+      "docs-tab-pill-shadow": {
+        "var": "--docs-tab-pill-shadow",
+        "type": "other",
+        "surface": "docs-light",
+        "description": "The declared `--docs-tab-pill-shadow`."
+      },
+      "twoslash-popup-shadow": {
+        "var": "--twoslash-popup-shadow",
+        "type": "other",
+        "surface": "docs-light",
+        "description": "The declared `--twoslash-popup-shadow`."
+      }
+    },
+    "motion": {
+      "duration": {
+        "var": "--default-transition-duration",
+        "type": "duration",
+        "surface": "docs-light",
+        "description": "The declared 150ms default transition duration."
+      },
+      "easing": {
+        "var": "--default-transition-timing-function",
+        "type": "cubicBezier",
+        "surface": "docs-light",
+        "description": "The declared default curve."
+      },
+      "ease-in": {
+        "var": "--ease-in",
+        "type": "cubicBezier",
+        "surface": "docs-light",
+        "description": "The declared ease-in curve."
+      },
+      "ease-out": {
+        "var": "--ease-out",
+        "type": "cubicBezier",
+        "surface": "docs-light",
+        "description": "The declared ease-out curve."
+      },
+      "ease-in-out": {
+        "var": "--ease-in-out",
+        "type": "cubicBezier",
+        "surface": "docs-light",
+        "description": "The declared ease-in-out curve."
+      },
+      "docs-duration": {
+        "var": "--motion-duration",
+        "type": "duration",
+        "surface": "docs-light",
+        "description": "The docs' declared motion duration."
+      },
+      "docs-fast": {
+        "var": "--motion-duration-fast",
+        "type": "duration",
+        "surface": "docs-light",
+        "description": "The docs' fast motion duration."
+      },
+      "docs-slow": {
+        "var": "--motion-duration-slow",
+        "type": "duration",
+        "surface": "docs-light",
+        "description": "The docs' slow motion duration."
+      },
+      "docs-drawer": {
+        "var": "--motion-duration-drawer",
+        "type": "duration",
+        "surface": "docs-light",
+        "description": "The docs' drawer motion duration."
+      },
+      "docs-easing": {
+        "var": "--motion-easing-standard",
+        "type": "cubicBezier",
+        "surface": "docs-light",
+        "description": "The docs' standard curve."
+      },
+      "docs-ease-out": {
+        "var": "--motion-easing-out",
+        "type": "cubicBezier",
+        "surface": "docs-light",
+        "description": "The docs' ease-out."
+      },
+      "docs-ease-in-out": {
+        "var": "--motion-easing-in-out",
+        "type": "cubicBezier",
+        "surface": "docs-light",
+        "description": "The docs' ease-in-out."
+      },
+      "docs-drawer-ease": {
+        "var": "--motion-easing-drawer",
+        "type": "cubicBezier",
+        "surface": "docs-light",
+        "description": "The docs' drawer easing."
+      },
+      "digit": {
+        "var": "--digit-dur",
+        "type": "duration",
+        "surface": "marketing",
+        "description": "The stat digits' roll duration."
+      },
+      "control": {
+        "value": "color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+        "type": "other",
+        "source": "computed transition of mkt-nav-link default (raw/components-computed.json)",
+        "description": "The marketing nav control's transition."
+      }
+    },
+    "breakpoint": {
+      "max-1023": {
+        "value": "1023px",
+        "type": "dimension",
+        "source": "`@media (max-width: 1023px)` in a public stylesheet (raw/css-vars.json rules)",
+        "description": "A declared breakpoint in the public CSS."
+      },
+      "min-1024": {
+        "value": "1024px",
+        "type": "dimension",
+        "source": "`@media (width >= 1024px)` in a public stylesheet (raw/css-vars.json rules)",
+        "description": "A declared breakpoint in the public CSS."
+      },
+      "min-640": {
+        "value": "640px",
+        "type": "dimension",
+        "source": "`@media (min-width: 640px)` in a public stylesheet (raw/css-vars.json rules)",
+        "description": "A declared breakpoint in the public CSS."
+      },
+      "min-768": {
+        "value": "768px",
+        "type": "dimension",
+        "source": "`@media (min-width: 768px)` in a public stylesheet (raw/css-vars.json rules)",
+        "description": "A declared breakpoint in the public CSS."
+      }
+    }
+  },
+  "light": {
+    "docs": {
+      "surface": {
+        "var": "--background-light",
+        "type": "color",
+        "surface": "docs-light",
+        "description": "The declared `--background-light` on the docs light theme."
+      },
+      "border": {
+        "var": "--default-border-color",
+        "type": "color",
+        "surface": "docs-light",
+        "description": "The declared `--default-border-color` on the docs light theme."
+      },
+      "primary": {
+        "var": "--primary",
+        "type": "color",
+        "surface": "docs-light",
+        "description": "The declared `--primary` on the docs light theme."
+      },
+      "accent": {
+        "var": "--docs-accent",
+        "type": "color",
+        "surface": "docs-light",
+        "description": "The declared `--docs-accent` on the docs light theme."
+      },
+      "twoslash": {
+        "border-color": {
+          "var": "--twoslash-border-color",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "code-font-size": {
+          "var": "--twoslash-code-font-size",
+          "type": "other",
+          "surface": "docs-light"
+        },
+        "cursor-color": {
+          "var": "--twoslash-cursor-color",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "docs-tag-style": {
+          "var": "--twoslash-docs-tag-style",
+          "type": "other",
+          "surface": "docs-light"
+        },
+        "error-bg": {
+          "var": "--twoslash-error-bg",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "error-color": {
+          "var": "--twoslash-error-color",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "highlighted-bg": {
+          "var": "--twoslash-highlighted-bg",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "highlighted-border": {
+          "var": "--twoslash-highlighted-border",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "popup-bg": {
+          "var": "--twoslash-popup-bg",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "popup-shadow": {
+          "var": "--twoslash-popup-shadow",
+          "type": "other",
+          "surface": "docs-light"
+        },
+        "tag-annotate-bg": {
+          "var": "--twoslash-tag-annotate-bg",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "tag-annotate-color": {
+          "var": "--twoslash-tag-annotate-color",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "tag-bg": {
+          "var": "--twoslash-tag-bg",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "tag-color": {
+          "var": "--twoslash-tag-color",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "tag-warn-bg": {
+          "var": "--twoslash-tag-warn-bg",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "tag-warn-color": {
+          "var": "--twoslash-tag-warn-color",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "text-size": {
+          "var": "--twoslash-text-size",
+          "type": "other",
+          "surface": "docs-light"
+        },
+        "underline-color": {
+          "var": "--twoslash-underline-color",
+          "type": "other",
+          "surface": "docs-light"
+        },
+        "unmatched-color": {
+          "var": "--twoslash-unmatched-color",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "warn-bg": {
+          "var": "--twoslash-warn-bg",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "warn-color": {
+          "var": "--twoslash-warn-color",
+          "type": "color",
+          "surface": "docs-light"
+        }
+      },
+      "vars": {
+        "accent": {
+          "var": "--docs-accent",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "code-action-hover": {
+          "var": "--docs-code-action-hover",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "code-header": {
+          "var": "--docs-code-header",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "code-surface": {
+          "var": "--docs-code-surface",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "code-tab-hover": {
+          "var": "--docs-code-tab-hover",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "nav-tab-hover": {
+          "var": "--docs-nav-tab-hover",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "nav-tab-pill": {
+          "var": "--docs-nav-tab-pill",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "nav-tab-ring": {
+          "var": "--docs-nav-tab-ring",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "nav-tab-text": {
+          "var": "--docs-nav-tab-text",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "nav-tab-text-selected": {
+          "var": "--docs-nav-tab-text-selected",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "sidebar-search-border": {
+          "var": "--docs-sidebar-search-border",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "sidebar-search-border-hover": {
+          "var": "--docs-sidebar-search-border-hover",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "sidebar-search-key": {
+          "var": "--docs-sidebar-search-key",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "tab-accent": {
+          "var": "--docs-tab-accent",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "tab-control-border": {
+          "var": "--docs-tab-control-border",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "tab-control-border-hover": {
+          "var": "--docs-tab-control-border-hover",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "tab-line": {
+          "var": "--docs-tab-line",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "tab-menu-bg": {
+          "var": "--docs-tab-menu-bg",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "tab-pill": {
+          "var": "--docs-tab-pill",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "tab-ring": {
+          "var": "--docs-tab-ring",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "tab-text": {
+          "var": "--docs-tab-text",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "tab-text-selected": {
+          "var": "--docs-tab-text-selected",
+          "type": "color",
+          "surface": "docs-light"
+        },
+        "tab-track": {
+          "var": "--docs-tab-track",
+          "type": "color",
+          "surface": "docs-light"
+        }
+      },
+      "text": {
+        "value": "{color.docs.gray.900}",
+        "type": "color",
+        "source": "computed color of docs-h1 default (raw/components-computed.json); matches declared color.docs.gray.900",
+        "description": "The docs heading ink."
+      },
+      "body-text": {
+        "value": "rgba(0, 0, 0, 0.6)",
+        "type": "color",
+        "source": "computed color of docs-para default (raw/components-computed.json)",
+        "description": "The docs paragraph colour."
+      },
+      "link": {
+        "value": "rgba(0, 0, 0, 0.6)",
+        "type": "color",
+        "source": "computed color of docs-link default (raw/components-computed.json)",
+        "description": "The docs body-link colour."
+      },
+      "nav-text": {
+        "value": "{color.neutral.black}",
+        "type": "color",
+        "source": "computed color of docs-nav-item default (raw/components-computed.json); matches declared color.neutral.black",
+        "description": "The sidebar nav item ink."
+      },
+      "nav-active": {
+        "value": "{color.docs.mintlify.exa-gray.200}",
+        "type": "color",
+        "source": "computed backgroundColor of docs-nav-item default (raw/components-computed.json); matches declared color.docs.mintlify.exa-gray.200",
+        "description": "The active nav item's field."
+      },
+      "focus": {
+        "value": "{color.docs.vars.nav-tab-ring}",
+        "type": "color",
+        "source": "the box-shadow 3px spread focus ring of docs-search focus-visible (raw/components-computed.json); its outline is 0px none; matches declared color.docs.vars.nav-tab-ring",
+        "description": "The focus ring on docs controls."
+      },
+      "rail-line": {
+        "value": "{color.docs.gray.100}",
+        "type": "color",
+        "source": "computed borderRightColor of docs-sidebar default (raw/components-computed.json); matches declared color.docs.gray.100",
+        "description": "The sidebar's hairline."
+      },
+      "cta-surface": {
+        "value": "#002f96",
+        "type": "color",
+        "source": "the background of docs-cta's parent div.docs-home-quickstart default (raw/components-computed.json ancestors); docs-cta itself computes a transparent backgroundColor",
+        "description": "The 'Add Exa to your agent' banner's field."
+      }
+    },
+    "marketing": {
+      "surface": {
+        "value": "{color.secondary.default}",
+        "type": "color",
+        "source": "computed backgroundColor of mkt-header default (raw/components-computed.json); matches declared color.secondary.default",
+        "description": "The marketing field behind the header."
+      },
+      "header-line": {
+        "value": "{color.text.dark-default}",
+        "type": "color",
+        "source": "computed borderBottomColor of mkt-header default (raw/components-computed.json); matches declared color.text.dark-default",
+        "description": "The header's hairline."
+      },
+      "text": {
+        "value": "#5f5a54",
+        "type": "color",
+        "source": "computed color of mkt-nav-link default (raw/components-computed.json)",
+        "description": "The marketing header ink."
+      },
+      "muted": {
+        "value": "rgba(0, 0, 0, 0.6)",
+        "type": "color",
+        "source": "computed color of demo-output default (raw/components-computed.json)",
+        "description": "The muted text inside the demo output."
+      },
+      "action": {
+        "value": "{color.neutral.black}",
+        "type": "color",
+        "source": "computed backgroundColor of mkt-signup default (raw/components-computed.json); matches declared color.neutral.black",
+        "description": "The black Sign-up pill fill."
+      },
+      "on-action": {
+        "value": "{color.secondary.default}",
+        "type": "color",
+        "source": "computed color of mkt-signup default (raw/components-computed.json); matches declared color.secondary.default",
+        "description": "White text on the Sign-up pill."
+      },
+      "sales-border": {
+        "value": "{color.text.dark-default}",
+        "type": "color",
+        "source": "computed borderTopColor of mkt-sales default (raw/components-computed.json); matches declared color.text.dark-default",
+        "description": "The Contact-sales button's border."
+      },
+      "menu-surface": {
+        "value": "{color.secondary.default}",
+        "type": "color",
+        "source": "the painted background of mkt-menu's rounded child default (raw/components-computed.json paint list); matches declared color.secondary.default",
+        "description": "The mega-menu surface — painted on the rounded child; the wrapper is a transparent positioning box."
+      },
+      "demo-pill-active": {
+        "value": "rgba(0, 0, 0, 0.45)",
+        "type": "color",
+        "source": "computed color of demo-pill default (raw/components-computed.json)",
+        "description": "The active demo pill's ink."
+      },
+      "run-fill": {
+        "value": "{color.text.dark-muted}",
+        "type": "color",
+        "source": "computed backgroundColor of demo-run default (raw/components-computed.json); matches declared color.text.dark-muted",
+        "description": "The blue Run-preview arrow fill."
+      },
+      "announce-surface": {
+        "value": "#eef8ff",
+        "type": "color",
+        "source": "the background of mkt-announce's parent div.relative.flex default (raw/components-computed.json ancestors); mkt-announce itself computes a transparent backgroundColor",
+        "description": "The announcement strip's field."
+      },
+      "action-hover": {
+        "value": "#1f2937",
+        "type": "color",
+        "source": "computed backgroundColor of mkt-signup hover (raw/components-computed.json)",
+        "description": "The Sign-up pill's hover fill."
+      },
+      "placeholder": {
+        "value": "rgba(0, 0, 0, 0.4)",
+        "type": "color",
+        "source": "computed placeholder colour of demo-textarea default (raw/components-computed.json)",
+        "description": "The demo query field's placeholder."
+      }
+    },
+    "signin": {
+      "heading": {
+        "value": "{color.auth.text-light.default}",
+        "type": "color",
+        "source": "computed color of auth-heading default (raw/components-computed.json); matches declared color.auth.text-light.default",
+        "description": "The 'Start building with Exa' heading ink."
+      },
+      "field-border": {
+        "value": "#e0e0e0",
+        "type": "color",
+        "source": "computed borderTopColor of auth-email default (raw/components-computed.json)",
+        "description": "The e-mail field's border."
+      },
+      "field-focus": {
+        "value": "{color.brand.default}",
+        "type": "color",
+        "source": "computed borderTopColor of auth-email focused (raw/components-computed.json); matches declared color.brand.default",
+        "description": "The border the field draws when focused."
+      },
+      "text": {
+        "value": "{color.gray.900}",
+        "type": "color",
+        "source": "computed color of auth-email default (raw/components-computed.json); matches declared color.gray.900",
+        "description": "The field text colour."
+      },
+      "action": {
+        "value": "{color.brand.default}",
+        "type": "color",
+        "source": "computed backgroundColor of auth-email-btn default (raw/components-computed.json); matches declared color.brand.default",
+        "description": "The 'Continue with email' button fill."
+      },
+      "on-action": {
+        "value": "{color.secondary.default}",
+        "type": "color",
+        "source": "computed color of auth-email-btn default (raw/components-computed.json); matches declared color.secondary.default",
+        "description": "The text on the e-mail button."
+      },
+      "google-border": {
+        "value": "#e0e0e0",
+        "type": "color",
+        "source": "computed borderTopColor of auth-google default (raw/components-computed.json)",
+        "description": "The Google button's border."
+      },
+      "code-bg": {
+        "value": "#27282c",
+        "type": "color",
+        "source": "the background of auth-code's parent div.flex.h-full default (raw/components-computed.json ancestors); auth-code itself computes a transparent backgroundColor",
+        "description": "The code sample's surface."
+      },
+      "placeholder": {
+        "value": "#99a1af",
+        "type": "color",
+        "source": "computed placeholder colour of auth-email default (raw/components-computed.json)",
+        "description": "The sign-in field's placeholder."
+      }
+    }
+  },
+  "dark": {
+    "docs": {
+      "surface": {
+        "var": "--background-dark",
+        "type": "color",
+        "surface": "docs-dark",
+        "description": "The declared `--background-dark` on the docs dark theme."
+      },
+      "border": {
+        "var": "--default-border-color",
+        "type": "color",
+        "surface": "docs-dark",
+        "description": "The declared `--default-border-color` on the docs dark theme."
+      },
+      "primary": {
+        "var": "--primary",
+        "type": "color",
+        "surface": "docs-dark",
+        "description": "The declared `--primary` on the docs dark theme."
+      },
+      "accent": {
+        "var": "--docs-accent",
+        "type": "color",
+        "surface": "docs-dark",
+        "description": "The declared `--docs-accent` on the docs dark theme."
+      },
+      "twoslash": {
+        "border-color": {
+          "var": "--twoslash-border-color",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "code-font-size": {
+          "var": "--twoslash-code-font-size",
+          "type": "other",
+          "surface": "docs-dark"
+        },
+        "cursor-color": {
+          "var": "--twoslash-cursor-color",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "docs-tag-style": {
+          "var": "--twoslash-docs-tag-style",
+          "type": "other",
+          "surface": "docs-dark"
+        },
+        "error-bg": {
+          "var": "--twoslash-error-bg",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "error-color": {
+          "var": "--twoslash-error-color",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "highlighted-bg": {
+          "var": "--twoslash-highlighted-bg",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "highlighted-border": {
+          "var": "--twoslash-highlighted-border",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "popup-bg": {
+          "var": "--twoslash-popup-bg",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "popup-shadow": {
+          "var": "--twoslash-popup-shadow",
+          "type": "other",
+          "surface": "docs-dark"
+        },
+        "tag-annotate-bg": {
+          "var": "--twoslash-tag-annotate-bg",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "tag-annotate-color": {
+          "var": "--twoslash-tag-annotate-color",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "tag-bg": {
+          "var": "--twoslash-tag-bg",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "tag-color": {
+          "var": "--twoslash-tag-color",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "tag-warn-bg": {
+          "var": "--twoslash-tag-warn-bg",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "tag-warn-color": {
+          "var": "--twoslash-tag-warn-color",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "text-size": {
+          "var": "--twoslash-text-size",
+          "type": "other",
+          "surface": "docs-dark"
+        },
+        "underline-color": {
+          "var": "--twoslash-underline-color",
+          "type": "other",
+          "surface": "docs-dark"
+        },
+        "unmatched-color": {
+          "var": "--twoslash-unmatched-color",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "warn-bg": {
+          "var": "--twoslash-warn-bg",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "warn-color": {
+          "var": "--twoslash-warn-color",
+          "type": "color",
+          "surface": "docs-dark"
+        }
+      },
+      "vars": {
+        "accent": {
+          "var": "--docs-accent",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "code-action-hover": {
+          "var": "--docs-code-action-hover",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "code-header": {
+          "var": "--docs-code-header",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "code-surface": {
+          "var": "--docs-code-surface",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "code-tab-hover": {
+          "var": "--docs-code-tab-hover",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "nav-tab-hover": {
+          "var": "--docs-nav-tab-hover",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "nav-tab-pill": {
+          "var": "--docs-nav-tab-pill",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "nav-tab-ring": {
+          "var": "--docs-nav-tab-ring",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "nav-tab-text": {
+          "var": "--docs-nav-tab-text",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "nav-tab-text-selected": {
+          "var": "--docs-nav-tab-text-selected",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "sidebar-search-border": {
+          "var": "--docs-sidebar-search-border",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "sidebar-search-border-hover": {
+          "var": "--docs-sidebar-search-border-hover",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "sidebar-search-key": {
+          "var": "--docs-sidebar-search-key",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "tab-accent": {
+          "var": "--docs-tab-accent",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "tab-control-border": {
+          "var": "--docs-tab-control-border",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "tab-control-border-hover": {
+          "var": "--docs-tab-control-border-hover",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "tab-line": {
+          "var": "--docs-tab-line",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "tab-menu-bg": {
+          "var": "--docs-tab-menu-bg",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "tab-pill": {
+          "var": "--docs-tab-pill",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "tab-ring": {
+          "var": "--docs-tab-ring",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "tab-text": {
+          "var": "--docs-tab-text",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "tab-text-selected": {
+          "var": "--docs-tab-text-selected",
+          "type": "color",
+          "surface": "docs-dark"
+        },
+        "tab-track": {
+          "var": "--docs-tab-track",
+          "type": "color",
+          "surface": "docs-dark"
+        }
+      },
+      "mintlify": {
+        "background": {
+          "primary": {
+            "var": "--color-background-primary",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "secondary": {
+            "var": "--color-background-secondary",
+            "type": "color",
+            "surface": "docs-dark"
+          }
+        },
+        "brand": {
+          "border": {
+            "var": "--color-brand-border",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "border-active": {
+            "var": "--color-brand-border-active",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "border-hover": {
+            "var": "--color-brand-border-hover",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "foreground-primary": {
+            "var": "--color-brand-foreground-primary",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "foreground-secondary": {
+            "var": "--color-brand-foreground-secondary",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "on-solid": {
+            "var": "--color-brand-on-solid",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "solid": {
+            "var": "--color-brand-solid",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "solid-hover": {
+            "var": "--color-brand-solid-hover",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "subtle": {
+            "var": "--color-brand-subtle",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "subtle-active": {
+            "var": "--color-brand-subtle-active",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "subtle-hover": {
+            "var": "--color-brand-subtle-hover",
+            "type": "color",
+            "surface": "docs-dark"
+          }
+        },
+        "danger": {
+          "border": {
+            "var": "--color-danger-border",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "border-active": {
+            "var": "--color-danger-border-active",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "border-hover": {
+            "var": "--color-danger-border-hover",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "foreground-primary": {
+            "var": "--color-danger-foreground-primary",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "foreground-secondary": {
+            "var": "--color-danger-foreground-secondary",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "on-solid": {
+            "var": "--color-danger-on-solid",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "solid": {
+            "var": "--color-danger-solid",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "solid-hover": {
+            "var": "--color-danger-solid-hover",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "subtle": {
+            "var": "--color-danger-subtle",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "subtle-active": {
+            "var": "--color-danger-subtle-active",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "subtle-hover": {
+            "var": "--color-danger-subtle-hover",
+            "type": "color",
+            "surface": "docs-dark"
+          }
+        },
+        "neutral": {
+          "border": {
+            "var": "--color-neutral-border",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "border-active": {
+            "var": "--color-neutral-border-active",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "border-hover": {
+            "var": "--color-neutral-border-hover",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "foreground-primary": {
+            "var": "--color-neutral-foreground-primary",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "foreground-secondary": {
+            "var": "--color-neutral-foreground-secondary",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "on-solid": {
+            "var": "--color-neutral-on-solid",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "solid": {
+            "var": "--color-neutral-solid",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "solid-hover": {
+            "var": "--color-neutral-solid-hover",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "subtle": {
+            "var": "--color-neutral-subtle",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "subtle-active": {
+            "var": "--color-neutral-subtle-active",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "subtle-hover": {
+            "var": "--color-neutral-subtle-hover",
+            "type": "color",
+            "surface": "docs-dark"
+          }
+        },
+        "success": {
+          "border": {
+            "var": "--color-success-border",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "border-active": {
+            "var": "--color-success-border-active",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "border-hover": {
+            "var": "--color-success-border-hover",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "foreground-primary": {
+            "var": "--color-success-foreground-primary",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "foreground-secondary": {
+            "var": "--color-success-foreground-secondary",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "on-solid": {
+            "var": "--color-success-on-solid",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "solid": {
+            "var": "--color-success-solid",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "solid-hover": {
+            "var": "--color-success-solid-hover",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "subtle": {
+            "var": "--color-success-subtle",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "subtle-active": {
+            "var": "--color-success-subtle-active",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "subtle-hover": {
+            "var": "--color-success-subtle-hover",
+            "type": "color",
+            "surface": "docs-dark"
+          }
+        },
+        "warning": {
+          "border": {
+            "var": "--color-warning-border",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "border-active": {
+            "var": "--color-warning-border-active",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "border-hover": {
+            "var": "--color-warning-border-hover",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "foreground-primary": {
+            "var": "--color-warning-foreground-primary",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "foreground-secondary": {
+            "var": "--color-warning-foreground-secondary",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "on-solid": {
+            "var": "--color-warning-on-solid",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "solid": {
+            "var": "--color-warning-solid",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "solid-hover": {
+            "var": "--color-warning-solid-hover",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "subtle": {
+            "var": "--color-warning-subtle",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "subtle-active": {
+            "var": "--color-warning-subtle-active",
+            "type": "color",
+            "surface": "docs-dark"
+          },
+          "subtle-hover": {
+            "var": "--color-warning-subtle-hover",
+            "type": "color",
+            "surface": "docs-dark"
+          }
+        }
+      },
+      "text": {
+        "value": "{color.docs.gray.200}",
+        "type": "color",
+        "source": "computed color of d-docs-h1 default (raw/components-computed.json); matches declared color.docs.gray.200",
+        "description": "The docs dark heading ink."
+      },
+      "body-text": {
+        "value": "rgba(255, 255, 255, 0.6)",
+        "type": "color",
+        "source": "computed color of d-docs-para default (raw/components-computed.json)",
+        "description": "The docs dark paragraph colour."
+      },
+      "link": {
+        "value": "rgba(255, 255, 255, 0.72)",
+        "type": "color",
+        "source": "computed color of d-docs-link default (raw/components-computed.json)",
+        "description": "The docs dark body-link colour."
+      },
+      "nav-text": {
+        "value": "#f5f5f6",
+        "type": "color",
+        "source": "computed color of d-docs-nav-item default (raw/components-computed.json)",
+        "description": "The dark sidebar nav item ink."
+      },
+      "nav-active": {
+        "value": "rgba(255, 255, 255, 0.08)",
+        "type": "color",
+        "source": "computed backgroundColor of d-docs-nav-item default (raw/components-computed.json)",
+        "description": "The active nav item's field on dark."
+      },
+      "focus": {
+        "value": "rgba(250, 250, 250, 0.09)",
+        "type": "color",
+        "source": "the box-shadow 3px spread focus ring of d-docs-search focus-visible (raw/components-computed.json); its outline is 0px none",
+        "description": "The focus ring on dark."
+      },
+      "rail-line": {
+        "value": "rgba(255, 255, 255, 0.1)",
+        "type": "color",
+        "source": "computed borderRightColor of d-docs-sidebar default (raw/components-computed.json); the browser painted oklab(0.999994 0.0000455678 0.0000200868 / 0.1), converted here",
+        "description": "The sidebar's hairline on dark."
+      },
+      "cta-surface": {
+        "value": "#002f96",
+        "type": "color",
+        "source": "the background of d-docs-cta's parent div.docs-home-quickstart default (raw/components-computed.json ancestors); d-docs-cta itself computes a transparent backgroundColor",
+        "description": "The CTA banner's field on dark."
+      }
+    }
+  },
+  "component": {
+    "header-height": {
+      "value": "55px",
+      "type": "dimension",
+      "source": "measured h of mkt-header default (raw/components-computed.json)",
+      "description": "The marketing header height (the 55px --nav-height bar; the 48px --announcement-banner-height strip sits above it as a sibling)."
+    },
+    "banner-height": {
+      "value": "20px",
+      "type": "dimension",
+      "source": "measured h of mkt-announce default (raw/components-computed.json)",
+      "description": "The announcement strip's text row height (the strip itself is --announcement-banner-height 48px)."
+    },
+    "mobile-header-height": {
+      "value": "64px",
+      "type": "dimension",
+      "source": "measured h of m-header default (raw/components-computed.json)",
+      "description": "The phone header height."
+    },
+    "menu-width": {
+      "value": "380px",
+      "type": "dimension",
+      "source": "measured w of mkt-menu default (raw/components-computed.json)",
+      "description": "The Products mega-menu width."
+    },
+    "hero-cta-height": {
+      "value": "40px",
+      "type": "dimension",
+      "source": "measured h of hero-cta default (raw/components-computed.json)",
+      "description": "The Try-API CTA height."
+    },
+    "demo-widget-width": {
+      "value": "700px",
+      "type": "dimension",
+      "source": "measured w of demo-widget default (raw/components-computed.json)",
+      "description": "The demo widget width."
+    },
+    "demo-field-height": {
+      "value": "24px",
+      "type": "dimension",
+      "source": "measured h of demo-textarea default (raw/components-computed.json)",
+      "description": "The demo query field height."
+    },
+    "demo-pill-height": {
+      "value": "22.8px",
+      "type": "dimension",
+      "source": "measured h of demo-pill default (raw/components-computed.json)",
+      "description": "The demo pill height."
+    },
+    "signup-height": {
+      "value": "31.59px",
+      "type": "dimension",
+      "source": "measured h of mkt-signup default (raw/components-computed.json)",
+      "description": "The Sign-up pill height."
+    },
+    "plan-card-width": {
+      "value": "1216px",
+      "type": "dimension",
+      "source": "measured w of plan-card default (raw/components-computed.json)",
+      "description": "A pricing plan card's width."
+    },
+    "auth-card-width": {
+      "value": "360px",
+      "type": "dimension",
+      "source": "Reconstruction: read from the wrong element (auth-card measured the 360 x 98 e-mail form inside the card, not the card; recapture needed); measured w of auth-card default (raw/components-computed.json)",
+      "description": "The sign-in card width."
+    },
+    "auth-field-height": {
+      "value": "44px",
+      "type": "dimension",
+      "source": "measured h of auth-email default (raw/components-computed.json)",
+      "description": "The sign-in field height."
+    },
+    "auth-button-height": {
+      "value": "50px",
+      "type": "dimension",
+      "source": "measured h of auth-google default (raw/components-computed.json)",
+      "description": "The sign-in button height."
+    },
+    "docs-sidebar-width": {
+      "value": "288px",
+      "type": "dimension",
+      "source": "measured w of docs-sidebar default (raw/components-computed.json)",
+      "description": "The docs rail width."
+    },
+    "docs-nav-item-height": {
+      "value": "32px",
+      "type": "dimension",
+      "source": "measured h of docs-nav-item default (raw/components-computed.json)",
+      "description": "The docs nav item height."
+    },
+    "docs-search-height": {
+      "value": "36px",
+      "type": "dimension",
+      "source": "measured h of docs-search default (raw/components-computed.json)",
+      "description": "The docs search pill height."
+    },
+    "hamburger": {
+      "value": "32px",
+      "type": "dimension",
+      "source": "measured h of m-hamburger default (raw/components-computed.json)",
+      "description": "The phone hamburger hit area."
+    }
+  },
+  "_gaps": [
+    {
+      "token": "core.shadow.widget",
+      "why": "demo-widget default computes no box-shadow"
+    },
+    {
+      "token": "core.shadow.cta",
+      "why": "hero-cta default computes no box-shadow"
+    },
+    {
+      "token": "core.motion.control-reduced",
+      "why": "no reduced-motion reading names a running transition: h1 on home computes 'all'"
+    },
+    {
+      "token": "light.marketing.focus",
+      "why": "mkt-nav-link focus-visible paints no focus ring of its own: outline 1px auto #101010 is the browser's default auto ring, and no box-shadow layer has a spread"
+    },
+    {
+      "token": "light.marketing.menu-hover",
+      "why": "mkt-menu-item default computes a transparent backgroundColor (rgba(0, 0, 0, 0)) and paints no fill of its own"
+    },
+    {
+      "token": "light.marketing.demo-surface",
+      "why": "demo-widget default computes a transparent backgroundColor (rgba(0, 0, 0, 0)) and paints no fill of its own"
+    },
+    {
+      "token": "light.signin.card",
+      "why": "read from the wrong element: auth-card measured the 360 x 98 e-mail form inside the card, not the card; recapture needed"
+    },
+    {
+      "token": "light.signin.field",
+      "why": "auth-email default computes a transparent backgroundColor (rgba(0, 0, 0, 0)) and paints no fill of its own"
+    },
+    {
+      "token": "light.docs.code-bg",
+      "why": "docs-code default computes a transparent backgroundColor (rgba(0, 0, 0, 0)) and paints no fill of its own"
+    },
+    {
+      "token": "light.docs.field",
+      "why": "docs-search default computes a transparent backgroundColor (rgba(0, 0, 0, 0)) and paints no fill of its own"
+    },
+    {
+      "token": "dark.docs.code-bg",
+      "why": "d-docs-code default computes a transparent backgroundColor (rgba(0, 0, 0, 0)) and paints no fill of its own"
+    },
+    {
+      "token": "dark.docs.field",
+      "why": "d-docs-search default computes a transparent backgroundColor (rgba(0, 0, 0, 0)) and paints no fill of its own"
+    }
+  ]
+}

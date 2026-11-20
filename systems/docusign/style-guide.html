@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Docusign style guide</title>
+<meta name="description" content="Docusign design tokens and the public signed-out surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --color-cobalt: #4c00ff;
+  --color-inkwell: #130032;
+  --color-deep-violet: #26065d;
+  --color-mist: #cbc2ff;
+  --color-poppy: #ff5252;
+  --color-ecru: #f8f3f0;
+  --color-cobalt-hover: #4000cc;
+  --color-cobalt-pressed: #330099;
+  --color-mist-soft: #ede5ff;
+  --color-auth-deep: #260559;
+  --color-auth-deep-hover: #2b047f;
+  --color-auth-deep-pressed: #37039e;
+  --color-inkwell-hover: #4e4067;
+  --color-assistant: #4014ea;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-ink-90: rgba(19, 0, 50, 0.9);
+  --color-ink-75: rgba(19, 0, 50, 0.75);
+  --color-ink-70: rgba(19, 0, 50, 0.7);
+  --color-ink-50: rgba(19, 0, 50, 0.5);
+  --color-ink-15: rgba(19, 0, 50, 0.15);
+  --color-ink-10: rgba(19, 0, 50, 0.1);
+  --color-ink-05: rgba(19, 0, 50, 0.05);
+  --color-violet-30: rgba(38, 6, 93, 0.3);
+  --color-violet-50: rgba(38, 6, 93, 0.5);
+  --color-scrim: rgba(19, 0, 50, 0.898);
+  --color-hairline-ecom: #e5e7eb;
+  --color-hairline-auth: rgba(25, 24, 35, 0.15);
+  --color-focus-auto: #005fcc;
+  --color-focus-green: #089b57;
+  --color-dxp-primary: #0069ec;
+  --color-assistant-ramp-blue-50: #f6f6fb;
+  --color-assistant-ramp-blue-100: #eceef7;
+  --color-assistant-ramp-blue-200: #d1d4ec;
+  --color-assistant-ramp-blue-300: #abb3dd;
+  --color-assistant-ramp-blue-400: #7b8bc9;
+  --color-assistant-ramp-blue-500: #345eb2;
+  --color-assistant-ramp-blue-600: #0049a2;
+  --color-assistant-ramp-blue-700: #002d88;
+  --color-assistant-ramp-blue-800: #001770;
+  --color-assistant-ramp-blue-900: #00275e;
+  --color-assistant-ramp-ink-1: #111111;
+  --color-assistant-ramp-ink-2: rgba(17, 17, 17, 0.72);
+  --color-assistant-ramp-surface-1: #ffffff;
+  --color-assistant-ramp-surface-2: #fafafa;
+  --font-family-sans: DSIndigo, Helvetica, Arial, sans-serif;
+  --font-family-sans-app: "DS Indigo", DSIndigo, Helvetica, Arial, sans-serif;
+  --font-family-mono: "Noto Sans Mono", monospace;
+  --font-family-icon: "7_Docusign", sans-serif;
+  --font-family-signature: STFelicetteScript-Regular, cursive;
+  --font-size-display: 80px;
+  --font-size-h2: 58px;
+  --font-size-h3: 48px;
+  --font-size-price: 30px;
+  --font-size-card-title: 24px;
+  --font-size-lede: 18px;
+  --font-size-body: 16px;
+  --font-size-meta: 14px;
+  --font-size-label: 12px;
+  --font-size-tiny: 10px;
+  --font-size-h4: 40px;
+  --font-lineHeight-display: 86.4px;
+  --font-lineHeight-h2: 62.64px;
+  --font-lineHeight-h3: 51.84px;
+  --font-lineHeight-price: 37.2px;
+  --font-lineHeight-card-title: 29.76px;
+  --font-lineHeight-lede: 27px;
+  --font-lineHeight-body: 24px;
+  --font-lineHeight-meta: 21px;
+  --font-lineHeight-label: 18px;
+  --font-lineHeight-tiny: 12px;
+  --font-lineHeight-h4: 48px;
+  --font-tracking-display: -1.5px;
+  --font-tracking-h2: -1.25px;
+  --font-tracking-h3: -1px;
+  --font-tracking-card-title: -0.25px;
+  --font-tracking-caps: 0.2px;
+  --font-tracking-h4: -0.5px;
+  --font-tracking-eyebrow: 0.8px;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --radius-2: 2px;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-16: 16px;
+  --radius-pill: 9999px;
+  --spacing-2: 2px;
+  --spacing-4: 4px;
+  --spacing-6: 6px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
+  --spacing-80: 80px;
+  --spacing-96: 96px;
+  --shadow-hairline-inset: inset 0px 0px 0px 1px rgba(19, 0, 50, 0.15);
+  --shadow-field-focus: inset 0px 0px 0px 1px #4c00ff;
+  --shadow-ring-double: 0px 0px 0px 2px #ffffff, 0px 0px 0px 4px #4c00ff;
+  --shadow-mist-ring: 0px 0px 0px 2px #cbc2ff;
+  --shadow-soft: 0px 1px 3px 0px rgba(0, 0, 0, 0.04);
+  --shadow-launcher: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --duration-fast: 100ms;
+  --duration-colour: 150ms;
+  --duration-field: 200ms;
+  --duration-panel: 300ms;
+  --color-page: var(--color-white);
+  --color-text-primary: var(--color-inkwell);
+  --color-text-secondary: var(--color-ink-75);
+  --color-text-tertiary: var(--color-violet-50);
+  --color-text-on-dark: var(--color-white);
+  --color-text-on-violet-quiet: var(--color-violet-30);
+  --color-surface-card: var(--color-white);
+  --color-surface-ecru: var(--color-ecru);
+  --color-surface-band: var(--color-deep-violet);
+  --color-surface-wash: var(--color-ink-05);
+  --color-surface-violet: var(--color-mist-soft);
+  --color-surface-mist: var(--color-mist);
+  --color-action-primary-bg: var(--color-cobalt);
+  --color-action-primary-bg-hover: var(--color-cobalt-hover);
+  --color-action-primary-bg-pressed: var(--color-cobalt-pressed);
+  --color-action-primary-text: var(--color-white);
+  --color-action-ink-bg: var(--color-inkwell);
+  --color-action-ink-bg-hover: var(--color-ink-90);
+  --color-action-ink-bg-pressed: var(--color-ink-75);
+  --color-action-ink-bg-onband-pressed: var(--color-inkwell-hover);
+  --color-action-outline-border: var(--color-cobalt);
+  --color-action-outline-bg-hover: var(--color-mist-soft);
+  --color-action-outline-text-pressed: var(--color-inkwell);
+  --color-action-link: var(--color-cobalt);
+  --color-action-link-pressed: var(--color-inkwell);
+  --color-border-default: var(--color-ink-15);
+  --color-border-strong: var(--color-ink-50);
+  --color-border-ecom: var(--color-hairline-ecom);
+  --color-border-auth: var(--color-hairline-auth);
+  --color-border-mist: var(--color-mist);
+  --color-border-focus: var(--color-cobalt);
+  --color-focus-ring: var(--color-cobalt);
+  --color-focus-ring-on-band: var(--color-mist);
+  --color-focus-ring-auth: var(--color-inkwell);
+  --color-focus-ring-auto: var(--color-focus-auto);
+  --color-focus-ring-green: var(--color-focus-green);
+  --color-overlay-scrim: var(--color-scrim);
+  --component-nav-utility-height: 30px;
+  --component-nav-header-height: 69px;
+  --component-nav-dropdown-gap: 64px;
+  --component-nav-item-tracking: 0.2px;
+  --component-button-height: 45px;
+  --component-button-radius: var(--radius-8);
+  --component-button-radius-small: var(--radius-4);
+  --component-button-padding-y: 12px;
+  --component-button-padding-x: 16px;
+  --component-button-tracking: 0.2px;
+  --component-field-height: 61px;
+  --component-field-radius: var(--radius-8);
+  --component-field-border: var(--color-ink-15);
+  --component-field-border-focus: var(--color-cobalt);
+  --component-field-padding-top: 24px;
+  --component-field-padding-x: 16px;
+  --component-field-padding-bottom: 8px;
+  --component-card-radius: var(--radius-16);
+  --component-card-radius-generator: var(--radius-8);
+  --component-card-radius-auth: var(--radius-4);
+  --component-card-border: var(--color-ink-50);
+  --component-card-padding-y-auth: 64px;
+  --component-modal-scrim: var(--color-scrim);
+  --component-type-display: 300 80px/86.4px DSIndigo, Helvetica, Arial, sans-serif;
+  --component-type-h2: 300 58px/62.64px DSIndigo, Helvetica, Arial, sans-serif;
+  --component-type-h3: 300 48px/51.84px DSIndigo, Helvetica, Arial, sans-serif;
+  --component-type-card-title: 500 24px/29.76px DSIndigo, Helvetica, Arial, sans-serif;
+  --component-type-lede: 400 18px/27px DSIndigo, Helvetica, Arial, sans-serif;
+  --component-type-body: 400 16px/24px DSIndigo, Helvetica, Arial, sans-serif;
+  --component-type-meta: 500 14px/21px DSIndigo, Helvetica, Arial, sans-serif;
+  --component-type-caps: 600 14px/21px DSIndigo, Helvetica, Arial, sans-serif;
+  --sg-sans: DSIndigo, "DS Indigo", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
+  --sg-serif: "DS Indigo", Georgia, "Times New Roman", serif;
+  --sg-mono: "Noto Sans Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-text-primary, #130032); background: var(--color-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 300 48px/1.1 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 600 12px/1 var(--sg-sans); letter-spacing: .8px; text-transform: uppercase; color: var(--color-text-primary, #130032); opacity: .75; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-border-default, rgba(19,0,50,.15)); }
+.lead { max-width: 62ch; color: var(--color-text-primary, #130032); opacity: .8; }
+.note { font-size: 13px; color: var(--color-text-primary, #130032); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-text-primary, #130032); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.band { background: var(--color-surface-band, #26065d); padding: 12px; border-radius: 8px; }
+.pal.band .nm, .pal.band .vl { color: #fff; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-border-default, rgba(19,0,50,.15)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-text-primary, #130032); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-border-default, rgba(19,0,50,.15)); background: var(--color-white, #fff); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-text-primary, #130032); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-border-default, rgba(19,0,50,.15)); overflow: hidden; background: var(--color-page, #fff); }
+.ubar { display: flex; align-items: center; gap: 18px; height: 30px; padding: 0 16px; font-size: 12px; font-weight: 500; letter-spacing: .2px; background: var(--color-surface-band, #26065d); color: #fff; }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-nav-header-height, 69px); padding: 0 12px 0 22px; font-size: 14px; font-weight: 500; letter-spacing: .2px; color: var(--color-text-secondary, rgba(19,0,50,.75)); border-bottom: 1px solid var(--color-border-default, rgba(19,0,50,.15)); }
+.navbar .wm { font-weight: 600; font-size: 20px; letter-spacing: -0.02em; color: var(--color-text-primary, #130032); }
+.navbar .sp { flex: 1; }
+.navbar .u { text-transform: uppercase; font-weight: 600; font-size: 14px; letter-spacing: .2px; color: var(--color-action-outline-border, #4c00ff); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 45px); padding: 0 16px; font-size: 14px; font-weight: 600; letter-spacing: .2px; border-radius: var(--radius-8, 8px); border: 1px solid transparent; text-transform: uppercase; }
+.btn.primary { background: var(--color-action-primary-bg, #4c00ff); color: var(--color-action-primary-text, #fff); }
+.btn.outline { border-color: var(--color-action-outline-border, #4c00ff); color: var(--color-action-outline-border, #4c00ff); text-transform: none; font-weight: 400; font-size: 16px; }
+.btn.ink { background: var(--color-action-ink-bg, #130032); color: #fff; text-transform: none; font-weight: 500; font-size: 16px; }
+.btn.mist { background: var(--color-surface-mist, #cbc2ff); color: var(--color-violet-30, rgba(38,6,93,.5)); text-transform: none; font-weight: 500; font-size: 16px; }
+.hero { color: #fff; background: var(--color-surface-band, #26065d); padding: 72px 40px; font: 300 56px/1.08 var(--sg-sans); letter-spacing: -1.25px; text-align: center; }
+.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: #fff; letter-spacing: 0; margin: 16px auto 22px; max-width: 46ch; }
+.hero .row { display: inline-flex; margin-top: 10px; }
+.hero .fld { height: var(--component-field-height, 61px); width: 340px; background: #fff; color: var(--color-text-primary, #130032); border-radius: var(--component-field-radius, 8px) 0 0 var(--component-field-radius, 8px); display: flex; align-items: center; padding: 0 16px; font: 400 18px/1 var(--sg-sans); opacity: .95; }
+.hero .go { height: var(--component-field-height, 61px); border-radius: 0 var(--component-field-radius, 8px) var(--component-field-radius, 8px) 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-border-strong, rgba(19,0,50,.5)); padding: 18px; font-size: 13px; background: var(--color-white, #fff); border-radius: var(--component-card-radius, 16px); }
+.tile b { display: block; font: 400 30px/1.24 var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.sgw { background: var(--color-surface-ecru, #f8f3f0); padding: 28px; }
+.sgcard { background: #fff; border: 1px solid var(--color-border-mist, #cbc2ff); border-radius: var(--radius-8, 8px); padding: 18px; }
+.swatches { display: flex; gap: 8px; margin: 12px 0; }
+.swatches i { width: 32px; height: 32px; border-radius: var(--radius-8, 8px); display: block; border: 1px solid rgba(19,0,50,.15); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-border-default, rgba(19,0,50,.15)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-border-default, rgba(19,0,50,.15)); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--color-text-primary, #130032); opacity: .65; font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Docusign style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Docusign, measured</h2>
+  <p class="lead">docusign.com signed out is three surfaces: the Next.js + Emotion marketing site (inkwell #130032 text on white, deep-violet #26065d bands, cobalt #4c00ff actions), the signature generator on an ecru #f8f3f0 ground (the only surface that declares a real token layer — the --ds-* brand set and shadcn roles), and the /en-SG/ ecom pricing storefront plus the account.docusign.com sign-in card (Tailwind + Emotion, DXP layer). Buttons run squared at 4-8px radius, fields float labels in 61px-tall boxes with 15% ink hairlines, and keyboard focus draws a 2px cobalt ring at 2px offset — a white + cobalt double ring on the storefront.</p>
+  <p class="note">Read from docusign.com on 2026-11-15, signed out, in headless Chromium. Everything behind account.docusign.com/oauth is a documented boundary; no form was ever submitted, no consent control answered, and the pricing page geo-redirected to /en-SG/ and is captured as served. DSIndigo and the script faces are served fonts and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A 30px deep-violet utility strip sits over the 69px white header: wordmark, Products/Solutions/Resources mega-menu triggers, Enterprise and Plans &amp; Pricing links, then uppercase text actions (Contact sales, Buy now) and the filled cobalt Try-for-free pill at 8px radius, 14/21 weight 600.</p>
+  <div class="mock">
+    <div class="ubar">Docusign unveils IAM 2.0 — a new era of agreement management <span style="flex:1"></span> Search &nbsp; Support &nbsp; Access Documents &nbsp; Log In</div>
+    <div class="navbar"><span class="wm">Docusign</span><span>Products &#9662;</span><span>Solutions &#9662;</span><span>Resources &#9662;</span><span>Enterprise</span><span>Plans &amp; Pricing</span><span class="sp"></span><span class="u">Contact sales</span><span class="u">Buy now</span><span class="btn primary" style="height:45px">Try for free</span></div>
+  </div>
+
+  <h2 class="sh">The hero band</h2>
+  <p class="lead">The home hero paints deep violet (#26065d): an 80/86.4 weight-300 headline at -1.5px tracking, an 18/27 lede, then the capture row — a 61px floating-label field against an inkwell #130032 Get-Started button.</p>
+  <div class="mock">
+    <div class="hero">Agree better<small>Send, sign, and manage agreements with the #1 e-signature and Intelligent Agreement Management platform.</small><span class="row"><span class="fld">Work email</span><span class="btn ink go">Get started</span></span></div>
+  </div>
+
+  <h2 class="sh">Pricing storefront</h2>
+  <p class="lead">The ecom page (served /en-SG/) cards paint white at 16px radius with a 50% ink border; plan names set 30/37.2, Buy now fills cobalt at 8px, and Contact sales fills inkwell — focus draws the 2px-white + 4px-cobalt double ring.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile"><b>Personal</b><span class="sub">S$13/mo billed annually</span><div style="margin-top:14px"><span class="btn primary" style="height:40px;text-transform:none;font-weight:500">Buy now</span></div></div>
+      <div class="tile"><b>Enterprise</b><span class="sub">Custom plans</span><div style="margin-top:14px"><span class="btn ink" style="height:40px">Contact sales</span></div></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Signature generator</h2>
+  <p class="lead">The generator is the only declaring surface: ecru ground, mist #cbc2ff field borders and download fills, cobalt accents, 8px radii, and a Black/Cobalt/Coral swatch row whose Cobalt is --ds-cobalt itself.</p>
+  <div class="mock sgw">
+    <div class="sgcard">
+      <div style="font:400 24px/1.2 var(--sg-serif);font-style:italic">Alex Sample</div>
+      <div class="swatches"><i style="background:#000"></i><i style="background:var(--color-cobalt,#4c00ff)"></i><i style="background:var(--color-poppy,#ff5252)"></i></div>
+      <span class="btn mist" style="width:200px;height:48px">Download as PNG</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared --ds-* brand set (cobalt, inkwell, deep-violet, mist, poppy, ecru) anchors the palette; the measured ramp holds the painted hover/pressed steps, ink alphas, the account-page deep-violet button and the sierra.chat assistant's own violet. The assistant-ramp group is the only 10-step ramp in evidence — declared in the embedded assistant agent's stylesheet, kept with vendor provenance.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Corners stay tight: 4px on links/toggles/submits, 8px on buttons and fields, 6px on generator tabs, 10px as the generator's declared --radius, 16px on ecom plan cards, 9999px only on the floating assistant launcher. Spacing runs a 2-96px grid with 80-96px section padding.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <p class="lead">Shadows are restraint: a 1px ink-15 inset hairline for ghost hovers, a 1px cobalt inset for focused fields, the storefront's white + cobalt double focus ring, and only the floating launcher lifts.</p>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">DS Indigo everywhere, weight 300 for display sizes (80/86.4 h1 down through 48/51.84), 400-600 for UI. Sizes are measured; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --ds-*/--dxp-*/assistant variables from the live stylesheets and computed styles on real components across all three surfaces</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, focused, filled and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable (and the sheet that declared it) or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"cobalt":{"v":"#4c00ff","t":"color","s":"css-var --ds-cobalt (light)","d":"Cobalt #4c00ff: the action colour — primary fills, links and the 2px focus ring."},"inkwell":{"v":"#130032","t":"color","s":"css-var --ds-inkwell (light)","d":"Inkwell #130032: the body/headline ink and the dark button fill."},"deep-violet":{"v":"#26065d","t":"color","s":"css-var --ds-deep-violet (light)","d":"Deep violet #26065d: the painted hero/footer bands and muted ink."},"mist":{"v":"#cbc2ff","t":"color","s":"css-var --ds-mist (light)","d":"Mist #cbc2ff: secondary fills, field borders on the generator, dark-band focus ring."},"poppy":{"v":"#ff5252","t":"color","s":"css-var --ds-poppy (light)","d":"Poppy #ff5252: the Coral signature swatch and warm accent."},"ecru":{"v":"#f8f3f0","t":"color","s":"css-var --ds-ecru (light)","d":"Ecru #f8f3f0: the warm field surface (signature-generator page ground)."},"cobalt-hover":{"v":"#4000cc","t":"color","s":"measured components-computed.json: nav-cta hover backgroundColor; buy-now hover backgroundColor","d":"Cobalt hover/pressed fill (rgb(64,0,204)) on primary buttons."},"cobalt-pressed":{"v":"#330099","t":"color","s":"measured components-computed.json: buy-now pressed backgroundColor","d":"Cobalt pressed fill (rgb(51,0,153)) on the ecom Buy-now."},"mist-soft":{"v":"#ede5ff","t":"color","s":"measured components-computed.json: see-all hover backgroundColor","d":"Soft violet #ede5ff hover wash behind ecom outline buttons."},"auth-deep":{"v":"#260559","t":"color","s":"measured components-computed.json: auth-next default backgroundColor","d":"Dark violet #260559 fill of the account sign-in Next button."},"auth-deep-hover":{"v":"#2b047f","t":"color","s":"measured components-computed.json: auth-next hover backgroundColor","d":"Sign-in Next hover (rgb(43,4,127))."},"auth-deep-pressed":{"v":"#37039e","t":"color","s":"measured components-computed.json: auth-next pressed backgroundColor","d":"Sign-in Next pressed (rgb(55,3,158))."},"inkwell-hover":{"v":"#4e4067","t":"color","s":"measured components-computed.json: hero-cta pressed backgroundColor","d":"Ink-button pressed fill on the dark hero band (rgb(78,64,103)); hover keeps the inkwell fill."},"assistant":{"v":"#4014ea","t":"color","s":"measured components-computed.json: assistant default backgroundColor","d":"Assistant launcher fill (rgb(64,20,234)); the sierra.chat agent's violet."},"white":{"v":"#ffffff","t":"color","s":"measured components-computed.json: header default backgroundColor; hero-field default backgroundColor","d":"Page field, cards, inputs and text on the dark bands."},"black":{"v":"#000000","t":"color","s":"measured components-computed.json: sg-font default color","d":"Generator canvas ink and the Black signature swatch."},"ink-90":{"v":"rgba(19, 0, 50, 0.9)","t":"color","s":"measured components-computed.json: auth-card default color; ec-billing-annual default color","d":"90% ink: ecom/account body ink."},"ink-75":{"v":"rgba(19, 0, 50, 0.75)","t":"color","s":"measured components-computed.json: nav-trigger default color; contact-sales pressed backgroundColor","d":"75% ink: nav/meta text, pressed ink button."},"ink-70":{"v":"rgba(19, 0, 50, 0.7)","t":"color","s":"measured components-computed.json: ec-billing-monthly default color","d":"70% ink: the unselected half of the ecom billing toggle."},"ink-50":{"v":"rgba(19, 0, 50, 0.5)","t":"color","s":"measured components-computed.json: plan-card default borderTopColor","d":"50% ink: ecom plan-card hairline."},"ink-15":{"v":"rgba(19, 0, 50, 0.15)","t":"color","s":"measured components-computed.json: hero-field default borderTopColor","d":"15% ink: field hairlines and ghost-button inset hover."},"ink-10":{"v":"rgba(19, 0, 50, 0.1)","t":"color","s":"measured components-computed.json: auth-lang hover backgroundColor; auth-signup hover backgroundColor","d":"10% ink wash: hover fill of the account page's language picker and signup link."},"ink-05":{"v":"rgba(19, 0, 50, 0.05)","t":"color","s":"measured components-computed.json: ec-billing-annual default backgroundColor","d":"5% ink: ecom toggle track and subtle fills."},"violet-30":{"v":"rgba(38, 6, 93, 0.3)","t":"color","s":"measured components-computed.json: sg-clear default color","d":"30% deep-violet: disabled/quiet text on the generator (the Clear action)."},"violet-50":{"v":"rgba(38, 6, 93, 0.5)","t":"color","s":"measured components-computed.json: sg-download default color","d":"50% deep-violet: quiet generator text (the Download action)."},"scrim":{"v":"rgba(19, 0, 50, 0.898)","t":"color","s":"measured components-computed.json: video-dialog default backgroundColor","d":"90% ink scrim behind the video dialog."},"hairline-ecom":{"v":"#e5e7eb","t":"color","s":"measured components-computed.json: feature-row default borderTopColor; ec-billing-annual default borderTopColor","d":"Ecom hairline #e5e7eb on toggles and feature rows."},"hairline-auth":{"v":"rgba(25, 24, 35, 0.15)","t":"color","s":"measured components-computed.json: auth-card default borderTopColor","d":"Account card border rgba(25,24,35,.15)."},"focus-auto":{"v":"#005fcc","t":"color","s":"measured components-computed.json: ec-billing-annual focus-visible outlineColor; sg-tab-draw focus-visible outlineColor","d":"Browser/auto focus #005fcc used by ecom toggles and generator controls."},"focus-green":{"v":"#089b57","t":"color","s":"read from the wrong state: components-computed.json assistant focus-visible outlineColor, recorded where keyboard focus never landed (via focus failed); recapture needed","d":"Assistant widget's own focus ring #089b57 (sierra.chat sheet); not confirmed under a real keyboard focus."},"dxp-primary":{"v":"#0069ec","t":"color","s":"css-var --dxp-primary (light)","d":"DXP #0069ec: declared on the ecom storefront body (its links/actions blue)."},"assistant-ramp":{"blue-50":{"v":"#f6f6fb","t":"color","s":"css-var --color-accentBlue-50 (light); css-var declared in the embedded Docusign Assistant (sierra.chat) stylesheet; vendor surface, DocuSign org theme 'kraken'","d":"Assistant accentBlue ramp (sierra.chat kraken theme)."},"blue-100":{"v":"#eceef7","t":"color","s":"css-var --color-accentBlue-100 (light); css-var declared in the embedded Docusign Assistant (sierra.chat) stylesheet; vendor surface, DocuSign org theme 'kraken'","d":"Assistant accentBlue ramp (sierra.chat kraken theme)."},"blue-200":{"v":"#d1d4ec","t":"color","s":"css-var --color-accentBlue-200 (light); css-var declared in the embedded Docusign Assistant (sierra.chat) stylesheet; vendor surface, DocuSign org theme 'kraken'","d":"Assistant accentBlue ramp (sierra.chat kraken theme)."},"blue-300":{"v":"#abb3dd","t":"color","s":"css-var --color-accentBlue-300 (light); css-var declared in the embedded Docusign Assistant (sierra.chat) stylesheet; vendor surface, DocuSign org theme 'kraken'","d":"Assistant accentBlue ramp (sierra.chat kraken theme)."},"blue-400":{"v":"#7b8bc9","t":"color","s":"css-var --color-accentBlue-400 (light); css-var declared in the embedded Docusign Assistant (sierra.chat) stylesheet; vendor surface, DocuSign org theme 'kraken'","d":"Assistant accentBlue ramp (sierra.chat kraken theme)."},"blue-500":{"v":"#345eb2","t":"color","s":"css-var --color-accentBlue-500 (light); css-var declared in the embedded Docusign Assistant (sierra.chat) stylesheet; vendor surface, DocuSign org theme 'kraken'","d":"Assistant accentBlue ramp (sierra.chat kraken theme)."},"blue-600":{"v":"#0049a2","t":"color","s":"css-var --color-accentBlue-600 (light); css-var declared in the embedded Docusign Assistant (sierra.chat) stylesheet; vendor surface, DocuSign org theme 'kraken'","d":"Assistant accentBlue ramp (sierra.chat kraken theme)."},"blue-700":{"v":"#002d88","t":"color","s":"css-var --color-accentBlue-700 (light); css-var declared in the embedded Docusign Assistant (sierra.chat) stylesheet; vendor surface, DocuSign org theme 'kraken'","d":"Assistant accentBlue ramp (sierra.chat kraken theme)."},"blue-800":{"v":"#001770","t":"color","s":"css-var --color-accentBlue-800 (light); css-var declared in the embedded Docusign Assistant (sierra.chat) stylesheet; vendor surface, DocuSign org theme 'kraken'","d":"Assistant accentBlue ramp (sierra.chat kraken theme)."},"blue-900":{"v":"#00275e","t":"color","s":"css-var --color-accentBlue-900 (light); css-var declared in the embedded Docusign Assistant (sierra.chat) stylesheet; vendor surface, DocuSign org theme 'kraken'","d":"Assistant accentBlue ramp (sierra.chat kraken theme)."},"ink-1":{"v":"#111111","t":"color","s":"css-var --color-foreground-1 (light); css-var declared in the embedded Docusign Assistant (sierra.chat) stylesheet; vendor surface, DocuSign org theme 'kraken'","d":"Assistant foreground/background role (sierra.chat kraken theme)."},"ink-2":{"v":"rgba(17, 17, 17, 0.72)","t":"color","s":"css-var --color-foreground-2 (light); css-var declared in the embedded Docusign Assistant (sierra.chat) stylesheet; vendor surface, DocuSign org theme 'kraken'","d":"Assistant foreground/background role (sierra.chat kraken theme)."},"surface-1":{"v":"#ffffff","t":"color","s":"css-var --color-background-1 (light); css-var declared in the embedded Docusign Assistant (sierra.chat) stylesheet; vendor surface, DocuSign org theme 'kraken'","d":"Assistant foreground/background role (sierra.chat kraken theme)."},"surface-2":{"v":"#fafafa","t":"color","s":"css-var --color-background-2 (light); css-var declared in the embedded Docusign Assistant (sierra.chat) stylesheet; vendor surface, DocuSign org theme 'kraken'","d":"Assistant foreground/background role (sierra.chat kraken theme)."}}},"font":{"family":{"sans":{"v":"DSIndigo, Helvetica, Arial, sans-serif","t":"fontFamily","s":"measured components-computed.json: header default fontFamily; nav-cta default fontFamily; hero-title default fontFamily","d":"DS Indigo: headings, body, buttons on the marketing site; DSIndigo woff2 weights 300-600."},"sans-app":{"v":"\"DS Indigo\", DSIndigo, Helvetica, Arial, sans-serif","t":"fontFamily","s":"measured components-computed.json: auth-card default fontFamily; auth-next default fontFamily","d":"\"DS Indigo\": the account stacks lead with the spaced family name (the storefront appends a system fallback list)."},"mono":{"v":"\"Noto Sans Mono\", monospace","t":"fontFamily","s":"@font-face Noto Sans Mono declared in raw/css-vars.json fonts (inline-www.docusign.com-5); the generic fallback was added by hand","d":"Noto Sans Mono: declared monospace face (code snippets)."},"icon":{"v":"\"7_Docusign\", sans-serif","t":"fontFamily","s":"@font-face 7_Docusign declared in raw/css-vars.json fonts (inline-www.docusign.com-5); the generic fallback was added by hand","d":"7_Docusign icon font (a 2_Docusign face is also declared)."},"signature":{"v":"STFelicetteScript-Regular, cursive","t":"fontFamily","s":"@font-face STFelicetteScript-Regular declared in raw/css-vars.json fonts (inline-www.docusign.comsignature-generator-7); the generic fallback was added by hand","d":"One of six script/display faces the generator renders names in (STFelicetteScript, TDNStockinette, TDNRhubarbTart, STAmpersandist, STConstant-UltraItalic, STNebulith-Display)."}},"size":{"display":{"v":"80px","t":"dimension","s":"measured components-computed.json: hero-title default fontSize"},"h2":{"v":"58px","t":"dimension","s":"measured components-computed.json: h2-section default fontSize"},"h3":{"v":"48px","t":"dimension","s":"measured components-computed.json: e-title default fontSize"},"price":{"v":"30px","t":"dimension","s":"measured components-computed.json: plan-name default fontSize"},"card-title":{"v":"24px","t":"dimension","s":"measured components-computed.json: faq-button default fontSize"},"lede":{"v":"18px","t":"dimension","s":"measured components-computed.json: hero-lede default fontSize"},"body":{"v":"16px","t":"dimension","s":"measured components-computed.json: nav-dropdown default fontSize"},"meta":{"v":"14px","t":"dimension","s":"measured components-computed.json: nav-link default fontSize"},"label":{"v":"12px","t":"dimension","s":"measured components-computed.json: nav-search default fontSize"},"tiny":{"v":"10px","t":"dimension","s":"measured components-computed.json: auth-lang default fontSize"},"h4":{"v":"40px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no reading in raw/components-computed.json holds it (the 40px card heading step)"}},"lineHeight":{"display":{"v":"86.4px","t":"dimension","s":"measured components-computed.json: hero-title default lineHeight"},"h2":{"v":"62.64px","t":"dimension","s":"measured components-computed.json: h2-section default lineHeight"},"h3":{"v":"51.84px","t":"dimension","s":"measured components-computed.json: e-title default lineHeight"},"price":{"v":"37.2px","t":"dimension","s":"measured components-computed.json: plan-name default lineHeight"},"card-title":{"v":"29.76px","t":"dimension","s":"measured components-computed.json: faq-button default lineHeight"},"lede":{"v":"27px","t":"dimension","s":"measured components-computed.json: hero-lede default lineHeight"},"body":{"v":"24px","t":"dimension","s":"measured components-computed.json: nav-dropdown default lineHeight"},"meta":{"v":"21px","t":"dimension","s":"measured components-computed.json: nav-link default lineHeight"},"label":{"v":"18px","t":"dimension","s":"measured components-computed.json: nav-search default lineHeight"},"tiny":{"v":"12px","t":"dimension","s":"measured components-computed.json: auth-lang default lineHeight"},"h4":{"v":"48px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no reading in raw/components-computed.json holds it (the 40px card heading step)"}},"tracking":{"display":{"v":"-1.5px","t":"dimension","s":"measured components-computed.json: hero-title default letterSpacing"},"h2":{"v":"-1.25px","t":"dimension","s":"measured components-computed.json: h2-section default letterSpacing"},"h3":{"v":"-1px","t":"dimension","s":"measured components-computed.json: e-title default letterSpacing"},"card-title":{"v":"-0.25px","t":"dimension","s":"measured components-computed.json: faq-button default letterSpacing"},"caps":{"v":"0.2px","t":"dimension","s":"measured components-computed.json: nav-cta default letterSpacing"},"h4":{"v":"-0.5px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no reading in raw/components-computed.json holds it (the 40px card heading step)"},"eyebrow":{"v":"0.8px","t":"dimension","s":"Reconstruction: entered by hand at capture time; no reading in raw/components-computed.json holds it (eyebrow label tracking)"}},"weight":{"light":{"v":300,"t":"fontWeight","s":"measured components-computed.json: hero-title default fontWeight","d":"DSIndigo 300: display headings."},"regular":{"v":400,"t":"fontWeight","s":"measured components-computed.json: header default fontWeight","d":"Body copy."},"medium":{"v":500,"t":"fontWeight","s":"measured components-computed.json: nav-link default fontWeight","d":"Nav, labels, buttons."},"semibold":{"v":600,"t":"fontWeight","s":"measured components-computed.json: nav-cta default fontWeight","d":"Uppercase CTAs, footer headings."}}},"radius":{"2":{"v":"2px","t":"dimension","s":"measured components-computed.json: locale-button default borderTopLeftRadius","d":"Tight 2px corner (the footer locale button)."},"4":{"v":"4px","t":"dimension","s":"measured components-computed.json: nav-link default borderTopLeftRadius; trial-cta default borderTopLeftRadius; auth-card default borderTopLeftRadius","d":"The workhorse corner: links, toggles, trial CTA, account card."},"6":{"v":"6px","t":"dimension","s":"measured components-computed.json: sg-tab-draw default borderTopLeftRadius","d":"Generator tab pills."},"8":{"v":"8px","t":"dimension","s":"measured components-computed.json: nav-cta default borderTopLeftRadius; hero-field default borderTopLeftRadius; sg-field default borderTopLeftRadius","d":"Buttons, fields and generator cards."},"10":{"v":"10px","t":"dimension","s":"css-var --radius (light)","d":"Declared --radius 0.625rem on the generator sheet."},"16":{"v":"16px","t":"dimension","s":"measured components-computed.json: plan-card default borderTopLeftRadius","d":"Ecom plan card corner."},"pill":{"v":"9999px","t":"dimension","s":"measured components-computed.json: assistant default borderTopLeftRadius","d":"Full pill: the floating Assistant launcher."}},"spacing":{"2":{"v":"2px","t":"dimension","s":"measured components-computed.json: 2px in 10 default-state padding/gap readings, e.g. nav-trigger rowGap; nav-link rowGap","d":"2px step of the padding and gap lengths read across captured surfaces."},"4":{"v":"4px","t":"dimension","s":"measured components-computed.json: 4px in 20 default-state padding/gap readings, e.g. nav-contact rowGap; nav-buy rowGap","d":"4px step of the padding and gap lengths read across captured surfaces."},"6":{"v":"6px","t":"dimension","s":"measured components-computed.json: 6px in 5 default-state padding/gap readings, e.g. sg-color paddingRight; sg-font rowGap","d":"6px step of the padding and gap lengths read across captured surfaces."},"8":{"v":"8px","t":"dimension","s":"measured components-computed.json: 8px in 26 default-state padding/gap readings, e.g. hero-field paddingBottom; hero-checkbox rowGap","d":"8px step of the padding and gap lengths read across captured surfaces."},"12":{"v":"12px","t":"dimension","s":"measured components-computed.json: 12px in 30 default-state padding/gap readings, e.g. nav-contact paddingTop; nav-buy paddingTop","d":"12px step of the padding and gap lengths read across captured surfaces."},"16":{"v":"16px","t":"dimension","s":"measured components-computed.json: 16px in 40 default-state padding/gap readings, e.g. nav-contact paddingRight; nav-buy paddingRight","d":"16px step of the padding and gap lengths read across captured surfaces."},"24":{"v":"24px","t":"dimension","s":"measured components-computed.json: 24px in 15 default-state padding/gap readings, e.g. nav-trigger paddingTop; nav-link paddingTop","d":"24px step of the padding and gap lengths read across captured surfaces."},"32":{"v":"32px","t":"dimension","s":"measured components-computed.json: 32px in 8 default-state padding/gap readings, e.g. faq-button paddingTop; faq-open paddingTop","d":"32px step of the padding and gap lengths read across captured surfaces."},"48":{"v":"48px","t":"dimension","s":"measured components-computed.json: 48px in 5 default-state padding/gap readings, e.g. faq-button rowGap; faq-open rowGap","d":"48px step of the padding and gap lengths read across captured surfaces."},"64":{"v":"64px","t":"dimension","s":"measured components-computed.json: 64px in 4 default-state padding/gap readings, e.g. nav-dropdown rowGap; auth-card paddingTop","d":"64px step of the padding and gap lengths read across captured surfaces."},"80":{"v":"80px","t":"dimension","s":"measured components-computed.json: 80px in 6 default-state padding/gap readings, e.g. hero-section paddingRight; ec-header paddingRight","d":"80px step of the padding and gap lengths read across captured surfaces."},"96":{"v":"96px","t":"dimension","s":"measured components-computed.json: 96px in 1 default-state padding/gap readings, e.g. hero-section paddingTop","d":"96px step of the padding and gap lengths read across captured surfaces."}},"shadow":{"hairline-inset":{"v":[{"offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","color":"rgba(19, 0, 50, 0.15)","inset":true}],"t":"shadow","s":"measured components-computed.json: nav-buy hover boxShadow","d":"Ghost button hover: a 1px ink-15 inset ring, no lift."},"field-focus":{"v":[{"offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","color":"#4c00ff","inset":true}],"t":"shadow","s":"measured components-computed.json: hero-field focused boxShadow","d":"Focused field: a 1px cobalt inset ring over the hairline."},"ring-double":{"v":[{"offsetX":"0px","offsetY":"0px","blur":"0px","spread":"2px","color":"#ffffff"},{"offsetX":"0px","offsetY":"0px","blur":"0px","spread":"4px","color":"#4c00ff"}],"t":"shadow","s":"measured components-computed.json: buy-now focus-visible boxShadow","d":"Ecom focus-visible: 2px white + 4px cobalt double ring."},"mist-ring":{"v":[{"offsetX":"0px","offsetY":"0px","blur":"0px","spread":"2px","color":"#cbc2ff"}],"t":"shadow","s":"measured components-computed.json: hero-country focus-visible boxShadow","d":"Focus on the dark band: a 2px mist ring."},"soft":{"v":[{"offsetX":"0px","offsetY":"1px","blur":"3px","spread":"0px","color":"rgba(0, 0, 0, 0.04)"}],"t":"shadow","s":"measured components-computed.json: sg-tab-draw default boxShadow","d":"Generator tab lift: 0 1px 3px rgba(0,0,0,.04)."},"launcher":{"v":[{"offsetX":"0px","offsetY":"10px","blur":"15px","spread":"-3px","color":"rgba(0, 0, 0, 0.1)"},{"offsetX":"0px","offsetY":"4px","blur":"6px","spread":"-4px","color":"rgba(0, 0, 0, 0.1)"}],"t":"shadow","s":"measured components-computed.json: assistant default boxShadow","d":"Floating launcher shadow (Tailwind shadow-lg)."}},"duration":{"fast":{"v":"100ms","t":"duration","s":"measured components-computed.json: nav-cta default transitionDuration","d":"Buttons: 0.1s on background/border/shadow/color."},"colour":{"v":"150ms","t":"duration","s":"measured components-computed.json: menu-link default transitionDuration","d":"Link/toggle colour transitions 0.15s (ecom buttons 0.15s all)."},"field":{"v":"200ms","t":"duration","s":"measured components-computed.json: hero-field default transitionDuration","d":"Field border transitions 0.2s."},"panel":{"v":"300ms","t":"duration","s":"measured components-computed.json: sg-download default transitionDuration","d":"Generator Download buttons: 0.3s all."}}},"light":{"color":{"page":{"v":"{color.white}","t":"color","s":"measured components-computed.json: header default backgroundColor","d":"The marketing page field is pure white; the generator paints ecru instead (color.ecru)."},"text":{"primary":{"v":"{color.inkwell}","t":"color","s":"measured components-computed.json: header default color","d":"Inkwell body/headline ink."},"secondary":{"v":"{color.ink-75}","t":"color","s":"measured components-computed.json: nav-link default color","d":"75% ink for nav, meta and secondary copy."},"tertiary":{"v":"{color.violet-50}","t":"color","s":"measured components-computed.json: sg-download default color","d":"50% deep-violet quiet text (generator)."},"on-dark":{"v":"{color.white}","t":"color","s":"measured components-computed.json: hero-title default color","d":"Text on the deep-violet bands and cobalt fills."},"on-violet-quiet":{"v":"{color.violet-30}","t":"color","s":"measured components-computed.json: sg-clear default color","d":"30% violet on the generator."}},"surface":{"card":{"v":"{color.white}","t":"color","s":"measured components-computed.json: plan-card default backgroundColor","d":"Plan cards and fields paint white."},"ecru":{"v":"{color.ecru}","t":"color","s":"css-var --ds-ecru","d":"The warm signature-generator ground."},"band":{"v":"{color.deep-violet}","t":"color","s":"css-var --ds-deep-violet; measured components-computed.json: hero-section default backgroundImage (the radial gradient's outer stop)","d":"The deep-violet hero/footer bands."},"wash":{"v":"{color.ink-05}","t":"color","s":"measured components-computed.json: ec-billing-annual default backgroundColor","d":"5% ink wash: toggle tracks, subtle fills."},"violet":{"v":"{color.mist-soft}","t":"color","s":"measured components-computed.json: see-all hover backgroundColor","d":"Soft-violet hover wash behind outline buttons."},"mist":{"v":"{color.mist}","t":"color","s":"measured components-computed.json: sg-download default backgroundColor","d":"Mist secondary fill (download buttons, accents)."}},"action":{"primary-bg":{"v":"{color.cobalt}","t":"color","s":"measured components-computed.json: nav-cta default backgroundColor","d":"Cobalt primary button fill."},"primary-bg-hover":{"v":"{color.cobalt-hover}","t":"color","s":"measured components-computed.json: nav-cta hover backgroundColor","d":"#4000cc on hover and some pressed states."},"primary-bg-pressed":{"v":"{color.cobalt-pressed}","t":"color","s":"measured components-computed.json: buy-now pressed backgroundColor","d":"#330099 ecom pressed."},"primary-text":{"v":"{color.white}","t":"color","s":"measured components-computed.json: nav-cta default color"},"ink-bg":{"v":"{color.inkwell}","t":"color","s":"measured components-computed.json: contact-sales default backgroundColor","d":"Inkwell dark-button fill (hero CTA on the violet band, Contact sales)."},"ink-bg-hover":{"v":"{color.ink-90}","t":"color","s":"measured components-computed.json: contact-sales hover backgroundColor"},"ink-bg-pressed":{"v":"{color.ink-75}","t":"color","s":"measured components-computed.json: contact-sales pressed backgroundColor"},"ink-bg-onband-pressed":{"v":"{color.inkwell-hover}","t":"color","s":"measured components-computed.json: hero-cta pressed backgroundColor","d":"Hero ink-button pressed #4e4067."},"outline-border":{"v":"{color.cobalt}","t":"color","s":"measured components-computed.json: see-all default borderTopColor","d":"Cobalt 1px outline-button border and text."},"outline-bg-hover":{"v":"{color.mist-soft}","t":"color","s":"measured components-computed.json: see-all hover backgroundColor"},"outline-text-pressed":{"v":"{color.inkwell}","t":"color","s":"measured components-computed.json: see-all pressed color"},"link":{"v":"{color.cobalt}","t":"color","s":"measured components-computed.json: hero-link default color","d":"Cobalt links; pressed goes inkwell."},"link-pressed":{"v":"{color.inkwell}","t":"color","s":"measured components-computed.json: hero-link pressed color"}},"border":{"default":{"v":"{color.ink-15}","t":"color","s":"measured components-computed.json: hero-field default borderTopColor","d":"15% ink hairline on fields."},"strong":{"v":"{color.ink-50}","t":"color","s":"measured components-computed.json: plan-card default borderTopColor","d":"50% ink plan-card border."},"ecom":{"v":"{color.hairline-ecom}","t":"color","s":"measured components-computed.json: feature-row default borderTopColor","d":"#e5e7eb Tailwind hairline on the storefront."},"auth":{"v":"{color.hairline-auth}","t":"color","s":"measured components-computed.json: auth-card default borderTopColor","d":"Account card border rgba(25,24,35,.15)."},"mist":{"v":"{color.mist}","t":"color","s":"measured components-computed.json: sg-field default borderTopColor","d":"Mist borders on generator fields/tabs."},"focus":{"v":"{color.cobalt}","t":"color","s":"measured components-computed.json: hero-field focused borderTopColor","d":"Cobalt border on focused fields."}},"focus":{"ring":{"v":"{color.cobalt}","t":"color","s":"measured components-computed.json: nav-trigger focus-visible outlineColor","d":"2px solid cobalt, 2px offset, on marketing controls."},"ring-on-band":{"v":"{color.mist}","t":"color","s":"measured components-computed.json: hero-country focus-visible boxShadow","d":"2px mist ring on the violet band."},"ring-auth":{"v":"{color.inkwell}","t":"color","s":"measured components-computed.json: auth-next focus-visible outlineColor","d":"2px inkwell ring, 2px offset, on the account page."},"ring-auto":{"v":"{color.focus-auto}","t":"color","s":"measured components-computed.json: ec-billing-annual focus-visible outlineColor","d":"1px auto #005fcc ring on ecom/generator controls."},"ring-green":{"v":"{color.focus-green}","t":"color","s":"read from the wrong state: components-computed.json assistant focus-visible outlineColor, recorded where keyboard focus never landed (via focus failed); recapture needed","d":"Assistant widget's own #089b57 ring (vendor); not confirmed under a real keyboard focus."}},"overlay":{"scrim":{"v":"{color.scrim}","t":"color","s":"measured components-computed.json: video-dialog default backgroundColor","d":"Video dialog scrim rgba(19,0,50,.898)."}}},"component":{"nav":{"utility-height":{"v":"30px","t":"dimension","s":"measured components-computed.json: utilitynav default height"},"header-height":{"v":"69px","t":"dimension","s":"measured components-computed.json: header default height","d":"Sticky header; 77px at 390 wide."},"dropdown-gap":{"v":"64px","t":"dimension","s":"measured components-computed.json: nav-dropdown default columnGap","d":"Mega-menu column gap."},"item-tracking":{"v":"0.2px","t":"dimension","s":"measured components-computed.json: nav-link default letterSpacing","d":"Nav/label letter spacing."}},"button":{"height":{"v":"45px","t":"dimension","s":"measured components-computed.json: nav-cta default height","d":"Header pills are 45px; hero pill 61px paired with the field."},"radius":{"v":"{radius.8}","t":"dimension","s":"measured components-computed.json: nav-cta default borderTopLeftRadius"},"radius-small":{"v":"{radius.4}","t":"dimension","s":"measured components-computed.json: trial-cta default borderTopLeftRadius","d":"4px corners on the trial/account submit."},"padding-y":{"v":"12px","t":"dimension","s":"measured components-computed.json: nav-cta default paddingTop","d":"Header pill vertical padding; ecom buttons pad 8px."},"padding-x":{"v":"16px","t":"dimension","s":"measured components-computed.json: nav-cta default paddingRight"},"tracking":{"v":"0.2px","t":"dimension","s":"measured components-computed.json: nav-cta default letterSpacing","d":"Uppercase CTA tracking (+0.2px, weight 600)."}},"field":{"height":{"v":"61px","t":"dimension","s":"measured components-computed.json: hero-field default height","d":"Floating-label fields are 61px tall (hero + trial)."},"radius":{"v":"{radius.8}","t":"dimension","s":"measured components-computed.json: hero-field default borderTopLeftRadius"},"border":{"v":"{color.ink-15}","t":"color","s":"measured components-computed.json: hero-field default borderTopColor"},"border-focus":{"v":"{color.cobalt}","t":"color","s":"measured components-computed.json: hero-field focused borderTopColor"},"padding-top":{"v":"24px","t":"dimension","s":"measured components-computed.json: hero-field default paddingTop","d":"Floating-label padding: the label sits in the 24px top."},"padding-x":{"v":"16px","t":"dimension","s":"measured components-computed.json: hero-field default paddingRight"},"padding-bottom":{"v":"8px","t":"dimension","s":"measured components-computed.json: hero-field default paddingBottom"}},"card":{"radius":{"v":"{radius.16}","t":"dimension","s":"measured components-computed.json: plan-card default borderTopLeftRadius","d":"Ecom plan card 16px; generator cards 8px; account card 4px."},"radius-generator":{"v":"{radius.8}","t":"dimension","s":"measured components-computed.json: sg-font default borderTopLeftRadius"},"radius-auth":{"v":"{radius.4}","t":"dimension","s":"measured components-computed.json: auth-card default borderTopLeftRadius"},"border":{"v":"{color.ink-50}","t":"color","s":"measured components-computed.json: plan-card default borderTopColor"},"padding-y-auth":{"v":"64px","t":"dimension","s":"measured components-computed.json: auth-card default paddingTop","d":"Account card vertical padding."}},"modal":{"scrim":{"v":"{color.scrim}","t":"color","s":"measured components-computed.json: video-dialog default backgroundColor"}},"type":{"display":{"v":{"fontFamily":"DSIndigo, Helvetica, Arial, sans-serif","fontSize":"80px","lineHeight":"86.4px","fontWeight":300,"letterSpacing":"-1.5px"},"t":"typography","s":"measured components-computed.json: hero-title default font","d":"Hero display: 80/86.4 weight 300, -1.5px tracking."},"h2":{"v":{"fontFamily":"DSIndigo, Helvetica, Arial, sans-serif","fontSize":"58px","lineHeight":"62.64px","fontWeight":300,"letterSpacing":"-1.25px"},"t":"typography","s":"measured components-computed.json: h2-section default font"},"h3":{"v":{"fontFamily":"DSIndigo, Helvetica, Arial, sans-serif","fontSize":"48px","lineHeight":"51.84px","fontWeight":300,"letterSpacing":"-1px"},"t":"typography","s":"measured components-computed.json: e-title default font"},"card-title":{"v":{"fontFamily":"DSIndigo, Helvetica, Arial, sans-serif","fontSize":"24px","lineHeight":"29.76px","fontWeight":500,"letterSpacing":"-0.25px"},"t":"typography","s":"measured components-computed.json: faq-button default font"},"lede":{"v":{"fontFamily":"DSIndigo, Helvetica, Arial, sans-serif","fontSize":"18px","lineHeight":"27px","fontWeight":400},"t":"typography","s":"measured components-computed.json: hero-lede default font"},"body":{"v":{"fontFamily":"DSIndigo, Helvetica, Arial, sans-serif","fontSize":"16px","lineHeight":"24px","fontWeight":400},"t":"typography","s":"measured components-computed.json: nav-dropdown default font"},"meta":{"v":{"fontFamily":"DSIndigo, Helvetica, Arial, sans-serif","fontSize":"14px","lineHeight":"21px","fontWeight":500,"letterSpacing":"0.2px"},"t":"typography","s":"measured components-computed.json: nav-link default font"},"caps":{"v":{"fontFamily":"DSIndigo, Helvetica, Arial, sans-serif","fontSize":"14px","lineHeight":"21px","fontWeight":600,"letterSpacing":"0.2px","textTransform":"uppercase"},"t":"typography","s":"measured components-computed.json: nav-cta default font"}}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    const band = /on-dark|band|scrim/.test(g) ? ' band' : '';
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal${band}">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const lightRoles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (lightRoles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of lightRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.spread + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts" style="letter-spacing:${esc(t.v)}">${esc(n)} — Docusign</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Docusign</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

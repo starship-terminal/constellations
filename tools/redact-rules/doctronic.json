@@ -1,0 +1,13 @@
+{
+ "_note": "Rules for systems/doctronic. A fully public signed-out capture: no account, no owner data on any surface. Nothing was submitted anywhere. The support@doctronic.ai and privacy@doctronic.ai addresses the OCR net finds in the footer, the site-menu drawer and the Resource Center sheet are the product's own published contact lines. The OCR email net is kept with example.com and the product's own addresses allowed; the two remaining entries cover the OCR-mangled reads of those same two addresses (support@dectroneal, priaey@doctonsal, supert@dectoncal, support@doctronical) as bounded full-address patterns: a sup-/pri- local part on a domain that starts with d and ends in the \"al\" the mangled .ai leaves, so an unrelated address like priyanka@private.test still fails.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@example\\.com$",
+   "@example\\.org$",
+   "@doctronic\\.ai$",
+   "@doctronic\\.al$"
+  ]
+ },
+ "families": []
+}

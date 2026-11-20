@@ -23,6 +23,7 @@
 import { resolve as resolvePath } from 'node:path';
 import { allowance, ancestors, approvableCard } from './approve.mjs';
 import { stopRun } from './stop.mjs';
+import { restoreDraft } from './draft.mjs';
 
 export const NAME = 'Capy';
 export const WINDOWS = { app: /\bCapy$/ };
@@ -432,10 +433,16 @@ export const RUN = {
     await pickProject(page, RUN_PROJECT);
     // The project must run on this Mac in the scratch folder, never in the cloud or another checkout.
     await btn(page, 'Run on').click(); await wait(page, 700);
-    const target = await page.locator('[role=menuitem]').filter({ visible: true }).filter({ hasText: 'This Mac' }).first().innerText().catch(() => '');
+    const mac = page.locator('[role=menuitem], [role=menuitemradio], [role=menuitemcheckbox]').filter({ visible: true }).filter({ hasText: 'This Mac' }).first();
+    const target = await mac.innerText().catch(() => '');
+    // The current choice, not just the This Mac row: that row names the scratch folder whatever is selected, so
+    // another paired machine or checkout would pass a check of its text alone. Fail closed unless the This Mac
+    // row is the checked one or the Run on button itself names the whole scratch path (a name fragment such
+    // as "capy" would also match another machine called capy-build).
+    const checked = await mac.evaluate(el => el.getAttribute('aria-checked') === 'true' || el.getAttribute('data-state') === 'checked').catch(() => false);
     await closeAll(page);
     const runOn = (await btn(page, 'Run on').innerText()).trim();
-    if (!target.includes(RUN_DIR.slice(1)) || /^Cloud/.test(runOn)) throw new Error(`Run on is ${runOn} (${target.replace(/\s+/g, ' ')}), not this Mac in ~${RUN_DIR}`);
+    if (!target.includes(RUN_DIR.slice(1)) || /^Cloud/.test(runOn) || !(checked || runOn.includes(RUN_DIR.slice(1)))) throw new Error(`Run on is ${runOn} (${target.replace(/\s+/g, ' ')}), not this Mac in ~${RUN_DIR}`);
     await clearEditor(page);
   },
   async finish(h) {
@@ -458,13 +465,16 @@ export const RUN = {
     await home(h);
     await pickProject(page, before.project);
     await clearEditor(page);
-    // Capy stores an empty draft as the JSON text null.
-    const text = v => (v && JSON.parse(v)?.text) || '';
-    const draft = text(before.draft);
-    if (draft) { await vis(page, S.editor).click(); await page.keyboard.type(draft, { delay: 5 }); await wait(page, 1200); }
-    const now = await page.evaluate(k => localStorage.getItem(k), DRAFT_KEY);
-    const nowText = text(now);
-    if (nowText !== draft) throw new Error(`the draft was not restored: ${nowText.slice(0, 60)}`);
+    // The draft goes back through localStorage and a reload, never the keyboard: a typed "\n" is Enter, which
+    // would submit the composer and start a real thread (draft.mjs).
+    await restoreDraft({
+      saved: before.draft,
+      write: v => page.evaluate(([k, val]) => localStorage.setItem(k, val), [DRAFT_KEY, v]),
+      reload: async () => { await page.reload(); await wait(page, 1500); },
+      read: () => page.evaluate(k => localStorage.getItem(k), DRAFT_KEY),
+    });
+    const project = (await btn(page, 'Project').innerText()).trim();
+    if (project !== before.project) throw new Error(`project is ${project} after the restore, not ${before.project}`);
     if (await kept(page) !== before.kept) throw new Error(`run-on or model changed:\n${await kept(page)}\nwas\n${before.kept}`);
     await page.mouse.move(700, 790);
   },

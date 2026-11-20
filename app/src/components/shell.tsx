@@ -1,14 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import {
-  Suspense,
-  useEffect,
-  useId,
-  useRef,
-  useState,
-  type ReactNode,
-} from "react";
+import { Suspense, useEffect, useRef, useState, type ReactNode } from "react";
 import {
   Grid2X2,
   BookOpen,
@@ -28,71 +21,23 @@ import {
   ArchiveRestore,
 } from "lucide-react";
 import { api, Modal } from "./shared";
+import { createInFlightGuard } from "./recent-guard";
 export function Mark() {
-  // The mark renders more than once (sidebar, boot screen); each needs its own clip id.
-  const clip = `ds-mark-clip-${useId().replace(/[^\w-]/g, "")}`;
   return (
     <>
-      <svg
-        className="brand-mark"
-        width="26"
-        height="26"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 64 64"
-      >
-        <defs>
-          <clipPath id={clip}>
-            <rect width="64" height="64" rx="14" />
-          </clipPath>
-        </defs>
-        <rect width="64" height="64" rx="14" fill="#08090a" />
-        <g clipPath={`url(#${clip})`}>
-          <polygon
-            points="-6.00,28.00 21.31,28.00 16.69,36.00 -6.00,36.00"
-            fill="#FFFFFF"
-          />
-          <polygon
-            className="mark-stripe"
-            points="33.80,22.99 70.00,8.00 70.00,17.60 35.88,26.60"
-            fill="#FF3B30"
-          />
-          <polygon
-            className="mark-stripe"
-            points="35.88,26.60 70.00,17.60 70.00,27.20 37.96,30.20"
-            fill="#FF9500"
-          />
-          <polygon
-            className="mark-stripe"
-            points="37.96,30.20 70.00,27.20 70.00,36.80 40.04,33.80"
-            fill="#FFD60A"
-          />
-          <polygon
-            className="mark-stripe"
-            points="40.04,33.80 70.00,36.80 70.00,46.40 42.12,37.40"
-            fill="#34C759"
-          />
-          <polygon
-            className="mark-stripe"
-            points="42.12,37.40 70.00,46.40 70.00,56.00 44.20,41.01"
-            fill="#0A84FF"
-          />
-          <polygon
-            points="29.00,14.68 49.00,49.32 9.00,49.32"
-            fill="#FFFFFF"
-            stroke="#08090a"
-            strokeWidth="3"
-            strokeLinejoin="round"
-          />
-        </g>
-      </svg>
       <img
-        className="brand-mark-glass"
-        src="/brand/glass/favicon-48.png"
+        className="brand-mark"
+        src="/brand/flat/favicon.svg"
         width="26"
         height="26"
         alt=""
-        aria-hidden="true"
+      />
+      <img
+        className="brand-mark-glass"
+        src="/brand/glass/icon-192.png"
+        width="26"
+        height="26"
+        alt=""
       />
     </>
   );
@@ -113,56 +58,56 @@ export function CatalogNavigation({ onNavigate }: { onNavigate: () => void }) {
         href="/library"
       >
         <Grid2X2 size={20} />
-        Gallery
+        <span className="nav-label">Gallery</span>
       </Link>
       <Link
         className={`nav-link ${path === "/library" && platform === "web" ? "active" : ""}`}
         href="/library?platform=web"
       >
         <Monitor size={20} />
-        Web apps
+        <span className="nav-label">Web apps</span>
       </Link>
       <Link
         className={`nav-link ${path === "/library" && platform === "mobile" ? "active" : ""}`}
         href="/library?platform=mobile"
       >
         <Smartphone size={20} />
-        iOS apps
+        <span className="nav-label">iOS apps</span>
       </Link>
       <Link
         className={`nav-link ${path === "/library" && platform === "desktop" ? "active" : ""}`}
         href="/library?platform=desktop"
       >
         <Laptop size={20} />
-        Desktop apps
+        <span className="nav-label">Desktop apps</span>
       </Link>
       <Link
         className={`nav-link ${path.startsWith("/styles") ? "active" : ""}`}
         href="/styles"
       >
         <Palette size={20} />
-        Styles
+        <span className="nav-label">Styles</span>
       </Link>
       <Link
         className={`nav-link ${path.startsWith("/collections") ? "active" : ""}`}
         href="/collections"
       >
         <Bookmark size={20} />
-        Bookmarks
+        <span className="nav-label">Bookmarks</span>
       </Link>
       <Link
         className={`nav-link ${path.startsWith("/docs") ? "active" : ""}`}
         href="/docs"
       >
         <BookOpen size={20} />
-        Documents
+        <span className="nav-label">Documents</span>
       </Link>
       <Link
         className={`nav-link ${path.startsWith("/scorecard") ? "active" : ""}`}
         href="/scorecard"
       >
         <BarChart3 size={20} />
-        Scorecard
+        <span className="nav-label">Scorecard</span>
       </Link>
     </nav>
   );
@@ -173,6 +118,12 @@ interface Conversation {
   updatedAt?: string;
   archived?: boolean;
 }
+const SIDEBAR_KEY = "studio-sidebar-collapsed";
+/** Runs before paint, like the theme script: a collapsed sidebar is laid out
+ * collapsed from the first frame instead of opening and then closing. */
+export const sidebarInitScript = `(function(){try{
+if(localStorage.getItem('${SIDEBAR_KEY}')==='true')document.documentElement.dataset.sidebar='collapsed';
+}catch(e){}})();`;
 export function AppShell({ children }: { children: ReactNode }) {
   const path = usePathname(),
     router = useRouter();
@@ -192,11 +143,15 @@ export function AppShell({ children }: { children: ReactNode }) {
   }, [path]);
   const [collapsed, setCollapsed] = useState(false);
   useEffect(() => {
-    setCollapsed(localStorage.getItem("studio-sidebar-collapsed") === "true");
+    // sidebarInitScript already collapsed the layout before paint; this only
+    // syncs the toggle's label and icon.
+    setCollapsed(document.documentElement.dataset.sidebar === "collapsed");
   }, []);
   const [showAllHistory, setShowAllHistory] = useState(false),
     [showArchived, setShowArchived] = useState(false);
-  const [history, setHistory] = useState<Conversation[]>([]),
+  // null until the first reply, so "Your research will appear here." never
+  // flashes for someone who has research.
+  const [history, setHistory] = useState<Conversation[] | null>(null),
     [mobile, setMobile] = useState(false),
     [editing, setEditing] = useState<Conversation | null>(null),
     [title, setTitle] = useState(""),
@@ -205,8 +160,19 @@ export function AppShell({ children }: { children: ReactNode }) {
     [historyFailed, setHistoryFailed] = useState(false);
   // Only the newest history request may update the list or its failure state.
   const historyRequest = useRef(0);
+  // A tab switch fires focus and visibilitychange together, and the first
+  // focus can land while the mount fetch is still running: those join the
+  // fetch already in flight. Once it settles, the next event fetches again.
+  const inFlight = useRef(createInFlightGuard());
+  function reloadWhenShown() {
+    if (document.visibilityState === "visible") reloadIfIdle();
+  }
+  function reloadIfIdle() {
+    if (!inFlight.current.busy()) reload();
+  }
   function reload() {
     const request = ++historyRequest.current;
+    const done = inFlight.current.start();
     api("/api/conversations")
       .then((d) => {
         if (request !== historyRequest.current) return;
@@ -215,13 +181,24 @@ export function AppShell({ children }: { children: ReactNode }) {
       })
       .catch(() => {
         if (request === historyRequest.current) setHistoryFailed(true);
-      });
+      })
+      .finally(done);
   }
+  // Pages that change research dispatch "research-history"; moving between
+  // pages changes nothing, so it does not refetch. Research created or
+  // renamed in another tab or window arrives when this one is shown or
+  // focused again.
   useEffect(() => {
     reload();
     window.addEventListener("research-history", reload);
-    return () => window.removeEventListener("research-history", reload);
-  }, [path]);
+    document.addEventListener("visibilitychange", reloadWhenShown);
+    window.addEventListener("focus", reloadIfIdle);
+    return () => {
+      window.removeEventListener("research-history", reload);
+      document.removeEventListener("visibilitychange", reloadWhenShown);
+      window.removeEventListener("focus", reloadIfIdle);
+    };
+  }, []);
   useEffect(() => {
     setMobile(false);
   }, [path]);
@@ -284,7 +261,9 @@ export function AppShell({ children }: { children: ReactNode }) {
         aria-label={collapsed ? "Expand navigation" : "Collapse navigation"}
         onClick={() => {
           setCollapsed(!collapsed);
-          localStorage.setItem("studio-sidebar-collapsed", String(!collapsed));
+          if (collapsed) delete document.documentElement.dataset.sidebar;
+          else document.documentElement.dataset.sidebar = "collapsed";
+          localStorage.setItem(SIDEBAR_KEY, String(!collapsed));
         }}
       >
         {collapsed ? <PanelLeftOpen size={18} /> : <PanelLeftClose size={18} />}
@@ -312,18 +291,18 @@ export function AppShell({ children }: { children: ReactNode }) {
       >
         <Link href="/" className="brand">
           <Mark />
-          <span>Design Studio</span>
+          <span>Constellations</span>
         </Link>
         <Link href="/" className="new-research">
           <Plus size={22} />
-          New research
+          <span className="nav-label">New research</span>
         </Link>
         <Suspense fallback={null}>
           <CatalogNavigation onNavigate={() => setMobile(false)} />
         </Suspense>
         <div className="history-heading">
           <span>{showArchived ? "Archived research" : "History"}</span>
-          {(showArchived || history.some((c) => c.archived)) && (
+          {(showArchived || history?.some((c) => c.archived)) && (
             <button
               className="text-button"
               onClick={() => setShowArchived(!showArchived)}
@@ -333,7 +312,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           )}
         </div>
         <div className="history-list">
-          {history
+          {(history ?? [])
             .filter((x) => !!x.archived === showArchived)
             .slice(0, showAllHistory ? undefined : 18)
             .map((c) => (
@@ -387,7 +366,8 @@ export function AppShell({ children }: { children: ReactNode }) {
                 </details>
               </div>
             ))}
-          {history.filter((c) => !!c.archived === showArchived).length > 18 && (
+          {(history ?? []).filter((c) => !!c.archived === showArchived).length >
+            18 && (
             <button
               className="text-button history-more"
               onClick={() => setShowAllHistory(!showAllHistory)}
@@ -403,7 +383,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               </button>
             </p>
           ) : (
-            history.filter((c) => !!c.archived === showArchived).length ===
+            history?.filter((c) => !!c.archived === showArchived).length ===
               0 && (
               <p className="history-empty">Your research will appear here.</p>
             )
@@ -415,7 +395,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             href="/settings"
           >
             <Settings size={18} />
-            Settings
+            <span className="nav-label">Settings</span>
           </Link>
         </div>
       </aside>

@@ -1,0 +1,23 @@
+[
+  {
+    "name": "enterprise",
+    "cookie": "absent",
+    "title": "Perplexity Enterprise",
+    "href": "https://www.perplexity.ai/enterprise",
+    "status": "ok"
+  },
+  {
+    "name": "terms",
+    "cookie": "got-it",
+    "title": "Perplexity Terms of Service",
+    "href": "https://www.perplexity.ai/hub/legal/terms-of-service",
+    "status": "ok"
+  },
+  {
+    "name": "missing",
+    "cookie": "absent",
+    "title": "Page Not Found | Perplexity",
+    "href": "https://www.perplexity.ai/hub/this-page-does-not-exist-capture",
+    "status": "ok"
+  }
+]

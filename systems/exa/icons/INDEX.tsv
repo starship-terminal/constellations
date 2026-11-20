@@ -1,0 +1,56 @@
+file	inferred_name	hash	sizes	viewBox	style	seen_on	place	text_or_label
+products.svg	products	ebd8b747	12x12	0 0 24 24	stroke	home; pricing; product	span	Products / Solutions / Resources
+dismiss-announcement.svg	dismiss-announcement	f6adc5e0	12x12	0 0 24 24	stroke	home; pricing; product	button	Dismiss announcement
+parallel.svg	parallel	1b0a2859	14x14 16x16	0 0 273 273	fill	home; product	div; span	Parallel
+perplexity.svg	perplexity	8196706b	11x14 12x16	0 0 28 36	stroke	home; product	div; span	Perplexity
+icon-bee2464c.svg	icon-bee2464c	bee2464c	13x16	0 0 78.1818 100	fill	home; product	div; span	
+icon-1b666b36.svg	icon-1b666b36	1b666b36	15x15	0 0 15 15	fill	home	button	Watch Cognition case study video
+show-code-view.svg	show-code-view	227366c1	13x13	0 0 24 24	stroke	home	button	Show code view
+search.svg	search	33390d93	14x14	0 0 24 24	stroke	home	button	Search
+run-preview.svg	run-preview	50cc47e0	20x20	0 0 24 24	stroke	home	button [background:linear-gradient(180deg,#001651_0%,#0040F0_100%)]	Run preview
+clear-query.svg	clear-query	52757a24	16x16	0 0 24 24	stroke	home	button	Clear query
+brave.svg	brave	8c033019	12x14 14x16	0 0 34 40	fill	home	div	Brave
+exa.svg	exa	c9669a9d	11x14	0 0 78.1818 100	fill	home	div	Exa
+api-playground.svg	api-playground	e995a512	13x13	0 0 24 24	stroke	home	a	API Playground
+enrichments.svg	enrichments	0a80c6b1	20x20	0 0 24 24	stroke	pricing	button	Enrichments
+icon-0de5e38f.svg	icon-0de5e38f	0de5e38f	14x16	0 0 34 40	fill	product	span	
+icon-0e48c38c.svg	icon-0e48c38c	0e48c38c	18x18	0 0 24 24	stroke	home	a	Inference Providers Search for open and 
+curl.svg	curl	1e080ae0	14x14	0 0 24 24	stroke	docs	label	cURL
+people-search.svg	people-search	23a07c5a	20x20	0 0 24 24	stroke	pricing	button	People search
+found-5-results.svg	found-5-results	2cf56282	12x14	0 0 107 129	fill	product	div	Found 5 results / Found 3 brands / Found 4 results
+daily-at-9-00am.svg	daily-at-9-00am	35922fd6	11x11	0 0 24 24	stroke	pricing	div	Daily at 9:00AM / Weekly, Mondays / Daily at 6:00PM
+icon-3fcb0bde.svg	icon-3fcb0bde	3fcb0bde	18x18	0 0 24 24	stroke	home	a	Search API Accurate real-time web search
+news-monitoring.svg	news-monitoring	3ff24cbd	20x20	0 0 24 24	stroke	pricing	button	News monitoring
+icon-42c79811.svg	icon-42c79811	42c79811	20x20	0 0 24 24	stroke	product	button	What is the Exa Search API? / How is Exa different from a SERP API? / Which search types does Exa offer, and h
+icon-456d0dca.svg	icon-456d0dca	456d0dca	18x18	0 0 24 24	stroke	home	a	Agent API Async deep research / AI Assistants Live web knowledge for AI 
+read-the-docs.svg	read-the-docs	4817e690	16x16	0 0 24 24	stroke	product	a	Read the docs / Read about Exa 3.0
+icon-498e3316.svg	icon-498e3316	498e3316	18x18	0 0 24 24	stroke	home	a	Monitors API Track changes on the web / Model Training Pre-training, post-traini
+icon-4d20378c.svg	icon-4d20378c	4d20378c	18x18	0 0 24 24	stroke	home	a	Exa Library Structured data for your age
+icon-4e34fdea.svg	icon-4e34fdea	4e34fdea	16x16	0 0 24 24	stroke	pricing	li; div	Free $10 credits per month / MCP server access / Claude Connector
+coding-agents-4f0f75d5.svg	coding-agents	4f0f75d5	18x18	0 0 24 24	stroke	pricing	button	Coding agents / Chatbots / News monitoring
+send-message.svg	send-message	5b3511ce	10x10		fill	docs	button	Send message
+icon-5fb71824.svg	icon-5fb71824	5fb71824	18x18	0 0 24 24	stroke	home	a	GTM Account and contact intelligence
+get-api-key.svg	get-api-key	5ffbfc9f	14x14	0 0 14 14	fill	docs	a	Get API Key
+javascript.svg	javascript	6621c48f	14x14	0 0 15 16	fill	docs	label	JavaScript
+change-theme-preference.svg	change-theme-preference	7a363b07	14x16		fill	docs	button	Change theme preference
+voice-agents.svg	voice-agents	7d06e720	20x20	0 0 24 24	stroke	pricing	button	Voice agents
+icon-7f88d096.svg	icon-7f88d096	7f88d096	13x13	0 0 16 16	stroke	product	span	
+company-search.svg	company-search	8235e1bf	20x20	0 0 24 24	stroke	pricing	button	Company search
+icon-8282bccf.svg	icon-8282bccf	8282bccf	18x18	0 0 24 24	stroke	home	a	Exa Connect Access third-party data prov
+x.svg	x	85a39559	20x20		fill	docs	a	x / linkedin
+python.svg	python	962f08df	14x14	0 0 16 16	fill	docs	label	Python
+coding-agents-96d1b602.svg	coding-agents	96d1b602	20x20	0 0 24 24	stroke	pricing	button	Coding agents
+ask-assistant.svg	ask-assistant	992fb0c3	16x16		fill	docs	button [.code-block_[data-floating-buttons]_&]:bg-gray-100	Ask Assistant
+icon-a12beb9f.svg	icon-a12beb9f	a12beb9f	18x18	0 0 24 24	stroke	home	a	Contents API Token efficient page extrac
+api-dashboard.svg	api-dashboard	a758fb0c	12x12		fill	docs	a	API Dashboard
+icon-b107ee10.svg	icon-b107ee10	b107ee10	18x18	0 0 24 24	stroke	home	a	Enterprise Search infrastructure at scal
+icon-bfbc3fe2.svg	icon-bfbc3fe2	bfbc3fe2	18x18	0 0 24 24	stroke	home	a	Recruiting Find talent by expertise, not
+icon-c16a6c99.svg	icon-c16a6c99	c16a6c99	20x20	0 0 24 24	stroke	pricing	button	Scroll right through API products
+icon-c4bb7a30.svg	icon-c4bb7a30	c4bb7a30	20x20	0 0 24 24	stroke	pricing	button	Scroll left through API products
+icon-d224dd27.svg	icon-d224dd27	d224dd27	18x18	0 0 24 24	stroke	home	a	Exa Snapshot Search the web as it was on
+icon-dcfdeccf.svg	icon-dcfdeccf	dcfdeccf	18x18	0 0 24 24	stroke	home	a	Coding Code and documentation context
+data-floating-buttons-bg-gray-10.svg	data-floating-buttons-bg-gray-10	e19ffa4a	16x16		fill	docs	button [.code-block_[data-floating-buttons]_&]:bg-gray-100	Copy the contents from the code block
+chatbots.svg	chatbots	e32de626	20x20	0 0 24 24	stroke	pricing	button	Chatbots
+icon-e4380971.svg	icon-e4380971	e4380971	18x18	0 0 24 24	stroke	home	a	Legal Case law, statutes, and regulation
+icon-eac2b7f5.svg	icon-eac2b7f5	eac2b7f5	18x18	0 0 24 24	stroke	home	a	Finance Filings, news, and market maps
+open-search.svg	open-search	fbef2d9f	16x16	0 0 18 18	stroke	docs	button	Open search

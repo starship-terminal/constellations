@@ -1,0 +1,855 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. me.sh declares no design-token CSS variables — its nine custom properties are Bulma column gaps and orb positions (raw/css-vars.json). Every leaf is a measured value resolved from raw/components-computed.json at build time. Two page themes exist: the dark marketing surface (dark) and the warm light pricing and sign-in surfaces (light).",
+ "core": {
+  "color": {
+   "ink": {
+    "950": {
+     "value": "#000000",
+     "type": "color",
+     "source": "computed backgroundColor of page-ground default (raw/components-computed.json)",
+     "description": "Black — the html element's painted ground under the whole dark site."
+    },
+    "900": {
+     "value": "#0f0f10",
+     "type": "color",
+     "source": "computed backgroundColor of footer default (raw/components-computed.json)",
+     "description": "The footer band's #0f0f10, a half-step up from the ground."
+    },
+    "800": {
+     "value": "#1f1f1f",
+     "type": "color",
+     "source": "computed color of plan-card default (raw/components-computed.json)",
+     "description": "Ink text on the light routes — plan cards, pricing headings."
+    },
+    "750": {
+     "value": "#1f1f1e",
+     "type": "color",
+     "source": "computed backgroundColor of signin-apple default (raw/components-computed.json)",
+     "description": "#1f1f1e — the Apple sign-in button's fill on the app surface."
+    },
+    "700": {
+     "value": "#1d1d1f",
+     "type": "color",
+     "source": "computed color of section-title default (raw/components-computed.json)",
+     "description": "#1d1d1f — section headings and the filter pills' text."
+    }
+   },
+   "gray": {
+    "500": {
+     "value": "#48494a",
+     "type": "color",
+     "source": "computed color of signin-toggle default (raw/components-computed.json)",
+     "description": "#48494a — the app surface's body/text grey."
+    },
+    "400": {
+     "value": "#86868b",
+     "type": "color",
+     "source": "computed color of hero-sub default (raw/components-computed.json)",
+     "description": "#86868b — the muted body grey, read on the first paragraph after the hero h1 (a section paragraph, \"Set reminders...\"; the hero has no lede)."
+    }
+   },
+   "paper": {
+    "0": {
+     "value": "#fdfcfa",
+     "type": "color",
+     "source": "computed backgroundColor of cta default (raw/components-computed.json)",
+     "description": "#fdfcfa — the hero CTA's warm off-white fill."
+    },
+    "50": {
+     "value": "#f9f8f6",
+     "type": "color",
+     "source": "computed backgroundColor of pricing-ground default (raw/components-computed.json)",
+     "description": "#f9f8f6 — the pricing route's warm-cream ground."
+    },
+    "100": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed backgroundColor of cta-bottom default (raw/components-computed.json)",
+     "description": "#ffffff — the bottom CTA's pure-white fill."
+    }
+   },
+   "cream": {
+    "0": {
+     "value": "#fefef7",
+     "type": "color",
+     "source": "computed color of hero-title default (raw/components-computed.json)",
+     "description": "#fefef7 — the display headline's warm off-white."
+    }
+   },
+   "orange": {
+    "500": {
+     "value": "#fb7232",
+     "type": "color",
+     "source": "computed backgroundColor of plan-cta-filled default (raw/components-computed.json)",
+     "description": "#fb7232 — the marketing accent: filled plan CTAs, plan-label eyebrows, the popular card's ring, menu-link hover."
+    },
+    "alpha24": {
+     "value": "rgba(251, 114, 50, 0.24)",
+     "type": "color",
+     "source": "computed ringShadow of plan-card-popular default (raw/components-computed.json)",
+     "description": "The 24% orange glow ring around the popular plan card."
+    }
+   },
+   "orange-app": {
+    "500": {
+     "value": "#ff6821",
+     "type": "color",
+     "source": "computed backgroundColor of signin-email-btn default (raw/components-computed.json)",
+     "description": "#ff6821 — the app surface's own orange (the Sign-in-with-email button)."
+    }
+   },
+   "tan": {
+    "300": {
+     "value": "#f2b98b",
+     "type": "color",
+     "source": "computed color of logo default (raw/components-computed.json)",
+     "description": "#f2b98b — the wordmark and social-icon accent."
+    },
+    "400": {
+     "value": "#efab74",
+     "type": "color",
+     "source": "computed color of cta-bottom hover (raw/components-computed.json)",
+     "description": "#efab74 — the tan accent's hover step."
+    }
+   },
+   "google": {
+    "500": {
+     "value": "#5383ec",
+     "type": "color",
+     "source": "computed backgroundColor of signin-google default (raw/components-computed.json)",
+     "description": "#5383ec — the Google sign-in button."
+    },
+    "600": {
+     "value": "rgba(83, 131, 236, 0.87)",
+     "type": "color",
+     "source": "computed backgroundColor of signin-google hover (raw/components-computed.json)",
+     "description": "The Google blue at 87% — its hover/pressed step."
+    }
+   },
+   "white-alpha": {
+    "3": {
+     "value": "rgba(255, 255, 255, 0.03)",
+     "type": "color",
+     "source": "computed paint.0.bg of header default (raw/components-computed.json)",
+     "description": "The nav pill's 3% white fill (under a white sheen gradient)."
+    },
+    "6": {
+     "value": "rgba(255, 255, 255, 0.06)",
+     "type": "color",
+     "source": "computed backgroundColor of m-menu-button default (raw/components-computed.json)",
+     "description": "The 6% white scrim on dark controls — hamburger, drawer rows."
+    },
+    "8": {
+     "value": "rgba(255, 255, 255, 0.08)",
+     "type": "color",
+     "source": "computed backgroundColor of nav-signin hover (raw/components-computed.json)",
+     "description": "The nav Sign-In hover wash."
+    },
+    "24": {
+     "value": "rgba(255, 255, 255, 0.24)",
+     "type": "color",
+     "source": "computed paint.0.shadow of nav-cta default (raw/components-computed.json)",
+     "description": "The nav GET STARTED pill's 24% white inset ring."
+    },
+    "40": {
+     "value": "rgba(255, 255, 255, 0.4)",
+     "type": "color",
+     "source": "computed color of footer-link default (raw/components-computed.json)",
+     "description": "Faint text on the dark surface — footer links."
+    },
+    "60": {
+     "value": "rgba(255, 255, 255, 0.6)",
+     "type": "color",
+     "source": "computed color of signin-email-btn default (raw/components-computed.json)",
+     "description": "The disabled-looking 60% white label on the orange button."
+    },
+    "64": {
+     "value": "rgba(255, 255, 255, 0.64)",
+     "type": "color",
+     "source": "computed color of nav-signin default (raw/components-computed.json)",
+     "description": "The nav Sign-In label's resting grey."
+    },
+    "70": {
+     "value": "rgba(255, 255, 255, 0.7)",
+     "type": "color",
+     "source": "computed color of header default (raw/components-computed.json)",
+     "description": "The dark surface's body text shade."
+    }
+   },
+   "gray-alpha": {
+    "6": {
+     "value": "rgba(149, 149, 149, 0.06)",
+     "type": "color",
+     "source": "computed backgroundColor of plan-card default (raw/components-computed.json)",
+     "description": "The plan card's 6% grey fill under its white sheen gradient."
+    }
+   },
+   "ink-alpha": {
+    "4": {
+     "value": "rgba(72, 73, 74, 0.04)",
+     "type": "color",
+     "source": "computed backgroundColor of signin-input default (raw/components-computed.json)",
+     "description": "The sign-in field's 4% ink fill."
+    },
+    "6": {
+     "value": "rgba(31, 31, 31, 0.06)",
+     "type": "color",
+     "source": "computed backgroundColor of billing-toggle default (raw/components-computed.json)",
+     "description": "The billing toggle's 6% ink chip fill."
+    },
+    "10": {
+     "value": "rgba(72, 73, 74, 0.1)",
+     "type": "color",
+     "source": "computed borderTopColor of signin-input default (raw/components-computed.json)",
+     "description": "The sign-in field's 10% ink border."
+    },
+    "40": {
+     "value": "rgba(31, 31, 31, 0.4)",
+     "type": "color",
+     "source": "computed borderTopColor of plan-cta default (raw/components-computed.json)",
+     "description": "The outline plan button's 40% ink border."
+    }
+   },
+   "glow": {
+    "cta": {
+     "value": "rgba(255, 255, 255, 0.98)",
+     "type": "color",
+     "source": "computed boxShadow of cta default (raw/components-computed.json)",
+     "description": "The near-white glow the hero CTA carries (0 0 4px 1px, 98% white)."
+    }
+   }
+  },
+  "measured": {
+   "drawer-fill": {
+    "value": "rgba(31, 31, 30, 0.06)",
+    "type": "color",
+    "source": "computed paint.0.bg of m-menu-open default (raw/components-computed.json)",
+    "description": "The mobile drawer's near-black glass fill over the page."
+   }
+  },
+  "gradient": {
+   "ctaRing": {
+    "type": "gradient",
+    "angle": 225,
+    "value": [
+     {
+      "color": "#32c5ff",
+      "position": 0
+     },
+     {
+      "color": "#b620e0",
+      "position": 0.51
+     },
+     {
+      "color": "#f7b500",
+      "position": 1
+     }
+    ],
+    "source": "computed paint.1.bgImage of cta default (raw/components-computed.json)",
+    "description": "The blue-violet-amber ring gradient painted proud of the hero and bottom CTAs."
+   },
+   "filterWash": {
+    "type": "gradient",
+    "angle": 90,
+    "value": [
+     {
+      "color": "rgba(29, 29, 31, 0.06)",
+      "position": 0
+     },
+     {
+      "color": "rgba(29, 29, 31, 0.03)",
+      "position": 1
+     }
+    ],
+    "source": "computed paint.0.bgImage of filter-button default (raw/components-computed.json)",
+    "description": "The filter pill's ::after ink wash over the 480x48 button."
+   },
+   "cardSheen": {
+    "type": "gradient",
+    "angle": 180,
+    "value": [
+     {
+      "color": "#ffffff",
+      "position": 0
+     },
+     {
+      "color": "rgba(255, 255, 255, 0.5)",
+      "position": 1
+     }
+    ],
+    "source": "computed paint.0.bgImage of plan-card default (raw/components-computed.json)",
+    "description": "The plan card's white sheen over its 6% grey fill."
+   },
+   "drawerSheen": {
+    "type": "gradient",
+    "angle": 180,
+    "value": [
+     {
+      "color": "rgba(31, 31, 30, 0.8)",
+      "position": 0.02
+     },
+     {
+      "color": "rgba(31, 31, 30, 0)",
+      "position": 1
+     }
+    ],
+    "source": "computed paint.0.bgImage of m-menu-open default (raw/components-computed.json)",
+    "description": "The mobile drawer's dark sheen — near-black easing to transparent."
+   }
+  },
+  "font": {
+   "family": {
+    "ui": {
+     "type": "fontFamily",
+     "value": "Verlag, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+     "source": "computed fontFamily of nav-item default (raw/components-computed.json)",
+     "description": "Verlag across the dark marketing surface: nav, body, controls."
+    },
+    "display": {
+     "type": "fontFamily",
+     "value": "VerlagCondensed, Verlag, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+     "source": "computed fontFamily of hero-title default (raw/components-computed.json)",
+     "description": "VerlagCondensed — the condensed display face of the hero and section headings."
+    },
+    "serif": {
+     "type": "fontFamily",
+     "value": "ChronicleCondensed, ChronicleTextG1Roman, \"IBM Plex Serif\", serif",
+     "source": "computed textStyle.fontFamily of plan-price default (raw/components-computed.json)",
+     "description": "ChronicleDisplayCondensed — the serif face the plan prices and editorial headings set in."
+    },
+    "app": {
+     "type": "fontFamily",
+     "value": "SFProText, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+     "source": "computed fontFamily of signin-input default (raw/components-computed.json)",
+     "description": "SF Pro Text — the app.me.sh sign-in card's UI font (a different stack)."
+    }
+   },
+   "size": {
+    "display": {
+     "type": "dimension",
+     "value": "64px",
+     "source": "computed fontSize of hero-title default (raw/components-computed.json)",
+     "description": "The hero display headline, 64px VerlagCondensed."
+    },
+    "h1": {
+     "type": "dimension",
+     "value": "48px",
+     "source": "computed fontSize of pricing-h1 default (raw/components-computed.json)",
+     "description": "Page headings on the light routes, 48px VerlagCondensed."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "48px",
+     "source": "computed fontSize of section-title default (raw/components-computed.json)",
+     "description": "Section headings in the light bands, 48px/900 VerlagCondensed."
+    },
+    "signin": {
+     "type": "dimension",
+     "value": "32px",
+     "source": "computed fontSize of signin-title default (raw/components-computed.json)",
+     "description": "The sign-in card's 32px headline."
+    },
+    "sub": {
+     "type": "dimension",
+     "value": "20px",
+     "source": "computed fontSize of hero-sub default (raw/components-computed.json)",
+     "description": "The 20px section body paragraph, read on the first paragraph after the hero h1 (\"Set reminders...\"; the hero has no lede)."
+    },
+    "body": {
+     "type": "dimension",
+     "value": "20px",
+     "source": "computed fontSize of filter-button default (raw/components-computed.json)",
+     "description": "Body-size controls and copy, 18-20px (filter pills set 20px)."
+    },
+    "planLabel": {
+     "type": "dimension",
+     "value": "14px",
+     "source": "computed fontSize of plan-name default (raw/components-computed.json)",
+     "description": "Plan eyebrows and menu links, 14px."
+    },
+    "nav": {
+     "type": "dimension",
+     "value": "12px",
+     "source": "computed fontSize of nav-item default (raw/components-computed.json)",
+     "description": "Nav labels — 12px at weight 700."
+    },
+    "footer": {
+     "type": "dimension",
+     "value": "12px",
+     "source": "computed fontSize of footer-link default (raw/components-computed.json)",
+     "description": "Footer links — 12px at weight 700."
+    }
+   }
+  }
+ },
+ "dark": {
+  "surface": {
+   "page": {
+    "type": "color",
+    "description": "The black page ground — painted by the html element (body itself is transparent).",
+    "value": "{color.ink.950}",
+    "source": "computed backgroundColor of page-ground default (raw/components-computed.json); same value as core.color.ink.950"
+   },
+   "band": {
+    "type": "color",
+    "description": "The #0f0f10 band — the site footer and the bottom-CTA section.",
+    "value": "{color.ink.900}",
+    "source": "computed backgroundColor of footer default (raw/components-computed.json); same value as core.color.ink.900"
+   },
+   "pill": {
+    "type": "color",
+    "description": "The nav pill's glass fill — 3% white under a white sheen gradient.",
+    "value": "{color.white-alpha.3}",
+    "source": "computed paint.0.bg of header default (raw/components-computed.json); same value as core.color.white-alpha.3"
+   },
+   "control": {
+    "type": "color",
+    "description": "The 6% white scrim on dark controls (hamburger, drawer).",
+    "value": "{color.white-alpha.6}",
+    "source": "computed backgroundColor of m-menu-button default (raw/components-computed.json); same value as core.color.white-alpha.6"
+   }
+  },
+  "text": {
+   "primary": {
+    "type": "color",
+    "description": "The display headline's warm off-white.",
+    "value": "{color.cream.0}",
+    "source": "computed color of hero-title default (raw/components-computed.json); same value as core.color.cream.0"
+   },
+   "body": {
+    "type": "color",
+    "description": "Body text on the dark surface — 70% white.",
+    "value": "{color.white-alpha.70}",
+    "source": "computed color of header default (raw/components-computed.json); same value as core.color.white-alpha.70"
+   },
+   "muted": {
+    "type": "color",
+    "description": "Muted actions on the dark surface — the Sign-In label.",
+    "value": "{color.white-alpha.64}",
+    "source": "computed color of nav-signin default (raw/components-computed.json); same value as core.color.white-alpha.64"
+   },
+   "faint": {
+    "type": "color",
+    "description": "Faint text on the dark surface — footer links, secondary rows.",
+    "value": "{color.white-alpha.40}",
+    "source": "computed color of footer-link default (raw/components-computed.json); same value as core.color.white-alpha.40"
+   },
+   "accent": {
+    "type": "color",
+    "description": "The tan accent — wordmark, social icons, the bottom CTA's label.",
+    "value": "{color.tan.300}",
+    "source": "computed color of logo default (raw/components-computed.json); same value as core.color.tan.300"
+   },
+   "accentHover": {
+    "type": "color",
+    "description": "The tan accent's hover step.",
+    "value": "{color.tan.400}",
+    "source": "computed color of cta-bottom hover (raw/components-computed.json); same value as core.color.tan.400"
+   },
+   "onInverted": {
+    "type": "color",
+    "description": "Black text on the inverted off-white CTA.",
+    "value": "{color.ink.950}",
+    "source": "computed color of cta default (raw/components-computed.json); same value as core.color.ink.950"
+   }
+  },
+  "accent": {
+   "type": "color",
+   "description": "The marketing orange — hover text on menu links.",
+   "value": "{color.orange.500}",
+   "source": "computed color of m-menu-link hover (raw/components-computed.json); same value as core.color.orange.500"
+  },
+  "fill": {
+   "inverted": {
+    "type": "color",
+    "description": "The hero CTA's off-white fill — the primary action on the dark surface.",
+    "value": "{color.paper.0}",
+    "source": "computed backgroundColor of cta default (raw/components-computed.json); same value as core.color.paper.0"
+   },
+   "invertedStrong": {
+    "type": "color",
+    "description": "The bottom CTA's pure-white fill.",
+    "value": "{color.paper.100}",
+    "source": "computed backgroundColor of cta-bottom default (raw/components-computed.json); same value as core.color.paper.100"
+   }
+  },
+  "navHover": {
+   "type": "color",
+   "description": "The dark controls' 8% hover wash.",
+   "value": "{color.white-alpha.8}",
+   "source": "computed backgroundColor of nav-signin hover (raw/components-computed.json); same value as core.color.white-alpha.8"
+  },
+  "ring": {
+   "control": {
+    "type": "color",
+    "description": "The 24% white inset ring on the nav GET STARTED pill.",
+    "value": "{color.white-alpha.24}",
+    "source": "computed paint.0.shadow of nav-cta default (raw/components-computed.json); same value as core.color.white-alpha.24"
+   }
+  },
+  "focus": {
+   "type": "color",
+   "description": "Focus rings on this surface keep the browser's auto ring (dark ink on the glass controls) — recorded per entry; the 3px outline colour is the element's own text shade elsewhere.",
+   "value": "#101010",
+   "source": "computed outlineColor of nav-signin focus-visible (raw/components-computed.json)"
+  },
+  "shadow": {
+   "ctaGlow": {
+    "type": "shadow",
+    "value": [
+     {
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "4px",
+      "spread": "1px",
+      "color": "rgba(255, 255, 255, 0.98)"
+     }
+    ],
+    "source": "computed boxShadow of cta default (raw/components-computed.json)",
+    "description": "The near-white glow under the hero CTA."
+   },
+   "navPill": {
+    "type": "shadow",
+    "value": [
+     {
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "0.5px",
+      "color": "rgba(0, 0, 0, 0.06)"
+     },
+     {
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "4px",
+      "spread": "-2px",
+      "color": "rgba(0, 0, 0, 0.1)"
+     },
+     {
+      "offsetX": "0px",
+      "offsetY": "8px",
+      "blur": "16px",
+      "spread": "-8px",
+      "color": "rgba(0, 0, 0, 0.06)"
+     }
+    ],
+    "source": "computed paint.0.shadow of header default (raw/components-computed.json)",
+    "description": "The nav pill's layered glass shadow (hairline ring + two soft drops; the inset sheen layers are omitted)."
+   }
+  }
+ },
+ "light": {
+  "surface": {
+   "page": {
+    "type": "color",
+    "description": "The pricing route's warm-cream ground.",
+    "value": "{color.paper.50}",
+    "source": "computed backgroundColor of pricing-ground default (raw/components-computed.json); same value as core.color.paper.50"
+   },
+   "card": {
+    "type": "color",
+    "description": "The plan card's 6% grey fill under its white sheen gradient.",
+    "value": "{color.gray-alpha.6}",
+    "source": "computed backgroundColor of plan-card default (raw/components-computed.json); same value as core.color.gray-alpha.6"
+   },
+   "chip": {
+    "type": "color",
+    "description": "The billing toggle's 6% ink chip fill.",
+    "value": "{color.ink-alpha.6}",
+    "source": "computed backgroundColor of billing-toggle default (raw/components-computed.json); same value as core.color.ink-alpha.6"
+   }
+  },
+  "text": {
+   "primary": {
+    "type": "color",
+    "description": "Heading ink on the light routes.",
+    "value": "{color.ink.800}",
+    "source": "computed color of pricing-h1 default (raw/components-computed.json); same value as core.color.ink.800"
+   },
+   "muted": {
+    "type": "color",
+    "description": "The sign-in card's grey text — 'Create account'.",
+    "value": "{color.gray.500}",
+    "source": "computed color of signin-toggle default (raw/components-computed.json); same value as core.color.gray.500"
+   },
+   "accent": {
+    "type": "color",
+    "description": "The orange eyebrow labels on the plan cards.",
+    "value": "{color.orange.500}",
+    "source": "computed color of plan-name default (raw/components-computed.json); same value as core.color.orange.500"
+   },
+   "onAccent": {
+    "type": "color",
+    "description": "White text on the filled orange CTA.",
+    "value": "{color.paper.100}",
+    "source": "computed color of plan-cta-filled default (raw/components-computed.json); same value as core.color.paper.100"
+   }
+  },
+  "accent": {
+   "type": "color",
+   "description": "The marketing orange — the filled Try-it-free button.",
+   "value": "{color.orange.500}",
+   "source": "computed backgroundColor of plan-cta-filled default (raw/components-computed.json); same value as core.color.orange.500"
+  },
+  "accentRing": {
+   "type": "color",
+   "description": "The 24% orange glow ring around the popular card.",
+   "value": "{color.orange.alpha24}",
+   "source": "computed ringShadow of plan-card-popular default (raw/components-computed.json); same value as core.color.orange.alpha24"
+  },
+  "accentApp": {
+   "type": "color",
+   "description": "The app surface's own orange — Sign in with email.",
+   "value": "{color.orange-app.500}",
+   "source": "computed backgroundColor of signin-email-btn default (raw/components-computed.json); same value as core.color.orange-app.500"
+  },
+  "field": {
+   "fill": {
+    "type": "color",
+    "description": "The sign-in field's 4% ink fill.",
+    "value": "{color.ink-alpha.4}",
+    "source": "computed backgroundColor of signin-input default (raw/components-computed.json); same value as core.color.ink-alpha.4"
+   }
+  },
+  "border": {
+   "subtle": {
+    "type": "color",
+    "description": "The plan card's #eceae8 hairline.",
+    "value": "#eceae8",
+    "source": "computed paint.0.border of plan-card default (raw/components-computed.json)"
+   },
+   "control": {
+    "type": "color",
+    "description": "The outline plan button's 40% ink border.",
+    "value": "{color.ink-alpha.40}",
+    "source": "computed borderTopColor of plan-cta default (raw/components-computed.json); same value as core.color.ink-alpha.40"
+   },
+   "field": {
+    "type": "color",
+    "description": "The sign-in field's 10% ink border.",
+    "value": "{color.ink-alpha.10}",
+    "source": "computed borderTopColor of signin-input default (raw/components-computed.json); same value as core.color.ink-alpha.10"
+   }
+  },
+  "oauth": {
+   "ink": {
+    "type": "color",
+    "description": "The Apple sign-in button.",
+    "value": "{color.ink.750}",
+    "source": "computed backgroundColor of signin-apple default (raw/components-computed.json); same value as core.color.ink.750"
+   },
+   "google": {
+    "type": "color",
+    "description": "The Google sign-in button.",
+    "value": "{color.google.500}",
+    "source": "computed backgroundColor of signin-google default (raw/components-computed.json); same value as core.color.google.500"
+   },
+   "googleHover": {
+    "type": "color",
+    "description": "The Google blue at 87% — hover/pressed.",
+    "value": "{color.google.600}",
+    "source": "computed backgroundColor of signin-google hover (raw/components-computed.json); same value as core.color.google.600"
+   }
+  },
+  "shadow": {
+   "popularRing": {
+    "type": "shadow",
+    "value": [
+     {
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "3px",
+      "color": "rgba(251, 114, 50, 0.24)"
+     }
+    ],
+    "source": "computed boxShadow of plan-card-popular default (raw/components-computed.json)",
+    "description": "The orange glow ring around the popular plan card."
+   }
+  }
+ },
+ "component": {
+  "control": {
+   "heightCta": {
+    "type": "dimension",
+    "value": "54px",
+    "source": "computed height of cta default (raw/components-computed.json)",
+    "description": "The hero CTA's 54px pill."
+   },
+   "heightCtaBottom": {
+    "type": "dimension",
+    "value": "52px",
+    "source": "computed height of cta-bottom default (raw/components-computed.json)",
+    "description": "The bottom CTA's 52px pill."
+   },
+   "heightNavCta": {
+    "type": "dimension",
+    "value": "32.0312px",
+    "source": "computed height of nav-cta default (raw/components-computed.json)",
+    "description": "The nav GET STARTED pill, 32px."
+   },
+   "heightSigninLink": {
+    "type": "dimension",
+    "value": "34px",
+    "source": "computed height of nav-signin default (raw/components-computed.json)",
+    "description": "The nav Sign-In action, 34px."
+   },
+   "heightPlanCta": {
+    "type": "dimension",
+    "value": "44px",
+    "source": "computed height of plan-cta default (raw/components-computed.json)",
+    "description": "The plan cards' action button, 44px."
+   },
+   "heightField": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of signin-input default (raw/components-computed.json)",
+    "description": "The sign-in field, 40px."
+   },
+   "heightOauth": {
+    "type": "dimension",
+    "value": "44px",
+    "source": "computed height of signin-apple default (raw/components-computed.json)",
+    "description": "The OAuth buttons, 44px."
+   },
+   "heightToggle": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of billing-toggle default (raw/components-computed.json)",
+    "description": "The billing toggle, 40px."
+   },
+   "heightFilter": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of filter-button default (raw/components-computed.json)",
+    "description": "The feature filter pills, 48px."
+   },
+   "heightHamburger": {
+    "type": "dimension",
+    "value": "32px",
+    "source": "computed height of m-menu-button default (raw/components-computed.json)",
+    "description": "The mobile hamburger, 32px."
+   },
+   "radiusCta": {
+    "type": "dimension",
+    "value": "14px",
+    "source": "computed borderTopLeftRadius of cta default (raw/components-computed.json)",
+    "description": "Hero CTA corners, 14px."
+   },
+   "radiusCtaBottom": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "computed borderTopLeftRadius of cta-bottom default (raw/components-computed.json)",
+    "description": "Bottom CTA corners, 16px."
+   },
+   "radiusPlanCta": {
+    "type": "dimension",
+    "value": "10px",
+    "source": "computed borderTopLeftRadius of plan-cta default (raw/components-computed.json)",
+    "description": "Plan button corners, 10px."
+   },
+   "radiusNavCta": {
+    "type": "dimension",
+    "value": "8px",
+    "source": "computed paint.0.radius of nav-cta default (raw/components-computed.json)",
+    "description": "Nav pill corners, 8px."
+   },
+   "radiusHamburger": {
+    "type": "dimension",
+    "value": "8px",
+    "source": "computed borderTopLeftRadius of m-menu-button default (raw/components-computed.json)",
+    "description": "Hamburger corners, 8px."
+   },
+   "radiusSigninLink": {
+    "type": "dimension",
+    "value": "8px",
+    "source": "computed borderTopLeftRadius of nav-signin default (raw/components-computed.json)",
+    "description": "Sign-In action corners, 8px."
+   },
+   "radiusField": {
+    "type": "dimension",
+    "value": "6px",
+    "source": "computed borderTopLeftRadius of signin-input default (raw/components-computed.json)",
+    "description": "Sign-in field corners, 6px."
+   },
+   "radiusSigninBtn": {
+    "type": "dimension",
+    "value": "12px",
+    "source": "computed borderTopLeftRadius of signin-email-btn default (raw/components-computed.json)",
+    "description": "Sign-in button corners, 12px."
+   },
+   "radiusToggle": {
+    "type": "dimension",
+    "value": "12px",
+    "source": "computed borderTopLeftRadius of billing-toggle default (raw/components-computed.json)",
+    "description": "Billing toggle corners, 12px."
+   },
+   "radiusFilter": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "computed paint.0.radius of filter-button default (raw/components-computed.json)",
+    "description": "Filter pill corners, 16px."
+   }
+  },
+  "card": {
+   "radiusPlan": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "computed paint.0.radius of plan-card default (raw/components-computed.json)",
+    "description": "Plan card corners, 16px."
+   },
+   "radiusDrawer": {
+    "type": "dimension",
+    "value": "12px",
+    "source": "computed paint.0.radius of m-menu-open default (raw/components-computed.json)",
+    "description": "Mobile drawer corners, 12px."
+   }
+  },
+  "nav": {
+   "height": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The nav pill at 1440px, 48px."
+   },
+   "width": {
+    "type": "dimension",
+    "value": "388px",
+    "source": "computed width of header default (raw/components-computed.json)",
+    "description": "The nav pill's width, 388px."
+   }
+  },
+  "menuPanel": {
+   "width": {
+    "type": "dimension",
+    "value": "556px",
+    "source": "computed width of menu-panel default (raw/components-computed.json); read from the wrong element (the closed Company panel, opacity 0, not the open dropdown); recapture needed",
+    "description": "The width of a nav dropdown panel, 556px. Read from the wrong element: the closed Company panel (opacity 0), not the open dropdown; recapture needed."
+   }
+  },
+  "footer": {
+   "height": {
+    "type": "dimension",
+    "value": "335px",
+    "source": "computed height of footer default (raw/components-computed.json)",
+    "description": "The footer block at 1440px, 335px."
+   }
+  },
+  "drawer": {
+   "height": {
+    "type": "dimension",
+    "value": "762px",
+    "source": "computed height of m-menu-open default (raw/components-computed.json)",
+    "description": "The mobile drawer at 390px, 762px."
+   }
+  },
+  "planCard": {
+   "height": {
+    "type": "dimension",
+    "value": "196px",
+    "source": "computed height of plan-card default (raw/components-computed.json)",
+    "description": "The plan card's inner height, 196px."
+   }
+  }
+ }
+}

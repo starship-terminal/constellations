@@ -1,0 +1,448 @@
+{
+ "_meta": {
+  "readAt": "2026-11-19",
+  "probe": "page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page",
+  "source": "public pages, headless Chromium, read at rest",
+  "notes": "Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial."
+ },
+ "summary": {
+  "moving": 4,
+  "removed": 0,
+  "reduced": 0,
+  "kept": 4,
+  "partial": 0,
+  "increased": 0,
+  "added": 0,
+  "behaviour": "ignores",
+  "loops": [
+   "marquee-667400b0"
+  ]
+ },
+ "pages": {
+  "page-1": {
+   "url": "https://mschf.com/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 971,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 2,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 2,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "ignores",
+    "loops": [
+     "marquee-667400b0"
+    ]
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "marquee-667400b0",
+        "durationMs": 50000,
+        "delayMs": 0,
+        "easing": "steps(50, end)",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "marquee-667400b0",
+        "durationMs": 50000,
+        "delayMs": 0,
+        "easing": "steps(50, end)",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "marquee-667400b0",
+       "outcome": "kept",
+       "from": 50000,
+       "to": 50000,
+       "loops": true
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "span.marquee.marquee-infinite"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "right",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "right",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "right",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.grecaptcha-badge"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "marquee-667400b0",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "marquee-mobile-667400b0",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "marquee-667400b0",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "marquee-mobile-667400b0",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [],
+   "declared": [
+    {
+     "selector": ".marquee-infinite[data-v-667400b0], .marquee-reversing[data-v-667400b0]",
+     "context": [
+      "@media (max-width: 500px)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "marquee-mobile-667400b0"
+      }
+     ]
+    },
+    {
+     "selector": ".marquee-infinite[data-v-667400b0], .marquee-reversing[data-v-667400b0]",
+     "context": [
+      "@media (max-width: 500px)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "marquee-mobile-667400b0"
+      }
+     ]
+    }
+   ],
+   "customProperties": []
+  },
+  "page-2": {
+   "url": "https://mschf.com/missing-page",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 83,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 2,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 2,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "ignores",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-position",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-position",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-position",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "a.cursor-pointer.gradient-border.px-4::before"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "right",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "right",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "right",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.grecaptcha-badge"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "marquee-667400b0",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "marquee-mobile-667400b0",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [],
+   "declared": [
+    {
+     "selector": ".gradient-border[data-v-28c488d2]::before",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-position",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".marquee-infinite[data-v-667400b0], .marquee-reversing[data-v-667400b0]",
+     "context": [
+      "@media (max-width: 500px)"
+     ],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "marquee-mobile-667400b0"
+      }
+     ]
+    }
+   ],
+   "customProperties": []
+  }
+ }
+}

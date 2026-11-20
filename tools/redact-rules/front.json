@@ -1,0 +1,16 @@
+{
+ "_note": "Rules for systems/front. Public signed-out capture of front.com, app.frontapp.com, help.front.com and dev.frontapp.com. No capture-machine-private values appear; the flagged addresses below are Front's own published placeholder and example addresses (form placeholders, dev-portal and help-article sample mailboxes), allow-listed the way other packages allow-list their vendors'.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@company\\.com$",
+   "@example\\.com$",
+   "john\\.doe\\+1@gmail\\.com$",
+   "@testforfront\\.com$",
+   "@support\\.com$",
+   "@front\\.com$",
+   "@frontapp\\.com$"
+  ],
+  "net": true
+ }
+}

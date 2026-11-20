@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Walmart style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #ffffff;
+    --header: #0053e2;
+    --text: #000000;
+    --muted: #74767c;
+    --brand: #001e60;
+    --accent: #0053e2;
+    --accent-fg: #ffffff;
+    --chip: #c9dcfd;
+    --spark: #ffc220;
+    --ink: #2e2f32;
+    --positive: #2a8703;
+    --negative: #ea1100;
+    --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--text); font: 16px/20px var(--font); }
+  header { background: var(--header); color: var(--accent-fg); padding: 24px 32px; }
+  header h1 { margin: 0; font-size: 24px; line-height: 30px; font-weight: 700; }
+  header p { margin: 8px 0 0; font-size: 14px; }
+  main { padding: 32px; max-width: 960px; }
+  h2 { font-size: 24px; line-height: 30px; margin: 32px 0 12px; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .swatch i { display: block; height: 64px; border-radius: 8px; border: 1px solid #e3e4e5; }
+  .swatch span { display: block; font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .chip { display: inline-flex; align-items: center; height: 32px; padding: 6px 12px; border-radius: 100px; border: 1px solid var(--chip); color: var(--brand); font-size: 14px; font-weight: 700; background: #fff; }
+  .search { display: flex; align-items: center; height: 52px; padding: 1px 8px 1px 24px; border-radius: 9999px; background: #fff; color: #002e99; border: 0; width: 420px; box-sizing: border-box; }
+  .go { width: 32px; height: 32px; border-radius: 100%; background: #002e99; color: #fff; border: 0; margin-left: auto; }
+  .sign { display: inline-flex; align-items: center; height: 52px; padding: 4px 16px; border-radius: 32px; background: var(--header); color: #fff; }
+  .price { font-size: 24px; font-weight: 700; line-height: 28px; }
+  .price small { font-size: 14px; }
+  .muted { color: var(--muted); font-size: 14px; }
+  .card { width: 208px; }
+  .card .img { height: 160px; background: #f8f8f8; }
+  table { border-collapse: collapse; font-size: 14px; }
+  td { padding: 6px 12px 6px 0; vertical-align: top; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Walmart</h1>
+  <p>Public signed-out surfaces. Specimens use measured tokens. EverydaySans is proprietary, so this page falls back to Helvetica Neue.</p>
+</header>
+<main>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><i style="background:#ffffff"></i><span>page #ffffff</span></div>
+    <div class="swatch"><i style="background:#0053e2"></i><span>header #0053e2</span></div>
+    <div class="swatch"><i style="background:#002e99"></i><span>search button #002e99</span></div>
+    <div class="swatch"><i style="background:#001e60"></i><span>navy label #001e60</span></div>
+    <div class="swatch"><i style="background:#c9dcfd"></i><span>chip border #c9dcfd</span></div>
+    <div class="swatch"><i style="background:#ffc220"></i><span>spark #ffc220</span></div>
+    <div class="swatch"><i style="background:#000000"></i><span>text #000000</span></div>
+    <div class="swatch"><i style="background:#74767c"></i><span>muted #74767c</span></div>
+    <div class="swatch"><i style="background:#2a8703"></i><span>positive #2a8703</span></div>
+    <div class="swatch"><i style="background:#ea1100"></i><span>negative #ea1100</span></div>
+  </div>
+
+  <h2>Type</h2>
+  <p style="font-size:32px;font-weight:700;line-height:36px;margin:0">Save money. Live better.</p>
+  <p style="font-size:24px;font-weight:700;line-height:30px">Discover great brands</p>
+  <p class="muted">Explore new favorites you will love.</p>
+  <p class="price"><small>$</small>20<small>98</small></p>
+
+  <h2>Controls</h2>
+  <div class="row" style="align-items:center">
+    <span class="chip">Departments</span>
+    <span class="search">Search everything at Walmart <button class="go" type="button" aria-label="Search"></button></span>
+    <span class="sign">Sign In Account</span>
+  </div>
+
+  <h2>Tile</h2>
+  <div class="card">
+    <div class="img"></div>
+    <p class="price"><small>$</small>20<small>98</small></p>
+    <p style="margin:0">Product title, 16px, black, underlined when it is a link.</p>
+  </div>
+
+  <h2>Scale</h2>
+  <table>
+    <tr><td>Radius</td><td>0, 4, 8, 16, 32, 100px, 100%</td></tr>
+    <tr><td>Space</td><td>0, 4, 8, 12, 16, 20, 24, 32px. Controls are 52px and chips are 32px.</td></tr>
+    <tr><td>Motion</td><td>100, 200, 300, 400ms. Ease-in, ease-out, ease-in-out.</td></tr>
+  </table>
+</main>
+</body>
+</html>

@@ -1012,22 +1012,23 @@ Page: contact. Selector: `.ds-submit`. States: default, hover, focus-visible, pr
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 414 x 40 | = | = | = |
-| Padding | 0px 12px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 12px | = | = | = |
-| Background | #000000 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | Inter Variable 14px/20px 500 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #ffffff | = | = | = |
-| Transition | background-color 0.15s ease | = | = | = |
-| Cursor | not-allowed | = | = | = |
-| Painted layers | button.ds-submit 414.0x40.0 bg #000000 r 12px | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 414 x 40 | = | - | = |
+| Padding | 0px 12px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 12px | = | - | = |
+| Background | #000000 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | Inter Variable 14px/20px 500 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #ffffff | = | - | = |
+| Transition | background-color 0.15s ease | = | - | = |
+| Cursor | not-allowed | = | - | = |
+| Painted layers | button.ds-submit 414.0x40.0 bg #000000 r 12px | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `form-submit-default.png`, `form-submit-hover.png`, `form-submit-focus-visible.png`, `form-submit-pressed.png`.
+Crops: `form-submit-default.png`, `form-submit-hover.png`, `form-submit-pressed.png`.
 
 ### Footer
 

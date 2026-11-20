@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kitchen Stories style guide</title>
+<meta name="description" content="Kitchen Stories design tokens from the public signed-out magazine, rendered from tokens.json.">
+<style>
+:root {
+  --font-family-sans: "Plus Jakarta Sans","Helvetica",sans-serif;
+  --font-family-display: "Plus Jakarta Sans","Helvetica",sans-serif;
+  --font-family-system: -apple-system,system-ui,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif;
+  --font-family-mono: "Menlo","Consolas",monaco,monospace;
+  --font-size-theme-base: 20px;
+  --font-size-theme-base-sm: 18px;
+  --font-size-theme-lg: 22.3906px;
+  --font-size-theme-md: 19.1875px;
+  --font-size-theme-ratio: 1.125px;
+  --font-size-theme-sm: 12.7969px;
+  --font-size-theme-xl: 28.7969px;
+  --font-size-theme-xs: 11.1875px;
+  --font-size-theme-xxl: 35.1875px;
+  --font-size-theme-xxs: 9.59375px;
+  --font-size-theme-xxxl: 44.7969px;
+  --font-size-theme-xxxxl: 51.1875px;
+  --font-size-theme-xxxxxl: 64px;
+  --font-size-wp-preset-font-size-huge: 44px;
+  --font-size-wp-preset-font-size-large: 36px;
+  --font-size-wp-preset-font-size-medium: 20px;
+  --font-size-wp-preset-font-size-normal: 20px;
+  --font-size-wp-preset-font-size-small: 16px;
+  --font-size-wp-preset-font-size-x-large: 42px;
+  --font-size-wpds-2xl: 32px;
+  --font-size-wpds-lg: 15px;
+  --font-size-wpds-md: 13px;
+  --font-size-wpds-sm: 12px;
+  --font-size-wpds-xl: 20px;
+  --font-size-wpds-xs: 11px;
+  --radius-lg: 8px;
+  --radius-md: 4px;
+  --radius-sm: 2px;
+  --radius-xl: 12px;
+  --radius-xs: 1px;
+  --borderWidth-focus: 2px;
+  --borderWidth-lg: 8px;
+  --borderWidth-md: 4px;
+  --borderWidth-sm: 2px;
+  --borderWidth-xs: 1px;
+  --component-header-height: 84.7656px;
+  --component-search-field-height: 41.9688px;
+  --component-nav-link-size: 15px;
+  --component-recipe-h1-size: 32px;
+  --component-card-title-size: 38px;
+  --page: #ffffff;
+  --surface: #f0f0f0;
+  --surface-input: #ffffff;
+  --header: #ffffff;
+  --footer: #fff5ea;
+  --ink: #111111;
+  --ink-strong: #212121;
+  --muted: #515151;
+  --hover: #404040;
+  --link: #000000;
+  --border: #cccccc;
+  --border-light: #e0e0e0;
+  --highlight: #fed850;
+  --cta: #dd3333;
+  --cta-text: #ffffff;
+  --on-primary: #ffffff;
+  --dark: #333333;
+  --alert-red: #d63638;
+  --alert-green: #008a20;
+  --alert-yellow: #dba617;
+  --button-hover: #111111;
+  --menu: #e5e5e5;
+  --wpds-background-interactive-brand-strong: #003da5;
+  --wpds-background-interactive-brand-strong-active: #001f53;
+  --wpds-background-interactive-brand-strong-disabled: #e6e6e6;
+  --wpds-background-interactive-brand-weak: rgba(0, 0, 0, 0);
+  --wpds-background-interactive-brand-weak-active: #dfe7f4;
+  --wpds-background-interactive-brand-weak-disabled: rgba(0, 0, 0, 0);
+  --wpds-background-interactive-error: rgba(0, 0, 0, 0);
+  --wpds-background-interactive-error-active: #fff6f5;
+  --wpds-background-interactive-error-disabled: rgba(0, 0, 0, 0);
+  --wpds-background-interactive-error-strong: #cc1818;
+  --wpds-background-interactive-error-strong-active: #b90000;
+  --wpds-background-interactive-error-strong-disabled: #e6e6e6;
+  --wpds-background-interactive-error-weak: rgba(0, 0, 0, 0);
+  --wpds-background-interactive-error-weak-active: #f6e6e3;
+  --wpds-background-interactive-error-weak-disabled: rgba(0, 0, 0, 0);
+  --wpds-background-interactive-neutral-strong: #2d2d2d;
+  --wpds-background-interactive-neutral-strong-active: #1e1e1e;
+  --wpds-background-interactive-neutral-strong-disabled: #e6e6e6;
+  --wpds-background-interactive-neutral-weak: rgba(0, 0, 0, 0);
+  --wpds-background-interactive-neutral-weak-active: #ededed;
+  --wpds-background-interactive-neutral-weak-disabled: rgba(0, 0, 0, 0);
+  --wpds-background-surface-brand: #dfe7f4;
+  --wpds-background-surface-caution: #fee995;
+  --wpds-background-surface-caution-weak: #fff9ca;
+  --wpds-background-surface-error: #f6e6e3;
+  --wpds-background-surface-error-weak: #fff6f5;
+  --wpds-background-surface-info: #deebfa;
+  --wpds-background-surface-info-weak: #f3f9ff;
+  --wpds-background-surface-neutral: #fcfcfc;
+  --wpds-background-surface-neutral-strong: #ffffff;
+  --wpds-background-surface-neutral-weak: #f4f4f4;
+  --wpds-background-surface-success: #c6f7cd;
+  --wpds-background-surface-success-weak: #ebffed;
+  --wpds-background-surface-warning: #fde6be;
+  --wpds-background-surface-warning-weak: #fff7e1;
+  --wpds-background-thumb-brand: #003da5;
+  --wpds-background-thumb-brand-active: #003da5;
+  --wpds-background-thumb-brand-disabled: #dbdbdb;
+  --wpds-background-thumb-neutral-disabled: #dbdbdb;
+  --wpds-background-thumb-neutral-weak: #8d8d8d;
+  --wpds-background-thumb-neutral-weak-active: #6e6e6e;
+  --wpds-background-thumb-neutral-weak-disabled: #dbdbdb;
+  --wpds-background-track-neutral: #dbdbdb;
+  --wpds-background-track-neutral-weak: #f0f0f0;
+  --wpds-foreground-content-caution: #281d00;
+  --wpds-foreground-content-caution-weak: #826a00;
+  --wpds-foreground-content-error: #470000;
+  --wpds-foreground-content-error-weak: #cc1818;
+  --wpds-foreground-content-info: #001b4f;
+  --wpds-foreground-content-info-weak: #006bd7;
+  --wpds-foreground-content-neutral: #1e1e1e;
+  --wpds-foreground-content-neutral-weak: #707070;
+  --wpds-foreground-content-success: #002900;
+  --wpds-foreground-content-success-weak: #008030;
+  --wpds-foreground-content-warning: #2e1900;
+  --wpds-foreground-content-warning-weak: #926300;
+  --wpds-foreground-interactive-brand: #003da5;
+  --wpds-foreground-interactive-brand-active: #001f53;
+  --wpds-foreground-interactive-brand-disabled: #406ebc;
+  --wpds-foreground-interactive-brand-strong: #eff0f2;
+  --wpds-foreground-interactive-brand-strong-active: #eff0f2;
+  --wpds-foreground-interactive-brand-strong-disabled: #8d8d8d;
+  --wpds-foreground-interactive-error: #cc1818;
+  --wpds-foreground-interactive-error-active: #470000;
+  --wpds-foreground-interactive-error-disabled: #8d8d8d;
+  --wpds-foreground-interactive-error-strong: #f2efef;
+  --wpds-foreground-interactive-error-strong-active: #f2efef;
+  --wpds-foreground-interactive-error-strong-disabled: #8d8d8d;
+  --wpds-foreground-interactive-neutral: #1e1e1e;
+  --wpds-foreground-interactive-neutral-active: #1e1e1e;
+  --wpds-foreground-interactive-neutral-disabled: #8d8d8d;
+  --wpds-foreground-interactive-neutral-strong: #f0f0f0;
+  --wpds-foreground-interactive-neutral-strong-active: #f0f0f0;
+  --wpds-foreground-interactive-neutral-strong-disabled: #8d8d8d;
+  --wpds-foreground-interactive-neutral-weak: #707070;
+  --wpds-foreground-interactive-neutral-weak-active: #1e1e1e;
+  --wpds-foreground-interactive-neutral-weak-disabled: #8d8d8d;
+  --wpds-stroke-focus: #003da5;
+  --wpds-stroke-interactive-brand: #003da5;
+  --wpds-stroke-interactive-brand-active: #001f53;
+  --wpds-stroke-interactive-brand-disabled: #9fb6dd;
+  --wpds-stroke-interactive-error: #cc1818;
+  --wpds-stroke-interactive-error-active: #9d0000;
+  --wpds-stroke-interactive-error-disabled: #dbdbdb;
+  --wpds-stroke-interactive-error-strong: #cc1818;
+  --wpds-stroke-interactive-neutral: #8d8d8d;
+  --wpds-stroke-interactive-neutral-active: #6e6e6e;
+  --wpds-stroke-interactive-neutral-disabled: #dbdbdb;
+  --wpds-stroke-interactive-neutral-strong: #6e6e6e;
+  --wpds-stroke-surface-brand: #dfe7f4;
+  --wpds-stroke-surface-brand-strong: #003da5;
+  --wpds-stroke-surface-caution: #cfc28d;
+  --wpds-stroke-surface-caution-strong: #826a00;
+  --wpds-stroke-surface-error: #dab1aa;
+  --wpds-stroke-surface-error-strong: #cc1818;
+  --wpds-stroke-surface-info: #a9c6e7;
+  --wpds-stroke-surface-info-strong: #006bd7;
+  --wpds-stroke-surface-neutral: #dbdbdb;
+  --wpds-stroke-surface-neutral-strong: #8d8d8d;
+  --wpds-stroke-surface-neutral-weak: #f0f0f0;
+  --wpds-stroke-surface-success: #94d29e;
+  --wpds-stroke-surface-success-strong: #008030;
+  --wpds-stroke-surface-warning: #e1bc7c;
+  --wpds-stroke-surface-warning-strong: #926300;
+  --sg-sans: var(--font-family-sans, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif);
+  --sg-serif: var(--font-family-display, Georgia, "Times New Roman", serif);
+  --sg-body: var(--font-family-content, Georgia, "Times New Roman", serif);
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--ink, #111); background: var(--page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.1 var(--sg-sans); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink, #111); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border, #ccc); }
+.lead { max-width: 62ch; color: var(--ink, #111); opacity: .8; }
+.note { font-size: 13px; color: var(--ink, #111); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink, #111); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, #ccc); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--ink, #111); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border, #ccc); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--ink, #111); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border, #ccc); overflow: hidden; background: var(--page, #fff); }
+.util { display: flex; align-items: center; gap: 18px; height: var(--component-nav-utility-height, 32px); padding: 0 14px; font-size: 12px; font-weight: 600; letter-spacing: .02em; color: var(--nav-utility-txt, #121212); background: var(--brand-red, #ff3a30); }
+.util .sp { flex: 1; }
+.navbar { display: flex; align-items: center; gap: 20px; padding: 0 18px; height: 66px; font-size: 15px; color: var(--ink, #111); background: var(--page, #fff); border-bottom: 1px solid var(--border, #ccc); }
+.navbar .wm { font: 400 26px/1 var(--sg-serif); letter-spacing: .18em; text-transform: uppercase; }
+.navbar .search { width: var(--component-search-input-width, 211px); height: var(--component-search-input-height, 26px); border: 1px solid var(--border-field, #d6d6d6); border-radius: var(--radius-sm, 4px); font-size: 12px; color: var(--text-disabled, #757575); padding: 0 10px; display: inline-flex; align-items: center; }
+.navbar .sp { flex: 1; }
+.megamenu { display: flex; align-items: center; gap: 18px; height: var(--component-megamenu-height, 53px); padding: 0 18px; font: 500 13px/1 var(--sg-sans); color: var(--nav-header-txt, #121212); background: var(--page, #fff); border-bottom: 1px solid var(--border-megamenu, #ffaca8); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-subscribe-height, 38px); padding: 0 22px; font-size: 14px; font-weight: 600; border-radius: var(--radius-pill, 1024px); border: 1px solid transparent; }
+.btn.primary { background: var(--button-primary-bg, #ff3a30); border-color: var(--button-primary-border, #ff3a30); color: var(--button-primary-txt, #121212); }
+.btn.ghost { background: var(--page, #fff); border-color: var(--ink, #111); color: var(--brand-red, #ff3a30); }
+.eyebrow { font: 700 10px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--eyebrow-txt, #121212); }
+.hero { color: var(--ink, #111); padding: 56px 40px 48px; font: 400 48px/1.05 var(--sg-serif); background: var(--page, #fff); }
+.hero small { display: block; font: 400 17px/1.5 var(--sg-sans); color: var(--text-subtle, #575757); margin: 18px auto 0; max-width: 52ch; }
+.story { display: flex; gap: 16px; align-items: flex-start; padding: 18px; border-top: 1px solid var(--border, #ccc); }
+.story .img { width: var(--component-story-thumb-width, 150px); height: 100px; background: var(--background-panel, #f5f6f8); flex: 0 0 auto; border-radius: var(--radius-sm, 4px); }
+.story b { display: block; font: 500 18px/1.3 var(--sg-sans); color: var(--ink, #111); margin: 6px 0 6px; }
+.story .meta { font: 400 12px/1.4 var(--sg-sans); color: var(--text-muted, #3b3b3b); }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; padding: 20px; }
+.plan { border: 1px solid var(--border, #ccc); border-radius: var(--radius-component-card-offer-dim-border-radius, 8px); padding: 18px; background: var(--page, #fff); }
+.plan .chip { display: inline-block; font: 700 10px/1 var(--sg-sans); letter-spacing: .06em; text-transform: uppercase; color: var(--badge-primary-txt, #121212); background: var(--badge-primary-bg, #ff3a30); padding: 5px 10px; border-radius: var(--radius-pill, 1024px); margin-bottom: 10px; }
+.plan b { display: block; font: 400 20px/1.25 var(--sg-serif); color: var(--ink, #111); }
+.plan .price { font: 400 30px/1.1 var(--sg-sans); color: var(--offer-price, #121212); margin: 8px 0 2px; }
+.plan .was { color: var(--offer-strikethrough, #cc2828); text-decoration: line-through; font-size: 14px; }
+.plan .perk { font: 400 13px/1.8 var(--sg-sans); color: var(--list-included-txt, #121212); }
+.plan .perk.no { color: var(--list-excluded, #575757); }
+.faq { display: flex; justify-content: space-between; align-items: center; width: var(--component-faq-row-width, 100%); max-width: 100%; height: var(--component-faq-row-height, 56px); padding: 0 18px; border-top: 1px solid var(--border, #ccc); font: 500 15px/1 var(--sg-sans); color: var(--accordion-txt, #000); }
+.nwsl { margin: 0 20px 20px; padding: 28px 24px; background: var(--background-panel, #f5f6f8); text-align: center; }
+.nwsl b { display: block; font: 500 24px/1.2 var(--sg-sans); color: var(--ink, #111); margin-bottom: 8px; }
+.nwsl .fld { display: inline-flex; gap: 10px; margin-top: 14px; }
+.nwsl .fld .in { width: var(--component-newsletter-input-width, 280px); height: 44px; border: 1px solid var(--border-field, #d6d6d6); border-radius: var(--radius-sm, 4px); background: #fff; font-size: 14px; color: var(--text-disabled, #757575); padding: 0 14px; display: inline-flex; align-items: center; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border, #ccc); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-soft, #ededed); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--ink, #111); opacity: .65; font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Kitchen Stories style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>. Swatches below are tokens. The boxed mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">kitchenstories.com, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: Newspack theme colours (<code>--newspack-theme-color-*</code>, <code>--newspack-header-color</code>, <code>--newspack-footer-color</code>, <code>--newspack-cta-color</code>) and the WordPress Design System scales (<code>--wpds-*</code>). The magazine paints a white field, <code>#111111</code> ink, a warm <code>#fff5ea</code> footer and a <code>#dd3333</code> call to action, set in Plus Jakarta Sans. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from kitchenstories.com on 2026-11-18, signed out, in headless Chromium. Search was typed into and cleared, never submitted. The consentmanager overlay was hidden, never answered. Checkout, the account profile and the recipe cart were not followed. Plus Jakarta Sans, Barlow, Spectral and ttcommons are served as webfonts; samples fall back to system faces.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A white sticky header: the Kitchen Stories wordmark, primary links (Rezepte, Artikel, App, Plus, Partner), a search opener and a menu button. The footer is the warm <code>#fff5ea</code> band.</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm">Kitchen Stories</span><span class="sp"></span><span>Rezepte</span><span>Artikel</span><span>App</span><span>Plus</span><span class="btn ghost">Suche</span></div>
+  </div>
+
+  <h2 class="sh">The feed</h2>
+  <p class="lead">Recipe cards sit on white: a photo, a time, a category, a Plus Jakarta Sans title and an author link. Search results reuse the same card.</p>
+  <div class="mock">
+    <div class="hero"><span class="eyebrow">Rezept des Tages</span><br>Hühnersuppe mit Zitrone<small>A recipe card title over category and author meta.</small></div>
+    <div class="story"><span class="img"></span><span><span class="eyebrow">Suppe</span><b>Hühnersuppe mit Zitrone</b><span class="meta">35 min</span></span></div>
+  </div>
+
+  <h2 class="sh">Plus</h2>
+  <p class="lead">pages.kitchenstories.com/de/plus is the public marketing page for the paid app. Its start link points at checkout, which was measured as a boundary and not followed.</p>
+  <div class="mock" style="padding:28px;text-align:center">
+    <div style="font:500 28px/1.2 var(--sg-sans)">Die Prise Leichtigkeit</div>
+    <div style="margin-top:16px"><span class="btn primary">Jetzt kostenlos starten</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The light set holds the Newspack theme roles and the resolved WPDS colour tree. The site paints one theme. The dark set is empty.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and borders</h2>
+  <p class="lead"><code>core.radius</code> is the WPDS radius ladder (1px to 12px). <code>core.font.size</code> is the Newspack type scale. Search fields on the magazine are square.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Elevation</h2>
+  <p class="lead">The magazine does not publish a shadow scale in the harvested custom properties. Elevation on the live pages is the sticky header, recorded in the component measurements.</p>
+  <div id="elev-out" class="kv"></div>
+  <div id="z-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Plus Jakarta Sans is the body and header preset. Barlow, Spectral, ttcommons and aime are also served. Samples fall back to system faces.</p>
+  <div id="styles-out"></div>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Source</th><th>What it holds</th></tr><tr><td>Stylesheets</td><td>Resolved Newspack and WPDS custom properties from a signed-out load of the home page</td></tr><tr><td>Computed styles</td><td>Header, search, cards, recipe card, pagination and Plus call to action, including hover, focus-visible and pressed</td></tr><tr><td>Provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"sans":{"v":"\"Plus Jakarta Sans\",\"Helvetica\",sans-serif","t":"fontFamily","s":"css-var --wp--preset--font-family--newspack-body (light); css-var --wp--preset--font-family--newspack-body resolved (raw/css-vars.json)","d":"Plus Jakarta Sans, the body face the magazine paints."},"display":{"v":"\"Plus Jakarta Sans\",\"Helvetica\",sans-serif","t":"fontFamily","s":"css-var --wp--preset--font-family--newspack-header (light); css-var --wp--preset--font-family--newspack-header resolved (raw/css-vars.json)","d":"Plus Jakarta Sans, the header preset."},"system":{"v":"-apple-system,system-ui,\"Segoe UI\",\"Roboto\",\"Oxygen-Sans\",\"Ubuntu\",\"Cantarell\",\"Helvetica Neue\",sans-serif","t":"fontFamily","s":"css-var --wpds-typography-font-family-body (light); css-var --wpds-typography-font-family-body resolved (raw/css-vars.json)","d":"The WordPress Design System system stack, used where the theme does not override."},"mono":{"v":"\"Menlo\",\"Consolas\",monaco,monospace","t":"fontFamily","s":"css-var --wpds-typography-font-family-mono (light); css-var --wpds-typography-font-family-mono resolved (raw/css-vars.json)","d":"The WPDS monospace stack."}},"size":{"theme-base":{"v":"20px","t":"dimension","s":"css-var --newspack-theme-font-size-base (light); css-var --newspack-theme-font-size-base resolved (raw/css-vars.json)","d":"Declared type size --newspack-theme-font-size-base."},"theme-base-sm":{"v":"18px","t":"dimension","s":"css-var --newspack-theme-font-size-base-sm (light); css-var --newspack-theme-font-size-base-sm resolved (raw/css-vars.json)","d":"Declared type size --newspack-theme-font-size-base-sm."},"theme-lg":{"v":"22.3906px","t":"dimension","s":"css-var --newspack-theme-font-size-lg (light); css-var --newspack-theme-font-size-lg resolved (raw/css-vars.json)","d":"Declared type size --newspack-theme-font-size-lg."},"theme-md":{"v":"19.1875px","t":"dimension","s":"css-var --newspack-theme-font-size-md (light); css-var --newspack-theme-font-size-md resolved (raw/css-vars.json)","d":"Declared type size --newspack-theme-font-size-md."},"theme-ratio":{"v":"1.125px","t":"dimension","s":"css-var --newspack-theme-font-size-ratio (light); css-var --newspack-theme-font-size-ratio resolved (raw/css-vars.json)","d":"Declared type size --newspack-theme-font-size-ratio."},"theme-sm":{"v":"12.7969px","t":"dimension","s":"css-var --newspack-theme-font-size-sm (light); css-var --newspack-theme-font-size-sm resolved (raw/css-vars.json)","d":"Declared type size --newspack-theme-font-size-sm."},"theme-xl":{"v":"28.7969px","t":"dimension","s":"css-var --newspack-theme-font-size-xl (light); css-var --newspack-theme-font-size-xl resolved (raw/css-vars.json)","d":"Declared type size --newspack-theme-font-size-xl."},"theme-xs":{"v":"11.1875px","t":"dimension","s":"css-var --newspack-theme-font-size-xs (light); css-var --newspack-theme-font-size-xs resolved (raw/css-vars.json)","d":"Declared type size --newspack-theme-font-size-xs."},"theme-xxl":{"v":"35.1875px","t":"dimension","s":"css-var --newspack-theme-font-size-xxl (light); css-var --newspack-theme-font-size-xxl resolved (raw/css-vars.json)","d":"Declared type size --newspack-theme-font-size-xxl."},"theme-xxs":{"v":"9.59375px","t":"dimension","s":"css-var --newspack-theme-font-size-xxs (light); css-var --newspack-theme-font-size-xxs resolved (raw/css-vars.json)","d":"Declared type size --newspack-theme-font-size-xxs."},"theme-xxxl":{"v":"44.7969px","t":"dimension","s":"css-var --newspack-theme-font-size-xxxl (light); css-var --newspack-theme-font-size-xxxl resolved (raw/css-vars.json)","d":"Declared type size --newspack-theme-font-size-xxxl."},"theme-xxxxl":{"v":"51.1875px","t":"dimension","s":"css-var --newspack-theme-font-size-xxxxl (light); css-var --newspack-theme-font-size-xxxxl resolved (raw/css-vars.json)","d":"Declared type size --newspack-theme-font-size-xxxxl."},"theme-xxxxxl":{"v":"64px","t":"dimension","s":"css-var --newspack-theme-font-size-xxxxxl (light); css-var --newspack-theme-font-size-xxxxxl resolved (raw/css-vars.json)","d":"Declared type size --newspack-theme-font-size-xxxxxl."},"wp-preset-font-size-huge":{"v":"44px","t":"dimension","s":"css-var --wp--preset--font-size--huge (light); css-var --wp--preset--font-size--huge resolved (raw/css-vars.json)","d":"Declared type size --wp--preset--font-size--huge."},"wp-preset-font-size-large":{"v":"36px","t":"dimension","s":"css-var --wp--preset--font-size--large (light); css-var --wp--preset--font-size--large resolved (raw/css-vars.json)","d":"Declared type size --wp--preset--font-size--large."},"wp-preset-font-size-medium":{"v":"20px","t":"dimension","s":"css-var --wp--preset--font-size--medium (light); css-var --wp--preset--font-size--medium resolved (raw/css-vars.json)","d":"Declared type size --wp--preset--font-size--medium."},"wp-preset-font-size-normal":{"v":"20px","t":"dimension","s":"css-var --wp--preset--font-size--normal (light); css-var --wp--preset--font-size--normal resolved (raw/css-vars.json)","d":"Declared type size --wp--preset--font-size--normal."},"wp-preset-font-size-small":{"v":"16px","t":"dimension","s":"css-var --wp--preset--font-size--small (light); css-var --wp--preset--font-size--small resolved (raw/css-vars.json)","d":"Declared type size --wp--preset--font-size--small."},"wp-preset-font-size-x-large":{"v":"42px","t":"dimension","s":"css-var --wp--preset--font-size--x-large (light); css-var --wp--preset--font-size--x-large resolved (raw/css-vars.json)","d":"Declared type size --wp--preset--font-size--x-large."},"wpds-2xl":{"v":"32px","t":"dimension","s":"css-var --wpds-typography-font-size-2xl (light); css-var --wpds-typography-font-size-2xl resolved (raw/css-vars.json)","d":"Declared type size --wpds-typography-font-size-2xl."},"wpds-lg":{"v":"15px","t":"dimension","s":"css-var --wpds-typography-font-size-lg (light); css-var --wpds-typography-font-size-lg resolved (raw/css-vars.json)","d":"Declared type size --wpds-typography-font-size-lg."},"wpds-md":{"v":"13px","t":"dimension","s":"css-var --wpds-typography-font-size-md (light); css-var --wpds-typography-font-size-md resolved (raw/css-vars.json)","d":"Declared type size --wpds-typography-font-size-md."},"wpds-sm":{"v":"12px","t":"dimension","s":"css-var --wpds-typography-font-size-sm (light); css-var --wpds-typography-font-size-sm resolved (raw/css-vars.json)","d":"Declared type size --wpds-typography-font-size-sm."},"wpds-xl":{"v":"20px","t":"dimension","s":"css-var --wpds-typography-font-size-xl (light); css-var --wpds-typography-font-size-xl resolved (raw/css-vars.json)","d":"Declared type size --wpds-typography-font-size-xl."},"wpds-xs":{"v":"11px","t":"dimension","s":"css-var --wpds-typography-font-size-xs (light); css-var --wpds-typography-font-size-xs resolved (raw/css-vars.json)","d":"Declared type size --wpds-typography-font-size-xs."}}},"radius":{"lg":{"v":"8px","t":"dimension","s":"css-var --wpds-border-radius-lg (light); css-var --wpds-border-radius-lg resolved (raw/css-vars.json)","d":"WPDS radius --wpds-border-radius-lg."},"md":{"v":"4px","t":"dimension","s":"css-var --wpds-border-radius-md (light); css-var --wpds-border-radius-md resolved (raw/css-vars.json)","d":"WPDS radius --wpds-border-radius-md."},"sm":{"v":"2px","t":"dimension","s":"css-var --wpds-border-radius-sm (light); css-var --wpds-border-radius-sm resolved (raw/css-vars.json)","d":"WPDS radius --wpds-border-radius-sm."},"xl":{"v":"12px","t":"dimension","s":"css-var --wpds-border-radius-xl (light); css-var --wpds-border-radius-xl resolved (raw/css-vars.json)","d":"WPDS radius --wpds-border-radius-xl."},"xs":{"v":"1px","t":"dimension","s":"css-var --wpds-border-radius-xs (light); css-var --wpds-border-radius-xs resolved (raw/css-vars.json)","d":"WPDS radius --wpds-border-radius-xs."}},"borderWidth":{"focus":{"v":"2px","t":"dimension","s":"css-var --wpds-border-width-focus (light); css-var --wpds-border-width-focus resolved (raw/css-vars.json)","d":"WPDS border width --wpds-border-width-focus."},"lg":{"v":"8px","t":"dimension","s":"css-var --wpds-border-width-lg (light); css-var --wpds-border-width-lg resolved (raw/css-vars.json)","d":"WPDS border width --wpds-border-width-lg."},"md":{"v":"4px","t":"dimension","s":"css-var --wpds-border-width-md (light); css-var --wpds-border-width-md resolved (raw/css-vars.json)","d":"WPDS border width --wpds-border-width-md."},"sm":{"v":"2px","t":"dimension","s":"css-var --wpds-border-width-sm (light); css-var --wpds-border-width-sm resolved (raw/css-vars.json)","d":"WPDS border width --wpds-border-width-sm."},"xs":{"v":"1px","t":"dimension","s":"css-var --wpds-border-width-xs (light); css-var --wpds-border-width-xs resolved (raw/css-vars.json)","d":"WPDS border width --wpds-border-width-xs."}},"component":{"header":{"height":{"v":"84.7656px","t":"dimension","s":"measured header default height (raw/components-computed.json)","d":"height of header."}},"search-field":{"height":{"v":"41.9688px","t":"dimension","s":"measured search-field default height (raw/components-computed.json)","d":"height of search-field."}},"nav-link":{"size":{"v":"15px","t":"dimension","s":"measured nav-link default fontSize (raw/components-computed.json)","d":"size of nav-link."}},"recipe-h1":{"size":{"v":"32px","t":"dimension","s":"measured recipe-h1 default fontSize (raw/components-computed.json)","d":"size of recipe-h1."}},"card-title":{"size":{"v":"38px","t":"dimension","s":"measured card-title default fontSize (raw/components-computed.json)","d":"size of card-title."}}}},"light":{"page":{"v":"#ffffff","t":"color","s":"css-var --newspack-theme-color-bg-body (light); css-var --newspack-theme-color-bg-body resolved (raw/css-vars.json)","d":"Page background."},"surface":{"v":"#f0f0f0","t":"color","s":"css-var --newspack-theme-color-bg-light (light); css-var --newspack-theme-color-bg-light resolved (raw/css-vars.json)","d":"Light surface behind panels."},"surface-input":{"v":"#ffffff","t":"color","s":"css-var --newspack-theme-color-bg-input (light); css-var --newspack-theme-color-bg-input resolved (raw/css-vars.json)","d":"Field background."},"header":{"v":"#ffffff","t":"color","s":"css-var --newspack-header-color (light); css-var --newspack-header-color resolved (raw/css-vars.json)","d":"Header bar background."},"footer":{"v":"#fff5ea","t":"color","s":"css-var --newspack-footer-color (light); css-var --newspack-footer-color resolved (raw/css-vars.json)","d":"Footer background, the warm #fff5ea band."},"ink":{"v":"#111111","t":"color","s":"css-var --newspack-theme-color-text-main (light); css-var --newspack-theme-color-text-main resolved (raw/css-vars.json)","d":"Primary text."},"ink-strong":{"v":"#212121","t":"color","s":"css-var --newspack-primary-color (light); css-var --newspack-primary-color resolved (raw/css-vars.json)","d":"Primary brand ink, #212121."},"muted":{"v":"#515151","t":"color","s":"css-var --newspack-theme-color-text-light (light); css-var --newspack-theme-color-text-light resolved (raw/css-vars.json)","d":"Secondary text."},"hover":{"v":"#404040","t":"color","s":"css-var --newspack-theme-color-text-hover (light); css-var --newspack-theme-color-text-hover resolved (raw/css-vars.json)","d":"Text hover."},"link":{"v":"#000000","t":"color","s":"css-var --newspack-theme-color-link (light); css-var --newspack-theme-color-link resolved (raw/css-vars.json)","d":"Link colour."},"border":{"v":"#cccccc","t":"color","s":"css-var --newspack-theme-color-border (light); css-var --newspack-theme-color-border resolved (raw/css-vars.json)","d":"Default border."},"border-light":{"v":"#e0e0e0","t":"color","s":"css-var --newspack-theme-color-border-light (light); css-var --newspack-theme-color-border-light resolved (raw/css-vars.json)","d":"Lighter border."},"highlight":{"v":"#fed850","t":"color","s":"css-var --newspack-theme-color-highlight (light); css-var --newspack-theme-color-highlight resolved (raw/css-vars.json)","d":"Highlight yellow."},"cta":{"v":"#dd3333","t":"color","s":"css-var --newspack-cta-color (light); css-var --newspack-cta-color resolved (raw/css-vars.json)","d":"Call-to-action red."},"cta-text":{"v":"#ffffff","t":"color","s":"css-var --newspack-cta-contrast-color (light); css-var --newspack-cta-contrast-color resolved (raw/css-vars.json)","d":"Text on the call-to-action."},"on-primary":{"v":"#ffffff","t":"color","s":"css-var --newspack-primary-contrast-color (light); css-var --newspack-primary-contrast-color resolved (raw/css-vars.json)","d":"Text on the primary ink."},"dark":{"v":"#333333","t":"color","s":"css-var --newspack-theme-color-bg-dark (light); css-var --newspack-theme-color-bg-dark resolved (raw/css-vars.json)","d":"Dark surface used inside the light theme."},"alert-red":{"v":"#d63638","t":"color","s":"css-var --newspack-theme-color-alert-red (light); css-var --newspack-theme-color-alert-red resolved (raw/css-vars.json)","d":"Alert red."},"alert-green":{"v":"#008a20","t":"color","s":"css-var --newspack-theme-color-alert-green (light); css-var --newspack-theme-color-alert-green resolved (raw/css-vars.json)","d":"Alert green."},"alert-yellow":{"v":"#dba617","t":"color","s":"css-var --newspack-theme-color-alert-yellow (light); css-var --newspack-theme-color-alert-yellow resolved (raw/css-vars.json)","d":"Alert yellow."},"button-hover":{"v":"#111111","t":"color","s":"css-var --newspack-theme-color-bg-button-hover (light); css-var --newspack-theme-color-bg-button-hover resolved (raw/css-vars.json)","d":"Button hover fill."},"menu":{"v":"#e5e5e5","t":"color","s":"css-var --newspack-primary-menu-color (light); css-var --newspack-primary-menu-color resolved (raw/css-vars.json)","d":"Primary menu surface."},"wpds":{"background":{"interactive":{"brand":{"strong":{"v":"#003da5","t":"color","s":"css-var --wpds-color-background-interactive-brand-strong (light); css-var --wpds-color-background-interactive-brand-strong resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-interactive-brand-strong."},"strong-active":{"v":"#001f53","t":"color","s":"css-var --wpds-color-background-interactive-brand-strong-active (light); css-var --wpds-color-background-interactive-brand-strong-active resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-interactive-brand-strong-active."},"strong-disabled":{"v":"#e6e6e6","t":"color","s":"css-var --wpds-color-background-interactive-brand-strong-disabled (light); css-var --wpds-color-background-interactive-brand-strong-disabled resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-interactive-brand-strong-disabled."},"weak":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --wpds-color-background-interactive-brand-weak (light); css-var --wpds-color-background-interactive-brand-weak resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-interactive-brand-weak."},"weak-active":{"v":"#dfe7f4","t":"color","s":"css-var --wpds-color-background-interactive-brand-weak-active (light); css-var --wpds-color-background-interactive-brand-weak-active resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-interactive-brand-weak-active."},"weak-disabled":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --wpds-color-background-interactive-brand-weak-disabled (light); css-var --wpds-color-background-interactive-brand-weak-disabled resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-interactive-brand-weak-disabled."}},"error":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --wpds-color-background-interactive-error (light); css-var --wpds-color-background-interactive-error resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-interactive-error."},"error-active":{"v":"#fff6f5","t":"color","s":"css-var --wpds-color-background-interactive-error-active (light); css-var --wpds-color-background-interactive-error-active resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-interactive-error-active."},"error-disabled":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --wpds-color-background-interactive-error-disabled (light); css-var --wpds-color-background-interactive-error-disabled resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-interactive-error-disabled."},"error-strong":{"v":"#cc1818","t":"color","s":"css-var --wpds-color-background-interactive-error-strong (light); css-var --wpds-color-background-interactive-error-strong resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-interactive-error-strong."},"error-strong-active":{"v":"#b90000","t":"color","s":"css-var --wpds-color-background-interactive-error-strong-active (light); css-var --wpds-color-background-interactive-error-strong-active resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-interactive-error-strong-active."},"error-strong-disabled":{"v":"#e6e6e6","t":"color","s":"css-var --wpds-color-background-interactive-error-strong-disabled (light); css-var --wpds-color-background-interactive-error-strong-disabled resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-interactive-error-strong-disabled."},"error-weak":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --wpds-color-background-interactive-error-weak (light); css-var --wpds-color-background-interactive-error-weak resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-interactive-error-weak."},"error-weak-active":{"v":"#f6e6e3","t":"color","s":"css-var --wpds-color-background-interactive-error-weak-active (light); css-var --wpds-color-background-interactive-error-weak-active resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-interactive-error-weak-active."},"error-weak-disabled":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --wpds-color-background-interactive-error-weak-disabled (light); css-var --wpds-color-background-interactive-error-weak-disabled resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-interactive-error-weak-disabled."},"neutral":{"strong":{"v":"#2d2d2d","t":"color","s":"css-var --wpds-color-background-interactive-neutral-strong (light); css-var --wpds-color-background-interactive-neutral-strong resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-interactive-neutral-strong."},"strong-active":{"v":"#1e1e1e","t":"color","s":"css-var --wpds-color-background-interactive-neutral-strong-active (light); css-var --wpds-color-background-interactive-neutral-strong-active resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-interactive-neutral-strong-active."},"strong-disabled":{"v":"#e6e6e6","t":"color","s":"css-var --wpds-color-background-interactive-neutral-strong-disabled (light); css-var --wpds-color-background-interactive-neutral-strong-disabled resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-interactive-neutral-strong-disabled."},"weak":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --wpds-color-background-interactive-neutral-weak (light); css-var --wpds-color-background-interactive-neutral-weak resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-interactive-neutral-weak."},"weak-active":{"v":"#ededed","t":"color","s":"css-var --wpds-color-background-interactive-neutral-weak-active (light); css-var --wpds-color-background-interactive-neutral-weak-active resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-interactive-neutral-weak-active."},"weak-disabled":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --wpds-color-background-interactive-neutral-weak-disabled (light); css-var --wpds-color-background-interactive-neutral-weak-disabled resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-interactive-neutral-weak-disabled."}}},"surface":{"brand":{"v":"#dfe7f4","t":"color","s":"css-var --wpds-color-background-surface-brand (light); css-var --wpds-color-background-surface-brand resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-surface-brand."},"caution":{"v":"#fee995","t":"color","s":"css-var --wpds-color-background-surface-caution (light); css-var --wpds-color-background-surface-caution resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-surface-caution."},"caution-weak":{"v":"#fff9ca","t":"color","s":"css-var --wpds-color-background-surface-caution-weak (light); css-var --wpds-color-background-surface-caution-weak resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-surface-caution-weak."},"error":{"v":"#f6e6e3","t":"color","s":"css-var --wpds-color-background-surface-error (light); css-var --wpds-color-background-surface-error resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-surface-error."},"error-weak":{"v":"#fff6f5","t":"color","s":"css-var --wpds-color-background-surface-error-weak (light); css-var --wpds-color-background-surface-error-weak resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-surface-error-weak."},"info":{"v":"#deebfa","t":"color","s":"css-var --wpds-color-background-surface-info (light); css-var --wpds-color-background-surface-info resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-surface-info."},"info-weak":{"v":"#f3f9ff","t":"color","s":"css-var --wpds-color-background-surface-info-weak (light); css-var --wpds-color-background-surface-info-weak resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-surface-info-weak."},"neutral":{"v":"#fcfcfc","t":"color","s":"css-var --wpds-color-background-surface-neutral (light); css-var --wpds-color-background-surface-neutral resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-surface-neutral."},"neutral-strong":{"v":"#ffffff","t":"color","s":"css-var --wpds-color-background-surface-neutral-strong (light); css-var --wpds-color-background-surface-neutral-strong resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-surface-neutral-strong."},"neutral-weak":{"v":"#f4f4f4","t":"color","s":"css-var --wpds-color-background-surface-neutral-weak (light); css-var --wpds-color-background-surface-neutral-weak resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-surface-neutral-weak."},"success":{"v":"#c6f7cd","t":"color","s":"css-var --wpds-color-background-surface-success (light); css-var --wpds-color-background-surface-success resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-surface-success."},"success-weak":{"v":"#ebffed","t":"color","s":"css-var --wpds-color-background-surface-success-weak (light); css-var --wpds-color-background-surface-success-weak resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-surface-success-weak."},"warning":{"v":"#fde6be","t":"color","s":"css-var --wpds-color-background-surface-warning (light); css-var --wpds-color-background-surface-warning resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-surface-warning."},"warning-weak":{"v":"#fff7e1","t":"color","s":"css-var --wpds-color-background-surface-warning-weak (light); css-var --wpds-color-background-surface-warning-weak resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-surface-warning-weak."}},"thumb":{"brand":{"v":"#003da5","t":"color","s":"css-var --wpds-color-background-thumb-brand (light); css-var --wpds-color-background-thumb-brand resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-thumb-brand."},"brand-active":{"v":"#003da5","t":"color","s":"css-var --wpds-color-background-thumb-brand-active (light); css-var --wpds-color-background-thumb-brand-active resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-thumb-brand-active."},"brand-disabled":{"v":"#dbdbdb","t":"color","s":"css-var --wpds-color-background-thumb-brand-disabled (light); css-var --wpds-color-background-thumb-brand-disabled resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-thumb-brand-disabled."},"neutral":{"disabled":{"v":"#dbdbdb","t":"color","s":"css-var --wpds-color-background-thumb-neutral-disabled (light); css-var --wpds-color-background-thumb-neutral-disabled resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-thumb-neutral-disabled."},"weak":{"v":"#8d8d8d","t":"color","s":"css-var --wpds-color-background-thumb-neutral-weak (light); css-var --wpds-color-background-thumb-neutral-weak resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-thumb-neutral-weak."},"weak-active":{"v":"#6e6e6e","t":"color","s":"css-var --wpds-color-background-thumb-neutral-weak-active (light); css-var --wpds-color-background-thumb-neutral-weak-active resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-thumb-neutral-weak-active."},"weak-disabled":{"v":"#dbdbdb","t":"color","s":"css-var --wpds-color-background-thumb-neutral-weak-disabled (light); css-var --wpds-color-background-thumb-neutral-weak-disabled resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-thumb-neutral-weak-disabled."}}},"track":{"neutral":{"v":"#dbdbdb","t":"color","s":"css-var --wpds-color-background-track-neutral (light); css-var --wpds-color-background-track-neutral resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-track-neutral."},"neutral-weak":{"v":"#f0f0f0","t":"color","s":"css-var --wpds-color-background-track-neutral-weak (light); css-var --wpds-color-background-track-neutral-weak resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-background-track-neutral-weak."}}},"foreground":{"content":{"caution":{"v":"#281d00","t":"color","s":"css-var --wpds-color-foreground-content-caution (light); css-var --wpds-color-foreground-content-caution resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-content-caution."},"caution-weak":{"v":"#826a00","t":"color","s":"css-var --wpds-color-foreground-content-caution-weak (light); css-var --wpds-color-foreground-content-caution-weak resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-content-caution-weak."},"error":{"v":"#470000","t":"color","s":"css-var --wpds-color-foreground-content-error (light); css-var --wpds-color-foreground-content-error resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-content-error."},"error-weak":{"v":"#cc1818","t":"color","s":"css-var --wpds-color-foreground-content-error-weak (light); css-var --wpds-color-foreground-content-error-weak resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-content-error-weak."},"info":{"v":"#001b4f","t":"color","s":"css-var --wpds-color-foreground-content-info (light); css-var --wpds-color-foreground-content-info resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-content-info."},"info-weak":{"v":"#006bd7","t":"color","s":"css-var --wpds-color-foreground-content-info-weak (light); css-var --wpds-color-foreground-content-info-weak resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-content-info-weak."},"neutral":{"v":"#1e1e1e","t":"color","s":"css-var --wpds-color-foreground-content-neutral (light); css-var --wpds-color-foreground-content-neutral resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-content-neutral."},"neutral-weak":{"v":"#707070","t":"color","s":"css-var --wpds-color-foreground-content-neutral-weak (light); css-var --wpds-color-foreground-content-neutral-weak resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-content-neutral-weak."},"success":{"v":"#002900","t":"color","s":"css-var --wpds-color-foreground-content-success (light); css-var --wpds-color-foreground-content-success resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-content-success."},"success-weak":{"v":"#008030","t":"color","s":"css-var --wpds-color-foreground-content-success-weak (light); css-var --wpds-color-foreground-content-success-weak resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-content-success-weak."},"warning":{"v":"#2e1900","t":"color","s":"css-var --wpds-color-foreground-content-warning (light); css-var --wpds-color-foreground-content-warning resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-content-warning."},"warning-weak":{"v":"#926300","t":"color","s":"css-var --wpds-color-foreground-content-warning-weak (light); css-var --wpds-color-foreground-content-warning-weak resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-content-warning-weak."}},"interactive":{"brand":{"v":"#003da5","t":"color","s":"css-var --wpds-color-foreground-interactive-brand (light); css-var --wpds-color-foreground-interactive-brand resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-interactive-brand."},"brand-active":{"v":"#001f53","t":"color","s":"css-var --wpds-color-foreground-interactive-brand-active (light); css-var --wpds-color-foreground-interactive-brand-active resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-interactive-brand-active."},"brand-disabled":{"v":"#406ebc","t":"color","s":"css-var --wpds-color-foreground-interactive-brand-disabled (light); css-var --wpds-color-foreground-interactive-brand-disabled resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-interactive-brand-disabled."},"brand-strong":{"v":"#eff0f2","t":"color","s":"css-var --wpds-color-foreground-interactive-brand-strong (light); css-var --wpds-color-foreground-interactive-brand-strong resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-interactive-brand-strong."},"brand-strong-active":{"v":"#eff0f2","t":"color","s":"css-var --wpds-color-foreground-interactive-brand-strong-active (light); css-var --wpds-color-foreground-interactive-brand-strong-active resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-interactive-brand-strong-active."},"brand-strong-disabled":{"v":"#8d8d8d","t":"color","s":"css-var --wpds-color-foreground-interactive-brand-strong-disabled (light); css-var --wpds-color-foreground-interactive-brand-strong-disabled resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-interactive-brand-strong-disabled."},"error":{"v":"#cc1818","t":"color","s":"css-var --wpds-color-foreground-interactive-error (light); css-var --wpds-color-foreground-interactive-error resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-interactive-error."},"error-active":{"v":"#470000","t":"color","s":"css-var --wpds-color-foreground-interactive-error-active (light); css-var --wpds-color-foreground-interactive-error-active resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-interactive-error-active."},"error-disabled":{"v":"#8d8d8d","t":"color","s":"css-var --wpds-color-foreground-interactive-error-disabled (light); css-var --wpds-color-foreground-interactive-error-disabled resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-interactive-error-disabled."},"error-strong":{"v":"#f2efef","t":"color","s":"css-var --wpds-color-foreground-interactive-error-strong (light); css-var --wpds-color-foreground-interactive-error-strong resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-interactive-error-strong."},"error-strong-active":{"v":"#f2efef","t":"color","s":"css-var --wpds-color-foreground-interactive-error-strong-active (light); css-var --wpds-color-foreground-interactive-error-strong-active resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-interactive-error-strong-active."},"error-strong-disabled":{"v":"#8d8d8d","t":"color","s":"css-var --wpds-color-foreground-interactive-error-strong-disabled (light); css-var --wpds-color-foreground-interactive-error-strong-disabled resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-interactive-error-strong-disabled."},"neutral":{"v":"#1e1e1e","t":"color","s":"css-var --wpds-color-foreground-interactive-neutral (light); css-var --wpds-color-foreground-interactive-neutral resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-interactive-neutral."},"neutral-active":{"v":"#1e1e1e","t":"color","s":"css-var --wpds-color-foreground-interactive-neutral-active (light); css-var --wpds-color-foreground-interactive-neutral-active resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-interactive-neutral-active."},"neutral-disabled":{"v":"#8d8d8d","t":"color","s":"css-var --wpds-color-foreground-interactive-neutral-disabled (light); css-var --wpds-color-foreground-interactive-neutral-disabled resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-interactive-neutral-disabled."},"neutral-strong":{"v":"#f0f0f0","t":"color","s":"css-var --wpds-color-foreground-interactive-neutral-strong (light); css-var --wpds-color-foreground-interactive-neutral-strong resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-interactive-neutral-strong."},"neutral-strong-active":{"v":"#f0f0f0","t":"color","s":"css-var --wpds-color-foreground-interactive-neutral-strong-active (light); css-var --wpds-color-foreground-interactive-neutral-strong-active resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-interactive-neutral-strong-active."},"neutral-strong-disabled":{"v":"#8d8d8d","t":"color","s":"css-var --wpds-color-foreground-interactive-neutral-strong-disabled (light); css-var --wpds-color-foreground-interactive-neutral-strong-disabled resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-interactive-neutral-strong-disabled."},"neutral-weak":{"v":"#707070","t":"color","s":"css-var --wpds-color-foreground-interactive-neutral-weak (light); css-var --wpds-color-foreground-interactive-neutral-weak resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-interactive-neutral-weak."},"neutral-weak-active":{"v":"#1e1e1e","t":"color","s":"css-var --wpds-color-foreground-interactive-neutral-weak-active (light); css-var --wpds-color-foreground-interactive-neutral-weak-active resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-interactive-neutral-weak-active."},"neutral-weak-disabled":{"v":"#8d8d8d","t":"color","s":"css-var --wpds-color-foreground-interactive-neutral-weak-disabled (light); css-var --wpds-color-foreground-interactive-neutral-weak-disabled resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-foreground-interactive-neutral-weak-disabled."}}},"stroke":{"focus":{"v":"#003da5","t":"color","s":"css-var --wpds-color-stroke-focus (light); css-var --wpds-color-stroke-focus resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-focus."},"interactive":{"brand":{"v":"#003da5","t":"color","s":"css-var --wpds-color-stroke-interactive-brand (light); css-var --wpds-color-stroke-interactive-brand resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-interactive-brand."},"brand-active":{"v":"#001f53","t":"color","s":"css-var --wpds-color-stroke-interactive-brand-active (light); css-var --wpds-color-stroke-interactive-brand-active resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-interactive-brand-active."},"brand-disabled":{"v":"#9fb6dd","t":"color","s":"css-var --wpds-color-stroke-interactive-brand-disabled (light); css-var --wpds-color-stroke-interactive-brand-disabled resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-interactive-brand-disabled."},"error":{"v":"#cc1818","t":"color","s":"css-var --wpds-color-stroke-interactive-error (light); css-var --wpds-color-stroke-interactive-error resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-interactive-error."},"error-active":{"v":"#9d0000","t":"color","s":"css-var --wpds-color-stroke-interactive-error-active (light); css-var --wpds-color-stroke-interactive-error-active resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-interactive-error-active."},"error-disabled":{"v":"#dbdbdb","t":"color","s":"css-var --wpds-color-stroke-interactive-error-disabled (light); css-var --wpds-color-stroke-interactive-error-disabled resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-interactive-error-disabled."},"error-strong":{"v":"#cc1818","t":"color","s":"css-var --wpds-color-stroke-interactive-error-strong (light); css-var --wpds-color-stroke-interactive-error-strong resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-interactive-error-strong."},"neutral":{"v":"#8d8d8d","t":"color","s":"css-var --wpds-color-stroke-interactive-neutral (light); css-var --wpds-color-stroke-interactive-neutral resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-interactive-neutral."},"neutral-active":{"v":"#6e6e6e","t":"color","s":"css-var --wpds-color-stroke-interactive-neutral-active (light); css-var --wpds-color-stroke-interactive-neutral-active resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-interactive-neutral-active."},"neutral-disabled":{"v":"#dbdbdb","t":"color","s":"css-var --wpds-color-stroke-interactive-neutral-disabled (light); css-var --wpds-color-stroke-interactive-neutral-disabled resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-interactive-neutral-disabled."},"neutral-strong":{"v":"#6e6e6e","t":"color","s":"css-var --wpds-color-stroke-interactive-neutral-strong (light); css-var --wpds-color-stroke-interactive-neutral-strong resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-interactive-neutral-strong."}},"surface":{"brand":{"v":"#dfe7f4","t":"color","s":"css-var --wpds-color-stroke-surface-brand (light); css-var --wpds-color-stroke-surface-brand resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-surface-brand."},"brand-strong":{"v":"#003da5","t":"color","s":"css-var --wpds-color-stroke-surface-brand-strong (light); css-var --wpds-color-stroke-surface-brand-strong resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-surface-brand-strong."},"caution":{"v":"#cfc28d","t":"color","s":"css-var --wpds-color-stroke-surface-caution (light); css-var --wpds-color-stroke-surface-caution resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-surface-caution."},"caution-strong":{"v":"#826a00","t":"color","s":"css-var --wpds-color-stroke-surface-caution-strong (light); css-var --wpds-color-stroke-surface-caution-strong resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-surface-caution-strong."},"error":{"v":"#dab1aa","t":"color","s":"css-var --wpds-color-stroke-surface-error (light); css-var --wpds-color-stroke-surface-error resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-surface-error."},"error-strong":{"v":"#cc1818","t":"color","s":"css-var --wpds-color-stroke-surface-error-strong (light); css-var --wpds-color-stroke-surface-error-strong resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-surface-error-strong."},"info":{"v":"#a9c6e7","t":"color","s":"css-var --wpds-color-stroke-surface-info (light); css-var --wpds-color-stroke-surface-info resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-surface-info."},"info-strong":{"v":"#006bd7","t":"color","s":"css-var --wpds-color-stroke-surface-info-strong (light); css-var --wpds-color-stroke-surface-info-strong resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-surface-info-strong."},"neutral":{"v":"#dbdbdb","t":"color","s":"css-var --wpds-color-stroke-surface-neutral (light); css-var --wpds-color-stroke-surface-neutral resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-surface-neutral."},"neutral-strong":{"v":"#8d8d8d","t":"color","s":"css-var --wpds-color-stroke-surface-neutral-strong (light); css-var --wpds-color-stroke-surface-neutral-strong resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-surface-neutral-strong."},"neutral-weak":{"v":"#f0f0f0","t":"color","s":"css-var --wpds-color-stroke-surface-neutral-weak (light); css-var --wpds-color-stroke-surface-neutral-weak resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-surface-neutral-weak."},"success":{"v":"#94d29e","t":"color","s":"css-var --wpds-color-stroke-surface-success (light); css-var --wpds-color-stroke-surface-success resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-surface-success."},"success-strong":{"v":"#008030","t":"color","s":"css-var --wpds-color-stroke-surface-success-strong (light); css-var --wpds-color-stroke-surface-success-strong resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-surface-success-strong."},"warning":{"v":"#e1bc7c","t":"color","s":"css-var --wpds-color-stroke-surface-warning (light); css-var --wpds-color-stroke-surface-warning resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-surface-warning."},"warning-strong":{"v":"#926300","t":"color","s":"css-var --wpds-color-stroke-surface-warning-strong (light); css-var --wpds-color-stroke-surface-warning-strong resolved (raw/css-vars.json)","d":"WPDS colour --wpds-color-stroke-surface-warning-strong."}}}},"component":{}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.palette || {})) {
+    const items = (grp && grp.t ? [['palette.' + g, grp]] : flat(grp, 'palette.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">palette.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (none — the site paints one theme)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.borderWidth || {}, 'borderWidth.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) {
+    if (typeof t.v === 'object') continue;
+    m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v.join ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) {
+    const v = Array.isArray(t.v) ? t.v.map(x => [x.offsetX, x.offsetY, x.blur, x.spread, x.color].filter(Boolean).join(' ')).join(', ') : t.v;
+    e += `<div><b>${esc(n)}</b> <span>${esc(v)}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none captured</b></div>';
+})();
+
+(function zladder() {
+  let m = '';
+  for (const [n, t] of flat((TOK.core.layout || {}).z || {}, 'layout.z.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#z-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function typeStyles() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
+    const v = t.v || {};
+    const fam = String(v.fontFamily || '').split(',')[0].replace(/"/g, '');
+    const spec = [v.fontSize, v.lineHeight && '/' + v.lineHeight, v.fontWeight && ' ' + v.fontWeight].filter(Boolean).join('');
+    h += `<div class="tr"><span class="ts" style='font-size:${Math.min(parseFloat(v.fontSize) || 14, 40)}px;font-family:${(v.fontFamily || 'inherit')}'>${esc(n)}</span><span class="tv">${esc(fam)} ${esc(spec)}</span></div>`;
+  }
+  $('#styles-out').innerHTML = h;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

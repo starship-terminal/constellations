@@ -1,0 +1,3 @@
+file	role	note
+	nav wordmark	The nav wordmark is an inline SVG inside .nav_logo_text. It was not exported. The preview browser did not produce frames, and the SVG is brand artwork.
+	app icon	icon.png is the apple-touch-icon (webclip.png) scaled to 128px. It is the product mark, not a UI icon set.

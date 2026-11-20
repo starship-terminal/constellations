@@ -1,0 +1,13 @@
+{
+ "_note": "Rules for systems/elevenreader. A fully public signed-out capture of elevenreader.io: no owner or account data on any surface. The email fields were focused and sample text (name@example.com) was typed and deleted; nothing was submitted and no account exists. Book titles, author names, prices, blog posts and all marketing/legal copy in the screenshots are ElevenReader's published public-page content. The OCR email net is kept with elevenreader.io / elevenlabs.io's own published addresses and example.com allowed.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@elevenreader\\.io$",
+   "@elevenlabs\\.io$",
+   "@example\\.com$",
+   "@example\\.org$"
+  ]
+ },
+ "families": []
+}

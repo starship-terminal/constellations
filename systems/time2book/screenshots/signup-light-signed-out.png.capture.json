@@ -1,0 +1,19 @@
+{
+  "capturedAt": "2026-11-18T19:48:07.411Z",
+  "sourceUrl": "https://time2book.me/signup",
+  "title": "Sign up — Time2book",
+  "status": 200,
+  "measured": {
+    "iw": 1440,
+    "ih": 900,
+    "dpr": 2,
+    "scrollH": 900,
+    "vv": {
+      "w": 1440,
+      "h": 900,
+      "scale": 1
+    }
+  },
+  "theme": "light",
+  "note": "Headless Playwright after T3 preview frames failed."
+}

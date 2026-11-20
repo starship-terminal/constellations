@@ -1,0 +1,12 @@
+{
+ "_note": "Rules for systems/fable. A fully public signed-out capture: every route is public marketing or catalog content (club names, book titles and author names are published pages); the sign-in and sign-up forms were measured at rest and filled with sample values then cleared, never submitted, so no PII is reachable. No regions need masking.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@fable\\.co$",
+   "@fable\\.com$",
+   "@example\\.com$"
+  ]
+ },
+ "families": []
+}

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rise style guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --font-family-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-3: 6px;
+  --space-4: 8px;
+  --space-5: 12px;
+  --space-6: 16px;
+  --space-7: 20px;
+  --space-8: 24px;
+  --space-9: 32px;
+  --space-10: 36px;
+  --space-11: 80px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+  --radius-full: 9999px;
+  --motion-duration-fast: 150ms;
+  --motion-duration-enter: 150ms;
+  --motion-duration-dialog: 300ms;
+  --motion-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --size-button-sm: 34px;
+  --size-button-lg: 46px;
+  --size-switch-track: 32px;
+  --size-switch-thumb: 12px;
+  --size-header: 80px;
+  --size-logo: 76px;
+  --size-content: 768px;
+  --size-hero: 1024px;
+  --size-nav: 1280px;
+  --size-card: 480px;
+  --border-width: 1px;
+  --shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  --color-foreground: #1e2a29;
+  --color-background: #fcfcfe;
+  --color-surface: #f7f7fc;
+  --color-sidebar: #f8f9fd;
+  --color-input: #f1f2f8;
+  --color-border: #d6d9e4;
+  --color-offset-text: #b7bbcd;
+  --color-offset-dark: #6c6f7d;
+  --color-primary: #7161ec;
+  --color-negative: #ff2a5a;
+  --color-warning: #ffc141;
+  --color-success: #19be2f;
+  --color-system-black: #000000;
+  --color-system-white: #ffffff;
+  --color-system-blue: #0000ee;
+  --color-dolphin: #647fa0;
+  --color-blue: #0173f0;
+  --color-violet: #6946e4;
+  --color-pink: #e43fff;
+  --color-orange: #ff6a01;
+  --color-yellow: #ffb301;
+  --color-turquoise: #13b1a8;
+  --color-green: #10b426;
+  --color-logo-mark-bottom-0: #767df9;
+  --color-logo-mark-bottom-1: #7161ec;
+  --color-logo-mark-bottom-2: #5730e3;
+  --color-logo-mark-top-0: #ff7557;
+  --color-logo-mark-top-1: #ffaf66;
+  --background-page: #ffffff;
+  --background-canvas: var(--color-background);
+  --background-surface: var(--color-surface);
+  --background-input: var(--color-input);
+  --background-sidebar: var(--color-sidebar);
+  --background-primary: var(--color-primary);
+  --background-primary-hover: rgba(113, 97, 236, 0.8);
+  --background-primary-soft: rgba(113, 97, 236, 0.1);
+  --background-white: var(--color-system-white);
+  --background-switch-off: rgba(108, 111, 125, 0.6);
+  --text-primary: var(--color-foreground);
+  --text-body: rgba(30, 42, 41, 0.8);
+  --text-secondary: var(--color-offset-dark);
+  --text-muted: var(--color-offset-text);
+  --text-link: var(--color-primary);
+  --text-on-primary: var(--color-system-white);
+  --text-inverse: var(--color-system-white);
+  --border-default: var(--color-border);
+  --border-quiet: rgba(214, 217, 228, 0.5);
+  --border-image: rgba(30, 42, 41, 0.05);
+  --component-button-primary-bg: var(--color-primary);
+  --component-button-primary-text: var(--color-system-white);
+  --component-button-primary-radius: 4px;
+  --component-button-primary-padding: 8px;
+  --component-button-secondary-bg: var(--color-system-white);
+  --component-button-secondary-text: var(--color-foreground);
+  --component-button-secondary-radius: 4px;
+  --component-card-bg: var(--color-background);
+  --component-card-radius: 6px;
+  --component-card-padding: 36px;
+  --component-badge-bg: var(--color-background);
+  --component-badge-text: var(--color-offset-dark);
+  --component-badge-radius: 4px;
+  color-scheme: light;
+  --sg-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 16px/24px var(--sg-sans); }
+.wrap { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+h1 { font: 700 36px/40px var(--sg-sans); letter-spacing: -1.8px; margin: 0 0 8px; }
+h2 { font: 600 24px/32px var(--sg-sans); margin: 40px 0 12px; }
+p { color: var(--text-secondary); margin: 0 0 16px; max-width: 68ch; }
+code { font-size: 13px; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.sw { display: flex; gap: 10px; align-items: center; }
+.sw i { width: 36px; height: 36px; border-radius: 4px; box-shadow: inset 0 0 0 1px var(--border-default); display: block; }
+.sw b { display: block; font-size: 12px; font-weight: 600; }
+.sw span { display: block; font-size: 12px; color: var(--text-secondary); }
+.row { display: grid; grid-template-columns: 180px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--border-default); align-items: baseline; }
+.row small { display: block; color: var(--text-secondary); font-weight: 400; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 34px; padding: 8px 16px; border-radius: 4px; font: 500 14px/16px var(--sg-sans); text-decoration: none; border: 1px solid transparent; }
+.btn.primary { background: var(--component-button-primary-bg); color: var(--component-button-primary-text); }
+.btn.primary:hover { background: var(--background-primary-hover); }
+.btn.secondary { background: var(--component-button-secondary-bg); color: var(--component-button-secondary-text); border-color: var(--border-default); }
+.btn.secondary:hover { background: var(--background-input); }
+.badge { display: inline-flex; padding: 2px 8px; border: 1px solid var(--border-default); border-radius: 4px; color: var(--text-secondary); font: 600 10px/15px var(--sg-sans); letter-spacing: 0.5px; text-transform: uppercase; }
+.cards { display: flex; gap: 16px; flex-wrap: wrap; }
+.card { width: 280px; padding: 36px; border-radius: 6px; border: 1px solid var(--border-quiet); background: var(--background-canvas); }
+.card.raised { background: var(--background-white); border-color: var(--border-default); box-shadow: var(--shadow-sm); }
+.card h3 { margin: 0 0 8px; font: 600 24px/32px var(--sg-sans); }
+.note { font-size: 13px; color: var(--text-secondary); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Rise</h1>
+  <p>Public marketing site, measured 2026-11-19. One light theme. The signed-in calendar was already shut down, so these specimens are the marketing controls, not the app.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"></div>
+
+  <h2>Type</h2>
+  <div class="row"><div>Display<small>48 / 48, -2.4px, 700</small></div><div style="font:700 48px/48px var(--sg-sans);letter-spacing:-2.4px">Sunsetting Rise</div></div>
+  <div class="row"><div>Title<small>36 / 40, -1.8px, 700</small></div><div style="font:700 36px/40px var(--sg-sans);letter-spacing:-1.8px">Pricing</div></div>
+  <div class="row"><div>Heading<small>24 / 32, 600</small></div><div style="font:600 24px/32px var(--sg-sans)">Solo</div></div>
+  <div class="row"><div>Lede<small>20 / 28, offset-dark</small></div><div style="font:400 20px/28px var(--sg-sans);color:var(--text-secondary)">Free for personal use or ready and equipped for your team.</div></div>
+  <div class="row"><div>Body<small>16 / 28, foreground at 80%</small></div><div style="font:400 16px/28px var(--sg-sans);color:var(--text-body)">Projects, tasks and time, in one column of Inter.</div></div>
+  <div class="row"><div>Eyebrow<small>10px, 600, +0.5px</small></div><div><span class="badge">Announcement</span></div></div>
+
+  <h2>Controls</h2>
+  <p><a class="btn primary" href="#components">Upgrade</a> <a class="btn secondary" href="#components">Get Started</a></p>
+  <p class="note">Primary hover is primary at 80%. Secondary hover is the input fill, rgb(241, 242, 248). Radius is 4px. Height is 34px.</p>
+
+  <h2>Cards</h2>
+  <div class="cards">
+    <div class="card"><h3>Solo</h3><p>Quiet card. Background token, border at 50%.</p></div>
+    <div class="card raised"><h3>Teams</h3><p>White card, full border, shadow-sm.</p></div>
+  </div>
+</div>
+<script>
+const box = document.getElementById("swatches");
+const names = ["background-page","background-canvas","background-surface","background-input","background-primary","text-primary","text-secondary","text-link","border-default"];
+for (const name of names) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = "<i></i><div><b></b><span></span></div>";
+  el.querySelector("i").style.background = "var(--" + name + ")";
+  el.querySelector("b").textContent = name;
+  el.querySelector("span").textContent = getComputedStyle(document.documentElement).getPropertyValue("--" + name).trim();
+  box.appendChild(el);
+}
+</script>
+</body>
+</html>

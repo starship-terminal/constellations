@@ -20,6 +20,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { BASE, launch, patch, open, closePromo, domFind, styleOf, crop, centre, RAW, UA, UA_MOBILE } from './lib.mjs';
+import { pageRunner, exitStatus } from './run-pages.mjs';
 
 const OUT = process.env.OUT_JSON || path.join(RAW, 'components-computed.json');
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
@@ -31,6 +32,7 @@ const URLS = { home: '/', women: '/women/', plp: '/women/new-in/new-in-clothing/
 let page, cdp, current, context, run;
 let activeCtx; // the context of the current page; closed when the next route opens
 const touched = new Set();
+const blockedPages = new Set(); // pages a bot check stopped; their old readings are kept
 const listed = new Map();
 
 async function blocked() {
@@ -60,7 +62,7 @@ async function newPage(key, { mobile = false, wait = 8000 } = {}) {
   log('open', key, mobile ? '(mobile)' : '');
   const target = URLS[key];
   await open(page, /^https?:/.test(target) ? target : BASE + target, { wait });
-  if (await blocked()) { log('  BLOCKED', key); await page.close(); await ctx.close(); activeCtx = undefined; return false; }
+  if (await blocked()) { log('  BLOCKED', key); blockedPages.add(key); await page.close(); await ctx.close(); activeCtx = undefined; return false; }
   await page.addStyleTag({ content: '*{caret-color:transparent!important}' });
   await closePromo(page);
   return true;
@@ -106,6 +108,9 @@ async function forcePseudo(loc, classes) {
 function comp(key, meta) {
   const c = (out.components[key] ??= { states: {} });
   Object.assign(c, meta);
+  // the page that owns the entry, even when its element is missing: stale-entry
+  // cleanup (pageDone) needs it; found() restamps page/run/url on a real reading
+  c.page ??= current;
   touched.add(key);
   c.states ??= {};
   return c;
@@ -138,6 +143,9 @@ async function measure(key, state, target, opts = {}) {
 }
 
 async function S(key, target, list, meta = {}, opts = {}) {
+  // meta is the entry's description only; an option placed here (fillText, cropLoc,
+  // noToggle...) would be silently ignored, so refuse it
+  for (const k of Object.keys(meta)) if (!['group', 'title', 'desc', 'sel'].includes(k)) throw new Error(`S(${key}): '${k}' is an option; pass it in opts`);
   const c = comp(key, { title: meta.title, group: meta.group, desc: meta.desc, selector: meta.sel });
   if (!listed.has(key)) listed.set(key, new Set());
   for (const st of list) listed.get(key).add(st);
@@ -293,13 +301,13 @@ async function plp() {
   await S('breadcrumb', q('nav[aria-label*="breadcrumb" i], [class*="breadcrumb" i]').first(), ['default'], { group: g, title: 'Breadcrumb', desc: 'Home / Women / New In / New In: Clothing.', sel: 'breadcrumb nav' }, { noScroll: true });
   // The category nav row is visible here (it is display:none on home).
   const gnav = G.shell;
-  await S('nav-item', q(tid('primarynav-button')).filter({ visible: true }).first(), B4, { group: gnav, title: 'Category button', desc: 'A button in the category nav row (New in, Clothing, Dresses…); each opens a flyout.', sel: tid('primarynav-button'), cropLoc: q(tid('primarynav-button')).filter({ visible: true }).first() }, { noScroll: true });
+  await S('nav-item', q(tid('primarynav-button')).filter({ visible: true }).first(), B4, { group: gnav, title: 'Category button', desc: 'A button in the category nav row (New in, Clothing, Dresses…); each opens a flyout.', sel: tid('primarynav-button') }, { cropLoc: q(tid('primarynav-button')).filter({ visible: true }).first(), noScroll: true });
   const newin = q(tid('primarynav-button')).filter({ visible: true }).first();
-  await S('nav-mega', newin, ['opened'], { group: gnav, title: 'Category flyout, open', desc: 'The nav button while its flyout is open.', sel: tid('primarynav-button') + ':hover', cropLoc: newin }, { noScroll: true, noReset: true, noToggle: true, open: async () => { await newin.hover(); await page.waitForTimeout(1600); } });
-  await S('nav-flyout', q(tid('secondarynav-flyout')).filter({ visible: true }).first(), ['default'], { group: gnav, title: 'Category flyout panel', desc: 'The open mega-menu panel itself, while the button is hovered.', sel: tid('secondarynav-flyout'), cropLoc: q(tid('secondarynav-flyout')).filter({ visible: true }).first() }, { noScroll: true, noReset: true, open: async () => { await newin.hover(); await page.waitForTimeout(1600); } });
+  await S('nav-mega', newin, ['opened'], { group: gnav, title: 'Category flyout, open', desc: 'The nav button while its flyout is open.', sel: tid('primarynav-button') + ':hover' }, { cropLoc: newin, noScroll: true, noReset: true, noToggle: true, open: async () => { await newin.hover(); await page.waitForTimeout(1600); } });
+  await S('nav-flyout', q(tid('secondarynav-flyout')).filter({ visible: true }).first(), ['default'], { group: gnav, title: 'Category flyout panel', desc: 'The open mega-menu panel itself, while the button is hovered.', sel: tid('secondarynav-flyout') }, { cropLoc: q(tid('secondarynav-flyout')).filter({ visible: true }).first(), noScroll: true, noReset: true, open: async () => { await newin.hover(); await page.waitForTimeout(1600); } });
   // Only states that keep the pointer on the nav button: the flyout closes
   // as soon as focus moves, so focus/press states on its links do not exist.
-  await S('flyout-link', q(tid('secondarynav-flyout')).filter({ visible: true }).first().locator(tid('text-link')).filter({ visible: true }).first(), ['default', 'hover'], { group: gnav, title: 'Flyout link', desc: 'A link inside the open mega-menu ("View all", "New In: Today"…). Measured, never followed.', sel: tid('secondarynav-flyout') + ' ' + tid('text-link'), cropLoc: q(tid('secondarynav-flyout')).filter({ visible: true }).first().locator(tid('text-link')).filter({ visible: true }).first() }, { noScroll: true, noReset: true, open: async () => { await newin.hover(); await page.waitForTimeout(1600); } });
+  await S('flyout-link', q(tid('secondarynav-flyout')).filter({ visible: true }).first().locator(tid('text-link')).filter({ visible: true }).first(), ['default', 'hover'], { group: gnav, title: 'Flyout link', desc: 'A link inside the open mega-menu ("View all", "New In: Today"…). Measured, never followed.', sel: tid('secondarynav-flyout') + ' ' + tid('text-link') }, { cropLoc: q(tid('secondarynav-flyout')).filter({ visible: true }).first().locator(tid('text-link')).filter({ visible: true }).first(), noScroll: true, noReset: true, open: async () => { await newin.hover(); await page.waitForTimeout(1600); } });
   await page.mouse.move(700, 500); await page.waitForTimeout(500);
   await S('plp-title', q('h1').first(), ['default'], { group: g, title: 'Collection title', desc: '"New In Clothing for Women" in Futura bold.', sel: 'h1' }, { noScroll: true });
   await S('cat-pill', q('a, button').filter({ hasText: /new in: today/i }).filter({ visible: true }).first(), B4, { group: g, title: 'Category pill', desc: 'A chip in the sub-category carousel ("New in: Today"…).', sel: ':has-text("New in: Today")' }, { noScroll: true });
@@ -311,7 +319,9 @@ async function plp() {
   await S('save-heart', card.locator('button[aria-label*="save" i]').first(), B4, { group: g, title: 'Save heart', desc: 'The heart on a product tile; a local save toggle, never pressed.', sel: 'tile button[aria-label*="Save"]' });
   await S('tile-name', card.locator('a[href*="/prd/"]').first(), B4, { group: g, title: 'Product link', desc: 'The whole-card link inside the tile: image, name and price.', sel: 'a.productLink' });
   await S('tile-price', card.locator('[class*="price" i], p, span').filter({ hasText: /SGD\$|\$\d/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Tile price', desc: 'SGD pricing on the geo-served surface.', sel: ':has-text("SGD$")' });
-  await S('tile-badge', card.locator('span, div, p').filter({ hasText: /selling fast|more colours/i }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Tile badge', desc: 'SELLING FAST or MORE COLOURS — the small status text under a tile.', sel: ':has-text("SELLING FAST")' });
+  // The label itself, not the first span/div/p whose text merely contains it
+  // (that is the tile's whole name-and-price block).
+  await S('tile-badge', card.getByText(/^\s*(selling fast|more colours)\s*$/i).filter({ visible: true }).first(), ['default'], { group: g, title: 'Tile badge', desc: 'SELLING FAST or MORE COLOURS — the small status text under a tile.', sel: ':has-text("SELLING FAST")' });
   await S('load-more', q(tid('loadMoreProducts') + ', [data-auto-id="loadMoreProducts"]').filter({ visible: true }).first(), B4, { group: g, title: 'Load more', desc: 'The grid pagination button. Measured, never pressed.', sel: '[data-auto-id="loadMoreProducts"]' });
   save();
 }
@@ -388,7 +398,7 @@ async function footer() {
   } else {
     current = 'home';
     await open(page, BASE + URLS.home, {});
-    if (await blocked()) { log('  BLOCKED footer'); return; }
+    if (await blocked()) { log('  BLOCKED footer'); blockedPages.add('home'); return; }
     await closePromo(page);
   }
   const g = G.footer;
@@ -433,18 +443,25 @@ context = ctx0;
 const pages = process.argv.slice(2);
 const plan = { home, women, plp, pdp, bag, saved, account, mobile };
 const order = Object.keys(plan).filter((k) => !pages.length || pages.includes(k));
+// A page counts as finished only when its runner returns without throwing and
+// no bot check stopped it. Pruning touches only finished pages: a page that
+// threw keeps its unreached components and states instead of losing them.
+// A page that throws is recorded as broken and the run goes on; the exit
+// status at the end is nonzero when any page threw (run-pages.mjs).
+const { finished, broken, runPage } = pageRunner(() => current, log);
+const pageDone = (c) => finished.has(c.page) && !broken.has(c.page) && !blockedPages.has(c.page);
 try {
-  for (const k of order) { if (k !== 'mobile') await plan[k](); }
-  if (!pages.length || pages.includes('home')) await footer();
-  if (!pages.length || pages.includes('mobile')) await plan.mobile();
+  for (const k of order) { if (k !== 'mobile') await runPage(plan[k]); }
+  if (!pages.length || pages.includes('home')) await runPage(footer);
+  if (!pages.length || pages.includes('mobile')) await runPage(plan.mobile);
 } finally {
   for (const [key, c] of Object.entries(out.components)) {
-    if (!touched.has(key) && !pages.length) { delete out.components[key]; continue; }
-    if (!touched.has(key)) continue;
+    if (!touched.has(key)) { if (!pages.length && pageDone(c)) delete out.components[key]; continue; }
     const want = listed.get(key);
-    if (want) for (const st of Object.keys(c.states || {})) if (!want.has(st) && pages.length) delete c.states[st];
+    if (want && pageDone(c)) for (const st of Object.keys(c.states || {})) if (!want.has(st)) delete c.states[st];
   }
   save();
   await browser.close().catch(() => {});
 }
-console.log('done ->', OUT);
+console.log(broken.size ? 'incomplete ->' : 'done ->', OUT);
+process.exitCode = exitStatus(broken);

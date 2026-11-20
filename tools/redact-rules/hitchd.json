@@ -1,0 +1,10 @@
+{
+  "_note": "Rules for systems/hitchd. Public signed-out capture of hitchd.com: no surface paints machine-private data - nothing was signed into, typed, searched, purchased or submitted. The public /terms and /privacy pages publish Hitchd's own support and privacy-officer addresses on its own domain; the demo registries' couple names are the site's own public sample content.",
+  "families": [],
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@hitchd\\.com$"
+    ]
+  }
+}

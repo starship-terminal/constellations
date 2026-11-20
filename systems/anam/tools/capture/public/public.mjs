@@ -57,8 +57,13 @@ class Shooter {
     const tmp = fs.mkdtempSync(path.join(RAW, '.shot-'));
     try {
       const f = path.join(tmp, base);
-      if (H <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
-      else for (let i = 0, y = 0; y < H; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, H - y) } }, this.requested);
+      // An infinite or growing page reports a scrollHeight without end: tile at most 8 chunks
+      // and log the boundary (the kit's cap), never one tile per chunk for ever.
+      const MAXH = 8 * chunk;
+      const hCap = Math.min(H, MAXH);
+      if (H > MAXH) console.log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
+      if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
+      else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
       for (const old of fs.readdirSync(RAW)) if (old === base + '.png' || old === base + '.png.capture.json' || (old.startsWith(base + '.part') && /\.part\d+\.png(\.capture\.json)?$/.test(old))) fs.rmSync(path.join(RAW, old));
       for (const n of fs.readdirSync(tmp)) fs.renameSync(path.join(tmp, n), path.join(RAW, n));
     } finally {

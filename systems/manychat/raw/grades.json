@@ -1,0 +1,23 @@
+{
+  "F1": {"grade": "partly", "evidence": "Named brand colours (neon-pink, electric-cyan, dusk through kelp) and a short raw-neutral set (0, 10, 20, 700, 800, 900). Not a 10-step ramp per hue."},
+  "F2": {"grade": "partly", "evidence": "light.background.page and secondary, plus surface primary/secondary/tertiary. No raised, overlay or scrim role paints on the public pages. The drawer was not captured."},
+  "F3": {"grade": "partly", "evidence": "text.primary, text.secondary, text.on-accent and text.on-ink. No dedicated link colour and no disabled role."},
+  "F4": {"grade": "partly", "evidence": "border.default is rgba(15, 15, 15, 0.08). No strong border and no designed focus border. Keyboard focus on 11 controls showed no measured outline."},
+  "F5": {"grade": "partly", "evidence": "Accent is the neon-pink hero pill. Hover and pressed were forced on the pill and showed no measured colour change."},
+  "F6": {"grade": "partly", "evidence": "status.error (#c81e1e) and status.success (#067647) are declared semantic colours. They do not paint on the captured pages, and warning and info are absent."},
+  "F7": {"grade": "meets", "evidence": "The site paints one light theme and has no theme switch. The dark set is empty on purpose."},
+  "F8": {"grade": "meets", "evidence": "Three families with fallbacks (ManyChatGravity, Rooftop, CoFo Sans Mono) and a rem type ramp of more than 8 steps, with weight, line-height and letter-spacing. The site sets html font-size to 10px."},
+  "F9": {"grade": "partly", "evidence": "Declared spacing steps in rem (2, 4, 6, 8, 10, 12, 16, 18, 24, plus section gaps) against the 10px root. Not a single 4px or 8px base unit."},
+  "F10": {"grade": "partly", "evidence": "Radius scale from 4 to 48 plus full (999px). Border widths are measured on controls, not a named width scale."},
+  "F11": {"grade": "partly", "evidence": "Nav height 92px, hero pill 48px, nav pill 44px, price CTA 48px, phone pill 32px. No icon-size scale. Focus ring was not painted on the measured controls."},
+  "F12": {"grade": "missing", "evidence": "No card, popover or dialog shadow scale was measured on the public pages. The Free card paints no box-shadow."},
+  "F13": {"grade": "partly", "evidence": "core.motion.ease is cubic-bezier(0.43, 0.195, 0.02, 1). Component transitions are 0.3s and 0.45s. A reduced-motion probe on nav a shortened the transition to 0.01ms. Durations are not a named scale."},
+  "F14": {"grade": "partly", "evidence": "Desktop 1440 and phone 390 are recorded. The home phone pass measured innerWidth 392. Sticky chrome z-index is in the measurement meta. Grid columns are not tokenised."},
+  "C1": {"grade": "missing", "evidence": "Public pages paint button, link, menu, card and a FAQ list row. Icon button, text field, text area, select, checkbox, radio, switch, tabs, tooltip, dialog, toast, table, avatar and badge were not present or not captured."},
+  "C2": {"grade": "partly", "evidence": "Hover, focus-visible and pressed were measured on the pills and links. Opened was measured on the FAQ and the Product menu. Disabled, loading, error and selected do not paint on the public surface."},
+  "C3": {"grade": "partly", "evidence": "Keyboard focus was applied to 11 controls. None drew a measured outline. Product, EN and Annual could not hold focus (divs and a span)."},
+  "C4": {"grade": "partly", "evidence": "components.md names a token when a measured colour matches. Sizes, fonts and radii that do not match a token stay as measured values."},
+  "P1": {"grade": "partly", "evidence": "patterns.md covers the chrome band, the hero, pricing, the guide index, the footer and the phone pass. Forms, empty, loading, error, search and onboarding sit behind sign-in."},
+  "A1": {"grade": "partly", "evidence": "Fonts are named with fallbacks and are not shipped. No icons/ set. The wordmark and channel marks are in the crops. layoutGaps records the missing icon extraction."},
+  "K1": {"grade": "meets", "evidence": "README says what was captured, how, the 10px root, and what to distrust: sign-in, checkout, the drawer, and the missing template gallery."}
+}

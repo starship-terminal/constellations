@@ -1,0 +1,39 @@
+{
+  "title": "404 - Page not found: /missing-page | Nuxt | MSCHF",
+  "url": "https://mschf.com/missing-page",
+  "text": "404\n\nPage not found: /missing-page\n\nGo back home",
+  "body": {
+    "tag": "BODY",
+    "cls": "",
+    "text": "404\n\nPage not found: /missing-page\n\nGo back home",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "size": "16px",
+    "weight": "400",
+    "lh": "24px"
+  },
+  "h1": {
+    "tag": "H1",
+    "cls": "font-medium mb-8 sm:text-10xl text-8xl",
+    "text": "404",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "font": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "size": "96px",
+    "weight": "500",
+    "lh": "96px"
+  },
+  "a": {
+    "tag": "A",
+    "cls": "cursor-pointer gradient-border px-4 py-2 sm:px-6 sm:py-3 sm:text-xl text-md",
+    "text": "Go back home",
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgba(255, 255, 255, 0.3)",
+    "font": "ui-sans-serif, system-ui, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "size": "20px",
+    "weight": "400",
+    "lh": "28px"
+  },
+  "button": null
+}

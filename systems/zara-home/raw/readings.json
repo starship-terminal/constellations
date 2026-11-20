@@ -1,0 +1,502 @@
+{
+  "captured": "2026-11-19",
+  "product": "Zara Home",
+  "frontVersion": "2.11.18",
+  "ngVersion": "22.1.5",
+  "route": "public-web",
+  "harness": "T3 preview browser, preview_evaluate getComputedStyle",
+  "viewport": { "width": 1169, "height": 731, "devicePixelRatio": 2 },
+  "theme": "light",
+  "signedOut": true,
+  "pages": [
+    "https://www.zarahome.com/ worldwide market gate",
+    "https://www.zarahome.com/ww/ International homepage after YES, CONTINUE IN INTERNATIONAL",
+    "https://www.zarahome.com/ww/bedroom-duvet-covers-n946 category grid",
+    "https://www.zarahome.com/ww/sateen-duvet-cover-300-thread-count-l40136088 product",
+    "https://www.zarahome.com/ww/search.html search",
+    "https://www.zarahome.com/ww/error.html unavailable page"
+  ],
+  "notEntered": [
+    "add to bag",
+    "basket",
+    "checkout",
+    "card",
+    "phone",
+    "address",
+    "account creation",
+    "newsletter submit",
+    "log in"
+  ],
+  "screenshotGap": "preview_snapshot returned: The browser is not producing screenshot frames. Headless Playwright on https://www.zarahome.com/ww/ returned HTTP 403 Access Denied (Akamai edgesuite), not a Cloudflare challenge. No site screenshot was invented.",
+  "body": {
+    "color": "rgb(0, 0, 0)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "fontFamily": "ZH-Sans, Arial, \"Lucida Sans Unicode\", \"sans-serif\"",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "18px",
+    "letterSpacing": "0.2px"
+  },
+  "customProperties": {
+    "--primary-color": "#1e1e1e",
+    "--primary-darker-color": "#8e8e93",
+    "--primary-lighter-color": "#d1d1d6",
+    "--accent-color": "#1e1e1e",
+    "--accent-darker-color": "#007aff",
+    "--accent-lighter-color": "#cf0a2c",
+    "--warn-color": "#b32624",
+    "--warn-lighter-color": "#ffd8d6",
+    "--text-primary-color": "#ffffff",
+    "--footer-v2-background": "var(--custom-secondary-color, #fff)",
+    "--footer-v2-color": "var(--custom-primary-color, #1e1e1e)",
+    "--footer-v2-focus": "#2684ff",
+    "--footer-v2-rule": "#d8d8dc",
+    "--footer-cta-border": "1px solid currentColor",
+    "--footer-cta-height": "40px",
+    "--footer-cta-width": "310px",
+    "--footer-touch-target": "44px",
+    "--footer-heading-weight": "500",
+    "--footer-country-font-weight": "300",
+    "--footer-page-inset": "15px",
+    "--footer-gutter": "14px",
+    "--footer-space-small": "8px",
+    "--footer-space-medium": "16px",
+    "--footer-block-padding": "40px",
+    "--footer-space-section": "60px",
+    "--footer-v2-icon-size": "24px",
+    "--footer-v2-icon-gap": "5px",
+    "--footer-v2-social-gap": "80px",
+    "--mat-app-background-color": "#fafafa",
+    "--mat-app-text-color": "rgba(0, 0, 0, .87)",
+    "--mat-button-filled-container-color": "#b32624"
+  },
+  "computed": {
+    "worldwideTitle": {
+      "selector": ".worldwide__actions__title",
+      "page": "https://www.zarahome.com/",
+      "color": "rgb(30, 30, 30)",
+      "fontSize": "14px",
+      "fontWeight": "700",
+      "lineHeight": "18px",
+      "letterSpacing": "0.2px",
+      "textTransform": "uppercase",
+      "margin": "7px 0px 40px"
+    },
+    "worldwideGo": {
+      "selector": "button.submit",
+      "page": "https://www.zarahome.com/",
+      "backgroundColor": "rgb(30, 30, 30)",
+      "color": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(30, 30, 30)",
+      "borderRadius": "0px",
+      "fontSize": "12px",
+      "fontWeight": "600",
+      "lineHeight": "16px",
+      "letterSpacing": "0.2px",
+      "textTransform": "uppercase",
+      "padding": "0px 16px",
+      "height": "36px",
+      "marginTop": "25px"
+    },
+    "worldwideField": {
+      "selector": "mat-form-field.form__inputs__market",
+      "page": "https://www.zarahome.com/",
+      "fontFamily": "ZH-Sans, Arial, \"Lucida Sans Unicode\"",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "height": "75px",
+      "marginBottom": "15px",
+      "borderRadius": "0px",
+      "color": "rgba(0, 0, 0, 0.87)"
+    },
+    "skipLink": {
+      "selector": "button.skip-button",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "border": "1px solid rgb(30, 30, 30)",
+      "borderRadius": "0px",
+      "fontSize": "14px",
+      "fontWeight": "600",
+      "height": "36px",
+      "padding": "0px 16px",
+      "textTransform": "uppercase",
+      "letterSpacing": "0.2px"
+    },
+    "headerHome": {
+      "selector": "header.header-container",
+      "page": "https://www.zarahome.com/ww/",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "height": "50px",
+      "padding": "0px 10px",
+      "position": "fixed",
+      "zIndex": "51",
+      "boxShadow": "none"
+    },
+    "headerCategory": {
+      "selector": "header.header-container",
+      "page": "https://www.zarahome.com/ww/bedroom-duvet-covers-n946",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "height": "50px",
+      "padding": "0px 10px",
+      "boxShadow": "none"
+    },
+    "headerSearch": {
+      "selector": "a.center-container__search-toggle",
+      "page": "https://www.zarahome.com/ww/",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "18px",
+      "fontWeight": "500",
+      "lineHeight": "22px",
+      "letterSpacing": "0.2px",
+      "height": "18px",
+      "textTransform": "none"
+    },
+    "logo": {
+      "selector": "img.logo-img",
+      "width": "150px",
+      "height": "26.4922px",
+      "src": "https://static.zarahome.net/8/static4/itxwebstandard/images/logos/logo.svg",
+      "marginLeft": "60px"
+    },
+    "footerHeading": {
+      "selector": "zh-footer h2",
+      "color": "rgb(30, 30, 30)",
+      "fontSize": "12px",
+      "fontWeight": "500",
+      "lineHeight": "16px",
+      "letterSpacing": "0.2px",
+      "textTransform": "uppercase"
+    },
+    "footerBlurb": {
+      "selector": "zh-footer p",
+      "color": "rgb(30, 30, 30)",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "lineHeight": "16px",
+      "letterSpacing": "0.2px",
+      "marginTop": "8px",
+      "marginBottom": "16px"
+    },
+    "footerLink": {
+      "selector": "zh-footer button",
+      "color": "rgb(30, 30, 30)",
+      "fontSize": "12px",
+      "fontWeight": "300",
+      "lineHeight": "16px",
+      "letterSpacing": "0.2px",
+      "textTransform": "uppercase",
+      "marginBottom": "8px"
+    },
+    "subscribe": {
+      "selector": "a.footer-component__newsletter-cta",
+      "color": "rgb(30, 30, 30)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "lineHeight": "16px",
+      "letterSpacing": "0.2px",
+      "textTransform": "uppercase",
+      "height": "44px",
+      "width": "310px",
+      "borderRadius": "0px",
+      "computedBorder": "0px none rgb(30, 30, 30)",
+      "authoredBorder": "1px solid currentColor from --footer-cta-border"
+    },
+    "marketButton": {
+      "selector": "button.language",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "12px",
+      "fontWeight": "300",
+      "lineHeight": "16px",
+      "letterSpacing": "0.2px",
+      "textTransform": "uppercase",
+      "height": "44px"
+    },
+    "filters": {
+      "selector": "category toolbar a FILTERS",
+      "page": "https://www.zarahome.com/ww/bedroom-duvet-covers-n946",
+      "color": "rgb(30, 30, 30)",
+      "fontSize": "11px",
+      "fontWeight": "400",
+      "lineHeight": "15px",
+      "letterSpacing": "0.2px",
+      "textTransform": "uppercase"
+    },
+    "gridView": {
+      "selector": "button.grid-view__option--selected",
+      "fontSize": "10px",
+      "fontWeight": "500",
+      "lineHeight": "14px",
+      "letterSpacing": "0.2px",
+      "height": "24px",
+      "width": "20px",
+      "color": "rgb(30, 30, 30)"
+    },
+    "subnav": {
+      "selector": "category subnav a",
+      "color": "rgb(30, 30, 30)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "18px",
+      "letterSpacing": "0.2px",
+      "height": "16px"
+    },
+    "productNameGrid": {
+      "selector": ".product-info__product-name",
+      "color": "rgb(30, 30, 30)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "18px",
+      "letterSpacing": "0.2px",
+      "textTransform": "uppercase"
+    },
+    "priceGrid": {
+      "selector": ".price",
+      "page": "category grid",
+      "color": "rgb(30, 30, 30)",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "lineHeight": "18px",
+      "letterSpacing": "0.2px"
+    },
+    "addOnCard": {
+      "selector": "button.add-to-cart-container__open-selector",
+      "backgroundColor": "rgba(255, 255, 255, 0.8)",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "fontSize": "12px",
+      "fontWeight": "600",
+      "lineHeight": "16px",
+      "letterSpacing": "0.2px",
+      "textTransform": "uppercase",
+      "height": "36px",
+      "padding": "0px 16px",
+      "borderRadius": "0px",
+      "note": "Opens the size selector. It was not used to add an item."
+    },
+    "swatch": {
+      "selector": "button.mat-mdc-tooltip-trigger",
+      "width": "20px",
+      "height": "20px",
+      "borderRadius": "0px",
+      "imageBorder": "1px solid rgb(255, 255, 255)"
+    },
+    "productTitle": {
+      "selector": "h1.product-detail-content__product-name",
+      "page": "product",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "fontSize": "22px",
+      "fontWeight": "600",
+      "lineHeight": "24px",
+      "letterSpacing": "0.2px",
+      "textTransform": "uppercase"
+    },
+    "productPrice": {
+      "selector": ".product-detail-content__product-price",
+      "color": "rgb(30, 30, 30)",
+      "fontSize": "18px",
+      "fontWeight": "600",
+      "lineHeight": "22px",
+      "letterSpacing": "0.2px"
+    },
+    "sku": {
+      "selector": "button.reference",
+      "color": "rgb(142, 142, 147)",
+      "fontSize": "11px",
+      "fontWeight": "400",
+      "lineHeight": "15px"
+    },
+    "description": {
+      "selector": ".product-detail-content__product-description",
+      "color": "rgb(142, 142, 147)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "letterSpacing": "0.2px"
+    },
+    "chooseSize": {
+      "selector": "button.select-size-button",
+      "backgroundColor": "rgb(30, 30, 30)",
+      "color": "rgb(255, 255, 255)",
+      "border": "1px solid rgba(0, 0, 0, 0.12)",
+      "borderRadius": "0px",
+      "fontSize": "12px",
+      "fontWeight": "600",
+      "lineHeight": "16px",
+      "letterSpacing": "0.2px",
+      "textTransform": "uppercase",
+      "height": "36px",
+      "padding": "0px 16px",
+      "labelWeight": "500"
+    },
+    "moreInfo": {
+      "selector": "button.toggle-long-desc",
+      "color": "rgb(30, 30, 30)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "lineHeight": "20px",
+      "textTransform": "none"
+    },
+    "metaLink": {
+      "selector": ".product-detail-content__more-info-link",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "fontSize": "11px",
+      "fontWeight": "400",
+      "lineHeight": "15px",
+      "letterSpacing": "0.2px",
+      "textTransform": "uppercase"
+    },
+    "lookTitle": {
+      "selector": "h2.carousel__title",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "fontSize": "12px",
+      "fontWeight": "600",
+      "lineHeight": "16px",
+      "letterSpacing": "0.2px",
+      "textTransform": "uppercase"
+    },
+    "lookName": {
+      "selector": "h2.product-info__product-item-name",
+      "fontSize": "10px",
+      "fontWeight": "400",
+      "lineHeight": "14px",
+      "letterSpacing": "0.2px",
+      "paddingTop": "5px"
+    },
+    "searchInput": {
+      "selector": "input.search-input",
+      "page": "https://www.zarahome.com/ww/search.html",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "fontSize": "30px",
+      "fontWeight": "500",
+      "lineHeight": "18px",
+      "letterSpacing": "0.2px",
+      "textTransform": "uppercase",
+      "height": "35px",
+      "padding": "0px 45px 0px 0px",
+      "borderRadius": "0px",
+      "border": "0px none rgba(0, 0, 0, 0.87)",
+      "placeholder": "What are you searching for?"
+    },
+    "dialogHello": {
+      "selector": "p.title_text",
+      "color": "rgb(30, 30, 30)",
+      "fontSize": "18px",
+      "fontWeight": "300",
+      "lineHeight": "22px",
+      "letterSpacing": "0.2px"
+    },
+    "dialogSubtext": {
+      "selector": "p.content__subtext",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "14px",
+      "fontWeight": "300",
+      "lineHeight": "18px",
+      "letterSpacing": "0.2px"
+    },
+    "dialogFooter": {
+      "selector": "p.content__footer-text",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "10px",
+      "fontWeight": "300",
+      "lineHeight": "14px",
+      "letterSpacing": "0.2px"
+    },
+    "dialogPrimary": {
+      "selector": "market dialog button.mat-primary",
+      "backgroundColor": "rgb(30, 30, 30)",
+      "color": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(30, 30, 30)",
+      "borderRadius": "0px",
+      "fontSize": "12px",
+      "fontWeight": "600",
+      "lineHeight": "16px",
+      "letterSpacing": "0.2px",
+      "textTransform": "uppercase",
+      "height": "40px",
+      "width": "462px",
+      "padding": "0px 16px",
+      "labelFontWeight": "300"
+    },
+    "dialogSecondary": {
+      "selector": "market dialog button.mat-unthemed",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "border": "1px solid rgb(30, 30, 30)",
+      "borderRadius": "0px",
+      "fontSize": "12px",
+      "fontWeight": "600",
+      "height": "40px",
+      "width": "462px",
+      "padding": "0px 16px",
+      "textTransform": "uppercase"
+    },
+    "dialogSurface": {
+      "selector": ".mat-mdc-dialog-surface",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderRadius": "0px",
+      "boxShadow": "none",
+      "paneWidth": "512px",
+      "paneHeight": "288px"
+    },
+    "chatFab": {
+      "selector": "product page button.button",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderRadius": "100%",
+      "width": "36px",
+      "height": "36px",
+      "padding": "9px",
+      "boxShadow": "rgba(0, 0, 0, 0.2) 0px 3px 5px -1px, rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px"
+    },
+    "focusVisible": {
+      "selector": "html body :focus-visible, html body .focus-visible",
+      "outline": "rgb(38, 132, 255) auto 1px",
+      "source": "stylesheet rule, not a live focus"
+    },
+    "buttonHover": {
+      "selector": "button.mdc-button:hover",
+      "backgroundColor": "rgb(58, 58, 60)",
+      "color": "rgb(255, 255, 255)",
+      "source": "stylesheet rule, not a live hover"
+    },
+    "cookieAllow": {
+      "selector": "#accept-recommended-btn-handler",
+      "backgroundColor": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(0, 0, 0)",
+      "borderRadius": "2px",
+      "fontSize": "14.4px",
+      "fontWeight": "600",
+      "padding": "10px 30px",
+      "letterSpacing": "0.144px",
+      "note": "OneTrust banner, collapsed (height 0) on the storefront after the market dialog."
+    },
+    "onetrustSearch": {
+      "selector": "input vendor search on the search page",
+      "border": "1px solid rgb(112, 112, 112)",
+      "borderRadius": "50px",
+      "fontSize": "12.8px",
+      "padding": "6px 35px 6px 15px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "height": "0px",
+      "note": "Collapsed. Not a storefront field."
+    },
+    "hiddenCategoryTitle": {
+      "selector": "h1.a11y-visually-hidden",
+      "page": "category",
+      "fontSize": "30px",
+      "fontWeight": "700",
+      "lineHeight": "34px",
+      "letterSpacing": "0.2px",
+      "note": "Visually hidden. Not a displayed headline."
+    }
+  },
+  "fonts": {
+    "family": "ZH-Sans",
+    "stack": "ZH-Sans, Arial, \"Lucida Sans Unicode\", sans-serif",
+    "stylesheet": "https://static.zarahome.net/8/static4/itxwebstandard/fuentes/main/zhfont.css",
+    "files": "ZaraAPPSans-*.woff2",
+    "weights": ["100", "200", "300", "400", "500", "600", "700"],
+    "loadedOnPage": ["300", "400"],
+    "reducedMotionMediaRules": 3
+  }
+}

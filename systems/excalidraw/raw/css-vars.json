@@ -1,0 +1,3740 @@
+{
+ "readAt": "2026-11-14",
+ "source": "the stylesheet bodies read during a live signed-out load of / on excalidraw.com (linked CSS bundles from network responses plus inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets on a .excalidraw element, plain (light) and .theme--dark (dark), at 1440 x 900",
+ "sheets": [
+  "https://excalidraw.com/assets/index-kSNXZRS3.css (211688 bytes)",
+  "inline-0 (75 bytes)",
+  "inline-1 (379 bytes)"
+ ],
+ "counts": {
+  "rules": 128,
+  "fonts": 4,
+  "names": {
+   "theme": 234,
+   "app": 0,
+   "vendor": 0
+  },
+  "bySelector": {
+   "[theme] .excalidraw .ToolIcon.fillable.ToolIcon_type_toggle.ToolIcon--checked .ToolIcon__icon": 1,
+   "[theme] .excalidraw .ToolIcon.ToolIcon_type_toggle.ToolIcon--checked .ToolIcon__icon": 1,
+   "[theme] .excalidraw .ToolIcon.ToolIcon_type_toggle:disabled": 1,
+   "[theme] .excalidraw .Spinner": 1,
+   "[theme] .excalidraw .Island": 1,
+   "[theme] .excalidraw": 289,
+   "[theme] .excalidraw.theme--dark": 151,
+   "[theme] .excalidraw .color-picker__button": 2,
+   "[theme] .excalidraw .color-picker__button.active:not(:active) .color-picker__button-outline": 1,
+   "[theme] .excalidraw .color-picker__button--large": 1,
+   "[theme] .excalidraw-color-dnd-ghost-swatch": 1,
+   "[theme] .excalidraw .range-wrapper": 1,
+   "[theme] .excalidraw-tooltip": 1,
+   "[theme] .excalidraw .minimap": 2,
+   "[theme] .excalidraw.theme--dark .minimap": 1,
+   "[theme] .excalidraw .publish-library__buttons .ToolIcon__icon .Spinner": 1,
+   "[theme] .excalidraw .Stack": 1,
+   "[theme] .excalidraw .dropdown-menu .dropdown-menu-item--selected": 1,
+   "[theme] .excalidraw .dropdown-menu-button": 1,
+   "[theme] .excalidraw.theme--dark.excalidraw .dropdown-menu-button": 1,
+   "[theme] .excalidraw.theme--dark.excalidraw .dropdown-menu-button:hover": 1,
+   "[theme] .excalidraw .dropdown-menu-button:hover": 1,
+   "[theme] .excalidraw .dropdown-menu-button[disabled]:hover": 1,
+   "[theme] .excalidraw.theme--dark.excalidraw .dropdown-menu-button[disabled]:hover": 1,
+   "[theme] .excalidraw .layer-ui__library .dropdown-menu .dropdown-menu-container": 1,
+   "[theme] .excalidraw .Dialog__close + .Dialog__content": 1,
+   "[theme] .minimap-toggle-button.fillable.ToolIcon_type_toggle.ToolIcon--checked .ToolIcon__icon": 1,
+   "[theme] .minimap-toggle-button.ToolIcon_type_toggle.ToolIcon--checked .ToolIcon__icon": 1,
+   "[theme] .minimap-toggle-button.ToolIcon_type_toggle:disabled": 1,
+   "[theme] .compact-shape-actions .compact-action-item": 1,
+   "[theme] .shape-actions-theme-scope": 2,
+   "[theme] :root.theme--dark .shape-actions-theme-scope": 2,
+   "[theme] .excalidraw .command-palette-dialog .commands .command-item": 1,
+   "[theme] .excalidraw .command-palette-dialog .commands .command-item.command-item-large": 1,
+   "[theme] .excalidraw .file-drop-overlay__file--back": 2,
+   "[theme] .excalidraw .file-drop-overlay__file--front": 2,
+   "[theme] .excalidraw .UserList": 1,
+   "[theme] .excalidraw .UserList__collaborator--avatar-only .UserList__collaborator-status-icon": 1,
+   "[theme] .excalidraw .sidebar__header__buttons button": 1,
+   "[theme] .excalidraw .sidebar-tab-trigger": 6,
+   "[theme] .excalidraw .sidebar-tab-trigger[data-state=\"active\"]": 4,
+   "[theme] .excalidraw .ExcButton": 3,
+   "[theme] .excalidraw .ExcButton .Spinner": 1,
+   "[theme] .excalidraw .ExcButton[disabled].ExcButton--variant-filled, .excalidraw .ExcButton[disabled]:hover": 2,
+   "[theme] .excalidraw .ExcButton[disabled].ExcButton--variant-outlined, .excalidraw .ExcButton[disabled].ExcButton--variant-icon": 2,
+   "[theme] .excalidraw .ExcButton--color-primary.ExcButton--variant-filled": 2,
+   "[theme] .excalidraw .ExcButton--color-primary.ExcButton--variant-filled .Spinner": 1,
+   "[theme] .excalidraw .ExcButton--color-primary.ExcButton--variant-filled:hover": 1,
+   "[theme] .excalidraw .ExcButton--color-primary.ExcButton--variant-filled:active": 1,
+   "[theme] .excalidraw .ExcButton--color-primary.ExcButton--variant-outlined, .excalidraw .ExcButton--color-primary.ExcButton--variant-icon": 3,
+   "[theme] .excalidraw .ExcButton--color-primary.ExcButton--variant-outlined .Spinner, .excalidraw .ExcButton--color-primary.ExcButton--variant-icon .Spinner": 1,
+   "[theme] .excalidraw .ExcButton--color-primary.ExcButton--variant-outlined:hover, .excalidraw .ExcButton--color-primary.ExcButton--variant-icon:hover": 2,
+   "[theme] .excalidraw .ExcButton--color-primary.ExcButton--variant-outlined:active, .excalidraw .ExcButton--color-primary.ExcButton--variant-icon:active": 2,
+   "[theme] .excalidraw .ExcButton--color-danger.ExcButton--variant-filled": 2,
+   "[theme] .excalidraw .ExcButton--color-danger.ExcButton--variant-filled .Spinner": 1,
+   "[theme] .excalidraw .ExcButton--color-danger.ExcButton--variant-filled:hover": 1,
+   "[theme] .excalidraw .ExcButton--color-danger.ExcButton--variant-filled:active": 1,
+   "[theme] .excalidraw .ExcButton--color-danger.ExcButton--variant-outlined, .excalidraw .ExcButton--color-danger.ExcButton--variant-icon": 3,
+   "[theme] .excalidraw .ExcButton--color-danger.ExcButton--variant-outlined .Spinner, .excalidraw .ExcButton--color-danger.ExcButton--variant-icon .Spinner": 1,
+   "[theme] .excalidraw .ExcButton--color-danger.ExcButton--variant-outlined:hover, .excalidraw .ExcButton--color-danger.ExcButton--variant-icon:hover": 2,
+   "[theme] .excalidraw .ExcButton--color-danger.ExcButton--variant-outlined:active, .excalidraw .ExcButton--color-danger.ExcButton--variant-icon:active": 2,
+   "[theme] .excalidraw .ExcButton--color-success.ExcButton--variant-filled": 2,
+   "[theme] .excalidraw .ExcButton--color-success.ExcButton--variant-filled .Spinner": 1,
+   "[theme] .excalidraw .ExcButton--color-success.ExcButton--variant-filled:hover": 1,
+   "[theme] .excalidraw .ExcButton--color-success.ExcButton--variant-filled:active": 1,
+   "[theme] .excalidraw .ExcButton--color-success.ExcButton--variant-outlined, .excalidraw .ExcButton--color-success.ExcButton--variant-icon": 3,
+   "[theme] .excalidraw .ExcButton--color-success.ExcButton--variant-outlined .Spinner, .excalidraw .ExcButton--color-success.ExcButton--variant-icon .Spinner": 1,
+   "[theme] .excalidraw .ExcButton--color-success.ExcButton--variant-outlined:hover, .excalidraw .ExcButton--color-success.ExcButton--variant-icon:hover": 2,
+   "[theme] .excalidraw .ExcButton--color-success.ExcButton--variant-outlined:active, .excalidraw .ExcButton--color-success.ExcButton--variant-icon:active": 2,
+   "[theme] .excalidraw .ExcButton--color-muted.ExcButton--variant-filled": 2,
+   "[theme] .excalidraw .ExcButton--color-muted.ExcButton--variant-filled .Spinner": 1,
+   "[theme] .excalidraw .ExcButton--color-muted.ExcButton--variant-filled:hover": 1,
+   "[theme] .excalidraw .ExcButton--color-muted.ExcButton--variant-filled:active": 1,
+   "[theme] .excalidraw .ExcButton--color-muted.ExcButton--variant-outlined, .excalidraw .ExcButton--color-muted.ExcButton--variant-icon": 3,
+   "[theme] .excalidraw .ExcButton--color-muted.ExcButton--variant-outlined .Spinner, .excalidraw .ExcButton--color-muted.ExcButton--variant-icon .Spinner": 1,
+   "[theme] .excalidraw .ExcButton--color-muted.ExcButton--variant-outlined:hover, .excalidraw .ExcButton--color-muted.ExcButton--variant-icon:hover": 2,
+   "[theme] .excalidraw .ExcButton--color-muted.ExcButton--variant-outlined:active, .excalidraw .ExcButton--color-muted.ExcButton--variant-icon:active": 2,
+   "[theme] .excalidraw .ExcButton--color-warning.ExcButton--variant-filled": 2,
+   "[theme] .excalidraw .ExcButton--color-warning.ExcButton--variant-filled .Spinner": 1,
+   "[theme] .excalidraw .ExcButton--color-warning.ExcButton--variant-filled:hover": 1,
+   "[theme] .excalidraw .ExcButton--color-warning.ExcButton--variant-filled:active": 1,
+   "[theme] .excalidraw .ExcButton--color-warning.ExcButton--variant-outlined, .excalidraw .ExcButton--color-warning.ExcButton--variant-icon": 3,
+   "[theme] .excalidraw .ExcButton--color-warning.ExcButton--variant-outlined .Spinner, .excalidraw .ExcButton--color-warning.ExcButton--variant-icon .Spinner": 1,
+   "[theme] .excalidraw .ExcButton--color-warning.ExcButton--variant-outlined:hover, .excalidraw .ExcButton--color-warning.ExcButton--variant-icon:hover": 2,
+   "[theme] .excalidraw .ExcButton--color-warning.ExcButton--variant-outlined:active, .excalidraw .ExcButton--color-warning.ExcButton--variant-icon:active": 2,
+   "[theme] .excalidraw .layer-ui__search-count .result-nav .result-nav-btn": 1,
+   "[theme] .excalidraw .ttd-dialog-panel-button div.Spinner": 1,
+   "[theme] .excalidraw.theme--dark.excalidraw .ttd-dialog-panel-button div.Spinner": 1,
+   "[theme] .excalidraw .HelpDialog__btn": 1,
+   "[theme] .excalidraw.theme--dark.excalidraw .HelpDialog__btn": 1,
+   "[theme] .excalidraw.theme--dark.excalidraw .HelpDialog__btn:hover": 1,
+   "[theme] .excalidraw .HelpDialog__btn:hover": 1,
+   "[theme] .excalidraw .Card .Card-button.ToolIcon_type_button .Spinner": 1,
+   "[theme] .excalidraw .ExportDialog__preview": 1,
+   "[theme] .excalidraw .collab-button": 8,
+   "[theme] .excalidraw .ExcalidrawLogo": 10,
+   "[theme] .excalidraw .welcome-screen-decor a": 1,
+   "[theme] .excalidraw--mobile.excalidraw": 1,
+   "[theme] @media screen and (min-device-width: 1921px) .excalidraw": 4,
+   "[theme] :root": 25,
+   "[theme] .excalidraw.excalidraw--viewport-status-border": 1,
+   "[theme] .excalidraw .selected-shape-actions": 1,
+   "[theme] .excalidraw .App-bottom-bar": 1,
+   "[theme] .excalidraw .App-toolbar .eraser.ToolIcon:hover": 2,
+   "[theme] .excalidraw .App-mobile-menu, .excalidraw .App-menu__left": 2,
+   "[theme] .excalidraw.theme--dark.excalidraw .App-mobile-menu, .excalidraw.theme--dark.excalidraw .App-menu__left": 2,
+   "[theme] .excalidraw__embeddable-container .excalidraw__embeddable__generating .Spinner": 1,
+   "[theme] .plus-banner": 4,
+   "[theme] .theme--dark .plus-banner": 3
+  }
+ },
+ "errors": [],
+ "theme": [
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ToolIcon.fillable.ToolIcon_type_toggle.ToolIcon--checked .ToolIcon__icon",
+   "context": [],
+   "properties": {
+    "--icon-fill-color": "var(--color-on-primary-container)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ToolIcon.ToolIcon_type_toggle.ToolIcon--checked .ToolIcon__icon",
+   "context": [],
+   "properties": {
+    "--keybinding-color": "var(--color-on-primary-container)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ToolIcon.ToolIcon_type_toggle:disabled",
+   "context": [],
+   "properties": {
+    "--keybinding-color": "var(--color-disabled)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .Spinner",
+   "context": [],
+   "properties": {
+    "--spinner-color": "var(--icon-fill-color)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .Island",
+   "context": [],
+   "properties": {
+    "--padding": "0"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw",
+   "context": [],
+   "properties": {
+    "--color-outline": "var(--color-gray-20)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw.theme--dark",
+   "context": [],
+   "properties": {
+    "--color-outline": "var(--color-gray-80)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .color-picker__button",
+   "context": [],
+   "properties": {
+    "--radius": "4px",
+    "--size": "1.375rem"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .color-picker__button.active:not(:active) .color-picker__button-outline",
+   "context": [],
+   "properties": {
+    "--offset": "-1px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .color-picker__button--large",
+   "context": [],
+   "properties": {
+    "--radius": "6px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw-color-dnd-ghost-swatch",
+   "context": [],
+   "properties": {
+    "--top-picks-dnd-ghost-ring": "0 0 0 1px rgba(0, 0, 0, .08)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw",
+   "context": [],
+   "properties": {
+    "--list-border-color": "var(--color-gray-20)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw.theme--dark",
+   "context": [],
+   "properties": {
+    "--list-border-color": "var(--color-gray-80)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw",
+   "context": [],
+   "properties": {
+    "--slider-thumb-size": "16px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .range-wrapper",
+   "context": [],
+   "properties": {
+    "--range-progress": "0"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw-tooltip",
+   "context": [],
+   "properties": {
+    "--ui-font": "Assistant, system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .minimap",
+   "context": [],
+   "properties": {
+    "--minimap-element-color": "var(--color-gray-40)",
+    "--minimap-viewport-color": "var(--color-primary)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw.theme--dark .minimap",
+   "context": [],
+   "properties": {
+    "--minimap-element-color": "var(--color-gray-70)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .publish-library__buttons .ToolIcon__icon .Spinner",
+   "context": [],
+   "properties": {
+    "--spinner-color": "#fff"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .Stack",
+   "context": [],
+   "properties": {
+    "--gap": "0"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .dropdown-menu .dropdown-menu-item--selected",
+   "context": [],
+   "properties": {
+    "--icon-fill-color": "var(--color-primary-darker)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .dropdown-menu-button",
+   "context": [],
+   "properties": {
+    "--background": "var(--color-surface-mid)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw.theme--dark.excalidraw .dropdown-menu-button",
+   "context": [],
+   "properties": {
+    "--background": "var(--color-surface-high)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw.theme--dark.excalidraw .dropdown-menu-button:hover",
+   "context": [],
+   "properties": {
+    "--background": "#363541"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .dropdown-menu-button:hover",
+   "context": [],
+   "properties": {
+    "--background": "var(--color-surface-high)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .dropdown-menu-button[disabled]:hover",
+   "context": [],
+   "properties": {
+    "--background": "var(--color-surface-mid)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw.theme--dark.excalidraw .dropdown-menu-button[disabled]:hover",
+   "context": [],
+   "properties": {
+    "--background": "var(--color-surface-high)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw",
+   "context": [],
+   "properties": {
+    "--container-padding-y": "1rem",
+    "--container-padding-x": ".75rem"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw",
+   "context": [],
+   "properties": {
+    "--theme-filter": "none",
+    "--button-destructive-bg-color": "#ffe3e3",
+    "--button-destructive-color": "#c92a2a",
+    "--button-gray-1": "#e9ecef",
+    "--button-gray-2": "#ced4da",
+    "--button-gray-3": "#adb5bd",
+    "--mobile-action-button-bg": "rgba(255, 255, 255, .35)",
+    "--button-special-active-bg-color": "#ebfbee",
+    "--dialog-border-color": "var(--color-gray-20)",
+    "--dropdown-icon": "url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"292.4\" height=\"292.4\" viewBox=\"0 0 292 292\"><path d=\"M287 197L159 69c-4-3-8-5-13-5s-9 2-13 5L5 197c-3 4-5 8-5 13s2 9 5 13c4 4 8 5 13 5h256c5 0 9-1 13-5s5-8 5-13-1-9-5-13z\"/></svg>')",
+    "--focus-highlight-color": "#a5d8ff",
+    "--icon-fill-color": "var(--color-on-surface)",
+    "--icon-green-fill-color": "#2b8a3e",
+    "--default-bg-color": "#fff",
+    "--input-bg-color": "#fff",
+    "--input-border-color": "#ced4da",
+    "--input-hover-bg-color": "#f1f3f5",
+    "--input-label-color": "#495057",
+    "--island-bg-color": "#ffffff",
+    "--island-bg-color-alt": "#fff",
+    "--keybinding-color": "var(--color-gray-40)",
+    "--link-color": "#1c7ed6",
+    "--link-color-hover": "#1971c2",
+    "--link-color-active": "#a5d8ff",
+    "--overlay-bg-color": "rgba(12, 12, 14, .35)",
+    "--popup-bg-color": "var(--island-bg-color)",
+    "--popup-secondary-bg-color": "#f1f3f5",
+    "--popup-text-color": "#000",
+    "--popup-text-inverted-color": "#fff",
+    "--select-highlight-color": "#339af0",
+    "--shadow-island": "0px 0px 1px 0px rgba(0, 0, 0, .17), 0px 0px 3px 0px rgba(0, 0, 0, .08), 0px 7px 14px 0px rgba(0, 0, 0, .05)",
+    "--shadow-island-stronger": "0px 0px 1px 0px rgba(0, 0, 0, .17), 0px 0px 3px 0px rgba(0, 0, 0, .08), 0px 7px 14px 0px rgb(0 0 0 / 18%)",
+    "--button-hover-bg": "var(--color-surface-high)",
+    "--button-active-bg": "var(--color-surface-high)",
+    "--button-active-border": "var(--color-brand-active)",
+    "--default-border-color": "var(--color-surface-high)",
+    "--default-button-size": "2rem",
+    "--default-icon-size": "1rem",
+    "--lg-button-size": "2.25rem",
+    "--lg-icon-size": "1rem",
+    "--editor-container-padding": "1rem",
+    "--mobile-action-button-size": "2rem",
+    "--scrollbar-thumb": "var(--button-gray-2)",
+    "--scrollbar-thumb-hover": "var(--button-gray-3)",
+    "--color-slider-track": "hsl(240, 100%, 90%)",
+    "--color-slider-thumb": "var(--color-gray-80)",
+    "--modal-shadow": "0px 100px 80px rgba(0, 0, 0, .07), 0px 41.7776px 33.4221px rgba(0, 0, 0, .0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, .0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, .035), 0px 6.6501px 5.32008px rgba(0, 0, 0, .0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, .0196802)",
+    "--avatar-border-color": "var(--color-gray-20)",
+    "--sidebar-shadow": "0px 100px 80px rgba(0, 0, 0, .07), 0px 41.7776px 33.4221px rgba(0, 0, 0, .0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, .0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, .035), 0px 6.6501px 5.32008px rgba(0, 0, 0, .0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, .0196802)",
+    "--sidebar-border-color": "var(--color-surface-high)",
+    "--sidebar-bg-color": "var(--island-bg-color)",
+    "--library-dropdown-shadow": "0px 15px 6px rgba(0, 0, 0, .01), 0px 8px 5px rgba(0, 0, 0, .05), 0px 4px 4px rgba(0, 0, 0, .09), 0px 1px 2px rgba(0, 0, 0, .1), 0px 0px 0px rgba(0, 0, 0, .1)",
+    "--chat-msg-shadow": "0 1px 2px rgba(0, 0, 0, .1)",
+    "--space-factor": ".25rem",
+    "--text-primary-color": "var(--color-on-surface)",
+    "--color-selection": "#6965db",
+    "--color-icon-white": "#fff",
+    "--color-primary": "#6965db",
+    "--color-primary-darker": "#5b57d1",
+    "--color-primary-darkest": "#4a47b1",
+    "--color-primary-light": "#e3e2fe",
+    "--color-primary-light-darker": "#d7d5ff",
+    "--color-primary-hover": "#5753d0",
+    "--color-gray-10": "#f5f5f5",
+    "--color-gray-20": "#ebebeb",
+    "--color-gray-30": "#d6d6d6",
+    "--color-gray-40": "#b8b8b8",
+    "--color-gray-50": "#999999",
+    "--color-gray-60": "#7a7a7a",
+    "--color-gray-70": "#5c5c5c",
+    "--color-gray-80": "#3d3d3d",
+    "--color-gray-85": "#242424",
+    "--color-gray-90": "#1e1e1e",
+    "--color-gray-100": "#121212",
+    "--color-disabled": "var(--color-gray-40)",
+    "--color-warning": "#fceeca",
+    "--color-warning-dark": "#f5c354",
+    "--color-warning-darker": "#f3ab2c",
+    "--color-warning-darkest": "#ec8b14",
+    "--color-text-warning": "var(--text-primary-color)",
+    "--color-danger": "#db6965",
+    "--color-danger-dark": "#db6965",
+    "--color-danger-darker": "#d65550",
+    "--color-danger-darkest": "#d1413c",
+    "--color-danger-text": "black",
+    "--color-danger-background": "#fff0f0",
+    "--color-danger-icon-background": "#ffdad6",
+    "--color-danger-color": "#700000",
+    "--color-danger-icon-color": "#700000",
+    "--color-warning-background": "var(--color-warning)",
+    "--color-warning-icon-background": "var(--color-warning-dark)",
+    "--color-warning-color": "var(--text-primary-color)",
+    "--color-warning-icon-color": "var(--text-primary-color)",
+    "--color-muted": "var(--color-gray-30)",
+    "--color-muted-darker": "var(--color-gray-60)",
+    "--color-muted-darkest": "var(--color-gray-100)",
+    "--color-muted-background": "var(--color-gray-80)",
+    "--color-muted-background-darker": "var(--color-gray-100)",
+    "--color-promo": "var(--color-primary)",
+    "--color-success": "#cafccc",
+    "--color-success-darker": "#bafabc",
+    "--color-success-darkest": "#a5eba8",
+    "--color-success-text": "#268029",
+    "--color-success-contrast": "#65bb6a",
+    "--color-success-contrast-hover": "#6bcf70",
+    "--color-success-contrast-active": "#6edf74",
+    "--color-logo-icon": "var(--color-primary)",
+    "--color-logo-text": "#190064",
+    "--border-radius-md": ".375rem",
+    "--border-radius-lg": ".5rem",
+    "--color-surface-high": "#f1f0ff",
+    "--color-surface-mid": "#f6f6f9",
+    "--color-surface-low": "#ececf4",
+    "--color-surface-lowest": "#ffffff",
+    "--color-on-surface": "#1b1b1f",
+    "--color-brand-hover": "#5753d0",
+    "--color-on-primary-container": "#030064",
+    "--color-brand-active": "#4440bf",
+    "--color-border-outline": "#767680",
+    "--color-border-outline-variant": "#c5c5d0",
+    "--color-surface-primary-container": "#e0dfff",
+    "--color-badge": "#0b6513",
+    "--background-color-badge": "#d3ffd2"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw.theme--dark",
+   "context": [],
+   "properties": {
+    "--theme-filter": "invert(93%) hue-rotate(180deg)",
+    "--button-destructive-bg-color": "#5a0000",
+    "--button-destructive-color": "#ffa8a8",
+    "--button-gray-1": "#363636",
+    "--button-gray-2": "#272727",
+    "--button-gray-3": "#222",
+    "--mobile-action-button-bg": "var(--island-bg-color)",
+    "--button-special-active-bg-color": "#204624",
+    "--dialog-border-color": "var(--color-gray-80)",
+    "--dropdown-icon": "url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"292.4\" height=\"292.4\" viewBox=\"0 0 292 292\"><path fill=\"%23ced4da\" d=\"M287 197L159 69c-4-3-8-5-13-5s-9 2-13 5L5 197c-3 4-5 8-5 13s2 9 5 13c4 4 8 5 13 5h256c5 0 9-1 13-5s5-8 5-13-1-9-5-13z\"/></svg>')",
+    "--focus-highlight-color": "#228be6",
+    "--icon-green-fill-color": "#69db7c",
+    "--default-bg-color": "#121212",
+    "--input-bg-color": "#121212",
+    "--input-border-color": "#2e2e2e",
+    "--input-hover-bg-color": "#181818",
+    "--input-label-color": "#e9ecef",
+    "--island-bg-color": "#232329",
+    "--island-bg-color-alt": "hsl(240, 12%, 12%)",
+    "--keybinding-color": "var(--color-gray-60)",
+    "--link-color": "#4dabf7",
+    "--overlay-bg-color": "rgba(12, 12, 14, .65)",
+    "--popup-secondary-bg-color": "#222",
+    "--popup-text-color": "#ced4da",
+    "--popup-text-inverted-color": "#2c2c2c",
+    "--select-highlight-color": "#4dabf7",
+    "--modal-shadow": "0px 100px 80px rgba(0, 0, 0, .07), 0px 41.7776px 33.4221px rgba(0, 0, 0, .0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, .0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, .035), 0px 6.6501px 5.32008px rgba(0, 0, 0, .0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, .0196802)",
+    "--avatar-border-color": "var(--color-gray-85)",
+    "--scrollbar-thumb": "#343a40",
+    "--scrollbar-thumb-hover": "#495057",
+    "--color-slider-track": "hsl(244, 23%, 39%)",
+    "--color-selection": "#b4b0ff",
+    "--color-icon-white": "var(--color-gray-90)",
+    "--color-primary": "#a8a5ff",
+    "--color-primary-darker": "#b2aeff",
+    "--color-primary-darkest": "#beb9ff",
+    "--color-primary-light": "#4f4d6f",
+    "--color-primary-light-darker": "#43415e",
+    "--color-primary-hover": "#bbb8ff",
+    "--color-disabled": "var(--color-gray-70)",
+    "--color-text-warning": "var(--color-gray-80)",
+    "--color-danger": "#ffa8a5",
+    "--color-danger-dark": "#672120",
+    "--color-danger-darker": "#8f2625",
+    "--color-danger-darkest": "#ac2b29",
+    "--color-danger-text": "#fbcbcc",
+    "--color-danger-background": "#fbcbcc",
+    "--color-danger-icon-background": "#672120",
+    "--color-danger-color": "#261919",
+    "--color-danger-icon-color": "#fbcbcc",
+    "--color-warning-background": "var(--color-warning)",
+    "--color-warning-icon-background": "var(--color-warning-dark)",
+    "--color-warning-color": "var(--color-gray-80)",
+    "--color-warning-icon-color": "var(--color-gray-80)",
+    "--color-muted": "var(--color-gray-80)",
+    "--color-muted-darker": "var(--color-gray-60)",
+    "--color-muted-darkest": "var(--color-gray-20)",
+    "--color-muted-background": "var(--color-gray-40)",
+    "--color-muted-background-darker": "var(--color-gray-20)",
+    "--color-logo-text": "#e2dfff",
+    "--color-surface-high": "#2e2d39",
+    "--color-surface-low": "hsl(240, 8%, 15%)",
+    "--color-surface-mid": "hsl(240 6% 10%)",
+    "--color-surface-lowest": "hsl(0, 0%, 7%)",
+    "--color-on-surface": "#e3e3e8",
+    "--color-brand-hover": "#bbb8ff",
+    "--color-on-primary-container": "#e0dfff",
+    "--color-brand-active": "#d0ccff",
+    "--color-border-outline": "#8e8d9c",
+    "--color-border-outline-variant": "#46464f",
+    "--color-surface-primary-container": "#403e6a"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw",
+   "context": [],
+   "properties": {
+    "--ExcTextField--color": "var(--color-on-surface)",
+    "--ExcTextField--label-color": "var(--color-on-surface)",
+    "--ExcTextField--background": "var(--color-surface-low)",
+    "--ExcTextField--readonly--background": "var(--color-surface-high)",
+    "--ExcTextField--readonly--color": "var(--color-on-surface)",
+    "--ExcTextField--border": "var(--color-gray-20)",
+    "--ExcTextField--readonly--border": "var(--color-border-outline-variant)",
+    "--ExcTextField--border-hover": "var(--color-brand-hover)",
+    "--ExcTextField--border-active": "var(--color-brand-active)",
+    "--ExcTextField--placeholder": "var(--color-border-outline-variant)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw.theme--dark",
+   "context": [],
+   "properties": {
+    "--ExcTextField--border": "var(--color-border-outline-variant)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .layer-ui__library .dropdown-menu .dropdown-menu-container",
+   "context": [],
+   "properties": {
+    "--box-shadow": "var(--library-dropdown-shadow)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .Dialog__close + .Dialog__content",
+   "context": [],
+   "properties": {
+    "--offset": "28px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".minimap-toggle-button.fillable.ToolIcon_type_toggle.ToolIcon--checked .ToolIcon__icon",
+   "context": [],
+   "properties": {
+    "--icon-fill-color": "var(--color-on-primary-container)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".minimap-toggle-button.ToolIcon_type_toggle.ToolIcon--checked .ToolIcon__icon",
+   "context": [],
+   "properties": {
+    "--keybinding-color": "var(--color-on-primary-container)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".minimap-toggle-button.ToolIcon_type_toggle:disabled",
+   "context": [],
+   "properties": {
+    "--keybinding-color": "var(--color-disabled)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".compact-shape-actions .compact-action-item",
+   "context": [],
+   "properties": {
+    "--default-button-size": "2rem"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".shape-actions-theme-scope",
+   "context": [],
+   "properties": {
+    "--button-border": "transparent",
+    "--button-bg": "var(--color-surface-mid)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ":root.theme--dark .shape-actions-theme-scope",
+   "context": [],
+   "properties": {
+    "--button-hover-bg": "#363541",
+    "--button-bg": "var(--color-surface-high)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .command-palette-dialog .commands .command-item",
+   "context": [],
+   "properties": {
+    "--icon-size": "1rem"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .command-palette-dialog .commands .command-item.command-item-large",
+   "context": [],
+   "properties": {
+    "--icon-size": "1.5rem"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .file-drop-overlay__file--back",
+   "context": [],
+   "properties": {
+    "--file-x": "-1.5rem",
+    "--file-angle": "-18deg"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .file-drop-overlay__file--front",
+   "context": [],
+   "properties": {
+    "--file-x": "1.5rem",
+    "--file-angle": "12deg"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw",
+   "context": [],
+   "properties": {
+    "--avatar-size": "1.75rem",
+    "--avatarList-gap": ".625rem",
+    "--userList-padding": "var(--space-factor)",
+    "--userlist-hint-bg-color": "var(--color-gray-10)",
+    "--userlist-hint-heading-color": "var(--color-gray-80)",
+    "--userlist-hint-text-color": "var(--color-gray-60)",
+    "--userlist-collaborators-border-color": "var(--color-gray-20)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw.theme--dark",
+   "context": [],
+   "properties": {
+    "--userlist-hint-bg-color": "var(--color-gray-90)",
+    "--userlist-hint-heading-color": "var(--color-gray-30)",
+    "--userlist-hint-text-color": "var(--color-gray-40)",
+    "--userlist-collaborators-border-color": "var(--color-gray-80)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .UserList",
+   "context": [],
+   "properties": {
+    "--max-size": "calc( var(--avatar-size) * var(--max-avatars, 2) + var(--avatarList-gap) * (var(--max-avatars, 2) - 1) + var(--userList-padding) * 2 )"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .UserList__collaborator--avatar-only .UserList__collaborator-status-icon",
+   "context": [],
+   "properties": {
+    "--size": "14px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .sidebar__header__buttons button",
+   "context": [],
+   "properties": {
+    "--button-bg": "transparent"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .sidebar-tab-trigger",
+   "context": [],
+   "properties": {
+    "--button-width": "auto",
+    "--button-bg": "transparent",
+    "--button-hover-bg": "transparent",
+    "--button-active-bg": "var(--color-primary)",
+    "--button-hover-color": "var(--color-primary)",
+    "--button-hover-border": "var(--color-primary)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .sidebar-tab-trigger[data-state=\"active\"]",
+   "context": [],
+   "properties": {
+    "--button-bg": "var(--color-primary)",
+    "--button-hover-bg": "var(--color-primary-darker)",
+    "--button-hover-color": "var(--color-icon-white)",
+    "--button-border": "var(--color-primary)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw",
+   "context": [],
+   "properties": {
+    "--RadioGroup-background": "var(--island-bg-color)",
+    "--RadioGroup-border": "var(--color-surface-high)",
+    "--RadioGroup-choice-color-off": "var(--color-primary)",
+    "--RadioGroup-choice-color-off-hover": "var(--color-brand-hover)",
+    "--RadioGroup-choice-background-off": "var(--island-bg-color)",
+    "--RadioGroup-choice-background-off-active": "var(--color-surface-high)",
+    "--RadioGroup-choice-color-on": "var(--color-surface-lowest)",
+    "--RadioGroup-choice-background-on": "var(--color-primary)",
+    "--RadioGroup-choice-background-on-hover": "var(--color-brand-hover)",
+    "--RadioGroup-choice-background-on-active": "var(--color-brand-active)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton",
+   "context": [],
+   "properties": {
+    "--text-color": "transparent",
+    "--border-color": "transparent",
+    "--back-color": "transparent"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton .Spinner",
+   "context": [],
+   "properties": {
+    "--spinner-color": "var(--color-surface-lowest)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton[disabled].ExcButton--variant-filled, .excalidraw .ExcButton[disabled]:hover",
+   "context": [],
+   "properties": {
+    "--back-color": "var(--color-surface-low)",
+    "--text-color": "var(--color-on-surface-variant)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton[disabled].ExcButton--variant-outlined, .excalidraw .ExcButton[disabled].ExcButton--variant-icon",
+   "context": [],
+   "properties": {
+    "--text-color": "var(--color-on-surface-variant)",
+    "--border-color": "var(--color-surface-high)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-primary.ExcButton--variant-filled",
+   "context": [],
+   "properties": {
+    "--text-color": "var(--color-surface-lowest)",
+    "--back-color": "var(--color-primary)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-primary.ExcButton--variant-filled .Spinner",
+   "context": [],
+   "properties": {
+    "--spinner-color": "var(--text-color)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-primary.ExcButton--variant-filled:hover",
+   "context": [],
+   "properties": {
+    "--back-color": "var(--color-brand-hover)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-primary.ExcButton--variant-filled:active",
+   "context": [],
+   "properties": {
+    "--back-color": "var(--color-brand-active)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-primary.ExcButton--variant-outlined, .excalidraw .ExcButton--color-primary.ExcButton--variant-icon",
+   "context": [],
+   "properties": {
+    "--text-color": "var(--color-primary)",
+    "--border-color": "var(--color-primary)",
+    "--back-color": "transparent"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-primary.ExcButton--variant-outlined .Spinner, .excalidraw .ExcButton--color-primary.ExcButton--variant-icon .Spinner",
+   "context": [],
+   "properties": {
+    "--spinner-color": "var(--text-color)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-primary.ExcButton--variant-outlined:hover, .excalidraw .ExcButton--color-primary.ExcButton--variant-icon:hover",
+   "context": [],
+   "properties": {
+    "--text-color": "var(--color-brand-hover)",
+    "--border-color": "var(--color-brand-hover)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-primary.ExcButton--variant-outlined:active, .excalidraw .ExcButton--color-primary.ExcButton--variant-icon:active",
+   "context": [],
+   "properties": {
+    "--text-color": "var(--color-brand-active)",
+    "--border-color": "var(--color-brand-active)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-danger.ExcButton--variant-filled",
+   "context": [],
+   "properties": {
+    "--text-color": "var(--color-danger-text)",
+    "--back-color": "var(--color-danger-dark)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-danger.ExcButton--variant-filled .Spinner",
+   "context": [],
+   "properties": {
+    "--spinner-color": "var(--text-color)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-danger.ExcButton--variant-filled:hover",
+   "context": [],
+   "properties": {
+    "--back-color": "var(--color-danger-darker)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-danger.ExcButton--variant-filled:active",
+   "context": [],
+   "properties": {
+    "--back-color": "var(--color-danger-darkest)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-danger.ExcButton--variant-outlined, .excalidraw .ExcButton--color-danger.ExcButton--variant-icon",
+   "context": [],
+   "properties": {
+    "--text-color": "var(--color-danger)",
+    "--border-color": "var(--color-danger)",
+    "--back-color": "transparent"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-danger.ExcButton--variant-outlined .Spinner, .excalidraw .ExcButton--color-danger.ExcButton--variant-icon .Spinner",
+   "context": [],
+   "properties": {
+    "--spinner-color": "var(--text-color)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-danger.ExcButton--variant-outlined:hover, .excalidraw .ExcButton--color-danger.ExcButton--variant-icon:hover",
+   "context": [],
+   "properties": {
+    "--text-color": "var(--color-danger-darkest)",
+    "--border-color": "var(--color-danger-darkest)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-danger.ExcButton--variant-outlined:active, .excalidraw .ExcButton--color-danger.ExcButton--variant-icon:active",
+   "context": [],
+   "properties": {
+    "--text-color": "var(--color-danger-darker)",
+    "--border-color": "var(--color-danger-darker)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-success.ExcButton--variant-filled",
+   "context": [],
+   "properties": {
+    "--text-color": "var(--color-success-text)",
+    "--back-color": "var(--color-success)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-success.ExcButton--variant-filled .Spinner",
+   "context": [],
+   "properties": {
+    "--spinner-color": "var(--color-success)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-success.ExcButton--variant-filled:hover",
+   "context": [],
+   "properties": {
+    "--back-color": "var(--color-success-darker)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-success.ExcButton--variant-filled:active",
+   "context": [],
+   "properties": {
+    "--back-color": "var(--color-success-darkest)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-success.ExcButton--variant-outlined, .excalidraw .ExcButton--color-success.ExcButton--variant-icon",
+   "context": [],
+   "properties": {
+    "--text-color": "var(--color-success-contrast)",
+    "--border-color": "var(--color-success-contrast)",
+    "--back-color": "transparent"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-success.ExcButton--variant-outlined .Spinner, .excalidraw .ExcButton--color-success.ExcButton--variant-icon .Spinner",
+   "context": [],
+   "properties": {
+    "--spinner-color": "var(--color-success-contrast)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-success.ExcButton--variant-outlined:hover, .excalidraw .ExcButton--color-success.ExcButton--variant-icon:hover",
+   "context": [],
+   "properties": {
+    "--text-color": "var(--color-success-contrast-hover)",
+    "--border-color": "var(--color-success-contrast-hover)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-success.ExcButton--variant-outlined:active, .excalidraw .ExcButton--color-success.ExcButton--variant-icon:active",
+   "context": [],
+   "properties": {
+    "--text-color": "var(--color-success-contrast-active)",
+    "--border-color": "var(--color-success-contrast-active)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-muted.ExcButton--variant-filled",
+   "context": [],
+   "properties": {
+    "--text-color": "var(--island-bg-color)",
+    "--back-color": "var(--color-gray-50)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-muted.ExcButton--variant-filled .Spinner",
+   "context": [],
+   "properties": {
+    "--spinner-color": "var(--text-color)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-muted.ExcButton--variant-filled:hover",
+   "context": [],
+   "properties": {
+    "--back-color": "var(--color-gray-60)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-muted.ExcButton--variant-filled:active",
+   "context": [],
+   "properties": {
+    "--back-color": "var(--color-gray-80)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-muted.ExcButton--variant-outlined, .excalidraw .ExcButton--color-muted.ExcButton--variant-icon",
+   "context": [],
+   "properties": {
+    "--text-color": "var(--color-muted-background)",
+    "--border-color": "var(--color-muted)",
+    "--back-color": "var(--island-bg-color)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-muted.ExcButton--variant-outlined .Spinner, .excalidraw .ExcButton--color-muted.ExcButton--variant-icon .Spinner",
+   "context": [],
+   "properties": {
+    "--spinner-color": "var(--text-color)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-muted.ExcButton--variant-outlined:hover, .excalidraw .ExcButton--color-muted.ExcButton--variant-icon:hover",
+   "context": [],
+   "properties": {
+    "--text-color": "var(--color-muted-background-darker)",
+    "--border-color": "var(--color-muted-darker)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-muted.ExcButton--variant-outlined:active, .excalidraw .ExcButton--color-muted.ExcButton--variant-icon:active",
+   "context": [],
+   "properties": {
+    "--text-color": "var(--color-muted-background-darker)",
+    "--border-color": "var(--color-muted-darkest)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-warning.ExcButton--variant-filled",
+   "context": [],
+   "properties": {
+    "--text-color": "black",
+    "--back-color": "var(--color-warning-dark)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-warning.ExcButton--variant-filled .Spinner",
+   "context": [],
+   "properties": {
+    "--spinner-color": "var(--text-color)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-warning.ExcButton--variant-filled:hover",
+   "context": [],
+   "properties": {
+    "--back-color": "var(--color-warning-darker)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-warning.ExcButton--variant-filled:active",
+   "context": [],
+   "properties": {
+    "--back-color": "var(--color-warning-darkest)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-warning.ExcButton--variant-outlined, .excalidraw .ExcButton--color-warning.ExcButton--variant-icon",
+   "context": [],
+   "properties": {
+    "--text-color": "var(--color-warning-dark)",
+    "--border-color": "var(--color-warning-dark)",
+    "--back-color": "var(--input-bg-color)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-warning.ExcButton--variant-outlined .Spinner, .excalidraw .ExcButton--color-warning.ExcButton--variant-icon .Spinner",
+   "context": [],
+   "properties": {
+    "--spinner-color": "var(--text-color)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-warning.ExcButton--variant-outlined:hover, .excalidraw .ExcButton--color-warning.ExcButton--variant-icon:hover",
+   "context": [],
+   "properties": {
+    "--text-color": "var(--color-warning-darker)",
+    "--border-color": "var(--color-warning-darker)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcButton--color-warning.ExcButton--variant-outlined:active, .excalidraw .ExcButton--color-warning.ExcButton--variant-icon:active",
+   "context": [],
+   "properties": {
+    "--text-color": "var(--color-warning-darkest)",
+    "--border-color": "var(--color-warning-darkest)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .layer-ui__search-count .result-nav .result-nav-btn",
+   "context": [],
+   "properties": {
+    "--button-border": "transparent"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ttd-dialog-panel-button div.Spinner",
+   "context": [],
+   "properties": {
+    "--spinner-color": "white"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw.theme--dark.excalidraw .ttd-dialog-panel-button div.Spinner",
+   "context": [],
+   "properties": {
+    "--spinner-color": "var(--color-gray-100)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .HelpDialog__btn",
+   "context": [],
+   "properties": {
+    "--background": "var(--color-surface-mid)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw.theme--dark.excalidraw .HelpDialog__btn",
+   "context": [],
+   "properties": {
+    "--background": "var(--color-surface-high)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw.theme--dark.excalidraw .HelpDialog__btn:hover",
+   "context": [],
+   "properties": {
+    "--background": "#363541"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .HelpDialog__btn:hover",
+   "context": [],
+   "properties": {
+    "--background": "var(--color-surface-high)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw",
+   "context": [],
+   "properties": {
+    "--Switch-disabled-color": "var(--color-border-outline)",
+    "--Switch-disabled-toggled-background": "var(--color-border-outline-variant)",
+    "--Switch-disabled-border": "var(--color-border-outline-variant)",
+    "--Switch-track-background": "var(--island-bg-color)",
+    "--Switch-thumb-background": "var(--color-on-surface)",
+    "--Switch-hover-background": "var(--color-brand-hover)",
+    "--Switch-active-background": "var(--color-brand-active)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw",
+   "context": [],
+   "properties": {
+    "--ImageExportModal-preview-border": "#d6d6d6"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw.theme--dark",
+   "context": [],
+   "properties": {
+    "--ImageExportModal-preview-border": "#5c5c5c"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .Card .Card-button.ToolIcon_type_button .Spinner",
+   "context": [],
+   "properties": {
+    "--spinner-color": "#fff"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExportDialog__preview",
+   "context": [],
+   "properties": {
+    "--preview-padding": "calc(var(--space-factor) * 4)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .collab-button",
+   "context": [],
+   "properties": {
+    "--button-bg": "var(--color-primary)",
+    "--button-color": "var(--color-surface-lowest)",
+    "--button-border": "var(--color-primary)",
+    "--button-width": "var(--lg-button-size)",
+    "--button-height": "var(--lg-button-size)",
+    "--button-hover-bg": "var(--color-primary-darker)",
+    "--button-hover-border": "var(--color-primary-darker)",
+    "--button-active-bg": "var(--color-primary-darker)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .ExcalidrawLogo",
+   "context": [],
+   "properties": {
+    "--logo-icon--mobile": "1rem",
+    "--logo-text--mobile": ".75rem",
+    "--logo-icon--xs": "2rem",
+    "--logo-text--xs": "1.5rem",
+    "--logo-icon--small": "2.5rem",
+    "--logo-text--small": "1.75rem",
+    "--logo-icon--normal": "3rem",
+    "--logo-text--normal": "2.2rem",
+    "--logo-icon--large": "90px",
+    "--logo-text--large": "65px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .welcome-screen-decor a",
+   "context": [],
+   "properties": {
+    "--color": "var(--color-primary)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw",
+   "context": [],
+   "properties": {
+    "--theme-filter": "none",
+    "--button-destructive-bg-color": "#ffe3e3",
+    "--button-destructive-color": "#c92a2a",
+    "--button-gray-1": "#e9ecef",
+    "--button-gray-2": "#ced4da",
+    "--button-gray-3": "#adb5bd",
+    "--mobile-action-button-bg": "rgba(255, 255, 255, .35)",
+    "--button-special-active-bg-color": "#ebfbee",
+    "--dialog-border-color": "var(--color-gray-20)",
+    "--dropdown-icon": "url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"292.4\" height=\"292.4\" viewBox=\"0 0 292 292\"><path d=\"M287 197L159 69c-4-3-8-5-13-5s-9 2-13 5L5 197c-3 4-5 8-5 13s2 9 5 13c4 4 8 5 13 5h256c5 0 9-1 13-5s5-8 5-13-1-9-5-13z\"/></svg>')",
+    "--focus-highlight-color": "#a5d8ff",
+    "--icon-fill-color": "var(--color-on-surface)",
+    "--icon-green-fill-color": "#2b8a3e",
+    "--default-bg-color": "#fff",
+    "--input-bg-color": "#fff",
+    "--input-border-color": "#ced4da",
+    "--input-hover-bg-color": "#f1f3f5",
+    "--input-label-color": "#495057",
+    "--island-bg-color": "#ffffff",
+    "--island-bg-color-alt": "#fff",
+    "--keybinding-color": "var(--color-gray-40)",
+    "--link-color": "#1c7ed6",
+    "--link-color-hover": "#1971c2",
+    "--link-color-active": "#a5d8ff",
+    "--overlay-bg-color": "rgba(12, 12, 14, .35)",
+    "--popup-bg-color": "var(--island-bg-color)",
+    "--popup-secondary-bg-color": "#f1f3f5",
+    "--popup-text-color": "#000",
+    "--popup-text-inverted-color": "#fff",
+    "--select-highlight-color": "#339af0",
+    "--shadow-island": "0px 0px 1px 0px rgba(0, 0, 0, .17), 0px 0px 3px 0px rgba(0, 0, 0, .08), 0px 7px 14px 0px rgba(0, 0, 0, .05)",
+    "--shadow-island-stronger": "0px 0px 1px 0px rgba(0, 0, 0, .17), 0px 0px 3px 0px rgba(0, 0, 0, .08), 0px 7px 14px 0px rgb(0 0 0 / 18%)",
+    "--button-hover-bg": "var(--color-surface-high)",
+    "--button-active-bg": "var(--color-surface-high)",
+    "--button-active-border": "var(--color-brand-active)",
+    "--default-border-color": "var(--color-surface-high)",
+    "--default-button-size": "2rem",
+    "--default-icon-size": "1rem",
+    "--lg-button-size": "2.25rem",
+    "--lg-icon-size": "1rem",
+    "--editor-container-padding": "1rem",
+    "--mobile-action-button-size": "2rem",
+    "--scrollbar-thumb": "var(--button-gray-2)",
+    "--scrollbar-thumb-hover": "var(--button-gray-3)",
+    "--color-slider-track": "hsl(240, 100%, 90%)",
+    "--color-slider-thumb": "var(--color-gray-80)",
+    "--modal-shadow": "0px 100px 80px rgba(0, 0, 0, .07), 0px 41.7776px 33.4221px rgba(0, 0, 0, .0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, .0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, .035), 0px 6.6501px 5.32008px rgba(0, 0, 0, .0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, .0196802)",
+    "--avatar-border-color": "var(--color-gray-20)",
+    "--sidebar-shadow": "0px 100px 80px rgba(0, 0, 0, .07), 0px 41.7776px 33.4221px rgba(0, 0, 0, .0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, .0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, .035), 0px 6.6501px 5.32008px rgba(0, 0, 0, .0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, .0196802)",
+    "--sidebar-border-color": "var(--color-surface-high)",
+    "--sidebar-bg-color": "var(--island-bg-color)",
+    "--library-dropdown-shadow": "0px 15px 6px rgba(0, 0, 0, .01), 0px 8px 5px rgba(0, 0, 0, .05), 0px 4px 4px rgba(0, 0, 0, .09), 0px 1px 2px rgba(0, 0, 0, .1), 0px 0px 0px rgba(0, 0, 0, .1)",
+    "--chat-msg-shadow": "0 1px 2px rgba(0, 0, 0, .1)",
+    "--space-factor": ".25rem",
+    "--text-primary-color": "var(--color-on-surface)",
+    "--color-selection": "#6965db",
+    "--color-icon-white": "#fff",
+    "--color-primary": "#6965db",
+    "--color-primary-darker": "#5b57d1",
+    "--color-primary-darkest": "#4a47b1",
+    "--color-primary-light": "#e3e2fe",
+    "--color-primary-light-darker": "#d7d5ff",
+    "--color-primary-hover": "#5753d0",
+    "--color-gray-10": "#f5f5f5",
+    "--color-gray-20": "#ebebeb",
+    "--color-gray-30": "#d6d6d6",
+    "--color-gray-40": "#b8b8b8",
+    "--color-gray-50": "#999999",
+    "--color-gray-60": "#7a7a7a",
+    "--color-gray-70": "#5c5c5c",
+    "--color-gray-80": "#3d3d3d",
+    "--color-gray-85": "#242424",
+    "--color-gray-90": "#1e1e1e",
+    "--color-gray-100": "#121212",
+    "--color-disabled": "var(--color-gray-40)",
+    "--color-warning": "#fceeca",
+    "--color-warning-dark": "#f5c354",
+    "--color-warning-darker": "#f3ab2c",
+    "--color-warning-darkest": "#ec8b14",
+    "--color-text-warning": "var(--text-primary-color)",
+    "--color-danger": "#db6965",
+    "--color-danger-dark": "#db6965",
+    "--color-danger-darker": "#d65550",
+    "--color-danger-darkest": "#d1413c",
+    "--color-danger-text": "black",
+    "--color-danger-background": "#fff0f0",
+    "--color-danger-icon-background": "#ffdad6",
+    "--color-danger-color": "#700000",
+    "--color-danger-icon-color": "#700000",
+    "--color-warning-background": "var(--color-warning)",
+    "--color-warning-icon-background": "var(--color-warning-dark)",
+    "--color-warning-color": "var(--text-primary-color)",
+    "--color-warning-icon-color": "var(--text-primary-color)",
+    "--color-muted": "var(--color-gray-30)",
+    "--color-muted-darker": "var(--color-gray-60)",
+    "--color-muted-darkest": "var(--color-gray-100)",
+    "--color-muted-background": "var(--color-gray-80)",
+    "--color-muted-background-darker": "var(--color-gray-100)",
+    "--color-promo": "var(--color-primary)",
+    "--color-success": "#cafccc",
+    "--color-success-darker": "#bafabc",
+    "--color-success-darkest": "#a5eba8",
+    "--color-success-text": "#268029",
+    "--color-success-contrast": "#65bb6a",
+    "--color-success-contrast-hover": "#6bcf70",
+    "--color-success-contrast-active": "#6edf74",
+    "--color-logo-icon": "var(--color-primary)",
+    "--color-logo-text": "#190064",
+    "--border-radius-md": ".375rem",
+    "--border-radius-lg": ".5rem",
+    "--color-surface-high": "#f1f0ff",
+    "--color-surface-mid": "#f6f6f9",
+    "--color-surface-low": "#ececf4",
+    "--color-surface-lowest": "#ffffff",
+    "--color-on-surface": "#1b1b1f",
+    "--color-brand-hover": "#5753d0",
+    "--color-on-primary-container": "#030064",
+    "--color-brand-active": "#4440bf",
+    "--color-border-outline": "#767680",
+    "--color-border-outline-variant": "#c5c5d0",
+    "--color-surface-primary-container": "#e0dfff",
+    "--color-badge": "#0b6513",
+    "--background-color-badge": "#d3ffd2"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw--mobile.excalidraw",
+   "context": [],
+   "properties": {
+    "--editor-container-padding": ".75rem"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw",
+   "context": [
+    "@media screen and (min-device-width: 1921px)"
+   ],
+   "properties": {
+    "--lg-button-size": "2.375rem",
+    "--lg-icon-size": "1.25rem",
+    "--default-button-size": "2.25rem",
+    "--default-icon-size": "1.25rem"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw.theme--dark",
+   "context": [],
+   "properties": {
+    "--theme-filter": "invert(93%) hue-rotate(180deg)",
+    "--button-destructive-bg-color": "#5a0000",
+    "--button-destructive-color": "#ffa8a8",
+    "--button-gray-1": "#363636",
+    "--button-gray-2": "#272727",
+    "--button-gray-3": "#222",
+    "--mobile-action-button-bg": "var(--island-bg-color)",
+    "--button-special-active-bg-color": "#204624",
+    "--dialog-border-color": "var(--color-gray-80)",
+    "--dropdown-icon": "url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"292.4\" height=\"292.4\" viewBox=\"0 0 292 292\"><path fill=\"%23ced4da\" d=\"M287 197L159 69c-4-3-8-5-13-5s-9 2-13 5L5 197c-3 4-5 8-5 13s2 9 5 13c4 4 8 5 13 5h256c5 0 9-1 13-5s5-8 5-13-1-9-5-13z\"/></svg>')",
+    "--focus-highlight-color": "#228be6",
+    "--icon-green-fill-color": "#69db7c",
+    "--default-bg-color": "#121212",
+    "--input-bg-color": "#121212",
+    "--input-border-color": "#2e2e2e",
+    "--input-hover-bg-color": "#181818",
+    "--input-label-color": "#e9ecef",
+    "--island-bg-color": "#232329",
+    "--island-bg-color-alt": "hsl(240, 12%, 12%)",
+    "--keybinding-color": "var(--color-gray-60)",
+    "--link-color": "#4dabf7",
+    "--overlay-bg-color": "rgba(12, 12, 14, .65)",
+    "--popup-secondary-bg-color": "#222",
+    "--popup-text-color": "#ced4da",
+    "--popup-text-inverted-color": "#2c2c2c",
+    "--select-highlight-color": "#4dabf7",
+    "--modal-shadow": "0px 100px 80px rgba(0, 0, 0, .07), 0px 41.7776px 33.4221px rgba(0, 0, 0, .0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, .0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, .035), 0px 6.6501px 5.32008px rgba(0, 0, 0, .0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, .0196802)",
+    "--avatar-border-color": "var(--color-gray-85)",
+    "--scrollbar-thumb": "#343a40",
+    "--scrollbar-thumb-hover": "#495057",
+    "--color-slider-track": "hsl(244, 23%, 39%)",
+    "--color-selection": "#b4b0ff",
+    "--color-icon-white": "var(--color-gray-90)",
+    "--color-primary": "#a8a5ff",
+    "--color-primary-darker": "#b2aeff",
+    "--color-primary-darkest": "#beb9ff",
+    "--color-primary-light": "#4f4d6f",
+    "--color-primary-light-darker": "#43415e",
+    "--color-primary-hover": "#bbb8ff",
+    "--color-disabled": "var(--color-gray-70)",
+    "--color-text-warning": "var(--color-gray-80)",
+    "--color-danger": "#ffa8a5",
+    "--color-danger-dark": "#672120",
+    "--color-danger-darker": "#8f2625",
+    "--color-danger-darkest": "#ac2b29",
+    "--color-danger-text": "#fbcbcc",
+    "--color-danger-background": "#fbcbcc",
+    "--color-danger-icon-background": "#672120",
+    "--color-danger-color": "#261919",
+    "--color-danger-icon-color": "#fbcbcc",
+    "--color-warning-background": "var(--color-warning)",
+    "--color-warning-icon-background": "var(--color-warning-dark)",
+    "--color-warning-color": "var(--color-gray-80)",
+    "--color-warning-icon-color": "var(--color-gray-80)",
+    "--color-muted": "var(--color-gray-80)",
+    "--color-muted-darker": "var(--color-gray-60)",
+    "--color-muted-darkest": "var(--color-gray-20)",
+    "--color-muted-background": "var(--color-gray-40)",
+    "--color-muted-background-darker": "var(--color-gray-20)",
+    "--color-logo-text": "#e2dfff",
+    "--color-surface-high": "#2e2d39",
+    "--color-surface-low": "hsl(240, 8%, 15%)",
+    "--color-surface-mid": "hsl(240 6% 10%)",
+    "--color-surface-lowest": "hsl(0, 0%, 7%)",
+    "--color-on-surface": "#e3e3e8",
+    "--color-brand-hover": "#bbb8ff",
+    "--color-on-primary-container": "#e0dfff",
+    "--color-brand-active": "#d0ccff",
+    "--color-border-outline": "#8e8d9c",
+    "--color-border-outline-variant": "#46464f",
+    "--color-surface-primary-container": "#403e6a"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--zIndex-canvas": "1",
+    "--zIndex-interactiveCanvas": "2",
+    "--zIndex-svgLayer": "3",
+    "--zIndex-wysiwyg": "3",
+    "--zIndex-canvasButtons": "3",
+    "--zIndex-layerUI": "4",
+    "--zIndex-viewportStatusFrame": "5",
+    "--zIndex-eyeDropperBackdrop": "5",
+    "--zIndex-eyeDropperPreview": "6",
+    "--zIndex-hyperlinkContainer": "7",
+    "--zIndex-cursorHint": "8",
+    "--zIndex-ui-bottom": "60",
+    "--zIndex-ui-context-menu": "90",
+    "--zIndex-ui-styles-popup": "100",
+    "--zIndex-ui-top": "100",
+    "--zIndex-ui-main-menu": "110",
+    "--zIndex-ui-library": "120",
+    "--zIndex-fileDropOverlay": "130",
+    "--zIndex-modal": "1000",
+    "--zIndex-popup": "1001",
+    "--zIndex-toast": "999999",
+    "--sab": "env(safe-area-inset-bottom)",
+    "--sal": "env(safe-area-inset-left)",
+    "--sar": "env(safe-area-inset-right)",
+    "--sat": "env(safe-area-inset-top)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw",
+   "context": [],
+   "properties": {
+    "--ui-font": "Assistant, system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+    "--viewport-status-frame-border-width": "0px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw.excalidraw--viewport-status-border",
+   "context": [],
+   "properties": {
+    "--viewport-status-frame-border-width": "4px"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .selected-shape-actions",
+   "context": [],
+   "properties": {
+    "--default-button-size": "2rem"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .App-bottom-bar",
+   "context": [],
+   "properties": {
+    "--bar-padding": "calc(4 * var(--space-factor))"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .App-toolbar .eraser.ToolIcon:hover",
+   "context": [],
+   "properties": {
+    "--icon-fill-color": "#fff",
+    "--keybinding-color": "#fff"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw .App-mobile-menu, .excalidraw .App-menu__left",
+   "context": [],
+   "properties": {
+    "--button-border": "transparent",
+    "--button-bg": "var(--color-surface-mid)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw.theme--dark.excalidraw .App-mobile-menu, .excalidraw.theme--dark.excalidraw .App-menu__left",
+   "context": [],
+   "properties": {
+    "--button-hover-bg": "#363541",
+    "--button-bg": "var(--color-surface-high)"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw__embeddable-container .excalidraw__embeddable__generating .Spinner",
+   "context": [],
+   "properties": {
+    "--spinner-color": "#fff"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw",
+   "context": [],
+   "properties": {
+    "--color-primary-contrast-offset": "#625ee0"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".excalidraw.theme--dark",
+   "context": [],
+   "properties": {
+    "--color-primary-contrast-offset": "#726dff"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".plus-banner",
+   "context": [],
+   "properties": {
+    "--plus-banner-bg": "#f0efff",
+    "--plus-banner-bg-hover": "var(--color-primary-light)",
+    "--plus-banner-border": "var(--color-primary-light-darker)",
+    "--plus-banner-subtitle": "#8b88e0"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "selector": ".theme--dark .plus-banner",
+   "context": [],
+   "properties": {
+    "--plus-banner-bg": "#2b2a40",
+    "--plus-banner-border": "#4f4d6f",
+    "--plus-banner-subtitle": "#8f8cc4"
+   },
+   "bin": "theme"
+  }
+ ],
+ "app": [],
+ "vendor": [],
+ "fonts": [
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "font-family": "Assistant",
+   "src": "url(\"https://excalidraw.nyc3.cdn.digitaloceanspaces.com/oss/fonts/Assistant/Assistant-Regular.woff2\") format(\"woff2\"), url(\"./Assistant-Regular.woff2\") format(\"woff2\")",
+   "font-weight": "400"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "font-family": "Assistant",
+   "src": "url(\"https://excalidraw.nyc3.cdn.digitaloceanspaces.com/oss/fonts/Assistant/Assistant-Medium.woff2\") format(\"woff2\"), url(\"./Assistant-Medium.woff2\") format(\"woff2\")",
+   "font-weight": "500"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "font-family": "Assistant",
+   "src": "url(\"https://excalidraw.nyc3.cdn.digitaloceanspaces.com/oss/fonts/Assistant/Assistant-SemiBold.woff2\") format(\"woff2\"), url(\"./Assistant-SemiBold.woff2\") format(\"woff2\")",
+   "font-weight": "600"
+  },
+  {
+   "file": "https://excalidraw.com/assets/index-kSNXZRS3.css",
+   "font-family": "Assistant",
+   "src": "url(\"https://excalidraw.nyc3.cdn.digitaloceanspaces.com/oss/fonts/Assistant/Assistant-Bold.woff2\") format(\"woff2\"), url(\"./Assistant-Bold.woff2\") format(\"woff2\")",
+   "font-weight": "700"
+  }
+ ],
+ "resolved": {
+  "dark": {
+   "--ExcTextField--background": {
+    "raw": "hsl(240, 8%, 15%)",
+    "kind": "color",
+    "value": "#232329"
+   },
+   "--ExcTextField--border": {
+    "raw": "#46464f",
+    "kind": "color",
+    "value": "#46464f"
+   },
+   "--ExcTextField--border-active": {
+    "raw": "#d0ccff",
+    "kind": "color",
+    "value": "#d0ccff"
+   },
+   "--ExcTextField--border-hover": {
+    "raw": "#bbb8ff",
+    "kind": "color",
+    "value": "#bbb8ff"
+   },
+   "--ExcTextField--color": {
+    "raw": "#e3e3e8",
+    "kind": "color",
+    "value": "#e3e3e8"
+   },
+   "--ExcTextField--label-color": {
+    "raw": "#e3e3e8",
+    "kind": "color",
+    "value": "#e3e3e8"
+   },
+   "--ExcTextField--placeholder": {
+    "raw": "#46464f",
+    "kind": "color",
+    "value": "#46464f"
+   },
+   "--ExcTextField--readonly--background": {
+    "raw": "#2e2d39",
+    "kind": "color",
+    "value": "#2e2d39"
+   },
+   "--ExcTextField--readonly--border": {
+    "raw": "#46464f",
+    "kind": "color",
+    "value": "#46464f"
+   },
+   "--ExcTextField--readonly--color": {
+    "raw": "#e3e3e8",
+    "kind": "color",
+    "value": "#e3e3e8"
+   },
+   "--ImageExportModal-preview-border": {
+    "raw": "#5c5c5c",
+    "kind": "color",
+    "value": "#5c5c5c"
+   },
+   "--RadioGroup-background": {
+    "raw": "#232329",
+    "kind": "color",
+    "value": "#232329"
+   },
+   "--RadioGroup-border": {
+    "raw": "#2e2d39",
+    "kind": "color",
+    "value": "#2e2d39"
+   },
+   "--RadioGroup-choice-background-off": {
+    "raw": "#232329",
+    "kind": "color",
+    "value": "#232329"
+   },
+   "--RadioGroup-choice-background-off-active": {
+    "raw": "#2e2d39",
+    "kind": "color",
+    "value": "#2e2d39"
+   },
+   "--RadioGroup-choice-background-on": {
+    "raw": "#a8a5ff",
+    "kind": "color",
+    "value": "#a8a5ff"
+   },
+   "--RadioGroup-choice-background-on-active": {
+    "raw": "#d0ccff",
+    "kind": "color",
+    "value": "#d0ccff"
+   },
+   "--RadioGroup-choice-background-on-hover": {
+    "raw": "#bbb8ff",
+    "kind": "color",
+    "value": "#bbb8ff"
+   },
+   "--RadioGroup-choice-color-off": {
+    "raw": "#a8a5ff",
+    "kind": "color",
+    "value": "#a8a5ff"
+   },
+   "--RadioGroup-choice-color-off-hover": {
+    "raw": "#bbb8ff",
+    "kind": "color",
+    "value": "#bbb8ff"
+   },
+   "--RadioGroup-choice-color-on": {
+    "raw": "hsl(0, 0%, 7%)",
+    "kind": "color",
+    "value": "#121212"
+   },
+   "--Switch-active-background": {
+    "raw": "#d0ccff",
+    "kind": "color",
+    "value": "#d0ccff"
+   },
+   "--Switch-disabled-border": {
+    "raw": "#46464f",
+    "kind": "color",
+    "value": "#46464f"
+   },
+   "--Switch-disabled-color": {
+    "raw": "#8e8d9c",
+    "kind": "color",
+    "value": "#8e8d9c"
+   },
+   "--Switch-disabled-toggled-background": {
+    "raw": "#46464f",
+    "kind": "color",
+    "value": "#46464f"
+   },
+   "--Switch-hover-background": {
+    "raw": "#bbb8ff",
+    "kind": "color",
+    "value": "#bbb8ff"
+   },
+   "--Switch-thumb-background": {
+    "raw": "#e3e3e8",
+    "kind": "color",
+    "value": "#e3e3e8"
+   },
+   "--Switch-track-background": {
+    "raw": "#232329",
+    "kind": "color",
+    "value": "#232329"
+   },
+   "--avatar-border-color": {
+    "raw": "#242424",
+    "kind": "color",
+    "value": "#242424"
+   },
+   "--avatar-size": {
+    "raw": "1.75rem",
+    "kind": "dimension",
+    "value": "28px"
+   },
+   "--avatarList-gap": {
+    "raw": ".625rem",
+    "kind": "dimension",
+    "value": "10px"
+   },
+   "--background-color-badge": {
+    "raw": "#d3ffd2",
+    "kind": "color",
+    "value": "#d3ffd2"
+   },
+   "--border-radius-lg": {
+    "raw": ".5rem",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--border-radius-md": {
+    "raw": ".375rem",
+    "kind": "dimension",
+    "value": "6px"
+   },
+   "--button-active-bg": {
+    "raw": "#2e2d39",
+    "kind": "color",
+    "value": "#2e2d39"
+   },
+   "--button-active-border": {
+    "raw": "#d0ccff",
+    "kind": "color",
+    "value": "#d0ccff"
+   },
+   "--button-destructive-bg-color": {
+    "raw": "#5a0000",
+    "kind": "color",
+    "value": "#5a0000"
+   },
+   "--button-destructive-color": {
+    "raw": "#ffa8a8",
+    "kind": "color",
+    "value": "#ffa8a8"
+   },
+   "--button-gray-1": {
+    "raw": "#363636",
+    "kind": "color",
+    "value": "#363636"
+   },
+   "--button-gray-2": {
+    "raw": "#272727",
+    "kind": "color",
+    "value": "#272727"
+   },
+   "--button-gray-3": {
+    "raw": "#222",
+    "kind": "color",
+    "value": "#222222"
+   },
+   "--button-hover-bg": {
+    "raw": "#2e2d39",
+    "kind": "color",
+    "value": "#2e2d39"
+   },
+   "--button-special-active-bg-color": {
+    "raw": "#204624",
+    "kind": "color",
+    "value": "#204624"
+   },
+   "--chat-msg-shadow": {
+    "raw": "0 1px 2px rgba(0, 0, 0, .1)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.1) 0px 1px 2px 0px"
+   },
+   "--color-badge": {
+    "raw": "#0b6513",
+    "kind": "color",
+    "value": "#0b6513"
+   },
+   "--color-border-outline": {
+    "raw": "#8e8d9c",
+    "kind": "color",
+    "value": "#8e8d9c"
+   },
+   "--color-border-outline-variant": {
+    "raw": "#46464f",
+    "kind": "color",
+    "value": "#46464f"
+   },
+   "--color-brand-active": {
+    "raw": "#d0ccff",
+    "kind": "color",
+    "value": "#d0ccff"
+   },
+   "--color-brand-hover": {
+    "raw": "#bbb8ff",
+    "kind": "color",
+    "value": "#bbb8ff"
+   },
+   "--color-danger": {
+    "raw": "#ffa8a5",
+    "kind": "color",
+    "value": "#ffa8a5"
+   },
+   "--color-danger-background": {
+    "raw": "#fbcbcc",
+    "kind": "color",
+    "value": "#fbcbcc"
+   },
+   "--color-danger-color": {
+    "raw": "#261919",
+    "kind": "color",
+    "value": "#261919"
+   },
+   "--color-danger-dark": {
+    "raw": "#672120",
+    "kind": "color",
+    "value": "#672120"
+   },
+   "--color-danger-darker": {
+    "raw": "#8f2625",
+    "kind": "color",
+    "value": "#8f2625"
+   },
+   "--color-danger-darkest": {
+    "raw": "#ac2b29",
+    "kind": "color",
+    "value": "#ac2b29"
+   },
+   "--color-danger-icon-background": {
+    "raw": "#672120",
+    "kind": "color",
+    "value": "#672120"
+   },
+   "--color-danger-icon-color": {
+    "raw": "#fbcbcc",
+    "kind": "color",
+    "value": "#fbcbcc"
+   },
+   "--color-danger-text": {
+    "raw": "#fbcbcc",
+    "kind": "color",
+    "value": "#fbcbcc"
+   },
+   "--color-disabled": {
+    "raw": "#5c5c5c",
+    "kind": "color",
+    "value": "#5c5c5c"
+   },
+   "--color-gray-10": {
+    "raw": "#f5f5f5",
+    "kind": "color",
+    "value": "#f5f5f5"
+   },
+   "--color-gray-100": {
+    "raw": "#121212",
+    "kind": "color",
+    "value": "#121212"
+   },
+   "--color-gray-20": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--color-gray-30": {
+    "raw": "#d6d6d6",
+    "kind": "color",
+    "value": "#d6d6d6"
+   },
+   "--color-gray-40": {
+    "raw": "#b8b8b8",
+    "kind": "color",
+    "value": "#b8b8b8"
+   },
+   "--color-gray-50": {
+    "raw": "#999999",
+    "kind": "color",
+    "value": "#999999"
+   },
+   "--color-gray-60": {
+    "raw": "#7a7a7a",
+    "kind": "color",
+    "value": "#7a7a7a"
+   },
+   "--color-gray-70": {
+    "raw": "#5c5c5c",
+    "kind": "color",
+    "value": "#5c5c5c"
+   },
+   "--color-gray-80": {
+    "raw": "#3d3d3d",
+    "kind": "color",
+    "value": "#3d3d3d"
+   },
+   "--color-gray-85": {
+    "raw": "#242424",
+    "kind": "color",
+    "value": "#242424"
+   },
+   "--color-gray-90": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--color-icon-white": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--color-logo-icon": {
+    "raw": "#a8a5ff",
+    "kind": "color",
+    "value": "#a8a5ff"
+   },
+   "--color-logo-text": {
+    "raw": "#e2dfff",
+    "kind": "color",
+    "value": "#e2dfff"
+   },
+   "--color-muted": {
+    "raw": "#3d3d3d",
+    "kind": "color",
+    "value": "#3d3d3d"
+   },
+   "--color-muted-background": {
+    "raw": "#b8b8b8",
+    "kind": "color",
+    "value": "#b8b8b8"
+   },
+   "--color-muted-background-darker": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--color-muted-darker": {
+    "raw": "#7a7a7a",
+    "kind": "color",
+    "value": "#7a7a7a"
+   },
+   "--color-muted-darkest": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--color-on-primary-container": {
+    "raw": "#e0dfff",
+    "kind": "color",
+    "value": "#e0dfff"
+   },
+   "--color-on-surface": {
+    "raw": "#e3e3e8",
+    "kind": "color",
+    "value": "#e3e3e8"
+   },
+   "--color-outline": {
+    "raw": "#3d3d3d",
+    "kind": "color",
+    "value": "#3d3d3d"
+   },
+   "--color-primary": {
+    "raw": "#a8a5ff",
+    "kind": "color",
+    "value": "#a8a5ff"
+   },
+   "--color-primary-contrast-offset": {
+    "raw": "#726dff",
+    "kind": "color",
+    "value": "#726dff"
+   },
+   "--color-primary-darker": {
+    "raw": "#b2aeff",
+    "kind": "color",
+    "value": "#b2aeff"
+   },
+   "--color-primary-darkest": {
+    "raw": "#beb9ff",
+    "kind": "color",
+    "value": "#beb9ff"
+   },
+   "--color-primary-hover": {
+    "raw": "#bbb8ff",
+    "kind": "color",
+    "value": "#bbb8ff"
+   },
+   "--color-primary-light": {
+    "raw": "#4f4d6f",
+    "kind": "color",
+    "value": "#4f4d6f"
+   },
+   "--color-primary-light-darker": {
+    "raw": "#43415e",
+    "kind": "color",
+    "value": "#43415e"
+   },
+   "--color-promo": {
+    "raw": "#a8a5ff",
+    "kind": "color",
+    "value": "#a8a5ff"
+   },
+   "--color-selection": {
+    "raw": "#b4b0ff",
+    "kind": "color",
+    "value": "#b4b0ff"
+   },
+   "--color-slider-thumb": {
+    "raw": "#3d3d3d",
+    "kind": "color",
+    "value": "#3d3d3d"
+   },
+   "--color-slider-track": {
+    "raw": "hsl(244, 23%, 39%)",
+    "kind": "color",
+    "value": "#504d7a"
+   },
+   "--color-success": {
+    "raw": "#cafccc",
+    "kind": "color",
+    "value": "#cafccc"
+   },
+   "--color-success-contrast": {
+    "raw": "#65bb6a",
+    "kind": "color",
+    "value": "#65bb6a"
+   },
+   "--color-success-contrast-active": {
+    "raw": "#6edf74",
+    "kind": "color",
+    "value": "#6edf74"
+   },
+   "--color-success-contrast-hover": {
+    "raw": "#6bcf70",
+    "kind": "color",
+    "value": "#6bcf70"
+   },
+   "--color-success-darker": {
+    "raw": "#bafabc",
+    "kind": "color",
+    "value": "#bafabc"
+   },
+   "--color-success-darkest": {
+    "raw": "#a5eba8",
+    "kind": "color",
+    "value": "#a5eba8"
+   },
+   "--color-success-text": {
+    "raw": "#268029",
+    "kind": "color",
+    "value": "#268029"
+   },
+   "--color-surface-high": {
+    "raw": "#2e2d39",
+    "kind": "color",
+    "value": "#2e2d39"
+   },
+   "--color-surface-low": {
+    "raw": "hsl(240, 8%, 15%)",
+    "kind": "color",
+    "value": "#232329"
+   },
+   "--color-surface-lowest": {
+    "raw": "hsl(0, 0%, 7%)",
+    "kind": "color",
+    "value": "#121212"
+   },
+   "--color-surface-mid": {
+    "raw": "hsl(240 6% 10%)",
+    "kind": "color",
+    "value": "#18181b"
+   },
+   "--color-surface-primary-container": {
+    "raw": "#403e6a",
+    "kind": "color",
+    "value": "#403e6a"
+   },
+   "--color-text-warning": {
+    "raw": "#3d3d3d",
+    "kind": "color",
+    "value": "#3d3d3d"
+   },
+   "--color-warning": {
+    "raw": "#fceeca",
+    "kind": "color",
+    "value": "#fceeca"
+   },
+   "--color-warning-background": {
+    "raw": "#fceeca",
+    "kind": "color",
+    "value": "#fceeca"
+   },
+   "--color-warning-color": {
+    "raw": "#3d3d3d",
+    "kind": "color",
+    "value": "#3d3d3d"
+   },
+   "--color-warning-dark": {
+    "raw": "#f5c354",
+    "kind": "color",
+    "value": "#f5c354"
+   },
+   "--color-warning-darker": {
+    "raw": "#f3ab2c",
+    "kind": "color",
+    "value": "#f3ab2c"
+   },
+   "--color-warning-darkest": {
+    "raw": "#ec8b14",
+    "kind": "color",
+    "value": "#ec8b14"
+   },
+   "--color-warning-icon-background": {
+    "raw": "#f5c354",
+    "kind": "color",
+    "value": "#f5c354"
+   },
+   "--color-warning-icon-color": {
+    "raw": "#3d3d3d",
+    "kind": "color",
+    "value": "#3d3d3d"
+   },
+   "--container-padding-x": {
+    "raw": ".75rem",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--container-padding-y": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--default-bg-color": {
+    "raw": "#121212",
+    "kind": "color",
+    "value": "#121212"
+   },
+   "--default-border-color": {
+    "raw": "#2e2d39",
+    "kind": "color",
+    "value": "#2e2d39"
+   },
+   "--default-button-size": {
+    "raw": "2rem",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--default-icon-size": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--dialog-border-color": {
+    "raw": "#3d3d3d",
+    "kind": "color",
+    "value": "#3d3d3d"
+   },
+   "--dropdown-icon": {
+    "raw": "url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"292.4\" height=\"292.4\" viewBox=\"0 0 292 292\"><path fill=\"%23ced4da\" d=\"M287 197L159 69c-4-3-8-5-13-5s-9 2-13 5L5 197c-3 4-5 8-5 13s2 9 5 13c4 4 8 5 13 5h256c5 0 9-1 13-5s5-8 5-13-1-9-5-13z\"/></svg>')",
+    "kind": "other"
+   },
+   "--editor-container-padding": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--focus-highlight-color": {
+    "raw": "#228be6",
+    "kind": "color",
+    "value": "#228be6"
+   },
+   "--icon-fill-color": {
+    "raw": "#e3e3e8",
+    "kind": "color",
+    "value": "#e3e3e8"
+   },
+   "--icon-green-fill-color": {
+    "raw": "#69db7c",
+    "kind": "color",
+    "value": "#69db7c"
+   },
+   "--input-bg-color": {
+    "raw": "#121212",
+    "kind": "color",
+    "value": "#121212"
+   },
+   "--input-border-color": {
+    "raw": "#2e2e2e",
+    "kind": "color",
+    "value": "#2e2e2e"
+   },
+   "--input-hover-bg-color": {
+    "raw": "#181818",
+    "kind": "color",
+    "value": "#181818"
+   },
+   "--input-label-color": {
+    "raw": "#e9ecef",
+    "kind": "color",
+    "value": "#e9ecef"
+   },
+   "--island-bg-color": {
+    "raw": "#232329",
+    "kind": "color",
+    "value": "#232329"
+   },
+   "--island-bg-color-alt": {
+    "raw": "hsl(240, 12%, 12%)",
+    "kind": "color",
+    "value": "#1b1b22"
+   },
+   "--keybinding-color": {
+    "raw": "#7a7a7a",
+    "kind": "color",
+    "value": "#7a7a7a"
+   },
+   "--lg-button-size": {
+    "raw": "2.25rem",
+    "kind": "dimension",
+    "value": "36px"
+   },
+   "--lg-icon-size": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--library-dropdown-shadow": {
+    "raw": "0px 15px 6px rgba(0, 0, 0, .01), 0px 8px 5px rgba(0, 0, 0, .05), 0px 4px 4px rgba(0, 0, 0, .09), 0px 1px 2px rgba(0, 0, 0, .1), 0px 0px 0px rgba(0, 0, 0, .1)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.01) 0px 15px 6px 0px, rgba(0, 0, 0, 0.05) 0px 8px 5px 0px, rgba(0, 0, 0, 0.09) 0px 4px 4px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px 0px, rgba(0, 0, 0, 0.1) 0px 0px 0px 0px"
+   },
+   "--link-color": {
+    "raw": "#4dabf7",
+    "kind": "color",
+    "value": "#4dabf7"
+   },
+   "--link-color-active": {
+    "raw": "#a5d8ff",
+    "kind": "color",
+    "value": "#a5d8ff"
+   },
+   "--link-color-hover": {
+    "raw": "#1971c2",
+    "kind": "color",
+    "value": "#1971c2"
+   },
+   "--list-border-color": {
+    "raw": "#3d3d3d",
+    "kind": "color",
+    "value": "#3d3d3d"
+   },
+   "--mobile-action-button-bg": {
+    "raw": "#232329",
+    "kind": "color",
+    "value": "#232329"
+   },
+   "--mobile-action-button-size": {
+    "raw": "2rem",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--modal-shadow": {
+    "raw": "0px 100px 80px rgba(0, 0, 0, .07), 0px 41.7776px 33.4221px rgba(0, 0, 0, .0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, .0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, .035), 0px 6.6501px 5.32008px rgba(0, 0, 0, .0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, .0196802)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.07) 0px 100px 80px 0px, rgba(0, 0, 0, 0.05) 0px 41.7776px 33.4221px 0px, rgba(0, 0, 0, 0.043) 0px 22.3363px 17.869px 0px, rgba(0, 0, 0, 0.035) 0px 12.5216px 10.0172px 0px, rgba(0, 0, 0, 0.027) 0px 6.6501px 5.32008px 0px, rgba(0, 0, 0, 0.02) 0px 2.76726px 2.21381px 0px"
+   },
+   "--overlay-bg-color": {
+    "raw": "rgba(12, 12, 14, .65)",
+    "kind": "color",
+    "value": "rgba(12, 12, 14, 0.65)"
+   },
+   "--popup-bg-color": {
+    "raw": "#232329",
+    "kind": "color",
+    "value": "#232329"
+   },
+   "--popup-secondary-bg-color": {
+    "raw": "#222",
+    "kind": "color",
+    "value": "#222222"
+   },
+   "--popup-text-color": {
+    "raw": "#ced4da",
+    "kind": "color",
+    "value": "#ced4da"
+   },
+   "--popup-text-inverted-color": {
+    "raw": "#2c2c2c",
+    "kind": "color",
+    "value": "#2c2c2c"
+   },
+   "--sab": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--sal": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--sar": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--sat": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--scrollbar-thumb": {
+    "raw": "#343a40",
+    "kind": "color",
+    "value": "#343a40"
+   },
+   "--scrollbar-thumb-hover": {
+    "raw": "#495057",
+    "kind": "color",
+    "value": "#495057"
+   },
+   "--select-highlight-color": {
+    "raw": "#4dabf7",
+    "kind": "color",
+    "value": "#4dabf7"
+   },
+   "--shadow-island": {
+    "raw": "0px 0px 1px 0px rgba(0, 0, 0, .17), 0px 0px 3px 0px rgba(0, 0, 0, .08), 0px 7px 14px 0px rgba(0, 0, 0, .05)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.17) 0px 0px 1px 0px, rgba(0, 0, 0, 0.08) 0px 0px 3px 0px, rgba(0, 0, 0, 0.05) 0px 7px 14px 0px"
+   },
+   "--shadow-island-stronger": {
+    "raw": "0px 0px 1px 0px rgba(0, 0, 0, .17), 0px 0px 3px 0px rgba(0, 0, 0, .08), 0px 7px 14px 0px rgb(0 0 0 / 18%)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.17) 0px 0px 1px 0px, rgba(0, 0, 0, 0.08) 0px 0px 3px 0px, rgba(0, 0, 0, 0.18) 0px 7px 14px 0px"
+   },
+   "--sidebar-bg-color": {
+    "raw": "#232329",
+    "kind": "color",
+    "value": "#232329"
+   },
+   "--sidebar-border-color": {
+    "raw": "#2e2d39",
+    "kind": "color",
+    "value": "#2e2d39"
+   },
+   "--sidebar-shadow": {
+    "raw": "0px 100px 80px rgba(0, 0, 0, .07), 0px 41.7776px 33.4221px rgba(0, 0, 0, .0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, .0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, .035), 0px 6.6501px 5.32008px rgba(0, 0, 0, .0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, .0196802)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.07) 0px 100px 80px 0px, rgba(0, 0, 0, 0.05) 0px 41.7776px 33.4221px 0px, rgba(0, 0, 0, 0.043) 0px 22.3363px 17.869px 0px, rgba(0, 0, 0, 0.035) 0px 12.5216px 10.0172px 0px, rgba(0, 0, 0, 0.027) 0px 6.6501px 5.32008px 0px, rgba(0, 0, 0, 0.02) 0px 2.76726px 2.21381px 0px"
+   },
+   "--slider-thumb-size": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--space-factor": {
+    "raw": ".25rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--text-primary-color": {
+    "raw": "#e3e3e8",
+    "kind": "color",
+    "value": "#e3e3e8"
+   },
+   "--theme-filter": {
+    "raw": "invert(93%) hue-rotate(180deg)",
+    "kind": "other"
+   },
+   "--ui-font": {
+    "raw": "Assistant, system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+    "kind": "fontFamily",
+    "value": "Assistant, system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+   },
+   "--userList-padding": {
+    "raw": ".25rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--userlist-collaborators-border-color": {
+    "raw": "#3d3d3d",
+    "kind": "color",
+    "value": "#3d3d3d"
+   },
+   "--userlist-hint-bg-color": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--userlist-hint-heading-color": {
+    "raw": "#d6d6d6",
+    "kind": "color",
+    "value": "#d6d6d6"
+   },
+   "--userlist-hint-text-color": {
+    "raw": "#b8b8b8",
+    "kind": "color",
+    "value": "#b8b8b8"
+   },
+   "--viewport-status-frame-border-width": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--zIndex-canvas": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--zIndex-canvasButtons": {
+    "raw": "3",
+    "kind": "number",
+    "value": 3
+   },
+   "--zIndex-cursorHint": {
+    "raw": "8",
+    "kind": "number",
+    "value": 8
+   },
+   "--zIndex-eyeDropperBackdrop": {
+    "raw": "5",
+    "kind": "number",
+    "value": 5
+   },
+   "--zIndex-eyeDropperPreview": {
+    "raw": "6",
+    "kind": "number",
+    "value": 6
+   },
+   "--zIndex-fileDropOverlay": {
+    "raw": "130",
+    "kind": "number",
+    "value": 130
+   },
+   "--zIndex-hyperlinkContainer": {
+    "raw": "7",
+    "kind": "number",
+    "value": 7
+   },
+   "--zIndex-interactiveCanvas": {
+    "raw": "2",
+    "kind": "number",
+    "value": 2
+   },
+   "--zIndex-layerUI": {
+    "raw": "4",
+    "kind": "number",
+    "value": 4
+   },
+   "--zIndex-modal": {
+    "raw": "1000",
+    "kind": "number",
+    "value": 1000
+   },
+   "--zIndex-popup": {
+    "raw": "1001",
+    "kind": "number",
+    "value": 1001
+   },
+   "--zIndex-svgLayer": {
+    "raw": "3",
+    "kind": "number",
+    "value": 3
+   },
+   "--zIndex-toast": {
+    "raw": "999999",
+    "kind": "number",
+    "value": 999999
+   },
+   "--zIndex-ui-bottom": {
+    "raw": "60",
+    "kind": "number",
+    "value": 60
+   },
+   "--zIndex-ui-context-menu": {
+    "raw": "90",
+    "kind": "number",
+    "value": 90
+   },
+   "--zIndex-ui-library": {
+    "raw": "120",
+    "kind": "number",
+    "value": 120
+   },
+   "--zIndex-ui-main-menu": {
+    "raw": "110",
+    "kind": "number",
+    "value": 110
+   },
+   "--zIndex-ui-styles-popup": {
+    "raw": "100",
+    "kind": "number",
+    "value": 100
+   },
+   "--zIndex-ui-top": {
+    "raw": "100",
+    "kind": "number",
+    "value": 100
+   },
+   "--zIndex-viewportStatusFrame": {
+    "raw": "5",
+    "kind": "number",
+    "value": 5
+   },
+   "--zIndex-wysiwyg": {
+    "raw": "3",
+    "kind": "number",
+    "value": 3
+   }
+  },
+  "light": {
+   "--ExcTextField--background": {
+    "raw": "#ececf4",
+    "kind": "color",
+    "value": "#ececf4"
+   },
+   "--ExcTextField--border": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--ExcTextField--border-active": {
+    "raw": "#4440bf",
+    "kind": "color",
+    "value": "#4440bf"
+   },
+   "--ExcTextField--border-hover": {
+    "raw": "#5753d0",
+    "kind": "color",
+    "value": "#5753d0"
+   },
+   "--ExcTextField--color": {
+    "raw": "#1b1b1f",
+    "kind": "color",
+    "value": "#1b1b1f"
+   },
+   "--ExcTextField--label-color": {
+    "raw": "#1b1b1f",
+    "kind": "color",
+    "value": "#1b1b1f"
+   },
+   "--ExcTextField--placeholder": {
+    "raw": "#c5c5d0",
+    "kind": "color",
+    "value": "#c5c5d0"
+   },
+   "--ExcTextField--readonly--background": {
+    "raw": "#f1f0ff",
+    "kind": "color",
+    "value": "#f1f0ff"
+   },
+   "--ExcTextField--readonly--border": {
+    "raw": "#c5c5d0",
+    "kind": "color",
+    "value": "#c5c5d0"
+   },
+   "--ExcTextField--readonly--color": {
+    "raw": "#1b1b1f",
+    "kind": "color",
+    "value": "#1b1b1f"
+   },
+   "--ImageExportModal-preview-border": {
+    "raw": "#d6d6d6",
+    "kind": "color",
+    "value": "#d6d6d6"
+   },
+   "--RadioGroup-background": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--RadioGroup-border": {
+    "raw": "#f1f0ff",
+    "kind": "color",
+    "value": "#f1f0ff"
+   },
+   "--RadioGroup-choice-background-off": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--RadioGroup-choice-background-off-active": {
+    "raw": "#f1f0ff",
+    "kind": "color",
+    "value": "#f1f0ff"
+   },
+   "--RadioGroup-choice-background-on": {
+    "raw": "#6965db",
+    "kind": "color",
+    "value": "#6965db"
+   },
+   "--RadioGroup-choice-background-on-active": {
+    "raw": "#4440bf",
+    "kind": "color",
+    "value": "#4440bf"
+   },
+   "--RadioGroup-choice-background-on-hover": {
+    "raw": "#5753d0",
+    "kind": "color",
+    "value": "#5753d0"
+   },
+   "--RadioGroup-choice-color-off": {
+    "raw": "#6965db",
+    "kind": "color",
+    "value": "#6965db"
+   },
+   "--RadioGroup-choice-color-off-hover": {
+    "raw": "#5753d0",
+    "kind": "color",
+    "value": "#5753d0"
+   },
+   "--RadioGroup-choice-color-on": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--Switch-active-background": {
+    "raw": "#4440bf",
+    "kind": "color",
+    "value": "#4440bf"
+   },
+   "--Switch-disabled-border": {
+    "raw": "#c5c5d0",
+    "kind": "color",
+    "value": "#c5c5d0"
+   },
+   "--Switch-disabled-color": {
+    "raw": "#767680",
+    "kind": "color",
+    "value": "#767680"
+   },
+   "--Switch-disabled-toggled-background": {
+    "raw": "#c5c5d0",
+    "kind": "color",
+    "value": "#c5c5d0"
+   },
+   "--Switch-hover-background": {
+    "raw": "#5753d0",
+    "kind": "color",
+    "value": "#5753d0"
+   },
+   "--Switch-thumb-background": {
+    "raw": "#1b1b1f",
+    "kind": "color",
+    "value": "#1b1b1f"
+   },
+   "--Switch-track-background": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--avatar-border-color": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--avatar-size": {
+    "raw": "1.75rem",
+    "kind": "dimension",
+    "value": "28px"
+   },
+   "--avatarList-gap": {
+    "raw": ".625rem",
+    "kind": "dimension",
+    "value": "10px"
+   },
+   "--background-color-badge": {
+    "raw": "#d3ffd2",
+    "kind": "color",
+    "value": "#d3ffd2"
+   },
+   "--border-radius-lg": {
+    "raw": ".5rem",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--border-radius-md": {
+    "raw": ".375rem",
+    "kind": "dimension",
+    "value": "6px"
+   },
+   "--button-active-bg": {
+    "raw": "#f1f0ff",
+    "kind": "color",
+    "value": "#f1f0ff"
+   },
+   "--button-active-border": {
+    "raw": "#4440bf",
+    "kind": "color",
+    "value": "#4440bf"
+   },
+   "--button-destructive-bg-color": {
+    "raw": "#ffe3e3",
+    "kind": "color",
+    "value": "#ffe3e3"
+   },
+   "--button-destructive-color": {
+    "raw": "#c92a2a",
+    "kind": "color",
+    "value": "#c92a2a"
+   },
+   "--button-gray-1": {
+    "raw": "#e9ecef",
+    "kind": "color",
+    "value": "#e9ecef"
+   },
+   "--button-gray-2": {
+    "raw": "#ced4da",
+    "kind": "color",
+    "value": "#ced4da"
+   },
+   "--button-gray-3": {
+    "raw": "#adb5bd",
+    "kind": "color",
+    "value": "#adb5bd"
+   },
+   "--button-hover-bg": {
+    "raw": "#f1f0ff",
+    "kind": "color",
+    "value": "#f1f0ff"
+   },
+   "--button-special-active-bg-color": {
+    "raw": "#ebfbee",
+    "kind": "color",
+    "value": "#ebfbee"
+   },
+   "--chat-msg-shadow": {
+    "raw": "0 1px 2px rgba(0, 0, 0, .1)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.1) 0px 1px 2px 0px"
+   },
+   "--color-badge": {
+    "raw": "#0b6513",
+    "kind": "color",
+    "value": "#0b6513"
+   },
+   "--color-border-outline": {
+    "raw": "#767680",
+    "kind": "color",
+    "value": "#767680"
+   },
+   "--color-border-outline-variant": {
+    "raw": "#c5c5d0",
+    "kind": "color",
+    "value": "#c5c5d0"
+   },
+   "--color-brand-active": {
+    "raw": "#4440bf",
+    "kind": "color",
+    "value": "#4440bf"
+   },
+   "--color-brand-hover": {
+    "raw": "#5753d0",
+    "kind": "color",
+    "value": "#5753d0"
+   },
+   "--color-danger": {
+    "raw": "#db6965",
+    "kind": "color",
+    "value": "#db6965"
+   },
+   "--color-danger-background": {
+    "raw": "#fff0f0",
+    "kind": "color",
+    "value": "#fff0f0"
+   },
+   "--color-danger-color": {
+    "raw": "#700000",
+    "kind": "color",
+    "value": "#700000"
+   },
+   "--color-danger-dark": {
+    "raw": "#db6965",
+    "kind": "color",
+    "value": "#db6965"
+   },
+   "--color-danger-darker": {
+    "raw": "#d65550",
+    "kind": "color",
+    "value": "#d65550"
+   },
+   "--color-danger-darkest": {
+    "raw": "#d1413c",
+    "kind": "color",
+    "value": "#d1413c"
+   },
+   "--color-danger-icon-background": {
+    "raw": "#ffdad6",
+    "kind": "color",
+    "value": "#ffdad6"
+   },
+   "--color-danger-icon-color": {
+    "raw": "#700000",
+    "kind": "color",
+    "value": "#700000"
+   },
+   "--color-danger-text": {
+    "raw": "black",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--color-disabled": {
+    "raw": "#b8b8b8",
+    "kind": "color",
+    "value": "#b8b8b8"
+   },
+   "--color-gray-10": {
+    "raw": "#f5f5f5",
+    "kind": "color",
+    "value": "#f5f5f5"
+   },
+   "--color-gray-100": {
+    "raw": "#121212",
+    "kind": "color",
+    "value": "#121212"
+   },
+   "--color-gray-20": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--color-gray-30": {
+    "raw": "#d6d6d6",
+    "kind": "color",
+    "value": "#d6d6d6"
+   },
+   "--color-gray-40": {
+    "raw": "#b8b8b8",
+    "kind": "color",
+    "value": "#b8b8b8"
+   },
+   "--color-gray-50": {
+    "raw": "#999999",
+    "kind": "color",
+    "value": "#999999"
+   },
+   "--color-gray-60": {
+    "raw": "#7a7a7a",
+    "kind": "color",
+    "value": "#7a7a7a"
+   },
+   "--color-gray-70": {
+    "raw": "#5c5c5c",
+    "kind": "color",
+    "value": "#5c5c5c"
+   },
+   "--color-gray-80": {
+    "raw": "#3d3d3d",
+    "kind": "color",
+    "value": "#3d3d3d"
+   },
+   "--color-gray-85": {
+    "raw": "#242424",
+    "kind": "color",
+    "value": "#242424"
+   },
+   "--color-gray-90": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--color-icon-white": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--color-logo-icon": {
+    "raw": "#6965db",
+    "kind": "color",
+    "value": "#6965db"
+   },
+   "--color-logo-text": {
+    "raw": "#190064",
+    "kind": "color",
+    "value": "#190064"
+   },
+   "--color-muted": {
+    "raw": "#d6d6d6",
+    "kind": "color",
+    "value": "#d6d6d6"
+   },
+   "--color-muted-background": {
+    "raw": "#3d3d3d",
+    "kind": "color",
+    "value": "#3d3d3d"
+   },
+   "--color-muted-background-darker": {
+    "raw": "#121212",
+    "kind": "color",
+    "value": "#121212"
+   },
+   "--color-muted-darker": {
+    "raw": "#7a7a7a",
+    "kind": "color",
+    "value": "#7a7a7a"
+   },
+   "--color-muted-darkest": {
+    "raw": "#121212",
+    "kind": "color",
+    "value": "#121212"
+   },
+   "--color-on-primary-container": {
+    "raw": "#030064",
+    "kind": "color",
+    "value": "#030064"
+   },
+   "--color-on-surface": {
+    "raw": "#1b1b1f",
+    "kind": "color",
+    "value": "#1b1b1f"
+   },
+   "--color-outline": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--color-primary": {
+    "raw": "#6965db",
+    "kind": "color",
+    "value": "#6965db"
+   },
+   "--color-primary-contrast-offset": {
+    "raw": "#625ee0",
+    "kind": "color",
+    "value": "#625ee0"
+   },
+   "--color-primary-darker": {
+    "raw": "#5b57d1",
+    "kind": "color",
+    "value": "#5b57d1"
+   },
+   "--color-primary-darkest": {
+    "raw": "#4a47b1",
+    "kind": "color",
+    "value": "#4a47b1"
+   },
+   "--color-primary-hover": {
+    "raw": "#5753d0",
+    "kind": "color",
+    "value": "#5753d0"
+   },
+   "--color-primary-light": {
+    "raw": "#e3e2fe",
+    "kind": "color",
+    "value": "#e3e2fe"
+   },
+   "--color-primary-light-darker": {
+    "raw": "#d7d5ff",
+    "kind": "color",
+    "value": "#d7d5ff"
+   },
+   "--color-promo": {
+    "raw": "#6965db",
+    "kind": "color",
+    "value": "#6965db"
+   },
+   "--color-selection": {
+    "raw": "#6965db",
+    "kind": "color",
+    "value": "#6965db"
+   },
+   "--color-slider-thumb": {
+    "raw": "#3d3d3d",
+    "kind": "color",
+    "value": "#3d3d3d"
+   },
+   "--color-slider-track": {
+    "raw": "hsl(240, 100%, 90%)",
+    "kind": "color",
+    "value": "#ccccff"
+   },
+   "--color-success": {
+    "raw": "#cafccc",
+    "kind": "color",
+    "value": "#cafccc"
+   },
+   "--color-success-contrast": {
+    "raw": "#65bb6a",
+    "kind": "color",
+    "value": "#65bb6a"
+   },
+   "--color-success-contrast-active": {
+    "raw": "#6edf74",
+    "kind": "color",
+    "value": "#6edf74"
+   },
+   "--color-success-contrast-hover": {
+    "raw": "#6bcf70",
+    "kind": "color",
+    "value": "#6bcf70"
+   },
+   "--color-success-darker": {
+    "raw": "#bafabc",
+    "kind": "color",
+    "value": "#bafabc"
+   },
+   "--color-success-darkest": {
+    "raw": "#a5eba8",
+    "kind": "color",
+    "value": "#a5eba8"
+   },
+   "--color-success-text": {
+    "raw": "#268029",
+    "kind": "color",
+    "value": "#268029"
+   },
+   "--color-surface-high": {
+    "raw": "#f1f0ff",
+    "kind": "color",
+    "value": "#f1f0ff"
+   },
+   "--color-surface-low": {
+    "raw": "#ececf4",
+    "kind": "color",
+    "value": "#ececf4"
+   },
+   "--color-surface-lowest": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--color-surface-mid": {
+    "raw": "#f6f6f9",
+    "kind": "color",
+    "value": "#f6f6f9"
+   },
+   "--color-surface-primary-container": {
+    "raw": "#e0dfff",
+    "kind": "color",
+    "value": "#e0dfff"
+   },
+   "--color-text-warning": {
+    "raw": "#1b1b1f",
+    "kind": "color",
+    "value": "#1b1b1f"
+   },
+   "--color-warning": {
+    "raw": "#fceeca",
+    "kind": "color",
+    "value": "#fceeca"
+   },
+   "--color-warning-background": {
+    "raw": "#fceeca",
+    "kind": "color",
+    "value": "#fceeca"
+   },
+   "--color-warning-color": {
+    "raw": "#1b1b1f",
+    "kind": "color",
+    "value": "#1b1b1f"
+   },
+   "--color-warning-dark": {
+    "raw": "#f5c354",
+    "kind": "color",
+    "value": "#f5c354"
+   },
+   "--color-warning-darker": {
+    "raw": "#f3ab2c",
+    "kind": "color",
+    "value": "#f3ab2c"
+   },
+   "--color-warning-darkest": {
+    "raw": "#ec8b14",
+    "kind": "color",
+    "value": "#ec8b14"
+   },
+   "--color-warning-icon-background": {
+    "raw": "#f5c354",
+    "kind": "color",
+    "value": "#f5c354"
+   },
+   "--color-warning-icon-color": {
+    "raw": "#1b1b1f",
+    "kind": "color",
+    "value": "#1b1b1f"
+   },
+   "--container-padding-x": {
+    "raw": ".75rem",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--container-padding-y": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--default-bg-color": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--default-border-color": {
+    "raw": "#f1f0ff",
+    "kind": "color",
+    "value": "#f1f0ff"
+   },
+   "--default-button-size": {
+    "raw": "2rem",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--default-icon-size": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--dialog-border-color": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--dropdown-icon": {
+    "raw": "url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"292.4\" height=\"292.4\" viewBox=\"0 0 292 292\"><path d=\"M287 197L159 69c-4-3-8-5-13-5s-9 2-13 5L5 197c-3 4-5 8-5 13s2 9 5 13c4 4 8 5 13 5h256c5 0 9-1 13-5s5-8 5-13-1-9-5-13z\"/></svg>')",
+    "kind": "other"
+   },
+   "--editor-container-padding": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--focus-highlight-color": {
+    "raw": "#a5d8ff",
+    "kind": "color",
+    "value": "#a5d8ff"
+   },
+   "--icon-fill-color": {
+    "raw": "#1b1b1f",
+    "kind": "color",
+    "value": "#1b1b1f"
+   },
+   "--icon-green-fill-color": {
+    "raw": "#2b8a3e",
+    "kind": "color",
+    "value": "#2b8a3e"
+   },
+   "--input-bg-color": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--input-border-color": {
+    "raw": "#ced4da",
+    "kind": "color",
+    "value": "#ced4da"
+   },
+   "--input-hover-bg-color": {
+    "raw": "#f1f3f5",
+    "kind": "color",
+    "value": "#f1f3f5"
+   },
+   "--input-label-color": {
+    "raw": "#495057",
+    "kind": "color",
+    "value": "#495057"
+   },
+   "--island-bg-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--island-bg-color-alt": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--keybinding-color": {
+    "raw": "#b8b8b8",
+    "kind": "color",
+    "value": "#b8b8b8"
+   },
+   "--lg-button-size": {
+    "raw": "2.25rem",
+    "kind": "dimension",
+    "value": "36px"
+   },
+   "--lg-icon-size": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--library-dropdown-shadow": {
+    "raw": "0px 15px 6px rgba(0, 0, 0, .01), 0px 8px 5px rgba(0, 0, 0, .05), 0px 4px 4px rgba(0, 0, 0, .09), 0px 1px 2px rgba(0, 0, 0, .1), 0px 0px 0px rgba(0, 0, 0, .1)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.01) 0px 15px 6px 0px, rgba(0, 0, 0, 0.05) 0px 8px 5px 0px, rgba(0, 0, 0, 0.09) 0px 4px 4px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px 0px, rgba(0, 0, 0, 0.1) 0px 0px 0px 0px"
+   },
+   "--link-color": {
+    "raw": "#1c7ed6",
+    "kind": "color",
+    "value": "#1c7ed6"
+   },
+   "--link-color-active": {
+    "raw": "#a5d8ff",
+    "kind": "color",
+    "value": "#a5d8ff"
+   },
+   "--link-color-hover": {
+    "raw": "#1971c2",
+    "kind": "color",
+    "value": "#1971c2"
+   },
+   "--list-border-color": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--mobile-action-button-bg": {
+    "raw": "rgba(255, 255, 255, .35)",
+    "kind": "color",
+    "value": "rgba(255, 255, 255, 0.35)"
+   },
+   "--mobile-action-button-size": {
+    "raw": "2rem",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--modal-shadow": {
+    "raw": "0px 100px 80px rgba(0, 0, 0, .07), 0px 41.7776px 33.4221px rgba(0, 0, 0, .0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, .0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, .035), 0px 6.6501px 5.32008px rgba(0, 0, 0, .0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, .0196802)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.07) 0px 100px 80px 0px, rgba(0, 0, 0, 0.05) 0px 41.7776px 33.4221px 0px, rgba(0, 0, 0, 0.043) 0px 22.3363px 17.869px 0px, rgba(0, 0, 0, 0.035) 0px 12.5216px 10.0172px 0px, rgba(0, 0, 0, 0.027) 0px 6.6501px 5.32008px 0px, rgba(0, 0, 0, 0.02) 0px 2.76726px 2.21381px 0px"
+   },
+   "--overlay-bg-color": {
+    "raw": "rgba(12, 12, 14, .35)",
+    "kind": "color",
+    "value": "rgba(12, 12, 14, 0.35)"
+   },
+   "--popup-bg-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--popup-secondary-bg-color": {
+    "raw": "#f1f3f5",
+    "kind": "color",
+    "value": "#f1f3f5"
+   },
+   "--popup-text-color": {
+    "raw": "#000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--popup-text-inverted-color": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--sab": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--sal": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--sar": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--sat": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--scrollbar-thumb": {
+    "raw": "#ced4da",
+    "kind": "color",
+    "value": "#ced4da"
+   },
+   "--scrollbar-thumb-hover": {
+    "raw": "#adb5bd",
+    "kind": "color",
+    "value": "#adb5bd"
+   },
+   "--select-highlight-color": {
+    "raw": "#339af0",
+    "kind": "color",
+    "value": "#339af0"
+   },
+   "--shadow-island": {
+    "raw": "0px 0px 1px 0px rgba(0, 0, 0, .17), 0px 0px 3px 0px rgba(0, 0, 0, .08), 0px 7px 14px 0px rgba(0, 0, 0, .05)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.17) 0px 0px 1px 0px, rgba(0, 0, 0, 0.08) 0px 0px 3px 0px, rgba(0, 0, 0, 0.05) 0px 7px 14px 0px"
+   },
+   "--shadow-island-stronger": {
+    "raw": "0px 0px 1px 0px rgba(0, 0, 0, .17), 0px 0px 3px 0px rgba(0, 0, 0, .08), 0px 7px 14px 0px rgb(0 0 0 / 18%)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.17) 0px 0px 1px 0px, rgba(0, 0, 0, 0.08) 0px 0px 3px 0px, rgba(0, 0, 0, 0.18) 0px 7px 14px 0px"
+   },
+   "--sidebar-bg-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--sidebar-border-color": {
+    "raw": "#f1f0ff",
+    "kind": "color",
+    "value": "#f1f0ff"
+   },
+   "--sidebar-shadow": {
+    "raw": "0px 100px 80px rgba(0, 0, 0, .07), 0px 41.7776px 33.4221px rgba(0, 0, 0, .0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, .0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, .035), 0px 6.6501px 5.32008px rgba(0, 0, 0, .0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, .0196802)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.07) 0px 100px 80px 0px, rgba(0, 0, 0, 0.05) 0px 41.7776px 33.4221px 0px, rgba(0, 0, 0, 0.043) 0px 22.3363px 17.869px 0px, rgba(0, 0, 0, 0.035) 0px 12.5216px 10.0172px 0px, rgba(0, 0, 0, 0.027) 0px 6.6501px 5.32008px 0px, rgba(0, 0, 0, 0.02) 0px 2.76726px 2.21381px 0px"
+   },
+   "--slider-thumb-size": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--space-factor": {
+    "raw": ".25rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--text-primary-color": {
+    "raw": "#1b1b1f",
+    "kind": "color",
+    "value": "#1b1b1f"
+   },
+   "--theme-filter": {
+    "raw": "none",
+    "kind": "shadow",
+    "value": "none"
+   },
+   "--ui-font": {
+    "raw": "Assistant, system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+    "kind": "fontFamily",
+    "value": "Assistant, system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+   },
+   "--userList-padding": {
+    "raw": ".25rem",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--userlist-collaborators-border-color": {
+    "raw": "#ebebeb",
+    "kind": "color",
+    "value": "#ebebeb"
+   },
+   "--userlist-hint-bg-color": {
+    "raw": "#f5f5f5",
+    "kind": "color",
+    "value": "#f5f5f5"
+   },
+   "--userlist-hint-heading-color": {
+    "raw": "#3d3d3d",
+    "kind": "color",
+    "value": "#3d3d3d"
+   },
+   "--userlist-hint-text-color": {
+    "raw": "#7a7a7a",
+    "kind": "color",
+    "value": "#7a7a7a"
+   },
+   "--viewport-status-frame-border-width": {
+    "raw": "0px",
+    "kind": "dimension",
+    "value": "0px"
+   },
+   "--zIndex-canvas": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--zIndex-canvasButtons": {
+    "raw": "3",
+    "kind": "number",
+    "value": 3
+   },
+   "--zIndex-cursorHint": {
+    "raw": "8",
+    "kind": "number",
+    "value": 8
+   },
+   "--zIndex-eyeDropperBackdrop": {
+    "raw": "5",
+    "kind": "number",
+    "value": 5
+   },
+   "--zIndex-eyeDropperPreview": {
+    "raw": "6",
+    "kind": "number",
+    "value": 6
+   },
+   "--zIndex-fileDropOverlay": {
+    "raw": "130",
+    "kind": "number",
+    "value": 130
+   },
+   "--zIndex-hyperlinkContainer": {
+    "raw": "7",
+    "kind": "number",
+    "value": 7
+   },
+   "--zIndex-interactiveCanvas": {
+    "raw": "2",
+    "kind": "number",
+    "value": 2
+   },
+   "--zIndex-layerUI": {
+    "raw": "4",
+    "kind": "number",
+    "value": 4
+   },
+   "--zIndex-modal": {
+    "raw": "1000",
+    "kind": "number",
+    "value": 1000
+   },
+   "--zIndex-popup": {
+    "raw": "1001",
+    "kind": "number",
+    "value": 1001
+   },
+   "--zIndex-svgLayer": {
+    "raw": "3",
+    "kind": "number",
+    "value": 3
+   },
+   "--zIndex-toast": {
+    "raw": "999999",
+    "kind": "number",
+    "value": 999999
+   },
+   "--zIndex-ui-bottom": {
+    "raw": "60",
+    "kind": "number",
+    "value": 60
+   },
+   "--zIndex-ui-context-menu": {
+    "raw": "90",
+    "kind": "number",
+    "value": 90
+   },
+   "--zIndex-ui-library": {
+    "raw": "120",
+    "kind": "number",
+    "value": 120
+   },
+   "--zIndex-ui-main-menu": {
+    "raw": "110",
+    "kind": "number",
+    "value": 110
+   },
+   "--zIndex-ui-styles-popup": {
+    "raw": "100",
+    "kind": "number",
+    "value": 100
+   },
+   "--zIndex-ui-top": {
+    "raw": "100",
+    "kind": "number",
+    "value": 100
+   },
+   "--zIndex-viewportStatusFrame": {
+    "raw": "5",
+    "kind": "number",
+    "value": 5
+   },
+   "--zIndex-wysiwyg": {
+    "raw": "3",
+    "kind": "number",
+    "value": 3
+   }
+  }
+ }
+}

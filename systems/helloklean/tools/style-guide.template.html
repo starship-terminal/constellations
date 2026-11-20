@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hello Klean style guide</title>
+<meta name="description" content="Hello Klean design tokens and the public storefront's components, rendered from tokens.json.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "DM Sans", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-display: HKRepro, "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-ink, #1d1d1f); background: var(--color-paper, #f5f4f1); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 38px/1.1 var(--sg-display); margin: 0 0 4px; }
+h2.sh { font: 500 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: none; color: var(--color-ink, #1d1d1f); opacity: .7; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid rgba(29,29,31,.15); }
+.lead { max-width: 68ch; }
+.note { font-size: 13px; opacity: .7; max-width: 68ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.mock { border: 1px solid rgba(29,29,31,.12); overflow: hidden; background: #fff; border-radius: 12px; }
+.ann { text-align: center; font-size: 12px; padding: 8px; color: #f5f4f1; background: #1d1d1f; }
+.navbar { display: flex; align-items: center; gap: 22px; height: 64px; padding: 0 22px; font-size: 14px; background: #fff; }
+.navbar .wm { font-family: var(--sg-display); font-weight: 400; font-size: 22px; margin: 0 auto; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 12px 20px; font-size: 14px; border-radius: 25px; border: 1px solid #1d1d1f; font-family: var(--sg-sans); }
+.btn.primary { background: #1d1d1f; color: #f5f4f1; }
+.btn.secondary { background: #f5f4f1; color: #1d1d1f; }
+.hero { padding: 64px 40px; font: 400 38px/1.1 var(--sg-display); background: #f5f4f1; }
+.hero small { display: block; font: 400 16px/1.4 var(--sg-sans); margin: 12px 0 20px; max-width: 42ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; padding: 20px; background: #f5f4f1; }
+.tile { background: #fff; border-radius: 12px; padding: 14px; font-size: 13px; }
+.tile b { display: block; font: 400 20px/1.25 var(--sg-display); margin-bottom: 4px; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv span { opacity: .65; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid rgba(29,29,31,.12); }
+.tr .tv { font-size: 12px; opacity: .65; font-family: var(--sg-mono); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid rgba(29,29,31,.15); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Hello Klean style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>. The mocks below are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">What was measured</h2>
+  <p class="lead">helloklean.com is a Shopify storefront (theme BF26, schema Quickfire 3.0) selling shower filters and hard-water hair and body care. It paints one light theme: warm paper #f5f4f1, near-black ink #1d1d1f, and pill buttons at a 25px radius. Display type is HKRepro. Body type is DM Sans. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from helloklean.com/en-int, signed out, in headless Chromium at 1440 x 900 and 390 x 844. Checkout, payment and form submission were not entered. HKRepro is a served face and is not loaded here: samples fall back to the system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <div class="mock">
+    <div class="ann">Black Friday Sale | Up to 30% off</div>
+    <div class="navbar"><span>Menu</span><span class="wm">Hello Klean</span><span>Account</span><span>Cart</span></div>
+    <div class="hero">Beauty solutions for your water<small>Shower filters, haircare and body care for hard water.</small><span class="btn primary">Shop Skin Filter</span></div>
+  </div>
+
+  <h2 class="sh">Buttons</h2>
+  <p class="lead">Three declared buttons share a 25px radius, 14px type, 20px horizontal padding and 12px vertical padding. Primary is ink on paper text. Secondary is paper on ink text. Ghost is transparent with an ink border.</p>
+  <div class="mock" style="padding:20px;display:flex;gap:12px;flex-wrap:wrap;background:#fff">
+    <span class="btn primary">Shop now</span>
+    <span class="btn secondary">Learn more</span>
+    <span class="btn">View all</span>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Source</th><th>What it holds</th></tr><tr><td>Stylesheets</td><td>The :root custom properties (--primary-color, --secondary-color, the heading scale, the three-button matrix), resolved on the live page</td></tr><tr><td>Computed styles</td><td>Component size, type, fill and radius on the public pages</td></tr><tr><td>Screenshots</td><td>The painted layout at 1440 and 390</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+// TOK is the builder's slim tree: a token is {v, t, s} (value, type, source).
+function esc(x) { return String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
+function flat(node, prefix, out) {
+  out = out || [];
+  Object.keys(node || {}).forEach(function (k) {
+    var v = node[k];
+    var path = prefix ? prefix + '.' + k : k;
+    if (v && v.v !== undefined && v.t !== undefined) out.push([path, v]);
+    else if (v && typeof v === 'object') flat(v, path, out);
+  });
+  return out;
+}
+// The builder writes each token as --<path> with no set name (--color-ink); an alias {color.ink}
+// is var(--color-ink).
+function css(path) { return '--' + path.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-'); }
+var root = document.documentElement;
+function swatch(path, t) {
+  var raw = String(t.v);
+  var color = getComputedStyle(root).getPropertyValue(css(path)).trim() || raw;
+  return '<div style="display:flex;gap:8px;align-items:center;margin:6px 0"><i style="width:28px;height:28px;border-radius:50%;border:1px solid rgba(29,29,31,.2);background:' + esc(color) + '"></i><code>' + esc(path) + '</code> <span>' + esc(raw) + '</span></div>';
+}
+var roles = document.getElementById('roles-out');
+if (roles && TOK) roles.innerHTML = flat(TOK.light, '').filter(function (p) { return p[1].t === 'color'; }).map(function (p) { return swatch(p[0], p[1]); }).join('');
+var spacing = document.getElementById('spacing-out');
+if (spacing && TOK) spacing.innerHTML = flat(TOK.core, '').filter(function (p) { return p[1].t === 'dimension'; }).map(function (p) { return '<div><b>' + esc(p[0]) + '</b> <span>' + esc(p[1].v) + '</span></div>'; }).join('');
+var typeOut = document.getElementById('type-out');
+if (typeOut && TOK && TOK.core.typography) typeOut.innerHTML = Object.keys(TOK.core.typography).map(function (k) {
+  var t = TOK.core.typography[k].v;
+  var size = String(t.fontSize || '').replace(/\{fontSize\.([^}]+)\}/, function (_, n) { return (TOK.core.fontSize[n] || {}).v || ''; });
+  return '<div class="tr"><span class="ts" style="font-size:' + esc(size) + '">' + esc(k) + '</span><span class="tv">' + esc(size) + '</span></div>';
+}).join('');
+var fam = document.getElementById('fam-out');
+if (fam && TOK && TOK.core.fontFamily) fam.innerHTML = Object.keys(TOK.core.fontFamily).map(function (k) { return '<div><b>' + esc(k) + '</b> <span>' + esc(TOK.core.fontFamily[k].v) + '</span></div>'; }).join('');
+</script>
+</body>
+</html>

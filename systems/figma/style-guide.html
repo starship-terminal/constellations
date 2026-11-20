@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Figma style guide</title>
+<meta name="description" content="Figma design tokens and the public marketing surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-sans: 'figmaSans', 'figmaSans Fallback', SF Pro Display, system-ui, helvetica, sans-serif;
+  --font-family-mono: 'figmaMono', 'figmaMono Fallback', SF Mono, menlo, monospace;
+  --font-weight-bold: 600;
+  --font-weight-bolder: 700;
+  --font-weight-regular: 400;
+  --font-variationAxis-mono: 100;
+  --font-variationAxis-slnt-italic: -6;
+  --font-variationAxis-wdth-condensed: 96;
+  --font-variationAxis-wdth-narrow: 98;
+  --font-variationAxis-wdth-normal: 100;
+  --font-size-badge: 14px;
+  --font-size-body: 16px;
+  --font-size-bodyL: 16px;
+  --font-size-bodyXL: 24px;
+  --font-size-button: 16px;
+  --font-size-buttonS: 14px;
+  --font-size-caption: 14px;
+  --font-size-display1: 88px;
+  --font-size-display2: 64px;
+  --font-size-formInput: 16px;
+  --font-size-formLabel: 12px;
+  --font-size-title1: 56px;
+  --font-size-title2: 44px;
+  --font-size-title3: 30px;
+  --font-size-title4: 24px;
+  --font-size-measured-hero: var(--font-size-title1);
+  --font-size-measured-body: var(--font-size-title3);
+  --font-lineHeight-loose: 1.45;
+  --font-lineHeight-none: 1;
+  --font-lineHeight-normal: 1.3;
+  --font-lineHeight-relaxed: 1.4;
+  --font-lineHeight-snug: 1.2;
+  --font-lineHeight-tight: 1.1;
+  --font-tracking-none: 0px;
+  --font-tracking-slight: 0px;
+  --font-tracking-standard: -0.04125rem;
+  --font-tracking-tight: -0.078125rem;
+  --font-tracking-wide: 0.5px;
+  --spacing-12: 12px;
+  --spacing-120: 120px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-4: 4px;
+  --spacing-40: 40px;
+  --spacing-56: 56px;
+  --spacing-6: 6px;
+  --spacing-64: 64px;
+  --spacing-8: 8px;
+  --spacing-80: 80px;
+  --spacing-none: 0;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-2: 2px;
+  --radius-24: 24px;
+  --radius-28: 28px;
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-full: 9999px;
+  --radius-cta: var(--radius-8);
+  --radius-navLink: 0px;
+  --radius-card: 0px;
+  --radius-field: var(--radius-8);
+  --radius-dropdown: 0px;
+  --layout-grid-col-width: 98.6562px;
+  --layout-grid-columns: 12;
+  --layout-grid-gutter: 16px;
+  --layout-grid-margin: 40px;
+  --layout-grid-max-content-width: 1520px;
+  --layout-sectionBlockPadding: 80px;
+  --layout-frame-colWidth: 30px;
+  --layout-frame-columns: 48;
+  --layout-frame-gutter: 60px;
+  --layout-frame-legoBlockPadding: 120px;
+  --layout-frame-maxContentWidth: 1440px;
+  --elevation-1: 0px 4px 32px 0px rgba(0, 0, 0, 0.1);
+  --elevation-1Shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.1);
+  --elevation-2: 0px 24px 70px 0px rgba(0, 0, 0, 0.1);
+  --elevation-2Shadow: 0px 24px 70px 0px rgba(0, 0, 0, 0.1);
+  --duration-180: 180ms;
+  --duration-250: 250ms;
+  --duration-400: 400ms;
+  --cursor-default: default;
+  --cursor-grab: grab;
+  --cursor-grabbing: grabbing;
+  --cursor-pointer: pointer;
+  --cursor-text: text;
+  --motion-control: background 0.18s ease-out, box-shadow 0.18s ease-out;
+  --component-topbar-height: 78.39px;
+  --component-cta-height: 46.39px;
+  --component-dropdown-width: 1440px;
+  --component-hero-headline-width: 328px;
+  --component-field-height: 58.19px;
+  --component-topic-field-width: 600px;
+  --component-next-width: 480px;
+  --component-next-height: 46.39px;
+  --component-plan-card-width: 330px;
+  --component-toggle-width: 180px;
+  --component-comm-card-width: 394.66px;
+  --component-comm-search-width: 284px;
+  --component-mobile-topbar-height: 72px;
+  --component-productShell-login-panel-width: 422px;
+  --component-productShell-login-field-height: 53px;
+  --component-productShell-login-submit-fill: #2c2c2c;
+  --component-productShell-login-submit-ink: rgba(255, 255, 255, 0.898);
+  --component-productShell-comm-signup-fill: #ffffff;
+  --component-productShell-comm-signup-ink: rgba(0, 0, 0, 0.898);
+  --theme-badge-bg: rgba(0, 0, 0, 0.08);
+  --theme-badge-fg: #000000;
+  --theme-bg: #ffffff;
+  --theme-border-default: rgba(0, 0, 0, 0.16);
+  --theme-border-hover: rgba(0, 0, 0, 0.4);
+  --theme-btn-ghost-bg-default: rgba(0, 0, 0, 0);
+  --theme-btn-ghost-bg-hover: rgba(0, 0, 0, 0.04);
+  --theme-btn-primary-bg-default: #000000;
+  --theme-btn-primary-bg-hover: rgba(0, 0, 0, 0.85);
+  --theme-btn-primary-fg: #ffffff;
+  --theme-btn-secondary-bg: rgba(0, 0, 0, 0);
+  --theme-btn-secondary-fg: #000000;
+  --theme-btn-transparent-bg-default: rgba(0, 0, 0, 0.04);
+  --theme-btn-transparent-bg-hover: rgba(0, 0, 0, 0.08);
+  --theme-btn-transparent-fg: #000000;
+  --theme-card-bg: rgba(0, 0, 0, 0.04);
+  --theme-fg-default: #000000;
+  --theme-fg-muted: rgba(0, 0, 0, 0.54);
+  --theme-form-error-bg: #972121;
+  --theme-form-error-fg: #ffffff;
+  --theme-form-input-bg: rgba(0, 0, 0, 0.08);
+  --theme-form-placeholder: rgba(0, 0, 0, 0.54);
+  --text-ink: var(--theme-fg-default);
+  --text-navInk: var(--theme-fg-default);
+  --action-ctaFill: var(--theme-fg-default);
+  --action-ctaInk: var(--theme-bg);
+  --action-ctaHover: var(--theme-btn-primary-bg-hover);
+  --action-submitFill: var(--theme-fg-default);
+  --action-submitInk: var(--theme-bg);
+  --border-focusRing: var(--theme-fg-default);
+  --form-fieldBg: var(--theme-form-input-bg);
+  --form-fieldInk: var(--theme-fg-default);
+  --form-placeholder: var(--theme-fg-default);
+  --background-page: var(--theme-bg);
+  --sg-sans: "figmaSans", ui-sans-serif, system-ui, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "figmaSans", ui-sans-serif, system-ui, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: "figmaMono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --theme-badge-bg: rgba(255, 255, 255, 0.16);
+  --theme-badge-fg: #ffffff;
+  --theme-bg: #000000;
+  --theme-border-default: rgba(255, 255, 255, 0.16);
+  --theme-border-hover: rgba(255, 255, 255, 0.54);
+  --theme-btn-ghost-bg-default: rgba(0, 0, 0, 0);
+  --theme-btn-ghost-bg-hover: rgba(255, 255, 255, 0.04);
+  --theme-btn-primary-bg-default: #ffffff;
+  --theme-btn-primary-bg-hover: rgba(255, 255, 255, 0.8);
+  --theme-btn-primary-fg: #000000;
+  --theme-btn-secondary-bg: rgba(0, 0, 0, 0);
+  --theme-btn-secondary-fg: #ffffff;
+  --theme-btn-transparent-bg-default: rgba(255, 255, 255, 0.04);
+  --theme-btn-transparent-bg-hover: rgba(255, 255, 255, 0.16);
+  --theme-btn-transparent-fg: #ffffff;
+  --theme-card-bg: rgba(255, 255, 255, 0.08);
+  --theme-fg-default: #ffffff;
+  --theme-fg-muted: rgba(255, 255, 255, 0.54);
+  --theme-form-error-bg: #ffb3b3;
+  --theme-form-error-fg: #000000;
+  --theme-form-input-bg: rgba(255, 255, 255, 0.08);
+  --theme-form-placeholder: rgba(255, 255, 255, 0.54);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--theme-fg-default, #000); background: var(--theme-bg, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--theme-fg-default, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--theme-border-default, #ddd); }
+.lead { max-width: 62ch; color: var(--theme-fg-default, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--theme-fg-default, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--theme-fg-default, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--theme-border-default, #ddd); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--theme-fg-default, #000); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--theme-border-default, #ddd); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--theme-fg-default, #000); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--theme-border-default, #ddd); overflow: hidden; background: var(--theme-bg, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-topbar-height, 64px); padding: 0 12px 0 22px; font-size: 15px; color: var(--theme-fg-default, #000); background: var(--theme-bg, #fff); box-shadow: var(--theme-border-default, rgba(0,0,0,.16)) 0 1px 0 0; }
+.navbar .wm { font-weight: 600; font-size: 17px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-cta-height, 40px); padding: 0 18px; font-size: 15px; font-weight: 500; border-radius: var(--radius-cta, var(--radius-full, 999px)); border: 1px solid transparent; }
+.btn.primary { background: var(--theme-btn-primary-bg-default, #000); color: var(--theme-btn-primary-fg, #fff); }
+.btn.ghost { background: var(--theme-btn-secondary-bg, transparent); border-color: var(--theme-border-default, rgba(0,0,0,.16)); color: var(--theme-btn-secondary-fg, #000); }
+.btn.small { height: 32px; font-size: 13px; font-weight: 500; }
+.hero { color: var(--theme-fg-default, #000); padding: 80px 40px; font: 600 var(--font-size-display1, 88px)/var(--font-lineHeight-tight, 1.1) var(--sg-serif); letter-spacing: var(--font-tracking-tight, -0.078125rem); text-align: left; background: var(--theme-bg, #fff); }
+.hero small { display: block; font: 400 var(--font-size-bodyXL, 24px)/var(--font-lineHeight-normal, 1.3) var(--sg-sans); letter-spacing: var(--font-tracking-standard, -0.04125rem); color: var(--theme-fg-muted, rgba(0,0,0,.54)); margin: 20px 0 26px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--theme-border-default, #ddd); border-radius: var(--radius-card, var(--radius-16, 16px)); padding: 14px; font-size: 13px; background: var(--theme-card-bg, #fff); }
+.tile .img { height: 140px; background: var(--theme-form-input-bg, rgba(0,0,0,.08)); border-radius: var(--radius-8, 8px); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 600 var(--font-size-title4, 24px)/var(--font-lineHeight-snug, 1.2) var(--sg-serif); letter-spacing: var(--font-tracking-standard, -0.04125rem); margin-bottom: 4px; }
+.tile .sub { color: var(--theme-fg-muted, rgba(0,0,0,.54)); font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--theme-border-default, #ddd); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--theme-border-default, #ddd); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--theme-fg-default, #000); opacity: .65; font-family: var(--sg-mono); }
+.pill-nav { display: inline-flex; background: var(--theme-card-bg, rgba(0,0,0,.04)); border-radius: var(--radius-full, 9999px); padding: 4px; gap: 4px; font-size: 14px; color: var(--theme-fg-muted, rgba(0,0,0,.54)); }
+.pill-nav span { padding: 6px 14px; border-radius: var(--radius-full, 9999px); }
+.pill-nav .on { background: var(--theme-bg, #fff); color: var(--theme-fg-default, #000); box-shadow: var(--elevation-1, 0 4px 32px rgba(0,0,0,.1)); }
+.field { display: block; width: 280px; height: var(--component-field-height, 48px); padding: 0 14px; border: 0; border-radius: var(--radius-field, var(--radius-8, 8px)); background: var(--theme-form-input-bg, rgba(0,0,0,.08)); font-size: 15px; color: var(--theme-fg-default, #000); }
+.badge { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: var(--radius-full, 9999px); background: var(--theme-badge-bg, rgba(0,0,0,.08)); color: var(--theme-badge-fg, #000); font-size: 12px; font-weight: 500; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Figma style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Figma, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the site's declared <code>--fig-typography-*</code> ramp (formLabel 12px to display1 88px, with the unitless <code>--fig-typography-lh-*</code> steps, the negative <code>--fig-typography-ls-*</code> tracking and the <code>--fig-typography-variation-*</code> font axes), the <code>--fig-space-*</code> 4–120px scale, the <code>--fig-radius-*</code> 2–28px radii and 9999px full pill, the 12-column <code>--fig-grid-*</code> and 48-column <code>--f-*</code> marketing frame, the two <code>--fig-elevation-*</code> shadow steps, the 180/250/400ms <code>--fig-animation-*</code> durations, and the <code>--fig-theme-*</code> semantic roles that re-resolve under <code>:root[data-theme="dark"]</code>. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from figma.com, signed out, in headless Chromium. The editor and every signed-in product surface is a documented boundary; the contact, login and sign-up forms were measured, never submitted. The dark set resolves declarations the site ships but no public page painted while captured. figmaSans and figmaMono are served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The marketing header is a white bar on the white page: the Figma wordmark, the Products/Solutions/Community/Resources dropdown triggers, Pricing and Enterprise links, then Log in, Contact sales and the black "Get started" pill (<code>--fig-theme-btn-primary-bg</code>, radius-full). Below, a display-size hero on the white field — display1 88px at lh-tight 1.1 with the -0.078125rem signature tracking — pairs a black CTA pill with a bordered secondary.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">Figma</span><span>Products</span><span>Solutions</span><span>Community</span><span>Resources</span><span>Pricing</span><span class="sp"></span><span>Log in</span><span>Contact sales</span><span class="btn small primary">Get started</span></div>
+    <div class="hero">Where great<br>ideas take shape<small>Design, prototype, and build products in one collaborative canvas.</small><span class="btn primary">Get started for free</span>&nbsp;&nbsp;<span class="btn ghost">Contact sales</span></div>
+  </div>
+
+  <h2 class="sh">The declared dark set</h2>
+  <p class="lead">The stylesheet declares a complete <code>:root[data-theme="dark"]</code> re-declaration of the <code>--fig-theme-*</code> roles — fg/bg invert, the primary button becomes a white pill, the alpha roles switch to white-on-black washes — but no public page painted <code>data-theme="dark"</code> while captured. This mock resolves the declared values; the real dark surfaces live behind sign-in.</p>
+  <div class="mock dark" style="padding:20px;background:var(--theme-bg,#000);color:var(--theme-fg-default,#fff)">
+    <div class="grid">
+      <div class="tile"><div class="img"></div><b>Plan card</b><span class="sub">card-bg + border resolve under the dark scope</span></div>
+      <div class="tile"><div class="img"></div><b>Community tile</b><span class="sub"><span class="badge">badge</span></span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn primary">Get started</span>&nbsp;&nbsp;<span class="btn ghost">Secondary</span>&nbsp;&nbsp;<input class="field" placeholder="form-input-bg placeholder"></div>
+  </div>
+
+  <h2 class="sh">Pricing and the community shell</h2>
+  <p class="lead">/pricing arranges plan cards over the tinted <code>--fig-theme-card-bg</code> wash with the Monthly/Annual pill toggle; /community, /login and /signup are the product app shell — a different stack that does not share the <code>--fig-*</code> layer, kept as measured component tokens.</p>
+  <div class="mock" style="padding:20px">
+    <div class="pill-nav"><span class="on">Annual</span><span>Monthly</span></div>
+    <div class="grid" style="margin-top:16px">
+      <div class="tile"><div class="img">Starter</div><b>$0</b><span class="sub">Free seat · 3 files</span></div>
+      <div class="tile"><div class="img">Professional</div><b>$16</b><span class="sub">per full seat / mo</span></div>
+      <div class="tile"><div class="img">Organization</div><b>$55</b><span class="sub">per full seat / mo</span></div>
+    </div>
+    <div style="margin-top:16px"><input class="field" placeholder="Work email">&nbsp;<span class="btn primary">Submit</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The semantic <code>--fig-theme-*</code> roles are the palette: white <code>bg</code> on black <code>fg</code>, the 54%-alpha <code>fg-muted</code>, the 4%-alpha <code>card-bg</code> and 8%-alpha <code>form-input-bg</code>/<code>badge-bg</code> washes, the 16%/40% <code>border</code> steps, the black/white <code>btn-primary</code> pair and the #972121 <code>form-error</code> — each re-resolving under the dark scope. Measured roles alias the declared values they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">The space scale runs 4–120px; radii run 2–28px against the 9999px full pill (CTAs, the billing toggle, badges). The marketing grid is 12 columns on 16px gutters and 40px margins inside 1520px; the 80px section block padding separates page bands. Durations are 180/250/400ms.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two served faces: <code>figmaSans</code> carries every heading, control and body — display1 runs 88px at lh-tight 1.1 with the -0.078125rem tracking — and <code>figmaMono</code> draws code and numerals. The variation axes (<code>wght</code> 400/600/700, <code>wdth</code> 96/98/100, <code>slnt</code> -6, mono) ride the variable face. Sizes are the declared <code>--fig-typography-size-*</code> steps; samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --fig-*/--global-*/--f-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"sans":{"v":"'figmaSans', 'figmaSans Fallback', SF Pro Display, system-ui, helvetica, sans-serif","t":"fontFamily","s":"css-var --global-font-sans (light)","d":"figmaSans — every heading, control and body on the marketing site; Arial-metric fallback then SF Pro Display/system-ui."},"mono":{"v":"'figmaMono', 'figmaMono Fallback', SF Mono, menlo, monospace","t":"fontFamily","s":"css-var --global-font-mono (light)","d":"figmaMono — code and numeric styling; Arial-metric fallback then SF Mono/menlo."}},"weight":{"bold":{"v":600,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-typography-variation-wght-bold","d":"The declared `--fig-typography-variation-wght-bold`."},"bolder":{"v":700,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-typography-variation-wght-bolder","d":"The declared `--fig-typography-variation-wght-bolder`."},"regular":{"v":400,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-typography-variation-wght-regular","d":"The declared `--fig-typography-variation-wght-regular`."}},"variationAxis":{"mono":{"v":100,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-typography-variation-mono","d":"The declared `--fig-typography-variation-mono`."},"slnt-italic":{"v":-6,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-typography-variation-slnt-italic","d":"The declared `--fig-typography-variation-slnt-italic`."},"wdth-condensed":{"v":96,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-typography-variation-wdth-condensed","d":"The declared `--fig-typography-variation-wdth-condensed`."},"wdth-narrow":{"v":98,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-typography-variation-wdth-narrow","d":"The declared `--fig-typography-variation-wdth-narrow`."},"wdth-normal":{"v":100,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-typography-variation-wdth-normal","d":"The declared `--fig-typography-variation-wdth-normal`."}},"size":{"badge":{"v":"14px","t":"dimension","s":"css-var --fig-typography-size-badge (light)"},"body":{"v":"16px","t":"dimension","s":"css-var --fig-typography-size-body (light)"},"bodyL":{"v":"16px","t":"dimension","s":"css-var --fig-typography-size-bodyL (light)"},"bodyXL":{"v":"24px","t":"dimension","s":"css-var --fig-typography-size-bodyXL (light)"},"button":{"v":"16px","t":"dimension","s":"css-var --fig-typography-size-button (light)"},"buttonS":{"v":"14px","t":"dimension","s":"css-var --fig-typography-size-buttonS (light)"},"caption":{"v":"14px","t":"dimension","s":"css-var --fig-typography-size-caption (light)"},"display1":{"v":"88px","t":"dimension","s":"css-var --fig-typography-size-display1 (light)"},"display2":{"v":"64px","t":"dimension","s":"css-var --fig-typography-size-display2 (light)"},"formInput":{"v":"16px","t":"dimension","s":"css-var --fig-typography-size-formInput (light)"},"formLabel":{"v":"12px","t":"dimension","s":"css-var --fig-typography-size-formLabel (light)"},"title1":{"v":"56px","t":"dimension","s":"css-var --fig-typography-size-title1 (light)"},"title2":{"v":"44px","t":"dimension","s":"css-var --fig-typography-size-title2 (light)"},"title3":{"v":"30px","t":"dimension","s":"css-var --fig-typography-size-title3 (light)"},"title4":{"v":"24px","t":"dimension","s":"css-var --fig-typography-size-title4 (light)"},"measured":{"hero":{"v":"{font.size.title1}","t":"dimension","s":"computed fontSize of hero-h1 default (raw/components-computed.json); matches declared font.size.title1","d":"The hero display heading — aliases --fig-typography-size-display* where it matches."},"body":{"v":"{font.size.title3}","t":"dimension","s":"computed fontSize of section-h2 default (raw/components-computed.json); matches declared font.size.title3","d":"A section heading size."}}},"lineHeight":{"loose":{"v":1.45,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-typography-lh-loose","d":"The declared `--fig-typography-lh-loose`."},"none":{"v":1,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-typography-lh-none","d":"The declared `--fig-typography-lh-none`."},"normal":{"v":1.3,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-typography-lh-normal","d":"The declared `--fig-typography-lh-normal`."},"relaxed":{"v":1.4,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-typography-lh-relaxed","d":"The declared `--fig-typography-lh-relaxed`."},"snug":{"v":1.2,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-typography-lh-snug","d":"The declared `--fig-typography-lh-snug`."},"tight":{"v":1.1,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-typography-lh-tight","d":"The declared `--fig-typography-lh-tight`."}},"tracking":{"none":{"v":"0px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-typography-ls-none","d":"The declared `--fig-typography-ls-none`."},"slight":{"v":"0px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-typography-ls-slight","d":"The declared `--fig-typography-ls-slight`."},"standard":{"v":"-0.04125rem","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-typography-ls-standard","d":"The declared `--fig-typography-ls-standard`."},"tight":{"v":"-0.078125rem","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-typography-ls-tight","d":"The declared `--fig-typography-ls-tight`."},"wide":{"v":"0.5px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-typography-ls-wide","d":"The declared `--fig-typography-ls-wide`."}}},"spacing":{"12":{"v":"12px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-space-12","d":"The declared `--fig-space-12`."},"120":{"v":"120px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-space-120","d":"The declared `--fig-space-120`."},"16":{"v":"16px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-space-16","d":"The declared `--fig-space-16`."},"24":{"v":"24px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-space-24","d":"The declared `--fig-space-24`."},"32":{"v":"32px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-space-32","d":"The declared `--fig-space-32`."},"4":{"v":"4px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-space-4","d":"The declared `--fig-space-4`."},"40":{"v":"40px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-space-40","d":"The declared `--fig-space-40`."},"56":{"v":"56px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-space-56","d":"The declared `--fig-space-56`."},"6":{"v":"6px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-space-6","d":"The declared `--fig-space-6`."},"64":{"v":"64px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-space-64","d":"The declared `--fig-space-64`."},"8":{"v":"8px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-space-8","d":"The declared `--fig-space-8`."},"80":{"v":"80px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-space-80","d":"The declared `--fig-space-80`."},"none":{"v":0,"t":"other","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-space-none","d":"The declared `--fig-space-none`."}},"radius":{"12":{"v":"12px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-radius-12","d":"The declared `--fig-radius-12`."},"16":{"v":"16px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-radius-16","d":"The declared `--fig-radius-16`."},"2":{"v":"2px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-radius-2","d":"The declared `--fig-radius-2`."},"24":{"v":"24px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-radius-24","d":"The declared `--fig-radius-24`."},"28":{"v":"28px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-radius-28","d":"The declared `--fig-radius-28`."},"4":{"v":"4px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-radius-4","d":"The declared `--fig-radius-4`."},"8":{"v":"8px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-radius-8","d":"The declared `--fig-radius-8`."},"full":{"v":"9999px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-radius-full","d":"The declared `--fig-radius-full`."},"cta":{"v":"{radius.8}","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json); matches declared --fig-radius-8","d":"The CTA pill radius — the 9999px full pill (radius-full)."},"navLink":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of nav-pricing default (raw/components-computed.json)","d":"The header link radius."},"card":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of plan-card default (raw/components-computed.json)","d":"The plan-card corner radius."},"field":{"v":"{radius.8}","t":"dimension","s":"computed borderTopLeftRadius of field-email default (raw/components-computed.json); matches declared --fig-radius-8","d":"The contact field radius."},"dropdown":{"v":"0px","t":"dimension","s":"computed borderTopLeftRadius of nav-panel default (raw/components-computed.json)","d":"The products-dropdown panel corner radius."}},"layout":{"grid":{"col-width":{"v":"98.6562px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-grid-col-width","d":"The declared `--fig-grid-col-width`."},"columns":{"v":12,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-grid-columns","d":"The declared `--fig-grid-columns`."},"gutter":{"v":"16px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-grid-gutter","d":"The declared `--fig-grid-gutter`."},"margin":{"v":"40px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-grid-margin","d":"The declared `--fig-grid-margin`."},"max-content-width":{"v":"1520px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-grid-max-content-width","d":"The declared `--fig-grid-max-content-width`."}},"sectionBlockPadding":{"v":"80px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-section-block-padding","d":"The 80px block padding between marketing sections."},"frame":{"colWidth":{"v":"30px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --f-col-width","d":"One column of that frame — calc(min(100vw,1440px)/48); resolved at 1440."},"columns":{"v":48,"t":"number","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --f-columns","d":"The marketing content frame's 48-column grid on the home page; per-page and per-breakpoint."},"gutter":{"v":"60px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --f-gutter","d":"The frame gutter — two columns; resolved at 1440."},"legoBlockPadding":{"v":"120px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --f-lego-block-padding","d":"The 120px lego-block vertical padding; per-breakpoint."},"maxContentWidth":{"v":"1440px","t":"dimension","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --f-max-content-width","d":"The 1440px marketing content maximum."}}},"elevation":{"1":{"v":[{"color":"rgba(0, 0, 0, 0.1)","offsetX":"0px","offsetY":"4px","blur":"32px","spread":"0px"}],"t":"shadow","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-elevation-1; the oklch(0 0 none / 0.1) colour normalised to rgba(0,0,0,0.1)","d":"The declared `--fig-elevation-1` shadow step."},"1Shadow":{"v":[{"color":"rgba(0, 0, 0, 0.1)","offsetX":"0px","offsetY":"4px","blur":"32px","spread":"0px"}],"t":"shadow","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-elevation-1-shadow; the oklch(0 0 none / 0.1) colour normalised to rgba(0,0,0,0.1)","d":"The declared `--fig-elevation-1-shadow` shadow step."},"2":{"v":[{"color":"rgba(0, 0, 0, 0.1)","offsetX":"0px","offsetY":"24px","blur":"70px","spread":"0px"}],"t":"shadow","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-elevation-2; the oklch(0 0 none / 0.1) colour normalised to rgba(0,0,0,0.1)","d":"The declared `--fig-elevation-2` shadow step."},"2Shadow":{"v":[{"color":"rgba(0, 0, 0, 0.1)","offsetX":"0px","offsetY":"24px","blur":"70px","spread":"0px"}],"t":"shadow","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-elevation-2-shadow; the oklch(0 0 none / 0.1) colour normalised to rgba(0,0,0,0.1)","d":"The declared `--fig-elevation-2-shadow` shadow step."}},"duration":{"180":{"v":"180ms","t":"duration","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-animation-180","d":"The declared `--fig-animation-180` duration."},"250":{"v":"250ms","t":"duration","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-animation-250","d":"The declared `--fig-animation-250` duration."},"400":{"v":"400ms","t":"duration","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --fig-animation-400","d":"The declared `--fig-animation-400` duration."}},"cursor":{"default":{"v":"default","t":"other","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --global-cursor-default","d":"The declared `--global-cursor-default` cursor keyword."},"grab":{"v":"grab","t":"other","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --global-cursor-grab","d":"The declared `--global-cursor-grab` cursor keyword."},"grabbing":{"v":"grabbing","t":"other","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --global-cursor-grabbing","d":"The declared `--global-cursor-grabbing` cursor keyword."},"pointer":{"v":"pointer","t":"other","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --global-cursor-pointer","d":"The declared `--global-cursor-pointer` cursor keyword."},"text":{"v":"text","t":"other","s":"declared design-system variable in the site's stylesheets (raw/css-vars.json): --global-cursor-text","d":"The declared `--global-cursor-text` cursor keyword."}},"motion":{"control":{"v":"background 0.18s ease-out, box-shadow 0.18s ease-out","t":"other","s":"computed transition of nav-cta default (raw/components-computed.json); the --fig-animation-* steps are the declared durations","d":"The control transition on the header CTA."}},"component":{"topbar-height":{"v":"78.39px","t":"dimension","s":"measured h of mkt-header default (raw/components-computed.json)","d":"The marketing header bar height."},"cta-height":{"v":"46.39px","t":"dimension","s":"measured h of nav-cta default (raw/components-computed.json)","d":"The header CTA pill height."},"dropdown-width":{"v":"1440px","t":"dimension","s":"measured w of nav-panel default (raw/components-computed.json)","d":"The open products-dropdown panel width."},"hero-headline-width":{"v":"328px","t":"dimension","s":"measured w of hero-h1 default (raw/components-computed.json)","d":"The hero display heading's measure."},"field-height":{"v":"58.19px","t":"dimension","s":"measured h of field-email default (raw/components-computed.json)","d":"The contact field height."},"topic-field-width":{"v":"600px","t":"dimension","s":"measured w of field-topic default (raw/components-computed.json)","d":"The topic input width on the sales form's first step."},"next-width":{"v":"480px","t":"dimension","s":"measured w of next-btn default (raw/components-computed.json)","d":"The 'Next step' button width."},"next-height":{"v":"46.39px","t":"dimension","s":"measured h of next-btn default (raw/components-computed.json)","d":"The 'Next step' button height."},"plan-card-width":{"v":"330px","t":"dimension","s":"measured w of plan-card default (raw/components-computed.json)","d":"The plan-card column width."},"toggle-width":{"v":"180px","t":"dimension","s":"measured w of price-toggle default (raw/components-computed.json)","d":"The Monthly/Annual toggle width."},"comm-card-width":{"v":"394.66px","t":"dimension","s":"measured w of comm-card default (raw/components-computed.json)","d":"A community resource card's width."},"comm-search-width":{"v":"284px","t":"dimension","s":"measured w of comm-search default (raw/components-computed.json)","d":"The community search input width."},"mobile-topbar-height":{"v":"72px","t":"dimension","s":"measured h of m-topbar default (raw/components-computed.json)","d":"The phone header bar height."},"productShell":{"login-panel-width":{"v":"422px","t":"dimension","s":"measured w of login-panel default on the product app shell (raw/components-computed.json)","d":"The sign-in card width on /login."},"login-field-height":{"v":"53px","t":"dimension","s":"measured h of login-email default on the product app shell (raw/components-computed.json)","d":"The sign-in e-mail field height."},"login-submit-fill":{"v":"#2c2c2c","t":"color","s":"computed backgroundColor of login-submit default on the product app shell (raw/components-computed.json)","d":"The 'Log in' button fill on the product shell."},"login-submit-ink":{"v":"rgba(255, 255, 255, 0.898)","t":"color","s":"computed color of login-submit default on the product app shell (raw/components-computed.json)","d":"The 'Log in' button text."},"comm-signup-fill":{"v":"#ffffff","t":"color","s":"computed backgroundColor of comm-signup default on the product app shell (raw/components-computed.json)","d":"The community 'Sign up' button fill (the product shell's accent)."},"comm-signup-ink":{"v":"rgba(0, 0, 0, 0.898)","t":"color","s":"computed color of comm-signup default on the product app shell (raw/components-computed.json)","d":"The community 'Sign up' button text."}}}},"light":{"theme":{"badge":{"bg":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --fig-theme-badge-bg (light)"},"fg":{"v":"#000000","t":"color","s":"css-var --fig-theme-badge-fg (light)"}},"bg":{"v":"#ffffff","t":"color","s":"css-var --fig-theme-bg (light)"},"border":{"default":{"v":"rgba(0, 0, 0, 0.16)","t":"color","s":"css-var --fig-theme-border (light)"},"hover":{"v":"rgba(0, 0, 0, 0.4)","t":"color","s":"css-var --fig-theme-border-hover (light)"}},"btn":{"ghost":{"bg":{"default":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --fig-theme-btn-ghost-bg (light)"},"hover":{"v":"rgba(0, 0, 0, 0.04)","t":"color","s":"css-var --fig-theme-btn-ghost-bg-hover (light)"}}},"primary":{"bg":{"default":{"v":"#000000","t":"color","s":"css-var --fig-theme-btn-primary-bg (light)"},"hover":{"v":"rgba(0, 0, 0, 0.85)","t":"color","s":"css-var --fig-theme-btn-primary-bg-hover (light)"}},"fg":{"v":"#ffffff","t":"color","s":"css-var --fig-theme-btn-primary-fg (light)"}},"secondary":{"bg":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --fig-theme-btn-secondary-bg (light)"},"fg":{"v":"#000000","t":"color","s":"css-var --fig-theme-btn-secondary-fg (light)"}},"transparent":{"bg":{"default":{"v":"rgba(0, 0, 0, 0.04)","t":"color","s":"css-var --fig-theme-btn-transparent-bg (light)"},"hover":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --fig-theme-btn-transparent-bg-hover (light)"}},"fg":{"v":"#000000","t":"color","s":"css-var --fig-theme-btn-transparent-fg (light)"}}},"card":{"bg":{"v":"rgba(0, 0, 0, 0.04)","t":"color","s":"css-var --fig-theme-card-bg (light)"}},"fg":{"default":{"v":"#000000","t":"color","s":"css-var --fig-theme-fg (light)"},"muted":{"v":"rgba(0, 0, 0, 0.54)","t":"color","s":"css-var --fig-theme-fg-muted (light)"}},"form":{"error":{"bg":{"v":"#972121","t":"color","s":"css-var --fig-theme-form-error-bg (light)"},"fg":{"v":"#ffffff","t":"color","s":"css-var --fig-theme-form-error-fg (light)"}},"input":{"bg":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --fig-theme-form-input-bg (light)"}},"placeholder":{"v":"rgba(0, 0, 0, 0.54)","t":"color","s":"css-var --fig-theme-form-placeholder (light)"}}},"text":{"ink":{"v":"{theme.fg.default}","t":"color","s":"computed color of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared theme.fg.default","d":"The near-black ink on display copy, headings and body."},"navInk":{"v":"{theme.fg.default}","t":"color","s":"computed color of nav-pricing default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared theme.fg.default","d":"The header link ink."}},"action":{"ctaFill":{"v":"{theme.fg.default}","t":"color","s":"computed backgroundColor of nav-cta default (raw/components-computed.json); matches declared theme.fg.default","d":"The black fill of the 'Get started'/'Get started for free' CTA pills."},"ctaInk":{"v":"{theme.bg}","t":"color","s":"computed color of nav-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared theme.bg","d":"The white text on the dark CTA pill."},"ctaHover":{"v":"{theme.btn.primary.bg.hover}","t":"color","s":"computed backgroundColor of nav-cta hover (raw/components-computed.json); matches declared theme.btn.primary.bg.hover","d":"The CTA pill's hover fill — the 15%-lifted black wash."},"submitFill":{"v":"{theme.fg.default}","t":"color","s":"computed backgroundColor of next-btn default (raw/components-computed.json); matches declared theme.fg.default","d":"The 'Next step' button fill on the contact form."},"submitInk":{"v":"{theme.bg}","t":"color","s":"computed color of next-btn default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared theme.bg","d":"The 'Next step' button text."}},"border":{"focusRing":{"v":"{theme.fg.default}","t":"color","s":"computed outlineColor of nav-cta focus-visible (raw/components-computed.json); matches declared theme.fg.default","d":"The keyboard focus ring colour on the header CTA."}},"form":{"fieldBg":{"v":"{theme.form.input.bg}","t":"color","s":"computed backgroundColor of field-email default (raw/components-computed.json); matches declared theme.form.input.bg","d":"The 8%-black contact field fill (form-input-bg)."},"fieldInk":{"v":"{theme.fg.default}","t":"color","s":"computed color of field-email default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared theme.fg.default","d":"The field text ink."},"placeholder":{"v":"{theme.fg.default}","t":"color","s":"computed ::placeholder color of field-email default (raw/components-computed.json); matches declared theme.fg.default","d":"The placeholder ink (form-placeholder)."}},"background":{"page":{"v":"{theme.bg}","t":"color","s":"the :root --fig-theme-bg resolved on the marketing pages (raw/css-vars.json); visible as the white field behind every page (screenshots/*-light-*.png)","d":"The white page field — --fig-theme-bg."}}},"dark":{"theme":{"badge":{"bg":{"v":"rgba(255, 255, 255, 0.16)","t":"color","s":"css-var --fig-theme-badge-bg (dark)"},"fg":{"v":"#ffffff","t":"color","s":"css-var --fig-theme-badge-fg (dark)"}},"bg":{"v":"#000000","t":"color","s":"css-var --fig-theme-bg (dark)"},"border":{"default":{"v":"rgba(255, 255, 255, 0.16)","t":"color","s":"css-var --fig-theme-border (dark)"},"hover":{"v":"rgba(255, 255, 255, 0.54)","t":"color","s":"css-var --fig-theme-border-hover (dark)"}},"btn":{"ghost":{"bg":{"default":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --fig-theme-btn-ghost-bg (dark)"},"hover":{"v":"rgba(255, 255, 255, 0.04)","t":"color","s":"css-var --fig-theme-btn-ghost-bg-hover (dark)"}}},"primary":{"bg":{"default":{"v":"#ffffff","t":"color","s":"css-var --fig-theme-btn-primary-bg (dark)"},"hover":{"v":"rgba(255, 255, 255, 0.8)","t":"color","s":"css-var --fig-theme-btn-primary-bg-hover (dark)"}},"fg":{"v":"#000000","t":"color","s":"css-var --fig-theme-btn-primary-fg (dark)"}},"secondary":{"bg":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --fig-theme-btn-secondary-bg (dark)"},"fg":{"v":"#ffffff","t":"color","s":"css-var --fig-theme-btn-secondary-fg (dark)"}},"transparent":{"bg":{"default":{"v":"rgba(255, 255, 255, 0.04)","t":"color","s":"css-var --fig-theme-btn-transparent-bg (dark)"},"hover":{"v":"rgba(255, 255, 255, 0.16)","t":"color","s":"css-var --fig-theme-btn-transparent-bg-hover (dark)"}},"fg":{"v":"#ffffff","t":"color","s":"css-var --fig-theme-btn-transparent-fg (dark)"}}},"card":{"bg":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --fig-theme-card-bg (dark)"}},"fg":{"default":{"v":"#ffffff","t":"color","s":"css-var --fig-theme-fg (dark)"},"muted":{"v":"rgba(255, 255, 255, 0.54)","t":"color","s":"css-var --fig-theme-fg-muted (dark)"}},"form":{"error":{"bg":{"v":"#ffb3b3","t":"color","s":"css-var --fig-theme-form-error-bg (dark)"},"fg":{"v":"#000000","t":"color","s":"css-var --fig-theme-form-error-fg (dark)"}},"input":{"bg":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --fig-theme-form-input-bg (dark)"}},"placeholder":{"v":"rgba(255, 255, 255, 0.54)","t":"color","s":"css-var --fig-theme-form-placeholder (dark)"}}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (declared — no public page painted data-theme="dark" while captured)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  // This package keeps its shadow steps in core.elevation (the declared
+  // --fig-elevation-* tokens), not per-theme shadow.* sets.
+  for (const [n, t] of flat((TOK.core || {}).elevation || {}, 'elevation.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.breakpoint || {}), 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.aspect || {}), 'aspect.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}), 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}…</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Aliases are set-relative: {font.size.body} and the palette scales live
+  // under TOK.core, semantic roles under TOK.light / TOK.dark. Try each root.
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Figma</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

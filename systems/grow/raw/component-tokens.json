@@ -1,0 +1,1064 @@
+{
+ "core": {
+  "color": {
+   "palette": {
+    "blue": {
+     "50": {
+      "var": "--glue-blue-50",
+      "type": "color",
+      "source": "css-var --glue-blue-50 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "100": {
+      "var": "--glue-blue-100",
+      "type": "color",
+      "source": "css-var --glue-blue-100 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "200": {
+      "var": "--glue-blue-200",
+      "type": "color",
+      "source": "css-var --glue-blue-200 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "300": {
+      "var": "--glue-blue-300",
+      "type": "color",
+      "source": "css-var --glue-blue-300 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "400": {
+      "var": "--glue-blue-400",
+      "type": "color",
+      "source": "css-var --glue-blue-400 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "500": {
+      "var": "--glue-blue-500",
+      "type": "color",
+      "source": "css-var --glue-blue-500 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "600": {
+      "var": "--glue-blue-600",
+      "type": "color",
+      "source": "css-var --glue-blue-600 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "700": {
+      "var": "--glue-blue-700",
+      "type": "color",
+      "source": "css-var --glue-blue-700 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "800": {
+      "var": "--glue-blue-800",
+      "type": "color",
+      "source": "css-var --glue-blue-800 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "900": {
+      "var": "--glue-blue-900",
+      "type": "color",
+      "source": "css-var --glue-blue-900 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     }
+    },
+    "green": {
+     "50": {
+      "var": "--glue-green-50",
+      "type": "color",
+      "source": "css-var --glue-green-50 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "100": {
+      "var": "--glue-green-100",
+      "type": "color",
+      "source": "css-var --glue-green-100 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "200": {
+      "var": "--glue-green-200",
+      "type": "color",
+      "source": "css-var --glue-green-200 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "300": {
+      "var": "--glue-green-300",
+      "type": "color",
+      "source": "css-var --glue-green-300 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "400": {
+      "var": "--glue-green-400",
+      "type": "color",
+      "source": "css-var --glue-green-400 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "500": {
+      "var": "--glue-green-500",
+      "type": "color",
+      "source": "css-var --glue-green-500 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "600": {
+      "var": "--glue-green-600",
+      "type": "color",
+      "source": "css-var --glue-green-600 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "700": {
+      "var": "--glue-green-700",
+      "type": "color",
+      "source": "css-var --glue-green-700 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "800": {
+      "var": "--glue-green-800",
+      "type": "color",
+      "source": "css-var --glue-green-800 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "900": {
+      "var": "--glue-green-900",
+      "type": "color",
+      "source": "css-var --glue-green-900 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     }
+    },
+    "grey": {
+     "0": {
+      "var": "--glue-grey-0",
+      "type": "color",
+      "source": "css-var --glue-grey-0 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "25": {
+      "var": "--glue-grey-25",
+      "type": "color",
+      "source": "css-var --glue-grey-25 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "50": {
+      "var": "--glue-grey-50",
+      "type": "color",
+      "source": "css-var --glue-grey-50 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "100": {
+      "var": "--glue-grey-100",
+      "type": "color",
+      "source": "css-var --glue-grey-100 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "200": {
+      "var": "--glue-grey-200",
+      "type": "color",
+      "source": "css-var --glue-grey-200 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "300": {
+      "var": "--glue-grey-300",
+      "type": "color",
+      "source": "css-var --glue-grey-300 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "400": {
+      "var": "--glue-grey-400",
+      "type": "color",
+      "source": "css-var --glue-grey-400 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "500": {
+      "var": "--glue-grey-500",
+      "type": "color",
+      "source": "css-var --glue-grey-500 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "600": {
+      "var": "--glue-grey-600",
+      "type": "color",
+      "source": "css-var --glue-grey-600 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "700": {
+      "var": "--glue-grey-700",
+      "type": "color",
+      "source": "css-var --glue-grey-700 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "800": {
+      "var": "--glue-grey-800",
+      "type": "color",
+      "source": "css-var --glue-grey-800 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "900": {
+      "var": "--glue-grey-900",
+      "type": "color",
+      "source": "css-var --glue-grey-900 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     }
+    },
+    "red": {
+     "50": {
+      "var": "--glue-red-50",
+      "type": "color",
+      "source": "css-var --glue-red-50 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "100": {
+      "var": "--glue-red-100",
+      "type": "color",
+      "source": "css-var --glue-red-100 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "200": {
+      "var": "--glue-red-200",
+      "type": "color",
+      "source": "css-var --glue-red-200 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "300": {
+      "var": "--glue-red-300",
+      "type": "color",
+      "source": "css-var --glue-red-300 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "400": {
+      "var": "--glue-red-400",
+      "type": "color",
+      "source": "css-var --glue-red-400 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "500": {
+      "var": "--glue-red-500",
+      "type": "color",
+      "source": "css-var --glue-red-500 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "600": {
+      "var": "--glue-red-600",
+      "type": "color",
+      "source": "css-var --glue-red-600 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "700": {
+      "var": "--glue-red-700",
+      "type": "color",
+      "source": "css-var --glue-red-700 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "800": {
+      "var": "--glue-red-800",
+      "type": "color",
+      "source": "css-var --glue-red-800 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "900": {
+      "var": "--glue-red-900",
+      "type": "color",
+      "source": "css-var --glue-red-900 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     }
+    },
+    "yellow": {
+     "50": {
+      "var": "--glue-yellow-50",
+      "type": "color",
+      "source": "css-var --glue-yellow-50 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "100": {
+      "var": "--glue-yellow-100",
+      "type": "color",
+      "source": "css-var --glue-yellow-100 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "200": {
+      "var": "--glue-yellow-200",
+      "type": "color",
+      "source": "css-var --glue-yellow-200 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "300": {
+      "var": "--glue-yellow-300",
+      "type": "color",
+      "source": "css-var --glue-yellow-300 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "400": {
+      "var": "--glue-yellow-400",
+      "type": "color",
+      "source": "css-var --glue-yellow-400 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "500": {
+      "var": "--glue-yellow-500",
+      "type": "color",
+      "source": "css-var --glue-yellow-500 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "600": {
+      "var": "--glue-yellow-600",
+      "type": "color",
+      "source": "css-var --glue-yellow-600 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "700": {
+      "var": "--glue-yellow-700",
+      "type": "color",
+      "source": "css-var --glue-yellow-700 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "800": {
+      "var": "--glue-yellow-800",
+      "type": "color",
+      "source": "css-var --glue-yellow-800 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "900": {
+      "var": "--glue-yellow-900",
+      "type": "color",
+      "source": "css-var --glue-yellow-900 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     }
+    },
+    "purple": {
+     "100": {
+      "var": "--glue-purple-100",
+      "type": "color",
+      "source": "css-var --glue-purple-100 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     },
+     "900": {
+      "var": "--glue-purple-900",
+      "type": "color",
+      "source": "css-var --glue-purple-900 declared on :root by gwg-us-1.2.12 styles/default/All.min.css"
+     }
+    }
+   },
+   "_description": "The declared glue colour layer: the versioned gstatic bundle declares only these ramps as custom properties; every other colour the site paints is a compiled literal read as a measured computed style."
+  },
+  "font": {
+   "family": {
+    "sans": {
+     "value": "\"Google Sans Flex\", Arial, Helvetica, sans-serif",
+     "type": "fontFamily",
+     "source": "measured fontFamily of hero-h1 default on grow.google's US edition (raw/components-computed.json)",
+     "description": "The variable face everything paints: Google Sans Flex opsz 6-144 wght 100-1000, served from fonts.googleapis.com (Google Sans Text, Google Sans, Google Sans Display and Product Sans faces are also requested and declared in the font sheet)."
+    },
+    "system": {
+     "value": "Arial, Helvetica, sans-serif",
+     "type": "fontFamily",
+     "source": "the fallback tail of the measured fontFamily of hero-h1 default on grow.google's US edition (raw/components-computed.json)",
+     "description": "The fallback tail the flex stack declares."
+    }
+   },
+   "weight": {
+    "regular": {
+     "value": 400,
+     "type": "fontWeight",
+     "source": "measured fontWeight of body-p default on grow.google's US edition (raw/components-computed.json)"
+    },
+    "medium": {
+     "value": 500,
+     "type": "fontWeight",
+     "source": "measured fontWeight of nav-link default on grow.google's US edition (raw/components-computed.json)"
+    },
+    "bold": {
+     "value": 700,
+     "type": "fontWeight",
+     "source": "measured fontWeight of stat-chip default on grow.google's US edition (raw/components-computed.json)",
+     "description": "The stat figures are the only 700-weight text measured; headings all paint regular/medium."
+    }
+   }
+  },
+  "typography": {
+   "display-1": {
+    "value": {
+     "fontFamily": "\"Google Sans Flex\", Arial, Helvetica, sans-serif",
+     "fontSize": "60px",
+     "fontWeight": 400,
+     "lineHeight": "72px",
+     "letterSpacing": "-0.5px"
+    },
+    "type": "typography",
+    "source": "measured typography of cert-h1 default on grow.google's US edition (raw/components-computed.json): Google Sans Flex 60px/72px 400, ls -0.5px",
+    "description": "Certificate/AI page display heading (60px/72px, ls -0.5) on the dark hero / tinted band."
+   },
+   "display-2": {
+    "value": {
+     "fontFamily": "\"Google Sans Flex\", Arial, Helvetica, sans-serif",
+     "fontSize": "48px",
+     "fontWeight": 400,
+     "lineHeight": "56px",
+     "letterSpacing": "-0.5px"
+    },
+    "type": "typography",
+    "source": "measured typography of certs-h1 default on grow.google's US edition (raw/components-computed.json): Google Sans Flex 48px/56px 400, ls -0.5px",
+    "description": "The catalog display heading (48px/56px, ls -0.5); the stat figures share the size at 700 weight."
+   },
+   "headline": {
+    "value": {
+     "fontFamily": "\"Google Sans Flex\", Arial, Helvetica, sans-serif",
+     "fontSize": "36px",
+     "fontWeight": 400,
+     "lineHeight": "44px",
+     "letterSpacing": "-0.25px"
+    },
+    "type": "typography",
+    "source": "measured typography of hero-h1 default on grow.google's US edition (raw/components-computed.json): Google Sans Flex 36px/44px 400, ls -0.25px",
+    "description": "The home hero headline (36px/44px, ls -0.25)."
+   },
+   "title": {
+    "value": {
+     "fontFamily": "\"Google Sans Flex\", Arial, Helvetica, sans-serif",
+     "fontSize": "28px",
+     "fontWeight": 400,
+     "lineHeight": "36px",
+     "letterSpacing": "0px"
+    },
+    "type": "typography",
+    "source": "measured typography of h2 default on grow.google's US edition (raw/components-computed.json): Google Sans Flex 28px/36px 400, ls normal",
+    "description": "A section heading (28px/36px)."
+   },
+   "stat": {
+    "value": {
+     "fontFamily": "\"Google Sans Flex\", Arial, Helvetica, sans-serif",
+     "fontSize": "48px",
+     "fontWeight": 700,
+     "lineHeight": "57.6px",
+     "letterSpacing": "-0.5px"
+    },
+    "type": "typography",
+    "source": "measured typography of stat-chip default on grow.google's US edition (raw/components-computed.json): Google Sans Flex 48px/57.6px 700, ls -0.5px",
+    "description": "The 700-weight stat figure (48px/57.6px)."
+   },
+   "body": {
+    "value": {
+     "fontFamily": "\"Google Sans Flex\", Arial, Helvetica, sans-serif",
+     "fontSize": "16px",
+     "fontWeight": 400,
+     "lineHeight": "24px",
+     "letterSpacing": "0.1px"
+    },
+    "type": "typography",
+    "source": "measured typography of header default on grow.google's US edition (raw/components-computed.json): Google Sans Flex 16px/24px 400, ls 0.1px",
+    "description": "The default text size (16px/24px) — nav, links, body copy."
+   },
+   "body-small": {
+    "value": {
+     "fontFamily": "\"Google Sans Flex\", Arial, Helvetica, sans-serif",
+     "fontSize": "14px",
+     "fontWeight": 400,
+     "lineHeight": "21px",
+     "letterSpacing": "0px"
+    },
+    "type": "typography",
+    "source": "measured typography of body-p default on grow.google's US edition (raw/components-computed.json): Google Sans Flex 14px/21px 400, ls normal",
+    "description": "Secondary body copy (14px/21px)."
+   },
+   "eyebrow": {
+    "value": {
+     "fontFamily": "\"Google Sans Flex\", Arial, Helvetica, sans-serif",
+     "fontSize": "14px",
+     "fontWeight": 500,
+     "lineHeight": "24px",
+     "letterSpacing": "0.5px"
+    },
+    "type": "typography",
+    "source": "measured typography of eyebrow default on grow.google's US edition (raw/components-computed.json): Google Sans Flex 14px/24px 500, ls 0.5px",
+    "description": "The uppercase eyebrow (14px/24px, 500, ls 0.5px)."
+   },
+   "caption": {
+    "value": {
+     "fontFamily": "\"Google Sans Flex\", Arial, Helvetica, sans-serif",
+     "fontSize": "12px",
+     "fontWeight": 400,
+     "lineHeight": "20px",
+     "letterSpacing": "0.2px"
+    },
+    "type": "typography",
+    "source": "measured typography of breadcrumb default on grow.google's US edition (raw/components-computed.json): Google Sans Flex 12px/20px 400, ls 0.2px",
+    "description": "Breadcrumb/caption text (12px/20px)."
+   },
+   "nav": {
+    "value": {
+     "fontFamily": "\"Google Sans Flex\", Arial, Helvetica, sans-serif",
+     "fontSize": "16px",
+     "fontWeight": 500,
+     "lineHeight": "24px",
+     "letterSpacing": "0.25px"
+    },
+    "type": "typography",
+    "source": "measured typography of nav-link default on grow.google's US edition (raw/components-computed.json): Google Sans Flex 16px/24px 500, ls 0.25px",
+    "description": "Header nav text (16px/24px, 500, ls 0.25px)."
+   },
+   "button": {
+    "value": {
+     "fontFamily": "\"Google Sans Flex\", Arial, Helvetica, sans-serif",
+     "fontSize": "16px",
+     "fontWeight": 500,
+     "lineHeight": "24px",
+     "letterSpacing": "0.5px"
+    },
+    "type": "typography",
+    "source": "measured typography of cert-cta default on grow.google's US edition (raw/components-computed.json): Google Sans Flex 16px/24px 500, ls 0.5px",
+    "description": "Pill button text (16px/24px, 500, ls 0.5px)."
+   }
+  },
+  "radius": {
+   "pill": {
+    "value": "48px",
+    "type": "dimension",
+    "source": "measured borderTopLeftRadius of cert-cta default on grow.google's US edition (raw/components-computed.json)",
+    "description": "The fully-round pill: every button and the jumplinks tab bar."
+   },
+   "bar": {
+    "value": "120px",
+    "type": "dimension",
+    "source": "measured borderTopLeftRadius of tab-bar default on grow.google's US edition (raw/components-computed.json)",
+    "description": "The jumplinks pill bar (120px — the bar itself)."
+   },
+   "card": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "measured borderTopLeftRadius of card-link default on grow.google's US edition (raw/components-computed.json)",
+    "description": "The announcement card link radius (8px)."
+   },
+   "control": {
+    "value": "4px",
+    "type": "dimension",
+    "source": "measured borderTopLeftRadius of nav-link default on grow.google's US edition (raw/components-computed.json)",
+    "description": "Small controls: nav links, menu items, the drawer button (4px)."
+   }
+  },
+  "shadow": {
+   "elevation-1": {
+    "value": [
+     {
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "2px",
+      "spread": "0px",
+      "color": "rgba(60, 64, 67, 0.3)"
+     },
+     {
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "3px",
+      "spread": "1px",
+      "color": "rgba(60, 64, 67, 0.15)"
+     }
+    ],
+    "type": "shadow",
+    "source": "measured boxShadow of tab-bar default on grow.google's US edition (raw/components-computed.json)",
+    "description": "The glue elevation the jumplinks bar and hovered buttons share."
+   },
+   "button-pressed": {
+    "value": [
+     {
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "2px",
+      "spread": "0px",
+      "color": "rgba(60, 64, 67, 0.3)"
+     },
+     {
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "6px",
+      "spread": "2px",
+      "color": "rgba(60, 64, 67, 0.15)"
+     }
+    ],
+    "type": "shadow",
+    "source": "measured boxShadow of cert-cta pressed on grow.google's US edition (raw/components-computed.json)",
+    "description": "The deeper elevation a pressed button paints."
+   }
+  },
+  "space": {
+   "button": {
+    "x": {
+     "value": "16px",
+     "type": "dimension",
+     "source": "measured paddingLeft of cert-cta default on grow.google's US edition (raw/components-computed.json)"
+    },
+    "y": {
+     "value": "12px",
+     "type": "dimension",
+     "source": "measured paddingTop of cert-cta default on grow.google's US edition (raw/components-computed.json)"
+    }
+   },
+   "nav": {
+    "x": {
+     "value": "12px",
+     "type": "dimension",
+     "source": "measured paddingLeft of nav-link default on grow.google's US edition (raw/components-computed.json)"
+    }
+   },
+   "tab": {
+    "x": {
+     "value": "8px",
+     "type": "dimension",
+     "source": "measured paddingLeft of tab default on grow.google's US edition (raw/components-computed.json)"
+    },
+    "y": {
+     "value": "7px",
+     "type": "dimension",
+     "source": "measured paddingTop of tab default on grow.google's US edition (raw/components-computed.json)"
+    }
+   },
+   "page": {
+    "x": {
+     "value": "72px",
+     "type": "dimension",
+     "source": "measured rect.x (the content-column inset at 1440) of card default on grow.google's US edition (raw/components-computed.json)",
+     "description": "The page inset: the announcement card, the video teaser and the FAQ rows all start at x=72 on a 1440 canvas (the 1296px column)."
+    }
+   }
+  },
+  "focusRing": {
+   "color": {
+    "value": "#1a73e8",
+    "type": "color",
+    "source": "measured the 2px focus ring (a box-shadow, not an outline) of nav-link focus-visible on grow.google's US edition (raw/components-computed.json)",
+    "description": "Keyboard focus is a 2px box-shadow ring offset 1px, never an outline."
+   },
+   "width": {
+    "value": "2px",
+    "type": "dimension",
+    "source": "measured the 2px ring width of tab focus-visible on grow.google's US edition (raw/components-computed.json)"
+   },
+   "offset": {
+    "value": "1px",
+    "type": "dimension",
+    "source": "measured the ring offset of promo-link focus-visible on grow.google's US edition (raw/components-computed.json)"
+   }
+  },
+  "geometry": {
+   "header": {
+    "height": {
+     "value": "64px",
+     "type": "dimension",
+     "source": "measured rect.height of header default on grow.google's US edition (raw/components-computed.json)",
+     "description": "The 64px top bar at 1440 and 390 wide."
+    },
+    "width": {
+     "value": "1440px",
+     "type": "dimension",
+     "source": "measured rect.width of header default on grow.google's US edition (raw/components-computed.json)"
+    }
+   },
+   "nav": {
+    "itemHeight": {
+     "value": "48px",
+     "type": "dimension",
+     "source": "measured rect.height of nav-link default on grow.google's US edition (raw/components-computed.json)"
+    }
+   },
+   "megaMenu": {
+    "height": {
+     "value": "623px",
+     "type": "dimension",
+     "source": "measured rect.height of mega-panel default on grow.google's US edition (raw/components-computed.json)"
+    },
+    "width": {
+     "value": "1440px",
+     "type": "dimension",
+     "source": "measured rect.width of mega-panel default on grow.google's US edition (raw/components-computed.json)",
+     "description": "The full-bleed panel."
+    }
+   },
+   "button": {
+    "height": {
+     "value": "50px",
+     "type": "dimension",
+     "source": "measured rect.height of cert-cta default on grow.google's US edition (raw/components-computed.json)"
+    }
+   },
+   "drawerButton": {
+    "size": {
+     "value": "48px",
+     "type": "dimension",
+     "source": "measured rect.width of m-drawer-btn default on grow.google's US edition (raw/components-computed.json)",
+     "description": "The 48px square drawer toggle at 390 wide."
+    }
+   },
+   "jumplink": {
+    "height": {
+     "value": "38px",
+     "type": "dimension",
+     "source": "measured rect.height of tab default on grow.google's US edition (raw/components-computed.json)"
+    }
+   },
+   "banner": {
+    "height": {
+     "value": "25px",
+     "type": "dimension",
+     "source": "measured rect.height of promo-banner default on grow.google's US edition (raw/components-computed.json)",
+     "description": "The promo anchor's own box; the painted bar is its paragraph parent."
+    }
+   },
+   "video": {
+    "width": {
+     "value": "616px",
+     "type": "dimension",
+     "source": "measured rect.width of video-teaser default on grow.google's US edition (raw/components-computed.json)"
+    },
+    "height": {
+     "value": "346.5px",
+     "type": "dimension",
+     "source": "measured rect.height of video-teaser default on grow.google's US edition (raw/components-computed.json)"
+    }
+   },
+   "hero": {
+    "height": {
+     "value": "720px",
+     "type": "dimension",
+     "source": "measured rect.height of cert-hero default on grow.google's US edition (raw/components-computed.json)"
+    }
+   },
+   "card": {
+    "announcement": {
+     "width": {
+      "value": "1296px",
+      "type": "dimension",
+      "source": "measured rect.width of card default on grow.google's US edition (raw/components-computed.json)"
+     },
+     "height": {
+      "value": "285px",
+      "type": "dimension",
+      "source": "measured rect.height of card default on grow.google's US edition (raw/components-computed.json)"
+     }
+    },
+    "certificate": {
+     "width": {
+      "value": "369.75px",
+      "type": "dimension",
+      "source": "measured rect.width of cert-card default on grow.google's US edition (raw/components-computed.json)"
+     },
+     "height": {
+      "value": "386px",
+      "type": "dimension",
+      "source": "measured rect.height of cert-card default on grow.google's US edition (raw/components-computed.json)"
+     }
+    }
+   },
+   "footer": {
+    "height": {
+     "value": "837px",
+     "type": "dimension",
+     "source": "measured rect.height of footer default on grow.google's US edition (raw/components-computed.json)"
+    }
+   },
+   "select": {
+    "width": {
+     "value": "233px",
+     "type": "dimension",
+     "source": "measured rect.width of footer-lang default on grow.google's US edition (raw/components-computed.json)"
+    }
+   },
+   "expansionPanel": {
+    "rowHeight": {
+     "value": "93px",
+     "type": "dimension",
+     "source": "measured rect.height of expansion-panel default on grow.google's US edition (raw/components-computed.json)"
+    }
+   },
+   "mobileHeader": {
+    "height": {
+     "value": "64px",
+     "type": "dimension",
+     "source": "measured rect.height at 390 wide of m-header default on grow.google's US edition (raw/components-computed.json)"
+    }
+   }
+  }
+ },
+ "light": {
+  "color": {
+   "surface": {
+    "base": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "measured backgroundColor of header default on grow.google's US edition (raw/components-computed.json)",
+     "description": "The page ground — header, mega-menu and body all paint white."
+    },
+    "muted": {
+     "value": "#f8f9fa",
+     "type": "color",
+     "source": "measured backgroundColor of nav-link focus-visible on grow.google's US edition (raw/components-computed.json)",
+     "description": "The quiet hover wash on controls (grey-50)."
+    },
+    "footer": {
+     "value": "#eff2f7",
+     "type": "color",
+     "source": "measured backgroundColor of footer default on grow.google's US edition (raw/components-computed.json)",
+     "description": "The blue-grey footer band."
+    },
+    "dark": {
+     "value": "#18191d",
+     "type": "color",
+     "source": "measured backgroundColor of cert-hero default on grow.google's US edition (raw/components-computed.json)",
+     "description": "The editorial dark hero on certificate pages — a section paint, not a theme."
+    }
+   },
+   "ink": {
+    "primary": {
+     "value": "#202124",
+     "type": "color",
+     "source": "measured color of hero-h1 default on grow.google's US edition (raw/components-computed.json)",
+     "description": "Near-black ink (grey-900)."
+    },
+    "secondary": {
+     "value": "#3c4043",
+     "type": "color",
+     "source": "measured color of nav-link default on grow.google's US edition (raw/components-computed.json)",
+     "description": "Nav and body ink (grey-800)."
+    },
+    "tertiary": {
+     "value": "#5f6368",
+     "type": "color",
+     "source": "measured color of m-drawer-btn default on grow.google's US edition (raw/components-computed.json)",
+     "description": "Icon-only ink (grey-700)."
+    },
+    "inverse": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "measured color of cert-h1 default on grow.google's US edition (raw/components-computed.json)",
+     "description": "Ink on the dark hero and on filled buttons."
+    }
+   },
+   "link": {
+    "default": {
+     "value": "#3186ff",
+     "type": "color",
+     "source": "measured color of breadcrumb default on grow.google's US edition (raw/components-computed.json)",
+     "description": "The site's painted link/accent blue — brighter than the declared #1a73e8 brand step."
+    },
+    "hover": {
+     "value": "#3186ff",
+     "type": "color",
+     "source": "measured color of learn-more-btn hover on grow.google's US edition (raw/components-computed.json)"
+    },
+    "hoverWash": {
+     "value": "rgba(26, 115, 232, 0.04)",
+     "type": "color",
+     "source": "measured backgroundColor of learn-more-btn hover on grow.google's US edition (raw/components-computed.json)",
+     "description": "The faint brand wash a text link gains on hover."
+    },
+    "pressed": {
+     "value": "rgba(26, 115, 232, 0.1)",
+     "type": "color",
+     "source": "measured backgroundColor of learn-more-btn pressed on grow.google's US edition (raw/components-computed.json)"
+    },
+    "legacy": {
+     "value": "#1a73e8",
+     "type": "color",
+     "source": "measured color of card-link default on grow.google's US edition (raw/components-computed.json)",
+     "description": "The older brand blue still painted by card links (glue-blue-600)."
+    }
+   },
+   "accent": {
+    "value": "{color.palette.blue.600}",
+    "type": "color",
+    "source": "alias to the declared glue-blue-600",
+    "description": "The declared brand blue (glue-blue-600 #1a73e8): the card-link colour and the focus-ring colour."
+   },
+   "line": {
+    "hairline": {
+     "value": "#dadce0",
+     "type": "color",
+     "source": "measured borderTopColor of expansion-panel default on grow.google's US edition (raw/components-computed.json)",
+     "description": "The row separator the expansion panels draw (grey-300)."
+    }
+   },
+   "focus": {
+    "value": "{focusRing.color}",
+    "type": "color",
+    "source": "alias to the measured focus ring"
+   }
+  },
+  "button": {
+   "primary": {
+    "bg": {
+     "value": "#3186ff",
+     "type": "color",
+     "source": "measured backgroundColor of cert-cta default on grow.google's US edition (raw/components-computed.json)",
+     "description": "The filled pill — the site's painted action blue."
+    },
+    "bgHover": {
+     "value": "#185abc",
+     "type": "color",
+     "source": "measured backgroundColor of cert-cta hover on grow.google's US edition (raw/components-computed.json)",
+     "description": "Hover darkens to glue-blue-800."
+    },
+    "bgPressed": {
+     "value": "#185abc",
+     "type": "color",
+     "source": "measured backgroundColor of cert-cta pressed on grow.google's US edition (raw/components-computed.json)"
+    },
+    "fg": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "measured color of cert-cta default on grow.google's US edition (raw/components-computed.json)"
+    },
+    "radius": {
+     "value": "{radius.pill}",
+     "type": "dimension",
+     "source": "alias to the measured pill radius"
+    },
+    "paddingX": {
+     "value": "{space.button.x}",
+     "type": "dimension",
+     "source": "alias to the measured button padding"
+    },
+    "paddingY": {
+     "value": "{space.button.y}",
+     "type": "dimension",
+     "source": "alias to the measured button padding"
+    },
+    "shadowHover": {
+     "value": "{shadow.elevation-1}",
+     "type": "shadow",
+     "source": "alias to the measured hover elevation"
+    }
+   }
+  },
+  "banner": {
+   "bg": {
+    "value": "rgba(0, 0, 0, 0)",
+    "type": "color",
+    "source": "measured backgroundColor of promo-banner default on grow.google's US edition (raw/components-computed.json)",
+    "description": "The promo paragraph itself paints nothing (transparent); the bar's fill is on an ancestor the capture did not measure, so it is not recorded (recapture needed, see the README's gaps)."
+   },
+   "link": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "measured color of promo-banner default on grow.google's US edition (raw/components-computed.json)",
+    "description": "The promo copy colour: white type on the bar's fill (the fill itself was not measured)."
+   }
+  },
+  "tab": {
+   "bar": {
+    "bg": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "measured backgroundColor of tab-bar default on grow.google's US edition (raw/components-computed.json)"
+    },
+    "shadow": {
+     "value": "{shadow.elevation-1}",
+     "type": "shadow",
+     "source": "alias to the measured bar elevation"
+    },
+    "radius": {
+     "value": "{radius.bar}",
+     "type": "dimension",
+     "source": "alias to the measured bar radius"
+    }
+   },
+   "item": {
+    "fg": {
+     "value": "#3c4043",
+     "type": "color",
+     "source": "measured color of tab default on grow.google's US edition (raw/components-computed.json)"
+    },
+    "bgHover": {
+     "value": "#f8f9fa",
+     "type": "color",
+     "source": "measured backgroundColor of tab hover on grow.google's US edition (raw/components-computed.json)"
+    },
+    "bgPressed": {
+     "value": "#f1f3f4",
+     "type": "color",
+     "source": "measured backgroundColor of tab pressed on grow.google's US edition (raw/components-computed.json)"
+    }
+   }
+  },
+  "surface": {
+   "hero": {
+    "bg": {
+     "value": "{color.surface.dark}",
+     "type": "color",
+     "source": "alias to the dark hero surface"
+    },
+    "ink": {
+     "value": "{color.ink.inverse}",
+     "type": "color",
+     "source": "alias to inverse ink"
+    }
+   }
+  },
+  "stat": {
+   "number": {
+    "value": "#202124",
+    "type": "color",
+    "source": "measured color of stat-chip default on grow.google's US edition (raw/components-computed.json)",
+    "description": "The measured stat figure colour; sibling stats paint one of the four brand hues (the screenshots show red/blue/yellow/green numbers — only the first is measured)."
+   }
+  },
+  "component": {
+   "button": {
+    "bg": {
+     "value": "{button.primary.bg}",
+     "type": "color",
+     "source": "alias to the measured pill fill"
+    },
+    "fg": {
+     "value": "{button.primary.fg}",
+     "type": "color",
+     "source": "alias to the measured pill text"
+    },
+    "radius": {
+     "value": "{radius.pill}",
+     "type": "dimension",
+     "source": "alias to the measured pill radius"
+    },
+    "height": {
+     "value": "{geometry.button.height}",
+     "type": "dimension",
+     "source": "alias to the measured button height"
+    }
+   },
+   "hero": {
+    "bg": {
+     "value": "{surface.hero.bg}",
+     "type": "color",
+     "source": "alias to the measured dark hero paint"
+    },
+    "fg": {
+     "value": "{surface.hero.ink}",
+     "type": "color",
+     "source": "alias to the measured hero ink"
+    },
+    "height": {
+     "value": "{geometry.hero.height}",
+     "type": "dimension",
+     "source": "alias to the measured hero height"
+    }
+   },
+   "tab": {
+    "bar": {
+     "bg": {
+      "value": "{tab.bar.bg}",
+      "type": "color",
+      "source": "alias to the measured jumplinks bar paint"
+     },
+     "radius": {
+      "value": "{radius.bar}",
+      "type": "dimension",
+      "source": "alias to the measured bar radius"
+     }
+    }
+   },
+   "card": {
+    "bg": {
+     "value": "{color.surface.base}",
+     "type": "color",
+     "source": "alias to the measured card paint"
+    },
+    "radius": {
+     "value": "{radius.card}",
+     "type": "dimension",
+     "source": "alias to the measured card radius"
+    },
+    "height": {
+     "value": "{geometry.card.announcement.height}",
+     "type": "dimension",
+     "source": "alias to the measured announcement card height"
+    }
+   },
+   "header": {
+    "bg": {
+     "value": "{color.surface.base}",
+     "type": "color",
+     "source": "alias to the measured header paint"
+    },
+    "height": {
+     "value": "{geometry.header.height}",
+     "type": "dimension",
+     "source": "alias to the measured header height"
+    }
+   },
+   "footer": {
+    "bg": {
+     "value": "{color.surface.footer}",
+     "type": "color",
+     "source": "alias to the measured footer band"
+    },
+    "height": {
+     "value": "{geometry.footer.height}",
+     "type": "dimension",
+     "source": "alias to the measured footer height"
+    }
+   },
+   "banner": {
+    "height": {
+     "value": "{geometry.banner.height}",
+     "type": "dimension",
+     "source": "alias to the measured promo anchor height"
+    }
+   },
+   "megaMenu": {
+    "bg": {
+     "value": "{color.surface.base}",
+     "type": "color",
+     "source": "alias to the measured mega-menu paint"
+    },
+    "height": {
+     "value": "{geometry.megaMenu.height}",
+     "type": "dimension",
+     "source": "alias to the measured mega-menu height"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,857 @@
+{
+ "_about": "Krea public tokens, 2026-11-18. core scales come from the Tailwind @theme layer resolved with html.dark. dark holds the painted semantic roles (the product's only public theme; there is no light set). component holds measured control values.",
+ "core": {
+  "color": {
+   "primary": {
+    "0": {
+     "var": "--color-primary-0",
+     "type": "color",
+     "description": "Primary grey ramp step 0, declared on :root,:host."
+    },
+    "50": {
+     "var": "--color-primary-50",
+     "type": "color",
+     "description": "Primary grey ramp step 50, declared on :root,:host."
+    },
+    "100": {
+     "var": "--color-primary-100",
+     "type": "color",
+     "description": "Primary grey ramp step 100, declared on :root,:host."
+    },
+    "150": {
+     "var": "--color-primary-150",
+     "type": "color",
+     "description": "Primary grey ramp step 150, declared on :root,:host."
+    },
+    "200": {
+     "var": "--color-primary-200",
+     "type": "color",
+     "description": "Primary grey ramp step 200, declared on :root,:host."
+    },
+    "250": {
+     "var": "--color-primary-250",
+     "type": "color",
+     "description": "Primary grey ramp step 250, declared on :root,:host."
+    },
+    "300": {
+     "var": "--color-primary-300",
+     "type": "color",
+     "description": "Primary grey ramp step 300, declared on :root,:host."
+    },
+    "400": {
+     "var": "--color-primary-400",
+     "type": "color",
+     "description": "Primary grey ramp step 400, declared on :root,:host."
+    },
+    "500": {
+     "var": "--color-primary-500",
+     "type": "color",
+     "description": "Primary grey ramp step 500, declared on :root,:host."
+    },
+    "600": {
+     "var": "--color-primary-600",
+     "type": "color",
+     "description": "Primary grey ramp step 600, declared on :root,:host."
+    },
+    "700": {
+     "var": "--color-primary-700",
+     "type": "color",
+     "description": "Primary grey ramp step 700, declared on :root,:host."
+    },
+    "800": {
+     "var": "--color-primary-800",
+     "type": "color",
+     "description": "Primary grey ramp step 800, declared on :root,:host."
+    },
+    "850": {
+     "var": "--color-primary-850",
+     "type": "color",
+     "description": "Primary grey ramp step 850, declared on :root,:host."
+    },
+    "900": {
+     "var": "--color-primary-900",
+     "type": "color",
+     "description": "Primary grey ramp step 900, declared on :root,:host."
+    },
+    "950": {
+     "var": "--color-primary-950",
+     "type": "color",
+     "description": "Primary grey ramp step 950, declared on :root,:host."
+    },
+    "975": {
+     "var": "--color-primary-975",
+     "type": "color",
+     "description": "Primary grey ramp step 975, declared on :root,:host."
+    },
+    "1000": {
+     "var": "--color-primary-1000",
+     "type": "color",
+     "description": "Primary grey ramp step 1000, declared on :root,:host."
+    }
+   },
+   "action": {
+    "default": {
+     "var": "--color-action",
+     "type": "color",
+     "description": "Krea action colour, declared on :root,:host."
+    },
+    "hover": {
+     "var": "--color-action-hover",
+     "type": "color",
+     "description": "Krea action colour, declared on :root,:host."
+    },
+    "green": {
+     "var": "--color-action-green",
+     "type": "color",
+     "description": "Krea action colour, declared on :root,:host."
+    },
+    "purple": {
+     "var": "--color-action-purple",
+     "type": "color",
+     "description": "Krea action colour, declared on :root,:host."
+    }
+   },
+   "red": {
+    "50": {
+     "var": "--color-red-50",
+     "type": "color"
+    },
+    "100": {
+     "var": "--color-red-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-red-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-red-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-red-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-red-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-red-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-red-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-red-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-red-900",
+     "type": "color"
+    },
+    "950": {
+     "var": "--color-red-950",
+     "type": "color"
+    }
+   },
+   "orange": {
+    "50": {
+     "var": "--color-orange-50",
+     "type": "color"
+    },
+    "100": {
+     "var": "--color-orange-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-orange-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-orange-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-orange-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-orange-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-orange-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-orange-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-orange-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-orange-900",
+     "type": "color"
+    }
+   },
+   "amber": {
+    "50": {
+     "var": "--color-amber-50",
+     "type": "color"
+    },
+    "100": {
+     "var": "--color-amber-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-amber-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-amber-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-amber-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-amber-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-amber-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-amber-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-amber-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-amber-900",
+     "type": "color"
+    },
+    "950": {
+     "var": "--color-amber-950",
+     "type": "color"
+    }
+   },
+   "yellow": {
+    "50": {
+     "var": "--color-yellow-50",
+     "type": "color"
+    },
+    "100": {
+     "var": "--color-yellow-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-yellow-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-yellow-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-yellow-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-yellow-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-yellow-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-yellow-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-yellow-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-yellow-900",
+     "type": "color"
+    },
+    "950": {
+     "var": "--color-yellow-950",
+     "type": "color"
+    }
+   },
+   "green": {
+    "50": {
+     "var": "--color-green-50",
+     "type": "color"
+    },
+    "100": {
+     "var": "--color-green-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-green-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-green-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-green-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-green-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-green-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-green-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-green-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-green-900",
+     "type": "color"
+    },
+    "950": {
+     "var": "--color-green-950",
+     "type": "color"
+    }
+   },
+   "blue": {
+    "50": {
+     "var": "--color-blue-50",
+     "type": "color"
+    },
+    "100": {
+     "var": "--color-blue-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-blue-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-blue-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-blue-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-blue-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-blue-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-blue-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-blue-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-blue-900",
+     "type": "color"
+    },
+    "950": {
+     "var": "--color-blue-950",
+     "type": "color"
+    }
+   },
+   "zinc": {
+    "50": {
+     "var": "--color-zinc-50",
+     "type": "color"
+    },
+    "100": {
+     "var": "--color-zinc-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-zinc-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-zinc-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-zinc-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-zinc-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-zinc-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-zinc-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-zinc-800",
+     "type": "color"
+    }
+   },
+   "neutral": {
+    "50": {
+     "var": "--color-neutral-50",
+     "type": "color"
+    },
+    "100": {
+     "var": "--color-neutral-100",
+     "type": "color"
+    },
+    "200": {
+     "var": "--color-neutral-200",
+     "type": "color"
+    },
+    "300": {
+     "var": "--color-neutral-300",
+     "type": "color"
+    },
+    "400": {
+     "var": "--color-neutral-400",
+     "type": "color"
+    },
+    "500": {
+     "var": "--color-neutral-500",
+     "type": "color"
+    },
+    "600": {
+     "var": "--color-neutral-600",
+     "type": "color"
+    },
+    "700": {
+     "var": "--color-neutral-700",
+     "type": "color"
+    },
+    "800": {
+     "var": "--color-neutral-800",
+     "type": "color"
+    },
+    "900": {
+     "var": "--color-neutral-900",
+     "type": "color"
+    },
+    "950": {
+     "var": "--color-neutral-950",
+     "type": "color"
+    }
+   }
+  },
+  "font": {
+   "family": {
+    "sans": {
+     "var": "--font-sans",
+     "type": "fontFamily",
+     "description": "Suisse Intl, the UI face, with the system fallback stack."
+    },
+    "mono": {
+     "var": "--font-mono",
+     "type": "fontFamily",
+     "description": "Suisse Intl Mono."
+    }
+   },
+   "weight": {
+    "light": {
+     "var": "--font-weight-light",
+     "type": "fontWeight"
+    },
+    "normal": {
+     "var": "--font-weight-normal",
+     "type": "fontWeight"
+    },
+    "book": {
+     "var": "--font-weight-book",
+     "type": "fontWeight"
+    },
+    "medium": {
+     "var": "--font-weight-medium",
+     "type": "fontWeight"
+    },
+    "semibold": {
+     "var": "--font-weight-semibold",
+     "type": "fontWeight"
+    },
+    "bold": {
+     "var": "--font-weight-bold",
+     "type": "fontWeight"
+    }
+   },
+   "size": {
+    "xs": {
+     "var": "--text-xs",
+     "type": "dimension",
+     "description": "Tailwind text-xs size."
+    },
+    "sm": {
+     "var": "--text-sm",
+     "type": "dimension",
+     "description": "Tailwind text-sm size."
+    },
+    "base": {
+     "var": "--text-base",
+     "type": "dimension",
+     "description": "Tailwind text-base size."
+    },
+    "lg": {
+     "var": "--text-lg",
+     "type": "dimension",
+     "description": "Tailwind text-lg size."
+    },
+    "xl": {
+     "var": "--text-xl",
+     "type": "dimension",
+     "description": "Tailwind text-xl size."
+    },
+    "2xl": {
+     "var": "--text-2xl",
+     "type": "dimension",
+     "description": "Tailwind text-2xl size."
+    },
+    "3xl": {
+     "var": "--text-3xl",
+     "type": "dimension",
+     "description": "Tailwind text-3xl size."
+    },
+    "4xl": {
+     "var": "--text-4xl",
+     "type": "dimension",
+     "description": "Tailwind text-4xl size."
+    },
+    "5xl": {
+     "var": "--text-5xl",
+     "type": "dimension",
+     "description": "Tailwind text-5xl size."
+    },
+    "6xl": {
+     "var": "--text-6xl",
+     "type": "dimension",
+     "description": "Tailwind text-6xl size."
+    }
+   }
+  },
+  "radius": {
+   "xs": {
+    "var": "--radius-xs",
+    "type": "dimension"
+   },
+   "sm": {
+    "var": "--radius-sm",
+    "type": "dimension"
+   },
+   "md": {
+    "var": "--radius-md",
+    "type": "dimension"
+   },
+   "lg": {
+    "var": "--radius-lg",
+    "type": "dimension"
+   },
+   "xl": {
+    "var": "--radius-xl",
+    "type": "dimension"
+   },
+   "2xl": {
+    "var": "--radius-2xl",
+    "type": "dimension"
+   },
+   "3xl": {
+    "var": "--radius-3xl",
+    "type": "dimension"
+   },
+   "4xl": {
+    "var": "--radius-4xl",
+    "type": "dimension"
+   }
+  },
+  "spacing": {
+   "unit": {
+    "var": "--spacing",
+    "type": "dimension",
+    "description": "The 4px spacing base."
+   }
+  },
+  "motion": {
+   "easing": {
+    "in": {
+     "var": "--ease-in",
+     "type": "cubicBezier"
+    },
+    "out": {
+     "var": "--ease-out",
+     "type": "cubicBezier"
+    },
+    "in-out": {
+     "var": "--ease-in-out",
+     "type": "cubicBezier"
+    }
+   }
+  }
+ },
+ "dark": {
+  "color": {
+   "page": {
+    "var": "--background",
+    "type": "color",
+    "description": "Painted on html.dark (--background)."
+   },
+   "surface": {
+    "var": "--card",
+    "type": "color",
+    "description": "Painted on html.dark (--card)."
+   },
+   "popover": {
+    "var": "--popover",
+    "type": "color",
+    "description": "Painted on html.dark (--popover)."
+   },
+   "text": {
+    "var": "--foreground",
+    "type": "color",
+    "description": "Painted on html.dark (--foreground)."
+   },
+   "text-muted": {
+    "var": "--muted-foreground",
+    "type": "color",
+    "description": "Painted on html.dark (--muted-foreground)."
+   },
+   "text-on-accent": {
+    "var": "--primary-foreground",
+    "type": "color",
+    "description": "Painted on html.dark (--primary-foreground)."
+   },
+   "muted": {
+    "var": "--muted",
+    "type": "color",
+    "description": "Painted on html.dark (--muted)."
+   },
+   "accent": {
+    "var": "--color-action",
+    "type": "color",
+    "description": "Painted on html.dark (--color-action)."
+   },
+   "accent-hover": {
+    "var": "--color-action-hover",
+    "type": "color",
+    "description": "Painted on html.dark (--color-action-hover)."
+   },
+   "border": {
+    "var": "--border",
+    "type": "color",
+    "description": "Painted on html.dark (--border)."
+   },
+   "input": {
+    "var": "--input",
+    "type": "color",
+    "description": "Painted on html.dark (--input)."
+   },
+   "ring": {
+    "var": "--ring",
+    "type": "color",
+    "description": "Painted on html.dark (--ring)."
+   },
+   "destructive": {
+    "var": "--destructive",
+    "type": "color",
+    "description": "Painted on html.dark (--destructive)."
+   },
+   "warning": {
+    "var": "--warning",
+    "type": "color",
+    "description": "Painted on html.dark (--warning)."
+   },
+   "success": {
+    "var": "--success",
+    "type": "color",
+    "description": "Painted on html.dark (--success)."
+   },
+   "sidebar": {
+    "var": "--sidebar",
+    "type": "color",
+    "description": "Painted on html.dark (--sidebar)."
+   },
+   "sidebar-foreground": {
+    "var": "--sidebar-foreground",
+    "type": "color",
+    "description": "Painted on html.dark (--sidebar-foreground)."
+   },
+   "sidebar-accent": {
+    "var": "--sidebar-accent",
+    "type": "color",
+    "description": "Painted on html.dark (--sidebar-accent)."
+   },
+   "sidebar-border": {
+    "var": "--sidebar-border",
+    "type": "color",
+    "description": "Painted on html.dark (--sidebar-border)."
+   },
+   "sidebar-primary": {
+    "var": "--sidebar-primary",
+    "type": "color",
+    "description": "Painted on html.dark (--sidebar-primary)."
+   },
+   "page-950": {
+    "var": "--color-primary-950",
+    "type": "color",
+    "description": "body dark:bg-primary-950, the app field."
+   },
+   "on-dark": {
+    "var": "--color-primary-0",
+    "type": "color",
+    "description": "White text and the Sign in fill."
+   }
+  }
+ },
+ "component": {
+  "sign-in": {
+   "backgroundColor": {
+    "var": "--accent-foreground",
+    "type": "color",
+    "source": "computed backgroundColor of nav-signin/default (raw/components-computed.json)",
+    "description": "The white Sign in button fill.",
+    "computed": "oklch(0.985 0 0)"
+   },
+   "color": {
+    "var": "--background",
+    "type": "color",
+    "source": "computed color of nav-signin/default (raw/components-computed.json)",
+    "description": "Sign in label, black on white.",
+    "computed": "oklch(0.145 0 0)"
+   },
+   "height": {
+    "value": "48px",
+    "type": "dimension",
+    "source": "computed height of nav-signin/default",
+    "description": "Sign in control height."
+   },
+   "borderTopLeftRadius": {
+    "value": "10px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of nav-signin/default",
+    "description": "Sign in corner radius."
+   }
+  },
+  "sign-in-hover": {
+   "backgroundColor": {
+    "var": "--color-neutral-200",
+    "type": "color",
+    "source": "computed backgroundColor of nav-signin/hover (raw/components-computed.json)",
+    "description": "Sign in hover fill."
+   }
+  },
+  "plan-cta": {
+   "backgroundColor": {
+    "var": "--color-primary",
+    "type": "color",
+    "source": "computed backgroundColor of price-cta/default (raw/components-computed.json)",
+    "description": "Get Pro fill, white pill."
+   },
+   "color": {
+    "var": "--color-black",
+    "type": "color",
+    "source": "computed color of price-cta/default (raw/components-computed.json)",
+    "description": "Get Pro label."
+   },
+   "height": {
+    "value": "40px",
+    "type": "dimension",
+    "source": "computed height of price-cta/default",
+    "description": "Plan button height."
+   }
+  },
+  "email-cta": {
+   "backgroundColor": {
+    "value": "rgba(0, 110, 255, 0.15)",
+    "type": "color",
+    "source": "computed backgroundColor of login-email-btn/default (raw/components-computed.json)",
+    "description": "Continue with Email fill, the action blue.",
+    "computed": "oklab(0.579 -0.0558729 -0.243369 / 0.15)"
+   }
+  },
+  "oauth": {
+   "backgroundColor": {
+    "var": "--color-primary",
+    "type": "color",
+    "source": "computed backgroundColor of login-google/default (raw/components-computed.json)",
+    "description": "Continue with Google fill."
+   },
+   "color": {
+    "var": "--color-black",
+    "type": "color",
+    "source": "computed color of login-google/default (raw/components-computed.json)",
+    "description": "OAuth label."
+   }
+  },
+  "nav-active": {
+   "backgroundColor": {
+    "var": "--accent",
+    "type": "color",
+    "source": "computed backgroundColor of nav-home/default (raw/components-computed.json)",
+    "description": "Selected sidebar item fill.",
+    "computed": "oklch(0.269 0 0)"
+   }
+  },
+  "heading": {
+   "color": {
+    "var": "--accent-foreground",
+    "type": "color",
+    "source": "computed color of price-h1/default (raw/components-computed.json)",
+    "description": "Pricing heading colour.",
+    "computed": "oklch(0.985 0 0)"
+   }
+  },
+  "sidebar": {
+   "width": {
+    "value": "255px",
+    "type": "dimension",
+    "source": "computed width of sidebar/default",
+    "description": "Sidebar width at 1440."
+   }
+  },
+  "focus": {
+   "ring-width": {
+    "value": "2px",
+    "type": "dimension",
+    "source": "computed focus-visible ring of nav-signin (box-shadow 2px spread; outline none)",
+    "description": "Keyboard focus ring width."
+   },
+   "ring": {
+    "value": "rgba(0, 0, 0, 0.1)",
+    "type": "color",
+    "source": "computed focus-visible ring of nav-signin (box-shadow 2px spread; outline none)",
+    "description": "Keyboard focus ring.",
+    "computed": "oklab(0 0 0 / 0.1)"
+   }
+  }
+ }
+}

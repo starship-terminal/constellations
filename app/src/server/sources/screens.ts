@@ -4,8 +4,7 @@ import type {
   ScreenQuery,
   ScreenResponse,
 } from "@/contracts/screens";
-import { listCapturedMedia } from "./index";
-import { repoRoot } from "./files";
+import { listCapturedMedia, MAX_CACHE_AGE, sourceStamp } from "./index";
 import { categoryGroup, matchesCategory } from "@/contracts/categories";
 import { withReferenceCategories } from "@/server/taxonomy/library";
 import { getStore } from "@/server/db";
@@ -20,7 +19,7 @@ export function validScreenTermId(value: string): boolean {
 }
 
 const pending = new Map<string, Promise<ScreenItem[]>>();
-let cache: { key: string; until: number; items: ScreenItem[] } | undefined;
+let cache: { key: string; loadedAt: number; items: ScreenItem[] } | undefined;
 export function validScreenId(value: string): boolean {
   if (value.length > 2400) return false;
   const match = /^systems:([a-z0-9][a-z0-9-]*):(.+)$/.exec(value);
@@ -33,12 +32,12 @@ export function validScreenId(value: string): boolean {
   );
 }
 async function capturedScreens(): Promise<ScreenItem[]> {
-  const key = [
-    repoRoot(),
-    process.env.DESIGN_SYSTEMS_MEDIA,
-    process.env.DESIGN_SYSTEMS_MEDIA_BASE,
-  ].join("|");
-  if (cache?.key === key && cache.until > Date.now()) return cache.items;
+  // Listing every capture resolves each screenshot and crop on disk, so the
+  // list lives as long as the library sources do: until a catalog, generated
+  // data or the media mirror changes, and at most MAX_CACHE_AGE.
+  const key = await sourceStamp();
+  if (cache?.key === key && Date.now() - cache.loadedAt < MAX_CACHE_AGE)
+    return cache.items;
   const current = pending.get(key);
   if (current) return current;
   const load = (async () => {
@@ -57,7 +56,7 @@ async function capturedScreens(): Promise<ScreenItem[]> {
         return [{ id, reference, media: asset }];
       }),
     );
-    cache = { key, until: Date.now() + 30_000, items };
+    cache = { key, loadedAt: Date.now(), items };
     return items;
   })();
   pending.set(key, load);
@@ -90,6 +89,25 @@ function captureTermIds(item: ScreenItem): string[] {
   ];
 }
 
+/** At most `perProduct` captures per product, interleaved across products in first-seen order. */
+export function samplePerProduct(
+  items: ScreenItem[],
+  perProduct: number,
+): ScreenItem[] {
+  const cap = Math.max(0, Math.floor(perProduct));
+  const groups = new Map<string, ScreenItem[]>();
+  for (const item of items) {
+    const group = groups.get(item.reference.id) || [];
+    if (group.length < cap) group.push(item);
+    groups.set(item.reference.id, group);
+  }
+  const sampled: ScreenItem[] = [];
+  for (let round = 0; round < cap; round++)
+    for (const group of groups.values())
+      if (group[round]) sampled.push(group[round]);
+  return sampled;
+}
+
 /** Search genuine capture names/groups and recorded package metadata. No inferred taxonomy. */
 export function queryScreens(
   items: ScreenItem[],
@@ -100,10 +118,7 @@ export function queryScreens(
     .toLowerCase()
     .split(/[\s_-]+/)
     .filter(Boolean);
-  const referenceIds = new Set([
-    ...(query.referenceIds || []),
-    ...(query.referenceId ? [query.referenceId] : []),
-  ]);
+  const referenceIds = new Set(query.referenceIds || []);
   const selectedTerms = [...new Set(query.termIds || [])];
   const available = query.mode === "flows" ? [] : items;
   const corpus = available.filter(
@@ -168,11 +183,16 @@ export function queryScreens(
   const limit = Number.isFinite(query.limit)
     ? Math.min(200, Math.max(0, Math.floor(query.limit!)))
     : 60;
+  const page =
+    !query.screenId && query.perProduct !== undefined
+      ? samplePerProduct(filtered, query.perProduct)
+      : filtered;
   return {
     items: query.screenId
       ? filtered.slice(0, 1)
-      : filtered.slice(offset, offset + limit),
+      : page.slice(offset, offset + limit),
     total: filtered.length,
+    pageable: page.length,
     termCounts,
     facets: {
       platforms: counts(available, ({ reference }) => [reference.platform]),
@@ -188,7 +208,6 @@ export function queryScreens(
       groups: counts(scoped, ({ media }) => [media.group || ""]),
       kinds: counts(available, ({ media }) => [media.kind || ""]),
     },
-    taxonomy: { pageTypes: [], uiElements: [], uxPatterns: [] },
   };
 }
 
@@ -210,7 +229,7 @@ export async function listScreens(
   }
   if (query.mode === "flows") return queryScreens([], query);
   const captures = await capturedScreens();
-  const [references, assignments] = await Promise.all([
+  const [references, byMedia] = await Promise.all([
     withReferenceCategories(
       [
         ...new Map(
@@ -219,15 +238,8 @@ export async function listScreens(
       ],
       store,
     ),
-    store.listMediaTermAssignments(),
+    store.mediaTermsByMedia(),
   ]);
-  const byMedia = new Map<string, string[]>();
-  for (const assignment of assignments) {
-    const id = `${assignment.referenceId}:${assignment.mediaId}`;
-    const terms = byMedia.get(id) || [];
-    terms.push(assignment.termId);
-    byMedia.set(id, terms);
-  }
   const byId = new Map(
     references.map((reference) => [reference.id, reference]),
   );

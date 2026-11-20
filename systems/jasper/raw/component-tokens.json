@@ -1,0 +1,1140 @@
+{
+  "core": {
+    "color": {
+      "swatch": {
+        "blue-200": {
+          "type": "color",
+          "var": "--swatch--blue-200",
+          "source": "declared --swatch--blue-200",
+          "description": ""
+        },
+        "blue-300": {
+          "type": "color",
+          "var": "--swatch--blue-300",
+          "source": "declared --swatch--blue-300",
+          "description": ""
+        },
+        "blue-400": {
+          "type": "color",
+          "var": "--swatch--blue-400",
+          "source": "declared --swatch--blue-400",
+          "description": ""
+        },
+        "blue-500": {
+          "type": "color",
+          "var": "--swatch--blue-500",
+          "source": "declared --swatch--blue-500",
+          "description": ""
+        },
+        "blue-600": {
+          "type": "color",
+          "var": "--swatch--blue-600",
+          "source": "declared --swatch--blue-600",
+          "description": ""
+        },
+        "blue-700": {
+          "type": "color",
+          "var": "--swatch--blue-700",
+          "source": "declared --swatch--blue-700",
+          "description": ""
+        },
+        "blue-800": {
+          "type": "color",
+          "var": "--swatch--blue-800",
+          "source": "declared --swatch--blue-800",
+          "description": ""
+        },
+        "brand-text": {
+          "type": "color",
+          "var": "--swatch--brand-text",
+          "source": "declared --swatch--brand-text",
+          "description": ""
+        },
+        "dark-100": {
+          "type": "color",
+          "var": "--swatch--dark-100",
+          "source": "declared --swatch--dark-100",
+          "description": ""
+        },
+        "dark-150": {
+          "type": "color",
+          "var": "--swatch--dark-150",
+          "source": "declared --swatch--dark-150",
+          "description": ""
+        },
+        "dark-200": {
+          "type": "color",
+          "var": "--swatch--dark-200",
+          "source": "declared --swatch--dark-200",
+          "description": ""
+        },
+        "dark-300": {
+          "type": "color",
+          "var": "--swatch--dark-300",
+          "source": "declared --swatch--dark-300",
+          "description": ""
+        },
+        "dark-400": {
+          "type": "color",
+          "var": "--swatch--dark-400",
+          "source": "declared --swatch--dark-400",
+          "description": ""
+        },
+        "dark-50": {
+          "type": "color",
+          "var": "--swatch--dark-50",
+          "source": "declared --swatch--dark-50",
+          "description": ""
+        },
+        "dark-500": {
+          "type": "color",
+          "var": "--swatch--dark-500",
+          "source": "declared --swatch--dark-500",
+          "description": ""
+        },
+        "dark-600": {
+          "type": "color",
+          "var": "--swatch--dark-600",
+          "source": "declared --swatch--dark-600",
+          "description": ""
+        },
+        "dark-700": {
+          "type": "color",
+          "var": "--swatch--dark-700",
+          "source": "declared --swatch--dark-700",
+          "description": ""
+        },
+        "dark-800": {
+          "type": "color",
+          "var": "--swatch--dark-800",
+          "source": "declared --swatch--dark-800",
+          "description": ""
+        },
+        "dark-900": {
+          "type": "color",
+          "var": "--swatch--dark-900",
+          "source": "declared --swatch--dark-900",
+          "description": ""
+        },
+        "dark-900-faded": {
+          "type": "color",
+          "var": "--swatch--dark-900-faded",
+          "source": "declared --swatch--dark-900-faded",
+          "description": ""
+        },
+        "flame-100": {
+          "type": "color",
+          "var": "--swatch--flame-100",
+          "source": "declared --swatch--flame-100",
+          "description": ""
+        },
+        "flame-200": {
+          "type": "color",
+          "var": "--swatch--flame-200",
+          "source": "declared --swatch--flame-200",
+          "description": ""
+        },
+        "flame-300": {
+          "type": "color",
+          "var": "--swatch--flame-300",
+          "source": "declared --swatch--flame-300",
+          "description": ""
+        },
+        "flame-400": {
+          "type": "color",
+          "var": "--swatch--flame-400",
+          "source": "declared --swatch--flame-400",
+          "description": ""
+        },
+        "flame-500": {
+          "type": "color",
+          "var": "--swatch--flame-500",
+          "source": "declared --swatch--flame-500",
+          "description": ""
+        },
+        "flame-600": {
+          "type": "color",
+          "var": "--swatch--flame-600",
+          "source": "declared --swatch--flame-600",
+          "description": ""
+        },
+        "flame-700": {
+          "type": "color",
+          "var": "--swatch--flame-700",
+          "source": "declared --swatch--flame-700",
+          "description": ""
+        },
+        "flame-800": {
+          "type": "color",
+          "var": "--swatch--flame-800",
+          "source": "declared --swatch--flame-800",
+          "description": ""
+        },
+        "green-300": {
+          "type": "color",
+          "var": "--swatch--green-300",
+          "source": "declared --swatch--green-300",
+          "description": ""
+        },
+        "green-400": {
+          "type": "color",
+          "var": "--swatch--green-400",
+          "source": "declared --swatch--green-400",
+          "description": ""
+        },
+        "green-500": {
+          "type": "color",
+          "var": "--swatch--green-500",
+          "source": "declared --swatch--green-500",
+          "description": ""
+        },
+        "green-600": {
+          "type": "color",
+          "var": "--swatch--green-600",
+          "source": "declared --swatch--green-600",
+          "description": ""
+        },
+        "green-700": {
+          "type": "color",
+          "var": "--swatch--green-700",
+          "source": "declared --swatch--green-700",
+          "description": ""
+        },
+        "green-800": {
+          "type": "color",
+          "var": "--swatch--green-800",
+          "source": "declared --swatch--green-800",
+          "description": ""
+        },
+        "light-100": {
+          "type": "color",
+          "var": "--swatch--light-100",
+          "source": "declared --swatch--light-100",
+          "description": ""
+        },
+        "light-200": {
+          "type": "color",
+          "var": "--swatch--light-200",
+          "source": "declared --swatch--light-200",
+          "description": ""
+        },
+        "pink-300": {
+          "type": "color",
+          "var": "--swatch--pink-300",
+          "source": "declared --swatch--pink-300",
+          "description": ""
+        },
+        "pink-400": {
+          "type": "color",
+          "var": "--swatch--pink-400",
+          "source": "declared --swatch--pink-400",
+          "description": ""
+        },
+        "pink-500": {
+          "type": "color",
+          "var": "--swatch--pink-500",
+          "source": "declared --swatch--pink-500",
+          "description": ""
+        },
+        "pink-600": {
+          "type": "color",
+          "var": "--swatch--pink-600",
+          "source": "declared --swatch--pink-600",
+          "description": ""
+        },
+        "pink-700": {
+          "type": "color",
+          "var": "--swatch--pink-700",
+          "source": "declared --swatch--pink-700",
+          "description": ""
+        },
+        "pink-800": {
+          "type": "color",
+          "var": "--swatch--pink-800",
+          "source": "declared --swatch--pink-800",
+          "description": ""
+        },
+        "transparent": {
+          "type": "color",
+          "var": "--swatch--transparent",
+          "source": "declared --swatch--transparent",
+          "description": ""
+        },
+        "violet-300": {
+          "type": "color",
+          "var": "--swatch--violet-300",
+          "source": "declared --swatch--violet-300",
+          "description": ""
+        },
+        "violet-400": {
+          "type": "color",
+          "var": "--swatch--violet-400",
+          "source": "declared --swatch--violet-400",
+          "description": ""
+        },
+        "violet-500": {
+          "type": "color",
+          "var": "--swatch--violet-500",
+          "source": "declared --swatch--violet-500",
+          "description": ""
+        },
+        "violet-600": {
+          "type": "color",
+          "var": "--swatch--violet-600",
+          "source": "declared --swatch--violet-600",
+          "description": ""
+        },
+        "violet-700": {
+          "type": "color",
+          "var": "--swatch--violet-700",
+          "source": "declared --swatch--violet-700",
+          "description": ""
+        },
+        "violet-800": {
+          "type": "color",
+          "var": "--swatch--violet-800",
+          "source": "declared --swatch--violet-800",
+          "description": ""
+        },
+        "yellow-200": {
+          "type": "color",
+          "var": "--swatch--yellow-200",
+          "source": "declared --swatch--yellow-200",
+          "description": ""
+        },
+        "yellow-300": {
+          "type": "color",
+          "var": "--swatch--yellow-300",
+          "source": "declared --swatch--yellow-300",
+          "description": ""
+        },
+        "yellow-400": {
+          "type": "color",
+          "var": "--swatch--yellow-400",
+          "source": "declared --swatch--yellow-400",
+          "description": ""
+        },
+        "yellow-500": {
+          "type": "color",
+          "var": "--swatch--yellow-500",
+          "source": "declared --swatch--yellow-500",
+          "description": ""
+        },
+        "yellow-600": {
+          "type": "color",
+          "var": "--swatch--yellow-600",
+          "source": "declared --swatch--yellow-600",
+          "description": ""
+        },
+        "yellow-700": {
+          "type": "color",
+          "var": "--swatch--yellow-700",
+          "source": "declared --swatch--yellow-700",
+          "description": ""
+        },
+        "yellow-800": {
+          "type": "color",
+          "var": "--swatch--yellow-800",
+          "source": "declared --swatch--yellow-800",
+          "description": ""
+        }
+      },
+      "legacy": {
+        "blue-100": {
+          "type": "color",
+          "var": "--_ns-2-0---color--blue-100",
+          "source": "declared --_ns-2-0---color--blue-100",
+          "description": ""
+        },
+        "blue-200": {
+          "type": "color",
+          "var": "--_ns-2-0---color--blue-200",
+          "source": "declared --_ns-2-0---color--blue-200",
+          "description": ""
+        },
+        "blue-400": {
+          "type": "color",
+          "var": "--_ns-2-0---color--blue-400",
+          "source": "declared --_ns-2-0---color--blue-400",
+          "description": ""
+        },
+        "blue-500": {
+          "type": "color",
+          "var": "--_ns-2-0---color--blue-500",
+          "source": "declared --_ns-2-0---color--blue-500",
+          "description": ""
+        },
+        "blue-700": {
+          "type": "color",
+          "var": "--_ns-2-0---color--blue-700",
+          "source": "declared --_ns-2-0---color--blue-700",
+          "description": ""
+        },
+        "gray-100": {
+          "type": "color",
+          "var": "--_ns-2-0---color--gray-100",
+          "source": "declared --_ns-2-0---color--gray-100",
+          "description": ""
+        },
+        "gray-400": {
+          "type": "color",
+          "var": "--_ns-2-0---color--gray-400",
+          "source": "declared --_ns-2-0---color--gray-400",
+          "description": ""
+        },
+        "gray-600": {
+          "type": "color",
+          "var": "--_ns-2-0---color--gray-600",
+          "source": "declared --_ns-2-0---color--gray-600",
+          "description": ""
+        },
+        "green-100": {
+          "type": "color",
+          "var": "--_ns-2-0---color--green-100",
+          "source": "declared --_ns-2-0---color--green-100",
+          "description": ""
+        },
+        "green-200": {
+          "type": "color",
+          "var": "--_ns-2-0---color--green-200",
+          "source": "declared --_ns-2-0---color--green-200",
+          "description": ""
+        },
+        "green-500": {
+          "type": "color",
+          "var": "--_ns-2-0---color--green-500",
+          "source": "declared --_ns-2-0---color--green-500",
+          "description": ""
+        },
+        "pink-300": {
+          "type": "color",
+          "var": "--_ns-2-0---color--pink-300",
+          "source": "declared --_ns-2-0---color--pink-300",
+          "description": ""
+        },
+        "red-100": {
+          "type": "color",
+          "var": "--_ns-2-0---color--red-100",
+          "source": "declared --_ns-2-0---color--red-100",
+          "description": ""
+        },
+        "red-200": {
+          "type": "color",
+          "var": "--_ns-2-0---color--red-200",
+          "source": "declared --_ns-2-0---color--red-200",
+          "description": ""
+        },
+        "red-500": {
+          "type": "color",
+          "var": "--_ns-2-0---color--red-500",
+          "source": "declared --_ns-2-0---color--red-500",
+          "description": ""
+        },
+        "red-600": {
+          "type": "color",
+          "var": "--_ns-2-0---color--red-600",
+          "source": "declared --_ns-2-0---color--red-600",
+          "description": ""
+        },
+        "white": {
+          "type": "color",
+          "var": "--_ns-2-0---color--white",
+          "source": "declared --_ns-2-0---color--white",
+          "description": ""
+        },
+        "yellow-400": {
+          "type": "color",
+          "var": "--_ns-2-0---color--yellow-400",
+          "source": "declared --_ns-2-0---color--yellow-400",
+          "description": ""
+        }
+      }
+    },
+    "font": {
+      "family": {
+        "primary": {
+          "type": "fontFamily",
+          "var": "--_typography---font--primary-family",
+          "source": "declared --_typography---font--primary-family",
+          "description": "ABC ROM, the UI face"
+        },
+        "display": {
+          "type": "fontFamily",
+          "var": "--_typography---font--secondary-family",
+          "source": "declared --_typography---font--secondary-family",
+          "description": "Feature, the display face"
+        },
+        "mono": {
+          "type": "fontFamily",
+          "var": "--_typography---font--mono-family",
+          "source": "declared --_typography---font--mono-family",
+          "description": "ABC ROM Mono"
+        }
+      },
+      "weight": {
+        "regular": {
+          "type": "fontWeight",
+          "var": "--_typography---font--primary-regular",
+          "source": "declared --_typography---font--primary-regular",
+          "description": ""
+        },
+        "medium": {
+          "type": "fontWeight",
+          "var": "--_typography---font--primary-medium",
+          "source": "declared --_typography---font--primary-medium",
+          "description": ""
+        },
+        "displayRegular": {
+          "type": "fontWeight",
+          "var": "--_typography---font--secondary-regular",
+          "source": "declared --_typography---font--secondary-regular",
+          "description": ""
+        },
+        "displayThin": {
+          "type": "fontWeight",
+          "var": "--_typography---font--secondary-thin",
+          "source": "declared --_typography---font--secondary-thin",
+          "description": ""
+        }
+      }
+    },
+    "fontSize": {
+      "display": {
+        "type": "dimension",
+        "var": "--_typography---font-size--display",
+        "source": "declared --_typography---font-size--display",
+        "description": ""
+      },
+      "h1": {
+        "type": "dimension",
+        "var": "--_typography---font-size--h1",
+        "source": "declared --_typography---font-size--h1",
+        "description": ""
+      },
+      "h2": {
+        "type": "dimension",
+        "var": "--_typography---font-size--h2",
+        "source": "declared --_typography---font-size--h2",
+        "description": ""
+      },
+      "h3": {
+        "type": "dimension",
+        "var": "--_typography---font-size--h3",
+        "source": "declared --_typography---font-size--h3",
+        "description": ""
+      },
+      "h4": {
+        "type": "dimension",
+        "var": "--_typography---font-size--h4",
+        "source": "declared --_typography---font-size--h4",
+        "description": ""
+      },
+      "h5": {
+        "type": "dimension",
+        "var": "--_typography---font-size--h5",
+        "source": "declared --_typography---font-size--h5",
+        "description": ""
+      },
+      "h6": {
+        "type": "dimension",
+        "var": "--_typography---font-size--h6",
+        "source": "declared --_typography---font-size--h6",
+        "description": ""
+      },
+      "textLarge": {
+        "type": "dimension",
+        "var": "--_typography---font-size--text-large",
+        "source": "declared --_typography---font-size--text-large",
+        "description": ""
+      },
+      "textMain": {
+        "type": "dimension",
+        "var": "--_typography---font-size--text-main",
+        "source": "declared --_typography---font-size--text-main",
+        "description": ""
+      },
+      "textSmall": {
+        "type": "dimension",
+        "var": "--_typography---font-size--text-small",
+        "source": "declared --_typography---font-size--text-small",
+        "description": ""
+      },
+      "textTiny": {
+        "type": "dimension",
+        "var": "--_typography---font-size--text-tiny",
+        "source": "declared --_typography---font-size--text-tiny",
+        "description": ""
+      }
+    },
+    "lineHeight": {
+      "tight": {
+        "type": "number",
+        "var": "--_typography---line-height--1",
+        "source": "declared --_typography---line-height--1",
+        "description": ""
+      },
+      "display": {
+        "type": "number",
+        "var": "--_typography---line-height--1-1",
+        "source": "declared --_typography---line-height--1-1",
+        "description": ""
+      },
+      "heading": {
+        "type": "number",
+        "var": "--_typography---line-height--1-2",
+        "source": "declared --_typography---line-height--1-2",
+        "description": ""
+      },
+      "body": {
+        "type": "number",
+        "var": "--_typography---line-height--1-4",
+        "source": "declared --_typography---line-height--1-4",
+        "description": ""
+      }
+    },
+    "spacing": {
+      "1": {
+        "type": "dimension",
+        "var": "--_spacing---space--1",
+        "source": "declared --_spacing---space--1",
+        "description": ""
+      },
+      "2": {
+        "type": "dimension",
+        "var": "--_spacing---space--2",
+        "source": "declared --_spacing---space--2",
+        "description": ""
+      },
+      "3": {
+        "type": "dimension",
+        "var": "--_spacing---space--3",
+        "source": "declared --_spacing---space--3",
+        "description": ""
+      },
+      "4": {
+        "type": "dimension",
+        "var": "--_spacing---space--4",
+        "source": "declared --_spacing---space--4",
+        "description": ""
+      },
+      "5": {
+        "type": "dimension",
+        "var": "--_spacing---space--5",
+        "source": "declared --_spacing---space--5",
+        "description": ""
+      },
+      "6": {
+        "type": "dimension",
+        "var": "--_spacing---space--6",
+        "source": "declared --_spacing---space--6",
+        "description": ""
+      },
+      "7": {
+        "type": "dimension",
+        "var": "--_spacing---space--7",
+        "source": "declared --_spacing---space--7",
+        "description": ""
+      },
+      "8": {
+        "type": "dimension",
+        "var": "--_spacing---space--8",
+        "source": "declared --_spacing---space--8",
+        "description": ""
+      },
+      "9": {
+        "type": "dimension",
+        "var": "--_spacing---space--9",
+        "source": "declared --_spacing---space--9",
+        "description": ""
+      },
+      "sectionSmall": {
+        "type": "dimension",
+        "var": "--_spacing---section-space--small",
+        "source": "declared --_spacing---section-space--small",
+        "description": ""
+      },
+      "sectionMain": {
+        "type": "dimension",
+        "var": "--_spacing---section-space--main",
+        "source": "declared --_spacing---section-space--main",
+        "description": ""
+      },
+      "sectionLarge": {
+        "type": "dimension",
+        "var": "--_spacing---section-space--large",
+        "source": "declared --_spacing---section-space--large",
+        "description": ""
+      }
+    },
+    "radius": {
+      "small": {
+        "type": "dimension",
+        "var": "--radius--small",
+        "source": "declared --radius--small",
+        "description": ""
+      },
+      "main": {
+        "type": "dimension",
+        "var": "--radius--main",
+        "source": "declared --radius--main",
+        "description": ""
+      },
+      "round": {
+        "type": "dimension",
+        "var": "--radius--round",
+        "source": "declared --radius--round",
+        "description": ""
+      }
+    },
+    "borderWidth": {
+      "main": {
+        "type": "dimension",
+        "var": "--border-width--main",
+        "source": "declared --border-width--main",
+        "description": ""
+      }
+    }
+  },
+  "light": {
+    "background": {
+      "type": "color",
+      "var": "--_theme---background",
+      "source": "declared --_theme---background",
+      "description": "",
+      "resolve": "light"
+    },
+    "background-secondary": {
+      "type": "color",
+      "var": "--_theme---background-secondary",
+      "source": "declared --_theme---background-secondary",
+      "description": "",
+      "resolve": "light"
+    },
+    "border": {
+      "type": "color",
+      "var": "--_theme---border",
+      "source": "declared --_theme---border",
+      "description": "",
+      "resolve": "light"
+    },
+    "button-primary-background": {
+      "type": "color",
+      "var": "--_theme---button-primary--background",
+      "source": "declared --_theme---button-primary--background",
+      "description": "",
+      "resolve": "light"
+    },
+    "button-primary-background-hover": {
+      "type": "color",
+      "var": "--_theme---button-primary--background-hover",
+      "source": "declared --_theme---button-primary--background-hover",
+      "description": "",
+      "resolve": "light"
+    },
+    "button-primary-border": {
+      "type": "color",
+      "var": "--_theme---button-primary--border",
+      "source": "declared --_theme---button-primary--border",
+      "description": "",
+      "resolve": "light"
+    },
+    "button-primary-border-hover": {
+      "type": "color",
+      "var": "--_theme---button-primary--border-hover",
+      "source": "declared --_theme---button-primary--border-hover",
+      "description": "",
+      "resolve": "light"
+    },
+    "button-primary-text": {
+      "type": "color",
+      "var": "--_theme---button-primary--text",
+      "source": "declared --_theme---button-primary--text",
+      "description": "",
+      "resolve": "light"
+    },
+    "button-primary-text-hover": {
+      "type": "color",
+      "var": "--_theme---button-primary--text-hover",
+      "source": "declared --_theme---button-primary--text-hover",
+      "description": "",
+      "resolve": "light"
+    },
+    "button-secondary-background": {
+      "type": "color",
+      "var": "--_theme---button-secondary--background",
+      "source": "declared --_theme---button-secondary--background",
+      "description": "",
+      "resolve": "light"
+    },
+    "button-secondary-background-hover": {
+      "type": "color",
+      "var": "--_theme---button-secondary--background-hover",
+      "source": "declared --_theme---button-secondary--background-hover",
+      "description": "",
+      "resolve": "light"
+    },
+    "button-secondary-border": {
+      "type": "color",
+      "var": "--_theme---button-secondary--border",
+      "source": "declared --_theme---button-secondary--border",
+      "description": "",
+      "resolve": "light"
+    },
+    "button-secondary-border-hover": {
+      "type": "color",
+      "var": "--_theme---button-secondary--border-hover",
+      "source": "declared --_theme---button-secondary--border-hover",
+      "description": "",
+      "resolve": "light"
+    },
+    "button-secondary-text": {
+      "type": "color",
+      "var": "--_theme---button-secondary--text",
+      "source": "declared --_theme---button-secondary--text",
+      "description": "",
+      "resolve": "light"
+    },
+    "button-secondary-text-hover": {
+      "type": "color",
+      "var": "--_theme---button-secondary--text-hover",
+      "source": "declared --_theme---button-secondary--text-hover",
+      "description": "",
+      "resolve": "light"
+    },
+    "button-tertiary-background": {
+      "type": "color",
+      "var": "--_theme---button-tertiary--background",
+      "source": "declared --_theme---button-tertiary--background",
+      "description": "",
+      "resolve": "light"
+    },
+    "button-tertiary-background-hover": {
+      "type": "color",
+      "var": "--_theme---button-tertiary--background-hover",
+      "source": "declared --_theme---button-tertiary--background-hover",
+      "description": "",
+      "resolve": "light"
+    },
+    "button-tertiary-border": {
+      "type": "color",
+      "var": "--_theme---button-tertiary--border",
+      "source": "declared --_theme---button-tertiary--border",
+      "description": "",
+      "resolve": "light"
+    },
+    "button-tertiary-border-hover": {
+      "type": "color",
+      "var": "--_theme---button-tertiary--border-hover",
+      "source": "declared --_theme---button-tertiary--border-hover",
+      "description": "",
+      "resolve": "light"
+    },
+    "button-tertiary-color": {
+      "type": "color",
+      "var": "--_theme---button-tertiary--color",
+      "source": "declared --_theme---button-tertiary--color",
+      "description": "",
+      "resolve": "light"
+    },
+    "button-tertiary-text": {
+      "type": "color",
+      "var": "--_theme---button-tertiary--text",
+      "source": "declared --_theme---button-tertiary--text",
+      "description": "",
+      "resolve": "light"
+    },
+    "button-tertiary-text-hover": {
+      "type": "color",
+      "var": "--_theme---button-tertiary--text-hover",
+      "source": "declared --_theme---button-tertiary--text-hover",
+      "description": "",
+      "resolve": "light"
+    },
+    "selection-background": {
+      "type": "color",
+      "var": "--_theme---selection--background",
+      "source": "declared --_theme---selection--background",
+      "description": "",
+      "resolve": "light"
+    },
+    "selection-text": {
+      "type": "color",
+      "var": "--_theme---selection--text",
+      "source": "declared --_theme---selection--text",
+      "description": "",
+      "resolve": "light"
+    },
+    "text": {
+      "type": "color",
+      "var": "--_theme---text",
+      "source": "declared --_theme---text",
+      "description": "",
+      "resolve": "light"
+    },
+    "text-muted": {
+      "type": "color",
+      "var": "--swatch--dark-700",
+      "source": "declared --swatch--dark-700",
+      "description": "Secondary ink on marketing copy. The theme layer has no muted role, so this names the dark-700 swatch.",
+      "resolve": "light"
+    }
+  },
+  "dark": {
+    "background": {
+      "type": "color",
+      "var": "--_theme---background",
+      "source": "declared --_theme---background",
+      "description": "",
+      "resolve": "dark"
+    },
+    "background-secondary": {
+      "type": "color",
+      "var": "--_theme---background-secondary",
+      "source": "declared --_theme---background-secondary",
+      "description": "",
+      "resolve": "dark"
+    },
+    "border": {
+      "type": "color",
+      "var": "--_theme---border",
+      "source": "declared --_theme---border",
+      "description": "",
+      "resolve": "dark"
+    },
+    "button-primary-background": {
+      "type": "color",
+      "var": "--_theme---button-primary--background",
+      "source": "declared --_theme---button-primary--background",
+      "description": "",
+      "resolve": "dark"
+    },
+    "button-primary-background-hover": {
+      "type": "color",
+      "var": "--_theme---button-primary--background-hover",
+      "source": "declared --_theme---button-primary--background-hover",
+      "description": "",
+      "resolve": "dark"
+    },
+    "button-primary-border": {
+      "type": "color",
+      "var": "--_theme---button-primary--border",
+      "source": "declared --_theme---button-primary--border",
+      "description": "",
+      "resolve": "dark"
+    },
+    "button-primary-border-hover": {
+      "type": "color",
+      "var": "--_theme---button-primary--border-hover",
+      "source": "declared --_theme---button-primary--border-hover",
+      "description": "",
+      "resolve": "dark"
+    },
+    "button-primary-text": {
+      "type": "color",
+      "var": "--_theme---button-primary--text",
+      "source": "declared --_theme---button-primary--text",
+      "description": "",
+      "resolve": "dark"
+    },
+    "button-primary-text-hover": {
+      "type": "color",
+      "var": "--_theme---button-primary--text-hover",
+      "source": "declared --_theme---button-primary--text-hover",
+      "description": "",
+      "resolve": "dark"
+    },
+    "button-secondary-background": {
+      "type": "color",
+      "var": "--_theme---button-secondary--background",
+      "source": "declared --_theme---button-secondary--background",
+      "description": "",
+      "resolve": "dark"
+    },
+    "button-secondary-background-hover": {
+      "type": "color",
+      "var": "--_theme---button-secondary--background-hover",
+      "source": "declared --_theme---button-secondary--background-hover",
+      "description": "",
+      "resolve": "dark"
+    },
+    "button-secondary-border": {
+      "type": "color",
+      "var": "--_theme---button-secondary--border",
+      "source": "declared --_theme---button-secondary--border",
+      "description": "",
+      "resolve": "dark"
+    },
+    "button-secondary-border-hover": {
+      "type": "color",
+      "var": "--_theme---button-secondary--border-hover",
+      "source": "declared --_theme---button-secondary--border-hover",
+      "description": "",
+      "resolve": "dark"
+    },
+    "button-secondary-text": {
+      "type": "color",
+      "var": "--_theme---button-secondary--text",
+      "source": "declared --_theme---button-secondary--text",
+      "description": "",
+      "resolve": "dark"
+    },
+    "button-secondary-text-hover": {
+      "type": "color",
+      "var": "--_theme---button-secondary--text-hover",
+      "source": "declared --_theme---button-secondary--text-hover",
+      "description": "",
+      "resolve": "dark"
+    },
+    "button-tertiary-background": {
+      "type": "color",
+      "var": "--_theme---button-tertiary--background",
+      "source": "declared --_theme---button-tertiary--background",
+      "description": "",
+      "resolve": "dark"
+    },
+    "button-tertiary-background-hover": {
+      "type": "color",
+      "var": "--_theme---button-tertiary--background-hover",
+      "source": "declared --_theme---button-tertiary--background-hover",
+      "description": "",
+      "resolve": "dark"
+    },
+    "button-tertiary-border": {
+      "type": "color",
+      "var": "--_theme---button-tertiary--border",
+      "source": "declared --_theme---button-tertiary--border",
+      "description": "",
+      "resolve": "dark"
+    },
+    "button-tertiary-border-hover": {
+      "type": "color",
+      "var": "--_theme---button-tertiary--border-hover",
+      "source": "declared --_theme---button-tertiary--border-hover",
+      "description": "",
+      "resolve": "dark"
+    },
+    "button-tertiary-color": {
+      "type": "color",
+      "var": "--_theme---button-tertiary--color",
+      "source": "declared --_theme---button-tertiary--color",
+      "description": "",
+      "resolve": "dark"
+    },
+    "button-tertiary-text": {
+      "type": "color",
+      "var": "--_theme---button-tertiary--text",
+      "source": "declared --_theme---button-tertiary--text",
+      "description": "",
+      "resolve": "dark"
+    },
+    "button-tertiary-text-hover": {
+      "type": "color",
+      "var": "--_theme---button-tertiary--text-hover",
+      "source": "declared --_theme---button-tertiary--text-hover",
+      "description": "",
+      "resolve": "dark"
+    },
+    "selection-background": {
+      "type": "color",
+      "var": "--_theme---selection--background",
+      "source": "declared --_theme---selection--background",
+      "description": "",
+      "resolve": "dark"
+    },
+    "selection-text": {
+      "type": "color",
+      "var": "--_theme---selection--text",
+      "source": "declared --_theme---selection--text",
+      "description": "",
+      "resolve": "dark"
+    },
+    "text": {
+      "type": "color",
+      "var": "--_theme---text",
+      "source": "declared --_theme---text",
+      "description": "",
+      "resolve": "dark"
+    },
+    "text-muted": {
+      "type": "color",
+      "var": "--swatch--dark-400",
+      "source": "declared --swatch--dark-400",
+      "description": "Secondary ink on a dark island. The theme layer has no muted role.",
+      "resolve": "light"
+    }
+  },
+  "component": {
+    "buttonPrimary": {
+      "background": {
+        "type": "color",
+        "var": "--_theme---button-primary--background",
+        "source": "declared --_theme---button-primary--background",
+        "description": ""
+      },
+      "backgroundHover": {
+        "type": "color",
+        "var": "--_theme---button-primary--background-hover",
+        "source": "declared --_theme---button-primary--background-hover",
+        "description": ""
+      },
+      "text": {
+        "type": "color",
+        "var": "--_theme---button-primary--text",
+        "source": "declared --_theme---button-primary--text",
+        "description": ""
+      },
+      "border": {
+        "type": "color",
+        "var": "--_theme---button-primary--border",
+        "source": "declared --_theme---button-primary--border",
+        "description": ""
+      }
+    },
+    "buttonSecondary": {
+      "background": {
+        "type": "color",
+        "var": "--_theme---button-secondary--background",
+        "source": "declared --_theme---button-secondary--background",
+        "description": ""
+      },
+      "backgroundHover": {
+        "type": "color",
+        "var": "--_theme---button-secondary--background-hover",
+        "source": "declared --_theme---button-secondary--background-hover",
+        "description": ""
+      },
+      "text": {
+        "type": "color",
+        "var": "--_theme---button-secondary--text",
+        "source": "declared --_theme---button-secondary--text",
+        "description": ""
+      },
+      "border": {
+        "type": "color",
+        "var": "--_theme---button-secondary--border",
+        "source": "declared --_theme---button-secondary--border",
+        "description": ""
+      }
+    },
+    "buttonTertiary": {
+      "background": {
+        "type": "color",
+        "var": "--_theme---button-tertiary--background",
+        "source": "declared --_theme---button-tertiary--background",
+        "description": ""
+      },
+      "text": {
+        "type": "color",
+        "var": "--_theme---button-tertiary--text",
+        "source": "declared --_theme---button-tertiary--text",
+        "description": ""
+      },
+      "border": {
+        "type": "color",
+        "var": "--_theme---button-tertiary--border",
+        "source": "declared --_theme---button-tertiary--border",
+        "description": ""
+      }
+    }
+  }
+}

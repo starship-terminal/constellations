@@ -1,0 +1,725 @@
+{
+  "source": "CSSOM walk of https://theorg.com/ on 2026-11-19 via T3 preview_evaluate. Selector :root unless noted.",
+  "declared": {
+    "--accent-100": [
+      {
+        "sel": ":root",
+        "val": "#dcf2f3"
+      }
+    ],
+    "--backdrop-background": [
+      {
+        "sel": ":root",
+        "val": "var(--neutral-100)"
+      }
+    ],
+    "--background": [
+      {
+        "sel": ":root",
+        "val": "#fefefe"
+      }
+    ],
+    "--bc-moderate": [
+      {
+        "sel": ":root",
+        "val": "#E4E4E7"
+      }
+    ],
+    "--bc-strong": [
+      {
+        "sel": ":root",
+        "val": "#D3D3D9"
+      }
+    ],
+    "--bg-bg1": [
+      {
+        "sel": ":root",
+        "val": "#FFFFFF"
+      }
+    ],
+    "--bg-bg2": [
+      {
+        "sel": ":root",
+        "val": "#F9F9F9"
+      }
+    ],
+    "--bg-bg3": [
+      {
+        "sel": ":root",
+        "val": "#F5F5F6"
+      }
+    ],
+    "--bg-bg4": [
+      {
+        "sel": ":root",
+        "val": "#E4E4E7"
+      }
+    ],
+    "--bg-bg5": [
+      {
+        "sel": ":root",
+        "val": "#6F7179"
+      }
+    ],
+    "--bg-bg6": [
+      {
+        "sel": ":root",
+        "val": "#111321"
+      }
+    ],
+    "--border-color": [
+      {
+        "sel": ":root",
+        "val": "#ebecec"
+      }
+    ],
+    "--border-radius": [
+      {
+        "sel": ":root",
+        "val": "12px"
+      }
+    ],
+    "--brand": [
+      {
+        "sel": ":root",
+        "val": "#000840"
+      }
+    ],
+    "--card-box-shadow": [
+      {
+        "sel": ":root",
+        "val": "0 0 1px rgba(0,0,0,0.04),0 4px 8px rgba(0,0,0,0.04),0 8px 16px rgba(0,0,0,0.04),0 16px 24px rgba(0,0,0,0.04)"
+      }
+    ],
+    "--color": [
+      {
+        "sel": ":root",
+        "val": "var(--neutral-100)"
+      }
+    ],
+    "--cta-link-text": [
+      {
+        "sel": ":root",
+        "val": "#0F4BE5"
+      }
+    ],
+    "--elevation-1": [
+      {
+        "sel": ":root",
+        "val": "0 1px 3px rgba(0,0,0,0.07)"
+      }
+    ],
+    "--error": [
+      {
+        "sel": ":root",
+        "val": "#f6354d"
+      }
+    ],
+    "--fg-fg1": [
+      {
+        "sel": ":root",
+        "val": "#111321"
+      }
+    ],
+    "--fg-fg2": [
+      {
+        "sel": ":root",
+        "val": "#6F7179"
+      }
+    ],
+    "--fg-fg3": [
+      {
+        "sel": ":root",
+        "val": "#ABABB1"
+      }
+    ],
+    "--fg-fg4": [
+      {
+        "sel": ":root",
+        "val": "#E4E4E7"
+      }
+    ],
+    "--fg-fg5": [
+      {
+        "sel": ":root",
+        "val": "#FFFFFF"
+      }
+    ],
+    "--fill-card-hover": [
+      {
+        "sel": "html",
+        "val": "hsla(0,0%,0%,0.03)"
+      }
+    ],
+    "--font-primary": [
+      {
+        "sel": ":root",
+        "val": "\"Inter\",sans-serif"
+      }
+    ],
+    "--font-secondary": [
+      {
+        "sel": ":root",
+        "val": "\"PP Right Grotesk\",helvetica neue,helvetica,arial,sans-serif"
+      }
+    ],
+    "--fs-1": [
+      {
+        "sel": ":root",
+        "val": "12px"
+      }
+    ],
+    "--fs-1-5": [
+      {
+        "sel": ":root",
+        "val": "13px"
+      }
+    ],
+    "--fs-2": [
+      {
+        "sel": ":root",
+        "val": "14px"
+      }
+    ],
+    "--fs-2-5": [
+      {
+        "sel": ":root",
+        "val": "15px"
+      }
+    ],
+    "--fs-3": [
+      {
+        "sel": ":root",
+        "val": "16px"
+      }
+    ],
+    "--fs-4": [
+      {
+        "sel": ":root",
+        "val": "18px"
+      }
+    ],
+    "--fs-4-5": [
+      {
+        "sel": ":root",
+        "val": "20px"
+      }
+    ],
+    "--fs-5": [
+      {
+        "sel": ":root",
+        "val": "22px"
+      }
+    ],
+    "--fs-6": [
+      {
+        "sel": ":root",
+        "val": "24px"
+      }
+    ],
+    "--fs-7": [
+      {
+        "sel": ":root",
+        "val": "28px"
+      }
+    ],
+    "--fs-8": [
+      {
+        "sel": ":root",
+        "val": "32px"
+      }
+    ],
+    "--fs-9": [
+      {
+        "sel": ":root",
+        "val": "36px"
+      }
+    ],
+    "--fs-10": [
+      {
+        "sel": ":root",
+        "val": "40px"
+      }
+    ],
+    "--fs-11": [
+      {
+        "sel": ":root",
+        "val": "50px"
+      }
+    ],
+    "--fs-12": [
+      {
+        "sel": ":root",
+        "val": "60px"
+      }
+    ],
+    "--fs-13": [
+      {
+        "sel": ":root",
+        "val": "68px"
+      }
+    ],
+    "--fs-14": [
+      {
+        "sel": ":root",
+        "val": "76px"
+      }
+    ],
+    "--height-breadcrumbs": [
+      {
+        "sel": ":root",
+        "val": "56px"
+      }
+    ],
+    "--height-footer": [
+      {
+        "sel": ":root",
+        "val": "205px"
+      }
+    ],
+    "--height-footer-phone": [
+      {
+        "sel": ":root",
+        "val": "247px"
+      }
+    ],
+    "--icon-background-hover": [
+      {
+        "sel": ":root",
+        "val": "var(--primary-10)"
+      }
+    ],
+    "--icon-fill": [
+      {
+        "sel": ":root",
+        "val": "var(--neutral-90)"
+      }
+    ],
+    "--icon-fill-hover": [
+      {
+        "sel": ":root",
+        "val": "rgba(0,0,0,0.9)"
+      }
+    ],
+    "--icon-radius": [
+      {
+        "sel": ":root",
+        "val": "4px"
+      }
+    ],
+    "--icon-size": [
+      {
+        "sel": ":root",
+        "val": "24px"
+      }
+    ],
+    "--jobsLandingColor": [
+      {
+        "sel": ":root",
+        "val": "#dcf2f3"
+      }
+    ],
+    "--lh-1": [
+      {
+        "sel": ":root",
+        "val": "1"
+      }
+    ],
+    "--lh-2": [
+      {
+        "sel": ":root",
+        "val": "1.25"
+      }
+    ],
+    "--lh-3": [
+      {
+        "sel": ":root",
+        "val": "1.5"
+      }
+    ],
+    "--max-content-width": [
+      {
+        "sel": ":root",
+        "val": "1136px"
+      }
+    ],
+    "--max-height": [
+      {
+        "sel": ":root",
+        "val": "450px"
+      }
+    ],
+    "--max-width": [
+      {
+        "sel": ":root",
+        "val": "920px"
+      }
+    ],
+    "--max-width-compact": [
+      {
+        "sel": ":root",
+        "val": "375px"
+      }
+    ],
+    "--navbar-shadow": [
+      {
+        "sel": ":root",
+        "val": "0 6px 5px -6px rgb(33 33 38/12%)"
+      }
+    ],
+    "--neutral-0": [
+      {
+        "sel": ":root",
+        "val": "#fff"
+      }
+    ],
+    "--neutral-10": [
+      {
+        "sel": ":root",
+        "val": "#f7f7f7"
+      }
+    ],
+    "--neutral-20": [
+      {
+        "sel": ":root",
+        "val": "#eaeaeb"
+      }
+    ],
+    "--neutral-30": [
+      {
+        "sel": ":root",
+        "val": "#d8d8d9"
+      }
+    ],
+    "--neutral-40": [
+      {
+        "sel": ":root",
+        "val": "#ceced0"
+      }
+    ],
+    "--neutral-60": [
+      {
+        "sel": ":root",
+        "val": "#b1b1b4"
+      }
+    ],
+    "--neutral-70": [
+      {
+        "sel": ":root",
+        "val": "#919195"
+      }
+    ],
+    "--neutral-80": [
+      {
+        "sel": ":root",
+        "val": "#707075"
+      }
+    ],
+    "--neutral-90": [
+      {
+        "sel": ":root",
+        "val": "#464649"
+      }
+    ],
+    "--neutral-100": [
+      {
+        "sel": ":root",
+        "val": "#0a0a0b"
+      }
+    ],
+    "--off-white": [
+      {
+        "sel": ":root",
+        "val": "#f8f8f8"
+      }
+    ],
+    "--orgChartLandingColor": [
+      {
+        "sel": ":root",
+        "val": "#dcf2f3"
+      }
+    ],
+    "--padding-bottom-layout": [
+      {
+        "sel": ":root",
+        "val": "50px"
+      }
+    ],
+    "--padding-bottom-layout-mobile": [
+      {
+        "sel": ":root",
+        "val": "50px"
+      }
+    ],
+    "--popover-border": [
+      {
+        "sel": ":root",
+        "val": "1px solid var(--neutral-20)"
+      }
+    ],
+    "--popover-rounding": [
+      {
+        "sel": ":root",
+        "val": "16px"
+      }
+    ],
+    "--popover-shadow": [
+      {
+        "sel": ":root",
+        "val": "0 2px 16px 0 rgba(0,0,0,0.05),0 3px 4px 0 rgba(0,0,0,0.08)"
+      }
+    ],
+    "--primary-10": [
+      {
+        "sel": ":root",
+        "val": "#f3f6fc"
+      }
+    ],
+    "--primary-20": [
+      {
+        "sel": ":root",
+        "val": "#e7edf9"
+      }
+    ],
+    "--primary-40": [
+      {
+        "sel": ":root",
+        "val": "#adb4fa"
+      }
+    ],
+    "--primary-100": [
+      {
+        "sel": ":root",
+        "val": "#0F4BE5"
+      }
+    ],
+    "--primary-100-hover": [
+      {
+        "sel": ":root",
+        "val": "#0515d4"
+      }
+    ],
+    "--purple77": [
+      {
+        "sel": ":root",
+        "val": "#BC8EF9"
+      }
+    ],
+    "--scale-s0": [
+      {
+        "sel": ":root",
+        "val": "#111321"
+      }
+    ],
+    "--scale-s1": [
+      {
+        "sel": ":root",
+        "val": "#6F7179"
+      }
+    ],
+    "--scale-s2": [
+      {
+        "sel": ":root",
+        "val": "#ABABB1"
+      }
+    ],
+    "--scale-s3": [
+      {
+        "sel": ":root",
+        "val": "#D3D3D9"
+      }
+    ],
+    "--scale-s4": [
+      {
+        "sel": ":root",
+        "val": "#E4E4E7"
+      }
+    ],
+    "--scale-s5": [
+      {
+        "sel": ":root",
+        "val": "#F5F5F6"
+      }
+    ],
+    "--scale-s6": [
+      {
+        "sel": ":root",
+        "val": "#F9F9F9"
+      }
+    ],
+    "--scale-s7": [
+      {
+        "sel": ":root",
+        "val": "#FFFFFF"
+      }
+    ],
+    "--scoutLandingColor": [
+      {
+        "sel": ":root",
+        "val": "var(--primary-10)"
+      }
+    ],
+    "--screen-xs-min": [
+      {
+        "sel": ":root",
+        "val": "480px"
+      }
+    ],
+    "--screen-sm-min": [
+      {
+        "sel": ":root",
+        "val": "768px"
+      }
+    ],
+    "--screen-md-min": [
+      {
+        "sel": ":root",
+        "val": "992px"
+      }
+    ],
+    "--screen-lg-min": [
+      {
+        "sel": ":root",
+        "val": "1200px"
+      }
+    ],
+    "--sectionSpacer": [
+      {
+        "sel": ":root",
+        "val": "100px"
+      }
+    ],
+    "--shadow": [
+      {
+        "sel": ":root",
+        "val": "0 4px 14px rgba(0,0,0,0.14),0 4px 6px rgba(0,0,0,0.08),0 2px 2px rgba(0,0,0,0.06)"
+      }
+    ],
+    "--sp-0": [
+      {
+        "sel": ":root",
+        "val": "0"
+      }
+    ],
+    "--sp-1": [
+      {
+        "sel": ":root",
+        "val": "4px"
+      }
+    ],
+    "--sp-2": [
+      {
+        "sel": ":root",
+        "val": "8px"
+      }
+    ],
+    "--sp-2-5": [
+      {
+        "sel": ":root",
+        "val": "12px"
+      }
+    ],
+    "--sp-3": [
+      {
+        "sel": ":root",
+        "val": "16px"
+      }
+    ],
+    "--sp-3-5": [
+      {
+        "sel": ":root",
+        "val": "20px"
+      }
+    ],
+    "--sp-4": [
+      {
+        "sel": ":root",
+        "val": "24px"
+      }
+    ],
+    "--sp-5": [
+      {
+        "sel": ":root",
+        "val": "32px"
+      }
+    ],
+    "--sp-6": [
+      {
+        "sel": ":root",
+        "val": "40px"
+      }
+    ],
+    "--sp-6-5": [
+      {
+        "sel": ":root",
+        "val": "48px"
+      }
+    ],
+    "--sp-7": [
+      {
+        "sel": ":root",
+        "val": "56px"
+      }
+    ],
+    "--sp-8": [
+      {
+        "sel": ":root",
+        "val": "72px"
+      }
+    ],
+    "--sp-9": [
+      {
+        "sel": ":root",
+        "val": "104px"
+      }
+    ],
+    "--success": [
+      {
+        "sel": ":root",
+        "val": "#009378"
+      }
+    ],
+    "--transition-01": [
+      {
+        "sel": ":root",
+        "val": "cubic-bezier(0.19,1,0.22,1)"
+      }
+    ],
+    "--transition-card-hover": [
+      {
+        "sel": "html",
+        "val": "background-color var(--transition-card-hover-duration) var(--transition-card-hover-easing)"
+      }
+    ],
+    "--transition-card-hover-duration": [
+      {
+        "sel": "html",
+        "val": "80ms"
+      }
+    ],
+    "--transition-card-hover-easing": [
+      {
+        "sel": "html",
+        "val": "ease"
+      }
+    ],
+    "--transition-timing-function": [
+      {
+        "sel": ":root",
+        "val": "cubic-bezier(0.075,0.82,0.165,1)"
+      }
+    ],
+    "--warning": [
+      {
+        "sel": ":root",
+        "val": "#ffb818"
+      }
+    ],
+    "--wiresLandingColor": [
+      {
+        "sel": ":root",
+        "val": "#dcf2f3"
+      }
+    ]
+  }
+}

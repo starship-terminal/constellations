@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wittl style guide</title>
+<style>
+  :root {
+    --page: #fcfcfc;
+    --surface: #ffffff;
+    --sunken: #f3f3f1;
+    --ink: #141616;
+    --muted: #a0a1a1;
+    --quote: #424444;
+    --forest: #263921;
+    --lime: #c1fa6b;
+    --wash: #e7fdbc;
+    --line: #e6e6e6;
+    --on-action: #ffffff;
+    --ui: "Helvetica Neue", Helvetica, sans-serif;
+    --display: Georgia, "Times New Roman", serif;
+  }
+  body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--ui); font-size: 16px; line-height: 28px; }
+  main { max-width: 1024px; margin: 0 auto; padding: 28px 24px 80px; }
+  h1, h2 { font-family: var(--display); font-weight: 400; letter-spacing: -0.02em; line-height: 1.04; }
+  h1 { font-size: 48px; }
+  h2 { font-size: 28px; margin-top: 48px; }
+  p.note { color: var(--muted); max-width: 640px; }
+  .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .swatch { background: var(--surface); border-radius: 4px; overflow: hidden; border: 1px solid var(--line); }
+  .swatch i { display: block; height: 72px; }
+  .swatch span { display: block; padding: 8px 12px; font-size: 14px; line-height: 20px; }
+  .row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin: 16px 0; }
+  a.primary, a.secondary { all: unset; height: 46px; padding: 0 24px; border-radius: 4px; display: inline-flex; align-items: center; cursor: pointer; font-size: 18px; }
+  a.primary { background: var(--forest); color: var(--on-action); }
+  a.secondary { background: var(--sunken); color: var(--ink); }
+  .card { background: var(--sunken); border-radius: 4px; padding: 40px; max-width: 420px; }
+  .check { width: 24px; height: 24px; background: var(--lime); border-radius: 4px; }
+  .badge { display: inline-flex; background: var(--lime); border-radius: 99px; font-size: 12px; line-height: 12px; padding: 8px; }
+  .wash { background: var(--wash); border-radius: 4px; padding: 24px; }
+  table { border-collapse: collapse; width: 100%; }
+  td { border-bottom: 1px solid var(--line); padding: 8px 12px; vertical-align: top; }
+  code { font-family: ui-monospace, monospace; font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Wittl</h1>
+  <p class="note">Light tokens from the 2025-11-08 archived homepage. Georgia and Helvetica Neue stand in for FF More Pro and Denim, which did not load. Read values from tokens.json.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><i style="background:#fcfcfc"></i><span>page #fcfcfc</span></div>
+    <div class="swatch"><i style="background:#ffffff"></i><span>surface #ffffff</span></div>
+    <div class="swatch"><i style="background:#f3f3f1"></i><span>sunken #f3f3f1</span></div>
+    <div class="swatch"><i style="background:#141616"></i><span>ink #141616</span></div>
+    <div class="swatch"><i style="background:#263921"></i><span>forest #263921</span></div>
+    <div class="swatch"><i style="background:#c1fa6b"></i><span>lime #c1fa6b</span></div>
+    <div class="swatch"><i style="background:#e7fdbc"></i><span>wash #e7fdbc</span></div>
+    <div class="swatch"><i style="background:#a0a1a1"></i><span>muted #a0a1a1</span></div>
+  </div>
+
+  <h2>Type</h2>
+  <p style="font-family:Georgia,serif;font-size:48px;line-height:1;letter-spacing:-0.02em;margin:0">Helping growing teams to hire smarter.</p>
+  <p class="note">Create job postings quickly, review candidates efficiently, and speed up your hiring pipeline.</p>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <a class="primary">Get started</a>
+    <a class="secondary">Login</a>
+    <span class="badge">Latest update</span>
+    <span class="check"></span>
+  </div>
+
+  <h2>Card</h2>
+  <div class="card">
+    <strong>Your career page</strong>
+    <p class="note">Customize your career page and public job post pages with pre-designed blocks.</p>
+  </div>
+  <div class="wash" style="margin-top:16px">Feature wash #e7fdbc, radius 4px.</div>
+
+  <h2>Scale</h2>
+  <table>
+    <tr><td>Radius</td><td><code>4px</code> control, <code>99px</code> pill, <code>40px</code> sheet</td></tr>
+    <tr><td>Button</td><td><code>46px</code> tall, padding <code>0 24px</code></td></tr>
+    <tr><td>Content</td><td><code>1024px</code> computed nav max-width</td></tr>
+    <tr><td>Motion</td><td><code>200ms</code> ease-in-out on buttons. Reduced motion did not remove it.</td></tr>
+  </table>
+</main>
+</body>
+</html>

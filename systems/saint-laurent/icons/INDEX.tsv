@@ -1,0 +1,7 @@
+file	role	source
+wordmark.svg	Saint Laurent wordmark in the header	header svg viewBox 0 0 122 28, currentColor, ysl.com/en-sg 2026-11-19
+menu.svg	Header menu	header button aria-label Menu
+search.svg	Header search	header button aria-label Search
+cart.svg	Header cart	header control aria-label Cart
+close.svg	Close	svg viewBox 7 7 10 10
+check.svg	Selected filter mark	filter label i svg, white stroke on selection

@@ -1,0 +1,33 @@
+{
+  "captured": "2026-11-19",
+  "pages": {
+    "home": {
+      "url": "https://telescope.fyi/",
+      "viewport": {"innerWidth": 1169, "innerHeight": 731, "devicePixelRatio": 2, "visualViewport": {"width": 1169, "height": 731, "scale": 1}},
+      "colorScheme": "light",
+      "stylesheet": "https://telescope.fyi/_nuxt/entry.tFlogPss.css",
+      "computed": {
+        "html": {"backgroundColor": "rgb(244, 243, 240)", "color": "rgb(26, 25, 21)", "fontFamily": "Beausite, sans-serif", "fontSize": "19px"},
+        "body": {"fontSize": "19px", "fontWeight": "400", "lineHeight": "21.85px", "letterSpacing": "-0.38px"},
+        "h1.t-h1": {"fontSize": "57px", "lineHeight": "65.55px", "letterSpacing": "-0.38px", "fontWeight": "400"},
+        "t-mono": {"fontSize": "12.35px", "lineHeight": "13.585px", "letterSpacing": "0.3705px", "textTransform": "uppercase", "fontFamily": "\"DM Mono\", monospace"},
+        "signup-inner": {"backgroundColor": "rgb(227, 247, 148)", "color": "rgb(26, 25, 21)", "height": "50.3438px", "borderRadius": "0px", "transition": "background-color 0.4s cubic-bezier(0.55, 0, 0.1, 1), color 0.4s cubic-bezier(0.55, 0, 0.1, 1)"}
+      }
+    },
+    "login": {
+      "url": "https://telescope.fyi/login",
+      "viewport": {"innerWidth": 1169, "innerHeight": 731, "devicePixelRatio": 2},
+      "mounted": "body.dark",
+      "stylesheet": "https://telescope.fyi/_next/static/chunks/3d7b25ofmhl7u.css",
+      "computed": {
+        "body": {"backgroundColor": "rgb(43, 43, 46)", "color": "rgb(227, 229, 231)", "fontSize": "16px", "lineHeight": "24px", "fontFamily": "Beausite, ui-sans-serif, system-ui, sans-serif"},
+        "email": {"height": "54px", "width": 360, "borderRadius": "8px", "border": "1px solid rgb(255, 255, 255)", "fontWeight": "500", "fontSize": "16px", "outline": "rgba(0, 0, 0, 0) solid 2px"},
+        "google": {"height": "40px", "width": 360, "backgroundColor": "rgb(59, 61, 63)", "color": "rgb(227, 229, 231)", "fontSize": "14px", "fontWeight": "600", "borderRadius": "8px", "padding": "10px 12px"},
+        "continueDisabled": {"color": "rgb(78, 79, 80)", "backgroundColor": "rgb(59, 61, 63)"},
+        "legal": {"fontSize": "12px", "lineHeight": "16px", "color": "rgb(175, 176, 177)"}
+      },
+      "notEntered": ["email", "google", "payment", "phone", "company SSO"]
+    }
+  },
+  "screenshotNote": "T3 preview_snapshot failed: The browser is not producing screenshot frames. Public home screenshots, if present, come from a separate headless Playwright load of https://telescope.fyi/ only."
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Prime Video, signed-out tokens</title>
+<style>
+  :root {
+    --page: #00050d;
+    --surface: #222222;
+    --text: #ffffff;
+    --muted: #8197a4;
+    --link: #79b8f3;
+    --action: #ffffff;
+    --on-action: #00050d;
+    --join: rgba(26, 152, 255, 0.8);
+    --focus: #e59700;
+    --font: "Amazon Ember", "Amazon Arabic Ember", Arial, sans-serif;
+  }
+  body.light {
+    --page: #ffffff;
+    --surface: #ffffff;
+    --text: #0f1111;
+    --muted: #0f1111;
+    --link: #2162a1;
+    --action: #ffd814;
+    --on-action: #0f1111;
+    --join: #ffd814;
+    --font: Arial, sans-serif;
+    --card-border: #d5d9d9;
+  }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  main { max-width: 880px; margin: 0 auto; padding: 32px 24px 80px; }
+  h1 { font-size: 36px; line-height: 40px; font-weight: 700; margin: 0 0 8px; }
+  h2 { font-size: 18px; line-height: 25px; font-weight: 700; margin: 32px 0 12px; }
+  p { font-size: 18px; line-height: 25px; margin: 0 0 16px; }
+  .note { font-size: 14px; line-height: 20px; color: var(--muted); }
+  button.toggle {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--text);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch {
+    width: 140px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  body.light .swatch { border-color: #d5d9d9; }
+  .swatch i { display: block; height: 64px; }
+  .swatch span { display: block; padding: 8px; font-size: 12px; line-height: 16px; }
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    height: 60px;
+    padding: 8px 18px;
+    border-radius: 8px;
+    background: var(--action);
+    color: var(--on-action);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    text-decoration: none;
+  }
+  .join {
+    display: inline-flex;
+    align-items: center;
+    height: 38px;
+    padding: 0 12px;
+    border-radius: 8px;
+    background: var(--join);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.49px;
+    text-decoration: none;
+  }
+  body.light .join { color: #0f1111; border-radius: 100px; height: 32px; }
+  .card {
+    max-width: 350px;
+    background: #ffffff;
+    color: #0f1111;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    padding: 20px 26px;
+    font-family: Arial, sans-serif;
+  }
+  .card h3 { margin: 0 0 4px; font-size: 20px; font-weight: 400; line-height: 28px; }
+  .card label { display: block; font-size: 14px; font-weight: 700; line-height: 20px; margin: 12px 0 4px; }
+  .card input {
+    width: 100%;
+    box-sizing: border-box;
+    height: 32px;
+    border: 1px solid #888c8c;
+    border-radius: 8px;
+    padding: 5px 11px;
+    font: 14px Arial, sans-serif;
+  }
+  .card .continue {
+    display: block;
+    margin-top: 16px;
+    height: 32px;
+    border: 1px solid #ffd814;
+    border-radius: 100px;
+    background: #ffd814;
+    color: #0f1111;
+    font: 14px Arial, sans-serif;
+  }
+  footer.sample {
+    margin-top: 28px;
+    background: #222222;
+    color: #8197a4;
+    padding: 24px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+  footer.sample a { color: #79b8f3; text-decoration: none; }
+</style>
+</head>
+<body>
+<main>
+  <button class="toggle" type="button" id="theme">Show Amazon sign-in wall</button>
+  <h1>Join Amazon Prime to watch exclusive Amazon Originals, popular movies and TV shows.</h1>
+  <p>Enjoy from the web or with the Prime Video app on your phone, tablet, or select Smart TVs — on up to 3 devices at once.</p>
+  <p class="note">*After your free trial, Amazon Prime is just S$4.99/month.</p>
+  <p>
+    <a class="cta" href="#trial">Start your 30-day free trial</a>
+    <a class="join" href="#join">Join Prime</a>
+  </p>
+  <h2>Colours</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Amazon sign-in wall</h2>
+  <div class="card">
+    <h3>Sign in</h3>
+    <label for="email">Enter mobile number or email</label>
+    <input id="email" type="email" autocomplete="off" placeholder="">
+    <button class="continue" type="button">Continue</button>
+  </div>
+  <footer class="sample">Terms and Privacy Notice · Send us feedback · Help</footer>
+</main>
+<script>
+  const colours = [
+    ["page", "#00050d"],
+    ["surface", "#222222"],
+    ["text", "#ffffff"],
+    ["muted", "#8197a4"],
+    ["link", "#79b8f3"],
+    ["join", "rgba(26, 152, 255, 0.8)"],
+    ["action", "#ffffff"],
+    ["amazon yellow", "#ffd814"],
+    ["amazon ink", "#0f1111"],
+    ["amazon border", "#d5d9d9"]
+  ];
+  const host = document.getElementById("swatches");
+  for (const [name, value] of colours) {
+    const el = document.createElement("div");
+    el.className = "swatch";
+    el.innerHTML = "<i></i><span></span>";
+    el.querySelector("i").style.background = value;
+    el.querySelector("span").textContent = name + " " + value;
+    host.appendChild(el);
+  }
+  document.getElementById("theme").addEventListener("click", () => {
+    document.body.classList.toggle("light");
+    const on = document.body.classList.contains("light");
+    document.getElementById("theme").textContent = on ? "Show Prime Video marketing" : "Show Amazon sign-in wall";
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Huddlekit style guide</title>
+<meta name="description" content="huddlekit.com design tokens and the signed-out surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-sans: "Inter","Inter Fallback",sans-serif;
+  --font-family-inter: "inter","inter Fallback";
+  --font-family-geistMono: "Geist Mono","Geist Mono Fallback";
+  --font-family-mono: ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-7xl: 4.5rem;
+  --font-lineHeight-2xl: 1.3333;
+  --font-lineHeight-3xl: 1.2;
+  --font-lineHeight-4xl: 1.1111;
+  --font-lineHeight-5xl: 1;
+  --font-lineHeight-7xl: 1;
+  --font-lineHeight-base: 1.5;
+  --font-lineHeight-lg: 1.5556;
+  --font-lineHeight-sm: 1.4286;
+  --font-lineHeight-xl: 1.4;
+  --font-lineHeight-xs: 1.3333;
+  --font-lineHeight-normal: 1.5;
+  --font-lineHeight-relaxed: 1.625;
+  --font-lineHeight-snug: 1.375;
+  --font-lineHeight-tight: 1.25;
+  --font-tracking-normal: 0em;
+  --font-tracking-tight: -.025em;
+  --font-tracking-tighter: -.05em;
+  --font-tracking-wider: .05em;
+  --font-tracking-widest: .1em;
+  --radius-base: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-lg: 0.75rem;
+  --radius-md: 10px;
+  --radius-xl: 16px;
+  --radius-xs: 0.125rem;
+  --space-unit: 0.25rem;
+  --container-2xl: 42rem;
+  --container-3xl: 48rem;
+  --container-4xl: 56rem;
+  --container-5xl: 64rem;
+  --container-lg: 32rem;
+  --container-md: 28rem;
+  --container-sm: 24rem;
+  --container-xl: 36rem;
+  --container-xs: 20rem;
+  --ease-in: cubic-bezier(0.4, 0.0, 1.0, 1.0);
+  --ease-inOut: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --ease-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --ease-default: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --duration-default: 150ms;
+  --blur-md: 12px;
+  --blur-sm: 8px;
+  --animation-ping: ping 1s cubic-bezier(0,0,.2,1)infinite;
+  --animation-pulse: pulse 2s cubic-bezier(.4,0,.6,1)infinite;
+  --animation-spin: spin 1s linear infinite;
+  --layout-aspectVideo: 16/9;
+  --layout-sectionPadding: 5rem;
+  --layout-sectionGap: 3rem;
+  --layout-cardGap: 1rem;
+  --typography-articleTitle: 500 44px/48.4px Inter, "Inter Fallback", sans-serif;
+  --typography-body: 400 16px/24px Inter, "Inter Fallback", sans-serif;
+  --typography-navLink: 500 14px/20px Inter, "Inter Fallback", sans-serif;
+  --typography-button: 500 14px/20px Inter, "Inter Fallback", sans-serif;
+  --typography-input: 500 14px/20px Inter, "Inter Fallback", sans-serif;
+  --typography-oauthButton: 500 14px/20px inter, "inter Fallback";
+  --typography-tabLabel: 400 16px/24px Inter, "Inter Fallback", sans-serif;
+  --component-header-height: 64px;
+  --component-button-cta-height: 40px;
+  --component-button-cta-radius: 12px;
+  --component-button-secondary-height: 32px;
+  --component-button-secondary-radius: 12px;
+  --component-button-oauth-height: 40px;
+  --component-button-outline-radius: 12px;
+  --component-navMenu-width: 194px;
+  --component-consentBanner-width: 352px;
+  --component-consentBanner-radius: 16px;
+  --component-loginCard-width: 320px;
+  --component-loginCard-radius: 0px;
+  --component-input-supportSearch-height: 48px;
+  --component-input-loginEmail-height: 36px;
+  --component-input-radius: 9999px;
+  --component-tab-height: 57px;
+  --component-mobileHeader-height: 64px;
+  --component-card-testimonial-radius: 16px;
+  --component-component-footer-bg: #0e0b0d;
+  --component-type-linkHover-color: rgba(17, 24, 39, 0.7);
+  --motion-duration-tw-animation-delay: 0ms;
+  --motion-duration-70ms: 70ms;
+  --motion-duration-100ms: 100ms;
+  --motion-duration-120ms: 120ms;
+  --motion-duration-140ms: 140ms;
+  --motion-duration-default-transition-duration: 150ms;
+  --motion-duration-200ms: 200ms;
+  --motion-duration-250ms: 250ms;
+  --motion-duration-300ms: 300ms;
+  --motion-duration-400ms: 400ms;
+  --motion-duration-500ms: 500ms;
+  --motion-duration-600ms: 600ms;
+  --motion-duration-750ms: 750ms;
+  --motion-duration-800ms: 800ms;
+  --motion-duration-1000ms: 1000ms;
+  --motion-duration-1200ms: 1200ms;
+  --motion-duration-1250ms: 1250ms;
+  --motion-duration-1500ms: 1500ms;
+  --motion-duration-2000ms: 2000ms;
+  --motion-duration-2500ms: 2500ms;
+  --motion-duration-12000ms: 12000ms;
+  --motion-duration-22000ms: 22000ms;
+  --motion-easing-bezier-0-22-1-0-36-1: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-easing-default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --motion-easing-ease-in-2: cubic-bezier(0.42, 0, 1, 1);
+  --motion-easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-ease-in-out-2: cubic-bezier(0.42, 0, 0.58, 1);
+  --motion-easing-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --motion-easing-ease-out-2: cubic-bezier(0, 0, 0.58, 1);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --primary-default: #ea580d;
+  --primary-foreground: #fff7ed;
+  --secondary-default: #ede9e7;
+  --secondary-foreground: #18181b;
+  --accent-default: #f6f3f2;
+  --accent-foreground: #18181b;
+  --muted-default: #f6f3f2;
+  --muted-foreground: #747170;
+  --card-default: #ffffff;
+  --card-foreground: #111827;
+  --popover-default: #ffffff;
+  --popover-foreground: #09090b;
+  --destructive-default: #e7000b;
+  --border-default: #e4e4e7;
+  --border-input: #e4e4e7;
+  --border-ring: #ff6900;
+  --sidebar-background: #f6f3f2;
+  --sidebar-accent: #f6f3f2;
+  --sidebar-accentForeground: #18181b;
+  --sidebar-border: #e4e4e7;
+  --sidebar-foreground: #09090b;
+  --sidebar-primary: #ff6900;
+  --sidebar-primaryForeground: #fff7ed;
+  --sidebar-ring: #ff6900;
+  --chart-1: #f54900;
+  --chart-2: #009689;
+  --chart-3: #104e64;
+  --chart-4: #ffb900;
+  --chart-5: #f9b878;
+  --upgrade-default: #7357ff;
+  --upgrade-foreground: #ffffff;
+  --upgrade-mutedForeground: #5e3cf0;
+  --canvas-default: #efeceb;
+  --mode-glowStrength: 0.75;
+  --scrollMask-bottom: 100%;
+  --scrollMask-left: 100%;
+  --scrollMask-right: 100%;
+  --scrollMask-top: 100%;
+  --color-page: #f6f3f2;
+  --color-primaryDark: #710000;
+  --root-background: #ffffff;
+  --root-foreground: #111827;
+  --component-button-cta-bg: var(--primary-default);
+  --component-button-oauth-bg: var(--primary-default);
+  --sg-sans: var(--font-family-sans, Inter, ui-sans-serif, system-ui, sans-serif);
+  --sg-mono: var(--font-family-mono, ui-monospace, "SF Mono", Menlo, monospace);
+}
+[data-mode="dark"], .dark {
+  --primary-default: #ea580d;
+  --primary-foreground: #fff7ed;
+  --secondary-default: #2a2625;
+  --secondary-foreground: #fafafa;
+  --accent-default: #2a2625;
+  --accent-foreground: #fafafa;
+  --muted-default: #2a2625;
+  --muted-foreground: #a3a09f;
+  --card-default: #1a1718;
+  --card-foreground: #fafafa;
+  --popover-default: #1a1718;
+  --popover-foreground: #fafafa;
+  --destructive-default: #ff6467;
+  --border-default: rgba(255, 255, 255, 0.08);
+  --border-input: rgba(255, 255, 255, 0.16);
+  --border-ring: #f54900;
+  --sidebar-background: #1a1718;
+  --sidebar-accent: #1a1718;
+  --sidebar-accentForeground: #fafafa;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-foreground: #e3e0df;
+  --sidebar-primary: #ea580d;
+  --sidebar-primaryForeground: #fff7ed;
+  --sidebar-ring: #f54900;
+  --chart-1: #1447e6;
+  --chart-2: #00bc7d;
+  --chart-3: #fe9a00;
+  --chart-4: #ad46ff;
+  --chart-5: #9a3413;
+  --upgrade-default: #7357ff;
+  --upgrade-foreground: #ffffff;
+  --upgrade-mutedForeground: #b1b3ff;
+  --canvas-default: #181517;
+  --mode-glowStrength: 1;
+  --scrollMask-bottom: 100%;
+  --scrollMask-left: 100%;
+  --scrollMask-right: 100%;
+  --scrollMask-top: 100%;
+  --color-page: #2a2625;
+  --color-primaryDark: #710000;
+  --root-background: #0e0b0d;
+  --root-foreground: #e3e0df;
+  --component-button-cta-bg: var(--primary-default);
+  --component-button-oauth-bg: var(--primary-default);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.6 var(--sg-sans); color: var(--root-foreground, #111827); background: var(--color-page, #f6f3f2); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.15 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.03em; color: var(--root-foreground, #111827); }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted-foreground, #747170); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-default, #e4e4e7); }
+.lead { max-width: 66ch; color: var(--root-foreground, #111827); }
+.note { font-size: 13px; color: var(--muted-foreground, #747170); max-width: 66ch; }
+code { font-family: var(--sg-mono); font-size: .9em; color: var(--primary-default, #ea580d); }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted-foreground, #747170); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { padding: 10px; border-radius: 10px; background: var(--root-background, #0e0b0d); color: var(--root-foreground, #e3e0df); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-default, #e4e4e7); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); color: inherit; }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); opacity: .7; color: inherit; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { opacity: .7; }
+.mock { border: 1px solid var(--border-default, #e4e4e7); overflow: hidden; background: var(--root-background, #ffffff); color: var(--root-foreground, #111827); border-radius: 12px; }
+.announce { display: flex; align-items: center; justify-content: center; min-height: 36px; padding: 6px 16px; font-size: 13px; background: var(--color-page, #f6f3f2); color: var(--root-foreground, #111827); border-bottom: 1px solid var(--border-default, #e4e4e7); }
+.header { display: flex; align-items: center; gap: 16px; height: var(--component-header-height, 64px); padding: 0 24px; font-size: 14px; background: var(--root-background, #ffffff); border-bottom: 1px solid var(--border-default, #e4e4e7); }
+.header .wm { font-weight: 560; font-size: 18px; letter-spacing: -0.03em; }
+.header .nav { display: flex; gap: 16px; color: var(--root-foreground, #111827); font-weight: 500; font-size: 14px; }
+.header .sp { flex: 1; }
+.header .signin { color: var(--root-foreground, #111827); font-size: 14px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-cta-height, 40px); padding: 0 16px; font-size: 14px; font-weight: 500; border-radius: var(--component-button-cta-radius, 12px); border: 1px solid transparent; }
+.btn.primary { background: var(--primary-default, #ea580d); color: var(--primary-foreground, #fff7ed); }
+.btn.secondary { height: var(--component-button-secondary-height, 32px); background: var(--secondary-default, #ede9e7); color: var(--secondary-foreground, #18181b); font-size: 13px; }
+.btn.outline { background: transparent; border-color: var(--border-default, #e4e4e7); color: var(--root-foreground, #111827); }
+.hero { padding: 72px 40px 56px; text-align: center; background: var(--color-page, #f6f3f2); }
+.hero h3 { font: 500 40px/1.15 var(--sg-sans); letter-spacing: -0.03em; margin: 0 auto 14px; max-width: 18ch; }
+.hero p { margin: 0 auto 24px; max-width: 46ch; color: var(--muted-foreground, #747170); }
+.herorow { display: flex; gap: 12px; justify-content: center; align-items: center; }
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--layout-card-gap, 1rem); padding: 28px; background: var(--root-background, #ffffff); }
+.plan { border: 1px solid var(--border-default, #e4e4e7); background: var(--card-default, #ffffff); color: var(--card-foreground, #111827); padding: 20px; min-height: 180px; }
+.plan .name { font-weight: 600; font-size: 16px; }
+.plan .price { font-size: 28px; letter-spacing: -0.03em; margin: 8px 0; }
+.plan .sub { font-size: 12px; color: var(--muted-foreground, #747170); margin-bottom: 16px; }
+.plan.pro { background: var(--root-foreground, #111827); color: var(--root-background, #ffffff); }
+.plan.pro .sub { color: var(--muted-foreground, #747170); }
+.footer { background: var(--root-background, #0e0b0d); color: var(--root-foreground, #e3e0df); padding: 36px 28px 28px; }
+.footer .cols { display: flex; gap: 40px; font-size: 13px; }
+.footer .cols b { display: block; font-size: 12px; margin-bottom: 8px; color: var(--root-foreground, #e3e0df); }
+.footer .cols span { display: block; line-height: 1.9; color: var(--muted-foreground, #747170); }
+.footer .word { margin-top: 28px; font-size: 42px; letter-spacing: -0.04em; opacity: .35; }
+.login { max-width: var(--component-loginCard-width, 320px); margin: 28px auto; padding: 28px 24px; background: var(--card-default, #ffffff); color: var(--card-foreground, #111827); border-radius: var(--component-loginCard-radius, 0px); border: 1px solid var(--border-default, #e4e4e7); text-align: center; }
+.login .wm { font-weight: 560; letter-spacing: -0.03em; margin-bottom: 8px; }
+.login h3 { font: 500 22px/1.3 var(--sg-sans); margin: 0 0 18px; }
+.login .btn { width: 100%; margin-bottom: 8px; }
+.login .field { height: 36px; border-radius: var(--component-input-radius, 9999px); border: 1px solid var(--border-input, #e4e4e7); display: flex; align-items: center; padding: 0 14px; color: var(--muted-foreground, #747170); font-size: 14px; margin-bottom: 8px; }
+.upgrade { display: inline-block; margin-top: 8px; font-size: 12px; color: var(--upgrade-default, #7357ff); }
+table.cmp { border-collapse: collapse; font-size: 14px; width: 100%; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-default, #e4e4e7); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-default, #e4e4e7); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; opacity: .65; font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Huddlekit style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>. Every swatch below is a token. The mock is a reconstruction from those tokens, not captured pixels. The real captures are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+
+  <h2 class="sh">huddlekit.com, declared and measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>. huddlekit.com and app.huddlekit.com share a Tailwind v4 <code>@theme</code> plus a shadcn-style semantic layer: <code>--background</code>/<code>--foreground</code>, <code>--card</code>, <code>--popover</code>, <code>--primary</code> (the #ea580d orange) and its foreground, <code>--secondary</code>, <code>--muted</code>, <code>--accent</code>, <code>--destructive</code>, <code>--border</code>/<code>--input</code>/<code>--ring</code>, <code>--upgrade</code> (the #7357ff pro purple), <code>--sidebar-*</code>, <code>--chart-1..5</code>, the marketing site's <code>--color-page</code> warm wash (#f6f3f2), and the app's <code>--canvas</code>. Radii, spacing, containers, the Inter and Geist Mono faces, and the measured header and control sizes sit in <code>core</code>.</p>
+  <p class="note">Read from huddlekit.com and app.huddlekit.com/login, signed out, in headless Chromium at 1440&times;900 (mobile pass at 390&times;844). The marketing site paints light only. Its nested <code>.dark</code> panels (footer, testimonials, the MCP card) re-point the same names. The app paints <code>html.dark</code> under <code>prefers-color-scheme</code>. There is no theme menu on the marketing site. Inter is loaded through next/font and is not bundled here, so samples fall back to system fonts.</p>
+
+  <h2 class="sh">The marketing surface</h2>
+  <p class="lead">An announcement bar on the warm page wash, then a sticky header (wordmark, Features, Solutions, Resources, Pricing, Sign in, and the secondary Get started control). The hero sits on <code>--color-page</code> with the orange primary call to action.</p>
+  <div class="mock">
+    <div class="announce">New: hand feedback to your AI agent over MCP</div>
+    <div class="header">
+      <span class="wm">Huddlekit</span>
+      <span class="nav"><span>Features</span><span>Solutions</span><span>Resources</span><span>Pricing</span></span>
+      <span class="sp"></span>
+      <span class="signin">Sign in</span>
+      <span class="btn secondary">Get started</span>
+    </div>
+    <div class="hero">
+      <h3>The visual annotation tool for website feedback</h3>
+      <p>Draw on the page, leave a comment, and hand it to the team.</p>
+      <div class="herorow"><span class="btn primary">Get started for free</span><span class="btn outline">5-star reviews</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing slabs</h2>
+  <p class="lead">Three plan slabs on <code>/pricing</code>, reconstructed from the page shot. The saved <code>plan-card</code> reading was the "Free forever" label, so no plan-card width or radius is tokenised here. Prices on the live page are in the screenshots.</p>
+  <div class="mock"><div class="plans">
+    <div class="plan"><div class="name">Free</div><div class="price">$0</div><div class="sub">Free forever</div><span class="btn outline">Sign up free</span></div>
+    <div class="plan pro"><div class="name">Pro</div><div class="price">Pro</div><div class="sub">The featured slab</div><span class="btn primary">Get started</span><div class="upgrade">upgrade</div></div>
+    <div class="plan"><div class="name">Team</div><div class="price">Team</div><div class="sub">Shared workspace</div><span class="btn outline">Sign up free</span></div>
+  </div></div>
+
+  <h2 class="sh">Dark footer</h2>
+  <p class="lead">The marketing footer is a nested <code>.dark</code> panel, not a page theme. It re-points <code>--background</code> and <code>--foreground</code> to the dark set (#0e0b0d ground, #e3e0df ink) and keeps the orange primary.</p>
+  <div class="mock"><div class="footer dark">
+    <div class="cols">
+      <div><b>Product</b><span>Features</span><span>Pricing</span><span>MCP</span></div>
+      <div><b>Solutions</b><span>Agencies</span><span>Product teams</span></div>
+      <div><b>Resources</b><span>Blog</span><span>Support</span><span>Manifesto</span></div>
+    </div>
+    <div class="word">Huddlekit</div>
+  </div></div>
+
+  <h2 class="sh">App login</h2>
+  <p class="lead">app.huddlekit.com/login is the only anonymous app surface. The card is square (<code>loginCard.radius</code> 0px). Continue with Google paints <code>--primary</code>. Continue with email reveals a pill field. Nothing on this card was submitted.</p>
+  <div class="mock" style="background:var(--canvas-default, #efeceb); padding: 8px 0 24px;">
+    <div class="login">
+      <div class="wm">Huddlekit</div>
+      <h3>Sign in to Huddlekit</h3>
+      <span class="btn primary">Continue with Google</span>
+      <span class="btn secondary">Continue with email</span>
+      <div class="field">Enter your email</div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead"><code>light.*</code> is the painted default (white ground, #111827 ink, #ea580d primary, #f6f3f2 page wash). <code>dark.*</code> is the same names re-pointed for the app's dark OS preference and the nested dark panels (#0e0b0d ground, #e3e0df ink, the orange kept). Swatches in the dark block sit inside <code>.dark</code> so they resolve that set.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius, layout and motion</h2>
+  <p class="lead">Spacing is the Tailwind <code>--spacing</code> unit (0.25rem). <code>--radius</code> is 0.75rem. <code>component.*</code> holds geometry that was measured on the right element: header height, CTA height and radius, the login card, the consent banner. Plan-card width and mobile-drawer width are absent until a recapture reads those containers. <code>motion.*</code> is the reduced-motion probe: durations, easing, and what <code>prefers-reduced-motion</code> changes.</p>
+  <div id="spacing-out" class="kv"></div>
+  <div id="motion-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead"><code>--font-sans</code> is Inter through next/font. <code>--font-geist-mono</code> is the code face. <code>--font-mono</code> is the system mono stack. Samples below fall back to system fonts because the licensed files are not bundled.</p>
+  <div id="type-out"></div>
+  <div id="typ-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Reading</th><th>Where it landed</th></tr><tr><td>Stylesheet harvest</td><td>Declared <code>--background</code>, <code>--primary</code>, <code>--font-*</code> and the rest of the semantic layer, resolved under light and under <code>.dark</code></td></tr><tr><td>Live DOM</td><td>Hover, focus-visible, DevTools-forced pressed, and opened states, each named with the element it was read from</td></tr><tr><td>Withdrawn readings</td><td>FAQ, prose link, plan card, contact row and the mobile drawer matched navigation or a label. Those tokens are not published.</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"sans":{"v":"\"Inter\",\"Inter Fallback\",sans-serif","t":"fontFamily","s":"css-var --font-sans (light)","d":"the product face — \"Inter\",\"Inter Fallback\",sans-serif loaded through next/font; body text and UI"},"inter":{"v":"\"inter\",\"inter Fallback\"","t":"fontFamily","s":"css-var --font-inter (light)","d":"Inter — the next/font face itself (with its metrics-matched fallback)"},"geistMono":{"v":"\"Geist Mono\",\"Geist Mono Fallback\"","t":"fontFamily","s":"css-var --font-geist-mono (light)","d":"Geist Mono — the next/font mono face (with fallback); code and MCP snippets"},"mono":{"v":"ui-monospace,SFMono-Regular,\"SF Mono\",Menlo,Consolas,\"Liberation Mono\",monospace","t":"fontFamily","s":"css-var --font-mono (light)","d":"the mono face — ui-monospace system stack; inline code and pre blocks"}},"weight":{"bold":{"v":700,"t":"fontWeight","s":"css-var --font-weight-bold (light)"},"medium":{"v":500,"t":"fontWeight","s":"css-var --font-weight-medium (light)"},"normal":{"v":400,"t":"fontWeight","s":"css-var --font-weight-normal (light)"},"semibold":{"v":600,"t":"fontWeight","s":"css-var --font-weight-semibold (light)"}},"size":{"xs":{"v":"0.75rem","t":"dimension","s":"css-var --text-xs (light)"},"sm":{"v":"0.875rem","t":"dimension","s":"css-var --text-sm (light)"},"base":{"v":"1rem","t":"dimension","s":"css-var --text-base (light)"},"lg":{"v":"1.125rem","t":"dimension","s":"css-var --text-lg (light)"},"xl":{"v":"1.25rem","t":"dimension","s":"css-var --text-xl (light)"},"2xl":{"v":"1.5rem","t":"dimension","s":"css-var --text-2xl (light)"},"3xl":{"v":"1.875rem","t":"dimension","s":"css-var --text-3xl (light)"},"4xl":{"v":"2.25rem","t":"dimension","s":"css-var --text-4xl (light)"},"5xl":{"v":"3rem","t":"dimension","s":"css-var --text-5xl (light)"},"7xl":{"v":"4.5rem","t":"dimension","s":"css-var --text-7xl (light)"}},"lineHeight":{"2xl":{"v":1.3333,"t":"number","s":"css-var --text-2xl--line-height (light)"},"3xl":{"v":1.2,"t":"number","s":"css-var --text-3xl--line-height (light)"},"4xl":{"v":1.1111,"t":"number","s":"css-var --text-4xl--line-height (light)"},"5xl":{"v":1,"t":"number","s":"css-var --text-5xl--line-height (light)"},"7xl":{"v":1,"t":"number","s":"css-var --text-7xl--line-height (light)"},"base":{"v":1.5,"t":"number","s":"css-var --text-base--line-height (light)"},"lg":{"v":1.5556,"t":"number","s":"css-var --text-lg--line-height (light)"},"sm":{"v":1.4286,"t":"number","s":"css-var --text-sm--line-height (light)"},"xl":{"v":1.4,"t":"number","s":"css-var --text-xl--line-height (light)"},"xs":{"v":1.3333,"t":"number","s":"css-var --text-xs--line-height (light)"},"normal":{"v":1.5,"t":"number","s":"css-var --leading-normal (light)"},"relaxed":{"v":1.625,"t":"number","s":"css-var --leading-relaxed (light)"},"snug":{"v":1.375,"t":"number","s":"css-var --leading-snug (light)"},"tight":{"v":1.25,"t":"number","s":"css-var --leading-tight (light)"}},"tracking":{"normal":{"v":"0em","t":"other","s":"css-var --tracking-normal (light)"},"tight":{"v":"-.025em","t":"other","s":"css-var --tracking-tight (light)"},"tighter":{"v":"-.05em","t":"other","s":"css-var --tracking-tighter (light)"},"wider":{"v":".05em","t":"other","s":"css-var --tracking-wider (light)"},"widest":{"v":".1em","t":"other","s":"css-var --tracking-widest (light)"}}},"radius":{"base":{"v":"0.75rem","t":"dimension","s":"css-var --radius (light)"},"2xl":{"v":"1rem","t":"dimension","s":"css-var --radius-2xl (light)"},"lg":{"v":"0.75rem","t":"dimension","s":"css-var --radius-lg (light)"},"md":{"v":"10px","t":"dimension","s":"css-var --radius-md (light)"},"xl":{"v":"16px","t":"dimension","s":"css-var --radius-xl (light)"},"xs":{"v":"0.125rem","t":"dimension","s":"css-var --radius-xs (light)"}},"space":{"unit":{"v":"0.25rem","t":"dimension","s":"css-var --spacing (light)","d":"the 4px unit the spacing scale multiplies"}},"container":{"2xl":{"v":"42rem","t":"dimension","s":"css-var --container-2xl (light)"},"3xl":{"v":"48rem","t":"dimension","s":"css-var --container-3xl (light)"},"4xl":{"v":"56rem","t":"dimension","s":"css-var --container-4xl (light)"},"5xl":{"v":"64rem","t":"dimension","s":"css-var --container-5xl (light)"},"lg":{"v":"32rem","t":"dimension","s":"css-var --container-lg (light)"},"md":{"v":"28rem","t":"dimension","s":"css-var --container-md (light)"},"sm":{"v":"24rem","t":"dimension","s":"css-var --container-sm (light)"},"xl":{"v":"36rem","t":"dimension","s":"css-var --container-xl (light)"},"xs":{"v":"20rem","t":"dimension","s":"css-var --container-xs (light)"}},"ease":{"in":{"v":[0.4,0.0,1.0,1.0],"t":"cubicBezier","s":"css-var --ease-in (light)"},"inOut":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-in-out (light)"},"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-out (light)"},"default":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --default-transition-timing-function (light)"}},"duration":{"default":{"v":"150ms","t":"duration","s":"css-var --default-transition-duration (light)"}},"blur":{"md":{"v":"12px","t":"dimension","s":"css-var --blur-md (light)"},"sm":{"v":"8px","t":"dimension","s":"css-var --blur-sm (light)"}},"animation":{"ping":{"v":"ping 1s cubic-bezier(0,0,.2,1)infinite","t":"other","s":"css-var --animate-ping (light)","d":"animation shorthand as declared"},"pulse":{"v":"pulse 2s cubic-bezier(.4,0,.6,1)infinite","t":"other","s":"css-var --animate-pulse (light)","d":"animation shorthand as declared"},"spin":{"v":"spin 1s linear infinite","t":"other","s":"css-var --animate-spin (light)","d":"animation shorthand as declared"}},"layout":{"aspectVideo":{"v":"16/9","t":"other","s":"css-var --aspect-video (light)"},"sectionPadding":{"v":"5rem","t":"dimension","s":"css-var --section-padding (light)"},"sectionGap":{"v":"3rem","t":"dimension","s":"css-var --section-gap (light)"},"cardGap":{"v":"1rem","t":"dimension","s":"css-var --card-gap (light)"}},"typography":{"articleTitle":{"v":{"fontFamily":"Inter, \"Inter Fallback\", sans-serif","fontSize":"44px","fontWeight":500,"lineHeight":"48.4px","letterSpacing":"-2.2px"},"t":"typography","s":"measured prose-h1 on /blog/introducing-huddlekit (default state)","d":"the blog article title"},"body":{"v":{"fontFamily":"Inter, \"Inter Fallback\", sans-serif","fontSize":"16px","fontWeight":400,"lineHeight":"24px"},"t":"typography","s":"measured prose-p on /blog/introducing-huddlekit (default state)","d":"article body text"},"navLink":{"v":{"fontFamily":"Inter, \"Inter Fallback\", sans-serif","fontSize":"14px","fontWeight":500,"lineHeight":"20px"},"t":"typography","s":"measured nav-link on / (default state)","d":"a header nav label"},"button":{"v":{"fontFamily":"Inter, \"Inter Fallback\", sans-serif","fontSize":"14px","fontWeight":500,"lineHeight":"20px"},"t":"typography","s":"measured cta-primary on / (default state)","d":"the primary CTA label"},"input":{"v":{"fontFamily":"Inter, \"Inter Fallback\", sans-serif","fontSize":"14px","fontWeight":500,"lineHeight":"20px"},"t":"typography","s":"measured support-search on /support (default state)","d":"the /support search field"},"oauthButton":{"v":{"fontFamily":"inter, \"inter Fallback\"","fontSize":"14px","fontWeight":500,"lineHeight":"20px"},"t":"typography","s":"measured app-google-button on /login (default state)","d":"the 'Continue with Google' label"},"tabLabel":{"v":{"fontFamily":"Inter, \"Inter Fallback\", sans-serif","fontSize":"16px","fontWeight":400,"lineHeight":"24px"},"t":"typography","s":"measured feature-tab on / (default state)","d":"a feature tab label"}},"component":{"header":{"height":{"v":"64px","t":"dimension","s":"measured nav-header default on / (the site header bar)"}},"button":{"cta":{"height":{"v":"40px","t":"dimension","s":"measured cta-primary default on / ('Get started for free' CTA)"},"radius":{"v":"12px","t":"dimension","s":"measured cta-primary default on / (CTA corner)"}},"secondary":{"height":{"v":"32px","t":"dimension","s":"measured cta-secondary default on / (header 'Get started' button)"},"radius":{"v":"12px","t":"dimension","s":"measured cta-secondary default on / (secondary button corner)"}},"oauth":{"height":{"v":"40px","t":"dimension","s":"measured app-google-button default on /login ('Continue with Google')"}},"outline":{"radius":{"v":"12px","t":"dimension","s":"measured cta-outline default on / (outline button corner)"}}},"navMenu":{"width":{"v":"194px","t":"dimension","s":"measured nav-menu-surface opened on / (the open Solutions nav popover)"}},"consentBanner":{"width":{"v":"352px","t":"dimension","s":"measured consent-banner default on / (the cookie consent banner)"},"radius":{"v":"16px","t":"dimension","s":"measured consent-banner default on / (consent banner corner)"}},"loginCard":{"width":{"v":"320px","t":"dimension","s":"measured app-login-card default on /login (the sign-in panel)"},"radius":{"v":"0px","t":"dimension","s":"measured app-login-card default on /login (sign-in panel corner)"}},"input":{"supportSearch":{"height":{"v":"48px","t":"dimension","s":"measured support-search default on /support (the /support search field)"}},"loginEmail":{"height":{"v":"36px","t":"dimension","s":"measured app-email-input default on /login (the login email field)"}},"radius":{"v":"9999px","t":"dimension","s":"measured support-search default on /support (text field corner)","d":"all four corners measure the full-radius clamp — a pill"}},"tab":{"height":{"v":"57px","t":"dimension","s":"measured feature-tab default on / (a vertical feature tab row)"}},"mobileHeader":{"height":{"v":"64px","t":"dimension","s":"measured m-header default on / (phone top bar)"}},"card":{"testimonial":{"radius":{"v":"16px","t":"dimension","s":"measured testimonial-card-dark default on / (dark testimonial card corner)"}}},"component":{"footer":{"bg":{"v":"#0e0b0d","t":"color","s":"measured footer default on / (dark footer fill (the .dark --background role))"}}},"type":{"linkHover":{"color":{"v":"rgba(17, 24, 39, 0.7)","t":"color","s":"measured nav-link hover on / (nav link on hover)"}}}},"motion":{"duration":{"tw-animation-delay":{"v":"0ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--tw-animation-delay"},"d":"Custom property --tw-animation-delay, declared on *, ::backdrop, ::after, ::before."},"70ms":{"v":"70ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"100ms":{"v":"100ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"120ms":{"v":"120ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"140ms":{"v":"140ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"default-transition-duration":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--default-transition-duration"},"d":"Custom property --default-transition-duration, declared on :host, :root."},"200ms":{"v":"200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 192 elements."},"250ms":{"v":"250ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"300ms":{"v":"300ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 30 elements."},"400ms":{"v":"400ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"500ms":{"v":"500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"600ms":{"v":"600ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 9 elements."},"750ms":{"v":"750ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"800ms":{"v":"800ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"1000ms":{"v":"1000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"1200ms":{"v":"1200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1250ms":{"v":"1250ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"1500ms":{"v":"1500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2000ms":{"v":"2000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"2500ms":{"v":"2500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"12000ms":{"v":"12000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"22000ms":{"v":"22000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."}},"easing":{"bezier-0_22-1-0_36-1":{"v":[0.22,1,0.36,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#pages"}},"default-transition-timing-function":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--default-transition-timing-function"},"d":"Custom property --default-transition-timing-function, declared on :host, :root."},"ease":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease`, expanded to its control points."},"ease-in":{"v":[0.4,0,1,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-in"},"d":"Custom property --ease-in, declared on :host, :root."},"ease-in-2":{"v":[0.42,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `ease-in`, expanded to its control points."},"ease-in-out":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-in-out"},"d":"Custom property --ease-in-out, declared on :host, :root."},"ease-in-out-2":{"v":[0.42,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `ease-in-out`, expanded to its control points."},"ease-out":{"v":[0,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-out"},"d":"Custom property --ease-out, declared on :host, :root."},"ease-out-2":{"v":[0,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `ease-out`, expanded to its control points."},"linear":{"v":[0,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `linear`, expanded to its control points."}},"transition":{"all-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 60 elements."},"color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 58 elements."},"tw-gradient-from-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 38 elements."},"tw-gradient-to-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 38 elements."},"tw-gradient-via-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 38 elements."},"background-color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 38 elements."},"border-color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 38 elements."},"fill-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 38 elements."},"outline-color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 38 elements."},"rotate-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 38 elements."},"scale-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 38 elements."},"stroke-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 38 elements."},"text-decoration-color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 38 elements."},"transform-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 38 elements."},"translate-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 38 elements."},"translate-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 28 elements."},"all-300ms-ease":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"grid-template-rows-300ms-ease-out":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"rotate-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"scale-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"transform-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 8 elements."},"tw-gradient-from-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"tw-gradient-to-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"tw-gradient-via-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"background-color-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"border-color-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"color-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"fill-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"outline-color-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"stroke-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"text-decoration-color-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"rotate-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"scale-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"transform-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."},"translate-300ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 2 elements."}},"animation":{"clients-stack":{"v":{"name":"clients-stack","duration":"{motion.duration.12000ms}","delay":"-9000ms","timingFunction":"{motion.easing.default-transition-timing-function}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `clients-stack`."},"enter":{"v":{"name":"enter","duration":"{motion.duration.300ms}","delay":"0ms","timingFunction":"{motion.easing.ease}","iterationCount":"1","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `enter`."},"hero-reveal":{"v":{"name":"hero-reveal","duration":"{motion.duration.600ms}","delay":"300ms","timingFunction":"{motion.easing.bezier-0_22-1-0_36-1}","iterationCount":"1","direction":"normal","fillMode":"backwards"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `hero-reveal`."},"ping":{"v":{"name":"ping","duration":"{motion.duration.1000ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `ping`."},"scattered-scroll":{"v":{"name":"scattered-scroll","duration":"{motion.duration.22000ms}","delay":"0ms","timingFunction":"{motion.easing.linear}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `scattered-scroll`."}},"_extensions":{"reducedMotion":{"probe":"page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page","verified":true,"pages":5,"behaviour":"partial","moving":209,"removed":10,"reduced":0,"kept":197,"partial":2,"increased":0,"added":0,"loops":["clients-stack","ping","scattered-scroll"],"authoredRules":[{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:\\[clip-path\\:inset\\(0_100\\%_0_0\\)\\]","declarations":{"clip-path":"inset(0px 100% 0px 0px)"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".motion-safe\\:\\[stroke-dashoffset\\:1\\]","declarations":{"stroke-dashoffset":"1px"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".hero-reveal","declarations":{"animation-duration":"","animation-timing-function":"","animation-delay":"","animation-iteration-count":"","animation-direction":"","animation-fill-mode":"","animation-play-state":"","animation-name":"","animation-timeline":"","animation-range-start":"","animation-range-end":""}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".page-enter","declarations":{"animation-duration":"0.75s","animation-timing-function":"ease-in-out","animation-delay":"0s","animation-iteration-count":"1","animation-direction":"normal","animation-fill-mode":"backwards","animation-play-state":"running","animation-name":"page-enter","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".nav-surface","declarations":{"transform-origin":"0px 0px","transition-property":"translate, width, height","transition-duration":"0.2s","transition-timing-function":"cubic-bezier(0.22, 1, 0.36, 1)"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".nav-surface[data-state=\"open\"]","declarations":{"animation-duration":"0.12s","animation-timing-function":"ease-out","animation-delay":"0s","animation-iteration-count":"1","animation-direction":"normal","animation-fill-mode":"none","animation-play-state":"running","animation-name":"nav-surface-in","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".nav-surface[data-state=\"closed\"]","declarations":{"animation-duration":"0.1s","animation-timing-function":"ease-in","animation-delay":"0s","animation-iteration-count":"1","animation-direction":"normal","animation-fill-mode":"forwards","animation-play-state":"running","animation-name":"nav-surface-out","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".nav-panel[data-motion^=\"from-\"]","declarations":{"animation-duration":"0.14s","animation-timing-function":"ease-out","animation-delay":"30ms","animation-iteration-count":"1","animation-direction":"normal","animation-fill-mode":"backwards","animation-play-state":"running","animation-name":"nav-panel-in","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: no-preference)","selector":".nav-panel[data-motion^=\"to-\"]","declarations":{"animation-duration":"70ms","animation-timing-function":"ease-out","animation-delay":"0s","animation-iteration-count":"1","animation-direction":"normal","animation-fill-mode":"forwards","animation-play-state":"running","animation-name":"nav-panel-out","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: reduce)","selector":".text-shimmer","declarations":{"color":"var(--muted-foreground)","-webkit-text-fill-color":"var(--muted-foreground)","animation-duration":"auto","animation-timing-function":"ease","animation-delay":"0s","animation-iteration-count":"1","animation-direction":"normal","animation-fill-mode":"none","animation-play-state":"running","animation-name":"none","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion: reduce)","selector":".mode-glow","declarations":{"animation-duration":"auto","animation-timing-function":"ease","animation-delay":"0s","animation-iteration-count":"1","animation-direction":"normal","animation-fill-mode":"none","animation-play-state":"running","animation-name":"none","animation-timeline":"auto","animation-range-start":"normal","animation-range-end":"normal"}},{"media":"@media (prefers-reduced-motion)","selector":".sonner-loading-bar, [data-sonner-toast], [data-sonner-toast] > *","declarations":{"transition-behavior":"normal !important","transition-duration":"0s !important","transition-timing-function":"ease !important","transition-delay":"0s !important","transition-property":"none !important","animation-duration":"auto !important","animation-timing-function":"ease !important","animation-delay":"0s !important","animation-iteration-count":"1 !important","animation-direction":"normal !important","animation-fill-mode":"none !important","animation-play-state":"running !important","animation-name":"none !important","animation-timeline":"auto !important","animation-range-start":"normal !important","animation-range-end":"normal !important"}}]},"propertyUsage":{"all":68,"translate":68,"color":62,"rotate":48,"scale":48,"transform":48,"--tw-gradient-from":42,"--tw-gradient-to":42,"--tw-gradient-via":42,"background-color":42,"border-color":42,"fill":42,"outline-color":42,"stroke":42,"text-decoration-color":42,"grid-template-rows":8},"smoothScrollElements":4,"unusedKeyframes":["caret-blink","collapsible-down","collapsible-up","comment-shake","exit","marker-highlight","marker-pulse","marker-pulse-simple","mode-glow-pulse","nav-panel-in","nav-panel-out","nav-surface-in","nav-surface-out","page-enter","pulse","scroll-mask-x-scroll","scroll-mask-y-scroll","shimmer","sonner-fade-in","sonner-fade-out","sonner-spin","spin","swipe-out-down","swipe-out-left","swipe-out-right","swipe-out-up","text-shimmer"],"notTokenised":[{"name":"motion easing var(--ease-in)","value":"var(--ease-in)","why":"an unresolved var() reference: the easing it computes to was not read","uses":0},{"name":"motion easing var(--ease-in-out)","value":"var(--ease-in-out)","why":"an unresolved var() reference: the easing it computes to was not read","uses":0},{"name":"motion easing var(--ease-out)","value":"var(--ease-out)","why":"an unresolved var() reference: the easing it computes to was not read","uses":0},{"name":"motion easing var(--tw-ease, var(--default-transition-timing-function))","value":"var(--tw-ease, var(--default-transition-timing-function))","why":"an unresolved var() reference: the easing it computes to was not read","uses":0}]}}},"light":{"primary":{"default":{"v":"#ea580d","t":"color","s":"css-var --primary (light)"},"foreground":{"v":"#fff7ed","t":"color","s":"css-var --primary-foreground (light)"}},"secondary":{"default":{"v":"#ede9e7","t":"color","s":"css-var --secondary (light)"},"foreground":{"v":"#18181b","t":"color","s":"css-var --secondary-foreground (light)"}},"accent":{"default":{"v":"#f6f3f2","t":"color","s":"css-var --accent (light)"},"foreground":{"v":"#18181b","t":"color","s":"css-var --accent-foreground (light)"}},"muted":{"default":{"v":"#f6f3f2","t":"color","s":"css-var --muted (light)"},"foreground":{"v":"#747170","t":"color","s":"css-var --muted-foreground (light)"}},"card":{"default":{"v":"#ffffff","t":"color","s":"css-var --card (light)"},"foreground":{"v":"#111827","t":"color","s":"css-var --card-foreground (light)"}},"popover":{"default":{"v":"#ffffff","t":"color","s":"css-var --popover (light)"},"foreground":{"v":"#09090b","t":"color","s":"css-var --popover-foreground (light)"}},"destructive":{"default":{"v":"#e7000b","t":"color","s":"css-var --destructive (light)"}},"border":{"default":{"v":"#e4e4e7","t":"color","s":"css-var --border (light)"},"input":{"v":"#e4e4e7","t":"color","s":"css-var --input (light)"},"ring":{"v":"#ff6900","t":"color","s":"css-var --ring (light)"}},"sidebar":{"background":{"v":"#f6f3f2","t":"color","s":"css-var --sidebar (light)"},"accent":{"v":"#f6f3f2","t":"color","s":"css-var --sidebar-accent (light)"},"accentForeground":{"v":"#18181b","t":"color","s":"css-var --sidebar-accent-foreground (light)"},"border":{"v":"#e4e4e7","t":"color","s":"css-var --sidebar-border (light)"},"foreground":{"v":"#09090b","t":"color","s":"css-var --sidebar-foreground (light)"},"primary":{"v":"#ff6900","t":"color","s":"css-var --sidebar-primary (light)"},"primaryForeground":{"v":"#fff7ed","t":"color","s":"css-var --sidebar-primary-foreground (light)"},"ring":{"v":"#ff6900","t":"color","s":"css-var --sidebar-ring (light)"}},"chart":{"1":{"v":"#f54900","t":"color","s":"css-var --chart-1 (light)"},"2":{"v":"#009689","t":"color","s":"css-var --chart-2 (light)"},"3":{"v":"#104e64","t":"color","s":"css-var --chart-3 (light)"},"4":{"v":"#ffb900","t":"color","s":"css-var --chart-4 (light)"},"5":{"v":"#f9b878","t":"color","s":"css-var --chart-5 (light)"}},"upgrade":{"default":{"v":"#7357ff","t":"color","s":"css-var --upgrade (light)"},"foreground":{"v":"#ffffff","t":"color","s":"css-var --upgrade-foreground (light)"},"mutedForeground":{"v":"#5e3cf0","t":"color","s":"css-var --upgrade-muted-foreground (light)"}},"canvas":{"default":{"v":"#efeceb","t":"color","s":"css-var --canvas (light)"}},"mode":{"glowStrength":{"v":0.75,"t":"number","s":"css-var --mode-glow-strength (light)"}},"scrollMask":{"bottom":{"v":"100%","t":"other","s":"css-var --scroll-mask-b-from (light)"},"left":{"v":"100%","t":"other","s":"css-var --scroll-mask-l-from (light)"},"right":{"v":"100%","t":"other","s":"css-var --scroll-mask-r-from (light)"},"top":{"v":"100%","t":"other","s":"css-var --scroll-mask-t-from (light)"}},"color":{"page":{"v":"#f6f3f2","t":"color","s":"css-var --color-page (light)"},"primaryDark":{"v":"#710000","t":"color","s":"css-var --color-primary-dark (light)"}},"root":{"background":{"v":"#ffffff","t":"color","s":"css-var --background (light)"},"foreground":{"v":"#111827","t":"color","s":"css-var --foreground (light)"}},"component":{"button":{"cta":{"bg":{"v":"{primary.default}","t":"color","s":"measured cta-primary default on / (CTA fill) — the element's class paints the primary.default role, so each theme resolves its own","d":"CTA fill"}},"oauth":{"bg":{"v":"{primary.default}","t":"color","s":"measured app-google-button default on /login ('Continue with Google' fill) — the element's class paints the primary.default role, so each theme resolves its own","d":"'Continue with Google' fill"}}}}},"dark":{"primary":{"default":{"v":"#ea580d","t":"color","s":"css-var --primary (dark)"},"foreground":{"v":"#fff7ed","t":"color","s":"css-var --primary-foreground (dark)"}},"secondary":{"default":{"v":"#2a2625","t":"color","s":"css-var --secondary (dark)"},"foreground":{"v":"#fafafa","t":"color","s":"css-var --secondary-foreground (dark)"}},"accent":{"default":{"v":"#2a2625","t":"color","s":"css-var --accent (dark)"},"foreground":{"v":"#fafafa","t":"color","s":"css-var --accent-foreground (dark)"}},"muted":{"default":{"v":"#2a2625","t":"color","s":"css-var --muted (dark)"},"foreground":{"v":"#a3a09f","t":"color","s":"css-var --muted-foreground (dark)"}},"card":{"default":{"v":"#1a1718","t":"color","s":"css-var --card (dark)"},"foreground":{"v":"#fafafa","t":"color","s":"css-var --card-foreground (dark)"}},"popover":{"default":{"v":"#1a1718","t":"color","s":"css-var --popover (dark)"},"foreground":{"v":"#fafafa","t":"color","s":"css-var --popover-foreground (dark)"}},"destructive":{"default":{"v":"#ff6467","t":"color","s":"css-var --destructive (dark)"}},"border":{"default":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --border (dark)"},"input":{"v":"rgba(255, 255, 255, 0.16)","t":"color","s":"css-var --input (dark)"},"ring":{"v":"#f54900","t":"color","s":"css-var --ring (dark)"}},"sidebar":{"background":{"v":"#1a1718","t":"color","s":"css-var --sidebar (dark)"},"accent":{"v":"#1a1718","t":"color","s":"css-var --sidebar-accent (dark)"},"accentForeground":{"v":"#fafafa","t":"color","s":"css-var --sidebar-accent-foreground (dark)"},"border":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"css-var --sidebar-border (dark)"},"foreground":{"v":"#e3e0df","t":"color","s":"css-var --sidebar-foreground (dark)"},"primary":{"v":"#ea580d","t":"color","s":"css-var --sidebar-primary (dark)"},"primaryForeground":{"v":"#fff7ed","t":"color","s":"css-var --sidebar-primary-foreground (dark)"},"ring":{"v":"#f54900","t":"color","s":"css-var --sidebar-ring (dark)"}},"chart":{"1":{"v":"#1447e6","t":"color","s":"css-var --chart-1 (dark)"},"2":{"v":"#00bc7d","t":"color","s":"css-var --chart-2 (dark)"},"3":{"v":"#fe9a00","t":"color","s":"css-var --chart-3 (dark)"},"4":{"v":"#ad46ff","t":"color","s":"css-var --chart-4 (dark)"},"5":{"v":"#9a3413","t":"color","s":"css-var --chart-5 (dark)"}},"upgrade":{"default":{"v":"#7357ff","t":"color","s":"css-var --upgrade (dark)"},"foreground":{"v":"#ffffff","t":"color","s":"css-var --upgrade-foreground (dark)"},"mutedForeground":{"v":"#b1b3ff","t":"color","s":"css-var --upgrade-muted-foreground (dark)"}},"canvas":{"default":{"v":"#181517","t":"color","s":"css-var --canvas (dark)"}},"mode":{"glowStrength":{"v":1,"t":"number","s":"css-var --mode-glow-strength (dark)"}},"scrollMask":{"bottom":{"v":"100%","t":"other","s":"css-var --scroll-mask-b-from (dark)"},"left":{"v":"100%","t":"other","s":"css-var --scroll-mask-l-from (dark)"},"right":{"v":"100%","t":"other","s":"css-var --scroll-mask-r-from (dark)"},"top":{"v":"100%","t":"other","s":"css-var --scroll-mask-t-from (dark)"}},"color":{"page":{"v":"#2a2625","t":"color","s":"css-var --color-page (dark)"},"primaryDark":{"v":"#710000","t":"color","s":"css-var --color-primary-dark (dark)"}},"root":{"background":{"v":"#0e0b0d","t":"color","s":"css-var --background (dark)"},"foreground":{"v":"#e3e0df","t":"color","s":"css-var --foreground (dark)"}},"component":{"button":{"cta":{"bg":{"v":"{primary.default}","t":"color","s":"measured cta-primary default on / (CTA fill) — the element's class paints the primary.default role, so each theme resolves its own","d":"CTA fill"}},"oauth":{"bg":{"v":"{primary.default}","t":"color","s":"measured app-google-button default on /login ('Continue with Google' fill) — the element's class paints the primary.default role, so each theme resolves its own","d":"'Continue with Google' fill"}}}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles, the painted default'], ['dark', 'dark roles, the app OS preference and nested .dark panels']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.breakpoint || {}, 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.ease || {}, 'ease.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v.join ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.animation || {}, 'animation.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  const sh = (t) => Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v;
+  let e = '';
+  for (const [n, t] of flat((TOK.core || {}).shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(sh(t))}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m || '<div><b>none measured</b></div>';
+})();
+
+(function motion() {
+  const g = TOK.core.motion || {};
+  let m = '';
+  for (const [n, t] of flat(g.duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(g.easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  const tr = Object.keys(g.transition || {}).length, an = Object.keys(g.animation || {}).length;
+  if (tr || an) m += `<div><b>measured</b> <span>${tr} transition tokens, ${an} animation tokens (tokens.json, core.motion)</span></div>`;
+  const rm = (g._extensions || {}).reducedMotion;
+  if (rm) m += `<div><b>reduced motion</b> <span>${esc(rm.behaviour)} — ${esc(String(rm.removed))} removed, ${esc(String(rm.kept))} kept across ${esc(String(rm.pages))} pages</span></div>`;
+  $('#motion-out').innerHTML = m || '<div><b>no motion probe</b></div>';
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v)) * (String(resolveVal(t.v)).endsWith('rem') ? 16 : 1);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — Huddlekit</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Huddlekit</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).leading || {}, 'font.leading.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+
+(function typ() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core || {}).typography || {}, 'typography.')) {
+    const v = t.v || {};
+    const fs = parseFloat(v.fontSize) || 14;
+    const mono = /mono/i.test(String(v.fontFamily));
+    const meta = [v.fontSize, v.lineHeight, 'w' + v.fontWeight, v.letterSpacing].filter(Boolean).join(' / ');
+    h += `<div class="tr"><span class="ts" style="font-family:${mono ? 'var(--sg-mono)' : 'var(--sg-sans)'};font-size:${Math.min(fs, 44)}px;font-weight:${esc(String(v.fontWeight || 400))};line-height:${esc(v.lineHeight || 'normal')}">${esc(n)} — Huddlekit 0123</span><span class="tv">${esc(meta)}</span></div>`;
+  }
+  $('#typ-out').innerHTML = h;
+})();
+</script>
+</body>
+</html>

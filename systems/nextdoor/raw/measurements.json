@@ -1,0 +1,53 @@
+{
+  "captured": "2026-11-19",
+  "source": "https://nextdoor.com/",
+  "method": "T3 preview browser, live attached page, getComputedStyle and declared CSS rules. preview_snapshot failed twice with 'The browser is not producing screenshot frames', so this package has no screenshots.",
+  "viewportDesktop": {"innerWidth": 1169, "innerHeight": 731, "devicePixelRatio": 2, "visualViewport": {"width": 1169, "height": 731, "scale": 1}},
+  "viewportPhone": {"innerWidth": 390, "innerHeight": 844, "devicePixelRatio": 2, "visualViewport": {"width": 390, "height": 844, "scale": 1}, "requested": {"width": 390, "height": 844}},
+  "htmlClass": "light Root__ibmhqu3",
+  "colorScheme": "normal",
+  "cookieDialog": "none observed",
+  "pages": [
+    {"url": "https://nextdoor.com/", "title": "Nextdoor", "note": "signed-out marketing home with the signup card"},
+    {"url": "https://about.nextdoor.com/", "title": "About Nextdoor", "note": "redirect from /about_us/"},
+    {"url": "https://help.nextdoor.com/s/article/Privacy-Policy-2026?language=en_US", "title": "Privacy Policy 2026", "note": "redirect from /privacy_policy/; Salesforce help center, different type"},
+    {"url": "https://nextdoor.com/login/", "title": "Login - Nextdoor", "note": "email or mobile number and password. Not submitted."},
+    {"url": "https://help.nextdoor.com/s/article/community-guidelines?language=en_US", "title": "Article Detail", "note": "redirect from /neighborhood_guidelines/"}
+  ],
+  "computed": {
+    "body": {"backgroundColor": "rgb(255, 255, 255)", "color": "rgb(35, 47, 70)", "fontSize": "16px", "fontFamily": "Saans, system-ui, -apple-system, BlinkMacSystemFont, HelveticaNeue, Helvetica Neue, Helvetica, Roboto, Segoe UI, Arial, sans-serif"},
+    "h1Home": {"text": "Discover your neighborhood", "fontSize": "22px", "lineHeight": "26px", "fontWeight": "620", "color": "rgb(35, 47, 70)", "fontFamily": "Saans"},
+    "signupCard": {"backgroundColor": "rgb(255, 255, 255)", "borderRadius": "12px", "padding": "24px", "widthDesktop": 400, "widthPhone": 326},
+    "emailField": {"height": "56px", "borderRadius": "12px", "padding": "22px 12px 8px", "fontSize": "16px", "fontWeight": "420", "boxShadowRest": "rgb(202, 211, 229) 0px 0px 0px 1px inset", "boxShadowFocus": "rgb(35, 47, 70) 0px 0px 0px 2px inset", "backgroundColor": "rgba(0, 0, 0, 0)"},
+    "passwordField": {"height": "56px", "borderRadius": "12px", "padding": "22px 46px 8px 12px", "boxShadow": "rgb(202, 211, 229) 0px 0px 0px 1px inset"},
+    "buttonBrandLarge": {"text": "Continue", "backgroundColor": "rgb(27, 135, 81)", "color": "rgb(255, 255, 255)", "height": "48px", "borderRadius": "10000px", "padding": "8px 24px", "fontSize": "16px", "fontWeight": "420", "outlineFocus": "solid 3px rgb(255, 255, 255)"},
+    "buttonNeutralLarge": {"text": "Log in", "backgroundColor": "rgb(240, 242, 245)", "color": "rgb(35, 47, 70)", "height": "48px", "borderRadius": "10000px", "padding": "8px 24px", "fontSize": "16px", "fontWeight": "420", "outlineFocus": "solid 3px rgb(35, 47, 70)"},
+    "buttonNeutralMedium": {"text": "Partners", "height": "40px", "padding": "8px 16px", "borderRadius": "10000px", "backgroundColor": "rgba(0, 0, 0, 0)", "color": "rgb(35, 47, 70)"},
+    "buttonBrandLoginSubmit": {"text": "Log in", "backgroundColor": "rgb(27, 135, 81)", "color": "rgb(255, 255, 255)", "height": "48px", "borderRadius": "10000px", "padding": "8px 24px", "fontSize": "14px", "fontWeight": "420"},
+    "linkPrimary": {"text": "Privacy Policy", "color": "rgb(35, 47, 70)", "fontSize": "14px", "lineHeight": "18px", "fontWeight": "420", "textDecorationFocus": "underline"},
+    "linkSecondary": {"text": "About", "color": "rgb(87, 101, 128)", "fontSize": "14px", "lineHeight": "18px", "fontWeight": "620"},
+    "loginHeading": {"text": "Welcome back", "fontSize": "22px", "lineHeight": "26px", "fontWeight": "620", "color": "rgb(35, 47, 70)"},
+    "aboutH1": {"text": "If it's happening in your neighborhood, it's on Nextdoor.", "fontSize": "60px", "fontWeight": "600", "color": "rgb(255, 255, 255)", "fontFamily": "Saans", "pageBackground": "rgb(255, 255, 255)", "bodyColor": "rgb(35, 47, 70)", "bodyFontSize": "18px"},
+    "helpCenter": {"fontFamily": "Lato", "bodyColor": "rgb(51, 51, 51)", "bodyFontSize": "13px", "articleTitleFont": "Next-Sans-Semibold", "note": "Salesforce help center, not the Blocks system"}
+  },
+  "declaredButton": {
+    "brandFaceVar": "--_19hidss0: #1B8751",
+    "neutralFaceVar": "--_19hidss0: #F0F2F5",
+    "hoverOverlayVar": "--_19hidss4: hsl(from #232F46 h s l / 0.08)",
+    "hoverRule": "background-color switches to var(--_19hidss0) with an 8% ink wash on :hover",
+    "pressedRule": "[data-pressed=true] uses the same wash variable",
+    "disabledClass": ".StyledButtonV3_disabled_true__19hidssl (no colour read)",
+    "focusRingBrand": "solid 3px rgb(255, 255, 255) on the green face",
+    "focusRingNeutral": "solid 3px rgb(35, 47, 70) on the gray face",
+    "fieldFocusRule": ".Textfield__w16k37c:focus { box-shadow: inset 0px 0px 0px 2px var(--nd-color-fgPrimary) }",
+    "fieldErrorFocusRule": "[data-state-error] .Textfield__w16k37c:focus { box-shadow: inset 0px 0px 0px 2px var(--nd-color-staticRed) }",
+    "linkHover": ".Link_variant_primary:hover { text-decoration: underline 2px }; .Link_variant_secondary:hover { text-decoration: underline }",
+    "buttonMotion": {"duration": "150ms", "easing": "cubic-bezier(0.2, 0, 0.0, 1)"},
+    "iconSize": {"width": "20px", "height": "20px"}
+  },
+  "breakpointsObserved": ["(max-width: 679px)", "(min-width: 680px)", "(min-width: 768px)", "(min-width: 1025px)"],
+  "gridColumns": {"at1169": "6", "at390": "4", "declaredDesktop": "12"},
+  "fontFace": "https://d33c41ebahvfs6.cloudfront.net/static/fonts/SaansVFUprights.woff2",
+  "prefersReducedMotion": false,
+  "reduceRulesFound": 0
+}

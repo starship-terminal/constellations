@@ -1,0 +1,17 @@
+{
+ "_note": "Rules for systems/fresha. A fully public signed-out capture: every route is public marketing, marketplace browse, a public venue profile, the booking wizard's first (service-selection) step, or a signed-out sign-in form. The auth/partner email fields were typed into with a placeholder address and cleared before the next capture, never submitted; no booking, payment, OAuth or SSO flow was activated. Every email the OCR finds is published content: fresha.com addresses in footers/help/legal pages, placeholder addresses in product copy, or venue contact details the venues publish themselves. Venue, staff and reviewer names on the public venue page are Fresha's own published content, not private data of ours. No regions need masking.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@fresha\\.com$",
+   "@fresha\\.io$",
+   "@example\\.com$",
+   "@example\\.inc$",
+   "@example\\.net$",
+   "@example\\.org$",
+   "@everyone$",
+   "@here$"
+  ]
+ },
+ "families": []
+}

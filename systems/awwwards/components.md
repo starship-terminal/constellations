@@ -66,7 +66,7 @@ Values that apply across entries, from the measurement files.
 The header (wordmark, Explore/Directory/Academy/Jobs/Market nav, Log in / Sign Up, Be Pro, Submit Website).
 
 #### Header
-The top bar: wordmark, Explore/Directory/Academy/Jobs/Market nav, Log in / Sign Up / Be Pro / Submit Website. Read as `header` on the the home page page.
+The top bar: wordmark, Explore/Directory/Academy/Jobs/Market nav, Log in / Sign Up / Be Pro / Submit Website. Read as `header` on the home page.
 
 **Values (default).** size 1440 x 54; background transparent; text Inter Tight 14/28 500, #222222 `color.neutral.buttonBorder`; layers div.header-main__overlay 2880.0x1800.0 rgba(0, 0, 0, 0.7); div.header-main__container 1336.0x54.0 rgb(233, 233, 233) 8px; div.nav-header-main__dropdown 1336.0x0.0 rgb(237, 237, 237) 0px 0px 8px 8px; span.budget-tag.budget-tag--solid--black 0.0x0.0 rgb(34, 34, 34) 4px; span.budget-tag.budget-tag--small--solid--black 28.2x16.0 rgb(34, 34, 34) 4px; span::before.budget-tag.budget-tag--small--solid--bl.
 
@@ -75,14 +75,14 @@ Child layers that carry the look: div 2880x1800 background rgba(0, 0, 0, 0.7); d
 ![Header default](components/crops/header-default.png)
 
 #### Logo
-The wordmark link back to /. Read as `logo` on the the home page page.
+The wordmark link back to /. Read as `logo` on the home page.
 
 **Values (default).** size 30 x 16; background transparent; text Inter Tight 14/28 400, #222222 `color.neutral.buttonBorder`; icon 30 x 16, #222222 `color.neutral.buttonBorder`.
 
 ![Logo default](components/crops/logo-default.png)
 
 #### Nav link
-A top-level nav link (Directory). Measured, never followed. Read as `nav-item` on the the home page page.
+A top-level nav link (Directory). Measured, never followed. Read as `nav-item` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -94,17 +94,17 @@ A top-level nav link (Directory). Measured, never followed. Read as `nav-item` o
 ![Nav link default](components/crops/nav-item-default.png) ![Nav link hover](components/crops/nav-item-hover.png) ![Nav link focus-visible](components/crops/nav-item-focus-visible.png) ![Nav link pressed](components/crops/nav-item-pressed.png)
 
 #### Log in link
-Log in in the site header. Measured, never followed — the click opens nothing headless and no login page exists signed-out. Read as `login-link` on the the page.
+Log in in the site header. Measured, never followed — the click opens nothing headless and no login page exists signed-out. Read as `login-link` on the page.
 
 Not on the page when it was captured.
 
 #### Sign Up link
-Sign Up in the site header. Measured, never followed. Read as `signup-link` on the the page.
+Sign Up in the site header. Measured, never followed. Read as `signup-link` on the page.
 
 Not on the page when it was captured.
 
 #### Submit Website button
-The header CTA. Measured, never followed. Read as `submit-cta` on the the home page page.
+The header CTA. Measured, never followed. Read as `submit-cta` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -114,7 +114,7 @@ The header CTA. Measured, never followed. Read as `submit-cta` on the the home p
 ![Submit Website button default](components/crops/submit-cta-default.png) ![Submit Website button hover](components/crops/submit-cta-hover.png) ![Submit Website button focus-visible](components/crops/submit-cta-focus-visible.png) ![Submit Website button pressed](components/crops/submit-cta-pressed.png)
 
 #### Be Pro link
-The Be Pro upsell button in the header. Measured, never followed. Read as `bepro-link` on the the home page page.
+The Be Pro upsell button in the header. Measured, never followed. Read as `bepro-link` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -128,7 +128,7 @@ The Be Pro upsell button in the header. Measured, never followed. Read as `bepro
 The Site of the Day hero card and the nominee cards below.
 
 #### Section heading
-"Site of the Day" heading over the first card. Read as `sotd-heading` on the the home page page.
+"Site of the Day" heading over the first card. Read as `sotd-heading` on the home page.
 
 **Values (default).** size 1336 x 359.47; background transparent; text Inter Tight 14/28 400, #222222 `color.neutral.buttonBorder`; layers strong.budget-tag.budget-tag--medium 98.7x23.0 T:1px solid rgba(34, 34, 34, 0.3) / R:1px solid rgba(34, 34, 34, 0.3) / B:1px solid rgba(34, 34, 34, 0.3) / L:1px solid rgba(34, 34, 34, 0.3) 4px; strong::before.link-underlined 70.2188pxx2px; strong::before.link-underlined 110.359pxx2px.
 
@@ -137,7 +137,7 @@ Child layers that carry the look: strong 98.7x23 border 1px solid rgba(34, 34, 3
 ![Section heading default](components/crops/sotd-heading-default.png)
 
 #### Site card
-A winning-site card: screenshot, title, author and rollover actions. Read as `site-card` on the the home page page.
+A winning-site card: screenshot, title, author and rollover actions. Read as `site-card` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -148,7 +148,7 @@ Child layers that carry the look: div 658x493.5 image linear-gradient(0deg, rgba
 ![Site card default](components/crops/site-card-default.png) ![Site card hover](components/crops/site-card-hover.png)
 
 #### Card action
-The "Vote Now" button revealed by hovering a site card; it stayed display:none under headless hover — see card-action on the site page instead. Read as `card-cta` on the the home page page.
+The "Vote Now" button revealed by hovering a site card; it stayed display:none under headless hover — see card-action on the site page instead. Read as `card-cta` on the home page.
 
 Not on the page when it was captured.
 
@@ -157,7 +157,7 @@ Not on the page when it was captured.
 The /websites/ grid: the Awards/Category/Tag/Technology filter bar and the site cards.
 
 #### Grid title
-"Winning websites. Web Design Inspiration". Read as `grid-title` on the the winners grid page.
+"Winning websites. Web Design Inspiration". Read as `grid-title` on the winners grid page.
 
 **Values (default).** size 305.89 x 18.2; background transparent; text Inter Tight 14/18.2 600, #222222 `color.neutral.buttonBorder`; layers ::after rgba(0, 0, 0, 0) 1px none 1; h1::after.breadcrumb-filters__title autoxauto T:1px solid rgb(34, 34, 34) / R:1px solid rgb(34, 34, 34) / B:1px solid rgb(34, 34, 34) / L:1px solid rgb(34, 34, 34) 2px.
 
@@ -166,7 +166,7 @@ Child layers that carry the look: h1::after autoxauto border 1px solid #222222 `
 ![Grid title default](components/crops/grid-title-default.png)
 
 #### Filter tab
-An Awards/Category/Tag/Technology filter tab on the winners grid. Read as `filter-item` on the the winners grid page.
+An Awards/Category/Tag/Technology filter tab on the winners grid. Read as `filter-item` on the winners grid page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -176,14 +176,14 @@ An Awards/Category/Tag/Technology filter tab on the winners grid. Read as `filte
 ![Filter tab default](components/crops/filter-item-default.png) ![Filter tab hover](components/crops/filter-item-hover.png)
 
 #### Filter dropdown
-The open sublist under a filter tab. Read as `filter-dropdown` on the the winners grid page.
+The open sublist under a filter tab. Read as `filter-dropdown` on the winners grid page.
 
 **Values (default).** size 280 x 346; padding 8px 8px 0px 8px; radius 8px; background #f8f8f8 `color.neutral.avatarBg`; shadow rgba(0, 0, 0, 0.2) 0px 0px 6px 0px; text Inter Tight 13.3/28 500, #222222 `color.neutral.buttonBorder`; transition all 0.6s ease.
 
 ![Filter dropdown default](components/crops/filter-dropdown-default.png)
 
 #### Filter option
-An option row inside the open filter dropdown. Measured, never followed. Read as `filter-option` on the the winners grid page.
+An option row inside the open filter dropdown. Measured, never followed. Read as `filter-option` on the winners grid page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -195,7 +195,7 @@ Child layers that carry the look: a::before 12pxx12px border 1px solid #a7a7a7 r
 ![Filter option default](components/crops/filter-option-default.png) ![Filter option hover](components/crops/filter-option-hover.png)
 
 #### Grid card
-A winning-site card on the winners grid. Read as `grid-card` on the the winners grid page.
+A winning-site card on the winners grid. Read as `grid-card` on the winners grid page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -206,7 +206,7 @@ Child layers that carry the look: div 432x324 image linear-gradient(0deg, rgba(0
 ![Grid card default](components/crops/grid-card-default.png) ![Grid card hover](components/crops/grid-card-hover.png)
 
 #### Grid card link
-The card anchor to /sites/<slug>. Measured, never followed. Read as `grid-card-link` on the the winners grid page.
+The card anchor to /sites/<slug>. Measured, never followed. Read as `grid-card-link` on the winners grid page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -220,28 +220,28 @@ The card anchor to /sites/<slug>. Measured, never followed. Read as `grid-card-l
 A /sites/ entry: display title, jury score box, the gold Vote button and category tags.
 
 #### Site title
-Read as `site-title` on the the site-detail page page.
+Read as `site-title` on the site-detail page.
 
 **Values (default).** size 1336 x 253.47; background transparent; text Inter Tight 126.73/126.73 600, #222222 `color.neutral.buttonBorder`.
 
 ![Site title default](components/crops/site-title-default.png)
 
 #### Score box
-The jury score panel (Design/Usability/Creativity/Content). Read as `score-box` on the the site-detail page page.
+The jury score panel (Design/Usability/Creativity/Content). Read as `score-box` on the site-detail page.
 
 **Values (default).** size 69.38 x 83.72; border 1px solid #222222 `color.neutral.buttonBorder`; radius 8px; background transparent; text Inter Tight 13.97/13.97 500, #222222 `color.neutral.buttonBorder`.
 
 ![Score box default](components/crops/score-box-default.png)
 
 #### Score note
-Read as `score-note` on the the site-detail page page.
+Read as `score-note` on the site-detail page.
 
 **Values (default).** size 45.03 x 30.44; background transparent; text Inter Tight 23.05/13.97 600, #222222 `color.neutral.buttonBorder`.
 
 ![Score note default](components/crops/score-note-default.png)
 
 #### Vote button
-The vote CTA; measured except a real press — voting records a score and is never clicked. Read as `vote-button` on the the site-detail page page.
+The vote CTA; measured except a real press — voting records a score and is never clicked. Read as `vote-button` on the site-detail page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -251,14 +251,14 @@ The vote CTA; measured except a real press — voting records a score and is nev
 ![Vote button default](components/crops/vote-button-default.png) ![Vote button hover](components/crops/vote-button-hover.png) ![Vote button focus-visible](components/crops/vote-button-focus-visible.png)
 
 #### Visit link
-The external visit-site toolbar icon; the hover pass found it outside the viewport, so only the at-rest reading stands. Read as `visit-link` on the the site-detail page page.
+The external visit-site toolbar icon; the hover pass found it outside the viewport, so only the at-rest reading stands. Read as `visit-link` on the site-detail page.
 
 **Values (default).** size 20 x 20; background transparent; text Inter Tight 14/28 300, #222222 `color.neutral.buttonBorder`; transition all 0.3s ease; icon 20 x 20, #222222 `color.neutral.buttonBorder`.
 
 ![Visit link default](components/crops/visit-link-default.png)
 
 #### Tag chip
-A category tag (Art & Illustration…) on the site detail page. Measured, never followed. Read as `tag-chip` on the the site-detail page page.
+A category tag (Art & Illustration…) on the site detail page. Measured, never followed. Read as `tag-chip` on the site-detail page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -268,7 +268,7 @@ A category tag (Art & Illustration…) on the site detail page. Measured, never 
 ![Tag chip default](components/crops/tag-chip-default.png) ![Tag chip hover](components/crops/tag-chip-hover.png) ![Tag chip focus-visible](components/crops/tag-chip-focus-visible.png) ![Tag chip pressed](components/crops/tag-chip-pressed.png)
 
 #### Card action
-A rollover action icon on a related-site card. Measured, never clicked. Read as `card-action` on the the page.
+A rollover action icon on a related-site card. Measured, never clicked. Read as `card-action` on the page.
 
 Not on the page when it was captured.
 
@@ -277,7 +277,7 @@ Not on the page when it was captured.
 The curated collections index.
 
 #### Collections title
-Read as `coll-title` on the the collections index page.
+Read as `coll-title` on the collections index page.
 
 **Values (default).** size 99 x 18.2; background transparent; text Inter Tight 14/18.2 600, #222222 `color.neutral.buttonBorder`; layers ::after rgba(0, 0, 0, 0) 1px none 1; h1::after.breadcrumb-filters__title autoxauto T:1px solid rgb(34, 34, 34) / R:1px solid rgb(34, 34, 34) / B:1px solid rgb(34, 34, 34) / L:1px solid rgb(34, 34, 34) 2px.
 
@@ -286,7 +286,7 @@ Child layers that carry the look: h1::after autoxauto border 1px solid #222222 `
 ![Collections title default](components/crops/coll-title-default.png)
 
 #### Collection card
-A curated-collection card. Measured, never followed. Read as `coll-card` on the the collections index page.
+A curated-collection card. Measured, never followed. Read as `coll-card` on the collections index page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -300,19 +300,19 @@ A curated-collection card. Measured, never followed. Read as `coll-card` on the 
 The public /submit/ page; nothing was submitted.
 
 #### Submit title
-Read as `submit-title` on the the submit gate page.
+Read as `submit-title` on the submit gate page.
 
 **Values (default).** size 505.11 x 100.53; background transparent; text Inter Tight 41.88/50.26 600, #222222 `color.neutral.buttonBorder`.
 
 ![Submit title default](components/crops/submit-title-default.png)
 
 #### Submit CTA
-The first call-to-action on /submit/. Measured, never followed. Read as `submit-cta-2` on the the page.
+The first call-to-action on /submit/. Measured, never followed. Read as `submit-cta-2` on the page.
 
 Not on the page when it was captured.
 
 #### Plan/pricing card
-A submission plan card where the page offers one. Read as `plan-card` on the the submit gate page.
+A submission plan card where the page offers one. Read as `plan-card` on the submit gate page.
 
 **Values (default).** size 1336 x 550.91; background transparent; text Inter Tight 29.29/38.08 600, #222222 `color.neutral.buttonBorder`; icon 20 x 20, #222222 `color.neutral.buttonBorder`; layers div.plan.plan--standard 432.0x550.9 rgb(255, 255, 255) 14px; a.button.button--large--outline--rounded 230.0x72.0 T:1px solid rgb(34, 34, 34) / R:1px solid rgb(34, 34, 34) / B:1px solid rgb(34, 34, 34) / L:1px solid rgb(34, 34, 34) 8px; div.plan.plan--pro 884.0x550.9 rgb(34, 34, 34) 14px; a.button.button--medium--outline--white--rounded 230.0x60.0 T:1px solid rgb(255, 255, 255) / R:1px solid rgb(25.
 
@@ -325,7 +325,7 @@ Child layers that carry the look: div 432x550.9 background #ffffff `color.neutra
 The page footer and section links.
 
 #### Footer
-Read as `footer` on the the home page page.
+Read as `footer` on the home page.
 
 **Values (default).** size 1440 x 407.38; background transparent; text Inter Tight 14/14 600, #222222 `color.neutral.buttonBorder`; icon 30 x 16, #222222 `color.neutral.buttonBorder`; layers div.footer__bottom 1336.0x71.2.
 
@@ -334,7 +334,7 @@ Child layers that carry the look: div 1336x71.2 image linear-gradient(to right, 
 ![Footer default](components/crops/footer-default.png)
 
 #### Footer link
-Read as `footer-link` on the the home page page.
+Read as `footer-link` on the home page.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -350,14 +350,14 @@ Read as `footer-link` on the the home page page.
 The same surface at phone width, with the menu layer open.
 
 #### Mobile header
-Read as `m-header` on the the home page page at 390 wide.
+Read as `m-header` on the home page at 390 wide.
 
 **Values (default).** size 390 x 54; background #f8f8f8 `color.neutral.avatarBg`; text Inter Tight 14/28 300, #222222 `color.neutral.buttonBorder`; icon 16 x 16, #222222 `color.neutral.buttonBorder`.
 
 ![Mobile header default](components/crops/m-header-default.png)
 
 #### Mobile menu button
-Read as `m-menu-button` on the the home page page at 390 wide.
+Read as `m-menu-button` on the home page at 390 wide.
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
@@ -366,21 +366,21 @@ Read as `m-menu-button` on the the home page page at 390 wide.
 ![Mobile menu button default](components/crops/m-menu-button-default.png) ![Mobile menu button hover](components/crops/m-menu-button-hover.png) ![Mobile menu button pressed](components/crops/m-menu-button-pressed.png)
 
 #### Mobile menu, open
-The menu button after its own toggle; the crop is the open menu layer. Read as `m-menu-open` on the the home page page at 390 wide.
+The menu button after its own toggle; the crop is the open menu layer. Read as `m-menu-open` on the home page at 390 wide.
 
 **Values (opened).** size 54 x 54; background transparent; text Inter Tight 14/28 400, #222222 `color.neutral.buttonBorder`; icon 16 x 16, #222222 `color.neutral.buttonBorder`; layers ::before rgba(0, 0, 0, 0) 0px none 1.
 
 ![Mobile menu, open opened](components/crops/m-menu-open-opened.png)
 
 #### Mobile nav link
-A row inside the opened menu. Read as `m-nav-link` on the the home page page at 390 wide.
+A row inside the opened menu. Read as `m-nav-link` on the home page at 390 wide.
 
 **Values (default).** size 390 x 54; padding 0px 16px; background transparent; text Inter Tight 14/28 400, #222222 `color.neutral.buttonBorder`; transition all 0.3s ease.
 
 ![Mobile nav link default](components/crops/m-nav-link-default.png)
 
 #### Mobile site card
-A winning-site card on mobile. Read as `m-site-card` on the the home page page at 390 wide.
+A winning-site card on mobile. Read as `m-site-card` on the home page at 390 wide.
 
 **Values (default).** size 358 x 268.5; background transparent; text Inter Tight 18/28 300, #222222 `color.neutral.buttonBorder`.
 

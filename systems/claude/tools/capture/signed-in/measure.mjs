@@ -32,6 +32,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { chromium, REF, RAW, CROPS, SNAPS, SCROLL, metaOf, newContext, openSnap, setLight } from './lib.mjs';
+import { safeUrl } from '../safe-url.mjs';
+// An activated .venv without Pillow resolves python3 to itself: set PYTHON to a python3 that has it.
+const PYTHON = process.env.PYTHON || 'python3';
 
 if (!SNAPS) { console.error('SNAPS=<snapshot dir> is required'); process.exit(2); }
 const OUT = path.join(RAW, 'components-computed.json');
@@ -225,7 +228,7 @@ function styleOf(el, props) {
   const pp = el.querySelector('[contenteditable=true] p[data-placeholder], [contenteditable=true] p.is-editor-empty') || (el.matches('p[data-placeholder]') ? el : null);
   if (pp) {
     const b = getComputedStyle(pp, '::before');
-    out.placeholder = { text: pp.getAttribute('data-placeholder') || b.content, color: b.color, opacity: b.opacity, fontSize: b.fontSize, lineHeight: b.lineHeight, float: b.cssFloat, height: b.height };
+    out.placeholder = { text: pp.getAttribute('data-placeholder') || noUrl(b.content).slice(0, 80), color: b.color, opacity: b.opacity, fontSize: b.fontSize, lineHeight: b.lineHeight, float: b.cssFloat, height: b.height };
   }
   const svg = el.tagName.toLowerCase() === 'svg' ? el : [...el.querySelectorAll('svg')].find((s) => s.getBoundingClientRect().width > 1);
   if (svg) {
@@ -541,7 +544,7 @@ async function measureIn(ctx, meta, label, specs, out) {
     if (clip.width < 1 || clip.height < 1) throw new Error('off screen');
     const file = path.join(CROPS, `${name}.png`);
     await page.screenshot({ path: file, clip, animations: 'allow' });
-    execFileSync('python3', ['-c', 'import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert("RGB")\nif im.width>1600: im=im.resize((im.width//2, im.height//2), Image.LANCZOS)\nim.quantize(256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(f, optimize=True)', file]);
+    execFileSync(PYTHON, ['-c', 'import sys\nfrom PIL import Image\nf=sys.argv[1]\nim=Image.open(f).convert("RGB")\nif im.width>1600: im=im.resize((im.width//2, im.height//2), Image.LANCZOS)\nim.quantize(256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(f, optimize=True)', file]);
     return path.relative(REF, file);
   };
 
@@ -574,9 +577,8 @@ async function measureIn(ctx, meta, label, specs, out) {
           await page.waitForTimeout(450);
           via = job.hoverOn ? 'mouse hover on its row' : 'mouse hover';
         } else if (job.base === 'pressed') {
-          // A click on the empty edge first, so the press that follows is a pointer interaction and
-          // the browser does not carry an earlier keyboard focus-visible over to it.
-          await page.mouse.click(rest.x, rest.y);
+          // Drop any earlier keyboard focus first (no click is dispatched anywhere), so the browser
+          // does not carry a focus-visible over to the press.
           await resetPage();
           const p = await pointOf(loc);
           await page.mouse.move(p.x, p.y, { steps: 4 });
@@ -619,8 +621,9 @@ async function measureIn(ctx, meta, label, specs, out) {
         c.states[state] = { theme, snapshot: label, error: String(e.message || e).slice(0, 200) };
         log('  !', name, String(e.message || e).slice(0, 120));
       } finally {
-        await page.mouse.up().catch(() => {});
+        // off the element before the button comes up: a down and up on the same element is a click
         await page.mouse.move(rest.x, rest.y).catch(() => {});
+        await page.mouse.up().catch(() => {});
         await untag().catch(() => {});
       }
     }
@@ -648,7 +651,9 @@ out._meta = {
   },
   tokens: '`vars` lists every var(--x) named in the classes of the element and its first descendants, resolved in that state\'s theme.',
   refreshed: '2026-10-17: new copies for forms, feedback and states (see READ); the 2026-10-04 readings are kept as they were',
-  snapshots: { ...(out._meta && out._meta.snapshots), ...Object.fromEntries(labels.map((l) => { const m = metaOf(l); return [l, { url: m.url.replace(/\/(chat|project|artifact|cowork)\/[0-9a-fA-F-]{8,}/, '/$1/<id>'), title: m.title, w: m.w, h: m.h, read: READ[l] || '2026-10-04', ...(SCROLL[l] ? { scroll: SCROLL[l] } : {}) }]; })) },
+  // Entries kept from an earlier run go through safeUrl again, so a partial rerun never writes an
+  // unmasked URL it carried over; new ones keep only origin and route words (no query, no fragment, no id).
+  snapshots: { ...Object.fromEntries(Object.entries((out._meta && out._meta.snapshots) || {}).map(([l, v]) => [l, { ...v, url: v.url && safeUrl(v.url) }])), ...Object.fromEntries(labels.map((l) => { const m = metaOf(l); return [l, { url: safeUrl(m.url), title: m.title, w: m.w, h: m.h, read: READ[l] || '2026-10-04', ...(SCROLL[l] ? { scroll: SCROLL[l] } : {}) }]; })) },
 };
 out.components ??= {};
 fs.mkdirSync(CROPS, { recursive: true });

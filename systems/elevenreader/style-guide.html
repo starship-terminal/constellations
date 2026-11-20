@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ElevenReader style guide</title>
+<meta name="description" content="ElevenReader design tokens and the public signed-out surface's components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-inter: Inter, "Inter Fallback";
+  --font-family-waldenburg: Waldenburg, "Waldenburg Fallback", sans-serif;
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-display: 400;
+  --color-accent: #4680fd;
+  --color-amber-100: #fef3c6;
+  --color-amber-200: #fee685;
+  --color-amber-300: #ffd230;
+  --color-amber-400: #ffb900;
+  --color-amber-50: #fffbeb;
+  --color-amber-500: #fe9a00;
+  --color-amber-600: #e17100;
+  --color-amber-700: #bb4d00;
+  --color-amber-800: #973c00;
+  --color-amber-900: #7b3306;
+  --color-amber-950: #461901;
+  --color-black-default: #000000;
+  --color-black-alpha-10: rgba(0, 0, 0, 0.1);
+  --color-black-alpha-100: #000000;
+  --color-black-alpha-5: rgba(0, 0, 0, 0.05);
+  --color-black-alpha-60: rgba(0, 0, 0, 0.6);
+  --color-black-alpha-80: rgba(0, 0, 0, 0.8);
+  --color-blue-100: #e1e8f9;
+  --color-blue-200: #c8d5f4;
+  --color-blue-300: #a1baec;
+  --color-blue-400: #7294e3;
+  --color-blue-50: #f2f5fc;
+  --color-blue-500: #5d79df;
+  --color-blue-600: #4056ce;
+  --color-blue-700: #3b48b9;
+  --color-blue-800: #384094;
+  --color-blue-900: #353b73;
+  --color-blue-950: #252846;
+  --color-cyan-100: #d3f4fa;
+  --color-cyan-200: #adeaf4;
+  --color-cyan-300: #74d9ec;
+  --color-cyan-400: #4ec7e0;
+  --color-cyan-50: #eefbfd;
+  --color-cyan-500: #19a2c1;
+  --color-cyan-600: #1783a3;
+  --color-cyan-700: #1a6984;
+  --color-cyan-800: #16566c;
+  --color-cyan-900: #15495c;
+  --color-cyan-950: #0d2f3f;
+  --color-emerald-100: #d0fae5;
+  --color-emerald-200: #a4f4cf;
+  --color-emerald-300: #5ee9b5;
+  --color-emerald-400: #00d492;
+  --color-emerald-50: #ecfdf5;
+  --color-emerald-500: #00bc7d;
+  --color-emerald-600: #009966;
+  --color-emerald-700: #007a55;
+  --color-emerald-800: #006045;
+  --color-emerald-900: #004f3b;
+  --color-emerald-950: #002c22;
+  --color-fog-gray: #babcd3;
+  --color-forest-green: #003412;
+  --color-fuchsia-100: #fae8ff;
+  --color-fuchsia-200: #f6cfff;
+  --color-fuchsia-300: #f4a8ff;
+  --color-fuchsia-400: #ed6aff;
+  --color-fuchsia-50: #fdf4ff;
+  --color-fuchsia-500: #e12afb;
+  --color-fuchsia-600: #c800de;
+  --color-fuchsia-700: #a800b7;
+  --color-fuchsia-800: #8a0194;
+  --color-fuchsia-900: #721378;
+  --color-fuchsia-950: #4b004f;
+  --color-gold: #fdb95f;
+  --color-grapefruit: #f58971;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5dc;
+  --color-gray-400: #99a1af;
+  --color-gray-50: #f9fafb;
+  --color-gray-500: #6a7282;
+  --color-gray-600: #4a5565;
+  --color-gray-700: #364153;
+  --color-gray-800: #1e2939;
+  --color-gray-900: #101828;
+  --color-gray-950: #030712;
+  --color-green-100: #d1fae3;
+  --color-green-200: #a7f3cc;
+  --color-green-300: #6ee7b1;
+  --color-green-400: #2dd28d;
+  --color-green-50: #ecfdf4;
+  --color-green-500: #10b978;
+  --color-green-600: #059661;
+  --color-green-700: #047851;
+  --color-green-800: #065f41;
+  --color-green-900: #064e37;
+  --color-green-950: #022c20;
+  --color-hovered: #f0f0f0;
+  --color-indigo-default: #7072bc;
+  --color-indigo-100: #e0e7ff;
+  --color-indigo-200: #c6d2ff;
+  --color-indigo-300: #a3b3ff;
+  --color-indigo-400: #7c86ff;
+  --color-indigo-50: #eef2ff;
+  --color-indigo-500: #615fff;
+  --color-indigo-600: #4f39f6;
+  --color-indigo-700: #432dd7;
+  --color-indigo-800: #372aac;
+  --color-indigo-900: #312c85;
+  --color-indigo-950: #1e1a4d;
+  --color-lime-default: #d9de95;
+  --color-lime-100: #ecfcca;
+  --color-lime-200: #d8f999;
+  --color-lime-300: #bbf451;
+  --color-lime-400: #9ae600;
+  --color-lime-50: #f7fee7;
+  --color-lime-500: #7ccf00;
+  --color-lime-600: #5ea500;
+  --color-lime-700: #497d00;
+  --color-lime-800: #3d6300;
+  --color-lime-900: #35530e;
+  --color-lime-950: #192e03;
+  --color-magenta-100: #fbe4fb;
+  --color-magenta-200: #f8d3f5;
+  --color-magenta-300: #f0b2ea;
+  --color-magenta-400: #e273d5;
+  --color-magenta-50: #fcf2fb;
+  --color-magenta-500: #d65cc8;
+  --color-magenta-600: #b83da5;
+  --color-magenta-700: #992e84;
+  --color-magenta-800: #7b2468;
+  --color-magenta-900: #631e54;
+  --color-magenta-950: #3b1232;
+  --color-magenta-light: #510142;
+  --color-mauve-default: #9967a0;
+  --color-mauve-100: #f3f1f3;
+  --color-mauve-200: #e7e4e7;
+  --color-mauve-300: #d7d0d7;
+  --color-mauve-400: #a89ea9;
+  --color-mauve-50: #fafafa;
+  --color-mauve-500: #79697b;
+  --color-mauve-600: #594c5b;
+  --color-mauve-700: #463947;
+  --color-mauve-800: #2a212c;
+  --color-mauve-900: #1d161e;
+  --color-mauve-950: #0c090c;
+  --color-mist-100: #f1f3f3;
+  --color-mist-200: #e3e7e8;
+  --color-mist-300: #d0d6d8;
+  --color-mist-400: #9ca8ab;
+  --color-mist-50: #f9fbfb;
+  --color-mist-500: #67787c;
+  --color-mist-600: #4b585b;
+  --color-mist-700: #394447;
+  --color-mist-800: #22292b;
+  --color-mist-900: #161b1d;
+  --color-mist-950: #090b0c;
+  --color-neutral-100: #e5e5e5;
+  --color-neutral-200: #dcdcdc;
+  --color-neutral-300: #bdbdbd;
+  --color-neutral-400: #949494;
+  --color-neutral-50: #f2f2f2;
+  --color-neutral-500: #767676;
+  --color-neutral-600: #6e6e6e;
+  --color-neutral-700: #525252;
+  --color-neutral-800: #464646;
+  --color-neutral-900: #3d3d3d;
+  --color-neutral-950: #1c1c1c;
+  --color-olive-100: #f4f4f0;
+  --color-olive-200: #e8e8e3;
+  --color-olive-300: #d8d8d0;
+  --color-olive-400: #abab9c;
+  --color-olive-50: #fbfbf9;
+  --color-olive-500: #7c7c67;
+  --color-olive-600: #5b5b4b;
+  --color-olive-700: #474739;
+  --color-olive-800: #2b2b22;
+  --color-olive-900: #1d1d16;
+  --color-olive-950: #0c0c09;
+  --color-orange-100: #ffedd4;
+  --color-orange-200: #ffd6a7;
+  --color-orange-300: #ffb86a;
+  --color-orange-400: #ff8903;
+  --color-orange-50: #fff7ed;
+  --color-orange-500: #ff6900;
+  --color-orange-600: #f54900;
+  --color-orange-700: #ca3500;
+  --color-orange-800: #9f2d00;
+  --color-orange-900: #7e2a0c;
+  --color-orange-950: #441306;
+  --color-pink-default: #e099ad;
+  --color-pink-100: #fce7f3;
+  --color-pink-200: #fccee8;
+  --color-pink-300: #fda5d5;
+  --color-pink-400: #fb64b6;
+  --color-pink-50: #fdf2f8;
+  --color-pink-500: #f6339a;
+  --color-pink-600: #e60076;
+  --color-pink-700: #c6005c;
+  --color-pink-800: #a3004c;
+  --color-pink-900: #861043;
+  --color-pink-950: #510424;
+  --color-purple-100: #f3e8ff;
+  --color-purple-200: #e9d4ff;
+  --color-purple-300: #dab2ff;
+  --color-purple-400: #c27aff;
+  --color-purple-50: #faf5ff;
+  --color-purple-500: #ad46ff;
+  --color-purple-600: #9810fa;
+  --color-purple-700: #8200db;
+  --color-purple-800: #6e11b0;
+  --color-purple-900: #59168b;
+  --color-purple-950: #3c0366;
+  --color-red-100: #fee2e2;
+  --color-red-200: #fecaca;
+  --color-red-300: #fca5a5;
+  --color-red-400: #f87171;
+  --color-red-50: #fef2f2;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-red-700: #b91c1c;
+  --color-red-800: #991b1c;
+  --color-red-900: #7f1d1d;
+  --color-red-950: #450a0a;
+  --color-rose-100: #ffe4e6;
+  --color-rose-200: #ffccd3;
+  --color-rose-300: #ffa1ad;
+  --color-rose-400: #ff637e;
+  --color-rose-50: #fff1f2;
+  --color-rose-500: #ff2056;
+  --color-rose-600: #ec003f;
+  --color-rose-700: #c70036;
+  --color-rose-800: #a50036;
+  --color-rose-900: #8b0836;
+  --color-rose-950: #4d0218;
+  --color-sage: #96bda3;
+  --color-sea: #94c1c5;
+  --color-sky-100: #dff2fe;
+  --color-sky-200: #b8e6fe;
+  --color-sky-300: #74d4ff;
+  --color-sky-400: #00bcff;
+  --color-sky-50: #f0f9ff;
+  --color-sky-500: #00a6f4;
+  --color-sky-600: #0084d1;
+  --color-sky-700: #0069a8;
+  --color-sky-800: #00598a;
+  --color-sky-900: #024a70;
+  --color-sky-950: #052f4a;
+  --color-sky-blue: #98c7eb;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cad5e2;
+  --color-slate-400: #90a1b9;
+  --color-slate-50: #f8fafc;
+  --color-slate-500: #62748e;
+  --color-slate-600: #45556c;
+  --color-slate-700: #314158;
+  --color-slate-800: #1d293d;
+  --color-slate-900: #0f172b;
+  --color-slate-950: #020618;
+  --color-stone-100: #f5f5f4;
+  --color-stone-200: #e7e5e4;
+  --color-stone-300: #d6d3d1;
+  --color-stone-400: #a6a09b;
+  --color-stone-50: #fafaf9;
+  --color-stone-500: #79716b;
+  --color-stone-600: #57534d;
+  --color-stone-700: #44403b;
+  --color-stone-800: #292524;
+  --color-stone-900: #1c1917;
+  --color-stone-950: #0c0a09;
+  --color-surface: #f6f6f6;
+  --color-tan: #ac8a65;
+  --color-taupe-100: #f3f1f1;
+  --color-taupe-200: #e8e4e3;
+  --color-taupe-300: #d8d2d0;
+  --color-taupe-400: #aba09c;
+  --color-taupe-50: #fbfaf9;
+  --color-taupe-500: #7c6d67;
+  --color-taupe-600: #5b4f4b;
+  --color-taupe-700: #473c39;
+  --color-taupe-800: #2b2422;
+  --color-taupe-900: #1d1816;
+  --color-taupe-950: #0c0a09;
+  --color-teal-100: #cbfbf1;
+  --color-teal-200: #96f7e4;
+  --color-teal-300: #46ecd5;
+  --color-teal-400: #00d5be;
+  --color-teal-50: #f0fdfa;
+  --color-teal-500: #00bba7;
+  --color-teal-600: #009689;
+  --color-teal-700: #00786f;
+  --color-teal-800: #005f5a;
+  --color-teal-900: #0b4f4a;
+  --color-teal-950: #022f2e;
+  --color-violet-100: #ede9fe;
+  --color-violet-200: #ddd6ff;
+  --color-violet-300: #c4b4ff;
+  --color-violet-400: #a684ff;
+  --color-violet-50: #f5f3ff;
+  --color-violet-500: #8e51ff;
+  --color-violet-600: #7f22fe;
+  --color-violet-700: #7008e7;
+  --color-violet-800: #5d0ec0;
+  --color-violet-900: #4d179a;
+  --color-violet-950: #2f0d68;
+  --color-white-default: #ffffff;
+  --color-white-alpha-10: rgba(255, 255, 255, 0.1);
+  --color-white-alpha-5: rgba(255, 255, 255, 0.05);
+  --color-white-alpha-60: rgba(255, 255, 255, 0.6);
+  --color-white-alpha-75: rgba(255, 255, 255, 0.75);
+  --color-white-alpha-80: rgba(255, 255, 255, 0.8);
+  --color-yellow-100: #fef9c3;
+  --color-yellow-200: #fef08a;
+  --color-yellow-300: #fde047;
+  --color-yellow-400: #ca8a04;
+  --color-yellow-50: #fefce8;
+  --color-yellow-500: #eab308;
+  --color-yellow-600: #ca8a04;
+  --color-yellow-700: #a16207;
+  --color-yellow-800: #854d0e;
+  --color-yellow-900: #713f12;
+  --color-yellow-950: #422006;
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-300: #d4d4d8;
+  --color-zinc-400: #9f9fa9;
+  --color-zinc-50: #fafafa;
+  --color-zinc-500: #71717b;
+  --color-zinc-600: #52525c;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-800: #27272a;
+  --color-zinc-900: #18181b;
+  --color-zinc-950: #09090b;
+  --color-painted-banner: #f5f3f1;
+  --color-painted-faq: #faf8f8;
+  --color-painted-plan-card: #fdfcfc;
+  --color-painted-plan-card-border: #eae9e9;
+  --color-painted-save-badge-bg: #e1f5e0;
+  --color-painted-save-badge-fg: #307d18;
+  --color-painted-primary-hover: #6e6e6e;
+  --color-painted-overlay-hover: rgba(0, 0, 0, 0.1);
+  --color-painted-input-border: #e5e5e5;
+  --color-painted-menu-hairline: #f2f2f2;
+  --color-reader-page-bg: #ffffff;
+  --color-reader-active-sentence-bg: #ddf5ff;
+  --color-reader-active-word-bg: #73dbf2;
+  --color-reader-bookmark-bg: #fff7dc;
+  --color-reader-bookmark-hover-bg: #ffe69c;
+  --color-reader-find-match-bg: #fff1a8;
+  --color-reader-find-current-bg: #ffc94a;
+  --color-reader-podcast-warning-bg: #f2f2f2;
+  --color-reader-podcast-warning-text: #949494;
+  --typography-display-01: 700 100px/0.95 var(--font-family-inter);
+  --typography-display-02: 700 64px/1.0 var(--font-family-inter);
+  --typography-heading-01: 700 64px/1.1 var(--font-family-waldenburg);
+  --typography-heading-02: 700 56px/1.1 var(--font-family-waldenburg);
+  --typography-heading-03: 700 48px/1.1 var(--font-family-waldenburg);
+  --typography-heading-04: 700 32px/1.1 var(--font-family-waldenburg);
+  --typography-heading-05: 700 28px/1.1 var(--font-family-waldenburg);
+  --typography-subhead-01: 700 22px/1.4 var(--font-family-inter);
+  --typography-subhead-02: 700 18px/1.4 var(--font-family-inter);
+  --typography-subhead-03: 700 16px/1.4 var(--font-family-inter);
+  --typography-description-01: 400 22px/1.4 var(--font-family-inter);
+  --typography-description-02: 400 18px/1.4 var(--font-family-inter);
+  --typography-description-03: 400 16px/1.4 var(--font-family-inter);
+  --typography-description-04: 400 14px/1.4 var(--font-family-inter);
+  --typography-body-01: 400 18px/1.6 var(--font-family-inter);
+  --typography-ui-01: 700 18px/1.1 var(--font-family-inter);
+  --typography-ui-02: 400 14px/1.4 var(--font-family-inter);
+  --typography-ui-03: 700 14px/1.1 var(--font-family-inter);
+  --typography-ui-04: 700 12px/1.1 var(--font-family-inter);
+  --typography-ui-05: 400 12px/1.4 var(--font-family-inter);
+  --typography-ui-06: 700 14px/1.1 var(--font-family-inter);
+  --typography-ui-07: 400 10px/1.4 var(--font-family-inter);
+  --radius-pill: 9999px;
+  --radius-shadcn: 8px;
+  --radius-faq: 20px;
+  --radius-plan-card: 40px;
+  --radius-cover-orbit: 16px;
+  --radius-compare-link: 10px;
+  --easing-standard: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --easing-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --easing-in-out: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --duration-default: 150ms;
+  --spacing-unit: 4px;
+  --spacing-inner-gutter: 20px;
+  --spacing-outer-gutter: 64px;
+  --spacing-outer-content: 100px;
+  --spacing-content-wide: 160px;
+  --spacing-content-xwide: 200px;
+  --layout-container-sm: 384px;
+  --layout-container-md: 448px;
+  --layout-container-2xl: 672px;
+  --layout-container-3xl: 768px;
+  --layout-container-4xl: 896px;
+  --layout-container-5xl: 1024px;
+  --layout-container-6xl: 1152px;
+  --layout-grid-columns: 12;
+  --layout-container: 1304px;
+  --layout-header-height: 64px;
+  --layout-header-height-mobile: 64px;
+  --layout-promo-height: 49px;
+  --shadow-drop-lg: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  --shadow-pill: 0px 0px 0px 1px rgba(0, 0, 0, 0.06), 0px 1px 2px 0px rgba(0, 0, 0, 0.04), 0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+  --shadow-menu: 0px 4px 6px -2px rgba(16, 24, 40, 0.03), 0px 12px 16px -4px rgba(16, 24, 40, 0.08);
+  --shadow-faq-open: 0px 0px 1px 0px rgba(0, 0, 0, 0.4), 0px 1px 1px 0px rgba(0, 0, 0, 0.04), 0px 2px 4px 0px rgba(0, 0, 0, 0.04);
+  --measured-focus-ring: #000000;
+  --measured-focus-ring-width: 2px;
+  --measured-focus-ring-offset: 2px;
+  --measured-color: 300ms;
+  --measured-menu: 300ms;
+  --measured-faq: 650ms;
+  --measured-mobile-menu: 500ms;
+  --surface-page: #ffffff;
+  --surface-card: #f6f6f6;
+  --surface-hovered: #f0f0f0;
+  --surface-inverse: #000000;
+  --surface-sunken: #f2f2f2;
+  --surface-overlay: rgba(0, 0, 0, 0.05);
+  --surface-overlayDarker: rgba(0, 0, 0, 0.1);
+  --surface-scrim: rgba(0, 0, 0, 0.6);
+  --surface-informative: #c8d5f4;
+  --surface-positive: #a7f3cc;
+  --surface-negative: #fecaca;
+  --surface-warning: #fef9c3;
+  --surface-banner: #f5f3f1;
+  --surface-faq: #faf8f8;
+  --surface-planCard: #fdfcfc;
+  --surface-saveBadge: #e1f5e0;
+  --surface-primaryHover: #6e6e6e;
+  --text-default: #000000;
+  --text-secondary: #6e6e6e;
+  --text-muted: #767676;
+  --text-faint: #949494;
+  --text-inverse: #ffffff;
+  --text-inverseMuted: #dcdcdc;
+  --text-accent: #4680fd;
+  --text-error: #ef4444;
+  --text-negative: #991b1c;
+  --text-positive: #065f41;
+  --text-saveBadge: #307d18;
+  --border-default: #e5e5e5;
+  --border-light: #f2f2f2;
+  --border-strong: #949494;
+  --border-darker: #3d3d3d;
+  --border-darkest: #000000;
+  --border-input: #e5e5e5;
+  --border-inverse: #ffffff;
+  --border-negative: #991b1c;
+  --border-positive: #065f41;
+  --border-planCard: #eae9e9;
+  --accent: #4680fd;
+  --focusRing: #000000;
+  --component-header-height: 64px;
+  --component-header-height-mobile: 64px;
+  --component-header-container: 1304px;
+  --component-logo-width: 164px;
+  --component-button-height-nav: 36px;
+  --component-button-height-cta: 52px;
+  --component-button-height-chip: 44px;
+  --component-button-height-small: 32px;
+  --component-button-height-sso: 40px;
+  --component-button-radius: 9999px;
+  --component-nav-link-height: 36px;
+  --component-mega-menu-width: 846px;
+  --component-field-height: 40px;
+  --component-field-radius: 9999px;
+  --component-auth-card-width: 360px;
+  --component-plan-card-width: 584px;
+  --component-plan-card-radius: 40px;
+  --component-plan-cta-height: 52px;
+  --component-faq-radius: 20px;
+  --component-faq-height-closed: 67px;
+  --component-billing-height: 48px;
+  --component-cover-radius: 16px;
+  --component-mobile-menu-item-height: 24px;
+  --component-mobile-menu-button: 40px;
+  --component-state-button-primary-bg: #000000;
+  --component-state-button-primary-fg: #ffffff;
+  --component-state-button-primary-hoverBg: #6e6e6e;
+  --component-state-button-secondary-bg: #ffffff;
+  --component-state-button-sso-bg: #f2f2f2;
+  --component-state-button-sso-hoverBg: rgba(0, 0, 0, 0.1);
+  --component-state-chip-bg: #ffffff;
+  --component-state-badge-save-bg: #e1f5e0;
+  --component-state-badge-save-fg: #307d18;
+  --component-state-field-border: #e5e5e5;
+  --component-state-nav-link-hoverBg: #f6f6f6;
+  --sg-sans: Inter, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-display: Waldenburg, "Waldenburg HF", ui-serif, Georgia, "Times New Roman", serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --surface-page: #000000;
+  --surface-card: #141414;
+  --surface-hovered: #1c1c1c;
+  --surface-inverse: #ffffff;
+  --surface-sunken: #1c1c1c;
+  --surface-overlay: rgba(255, 255, 255, 0.05);
+  --surface-overlayDarker: rgba(255, 255, 255, 0.1);
+  --surface-scrim: rgba(255, 255, 255, 0.6);
+  --surface-informative: #384094;
+  --surface-positive: #059661;
+  --surface-negative: #991b1c;
+  --surface-warning: #713f12;
+  --text-default: #ffffff;
+  --text-secondary: #949494;
+  --text-muted: #767676;
+  --text-faint: #6e6e6e;
+  --text-inverse: #000000;
+  --text-inverseMuted: #464646;
+  --text-accent: #316deb;
+  --text-error: #ef4444;
+  --text-negative: #fecaca;
+  --text-positive: #ecfdf4;
+  --border-default: #3d3d3d;
+  --border-light: #1c1c1c;
+  --border-strong: #6e6e6e;
+  --border-darker: #e5e5e5;
+  --border-darkest: #ffffff;
+  --border-input: #3d3d3d;
+  --border-inverse: #000000;
+  --border-negative: #fecaca;
+  --border-positive: #ecfdf4;
+  --accent: #316deb;
+  --focusRing: #ffffff;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-default, #000); background: var(--surface-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 44px/1.05 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.03em; }
+h2.sh { font: 700 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-default, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-default, #e5e5e5); }
+.lead { max-width: 62ch; color: var(--text-default, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--text-default, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-default, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--surface-page, #000); padding: 12px; border-radius: 8px; }
+.pal.dark .nm, .pal.dark .vl { color: var(--text-default, #fff); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-default, #e5e5e5); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-default, #000); opacity: .65; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-default, #000); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border-default, #e5e5e5); overflow: hidden; background: var(--surface-page, #fff); }
+.banner { background: var(--surface-banner, #f5f3f1); border-bottom: 1px solid rgba(0,0,0,.1); font-size: 13px; padding: 8px 16px; display: flex; align-items: center; justify-content: center; gap: 12px; }
+.banner .cta { height: 32px; padding: 0 14px; display: inline-flex; align-items: center; border-radius: var(--radius-pill, 9999px); background: var(--surface-page, #fff); box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04), 0 2px 4px rgba(0,0,0,.04); font-size: 13px; }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 64px); padding: 0 12px 0 22px; font-size: 15px; color: var(--text-default, #000); }
+.navbar .wm { font-family: var(--sg-display); font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height-cta, 52px); padding: 0 24px; font-size: 16px; font-weight: 400; letter-spacing: .01em; border-radius: var(--radius-pill, 9999px); border: 1px solid transparent; }
+.btn.primary { background: var(--surface-inverse, #000); color: var(--text-inverse, #fff); }
+.btn.primary:hover { background: var(--surface-primaryHover, #6e6e6e); }
+.btn.secondary { background: var(--surface-page, #fff); color: var(--text-default, #000); box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04), 0 2px 4px rgba(0,0,0,.04); }
+.btn.nav { height: var(--component-button-height-nav, 36px); padding: 0 16px; font-size: 14px; }
+.btn.outline { background: var(--surface-page, #fff); border-color: var(--border-default, #e5e5e5); color: var(--text-default, #000); }
+.btn.sso { height: var(--component-button-height-sso, 40px); padding: 0 16px; font-size: 14px; font-weight: 500; background: var(--surface-sunken, #f2f2f2); color: var(--text-default, #000); }
+/* A dedicated variant class: `.dark` would also scope the dark token block
+   ([data-mode="dark"], .dark {}) and paint the button white instead of the
+   captured black Apple pill. */
+.btn.sso.apple { background: var(--surface-inverse, #000); color: var(--text-inverse, #fff); }
+.btn.field-o { height: var(--component-button-height-sso, 40px); font-size: 14px; font-weight: 500; background: var(--surface-page, #fff); border-color: var(--border-default, #e5e5e5); color: var(--text-default, #000); }
+.hero { color: var(--text-default, #000); padding: 72px 40px; font: 400 60px/1 var(--sg-display); letter-spacing: -1.8px; text-align: left; }
+.hero small { display: block; font: 400 18px/1.6 var(--sg-sans); color: var(--text-default, #000); opacity: .6; letter-spacing: 0; margin: 16px 0 22px; max-width: 46ch; }
+.seg { display: inline-flex; border-radius: var(--radius-pill, 9999px); background: var(--surface-sunken, #f2f2f2); padding: 4px; gap: 4px; font-size: 15px; align-items: center; }
+.seg span { height: 40px; padding: 0 20px; display: inline-flex; align-items: center; border-radius: var(--radius-pill, 9999px); color: var(--text-default, #57534f); }
+.seg span.on { background: var(--surface-page, #fff); color: var(--text-default, #000); box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04), 0 2px 4px rgba(0,0,0,.04); }
+.seg .save { display: inline-flex; align-items: center; height: 20px; padding: 0 8px; margin-left: 6px; border-radius: var(--radius-pill, 9999px); background: var(--surface-saveBadge, #e1f5e0); color: var(--text-saveBadge, #307d18); font-size: 12px; font-weight: 500; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border-planCard, #eae9e9); border-radius: var(--radius-plan-card, 40px); padding: 20px; font-size: 13px; background: var(--surface-planCard, #fdfcfc); }
+.tile b { display: block; font: 375 22px/1.3 var(--sg-display); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.tile .price { display: block; font: 375 36px/1 var(--sg-display); letter-spacing: -0.36px; margin: 12px 0; }
+.chip { display: inline-flex; align-items: center; height: var(--component-button-height-chip, 44px); padding: 0 20px; border-radius: var(--radius-pill, 9999px); background: var(--surface-page, #fff); color: var(--text-default, #000); box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04), 0 2px 4px rgba(0,0,0,.04); font-size: 15px; margin: 0 6px 6px 0; }
+.faq { border-radius: var(--radius-faq, 20px); background: var(--surface-faq, #faf8f8); padding: 14px 20px; font: 400 20px/1.35 var(--sg-display); margin-bottom: 8px; }
+.field { height: var(--component-field-height, 40px); border: 1px solid var(--border-default, #e5e5e5); border-radius: var(--radius-pill, 9999px); padding: 0 12px; display: flex; align-items: center; font-size: 15px; color: var(--text-default, #000); opacity: .65; }
+.auth { width: var(--component-auth-card-width, 360px); max-width: 100%; margin: 0 auto; text-align: center; display: flex; flex-direction: column; gap: 10px; }
+.auth .wm { font: 700 22px/1 var(--sg-display); letter-spacing: -0.02em; margin-bottom: 6px; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-default, #e5e5e5); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--text-default, #000); opacity: .65; font-family: var(--sg-mono); }
+.tspec { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 10px 0; border-bottom: 1px solid var(--border-default, #e5e5e5); }
+.tspec .tv { font-size: 12px; color: var(--text-default, #000); opacity: .65; font-family: var(--sg-mono); white-space: nowrap; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-default, #e5e5e5); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>ElevenReader style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">ElevenReader, measured</h2>
+  <p class="lead">elevenreader.io is a Next.js site over Tailwind v4 whose public surface paints one light theme: a near-monochrome field (black ink on white, a #F5F3F1 promo band, #FAF8F8 FAQ tints) with pill geometry everywhere — every button, chip, input and badge is a 9999px rounded-full, cards step up to 20-40px radii. The declared token layer carries a full themed palette (the --themed-* triplets bound into --color-* roles, a blue accent #4680fd the marketing surface barely uses), the --f-* type scale (display/heading in Waldenburg, everything else in Inter) and the reader app's own --reader-* palette. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from elevenreader.io on 2026-11-13, signed out, in headless Chromium. The reader app behind /reader/sign-in is a documented boundary; the email credential forms were revealed by their own toggles and never submitted. Inter and Waldenburg are served faces and are not loaded here: samples fall back to system fonts. The <code>.dark</code> scope below is a declared inversion — no public page paints it.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">Every page carries the same chrome: the #F5F3F1 promo band with its white pill CTA, then the 64px header — wordmark, plain nav links (transparent pill, hover surface fill), the Discover mega-menu trigger, a 1px-outlined Sign-in pill and the black Start-listening pill. Keyboard focus draws a 2px solid black outline at 2px offset.</p>
+  <div class="mock">
+    <div class="banner"><strong>Limited offer</strong><span>Save on a year of Ultra</span><span class="cta">Get this offer</span></div>
+    <div class="navbar"><span class="wm">&#10073;&#10073;ElevenReader</span><span>Explore</span><span>Discover &#9662;</span><span>Pricing</span><span class="sp"></span><span class="btn outline nav">Sign in</span><span class="btn primary nav">Start listening free</span></div>
+    <div class="hero">Every book. Every voice.<small>Listen to any audiobook, article or PDF in voices you love.</small><span class="btn primary">Start listening free</span>&nbsp;<span class="btn secondary">Explore the library</span></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing centres a Monthly/Annual segment pill — the selected segment is a white pill on the sunken track carrying the green Save-25% chip — above #FDFCFC plan cards at a 40px painted radius and a 1px #EAE9E9 hairline; each card's action is the black pill at 52px.</p>
+  <div class="mock" style="padding:20px">
+    <div style="text-align:center;margin-bottom:18px"><span class="seg"><span>Monthly</span><span class="on">Annual<span class="save">Save 25%</span></span></span></div>
+    <div class="grid">
+      <div class="tile"><b>Free</b><span class="sub">For casual listening</span><span class="price">$0</span><span class="btn primary" style="height:44px;font-size:15px">Get started</span></div>
+      <div class="tile"><b>Ultra</b><span class="sub">Everything unlocked</span><span class="price">$11.99<span style="font-size:16px">/mo</span></span><span class="btn primary" style="height:44px;font-size:15px">Start 3 day free trial</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The auth cards</h2>
+  <p class="lead">/reader/sign-in and /reader/sign-up are bare centred columns on the page field — a 360px max-w-90 card of OAuth pills (sunken Google, inverse Apple, outlined email) over 40px pill inputs; the credential form is screen-reader-only until the "…with email" toggle expands it.</p>
+  <div class="mock" style="padding:28px">
+    <div class="auth"><span class="wm">&#10073;&#10073;ElevenReader</span><span class="btn sso">Sign in with Google</span><span class="btn sso apple">Sign in with Apple</span><span class="btn field-o">Sign in with email</span><span class="field">Enter your email address</span><span class="btn primary" style="height:40px;font-size:14px;font-weight:500">Sign in</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared --color-* layer carries the themed ramps (neutral, blue, cyan, green, yellow, magenta, red — each inverted on .dark), the named brand hues, the Tailwind default palette, the alpha overlays and the reader app's own colours; the painted group holds measured fills no variable names (the promo band, the FAQ tint, the plan card, the Save badge). Light and dark roles are the same declared variables, re-bound by the .dark scope — declared, unpainted.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">The --spacing unit is 4px with 20px inner / 64px outer gutters at desktop; geometry is pill-first — 9999px on every control, 20px FAQ, 40px plan cards, 16px orbit covers, the declared 8px shadcn radius on media.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two faces: <code>Waldenburg</code> on display and headings (the f-heading scale declares 700 but paints the book weight, ~375-400, with negative tracking), <code>Inter</code> on everything else. The <code>--f-*</code> roles are the type ramp — sizes below resolve at 1440px and step down under 80rem and 64rem.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --color-*/--f-* variables from the live stylesheets and computed styles on the public pages</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open and focused states measured per component, plus the billing toggle and the revealed email forms</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"inter":{"v":"Inter, \"Inter Fallback\"","t":"fontFamily","s":"computed fontFamily of hero-cta default (raw/components-computed.json)","d":"Inter (+ its 'Inter Fallback' metrics clone): every UI, body and form text on the public surface."},"waldenburg":{"v":"Waldenburg, \"Waldenburg Fallback\", sans-serif","t":"fontFamily","s":"computed fontFamily of hero-h1 default (raw/components-computed.json)","d":"Waldenburg: the display face on h1s, pricing/audiobook titles, section heads and the FAQ."},"sans":{"v":"-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"","t":"fontFamily","s":"css-var --font-sans (light)","d":"The declared system-ui fallback stack (--font-sans)."},"serif":{"v":"ui-serif, Georgia, Cambria, \"Times New Roman\", Times, serif","t":"fontFamily","s":"css-var --font-serif (light)","d":"The declared serif fallback stack (--font-serif)."},"mono":{"v":"ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace","t":"fontFamily","s":"css-var --font-mono (light)","d":"The declared monospace stack (--font-mono)."}},"weight":{"normal":{"v":400,"t":"fontWeight","s":"css-var --font-weight-normal (light)","d":"400 — body, UI labels, the Waldenburg book weight."},"medium":{"v":500,"t":"fontWeight","s":"css-var --font-weight-medium (light)","d":"500 — SSO buttons, badges, rail links, footer columns."},"semibold":{"v":600,"t":"fontWeight","s":"css-var --font-weight-semibold (light)","d":"600 — declared."},"bold":{"v":700,"t":"fontWeight","s":"css-var --font-weight-bold (light)","d":"700 — the declared f-* bold steps (uppercase UI labels)."},"display":{"v":400,"t":"fontWeight","s":"computed fontWeight of hero-h1 default (raw/components-computed.json)","d":"The painted Waldenburg weight on h1s (400 — the f-heading steps declare 700 but the loaded book face paints lighter)."}}},"color":{"accent":{"v":"#4680fd","t":"color","s":"css-var --color-accent (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Accent blue #4680fd — the declared action accent (declared; the marketing surface paints black/white)."},"amber":{"100":{"v":"#fef3c6","t":"color","s":"css-var --color-amber-100 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette amber-100 (declared)."},"200":{"v":"#fee685","t":"color","s":"css-var --color-amber-200 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette amber-200 (declared)."},"300":{"v":"#ffd230","t":"color","s":"css-var --color-amber-300 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette amber-300 (declared)."},"400":{"v":"#ffb900","t":"color","s":"css-var --color-amber-400 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette amber-400 (declared)."},"50":{"v":"#fffbeb","t":"color","s":"css-var --color-amber-50 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette amber-50 (declared)."},"500":{"v":"#fe9a00","t":"color","s":"css-var --color-amber-500 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette amber-500 (declared)."},"600":{"v":"#e17100","t":"color","s":"css-var --color-amber-600 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette amber-600 (declared)."},"700":{"v":"#bb4d00","t":"color","s":"css-var --color-amber-700 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette amber-700 (declared)."},"800":{"v":"#973c00","t":"color","s":"css-var --color-amber-800 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette amber-800 (declared)."},"900":{"v":"#7b3306","t":"color","s":"css-var --color-amber-900 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette amber-900 (declared)."},"950":{"v":"#461901","t":"color","s":"css-var --color-amber-950 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette amber-950 (declared)."}},"black":{"default":{"v":"#000000","t":"color","s":"css-var --color-black (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Black — the inverse fill, heading ink, focus ring (inverts to white on .dark)."},"alpha":{"10":{"v":"rgba(0, 0, 0, 0.1)","t":"color","s":"css-var --color-black-alpha-10 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Declared black alpha 10 translucency — overlays, veils, scrims."},"100":{"v":"#000000","t":"color","s":"css-var --color-black-alpha-100 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Declared black alpha 100 translucency — overlays, veils, scrims."},"5":{"v":"rgba(0, 0, 0, 0.05)","t":"color","s":"css-var --color-black-alpha-5 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Declared black alpha 5 translucency — overlays, veils, scrims."},"60":{"v":"rgba(0, 0, 0, 0.6)","t":"color","s":"css-var --color-black-alpha-60 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Declared black alpha 60 translucency — overlays, veils, scrims."},"80":{"v":"rgba(0, 0, 0, 0.8)","t":"color","s":"css-var --color-black-alpha-80 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Declared black alpha 80 translucency — overlays, veils, scrims."}}},"blue":{"100":{"v":"#e1e8f9","t":"color","s":"css-var --color-blue-100 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed blue 100 step — re-bound on .dark."},"200":{"v":"#c8d5f4","t":"color","s":"css-var --color-blue-200 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed blue 200 step — re-bound on .dark."},"300":{"v":"#a1baec","t":"color","s":"css-var --color-blue-300 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed blue 300 step — re-bound on .dark."},"400":{"v":"#7294e3","t":"color","s":"css-var --color-blue-400 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed blue 400 step — re-bound on .dark."},"50":{"v":"#f2f5fc","t":"color","s":"css-var --color-blue-50 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed blue 50 step — re-bound on .dark."},"500":{"v":"#5d79df","t":"color","s":"css-var --color-blue-500 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed blue 500 step — re-bound on .dark."},"600":{"v":"#4056ce","t":"color","s":"css-var --color-blue-600 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed blue 600 step — re-bound on .dark."},"700":{"v":"#3b48b9","t":"color","s":"css-var --color-blue-700 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed blue 700 step — re-bound on .dark."},"800":{"v":"#384094","t":"color","s":"css-var --color-blue-800 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed blue 800 step — re-bound on .dark."},"900":{"v":"#353b73","t":"color","s":"css-var --color-blue-900 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed blue 900 step — re-bound on .dark."},"950":{"v":"#252846","t":"color","s":"css-var --color-blue-950 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed blue 950 step — re-bound on .dark."}},"cyan":{"100":{"v":"#d3f4fa","t":"color","s":"css-var --color-cyan-100 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed cyan 100 step — re-bound on .dark."},"200":{"v":"#adeaf4","t":"color","s":"css-var --color-cyan-200 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed cyan 200 step — re-bound on .dark."},"300":{"v":"#74d9ec","t":"color","s":"css-var --color-cyan-300 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed cyan 300 step — re-bound on .dark."},"400":{"v":"#4ec7e0","t":"color","s":"css-var --color-cyan-400 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed cyan 400 step — re-bound on .dark."},"50":{"v":"#eefbfd","t":"color","s":"css-var --color-cyan-50 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed cyan 50 step — re-bound on .dark."},"500":{"v":"#19a2c1","t":"color","s":"css-var --color-cyan-500 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed cyan 500 step — re-bound on .dark."},"600":{"v":"#1783a3","t":"color","s":"css-var --color-cyan-600 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed cyan 600 step — re-bound on .dark."},"700":{"v":"#1a6984","t":"color","s":"css-var --color-cyan-700 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed cyan 700 step — re-bound on .dark."},"800":{"v":"#16566c","t":"color","s":"css-var --color-cyan-800 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed cyan 800 step — re-bound on .dark."},"900":{"v":"#15495c","t":"color","s":"css-var --color-cyan-900 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed cyan 900 step — re-bound on .dark."},"950":{"v":"#0d2f3f","t":"color","s":"css-var --color-cyan-950 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed cyan 950 step — re-bound on .dark."}},"emerald":{"100":{"v":"#d0fae5","t":"color","s":"css-var --color-emerald-100 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette emerald-100 (declared)."},"200":{"v":"#a4f4cf","t":"color","s":"css-var --color-emerald-200 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette emerald-200 (declared)."},"300":{"v":"#5ee9b5","t":"color","s":"css-var --color-emerald-300 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette emerald-300 (declared)."},"400":{"v":"#00d492","t":"color","s":"css-var --color-emerald-400 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette emerald-400 (declared)."},"50":{"v":"#ecfdf5","t":"color","s":"css-var --color-emerald-50 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette emerald-50 (declared)."},"500":{"v":"#00bc7d","t":"color","s":"css-var --color-emerald-500 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette emerald-500 (declared)."},"600":{"v":"#009966","t":"color","s":"css-var --color-emerald-600 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette emerald-600 (declared)."},"700":{"v":"#007a55","t":"color","s":"css-var --color-emerald-700 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette emerald-700 (declared)."},"800":{"v":"#006045","t":"color","s":"css-var --color-emerald-800 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette emerald-800 (declared)."},"900":{"v":"#004f3b","t":"color","s":"css-var --color-emerald-900 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette emerald-900 (declared)."},"950":{"v":"#002c22","t":"color","s":"css-var --color-emerald-950 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette emerald-950 (declared)."}},"fog":{"gray":{"v":"#babcd3","t":"color","s":"css-var --color-fog-gray (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Fog gray #babcd3 — a named brand hue."}},"forest":{"green":{"v":"#003412","t":"color","s":"css-var --color-forest-green (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Forest green #003412 — a named brand hue (iconic-voices accents)."}},"fuchsia":{"100":{"v":"#fae8ff","t":"color","s":"css-var --color-fuchsia-100 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette fuchsia-100 (declared)."},"200":{"v":"#f6cfff","t":"color","s":"css-var --color-fuchsia-200 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette fuchsia-200 (declared)."},"300":{"v":"#f4a8ff","t":"color","s":"css-var --color-fuchsia-300 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette fuchsia-300 (declared)."},"400":{"v":"#ed6aff","t":"color","s":"css-var --color-fuchsia-400 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette fuchsia-400 (declared)."},"50":{"v":"#fdf4ff","t":"color","s":"css-var --color-fuchsia-50 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette fuchsia-50 (declared)."},"500":{"v":"#e12afb","t":"color","s":"css-var --color-fuchsia-500 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette fuchsia-500 (declared)."},"600":{"v":"#c800de","t":"color","s":"css-var --color-fuchsia-600 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette fuchsia-600 (declared)."},"700":{"v":"#a800b7","t":"color","s":"css-var --color-fuchsia-700 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette fuchsia-700 (declared)."},"800":{"v":"#8a0194","t":"color","s":"css-var --color-fuchsia-800 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette fuchsia-800 (declared)."},"900":{"v":"#721378","t":"color","s":"css-var --color-fuchsia-900 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette fuchsia-900 (declared)."},"950":{"v":"#4b004f","t":"color","s":"css-var --color-fuchsia-950 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette fuchsia-950 (declared)."}},"gold":{"v":"#fdb95f","t":"color","s":"css-var --color-gold (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Gold #fdb95f — a named brand hue."},"grapefruit":{"v":"#f58971","t":"color","s":"css-var --color-grapefruit (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Grapefruit #f58971 — a named brand hue."},"gray":{"100":{"v":"#f3f4f6","t":"color","s":"css-var --color-gray-100 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette gray-100 (declared)."},"200":{"v":"#e5e7eb","t":"color","s":"css-var --color-gray-200 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette gray-200 (declared)."},"300":{"v":"#d1d5dc","t":"color","s":"css-var --color-gray-300 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette gray-300 (declared)."},"400":{"v":"#99a1af","t":"color","s":"css-var --color-gray-400 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette gray-400 (declared)."},"50":{"v":"#f9fafb","t":"color","s":"css-var --color-gray-50 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette gray-50 (declared)."},"500":{"v":"#6a7282","t":"color","s":"css-var --color-gray-500 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette gray-500 (declared)."},"600":{"v":"#4a5565","t":"color","s":"css-var --color-gray-600 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette gray-600 (declared)."},"700":{"v":"#364153","t":"color","s":"css-var --color-gray-700 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette gray-700 (declared)."},"800":{"v":"#1e2939","t":"color","s":"css-var --color-gray-800 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette gray-800 (declared)."},"900":{"v":"#101828","t":"color","s":"css-var --color-gray-900 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette gray-900 (declared)."},"950":{"v":"#030712","t":"color","s":"css-var --color-gray-950 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette gray-950 (declared)."}},"green":{"100":{"v":"#d1fae3","t":"color","s":"css-var --color-green-100 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed green 100 step — re-bound on .dark."},"200":{"v":"#a7f3cc","t":"color","s":"css-var --color-green-200 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed green 200 step — re-bound on .dark."},"300":{"v":"#6ee7b1","t":"color","s":"css-var --color-green-300 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed green 300 step — re-bound on .dark."},"400":{"v":"#2dd28d","t":"color","s":"css-var --color-green-400 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed green 400 step — re-bound on .dark."},"50":{"v":"#ecfdf4","t":"color","s":"css-var --color-green-50 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed green 50 step — re-bound on .dark."},"500":{"v":"#10b978","t":"color","s":"css-var --color-green-500 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed green 500 step — re-bound on .dark."},"600":{"v":"#059661","t":"color","s":"css-var --color-green-600 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed green 600 step — re-bound on .dark."},"700":{"v":"#047851","t":"color","s":"css-var --color-green-700 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed green 700 step — re-bound on .dark."},"800":{"v":"#065f41","t":"color","s":"css-var --color-green-800 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed green 800 step — re-bound on .dark."},"900":{"v":"#064e37","t":"color","s":"css-var --color-green-900 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed green 900 step — re-bound on .dark."},"950":{"v":"#022c20","t":"color","s":"css-var --color-green-950 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed green 950 step — re-bound on .dark."}},"hovered":{"v":"#f0f0f0","t":"color","s":"css-var --color-hovered (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Hovered #f0f0f0 — the cover-card backing and hover fill."},"indigo":{"default":{"v":"#7072bc","t":"color","s":"css-var --color-indigo (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Indigo #7072bc — a named brand hue."},"100":{"v":"#e0e7ff","t":"color","s":"css-var --color-indigo-100 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette indigo-100 (declared)."},"200":{"v":"#c6d2ff","t":"color","s":"css-var --color-indigo-200 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette indigo-200 (declared)."},"300":{"v":"#a3b3ff","t":"color","s":"css-var --color-indigo-300 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette indigo-300 (declared)."},"400":{"v":"#7c86ff","t":"color","s":"css-var --color-indigo-400 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette indigo-400 (declared)."},"50":{"v":"#eef2ff","t":"color","s":"css-var --color-indigo-50 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette indigo-50 (declared)."},"500":{"v":"#615fff","t":"color","s":"css-var --color-indigo-500 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette indigo-500 (declared)."},"600":{"v":"#4f39f6","t":"color","s":"css-var --color-indigo-600 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette indigo-600 (declared)."},"700":{"v":"#432dd7","t":"color","s":"css-var --color-indigo-700 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette indigo-700 (declared)."},"800":{"v":"#372aac","t":"color","s":"css-var --color-indigo-800 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette indigo-800 (declared)."},"900":{"v":"#312c85","t":"color","s":"css-var --color-indigo-900 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette indigo-900 (declared)."},"950":{"v":"#1e1a4d","t":"color","s":"css-var --color-indigo-950 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette indigo-950 (declared)."}},"lime":{"default":{"v":"#d9de95","t":"color","s":"css-var --color-lime (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Lime #d9de95 — a named brand hue."},"100":{"v":"#ecfcca","t":"color","s":"css-var --color-lime-100 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette lime-100 (declared)."},"200":{"v":"#d8f999","t":"color","s":"css-var --color-lime-200 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette lime-200 (declared)."},"300":{"v":"#bbf451","t":"color","s":"css-var --color-lime-300 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette lime-300 (declared)."},"400":{"v":"#9ae600","t":"color","s":"css-var --color-lime-400 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette lime-400 (declared)."},"50":{"v":"#f7fee7","t":"color","s":"css-var --color-lime-50 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette lime-50 (declared)."},"500":{"v":"#7ccf00","t":"color","s":"css-var --color-lime-500 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette lime-500 (declared)."},"600":{"v":"#5ea500","t":"color","s":"css-var --color-lime-600 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette lime-600 (declared)."},"700":{"v":"#497d00","t":"color","s":"css-var --color-lime-700 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette lime-700 (declared)."},"800":{"v":"#3d6300","t":"color","s":"css-var --color-lime-800 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette lime-800 (declared)."},"900":{"v":"#35530e","t":"color","s":"css-var --color-lime-900 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette lime-900 (declared)."},"950":{"v":"#192e03","t":"color","s":"css-var --color-lime-950 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette lime-950 (declared)."}},"magenta":{"100":{"v":"#fbe4fb","t":"color","s":"css-var --color-magenta-100 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed magenta 100 step — re-bound on .dark."},"200":{"v":"#f8d3f5","t":"color","s":"css-var --color-magenta-200 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed magenta 200 step — re-bound on .dark."},"300":{"v":"#f0b2ea","t":"color","s":"css-var --color-magenta-300 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed magenta 300 step — re-bound on .dark."},"400":{"v":"#e273d5","t":"color","s":"css-var --color-magenta-400 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed magenta 400 step — re-bound on .dark."},"50":{"v":"#fcf2fb","t":"color","s":"css-var --color-magenta-50 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed magenta 50 step — re-bound on .dark."},"500":{"v":"#d65cc8","t":"color","s":"css-var --color-magenta-500 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed magenta 500 step — re-bound on .dark."},"600":{"v":"#b83da5","t":"color","s":"css-var --color-magenta-600 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed magenta 600 step — re-bound on .dark."},"700":{"v":"#992e84","t":"color","s":"css-var --color-magenta-700 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed magenta 700 step — re-bound on .dark."},"800":{"v":"#7b2468","t":"color","s":"css-var --color-magenta-800 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed magenta 800 step — re-bound on .dark."},"900":{"v":"#631e54","t":"color","s":"css-var --color-magenta-900 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed magenta 900 step — re-bound on .dark."},"950":{"v":"#3b1232","t":"color","s":"css-var --color-magenta-950 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed magenta 950 step — re-bound on .dark."},"light":{"v":"#510142","t":"color","s":"css-var --color-magenta-light (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Magenta light #510142 — a named brand hue."}},"mauve":{"default":{"v":"#9967a0","t":"color","s":"css-var --color-mauve (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Mauve #9967a0 — a named brand hue."},"100":{"v":"#f3f1f3","t":"color","s":"css-var --color-mauve-100 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mauve-100 (declared)."},"200":{"v":"#e7e4e7","t":"color","s":"css-var --color-mauve-200 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mauve-200 (declared)."},"300":{"v":"#d7d0d7","t":"color","s":"css-var --color-mauve-300 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mauve-300 (declared)."},"400":{"v":"#a89ea9","t":"color","s":"css-var --color-mauve-400 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mauve-400 (declared)."},"50":{"v":"#fafafa","t":"color","s":"css-var --color-mauve-50 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mauve-50 (declared)."},"500":{"v":"#79697b","t":"color","s":"css-var --color-mauve-500 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mauve-500 (declared)."},"600":{"v":"#594c5b","t":"color","s":"css-var --color-mauve-600 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mauve-600 (declared)."},"700":{"v":"#463947","t":"color","s":"css-var --color-mauve-700 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mauve-700 (declared)."},"800":{"v":"#2a212c","t":"color","s":"css-var --color-mauve-800 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mauve-800 (declared)."},"900":{"v":"#1d161e","t":"color","s":"css-var --color-mauve-900 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mauve-900 (declared)."},"950":{"v":"#0c090c","t":"color","s":"css-var --color-mauve-950 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mauve-950 (declared)."}},"mist":{"100":{"v":"#f1f3f3","t":"color","s":"css-var --color-mist-100 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mist-100 (declared)."},"200":{"v":"#e3e7e8","t":"color","s":"css-var --color-mist-200 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mist-200 (declared)."},"300":{"v":"#d0d6d8","t":"color","s":"css-var --color-mist-300 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mist-300 (declared)."},"400":{"v":"#9ca8ab","t":"color","s":"css-var --color-mist-400 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mist-400 (declared)."},"50":{"v":"#f9fbfb","t":"color","s":"css-var --color-mist-50 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mist-50 (declared)."},"500":{"v":"#67787c","t":"color","s":"css-var --color-mist-500 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mist-500 (declared)."},"600":{"v":"#4b585b","t":"color","s":"css-var --color-mist-600 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mist-600 (declared)."},"700":{"v":"#394447","t":"color","s":"css-var --color-mist-700 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mist-700 (declared)."},"800":{"v":"#22292b","t":"color","s":"css-var --color-mist-800 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mist-800 (declared)."},"900":{"v":"#161b1d","t":"color","s":"css-var --color-mist-900 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mist-900 (declared)."},"950":{"v":"#090b0c","t":"color","s":"css-var --color-mist-950 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette mist-950 (declared)."}},"neutral":{"100":{"v":"#e5e5e5","t":"color","s":"css-var --color-neutral-100 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed neutral 100 step — re-bound on .dark."},"200":{"v":"#dcdcdc","t":"color","s":"css-var --color-neutral-200 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed neutral 200 step — re-bound on .dark."},"300":{"v":"#bdbdbd","t":"color","s":"css-var --color-neutral-300 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed neutral 300 step — re-bound on .dark."},"400":{"v":"#949494","t":"color","s":"css-var --color-neutral-400 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed neutral 400 step — re-bound on .dark."},"50":{"v":"#f2f2f2","t":"color","s":"css-var --color-neutral-50 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed neutral 50 step — re-bound on .dark."},"500":{"v":"#767676","t":"color","s":"css-var --color-neutral-500 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed neutral 500 step — re-bound on .dark."},"600":{"v":"#6e6e6e","t":"color","s":"css-var --color-neutral-600 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed neutral 600 step — re-bound on .dark."},"700":{"v":"#525252","t":"color","s":"css-var --color-neutral-700 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed neutral 700 step — re-bound on .dark."},"800":{"v":"#464646","t":"color","s":"css-var --color-neutral-800 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed neutral 800 step — re-bound on .dark."},"900":{"v":"#3d3d3d","t":"color","s":"css-var --color-neutral-900 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed neutral 900 step — re-bound on .dark."},"950":{"v":"#1c1c1c","t":"color","s":"css-var --color-neutral-950 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed neutral 950 step — re-bound on .dark."}},"olive":{"100":{"v":"#f4f4f0","t":"color","s":"css-var --color-olive-100 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette olive-100 (declared)."},"200":{"v":"#e8e8e3","t":"color","s":"css-var --color-olive-200 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette olive-200 (declared)."},"300":{"v":"#d8d8d0","t":"color","s":"css-var --color-olive-300 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette olive-300 (declared)."},"400":{"v":"#abab9c","t":"color","s":"css-var --color-olive-400 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette olive-400 (declared)."},"50":{"v":"#fbfbf9","t":"color","s":"css-var --color-olive-50 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette olive-50 (declared)."},"500":{"v":"#7c7c67","t":"color","s":"css-var --color-olive-500 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette olive-500 (declared)."},"600":{"v":"#5b5b4b","t":"color","s":"css-var --color-olive-600 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette olive-600 (declared)."},"700":{"v":"#474739","t":"color","s":"css-var --color-olive-700 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette olive-700 (declared)."},"800":{"v":"#2b2b22","t":"color","s":"css-var --color-olive-800 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette olive-800 (declared)."},"900":{"v":"#1d1d16","t":"color","s":"css-var --color-olive-900 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette olive-900 (declared)."},"950":{"v":"#0c0c09","t":"color","s":"css-var --color-olive-950 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette olive-950 (declared)."}},"orange":{"100":{"v":"#ffedd4","t":"color","s":"css-var --color-orange-100 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette orange-100 (declared)."},"200":{"v":"#ffd6a7","t":"color","s":"css-var --color-orange-200 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette orange-200 (declared)."},"300":{"v":"#ffb86a","t":"color","s":"css-var --color-orange-300 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette orange-300 (declared)."},"400":{"v":"#ff8903","t":"color","s":"css-var --color-orange-400 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette orange-400 (declared)."},"50":{"v":"#fff7ed","t":"color","s":"css-var --color-orange-50 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette orange-50 (declared)."},"500":{"v":"#ff6900","t":"color","s":"css-var --color-orange-500 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette orange-500 (declared)."},"600":{"v":"#f54900","t":"color","s":"css-var --color-orange-600 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette orange-600 (declared)."},"700":{"v":"#ca3500","t":"color","s":"css-var --color-orange-700 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette orange-700 (declared)."},"800":{"v":"#9f2d00","t":"color","s":"css-var --color-orange-800 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette orange-800 (declared)."},"900":{"v":"#7e2a0c","t":"color","s":"css-var --color-orange-900 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette orange-900 (declared)."},"950":{"v":"#441306","t":"color","s":"css-var --color-orange-950 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette orange-950 (declared)."}},"pink":{"default":{"v":"#e099ad","t":"color","s":"css-var --color-pink (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Pink #e099ad — a named brand hue."},"100":{"v":"#fce7f3","t":"color","s":"css-var --color-pink-100 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette pink-100 (declared)."},"200":{"v":"#fccee8","t":"color","s":"css-var --color-pink-200 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette pink-200 (declared)."},"300":{"v":"#fda5d5","t":"color","s":"css-var --color-pink-300 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette pink-300 (declared)."},"400":{"v":"#fb64b6","t":"color","s":"css-var --color-pink-400 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette pink-400 (declared)."},"50":{"v":"#fdf2f8","t":"color","s":"css-var --color-pink-50 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette pink-50 (declared)."},"500":{"v":"#f6339a","t":"color","s":"css-var --color-pink-500 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette pink-500 (declared)."},"600":{"v":"#e60076","t":"color","s":"css-var --color-pink-600 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette pink-600 (declared)."},"700":{"v":"#c6005c","t":"color","s":"css-var --color-pink-700 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette pink-700 (declared)."},"800":{"v":"#a3004c","t":"color","s":"css-var --color-pink-800 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette pink-800 (declared)."},"900":{"v":"#861043","t":"color","s":"css-var --color-pink-900 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette pink-900 (declared)."},"950":{"v":"#510424","t":"color","s":"css-var --color-pink-950 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette pink-950 (declared)."}},"purple":{"100":{"v":"#f3e8ff","t":"color","s":"css-var --color-purple-100 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette purple-100 (declared)."},"200":{"v":"#e9d4ff","t":"color","s":"css-var --color-purple-200 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette purple-200 (declared)."},"300":{"v":"#dab2ff","t":"color","s":"css-var --color-purple-300 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette purple-300 (declared)."},"400":{"v":"#c27aff","t":"color","s":"css-var --color-purple-400 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette purple-400 (declared)."},"50":{"v":"#faf5ff","t":"color","s":"css-var --color-purple-50 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette purple-50 (declared)."},"500":{"v":"#ad46ff","t":"color","s":"css-var --color-purple-500 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette purple-500 (declared)."},"600":{"v":"#9810fa","t":"color","s":"css-var --color-purple-600 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette purple-600 (declared)."},"700":{"v":"#8200db","t":"color","s":"css-var --color-purple-700 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette purple-700 (declared)."},"800":{"v":"#6e11b0","t":"color","s":"css-var --color-purple-800 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette purple-800 (declared)."},"900":{"v":"#59168b","t":"color","s":"css-var --color-purple-900 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette purple-900 (declared)."},"950":{"v":"#3c0366","t":"color","s":"css-var --color-purple-950 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette purple-950 (declared)."}},"red":{"100":{"v":"#fee2e2","t":"color","s":"css-var --color-red-100 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed red 100 step — re-bound on .dark."},"200":{"v":"#fecaca","t":"color","s":"css-var --color-red-200 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed red 200 step — re-bound on .dark."},"300":{"v":"#fca5a5","t":"color","s":"css-var --color-red-300 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed red 300 step — re-bound on .dark."},"400":{"v":"#f87171","t":"color","s":"css-var --color-red-400 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed red 400 step — re-bound on .dark."},"50":{"v":"#fef2f2","t":"color","s":"css-var --color-red-50 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed red 50 step — re-bound on .dark."},"500":{"v":"#ef4444","t":"color","s":"css-var --color-red-500 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed red 500 step — re-bound on .dark."},"600":{"v":"#dc2626","t":"color","s":"css-var --color-red-600 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed red 600 step — re-bound on .dark."},"700":{"v":"#b91c1c","t":"color","s":"css-var --color-red-700 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed red 700 step — re-bound on .dark."},"800":{"v":"#991b1c","t":"color","s":"css-var --color-red-800 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed red 800 step — re-bound on .dark."},"900":{"v":"#7f1d1d","t":"color","s":"css-var --color-red-900 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed red 900 step — re-bound on .dark."},"950":{"v":"#450a0a","t":"color","s":"css-var --color-red-950 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed red 950 step — re-bound on .dark."}},"rose":{"100":{"v":"#ffe4e6","t":"color","s":"css-var --color-rose-100 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette rose-100 (declared)."},"200":{"v":"#ffccd3","t":"color","s":"css-var --color-rose-200 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette rose-200 (declared)."},"300":{"v":"#ffa1ad","t":"color","s":"css-var --color-rose-300 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette rose-300 (declared)."},"400":{"v":"#ff637e","t":"color","s":"css-var --color-rose-400 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette rose-400 (declared)."},"50":{"v":"#fff1f2","t":"color","s":"css-var --color-rose-50 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette rose-50 (declared)."},"500":{"v":"#ff2056","t":"color","s":"css-var --color-rose-500 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette rose-500 (declared)."},"600":{"v":"#ec003f","t":"color","s":"css-var --color-rose-600 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette rose-600 (declared)."},"700":{"v":"#c70036","t":"color","s":"css-var --color-rose-700 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette rose-700 (declared)."},"800":{"v":"#a50036","t":"color","s":"css-var --color-rose-800 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette rose-800 (declared)."},"900":{"v":"#8b0836","t":"color","s":"css-var --color-rose-900 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette rose-900 (declared)."},"950":{"v":"#4d0218","t":"color","s":"css-var --color-rose-950 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette rose-950 (declared)."}},"sage":{"v":"#96bda3","t":"color","s":"css-var --color-sage (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Sage #96bda3 — a named brand hue."},"sea":{"v":"#94c1c5","t":"color","s":"css-var --color-sea (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Sea #94c1c5 — a named brand hue."},"sky":{"100":{"v":"#dff2fe","t":"color","s":"css-var --color-sky-100 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette sky-100 (declared)."},"200":{"v":"#b8e6fe","t":"color","s":"css-var --color-sky-200 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette sky-200 (declared)."},"300":{"v":"#74d4ff","t":"color","s":"css-var --color-sky-300 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette sky-300 (declared)."},"400":{"v":"#00bcff","t":"color","s":"css-var --color-sky-400 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette sky-400 (declared)."},"50":{"v":"#f0f9ff","t":"color","s":"css-var --color-sky-50 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette sky-50 (declared)."},"500":{"v":"#00a6f4","t":"color","s":"css-var --color-sky-500 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette sky-500 (declared)."},"600":{"v":"#0084d1","t":"color","s":"css-var --color-sky-600 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette sky-600 (declared)."},"700":{"v":"#0069a8","t":"color","s":"css-var --color-sky-700 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette sky-700 (declared)."},"800":{"v":"#00598a","t":"color","s":"css-var --color-sky-800 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette sky-800 (declared)."},"900":{"v":"#024a70","t":"color","s":"css-var --color-sky-900 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette sky-900 (declared)."},"950":{"v":"#052f4a","t":"color","s":"css-var --color-sky-950 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette sky-950 (declared)."},"blue":{"v":"#98c7eb","t":"color","s":"css-var --color-sky-blue (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Sky blue #98c7eb — a named brand hue."}},"slate":{"100":{"v":"#f1f5f9","t":"color","s":"css-var --color-slate-100 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette slate-100 (declared)."},"200":{"v":"#e2e8f0","t":"color","s":"css-var --color-slate-200 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette slate-200 (declared)."},"300":{"v":"#cad5e2","t":"color","s":"css-var --color-slate-300 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette slate-300 (declared)."},"400":{"v":"#90a1b9","t":"color","s":"css-var --color-slate-400 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette slate-400 (declared)."},"50":{"v":"#f8fafc","t":"color","s":"css-var --color-slate-50 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette slate-50 (declared)."},"500":{"v":"#62748e","t":"color","s":"css-var --color-slate-500 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette slate-500 (declared)."},"600":{"v":"#45556c","t":"color","s":"css-var --color-slate-600 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette slate-600 (declared)."},"700":{"v":"#314158","t":"color","s":"css-var --color-slate-700 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette slate-700 (declared)."},"800":{"v":"#1d293d","t":"color","s":"css-var --color-slate-800 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette slate-800 (declared)."},"900":{"v":"#0f172b","t":"color","s":"css-var --color-slate-900 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette slate-900 (declared)."},"950":{"v":"#020618","t":"color","s":"css-var --color-slate-950 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette slate-950 (declared)."}},"stone":{"100":{"v":"#f5f5f4","t":"color","s":"css-var --color-stone-100 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette stone-100 (declared)."},"200":{"v":"#e7e5e4","t":"color","s":"css-var --color-stone-200 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette stone-200 (declared)."},"300":{"v":"#d6d3d1","t":"color","s":"css-var --color-stone-300 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette stone-300 (declared)."},"400":{"v":"#a6a09b","t":"color","s":"css-var --color-stone-400 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette stone-400 (declared)."},"50":{"v":"#fafaf9","t":"color","s":"css-var --color-stone-50 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette stone-50 (declared)."},"500":{"v":"#79716b","t":"color","s":"css-var --color-stone-500 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette stone-500 (declared)."},"600":{"v":"#57534d","t":"color","s":"css-var --color-stone-600 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette stone-600 (declared)."},"700":{"v":"#44403b","t":"color","s":"css-var --color-stone-700 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette stone-700 (declared)."},"800":{"v":"#292524","t":"color","s":"css-var --color-stone-800 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette stone-800 (declared)."},"900":{"v":"#1c1917","t":"color","s":"css-var --color-stone-900 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette stone-900 (declared)."},"950":{"v":"#0c0a09","t":"color","s":"css-var --color-stone-950 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette stone-950 (declared)."}},"surface":{"v":"#f6f6f6","t":"color","s":"css-var --color-surface (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Surface #f6f6f6 — the nav-link hover fill and raised card tone."},"tan":{"v":"#ac8a65","t":"color","s":"css-var --color-tan (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Tan #ac8a65 — a named brand hue."},"taupe":{"100":{"v":"#f3f1f1","t":"color","s":"css-var --color-taupe-100 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette taupe-100 (declared)."},"200":{"v":"#e8e4e3","t":"color","s":"css-var --color-taupe-200 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette taupe-200 (declared)."},"300":{"v":"#d8d2d0","t":"color","s":"css-var --color-taupe-300 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette taupe-300 (declared)."},"400":{"v":"#aba09c","t":"color","s":"css-var --color-taupe-400 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette taupe-400 (declared)."},"50":{"v":"#fbfaf9","t":"color","s":"css-var --color-taupe-50 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette taupe-50 (declared)."},"500":{"v":"#7c6d67","t":"color","s":"css-var --color-taupe-500 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette taupe-500 (declared)."},"600":{"v":"#5b4f4b","t":"color","s":"css-var --color-taupe-600 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette taupe-600 (declared)."},"700":{"v":"#473c39","t":"color","s":"css-var --color-taupe-700 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette taupe-700 (declared)."},"800":{"v":"#2b2422","t":"color","s":"css-var --color-taupe-800 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette taupe-800 (declared)."},"900":{"v":"#1d1816","t":"color","s":"css-var --color-taupe-900 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette taupe-900 (declared)."},"950":{"v":"#0c0a09","t":"color","s":"css-var --color-taupe-950 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette taupe-950 (declared)."}},"teal":{"100":{"v":"#cbfbf1","t":"color","s":"css-var --color-teal-100 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette teal-100 (declared)."},"200":{"v":"#96f7e4","t":"color","s":"css-var --color-teal-200 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette teal-200 (declared)."},"300":{"v":"#46ecd5","t":"color","s":"css-var --color-teal-300 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette teal-300 (declared)."},"400":{"v":"#00d5be","t":"color","s":"css-var --color-teal-400 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette teal-400 (declared)."},"50":{"v":"#f0fdfa","t":"color","s":"css-var --color-teal-50 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette teal-50 (declared)."},"500":{"v":"#00bba7","t":"color","s":"css-var --color-teal-500 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette teal-500 (declared)."},"600":{"v":"#009689","t":"color","s":"css-var --color-teal-600 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette teal-600 (declared)."},"700":{"v":"#00786f","t":"color","s":"css-var --color-teal-700 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette teal-700 (declared)."},"800":{"v":"#005f5a","t":"color","s":"css-var --color-teal-800 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette teal-800 (declared)."},"900":{"v":"#0b4f4a","t":"color","s":"css-var --color-teal-900 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette teal-900 (declared)."},"950":{"v":"#022f2e","t":"color","s":"css-var --color-teal-950 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette teal-950 (declared)."}},"violet":{"100":{"v":"#ede9fe","t":"color","s":"css-var --color-violet-100 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette violet-100 (declared)."},"200":{"v":"#ddd6ff","t":"color","s":"css-var --color-violet-200 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette violet-200 (declared)."},"300":{"v":"#c4b4ff","t":"color","s":"css-var --color-violet-300 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette violet-300 (declared)."},"400":{"v":"#a684ff","t":"color","s":"css-var --color-violet-400 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette violet-400 (declared)."},"50":{"v":"#f5f3ff","t":"color","s":"css-var --color-violet-50 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette violet-50 (declared)."},"500":{"v":"#8e51ff","t":"color","s":"css-var --color-violet-500 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette violet-500 (declared)."},"600":{"v":"#7f22fe","t":"color","s":"css-var --color-violet-600 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette violet-600 (declared)."},"700":{"v":"#7008e7","t":"color","s":"css-var --color-violet-700 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette violet-700 (declared)."},"800":{"v":"#5d0ec0","t":"color","s":"css-var --color-violet-800 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette violet-800 (declared)."},"900":{"v":"#4d179a","t":"color","s":"css-var --color-violet-900 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette violet-900 (declared)."},"950":{"v":"#2f0d68","t":"color","s":"css-var --color-violet-950 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette violet-950 (declared)."}},"white":{"default":{"v":"#ffffff","t":"color","s":"css-var --color-white (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"White — the default surface and inverse text (inverts to black on .dark)."},"alpha":{"10":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"css-var --color-white-alpha-10 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Declared white alpha 10 translucency — overlays, veils, scrims."},"5":{"v":"rgba(255, 255, 255, 0.05)","t":"color","s":"css-var --color-white-alpha-5 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Declared white alpha 5 translucency — overlays, veils, scrims."},"60":{"v":"rgba(255, 255, 255, 0.6)","t":"color","s":"css-var --color-white-alpha-60 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Declared white alpha 60 translucency — overlays, veils, scrims."},"75":{"v":"rgba(255, 255, 255, 0.75)","t":"color","s":"css-var --color-white-alpha-75 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Declared white alpha 75 translucency — overlays, veils, scrims."},"80":{"v":"rgba(255, 255, 255, 0.8)","t":"color","s":"css-var --color-white-alpha-80 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Declared white alpha 80 translucency — overlays, veils, scrims."}}},"yellow":{"100":{"v":"#fef9c3","t":"color","s":"css-var --color-yellow-100 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed yellow 100 step — re-bound on .dark."},"200":{"v":"#fef08a","t":"color","s":"css-var --color-yellow-200 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed yellow 200 step — re-bound on .dark."},"300":{"v":"#fde047","t":"color","s":"css-var --color-yellow-300 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed yellow 300 step — re-bound on .dark."},"400":{"v":"#ca8a04","t":"color","s":"css-var --color-yellow-400 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed yellow 400 step — re-bound on .dark."},"50":{"v":"#fefce8","t":"color","s":"css-var --color-yellow-50 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed yellow 50 step — re-bound on .dark."},"500":{"v":"#eab308","t":"color","s":"css-var --color-yellow-500 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed yellow 500 step — re-bound on .dark."},"600":{"v":"#ca8a04","t":"color","s":"css-var --color-yellow-600 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed yellow 600 step — re-bound on .dark."},"700":{"v":"#a16207","t":"color","s":"css-var --color-yellow-700 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed yellow 700 step — re-bound on .dark."},"800":{"v":"#854d0e","t":"color","s":"css-var --color-yellow-800 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed yellow 800 step — re-bound on .dark."},"900":{"v":"#713f12","t":"color","s":"css-var --color-yellow-900 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed yellow 900 step — re-bound on .dark."},"950":{"v":"#422006","t":"color","s":"css-var --color-yellow-950 (light); declared --color-* var over the --themed-* triplets; the .dark scope inverts it","d":"Themed yellow 950 step — re-bound on .dark."}},"zinc":{"100":{"v":"#f4f4f5","t":"color","s":"css-var --color-zinc-100 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette zinc-100 (declared)."},"200":{"v":"#e4e4e7","t":"color","s":"css-var --color-zinc-200 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette zinc-200 (declared)."},"300":{"v":"#d4d4d8","t":"color","s":"css-var --color-zinc-300 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette zinc-300 (declared)."},"400":{"v":"#9f9fa9","t":"color","s":"css-var --color-zinc-400 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette zinc-400 (declared)."},"50":{"v":"#fafafa","t":"color","s":"css-var --color-zinc-50 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette zinc-50 (declared)."},"500":{"v":"#71717b","t":"color","s":"css-var --color-zinc-500 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette zinc-500 (declared)."},"600":{"v":"#52525c","t":"color","s":"css-var --color-zinc-600 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette zinc-600 (declared)."},"700":{"v":"#3f3f46","t":"color","s":"css-var --color-zinc-700 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette zinc-700 (declared)."},"800":{"v":"#27272a","t":"color","s":"css-var --color-zinc-800 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette zinc-800 (declared)."},"900":{"v":"#18181b","t":"color","s":"css-var --color-zinc-900 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette zinc-900 (declared)."},"950":{"v":"#09090b","t":"color","s":"css-var --color-zinc-950 (light); declared Tailwind v4 default palette var (same value both themes)","d":"Tailwind v4 palette zinc-950 (declared)."}},"painted":{"banner":{"v":"#f5f3f1","t":"color","s":"computed backgroundColor of promo-banner default (raw/components-computed.json)","d":"The #F5F3F1 announcement-band fill (arbitrary value, not a token var)."},"faq":{"v":"#faf8f8","t":"color","s":"computed backgroundColor of faq-item default (raw/components-computed.json)","d":"The #FAF8F8 closed-FAQ tint (arbitrary value)."},"plan-card":{"v":"#fdfcfc","t":"color","s":"computed backgroundColor of plan-card default (raw/components-computed.json)","d":"The #FDFCFC plan-card field (the reader-page off-white, arbitrary)."},"plan-card-border":{"v":"#eae9e9","t":"color","s":"computed borderTopColor of plan-card default (raw/components-computed.json)","d":"The #EAE9E9 plan-card hairline (arbitrary rgba)."},"save-badge-bg":{"v":"#e1f5e0","t":"color","s":"computed backgroundColor of save-badge default (raw/components-computed.json)","d":"The #E1F5E0 Save-25% badge fill (arbitrary value)."},"save-badge-fg":{"v":"#307d18","t":"color","s":"computed color of save-badge default (raw/components-computed.json)","d":"The #307D18 Save-25% badge text (arbitrary value)."},"primary-hover":{"v":"#6e6e6e","t":"color","s":"computed backgroundColor of hero-cta hover (raw/components-computed.json)","d":"The #6E6E6E dark-button hover (bg-darkest role, painted not declared)."},"overlay-hover":{"v":"rgba(0, 0, 0, 0.1)","t":"color","s":"computed backgroundColor of sso-google hover (raw/components-computed.json)","d":"The 10% black overlay the secondary buttons paint on hover (bg-overlay-darker)."},"input-border":{"v":"#e5e5e5","t":"color","s":"computed borderTopColor of email-field default (raw/components-computed.json)","d":"The #E5E5E5 input hairline (border-gray-alpha-200)."},"menu-hairline":{"v":"#f2f2f2","t":"color","s":"computed borderTopColor of nav-dropdown default (raw/components-computed.json)","d":"The #F2F2F2 mega-menu border."}},"reader":{"page-bg":{"v":"#ffffff","t":"color","s":"css-var --reader-page-bg (light)","d":"Reader page background (#ffffff light / #000000 dark). (reader app role; declared on the site sheet, unpainted on the public surface)"},"active-sentence-bg":{"v":"#ddf5ff","t":"color","s":"css-var --reader-active-sentence-bg-color (light)","d":"Active-sentence highlight (#ddf5ff). (reader app role; declared on the site sheet, unpainted on the public surface)"},"active-word-bg":{"v":"#73dbf2","t":"color","s":"css-var --reader-active-word-bg-color (light)","d":"Active-word highlight (#73dbf2). (reader app role; declared on the site sheet, unpainted on the public surface)"},"bookmark-bg":{"v":"#fff7dc","t":"color","s":"css-var --reader-bookmark-bg-color (light)","d":"Bookmark fill (#fff7dc). (reader app role; declared on the site sheet, unpainted on the public surface)"},"bookmark-hover-bg":{"v":"#ffe69c","t":"color","s":"css-var --reader-bookmark-hover-bg-color (light)","d":"Bookmark hover fill (#ffe69c). (reader app role; declared on the site sheet, unpainted on the public surface)"},"find-match-bg":{"v":"#fff1a8","t":"color","s":"css-var --reader-find-match-bg-color (light)","d":"Find-match highlight (#fff1a8). (reader app role; declared on the site sheet, unpainted on the public surface)"},"find-current-bg":{"v":"#ffc94a","t":"color","s":"css-var --reader-find-current-bg-color (light)","d":"Current find match (#ffc94a). (reader app role; declared on the site sheet, unpainted on the public surface)"},"podcast-warning-bg":{"v":"#f2f2f2","t":"color","s":"css-var --reader-podcast-warning-bg-color (light)","d":"Podcast warning fill. (reader app role; declared on the site sheet, unpainted on the public surface)"},"podcast-warning-text":{"v":"#949494","t":"color","s":"css-var --reader-podcast-warning-text-color (light)","d":"Podcast warning text. (reader app role; declared on the site sheet, unpainted on the public surface)"}}},"typography":{"display":{"01":{"v":{"fontFamily":"{font.family.inter}","fontSize":"100px","fontWeight":700,"lineHeight":0.95,"letterSpacing":"0px"},"t":"typography","s":"css-var --f-display-01-* (light, resolved at 1440px)","d":"The f-display-01 display step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."},"02":{"v":{"fontFamily":"{font.family.inter}","fontSize":"64px","fontWeight":700,"lineHeight":1.0,"letterSpacing":"0px"},"t":"typography","s":"css-var --f-display-02-* (light, resolved at 1440px)","d":"The f-display-02 display step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."}},"heading":{"01":{"v":{"fontFamily":"{font.family.waldenburg}","fontSize":"64px","fontWeight":700,"lineHeight":1.1,"letterSpacing":"0px"},"t":"typography","s":"css-var --f-heading-01-* (light, resolved at 1440px)","d":"The f-heading-01 Waldenburg heading step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."},"02":{"v":{"fontFamily":"{font.family.waldenburg}","fontSize":"56px","fontWeight":700,"lineHeight":1.1,"letterSpacing":"0px"},"t":"typography","s":"css-var --f-heading-02-* (light, resolved at 1440px)","d":"The f-heading-02 Waldenburg heading step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."},"03":{"v":{"fontFamily":"{font.family.waldenburg}","fontSize":"48px","fontWeight":700,"lineHeight":1.1,"letterSpacing":"0px"},"t":"typography","s":"css-var --f-heading-03-* (light, resolved at 1440px)","d":"The f-heading-03 Waldenburg heading step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."},"04":{"v":{"fontFamily":"{font.family.waldenburg}","fontSize":"32px","fontWeight":700,"lineHeight":1.1,"letterSpacing":"0.32px"},"t":"typography","s":"css-var --f-heading-04-* (light, resolved at 1440px)","d":"The f-heading-04 Waldenburg heading step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."},"05":{"v":{"fontFamily":"{font.family.waldenburg}","fontSize":"28px","fontWeight":700,"lineHeight":1.1,"letterSpacing":"0.28px"},"t":"typography","s":"css-var --f-heading-05-* (light, resolved at 1440px)","d":"The f-heading-05 Waldenburg heading step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."}},"subhead":{"01":{"v":{"fontFamily":"{font.family.inter}","fontSize":"22px","fontWeight":700,"lineHeight":1.4,"letterSpacing":"0.22px"},"t":"typography","s":"css-var --f-subhead-01-* (light, resolved at 1440px)","d":"The f-subhead-01 bold subhead step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."},"02":{"v":{"fontFamily":"{font.family.inter}","fontSize":"18px","fontWeight":700,"lineHeight":1.4,"letterSpacing":"0.18px"},"t":"typography","s":"css-var --f-subhead-02-* (light, resolved at 1440px)","d":"The f-subhead-02 bold subhead step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."},"03":{"v":{"fontFamily":"{font.family.inter}","fontSize":"16px","fontWeight":700,"lineHeight":1.4,"letterSpacing":"0.16px"},"t":"typography","s":"css-var --f-subhead-03-* (light, resolved at 1440px)","d":"The f-subhead-03 bold subhead step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."}},"description":{"01":{"v":{"fontFamily":"{font.family.inter}","fontSize":"22px","fontWeight":400,"lineHeight":1.4,"letterSpacing":"0.22px"},"t":"typography","s":"css-var --f-description-01-* (light, resolved at 1440px)","d":"The f-description-01 lede/description step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."},"02":{"v":{"fontFamily":"{font.family.inter}","fontSize":"18px","fontWeight":400,"lineHeight":1.4,"letterSpacing":"0.18px"},"t":"typography","s":"css-var --f-description-02-* (light, resolved at 1440px)","d":"The f-description-02 lede/description step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."},"03":{"v":{"fontFamily":"{font.family.inter}","fontSize":"16px","fontWeight":400,"lineHeight":1.4,"letterSpacing":"0.16px"},"t":"typography","s":"css-var --f-description-03-* (light, resolved at 1440px)","d":"The f-description-03 lede/description step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."},"04":{"v":{"fontFamily":"{font.family.inter}","fontSize":"14px","fontWeight":400,"lineHeight":1.4,"letterSpacing":"0.14px"},"t":"typography","s":"css-var --f-description-04-* (light, resolved at 1440px)","d":"The f-description-04 lede/description step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."}},"body":{"01":{"v":{"fontFamily":"{font.family.inter}","fontSize":"18px","fontWeight":400,"lineHeight":1.6,"letterSpacing":"0px"},"t":"typography","s":"css-var --f-body-01-* (light, resolved at 1440px)","d":"The f-body-01 body step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."}},"ui":{"01":{"v":{"fontFamily":"{font.family.inter}","fontSize":"18px","fontWeight":700,"lineHeight":1.1,"letterSpacing":"0px","textTransform":"uppercase"},"t":"typography","s":"css-var --f-ui-01-* (light, resolved at 1440px)","d":"The f-ui-01 UI label step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."},"02":{"v":{"fontFamily":"{font.family.inter}","fontSize":"14px","fontWeight":400,"lineHeight":1.4,"letterSpacing":"0px"},"t":"typography","s":"css-var --f-ui-02-* (light, resolved at 1440px)","d":"The f-ui-02 UI label step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."},"03":{"v":{"fontFamily":"{font.family.inter}","fontSize":"14px","fontWeight":700,"lineHeight":1.1,"letterSpacing":"0px","textTransform":"uppercase"},"t":"typography","s":"css-var --f-ui-03-* (light, resolved at 1440px)","d":"The f-ui-03 UI label step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."},"04":{"v":{"fontFamily":"{font.family.inter}","fontSize":"12px","fontWeight":700,"lineHeight":1.1,"letterSpacing":"0px","textTransform":"uppercase"},"t":"typography","s":"css-var --f-ui-04-* (light, resolved at 1440px)","d":"The f-ui-04 UI label step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."},"05":{"v":{"fontFamily":"{font.family.inter}","fontSize":"12px","fontWeight":400,"lineHeight":1.4,"letterSpacing":"0px"},"t":"typography","s":"css-var --f-ui-05-* (light, resolved at 1440px)","d":"The f-ui-05 UI label step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."},"06":{"v":{"fontFamily":"{font.family.inter}","fontSize":"14px","fontWeight":700,"lineHeight":1.1,"letterSpacing":"0px"},"t":"typography","s":"css-var --f-ui-06-* (light, resolved at 1440px)","d":"The f-ui-06 UI label step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."},"07":{"v":{"fontFamily":"{font.family.inter}","fontSize":"10px","fontWeight":400,"lineHeight":1.4,"letterSpacing":"0px"},"t":"typography","s":"css-var --f-ui-07-* (light, resolved at 1440px)","d":"The f-ui-07 UI label step (desktop 1440px; the sheet steps it down at \u003c80rem and \u003c64rem)."}}},"radius":{"pill":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)","d":"The 9999px pill every button, chip, input and badge paints (rounded-full)."},"shadcn":{"v":"8px","t":"dimension","s":"css-var --shadcn-radius (light)","d":"The declared 8px shadcn radius (book covers, small cards)."},"faq":{"v":"20px","t":"dimension","s":"computed borderTopLeftRadius of faq-item default (raw/components-computed.json)","d":"The 20px FAQ-item radius."},"plan-card":{"v":"40px","t":"dimension","s":"computed borderTopLeftRadius of plan-card default (raw/components-computed.json)","d":"The 40px plan-card radius."},"cover-orbit":{"v":"16px","t":"dimension","s":"computed borderTopLeftRadius of book-cover default (raw/components-computed.json)","d":"The 16px orbit cover-card radius."},"compare-link":{"v":"10px","t":"dimension","s":"computed borderTopLeftRadius of cmp-link default (raw/components-computed.json)","d":"The 10px compare-link radius."}},"easing":{"standard":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --default-transition-timing-function (light)","d":"The default transition curve (cubic-bezier(.4,0,.2,1))."},"out":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-out (light)","d":"Declared ease-out (0,0,.2,1)."},"in-out":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"css-var --ease-in-out (light)","d":"Declared ease-in-out (.4,0,.2,1)."}},"duration":{"default":{"v":"150ms","t":"duration","s":"css-var --default-transition-duration (light)","d":"The declared default transition duration (0.15s)."}},"spacing":{"unit":{"v":"4px","t":"dimension","s":"css-var --spacing (light)","d":"The 4px Tailwind base unit every spacing utility multiplies."},"inner-gutter":{"v":"20px","t":"dimension","s":"css-var --spacing-inner-gutter (light)","d":"Inner gutter (20px at 1440px). Declared --spacing var; responsive."},"outer-gutter":{"v":"64px","t":"dimension","s":"css-var --spacing-outer-gutter (light)","d":"Outer gutter (64px at 1440px). Declared --spacing var; responsive."},"outer-content":{"v":"100px","t":"dimension","s":"css-var --spacing-outer-content (light)","d":"Outer content spacing (100px). Declared --spacing var; responsive."},"content-wide":{"v":"160px","t":"dimension","s":"css-var --spacing-content-wide (light)","d":"Wide content spacing (160px). Declared --spacing var; responsive."},"content-xwide":{"v":"200px","t":"dimension","s":"css-var --spacing-content-xwide (light)","d":"Extra-wide content spacing (200px). Declared --spacing var; responsive."}},"layout":{"container-sm":{"v":"384px","t":"dimension","s":"css-var --container-sm (light)","d":"Container sm (384px)."},"container-md":{"v":"448px","t":"dimension","s":"css-var --container-md (light)","d":"Container md (448px)."},"container-2xl":{"v":"672px","t":"dimension","s":"css-var --container-2xl (light)","d":"Container 2xl (672px)."},"container-3xl":{"v":"768px","t":"dimension","s":"css-var --container-3xl (light)","d":"Container 3xl (768px)."},"container-4xl":{"v":"896px","t":"dimension","s":"css-var --container-4xl (light)","d":"Container 4xl (896px)."},"container-5xl":{"v":"1024px","t":"dimension","s":"css-var --container-5xl (light)","d":"Container 5xl (1024px)."},"container-6xl":{"v":"1152px","t":"dimension","s":"css-var --container-6xl (light)","d":"Container 6xl (1152px)."},"grid-columns":{"v":12,"t":"number","s":"css-var --grid-columns (light)","d":"The declared 12-column grid."},"container":{"v":"1304px","t":"dimension","s":"computed width of header default (raw/components-computed.json)","d":"The 1304px content width inside the 1440px viewport (inner + outer gutters)."},"header-height":{"v":"64px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The 64px header bar."},"header-height-mobile":{"v":"64px","t":"dimension","s":"computed height of m-header default (raw/components-computed.json)","d":"The 64px mobile header."},"promo-height":{"v":"49px","t":"dimension","s":"computed height of promo-banner default (raw/components-computed.json)","d":"The 49px promo band."}},"shadow":{"drop-lg":{"v":[{"color":"rgba(0, 0, 0, 0.15)","offsetX":"0px","offsetY":"4px","blur":"4px","spread":"0px"}],"t":"shadow","s":"css-var --drop-shadow-lg (light)","d":"The declared lg drop shadow (rgba(0,0,0,.15) 0 4 4)."},"pill":{"v":[{"color":"rgba(0, 0, 0, 0.06)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px"},{"color":"rgba(0, 0, 0, 0.04)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.04)","offsetX":"0px","offsetY":"2px","blur":"4px","spread":"0px"}],"t":"shadow","s":"computed boxShadow of hero-cta-2 default (raw/components-computed.json)","d":"The layered ring shadow the secondary pills paint (ring 6% + 1px/2px lifts, 4% black)."},"menu":{"v":[{"color":"rgba(16, 24, 40, 0.03)","offsetX":"0px","offsetY":"4px","blur":"6px","spread":"-2px"},{"color":"rgba(16, 24, 40, 0.08)","offsetX":"0px","offsetY":"12px","blur":"16px","spread":"-4px"}],"t":"shadow","s":"computed boxShadow of nav-dropdown default (raw/components-computed.json)","d":"The mega-menu/card elevation (16,24,40 at .03/.08)."},"faq-open":{"v":[{"color":"rgba(0, 0, 0, 0.4)","offsetX":"0px","offsetY":"0px","blur":"1px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.04)","offsetX":"0px","offsetY":"1px","blur":"1px","spread":"0px"},{"color":"rgba(0, 0, 0, 0.04)","offsetX":"0px","offsetY":"2px","blur":"4px","spread":"0px"}],"t":"shadow","s":"computed boxShadow of faq-item open (raw/components-computed.json)","d":"The open-FAQ lift (1px ring 40% + 1-2px lifts 4%)."}},"measured":{"focus-ring":{"v":"#000000","t":"color","s":"computed outline of hero-cta focus-visible (raw/components-computed.json)","d":"The 2px solid #000000 keyboard-focus outline (offset 2px); the declared --focus-ring var inverts to white on .dark."},"focus-ring-width":{"v":"2px","t":"dimension","s":"computed outlineWidth of hero-cta focus-visible (raw/components-computed.json)","d":"The 2px focus outline width."},"focus-ring-offset":{"v":"2px","t":"dimension","s":"computed outlineOffset of hero-cta focus-visible (raw/components-computed.json)","d":"The 2px focus outline offset."},"color":{"v":"300ms","t":"duration","s":"computed transition of hero-cta default (raw/components-computed.json)","d":"The standard colour/background transition. (color, background-color, border-color, transform)"},"menu":{"v":"300ms","t":"duration","s":"computed transition of nav-dropdown default (raw/components-computed.json)","d":"The mega-menu open animation. (width, height)"},"faq":{"v":"650ms","t":"duration","s":"computed transition of faq-item default (raw/components-computed.json)","d":"The FAQ open/close animation. (box-shadow, background-color, margin, border-radius)"},"mobile-menu":{"v":"500ms","t":"duration","s":"computed transition of m-menu-open default (raw/components-computed.json)","d":"The mobile menu slide-in. (color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events)"}}},"light":{"surface":{"page":{"v":"#ffffff","t":"color","s":"css-var --color-white (light); declared --color-* role","d":"The default page field (bg-default)."},"card":{"v":"#f6f6f6","t":"color","s":"css-var --color-surface (light); declared --color-* role","d":"The raised card surface (#f6f6f6)."},"hovered":{"v":"#f0f0f0","t":"color","s":"css-var --color-hovered (light); declared --color-* role","d":"The hover fill (#f0f0f0)."},"inverse":{"v":"#000000","t":"color","s":"css-var --color-black (light); declared --color-* role","d":"The inverse fill — dark buttons, chips-on-dark (bg-inverse)."},"sunken":{"v":"#f2f2f2","t":"color","s":"css-var --color-neutral-50 (light); declared --color-* role","d":"The sunken surface — the Google SSO fill, cover backings (bg-dark)."},"overlay":{"v":"rgba(0, 0, 0, 0.05)","t":"color","s":"css-var --color-black-alpha-5 (light); declared --color-* role","d":"The 5% overlay fill (bg-overlay)."},"overlayDarker":{"v":"rgba(0, 0, 0, 0.1)","t":"color","s":"css-var --color-black-alpha-10 (light); declared --color-* role","d":"The 10% overlay — secondary-button hover (bg-overlay-darker)."},"scrim":{"v":"rgba(0, 0, 0, 0.6)","t":"color","s":"css-var --color-black-alpha-60 (light); declared --color-* role","d":"The 60% scrim (bg-overlay-darkest)."},"informative":{"v":"#c8d5f4","t":"color","s":"css-var --color-blue-200 (light); declared --color-* role","d":"Informative surface (bg-informative)."},"positive":{"v":"#a7f3cc","t":"color","s":"css-var --color-green-200 (light); declared --color-* role","d":"Positive surface (bg-positive)."},"negative":{"v":"#fecaca","t":"color","s":"css-var --color-red-200 (light); declared --color-* role","d":"Negative surface (bg-negative)."},"warning":{"v":"#fef9c3","t":"color","s":"css-var --color-yellow-100 (light); declared --color-* role","d":"Warning surface (bg-warning)."},"banner":{"v":"#f5f3f1","t":"color","s":"computed backgroundColor of promo-banner default (raw/components-computed.json)","d":"The #F5F3F1 announcement band (painted, not declared)."},"faq":{"v":"#faf8f8","t":"color","s":"computed backgroundColor of faq-item default (raw/components-computed.json)","d":"The #FAF8F8 closed-FAQ tint."},"planCard":{"v":"#fdfcfc","t":"color","s":"computed backgroundColor of plan-card default (raw/components-computed.json)","d":"The #FDFCFC plan-card field."},"saveBadge":{"v":"#e1f5e0","t":"color","s":"computed backgroundColor of save-badge default (raw/components-computed.json)","d":"The #E1F5E0 Save-badge fill."},"primaryHover":{"v":"#6e6e6e","t":"color","s":"computed backgroundColor of hero-cta hover (raw/components-computed.json)","d":"The #6E6E6E dark-button hover (bg-darkest)."}},"text":{"default":{"v":"#000000","t":"color","s":"css-var --color-black (light); declared --color-* role","d":"Primary text (text-default)."},"secondary":{"v":"#6e6e6e","t":"color","s":"css-var --color-neutral-600 (light); declared --color-* role","d":"Secondary text (text-light-ish)."},"muted":{"v":"#767676","t":"color","s":"css-var --color-neutral-500 (light); declared --color-* role","d":"Muted text (text-lighter)."},"faint":{"v":"#949494","t":"color","s":"css-var --color-neutral-400 (light); declared --color-* role","d":"Faint text (text-lightest)."},"inverse":{"v":"#ffffff","t":"color","s":"css-var --color-white (light); declared --color-* role","d":"Text on inverse fills (text-inverse)."},"inverseMuted":{"v":"#dcdcdc","t":"color","s":"css-var --color-neutral-200 (light); declared --color-* role","d":"Muted text on dark (text-inverse-light)."},"accent":{"v":"#4680fd","t":"color","s":"css-var --color-accent (light); declared --color-* role","d":"Accent text/link (text-accent)."},"error":{"v":"#ef4444","t":"color","s":"css-var --color-red-500 (light); declared --color-* role","d":"Error text (text-error)."},"negative":{"v":"#991b1c","t":"color","s":"css-var --color-red-800 (light); declared --color-* role","d":"Negative text on negative surfaces (text-negative)."},"positive":{"v":"#065f41","t":"color","s":"css-var --color-green-800 (light); declared --color-* role","d":"Positive text on positive surfaces (text-positive)."},"saveBadge":{"v":"#307d18","t":"color","s":"computed color of save-badge default (raw/components-computed.json)","d":"The #307D18 Save-badge text."}},"border":{"default":{"v":"#e5e5e5","t":"color","s":"css-var --color-neutral-100 (light); declared --color-* role","d":"The default hairline (border-default)."},"light":{"v":"#f2f2f2","t":"color","s":"css-var --color-neutral-50 (light); declared --color-* role","d":"The lighter hairline (border-light)."},"strong":{"v":"#949494","t":"color","s":"css-var --color-neutral-400 (light); declared --color-* role","d":"Strong borders (border-strong)."},"darker":{"v":"#3d3d3d","t":"color","s":"css-var --color-neutral-900 (light); declared --color-* role","d":"Darker borders (border-darker)."},"darkest":{"v":"#000000","t":"color","s":"css-var --color-black (light); declared --color-* role","d":"The darkest border (border-darkest)."},"input":{"v":"#e5e5e5","t":"color","s":"css-var --color-neutral-100 (light); declared --color-* role","d":"Input hairline (border-gray-alpha-200 paints #E5E5E5)."},"inverse":{"v":"#ffffff","t":"color","s":"css-var --color-white (light); declared --color-* role","d":"Borders on inverse fills (border-inverse)."},"negative":{"v":"#991b1c","t":"color","s":"css-var --color-red-800 (light); declared --color-* role","d":"Negative borders."},"positive":{"v":"#065f41","t":"color","s":"css-var --color-green-800 (light); declared --color-* role","d":"Positive borders."},"planCard":{"v":"#eae9e9","t":"color","s":"computed borderTopColor of plan-card default (raw/components-computed.json)","d":"The #EAE9E9 plan-card hairline."}},"accent":{"v":"#4680fd","t":"color","s":"css-var --color-accent (light); declared --color-* role","d":"The declared accent blue (#4680fd)."},"focusRing":{"v":"#000000","t":"color","s":"css-var --focus-ring (light); declared --color-* role","d":"The declared focus ring (black light / white dark)."},"component":{"header":{"height":{"v":"64px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The 64px header bar."},"height-mobile":{"v":"64px","t":"dimension","s":"computed height of m-header default (raw/components-computed.json)","d":"The 64px mobile header."},"container":{"v":"1304px","t":"dimension","s":"computed width of header default (raw/components-computed.json)","d":"The 1304px content column at 1440px."}},"logo":{"width":{"v":"164px","t":"dimension","s":"computed width of logo default (raw/components-computed.json)","d":"The wordmark width (164px rendered)."}},"button":{"height":{"nav":{"v":"36px","t":"dimension","s":"computed height of nav-cta default (raw/components-computed.json)","d":"The 36px nav pill."},"cta":{"v":"52px","t":"dimension","s":"computed height of hero-cta default (raw/components-computed.json)","d":"The 52px hero/pricing CTA."},"chip":{"v":"44px","t":"dimension","s":"computed height of genre-chip default (raw/components-computed.json)","d":"The 44px chip / view-all pill."},"small":{"v":"32px","t":"dimension","s":"computed height of promo-cta default (raw/components-computed.json)","d":"The 32px promo pill."},"sso":{"v":"40px","t":"dimension","s":"computed height of sso-google default (raw/components-computed.json)","d":"The 40px SSO / form pill."}},"radius":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)","d":"Every button paints the 9999px pill."}},"nav-link":{"height":{"v":"36px","t":"dimension","s":"computed height of nav-link default (raw/components-computed.json)","d":"Nav link height (36px)."}},"mega-menu":{"width":{"v":"846px","t":"dimension","s":"computed width of nav-dropdown default (raw/components-computed.json)","d":"The Discover mega-menu width (846px)."}},"field":{"height":{"v":"40px","t":"dimension","s":"computed height of email-field default (raw/components-computed.json)","d":"The 40px auth input."},"radius":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of email-field default (raw/components-computed.json)","d":"Inputs paint the full pill."}},"auth-card":{"width":{"v":"360px","t":"dimension","s":"computed width of signin-card default (raw/components-computed.json)","d":"The 360px max-w-90 auth card column."}},"plan-card":{"width":{"v":"584px","t":"dimension","s":"computed width of plan-card default (raw/components-computed.json)","d":"Plan card width (584px)."},"radius":{"v":"40px","t":"dimension","s":"computed borderTopLeftRadius of plan-card default (raw/components-computed.json)","d":"The 40px plan-card radius."}},"plan-cta":{"height":{"v":"52px","t":"dimension","s":"computed height of plan-cta default (raw/components-computed.json)","d":"The 52px plan CTA."}},"faq":{"radius":{"v":"20px","t":"dimension","s":"computed borderTopLeftRadius of faq-item default (raw/components-computed.json)","d":"The 20px FAQ radius."},"height-closed":{"v":"67px","t":"dimension","s":"computed height of faq-item default (raw/components-computed.json)","d":"The 67px closed FAQ row."}},"billing":{"height":{"v":"48px","t":"dimension","s":"computed height of billing-on default (raw/components-computed.json)","d":"The 48px billing segment."}},"cover":{"radius":{"v":"16px","t":"dimension","s":"computed borderTopLeftRadius of book-cover default (raw/components-computed.json)","d":"The 16px orbit cover radius."}},"mobile-menu":{"item-height":{"v":"24px","t":"dimension","s":"computed height of m-nav-item default (raw/components-computed.json)","d":"Mobile menu item row height (24px)."},"button":{"v":"40px","t":"dimension","s":"computed height of m-menu-button default (raw/components-computed.json)","d":"The 40px hamburger button."}},"state":{"button":{"primary":{"bg":{"v":"#000000","t":"color","s":"computed backgroundColor of hero-cta default (raw/components-computed.json)","d":"Primary pill fill (#000)."},"fg":{"v":"#ffffff","t":"color","s":"computed color of hero-cta default (raw/components-computed.json)","d":"Text on the primary pill (#fff)."},"hoverBg":{"v":"#6e6e6e","t":"color","s":"computed backgroundColor of hero-cta hover (raw/components-computed.json)","d":"Primary pill hover (#6E6E6E)."}},"secondary":{"bg":{"v":"#ffffff","t":"color","s":"computed backgroundColor of hero-cta-2 default (raw/components-computed.json)","d":"Secondary pill fill (#fff)."}},"sso":{"bg":{"v":"#f2f2f2","t":"color","s":"computed backgroundColor of sso-google default (raw/components-computed.json)","d":"The SSO fill (bg-dark #F2F2F2)."},"hoverBg":{"v":"rgba(0, 0, 0, 0.1)","t":"color","s":"computed backgroundColor of sso-google hover (raw/components-computed.json)","d":"SSO hover (10% overlay)."}}},"chip":{"bg":{"v":"#ffffff","t":"color","s":"computed backgroundColor of genre-chip default (raw/components-computed.json)","d":"Genre chip fill."}},"badge":{"save":{"bg":{"v":"#e1f5e0","t":"color","s":"computed backgroundColor of save-badge default (raw/components-computed.json)","d":"Save badge fill (#E1F5E0)."},"fg":{"v":"#307d18","t":"color","s":"computed color of save-badge default (raw/components-computed.json)","d":"Save badge text (#307D18)."}}},"field":{"border":{"v":"#e5e5e5","t":"color","s":"computed borderTopColor of email-field default (raw/components-computed.json)","d":"Input hairline (#E5E5E5)."}},"nav-link":{"hoverBg":{"v":"#f6f6f6","t":"color","s":"computed backgroundColor of nav-link hover (raw/components-computed.json)","d":"Nav-link hover fill."}}}}},"dark":{"surface":{"page":{"v":"#000000","t":"color","s":"css-var --color-white (dark); declared --color-* role","d":"The default page field (bg-default)."},"card":{"v":"#141414","t":"color","s":"css-var --color-surface (dark); declared --color-* role","d":"The raised card surface (#f6f6f6)."},"hovered":{"v":"#1c1c1c","t":"color","s":"css-var --color-hovered (dark); declared --color-* role","d":"The hover fill (#f0f0f0)."},"inverse":{"v":"#ffffff","t":"color","s":"css-var --color-black (dark); declared --color-* role","d":"The inverse fill — dark buttons, chips-on-dark (bg-inverse)."},"sunken":{"v":"#1c1c1c","t":"color","s":"css-var --color-neutral-50 (dark); declared --color-* role","d":"The sunken surface — the Google SSO fill, cover backings (bg-dark)."},"overlay":{"v":"rgba(255, 255, 255, 0.05)","t":"color","s":"css-var --color-black-alpha-5 (dark); declared --color-* role","d":"The 5% overlay fill (bg-overlay)."},"overlayDarker":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"css-var --color-black-alpha-10 (dark); declared --color-* role","d":"The 10% overlay — secondary-button hover (bg-overlay-darker)."},"scrim":{"v":"rgba(255, 255, 255, 0.6)","t":"color","s":"css-var --color-black-alpha-60 (dark); declared --color-* role","d":"The 60% scrim (bg-overlay-darkest)."},"informative":{"v":"#384094","t":"color","s":"css-var --color-blue-200 (dark); declared --color-* role","d":"Informative surface (bg-informative)."},"positive":{"v":"#059661","t":"color","s":"css-var --color-green-200 (dark); declared --color-* role","d":"Positive surface (bg-positive)."},"negative":{"v":"#991b1c","t":"color","s":"css-var --color-red-200 (dark); declared --color-* role","d":"Negative surface (bg-negative)."},"warning":{"v":"#713f12","t":"color","s":"css-var --color-yellow-100 (dark); declared --color-* role","d":"Warning surface (bg-warning)."}},"text":{"default":{"v":"#ffffff","t":"color","s":"css-var --color-black (dark); declared --color-* role","d":"Primary text (text-default)."},"secondary":{"v":"#949494","t":"color","s":"css-var --color-neutral-600 (dark); declared --color-* role","d":"Secondary text (text-light-ish)."},"muted":{"v":"#767676","t":"color","s":"css-var --color-neutral-500 (dark); declared --color-* role","d":"Muted text (text-lighter)."},"faint":{"v":"#6e6e6e","t":"color","s":"css-var --color-neutral-400 (dark); declared --color-* role","d":"Faint text (text-lightest)."},"inverse":{"v":"#000000","t":"color","s":"css-var --color-white (dark); declared --color-* role","d":"Text on inverse fills (text-inverse)."},"inverseMuted":{"v":"#464646","t":"color","s":"css-var --color-neutral-200 (dark); declared --color-* role","d":"Muted text on dark (text-inverse-light)."},"accent":{"v":"#316deb","t":"color","s":"css-var --color-accent (dark); declared --color-* role","d":"Accent text/link (text-accent)."},"error":{"v":"#ef4444","t":"color","s":"css-var --color-red-500 (dark); declared --color-* role","d":"Error text (text-error)."},"negative":{"v":"#fecaca","t":"color","s":"css-var --color-red-800 (dark); declared --color-* role","d":"Negative text on negative surfaces (text-negative)."},"positive":{"v":"#ecfdf4","t":"color","s":"css-var --color-green-800 (dark); declared --color-* role","d":"Positive text on positive surfaces (text-positive)."}},"border":{"default":{"v":"#3d3d3d","t":"color","s":"css-var --color-neutral-100 (dark); declared --color-* role","d":"The default hairline (border-default)."},"light":{"v":"#1c1c1c","t":"color","s":"css-var --color-neutral-50 (dark); declared --color-* role","d":"The lighter hairline (border-light)."},"strong":{"v":"#6e6e6e","t":"color","s":"css-var --color-neutral-400 (dark); declared --color-* role","d":"Strong borders (border-strong)."},"darker":{"v":"#e5e5e5","t":"color","s":"css-var --color-neutral-900 (dark); declared --color-* role","d":"Darker borders (border-darker)."},"darkest":{"v":"#ffffff","t":"color","s":"css-var --color-black (dark); declared --color-* role","d":"The darkest border (border-darkest)."},"input":{"v":"#3d3d3d","t":"color","s":"css-var --color-neutral-100 (dark); declared --color-* role","d":"Input hairline (border-gray-alpha-200 paints #E5E5E5)."},"inverse":{"v":"#000000","t":"color","s":"css-var --color-white (dark); declared --color-* role","d":"Borders on inverse fills (border-inverse)."},"negative":{"v":"#fecaca","t":"color","s":"css-var --color-red-800 (dark); declared --color-* role","d":"Negative borders."},"positive":{"v":"#ecfdf4","t":"color","s":"css-var --color-green-800 (dark); declared --color-* role","d":"Positive borders."}},"accent":{"v":"#316deb","t":"color","s":"css-var --color-accent (dark); declared --color-* role","d":"The declared accent blue (#4680fd)."},"focusRing":{"v":"#ffffff","t":"color","s":"css-var --focus-ring (dark); declared --color-* role","d":"The declared focus ring (black light / white dark)."}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const lightRoles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (lightRoles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of lightRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // The dark set's custom properties only resolve inside a .dark scope:
+  // swatch dots must live under it or they paint the light values/unset.
+  const darkRoles = flat(TOK.dark || {}, '').filter(([n, t]) => t.t === 'color');
+  if (darkRoles.length) {
+    h += `<div class="pal-h">dark roles (declared .dark scope — unpainted on the public surface)</div><div class="pal dark">`;
+    for (const [n, t] of darkRoles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.layout || {}, 'layout.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  // the f-* composites are DTCG typography leaves: {fontFamily, fontSize,
+  // fontWeight, lineHeight, letterSpacing} resolved at 1440px.
+  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
+    const v = t.v || {};
+    // Render the token's own metrics: capping the size or substituting a
+    // line-height would make the label's printed values lie about the sample.
+    const px = parseFloat(v.fontSize) || 14;
+    const fam = /waldenburg/i.test(String(v.fontFamily)) ? 'var(--sg-display)' : 'var(--sg-sans)';
+    h += `<div class="tspec"><span style="font:${v.fontWeight} ${px}px/${v.lineHeight} ${fam};letter-spacing:${v.letterSpacing}">${esc(n)} — The quick brown fox</span><span class="tv">${esc(v.fontSize)} / lh ${esc(String(v.lineHeight))} / w ${esc(String(v.fontWeight))}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — ElevenReader</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

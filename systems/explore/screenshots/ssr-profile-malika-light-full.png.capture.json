@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-14T07:47:04.245Z",
+  "screenshot": "ssr-profile-malika-light-full.png",
+  "sanitizedSourceUrl": "https://explore.family/malikafavre",
+  "provenance": {
+    "archive": {
+      "era": "feb",
+      "snapshot": "2023-02-23",
+      "route": "/malikafavre",
+      "ssr": "/malikafavre"
+    },
+    "mirrorMisses": [
+      "https://back.explore.family/uploads/users/d686b8e2-f419-4794-b1d1-d2fcaab56878-iayjivnitv20221012212454.png",
+      "https://back.explore.family/uploads/users/cae44d38-d338-4604-94f6-e7d8c60423e4-fh0s4lfbiz20221012212104.jpeg",
+      "https://back.explore.family/uploads",
+      "https://back.explore.family/uploads/posts/32/terrainvague-house-reel-0913a-kwhrdmsm-getzq.mp4",
+      "https://back.explore.family/uploads/posts/32/oscars-animation-0422b-ocq0j.mp4",
+      "https://back.explore.family/uploads/posts/32/tny-fireescape-ffxp3.mp4",
+      "https://back.explore.family/uploads/posts/32/couv-animation-0914c-j6cjz.mp4",
+      "https://back.explore.family/uploads/posts/32/allbirds-3800x2396-r8lrf.mp4",
+      "https://back.explore.family/uploads/posts/32/parisplages-30fps-v3-m2aqy.mp4",
+      "https://back.explore.family/uploads/posts/32/lelac-30fps-v3-0v6m4.mp4",
+      "https://back.explore.family/uploads/posts/32/lajungle-30fps-v2-stlmw.mp4",
+      "https://back.explore.family/uploads/posts/32/new-yorker-web-1200x1638-likhg.mp4",
+      "https://back.explore.family/uploads/posts/32/img-6025-vu0sn.mp4"
+    ]
+  },
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 1
+  },
+  "configuredViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 1,
+    "theme": {
+      "classes": [],
+      "attributes": {},
+      "colorScheme": "normal"
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0,
+      "pageLeft": 0,
+      "pageTop": 0
+    },
+    "documentSize": {
+      "width": 1440,
+      "height": 3253
+    },
+    "scroll": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "capture": {
+    "mode": "fullPage",
+    "scale": "device",
+    "clip": null
+  },
+  "png": {
+    "width": 1440,
+    "height": 3253
+  },
+  "dimensionCheck": {
+    "status": "pass",
+    "expected": {
+      "width": 1440,
+      "height": 3253
+    },
+    "basis": "fullPage"
+  },
+  "visualReview": {
+    "status": "pending",
+    "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+  },
+  "cropCoordinates": {
+    "status": "unverified",
+    "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+  }
+}

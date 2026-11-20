@@ -4,6 +4,7 @@
 // publishes: an alias is a whole-string `{path}`, looked up in the token's own
 // set, then an optional theme set, then `core`, then from the root. Text that
 // merely contains braces is a literal, never substituted.
+import { PyFloat, numberOf } from "./pyjson";
 type Raw = Record<string, any>;
 export type TokenLeaf = {
   name: string;
@@ -18,6 +19,7 @@ export type TokenLeaf = {
 // from a nested token tree before treating the enclosing object as a leaf.
 function containsToken(node: unknown): boolean {
   if (!node || typeof node !== "object" || Array.isArray(node)) return false;
+  if (node instanceof PyFloat) return false;
   const obj = node as Raw;
   if (Object.hasOwn(obj, "$value")) return true;
   if (
@@ -25,6 +27,7 @@ function containsToken(node: unknown): boolean {
     (typeof obj.type === "string" ||
       !obj.value ||
       typeof obj.value !== "object" ||
+      obj.value instanceof PyFloat ||
       Array.isArray(obj.value))
   )
     return true;
@@ -62,7 +65,7 @@ export type Resolved = unknown | typeof UNRESOLVED;
 export function hasUnresolved(value: Resolved): boolean {
   if (value === UNRESOLVED) return true;
   if (Array.isArray(value)) return value.some(hasUnresolved);
-  if (value && typeof value === "object")
+  if (value && typeof value === "object" && !(value instanceof PyFloat))
     return Object.values(value).some(hasUnresolved);
   return false;
 }
@@ -92,7 +95,7 @@ export function tokenResolver(leaves: TokenLeaf[]) {
     }
     if (Array.isArray(value))
       return value.map((v) => deep(v, set, theme, depth));
-    if (value && typeof value === "object")
+    if (value && typeof value === "object" && !(value instanceof PyFloat))
       return Object.fromEntries(
         Object.entries(value).map(([key, v]) => [
           key,
@@ -104,17 +107,26 @@ export function tokenResolver(leaves: TokenLeaf[]) {
   return { final };
 }
 
+/** Python's round(): halves go to the even neighbour (76.5 -> 76), where
+ * Math.round always goes up. catalog.py's _hex uses it. */
+export function pyRound(value: number): number {
+  const floor = Math.floor(value);
+  const rest = value - floor;
+  if (rest !== 0.5) return Math.round(value);
+  return floor % 2 === 0 ? floor : floor + 1;
+}
 /** DTCG 2025 colour objects carry components, not a string. */
 export function tokenHex(value: unknown): string | null {
   if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+  if (value instanceof PyFloat) return null;
   const color = value as Raw;
   if (!Array.isArray(color.components)) return null;
   if (typeof color.hex === "string" && color.hex) return color.hex;
   const hex = (n: number) =>
-    Math.round(n * 255)
+    pyRound(Number(n) * 255)
       .toString(16)
       .padStart(2, "0");
-  const alpha = typeof color.alpha === "number" ? color.alpha : 1;
+  const alpha = numberOf(color.alpha) ?? 1;
   return (
     "#" +
     color.components.slice(0, 3).map(hex).join("") +
@@ -126,7 +138,7 @@ export function colorsAsHex(value: unknown): unknown {
   const hex = tokenHex(value);
   if (hex) return hex;
   if (Array.isArray(value)) return value.map(colorsAsHex);
-  if (value && typeof value === "object")
+  if (value && typeof value === "object" && !(value instanceof PyFloat))
     return Object.fromEntries(
       Object.entries(value).map(([key, v]) => [key, colorsAsHex(v)]),
     );

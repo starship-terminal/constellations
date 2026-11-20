@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pexels style guide</title>
+<style>
+/* Values copied from tokens.json, measured on pexels.com 2026-11-19.
+   Canva Sans is not shipped. The fallback is Helvetica Neue. */
+:root, [data-mode="light"] {
+  --page: #ffffff;
+  --surface: #f7f7f7;
+  --text: #000000;
+  --muted: #747474;
+  --accent: #191919;
+  --on-accent: #ffffff;
+  --border: #ededed;
+  --action: #54ca84;
+  --focus: #f5f5f5;
+}
+[data-mode="dark"] {
+  --page: #000000;
+  --surface: #393939;
+  --text: #ffffff;
+  --muted: #ededed;
+  --accent: #ffffff;
+  --on-accent: #000000;
+  --border: #a8a8a8;
+  --action: #54ca84;
+  --focus: #747474;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 19.6px;
+  font-weight: 400;
+}
+header, main { padding: 30px; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+h1 { margin: 0; font-size: 48px; line-height: 1.1; letter-spacing: -2px; font-weight: 700; }
+h2 { margin: 40px 0 12px; font-size: 24px; line-height: 1.3; letter-spacing: -1.5px; font-weight: 700; }
+p { max-width: 62ch; }
+button.toggle {
+  background: var(--accent);
+  color: var(--on-accent);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  height: 48px;
+  padding: 1px 20px;
+  font: inherit;
+  font-size: 17px;
+  letter-spacing: -0.5px;
+  cursor: pointer;
+}
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.swatch { border: 1px solid var(--border); border-radius: 12px; min-height: 88px; padding: 12px; background: var(--surface); }
+.swatch i { display: block; height: 36px; border-radius: 8px; margin-bottom: 8px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 48px; padding: 1px 20px; border-radius: 12px;
+  background: var(--accent); color: var(--on-accent);
+  border: 1px solid var(--accent);
+  font-size: 17px; letter-spacing: -0.5px; text-decoration: none;
+}
+.btn.white { background: var(--page); color: var(--text); border-color: var(--border); }
+.btn.alien { background: var(--action); color: #ffffff; border-color: var(--action); }
+.tab {
+  display: inline-flex; align-items: center; height: 48px; padding: 0 20px;
+  border-radius: 30px; color: #393939; text-decoration: none; font-size: 17px; letter-spacing: -0.5px;
+}
+.tab.on { background: #000000; color: #ffffff; }
+[data-mode="dark"] .tab { color: var(--muted); }
+[data-mode="dark"] .tab.on { background: #ffffff; color: #000000; }
+.search {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--surface); border-radius: 12px; height: 72px; padding: 12px;
+  max-width: 640px; color: var(--muted);
+}
+.field {
+  height: 48px; border-radius: 10px; border: 0; padding: 4px 16px;
+  background: var(--page); color: #393939; font: inherit; font-size: 15px; letter-spacing: -0.5px;
+  width: 240px;
+}
+.note { color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Pexels</h1>
+  <button class="toggle" type="button" id="theme">Dark</button>
+</header>
+<main>
+  <p>Measured on the public signed-out site. Dark greyscale is the declared <code>[data-mode="dark"]</code> block. It was not painted on the pages this capture opened.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><i style="background:var(--page);border:1px solid var(--border)"></i>page</div>
+    <div class="swatch"><i style="background:var(--surface)"></i>surface #f7f7f7</div>
+    <div class="swatch"><i style="background:var(--text)"></i>text</div>
+    <div class="swatch"><i style="background:var(--muted)"></i>muted #747474</div>
+    <div class="swatch"><i style="background:var(--accent)"></i>accent #191919</div>
+    <div class="swatch"><i style="background:var(--action)"></i>action #54ca84</div>
+    <div class="swatch"><i style="background:var(--border)"></i>border #ededed</div>
+  </div>
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="btn" href="#">Join</a>
+    <a class="btn white" href="#">Load More</a>
+    <a class="btn alien" href="#">Free download</a>
+    <a class="tab on" href="#">Home</a>
+    <a class="tab" href="#">Videos</a>
+  </div>
+  <h2>Search</h2>
+  <div class="search">Photos &nbsp; Search for free photos</div>
+  <h2>Field</h2>
+  <input class="field" placeholder="Email" readonly>
+  <p class="note">Canva Sans is the product family. This page uses Helvetica Neue because the woff2 files are not shipped.</p>
+</main>
+<script>
+document.getElementById('theme').addEventListener('click', () => {
+  const html = document.documentElement;
+  const next = html.getAttribute('data-mode') === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-mode', next);
+  document.getElementById('theme').textContent = next === 'dark' ? 'Light' : 'Dark';
+});
+</script>
+</body>
+</html>

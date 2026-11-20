@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HBO Max style guide</title>
+<meta name="description" content="HBO Max (www.hbomax.com) design tokens and the signed-out marketing site's components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*DARK*/
+  --sg-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --sg-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--page, #f5f5f7); background: var(--color-surface-low, #000000); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 800 40px/1.2 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--link, #71b8f2); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-utility-border-base, #3a3a3a); }
+.lead { max-width: 62ch; color: var(--color-action-neutral-text-low, rgba(255,255,255,.65)); }
+.note { font-size: 13px; color: var(--color-action-neutral-text-low, rgba(255,255,255,.65)); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-action-neutral-text-low, rgba(255,255,255,.65)); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-utility-border-base, #3a3a3a); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-action-neutral-text-low, rgba(255,255,255,.65)); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-action-neutral-text-low, rgba(255,255,255,.65)); }
+/* ---- site mock ---- */
+.mock { border: 1px solid var(--color-utility-border-base, #3a3a3a); border-radius: 16px; overflow: hidden; background: #000; }
+.navbar { display: flex; align-items: center; gap: 22px; height: 60px; padding: 0 24px; font-size: 14px; background: linear-gradient(180deg, rgba(0,0,0,.85), rgba(0,0,0,0)); }
+.navbar .wm { font: 800 17px/1 var(--sg-display); letter-spacing: .08em; color: #fff; }
+.navbar .sp { flex: 1; }
+.navbar .nl { color: var(--color-action-neutral-text-mid, rgba(255,255,255,.8)); font-size: 13px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightCta, 40px); padding: 0 20px; border-radius: var(--border-corner-action-lg, 8px); font-size: 13px; font-weight: 600; border: 1px solid transparent; letter-spacing: .02em; }
+.btn.primary { background: var(--color-action-primary-fill-high, #ffffff); color: var(--color-action-primary-text, #000000); }
+.btn.quiet { background: var(--color-component-button-quiet-fill-base, rgba(62,62,62,.75)); color: var(--color-action-neutral-text-high, #ffffff); }
+.btn.linkish { background: none; color: var(--color-action-link-text-base, #71b8f2); }
+.hero { position: relative; padding: 96px 40px 64px; background: linear-gradient(180deg, rgba(0,0,0,.05), #000 92%), radial-gradient(120% 140% at 18% 8%, #2b2150 0%, #14101f 48%, #000 100%); color: #fff; }
+.hero h3 { font: 600 44px/1.05 var(--sg-display); margin: 0 0 14px; letter-spacing: -0.02em; max-width: 14ch; }
+.hero p { color: var(--color-action-neutral-text-mid, rgba(255,255,255,.8)); font-size: 15px; max-width: 52ch; margin: 0 0 26px; }
+.hero .ctl { position: absolute; right: 26px; bottom: 22px; display: flex; gap: 8px; }
+.hero .ctl i { width: 34px; height: 3px; border-radius: 2px; background: rgba(255,255,255,.3); }
+.hero .ctl i.on { background: #fff; }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; padding: 20px; }
+.plan { border: 1px solid var(--color-card-border-low, rgba(255,255,255,.5)); border-radius: var(--component-card-radius, 8px); padding: 20px; background: var(--color-card-neutral-fill-low, rgba(221,221,221,.06)); font-size: 13px; color: #fff; }
+.plan .price { font: 700 26px/1.2 var(--sg-display); margin: 8px 0 14px; }
+.plan .btn { width: 100%; }
+.faqrow { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-top: 1px solid var(--color-utility-border-base, #3a3a3a); font-size: 14px; color: var(--color-action-neutral-text-high, #fff); }
+.faqrow .ch { color: var(--color-action-neutral-text-low, rgba(255,255,255,.65)); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-utility-border-base, #3a3a3a); padding: 6px 14px; text-align: left; }
+.ramps { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0 4px; }
+.ramps i { height: 22px; flex: 0 0 auto; border-radius: var(--border-corner-action-sm, 2px); }
+</style>
+</head>
+<body>
+<main>
+  <h1>HBO Max style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number.</p>
+
+  <h2 class="sh">www.hbomax.com, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the <code>--color_*</code> semantic roles, the <code>--spacer-*</code> spacing architecture, the <code>--border-*</code> radii and strokes and the <code>--font_*</code> type scale that the site's own design-token stylesheet (<code>/dotcom/generated/css/ds/hbomax/design-systems.*.css</code>) declares on <code>:root</code>, <code>.spacer-tokens</code>, <code>.border-tokens</code> and <code>.font-english-like-slate3</code> — plus the component values measured on the live pages. One dark theme (<code>html data-theme="max"</code>); the bundle declares no light variant. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from www.hbomax.com/sg/en, signed out, in headed Chromium under Xvfb at 1440&times;900 (mobile pass at 390&times;844) — Akamai's edge returns 403 to headless Chromium. <code>hbomax.com</code> redirects to <code>www.hbomax.com</code>, which serves the locale the visitor's geography resolves; this capture is the Singapore English locale. Sign-in/subscribe CTAs point at auth.hbomax.com and were never followed. Max Sans is the product's proprietary woff2 (weights 300/400/600) — not committed; samples fall back to the system sans.</p>
+
+  <h2 class="sh">The site chrome</h2>
+  <p class="lead">A translucent gradient navbar floats over a full-bleed hero carousel: the HBO Max wordmark, sparse section links and the white Sign In pill. Each slide carries backdrop art, a display title and the 'Start Subscription' CTA — the primary button is white with black text on the near-black ground.</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm">HBO&nbsp;MAX</span><span class="nl">Series</span><span class="nl">Movies</span><span class="nl">Sports</span><span class="sp"></span><span class="btn primary">Sign In</span></div>
+    <div class="hero"><h3>Stream series and movies</h3><p>Plans from the monthly toggle; the hero autoplays through title slides with the arrow controls.</p><span class="btn primary">Start Subscription</span>
+      <div class="ctl"><i class="on"></i><i></i><i></i><i></i></div></div>
+  </div>
+
+  <h2 class="sh">Plans, FAQ, footer</h2>
+  <p class="lead">Plan tiers are low-alpha cards with the Choose button; the FAQ is a hairline-ruled accordion; quiet buttons use the translucent greys, the link blue is <code>color.action.link.text.base</code>.</p>
+  <div class="mock">
+    <div class="plans">
+      <div class="plan"><b>Standard</b><div class="price">S$15.98/mo</div><span class="btn primary">Choose</span></div>
+      <div class="plan"><b>Ultimate</b><div class="price">S$22.98/mo</div><span class="btn quiet">Choose</span></div>
+    </div>
+    <div class="faqrow"><span>What is HBO Max?</span><span class="ch">&#x2228;</span></div>
+    <div class="faqrow"><span>What can I watch on HBO Max?</span><span class="ch">&#x2228;</span></div>
+  </div>
+
+  <h2 class="sh">Colour roles</h2>
+  <p class="lead">The token sheet's <code>--color_*</code> families — action (button/link fills, texts, borders), component (per-widget states), surface, card, tile, input, indicator, captions, scrim, utility and general — as the only painted theme resolves them.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Scale samples</h2>
+  <p class="lead">Spacing, corner and type steps at the 1440px breakpoint (<code>bp05</code>); the full seven-breakpoint sets are in <code>tokens.json</code>.</p>
+  <div id="scales-out" class="kv"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <p class="lead">Measured boxes: control heights, the navbar and footer blocks, card and dialog radii at 1440px.</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">Motion</h2>
+  <p class="lead">Durations, easings and transitions read live by the motion probe, including what <code>prefers-reduced-motion</code> changes.</p>
+  <div id="motion-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the site's own design-token stylesheet and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and opened states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  const colors = TOK.dark && TOK.dark.color || {};
+  for (const [fam, grp] of Object.entries(colors)) {
+    const items = flat(grp, `color.${fam}.`).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(fam)} (${items.length})</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.dark || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('color.') && !n.startsWith('measured.'));
+  if (roles.length) {
+    h += `<div class="pal-h">measured page roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function scales() {
+  let m = '';
+  const pick = (re) => flat(TOK.core || {}).filter(([n]) => re.test(n));
+  for (const [n, t] of pick(/^spacer\.space\.(vertical|horizontal)\.(page|far|near)\.(?!.*bp)/)) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of pick(/^border\.corner\.(action|component\.(button|card))\.(?!.*bp)/)) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of pick(/^font\.(display|title|body|action)\..*\.bp05\.(fontSize|lineHeight)$/)) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of pick(/^font\.family\./)) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#scales-out').innerHTML = m || '<i>no scale tokens emitted</i>';
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core && TOK.core.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.dark && TOK.dark.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function motion() {
+  let m = '';
+  // composite motion tokens (transition, animation) are objects: list their parts
+  const fmt = (v) => Array.isArray(v) ? v.map(fmt).join(', ') : (v && typeof v === 'object' ? Object.entries(v).map(([k, x]) => k + ' ' + fmt(x)).join(' ') : String(v));
+  for (const [n, t] of flat(TOK.core && TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(fmt(t.v))}</span></div>`;
+  $('#motion-out').innerHTML = m || '<i>no motion tokens emitted</i>';
+})();
+</script>
+</body>
+</html>

@@ -44,3 +44,26 @@ test('a failed click on a run that is still going is thrown', async () => {
   const f = { running: async () => true, stop: async () => { throw new Error('Stop run is covered'); }, wait: async () => {} };
   await assert.rejects(stopRun(f), /Stop run is covered/);
 });
+
+test('a read that throws before the click is thrown, with no click', async () => {
+  let clicks = 0;
+  const f = { running: async () => { throw new Error('page closed'); }, stop: async () => { clicks++; }, wait: async () => {} };
+  await assert.rejects(stopRun(f), /page closed/);
+  assert.equal(clicks, 0);
+});
+
+test('a read that throws after the click is thrown', async () => {
+  let clicked = false;
+  const f = {
+    running: async () => { if (clicked) throw new Error('page closed'); return true; },
+    stop: async () => { clicked = true; },
+    wait: async () => {},
+  };
+  await assert.rejects(stopRun(f), /page closed/);
+});
+
+test('an interval longer than the timeout checks once, then fails', async () => {
+  const f = fake({ busyAfterStop: Infinity });
+  await assert.rejects(stopRun({ ...f, timeout: 100, interval: 1000 }), /did not stop within 100 ms/);
+  assert.equal(f.s.slept, 1000);
+});

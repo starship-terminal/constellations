@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Trulia style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --surface: #ffffff;
+    --text: #3b4144;
+    --muted: #6b7780;
+    --accent: #007882;
+    --on-accent: #ffffff;
+    --border: #cdd1d4;
+    --grey-50: #f5f6f7;
+    --tarzana-50: #e0f7f8;
+    --tarzana-300: #4dc5cf;
+    --tarzana-500: #00adbb;
+    --radius: 8px;
+    --font: Figtree, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font: 400 16px/1.5 var(--font);
+    letter-spacing: -0.1px;
+  }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 24px 96px; }
+  h1 { font-size: 38px; line-height: 1.05; font-weight: 900; margin: 0 0 8px; }
+  h2 { font-size: 20px; line-height: 1.2; font-weight: 900; margin: 40px 0 12px; }
+  p { margin: 0 0 12px; }
+  .note { color: var(--muted); font-size: 14px; }
+  .swatches, .type, .controls { display: grid; gap: 12px; }
+  .swatches { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+  .swatch { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .chip { height: 64px; }
+  .swatch span, .row { display: block; padding: 8px 12px; font-size: 12px; line-height: 1.33; }
+  .hero {
+    background: #3b4144;
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 32px 24px;
+    margin: 16px 0 24px;
+  }
+  .hero h3 { margin: 0 0 16px; font-size: 28px; line-height: 1.14; font-weight: 900; }
+  .tabs { display: flex; gap: 8px; margin-bottom: 12px; }
+  .tab, .btn, .field {
+    font: inherit;
+    border-radius: var(--radius);
+  }
+  .tab { border: 0; padding: 8px 24px; height: 40px; background: transparent; color: #fff; }
+  .tab.on { background: #fff; color: var(--accent); }
+  .field {
+    width: 100%;
+    max-width: 520px;
+    height: 60px;
+    border: 1px solid var(--grey-50);
+    padding: 8px 16px;
+    font-size: 20px;
+    color: var(--text);
+  }
+  .btn {
+    display: inline-block;
+    height: 42px;
+    padding: 8px 16px;
+    font-weight: 700;
+    border: 1px solid transparent;
+  }
+  .btn.primary { background: var(--accent); color: var(--on-accent); box-shadow: rgba(59, 65, 68, 0.7) 0px 8px 20px -15px; }
+  .btn.default { background: #fff; color: var(--text); border-color: var(--border); }
+  .btn.nav { background: transparent; color: var(--text); }
+  .controls { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); align-items: center; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--border); }
+  code { font-family: ui-monospace, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Trulia</h1>
+  <p>Public homepage tokens, measured signed out on 2026-11-19. One light theme. Figtree is not bundled, so this page falls back to Arial when Figtree is not installed.</p>
+  <p class="note">Listing, neighborhood, mortgage and sign-in pages were not measured. PerimeterX blocked further navigation after the homepage read. Screenshot frames were unavailable.</p>
+
+  <div class="hero">
+    <h3>Discover a place<br>you'll love to live</h3>
+    <div class="tabs">
+      <button class="tab on" type="button">Buy</button>
+      <button class="tab" type="button">Rent</button>
+      <button class="tab" type="button">Sold</button>
+    </div>
+    <input class="field" placeholder="Search for City, Neighborhood, Zip, County, School" aria-label="Search">
+  </div>
+
+  <div class="controls">
+    <a class="btn nav">Buy</a>
+    <button class="btn default" type="button">Sign up or Log in</button>
+    <a class="btn primary">Find a home</a>
+  </div>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#ffffff;border-bottom:1px solid #cdd1d4"></div><span>page #ffffff</span></div>
+    <div class="swatch"><div class="chip" style="background:#3b4144"></div><span>text #3b4144</span></div>
+    <div class="swatch"><div class="chip" style="background:#6b7780"></div><span>muted #6b7780</span></div>
+    <div class="swatch"><div class="chip" style="background:#007882"></div><span>accent #007882</span></div>
+    <div class="swatch"><div class="chip" style="background:#00adbb"></div><span>primary #00adbb</span></div>
+    <div class="swatch"><div class="chip" style="background:#4dc5cf"></div><span>focus ring #4dc5cf</span></div>
+    <div class="swatch"><div class="chip" style="background:#e0f7f8"></div><span>tarzana 50 #e0f7f8</span></div>
+    <div class="swatch"><div class="chip" style="background:#cdd1d4"></div><span>border #cdd1d4</span></div>
+    <div class="swatch"><div class="chip" style="background:#f5f6f7"></div><span>grey 50 #f5f6f7</span></div>
+    <div class="swatch"><div class="chip" style="background:#052286"></div><span>secondary #052286</span></div>
+    <div class="swatch"><div class="chip" style="background:#ff5e3f"></div><span>tertiary #ff5e3f</span></div>
+    <div class="swatch"><div class="chip" style="background:#d93c23"></div><span>error #d93c23</span></div>
+    <div class="swatch"><div class="chip" style="background:#008545"></div><span>success #008545</span></div>
+    <div class="swatch"><div class="chip" style="background:#f2c430"></div><span>warning #f2c430</span></div>
+  </div>
+
+  <h2>Type</h2>
+  <table>
+    <tr><th>Role</th><th>Size</th><th>Weight</th><th>Line height</th></tr>
+    <tr><td>Display</td><td>38px</td><td>900</td><td>1.05</td></tr>
+    <tr><td>Headline</td><td>28px</td><td>900</td><td>1.14</td></tr>
+    <tr><td>Title</td><td>24px</td><td>900</td><td>1.33</td></tr>
+    <tr><td>Sub header</td><td>20px</td><td>400</td><td>1.2</td></tr>
+    <tr><td>Body</td><td>16px</td><td>400</td><td>1.5</td></tr>
+    <tr><td>Caption</td><td>12px</td><td>400</td><td>1.33</td></tr>
+    <tr><td>Sub caption</td><td>10px</td><td>400</td><td>1.6</td></tr>
+  </table>
+
+  <h2>Space and radius</h2>
+  <p>Spacing steps from <code>--spacing-*</code>: 0, 2, 4, 8, 16, 24, 32, 48, 64, 96, 128 px. Radii: 2, 8, 16 px. Controls on the homepage use 8 px.</p>
+</main>
+</body>
+</html>

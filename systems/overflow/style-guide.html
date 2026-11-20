@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overflow style guide</title>
+<style>
+:root {
+  --font-family-inter: Inter, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-family-interVar: "Inter var",sans-serif;
+  --font-letterSpacing-h1: -0.6px;
+  --font-letterSpacing-h2: 0;
+  --font-letterSpacing-h3: 0;
+  --font-letterSpacing-h4: 0px;
+  --font-letterSpacing-h5: .1px;
+  --font-letterSpacing-h6: .2px;
+  --font-letterSpacing-p1: .2px;
+  --font-letterSpacing-p2: 0;
+  --font-letterSpacing-small: .2px;
+  --font-lineHeight-h1: 40px;
+  --font-lineHeight-h2: 36px;
+  --font-lineHeight-h3: 28px;
+  --font-lineHeight-h4: 24px;
+  --font-lineHeight-h5: 24px;
+  --font-lineHeight-h6: 20px;
+  --font-lineHeight-p1: 24px;
+  --font-lineHeight-p2: 24px;
+  --font-lineHeight-small: 20px;
+  --font-size-h1: 32px;
+  --font-size-h2: 24px;
+  --font-size-h3: 20px;
+  --font-size-h4: 16px;
+  --font-size-h5: 14px;
+  --font-size-h6: 12px;
+  --font-size-p1: 16px;
+  --font-size-p2: 14px;
+  --font-size-small: 12px;
+  --font-weight-bold: 800;
+  --font-weight-book: 400;
+  --font-weight-demibold: 600;
+  --font-weight-h1: 600;
+  --font-weight-h2: 500;
+  --font-weight-h3: 500;
+  --font-weight-h4: 500;
+  --font-weight-h5: 500;
+  --font-weight-h6: 500;
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
+  --font-weight-p1: 400;
+  --font-weight-p2: 400;
+  --font-weight-small: 400;
+  --color-ink: #000000;
+  --color-paper: #ffffff;
+  --color-hero-text: #ffffff;
+  --color-navy: #161637;
+  --color-eyebrow: #acacbc;
+  --color-footer-link: rgba(0, 0, 0, 0.6);
+  --color-link: #0085e4;
+  --color-link-hover: #259aef;
+  --color-gray-light: #fafafc;
+  --color-gray-dark: #f2f2f4;
+  --color-cookie-secondary: #f0f0f2;
+  --color-cookie-secondary-hover: #e8e8ea;
+  --color-field: rgba(0, 0, 0, 0.04);
+  --color-field-border: #e8e8ea;
+  --color-field-focus: #149bfe;
+  --color-theme: #232d41;
+  --color-auth-panel: #d6f3ff;
+  --color-auth-text: #2a2d32;
+  --color-focus-ring: #005fcc;
+  --radius-button: 8px;
+  --radius-field: 8px;
+  --radius-card: 24px;
+  --radius-price-header: 7px;
+  --radius-app-control: 6px;
+  --radius-app-textbutton: 3px;
+  --spacing-header: 96px;
+  --spacing-header-mobile: 77px;
+  --spacing-nav-pad-y: 8px;
+  --spacing-nav-pad-x: 16px;
+  --spacing-button-pad-y: 19px;
+  --spacing-button-pad-x: 24px;
+  --spacing-button-nav-y: 15px;
+  --spacing-field-pad: 16px;
+  --spacing-section: 156px;
+  --spacing-hero-pad-top: 96px;
+  --spacing-footer-pad-top: 128px;
+  --spacing-app-control-x: 32px;
+  --spacing-app-field-y: 7px;
+  --spacing-app-field-x: 11px;
+  --spacing-app-panel: 485px;
+  --size-button-hero: 56px;
+  --size-button-nav: 48px;
+  --size-field: 48px;
+  --size-app-control: 40px;
+  --size-app-button-s: 32px;
+  --shadow-plan-card: 0px 4px 16px -8px rgba(0, 0, 0, 0.08);
+  --shadow-app-button: 0px 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 1px 2px 0px rgba(0, 0, 0, 0.12);
+  --shadow-app-button-hover: 0px 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px -1px rgba(0, 0, 0, 0.16);
+  --shadow-app-button-shadow: 0 0 0 .5px rgba(0,0,0,.1),0 .5px 1px 0 rgba(0,0,0,.16);
+  --shadow-app-button-shadow-dark: 0 0 0 .5px rgba(0,0,0,.1),0 .5px 1px 0 rgba(0,0,0,.27);
+  --shadow-app-kbd: 0 1px 2px 0 rgba(0,0,0,.24);
+  --shadow-app-learnmore-shadow: 0 10px 16px 0 rgba(0,0,0,.16),0 0 0 1px rgba(0,0,0,.02);
+  --shadow-app-level-1: 0 0 0 1px rgba(0,0,0,.04),0 2px 3px 0 rgba(0,0,0,.12);
+  --shadow-app-level-1-hover: 0 2px 4px 0 rgba(0,0,0,.16),0 3px 8px 0 rgba(0,0,0,.24);
+  --shadow-app-level-2: 0 0 0 1px rgba(0,0,0,.04),0 8px 16px 0 rgba(0,0,0,.16);
+  --shadow-app-level-3: 0 0 0 1px rgba(0,0,0,.04),0 8px 16px 0 rgba(0,0,0,.16);
+  --shadow-app-level-4: 0 0 0 1px rgba(0,0,0,.04),0 8px 32px 0 rgba(0,0,0,.12);
+  --shadow-app-level-5: 0 1px 4px 0 rgba(0,0,0,.12),0 16px 32px 0 rgba(0,0,0,.12);
+  --shadow-app-notification: 0 1px 3px 0 rgba(0,0,0,.12),0 2px 8px 0 rgba(0,0,0,.12),0 0.5px 0 0 rgba(0,0,0,.12),0 -.25px 0 0 rgba(0,0,0,.12);
+  --shadow-app-panel: 0 0 0 1px rgba(0,0,0,.08);
+  --shadow-app-popover: 0 10px 16px 0 rgba(0,0,0,.16),0 0 0 1px rgba(0,0,0,.02);
+  --shadow-app-thumbnail: 0 0 0.5px 0 rgba(0,0,0,.24),0 2px 5px 0 rgba(0,0,0,.16);
+  --shadow-app-titlebar-shadow: 0 .5px 0 0 rgba(0,0,0,.16);
+  --shadow-app-walkthrough: 0 4px 12px 0 rgba(0,0,0,.24),0 0 24px 0 rgba(0,0,0,.12);
+  --shadow-app-web-titlebar-shadow: 0 1px 10px 0 rgba(0,0,0,.1);
+  --motion-bezier: cubic-bezier(0.02, 0.49, 0.01, 0.97);
+  --motion-bounce: cubic-bezier(0.0, -0.04, 0.52, 2.44);
+  --motion-bounceInverse: cubic-bezier(0.24, -1.24, 1.0, 1.0);
+  --motion-default: cubic-bezier(0.25, 0.1, 0.25, 1.0);
+  --motion-delayFast: 65ms;
+  --motion-delaySlow: 1000ms;
+  --motion-delaySlower: 500ms;
+  --motion-delayVerySlow: 2500ms;
+  --motion-durationDefault: 140ms;
+  --motion-durationFast: 85ms;
+  --motion-durationSlow: 200ms;
+  --motion-durationSlower: 300ms;
+  --motion-durationSlowest: 450ms;
+  --motion-durationSpin: 800ms;
+  --motion-easeOutBack: cubic-bezier(0.18, 0.89, 0.0, 1.16);
+  --background-page: var(--color-paper);
+  --background-surface: var(--color-paper);
+  --background-sunken: var(--color-gray-light);
+  --background-band: var(--color-gray-dark);
+  --background-action: var(--color-ink);
+  --background-action-secondary: var(--color-cookie-secondary);
+  --background-auth-panel: var(--color-auth-panel);
+  --background-auth-page: var(--color-paper);
+  --background-app-action: #0071db;
+  --background-app-action-hover: #0065c5;
+  --background-app-disabled: #f0f1f3;
+  --text-primary: var(--color-ink);
+  --text-on-action: var(--color-paper);
+  --text-secondary: var(--color-footer-link);
+  --text-eyebrow: var(--color-eyebrow);
+  --text-link: var(--color-link);
+  --text-hero: var(--color-hero-text);
+  --text-navy: var(--color-navy);
+  --text-auth: var(--color-auth-text);
+  --text-auth-muted: #767a80;
+  --text-auth-disabled: #b7bdc5;
+  --text-auth-link: #0071db;
+  --border-stroke: var(--color-field-border);
+  --border-action: var(--color-ink);
+  --border-app-input: #cfd2d7;
+  --border-app-input-focus: #a3a6aa;
+  --component-button-primary-background: var(--background-action);
+  --component-button-primary-text: var(--text-on-action);
+  --component-button-primary-radius: var(--radius-button);
+  --component-button-primary-height: var(--size-button-hero);
+  --component-button-primary-padding: var(--spacing-button-pad-x);
+  --component-button-secondary-background: var(--background-action-secondary);
+  --component-button-secondary-text: var(--text-primary);
+  --component-button-secondary-radius: var(--radius-button);
+  --component-text-field-background: var(--color-field);
+  --component-text-field-text: var(--text-primary);
+  --component-text-field-radius: var(--radius-field);
+  --component-text-field-height: var(--size-field);
+  --component-plan-card-background: var(--background-surface);
+  --component-plan-card-radius: var(--radius-card);
+  --component-app-button-background: var(--background-app-action);
+  --component-app-button-text: #ffffff;
+  --component-app-button-radius: var(--radius-app-control);
+  --component-app-button-height: var(--size-app-button-s);
+  --component-app-field-background: #ffffff;
+  --component-app-field-text: #36383b;
+  --component-app-field-radius: var(--radius-app-control);
+  --component-app-field-height: var(--size-app-control);
+  --app-account-border: #e9eaec;
+  --app-account-fill: #f4f5f6;
+  --app-avatar-fill: #1f2124;
+  --app-black100: #000000;
+  --app-blue10: #e8f2fc;
+  --app-blue100: #0071db;
+  --app-blue110: #0065c5;
+  --app-blue120: #005aaf;
+  --app-blue130: #006ebe;
+  --app-blue140: #004688;
+  --app-blue150: #00386d;
+  --app-blue160: #002d57;
+  --app-blue170: #002242;
+  --app-blue180: #00172d;
+  --app-blue20: #d1e6fa;
+  --app-blue200: #000b15;
+  --app-blue30: #bad9f7;
+  --app-blue40: #a3cdf5;
+  --app-blue50: #8cc0f2;
+  --app-blue60: #75b4ef;
+  --app-blue70: #5ea7ec;
+  --app-blue8: #ebf4fd;
+  --app-blue80: #479bea;
+  --app-blue90: #1982e5;
+  --app-border-transparent: rgba(0,0,0,.08);
+  --app-brand-blue: #232d41;
+  --app-button-active-fill: #f0f1f3;
+  --app-button-fill: #ffffff;
+  --app-button-hover-fill: #f9fafb;
+  --app-canvas: #f9fafb;
+  --app-cloud-color1: #232d41;
+  --app-cyanblue100: #16b4f2;
+  --app-dark1: #fafbfc;
+  --app-dark10: #e6e9ec;
+  --app-dark100: #1f2124;
+  --app-dark120: #1a1b1d;
+  --app-dark140: #141414;
+  --app-dark2: #f9fafb;
+  --app-dark20: #cfd2d7;
+  --app-dark30: #b7bdc5;
+  --app-dark4: #f4f5f6;
+  --app-dark40: #a3a6aa;
+  --app-dark50: #8c9095;
+  --app-dark6: #f0f1f3;
+  --app-dark60: #767a80;
+  --app-dark70: #5f6369;
+  --app-dark8: #ecedef;
+  --app-dark80: #4b4e53;
+  --app-dark90: #36383b;
+  --app-dark92: #313336;
+  --app-dark94: #2c2e30;
+  --app-dark96: #282a2d;
+  --app-dark98: #252628;
+  --app-dark99: #212224;
+  --app-error: #df202f;
+  --app-fill: #ffffff;
+  --app-green10: #e5f6f1;
+  --app-green100: #00a879;
+  --app-green110: #009269;
+  --app-green120: #007050;
+  --app-green140: #036147;
+  --app-green150: #01543d;
+  --app-green20: #cceee4;
+  --app-green30: #b2e4d6;
+  --app-green40: #99dcc9;
+  --app-green50: #7fd3bc;
+  --app-green60: #66cbaf;
+  --app-green70: #4cc2a1;
+  --app-green8: #ebf8f5;
+  --app-green80: #33ba94;
+  --app-green90: #19b086;
+  --app-griddark-fill: #e7e7e7;
+  --app-gridlight-fill: #f9fafb;
+  --app-hotspot-fill: rgba(0,113,219,.4);
+  --app-icon-primary: #5f6369;
+  --app-icon-primary-selected: #fa2b3c;
+  --app-icon-secondary: #a3a6aa;
+  --app-icon-secondary-selected: #fb5563;
+  --app-icon-tertiary: #d3d5d9;
+  --app-input-border: #cfd2d7;
+  --app-input-fill: #ffffff;
+  --app-input-focus: #a3cdf5;
+  --app-kbd-border: rgba(33,34,35,.16);
+  --app-kbd-fill: #ffffff;
+  --app-keyboard-modal-bg: hsla(0,0%,100%,.96);
+  --app-keyboard-modal-bg-app: rgba(249,250,251,.96);
+  --app-keyboard-modal-bg-no-alpha: rgba(249,250,251,0);
+  --app-latest-version-badge: rgba(31,33,36,.06);
+  --app-launcher-logo-text: #161637;
+  --app-launcher-screens-fill: #ffffff;
+  --app-launcher-screens-stroke: #cccccc;
+  --app-light10: #f9fcfc;
+  --app-light100: #cbe3e3;
+  --app-light120: #a2b5b5;
+  --app-light20: #f5f9f9;
+  --app-light30: #eff6f6;
+  --app-light40: #eaf4f4;
+  --app-light50: #e5f1f1;
+  --app-light60: #e0eeee;
+  --app-light70: #daebeb;
+  --app-light80: #d5e9e9;
+  --app-light90: #d0e5e5;
+  --app-menu-light-fill: #f0f1f3;
+  --app-notification-bg: #ffffff;
+  --app-onoff-handle-fill: #ffffff;
+  --app-overlay-bg: hsla(240,2%,92%,.94);
+  --app-panel-bg: rgba(249,250,251,.96);
+  --app-panel-item-selected: rgba(0,113,219,.08);
+  --app-picker-header-bg: hsla(210,8%,95%,.96);
+  --app-primary: #0071db;
+  --app-purple10: #ebebf9;
+  --app-purple100: #3d3dc3;
+  --app-purple120: #2c2c96;
+  --app-purple140: #242475;
+  --app-purple170: #161637;
+  --app-purple20: #e6e6f8;
+  --app-purple30: #c4c4ed;
+  --app-purple4: #f7f7fd;
+  --app-purple40: #a3a3ee;
+  --app-purple50: #9e9ee1;
+  --app-purple6: #f4f4fc;
+  --app-purple60: #8b8bdb;
+  --app-purple70: #7777d5;
+  --app-purple8: #f0f0fb;
+  --app-purple80: #6464cf;
+  --app-purple90: #5050c9;
+  --app-purple92: #4c4cc7;
+  --app-purpleAccent01: #151582;
+  --app-radio-active-border: #cfd2d7;
+  --app-radio-active-fill: #f4f5f6;
+  --app-red10: #fee9eb;
+  --app-red100: #fa2b3c;
+  --app-red110: #df202f;
+  --app-red120: #c82230;
+  --app-red140: #961924;
+  --app-red2: #fffbfb;
+  --app-red20: #fed5d8;
+  --app-red30: #fdbfc4;
+  --app-red4: #fff7f7;
+  --app-red40: #fdaab1;
+  --app-red50: #fc959d;
+  --app-red6: #fff3f4;
+  --app-red60: #fc808a;
+  --app-red70: #fb6a76;
+  --app-red8: #ffeef0;
+  --app-red80: #fb5563;
+  --app-red90: #fa404f;
+  --app-red92: #fa3c4b;
+  --app-registration-svg-color: #232d41;
+  --app-scrollbar: rgba(33,34,35,.4);
+  --app-separator: #eeeeee;
+  --app-sidebar-bg: #f4f5f6;
+  --app-status-loader-fill: #0071db;
+  --app-swatch-stroke: rgba(0,0,0,.12);
+  --app-text: #36383b;
+  --app-textbutton: #0071db;
+  --app-tooltip: #ffffff;
+  --app-tour-bg: hsla(240,2%,92%,.8);
+  --app-ui-bg: #ffffff;
+  --app-ui-bg-app: #f9fafb;
+  --app-ui-bg-overlay: hsla(0,0%,100%,.88);
+  --app-white100: #ffffff;
+  --app-yellow10: #fff8e8;
+  --app-yellow100: #ffb719;
+  --app-yellow110: #e5a416;
+  --app-yellow120: #cc9214;
+  --app-yellow140: #996d0f;
+  --app-yellow20: #ffefcb;
+  --app-yellow30: #ffe9ba;
+  --app-yellow40: #ffe2a3;
+  --app-yellow50: #ffdb8c;
+  --app-yellow60: #ffd475;
+  --app-yellow70: #ffcc5e;
+  --app-yellow8: #fffaef;
+  --app-yellow80: #ffc547;
+  --app-yellow90: #ffbe30;
+  --app-yellow92: #ffbc2b;
+  --focus-outline: var(--color-focus-ring);
+  --focus-width: 1px;
+  --focus-offset: 1px;
+  --sg: Inter, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--background-page); color: var(--text-primary); font: 400 16px/28px var(--sg); }
+header { padding: 32px 40px 16px; border-bottom: 1px solid var(--border-stroke); }
+header h1 { margin: 0; font: 800 40px/48px var(--sg); letter-spacing: -0.5px; }
+header p { margin: 8px 0 0; color: var(--text-secondary); max-width: 68ch; }
+main { padding: 8px 40px 80px; max-width: 1180px; }
+h2 { font: 800 28px/34px var(--sg); letter-spacing: -0.4px; margin: 40px 0 12px; }
+h3 { font: 700 16px/24px var(--sg); margin: 24px 0 8px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+.chip { width: 88px; }
+.chip i { display: block; height: 56px; border-radius: 8px; border: 1px solid rgba(0,0,0,.08); }
+.chip span { display: block; font-size: 11px; line-height: 14px; margin-top: 4px; color: var(--text-secondary); }
+.sw { display: flex; gap: 8px; align-items: center; width: 280px; font-size: 12px; line-height: 16px; }
+.sw i { width: 28px; height: 28px; border-radius: 6px; border: 1px solid rgba(0,0,0,.08); flex: none; }
+.grid { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; background: var(--component-button-primary-background); color: var(--component-button-primary-text); border-radius: var(--component-button-primary-radius); height: var(--component-button-primary-height); padding: 0 var(--component-button-primary-padding); font: 550 16px/16px var(--sg); letter-spacing: 0.2px; border: 1px solid #000; text-decoration: none; }
+.btn-s { display: inline-flex; align-items: center; background: var(--component-button-secondary-background); color: var(--component-button-secondary-text); border-radius: var(--component-button-secondary-radius); padding: 8px 12px; font: 550 15px/24px var(--sg); border: 1px solid var(--component-button-secondary-background); }
+.field { background: var(--component-text-field-background); color: var(--component-text-field-text); border-radius: var(--component-text-field-radius); height: var(--component-text-field-height); padding: 0 16px; border: 0; width: 293px; font: 400 14px/14px var(--sg); }
+.card { background: var(--component-plan-card-background); border-radius: var(--component-plan-card-radius); box-shadow: var(--shadow-plan-card); padding: 40px; width: 320px; }
+.card h3 { color: var(--text-link); font-weight: 700; text-align: center; }
+.panel { background: var(--background-auth-panel); color: var(--text-navy); padding: 32px; border-radius: 0; width: 280px; min-height: 180px; }
+.app-btn { display: inline-flex; align-items: center; justify-content: center; background: var(--component-app-button-background); color: var(--component-app-button-text); border-radius: var(--component-app-button-radius); height: var(--component-app-button-height); padding: 0 12px; font: 600 12px/24px var(--sg); letter-spacing: 0.1px; box-shadow: var(--shadow-app-button); border: 0; }
+.app-field { background: var(--component-app-field-background); color: var(--component-app-field-text); border: 1px solid var(--border-app-input); border-radius: var(--component-app-field-radius); height: var(--component-app-field-height); padding: 7px 11px; width: 280px; font: 400 14px/24px var(--sg); }
+.type-display { font: 800 56px/63.84px var(--sg); letter-spacing: -1.2px; margin: 0; }
+.type-section { font: 800 48px/55.68px var(--sg); letter-spacing: -0.8px; margin: 0; }
+.note { color: var(--text-secondary); font-size: 14px; line-height: 22px; max-width: 72ch; }
+a.link { color: var(--text-link); font-weight: 500; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Overflow</h1>
+  <p>Public marketing site and the signed-out app shell, measured 2026-11-19. Light only. Inter is not loaded here; the stack falls back to Helvetica Neue, Arial, Noto Sans.</p>
+</header>
+<main>
+  <h2>Colour roles</h2>
+  <div class="row">
+    <div class="chip"><i style="background:var(--background-page)"></i><span>page</span></div>
+    <div class="chip"><i style="background:var(--background-sunken)"></i><span>sunken</span></div>
+    <div class="chip"><i style="background:var(--background-band)"></i><span>band</span></div>
+    <div class="chip"><i style="background:var(--background-action)"></i><span>action</span></div>
+    <div class="chip"><i style="background:var(--background-action-secondary)"></i><span>secondary</span></div>
+    <div class="chip"><i style="background:var(--text-link)"></i><span>link</span></div>
+    <div class="chip"><i style="background:var(--text-navy)"></i><span>navy</span></div>
+    <div class="chip"><i style="background:var(--background-auth-panel)"></i><span>auth panel</span></div>
+    <div class="chip"><i style="background:var(--background-app-action)"></i><span>app action</span></div>
+    <div class="chip"><i style="background:var(--color-theme)"></i><span>theme-color</span></div>
+    <div class="chip"><i style="background:var(--focus-outline)"></i><span>focus (Chromium's default ring, not Overflow's)</span></div>
+  </div>
+
+  <h2>Type</h2>
+  <p class="type-display">User flows done right</p>
+  <p class="type-section">Simple pricing</p>
+  <p>Body is Inter 16/28. Footer links are 14/24.5 at 60% black. The app shell uses Inter var: h1 32/40 weight 600, tracking -0.6px.</p>
+
+  <h2>Marketing controls</h2>
+  <div class="row">
+    <a class="btn">Download - free trial</a>
+    <button class="btn-s">Required only</button>
+    <input class="field" placeholder="Your email" aria-label="Your email">
+  </div>
+  <p class="note">Primary hover lifts 2px and does not change colour. Secondary hover fills #e8e8ea. Focus-visible on the header primary button is a 1px #005fcc outline, offset 1px, with outline-style auto: that is Chromium's default focus ring, drawn by the browser because Overflow sets no focus colour. Do not copy it as a brand colour.</p>
+
+  <h2>Plan card</h2>
+  <div class="card">
+    <h3>Pro</h3>
+    <p style="text-align:center;font-weight:800;font-size:32px;margin:8px 0">$19.95</p>
+    <p class="note" style="text-align:center">per user/month</p>
+  </div>
+
+  <h2>Signed-out app</h2>
+  <div class="row" style="align-items:stretch">
+    <div class="panel"><strong>Communicate your designs like never before.</strong></div>
+    <div>
+      <input class="app-field" placeholder="alex@example.com" aria-label="Email">
+      <div style="height:12px"></div>
+      <button class="app-btn">Download for free</button>
+      <p class="note">Disabled Sign in is #f0f1f3 with #b7bdc5 text. Google hover deepens the shadow and does not change the fill. The blue download button hover fills #0065c5.</p>
+    </div>
+  </div>
+
+  <h2>App colour tokens</h2>
+  <p class="note">Resolved on body at overflow.io/n/signin. These names are the product's own custom properties.</p>
+  <div class="grid">
+    <div class="sw"><i style="background:#e9eaec"></i><code>account-border</code><span>#e9eaec</span></div><div class="sw"><i style="background:#f4f5f6"></i><code>account-fill</code><span>#f4f5f6</span></div><div class="sw"><i style="background:#1f2124"></i><code>avatar-fill</code><span>#1f2124</span></div><div class="sw"><i style="background:#000000"></i><code>black100</code><span>#000000</span></div><div class="sw"><i style="background:#e8f2fc"></i><code>blue10</code><span>#e8f2fc</span></div><div class="sw"><i style="background:#0071db"></i><code>blue100</code><span>#0071db</span></div><div class="sw"><i style="background:#0065c5"></i><code>blue110</code><span>#0065c5</span></div><div class="sw"><i style="background:#005aaf"></i><code>blue120</code><span>#005aaf</span></div><div class="sw"><i style="background:#006ebe"></i><code>blue130</code><span>#006ebe</span></div><div class="sw"><i style="background:#004688"></i><code>blue140</code><span>#004688</span></div><div class="sw"><i style="background:#00386d"></i><code>blue150</code><span>#00386d</span></div><div class="sw"><i style="background:#002d57"></i><code>blue160</code><span>#002d57</span></div><div class="sw"><i style="background:#002242"></i><code>blue170</code><span>#002242</span></div><div class="sw"><i style="background:#00172d"></i><code>blue180</code><span>#00172d</span></div><div class="sw"><i style="background:#d1e6fa"></i><code>blue20</code><span>#d1e6fa</span></div><div class="sw"><i style="background:#000b15"></i><code>blue200</code><span>#000b15</span></div><div class="sw"><i style="background:#bad9f7"></i><code>blue30</code><span>#bad9f7</span></div><div class="sw"><i style="background:#a3cdf5"></i><code>blue40</code><span>#a3cdf5</span></div><div class="sw"><i style="background:#8cc0f2"></i><code>blue50</code><span>#8cc0f2</span></div><div class="sw"><i style="background:#75b4ef"></i><code>blue60</code><span>#75b4ef</span></div><div class="sw"><i style="background:#5ea7ec"></i><code>blue70</code><span>#5ea7ec</span></div><div class="sw"><i style="background:#ebf4fd"></i><code>blue8</code><span>#ebf4fd</span></div><div class="sw"><i style="background:#479bea"></i><code>blue80</code><span>#479bea</span></div><div class="sw"><i style="background:#1982e5"></i><code>blue90</code><span>#1982e5</span></div><div class="sw"><i style="background:rgba(0,0,0,.08)"></i><code>border-transparent</code><span>rgba(0,0,0,.08)</span></div><div class="sw"><i style="background:#232d41"></i><code>brand-blue</code><span>#232d41</span></div><div class="sw"><i style="background:#f0f1f3"></i><code>button-active-fill</code><span>#f0f1f3</span></div><div class="sw"><i style="background:#ffffff"></i><code>button-fill</code><span>#ffffff</span></div><div class="sw"><i style="background:#f9fafb"></i><code>button-hover-fill</code><span>#f9fafb</span></div><div class="sw"><i style="background:#f9fafb"></i><code>canvas</code><span>#f9fafb</span></div><div class="sw"><i style="background:#232d41"></i><code>cloud-color1</code><span>#232d41</span></div><div class="sw"><i style="background:#16b4f2"></i><code>cyanblue100</code><span>#16b4f2</span></div><div class="sw"><i style="background:#fafbfc"></i><code>dark1</code><span>#fafbfc</span></div><div class="sw"><i style="background:#e6e9ec"></i><code>dark10</code><span>#e6e9ec</span></div><div class="sw"><i style="background:#1f2124"></i><code>dark100</code><span>#1f2124</span></div><div class="sw"><i style="background:#1a1b1d"></i><code>dark120</code><span>#1a1b1d</span></div><div class="sw"><i style="background:#141414"></i><code>dark140</code><span>#141414</span></div><div class="sw"><i style="background:#f9fafb"></i><code>dark2</code><span>#f9fafb</span></div><div class="sw"><i style="background:#cfd2d7"></i><code>dark20</code><span>#cfd2d7</span></div><div class="sw"><i style="background:#b7bdc5"></i><code>dark30</code><span>#b7bdc5</span></div><div class="sw"><i style="background:#f4f5f6"></i><code>dark4</code><span>#f4f5f6</span></div><div class="sw"><i style="background:#a3a6aa"></i><code>dark40</code><span>#a3a6aa</span></div><div class="sw"><i style="background:#8c9095"></i><code>dark50</code><span>#8c9095</span></div><div class="sw"><i style="background:#f0f1f3"></i><code>dark6</code><span>#f0f1f3</span></div><div class="sw"><i style="background:#767a80"></i><code>dark60</code><span>#767a80</span></div><div class="sw"><i style="background:#5f6369"></i><code>dark70</code><span>#5f6369</span></div><div class="sw"><i style="background:#ecedef"></i><code>dark8</code><span>#ecedef</span></div><div class="sw"><i style="background:#4b4e53"></i><code>dark80</code><span>#4b4e53</span></div><div class="sw"><i style="background:#36383b"></i><code>dark90</code><span>#36383b</span></div><div class="sw"><i style="background:#313336"></i><code>dark92</code><span>#313336</span></div><div class="sw"><i style="background:#2c2e30"></i><code>dark94</code><span>#2c2e30</span></div><div class="sw"><i style="background:#282a2d"></i><code>dark96</code><span>#282a2d</span></div><div class="sw"><i style="background:#252628"></i><code>dark98</code><span>#252628</span></div><div class="sw"><i style="background:#212224"></i><code>dark99</code><span>#212224</span></div><div class="sw"><i style="background:#df202f"></i><code>error</code><span>#df202f</span></div><div class="sw"><i style="background:#ffffff"></i><code>fill</code><span>#ffffff</span></div><div class="sw"><i style="background:#e5f6f1"></i><code>green10</code><span>#e5f6f1</span></div><div class="sw"><i style="background:#00a879"></i><code>green100</code><span>#00a879</span></div><div class="sw"><i style="background:#009269"></i><code>green110</code><span>#009269</span></div><div class="sw"><i style="background:#007050"></i><code>green120</code><span>#007050</span></div><div class="sw"><i style="background:#036147"></i><code>green140</code><span>#036147</span></div><div class="sw"><i style="background:#01543d"></i><code>green150</code><span>#01543d</span></div><div class="sw"><i style="background:#cceee4"></i><code>green20</code><span>#cceee4</span></div><div class="sw"><i style="background:#b2e4d6"></i><code>green30</code><span>#b2e4d6</span></div><div class="sw"><i style="background:#99dcc9"></i><code>green40</code><span>#99dcc9</span></div><div class="sw"><i style="background:#7fd3bc"></i><code>green50</code><span>#7fd3bc</span></div><div class="sw"><i style="background:#66cbaf"></i><code>green60</code><span>#66cbaf</span></div><div class="sw"><i style="background:#4cc2a1"></i><code>green70</code><span>#4cc2a1</span></div><div class="sw"><i style="background:#ebf8f5"></i><code>green8</code><span>#ebf8f5</span></div><div class="sw"><i style="background:#33ba94"></i><code>green80</code><span>#33ba94</span></div><div class="sw"><i style="background:#19b086"></i><code>green90</code><span>#19b086</span></div><div class="sw"><i style="background:#e7e7e7"></i><code>griddark-fill</code><span>#e7e7e7</span></div><div class="sw"><i style="background:#f9fafb"></i><code>gridlight-fill</code><span>#f9fafb</span></div><div class="sw"><i style="background:rgba(0,113,219,.4)"></i><code>hotspot-fill</code><span>rgba(0,113,219,.4)</span></div><div class="sw"><i style="background:#5f6369"></i><code>icon-primary</code><span>#5f6369</span></div><div class="sw"><i style="background:#fa2b3c"></i><code>icon-primary-selected</code><span>#fa2b3c</span></div><div class="sw"><i style="background:#a3a6aa"></i><code>icon-secondary</code><span>#a3a6aa</span></div><div class="sw"><i style="background:#fb5563"></i><code>icon-secondary-selected</code><span>#fb5563</span></div><div class="sw"><i style="background:#d3d5d9"></i><code>icon-tertiary</code><span>#d3d5d9</span></div><div class="sw"><i style="background:#cfd2d7"></i><code>input-border</code><span>#cfd2d7</span></div><div class="sw"><i style="background:#ffffff"></i><code>input-fill</code><span>#ffffff</span></div><div class="sw"><i style="background:#a3cdf5"></i><code>input-focus</code><span>#a3cdf5</span></div><div class="sw"><i style="background:rgba(33,34,35,.16)"></i><code>kbd-border</code><span>rgba(33,34,35,.16)</span></div><div class="sw"><i style="background:#ffffff"></i><code>kbd-fill</code><span>#ffffff</span></div><div class="sw"><i style="background:hsla(0,0%,100%,.96)"></i><code>keyboard-modal-bg</code><span>hsla(0,0%,100%,.96)</span></div><div class="sw"><i style="background:rgba(249,250,251,.96)"></i><code>keyboard-modal-bg-app</code><span>rgba(249,250,251,.96)</span></div><div class="sw"><i style="background:rgba(249,250,251,0)"></i><code>keyboard-modal-bg-no-alpha</code><span>rgba(249,250,251,0)</span></div><div class="sw"><i style="background:rgba(31,33,36,.06)"></i><code>latest-version-badge</code><span>rgba(31,33,36,.06)</span></div><div class="sw"><i style="background:#161637"></i><code>launcher-logo-text</code><span>#161637</span></div><div class="sw"><i style="background:#ffffff"></i><code>launcher-screens-fill</code><span>#ffffff</span></div><div class="sw"><i style="background:#cccccc"></i><code>launcher-screens-stroke</code><span>#cccccc</span></div><div class="sw"><i style="background:#f9fcfc"></i><code>light10</code><span>#f9fcfc</span></div><div class="sw"><i style="background:#cbe3e3"></i><code>light100</code><span>#cbe3e3</span></div><div class="sw"><i style="background:#a2b5b5"></i><code>light120</code><span>#a2b5b5</span></div><div class="sw"><i style="background:#f5f9f9"></i><code>light20</code><span>#f5f9f9</span></div><div class="sw"><i style="background:#eff6f6"></i><code>light30</code><span>#eff6f6</span></div><div class="sw"><i style="background:#eaf4f4"></i><code>light40</code><span>#eaf4f4</span></div><div class="sw"><i style="background:#e5f1f1"></i><code>light50</code><span>#e5f1f1</span></div><div class="sw"><i style="background:#e0eeee"></i><code>light60</code><span>#e0eeee</span></div><div class="sw"><i style="background:#daebeb"></i><code>light70</code><span>#daebeb</span></div><div class="sw"><i style="background:#d5e9e9"></i><code>light80</code><span>#d5e9e9</span></div><div class="sw"><i style="background:#d0e5e5"></i><code>light90</code><span>#d0e5e5</span></div><div class="sw"><i style="background:#f0f1f3"></i><code>menu-light-fill</code><span>#f0f1f3</span></div><div class="sw"><i style="background:#ffffff"></i><code>notification-bg</code><span>#ffffff</span></div><div class="sw"><i style="background:#ffffff"></i><code>onoff-handle-fill</code><span>#ffffff</span></div><div class="sw"><i style="background:hsla(240,2%,92%,.94)"></i><code>overlay-bg</code><span>hsla(240,2%,92%,.94)</span></div><div class="sw"><i style="background:rgba(249,250,251,.96)"></i><code>panel-bg</code><span>rgba(249,250,251,.96)</span></div><div class="sw"><i style="background:rgba(0,113,219,.08)"></i><code>panel-item-selected</code><span>rgba(0,113,219,.08)</span></div><div class="sw"><i style="background:hsla(210,8%,95%,.96)"></i><code>picker-header-bg</code><span>hsla(210,8%,95%,.96)</span></div><div class="sw"><i style="background:#0071db"></i><code>primary</code><span>#0071db</span></div><div class="sw"><i style="background:#ebebf9"></i><code>purple10</code><span>#ebebf9</span></div><div class="sw"><i style="background:#3d3dc3"></i><code>purple100</code><span>#3d3dc3</span></div><div class="sw"><i style="background:#2c2c96"></i><code>purple120</code><span>#2c2c96</span></div><div class="sw"><i style="background:#242475"></i><code>purple140</code><span>#242475</span></div><div class="sw"><i style="background:#161637"></i><code>purple170</code><span>#161637</span></div><div class="sw"><i style="background:#e6e6f8"></i><code>purple20</code><span>#e6e6f8</span></div><div class="sw"><i style="background:#c4c4ed"></i><code>purple30</code><span>#c4c4ed</span></div><div class="sw"><i style="background:#f7f7fd"></i><code>purple4</code><span>#f7f7fd</span></div><div class="sw"><i style="background:#a3a3ee"></i><code>purple40</code><span>#a3a3ee</span></div><div class="sw"><i style="background:#9e9ee1"></i><code>purple50</code><span>#9e9ee1</span></div><div class="sw"><i style="background:#f4f4fc"></i><code>purple6</code><span>#f4f4fc</span></div><div class="sw"><i style="background:#8b8bdb"></i><code>purple60</code><span>#8b8bdb</span></div><div class="sw"><i style="background:#7777d5"></i><code>purple70</code><span>#7777d5</span></div><div class="sw"><i style="background:#f0f0fb"></i><code>purple8</code><span>#f0f0fb</span></div><div class="sw"><i style="background:#6464cf"></i><code>purple80</code><span>#6464cf</span></div><div class="sw"><i style="background:#5050c9"></i><code>purple90</code><span>#5050c9</span></div><div class="sw"><i style="background:#4c4cc7"></i><code>purple92</code><span>#4c4cc7</span></div><div class="sw"><i style="background:#151582"></i><code>purpleAccent01</code><span>#151582</span></div><div class="sw"><i style="background:#cfd2d7"></i><code>radio-active-border</code><span>#cfd2d7</span></div><div class="sw"><i style="background:#f4f5f6"></i><code>radio-active-fill</code><span>#f4f5f6</span></div><div class="sw"><i style="background:#fee9eb"></i><code>red10</code><span>#fee9eb</span></div><div class="sw"><i style="background:#fa2b3c"></i><code>red100</code><span>#fa2b3c</span></div><div class="sw"><i style="background:#df202f"></i><code>red110</code><span>#df202f</span></div><div class="sw"><i style="background:#c82230"></i><code>red120</code><span>#c82230</span></div><div class="sw"><i style="background:#961924"></i><code>red140</code><span>#961924</span></div><div class="sw"><i style="background:#fffbfb"></i><code>red2</code><span>#fffbfb</span></div><div class="sw"><i style="background:#fed5d8"></i><code>red20</code><span>#fed5d8</span></div><div class="sw"><i style="background:#fdbfc4"></i><code>red30</code><span>#fdbfc4</span></div><div class="sw"><i style="background:#fff7f7"></i><code>red4</code><span>#fff7f7</span></div><div class="sw"><i style="background:#fdaab1"></i><code>red40</code><span>#fdaab1</span></div><div class="sw"><i style="background:#fc959d"></i><code>red50</code><span>#fc959d</span></div><div class="sw"><i style="background:#fff3f4"></i><code>red6</code><span>#fff3f4</span></div><div class="sw"><i style="background:#fc808a"></i><code>red60</code><span>#fc808a</span></div><div class="sw"><i style="background:#fb6a76"></i><code>red70</code><span>#fb6a76</span></div><div class="sw"><i style="background:#ffeef0"></i><code>red8</code><span>#ffeef0</span></div><div class="sw"><i style="background:#fb5563"></i><code>red80</code><span>#fb5563</span></div><div class="sw"><i style="background:#fa404f"></i><code>red90</code><span>#fa404f</span></div><div class="sw"><i style="background:#fa3c4b"></i><code>red92</code><span>#fa3c4b</span></div><div class="sw"><i style="background:#232d41"></i><code>registration-svg-color</code><span>#232d41</span></div><div class="sw"><i style="background:rgba(33,34,35,.4)"></i><code>scrollbar</code><span>rgba(33,34,35,.4)</span></div><div class="sw"><i style="background:#eeeeee"></i><code>separator</code><span>#eeeeee</span></div><div class="sw"><i style="background:#f4f5f6"></i><code>sidebar-bg</code><span>#f4f5f6</span></div><div class="sw"><i style="background:#0071db"></i><code>status-loader-fill</code><span>#0071db</span></div><div class="sw"><i style="background:rgba(0,0,0,.12)"></i><code>swatch-stroke</code><span>rgba(0,0,0,.12)</span></div><div class="sw"><i style="background:#36383b"></i><code>text</code><span>#36383b</span></div><div class="sw"><i style="background:#0071db"></i><code>textbutton</code><span>#0071db</span></div><div class="sw"><i style="background:#ffffff"></i><code>tooltip</code><span>#ffffff</span></div><div class="sw"><i style="background:hsla(240,2%,92%,.8)"></i><code>tour-bg</code><span>hsla(240,2%,92%,.8)</span></div><div class="sw"><i style="background:#ffffff"></i><code>ui-bg</code><span>#ffffff</span></div><div class="sw"><i style="background:#f9fafb"></i><code>ui-bg-app</code><span>#f9fafb</span></div><div class="sw"><i style="background:hsla(0,0%,100%,.88)"></i><code>ui-bg-overlay</code><span>hsla(0,0%,100%,.88)</span></div><div class="sw"><i style="background:#ffffff"></i><code>white100</code><span>#ffffff</span></div><div class="sw"><i style="background:#fff8e8"></i><code>yellow10</code><span>#fff8e8</span></div><div class="sw"><i style="background:#ffb719"></i><code>yellow100</code><span>#ffb719</span></div><div class="sw"><i style="background:#e5a416"></i><code>yellow110</code><span>#e5a416</span></div><div class="sw"><i style="background:#cc9214"></i><code>yellow120</code><span>#cc9214</span></div><div class="sw"><i style="background:#996d0f"></i><code>yellow140</code><span>#996d0f</span></div><div class="sw"><i style="background:#ffefcb"></i><code>yellow20</code><span>#ffefcb</span></div><div class="sw"><i style="background:#ffe9ba"></i><code>yellow30</code><span>#ffe9ba</span></div><div class="sw"><i style="background:#ffe2a3"></i><code>yellow40</code><span>#ffe2a3</span></div><div class="sw"><i style="background:#ffdb8c"></i><code>yellow50</code><span>#ffdb8c</span></div><div class="sw"><i style="background:#ffd475"></i><code>yellow60</code><span>#ffd475</span></div><div class="sw"><i style="background:#ffcc5e"></i><code>yellow70</code><span>#ffcc5e</span></div><div class="sw"><i style="background:#fffaef"></i><code>yellow8</code><span>#fffaef</span></div><div class="sw"><i style="background:#ffc547"></i><code>yellow80</code><span>#ffc547</span></div><div class="sw"><i style="background:#ffbe30"></i><code>yellow90</code><span>#ffbe30</span></div><div class="sw"><i style="background:#ffbc2b"></i><code>yellow92</code><span>#ffbc2b</span></div>
+  </div>
+</main>
+</body>
+</html>

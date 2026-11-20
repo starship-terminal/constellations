@@ -1,0 +1,73 @@
+{
+  "capturedAt": "2026-11-19",
+  "browser": "T3 preview tab, signed out, newbalance.co.uk. Screenshot frames failed (The browser is not producing screenshot frames). Headless Chromium returned HTTP 403, so no second session was launched.",
+  "viewport": {"innerWidth": 1169, "innerHeight": 731, "devicePixelRatio": 2, "note": "Not a requested 1440 or 390 viewport. The preview tab filled its pane."},
+  "pages": {
+    "home": {
+      "url": "https://www.newbalance.co.uk/",
+      "title": "Shoes and Clothing | Official Site - New Balance",
+      "pageClass": "page design-refresh",
+      "body": {"fontFamily": "\"Proxima Nova W01\", -apple-system, system-ui, \"Helvetica Neue\", Helvetica, Arial, sans-serif", "fontSize": "14px", "fontWeight": "300", "lineHeight": "20.0004px", "color": "rgb(0, 0, 0)", "backgroundColor": "rgb(255, 255, 255)"},
+      "headerBanner": {"selector": ".header-banner", "backgroundColor": "rgb(21, 20, 21)", "color": "rgb(255, 255, 255)", "height": 57},
+      "headerNavigation": {"selector": ".header-navigation", "backgroundColor": "rgb(255, 255, 255)", "height": 82, "top": 57},
+      "navLink": {"selector": "a.nav-link", "color": "rgb(0, 0, 0)", "fontSize": "16px", "fontWeight": "300", "lineHeight": "20px", "padding": "30.4px 11.2px", "height": 81},
+      "promoLink": {"selector": "a.promo-view", "color": "rgb(255, 255, 255)", "fontSize": "14px", "fontWeight": "500", "textDecoration": "underline via class text-underline"},
+      "h1": {"text": "New Balance Trainers & Clothing", "fontSize": "32px", "fontWeight": "500", "lineHeight": "38.4px", "color": "rgb(0, 0, 0)", "fontFamily": "Proxima Nova W01"},
+      "heroHeadline": {"selector": ".headline-box", "text": "The 983", "fontSize": "60px", "fontWeight": "300", "lineHeight": "68px", "color": "rgb(0, 0, 0)"},
+      "shopNow": {"selector": "a.nb-button.button-secondary", "text": "Shop now", "backgroundColor": "rgb(255, 255, 255)", "color": "rgb(21, 20, 21)", "border": "1px solid rgb(229, 231, 232)", "borderRadius": "2px", "padding": "16px 12px", "fontSize": "14px", "fontWeight": "300", "lineHeight": "20px", "height": 54, "transition": "0.2s"},
+      "footer": {"backgroundColor": "rgb(0, 0, 0)", "height": 811}
+    },
+    "men": {
+      "url": "https://www.newbalance.co.uk/men/",
+      "title": "Men's Shoes & Clothing - New Balance",
+      "h1": {"selector": "h1.js-griddisplay-name", "text": "Men's Shoes & Clothing", "fontFamily": "ITC Garamond W01", "fontSize": "40px", "fontWeight": "500", "lineHeight": "40px", "color": "rgb(0, 0, 0)"},
+      "productName": {"selector": "a.pname", "fontSize": "14px", "fontWeight": "700", "lineHeight": "16.8px", "color": "rgb(0, 0, 0)"},
+      "price": {"selector": ".price .sales", "fontSize": "14px", "fontWeight": "300", "lineHeight": "24px", "color": "rgb(0, 0, 0)"},
+      "filterToggle": {"text": "Hide Filters", "border": "1px solid rgb(190, 192, 195)", "borderRadius": "4px", "padding": "12px", "fontSize": "14px", "fontWeight": "700", "height": 42}
+    },
+    "product": {
+      "url": "https://www.newbalance.co.uk/pd/530-lace/GR530V1-46226.html",
+      "title": "Kids' 530 LACE Shoes - New Balance",
+      "h1": {"selector": "h1.product-name.hidden-sm-down", "text": "530 LACE Shoes", "fontFamily": "Proxima Nova W01", "fontSize": "32px", "fontWeight": "500", "lineHeight": "40px", "width": 328},
+      "price": {"selector": ".sales.font-body-large", "text": "£75.00", "fontSize": "18px", "fontWeight": "700", "lineHeight": "24px", "color": "rgb(0, 0, 0)"},
+      "addToBag": {"selector": "button.add-to-cart.nb-button.button-primary", "text": "Add to Bag", "backgroundColor": "rgb(21, 20, 21)", "color": "rgb(255, 255, 255)", "border": "1px solid rgb(21, 20, 21)", "borderRadius": "2px", "padding": "16px 12px", "fontSize": "14px", "fontWeight": "300", "lineHeight": "20px", "height": 54, "width": 328, "notClicked": true},
+      "size": {"selector": "button.size-attribute", "text": "3", "backgroundColor": "rgb(255, 255, 255)", "color": "rgb(21, 20, 21)", "border": "1px solid rgb(190, 192, 195)", "borderRadius": "2px", "padding": "3.2px 8px", "height": 43, "width": 58, "fontSize": "14px", "fontWeight": "300"},
+      "swatchSelected": {"selector": ".style-value.selected", "border": "2px solid rgb(21, 20, 21)", "borderRadius": "4px", "width": 62, "height": 62}
+    },
+    "help": {
+      "url": "https://www.newbalance.co.uk/customer-care/",
+      "title": "Customer Care & more - New Balance",
+      "h1": {"selector": "h1.didot", "text": "Contact Us", "fontFamily": "ITC Garamond W01", "fontSize": "56px", "fontWeight": "500", "lineHeight": "60px", "color": "rgb(0, 0, 0)"},
+      "emailField": {"selector": "input.form-control[placeholder=Email]", "backgroundColor": "rgb(255, 255, 255)", "border": "1px solid rgb(171, 176, 180)", "borderRadius": "4px", "padding": "28px 12px 12px", "fontSize": "16px", "fontWeight": "500", "height": 58, "notSubmitted": true}
+    },
+    "login": {
+      "url": "https://www.newbalance.co.uk/account-login",
+      "resolvedPath": "/on/demandware.store/Sites-NBUK-Site/en_GB/Login-Show",
+      "title": "Log In - New Balance",
+      "email": {"selector": "input.form-control.required", "border": "1px solid rgb(171, 176, 180)", "borderRadius": "4px", "padding": "28px 10px 12px", "height": 58, "fontSize": "16px", "fontWeight": "500", "width": 328},
+      "label": {"selector": "label.form-control-label", "color": "rgb(92, 98, 104)", "fontSize": "14px", "fontWeight": "300", "lineHeight": "14px"},
+      "password": {"type": "password", "sameBoxAsEmail": true},
+      "remember": {"selector": "label.custom-control-label", "color": "rgb(21, 20, 21)", "fontSize": "14px", "fontWeight": "500", "paddingLeft": "24px", "before": {"width": "16px", "height": "16px", "borderRadius": "4px"}},
+      "submit": {"selector": "button.nb-button.button-primary.login-submit", "text": "Log in", "backgroundColor": "rgb(21, 20, 21)", "color": "rgb(255, 255, 255)", "border": "1px solid rgb(21, 20, 21)", "borderRadius": "2px", "padding": "16px 12px", "height": 54, "width": 328, "fontSize": "14px", "fontWeight": "300", "notClicked": true}
+    }
+  },
+  "stylesheetRules": {
+    "file": "global.css on demandware.static",
+    "designRefreshButton": {
+      "selector": ".design-refresh .nb-button",
+      "border": "0.0625rem solid",
+      "borderRadius": "2px",
+      "fontSize": "0.875rem",
+      "fontWeight": "300",
+      "lineHeight": "1.25rem",
+      "padding": "1rem 0.75rem"
+    },
+    "primary": {"selector": ".design-refresh .nb-button.button-primary", "backgroundColor": "rgb(21, 20, 21)", "hover": "rgb(52, 53, 56)", "focus": "rgb(35, 36, 38)", "disabled": {"backgroundColor": "rgb(229, 231, 232)", "color": "rgb(124, 124, 124)"}},
+    "secondary": {"selector": ".design-refresh .nb-button.button-secondary", "backgroundColor": "rgb(255, 255, 255)", "color": "rgb(21, 20, 21)"},
+    "textLink": {"selector": ".design-refresh .nb-button.button-text", "fontSize": "0.875rem", "fontWeight": "500", "lineHeight": "1.25rem", "padding": "0px 0px 3px", "textDecoration": "underline"},
+    "keyboardFocus": {"selector": "body.keyboard-focus .page.design-refresh .nb-button:focus", "outline": "rgb(1, 94, 204) solid 2px"},
+    "legacyPrimaryNotPainted": {"selector": ".nb-button.button-primary", "backgroundColor": "rgb(207, 10, 44)", "hover": "rgb(185, 0, 32)", "note": "Overridden by .design-refresh on every captured page. Recorded as a gap, not as the live button."},
+    "strikeThrough": {"selector": ".price .strike-through", "color": "rgb(153, 153, 153)", "textDecoration": "line-through", "note": "Declared rule. No struck price was visible on the products opened."},
+    "darkModeClass": {"selector": ".dark-mode .nb-button.button-primary", "backgroundColor": "rgb(255, 255, 255)", "color": "rgb(21, 20, 21)", "note": "A class on a section, not a site theme. No captured page set html to dark."}
+  }
+}

@@ -1,0 +1,14 @@
+{
+ "_note": "Rules for systems/fourmula. A fully public signed-out capture: no owner data on any surface. The auth and PDP fields were focused and filled once with throwaway example text (name@example.com and a sample password), then cleared; nothing was submitted and no account exists. All names, prices and copy in the screenshots are Fourmula's published public-page content, including the FOURMETA LTD contact addresses (info@fourmeta.com and companions, which OCR also mangles as fourmeta.ai) its privacy/terms pages publish. The OCR email net is kept with example.com, fourmula.ai and fourmeta.com allowed.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@example\\.com$",
+   "@example\\.org$",
+   "@fourmula\\.ai$",
+   "@fourmeta\\.ai$",
+   "@fourmeta\\.com$"
+  ]
+ },
+ "families": []
+}

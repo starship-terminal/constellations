@@ -1,0 +1,5169 @@
+{
+ "readAt": "2026-11-18",
+ "source": "the stylesheet bodies read during a live signed-out load of / on kitchenstories.com (linked stylesheets from the network response plus inline <style> blocks, re-parsed with CSSStyleSheet); resolved in a probe carrying the real sheets on :root at 1440 x 900 — the site paints one light theme, so the dark pass repeats :root",
+ "sheets": [
+  "https://www.kitchenstories.com/_static/ (708660 bytes)",
+  "https://www.kitchenstories.com/wp-content/themes/newspack-theme/styles/print.css (2291 bytes)",
+  "inline-0 (4831 bytes)",
+  "inline-1 (1240 bytes)",
+  "inline-2 (740 bytes)",
+  "inline-3 (1764 bytes)",
+  "inline-4 (33 bytes)",
+  "inline-5 (328 bytes)",
+  "inline-6 (13803 bytes)",
+  "inline-7 (58 bytes)",
+  "inline-8 (1244 bytes)",
+  "inline-9 (7153 bytes)",
+  "inline-10 (876 bytes)",
+  "inline-11 (285 bytes)",
+  "inline-12 (1796 bytes)",
+  "inline-13 (473 bytes)",
+  "inline-14 (293 bytes)",
+  "inline-15 (103 bytes)",
+  "inline-16 (215 bytes)",
+  "inline-17 (126 bytes)",
+  "inline-18 (1012 bytes)",
+  "inline-19 (1055 bytes)",
+  "inline-20 (978 bytes)",
+  "inline-21 (147 bytes)",
+  "inline-22 (224 bytes)",
+  "inline-23 (524 bytes)",
+  "inline-24 (71573 bytes)"
+ ],
+ "counts": {
+  "rules": 112,
+  "fonts": 13,
+  "names": {
+   "theme": 0,
+   "app": 356,
+   "skins": 0,
+   "vendor": 28,
+   "utility": 0,
+   "tailwind": 0
+  },
+  "bySelector": {
+   "[app] :root": 621,
+   "[app] @media (min-resolution: 192dpi) :root": 4,
+   "[app] :root[data-wpds-root-provider=\"true\"][data-wpds-corner-radius=\"none\"], [data-wpds-corner-radius=\"none\"]": 5,
+   "[app] :root[data-wpds-root-provider=\"true\"][data-wpds-corner-radius=\"subtle\"], [data-wpds-corner-radius=\"subtle\"]": 5,
+   "[app] :root[data-wpds-root-provider=\"true\"][data-wpds-corner-radius=\"moderate\"], [data-wpds-corner-radius=\"moderate\"]": 5,
+   "[app] :root[data-wpds-root-provider=\"true\"][data-wpds-corner-radius=\"pronounced\"], [data-wpds-corner-radius=\"pronounced\"]": 5,
+   "[app] .components-badge.is-info": 1,
+   "[app] .components-badge.is-warning": 1,
+   "[app] .components-badge.is-error": 1,
+   "[app] .components-badge.is-success": 1,
+   "[app] .components-button.is-destructive": 3,
+   "[app] .components-checkbox-control": 2,
+   "[app] @media (min-width: 600px) .components-checkbox-control": 1,
+   "[app] svg.components-checkbox-control__checked, svg.components-checkbox-control__indeterminate": 1,
+   "[app] @media (min-width: 600px) svg.components-checkbox-control__checked, svg.components-checkbox-control__indeterminate": 1,
+   "[app] .components-notice": 3,
+   "[app] .components-notice.is-success": 3,
+   "[app] .components-notice.is-warning": 3,
+   "[app] .components-notice.is-error": 3,
+   "[app] .components-validated-control:has(:is(input, select):invalid[data-validity-visible]) .components-input-control__backdrop": 1,
+   "[app] .components-validated-control :is(textarea, input[type=\"text\"]):invalid[data-validity-visible]": 2,
+   "[app] .components-validated-control .components-combobox-control__suggestions-container:has(input:invalid[data-validity-visible]):not(:has([aria-expanded=\"true\"]))": 1,
+   "[app] .components-validated-control__wrapper-with-error-delegate:has(select:invalid[data-validity-visible]) .components-input-control__backdrop": 1,
+   "[app] .components-validated-control__wrapper-with-error-delegate:has(input[type=\"radio\"]:invalid[data-validity-visible])": 1,
+   "[app] .components-validated-control__wrapper-with-error-delegate:has(input:invalid[data-validity-visible]) .components-form-token-field__input-container:not(:has([aria-expanded=\"true\"]))": 1,
+   "[app] .components-validated-control__wrapper-with-error-delegate:has(input:invalid[data-validity-visible]) .components-validated-control__content-editable [role=\"textbox\"]": 1,
+   "[app] .dataviews-filters__search-widget-listitem .dataviews-filters__search-widget-listitem-multi-selection": 1,
+   "[app] @media (min-width: 600px) .dataviews-filters__search-widget-listitem .dataviews-filters__search-widget-listitem-multi-selection": 1,
+   "[app] .dataviews-filters__search-widget-listitem .dataviews-filters__search-widget-listitem-multi-selection.is-selected svg": 1,
+   "[app] @media (min-width: 600px) .dataviews-filters__search-widget-listitem .dataviews-filters__search-widget-listitem-multi-selection.is-selected svg": 1,
+   "[app] .dataviews-selection-checkbox": 1,
+   "[app] @media (min-width: 600px) .dataviews-selection-checkbox": 1,
+   "[app] .dataviews-view-table-selection-checkbox": 1,
+   "[app] @media (min-width: 600px) .dataviews-view-table-selection-checkbox": 1,
+   "[app] .newspack-info-button__portal": 1,
+   "[app] .newspack-modal": 8,
+   "[app] :root:has([data-wpds-root-provider=\"true\"][data-wpds-corner-radius=\"none\"]), [data-wpds-corner-radius=\"none\"]": 5,
+   "[app] :root:has([data-wpds-root-provider=\"true\"][data-wpds-corner-radius=\"subtle\"]), [data-wpds-corner-radius=\"subtle\"]": 5,
+   "[app] :root:has([data-wpds-root-provider=\"true\"][data-wpds-corner-radius=\"moderate\"]), [data-wpds-corner-radius=\"moderate\"]": 5,
+   "[app] :root:has([data-wpds-root-provider=\"true\"][data-wpds-corner-radius=\"pronounced\"]), [data-wpds-corner-radius=\"pronounced\"]": 5,
+   "[app] .newspack-stat-card": 8,
+   "[app] .newspack-tabbed-navigation": 1,
+   "[app] body.newspack-wizard-page:not(.newspack-admin-header)": 9,
+   "[app] .newspack-wizard": 8,
+   "[app] .newspack-web-preview": 8,
+   "[app] .wp-block-buttons": 1,
+   "[app] .newspack-pattern.contribution__style-1": 1,
+   "[app] .newspack-pattern.contribution__style-2": 1,
+   "[app] body": 13,
+   "[app] html body": 24,
+   "[app] @media only screen and (min-width: 600px) html body": 24,
+   "[app] .wp-block-newspack-blocks-carousel": 4,
+   "[app] .wp-block-newspack-blocks-carousel[data-slides-per-view=\"1\"]": 1,
+   "[app] .wp-block-newspack-blocks-carousel[data-slide-count=\"1\"]": 1,
+   "[app] .wp-block-newspack-blocks-carousel[data-slides-per-view=\"2\"]": 1,
+   "[app] .wp-block-newspack-blocks-carousel[data-slide-count=\"2\"]": 1,
+   "[app] .wp-block-newspack-blocks-carousel[data-slides-per-view=\"3\"]": 1,
+   "[app] .wp-block-newspack-blocks-carousel[data-slide-count=\"3\"]": 1,
+   "[app] .wp-block-newspack-blocks-carousel[data-slides-per-view=\"4\"]": 1,
+   "[app] .wp-block-newspack-blocks-carousel[data-slide-count=\"4\"]": 1,
+   "[app] .wp-block-newspack-blocks-carousel[data-slides-per-view=\"5\"]": 1,
+   "[app] .wp-block-newspack-blocks-carousel[data-slide-count=\"5\"]": 1,
+   "[app] .wp-block-newspack-blocks-carousel[data-slides-per-view=\"6\"]": 1,
+   "[app] .wp-block-newspack-blocks-carousel[data-slide-count=\"6\"]": 1,
+   "[app] .wp-block-newspack-blocks-carousel[data-aspect-ratio=\"1\"]": 1,
+   "[app] .wp-block-newspack-blocks-carousel[data-aspect-ratio=\"0.5625\"]": 1,
+   "[app] .wp-block-newspack-blocks-carousel[data-aspect-ratio^=\"1.3333\"]": 1,
+   "[app] .wp-block-newspack-blocks-carousel[data-aspect-ratio^=\"1.7777\"]": 1,
+   "[app] @media screen and (min-width: 320px) .wp-block-newspack-blocks-carousel": 1,
+   "[app] @media screen and (min-width: 782px) .wp-block-newspack-blocks-carousel": 1,
+   "[app] @media screen and (min-width: 1168px) .wp-block-newspack-blocks-carousel": 1,
+   "[app] html :where(.is-position-sticky)": 1,
+   "[app] @media screen and (max-width: 600px) html :where(.is-position-sticky)": 1,
+   "[app] .wp-block-button": 4,
+   "[vendor] body": 7,
+   "[vendor] .wprm-recipe-template-kitchen-stories-recipe-template---glacier": 6,
+   "[vendor] .cmpstyleroot, .cmpstyleroot *": 15,
+   "[vendor] .cmpstyleroot.cmpboxwcag, .cmpstyleroot.cmpboxwcag *": 7,
+   "[app] .skippmsg, .skippmsg *": 8
+  }
+ },
+ "errors": [],
+ "theme": [],
+ "app": [
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--wpds-border-radius-xs": "1px",
+    "--wpds-border-radius-sm": "2px",
+    "--wpds-border-radius-md": "4px",
+    "--wpds-border-radius-lg": "8px",
+    "--wpds-border-radius-xl": "12px",
+    "--wpds-border-width-xs": "1px",
+    "--wpds-border-width-sm": "2px",
+    "--wpds-border-width-md": "4px",
+    "--wpds-border-width-lg": "8px",
+    "--wpds-border-width-focus": "2px",
+    "--wpds-color-background-surface-neutral": "#fcfcfc",
+    "--wpds-color-background-surface-neutral-strong": "#fff",
+    "--wpds-color-background-surface-neutral-weak": "#f4f4f4",
+    "--wpds-color-background-surface-brand": "#ecf0fa",
+    "--wpds-color-background-surface-success": "#c6f7cd",
+    "--wpds-color-background-surface-success-weak": "#ebffed",
+    "--wpds-color-background-surface-info": "#deebfa",
+    "--wpds-color-background-surface-info-weak": "#f3f9ff",
+    "--wpds-color-background-surface-warning": "#fde6be",
+    "--wpds-color-background-surface-warning-weak": "#fff7e1",
+    "--wpds-color-background-surface-caution": "#fee995",
+    "--wpds-color-background-surface-caution-weak": "#fff9ca",
+    "--wpds-color-background-surface-error": "#f6e6e3",
+    "--wpds-color-background-surface-error-weak": "#fff6f5",
+    "--wpds-color-background-interactive-neutral-strong": "#2d2d2d",
+    "--wpds-color-background-interactive-neutral-strong-active": "#1e1e1e",
+    "--wpds-color-background-interactive-neutral-strong-disabled": "#e6e6e6",
+    "--wpds-color-background-interactive-neutral-weak": "#0000",
+    "--wpds-color-background-interactive-neutral-weak-active": "#ededed",
+    "--wpds-color-background-interactive-neutral-weak-disabled": "#0000",
+    "--wpds-color-background-interactive-brand-strong": "#3858e9",
+    "--wpds-color-background-interactive-brand-strong-active": "#2e49d9",
+    "--wpds-color-background-interactive-brand-strong-disabled": "#e6e6e6",
+    "--wpds-color-background-interactive-brand-weak": "#0000",
+    "--wpds-color-background-interactive-brand-weak-active": "#e6eaf4",
+    "--wpds-color-background-interactive-brand-weak-disabled": "#0000",
+    "--wpds-color-background-interactive-error": "#0000",
+    "--wpds-color-background-interactive-error-active": "#fff6f5",
+    "--wpds-color-background-interactive-error-disabled": "#0000",
+    "--wpds-color-background-interactive-error-strong": "#cc1818",
+    "--wpds-color-background-interactive-error-strong-active": "#b90000",
+    "--wpds-color-background-interactive-error-strong-disabled": "#e6e6e6",
+    "--wpds-color-background-interactive-error-weak": "#0000",
+    "--wpds-color-background-interactive-error-weak-active": "#f6e6e3",
+    "--wpds-color-background-interactive-error-weak-disabled": "#0000",
+    "--wpds-color-background-track-neutral-weak": "#f0f0f0",
+    "--wpds-color-background-track-neutral": "#dbdbdb",
+    "--wpds-color-background-thumb-neutral-weak": "#8d8d8d",
+    "--wpds-color-background-thumb-neutral-weak-active": "#6e6e6e",
+    "--wpds-color-background-thumb-brand": "#3858e9",
+    "--wpds-color-background-thumb-brand-active": "#3858e9",
+    "--wpds-color-background-thumb-brand-disabled": "#dbdbdb",
+    "--wpds-color-background-thumb-neutral-weak-disabled": "#dbdbdb",
+    "--wpds-color-foreground-content-neutral": "#1e1e1e",
+    "--wpds-color-foreground-content-neutral-weak": "#707070",
+    "--wpds-color-foreground-content-success": "#002900",
+    "--wpds-color-foreground-content-success-weak": "#008030",
+    "--wpds-color-foreground-content-info": "#001b4f",
+    "--wpds-color-foreground-content-info-weak": "#006bd7",
+    "--wpds-color-foreground-content-warning": "#2e1900",
+    "--wpds-color-foreground-content-warning-weak": "#926300",
+    "--wpds-color-foreground-content-caution": "#281d00",
+    "--wpds-color-foreground-content-caution-weak": "#826a00",
+    "--wpds-color-foreground-content-error": "#470000",
+    "--wpds-color-foreground-content-error-weak": "#cc1818",
+    "--wpds-color-foreground-interactive-neutral": "#1e1e1e",
+    "--wpds-color-foreground-interactive-neutral-active": "#1e1e1e",
+    "--wpds-color-foreground-interactive-neutral-disabled": "#8d8d8d",
+    "--wpds-color-foreground-interactive-neutral-strong": "#f0f0f0",
+    "--wpds-color-foreground-interactive-neutral-strong-active": "#f0f0f0",
+    "--wpds-color-foreground-interactive-neutral-strong-disabled": "#8d8d8d",
+    "--wpds-color-foreground-interactive-neutral-weak": "#707070",
+    "--wpds-color-foreground-interactive-neutral-weak-active": "#1e1e1e",
+    "--wpds-color-foreground-interactive-neutral-weak-disabled": "#8d8d8d",
+    "--wpds-color-foreground-interactive-brand": "#3858e9",
+    "--wpds-color-foreground-interactive-brand-active": "#0b0070",
+    "--wpds-color-foreground-interactive-brand-disabled": "#8d8d8d",
+    "--wpds-color-foreground-interactive-brand-strong": "#eff0f2",
+    "--wpds-color-foreground-interactive-brand-strong-active": "#eff0f2",
+    "--wpds-color-foreground-interactive-brand-strong-disabled": "#8d8d8d",
+    "--wpds-color-foreground-interactive-error": "#cc1818",
+    "--wpds-color-foreground-interactive-error-active": "#470000",
+    "--wpds-color-foreground-interactive-error-disabled": "#8d8d8d",
+    "--wpds-color-foreground-interactive-error-strong": "#f2efef",
+    "--wpds-color-foreground-interactive-error-strong-active": "#f2efef",
+    "--wpds-color-foreground-interactive-error-strong-disabled": "#8d8d8d",
+    "--wpds-color-stroke-surface-neutral": "#dbdbdb",
+    "--wpds-color-stroke-surface-neutral-weak": "#f0f0f0",
+    "--wpds-color-stroke-surface-neutral-strong": "#8d8d8d",
+    "--wpds-color-stroke-surface-brand": "#b0bbd6",
+    "--wpds-color-stroke-surface-brand-strong": "#3858e9",
+    "--wpds-color-stroke-surface-success": "#94d29e",
+    "--wpds-color-stroke-surface-success-strong": "#008030",
+    "--wpds-color-stroke-surface-info": "#a9c6e7",
+    "--wpds-color-stroke-surface-info-strong": "#006bd7",
+    "--wpds-color-stroke-surface-warning": "#e1bc7c",
+    "--wpds-color-stroke-surface-warning-strong": "#926300",
+    "--wpds-color-stroke-surface-caution": "#cfc28d",
+    "--wpds-color-stroke-surface-caution-strong": "#826a00",
+    "--wpds-color-stroke-surface-error": "#dab1aa",
+    "--wpds-color-stroke-surface-error-strong": "#cc1818",
+    "--wpds-color-stroke-interactive-neutral": "#8d8d8d",
+    "--wpds-color-stroke-interactive-neutral-active": "#6e6e6e",
+    "--wpds-color-stroke-interactive-neutral-disabled": "#dbdbdb",
+    "--wpds-color-stroke-interactive-neutral-strong": "#6e6e6e",
+    "--wpds-color-stroke-interactive-brand": "#3858e9",
+    "--wpds-color-stroke-interactive-brand-active": "#2337c8",
+    "--wpds-color-stroke-interactive-brand-disabled": "#dbdbdb",
+    "--wpds-color-stroke-interactive-error": "#cc1818",
+    "--wpds-color-stroke-interactive-error-active": "#9d0000",
+    "--wpds-color-stroke-interactive-error-disabled": "#dbdbdb",
+    "--wpds-color-stroke-interactive-error-strong": "#cc1818",
+    "--wpds-color-stroke-focus": "#3858e9",
+    "--wpds-cursor-control": "pointer",
+    "--wpds-dimension-padding-xs": "4px",
+    "--wpds-dimension-padding-sm": "8px",
+    "--wpds-dimension-padding-md": "12px",
+    "--wpds-dimension-padding-lg": "16px",
+    "--wpds-dimension-padding-xl": "20px",
+    "--wpds-dimension-padding-2xl": "24px",
+    "--wpds-dimension-padding-3xl": "32px",
+    "--wpds-dimension-gap-xs": "4px",
+    "--wpds-dimension-gap-sm": "8px",
+    "--wpds-dimension-gap-md": "12px",
+    "--wpds-dimension-gap-lg": "16px",
+    "--wpds-dimension-gap-xl": "24px",
+    "--wpds-dimension-gap-2xl": "32px",
+    "--wpds-dimension-gap-3xl": "40px",
+    "--wpds-dimension-size-5xs": "4px",
+    "--wpds-dimension-size-4xs": "8px",
+    "--wpds-dimension-size-3xs": "12px",
+    "--wpds-dimension-size-2xs": "16px",
+    "--wpds-dimension-size-xs": "20px",
+    "--wpds-dimension-size-sm": "24px",
+    "--wpds-dimension-size-md": "32px",
+    "--wpds-dimension-size-lg": "40px",
+    "--wpds-dimension-surface-width-xs": "240px",
+    "--wpds-dimension-surface-width-sm": "320px",
+    "--wpds-dimension-surface-width-md": "400px",
+    "--wpds-dimension-surface-width-lg": "560px",
+    "--wpds-dimension-surface-width-xl": "720px",
+    "--wpds-dimension-surface-width-2xl": "960px",
+    "--wpds-motion-duration-xs": "50ms",
+    "--wpds-motion-duration-sm": "100ms",
+    "--wpds-motion-duration-md": "200ms",
+    "--wpds-motion-duration-lg": "300ms",
+    "--wpds-motion-duration-xl": "400ms",
+    "--wpds-motion-easing-subtle": "cubic-bezier(0.15,0,0.15,1)",
+    "--wpds-motion-easing-balanced": "cubic-bezier(0.4,0,0.2,1)",
+    "--wpds-motion-easing-expressive": "cubic-bezier(0.25,0,0,1)",
+    "--wpds-typography-font-family-heading": "-apple-system,system-ui,\"Segoe UI\",\"Roboto\",\"Oxygen-Sans\",\"Ubuntu\",\"Cantarell\",\"Helvetica Neue\",sans-serif",
+    "--wpds-typography-font-family-body": "-apple-system,system-ui,\"Segoe UI\",\"Roboto\",\"Oxygen-Sans\",\"Ubuntu\",\"Cantarell\",\"Helvetica Neue\",sans-serif",
+    "--wpds-typography-font-family-mono": "\"Menlo\",\"Consolas\",monaco,monospace",
+    "--wpds-typography-font-size-xs": "11px",
+    "--wpds-typography-font-size-sm": "12px",
+    "--wpds-typography-font-size-md": "13px",
+    "--wpds-typography-font-size-lg": "15px",
+    "--wpds-typography-font-size-xl": "20px",
+    "--wpds-typography-font-size-2xl": "32px",
+    "--wpds-typography-line-height-xs": "16px",
+    "--wpds-typography-line-height-sm": "20px",
+    "--wpds-typography-line-height-md": "24px",
+    "--wpds-typography-line-height-lg": "28px",
+    "--wpds-typography-line-height-xl": "32px",
+    "--wpds-typography-line-height-2xl": "40px",
+    "--wpds-typography-font-weight-default": "400",
+    "--wpds-typography-font-weight-emphasis": "600"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ":root",
+   "context": [
+    "@media (min-resolution: 192dpi)"
+   ],
+   "properties": {
+    "--wpds-border-width-focus": "1.5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ":root[data-wpds-root-provider=\"true\"][data-wpds-corner-radius=\"none\"], [data-wpds-corner-radius=\"none\"]",
+   "context": [],
+   "properties": {
+    "--wpds-border-radius-xs": "0px",
+    "--wpds-border-radius-sm": "0px",
+    "--wpds-border-radius-md": "0px",
+    "--wpds-border-radius-lg": "0px",
+    "--wpds-border-radius-xl": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ":root[data-wpds-root-provider=\"true\"][data-wpds-corner-radius=\"subtle\"], [data-wpds-corner-radius=\"subtle\"]",
+   "context": [],
+   "properties": {
+    "--wpds-border-radius-xs": "1px",
+    "--wpds-border-radius-sm": "2px",
+    "--wpds-border-radius-md": "4px",
+    "--wpds-border-radius-lg": "8px",
+    "--wpds-border-radius-xl": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ":root[data-wpds-root-provider=\"true\"][data-wpds-corner-radius=\"moderate\"], [data-wpds-corner-radius=\"moderate\"]",
+   "context": [],
+   "properties": {
+    "--wpds-border-radius-xs": "6px",
+    "--wpds-border-radius-sm": "8px",
+    "--wpds-border-radius-md": "12px",
+    "--wpds-border-radius-lg": "16px",
+    "--wpds-border-radius-xl": "20px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ":root[data-wpds-root-provider=\"true\"][data-wpds-corner-radius=\"pronounced\"], [data-wpds-corner-radius=\"pronounced\"]",
+   "context": [],
+   "properties": {
+    "--wpds-border-radius-xs": "18px",
+    "--wpds-border-radius-sm": "20px",
+    "--wpds-border-radius-md": "22px",
+    "--wpds-border-radius-lg": "24px",
+    "--wpds-border-radius-xl": "26px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".components-badge.is-info",
+   "context": [],
+   "properties": {
+    "--base-color": "#3858e9"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".components-badge.is-warning",
+   "context": [],
+   "properties": {
+    "--base-color": "#f0b849"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".components-badge.is-error",
+   "context": [],
+   "properties": {
+    "--base-color": "#cc1818"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".components-badge.is-success",
+   "context": [],
+   "properties": {
+    "--base-color": "#4ab866"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".components-button.is-destructive",
+   "context": [],
+   "properties": {
+    "--wp-components-color-accent": "#cc1818",
+    "--wp-components-color-accent-darker-10": "#9e1313",
+    "--wp-components-color-accent-darker-20": "#710d0d"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".components-checkbox-control",
+   "context": [],
+   "properties": {
+    "--checkbox-input-size": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".components-checkbox-control",
+   "context": [
+    "@media (min-width: 600px)"
+   ],
+   "properties": {
+    "--checkbox-input-size": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".components-checkbox-control",
+   "context": [],
+   "properties": {
+    "--checkbox-input-margin": "8px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": "svg.components-checkbox-control__checked, svg.components-checkbox-control__indeterminate",
+   "context": [],
+   "properties": {
+    "--checkmark-size": "var(--checkbox-input-size)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": "svg.components-checkbox-control__checked, svg.components-checkbox-control__indeterminate",
+   "context": [
+    "@media (min-width: 600px)"
+   ],
+   "properties": {
+    "--checkmark-size": "calc(var(--checkbox-input-size) + 4px)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".components-notice",
+   "context": [],
+   "properties": {
+    "--wp-components-notice-background-color": "var(--wpds-color-background-surface-info-weak,#f3f9ff)",
+    "--wp-components-notice-border-color": "var(--wpds-color-stroke-surface-info,#a9c6e7)",
+    "--wp-components-notice-text-color": "var(--wpds-color-foreground-content-info,#001b4f)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".components-notice.is-success",
+   "context": [],
+   "properties": {
+    "--wp-components-notice-background-color": "var(--wpds-color-background-surface-success-weak,#ebffed)",
+    "--wp-components-notice-border-color": "var(--wpds-color-stroke-surface-success,#94d29e)",
+    "--wp-components-notice-text-color": "var(--wpds-color-foreground-content-success,#002900)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".components-notice.is-warning",
+   "context": [],
+   "properties": {
+    "--wp-components-notice-background-color": "var(--wpds-color-background-surface-warning-weak,#fff7e1)",
+    "--wp-components-notice-border-color": "var(--wpds-color-stroke-surface-warning,#e1bc7c)",
+    "--wp-components-notice-text-color": "var(--wpds-color-foreground-content-warning,#2e1900)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".components-notice.is-error",
+   "context": [],
+   "properties": {
+    "--wp-components-notice-background-color": "var(--wpds-color-background-surface-error-weak,#fff6f5)",
+    "--wp-components-notice-border-color": "var(--wpds-color-stroke-surface-error,#dab1aa)",
+    "--wp-components-notice-text-color": "var(--wpds-color-foreground-content-error,#470000)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".components-validated-control:has(:is(input, select):invalid[data-validity-visible]) .components-input-control__backdrop",
+   "context": [],
+   "properties": {
+    "--wp-components-color-accent": "#cc1818"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".components-validated-control :is(textarea, input[type=\"text\"]):invalid[data-validity-visible]",
+   "context": [],
+   "properties": {
+    "--wp-admin-theme-color": "#cc1818",
+    "--wp-components-color-accent": "#cc1818"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".components-validated-control .components-combobox-control__suggestions-container:has(input:invalid[data-validity-visible]):not(:has([aria-expanded=\"true\"]))",
+   "context": [],
+   "properties": {
+    "--wp-components-color-accent": "#cc1818"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".components-validated-control__wrapper-with-error-delegate:has(select:invalid[data-validity-visible]) .components-input-control__backdrop",
+   "context": [],
+   "properties": {
+    "--wp-components-color-accent": "#cc1818"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".components-validated-control__wrapper-with-error-delegate:has(input[type=\"radio\"]:invalid[data-validity-visible])",
+   "context": [],
+   "properties": {
+    "--wp-components-color-accent": "#cc1818"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".components-validated-control__wrapper-with-error-delegate:has(input:invalid[data-validity-visible]) .components-form-token-field__input-container:not(:has([aria-expanded=\"true\"]))",
+   "context": [],
+   "properties": {
+    "--wp-components-color-accent": "#cc1818"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".components-validated-control__wrapper-with-error-delegate:has(input:invalid[data-validity-visible]) .components-validated-control__content-editable [role=\"textbox\"]",
+   "context": [],
+   "properties": {
+    "--wp-components-color-accent": "#cc1818"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--wp-admin-theme-color": "#3858e9",
+    "--wp-admin-theme-color--rgb": "56,88,233",
+    "--wp-admin-theme-color-darker-10": "#2145e6",
+    "--wp-admin-theme-color-darker-10--rgb": "33.0384615385,68.7307692308,230.4615384615",
+    "--wp-admin-theme-color-darker-20": "#183ad6",
+    "--wp-admin-theme-color-darker-20--rgb": "23.6923076923,58.1538461538,214.3076923077",
+    "--wp-admin-border-width-focus": "2px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ":root",
+   "context": [
+    "@media (min-resolution: 192dpi)"
+   ],
+   "properties": {
+    "--wp-admin-border-width-focus": "1.5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".dataviews-filters__search-widget-listitem .dataviews-filters__search-widget-listitem-multi-selection",
+   "context": [],
+   "properties": {
+    "--checkbox-size": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".dataviews-filters__search-widget-listitem .dataviews-filters__search-widget-listitem-multi-selection",
+   "context": [
+    "@media (min-width: 600px)"
+   ],
+   "properties": {
+    "--checkbox-size": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".dataviews-filters__search-widget-listitem .dataviews-filters__search-widget-listitem-multi-selection.is-selected svg",
+   "context": [],
+   "properties": {
+    "--checkmark-size": "var(--checkbox-size)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".dataviews-filters__search-widget-listitem .dataviews-filters__search-widget-listitem-multi-selection.is-selected svg",
+   "context": [
+    "@media (min-width: 600px)"
+   ],
+   "properties": {
+    "--checkmark-size": "calc(var(--checkbox-size) + 4px)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".dataviews-selection-checkbox",
+   "context": [],
+   "properties": {
+    "--checkbox-input-size": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".dataviews-selection-checkbox",
+   "context": [
+    "@media (min-width: 600px)"
+   ],
+   "properties": {
+    "--checkbox-input-size": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".dataviews-view-table-selection-checkbox",
+   "context": [],
+   "properties": {
+    "--checkbox-input-size": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".dataviews-view-table-selection-checkbox",
+   "context": [
+    "@media (min-width: 600px)"
+   ],
+   "properties": {
+    "--checkbox-input-size": "16px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".newspack-info-button__portal",
+   "context": [],
+   "properties": {
+    "--wp-ui-popover-z-index": "1000000"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".newspack-modal",
+   "context": [],
+   "properties": {
+    "--wp-admin-theme-color": "#003da5",
+    "--wp-admin-theme-color--rgb": "0,61,165",
+    "--wp-admin-theme-color-darker-10": "#00296e",
+    "--wp-admin-theme-color-darker-10--rgb": "0,41,110",
+    "--wp-admin-theme-color-darker-20": "#001f53",
+    "--wp-admin-theme-color-darker-20--rgb": "0,31,83",
+    "--wp-admin-theme-color-lighter-10": "#dfe7f4",
+    "--wp-admin-theme-color-lighter-10--rgb": "223,231,244"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--wpds-border-radius-xs": "1px",
+    "--wpds-border-radius-sm": "2px",
+    "--wpds-border-radius-md": "4px",
+    "--wpds-border-radius-lg": "8px",
+    "--wpds-border-radius-xl": "12px",
+    "--wpds-border-width-xs": "1px",
+    "--wpds-border-width-sm": "2px",
+    "--wpds-border-width-md": "4px",
+    "--wpds-border-width-lg": "8px",
+    "--wpds-border-width-focus": "2px",
+    "--wpds-color-background-surface-neutral": "#fcfcfc",
+    "--wpds-color-background-surface-neutral-strong": "#fff",
+    "--wpds-color-background-surface-neutral-weak": "#f4f4f4",
+    "--wpds-color-background-surface-brand": "#ecf0fa",
+    "--wpds-color-background-surface-success": "#c6f7cd",
+    "--wpds-color-background-surface-success-weak": "#ebffed",
+    "--wpds-color-background-surface-info": "#deebfa",
+    "--wpds-color-background-surface-info-weak": "#f3f9ff",
+    "--wpds-color-background-surface-warning": "#fde6be",
+    "--wpds-color-background-surface-warning-weak": "#fff7e1",
+    "--wpds-color-background-surface-caution": "#fee995",
+    "--wpds-color-background-surface-caution-weak": "#fff9ca",
+    "--wpds-color-background-surface-error": "#f6e6e3",
+    "--wpds-color-background-surface-error-weak": "#fff6f5",
+    "--wpds-color-background-interactive-neutral-strong": "#2d2d2d",
+    "--wpds-color-background-interactive-neutral-strong-active": "#1e1e1e",
+    "--wpds-color-background-interactive-neutral-strong-disabled": "#e6e6e6",
+    "--wpds-color-background-interactive-neutral-weak": "#0000",
+    "--wpds-color-background-interactive-neutral-weak-active": "#ededed",
+    "--wpds-color-background-interactive-neutral-weak-disabled": "#0000",
+    "--wpds-color-background-interactive-brand-strong": "#3858e9",
+    "--wpds-color-background-interactive-brand-strong-active": "#2e49d9",
+    "--wpds-color-background-interactive-brand-strong-disabled": "#e6e6e6",
+    "--wpds-color-background-interactive-brand-weak": "#0000",
+    "--wpds-color-background-interactive-brand-weak-active": "#e6eaf4",
+    "--wpds-color-background-interactive-brand-weak-disabled": "#0000",
+    "--wpds-color-background-interactive-error": "#0000",
+    "--wpds-color-background-interactive-error-active": "#fff6f5",
+    "--wpds-color-background-interactive-error-disabled": "#0000",
+    "--wpds-color-background-interactive-error-strong": "#cc1818",
+    "--wpds-color-background-interactive-error-strong-active": "#b90000",
+    "--wpds-color-background-interactive-error-strong-disabled": "#e6e6e6",
+    "--wpds-color-background-interactive-error-weak": "#0000",
+    "--wpds-color-background-interactive-error-weak-active": "#f6e6e3",
+    "--wpds-color-background-interactive-error-weak-disabled": "#0000",
+    "--wpds-color-background-track-neutral-weak": "#f0f0f0",
+    "--wpds-color-background-track-neutral": "#dbdbdb",
+    "--wpds-color-background-thumb-neutral-weak": "#8d8d8d",
+    "--wpds-color-background-thumb-neutral-weak-active": "#6e6e6e",
+    "--wpds-color-background-thumb-brand": "#3858e9",
+    "--wpds-color-background-thumb-brand-active": "#3858e9",
+    "--wpds-color-background-thumb-neutral-disabled": "#dbdbdb",
+    "--wpds-color-foreground-content-neutral": "#1e1e1e",
+    "--wpds-color-foreground-content-neutral-weak": "#707070",
+    "--wpds-color-foreground-content-success": "#002900",
+    "--wpds-color-foreground-content-success-weak": "#008030",
+    "--wpds-color-foreground-content-info": "#001b4f",
+    "--wpds-color-foreground-content-info-weak": "#006bd7",
+    "--wpds-color-foreground-content-warning": "#2e1900",
+    "--wpds-color-foreground-content-warning-weak": "#926300",
+    "--wpds-color-foreground-content-caution": "#281d00",
+    "--wpds-color-foreground-content-caution-weak": "#826a00",
+    "--wpds-color-foreground-content-error": "#470000",
+    "--wpds-color-foreground-content-error-weak": "#cc1818",
+    "--wpds-color-foreground-interactive-neutral": "#1e1e1e",
+    "--wpds-color-foreground-interactive-neutral-active": "#1e1e1e",
+    "--wpds-color-foreground-interactive-neutral-disabled": "#8d8d8d",
+    "--wpds-color-foreground-interactive-neutral-strong": "#f0f0f0",
+    "--wpds-color-foreground-interactive-neutral-strong-active": "#f0f0f0",
+    "--wpds-color-foreground-interactive-neutral-strong-disabled": "#8d8d8d",
+    "--wpds-color-foreground-interactive-neutral-weak": "#707070",
+    "--wpds-color-foreground-interactive-neutral-weak-disabled": "#8d8d8d",
+    "--wpds-color-foreground-interactive-brand": "#3858e9",
+    "--wpds-color-foreground-interactive-brand-active": "#0b0070",
+    "--wpds-color-foreground-interactive-brand-disabled": "#8d8d8d",
+    "--wpds-color-foreground-interactive-brand-strong": "#eff0f2",
+    "--wpds-color-foreground-interactive-brand-strong-active": "#eff0f2",
+    "--wpds-color-foreground-interactive-brand-strong-disabled": "#8d8d8d",
+    "--wpds-color-foreground-interactive-error": "#cc1818",
+    "--wpds-color-foreground-interactive-error-active": "#470000",
+    "--wpds-color-foreground-interactive-error-disabled": "#8d8d8d",
+    "--wpds-color-foreground-interactive-error-strong": "#f2efef",
+    "--wpds-color-foreground-interactive-error-strong-active": "#f2efef",
+    "--wpds-color-foreground-interactive-error-strong-disabled": "#8d8d8d",
+    "--wpds-color-stroke-surface-neutral": "#dbdbdb",
+    "--wpds-color-stroke-surface-neutral-weak": "#f0f0f0",
+    "--wpds-color-stroke-surface-neutral-strong": "#8d8d8d",
+    "--wpds-color-stroke-surface-brand": "#b0bbd6",
+    "--wpds-color-stroke-surface-brand-strong": "#3858e9",
+    "--wpds-color-stroke-surface-success": "#94d29e",
+    "--wpds-color-stroke-surface-success-strong": "#008030",
+    "--wpds-color-stroke-surface-info": "#a9c6e7",
+    "--wpds-color-stroke-surface-info-strong": "#006bd7",
+    "--wpds-color-stroke-surface-warning": "#e1bc7c",
+    "--wpds-color-stroke-surface-warning-strong": "#926300",
+    "--wpds-color-stroke-surface-caution": "#cfc28d",
+    "--wpds-color-stroke-surface-caution-strong": "#826a00",
+    "--wpds-color-stroke-surface-error": "#dab1aa",
+    "--wpds-color-stroke-surface-error-strong": "#cc1818",
+    "--wpds-color-stroke-interactive-neutral": "#8d8d8d",
+    "--wpds-color-stroke-interactive-neutral-active": "#6e6e6e",
+    "--wpds-color-stroke-interactive-neutral-disabled": "#dbdbdb",
+    "--wpds-color-stroke-interactive-neutral-strong": "#6e6e6e",
+    "--wpds-color-stroke-interactive-brand": "#3858e9",
+    "--wpds-color-stroke-interactive-brand-active": "#2337c8",
+    "--wpds-color-stroke-interactive-brand-disabled": "#dbdbdb",
+    "--wpds-color-stroke-interactive-error": "#cc1818",
+    "--wpds-color-stroke-interactive-error-active": "#9d0000",
+    "--wpds-color-stroke-interactive-error-disabled": "#dbdbdb",
+    "--wpds-color-stroke-interactive-error-strong": "#cc1818",
+    "--wpds-color-stroke-focus": "#3858e9",
+    "--wpds-cursor-control": "pointer",
+    "--wpds-dimension-padding-xs": "4px",
+    "--wpds-dimension-padding-sm": "8px",
+    "--wpds-dimension-padding-md": "12px",
+    "--wpds-dimension-padding-lg": "16px",
+    "--wpds-dimension-padding-xl": "20px",
+    "--wpds-dimension-padding-2xl": "24px",
+    "--wpds-dimension-padding-3xl": "32px",
+    "--wpds-dimension-gap-xs": "4px",
+    "--wpds-dimension-gap-sm": "8px",
+    "--wpds-dimension-gap-md": "12px",
+    "--wpds-dimension-gap-lg": "16px",
+    "--wpds-dimension-gap-xl": "24px",
+    "--wpds-dimension-gap-2xl": "32px",
+    "--wpds-dimension-gap-3xl": "40px",
+    "--wpds-dimension-size-5xs": "4px",
+    "--wpds-dimension-size-4xs": "8px",
+    "--wpds-dimension-size-3xs": "12px",
+    "--wpds-dimension-size-2xs": "16px",
+    "--wpds-dimension-size-xs": "20px",
+    "--wpds-dimension-size-sm": "24px",
+    "--wpds-dimension-size-md": "32px",
+    "--wpds-dimension-size-lg": "40px",
+    "--wpds-dimension-surface-width-xs": "240px",
+    "--wpds-dimension-surface-width-sm": "320px",
+    "--wpds-dimension-surface-width-md": "400px",
+    "--wpds-dimension-surface-width-lg": "560px",
+    "--wpds-dimension-surface-width-xl": "720px",
+    "--wpds-dimension-surface-width-2xl": "960px",
+    "--wpds-elevation-xs": "0 1px 1px 0 #00000008,0 1px 2px 0 #00000005,0 3px 3px 0 #00000005,0 4px 4px 0 #00000003",
+    "--wpds-elevation-sm": "0 1px 2px 0 #0000000d,0 2px 3px 0 #0000000a,0 6px 6px 0 #00000008,0 8px 8px 0 #00000005",
+    "--wpds-elevation-md": "0 2px 3px 0 #0000000d,0 4px 5px 0 #0000000a,0 12px 12px 0 #00000008,0 16px 16px 0 #00000005",
+    "--wpds-elevation-lg": "0 5px 15px 0 #00000014,0 15px 27px 0 #00000012,0 30px 36px 0 #0000000a,0 50px 43px 0 #00000005",
+    "--wpds-motion-duration-xs": "50ms",
+    "--wpds-motion-duration-sm": "100ms",
+    "--wpds-motion-duration-md": "200ms",
+    "--wpds-motion-duration-lg": "300ms",
+    "--wpds-motion-duration-xl": "400ms",
+    "--wpds-motion-easing-subtle": "cubic-bezier(0.15,0,0.15,1)",
+    "--wpds-motion-easing-balanced": "cubic-bezier(0.4,0,0.2,1)",
+    "--wpds-motion-easing-expressive": "cubic-bezier(0.25,0,0,1)",
+    "--wpds-typography-font-family-heading": "-apple-system,system-ui,\"Segoe UI\",\"Roboto\",\"Oxygen-Sans\",\"Ubuntu\",\"Cantarell\",\"Helvetica Neue\",sans-serif",
+    "--wpds-typography-font-family-body": "-apple-system,system-ui,\"Segoe UI\",\"Roboto\",\"Oxygen-Sans\",\"Ubuntu\",\"Cantarell\",\"Helvetica Neue\",sans-serif",
+    "--wpds-typography-font-family-mono": "\"Menlo\",\"Consolas\",monaco,monospace",
+    "--wpds-typography-font-size-xs": "11px",
+    "--wpds-typography-font-size-sm": "12px",
+    "--wpds-typography-font-size-md": "13px",
+    "--wpds-typography-font-size-lg": "15px",
+    "--wpds-typography-font-size-xl": "20px",
+    "--wpds-typography-font-size-2xl": "32px",
+    "--wpds-typography-line-height-xs": "16px",
+    "--wpds-typography-line-height-sm": "20px",
+    "--wpds-typography-line-height-md": "24px",
+    "--wpds-typography-line-height-lg": "28px",
+    "--wpds-typography-line-height-xl": "32px",
+    "--wpds-typography-line-height-2xl": "40px",
+    "--wpds-typography-font-weight-regular": "400",
+    "--wpds-typography-font-weight-medium": "499"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ":root",
+   "context": [
+    "@media (min-resolution: 192dpi)"
+   ],
+   "properties": {
+    "--wpds-border-width-focus": "1.5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ":root:has([data-wpds-root-provider=\"true\"][data-wpds-corner-radius=\"none\"]), [data-wpds-corner-radius=\"none\"]",
+   "context": [],
+   "properties": {
+    "--wpds-border-radius-xs": "0",
+    "--wpds-border-radius-sm": "0",
+    "--wpds-border-radius-md": "0",
+    "--wpds-border-radius-lg": "0",
+    "--wpds-border-radius-xl": "0"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ":root:has([data-wpds-root-provider=\"true\"][data-wpds-corner-radius=\"subtle\"]), [data-wpds-corner-radius=\"subtle\"]",
+   "context": [],
+   "properties": {
+    "--wpds-border-radius-xs": "1px",
+    "--wpds-border-radius-sm": "2px",
+    "--wpds-border-radius-md": "4px",
+    "--wpds-border-radius-lg": "8px",
+    "--wpds-border-radius-xl": "12px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ":root:has([data-wpds-root-provider=\"true\"][data-wpds-corner-radius=\"moderate\"]), [data-wpds-corner-radius=\"moderate\"]",
+   "context": [],
+   "properties": {
+    "--wpds-border-radius-xs": "6px",
+    "--wpds-border-radius-sm": "8px",
+    "--wpds-border-radius-md": "12px",
+    "--wpds-border-radius-lg": "16px",
+    "--wpds-border-radius-xl": "20px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ":root:has([data-wpds-root-provider=\"true\"][data-wpds-corner-radius=\"pronounced\"]), [data-wpds-corner-radius=\"pronounced\"]",
+   "context": [],
+   "properties": {
+    "--wpds-border-radius-xs": "18px",
+    "--wpds-border-radius-sm": "20px",
+    "--wpds-border-radius-md": "22px",
+    "--wpds-border-radius-lg": "24px",
+    "--wpds-border-radius-xl": "26px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--wpds-color-background-interactive-brand-strong": "#003da5",
+    "--wpds-color-background-interactive-brand-strong-active": "#001f53",
+    "--wpds-color-background-interactive-brand-weak-active": "#dfe7f4",
+    "--wpds-color-background-surface-brand": "#dfe7f4",
+    "--wpds-color-background-thumb-brand": "#003da5",
+    "--wpds-color-background-thumb-brand-active": "#003da5",
+    "--wpds-color-foreground-interactive-brand": "#003da5",
+    "--wpds-color-foreground-interactive-brand-active": "#001f53",
+    "--wpds-color-foreground-interactive-brand-disabled": "#406ebc",
+    "--wpds-color-stroke-focus": "#003da5",
+    "--wpds-color-stroke-interactive-brand": "#003da5",
+    "--wpds-color-stroke-interactive-brand-active": "#001f53",
+    "--wpds-color-stroke-interactive-brand-disabled": "#9fb6dd",
+    "--wpds-color-stroke-surface-brand": "#dfe7f4",
+    "--wpds-color-stroke-surface-brand-strong": "#003da5"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".newspack-stat-card",
+   "context": [],
+   "properties": {
+    "--wp-admin-theme-color": "#003da5",
+    "--wp-admin-theme-color--rgb": "0,61,165",
+    "--wp-admin-theme-color-darker-10": "#00296e",
+    "--wp-admin-theme-color-darker-10--rgb": "0,41,110",
+    "--wp-admin-theme-color-darker-20": "#001f53",
+    "--wp-admin-theme-color-darker-20--rgb": "0,31,83",
+    "--wp-admin-theme-color-lighter-10": "#dfe7f4",
+    "--wp-admin-theme-color-lighter-10--rgb": "223,231,244"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".newspack-tabbed-navigation",
+   "context": [],
+   "properties": {
+    "--wpds-color-stroke-interactive-neutral-strong": "#003da5"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": "body.newspack-wizard-page:not(.newspack-admin-header)",
+   "context": [],
+   "properties": {
+    "--wp-admin-theme-color": "#003da5",
+    "--wp-admin-theme-color--rgb": "0,61,165",
+    "--wp-admin-theme-color-darker-10": "#00296e",
+    "--wp-admin-theme-color-darker-10--rgb": "0,41,110",
+    "--wp-admin-theme-color-darker-20": "#001f53",
+    "--wp-admin-theme-color-darker-20--rgb": "0,31,83",
+    "--wp-admin-theme-color-lighter-10": "#dfe7f4",
+    "--wp-admin-theme-color-lighter-10--rgb": "223,231,244",
+    "--wp-components-color-accent": "#003da5"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".newspack-wizard",
+   "context": [],
+   "properties": {
+    "--wp-admin-theme-color": "#003da5",
+    "--wp-admin-theme-color--rgb": "0,61,165",
+    "--wp-admin-theme-color-darker-10": "#00296e",
+    "--wp-admin-theme-color-darker-10--rgb": "0,41,110",
+    "--wp-admin-theme-color-darker-20": "#001f53",
+    "--wp-admin-theme-color-darker-20--rgb": "0,31,83",
+    "--wp-admin-theme-color-lighter-10": "#dfe7f4",
+    "--wp-admin-theme-color-lighter-10--rgb": "223,231,244"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".newspack-web-preview",
+   "context": [],
+   "properties": {
+    "--wp-admin-theme-color": "#003da5",
+    "--wp-admin-theme-color--rgb": "0,61,165",
+    "--wp-admin-theme-color-darker-10": "#00296e",
+    "--wp-admin-theme-color-darker-10--rgb": "0,41,110",
+    "--wp-admin-theme-color-darker-20": "#001f53",
+    "--wp-admin-theme-color-darker-20--rgb": "0,31,83",
+    "--wp-admin-theme-color-lighter-10": "#dfe7f4",
+    "--wp-admin-theme-color-lighter-10--rgb": "223,231,244"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--wp-admin-theme-color": "#003da5",
+    "--wp-admin-theme-color--rgb": "0,61,165",
+    "--wp-admin-theme-color-darker-10": "#00296e",
+    "--wp-admin-theme-color-darker-10--rgb": "0,41,110",
+    "--wp-admin-theme-color-darker-20": "#001f53",
+    "--wp-admin-theme-color-darker-20--rgb": "0,31,83",
+    "--wp-admin-theme-color-lighter-10": "#dfe7f4",
+    "--wp-admin-theme-color-lighter-10--rgb": "223,231,244"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--newspack-theme-color-primary": "#003da5",
+    "--newspack-theme-color-primary-variation": "#2055b0",
+    "--newspack-theme-color-secondary": "#555",
+    "--newspack-theme-color-secondary-variation": "#393939",
+    "--newspack-theme-color-highlight": "#fed850",
+    "--newspack-theme-color-primary-darken-5": "#00296e",
+    "--newspack-theme-color-primary-darken-10": "#001f53",
+    "--newspack-theme-color-primary-against-white": "var(--newspack-theme-color-primary)",
+    "--newspack-theme-color-secondary-against-white": "var(--newspack-theme-color-secondary)",
+    "--newspack-theme-color-against-primary": "#fff",
+    "--newspack-theme-color-against-secondary": "#fff",
+    "--newspack-theme-color-bg-body": "#fff",
+    "--newspack-theme-color-bg-input": "var(--newspack-theme-color-bg-body)",
+    "--newspack-theme-color-bg-light": "#f0f0f0",
+    "--newspack-theme-color-bg-button-hover": "#111",
+    "--newspack-theme-color-bg-pre": "#eee",
+    "--newspack-theme-color-bg-pre-lighten-5": "#fbfbfb",
+    "--newspack-theme-color-bg-dark": "#333",
+    "--newspack-theme-color-bg-dark-lighten-5": "#404040",
+    "--newspack-theme-color-bg-dark-darken-5": "#262626",
+    "--newspack-theme-color-text-main": "#111",
+    "--newspack-theme-color-text-light": "#515151",
+    "--newspack-theme-color-text-hover": "var(--newspack-theme-color-bg-dark-lighten-5)",
+    "--newspack-theme-color-text-screen": "#21759b",
+    "--newspack-theme-color-link": "var(--newspack-theme-color-secondary)",
+    "--newspack-theme-color-link-hover": "var(--newspack-theme-color-secondary-variation-against-white)",
+    "--newspack-theme-color-border": "#ccc",
+    "--newspack-theme-color-border-light": "#e0e0e0",
+    "--newspack-theme-color-alert-yellow": "#dba617",
+    "--newspack-theme-color-alert-red": "#d63638",
+    "--newspack-theme-color-alert-green": "#008a20",
+    "--newspack-ads-sticky-bg": "var( --newspack-theme-color-bg-body )",
+    "--newspack-ads-sticky-text": "var( --newspack-theme-color-text-main )",
+    "--newspack-theme-font-code": "menlo,monaco,consolas,lucida console,monospace",
+    "--newspack-theme-font-pre": "\"Courier 10 Pitch\",courier,monospace",
+    "--newspack-theme-font-size-base": "20px",
+    "--newspack-theme-font-size-base-sm": "18px",
+    "--newspack-theme-font-size-ratio": "1.125",
+    "--newspack-theme-font-size-xxs": "0.6em",
+    "--newspack-theme-font-size-xs": "0.7em",
+    "--newspack-theme-font-size-sm": "0.8em",
+    "--newspack-theme-font-size-md": "1.2em",
+    "--newspack-theme-font-size-lg": "1.4em",
+    "--newspack-theme-font-size-xl": "1.8em",
+    "--newspack-theme-font-size-xxl": "2.2em",
+    "--newspack-theme-font-size-xxxl": "2.8em",
+    "--newspack-theme-font-size-xxxxl": "3.2em",
+    "--newspack-theme-font-size-xxxxxl": "4em",
+    "--newspack-theme-font-line-height-body": "1.6",
+    "--newspack-theme-font-line-height-heading": "1.2",
+    "--newspack-theme-font-heading": "\"Barlow\",\"Helvetica\",sans-serif",
+    "--newspack-theme-font-body": "\"Barlow\",\"Helvetica\",sans-serif"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".wp-block-buttons",
+   "context": [],
+   "properties": {
+    "--wp--style--block-gap": "0.5rem"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".newspack-pattern.contribution__style-1",
+   "context": [],
+   "properties": {
+    "--wp--preset--spacing--80": "var(--wp--preset--spacing--60)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".newspack-pattern.contribution__style-2",
+   "context": [],
+   "properties": {
+    "--wp--preset--spacing--80": "var(--wp--preset--spacing--60)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": "body",
+   "context": [],
+   "properties": {
+    "--wp--preset--spacing--50": "clamp(1.25rem,1rem + 0.8333vw,1.5rem)",
+    "--wp--preset--spacing--60": "clamp(1.5rem,0.75rem + 2.5vw,2.25rem)",
+    "--wp--preset--spacing--70": "clamp(1.75rem,0.12rem + 5.4333vw,3.38rem)",
+    "--wp--preset--spacing--80": "clamp(2rem,-1.06rem + 10.2vw,5.06rem)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": "html body",
+   "context": [],
+   "properties": {
+    "--newspack-ui-font-size-m": "clamp(1rem,0.04rem + 2.209vw,1.611rem)",
+    "--newspack-ui-font-size-l": "clamp(1.111rem,0.762rem + 0.803vw,1.333rem)",
+    "--newspack-ui-font-size-xl": "clamp(1.222rem,0.35rem + 2.008vw,1.778rem)",
+    "--newspack-ui-font-size-2xl": "clamp(1.444rem,0.049rem + 3.213vw,2.333rem)",
+    "--newspack-ui-font-size-3xl": "clamp(1.556rem,-0.189rem + 4.016vw,2.667rem)",
+    "--newspack-ui-font-size-4xl": "clamp(1.778rem,-1.014rem + 6.426vw,3.556rem)",
+    "--newspack-ui-font-size-5xl": "clamp(1.889rem,-2.124rem + 9.237vw,4.444rem)",
+    "--newspack-ui-font-size-6xl": "clamp(2rem,-3.234rem + 12.048vw,5.333rem)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": "html body",
+   "context": [
+    "@media only screen and (min-width: 600px)"
+   ],
+   "properties": {
+    "--newspack-ui-font-size-m": "clamp(0.9rem,0.743rem + 0.402vw,1rem)",
+    "--newspack-ui-font-size-l": "clamp(1rem,0.686rem + 0.803vw,1.2rem)",
+    "--newspack-ui-font-size-xl": "clamp(1.1rem,0.315rem + 2.008vw,1.6rem)",
+    "--newspack-ui-font-size-2xl": "clamp(1.3rem,0.044rem + 3.213vw,2.1rem)",
+    "--newspack-ui-font-size-3xl": "clamp(1.4rem,-0.17rem + 4.016vw,2.4rem)",
+    "--newspack-ui-font-size-4xl": "clamp(1.6rem,-0.912rem + 6.426vw,3.2rem)",
+    "--newspack-ui-font-size-5xl": "clamp(1.7rem,-1.912rem + 9.237vw,4rem)",
+    "--newspack-ui-font-size-6xl": "clamp(1.8rem,-2.911rem + 12.048vw,4.8rem)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": "html body",
+   "context": [],
+   "properties": {
+    "--newspack-ui-font-size-m": "clamp(1rem,0.04rem + 2.209vw,1.611rem)",
+    "--newspack-ui-font-size-l": "clamp(1.111rem,0.762rem + 0.803vw,1.333rem)",
+    "--newspack-ui-font-size-xl": "clamp(1.222rem,0.35rem + 2.008vw,1.778rem)",
+    "--newspack-ui-font-size-2xl": "clamp(1.444rem,0.049rem + 3.213vw,2.333rem)",
+    "--newspack-ui-font-size-3xl": "clamp(1.556rem,-0.189rem + 4.016vw,2.667rem)",
+    "--newspack-ui-font-size-4xl": "clamp(1.778rem,-1.014rem + 6.426vw,3.556rem)",
+    "--newspack-ui-font-size-5xl": "clamp(1.889rem,-2.124rem + 9.237vw,4.444rem)",
+    "--newspack-ui-font-size-6xl": "clamp(2rem,-3.234rem + 12.048vw,5.333rem)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": "html body",
+   "context": [
+    "@media only screen and (min-width: 600px)"
+   ],
+   "properties": {
+    "--newspack-ui-font-size-m": "clamp(0.9rem,0.743rem + 0.402vw,1rem)",
+    "--newspack-ui-font-size-l": "clamp(1rem,0.686rem + 0.803vw,1.2rem)",
+    "--newspack-ui-font-size-xl": "clamp(1.1rem,0.315rem + 2.008vw,1.6rem)",
+    "--newspack-ui-font-size-2xl": "clamp(1.3rem,0.044rem + 3.213vw,2.1rem)",
+    "--newspack-ui-font-size-3xl": "clamp(1.4rem,-0.17rem + 4.016vw,2.4rem)",
+    "--newspack-ui-font-size-4xl": "clamp(1.6rem,-0.912rem + 6.426vw,3.2rem)",
+    "--newspack-ui-font-size-5xl": "clamp(1.7rem,-1.912rem + 9.237vw,4rem)",
+    "--newspack-ui-font-size-6xl": "clamp(1.8rem,-2.911rem + 12.048vw,4.8rem)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": "body",
+   "context": [],
+   "properties": {
+    "--wp--preset--spacing--50": "clamp(1.25rem,1rem + 0.8333vw,1.5rem)",
+    "--wp--preset--spacing--60": "clamp(1.5rem,0.75rem + 2.5vw,2.25rem)",
+    "--wp--preset--spacing--70": "clamp(1.75rem,0.12rem + 5.4333vw,3.38rem)",
+    "--wp--preset--spacing--80": "clamp(2rem,-1.06rem + 10.2vw,5.06rem)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--newspack-theme-color-primary": "#003da5",
+    "--newspack-theme-color-primary-variation": "#2055b0",
+    "--newspack-theme-color-secondary": "#555",
+    "--newspack-theme-color-secondary-variation": "#3e3e3e",
+    "--newspack-theme-color-highlight": "#fed850",
+    "--newspack-theme-color-primary-darken-5": "#00296e",
+    "--newspack-theme-color-primary-darken-10": "#001f53",
+    "--newspack-theme-color-primary-against-white": "var(--newspack-theme-color-primary)",
+    "--newspack-theme-color-secondary-against-white": "var(--newspack-theme-color-secondary)",
+    "--newspack-theme-color-against-primary": "#fff",
+    "--newspack-theme-color-against-secondary": "#fff",
+    "--newspack-theme-color-bg-body": "#fff",
+    "--newspack-theme-color-bg-input": "var(--newspack-theme-color-bg-body)",
+    "--newspack-theme-color-bg-light": "#f0f0f0",
+    "--newspack-theme-color-bg-button-hover": "#111",
+    "--newspack-theme-color-bg-pre": "#eee",
+    "--newspack-theme-color-bg-pre-lighten-5": "#fbfbfb",
+    "--newspack-theme-color-bg-dark": "#333",
+    "--newspack-theme-color-bg-dark-lighten-5": "#404040",
+    "--newspack-theme-color-bg-dark-darken-5": "#262626",
+    "--newspack-theme-color-text-main": "#111",
+    "--newspack-theme-color-text-light": "#515151",
+    "--newspack-theme-color-text-hover": "var(--newspack-theme-color-bg-dark-lighten-5)",
+    "--newspack-theme-color-text-screen": "#21759b",
+    "--newspack-theme-color-link": "var(--newspack-theme-color-secondary)",
+    "--newspack-theme-color-link-hover": "var(--newspack-theme-color-secondary-variation-against-white)",
+    "--newspack-theme-color-border": "#ccc",
+    "--newspack-theme-color-border-light": "#e0e0e0",
+    "--newspack-theme-color-alert-yellow": "#dba617",
+    "--newspack-theme-color-alert-red": "#d63638",
+    "--newspack-theme-color-alert-green": "#008a20"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--newspack-theme-font-body": "georgia,garamond,\"Times New Roman\",serif",
+    "--newspack-theme-font-heading": "-apple-system,blinkmacsystemfont,\"Segoe UI\",\"Roboto\",\"Oxygen\",\"Ubuntu\",\"Cantarell\",\"Fira Sans\",\"Droid Sans\",\"Helvetica Neue\",sans-serif",
+    "--newspack-theme-font-code": "menlo,monaco,consolas,lucida console,monospace",
+    "--newspack-theme-font-pre": "\"Courier 10 Pitch\",courier,monospace",
+    "--newspack-theme-font-size-base": "20px",
+    "--newspack-theme-font-size-base-sm": "18px",
+    "--newspack-theme-font-size-ratio": "1.125",
+    "--newspack-theme-font-size-xxs": "calc(1em*0.6)",
+    "--newspack-theme-font-size-xs": "calc(1em*0.7)",
+    "--newspack-theme-font-size-sm": "calc(1em*0.8)",
+    "--newspack-theme-font-size-md": "calc(1em*1.2)",
+    "--newspack-theme-font-size-lg": "calc(1em*1.4)",
+    "--newspack-theme-font-size-xl": "calc(1em*1.8)",
+    "--newspack-theme-font-size-xxl": "calc(1em*2.2)",
+    "--newspack-theme-font-size-xxxl": "calc(1em*2.8)",
+    "--newspack-theme-font-size-xxxxl": "calc(1em*3.2)",
+    "--newspack-theme-font-size-xxxxxl": "calc(1em*4)",
+    "--newspack-theme-font-line-height-body": "1.6",
+    "--newspack-theme-font-line-height-heading": "1.2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".wp-block-newspack-blocks-carousel",
+   "context": [],
+   "properties": {
+    "--carousel-columns": "min(var(--carousel-configured-columns),var(--carousel-slide-count))",
+    "--carousel-configured-columns": "1",
+    "--carousel-slide-count": "var(--carousel-configured-columns)",
+    "--carousel-height-ratio": ".75"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".wp-block-newspack-blocks-carousel[data-slides-per-view=\"1\"]",
+   "context": [],
+   "properties": {
+    "--carousel-configured-columns": "1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".wp-block-newspack-blocks-carousel[data-slide-count=\"1\"]",
+   "context": [],
+   "properties": {
+    "--carousel-slide-count": "1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".wp-block-newspack-blocks-carousel[data-slides-per-view=\"2\"]",
+   "context": [],
+   "properties": {
+    "--carousel-configured-columns": "2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".wp-block-newspack-blocks-carousel[data-slide-count=\"2\"]",
+   "context": [],
+   "properties": {
+    "--carousel-slide-count": "2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".wp-block-newspack-blocks-carousel[data-slides-per-view=\"3\"]",
+   "context": [],
+   "properties": {
+    "--carousel-configured-columns": "3"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".wp-block-newspack-blocks-carousel[data-slide-count=\"3\"]",
+   "context": [],
+   "properties": {
+    "--carousel-slide-count": "3"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".wp-block-newspack-blocks-carousel[data-slides-per-view=\"4\"]",
+   "context": [],
+   "properties": {
+    "--carousel-configured-columns": "4"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".wp-block-newspack-blocks-carousel[data-slide-count=\"4\"]",
+   "context": [],
+   "properties": {
+    "--carousel-slide-count": "4"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".wp-block-newspack-blocks-carousel[data-slides-per-view=\"5\"]",
+   "context": [],
+   "properties": {
+    "--carousel-configured-columns": "5"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".wp-block-newspack-blocks-carousel[data-slide-count=\"5\"]",
+   "context": [],
+   "properties": {
+    "--carousel-slide-count": "5"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".wp-block-newspack-blocks-carousel[data-slides-per-view=\"6\"]",
+   "context": [],
+   "properties": {
+    "--carousel-configured-columns": "6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".wp-block-newspack-blocks-carousel[data-slide-count=\"6\"]",
+   "context": [],
+   "properties": {
+    "--carousel-slide-count": "6"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".wp-block-newspack-blocks-carousel[data-aspect-ratio=\"1\"]",
+   "context": [],
+   "properties": {
+    "--carousel-height-ratio": "1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".wp-block-newspack-blocks-carousel[data-aspect-ratio=\"0.5625\"]",
+   "context": [],
+   "properties": {
+    "--carousel-height-ratio": ".5625"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".wp-block-newspack-blocks-carousel[data-aspect-ratio^=\"1.3333\"]",
+   "context": [],
+   "properties": {
+    "--carousel-height-ratio": "calc(4/3)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".wp-block-newspack-blocks-carousel[data-aspect-ratio^=\"1.7777\"]",
+   "context": [],
+   "properties": {
+    "--carousel-height-ratio": "calc(16/9)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".wp-block-newspack-blocks-carousel",
+   "context": [
+    "@media screen and (min-width: 320px)"
+   ],
+   "properties": {
+    "--carousel-columns": "1"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".wp-block-newspack-blocks-carousel",
+   "context": [
+    "@media screen and (min-width: 782px)"
+   ],
+   "properties": {
+    "--carousel-columns": "min(2,var(--carousel-configured-columns),var(--carousel-slide-count))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ".wp-block-newspack-blocks-carousel",
+   "context": [
+    "@media screen and (min-width: 1168px)"
+   ],
+   "properties": {
+    "--carousel-columns": "min(var(--carousel-configured-columns),var(--carousel-slide-count))"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--newspack-theme-color-primary": "#003da5",
+    "--newspack-theme-color-primary-variation": "#2055b0",
+    "--newspack-theme-color-secondary": "#555",
+    "--newspack-theme-color-secondary-variation": "#3e3e3e",
+    "--newspack-theme-color-highlight": "#fed850",
+    "--newspack-theme-color-primary-darken-5": "#00296e",
+    "--newspack-theme-color-primary-darken-10": "#001f53",
+    "--newspack-theme-color-primary-against-white": "var(--newspack-theme-color-primary)",
+    "--newspack-theme-color-secondary-against-white": "var(--newspack-theme-color-secondary)",
+    "--newspack-theme-color-against-primary": "#fff",
+    "--newspack-theme-color-against-secondary": "#fff",
+    "--newspack-theme-color-bg-body": "#fff",
+    "--newspack-theme-color-bg-input": "var(--newspack-theme-color-bg-body)",
+    "--newspack-theme-color-bg-light": "#f0f0f0",
+    "--newspack-theme-color-bg-button-hover": "#111",
+    "--newspack-theme-color-bg-pre": "#eee",
+    "--newspack-theme-color-bg-pre-lighten-5": "#fbfbfb",
+    "--newspack-theme-color-bg-dark": "#333",
+    "--newspack-theme-color-bg-dark-lighten-5": "#404040",
+    "--newspack-theme-color-bg-dark-darken-5": "#262626",
+    "--newspack-theme-color-text-main": "#111",
+    "--newspack-theme-color-text-light": "#515151",
+    "--newspack-theme-color-text-hover": "var(--newspack-theme-color-bg-dark-lighten-5)",
+    "--newspack-theme-color-text-screen": "#21759b",
+    "--newspack-theme-color-link": "var(--newspack-theme-color-secondary)",
+    "--newspack-theme-color-link-hover": "var(--newspack-theme-color-secondary-variation-against-white)",
+    "--newspack-theme-color-border": "#ccc",
+    "--newspack-theme-color-border-light": "#e0e0e0",
+    "--newspack-theme-color-alert-yellow": "#dba617",
+    "--newspack-theme-color-alert-red": "#d63638",
+    "--newspack-theme-color-alert-green": "#008a20"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--newspack-theme-font-body": "georgia,garamond,\"Times New Roman\",serif",
+    "--newspack-theme-font-heading": "-apple-system,blinkmacsystemfont,\"Segoe UI\",\"Roboto\",\"Oxygen\",\"Ubuntu\",\"Cantarell\",\"Fira Sans\",\"Droid Sans\",\"Helvetica Neue\",sans-serif",
+    "--newspack-theme-font-code": "menlo,monaco,consolas,lucida console,monospace",
+    "--newspack-theme-font-pre": "\"Courier 10 Pitch\",courier,monospace",
+    "--newspack-theme-font-size-base": "20px",
+    "--newspack-theme-font-size-base-sm": "18px",
+    "--newspack-theme-font-size-ratio": "1.125",
+    "--newspack-theme-font-size-xxs": "calc(1em*0.6)",
+    "--newspack-theme-font-size-xs": "calc(1em*0.7)",
+    "--newspack-theme-font-size-sm": "calc(1em*0.8)",
+    "--newspack-theme-font-size-md": "calc(1em*1.2)",
+    "--newspack-theme-font-size-lg": "calc(1em*1.4)",
+    "--newspack-theme-font-size-xl": "calc(1em*1.8)",
+    "--newspack-theme-font-size-xxl": "calc(1em*2.2)",
+    "--newspack-theme-font-size-xxxl": "calc(1em*2.8)",
+    "--newspack-theme-font-size-xxxxl": "calc(1em*3.2)",
+    "--newspack-theme-font-size-xxxxxl": "calc(1em*4)",
+    "--newspack-theme-font-line-height-body": "1.6",
+    "--newspack-theme-font-line-height-heading": "1.2"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": "html body",
+   "context": [],
+   "properties": {
+    "--newspack-ui-font-size-m": "clamp(1rem,0.04rem + 2.209vw,1.611rem)",
+    "--newspack-ui-font-size-l": "clamp(1.111rem,0.762rem + 0.803vw,1.333rem)",
+    "--newspack-ui-font-size-xl": "clamp(1.222rem,0.35rem + 2.008vw,1.778rem)",
+    "--newspack-ui-font-size-2xl": "clamp(1.444rem,0.049rem + 3.213vw,2.333rem)",
+    "--newspack-ui-font-size-3xl": "clamp(1.556rem,-0.189rem + 4.016vw,2.667rem)",
+    "--newspack-ui-font-size-4xl": "clamp(1.778rem,-1.014rem + 6.426vw,3.556rem)",
+    "--newspack-ui-font-size-5xl": "clamp(1.889rem,-2.124rem + 9.237vw,4.444rem)",
+    "--newspack-ui-font-size-6xl": "clamp(2rem,-3.234rem + 12.048vw,5.333rem)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": "html body",
+   "context": [
+    "@media only screen and (min-width: 600px)"
+   ],
+   "properties": {
+    "--newspack-ui-font-size-m": "clamp(0.9rem,0.743rem + 0.402vw,1rem)",
+    "--newspack-ui-font-size-l": "clamp(1rem,0.686rem + 0.803vw,1.2rem)",
+    "--newspack-ui-font-size-xl": "clamp(1.1rem,0.315rem + 2.008vw,1.6rem)",
+    "--newspack-ui-font-size-2xl": "clamp(1.3rem,0.044rem + 3.213vw,2.1rem)",
+    "--newspack-ui-font-size-3xl": "clamp(1.4rem,-0.17rem + 4.016vw,2.4rem)",
+    "--newspack-ui-font-size-4xl": "clamp(1.6rem,-0.912rem + 6.426vw,3.2rem)",
+    "--newspack-ui-font-size-5xl": "clamp(1.7rem,-1.912rem + 9.237vw,4rem)",
+    "--newspack-ui-font-size-6xl": "clamp(1.8rem,-2.911rem + 12.048vw,4.8rem)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "selector": "body",
+   "context": [],
+   "properties": {
+    "--wp--preset--spacing--50": "clamp(1.25rem,1rem + 0.8333vw,1.5rem)",
+    "--wp--preset--spacing--60": "clamp(1.5rem,0.75rem + 2.5vw,2.25rem)",
+    "--wp--preset--spacing--70": "clamp(1.75rem,0.12rem + 5.4333vw,3.38rem)",
+    "--wp--preset--spacing--80": "clamp(2rem,-1.06rem + 10.2vw,5.06rem)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-0",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--wp-block-synced-color": "#7a00df",
+    "--wp-block-synced-color--rgb": "122,0,223",
+    "--wp-bound-block-color": "var(--wp-block-synced-color)",
+    "--wp-editor-canvas-background": "#ddd",
+    "--wp-admin-theme-color": "#007cba",
+    "--wp-admin-theme-color--rgb": "0,124,186",
+    "--wp-admin-theme-color-darker-10": "#006ba1",
+    "--wp-admin-theme-color-darker-10--rgb": "0,107,160.5",
+    "--wp-admin-theme-color-darker-20": "#005a87",
+    "--wp-admin-theme-color-darker-20--rgb": "0,90,135",
+    "--wp-admin-border-width-focus": "2px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-0",
+   "selector": ":root",
+   "context": [
+    "@media (min-resolution: 192dpi)"
+   ],
+   "properties": {
+    "--wp-admin-border-width-focus": "1.5px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-0",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--wp--preset--font-size--normal": "16px",
+    "--wp--preset--font-size--huge": "42px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-0",
+   "selector": "html :where(.is-position-sticky)",
+   "context": [],
+   "properties": {
+    "--wp-admin--admin-bar--position-offset": "var(--wp-admin--admin-bar--height,0px)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-0",
+   "selector": "html :where(.is-position-sticky)",
+   "context": [
+    "@media screen and (max-width: 600px)"
+   ],
+   "properties": {
+    "--wp-admin--admin-bar--position-offset": "0px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-6",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--wp--preset--aspect-ratio--square": "1",
+    "--wp--preset--aspect-ratio--4-3": "4/3",
+    "--wp--preset--aspect-ratio--3-4": "3/4",
+    "--wp--preset--aspect-ratio--3-2": "3/2",
+    "--wp--preset--aspect-ratio--2-3": "2/3",
+    "--wp--preset--aspect-ratio--16-9": "16/9",
+    "--wp--preset--aspect-ratio--9-16": "9/16",
+    "--wp--preset--color--black": "#000000",
+    "--wp--preset--color--cyan-bluish-gray": "#abb8c3",
+    "--wp--preset--color--white": "#FFFFFF",
+    "--wp--preset--color--pale-pink": "#f78da7",
+    "--wp--preset--color--vivid-red": "#cf2e2e",
+    "--wp--preset--color--luminous-vivid-orange": "#ff6900",
+    "--wp--preset--color--luminous-vivid-amber": "#fcb900",
+    "--wp--preset--color--light-green-cyan": "#7bdcb5",
+    "--wp--preset--color--vivid-green-cyan": "#00d084",
+    "--wp--preset--color--pale-cyan-blue": "#8ed1fc",
+    "--wp--preset--color--vivid-cyan-blue": "#0693e3",
+    "--wp--preset--color--vivid-purple": "#9b51e0",
+    "--wp--preset--color--primary": "#212121",
+    "--wp--preset--color--primary-variation": "#000000",
+    "--wp--preset--color--secondary": "#000000",
+    "--wp--preset--color--secondary-variation": "#000000",
+    "--wp--preset--color--dark-gray": "#111111",
+    "--wp--preset--color--medium-gray": "#767676",
+    "--wp--preset--color--light-gray": "#EEEEEE",
+    "--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple": "linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%)",
+    "--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan": "linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%)",
+    "--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange": "linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%)",
+    "--wp--preset--gradient--luminous-vivid-orange-to-vivid-red": "linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%)",
+    "--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray": "linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%)",
+    "--wp--preset--gradient--cool-to-warm-spectrum": "linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%)",
+    "--wp--preset--gradient--blush-light-purple": "linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%)",
+    "--wp--preset--gradient--blush-bordeaux": "linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%)",
+    "--wp--preset--gradient--luminous-dusk": "linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%)",
+    "--wp--preset--gradient--pale-ocean": "linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%)",
+    "--wp--preset--gradient--electric-grass": "linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%)",
+    "--wp--preset--gradient--midnight": "linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%)",
+    "--wp--preset--gradient--grad-1": "linear-gradient( 135deg,rgb( 33,33,33) 0%,rgb( 0,0,0) 100% )",
+    "--wp--preset--gradient--grad-2": "linear-gradient( 135deg,rgb( 0,0,0) 0%,rgb( 0,0,0) 100% )",
+    "--wp--preset--gradient--grad-3": "linear-gradient( 135deg,rgb( 17,17,17 ) 0%,rgb( 85,85,85 ) 100% )",
+    "--wp--preset--gradient--grad-4": "linear-gradient( 135deg,rgb( 68,68,68 ) 0%,rgb( 136,136,136 ) 100% )",
+    "--wp--preset--gradient--grad-5": "linear-gradient( 135deg,rgb( 119,119,119 ) 0%,rgb( 221,221,221 ) 100% )",
+    "--wp--preset--gradient--grad-6": "linear-gradient( 135deg,rgb( 221,221,221 ) 0%,rgb( 255,255,255 ) 100% )",
+    "--wp--preset--font-size--small": "16px",
+    "--wp--preset--font-size--medium": "20px",
+    "--wp--preset--font-size--large": "36px",
+    "--wp--preset--font-size--x-large": "42px",
+    "--wp--preset--font-size--normal": "20px",
+    "--wp--preset--font-size--huge": "44px",
+    "--wp--preset--font-family--newspack-header": "var(--newspack-theme-font-heading,\"Plus Jakarta Sans\",\"Helvetica\",sans-serif)",
+    "--wp--preset--font-family--newspack-body": "var(--newspack-theme-font-body,\"Plus Jakarta Sans\",\"Helvetica\",sans-serif)",
+    "--wp--preset--spacing--20": "0.44rem",
+    "--wp--preset--spacing--30": "0.67rem",
+    "--wp--preset--spacing--40": "1rem",
+    "--wp--preset--spacing--50": "1.5rem",
+    "--wp--preset--spacing--60": "2.25rem",
+    "--wp--preset--spacing--70": "3.38rem",
+    "--wp--preset--spacing--80": "5.06rem",
+    "--wp--preset--shadow--natural": "6px 6px 9px rgba(0,0,0,0.2)",
+    "--wp--preset--shadow--deep": "12px 12px 50px rgba(0,0,0,0.4)",
+    "--wp--preset--shadow--sharp": "6px 6px 0px rgba(0,0,0,0.2)",
+    "--wp--preset--shadow--outlined": "6px 6px 0px -3px rgb(255,255,255),6px 6px rgb(0,0,0)",
+    "--wp--preset--shadow--crisp": "6px 6px 0px rgb(0,0,0)"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-6",
+   "selector": ".wp-block-button",
+   "context": [],
+   "properties": {
+    "--wp--preset--dimension--25": "25%",
+    "--wp--preset--dimension--50": "50%",
+    "--wp--preset--dimension--75": "75%",
+    "--wp--preset--dimension--100": "100%"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-8",
+   "selector": "body",
+   "context": [],
+   "properties": {
+    "--comment-rating-star-color": "#343434"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-12",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--newspack-theme-color-primary": "#212121",
+    "--newspack-theme-color-primary-variation": "#030303",
+    "--newspack-theme-color-secondary-variation": "#000000",
+    "--newspack-theme-color-primary-darken-5": "#1c1c1c",
+    "--newspack-theme-color-primary-darken-10": "#171717",
+    "--newspack-theme-color-primary-against-white": "#212121",
+    "--newspack-theme-color-secondary-against-white": "#000000",
+    "--newspack-theme-color-primary-variation-against-white": "#030303",
+    "--newspack-theme-color-secondary-variation-against-white": "#000000",
+    "--newspack-theme-color-against-primary": "white",
+    "--newspack-theme-color-against-secondary": "white",
+    "--newspack-theme-color-secondary": "#000000"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-13",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--newspack-primary-color": "#212121",
+    "--newspack-secondary-color": "#000000",
+    "--newspack-cta-color": "#dd3333",
+    "--newspack-header-color": "#ffffff",
+    "--newspack-primary-menu-color": "#e5e5e5",
+    "--newspack-footer-color": "#fff5ea",
+    "--newspack-primary-contrast-color": "white",
+    "--newspack-secondary-contrast-color": "white",
+    "--newspack-cta-contrast-color": "white",
+    "--newspack-header-contrast-color": "black",
+    "--newspack-primary-menu-contrast-color": "black",
+    "--newspack-footer-contrast-color": "black"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-14",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--newspack-theme-font-heading": "\"Plus Jakarta Sans\",\"Helvetica\",sans-serif"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-14",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--newspack-theme-font-body": "\"Plus Jakarta Sans\",\"Helvetica\",sans-serif"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "inline-24",
+   "selector": ".skippmsg, .skippmsg *",
+   "context": [],
+   "properties": {
+    "--clrBackground": "#FFFFFF",
+    "--clrHeadline": "#3B3B3B",
+    "--clrText": "#5F5F5F",
+    "--clrTextSecondary": "#CFCFCF",
+    "--clrButton": "#3276AE",
+    "--clrButtonText": "#FFFFFF",
+    "--clrLink": "#666666",
+    "--clrHighlight": "#FFFDCD"
+   },
+   "bin": "app"
+  }
+ ],
+ "skins": [],
+ "vendor": [
+  {
+   "file": "inline-8",
+   "selector": "body",
+   "context": [],
+   "properties": {
+    "--wprm-popup-font-size": "20px"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-8",
+   "selector": "body",
+   "context": [],
+   "properties": {
+    "--wprm-popup-background": "#ffffff"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-8",
+   "selector": "body",
+   "context": [],
+   "properties": {
+    "--wprm-popup-title": "#212121"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-8",
+   "selector": "body",
+   "context": [],
+   "properties": {
+    "--wprm-popup-content": "#464646"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-8",
+   "selector": "body",
+   "context": [],
+   "properties": {
+    "--wprm-popup-button-background": "#ffffff"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-8",
+   "selector": "body",
+   "context": [],
+   "properties": {
+    "--wprm-popup-button-text": "#145f48"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-8",
+   "selector": "body",
+   "context": [],
+   "properties": {
+    "--wprm-popup-accent": "#145f48"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-9",
+   "selector": ".wprm-recipe-template-kitchen-stories-recipe-template---glacier",
+   "context": [],
+   "properties": {
+    "--glacier-background": "#ffffff",
+    "--glacier-text-color": "#212121",
+    "--glacier-interactivity-color": "#fc642d",
+    "--glacier-accent-color": "#212121",
+    "--glacier-header-text": "#212121",
+    "--glacier-header-background": "#fff5ea"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-24",
+   "selector": ".cmpstyleroot, .cmpstyleroot *",
+   "context": [],
+   "properties": {
+    "--x6pt": "6pt",
+    "--x7pt": "7pt",
+    "--x8pt": "8pt",
+    "--x9pt": "9pt",
+    "--x10pt": "10pt",
+    "--x11pt": "11pt",
+    "--x12pt": "12pt",
+    "--clrBackground": "#FFFFFF",
+    "--clrHeadline": "#3B3B3B",
+    "--clrText": "#5F5F5F",
+    "--clrTextSecondary": "#CFCFCF",
+    "--clrButton": "#3276AE",
+    "--clrButtonText": "#FFFFFF",
+    "--clrLink": "#666666",
+    "--clrHighlight": "#FFFDCD"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "inline-24",
+   "selector": ".cmpstyleroot.cmpboxwcag, .cmpstyleroot.cmpboxwcag *",
+   "context": [],
+   "properties": {
+    "--x6pt": "0.5000rem",
+    "--x7pt": "0.5834rem",
+    "--x8pt": "0.6666rem",
+    "--x9pt": "0.7500rem",
+    "--x10pt": "0.8333rem",
+    "--x11pt": "0.9166rem",
+    "--x12pt": "1.0000rem"
+   },
+   "bin": "vendor"
+  }
+ ],
+ "utility": [],
+ "tailwind": [],
+ "fonts": [
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "font-display": "swap",
+   "font-family": "Barlow",
+   "font-weight": "400",
+   "src": "url(…)"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "font-display": "swap",
+   "font-family": "Barlow",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…)"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "font-display": "swap",
+   "font-family": "Barlow",
+   "font-weight": "700",
+   "src": "url(…)"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "font-display": "swap",
+   "font-family": "Barlow",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…)"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "font-family": "\"Font Awesome 5 Free\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "block",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\"), url(…) format(\"truetype\")"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "font-family": "\"Font Awesome 5 Free\"",
+   "font-style": "normal",
+   "font-weight": "900",
+   "font-display": "block",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\"), url(…) format(\"truetype\")"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "font-family": "\"Font Awesome 5 Brands\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "font-display": "block",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\"), url(…) format(\"truetype\")"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "font-family": "aime",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "font-family": "ttcommons",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
+   "font-display": "swap",
+   "font-weight": "400",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "font-family": "ttcommons",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
+   "font-display": "swap",
+   "font-weight": "500",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "font-family": "ttcommons",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
+   "font-display": "swap",
+   "font-weight": "700",
+   "font-style": "normal"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "font-family": "\"Plus Jakarta Sans\"",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
+   "font-weight": "400",
+   "font-style": "normal",
+   "font-display": "swap"
+  },
+  {
+   "file": "https://www.kitchenstories.com/_static/",
+   "font-family": "Spectral",
+   "src": "url(…) format(\"woff2\"), url(…) format(\"woff\")",
+   "font-weight": "600",
+   "font-style": "normal",
+   "font-display": "swap"
+  }
+ ],
+ "resolved": {
+  "dark": {
+   "--newspack-ads-sticky-bg": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--newspack-ads-sticky-text": {
+    "raw": "#111",
+    "kind": "color",
+    "value": "#111111"
+   },
+   "--newspack-cta-color": {
+    "raw": "#dd3333",
+    "kind": "color",
+    "value": "#dd3333"
+   },
+   "--newspack-cta-contrast-color": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--newspack-footer-color": {
+    "raw": "#fff5ea",
+    "kind": "color",
+    "value": "#fff5ea"
+   },
+   "--newspack-footer-contrast-color": {
+    "raw": "black",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--newspack-header-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--newspack-header-contrast-color": {
+    "raw": "black",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--newspack-primary-color": {
+    "raw": "#212121",
+    "kind": "color",
+    "value": "#212121"
+   },
+   "--newspack-primary-contrast-color": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--newspack-primary-menu-color": {
+    "raw": "#e5e5e5",
+    "kind": "color",
+    "value": "#e5e5e5"
+   },
+   "--newspack-primary-menu-contrast-color": {
+    "raw": "black",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--newspack-secondary-color": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--newspack-secondary-contrast-color": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--newspack-theme-color-against-primary": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--newspack-theme-color-against-secondary": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--newspack-theme-color-alert-green": {
+    "raw": "#008a20",
+    "kind": "color",
+    "value": "#008a20"
+   },
+   "--newspack-theme-color-alert-red": {
+    "raw": "#d63638",
+    "kind": "color",
+    "value": "#d63638"
+   },
+   "--newspack-theme-color-alert-yellow": {
+    "raw": "#dba617",
+    "kind": "color",
+    "value": "#dba617"
+   },
+   "--newspack-theme-color-bg-body": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--newspack-theme-color-bg-button-hover": {
+    "raw": "#111",
+    "kind": "color",
+    "value": "#111111"
+   },
+   "--newspack-theme-color-bg-dark": {
+    "raw": "#333",
+    "kind": "color",
+    "value": "#333333"
+   },
+   "--newspack-theme-color-bg-dark-darken-5": {
+    "raw": "#262626",
+    "kind": "color",
+    "value": "#262626"
+   },
+   "--newspack-theme-color-bg-dark-lighten-5": {
+    "raw": "#404040",
+    "kind": "color",
+    "value": "#404040"
+   },
+   "--newspack-theme-color-bg-input": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--newspack-theme-color-bg-light": {
+    "raw": "#f0f0f0",
+    "kind": "color",
+    "value": "#f0f0f0"
+   },
+   "--newspack-theme-color-bg-pre": {
+    "raw": "#eee",
+    "kind": "color",
+    "value": "#eeeeee"
+   },
+   "--newspack-theme-color-bg-pre-lighten-5": {
+    "raw": "#fbfbfb",
+    "kind": "color",
+    "value": "#fbfbfb"
+   },
+   "--newspack-theme-color-border": {
+    "raw": "#ccc",
+    "kind": "color",
+    "value": "#cccccc"
+   },
+   "--newspack-theme-color-border-light": {
+    "raw": "#e0e0e0",
+    "kind": "color",
+    "value": "#e0e0e0"
+   },
+   "--newspack-theme-color-highlight": {
+    "raw": "#fed850",
+    "kind": "color",
+    "value": "#fed850"
+   },
+   "--newspack-theme-color-link": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--newspack-theme-color-link-hover": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--newspack-theme-color-primary": {
+    "raw": "#212121",
+    "kind": "color",
+    "value": "#212121"
+   },
+   "--newspack-theme-color-primary-against-white": {
+    "raw": "#212121",
+    "kind": "color",
+    "value": "#212121"
+   },
+   "--newspack-theme-color-primary-darken-10": {
+    "raw": "#171717",
+    "kind": "color",
+    "value": "#171717"
+   },
+   "--newspack-theme-color-primary-darken-5": {
+    "raw": "#1c1c1c",
+    "kind": "color",
+    "value": "#1c1c1c"
+   },
+   "--newspack-theme-color-primary-variation": {
+    "raw": "#030303",
+    "kind": "color",
+    "value": "#030303"
+   },
+   "--newspack-theme-color-primary-variation-against-white": {
+    "raw": "#030303",
+    "kind": "color",
+    "value": "#030303"
+   },
+   "--newspack-theme-color-secondary": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--newspack-theme-color-secondary-against-white": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--newspack-theme-color-secondary-variation": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--newspack-theme-color-secondary-variation-against-white": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--newspack-theme-color-text-hover": {
+    "raw": "#404040",
+    "kind": "color",
+    "value": "#404040"
+   },
+   "--newspack-theme-color-text-light": {
+    "raw": "#515151",
+    "kind": "color",
+    "value": "#515151"
+   },
+   "--newspack-theme-color-text-main": {
+    "raw": "#111",
+    "kind": "color",
+    "value": "#111111"
+   },
+   "--newspack-theme-color-text-screen": {
+    "raw": "#21759b",
+    "kind": "color",
+    "value": "#21759b"
+   },
+   "--newspack-theme-font-body": {
+    "raw": "\"Plus Jakarta Sans\",\"Helvetica\",sans-serif",
+    "kind": "fontFamily",
+    "value": "\"Plus Jakarta Sans\",\"Helvetica\",sans-serif"
+   },
+   "--newspack-theme-font-code": {
+    "raw": "menlo,monaco,consolas,lucida console,monospace",
+    "kind": "fontFamily",
+    "value": "menlo,monaco,consolas,lucida console,monospace"
+   },
+   "--newspack-theme-font-heading": {
+    "raw": "\"Plus Jakarta Sans\",\"Helvetica\",sans-serif",
+    "kind": "fontFamily",
+    "value": "\"Plus Jakarta Sans\",\"Helvetica\",sans-serif"
+   },
+   "--newspack-theme-font-line-height-body": {
+    "raw": "1.6",
+    "kind": "number",
+    "value": 1.6
+   },
+   "--newspack-theme-font-line-height-heading": {
+    "raw": "1.2",
+    "kind": "number",
+    "value": 1.2
+   },
+   "--newspack-theme-font-pre": {
+    "raw": "\"Courier 10 Pitch\",courier,monospace",
+    "kind": "fontFamily",
+    "value": "\"Courier 10 Pitch\",courier,monospace"
+   },
+   "--newspack-theme-font-size-base": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--newspack-theme-font-size-base-sm": {
+    "raw": "18px",
+    "kind": "dimension",
+    "value": "18px"
+   },
+   "--newspack-theme-font-size-lg": {
+    "raw": "calc(1em*1.4)",
+    "kind": "dimension",
+    "value": "22.3906px"
+   },
+   "--newspack-theme-font-size-md": {
+    "raw": "calc(1em*1.2)",
+    "kind": "dimension",
+    "value": "19.1875px"
+   },
+   "--newspack-theme-font-size-ratio": {
+    "raw": "1.125",
+    "kind": "number",
+    "value": 1.125
+   },
+   "--newspack-theme-font-size-sm": {
+    "raw": "calc(1em*0.8)",
+    "kind": "dimension",
+    "value": "12.7969px"
+   },
+   "--newspack-theme-font-size-xl": {
+    "raw": "calc(1em*1.8)",
+    "kind": "dimension",
+    "value": "28.7969px"
+   },
+   "--newspack-theme-font-size-xs": {
+    "raw": "calc(1em*0.7)",
+    "kind": "dimension",
+    "value": "11.1875px"
+   },
+   "--newspack-theme-font-size-xxl": {
+    "raw": "calc(1em*2.2)",
+    "kind": "dimension",
+    "value": "35.1875px"
+   },
+   "--newspack-theme-font-size-xxs": {
+    "raw": "calc(1em*0.6)",
+    "kind": "dimension",
+    "value": "9.59375px"
+   },
+   "--newspack-theme-font-size-xxxl": {
+    "raw": "calc(1em*2.8)",
+    "kind": "dimension",
+    "value": "44.7969px"
+   },
+   "--newspack-theme-font-size-xxxxl": {
+    "raw": "calc(1em*3.2)",
+    "kind": "dimension",
+    "value": "51.1875px"
+   },
+   "--newspack-theme-font-size-xxxxxl": {
+    "raw": "calc(1em*4)",
+    "kind": "dimension",
+    "value": "64px"
+   },
+   "--wp--preset--aspect-ratio--16-9": {
+    "raw": "16/9",
+    "kind": "other"
+   },
+   "--wp--preset--aspect-ratio--2-3": {
+    "raw": "2/3",
+    "kind": "other"
+   },
+   "--wp--preset--aspect-ratio--3-2": {
+    "raw": "3/2",
+    "kind": "other"
+   },
+   "--wp--preset--aspect-ratio--3-4": {
+    "raw": "3/4",
+    "kind": "other"
+   },
+   "--wp--preset--aspect-ratio--4-3": {
+    "raw": "4/3",
+    "kind": "other"
+   },
+   "--wp--preset--aspect-ratio--9-16": {
+    "raw": "9/16",
+    "kind": "other"
+   },
+   "--wp--preset--aspect-ratio--square": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--wp--preset--color--black": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--wp--preset--color--cyan-bluish-gray": {
+    "raw": "#abb8c3",
+    "kind": "color",
+    "value": "#abb8c3"
+   },
+   "--wp--preset--color--dark-gray": {
+    "raw": "#111111",
+    "kind": "color",
+    "value": "#111111"
+   },
+   "--wp--preset--color--light-gray": {
+    "raw": "#EEEEEE",
+    "kind": "color",
+    "value": "#eeeeee"
+   },
+   "--wp--preset--color--light-green-cyan": {
+    "raw": "#7bdcb5",
+    "kind": "color",
+    "value": "#7bdcb5"
+   },
+   "--wp--preset--color--luminous-vivid-amber": {
+    "raw": "#fcb900",
+    "kind": "color",
+    "value": "#fcb900"
+   },
+   "--wp--preset--color--luminous-vivid-orange": {
+    "raw": "#ff6900",
+    "kind": "color",
+    "value": "#ff6900"
+   },
+   "--wp--preset--color--medium-gray": {
+    "raw": "#767676",
+    "kind": "color",
+    "value": "#767676"
+   },
+   "--wp--preset--color--pale-cyan-blue": {
+    "raw": "#8ed1fc",
+    "kind": "color",
+    "value": "#8ed1fc"
+   },
+   "--wp--preset--color--pale-pink": {
+    "raw": "#f78da7",
+    "kind": "color",
+    "value": "#f78da7"
+   },
+   "--wp--preset--color--primary": {
+    "raw": "#212121",
+    "kind": "color",
+    "value": "#212121"
+   },
+   "--wp--preset--color--primary-variation": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--wp--preset--color--secondary": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--wp--preset--color--secondary-variation": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--wp--preset--color--vivid-cyan-blue": {
+    "raw": "#0693e3",
+    "kind": "color",
+    "value": "#0693e3"
+   },
+   "--wp--preset--color--vivid-green-cyan": {
+    "raw": "#00d084",
+    "kind": "color",
+    "value": "#00d084"
+   },
+   "--wp--preset--color--vivid-purple": {
+    "raw": "#9b51e0",
+    "kind": "color",
+    "value": "#9b51e0"
+   },
+   "--wp--preset--color--vivid-red": {
+    "raw": "#cf2e2e",
+    "kind": "color",
+    "value": "#cf2e2e"
+   },
+   "--wp--preset--color--white": {
+    "raw": "#FFFFFF",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--wp--preset--font-family--newspack-body": {
+    "raw": "\"Plus Jakarta Sans\",\"Helvetica\",sans-serif",
+    "kind": "fontFamily",
+    "value": "\"Plus Jakarta Sans\",\"Helvetica\",sans-serif"
+   },
+   "--wp--preset--font-family--newspack-header": {
+    "raw": "\"Plus Jakarta Sans\",\"Helvetica\",sans-serif",
+    "kind": "fontFamily",
+    "value": "\"Plus Jakarta Sans\",\"Helvetica\",sans-serif"
+   },
+   "--wp--preset--font-size--huge": {
+    "raw": "44px",
+    "kind": "dimension",
+    "value": "44px"
+   },
+   "--wp--preset--font-size--large": {
+    "raw": "36px",
+    "kind": "dimension",
+    "value": "36px"
+   },
+   "--wp--preset--font-size--medium": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--wp--preset--font-size--normal": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--wp--preset--font-size--small": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--wp--preset--font-size--x-large": {
+    "raw": "42px",
+    "kind": "dimension",
+    "value": "42px"
+   },
+   "--wp--preset--gradient--blush-bordeaux": {
+    "raw": "linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--blush-light-purple": {
+    "raw": "linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--cool-to-warm-spectrum": {
+    "raw": "linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--electric-grass": {
+    "raw": "linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--grad-1": {
+    "raw": "linear-gradient( 135deg,rgb( 33,33,33) 0%,rgb( 0,0,0) 100% )",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--grad-2": {
+    "raw": "linear-gradient( 135deg,rgb( 0,0,0) 0%,rgb( 0,0,0) 100% )",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--grad-3": {
+    "raw": "linear-gradient( 135deg,rgb( 17,17,17 ) 0%,rgb( 85,85,85 ) 100% )",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--grad-4": {
+    "raw": "linear-gradient( 135deg,rgb( 68,68,68 ) 0%,rgb( 136,136,136 ) 100% )",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--grad-5": {
+    "raw": "linear-gradient( 135deg,rgb( 119,119,119 ) 0%,rgb( 221,221,221 ) 100% )",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--grad-6": {
+    "raw": "linear-gradient( 135deg,rgb( 221,221,221 ) 0%,rgb( 255,255,255 ) 100% )",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan": {
+    "raw": "linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--luminous-dusk": {
+    "raw": "linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange": {
+    "raw": "linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--luminous-vivid-orange-to-vivid-red": {
+    "raw": "linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--midnight": {
+    "raw": "linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--pale-ocean": {
+    "raw": "linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray": {
+    "raw": "linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple": {
+    "raw": "linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--shadow--crisp": {
+    "raw": "6px 6px 0px rgb(0,0,0)",
+    "kind": "shadow",
+    "value": "rgb(0, 0, 0) 6px 6px 0px 0px"
+   },
+   "--wp--preset--shadow--deep": {
+    "raw": "12px 12px 50px rgba(0,0,0,0.4)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.4) 12px 12px 50px 0px"
+   },
+   "--wp--preset--shadow--natural": {
+    "raw": "6px 6px 9px rgba(0,0,0,0.2)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.2) 6px 6px 9px 0px"
+   },
+   "--wp--preset--shadow--outlined": {
+    "raw": "6px 6px 0px -3px rgb(255,255,255),6px 6px rgb(0,0,0)",
+    "kind": "shadow",
+    "value": "rgb(255, 255, 255) 6px 6px 0px -3px, rgb(0, 0, 0) 6px 6px 0px 0px"
+   },
+   "--wp--preset--shadow--sharp": {
+    "raw": "6px 6px 0px rgba(0,0,0,0.2)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.2) 6px 6px 0px 0px"
+   },
+   "--wp--preset--spacing--20": {
+    "raw": "0.44rem",
+    "kind": "dimension",
+    "value": "8.79688px"
+   },
+   "--wp--preset--spacing--30": {
+    "raw": "0.67rem",
+    "kind": "dimension",
+    "value": "13.3906px"
+   },
+   "--wp--preset--spacing--40": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--wp--preset--spacing--50": {
+    "raw": "1.5rem",
+    "kind": "dimension",
+    "value": "30px"
+   },
+   "--wp--preset--spacing--60": {
+    "raw": "2.25rem",
+    "kind": "dimension",
+    "value": "45px"
+   },
+   "--wp--preset--spacing--70": {
+    "raw": "3.38rem",
+    "kind": "dimension",
+    "value": "67.5938px"
+   },
+   "--wp--preset--spacing--80": {
+    "raw": "5.06rem",
+    "kind": "dimension",
+    "value": "101.188px"
+   },
+   "--wp-admin-border-width-focus": {
+    "raw": "2px",
+    "kind": "dimension",
+    "value": "2px"
+   },
+   "--wp-admin-theme-color": {
+    "raw": "#007cba",
+    "kind": "color",
+    "value": "#007cba"
+   },
+   "--wp-admin-theme-color--rgb": {
+    "raw": "0,124,186",
+    "kind": "other"
+   },
+   "--wp-admin-theme-color-darker-10": {
+    "raw": "#006ba1",
+    "kind": "color",
+    "value": "#006ba1"
+   },
+   "--wp-admin-theme-color-darker-10--rgb": {
+    "raw": "0,107,160.5",
+    "kind": "other"
+   },
+   "--wp-admin-theme-color-darker-20": {
+    "raw": "#005a87",
+    "kind": "color",
+    "value": "#005a87"
+   },
+   "--wp-admin-theme-color-darker-20--rgb": {
+    "raw": "0,90,135",
+    "kind": "other"
+   },
+   "--wp-admin-theme-color-lighter-10": {
+    "raw": "#dfe7f4",
+    "kind": "color",
+    "value": "#dfe7f4"
+   },
+   "--wp-admin-theme-color-lighter-10--rgb": {
+    "raw": "223,231,244",
+    "kind": "other"
+   },
+   "--wp-block-synced-color": {
+    "raw": "#7a00df",
+    "kind": "color",
+    "value": "#7a00df"
+   },
+   "--wp-block-synced-color--rgb": {
+    "raw": "122,0,223",
+    "kind": "other"
+   },
+   "--wp-bound-block-color": {
+    "raw": "#7a00df",
+    "kind": "color",
+    "value": "#7a00df"
+   },
+   "--wp-editor-canvas-background": {
+    "raw": "#ddd",
+    "kind": "color",
+    "value": "#dddddd"
+   },
+   "--wpds-border-radius-lg": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--wpds-border-radius-md": {
+    "raw": "4px",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--wpds-border-radius-sm": {
+    "raw": "2px",
+    "kind": "dimension",
+    "value": "2px"
+   },
+   "--wpds-border-radius-xl": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--wpds-border-radius-xs": {
+    "raw": "1px",
+    "kind": "dimension",
+    "value": "1px"
+   },
+   "--wpds-border-width-focus": {
+    "raw": "2px",
+    "kind": "dimension",
+    "value": "2px"
+   },
+   "--wpds-border-width-lg": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--wpds-border-width-md": {
+    "raw": "4px",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--wpds-border-width-sm": {
+    "raw": "2px",
+    "kind": "dimension",
+    "value": "2px"
+   },
+   "--wpds-border-width-xs": {
+    "raw": "1px",
+    "kind": "dimension",
+    "value": "1px"
+   },
+   "--wpds-color-background-interactive-brand-strong": {
+    "raw": "#003da5",
+    "kind": "color",
+    "value": "#003da5"
+   },
+   "--wpds-color-background-interactive-brand-strong-active": {
+    "raw": "#001f53",
+    "kind": "color",
+    "value": "#001f53"
+   },
+   "--wpds-color-background-interactive-brand-strong-disabled": {
+    "raw": "#e6e6e6",
+    "kind": "color",
+    "value": "#e6e6e6"
+   },
+   "--wpds-color-background-interactive-brand-weak": {
+    "raw": "#0000",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--wpds-color-background-interactive-brand-weak-active": {
+    "raw": "#dfe7f4",
+    "kind": "color",
+    "value": "#dfe7f4"
+   },
+   "--wpds-color-background-interactive-brand-weak-disabled": {
+    "raw": "#0000",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--wpds-color-background-interactive-error": {
+    "raw": "#0000",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--wpds-color-background-interactive-error-active": {
+    "raw": "#fff6f5",
+    "kind": "color",
+    "value": "#fff6f5"
+   },
+   "--wpds-color-background-interactive-error-disabled": {
+    "raw": "#0000",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--wpds-color-background-interactive-error-strong": {
+    "raw": "#cc1818",
+    "kind": "color",
+    "value": "#cc1818"
+   },
+   "--wpds-color-background-interactive-error-strong-active": {
+    "raw": "#b90000",
+    "kind": "color",
+    "value": "#b90000"
+   },
+   "--wpds-color-background-interactive-error-strong-disabled": {
+    "raw": "#e6e6e6",
+    "kind": "color",
+    "value": "#e6e6e6"
+   },
+   "--wpds-color-background-interactive-error-weak": {
+    "raw": "#0000",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--wpds-color-background-interactive-error-weak-active": {
+    "raw": "#f6e6e3",
+    "kind": "color",
+    "value": "#f6e6e3"
+   },
+   "--wpds-color-background-interactive-error-weak-disabled": {
+    "raw": "#0000",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--wpds-color-background-interactive-neutral-strong": {
+    "raw": "#2d2d2d",
+    "kind": "color",
+    "value": "#2d2d2d"
+   },
+   "--wpds-color-background-interactive-neutral-strong-active": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--wpds-color-background-interactive-neutral-strong-disabled": {
+    "raw": "#e6e6e6",
+    "kind": "color",
+    "value": "#e6e6e6"
+   },
+   "--wpds-color-background-interactive-neutral-weak": {
+    "raw": "#0000",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--wpds-color-background-interactive-neutral-weak-active": {
+    "raw": "#ededed",
+    "kind": "color",
+    "value": "#ededed"
+   },
+   "--wpds-color-background-interactive-neutral-weak-disabled": {
+    "raw": "#0000",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--wpds-color-background-surface-brand": {
+    "raw": "#dfe7f4",
+    "kind": "color",
+    "value": "#dfe7f4"
+   },
+   "--wpds-color-background-surface-caution": {
+    "raw": "#fee995",
+    "kind": "color",
+    "value": "#fee995"
+   },
+   "--wpds-color-background-surface-caution-weak": {
+    "raw": "#fff9ca",
+    "kind": "color",
+    "value": "#fff9ca"
+   },
+   "--wpds-color-background-surface-error": {
+    "raw": "#f6e6e3",
+    "kind": "color",
+    "value": "#f6e6e3"
+   },
+   "--wpds-color-background-surface-error-weak": {
+    "raw": "#fff6f5",
+    "kind": "color",
+    "value": "#fff6f5"
+   },
+   "--wpds-color-background-surface-info": {
+    "raw": "#deebfa",
+    "kind": "color",
+    "value": "#deebfa"
+   },
+   "--wpds-color-background-surface-info-weak": {
+    "raw": "#f3f9ff",
+    "kind": "color",
+    "value": "#f3f9ff"
+   },
+   "--wpds-color-background-surface-neutral": {
+    "raw": "#fcfcfc",
+    "kind": "color",
+    "value": "#fcfcfc"
+   },
+   "--wpds-color-background-surface-neutral-strong": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--wpds-color-background-surface-neutral-weak": {
+    "raw": "#f4f4f4",
+    "kind": "color",
+    "value": "#f4f4f4"
+   },
+   "--wpds-color-background-surface-success": {
+    "raw": "#c6f7cd",
+    "kind": "color",
+    "value": "#c6f7cd"
+   },
+   "--wpds-color-background-surface-success-weak": {
+    "raw": "#ebffed",
+    "kind": "color",
+    "value": "#ebffed"
+   },
+   "--wpds-color-background-surface-warning": {
+    "raw": "#fde6be",
+    "kind": "color",
+    "value": "#fde6be"
+   },
+   "--wpds-color-background-surface-warning-weak": {
+    "raw": "#fff7e1",
+    "kind": "color",
+    "value": "#fff7e1"
+   },
+   "--wpds-color-background-thumb-brand": {
+    "raw": "#003da5",
+    "kind": "color",
+    "value": "#003da5"
+   },
+   "--wpds-color-background-thumb-brand-active": {
+    "raw": "#003da5",
+    "kind": "color",
+    "value": "#003da5"
+   },
+   "--wpds-color-background-thumb-brand-disabled": {
+    "raw": "#dbdbdb",
+    "kind": "color",
+    "value": "#dbdbdb"
+   },
+   "--wpds-color-background-thumb-neutral-disabled": {
+    "raw": "#dbdbdb",
+    "kind": "color",
+    "value": "#dbdbdb"
+   },
+   "--wpds-color-background-thumb-neutral-weak": {
+    "raw": "#8d8d8d",
+    "kind": "color",
+    "value": "#8d8d8d"
+   },
+   "--wpds-color-background-thumb-neutral-weak-active": {
+    "raw": "#6e6e6e",
+    "kind": "color",
+    "value": "#6e6e6e"
+   },
+   "--wpds-color-background-thumb-neutral-weak-disabled": {
+    "raw": "#dbdbdb",
+    "kind": "color",
+    "value": "#dbdbdb"
+   },
+   "--wpds-color-background-track-neutral": {
+    "raw": "#dbdbdb",
+    "kind": "color",
+    "value": "#dbdbdb"
+   },
+   "--wpds-color-background-track-neutral-weak": {
+    "raw": "#f0f0f0",
+    "kind": "color",
+    "value": "#f0f0f0"
+   },
+   "--wpds-color-foreground-content-caution": {
+    "raw": "#281d00",
+    "kind": "color",
+    "value": "#281d00"
+   },
+   "--wpds-color-foreground-content-caution-weak": {
+    "raw": "#826a00",
+    "kind": "color",
+    "value": "#826a00"
+   },
+   "--wpds-color-foreground-content-error": {
+    "raw": "#470000",
+    "kind": "color",
+    "value": "#470000"
+   },
+   "--wpds-color-foreground-content-error-weak": {
+    "raw": "#cc1818",
+    "kind": "color",
+    "value": "#cc1818"
+   },
+   "--wpds-color-foreground-content-info": {
+    "raw": "#001b4f",
+    "kind": "color",
+    "value": "#001b4f"
+   },
+   "--wpds-color-foreground-content-info-weak": {
+    "raw": "#006bd7",
+    "kind": "color",
+    "value": "#006bd7"
+   },
+   "--wpds-color-foreground-content-neutral": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--wpds-color-foreground-content-neutral-weak": {
+    "raw": "#707070",
+    "kind": "color",
+    "value": "#707070"
+   },
+   "--wpds-color-foreground-content-success": {
+    "raw": "#002900",
+    "kind": "color",
+    "value": "#002900"
+   },
+   "--wpds-color-foreground-content-success-weak": {
+    "raw": "#008030",
+    "kind": "color",
+    "value": "#008030"
+   },
+   "--wpds-color-foreground-content-warning": {
+    "raw": "#2e1900",
+    "kind": "color",
+    "value": "#2e1900"
+   },
+   "--wpds-color-foreground-content-warning-weak": {
+    "raw": "#926300",
+    "kind": "color",
+    "value": "#926300"
+   },
+   "--wpds-color-foreground-interactive-brand": {
+    "raw": "#003da5",
+    "kind": "color",
+    "value": "#003da5"
+   },
+   "--wpds-color-foreground-interactive-brand-active": {
+    "raw": "#001f53",
+    "kind": "color",
+    "value": "#001f53"
+   },
+   "--wpds-color-foreground-interactive-brand-disabled": {
+    "raw": "#406ebc",
+    "kind": "color",
+    "value": "#406ebc"
+   },
+   "--wpds-color-foreground-interactive-brand-strong": {
+    "raw": "#eff0f2",
+    "kind": "color",
+    "value": "#eff0f2"
+   },
+   "--wpds-color-foreground-interactive-brand-strong-active": {
+    "raw": "#eff0f2",
+    "kind": "color",
+    "value": "#eff0f2"
+   },
+   "--wpds-color-foreground-interactive-brand-strong-disabled": {
+    "raw": "#8d8d8d",
+    "kind": "color",
+    "value": "#8d8d8d"
+   },
+   "--wpds-color-foreground-interactive-error": {
+    "raw": "#cc1818",
+    "kind": "color",
+    "value": "#cc1818"
+   },
+   "--wpds-color-foreground-interactive-error-active": {
+    "raw": "#470000",
+    "kind": "color",
+    "value": "#470000"
+   },
+   "--wpds-color-foreground-interactive-error-disabled": {
+    "raw": "#8d8d8d",
+    "kind": "color",
+    "value": "#8d8d8d"
+   },
+   "--wpds-color-foreground-interactive-error-strong": {
+    "raw": "#f2efef",
+    "kind": "color",
+    "value": "#f2efef"
+   },
+   "--wpds-color-foreground-interactive-error-strong-active": {
+    "raw": "#f2efef",
+    "kind": "color",
+    "value": "#f2efef"
+   },
+   "--wpds-color-foreground-interactive-error-strong-disabled": {
+    "raw": "#8d8d8d",
+    "kind": "color",
+    "value": "#8d8d8d"
+   },
+   "--wpds-color-foreground-interactive-neutral": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--wpds-color-foreground-interactive-neutral-active": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--wpds-color-foreground-interactive-neutral-disabled": {
+    "raw": "#8d8d8d",
+    "kind": "color",
+    "value": "#8d8d8d"
+   },
+   "--wpds-color-foreground-interactive-neutral-strong": {
+    "raw": "#f0f0f0",
+    "kind": "color",
+    "value": "#f0f0f0"
+   },
+   "--wpds-color-foreground-interactive-neutral-strong-active": {
+    "raw": "#f0f0f0",
+    "kind": "color",
+    "value": "#f0f0f0"
+   },
+   "--wpds-color-foreground-interactive-neutral-strong-disabled": {
+    "raw": "#8d8d8d",
+    "kind": "color",
+    "value": "#8d8d8d"
+   },
+   "--wpds-color-foreground-interactive-neutral-weak": {
+    "raw": "#707070",
+    "kind": "color",
+    "value": "#707070"
+   },
+   "--wpds-color-foreground-interactive-neutral-weak-active": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--wpds-color-foreground-interactive-neutral-weak-disabled": {
+    "raw": "#8d8d8d",
+    "kind": "color",
+    "value": "#8d8d8d"
+   },
+   "--wpds-color-stroke-focus": {
+    "raw": "#003da5",
+    "kind": "color",
+    "value": "#003da5"
+   },
+   "--wpds-color-stroke-interactive-brand": {
+    "raw": "#003da5",
+    "kind": "color",
+    "value": "#003da5"
+   },
+   "--wpds-color-stroke-interactive-brand-active": {
+    "raw": "#001f53",
+    "kind": "color",
+    "value": "#001f53"
+   },
+   "--wpds-color-stroke-interactive-brand-disabled": {
+    "raw": "#9fb6dd",
+    "kind": "color",
+    "value": "#9fb6dd"
+   },
+   "--wpds-color-stroke-interactive-error": {
+    "raw": "#cc1818",
+    "kind": "color",
+    "value": "#cc1818"
+   },
+   "--wpds-color-stroke-interactive-error-active": {
+    "raw": "#9d0000",
+    "kind": "color",
+    "value": "#9d0000"
+   },
+   "--wpds-color-stroke-interactive-error-disabled": {
+    "raw": "#dbdbdb",
+    "kind": "color",
+    "value": "#dbdbdb"
+   },
+   "--wpds-color-stroke-interactive-error-strong": {
+    "raw": "#cc1818",
+    "kind": "color",
+    "value": "#cc1818"
+   },
+   "--wpds-color-stroke-interactive-neutral": {
+    "raw": "#8d8d8d",
+    "kind": "color",
+    "value": "#8d8d8d"
+   },
+   "--wpds-color-stroke-interactive-neutral-active": {
+    "raw": "#6e6e6e",
+    "kind": "color",
+    "value": "#6e6e6e"
+   },
+   "--wpds-color-stroke-interactive-neutral-disabled": {
+    "raw": "#dbdbdb",
+    "kind": "color",
+    "value": "#dbdbdb"
+   },
+   "--wpds-color-stroke-interactive-neutral-strong": {
+    "raw": "#6e6e6e",
+    "kind": "color",
+    "value": "#6e6e6e"
+   },
+   "--wpds-color-stroke-surface-brand": {
+    "raw": "#dfe7f4",
+    "kind": "color",
+    "value": "#dfe7f4"
+   },
+   "--wpds-color-stroke-surface-brand-strong": {
+    "raw": "#003da5",
+    "kind": "color",
+    "value": "#003da5"
+   },
+   "--wpds-color-stroke-surface-caution": {
+    "raw": "#cfc28d",
+    "kind": "color",
+    "value": "#cfc28d"
+   },
+   "--wpds-color-stroke-surface-caution-strong": {
+    "raw": "#826a00",
+    "kind": "color",
+    "value": "#826a00"
+   },
+   "--wpds-color-stroke-surface-error": {
+    "raw": "#dab1aa",
+    "kind": "color",
+    "value": "#dab1aa"
+   },
+   "--wpds-color-stroke-surface-error-strong": {
+    "raw": "#cc1818",
+    "kind": "color",
+    "value": "#cc1818"
+   },
+   "--wpds-color-stroke-surface-info": {
+    "raw": "#a9c6e7",
+    "kind": "color",
+    "value": "#a9c6e7"
+   },
+   "--wpds-color-stroke-surface-info-strong": {
+    "raw": "#006bd7",
+    "kind": "color",
+    "value": "#006bd7"
+   },
+   "--wpds-color-stroke-surface-neutral": {
+    "raw": "#dbdbdb",
+    "kind": "color",
+    "value": "#dbdbdb"
+   },
+   "--wpds-color-stroke-surface-neutral-strong": {
+    "raw": "#8d8d8d",
+    "kind": "color",
+    "value": "#8d8d8d"
+   },
+   "--wpds-color-stroke-surface-neutral-weak": {
+    "raw": "#f0f0f0",
+    "kind": "color",
+    "value": "#f0f0f0"
+   },
+   "--wpds-color-stroke-surface-success": {
+    "raw": "#94d29e",
+    "kind": "color",
+    "value": "#94d29e"
+   },
+   "--wpds-color-stroke-surface-success-strong": {
+    "raw": "#008030",
+    "kind": "color",
+    "value": "#008030"
+   },
+   "--wpds-color-stroke-surface-warning": {
+    "raw": "#e1bc7c",
+    "kind": "color",
+    "value": "#e1bc7c"
+   },
+   "--wpds-color-stroke-surface-warning-strong": {
+    "raw": "#926300",
+    "kind": "color",
+    "value": "#926300"
+   },
+   "--wpds-cursor-control": {
+    "raw": "pointer",
+    "kind": "fontFamily",
+    "value": "pointer"
+   },
+   "--wpds-dimension-gap-2xl": {
+    "raw": "32px",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--wpds-dimension-gap-3xl": {
+    "raw": "40px",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--wpds-dimension-gap-lg": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--wpds-dimension-gap-md": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--wpds-dimension-gap-sm": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--wpds-dimension-gap-xl": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--wpds-dimension-gap-xs": {
+    "raw": "4px",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--wpds-dimension-padding-2xl": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--wpds-dimension-padding-3xl": {
+    "raw": "32px",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--wpds-dimension-padding-lg": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--wpds-dimension-padding-md": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--wpds-dimension-padding-sm": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--wpds-dimension-padding-xl": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--wpds-dimension-padding-xs": {
+    "raw": "4px",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--wpds-dimension-size-2xs": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--wpds-dimension-size-3xs": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--wpds-dimension-size-4xs": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--wpds-dimension-size-5xs": {
+    "raw": "4px",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--wpds-dimension-size-lg": {
+    "raw": "40px",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--wpds-dimension-size-md": {
+    "raw": "32px",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--wpds-dimension-size-sm": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--wpds-dimension-size-xs": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--wpds-dimension-surface-width-2xl": {
+    "raw": "960px",
+    "kind": "dimension",
+    "value": "960px"
+   },
+   "--wpds-dimension-surface-width-lg": {
+    "raw": "560px",
+    "kind": "dimension",
+    "value": "560px"
+   },
+   "--wpds-dimension-surface-width-md": {
+    "raw": "400px",
+    "kind": "dimension",
+    "value": "400px"
+   },
+   "--wpds-dimension-surface-width-sm": {
+    "raw": "320px",
+    "kind": "dimension",
+    "value": "320px"
+   },
+   "--wpds-dimension-surface-width-xl": {
+    "raw": "720px",
+    "kind": "dimension",
+    "value": "720px"
+   },
+   "--wpds-dimension-surface-width-xs": {
+    "raw": "240px",
+    "kind": "dimension",
+    "value": "240px"
+   },
+   "--wpds-elevation-lg": {
+    "raw": "0 5px 15px 0 #00000014,0 15px 27px 0 #00000012,0 30px 36px 0 #0000000a,0 50px 43px 0 #00000005",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.08) 0px 5px 15px 0px, rgba(0, 0, 0, 0.07) 0px 15px 27px 0px, rgba(0, 0, 0, 0.04) 0px 30px 36px 0px, rgba(0, 0, 0, 0.02) 0px 50px 43px 0px"
+   },
+   "--wpds-elevation-md": {
+    "raw": "0 2px 3px 0 #0000000d,0 4px 5px 0 #0000000a,0 12px 12px 0 #00000008,0 16px 16px 0 #00000005",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.05) 0px 2px 3px 0px, rgba(0, 0, 0, 0.04) 0px 4px 5px 0px, rgba(0, 0, 0, 0.03) 0px 12px 12px 0px, rgba(0, 0, 0, 0.02) 0px 16px 16px 0px"
+   },
+   "--wpds-elevation-sm": {
+    "raw": "0 1px 2px 0 #0000000d,0 2px 3px 0 #0000000a,0 6px 6px 0 #00000008,0 8px 8px 0 #00000005",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, rgba(0, 0, 0, 0.04) 0px 2px 3px 0px, rgba(0, 0, 0, 0.03) 0px 6px 6px 0px, rgba(0, 0, 0, 0.02) 0px 8px 8px 0px"
+   },
+   "--wpds-elevation-xs": {
+    "raw": "0 1px 1px 0 #00000008,0 1px 2px 0 #00000005,0 3px 3px 0 #00000005,0 4px 4px 0 #00000003",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.03) 0px 1px 1px 0px, rgba(0, 0, 0, 0.02) 0px 1px 2px 0px, rgba(0, 0, 0, 0.02) 0px 3px 3px 0px, rgba(0, 0, 0, 0.01) 0px 4px 4px 0px"
+   },
+   "--wpds-motion-duration-lg": {
+    "raw": "300ms",
+    "kind": "duration",
+    "value": "0.3s"
+   },
+   "--wpds-motion-duration-md": {
+    "raw": "200ms",
+    "kind": "duration",
+    "value": "0.2s"
+   },
+   "--wpds-motion-duration-sm": {
+    "raw": "100ms",
+    "kind": "duration",
+    "value": "0.1s"
+   },
+   "--wpds-motion-duration-xl": {
+    "raw": "400ms",
+    "kind": "duration",
+    "value": "0.4s"
+   },
+   "--wpds-motion-duration-xs": {
+    "raw": "50ms",
+    "kind": "duration",
+    "value": "0.05s"
+   },
+   "--wpds-motion-easing-balanced": {
+    "raw": "cubic-bezier(0.4,0,0.2,1)",
+    "kind": "easing",
+    "value": "cubic-bezier(0.4,0,0.2,1)"
+   },
+   "--wpds-motion-easing-expressive": {
+    "raw": "cubic-bezier(0.25,0,0,1)",
+    "kind": "easing",
+    "value": "cubic-bezier(0.25,0,0,1)"
+   },
+   "--wpds-motion-easing-subtle": {
+    "raw": "cubic-bezier(0.15,0,0.15,1)",
+    "kind": "easing",
+    "value": "cubic-bezier(0.15,0,0.15,1)"
+   },
+   "--wpds-typography-font-family-body": {
+    "raw": "-apple-system,system-ui,\"Segoe UI\",\"Roboto\",\"Oxygen-Sans\",\"Ubuntu\",\"Cantarell\",\"Helvetica Neue\",sans-serif",
+    "kind": "fontFamily",
+    "value": "-apple-system,system-ui,\"Segoe UI\",\"Roboto\",\"Oxygen-Sans\",\"Ubuntu\",\"Cantarell\",\"Helvetica Neue\",sans-serif"
+   },
+   "--wpds-typography-font-family-heading": {
+    "raw": "-apple-system,system-ui,\"Segoe UI\",\"Roboto\",\"Oxygen-Sans\",\"Ubuntu\",\"Cantarell\",\"Helvetica Neue\",sans-serif",
+    "kind": "fontFamily",
+    "value": "-apple-system,system-ui,\"Segoe UI\",\"Roboto\",\"Oxygen-Sans\",\"Ubuntu\",\"Cantarell\",\"Helvetica Neue\",sans-serif"
+   },
+   "--wpds-typography-font-family-mono": {
+    "raw": "\"Menlo\",\"Consolas\",monaco,monospace",
+    "kind": "fontFamily",
+    "value": "\"Menlo\",\"Consolas\",monaco,monospace"
+   },
+   "--wpds-typography-font-size-2xl": {
+    "raw": "32px",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--wpds-typography-font-size-lg": {
+    "raw": "15px",
+    "kind": "dimension",
+    "value": "15px"
+   },
+   "--wpds-typography-font-size-md": {
+    "raw": "13px",
+    "kind": "dimension",
+    "value": "13px"
+   },
+   "--wpds-typography-font-size-sm": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--wpds-typography-font-size-xl": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--wpds-typography-font-size-xs": {
+    "raw": "11px",
+    "kind": "dimension",
+    "value": "11px"
+   },
+   "--wpds-typography-font-weight-default": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--wpds-typography-font-weight-emphasis": {
+    "raw": "600",
+    "kind": "number",
+    "value": 600
+   },
+   "--wpds-typography-font-weight-medium": {
+    "raw": "499",
+    "kind": "number",
+    "value": 499
+   },
+   "--wpds-typography-font-weight-regular": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--wpds-typography-line-height-2xl": {
+    "raw": "40px",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--wpds-typography-line-height-lg": {
+    "raw": "28px",
+    "kind": "dimension",
+    "value": "28px"
+   },
+   "--wpds-typography-line-height-md": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--wpds-typography-line-height-sm": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--wpds-typography-line-height-xl": {
+    "raw": "32px",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--wpds-typography-line-height-xs": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   }
+  },
+  "light": {
+   "--newspack-ads-sticky-bg": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--newspack-ads-sticky-text": {
+    "raw": "#111",
+    "kind": "color",
+    "value": "#111111"
+   },
+   "--newspack-cta-color": {
+    "raw": "#dd3333",
+    "kind": "color",
+    "value": "#dd3333"
+   },
+   "--newspack-cta-contrast-color": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--newspack-footer-color": {
+    "raw": "#fff5ea",
+    "kind": "color",
+    "value": "#fff5ea"
+   },
+   "--newspack-footer-contrast-color": {
+    "raw": "black",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--newspack-header-color": {
+    "raw": "#ffffff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--newspack-header-contrast-color": {
+    "raw": "black",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--newspack-primary-color": {
+    "raw": "#212121",
+    "kind": "color",
+    "value": "#212121"
+   },
+   "--newspack-primary-contrast-color": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--newspack-primary-menu-color": {
+    "raw": "#e5e5e5",
+    "kind": "color",
+    "value": "#e5e5e5"
+   },
+   "--newspack-primary-menu-contrast-color": {
+    "raw": "black",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--newspack-secondary-color": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--newspack-secondary-contrast-color": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--newspack-theme-color-against-primary": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--newspack-theme-color-against-secondary": {
+    "raw": "white",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--newspack-theme-color-alert-green": {
+    "raw": "#008a20",
+    "kind": "color",
+    "value": "#008a20"
+   },
+   "--newspack-theme-color-alert-red": {
+    "raw": "#d63638",
+    "kind": "color",
+    "value": "#d63638"
+   },
+   "--newspack-theme-color-alert-yellow": {
+    "raw": "#dba617",
+    "kind": "color",
+    "value": "#dba617"
+   },
+   "--newspack-theme-color-bg-body": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--newspack-theme-color-bg-button-hover": {
+    "raw": "#111",
+    "kind": "color",
+    "value": "#111111"
+   },
+   "--newspack-theme-color-bg-dark": {
+    "raw": "#333",
+    "kind": "color",
+    "value": "#333333"
+   },
+   "--newspack-theme-color-bg-dark-darken-5": {
+    "raw": "#262626",
+    "kind": "color",
+    "value": "#262626"
+   },
+   "--newspack-theme-color-bg-dark-lighten-5": {
+    "raw": "#404040",
+    "kind": "color",
+    "value": "#404040"
+   },
+   "--newspack-theme-color-bg-input": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--newspack-theme-color-bg-light": {
+    "raw": "#f0f0f0",
+    "kind": "color",
+    "value": "#f0f0f0"
+   },
+   "--newspack-theme-color-bg-pre": {
+    "raw": "#eee",
+    "kind": "color",
+    "value": "#eeeeee"
+   },
+   "--newspack-theme-color-bg-pre-lighten-5": {
+    "raw": "#fbfbfb",
+    "kind": "color",
+    "value": "#fbfbfb"
+   },
+   "--newspack-theme-color-border": {
+    "raw": "#ccc",
+    "kind": "color",
+    "value": "#cccccc"
+   },
+   "--newspack-theme-color-border-light": {
+    "raw": "#e0e0e0",
+    "kind": "color",
+    "value": "#e0e0e0"
+   },
+   "--newspack-theme-color-highlight": {
+    "raw": "#fed850",
+    "kind": "color",
+    "value": "#fed850"
+   },
+   "--newspack-theme-color-link": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--newspack-theme-color-link-hover": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--newspack-theme-color-primary": {
+    "raw": "#212121",
+    "kind": "color",
+    "value": "#212121"
+   },
+   "--newspack-theme-color-primary-against-white": {
+    "raw": "#212121",
+    "kind": "color",
+    "value": "#212121"
+   },
+   "--newspack-theme-color-primary-darken-10": {
+    "raw": "#171717",
+    "kind": "color",
+    "value": "#171717"
+   },
+   "--newspack-theme-color-primary-darken-5": {
+    "raw": "#1c1c1c",
+    "kind": "color",
+    "value": "#1c1c1c"
+   },
+   "--newspack-theme-color-primary-variation": {
+    "raw": "#030303",
+    "kind": "color",
+    "value": "#030303"
+   },
+   "--newspack-theme-color-primary-variation-against-white": {
+    "raw": "#030303",
+    "kind": "color",
+    "value": "#030303"
+   },
+   "--newspack-theme-color-secondary": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--newspack-theme-color-secondary-against-white": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--newspack-theme-color-secondary-variation": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--newspack-theme-color-secondary-variation-against-white": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--newspack-theme-color-text-hover": {
+    "raw": "#404040",
+    "kind": "color",
+    "value": "#404040"
+   },
+   "--newspack-theme-color-text-light": {
+    "raw": "#515151",
+    "kind": "color",
+    "value": "#515151"
+   },
+   "--newspack-theme-color-text-main": {
+    "raw": "#111",
+    "kind": "color",
+    "value": "#111111"
+   },
+   "--newspack-theme-color-text-screen": {
+    "raw": "#21759b",
+    "kind": "color",
+    "value": "#21759b"
+   },
+   "--newspack-theme-font-body": {
+    "raw": "\"Plus Jakarta Sans\",\"Helvetica\",sans-serif",
+    "kind": "fontFamily",
+    "value": "\"Plus Jakarta Sans\",\"Helvetica\",sans-serif"
+   },
+   "--newspack-theme-font-code": {
+    "raw": "menlo,monaco,consolas,lucida console,monospace",
+    "kind": "fontFamily",
+    "value": "menlo,monaco,consolas,lucida console,monospace"
+   },
+   "--newspack-theme-font-heading": {
+    "raw": "\"Plus Jakarta Sans\",\"Helvetica\",sans-serif",
+    "kind": "fontFamily",
+    "value": "\"Plus Jakarta Sans\",\"Helvetica\",sans-serif"
+   },
+   "--newspack-theme-font-line-height-body": {
+    "raw": "1.6",
+    "kind": "number",
+    "value": 1.6
+   },
+   "--newspack-theme-font-line-height-heading": {
+    "raw": "1.2",
+    "kind": "number",
+    "value": 1.2
+   },
+   "--newspack-theme-font-pre": {
+    "raw": "\"Courier 10 Pitch\",courier,monospace",
+    "kind": "fontFamily",
+    "value": "\"Courier 10 Pitch\",courier,monospace"
+   },
+   "--newspack-theme-font-size-base": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--newspack-theme-font-size-base-sm": {
+    "raw": "18px",
+    "kind": "dimension",
+    "value": "18px"
+   },
+   "--newspack-theme-font-size-lg": {
+    "raw": "calc(1em*1.4)",
+    "kind": "dimension",
+    "value": "22.3906px"
+   },
+   "--newspack-theme-font-size-md": {
+    "raw": "calc(1em*1.2)",
+    "kind": "dimension",
+    "value": "19.1875px"
+   },
+   "--newspack-theme-font-size-ratio": {
+    "raw": "1.125",
+    "kind": "number",
+    "value": 1.125
+   },
+   "--newspack-theme-font-size-sm": {
+    "raw": "calc(1em*0.8)",
+    "kind": "dimension",
+    "value": "12.7969px"
+   },
+   "--newspack-theme-font-size-xl": {
+    "raw": "calc(1em*1.8)",
+    "kind": "dimension",
+    "value": "28.7969px"
+   },
+   "--newspack-theme-font-size-xs": {
+    "raw": "calc(1em*0.7)",
+    "kind": "dimension",
+    "value": "11.1875px"
+   },
+   "--newspack-theme-font-size-xxl": {
+    "raw": "calc(1em*2.2)",
+    "kind": "dimension",
+    "value": "35.1875px"
+   },
+   "--newspack-theme-font-size-xxs": {
+    "raw": "calc(1em*0.6)",
+    "kind": "dimension",
+    "value": "9.59375px"
+   },
+   "--newspack-theme-font-size-xxxl": {
+    "raw": "calc(1em*2.8)",
+    "kind": "dimension",
+    "value": "44.7969px"
+   },
+   "--newspack-theme-font-size-xxxxl": {
+    "raw": "calc(1em*3.2)",
+    "kind": "dimension",
+    "value": "51.1875px"
+   },
+   "--newspack-theme-font-size-xxxxxl": {
+    "raw": "calc(1em*4)",
+    "kind": "dimension",
+    "value": "64px"
+   },
+   "--wp--preset--aspect-ratio--16-9": {
+    "raw": "16/9",
+    "kind": "other"
+   },
+   "--wp--preset--aspect-ratio--2-3": {
+    "raw": "2/3",
+    "kind": "other"
+   },
+   "--wp--preset--aspect-ratio--3-2": {
+    "raw": "3/2",
+    "kind": "other"
+   },
+   "--wp--preset--aspect-ratio--3-4": {
+    "raw": "3/4",
+    "kind": "other"
+   },
+   "--wp--preset--aspect-ratio--4-3": {
+    "raw": "4/3",
+    "kind": "other"
+   },
+   "--wp--preset--aspect-ratio--9-16": {
+    "raw": "9/16",
+    "kind": "other"
+   },
+   "--wp--preset--aspect-ratio--square": {
+    "raw": "1",
+    "kind": "number",
+    "value": 1
+   },
+   "--wp--preset--color--black": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--wp--preset--color--cyan-bluish-gray": {
+    "raw": "#abb8c3",
+    "kind": "color",
+    "value": "#abb8c3"
+   },
+   "--wp--preset--color--dark-gray": {
+    "raw": "#111111",
+    "kind": "color",
+    "value": "#111111"
+   },
+   "--wp--preset--color--light-gray": {
+    "raw": "#EEEEEE",
+    "kind": "color",
+    "value": "#eeeeee"
+   },
+   "--wp--preset--color--light-green-cyan": {
+    "raw": "#7bdcb5",
+    "kind": "color",
+    "value": "#7bdcb5"
+   },
+   "--wp--preset--color--luminous-vivid-amber": {
+    "raw": "#fcb900",
+    "kind": "color",
+    "value": "#fcb900"
+   },
+   "--wp--preset--color--luminous-vivid-orange": {
+    "raw": "#ff6900",
+    "kind": "color",
+    "value": "#ff6900"
+   },
+   "--wp--preset--color--medium-gray": {
+    "raw": "#767676",
+    "kind": "color",
+    "value": "#767676"
+   },
+   "--wp--preset--color--pale-cyan-blue": {
+    "raw": "#8ed1fc",
+    "kind": "color",
+    "value": "#8ed1fc"
+   },
+   "--wp--preset--color--pale-pink": {
+    "raw": "#f78da7",
+    "kind": "color",
+    "value": "#f78da7"
+   },
+   "--wp--preset--color--primary": {
+    "raw": "#212121",
+    "kind": "color",
+    "value": "#212121"
+   },
+   "--wp--preset--color--primary-variation": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--wp--preset--color--secondary": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--wp--preset--color--secondary-variation": {
+    "raw": "#000000",
+    "kind": "color",
+    "value": "#000000"
+   },
+   "--wp--preset--color--vivid-cyan-blue": {
+    "raw": "#0693e3",
+    "kind": "color",
+    "value": "#0693e3"
+   },
+   "--wp--preset--color--vivid-green-cyan": {
+    "raw": "#00d084",
+    "kind": "color",
+    "value": "#00d084"
+   },
+   "--wp--preset--color--vivid-purple": {
+    "raw": "#9b51e0",
+    "kind": "color",
+    "value": "#9b51e0"
+   },
+   "--wp--preset--color--vivid-red": {
+    "raw": "#cf2e2e",
+    "kind": "color",
+    "value": "#cf2e2e"
+   },
+   "--wp--preset--color--white": {
+    "raw": "#FFFFFF",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--wp--preset--font-family--newspack-body": {
+    "raw": "\"Plus Jakarta Sans\",\"Helvetica\",sans-serif",
+    "kind": "fontFamily",
+    "value": "\"Plus Jakarta Sans\",\"Helvetica\",sans-serif"
+   },
+   "--wp--preset--font-family--newspack-header": {
+    "raw": "\"Plus Jakarta Sans\",\"Helvetica\",sans-serif",
+    "kind": "fontFamily",
+    "value": "\"Plus Jakarta Sans\",\"Helvetica\",sans-serif"
+   },
+   "--wp--preset--font-size--huge": {
+    "raw": "44px",
+    "kind": "dimension",
+    "value": "44px"
+   },
+   "--wp--preset--font-size--large": {
+    "raw": "36px",
+    "kind": "dimension",
+    "value": "36px"
+   },
+   "--wp--preset--font-size--medium": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--wp--preset--font-size--normal": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--wp--preset--font-size--small": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--wp--preset--font-size--x-large": {
+    "raw": "42px",
+    "kind": "dimension",
+    "value": "42px"
+   },
+   "--wp--preset--gradient--blush-bordeaux": {
+    "raw": "linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--blush-light-purple": {
+    "raw": "linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--cool-to-warm-spectrum": {
+    "raw": "linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--electric-grass": {
+    "raw": "linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--grad-1": {
+    "raw": "linear-gradient( 135deg,rgb( 33,33,33) 0%,rgb( 0,0,0) 100% )",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--grad-2": {
+    "raw": "linear-gradient( 135deg,rgb( 0,0,0) 0%,rgb( 0,0,0) 100% )",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--grad-3": {
+    "raw": "linear-gradient( 135deg,rgb( 17,17,17 ) 0%,rgb( 85,85,85 ) 100% )",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--grad-4": {
+    "raw": "linear-gradient( 135deg,rgb( 68,68,68 ) 0%,rgb( 136,136,136 ) 100% )",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--grad-5": {
+    "raw": "linear-gradient( 135deg,rgb( 119,119,119 ) 0%,rgb( 221,221,221 ) 100% )",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--grad-6": {
+    "raw": "linear-gradient( 135deg,rgb( 221,221,221 ) 0%,rgb( 255,255,255 ) 100% )",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan": {
+    "raw": "linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--luminous-dusk": {
+    "raw": "linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange": {
+    "raw": "linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--luminous-vivid-orange-to-vivid-red": {
+    "raw": "linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--midnight": {
+    "raw": "linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--pale-ocean": {
+    "raw": "linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray": {
+    "raw": "linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple": {
+    "raw": "linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%)",
+    "kind": "other"
+   },
+   "--wp--preset--shadow--crisp": {
+    "raw": "6px 6px 0px rgb(0,0,0)",
+    "kind": "shadow",
+    "value": "rgb(0, 0, 0) 6px 6px 0px 0px"
+   },
+   "--wp--preset--shadow--deep": {
+    "raw": "12px 12px 50px rgba(0,0,0,0.4)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.4) 12px 12px 50px 0px"
+   },
+   "--wp--preset--shadow--natural": {
+    "raw": "6px 6px 9px rgba(0,0,0,0.2)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.2) 6px 6px 9px 0px"
+   },
+   "--wp--preset--shadow--outlined": {
+    "raw": "6px 6px 0px -3px rgb(255,255,255),6px 6px rgb(0,0,0)",
+    "kind": "shadow",
+    "value": "rgb(255, 255, 255) 6px 6px 0px -3px, rgb(0, 0, 0) 6px 6px 0px 0px"
+   },
+   "--wp--preset--shadow--sharp": {
+    "raw": "6px 6px 0px rgba(0,0,0,0.2)",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.2) 6px 6px 0px 0px"
+   },
+   "--wp--preset--spacing--20": {
+    "raw": "0.44rem",
+    "kind": "dimension",
+    "value": "8.79688px"
+   },
+   "--wp--preset--spacing--30": {
+    "raw": "0.67rem",
+    "kind": "dimension",
+    "value": "13.3906px"
+   },
+   "--wp--preset--spacing--40": {
+    "raw": "1rem",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--wp--preset--spacing--50": {
+    "raw": "1.5rem",
+    "kind": "dimension",
+    "value": "30px"
+   },
+   "--wp--preset--spacing--60": {
+    "raw": "2.25rem",
+    "kind": "dimension",
+    "value": "45px"
+   },
+   "--wp--preset--spacing--70": {
+    "raw": "3.38rem",
+    "kind": "dimension",
+    "value": "67.5938px"
+   },
+   "--wp--preset--spacing--80": {
+    "raw": "5.06rem",
+    "kind": "dimension",
+    "value": "101.188px"
+   },
+   "--wp-admin-border-width-focus": {
+    "raw": "2px",
+    "kind": "dimension",
+    "value": "2px"
+   },
+   "--wp-admin-theme-color": {
+    "raw": "#007cba",
+    "kind": "color",
+    "value": "#007cba"
+   },
+   "--wp-admin-theme-color--rgb": {
+    "raw": "0,124,186",
+    "kind": "other"
+   },
+   "--wp-admin-theme-color-darker-10": {
+    "raw": "#006ba1",
+    "kind": "color",
+    "value": "#006ba1"
+   },
+   "--wp-admin-theme-color-darker-10--rgb": {
+    "raw": "0,107,160.5",
+    "kind": "other"
+   },
+   "--wp-admin-theme-color-darker-20": {
+    "raw": "#005a87",
+    "kind": "color",
+    "value": "#005a87"
+   },
+   "--wp-admin-theme-color-darker-20--rgb": {
+    "raw": "0,90,135",
+    "kind": "other"
+   },
+   "--wp-admin-theme-color-lighter-10": {
+    "raw": "#dfe7f4",
+    "kind": "color",
+    "value": "#dfe7f4"
+   },
+   "--wp-admin-theme-color-lighter-10--rgb": {
+    "raw": "223,231,244",
+    "kind": "other"
+   },
+   "--wp-block-synced-color": {
+    "raw": "#7a00df",
+    "kind": "color",
+    "value": "#7a00df"
+   },
+   "--wp-block-synced-color--rgb": {
+    "raw": "122,0,223",
+    "kind": "other"
+   },
+   "--wp-bound-block-color": {
+    "raw": "#7a00df",
+    "kind": "color",
+    "value": "#7a00df"
+   },
+   "--wp-editor-canvas-background": {
+    "raw": "#ddd",
+    "kind": "color",
+    "value": "#dddddd"
+   },
+   "--wpds-border-radius-lg": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--wpds-border-radius-md": {
+    "raw": "4px",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--wpds-border-radius-sm": {
+    "raw": "2px",
+    "kind": "dimension",
+    "value": "2px"
+   },
+   "--wpds-border-radius-xl": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--wpds-border-radius-xs": {
+    "raw": "1px",
+    "kind": "dimension",
+    "value": "1px"
+   },
+   "--wpds-border-width-focus": {
+    "raw": "2px",
+    "kind": "dimension",
+    "value": "2px"
+   },
+   "--wpds-border-width-lg": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--wpds-border-width-md": {
+    "raw": "4px",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--wpds-border-width-sm": {
+    "raw": "2px",
+    "kind": "dimension",
+    "value": "2px"
+   },
+   "--wpds-border-width-xs": {
+    "raw": "1px",
+    "kind": "dimension",
+    "value": "1px"
+   },
+   "--wpds-color-background-interactive-brand-strong": {
+    "raw": "#003da5",
+    "kind": "color",
+    "value": "#003da5"
+   },
+   "--wpds-color-background-interactive-brand-strong-active": {
+    "raw": "#001f53",
+    "kind": "color",
+    "value": "#001f53"
+   },
+   "--wpds-color-background-interactive-brand-strong-disabled": {
+    "raw": "#e6e6e6",
+    "kind": "color",
+    "value": "#e6e6e6"
+   },
+   "--wpds-color-background-interactive-brand-weak": {
+    "raw": "#0000",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--wpds-color-background-interactive-brand-weak-active": {
+    "raw": "#dfe7f4",
+    "kind": "color",
+    "value": "#dfe7f4"
+   },
+   "--wpds-color-background-interactive-brand-weak-disabled": {
+    "raw": "#0000",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--wpds-color-background-interactive-error": {
+    "raw": "#0000",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--wpds-color-background-interactive-error-active": {
+    "raw": "#fff6f5",
+    "kind": "color",
+    "value": "#fff6f5"
+   },
+   "--wpds-color-background-interactive-error-disabled": {
+    "raw": "#0000",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--wpds-color-background-interactive-error-strong": {
+    "raw": "#cc1818",
+    "kind": "color",
+    "value": "#cc1818"
+   },
+   "--wpds-color-background-interactive-error-strong-active": {
+    "raw": "#b90000",
+    "kind": "color",
+    "value": "#b90000"
+   },
+   "--wpds-color-background-interactive-error-strong-disabled": {
+    "raw": "#e6e6e6",
+    "kind": "color",
+    "value": "#e6e6e6"
+   },
+   "--wpds-color-background-interactive-error-weak": {
+    "raw": "#0000",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--wpds-color-background-interactive-error-weak-active": {
+    "raw": "#f6e6e3",
+    "kind": "color",
+    "value": "#f6e6e3"
+   },
+   "--wpds-color-background-interactive-error-weak-disabled": {
+    "raw": "#0000",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--wpds-color-background-interactive-neutral-strong": {
+    "raw": "#2d2d2d",
+    "kind": "color",
+    "value": "#2d2d2d"
+   },
+   "--wpds-color-background-interactive-neutral-strong-active": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--wpds-color-background-interactive-neutral-strong-disabled": {
+    "raw": "#e6e6e6",
+    "kind": "color",
+    "value": "#e6e6e6"
+   },
+   "--wpds-color-background-interactive-neutral-weak": {
+    "raw": "#0000",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--wpds-color-background-interactive-neutral-weak-active": {
+    "raw": "#ededed",
+    "kind": "color",
+    "value": "#ededed"
+   },
+   "--wpds-color-background-interactive-neutral-weak-disabled": {
+    "raw": "#0000",
+    "kind": "color",
+    "value": "rgba(0, 0, 0, 0)"
+   },
+   "--wpds-color-background-surface-brand": {
+    "raw": "#dfe7f4",
+    "kind": "color",
+    "value": "#dfe7f4"
+   },
+   "--wpds-color-background-surface-caution": {
+    "raw": "#fee995",
+    "kind": "color",
+    "value": "#fee995"
+   },
+   "--wpds-color-background-surface-caution-weak": {
+    "raw": "#fff9ca",
+    "kind": "color",
+    "value": "#fff9ca"
+   },
+   "--wpds-color-background-surface-error": {
+    "raw": "#f6e6e3",
+    "kind": "color",
+    "value": "#f6e6e3"
+   },
+   "--wpds-color-background-surface-error-weak": {
+    "raw": "#fff6f5",
+    "kind": "color",
+    "value": "#fff6f5"
+   },
+   "--wpds-color-background-surface-info": {
+    "raw": "#deebfa",
+    "kind": "color",
+    "value": "#deebfa"
+   },
+   "--wpds-color-background-surface-info-weak": {
+    "raw": "#f3f9ff",
+    "kind": "color",
+    "value": "#f3f9ff"
+   },
+   "--wpds-color-background-surface-neutral": {
+    "raw": "#fcfcfc",
+    "kind": "color",
+    "value": "#fcfcfc"
+   },
+   "--wpds-color-background-surface-neutral-strong": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--wpds-color-background-surface-neutral-weak": {
+    "raw": "#f4f4f4",
+    "kind": "color",
+    "value": "#f4f4f4"
+   },
+   "--wpds-color-background-surface-success": {
+    "raw": "#c6f7cd",
+    "kind": "color",
+    "value": "#c6f7cd"
+   },
+   "--wpds-color-background-surface-success-weak": {
+    "raw": "#ebffed",
+    "kind": "color",
+    "value": "#ebffed"
+   },
+   "--wpds-color-background-surface-warning": {
+    "raw": "#fde6be",
+    "kind": "color",
+    "value": "#fde6be"
+   },
+   "--wpds-color-background-surface-warning-weak": {
+    "raw": "#fff7e1",
+    "kind": "color",
+    "value": "#fff7e1"
+   },
+   "--wpds-color-background-thumb-brand": {
+    "raw": "#003da5",
+    "kind": "color",
+    "value": "#003da5"
+   },
+   "--wpds-color-background-thumb-brand-active": {
+    "raw": "#003da5",
+    "kind": "color",
+    "value": "#003da5"
+   },
+   "--wpds-color-background-thumb-brand-disabled": {
+    "raw": "#dbdbdb",
+    "kind": "color",
+    "value": "#dbdbdb"
+   },
+   "--wpds-color-background-thumb-neutral-disabled": {
+    "raw": "#dbdbdb",
+    "kind": "color",
+    "value": "#dbdbdb"
+   },
+   "--wpds-color-background-thumb-neutral-weak": {
+    "raw": "#8d8d8d",
+    "kind": "color",
+    "value": "#8d8d8d"
+   },
+   "--wpds-color-background-thumb-neutral-weak-active": {
+    "raw": "#6e6e6e",
+    "kind": "color",
+    "value": "#6e6e6e"
+   },
+   "--wpds-color-background-thumb-neutral-weak-disabled": {
+    "raw": "#dbdbdb",
+    "kind": "color",
+    "value": "#dbdbdb"
+   },
+   "--wpds-color-background-track-neutral": {
+    "raw": "#dbdbdb",
+    "kind": "color",
+    "value": "#dbdbdb"
+   },
+   "--wpds-color-background-track-neutral-weak": {
+    "raw": "#f0f0f0",
+    "kind": "color",
+    "value": "#f0f0f0"
+   },
+   "--wpds-color-foreground-content-caution": {
+    "raw": "#281d00",
+    "kind": "color",
+    "value": "#281d00"
+   },
+   "--wpds-color-foreground-content-caution-weak": {
+    "raw": "#826a00",
+    "kind": "color",
+    "value": "#826a00"
+   },
+   "--wpds-color-foreground-content-error": {
+    "raw": "#470000",
+    "kind": "color",
+    "value": "#470000"
+   },
+   "--wpds-color-foreground-content-error-weak": {
+    "raw": "#cc1818",
+    "kind": "color",
+    "value": "#cc1818"
+   },
+   "--wpds-color-foreground-content-info": {
+    "raw": "#001b4f",
+    "kind": "color",
+    "value": "#001b4f"
+   },
+   "--wpds-color-foreground-content-info-weak": {
+    "raw": "#006bd7",
+    "kind": "color",
+    "value": "#006bd7"
+   },
+   "--wpds-color-foreground-content-neutral": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--wpds-color-foreground-content-neutral-weak": {
+    "raw": "#707070",
+    "kind": "color",
+    "value": "#707070"
+   },
+   "--wpds-color-foreground-content-success": {
+    "raw": "#002900",
+    "kind": "color",
+    "value": "#002900"
+   },
+   "--wpds-color-foreground-content-success-weak": {
+    "raw": "#008030",
+    "kind": "color",
+    "value": "#008030"
+   },
+   "--wpds-color-foreground-content-warning": {
+    "raw": "#2e1900",
+    "kind": "color",
+    "value": "#2e1900"
+   },
+   "--wpds-color-foreground-content-warning-weak": {
+    "raw": "#926300",
+    "kind": "color",
+    "value": "#926300"
+   },
+   "--wpds-color-foreground-interactive-brand": {
+    "raw": "#003da5",
+    "kind": "color",
+    "value": "#003da5"
+   },
+   "--wpds-color-foreground-interactive-brand-active": {
+    "raw": "#001f53",
+    "kind": "color",
+    "value": "#001f53"
+   },
+   "--wpds-color-foreground-interactive-brand-disabled": {
+    "raw": "#406ebc",
+    "kind": "color",
+    "value": "#406ebc"
+   },
+   "--wpds-color-foreground-interactive-brand-strong": {
+    "raw": "#eff0f2",
+    "kind": "color",
+    "value": "#eff0f2"
+   },
+   "--wpds-color-foreground-interactive-brand-strong-active": {
+    "raw": "#eff0f2",
+    "kind": "color",
+    "value": "#eff0f2"
+   },
+   "--wpds-color-foreground-interactive-brand-strong-disabled": {
+    "raw": "#8d8d8d",
+    "kind": "color",
+    "value": "#8d8d8d"
+   },
+   "--wpds-color-foreground-interactive-error": {
+    "raw": "#cc1818",
+    "kind": "color",
+    "value": "#cc1818"
+   },
+   "--wpds-color-foreground-interactive-error-active": {
+    "raw": "#470000",
+    "kind": "color",
+    "value": "#470000"
+   },
+   "--wpds-color-foreground-interactive-error-disabled": {
+    "raw": "#8d8d8d",
+    "kind": "color",
+    "value": "#8d8d8d"
+   },
+   "--wpds-color-foreground-interactive-error-strong": {
+    "raw": "#f2efef",
+    "kind": "color",
+    "value": "#f2efef"
+   },
+   "--wpds-color-foreground-interactive-error-strong-active": {
+    "raw": "#f2efef",
+    "kind": "color",
+    "value": "#f2efef"
+   },
+   "--wpds-color-foreground-interactive-error-strong-disabled": {
+    "raw": "#8d8d8d",
+    "kind": "color",
+    "value": "#8d8d8d"
+   },
+   "--wpds-color-foreground-interactive-neutral": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--wpds-color-foreground-interactive-neutral-active": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--wpds-color-foreground-interactive-neutral-disabled": {
+    "raw": "#8d8d8d",
+    "kind": "color",
+    "value": "#8d8d8d"
+   },
+   "--wpds-color-foreground-interactive-neutral-strong": {
+    "raw": "#f0f0f0",
+    "kind": "color",
+    "value": "#f0f0f0"
+   },
+   "--wpds-color-foreground-interactive-neutral-strong-active": {
+    "raw": "#f0f0f0",
+    "kind": "color",
+    "value": "#f0f0f0"
+   },
+   "--wpds-color-foreground-interactive-neutral-strong-disabled": {
+    "raw": "#8d8d8d",
+    "kind": "color",
+    "value": "#8d8d8d"
+   },
+   "--wpds-color-foreground-interactive-neutral-weak": {
+    "raw": "#707070",
+    "kind": "color",
+    "value": "#707070"
+   },
+   "--wpds-color-foreground-interactive-neutral-weak-active": {
+    "raw": "#1e1e1e",
+    "kind": "color",
+    "value": "#1e1e1e"
+   },
+   "--wpds-color-foreground-interactive-neutral-weak-disabled": {
+    "raw": "#8d8d8d",
+    "kind": "color",
+    "value": "#8d8d8d"
+   },
+   "--wpds-color-stroke-focus": {
+    "raw": "#003da5",
+    "kind": "color",
+    "value": "#003da5"
+   },
+   "--wpds-color-stroke-interactive-brand": {
+    "raw": "#003da5",
+    "kind": "color",
+    "value": "#003da5"
+   },
+   "--wpds-color-stroke-interactive-brand-active": {
+    "raw": "#001f53",
+    "kind": "color",
+    "value": "#001f53"
+   },
+   "--wpds-color-stroke-interactive-brand-disabled": {
+    "raw": "#9fb6dd",
+    "kind": "color",
+    "value": "#9fb6dd"
+   },
+   "--wpds-color-stroke-interactive-error": {
+    "raw": "#cc1818",
+    "kind": "color",
+    "value": "#cc1818"
+   },
+   "--wpds-color-stroke-interactive-error-active": {
+    "raw": "#9d0000",
+    "kind": "color",
+    "value": "#9d0000"
+   },
+   "--wpds-color-stroke-interactive-error-disabled": {
+    "raw": "#dbdbdb",
+    "kind": "color",
+    "value": "#dbdbdb"
+   },
+   "--wpds-color-stroke-interactive-error-strong": {
+    "raw": "#cc1818",
+    "kind": "color",
+    "value": "#cc1818"
+   },
+   "--wpds-color-stroke-interactive-neutral": {
+    "raw": "#8d8d8d",
+    "kind": "color",
+    "value": "#8d8d8d"
+   },
+   "--wpds-color-stroke-interactive-neutral-active": {
+    "raw": "#6e6e6e",
+    "kind": "color",
+    "value": "#6e6e6e"
+   },
+   "--wpds-color-stroke-interactive-neutral-disabled": {
+    "raw": "#dbdbdb",
+    "kind": "color",
+    "value": "#dbdbdb"
+   },
+   "--wpds-color-stroke-interactive-neutral-strong": {
+    "raw": "#6e6e6e",
+    "kind": "color",
+    "value": "#6e6e6e"
+   },
+   "--wpds-color-stroke-surface-brand": {
+    "raw": "#dfe7f4",
+    "kind": "color",
+    "value": "#dfe7f4"
+   },
+   "--wpds-color-stroke-surface-brand-strong": {
+    "raw": "#003da5",
+    "kind": "color",
+    "value": "#003da5"
+   },
+   "--wpds-color-stroke-surface-caution": {
+    "raw": "#cfc28d",
+    "kind": "color",
+    "value": "#cfc28d"
+   },
+   "--wpds-color-stroke-surface-caution-strong": {
+    "raw": "#826a00",
+    "kind": "color",
+    "value": "#826a00"
+   },
+   "--wpds-color-stroke-surface-error": {
+    "raw": "#dab1aa",
+    "kind": "color",
+    "value": "#dab1aa"
+   },
+   "--wpds-color-stroke-surface-error-strong": {
+    "raw": "#cc1818",
+    "kind": "color",
+    "value": "#cc1818"
+   },
+   "--wpds-color-stroke-surface-info": {
+    "raw": "#a9c6e7",
+    "kind": "color",
+    "value": "#a9c6e7"
+   },
+   "--wpds-color-stroke-surface-info-strong": {
+    "raw": "#006bd7",
+    "kind": "color",
+    "value": "#006bd7"
+   },
+   "--wpds-color-stroke-surface-neutral": {
+    "raw": "#dbdbdb",
+    "kind": "color",
+    "value": "#dbdbdb"
+   },
+   "--wpds-color-stroke-surface-neutral-strong": {
+    "raw": "#8d8d8d",
+    "kind": "color",
+    "value": "#8d8d8d"
+   },
+   "--wpds-color-stroke-surface-neutral-weak": {
+    "raw": "#f0f0f0",
+    "kind": "color",
+    "value": "#f0f0f0"
+   },
+   "--wpds-color-stroke-surface-success": {
+    "raw": "#94d29e",
+    "kind": "color",
+    "value": "#94d29e"
+   },
+   "--wpds-color-stroke-surface-success-strong": {
+    "raw": "#008030",
+    "kind": "color",
+    "value": "#008030"
+   },
+   "--wpds-color-stroke-surface-warning": {
+    "raw": "#e1bc7c",
+    "kind": "color",
+    "value": "#e1bc7c"
+   },
+   "--wpds-color-stroke-surface-warning-strong": {
+    "raw": "#926300",
+    "kind": "color",
+    "value": "#926300"
+   },
+   "--wpds-cursor-control": {
+    "raw": "pointer",
+    "kind": "fontFamily",
+    "value": "pointer"
+   },
+   "--wpds-dimension-gap-2xl": {
+    "raw": "32px",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--wpds-dimension-gap-3xl": {
+    "raw": "40px",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--wpds-dimension-gap-lg": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--wpds-dimension-gap-md": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--wpds-dimension-gap-sm": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--wpds-dimension-gap-xl": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--wpds-dimension-gap-xs": {
+    "raw": "4px",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--wpds-dimension-padding-2xl": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--wpds-dimension-padding-3xl": {
+    "raw": "32px",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--wpds-dimension-padding-lg": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--wpds-dimension-padding-md": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--wpds-dimension-padding-sm": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--wpds-dimension-padding-xl": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--wpds-dimension-padding-xs": {
+    "raw": "4px",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--wpds-dimension-size-2xs": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   },
+   "--wpds-dimension-size-3xs": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--wpds-dimension-size-4xs": {
+    "raw": "8px",
+    "kind": "dimension",
+    "value": "8px"
+   },
+   "--wpds-dimension-size-5xs": {
+    "raw": "4px",
+    "kind": "dimension",
+    "value": "4px"
+   },
+   "--wpds-dimension-size-lg": {
+    "raw": "40px",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--wpds-dimension-size-md": {
+    "raw": "32px",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--wpds-dimension-size-sm": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--wpds-dimension-size-xs": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--wpds-dimension-surface-width-2xl": {
+    "raw": "960px",
+    "kind": "dimension",
+    "value": "960px"
+   },
+   "--wpds-dimension-surface-width-lg": {
+    "raw": "560px",
+    "kind": "dimension",
+    "value": "560px"
+   },
+   "--wpds-dimension-surface-width-md": {
+    "raw": "400px",
+    "kind": "dimension",
+    "value": "400px"
+   },
+   "--wpds-dimension-surface-width-sm": {
+    "raw": "320px",
+    "kind": "dimension",
+    "value": "320px"
+   },
+   "--wpds-dimension-surface-width-xl": {
+    "raw": "720px",
+    "kind": "dimension",
+    "value": "720px"
+   },
+   "--wpds-dimension-surface-width-xs": {
+    "raw": "240px",
+    "kind": "dimension",
+    "value": "240px"
+   },
+   "--wpds-elevation-lg": {
+    "raw": "0 5px 15px 0 #00000014,0 15px 27px 0 #00000012,0 30px 36px 0 #0000000a,0 50px 43px 0 #00000005",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.08) 0px 5px 15px 0px, rgba(0, 0, 0, 0.07) 0px 15px 27px 0px, rgba(0, 0, 0, 0.04) 0px 30px 36px 0px, rgba(0, 0, 0, 0.02) 0px 50px 43px 0px"
+   },
+   "--wpds-elevation-md": {
+    "raw": "0 2px 3px 0 #0000000d,0 4px 5px 0 #0000000a,0 12px 12px 0 #00000008,0 16px 16px 0 #00000005",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.05) 0px 2px 3px 0px, rgba(0, 0, 0, 0.04) 0px 4px 5px 0px, rgba(0, 0, 0, 0.03) 0px 12px 12px 0px, rgba(0, 0, 0, 0.02) 0px 16px 16px 0px"
+   },
+   "--wpds-elevation-sm": {
+    "raw": "0 1px 2px 0 #0000000d,0 2px 3px 0 #0000000a,0 6px 6px 0 #00000008,0 8px 8px 0 #00000005",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px, rgba(0, 0, 0, 0.04) 0px 2px 3px 0px, rgba(0, 0, 0, 0.03) 0px 6px 6px 0px, rgba(0, 0, 0, 0.02) 0px 8px 8px 0px"
+   },
+   "--wpds-elevation-xs": {
+    "raw": "0 1px 1px 0 #00000008,0 1px 2px 0 #00000005,0 3px 3px 0 #00000005,0 4px 4px 0 #00000003",
+    "kind": "shadow",
+    "value": "rgba(0, 0, 0, 0.03) 0px 1px 1px 0px, rgba(0, 0, 0, 0.02) 0px 1px 2px 0px, rgba(0, 0, 0, 0.02) 0px 3px 3px 0px, rgba(0, 0, 0, 0.01) 0px 4px 4px 0px"
+   },
+   "--wpds-motion-duration-lg": {
+    "raw": "300ms",
+    "kind": "duration",
+    "value": "0.3s"
+   },
+   "--wpds-motion-duration-md": {
+    "raw": "200ms",
+    "kind": "duration",
+    "value": "0.2s"
+   },
+   "--wpds-motion-duration-sm": {
+    "raw": "100ms",
+    "kind": "duration",
+    "value": "0.1s"
+   },
+   "--wpds-motion-duration-xl": {
+    "raw": "400ms",
+    "kind": "duration",
+    "value": "0.4s"
+   },
+   "--wpds-motion-duration-xs": {
+    "raw": "50ms",
+    "kind": "duration",
+    "value": "0.05s"
+   },
+   "--wpds-motion-easing-balanced": {
+    "raw": "cubic-bezier(0.4,0,0.2,1)",
+    "kind": "easing",
+    "value": "cubic-bezier(0.4,0,0.2,1)"
+   },
+   "--wpds-motion-easing-expressive": {
+    "raw": "cubic-bezier(0.25,0,0,1)",
+    "kind": "easing",
+    "value": "cubic-bezier(0.25,0,0,1)"
+   },
+   "--wpds-motion-easing-subtle": {
+    "raw": "cubic-bezier(0.15,0,0.15,1)",
+    "kind": "easing",
+    "value": "cubic-bezier(0.15,0,0.15,1)"
+   },
+   "--wpds-typography-font-family-body": {
+    "raw": "-apple-system,system-ui,\"Segoe UI\",\"Roboto\",\"Oxygen-Sans\",\"Ubuntu\",\"Cantarell\",\"Helvetica Neue\",sans-serif",
+    "kind": "fontFamily",
+    "value": "-apple-system,system-ui,\"Segoe UI\",\"Roboto\",\"Oxygen-Sans\",\"Ubuntu\",\"Cantarell\",\"Helvetica Neue\",sans-serif"
+   },
+   "--wpds-typography-font-family-heading": {
+    "raw": "-apple-system,system-ui,\"Segoe UI\",\"Roboto\",\"Oxygen-Sans\",\"Ubuntu\",\"Cantarell\",\"Helvetica Neue\",sans-serif",
+    "kind": "fontFamily",
+    "value": "-apple-system,system-ui,\"Segoe UI\",\"Roboto\",\"Oxygen-Sans\",\"Ubuntu\",\"Cantarell\",\"Helvetica Neue\",sans-serif"
+   },
+   "--wpds-typography-font-family-mono": {
+    "raw": "\"Menlo\",\"Consolas\",monaco,monospace",
+    "kind": "fontFamily",
+    "value": "\"Menlo\",\"Consolas\",monaco,monospace"
+   },
+   "--wpds-typography-font-size-2xl": {
+    "raw": "32px",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--wpds-typography-font-size-lg": {
+    "raw": "15px",
+    "kind": "dimension",
+    "value": "15px"
+   },
+   "--wpds-typography-font-size-md": {
+    "raw": "13px",
+    "kind": "dimension",
+    "value": "13px"
+   },
+   "--wpds-typography-font-size-sm": {
+    "raw": "12px",
+    "kind": "dimension",
+    "value": "12px"
+   },
+   "--wpds-typography-font-size-xl": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--wpds-typography-font-size-xs": {
+    "raw": "11px",
+    "kind": "dimension",
+    "value": "11px"
+   },
+   "--wpds-typography-font-weight-default": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--wpds-typography-font-weight-emphasis": {
+    "raw": "600",
+    "kind": "number",
+    "value": 600
+   },
+   "--wpds-typography-font-weight-medium": {
+    "raw": "499",
+    "kind": "number",
+    "value": 499
+   },
+   "--wpds-typography-font-weight-regular": {
+    "raw": "400",
+    "kind": "number",
+    "value": 400
+   },
+   "--wpds-typography-line-height-2xl": {
+    "raw": "40px",
+    "kind": "dimension",
+    "value": "40px"
+   },
+   "--wpds-typography-line-height-lg": {
+    "raw": "28px",
+    "kind": "dimension",
+    "value": "28px"
+   },
+   "--wpds-typography-line-height-md": {
+    "raw": "24px",
+    "kind": "dimension",
+    "value": "24px"
+   },
+   "--wpds-typography-line-height-sm": {
+    "raw": "20px",
+    "kind": "dimension",
+    "value": "20px"
+   },
+   "--wpds-typography-line-height-xl": {
+    "raw": "32px",
+    "kind": "dimension",
+    "value": "32px"
+   },
+   "--wpds-typography-line-height-xs": {
+    "raw": "16px",
+    "kind": "dimension",
+    "value": "16px"
+   }
+  }
+ }
+}

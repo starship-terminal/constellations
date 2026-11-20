@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Womp style guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --page: #FFFFFF;
+  --surface: #FFFFFF;
+  --ground: #FCFCFC;
+  --soft: #EFEFEF;
+  --text: #202020;
+  --muted: #646464;
+  --on-accent: #FCFCFC;
+  --border: #D8D8D9;
+  --hairline: #00000017;
+  --accent: #202020;
+  --focus: #BBBBBB;
+  --sans: Inter, "Inter Fallback", -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --display: "Inter Tight", "Inter Tight Fallback", Inter, -apple-system, system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+[data-mode="dark"] {
+  --page: #111111;
+  --surface: #191919;
+  --ground: #111111;
+  --soft: #222222;
+  --text: #EEEEEE;
+  --muted: #B4B4B4;
+  --on-accent: #111111;
+  --border: #3A3A3A;
+  --hairline: #ffffff1a;
+  --accent: #EEEEEE;
+  --focus: #606060;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--sans); }
+header { display: flex; align-items: center; gap: 16px; height: 64px; padding: 0 40px; border-bottom: 1px solid var(--hairline); position: sticky; top: 0; background: var(--page); }
+header strong { font-family: var(--display); font-weight: 600; }
+header button { margin-left: auto; height: 40px; padding: 0 17px; border-radius: 20px; border: 0; background: var(--accent); color: var(--on-accent); font: 500 16px/24px var(--sans); }
+main { max-width: 1080px; margin: 0 auto; padding: 48px 40px 80px; }
+h2 { font: 600 32px/40px var(--display); letter-spacing: -0.32px; margin: 48px 0 16px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 140px; }
+.swatch i { display: block; height: 64px; border-radius: 16px; border: 1px solid var(--hairline); }
+.swatch span { display: block; margin-top: 6px; font: 400 12px/16px var(--mono); color: var(--muted); }
+.specimen { margin: 8px 0; }
+.btn { display: inline-flex; align-items: center; height: 40px; padding: 0 17px; border-radius: 20px; font: 500 16px/24px var(--sans); text-decoration: none; }
+.solid { background: var(--accent); color: var(--on-accent); box-shadow: inset 0 0 0 1px #00000014, 0 1px 2px #0000000a, 0 4px 14px -4px #00000014; }
+.outline { background: transparent; color: var(--text); box-shadow: inset 0 0 0 1px var(--border); }
+.ghost { background: transparent; color: var(--text); }
+.soft { background: var(--soft); color: var(--text); }
+.chip { display: inline-flex; height: 24px; align-items: center; padding: 0 8px; border-radius: 14px; background: var(--soft); font: 500 12px/16px var(--sans); }
+.card { width: 280px; padding: 16px; border-radius: 16px; background: var(--ground); }
+.field { height: 40px; border-radius: 20px; box-shadow: inset 0 0 0 1px var(--border); padding: 0 16px; display: flex; align-items: center; color: var(--muted); background: transparent; width: 280px; }
+.note { color: var(--muted); font-size: 14px; max-width: 680px; }
+</style>
+</head>
+<body>
+<header>
+  <strong>Womp</strong>
+  <span>Public signed-out surfaces</span>
+  <button type="button" onclick="document.documentElement.dataset.mode = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'">Theme</button>
+</header>
+<main>
+  <p class="note">Rendered from the measured tokens. Light is the marketing page. Dark is the footer theme on the same page. Inter, Inter Tight and JetBrains Mono load from Google Fonts as stand-ins for the families the site serves.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Type</h2>
+  <p class="specimen" style="font:600 64px/70px var(--display); letter-spacing:-1.6px; margin:0">Physical products, built at the speed of software.</p>
+  <p class="specimen" style="font:400 24px/32px var(--sans); letter-spacing:-0.24px">Womp is free, browser-based 3D modeling software.</p>
+  <p class="specimen" style="font:400 12px/16px var(--mono)">OR START FROM A TEMPLATE</p>
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="btn solid">Get started for free</a>
+    <a class="btn outline">Contact sales</a>
+    <a class="btn ghost">Log in</a>
+    <span class="chip">3D printed with Womp</span>
+  </div>
+  <h2>Card and field</h2>
+  <div class="row">
+    <div class="card">
+      <strong style="font:400 24px/32px var(--display)">Starter</strong>
+      <p class="note">Make 3D and bring ideas to life.</p>
+    </div>
+    <div class="field">Enter your email</div>
+  </div>
+</main>
+<script>
+const roles = [["page","Page"],["surface","Surface"],["ground","Ground"],["soft","Soft"],["text","Text"],["muted","Muted"],["accent","Accent"],["on-accent","On accent"],["border","Border"],["focus","Focus"]];
+const box = document.getElementById("swatches");
+for (const [name, label] of roles) {
+  const d = document.createElement("div");
+  d.className = "swatch";
+  d.innerHTML = `<i style="background:var(--${name})"></i><span>${label}</span>`;
+  box.appendChild(d);
+}
+</script>
+</body>
+</html>

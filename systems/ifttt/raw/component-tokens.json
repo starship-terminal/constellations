@@ -1,0 +1,1073 @@
+{
+ "core": {
+  "palette": {
+   "pba1717": {
+    "type": "color",
+    "value": "rgba(17, 17, 17, 0.1)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 709 declarations; e.g. .button-tiny.button-outlined; .button-tiny.button-outlined; .button-tiny.button-outlined)"
+   },
+   "pba0000": {
+    "type": "color",
+    "value": "rgba(0, 0, 0, 0)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 385 declarations; e.g. .button-outlined; .button-outlined:disabled, .button-outlined[aria-disabled=\"true\"]; .button-outlined.button-on-color)"
+   },
+   "grey": {
+    "type": "color",
+    "value": "rgba(17, 17, 17, 0.6)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 253 declarations; e.g. .connect-button-outline.small-flavor .connect-button .service-icon; .button-primary:focus-visible, .button-primary:active, .button-secondary:focus-visible, .button-secondary:acti; .button-tertiary:focus-visible, .button-tertiary:active, .button-mobile-large:focus-visible, .button-mobile-la)"
+   },
+   "grey2": {
+    "type": "color",
+    "value": "#eeeeee",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 182 declarations; e.g. .table th, .table td; .table thead th; header.unified-header.on-color a.sign-up:hover, header.unified-header.on-color a.sign-up:focus)"
+   },
+   "grey22": {
+    "type": "color",
+    "value": "#999999",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 157 declarations; e.g. .ifttt-search .ifttt-search-input:focus::placeholder; .ifttt-search span.icon.search svg > path; body:not(.mobile-universal-search-enabled) .ifttt-search:hover.on-dark input)"
+   },
+   "pff5e19": {
+    "type": "color",
+    "value": "#ff5e19",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 142 declarations; e.g. .form-section p.warning; :is(.form .field:has(.inline-errors) input, .form .field:has(.inline-errors) select, .form .field:has(.inline-; :is(.form .field:has(.inline-errors) input, .form .field:has(.inline-errors) select, .form .field:has(.inline-)"
+   },
+   "pba17172": {
+    "type": "color",
+    "value": "rgba(17, 17, 17, 0.3)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 121 declarations; e.g. .button-tiny.button-outlined:hover, .button-tiny.button-outlined:focus; .button-tiny.button-outlined:hover, .button-tiny.button-outlined:focus; .button-tiny.button-outlined:hover, .button-tiny.button-outlined:focus)"
+   },
+   "pba2552": {
+    "type": "color",
+    "value": "rgba(255, 255, 255, 0.1)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 58 declarations; e.g. .button-outlined.button-on-color:hover, .button-outlined.button-on-color:focus; .button-outlined.button-on-color:active; .button-tiny.button-on-color.button-outlined:hover, .button-tiny.button-on-color.button-outlined:focus)"
+   },
+   "pba25522": {
+    "type": "color",
+    "value": "rgba(255, 255, 255, 0.6)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 57 declarations; e.g. .button-primary.button-on-color:focus-visible, .button-primary.button-on-color:active, .button-secondary.butto; .button-tertiary.button-on-color:focus-visible, .button-tertiary.button-on-color:active, .button-mobile-large.; .button-tiny.button-on-color:focus-visible, .button-tiny.button-on-color:active)"
+   },
+   "p0099ff": {
+    "type": "color",
+    "value": "#0099ff",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 56 declarations; e.g. .form .action .secondary-action:link, .form .action .secondary-action:visited, .form .actions .secondary-actio; body:not(.mobile-universal-search-enabled) .ifttt-search.on-dark .ifttt-search-input:focus; body:not(.mobile-universal-search-enabled) .ifttt-search.on-color .ifttt-search-input:focus)"
+   },
+   "pba255222": {
+    "type": "color",
+    "value": "rgba(255, 255, 255, 0.2)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 48 declarations; e.g. body:not(.mobile-universal-search-enabled) .ifttt-search:hover.on-color input; body:not(.mobile-universal-search-enabled) .ifttt-search.on-color .ifttt-search-input; body:not(.mobile-universal-search-enabled) .ifttt-search.on-color .ifttt-search-input)"
+   },
+   "pba2552222": {
+    "type": "color",
+    "value": "rgba(255, 255, 255, 0.25)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 44 declarations; e.g. .connect-button-outline:not(.small-flavor) .connect-button .alt-brand-color; .connect-button-outline.small-flavor .connect-button .alt-brand-color; .prosumer-home .connect-button-outline:not(.small-flavor) .connect-button .alt-brand-color)"
+   },
+   "pba25522222": {
+    "type": "color",
+    "value": "rgba(255, 255, 255, 0.5)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 42 declarations; e.g. .button-tiny.button-on-color.button-outlined:hover, .button-tiny.button-on-color.button-outlined:focus; .button-tiny.button-on-color.button-outlined:hover, .button-tiny.button-on-color.button-outlined:focus; .button-tiny.button-on-color.button-outlined:hover, .button-tiny.button-on-color.button-outlined:focus)"
+   },
+   "grey222": {
+    "type": "color",
+    "value": "#666666",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 42 declarations; e.g. .ifttt-search:hover input::placeholder; .ifttt-search:hover .icon.search > svg > path; .ifttt-search:hover input::placeholder)"
+   },
+   "pba00002": {
+    "type": "color",
+    "value": "rgba(0, 0, 0, 0.05)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 36 declarations; e.g. .modal .modal-background .modal-content; .modal .modal-background .modal-content; .modal .modal-background .modal-content)"
+   },
+   "p2299dd": {
+    "type": "color",
+    "value": "#2299dd",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 35 declarations; e.g. #nprogress .bar; #nprogress .peg; #nprogress .peg)"
+   },
+   "pd0011b": {
+    "type": "color",
+    "value": "#d0011b",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 35 declarations; e.g. .flash-msg.alert-danger, .flash-msg.error; .flash-msg.alert-danger, .flash-msg.error; .flash-msg.alert-danger, .flash-msg.error)"
+   },
+   "pf5f5f5": {
+    "type": "color",
+    "value": "#f5f5f5",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 29 declarations; e.g. hr; hr; hr)"
+   },
+   "pba171722": {
+    "type": "color",
+    "value": "rgba(17, 17, 17, 0.2)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 28 declarations; e.g. header.unified-header.on-color.on-image .nav-link, header.unified-header.on-color.on-image .sign-in; header.unified-header.on-color.on-image .nav-link, header.unified-header.on-color.on-image .sign-in; header.unified-header.on-color.on-image .nav-link, header.unified-header.on-color.on-image .sign-in)"
+   },
+   "saveGreen": {
+    "type": "color",
+    "value": "#0dd14e",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 27 declarations; e.g. .flash-msg.alert; .flash-msg.alert; .flash-msg.alert)"
+   },
+   "p585858": {
+    "type": "color",
+    "value": "#585858",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 27 declarations; e.g. .build-automation-module .dropdown-field; .build-automation-module .dropdown-field; .build-automation-module .dropdown-field)"
+   },
+   "pba255222222": {
+    "type": "color",
+    "value": "rgba(255, 255, 255, 0.08)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 26 declarations; e.g. .connect-button-outline:not(.small-flavor) .connect-button .service-icon; .prosumer-home .connect-button-outline:not(.small-flavor) .connect-button .service-icon; .connect-button-outline:not(.small-flavor) .connect-button .service-icon)"
+   },
+   "pba2552222222": {
+    "type": "color",
+    "value": "rgba(255, 255, 255, 0.85)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 26 declarations; e.g. .prosumer-home .story-spotlight__panel .story-box .category p; .prosumer-home .upgrade-with-ifttt-pro ul.upgrade-benefits li span; .prosumer-home .story-spotlight__panel .story-box .category p)"
+   },
+   "pba25522222222": {
+    "type": "color",
+    "value": "rgba(255, 255, 255, 0.12)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 25 declarations; e.g. body:not(.mobile-universal-search-enabled) .ifttt-search.on-dark span.icon.clean-search svg rect; body:not(.mobile-universal-search-enabled) .ifttt-search.on-dark span.icon.clean-search svg rect; body:not(.mobile-universal-search-enabled) .ifttt-search.on-dark span.icon.clean-search svg rect)"
+   },
+   "pba255222222222": {
+    "type": "color",
+    "value": "rgba(255, 255, 255, 0.15)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 20 declarations; e.g. .mcp-page .mcp-agent-showcase__tab; .mcp-page .mcp-agent-showcase__tab; .mcp-page .mcp-agent-showcase__tab)"
+   },
+   "pba2552222222222": {
+    "type": "color",
+    "value": "rgba(255, 255, 255, 0.4)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 20 declarations; e.g. .mcp-page .mcp-agent-showcase__tab:hover; .mcp-page .mcp-agent-showcase__tab:hover; .mcp-page .mcp-agent-showcase__tab:hover)"
+   },
+   "p2cbe60": {
+    "type": "color",
+    "value": "#2cbe60",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 18 declarations; e.g. .promo_code_form__promo-code-field___VtO5u.promo_code_form__success___VtO5u input[type=\"text\"]; .promo_code_form__promo-code-field___VtO5u.promo_code_form__success___VtO5u input[type=\"text\"]; .promo_code_form__promo-code-field___VtO5u.promo_code_form__success___VtO5u input[type=\"text\"])"
+   },
+   "pba000022": {
+    "type": "color",
+    "value": "rgba(0, 0, 0, 0.24)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 17 declarations; e.g. .web-applet-card .applet-card-body; .web-applet-card .applet-card-body; .service-card)"
+   },
+   "p333333": {
+    "type": "color",
+    "value": "#333333",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 17 declarations; e.g. .tool-tip--dark; .about-service-detail-card .service-detail-content .similar-services .similar-services-list .similar-service-i; .tool-tip--dark)"
+   },
+   "pf3f3f3": {
+    "type": "color",
+    "value": "#f3f3f3",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 16 declarations; e.g. section.get-started.background-neutral; .tqa-card .tqa-card-actions a.tqa-card-try:hover, .tqa-card .tqa-card-actions a.tqa-card-try:focus, .tqa-card ; section.get-started.background-neutral)"
+   },
+   "pd4545c": {
+    "type": "color",
+    "value": "#d4545c",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 14 declarations; e.g. .warning-box; .warning-box a, .warning-box a:visited; .warning-box)"
+   },
+   "pba1717222": {
+    "type": "color",
+    "value": "rgba(17, 17, 17, 0.15)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 14 declarations; e.g. header.unified-header.on-color.on-image .logo svg:not(.ifttt-logo-ai) path, header.unified-header.on-color.on-; .account-menu .account-menu-panel; header.unified-header.on-color.on-image .logo svg:not(.ifttt-logo-ai) path, header.unified-header.on-color.on-)"
+   },
+   "pe9e9e9": {
+    "type": "color",
+    "value": "#e9e9e9",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 12 declarations; e.g. .mcp-page .mcp-how-works__card; .mcp-page .mcp-how-works__card; .mcp-page .mcp-how-works__card)"
+   },
+   "p888888": {
+    "type": "color",
+    "value": "#888888",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 12 declarations; e.g. .build-automation-module .dropdown-field:hover:not(.open); .build-automation-module .dropdown-field:hover:not(.open); .build-automation-module .dropdown-field:hover:not(.open))"
+   },
+   "pe7e7e7": {
+    "type": "color",
+    "value": "#e7e7e7",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 11 declarations; e.g. .credits-plans-table th, .credits-plans-table td; .credits-plans-table td; .generator_modal__ai-generator-modal___SAkkO .generator_modal__connector-line___SAkkO)"
+   },
+   "pba25522222222222": {
+    "type": "color",
+    "value": "rgba(255, 255, 255, 0.7)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 11 declarations; e.g. .mcp-page .mcp-agent-showcase__subtitle; .sdk-configure-page-content .field input[type=\"text\"]:focus, .sdk-configure-page-content .field select:focus, ; .sdk-configure-page-content .field input[type=\"text\"]:focus, .sdk-configure-page-content .field select:focus, )"
+   },
+   "pba0000222": {
+    "type": "color",
+    "value": "rgba(0, 0, 0, 0.25)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 11 declarations; e.g. .modal .modal-background .modal-content; .tool-tip--dark; .tool-tip--dark)"
+   },
+   "p0089da": {
+    "type": "color",
+    "value": "#0089da",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 10 declarations; e.g. .link-standalone:hover, .link-caption:hover; .link-standalone:hover, .link-caption:hover; .link-standalone:hover, .link-caption:hover)"
+   },
+   "pba17172222": {
+    "type": "color",
+    "value": "rgba(17, 17, 17, 0.08)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 10 declarations; e.g. .universal-search-helper ul.universal-search-helper-list li .recent-search-icon; .universal-search-helper ul.universal-search-helper-list li .recent-search-icon; .universal-search-helper ul.universal-search-helper-list li .recent-search-icon)"
+   },
+   "pba00002222": {
+    "type": "color",
+    "value": "rgba(0, 0, 0, 0.5)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 10 declarations; e.g. .modal .modal-background; .services-body.triggers-action .service-action-info dt, .services-body.queries-action .service-action-info dt,; .services-body.triggers-action .service-action-info .type-definition, .services-body.queries-action .service-a)"
+   },
+   "p000000": {
+    "type": "color",
+    "value": "#000000",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 9 declarations; e.g. .story-box .cta.shadow; .story-box .cta.shadow; .story-box .cta.shadow)"
+   },
+   "pdfdfdf": {
+    "type": "color",
+    "value": "#dfdfdf",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 8 declarations; e.g. .shared-content-body main.container.web .shared-content .note-content; .shared-content-body main.container.web .shared-content .note-content; .shared-content-body main.container.web .shared-content .note-content)"
+   },
+   "pffe4fb": {
+    "type": "color",
+    "value": "#ffe4fb",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 7 declarations; e.g. .ifttt-logo-ai-on-dark .cap; .ifttt-logo-ai-on-dark .cap; .ifttt-logo-ai-on-dark .cap)"
+   },
+   "pf5d8da": {
+    "type": "color",
+    "value": "#f5d8da",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 7 declarations; e.g. .warning-box; .warning-box; .warning-box)"
+   },
+   "pff9900": {
+    "type": "color",
+    "value": "#ff9900",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 7 declarations; e.g. .flash-msg.alert-warning; .flash-msg.alert-warning; .flash-msg.alert-warning)"
+   },
+   "pba000022222": {
+    "type": "color",
+    "value": "rgba(0, 0, 0, 0.14)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 7 declarations; e.g. .universal-search-helper; .universal-search-helper; .universal-search-helper)"
+   },
+   "pba171722222": {
+    "type": "color",
+    "value": "rgba(17, 17, 17, 0.03)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 7 declarations; e.g. .universal-search-helper .search-navigation:hover, .universal-search-helper .search-navigation.highlighted; .universal-search-helper .search-navigation:hover, .universal-search-helper .search-navigation.highlighted; .universal-search-helper .search-navigation:hover, .universal-search-helper .search-navigation.highlighted)"
+   },
+   "pee4332": {
+    "type": "color",
+    "value": "#ee4332",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 7 declarations; e.g. body.services-body.group-location-setup-action form .email-field .email-input input[type=\"email\"].invalid; body.services-body.group-location-setup-action form .email-field .email-input input[type=\"email\"].invalid; body.services-body.group-location-setup-action form .email-field .email-input input[type=\"email\"].invalid)"
+   },
+   "pe4f9e7": {
+    "type": "color",
+    "value": "#e4f9e7",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. section.use-case .content-wrapper; section.use-case .content-wrapper; section.use-case .content-wrapper)"
+   },
+   "pddff00": {
+    "type": "color",
+    "value": "#ddff00",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .ingredients-text-field .ingredient-pill-warning; .hint_pill__warning___fVRuU .hint_pill__icon___fVRuU svg path; .ingredients-text-field .ingredient-pill-warning)"
+   },
+   "pba0000222222": {
+    "type": "color",
+    "value": "rgba(0, 0, 0, 0.2)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .returning_user_flow__returning_user_flow___YStCM .returning_user_flow__connection-status-container___YStCM .r; .connect_url__email-input___bcf_H .connect_url__verify-button___bcf_H; .connect_url__verify-service___bcf_H .connect_url__big-button___bcf_H, .connect_url__connect-cta___bcf_H .conn)"
+   },
+   "pba1717222222": {
+    "type": "color",
+    "value": "rgba(17, 17, 17, 0.5)",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 4 declarations; e.g. .new-diy-composer .diy-on-color :is(input[type=\"text\"]:not(.ifttt-search-input), input[type=\"password\"], input; .new-diy-composer .diy-on-color :is(input[type=\"text\"]:not(.ifttt-search-input), input[type=\"password\"], input; .new-diy-composer .diy-on-color :is(input[type=\"text\"]:not(.ifttt-search-input), input[type=\"password\"], input)"
+   },
+   "pbfefc4": {
+    "type": "color",
+    "value": "#bfefc4",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 3 declarations; e.g. section.use-case .connect-header span; section.use-case .connect-header span; section.use-case .connect-header span)"
+   },
+   "pcccccc": {
+    "type": "color",
+    "value": "#cccccc",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 3 declarations; e.g. .ingredients-text-field .ingredients-button:disabled; .ingredients-text-field .ingredients-button:disabled; .ifttt-next-profile-body .profile-container .profile-header .profile-avatar-container)"
+   },
+   "p3b579d": {
+    "type": "color",
+    "value": "#3b579d",
+    "source": "literal in the site's stylesheets (raw/css-vars.json palette, 3 declarations; e.g. .monaco-editor-wrapper-outer .monaco-editor .suggest-widget:not(.frozen) .monaco-highlighted-label .highlight; .sign_in_page__sso-button-facebook___QExol; .monaco-editor-wrapper-outer .monaco-editor .suggest-widget:not(.frozen) .monaco-highlighted-label .highlight)"
+   }
+  },
+  "typography": {
+   "hero": {
+    "$value": {
+     "fontFamily": "\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif",
+     "fontSize": "79.3296px",
+     "fontWeight": 900,
+     "lineHeight": "79.3296px"
+    },
+    "$type": "typography",
+    "$description": "the home hero display — Museo Sans Rounded 900",
+    "$extensions": {
+     "source": "measured hero-headline on home (default state)"
+    }
+   },
+   "exploreHero": {
+    "$value": {
+     "fontFamily": "\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif",
+     "fontSize": "32px",
+     "fontWeight": 700,
+     "lineHeight": "41.6px"
+    },
+    "$type": "typography",
+    "$description": "the explore 'Automate X with Y' display",
+    "$extensions": {
+     "source": "measured explore-hero on explore (default state)"
+    }
+   },
+   "pageTitle": {
+    "$value": {
+     "fontFamily": "\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif",
+     "fontSize": "64px",
+     "fontWeight": 900,
+     "lineHeight": "64px"
+    },
+    "$type": "typography",
+    "$description": "a marketing page headline",
+    "$extensions": {
+     "source": "measured marketing-h1 on mcp (default state)"
+    }
+   },
+   "sectionTitle": {
+    "$value": {
+     "fontFamily": "\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif",
+     "fontSize": "50px",
+     "fontWeight": 900,
+     "lineHeight": "50px"
+    },
+    "$type": "typography",
+    "$description": "a home section heading",
+    "$extensions": {
+     "source": "measured section-heading on home (default state)"
+    }
+   },
+   "body": {
+    "$value": {
+     "fontFamily": "\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif",
+     "fontSize": "18px",
+     "fontWeight": 600,
+     "lineHeight": "23.4px"
+    },
+    "$type": "typography",
+    "$description": "body prose — Museo Sans Rounded",
+    "$extensions": {
+     "source": "measured prose-p on mcp (default state)"
+    }
+   },
+   "bodyLink": {
+    "$value": {
+     "fontFamily": "\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif",
+     "fontSize": "16px",
+     "fontWeight": 900,
+     "lineHeight": "20.8px"
+    },
+    "$type": "typography",
+    "$description": "a body-text link",
+    "$extensions": {
+     "source": "measured prose-link on terms (default state)"
+    }
+   },
+   "navLink": {
+    "$value": {
+     "fontFamily": "\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif",
+     "fontSize": "20px",
+     "fontWeight": 900,
+     "lineHeight": "22px"
+    },
+    "$type": "typography",
+    "$description": "a nav link",
+    "$extensions": {
+     "source": "measured nav-link on explore (default state)"
+    }
+   },
+   "button": {
+    "$value": {
+     "fontFamily": "\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif",
+     "fontSize": "20px",
+     "fontWeight": 900,
+     "lineHeight": "22px"
+    },
+    "$type": "typography",
+    "$description": "the header button label",
+    "$extensions": {
+     "source": "measured nav-signup on explore (default state)"
+    }
+   },
+   "buttonHero": {
+    "$value": {
+     "fontFamily": "\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif",
+     "fontSize": "34px",
+     "fontWeight": 900,
+     "lineHeight": "37.4px"
+    },
+    "$type": "typography",
+    "$description": "the hero action label",
+    "$extensions": {
+     "source": "measured hero-submit on home (default state)"
+    }
+   },
+   "price": {
+    "$value": {
+     "fontFamily": "\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif",
+     "fontSize": "50px",
+     "fontWeight": 900,
+     "lineHeight": "50px"
+    },
+    "$type": "typography",
+    "$description": "the plan price figure",
+    "$extensions": {
+     "source": "measured plan-price on plans (default state)"
+    }
+   },
+   "appletMeta": {
+    "$value": {
+     "fontFamily": "\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif",
+     "fontSize": "16px",
+     "fontWeight": 900,
+     "lineHeight": "20.8px"
+    },
+    "$type": "typography",
+    "$description": "the applet byline",
+    "$extensions": {
+     "source": "measured applet-meta on applet (default state)"
+    }
+   },
+   "tab": {
+    "$value": {
+     "fontFamily": "\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif",
+     "fontSize": "18px",
+     "fontWeight": 700,
+     "lineHeight": "24px"
+    },
+    "$type": "typography",
+    "$description": "a featured category tab",
+    "$extensions": {
+     "source": "measured featured-tab on home (default state)"
+    }
+   },
+   "footerLink": {
+    "$value": {
+     "fontFamily": "\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif",
+     "fontSize": "34px",
+     "fontWeight": 900,
+     "lineHeight": "37.4px"
+    },
+    "$type": "typography",
+    "$description": "a footer link",
+    "$extensions": {
+     "source": "measured footer-link on explore (default state)"
+    }
+   },
+   "serviceChip": {
+    "$value": {
+     "fontFamily": "\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif",
+     "fontSize": "32px",
+     "fontWeight": 700,
+     "lineHeight": "41.6px"
+    },
+    "$type": "typography",
+    "$description": "a service chip label",
+    "$extensions": {
+     "source": "measured explore-service-chip on explore (default state)"
+    }
+   }
+  },
+  "font": {
+   "family": {
+    "brand": {
+     "type": "fontFamily",
+     "value": "\"Museo Sans Rounded\", \"Museo Sans Rounded Fallback\", \"Avenir Next\", helvetica, arial, sans-serif",
+     "source": "computed fontFamily of site-header default (raw/components-computed.json), verbatim; 'Museo Sans Rounded' weights 300/500/700/900 + italics are declared by @font-face in the site's sheets, served from web-assets.ifttt.com — the name is evidence, the font file is not shipped",
+     "description": "the brand face — every weight the site ships"
+    },
+    "fallback": {
+     "type": "fontFamily",
+     "value": "ui-sans-serif, system-ui, sans-serif",
+     "source": "Reconstruction — entered by hand at capture time: a hand-written fallback stack for consumers without the licensed face; nothing on the site declares it",
+     "description": "fallback for consumers without the licensed face"
+    }
+   }
+  }
+ },
+ "light": {
+  "misc": {
+   "baseFontFamily": {
+    "type": "fontFamily",
+    "var": "--base-font-family"
+   },
+   "codeFontFamily": {
+    "type": "fontFamily",
+    "var": "--code-font-family"
+   },
+   "defaultFontSize": {
+    "type": "dimension",
+    "var": "--default-font-size"
+   },
+   "phoneFontSize": {
+    "type": "dimension",
+    "var": "--phone-font-size"
+   },
+   "primaryText": {
+    "type": "color",
+    "var": "--primary-text"
+   },
+   "screenLgMax": {
+    "type": "dimension",
+    "var": "--screen-lg-max"
+   },
+   "screenLgMin": {
+    "type": "dimension",
+    "var": "--screen-lg-min"
+   },
+   "screenMdMax": {
+    "type": "dimension",
+    "var": "--screen-md-max"
+   },
+   "screenMdMin": {
+    "type": "dimension",
+    "var": "--screen-md-min"
+   },
+   "screenMlMax": {
+    "type": "dimension",
+    "var": "--screen-ml-max"
+   },
+   "screenMlMin": {
+    "type": "dimension",
+    "var": "--screen-ml-min"
+   },
+   "screenSmMax": {
+    "type": "dimension",
+    "var": "--screen-sm-max"
+   },
+   "screenSmMin": {
+    "type": "dimension",
+    "var": "--screen-sm-min"
+   },
+   "screenXlMin": {
+    "type": "dimension",
+    "var": "--screen-xl-min"
+   },
+   "screenXsMax": {
+    "type": "dimension",
+    "var": "--screen-xs-max"
+   },
+   "screenXsMin": {
+    "type": "dimension",
+    "var": "--screen-xs-min"
+   },
+   "screenXxsMax": {
+    "type": "dimension",
+    "var": "--screen-xxs-max"
+   },
+   "screenXxsMin": {
+    "type": "dimension",
+    "var": "--screen-xxs-min"
+   },
+   "smallDesktopFontSize": {
+    "type": "dimension",
+    "var": "--small-desktop-font-size"
+   }
+  },
+  "color": {
+   "text": {
+    "body": {
+     "type": "color",
+     "value": "#111111",
+     "source": "measured prose-p default on mcp (body ink)",
+     "description": "body ink"
+    },
+    "muted": {
+     "type": "color",
+     "value": "rgba(17, 17, 17, 0.7)",
+     "source": "measured plan-feature default on plans (secondary ink (the plan feature lines))",
+     "description": "secondary ink (the plan feature lines)"
+    },
+    "display": {
+     "type": "color",
+     "value": "#111111",
+     "source": "measured hero-headline default on home (headline ink)",
+     "description": "headline ink"
+    },
+    "onColorSubtle": {
+     "type": "color",
+     "value": "#ffffff",
+     "source": "measured applet-meta default on applet (secondary ink on brand-coloured heroes)",
+     "description": "secondary ink on brand-coloured heroes"
+    },
+    "footer": {
+     "type": "color",
+     "value": "#111111",
+     "source": "measured footer-link default on explore (footer link ink)",
+     "description": "footer link ink"
+    },
+    "link": {
+     "type": "color",
+     "value": "#01b6ff",
+     "source": "measured prose-link default on terms (link ink in prose)",
+     "description": "link ink in prose"
+    }
+   },
+   "bg": {
+    "page": {
+     "type": "color",
+     "value": "#ffffff",
+     "source": "document body computed background on ifttt.ai/ (raw/layout.json home@1440)",
+     "description": "the page ground"
+    }
+   },
+   "action": {
+    "fill": {
+     "type": "color",
+     "value": "#111111",
+     "source": "measured hero-submit default on home (primary action fill)",
+     "description": "primary action fill"
+    },
+    "onFill": {
+     "type": "color",
+     "value": "#ffffff",
+     "source": "measured hero-submit default on home (ink on the primary fill)",
+     "description": "ink on the primary fill"
+    },
+    "hoverFill": {
+     "type": "color",
+     "value": "#111111",
+     "source": "measured hero-submit hover on home (primary fill on hover)",
+     "description": "primary fill on hover"
+    },
+    "outline": {
+     "type": "color",
+     "value": "#111111",
+     "source": "measured plan-cta default on plans (outlined pill border)",
+     "description": "outlined pill border"
+    },
+    "outlineInk": {
+     "type": "color",
+     "value": "#111111",
+     "source": "measured plan-cta default on plans (outlined pill ink)",
+     "description": "outlined pill ink"
+    },
+    "secondaryOutline": {
+     "type": "color",
+     "value": "#ffffff",
+     "source": "measured secondary-cta default on home (secondary CTA border)",
+     "description": "secondary CTA border"
+    },
+    "secondaryInk": {
+     "type": "color",
+     "value": "#ffffff",
+     "source": "measured secondary-cta default on home (secondary CTA ink)",
+     "description": "secondary CTA ink"
+    }
+   }
+  },
+  "component": {
+   "dark": {
+    "navInk": {
+     "type": "color",
+     "value": "#ffffff",
+     "source": "measured nav-link default on explore (nav-link ink on the dark heroes)",
+     "description": "nav-link ink on the dark heroes"
+    },
+    "ground": {
+     "type": "color",
+     "value": "#111111",
+     "source": "document body computed background on /explore (raw/layout.json explore@1440) — the dark painted explore ground",
+     "description": "the dark painted ground behind /explore"
+    },
+    "outline": {
+     "type": "color",
+     "value": "#ffffff",
+     "source": "measured nav-login default on explore (outlined pill border on the dark heroes)",
+     "description": "outlined pill border on the dark heroes"
+    },
+    "outlineInk": {
+     "type": "color",
+     "value": "#ffffff",
+     "source": "measured nav-login default on explore (outlined pill ink on the dark heroes)",
+     "description": "outlined pill ink on the dark heroes"
+    },
+    "navFill": {
+     "type": "color",
+     "value": "#ffffff",
+     "source": "measured nav-signup default on explore (header 'Get started' fill on the dark heroes)",
+     "description": "header 'Get started' fill on the dark heroes"
+    },
+    "navFillInk": {
+     "type": "color",
+     "value": "#111111",
+     "source": "measured nav-signup default on explore (header 'Get started' ink on the dark heroes)",
+     "description": "header 'Get started' ink on the dark heroes"
+    },
+    "heroBg": {
+     "type": "color",
+     "value": "#111111",
+     "source": "measured explore-hero default on explore (explore dark hero ground)",
+     "description": "explore dark hero ground"
+    },
+    "chipInk": {
+     "type": "color",
+     "value": "#ee831e",
+     "source": "measured explore-service-chip default on explore (service chip ink on the dark hero)",
+     "description": "service chip ink on the dark hero"
+    },
+    "actionFill": {
+     "type": "color",
+     "value": "#ffffff",
+     "source": "measured get-started-today default on connect (action fill on the dark heroes)",
+     "description": "action fill on the dark heroes"
+    },
+    "actionInk": {
+     "type": "color",
+     "value": "#111111",
+     "source": "measured get-started-today default on connect (action ink on the dark heroes)",
+     "description": "action ink on the dark heroes"
+    },
+    "linkInk": {
+     "type": "color",
+     "value": "#ffffff",
+     "source": "measured author-link default on applet (link ink on the applet hero)",
+     "description": "link ink on the applet hero"
+    }
+   },
+   "planCard": {
+    "ctaBorder": {
+     "type": "color",
+     "value": "#111111",
+     "source": "measured plan-cta default on plans (plan card CTA border)",
+     "description": "plan card CTA border"
+    },
+    "recommendedBg": {
+     "type": "color",
+     "value": "#ffffff",
+     "source": "measured plan-card-recommended default on plans (recommended plan card ground)",
+     "description": "recommended plan card ground"
+    }
+   },
+   "input": {
+    "searchBg": {
+     "type": "color",
+     "value": "#111111",
+     "source": "measured nav-search default on explore (header search field fill)",
+     "description": "header search field fill"
+    },
+    "searchBorder": {
+     "type": "color",
+     "value": "rgba(255, 255, 255, 0.3)",
+     "source": "measured nav-search default on explore (header search field border)",
+     "description": "header search field border"
+    },
+    "shareFieldBg": {
+     "type": "color",
+     "value": "rgba(17, 17, 17, 0.05)",
+     "source": "measured share-url-field default on connect (share URL field fill)",
+     "description": "share URL field fill"
+    }
+   },
+   "card": {
+    "appletBg": {
+     "type": "color",
+     "value": "#1db954",
+     "source": "measured applet-card default on explore (applet card ground)",
+     "description": "applet card ground"
+    },
+    "serviceBg": {
+     "type": "color",
+     "value": "#14223d",
+     "source": "measured service-card default on explore (service card ground)",
+     "description": "service card ground"
+    }
+   },
+   "switch": {
+    "trackOn": {
+     "type": "color",
+     "value": "#01b6ff",
+     "source": "measured billing-toggle default on plans (billing switch track (on))",
+     "description": "billing switch track (on)"
+    },
+    "trackOff": {
+     "type": "color",
+     "value": "rgba(17, 17, 17, 0.4)",
+     "source": "measured billing-toggle toggled on plans (billing switch track (off))",
+     "description": "billing switch track (off)"
+    }
+   },
+   "tab": {
+    "fill": {
+     "type": "color",
+     "value": "rgba(17, 17, 17, 0.05)",
+     "source": "measured featured-tab default on home (featured tab fill)",
+     "description": "featured tab fill"
+    },
+    "activeFill": {
+     "type": "color",
+     "value": "#111111",
+     "source": "measured featured-tab selected on home (featured tab fill, active)",
+     "description": "featured tab fill, active"
+    },
+    "activeInk": {
+     "type": "color",
+     "value": "#ffffff",
+     "source": "measured featured-tab selected on home (featured tab ink, active)",
+     "description": "featured tab ink, active"
+    }
+   }
+  }
+ },
+ "component": {
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "99px",
+    "source": "measured site-header default on explore (the unified header)"
+   }
+  },
+  "button": {
+   "small": {
+    "height": {
+     "type": "dimension",
+     "value": "54px",
+     "source": "measured nav-login default on explore (header 'Log in' pill)"
+    },
+    "radius": {
+     "type": "dimension",
+     "value": "64px",
+     "source": "measured nav-signup default on explore (header pill corner)"
+    },
+    "outlinedRadius": {
+     "type": "dimension",
+     "value": "64px",
+     "source": "measured nav-login default on explore (outlined pill corner)"
+    }
+   },
+   "hero": {
+    "height": {
+     "type": "dimension",
+     "value": "101px",
+     "source": "measured hero-submit default on home ('Start building')"
+    },
+    "radius": {
+     "type": "dimension",
+     "value": "64px",
+     "source": "measured hero-submit default on home ('Start building' corner)"
+    }
+   },
+   "secondary": {
+    "height": {
+     "type": "dimension",
+     "value": "79px",
+     "source": "measured secondary-cta default on home ('Join today' secondary)"
+    },
+    "radius": {
+     "type": "dimension",
+     "value": "64px",
+     "source": "measured secondary-cta default on home (secondary CTA corner)"
+    }
+   },
+   "planCta": {
+    "height": {
+     "type": "dimension",
+     "value": "54px",
+     "source": "measured plan-cta default on plans (plan card CTA)"
+    },
+    "radius": {
+     "type": "dimension",
+     "value": "64px",
+     "source": "measured plan-cta default on plans (plan CTA corner)"
+    }
+   },
+   "share": {
+    "radius": {
+     "type": "dimension",
+     "value": "64px",
+     "source": "measured share-button default on connect (Share pill corner)"
+    }
+   },
+   "back": {
+    "radius": {
+     "type": "dimension",
+     "value": "64px",
+     "source": "measured back-button default on connect (Back pill corner)"
+    }
+   }
+  },
+  "connectToggle": {
+   "height": {
+    "type": "dimension",
+    "value": "95.94px",
+    "source": "measured connect-toggle default on applet (the Applet Connect toggle)"
+   },
+   "width": {
+    "type": "dimension",
+    "value": "480.05px",
+    "source": "measured connect-toggle default on applet (the Applet Connect toggle)"
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "47.97px",
+    "source": "measured connect-toggle default on applet (Connect toggle corner)"
+   }
+  },
+  "input": {
+   "search": {
+    "height": {
+     "type": "dimension",
+     "value": "48px",
+     "source": "measured nav-search default on explore (header search field)"
+    },
+    "radius": {
+     "type": "dimension",
+     "value": "32px",
+     "source": "measured nav-search default on explore (search field corner)"
+    }
+   },
+   "gallerySearch": {
+    "height": {
+     "type": "dimension",
+     "value": "55px",
+     "source": "measured gallery-search default on explore ('Search automations' field)"
+    }
+   },
+   "shareField": {
+    "height": {
+     "type": "dimension",
+     "value": "55px",
+     "source": "measured share-url-field default on connect (share URL field)"
+    },
+    "radius": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "measured share-url-field default on connect (share URL field corner)"
+    }
+   }
+  },
+  "promptField": {
+   "height": {
+    "type": "dimension",
+    "value": "78px",
+    "source": "measured hero-prompt default on home (hero prompt textarea)"
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "0px",
+    "source": "measured hero-prompt default on home (prompt textarea corner)"
+   }
+  },
+  "tab": {
+   "height": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "measured featured-tab default on home (featured category tab)"
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "8px",
+    "source": "measured featured-tab default on home (featured tab corner)"
+   }
+  },
+  "switch": {
+   "height": {
+    "type": "dimension",
+    "value": "32px",
+    "source": "measured billing-toggle default on plans (billing switch track)"
+   },
+   "width": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "measured billing-toggle default on plans (billing switch track)"
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "measured billing-toggle default on plans (billing switch corner)"
+   }
+  },
+  "serviceChip": {
+   "height": {
+    "type": "dimension",
+    "value": "42px",
+    "source": "measured explore-service-chip default on explore (explore hero service chip)"
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "0px",
+    "source": "measured explore-service-chip default on explore (explore chip corner)"
+   }
+  },
+  "serviceIcon": {
+   "size": {
+    "type": "dimension",
+    "value": "110px",
+    "source": "measured service-icon default on connect (service icon tile)"
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "12px",
+    "source": "measured service-chip default on home (service icon tile corner)"
+   }
+  },
+  "mobileHeader": {
+   "height": {
+    "type": "dimension",
+    "value": "64px",
+    "source": "measured m-header default on mobile (mobile header)"
+   }
+  },
+  "menuButton": {
+   "height": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "measured m-menu-button default on mobile (mobile hamburger)"
+   }
+  },
+  "backButton": {
+   "height": {
+    "type": "dimension",
+    "value": "54px",
+    "source": "measured back-button default on connect (detail 'Back' pill)"
+   }
+  },
+  "card": {
+   "applet": {
+    "radius": {
+     "type": "dimension",
+     "value": "24px",
+     "source": "measured applet-card default on explore (applet card corner)"
+    },
+    "shadow": {
+     "type": "other",
+     "value": "rgba(0, 0, 0, 0.24) 0px 1.5px 6px 0px",
+     "source": "measured applet-card default on explore (applet card shadow)"
+    }
+   },
+   "service": {
+    "radius": {
+     "type": "dimension",
+     "value": "24px",
+     "source": "measured service-card default on explore (service card corner)"
+    },
+    "shadow": {
+     "type": "other",
+     "value": "rgba(0, 0, 0, 0.24) 0px 1.5px 6px 0px",
+     "source": "measured service-card default on explore (service card shadow)"
+    }
+   },
+   "plan": {
+    "radius": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "measured plan-card default on plans (plan card corner)"
+    }
+   },
+   "planRecommended": {
+    "radius": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "measured plan-card-recommended default on plans (recommended plan card corner)"
+    }
+   },
+   "example": {
+    "radius": {
+     "type": "dimension",
+     "value": "0px",
+     "source": "measured example-prompt-card default on explore (example prompt card corner)"
+    }
+   },
+   "story": {
+    "radius": {
+     "type": "dimension",
+     "value": "24px",
+     "source": "measured story-card default on explore (story card corner)"
+    }
+   }
+  }
+ }
+}

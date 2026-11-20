@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>manychat.com style guide</title>
+<meta name="description" content="manychat.com design tokens and the public marketing surface, rendered from tokens.json. The site sets html font-size to 10px, so 1rem is 10px.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Rooftop", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "ManyChatGravity", "Arial Narrow", Impact, sans-serif;
+  --sg-pill: "Rooftop", ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: "CoFo Sans Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #0f0f0f); background: var(--background-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.1 var(--sg-serif); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-primary, #0f0f0f); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-default, rgba(15, 15, 15, 0.08)); }
+.lead { max-width: 62ch; color: var(--text-primary, #0f0f0f); opacity: .8; }
+.note { font-size: 13px; color: var(--text-primary, #0f0f0f); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-primary, #0f0f0f); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--color-brand-ink, #030302); padding: 12px; border-radius: 12px; }
+.pal.dark .nm, .pal.dark .vl { color: rgba(255, 255, 255, 0.898); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-default, rgba(15, 15, 15, 0.08)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-primary, #0f0f0f); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-default, rgba(15, 15, 15, 0.08)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-primary, #0f0f0f); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border-default, rgba(15, 15, 15, 0.08)); overflow: hidden; background: var(--background-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 20px; height: var(--component-nav-height, 92px); padding: 0 10px 0 18px; font-size: 16px; color: var(--text-primary, #0f0f0f); background: #fff; border-radius: 0; margin: 0; }
+.navbar .wm { font-weight: 800; font-size: 18px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.navbar .link { color: var(--text-primary, #0f0f0f); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 20px; font-size: 14px; font-weight: 500; border-radius: var(--radius-full, 999px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-ink, #0f0f0f); color: #fff; }
+.btn.light { background: #fff; color: var(--text-primary, #0f0f0f); }
+.btn.outline { background: transparent; color: var(--text-primary, #0f0f0f); box-shadow: inset 0 0 0 1px var(--border-default, rgba(15,15,15,.08)); }
+.hero { color: var(--text-primary, #0f0f0f); padding: 96px 40px 90px; font: 400 52px/1 var(--sg-serif); text-align: left; background: var(--color-raw-neutral-10, #f5f5f5); }
+.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); color: var(--text-secondary, rgba(15,15,15,.6)); margin: 18px 0 26px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border-default, rgba(15,15,15,.08)); padding: 18px; font-size: 13px; background: #fff; border-radius: 24px; }
+.tile .img { height: 100px; background: var(--background-page, #fff); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: var(--radius-default, 10px); }
+.tile b { display: block; font: 400 20px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .price { font: 400 40px/1.1 var(--sg-serif); margin: 8px 0 2px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-default, rgba(15,15,15,.08)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-default, rgba(15,15,15,.08)); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--text-primary, #0f0f0f); opacity: .65; font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: var(--background-page, #fff); border-radius: var(--radius-full, 9999px); padding: 4px; gap: 0; font-size: 16px; }
+.toggle span { padding: 10px 28px; border-radius: var(--radius-full, 9999px); font-weight: 500; color: var(--color-brand-ink, #030302); }
+.toggle .on { background: var(--background-field-surface, #fff); box-shadow: 0 1px 3px rgba(3,3,2,.12); }
+</style>
+</head>
+<body>
+<main>
+  <h1>manychat.com style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and type step below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels. The site sets html font-size to 10px, so a 7.2rem heading is 72px.</p>
+
+  <h2 class="sh">manychat.com, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: white page, #0f0f0f ink, #fa0cf7 neon-pink hero pill, a 15-step brand palette, ManyChatGravity display, Rooftop UI, CoFo Sans Mono labels. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from manychat.com on 2026-11-18, signed out, in headless Chromium. The bot builder lives behind app.manychat.com. Log in, Get started and Start for free were measured, never followed. The Usercentrics privacy layer was hidden, never answered. The proprietary faces are served by the site; samples fall back to system faces.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A 68px black Creator World strip sits over a 92px white nav: the wordmark, Product, Solutions, Agencies, Pricing, Resources, EN, Log in, and a Get started pill.</p>
+  <div class="mock" style="background:#fff;padding:0">
+    <div style="display:flex;align-items:center;gap:10px;height:68px;padding:0 20px;background:#0f0f0f;color:#fff;font-size:14px"><span>Creator World 27</span><span class="sp" style="flex:1"></span></div>
+    <div class="navbar" style="height:92px;border-radius:0;margin:0;box-shadow:none;background:var(--background-page,#fff)"><span class="wm" style="font-weight:700;font-size:18px;color:var(--text-primary,#0f0f0f)">manychat</span><span class="link" style="font-family:var(--sg-mono);font-size:12px;letter-spacing:.04em;color:var(--text-primary,#0f0f0f)">PRODUCT</span><span class="link" style="font-family:var(--sg-mono);font-size:12px;color:var(--text-primary,#0f0f0f)">PRICING</span><span class="sp"></span><span class="link" style="font-family:var(--sg-mono);font-size:12px;color:var(--text-primary,#0f0f0f)">EN</span><span class="link" style="font-size:14px;color:var(--text-primary,#0f0f0f)">LOG IN</span><span class="btn" style="height:44px;padding:0 20px;border-radius:999px;background:var(--action-ink,#0f0f0f);color:#fff">GET STARTED</span></div>
+  </div>
+
+  <h2 class="sh">The hero</h2>
+  <p class="lead">The home opens on a photo with a ManyChatGravity headline and a neon-pink Get started pill.</p>
+  <div class="mock" style="padding:72px 40px;background:#f5f5f5;text-align:left">
+    <div style="color:var(--text-primary,#0f0f0f);font:400 72px/.82 var(--sg-serif);letter-spacing:-.02em;max-width:12ch">Social smarter, not harder.</div>
+    <span class="btn" style="height:48px;margin-top:24px;padding:0 20px;border-radius:999px;background:var(--action-accent,#fa0cf7);color:#fff">Get started</span>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">Plans that scale when you do. Monthly and Annual are labels. The Free card is $0. Checkout was never opened.</p>
+  <div class="mock" style="padding:20px;display:flex;gap:16px;align-items:flex-start">
+    <div style="display:inline-flex;border-radius:999px;background:#f5f5f5;padding:4px;margin-bottom:16px"><span style="padding:8px 16px;border-radius:999px">MONTHLY</span><span style="padding:8px 16px;border-radius:999px;background:#0f0f0f;color:#fff">ANNUAL</span></div>
+    <div style="width:260px;background:#fff;border-radius:24px;border:1px solid rgba(15,15,15,.08);padding:20px"><b style="font:400 28px var(--sg-serif)">Free</b><div style="font:400 40px var(--sg-serif);margin:8px 0">$0</div><span class="btn" style="height:48px;padding:0 20px;border-radius:999px;background:var(--action-ink,#0f0f0f);color:#fff">Start for free</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">Brand colours (neon pink, electric cyan, the dusk-to-kelp set) plus raw neutrals from white to #0f0f0f. The page paints one light theme; the dark set is empty.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Radii run from 4 to 48, plus a 999px full pill. Spacing steps are authored in rem against the 10px root. The measured component set holds nav height, button padding and card radius.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Three voices: <code>ManyChatGravity</code> for display, <code>Rooftop</code> for UI, <code>CoFo Sans Mono</code> for nav labels. Sizes are px, resolved from rem against the 10px root (h1 7.2rem is 72px at 1440). Samples fall back to system faces.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Source</th><th>What it holds</th></tr><tr><td>Stylesheet harvest</td><td>Custom properties from the mccdn.me marketing CSS, resolved on a light probe</td></tr><tr><td>Live DOM</td><td>Computed styles and crops on home, pricing, Instagram, how-to, and the phone pass</td></tr><tr><td>Provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the .theme.dark band)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
+    const v = t.v || {};
+    // Sizes are px (the builder resolves the authored rem at the site's 10px root); a rem value is still
+    // read at 10px. Samples are capped at 72px.
+    const size = parseFloat(v.fontSize);
+    const px = Number.isFinite(size) ? Math.min(String(v.fontSize).endsWith('rem') ? size * 10 : size, 72) : 16;
+    const family = String(v.fontFamily || '').replace(/\{font\.family\.([^}]+)\}/, (_, key) => (TOK.core.font && TOK.core.font.family && TOK.core.font.family[key] && TOK.core.font.family[key].v) || 'inherit');
+    h += `<div class="tr"><span class="ts" style="font-family:${esc(family)};font-weight:${esc(v.fontWeight || 400)};font-size:${px}px;line-height:${esc(v.lineHeight || 1.2)};letter-spacing:${esc(v.letterSpacing || '0')}">${esc(n)}: Social smarter</span><span class="tv">${esc(v.fontSize)} / ${esc(v.lineHeight)} / ${esc(v.fontWeight)}</span></div>`;
+  }
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

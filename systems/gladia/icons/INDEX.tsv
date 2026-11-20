@@ -1,0 +1,55 @@
+file	inferred_name	hash	sizes	viewBox	style	seen_on	place	text_or_label
+show-all-features.svg	show-all-features	54199cba	20x20	0 0 20 20	stroke	home; product-stt; product-realtime; pricing; nav	button	Show all features / Is Gladia’s speech-to-text API more accu / Should I use real-time or async transcri
+expand.svg	expand	3f90d191	14x14	0 0 16 16	stroke	home; nav	button	Expand
+icon-7b3ca081.svg	icon-7b3ca081	7b3ca081	16x16	0 0 16 16	stroke	home; nav	li	WebSocket streaming, REST upload, and li / Any audio format - MP3, WAV, FLAC, Opus, / SDKs for Python, Node.js, and direct API
+see-the-report.svg	see-the-report	bc964c12	11x11	0 0 12 12	stroke	home; nav	a ab__link	See the report
+video-stream.svg	video-stream	557923e6	14x14	0 0 14 14	stroke	home; nav	div	Video Stream
+icon-6ef40b59.svg	icon-6ef40b59	6ef40b59	16x16	0 0 16 16	stroke	home; nav	div	Pipeline complete · 3.29s total
+real-time.svg	real-time	7a1c2815	14x14 20x20	0 0 24 24	fill	product-stt; product-realtime; use-case-voice-agents	div b__cell-icon; span chip__icon	Real-time
+microphone.svg	microphone	9adbb691	14x14	0 0 14 14	stroke	home; nav	div	Microphone
+phone-call.svg	phone-call	e10cfe60	14x14	0 0 14 14	stroke	home; nav	div	Phone Call
+audio-stream-received.svg	audio-stream-received	fc15bcee	14x14	0 0 14 14	stroke	home; nav	div	Audio stream received
+cell-icon-0d131177.svg	cell-icon	0d131177	20x20 36x36	0 0 24 24	fill	product-stt; product-realtime	div b__cell-icon; li	Word-level timestamps on every utterance
+icon-2a0a5bac.svg	icon-2a0a5bac	2a0a5bac	20x20 36x36	0 0 24 24	fill	product-realtime; use-case-voice-agents	li; div b__cell-icon	99.9% uptime SLA on Enterprise
+icon-33ba7308.svg	icon-33ba7308	33ba7308	20x20 36x36	0 0 24 24	fill	product-realtime; use-case-voice-agents	li; div b__cell-icon	Custom vocabulary for product names, acr
+cell-icon-4d2c2c93.svg	cell-icon	4d2c2c93	20x20	0 0 24 24	fill	product-stt; product-realtime	div b__cell-icon	
+cell-icon-4fbca3e7.svg	cell-icon	4fbca3e7	20x20	0 0 24 24	fill	product-stt; product-realtime	div b__cell-icon	
+cell-icon-95116016.svg	cell-icon	95116016	20x20	0 0 24 24	fill	product-stt; product-realtime	div b__cell-icon	
+cell-icon-98813b14.svg	cell-icon	98813b14	20x20	0 0 24 24	fill	product-stt; product-realtime	div b__cell-icon	
+cell-icon-9ec3b75a.svg	cell-icon	9ec3b75a	20x20	0 0 24 24	fill	product-stt; product-realtime	div b__cell-icon	
+cell-icon-a3e2b2aa.svg	cell-icon	a3e2b2aa	20x20	0 0 24 24	fill	product-stt; use-case-voice-agents	div b__cell-icon; div stt-dev-cap__icon	
+see-our-startup-program.svg	see-our-startup-program	d70a114e	14x14	0 0 16 16	stroke	pricing; partners	a	See our Startup Program / Complete guide to building voice agents  / Secret trick to easily adding multiple l
+cell-icon-e895a871.svg	cell-icon	e895a871	20x20	0 0 24 24	fill	product-stt; product-realtime	div b__cell-icon	
+cell-icon-efe59b19.svg	cell-icon	efe59b19	20x20 36x36	0 0 24 24	fill	product-stt; product-realtime	div b__cell-icon; li	100+ languages, so no call falls outside
+learn-more.svg	learn-more	f3b84436	14x14 16x16	0 0 24 24	stroke	product-stt; product-realtime	span; a; a stt-langs-toggle__icon	Learn more / Discover the Product / Read the Docs
+cell-icon-00879a4c.svg	cell-icon	00879a4c	20x20	0 0 24 24	fill	product-stt	div b__cell-icon	
+icon-0437c395.svg	icon-0437c395	0437c395	36x36	0 0 24 24	fill	product-realtime	li	#1 on Switchboard: the lowest error rate
+icon-0b661a95.svg	icon-0b661a95	0b661a95	36x36	0 0 24 24	fill	product-realtime	li	WebSockets, SIP, VoIP for any protocol
+icon-1628de06.svg	icon-1628de06	1628de06	36x36	0 0 24 24	fill	product-realtime	li	Code-switching detected mid-sentence, au / Auto language detection, no config neede
+view-our-docs.svg	view-our-docs	1d0a59e2	14x14	0 0 24 24	stroke	use-case-voice-agents	a	View our docs
+icon-21348b79.svg	icon	21348b79	20x20	0 0 24 24	fill	product-stt	div stt-dev-cap__icon	
+icon-2275df80.svg	icon-2275df80	2275df80	36x36	0 0 24 24	fill	product-realtime	li	Audio enhancer: pre-processing for noisy
+icon-29eb2b36.svg	icon	29eb2b36	20x20	0 0 24 24	fill	product-stt	div stt-dev-cap__icon	
+icon-2aec7ebb.svg	icon-2aec7ebb	2aec7ebb	20x20	0 0 20 20	stroke	demo-request	button	How do I get started with your API? / What authentication methods does your AP / Can you provide examples or documentatio
+100-languages.svg	100-languages	330dca74	14x14	0 0 24 24	fill	use-case-voice-agents	span chip__icon	100+ languages
+icon-35d4c0db.svg	icon-35d4c0db	35d4c0db	36x36	0 0 24 24	fill	product-realtime	li	Twilio, Recall, Meeting BaaS for telepho
+enable-sound.svg	enable-sound	41f57808	16x16	0 0 16 16	fill	solaria-3	button sol-hero__video-sound-pill-icon	Enable sound
+cell-icon-4dd43b47.svg	cell-icon	4dd43b47	20x20	0 0 24 24	fill	product-stt	div b__cell-icon	
+icon-535ce5b0.svg	icon-535ce5b0	535ce5b0	36x36	0 0 24 24	fill	product-realtime	li	Sub-300ms end-to-end latency for uninter
+gladia.svg	gladia	551a63a2	24x24	0 0 82 82	fill	nav	a	Gladia
+25-concurrent-requests.svg	25-concurrent-requests	5b99cf5e	16x16	0 0 16 16	stroke	pricing	li pricing-card__feature	25 concurrent requests / Rates drop as volume grows / Up to 100+ languages
+enterprise-terms.svg	enterprise-terms	64e44618	14x14	0 0 24 24	fill	use-case-voice-agents	span chip__icon	Enterprise terms
+icon-68cba3f5.svg	icon-68cba3f5	68cba3f5	36x36	0 0 24 24	fill	product-realtime	li	Adjustable endpointing to tune speed vs.
+play-video.svg	play-video	7b4020e1	16x16	0 0 16 16	fill	solaria-3	button sol-hero__video-icon	Play video
+replay-video.svg	replay-video	8ba666bc	16x16	0 0 24 24	stroke	solaria-3	button sol-hero__video-icon	Replay video
+icon-8cbae4e5.svg	icon-8cbae4e5	8cbae4e5	36x36	0 0 24 24	fill	product-realtime	li	Multi-channel transcription with separat / Pipecat, LiveKit, Vapi for voice agent p
+product-8ef4f869.svg	product	8ef4f869	12x12	0 0 12 12	stroke	nav	button	Product
+product-b7561d22.svg	product	b7561d22	16x16	0 0 16 16	stroke	nav	button	Product / Solutions / Developers
+unmute-video.svg	unmute-video	c81f9bc1	16x16	0 0 16 16	fill	solaria-3	button sol-hero__video-icon	Unmute video
+cell-icon-db87ac53.svg	cell-icon	db87ac53	20x20	0 0 24 24	fill	product-realtime	div b__cell-icon	
+icon-dbd3411d.svg	icon-dbd3411d	dbd3411d	36x36	0 0 24 24	fill	product-realtime	li	Stable finals: partials resolve into acc
+icon-ddaf5acc.svg	icon-ddaf5acc	ddaf5acc	36x36	0 0 24 24	fill	product-realtime	li	103ms partial transcripts: words appear 
+copy-sample-response.svg	copy-sample-response	ee65820d	14x14	0 0 24 24	stroke	product-stt	button stt-dev-code__copy	Copy sample response
+icon-eed8bccb.svg	icon-eed8bccb	eed8bccb	20x20	0 0 20 20	stroke	use-case-voice-agents	button	Does Gladia integrate with LiveKit, Pipe / What happens to latency when call volume / Is Gladia compliant for healthcare or fi
+icon-f01ede7a.svg	icon	f01ede7a	20x20	0 0 24 24	fill	product-stt	div stt-dev-cap__icon	
+icon-fbe2ec3d.svg	icon-fbe2ec3d	fbe2ec3d	16x16	0 0 24 24	fill	product-realtime	li	#1 on European business audio and conver / Optimized for EN, FR, DE, ES, IT / #1 on English production audio

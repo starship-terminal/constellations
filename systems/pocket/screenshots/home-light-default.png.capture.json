@@ -1,0 +1,29 @@
+{
+  "sourceUrl": "https://getpocket.com/home",
+  "captured": "2026-11-19",
+  "title": "Pocket",
+  "theme": "colormode-light",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "dpr": 2
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    },
+    "scrollHeight": 3409
+  },
+  "png": {
+    "w": 2880,
+    "h": 6818
+  },
+  "note": "Full page of the 1440x900 capture. Preview browser could not produce screenshot frames, so this was taken headless. Quantized to 256 colours."
+}

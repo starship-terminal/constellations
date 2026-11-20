@@ -1,0 +1,671 @@
+{
+  "_about": "The token tree build_tokens.py turns into tokens.json. Fernand's three public hosts declare one flat palette on :root (raw/css-vars.json) and each resolves it slightly differently — core.* carries the marketing resolution as the canonical palette, and every host re-emits its vocabulary at the same paths in its surface set: light (marketing), help (docs light), app (the SPA's grey family and --viewport-vars) and dark (the docs body.dark-mode remap) — so each theme resolves its own values. Measured roles alias to the declared values they match.",
+  "core": {
+    "font": {
+      "family": {
+        "inter": {
+          "value": "Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+          "type": "fontFamily",
+          "source": "computed fontFamily of hero-h1 default (raw/components-computed.json); the self-hosted Inter @font-face faces in raw/css-vars.json",
+          "description": "Inter — the self-hosted family every surface sets (weights 300–700 plus italics; the docs and app use a narrower weight band)."
+        }
+      },
+      "weight": {
+        "regular": {
+          "value": 400,
+          "type": "fontWeight",
+          "source": "computed fontWeight of hero-sub default (raw/components-computed.json)",
+          "description": "The 400 body weight."
+        },
+        "medium": {
+          "value": 500,
+          "type": "fontWeight",
+          "source": "computed fontWeight of nav-cta default (raw/components-computed.json)",
+          "description": "The 500 weight on buttons and nav links."
+        },
+        "semibold": {
+          "value": 600,
+          "type": "fontWeight",
+          "source": "computed fontWeight of pricing-eyebrow default (raw/components-computed.json)",
+          "description": "The 600 weight on plan eyebrows, card titles and table heads — the heaviest weight the public surfaces set."
+        },
+        "display": {
+          "value": 400,
+          "type": "fontWeight",
+          "source": "computed fontWeight of hero-h1 default (raw/components-computed.json)",
+          "description": "The display-heading weight: the 38px masthead measures 400, not bold."
+        }
+      },
+      "size": {
+        "hero": {
+          "value": "38px",
+          "type": "dimension",
+          "source": "computed fontSize of hero-h1 default (raw/components-computed.json)",
+          "description": "The 38px hero masthead."
+        },
+        "lede": {
+          "value": "17px",
+          "type": "dimension",
+          "source": "computed fontSize of hero-sub default (raw/components-computed.json)",
+          "description": "The hero standfirst size."
+        },
+        "quote": {
+          "value": "22px",
+          "type": "dimension",
+          "source": "computed fontSize of testimonial default (raw/components-computed.json)",
+          "description": "The 22px testimonial display copy."
+        },
+        "body": {
+          "value": "18px",
+          "type": "dimension",
+          "source": "computed fontSize of channels-card default (raw/components-computed.json)",
+          "description": "The card/body copy size."
+        },
+        "button": {
+          "value": "14px",
+          "type": "dimension",
+          "source": "computed fontSize of nav-cta default (raw/components-computed.json)",
+          "description": "The 14px button/nav size."
+        },
+        "eyebrow": {
+          "value": "13px",
+          "type": "dimension",
+          "source": "computed fontSize of section-tag default (raw/components-computed.json)",
+          "description": "The small eyebrow-pill size."
+        },
+        "mobileHero": {
+          "value": "26px",
+          "type": "dimension",
+          "source": "computed fontSize of m-hero-h1 default (raw/components-computed.json)",
+          "description": "The masthead at 390 wide."
+        }
+      },
+      "lineHeight": {
+        "hero": {
+          "value": 1.2632,
+          "type": "number",
+          "source": "computed lineHeight/fontSize of hero-h1 default (48px over 38px, raw/components-computed.json)",
+          "description": "The hero masthead leading."
+        },
+        "body": {
+          "value": 1.65,
+          "type": "number",
+          "source": "computed lineHeight/fontSize of hero-sub default (28.05px over 17px, raw/components-computed.json)",
+          "description": "The body leading."
+        },
+        "quote": {
+          "value": 1.55,
+          "type": "number",
+          "source": "computed lineHeight/fontSize of testimonial default (34.1px over 22px, raw/components-computed.json)",
+          "description": "The testimonial leading (1.55)."
+        }
+      }
+    },
+    "black": {
+      "var": "--black",
+      "type": "color"
+    },
+    "blue": {
+      "default": {
+        "var": "--blue",
+        "type": "color"
+      },
+      "pale": {
+        "var": "--blue-pale",
+        "type": "color"
+      }
+    },
+    "border": {
+      "default": {
+        "var": "--border",
+        "type": "color"
+      },
+      "strong": {
+        "var": "--border-strong",
+        "type": "color"
+      }
+    },
+    "green": {
+      "default": {
+        "var": "--green",
+        "type": "color"
+      },
+      "dark": {
+        "var": "--green-dark",
+        "type": "color"
+      },
+      "pale": {
+        "var": "--green-pale",
+        "type": "color"
+      }
+    },
+    "grey": {
+      "default": {
+        "var": "--grey",
+        "type": "color"
+      },
+      "light": {
+        "var": "--grey-light",
+        "type": "color"
+      },
+      "medium": {
+        "var": "--grey-medium",
+        "type": "color"
+      },
+      "strong": {
+        "var": "--grey-strong",
+        "type": "color"
+      }
+    },
+    "orange": {
+      "default": {
+        "var": "--orange",
+        "type": "color"
+      },
+      "pale": {
+        "var": "--orange-pale",
+        "type": "color"
+      }
+    },
+    "red": {
+      "default": {
+        "var": "--red",
+        "type": "color"
+      },
+      "pale": {
+        "var": "--red-pale",
+        "type": "color"
+      }
+    },
+    "white": {
+      "var": "--white",
+      "type": "color"
+    },
+    "radius": {
+      "control": {
+        "value": "6px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)",
+        "description": "The ~6px radius on header buttons and links."
+      },
+      "button": {
+        "value": "8px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)",
+        "description": "The 8px radius on the primary buttons."
+      },
+      "card": {
+        "value": "10px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of channels-card default (raw/components-computed.json)",
+        "description": "The 10px card radius."
+      },
+      "panel": {
+        "value": "16px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of price-free default (raw/components-computed.json)",
+        "description": "The 16px pricing-card radius."
+      },
+      "pill": {
+        "value": "40px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of section-tag default (raw/components-computed.json)",
+        "description": "The 40px eyebrow-pill radius."
+      },
+      "field": {
+        "value": "4px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of login-field default (raw/components-computed.json)",
+        "description": "The app field radius."
+      },
+      "bubble": {
+        "value": "100%",
+        "type": "other",
+        "source": "computed borderTopLeftRadius of launcher default (raw/components-computed.json)",
+        "description": "The widget launcher bubble radius."
+      }
+    },
+    "motion": {
+      "control": {
+        "value": "all 0.75s cubic-bezier(0.19, 1, 0.22, 1)",
+        "type": "other",
+        "source": "computed transition of hero-cta default (raw/components-computed.json)",
+        "description": "The control transition the site puts on buttons and swatches."
+      }
+    }
+  },
+  "light": {
+    "text": {
+      "ink": {
+        "value": "#1a2035",
+        "type": "color",
+        "source": "computed color of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+        "description": "The near-black ink on headings and body copy (the --black navy)."
+      },
+      "muted": {
+        "value": "{grey.medium}",
+        "type": "color",
+        "source": "computed color of hero-sub default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared grey.medium",
+        "description": "The mid-grey lede/secondary ink."
+      },
+      "link": {
+        "value": "#6f7b96",
+        "type": "color",
+        "source": "computed color of nav-link default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+        "description": "The nav/footer link ink."
+      }
+    },
+    "action": {
+      "cta-fill": {
+        "value": "#1a2035",
+        "type": "color",
+        "source": "computed backgroundColor of hero-cta default (raw/components-computed.json)",
+        "description": "The near-black fill of the primary buttons."
+      },
+      "cta-ink": {
+        "value": "{white}",
+        "type": "color",
+        "source": "computed color of hero-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared white",
+        "description": "The white text on the dark buttons."
+      }
+    },
+    "surface": {
+      "card": {
+        "value": "#f7fafc",
+        "type": "color",
+        "source": "computed backgroundColor of channels-card default (raw/components-computed.json)",
+        "description": "The light-grey card surface (the --grey-light field)."
+      }
+    },
+    "border": {
+      "focus-ring": {
+        "value": "#161616",
+        "type": "color",
+        "source": "computed outlineColor of nav-cta focus-visible (raw/components-computed.json)",
+        "description": "The keyboard focus ring on controls, where the browser paints one."
+      }
+    },
+    "background": {
+      "page": {
+        "value": "{white}",
+        "type": "color",
+        "source": "the body/html field behind every marketing page (screenshots/home-light-*.png); the declared --white",
+        "description": "The white page field — every marketing and docs light page paints on it."
+      }
+    }
+  },
+  "help": {
+    "surface": {
+      "card": {
+        "value": "rgba(0, 0, 0, 0)",
+        "type": "color",
+        "source": "computed backgroundColor of help-card default (raw/components-computed.json)",
+        "description": "The docs collection-card surface in light."
+      },
+      "field-bg": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "computed backgroundColor of help-search default (raw/components-computed.json)",
+        "description": "The docs search field fill in light."
+      }
+    },
+    "text": {
+      "ink": {
+        "value": "#131e40",
+        "type": "color",
+        "source": "computed color of help-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+        "description": "The docs article heading ink in light."
+      }
+    }
+  },
+  "app": {
+    "black": {
+      "var": "--black",
+      "type": "color"
+    },
+    "blue": {
+      "default": {
+        "var": "--blue",
+        "type": "color"
+      },
+      "pale": {
+        "var": "--blue-pale",
+        "type": "color"
+      }
+    },
+    "border": {
+      "default": {
+        "var": "--border",
+        "type": "color"
+      },
+      "strong": {
+        "var": "--border-strong",
+        "type": "color"
+      }
+    },
+    "green": {
+      "default": {
+        "var": "--green",
+        "type": "color"
+      },
+      "dark": {
+        "var": "--green-dark",
+        "type": "color"
+      },
+      "pale": {
+        "var": "--green-pale",
+        "type": "color"
+      }
+    },
+    "grey": {
+      "default": {
+        "var": "--grey",
+        "type": "color"
+      },
+      "light": {
+        "var": "--grey-light",
+        "type": "color"
+      },
+      "medium": {
+        "var": "--grey-medium",
+        "type": "color"
+      },
+      "strong": {
+        "var": "--grey-strong",
+        "type": "color"
+      }
+    },
+    "orange": {
+      "default": {
+        "var": "--orange",
+        "type": "color"
+      },
+      "pale": {
+        "var": "--orange-pale",
+        "type": "color"
+      }
+    },
+    "red": {
+      "default": {
+        "var": "--red",
+        "type": "color"
+      },
+      "pale": {
+        "var": "--red-pale",
+        "type": "color"
+      }
+    },
+    "viewport": {
+      "height": {
+        "var": "--viewport-height",
+        "type": "dimension"
+      }
+    },
+    "white": {
+      "var": "--white",
+      "type": "color"
+    },
+    "text": {
+      "ink": {
+        "value": "{black}",
+        "type": "color",
+        "source": "computed color of login-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared black",
+        "description": "The app's heading ink on the signed-out forms."
+      },
+      "field-ink": {
+        "value": "{black}",
+        "type": "color",
+        "source": "computed color of login-field default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared black",
+        "description": "The field text ink."
+      }
+    },
+    "surface": {
+      "field-bg": {
+        "value": "{white}",
+        "type": "color",
+        "source": "computed backgroundColor of login-field default (raw/components-computed.json); matches declared white",
+        "description": "The sign-in field fill."
+      }
+    },
+    "action": {
+      "primary-fill": {
+        "value": "{blue.default}",
+        "type": "color",
+        "source": "computed backgroundColor of login-submit default (raw/components-computed.json); matches declared blue.default",
+        "description": "The app primary button fill."
+      },
+      "primary-ink": {
+        "value": "{white}",
+        "type": "color",
+        "source": "computed color of login-submit default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared white",
+        "description": "The app primary button text."
+      }
+    }
+  },
+  "dark": {
+    "black": {
+      "var": "--black",
+      "type": "color"
+    },
+    "blue": {
+      "default": {
+        "var": "--blue",
+        "type": "color"
+      },
+      "pale": {
+        "var": "--blue-pale",
+        "type": "color"
+      }
+    },
+    "border": {
+      "default": {
+        "var": "--border",
+        "type": "color"
+      },
+      "strong": {
+        "var": "--border-strong",
+        "type": "color"
+      }
+    },
+    "green": {
+      "default": {
+        "var": "--green",
+        "type": "color"
+      },
+      "pale": {
+        "var": "--green-pale",
+        "type": "color"
+      }
+    },
+    "grey": {
+      "default": {
+        "var": "--grey",
+        "type": "color"
+      },
+      "light": {
+        "var": "--grey-light",
+        "type": "color"
+      },
+      "medium": {
+        "var": "--grey-medium",
+        "type": "color"
+      },
+      "strong": {
+        "var": "--grey-strong",
+        "type": "color"
+      }
+    },
+    "orange": {
+      "default": {
+        "var": "--orange",
+        "type": "color"
+      },
+      "pale": {
+        "var": "--orange-pale",
+        "type": "color"
+      }
+    },
+    "red": {
+      "default": {
+        "var": "--red",
+        "type": "color"
+      },
+      "pale": {
+        "var": "--red-pale",
+        "type": "color"
+      }
+    },
+    "white": {
+      "var": "--white",
+      "type": "color"
+    },
+    "background": {
+      "page": {
+        "value": "{white}",
+        "type": "color",
+        "source": "the body/html field behind the docs pages under body.dark-mode (screenshots/help-dark-*.png) — the docs redeclare --white #161618; the measured wrappers are transparent over it",
+        "description": "The docs dark page field — the remapped --white."
+      }
+    },
+    "text": {
+      "ink": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "computed color of hd-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+        "description": "The docs heading ink under dark-mode."
+      },
+      "muted": {
+        "value": "#a1a1aa",
+        "type": "color",
+        "source": "computed color of hd-prose default — the first text node's reading where the kit recorded one (raw/components-computed.json)",
+        "description": "The docs body/prose ink under dark-mode."
+      },
+      "link": {
+        "value": "{blue.default}",
+        "type": "color",
+        "source": "computed color of hd-nav-item default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared blue.default",
+        "description": "The active docs nav item ink under dark-mode (the blue)."
+      }
+    },
+    "surface": {
+      "card": {
+        "value": "rgba(0, 0, 0, 0)",
+        "type": "color",
+        "source": "computed backgroundColor of hd-card default (raw/components-computed.json)",
+        "description": "The docs card surface under dark-mode."
+      },
+      "raised": {
+        "value": "#232326",
+        "type": "color",
+        "source": "computed backgroundColor of hd-nav-item default (raw/components-computed.json)",
+        "description": "The filled list-item surface under dark-mode."
+      }
+    }
+  },
+  "component": {
+    "topbar-height": {
+      "value": "71.5px",
+      "type": "dimension",
+      "source": "measured h of mkt-header default (raw/components-computed.json)",
+      "description": "The marketing header bar height."
+    },
+    "hero-cta-height": {
+      "value": "49px",
+      "type": "dimension",
+      "source": "measured h of hero-cta default (raw/components-computed.json)",
+      "description": "The primary button height."
+    },
+    "nav-cta-height": {
+      "value": "30px",
+      "type": "dimension",
+      "source": "measured h of nav-cta default (raw/components-computed.json)",
+      "description": "The header button height."
+    },
+    "hero-width": {
+      "value": "1290px",
+      "type": "dimension",
+      "source": "measured w of hero-h1 default (raw/components-computed.json)",
+      "description": "The hero masthead measure."
+    },
+    "channel-card-width": {
+      "value": "300px",
+      "type": "dimension",
+      "source": "measured w of channels-card default (raw/components-computed.json)",
+      "description": "The 300px channel-card width."
+    },
+    "pricing-card-width": {
+      "value": "636px",
+      "type": "dimension",
+      "source": "measured w of price-free default (raw/components-computed.json)",
+      "description": "The pricing-card width."
+    },
+    "tag-height": {
+      "value": "28px",
+      "type": "dimension",
+      "source": "measured h of section-tag default (raw/components-computed.json)",
+      "description": "The eyebrow-pill height."
+    },
+    "launcher-size": {
+      "value": "48px",
+      "type": "dimension",
+      "source": "measured h of launcher default (raw/components-computed.json)",
+      "description": "The widget launcher bubble size."
+    },
+    "ai-menu-width": {
+      "value": "332px",
+      "type": "dimension",
+      "source": "measured w of ai-setup-item default (raw/components-computed.json)",
+      "description": "The Install-with-AI menu width."
+    },
+    "help-search-width": {
+      "value": "480px",
+      "type": "dimension",
+      "source": "measured w of help-search default (raw/components-computed.json)",
+      "description": "The docs search field width."
+    },
+    "help-card-width": {
+      "value": "310px",
+      "type": "dimension",
+      "source": "measured w of help-card default (raw/components-computed.json)",
+      "description": "The docs collection-card width."
+    },
+    "mobile-topbar-height": {
+      "value": "71.5px",
+      "type": "dimension",
+      "source": "measured h of m-topbar default (raw/components-computed.json)",
+      "description": "The phone header height."
+    },
+    "app": {
+      "login-h1-size": {
+        "value": "25px",
+        "type": "other",
+        "source": "computed fontSize of login-h1 default on app.getfernand.com (raw/components-computed.json)",
+        "description": "The 25px 'Welcome back' sign-in heading."
+      },
+      "field-height": {
+        "value": "46px",
+        "type": "dimension",
+        "source": "measured h of login-field default on app.getfernand.com (raw/components-computed.json)",
+        "description": "The sign-in field height."
+      },
+      "field-width": {
+        "value": "350px",
+        "type": "dimension",
+        "source": "measured w of login-field default on app.getfernand.com (raw/components-computed.json)",
+        "description": "The sign-in field width."
+      },
+      "submit-height": {
+        "value": "46px",
+        "type": "dimension",
+        "source": "measured h of login-submit default on app.getfernand.com (raw/components-computed.json)",
+        "description": "The primary submit height."
+      },
+      "create-panel-width": {
+        "value": "720px",
+        "type": "dimension",
+        "source": "measured w of create-panel default on app.getfernand.com (raw/components-computed.json)",
+        "description": "The signup intro panel width."
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "capturedAt": "2026-11-19",
+  "harness": "T3 Code preview browser, then headless Playwright for screenshots after preview frames failed",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1169,
+      "height": 731,
+      "scale": 1
+    }
+  },
+  "note": "Requested 1440 and 390 were not the live preview viewport. Screenshots are labelled with their measured CSS viewport.",
+  "locale": "en-SG (xbox.com redirected / to /en-SG/)",
+  "signedIn": false,
+  "rootVars": {
+    "--primary": "#107c10",
+    "--green": "#107c10",
+    "--success": "#107c10",
+    "--blue": "#0067b8",
+    "--yellow": "#ffb900",
+    "--warning": "#ffb900",
+    "--danger": "#dc3545",
+    "--red": "#dc3545",
+    "--orange": "#d83b01",
+    "--gray": "#505050",
+    "--gray-dark": "#2f2f2f",
+    "--dark": "#000",
+    "--light": "#fff",
+    "--cyan": "#30e5d0",
+    "--teal": "#008575",
+    "--indigo": "#243a5e",
+    "--purple": "#8661c5",
+    "--pink": "#e83e8c",
+    "--info": "#d2d2d2",
+    "--secondary": "#000",
+    "--font-family-sans-serif": "\"Segoe UI\",SegoeUI,\"Helvetica Neue\",Helvetica,Arial,sans-serif",
+    "--font-family-monospace": "Consolas,\"Courier New\",Courier,monospace",
+    "--pd-hero-text": "#fff",
+    "--pd-hero-bg": "#171717",
+    "--pd-hero-alert-bg": "#ffd800",
+    "--pd-hero-alert-text": "#000",
+    "--pd-hero-checklist-icon": "#107c10",
+    "--breakpoint-sm": "540px",
+    "--breakpoint-md": "860px",
+    "--breakpoint-lg": "1084px",
+    "--breakpoint-xl": "1400px"
+  },
+  "pages": {
+    "home": "https://www.xbox.com/en-SG/",
+    "games": "https://www.xbox.com/en-SG/games",
+    "consoles": "https://www.xbox.com/en-SG/consoles",
+    "gamePass": "https://www.xbox.com/en-SG/xbox-game-pass",
+    "search": "https://www.xbox.com/en-SG/search/results?q=halo",
+    "product": "https://www.xbox.com/en-SG/games/store/halo-infinite/9np1p1wfs0lb"
+  }
+}

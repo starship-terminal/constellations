@@ -1,0 +1,1927 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. deel.com is a single-theme Next.js + MUI marketing site: a white field, a #1b1b1b promo strip, a #201547 purple hero and a sky-blue accent chip. Its Tailwind @theme layer declares the palette, spacing, radius and type scales (exported under core.*); the measured roles under light.* alias to the declared values where they match.",
+ "core": {
+  "font": {
+   "family": {
+    "sans": {
+     "value": "Inter, \"Inter Fallback\", Arial, Helvetica, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of promo-banner, hero-demo, price-card, footer-link (raw/components-computed.json); --font-inter on :root (raw/css-vars.json)",
+     "description": "Inter — body copy, CTAs, tiles, footer links and every form control."
+    },
+    "brand": {
+     "value": "BagossStandardVF, \"BagossStandardVF Fallback\", Arial, Helvetica, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of nav-link, nav-demo, price-cta, promo-cta (raw/components-computed.json); --font-bagoss-standard on :root (raw/css-vars.json)",
+     "description": "Bagoss Standard VF — the nav items and small pill buttons."
+    },
+    "display": {
+     "value": "BagossCondensedFont, \"BagossCondensedFont Fallback\", Arial, Helvetica, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-h1, section-heading, price-h1, about-h1, footer-heading (raw/components-computed.json); --font-bagoss-condensed on :root (raw/css-vars.json)",
+     "description": "Bagoss Condensed — every display heading, hero 60px to about 160px."
+    }
+   },
+   "weight": {
+    "normal": {
+     "value": "400",
+     "type": "fontWeight",
+     "source": "computed fontWeight of footer-link default (raw/components-computed.json)",
+     "description": "400 — body copy and footer links (Inter)."
+    },
+    "medium": {
+     "value": "500",
+     "type": "fontWeight",
+     "source": "computed fontWeight of nav-link default (raw/components-computed.json)",
+     "description": "500 — nav items, pill buttons, every display heading."
+    },
+    "semibold": {
+     "value": "600",
+     "type": "fontWeight",
+     "source": "computed fontWeight of hero-demo default (raw/components-computed.json)",
+     "description": "600 — CTAs, hero tiles, the about display heading."
+    },
+    "bold": {
+     "value": 700,
+     "type": "fontWeight",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-weight-bold",
+     "description": "The declared `--font-weight-bold`."
+    }
+   },
+   "size": {
+    "text": {
+     "2xl": {
+      "value": "24px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-2xl",
+      "description": "The declared `--text-2xl`."
+     },
+     "3xl": {
+      "value": "30px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-3xl",
+      "description": "The declared `--text-3xl`."
+     },
+     "4xl": {
+      "value": "36px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-4xl",
+      "description": "The declared `--text-4xl`."
+     },
+     "5xl": {
+      "value": "48px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-5xl",
+      "description": "The declared `--text-5xl`."
+     },
+     "6xl": {
+      "value": "60px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-6xl",
+      "description": "The declared `--text-6xl`."
+     },
+     "7xl": {
+      "value": "72px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-7xl",
+      "description": "The declared `--text-7xl`."
+     },
+     "base": {
+      "value": "16px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-base",
+      "description": "The declared `--text-base`."
+     },
+     "lg": {
+      "value": "18px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-lg",
+      "description": "The declared `--text-lg`."
+     },
+     "sm": {
+      "value": "14px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-sm",
+      "description": "The declared `--text-sm`."
+     },
+     "xl": {
+      "value": "20px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-xl",
+      "description": "The declared `--text-xl`."
+     },
+     "xs": {
+      "value": "12px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --text-xs",
+      "description": "The declared `--text-xs`."
+     }
+    },
+    "heading": {
+     "h0": {
+      "value": "64px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h0-xxlarge-size",
+      "description": "The declared `--font-heading-h0-xxlarge-size`."
+     },
+     "h00": {
+      "value": "80px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h00-display-size",
+      "description": "The declared `--font-heading-h00-display-size`."
+     },
+     "h1": {
+      "value": "56px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h1-xlarge-size",
+      "description": "The declared `--font-heading-h1-xlarge-size`."
+     },
+     "h2": {
+      "value": "44px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h2-large-size",
+      "description": "The declared `--font-heading-h2-large-size`."
+     },
+     "h3": {
+      "value": "36px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h3-medium-size",
+      "description": "The declared `--font-heading-h3-medium-size`."
+     },
+     "h4": {
+      "value": "28px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h4-small-size",
+      "description": "The declared `--font-heading-h4-small-size`."
+     },
+     "h5": {
+      "value": "24px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h5-xsmall-size",
+      "description": "The declared `--font-heading-h5-xsmall-size`."
+     },
+     "h6": {
+      "value": "20px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h6-xxsmall-size",
+      "description": "The declared `--font-heading-h6-xxsmall-size`."
+     },
+     "h7": {
+      "value": "16px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h7-xxxsmall-size",
+      "description": "The declared `--font-heading-h7-xxxsmall-size`."
+     }
+    },
+    "heading-mobile": {
+     "h0": {
+      "value": "42px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h0-xxlarge-size-mobile",
+      "description": "The declared `--font-heading-h0-xxlarge-size-mobile`."
+     },
+     "h00": {
+      "value": "48px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h00-display-size-mobile",
+      "description": "The declared `--font-heading-h00-display-size-mobile`."
+     },
+     "h1": {
+      "value": "36px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h1-xlarge-size-mobile",
+      "description": "The declared `--font-heading-h1-xlarge-size-mobile`."
+     },
+     "h2": {
+      "value": "28px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h2-large-size-mobile",
+      "description": "The declared `--font-heading-h2-large-size-mobile`."
+     },
+     "h3": {
+      "value": "24px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h3-medium-size-mobile",
+      "description": "The declared `--font-heading-h3-medium-size-mobile`."
+     },
+     "h4": {
+      "value": "22px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h4-small-size-mobile",
+      "description": "The declared `--font-heading-h4-small-size-mobile`."
+     },
+     "h5": {
+      "value": "20px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h5-xsmall-size-mobile",
+      "description": "The declared `--font-heading-h5-xsmall-size-mobile`."
+     },
+     "h6": {
+      "value": "18px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h6-xxsmall-size-mobile",
+      "description": "The declared `--font-heading-h6-xxsmall-size-mobile`."
+     },
+     "h7": {
+      "value": "16px",
+      "type": "dimension",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h7-xxxsmall-size-mobile",
+      "description": "The declared `--font-heading-h7-xxxsmall-size-mobile`."
+     }
+    },
+    "chip": {
+     "value": "{font.size.text.xs}",
+     "type": "fontSize",
+     "source": "computed fontSize of promo-cta default (raw/components-computed.json); matches declared --text-xs",
+     "description": "The 12px promo chip button."
+    },
+    "button": {
+     "value": "{font.size.text.sm}",
+     "type": "fontSize",
+     "source": "computed fontSize of nav-demo default (raw/components-computed.json); matches declared --text-sm",
+     "description": "The 14px pill-button/nav-demo size."
+    },
+    "nav": {
+     "value": "15px",
+     "type": "fontSize",
+     "source": "computed fontSize of nav-link default (raw/components-computed.json)",
+     "description": "The 15px nav item."
+    },
+    "body": {
+     "value": "{font.size.text.base}",
+     "type": "fontSize",
+     "source": "computed fontSize of price-card default (raw/components-computed.json); matches declared --text-base",
+     "description": "The 16px body/footer-link size."
+    },
+    "cta": {
+     "value": "{font.size.text.lg}",
+     "type": "fontSize",
+     "source": "computed fontSize of hero-demo default (raw/components-computed.json); matches declared --text-lg",
+     "description": "The 18px hero/section CTA."
+    },
+    "section": {
+     "value": "{font.size.heading.h2}",
+     "type": "fontSize",
+     "source": "computed fontSize of section-heading default (raw/components-computed.json); matches declared --font-heading-h2-large-size",
+     "description": "The 44px Bagoss section heading."
+    },
+    "hero": {
+     "value": "{font.size.text.6xl}",
+     "type": "fontSize",
+     "source": "computed fontSize of hero-h1 default (raw/components-computed.json); matches declared --text-6xl",
+     "description": "The 60px BagossCondensed hero display."
+    },
+    "about-display": {
+     "value": "160px",
+     "type": "fontSize",
+     "source": "computed fontSize of about-h1 default (raw/components-computed.json)",
+     "description": "The 160px about-page display numeral."
+    }
+   },
+   "tracking": {
+    "heading": {
+     "h0": {
+      "value": "-.005em",
+      "type": "other",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h0-xxlarge-letter-spacing",
+      "description": "The declared `--font-heading-h0-xxlarge-letter-spacing`."
+     },
+     "h00": {
+      "value": "-.01em",
+      "type": "other",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h00-display-letter-spacing",
+      "description": "The declared `--font-heading-h00-display-letter-spacing`."
+     },
+     "h1": {
+      "value": "-.005em",
+      "type": "other",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h1-xlarge-letter-spacing",
+      "description": "The declared `--font-heading-h1-xlarge-letter-spacing`."
+     },
+     "h2": {
+      "value": "-.005em",
+      "type": "other",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h2-large-letter-spacing",
+      "description": "The declared `--font-heading-h2-large-letter-spacing`."
+     },
+     "h3": {
+      "value": "-.005em",
+      "type": "other",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h3-medium-letter-spacing",
+      "description": "The declared `--font-heading-h3-medium-letter-spacing`."
+     },
+     "h4": {
+      "value": "-.005em",
+      "type": "other",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h4-small-letter-spacing",
+      "description": "The declared `--font-heading-h4-small-letter-spacing`."
+     },
+     "h5": {
+      "value": 0,
+      "type": "other",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h5-xsmall-letter-spacing",
+      "description": "The declared `--font-heading-h5-xsmall-letter-spacing`."
+     },
+     "h6": {
+      "value": 0,
+      "type": "other",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h6-xxsmall-letter-spacing",
+      "description": "The declared `--font-heading-h6-xxsmall-letter-spacing`."
+     },
+     "h7": {
+      "value": 0,
+      "type": "other",
+      "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --font-heading-h7-xxxsmall-letter-spacing",
+      "description": "The declared `--font-heading-h7-xxxsmall-letter-spacing`."
+     }
+    },
+    "normal": {
+     "value": "0px",
+     "type": "other",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --tracking-normal",
+     "description": "The declared `--tracking-normal`."
+    },
+    "wider": {
+     "value": "0.796875px",
+     "type": "other",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --tracking-wider",
+     "description": "The declared `--tracking-wider`."
+    }
+   },
+   "leading": {
+    "normal": {
+     "value": 1.5,
+     "type": "number",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --leading-normal",
+     "description": "The declared `--leading-normal`."
+    },
+    "snug": {
+     "value": 1.375,
+     "type": "number",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --leading-snug",
+     "description": "The declared `--leading-snug`."
+    },
+    "tight": {
+     "value": 1.25,
+     "type": "number",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --leading-tight",
+     "description": "The declared `--leading-tight`."
+    }
+   },
+   "lineHeight": {
+    "body": {
+     "value": "24px",
+     "type": "other",
+     "source": "computed lineHeight of price-card default (raw/components-computed.json)",
+     "description": "The 24px body line-height."
+    },
+    "hero": {
+     "value": "63px",
+     "type": "other",
+     "source": "computed lineHeight of hero-h1 default (raw/components-computed.json)",
+     "description": "The 63px hero display line-height (1.05x)."
+    }
+   }
+  },
+  "color": {
+   "akai": {
+    "banner-gradient": {
+     "value": "linear-gradient(180deg,#c4b1f9,#f2ebde)",
+     "type": "other",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-akai-banner-gradient",
+     "description": "The declared `--color-akai-banner-gradient`."
+    }
+   },
+   "black": {
+    "value": "#000000",
+    "type": "color",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-black",
+    "description": "The declared `--color-black`."
+   },
+   "blue": {
+    "100": {
+     "value": "#edf3fa",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-blue-100",
+     "description": "The declared `--color-blue-100`."
+    },
+    "150": {
+     "value": "#d8ebff",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-blue-150",
+     "description": "The declared `--color-blue-150`."
+    },
+    "325": {
+     "value": "#b1d8fc",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-blue-325",
+     "description": "The declared `--color-blue-325`."
+    },
+    "600": {
+     "value": "#2187cf",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-blue-600",
+     "description": "The declared `--color-blue-600`."
+    },
+    "750": {
+     "value": "#0067df",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-blue-750",
+     "description": "The declared `--color-blue-750`."
+    },
+    "825": {
+     "value": "#192253",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-blue-825",
+     "description": "The declared `--color-blue-825`."
+    },
+    "900": {
+     "value": "#163462",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-blue-900",
+     "description": "The declared `--color-blue-900`."
+    }
+   },
+   "border": {
+    "error": {
+     "value": "#e30004",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-border-error",
+     "description": "The declared `--color-border-error`."
+    },
+    "highlight-dark": {
+     "value": "#8a827e",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-border-highlight-dark",
+     "description": "The declared `--color-border-highlight-dark`."
+    },
+    "highlight-mid": {
+     "value": "#b3aba4",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-border-highlight-mid",
+     "description": "The declared `--color-border-highlight-mid`."
+    },
+    "primary": {
+     "value": "rgba(27, 27, 27, 0.16)",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-border-primary",
+     "description": "The declared `--color-border-primary`."
+    },
+    "primary-on-dark": {
+     "value": "rgba(250, 244, 238, 0.16)",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-border-primary-on-dark",
+     "description": "The declared `--color-border-primary-on-dark`."
+    },
+    "secondary": {
+     "value": "rgba(27, 27, 27, 0.4)",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-border-secondary",
+     "description": "The declared `--color-border-secondary`."
+    },
+    "secondary-on-dark": {
+     "value": "rgba(250, 244, 238, 0.4)",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-border-secondary-on-dark",
+     "description": "The declared `--color-border-secondary-on-dark`."
+    },
+    "table": {
+     "value": "#dedede",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-border-table",
+     "description": "The declared `--color-border-table`."
+    }
+   },
+   "chip": {
+    "neutral": {
+     "value": "#7d5bc9",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-chip-neutral",
+     "description": "The declared `--color-chip-neutral`."
+    }
+   },
+   "content": {
+    "accessory": {
+     "value": "rgba(27, 27, 27, 0.55)",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-accessory",
+     "description": "The declared `--color-content-accessory`."
+    },
+    "disabled": {
+     "value": "rgba(27, 27, 27, 0.4)",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-disabled",
+     "description": "The declared `--color-content-disabled`."
+    },
+    "on-color": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-on-color",
+     "description": "The declared `--color-content-on-color`."
+    },
+    "on-dark": {
+     "value": "#faf4ee",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-on-dark",
+     "description": "The declared `--color-content-on-dark`."
+    },
+    "on-dark-accessory": {
+     "value": "rgba(250, 244, 238, 0.65)",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-on-dark-accessory",
+     "description": "The declared `--color-content-on-dark-accessory`."
+    },
+    "on-dark-primary": {
+     "value": "#faf4ee",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-on-dark-primary",
+     "description": "The declared `--color-content-on-dark-primary`."
+    },
+    "on-dark-secondary": {
+     "value": "rgba(250, 244, 238, 0.85)",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-on-dark-secondary",
+     "description": "The declared `--color-content-on-dark-secondary`."
+    },
+    "on-dark-terciary": {
+     "value": "rgba(250, 244, 238, 0.75)",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-on-dark-terciary",
+     "description": "The declared `--color-content-on-dark-terciary`."
+    },
+    "on-dark-tertiary": {
+     "value": "rgba(250, 244, 238, 0.75)",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-on-dark-tertiary",
+     "description": "The declared `--color-content-on-dark-tertiary`."
+    },
+    "primary": {
+     "value": "#141414",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-primary",
+     "description": "The declared `--color-content-primary`."
+    },
+    "secondary": {
+     "value": "rgba(27, 27, 27, 0.85)",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-secondary",
+     "description": "The declared `--color-content-secondary`."
+    },
+    "tertiary": {
+     "value": "rgba(27, 27, 27, 0.7)",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-content-tertiary",
+     "description": "The declared `--color-content-tertiary`."
+    }
+   },
+   "core": {
+    "acai": {
+     "value": "#5938b7",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-core-acai",
+     "description": "The declared `--color-core-acai`."
+    },
+    "blue-berry": {
+     "value": "#00499d",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-core-blue-berry",
+     "description": "The declared `--color-core-blue-berry`."
+    },
+    "cornbread": {
+     "value": "#ffcf25",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-core-cornbread",
+     "description": "The declared `--color-core-cornbread`."
+    },
+    "tangelo": {
+     "value": "#ed5e2a",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-core-tangelo",
+     "description": "The declared `--color-core-tangelo`."
+    }
+   },
+   "cornbread": {
+    "150": {
+     "value": "#f5ecc9",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-cornbread-150",
+     "description": "The declared `--color-cornbread-150`."
+    },
+    "300": {
+     "value": "#ffe27c",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-cornbread-300",
+     "description": "The declared `--color-cornbread-300`."
+    },
+    "400": {
+     "value": "#ffcf25",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-cornbread-400",
+     "description": "The declared `--color-cornbread-400`."
+    }
+   },
+   "gray": {
+    "200": {
+     "value": "#e5e7eb",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-gray-200",
+     "description": "The declared `--color-gray-200`."
+    },
+    "300": {
+     "value": "#d1d5dc",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-gray-300",
+     "description": "The declared `--color-gray-300`."
+    },
+    "400": {
+     "value": "#99a1af",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-gray-400",
+     "description": "The declared `--color-gray-400`."
+    },
+    "600": {
+     "value": "#4a5565",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-gray-600",
+     "description": "The declared `--color-gray-600`."
+    },
+    "900": {
+     "value": "#101828",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-gray-900",
+     "description": "The declared `--color-gray-900`."
+    }
+   },
+   "green": {
+    "100": {
+     "value": "#e6f7e0",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-green-100",
+     "description": "The declared `--color-green-100`."
+    },
+    "250": {
+     "value": "#c2eeb5",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-green-250",
+     "description": "The declared `--color-green-250`."
+    },
+    "375": {
+     "value": "#8cca82",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-green-375",
+     "description": "The declared `--color-green-375`."
+    },
+    "400": {
+     "value": "#83d072",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-green-400",
+     "description": "The declared `--color-green-400`."
+    },
+    "600": {
+     "value": "#3f9532",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-green-600",
+     "description": "The declared `--color-green-600`."
+    },
+    "675": {
+     "value": "#15740f",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-green-675",
+     "description": "The declared `--color-green-675`."
+    },
+    "75": {
+     "value": "#dce9da",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-green-75",
+     "description": "The declared `--color-green-75`."
+    },
+    "750": {
+     "value": "#005b01",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-green-750",
+     "description": "The declared `--color-green-750`."
+    },
+    "875": {
+     "value": "#004b01",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-green-875",
+     "description": "The declared `--color-green-875`."
+    }
+   },
+   "latte": {
+    "125": {
+     "value": "#faf4ee",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-latte-125",
+     "description": "The declared `--color-latte-125`."
+    }
+   },
+   "neutral": {
+    "100": {
+     "value": "#f2f2f2",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-100",
+     "description": "The declared `--color-neutral-100`."
+    },
+    "200": {
+     "value": "#e6e6e6",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-200",
+     "description": "The declared `--color-neutral-200`."
+    },
+    "275": {
+     "value": "#cfcfcf",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-275",
+     "description": "The declared `--color-neutral-275`."
+    },
+    "300": {
+     "value": "#cccccc",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-300",
+     "description": "The declared `--color-neutral-300`."
+    },
+    "400": {
+     "value": "#a6a6a6",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-400",
+     "description": "The declared `--color-neutral-400`."
+    },
+    "50": {
+     "value": "#fafafa",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-50",
+     "description": "The declared `--color-neutral-50`."
+    },
+    "500": {
+     "value": "#808080",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-500",
+     "description": "The declared `--color-neutral-500`."
+    },
+    "600": {
+     "value": "#808080",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-600",
+     "description": "The declared `--color-neutral-600`."
+    },
+    "700": {
+     "value": "#404040",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-700",
+     "description": "The declared `--color-neutral-700`."
+    },
+    "800": {
+     "value": "#404040",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-800",
+     "description": "The declared `--color-neutral-800`."
+    },
+    "900": {
+     "value": "#141414",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-neutral-900",
+     "description": "The declared `--color-neutral-900`."
+    }
+   },
+   "orange": {
+    "50": {
+     "value": "#fff7ed",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-orange-50",
+     "description": "The declared `--color-orange-50`."
+    }
+   },
+   "primary": {
+    "value": "#1b1b1b",
+    "type": "color",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-primary",
+    "description": "The declared `--color-primary`."
+   },
+   "purple": {
+    "100": {
+     "value": "#f6f0fe",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-100",
+     "description": "The declared `--color-purple-100`."
+    },
+    "200": {
+     "value": "#e9d4ff",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-200",
+     "description": "The declared `--color-purple-200`."
+    },
+    "25": {
+     "value": "#faf6ff",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-25",
+     "description": "The declared `--color-purple-25`."
+    },
+    "250": {
+     "value": "#e1d7fb",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-250",
+     "description": "The declared `--color-purple-250`."
+    },
+    "325": {
+     "value": "#d6c9fd",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-325",
+     "description": "The declared `--color-purple-325`."
+    },
+    "400": {
+     "value": "#c4b1f9",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-400",
+     "description": "The declared `--color-purple-400`."
+    },
+    "475": {
+     "value": "#b59cf7",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-475",
+     "description": "The declared `--color-purple-475`."
+    },
+    "525": {
+     "value": "#a98df6",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-525",
+     "description": "The declared `--color-purple-525`."
+    },
+    "600": {
+     "value": "#926ede",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-600",
+     "description": "The declared `--color-purple-600`."
+    },
+    "675": {
+     "value": "#724ec9",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-675",
+     "description": "The declared `--color-purple-675`."
+    },
+    "750": {
+     "value": "#5938b7",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-750",
+     "description": "The declared `--color-purple-750`."
+    },
+    "825": {
+     "value": "#452995",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-825",
+     "description": "The declared `--color-purple-825`."
+    },
+    "950": {
+     "value": "#201547",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-950",
+     "description": "The declared `--color-purple-950`."
+    },
+    "gradient": {
+     "value": "radial-gradient(175.07% 171.43% at 28.58% -31.46%,#3445c8 0%,#5f4e8e 38.14%,#9d7ba8 58.6%,#d4a8c3 74.47%,#fed 100%),#fff",
+     "type": "other",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-gradient",
+     "description": "The declared `--color-purple-gradient`."
+    },
+    "gradient-dark": {
+     "value": "linear-gradient(118deg,#5938b700 48.33%,#5938b7 92.96%),#201547",
+     "type": "other",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-purple-gradient-dark",
+     "description": "The declared `--color-purple-gradient-dark`."
+    }
+   },
+   "red": {
+    "200": {
+     "value": "#ffc9c9",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-red-200",
+     "description": "The declared `--color-red-200`."
+    },
+    "325": {
+     "value": "#ffbfb7",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-red-325",
+     "description": "The declared `--color-red-325`."
+    },
+    "50": {
+     "value": "#fef2f2",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-red-50",
+     "description": "The declared `--color-red-50`."
+    },
+    "500": {
+     "value": "#fb2c36",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-red-500",
+     "description": "The declared `--color-red-500`."
+    },
+    "600": {
+     "value": "#f95250",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-red-600",
+     "description": "The declared `--color-red-600`."
+    },
+    "675": {
+     "value": "#b52f31",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-red-675",
+     "description": "The declared `--color-red-675`."
+    },
+    "700": {
+     "value": "#c10007",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-red-700",
+     "description": "The declared `--color-red-700`."
+    },
+    "750": {
+     "value": "#8e2626",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-red-750",
+     "description": "The declared `--color-red-750`."
+    }
+   },
+   "secondary": {
+    "value": "rgba(27, 27, 27, 0.85)",
+    "type": "color",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-secondary",
+    "description": "The declared `--color-secondary`."
+   },
+   "surface": {
+    "brand-blue-01": {
+     "value": "#dbeeff",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-blue-01",
+     "description": "The declared `--color-surface-brand-blue-01`."
+    },
+    "brand-blue-02": {
+     "value": "#c7e2fe",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-blue-02",
+     "description": "The declared `--color-surface-brand-blue-02`."
+    },
+    "brand-blue-03": {
+     "value": "#b1d8fc",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-blue-03",
+     "description": "The declared `--color-surface-brand-blue-03`."
+    },
+    "brand-cream": {
+     "value": "#f2ede4",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-cream",
+     "description": "The declared `--color-surface-brand-cream`."
+    },
+    "brand-dark-purple": {
+     "value": "#201547",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-dark-purple",
+     "description": "The declared `--color-surface-brand-dark-purple`."
+    },
+    "brand-purple-01": {
+     "value": "#e1d7fb",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-purple-01",
+     "description": "The declared `--color-surface-brand-purple-01`."
+    },
+    "brand-purple-02": {
+     "value": "#c4b1f9",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-purple-02",
+     "description": "The declared `--color-surface-brand-purple-02`."
+    },
+    "brand-purple-03": {
+     "value": "#a98df6",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-purple-03",
+     "description": "The declared `--color-surface-brand-purple-03`."
+    },
+    "brand-purple-04": {
+     "value": "#5938b7",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-purple-04",
+     "description": "The declared `--color-surface-brand-purple-04`."
+    },
+    "brand-seltzer-01": {
+     "value": "#b1d8fc",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-seltzer-01",
+     "description": "The declared `--color-surface-brand-seltzer-01`."
+    },
+    "brand-tangelo-1": {
+     "value": "#f1d5ca",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-tangelo-1",
+     "description": "The declared `--color-surface-brand-tangelo-1`."
+    },
+    "brand-yellow-01": {
+     "value": "#ffeba6",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-yellow-01",
+     "description": "The declared `--color-surface-brand-yellow-01`."
+    },
+    "brand-yellow-02": {
+     "value": "#ffe27c",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-yellow-02",
+     "description": "The declared `--color-surface-brand-yellow-02`."
+    },
+    "brand-yellow-03": {
+     "value": "#ffcf25",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-brand-yellow-03",
+     "description": "The declared `--color-surface-brand-yellow-03`."
+    },
+    "card-on-dark": {
+     "value": "rgba(255, 255, 255, 0.05)",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-card-on-dark",
+     "description": "The declared `--color-surface-card-on-dark`."
+    },
+    "dark": {
+     "value": "#1b1b1b",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-dark",
+     "description": "The declared `--color-surface-dark`."
+    },
+    "dark-subtle": {
+     "value": "#343434",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-dark-subtle",
+     "description": "The declared `--color-surface-dark-subtle`."
+    },
+    "highlight-01": {
+     "value": "#faf4ee",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-highlight-01",
+     "description": "The declared `--color-surface-highlight-01`."
+    },
+    "highlight-02": {
+     "value": "#f1e8e1",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-highlight-02",
+     "description": "The declared `--color-surface-highlight-02`."
+    },
+    "highlight-warm": {
+     "value": "rgba(254, 240, 216, 0.5)",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-highlight-warm",
+     "description": "The declared `--color-surface-highlight-warm`."
+    },
+    "latte-light": {
+     "value": "#f7f5f2",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-latte-light",
+     "description": "The declared `--color-surface-latte-light`."
+    },
+    "primary": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-primary",
+     "description": "The declared `--color-surface-primary`."
+    },
+    "secondary": {
+     "value": "#fffbf4",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-secondary",
+     "description": "The declared `--color-surface-secondary`."
+    },
+    "secondary-linear": {
+     "value": "linear-gradient(0deg,#fef0d899,#fef0d899),#fffbf4",
+     "type": "other",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-secondary-linear",
+     "description": "The declared `--color-surface-secondary-linear`."
+    },
+    "white": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-surface-white",
+     "description": "The declared `--color-surface-white`."
+    }
+   },
+   "tangelo": {
+    "100": {
+     "value": "#f1d5ca",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-tangelo-100",
+     "description": "The declared `--color-tangelo-100`."
+    },
+    "175": {
+     "value": "#e7a288",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-tangelo-175",
+     "description": "The declared `--color-tangelo-175`."
+    },
+    "50": {
+     "value": "#faefeb",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-tangelo-50",
+     "description": "The declared `--color-tangelo-50`."
+    },
+    "500": {
+     "value": "#ed5e2a",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-tangelo-500",
+     "description": "The declared `--color-tangelo-500`."
+    },
+    "600": {
+     "value": "#cd4311",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-tangelo-600",
+     "description": "The declared `--color-tangelo-600`."
+    },
+    "700": {
+     "value": "#98320d",
+     "type": "color",
+     "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-tangelo-700",
+     "description": "The declared `--color-tangelo-700`."
+    }
+   },
+   "tertiary": {
+    "value": "rgba(27, 27, 27, 0.7)",
+    "type": "color",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-tertiary",
+    "description": "The declared `--color-tertiary`."
+   },
+   "white": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --color-white",
+    "description": "The declared `--color-white`."
+   }
+  },
+  "spacing": {
+   "unit": {
+    "value": "4px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing",
+    "description": "The declared `--spacing`."
+   },
+   "big": {
+    "value": "96px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-big",
+    "description": "The declared `--spacing-big`."
+   },
+   "container": {
+    "value": "1312px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-container",
+    "description": "The declared `--spacing-container`."
+   },
+   "giant": {
+    "value": "200px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-giant",
+    "description": "The declared `--spacing-giant`."
+   },
+   "huge": {
+    "value": "128px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-huge",
+    "description": "The declared `--spacing-huge`."
+   },
+   "lg": {
+    "value": "40px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-lg",
+    "description": "The declared `--spacing-lg`."
+   },
+   "md": {
+    "value": "32px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-md",
+    "description": "The declared `--spacing-md`."
+   },
+   "nano": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-nano",
+    "description": "The declared `--spacing-nano`."
+   },
+   "quark": {
+    "value": "4px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-quark",
+    "description": "The declared `--spacing-quark`."
+   },
+   "sm": {
+    "value": "24px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-sm",
+    "description": "The declared `--spacing-sm`."
+   },
+   "tiny": {
+    "value": "2px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-tiny",
+    "description": "The declared `--spacing-tiny`."
+   },
+   "xl": {
+    "value": "48px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-xl",
+    "description": "The declared `--spacing-xl`."
+   },
+   "xs": {
+    "value": "20px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-xs",
+    "description": "The declared `--spacing-xs`."
+   },
+   "xxl": {
+    "value": "64px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-xxl",
+    "description": "The declared `--spacing-xxl`."
+   },
+   "xxs": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-xxs",
+    "description": "The declared `--spacing-xxs`."
+   },
+   "xxxl": {
+    "value": "80px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-xxxl",
+    "description": "The declared `--spacing-xxxl`."
+   },
+   "xxxs": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --spacing-xxxs",
+    "description": "The declared `--spacing-xxxs`."
+   }
+  },
+  "radius": {
+   "2xl": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --radius-2xl",
+    "description": "The declared `--radius-2xl`."
+   },
+   "circular": {
+    "value": "200px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --radius-circular",
+    "description": "The declared `--radius-circular`."
+   },
+   "lg": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --radius-lg",
+    "description": "The declared `--radius-lg`."
+   },
+   "md": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --radius-md",
+    "description": "The declared `--radius-md`."
+   },
+   "none": {
+    "value": "0px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --radius-none",
+    "description": "The declared `--radius-none`."
+   },
+   "quark": {
+    "value": "4px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --radius-quark",
+    "description": "The declared `--radius-quark`."
+   },
+   "sm": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --radius-sm",
+    "description": "The declared `--radius-sm`."
+   },
+   "xl": {
+    "value": "24px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --radius-xl",
+    "description": "The declared `--radius-xl`."
+   },
+   "chip": {
+    "value": "2px",
+    "type": "dimension",
+    "source": "painted radius of the SPECIAL OFFER chip inside promo-banner default (raw/components-computed.json)",
+    "description": "The 2px SPECIAL OFFER chip radius."
+   },
+   "card": {
+    "value": "{radius.md}",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of price-card default (raw/components-computed.json); matches declared --radius-md",
+    "description": "The 12px card/tile radius."
+   },
+   "pill": {
+    "value": "{radius.circular}",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of nav-demo default (raw/components-computed.json); matches declared --radius-circular",
+    "description": "The 200px small-pill radius (nav CTAs, promo button)."
+   },
+   "full": {
+    "value": "3.35544e+07px",
+    "type": "other",
+    "source": "computed borderTopLeftRadius of hero-demo default (raw/components-computed.json)",
+    "description": "The rounded-full on hero CTAs — computed as a huge px value (Tailwind !rounded-full)."
+   },
+   "circle": {
+    "value": "50%",
+    "type": "other",
+    "source": "computed borderTopLeftRadius of m-hamburger default (raw/components-computed.json)",
+    "description": "The 50% icon-button circle."
+   }
+  },
+  "breakpoint": {
+   "lg": {
+    "value": "1024px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --breakpoint-lg",
+    "description": "The declared `--breakpoint-lg`."
+   },
+   "md": {
+    "value": "959px",
+    "type": "dimension",
+    "source": "declared @theme variable in the site stylesheet (raw/css-vars.json resolved.light): --breakpoint-md",
+    "description": "The declared `--breakpoint-md`."
+   }
+  },
+  "shadow": {
+   "card": {
+    "value": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(27, 27, 27, 0.04) 0px 8px 16px 0px, rgba(27, 27, 27, 0.04) 0px 2px 8px 0px",
+    "type": "other",
+    "source": "computed boxShadow of price-card default (raw/components-computed.json)",
+    "description": "The MUI elevation-2dp shadow the pricing tier cards carry."
+   }
+  },
+  "motion": {
+   "hover": {
+    "value": "all 0.1s ease-in-out",
+    "type": "other",
+    "source": "computed transition of promo-cta default (raw/components-computed.json)",
+    "description": "The 0.1s ease-in-out all-transition the pill buttons run on hover/press."
+   }
+  }
+ },
+ "light": {
+  "background": {
+   "page": {
+    "value": "{color.content.on-color}",
+    "type": "color",
+    "source": "computed backgroundColor of header-nav default (raw/components-computed.json); matches declared --color-content-on-color",
+    "description": "The #fff field the nav, price cards and page paint."
+   },
+   "promo-strip": {
+    "value": "{color.primary}",
+    "type": "color",
+    "source": "painted background of the promo-banner MuiBox child (raw/components-computed.json); matches declared --color-primary",
+    "description": "The #1b1b1b promo strip."
+   },
+   "hero-panel": {
+    "value": "{color.purple.950}",
+    "type": "color",
+    "source": "painted background of the hero panel inside hero-block default (raw/components-computed.json); matches declared --color-purple-950",
+    "description": "The #201547 deep-purple panel behind the home h1 and action tiles."
+   },
+   "video-card": {
+    "value": "{color.content.primary}",
+    "type": "color",
+    "source": "painted background of the video card inside review-band default (raw/components-computed.json); matches declared --color-content-primary",
+    "description": "The #141414 near-black review video card."
+   },
+   "tile-glass": {
+    "value": "oklab(0.999994 0.0000455678 0.0000200868 / 0.04)",
+    "type": "color",
+    "source": "painted oklab background of hero-tile default (raw/components-computed.json); hero-tile was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run",
+    "description": "The 4% white glass fill on the hero action tiles over the purple panel."
+   }
+  },
+  "text": {
+   "ink": {
+    "value": "{color.primary}",
+    "type": "color",
+    "source": "computed color of nav-link default (raw/components-computed.json); matches declared --color-primary",
+    "description": "The #1b1b1b ink — nav text, pill-button fills, footer links."
+   },
+   "body": {
+    "value": "rgba(0, 0, 0, 0.87)",
+    "type": "color",
+    "source": "computed color of price-card default (raw/components-computed.json)",
+    "description": "MUI's rgba(0,0,0,.87) body text on white."
+   },
+   "on-dark": {
+    "value": "{color.content.on-color}",
+    "type": "color",
+    "source": "computed color of hero-h1 default (raw/components-computed.json); matches declared --color-content-on-color",
+    "description": "White text on the #201547 hero panel and dark surfaces."
+   },
+   "cream": {
+    "value": "{color.content.on-dark}",
+    "type": "color",
+    "source": "computed color of footer-heading default (raw/components-computed.json); matches declared --color-content-on-dark",
+    "description": "The #faf4ee latte/cream — footer column headings and icon fills."
+   }
+  },
+  "border": {
+   "focus": {
+    "value": "#005fcc",
+    "type": "color",
+    "source": "computed outlineColor of promo-cta focus-visible (raw/components-computed.json)",
+    "description": "The #101010 1px auto focus outline on light controls."
+   },
+   "tile-glass": {
+    "value": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+    "type": "color",
+    "source": "computed borderTopColor of hero-tile default (raw/components-computed.json); hero-tile was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run",
+    "description": "The 10% white hairline on the hero action tiles."
+   },
+   "hairline": {
+    "value": "{color.border.primary-on-dark}",
+    "type": "color",
+    "source": "computed borderTopColor of faq-item default (raw/components-computed.json); matches declared --color-border-primary-on-dark",
+    "description": "The 1px latte-at-16% hairline the FAQ accordion items separate with."
+   }
+  },
+  "action": {
+   "accent-chip": {
+    "value": "{color.blue.325}",
+    "type": "color",
+    "source": "painted background of the SPECIAL OFFER chip inside promo-banner default (raw/components-computed.json); matches declared --color-blue-325",
+    "description": "The #b1d8fc sky-blue accent — the promo chip and the price-card top strip."
+   },
+   "pressed-fill": {
+    "value": "#3f3f3f",
+    "type": "color",
+    "source": "computed backgroundColor of promo-cta pressed (raw/components-computed.json)",
+    "description": "The #3f3f3f grey the light pill buttons take on hover/pressed."
+   },
+   "hover-fill": {
+    "value": "#4e4e4e",
+    "type": "color",
+    "source": "computed backgroundColor of nav-demo/price-cta hover (raw/components-computed.json)",
+    "description": "The #4e4e4e grey the dark #1b1b1b pill buttons lift to on hover/pressed."
+   }
+  }
+ },
+ "dark": {},
+ "component": {
+  "promo-banner-height": {
+   "value": 64,
+   "type": "dimension",
+   "source": "computed h of promo-banner default (raw/components-computed.json)",
+   "description": "The 64px promo strip."
+  },
+  "nav-height": {
+   "value": 80,
+   "type": "dimension",
+   "source": "computed h of header-nav default (raw/components-computed.json)",
+   "description": "The 80px sticky nav."
+  },
+  "logo-width": {
+   "value": 78,
+   "type": "dimension",
+   "source": "computed w of nav-logo default (raw/components-computed.json)",
+   "description": "The 78px Deel wordmark."
+  },
+  "nav-item-height": {
+   "value": 40,
+   "type": "dimension",
+   "source": "computed h of nav-link default (raw/components-computed.json)",
+   "description": "The 40px nav-item hit area."
+  },
+  "nav-demo-height": {
+   "value": 40,
+   "type": "dimension",
+   "source": "computed h of nav-demo default (raw/components-computed.json)",
+   "description": "The 40px nav Book-a-demo pill."
+  },
+  "promo-cta-height": {
+   "value": 32,
+   "type": "dimension",
+   "source": "computed h of promo-cta default (raw/components-computed.json)",
+   "description": "The 32px Claim-offer button."
+  },
+  "hero-panel-height": {
+   "value": 732,
+   "type": "dimension",
+   "source": "computed h of hero-block default (raw/components-computed.json)",
+   "description": "The 732px purple hero block."
+  },
+  "hero-h1-width": {
+   "value": 574.59,
+   "type": "dimension",
+   "source": "computed w of hero-h1 default (raw/components-computed.json)",
+   "description": "The ~575px hero heading column."
+  },
+  "hero-tile-size": {
+   "value": 80,
+   "type": "dimension",
+   "source": "computed h of hero-tile default (raw/components-computed.json); hero-tile was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run",
+   "description": "The 80px hero action tile (181px wide)."
+  },
+  "hero-demo-width": {
+   "value": 375,
+   "type": "dimension",
+   "source": "computed w of hero-demo default (raw/components-computed.json)",
+   "description": "The 375px hero Book-a-demo pill."
+  },
+  "product-card-size": {
+   "value": 438,
+   "type": "dimension",
+   "source": "computed h of product-card default (raw/components-computed.json)",
+   "description": "The 438px-tall product card (419px wide)."
+  },
+  "price-card-size": {
+   "value": 928.31,
+   "type": "dimension",
+   "source": "computed h of price-card default (raw/components-computed.json)",
+   "description": "The 928px pricing tier card (459px wide)."
+  },
+  "faq-item-height": {
+   "value": 80.2,
+   "type": "dimension",
+   "source": "computed h of faq-item default (raw/components-computed.json)",
+   "description": "The 80px FAQ accordion summary row."
+  },
+  "review-band-height": {
+   "value": 1205.88,
+   "type": "dimension",
+   "source": "computed h of review-band default (raw/components-computed.json)",
+   "description": "The 1206px review video-carousel band."
+  },
+  "footer-height": {
+   "value": 1015.38,
+   "type": "dimension",
+   "source": "computed h of footer default (raw/components-computed.json)",
+   "description": "The 1015px footer block."
+  },
+  "m-nav-height": {
+   "value": 64,
+   "type": "dimension",
+   "source": "computed h of m-nav-bar default (raw/components-computed.json)",
+   "description": "The 64px mobile nav."
+  },
+  "m-hamburger-size": {
+   "value": 40,
+   "type": "dimension",
+   "source": "computed w of m-hamburger default (raw/components-computed.json)",
+   "description": "The 40px mobile hamburger circle."
+  },
+  "m-hero-h1": {
+   "value": 119.67,
+   "type": "dimension",
+   "source": "computed h of m-h1 default (raw/components-computed.json)",
+   "description": "The mobile hero heading at 38px."
+  },
+  "promo-strip-paint": {
+   "value": "{color.primary}",
+   "type": "color",
+   "source": "painted background of the promo-banner MuiBox child (raw/components-computed.json); matches declared --color-primary",
+   "description": "The #1b1b1b fill the 64px promo strip paints."
+  },
+  "state-track": {
+   "pill-light-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(27, 27, 27)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(27, 27, 27)",
+      "borderRightColor": "rgb(27, 27, 27)",
+      "borderBottomColor": "rgb(27, 27, 27)",
+      "borderLeftColor": "rgb(27, 27, 27)",
+      "outlineColor": "rgb(27, 27, 27)",
+      "outlineStyle": "none",
+      "outlineWidth": "3px",
+      "outlineOffset": "0px"
+     },
+     "hover": {
+      "backgroundColor": "rgb(63, 63, 63)",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRightColor": "rgb(255, 255, 255)",
+      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineStyle": "none",
+      "outlineWidth": "3px",
+      "outlineOffset": "0px"
+     },
+     "pressed": {
+      "backgroundColor": "rgb(63, 63, 63)",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRightColor": "rgb(255, 255, 255)",
+      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineStyle": "none",
+      "outlineWidth": "3px",
+      "outlineOffset": "0px"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(27, 27, 27)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(27, 27, 27)",
+      "borderRightColor": "rgb(27, 27, 27)",
+      "borderBottomColor": "rgb(27, 27, 27)",
+      "borderLeftColor": "rgb(27, 27, 27)",
+      "outlineColor": "rgb(0, 95, 204)",
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "outlineOffset": "0px"
+     }
+    },
+    "source": "computed styles of promo-cta across states (raw/components-computed.json)",
+    "description": "Light pill (Claim offer): #fff fill/#1b1b1b text at rest; hover+pressed invert to #3f3f3f fill/#fff text; focus shows the 1px auto outline."
+   },
+   "pill-dark-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgb(27, 27, 27)",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRightColor": "rgb(255, 255, 255)",
+      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineStyle": "none",
+      "outlineWidth": "3px",
+      "outlineOffset": "0px"
+     },
+     "hover": {
+      "backgroundColor": "rgb(78, 78, 78)",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRightColor": "rgb(255, 255, 255)",
+      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineStyle": "none",
+      "outlineWidth": "3px",
+      "outlineOffset": "0px"
+     },
+     "pressed": {
+      "backgroundColor": "rgb(78, 78, 78)",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRightColor": "rgb(255, 255, 255)",
+      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineStyle": "none",
+      "outlineWidth": "3px",
+      "outlineOffset": "0px"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgb(27, 27, 27)",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(255, 255, 255)",
+      "borderRightColor": "rgb(255, 255, 255)",
+      "borderBottomColor": "rgb(255, 255, 255)",
+      "borderLeftColor": "rgb(255, 255, 255)",
+      "outlineColor": "rgb(0, 95, 204)",
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "outlineOffset": "0px"
+     }
+    },
+    "source": "computed styles of nav-demo across states (raw/components-computed.json)",
+    "description": "Dark pill (nav Book a demo): #1b1b1b fill/#fff text at rest; tracks across hover/pressed."
+   },
+   "nav-link-state-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(27, 27, 27)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(27, 27, 27)",
+      "borderRightColor": "rgb(27, 27, 27)",
+      "borderBottomColor": "rgb(27, 27, 27)",
+      "borderLeftColor": "rgb(27, 27, 27)",
+      "outlineColor": "rgb(27, 27, 27)",
+      "outlineStyle": "none",
+      "outlineWidth": "3px",
+      "outlineOffset": "0px"
+     },
+     "hover": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(27, 27, 27)",
+      "opacity": "0.7",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(27, 27, 27)",
+      "borderRightColor": "rgb(27, 27, 27)",
+      "borderBottomColor": "rgb(27, 27, 27)",
+      "borderLeftColor": "rgb(27, 27, 27)",
+      "outlineColor": "rgb(27, 27, 27)",
+      "outlineStyle": "none",
+      "outlineWidth": "3px",
+      "outlineOffset": "0px"
+     },
+     "pressed": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(27, 27, 27)",
+      "opacity": "0.7",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(27, 27, 27)",
+      "borderRightColor": "rgb(27, 27, 27)",
+      "borderBottomColor": "rgb(27, 27, 27)",
+      "borderLeftColor": "rgb(27, 27, 27)",
+      "outlineColor": "rgb(27, 27, 27)",
+      "outlineStyle": "none",
+      "outlineWidth": "3px",
+      "outlineOffset": "0px"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(27, 27, 27)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(27, 27, 27)",
+      "borderRightColor": "rgb(27, 27, 27)",
+      "borderBottomColor": "rgb(27, 27, 27)",
+      "borderLeftColor": "rgb(27, 27, 27)",
+      "outlineColor": "rgb(0, 95, 204)",
+      "outlineStyle": "auto",
+      "outlineWidth": "1px",
+      "outlineOffset": "0px"
+     },
+     "opened": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgb(27, 27, 27)",
+      "opacity": "0.7",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgb(27, 27, 27)",
+      "borderRightColor": "rgb(27, 27, 27)",
+      "borderBottomColor": "rgb(27, 27, 27)",
+      "borderLeftColor": "rgb(27, 27, 27)",
+      "outlineColor": "rgb(27, 27, 27)",
+      "outlineStyle": "none",
+      "outlineWidth": "3px",
+      "outlineOffset": "0px"
+     }
+    },
+    "source": "computed styles of nav-link across states (raw/components-computed.json)",
+    "description": "Nav item: #1b1b1b Bagoss text at rest; tracks across hover/pressed/focus."
+   },
+   "tile-state-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.04)",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+      "borderRightColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+      "borderBottomColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+      "borderLeftColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineStyle": "none",
+      "outlineWidth": "3px",
+      "outlineOffset": "0px"
+     },
+     "hover": {
+      "backgroundColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.04)",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+      "borderRightColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+      "borderBottomColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+      "borderLeftColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineStyle": "none",
+      "outlineWidth": "3px",
+      "outlineOffset": "0px"
+     },
+     "pressed": {
+      "backgroundColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.08)",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.2)",
+      "borderRightColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.2)",
+      "borderBottomColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.2)",
+      "borderLeftColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.2)",
+      "outlineColor": "rgb(255, 255, 255)",
+      "outlineStyle": "none",
+      "outlineWidth": "3px",
+      "outlineOffset": "0px"
+     },
+     "focus-visible": {
+      "backgroundColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.04)",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.999994 0.0000455677 0.0000200868 / 0.7) 0px 0px 0px 2px, rgba(0, 0, 0, 0) 0px 0px 0px 0px",
+      "borderTopColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+      "borderRightColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+      "borderBottomColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+      "borderLeftColor": "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+      "outlineColor": "rgb(0, 95, 204)",
+      "outlineStyle": "none",
+      "outlineWidth": "1px",
+      "outlineOffset": "0px"
+     }
+    },
+    "source": "computed styles of hero-tile across states (raw/components-computed.json); hero-tile was not found by the 2026-11-13 re-run (recaptureMissed), so this is the reading kept from the earlier run",
+    "description": "Hero tile: 4%-white glass at rest on the purple panel; tracks across hover/pressed/focus."
+   },
+   "faq-state-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgba(250, 244, 238, 0.16)",
+      "borderRightColor": "rgba(0, 0, 0, 0.87)",
+      "borderBottomColor": "rgba(0, 0, 0, 0.87)",
+      "borderLeftColor": "rgba(0, 0, 0, 0.87)",
+      "outlineColor": "rgba(0, 0, 0, 0.87)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "focus-visible": {
+      "backgroundColor": "rgba(0, 0, 0, 0.12)",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "opacity": "1",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgba(250, 244, 238, 0.16)",
+      "borderRightColor": "rgba(0, 0, 0, 0.87)",
+      "borderBottomColor": "rgba(0, 0, 0, 0.87)",
+      "borderLeftColor": "rgba(0, 0, 0, 0.87)",
+      "outlineColor": "rgba(0, 0, 0, 0.87)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     },
+     "opened": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "opacity": "0.6",
+      "transform": "none",
+      "boxShadow": "none",
+      "borderTopColor": "rgba(250, 244, 238, 0.16)",
+      "borderRightColor": "rgba(0, 0, 0, 0.87)",
+      "borderBottomColor": "rgba(0, 0, 0, 0.87)",
+      "borderLeftColor": "rgba(0, 0, 0, 0.87)",
+      "outlineColor": "rgba(0, 0, 0, 0.87)",
+      "outlineStyle": "none",
+      "outlineWidth": "0px",
+      "outlineOffset": "0px"
+     }
+    },
+    "source": "computed styles of faq-item across states (raw/components-computed.json)",
+    "description": "FAQ accordion summary: MUI MuiAccordionSummary at rest and opened via its own click toggle."
+   }
+  },
+  "focus-ring": {
+   "value": "auto rgb(0, 95, 204)",
+   "type": "other",
+   "source": "computed outline of promo-cta/nav controls focus-visible (raw/components-computed.json)",
+   "description": "The browser's 1px auto outline in #101010/own colour — no custom focus ring is painted."
+  }
+ }
+}

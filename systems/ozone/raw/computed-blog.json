@@ -1,0 +1,64 @@
+{
+  "source": "Wayback Machine replay of https://www.ozone.pro/blog, capture 20240227223658",
+  "replayUrl": "https://web.archive.org/web/20240227223658/https://www.ozone.pro/blog",
+  "readOn": "2026-11-19",
+  "reader": "T3 preview_evaluate getComputedStyle",
+  "viewport": {"innerWidth": 1169, "innerHeight": 731, "devicePixelRatio": 1},
+  "note": "Fill viewport, not a requested 1440. Visible heading was the 40px Blog title (the 64px node had height 0).",
+  "h1Visible": {
+    "text": "Blog",
+    "fontFamily": "PolySans Bulky Wide, PolySans Bulky Wide Placeholder, sans-serif",
+    "fontSize": "40px",
+    "lineHeight": "64px",
+    "fontWeight": "400",
+    "color": "rgb(255, 255, 255)"
+  },
+  "intro": {
+    "text": "Quick tips and how-tos for content and marketing teams",
+    "fontFamily": "Inter, Inter Placeholder, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "500",
+    "lineHeight": "32px",
+    "color": "rgb(255, 255, 255)"
+  },
+  "date": {
+    "text": "Nov 8, 2023",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "24px",
+    "color": "rgba(255, 255, 255, 0.72)",
+    "fontFamily": "Inter, Inter Placeholder, sans-serif"
+  },
+  "postTitle": {
+    "text": "Ozone Launches Next-Gen Video Editor with Over $7 Million in Funding",
+    "fontFamily": "PolySans Slim Wide, PolySans Slim Wide Placeholder, sans-serif",
+    "fontSize": "32px",
+    "lineHeight": "40px",
+    "fontWeight": "400",
+    "color": "rgb(255, 255, 255)"
+  },
+  "readMore": {
+    "background": "rgb(0, 0, 0)",
+    "borderRadius": "100px",
+    "padding": "16px 22px",
+    "boxShadow": "rgba(54, 92, 251, 0.08) 0px 1px 2px 0px, rgba(255, 255, 255, 0.4) 0px 0px 6px 0px inset",
+    "label": "Read More",
+    "labelColor": "rgb(255, 255, 255)",
+    "labelSize": "14px",
+    "labelWeight": "600",
+    "labelLetterSpacing": "-0.14px"
+  },
+  "joinWaitlist": {
+    "background": "rgb(31, 120, 255)",
+    "borderRadius": "100px",
+    "padding": "8px 14px",
+    "label": "Join Waitlist",
+    "href": "https://app.ozone.tech/register"
+  },
+  "links": [
+    "https://www.ozone.pro/blog/ozone-launches-next-gen-video-editor-with-over-7-million-in-funding",
+    "https://jobs.ashbyhq.com/Ozone",
+    "https://app.ozone.tech/login",
+    "https://app.ozone.tech/register"
+  ]
+}

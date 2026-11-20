@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OneSoil style guide</title>
+<style>
+:root {
+  --page: #F6F4EF;
+  --surface: #FFFFFF;
+  --secondary: #EDE8E2;
+  --ink: #151515;
+  --body: #171717;
+  --muted: #6D6351;
+  --accent: #27AE60;
+  --accent-text: #1E9852;
+  --control: #151515;
+  --forest: #003A1E;
+  --error: #F55F39;
+  --white: #FFFFFF;
+  --field: #F6F4EF;
+  --help: #30BF3C;
+  --sans: geologica, system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--body); font: 400 16px/24px var(--sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font-weight: 400; font-size: 40px; letter-spacing: -0.04em; margin: 0 0 8px; }
+h2 { font-weight: 400; font-size: 28px; letter-spacing: -0.04em; margin: 40px 0 12px; }
+p.lead { color: var(--muted); max-width: 68ch; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: center; background: var(--surface); border-radius: 16px; padding: 10px; }
+.sw i { width: 44px; height: 44px; border-radius: 12px; display: block; box-shadow: inset 0 0 0 1px #6D635133; }
+.sw b { display: block; font-size: 13px; }
+.sw span { color: var(--muted); font-size: 12px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin: 12px 0; }
+.pill { display: inline-flex; align-items: center; height: 48px; padding: 12px 16px; border-radius: 9999px; text-decoration: none; font-size: 16px; }
+.primary { background: var(--accent); color: var(--white); }
+.secondary-btn { background: var(--control); color: var(--white); }
+.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px #6D635133; }
+.field { width: 280px; height: 53px; border: 2px solid transparent; border-radius: 13px; background: var(--field); padding: 12px; font: 400 18px/24px var(--sans); color: var(--ink); }
+.field:focus { background: var(--white); border-color: #6D635133; outline: none; }
+.card { width: 200px; height: 120px; border-radius: 16px; background: #1515150d; display: flex; align-items: flex-end; padding: 24px; }
+.nav { height: 74px; border-radius: 40px; background: #ffffff66; border: 1px solid #ffffff80; display: flex; align-items: center; justify-content: space-between; padding: 0 12px; }
+.band { background: var(--forest); color: var(--white); border-radius: 24px; padding: 24px; }
+.type p { margin: 8px 0; }
+.note { font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>OneSoil</h1>
+  <p class="lead">Public marketing tokens measured on onesoil.ai on 19 November 2026. One light theme. The help center is a separate green product and is not these tokens.</p>
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:#F6F4EF"></i><div><b>page</b><span>#F6F4EF</span></div></div>
+    <div class="sw"><i style="background:#FFFFFF"></i><div><b>surface</b><span>#FFFFFF</span></div></div>
+    <div class="sw"><i style="background:#EDE8E2"></i><div><b>secondary</b><span>#EDE8E2</span></div></div>
+    <div class="sw"><i style="background:#151515"></i><div><b>ink</b><span>#151515</span></div></div>
+    <div class="sw"><i style="background:#6D6351"></i><div><b>muted</b><span>#6D6351</span></div></div>
+    <div class="sw"><i style="background:#27AE60"></i><div><b>accent</b><span>#27AE60</span></div></div>
+    <div class="sw"><i style="background:#1E9852"></i><div><b>accent text</b><span>#1E9852</span></div></div>
+    <div class="sw"><i style="background:#003A1E"></i><div><b>forest</b><span>#003A1E</span></div></div>
+    <div class="sw"><i style="background:#F55F39"></i><div><b>error token</b><span>#F55F39, unused on screen</span></div></div>
+    <div class="sw"><i style="background:#30BF3C"></i><div><b>help green</b><span>#30BF3C, help center only</span></div></div>
+  </div>
+  <h2>Type</h2>
+  <div class="type">
+    <p style="font-size:56px;line-height:56px;letter-spacing:-0.04em;font-weight:400">The platform for efficient farming</p>
+    <p style="font-size:24px;line-height:1.3;font-weight:300">Satellite-powered intelligence for modern agriculture.</p>
+    <p style="font-size:14px;line-height:14px;font-weight:500;letter-spacing:0;text-transform:uppercase">For those who grow</p>
+    <p style="font-size:16px;line-height:1.3;font-weight:300;color:#6D6351">Footer and secondary links sit in the muted brown.</p>
+  </div>
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="pill primary" href="#components">Try Free</a>
+    <a class="pill secondary-btn" href="#components">Schedule a demo</a>
+    <a class="pill ghost" href="#components">Preview Data</a>
+  </div>
+  <div class="row">
+    <input class="field" placeholder="Your full name" aria-label="Full name">
+  </div>
+  <div class="nav"><b>OneSoil</b><span class="pill primary">Try Free</span></div>
+  <div class="row" style="margin-top:16px">
+    <div class="card">OneSoil Platform</div>
+    <div class="card">AI Agronomist</div>
+  </div>
+  <div class="band"><p style="font-size:28px;letter-spacing:-0.04em;margin:0">A global source of reliable agricultural intelligence</p></div>
+  <p class="note">Pill radius on the live site computes as a full circle. The 9999px token is that pill, not a measured 9999px box. Hover on Try Free is the same green at 0.9 alpha, recorded as a gap because it is not a flat hex.</p>
+</div>
+</body>
+</html>

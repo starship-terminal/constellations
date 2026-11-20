@@ -1,0 +1,2545 @@
+{
+  "_about": "The token tree build_tokens.py turns into tokens.json. elevenmusic.io declares a shadcn-style semantic token layer in its Next.js bundles and paints dark by default (html.dark); the footer theme control remaps the same roles to a warm-paper light theme. Declared roles become var leaves resolved per theme; scales identical in both themes live in core; geometry and the measured type ramp are measured leaves from raw/components-computed.json.",
+  "core": {
+    "font": {
+      "family": {
+        "sans": {
+          "value": "\"Inter\", \"Inter Fallback\"",
+          "type": "fontFamily",
+          "source": "declared --font-inter (1jj-z3nt2o826.css .C3Inkq_variable)",
+          "description": "Inter variable (100-900): the UI face \u2014 nav, labels, fields, track titles. --font-sans resolves to it."
+        },
+        "display": {
+          "value": "\"waldenburg\", \"waldenburg Fallback\", Arial",
+          "type": "fontFamily",
+          "source": "declared --font-waldenburg (1jj-z3nt2o826.css .CCd5nq_variable)",
+          "description": "waldenburg light/regular: the display face \u2014 the hero headline and page titles."
+        },
+        "mono": {
+          "value": "\"GeistMono\", ui-monospace, SFMono-Regular, Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New, monospace",
+          "type": "fontFamily",
+          "source": "declared --font-geist-mono (1jj-z3nt2o826.css .i8lDNW_variable)",
+          "description": "GeistMono variable: the declared mono stack for IDs and code."
+        }
+      },
+      "weight": {
+        "light": {
+          "var": "--font-weight-light",
+          "type": "fontWeight",
+          "description": "300: the display headline weight."
+        },
+        "normal": {
+          "var": "--font-weight-normal",
+          "type": "fontWeight",
+          "description": "400: body and labels."
+        },
+        "medium": {
+          "var": "--font-weight-medium",
+          "type": "fontWeight",
+          "description": "500: nav rows, buttons and track titles."
+        },
+        "semibold": {
+          "var": "--font-weight-semibold",
+          "type": "fontWeight",
+          "description": "600: headings and emphasis."
+        },
+        "bold": {
+          "var": "--font-weight-bold",
+          "type": "fontWeight",
+          "description": "700: declared, little used."
+        }
+      },
+      "size": {
+        "xs": {
+          "var": "--text-xs",
+          "type": "dimension",
+          "description": "Declared --text-xs."
+        },
+        "sm": {
+          "var": "--text-sm",
+          "type": "dimension",
+          "description": "Declared --text-sm."
+        },
+        "base": {
+          "var": "--text-base",
+          "type": "dimension",
+          "description": "Declared --text-base."
+        },
+        "lg": {
+          "var": "--text-lg",
+          "type": "dimension",
+          "description": "Declared --text-lg."
+        },
+        "xl": {
+          "var": "--text-xl",
+          "type": "dimension",
+          "description": "Declared --text-xl."
+        },
+        "2xl": {
+          "var": "--text-2xl",
+          "type": "dimension",
+          "description": "Declared --text-2xl."
+        },
+        "3xl": {
+          "var": "--text-3xl",
+          "type": "dimension",
+          "description": "Declared --text-3xl."
+        },
+        "4xl": {
+          "var": "--text-4xl",
+          "type": "dimension",
+          "description": "Declared --text-4xl."
+        },
+        "5xl": {
+          "var": "--text-5xl",
+          "type": "dimension",
+          "description": "Declared --text-5xl."
+        },
+        "6xl": {
+          "var": "--text-6xl",
+          "type": "dimension",
+          "description": "Declared --text-6xl."
+        },
+        "7xl": {
+          "var": "--text-7xl",
+          "type": "dimension",
+          "description": "Declared --text-7xl."
+        }
+      },
+      "lineHeight": {
+        "xs": {
+          "var": "--text-xs--line-height",
+          "type": "number",
+          "description": "Declared line-height ratio for --text-xs."
+        },
+        "sm": {
+          "var": "--text-sm--line-height",
+          "type": "number",
+          "description": "Declared line-height ratio for --text-sm."
+        },
+        "base": {
+          "var": "--text-base--line-height",
+          "type": "number",
+          "description": "Declared line-height ratio for --text-base."
+        },
+        "lg": {
+          "var": "--text-lg--line-height",
+          "type": "number",
+          "description": "Declared line-height ratio for --text-lg."
+        },
+        "xl": {
+          "var": "--text-xl--line-height",
+          "type": "number",
+          "description": "Declared line-height ratio for --text-xl."
+        },
+        "2xl": {
+          "var": "--text-2xl--line-height",
+          "type": "number",
+          "description": "Declared line-height ratio for --text-2xl."
+        },
+        "3xl": {
+          "var": "--text-3xl--line-height",
+          "type": "number",
+          "description": "Declared line-height ratio for --text-3xl."
+        },
+        "4xl": {
+          "var": "--text-4xl--line-height",
+          "type": "number",
+          "description": "Declared line-height ratio for --text-4xl."
+        },
+        "5xl": {
+          "var": "--text-5xl--line-height",
+          "type": "number",
+          "description": "Declared line-height ratio for --text-5xl."
+        },
+        "6xl": {
+          "var": "--text-6xl--line-height",
+          "type": "number",
+          "description": "Declared line-height ratio for --text-6xl."
+        },
+        "7xl": {
+          "var": "--text-7xl--line-height",
+          "type": "number",
+          "description": "Declared line-height ratio for --text-7xl."
+        },
+        "tight": {
+          "var": "--leading-tight",
+          "type": "number",
+          "description": "Declared --leading-tight."
+        },
+        "snug": {
+          "var": "--leading-snug",
+          "type": "number",
+          "description": "Declared --leading-snug."
+        },
+        "normal": {
+          "var": "--leading-normal",
+          "type": "number",
+          "description": "Declared --leading-normal."
+        },
+        "relaxed": {
+          "var": "--leading-relaxed",
+          "type": "number",
+          "description": "Declared --leading-relaxed."
+        }
+      },
+      "tracking": {
+        "tight": {
+          "value": "-0.025em",
+          "type": "dimension",
+          "source": "declared --tracking-tight (em, scales with the font size)",
+          "description": "Declared --tracking-tight."
+        },
+        "wide": {
+          "value": "0.025em",
+          "type": "dimension",
+          "source": "declared --tracking-wide (em, scales with the font size)",
+          "description": "Declared --tracking-wide."
+        },
+        "wider": {
+          "value": "0.05em",
+          "type": "dimension",
+          "source": "declared --tracking-wider (em, scales with the font size)",
+          "description": "Declared --tracking-wider."
+        },
+        "widest": {
+          "value": "0.1em",
+          "type": "dimension",
+          "source": "declared --tracking-widest (em, scales with the font size)",
+          "description": "Declared --tracking-widest."
+        }
+      }
+    },
+    "color": {
+      "tailwind": {
+        "amber": {
+          "100": {
+            "var": "--color-amber-100",
+            "type": "color",
+            "description": "Tailwind amber 100 (declared palette, identical in both themes)."
+          },
+          "200": {
+            "var": "--color-amber-200",
+            "type": "color",
+            "description": "Tailwind amber 200 (declared palette, identical in both themes)."
+          },
+          "300": {
+            "var": "--color-amber-300",
+            "type": "color",
+            "description": "Tailwind amber 300 (declared palette, identical in both themes)."
+          },
+          "400": {
+            "var": "--color-amber-400",
+            "type": "color",
+            "description": "Tailwind amber 400 (declared palette, identical in both themes)."
+          },
+          "500": {
+            "var": "--color-amber-500",
+            "type": "color",
+            "description": "Tailwind amber 500 (declared palette, identical in both themes)."
+          },
+          "600": {
+            "var": "--color-amber-600",
+            "type": "color",
+            "description": "Tailwind amber 600 (declared palette, identical in both themes)."
+          },
+          "700": {
+            "var": "--color-amber-700",
+            "type": "color",
+            "description": "Tailwind amber 700 (declared palette, identical in both themes)."
+          },
+          "800": {
+            "var": "--color-amber-800",
+            "type": "color",
+            "description": "Tailwind amber 800 (declared palette, identical in both themes)."
+          },
+          "950": {
+            "var": "--color-amber-950",
+            "type": "color",
+            "description": "Tailwind amber 950 (declared palette, identical in both themes)."
+          }
+        },
+        "blue": {
+          "500": {
+            "var": "--color-blue-500",
+            "type": "color",
+            "description": "Tailwind blue 500 (declared palette, identical in both themes)."
+          },
+          "600": {
+            "var": "--color-blue-600",
+            "type": "color",
+            "description": "Tailwind blue 600 (declared palette, identical in both themes)."
+          }
+        },
+        "cyan": {
+          "500": {
+            "var": "--color-cyan-500",
+            "type": "color",
+            "description": "Tailwind cyan 500 (declared palette, identical in both themes)."
+          }
+        },
+        "emerald": {
+          "200": {
+            "var": "--color-emerald-200",
+            "type": "color",
+            "description": "Tailwind emerald 200 (declared palette, identical in both themes)."
+          },
+          "300": {
+            "var": "--color-emerald-300",
+            "type": "color",
+            "description": "Tailwind emerald 300 (declared palette, identical in both themes)."
+          },
+          "400": {
+            "var": "--color-emerald-400",
+            "type": "color",
+            "description": "Tailwind emerald 400 (declared palette, identical in both themes)."
+          },
+          "500": {
+            "var": "--color-emerald-500",
+            "type": "color",
+            "description": "Tailwind emerald 500 (declared palette, identical in both themes)."
+          },
+          "600": {
+            "var": "--color-emerald-600",
+            "type": "color",
+            "description": "Tailwind emerald 600 (declared palette, identical in both themes)."
+          },
+          "700": {
+            "var": "--color-emerald-700",
+            "type": "color",
+            "description": "Tailwind emerald 700 (declared palette, identical in both themes)."
+          }
+        },
+        "fuchsia": {
+          "500": {
+            "var": "--color-fuchsia-500",
+            "type": "color",
+            "description": "Tailwind fuchsia 500 (declared palette, identical in both themes)."
+          }
+        },
+        "gray": {
+          "100": {
+            "var": "--color-gray-100",
+            "type": "color",
+            "description": "Tailwind gray 100 (declared palette, identical in both themes)."
+          },
+          "200": {
+            "var": "--color-gray-200",
+            "type": "color",
+            "description": "Tailwind gray 200 (declared palette, identical in both themes)."
+          },
+          "25": {
+            "var": "--color-gray-25",
+            "type": "color",
+            "description": "Tailwind gray 25 (declared palette, identical in both themes)."
+          },
+          "300": {
+            "var": "--color-gray-300",
+            "type": "color",
+            "description": "Tailwind gray 300 (declared palette, identical in both themes)."
+          },
+          "400": {
+            "var": "--color-gray-400",
+            "type": "color",
+            "description": "Tailwind gray 400 (declared palette, identical in both themes)."
+          },
+          "50": {
+            "var": "--color-gray-50",
+            "type": "color",
+            "description": "Tailwind gray 50 (declared palette, identical in both themes)."
+          },
+          "500": {
+            "var": "--color-gray-500",
+            "type": "color",
+            "description": "Tailwind gray 500 (declared palette, identical in both themes)."
+          },
+          "600": {
+            "var": "--color-gray-600",
+            "type": "color",
+            "description": "Tailwind gray 600 (declared palette, identical in both themes)."
+          },
+          "700": {
+            "var": "--color-gray-700",
+            "type": "color",
+            "description": "Tailwind gray 700 (declared palette, identical in both themes)."
+          },
+          "800": {
+            "var": "--color-gray-800",
+            "type": "color",
+            "description": "Tailwind gray 800 (declared palette, identical in both themes)."
+          },
+          "900": {
+            "var": "--color-gray-900",
+            "type": "color",
+            "description": "Tailwind gray 900 (declared palette, identical in both themes)."
+          },
+          "950": {
+            "var": "--color-gray-950",
+            "type": "color",
+            "description": "Tailwind gray 950 (declared palette, identical in both themes)."
+          }
+        },
+        "green": {
+          "400": {
+            "var": "--color-green-400",
+            "type": "color",
+            "description": "Tailwind green 400 (declared palette, identical in both themes)."
+          },
+          "500": {
+            "var": "--color-green-500",
+            "type": "color",
+            "description": "Tailwind green 500 (declared palette, identical in both themes)."
+          },
+          "600": {
+            "var": "--color-green-600",
+            "type": "color",
+            "description": "Tailwind green 600 (declared palette, identical in both themes)."
+          }
+        },
+        "indigo": {
+          "500": {
+            "var": "--color-indigo-500",
+            "type": "color",
+            "description": "Tailwind indigo 500 (declared palette, identical in both themes)."
+          }
+        },
+        "lime": {
+          "500": {
+            "var": "--color-lime-500",
+            "type": "color",
+            "description": "Tailwind lime 500 (declared palette, identical in both themes)."
+          }
+        },
+        "neutral": {
+          "200": {
+            "var": "--color-neutral-200",
+            "type": "color",
+            "description": "Tailwind neutral 200 (declared palette, identical in both themes)."
+          },
+          "300": {
+            "var": "--color-neutral-300",
+            "type": "color",
+            "description": "Tailwind neutral 300 (declared palette, identical in both themes)."
+          },
+          "400": {
+            "var": "--color-neutral-400",
+            "type": "color",
+            "description": "Tailwind neutral 400 (declared palette, identical in both themes)."
+          },
+          "600": {
+            "var": "--color-neutral-600",
+            "type": "color",
+            "description": "Tailwind neutral 600 (declared palette, identical in both themes)."
+          },
+          "700": {
+            "var": "--color-neutral-700",
+            "type": "color",
+            "description": "Tailwind neutral 700 (declared palette, identical in both themes)."
+          },
+          "900": {
+            "var": "--color-neutral-900",
+            "type": "color",
+            "description": "Tailwind neutral 900 (declared palette, identical in both themes)."
+          },
+          "950": {
+            "var": "--color-neutral-950",
+            "type": "color",
+            "description": "Tailwind neutral 950 (declared palette, identical in both themes)."
+          }
+        },
+        "orange": {
+          "500": {
+            "var": "--color-orange-500",
+            "type": "color",
+            "description": "Tailwind orange 500 (declared palette, identical in both themes)."
+          },
+          "600": {
+            "var": "--color-orange-600",
+            "type": "color",
+            "description": "Tailwind orange 600 (declared palette, identical in both themes)."
+          },
+          "950": {
+            "var": "--color-orange-950",
+            "type": "color",
+            "description": "Tailwind orange 950 (declared palette, identical in both themes)."
+          }
+        },
+        "pink": {
+          "500": {
+            "var": "--color-pink-500",
+            "type": "color",
+            "description": "Tailwind pink 500 (declared palette, identical in both themes)."
+          }
+        },
+        "purple": {
+          "500": {
+            "var": "--color-purple-500",
+            "type": "color",
+            "description": "Tailwind purple 500 (declared palette, identical in both themes)."
+          }
+        },
+        "red": {
+          "100": {
+            "var": "--color-red-100",
+            "type": "color",
+            "description": "Tailwind red 100 (declared palette, identical in both themes)."
+          },
+          "400": {
+            "var": "--color-red-400",
+            "type": "color",
+            "description": "Tailwind red 400 (declared palette, identical in both themes)."
+          },
+          "50": {
+            "var": "--color-red-50",
+            "type": "color",
+            "description": "Tailwind red 50 (declared palette, identical in both themes)."
+          },
+          "500": {
+            "var": "--color-red-500",
+            "type": "color",
+            "description": "Tailwind red 500 (declared palette, identical in both themes)."
+          },
+          "600": {
+            "var": "--color-red-600",
+            "type": "color",
+            "description": "Tailwind red 600 (declared palette, identical in both themes)."
+          },
+          "700": {
+            "var": "--color-red-700",
+            "type": "color",
+            "description": "Tailwind red 700 (declared palette, identical in both themes)."
+          },
+          "800": {
+            "var": "--color-red-800",
+            "type": "color",
+            "description": "Tailwind red 800 (declared palette, identical in both themes)."
+          },
+          "950": {
+            "var": "--color-red-950",
+            "type": "color",
+            "description": "Tailwind red 950 (declared palette, identical in both themes)."
+          }
+        },
+        "rose": {
+          "500": {
+            "var": "--color-rose-500",
+            "type": "color",
+            "description": "Tailwind rose 500 (declared palette, identical in both themes)."
+          },
+          "800": {
+            "var": "--color-rose-800",
+            "type": "color",
+            "description": "Tailwind rose 800 (declared palette, identical in both themes)."
+          }
+        },
+        "sky": {
+          "500": {
+            "var": "--color-sky-500",
+            "type": "color",
+            "description": "Tailwind sky 500 (declared palette, identical in both themes)."
+          }
+        },
+        "stone": {
+          "800": {
+            "var": "--color-stone-800",
+            "type": "color",
+            "description": "Tailwind stone 800 (declared palette, identical in both themes)."
+          }
+        },
+        "teal": {
+          "500": {
+            "var": "--color-teal-500",
+            "type": "color",
+            "description": "Tailwind teal 500 (declared palette, identical in both themes)."
+          }
+        },
+        "violet": {
+          "500": {
+            "var": "--color-violet-500",
+            "type": "color",
+            "description": "Tailwind violet 500 (declared palette, identical in both themes)."
+          }
+        },
+        "yellow": {
+          "500": {
+            "var": "--color-yellow-500",
+            "type": "color",
+            "description": "Tailwind yellow 500 (declared palette, identical in both themes)."
+          },
+          "600": {
+            "var": "--color-yellow-600",
+            "type": "color",
+            "description": "Tailwind yellow 600 (declared palette, identical in both themes)."
+          }
+        },
+        "zinc": {
+          "600": {
+            "var": "--color-zinc-600",
+            "type": "color",
+            "description": "Tailwind zinc 600 (declared palette, identical in both themes)."
+          },
+          "700": {
+            "var": "--color-zinc-700",
+            "type": "color",
+            "description": "Tailwind zinc 700 (declared palette, identical in both themes)."
+          },
+          "800": {
+            "var": "--color-zinc-800",
+            "type": "color",
+            "description": "Tailwind zinc 800 (declared palette, identical in both themes)."
+          },
+          "900": {
+            "var": "--color-zinc-900",
+            "type": "color",
+            "description": "Tailwind zinc 900 (declared palette, identical in both themes)."
+          },
+          "950": {
+            "var": "--color-zinc-950",
+            "type": "color",
+            "description": "Tailwind zinc 950 (declared palette, identical in both themes)."
+          }
+        },
+        "black": {
+          "default": {
+            "var": "--color-black",
+            "type": "color",
+            "description": "Declared --color-black (identical in both themes)."
+          }
+        },
+        "white": {
+          "default": {
+            "var": "--color-white",
+            "type": "color",
+            "description": "Declared --color-white (identical in both themes)."
+          }
+        },
+        "overlay": {
+          "darken": {
+            "100": {
+              "var": "--darken-100",
+              "type": "color",
+              "description": "Declared black-alpha overlay step (identical in both themes)."
+            },
+            "150": {
+              "var": "--darken-150",
+              "type": "color",
+              "description": "Declared black-alpha overlay step (identical in both themes)."
+            },
+            "200": {
+              "var": "--darken-200",
+              "type": "color",
+              "description": "Declared black-alpha overlay step (identical in both themes)."
+            },
+            "300": {
+              "var": "--darken-300",
+              "type": "color",
+              "description": "Declared black-alpha overlay step (identical in both themes)."
+            },
+            "400": {
+              "var": "--darken-400",
+              "type": "color",
+              "description": "Declared black-alpha overlay step (identical in both themes)."
+            },
+            "50": {
+              "var": "--darken-50",
+              "type": "color",
+              "description": "Declared black-alpha overlay step (identical in both themes)."
+            },
+            "500": {
+              "var": "--darken-500",
+              "type": "color",
+              "description": "Declared black-alpha overlay step (identical in both themes)."
+            },
+            "600": {
+              "var": "--darken-600",
+              "type": "color",
+              "description": "Declared black-alpha overlay step (identical in both themes)."
+            },
+            "700": {
+              "var": "--darken-700",
+              "type": "color",
+              "description": "Declared black-alpha overlay step (identical in both themes)."
+            },
+            "800": {
+              "var": "--darken-800",
+              "type": "color",
+              "description": "Declared black-alpha overlay step (identical in both themes)."
+            },
+            "900": {
+              "var": "--darken-900",
+              "type": "color",
+              "description": "Declared black-alpha overlay step (identical in both themes)."
+            },
+            "950": {
+              "var": "--darken-950",
+              "type": "color",
+              "description": "Declared black-alpha overlay step (identical in both themes)."
+            }
+          }
+        }
+      }
+    },
+    "spacing": {
+      "base": {
+        "var": "--spacing",
+        "type": "dimension",
+        "description": "The 4px spacing base."
+      }
+    },
+    "radius": {
+      "xs": {
+        "var": "--radius-xs",
+        "type": "dimension",
+        "description": "Declared --radius-xs."
+      },
+      "sm": {
+        "var": "--radius-sm",
+        "type": "dimension",
+        "description": "Declared --radius-sm."
+      },
+      "md": {
+        "var": "--radius-md",
+        "type": "dimension",
+        "description": "Declared --radius-md."
+      },
+      "lg": {
+        "var": "--radius-lg",
+        "type": "dimension",
+        "description": "Declared --radius-lg."
+      },
+      "default": {
+        "var": "--radius",
+        "type": "dimension",
+        "description": "Declared --radius."
+      },
+      "xl": {
+        "var": "--radius-xl",
+        "type": "dimension",
+        "description": "Declared --radius-xl."
+      },
+      "2xl": {
+        "var": "--radius-2xl",
+        "type": "dimension",
+        "description": "Declared --radius-2xl."
+      },
+      "3xl": {
+        "var": "--radius-3xl",
+        "type": "dimension",
+        "description": "Declared --radius-3xl."
+      }
+    },
+    "blur": {
+      "xs": {
+        "var": "--blur-xs",
+        "type": "dimension",
+        "description": "Declared --blur-xs (backdrop and glow blurs)."
+      },
+      "sm": {
+        "var": "--blur-sm",
+        "type": "dimension",
+        "description": "Declared --blur-sm (backdrop and glow blurs)."
+      },
+      "md": {
+        "var": "--blur-md",
+        "type": "dimension",
+        "description": "Declared --blur-md (backdrop and glow blurs)."
+      },
+      "lg": {
+        "var": "--blur-lg",
+        "type": "dimension",
+        "description": "Declared --blur-lg (backdrop and glow blurs)."
+      },
+      "xl": {
+        "var": "--blur-xl",
+        "type": "dimension",
+        "description": "Declared --blur-xl (backdrop and glow blurs)."
+      },
+      "2xl": {
+        "var": "--blur-2xl",
+        "type": "dimension",
+        "description": "Declared --blur-2xl (backdrop and glow blurs)."
+      },
+      "3xl": {
+        "var": "--blur-3xl",
+        "type": "dimension",
+        "description": "Declared --blur-3xl (backdrop and glow blurs)."
+      }
+    },
+    "container": {
+      "xs": {
+        "var": "--container-xs",
+        "type": "dimension",
+        "description": "Declared --container-xs max width."
+      },
+      "sm": {
+        "var": "--container-sm",
+        "type": "dimension",
+        "description": "Declared --container-sm max width."
+      },
+      "md": {
+        "var": "--container-md",
+        "type": "dimension",
+        "description": "Declared --container-md max width."
+      },
+      "lg": {
+        "var": "--container-lg",
+        "type": "dimension",
+        "description": "Declared --container-lg max width."
+      },
+      "xl": {
+        "var": "--container-xl",
+        "type": "dimension",
+        "description": "Declared --container-xl max width."
+      },
+      "2xl": {
+        "var": "--container-2xl",
+        "type": "dimension",
+        "description": "Declared --container-2xl max width."
+      },
+      "3xl": {
+        "var": "--container-3xl",
+        "type": "dimension",
+        "description": "Declared --container-3xl max width."
+      },
+      "4xl": {
+        "var": "--container-4xl",
+        "type": "dimension",
+        "description": "Declared --container-4xl max width."
+      },
+      "5xl": {
+        "var": "--container-5xl",
+        "type": "dimension",
+        "description": "Declared --container-5xl max width."
+      },
+      "6xl": {
+        "var": "--container-6xl",
+        "type": "dimension",
+        "description": "Declared --container-6xl max width."
+      }
+    },
+    "motion": {
+      "ease-out": {
+        "var": "--ease-out",
+        "type": "cubicBezier",
+        "description": "The default out-curve."
+      },
+      "ease-in-out": {
+        "var": "--ease-in-out",
+        "type": "cubicBezier",
+        "description": "The in-out curve."
+      },
+      "duration": {
+        "var": "--default-transition-duration",
+        "type": "duration",
+        "description": "The default 150ms transition duration."
+      },
+      "timing": {
+        "var": "--default-transition-timing-function",
+        "type": "cubicBezier",
+        "description": "The default transition curve."
+      }
+    },
+    "shadow": {
+      "drop-sm": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.15)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "2px",
+            "spread": "0px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --drop-shadow-sm (light)",
+        "description": "Declared --drop-shadow-sm (identical in both themes)."
+      }
+    }
+  },
+  "light": {
+    "color": {
+      "surface": {
+        "background": {
+          "var": "--background",
+          "type": "color",
+          "description": "The page field: true black in dark, warm paper #fdfcfb in light."
+        },
+        "card": {
+          "var": "--card",
+          "type": "color",
+          "description": "Card surfaces."
+        },
+        "elevated": {
+          "var": "--elevated",
+          "type": "color",
+          "description": "Elevated surface (popovers, raised panels)."
+        },
+        "elevated-hover": {
+          "var": "--elevated-hover",
+          "type": "color",
+          "description": "Elevated surface, hovered."
+        },
+        "muted": {
+          "var": "--muted",
+          "type": "color",
+          "description": "Muted fill: quiet rows and chips."
+        },
+        "secondary": {
+          "var": "--secondary",
+          "type": "color",
+          "description": "Secondary fill."
+        },
+        "secondary-hover": {
+          "var": "--secondary-hover",
+          "type": "color",
+          "description": "Secondary fill, hovered."
+        },
+        "accent": {
+          "var": "--accent",
+          "type": "color",
+          "description": "Accent fill (hover washes)."
+        },
+        "popover": {
+          "var": "--popover",
+          "type": "color",
+          "description": "Popover/dropdown surface."
+        },
+        "popover-solid": {
+          "var": "--popover-solid",
+          "type": "color",
+          "description": "Solid popover surface."
+        },
+        "surface-1": {
+          "var": "--surface-1",
+          "type": "color",
+          "description": "The app's first raised surface."
+        },
+        "surface-2": {
+          "var": "--surface-2",
+          "type": "color",
+          "description": "The app's second raised surface."
+        },
+        "sidebar": {
+          "var": "--sidebar",
+          "type": "color",
+          "description": "The left-rail field."
+        },
+        "overlay": {
+          "var": "--overlay",
+          "type": "color",
+          "description": "Translucent overlay wash."
+        },
+        "overlay-backdrop": {
+          "var": "--overlay-backdrop",
+          "type": "color",
+          "description": "The modal scrim."
+        },
+        "composer": {
+          "var": "--composer",
+          "type": "color",
+          "description": "The composer's translucent field."
+        },
+        "composer-panel": {
+          "var": "--composer-panel",
+          "type": "color",
+          "description": "The composer panel surface."
+        },
+        "composer-panel-inset": {
+          "var": "--composer-panel-inset",
+          "type": "color",
+          "description": "The composer panel's inset."
+        },
+        "composer-surface": {
+          "var": "--composer-surface",
+          "type": "color",
+          "description": "The composer surface."
+        },
+        "composer-solid": {
+          "var": "--composer-solid",
+          "type": "color",
+          "description": "The solid composer surface."
+        },
+        "composer-chip": {
+          "var": "--composer-chip",
+          "type": "color",
+          "description": "Prompt-chip fill."
+        },
+        "composer-chip-hover": {
+          "var": "--composer-chip-hover",
+          "type": "color",
+          "description": "Prompt-chip fill, hovered."
+        },
+        "composer-button": {
+          "var": "--composer-button",
+          "type": "color",
+          "description": "The composer buttons' fill."
+        },
+        "destructive-soft": {
+          "var": "--destructive-soft",
+          "type": "color",
+          "description": "Soft destructive surface."
+        }
+      },
+      "ink": {
+        "foreground": {
+          "var": "--foreground",
+          "type": "color",
+          "description": "Primary text and glyphs."
+        },
+        "card-foreground": {
+          "var": "--card-foreground",
+          "type": "color",
+          "description": "Text on cards."
+        },
+        "muted-foreground": {
+          "var": "--muted-foreground",
+          "type": "color",
+          "description": "Muted text: subtitles, metadata."
+        },
+        "primary-foreground": {
+          "var": "--primary-foreground",
+          "type": "color",
+          "description": "Text on the primary fill."
+        },
+        "secondary-foreground": {
+          "var": "--secondary-foreground",
+          "type": "color",
+          "description": "Text on the secondary fill."
+        },
+        "accent-foreground": {
+          "var": "--accent-foreground",
+          "type": "color",
+          "description": "Text on the accent fill."
+        },
+        "popover-foreground": {
+          "var": "--popover-foreground",
+          "type": "color",
+          "description": "Text on popovers."
+        },
+        "sidebar-foreground": {
+          "var": "--sidebar-foreground",
+          "type": "color",
+          "description": "Rail text (the muted row labels)."
+        },
+        "sidebar-accent-foreground": {
+          "var": "--sidebar-accent-foreground",
+          "type": "color",
+          "description": "Text on the rail's accent fill."
+        },
+        "sidebar-primary-foreground": {
+          "var": "--sidebar-primary-foreground",
+          "type": "color",
+          "description": "Text on the rail's primary fill."
+        },
+        "composer-fg-muted": {
+          "var": "--composer-fg-muted",
+          "type": "color",
+          "description": "Muted text inside the composer."
+        },
+        "destructive-foreground": {
+          "var": "--destructive-foreground",
+          "type": "color",
+          "description": "Text on the destructive fill."
+        },
+        "destructive-soft-foreground": {
+          "var": "--destructive-soft-foreground",
+          "type": "color",
+          "description": "Text on the soft destructive surface."
+        },
+        "subtle": {
+          "var": "--subtle",
+          "type": "color",
+          "description": "The most quiet text/line tint."
+        }
+      },
+      "action": {
+        "primary": {
+          "var": "--primary",
+          "type": "color",
+          "description": "The primary fill \u2014 white in dark (inverted), black in light."
+        },
+        "primary-hover": {
+          "var": "--primary-hover",
+          "type": "color",
+          "description": "The primary fill, hovered."
+        },
+        "brand": {
+          "var": "--brand",
+          "type": "color",
+          "description": "The ElevenLabs brand blue (charts, links, the badge)."
+        },
+        "brand-foreground": {
+          "var": "--brand-foreground",
+          "type": "color",
+          "description": "Text on the brand fill."
+        },
+        "destructive": {
+          "var": "--destructive",
+          "type": "color",
+          "description": "Destructive fill."
+        },
+        "success": {
+          "var": "--success",
+          "type": "color",
+          "description": "Success green."
+        },
+        "sidebar-primary": {
+          "var": "--sidebar-primary",
+          "type": "color",
+          "description": "The rail's primary fill."
+        }
+      },
+      "border": {
+        "border": {
+          "var": "--border",
+          "type": "color",
+          "description": "The hairline: white 10% in dark, warm-brown 8% in light."
+        },
+        "input": {
+          "var": "--input",
+          "type": "color",
+          "description": "Field and control outlines."
+        },
+        "outline": {
+          "var": "--outline",
+          "type": "color",
+          "description": "The --outline hairline."
+        },
+        "sidebar-border": {
+          "var": "--sidebar-border",
+          "type": "color",
+          "description": "The rail's hairline."
+        },
+        "composer-hairline": {
+          "var": "--composer-hairline",
+          "type": "color",
+          "description": "The composer's hairline."
+        },
+        "composer-ring": {
+          "var": "--composer-ring",
+          "type": "color",
+          "description": "The composer's ring."
+        },
+        "slider-track": {
+          "var": "--slider-track",
+          "type": "color",
+          "description": "The slider/progress track."
+        },
+        "field-border-focus": {
+          "var": "--field-border-focus",
+          "type": "color",
+          "description": "The field border on focus."
+        }
+      },
+      "focus": {
+        "ring": {
+          "var": "--ring",
+          "type": "color",
+          "description": "The focus-ring ink."
+        },
+        "sidebar-ring": {
+          "var": "--sidebar-ring",
+          "type": "color",
+          "description": "The rail's focus ring."
+        }
+      },
+      "role": {
+        "background": {
+          "var": "--color-background",
+          "type": "color",
+          "description": "Tailwind alias of --background."
+        },
+        "foreground": {
+          "var": "--color-foreground",
+          "type": "color",
+          "description": "Tailwind alias of --foreground."
+        },
+        "primary": {
+          "var": "--color-primary",
+          "type": "color",
+          "description": "Tailwind alias of --primary."
+        },
+        "muted-foreground": {
+          "var": "--color-muted-foreground",
+          "type": "color",
+          "description": "Tailwind alias of --muted-foreground."
+        },
+        "border": {
+          "var": "--color-border",
+          "type": "color",
+          "description": "Tailwind alias of --border."
+        },
+        "destructive": {
+          "var": "--color-destructive",
+          "type": "color",
+          "description": "Tailwind alias of --destructive."
+        }
+      },
+      "chart": {
+        "1": {
+          "var": "--chart-1",
+          "type": "color",
+          "description": "Declared chart colour 1."
+        },
+        "2": {
+          "var": "--chart-2",
+          "type": "color",
+          "description": "Declared chart colour 2."
+        },
+        "3": {
+          "var": "--chart-3",
+          "type": "color",
+          "description": "Declared chart colour 3."
+        },
+        "4": {
+          "var": "--chart-4",
+          "type": "color",
+          "description": "Declared chart colour 4."
+        },
+        "5": {
+          "var": "--chart-5",
+          "type": "color",
+          "description": "Declared chart colour 5."
+        }
+      },
+      "alpha": {
+        "gray-100": {
+          "var": "--gray-alpha-100",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-150": {
+          "var": "--gray-alpha-150",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-200": {
+          "var": "--gray-alpha-200",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-300": {
+          "var": "--gray-alpha-300",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-400": {
+          "var": "--gray-alpha-400",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-50": {
+          "var": "--gray-alpha-50",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-500": {
+          "var": "--gray-alpha-500",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-600": {
+          "var": "--gray-alpha-600",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-700": {
+          "var": "--gray-alpha-700",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-800": {
+          "var": "--gray-alpha-800",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-900": {
+          "var": "--gray-alpha-900",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-950": {
+          "var": "--gray-alpha-950",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        }
+      }
+    },
+    "shadow": {
+      "e1": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.4)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "1px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "1px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "2px",
+            "blur": "4px",
+            "spread": "0px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --shadow-e1 (light)",
+        "description": "Elevation 1: the hairline-plus-drop pairing."
+      },
+      "e2": {
+        "value": [
+          {
+            "color": "rgba(25, 25, 25, 0.05)",
+            "offsetX": "0px",
+            "offsetY": "20px",
+            "blur": "24px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(25, 25, 25, 0.027)",
+            "offsetX": "0px",
+            "offsetY": "5px",
+            "blur": "8px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(25, 25, 25, 0.06)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "0px",
+            "spread": "0.5px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --shadow-e2 (light)",
+        "description": "Elevation 2: the popover/card drop."
+      },
+      "lift-1": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.4)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "1px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "1px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "2px",
+            "blur": "4px",
+            "spread": "0px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --lift-1 (light)",
+        "description": "Lift 1."
+      },
+      "lift-2": {
+        "value": [
+          {
+            "color": "rgba(25, 25, 25, 0.05)",
+            "offsetX": "0px",
+            "offsetY": "20px",
+            "blur": "24px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(25, 25, 25, 0.027)",
+            "offsetX": "0px",
+            "offsetY": "5px",
+            "blur": "8px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(25, 25, 25, 0.06)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "0px",
+            "spread": "0.5px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --lift-2 (light)",
+        "description": "Lift 2: the card drop."
+      },
+      "lift-3": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.4)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "1px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "2px",
+            "blur": "4px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "6px",
+            "blur": "16px",
+            "spread": "0px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --lift-3 (light)",
+        "description": "Lift 3: the composer/dialog elevation."
+      },
+      "surface": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.4)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "1px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "2px",
+            "blur": "4px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "6px",
+            "blur": "16px",
+            "spread": "0px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --surface-shadow (light)",
+        "description": "The surface shadow."
+      },
+      "popover": {
+        "value": [
+          {
+            "color": "rgba(25, 25, 25, 0.05)",
+            "offsetX": "0px",
+            "offsetY": "20px",
+            "blur": "24px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(25, 25, 25, 0.027)",
+            "offsetX": "0px",
+            "offsetY": "5px",
+            "blur": "8px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(25, 25, 25, 0.06)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "0px",
+            "spread": "0.5px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --popover-shadow (light)",
+        "description": "The popover drop."
+      },
+      "elevated": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.4)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "1px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "1px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.04)",
+            "offsetX": "0px",
+            "offsetY": "2px",
+            "blur": "4px",
+            "spread": "0px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --elevated-shadow (light)",
+        "description": "The elevated-surface shadow."
+      },
+      "app-card": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.09)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "0px",
+            "spread": "0.5px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.09)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "1px",
+            "spread": "-0.5px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.09)",
+            "offsetX": "0px",
+            "offsetY": "3px",
+            "blur": "3px",
+            "spread": "-1.5px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --app-card-shadow (light)",
+        "description": "The app-card shadow."
+      }
+    }
+  },
+  "dark": {
+    "color": {
+      "surface": {
+        "background": {
+          "var": "--background",
+          "type": "color",
+          "description": "The page field: true black in dark, warm paper #fdfcfb in light."
+        },
+        "card": {
+          "var": "--card",
+          "type": "color",
+          "description": "Card surfaces."
+        },
+        "elevated": {
+          "var": "--elevated",
+          "type": "color",
+          "description": "Elevated surface (popovers, raised panels)."
+        },
+        "elevated-hover": {
+          "var": "--elevated-hover",
+          "type": "color",
+          "description": "Elevated surface, hovered."
+        },
+        "muted": {
+          "var": "--muted",
+          "type": "color",
+          "description": "Muted fill: quiet rows and chips."
+        },
+        "secondary": {
+          "var": "--secondary",
+          "type": "color",
+          "description": "Secondary fill."
+        },
+        "secondary-hover": {
+          "var": "--secondary-hover",
+          "type": "color",
+          "description": "Secondary fill, hovered."
+        },
+        "accent": {
+          "var": "--accent",
+          "type": "color",
+          "description": "Accent fill (hover washes)."
+        },
+        "popover": {
+          "var": "--popover",
+          "type": "color",
+          "description": "Popover/dropdown surface."
+        },
+        "popover-solid": {
+          "var": "--popover-solid",
+          "type": "color",
+          "description": "Solid popover surface."
+        },
+        "surface-1": {
+          "var": "--surface-1",
+          "type": "color",
+          "description": "The app's first raised surface."
+        },
+        "surface-2": {
+          "var": "--surface-2",
+          "type": "color",
+          "description": "The app's second raised surface."
+        },
+        "sidebar": {
+          "var": "--sidebar",
+          "type": "color",
+          "description": "The left-rail field."
+        },
+        "overlay": {
+          "var": "--overlay",
+          "type": "color",
+          "description": "Translucent overlay wash."
+        },
+        "overlay-backdrop": {
+          "var": "--overlay-backdrop",
+          "type": "color",
+          "description": "The modal scrim."
+        },
+        "composer": {
+          "var": "--composer",
+          "type": "color",
+          "description": "The composer's translucent field."
+        },
+        "composer-panel": {
+          "var": "--composer-panel",
+          "type": "color",
+          "description": "The composer panel surface."
+        },
+        "composer-panel-inset": {
+          "var": "--composer-panel-inset",
+          "type": "color",
+          "description": "The composer panel's inset."
+        },
+        "composer-surface": {
+          "var": "--composer-surface",
+          "type": "color",
+          "description": "The composer surface."
+        },
+        "composer-solid": {
+          "var": "--composer-solid",
+          "type": "color",
+          "description": "The solid composer surface."
+        },
+        "composer-chip": {
+          "var": "--composer-chip",
+          "type": "color",
+          "description": "Prompt-chip fill."
+        },
+        "composer-chip-hover": {
+          "var": "--composer-chip-hover",
+          "type": "color",
+          "description": "Prompt-chip fill, hovered."
+        },
+        "composer-button": {
+          "var": "--composer-button",
+          "type": "color",
+          "description": "The composer buttons' fill."
+        },
+        "destructive-soft": {
+          "var": "--destructive-soft",
+          "type": "color",
+          "description": "Soft destructive surface."
+        }
+      },
+      "ink": {
+        "foreground": {
+          "var": "--foreground",
+          "type": "color",
+          "description": "Primary text and glyphs."
+        },
+        "card-foreground": {
+          "var": "--card-foreground",
+          "type": "color",
+          "description": "Text on cards."
+        },
+        "muted-foreground": {
+          "var": "--muted-foreground",
+          "type": "color",
+          "description": "Muted text: subtitles, metadata."
+        },
+        "primary-foreground": {
+          "var": "--primary-foreground",
+          "type": "color",
+          "description": "Text on the primary fill."
+        },
+        "secondary-foreground": {
+          "var": "--secondary-foreground",
+          "type": "color",
+          "description": "Text on the secondary fill."
+        },
+        "accent-foreground": {
+          "var": "--accent-foreground",
+          "type": "color",
+          "description": "Text on the accent fill."
+        },
+        "popover-foreground": {
+          "var": "--popover-foreground",
+          "type": "color",
+          "description": "Text on popovers."
+        },
+        "sidebar-foreground": {
+          "var": "--sidebar-foreground",
+          "type": "color",
+          "description": "Rail text (the muted row labels)."
+        },
+        "sidebar-accent-foreground": {
+          "var": "--sidebar-accent-foreground",
+          "type": "color",
+          "description": "Text on the rail's accent fill."
+        },
+        "sidebar-primary-foreground": {
+          "var": "--sidebar-primary-foreground",
+          "type": "color",
+          "description": "Text on the rail's primary fill."
+        },
+        "composer-fg-muted": {
+          "var": "--composer-fg-muted",
+          "type": "color",
+          "description": "Muted text inside the composer."
+        },
+        "destructive-foreground": {
+          "var": "--destructive-foreground",
+          "type": "color",
+          "description": "Text on the destructive fill."
+        },
+        "destructive-soft-foreground": {
+          "var": "--destructive-soft-foreground",
+          "type": "color",
+          "description": "Text on the soft destructive surface."
+        },
+        "subtle": {
+          "var": "--subtle",
+          "type": "color",
+          "description": "The most quiet text/line tint."
+        }
+      },
+      "action": {
+        "primary": {
+          "var": "--primary",
+          "type": "color",
+          "description": "The primary fill \u2014 white in dark (inverted), black in light."
+        },
+        "primary-hover": {
+          "var": "--primary-hover",
+          "type": "color",
+          "description": "The primary fill, hovered."
+        },
+        "brand": {
+          "var": "--brand",
+          "type": "color",
+          "description": "The ElevenLabs brand blue (charts, links, the badge)."
+        },
+        "brand-foreground": {
+          "var": "--brand-foreground",
+          "type": "color",
+          "description": "Text on the brand fill."
+        },
+        "destructive": {
+          "var": "--destructive",
+          "type": "color",
+          "description": "Destructive fill."
+        },
+        "success": {
+          "var": "--success",
+          "type": "color",
+          "description": "Success green."
+        },
+        "sidebar-primary": {
+          "var": "--sidebar-primary",
+          "type": "color",
+          "description": "The rail's primary fill."
+        }
+      },
+      "border": {
+        "border": {
+          "var": "--border",
+          "type": "color",
+          "description": "The hairline: white 10% in dark, warm-brown 8% in light."
+        },
+        "input": {
+          "var": "--input",
+          "type": "color",
+          "description": "Field and control outlines."
+        },
+        "outline": {
+          "var": "--outline",
+          "type": "color",
+          "description": "The --outline hairline."
+        },
+        "sidebar-border": {
+          "var": "--sidebar-border",
+          "type": "color",
+          "description": "The rail's hairline."
+        },
+        "composer-hairline": {
+          "var": "--composer-hairline",
+          "type": "color",
+          "description": "The composer's hairline."
+        },
+        "composer-ring": {
+          "var": "--composer-ring",
+          "type": "color",
+          "description": "The composer's ring."
+        },
+        "slider-track": {
+          "var": "--slider-track",
+          "type": "color",
+          "description": "The slider/progress track."
+        },
+        "field-border-focus": {
+          "var": "--field-border-focus",
+          "type": "color",
+          "description": "The field border on focus."
+        }
+      },
+      "focus": {
+        "ring": {
+          "var": "--ring",
+          "type": "color",
+          "description": "The focus-ring ink."
+        },
+        "sidebar-ring": {
+          "var": "--sidebar-ring",
+          "type": "color",
+          "description": "The rail's focus ring."
+        }
+      },
+      "role": {
+        "background": {
+          "var": "--color-background",
+          "type": "color",
+          "description": "Tailwind alias of --background."
+        },
+        "foreground": {
+          "var": "--color-foreground",
+          "type": "color",
+          "description": "Tailwind alias of --foreground."
+        },
+        "primary": {
+          "var": "--color-primary",
+          "type": "color",
+          "description": "Tailwind alias of --primary."
+        },
+        "muted-foreground": {
+          "var": "--color-muted-foreground",
+          "type": "color",
+          "description": "Tailwind alias of --muted-foreground."
+        },
+        "border": {
+          "var": "--color-border",
+          "type": "color",
+          "description": "Tailwind alias of --border."
+        },
+        "destructive": {
+          "var": "--color-destructive",
+          "type": "color",
+          "description": "Tailwind alias of --destructive."
+        }
+      },
+      "chart": {
+        "1": {
+          "var": "--chart-1",
+          "type": "color",
+          "description": "Declared chart colour 1."
+        },
+        "2": {
+          "var": "--chart-2",
+          "type": "color",
+          "description": "Declared chart colour 2."
+        },
+        "3": {
+          "var": "--chart-3",
+          "type": "color",
+          "description": "Declared chart colour 3."
+        },
+        "4": {
+          "var": "--chart-4",
+          "type": "color",
+          "description": "Declared chart colour 4."
+        },
+        "5": {
+          "var": "--chart-5",
+          "type": "color",
+          "description": "Declared chart colour 5."
+        }
+      },
+      "alpha": {
+        "gray-100": {
+          "var": "--gray-alpha-100",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-150": {
+          "var": "--gray-alpha-150",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-200": {
+          "var": "--gray-alpha-200",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-300": {
+          "var": "--gray-alpha-300",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-400": {
+          "var": "--gray-alpha-400",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-50": {
+          "var": "--gray-alpha-50",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-500": {
+          "var": "--gray-alpha-500",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-600": {
+          "var": "--gray-alpha-600",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-700": {
+          "var": "--gray-alpha-700",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-800": {
+          "var": "--gray-alpha-800",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-900": {
+          "var": "--gray-alpha-900",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "gray-950": {
+          "var": "--gray-alpha-950",
+          "type": "color",
+          "description": "The warm-grey alpha ramp (light) / white-alpha ramp (dark)."
+        },
+        "lighten-100": {
+          "var": "--lighten-100",
+          "type": "color",
+          "description": "White-alpha lift step; resolves in the dark theme only."
+        },
+        "lighten-150": {
+          "var": "--lighten-150",
+          "type": "color",
+          "description": "White-alpha lift step; resolves in the dark theme only."
+        },
+        "lighten-200": {
+          "var": "--lighten-200",
+          "type": "color",
+          "description": "White-alpha lift step; resolves in the dark theme only."
+        },
+        "lighten-300": {
+          "var": "--lighten-300",
+          "type": "color",
+          "description": "White-alpha lift step; resolves in the dark theme only."
+        },
+        "lighten-400": {
+          "var": "--lighten-400",
+          "type": "color",
+          "description": "White-alpha lift step; resolves in the dark theme only."
+        },
+        "lighten-50": {
+          "var": "--lighten-50",
+          "type": "color",
+          "description": "White-alpha lift step; resolves in the dark theme only."
+        },
+        "lighten-500": {
+          "var": "--lighten-500",
+          "type": "color",
+          "description": "White-alpha lift step; resolves in the dark theme only."
+        },
+        "lighten-600": {
+          "var": "--lighten-600",
+          "type": "color",
+          "description": "White-alpha lift step; resolves in the dark theme only."
+        },
+        "lighten-700": {
+          "var": "--lighten-700",
+          "type": "color",
+          "description": "White-alpha lift step; resolves in the dark theme only."
+        },
+        "lighten-800": {
+          "var": "--lighten-800",
+          "type": "color",
+          "description": "White-alpha lift step; resolves in the dark theme only."
+        },
+        "lighten-900": {
+          "var": "--lighten-900",
+          "type": "color",
+          "description": "White-alpha lift step; resolves in the dark theme only."
+        },
+        "lighten-950": {
+          "var": "--lighten-950",
+          "type": "color",
+          "description": "White-alpha lift step; resolves in the dark theme only."
+        }
+      }
+    },
+    "shadow": {
+      "e1": {
+        "value": [
+          {
+            "color": "rgba(255, 255, 255, 0.07)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "0px",
+            "spread": "1px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.5)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "2px",
+            "spread": "0px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --shadow-e1 (dark)",
+        "description": "Elevation 1: the hairline-plus-drop pairing."
+      },
+      "e2": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.35)",
+            "offsetX": "0px",
+            "offsetY": "20px",
+            "blur": "24px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.18)",
+            "offsetX": "0px",
+            "offsetY": "5px",
+            "blur": "8px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(255, 255, 255, 0.06)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "0px",
+            "spread": "0.5px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --shadow-e2 (dark)",
+        "description": "Elevation 2: the popover/card drop."
+      },
+      "lift-1": {
+        "value": [
+          {
+            "color": "rgba(255, 255, 255, 0.07)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "0px",
+            "spread": "1px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.5)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "2px",
+            "spread": "0px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --lift-1 (dark)",
+        "description": "Lift 1."
+      },
+      "lift-2": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.35)",
+            "offsetX": "0px",
+            "offsetY": "20px",
+            "blur": "24px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.18)",
+            "offsetX": "0px",
+            "offsetY": "5px",
+            "blur": "8px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(255, 255, 255, 0.06)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "0px",
+            "spread": "0.5px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --lift-2 (dark)",
+        "description": "Lift 2: the card drop."
+      },
+      "lift-3": {
+        "value": [
+          {
+            "color": "rgba(255, 255, 255, 0.15)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "0px",
+            "spread": "0px",
+            "inset": true
+          },
+          {
+            "color": "lab(17.64 -0.0000149012 0)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "0px",
+            "spread": "1px",
+            "inset": true
+          },
+          {
+            "color": "rgba(255, 255, 255, 0.08)",
+            "offsetX": "0px",
+            "offsetY": "-1px",
+            "blur": "0px",
+            "spread": "0px",
+            "inset": true
+          },
+          {
+            "color": "rgba(28, 25, 23, 0.53)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "2px",
+            "spread": "-1px"
+          },
+          {
+            "color": "rgba(28, 25, 23, 0.53)",
+            "offsetX": "0px",
+            "offsetY": "10px",
+            "blur": "24px",
+            "spread": "-10px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --lift-3 (dark)",
+        "description": "Lift 3: the composer/dialog elevation."
+      },
+      "surface": {
+        "value": [
+          {
+            "color": "rgba(255, 255, 255, 0.15)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "0px",
+            "spread": "0px",
+            "inset": true
+          },
+          {
+            "color": "lab(17.64 -0.0000149012 0)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "0px",
+            "spread": "1px",
+            "inset": true
+          },
+          {
+            "color": "rgba(255, 255, 255, 0.08)",
+            "offsetX": "0px",
+            "offsetY": "-1px",
+            "blur": "0px",
+            "spread": "0px",
+            "inset": true
+          },
+          {
+            "color": "rgba(28, 25, 23, 0.53)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "2px",
+            "spread": "-1px"
+          },
+          {
+            "color": "rgba(28, 25, 23, 0.53)",
+            "offsetX": "0px",
+            "offsetY": "10px",
+            "blur": "24px",
+            "spread": "-10px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --surface-shadow (dark)",
+        "description": "The surface shadow."
+      },
+      "popover": {
+        "value": [
+          {
+            "color": "rgba(0, 0, 0, 0.35)",
+            "offsetX": "0px",
+            "offsetY": "20px",
+            "blur": "24px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.18)",
+            "offsetX": "0px",
+            "offsetY": "5px",
+            "blur": "8px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(255, 255, 255, 0.06)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "0px",
+            "spread": "0.5px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --popover-shadow (dark)",
+        "description": "The popover drop."
+      },
+      "elevated": {
+        "value": [
+          {
+            "color": "rgba(255, 255, 255, 0.07)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "0px",
+            "spread": "1px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.5)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "2px",
+            "spread": "0px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --elevated-shadow (dark)",
+        "description": "The elevated-surface shadow."
+      },
+      "app-card": {
+        "value": [
+          {
+            "color": "rgba(255, 255, 255, 0.16)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "blur": "0px",
+            "spread": "0.5px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.45)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "blur": "2px",
+            "spread": "0px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.4)",
+            "offsetX": "0px",
+            "offsetY": "4px",
+            "blur": "8px",
+            "spread": "-2px"
+          },
+          {
+            "color": "rgba(0, 0, 0, 0.35)",
+            "offsetX": "0px",
+            "offsetY": "12px",
+            "blur": "24px",
+            "spread": "-6px"
+          }
+        ],
+        "type": "shadow",
+        "source": "css-var --app-card-shadow (dark)",
+        "description": "The app-card shadow."
+      }
+    }
+  },
+  "component": {
+    "geometry": {
+      "sidebar-width": {
+        "value": 248,
+        "type": "dimension",
+        "source": "computed rect of sidebar default (raw/components-computed.json)",
+        "description": "The fixed left rail's width."
+      },
+      "header-height": {
+        "value": 52,
+        "type": "dimension",
+        "source": "computed rect of header default (raw/components-computed.json)",
+        "description": "The app header's height."
+      },
+      "nav-row-height": {
+        "value": 36,
+        "type": "dimension",
+        "source": "computed rect of sidebar-nav default (raw/components-computed.json)",
+        "description": "A primary nav row's height."
+      },
+      "nav-pill-height": {
+        "value": 28,
+        "type": "dimension",
+        "source": "computed rect of nav-link default (raw/components-computed.json)",
+        "description": "A header nav pill's height."
+      },
+      "button-height": {
+        "value": 32,
+        "type": "dimension",
+        "source": "computed rect of signin-btn default (raw/components-computed.json)",
+        "description": "The 32px button step (Sign in, Start free)."
+      },
+      "icon-button": {
+        "value": 30,
+        "type": "dimension",
+        "source": "computed rect of icon-button default (raw/components-computed.json)",
+        "description": "The 30px icon-button step."
+      },
+      "icon-button-lg": {
+        "value": 32,
+        "type": "dimension",
+        "source": "computed rect of sidebar-collapse default (raw/components-computed.json)",
+        "description": "The 32px icon-button step."
+      },
+      "play-circle": {
+        "value": 48,
+        "type": "dimension",
+        "source": "computed rect of play-hero default (raw/components-computed.json)",
+        "description": "The round play button's diameter."
+      },
+      "chip-height": {
+        "value": 28,
+        "type": "dimension",
+        "source": "computed rect of prompt-chip default (raw/components-computed.json)",
+        "description": "The prompt chip's height."
+      },
+      "tab-height": {
+        "value": 40,
+        "type": "dimension",
+        "source": "computed rect of seg-tab-on default (raw/components-computed.json)",
+        "description": "The segmented tab's height."
+      },
+      "field-height": {
+        "value": 36,
+        "type": "dimension",
+        "source": "computed rect of composer-field default (raw/components-computed.json)",
+        "description": "The composer field's height."
+      },
+      "track-row-height": {
+        "value": 52,
+        "type": "dimension",
+        "source": "computed rect of track-row default (raw/components-computed.json)",
+        "description": "A song row's height."
+      },
+      "track-card-width": {
+        "value": 208,
+        "type": "dimension",
+        "source": "computed rect of track-card default (raw/components-computed.json)",
+        "description": "A shelf track card's width."
+      },
+      "auth-button-height": {
+        "value": 40,
+        "type": "dimension",
+        "source": "computed rect of sso-google default (raw/components-computed.json)",
+        "description": "The SSO button's height."
+      },
+      "mobile-tabbar": {
+        "value": 56,
+        "type": "dimension",
+        "source": "computed rect of m-tab-bar default (raw/components-computed.json)",
+        "description": "The phone bottom tab bar's height."
+      }
+    },
+    "radius": {
+      "button": {
+        "value": "9999px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of signin-btn default (raw/components-computed.json)",
+        "description": "The 32px buttons' radius."
+      },
+      "nav-pill": {
+        "value": "9999px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of nav-link default (raw/components-computed.json)",
+        "description": "The nav pills' radius."
+      },
+      "chip": {
+        "value": "9999px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of prompt-chip default (raw/components-computed.json)",
+        "description": "The prompt chips' radius."
+      },
+      "field": {
+        "value": "0px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of composer-field default (raw/components-computed.json)",
+        "description": "The composer field's radius."
+      },
+      "tab": {
+        "value": "9999px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of seg-tab-on default (raw/components-computed.json)",
+        "description": "The segmented tab's radius."
+      },
+      "track-card": {
+        "value": "0px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of track-card default (raw/components-computed.json)",
+        "description": "The track card's radius."
+      },
+      "plan-card": {
+        "value": "24px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of plan-card default (raw/components-computed.json)",
+        "description": "The plan card's radius."
+      },
+      "auth-card": {
+        "value": "0px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of auth-card default (raw/components-computed.json)",
+        "description": "The auth column's radius."
+      },
+      "dropdown": {
+        "value": "14px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of nav-dropdown default (raw/components-computed.json)",
+        "description": "The dropdown panel's radius."
+      }
+    },
+    "typography": {
+      "display": {
+        "fontFamily": {
+          "value": "waldenburg, \"waldenburg Fallback\", Arial",
+          "type": "fontFamily",
+          "source": "computed fontFamily of hero-title default (raw/components-computed.json)",
+          "description": "The waldenburg display headline."
+        },
+        "fontSize": {
+          "value": "40px",
+          "type": "dimension",
+          "source": "computed fontSize of hero-title default (raw/components-computed.json)",
+          "description": "The waldenburg display headline."
+        },
+        "fontWeight": {
+          "value": "300",
+          "type": "fontWeight",
+          "source": "computed fontWeight of hero-title default (raw/components-computed.json)",
+          "description": "The waldenburg display headline."
+        },
+        "letterSpacing": {
+          "value": "-0.8px",
+          "type": "dimension",
+          "source": "computed letterSpacing of hero-title default (raw/components-computed.json)",
+          "description": "The waldenburg display headline."
+        }
+      },
+      "page-title": {
+        "fontFamily": {
+          "value": "waldenburg, \"waldenburg Fallback\", Arial",
+          "type": "fontFamily",
+          "source": "computed fontFamily of explore-title default (raw/components-computed.json)",
+          "description": "A page heading."
+        },
+        "fontSize": {
+          "value": "40px",
+          "type": "dimension",
+          "source": "computed fontSize of explore-title default (raw/components-computed.json)",
+          "description": "A page heading."
+        },
+        "fontWeight": {
+          "value": "300",
+          "type": "fontWeight",
+          "source": "computed fontWeight of explore-title default (raw/components-computed.json)",
+          "description": "A page heading."
+        },
+        "letterSpacing": {
+          "value": "-0.8px",
+          "type": "dimension",
+          "source": "computed letterSpacing of explore-title default (raw/components-computed.json)",
+          "description": "A page heading."
+        }
+      },
+      "body": {
+        "fontFamily": {
+          "value": "Inter, \"Inter Fallback\"",
+          "type": "fontFamily",
+          "source": "computed fontFamily of hero-lede default (raw/components-computed.json)",
+          "description": "The muted lede/body text."
+        },
+        "fontSize": {
+          "value": "14px",
+          "type": "dimension",
+          "source": "computed fontSize of hero-lede default (raw/components-computed.json)",
+          "description": "The muted lede/body text."
+        },
+        "fontWeight": {
+          "value": "400",
+          "type": "fontWeight",
+          "source": "computed fontWeight of hero-lede default (raw/components-computed.json)",
+          "description": "The muted lede/body text."
+        }
+      },
+      "label": {
+        "fontFamily": {
+          "value": "Inter, \"Inter Fallback\"",
+          "type": "fontFamily",
+          "source": "computed fontFamily of nav-link default (raw/components-computed.json)",
+          "description": "A nav/button label."
+        },
+        "fontSize": {
+          "value": "13px",
+          "type": "dimension",
+          "source": "computed fontSize of nav-link default (raw/components-computed.json)",
+          "description": "A nav/button label."
+        },
+        "fontWeight": {
+          "value": "500",
+          "type": "fontWeight",
+          "source": "computed fontWeight of nav-link default (raw/components-computed.json)",
+          "description": "A nav/button label."
+        }
+      },
+      "meta": {
+        "fontFamily": {
+          "value": "Inter, \"Inter Fallback\"",
+          "type": "fontFamily",
+          "source": "computed fontFamily of artist-link default (raw/components-computed.json)",
+          "description": "Small metadata text."
+        },
+        "fontSize": {
+          "value": "15px",
+          "type": "dimension",
+          "source": "computed fontSize of artist-link default (raw/components-computed.json)",
+          "description": "Small metadata text."
+        },
+        "fontWeight": {
+          "value": "500",
+          "type": "fontWeight",
+          "source": "computed fontWeight of artist-link default (raw/components-computed.json)",
+          "description": "Small metadata text."
+        },
+        "letterSpacing": {
+          "value": "-0.15px",
+          "type": "dimension",
+          "source": "computed letterSpacing of artist-link default (raw/components-computed.json)",
+          "description": "Small metadata text."
+        }
+      }
+    },
+    "state": {
+      "transition": {
+        "value": "0.15s",
+        "type": "duration",
+        "source": "computed transitionDuration of prompt-chip default (raw/components-computed.json)",
+        "description": "A measured control transition."
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<title>IKEA style guide</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: light;
+  --sg-sans: "Noto Sans", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 14px/22px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font-size: 32px; line-height: 40px; margin: 0 0 8px; }
+h2 { font-size: 18px; margin: 40px 0 12px; }
+p.lead { color: var(--muted); max-width: 68ch; }
+.pal { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: center; }
+.sw i { width: 44px; height: 44px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--border); display: block; }
+.sw b { font-size: 12px; }
+.sw span { display: block; color: var(--muted); font-size: 12px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-primary-height); padding: 0 28px; border: 0; border-radius: var(--component-button-primary-radius); background: var(--component-button-primary-bg); color: var(--component-button-primary-text); font: 700 16px/24px var(--sg-sans); }
+.field { height: var(--component-search-height); padding: 0 16px; border: 1px solid var(--border); border-radius: var(--radius-s); font: 400 16px/24px var(--sg-sans); color: var(--text); background: var(--page); width: 280px; }
+.row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.card { background: var(--surface); border-radius: var(--radius-m); padding: 16px; width: 220px; }
+.price { font: 700 28px/32px var(--sg-sans); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>IKEA Singapore</h1>
+  <p class="lead">Tokens from www.ikea.com/sg/en, signed out, 2026-11-19. One light theme. Noto IKEA is not loaded; the samples use Noto Sans.</p>
+  <h2>Roles</h2>
+  <div class="pal" id="roles"></div>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="btn">Add to cart</button>
+    <input class="field" placeholder="What are you looking for?" />
+  </div>
+  <h2>Card</h2>
+  <div class="card">
+    <div class="price">$89</div>
+    <div>BILLY bookcase</div>
+  </div>
+  <h2>Colour layer</h2>
+  <div class="pal" id="colours"></div>
+</div>
+<script>
+const TOKENS = /*TOKENS*/null;
+// Values come from third-party CSS: escape them before they go into markup.
+const esc = (x) => String(x).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+// A swatch paints its own custom property, so an alias ({accent}) shows the colour it resolves to.
+const cssvar = (path) => "var(--" + path.replace(/\./g, "-").replace(/[^a-zA-Z0-9-]/g, "-") + ")";
+const roles = ["page","surface","text","muted","accent","yellow","border","destructive","positive","family","focus"];
+const pal = document.getElementById("roles");
+for (const name of roles) {
+  const t = TOKENS.light[name];
+  if (!t) continue;
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = `<i style="background:${cssvar(name)}"></i><div><b>${esc(name)}</b><span>${esc(t.v)}</span></div>`;
+  pal.appendChild(el);
+}
+function walk(node, prefix, out) {
+  for (const [k, v] of Object.entries(node)) {
+    if (k.startsWith("$")) continue;
+    if (v && v.v && v.t === "color") out.push([prefix + k, v.v]);
+    else if (v && typeof v === "object") walk(v, prefix + k + ".", out);
+  }
+}
+const colours = [];
+walk(TOKENS.light.colour, "colour.", colours);
+const box = document.getElementById("colours");
+for (const [name, value] of colours) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = `<i style="background:${cssvar(name)}"></i><div><b>${esc(name.replace(/^colour\./, ""))}</b><span>${esc(value)}</span></div>`;
+  box.appendChild(el);
+}
+</script>
+</body>
+</html>

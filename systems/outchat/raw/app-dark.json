@@ -1,0 +1,60 @@
+{
+  "app": {
+    "background": {
+      "$value": "#0a0a0a",
+      "$type": "color",
+      "$extensions": {
+        "source": "Canvas-resolved .dark --background oklch(14.5% 0 0). Declared in the app stylesheet. The marketing site has no dark theme, and the login form was not rendered."
+      }
+    },
+    "foreground": {
+      "$value": "#fafafa",
+      "$type": "color",
+      "$extensions": {
+        "source": "Canvas-resolved .dark --foreground oklch(98.5% 0 0)."
+      }
+    },
+    "primary": {
+      "$value": "#e5e5e5",
+      "$type": "color",
+      "$extensions": {
+        "source": "Canvas-resolved .dark --primary oklch(92.2% 0 0)."
+      }
+    },
+    "primary-foreground": {
+      "$value": "#171717",
+      "$type": "color",
+      "$extensions": {
+        "source": "Canvas-resolved .dark --primary-foreground oklch(20.5% 0 0)."
+      }
+    },
+    "muted": {
+      "$value": "#262626",
+      "$type": "color",
+      "$extensions": {
+        "source": "Canvas-resolved .dark --muted oklch(26.9% 0 0)."
+      }
+    },
+    "muted-foreground": {
+      "$value": "#a1a1a1",
+      "$type": "color",
+      "$extensions": {
+        "source": "Canvas-resolved .dark --muted-foreground oklch(70.8% 0 0)."
+      }
+    },
+    "destructive": {
+      "$value": "#ff6467",
+      "$type": "color",
+      "$extensions": {
+        "source": "Canvas-resolved .dark --destructive oklch(70.4% .191 22.216)."
+      }
+    },
+    "ring": {
+      "$value": "#737373",
+      "$type": "color",
+      "$extensions": {
+        "source": "Canvas-resolved .dark --ring oklch(55.6% 0 0)."
+      }
+    }
+  }
+}

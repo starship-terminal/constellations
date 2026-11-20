@@ -20,10 +20,19 @@
 //   utility    a one-off `[--x:value]` arbitrary-property utility class (an override on one element)
 //   tailwind   Tailwind v4's internals: --tw-* and everything declared inside @layer properties
 //              or @layer theme (Tailwind's default palette, spacing and type scale)
+// PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+// for it. While this is null the script stops: the kit's copy is Claude's example and would
+// read or write Claude's values. KIT_EXAMPLE=1 runs the example as it is.
+const ADAPTED_FOR = null;
+if (!ADAPTED_FOR && !process.env.KIT_EXAMPLE) {
+  console.error('vars.mjs is the kit\'s Claude example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR');
+  process.exit(2);
+}
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { scrubQueries } from './no-query.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const REF = path.resolve(here, '..', '..');
@@ -48,7 +57,11 @@ const sheets = [...blocks.values()].sort((a, b) => b.bytes - a.bytes || a.name.l
 const pw = await import(process.env.PLAYWRIGHT || 'playwright');
 const { chromium } = pw.default ?? pw;
 const browser = await chromium.launch();
+// The inlined sheets name fonts and images by absolute url(); setContent would fetch them from the
+// product's CDN. Only data: URLs load, so the run stays on disk as the header says.
+const offline = (p) => p.route('**/*', (r) => (r.request().url().startsWith('data:') ? r.continue() : r.abort()));
 const page = await browser.newPage();
+await offline(page);
 await page.setContent('<!doctype html><html><head></head><body></body></html>');
 const result = await page.evaluate((sheets) => {
   // A custom property can hold a url() with a signed or per-account query: record it as url(…).
@@ -60,7 +73,7 @@ const result = await page.evaluate((sheets) => {
     for (const r of list) {
       if (r.type === CSSRule.FONT_FACE_RULE) {
         const o = { file };
-        for (let i = 0; i < r.style.length; i++) o[r.style[i]] = r.style.getPropertyValue(r.style[i]).trim();
+        for (let i = 0; i < r.style.length; i++) o[r.style[i]] = noUrl(r.style.getPropertyValue(r.style[i]).trim());
         fonts.push(o);
         continue;
       }
@@ -108,6 +121,7 @@ const result = await page.evaluate((sheets) => {
 // Claude still forces on some components). The viewport is 1440 x 900, so a clamp() with vw resolves
 // to its 1440-wide value.
 const page2 = await browser.newPage({ viewport: { width: 1440, height: 900 } });
+await offline(page2);
 // PRODUCT (adapt): the root attributes and frame the product's own pages carry (Claude's below), so
 // every theme- and density-scoped declaration applies to the probes.
 const shell = (mode, density) => '<!doctype html><html class="cds-root" lang="en-US" data-theme="claude" data-color-version="v2" data-mode="' + mode + '" data-density="' + density + '" data-font="anthropic"><head>'
@@ -216,7 +230,10 @@ const out = {
   resolved,
 };
 fs.mkdirSync(path.join(REF, 'raw'), { recursive: true });
-fs.writeFileSync(path.join(REF, 'raw', 'css-vars.json'), JSON.stringify(out, null, 1) + '\n');
+// noUrl only sees url(); a bare, scheme-relative or relative URL in a value or a selector loses its query here.
+// The console summary prints from the same scrubbed copy: package captures commit their logs (raw/*.log).
+const saved = scrubQueries(out);
+fs.writeFileSync(path.join(REF, 'raw', 'css-vars.json'), JSON.stringify(saved, null, 1) + '\n');
 console.log(`resolved: light ${Object.keys(resolved.light).length}, dark ${Object.keys(resolved.dark).length}, compact differs ${Object.keys(resolved.compact).length}`);
 console.log(`css-vars.json: ${ok.length} rules, ${result.fonts.length} font faces; names cds ${out.counts.names.cds}, app ${out.counts.names.app}, tailwind ${out.counts.names.tailwind}`);
-for (const [k, v] of Object.entries(bySelector).sort((a, b) => b[1] - a[1]).slice(0, 30)) console.log(`  ${v}\t${k.slice(0, 160)}`);
+for (const [k, v] of Object.entries(saved.counts.bySelector).sort((a, b) => b[1] - a[1]).slice(0, 30)) console.log(`  ${v}\t${k.slice(0, 160)}`);

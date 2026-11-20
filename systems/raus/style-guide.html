@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raus style guide</title>
+<style>
+:root {
+  --page: #fdf9ed;
+  --card: #ffffff;
+  --promo: #a6dfff;
+  --search: #fcbd1c;
+  --ink: #23212c;
+  --forest: #006434;
+  --muted: #23212c80;
+  --orange: #dd5000;
+  --magenta: #b218a4;
+  --lime: #bdda0e;
+  --white: #ffffff;
+  --font: neue-haas-unica, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --display: "Iowan Old Style", Palatino, "Palatino Linotype", serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--page); color: var(--ink); font-family: var(--font); font-size: 16px; line-height: 18.4px; }
+main { max-width: 960px; margin: 0 auto; padding: 32px 20px 64px; }
+h1 { font-weight: 300; font-size: 40px; line-height: 38px; letter-spacing: -0.8px; color: var(--forest); margin: 0 0 12px; }
+h2 { font-family: var(--display); font-weight: 300; font-size: 28px; line-height: 30px; letter-spacing: -0.42px; margin: 36px 0 12px; }
+p { margin: 0 0 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.swatch { width: 140px; }
+.chip { height: 64px; border-radius: 12px; border: 1px solid #23212c1a; }
+.swatch span { display: block; font-size: 12px; letter-spacing: -0.06px; margin-top: 6px; }
+.banner { background: var(--promo); margin: 0 -20px 24px; padding: 8px 48px; display: flex; align-items: center; justify-content: space-between; }
+.promo { background: var(--orange); color: var(--white); border-radius: 12px; height: 32px; padding: 0 10px; display: inline-flex; align-items: center; font-size: 18px; letter-spacing: -0.18px; text-decoration: none; }
+.btn { background: var(--ink); color: var(--white); border-radius: 20px; height: 48px; padding: 0 20px; display: inline-flex; align-items: center; font-size: 22px; letter-spacing: -0.22px; text-decoration: none; border: 0; }
+.outline { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+.pill { background: var(--search); border-radius: 40px; min-height: 128px; padding: 24px 48px; display: flex; align-items: center; gap: 24px; margin-top: 16px; }
+.book { width: 128px; height: 128px; border-radius: 64px; color: var(--magenta); display: flex; align-items: center; justify-content: center; text-align: center; font-size: 22px; letter-spacing: -0.22px; }
+.filters { background: var(--lime); color: var(--ink); border-radius: 16px; padding: 0 10px; height: 34px; display: inline-flex; align-items: center; font-size: 14px; }
+.card { background: var(--card); border-radius: 20px; padding: 20px; max-width: 352px; }
+.card h3 { font-family: var(--display); font-weight: 300; font-size: 36px; line-height: 36px; letter-spacing: -0.54px; margin: 8px 0 0; }
+.eyebrow { font-size: 12px; letter-spacing: -0.06px; text-transform: uppercase; }
+.note { font-size: 14px; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <div class="banner">
+    <span>The wait is over. Booking window strip.</span>
+    <a class="promo" href="#buttons">Book now!</a>
+  </div>
+  <h1>Book restful space outside your daily routine.</h1>
+  <p>Public marketing tokens from www.raus.life, measured 2026-11-19. Neue Haas Unica and the serif face are not loaded here. The stacks fall back.</p>
+
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><div class="chip" style="background:#fdf9ed"></div><span>page #fdf9ed</span></div>
+    <div class="swatch"><div class="chip" style="background:#23212c"></div><span>ink #23212c</span></div>
+    <div class="swatch"><div class="chip" style="background:#006434"></div><span>forest #006434</span></div>
+    <div class="swatch"><div class="chip" style="background:#a6dfff"></div><span>promo #a6dfff</span></div>
+    <div class="swatch"><div class="chip" style="background:#dd5000"></div><span>orange #dd5000</span></div>
+    <div class="swatch"><div class="chip" style="background:#fcbd1c"></div><span>search #fcbd1c</span></div>
+    <div class="swatch"><div class="chip" style="background:#b218a4"></div><span>magenta #b218a4</span></div>
+    <div class="swatch"><div class="chip" style="background:#bdda0e"></div><span>filters #bdda0e</span></div>
+  </div>
+
+  <h2 id="buttons">Buttons</h2>
+  <div class="row">
+    <a class="btn" href="#buttons">Search</a>
+    <a class="btn outline" href="#buttons">Cabins near me</a>
+    <span class="filters">Filters</span>
+  </div>
+  <div class="pill">
+    <div>
+      <div class="eyebrow">Region</div>
+      <div>All Regions</div>
+    </div>
+    <div class="book">Book your stay</div>
+  </div>
+
+  <h2>Card</h2>
+  <div class="card">
+    <div class="eyebrow">Mindfulness</div>
+    <h3>When movement brings you closer to yourself</h3>
+    <p class="note">for 2 nights</p>
+  </div>
+</main>
+</body>
+</html>

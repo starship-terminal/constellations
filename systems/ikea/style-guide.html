@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<title>IKEA style guide</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root {
+  --font-family-sans: Noto IKEA, Noto Sans, system-ui, sans-serif;
+  --radius-cap: 64px;
+  --radius-l: 12px;
+  --radius-m: 8px;
+  --radius-none: 0px;
+  --radius-s: 4px;
+  --radius-xl: 20px;
+  --radius-xs: 2px;
+  --space-100: 16px;
+  --space-1000: 160px;
+  --space-125: 20px;
+  --space-1350: 216px;
+  --space-150: 24px;
+  --space-200: 32px;
+  --space-25: 4px;
+  --space-250: 40px;
+  --space-300: 48px;
+  --space-400: 64px;
+  --space-50: 8px;
+  --space-550: 88px;
+  --space-75: 12px;
+  --space-750: 120px;
+  --motion-duration-instant: 0ms;
+  --motion-duration-quick: 100ms;
+  --motion-duration-standard: 200ms;
+  --motion-duration-slow: 250ms;
+  --motion-easing-bob: cubic-bezier(0.45, 1.45, 0.65, 1.0);
+  --motion-easing-easy: cubic-bezier(0.4, 0.0, 0.4, 1.0);
+  --motion-easing-enter: cubic-bezier(0.0, 0.0, 0.1, 1.0);
+  --motion-easing-exit: cubic-bezier(0.9, 0.0, 1.0, 1.0);
+  --motion-easing-expressive: cubic-bezier(0.8, 0.0, 0.0, 1.0);
+  --motion-easing-linear: cubic-bezier(0.0, 0.0, 1.0, 1.0);
+  --page: #ffffff;
+  --surface: #f5f5f5;
+  --text: #111111;
+  --muted: #484848;
+  --accent: #0058a3;
+  --accent-hover: #004f93;
+  --yellow: #ffdb00;
+  --border: #dfdfdf;
+  --on-accent: #ffffff;
+  --destructive: #e00751;
+  --positive: #0a8a00;
+  --family: #007cc1;
+  --focus: #0058a3;
+  --colour-campaign-sustainability: #37b886;
+  --colour-commercial-message-bti-red: #cc0008;
+  --colour-commercial-message-bti-yellow: #ffdb00;
+  --colour-commercial-message-ikea-family: #007cc1;
+  --colour-commercial-message-new: #ca5008;
+  --colour-commercial-message-time-restricted-offer: #cc0008;
+  --colour-commercial-message-new-lower-price: #cc0008;
+  --colour-elevation-1: #ffffff;
+  --colour-elevation-2: #ffffff;
+  --colour-elevation-3: #111111;
+  --colour-elevation-1-border: #dfdfdf;
+  --colour-elevation-2-border: #484848;
+  --colour-extended-palette-01: #c1cfd4;
+  --colour-extended-palette-02: #a3acb0;
+  --colour-extended-palette-03: #8cddff;
+  --colour-extended-palette-04: #0096d2;
+  --colour-extended-palette-05: #005980;
+  --colour-extended-palette-06: #d9abff;
+  --colour-extended-palette-07: #6b3d99;
+  --colour-extended-palette-08: #ffa6da;
+  --colour-extended-palette-09: #e52f7e;
+  --colour-extended-palette-10: #ffae66;
+  --colour-extended-palette-11: #ffaa00;
+  --colour-extended-palette-12: #f26a2f;
+  --colour-extended-palette-13: #ccb100;
+  --colour-extended-palette-14: #c7d900;
+  --colour-extended-palette-15: #7ab51d;
+  --colour-extended-palette-16: #508020;
+  --colour-extended-palette-17: #95e5bb;
+  --colour-extended-palette-18: #009985;
+  --colour-extended-palette-19: #006658;
+  --colour-extended-palette-20: #d7c7a2;
+  --colour-extended-palette-21: #c3b289;
+  --colour-interactive-destructive-bg-default: #e00751;
+  --colour-interactive-destructive-bg-hover: #cc003d;
+  --colour-interactive-destructive-bg-pressed: #b80029;
+  --colour-interactive-disabled-1: #cccccc;
+  --colour-interactive-disabled-2: #929292;
+  --colour-interactive-disabled-3: #ffffff;
+  --colour-interactive-emphasised-bg-default: #0058a3;
+  --colour-interactive-emphasised-bg-hover: #004f93;
+  --colour-interactive-emphasised-bg-pressed: #003e72;
+  --colour-interactive-emphasised-border-selected: #0058a3;
+  --colour-interactive-primary-bg-default: #111111;
+  --colour-interactive-primary-bg-hover: #333333;
+  --colour-interactive-primary-bg-pressed: #000000;
+  --colour-interactive-secondary-bg-default: #f5f5f5;
+  --colour-interactive-secondary-bg-hover: #dfdfdf;
+  --colour-interactive-secondary-bg-pressed: #cccccc;
+  --colour-interactive-static-primary-bg-default: #111111;
+  --colour-interactive-static-primary-bg-hover: #333333;
+  --colour-interactive-static-primary-bg-pressed: #000000;
+  --colour-interactive-static-secondary-bg-default: #f5f5f5;
+  --colour-interactive-static-secondary-bg-hover: #dfdfdf;
+  --colour-interactive-static-secondary-bg-pressed: #cccccc;
+  --colour-interactive-subtle-bg-default: #ffffff;
+  --colour-interactive-subtle-bg-hover: #f5f5f5;
+  --colour-interactive-subtle-bg-pressed: #dfdfdf;
+  --colour-interactive-subtle-border-default: #929292;
+  --colour-interactive-subtle-border-hover: #111111;
+  --colour-interactive-subtle-border-pressed: #111111;
+  --colour-interactive-subtle-border-selected: #111111;
+  --colour-neutral-1: #ffffff;
+  --colour-neutral-2: #f5f5f5;
+  --colour-neutral-3: #dfdfdf;
+  --colour-neutral-4: #cccccc;
+  --colour-neutral-5: #929292;
+  --colour-neutral-6: #484848;
+  --colour-neutral-7: #111111;
+  --colour-semantic-caution: #f26a2f;
+  --colour-semantic-informative: #0058a3;
+  --colour-semantic-negative: #e00751;
+  --colour-semantic-positive: #0a8a00;
+  --colour-semantic-caution-text: #ca5008;
+  --colour-static-black: #111111;
+  --colour-static-dark-grey: #767676;
+  --colour-static-grey: #dfdfdf;
+  --colour-static-ikea-brand-blue: #0058a3;
+  --colour-static-ikea-brand-yellow: #ffdb00;
+  --colour-static-ikea-business-network: #debc9c;
+  --colour-static-ikea-family: #007cc1;
+  --colour-static-light-grey: #f5f5f5;
+  --colour-static-white: #ffffff;
+  --colour-text-and-icon-1: #111111;
+  --colour-text-and-icon-2: #484848;
+  --colour-text-and-icon-3: #767676;
+  --colour-text-and-icon-4: #929292;
+  --colour-text-and-icon-5: #ffffff;
+  --component-button-primary-bg: var(--accent);
+  --component-button-primary-text: var(--on-accent);
+  --component-button-primary-radius: var(--radius-cap);
+  --component-button-primary-height: 56px;
+  --component-search-height: 48px;
+  --component-search-text: var(--text);
+  color-scheme: light;
+  --sg-sans: "Noto Sans", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 14px/22px var(--sg-sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+h1 { font-size: 32px; line-height: 40px; margin: 0 0 8px; }
+h2 { font-size: 18px; margin: 40px 0 12px; }
+p.lead { color: var(--muted); max-width: 68ch; }
+.pal { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.sw { display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: center; }
+.sw i { width: 44px; height: 44px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--border); display: block; }
+.sw b { font-size: 12px; }
+.sw span { display: block; color: var(--muted); font-size: 12px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-primary-height); padding: 0 28px; border: 0; border-radius: var(--component-button-primary-radius); background: var(--component-button-primary-bg); color: var(--component-button-primary-text); font: 700 16px/24px var(--sg-sans); }
+.field { height: var(--component-search-height); padding: 0 16px; border: 1px solid var(--border); border-radius: var(--radius-s); font: 400 16px/24px var(--sg-sans); color: var(--text); background: var(--page); width: 280px; }
+.row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.card { background: var(--surface); border-radius: var(--radius-m); padding: 16px; width: 220px; }
+.price { font: 700 28px/32px var(--sg-sans); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>IKEA Singapore</h1>
+  <p class="lead">Tokens from www.ikea.com/sg/en, signed out, 2026-11-19. One light theme. Noto IKEA is not loaded; the samples use Noto Sans.</p>
+  <h2>Roles</h2>
+  <div class="pal" id="roles"></div>
+  <h2>Controls</h2>
+  <div class="row">
+    <button class="btn">Add to cart</button>
+    <input class="field" placeholder="What are you looking for?" />
+  </div>
+  <h2>Card</h2>
+  <div class="card">
+    <div class="price">$89</div>
+    <div>BILLY bookcase</div>
+  </div>
+  <h2>Colour layer</h2>
+  <div class="pal" id="colours"></div>
+</div>
+<script>
+const TOKENS = {"core":{"font":{"family":{"sans":{"v":["Noto IKEA","Noto Sans","system-ui","sans-serif"],"t":"fontFamily"}}},"typography":{"display-xl":{"v":{"fontFamily":"{font.family.sans}","fontSize":"72px","fontWeight":700,"lineHeight":"80px"},"t":"typography"},"display-l":{"v":{"fontFamily":"{font.family.sans}","fontSize":"56px","fontWeight":700,"lineHeight":"64px"},"t":"typography"},"display-m":{"v":{"fontFamily":"{font.family.sans}","fontSize":"40px","fontWeight":700,"lineHeight":"48px"},"t":"typography"},"heading-xl":{"v":{"fontFamily":"{font.family.sans}","fontSize":"32px","fontWeight":700,"lineHeight":"40px"},"t":"typography"},"heading-l":{"v":{"fontFamily":"{font.family.sans}","fontSize":"24px","fontWeight":700,"lineHeight":"30px"},"t":"typography"},"heading-m":{"v":{"fontFamily":"{font.family.sans}","fontSize":"18px","fontWeight":700,"lineHeight":"24px"},"t":"typography"},"heading-s":{"v":{"fontFamily":"{font.family.sans}","fontSize":"16px","fontWeight":700,"lineHeight":"20px"},"t":"typography"},"body-l":{"v":{"fontFamily":"{font.family.sans}","fontSize":"16px","fontWeight":400,"lineHeight":"24px"},"t":"typography"},"body-m":{"v":{"fontFamily":"{font.family.sans}","fontSize":"14px","fontWeight":400,"lineHeight":"22px"},"t":"typography"},"body-s":{"v":{"fontFamily":"{font.family.sans}","fontSize":"12px","fontWeight":400,"lineHeight":"18px"},"t":"typography"},"price":{"v":{"fontFamily":"{font.family.sans}","fontSize":"28px","fontWeight":700,"lineHeight":"32px"},"t":"typography"}},"radius":{"cap":{"v":"64px","t":"dimension"},"l":{"v":"12px","t":"dimension"},"m":{"v":"8px","t":"dimension"},"none":{"v":"0px","t":"dimension"},"s":{"v":"4px","t":"dimension"},"xl":{"v":"20px","t":"dimension"},"xs":{"v":"2px","t":"dimension"}},"space":{"100":{"v":"16px","t":"dimension"},"1000":{"v":"160px","t":"dimension"},"125":{"v":"20px","t":"dimension"},"1350":{"v":"216px","t":"dimension"},"150":{"v":"24px","t":"dimension"},"200":{"v":"32px","t":"dimension"},"25":{"v":"4px","t":"dimension"},"250":{"v":"40px","t":"dimension"},"300":{"v":"48px","t":"dimension"},"400":{"v":"64px","t":"dimension"},"50":{"v":"8px","t":"dimension"},"550":{"v":"88px","t":"dimension"},"75":{"v":"12px","t":"dimension"},"750":{"v":"120px","t":"dimension"}},"motion":{"duration":{"instant":{"v":"0ms","t":"duration"},"quick":{"v":"100ms","t":"duration"},"standard":{"v":"200ms","t":"duration"},"slow":{"v":"250ms","t":"duration"}},"easing":{"bob":{"v":[0.45,1.45,0.65,1.0],"t":"cubicBezier"},"easy":{"v":[0.4,0.0,0.4,1.0],"t":"cubicBezier"},"enter":{"v":[0.0,0.0,0.1,1.0],"t":"cubicBezier"},"exit":{"v":[0.9,0.0,1.0,1.0],"t":"cubicBezier"},"expressive":{"v":[0.8,0.0,0.0,1.0],"t":"cubicBezier"},"linear":{"v":[0.0,0.0,1.0,1.0],"t":"cubicBezier"}}}},"light":{"page":{"v":"#ffffff","t":"color"},"surface":{"v":"#f5f5f5","t":"color"},"text":{"v":"#111111","t":"color"},"muted":{"v":"#484848","t":"color"},"accent":{"v":"#0058a3","t":"color"},"accent-hover":{"v":"#004f93","t":"color"},"yellow":{"v":"#ffdb00","t":"color"},"border":{"v":"#dfdfdf","t":"color"},"on-accent":{"v":"#ffffff","t":"color"},"destructive":{"v":"#e00751","t":"color"},"positive":{"v":"#0a8a00","t":"color"},"family":{"v":"#007cc1","t":"color"},"focus":{"v":"#0058a3","t":"color"},"colour":{"campaign":{"sustainability":{"v":"#37b886","t":"color"}},"commercial":{"message":{"bti":{"red":{"v":"#cc0008","t":"color"},"yellow":{"v":"#ffdb00","t":"color"}},"ikea":{"family":{"v":"#007cc1","t":"color"}},"new":{"v":"#ca5008","t":"color"},"time":{"restricted":{"offer":{"v":"#cc0008","t":"color"}}},"new-lower":{"price":{"v":"#cc0008","t":"color"}}}},"elevation":{"1":{"v":"#ffffff","t":"color"},"2":{"v":"#ffffff","t":"color"},"3":{"v":"#111111","t":"color"},"1-border":{"v":"#dfdfdf","t":"color"},"2-border":{"v":"#484848","t":"color"}},"extended":{"palette":{"01":{"v":"#c1cfd4","t":"color"},"02":{"v":"#a3acb0","t":"color"},"03":{"v":"#8cddff","t":"color"},"04":{"v":"#0096d2","t":"color"},"05":{"v":"#005980","t":"color"},"06":{"v":"#d9abff","t":"color"},"07":{"v":"#6b3d99","t":"color"},"08":{"v":"#ffa6da","t":"color"},"09":{"v":"#e52f7e","t":"color"},"10":{"v":"#ffae66","t":"color"},"11":{"v":"#ffaa00","t":"color"},"12":{"v":"#f26a2f","t":"color"},"13":{"v":"#ccb100","t":"color"},"14":{"v":"#c7d900","t":"color"},"15":{"v":"#7ab51d","t":"color"},"16":{"v":"#508020","t":"color"},"17":{"v":"#95e5bb","t":"color"},"18":{"v":"#009985","t":"color"},"19":{"v":"#006658","t":"color"},"20":{"v":"#d7c7a2","t":"color"},"21":{"v":"#c3b289","t":"color"}}},"interactive":{"destructive":{"bg":{"default":{"v":"#e00751","t":"color"},"hover":{"v":"#cc003d","t":"color"},"pressed":{"v":"#b80029","t":"color"}}},"disabled":{"1":{"v":"#cccccc","t":"color"},"2":{"v":"#929292","t":"color"},"3":{"v":"#ffffff","t":"color"}},"emphasised":{"bg":{"default":{"v":"#0058a3","t":"color"},"hover":{"v":"#004f93","t":"color"},"pressed":{"v":"#003e72","t":"color"}},"border":{"selected":{"v":"#0058a3","t":"color"}}},"primary":{"bg":{"default":{"v":"#111111","t":"color"},"hover":{"v":"#333333","t":"color"},"pressed":{"v":"#000000","t":"color"}}},"secondary":{"bg":{"default":{"v":"#f5f5f5","t":"color"},"hover":{"v":"#dfdfdf","t":"color"},"pressed":{"v":"#cccccc","t":"color"}}},"static":{"primary":{"bg":{"default":{"v":"#111111","t":"color"},"hover":{"v":"#333333","t":"color"},"pressed":{"v":"#000000","t":"color"}}},"secondary":{"bg":{"default":{"v":"#f5f5f5","t":"color"},"hover":{"v":"#dfdfdf","t":"color"},"pressed":{"v":"#cccccc","t":"color"}}}},"subtle":{"bg":{"default":{"v":"#ffffff","t":"color"},"hover":{"v":"#f5f5f5","t":"color"},"pressed":{"v":"#dfdfdf","t":"color"}},"border":{"default":{"v":"#929292","t":"color"},"hover":{"v":"#111111","t":"color"},"pressed":{"v":"#111111","t":"color"},"selected":{"v":"#111111","t":"color"}}}},"neutral":{"1":{"v":"#ffffff","t":"color"},"2":{"v":"#f5f5f5","t":"color"},"3":{"v":"#dfdfdf","t":"color"},"4":{"v":"#cccccc","t":"color"},"5":{"v":"#929292","t":"color"},"6":{"v":"#484848","t":"color"},"7":{"v":"#111111","t":"color"}},"semantic":{"caution":{"v":"#f26a2f","t":"color"},"informative":{"v":"#0058a3","t":"color"},"negative":{"v":"#e00751","t":"color"},"positive":{"v":"#0a8a00","t":"color"},"caution-text":{"v":"#ca5008","t":"color"}},"static":{"black":{"v":"#111111","t":"color"},"dark":{"grey":{"v":"#767676","t":"color"}},"grey":{"v":"#dfdfdf","t":"color"},"ikea":{"brand":{"blue":{"v":"#0058a3","t":"color"},"yellow":{"v":"#ffdb00","t":"color"}},"business":{"network":{"v":"#debc9c","t":"color"}},"family":{"v":"#007cc1","t":"color"}},"light":{"grey":{"v":"#f5f5f5","t":"color"}},"white":{"v":"#ffffff","t":"color"}},"text":{"and":{"icon":{"1":{"v":"#111111","t":"color"},"2":{"v":"#484848","t":"color"},"3":{"v":"#767676","t":"color"},"4":{"v":"#929292","t":"color"},"5":{"v":"#ffffff","t":"color"}}}}},"component":{"button-primary":{"bg":{"v":"{accent}","t":"color"},"text":{"v":"{on-accent}","t":"color"},"radius":{"v":"{radius.cap}","t":"dimension"},"height":{"v":"56px","t":"dimension"}},"search":{"height":{"v":"48px","t":"dimension"},"text":{"v":"{text}","t":"color"}}}}};
+// Values come from third-party CSS: escape them before they go into markup.
+const esc = (x) => String(x).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+// A swatch paints its own custom property, so an alias ({accent}) shows the colour it resolves to.
+const cssvar = (path) => "var(--" + path.replace(/\./g, "-").replace(/[^a-zA-Z0-9-]/g, "-") + ")";
+const roles = ["page","surface","text","muted","accent","yellow","border","destructive","positive","family","focus"];
+const pal = document.getElementById("roles");
+for (const name of roles) {
+  const t = TOKENS.light[name];
+  if (!t) continue;
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = `<i style="background:${cssvar(name)}"></i><div><b>${esc(name)}</b><span>${esc(t.v)}</span></div>`;
+  pal.appendChild(el);
+}
+function walk(node, prefix, out) {
+  for (const [k, v] of Object.entries(node)) {
+    if (k.startsWith("$")) continue;
+    if (v && v.v && v.t === "color") out.push([prefix + k, v.v]);
+    else if (v && typeof v === "object") walk(v, prefix + k + ".", out);
+  }
+}
+const colours = [];
+walk(TOKENS.light.colour, "colour.", colours);
+const box = document.getElementById("colours");
+for (const [name, value] of colours) {
+  const el = document.createElement("div");
+  el.className = "sw";
+  el.innerHTML = `<i style="background:${cssvar(name)}"></i><div><b>${esc(name.replace(/^colour\./, ""))}</b><span>${esc(value)}</span></div>`;
+  box.appendChild(el);
+}
+</script>
+</body>
+</html>

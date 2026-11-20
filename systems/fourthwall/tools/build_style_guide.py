@@ -1,0 +1,131 @@
+#!/usr/bin/env python3
+"""Render style-guide.html from tokens.json + tools/style-guide.template.html.
+
+Every colour, radius, shadow and type style on the page is a CSS custom property generated from
+tokens.json, so the guide cannot drift from the token file. The `core` and `light` sets go on
+`:root` (the marketing surface); each other surface set goes on its own scope class — `.ink` for the
+on-ink dark sections, `.catalog`/`.catalogDark` for the catalogue DS pair, `.signup` for the auth
+shell, `.docs`/`.docsDark` for Mintlify and `.help`/`.helpDark` for Docusaurus — matching how each
+host scopes its own theme. Aliases like {text.primary} become var(--text-primary).
+
+Placeholders in the template:
+  /*CORE*/ /*LIGHT*/ /*SET:name*/ CSS custom property blocks (one per non-core set)
+  /*TOKENS*/null                  a compact copy of the token tree for the JS tables
+  <!--icon:NAME[:SIZE]-->         an SVG from icons/NAME.svg, inlined
+
+Deterministic: same inputs, byte-identical output. Adapted from the Manus kit's builder.
+"""
+import json, pathlib, re
+
+HERE = pathlib.Path(__file__).resolve().parent.parent
+T = json.loads((HERE / "tokens.json").read_text())
+
+
+def flat(node, prefix=""):
+    for k, v in node.items():
+        if k.startswith("$"):
+            continue
+        if isinstance(v, dict) and "$value" in v:
+            yield prefix + k, v
+        elif isinstance(v, dict):
+            yield from flat(v, prefix + k + "-")
+
+
+def cssname(path):
+    # Keep the product's own leading underscores (--_primitives-*/--_surface-*
+    # are the Webflow names); the template's var() reads this same scheme.
+    return "--" + re.sub(r"[^a-zA-Z0-9_-]", "-", path.replace(".", "-"))
+
+
+def alias(v):
+    return re.sub(r"\{([^{}]+)\}", lambda m: f"var({cssname(m.group(1))})", str(v))
+
+
+def css_val(name, t):
+    v, ty = t["$value"], t["$type"]
+    if ty in ("transition", "animation"):
+        return None   # composites with no single CSS value; the Motion section reads them from the token tree
+    if ty == "cubicBezier":
+        return "cubic-bezier(%s)" % ", ".join(str(x) for x in v)
+    if ty == "shadow":
+        if isinstance(v, str):
+            return alias(v)
+        return ", ".join(("inset " if s.get("inset") else "") + f'{s["offsetX"]} {s["offsetY"]} {s["blur"]} {s["spread"]} {alias(s["color"])}' for s in v)
+    if ty == "typography":
+        return f'{alias(v["fontWeight"])} {alias(v["fontSize"])}/{alias(v["lineHeight"])} {alias(v["fontFamily"])}'
+    if ty == "gradient":
+        angle = t["$extensions"].get("angle", "180deg")
+        return f"linear-gradient({angle}, " + ", ".join(f'{alias(s["color"])} {round(s["position"] * 100, 2)}%' for s in v) + ")"
+    return alias(v)
+
+
+# Every set tokens.json ships becomes one scope class on the page.
+SETS = [s for s in T if not s.startswith("$")]
+THEMES = [s for s in SETS if s != "core"]
+
+
+def block(setname):
+    """A set's custom properties; a set the product lacks renders as nothing."""
+    if setname not in T:
+        return ""
+    return "\n".join(f"  {cssname(n)}: {css_val(n, t)};" for n, t in flat(T[setname]) if css_val(n, t) is not None)
+
+
+# a core name and a themed name must not land on the same custom property
+_core = {cssname(n) for n, _ in flat(T["core"])}
+for _set in THEMES:
+    _clash = _core & {cssname(n) for n, _ in flat(T[_set])}
+    if _clash:
+        raise SystemExit(f"core and {_set} share custom properties: {sorted(_clash)[:5]}")
+
+
+def slim(node):
+    if isinstance(node, dict) and "$value" in node:
+        out = {"v": node["$value"], "t": node["$type"], "s": node["$extensions"]["source"]}
+        for k in ("compact", "darkVariationAxis"):
+            if k in node["$extensions"]:
+                out[k] = node["$extensions"][k]
+        if node.get("$description"):
+            out["d"] = node["$description"]
+        return out
+    return {k: slim(v) for k, v in node.items() if not k.startswith("$")}
+
+
+# Inlined into a <script>: "<" as \u003c keeps a value holding "</script>" or "<!--"
+# from ending the script early. JSON.parse and a JS literal read it back unchanged.
+data = json.dumps({k: slim(T[k]) for k in SETS},
+                  ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
+
+_uid = [0]
+ICON_SRC = {}
+
+
+def clean_svg(svg, size):
+    svg = re.sub(r"<\?xml[^>]*>\s*", "", svg).strip()
+    svg = re.sub(r"\s+", " ", svg).replace("> <", "><")
+    for i in sorted(set(re.findall(r'id="([^"]+)"', svg))):
+        _uid[0] += 1
+        svg = svg.replace(f'id="{i}"', f'id="i{_uid[0]}"').replace(f"url(#{i})", f"url(#i{_uid[0]})")
+    svg = re.sub(r"<svg\b", '<svg aria-hidden="true" focusable="false" class="ic"', svg, count=1)
+    if size:
+        svg = re.sub(r'\swidth="[^"]*"', "", svg, count=1)
+        svg = re.sub(r'\sheight="[^"]*"', "", svg, count=1)
+        svg = svg.replace("<svg ", f'<svg width="{size}" height="{size}" ', 1)
+    return svg
+
+
+def icon(m):
+    name, size = m.group(1), m.group(2)
+    src = ICON_SRC.setdefault(name, (HERE / "icons" / f"{name}.svg").read_text())
+    return clean_svg(src, size)
+
+
+tpl = (HERE / "tools" / "style-guide.template.html").read_text()
+html = tpl.replace("/*CORE*/", block("core")).replace("/*LIGHT*/", block("light"))
+for _set in THEMES:
+    html = html.replace(f"/*SET:{_set}*/", block(_set))
+html = html.replace("/*TOKENS*/null", data)
+html = re.sub(r"<!--icon:([a-z0-9-]+)(?::(\d+))?-->", icon, html)
+(HERE / "style-guide.html").write_text(html)
+print("style-guide.html:", len(html.encode()), "bytes;",
+      " + ".join(f"{len(list(flat(T[s])))} {s}" for s in SETS), "tokens;", len(ICON_SRC), "icons")

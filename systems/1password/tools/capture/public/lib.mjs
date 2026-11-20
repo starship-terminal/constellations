@@ -40,13 +40,13 @@ export async function launch({ width = 1440, height = 900, mobile = false } = {}
 // first load in the probe; the sweep covers a cookie/consent banner
 // (OneTrust/Cookiebot/generic "Accept"/"×" bars) if one shows. The promo
 // strip above the header is page chrome, not a modal — never removed.
-// Pre-seeds OneTrust consent so the "We use cookies" card never mounts:
-// OptanonAlertBoxClosed is what the SDK checks before showing the banner.
+// Consent: hide the banner, never choose. This used to write OneTrust's
+// consent cookies with every group opted in (performance, functional,
+// targeting), which is a consent choice made on the owner's behalf. It now
+// aborts the OneTrust SDK at request level, so the banner never mounts and no
+// consent record is written or sent (the acnestudios pattern).
 export async function seedConsent(page) {
-  await page.context().addCookies([
-    { name: 'OptanonAlertBoxClosed', value: new Date().toISOString(), url: BASE + '/' },
-    { name: 'OptanonConsent', value: 'isGpcEnabled=0&datestamp=' + encodeURIComponent(new Date().toISOString()) + '&version=202301.1.0&hosts=&consentId=capture&interactionCount=1&landingPath=NotLandingPage&groups=C0001:1,C0002:1,C0003:1,C0004:1', url: BASE + '/' },
-  ]).catch(() => {});
+  await page.context().route(/cookielaw\.org|onetrust\.com|cookiepro\.com/, (r) => r.abort()).catch(() => {});
 }
 
 export async function closePromo(page) {
@@ -56,10 +56,14 @@ export async function closePromo(page) {
   for (let i = 0; i < 4; i++) {
     const dlg = page.locator(DLG).filter({ visible: true }).first();
     if (await dlg.count()) {
-      const pick = dlg.locator(
-        'button:has-text("Accept All"), button:has-text("Reject"), button:has-text("Accept"), button:has-text("Agree"), ' +
-        'button:has-text("Close"), button:has-text("×"), button[aria-label*="lose" i], [class*="close"]',
-      ).first();
+      // A consent banner is removed, never answered: no Accept, Reject or
+      // Agree click. Any other dialog is closed by its own close control.
+      if (await dlg.evaluate((n) => /onetrust|ot-sdk/i.test(n.id + ' ' + n.className) || /we use cookies|non-essential cookies/i.test(n.innerText || '')).catch(() => false)) {
+        await dlg.evaluate((n) => n.remove()).catch(() => {});
+        await page.waitForTimeout(300);
+        continue;
+      }
+      const pick = dlg.locator('button:has-text("Close"), button:has-text("×"), button[aria-label*="lose" i], [class*="close"]').first();
       if (await pick.count()) await pick.click({ timeout: 5000 }).catch(() => {});
       else await page.keyboard.press('Escape');
       await page.waitForTimeout(1000);
@@ -94,9 +98,7 @@ export async function closePromo(page) {
           return /we use cookies|non-essential cookies/i.test(t) && t.length < 1400 && r.width > 250;
         });
         if (!box) return false;
-        const btn = [...box.querySelectorAll('button, a')].find((n) => /reject|accept all/i.test((n.innerText || '').trim()));
-        if (btn) btn.click();
-        box.remove();
+        box.remove(); // remove-only: never press Reject or Accept all
         return true;
       }).catch(() => false);
       hit = hit || fh;

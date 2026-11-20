@@ -22,6 +22,7 @@ rows where it is still NULL.
 import argparse
 import concurrent.futures
 import html as html_lib
+import http.client
 import json
 import os
 import re
@@ -31,6 +32,9 @@ import sys
 import time
 import urllib.request
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import dump as refero_dump  # noqa: E402  (refreshes refero/.dump/ after a write)
 
 ROOT = Path(__file__).resolve().parents[2]
 REFERO = ROOT / "refero"
@@ -113,16 +117,65 @@ MEDIA_URL_FIELDS = {
 # kept around to re-check against; they were dropped rather than carried.
 
 
-def get(url, binary=True, tries=4):
+# The largest response get() reads: well above any page or API listing
+# Refero serves, and a bound on what a misbehaving server can make us hold.
+MAX_RESPONSE = 64 * 1024 * 1024
+
+
+class TooLarge(ValueError):
+    """A response body over MAX_RESPONSE bytes."""
+
+
+class RedirectRefused(ValueError):
+    """A redirect to a URL the caller does not allow."""
+
+
+def https_only(url):
+    return url.startswith("https://")
+
+
+class CheckedRedirect(urllib.request.HTTPRedirectHandler):
+    """Follow a redirect only to a URL `allowed(url)` accepts. urllib joins a
+    relative Location onto the request URL before this sees it."""
+
+    def __init__(self, allowed):
+        super().__init__()
+        self.allowed = allowed
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        if not self.allowed(newurl):
+            raise RedirectRefused(f"refusing a redirect from {req.full_url} to {newurl!r}")
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+def opener(allowed):
+    return urllib.request.build_opener(CheckedRedirect(allowed))
+
+
+def get(url, binary=True, tries=4, allowed=https_only):
+    """GET url with retry/backoff. Every redirect target must pass `allowed`
+    (default: https only). Raises, without retrying, RedirectRefused for any
+    other target and TooLarge for a body over MAX_RESPONSE bytes. A body
+    shorter than its Content-Length (a dropped connection) is retried."""
     for i in range(tries):
         try:
             req = urllib.request.Request(url, headers=UA)
-            data = urllib.request.urlopen(req, timeout=90).read()
-            return data if binary else data.decode("utf-8", "replace")
+            with opener(allowed).open(req, timeout=90) as r:
+                data = r.read(MAX_RESPONSE + 1)
+                declared = (r.headers.get("Content-Length") or "").strip()
+            # read(n), unlike read(), returns a cut-short body without raising.
+            if declared.isdigit() and len(data) < int(declared) and len(data) <= MAX_RESPONSE:
+                raise http.client.IncompleteRead(data, int(declared) - len(data))
+            break
+        except RedirectRefused:
+            raise
         except Exception:
             if i == tries - 1:
                 raise
             time.sleep(2 ** i)
+    if len(data) > MAX_RESPONSE:
+        raise TooLarge(f"{url}: response over {MAX_RESPONSE} bytes")
+    return data if binary else data.decode("utf-8", "replace")
 
 
 def slugify(name):
@@ -267,6 +320,22 @@ def style_name(result, page):
     return m.group(1).strip() if m else None
 
 
+# The styles columns a fetch writes, in insert order; uuid first. The export
+# columns (variables_css, theme_css, tokens_json, design_system_json,
+# prompt_txt) belong to cmd_export and a refetch keeps them.
+FETCHED_COLUMNS = (
+    "uuid", "slug", "name", "tagline", "page_url", "source_url", "theme",
+    "extracted_at", "fetched_at", "design_md", "result_json", "screenshot_url",
+    "video_url", "video_poster_url", "video_detail_url",
+    "video_detail_poster_url", "media_fetched_at",
+    "product_type", "design_style", "tags",
+    "components_json", "components_at")
+UPSERT_STYLE = (
+    "INSERT INTO styles (" + ", ".join(FETCHED_COLUMNS) + ") VALUES ("
+    + ", ".join("?" * len(FETCHED_COLUMNS)) + ") ON CONFLICT(uuid) DO UPDATE SET "
+    + ", ".join(f"{c}=excluded.{c}" for c in FETCHED_COLUMNS[1:]))
+
+
 def init_db():
     REFERO.mkdir(exist_ok=True)
     WORK.mkdir(exist_ok=True)
@@ -308,12 +377,10 @@ def fetch_one(uuid):
     return uuid, url, result, design_md, style_name(result, page), extract_media(page)
 
 
-def write_atomic(path, text):
-    """Write text to path via a sibling .tmp file and rename, so a crash can
-    never leave a truncated file behind."""
-    tmp = path.with_name(path.name + ".tmp")
-    tmp.write_text(text)
-    os.replace(tmp, path)
+# A unique temp file and a rename, so a crash never leaves a truncated file
+# and two processes writing one file (classify and backfill both write
+# meta.json) cannot rename each other's half-written copy.
+write_atomic = refero_dump.write_atomic
 
 
 def style_dir(slug, old_slug=None):
@@ -462,15 +529,11 @@ def cmd_fetch(args):
                 write_atomic(cpath, json.dumps(comps, indent=2) + "\n")
             elif cpath.exists():
                 cpath.unlink()
+            # An upsert, not INSERT OR REPLACE: a replace deletes the row
+            # first, so a refetch would NULL the export columns
+            # (variables_css ... prompt_txt) until a later export succeeds.
             db.execute(
-                """INSERT OR REPLACE INTO styles
-                   (uuid, slug, name, tagline, page_url, source_url, theme,
-                    extracted_at, fetched_at, design_md, result_json, screenshot_url,
-                    video_url, video_poster_url, video_detail_url,
-                    video_detail_poster_url, media_fetched_at,
-                    product_type, design_style, tags,
-                    components_json, components_at)
-                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                UPSERT_STYLE,
                 (uuid, slug, name, meta_obj["tagline"], url, meta_obj["source_url"],
                  meta_obj["theme"], meta_obj["extracted_at"], meta_obj["fetched_at"],
                  design_md, json.dumps(result), meta_obj["screenshot_url"],
@@ -651,20 +714,25 @@ def main():
     if args.enrich_media and (args.export_only or args.catalog_only):
         ap.error("--enrich-media is mutually exclusive with "
                  "--export-only/--catalog-only")
-    if args.enrich_media:
-        cmd_enrich_media(args)
-        cmd_catalog()
-        return
-    if args.catalog_only:
-        cmd_catalog()
-        return
-    if args.export_only:
+    try:
+        if args.enrich_media:
+            cmd_enrich_media(args)
+            cmd_catalog()
+            return
+        if args.catalog_only:
+            cmd_catalog()
+            return
+        if args.export_only:
+            cmd_export()
+            cmd_catalog()
+            return
+        cmd_fetch(args)
         cmd_export()
         cmd_catalog()
-        return
-    cmd_fetch(args)
-    cmd_export()
-    cmd_catalog()
+    finally:
+        # However the run ends, the committed text dump follows the db
+        # (refero/README.md, "Merging").
+        refero_dump.refresh(DB)
 
 
 if __name__ == "__main__":

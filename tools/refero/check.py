@@ -10,9 +10,13 @@ similar.json, collections tables vs collections.json, screens table vs
 directory.json, coverage.json vs a recomputation. Every disagreement is
 printed and the exit code is 1 when any is found.
 
+The committed text dump in refero/.dump/ must be exactly what
+tools/refero/dump.py writes from refero.db (the dump is the merge surface).
+
 File-only safe: when refero.db is missing or is not a readable sqlite (a
 clone without `git lfs pull` holds the LFS pointer file), the folder and
-catalog checks still run and the db side is skipped with a note.
+catalog checks still run and the db side (dump comparison included) is
+skipped with a note.
 """
 
 import argparse
@@ -27,6 +31,10 @@ REFERO = ROOT / "refero"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import coverage as coverage_mod  # noqa: E402  (sibling module)
+import dump as refero_dump  # noqa: E402  (sibling module)
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+import catalog  # noqa: E402  (tools/catalog.py)
 
 # The files every style folder carries. prompt.txt lives only in the db
 # (refero/README.md).
@@ -187,6 +195,13 @@ def check(refero: Path) -> list[str]:
         if "screens" in tables:
             nscreens = db.execute("SELECT COUNT(*) FROM screens").fetchone()[0]
         db.close()
+        # ---- the committed text dump (refero/.dump/, the merge surface) is
+        # exactly what the db dumps to
+        try:
+            problems += refero_dump.compare(refero / "refero.db")
+        except (refero_dump.DumpError, sqlite3.Error, OSError) as e:
+            problems.append(f"refero/{refero_dump.DUMP_DIRNAME}: cannot compare "
+                            f"with refero.db: {e}")
 
     # ---- the stores' slug sets agree
     for slug in sorted(set(metas) - set(catalog)):
@@ -282,7 +297,9 @@ def check(refero: Path) -> list[str]:
                                     f"does not match meta.json")
 
     # ---- coverage.json: a generated diff (directory.json x the systems
-    # catalog.json); recompute it and demand the file match exactly
+    # catalog.json); recompute it and demand the file match exactly.
+    # On a pull request the file may lag packages the merge adds; it must
+    # still be the exact derivation of the packages it names.
     try:
         directory = json.loads((refero / "directory.json").read_text())
         systems_cat = json.loads((ROOT / "catalog.json").read_text())
@@ -295,7 +312,8 @@ def check(refero: Path) -> list[str]:
         except (OSError, json.JSONDecodeError) as e:
             problems.append(f"refero/coverage.json does not parse: {e}")
         else:
-            if actual_cov != expected_cov:
+            if actual_cov != expected_cov and not coverage_matches_base(
+                    directory, systems_cat, actual_cov, expected_cov):
                 problems.append("refero/coverage.json is stale; "
                                 "run tools/refero/coverage.py")
 
@@ -307,6 +325,65 @@ def check(refero: Path) -> list[str]:
             problems.append(f"refero/README.md says {m.group(1)} styles; "
                             f"{len(dirs)} folders exist")
     return problems
+
+
+def coverage_matches_base(directory: dict, head_catalog: dict,
+                          actual: dict, expected: dict) -> bool:
+    """True when GitHub is checking a pull request and the committed file is
+    the exact derivation of the packages it names, leaving out only packages
+    this pull request adds or main gained after the branch started.
+
+    The file is re-derived from the merge's own catalog and directory, never
+    taken from the branch, and compared whole: every row and every total. A
+    hand edit, a stale row or a removed package still named fails
+    (tools/catalog.py lagging_subset)."""
+    head_rows = {s.get("slug"): s for s in head_catalog.get("systems") or []}
+    kept = catalog.lagging_subset(packages_in_coverage(actual), head_rows, ROOT)
+    if kept is None:
+        return False
+    built = coverage_mod.build(directory, {**head_catalog, "systems": kept})
+    return coverage_same_rows(actual, built)
+
+
+def packages_in_coverage(actual: dict) -> set[str]:
+    """Slugs the committed coverage file derived a row for."""
+    found = set()
+    for row in (actual.get("matched") or {}).values():
+        for pkg in row.get("pkgs") or []:
+            if pkg.get("slug"):
+                found.add(pkg["slug"])
+    for row in (actual.get("systems_absent_from_catalog") or {}).values():
+        for pkg in row:
+            if isinstance(pkg, dict) and pkg.get("slug"):
+                found.add(pkg["slug"])
+    return found
+
+
+def coverage_same_rows(actual: dict, built: dict) -> bool:
+    """True when the two files are the same document apart from list order.
+
+    The builder walks catalog systems in list order, and a subset built
+    from a set walks them in hash order, so the same packages can produce
+    the same rows in a different order. Everything else is compared: every
+    group, every domain row, the totals, `about` and any extra field, so a
+    row added to a second group or a stray top-level key still fails."""
+    return _order_free(actual) == _order_free(built)
+
+
+def _order_free(value):
+    """The value with list order removed and every field kept.
+
+    Package lists and catalog lists change order when the subset walks a
+    set. A changed name, url, or name_match stays a difference."""
+    if isinstance(value, list):
+        return sorted((_order_free(item) for item in value), key=_sort_key)
+    if isinstance(value, dict):
+        return {key: _order_free(item) for key, item in value.items()}
+    return value
+
+
+def _sort_key(value) -> str:
+    return json.dumps(value, sort_keys=True, default=str)
 
 
 def main() -> None:

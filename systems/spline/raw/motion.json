@@ -1,0 +1,17 @@
+{
+  "source": "Declared rules in spline.design stylesheets, read in the T3 preview tab on 2026-11-19. A prefers-reduced-motion emulation was not run. Computed transitions were read at rest.",
+  "reduce": {
+    "verdict": "honours",
+    "evidence": "The shared layer declares `@media (prefers-reduced-motion: reduce) { .-pVNbW_root *, .-pVNbW_root :before, .-pVNbW_root :after { transition: none !important; animation: none !important } }`. Other reduce rules set animation: none on loading dots, the cube, the marquee track, and the hero media. The app shell shortens one spinner to 2.4s under reduce and removes others. Emulation was not run, so this is a declared reading."
+  },
+  "durations": ["120ms", "150ms", "200ms", "250ms", "300ms", "350ms", "400ms", "450ms", "500ms", "600ms", "800ms"],
+  "easings": ["ease", "ease-in", "ease-out", "ease-in-out", "cubic-bezier(0.2, 0.8, 0.2, 1)", "cubic-bezier(0.22, 1, 0.36, 1)"],
+  "examples": [
+    {"selector": ".-pVNbW_btn", "transition": "background .2s, border-color .2s, color .2s"},
+    {"selector": ".YcErSW_link", "transition": "color .2s, background .2s"},
+    {"selector": ".YcErSW_nav", "transition": "border-color .25s"},
+    {"selector": ".yDvB9G_chip", "transition": "background .2s, color .2s"},
+    {"selector": ".gmmB4W_media video", "transition": "transform .8s cubic-bezier(.2,.8,.2,1), filter .35s"},
+    {"selector": "html", "scrollBehavior": "smooth"}
+  ]
+}

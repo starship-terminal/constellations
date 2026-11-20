@@ -436,9 +436,34 @@ const tabs = page => vis(page, '[data-pane-area=center] [data-slot=context-menu-
 // another agent working in the same workspace cannot hold the run open.
 let runTab = null;
 const runningDot = page => (runTab === null ? centre(page) : tabs(page).nth(runTab)).locator('span.rounded-full.bg-amber-500').filter({ visible: true });
-async function sendToTerminal({ page }, text) {
-  await page.locator('[data-pane-area=center] [role=application] .xterm-helper-textarea').last().focus().catch(async () => {
-    await W.terminal(page).click(); });
+// Types only into the run tab's visible terminal. Superset keeps another .xterm off screen, so an
+// unscoped `.last()` focus could send the prompt and Enter to another tab's shell or session: select
+// the run's own tab, focus the input inside the displayed terminal, and check focus landed there.
+// The displayed terminal: of the centre pane's .xterm elements, the first whose bounding box is on
+// screen. Playwright counts the off-screen copy (x=-9999 in the saved run) as visible, so
+// W.terminal's first() can pick it; a box with a negative x or y, no size, or outside the viewport
+// is never chosen.
+export async function displayedTerminal(page) {
+  const all = page.locator('[data-pane-area=center] [role=application] .xterm');
+  const view = page.viewportSize() || { width: Infinity, height: Infinity };
+  for (let i = 0, n = await all.count(); i < n; i++) {
+    const term = all.nth(i);
+    const box = await term.boundingBox();
+    if (box && box.width > 0 && box.height > 0 && box.x >= 0 && box.y >= 0 && box.x < view.width && box.y < view.height) return term;
+  }
+  throw new Error('no terminal on screen in the run tab; nothing was typed');
+}
+export async function sendToTerminal({ page }, text) {
+  if (runTab !== null) { await tabs(page).nth(runTab).click(); await wait(page, 300); }
+  const term = await displayedTerminal(page);
+  await term.click();
+  const input = term.locator('.xterm-helper-textarea');
+  await input.focus();
+  const inRunTerminal = await input.evaluate((el) => {
+    const box = el.closest('.xterm')?.getBoundingClientRect();
+    return el === document.activeElement && !!box && box.width > 0 && box.left >= 0 && box.top >= 0;
+  });
+  if (!inRunTerminal) throw new Error('keyboard focus is not in the run tab\'s visible terminal; nothing was typed');
   await page.keyboard.type(text, { delay: 12 }); await wait(page, 300);
   await page.keyboard.press('Enter'); await wait(page, 800);
 }

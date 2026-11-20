@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editor X / Wix Studio style guide</title>
+<meta name="description" content="Wix Studio design tokens and the public signed-out surface's components, rendered from tokens.json with the declared thunderbolt theme values and the measured computed styles.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Madefor Text", Madefor, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Madefor Display", Madefor, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, var(--color-neutral-ink, #000)); background: var(--surface-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-hairline, var(--color-neutral-hairline, #d8e2ec)); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--surface-dark, #0e0e0e); padding: 12px; }
+.pal.dark .nm, .pal.dark .vl { color: var(--color-neutral-footer-ink, #f6f6f6); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-hairline, var(--color-neutral-hairline, #d8e2ec)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #000); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-hairline, var(--color-neutral-hairline, #d8e2ec)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #000); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border-hairline, var(--color-neutral-hairline, #d8e2ec)); overflow: hidden; background: var(--surface-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 18px; height: 56px; padding: 0 12px 0 22px; font-size: 14px; color: var(--color-neutral-ink, #000); border-bottom: 1px solid var(--border-hairline, #d8e2ec); }
+.navbar .wm { font-weight: 700; font-size: 15px; letter-spacing: .04em; text-transform: uppercase; }
+.navbar .sp { flex: 1; }
+.band { background: var(--surface-dark, #0e0e0e); color: var(--color-neutral-footer-ink, #f6f6f6); }
+.band .navbar { border-bottom-color: var(--color-neutral-footer-divider, #848280); color: var(--color-neutral-footer-ink, #f6f6f6); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-secondary-height, 52px); padding: 0 30px; font-size: 16px; font-weight: 400; border-radius: var(--radius-pill, 50px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-primary, var(--color-brand-studio-purple, #3910ed)); color: var(--text-on-action, #fff); }
+.btn.ghost { background: transparent; color: inherit; border: 1px solid currentColor; border-radius: 999px; height: 36px; padding: 0 14px; font-size: 13px; }
+.btn.secondary { background: var(--action-secondary, var(--color-neutral-ink, #000)); color: var(--text-on-action, #fff); }
+.btn.square { background: var(--action-primary, var(--color-brand-studio-purple, #3910ed)); color: var(--text-on-action, #fff); border-radius: 0; height: var(--component-button-cta-height, 57px); padding: 0 35px; }
+.hero { color: var(--color-neutral-ink, #000); padding: 64px 40px 80px; font: 400 56px/1.1 var(--sg-serif); letter-spacing: -.03em; text-align: center; }
+.hero small { display: block; font: 400 18px/1.6 var(--sg-sans); color: var(--color-neutral-ink, #000); margin: 16px auto 22px; max-width: 46ch; }
+.hero .big-cta { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-pill-height, 56px); padding: 0 34px; border-radius: var(--radius-stadium, 999px); font-size: 20px; background: var(--action-primary, var(--color-brand-studio-purple, #3910ed)); color: var(--text-on-action, #fff); }
+.limeband { background: var(--surface-accent, var(--color-brand-lime, #deff00)); color: var(--color-neutral-ink, #000); padding: 34px 30px; font: 400 30px/1.15 var(--sg-serif); letter-spacing: -.02em; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border-card, var(--color-neutral-card-line, #dfe5eb)); padding: 14px; font-size: 13px; background: #fff; border-radius: var(--radius-card, 2px); }
+.tile.rec { border-top: 3px solid var(--border-accent, var(--color-neutral-navy, #0e106a)); }
+.tile .img { height: 120px; background: #eee; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+.tile b { display: block; font: 400 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.tile .price { font: 500 26px/1.2 var(--sg-sans); margin: 10px 0 2px; }
+.badge { display: inline-block; background: var(--surface-badge, var(--color-neutral-badge-mint, #a6ffd8)); color: var(--color-neutral-ink-plans, #000624); font: 700 10px/24px var(--sg-sans); padding: 0 10px; letter-spacing: .06em; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-hairline, var(--color-neutral-hairline, #d8e2ec)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-hairline, var(--color-neutral-hairline, #d8e2ec)); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #000); opacity: .65; font-family: var(--sg-mono); }
+.footlink { color: var(--color-neutral-footer-ink, #f6f6f6); font-size: 16px; line-height: 34px; margin-right: 22px; }
+.soc { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid var(--color-neutral-footer-ink, #f6f6f6); border-radius: 50%; color: var(--color-neutral-footer-ink, #f6f6f6); font-size: 12px; margin-right: 8px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Wix Studio style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Wix Studio, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the Wix Studio purple #3910ed measured off the real actions (header Start Creating, the hero 'Start creating' stadium pill), the #deff00 lime closing band, the declared thunderbolt theme layer (--color_*, --wst-* — the #1a6aff action blue and the blue/lime/clay/orange ramps), the ink/white neutrals and the #0e0e0e chrome with #f6f6f6 text, the double focus rings, Madefor under its five face names, and the stadium pills next to the sharp 0px default. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from editorx.com on 2026-11-13, signed out, in headless Chromium — editorx.com 301s to wix.com/studio (only /pricing is still served on-domain, and it answered with its Premium-plans error pane at capture time). The Studio editor and every signed-in surface behind Log In / Start Creating are a documented boundary. Madefor is a licensed served face and is not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A fixed white 56px header carries the Wix Studio wordmark, the Product / Resources / Enterprise dropdown triggers, Pricing, the language globe, Log In — and the square-cornered #3910ed Start Creating (57px, 35px side padding). Below it the hero runs the 80px display at -0.03em tracking over the 18px lede and the purple stadium pill.</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm">Wix Studio</span><span>Product ⌄</span><span>Resources ⌄</span><span>Enterprise ⌄</span><span>Pricing</span><span class="sp"></span><span>Log In</span><span class="btn square">Start Creating</span></div>
+    <div class="hero">Design with impact<br>Deliver at scale<small>The website building platform for designers, developers, and marketers.</small><span class="big-cta">Start creating &nbsp;→</span></div>
+    <div class="limeband">Unleash your creations. Rein in the chaos.</div>
+  </div>
+
+  <h2 class="sh">Plans</h2>
+  <p class="lead">wix.com/studio/plans lays the white plan cards in a row: 1px #dfe5eb borders, the recommended card topped with a 3px #0e106a accent edge and the mint #a6ffd8 RECOMMENDED badge — prices in the plans face, 700 headings in #000624. (editorx.com/pricing itself served the Premium-plans error pane at capture time.)</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile"><b>Free</b><span class="sub">For exploring the platform.</span><div class="price">$0</div></div>
+      <div class="tile rec"><span class="badge">RECOMMENDED</span><b>Plus</b><span class="sub">For freelancers and studios.</span><div class="price">$22</div><span class="sub">/month</span></div>
+      <div class="tile"><b>Elite</b><span class="sub">For scaling agencies.</span><div class="price">$49</div><span class="sub">/month</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn square">Select plan</span> <span class="btn secondary">Compare plans</span></div>
+  </div>
+
+  <h2 class="sh">The dark chrome</h2>
+  <p class="lead">The #0e0e0e footer is the only dark surface: #f6f6f6 links at 16/34 dimming to #828282 on hover, circled 36px social buttons on a 1px ring, the #848280 hairline. Not a user theme — the export's dark set is this painted chrome.</p>
+  <div class="mock band" style="padding:22px">
+    <div style="margin-bottom:14px"><span class="footlink">Product</span><span class="footlink">Features</span><span class="footlink">Enterprise</span><span class="footlink">Resources</span><span class="footlink">Pricing</span></div>
+    <div><span class="soc">ig</span><span class="soc">fb</span><span class="soc">yt</span><span class="soc">in</span><span class="soc">x</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The core set carries the measured neutrals and the Wix Studio brand actions (measured off the components, var-referenced where a --color_*/--wst-* variable resolves the same value); the declared blue/lime/clay/orange ramps and status hues come from the thunderbolt site theme. Light roles alias the palette; the "dark" set is the #0e0e0e chrome the page paints — a painted surface, not a user toggle.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Corners are sharp by default: the header CTA, plan cards and bands take 0px. The pills are stadiums — the hero CTA's computed cap, the 50px link pill (section links, the enterprise CTA), 21px on the template card's action, 50% circles for the footer socials, 2px on the template card itself.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <p class="lead">Almost no elevation: the plan card's soft ink-plans wash is the only measured shadow; focus rings draw as double box-shadows, not outlines.</p>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">One family under five served names: <code>Madefor</code> — wix-madefor-display-v2 on the thunderbolt displays, wix-madefor-text-v2 on body, Madefor-Display/-Text on the marketing chrome, plain Madefor on plans. Display sizes are spx-scaled (they track the viewport): the measured 157.5/80.25/75/72.6/61/60/54/48 displays are the 1440px readings; the ramp runs down to 14/20 footer meta and the 10/24 badge. Samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the thunderbolt theme layer off the inline styles and linked bundles, plus computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the .theme.dark band)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  // Shadows live under core.shadow in most packs; this one stores them under
+  // core.measured (the plan card's elevation and the double focus rings), so
+  // every $type=shadow token under core is listed.
+  const seen = new Set();
+  for (const [n, t] of flat(TOK.core, '')) {
+    if (t.t !== 'shadow' || seen.has(n)) continue;
+    seen.add(n);
+    e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => [x.offsetX, x.offsetY, x.blur, x.spread, x.color].filter(Boolean).join(' ')).join(', ') : t.v)}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Wix Studio</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

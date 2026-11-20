@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>descript.com style guide</title>
+<meta name="description" content="descript.com design tokens and the public marketing surface's components, rendered from tokens.json with measured computed styles and the declared Red/Maroon/Lilac/Neutral/Green/Gray palette scales.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: booton, "Booton VF", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: gamuthDisplay, "gamuthDisplay Fallback", Georgia, "Times New Roman", serif;
+  --sg-pill: brett, "brett Fallback", booton, ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-body, #1a1a1a); background: var(--background-page, #fff7fa); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.1 var(--sg-serif); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #0f1015); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #0f1015); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--color-brand-ink, #030302); padding: 12px; border-radius: 12px; }
+.pal.dark .nm, .pal.dark .vl { color: rgba(255, 255, 255, 0.898); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); overflow: hidden; background: var(--surface-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 20px; height: var(--component-nav-height, 65px); padding: 0 10px 0 18px; font-size: 16px; color: var(--color-brand-ink, #030302); background: #fff; border-radius: var(--radius-nav, 26px); box-shadow: 0 1px 3px rgba(3,3,2,.08); margin: 12px 18px; }
+.navbar .wm { font-weight: 800; font-size: 18px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.navbar .link { color: var(--color-brand-ink, #030302); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-load-more-height, 38px); padding: 0 24px; font-size: 16px; font-weight: 500; border-radius: var(--radius-full, 9999px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-primary, #772a4d); color: var(--text-on-dark, #fff7fd); height: var(--component-signup-size, 54px); font-size: 16px; font-weight: 600; border-radius: var(--radius-cta, 12px); }
+.btn.light { background: var(--background-field-surface, #fff); color: var(--color-brand-ink, #030302); box-shadow: 0 1px 4px rgba(3,3,2,.12); }
+.btn.outline { background: transparent; color: var(--color-brand-ink, #030302); box-shadow: inset 0 0 0 1px var(--border-hairline-dark, #2e2e32); }
+.hero { color: var(--color-brand-ink, #030302); padding: 96px 40px 90px; font: 400 52px/1 var(--sg-serif); text-align: center; background: linear-gradient(180deg, #bfe0ee 0%, #dceef7 60%, var(--background-page, #fff) 100%); }
+.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); color: var(--text-muted-foreground, rgba(3,3,2,.5)); margin: 18px auto 26px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border-hairline-dark, #2e2e32); padding: 18px; font-size: 13px; background: var(--background-field-surface, #fff); border-radius: var(--radius-2xl, 16px); }
+.tile .img { height: 100px; background: var(--background-page, #fff); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: var(--radius-default, 10px); }
+.tile b { display: block; font: 400 20px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .price { font: 400 40px/1.1 var(--sg-serif); margin: 8px 0 2px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-hairline-dark, #2e2e32); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-border, #e0e0e0); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #171717); opacity: .65; font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: var(--background-page, #fff); border-radius: var(--radius-full, 9999px); padding: 4px; gap: 0; font-size: 16px; }
+.toggle span { padding: 10px 28px; border-radius: var(--radius-full, 9999px); font-weight: 500; color: var(--color-brand-ink, #030302); }
+.toggle .on { background: var(--background-field-surface, #fff); box-shadow: 0 1px 3px rgba(3,3,2,.12); }
+</style>
+</head>
+<body>
+<main>
+  <h1>descript.com style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">descript.com, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the #fff7fa blush field, the maroon CTA ramp (#772a4d rest, #5b142e hover, #390a1a plan CTAs), the #f73b3b red accent, the #c4b5bb muted-on-dark tab text, and Gamuth Display over Booton/Brett type. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from descript.com on 2026-11-14, signed out, in headless Chromium. The product lives behind web.descript.com — its public sign-in card was captured as a boundary and never submitted; Sign in, Sign up, Get started and every plan CTA were measured, never followed. booton, brett and gamuthDisplay are served by the site; samples fall back to system faces.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A 102px floating #fff7fa nav bar: the 98px wordmark, 16px/600 Booton items (Features, Pricing, Contact sales, Sign in) and the 108x54 #772a4d maroon Sign up button at 12px radius.</p>
+  <div class="mock" style="background:#fff7fa;padding:0">
+    <div class="navbar" style="height:102px;border-radius:0;margin:0;box-shadow:none;background:var(--background-page,#fff7fa)"><span class="wm" style="font-weight:700;font-size:22px;color:var(--text-ink,#26171d)">DESCRIPT</span><span class="link" style="font-size:16px;font-weight:600;color:var(--text-ink,#26171d)">Features &#9662;</span><span class="link" style="font-size:16px;font-weight:600;color:var(--text-ink,#26171d)">Pricing</span><span class="link" style="font-size:16px;font-weight:600;color:var(--text-ink,#26171d)">Contact sales</span><span class="sp"></span><span class="link" style="font-size:16px;font-weight:600;color:var(--text-ink,#26171d)">Sign in</span><span class="btn primary" style="height:54px;padding:0 22px">Sign up</span></div>
+  </div>
+
+  <h2 class="sh">The maroon hero band</h2>
+  <p class="lead">The home opens on a deep-maroon band: an 18px Brett red eyebrow, an 88px Gamuth display headline in #fff8f4, and the 610px workflow tab strip (Record / Edit / Refine / Share / Multiply) whose selected tab paints #5b142e with #fff7fd text over muted #c4b5bb.</p>
+  <div class="mock" style="padding:56px 40px;background:var(--color-core-screen-black,#27181e);text-align:center">
+    <div style="color:var(--text-accent,#f73b3b);font:400 18px var(--sg-pill);letter-spacing:.12em;text-transform:uppercase">AI Video Editor</div>
+    <div style="color:var(--text-on-dark,#fff8f4);font:400 60px/1.1 var(--sg-serif);margin-top:14px">AI-editing for every<br>kind of video</div>
+    <div style="display:inline-flex;gap:6px;justify-content:center;margin:30px 0 4px;padding:6px">
+      <span style="background:var(--surface-tab-selected,#5b142e);border-radius:var(--radius-control,8px);color:#fff7fd;font:400 16px var(--sg-sans);padding:10px 24px">Record</span>
+      <span style="border-radius:var(--radius-control,8px);color:var(--text-muted-on-dark,#c4b5bb);font:400 16px var(--sg-sans);padding:10px 24px">Edit</span>
+      <span style="border-radius:var(--radius-control,8px);color:var(--text-muted-on-dark,#c4b5bb);font:400 16px var(--sg-sans);padding:10px 24px">Refine</span>
+      <span style="border-radius:var(--radius-control,8px);color:var(--text-muted-on-dark,#c4b5bb);font:400 16px var(--sg-sans);padding:10px 24px">Share</span>
+      <span style="border-radius:var(--radius-control,8px);color:var(--text-muted-on-dark,#c4b5bb);font:400 16px var(--sg-sans);padding:10px 24px">Multiply</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing and the auth card</h2>
+  <p class="lead">/pricing runs a 228x50 Monthly/Annual toggle on a #f1eaed track into 284x708 plan cards with #390a1a maroon CTAs; the sign-in card on web.descript.com pairs outline SSO buttons with a #3f2a32 primary at 8px radius.</p>
+  <div class="mock" style="padding:20px;display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
+    <div style="width:280px;background:#fff;border-radius:var(--radius-cta,12px);overflow:hidden;border:1px solid #f1eaed">
+      <div style="padding:18px"><b style="font:600 20px var(--sg-sans);color:var(--text-body,#1a1a1a)">Hobbyist</b><div class="sub" style="font:400 13px var(--sg-sans);opacity:.6;margin:6px 0 14px">Monthly</div><span class="btn" style="width:100%;height:56px;border-radius:var(--radius-cta,12px);background:var(--action-deep,#390a1a);color:#fff7fa;font-weight:600">Get started</span></div>
+    </div>
+    <div style="display:inline-flex;background:var(--background-toggle-track,#f1eaed);border-radius:var(--radius-toggle,42px);padding:8px;height:50px;align-items:center">
+      <span style="padding:5px 20px;border-radius:21px;font:400 16px var(--sg-sans);color:var(--text-body,#1a1a1a)">Monthly</span>
+      <span style="padding:5px 20px;border-radius:21px;background:#fff;font:400 16px var(--sg-sans);color:var(--text-body,#1a1a1a);box-shadow:0 1px 3px rgba(0,0,0,.12)">Annual</span>
+    </div>
+    <div style="width:280px;background:#fff;border-radius:var(--radius-control,8px);padding:18px;border:1px solid #f1eaed">
+      <span class="btn" style="width:100%;height:40px;border-radius:var(--radius-control,8px);background:var(--action-auth-outline,#fdfcfc);color:var(--text-ink,#26171d);border:1px solid #e4dde0;font-weight:500;font-size:15.75px">Continue with Google</span>
+      <span class="btn" style="width:100%;height:40px;border-radius:var(--radius-control,8px);background:var(--action-auth-primary,#3f2a32);color:#fff;font-weight:500;font-size:15.75px;margin-top:10px">Continue with email</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared scales carry the palette — the Red, Maroon, Lilac, Neutral, Green and Gray ramps plus the Core canvas constants and Tools-Glow pastels. The light roles alias them: #fff7fa page, #26171d ink, the maroon CTA ramp, #f73b3b red, #c4b5bb muted-on-dark. The page paints one theme; the dark set is empty.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">A soft-cornered design: 8px auth controls, 12px CTAs and plan cards, a 42px billing-toggle track. The measured component set below holds header/toggle/card/auth sizes.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Three voices: <code>booton</code> for UI and body (16px/400-600; the auth card reads <code>Booton VF</code> at 15.75px/500), <code>brett</code> for the 18px uppercase eyebrows and <code>gamuthDisplay</code> for every display heading (hero 88px, pages 72px, sections 56px, mobile 48px). Samples fall back to system faces.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read computed styles off the live Next.js + Tailwind DOM on every captured route</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and opened (workflow tab, billing toggle) states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the .theme.dark band)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Hire anyone, anywhere</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cohere style guide</title>
+<meta name="description" content="Cohere (cohere.com) design tokens and the public site's components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: var(--font-family-ui, "Unica77 Cohere Web"), Inter, Arial, ui-sans-serif, system-ui, sans-serif;
+  --sg-display: var(--font-family-display, "CohereVariable"), "Space Grotesk", var(--sg-sans);
+  --sg-mono: var(--font-family-mono, "CohereMono"), ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #212121); background: var(--surface-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.1 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.4px; }
+h2.sh { font: 500 12px/1 var(--sg-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted, #757575); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-90, #f2f2f2); }
+.lead { max-width: 62ch; color: var(--text-muted, #757575); }
+.note { font-size: 13px; color: var(--text-muted, #757575); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted, #757575); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-90, #f2f2f2); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-muted, #757575); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-muted, #757575); }
+/* ---- site mock: the marketing surface ---- */
+.mock { border: 1px solid var(--color-neutral-90, #f2f2f2); border-radius: var(--radius-xl, 22px); overflow: hidden; }
+.mock.light { background: var(--surface-page, #fff); color: var(--text-primary, #212121); }
+.banner { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: var(--component-banner-height, 40px); padding: 6px 32px; font-size: 14px; background: var(--surface-banner, #000); color: var(--text-banner, #fff); }
+.banner a { color: var(--text-banner, #fff); text-decoration: underline; }
+.banner .x { margin-left: auto; color: var(--text-banner, #fff); font-family: var(--sg-mono); }
+.navbar { display: flex; align-items: center; gap: 14px; height: var(--component-nav-height, 60px); padding: 0 32px; font-size: 14px; color: var(--text-nav, #212121); border-bottom: 1px solid var(--color-neutral-90, #f2f2f2); }
+.navbar .wm { font-family: var(--sg-display); font-size: 18px; font-weight: 500; color: var(--text-primary, #212121); }
+.navbar .sp { flex: 1; }
+.navbar .lk { height: var(--component-control-heightNavItem, 36px); display: inline-flex; align-items: center; padding: 0 6px; }
+.navbar .ghost { height: var(--component-control-heightNavItem, 36px); display: inline-flex; align-items: center; padding: 0 12px; }
+.navbar .cta { height: var(--component-control-heightNavCta, 40px); display: inline-flex; align-items: center; padding: 0 16px; border-radius: var(--component-control-radiusCta, 9999px); background: var(--accent, #17171c); color: var(--text-onAccent, #fff); font-weight: 500; }
+.hero { padding: 80px 40px 72px; text-align: center; }
+.hero h3 { font: 400 var(--font-size-hero, 60px)/1 var(--sg-display); margin: 0 auto 16px; max-width: 16ch; letter-spacing: -.02em; }
+.hero p { margin: 0 auto 36px; color: var(--text-muted, #757575); max-width: 46ch; }
+.herorow { display: flex; gap: 10px; align-items: center; justify-content: center; }
+.bigcta { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightHeroCta, 44px); padding: 0 20px; border-radius: var(--component-control-radiusCta, 9999px); background: var(--accent, #17171c); color: var(--text-onAccent, #fff); font-size: 15px; font-weight: 500; }
+/* ---- callout cards ---- */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; padding: 24px; }
+.ccard { border-radius: var(--radius-lg, 12px); background: var(--surface-raised, #fafafa); border: 1px solid var(--border-subtle, var(--color-neutral-90, #f2f2f2)); padding: 18px; font-weight: 500; }
+.ccard .cap { font: 500 12px/1.4 var(--sg-mono); letter-spacing: .04em; text-transform: uppercase; color: var(--text-muted, #757575); }
+.ccard .t { font: 400 20px/1.2 var(--sg-display); margin-top: 8px; color: var(--text-primary, #212121); }
+/* ---- pricing ---- */
+.ptabs { display: flex; gap: 24px; padding: 24px 24px 0; font-size: 16px; }
+.ptabs .t { padding: 4px 0; color: var(--text-primary, #212121); }
+.ptabs .t.on { border-bottom: 2px solid; border-image: linear-gradient(90deg, var(--color-coral-500, #ff7759), var(--color-quartz-500, #d18ee2)) 1; }
+.ptable { margin: 16px 24px 24px; border-collapse: collapse; font-size: 14px; width: calc(100% - 48px); }
+.ptable td, .ptable th { border-bottom: 1px solid var(--color-neutral-90, #f2f2f2); padding: 10px 14px; text-align: left; }
+.ptable .rate { font-family: var(--sg-mono); }
+/* ---- footer band ---- */
+.fband { background: var(--surface-dark, #0c1210); color: var(--text-onDark, #fff); padding: 40px 32px; }
+.fband .fcta { display: inline-flex; align-items: center; height: 40px; padding: 0 18px; border-radius: var(--radius-full, 9999px); background: var(--color-pureWhite, #fff); color: var(--accent, #17171c); font-weight: 500; }
+.fband .cols { display: flex; gap: 48px; margin-top: 28px; font-size: 13px; }
+.fband .cols span { display: block; color: var(--text-onDark, #fff); opacity: .7; line-height: 2; }
+.fband .cols b { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; opacity: .9; }
+/* ---- the sign-in card (app boundary) ---- */
+.signin { max-width: 420px; margin: 28px auto; padding: 28px; background: var(--surface-page, #fff); border: 1px solid var(--color-neutral-90, #f2f2f2); border-radius: var(--radius-lg, 12px); font-size: 14px; color: var(--text-primary, #212121); }
+.signin .h { font: 400 24px/1.2 var(--sg-display); margin-bottom: 16px; text-align: center; }
+.signin .field { height: 60px; border: 1px solid var(--border-input, #bdbdbd); border-radius: 8px 8px 0 0; margin-bottom: 10px; display: flex; align-items: center; padding: 0 12px; color: var(--text-primary, #212121); background: var(--color-neutral-95, #fafafa); }
+.signin .obtn { display: flex; align-items: center; justify-content: center; height: var(--component-control-heightOAuth, 40px); border-radius: 4px; margin-bottom: 10px; font-size: 14px; background: var(--color-pureWhite, #fff); color: var(--text-primary, #212121); border: 1px solid var(--border-subtle, #dadce0); }
+.back { display: block; text-align: center; margin-top: 14px; font-size: 13px; color: var(--text-muted, #757575); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-90, #f2f2f2); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Cohere style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The mock is a reconstruction from tokens, not captured pixels — the real captures are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+
+  <h2 class="sh">Cohere, declared and measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>. cohere.com declares its design layer as Tailwind config utility classes, not <code>:root</code> variables — a named palette (<code>volcanic</code> brand greys, the workhorse <code>neutral</code> ramp, <code>quartz</code>/<code>coral</code>/<code>mushroom</code>/<code>marble</code>/<code>blue</code>/<code>green</code>/<code>danger</code>/<code>success</code> plus <code>onyx</code>/<code>pureBlack</code>/<code>pureWhite</code>), the <code>text-web3-*</code> type scale, the <code>font-*</code> family stacks (Unica77 Cohere Web, CohereMono, CohereVariable), a custom radius scale and the <code>z-*</code>/<code>max-w-web3-*</code> layers. Roles are measured on the painted chrome: the dark <code>ease-button-gradient</code> CTA pills, the pureBlack promo banner, the footer band and the sign-in card. Brand art is the hero illustration.</p>
+  <p class="note">One light theme across the marketing routes, with the pureBlack promo banner and the dark footer band inside it; dashboard.cohere.com/welcome/login is a separate app surface measured at rest as the sign-in boundary. Read from cohere.com on 2026-11-17, signed out, in headless Chromium. Nothing was signed into, paid for or submitted.</p>
+
+  <h2 class="sh">The marketing surface</h2>
+  <p class="lead">The dismissible pureBlack promo banner above the fixed nav (wordmark, roll-hover links, Sign-in ghost and the dark Request-a-demo pill), then the centred serif-scale hero with its CTA pills.</p>
+  <div class="mock light">
+    <div class="banner"><span>Rerank 5 is here: sharper search, fewer tokens. <a>Learn more</a></span><span class="x">×</span></div>
+    <div class="navbar"><span class="wm">Cohere</span><span class="lk">Products</span><span class="lk">Solutions</span><span class="lk">Resources</span><span class="lk">Company</span><span class="sp"></span><span class="ghost">Sign in</span><span class="cta">Request a demo</span></div>
+    <div class="hero">
+      <h3>Your AI. Your rules.</h3>
+      <p>Security-first enterprise AI — models and systems that deploy where your data lives.</p>
+      <div class="herorow"><span class="bigcta">Request a demo</span></div>
+    </div>
+    <div class="cards">
+      <div class="ccard"><div class="cap">Platform</div><div class="t">North — the agentic workspace</div></div>
+      <div class="ccard"><div class="cap">Models</div><div class="t">Command — production-ready LLMs</div></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">The model-category tablist switches the rate table; rates are per-model figures. The tabs are aria-selected toggles — measured at rest, never switched.</p>
+  <div class="mock light">
+    <div class="ptabs"><span class="t on">Workplace systems</span><span class="t">Generative models</span><span class="t">Advanced retrieval models</span></div>
+    <table class="ptable"><tr><th>Model</th><th>Rate</th></tr><tr><td>Command A</td><td class="rate">$2.50 / 1M tokens</td></tr><tr><td>Rerank 5</td><td class="rate">$3.00 / 1K searches</td></tr></table>
+  </div>
+
+  <h2 class="sh">Footer band</h2>
+  <p class="lead">The dark island inside the light theme — white CTA pill, link columns and the legal/certification row.</p>
+  <div class="mock light"><div class="fband">
+    <span class="fcta">Request a demo</span>
+    <div class="cols"><div><b>Platforms</b><span>North</span><span>Compass</span></div><div><b>Models</b><span>Command</span><span>Embed</span><span>Rerank</span></div><div><b>Company</b><span>About</span><span>Careers</span></div></div>
+  </div></div>
+
+  <h2 class="sh">The sign-in card</h2>
+  <p class="lead">dashboard.cohere.com/welcome/login is a separate app surface — a card with an email field and OAuth controls; measured at rest, never submitted.</p>
+  <div class="mock light"><div class="signin">
+    <div class="h">Log in to Cohere</div>
+    <div class="field">Email address</div>
+    <div class="obtn">Continue with Google</div>
+    <span class="back">← Back to cohere.com</span>
+  </div></div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The page ground is <code>light.surface.page</code> (declared <code>pureWhite</code>); the dark islands are <code>light.surface.banner</code> = <code>color.pureBlack</code> #000 and <code>light.surface.dark</code> (the footer band). Ink is <code>light.text.primary</code> = <code>color.volcanic.900</code> #212121 with <code>light.text.muted</code> for secondary copy; the accent control is the dark CTA <code>light.accent</code> = <code>color.neutral.15</code> #17171c. <code>coral</code> is the warm accent (visited links declare coral-700), <code>quartz</code> the purple.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <p class="lead">Measured boxes: the nav pill heights, the promo banner and nav bar heights, the CTA radius, the OAuth row, the mobile menu overlay and the sign-in field width.</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Harvested the Tailwind config's literal utility rules (the named palette, type scale, radius scale, z and max-width layers) and read computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible and CDP-forced pressed states measured per component; the FAQ accordion and the mobile menu read at their own toggled state</td></tr><tr><td>No provenance</td><td>Every token names its utility class or the measurement it came from; values painted by the browser (decomposed shorthands) are labelled as computed, not declared</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [set, toks] of [['light', TOK.light], ['dark', TOK.dark]]) {
+    const roles = flat(toks || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${set} roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const grads = flat(TOK.core && TOK.core.gradient || {}, 'gradient.');
+  if (grads.length) {
+    h += `<div class="pal-h">gradients</div><div class="pal">`;
+    for (const [n, t] of grads) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc((t.v||[]).map(s=>s.color).join(' → '))}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core && TOK.core.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function groups() {
+  // Every remaining token group gets a key/value table — fonts, radii,
+  // spacing, blur, motion, shadows, typography and the light set's
+  // non-colour roles, so the guide covers all of tokens.json.
+  const show = (v) => Array.isArray(v) ? (typeof v[0] === 'object' ? v.map((l) => `${l.color} ${l.offsetX} ${l.offsetY} ${l.blur} ${l.spread}${l.inset ? ' inset' : ''}`).join(', ') : v.join(', ')) : String(v);
+  const skip = new Set(['color', 'component', 'measured', 'gradient']);
+  let h = '';
+  for (const [set, toks] of [['core', TOK.core], ['light', TOK.light], ['dark', TOK.dark]]) {
+    for (const [g, grp] of Object.entries(toks || {})) {
+      if (skip.has(g)) continue;
+      const items = flat(grp, g + '.').filter(([, t]) => t.t !== 'color');
+      if (!items.length) continue;
+      h += `<div class="pal-h">${esc(set)}.${esc(g)}</div><div class="kv">`;
+      for (const [n, t] of items) h += `<div><b>${esc(n)}</b> <span>${esc(show(t.v))}</span></div>`;
+      h += '</div>';
+    }
+  }
+  if (h) {
+    const sec = document.createElement('div');
+    sec.innerHTML = `<h2 class="sh">Scales and roles</h2>` + h;
+    $('#meas-out').appendChild(sec);
+  }
+})();
+</script>
+</body>
+</html>

@@ -3,11 +3,11 @@
   "totals": {
     "catalog_entries": 439,
     "catalog_domains": 433,
-    "system_packages": 85,
-    "system_domains": 77,
-    "matched_domains": 52,
-    "missing_domains": 381,
-    "system_domains_absent_from_catalog": 25
+    "system_packages": 459,
+    "system_domains": 448,
+    "matched_domains": 408,
+    "missing_domains": 25,
+    "system_domains_absent_from_catalog": 40
   },
   "matched": {
     "1password.com": {
@@ -649,6 +649,176 @@
         }
       ]
     },
+    "buymeacoffee.com": {
+      "catalog": [
+        {
+          "name": "Buy Me a Coffee",
+          "domain": "buymeacoffee.com",
+          "id": 334
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "buymeacoffee",
+          "name": "Buy Me a Coffee",
+          "url": "https://buymeacoffee.com",
+          "name_match": false
+        }
+      ]
+    },
+    "byborre.com": {
+      "catalog": [
+        {
+          "name": "BYBORRE®",
+          "domain": "byborre.com",
+          "id": 455
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "byborre",
+          "name": "BYBORRE",
+          "url": "https://byborre.com",
+          "name_match": true
+        }
+      ]
+    },
+    "cakeequity.com": {
+      "catalog": [
+        {
+          "name": "Cake Equity",
+          "domain": "cakeequity.com",
+          "id": 661
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cakeequity",
+          "name": "Cake Equity",
+          "url": "https://www.cakeequity.com",
+          "name_match": false
+        }
+      ]
+    },
+    "cal.com": {
+      "catalog": [
+        {
+          "name": "Cal",
+          "domain": "cal.com",
+          "id": 282
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cal",
+          "name": "Cal.com",
+          "url": "https://cal.com",
+          "name_match": true
+        }
+      ]
+    },
+    "calendly.com": {
+      "catalog": [
+        {
+          "name": "Calendly",
+          "domain": "calendly.com",
+          "id": 97
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "calendly",
+          "name": "Calendly",
+          "url": "https://calendly.com",
+          "name_match": true
+        }
+      ]
+    },
+    "calm.com": {
+      "catalog": [
+        {
+          "name": "Calm",
+          "domain": "calm.com",
+          "id": 227
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "calm",
+          "name": "Calm",
+          "url": "https://www.calm.com",
+          "name_match": true
+        }
+      ]
+    },
+    "canva.com": {
+      "catalog": [
+        {
+          "name": "Canva",
+          "domain": "canva.com",
+          "id": 94
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "canva",
+          "name": "Canva",
+          "url": "https://www.canva.com",
+          "name_match": true
+        }
+      ]
+    },
+    "care.com": {
+      "catalog": [
+        {
+          "name": "Care",
+          "domain": "care.com",
+          "id": 908
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "care",
+          "name": "Care.com",
+          "url": "https://www.care.com",
+          "name_match": true
+        }
+      ]
+    },
+    "cartesia.ai": {
+      "catalog": [
+        {
+          "name": "Cartesia",
+          "domain": "cartesia.ai",
+          "id": 756
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cartesia",
+          "name": "Cartesia",
+          "url": "https://www.cartesia.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "chargetrip.com": {
+      "catalog": [
+        {
+          "name": "Chargetrip",
+          "domain": "chargetrip.com",
+          "id": 798
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "chargetrip",
+          "name": "Chargetrip",
+          "url": "https://www.chargetrip.com",
+          "name_match": true
+        }
+      ]
+    },
     "chatgpt.com": {
       "catalog": [
         {
@@ -662,6 +832,23 @@
           "slug": "chatgpt",
           "name": "ChatGPT",
           "url": "https://chatgpt.com",
+          "name_match": true
+        }
+      ]
+    },
+    "classpass.com": {
+      "catalog": [
+        {
+          "name": "ClassPass",
+          "domain": "classpass.com",
+          "id": 256
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "classpass",
+          "name": "ClassPass",
+          "url": "https://classpass.com",
           "name_match": true
         }
       ]
@@ -689,6 +876,312 @@
         }
       ]
     },
+    "clay.earth": {
+      "catalog": [
+        {
+          "name": "Clay",
+          "domain": "clay.earth",
+          "id": 658
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "clay",
+          "name": "Clay",
+          "url": "https://clay.earth",
+          "name_match": true
+        }
+      ]
+    },
+    "clearful.com": {
+      "catalog": [
+        {
+          "name": "Clearful",
+          "domain": "clearful.com",
+          "id": 542
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "clearful",
+          "name": "Clearful",
+          "url": "https://clearful.com",
+          "name_match": true
+        }
+      ]
+    },
+    "clipchamp.com": {
+      "catalog": [
+        {
+          "name": "Clipchamp",
+          "domain": "clipchamp.com",
+          "id": 858
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "clipchamp",
+          "name": "Clipchamp",
+          "url": "https://clipchamp.com",
+          "name_match": true
+        }
+      ]
+    },
+    "cofounder.co": {
+      "catalog": [
+        {
+          "name": "Cofounder",
+          "domain": "cofounder.co",
+          "id": 746
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cofounder",
+          "name": "Cofounder",
+          "url": "https://cofounder.co",
+          "name_match": true
+        }
+      ]
+    },
+    "cohere.com": {
+      "catalog": [
+        {
+          "name": "Cohere",
+          "domain": "cohere.com",
+          "id": 576
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cohere",
+          "name": "Cohere",
+          "url": "https://cohere.com",
+          "name_match": true
+        }
+      ]
+    },
+    "coinbase.com": {
+      "catalog": [
+        {
+          "name": "Coinbase",
+          "domain": "coinbase.com",
+          "id": 163
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "coinbase",
+          "name": "Coinbase",
+          "url": "https://www.coinbase.com/en-sg",
+          "name_match": true
+        }
+      ]
+    },
+    "column.com": {
+      "catalog": [
+        {
+          "name": "Column",
+          "domain": "column.com",
+          "id": 509
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "column",
+          "name": "Column",
+          "url": "https://column.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "contra.com": {
+      "catalog": [
+        {
+          "name": "Сontra",
+          "domain": "contra.com",
+          "id": 369
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "contra",
+          "name": "Contra",
+          "url": "https://contra.com",
+          "name_match": false
+        }
+      ]
+    },
+    "coolors.co": {
+      "catalog": [
+        {
+          "name": "Coolors",
+          "domain": "coolors.co",
+          "id": 474
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "coolors",
+          "name": "Coolors",
+          "url": "https://coolors.co",
+          "name_match": true
+        }
+      ]
+    },
+    "copperx.io": {
+      "catalog": [
+        {
+          "name": "Copperx",
+          "domain": "copperx.io",
+          "id": 789
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "copperx",
+          "name": "Copperx",
+          "url": "https://copperx.io",
+          "name_match": true
+        }
+      ]
+    },
+    "copy.ai": {
+      "catalog": [
+        {
+          "name": "Copy.ai",
+          "domain": "copy.ai",
+          "id": 435
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "copy",
+          "name": "Copy.ai",
+          "url": "https://www.copy.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "cosmos.so": {
+      "catalog": [
+        {
+          "name": "Cosmos",
+          "domain": "cosmos.so",
+          "id": 384
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cosmos",
+          "name": "Cosmos",
+          "url": "https://www.cosmos.so",
+          "name_match": true
+        }
+      ]
+    },
+    "craft.do": {
+      "catalog": [
+        {
+          "name": "Craft",
+          "domain": "craft.do",
+          "id": 112
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "craft",
+          "name": "Craft",
+          "url": "https://www.craft.do",
+          "name_match": true
+        }
+      ]
+    },
+    "craftwork.design": {
+      "catalog": [
+        {
+          "name": "Craftwork Design",
+          "domain": "craftwork.design",
+          "id": 188
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "craftwork",
+          "name": "Craftwork",
+          "url": "https://craftwork.design",
+          "name_match": true
+        }
+      ]
+    },
+    "createwithplay.com": {
+      "catalog": [
+        {
+          "name": "Play",
+          "domain": "createwithplay.com",
+          "id": 218
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "play",
+          "name": "Play",
+          "url": "https://createwithplay.com",
+          "name_match": true
+        }
+      ]
+    },
+    "creativemarket.com": {
+      "catalog": [
+        {
+          "name": "Creative Market",
+          "domain": "creativemarket.com",
+          "id": 264
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "creativemarket",
+          "name": "Creative Market",
+          "url": "https://creativemarket.com",
+          "name_match": false
+        }
+      ]
+    },
+    "cron.com": {
+      "catalog": [
+        {
+          "name": "Cron",
+          "domain": "cron.com",
+          "id": 233
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cron",
+          "name": "Cron",
+          "url": "https://cron.com",
+          "name_match": true
+        }
+      ]
+    },
+    "curater.org": {
+      "catalog": [
+        {
+          "name": "Curater",
+          "domain": "curater.org",
+          "id": 1131
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "curater",
+          "name": "Curater",
+          "url": "https://curater.org",
+          "name_match": true
+        }
+      ]
+    },
     "cursor.com": {
       "catalog": [
         {
@@ -712,6 +1205,380 @@
         }
       ]
     },
+    "cushion.so": {
+      "catalog": [
+        {
+          "name": "Cushion",
+          "domain": "cushion.so",
+          "id": 920
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "cushion",
+          "name": "Cushion",
+          "url": "https://cushion.so",
+          "name_match": true
+        }
+      ]
+    },
+    "dailyartmagazine.com": {
+      "catalog": [
+        {
+          "name": "DailyArt Magazine",
+          "domain": "dailyartmagazine.com",
+          "id": 571
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dailyartmagazine",
+          "name": "DailyArt Magazine",
+          "url": "https://www.dailyartmagazine.com",
+          "name_match": false
+        }
+      ]
+    },
+    "deel.com": {
+      "catalog": [
+        {
+          "name": "Deel",
+          "domain": "deel.com",
+          "id": 148
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "deel",
+          "name": "Deel",
+          "url": "https://www.deel.com",
+          "name_match": true
+        }
+      ]
+    },
+    "deezer.com": {
+      "catalog": [
+        {
+          "name": "Deezer",
+          "domain": "deezer.com",
+          "id": 853
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "deezer",
+          "name": "Deezer",
+          "url": "https://www.deezer.com",
+          "name_match": true
+        }
+      ]
+    },
+    "descript.com": {
+      "catalog": [
+        {
+          "name": "Descript",
+          "domain": "descript.com",
+          "id": 29
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "descript",
+          "name": "Descript",
+          "url": "https://www.descript.com",
+          "name_match": true
+        }
+      ]
+    },
+    "designmodo.com": {
+      "catalog": [
+        {
+          "name": "Designmodo",
+          "domain": "designmodo.com",
+          "id": 459
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "designmodo",
+          "name": "Designmodo",
+          "url": "https://designmodo.com",
+          "name_match": true
+        }
+      ]
+    },
+    "digg.com": {
+      "catalog": [
+        {
+          "name": "Digg",
+          "domain": "digg.com",
+          "id": 1431
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "digg",
+          "name": "Digg",
+          "url": "https://digg.com",
+          "name_match": true
+        }
+      ]
+    },
+    "dinnerladies.com.au": {
+      "catalog": [
+        {
+          "name": "The Dinner Ladies",
+          "domain": "dinnerladies.com.au",
+          "id": 762
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "the-dinner-ladies",
+          "name": "The Dinner Ladies",
+          "url": "https://www.dinnerladies.com.au/",
+          "name_match": true
+        }
+      ]
+    },
+    "discord.com": {
+      "catalog": [
+        {
+          "name": "Discord",
+          "domain": "discord.com",
+          "id": 156
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "discord",
+          "name": "Discord",
+          "url": "https://discord.com",
+          "name_match": true
+        }
+      ]
+    },
+    "district.in": {
+      "catalog": [
+        {
+          "name": "District",
+          "domain": "district.in",
+          "id": 926
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "district",
+          "name": "District",
+          "url": "https://www.district.in",
+          "name_match": true
+        }
+      ]
+    },
+    "dji.com": {
+      "catalog": [
+        {
+          "name": "DJI",
+          "domain": "dji.com",
+          "id": 332
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dji",
+          "name": "DJI",
+          "url": "https://www.dji.com",
+          "name_match": true
+        }
+      ]
+    },
+    "dock.us": {
+      "catalog": [
+        {
+          "name": "Dock",
+          "domain": "dock.us",
+          "id": 465
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dock",
+          "name": "Dock",
+          "url": "https://dock.us",
+          "name_match": true
+        }
+      ]
+    },
+    "doctronic.ai": {
+      "catalog": [
+        {
+          "name": "Doctronic AI",
+          "domain": "doctronic.ai",
+          "id": 940
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "doctronic",
+          "name": "Doctronic",
+          "url": "https://www.doctronic.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "docusign.com": {
+      "catalog": [
+        {
+          "name": "DocuSign",
+          "domain": "docusign.com",
+          "id": 31
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "docusign",
+          "name": "DocuSign",
+          "url": "https://www.docusign.com",
+          "name_match": true
+        }
+      ]
+    },
+    "dona.ai": {
+      "catalog": [
+        {
+          "name": "Dona",
+          "domain": "dona.ai",
+          "id": 643
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dona",
+          "name": "Dona",
+          "url": "https://dona.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "doordash.com": {
+      "catalog": [
+        {
+          "name": "DoorDash",
+          "domain": "doordash.com",
+          "id": 298
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "doordash",
+          "name": "DoorDash",
+          "url": "https://www.doordash.com",
+          "name_match": true
+        }
+      ]
+    },
+    "dopper.com": {
+      "catalog": [
+        {
+          "name": "Dopper",
+          "domain": "dopper.com",
+          "id": 723
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dopper",
+          "name": "Dopper",
+          "url": "https://dopper.com",
+          "name_match": true
+        }
+      ]
+    },
+    "doppler.com": {
+      "catalog": [
+        {
+          "name": "Doppler",
+          "domain": "doppler.com",
+          "id": 193
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "doppler",
+          "name": "Doppler",
+          "url": "https://www.doppler.com",
+          "name_match": true
+        }
+      ]
+    },
+    "dribbble.com": {
+      "catalog": [
+        {
+          "name": "Dribbble",
+          "domain": "dribbble.com",
+          "id": 257
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dribbble",
+          "name": "Dribbble",
+          "url": "https://dribbble.com",
+          "name_match": true
+        }
+      ]
+    },
+    "drinkdouze.com": {
+      "catalog": [
+        {
+          "name": "Douze",
+          "domain": "drinkdouze.com",
+          "id": 688
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "drinkdouze",
+          "name": "Douze",
+          "url": "https://drinkdouze.com",
+          "name_match": false
+        }
+      ]
+    },
+    "dropbox.com": {
+      "catalog": [
+        {
+          "name": "Dropbox",
+          "domain": "dropbox.com",
+          "id": 2
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dropbox",
+          "name": "Dropbox",
+          "url": "https://www.dropbox.com",
+          "name_match": true
+        }
+      ]
+    },
+    "dub.co": {
+      "catalog": [
+        {
+          "name": "Dub",
+          "domain": "dub.co",
+          "id": 418
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "dub",
+          "name": "Dub",
+          "url": "https://dub.co",
+          "name_match": true
+        }
+      ]
+    },
     "duolingo.com": {
       "catalog": [
         {
@@ -725,6 +1592,754 @@
           "slug": "duolingo",
           "name": "Duolingo",
           "url": "https://www.duolingo.com",
+          "name_match": true
+        }
+      ]
+    },
+    "editorx.com": {
+      "catalog": [
+        {
+          "name": "Editor X",
+          "domain": "editorx.com",
+          "id": 279
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "editorx",
+          "name": "Editor X (Wix Studio)",
+          "url": "https://www.editorx.com",
+          "name_match": false
+        }
+      ]
+    },
+    "elektron.se": {
+      "catalog": [
+        {
+          "name": "Elektron",
+          "domain": "elektron.se",
+          "id": 56
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "elektron",
+          "name": "Elektron",
+          "url": "https://www.elektron.se",
+          "name_match": true
+        }
+      ]
+    },
+    "elementor.com": {
+      "catalog": [
+        {
+          "name": "Elementor",
+          "domain": "elementor.com",
+          "id": 466
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "elementor",
+          "name": "Elementor",
+          "url": "https://elementor.com",
+          "name_match": true
+        }
+      ]
+    },
+    "elevenlabs.io": {
+      "catalog": [
+        {
+          "name": "ElevenLabs",
+          "domain": "elevenlabs.io",
+          "id": 772
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "elevenlabs",
+          "name": "ElevenLabs",
+          "url": "https://elevenlabs.io",
+          "name_match": true
+        }
+      ]
+    },
+    "elevenmusic.io": {
+      "catalog": [
+        {
+          "name": "ElevenMusic",
+          "domain": "elevenmusic.io",
+          "id": 917
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "elevenmusic",
+          "name": "ElevenMusic",
+          "url": "https://elevenmusic.io",
+          "name_match": true
+        }
+      ]
+    },
+    "elevenreader.io": {
+      "catalog": [
+        {
+          "name": "ElevenReader",
+          "domain": "elevenreader.io",
+          "id": 776
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "elevenreader",
+          "name": "ElevenReader",
+          "url": "https://elevenreader.io",
+          "name_match": true
+        }
+      ]
+    },
+    "endel.io": {
+      "catalog": [
+        {
+          "name": "Endel",
+          "domain": "endel.io",
+          "id": 105
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "endel",
+          "name": "Endel",
+          "url": "https://endel.io",
+          "name_match": true
+        }
+      ]
+    },
+    "endless.io": {
+      "catalog": [
+        {
+          "name": "Endless",
+          "domain": "endless.io",
+          "id": 569
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "endless",
+          "name": "Endless",
+          "url": "https://endless.io",
+          "name_match": true
+        }
+      ]
+    },
+    "endlesstools.io": {
+      "catalog": [
+        {
+          "name": "Endless Tools",
+          "domain": "endlesstools.io",
+          "id": 527
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "endlesstools",
+          "name": "Endless Tools",
+          "url": "https://endlesstools.io",
+          "name_match": false
+        }
+      ]
+    },
+    "enode.com": {
+      "catalog": [
+        {
+          "name": "Enode",
+          "domain": "enode.com",
+          "id": 599
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "enode",
+          "name": "Enode",
+          "url": "https://enode.com",
+          "name_match": true
+        }
+      ]
+    },
+    "epicgames.com": {
+      "catalog": [
+        {
+          "name": "Epic Games",
+          "domain": "epicgames.com",
+          "id": 84
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "epicgames",
+          "name": "Epic Games Store",
+          "url": "https://store.epicgames.com",
+          "name_match": false
+        }
+      ]
+    },
+    "epidemicsound.com": {
+      "catalog": [
+        {
+          "name": "Epidemic Sound",
+          "domain": "epidemicsound.com",
+          "id": 75
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "epidemicsound",
+          "name": "Epidemic Sound",
+          "url": "https://www.epidemicsound.com",
+          "name_match": false
+        }
+      ]
+    },
+    "esquire.com": {
+      "catalog": [
+        {
+          "name": "Esquire",
+          "domain": "esquire.com",
+          "id": 102
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "esquire",
+          "name": "Esquire",
+          "url": "https://www.esquire.com",
+          "name_match": true
+        }
+      ]
+    },
+    "exa.ai": {
+      "catalog": [
+        {
+          "name": "Exa",
+          "domain": "exa.ai",
+          "id": 898
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "exa",
+          "name": "Exa",
+          "url": "https://exa.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "exactly.ai": {
+      "catalog": [
+        {
+          "name": "Exactly.ai",
+          "domain": "exactly.ai",
+          "id": 645
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "exactly",
+          "name": "Exactly.ai",
+          "url": "https://exactly.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "excalidraw.com": {
+      "catalog": [
+        {
+          "name": "Excalidraw",
+          "domain": "excalidraw.com",
+          "id": 477
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "excalidraw",
+          "name": "Excalidraw",
+          "url": "https://excalidraw.com",
+          "name_match": true
+        }
+      ]
+    },
+    "expedia.com": {
+      "catalog": [
+        {
+          "name": "Expedia",
+          "domain": "expedia.com",
+          "id": 172
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "expedia",
+          "name": "Expedia",
+          "url": "https://www.expedia.com",
+          "name_match": true
+        }
+      ]
+    },
+    "explore.family": {
+      "catalog": [
+        {
+          "name": "Explore",
+          "domain": "explore.family",
+          "id": 292
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "explore",
+          "name": "Explore",
+          "url": "https://explore.family",
+          "name_match": true
+        }
+      ]
+    },
+    "fable.co": {
+      "catalog": [
+        {
+          "name": "Fable",
+          "domain": "fable.co",
+          "id": 463
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fable",
+          "name": "Fable",
+          "url": "https://fable.co",
+          "name_match": true
+        }
+      ]
+    },
+    "factory.ai": {
+      "catalog": [
+        {
+          "name": "Factory",
+          "domain": "factory.ai",
+          "id": 734
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "factory",
+          "name": "Factory",
+          "url": "https://factory.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "faire.com": {
+      "catalog": [
+        {
+          "name": "Faire",
+          "domain": "faire.com",
+          "id": 155
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "faire",
+          "name": "Faire",
+          "url": "https://www.faire.com",
+          "name_match": true
+        }
+      ]
+    },
+    "fal.ai": {
+      "catalog": [
+        {
+          "name": "fal",
+          "domain": "fal.ai",
+          "id": 935
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fal",
+          "name": "fal.ai",
+          "url": "https://fal.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "family.co": {
+      "catalog": [
+        {
+          "name": "Family",
+          "domain": "family.co",
+          "id": 373
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "family",
+          "name": "Family",
+          "url": "https://family.co",
+          "name_match": true
+        }
+      ]
+    },
+    "farfetch.com": {
+      "catalog": [
+        {
+          "name": "Farfetch",
+          "domain": "farfetch.com",
+          "id": 99
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "farfetch",
+          "name": "FARFETCH",
+          "url": "https://www.farfetch.com",
+          "name_match": true
+        }
+      ]
+    },
+    "feedhive.com": {
+      "catalog": [
+        {
+          "name": "FeedHive",
+          "domain": "feedhive.com",
+          "id": 476
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "feedhive",
+          "name": "FeedHive",
+          "url": "https://www.feedhive.com",
+          "name_match": true
+        }
+      ]
+    },
+    "figma.com": {
+      "catalog": [
+        {
+          "name": "Figma",
+          "domain": "figma.com",
+          "id": 206
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "figma",
+          "name": "Figma",
+          "url": "https://www.figma.com",
+          "name_match": true
+        }
+      ]
+    },
+    "fingerprint.com": {
+      "catalog": [
+        {
+          "name": "Fingerprint",
+          "domain": "fingerprint.com",
+          "id": 866
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fingerprint",
+          "name": "Fingerprint",
+          "url": "https://fingerprint.com",
+          "name_match": true
+        }
+      ]
+    },
+    "fiverr.com": {
+      "catalog": [
+        {
+          "name": "Fiverr",
+          "domain": "fiverr.com",
+          "id": 169
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fiverr",
+          "name": "Fiverr",
+          "url": "https://www.fiverr.com",
+          "name_match": true
+        }
+      ]
+    },
+    "flask.do": {
+      "catalog": [
+        {
+          "name": "Flask.do",
+          "domain": "flask.do",
+          "id": 821
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "flask",
+          "name": "Flask",
+          "url": "https://flask.do",
+          "name_match": true
+        }
+      ]
+    },
+    "flowmapp.com": {
+      "catalog": [
+        {
+          "name": "FlowMapp",
+          "domain": "flowmapp.com",
+          "id": 370
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "flowmapp",
+          "name": "FlowMapp",
+          "url": "https://www.flowmapp.com",
+          "name_match": true
+        }
+      ]
+    },
+    "flutterflow.io": {
+      "catalog": [
+        {
+          "name": "FlutterFlow",
+          "domain": "flutterflow.io",
+          "id": 78
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "flutterflow",
+          "name": "FlutterFlow",
+          "url": "https://flutterflow.io",
+          "name_match": true
+        }
+      ]
+    },
+    "foodnoms.com": {
+      "catalog": [
+        {
+          "name": "FoodNoms",
+          "domain": "foodnoms.com",
+          "id": 374
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "foodnoms",
+          "name": "Foodnoms",
+          "url": "https://foodnoms.com",
+          "name_match": true
+        }
+      ]
+    },
+    "forhers.com": {
+      "catalog": [
+        {
+          "name": "Hers",
+          "domain": "forhers.com",
+          "id": 782
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "forhers",
+          "name": "For Hers",
+          "url": "https://www.forhers.com/",
+          "name_match": false
+        }
+      ]
+    },
+    "forhims.co.uk": {
+      "catalog": [
+        {
+          "name": "Hims",
+          "domain": "forhims.co.uk",
+          "id": 234
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "hims",
+          "name": "Hims",
+          "url": "https://www.forhims.co.uk",
+          "name_match": true
+        }
+      ]
+    },
+    "fourmula.ai": {
+      "catalog": [
+        {
+          "name": "Fourmula.ai",
+          "domain": "fourmula.ai",
+          "id": 889
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fourmula",
+          "name": "Fourmula",
+          "url": "https://fourmula.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "fourthwall.com": {
+      "catalog": [
+        {
+          "name": "Fourthwall",
+          "domain": "fourthwall.com",
+          "id": 710
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fourthwall",
+          "name": "Fourthwall",
+          "url": "https://fourthwall.com",
+          "name_match": true
+        }
+      ]
+    },
+    "frame.io": {
+      "catalog": [
+        {
+          "name": "Frame.io",
+          "domain": "frame.io",
+          "id": 1142
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "frame",
+          "name": "Frame.io",
+          "url": "https://frame.io",
+          "name_match": true
+        }
+      ]
+    },
+    "framer.com": {
+      "catalog": [
+        {
+          "name": "Framer",
+          "domain": "framer.com",
+          "id": 189
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "framer",
+          "name": "Framer",
+          "url": "https://www.framer.com",
+          "name_match": true
+        }
+      ]
+    },
+    "fresha.com": {
+      "catalog": [
+        {
+          "name": "Fresha",
+          "domain": "fresha.com",
+          "id": 561
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "fresha",
+          "name": "Fresha",
+          "url": "https://www.fresha.com",
+          "name_match": true
+        }
+      ]
+    },
+    "front.com": {
+      "catalog": [
+        {
+          "name": "Front",
+          "domain": "front.com",
+          "id": 23
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "front",
+          "name": "Front",
+          "url": "https://front.com",
+          "name_match": true
+        }
+      ]
+    },
+    "getfernand.com": {
+      "catalog": [
+        {
+          "name": "Fernand",
+          "domain": "getfernand.com",
+          "id": 891
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "getfernand",
+          "name": "Fernand",
+          "url": "https://getfernand.com",
+          "name_match": false
+        }
+      ]
+    },
+    "getmatter.com": {
+      "catalog": [
+        {
+          "name": "Matter",
+          "domain": "getmatter.com",
+          "id": 752
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "matter",
+          "name": "Matter",
+          "url": "https://www.getmatter.com",
+          "name_match": true
+        }
+      ]
+    },
+    "getmocha.com": {
+      "catalog": [
+        {
+          "name": "Mocha",
+          "domain": "getmocha.com",
+          "id": 882
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "mocha",
+          "name": "Mocha",
+          "url": "https://docs.getmocha.com",
+          "name_match": true
+        }
+      ]
+    },
+    "getpocket.com": {
+      "catalog": [
+        {
+          "name": "Pocket",
+          "domain": "getpocket.com",
+          "id": 228
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "pocket",
+          "name": "Pocket",
+          "url": "https://getpocket.com/",
           "name_match": true
         }
       ]
@@ -755,6 +2370,91 @@
           "name": "TokenTracker",
           "url": "https://github.com/xiufengsun/TokenTracker",
           "name_match": false
+        }
+      ]
+    },
+    "gladia.io": {
+      "catalog": [
+        {
+          "name": "Gladia",
+          "domain": "gladia.io",
+          "id": 859
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "gladia",
+          "name": "Gladia",
+          "url": "https://www.gladia.io",
+          "name_match": true
+        }
+      ]
+    },
+    "glassnode.com": {
+      "catalog": [
+        {
+          "name": "Glassnode",
+          "domain": "glassnode.com",
+          "id": 87
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "glassnode",
+          "name": "Glassnode",
+          "url": "https://glassnode.com",
+          "name_match": true
+        }
+      ]
+    },
+    "glorify.com": {
+      "catalog": [
+        {
+          "name": "Glorify",
+          "domain": "glorify.com",
+          "id": 583
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "glorify",
+          "name": "Glorify",
+          "url": "https://glorify.com",
+          "name_match": true
+        }
+      ]
+    },
+    "glossgenius.com": {
+      "catalog": [
+        {
+          "name": "GlossGenius",
+          "domain": "glossgenius.com",
+          "id": 830
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "glossgenius",
+          "name": "GlossGenius",
+          "url": "https://glossgenius.com",
+          "name_match": true
+        }
+      ]
+    },
+    "gofundme.com": {
+      "catalog": [
+        {
+          "name": "GoFundMe",
+          "domain": "gofundme.com",
+          "id": 436
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "gofundme",
+          "name": "GoFundMe",
+          "url": "https://www.gofundme.com",
+          "name_match": true
         }
       ]
     },
@@ -791,6 +2491,635 @@
         }
       ]
     },
+    "grammarly.com": {
+      "catalog": [
+        {
+          "name": "Grammarly",
+          "domain": "grammarly.com",
+          "id": 42
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "grammarly",
+          "name": "Grammarly",
+          "url": "https://www.grammarly.com",
+          "name_match": true
+        }
+      ]
+    },
+    "grow.google": {
+      "catalog": [
+        {
+          "name": "Grow with Google",
+          "domain": "grow.google",
+          "id": 294
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "grow",
+          "name": "Grow with Google",
+          "url": "https://grow.google",
+          "name_match": true
+        }
+      ]
+    },
+    "gumroad.com": {
+      "catalog": [
+        {
+          "name": "Gumroad",
+          "domain": "gumroad.com",
+          "id": 296
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "gumroad",
+          "name": "Gumroad",
+          "url": "https://gumroad.com",
+          "name_match": true
+        }
+      ]
+    },
+    "hashnode.com": {
+      "catalog": [
+        {
+          "name": "Hashnode",
+          "domain": "hashnode.com",
+          "id": 194
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "hashnode",
+          "name": "Hashnode",
+          "url": "https://hashnode.com",
+          "name_match": true
+        }
+      ]
+    },
+    "hbomax.com": {
+      "catalog": [
+        {
+          "name": "HBO Max",
+          "domain": "hbomax.com",
+          "id": 337
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "hbomax",
+          "name": "HBO Max",
+          "url": "https://www.hbomax.com",
+          "name_match": false
+        }
+      ]
+    },
+    "headspace.com": {
+      "catalog": [
+        {
+          "name": "Headspace",
+          "domain": "headspace.com",
+          "id": 113
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "headspace",
+          "name": "Headspace",
+          "url": "https://www.headspace.com",
+          "name_match": true
+        }
+      ]
+    },
+    "helloivy.co": {
+      "catalog": [
+        {
+          "name": "Hello Ivy",
+          "domain": "helloivy.co",
+          "id": 602
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "helloivy",
+          "name": "Hello Ivy",
+          "url": "https://www.helloivy.co",
+          "name_match": false
+        }
+      ]
+    },
+    "helloklean.com": {
+      "catalog": [
+        {
+          "name": "Hello Klean",
+          "domain": "helloklean.com",
+          "id": 633
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "helloklean",
+          "name": "Hello Klean",
+          "url": "https://helloklean.com",
+          "name_match": false
+        }
+      ]
+    },
+    "hitchd.com": {
+      "catalog": [
+        {
+          "name": "Hitchd",
+          "domain": "hitchd.com",
+          "id": 786
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "hitchd",
+          "name": "Hitchd",
+          "url": "https://www.hitchd.com",
+          "name_match": true
+        }
+      ]
+    },
+    "homerun.co": {
+      "catalog": [
+        {
+          "name": "Homerun",
+          "domain": "homerun.co",
+          "id": 417
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "homerun",
+          "name": "Homerun",
+          "url": "https://www.homerun.co",
+          "name_match": true
+        }
+      ]
+    },
+    "httpie.io": {
+      "catalog": [
+        {
+          "name": "HTTPie",
+          "domain": "httpie.io",
+          "id": 540
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "httpie",
+          "name": "HTTPie",
+          "url": "https://httpie.io",
+          "name_match": true
+        }
+      ]
+    },
+    "huddlekit.com": {
+      "catalog": [
+        {
+          "name": "Huddlekit",
+          "domain": "huddlekit.com",
+          "id": 901
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "huddlekit",
+          "name": "Huddlekit",
+          "url": "https://huddlekit.com",
+          "name_match": true
+        }
+      ]
+    },
+    "hume.ai": {
+      "catalog": [
+        {
+          "name": "Hume AI",
+          "domain": "hume.ai",
+          "id": 793
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "hume",
+          "name": "Hume AI",
+          "url": "https://www.hume.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "ifttt.com": {
+      "catalog": [
+        {
+          "name": "IFTTT",
+          "domain": "ifttt.com",
+          "id": 386
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "ifttt",
+          "name": "IFTTT",
+          "url": "https://ifttt.com",
+          "name_match": true
+        }
+      ]
+    },
+    "ikea.com": {
+      "catalog": [
+        {
+          "name": "IKEA",
+          "domain": "ikea.com",
+          "id": 220
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "ikea",
+          "name": "IKEA",
+          "url": "https://www.ikea.com/sg/en/",
+          "name_match": true
+        }
+      ]
+    },
+    "instacart.com": {
+      "catalog": [
+        {
+          "name": "Instacart",
+          "domain": "instacart.com",
+          "id": 30
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "instacart",
+          "name": "Instacart",
+          "url": "https://www.instacart.com",
+          "name_match": true
+        }
+      ]
+    },
+    "instagram.com": {
+      "catalog": [
+        {
+          "name": "Instagram",
+          "domain": "instagram.com",
+          "id": 196
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "instagram",
+          "name": "Instagram",
+          "url": "https://www.instagram.com",
+          "name_match": true
+        }
+      ]
+    },
+    "intercom.com": {
+      "catalog": [
+        {
+          "name": "Intercom",
+          "domain": "intercom.com",
+          "id": 91
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "intercom",
+          "name": "Intercom",
+          "url": "https://www.intercom.com",
+          "name_match": true
+        }
+      ]
+    },
+    "jace.ai": {
+      "catalog": [
+        {
+          "name": "Jace AI",
+          "domain": "jace.ai",
+          "id": 838
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "jace",
+          "name": "Jace AI",
+          "url": "https://jace.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "jasper.ai": {
+      "catalog": [
+        {
+          "name": "Jasper AI",
+          "domain": "jasper.ai",
+          "id": 265
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "jasper",
+          "name": "Jasper AI",
+          "url": "https://www.jasper.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "jetbrains.com": {
+      "catalog": [
+        {
+          "name": "JetBrains",
+          "domain": "jetbrains.com",
+          "id": 28
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "jetbrains",
+          "name": "JetBrains",
+          "url": "https://www.jetbrains.com",
+          "name_match": true
+        }
+      ]
+    },
+    "jitter.video": {
+      "catalog": [
+        {
+          "name": "Jitter",
+          "domain": "jitter.video",
+          "id": 318
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "jitter",
+          "name": "Jitter",
+          "url": "https://jitter.video",
+          "name_match": true
+        }
+      ]
+    },
+    "joinhandshake.com": {
+      "catalog": [
+        {
+          "name": "Handshake",
+          "domain": "joinhandshake.com",
+          "id": 785
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "joinhandshake",
+          "name": "Handshake",
+          "url": "https://joinhandshake.com",
+          "name_match": false
+        }
+      ]
+    },
+    "kickstarter.com": {
+      "catalog": [
+        {
+          "name": "Kickstarter",
+          "domain": "kickstarter.com",
+          "id": 182
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "kickstarter",
+          "name": "Kickstarter",
+          "url": "https://www.kickstarter.com",
+          "name_match": true
+        }
+      ]
+    },
+    "kinhive.com": {
+      "catalog": [
+        {
+          "name": "Kinhive",
+          "domain": "kinhive.com",
+          "id": 691
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "kinhive",
+          "name": "Kinhive",
+          "url": "https://kinhive.com",
+          "name_match": true
+        }
+      ]
+    },
+    "kit.com": {
+      "catalog": [
+        {
+          "name": "Kit",
+          "domain": "kit.com",
+          "id": 558
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "kit",
+          "name": "Kit",
+          "url": "https://kit.com",
+          "name_match": true
+        }
+      ]
+    },
+    "kitchen.co": {
+      "catalog": [
+        {
+          "name": "Kitchen.co",
+          "domain": "kitchen.co",
+          "id": 457
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "kitchen",
+          "name": "Kitchen.co",
+          "url": "https://kitchen.co",
+          "name_match": true
+        }
+      ]
+    },
+    "kitchenstories.com": {
+      "catalog": [
+        {
+          "name": "Kitchen Stories",
+          "domain": "kitchenstories.com",
+          "id": 342
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "kitchenstories",
+          "name": "Kitchen Stories",
+          "url": "https://www.kitchenstories.com",
+          "name_match": false
+        }
+      ]
+    },
+    "klarna.com": {
+      "catalog": [
+        {
+          "name": "Klarna",
+          "domain": "klarna.com",
+          "id": 272
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "klarna",
+          "name": "Klarna",
+          "url": "https://www.klarna.com/us/",
+          "name_match": true
+        }
+      ]
+    },
+    "kraken.com": {
+      "catalog": [
+        {
+          "name": "Kraken",
+          "domain": "kraken.com",
+          "id": 161
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "kraken",
+          "name": "Kraken",
+          "url": "https://www.kraken.com",
+          "name_match": true
+        }
+      ]
+    },
+    "krea.ai": {
+      "catalog": [
+        {
+          "name": "Krea.ai",
+          "domain": "krea.ai",
+          "id": 495
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "krea",
+          "name": "Krea",
+          "url": "https://www.krea.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "krisp.ai": {
+      "catalog": [
+        {
+          "name": "Krisp",
+          "domain": "krisp.ai",
+          "id": 461
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "krisp",
+          "name": "Krisp",
+          "url": "https://krisp.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "lego.com": {
+      "catalog": [
+        {
+          "name": "LEGO",
+          "domain": "lego.com",
+          "id": 249
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "lego",
+          "name": "LEGO",
+          "url": "https://www.lego.com/en-us",
+          "name_match": true
+        }
+      ]
+    },
+    "lemni.com": {
+      "catalog": [
+        {
+          "name": "Lemni",
+          "domain": "lemni.com",
+          "id": 608
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "lemni",
+          "name": "Lemni",
+          "url": "https://www.lemni.com",
+          "name_match": true
+        }
+      ]
+    },
+    "lemonsqueezy.com": {
+      "catalog": [
+        {
+          "name": "Lemon Squeezy",
+          "domain": "lemonsqueezy.com",
+          "id": 321
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "lemonsqueezy",
+          "name": "Lemon Squeezy",
+          "url": "https://www.lemonsqueezy.com",
+          "name_match": false
+        }
+      ]
+    },
+    "leonardo.ai": {
+      "catalog": [
+        {
+          "name": "Leonardo.Ai",
+          "domain": "leonardo.ai",
+          "id": 922
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "leonardo",
+          "name": "Leonardo.Ai",
+          "url": "https://leonardo.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "limitless.ai": {
+      "catalog": [
+        {
+          "name": "Limitless",
+          "domain": "limitless.ai",
+          "id": 551
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "limitless",
+          "name": "Limitless",
+          "url": "https://www.limitless.ai",
+          "name_match": true
+        }
+      ]
+    },
     "linear.app": {
       "catalog": [
         {
@@ -804,6 +3133,227 @@
           "slug": "linear",
           "name": "Linear",
           "url": "https://linear.app",
+          "name_match": true
+        }
+      ]
+    },
+    "linkedin.com": {
+      "catalog": [
+        {
+          "name": "LinkedIn",
+          "domain": "linkedin.com",
+          "id": 187
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "linkedin",
+          "name": "LinkedIn",
+          "url": "https://www.linkedin.com",
+          "name_match": true
+        }
+      ]
+    },
+    "linktr.ee": {
+      "catalog": [
+        {
+          "name": "Linktree",
+          "domain": "linktr.ee",
+          "id": 70
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "linktree",
+          "name": "Linktree",
+          "url": "https://linktr.ee",
+          "name_match": true
+        }
+      ]
+    },
+    "literal.club": {
+      "catalog": [
+        {
+          "name": "Literal.club",
+          "domain": "literal.club",
+          "id": 748
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "literal",
+          "name": "Literal.club",
+          "url": "https://literal.club",
+          "name_match": true
+        }
+      ]
+    },
+    "loom.com": {
+      "catalog": [
+        {
+          "name": "Loom",
+          "domain": "loom.com",
+          "id": 74
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "loom",
+          "name": "Loom",
+          "url": "https://www.loom.com",
+          "name_match": true
+        }
+      ]
+    },
+    "lottiefiles.com": {
+      "catalog": [
+        {
+          "name": "LottieFiles",
+          "domain": "lottiefiles.com",
+          "id": 336
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "lottiefiles",
+          "name": "LottieFiles",
+          "url": "https://lottiefiles.com",
+          "name_match": true
+        }
+      ]
+    },
+    "lovable.dev": {
+      "catalog": [
+        {
+          "name": "Lovable",
+          "domain": "lovable.dev",
+          "id": 905
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "lovable",
+          "name": "Lovable",
+          "url": "https://lovable.dev",
+          "name_match": true
+        }
+      ]
+    },
+    "luluandgeorgia.com": {
+      "catalog": [
+        {
+          "name": "Lulu and Georgia",
+          "domain": "luluandgeorgia.com",
+          "id": 368
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "luluandgeorgia",
+          "name": "Lulu and Georgia",
+          "url": "https://www.luluandgeorgia.com",
+          "name_match": false
+        }
+      ]
+    },
+    "lumalabs.ai": {
+      "catalog": [
+        {
+          "name": "Luma AI",
+          "domain": "lumalabs.ai",
+          "id": 448
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "lumalabs",
+          "name": "Luma AI",
+          "url": "https://lumalabs.ai",
+          "name_match": false
+        }
+      ]
+    },
+    "lummi.ai": {
+      "catalog": [
+        {
+          "name": "Lummi",
+          "domain": "lummi.ai",
+          "id": 521
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "lummi",
+          "name": "Lummi",
+          "url": "https://www.lummi.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "macawhq.com": {
+      "catalog": [
+        {
+          "name": "Macaw",
+          "domain": "macawhq.com",
+          "id": 593
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "macaw",
+          "name": "Macaw",
+          "url": "https://macawhq.com",
+          "name_match": true
+        }
+      ]
+    },
+    "mailchimp.com": {
+      "catalog": [
+        {
+          "name": "Mailchimp",
+          "domain": "mailchimp.com",
+          "id": 41
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "mailchimp",
+          "name": "Mailchimp",
+          "url": "https://mailchimp.com",
+          "name_match": true
+        }
+      ]
+    },
+    "make.com": {
+      "catalog": [
+        {
+          "name": "Make",
+          "domain": "make.com",
+          "id": 96
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "make",
+          "name": "Make",
+          "url": "https://www.make.com",
+          "name_match": true
+        }
+      ]
+    },
+    "mangomint.com": {
+      "catalog": [
+        {
+          "name": "Mangomint",
+          "domain": "mangomint.com",
+          "id": 698
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "mangomint",
+          "name": "Mangomint",
+          "url": "https://www.mangomint.com",
           "name_match": true
         }
       ]
@@ -825,6 +3375,663 @@
         }
       ]
     },
+    "manychat.com": {
+      "catalog": [
+        {
+          "name": "ManyChat",
+          "domain": "manychat.com",
+          "id": 90
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "manychat",
+          "name": "ManyChat",
+          "url": "https://manychat.com",
+          "name_match": true
+        }
+      ]
+    },
+    "mapbox.com": {
+      "catalog": [
+        {
+          "name": "Mapbox",
+          "domain": "mapbox.com",
+          "id": 25
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "mapbox",
+          "name": "Mapbox",
+          "url": "https://www.mapbox.com",
+          "name_match": true
+        }
+      ]
+    },
+    "masterclass.com": {
+      "catalog": [
+        {
+          "name": "MasterClass",
+          "domain": "masterclass.com",
+          "id": 133
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "masterclass",
+          "name": "MasterClass",
+          "url": "https://www.masterclass.com",
+          "name_match": true
+        }
+      ]
+    },
+    "maze.co": {
+      "catalog": [
+        {
+          "name": "Maze",
+          "domain": "maze.co",
+          "id": 581
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "maze",
+          "name": "Maze",
+          "url": "https://maze.co",
+          "name_match": true
+        }
+      ]
+    },
+    "medium.com": {
+      "catalog": [
+        {
+          "name": "Medium",
+          "domain": "medium.com",
+          "id": 301
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "medium",
+          "name": "Medium",
+          "url": "https://medium.com",
+          "name_match": true
+        }
+      ]
+    },
+    "meiro.cc": {
+      "catalog": [
+        {
+          "name": "Meiro",
+          "domain": "meiro.cc",
+          "id": 687
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "meiro",
+          "name": "Meiro",
+          "url": "https://meiro.cc",
+          "name_match": true
+        }
+      ]
+    },
+    "melius.com": {
+      "catalog": [
+        {
+          "name": "Melius",
+          "domain": "melius.com",
+          "id": 1166
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "melius",
+          "name": "Melius",
+          "url": "https://melius.com",
+          "name_match": true
+        }
+      ]
+    },
+    "memotron.app": {
+      "catalog": [
+        {
+          "name": "Memotron",
+          "domain": "memotron.app",
+          "id": 760
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "memotron",
+          "name": "Memotron",
+          "url": "https://memotron.app",
+          "name_match": true
+        }
+      ]
+    },
+    "mercury.com": {
+      "catalog": [
+        {
+          "name": "Mercury",
+          "domain": "mercury.com",
+          "id": 857
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "mercury",
+          "name": "Mercury",
+          "url": "https://mercury.com",
+          "name_match": true
+        }
+      ]
+    },
+    "microsoft.com": {
+      "catalog": [
+        {
+          "name": "Microsoft Copilot",
+          "domain": "microsoft.com",
+          "id": 446
+        },
+        {
+          "name": "Microsoft",
+          "domain": "lida.microsoft.com",
+          "id": 818
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "microsoft-teams",
+          "name": "Microsoft Teams",
+          "url": "https://www.microsoft.com/en-us/microsoft-teams/",
+          "name_match": true
+        }
+      ]
+    },
+    "miro.com": {
+      "catalog": [
+        {
+          "name": "Miro",
+          "domain": "miro.com",
+          "id": 80
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "miro",
+          "name": "Miro",
+          "url": "https://miro.com",
+          "name_match": true
+        }
+      ]
+    },
+    "missiveapp.com": {
+      "catalog": [
+        {
+          "name": "Missive",
+          "domain": "missiveapp.com",
+          "id": 671
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "missive",
+          "name": "Missive",
+          "url": "https://missiveapp.com",
+          "name_match": true
+        }
+      ]
+    },
+    "modyfi.com": {
+      "catalog": [
+        {
+          "name": "Modyfi",
+          "domain": "modyfi.com",
+          "id": 513
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "modyfi",
+          "name": "Modyfi",
+          "url": "https://www.modyfi.com",
+          "name_match": true
+        }
+      ]
+    },
+    "moma.org": {
+      "catalog": [
+        {
+          "name": "MoMA",
+          "domain": "moma.org",
+          "id": 123
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "moma",
+          "name": "MoMA",
+          "url": "https://www.moma.org",
+          "name_match": true
+        }
+      ]
+    },
+    "monday.com": {
+      "catalog": [
+        {
+          "name": "Monday",
+          "domain": "monday.com",
+          "id": 171
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "monday",
+          "name": "monday.com",
+          "url": "https://monday.com",
+          "name_match": true
+        }
+      ]
+    },
+    "monodesk.com": {
+      "catalog": [
+        {
+          "name": "MonoDesk",
+          "domain": "monodesk.com",
+          "id": 856
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "monodesk",
+          "name": "MonoDesk",
+          "url": "https://www.monodesk.com",
+          "name_match": true
+        }
+      ]
+    },
+    "mschf.com": {
+      "catalog": [
+        {
+          "name": "MSCHF",
+          "domain": "mschf.com",
+          "id": 490
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "mschf",
+          "name": "MSCHF",
+          "url": "https://mschf.com",
+          "name_match": true
+        }
+      ]
+    },
+    "mural.co": {
+      "catalog": [
+        {
+          "name": "Mural",
+          "domain": "mural.co",
+          "id": 327
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "mural",
+          "name": "Mural",
+          "url": "https://www.mural.co",
+          "name_match": true
+        }
+      ]
+    },
+    "mwm.ai": {
+      "catalog": [
+        {
+          "name": "MWM",
+          "domain": "mwm.ai",
+          "id": 931
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "mwm",
+          "name": "MWM",
+          "url": "https://mwm.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "mymind.com": {
+      "catalog": [
+        {
+          "name": "MyMind",
+          "domain": "mymind.com",
+          "id": 110
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "mymind",
+          "name": "MyMind",
+          "url": "https://mymind.com",
+          "name_match": true
+        }
+      ]
+    },
+    "n8n.io": {
+      "catalog": [
+        {
+          "name": "n8n",
+          "domain": "n8n.io",
+          "id": 805
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "n8n",
+          "name": "n8n",
+          "url": "https://n8n.io",
+          "name_match": true
+        }
+      ]
+    },
+    "navan.com": {
+      "catalog": [
+        {
+          "name": "Navan",
+          "domain": "navan.com",
+          "id": 804
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "navan",
+          "name": "Navan",
+          "url": "https://navan.com",
+          "name_match": true
+        }
+      ]
+    },
+    "netflix.com": {
+      "catalog": [
+        {
+          "name": "Netflix",
+          "domain": "netflix.com",
+          "id": 131
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "netflix",
+          "name": "Netflix",
+          "url": "https://www.netflix.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "newbalance.co.uk": {
+      "catalog": [
+        {
+          "name": "New Balance",
+          "domain": "newbalance.co.uk",
+          "id": 309
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "new-balance",
+          "name": "New Balance",
+          "url": "https://www.newbalance.co.uk/",
+          "name_match": true
+        }
+      ]
+    },
+    "newyorker.com": {
+      "catalog": [
+        {
+          "name": "The New Yorker",
+          "domain": "newyorker.com",
+          "id": 63
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "the-new-yorker",
+          "name": "The New Yorker",
+          "url": "https://www.newyorker.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "nextdoor.com": {
+      "catalog": [
+        {
+          "name": "Nextdoor",
+          "domain": "nextdoor.com",
+          "id": 874
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "nextdoor",
+          "name": "Nextdoor",
+          "url": "https://nextdoor.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "nike.com": {
+      "catalog": [
+        {
+          "name": "Nike",
+          "domain": "nike.com",
+          "id": 61
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "nike",
+          "name": "Nike",
+          "url": "https://www.nike.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "nomadgoods.com": {
+      "catalog": [
+        {
+          "name": "Nomad Goods",
+          "domain": "nomadgoods.com",
+          "id": 85
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "nomad-goods",
+          "name": "Nomad Goods",
+          "url": "https://nomadgoods.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "nothing.tech": {
+      "catalog": [
+        {
+          "name": "Nothing",
+          "domain": "nothing.tech",
+          "id": 316
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "nothing",
+          "name": "Nothing",
+          "url": "https://nothing.tech/",
+          "name_match": true
+        }
+      ]
+    },
+    "nudea.com": {
+      "catalog": [
+        {
+          "name": "Nudea",
+          "domain": "nudea.com",
+          "id": 732
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "nudea",
+          "name": "Nudea",
+          "url": "https://nudea.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "nytimes.com": {
+      "catalog": [
+        {
+          "name": "The New York Times",
+          "domain": "nytimes.com",
+          "id": 49
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "the-athletic",
+          "name": "The Athletic",
+          "url": "https://www.nytimes.com/athletic/",
+          "name_match": true
+        },
+        {
+          "slug": "the-new-york-times",
+          "name": "The New York Times",
+          "url": "https://www.nytimes.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "o-p-e-n.com": {
+      "catalog": [
+        {
+          "name": "Open",
+          "domain": "o-p-e-n.com",
+          "id": 331
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "open",
+          "name": "Open",
+          "url": "https://o-p-e-n.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "officevibe.com": {
+      "catalog": [
+        {
+          "name": "Officevibe",
+          "domain": "officevibe.com",
+          "id": 295
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "officevibe",
+          "name": "Officevibe",
+          "url": "https://officevibe.com",
+          "name_match": true
+        }
+      ]
+    },
+    "oku.club": {
+      "catalog": [
+        {
+          "name": "Oku",
+          "domain": "oku.club",
+          "id": 223
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "oku",
+          "name": "Oku",
+          "url": "https://oku.club",
+          "name_match": true
+        }
+      ]
+    },
+    "on.com": {
+      "catalog": [
+        {
+          "name": "On",
+          "domain": "on.com",
+          "id": 809
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "on",
+          "name": "On",
+          "url": "https://www.on.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "onefinestay.com": {
+      "catalog": [
+        {
+          "name": "Onefinestay",
+          "domain": "onefinestay.com",
+          "id": 823
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "onefinestay",
+          "name": "Onefinestay",
+          "url": "https://www.onefinestay.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "onesoil.ai": {
+      "catalog": [
+        {
+          "name": "OneSoil",
+          "domain": "onesoil.ai",
+          "id": 109
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "onesoil",
+          "name": "OneSoil",
+          "url": "https://onesoil.ai/",
+          "name_match": true
+        }
+      ]
+    },
+    "onmarathon.com": {
+      "catalog": [
+        {
+          "name": "Marathon",
+          "domain": "onmarathon.com",
+          "id": 613
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "marathon",
+          "name": "Marathon",
+          "url": "https://onmarathon.com",
+          "name_match": true
+        }
+      ]
+    },
     "openai.com": {
       "catalog": [
         {
@@ -842,6 +4049,618 @@
         }
       ]
     },
+    "opensea.io": {
+      "catalog": [
+        {
+          "name": "OpenSea",
+          "domain": "opensea.io",
+          "id": 181
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "opensea",
+          "name": "OpenSea",
+          "url": "https://opensea.io",
+          "name_match": true
+        }
+      ]
+    },
+    "orchids.app": {
+      "catalog": [
+        {
+          "name": "Orchids",
+          "domain": "orchids.app",
+          "id": 729
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "orchids",
+          "name": "Orchids",
+          "url": "https://docs.orchids.app",
+          "name_match": true
+        }
+      ]
+    },
+    "outchat.ai": {
+      "catalog": [
+        {
+          "name": "Outchat",
+          "domain": "outchat.ai",
+          "id": 795
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "outchat",
+          "name": "Outchat",
+          "url": "https://outchat.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "overflow.io": {
+      "catalog": [
+        {
+          "name": "Overflow",
+          "domain": "overflow.io",
+          "id": 293
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "overflow",
+          "name": "Overflow",
+          "url": "https://overflow.io/",
+          "name_match": true
+        }
+      ]
+    },
+    "pampam.city": {
+      "catalog": [
+        {
+          "name": "PamPam",
+          "domain": "pampam.city",
+          "id": 615
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "pampam",
+          "name": "PamPam",
+          "url": "https://pampam.city",
+          "name_match": true
+        }
+      ]
+    },
+    "parallel.ai": {
+      "catalog": [
+        {
+          "name": "Parallel",
+          "domain": "parallel.ai",
+          "id": 792
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "parallel-ai",
+          "name": "Parallel",
+          "url": "https://parallel.ai/",
+          "name_match": true
+        }
+      ]
+    },
+    "partiful.com": {
+      "catalog": [
+        {
+          "name": "Partiful",
+          "domain": "partiful.com",
+          "id": 810
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "partiful",
+          "name": "Partiful",
+          "url": "https://partiful.com",
+          "name_match": true
+        }
+      ]
+    },
+    "patreon.com": {
+      "catalog": [
+        {
+          "name": "Patreon",
+          "domain": "patreon.com",
+          "id": 158
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "patreon",
+          "name": "Patreon",
+          "url": "https://www.patreon.com",
+          "name_match": true
+        }
+      ]
+    },
+    "patternbrands.com": {
+      "catalog": [
+        {
+          "name": "Pattern Brands",
+          "domain": "patternbrands.com",
+          "id": 229
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "pattern-brands",
+          "name": "Pattern Brands",
+          "url": "https://patternbrands.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "paypal.com": {
+      "catalog": [
+        {
+          "name": "PayPal",
+          "domain": "paypal.com",
+          "id": 162
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "paypal",
+          "name": "PayPal",
+          "url": "https://www.paypal.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "peakperformance.com": {
+      "catalog": [
+        {
+          "name": "Peak Performance",
+          "domain": "peakperformance.com",
+          "id": 808
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "peak-performance",
+          "name": "Peak Performance",
+          "url": "https://www.peakperformance.com",
+          "name_match": true
+        }
+      ]
+    },
+    "pedestal.com": {
+      "catalog": [
+        {
+          "name": "Pedestal",
+          "domain": "pedestal.com",
+          "id": 779
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "pedestal",
+          "name": "Pedestal",
+          "url": "https://www.pedestal.com",
+          "name_match": true
+        }
+      ]
+    },
+    "peerlist.io": {
+      "catalog": [
+        {
+          "name": "Peerlist",
+          "domain": "peerlist.io",
+          "id": 429
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "peerlist",
+          "name": "Peerlist",
+          "url": "https://peerlist.io",
+          "name_match": true
+        }
+      ]
+    },
+    "perplexity.ai": {
+      "catalog": [
+        {
+          "name": "Perplexity",
+          "domain": "perplexity.ai",
+          "id": 421
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "perplexity",
+          "name": "Perplexity",
+          "url": "https://www.perplexity.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "pexels.com": {
+      "catalog": [
+        {
+          "name": "Pexels",
+          "domain": "pexels.com",
+          "id": 259
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "pexels",
+          "name": "Pexels",
+          "url": "https://www.pexels.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "pi.ai": {
+      "catalog": [
+        {
+          "name": "Pi",
+          "domain": "pi.ai",
+          "id": 496
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "pi",
+          "name": "Pi",
+          "url": "https://pi.ai/",
+          "name_match": true
+        }
+      ]
+    },
+    "pinterest.com": {
+      "catalog": [
+        {
+          "name": "Pinterest",
+          "domain": "pinterest.com",
+          "id": 184
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "pinterest",
+          "name": "Pinterest",
+          "url": "https://www.pinterest.com",
+          "name_match": true
+        }
+      ]
+    },
+    "pitch.com": {
+      "catalog": [
+        {
+          "name": "Pitch",
+          "domain": "pitch.com",
+          "id": 40
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "pitch",
+          "name": "Pitch",
+          "url": "https://pitch.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "pixso.net": {
+      "catalog": [
+        {
+          "name": "Pixso",
+          "domain": "pixso.net",
+          "id": 270
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "pixso",
+          "name": "Pixso",
+          "url": "https://pixso.net/",
+          "name_match": true
+        }
+      ]
+    },
+    "playbook.com": {
+      "catalog": [
+        {
+          "name": "Playbook",
+          "domain": "playbook.com",
+          "id": 317
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "playbook",
+          "name": "Playbook",
+          "url": "https://www.playbook.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "playstation.com": {
+      "catalog": [
+        {
+          "name": "PlayStation",
+          "domain": "playstation.com",
+          "id": 735
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "playstation",
+          "name": "PlayStation",
+          "url": "https://www.playstation.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "polar.sh": {
+      "catalog": [
+        {
+          "name": "Polar",
+          "domain": "polar.sh",
+          "id": 871
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "polar",
+          "name": "Polar",
+          "url": "https://polar.sh/",
+          "name_match": true
+        }
+      ]
+    },
+    "polaroid.com": {
+      "catalog": [
+        {
+          "name": "Polaroid",
+          "domain": "polaroid.com",
+          "id": 807
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "polaroid",
+          "name": "Polaroid",
+          "url": "https://www.polaroid.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "pop.site": {
+      "catalog": [
+        {
+          "name": "Pop Site",
+          "domain": "pop.site",
+          "id": 679
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "pop-site",
+          "name": "Pop Site",
+          "url": "https://pop.site",
+          "name_match": true
+        }
+      ]
+    },
+    "portrait.so": {
+      "catalog": [
+        {
+          "name": "Portrait",
+          "domain": "portrait.so",
+          "id": 887
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "portrait",
+          "name": "Portrait",
+          "url": "https://portrait.so/",
+          "name_match": true
+        }
+      ]
+    },
+    "preply.com": {
+      "catalog": [
+        {
+          "name": "Preply",
+          "domain": "preply.com",
+          "id": 799
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "preply",
+          "name": "Preply",
+          "url": "https://preply.com",
+          "name_match": true
+        }
+      ]
+    },
+    "primevideo.com": {
+      "catalog": [
+        {
+          "name": "Prime Video",
+          "domain": "primevideo.com",
+          "id": 845
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "prime-video",
+          "name": "Prime Video",
+          "url": "https://www.primevideo.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "producthunt.com": {
+      "catalog": [
+        {
+          "name": "Product Hunt",
+          "domain": "producthunt.com",
+          "id": 252
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "product-hunt",
+          "name": "Product Hunt",
+          "url": "https://www.producthunt.com",
+          "name_match": true
+        }
+      ]
+    },
+    "programa.design": {
+      "catalog": [
+        {
+          "name": "Programa",
+          "domain": "programa.design",
+          "id": 937
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "programa",
+          "name": "Programa",
+          "url": "https://programa.design",
+          "name_match": true
+        }
+      ]
+    },
+    "promova.com": {
+      "catalog": [
+        {
+          "name": "Promova",
+          "domain": "promova.com",
+          "id": 385
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "promova",
+          "name": "Promova",
+          "url": "https://promova.com",
+          "name_match": true
+        }
+      ]
+    },
+    "prose.com": {
+      "catalog": [
+        {
+          "name": "Prose",
+          "domain": "prose.com",
+          "id": 675
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "prose",
+          "name": "Prose",
+          "url": "https://prose.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "pryzm.design": {
+      "catalog": [
+        {
+          "name": "Pryzm",
+          "domain": "pryzm.design",
+          "id": 944
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "pryzm",
+          "name": "Pryzm",
+          "url": "https://pryzm.design",
+          "name_match": true
+        }
+      ]
+    },
+    "quizlet.com": {
+      "catalog": [
+        {
+          "name": "Quizlet",
+          "domain": "quizlet.com",
+          "id": 212
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "quizlet",
+          "name": "Quizlet",
+          "url": "https://quizlet.com",
+          "name_match": true
+        }
+      ]
+    },
+    "rarible.com": {
+      "catalog": [
+        {
+          "name": "Rarible",
+          "domain": "rarible.com",
+          "id": 175
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "rarible",
+          "name": "Rarible",
+          "url": "https://rarible.com",
+          "name_match": true
+        }
+      ]
+    },
+    "raster.app": {
+      "catalog": [
+        {
+          "name": "Raster",
+          "domain": "raster.app",
+          "id": 447
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "raster",
+          "name": "Raster",
+          "url": "https://raster.app",
+          "name_match": true
+        }
+      ]
+    },
+    "raus.life": {
+      "catalog": [
+        {
+          "name": "Raus",
+          "domain": "raus.life",
+          "id": 1133
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "raus",
+          "name": "Raus",
+          "url": "https://www.raus.life/",
+          "name_match": true
+        }
+      ]
+    },
     "raycast.com": {
       "catalog": [
         {
@@ -855,6 +4674,754 @@
           "slug": "raycast-desktop",
           "name": "Raycast (desktop)",
           "url": "https://www.raycast.com",
+          "name_match": true
+        }
+      ]
+    },
+    "reclaim.ai": {
+      "catalog": [
+        {
+          "name": "Reclaim AI",
+          "domain": "reclaim.ai",
+          "id": 594
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "reclaim-ai",
+          "name": "Reclaim AI",
+          "url": "https://reclaim.ai",
+          "name_match": true
+        }
+      ]
+    },
+    "record.club": {
+      "catalog": [
+        {
+          "name": "Record Club",
+          "domain": "record.club",
+          "id": 655
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "record-club",
+          "name": "Record Club",
+          "url": "https://record.club/",
+          "name_match": true
+        }
+      ]
+    },
+    "relume.io": {
+      "catalog": [
+        {
+          "name": "Relume",
+          "domain": "relume.io",
+          "id": 442
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "relume",
+          "name": "Relume",
+          "url": "https://www.relume.io/",
+          "name_match": true
+        }
+      ]
+    },
+    "reown.com": {
+      "catalog": [
+        {
+          "name": "Reown",
+          "domain": "reown.com",
+          "id": 647
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "reown",
+          "name": "Reown",
+          "url": "https://reown.com",
+          "name_match": true
+        }
+      ]
+    },
+    "replo.app": {
+      "catalog": [
+        {
+          "name": "Replo",
+          "domain": "replo.app",
+          "id": 556
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "replo",
+          "name": "Replo",
+          "url": "https://www.replo.app/",
+          "name_match": true
+        }
+      ]
+    },
+    "resend.com": {
+      "catalog": [
+        {
+          "name": "Resend",
+          "domain": "resend.com",
+          "id": 844
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "resend",
+          "name": "Resend",
+          "url": "https://resend.com",
+          "name_match": true
+        }
+      ]
+    },
+    "resume.io": {
+      "catalog": [
+        {
+          "name": "Resume.io",
+          "domain": "resume.io",
+          "id": 226
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "resume-io",
+          "name": "Resume.io",
+          "url": "https://resume.io",
+          "name_match": true
+        }
+      ]
+    },
+    "retool.com": {
+      "catalog": [
+        {
+          "name": "Retool",
+          "domain": "retool.com",
+          "id": 213
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "retool",
+          "name": "Retool",
+          "url": "https://retool.com",
+          "name_match": true
+        }
+      ]
+    },
+    "revenuecat.com": {
+      "catalog": [
+        {
+          "name": "RevenueCat",
+          "domain": "revenuecat.com",
+          "id": 76
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "revenuecat",
+          "name": "RevenueCat",
+          "url": "https://www.revenuecat.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "revolut.com": {
+      "catalog": [
+        {
+          "name": "Revolut",
+          "domain": "revolut.com",
+          "id": 13
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "revolut",
+          "name": "Revolut",
+          "url": "https://www.revolut.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "ripple.com": {
+      "catalog": [
+        {
+          "name": "Ripple",
+          "domain": "ripple.com",
+          "id": 108
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "ripple",
+          "name": "Ripple",
+          "url": "https://ripple.com",
+          "name_match": true
+        }
+      ]
+    },
+    "risecalendar.com": {
+      "catalog": [
+        {
+          "name": "Rise",
+          "domain": "risecalendar.com",
+          "id": 539
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "rise",
+          "name": "Rise",
+          "url": "https://risecalendar.com",
+          "name_match": true
+        }
+      ]
+    },
+    "rive.app": {
+      "catalog": [
+        {
+          "name": "Rive",
+          "domain": "rive.app",
+          "id": 219
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "rive",
+          "name": "Rive",
+          "url": "https://rive.app",
+          "name_match": true
+        }
+      ]
+    },
+    "riverside.fm": {
+      "catalog": [
+        {
+          "name": "Riverside",
+          "domain": "riverside.fm",
+          "id": 610
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "riverside",
+          "name": "Riverside",
+          "url": "https://riverside.fm",
+          "name_match": true
+        }
+      ]
+    },
+    "rivian.com": {
+      "catalog": [
+        {
+          "name": "Rivian",
+          "domain": "rivian.com",
+          "id": 141
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "rivian",
+          "name": "Rivian",
+          "url": "https://rivian.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "robinhood.com": {
+      "catalog": [
+        {
+          "name": "Robinhood",
+          "domain": "robinhood.com",
+          "id": 151
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "robinhood",
+          "name": "Robinhood",
+          "url": "https://robinhood.com/us/en/",
+          "name_match": true
+        }
+      ]
+    },
+    "rork.com": {
+      "catalog": [
+        {
+          "name": "Rork",
+          "domain": "rork.com",
+          "id": 900
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "rork",
+          "name": "Rork",
+          "url": "https://rork.com",
+          "name_match": true
+        }
+      ]
+    },
+    "rovr.live": {
+      "catalog": [
+        {
+          "name": "ROVR",
+          "domain": "rovr.live",
+          "id": 1144
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "rovr",
+          "name": "ROVR",
+          "url": "https://rovr.live",
+          "name_match": true
+        }
+      ]
+    },
+    "rows.com": {
+      "catalog": [
+        {
+          "name": "Rows",
+          "domain": "rows.com",
+          "id": 36
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "rows",
+          "name": "Rows",
+          "url": "https://rows.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "rox.com": {
+      "catalog": [
+        {
+          "name": "Rox",
+          "domain": "rox.com",
+          "id": 847
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "rox",
+          "name": "Rox",
+          "url": "https://www.rox.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "runey.app": {
+      "catalog": [
+        {
+          "name": "Runey",
+          "domain": "runey.app",
+          "id": 883
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "runey",
+          "name": "Runey",
+          "url": "https://runey.app/",
+          "name_match": true
+        }
+      ]
+    },
+    "sana.ai": {
+      "catalog": [
+        {
+          "name": "Sana AI",
+          "domain": "sana.ai",
+          "id": 548
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "sana-ai",
+          "name": "Sana AI",
+          "url": "https://sana.ai/",
+          "name_match": true
+        }
+      ]
+    },
+    "savvycal.com": {
+      "catalog": [
+        {
+          "name": "SavvyCal",
+          "domain": "savvycal.com",
+          "id": 353
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "savvycal",
+          "name": "SavvyCal",
+          "url": "https://savvycal.com",
+          "name_match": true
+        }
+      ]
+    },
+    "scale.com": {
+      "catalog": [
+        {
+          "name": "Scale AI",
+          "domain": "scale.com",
+          "id": 157
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "scale-ai",
+          "name": "Scale AI",
+          "url": "https://scale.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "scape.com": {
+      "catalog": [
+        {
+          "name": "Scape",
+          "domain": "scape.com",
+          "id": 763
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "scape",
+          "name": "Scape",
+          "url": "https://www.scape.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "seatgeek.com": {
+      "catalog": [
+        {
+          "name": "SeatGeek",
+          "domain": "seatgeek.com",
+          "id": 486
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "seatgeek",
+          "name": "SeatGeek",
+          "url": "https://seatgeek.com",
+          "name_match": true
+        }
+      ]
+    },
+    "seed.com": {
+      "catalog": [
+        {
+          "name": "Seed",
+          "domain": "seed.com",
+          "id": 923
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "seed",
+          "name": "Seed",
+          "url": "https://seed.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "sharewillow.com": {
+      "catalog": [
+        {
+          "name": "ShareWillow",
+          "domain": "sharewillow.com",
+          "id": 555
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "sharewillow",
+          "name": "ShareWillow",
+          "url": "https://www.sharewillow.com",
+          "name_match": true
+        }
+      ]
+    },
+    "shop.app": {
+      "catalog": [
+        {
+          "name": "Shop",
+          "domain": "shop.app",
+          "id": 934
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "shop",
+          "name": "Shop",
+          "url": "https://shop.app/",
+          "name_match": true
+        }
+      ]
+    },
+    "shopify.com": {
+      "catalog": [
+        {
+          "name": "Shopify",
+          "domain": "shopify.com",
+          "id": 352
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "shopify",
+          "name": "Shopify",
+          "url": "https://www.shopify.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "shuttle.zip": {
+      "catalog": [
+        {
+          "name": "Shuttle",
+          "domain": "shuttle.zip",
+          "id": 678
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "shuttle",
+          "name": "Shuttle",
+          "url": "https://shuttle.zip",
+          "name_match": true
+        }
+      ]
+    },
+    "sketch.com": {
+      "catalog": [
+        {
+          "name": "Sketch",
+          "domain": "sketch.com",
+          "id": 39
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "sketch",
+          "name": "Sketch",
+          "url": "https://www.sketch.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "skiff.com": {
+      "catalog": [
+        {
+          "name": "Skiff",
+          "domain": "skiff.com",
+          "id": 306
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "skiff",
+          "name": "Skiff",
+          "url": "https://skiff.com",
+          "name_match": true
+        }
+      ]
+    },
+    "skillshare.com": {
+      "catalog": [
+        {
+          "name": "Skillshare",
+          "domain": "skillshare.com",
+          "id": 351
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "skillshare",
+          "name": "Skillshare",
+          "url": "https://www.skillshare.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "skyscanner.com": {
+      "catalog": [
+        {
+          "name": "Skyscanner",
+          "domain": "skyscanner.com",
+          "id": 67
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "skyscanner",
+          "name": "Skyscanner",
+          "url": "https://www.skyscanner.com",
+          "name_match": true
+        }
+      ]
+    },
+    "slab.com": {
+      "catalog": [
+        {
+          "name": "Slab",
+          "domain": "slab.com",
+          "id": 263
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "slab",
+          "name": "Slab",
+          "url": "https://slab.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "slack.com": {
+      "catalog": [
+        {
+          "name": "Slack",
+          "domain": "slack.com",
+          "id": 27
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "slack",
+          "name": "Slack",
+          "url": "https://slack.com",
+          "name_match": true
+        }
+      ]
+    },
+    "slite.com": {
+      "catalog": [
+        {
+          "name": "Slite",
+          "domain": "slite.com",
+          "id": 216
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "slite",
+          "name": "Slite",
+          "url": "https://slite.com",
+          "name_match": true
+        }
+      ]
+    },
+    "sonarworks.com": {
+      "catalog": [
+        {
+          "name": "Sonarworks",
+          "domain": "sonarworks.com",
+          "id": 82
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "sonarworks",
+          "name": "Sonarworks",
+          "url": "https://www.sonarworks.com",
+          "name_match": true
+        }
+      ]
+    },
+    "sora.com": {
+      "catalog": [
+        {
+          "name": "Sora",
+          "domain": "sora.com",
+          "id": 742
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "sora",
+          "name": "Sora",
+          "url": "https://sora.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "soundcloud.com": {
+      "catalog": [
+        {
+          "name": "SoundCloud",
+          "domain": "soundcloud.com",
+          "id": 137
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "soundcloud",
+          "name": "SoundCloud",
+          "url": "https://soundcloud.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "soundtrap.com": {
+      "catalog": [
+        {
+          "name": "Soundtrap",
+          "domain": "soundtrap.com",
+          "id": 77
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "soundtrap",
+          "name": "Soundtrap",
+          "url": "https://www.soundtrap.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "spatial.chat": {
+      "catalog": [
+        {
+          "name": "Spatial Chat",
+          "domain": "spatial.chat",
+          "id": 394
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "spatial-chat",
+          "name": "SpatialChat",
+          "url": "https://spatial.chat/",
+          "name_match": true
+        }
+      ]
+    },
+    "spline.design": {
+      "catalog": [
+        {
+          "name": "Spline",
+          "domain": "spline.design",
+          "id": 225
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "spline",
+          "name": "Spline",
+          "url": "https://spline.design/",
           "name_match": true
         }
       ]
@@ -876,6 +5443,74 @@
         }
       ]
     },
+    "spyglass.so": {
+      "catalog": [
+        {
+          "name": "Spyglass",
+          "domain": "spyglass.so",
+          "id": 936
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "spyglass",
+          "name": "Spyglass",
+          "url": "https://spyglass.so/",
+          "name_match": true
+        }
+      ]
+    },
+    "squarespace.com": {
+      "catalog": [
+        {
+          "name": "Squarespace",
+          "domain": "squarespace.com",
+          "id": 451
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "squarespace",
+          "name": "Squarespace",
+          "url": "https://www.squarespace.com",
+          "name_match": true
+        }
+      ]
+    },
+    "squareup.com": {
+      "catalog": [
+        {
+          "name": "Square",
+          "domain": "squareup.com",
+          "id": 47
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "square",
+          "name": "Square",
+          "url": "https://squareup.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "ssense.com": {
+      "catalog": [
+        {
+          "name": "SSENSE",
+          "domain": "ssense.com",
+          "id": 702
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "ssense",
+          "name": "SSENSE",
+          "url": "https://www.ssense.com",
+          "name_match": true
+        }
+      ]
+    },
     "stableaudio.com": {
       "catalog": [
         {
@@ -889,6 +5524,295 @@
           "slug": "stable-audio",
           "name": "Stable Audio",
           "url": "https://stableaudio.com",
+          "name_match": true
+        }
+      ]
+    },
+    "stage.so": {
+      "catalog": [
+        {
+          "name": "Stage.so",
+          "domain": "stage.so",
+          "id": 356
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "stage-so",
+          "name": "Stage.so",
+          "url": "https://stage.so/",
+          "name_match": true
+        }
+      ]
+    },
+    "starbucks.com": {
+      "catalog": [
+        {
+          "name": "Starbucks",
+          "domain": "starbucks.com",
+          "id": 322
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "starbucks",
+          "name": "Starbucks",
+          "url": "https://www.starbucks.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "steel.dev": {
+      "catalog": [
+        {
+          "name": "Steel",
+          "domain": "steel.dev",
+          "id": 1312
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "steel",
+          "name": "Steel",
+          "url": "https://steel.dev",
+          "name_match": true
+        }
+      ]
+    },
+    "stellate.co": {
+      "catalog": [
+        {
+          "name": "Stellate",
+          "domain": "stellate.co",
+          "id": 606
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "stellate",
+          "name": "Stellate",
+          "url": "https://stellate.co",
+          "name_match": true
+        }
+      ]
+    },
+    "stocksy.com": {
+      "catalog": [
+        {
+          "name": "Stocksy",
+          "domain": "stocksy.com",
+          "id": 363
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "stocksy",
+          "name": "Stocksy",
+          "url": "https://www.stocksy.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "stocktwits.com": {
+      "catalog": [
+        {
+          "name": "Stocktwits",
+          "domain": "stocktwits.com",
+          "id": 707
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "stocktwits",
+          "name": "Stocktwits",
+          "url": "https://stocktwits.com",
+          "name_match": true
+        }
+      ]
+    },
+    "stripe.com": {
+      "catalog": [
+        {
+          "name": "Stripe",
+          "domain": "stripe.com",
+          "id": 9
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "stripe",
+          "name": "Stripe",
+          "url": "https://stripe.com",
+          "name_match": true
+        }
+      ]
+    },
+    "suno.com": {
+      "catalog": [
+        {
+          "name": "Suno",
+          "domain": "suno.com",
+          "id": 501
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "suno",
+          "name": "Suno",
+          "url": "https://suno.com",
+          "name_match": true
+        }
+      ]
+    },
+    "sunsama.com": {
+      "catalog": [
+        {
+          "name": "Sunsama",
+          "domain": "sunsama.com",
+          "id": 880
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "sunsama",
+          "name": "Sunsama",
+          "url": "https://sunsama.com",
+          "name_match": true
+        }
+      ]
+    },
+    "super.so": {
+      "catalog": [
+        {
+          "name": "Super.so",
+          "domain": "super.so",
+          "id": 153
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "super-so",
+          "name": "Super.so",
+          "url": "https://super.so/",
+          "name_match": true
+        }
+      ]
+    },
+    "supercut.ai": {
+      "catalog": [
+        {
+          "name": "ツSupercut",
+          "domain": "supercut.ai",
+          "id": 711
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "supercut",
+          "name": "Supercut",
+          "url": "https://supercut.ai/",
+          "name_match": true
+        }
+      ]
+    },
+    "superlist.com": {
+      "catalog": [
+        {
+          "name": "Superlist",
+          "domain": "superlist.com",
+          "id": 411
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "superlist",
+          "name": "Superlist",
+          "url": "https://www.superlist.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "synthesia.io": {
+      "catalog": [
+        {
+          "name": "Synthesia.io",
+          "domain": "synthesia.io",
+          "id": 943
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "synthesia-io",
+          "name": "Synthesia.io",
+          "url": "https://www.synthesia.io/",
+          "name_match": true
+        }
+      ]
+    },
+    "tango.ai": {
+      "catalog": [
+        {
+          "name": "Tango",
+          "domain": "tango.ai",
+          "id": 653
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "tango",
+          "name": "Tango",
+          "url": "https://www.tango.ai/",
+          "name_match": true
+        }
+      ]
+    },
+    "teachable.com": {
+      "catalog": [
+        {
+          "name": "Teachable",
+          "domain": "teachable.com",
+          "id": 358
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "teachable",
+          "name": "Teachable",
+          "url": "https://teachable.com",
+          "name_match": true
+        }
+      ]
+    },
+    "tealhq.com": {
+      "catalog": [
+        {
+          "name": "Teal",
+          "domain": "tealhq.com",
+          "id": 106
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "teal",
+          "name": "Teal",
+          "url": "https://www.tealhq.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "teenage.engineering": {
+      "catalog": [
+        {
+          "name": "Teenage Engineering",
+          "domain": "teenage.engineering",
+          "id": 57
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "teenage-engineering",
+          "name": "Teenage Engineering",
+          "url": "https://teenage.engineering",
           "name_match": true
         }
       ]
@@ -910,6 +5834,414 @@
         }
       ]
     },
+    "telescope.fyi": {
+      "catalog": [
+        {
+          "name": "Telescope",
+          "domain": "telescope.fyi",
+          "id": 1138
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "telescope",
+          "name": "Telescope",
+          "url": "https://telescope.fyi/",
+          "name_match": true
+        }
+      ]
+    },
+    "tesla.com": {
+      "catalog": [
+        {
+          "name": "Tesla",
+          "domain": "tesla.com",
+          "id": 288
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "tesla",
+          "name": "Tesla",
+          "url": "https://www.tesla.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "theleap.co": {
+      "catalog": [
+        {
+          "name": "The Leap",
+          "domain": "theleap.co",
+          "id": 431
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "the-leap",
+          "name": "The Leap",
+          "url": "https://theleap.co",
+          "name_match": true
+        }
+      ]
+    },
+    "thenavia.com": {
+      "catalog": [
+        {
+          "name": "Navia",
+          "domain": "thenavia.com",
+          "id": 1424
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "navia",
+          "name": "Navia",
+          "url": "https://www.thenavia.com",
+          "name_match": true
+        }
+      ]
+    },
+    "theorg.com": {
+      "catalog": [
+        {
+          "name": "The Org",
+          "domain": "theorg.com",
+          "id": 450
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "the-org",
+          "name": "The Org",
+          "url": "https://theorg.com",
+          "name_match": true
+        }
+      ]
+    },
+    "threads.com": {
+      "catalog": [
+        {
+          "name": "Threads",
+          "domain": "threads.com",
+          "id": 479
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "threads",
+          "name": "Threads",
+          "url": "https://www.threads.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "tidal.com": {
+      "catalog": [
+        {
+          "name": "Tidal",
+          "domain": "tidal.com",
+          "id": 73
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "tidal",
+          "name": "Tidal",
+          "url": "https://tidal.com",
+          "name_match": true
+        }
+      ]
+    },
+    "tidycal.com": {
+      "catalog": [
+        {
+          "name": "TidyCal",
+          "domain": "tidycal.com",
+          "id": 918
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "tidycal",
+          "name": "TidyCal",
+          "url": "https://tidycal.com",
+          "name_match": true
+        }
+      ]
+    },
+    "tiktok.com": {
+      "catalog": [
+        {
+          "name": "TikTok",
+          "domain": "tiktok.com",
+          "id": 199
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "tiktok",
+          "name": "TikTok",
+          "url": "https://www.tiktok.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "tilda.cc": {
+      "catalog": [
+        {
+          "name": "Tilda",
+          "domain": "tilda.cc",
+          "id": 93
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "tilda",
+          "name": "Tilda",
+          "url": "https://tilda.cc/",
+          "name_match": true
+        }
+      ]
+    },
+    "time2book.me": {
+      "catalog": [
+        {
+          "name": "time2book",
+          "domain": "time2book.me",
+          "id": 676
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "time2book",
+          "name": "Time2book",
+          "url": "https://time2book.me",
+          "name_match": true
+        }
+      ]
+    },
+    "todoist.com": {
+      "catalog": [
+        {
+          "name": "Todoist",
+          "domain": "todoist.com",
+          "id": 44
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "todoist",
+          "name": "Todoist",
+          "url": "https://www.todoist.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "trip.com": {
+      "catalog": [
+        {
+          "name": "Trip",
+          "domain": "trip.com",
+          "id": 899
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "trip",
+          "name": "Trip",
+          "url": "https://www.trip.com",
+          "name_match": true
+        }
+      ]
+    },
+    "tripadvisor.com": {
+      "catalog": [
+        {
+          "name": "Tripadvisor",
+          "domain": "tripadvisor.com",
+          "id": 71
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "tripadvisor",
+          "name": "Tripadvisor",
+          "url": "https://www.tripadvisor.com",
+          "name_match": true
+        }
+      ]
+    },
+    "trulia.com": {
+      "catalog": [
+        {
+          "name": "Trulia",
+          "domain": "trulia.com",
+          "id": 83
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "trulia",
+          "name": "Trulia",
+          "url": "https://www.trulia.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "twelvelabs.io": {
+      "catalog": [
+        {
+          "name": "TwelveLabs",
+          "domain": "twelvelabs.io",
+          "id": 646
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "twelvelabs",
+          "name": "TwelveLabs",
+          "url": "https://www.twelvelabs.io/",
+          "name_match": true
+        }
+      ]
+    },
+    "twist.com": {
+      "catalog": [
+        {
+          "name": "Twist",
+          "domain": "twist.com",
+          "id": 145
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "twist",
+          "name": "Twist",
+          "url": "https://twist.com",
+          "name_match": true
+        }
+      ]
+    },
+    "twitch.tv": {
+      "catalog": [
+        {
+          "name": "Twitch",
+          "domain": "twitch.tv",
+          "id": 159
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "twitch",
+          "name": "Twitch",
+          "url": "https://www.twitch.tv",
+          "name_match": true
+        }
+      ]
+    },
+    "typeform.com": {
+      "catalog": [
+        {
+          "name": "Typeform",
+          "domain": "typeform.com",
+          "id": 125
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "typeform",
+          "name": "Typeform",
+          "url": "https://www.typeform.com",
+          "name_match": true
+        }
+      ]
+    },
+    "typefully.com": {
+      "catalog": [
+        {
+          "name": "Typefully",
+          "domain": "typefully.com",
+          "id": 471
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "typefully",
+          "name": "Typefully",
+          "url": "https://typefully.com",
+          "name_match": true
+        }
+      ]
+    },
+    "uber.com": {
+      "catalog": [
+        {
+          "name": "Uber",
+          "domain": "uber.com",
+          "id": 243
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "uber",
+          "name": "Uber",
+          "url": "https://www.uber.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "ubereats.com": {
+      "catalog": [
+        {
+          "name": "Uber Eats",
+          "domain": "ubereats.com",
+          "id": 519
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "uber-eats",
+          "name": "Uber Eats",
+          "url": "https://www.ubereats.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "understory.io": {
+      "catalog": [
+        {
+          "name": "Understory",
+          "domain": "understory.io",
+          "id": 921
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "understory",
+          "name": "Understory",
+          "url": "https://www.understory.io/",
+          "name_match": true
+        }
+      ]
+    },
+    "unsplash.com": {
+      "catalog": [
+        {
+          "name": "Unsplash",
+          "domain": "unsplash.com",
+          "id": 215
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "unsplash",
+          "name": "Unsplash",
+          "url": "https://unsplash.com",
+          "name_match": true
+        }
+      ]
+    },
     "untitled.stream": {
       "catalog": [
         {
@@ -923,6 +6255,635 @@
           "slug": "untitled-stream",
           "name": "Untitled",
           "url": "https://untitled.stream",
+          "name_match": true
+        }
+      ]
+    },
+    "urbanoutfitters.com": {
+      "catalog": [
+        {
+          "name": "Urban Outfitters",
+          "domain": "urbanoutfitters.com",
+          "id": 379
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "urban-outfitters",
+          "name": "Urban Outfitters",
+          "url": "https://www.urbanoutfitters.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "useparallel.com": {
+      "catalog": [
+        {
+          "name": "Parallel",
+          "domain": "useparallel.com",
+          "id": 383
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "parallel",
+          "name": "Parallel",
+          "url": "https://www.useparallel.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "usepastel.com": {
+      "catalog": [
+        {
+          "name": "Pastel",
+          "domain": "usepastel.com",
+          "id": 307
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "pastel",
+          "name": "Pastel",
+          "url": "https://usepastel.com",
+          "name_match": true
+        }
+      ]
+    },
+    "variant.com": {
+      "catalog": [
+        {
+          "name": "Variant",
+          "domain": "variant.com",
+          "id": 877
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "variant",
+          "name": "Variant",
+          "url": "https://variant.com",
+          "name_match": true
+        }
+      ]
+    },
+    "vectary.com": {
+      "catalog": [
+        {
+          "name": "Vectary",
+          "domain": "vectary.com",
+          "id": 391
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "vectary",
+          "name": "Vectary",
+          "url": "https://www.vectary.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "vercel.com": {
+      "catalog": [
+        {
+          "name": "Vercel",
+          "domain": "vercel.com",
+          "id": 24
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "vercel",
+          "name": "Vercel",
+          "url": "https://vercel.com",
+          "name_match": true
+        }
+      ]
+    },
+    "vevo.com": {
+      "catalog": [
+        {
+          "name": "Vevo",
+          "domain": "vevo.com",
+          "id": 104
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "vevo",
+          "name": "Vevo",
+          "url": "https://www.vevo.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "vimeo.com": {
+      "catalog": [
+        {
+          "name": "Vimeo",
+          "domain": "vimeo.com",
+          "id": 114
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "vimeo",
+          "name": "Vimeo",
+          "url": "https://vimeo.com",
+          "name_match": true
+        }
+      ]
+    },
+    "visitors.now": {
+      "catalog": [
+        {
+          "name": "Visitors",
+          "domain": "visitors.now",
+          "id": 820
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "visitors",
+          "name": "Visitors",
+          "url": "https://visitors.now",
+          "name_match": true
+        }
+      ]
+    },
+    "visualelectric.com": {
+      "catalog": [
+        {
+          "name": "Visual Electric",
+          "domain": "visualelectric.com",
+          "id": 714
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "visual-electric",
+          "name": "Visual Electric",
+          "url": "https://visualelectric.com",
+          "name_match": true
+        }
+      ]
+    },
+    "vivid.money": {
+      "catalog": [
+        {
+          "name": "Vivid Money",
+          "domain": "vivid.money",
+          "id": 92
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "vivid-money",
+          "name": "Vivid Money",
+          "url": "https://vivid.money/",
+          "name_match": true
+        }
+      ]
+    },
+    "voicenotes.com": {
+      "catalog": [
+        {
+          "name": "Voicenotes",
+          "domain": "voicenotes.com",
+          "id": 696
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "voicenotes",
+          "name": "Voicenotes",
+          "url": "https://voicenotes.com",
+          "name_match": true
+        }
+      ]
+    },
+    "volkshotel.nl": {
+      "catalog": [
+        {
+          "name": "Volkshotel",
+          "domain": "volkshotel.nl",
+          "id": 726
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "volkshotel",
+          "name": "Volkshotel",
+          "url": "https://www.volkshotel.nl/",
+          "name_match": true
+        }
+      ]
+    },
+    "vsco.co": {
+      "catalog": [
+        {
+          "name": "VSCO",
+          "domain": "vsco.co",
+          "id": 488
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "vsco",
+          "name": "VSCO",
+          "url": "https://www.vsco.co/",
+          "name_match": true
+        }
+      ]
+    },
+    "walmart.com": {
+      "catalog": [
+        {
+          "name": "Walmart",
+          "domain": "walmart.com",
+          "id": 314
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "walmart",
+          "name": "Walmart",
+          "url": "https://www.walmart.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "wandb.ai": {
+      "catalog": [
+        {
+          "name": "Weights & Biases",
+          "domain": "wandb.ai",
+          "id": 88
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "weights-biases",
+          "name": "Weights & Biases",
+          "url": "https://wandb.ai/site",
+          "name_match": true
+        }
+      ]
+    },
+    "washingtonpost.com": {
+      "catalog": [
+        {
+          "name": "The Washington Post",
+          "domain": "washingtonpost.com",
+          "id": 868
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "the-washington-post",
+          "name": "The Washington Post",
+          "url": "https://www.washingtonpost.com",
+          "name_match": true
+        }
+      ]
+    },
+    "wealthsimple.com": {
+      "catalog": [
+        {
+          "name": "Wealthsimple",
+          "domain": "wealthsimple.com",
+          "id": 764
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "wealthsimple",
+          "name": "Wealthsimple",
+          "url": "https://www.wealthsimple.com/en-ca",
+          "name_match": true
+        }
+      ]
+    },
+    "weather.com": {
+      "catalog": [
+        {
+          "name": "The Weather Channel",
+          "domain": "weather.com",
+          "id": 248
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "the-weather-channel",
+          "name": "The Weather Channel",
+          "url": "https://weather.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "weavy.ai": {
+      "catalog": [
+        {
+          "name": "Weavy",
+          "domain": "weavy.ai",
+          "id": 692
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "weavy",
+          "name": "Weavy",
+          "url": "https://www.weavy.ai/",
+          "name_match": true
+        }
+      ]
+    },
+    "webflow.com": {
+      "catalog": [
+        {
+          "name": "Webflow",
+          "domain": "webflow.com",
+          "id": 43
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "webflow",
+          "name": "Webflow",
+          "url": "https://webflow.com",
+          "name_match": true
+        }
+      ]
+    },
+    "weekrise.com": {
+      "catalog": [
+        {
+          "name": "Weekrise",
+          "domain": "weekrise.com",
+          "id": 425
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "weekrise",
+          "name": "Weekrise",
+          "url": "https://weekrise.com",
+          "name_match": true
+        }
+      ]
+    },
+    "westelm.com": {
+      "catalog": [
+        {
+          "name": "West Elm",
+          "domain": "westelm.com",
+          "id": 401
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "west-elm",
+          "name": "West Elm",
+          "url": "https://www.westelm.com",
+          "name_match": true
+        }
+      ]
+    },
+    "whatsapp.com": {
+      "catalog": [
+        {
+          "name": "WhatsApp",
+          "domain": "whatsapp.com",
+          "id": 154
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "whatsapp",
+          "name": "WhatsApp",
+          "url": "https://www.whatsapp.com",
+          "name_match": true
+        }
+      ]
+    },
+    "whereby.com": {
+      "catalog": [
+        {
+          "name": "Whereby",
+          "domain": "whereby.com",
+          "id": 286
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "whereby",
+          "name": "Whereby",
+          "url": "https://whereby.com",
+          "name_match": true
+        }
+      ]
+    },
+    "windy.com": {
+      "catalog": [
+        {
+          "name": "Windy",
+          "domain": "windy.com",
+          "id": 250
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "windy",
+          "name": "Windy",
+          "url": "https://www.windy.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "wise.com": {
+      "catalog": [
+        {
+          "name": "Wise",
+          "domain": "wise.com",
+          "id": 313
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "wise",
+          "name": "Wise",
+          "url": "https://wise.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "withjulienne.com": {
+      "catalog": [
+        {
+          "name": "Julienne",
+          "domain": "withjulienne.com",
+          "id": 531
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "julienne",
+          "name": "Julienne",
+          "url": "https://withjulienne.com",
+          "name_match": true
+        }
+      ]
+    },
+    "wittl.co": {
+      "catalog": [
+        {
+          "name": "Wittl",
+          "domain": "wittl.co",
+          "id": 632
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "wittl",
+          "name": "Wittl",
+          "url": "https://wittl.co",
+          "name_match": true
+        }
+      ]
+    },
+    "wix.com": {
+      "catalog": [
+        {
+          "name": "Wix",
+          "domain": "wix.com",
+          "id": 176
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "wix",
+          "name": "Wix",
+          "url": "https://www.wix.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "wiza.co": {
+      "catalog": [
+        {
+          "name": "Wiza",
+          "domain": "wiza.co",
+          "id": 502
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "wiza",
+          "name": "Wiza",
+          "url": "https://wiza.co",
+          "name_match": true
+        }
+      ]
+    },
+    "womp.com": {
+      "catalog": [
+        {
+          "name": "Womp",
+          "domain": "womp.com",
+          "id": 274
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "womp",
+          "name": "Womp",
+          "url": "https://www.womp.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "workflow.design": {
+      "catalog": [
+        {
+          "name": "Workflow",
+          "domain": "workflow.design",
+          "id": 721
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "workflow",
+          "name": "Workflow",
+          "url": "https://www.workflow.design",
+          "name_match": true
+        }
+      ]
+    },
+    "wrike.com": {
+      "catalog": [
+        {
+          "name": "Wrike",
+          "domain": "wrike.com",
+          "id": 177
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "wrike",
+          "name": "Wrike",
+          "url": "https://www.wrike.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "wynde.io": {
+      "catalog": [
+        {
+          "name": "Wynde",
+          "domain": "wynde.io",
+          "id": 749
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "wynde",
+          "name": "Wynde",
+          "url": "https://wynde.io",
+          "name_match": true
+        }
+      ]
+    },
+    "xbox.com": {
+      "catalog": [
+        {
+          "name": "Xbox",
+          "domain": "xbox.com",
+          "id": 728
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "xbox",
+          "name": "Xbox",
+          "url": "https://www.xbox.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "yelp.com": {
+      "catalog": [
+        {
+          "name": "Yelp",
+          "domain": "yelp.com",
+          "id": 402
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "yelp",
+          "name": "Yelp",
+          "url": "https://www.yelp.com/",
           "name_match": true
         }
       ]
@@ -945,6 +6906,108 @@
           "slug": "youtube",
           "name": "YouTube",
           "url": "https://www.youtube.com",
+          "name_match": true
+        }
+      ]
+    },
+    "ysl.com": {
+      "catalog": [
+        {
+          "name": "Saint Laurent",
+          "domain": "ysl.com",
+          "id": 492
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "saint-laurent",
+          "name": "Saint Laurent",
+          "url": "https://www.ysl.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "zapier.com": {
+      "catalog": [
+        {
+          "name": "Zapier",
+          "domain": "zapier.com",
+          "id": 438
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "zapier",
+          "name": "Zapier",
+          "url": "https://zapier.com",
+          "name_match": true
+        }
+      ]
+    },
+    "zara.com": {
+      "catalog": [
+        {
+          "name": "ZARA",
+          "domain": "zara.com",
+          "id": 390
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "zara",
+          "name": "ZARA",
+          "url": "https://www.zara.com/",
+          "name_match": true
+        }
+      ]
+    },
+    "zarahome.com": {
+      "catalog": [
+        {
+          "name": "Zara Home",
+          "domain": "zarahome.com",
+          "id": 195
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "zara-home",
+          "name": "Zara Home",
+          "url": "https://www.zarahome.com",
+          "name_match": true
+        }
+      ]
+    },
+    "zellerfeld.com": {
+      "catalog": [
+        {
+          "name": "Zellerfeld",
+          "domain": "zellerfeld.com",
+          "id": 1130
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "zellerfeld",
+          "name": "Zellerfeld",
+          "url": "https://zellerfeld.com",
+          "name_match": true
+        }
+      ]
+    },
+    "zendesk.com": {
+      "catalog": [
+        {
+          "name": "Zendesk",
+          "domain": "zendesk.com",
+          "id": 51
+        }
+      ],
+      "pkgs": [
+        {
+          "slug": "zendesk",
+          "name": "Zendesk",
+          "url": "https://www.zendesk.com",
           "name_match": true
         }
       ]
@@ -972,242 +7035,11 @@
         "id": 284
       }
     ],
-    "buymeacoffee.com": [
-      {
-        "name": "Buy Me a Coffee",
-        "domain": "buymeacoffee.com",
-        "id": 334
-      }
-    ],
-    "byborre.com": [
-      {
-        "name": "BYBORRE®",
-        "domain": "byborre.com",
-        "id": 455
-      }
-    ],
-    "cakeequity.com": [
-      {
-        "name": "Cake Equity",
-        "domain": "cakeequity.com",
-        "id": 661
-      }
-    ],
-    "cal.com": [
-      {
-        "name": "Cal",
-        "domain": "cal.com",
-        "id": 282
-      }
-    ],
-    "calendly.com": [
-      {
-        "name": "Calendly",
-        "domain": "calendly.com",
-        "id": 97
-      }
-    ],
-    "calm.com": [
-      {
-        "name": "Calm",
-        "domain": "calm.com",
-        "id": 227
-      }
-    ],
-    "canva.com": [
-      {
-        "name": "Canva",
-        "domain": "canva.com",
-        "id": 94
-      }
-    ],
-    "care.com": [
-      {
-        "name": "Care",
-        "domain": "care.com",
-        "id": 908
-      }
-    ],
-    "cartesia.ai": [
-      {
-        "name": "Cartesia",
-        "domain": "cartesia.ai",
-        "id": 756
-      }
-    ],
-    "chargetrip.com": [
-      {
-        "name": "Chargetrip",
-        "domain": "chargetrip.com",
-        "id": 798
-      }
-    ],
-    "classpass.com": [
-      {
-        "name": "ClassPass",
-        "domain": "classpass.com",
-        "id": 256
-      }
-    ],
-    "clay.earth": [
-      {
-        "name": "Clay",
-        "domain": "clay.earth",
-        "id": 658
-      }
-    ],
-    "clearful.com": [
-      {
-        "name": "Clearful",
-        "domain": "clearful.com",
-        "id": 542
-      }
-    ],
-    "clipchamp.com": [
-      {
-        "name": "Clipchamp",
-        "domain": "clipchamp.com",
-        "id": 858
-      }
-    ],
-    "cofounder.co": [
-      {
-        "name": "Cofounder",
-        "domain": "cofounder.co",
-        "id": 746
-      }
-    ],
-    "cohere.com": [
-      {
-        "name": "Cohere",
-        "domain": "cohere.com",
-        "id": 576
-      }
-    ],
-    "coinbase.com": [
-      {
-        "name": "Coinbase",
-        "domain": "coinbase.com",
-        "id": 163
-      }
-    ],
-    "column.com": [
-      {
-        "name": "Column",
-        "domain": "column.com",
-        "id": 509
-      }
-    ],
-    "contra.com": [
-      {
-        "name": "Сontra",
-        "domain": "contra.com",
-        "id": 369
-      }
-    ],
-    "coolors.co": [
-      {
-        "name": "Coolors",
-        "domain": "coolors.co",
-        "id": 474
-      }
-    ],
-    "copperx.io": [
-      {
-        "name": "Copperx",
-        "domain": "copperx.io",
-        "id": 789
-      }
-    ],
-    "copy.ai": [
-      {
-        "name": "Copy.ai",
-        "domain": "copy.ai",
-        "id": 435
-      }
-    ],
-    "cosmos.so": [
-      {
-        "name": "Cosmos",
-        "domain": "cosmos.so",
-        "id": 384
-      }
-    ],
-    "craft.do": [
-      {
-        "name": "Craft",
-        "domain": "craft.do",
-        "id": 112
-      }
-    ],
-    "craftwork.design": [
-      {
-        "name": "Craftwork Design",
-        "domain": "craftwork.design",
-        "id": 188
-      }
-    ],
-    "createwithplay.com": [
-      {
-        "name": "Play",
-        "domain": "createwithplay.com",
-        "id": 218
-      }
-    ],
-    "creativemarket.com": [
-      {
-        "name": "Creative Market",
-        "domain": "creativemarket.com",
-        "id": 264
-      }
-    ],
-    "cron.com": [
-      {
-        "name": "Cron",
-        "domain": "cron.com",
-        "id": 233
-      }
-    ],
-    "curater.org": [
-      {
-        "name": "Curater",
-        "domain": "curater.org",
-        "id": 1131
-      }
-    ],
-    "cushion.so": [
-      {
-        "name": "Cushion",
-        "domain": "cushion.so",
-        "id": 920
-      }
-    ],
     "cycle.app": [
       {
         "name": "Cycle",
         "domain": "cycle.app",
         "id": 504
-      }
-    ],
-    "dailyartmagazine.com": [
-      {
-        "name": "DailyArt Magazine",
-        "domain": "dailyartmagazine.com",
-        "id": 571
-      }
-    ],
-    "deel.com": [
-      {
-        "name": "Deel",
-        "domain": "deel.com",
-        "id": 148
-      }
-    ],
-    "deezer.com": [
-      {
-        "name": "Deezer",
-        "domain": "deezer.com",
-        "id": 853
       }
     ],
     "delphi.ai": [
@@ -1217,221 +7049,11 @@
         "id": 670
       }
     ],
-    "descript.com": [
-      {
-        "name": "Descript",
-        "domain": "descript.com",
-        "id": 29
-      }
-    ],
-    "designmodo.com": [
-      {
-        "name": "Designmodo",
-        "domain": "designmodo.com",
-        "id": 459
-      }
-    ],
     "designstripe.com": [
       {
         "name": "Designstripe",
         "domain": "designstripe.com",
         "id": 186
-      }
-    ],
-    "digg.com": [
-      {
-        "name": "Digg",
-        "domain": "digg.com",
-        "id": 1431
-      }
-    ],
-    "dinnerladies.com.au": [
-      {
-        "name": "The Dinner Ladies",
-        "domain": "dinnerladies.com.au",
-        "id": 762
-      }
-    ],
-    "discord.com": [
-      {
-        "name": "Discord",
-        "domain": "discord.com",
-        "id": 156
-      }
-    ],
-    "district.in": [
-      {
-        "name": "District",
-        "domain": "district.in",
-        "id": 926
-      }
-    ],
-    "dji.com": [
-      {
-        "name": "DJI",
-        "domain": "dji.com",
-        "id": 332
-      }
-    ],
-    "dock.us": [
-      {
-        "name": "Dock",
-        "domain": "dock.us",
-        "id": 465
-      }
-    ],
-    "doctronic.ai": [
-      {
-        "name": "Doctronic AI",
-        "domain": "doctronic.ai",
-        "id": 940
-      }
-    ],
-    "docusign.com": [
-      {
-        "name": "DocuSign",
-        "domain": "docusign.com",
-        "id": 31
-      }
-    ],
-    "dona.ai": [
-      {
-        "name": "Dona",
-        "domain": "dona.ai",
-        "id": 643
-      }
-    ],
-    "doordash.com": [
-      {
-        "name": "DoorDash",
-        "domain": "doordash.com",
-        "id": 298
-      }
-    ],
-    "dopper.com": [
-      {
-        "name": "Dopper",
-        "domain": "dopper.com",
-        "id": 723
-      }
-    ],
-    "doppler.com": [
-      {
-        "name": "Doppler",
-        "domain": "doppler.com",
-        "id": 193
-      }
-    ],
-    "dribbble.com": [
-      {
-        "name": "Dribbble",
-        "domain": "dribbble.com",
-        "id": 257
-      }
-    ],
-    "drinkdouze.com": [
-      {
-        "name": "Douze",
-        "domain": "drinkdouze.com",
-        "id": 688
-      }
-    ],
-    "dropbox.com": [
-      {
-        "name": "Dropbox",
-        "domain": "dropbox.com",
-        "id": 2
-      }
-    ],
-    "dub.co": [
-      {
-        "name": "Dub",
-        "domain": "dub.co",
-        "id": 418
-      }
-    ],
-    "editorx.com": [
-      {
-        "name": "Editor X",
-        "domain": "editorx.com",
-        "id": 279
-      }
-    ],
-    "elektron.se": [
-      {
-        "name": "Elektron",
-        "domain": "elektron.se",
-        "id": 56
-      }
-    ],
-    "elementor.com": [
-      {
-        "name": "Elementor",
-        "domain": "elementor.com",
-        "id": 466
-      }
-    ],
-    "elevenlabs.io": [
-      {
-        "name": "ElevenLabs",
-        "domain": "elevenlabs.io",
-        "id": 772
-      }
-    ],
-    "elevenmusic.io": [
-      {
-        "name": "ElevenMusic",
-        "domain": "elevenmusic.io",
-        "id": 917
-      }
-    ],
-    "elevenreader.io": [
-      {
-        "name": "ElevenReader",
-        "domain": "elevenreader.io",
-        "id": 776
-      }
-    ],
-    "endel.io": [
-      {
-        "name": "Endel",
-        "domain": "endel.io",
-        "id": 105
-      }
-    ],
-    "endless.io": [
-      {
-        "name": "Endless",
-        "domain": "endless.io",
-        "id": 569
-      }
-    ],
-    "endlesstools.io": [
-      {
-        "name": "Endless Tools",
-        "domain": "endlesstools.io",
-        "id": 527
-      }
-    ],
-    "enode.com": [
-      {
-        "name": "Enode",
-        "domain": "enode.com",
-        "id": 599
-      }
-    ],
-    "epicgames.com": [
-      {
-        "name": "Epic Games",
-        "domain": "epicgames.com",
-        "id": 84
-      }
-    ],
-    "epidemicsound.com": [
-      {
-        "name": "Epidemic Sound",
-        "domain": "epidemicsound.com",
-        "id": 75
       }
     ],
     "equals.app": [
@@ -1441,207 +7063,11 @@
         "id": 289
       }
     ],
-    "esquire.com": [
-      {
-        "name": "Esquire",
-        "domain": "esquire.com",
-        "id": 102
-      }
-    ],
-    "exa.ai": [
-      {
-        "name": "Exa",
-        "domain": "exa.ai",
-        "id": 898
-      }
-    ],
-    "exactly.ai": [
-      {
-        "name": "Exactly.ai",
-        "domain": "exactly.ai",
-        "id": 645
-      }
-    ],
-    "excalidraw.com": [
-      {
-        "name": "Excalidraw",
-        "domain": "excalidraw.com",
-        "id": 477
-      }
-    ],
-    "expedia.com": [
-      {
-        "name": "Expedia",
-        "domain": "expedia.com",
-        "id": 172
-      }
-    ],
-    "explore.family": [
-      {
-        "name": "Explore",
-        "domain": "explore.family",
-        "id": 292
-      }
-    ],
-    "fable.co": [
-      {
-        "name": "Fable",
-        "domain": "fable.co",
-        "id": 463
-      }
-    ],
-    "factory.ai": [
-      {
-        "name": "Factory",
-        "domain": "factory.ai",
-        "id": 734
-      }
-    ],
-    "faire.com": [
-      {
-        "name": "Faire",
-        "domain": "faire.com",
-        "id": 155
-      }
-    ],
-    "fal.ai": [
-      {
-        "name": "fal",
-        "domain": "fal.ai",
-        "id": 935
-      }
-    ],
-    "family.co": [
-      {
-        "name": "Family",
-        "domain": "family.co",
-        "id": 373
-      }
-    ],
-    "farfetch.com": [
-      {
-        "name": "Farfetch",
-        "domain": "farfetch.com",
-        "id": 99
-      }
-    ],
-    "feedhive.com": [
-      {
-        "name": "FeedHive",
-        "domain": "feedhive.com",
-        "id": 476
-      }
-    ],
     "fibery.io": [
       {
         "name": "Fibery",
         "domain": "fibery.io",
         "id": 415
-      }
-    ],
-    "figma.com": [
-      {
-        "name": "Figma",
-        "domain": "figma.com",
-        "id": 206
-      }
-    ],
-    "fingerprint.com": [
-      {
-        "name": "Fingerprint",
-        "domain": "fingerprint.com",
-        "id": 866
-      }
-    ],
-    "fiverr.com": [
-      {
-        "name": "Fiverr",
-        "domain": "fiverr.com",
-        "id": 169
-      }
-    ],
-    "flask.do": [
-      {
-        "name": "Flask.do",
-        "domain": "flask.do",
-        "id": 821
-      }
-    ],
-    "flowmapp.com": [
-      {
-        "name": "FlowMapp",
-        "domain": "flowmapp.com",
-        "id": 370
-      }
-    ],
-    "flutterflow.io": [
-      {
-        "name": "FlutterFlow",
-        "domain": "flutterflow.io",
-        "id": 78
-      }
-    ],
-    "foodnoms.com": [
-      {
-        "name": "FoodNoms",
-        "domain": "foodnoms.com",
-        "id": 374
-      }
-    ],
-    "forhers.com": [
-      {
-        "name": "Hers",
-        "domain": "forhers.com",
-        "id": 782
-      }
-    ],
-    "forhims.co.uk": [
-      {
-        "name": "Hims",
-        "domain": "forhims.co.uk",
-        "id": 234
-      }
-    ],
-    "fourmula.ai": [
-      {
-        "name": "Fourmula.ai",
-        "domain": "fourmula.ai",
-        "id": 889
-      }
-    ],
-    "fourthwall.com": [
-      {
-        "name": "Fourthwall",
-        "domain": "fourthwall.com",
-        "id": 710
-      }
-    ],
-    "frame.io": [
-      {
-        "name": "Frame.io",
-        "domain": "frame.io",
-        "id": 1142
-      }
-    ],
-    "framer.com": [
-      {
-        "name": "Framer",
-        "domain": "framer.com",
-        "id": 189
-      }
-    ],
-    "fresha.com": [
-      {
-        "name": "Fresha",
-        "domain": "fresha.com",
-        "id": 561
-      }
-    ],
-    "front.com": [
-      {
-        "name": "Front",
-        "domain": "front.com",
-        "id": 23
       }
     ],
     "gemini.google": [
@@ -1651,200 +7077,11 @@
         "id": 907
       }
     ],
-    "getfernand.com": [
-      {
-        "name": "Fernand",
-        "domain": "getfernand.com",
-        "id": 891
-      }
-    ],
-    "getmatter.com": [
-      {
-        "name": "Matter",
-        "domain": "getmatter.com",
-        "id": 752
-      }
-    ],
-    "getmocha.com": [
-      {
-        "name": "Mocha",
-        "domain": "getmocha.com",
-        "id": 882
-      }
-    ],
-    "getpocket.com": [
-      {
-        "name": "Pocket",
-        "domain": "getpocket.com",
-        "id": 228
-      }
-    ],
-    "gladia.io": [
-      {
-        "name": "Gladia",
-        "domain": "gladia.io",
-        "id": 859
-      }
-    ],
-    "glassnode.com": [
-      {
-        "name": "Glassnode",
-        "domain": "glassnode.com",
-        "id": 87
-      }
-    ],
-    "glorify.com": [
-      {
-        "name": "Glorify",
-        "domain": "glorify.com",
-        "id": 583
-      }
-    ],
-    "glossgenius.com": [
-      {
-        "name": "GlossGenius",
-        "domain": "glossgenius.com",
-        "id": 830
-      }
-    ],
-    "gofundme.com": [
-      {
-        "name": "GoFundMe",
-        "domain": "gofundme.com",
-        "id": 436
-      }
-    ],
-    "grammarly.com": [
-      {
-        "name": "Grammarly",
-        "domain": "grammarly.com",
-        "id": 42
-      }
-    ],
     "grok.com": [
       {
         "name": "Grok",
         "domain": "grok.com",
         "id": 629
-      }
-    ],
-    "grow.google": [
-      {
-        "name": "Grow with Google",
-        "domain": "grow.google",
-        "id": 294
-      }
-    ],
-    "gumroad.com": [
-      {
-        "name": "Gumroad",
-        "domain": "gumroad.com",
-        "id": 296
-      }
-    ],
-    "hashnode.com": [
-      {
-        "name": "Hashnode",
-        "domain": "hashnode.com",
-        "id": 194
-      }
-    ],
-    "hbomax.com": [
-      {
-        "name": "HBO Max",
-        "domain": "hbomax.com",
-        "id": 337
-      }
-    ],
-    "headspace.com": [
-      {
-        "name": "Headspace",
-        "domain": "headspace.com",
-        "id": 113
-      }
-    ],
-    "helloivy.co": [
-      {
-        "name": "Hello Ivy",
-        "domain": "helloivy.co",
-        "id": 602
-      }
-    ],
-    "helloklean.com": [
-      {
-        "name": "Hello Klean",
-        "domain": "helloklean.com",
-        "id": 633
-      }
-    ],
-    "hitchd.com": [
-      {
-        "name": "Hitchd",
-        "domain": "hitchd.com",
-        "id": 786
-      }
-    ],
-    "homerun.co": [
-      {
-        "name": "Homerun",
-        "domain": "homerun.co",
-        "id": 417
-      }
-    ],
-    "httpie.io": [
-      {
-        "name": "HTTPie",
-        "domain": "httpie.io",
-        "id": 540
-      }
-    ],
-    "huddlekit.com": [
-      {
-        "name": "Huddlekit",
-        "domain": "huddlekit.com",
-        "id": 901
-      }
-    ],
-    "hume.ai": [
-      {
-        "name": "Hume AI",
-        "domain": "hume.ai",
-        "id": 793
-      }
-    ],
-    "ifttt.com": [
-      {
-        "name": "IFTTT",
-        "domain": "ifttt.com",
-        "id": 386
-      }
-    ],
-    "ikea.com": [
-      {
-        "name": "IKEA",
-        "domain": "ikea.com",
-        "id": 220
-      }
-    ],
-    "instacart.com": [
-      {
-        "name": "Instacart",
-        "domain": "instacart.com",
-        "id": 30
-      }
-    ],
-    "instagram.com": [
-      {
-        "name": "Instagram",
-        "domain": "instagram.com",
-        "id": 196
-      }
-    ],
-    "intercom.com": [
-      {
-        "name": "Intercom",
-        "domain": "intercom.com",
-        "id": 91
       }
     ],
     "invisionapp.com": [
@@ -1854,160 +7091,6 @@
         "id": 319
       }
     ],
-    "jace.ai": [
-      {
-        "name": "Jace AI",
-        "domain": "jace.ai",
-        "id": 838
-      }
-    ],
-    "jasper.ai": [
-      {
-        "name": "Jasper AI",
-        "domain": "jasper.ai",
-        "id": 265
-      }
-    ],
-    "jetbrains.com": [
-      {
-        "name": "JetBrains",
-        "domain": "jetbrains.com",
-        "id": 28
-      }
-    ],
-    "jitter.video": [
-      {
-        "name": "Jitter",
-        "domain": "jitter.video",
-        "id": 318
-      }
-    ],
-    "joinhandshake.com": [
-      {
-        "name": "Handshake",
-        "domain": "joinhandshake.com",
-        "id": 785
-      }
-    ],
-    "kickstarter.com": [
-      {
-        "name": "Kickstarter",
-        "domain": "kickstarter.com",
-        "id": 182
-      }
-    ],
-    "kinhive.com": [
-      {
-        "name": "Kinhive",
-        "domain": "kinhive.com",
-        "id": 691
-      }
-    ],
-    "kit.com": [
-      {
-        "name": "Kit",
-        "domain": "kit.com",
-        "id": 558
-      }
-    ],
-    "kitchen.co": [
-      {
-        "name": "Kitchen.co",
-        "domain": "kitchen.co",
-        "id": 457
-      }
-    ],
-    "kitchenstories.com": [
-      {
-        "name": "Kitchen Stories",
-        "domain": "kitchenstories.com",
-        "id": 342
-      }
-    ],
-    "klarna.com": [
-      {
-        "name": "Klarna",
-        "domain": "klarna.com",
-        "id": 272
-      }
-    ],
-    "kraken.com": [
-      {
-        "name": "Kraken",
-        "domain": "kraken.com",
-        "id": 161
-      }
-    ],
-    "krea.ai": [
-      {
-        "name": "Krea.ai",
-        "domain": "krea.ai",
-        "id": 495
-      }
-    ],
-    "krisp.ai": [
-      {
-        "name": "Krisp",
-        "domain": "krisp.ai",
-        "id": 461
-      }
-    ],
-    "lego.com": [
-      {
-        "name": "LEGO",
-        "domain": "lego.com",
-        "id": 249
-      }
-    ],
-    "lemni.com": [
-      {
-        "name": "Lemni",
-        "domain": "lemni.com",
-        "id": 608
-      }
-    ],
-    "lemonsqueezy.com": [
-      {
-        "name": "Lemon Squeezy",
-        "domain": "lemonsqueezy.com",
-        "id": 321
-      }
-    ],
-    "leonardo.ai": [
-      {
-        "name": "Leonardo.Ai",
-        "domain": "leonardo.ai",
-        "id": 922
-      }
-    ],
-    "limitless.ai": [
-      {
-        "name": "Limitless",
-        "domain": "limitless.ai",
-        "id": 551
-      }
-    ],
-    "linkedin.com": [
-      {
-        "name": "LinkedIn",
-        "domain": "linkedin.com",
-        "id": 187
-      }
-    ],
-    "linktr.ee": [
-      {
-        "name": "Linktree",
-        "domain": "linktr.ee",
-        "id": 70
-      }
-    ],
-    "literal.club": [
-      {
-        "name": "Literal.club",
-        "domain": "literal.club",
-        "id": 748
-      }
-    ],
     "live.com": [
       {
         "name": "Microsoft Teams",
@@ -2015,144 +7098,11 @@
         "id": 642
       }
     ],
-    "loom.com": [
-      {
-        "name": "Loom",
-        "domain": "loom.com",
-        "id": 74
-      }
-    ],
-    "lottiefiles.com": [
-      {
-        "name": "LottieFiles",
-        "domain": "lottiefiles.com",
-        "id": 336
-      }
-    ],
-    "lovable.dev": [
-      {
-        "name": "Lovable",
-        "domain": "lovable.dev",
-        "id": 905
-      }
-    ],
     "lu.ma": [
       {
         "name": "Luma",
         "domain": "lu.ma",
         "id": 400
-      }
-    ],
-    "luluandgeorgia.com": [
-      {
-        "name": "Lulu and Georgia",
-        "domain": "luluandgeorgia.com",
-        "id": 368
-      }
-    ],
-    "lumalabs.ai": [
-      {
-        "name": "Luma AI",
-        "domain": "lumalabs.ai",
-        "id": 448
-      }
-    ],
-    "lummi.ai": [
-      {
-        "name": "Lummi",
-        "domain": "lummi.ai",
-        "id": 521
-      }
-    ],
-    "macawhq.com": [
-      {
-        "name": "Macaw",
-        "domain": "macawhq.com",
-        "id": 593
-      }
-    ],
-    "mailchimp.com": [
-      {
-        "name": "Mailchimp",
-        "domain": "mailchimp.com",
-        "id": 41
-      }
-    ],
-    "make.com": [
-      {
-        "name": "Make",
-        "domain": "make.com",
-        "id": 96
-      }
-    ],
-    "mangomint.com": [
-      {
-        "name": "Mangomint",
-        "domain": "mangomint.com",
-        "id": 698
-      }
-    ],
-    "manychat.com": [
-      {
-        "name": "ManyChat",
-        "domain": "manychat.com",
-        "id": 90
-      }
-    ],
-    "mapbox.com": [
-      {
-        "name": "Mapbox",
-        "domain": "mapbox.com",
-        "id": 25
-      }
-    ],
-    "masterclass.com": [
-      {
-        "name": "MasterClass",
-        "domain": "masterclass.com",
-        "id": 133
-      }
-    ],
-    "maze.co": [
-      {
-        "name": "Maze",
-        "domain": "maze.co",
-        "id": 581
-      }
-    ],
-    "medium.com": [
-      {
-        "name": "Medium",
-        "domain": "medium.com",
-        "id": 301
-      }
-    ],
-    "meiro.cc": [
-      {
-        "name": "Meiro",
-        "domain": "meiro.cc",
-        "id": 687
-      }
-    ],
-    "melius.com": [
-      {
-        "name": "Melius",
-        "domain": "melius.com",
-        "id": 1166
-      }
-    ],
-    "memotron.app": [
-      {
-        "name": "Memotron",
-        "domain": "memotron.app",
-        "id": 760
-      }
-    ],
-    "mercury.com": [
-      {
-        "name": "Mercury",
-        "domain": "mercury.com",
-        "id": 857
       }
     ],
     "meta.com": [
@@ -2169,247 +7119,11 @@
         "id": 700
       }
     ],
-    "microsoft.com": [
-      {
-        "name": "Microsoft Copilot",
-        "domain": "microsoft.com",
-        "id": 446
-      },
-      {
-        "name": "Microsoft",
-        "domain": "lida.microsoft.com",
-        "id": 818
-      }
-    ],
-    "miro.com": [
-      {
-        "name": "Miro",
-        "domain": "miro.com",
-        "id": 80
-      }
-    ],
-    "missiveapp.com": [
-      {
-        "name": "Missive",
-        "domain": "missiveapp.com",
-        "id": 671
-      }
-    ],
-    "modyfi.com": [
-      {
-        "name": "Modyfi",
-        "domain": "modyfi.com",
-        "id": 513
-      }
-    ],
-    "moma.org": [
-      {
-        "name": "MoMA",
-        "domain": "moma.org",
-        "id": 123
-      }
-    ],
     "monarchmoney.com": [
       {
         "name": "Monarch Money",
         "domain": "monarchmoney.com",
         "id": 722
-      }
-    ],
-    "monday.com": [
-      {
-        "name": "Monday",
-        "domain": "monday.com",
-        "id": 171
-      }
-    ],
-    "monodesk.com": [
-      {
-        "name": "MonoDesk",
-        "domain": "monodesk.com",
-        "id": 856
-      }
-    ],
-    "mschf.com": [
-      {
-        "name": "MSCHF",
-        "domain": "mschf.com",
-        "id": 490
-      }
-    ],
-    "mural.co": [
-      {
-        "name": "Mural",
-        "domain": "mural.co",
-        "id": 327
-      }
-    ],
-    "mwm.ai": [
-      {
-        "name": "MWM",
-        "domain": "mwm.ai",
-        "id": 931
-      }
-    ],
-    "mymind.com": [
-      {
-        "name": "MyMind",
-        "domain": "mymind.com",
-        "id": 110
-      }
-    ],
-    "n8n.io": [
-      {
-        "name": "n8n",
-        "domain": "n8n.io",
-        "id": 805
-      }
-    ],
-    "navan.com": [
-      {
-        "name": "Navan",
-        "domain": "navan.com",
-        "id": 804
-      }
-    ],
-    "netflix.com": [
-      {
-        "name": "Netflix",
-        "domain": "netflix.com",
-        "id": 131
-      }
-    ],
-    "newbalance.co.uk": [
-      {
-        "name": "New Balance",
-        "domain": "newbalance.co.uk",
-        "id": 309
-      }
-    ],
-    "newyorker.com": [
-      {
-        "name": "The New Yorker",
-        "domain": "newyorker.com",
-        "id": 63
-      }
-    ],
-    "nextdoor.com": [
-      {
-        "name": "Nextdoor",
-        "domain": "nextdoor.com",
-        "id": 874
-      }
-    ],
-    "nike.com": [
-      {
-        "name": "Nike",
-        "domain": "nike.com",
-        "id": 61
-      }
-    ],
-    "nomadgoods.com": [
-      {
-        "name": "Nomad Goods",
-        "domain": "nomadgoods.com",
-        "id": 85
-      }
-    ],
-    "nothing.tech": [
-      {
-        "name": "Nothing",
-        "domain": "nothing.tech",
-        "id": 316
-      }
-    ],
-    "nudea.com": [
-      {
-        "name": "Nudea",
-        "domain": "nudea.com",
-        "id": 732
-      }
-    ],
-    "nytimes.com": [
-      {
-        "name": "The New York Times",
-        "domain": "nytimes.com",
-        "id": 49
-      }
-    ],
-    "o-p-e-n.com": [
-      {
-        "name": "Open",
-        "domain": "o-p-e-n.com",
-        "id": 331
-      }
-    ],
-    "officevibe.com": [
-      {
-        "name": "Officevibe",
-        "domain": "officevibe.com",
-        "id": 295
-      }
-    ],
-    "oku.club": [
-      {
-        "name": "Oku",
-        "domain": "oku.club",
-        "id": 223
-      }
-    ],
-    "on.com": [
-      {
-        "name": "On",
-        "domain": "on.com",
-        "id": 809
-      }
-    ],
-    "onefinestay.com": [
-      {
-        "name": "Onefinestay",
-        "domain": "onefinestay.com",
-        "id": 823
-      }
-    ],
-    "onesoil.ai": [
-      {
-        "name": "OneSoil",
-        "domain": "onesoil.ai",
-        "id": 109
-      }
-    ],
-    "onmarathon.com": [
-      {
-        "name": "Marathon",
-        "domain": "onmarathon.com",
-        "id": 613
-      }
-    ],
-    "opensea.io": [
-      {
-        "name": "OpenSea",
-        "domain": "opensea.io",
-        "id": 181
-      }
-    ],
-    "orchids.app": [
-      {
-        "name": "Orchids",
-        "domain": "orchids.app",
-        "id": 729
-      }
-    ],
-    "outchat.ai": [
-      {
-        "name": "Outchat",
-        "domain": "outchat.ai",
-        "id": 795
-      }
-    ],
-    "overflow.io": [
-      {
-        "name": "Overflow",
-        "domain": "overflow.io",
-        "id": 293
       }
     ],
     "ozone.tech": [
@@ -2419,389 +7133,11 @@
         "id": 515
       }
     ],
-    "pampam.city": [
-      {
-        "name": "PamPam",
-        "domain": "pampam.city",
-        "id": 615
-      }
-    ],
-    "parallel.ai": [
-      {
-        "name": "Parallel",
-        "domain": "parallel.ai",
-        "id": 792
-      }
-    ],
-    "partiful.com": [
-      {
-        "name": "Partiful",
-        "domain": "partiful.com",
-        "id": 810
-      }
-    ],
-    "patreon.com": [
-      {
-        "name": "Patreon",
-        "domain": "patreon.com",
-        "id": 158
-      }
-    ],
-    "patternbrands.com": [
-      {
-        "name": "Pattern Brands",
-        "domain": "patternbrands.com",
-        "id": 229
-      }
-    ],
-    "paypal.com": [
-      {
-        "name": "PayPal",
-        "domain": "paypal.com",
-        "id": 162
-      }
-    ],
-    "peakperformance.com": [
-      {
-        "name": "Peak Performance",
-        "domain": "peakperformance.com",
-        "id": 808
-      }
-    ],
-    "pedestal.com": [
-      {
-        "name": "Pedestal",
-        "domain": "pedestal.com",
-        "id": 779
-      }
-    ],
-    "peerlist.io": [
-      {
-        "name": "Peerlist",
-        "domain": "peerlist.io",
-        "id": 429
-      }
-    ],
-    "perplexity.ai": [
-      {
-        "name": "Perplexity",
-        "domain": "perplexity.ai",
-        "id": 421
-      }
-    ],
-    "pexels.com": [
-      {
-        "name": "Pexels",
-        "domain": "pexels.com",
-        "id": 259
-      }
-    ],
-    "pi.ai": [
-      {
-        "name": "Pi",
-        "domain": "pi.ai",
-        "id": 496
-      }
-    ],
-    "pinterest.com": [
-      {
-        "name": "Pinterest",
-        "domain": "pinterest.com",
-        "id": 184
-      }
-    ],
-    "pitch.com": [
-      {
-        "name": "Pitch",
-        "domain": "pitch.com",
-        "id": 40
-      }
-    ],
-    "pixso.net": [
-      {
-        "name": "Pixso",
-        "domain": "pixso.net",
-        "id": 270
-      }
-    ],
-    "playbook.com": [
-      {
-        "name": "Playbook",
-        "domain": "playbook.com",
-        "id": 317
-      }
-    ],
-    "playstation.com": [
-      {
-        "name": "PlayStation",
-        "domain": "playstation.com",
-        "id": 735
-      }
-    ],
-    "polar.sh": [
-      {
-        "name": "Polar",
-        "domain": "polar.sh",
-        "id": 871
-      }
-    ],
-    "polaroid.com": [
-      {
-        "name": "Polaroid",
-        "domain": "polaroid.com",
-        "id": 807
-      }
-    ],
-    "pop.site": [
-      {
-        "name": "Pop Site",
-        "domain": "pop.site",
-        "id": 679
-      }
-    ],
-    "portrait.so": [
-      {
-        "name": "Portrait",
-        "domain": "portrait.so",
-        "id": 887
-      }
-    ],
-    "preply.com": [
-      {
-        "name": "Preply",
-        "domain": "preply.com",
-        "id": 799
-      }
-    ],
-    "primevideo.com": [
-      {
-        "name": "Prime Video",
-        "domain": "primevideo.com",
-        "id": 845
-      }
-    ],
-    "producthunt.com": [
-      {
-        "name": "Product Hunt",
-        "domain": "producthunt.com",
-        "id": 252
-      }
-    ],
-    "programa.design": [
-      {
-        "name": "Programa",
-        "domain": "programa.design",
-        "id": 937
-      }
-    ],
-    "promova.com": [
-      {
-        "name": "Promova",
-        "domain": "promova.com",
-        "id": 385
-      }
-    ],
-    "prose.com": [
-      {
-        "name": "Prose",
-        "domain": "prose.com",
-        "id": 675
-      }
-    ],
-    "pryzm.design": [
-      {
-        "name": "Pryzm",
-        "domain": "pryzm.design",
-        "id": 944
-      }
-    ],
-    "quizlet.com": [
-      {
-        "name": "Quizlet",
-        "domain": "quizlet.com",
-        "id": 212
-      }
-    ],
-    "rarible.com": [
-      {
-        "name": "Rarible",
-        "domain": "rarible.com",
-        "id": 175
-      }
-    ],
-    "raster.app": [
-      {
-        "name": "Raster",
-        "domain": "raster.app",
-        "id": 447
-      }
-    ],
-    "raus.life": [
-      {
-        "name": "Raus",
-        "domain": "raus.life",
-        "id": 1133
-      }
-    ],
-    "reclaim.ai": [
-      {
-        "name": "Reclaim AI",
-        "domain": "reclaim.ai",
-        "id": 594
-      }
-    ],
-    "record.club": [
-      {
-        "name": "Record Club",
-        "domain": "record.club",
-        "id": 655
-      }
-    ],
-    "relume.io": [
-      {
-        "name": "Relume",
-        "domain": "relume.io",
-        "id": 442
-      }
-    ],
-    "reown.com": [
-      {
-        "name": "Reown",
-        "domain": "reown.com",
-        "id": 647
-      }
-    ],
-    "replo.app": [
-      {
-        "name": "Replo",
-        "domain": "replo.app",
-        "id": 556
-      }
-    ],
-    "resend.com": [
-      {
-        "name": "Resend",
-        "domain": "resend.com",
-        "id": 844
-      }
-    ],
-    "resume.io": [
-      {
-        "name": "Resume.io",
-        "domain": "resume.io",
-        "id": 226
-      }
-    ],
-    "retool.com": [
-      {
-        "name": "Retool",
-        "domain": "retool.com",
-        "id": 213
-      }
-    ],
-    "revenuecat.com": [
-      {
-        "name": "RevenueCat",
-        "domain": "revenuecat.com",
-        "id": 76
-      }
-    ],
-    "revolut.com": [
-      {
-        "name": "Revolut",
-        "domain": "revolut.com",
-        "id": 13
-      }
-    ],
-    "ripple.com": [
-      {
-        "name": "Ripple",
-        "domain": "ripple.com",
-        "id": 108
-      }
-    ],
-    "risecalendar.com": [
-      {
-        "name": "Rise",
-        "domain": "risecalendar.com",
-        "id": 539
-      }
-    ],
-    "rive.app": [
-      {
-        "name": "Rive",
-        "domain": "rive.app",
-        "id": 219
-      }
-    ],
-    "riverside.fm": [
-      {
-        "name": "Riverside",
-        "domain": "riverside.fm",
-        "id": 610
-      }
-    ],
-    "rivian.com": [
-      {
-        "name": "Rivian",
-        "domain": "rivian.com",
-        "id": 141
-      }
-    ],
-    "robinhood.com": [
-      {
-        "name": "Robinhood",
-        "domain": "robinhood.com",
-        "id": 151
-      }
-    ],
-    "rork.com": [
-      {
-        "name": "Rork",
-        "domain": "rork.com",
-        "id": 900
-      }
-    ],
-    "rovr.live": [
-      {
-        "name": "ROVR",
-        "domain": "rovr.live",
-        "id": 1144
-      }
-    ],
-    "rows.com": [
-      {
-        "name": "Rows",
-        "domain": "rows.com",
-        "id": 36
-      }
-    ],
-    "rox.com": [
-      {
-        "name": "Rox",
-        "domain": "rox.com",
-        "id": 847
-      }
-    ],
-    "runey.app": [
-      {
-        "name": "Runey",
-        "domain": "runey.app",
-        "id": 883
-      }
-    ],
     "runwayml.com": [
       {
         "name": "Runway",
         "domain": "runwayml.com",
         "id": 439
-      }
-    ],
-    "sana.ai": [
-      {
-        "name": "Sana AI",
-        "domain": "sana.ai",
-        "id": 548
       }
     ],
     "savee.it": [
@@ -2811,314 +7147,6 @@
         "id": 498
       }
     ],
-    "savvycal.com": [
-      {
-        "name": "SavvyCal",
-        "domain": "savvycal.com",
-        "id": 353
-      }
-    ],
-    "scale.com": [
-      {
-        "name": "Scale AI",
-        "domain": "scale.com",
-        "id": 157
-      }
-    ],
-    "scape.com": [
-      {
-        "name": "Scape",
-        "domain": "scape.com",
-        "id": 763
-      }
-    ],
-    "seatgeek.com": [
-      {
-        "name": "SeatGeek",
-        "domain": "seatgeek.com",
-        "id": 486
-      }
-    ],
-    "seed.com": [
-      {
-        "name": "Seed",
-        "domain": "seed.com",
-        "id": 923
-      }
-    ],
-    "sharewillow.com": [
-      {
-        "name": "ShareWillow",
-        "domain": "sharewillow.com",
-        "id": 555
-      }
-    ],
-    "shop.app": [
-      {
-        "name": "Shop",
-        "domain": "shop.app",
-        "id": 934
-      }
-    ],
-    "shopify.com": [
-      {
-        "name": "Shopify",
-        "domain": "shopify.com",
-        "id": 352
-      }
-    ],
-    "shuttle.zip": [
-      {
-        "name": "Shuttle",
-        "domain": "shuttle.zip",
-        "id": 678
-      }
-    ],
-    "sketch.com": [
-      {
-        "name": "Sketch",
-        "domain": "sketch.com",
-        "id": 39
-      }
-    ],
-    "skiff.com": [
-      {
-        "name": "Skiff",
-        "domain": "skiff.com",
-        "id": 306
-      }
-    ],
-    "skillshare.com": [
-      {
-        "name": "Skillshare",
-        "domain": "skillshare.com",
-        "id": 351
-      }
-    ],
-    "skyscanner.com": [
-      {
-        "name": "Skyscanner",
-        "domain": "skyscanner.com",
-        "id": 67
-      }
-    ],
-    "slab.com": [
-      {
-        "name": "Slab",
-        "domain": "slab.com",
-        "id": 263
-      }
-    ],
-    "slack.com": [
-      {
-        "name": "Slack",
-        "domain": "slack.com",
-        "id": 27
-      }
-    ],
-    "slite.com": [
-      {
-        "name": "Slite",
-        "domain": "slite.com",
-        "id": 216
-      }
-    ],
-    "sonarworks.com": [
-      {
-        "name": "Sonarworks",
-        "domain": "sonarworks.com",
-        "id": 82
-      }
-    ],
-    "sora.com": [
-      {
-        "name": "Sora",
-        "domain": "sora.com",
-        "id": 742
-      }
-    ],
-    "soundcloud.com": [
-      {
-        "name": "SoundCloud",
-        "domain": "soundcloud.com",
-        "id": 137
-      }
-    ],
-    "soundtrap.com": [
-      {
-        "name": "Soundtrap",
-        "domain": "soundtrap.com",
-        "id": 77
-      }
-    ],
-    "spatial.chat": [
-      {
-        "name": "Spatial Chat",
-        "domain": "spatial.chat",
-        "id": 394
-      }
-    ],
-    "spline.design": [
-      {
-        "name": "Spline",
-        "domain": "spline.design",
-        "id": 225
-      }
-    ],
-    "spyglass.so": [
-      {
-        "name": "Spyglass",
-        "domain": "spyglass.so",
-        "id": 936
-      }
-    ],
-    "squarespace.com": [
-      {
-        "name": "Squarespace",
-        "domain": "squarespace.com",
-        "id": 451
-      }
-    ],
-    "squareup.com": [
-      {
-        "name": "Square",
-        "domain": "squareup.com",
-        "id": 47
-      }
-    ],
-    "ssense.com": [
-      {
-        "name": "SSENSE",
-        "domain": "ssense.com",
-        "id": 702
-      }
-    ],
-    "stage.so": [
-      {
-        "name": "Stage.so",
-        "domain": "stage.so",
-        "id": 356
-      }
-    ],
-    "starbucks.com": [
-      {
-        "name": "Starbucks",
-        "domain": "starbucks.com",
-        "id": 322
-      }
-    ],
-    "steel.dev": [
-      {
-        "name": "Steel",
-        "domain": "steel.dev",
-        "id": 1312
-      }
-    ],
-    "stellate.co": [
-      {
-        "name": "Stellate",
-        "domain": "stellate.co",
-        "id": 606
-      }
-    ],
-    "stocksy.com": [
-      {
-        "name": "Stocksy",
-        "domain": "stocksy.com",
-        "id": 363
-      }
-    ],
-    "stocktwits.com": [
-      {
-        "name": "Stocktwits",
-        "domain": "stocktwits.com",
-        "id": 707
-      }
-    ],
-    "stripe.com": [
-      {
-        "name": "Stripe",
-        "domain": "stripe.com",
-        "id": 9
-      }
-    ],
-    "suno.com": [
-      {
-        "name": "Suno",
-        "domain": "suno.com",
-        "id": 501
-      }
-    ],
-    "sunsama.com": [
-      {
-        "name": "Sunsama",
-        "domain": "sunsama.com",
-        "id": 880
-      }
-    ],
-    "super.so": [
-      {
-        "name": "Super.so",
-        "domain": "super.so",
-        "id": 153
-      }
-    ],
-    "supercut.ai": [
-      {
-        "name": "ツSupercut",
-        "domain": "supercut.ai",
-        "id": 711
-      }
-    ],
-    "superlist.com": [
-      {
-        "name": "Superlist",
-        "domain": "superlist.com",
-        "id": 411
-      }
-    ],
-    "synthesia.io": [
-      {
-        "name": "Synthesia.io",
-        "domain": "synthesia.io",
-        "id": 943
-      }
-    ],
-    "tango.ai": [
-      {
-        "name": "Tango",
-        "domain": "tango.ai",
-        "id": 653
-      }
-    ],
-    "teachable.com": [
-      {
-        "name": "Teachable",
-        "domain": "teachable.com",
-        "id": 358
-      }
-    ],
-    "tealhq.com": [
-      {
-        "name": "Teal",
-        "domain": "tealhq.com",
-        "id": 106
-      }
-    ],
-    "teenage.engineering": [
-      {
-        "name": "Teenage Engineering",
-        "domain": "teenage.engineering",
-        "id": 57
-      }
-    ],
-    "telescope.fyi": [
-      {
-        "name": "Telescope",
-        "domain": "telescope.fyi",
-        "id": 1138
-      }
-    ],
     "tella.tv": [
       {
         "name": "Tella",
@@ -3126,88 +7154,11 @@
         "id": 505
       }
     ],
-    "tesla.com": [
-      {
-        "name": "Tesla",
-        "domain": "tesla.com",
-        "id": 288
-      }
-    ],
     "theathletic.com": [
       {
         "name": "The Athletic",
         "domain": "theathletic.com",
         "id": 55
-      }
-    ],
-    "theleap.co": [
-      {
-        "name": "The Leap",
-        "domain": "theleap.co",
-        "id": 431
-      }
-    ],
-    "thenavia.com": [
-      {
-        "name": "Navia",
-        "domain": "thenavia.com",
-        "id": 1424
-      }
-    ],
-    "theorg.com": [
-      {
-        "name": "The Org",
-        "domain": "theorg.com",
-        "id": 450
-      }
-    ],
-    "threads.com": [
-      {
-        "name": "Threads",
-        "domain": "threads.com",
-        "id": 479
-      }
-    ],
-    "tidal.com": [
-      {
-        "name": "Tidal",
-        "domain": "tidal.com",
-        "id": 73
-      }
-    ],
-    "tidycal.com": [
-      {
-        "name": "TidyCal",
-        "domain": "tidycal.com",
-        "id": 918
-      }
-    ],
-    "tiktok.com": [
-      {
-        "name": "TikTok",
-        "domain": "tiktok.com",
-        "id": 199
-      }
-    ],
-    "tilda.cc": [
-      {
-        "name": "Tilda",
-        "domain": "tilda.cc",
-        "id": 93
-      }
-    ],
-    "time2book.me": [
-      {
-        "name": "time2book",
-        "domain": "time2book.me",
-        "id": 676
-      }
-    ],
-    "todoist.com": [
-      {
-        "name": "Todoist",
-        "domain": "todoist.com",
-        "id": 44
       }
     ],
     "tome.app": [
@@ -3224,48 +7175,6 @@
         "id": 623
       }
     ],
-    "trip.com": [
-      {
-        "name": "Trip",
-        "domain": "trip.com",
-        "id": 899
-      }
-    ],
-    "tripadvisor.com": [
-      {
-        "name": "Tripadvisor",
-        "domain": "tripadvisor.com",
-        "id": 71
-      }
-    ],
-    "trulia.com": [
-      {
-        "name": "Trulia",
-        "domain": "trulia.com",
-        "id": 83
-      }
-    ],
-    "twelvelabs.io": [
-      {
-        "name": "TwelveLabs",
-        "domain": "twelvelabs.io",
-        "id": 646
-      }
-    ],
-    "twist.com": [
-      {
-        "name": "Twist",
-        "domain": "twist.com",
-        "id": 145
-      }
-    ],
-    "twitch.tv": [
-      {
-        "name": "Twitch",
-        "domain": "twitch.tv",
-        "id": 159
-      }
-    ],
     "twitter.com": [
       {
         "name": "X",
@@ -3273,354 +7182,11 @@
         "id": 198
       }
     ],
-    "typeform.com": [
-      {
-        "name": "Typeform",
-        "domain": "typeform.com",
-        "id": 125
-      }
-    ],
-    "typefully.com": [
-      {
-        "name": "Typefully",
-        "domain": "typefully.com",
-        "id": 471
-      }
-    ],
-    "uber.com": [
-      {
-        "name": "Uber",
-        "domain": "uber.com",
-        "id": 243
-      }
-    ],
-    "ubereats.com": [
-      {
-        "name": "Uber Eats",
-        "domain": "ubereats.com",
-        "id": 519
-      }
-    ],
-    "understory.io": [
-      {
-        "name": "Understory",
-        "domain": "understory.io",
-        "id": 921
-      }
-    ],
-    "unsplash.com": [
-      {
-        "name": "Unsplash",
-        "domain": "unsplash.com",
-        "id": 215
-      }
-    ],
-    "urbanoutfitters.com": [
-      {
-        "name": "Urban Outfitters",
-        "domain": "urbanoutfitters.com",
-        "id": 379
-      }
-    ],
     "usebutter.com": [
       {
         "name": "Butter",
         "domain": "usebutter.com",
         "id": 566
-      }
-    ],
-    "useparallel.com": [
-      {
-        "name": "Parallel",
-        "domain": "useparallel.com",
-        "id": 383
-      }
-    ],
-    "usepastel.com": [
-      {
-        "name": "Pastel",
-        "domain": "usepastel.com",
-        "id": 307
-      }
-    ],
-    "variant.com": [
-      {
-        "name": "Variant",
-        "domain": "variant.com",
-        "id": 877
-      }
-    ],
-    "vectary.com": [
-      {
-        "name": "Vectary",
-        "domain": "vectary.com",
-        "id": 391
-      }
-    ],
-    "vercel.com": [
-      {
-        "name": "Vercel",
-        "domain": "vercel.com",
-        "id": 24
-      }
-    ],
-    "vevo.com": [
-      {
-        "name": "Vevo",
-        "domain": "vevo.com",
-        "id": 104
-      }
-    ],
-    "vimeo.com": [
-      {
-        "name": "Vimeo",
-        "domain": "vimeo.com",
-        "id": 114
-      }
-    ],
-    "visitors.now": [
-      {
-        "name": "Visitors",
-        "domain": "visitors.now",
-        "id": 820
-      }
-    ],
-    "visualelectric.com": [
-      {
-        "name": "Visual Electric",
-        "domain": "visualelectric.com",
-        "id": 714
-      }
-    ],
-    "vivid.money": [
-      {
-        "name": "Vivid Money",
-        "domain": "vivid.money",
-        "id": 92
-      }
-    ],
-    "voicenotes.com": [
-      {
-        "name": "Voicenotes",
-        "domain": "voicenotes.com",
-        "id": 696
-      }
-    ],
-    "volkshotel.nl": [
-      {
-        "name": "Volkshotel",
-        "domain": "volkshotel.nl",
-        "id": 726
-      }
-    ],
-    "vsco.co": [
-      {
-        "name": "VSCO",
-        "domain": "vsco.co",
-        "id": 488
-      }
-    ],
-    "walmart.com": [
-      {
-        "name": "Walmart",
-        "domain": "walmart.com",
-        "id": 314
-      }
-    ],
-    "wandb.ai": [
-      {
-        "name": "Weights & Biases",
-        "domain": "wandb.ai",
-        "id": 88
-      }
-    ],
-    "washingtonpost.com": [
-      {
-        "name": "The Washington Post",
-        "domain": "washingtonpost.com",
-        "id": 868
-      }
-    ],
-    "wealthsimple.com": [
-      {
-        "name": "Wealthsimple",
-        "domain": "wealthsimple.com",
-        "id": 764
-      }
-    ],
-    "weather.com": [
-      {
-        "name": "The Weather Channel",
-        "domain": "weather.com",
-        "id": 248
-      }
-    ],
-    "weavy.ai": [
-      {
-        "name": "Weavy",
-        "domain": "weavy.ai",
-        "id": 692
-      }
-    ],
-    "webflow.com": [
-      {
-        "name": "Webflow",
-        "domain": "webflow.com",
-        "id": 43
-      }
-    ],
-    "weekrise.com": [
-      {
-        "name": "Weekrise",
-        "domain": "weekrise.com",
-        "id": 425
-      }
-    ],
-    "westelm.com": [
-      {
-        "name": "West Elm",
-        "domain": "westelm.com",
-        "id": 401
-      }
-    ],
-    "whatsapp.com": [
-      {
-        "name": "WhatsApp",
-        "domain": "whatsapp.com",
-        "id": 154
-      }
-    ],
-    "whereby.com": [
-      {
-        "name": "Whereby",
-        "domain": "whereby.com",
-        "id": 286
-      }
-    ],
-    "windy.com": [
-      {
-        "name": "Windy",
-        "domain": "windy.com",
-        "id": 250
-      }
-    ],
-    "wise.com": [
-      {
-        "name": "Wise",
-        "domain": "wise.com",
-        "id": 313
-      }
-    ],
-    "withjulienne.com": [
-      {
-        "name": "Julienne",
-        "domain": "withjulienne.com",
-        "id": 531
-      }
-    ],
-    "wittl.co": [
-      {
-        "name": "Wittl",
-        "domain": "wittl.co",
-        "id": 632
-      }
-    ],
-    "wix.com": [
-      {
-        "name": "Wix",
-        "domain": "wix.com",
-        "id": 176
-      }
-    ],
-    "wiza.co": [
-      {
-        "name": "Wiza",
-        "domain": "wiza.co",
-        "id": 502
-      }
-    ],
-    "womp.com": [
-      {
-        "name": "Womp",
-        "domain": "womp.com",
-        "id": 274
-      }
-    ],
-    "workflow.design": [
-      {
-        "name": "Workflow",
-        "domain": "workflow.design",
-        "id": 721
-      }
-    ],
-    "wrike.com": [
-      {
-        "name": "Wrike",
-        "domain": "wrike.com",
-        "id": 177
-      }
-    ],
-    "wynde.io": [
-      {
-        "name": "Wynde",
-        "domain": "wynde.io",
-        "id": 749
-      }
-    ],
-    "xbox.com": [
-      {
-        "name": "Xbox",
-        "domain": "xbox.com",
-        "id": 728
-      }
-    ],
-    "yelp.com": [
-      {
-        "name": "Yelp",
-        "domain": "yelp.com",
-        "id": 402
-      }
-    ],
-    "ysl.com": [
-      {
-        "name": "Saint Laurent",
-        "domain": "ysl.com",
-        "id": 492
-      }
-    ],
-    "zapier.com": [
-      {
-        "name": "Zapier",
-        "domain": "zapier.com",
-        "id": 438
-      }
-    ],
-    "zara.com": [
-      {
-        "name": "ZARA",
-        "domain": "zara.com",
-        "id": 390
-      }
-    ],
-    "zarahome.com": [
-      {
-        "name": "Zara Home",
-        "domain": "zarahome.com",
-        "id": 195
-      }
-    ],
-    "zellerfeld.com": [
-      {
-        "name": "Zellerfeld",
-        "domain": "zellerfeld.com",
-        "id": 1130
-      }
-    ],
-    "zendesk.com": [
-      {
-        "name": "Zendesk",
-        "domain": "zendesk.com",
-        "id": 51
       }
     ]
   },
@@ -3681,6 +7247,17 @@
         "ios_guess": []
       }
     ],
+    "copilot.com": [
+      {
+        "slug": "microsoft-copilot",
+        "name": "Microsoft Copilot",
+        "url": "https://copilot.com",
+        "ios_guess": [
+          "Microsoft Copilot",
+          "Copilot"
+        ]
+      }
+    ],
     "coursera.org": [
       {
         "slug": "coursera",
@@ -3689,11 +7266,35 @@
         "ios_guess": []
       }
     ],
+    "delphi.co": [
+      {
+        "slug": "delphi",
+        "name": "Delphi",
+        "url": "https://www.delphi.co",
+        "ios_guess": []
+      }
+    ],
     "devin.ai": [
       {
         "slug": "devin-desktop",
         "name": "Devin (desktop)",
         "url": "https://devin.ai",
+        "ios_guess": []
+      }
+    ],
+    "equals.com": [
+      {
+        "slug": "equals",
+        "name": "Equals",
+        "url": "https://equals.com",
+        "ios_guess": []
+      }
+    ],
+    "fibery.com": [
+      {
+        "slug": "fibery",
+        "name": "Fibery",
+        "url": "https://fibery.com",
         "ios_guess": []
       }
     ],
@@ -3730,6 +7331,33 @@
           "Luma",
           "Luma AI"
         ]
+      },
+      {
+        "slug": "luma",
+        "name": "Luma",
+        "url": "https://luma.com",
+        "ios_guess": [
+          "Luma",
+          "Luma AI"
+        ]
+      }
+    ],
+    "me.sh": [
+      {
+        "slug": "clay-earth",
+        "name": "Mesh",
+        "url": "https://me.sh",
+        "ios_guess": []
+      }
+    ],
+    "meta.ai": [
+      {
+        "slug": "meta-ai",
+        "name": "Meta AI",
+        "url": "https://www.meta.ai/",
+        "ios_guess": [
+          "Meta AI"
+        ]
       }
     ],
     "metabase.com": [
@@ -3737,6 +7365,22 @@
         "slug": "metabase",
         "name": "Metabase (Edumation demo)",
         "url": "https://www.metabase.com",
+        "ios_guess": []
+      }
+    ],
+    "metaview.ai": [
+      {
+        "slug": "metaview",
+        "name": "Metaview",
+        "url": "https://www.metaview.ai",
+        "ios_guess": []
+      }
+    ],
+    "monarch.com": [
+      {
+        "slug": "monarch-money",
+        "name": "Monarch Money",
+        "url": "https://www.monarch.com",
         "ios_guess": []
       }
     ],
@@ -3774,6 +7418,22 @@
         "ios_guess": []
       }
     ],
+    "ozone.pro": [
+      {
+        "slug": "ozone",
+        "name": "Ozone",
+        "url": "https://ozone.pro",
+        "ios_guess": []
+      }
+    ],
+    "perk.com": [
+      {
+        "slug": "travelperk",
+        "name": "TravelPerk",
+        "url": "https://www.perk.com/",
+        "ios_guess": []
+      }
+    ],
     "refero.design": [
       {
         "slug": "refero-design",
@@ -3788,6 +7448,24 @@
         "name": "ResearchRabbit",
         "url": "https://www.researchrabbit.ai",
         "ios_guess": []
+      }
+    ],
+    "runway.com": [
+      {
+        "slug": "runway",
+        "name": "Runway",
+        "url": "https://runway.com",
+        "ios_guess": []
+      }
+    ],
+    "savee.com": [
+      {
+        "slug": "savee",
+        "name": "SAVEE",
+        "url": "https://savee.com",
+        "ios_guess": [
+          "Savee"
+        ]
       }
     ],
     "sentry.io": [
@@ -3832,7 +7510,31 @@
         "ios_guess": []
       }
     ],
+    "tella.com": [
+      {
+        "slug": "tella",
+        "name": "Tella",
+        "url": "https://www.tella.com",
+        "ios_guess": []
+      }
+    ],
+    "visual.app": [
+      {
+        "slug": "designstripe",
+        "name": "Visual (designstripe)",
+        "url": "https://visual.app",
+        "ios_guess": []
+      }
+    ],
     "x.ai": [
+      {
+        "slug": "grok",
+        "name": "Grok / xAI Docs",
+        "url": "https://docs.x.ai",
+        "ios_guess": [
+          "Grok"
+        ]
+      },
       {
         "slug": "grokbot",
         "name": "Grok Bot",
@@ -3843,6 +7545,14 @@
         "slug": "grokbot-desktop",
         "name": "Grok Bot (desktop)",
         "url": "https://x.ai/bot",
+        "ios_guess": []
+      }
+    ],
+    "x.com": [
+      {
+        "slug": "x",
+        "name": "X",
+        "url": "https://x.com",
         "ios_guess": []
       }
     ],

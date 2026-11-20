@@ -51,7 +51,7 @@ Fonts: the catalog preview names none. Scales, counted as [DESIGN.md](DESIGN.md)
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 49 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 48 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -107,6 +107,7 @@ Nothing was sent, downloaded, signed into or trialled. The only press was a loca
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **One painted theme.** Every captured route paints dark; the bundle declares no light variant, so the semantic set is emitted under `dark` (the spotify convention for a single painted dark surface).
 - **Framer uuid token names.** `--token-<uuid>` names are unstable build artefacts; tokens.json emits them under readable orange/ink/alpha/pastel names while each leaf keeps the real variable in `$extensions.source`.
 - **Anchor `color` reads `#0000ee` or transparent fills.** Framer paints link/button text on inner spans and button fills on sibling layers; the anchor's own computed colour is the UA default and its background is transparent. `dark.accent`/`accentText`/`link` read the painted layers and text child (`paint`/`textStyle` in the raw file), never the anchor alone.

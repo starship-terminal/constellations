@@ -1,0 +1,3299 @@
+{
+ "readAt": "2026-11-17",
+ "source": "the stylesheet bodies read during live signed-out loads of grow.google / and /certificates/ux-design/ (the versioned gstatic marketing-cms bundle All.min.css, the glue cookienotificationbar sheet, Google Fonts css/css2 and inline <style> blocks — the gstatic bundle is cross-origin to the CSSOM so it was read from the network responses), re-parsed with CSSStyleSheet; resolved in a probe carrying the first-party sheets at 1440 x 900 with the page's own scope classes replayed — the surface is light-only (no dark media query, no theme attribute, no header theme control). Third-party sheets are harvested under `external` for provenance only: never resolved, never part of a token set",
+ "sheets": [
+  "marketing https://fonts.googleapis.com/css (103528 bytes)",
+  "marketing https://fonts.googleapis.com/css2 (6911 bytes)",
+  "marketing https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.css (9139 bytes)",
+  "marketing https://www.gstatic.com/marketing-cms/reviewed-scripts/prod/gwg-us-1.2.12-92bff70/styles/default/All.min.css (676211 bytes)"
+ ],
+ "scopes": {
+  "marketing": {
+   "html": "page",
+   "body": "glue-body",
+   "wrapper": ""
+  },
+  "cert": {
+   "html": "page",
+   "body": "glue-body",
+   "wrapper": ""
+  }
+ },
+ "counts": {
+  "rules": 19,
+  "fonts": 266,
+  "names": {
+   "theme": 57,
+   "app": 13,
+   "vendor": 297,
+   "utility": 0,
+   "tailwind": 0,
+   "external": 0
+  },
+  "bySelector": {
+   "[theme] marketing :root": 54,
+   "[app] marketing .glue-header.glue-header--transparent .glue-header__logo-svg": 4,
+   "[app] marketing .glue-header.glue-header--transparent.glue-header--active .glue-header__logo-svg": 4,
+   "[vendor] marketing .glue-mwc3": 273,
+   "[vendor] marketing .glue-mwc3-checkbox": 1,
+   "[vendor] marketing .glue-mwc3-radio": 1,
+   "[vendor] marketing .glue-mwc3-switch": 1,
+   "[vendor] marketing .glue-mwc3-textfield": 4,
+   "[vendor] marketing .glue-mwc3-select": 8,
+   "[vendor] marketing .glue-mwc3-select md-filled-select md-divider, .glue-mwc3-select md-outlined-select md-divider": 1,
+   "[vendor] marketing .glue-mwc3-select md-filled-select::part(menu), .glue-mwc3-select md-outlined-select::part(menu)": 2,
+   "[app] marketing .bsp-image-grid__list": 1,
+   "[app] marketing .bsp-image-grid__list--compact": 1,
+   "[app] marketing .bsp-ticker-tape__list": 4,
+   "[theme] marketing .bsp-rotating-headline__text": 2,
+   "[vendor] marketing .bsp-search .glue-form": 4,
+   "[vendor] marketing .bsp-search .glue-form md-outlined-text-field": 3,
+   "[theme] marketing .select": 1,
+   "[app] marketing md-outlined-select, md-outlined-text-field": 4
+  }
+ },
+ "errors": [],
+ "theme": [
+  {
+   "file": "marketing https://www.gstatic.com/marketing-cms/reviewed-scripts/prod/gwg-us-1.2.12-92bff70/styles/default/All.min.css",
+   "party": "first",
+   "selector": ":root",
+   "context": [],
+   "properties": {
+    "--glue-grey-0": "#fff",
+    "--glue-grey-25": "#f1f1f1",
+    "--glue-grey-50": "#f8f9fa",
+    "--glue-grey-100": "#f1f3f4",
+    "--glue-grey-200": "#e8eaed",
+    "--glue-grey-300": "#dadce0",
+    "--glue-grey-400": "#bdc1c6",
+    "--glue-grey-500": "#9aa0a6",
+    "--glue-grey-600": "#80868b",
+    "--glue-grey-700": "#5f6368",
+    "--glue-grey-800": "#3c4043",
+    "--glue-grey-900": "#202124",
+    "--glue-blue-50": "#e8f0fe",
+    "--glue-blue-100": "#d2e3fc",
+    "--glue-blue-200": "#aecbfa",
+    "--glue-blue-300": "#8ab4f8",
+    "--glue-blue-400": "#669df6",
+    "--glue-blue-500": "#4285f4",
+    "--glue-blue-600": "#1a73e8",
+    "--glue-blue-700": "#1967d2",
+    "--glue-blue-800": "#185abc",
+    "--glue-blue-900": "#174ea6",
+    "--glue-green-50": "#e6f4ea",
+    "--glue-green-100": "#ceead6",
+    "--glue-green-200": "#a8dab5",
+    "--glue-green-300": "#81c995",
+    "--glue-green-400": "#5bb974",
+    "--glue-green-500": "#34a853",
+    "--glue-green-600": "#1e8e3e",
+    "--glue-green-700": "#188038",
+    "--glue-green-800": "#137333",
+    "--glue-green-900": "#0d652d",
+    "--glue-red-50": "#fce8e6",
+    "--glue-red-100": "#fad2cf",
+    "--glue-red-200": "#f6aea9",
+    "--glue-red-300": "#f28b82",
+    "--glue-red-400": "#ee675c",
+    "--glue-red-500": "#ea4335",
+    "--glue-red-600": "#d93025",
+    "--glue-red-700": "#c5221f",
+    "--glue-red-800": "#b31412",
+    "--glue-red-900": "#a50e0e",
+    "--glue-yellow-50": "#fef7e0",
+    "--glue-yellow-100": "#feefc3",
+    "--glue-yellow-200": "#fde293",
+    "--glue-yellow-300": "#fdd663",
+    "--glue-yellow-400": "#fcc934",
+    "--glue-yellow-500": "#fbbc04",
+    "--glue-yellow-600": "#f9ab00",
+    "--glue-yellow-700": "#f29900",
+    "--glue-yellow-800": "#ea8600",
+    "--glue-yellow-900": "#e37400",
+    "--glue-purple-100": "#ea80fc",
+    "--glue-purple-900": "#681da8"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "marketing https://www.gstatic.com/marketing-cms/reviewed-scripts/prod/gwg-us-1.2.12-92bff70/styles/default/All.min.css",
+   "party": "first",
+   "selector": ".bsp-rotating-headline__text",
+   "context": [],
+   "properties": {
+    "--animation-duration-transition": "300ms",
+    "--animation-duration-rotation": "2.05s"
+   },
+   "bin": "theme"
+  },
+  {
+   "file": "marketing https://www.gstatic.com/marketing-cms/reviewed-scripts/prod/gwg-us-1.2.12-92bff70/styles/default/All.min.css",
+   "party": "first",
+   "selector": ".select",
+   "context": [],
+   "properties": {
+    "--color-disabled": "hsla(0,0%,73.3%,0.7333333333333333)"
+   },
+   "bin": "theme"
+  }
+ ],
+ "app": [
+  {
+   "file": "marketing https://www.gstatic.com/marketing-cms/reviewed-scripts/prod/gwg-us-1.2.12-92bff70/styles/default/All.min.css",
+   "party": "first",
+   "selector": ".glue-header.glue-header--transparent .glue-header__logo-svg",
+   "context": [],
+   "properties": {
+    "--g-logo-blue": "#fff",
+    "--g-logo-red": "#fff",
+    "--g-logo-yellow": "#fff",
+    "--g-logo-green": "#fff"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "marketing https://www.gstatic.com/marketing-cms/reviewed-scripts/prod/gwg-us-1.2.12-92bff70/styles/default/All.min.css",
+   "party": "first",
+   "selector": ".glue-header.glue-header--transparent.glue-header--active .glue-header__logo-svg",
+   "context": [],
+   "properties": {
+    "--g-logo-blue": "#4285f4",
+    "--g-logo-red": "#ea4335",
+    "--g-logo-yellow": "#fbbc04",
+    "--g-logo-green": "#34a853"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "marketing https://www.gstatic.com/marketing-cms/reviewed-scripts/prod/gwg-us-1.2.12-92bff70/styles/default/All.min.css",
+   "party": "first",
+   "selector": ".bsp-image-grid__list",
+   "context": [],
+   "properties": {
+    "--flex-gap": "48px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "marketing https://www.gstatic.com/marketing-cms/reviewed-scripts/prod/gwg-us-1.2.12-92bff70/styles/default/All.min.css",
+   "party": "first",
+   "selector": ".bsp-image-grid__list--compact",
+   "context": [],
+   "properties": {
+    "--flex-gap": "24px"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "marketing https://www.gstatic.com/marketing-cms/reviewed-scripts/prod/gwg-us-1.2.12-92bff70/styles/default/All.min.css",
+   "party": "first",
+   "selector": ".bsp-ticker-tape__list",
+   "context": [],
+   "properties": {
+    "--direction": "normal",
+    "--duration": "60s",
+    "--delay": "0s",
+    "--iteration-count": "infinite"
+   },
+   "bin": "app"
+  },
+  {
+   "file": "marketing https://www.gstatic.com/marketing-cms/reviewed-scripts/prod/gwg-us-1.2.12-92bff70/styles/default/All.min.css",
+   "party": "first",
+   "selector": "md-outlined-select, md-outlined-text-field",
+   "context": [],
+   "properties": {
+    "--md-sys-color-error": "#fc413d",
+    "--md-outlined-text-field-error-supporting-text-color": "#fc413d",
+    "--md-outlined-select-error-supporting-text-color": "#fc413d",
+    "--mdc-theme-error": "#fc413d"
+   },
+   "bin": "app"
+  }
+ ],
+ "vendor": [
+  {
+   "file": "marketing https://www.gstatic.com/marketing-cms/reviewed-scripts/prod/gwg-us-1.2.12-92bff70/styles/default/All.min.css",
+   "party": "first",
+   "selector": ".glue-mwc3",
+   "context": [],
+   "properties": {
+    "--md-source": "#1a73e8",
+    "--md-ref-palette-primary0": "#000",
+    "--md-ref-palette-primary5": "#00102d",
+    "--md-ref-palette-primary10": "#202124",
+    "--md-ref-palette-primary20": "#002e68",
+    "--md-ref-palette-primary25": "#00397d",
+    "--md-ref-palette-primary30": "#174ea6",
+    "--md-ref-palette-primary35": "#185abc",
+    "--md-ref-palette-primary40": "#1967d2",
+    "--md-ref-palette-primary50": "#1a73e8",
+    "--md-ref-palette-primary60": "#4285f4",
+    "--md-ref-palette-primary70": "#669df6",
+    "--md-ref-palette-primary80": "#8ab4f8",
+    "--md-ref-palette-primary90": "#aecbfa",
+    "--md-ref-palette-primary95": "#d2e3fc",
+    "--md-ref-palette-primary98": "#e8f0fe",
+    "--md-ref-palette-primary99": "#fefbff",
+    "--md-ref-palette-primary100": "#fff",
+    "--md-ref-palette-secondary0": "#000",
+    "--md-ref-palette-secondary10": "#202124",
+    "--md-ref-palette-secondary20": "#035",
+    "--md-ref-palette-secondary30": "#004a77",
+    "--md-ref-palette-secondary40": "#00639b",
+    "--md-ref-palette-secondary50": "#047db7",
+    "--md-ref-palette-secondary60": "#3998d3",
+    "--md-ref-palette-secondary70": "#5ab3f0",
+    "--md-ref-palette-secondary80": "#7fcfff",
+    "--md-ref-palette-secondary90": "#c2e7ff",
+    "--md-ref-palette-secondary95": "#dff3ff",
+    "--md-ref-palette-secondary99": "#f7fcff",
+    "--md-ref-palette-secondary100": "#fff",
+    "--md-ref-palette-tertiary0": "#000",
+    "--md-ref-palette-tertiary5": "#001504",
+    "--md-ref-palette-tertiary10": "#202124",
+    "--md-ref-palette-tertiary20": "#003912",
+    "--md-ref-palette-tertiary25": "#004618",
+    "--md-ref-palette-tertiary30": "#0d652d",
+    "--md-ref-palette-tertiary35": "#137333",
+    "--md-ref-palette-tertiary40": "#188038",
+    "--md-ref-palette-tertiary50": "#1e8e3e",
+    "--md-ref-palette-tertiary60": "#34a853",
+    "--md-ref-palette-tertiary70": "#5bb974",
+    "--md-ref-palette-tertiary80": "#81c995",
+    "--md-ref-palette-tertiary90": "#a8dab5",
+    "--md-ref-palette-tertiary95": "#ceead6",
+    "--md-ref-palette-tertiary98": "#e6f4ea",
+    "--md-ref-palette-tertiary99": "#f6fff1",
+    "--md-ref-palette-tertiary100": "#fff",
+    "--md-ref-palette-error0": "#000",
+    "--md-ref-palette-error5": "#2d0000",
+    "--md-ref-palette-error10": "#202124",
+    "--md-ref-palette-error20": "#690002",
+    "--md-ref-palette-error25": "#7e0003",
+    "--md-ref-palette-error30": "#a50e0e",
+    "--md-ref-palette-error35": "#b31412",
+    "--md-ref-palette-error40": "#c5221f",
+    "--md-ref-palette-error50": "#d93025",
+    "--md-ref-palette-error60": "#ea4335",
+    "--md-ref-palette-error70": "#ee675c",
+    "--md-ref-palette-error80": "#f28b82",
+    "--md-ref-palette-error90": "#f6aea9",
+    "--md-ref-palette-error95": "#fad2cf",
+    "--md-ref-palette-error98": "#fce8e6",
+    "--md-ref-palette-error99": "#fffbff",
+    "--md-ref-palette-error100": "#fff",
+    "--md-ref-palette-neutral0": "#000",
+    "--md-ref-palette-neutral5": "#0f1113",
+    "--md-ref-palette-neutral10": "#202124",
+    "--md-ref-palette-neutral20": "#2e3133",
+    "--md-ref-palette-neutral25": "#393c3e",
+    "--md-ref-palette-neutral30": "#454749",
+    "--md-ref-palette-neutral35": "#3c4043",
+    "--md-ref-palette-neutral40": "#5f6368",
+    "--md-ref-palette-neutral50": "#80868b",
+    "--md-ref-palette-neutral60": "#9aa0a6",
+    "--md-ref-palette-neutral70": "#bdc1c6",
+    "--md-ref-palette-neutral80": "#dadce0",
+    "--md-ref-palette-neutral90": "#e8eaed",
+    "--md-ref-palette-neutral95": "#f1f3f4",
+    "--md-ref-palette-neutral98": "#f8f9fa",
+    "--md-ref-palette-neutral99": "#fcfcff",
+    "--md-ref-palette-neutral100": "#fff",
+    "--md-ref-palette-neutral-variant0": "#000",
+    "--md-ref-palette-neutral-variant5": "#0b1216",
+    "--md-ref-palette-neutral-variant10": "#202124",
+    "--md-ref-palette-neutral-variant20": "#2a3136",
+    "--md-ref-palette-neutral-variant25": "#3c4043",
+    "--md-ref-palette-neutral-variant30": "#5f6368",
+    "--md-ref-palette-neutral-variant35": "#80868b",
+    "--md-ref-palette-neutral-variant40": "#9aa0a6",
+    "--md-ref-palette-neutral-variant50": "#bdc1c6",
+    "--md-ref-palette-neutral-variant60": "#dadce0",
+    "--md-ref-palette-neutral-variant70": "#e8eaed",
+    "--md-ref-palette-neutral-variant80": "#f1f3f4",
+    "--md-ref-palette-neutral-variant90": "#f8f9fa",
+    "--md-ref-palette-neutral-variant95": "#ebf2f8",
+    "--md-ref-palette-neutral-variant98": "#f5faff",
+    "--md-ref-palette-neutral-variant99": "#fbfcff",
+    "--md-ref-palette-neutral-variant100": "#fff",
+    "--md-sys-color-primary-light": "#1a73e8",
+    "--md-sys-color-on-primary-light": "#fff",
+    "--md-sys-color-primary-container-light": "#aecbfa",
+    "--md-sys-color-on-primary-container-light": "#202124",
+    "--md-sys-color-primary-fixed-light": "#aecbfa",
+    "--md-sys-color-on-primary-fixed-light": "#202124",
+    "--md-sys-color-primary-fixed-dim-light": "#8ab4f8",
+    "--md-sys-color-on-primary-fixed-variant-light": "#174ea6",
+    "--md-sys-color-secondary-light": "#00639b",
+    "--md-sys-color-on-secondary-light": "#fff",
+    "--md-sys-color-secondary-container-light": "#c2e7ff",
+    "--md-sys-color-on-secondary-container-light": "#001d35",
+    "--md-sys-color-secondary-fixed-light": "#c2e7ff",
+    "--md-sys-color-on-secondary-fixed-light": "#001d35",
+    "--md-sys-color-secondary-fixed-dim-light": "#7fcfff",
+    "--md-sys-color-on-secondary-fixed-variant-light": "#004a77",
+    "--md-sys-color-tertiary-light": "#188038",
+    "--md-sys-color-on-tertiary-light": "#fff",
+    "--md-sys-color-tertiary-container-light": "#a8dab5",
+    "--md-sys-color-on-tertiary-container-light": "#202124",
+    "--md-sys-color-tertiary-fixed-light": "#a8dab5",
+    "--md-sys-color-on-tertiary-fixed-light": "#202124",
+    "--md-sys-color-tertiary-fixed-dim-light": "#81c995",
+    "--md-sys-color-on-tertiary-fixed-variant-light": "#0d652d",
+    "--md-sys-color-error-light": "#d93025",
+    "--md-sys-color-on-error-light": "#fff",
+    "--md-sys-color-error-container-light": "#f6aea9",
+    "--md-sys-color-on-error-container-light": "#202124",
+    "--md-sys-color-outline-light": "#bdc1c6",
+    "--md-sys-color-background-light": "#fcfcff",
+    "--md-sys-color-on-background-light": "#202124",
+    "--md-sys-color-surface-light": "#f8f9fa",
+    "--md-sys-color-on-surface-light": "#202124",
+    "--md-sys-color-surface-variant-light": "#f8f9fa",
+    "--md-sys-color-on-surface-variant-light": "#3c4043",
+    "--md-sys-color-inverse-surface-light": "#2e3133",
+    "--md-sys-color-inverse-on-surface-light": "#f1f3f4",
+    "--md-sys-color-inverse-primary-light": "#8ab4f8",
+    "--md-sys-color-shadow-light": "#000",
+    "--md-sys-color-surface-tint-light": "#1967d2",
+    "--md-sys-color-outline-variant-light": "#f1f3f4",
+    "--md-sys-color-scrim-light": "#000",
+    "--md-sys-color-surface-container-highest-light": "#e2e2e5",
+    "--md-sys-color-surface-container-high-light": "#e7e8eb",
+    "--md-sys-color-surface-container-light": "#edeef0",
+    "--md-sys-color-surface-container-low-light": "#f3f3f6",
+    "--md-sys-color-surface-container-lowest-light": "#fff",
+    "--md-sys-color-surface-bright-light": "#f8f9fa",
+    "--md-sys-color-surface-dim-light": "#d9dadd",
+    "--md-sys-typescale-display-large-font": "Google Sans",
+    "--md-sys-typescale-display-large-weight": "400",
+    "--md-sys-typescale-display-large-size": "57px",
+    "--md-sys-typescale-display-large-line-height": "64px",
+    "--md-sys-typescale-display-large-tracking": "0px",
+    "--md-sys-typescale-display-medium-font": "Google Sans",
+    "--md-sys-typescale-display-medium-weight": "400",
+    "--md-sys-typescale-display-medium-size": "45px",
+    "--md-sys-typescale-display-medium-line-height": "52px",
+    "--md-sys-typescale-display-medium-tracking": "0px",
+    "--md-sys-typescale-display-small-font": "Google Sans",
+    "--md-sys-typescale-display-small-weight": "400",
+    "--md-sys-typescale-display-small-size": "36px",
+    "--md-sys-typescale-display-small-line-height": "44px",
+    "--md-sys-typescale-display-small-tracking": "0px",
+    "--md-sys-typescale-headline-large-font": "Google Sans",
+    "--md-sys-typescale-headline-large-weight": "400",
+    "--md-sys-typescale-headline-large-size": "32px",
+    "--md-sys-typescale-headline-large-line-height": "40px",
+    "--md-sys-typescale-headline-large-tracking": "0px",
+    "--md-sys-typescale-headline-medium-font": "Google Sans",
+    "--md-sys-typescale-headline-medium-weight": "400",
+    "--md-sys-typescale-headline-medium-size": "28px",
+    "--md-sys-typescale-headline-medium-line-height": "36px",
+    "--md-sys-typescale-headline-medium-tracking": "0px",
+    "--md-sys-typescale-headline-small-font": "Google Sans",
+    "--md-sys-typescale-headline-small-weight": "400",
+    "--md-sys-typescale-headline-small-size": "24px",
+    "--md-sys-typescale-headline-small-line-height": "32px",
+    "--md-sys-typescale-headline-small-tracking": "0px",
+    "--md-sys-typescale-body-large-font": "Google Sans Text",
+    "--md-sys-typescale-body-large-weight": "400",
+    "--md-sys-typescale-body-large-size": "16px",
+    "--md-sys-typescale-body-large-line-height": "24px",
+    "--md-sys-typescale-body-large-tracking": "0px",
+    "--md-sys-typescale-body-medium-font": "Google Sans Text",
+    "--md-sys-typescale-body-medium-weight": "400",
+    "--md-sys-typescale-body-medium-size": "14px",
+    "--md-sys-typescale-body-medium-line-height": "20px",
+    "--md-sys-typescale-body-medium-tracking": "0px",
+    "--md-sys-typescale-body-small-font": "Google Sans Text",
+    "--md-sys-typescale-body-small-weight": "400",
+    "--md-sys-typescale-body-small-size": "12px",
+    "--md-sys-typescale-body-small-line-height": "16px",
+    "--md-sys-typescale-body-small-tracking": "0.1px",
+    "--md-sys-typescale-label-large-font": "Google Sans Text",
+    "--md-sys-typescale-label-large-weight": "500",
+    "--md-sys-typescale-label-large-size": "14px",
+    "--md-sys-typescale-label-large-line-height": "20px",
+    "--md-sys-typescale-label-large-tracking": "0px",
+    "--md-sys-typescale-label-medium-font": "Google Sans Text",
+    "--md-sys-typescale-label-medium-weight": "500",
+    "--md-sys-typescale-label-medium-size": "12px",
+    "--md-sys-typescale-label-medium-line-height": "16px",
+    "--md-sys-typescale-label-medium-tracking": "0.1px",
+    "--md-sys-typescale-label-small-font": "Google Sans Text",
+    "--md-sys-typescale-label-small-weight": "500",
+    "--md-sys-typescale-label-small-size": "11px",
+    "--md-sys-typescale-label-small-line-height": "16px",
+    "--md-sys-typescale-label-small-tracking": "0.1px",
+    "--md-sys-typescale-title-large-font": "Google Sans",
+    "--md-sys-typescale-title-large-weight": "400",
+    "--md-sys-typescale-title-large-size": "22px",
+    "--md-sys-typescale-title-large-line-height": "28px",
+    "--md-sys-typescale-title-large-tracking": "0px",
+    "--md-sys-typescale-title-medium-font": "Google Sans Text",
+    "--md-sys-typescale-title-medium-weight": "500",
+    "--md-sys-typescale-title-medium-size": "16px",
+    "--md-sys-typescale-title-medium-line-height": "24px",
+    "--md-sys-typescale-title-medium-tracking": "0px",
+    "--md-sys-typescale-title-small-font": "Google Sans Text",
+    "--md-sys-typescale-title-small-weight": "500",
+    "--md-sys-typescale-title-small-size": "14px",
+    "--md-sys-typescale-title-small-line-height": "20px",
+    "--md-sys-typescale-title-small-tracking": "0px",
+    "--md-sys-color-primary": "var(--md-sys-color-primary-light)",
+    "--md-sys-color-on-primary": "var(--md-sys-color-on-primary-light)",
+    "--md-sys-color-primary-container": "var(--md-sys-color-primary-container-light)",
+    "--md-sys-color-on-primary-container": "var(--md-sys-color-on-primary-container-light)",
+    "--md-sys-color-primary-fixed": "var(--md-sys-color-primary-fixed-light)",
+    "--md-sys-color-on-primary-fixed": "var(--md-sys-color-on-primary-fixed-light)",
+    "--md-sys-color-primary-fixed-dim": "var(--md-sys-color-primary-fixed-dim-light)",
+    "--md-sys-color-on-primary-fixed-variant": "var(--md-sys-color-on-primary-fixed-variant-light)",
+    "--md-sys-color-secondary": "var(--md-sys-color-secondary-light)",
+    "--md-sys-color-on-secondary": "var(--md-sys-color-on-secondary-light)",
+    "--md-sys-color-secondary-container": "var(--md-sys-color-secondary-container-light)",
+    "--md-sys-color-on-secondary-container": "var(--md-sys-color-on-secondary-container-light)",
+    "--md-sys-color-secondary-fixed": "var(--md-sys-color-secondary-fixed-light)",
+    "--md-sys-color-on-secondary-fixed": "var(--md-sys-color-on-secondary-fixed-light)",
+    "--md-sys-color-secondary-fixed-dim": "var(--md-sys-color-secondary-fixed-dim-light)",
+    "--md-sys-color-on-secondary-fixed-variant": "var(--md-sys-color-on-secondary-fixed-variant-light)",
+    "--md-sys-color-tertiary": "var(--md-sys-color-tertiary-light)",
+    "--md-sys-color-on-tertiary": "var(--md-sys-color-on-tertiary-light)",
+    "--md-sys-color-tertiary-container": "var(--md-sys-color-tertiary-container-light)",
+    "--md-sys-color-on-tertiary-container": "var(--md-sys-color-on-tertiary-container-light)",
+    "--md-sys-color-tertiary-fixed": "var(--md-sys-color-tertiary-fixed-light)",
+    "--md-sys-color-on-tertiary-fixed": "var(--md-sys-color-on-tertiary-fixed-light)",
+    "--md-sys-color-tertiary-fixed-dim": "var(--md-sys-color-tertiary-fixed-dim-light)",
+    "--md-sys-color-on-tertiary-fixed-variant": "var(--md-sys-color-on-tertiary-fixed-variant-light)",
+    "--md-sys-color-error": "var(--md-sys-color-error-light)",
+    "--md-sys-color-on-error": "var(--md-sys-color-on-error-light)",
+    "--md-sys-color-error-container": "var(--md-sys-color-error-container-light)",
+    "--md-sys-color-on-error-container": "var(--md-sys-color-on-error-container-light)",
+    "--md-sys-color-outline": "var(--md-sys-color-outline-light)",
+    "--md-sys-color-background": "var(--md-sys-color-background-light)",
+    "--md-sys-color-on-background": "var(--md-sys-color-on-background-light)",
+    "--md-sys-color-surface": "var(--md-sys-color-surface-light)",
+    "--md-sys-color-on-surface": "var(--md-sys-color-on-surface-light)",
+    "--md-sys-color-surface-variant": "var(--md-sys-color-surface-variant-light)",
+    "--md-sys-color-on-surface-variant": "var(--md-sys-color-on-surface-variant-light)",
+    "--md-sys-color-inverse-surface": "var(--md-sys-color-inverse-surface-light)",
+    "--md-sys-color-inverse-on-surface": "var(--md-sys-color-inverse-on-surface-light)",
+    "--md-sys-color-inverse-primary": "var(--md-sys-color-inverse-primary-light)",
+    "--md-sys-color-shadow": "var(--md-sys-color-shadow-light)",
+    "--md-sys-color-surface-tint": "var(--md-sys-color-surface-tint-light)",
+    "--md-sys-color-outline-variant": "var(--md-sys-color-outline-variant-light)",
+    "--md-sys-color-scrim": "var(--md-sys-color-scrim-light)",
+    "--md-sys-color-surface-container-highest": "var(--md-sys-color-surface-container-highest-light)",
+    "--md-sys-color-surface-container-high": "var(--md-sys-color-surface-container-high-light)",
+    "--md-sys-color-surface-container": "var(--md-sys-color-surface-container-light)",
+    "--md-sys-color-surface-container-low": "var(--md-sys-color-surface-container-low-light)",
+    "--md-sys-color-surface-container-lowest": "var(--md-sys-color-surface-container-lowest-light)",
+    "--md-sys-color-surface-bright": "var(--md-sys-color-surface-bright-light)",
+    "--md-sys-color-surface-dim": "var(--md-sys-color-surface-dim-light)",
+    "--md-focus-ring-color": "#1a73e8"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "marketing https://www.gstatic.com/marketing-cms/reviewed-scripts/prod/gwg-us-1.2.12-92bff70/styles/default/All.min.css",
+   "party": "first",
+   "selector": ".glue-mwc3-checkbox",
+   "context": [],
+   "properties": {
+    "--md-checkbox-outline-color": "#5f6368"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "marketing https://www.gstatic.com/marketing-cms/reviewed-scripts/prod/gwg-us-1.2.12-92bff70/styles/default/All.min.css",
+   "party": "first",
+   "selector": ".glue-mwc3-radio",
+   "context": [],
+   "properties": {
+    "--md-radio-icon-color": "#5f6368"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "marketing https://www.gstatic.com/marketing-cms/reviewed-scripts/prod/gwg-us-1.2.12-92bff70/styles/default/All.min.css",
+   "party": "first",
+   "selector": ".glue-mwc3-switch",
+   "context": [],
+   "properties": {
+    "--md-switch-track-color": "#f1f3f4"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "marketing https://www.gstatic.com/marketing-cms/reviewed-scripts/prod/gwg-us-1.2.12-92bff70/styles/default/All.min.css",
+   "party": "first",
+   "selector": ".glue-mwc3-textfield",
+   "context": [],
+   "properties": {
+    "--md-filled-text-field-container-color": "#f8f9fa",
+    "--md-filled-text-field-focus-label-text-color": "#174ea6",
+    "--md-filled-text-field-error-focus-label-text-color": "#c5221f",
+    "--md-outlined-text-field-outline-color": "#dadce0"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "marketing https://www.gstatic.com/marketing-cms/reviewed-scripts/prod/gwg-us-1.2.12-92bff70/styles/default/All.min.css",
+   "party": "first",
+   "selector": ".glue-mwc3-select",
+   "context": [],
+   "properties": {
+    "--md-filled-select-text-field-container-color": "#f8f9fa",
+    "--md-filled-select-text-field-input-text-color": "#3c4043",
+    "--md-filled-select-text-field-focus-label-text-color": "#174ea6",
+    "--md-filled-select-text-field-error-focus-label-text-color": "#c5221f",
+    "--md-filled-select-text-field-supporting-text-color": "#5f6368",
+    "--md-outlined-select-text-field-outline-color": "#dadce0",
+    "--md-outlined-select-text-field-input-text-color": "#3c4043",
+    "--md-outlined-select-text-field-supporting-text-color": "#5f6368"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "marketing https://www.gstatic.com/marketing-cms/reviewed-scripts/prod/gwg-us-1.2.12-92bff70/styles/default/All.min.css",
+   "party": "first",
+   "selector": ".glue-mwc3-select md-filled-select md-divider, .glue-mwc3-select md-outlined-select md-divider",
+   "context": [],
+   "properties": {
+    "--md-divider-color": "#dadce0"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "marketing https://www.gstatic.com/marketing-cms/reviewed-scripts/prod/gwg-us-1.2.12-92bff70/styles/default/All.min.css",
+   "party": "first",
+   "selector": ".glue-mwc3-select md-filled-select::part(menu), .glue-mwc3-select md-outlined-select::part(menu)",
+   "context": [],
+   "properties": {
+    "--md-menu-container-color": "#fff",
+    "--md-menu-item-selected-container-color": "#d2e3fc"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "marketing https://www.gstatic.com/marketing-cms/reviewed-scripts/prod/gwg-us-1.2.12-92bff70/styles/default/All.min.css",
+   "party": "first",
+   "selector": ".bsp-search .glue-form",
+   "context": [],
+   "properties": {
+    "--md-outlined-text-field-focus-outline-color": "transparent",
+    "--md-outlined-text-field-hover-outline-color": "transparent",
+    "--md-outlined-text-field-outline-color": "transparent",
+    "--md-outlined-text-field-outline-width": "0"
+   },
+   "bin": "vendor"
+  },
+  {
+   "file": "marketing https://www.gstatic.com/marketing-cms/reviewed-scripts/prod/gwg-us-1.2.12-92bff70/styles/default/All.min.css",
+   "party": "first",
+   "selector": ".bsp-search .glue-form md-outlined-text-field",
+   "context": [],
+   "properties": {
+    "--md-outlined-text-field-container-padding-vertical": "0",
+    "--md-outlined-text-field-input-text-size": "16px",
+    "--md-outlined-text-field-input-text-line-height": "24px"
+   },
+   "bin": "vendor"
+  }
+ ],
+ "utility": [],
+ "tailwind": [],
+ "external": [],
+ "fonts": [
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+600-6FF, U+750-77F, U+870-891, U+897-8E1, U+8E3-8FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC7, U+10EC9-10EEE, U+10EF0-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+308, U+530-58F, U+2010, U+2024, U+25CC, U+FB13-FB17"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+980-9FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA, U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+20B9, U+25CC, U+A8F1, U+11DF0-11DF1"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2C7, U+2D8-2D9, U+2DB, U+307, U+1400-167F, U+18B0-18F5, U+25CC, U+11AB0-11ABF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+30E, U+1200-1399, U+2D80-2DDE, U+AB01-AB2E, U+1E7E0-1E7E6, U+1E7E8-1E7EB, U+1E7ED-1E7EE, U+1E7F0-1E7FE"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+589, U+10A0-10FF, U+1C90-1CBA, U+1CBD-1CBF, U+205A, U+2D00-2D2F, U+2E31"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+A80-AFF, U+200C-200D, U+20B9, U+25CC, U+A830-A839"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+A01-A76, U+200C-200D, U+20B9, U+25CC, U+262C, U+A830-A839"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+307-308, U+590-5FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B83, U+C80-CF3, U+1CD0, U+1CD2-1CD3, U+1CDA, U+1CF2, U+1CF4, U+200C-200D, U+20B9, U+25CC, U+A830-A835"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1780-17FF, U+19E0-19FF, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+E81-EDF, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+307, U+323, U+951-952, U+964-965, U+B83, U+D00-D7F, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC, U+A830-A832"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B01-B77, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+964-965, U+D81-DF4, U+1CF2, U+200C-200D, U+25CC, U+111E1-111F4"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1-C, U+E-1F, U+7F-9F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AE, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F8D0-1F8D8, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FAC6, U+1FAC8, U+1FACC-1FADD, U+1FADF-1FAEB, U+1FAEF-1FAFA, U+1FB00-1FBFF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+964-965, U+B82-BFA, U+200C-200D, U+20B9, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B83, U+C00-C7F, U+1CD5-1CD6, U+1CD8, U+1CDA, U+1CF2, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2D7, U+303, U+331, U+E01-E5B, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+600-6FF, U+750-77F, U+870-891, U+897-8E1, U+8E3-8FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC7, U+10EC9-10EEE, U+10EF0-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+308, U+530-58F, U+2010, U+2024, U+25CC, U+FB13-FB17"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+980-9FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA, U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+20B9, U+25CC, U+A8F1, U+11DF0-11DF1"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2C7, U+2D8-2D9, U+2DB, U+307, U+1400-167F, U+18B0-18F5, U+25CC, U+11AB0-11ABF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+30E, U+1200-1399, U+2D80-2DDE, U+AB01-AB2E, U+1E7E0-1E7E6, U+1E7E8-1E7EB, U+1E7ED-1E7EE, U+1E7F0-1E7FE"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+589, U+10A0-10FF, U+1C90-1CBA, U+1CBD-1CBF, U+205A, U+2D00-2D2F, U+2E31"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+A80-AFF, U+200C-200D, U+20B9, U+25CC, U+A830-A839"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+A01-A76, U+200C-200D, U+20B9, U+25CC, U+262C, U+A830-A839"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+307-308, U+590-5FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B83, U+C80-CF3, U+1CD0, U+1CD2-1CD3, U+1CDA, U+1CF2, U+1CF4, U+200C-200D, U+20B9, U+25CC, U+A830-A835"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1780-17FF, U+19E0-19FF, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+E81-EDF, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+307, U+323, U+951-952, U+964-965, U+B83, U+D00-D7F, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC, U+A830-A832"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B01-B77, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+964-965, U+D81-DF4, U+1CF2, U+200C-200D, U+25CC, U+111E1-111F4"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1-C, U+E-1F, U+7F-9F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AE, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F8D0-1F8D8, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FAC6, U+1FAC8, U+1FACC-1FADD, U+1FADF-1FAEB, U+1FAEF-1FAFA, U+1FB00-1FBFF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+964-965, U+B82-BFA, U+200C-200D, U+20B9, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B83, U+C00-C7F, U+1CD5-1CD6, U+1CD8, U+1CDA, U+1CF2, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2D7, U+303, U+331, U+E01-E5B, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+600-6FF, U+750-77F, U+870-891, U+897-8E1, U+8E3-8FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC7, U+10EC9-10EEE, U+10EF0-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+308, U+530-58F, U+2010, U+2024, U+25CC, U+FB13-FB17"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+980-9FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA, U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+20B9, U+25CC, U+A8F1, U+11DF0-11DF1"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2C7, U+2D8-2D9, U+2DB, U+307, U+1400-167F, U+18B0-18F5, U+25CC, U+11AB0-11ABF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+30E, U+1200-1399, U+2D80-2DDE, U+AB01-AB2E, U+1E7E0-1E7E6, U+1E7E8-1E7EB, U+1E7ED-1E7EE, U+1E7F0-1E7FE"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+589, U+10A0-10FF, U+1C90-1CBA, U+1CBD-1CBF, U+205A, U+2D00-2D2F, U+2E31"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+A80-AFF, U+200C-200D, U+20B9, U+25CC, U+A830-A839"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+A01-A76, U+200C-200D, U+20B9, U+25CC, U+262C, U+A830-A839"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+307-308, U+590-5FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B83, U+C80-CF3, U+1CD0, U+1CD2-1CD3, U+1CDA, U+1CF2, U+1CF4, U+200C-200D, U+20B9, U+25CC, U+A830-A835"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1780-17FF, U+19E0-19FF, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+E81-EDF, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+307, U+323, U+951-952, U+964-965, U+B83, U+D00-D7F, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC, U+A830-A832"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B01-B77, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+964-965, U+D81-DF4, U+1CF2, U+200C-200D, U+25CC, U+111E1-111F4"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1-C, U+E-1F, U+7F-9F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AE, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F8D0-1F8D8, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FAC6, U+1FAC8, U+1FACC-1FADD, U+1FADF-1FAEB, U+1FAEF-1FAFA, U+1FB00-1FBFF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+964-965, U+B82-BFA, U+200C-200D, U+20B9, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B83, U+C00-C7F, U+1CD5-1CD6, U+1CD8, U+1CDA, U+1CF2, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2D7, U+303, U+331, U+E01-E5B, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Display\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Display\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Display\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Display\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Display\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Display\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Display\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Display\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Display\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Display\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Display\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Display\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Display\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Display\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Display\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+308, U+530-58F, U+2010, U+2024, U+25CC, U+FB13-FB17"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+980-9FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA, U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+20B9, U+25CC, U+A8F1, U+11DF0-11DF1"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2C7, U+2D8-2D9, U+2DB, U+307, U+1400-167F, U+18B0-18F5, U+25CC, U+11AB0-11ABF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+30E, U+1200-1399, U+2D80-2DDE, U+AB01-AB2E, U+1E7E0-1E7E6, U+1E7E8-1E7EB, U+1E7ED-1E7EE, U+1E7F0-1E7FE"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+589, U+10A0-10FF, U+1C90-1CBA, U+1CBD-1CBF, U+205A, U+2D00-2D2F, U+2E31"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+A80-AFF, U+200C-200D, U+20B9, U+25CC, U+A830-A839"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+A01-A76, U+200C-200D, U+20B9, U+25CC, U+262C, U+A830-A839"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+307-308, U+590-5FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B83, U+C80-CF3, U+1CD0, U+1CD2-1CD3, U+1CDA, U+1CF2, U+1CF4, U+200C-200D, U+20B9, U+25CC, U+A830-A835"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1780-17FF, U+19E0-19FF, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+E81-EDF, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+307, U+323, U+951-952, U+964-965, U+B83, U+D00-D7F, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC, U+A830-A832"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B01-B77, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+964-965, U+D81-DF4, U+1CF2, U+200C-200D, U+25CC, U+111E1-111F4"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1-C, U+E-1F, U+7F-9F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AE, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F8D0-1F8D8, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FAC6, U+1FAC8, U+1FACC-1FADD, U+1FADF-1FAEB, U+1FAEF-1FAFA, U+1FB00-1FBFF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+964-965, U+B82-BFA, U+200C-200D, U+20B9, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B83, U+C00-C7F, U+1CD5-1CD6, U+1CD8, U+1CDA, U+1CF2, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2D7, U+303, U+331, U+E01-E5B, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+308, U+530-58F, U+2010, U+2024, U+25CC, U+FB13-FB17"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+980-9FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA, U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+20B9, U+25CC, U+A8F1, U+11DF0-11DF1"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2C7, U+2D8-2D9, U+2DB, U+307, U+1400-167F, U+18B0-18F5, U+25CC, U+11AB0-11ABF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+30E, U+1200-1399, U+2D80-2DDE, U+AB01-AB2E, U+1E7E0-1E7E6, U+1E7E8-1E7EB, U+1E7ED-1E7EE, U+1E7F0-1E7FE"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+589, U+10A0-10FF, U+1C90-1CBA, U+1CBD-1CBF, U+205A, U+2D00-2D2F, U+2E31"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+A80-AFF, U+200C-200D, U+20B9, U+25CC, U+A830-A839"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+A01-A76, U+200C-200D, U+20B9, U+25CC, U+262C, U+A830-A839"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+307-308, U+590-5FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B83, U+C80-CF3, U+1CD0, U+1CD2-1CD3, U+1CDA, U+1CF2, U+1CF4, U+200C-200D, U+20B9, U+25CC, U+A830-A835"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1780-17FF, U+19E0-19FF, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+E81-EDF, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+307, U+323, U+951-952, U+964-965, U+B83, U+D00-D7F, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC, U+A830-A832"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B01-B77, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+964-965, U+D81-DF4, U+1CF2, U+200C-200D, U+25CC, U+111E1-111F4"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1-C, U+E-1F, U+7F-9F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AE, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F8D0-1F8D8, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FAC6, U+1FAC8, U+1FACC-1FADD, U+1FADF-1FAEB, U+1FAEF-1FAFA, U+1FB00-1FBFF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+964-965, U+B82-BFA, U+200C-200D, U+20B9, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B83, U+C00-C7F, U+1CD5-1CD6, U+1CD8, U+1CDA, U+1CF2, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2D7, U+303, U+331, U+E01-E5B, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+308, U+530-58F, U+2010, U+2024, U+25CC, U+FB13-FB17"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+980-9FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA, U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+20B9, U+25CC, U+A8F1, U+11DF0-11DF1"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2C7, U+2D8-2D9, U+2DB, U+307, U+1400-167F, U+18B0-18F5, U+25CC, U+11AB0-11ABF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+30E, U+1200-1399, U+2D80-2DDE, U+AB01-AB2E, U+1E7E0-1E7E6, U+1E7E8-1E7EB, U+1E7ED-1E7EE, U+1E7F0-1E7FE"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+589, U+10A0-10FF, U+1C90-1CBA, U+1CBD-1CBF, U+205A, U+2D00-2D2F, U+2E31"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+A80-AFF, U+200C-200D, U+20B9, U+25CC, U+A830-A839"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+A01-A76, U+200C-200D, U+20B9, U+25CC, U+262C, U+A830-A839"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+307-308, U+590-5FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B83, U+C80-CF3, U+1CD0, U+1CD2-1CD3, U+1CDA, U+1CF2, U+1CF4, U+200C-200D, U+20B9, U+25CC, U+A830-A835"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1780-17FF, U+19E0-19FF, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+E81-EDF, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+307, U+323, U+951-952, U+964-965, U+B83, U+D00-D7F, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC, U+A830-A832"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B01-B77, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+964-965, U+D81-DF4, U+1CF2, U+200C-200D, U+25CC, U+111E1-111F4"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1-C, U+E-1F, U+7F-9F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AE, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F8D0-1F8D8, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FAC6, U+1FAC8, U+1FACC-1FADD, U+1FADF-1FAEB, U+1FAEF-1FAFA, U+1FB00-1FBFF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+964-965, U+B82-BFA, U+200C-200D, U+20B9, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B83, U+C00-C7F, U+1CD5-1CD6, U+1CD8, U+1CDA, U+1CF2, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2D7, U+303, U+331, U+E01-E5B, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "italic",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+308, U+530-58F, U+2010, U+2024, U+25CC, U+FB13-FB17"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+980-9FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA, U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+20B9, U+25CC, U+A8F1, U+11DF0-11DF1"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2C7, U+2D8-2D9, U+2DB, U+307, U+1400-167F, U+18B0-18F5, U+25CC, U+11AB0-11ABF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+30E, U+1200-1399, U+2D80-2DDE, U+AB01-AB2E, U+1E7E0-1E7E6, U+1E7E8-1E7EB, U+1E7ED-1E7EE, U+1E7F0-1E7FE"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+589, U+10A0-10FF, U+1C90-1CBA, U+1CBD-1CBF, U+205A, U+2D00-2D2F, U+2E31"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+A80-AFF, U+200C-200D, U+20B9, U+25CC, U+A830-A839"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+A01-A76, U+200C-200D, U+20B9, U+25CC, U+262C, U+A830-A839"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+307-308, U+590-5FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B83, U+C80-CF3, U+1CD0, U+1CD2-1CD3, U+1CDA, U+1CF2, U+1CF4, U+200C-200D, U+20B9, U+25CC, U+A830-A835"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1780-17FF, U+19E0-19FF, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+E81-EDF, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+307, U+323, U+951-952, U+964-965, U+B83, U+D00-D7F, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC, U+A830-A832"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B01-B77, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+964-965, U+D81-DF4, U+1CF2, U+200C-200D, U+25CC, U+111E1-111F4"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1-C, U+E-1F, U+7F-9F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AE, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F8D0-1F8D8, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FAC6, U+1FAC8, U+1FACC-1FADD, U+1FADF-1FAEB, U+1FAEF-1FAFA, U+1FB00-1FBFF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+964-965, U+B82-BFA, U+200C-200D, U+20B9, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B83, U+C00-C7F, U+1CD5-1CD6, U+1CD8, U+1CDA, U+1CF2, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2D7, U+303, U+331, U+E01-E5B, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+308, U+530-58F, U+2010, U+2024, U+25CC, U+FB13-FB17"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+980-9FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA, U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+20B9, U+25CC, U+A8F1, U+11DF0-11DF1"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2C7, U+2D8-2D9, U+2DB, U+307, U+1400-167F, U+18B0-18F5, U+25CC, U+11AB0-11ABF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+30E, U+1200-1399, U+2D80-2DDE, U+AB01-AB2E, U+1E7E0-1E7E6, U+1E7E8-1E7EB, U+1E7ED-1E7EE, U+1E7F0-1E7FE"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+589, U+10A0-10FF, U+1C90-1CBA, U+1CBD-1CBF, U+205A, U+2D00-2D2F, U+2E31"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+A80-AFF, U+200C-200D, U+20B9, U+25CC, U+A830-A839"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+A01-A76, U+200C-200D, U+20B9, U+25CC, U+262C, U+A830-A839"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+307-308, U+590-5FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B83, U+C80-CF3, U+1CD0, U+1CD2-1CD3, U+1CDA, U+1CF2, U+1CF4, U+200C-200D, U+20B9, U+25CC, U+A830-A835"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1780-17FF, U+19E0-19FF, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+E81-EDF, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+307, U+323, U+951-952, U+964-965, U+B83, U+D00-D7F, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC, U+A830-A832"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B01-B77, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+964-965, U+D81-DF4, U+1CF2, U+200C-200D, U+25CC, U+111E1-111F4"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1-C, U+E-1F, U+7F-9F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AE, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F8D0-1F8D8, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FAC6, U+1FAC8, U+1FACC-1FADD, U+1FADF-1FAEB, U+1FAEF-1FAFA, U+1FB00-1FBFF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+964-965, U+B82-BFA, U+200C-200D, U+20B9, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B83, U+C00-C7F, U+1CD5-1CD6, U+1CD8, U+1CDA, U+1CF2, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2D7, U+303, U+331, U+E01-E5B, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "500",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+308, U+530-58F, U+2010, U+2024, U+25CC, U+FB13-FB17"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+980-9FE, U+1CD0, U+1CD2, U+1CD5-1CD6, U+1CD8, U+1CE1, U+1CEA, U+1CED, U+1CF2, U+1CF5-1CF7, U+200C-200D, U+20B9, U+25CC, U+A8F1, U+11DF0-11DF1"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2C7, U+2D8-2D9, U+2DB, U+307, U+1400-167F, U+18B0-18F5, U+25CC, U+11AB0-11ABF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+900-97F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+30E, U+1200-1399, U+2D80-2DDE, U+AB01-AB2E, U+1E7E0-1E7E6, U+1E7E8-1E7EB, U+1E7ED-1E7EE, U+1E7F0-1E7FE"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+589, U+10A0-10FF, U+1C90-1CBA, U+1CBD-1CBF, U+205A, U+2D00-2D2F, U+2E31"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1F00-1FFF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+A80-AFF, U+200C-200D, U+20B9, U+25CC, U+A830-A839"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+A01-A76, U+200C-200D, U+20B9, U+25CC, U+262C, U+A830-A839"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+307-308, U+590-5FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B83, U+C80-CF3, U+1CD0, U+1CD2-1CD3, U+1CDA, U+1CF2, U+1CF4, U+200C-200D, U+20B9, U+25CC, U+A830-A835"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1780-17FF, U+19E0-19FF, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+E81-EDF, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+307, U+323, U+951-952, U+964-965, U+B83, U+D00-D7F, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC, U+A830-A832"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B01-B77, U+1CDA, U+1CF2, U+200C-200D, U+20B9, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+964-965, U+D81-DF4, U+1CF2, U+200C-200D, U+25CC, U+111E1-111F4"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1-C, U+E-1F, U+7F-9F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AE, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F8D0-1F8D8, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FAC6, U+1FAC8, U+1FACC-1FADD, U+1FADF-1FAEB, U+1FAEF-1FAFA, U+1FB00-1FBFF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+964-965, U+B82-BFA, U+200C-200D, U+20B9, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+951-952, U+964-965, U+B83, U+C00-C7F, U+1CD5-1CD6, U+1CD8, U+1CDA, U+1CF2, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2D7, U+303, U+331, U+E01-E5B, U+200C-200D, U+25CC"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Google Sans Text\"",
+   "font-style": "normal",
+   "font-weight": "700",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Product Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Product Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Product Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css",
+   "party": "first",
+   "font-family": "\"Product Sans\"",
+   "font-style": "normal",
+   "font-weight": "400",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css2",
+   "party": "first",
+   "font-family": "\"Google Sans Flex\"",
+   "font-style": "normal",
+   "font-weight": "100 1000",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2C7, U+2D8-2D9, U+2DB, U+307, U+1400-167F, U+18B0-18F5, U+25CC, U+11AB0-11ABF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css2",
+   "party": "first",
+   "font-family": "\"Google Sans Flex\"",
+   "font-style": "normal",
+   "font-weight": "100 1000",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+300-302, U+304, U+30B-30C, U+323-324, U+330-331, U+13A0-13FF, U+AB70-ABBF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css2",
+   "party": "first",
+   "font-family": "\"Google Sans Flex\"",
+   "font-style": "normal",
+   "font-weight": "100 1000",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+302-303, U+305, U+307-308, U+310, U+312, U+315, U+31A, U+326-327, U+32C, U+32F-330, U+332-333, U+338, U+33A, U+346, U+34D, U+391-3A1, U+3A3-3A9, U+3B1-3C9, U+3D1, U+3D5-3D6, U+3F0-3F1, U+3F4-3F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-209F, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE00-1EEFF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css2",
+   "party": "first",
+   "font-family": "\"Google Sans Flex\"",
+   "font-style": "normal",
+   "font-weight": "100 1000",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2003, U+3000, U+3002, U+4E00, U+FE12, U+16FE1, U+1B170-1B2FB"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css2",
+   "party": "first",
+   "font-family": "\"Google Sans Flex\"",
+   "font-style": "normal",
+   "font-weight": "100 1000",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+1-C, U+E-1F, U+7F-9F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+2800-28FF, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B00-2BFF, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F000-1F0FF, U+1F100-1F1AE, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F700-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F8D0-1F8D8, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FAC6, U+1FAC8, U+1FACC-1FADD, U+1FADF-1FAEB, U+1FAEF-1FAFA, U+1FB00-1FBFF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css2",
+   "party": "first",
+   "font-family": "\"Google Sans Flex\"",
+   "font-style": "normal",
+   "font-weight": "100 1000",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+303-304, U+307-308, U+30A, U+320, U+323-325, U+32D-32E, U+330-331, U+60C, U+61B-61C, U+61F, U+621, U+640, U+64B-655, U+660-66C, U+670, U+700-74F, U+860-86A, U+1DF8, U+1DFA, U+200C-200F, U+25CC, U+2670-2671"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css2",
+   "party": "first",
+   "font-family": "\"Google Sans Flex\"",
+   "font-style": "normal",
+   "font-weight": "100 1000",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+2C7, U+301-302, U+304, U+306-309, U+323, U+331, U+200C-200D, U+202E, U+25CC, U+2D30-2D7F"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css2",
+   "party": "first",
+   "font-family": "\"Google Sans Flex\"",
+   "font-style": "normal",
+   "font-weight": "100 1000",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css2",
+   "party": "first",
+   "font-family": "\"Google Sans Flex\"",
+   "font-style": "normal",
+   "font-weight": "100 1000",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF"
+  },
+  {
+   "file": "marketing https://fonts.googleapis.com/css2",
+   "party": "first",
+   "font-family": "\"Google Sans Flex\"",
+   "font-style": "normal",
+   "font-weight": "100 1000",
+   "font-stretch": "100%",
+   "font-display": "swap",
+   "src": "url(…) format(\"woff2\")",
+   "unicode-range": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+  }
+ ],
+ "resolved": {
+  "light": {
+   "--glue-blue-100": {
+    "raw": "#d2e3fc",
+    "kind": "color",
+    "value": "#d2e3fc"
+   },
+   "--glue-blue-200": {
+    "raw": "#aecbfa",
+    "kind": "color",
+    "value": "#aecbfa"
+   },
+   "--glue-blue-300": {
+    "raw": "#8ab4f8",
+    "kind": "color",
+    "value": "#8ab4f8"
+   },
+   "--glue-blue-400": {
+    "raw": "#669df6",
+    "kind": "color",
+    "value": "#669df6"
+   },
+   "--glue-blue-50": {
+    "raw": "#e8f0fe",
+    "kind": "color",
+    "value": "#e8f0fe"
+   },
+   "--glue-blue-500": {
+    "raw": "#4285f4",
+    "kind": "color",
+    "value": "#4285f4"
+   },
+   "--glue-blue-600": {
+    "raw": "#1a73e8",
+    "kind": "color",
+    "value": "#1a73e8"
+   },
+   "--glue-blue-700": {
+    "raw": "#1967d2",
+    "kind": "color",
+    "value": "#1967d2"
+   },
+   "--glue-blue-800": {
+    "raw": "#185abc",
+    "kind": "color",
+    "value": "#185abc"
+   },
+   "--glue-blue-900": {
+    "raw": "#174ea6",
+    "kind": "color",
+    "value": "#174ea6"
+   },
+   "--glue-green-100": {
+    "raw": "#ceead6",
+    "kind": "color",
+    "value": "#ceead6"
+   },
+   "--glue-green-200": {
+    "raw": "#a8dab5",
+    "kind": "color",
+    "value": "#a8dab5"
+   },
+   "--glue-green-300": {
+    "raw": "#81c995",
+    "kind": "color",
+    "value": "#81c995"
+   },
+   "--glue-green-400": {
+    "raw": "#5bb974",
+    "kind": "color",
+    "value": "#5bb974"
+   },
+   "--glue-green-50": {
+    "raw": "#e6f4ea",
+    "kind": "color",
+    "value": "#e6f4ea"
+   },
+   "--glue-green-500": {
+    "raw": "#34a853",
+    "kind": "color",
+    "value": "#34a853"
+   },
+   "--glue-green-600": {
+    "raw": "#1e8e3e",
+    "kind": "color",
+    "value": "#1e8e3e"
+   },
+   "--glue-green-700": {
+    "raw": "#188038",
+    "kind": "color",
+    "value": "#188038"
+   },
+   "--glue-green-800": {
+    "raw": "#137333",
+    "kind": "color",
+    "value": "#137333"
+   },
+   "--glue-green-900": {
+    "raw": "#0d652d",
+    "kind": "color",
+    "value": "#0d652d"
+   },
+   "--glue-grey-0": {
+    "raw": "#fff",
+    "kind": "color",
+    "value": "#ffffff"
+   },
+   "--glue-grey-100": {
+    "raw": "#f1f3f4",
+    "kind": "color",
+    "value": "#f1f3f4"
+   },
+   "--glue-grey-200": {
+    "raw": "#e8eaed",
+    "kind": "color",
+    "value": "#e8eaed"
+   },
+   "--glue-grey-25": {
+    "raw": "#f1f1f1",
+    "kind": "color",
+    "value": "#f1f1f1"
+   },
+   "--glue-grey-300": {
+    "raw": "#dadce0",
+    "kind": "color",
+    "value": "#dadce0"
+   },
+   "--glue-grey-400": {
+    "raw": "#bdc1c6",
+    "kind": "color",
+    "value": "#bdc1c6"
+   },
+   "--glue-grey-50": {
+    "raw": "#f8f9fa",
+    "kind": "color",
+    "value": "#f8f9fa"
+   },
+   "--glue-grey-500": {
+    "raw": "#9aa0a6",
+    "kind": "color",
+    "value": "#9aa0a6"
+   },
+   "--glue-grey-600": {
+    "raw": "#80868b",
+    "kind": "color",
+    "value": "#80868b"
+   },
+   "--glue-grey-700": {
+    "raw": "#5f6368",
+    "kind": "color",
+    "value": "#5f6368"
+   },
+   "--glue-grey-800": {
+    "raw": "#3c4043",
+    "kind": "color",
+    "value": "#3c4043"
+   },
+   "--glue-grey-900": {
+    "raw": "#202124",
+    "kind": "color",
+    "value": "#202124"
+   },
+   "--glue-purple-100": {
+    "raw": "#ea80fc",
+    "kind": "color",
+    "value": "#ea80fc"
+   },
+   "--glue-purple-900": {
+    "raw": "#681da8",
+    "kind": "color",
+    "value": "#681da8"
+   },
+   "--glue-red-100": {
+    "raw": "#fad2cf",
+    "kind": "color",
+    "value": "#fad2cf"
+   },
+   "--glue-red-200": {
+    "raw": "#f6aea9",
+    "kind": "color",
+    "value": "#f6aea9"
+   },
+   "--glue-red-300": {
+    "raw": "#f28b82",
+    "kind": "color",
+    "value": "#f28b82"
+   },
+   "--glue-red-400": {
+    "raw": "#ee675c",
+    "kind": "color",
+    "value": "#ee675c"
+   },
+   "--glue-red-50": {
+    "raw": "#fce8e6",
+    "kind": "color",
+    "value": "#fce8e6"
+   },
+   "--glue-red-500": {
+    "raw": "#ea4335",
+    "kind": "color",
+    "value": "#ea4335"
+   },
+   "--glue-red-600": {
+    "raw": "#d93025",
+    "kind": "color",
+    "value": "#d93025"
+   },
+   "--glue-red-700": {
+    "raw": "#c5221f",
+    "kind": "color",
+    "value": "#c5221f"
+   },
+   "--glue-red-800": {
+    "raw": "#b31412",
+    "kind": "color",
+    "value": "#b31412"
+   },
+   "--glue-red-900": {
+    "raw": "#a50e0e",
+    "kind": "color",
+    "value": "#a50e0e"
+   },
+   "--glue-yellow-100": {
+    "raw": "#feefc3",
+    "kind": "color",
+    "value": "#feefc3"
+   },
+   "--glue-yellow-200": {
+    "raw": "#fde293",
+    "kind": "color",
+    "value": "#fde293"
+   },
+   "--glue-yellow-300": {
+    "raw": "#fdd663",
+    "kind": "color",
+    "value": "#fdd663"
+   },
+   "--glue-yellow-400": {
+    "raw": "#fcc934",
+    "kind": "color",
+    "value": "#fcc934"
+   },
+   "--glue-yellow-50": {
+    "raw": "#fef7e0",
+    "kind": "color",
+    "value": "#fef7e0"
+   },
+   "--glue-yellow-500": {
+    "raw": "#fbbc04",
+    "kind": "color",
+    "value": "#fbbc04"
+   },
+   "--glue-yellow-600": {
+    "raw": "#f9ab00",
+    "kind": "color",
+    "value": "#f9ab00"
+   },
+   "--glue-yellow-700": {
+    "raw": "#f29900",
+    "kind": "color",
+    "value": "#f29900"
+   },
+   "--glue-yellow-800": {
+    "raw": "#ea8600",
+    "kind": "color",
+    "value": "#ea8600"
+   },
+   "--glue-yellow-900": {
+    "raw": "#e37400",
+    "kind": "color",
+    "value": "#e37400"
+   }
+  }
+ }
+}

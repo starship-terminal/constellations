@@ -1,0 +1,194 @@
+{
+  "source": "Computed styles, 2026-11-19. Marketing controls from https://vivid.money/en-eu/ and https://vivid.money/en-eu/business/plans/?activeTab=companies. Login chrome from https://business.vivid.money/en/login after rejecting non-essential cookies. No email, phone number, card, or KYC value was typed. No form was submitted.",
+  "marketing": {
+    "body": {
+      "background": "rgb(255, 255, 255)",
+      "color": "rgb(51, 51, 51)",
+      "fontFamily": "Satoshi, -apple-system, system-ui, Roboto, Helvetica Neue, Arial, sans-serif",
+      "fontSize": "15px"
+    },
+    "header": {
+      "height": "80px",
+      "token": "--header-height-desktop"
+    },
+    "h1Home": {
+      "fontSize": "52px",
+      "lineHeight": "52px",
+      "fontWeight": "500",
+      "letterSpacing": "-1.04px",
+      "color": "rgb(51, 51, 51)",
+      "fontFamily": "Satoshi"
+    },
+    "heroParagraph": {
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "fontWeight": "400",
+      "color": "rgb(51, 51, 51)"
+    },
+    "navItem": {
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "24px",
+      "color": "rgb(51, 51, 51)"
+    },
+    "buttonPrimary": {
+      "background": "rgb(125, 51, 246)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "100px",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "24px",
+      "padding": "15px 23px",
+      "height": "56px",
+      "border": "1px solid transparent",
+      "hoverAndFocusBackground": "rgb(163, 114, 250)",
+      "selector": ".kk6taH:not(:disabled):focus, .kk6taH:not(:disabled):hover"
+    },
+    "buttonOutlineLogin": {
+      "background": "rgba(255, 255, 255, 0.2)",
+      "color": "rgb(125, 51, 246)",
+      "border": "1px solid rgb(125, 51, 246)",
+      "borderRadius": "100px",
+      "height": "48px",
+      "padding": "11px 23px",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "focusBackground": "rgb(244, 237, 255)"
+    },
+    "buttonSoft": {
+      "background": "rgb(244, 237, 255)",
+      "color": "rgb(125, 51, 246)",
+      "borderRadius": "100px",
+      "height": "56px",
+      "padding": "15px 23px"
+    },
+    "buttonWhite": {
+      "background": "rgb(255, 255, 255)",
+      "color": "rgb(51, 51, 51)",
+      "borderRadius": "100px",
+      "height": "48px",
+      "padding": "11px 23px",
+      "fontWeight": "500"
+    },
+    "promoBar": {
+      "background": "rgb(34, 34, 34)",
+      "height": "80px",
+      "token": "--color-black-skinhead"
+    },
+    "menuPanel": {
+      "background": "rgb(255, 255, 255)",
+      "borderRadius": "12px",
+      "boxShadow": "rgba(0, 0, 0, 0.08) 0px 8px 32px 0px",
+      "padding": "24px"
+    },
+    "planCard": {
+      "background": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(236, 238, 242)",
+      "borderRadius": "24px",
+      "padding": "24px"
+    },
+    "planCardFeatured": {
+      "background": "rgb(244, 237, 255)",
+      "border": "1px solid rgb(244, 237, 255)",
+      "borderRadius": "24px",
+      "padding": "24px"
+    },
+    "segmentTrack": {
+      "background": "rgb(245, 245, 244)",
+      "borderRadius": "50px",
+      "padding": "2px",
+      "height": "52px"
+    },
+    "segmentSelected": {
+      "background": "rgb(255, 255, 255)",
+      "borderRadius": "48px",
+      "padding": "12px 36px",
+      "height": "48px",
+      "fontWeight": "500"
+    },
+    "signupField": {
+      "background": "rgb(245, 245, 244)",
+      "border": "1px solid rgb(245, 245, 244)",
+      "borderRadius": "10px",
+      "height": "56px",
+      "width": "480px"
+    },
+    "signupSubmit": {
+      "background": "rgb(125, 51, 246)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "12px",
+      "height": "56px",
+      "fontWeight": "500",
+      "fontSize": "16px"
+    }
+  },
+  "login": {
+    "url": "https://business.vivid.money/en/login",
+    "title": "Log in to Vivid Business",
+    "bodyFont": "inter, inter Fallback, -apple-system, system-ui, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif",
+    "bodyBackground": "rgb(255, 255, 255)",
+    "bodyColor": "rgb(51, 51, 51)",
+    "heading": {
+      "text": "Welcome to Vivid Business",
+      "fontFamily": "satoshi",
+      "fontSize": "32px",
+      "lineHeight": "32px",
+      "fontWeight": "700",
+      "color": "rgb(51, 51, 51)"
+    },
+    "segmentTrack": {
+      "background": "rgb(240, 240, 239)",
+      "borderRadius": "10px",
+      "padding": "2px",
+      "height": "36px"
+    },
+    "segmentSelected": {
+      "background": "rgb(255, 255, 255)",
+      "borderRadius": "8px",
+      "height": "32px",
+      "ariaSelected": "true"
+    },
+    "field": {
+      "background": "rgb(255, 255, 255)",
+      "border": "1px solid rgb(236, 238, 242)",
+      "borderRadius": "8px",
+      "height": "58px",
+      "padding": "0 12px",
+      "inputFontSize": "14px",
+      "inputFont": "inter"
+    },
+    "continue": {
+      "background": "rgb(106, 38, 217)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "16px",
+      "height": "56px",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "padding": "0 16px"
+    },
+    "link": {
+      "color": "rgb(106, 38, 217)",
+      "fontSize": "14px"
+    },
+    "cookieAccept": {
+      "background": "rgb(106, 38, 217)",
+      "color": "rgb(255, 255, 255)",
+      "borderRadius": "100px",
+      "height": "48px",
+      "fontSize": "14px"
+    },
+    "cookieReject": {
+      "background": "rgb(240, 240, 239)",
+      "color": "rgb(51, 51, 51)",
+      "borderRadius": "100px",
+      "height": "48px"
+    },
+    "languageChipSelected": {
+      "background": "rgb(240, 240, 239)",
+      "color": "rgb(121, 121, 127)",
+      "borderRadius": "100px",
+      "height": "30px"
+    }
+  },
+  "viewportNote": "The T3 preview tab that supplied the first readings was 1169 by 731 CSS pixels at devicePixelRatio 2. Desktop screenshots were taken in headless Playwright at 1440 by 900, phone at 390 by 844, both at deviceScaleFactor 2, on public marketing URLs that loaded without a Cloudflare challenge."
+}

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Limitless style guide</title>
+<meta name="description" content="Limitless public-site tokens, rendered from tokens.json. One light theme.">
+<style>
+:root {
+  --color-slate-900: #0f172a;
+  --color-slate-800: #1e293b;
+  --color-slate-700: #334155;
+  --color-slate-600: #475569;
+  --color-slate-500: #64748b;
+  --color-slate-400: #94a3b8;
+  --color-slate-300: #cbd5e1;
+  --color-slate-200: #e2e8f0;
+  --color-slate-100: #f1f5f9;
+  --color-slate-50: #f8fafc;
+  --color-zinc-950: #09090b;
+  --color-zinc-800: #27272a;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-600: #52525b;
+  --color-zinc-500: #71717a;
+  --color-zinc-200: #e4e4e7;
+  --color-gray-900: #111827;
+  --color-gray-100: #f3f4f6;
+  --color-purple-500: #a855f7;
+  --color-purple-600: #9333ea;
+  --color-purple-700: #7c3aed;
+  --color-purple-appFrom: #8436e2;
+  --color-purple-appTo: #6515c5;
+  --color-purple-tint: rgba(109, 40, 217, 0.05);
+  --color-white: #ffffff;
+  --color-scrim: rgba(0, 0, 0, 0.3);
+  --color-ink: #1a1a1a;
+  --color-footer: #d1d5db;
+  --color-navHover: rgba(51, 65, 85, 0.08);
+  --color-focus: #005fcc;
+  --font-family-sans: Greycliff, system-ui, -apple-system, Roboto, Open Sans, sans-serif;
+  --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-size-caption: 14px;
+  --font-size-menu: 12.8px;
+  --font-size-body: 16px;
+  --font-size-body-lg: 18px;
+  --font-size-heading: 36px;
+  --font-size-display: 60px;
+  --font-lineHeight-display: 60px;
+  --font-lineHeight-body: 24px;
+  --font-lineHeight-body-lg: 28px;
+  --font-tracking-display: -1.5px;
+  --typography-display: var(--font-weight-semibold) var(--font-size-display)/var(--font-lineHeight-display) var(--font-family-sans);
+  --typography-heading: var(--font-weight-bold) var(--font-size-heading)/41.4px var(--font-family-sans);
+  --typography-body: var(--font-weight-regular) var(--font-size-body)/var(--font-lineHeight-body) var(--font-family-sans);
+  --typography-body-lg: var(--font-weight-regular) var(--font-size-body-lg)/29.25px var(--font-family-sans);
+  --typography-label: var(--font-weight-semibold) var(--font-size-body)/var(--font-lineHeight-body) var(--font-family-sans);
+  --typography-caption: var(--font-weight-medium) var(--font-size-caption)/20px var(--font-family-sans);
+  --typography-code: var(--font-weight-regular) var(--font-size-caption)/20px var(--font-family-mono);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --radius-code: 4px;
+  --radius-menu: 6px;
+  --radius-control: 8px;
+  --radius-search: 10px;
+  --radius-dialog: 12px;
+  --radius-card: 24px;
+  --radius-pill: 9999px;
+  --border-hairline: 1px;
+  --border-focus: 1px;
+  --elevation-card: 0px 25px 50px -12px rgba(30, 41, 59, 0.15);
+  --elevation-popover: 0px 12px 24px -8px rgba(15, 23, 42, 0.12);
+  --elevation-control: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --elevation-dialog: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --layout-page: 1440px;
+  --layout-phone: 390px;
+  --layout-content: 1024px;
+  --layout-prose: 896px;
+  --layout-navHeight: 64px;
+  --motion-duration-100ms: 100ms;
+  --motion-duration-150ms: 150ms;
+  --motion-duration-200ms: 200ms;
+  --motion-duration-218ms: 218ms;
+  --motion-duration-300ms: 300ms;
+  --motion-duration-400ms: 400ms;
+  --motion-duration-500ms: 500ms;
+  --motion-duration-600ms: 600ms;
+  --motion-duration-700ms: 700ms;
+  --motion-duration-800ms: 800ms;
+  --motion-duration-1000ms: 1000ms;
+  --motion-duration-1200ms: 1200ms;
+  --motion-duration-2000ms: 2000ms;
+  --motion-easing-bezier-0-0-0-2-1: cubic-bezier(0, 0, 0.2, 1);
+  --motion-easing-bezier-0-175-0-885-0-32-1-175: cubic-bezier(0.175, 0.885, 0.32, 1.175);
+  --motion-easing-bezier-0-4-0-0-2-1: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-bezier-0-4-0-0-6-1: cubic-bezier(0.4, 0, 0.6, 1);
+  --motion-easing-bezier-0-4-0-1-1: cubic-bezier(0.4, 0, 1, 1);
+  --motion-easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-ease-in: cubic-bezier(0.42, 0, 1, 1);
+  --motion-easing-ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+  --motion-easing-ease-out: cubic-bezier(0, 0, 0.58, 1);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --page: var(--color-white);
+  --surface: var(--color-white);
+  --surfaceMuted: var(--color-gray-100);
+  --surfaceCode: var(--color-slate-100);
+  --text: var(--color-slate-900);
+  --textBody: var(--color-slate-600);
+  --textMuted: rgba(100, 116, 139, 0.7);
+  --textOnAccent: var(--color-white);
+  --link: var(--color-purple-500);
+  --accent: var(--color-purple-500);
+  --accentHover: var(--color-purple-600);
+  --navHover: var(--color-navHover);
+  --focus: var(--color-focus);
+  --border: var(--color-slate-200);
+  --footerInk: var(--color-footer);
+  --helpBand: #8a54e1;
+  --overlay: var(--color-scrim);
+  --scrim: var(--color-scrim);
+  --appInk: var(--color-zinc-950);
+  --appLink: var(--color-purple-700);
+  --appAccentFrom: var(--color-purple-appFrom);
+  --appAccentTo: var(--color-purple-appTo);
+  --sg-sans: Greycliff, system-ui, -apple-system, Roboto, sans-serif;
+  --sg-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--sg-sans); }
+main { max-width: 1040px; margin: 0 auto; padding: 40px 24px 80px; }
+h1 { font: 600 40px/44px var(--sg-sans); letter-spacing: -1px; margin: 0 0 8px; }
+h2 { font: 600 13px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--textBody); margin: 48px 0 12px; }
+p { max-width: 68ch; color: var(--textBody); }
+code { font-family: var(--sg-mono); font-size: 13px; color: var(--link); }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 148px; }
+.sw i { display: block; height: 48px; border-radius: 8px; border: 1px solid var(--border); }
+.sw b, .sw span { display: block; font: 500 12px/1.4 var(--sg-mono); }
+.sw span { font-weight: 400; color: var(--textBody); }
+.bar { display: flex; align-items: center; gap: 18px; height: 64px; padding: 0 20px; border-bottom: 1px solid var(--border); }
+.bar .mark { font-weight: 700; }
+.bar a { color: var(--textBody); font-weight: 600; text-decoration: none; font-size: 16px; }
+.bar .sp { flex: 1; }
+.bar .signin { color: var(--textMuted); font-weight: 500; }
+.hero { text-align: center; padding: 48px 16px; }
+.hero h3 { margin: 0; font: 600 48px/48px var(--sg-sans); letter-spacing: -1.2px; }
+.card { max-width: 640px; margin: 16px auto; padding: 28px; border-radius: var(--radius-card); box-shadow: var(--elevation-card); background: var(--surface); }
+.btn { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: 4px; background: var(--accent); color: var(--textOnAccent); border: 0; font: 400 14px/1 var(--sg-sans); }
+.pill { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border-radius: var(--radius-pill); color: var(--textBody); font-weight: 600; }
+.field { display: flex; align-items: center; height: 48px; padding: 0 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--textMuted); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+td, th { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+th { color: var(--textBody); font-weight: 500; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Limitless</h1>
+  <p>Public marketing site, developer docs, help center and the sign-in wall, captured 2026-11-18. One light theme. Greycliff is licensed and not loaded here; the page uses the system fallback.</p>
+
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:var(--page)"></i><b>page</b><span>white</span></div>
+    <div class="sw"><i style="background:var(--text)"></i><b>text</b><span>slate 900</span></div>
+    <div class="sw"><i style="background:var(--textBody)"></i><b>body</b><span>slate 600</span></div>
+    <div class="sw"><i style="background:var(--accent)"></i><b>accent</b><span>purple 500</span></div>
+    <div class="sw"><i style="background:var(--accentHover)"></i><b>accent hover</b><span>purple 600</span></div>
+    <div class="sw"><i style="background:var(--link)"></i><b>link</b><span>purple 500</span></div>
+    <div class="sw"><i style="background:var(--surfaceMuted)"></i><b>muted surface</b><span>gray 100</span></div>
+    <div class="sw"><i style="background:var(--helpBand)"></i><b>help band</b><span>help purple</span></div>
+  </div>
+
+  <h2>Chrome</h2>
+  <div class="bar">
+    <span class="mark">Limitless</span>
+    <a>Home</a><a>Privacy</a><a>Developers</a>
+    <span class="sp"></span>
+    <span class="signin">Sign In</span>
+  </div>
+  <div class="hero">
+    <h3>Limitless has been acquired by Meta</h3>
+    <p>Display is 60px semibold, tracking -1.5px, slate 900.</p>
+  </div>
+  <div class="card">
+    <p style="margin-top:0">The letter card is a 24px radius on white, with a soft slate shadow. Body copy is 18px slate 600.</p>
+    <button class="btn">Copy</button>
+    <span class="pill">Solutions</span>
+  </div>
+  <p><span class="field">Continue with your email</span></p>
+
+  <h2>Type</h2>
+  <table>
+    <tr><th>Role</th><th>Size</th><th>Weight</th></tr>
+    <tr><td>Display</td><td>60px</td><td>600</td></tr>
+    <tr><td>Heading</td><td>36px</td><td>700</td></tr>
+    <tr><td>Body large</td><td>18px</td><td>400</td></tr>
+    <tr><td>Body / label</td><td>16px</td><td>400 / 600</td></tr>
+    <tr><td>Caption / code</td><td>14px</td><td>500 / 400</td></tr>
+  </table>
+  <p class="note">Values are the measured public surface. See <code>tokens.json</code> for provenance.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,565 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. Clearful's Webflow stylesheet declares a real palette and semantic layer (raw/css-vars.json); the core ramps below are those declared values resolved at build time, with measured leaves for the few shades the site paints without declaring. Semantic roles are measured on the painted chrome in raw/components-computed.json and alias the core when the value matches. One theme exists (light); the Flutter sign-in's sampled shades live under core.sampled.app.*.",
+ "core": {
+  "color": {
+   "blue": {
+    "50": {
+     "value": "#ebf0ff",
+     "type": "color",
+     "source": "declared --base-color-brand--blue-50 (raw/css-vars.json)",
+     "description": "Declared blue-50 (#ebf0ff)."
+    },
+    "100": {
+     "value": "#d6e0ff",
+     "type": "color",
+     "source": "declared --base-color-brand--blue-100 (raw/css-vars.json)",
+     "description": "Declared blue-100 (#d6e0ff) — the brand-light section bands."
+    },
+    "200": {
+     "value": "#adc2ff",
+     "type": "color",
+     "source": "declared --base-color-brand--blue-200 (raw/css-vars.json)",
+     "description": "Declared blue-200 (#adc2ff) — the hero CTA's halo ring."
+    },
+    "300": {
+     "value": "#809fff",
+     "type": "color",
+     "source": "declared --base-color-brand--blue-300 (raw/css-vars.json)",
+     "description": "Declared blue-300 (#809fff)."
+    },
+    "400": {
+     "value": "#4d79ff",
+     "type": "color",
+     "source": "declared --base-color-brand--blue-400 (raw/css-vars.json)",
+     "description": "Declared blue-400 (#4d79ff)."
+    },
+    "500": {
+     "value": "#1953ff",
+     "type": "color",
+     "source": "declared --base-color-brand--blue-500 (raw/css-vars.json)",
+     "description": "Declared blue-500 (#1953ff) — the brand blue: CTAs, hover links, footer dots."
+    },
+    "600": {
+     "value": "#0039e6",
+     "type": "color",
+     "source": "declared --base-color-brand--blue-600 (raw/css-vars.json)",
+     "description": "Declared blue-600 (#0039e6)."
+    },
+    "hover": {
+     "value": "#1b1bbc",
+     "type": "color",
+     "source": "declared --base-color-brand--blue-600<deleted|variable-78f99fb0> (raw/css-vars.json)",
+     "description": "Declared #1b1bbc — the hover/pressed step on every blue control, shipped under a tombstoned duplicate of blue-600."
+    },
+    "700": {
+     "value": "#002db3",
+     "type": "color",
+     "source": "declared --base-color-brand--blue-700 (raw/css-vars.json)",
+     "description": "Declared blue-700 (#002db3)."
+    },
+    "800": {
+     "value": "#002185",
+     "type": "color",
+     "source": "declared --base-color-brand--blue-800 (raw/css-vars.json)",
+     "description": "Declared blue-800 (#002185)."
+    },
+    "900": {
+     "value": "#001452",
+     "type": "color",
+     "source": "declared --base-color-brand--blue-900 (raw/css-vars.json)",
+     "description": "Declared blue-900 (#001452) — the navy heading ink."
+    },
+    "950": {
+     "value": "#000e38",
+     "type": "color",
+     "source": "declared --base-color-brand--blue-950 (raw/css-vars.json)",
+     "description": "Declared blue-950 (#000e38)."
+    }
+   },
+   "grey": {
+    "000": {
+     "value": "#f7f7f7",
+     "type": "color",
+     "source": "declared --base-color-neutral--grey-000 (raw/css-vars.json)",
+     "description": "Declared grey-000 (#f7f7f7) — the secondary surface."
+    },
+    "100": {
+     "value": "#e1e1e1",
+     "type": "color",
+     "source": "declared --base-color-neutral--grey-100 (raw/css-vars.json)",
+     "description": "Declared grey-100 (#e1e1e1) — the hairline border."
+    },
+    "200": {
+     "value": "#cfcfcf",
+     "type": "color",
+     "source": "declared --base-color-neutral--grey-200 (raw/css-vars.json)",
+     "description": "Declared grey-200 (#cfcfcf)."
+    },
+    "300": {
+     "value": "#b1b1b1",
+     "type": "color",
+     "source": "declared --base-color-neutral--grey-300 (raw/css-vars.json)",
+     "description": "Declared grey-300 (#b1b1b1)."
+    },
+    "400": {
+     "value": "#9e9e9e",
+     "type": "color",
+     "source": "declared --base-color-neutral--grey-400 (raw/css-vars.json)",
+     "description": "Declared grey-400 (#9e9e9e)."
+    },
+    "500": {
+     "value": "#7e7e7e",
+     "type": "color",
+     "source": "declared --base-color-neutral--grey-500 (raw/css-vars.json)",
+     "description": "Declared grey-500 (#7e7e7e)."
+    },
+    "600": {
+     "value": "#626262",
+     "type": "color",
+     "source": "declared --base-color-neutral--grey-600 (raw/css-vars.json)",
+     "description": "Declared grey-600 (#626262)."
+    },
+    "700": {
+     "value": "#515151",
+     "type": "color",
+     "source": "declared --base-color-neutral--grey-700 (raw/css-vars.json)",
+     "description": "Declared grey-700 (#515151) — muted/footer text."
+    },
+    "800": {
+     "value": "#3b3b3b",
+     "type": "color",
+     "source": "declared --base-color-neutral--grey-800 (raw/css-vars.json)",
+     "description": "Declared grey-800 (#3b3b3b)."
+    },
+    "900": {
+     "value": "#222222",
+     "type": "color",
+     "source": "declared --base-color-neutral--grey-900 (raw/css-vars.json)",
+     "description": "Declared grey-900 (#222222) — the primary ink."
+    }
+   },
+   "white": {
+    "value": "#ffffff",
+    "type": "color",
+    "source": "declared --base-color-neutral--white (raw/css-vars.json)",
+    "description": "Declared white (#ffffff) — the page ground and card fill."
+   },
+   "black": {
+    "value": "#000000",
+    "type": "color",
+    "source": "declared --base-color-neutral--black (raw/css-vars.json)",
+    "description": "Declared black (#000000) — the library stack's body ink."
+   },
+   "focus": {
+    "0": {
+     "value": "#101010",
+     "type": "color",
+     "source": "computed outlineColor of nav-cta focus-visible (raw/components-computed.json)",
+     "description": "#101010 — the 1px focus ring on this surface's controls."
+    }
+   }
+  },
+  "sampled": {
+   "app": {
+    "ground": {
+     "value": "#f7f7f7",
+     "type": "color",
+     "description": "The sign-in page's grey ground — sampled off the screenshot at (60,450).",
+     "source": "Sampled: a screenshot pixel of the full-colour sign-in capture (kept outside the repo) at (60,450); canvas-painted, CSSOM-blind, no element reading holds it"
+    },
+    "oauth": {
+     "ink": {
+      "value": "#222222",
+      "type": "color",
+      "description": "The Continue-with-Apple button's near-black fill — sampled at the button centre.",
+      "source": "Sampled: a screenshot pixel of the full-colour sign-in capture (kept outside the repo) at (720,486); canvas-painted, CSSOM-blind, no element reading holds it"
+     },
+     "google": {
+      "value": "#1a73e8",
+      "type": "color",
+      "description": "The Continue-with-Google button's Google blue — sampled at the button centre.",
+      "source": "Sampled: a screenshot pixel of the full-colour sign-in capture (kept outside the repo) at (720,540); canvas-painted, CSSOM-blind, no element reading holds it"
+     },
+     "email": {
+      "value": "#ffffff",
+      "type": "color",
+      "description": "The Continue-with-email button's white fill — sampled at the button centre.",
+      "source": "Sampled: a screenshot pixel of the full-colour sign-in capture (kept outside the repo) at (720,412); canvas-painted, CSSOM-blind, no element reading holds it"
+     }
+    },
+    "text": {
+     "primary": {
+      "value": "#222222",
+      "type": "color",
+      "description": "The sign-in card's ink — sampled on the email button's label.",
+      "source": "Sampled: a screenshot pixel of the full-colour sign-in capture (kept outside the repo) at (720,417); canvas-painted, CSSOM-blind, no element reading holds it"
+     }
+    }
+   }
+  },
+  "measured": {},
+  "radius": {
+   "small": {
+    "value": "4px",
+    "type": "dimension",
+    "source": "declared --border-radius--border-radius-small (raw/css-vars.json)",
+    "description": "Declared radius-small (4px)."
+   },
+   "medium": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "declared --border-radius--border-radius-medium (raw/css-vars.json)",
+    "description": "Declared radius-medium (8px) — feature rows."
+   },
+   "large": {
+    "value": "16px",
+    "type": "dimension",
+    "source": "declared --border-radius--border-radius-large (raw/css-vars.json)",
+    "description": "Declared radius-large (16px) — prompt cards, small pills."
+   },
+   "xlarge": {
+    "value": "24px",
+    "type": "dimension",
+    "source": "declared --border-radius--border-radius-xlarge (raw/css-vars.json)",
+    "description": "Declared radius-xlarge (24px) — feature cards."
+   }
+  },
+  "font": {
+   "family": {
+    "display": {
+     "type": "fontFamily",
+     "value": "Literatatt, sans-serif",
+     "source": "computed fontFamily of hero-title default (raw/components-computed.json)",
+     "description": "Literatatt — the display face of hero, section and pricing headings."
+    },
+    "ui": {
+     "type": "fontFamily",
+     "value": "Manrope, sans-serif",
+     "source": "computed fontFamily of nav-item default (raw/components-computed.json)",
+     "description": "Manrope — UI text across the Webflow surface: nav, body, buttons."
+    },
+    "library": {
+     "type": "fontFamily",
+     "value": "Mulish, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+     "source": "computed fontFamily of library-h1 default (raw/components-computed.json)",
+     "description": "Mulish — the /library Tailwind stack's font."
+    }
+   },
+   "size": {
+    "display": {
+     "type": "dimension",
+     "value": "72px",
+     "source": "computed fontSize of hero-title default (raw/components-computed.json)",
+     "description": "The hero display headline, 72px/1.2 Literatatt."
+    },
+    "h1": {
+     "type": "dimension",
+     "value": "60px",
+     "source": "computed fontSize of pricing-title default (raw/components-computed.json)",
+     "description": "Page and section headings, 60px Literatatt."
+    },
+    "library": {
+     "type": "dimension",
+     "value": "60px",
+     "source": "computed fontSize of library-h1 default (raw/components-computed.json)",
+     "description": "The library's h1, 60px/800 Mulish."
+    },
+    "price": {
+     "type": "dimension",
+     "value": "24px",
+     "source": "computed fontSize of plan-price default (raw/components-computed.json)",
+     "description": "Plan prices, 56px Manrope."
+    },
+    "mHero": {
+     "type": "dimension",
+     "value": "56px",
+     "source": "computed fontSize of m-hero default (raw/components-computed.json)",
+     "description": "The hero headline at 390px, 56px Literatatt."
+    },
+    "cta": {
+     "type": "dimension",
+     "value": "20px",
+     "source": "computed fontSize of cta default (raw/components-computed.json)",
+     "description": "The hero CTA's label, 20px/600 Manrope."
+    },
+    "menuLink": {
+     "type": "dimension",
+     "value": "18px",
+     "source": "computed fontSize of m-menu-link default (raw/components-computed.json)",
+     "description": "Mobile menu links, 18px/600 Manrope."
+    },
+    "nav": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of nav-item default (raw/components-computed.json)",
+     "description": "Nav labels and buttons, 16px/600 Manrope."
+    },
+    "footer": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of footer-link default (raw/components-computed.json)",
+     "description": "Footer links, 16px/400 Manrope."
+    }
+   }
+  }
+ },
+ "light": {
+  "surface": {
+   "page": {
+    "type": "color",
+    "description": "The white page ground — painted by the body (declared --background-color--background-primary = white).",
+    "value": "{color.white}",
+    "source": "computed backgroundColor of page-ground default (raw/components-computed.json); same value as core.color.white"
+   },
+   "secondary": {
+    "type": "color",
+    "description": "The #f7f7f7 band — feature cards, feature rows, the footer (declared --background-color--background-secondary).",
+    "value": "{color.grey.000}",
+    "source": "computed backgroundColor of feature-card default (raw/components-computed.json); same value as core.color.grey.000"
+   },
+   "card": {
+    "type": "color",
+    "description": "The library prompt cards' white fill over the grey band.",
+    "value": "{color.white}",
+    "source": "computed backgroundColor of prompt-card default (raw/components-computed.json); same value as core.color.white"
+   },
+   "brandLight": {
+    "type": "color",
+    "description": "The #d6e0ff brand-light band — mid-page accent sections (declared --background-color--background-brand-light).",
+    "value": "{color.blue.100}",
+    "source": "computed backgroundColor of section-accent default (raw/components-computed.json); same value as core.color.blue.100"
+   },
+   "hover": {
+    "type": "color",
+    "description": "The #f7f7f7 hover wash behind nav links.",
+    "value": "{color.grey.000}",
+    "source": "computed backgroundColor of nav-item hover (raw/components-computed.json); same value as core.color.grey.000"
+   }
+  },
+  "text": {
+   "primary": {
+    "type": "color",
+    "description": "The primary ink #222 — nav, body, buttons' borders (declared --text-color--text-primary).",
+    "value": "{color.grey.900}",
+    "source": "computed color of nav-item default (raw/components-computed.json); same value as core.color.grey.900"
+   },
+   "muted": {
+    "type": "color",
+    "description": "Muted text #515151 — footer links (declared --text-color--text-secondary).",
+    "value": "{color.grey.700}",
+    "source": "computed color of footer-link default (raw/components-computed.json); same value as core.color.grey.700"
+   },
+   "navy": {
+    "type": "color",
+    "description": "Navy headings #001452 inside the brand-light bands (blue-900).",
+    "value": "{color.blue.900}",
+    "source": "computed color of section-title default (raw/components-computed.json); same value as core.color.blue.900"
+   },
+   "accent": {
+    "type": "color",
+    "description": "The brand blue as text — footer-link hover.",
+    "value": "{color.blue.500}",
+    "source": "computed color of footer-link hover (raw/components-computed.json); same value as core.color.blue.500"
+   },
+   "onAccent": {
+    "type": "color",
+    "description": "White text on the blue controls (declared --text-color--text-alternate).",
+    "value": "{color.white}",
+    "source": "computed color of nav-cta default (raw/components-computed.json); same value as core.color.white"
+   },
+   "appInk": {
+    "type": "color",
+    "description": "#000 on the library cards — the Tailwind stack's body ink.",
+    "value": "{color.black}",
+    "source": "computed color of prompt-card default (raw/components-computed.json); same value as core.color.black"
+   }
+  },
+  "accent": {
+   "type": "color",
+   "description": "The brand blue — nav CTA, hero CTA, plan buttons (declared --button-color--button-brand-blue).",
+   "value": "{color.blue.500}",
+   "source": "computed backgroundColor of nav-cta default (raw/components-computed.json); same value as core.color.blue.500"
+  },
+  "accentHover": {
+   "type": "color",
+   "description": "#1b1bbc — the hover/pressed step on every blue control (declared under a tombstoned blue-600 variable).",
+   "value": "{color.blue.hover}",
+   "source": "computed backgroundColor of nav-cta hover (raw/components-computed.json); same value as core.color.blue.hover"
+  },
+  "ring": {
+   "cta": {
+    "type": "color",
+    "description": "The hero CTA's 6px #adc2ff halo ring (blue-200).",
+    "value": "{color.blue.200}",
+    "source": "computed paint.0.border of cta default (raw/components-computed.json); same value as core.color.blue.200"
+   }
+  },
+  "border": {
+   "subtle": {
+    "type": "color",
+    "description": "The #e1e1e1 hairline — header, footer, nav-item hover (declared --border-color--border-primary).",
+    "value": "{color.grey.100}",
+    "source": "computed paint.0.border of header default (raw/components-computed.json); same value as core.color.grey.100"
+   },
+   "brand": {
+    "type": "color",
+    "description": "The 1px brand-blue border on the blue pills (declared --border-color--border-brand-blue).",
+    "value": "{color.blue.500}",
+    "source": "computed borderTopColor of nav-cta default (raw/components-computed.json); same value as core.color.blue.500"
+   },
+   "tab": {
+    "type": "color",
+    "description": "The pricing tabs' ink — Monthly/Yearly labels.",
+    "value": "{color.grey.900}",
+    "source": "computed color of billing-tab default (raw/components-computed.json); same value as core.color.grey.900"
+   }
+  },
+  "focus": {
+   "type": "color",
+   "description": "The 1px #101010 focus ring — UA-style ring, consistent across the surface's controls.",
+   "value": "{color.focus.0}",
+   "source": "computed outlineColor of nav-cta focus-visible (raw/components-computed.json); same value as core.color.focus.0"
+  },
+  "shadow": {
+   "card": {
+    "type": "shadow",
+    "value": [
+     {
+      "offsetX": "0px",
+      "offsetY": "4px",
+      "blur": "6px",
+      "spread": "-1px",
+      "color": "rgba(0, 0, 0, 0.1)"
+     },
+     {
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "4px",
+      "spread": "-2px",
+      "color": "rgba(0, 0, 0, 0.1)"
+     }
+    ],
+    "source": "computed boxShadow of prompt-card default (raw/components-computed.json)",
+    "description": "The library prompt card's Tailwind shadow-md — the only painted elevation on the captured surface."
+   }
+  }
+ },
+ "component": {
+  "control": {
+   "heightNavCta": {
+    "type": "dimension",
+    "value": "50px",
+    "source": "computed height of nav-cta default (raw/components-computed.json)",
+    "description": "The nav Start-a-journal pill, 50px."
+   },
+   "heightCta": {
+    "type": "dimension",
+    "value": "82px",
+    "source": "computed height of cta default (raw/components-computed.json)",
+    "description": "The hero CTA's 82px pill."
+   },
+   "heightPlanCta": {
+    "type": "dimension",
+    "value": "58px",
+    "source": "computed height of plan-cta default (raw/components-computed.json)",
+    "description": "The pricing cards' action button, 58px."
+   },
+   "heightNavItem": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of nav-item default (raw/components-computed.json)",
+    "description": "Nav links, 40px."
+   },
+   "heightTab": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of billing-tab default (raw/components-computed.json)",
+    "description": "The billing tabs, 40px."
+   },
+   "heightHamburger": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of m-menu-button default (raw/components-computed.json)",
+    "description": "The mobile menu button, 48px."
+   },
+   "radiusPill": {
+    "type": "dimension",
+    "value": "999px",
+    "source": "computed paint.0.radius of cta default (raw/components-computed.json)",
+    "description": "The 999px cap on every button pill."
+   }
+  },
+  "card": {
+   "radiusFeature": {
+    "type": "dimension",
+    "value": "24px",
+    "source": "computed borderTopLeftRadius of feature-card default (raw/components-computed.json)",
+    "description": "Feature card corners, 24px."
+   },
+   "radiusPrompt": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "computed borderTopLeftRadius of prompt-card default (raw/components-computed.json)",
+    "description": "Library prompt-card corners, 16px."
+   },
+   "radiusFeatureRow": {
+    "type": "dimension",
+    "value": "8px",
+    "source": "computed borderTopLeftRadius of feature-row default (raw/components-computed.json)",
+    "description": "Feature-row corners, 8px."
+   }
+  },
+  "nav": {
+   "height": {
+    "type": "dimension",
+    "value": "72px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The nav bar at 1440px, 72px."
+   }
+  },
+  "footer": {
+   "height": {
+    "type": "dimension",
+    "value": "548.047px",
+    "source": "computed height of footer default (raw/components-computed.json)",
+    "description": "The footer block at 1440px."
+   }
+  },
+  "drawer": {
+   "height": {
+    "type": "dimension",
+    "value": "844px",
+    "source": "computed height of m-menu-open default (raw/components-computed.json)",
+    "description": "The mobile menu overlay at 390px, 844px."
+   }
+  },
+  "heroTitle": {
+   "width": {
+    "type": "dimension",
+    "value": "1024px",
+    "source": "computed width of hero-title default (raw/components-computed.json)",
+    "description": "The hero display line's measure, 1024px."
+   }
+  },
+  "signin": {
+   "buttonHeight": {
+    "type": "dimension",
+    "value": "56px",
+    "source": "computed height of signin-button default (raw/components-computed.json)",
+    "description": "The sign-in card's buttons, 56px."
+   },
+   "buttonWidth": {
+    "type": "dimension",
+    "value": "400px",
+    "source": "computed width of signin-button default (raw/components-computed.json)",
+    "description": "The sign-in card's buttons, 400px."
+   },
+   "cardImageWidth": {
+    "type": "dimension",
+    "value": "264px",
+    "source": "computed width of signin-image default (raw/components-computed.json)",
+    "description": "The sign-in card's illustration slot, 264px."
+   }
+  }
+ }
+}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wise style guide</title>
+<style>
+  :root {
+    --page: #FFFFFF;
+    --surface: #EDEEEC;
+    --text: #0E0F0C;
+    --muted: #454745;
+    --accent: #9FE870;
+    --forest: #163300;
+    --border: #E8E8E7;
+    --sans: Inter, Helvetica, Arial, sans-serif;
+    --display: "Wise Sans", Inter, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #F3F6F2; color: var(--text); font: 400 16px/24px var(--sans); }
+  main { max-width: 880px; margin: 0 auto; padding: 32px 20px 64px; }
+  h1 { font-family: var(--display); font-weight: 800; font-size: 40px; line-height: 34px; margin: 0 0 8px; letter-spacing: 0; }
+  h2 { font-size: 22px; font-weight: 600; margin: 32px 0 12px; }
+  p { max-width: 68ch; color: var(--muted); }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .sw { width: 140px; }
+  .sw i { display: block; height: 64px; border-radius: 16px; border: 1px solid var(--border); }
+  .sw span { display: block; font-size: 12px; margin-top: 6px; color: var(--text); }
+  .btn { display: inline-flex; align-items: center; height: 48px; padding: 12px 16px; border-radius: 9999px; background: var(--accent); color: var(--forest); font-weight: 600; font-size: 18px; letter-spacing: -0.108px; text-decoration: none; }
+  .btn-forest { background: var(--forest); color: var(--accent); }
+  .btn-neutral { background: #F3F6F2; color: var(--text); }
+  .field { display: block; width: 486px; max-width: 100%; height: 48px; padding: 12px 16px; border: 0; border-radius: 10px; box-shadow: inset 0 0 0 1px #868685; font: 400 16px/24px var(--sans); color: var(--text); background: transparent; }
+  .card { background: var(--page); border-radius: 16px; padding: 24px; max-width: 550px; }
+  .plate { background: var(--accent); color: var(--forest); border-radius: 0; padding: 54px 24px; }
+  label { display: block; font-size: 14px; font-weight: 600; line-height: 21.7px; margin: 12px 0 4px; }
+  .alert { display: flex; gap: 16px; align-items: center; background: #F3F6F2; border-radius: 16px; padding: 16px; color: var(--muted); font-size: 14px; }
+  .dot { width: 24px; height: 24px; border-radius: 50%; background: #CB272F; flex: none; }
+  code { font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Wise</h1>
+  <p>Light tokens from the public signed-out pages, measured 2026-11-19. Wise Sans falls back to Inter when it is not installed. The headline sizes in tokens.json are the fluid computed sizes at 1169px, not this page's sample.</p>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="sw"><i style="background:#FFFFFF"></i><span>page #FFFFFF</span></div>
+    <div class="sw"><i style="background:#EDEEEC"></i><span>surface #EDEEEC</span></div>
+    <div class="sw"><i style="background:#0E0F0C"></i><span>text #0E0F0C</span></div>
+    <div class="sw"><i style="background:#454745"></i><span>muted #454745</span></div>
+    <div class="sw"><i style="background:#9FE870"></i><span>accent #9FE870</span></div>
+    <div class="sw"><i style="background:#163300"></i><span>forest #163300</span></div>
+    <div class="sw"><i style="background:#868685"></i><span>input ring #868685</span></div>
+    <div class="sw"><i style="background:#CB272F"></i><span>negative #CB272F</span></div>
+    <div class="sw"><i style="background:#FFC091"></i><span>bright orange #FFC091</span></div>
+    <div class="sw"><i style="background:#FFEB69"></i><span>bright yellow #FFEB69</span></div>
+  </div>
+  <h2>Type</h2>
+  <p style="font-family:var(--display);font-weight:800;font-size:40px;line-height:34px;color:var(--text);margin:0">Money for here, there and everywhere</p>
+  <p>Body is Inter at 16px. Secondary text is #454745.</p>
+  <h2>Controls</h2>
+  <p>
+    <a class="btn" href="#open">Open an account</a>
+    <a class="btn btn-forest" href="#send">Learn how to send money</a>
+    <a class="btn btn-neutral" href="#explore">Explore getting paid</a>
+  </p>
+  <div class="card">
+    <p style="color:#0E0F0C;font-size:26px;line-height:31.72px;font-weight:600;margin-top:0">Welcome back</p>
+    <div class="alert"><span class="dot" aria-hidden="true"></span><span>Something went wrong.</span></div>
+    <label for="email">Your email address</label>
+    <input id="email" class="field" type="email" readonly aria-label="Your email address">
+    <label for="password">Your password</label>
+    <input id="password" class="field" type="password" readonly aria-label="Your password">
+    <p><a class="btn" href="#login">Log in</a></p>
+  </div>
+  <h2>Plate</h2>
+  <div class="plate">
+    <p style="font-family:var(--display);font-weight:800;font-size:32px;line-height:1.1;color:#163300;margin:0 0 16px">Send money now</p>
+    <a class="btn btn-forest" href="#forest">Learn how to send money</a>
+  </div>
+</main>
+</body>
+</html>

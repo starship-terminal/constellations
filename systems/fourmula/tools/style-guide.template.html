@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fourmula style guide</title>
+<meta name="description" content="Fourmula design tokens and the public surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  color-scheme: light;
+  --sg-sans: "Sf Pro Display", sfProFont, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-ink, #020108); background: var(--background-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.03em; color: var(--text-ink, #020108); }
+h2.sh { font: 700 12px/1 var(--sg-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim, rgba(2,1,8,.5)); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-rule, #d7d7d6); }
+.lead { max-width: 62ch; color: var(--text-ink, #020108); opacity: .85; }
+.note { font-size: 13px; color: var(--text-muted, rgba(2,1,8,.64)); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 700 11px/1 var(--sg-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--text-dim, rgba(2,1,8,.5)); opacity: .75; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-hairline, rgba(2,1,8,.2)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-muted, rgba(2,1,8,.64)); }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-hairline, rgba(2,1,8,.2)); background: var(--background-surface, #f7f7f7); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-muted, rgba(2,1,8,.64)); }
+/* ---- toggle ---- */
+.mode { display: inline-flex; align-items: center; gap: 10px; font: 500 13px/1 var(--sg-sans); color: var(--text-muted, rgba(2,1,8,.64)); user-select: none; cursor: pointer; }
+.mode input { position: absolute; opacity: 0; }
+.mode .trk { width: 36px; height: 20px; border-radius: 9999px; background: var(--background-surface, #f7f7f7); border: 1px solid var(--border-hairline, rgba(2,1,8,.2)); position: relative; transition: background .2s; }
+.mode .trk::after { content: ""; position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: var(--action-fill, #020108); transition: transform .2s; }
+.mode input:checked + .trk::after { transform: translateX(16px); }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border-hairline, rgba(2,1,8,.2)); border-radius: 12px; overflow: hidden; background: var(--background-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 18px; height: var(--component-marketing-header-height, 92.48px); padding: 0 var(--component-marketing-header-side-pad, 26.62px); font-size: 14px; font-weight: 500; color: var(--text-ink, #020108); background: var(--background-page, #fff); border-bottom: 1px solid var(--border-rule, #d7d7d6); }
+.navbar .wm { font-weight: 600; font-size: 17px; letter-spacing: -0.02em; color: var(--text-ink, #020108); }
+.navbar .sp { flex: 1; }
+/* The menu fill lifts to #272727 in the dark paint while its label stays a
+   constant white on the real site, so the ink is the inverse fill, not
+   action.ink (which flips to near-black and would be unreadable on #272727). */
+.menu-pill { display: inline-flex; align-items: center; gap: 10px; height: var(--component-marketing-menu-pill-height, 35.23px); padding: 0 14px; border-radius: 9999px; background: var(--background-menu, #020108); color: var(--action-fillInverse, #fff); font-size: 13px; }
+.menu-pill .dot2 { width: 16px; height: 16px; border-radius: 50%; border: 1px solid var(--border-menuLine, rgba(255,255,255,.2)); display: inline-block; }
+.menu-pill .count { font: 400 11px/1 var(--sg-mono); padding: 4px 7px; border-radius: 9999px; background: var(--background-counter, rgba(255,255,255,.2)); }
+.icon-btn { display: inline-flex; align-items: center; justify-content: center; width: var(--component-marketing-icon-btn, 26.61px); height: var(--component-marketing-icon-btn, 26.61px); border-radius: var(--component-marketing-icon-ring, 26.62px); border: 1px solid var(--border-iconRing, rgba(2,1,8,.2)); color: var(--text-ink, #020108); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-marketing-cta-height, 39.92px); padding: 0 20px; font-size: 14px; font-weight: 500; letter-spacing: -0.02em; border-radius: 9999px; border: 1px solid transparent; }
+.btn.primary { background: var(--action-fill, #020108); color: var(--action-ink, #fff); }
+.btn.outline { background: var(--background-outlineFill, #d9d9d9); color: var(--text-ink, #020108); border-color: var(--border-hairline, rgba(2,1,8,.2)); }
+.hero { color: var(--text-ink, #020108); padding: 64px 40px 72px; font: 400 var(--font-size-measured-hero, 73.2px)/0.94 var(--sg-sans); letter-spacing: -0.03em; text-align: left; background: var(--background-page, #fff); }
+.hero .dim { color: var(--text-muted, rgba(2,1,8,.64)); }
+.hero small { display: block; font: 400 15px/1.5 var(--sg-sans); color: var(--text-dim, rgba(2,1,8,.5)); margin-top: 20px; max-width: 46ch; }
+/* The real chip paints --mainbg (background.page) under --fonts-100
+   (text.ink): white-on-ink in the dark paint, ink-on-white in the light
+   paint. The dark set has no background.chip token, so pairing page+ink is
+   what the site does — a light-only chip fill would go white-on-white. */
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 5px 13px; border-radius: var(--component-marketing-chip-radius, 6.65px); border: 1px solid var(--border-hairline, rgba(2,1,8,.2)); background: var(--background-page, #fff); font-size: 14px; color: var(--text-ink, #020108); }
+.faq-row { display: flex; align-items: center; justify-content: space-between; height: var(--component-marketing-faq-height, 75.02px); padding: 0 var(--component-marketing-faq-side-pad, 26.62px); border-bottom: 1px solid var(--border-rule, #d7d7d6); font-size: 20px; color: var(--text-ink, #020108); background: var(--background-page, #fff); }
+.faq-row .plus { font-size: 20px; color: var(--text-muted, rgba(2,1,8,.64)); }
+.faq-row.open { height: var(--component-marketing-faq-open-height, 118.02px); align-items: flex-start; padding-top: 26px; }
+.faq-row .ans { font-size: 14px; color: var(--text-muted, rgba(2,1,8,.64)); max-width: 40ch; }
+/* ---- the app sign-in (dark-only Next.js/Tailwind app) ---- */
+.auth { display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 44px 20px; background: var(--appColor-base-900, #020108); }
+.appbar { display: flex; align-items: center; gap: 10px; width: min(560px, 100%); }
+.appbar .mark { width: 28px; height: 28px; border-radius: 50%; background: var(--appColor-base-100, #fff); color: var(--appColor-base-900, #020108); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; }
+.appbar .sp { flex: 1; }
+.abtn { display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: 9999px; font-size: 14px; }
+.abtn.solid { background: var(--component-app-accent-fill, #ff6b02); color: var(--component-app-accent-ink, #020108); }
+.abtn.tint { background: var(--component-app-accent-tint, rgba(255,107,2,.2)); color: var(--appColor-accent-500, #ff6b02); }
+.acard { width: var(--component-app-auth-card-width, 384px); max-width: 100%; background: var(--component-app-auth-card-bg, #111111); border: 1px solid var(--component-app-auth-card-border, #1a1a1a); border-radius: var(--component-app-auth-card-radius, 28px); padding: 24px var(--component-app-auth-card-pad-x, 32px); backdrop-filter: var(--component-app-auth-card-backdrop, blur(24px)); color: var(--appColor-base-100, #fff); display: flex; flex-direction: column; gap: var(--component-app-auth-card-gap, 24px); font-family: var(--sg-sans); }
+.acard h3 { font: 500 20px/1.3 var(--sg-sans); color: var(--appColor-base-100, #fff); margin: 0; text-align: center; }
+.acard .gbtn { display: flex; align-items: center; justify-content: center; height: var(--component-app-google-height, 40px); border-radius: 9999px; background: var(--component-app-accent-tint, rgba(255,107,2,.2)); color: var(--appColor-accent-500, #ff6b02); font-size: 14px; font-weight: 500; }
+.acard .or { display: flex; align-items: center; gap: 14px; font-size: 12px; color: var(--component-app-muted-ink, #686a6e); }
+.acard .or::before, .acard .or::after { content: ""; flex: 1; border-top: 1px solid var(--component-app-auth-card-border, #1a1a1a); }
+.acard .field { height: var(--component-app-field-height, 48px); border-radius: 9999px; border: 1px solid var(--component-app-auth-card-border, #1a1a1a); background: var(--appColor-base-900, #020108); display: flex; align-items: center; padding: 0 20px; font-size: 14px; color: var(--component-app-muted-ink, #686a6e); }
+.acard .forgot { text-align: center; font-size: 12px; color: var(--component-app-muted-ink, #686a6e); text-decoration: underline; }
+.acard .go { height: var(--component-app-submit-height, 40px); border-radius: var(--component-app-submit-radius, 9999px); background: var(--component-app-accent-fill, #ff6b02); color: var(--component-app-accent-ink, #020108); display: flex; align-items: center; justify-content: center; font-weight: 500; font-size: 14px; }
+.acard .foot { text-align: center; font-size: 12px; color: var(--component-app-muted-ink, #686a6e); }
+.acard .foot b { color: var(--component-app-link-accent, #ff6b02); font-weight: 500; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-hairline, rgba(2,1,8,.2)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-rule, #d7d7d6); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--text-muted, rgba(2,1,8,.64)); font-family: var(--sg-mono); }
+.format-radio { display: inline-flex; gap: 4px; }
+.format-radio span { display: inline-flex; align-items: center; height: var(--component-app-format-item-height, 60px); padding: 0 20px; border-radius: var(--component-app-format-item-radius, 16px); background: var(--component-app-format-item-bg, #1a1a1a); color: var(--component-app-dim-ink, #b0b4ba); font-size: 15px; }
+.format-radio .on { color: var(--component-app-format-item-ink, #ff6b02); border: 2px solid var(--component-app-format-item-bg, #1a1a1a); }
+.format-radio .off { opacity: var(--component-app-format-video-opacity, .5); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Fourmula style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.
+  <label class="mode" style="float:right;margin-top:-34px"><input type="checkbox" id="theme"><span class="trk"></span>Dark</label></p>
+
+  <h2 class="sh">Fourmula, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the marketing site's small declared Webflow layer (the fluid <code>--_fonts---*</code> ramp, the <code>--fonts-*</code> alpha ink scale, the themed <code>--mainbg</code>/<code>--secondbg</code>/<code>--lines</code>/<code>--menu*</code> colours), the app's whole declared Tailwind v4 <code>@theme</code> (<code>--color-base-*</code>/<code>--color-accent-*</code>, <code>--text-*</code> 9–52px, <code>--radius-*</code> 4–40px, <code>--spacing</code> 4px, <code>--ease-*</code>, <code>--blur-*</code>), and the measured component geometry and painted roles. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from fourmula.ai on 2026-11-16, signed out, in headless Chromium. The marketing site has a real dark paint — the Dark toggle above switches the roles panel between the two sets; the class names are inverted on the site (<code>.body.dark</code> paints light, plain <code>.body</code> paints dark, behind the <code>isDarkMode</code> localStorage key). Sf Pro Display and the app's sfProFont are proprietary faces not loaded here: samples fall back to system fonts. app.fourmula.ai (/start, /auth, /project/create-pdp) is a separate dark-only Tailwind app measured as a boundary — its declared ramp lives under <code>appColor.*</code>/<code>font.size.app.*</code>/<code>radius.app.*</code> and its measured values under <code>component.app.*</code>.</p>
+
+  <h2 class="sh">The marketing chrome</h2>
+  <p class="lead">The 92.5px header pairs the wordmark with a dark Menu pill that carries the moon toggle and a translucent counter (white at 20%), a 26.6px account ring, and the ~40px ink-filled "Get started" CTA — full pills throughout (the site spells the radius as a fluid ~1318px). The hero sets "Your catalog, instantly re-shot." at a painted 73.2px (the fluid scale reads wider than the declared h1 step); the second line paints the 64% muted ink. FAQ rows are 75px hairline-ruled rows that grow to ~118px open.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">✳ Fourmula</span><span class="sp"></span><span class="menu-pill">☰ Menu <span class="dot2"></span><span class="count">0%</span></span><span class="icon-btn">◉</span><span class="btn primary">Get started</span></div>
+    <div class="hero">Your catalog,<br><span class="dim">instantly re-shot.</span><small>AI product photography for e-commerce brands — studio shots, lifestyle scenes and PDP-ready assets from a single upload.</small><span class="chip">↻ studio</span>&nbsp;<span class="chip">lifestyle</span>&nbsp;<span class="chip">PDP</span></div>
+    <div class="faq-row"><span>What can AI FOURMULA create for my brand?</span><span class="plus">+</span></div>
+    <div class="faq-row open"><span>How fast do I get results?<div class="ans">Upload once, pick a look, and assets generate in minutes — the marketing site's own copy, measured open.</div></span><span class="plus">−</span></div>
+  </div>
+
+  <h2 class="sh">The app sign-in (a different system)</h2>
+  <p class="lead">app.fourmula.ai is a separate dark-only Next.js/Tailwind app that shares no token layer with the marketing site: a 384px card at 28px radius (rounded-4xl) on <code>#111</code> over a photo grid, a <code>#ff6b02</code> accent on primary actions and accent/20% tint fills on secondary pills, 48px fields, and full-pill controls — all measured, never submitted.</p>
+  <div class="auth">
+    <div class="appbar"><span class="mark">✳</span><span class="sp"></span><span class="abtn solid">＋ Create asset</span><span class="abtn tint">Sign in</span></div>
+    <div class="acard"><h3>Sign in</h3><div class="gbtn">G&nbsp; Continue with Google</div><div class="or">or</div><div class="field">Email address</div><div class="field">Password</div><div class="forgot">Forgot password?</div><div class="go">Sign in</div><div class="foot">Don't have an account? <b>Sign up</b></div></div>
+  </div>
+
+  <h2 class="sh">The PDP generator</h2>
+  <p class="lead">/project/create-pdp is reachable signed out: the 60px "Static content / Video content" radio pair on 16px cards — the selected paints the accent ink, Video stays disabled at 0.5 — 40px accent-filled and accent-tint pills, and the 28px rounded dialogs ("What can I upload?", "What's a PDP"). Nothing uploads, connects or generates.</p>
+  <div class="auth" style="flex-direction:row;justify-content:center">
+    <span class="format-radio"><span class="on">▣ Static content</span><span class="off">▢ Video content</span></span>
+    <span class="abtn tint" style="height:40px">Recommendations</span>
+    <span class="abtn solid" style="height:40px">＋ Upload Main Image</span>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The marketing site inverts: light paint is ink <code>#020108</code> on <code>#fff</code> with ink-filled CTAs, dark paint is white on <code>#020108</code> with white-filled CTAs; hairlines and muted inks are the <code>--fonts-*</code> alpha scale and <code>--lines</code>/<code>--menu-colors</code>. The app's declared ramp is the <code>base-100…900</code> neutral stack with the <code>#ff6b02</code> accent.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">The app's declared 4px spacing base and 4–40px radius steps; the marketing site paints fluid radii (~1318px pills, 6.65px chips, 26.6px icon rings). Controls transition over the measured 0.2s ease on marketing and the declared 150ms cubic-bezier(.4,0,.2,1) in the app; the site ignores prefers-reduced-motion (337 moving elements kept running).</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two faces: <code>"Sf Pro Display", Arial</code> on the marketing site and <code>sfProFont, "sfProFont Fallback"</code> in the app — both proprietary SF Pro builds that fall back to system sans here. The marketing ramp is fluid-rem: the declared steps resolve to 7.37–88.59px at 1440 while headings paint 73.2/99.8/53.2px (and 40.3px on the phone); the app is a fixed declared 9–52px ramp. Tracking is negative throughout.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --_fonts---*/--fonts-*/--mainbg variables and the app's --color-*/--text-*/--radius-* theme layer from the live stylesheets and resolved them on a probe document in both painted themes</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, selected, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [grp0, grpTree] of [['color', TOK.core.color || {}], ['appColor', TOK.core.appColor || {}]]) {
+    for (const [g, grp] of Object.entries(grpTree)) {
+      const items = (grp && grp.t ? [[grp0 + '.' + g, grp]] : flat(grp, grp0 + '.' + g + '.')).filter(([, t]) => t.t === 'color');
+      if (!items.length) continue;
+      h += `<div class="pal-h">${esc(grp0)}.${esc(g)}</div><div class="pal">`;
+      for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+      h += '</div>';
+    }
+  }
+  // The roles panel obeys the Dark toggle: fourmula.ai ships a real dark
+  // paint (.body vs .body.dark), so both sets have values to show.
+  const rolesHost = () => {
+    const dark = document.documentElement.dataset.mode === 'dark';
+    const roles = flat(TOK[dark ? 'dark' : 'light'] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    let hh = `<div class="pal-h">${dark ? 'dark roles (.body)' : 'light roles (.body.dark)'}</div>`;
+    if (!roles.length) return hh + `<p class="note">Empty — no ${dark ? 'dark' : 'light'} token set.</p>`;
+    hh += `<div class="pal${dark ? ' dark' : ''}">`;
+    for (const [n, t] of roles) hh += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    return hh + '</div>';
+  };
+  const host = document.createElement('div');
+  host.id = 'roles-panel';
+  $('#roles-out').insertAdjacentHTML('beforeend', h);
+  $('#roles-out').appendChild(host);
+  const refill = () => { host.innerHTML = rolesHost(); };
+  refill();
+  document.getElementById('theme').addEventListener('change', function () {
+    document.documentElement.dataset.mode = this.checked ? 'dark' : '';
+    refill();
+  });
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat(TOK.core.animate || {}, 'animate.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const setname of ['light', 'dark']) {
+    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.component || {}).app || {}, 'component.app.')) {
+    if (/shadow|glow|backdrop/.test(n)) e += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 110))}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b> <span>the public surfaces paint no drop shadows — depth comes from blur and fills</span></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).animation || {}, 'motion.animation.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(JSON.stringify(t.v)).slice(0, 90))}</span></div>`;
+  for (const [n, t] of flat((TOK.core.heroSlider || {}), 'heroSlider.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  for (const [n, t] of flat((TOK.core.fluid || {}), 'fluid.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Fourmula</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

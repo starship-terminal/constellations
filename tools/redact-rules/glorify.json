@@ -1,0 +1,27 @@
+{
+ "_note": "Rules for systems/glorify. A fully public signed-out capture: every route is public marketing, a signed-out auth card, or the product's own anonymous Play-for-free editor on a scratch /file/<id> the SPA creates. The auth fields were typed into with sample text (name@example.com, 'Example User', 'sample-pass-123', 'Example Brand', 'A sample product description') and cleared, never submitted, so no PII is reachable. No trial, checkout, login or share flow was activated. Every email the OCR finds is published content: glorify.com addresses printed in the marketing/footer pages, placeholder addresses in the product copy and form fields, and article authors' published addresses. One family paints out a demo collaborator's personal-style address in the home page's share-modal art.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@glorify\\.app$",
+   "@glorify\\.co$",
+   "@glorify\\.com$",
+   "@glorifyapp\\.app$",
+   "@glorifyapp\\.co$",
+   "@glorifyapp\\.com$",
+   "@example\\.com$",
+   "@example\\.inc$",
+   "@example\\.org$",
+   "@everyone$",
+   "@here$"
+  ]
+ },
+ "families": [
+  {
+   "name": "home share-modal art: demo collaborator's email address",
+   "files": ["screenshots/home-light-full.png"],
+   "size": [[1440, 15728]],
+   "rects": [[1014, 6964, 1092, 6976, "solid"], [1007, 7011, 1140, 7030, "solid"]]
+  }
+ ]
+}

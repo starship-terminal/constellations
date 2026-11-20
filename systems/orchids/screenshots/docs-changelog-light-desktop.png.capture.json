@@ -1,0 +1,16 @@
+{
+  "capturedAt": "2026-11-18T17:02:00.810Z",
+  "url": "https://docs.orchids.app/changelog/overview",
+  "title": "Changelog - Orchids",
+  "w": 1440,
+  "h": 900,
+  "dpr": 2,
+  "vv": {
+    "w": 1440,
+    "h": 900,
+    "scale": 1
+  },
+  "className": "light",
+  "text": "Documentation Index\n\nFetch the complete documentation index at: /llms.txt\n\nUse this file to discover all available pages before exploring further.\n\nSkip to main content\nOrchids hom",
+  "png": "/tmp/orchids-raw/shots/docs-changelog-light-desktop.png"
+}

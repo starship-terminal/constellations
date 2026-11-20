@@ -1,0 +1,749 @@
+{
+  "_about": "The token tree build_tokens.py turns into tokens.json. exactly.ai's declared design layer is the 27 --token-* colour names its Framer stylesheets put on <body> (raw/css-vars.json); everything else is measured computed style (raw/components-computed.json). One light theme: the site paints light on every signed-out surface, and its single prefers-color-scheme media rule repaints nothing. Leaves either name a variable ('var', resolved in light) or carry a measured value with its source ('value' + 'source').",
+  "core": {
+    "color": {
+      "palette": {
+        "ink": {
+          "var": "--token-6bd2bf74-c0db-460d-af58-5af6b5254b54",
+          "type": "color",
+          "description": "#1e1e1e — primary ink: body and heading text on light, the dark CTA fill on plan cards"
+        },
+        "ink-alt": {
+          "var": "--token-7e2e2b25-d7c2-4e1b-8c85-c488cce631cd",
+          "type": "color",
+          "description": "#1e1e1e — a second ink declaration (Framer colour styles are duplicated per use)"
+        },
+        "black": {
+          "var": "--token-b0f4d26e-7fc3-444b-98ee-f5c162ef3422",
+          "type": "color",
+          "description": "#000 — the footer canvas and true-black text"
+        },
+        "black-alt": {
+          "var": "--token-ba35b1b8-095f-4e2a-a672-6cac2a527073",
+          "type": "color",
+          "description": "#000 — a second black declaration"
+        },
+        "black-70": {
+          "var": "--token-fca3ff45-f85b-4188-8a5a-4165f4a664e8",
+          "type": "color",
+          "description": "rgba(0,0,0,.7) — translucent black"
+        },
+        "black-20": {
+          "var": "--token-c81b98ef-023d-46a5-bb93-d03732a947eb",
+          "type": "color",
+          "description": "rgba(0,0,0,.2) — a pale black wash"
+        },
+        "paper": {
+          "var": "--token-ca1cbd0d-a33b-4062-9b3e-175f9be495d4",
+          "type": "color",
+          "description": "#fff — page canvas and the light pill fill"
+        },
+        "paper-2": {
+          "var": "--token-279276a7-1140-4de3-9fda-da103e5da9f4",
+          "type": "color",
+          "description": "#fff — second white (the support-bubble fill reads it)"
+        },
+        "paper-3": {
+          "var": "--token-86c05ec3-f643-416d-b481-7d691d035bf0",
+          "type": "color",
+          "description": "#fff — third white"
+        },
+        "paper-4": {
+          "var": "--token-d1e1eac9-5c52-46a9-8c88-c4c7aa28ccec",
+          "type": "color",
+          "description": "#fff — fourth white"
+        },
+        "paper-5": {
+          "var": "--token-04831ba3-78f3-4aa2-ae8b-5e5356257505",
+          "type": "color",
+          "description": "#fff — fifth white"
+        },
+        "mist": {
+          "var": "--token-bd46276e-f33e-4c99-835d-b15019849f13",
+          "type": "color",
+          "description": "#f7f7f7 — card fill: showcase card inner, the plan cards' ancestor surface"
+        },
+        "mist-85": {
+          "var": "--token-97a5b36a-40e1-41a1-b620-975afa509dc7",
+          "type": "color",
+          "description": "rgba(235,235,235,.85) — a milky surface"
+        },
+        "accent": {
+          "var": "--token-60e752ab-0c0a-4597-9846-dec051a62533",
+          "type": "color",
+          "description": "#fb411f — the brand orange: Start-for-free pill on interior pages, the For-free chip"
+        },
+        "accent-alt": {
+          "var": "--token-1c76e087-ac93-4255-838e-bfbcd3918e85",
+          "type": "color",
+          "description": "#fb411f — a second accent declaration"
+        },
+        "grey-08": {
+          "var": "--token-63655132-06e3-46c9-b5e5-e10ca2cfd708",
+          "type": "color",
+          "description": "rgba(64,64,64,.08) — a hairline grey wash"
+        },
+        "grey-16": {
+          "var": "--token-95c74eec-178d-4c0f-b3bb-cd5ff24bf37d",
+          "type": "color",
+          "description": "rgba(64,64,64,.16) — a light grey wash"
+        },
+        "grey-36": {
+          "var": "--token-a4dfd562-a99a-4d54-8ac2-2686e42dcc9f",
+          "type": "color",
+          "description": "rgba(64,64,64,.36) — a mid grey"
+        },
+        "grey-48": {
+          "var": "--token-fc8120db-7707-4e3b-a78e-7fe0b0fa7602",
+          "type": "color",
+          "description": "rgba(64,64,64,.48) — placeholder and muted text"
+        },
+        "grey-60": {
+          "var": "--token-6c14e0fb-f377-48f9-8e72-c2739403571a",
+          "type": "color",
+          "description": "rgba(64,64,64,.6) — secondary text (the plan price)"
+        },
+        "warm-06": {
+          "var": "--token-81ce0e37-29f5-44cd-96c7-39e2529798a0",
+          "type": "color",
+          "description": "rgba(124,124,124,.06) — the faintest neutral wash"
+        },
+        "warm-08": {
+          "var": "--token-65e1419e-26fc-4200-9266-4d550957818c",
+          "type": "color",
+          "description": "rgba(124,124,124,.08) — chip and field fill: the Search… trigger, collection cards, the Read-study pill"
+        },
+        "warm-10": {
+          "var": "--token-50d79254-7011-4ac9-b365-d3a67e6d6bdf",
+          "type": "color",
+          "description": "rgba(124,124,124,.10) — a slightly deeper neutral wash"
+        },
+        "white-10": {
+          "var": "--token-faf5189b-ad03-49a0-aa02-6413224fcc45",
+          "type": "color",
+          "description": "rgba(255,255,255,.1) — the glass Book-a-demo pill over the hero photo"
+        },
+        "white-20": {
+          "var": "--token-43760daa-8737-46ce-9555-3aba75b59bb4",
+          "type": "color",
+          "description": "rgba(255,255,255,.2) — the industry-card image border"
+        },
+        "white-40": {
+          "var": "--token-e48c39d2-dcde-49d6-a9ce-92b2b7d12341",
+          "type": "color",
+          "description": "rgba(255,255,255,.4) — a soft white"
+        },
+        "white-60": {
+          "var": "--token-3a806071-b041-43a8-b489-4903bdd7258c",
+          "type": "color",
+          "description": "rgba(255,255,255,.6) — muted on-image text: hero sub, footer text"
+        }
+      }
+    },
+    "font": {
+      "family": {
+        "display": {
+          "value": "Inter, \"Inter Placeholder\", sans-serif",
+          "type": "fontFamily",
+          "source": "measured computed style of hero-h1 default (raw/components-computed.json) · fontFamily",
+          "description": "Inter with its 'Inter Placeholder' fallback — the wght-300 display face (hero, section and page headlines)."
+        },
+        "ui": {
+          "value": "\"Inter Variable\", \"Inter Variable Placeholder\", sans-serif",
+          "type": "fontFamily",
+          "source": "measured computed style of nav-cta default (raw/components-computed.json) · fontFamily",
+          "description": "Inter Variable with placeholder fallback — UI text: nav, CTAs, card titles, footer."
+        },
+        "body": {
+          "value": "\"Inter Variable\", \"Inter Variable Placeholder\", sans-serif",
+          "type": "fontFamily",
+          "source": "measured computed style of article-body default (raw/components-computed.json) · fontFamily",
+          "description": "Inter Variable — article and long-form text."
+        },
+        "card": {
+          "value": "Inter, \"Inter Placeholder\", sans-serif",
+          "type": "fontFamily",
+          "source": "measured computed style of plan-name default (raw/components-computed.json) · fontFamily",
+          "description": "Inter with its 'Inter Placeholder' fallback — the plan-card title face (showcase card titles paint Inter Variable)."
+        }
+      },
+      "size": {
+        "display": {
+          "value": "47px",
+          "type": "dimension",
+          "source": "measured computed style of hero-h1 default (raw/components-computed.json) · fontSize",
+          "description": "Display size: every h1 and the 47px section headings.",
+          "responsive": {
+            "mobile": "27px"
+          }
+        },
+        "display-sm": {
+          "value": "27px",
+          "type": "dimension",
+          "source": "measured computed style of m-hero-h1 default (raw/components-computed.json) · fontSize",
+          "description": "The display at 390 wide."
+        },
+        "heading-2": {
+          "value": "32px",
+          "type": "dimension",
+          "source": "measured computed style of article-h2 default (raw/components-computed.json) · fontSize",
+          "description": "Article section headings."
+        },
+        "lead": {
+          "value": "22px",
+          "type": "dimension",
+          "source": "measured computed style of article-body default (raw/components-computed.json) · fontSize",
+          "description": "Lead and article body size; also the FAQ question/answer text."
+        },
+        "card": {
+          "value": "21px",
+          "type": "dimension",
+          "source": "measured computed style of plan-name default (raw/components-computed.json) · fontSize",
+          "description": "Card titles (h4/h5) and footer text."
+        },
+        "drawer": {
+          "value": "17px",
+          "type": "dimension",
+          "source": "measured computed style of m-drawer-link default (raw/components-computed.json) · fontSize",
+          "description": "Mobile drawer links."
+        },
+        "field": {
+          "value": "16px",
+          "type": "dimension",
+          "source": "measured computed style of help-search-input default (raw/components-computed.json) · fontSize",
+          "description": "The modal search field."
+        },
+        "ui": {
+          "value": "14px",
+          "type": "dimension",
+          "source": "measured computed style of nav-cta default (raw/components-computed.json) · fontSize",
+          "description": "UI text: nav links, CTA labels, plan features, chips."
+        }
+      },
+      "weight": {
+        "light": {
+          "value": 300,
+          "type": "fontWeight",
+          "source": "measured computed style of hero-h1 default (raw/components-computed.json) · fontWeight",
+          "description": "Display headlines."
+        },
+        "regular": {
+          "value": 400,
+          "type": "fontWeight",
+          "source": "measured computed style of article-body default (raw/components-computed.json) · fontWeight",
+          "description": "Everything else."
+        },
+        "semibold": {
+          "value": 600,
+          "type": "fontWeight",
+          "source": "measured computed style of read-more default (raw/components-computed.json) · fontWeight",
+          "description": "Caption links only (Read more, industry-card titles)."
+        }
+      },
+      "lineHeight": {
+        "display": {
+          "value": "60px",
+          "type": "dimension",
+          "source": "measured computed style of hero-h1 default (raw/components-computed.json) · lineHeight"
+        },
+        "display-sm": {
+          "value": "36px",
+          "type": "dimension",
+          "source": "measured computed style of m-hero-h1 default (raw/components-computed.json) · lineHeight"
+        },
+        "heading-2": {
+          "value": "44px",
+          "type": "dimension",
+          "source": "measured computed style of article-h2 default (raw/components-computed.json) · lineHeight"
+        },
+        "lead": {
+          "value": "32px",
+          "type": "dimension",
+          "source": "measured computed style of article-body default (raw/components-computed.json) · lineHeight"
+        },
+        "card": {
+          "value": "32px",
+          "type": "dimension",
+          "source": "measured computed style of plan-name default (raw/components-computed.json) · lineHeight"
+        },
+        "drawer": {
+          "value": "24px",
+          "type": "dimension",
+          "source": "measured computed style of m-drawer-link default (raw/components-computed.json) · lineHeight"
+        },
+        "field": {
+          "value": "32px",
+          "type": "dimension",
+          "source": "measured computed style of help-search-input default (raw/components-computed.json) · lineHeight"
+        },
+        "ui": {
+          "value": "20px",
+          "type": "dimension",
+          "source": "measured computed style of nav-cta default (raw/components-computed.json) · lineHeight"
+        }
+      },
+      "letterSpacing": {
+        "display": {
+          "value": "-1.88px",
+          "type": "dimension",
+          "source": "measured computed style of hero-h1 default (raw/components-computed.json) · letterSpacing",
+          "description": "-4% of the display size."
+        },
+        "display-sm": {
+          "value": "-0.81px",
+          "type": "dimension",
+          "source": "measured computed style of m-hero-h1 default (raw/components-computed.json) · letterSpacing"
+        },
+        "heading-2": {
+          "value": "-0.32px",
+          "type": "dimension",
+          "source": "measured computed style of article-h2 default (raw/components-computed.json) · letterSpacing"
+        },
+        "lead": {
+          "value": "-0.22px",
+          "type": "dimension",
+          "source": "measured computed style of article-body default (raw/components-computed.json) · letterSpacing"
+        },
+        "card": {
+          "value": "-0.42px",
+          "type": "dimension",
+          "source": "measured computed style of plan-name default (raw/components-computed.json) · letterSpacing"
+        },
+        "card-alt": {
+          "value": "-0.63px",
+          "type": "dimension",
+          "source": "measured computed style of showcase-card-title default (raw/components-computed.json) · letterSpacing"
+        },
+        "semibold-ui": {
+          "value": "-0.14px",
+          "type": "dimension",
+          "source": "measured computed style of read-more default (raw/components-computed.json) · letterSpacing"
+        },
+        "none": {
+          "value": "0px",
+          "type": "dimension",
+          "source": "derived: computed style of nav-cta default (raw/components-computed.json) · letterSpacing is 'normal', which tracks at 0px",
+          "description": "UI text tracks normally."
+        }
+      }
+    },
+    "typography": {
+      "display": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.display}",
+          "fontSize": "{font.size.display}",
+          "fontWeight": "{font.weight.light}",
+          "lineHeight": "{font.lineHeight.display}",
+          "letterSpacing": "{font.letterSpacing.display}"
+        },
+        "$extensions": {
+          "source": "composed from the hero-h1 measurements"
+        }
+      },
+      "heading-2": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.ui}",
+          "fontSize": "{font.size.heading-2}",
+          "fontWeight": "{font.weight.regular}",
+          "lineHeight": "{font.lineHeight.heading-2}",
+          "letterSpacing": "{font.letterSpacing.heading-2}"
+        },
+        "$extensions": {
+          "source": "composed from the article-h2 measurements"
+        }
+      },
+      "lead": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.body}",
+          "fontSize": "{font.size.lead}",
+          "fontWeight": "{font.weight.regular}",
+          "lineHeight": "{font.lineHeight.lead}",
+          "letterSpacing": "{font.letterSpacing.lead}"
+        },
+        "$extensions": {
+          "source": "composed from the article-body measurements"
+        }
+      },
+      "card": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.card}",
+          "fontSize": "{font.size.card}",
+          "fontWeight": "{font.weight.regular}",
+          "lineHeight": "{font.lineHeight.card}",
+          "letterSpacing": "{font.letterSpacing.card}"
+        },
+        "$extensions": {
+          "source": "composed from the plan-name measurements"
+        }
+      },
+      "ui": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{font.family.ui}",
+          "fontSize": "{font.size.ui}",
+          "fontWeight": "{font.weight.regular}",
+          "lineHeight": "{font.lineHeight.ui}",
+          "letterSpacing": "{font.letterSpacing.none}"
+        },
+        "$extensions": {
+          "source": "composed from the nav-cta measurements"
+        }
+      }
+    },
+    "radius": {
+      "none": {
+        "value": "0px",
+        "type": "dimension",
+        "source": "measured computed style of hero-h1 default (raw/components-computed.json) · borderTopLeftRadius",
+        "description": "Text and prose blocks are square."
+      },
+      "card": {
+        "value": "40px",
+        "type": "dimension",
+        "source": "measured computed style of help-card default (raw/components-computed.json) · borderTopLeftRadius",
+        "description": "The soft card corner: collection cards on the help landing."
+      },
+      "cta": {
+        "value": "100px",
+        "type": "dimension",
+        "source": "measured computed style of plan-cta default (raw/components-computed.json) · borderTopLeftRadius",
+        "description": "The plan cards' 56px CTAs are fully rounded at 100px."
+      },
+      "pill": {
+        "value": "1000px",
+        "type": "dimension",
+        "source": "measured computed style of nav-cta default (raw/components-computed.json) · borderTopLeftRadius",
+        "description": "Pills: nav links, hero CTAs, the Join pill, drawer links — 1000px, effectively a capsule."
+      }
+    },
+    "space": {
+      "4": {
+        "value": "4px",
+        "type": "dimension",
+        "source": "measured computed style of m-drawer-link default (raw/components-computed.json) · paddingTop",
+        "description": "Drawer link vertical padding."
+      },
+      "6": {
+        "value": "6px",
+        "type": "dimension",
+        "source": "measured computed style of m-join default (raw/components-computed.json) · paddingTop",
+        "description": "Join pill and sidebar-link vertical padding."
+      },
+      "8": {
+        "value": "8px",
+        "type": "dimension",
+        "source": "measured computed style of nav-link default (raw/components-computed.json) · paddingTop",
+        "description": "Nav link vertical padding and footer side padding."
+      },
+      "12": {
+        "value": "12px",
+        "type": "dimension",
+        "source": "measured computed style of nav-link default (raw/components-computed.json) · paddingRight",
+        "description": "Nav link horizontal padding."
+      },
+      "16": {
+        "value": "16px",
+        "type": "dimension",
+        "source": "measured computed style of nav-cta default (raw/components-computed.json) · paddingRight",
+        "description": "Header pill and drawer-link horizontal padding."
+      },
+      "18": {
+        "value": "18px",
+        "type": "dimension",
+        "source": "measured computed style of hero-cta default (raw/components-computed.json) · paddingTop",
+        "description": "CTA vertical padding."
+      },
+      "24": {
+        "value": "24px",
+        "type": "dimension",
+        "source": "measured computed style of hero-cta default (raw/components-computed.json) · paddingRight",
+        "description": "CTA horizontal padding; the sidebar's side padding."
+      },
+      "40": {
+        "value": "40px",
+        "type": "dimension",
+        "source": "measured computed style of help-card default (raw/components-computed.json) · paddingTop",
+        "description": "Card padding (collection cards, the compare bar's vertical padding)."
+      }
+    },
+    "duration": {
+      "fast": {
+        "value": "0.2s",
+        "type": "duration",
+        "source": "measured computed style of footer-link default (raw/components-computed.json) · transitionDuration",
+        "description": "The link colour transition (footer and article links)."
+      }
+    }
+  },
+  "light": {
+    "canvas": {
+      "var": "--token-ca1cbd0d-a33b-4062-9b3e-175f9be495d4",
+      "type": "color",
+      "description": "Page canvas — white on every signed-out route."
+    },
+    "ink": {
+      "var": "--token-6bd2bf74-c0db-460d-af58-5af6b5254b54",
+      "type": "color",
+      "description": "Primary text and the dark pill fill."
+    },
+    "ink-deep": {
+      "var": "--token-b0f4d26e-7fc3-444b-98ee-f5c162ef3422",
+      "type": "color",
+      "description": "True black: the footer canvas."
+    },
+    "muted": {
+      "var": "--token-fc8120db-7707-4e3b-a78e-7fe0b0fa7602",
+      "type": "color",
+      "description": "Placeholder and muted text (Search… caption, industry meta)."
+    },
+    "muted-strong": {
+      "var": "--token-6c14e0fb-f377-48f9-8e72-c2739403571a",
+      "type": "color",
+      "description": "Secondary text: the plan price line."
+    },
+    "surface": {
+      "card": {
+        "var": "--token-bd46276e-f33e-4c99-835d-b15019849f13",
+        "type": "color",
+        "description": "#f7f7f7 card fill."
+      },
+      "chip": {
+        "var": "--token-65e1419e-26fc-4200-9266-4d550957818c",
+        "type": "color",
+        "description": "rgba(124,124,124,.08): the Search… field, collection cards, Read-study pill."
+      },
+      "milk": {
+        "var": "--token-97a5b36a-40e1-41a1-b620-975afa509dc7",
+        "type": "color",
+        "description": "rgba(235,235,235,.85) milky surface."
+      }
+    },
+    "accent": {
+      "var": "--token-60e752ab-0c0a-4597-9846-dec051a62533",
+      "type": "color",
+      "description": "#fb411f: the Start-for-free pill on interior pages and the For-free chip."
+    },
+    "on-accent": {
+      "var": "--token-ca1cbd0d-a33b-4062-9b3e-175f9be495d4",
+      "type": "color",
+      "description": "White text on the accent pill."
+    },
+    "pill": {
+      "light": {
+        "var": "--token-ca1cbd0d-a33b-4062-9b3e-175f9be495d4",
+        "type": "color",
+        "description": "The white pill: nav CTA over the hero, hero Start-for-free, mobile Join."
+      },
+      "light-ink": {
+        "var": "--token-b0f4d26e-7fc3-444b-98ee-f5c162ef3422",
+        "type": "color",
+        "description": "Black text on the white pill (nav CTA over the hero)."
+      },
+      "dark": {
+        "var": "--token-6bd2bf74-c0db-460d-af58-5af6b5254b54",
+        "type": "color",
+        "description": "The #1e1e1e pill: plan-card CTAs."
+      },
+      "dark-ink": {
+        "var": "--token-ca1cbd0d-a33b-4062-9b3e-175f9be495d4",
+        "type": "color",
+        "description": "White text on the dark pill."
+      }
+    },
+    "on-image": {
+      "ink": {
+        "var": "--token-ca1cbd0d-a33b-4062-9b3e-175f9be495d4",
+        "type": "color",
+        "description": "White text over the photo hero."
+      },
+      "muted": {
+        "var": "--token-3a806071-b041-43a8-b489-4903bdd7258c",
+        "type": "color",
+        "description": "rgba(255,255,255,.6): the hero sub and footer text."
+      },
+      "soft": {
+        "var": "--token-e48c39d2-dcde-49d6-a9ce-92b2b7d12341",
+        "type": "color",
+        "description": "rgba(255,255,255,.4)."
+      },
+      "glass": {
+        "var": "--token-faf5189b-ad03-49a0-aa02-6413224fcc45",
+        "type": "color",
+        "description": "rgba(255,255,255,.1): the Book-a-demo glass pill."
+      },
+      "line": {
+        "var": "--token-43760daa-8737-46ce-9555-3aba75b59bb4",
+        "type": "color",
+        "description": "rgba(255,255,255,.2): the industry-card image border."
+      }
+    },
+    "footer": {
+      "bg": {
+        "var": "--token-b0f4d26e-7fc3-444b-98ee-f5c162ef3422",
+        "type": "color",
+        "description": "The footer's black canvas."
+      },
+      "ink": {
+        "var": "--token-ca1cbd0d-a33b-4062-9b3e-175f9be495d4",
+        "type": "color",
+        "description": "Footer link text."
+      },
+      "muted": {
+        "var": "--token-3a806071-b041-43a8-b489-4903bdd7258c",
+        "type": "color",
+        "description": "rgba(255,255,255,.6) footer body text."
+      }
+    },
+    "focus": {
+      "ring": {
+        "value": "rgb(16, 16, 16)",
+        "type": "color",
+        "source": "measured computed style of nav-cta focus-visible (raw/components-computed.json) · outlineColor; outline-style auto, in Chrome's own default focus-ring colour, so the browser chose it, not the site",
+        "description": "The 1px auto focus ring the browser draws on interactive elements (desktop pass); the site sets no focus colour of its own."
+      },
+      "ring-mobile": {
+        "value": "rgb(229, 151, 0)",
+        "type": "color",
+        "source": "measured computed style of m-join focus-visible (raw/components-computed.json) · outlineColor; outline-style auto, in the colour Chrome's phone emulation uses for its own focus ring, so the browser chose it, not the site",
+        "description": "The same browser-drawn ring at 390 wide: Chrome's phone emulation draws it in #e59700; the site sets no focus colour of its own."
+      },
+      "width": {
+        "value": "1px",
+        "type": "dimension",
+        "source": "measured computed style of nav-cta focus-visible (raw/components-computed.json) · outlineWidth"
+      },
+      "offset": {
+        "value": "1px",
+        "type": "dimension",
+        "source": "measured computed style of nav-cta focus-visible (raw/components-computed.json) · outlineOffset"
+      }
+    }
+  },
+  "component": {
+    "nav": {
+      "height": {
+        "value": "68px",
+        "type": "dimension",
+        "source": "measured computed style of nav-header default (raw/components-computed.json) · rect height",
+        "description": "The fixed desktop header."
+      },
+      "pill-height": {
+        "value": "36px",
+        "type": "dimension",
+        "source": "measured computed style of nav-cta default (raw/components-computed.json) · rect height",
+        "description": "Header link and pill height."
+      }
+    },
+    "cta": {
+      "height": {
+        "value": "56px",
+        "type": "dimension",
+        "source": "measured computed style of hero-cta default (raw/components-computed.json) · rect height",
+        "description": "The large pill CTAs."
+      },
+      "padding-x": {
+        "value": "24px",
+        "type": "dimension",
+        "source": "measured computed style of hero-cta default (raw/components-computed.json) · paddingRight"
+      },
+      "padding-y": {
+        "value": "18px",
+        "type": "dimension",
+        "source": "measured computed style of hero-cta default (raw/components-computed.json) · paddingTop"
+      }
+    },
+    "card": {
+      "plan-width": {
+        "value": "389.33px",
+        "type": "dimension",
+        "source": "measured computed style of plan-card default (raw/components-computed.json) · rect width",
+        "description": "A plan card at 1440."
+      },
+      "plan-height": {
+        "value": "745px",
+        "type": "dimension",
+        "source": "measured computed style of plan-card default (raw/components-computed.json) · rect height"
+      },
+      "help-width": {
+        "value": "640px",
+        "type": "dimension",
+        "source": "measured computed style of help-card default (raw/components-computed.json) · rect width",
+        "description": "A help collection card."
+      },
+      "showcase-width": {
+        "value": "708px",
+        "type": "dimension",
+        "source": "measured computed style of showcase-card default (raw/components-computed.json) · rect width",
+        "description": "A showcase brand card at 1440 (two-column grid)."
+      },
+      "case-width": {
+        "value": "767px",
+        "type": "dimension",
+        "source": "measured computed style of case-card default (raw/components-computed.json) · rect width",
+        "description": "A case-study row's text block."
+      }
+    },
+    "field": {
+      "search-width": {
+        "value": "640px",
+        "type": "dimension",
+        "source": "measured computed style of help-search default (raw/components-computed.json) · rect width",
+        "description": "The Search… trigger field."
+      },
+      "search-height": {
+        "value": "52px",
+        "type": "dimension",
+        "source": "measured computed style of help-search default (raw/components-computed.json) · rect height"
+      },
+      "modal-input-width": {
+        "value": "348px",
+        "type": "dimension",
+        "source": "measured computed style of help-search-input default (raw/components-computed.json) · rect width",
+        "description": "The real input inside the Framer search modal."
+      },
+      "modal-input-height": {
+        "value": "32px",
+        "type": "dimension",
+        "source": "measured computed style of help-search-input default (raw/components-computed.json) · rect height"
+      }
+    },
+    "mobile": {
+      "topbar-height": {
+        "value": "56px",
+        "type": "dimension",
+        "source": "measured computed style of m-topbar default (raw/components-computed.json) · rect height"
+      },
+      "hamburger": {
+        "value": "32px",
+        "type": "dimension",
+        "source": "measured computed style of m-hamburger default (raw/components-computed.json) · rect width",
+        "description": "The 32 x 32 menu toggle."
+      },
+      "drawer-link-height": {
+        "value": "32px",
+        "type": "dimension",
+        "source": "measured computed style of m-drawer-link default (raw/components-computed.json) · rect height"
+      }
+    },
+    "scheduler": {
+      "height": {
+        "value": "600px",
+        "type": "dimension",
+        "source": "measured computed style of demo-scheduler default (raw/components-computed.json) · rect height",
+        "description": "The embedded booking iframe's height."
+      }
+    },
+    "sidebar": {
+      "width": {
+        "value": "240px",
+        "type": "dimension",
+        "source": "measured computed style of help-sidebar default (raw/components-computed.json) · rect width",
+        "description": "The help-center doc rail."
+      }
+    }
+  }
+}

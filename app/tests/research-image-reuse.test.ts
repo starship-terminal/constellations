@@ -60,7 +60,12 @@ vi.mock("@/server/research/evidence", () => ({
   packageTokens: vi.fn(),
   handoffPrompt: vi.fn(),
 }));
-import { researchTools } from "@/server/research/agent";
+import {
+  HISTORY_IMAGES,
+  modelHistory,
+  researchTools,
+} from "@/server/research/agent";
+import type { UIMessage } from "ai";
 
 const execution = { toolCallId: "call", messages: [], context: {} };
 const image = { data: new Uint8Array([1, 2, 3]), mediaType: "image/png" };
@@ -151,4 +156,53 @@ test("inspecting a reference and then viewing its screenshot reads the file once
   expect(mocks.readLocalImage).toHaveBeenCalledTimes(1);
   expect(JSON.stringify(first)).toContain('"data":"AQID"');
   expect(JSON.stringify(second)).toContain('"data":"AQID"');
+});
+
+test("only the most recent history images go back to the model", async () => {
+  const inspected = (id: string) => ({
+    type: "tool-inspectReference",
+    toolCallId: id,
+    state: "output-available",
+    input: { referenceId: "systems:test" },
+    output: { kind: "inspected", visualEvidence: "image-supplied" },
+  });
+  const messages = ["a", "b", "c"].map(
+    (id) =>
+      ({
+        id,
+        role: "assistant",
+        parts: [inspected(id)],
+      }) as unknown as UIMessage,
+  );
+  const evidence = modelHistory(messages, []).map(
+    (message) =>
+      (message.parts[0] as unknown as { output: { visualEvidence: string } })
+        .output.visualEvidence,
+  );
+  expect(HISTORY_IMAGES).toBe(2);
+  expect(evidence).toEqual([
+    "image-earlier",
+    "image-supplied",
+    "image-supplied",
+  ]);
+  // The stored messages are not touched.
+  expect(
+    (messages[0].parts[0] as unknown as { output: { visualEvidence: string } })
+      .output.visualEvidence,
+  ).toBe("image-supplied");
+  // An earlier image is described, not read and attached again.
+  const tools = researchTools({ excludedIds: [] });
+  const output = (await tools.inspectReference.execute!(
+    { referenceId: "systems:test" },
+    execution,
+  )) as InspectOutput;
+  vi.clearAllMocks();
+  const model = await tools.inspectReference.toModelOutput!({
+    toolCallId: "call",
+    input: { referenceId: "systems:test" },
+    output: { ...output, visualEvidence: "image-earlier" },
+  });
+  expect(mocks.readReferenceImage).not.toHaveBeenCalled();
+  expect(JSON.stringify(model)).not.toContain('"type":"file"');
+  expect(JSON.stringify(model)).toContain("earlier turn");
 });

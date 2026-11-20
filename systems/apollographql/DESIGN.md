@@ -134,12 +134,14 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **The conic ring is a ramp, not a circle.** `component.cta-ring` stores the hero CTA's `conic-gradient(from ~412deg, teal, orange, teal)` as a gradient token; in the browser it spins slowly around the pill. The exact angle and animation vary.
 - **oklab whites are recorded as rgba.** Nav text and hover fills compute as `oklab(…/0.72)` etc.; tokens record the equivalent `rgba(255,255,255,…)` with the oklab form noted in source.
 - **`field` colours look inverted.** The contact form sits on a navy band inside a light page: field fill is `nebula` navy with `offwhite` borders — correct, not a bug.
 - **The eyebrow strip may be gone.** The "Apollo Summit 2026" promo band is event-tied; a re-capture may not find it.
 - **Screenshots are 256-colour PNGs** — read exact colours from tokens.json or the raw JSON, never from a screenshot pixel.
 - **Studio auth pages are at rest only.** Login/signup were captured signed out; their form states, errors and everything past submit are uncaptured.
+- **`nav-menu-item` was read from the wrong element.** It is a page-body "Explore GraphOS" link (the open state at y=3177), not a row inside the Products dropdown. Needs a recapture. The horizon-dark-3 tokens now cite only `text-link`, which holds the same colour.
 
 ### Do and don't (from README.md)
 

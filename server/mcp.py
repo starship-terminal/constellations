@@ -53,10 +53,15 @@ def _tool_specs() -> list[dict]:
 def _call(name: str, args: dict) -> dict:
     try:
         result = library.call(name, args or {})
-    except Exception as e:
+    except library.ToolError as e:
         # One malformed call must never end the session: report it as a tool
-        # error and keep the caller's loop alive.
+        # error and keep the caller's loop alive. A ToolError's text is written
+        # for the caller (library.call strips server detail from it).
         return {"content": [{"type": "text", "text": str(e)[:400]}], "isError": True}
+    except Exception as e:  # noqa: BLE001 - the session must outlive any bug
+        # Not a ToolError: a bug. The detail goes to stderr, never the client.
+        print(f"mcp: {name}: {type(e).__name__}: {e}", file=sys.stderr)
+        return {"content": [{"type": "text", "text": f"{name} failed"}], "isError": True}
     if "_image" in result:
         img = result["_image"]
         return {"content": [{"type": "text", "text": json.dumps({"url": img["url"], "name": img["name"]})},
@@ -81,6 +86,21 @@ def handle(req) -> dict | None:
         # the client.
         print(f"mcp: {type(e).__name__}: {e}", file=sys.stderr)
         return _error(req, -32603, "internal error")
+
+
+def handle_batch(raw) -> dict | list | None:
+    """The reply body for one parsed JSON-RPC payload, shared by the stdio loop
+    and POST /api/mcp (web/lib/mcp-batch.ts mirrors it). None means nothing to
+    send back: a lone notification, or a batch of only notifications (HTTP 202).
+    An object gets one reply. A batch gets an array with one reply per member
+    that has one, a non-object member counting as its own Invalid Request. An
+    empty batch is a single Invalid Request, per JSON-RPC 2.0 section 6."""
+    if isinstance(raw, list):
+        if not raw:
+            return {"jsonrpc": "2.0", "id": None,
+                    "error": {"code": -32600, "message": "an empty batch is not a valid request"}}
+        return [r for r in (handle(m) for m in raw) if r is not None] or None
+    return handle(raw)
 
 
 def _dispatch(req: dict) -> dict | None:
@@ -129,18 +149,7 @@ def main() -> None:
             _send({"jsonrpc": "2.0", "id": None,
                    "error": {"code": -32700, "message": "unparseable JSON"}})
             continue
-        if isinstance(req, list):
-            # A batch: one array of replies, none when every member is a
-            # notification; an empty batch is itself an invalid request.
-            if not req:
-                _send({"jsonrpc": "2.0", "id": None,
-                       "error": {"code": -32600, "message": "empty batch"}})
-                continue
-            replies = [r for r in (handle(m) for m in req) if r is not None]
-            if replies:
-                _send(replies)
-            continue
-        out = handle(req)
+        out = handle_batch(req)
         if out is not None:
             _send(out)
 

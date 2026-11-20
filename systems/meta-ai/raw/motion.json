@@ -1,0 +1,17 @@
+{
+  "captured": "2026-11-19",
+  "url": "https://www.meta.ai/",
+  "method": "stylesheet rule read in the T3 preview tab. prefers-reduced-motion was not emulated, so the page verdict comes from authored rules, not a second computed pass.",
+  "computedAtRest": {
+    "button": "transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), plus translate, scale and rotate at the same duration. animation-name none."
+  },
+  "reducedMotionRules": [
+    "*, ::before, ::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }",
+    ".l94VGa_faqPanel { transition: none; }",
+    ".ecto-hero-orbit, .ecto-hero-roll__unit--enter { animation: none; }",
+    ".ur-sm-fade rules set animation none and mask-image none",
+    ".ecto-cot-shimmer-text { animation: none; background-image: none; }",
+    "sonner toast rules set transition none and animation none"
+  ],
+  "verdict": "honours"
+}

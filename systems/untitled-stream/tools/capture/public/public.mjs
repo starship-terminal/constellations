@@ -7,14 +7,19 @@
 // texture is saved as name.partN.png tiles, which quantize.py stitches back together.
 // Nothing is sent, bought or signed into: the only presses are the consent-card dismissal and
 // in-page accordion/menu toggles. untitled.stream sits behind a Cloudflare managed challenge:
-// masking navigator.webdriver lets /, /pricing and /trust self-clear headless, while /login and
-// the legal pages stall in the waiting room and are recorded as blocked, not captured.
+// a route whose challenge does not clear on its own is recorded as blocked, not captured. The
+// committed shots were taken with navigator.webdriver masked; that mask is removed (README).
 import fs from 'fs';
+import os from 'node:os';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { screenshotWithMetadata } from '../screenshot.mjs';
 import { M, closePromo, killGeo, clearChallenge, chromium, UA, UA_MOBILE, BASE } from './lib.mjs';
 
-const RAW = process.env.RAW || new URL('../../../raw/full/', import.meta.url).pathname;
+// Full-colour shots are working files, never committed: by default they go outside the repository,
+// to ~/.design-systems/<slug>/raw-shots, as the kit's public.mjs does.
+const PKG = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
+const RAW = process.env.RAW || path.join(os.homedir(), '.design-systems', path.basename(PKG), 'raw-shots');
 fs.mkdirSync(RAW, { recursive: true });
 const pageArg = (process.argv[2] || '').split(',').filter(Boolean);
 const log = (...a) => console.log(...a);
@@ -46,8 +51,14 @@ class Shooter {
     const tmp = fs.mkdtempSync(path.join(RAW, '.shot-'));
     try {
       const f = path.join(tmp, base);
-      if (H <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
-      else for (let i = 0, y = 0; y < H; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, H - y) } }, this.requested);
+      // Infinite-scroll pages grow scrollHeight without bound after lazyScroll;
+      // without a ceiling the tile loop writes forever. Truncate at 8 chunks, as
+      // the kit does, and record the boundary instead.
+      const MAXH = 8 * chunk;
+      const hCap = Math.min(H, MAXH);
+      if (H > MAXH) log(`  ! ${name}: page is ${H}px tall, capturing first ${hCap}px only (infinite/growing page boundary)`);
+      if (hCap <= chunk) await screenshotWithMetadata(p, { path: f + '.png', fullPage: true }, this.requested);
+      else for (let i = 0, y = 0; y < hCap; i++, y += chunk) await screenshotWithMetadata(p, { path: `${f}.part${i}.png`, fullPage: true, clip: { x: 0, y, width: this.vw, height: Math.min(chunk, hCap - y) } }, this.requested);
       for (const old of fs.readdirSync(RAW)) if (old === base + '.png' || old === base + '.png.capture.json' || (old.startsWith(base + '.part') && /\.part\d+\.png(\.capture\.json)?$/.test(old))) fs.rmSync(path.join(RAW, old));
       for (const n of fs.readdirSync(tmp)) fs.renameSync(path.join(tmp, n), path.join(RAW, n));
     } finally {
@@ -119,7 +130,7 @@ for (const { k, mob } of runs) {
   const spec = (mob ? mobile : desktop)[k];
   const vw = mob ? 390 : 1440, vh = mob ? 844 : 900, dpr = mob ? 2 : 1;
   const ctx = await b.newContext({ viewport: { width: vw, height: vh }, deviceScaleFactor: dpr, userAgent: mob ? UA_MOBILE : UA, isMobile: mob, hasTouch: mob, locale: 'en-US' });
-  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+  // bot check: Cloudflare's challenge is recorded as a boundary, not bypassed (no navigator.webdriver mask).
   const p = await ctx.newPage();
   log(name);
   const S = new Shooter(p, `${name}-light`, vw, vh, dpr);
@@ -146,7 +157,7 @@ for (const { k, mob } of runs) {
 }
 {
   const ctx = await b.newContext({ viewport: { width: 1440, height: 900 }, userAgent: UA, locale: 'en-US' });
-  await ctx.addInitScript(() => { Object.defineProperty(navigator, 'webdriver', { get: () => undefined }); });
+  // bot check: Cloudflare's challenge is recorded as a boundary, not bypassed (no navigator.webdriver mask).
   const p = await ctx.newPage();
   for (const [name, spec] of Object.entries(opportunistic)) {
     if (pageArg.length && !pageArg.includes(name)) continue;

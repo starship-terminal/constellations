@@ -1,0 +1,14 @@
+{
+ "_note": "Rules for systems/fourthwall. A fully public signed-out capture: every route is public marketing, catalogue, docs or help content, plus the signed-out /get-started auth shell (provider choices measured at rest, never pressed, no auth field typed). Field probes typed 'hoodie', 'shopify', 'storefront', 'auth' and name@example.com then cleared - no PII is reachable. Every address OCR could find is published content: the support/sales emails printed on /contact and inside help articles (fourthwall.com addresses), docs example addresses, and the name@example.com placeholder typed into the blog newsletter field. OCR misreads of 'fourthwall' are the same published domain. No regions need masking.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@example\\.com$",
+   "@example\\.inc$",
+   "@example\\.org$",
+   "@domain\\.com$",
+   "@domain\\.org$"
+  ]
+ },
+ "families": []
+}

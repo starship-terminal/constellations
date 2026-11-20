@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Microsoft Copilot style guide</title>
+<style>
+:root {
+  --page: #1f1f1f;
+  --surface: #1f1f1f;
+  --text: rgba(255, 255, 255, 0.871);
+  --muted: rgba(255, 255, 255, 0.631);
+  --action: #ffffff;
+  --on-action: #242424;
+  --border: rgba(255, 255, 255, 0.282);
+  --font: Segoe Sans, Segoe UI, Helvetica, Arial, sans-serif;
+  --display: Segoe Serif Display, Georgia, Times New Roman, serif;
+}
+[data-mode="light"] {
+  --page: #ffffff;
+  --surface: #ffffff;
+  --text: #242424;
+  --muted: #616161;
+  --action: #000000;
+  --on-action: #ffffff;
+  --border: #000000;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--font); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+h1 { font: 400 40px/48px var(--display); letter-spacing: -0.5px; margin: 0; }
+h2 { font: 400 28px/36px var(--font); margin: 40px 0 12px; }
+button.toggle { background: var(--action); color: var(--on-action); border: 0; border-radius: 16px; padding: 12px 24px; font: 600 15px/24px var(--font); cursor: pointer; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+.sw { display: flex; gap: 10px; align-items: center; }
+.sw i { width: 40px; height: 40px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--border); flex: none; }
+.sw b { display: block; font-size: 12px; }
+.sw span { color: var(--muted); font-size: 12px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+td { border-bottom: 1px solid var(--border); padding: 6px 8px; vertical-align: top; }
+.btn { display: inline-flex; align-items: center; background: var(--action); color: var(--on-action); border-radius: 16px; padding: 12px 24px; font-weight: 600; text-decoration: none; }
+.tab { display: inline-block; border-radius: 200px; padding: 8px 24px; font-weight: 600; font-size: 15px; background: var(--action); color: var(--on-action); }
+.card { border: 1px solid var(--border); border-radius: 24px; padding: 16px; max-width: 320px; background: var(--surface); }
+p.note { color: var(--muted); max-width: 70ch; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Microsoft Copilot</h1>
+  <button class="toggle" type="button" onclick="document.documentElement.dataset.mode = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'">Toggle theme</button>
+</header>
+<p class="note">Values are the measured public signed-out page at copilot.com on 2026-11-19. The toggle swaps the semantic set. Segoe Sans and Segoe Serif Display are Microsoft faces; this page falls back when they are not installed.</p>
+<h2>Colour</h2>
+<div class="swatches">
+<div class="sw"><i style="background:#ffffff"></i><div><b>light.background.page</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><b>light.background.hero</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><b>light.background.surface</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#f5f5f5"></i><div><b>light.background.raised</b><span>#f5f5f5</span></div></div>
+<div class="sw"><i style="background:#000000"></i><div><b>light.background.action</b><span>#000000</span></div></div>
+<div class="sw"><i style="background:#000000"></i><div><b>light.background.actionHover</b><span>#000000</span></div></div>
+<div class="sw"><i style="background:#242424"></i><div><b>light.text.primary</b><span>#242424</span></div></div>
+<div class="sw"><i style="background:#616161"></i><div><b>light.text.secondary</b><span>#616161</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><b>light.text.onAction</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#858585"></i><div><b>light.text.disabled</b><span>#858585</span></div></div>
+<div class="sw"><i style="background:#121d2f"></i><div><b>light.text.inverse</b><span>#121d2f</span></div></div>
+<div class="sw"><i style="background:#000000"></i><div><b>light.border.strong</b><span>#000000</span></div></div>
+<div class="sw"><i style="background:#858585"></i><div><b>light.border.muted</b><span>#858585</span></div></div>
+<div class="sw"><i style="background:#000000"></i><div><b>light.focus.ring</b><span>#000000</span></div></div>
+<div class="sw"><i style="background:#000000"></i><div><b>light.component.button.bg</b><span>#000000</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><b>light.component.button.text</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#000000"></i><div><b>light.component.tab.bg</b><span>#000000</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><b>light.component.tab.text</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><b>light.component.card.bg</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#1f1f1f"></i><div><b>dark.background.page</b><span>#1f1f1f</span></div></div>
+<div class="sw"><i style="background:#222222"></i><div><b>dark.background.hero</b><span>#222222</span></div></div>
+<div class="sw"><i style="background:#1f1f1f"></i><div><b>dark.background.surface</b><span>#1f1f1f</span></div></div>
+<div class="sw"><i style="background:#2b2b2b"></i><div><b>dark.background.menu</b><span>#2b2b2b</span></div></div>
+<div class="sw"><i style="background:#343434"></i><div><b>dark.background.raised</b><span>#343434</span></div></div>
+<div class="sw"><i style="background:#3a3a3a"></i><div><b>dark.background.pressed</b><span>#3a3a3a</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><b>dark.background.action</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#343434"></i><div><b>dark.background.actionHover</b><span>#343434</span></div></div>
+<div class="sw"><i style="background:rgba(255, 255, 255, 0.871)"></i><div><b>dark.text.primary</b><span>rgba(255, 255, 255, 0.871)</span></div></div>
+<div class="sw"><i style="background:rgba(255, 255, 255, 0.631)"></i><div><b>dark.text.secondary</b><span>rgba(255, 255, 255, 0.631)</span></div></div>
+<div class="sw"><i style="background:#dedede"></i><div><b>dark.text.footer</b><span>#dedede</span></div></div>
+<div class="sw"><i style="background:#242424"></i><div><b>dark.text.onAction</b><span>#242424</span></div></div>
+<div class="sw"><i style="background:#9e9eff"></i><div><b>dark.text.link</b><span>#9e9eff</span></div></div>
+<div class="sw"><i style="background:#858585"></i><div><b>dark.text.disabled</b><span>#858585</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><b>dark.text.inverse</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:rgba(255, 255, 255, 0.282)"></i><div><b>dark.border.stroke</b><span>rgba(255, 255, 255, 0.282)</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><b>dark.border.strong</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#858585"></i><div><b>dark.border.muted</b><span>#858585</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><b>dark.focus.ring</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><b>dark.component.button.bg</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#242424"></i><div><b>dark.component.button.text</b><span>#242424</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><b>dark.component.tab.bg</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#242424"></i><div><b>dark.component.tab.text</b><span>#242424</span></div></div>
+<div class="sw"><i style="background:#1f1f1f"></i><div><b>dark.component.card.bg</b><span>#1f1f1f</span></div></div>
+</div>
+<h2>Components</h2>
+<p><a class="btn" href="#">Sign in</a></p>
+<p><span class="tab">Work</span></p>
+<div class="card"><strong>Get started with chat</strong><p class="note">Think through projects, summarize information, and keep work moving.</p></div>
+<h2>Scales</h2>
+<table>
+<tr><td><code>core.font.family.display</code></td><td>fontFamily</td><td>Segoe Serif Display, Georgia, Times New Roman, serif</td></tr><tr><td><code>core.font.family.ui</code></td><td>fontFamily</td><td>Segoe Sans, Segoe UI, Helvetica, Arial, sans-serif</td></tr><tr><td><code>core.font.family.nav</code></td><td>fontFamily</td><td>Segoe UI, SegoeUI, Helvetica Neue, Helvetica, Arial, sans-serif</td></tr><tr><td><code>core.fontSize.hero</code></td><td>dimension</td><td>72px</td></tr><tr><td><code>core.fontSize.section</code></td><td>dimension</td><td>40px</td></tr><tr><td><code>core.fontSize.subtitle</code></td><td>dimension</td><td>21.6px</td></tr><tr><td><code>core.fontSize.body</code></td><td>dimension</td><td>16px</td></tr><tr><td><code>core.fontSize.card-title</code></td><td>dimension</td><td>18px</td></tr><tr><td><code>core.fontSize.button</code></td><td>dimension</td><td>15px</td></tr><tr><td><code>core.fontSize.secondary</code></td><td>dimension</td><td>14px</td></tr><tr><td><code>core.fontSize.nav</code></td><td>dimension</td><td>13px</td></tr><tr><td><code>core.lineHeight.hero</code></td><td>dimension</td><td>75.6px</td></tr><tr><td><code>core.lineHeight.section</code></td><td>dimension</td><td>48px</td></tr><tr><td><code>core.lineHeight.body</code></td><td>dimension</td><td>24px</td></tr><tr><td><code>core.fontWeight.regular</code></td><td>fontWeight</td><td>400</td></tr><tr><td><code>core.fontWeight.semibold</code></td><td>fontWeight</td><td>600</td></tr><tr><td><code>core.letterSpacing.hero</code></td><td>dimension</td><td>-0.5px</td></tr><tr><td><code>core.letterSpacing.section</code></td><td>dimension</td><td>-1.2px</td></tr><tr><td><code>core.radius.none</code></td><td>dimension</td><td>0px</td></tr><tr><td><code>core.radius.sm</code></td><td>dimension</td><td>8px</td></tr><tr><td><code>core.radius.md</code></td><td>dimension</td><td>10px</td></tr><tr><td><code>core.radius.lg</code></td><td>dimension</td><td>16px</td></tr><tr><td><code>core.radius.card</code></td><td>dimension</td><td>24px</td></tr><tr><td><code>core.radius.pill</code></td><td>dimension</td><td>200px</td></tr><tr><td><code>core.space.2</code></td><td>dimension</td><td>8px</td></tr><tr><td><code>core.space.3</code></td><td>dimension</td><td>12px</td></tr><tr><td><code>core.space.4</code></td><td>dimension</td><td>16px</td></tr><tr><td><code>core.space.5</code></td><td>dimension</td><td>24px</td></tr><tr><td><code>core.space.6</code></td><td>dimension</td><td>44px</td></tr><tr><td><code>core.space.page</code></td><td>dimension</td><td>58px</td></tr><tr><td><code>core.size.nav-height</code></td><td>dimension</td><td>54px</td></tr><tr><td><code>core.size.button-height</code></td><td>dimension</td><td>50px</td></tr><tr><td><code>core.size.tab-height</code></td><td>dimension</td><td>42px</td></tr><tr><td><code>core.size.download-height</code></td><td>dimension</td><td>39px</td></tr><tr><td><code>core.size.signin-card-width</code></td><td>dimension</td><td>440px</td></tr><tr><td><code>core.borderWidth.hairline</code></td><td>dimension</td><td>1px</td></tr><tr><td><code>core.borderWidth.button</code></td><td>dimension</td><td>2px</td></tr><tr><td><code>core.shadow.card</code></td><td>shadow</td><td>0px 4px 16px 0px rgba(0, 0, 0, 0.08)</td></tr><tr><td><code>core.shadow.lift</code></td><td>shadow</td><td>0px 2px 4px 0px rgba(0, 0, 0, 0.2)</td></tr><tr><td><code>core.shadow.signin</code></td><td>shadow</td><td>0px 2px 6px 0px rgba(0, 0, 0, 0.2)</td></tr><tr><td><code>core.motion.duration.200ms</code></td><td>duration</td><td>200ms</td></tr><tr><td><code>core.motion.duration.300ms</code></td><td>duration</td><td>300ms</td></tr><tr><td><code>core.motion.easing.ease</code></td><td>cubicBezier</td><td>cubic-bezier(0.25, 0.1, 0.25, 1)</td></tr><tr><td><code>core.motion.easing.standard</code></td><td>cubicBezier</td><td>cubic-bezier(0.4, 0, 0.2, 1)</td></tr>
+</table>
+</div>
+</body>
+</html>

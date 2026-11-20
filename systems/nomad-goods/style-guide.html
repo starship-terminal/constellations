@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nomad Goods style guide</title>
+<style>
+  :root {
+    --page: #f3f3f3;
+    --surface: #ffffff;
+    --text: #000000;
+    --muted: #6b6b6b;
+    --accent: #2f2f2f;
+    --border: #0000001a;
+    --info: #005bd3;
+    --sale: #cb794c;
+    --danger: #e3163b;
+    --disabled: #adadad;
+    --white: #ffffff;
+    --inset: #0e0e0e;
+    --hairline: #676767;
+    --light-end: #f1f1f1;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font-family: Aleo, "Iowan Old Style", Palatino, Georgia, serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  main { max-width: 960px; margin: 0 auto; padding: 40px 20px 80px; }
+  h1, h2, h3, .display, .button, .pill, .price {
+    font-family: "Arial Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+  }
+  h1 { font-size: 47px; line-height: 0.95; margin: 0 0 8px; }
+  h2 { font-size: 24px; line-height: 1.11; margin: 40px 0 12px; }
+  p.note { color: var(--muted); font-size: 14px; }
+  .swatches, .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch {
+    width: 140px;
+    background: var(--surface);
+    border-radius: 25px;
+    box-shadow: 0 0 0 1px #0000000f, 0 1px 1px -0.5px #0000000f, 0 3px 3px -1.5px #0000000f;
+    overflow: hidden;
+  }
+  .swatch i { display: block; height: 64px; }
+  .swatch span { display: block; padding: 10px 12px 12px; font-size: 12px; letter-spacing: -0.02em; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .hero {
+    background: #1a1a1a;
+    color: var(--white);
+    border-radius: 25px;
+    padding: 40px;
+    margin-top: 24px;
+  }
+  .display { font-size: 56px; line-height: 0.95; margin: 0 0 20px; }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    padding: 0 24px;
+    border-radius: 100px;
+    border: 0;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1.11;
+  }
+  .button.dark {
+    color: var(--white);
+    background: linear-gradient(180deg, var(--accent), var(--accent));
+    border: 1px solid #000;
+    box-shadow: inset 0 -10px 15px 1px var(--inset), inset 0 0 0 1px var(--hairline);
+  }
+  .button.light {
+    color: var(--text);
+    background: linear-gradient(180deg, #fff 15%, var(--light-end));
+    box-shadow: inset 0 10px 15px 2px #fff, inset 0 0 0 1px #fff, 0 0 0 1px #0000000f;
+  }
+  .button.sm { height: 40px; padding: 0 20px; font-size: 14px; }
+  .button:focus-visible, .field:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+  .card {
+    background: var(--surface);
+    border-radius: 25px;
+    padding: 30px 40px 24px;
+    box-shadow: 0 0 0 1px #0000000f, 0 1px 1px -0.5px #0000000f, 0 6px 6px -3px #0000000f, 0 24px 24px -12px #0000000f;
+    margin-top: 16px;
+  }
+  .price { font-size: 32px; line-height: 1; margin: 8px 0 16px; }
+  .field {
+    height: 48px;
+    border: 0;
+    border-radius: 100px;
+    padding: 0 20px;
+    background: var(--surface);
+    box-shadow: inset 0 0 0 1px #0000001a;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: min(100%, 360px);
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    height: 22px;
+    padding: 0 9px;
+    border-radius: 100px;
+    color: var(--white);
+    font-size: 11px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .pill.new { background: var(--info); }
+  .pill.sale { background: var(--sale); }
+  .type-sample { margin: 8px 0; }
+  .type-sample b { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; letter-spacing: -0.04em; }
+  table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: 25px; overflow: hidden; }
+  th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid #00000014; font-size: 14px; }
+  th { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; letter-spacing: -0.04em; }
+  .gap { color: var(--danger); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Nomad Goods</h1>
+  <p class="note">Light theme only. Values from computed styles on nomadgoods.com/sg, 2026-11-19. Gotham and Aleo are not bundled here, so the specimens use fallbacks. No screenshots were captured.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><i style="background:#f3f3f3"></i><span>page #f3f3f3</span></div>
+    <div class="swatch"><i style="background:#ffffff;box-shadow:inset 0 0 0 1px #0000001a"></i><span>surface #ffffff</span></div>
+    <div class="swatch"><i style="background:#000000"></i><span>text #000000</span></div>
+    <div class="swatch"><i style="background:#6b6b6b"></i><span>muted #6b6b6b</span></div>
+    <div class="swatch"><i style="background:#2f2f2f"></i><span>accent #2f2f2f</span></div>
+    <div class="swatch"><i style="background:#005bd3"></i><span>info #005bd3</span></div>
+    <div class="swatch"><i style="background:#cb794c"></i><span>sale #cb794c</span></div>
+    <div class="swatch"><i style="background:#e3163b"></i><span>danger #e3163b</span></div>
+  </div>
+
+  <h2>Type</h2>
+  <p class="display">35% Off</p>
+  <p class="type-sample"><b style="font-size:36px;line-height:1.11">Page title 36px</b></p>
+  <p class="type-sample"><b style="font-size:24px;line-height:1.11">Heading 24px</b></p>
+  <p class="type-sample" style="font-size:23px;line-height:1.5">Body large, Aleo, 23px, line height 1.5. This is the about-page paragraph size.</p>
+  <p class="type-sample">Body, 16px, line height 1.5.</p>
+  <p class="price">$99</p>
+
+  <h2>Controls</h2>
+  <div class="hero">
+    <p class="display">Deal of the day</p>
+    <a class="button light" href="#controls">Shop Now</a>
+  </div>
+  <div class="card" id="controls">
+    <span class="pill new">New</span>
+    <span class="pill sale">Hot</span>
+    <p class="price">$99</p>
+    <p>Primary action on a product that is sold out.</p>
+    <p><button class="button dark" type="button">Sold Out | Join the Waitlist</button></p>
+    <p><button class="button light sm" type="button">Submit</button></p>
+    <p><input class="field" type="text" placeholder="Email" aria-label="Email"></p>
+  </div>
+
+  <h2>Scale</h2>
+  <table>
+    <thead><tr><th>Token</th><th>Value</th></tr></thead>
+    <tbody>
+      <tr><td>control md</td><td>48px</td></tr>
+      <tr><td>control sm</td><td>40px</td></tr>
+      <tr><td>card radius</td><td>25px</td></tr>
+      <tr><td>pill radius</td><td>100px</td></tr>
+      <tr><td>dialog radius</td><td>40px</td></tr>
+      <tr><td>max width</td><td>1600px</td></tr>
+      <tr><td>grid gutter</td><td>25px, 40px from 480px</td></tr>
+    </tbody>
+  </table>
+  <p class="note gap">Gaps: no dark theme, no screenshots, no hover or pressed hold, no submitted form.</p>
+</main>
+</body>
+</html>

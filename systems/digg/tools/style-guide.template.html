@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digg style guide</title>
+<meta name="description" content="Digg design tokens and the public feed, category, story, profile, login and mobile surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: roobert, "roobert Fallback", ui-sans-serif, system-ui, sans-serif;
+  --sg-serif: roobert, "roobert Fallback", ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: vt323, ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+[data-mode="dark"] body { background: #161617; color: #e5e5ea; }
+[data-mode="dark"] h2.sh, [data-mode="dark"] .lead, [data-mode="dark"] .note, [data-mode="dark"] .pal-h, [data-mode="dark"] .sw .vl, [data-mode="dark"] .kv span, [data-mode="dark"] .tr .tv { color: #e5e5ea; }
+[data-mode="dark"] .mock { background: #0f0f10; }
+#mode { position: fixed; top: 12px; right: 12px; z-index: 10; font: 500 12px/1 var(--sg-sans); border: 1px solid currentColor; border-radius: 999px; background: transparent; color: inherit; padding: 8px 14px; cursor: pointer; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); background: var(--color-neutral-paper, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, #ddd); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #000); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, #ddd); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #000); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-hairline, #ddd); overflow: hidden; background: var(--color-neutral-paper, #fff); }
+.sidebar { width: 240px; padding: 12px; background: var(--background-page, #fdfdff); display: flex; flex-direction: column; gap: 4px; font-size: 14px; }
+.sidebar .row { display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 14px; border-radius: var(--radius-pill, 999px); color: var(--text-ink, #161617); font-weight: 600; }
+.sidebar .row.on { background: var(--background-fill, #f0f0f5); }
+.sidebar .cta { display: flex; align-items: center; justify-content: center; height: 40px; border-radius: var(--radius-control, 26px); background: var(--action-primary, #1c66eb); color: var(--action-on-primary, #fff); font-weight: 500; }
+.card { border-radius: var(--radius-card, 18px); border: 1px solid var(--border-hairline, rgba(0,0,0,.08)); background: var(--background-card, #fff); padding: 16px; color: var(--text-ink, #161617); }
+.card.feed { background: transparent; border-color: transparent; }
+.card h3 { font: 600 16px/1.5 var(--sg-serif); letter-spacing: -0.01em; margin: 0 0 4px; }
+.card p { font: 400 14px/1.45 var(--sg-sans); color: var(--text-muted, rgba(22,22,23,.7)); margin: 0 0 12px; }
+.vote { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; border-radius: var(--radius-vote, 999px); border: 1px solid var(--border-vote-border, rgba(28,102,235,.2)); background: var(--background-page, #fdfdff); font: 500 14px var(--sg-mono); color: var(--text-ink, #161617); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 24px; font-size: 14px; font-weight: 500; border-radius: var(--radius-pill, 999px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-primary, #1c66eb); color: var(--action-on-primary, #fff); }
+.btn.small { height: 36px; border-radius: var(--radius-control, 26px); font-size: 14px; }
+.hero { color: var(--text-ink, #161617); padding: 40px; font: 700 36px/1.15 var(--sg-serif); letter-spacing: -0.01em; background: var(--background-page, #fdfdff); }
+.hero small { display: block; font: 400 20px/1.4 var(--sg-sans); color: var(--text-muted, rgba(22,22,23,.7)); margin: 12px auto 20px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border-hairline, rgba(0,0,0,.08)); padding: 14px; font-size: 13px; background: var(--background-card, #fff); border-radius: var(--radius-card, 18px); color: var(--text-ink, #161617); }
+.tile b { display: block; font: 600 14px/1.4 var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { color: var(--text-muted, rgba(22,22,23,.7)); font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #000); opacity: .65; font-family: var(--sg-mono); }
+.sort { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 14px; border-radius: var(--radius-control, 26px); border: 1px solid var(--border-input, #e5e5e5); background: var(--background-input-fill, rgba(229,229,229,.3)); font: 400 14px var(--sg-sans); color: var(--text-ink, #161617); }
+.field { display: block; width: 100%; height: 36px; padding: 0 12px; border-radius: var(--radius-field, 8px); border: 1px solid var(--border-input, #e5e5e5); background: var(--background-card, #fff); font: 400 14px var(--sg-sans); color: var(--text-ink, #161617); box-shadow: 0 1px 2px rgba(0,0,0,.05); }
+</style>
+</head>
+<body>
+<button id="mode" type="button" aria-pressed="false">Dark</button>
+<main>
+  <h1>Digg style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Digg, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared shadcn-style token layer (<code>--background</code>/<code>--foreground</code>, the <code>--primary*</code>/<code>--secondary*</code>/<code>--muted*</code>/<code>--accent*</code>/<code>--border</code>/<code>--input</code>/<code>--ring</code> semantics, the <code>--sidebar-*</code> rail set and the full Tailwind hue scales) plus the theme-invariant Tailwind layer, roobert across the UI, the measured 10-36px type ramp, the #1c66eb primary blue and the vote pill's odometer mono. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from digg.com on 2026-11-14, signed out, in headless Chromium (the 2025 Digg reboot — "News, before it trends"). Both themes are real: the sidebar theme pill cycles System -&gt; Light -&gt; Dark and the dark roles below were measured through it. Everything behind an account — voting, commenting, submitting, profile settings — is a documented boundary; the Log in/Sign up buttons and Clerk fields were measured, never submitted. roobert, ibmPlexSans and vt323 are served faces and are not loaded here: samples fall back to system fonts.</p>
+
+  <h2 class="sh">The sidebar</h2>
+  <p class="lead">The left rail carries pill-radius nav rows (the active Home row fills #f0f0f5), the theme pill and the primary Sign up CTA in #1c66eb.</p>
+  <div class="mock" style="padding:20px">
+    <div class="sidebar">
+      <div class="row on">Home</div>
+      <div class="row">Technology</div>
+      <div class="row">Gaming</div>
+      <div class="row">AI</div>
+      <div class="cta">Sign up</div>
+    </div>
+  </div>
+
+  <h2 class="sh">The story card</h2>
+  <p class="lead">Feed cards are 18px-rounded transparent surfaces on the page field (the white fill+border belongs to the rail panels): a 16px semibold headline, a muted summary, the vote pill (blue@20% border over the page fill) and the comment/source row.</p>
+  <div class="mock" style="padding:20px">
+    <div class="card feed">
+      <h3>Example story headline renders in semibold roobert</h3>
+      <p>A muted one-line dek at ink @70% sits under the headline, then the action row.</p>
+      <span class="vote">▲ 128</span>&nbsp;&nbsp;<span class="sort" style="height:32px;border-radius:26px">💬 12</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Controls and auth</h2>
+  <p class="lead">The Trending sort trigger and Compact control share the 26px control radius over the translucent input wash; the Clerk auth fields are 8px-rounded with the field's 0 1px 2px shadow, and Continue is a primary pill.</p>
+  <div class="mock" style="padding:20px">
+    <span class="sort">Trending ▾</span>&nbsp;&nbsp;<span class="sort">Compact</span>
+    <div style="height:16px"></div>
+    <div class="card" style="max-width:400px">
+      <input class="field" placeholder="Email address">
+      <div style="height:10px"></div>
+      <span class="btn primary" style="width:100%">Continue</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared layer carries the full Tailwind hue scales per theme under color.*; the shadcn semantic names (<code>--background</code>, <code>--card</code>, <code>--primary</code>, <code>--border</code>, <code>--ring</code>, <code>--sidebar-*</code>, <code>--rank-one</code>) resolve per theme in the light and dark sets — a real painted .dark theme, cycled through the sidebar pill and measured signed out. Measured roles alias the declared values they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Sidebar items, primary CTAs and the feed vote pill are full pills (calc(infinity * 1px); the story digg-it is a 999px rounded-full); controls are 26px, story cards and rail panels 18px, auth fields 8px and source links 2px. Hairlines are rgba(0,0,0,0.08), fields #e5e5e5, and the focus ring #ababbf.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Served faces: <code>roobert</code> on everything — UI, cards and headings at 400-700 — with <code>ibmPlexSans</code> declared for typeset prose and <code>vt323</code>, the retro bitmap mono, on the vote odometer's digits. Sizes are the measured steps; samples fall back to system fonts.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared variables from the live stylesheets (353 resolved per theme) and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+// The light/dark toggle. digg.com really paints both themes signed out:
+// the dark set holds measured values, so flipping data-mode swaps every
+// token var and the samples below repaint for real.
+$('#mode').addEventListener('click', () => {
+  const on = document.documentElement.getAttribute('data-mode') === 'dark';
+  document.documentElement.setAttribute('data-mode', on ? '' : 'dark');
+  $('#mode').textContent = on ? 'Dark' : 'Light';
+  $('#mode').setAttribute('aria-pressed', on ? 'false' : 'true');
+});
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (measured through the sidebar theme pill)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  let node = TOK.core || TOK, seen = [];
+  for (const k of m[1].split('.')) { node = node && node[k]; seen.push(k); }
+  return node && node.v !== undefined ? resolveVal(node.v, (depth || 0) + 1) : v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const v = resolveVal(t.v).trim();
+    const m = /^([\d.]+)(px|rem|em)$/.exec(v);
+    const size = m ? `min(${m[1]}${m[2]}, 44px)` : '13px';
+    h += `<div class="tr"><span class="ts" style="font-size:${size}">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Digg</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

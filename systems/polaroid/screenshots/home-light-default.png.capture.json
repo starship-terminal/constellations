@@ -1,0 +1,22 @@
+{
+  "capturedAt": "2026-11-18T17:48:03.091Z",
+  "name": "home-light-default",
+  "url": "https://www.polaroid.com/en_sg",
+  "title": "Polaroid EU | Official Online Store",
+  "vw": 1440,
+  "vh": 900,
+  "dpr": 1,
+  "vv": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1,
+    "offsetLeft": 0,
+    "offsetTop": 0
+  },
+  "png": {
+    "w": 1440,
+    "h": 900,
+    "bytes": 1341614
+  },
+  "note": "viewport screenshot, headless Chromium, public page, no Cloudflare challenge"
+}

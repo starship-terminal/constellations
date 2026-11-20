@@ -41,22 +41,23 @@ Page: home. Selector: `.catalog-item-first-page`. States: default, hover, focus-
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 47 x 84 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | AdihausDIN 15px/20px 700 | = | = | = |
-| Letter spacing | 0.5px | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | span.cursor-pointer: AdihausDIN 15px/20px 700, #000000, ls 0.5px | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 47 x 84 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | AdihausDIN 15px/20px 700 | = | - | = |
+| Letter spacing | 0.5px | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | span.cursor-pointer: AdihausDIN 15px/20px 700, #000000, ls 0.5px | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `nav-item-default.png`, `nav-item-hover.png`, `nav-item-focus-visible.png`, `nav-item-pressed.png`.
+Crops: `nav-item-default.png`, `nav-item-hover.png`, `nav-item-pressed.png`.
 
 #### utility-link
 
@@ -66,22 +67,23 @@ Page: home. Selector: `.online`. States: default, hover, focus-visible, pressed.
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 74 x 38 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | AdihausDIN 13px/18px 400 | = | = | = |
-| Letter spacing | 0.5px | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | p: AdihausDIN 13px/18px 400, #ffffff, ls 0.5px | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 74 x 38 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | AdihausDIN 13px/18px 400 | = | - | = |
+| Letter spacing | 0.5px | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | p: AdihausDIN 13px/18px 400, #ffffff, ls 0.5px | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `utility-link-default.png`, `utility-link-hover.png`, `utility-link-focus-visible.png`, `utility-link-pressed.png`.
+Crops: `utility-link-default.png`, `utility-link-hover.png`, `utility-link-pressed.png`.
 
 #### promo-tag
 
@@ -91,23 +93,24 @@ Page: home. Selector: `promo tag`. States: default, hover, focus-visible, presse
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 261.33 x 32 | = | = | = |
-| Padding | 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | #f9f9f9 | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | ui-sans-serif 16px/24px 400 | = | = | = |
-| Letter spacing | normal | = | = | = |
-| Colour | #000000 | = | = | = |
-| Text node | span.label-4.mr-12: AdihausDIN-Woff 13px/18px 400, #9a9b9b, ls 0.5px | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| Painted layers | div.search-bar-box.cursor-pointer 261.3x32.0 bg #f9f9f9 | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 261.33 x 32 | = | - | = |
+| Padding | 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | #f9f9f9 | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | ui-sans-serif 16px/24px 400 | = | - | = |
+| Letter spacing | normal | = | - | = |
+| Colour | #000000 | = | - | = |
+| Text node | span.label-4.mr-12: AdihausDIN-Woff 13px/18px 400, #9a9b9b, ls 0.5px | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Painted layers | div.search-bar-box.cursor-pointer 261.3x32.0 bg #f9f9f9 | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `promo-tag-default.png`, `promo-tag-hover.png`, `promo-tag-focus-visible.png`, `promo-tag-pressed.png`.
+Crops: `promo-tag-default.png`, `promo-tag-hover.png`, `promo-tag-pressed.png`.
 
 #### logo
 
@@ -256,22 +259,23 @@ Page: plp. Selector: `filter row`. States: default, hover, focus-visible, presse
 
 | Property | default | hover | focus-visible | pressed |
 |---|---|---|---|---|
-| Size (w x h) | 51 x 56 | = | = | = |
-| Padding | 19px 24px 19px 0px | = | = | = |
-| Border | none | = | = | = |
-| Radius | 0px | = | = | = |
-| Background | transparent | = | = | = |
-| Box shadow | none | = | = | = |
-| Outline | none | = | = | = |
-| Font | AdihausDIN 13px/18px 400 | = | = | = |
-| Letter spacing | 0.5px | = | = | = |
-| Colour | #9a9b9b | = | = | = |
-| Transition | none | = | = | = |
-| Cursor | pointer | = | = | = |
-| Ancestor paint | 1 up div.sort-container.sm:ml-16 bg #ffffff | = | = | = |
-| How | at rest | mouse hover | focus failed | CDP forcePseudoState :active:hover |
+| Size (w x h) | 51 x 56 | = | - | = |
+| Padding | 19px 24px 19px 0px | = | - | = |
+| Border | none | = | - | = |
+| Radius | 0px | = | - | = |
+| Background | transparent | = | - | = |
+| Box shadow | none | = | - | = |
+| Outline | none | = | - | = |
+| Font | AdihausDIN 13px/18px 400 | = | - | = |
+| Letter spacing | 0.5px | = | - | = |
+| Colour | #9a9b9b | = | - | = |
+| Transition | none | = | - | = |
+| Cursor | pointer | = | - | = |
+| Ancestor paint | 1 up div.sort-container.sm:ml-16 bg #ffffff | = | - | = |
+| How | at rest | mouse hover | - | CDP forcePseudoState :active:hover |
+| Skipped | - | = | focus failed: keyboard focus did not reach the element | = |
 
-Crops: `filter-row-default.png`, `filter-row-hover.png`, `filter-row-focus-visible.png`, `filter-row-pressed.png`.
+Crops: `filter-row-default.png`, `filter-row-hover.png`, `filter-row-pressed.png`.
 
 #### product-card
 

@@ -1,0 +1,436 @@
+{
+ "home": {
+  "url": "https://www.mural.co/",
+  "status": 200,
+  "title": "AI-powered visual workspace for team collaboration | Mural",
+  "href": "https://www.mural.co/",
+  "vw": 1440,
+  "vh": 900,
+  "dpr": 1,
+  "nav": {
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": "0px",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "h1": {
+   "text": "Sync up. Speed up. Stand out.",
+   "font": "\"STK Bureau\", \"Times New Roman\", sans-serif",
+   "size": "80px",
+   "weight": "300",
+   "color": "rgb(140, 140, 140)",
+   "ls": "-4px",
+   "lh": "88px",
+   "x": 40,
+   "y": -455,
+   "w": 640,
+   "h": 176
+  },
+  "mainH": 14319.59375,
+  "scrollH": 15413
+ },
+ "pricing": {
+  "url": "https://www.mural.co/pricing",
+  "status": 200,
+  "title": "Mural pricing | From free to enterprise-grade plans",
+  "href": "https://www.mural.co/pricing",
+  "vw": 1440,
+  "vh": 900,
+  "dpr": 1,
+  "nav": {
+   "x": 0,
+   "y": 16,
+   "w": 1440,
+   "h": "64px",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "h1": {
+   "text": "PRICING Solve hard problems and create new ideas together",
+   "font": "\"STK Bureau\", \"Times New Roman\", sans-serif",
+   "size": "64px",
+   "weight": "300",
+   "color": "rgb(0, 0, 0)",
+   "ls": "-3.2px",
+   "lh": "70.4px",
+   "x": 208,
+   "y": -397,
+   "w": 1024,
+   "h": 234.4
+  },
+  "mainH": null,
+  "scrollH": 8167
+ },
+ "product": {
+  "url": "https://www.mural.co/product",
+  "status": 200,
+  "title": "The Visual Work Platform Designed to Improve Teamwork | Mural",
+  "href": "https://www.mural.co/product",
+  "vw": 1440,
+  "vh": 900,
+  "dpr": 1,
+  "nav": {
+   "x": 0,
+   "y": 16,
+   "w": 1440,
+   "h": "64px",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "h1": {
+   "text": "Seeing is How™ outcomes happen",
+   "font": "\"STK Bureau\", \"Times New Roman\", sans-serif",
+   "size": "80px",
+   "weight": "300",
+   "color": "rgb(0, 0, 0)",
+   "ls": "-4px",
+   "lh": "73.6px",
+   "x": 40,
+   "y": 279,
+   "w": 553.3,
+   "h": 220.8
+  },
+  "mainH": null,
+  "scrollH": 9576
+ },
+ "templates": {
+  "url": "https://www.mural.co/templates",
+  "status": 200,
+  "title": "Mural Templates: Ready-to-Use Templates for Teams | Mural",
+  "href": "https://www.mural.co/templates",
+  "vw": 1440,
+  "vh": 900,
+  "dpr": 1,
+  "nav": {
+   "x": 0,
+   "y": 16,
+   "w": 1440,
+   "h": "64px",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "h1": {
+   "text": "Explore all Templates",
+   "font": "\"STK Bureau\", \"Times New Roman\", sans-serif",
+   "size": "64px",
+   "weight": "300",
+   "color": "rgb(255, 255, 255)",
+   "ls": "-3.2px",
+   "lh": "70.4px",
+   "x": 56,
+   "y": 343.5,
+   "w": 664,
+   "h": 141.4
+  },
+  "mainH": null,
+  "scrollH": 6497
+ },
+ "enterprise": {
+  "url": "https://www.mural.co/enterprise",
+  "status": 200,
+  "title": "Visual collaboration at the enterprise level | Mural",
+  "href": "https://www.mural.co/enterprise",
+  "vw": 1440,
+  "vh": 900,
+  "dpr": 1,
+  "nav": {
+   "x": 0,
+   "y": 16,
+   "w": 1440,
+   "h": "64px",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "h1": {
+   "text": "ENTERPRISE COLLABORATION Where enterprise teams align and move work forward",
+   "font": "\"STK Bureau\", \"Times New Roman\", sans-serif",
+   "size": "64px",
+   "weight": "300",
+   "color": "rgb(255, 255, 255)",
+   "ls": "-3.2px",
+   "lh": "70.4px",
+   "x": 40,
+   "y": 211.6,
+   "w": 664,
+   "h": 253.6
+  },
+  "mainH": null,
+  "scrollH": 9570
+ },
+ "integrations": {
+  "url": "https://www.mural.co/integrations",
+  "status": 200,
+  "title": "Integrations | Mural",
+  "href": "https://www.mural.co/integrations",
+  "vw": 1440,
+  "vh": 900,
+  "dpr": 1,
+  "nav": {
+   "x": 0,
+   "y": 16,
+   "w": 1440,
+   "h": "64px",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "h1": {
+   "text": "INTEGRATIONS Seamless workflows with all the apps you love",
+   "font": "\"STK Bureau\", \"Times New Roman\", sans-serif",
+   "size": "64px",
+   "weight": "300",
+   "color": "rgb(0, 0, 0)",
+   "ls": "-3.2px",
+   "lh": "70.4px",
+   "x": 208,
+   "y": 160,
+   "w": 1024,
+   "h": 234.4
+  },
+  "mainH": null,
+  "scrollH": 8394
+ },
+ "signin": {
+  "url": "https://app.mural.co/signin",
+  "status": 200,
+  "title": "Login to Your Mural Account and Collaborate • Mural",
+  "href": "https://app.mural.co/signin",
+  "vw": 1440,
+  "vh": 900,
+  "dpr": 1,
+  "nav": {
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": "85px",
+   "bg": "rgb(255, 255, 255)"
+  },
+  "h1": {
+   "text": "Log in",
+   "font": "stkbureau, serif",
+   "size": "32px",
+   "weight": "400",
+   "color": "rgb(47, 47, 47)",
+   "ls": "normal",
+   "lh": "32px",
+   "x": 687.6,
+   "y": 133,
+   "w": 88.9,
+   "h": 32
+  },
+  "mainH": 815,
+  "scrollH": 901
+ },
+ "signup": {
+  "url": "https://app.mural.co/signup",
+  "status": 200,
+  "title": "Create a Free Mural Account for Team Collaboration • Mural",
+  "href": "https://app.mural.co/signup",
+  "vw": 1440,
+  "vh": 900,
+  "dpr": 1,
+  "nav": {
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": "85px",
+   "bg": "rgb(255, 255, 255)"
+  },
+  "h1": {
+   "text": "Sign up for free",
+   "font": "stkbureau, serif",
+   "size": "32px",
+   "weight": "400",
+   "color": "rgb(47, 47, 47)",
+   "ls": "normal",
+   "lh": "32px",
+   "x": 622.5,
+   "y": 133,
+   "w": 219,
+   "h": 32
+  },
+  "mainH": 815,
+  "scrollH": 901
+ },
+ "mobile-home": {
+  "url": "https://www.mural.co/",
+  "status": 200,
+  "title": "AI-powered visual workspace for team collaboration | Mural",
+  "href": "https://www.mural.co/",
+  "vw": 390,
+  "vh": 844,
+  "dpr": 2,
+  "nav": {
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": "0px",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "h1": {
+   "text": "Sync up. Speed up. Stand out.",
+   "font": "\"STK Bureau\", \"Times New Roman\", sans-serif",
+   "size": "48px",
+   "weight": "300",
+   "color": "rgb(140, 140, 140)",
+   "ls": "-2.4px",
+   "lh": "52.8px",
+   "x": 16,
+   "y": 160,
+   "w": 358,
+   "h": 105.6
+  },
+  "mainH": 10342.859375,
+  "scrollH": 11685
+ },
+ "mobile-pricing": {
+  "url": "https://www.mural.co/pricing",
+  "status": 200,
+  "title": "Mural pricing | From free to enterprise-grade plans",
+  "href": "https://www.mural.co/pricing",
+  "vw": 390,
+  "vh": 844,
+  "dpr": 2,
+  "nav": {
+   "x": 0,
+   "y": 16,
+   "w": 390,
+   "h": "64px",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "h1": {
+   "text": "PRICING Solve hard problems and create new ideas together",
+   "font": "\"STK Bureau\", \"Times New Roman\", sans-serif",
+   "size": "40px",
+   "weight": "300",
+   "color": "rgb(0, 0, 0)",
+   "ls": "-2px",
+   "lh": "44px",
+   "x": 16,
+   "y": 160,
+   "w": 358,
+   "h": 269.6
+  },
+  "mainH": null,
+  "scrollH": 9728
+ },
+ "mobile-product": {
+  "url": "https://www.mural.co/product",
+  "status": 200,
+  "title": "The Visual Work Platform Designed to Improve Teamwork | Mural",
+  "href": "https://www.mural.co/product",
+  "vw": 390,
+  "vh": 844,
+  "dpr": 2,
+  "nav": {
+   "x": 0,
+   "y": 16,
+   "w": 390,
+   "h": "64px",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "h1": {
+   "text": "Seeing is How™ outcomes happen",
+   "font": "\"STK Bureau\", \"Times New Roman\", sans-serif",
+   "size": "48px",
+   "weight": "300",
+   "color": "rgb(0, 0, 0)",
+   "ls": "-2.4px",
+   "lh": "44.16px",
+   "x": 16,
+   "y": 247,
+   "w": 358,
+   "h": 88.3
+  },
+  "mainH": null,
+  "scrollH": 13336
+ },
+ "mobile-templates": {
+  "url": "https://www.mural.co/templates",
+  "status": 200,
+  "title": "Mural Templates: Ready-to-Use Templates for Teams | Mural",
+  "href": "https://www.mural.co/templates",
+  "vw": 390,
+  "vh": 844,
+  "dpr": 2,
+  "nav": {
+   "x": 0,
+   "y": 16,
+   "w": 390,
+   "h": "64px",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "h1": {
+   "text": "Explore all Templates",
+   "font": "\"STK Bureau\", \"Times New Roman\", sans-serif",
+   "size": "40px",
+   "weight": "300",
+   "color": "rgb(255, 255, 255)",
+   "ls": "-2px",
+   "lh": "44px",
+   "x": 32,
+   "y": 207,
+   "w": 326,
+   "h": 97
+  },
+  "mainH": null,
+  "scrollH": 13164
+ },
+ "mobile-enterprise": {
+  "url": "https://www.mural.co/enterprise",
+  "status": 200,
+  "title": "Visual collaboration at the enterprise level | Mural",
+  "href": "https://www.mural.co/enterprise",
+  "vw": 390,
+  "vh": 844,
+  "dpr": 2,
+  "nav": {
+   "x": 0,
+   "y": 16,
+   "w": 390,
+   "h": "64px",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "h1": {
+   "text": "ENTERPRISE COLLABORATION Where enterprise teams align and move work forward",
+   "font": "\"STK Bureau\", \"Times New Roman\", sans-serif",
+   "size": "40px",
+   "weight": "300",
+   "color": "rgb(255, 255, 255)",
+   "ls": "-2px",
+   "lh": "44px",
+   "x": 16,
+   "y": 161,
+   "w": 358,
+   "h": 233.2
+  },
+  "mainH": null,
+  "scrollH": 12686
+ },
+ "mobile-integrations": {
+  "url": "https://www.mural.co/integrations",
+  "status": 200,
+  "title": "Integrations | Mural",
+  "href": "https://www.mural.co/integrations",
+  "vw": 390,
+  "vh": 844,
+  "dpr": 2,
+  "nav": {
+   "x": 0,
+   "y": 16,
+   "w": 390,
+   "h": "64px",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "h1": {
+   "text": "INTEGRATIONS Seamless workflows with all the apps you love",
+   "font": "\"STK Bureau\", \"Times New Roman\", sans-serif",
+   "size": "40px",
+   "weight": "300",
+   "color": "rgb(0, 0, 0)",
+   "ls": "-2px",
+   "lh": "44px",
+   "x": 16,
+   "y": 160,
+   "w": 358,
+   "h": 222.6
+  },
+  "mainH": null,
+  "scrollH": 15959
+ }
+}

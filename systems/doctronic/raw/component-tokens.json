@@ -1,0 +1,2386 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. doctronic.ai's stylesheets declare a named token layer (@layer tokens): the colour ramps and the composite --text-* font tokens on :root, the semantic --color-* roles on :root for light and redeclared under [data-theme=\"dark\"] for the site's real dark theme (localStorage.theme, applied to data-theme by an init script). Semantic declarations that are a plain var(--primitive) become {color.*} aliases; the hsl(from … / alpha) derivations stay var-referenced. The measured extras under core.measured and light.component.* come from raw/components-computed.json.",
+ "core": {
+  "color": {
+   "blue": {
+    "100": {
+     "var": "--color-blue-100",
+     "type": "color",
+     "source": "css-var --color-blue-100 (:root @layer tokens)",
+     "description": "The blue ramp's 100 step."
+    },
+    "200": {
+     "var": "--color-blue-200",
+     "type": "color",
+     "source": "css-var --color-blue-200 (:root @layer tokens)",
+     "description": "The blue ramp's 200 step."
+    },
+    "300": {
+     "var": "--color-blue-300",
+     "type": "color",
+     "source": "css-var --color-blue-300 (:root @layer tokens)",
+     "description": "The blue ramp's 300 step."
+    },
+    "400": {
+     "var": "--color-blue-400",
+     "type": "color",
+     "source": "css-var --color-blue-400 (:root @layer tokens)",
+     "description": "The blue ramp's 400 step."
+    },
+    "50": {
+     "var": "--color-blue-50",
+     "type": "color",
+     "source": "css-var --color-blue-50 (:root @layer tokens)",
+     "description": "The blue ramp's 50 step."
+    },
+    "500": {
+     "var": "--color-blue-500",
+     "type": "color",
+     "source": "css-var --color-blue-500 (:root @layer tokens)",
+     "description": "The blue ramp's 500 step."
+    },
+    "600": {
+     "var": "--color-blue-600",
+     "type": "color",
+     "source": "css-var --color-blue-600 (:root @layer tokens)",
+     "description": "The blue ramp's 600 step."
+    },
+    "700": {
+     "var": "--color-blue-700",
+     "type": "color",
+     "source": "css-var --color-blue-700 (:root @layer tokens)",
+     "description": "The blue ramp's 700 step."
+    },
+    "800": {
+     "var": "--color-blue-800",
+     "type": "color",
+     "source": "css-var --color-blue-800 (:root @layer tokens)",
+     "description": "The blue ramp's 800 step."
+    },
+    "900": {
+     "var": "--color-blue-900",
+     "type": "color",
+     "source": "css-var --color-blue-900 (:root @layer tokens)",
+     "description": "The blue ramp's 900 step."
+    },
+    "950": {
+     "var": "--color-blue-950",
+     "type": "color",
+     "source": "css-var --color-blue-950 (:root @layer tokens)",
+     "description": "The blue ramp's 950 step."
+    }
+   },
+   "error": {
+    "100": {
+     "var": "--color-error-100",
+     "type": "color",
+     "source": "css-var --color-error-100 (:root @layer tokens)",
+     "description": "The error ramp's 100 step."
+    },
+    "200": {
+     "var": "--color-error-200",
+     "type": "color",
+     "source": "css-var --color-error-200 (:root @layer tokens)",
+     "description": "The error ramp's 200 step."
+    },
+    "300": {
+     "var": "--color-error-300",
+     "type": "color",
+     "source": "css-var --color-error-300 (:root @layer tokens)",
+     "description": "The error ramp's 300 step."
+    },
+    "400": {
+     "var": "--color-error-400",
+     "type": "color",
+     "source": "css-var --color-error-400 (:root @layer tokens)",
+     "description": "The error ramp's 400 step."
+    },
+    "50": {
+     "var": "--color-error-50",
+     "type": "color",
+     "source": "css-var --color-error-50 (:root @layer tokens)",
+     "description": "The error ramp's 50 step."
+    },
+    "500": {
+     "var": "--color-error-500",
+     "type": "color",
+     "source": "css-var --color-error-500 (:root @layer tokens)",
+     "description": "The error ramp's 500 step."
+    },
+    "600": {
+     "var": "--color-error-600",
+     "type": "color",
+     "source": "css-var --color-error-600 (:root @layer tokens)",
+     "description": "The error ramp's 600 step."
+    },
+    "700": {
+     "var": "--color-error-700",
+     "type": "color",
+     "source": "css-var --color-error-700 (:root @layer tokens)",
+     "description": "The error ramp's 700 step."
+    },
+    "800": {
+     "var": "--color-error-800",
+     "type": "color",
+     "source": "css-var --color-error-800 (:root @layer tokens)",
+     "description": "The error ramp's 800 step."
+    },
+    "900": {
+     "var": "--color-error-900",
+     "type": "color",
+     "source": "css-var --color-error-900 (:root @layer tokens)",
+     "description": "The error ramp's 900 step."
+    },
+    "950": {
+     "var": "--color-error-950",
+     "type": "color",
+     "source": "css-var --color-error-950 (:root @layer tokens)",
+     "description": "The error ramp's 950 step."
+    }
+   },
+   "lime": {
+    "100": {
+     "var": "--color-lime-100",
+     "type": "color",
+     "source": "css-var --color-lime-100 (:root @layer tokens)",
+     "description": "The lime ramp's 100 step."
+    },
+    "200": {
+     "var": "--color-lime-200",
+     "type": "color",
+     "source": "css-var --color-lime-200 (:root @layer tokens)",
+     "description": "The lime ramp's 200 step."
+    },
+    "300": {
+     "var": "--color-lime-300",
+     "type": "color",
+     "source": "css-var --color-lime-300 (:root @layer tokens)",
+     "description": "The lime ramp's 300 step."
+    },
+    "400": {
+     "var": "--color-lime-400",
+     "type": "color",
+     "source": "css-var --color-lime-400 (:root @layer tokens)",
+     "description": "The lime ramp's 400 step."
+    },
+    "50": {
+     "var": "--color-lime-50",
+     "type": "color",
+     "source": "css-var --color-lime-50 (:root @layer tokens)",
+     "description": "The lime ramp's 50 step."
+    },
+    "500": {
+     "var": "--color-lime-500",
+     "type": "color",
+     "source": "css-var --color-lime-500 (:root @layer tokens)",
+     "description": "The lime ramp's 500 step."
+    },
+    "600": {
+     "var": "--color-lime-600",
+     "type": "color",
+     "source": "css-var --color-lime-600 (:root @layer tokens)",
+     "description": "The lime ramp's 600 step."
+    },
+    "700": {
+     "var": "--color-lime-700",
+     "type": "color",
+     "source": "css-var --color-lime-700 (:root @layer tokens)",
+     "description": "The lime ramp's 700 step."
+    },
+    "800": {
+     "var": "--color-lime-800",
+     "type": "color",
+     "source": "css-var --color-lime-800 (:root @layer tokens)",
+     "description": "The lime ramp's 800 step."
+    },
+    "900": {
+     "var": "--color-lime-900",
+     "type": "color",
+     "source": "css-var --color-lime-900 (:root @layer tokens)",
+     "description": "The lime ramp's 900 step."
+    },
+    "950": {
+     "var": "--color-lime-950",
+     "type": "color",
+     "source": "css-var --color-lime-950 (:root @layer tokens)",
+     "description": "The lime ramp's 950 step."
+    }
+   },
+   "neutral": {
+    "100": {
+     "var": "--color-neutral-100",
+     "type": "color",
+     "source": "css-var --color-neutral-100 (:root @layer tokens)",
+     "description": "The neutral ramp's 100 step."
+    },
+    "200": {
+     "var": "--color-neutral-200",
+     "type": "color",
+     "source": "css-var --color-neutral-200 (:root @layer tokens)",
+     "description": "The neutral ramp's 200 step."
+    },
+    "300": {
+     "var": "--color-neutral-300",
+     "type": "color",
+     "source": "css-var --color-neutral-300 (:root @layer tokens)",
+     "description": "The neutral ramp's 300 step."
+    },
+    "400": {
+     "var": "--color-neutral-400",
+     "type": "color",
+     "source": "css-var --color-neutral-400 (:root @layer tokens)",
+     "description": "The neutral ramp's 400 step."
+    },
+    "50": {
+     "var": "--color-neutral-50",
+     "type": "color",
+     "source": "css-var --color-neutral-50 (:root @layer tokens)",
+     "description": "The neutral ramp's 50 step."
+    },
+    "500": {
+     "var": "--color-neutral-500",
+     "type": "color",
+     "source": "css-var --color-neutral-500 (:root @layer tokens)",
+     "description": "The neutral ramp's 500 step."
+    },
+    "600": {
+     "var": "--color-neutral-600",
+     "type": "color",
+     "source": "css-var --color-neutral-600 (:root @layer tokens)",
+     "description": "The neutral ramp's 600 step."
+    },
+    "700": {
+     "var": "--color-neutral-700",
+     "type": "color",
+     "source": "css-var --color-neutral-700 (:root @layer tokens)",
+     "description": "The neutral ramp's 700 step."
+    },
+    "800": {
+     "var": "--color-neutral-800",
+     "type": "color",
+     "source": "css-var --color-neutral-800 (:root @layer tokens)",
+     "description": "The neutral ramp's 800 step."
+    },
+    "900": {
+     "var": "--color-neutral-900",
+     "type": "color",
+     "source": "css-var --color-neutral-900 (:root @layer tokens)",
+     "description": "The neutral ramp's 900 step."
+    },
+    "950": {
+     "var": "--color-neutral-950",
+     "type": "color",
+     "source": "css-var --color-neutral-950 (:root @layer tokens)",
+     "description": "The neutral ramp's 950 step."
+    }
+   },
+   "sage": {
+    "100": {
+     "var": "--color-sage-100",
+     "type": "color",
+     "source": "css-var --color-sage-100 (:root @layer tokens)",
+     "description": "The sage ramp's 100 step."
+    },
+    "200": {
+     "var": "--color-sage-200",
+     "type": "color",
+     "source": "css-var --color-sage-200 (:root @layer tokens)",
+     "description": "The sage ramp's 200 step."
+    },
+    "300": {
+     "var": "--color-sage-300",
+     "type": "color",
+     "source": "css-var --color-sage-300 (:root @layer tokens)",
+     "description": "The sage ramp's 300 step."
+    },
+    "400": {
+     "var": "--color-sage-400",
+     "type": "color",
+     "source": "css-var --color-sage-400 (:root @layer tokens)",
+     "description": "The sage ramp's 400 step."
+    },
+    "50": {
+     "var": "--color-sage-50",
+     "type": "color",
+     "source": "css-var --color-sage-50 (:root @layer tokens)",
+     "description": "The sage ramp's 50 step."
+    },
+    "500": {
+     "var": "--color-sage-500",
+     "type": "color",
+     "source": "css-var --color-sage-500 (:root @layer tokens)",
+     "description": "The sage ramp's 500 step."
+    },
+    "600": {
+     "var": "--color-sage-600",
+     "type": "color",
+     "source": "css-var --color-sage-600 (:root @layer tokens)",
+     "description": "The sage ramp's 600 step."
+    },
+    "700": {
+     "var": "--color-sage-700",
+     "type": "color",
+     "source": "css-var --color-sage-700 (:root @layer tokens)",
+     "description": "The sage ramp's 700 step."
+    },
+    "800": {
+     "var": "--color-sage-800",
+     "type": "color",
+     "source": "css-var --color-sage-800 (:root @layer tokens)",
+     "description": "The sage ramp's 800 step."
+    },
+    "900": {
+     "var": "--color-sage-900",
+     "type": "color",
+     "source": "css-var --color-sage-900 (:root @layer tokens)",
+     "description": "The sage ramp's 900 step."
+    },
+    "950": {
+     "var": "--color-sage-950",
+     "type": "color",
+     "source": "css-var --color-sage-950 (:root @layer tokens)",
+     "description": "The sage ramp's 950 step."
+    }
+   },
+   "success": {
+    "100": {
+     "var": "--color-success-100",
+     "type": "color",
+     "source": "css-var --color-success-100 (:root @layer tokens)",
+     "description": "The success ramp's 100 step."
+    },
+    "200": {
+     "var": "--color-success-200",
+     "type": "color",
+     "source": "css-var --color-success-200 (:root @layer tokens)",
+     "description": "The success ramp's 200 step."
+    },
+    "300": {
+     "var": "--color-success-300",
+     "type": "color",
+     "source": "css-var --color-success-300 (:root @layer tokens)",
+     "description": "The success ramp's 300 step."
+    },
+    "400": {
+     "var": "--color-success-400",
+     "type": "color",
+     "source": "css-var --color-success-400 (:root @layer tokens)",
+     "description": "The success ramp's 400 step."
+    },
+    "50": {
+     "var": "--color-success-50",
+     "type": "color",
+     "source": "css-var --color-success-50 (:root @layer tokens)",
+     "description": "The success ramp's 50 step."
+    },
+    "500": {
+     "var": "--color-success-500",
+     "type": "color",
+     "source": "css-var --color-success-500 (:root @layer tokens)",
+     "description": "The success ramp's 500 step."
+    },
+    "600": {
+     "var": "--color-success-600",
+     "type": "color",
+     "source": "css-var --color-success-600 (:root @layer tokens)",
+     "description": "The success ramp's 600 step."
+    },
+    "700": {
+     "var": "--color-success-700",
+     "type": "color",
+     "source": "css-var --color-success-700 (:root @layer tokens)",
+     "description": "The success ramp's 700 step."
+    },
+    "800": {
+     "var": "--color-success-800",
+     "type": "color",
+     "source": "css-var --color-success-800 (:root @layer tokens)",
+     "description": "The success ramp's 800 step."
+    },
+    "900": {
+     "var": "--color-success-900",
+     "type": "color",
+     "source": "css-var --color-success-900 (:root @layer tokens)",
+     "description": "The success ramp's 900 step."
+    },
+    "950": {
+     "var": "--color-success-950",
+     "type": "color",
+     "source": "css-var --color-success-950 (:root @layer tokens)",
+     "description": "The success ramp's 950 step."
+    }
+   },
+   "warning": {
+    "100": {
+     "var": "--color-warning-100",
+     "type": "color",
+     "source": "css-var --color-warning-100 (:root @layer tokens)",
+     "description": "The warning ramp's 100 step."
+    },
+    "200": {
+     "var": "--color-warning-200",
+     "type": "color",
+     "source": "css-var --color-warning-200 (:root @layer tokens)",
+     "description": "The warning ramp's 200 step."
+    },
+    "300": {
+     "var": "--color-warning-300",
+     "type": "color",
+     "source": "css-var --color-warning-300 (:root @layer tokens)",
+     "description": "The warning ramp's 300 step."
+    },
+    "400": {
+     "var": "--color-warning-400",
+     "type": "color",
+     "source": "css-var --color-warning-400 (:root @layer tokens)",
+     "description": "The warning ramp's 400 step."
+    },
+    "50": {
+     "var": "--color-warning-50",
+     "type": "color",
+     "source": "css-var --color-warning-50 (:root @layer tokens)",
+     "description": "The warning ramp's 50 step."
+    },
+    "500": {
+     "var": "--color-warning-500",
+     "type": "color",
+     "source": "css-var --color-warning-500 (:root @layer tokens)",
+     "description": "The warning ramp's 500 step."
+    },
+    "600": {
+     "var": "--color-warning-600",
+     "type": "color",
+     "source": "css-var --color-warning-600 (:root @layer tokens)",
+     "description": "The warning ramp's 600 step."
+    },
+    "700": {
+     "var": "--color-warning-700",
+     "type": "color",
+     "source": "css-var --color-warning-700 (:root @layer tokens)",
+     "description": "The warning ramp's 700 step."
+    },
+    "800": {
+     "var": "--color-warning-800",
+     "type": "color",
+     "source": "css-var --color-warning-800 (:root @layer tokens)",
+     "description": "The warning ramp's 800 step."
+    },
+    "900": {
+     "var": "--color-warning-900",
+     "type": "color",
+     "source": "css-var --color-warning-900 (:root @layer tokens)",
+     "description": "The warning ramp's 900 step."
+    },
+    "950": {
+     "var": "--color-warning-950",
+     "type": "color",
+     "source": "css-var --color-warning-950 (:root @layer tokens)",
+     "description": "The warning ramp's 950 step."
+    }
+   },
+   "white": {
+    "var": "--color-white",
+    "type": "color",
+    "source": "css-var --color-white (:root)",
+    "description": "The white every raised surface and accent label paints."
+   },
+   "wash": {
+    "lavender": {
+     "soft": {
+      "var": "--color-wash-lavender-soft",
+      "type": "color",
+      "source": "css-var --color-wash-lavender-soft (:root @layer tokens)",
+      "description": "A soft lavender decorative wash."
+     },
+     "deep": {
+      "var": "--color-wash-lavender-deep",
+      "type": "color",
+      "source": "css-var --color-wash-lavender-deep (:root @layer tokens)",
+      "description": "The deeper lavender wash."
+     }
+    },
+    "sky": {
+     "var": "--color-wash-sky",
+     "type": "color",
+     "source": "css-var --color-wash-sky (:root @layer tokens)",
+     "description": "A pale sky wash."
+    },
+    "sage": {
+     "var": "--color-wash-sage",
+     "type": "color",
+     "source": "css-var --color-wash-sage (:root @layer tokens)",
+     "description": "A pale sage wash."
+    }
+   },
+   "graphic-blue": {
+    "bold": {
+     "value": "{color.blue.500}",
+     "type": "color",
+     "source": "css-var --color-graphic-blue-bold = var(--color-blue-500)",
+     "description": "The blue illustration ramp's bold step, the blue ramp's 500."
+    },
+    "moderate": {
+     "value": "{color.blue.300}",
+     "type": "color",
+     "source": "css-var --color-graphic-blue-moderate = var(--color-blue-300)",
+     "description": "The blue illustration ramp's moderate step, the blue ramp's 300."
+    },
+    "muted": {
+     "value": "{color.blue.200}",
+     "type": "color",
+     "source": "css-var --color-graphic-blue-muted = var(--color-blue-200)",
+     "description": "The blue illustration ramp's muted step, the blue ramp's 200."
+    },
+    "soft": {
+     "value": "{color.blue.100}",
+     "type": "color",
+     "source": "css-var --color-graphic-blue-soft = var(--color-blue-100)",
+     "description": "The blue illustration ramp's soft step, the blue ramp's 100."
+    },
+    "strong": {
+     "value": "{color.blue.400}",
+     "type": "color",
+     "source": "css-var --color-graphic-blue-strong = var(--color-blue-400)",
+     "description": "The blue illustration ramp's strong step, the blue ramp's 400."
+    },
+    "subtle": {
+     "value": "{color.blue.50}",
+     "type": "color",
+     "source": "css-var --color-graphic-blue-subtle = var(--color-blue-50)",
+     "description": "The blue illustration ramp's subtle step, the blue ramp's 50."
+    }
+   }
+  },
+  "gradient": {
+   "chat-sheet-accent": {
+    "value": [
+     {
+      "color": "#2463eb",
+      "position": 0.0
+     },
+     {
+      "color": "#0ea5e9",
+      "position": 0.2
+     },
+     {
+      "color": "#22c55e",
+      "position": 0.4
+     },
+     {
+      "color": "#84cc16",
+      "position": 0.6
+     },
+     {
+      "color": "#0ea5e9",
+      "position": 0.8
+     },
+     {
+      "color": "#2463eb",
+      "position": 1.0
+     }
+    ],
+    "type": "gradient",
+    "angle": "90deg",
+    "source": "css-var --chat-sheet-accent-gradient (:root @layer tokens): the blue→sky→green→lime sweep the chat input card's accent border animates",
+    "description": "The accent sweep painted around the hero chat input card."
+   }
+  },
+  "font": {
+   "family": {
+    "display": {
+     "value": "\"fraunces\", Georgia, Times New Roman, serif",
+     "type": "fontFamily",
+     "source": "css-var --font-display declared on .AGcgpq_variable; the @font-face blocks (self-hosted woff2) are in raw/css-vars.json fonts",
+     "description": "The Fraunces face the display, italic and oath text is set in."
+    },
+    "sans": {
+     "value": "\"geist\", system-ui, Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "css-var --font-sans declared on .Ijxoba_variable; the @font-face blocks (self-hosted woff2) are in raw/css-vars.json fonts",
+     "description": "The Geist face the UI, headings, body and label text is set in."
+    },
+    "mono": {
+     "value": "\"geistMono\", ui-monospace, Courier New, monospace",
+     "type": "fontFamily",
+     "source": "css-var --font-mono declared on .P2jE_a_variable; the @font-face blocks (self-hosted woff2) are in raw/css-vars.json fonts",
+     "description": "The Geist Mono face the mono tokens are set in."
+    },
+    "body": {
+     "value": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Segoe UI\", Roboto, Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\", sans-serif",
+     "type": "fontFamily",
+     "source": "css-var --font-body (:root)",
+     "description": "The system fallback stack the plain body font reads."
+    }
+   }
+  },
+  "typography": {
+   "body": {
+    "10": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "10px",
+      "lineHeight": "14px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-body-10 (:root @layer tokens): \"400 .625rem/1.4 var(--font-sans)\"",
+     "description": "Body (Geist 400) at 10px."
+    },
+    "12": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "12px",
+      "lineHeight": "16.8px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-body-12 (:root @layer tokens): \"400 .75rem/1.4 var(--font-sans)\"",
+     "description": "Body (Geist 400) at 12px."
+    },
+    "14": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "14px",
+      "lineHeight": "19.6px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-body-14 (:root @layer tokens): \"400 .875rem/1.4 var(--font-sans)\"",
+     "description": "Body (Geist 400) at 14px."
+    },
+    "16": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "16px",
+      "lineHeight": "22.4px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-body-16 (:root @layer tokens): \"400 1rem/1.4 var(--font-sans)\"",
+     "description": "Body (Geist 400) at 16px."
+    },
+    "18": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "18px",
+      "lineHeight": "25.2px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-body-18 (:root @layer tokens): \"400 1.125rem/1.4 var(--font-sans)\"",
+     "description": "Body (Geist 400) at 18px."
+    },
+    "20": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-body-20 (:root @layer tokens): \"400 1.25rem/1.4 var(--font-sans)\"",
+     "description": "Body (Geist 400) at 20px."
+    },
+    "24": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "24px",
+      "lineHeight": "33.6px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-body-24 (:root @layer tokens): \"400 1.5rem/1.4 var(--font-sans)\"",
+     "description": "Body (Geist 400) at 24px."
+    },
+    "28": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "28px",
+      "lineHeight": "39.2px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-body-28 (:root @layer tokens): \"400 1.75rem/1.4 var(--font-sans)\"",
+     "description": "Body (Geist 400) at 28px."
+    },
+    "32": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "32px",
+      "lineHeight": "44.8px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-body-32 (:root @layer tokens): \"400 2rem/1.4 var(--font-sans)\"",
+     "description": "Body (Geist 400) at 32px."
+    }
+   },
+   "display": {
+    "24": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.display}",
+      "fontSize": "24px",
+      "lineHeight": "28.08px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-display-24 (:root @layer tokens): \"400 1.5rem/1.17 var(--font-display)\"",
+     "description": "Display (Fraunces) at 24px."
+    },
+    "32": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.display}",
+      "fontSize": "32px",
+      "lineHeight": "37.44px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-display-32 (:root @layer tokens): \"400 2rem/1.17 var(--font-display)\"",
+     "description": "Display (Fraunces) at 32px."
+    },
+    "40": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.display}",
+      "fontSize": "40px",
+      "lineHeight": "46.8px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-display-40 (:root @layer tokens): \"400 2.5rem/1.17 var(--font-display)\"",
+     "description": "Display (Fraunces) at 40px."
+    },
+    "48": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.display}",
+      "fontSize": "48px",
+      "lineHeight": "56.16px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-display-48 (:root @layer tokens): \"400 3rem/1.17 var(--font-display)\"",
+     "description": "Display (Fraunces) at 48px."
+    },
+    "56": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.display}",
+      "fontSize": "56px",
+      "lineHeight": "65.52px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-display-56 (:root @layer tokens): \"400 3.5rem/1.17 var(--font-display)\"",
+     "description": "Display (Fraunces) at 56px."
+    },
+    "64": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.display}",
+      "fontSize": "64px",
+      "lineHeight": "74.88px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-display-64 (:root @layer tokens): \"400 4rem/1.17 var(--font-display)\"",
+     "description": "Display (Fraunces) at 64px."
+    },
+    "72": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.display}",
+      "fontSize": "72px",
+      "lineHeight": "84.24px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-display-72 (:root @layer tokens): \"400 4.5rem/1.17 var(--font-display)\"",
+     "description": "Display (Fraunces) at 72px."
+    }
+   },
+   "heading": {
+    "10": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "10px",
+      "lineHeight": "14px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-heading-10 (:root @layer tokens): \"600 .625rem/1.4 var(--font-sans)\"",
+     "description": "Heading (Geist 600) at 10px."
+    },
+    "12": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "12px",
+      "lineHeight": "16.8px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-heading-12 (:root @layer tokens): \"600 .75rem/1.4 var(--font-sans)\"",
+     "description": "Heading (Geist 600) at 12px."
+    },
+    "14": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "14px",
+      "lineHeight": "19.6px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-heading-14 (:root @layer tokens): \"600 .875rem/1.4 var(--font-sans)\"",
+     "description": "Heading (Geist 600) at 14px."
+    },
+    "16": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "16px",
+      "lineHeight": "22.4px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-heading-16 (:root @layer tokens): \"600 1rem/1.4 var(--font-sans)\"",
+     "description": "Heading (Geist 600) at 16px."
+    },
+    "18": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "18px",
+      "lineHeight": "25.2px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-heading-18 (:root @layer tokens): \"600 1.125rem/1.4 var(--font-sans)\"",
+     "description": "Heading (Geist 600) at 18px."
+    },
+    "20": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-heading-20 (:root @layer tokens): \"600 1.25rem/1.4 var(--font-sans)\"",
+     "description": "Heading (Geist 600) at 20px."
+    },
+    "24": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "24px",
+      "lineHeight": "33.6px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-heading-24 (:root @layer tokens): \"600 1.5rem/1.4 var(--font-sans)\"",
+     "description": "Heading (Geist 600) at 24px."
+    },
+    "28": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "28px",
+      "lineHeight": "39.2px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-heading-28 (:root @layer tokens): \"600 1.75rem/1.4 var(--font-sans)\"",
+     "description": "Heading (Geist 600) at 28px."
+    },
+    "32": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "32px",
+      "lineHeight": "44.8px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-heading-32 (:root @layer tokens): \"600 2rem/1.4 var(--font-sans)\"",
+     "description": "Heading (Geist 600) at 32px."
+    }
+   },
+   "heading-italic": {
+    "10": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "10px",
+      "lineHeight": "14px",
+      "fontWeight": 600,
+      "fontStyle": "italic"
+     },
+     "source": "css-var --text-heading-italic-10 (:root @layer tokens): \"italic 600 .625rem/1.4 var(--font-sans)\"",
+     "description": "Italic heading (Geist 600) at 10px."
+    },
+    "12": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "12px",
+      "lineHeight": "16.8px",
+      "fontWeight": 600,
+      "fontStyle": "italic"
+     },
+     "source": "css-var --text-heading-italic-12 (:root @layer tokens): \"italic 600 .75rem/1.4 var(--font-sans)\"",
+     "description": "Italic heading (Geist 600) at 12px."
+    },
+    "14": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "14px",
+      "lineHeight": "19.6px",
+      "fontWeight": 600,
+      "fontStyle": "italic"
+     },
+     "source": "css-var --text-heading-italic-14 (:root @layer tokens): \"italic 600 .875rem/1.4 var(--font-sans)\"",
+     "description": "Italic heading (Geist 600) at 14px."
+    },
+    "16": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "16px",
+      "lineHeight": "22.4px",
+      "fontWeight": 600,
+      "fontStyle": "italic"
+     },
+     "source": "css-var --text-heading-italic-16 (:root @layer tokens): \"italic 600 1rem/1.4 var(--font-sans)\"",
+     "description": "Italic heading (Geist 600) at 16px."
+    },
+    "18": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "18px",
+      "lineHeight": "25.2px",
+      "fontWeight": 600,
+      "fontStyle": "italic"
+     },
+     "source": "css-var --text-heading-italic-18 (:root @layer tokens): \"italic 600 1.125rem/1.4 var(--font-sans)\"",
+     "description": "Italic heading (Geist 600) at 18px."
+    },
+    "20": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "fontWeight": 600,
+      "fontStyle": "italic"
+     },
+     "source": "css-var --text-heading-italic-20 (:root @layer tokens): \"italic 600 1.25rem/1.4 var(--font-sans)\"",
+     "description": "Italic heading (Geist 600) at 20px."
+    },
+    "24": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "24px",
+      "lineHeight": "33.6px",
+      "fontWeight": 600,
+      "fontStyle": "italic"
+     },
+     "source": "css-var --text-heading-italic-24 (:root @layer tokens): \"italic 600 1.5rem/1.4 var(--font-sans)\"",
+     "description": "Italic heading (Geist 600) at 24px."
+    },
+    "28": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "28px",
+      "lineHeight": "39.2px",
+      "fontWeight": 600,
+      "fontStyle": "italic"
+     },
+     "source": "css-var --text-heading-italic-28 (:root @layer tokens): \"italic 600 1.75rem/1.4 var(--font-sans)\"",
+     "description": "Italic heading (Geist 600) at 28px."
+    },
+    "32": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "32px",
+      "lineHeight": "44.8px",
+      "fontWeight": 600,
+      "fontStyle": "italic"
+     },
+     "source": "css-var --text-heading-italic-32 (:root @layer tokens): \"italic 600 2rem/1.4 var(--font-sans)\"",
+     "description": "Italic heading (Geist 600) at 32px."
+    }
+   },
+   "italic": {
+    "14": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.display}",
+      "fontSize": "14px",
+      "lineHeight": "17.5px",
+      "fontWeight": 400,
+      "fontStyle": "italic"
+     },
+     "source": "css-var --text-italic-14 (:root @layer tokens): \"italic 400 .875rem/1.25 var(--font-display)\"",
+     "description": "Italic display (Fraunces) at 14px."
+    },
+    "18": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.display}",
+      "fontSize": "18px",
+      "lineHeight": "22.5px",
+      "fontWeight": 400,
+      "fontStyle": "italic"
+     },
+     "source": "css-var --text-italic-18 (:root @layer tokens): \"italic 400 1.125rem/1.25 var(--font-display)\"",
+     "description": "Italic display (Fraunces) at 18px."
+    },
+    "24": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.display}",
+      "fontSize": "24px",
+      "lineHeight": "30px",
+      "fontWeight": 400,
+      "fontStyle": "italic"
+     },
+     "source": "css-var --text-italic-24 (:root @layer tokens): \"italic 400 1.5rem/1.25 var(--font-display)\"",
+     "description": "Italic display (Fraunces) at 24px."
+    },
+    "32": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.display}",
+      "fontSize": "32px",
+      "lineHeight": "40px",
+      "fontWeight": 400,
+      "fontStyle": "italic"
+     },
+     "source": "css-var --text-italic-32 (:root @layer tokens): \"italic 400 2rem/1.25 var(--font-display)\"",
+     "description": "Italic display (Fraunces) at 32px."
+    },
+    "40": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.display}",
+      "fontSize": "40px",
+      "lineHeight": "50px",
+      "fontWeight": 400,
+      "fontStyle": "italic"
+     },
+     "source": "css-var --text-italic-40 (:root @layer tokens): \"italic 400 2.5rem/1.25 var(--font-display)\"",
+     "description": "Italic display (Fraunces) at 40px."
+    },
+    "48": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.display}",
+      "fontSize": "48px",
+      "lineHeight": "60px",
+      "fontWeight": 400,
+      "fontStyle": "italic"
+     },
+     "source": "css-var --text-italic-48 (:root @layer tokens): \"italic 400 3rem/1.25 var(--font-display)\"",
+     "description": "Italic display (Fraunces) at 48px."
+    },
+    "56": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.display}",
+      "fontSize": "56px",
+      "lineHeight": "70px",
+      "fontWeight": 400,
+      "fontStyle": "italic"
+     },
+     "source": "css-var --text-italic-56 (:root @layer tokens): \"italic 400 3.5rem/1.25 var(--font-display)\"",
+     "description": "Italic display (Fraunces) at 56px."
+    },
+    "64": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.display}",
+      "fontSize": "64px",
+      "lineHeight": "80px",
+      "fontWeight": 400,
+      "fontStyle": "italic"
+     },
+     "source": "css-var --text-italic-64 (:root @layer tokens): \"italic 400 4rem/1.25 var(--font-display)\"",
+     "description": "Italic display (Fraunces) at 64px."
+    },
+    "72": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.display}",
+      "fontSize": "72px",
+      "lineHeight": "90px",
+      "fontWeight": 400,
+      "fontStyle": "italic"
+     },
+     "source": "css-var --text-italic-72 (:root @layer tokens): \"italic 400 4.5rem/1.25 var(--font-display)\"",
+     "description": "Italic display (Fraunces) at 72px."
+    }
+   },
+   "label": {
+    "10": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "10px",
+      "lineHeight": "14px",
+      "fontWeight": 500
+     },
+     "source": "css-var --text-label-10 (:root @layer tokens): \"500 .625rem/1.4 var(--font-sans)\"",
+     "description": "Label (Geist 500) at 10px."
+    },
+    "12": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "12px",
+      "lineHeight": "16.8px",
+      "fontWeight": 500
+     },
+     "source": "css-var --text-label-12 (:root @layer tokens): \"500 .75rem/1.4 var(--font-sans)\"",
+     "description": "Label (Geist 500) at 12px."
+    },
+    "14": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "14px",
+      "lineHeight": "19.6px",
+      "fontWeight": 500
+     },
+     "source": "css-var --text-label-14 (:root @layer tokens): \"500 .875rem/1.4 var(--font-sans)\"",
+     "description": "Label (Geist 500) at 14px."
+    },
+    "16": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "16px",
+      "lineHeight": "22.4px",
+      "fontWeight": 500
+     },
+     "source": "css-var --text-label-16 (:root @layer tokens): \"500 1rem/1.4 var(--font-sans)\"",
+     "description": "Label (Geist 500) at 16px."
+    },
+    "18": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "18px",
+      "lineHeight": "25.2px",
+      "fontWeight": 500
+     },
+     "source": "css-var --text-label-18 (:root @layer tokens): \"500 1.125rem/1.4 var(--font-sans)\"",
+     "description": "Label (Geist 500) at 18px."
+    },
+    "20": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "fontWeight": 500
+     },
+     "source": "css-var --text-label-20 (:root @layer tokens): \"500 1.25rem/1.4 var(--font-sans)\"",
+     "description": "Label (Geist 500) at 20px."
+    },
+    "24": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "24px",
+      "lineHeight": "33.6px",
+      "fontWeight": 500
+     },
+     "source": "css-var --text-label-24 (:root @layer tokens): \"500 1.5rem/1.4 var(--font-sans)\"",
+     "description": "Label (Geist 500) at 24px."
+    },
+    "28": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "28px",
+      "lineHeight": "39.2px",
+      "fontWeight": 500
+     },
+     "source": "css-var --text-label-28 (:root @layer tokens): \"500 1.75rem/1.4 var(--font-sans)\"",
+     "description": "Label (Geist 500) at 28px."
+    },
+    "32": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.sans}",
+      "fontSize": "32px",
+      "lineHeight": "44.8px",
+      "fontWeight": 500
+     },
+     "source": "css-var --text-label-32 (:root @layer tokens): \"500 2rem/1.4 var(--font-sans)\"",
+     "description": "Label (Geist 500) at 32px."
+    }
+   },
+   "mono": {
+    "10": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.mono}",
+      "fontSize": "10px",
+      "lineHeight": "14px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-mono-10 (:root @layer tokens): \"400 .625rem/1.4 var(--font-mono)\"",
+     "description": "Mono (Geist Mono 400) at 10px."
+    },
+    "12": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.mono}",
+      "fontSize": "12px",
+      "lineHeight": "16.8px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-mono-12 (:root @layer tokens): \"400 .75rem/1.4 var(--font-mono)\"",
+     "description": "Mono (Geist Mono 400) at 12px."
+    },
+    "14": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.mono}",
+      "fontSize": "14px",
+      "lineHeight": "19.6px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-mono-14 (:root @layer tokens): \"400 .875rem/1.4 var(--font-mono)\"",
+     "description": "Mono (Geist Mono 400) at 14px."
+    },
+    "16": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.mono}",
+      "fontSize": "16px",
+      "lineHeight": "22.4px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-mono-16 (:root @layer tokens): \"400 1rem/1.4 var(--font-mono)\"",
+     "description": "Mono (Geist Mono 400) at 16px."
+    },
+    "18": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.mono}",
+      "fontSize": "18px",
+      "lineHeight": "25.2px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-mono-18 (:root @layer tokens): \"400 1.125rem/1.4 var(--font-mono)\"",
+     "description": "Mono (Geist Mono 400) at 18px."
+    },
+    "20": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.mono}",
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-mono-20 (:root @layer tokens): \"400 1.25rem/1.4 var(--font-mono)\"",
+     "description": "Mono (Geist Mono 400) at 20px."
+    },
+    "24": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.mono}",
+      "fontSize": "24px",
+      "lineHeight": "33.6px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-mono-24 (:root @layer tokens): \"400 1.5rem/1.4 var(--font-mono)\"",
+     "description": "Mono (Geist Mono 400) at 24px."
+    },
+    "28": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.mono}",
+      "fontSize": "28px",
+      "lineHeight": "39.2px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-mono-28 (:root @layer tokens): \"400 1.75rem/1.4 var(--font-mono)\"",
+     "description": "Mono (Geist Mono 400) at 28px."
+    },
+    "32": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.mono}",
+      "fontSize": "32px",
+      "lineHeight": "44.8px",
+      "fontWeight": 400
+     },
+     "source": "css-var --text-mono-32 (:root @layer tokens): \"400 2rem/1.4 var(--font-mono)\"",
+     "description": "Mono (Geist Mono 400) at 32px."
+    }
+   },
+   "mono-bold": {
+    "10": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.mono}",
+      "fontSize": "10px",
+      "lineHeight": "14px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-mono-bold-10 (:root @layer tokens): \"600 .625rem/1.4 var(--font-mono)\"",
+     "description": "Mono bold (Geist Mono 600) at 10px."
+    },
+    "12": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.mono}",
+      "fontSize": "12px",
+      "lineHeight": "16.8px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-mono-bold-12 (:root @layer tokens): \"600 .75rem/1.4 var(--font-mono)\"",
+     "description": "Mono bold (Geist Mono 600) at 12px."
+    },
+    "14": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.mono}",
+      "fontSize": "14px",
+      "lineHeight": "19.6px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-mono-bold-14 (:root @layer tokens): \"600 .875rem/1.4 var(--font-mono)\"",
+     "description": "Mono bold (Geist Mono 600) at 14px."
+    },
+    "16": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.mono}",
+      "fontSize": "16px",
+      "lineHeight": "22.4px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-mono-bold-16 (:root @layer tokens): \"600 1rem/1.4 var(--font-mono)\"",
+     "description": "Mono bold (Geist Mono 600) at 16px."
+    },
+    "18": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.mono}",
+      "fontSize": "18px",
+      "lineHeight": "25.2px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-mono-bold-18 (:root @layer tokens): \"600 1.125rem/1.4 var(--font-mono)\"",
+     "description": "Mono bold (Geist Mono 600) at 18px."
+    },
+    "20": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.mono}",
+      "fontSize": "20px",
+      "lineHeight": "28px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-mono-bold-20 (:root @layer tokens): \"600 1.25rem/1.4 var(--font-mono)\"",
+     "description": "Mono bold (Geist Mono 600) at 20px."
+    },
+    "24": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.mono}",
+      "fontSize": "24px",
+      "lineHeight": "33.6px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-mono-bold-24 (:root @layer tokens): \"600 1.5rem/1.4 var(--font-mono)\"",
+     "description": "Mono bold (Geist Mono 600) at 24px."
+    },
+    "28": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.mono}",
+      "fontSize": "28px",
+      "lineHeight": "39.2px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-mono-bold-28 (:root @layer tokens): \"600 1.75rem/1.4 var(--font-mono)\"",
+     "description": "Mono bold (Geist Mono 600) at 28px."
+    },
+    "32": {
+     "type": "typography",
+     "value": {
+      "fontFamily": "{font.family.mono}",
+      "fontSize": "32px",
+      "lineHeight": "44.8px",
+      "fontWeight": 600
+     },
+     "source": "css-var --text-mono-bold-32 (:root @layer tokens): \"600 2rem/1.4 var(--font-mono)\"",
+     "description": "Mono bold (Geist Mono 600) at 32px."
+    }
+   }
+  },
+  "tracking": {
+   "display": {
+    "value": "-.01em",
+    "type": "other",
+    "source": "css-var --tracking-display (:root @layer tokens)",
+    "description": "The display/tight letter-spacing."
+   },
+   "tight": {
+    "value": "-.02em",
+    "type": "other",
+    "source": "css-var --tracking-tight (:root @layer tokens)",
+    "description": "The display/tight letter-spacing."
+   }
+  },
+  "shadow": {
+   "xs": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.06)",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "2px",
+      "spread": "0px",
+      "inset": false
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --shadow-xs resolved (:root @layer tokens): \"0 1px 2px #0000000f\"",
+    "description": "The hairline 1px lift."
+   },
+   "sm": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.05)",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "12px",
+      "spread": "0px",
+      "inset": false
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --shadow-sm resolved (:root @layer tokens): \"0 1px 12px #0000000d\"",
+    "description": "The 1px/12px soft lift."
+   },
+   "md": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.06)",
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "12px",
+      "spread": "0px",
+      "inset": false
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --shadow-md resolved (:root @layer tokens): \"0 2px 12px #0000000f\"",
+    "description": "The 2px/12px card lift — the chat input card carries it."
+   },
+   "lg": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.06)",
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "24px",
+      "spread": "0px",
+      "inset": false
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --shadow-lg resolved (:root @layer tokens): \"0 2px 24px #0000000f\"",
+    "description": "The 2px/24px raised lift."
+   },
+   "xl": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.1)",
+      "offsetX": "0px",
+      "offsetY": "5px",
+      "blur": "32px",
+      "spread": "0px",
+      "inset": false
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --shadow-xl resolved (:root @layer tokens): \"0 5px 32px #0000001a\"",
+    "description": "The 5px/32px overlay lift."
+   },
+   "brand-glow": {
+    "value": [
+     {
+      "color": "rgba(9, 97, 228, 0.39)",
+      "offsetX": "0px",
+      "offsetY": "4px",
+      "blur": "14px",
+      "spread": "0px",
+      "inset": false
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --shadow-brand-glow resolved (:root @layer tokens): \"0 4px 14px #0961e463\"",
+    "description": "The blue glow the accent button paints."
+   },
+   "brand-glow-hover": {
+    "value": [
+     {
+      "color": "rgba(9, 97, 228, 0.5)",
+      "offsetX": "0px",
+      "offsetY": "6px",
+      "blur": "20px",
+      "spread": "0px",
+      "inset": false
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --shadow-brand-glow-hover resolved (:root @layer tokens): \"0 6px 20px #0961e480\"",
+    "description": "The stronger glow on hover."
+   }
+  },
+  "layout": {
+   "header-height": {
+    "var": "--header-height",
+    "type": "dimension",
+    "source": "css-var --header-height (:root)",
+    "description": "The 72px marketing top bar."
+   },
+   "tap-target-min": {
+    "var": "--tap-target-min",
+    "type": "dimension",
+    "source": "css-var --tap-target-min (:root)",
+    "description": "The 44px minimum tap target."
+   }
+  },
+  "measured": {
+   "focus-outline": {
+    "value": "#3c83f6",
+    "type": "color",
+    "source": "computed outlineColor of signup-button focus-visible (raw/components-computed.json)",
+    "description": "The keyboard focus colour on the header actions (auto outline)."
+   }
+  }
+ },
+ "light": {
+  "color": {
+   "accent": {
+    "bg": {
+     "value": "{color.blue.600}",
+     "type": "color",
+     "source": "css-var --color-accent-bg = var(--color-blue-600) (light)",
+     "description": "The accent-bg role, declared over --color-blue-600."
+    },
+    "bg-disabled": {
+     "value": "{color.neutral.200}",
+     "type": "color",
+     "source": "css-var --color-accent-bg-disabled = var(--color-neutral-200) (light)",
+     "description": "The accent-bg-disabled role, declared over --color-neutral-200."
+    },
+    "bg-hover": {
+     "value": "{color.blue.700}",
+     "type": "color",
+     "source": "css-var --color-accent-bg-hover = var(--color-blue-700) (light)",
+     "description": "The accent-bg-hover role, declared over --color-blue-700."
+    },
+    "bg-pressed": {
+     "value": "{color.blue.800}",
+     "type": "color",
+     "source": "css-var --color-accent-bg-pressed = var(--color-blue-800) (light)",
+     "description": "The accent-bg-pressed role, declared over --color-blue-800."
+    },
+    "fg": {
+     "value": "{color.white}",
+     "type": "color",
+     "source": "css-var --color-accent-fg = var(--color-white) (light)",
+     "description": "The accent-fg role, declared over --color-white."
+    },
+    "fg-disabled": {
+     "value": "{color.neutral.500}",
+     "type": "color",
+     "source": "css-var --color-accent-fg-disabled = var(--color-neutral-500) (light)",
+     "description": "The accent-fg-disabled role, declared over --color-neutral-500."
+    },
+    "focus-ring": {
+     "value": "{color.blue.500}",
+     "type": "color",
+     "source": "css-var --color-accent-focus-ring = var(--color-blue-500) (light)",
+     "description": "The accent-focus-ring role, declared over --color-blue-500."
+    },
+    "focus-ring-black": {
+     "value": "{color.neutral.950}",
+     "type": "color",
+     "source": "css-var --color-accent-focus-ring-black = var(--color-neutral-950) (light)",
+     "description": "The accent-focus-ring-black role, declared over --color-neutral-950."
+    }
+   },
+   "border": {
+    "default": {
+     "var": "--color-border-default",
+     "type": "color",
+     "source": "css-var --color-border-default (light): an hsl(from …) derivation of --color-neutral-900",
+     "description": "The border-default role."
+    },
+    "disabled": {
+     "value": "{color.neutral.300}",
+     "type": "color",
+     "source": "css-var --color-border-disabled = var(--color-neutral-300) (light)",
+     "description": "The border-disabled role, declared over --color-neutral-300."
+    },
+    "light": {
+     "var": "--color-border-light",
+     "type": "color",
+     "source": "css-var --color-border-light (light): an hsl(from …) derivation of --color-neutral-900",
+     "description": "The border-light role."
+    },
+    "strong": {
+     "var": "--color-border-strong",
+     "type": "color",
+     "source": "css-var --color-border-strong (light): an hsl(from …) derivation of --color-neutral-900",
+     "description": "The border-strong role."
+    },
+    "subtle": {
+     "value": "{color.neutral.100}",
+     "type": "color",
+     "source": "css-var --color-border-subtle = var(--color-neutral-100) (light)",
+     "description": "The border-subtle role, declared over --color-neutral-100."
+    }
+   },
+   "divider": {
+    "default": {
+     "value": "{color.neutral.200}",
+     "type": "color",
+     "source": "css-var --color-divider = var(--color-neutral-200) (light)",
+     "description": "The divider role, declared over --color-neutral-200."
+    },
+    "strong": {
+     "value": "{color.neutral.300}",
+     "type": "color",
+     "source": "css-var --color-divider-strong = var(--color-neutral-300) (light)",
+     "description": "The divider-strong role, declared over --color-neutral-300."
+    }
+   },
+   "error": {
+    "bg": {
+     "value": "{color.error.50}",
+     "type": "color",
+     "source": "css-var --color-error-bg = var(--color-error-50) (light)",
+     "description": "The error-bg role, declared over --color-error-50."
+    },
+    "border": {
+     "value": "{color.error.200}",
+     "type": "color",
+     "source": "css-var --color-error-border = var(--color-error-200) (light)",
+     "description": "The error-border role, declared over --color-error-200."
+    },
+    "fg": {
+     "value": "{color.error.800}",
+     "type": "color",
+     "source": "css-var --color-error-fg = var(--color-error-800) (light)",
+     "description": "The error-fg role, declared over --color-error-800."
+    }
+   },
+   "fg": {
+    "default": {
+     "value": "{color.neutral.900}",
+     "type": "color",
+     "source": "css-var --color-fg-default = var(--color-neutral-900) (light)",
+     "description": "The fg-default role, declared over --color-neutral-900."
+    },
+    "disabled": {
+     "var": "--color-fg-disabled",
+     "type": "color",
+     "source": "css-var --color-fg-disabled (light): an hsl(from …) derivation of --color-neutral-900",
+     "description": "The fg-disabled role."
+    },
+    "muted": {
+     "var": "--color-fg-muted",
+     "type": "color",
+     "source": "css-var --color-fg-muted (light): an hsl(from …) derivation of --color-neutral-900",
+     "description": "The fg-muted role."
+    },
+    "subtle": {
+     "var": "--color-fg-subtle",
+     "type": "color",
+     "source": "css-var --color-fg-subtle (light): an hsl(from …) derivation of --color-neutral-900",
+     "description": "The fg-subtle role."
+    }
+   },
+   "icon": {
+    "default": {
+     "value": "{color.neutral.950}",
+     "type": "color",
+     "source": "css-var --color-icon-default = var(--color-neutral-950) (light)",
+     "description": "The icon-default role, declared over --color-neutral-950."
+    }
+   },
+   "info": {
+    "bg": {
+     "value": "{color.blue.50}",
+     "type": "color",
+     "source": "css-var --color-info-bg = var(--color-blue-50) (light)",
+     "description": "The info-bg role, declared over --color-blue-50."
+    },
+    "border": {
+     "value": "{color.blue.200}",
+     "type": "color",
+     "source": "css-var --color-info-border = var(--color-blue-200) (light)",
+     "description": "The info-border role, declared over --color-blue-200."
+    },
+    "fg": {
+     "value": "{color.blue.800}",
+     "type": "color",
+     "source": "css-var --color-info-fg = var(--color-blue-800) (light)",
+     "description": "The info-fg role, declared over --color-blue-800."
+    }
+   },
+   "link": {
+    "default": {
+     "value": "{color.accent.bg}",
+     "type": "color",
+     "source": "css-var --color-link-default = var(--color-accent-bg) (light)",
+     "description": "The link-default role, declared over --color-accent-bg."
+    },
+    "disabled": {
+     "value": "{color.neutral.500}",
+     "type": "color",
+     "source": "css-var --color-link-disabled = var(--color-neutral-500) (light)",
+     "description": "The link-disabled role, declared over --color-neutral-500."
+    },
+    "hover": {
+     "value": "{color.blue.700}",
+     "type": "color",
+     "source": "css-var --color-link-hover = var(--color-blue-700) (light)",
+     "description": "The link-hover role, declared over --color-blue-700."
+    },
+    "visited": {
+     "value": "{color.blue.800}",
+     "type": "color",
+     "source": "css-var --color-link-visited = var(--color-blue-800) (light)",
+     "description": "The link-visited role, declared over --color-blue-800."
+    }
+   },
+   "solid": {
+    "bg": {
+     "value": "{color.neutral.950}",
+     "type": "color",
+     "source": "css-var --color-solid-bg = var(--color-neutral-950) (light)",
+     "description": "The solid-bg role, declared over --color-neutral-950."
+    },
+    "bg-disabled": {
+     "value": "{color.neutral.200}",
+     "type": "color",
+     "source": "css-var --color-solid-bg-disabled = var(--color-neutral-200) (light)",
+     "description": "The solid-bg-disabled role, declared over --color-neutral-200."
+    },
+    "bg-hover": {
+     "value": "{color.neutral.800}",
+     "type": "color",
+     "source": "css-var --color-solid-bg-hover = var(--color-neutral-800) (light)",
+     "description": "The solid-bg-hover role, declared over --color-neutral-800."
+    },
+    "bg-pressed": {
+     "value": "{color.neutral.900}",
+     "type": "color",
+     "source": "css-var --color-solid-bg-pressed = var(--color-neutral-900) (light)",
+     "description": "The solid-bg-pressed role, declared over --color-neutral-900."
+    },
+    "fg": {
+     "value": "{color.neutral.50}",
+     "type": "color",
+     "source": "css-var --color-solid-fg = var(--color-neutral-50) (light)",
+     "description": "The solid-fg role, declared over --color-neutral-50."
+    },
+    "fg-disabled": {
+     "value": "{color.neutral.500}",
+     "type": "color",
+     "source": "css-var --color-solid-fg-disabled = var(--color-neutral-500) (light)",
+     "description": "The solid-fg-disabled role, declared over --color-neutral-500."
+    }
+   },
+   "success": {
+    "bg": {
+     "value": "{color.success.50}",
+     "type": "color",
+     "source": "css-var --color-success-bg = var(--color-success-50) (light)",
+     "description": "The success-bg role, declared over --color-success-50."
+    },
+    "border": {
+     "value": "{color.success.200}",
+     "type": "color",
+     "source": "css-var --color-success-border = var(--color-success-200) (light)",
+     "description": "The success-border role, declared over --color-success-200."
+    },
+    "fg": {
+     "value": "{color.success.800}",
+     "type": "color",
+     "source": "css-var --color-success-fg = var(--color-success-800) (light)",
+     "description": "The success-fg role, declared over --color-success-800."
+    }
+   },
+   "surface": {
+    "canvas": {
+     "value": "{color.neutral.50}",
+     "type": "color",
+     "source": "css-var --color-surface-canvas = var(--color-neutral-50) (light)",
+     "description": "The surface-canvas role, declared over --color-neutral-50."
+    },
+    "muted-blue": {
+     "var": "--color-surface-muted-blue",
+     "type": "color",
+     "source": "css-var --color-surface-muted-blue (light): a literal declaration",
+     "description": "The surface-muted-blue role."
+    },
+    "muted-rose": {
+     "var": "--color-surface-muted-rose",
+     "type": "color",
+     "source": "css-var --color-surface-muted-rose (light): a literal declaration",
+     "description": "The surface-muted-rose role."
+    },
+    "muted-sage": {
+     "var": "--color-surface-muted-sage",
+     "type": "color",
+     "source": "css-var --color-surface-muted-sage (light): a literal declaration",
+     "description": "The surface-muted-sage role."
+    },
+    "muted-warm": {
+     "var": "--color-surface-muted-warm",
+     "type": "color",
+     "source": "css-var --color-surface-muted-warm (light): a literal declaration",
+     "description": "The surface-muted-warm role."
+    },
+    "raised": {
+     "value": "{color.white}",
+     "type": "color",
+     "source": "css-var --color-surface-raised = var(--color-white) (light)",
+     "description": "The surface-raised role, declared over --color-white."
+    },
+    "sunken": {
+     "value": "{color.neutral.100}",
+     "type": "color",
+     "source": "css-var --color-surface-sunken = var(--color-neutral-100) (light)",
+     "description": "The surface-sunken role, declared over --color-neutral-100."
+    }
+   },
+   "warning": {
+    "bg": {
+     "value": "{color.warning.50}",
+     "type": "color",
+     "source": "css-var --color-warning-bg = var(--color-warning-50) (light)",
+     "description": "The warning-bg role, declared over --color-warning-50."
+    },
+    "border": {
+     "value": "{color.warning.200}",
+     "type": "color",
+     "source": "css-var --color-warning-border = var(--color-warning-200) (light)",
+     "description": "The warning-border role, declared over --color-warning-200."
+    },
+    "fg": {
+     "value": "{color.warning.800}",
+     "type": "color",
+     "source": "css-var --color-warning-fg = var(--color-warning-800) (light)",
+     "description": "The warning-fg role, declared over --color-warning-800."
+    }
+   }
+  },
+  "gradient": {
+   "skeleton": {
+    "value": [
+     {
+      "color": "{color.neutral.200}",
+      "position": 0.43670000000000003
+     },
+     {
+      "color": "{color.neutral.100}",
+      "position": 0.7579
+     },
+     {
+      "color": "{color.neutral.200}",
+      "position": 1.0
+     }
+    ],
+    "type": "gradient",
+    "angle": "90deg",
+    "source": "css-var --skeleton-loader-gradient (light): the loading shimmer sweep",
+    "description": "The skeleton shimmer sweep."
+   }
+  },
+  "shadow": {
+   "focus-ring": {
+    "value": [
+     {
+      "color": "#2463eb",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "2px",
+      "inset": false
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --shadow-focus-ring resolved light: \"0 0 0 2px #2463eb\"",
+    "description": "The 2px accent keyboard ring."
+   }
+  }
+ },
+ "dark": {
+  "color": {
+   "accent": {
+    "bg": {
+     "value": "{color.blue.400}",
+     "type": "color",
+     "source": "css-var --color-accent-bg = var(--color-blue-400) (dark)",
+     "description": "The accent-bg role, declared over --color-blue-400."
+    },
+    "bg-disabled": {
+     "value": "{color.neutral.800}",
+     "type": "color",
+     "source": "css-var --color-accent-bg-disabled = var(--color-neutral-800) (dark)",
+     "description": "The accent-bg-disabled role, declared over --color-neutral-800."
+    },
+    "bg-hover": {
+     "value": "{color.blue.300}",
+     "type": "color",
+     "source": "css-var --color-accent-bg-hover = var(--color-blue-300) (dark)",
+     "description": "The accent-bg-hover role, declared over --color-blue-300."
+    },
+    "bg-pressed": {
+     "value": "{color.blue.500}",
+     "type": "color",
+     "source": "css-var --color-accent-bg-pressed = var(--color-blue-500) (dark)",
+     "description": "The accent-bg-pressed role, declared over --color-blue-500."
+    },
+    "fg": {
+     "value": "{color.blue.950}",
+     "type": "color",
+     "source": "css-var --color-accent-fg = var(--color-blue-950) (dark)",
+     "description": "The accent-fg role, declared over --color-blue-950."
+    },
+    "fg-disabled": {
+     "value": "{color.neutral.700}",
+     "type": "color",
+     "source": "css-var --color-accent-fg-disabled = var(--color-neutral-700) (dark)",
+     "description": "The accent-fg-disabled role, declared over --color-neutral-700."
+    },
+    "focus-ring": {
+     "value": "{color.blue.400}",
+     "type": "color",
+     "source": "css-var --color-accent-focus-ring = var(--color-blue-400) (dark)",
+     "description": "The accent-focus-ring role, declared over --color-blue-400."
+    },
+    "focus-ring-black": {
+     "value": "{color.neutral.50}",
+     "type": "color",
+     "source": "css-var --color-accent-focus-ring-black = var(--color-neutral-50) (dark)",
+     "description": "The accent-focus-ring-black role, declared over --color-neutral-50."
+    }
+   },
+   "border": {
+    "default": {
+     "var": "--color-border-default",
+     "type": "color",
+     "source": "css-var --color-border-default (dark): an hsl(from …) derivation of --color-neutral-50",
+     "description": "The border-default role."
+    },
+    "disabled": {
+     "value": "{color.neutral.800}",
+     "type": "color",
+     "source": "css-var --color-border-disabled = var(--color-neutral-800) (dark)",
+     "description": "The border-disabled role, declared over --color-neutral-800."
+    },
+    "light": {
+     "var": "--color-border-light",
+     "type": "color",
+     "source": "css-var --color-border-light (dark): an hsl(from …) derivation of --color-neutral-50",
+     "description": "The border-light role."
+    },
+    "strong": {
+     "var": "--color-border-strong",
+     "type": "color",
+     "source": "css-var --color-border-strong (dark): an hsl(from …) derivation of --color-neutral-50",
+     "description": "The border-strong role."
+    },
+    "subtle": {
+     "value": "{color.neutral.800}",
+     "type": "color",
+     "source": "css-var --color-border-subtle = var(--color-neutral-800) (dark)",
+     "description": "The border-subtle role, declared over --color-neutral-800."
+    }
+   },
+   "divider": {
+    "default": {
+     "value": "{color.neutral.700}",
+     "type": "color",
+     "source": "css-var --color-divider = var(--color-neutral-700) (dark)",
+     "description": "The divider role, declared over --color-neutral-700."
+    },
+    "strong": {
+     "value": "{color.neutral.600}",
+     "type": "color",
+     "source": "css-var --color-divider-strong = var(--color-neutral-600) (dark)",
+     "description": "The divider-strong role, declared over --color-neutral-600."
+    }
+   },
+   "error": {
+    "bg": {
+     "value": "{color.error.900}",
+     "type": "color",
+     "source": "css-var --color-error-bg = var(--color-error-900) (dark)",
+     "description": "The error-bg role, declared over --color-error-900."
+    },
+    "border": {
+     "value": "{color.error.700}",
+     "type": "color",
+     "source": "css-var --color-error-border = var(--color-error-700) (dark)",
+     "description": "The error-border role, declared over --color-error-700."
+    },
+    "fg": {
+     "value": "{color.error.200}",
+     "type": "color",
+     "source": "css-var --color-error-fg = var(--color-error-200) (dark)",
+     "description": "The error-fg role, declared over --color-error-200."
+    }
+   },
+   "fg": {
+    "default": {
+     "value": "{color.neutral.50}",
+     "type": "color",
+     "source": "css-var --color-fg-default = var(--color-neutral-50) (dark)",
+     "description": "The fg-default role, declared over --color-neutral-50."
+    },
+    "disabled": {
+     "var": "--color-fg-disabled",
+     "type": "color",
+     "source": "css-var --color-fg-disabled (dark): an hsl(from …) derivation of --color-neutral-50",
+     "description": "The fg-disabled role."
+    },
+    "muted": {
+     "var": "--color-fg-muted",
+     "type": "color",
+     "source": "css-var --color-fg-muted (dark): an hsl(from …) derivation of --color-neutral-50",
+     "description": "The fg-muted role."
+    },
+    "subtle": {
+     "var": "--color-fg-subtle",
+     "type": "color",
+     "source": "css-var --color-fg-subtle (dark): an hsl(from …) derivation of --color-neutral-50",
+     "description": "The fg-subtle role."
+    }
+   },
+   "icon": {
+    "default": {
+     "value": "{color.neutral.50}",
+     "type": "color",
+     "source": "css-var --color-icon-default = var(--color-neutral-50) (dark)",
+     "description": "The icon-default role, declared over --color-neutral-50."
+    }
+   },
+   "info": {
+    "bg": {
+     "value": "{color.blue.900}",
+     "type": "color",
+     "source": "css-var --color-info-bg = var(--color-blue-900) (dark)",
+     "description": "The info-bg role, declared over --color-blue-900."
+    },
+    "border": {
+     "value": "{color.blue.700}",
+     "type": "color",
+     "source": "css-var --color-info-border = var(--color-blue-700) (dark)",
+     "description": "The info-border role, declared over --color-blue-700."
+    },
+    "fg": {
+     "value": "{color.blue.200}",
+     "type": "color",
+     "source": "css-var --color-info-fg = var(--color-blue-200) (dark)",
+     "description": "The info-fg role, declared over --color-blue-200."
+    }
+   },
+   "link": {
+    "default": {
+     "value": "{color.blue.400}",
+     "type": "color",
+     "source": "css-var --color-link-default = var(--color-blue-400) (dark)",
+     "description": "The link-default role, declared over --color-blue-400."
+    },
+    "disabled": {
+     "value": "{color.neutral.700}",
+     "type": "color",
+     "source": "css-var --color-link-disabled = var(--color-neutral-700) (dark)",
+     "description": "The link-disabled role, declared over --color-neutral-700."
+    },
+    "hover": {
+     "value": "{color.blue.300}",
+     "type": "color",
+     "source": "css-var --color-link-hover = var(--color-blue-300) (dark)",
+     "description": "The link-hover role, declared over --color-blue-300."
+    },
+    "visited": {
+     "value": "{color.blue.200}",
+     "type": "color",
+     "source": "css-var --color-link-visited = var(--color-blue-200) (dark)",
+     "description": "The link-visited role, declared over --color-blue-200."
+    }
+   },
+   "solid": {
+    "bg": {
+     "value": "{color.neutral.50}",
+     "type": "color",
+     "source": "css-var --color-solid-bg = var(--color-neutral-50) (dark)",
+     "description": "The solid-bg role, declared over --color-neutral-50."
+    },
+    "bg-disabled": {
+     "value": "{color.neutral.800}",
+     "type": "color",
+     "source": "css-var --color-solid-bg-disabled = var(--color-neutral-800) (dark)",
+     "description": "The solid-bg-disabled role, declared over --color-neutral-800."
+    },
+    "bg-hover": {
+     "value": "{color.neutral.200}",
+     "type": "color",
+     "source": "css-var --color-solid-bg-hover = var(--color-neutral-200) (dark)",
+     "description": "The solid-bg-hover role, declared over --color-neutral-200."
+    },
+    "bg-pressed": {
+     "value": "{color.neutral.100}",
+     "type": "color",
+     "source": "css-var --color-solid-bg-pressed = var(--color-neutral-100) (dark)",
+     "description": "The solid-bg-pressed role, declared over --color-neutral-100."
+    },
+    "fg": {
+     "value": "{color.neutral.950}",
+     "type": "color",
+     "source": "css-var --color-solid-fg = var(--color-neutral-950) (dark)",
+     "description": "The solid-fg role, declared over --color-neutral-950."
+    },
+    "fg-disabled": {
+     "value": "{color.neutral.700}",
+     "type": "color",
+     "source": "css-var --color-solid-fg-disabled = var(--color-neutral-700) (dark)",
+     "description": "The solid-fg-disabled role, declared over --color-neutral-700."
+    }
+   },
+   "success": {
+    "bg": {
+     "value": "{color.success.900}",
+     "type": "color",
+     "source": "css-var --color-success-bg = var(--color-success-900) (dark)",
+     "description": "The success-bg role, declared over --color-success-900."
+    },
+    "border": {
+     "value": "{color.success.700}",
+     "type": "color",
+     "source": "css-var --color-success-border = var(--color-success-700) (dark)",
+     "description": "The success-border role, declared over --color-success-700."
+    },
+    "fg": {
+     "value": "{color.success.200}",
+     "type": "color",
+     "source": "css-var --color-success-fg = var(--color-success-200) (dark)",
+     "description": "The success-fg role, declared over --color-success-200."
+    }
+   },
+   "surface": {
+    "canvas": {
+     "var": "--color-surface-canvas",
+     "type": "color",
+     "source": "css-var --color-surface-canvas (dark): a literal declaration",
+     "description": "The surface-canvas role."
+    },
+    "muted-blue": {
+     "var": "--color-surface-muted-blue",
+     "type": "color",
+     "source": "css-var --color-surface-muted-blue (dark): a literal declaration",
+     "description": "The surface-muted-blue role."
+    },
+    "muted-rose": {
+     "var": "--color-surface-muted-rose",
+     "type": "color",
+     "source": "css-var --color-surface-muted-rose (dark): a literal declaration",
+     "description": "The surface-muted-rose role."
+    },
+    "muted-sage": {
+     "var": "--color-surface-muted-sage",
+     "type": "color",
+     "source": "css-var --color-surface-muted-sage (dark): a literal declaration",
+     "description": "The surface-muted-sage role."
+    },
+    "muted-warm": {
+     "var": "--color-surface-muted-warm",
+     "type": "color",
+     "source": "css-var --color-surface-muted-warm (dark): a literal declaration",
+     "description": "The surface-muted-warm role."
+    },
+    "raised": {
+     "value": "{color.neutral.900}",
+     "type": "color",
+     "source": "css-var --color-surface-raised = var(--color-neutral-900) (dark)",
+     "description": "The surface-raised role, declared over --color-neutral-900."
+    },
+    "sunken": {
+     "var": "--color-surface-sunken",
+     "type": "color",
+     "source": "css-var --color-surface-sunken (dark): a literal declaration",
+     "description": "The surface-sunken role."
+    }
+   },
+   "warning": {
+    "bg": {
+     "value": "{color.warning.900}",
+     "type": "color",
+     "source": "css-var --color-warning-bg = var(--color-warning-900) (dark)",
+     "description": "The warning-bg role, declared over --color-warning-900."
+    },
+    "border": {
+     "value": "{color.warning.700}",
+     "type": "color",
+     "source": "css-var --color-warning-border = var(--color-warning-700) (dark)",
+     "description": "The warning-border role, declared over --color-warning-700."
+    },
+    "fg": {
+     "value": "{color.warning.200}",
+     "type": "color",
+     "source": "css-var --color-warning-fg = var(--color-warning-200) (dark)",
+     "description": "The warning-fg role, declared over --color-warning-200."
+    }
+   }
+  },
+  "gradient": {
+   "skeleton": {
+    "value": [
+     {
+      "color": "{color.neutral.800}",
+      "position": 0.43670000000000003
+     },
+     {
+      "color": "{color.neutral.700}",
+      "position": 0.7579
+     },
+     {
+      "color": "{color.neutral.800}",
+      "position": 1.0
+     }
+    ],
+    "type": "gradient",
+    "angle": "90deg",
+    "source": "css-var --skeleton-loader-gradient (dark): the loading shimmer sweep",
+    "description": "The skeleton shimmer sweep."
+   }
+  },
+  "shadow": {
+   "focus-ring": {
+    "value": [
+     {
+      "color": "#61a6fa",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "2px",
+      "inset": false
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --shadow-focus-ring resolved dark: \"0 0 0 2px #61a6fa\"",
+    "description": "The 2px accent keyboard ring."
+   }
+  }
+ },
+ "component": {
+  "button": {
+   "height": {
+    "type": "dimension",
+    "value": "34.7969px",
+    "source": "computed height of signup-button default (raw/components-computed.json)",
+    "description": "The header Sign up button height."
+   }
+  },
+  "button-cta": {
+   "height": {
+    "type": "dimension",
+    "value": "43.5938px",
+    "source": "computed height of start-chat-button default (raw/components-computed.json)",
+    "description": "The hero Start chat button height."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "52px",
+    "source": "computed borderTopLeftRadius of start-chat-button default (raw/components-computed.json)",
+    "description": "The Start chat button radius."
+   }
+  },
+  "send": {
+   "height": {
+    "type": "dimension",
+    "value": "32px",
+    "source": "computed height of send-button default (raw/components-computed.json)",
+    "description": "The chat composer Send control height."
+   }
+  },
+  "inputcard": {
+   "radius": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "computed borderTopLeftRadius of form.inputCard.inputCardExpanded (paint layer of input-card default) (raw/components-computed.json)",
+    "description": "The chat input card's radius."
+   },
+   "height": {
+    "type": "dimension",
+    "value": "126px",
+    "source": "computed height of form.inputCard.inputCardExpanded (paint layer of input-card default) (raw/components-computed.json)",
+    "description": "The chat input card's resting height."
+   }
+  },
+  "starter": {
+   "height": {
+    "type": "dimension",
+    "value": "20.5938px",
+    "source": "computed height of starter default (raw/components-computed.json)",
+    "description": "A suggestion chip's height."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "8px",
+    "source": "computed borderTopLeftRadius of starter default (raw/components-computed.json)",
+    "description": "The suggestion chip's pill radius."
+   }
+  },
+  "sidebar": {
+   "width": {
+    "type": "dimension",
+    "value": "256px",
+    "source": "computed width of chat-sidebar-open default (raw/components-computed.json)",
+    "description": "The expanded chat rail's width."
+   }
+  },
+  "sidebar-collapsed": {
+   "width": {
+    "type": "dimension",
+    "value": "74px",
+    "source": "computed width of chat-sidebar default (raw/components-computed.json)",
+    "description": "The collapsed rail's width."
+   }
+  },
+  "dialog": {
+   "radius": {
+    "type": "dimension",
+    "value": "24px",
+    "source": "computed borderTopLeftRadius of div.modal (ancestor layer of signin-dialog default) (raw/components-computed.json)",
+    "description": "The sign-in dialog's radius."
+   },
+   "width": {
+    "type": "dimension",
+    "value": "393px",
+    "source": "computed width of signin-dialog default (raw/components-computed.json); read from the dialog's transparent inner section, not the painted div.modal: read from the wrong element, recapture needed",
+    "description": "The sign-in dialog's width."
+   }
+  },
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "72px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The measured top-bar height (the declared --header-height is 72px)."
+   }
+  }
+ }
+}

@@ -1,0 +1,68 @@
+{
+  "captured": "2026-11-19",
+  "viewport": {"innerWidth": 1169, "innerHeight": 731, "devicePixelRatio": 2},
+  "home": {
+    "url": "https://www.thenavia.com/",
+    "body": {"backgroundColor": "rgb(250, 244, 230)", "color": "rgb(54, 49, 42)", "fontFamily": "Publicsans Variablefont Wght, Arial, sans-serif", "fontSize": "15.436px", "fontWeight": "400", "lineHeight": "23.154px"},
+    "h1": {"text": "The marketing tool built for business owners with too much on their plate.", "fontFamily": "Lora Variablefont Wght", "fontSize": "54.026px", "fontWeight": "400", "lineHeight": "59.4286px", "color": "rgb(255, 255, 255)", "width": 772, "height": 178},
+    "h2": [
+      {"class": "heading-style-h2", "fontSize": "61.744px", "lineHeight": "74.0928px", "color": "rgb(54, 49, 42)"},
+      {"class": "heading-style-large", "fontSize": "77.18px", "lineHeight": "92.616px", "color": "rgb(255, 255, 255)"}
+    ],
+    "handwriting": {"class": "heading-style-h2 handwriting", "fontFamily": "Notemakersmark", "fontSize": "108.052px", "letterSpacing": "-6px", "lineHeight": "32.4156px", "color": "rgb(232, 255, 57)"},
+    "nav": {"height": 69, "padding": "0px 58.4453px", "position": "fixed", "backgroundColor": "rgba(0, 0, 0, 0)"},
+    "logo": {"width": 219, "height": 35},
+    "containerLarge": {"width": 1052, "x": 58},
+    "pagePadding": "58.4453px",
+    "buttons": {
+      "navGetStarted": {"class": "button-base yellow-no-arrow-nav", "backgroundColor": "rgb(232, 255, 57)", "color": "rgb(51, 46, 41)", "borderRadius": "61.744px", "padding": "11.577px 23.154px", "height": 46, "width": 128, "fontSize": "15.436px"},
+      "heroPrimary": {"backgroundColor": "rgb(232, 255, 57)", "color": "rgb(255, 255, 255)", "borderRadius": "61.744px", "padding": "11.577px 23.154px", "height": 46},
+      "bookDemo": {"backgroundColor": "rgb(255, 255, 255)", "color": "rgb(255, 255, 255)", "borderRadius": "61.744px", "height": 46, "note": "white face on a white-text section; the label is white"},
+      "orangeCta": {"backgroundColor": "rgb(248, 132, 80)", "color": "rgb(255, 255, 255)", "borderRadius": "61.744px", "padding": "11.577px 23.154px", "height": 46},
+      "textLink": {"class": "button-base.is-link", "backgroundColor": "transparent", "color": "rgb(54, 49, 42)", "fontWeight": "600", "padding": "0px", "borderRadius": "0px"},
+      "focus": "outline none 3px on the marketing button-base after element.focus()"
+    },
+    "pricing": [
+      {"class": "pricing_plan", "name": "Basic plan", "price": "Free forever", "border": "1px solid rgb(205, 199, 184)", "backgroundColor": "transparent", "borderRadius": "7.718px", "padding": "38.59px 30.872px 30.872px", "width": 330},
+      {"class": "pricing_plan highlight", "name": "Business plan", "price": "$49/mo", "backgroundColor": "rgb(54, 49, 42)", "color": "rgb(255, 255, 255)", "borderRadius": "7.718px", "width": 330},
+      {"class": "pricing_plan", "name": "Growth plan", "price": "$79/mo", "border": "1px solid rgb(205, 199, 184)", "borderRadius": "7.718px", "width": 330}
+    ],
+    "planLabel": {"class": "heading-style-h6 text-color-orange", "fontFamily": "Notemakersmark", "fontSize": "38.59px", "letterSpacing": "-2px", "color": "rgb(248, 132, 80)"},
+    "sections": {
+      "is-white": "rgb(255, 255, 255)",
+      "is-dark": "rgb(54, 49, 42) background, rgb(255, 255, 255) text"
+    }
+  },
+  "blog": {
+    "url": "https://www.thenavia.com/blog",
+    "h1": {"class": "heading-style-large", "fontSize": "77.18px", "color": "rgb(54, 49, 42)", "text": "Learn how to grow your business"}
+  },
+  "article": {
+    "url": "https://www.thenavia.com/blog/how-to-plan-for-black-friday-as-a-small-business",
+    "h1": {"fontSize": "61.744px", "lineHeight": "74.0928px", "color": "rgb(54, 49, 42)", "width": 849},
+    "body": {"fontSize": "15.436px", "lineHeight": "23.154px", "color": "rgb(54, 49, 42)", "width": 849},
+    "link": {"color": "rgb(248, 132, 80)"}
+  },
+  "contact": {
+    "url": "https://www.thenavia.com/contact-us",
+    "h1": {"text": "Let's chat!", "fontSize": "61.744px", "color": "rgb(54, 49, 42)"},
+    "field": {"backgroundColor": "rgb(250, 244, 230)", "color": "rgb(54, 49, 42)", "border": "1px solid rgb(54, 49, 42)", "borderRadius": "3.859px", "padding": "7.718px 11.577px", "height": 42, "fontSize": "15.436px"},
+    "textarea": {"height": 174, "padding": "11.577px", "borderRadius": "3.859px"},
+    "submit": {"backgroundColor": "rgb(248, 132, 80)", "color": "rgb(54, 49, 42)", "borderRadius": "61.744px", "height": 46, "padding": "11.577px 23.154px"},
+    "notSubmitted": "The form asks for first name, last name, email, phone, a topic and a message. None were filled. A phone field is present, so signup was not attempted."
+  },
+  "privacy": {
+    "url": "https://www.thenavia.com/privacy-policy",
+    "h1": {"fontSize": "61.744px", "color": "rgb(54, 49, 42)"},
+    "body": {"fontSize": "15.436px", "lineHeight": "23.154px", "width": 849}
+  },
+  "appGate": {
+    "url": "https://app.thenavia.com/",
+    "body": {"backgroundColor": "rgb(250, 244, 230)", "fontFamily": "Public Sans, -apple-system, system-ui, Segoe UI, Roboto, sans-serif", "fontSize": "16px", "fontWeight": "500", "lineHeight": "24px"},
+    "h1": {"text": "Welcome to Navia", "fontFamily": "Lora, Georgia, Times New Roman, serif", "fontSize": "28px", "fontWeight": "500", "lineHeight": "42px", "letterSpacing": "-0.28px", "color": "rgb(54, 49, 42)"},
+    "lede": {"text": "Please sign in to access your account", "color": "rgb(90, 84, 76)", "fontSize": "16px"},
+    "signIn": {"backgroundColor": "rgb(255, 255, 255)", "color": "rgb(54, 49, 42)", "border": "1px solid rgb(223, 213, 192)", "borderRadius": "25px", "padding": "8px 24px", "height": 40, "fontSize": "15.4px", "fontWeight": "500"},
+    "signUp": {"backgroundColor": "color(srgb 0.972549 0.517647 0.313726)", "color": "color(srgb 0.211765 0.192157 0.164706)", "borderRadius": "25px", "padding": "8px 24px", "height": 40},
+    "focus": {"outline": "rgb(248, 132, 80) solid 2px", "outlineOffset": "2px"}
+  }
+}

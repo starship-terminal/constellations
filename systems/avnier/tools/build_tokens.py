@@ -6,16 +6,16 @@ Sources, read from avnier.com on 2026-11-11:
                              declare, read from the network responses and inline <style>
                              blocks (tools/capture/vars.mjs) and binned
                              generated / app / vendor / utility / tailwind — the generated
-                             bin is ASOS's hash-named palette, the app bin the semantically
-                             named content-ui-library vars, the vendor bin OneTrust's
-                             consent UI. `resolved.light` is each name as the browser
+                             bin is one hash-named rating var, the app bin the Shopify
+                             theme's semantically named scheme vars, the vendor bin
+                             Loloyal's --ll-* and Swiper's --swiper-*. `resolved.light` is each name as the browser
                              resolves it on a probe html element.
   raw/component-tokens.json  the token tree (tools/build_component_tokens.py): each leaf either
                              names a variable ("var") resolved per theme, or carries a measured
                              value and the measurement it came from ("source")
 Every token carries $extensions.source: "css-var <name>" or "measured <where>".
 
-asos.com paints one light theme: the light set is the measured one and the spec's dark set
+avnier.com paints one light theme: the light set is the measured one and the spec's dark set
 is empty, so the export holds core and light only.
 
 Deterministic: same inputs, byte-identical output. Edit the raw inputs, never tokens.json.

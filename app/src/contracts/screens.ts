@@ -18,8 +18,7 @@ export interface ScreenQuery {
   theme?: string;
   group?: string;
   kind?: ScreenKind;
-  referenceId?: string;
-  /** Selected packages are combined with OR, alongside the legacy single ID. */
+  /** Selected packages are combined with OR. */
   referenceIds?: string[];
   /** All selected taxonomy terms must be present on the same capture. */
   termIds?: string[];
@@ -30,6 +29,13 @@ export interface ScreenQuery {
   sort?: "recent" | "name";
   offset?: number;
   limit?: number;
+  /**
+   * Keep at most this many captures per product and order the rest
+   * round-robin across products (first-seen order), so a page of results
+   * shows many products. `total` still counts every match; page by
+   * `pageable`, which counts the sampled captures.
+   */
+  perProduct?: number;
 }
 export interface ScreenFacet {
   value: string;
@@ -38,6 +44,9 @@ export interface ScreenFacet {
 export interface ScreenResponse {
   items: ScreenItem[];
   total: number;
+  /** How many captures offset/limit can page through: `total`, or the
+   * sampled count when `perProduct` is set. */
+  pageable: number;
   /** Actual platform/kind corpus counts, before reference, text or term filters. */
   termCounts: Record<string, number>;
   facets: {
@@ -48,5 +57,4 @@ export interface ScreenResponse {
     kinds: ScreenFacet[];
   };
   /** Legacy summary; ordered flows remain unavailable without sequence evidence. */
-  taxonomy: { pageTypes: string[]; uiElements: string[]; uxPatterns: string[] };
 }

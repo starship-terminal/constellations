@@ -1,0 +1,185 @@
+{
+  "captured": "2026-11-19",
+  "sourceUrl": "https://getpocket.com/home",
+  "redirect": "https://getpocket.com/ redirected to https://getpocket.com/home",
+  "title": "Pocket",
+  "themeClass": "colormode-light",
+  "colorScheme": "normal",
+  "prefersColorSchemeDark": true,
+  "reducedMotion": false,
+  "viewport": {
+    "preview": {
+      "innerWidth": 1169,
+      "innerHeight": 731,
+      "devicePixelRatio": 2,
+      "visualViewport": { "width": 1169, "height": 731, "scale": 1, "offsetLeft": 0, "offsetTop": 0 },
+      "scrollHeight": 3417,
+      "note": "T3 preview tab. Screenshots failed: the browser was not producing screenshot frames."
+    },
+    "desktop": {
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2,
+      "scrollHeight": 3409,
+      "png": { "width": 2880, "height": 6818 }
+    },
+    "phone": {
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2,
+      "scrollHeight": 3743,
+      "png": { "width": 780, "height": 7486 }
+    }
+  },
+  "painted": {
+    "body": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "color": "rgb(26, 26, 26)",
+      "fontFamily": "\"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "lineHeight": "24px"
+    },
+    "header": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "boxShadow": "rgba(0, 0, 0, 0.08) 0px 2px 12px 0px",
+      "height": "65px",
+      "position": "fixed"
+    },
+    "navContainer": {
+      "maxWidth": "1128px",
+      "paddingLeft": "40px",
+      "paddingRight": "40px"
+    },
+    "h1": {
+      "fontFamily": "Doyle, Garamond, Times, serif",
+      "fontSize": "38px",
+      "fontWeight": "700",
+      "lineHeight": "42.75px",
+      "color": "rgb(26, 26, 26)",
+      "marginBottom": "16px",
+      "text": "So long, farewell, Auf Wiedersehen..."
+    },
+    "lede": {
+      "fontFamily": "\"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "fontSize": "20px",
+      "fontWeight": "400",
+      "lineHeight": "30px",
+      "marginBottom": "24px"
+    },
+    "h3": {
+      "fontFamily": "Doyle, Garamond, Times, serif",
+      "fontSize": "24px",
+      "fontWeight": "700",
+      "lineHeight": "28.8px",
+      "marginBottom": "24px"
+    },
+    "heroGrid": {
+      "display": "grid",
+      "columnGap": "80px",
+      "padding": "48px 40px"
+    },
+    "section": {
+      "paddingTop": "112px",
+      "columnGap": "80px",
+      "paddingLeft": "40px"
+    },
+    "footer": {
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderTop": "1px solid rgb(217, 217, 217)"
+    },
+    "buttonSecondary": {
+      "class": "button secondary large",
+      "text": "Additional details",
+      "rest": {
+        "color": "rgb(26, 26, 26)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "border": "1px solid rgb(26, 26, 26)",
+        "borderRadius": "8px",
+        "fontSize": "20px",
+        "fontWeight": "400",
+        "lineHeight": "30px",
+        "padding": "16px 24px"
+      },
+      "hover": {
+        "color": "rgb(242, 242, 242)",
+        "backgroundColor": "rgb(26, 26, 26)",
+        "borderColor": "rgb(26, 26, 26)"
+      },
+      "focusVisible": {
+        "outline": "auto 1px rgb(0, 153, 144)",
+        "outlineOffset": "1px"
+      }
+    },
+    "link": {
+      "color": "rgb(26, 26, 26)",
+      "textDecoration": "underline",
+      "fontSize": "16px",
+      "hoverDeclared": "color: var(--color-textLinkHover)"
+    },
+    "select": {
+      "color": "rgb(26, 26, 26)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "border": "1px solid rgb(140, 140, 140)",
+      "borderRadius": "4px",
+      "fontSize": "16px",
+      "padding": "4px 32px 4px 8px",
+      "width": "220px",
+      "height": "36px",
+      "appearance": "none",
+      "focus": {
+        "outline": "auto 1px rgb(0, 153, 144)",
+        "outlineOffset": "1px"
+      }
+    }
+  },
+  "errorPage": {
+    "url": "https://getpocket.com/privacy",
+    "also": "https://getpocket.com/tos",
+    "title": "Error",
+    "h1": {
+      "text": "Oops! Something’s gone awry...",
+      "fontFamily": "\"Graphik Web\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+      "fontSize": "40px",
+      "fontWeight": "700",
+      "lineHeight": "48px",
+      "color": "rgb(26, 26, 26)",
+      "marginBottom": "24px"
+    },
+    "paragraph": {
+      "color": "rgb(102, 102, 102)",
+      "fontSize": "20px",
+      "lineHeight": "30px"
+    },
+    "buttonPrimary": {
+      "class": "button primary large",
+      "text": "Contact Support",
+      "href": "https://help.getpocket.com/",
+      "rest": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(0, 128, 120)",
+        "border": "1px solid rgb(0, 128, 120)",
+        "borderRadius": "8px",
+        "fontSize": "20px",
+        "padding": "16px 24px"
+      },
+      "hover": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(0, 77, 72)",
+        "borderColor": "rgb(0, 77, 72)"
+      },
+      "focusVisible": {
+        "outline": "auto 1px rgb(0, 153, 144)",
+        "outlineOffset": "1px"
+      }
+    }
+  },
+  "fontsLoaded": ["Doyle 500", "Graphik Web 400"],
+  "fontsDeclaredNotLoaded": ["Blanco OSF", "IdealSans", "Inter", "Sentinel", "Tiempos", "Whitney", "Graphik Web weights other than 400", "Doyle weights other than 500"],
+  "stylesheets": [
+    "https://assets.getpocket.com/web-client/_next/static/chunks/f421bff56e9ba7e2.css",
+    "https://assets.getpocket.com/web-client/_next/static/chunks/85b2c0276c955df5.css"
+  ],
+  "reducedMotionRules": 0,
+  "keyframes": ["tooltipFadeawayBottom", "tooltipFadeawayTop", "tooltipFadeawayHorizontal"]
+}

@@ -1,0 +1,25 @@
+{
+  "capturedAt": "2026-11-19",
+  "source": "headless Playwright, public page already loaded in the T3 preview tab with no Cloudflare challenge",
+  "url": "https://www.replo.app/",
+  "requested": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "note": "Viewport screenshot, not full page. The product paints one dark theme; the filename says light because that is the only theme."
+}

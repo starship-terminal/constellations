@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clearful style guide</title>
+<meta name="description" content="Clearful (clearful.com) design tokens and the public site's components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: var(--font-family-ui, "Manrope", -apple-system, BlinkMacSystemFont, "SF Pro", system-ui, sans-serif);
+  --sg-display: var(--font-family-display, "Literatatt", Georgia, "Times New Roman", serif);
+  --sg-library: var(--font-family-library, "Mulish", "Segoe UI", system-ui, sans-serif);
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: #222222; background: #ffffff; }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 44px/1.1 var(--sg-display); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: #7e7e7e; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid #e1e1e1; }
+.lead { max-width: 62ch; color: #515151; }
+.note { font-size: 13px; color: #7e7e7e; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: #7e7e7e; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid #e1e1e1; display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: #7e7e7e; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: #7e7e7e; }
+/* ---- site mock: the Webflow marketing surface ---- */
+.mock { border: 1px solid #e1e1e1; border-radius: 16px; overflow: hidden; }
+.mock.light { background: var(--surface-page, #fff); color: var(--text-primary, #222); }
+.navbar { display: flex; align-items: center; gap: 14px; height: var(--component-nav-height, 72px); padding: 0 40px; border-bottom: 1px solid var(--border-subtle, #e1e1e1); font-size: var(--font-size-nav, 16px); font-weight: 600; }
+.navbar .wm { font-family: var(--sg-display); font-size: 22px; font-weight: 700; }
+.navbar .sp { flex: 1; }
+.navbar .lk { height: var(--component-control-heightNavItem, 40px); display: inline-flex; align-items: center; padding: 0 20px; border-radius: var(--radius-large, 16px); }
+.navbar .lk:hover { background: var(--surface-hover, #f7f7f7); }
+.navbar .cta { height: var(--component-control-heightNavCta, 50px); display: inline-flex; align-items: center; padding: 0 20px; border-radius: var(--component-control-radiusPill, 999px); background: var(--accent, #1953ff); border: 1px solid var(--border-brand, #1953ff); color: var(--text-onAccent, #fff); }
+.navbar .cta:hover { background: var(--accentHover, #1b1bbc); }
+.hero { padding: 72px 40px 64px; text-align: center; }
+.hero h3 { font: 700 var(--font-size-display, 72px)/1.2 var(--sg-display); color: var(--text-primary, #222); margin: 0 0 40px; }
+.cta-wrap { display: inline-block; border-radius: 999px; box-shadow: 0 0 0 6px var(--ring-cta, #adc2ff); }
+.bigcta { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightCta, 82px); padding: 0 40px; border-radius: var(--component-control-radiusPill, 999px); background: var(--accent, #1953ff); color: var(--text-onAccent, #fff); font-size: var(--font-size-cta, 20px); font-weight: 600; }
+.bigcta:hover { background: var(--accentHover, #1b1bbc); }
+/* ---- feature cards + pricing ---- */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; padding: 24px; }
+.fcard { border-radius: var(--component-card-radiusFeature, 24px); background: var(--surface-secondary, #f7f7f7); padding: 24px; }
+.fcard .cap { font-size: var(--font-size-footer, 16px); color: var(--text-muted, #515151); }
+.brandband { margin: 0 24px 24px; border-radius: var(--radius-xlarge, 24px); background: var(--surface-brandLight, #d6e0ff); color: var(--text-navy, #001452); padding: 28px; }
+.brandband .h { font: 700 var(--font-size-h1, 60px)/1.1 var(--sg-display); }
+.tabs { display: inline-flex; gap: 4px; padding: 4px; border-radius: 999px; background: var(--surface-secondary, #f7f7f7); margin: 8px 24px 20px; font-size: var(--font-size-nav, 16px); }
+.tabs .t { height: var(--component-control-heightTab, 40px); display: inline-flex; align-items: center; padding: 0 24px; border-radius: 999px; color: var(--border-tab, #222); }
+.tabs .t.on { background: var(--accent, #1953ff); color: var(--text-onAccent, #fff); }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; padding: 0 24px 28px; }
+.plan { padding: 22px 24px; }
+.plan .price { font: 700 var(--font-size-price, 56px)/1.1 var(--sg-sans); color: var(--text-primary, #222); margin: 6px 0 14px; }
+.plan .price small { font: 400 14px/1 var(--sg-sans); color: var(--text-muted, #515151); }
+.pbtn { display: flex; align-items: center; justify-content: center; height: var(--component-control-heightPlanCta, 58px); border-radius: var(--component-control-radiusPill, 999px); font-size: var(--font-size-nav, 16px); font-weight: 600; background: var(--accent, #1953ff); color: var(--text-onAccent, #fff); }
+.pbtn:hover { background: var(--accentHover, #1b1bbc); }
+/* ---- the library's Tailwind surface ---- */
+.libband { margin: 24px; border-radius: var(--radius-large, 16px); border: 1px solid var(--border-subtle, #e1e1e1); padding: 24px; font-family: var(--sg-library); }
+.libband .h { font: 800 var(--font-size-library, 60px)/1.1 var(--sg-library); color: var(--text-appInk, #000); margin-bottom: 18px; }
+.pcard { border: 1px solid var(--border-subtle, #e1e1e1); border-radius: var(--component-card-radiusPrompt, 16px); background: var(--surface-card, #fff); padding: 32px; color: var(--text-appInk, #000); }
+/* ---- sign-in card (Flutter canvas, sampled values) ---- */
+.signin { max-width: 420px; margin: 28px auto; padding: 28px; background: var(--sampled-app-ground, #f7f7f7); border-radius: 16px; font-size: 14px; color: var(--sampled-app-text-primary, #222); }
+.signin .h { font-size: 22px; font-weight: 600; color: var(--sampled-app-text-primary, #222); margin-bottom: 16px; text-align: center; }
+.obtn { display: flex; align-items: center; justify-content: center; height: var(--component-signin-buttonHeight, 56px); border-radius: var(--radius-medium, 8px); margin-bottom: 10px; font-size: 16px; }
+.obtn.email { background: var(--sampled-app-oauth-email, #fff); border: 1px solid var(--border-subtle, #e1e1e1); color: var(--sampled-app-text-primary, #222); }
+.obtn.apple { background: var(--sampled-app-oauth-ink, #222); color: #fff; }
+.obtn.google { background: var(--sampled-app-oauth-google, #1a73e8); color: #fff; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid #e1e1e1; padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Clearful style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The mock is a reconstruction from tokens, not captured pixels — the real captures are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+
+  <h2 class="sh">Clearful, declared and measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>. Clearful's Webflow stylesheet declares a real design-token palette — the ten-step <code>--base-color-brand--blue-*</code> ramp, the grey ramp, four radius steps and a full semantic layer — so the core colors are those declarations resolved, and the roles are measured on the painted chrome: the #1953ff brand controls, the #1b1bbc hover step (shipped under a deleted variable), the #adc2ff CTA halo and the #d6e0ff brand-light bands.</p>
+  <p class="note">One light theme across the Webflow marketing routes and the Tailwind /library surface; app.clearful.com is a Flutter canvas — its shades are pixel-sampled off the captured screenshot and live under <code>core.sampled.app.*</code>. Read from clearful.com on 2026-11-30, signed out, in headless Chromium. Nothing was signed into, paid for or submitted.</p>
+
+  <h2 class="sh">The marketing surface</h2>
+  <p class="lead">The white nav bar with its blue pill, the Literatatt hero (no lede — the headline stands alone) and the CTA ringed by its 6px #adc2ff halo.</p>
+  <div class="mock light">
+    <div class="navbar"><span class="wm">Clearful</span><span class="lk">Guided Journals</span><span class="sp"></span><span class="lk">Log In</span><span class="cta">Start a journal — it's free</span></div>
+    <div class="hero">
+      <h3>Be a more thoughtful, resilient, and happier you</h3>
+      <span class="cta-wrap"><span class="bigcta">Start journaling for free</span></span>
+    </div>
+    <div class="cards">
+      <div class="fcard"><b>Flows</b><div class="cap">Structured journaling flows, step by step.</div></div>
+      <div class="fcard"><b>Prompts</b><div class="cap">A library of guided prompts.</div></div>
+      <div class="fcard"><b>Widgets</b><div class="cap">Journal from the home screen.</div></div>
+    </div>
+    <div class="brandband"><div class="h">Reflect, privately.</div></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">The Monthly/Yearly tabs and the plan columns with their blue Get-started pills.</p>
+  <div class="mock light">
+    <div class="tabs"><span class="t">Monthly</span><span class="t on">Yearly</span></div>
+    <div class="plans">
+      <div class="plan"><div class="price">$0 <small>/ mo</small></div><span class="pbtn">Get started</span></div>
+      <div class="plan"><div class="price">$9.99 <small>/ mo</small></div><span class="pbtn">Get started</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The library surface</h2>
+  <p class="lead">/library is a separate Tailwind build in Mulish on the same light theme — its own h1 and the bordered prompt cards.</p>
+  <div class="mock light"><div class="libband">
+    <div class="h">Guided Journaling Library</div>
+    <div class="pcard">What are you grateful for today?</div>
+  </div></div>
+
+  <h2 class="sh">The sign-in card</h2>
+  <p class="lead">app.clearful.com's boundary surface is a Flutter canvas — measured through its semantics overlay; the colours here are pixel-sampled off the captured screenshot.</p>
+  <div class="mock light"><div class="signin">
+    <div class="h">Sign in to Clearful</div>
+    <div class="obtn email">Continue with email</div>
+    <div class="obtn apple">Continue with Apple</div>
+    <div class="obtn google">Continue with Google</div>
+  </div></div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The page ground is <code>light.surface.page</code> #ffffff (<code>color.white</code>); secondary bands are <code>light.surface.secondary</code> #f7f7f7 (<code>color.grey.000</code>) and the accent band <code>light.surface.brandLight</code> #d6e0ff (<code>color.blue.100</code>). Brand controls take <code>light.accent</code> #1953ff (<code>color.blue.500</code>) with <code>light.accentHover</code> #1b1bbc on hover and pressed.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <p class="lead">Measured boxes: the 50px nav CTA, the 82px hero CTA with its halo, the 58px plan buttons, the 40px nav items and tabs, the 999px pill cap and the 8-24px card-radius ladder (rows 8, prompt cards 16, feature cards 24).</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared CSS variables and computed styles on the elements; pixel-sample the Flutter canvas</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [set, toks] of [['light', TOK.light], ['dark', TOK.dark]]) {
+    const roles = flat(toks || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${set} roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const grads = flat(TOK.core && TOK.core.gradient || {}, 'gradient.');
+  if (grads.length) {
+    h += `<div class="pal-h">gradients</div><div class="pal">`;
+    for (const [n, t] of grads) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc((t.v||[]).map(s=>s.color).join(' → '))}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core && TOK.core.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+</script>
+</body>
+</html>

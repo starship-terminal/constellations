@@ -37,7 +37,7 @@ const readPage = () => {
         walk(r.cssRules, [...ctx, head], out);
         continue;
       }
-      if (r.type === CSSRule.FONT_FACE_RULE) { out.fontFaces.push({ family: r.style.getPropertyValue('font-family').replace(/["']/g, ''), weight: r.style.getPropertyValue('font-weight'), src: (r.style.getPropertyValue('src').match(/url\("?([^")]+)/) || [])[1] }); continue; }
+      if (r.type === CSSRule.FONT_FACE_RULE) { out.fontFaces.push({ family: r.style.getPropertyValue('font-family').replace(/["']/g, ''), weight: r.style.getPropertyValue('font-weight'), src: ((r.style.getPropertyValue('src').match(/url\("?([^")]+)/) || [])[1] || '').split(/[?#]/)[0] }); continue; }
       if (!r.style) continue;
       out.rules.push({ sel: r.selectorText || '', ctx, style: r.style });
       if (r.cssRules && r.cssRules.length) walk(r.cssRules, [...ctx, r.selectorText], out);

@@ -1,0 +1,51 @@
+{
+  "blocked": false,
+  "before": {
+    "dept": {
+      "bg": "rgba(255, 255, 255, 0)",
+      "color": "rgb(0, 30, 96)",
+      "bc": "rgb(201, 220, 253)",
+      "bw": "1px",
+      "outline": "0px none rgb(0, 30, 96)",
+      "shadow": "none",
+      "td": "none"
+    },
+    "search": {
+      "bg": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "bc": "rgb(118, 118, 118)",
+      "bw": "0px",
+      "outline": "0px none rgb(0, 0, 0)",
+      "shadow": "none",
+      "td": "none"
+    },
+    "link": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(0, 0, 238)",
+      "bc": "rgb(0, 0, 238)",
+      "bw": "0px",
+      "outline": "0px none rgb(0, 0, 238)",
+      "shadow": "none",
+      "td": "underline"
+    }
+  },
+  "focusDept": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 30, 96)",
+    "bc": "rgb(201, 220, 253)",
+    "bw": "1px",
+    "outline": "0px auto rgb(0, 30, 96)",
+    "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px inset",
+    "td": "none"
+  },
+  "focusSearch": {
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 0)",
+    "bc": "rgb(118, 118, 118)",
+    "bw": "0px",
+    "outline": "1px auto rgb(0, 95, 204)",
+    "shadow": "none",
+    "td": "none"
+  },
+  "active": "INPUT"
+}

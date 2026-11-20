@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Canva style guide</title>
+<meta name="description" content="Canva design tokens and the public signed-out surface's components, rendered from tokens.json with the declared StyleX values and the measured computed styles.">
+<style>
+:root {
+  --font-family-sans: "Canva Sans", "IBM Plex Sans Arabic", "Noto Sans Variable", "Noto Sans", -apple-system, "system-ui", "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-size-display-hero: 80px;
+  --font-size-display: 64px;
+  --font-size-display-mobile: 45px;
+  --font-size-h2: 56px;
+  --font-size-card-title: 28px;
+  --font-size-price: 28.8px;
+  --font-size-lede: 24px;
+  --font-size-menu-item: 21px;
+  --font-size-section-label: 18px;
+  --font-size-body: 16px;
+  --font-size-control: 14px;
+  --font-size-meta: 12px;
+  --font-lineHeight-display-hero: 88px;
+  --font-lineHeight-display: 70.4px;
+  --font-lineHeight-h2: 61.6px;
+  --font-lineHeight-card-title: 35px;
+  --font-lineHeight-lede: 33.6px;
+  --font-lineHeight-control: 22px;
+  --font-lineHeight-meta: 20px;
+  --color-brand-purple: #8b3dff;
+  --color-brand-purple-hover: #7630d7;
+  --color-brand-purple-pressed: #612dae;
+  --color-brand-purple-deep: #4a2e7e;
+  --color-brand-gradient: linear-gradient(180deg, #00c4cc 0%, #7d2ae8 100%);
+  --color-status-error: #db142c;
+  --color-status-warning-text: #ad5a00;
+  --color-status-info: #3d8bff;
+  --color-neutral-ink: #0f1015;
+  --color-neutral-white: #ffffff;
+  --color-neutral-muted: rgba(16, 18, 25, 0.698);
+  --color-neutral-footer-fade: #f6f7f8;
+  --color-neutral-wash-hover: rgba(64, 79, 109, 0.06);
+  --color-neutral-wash-pressed: rgba(57, 70, 96, 0.14);
+  --color-neutral-hairline: rgba(53, 65, 90, 0.2);
+  --color-neutral-scrim: rgba(19, 22, 32, 0.6);
+  --radius-button: 12px;
+  --radius-header-control: 10px;
+  --radius-cta: 20px;
+  --radius-row: 14px;
+  --radius-pill: 9999px;
+  --radius-flyout-panel: 32px;
+  --measured-focus-ring-dark: #99c8ff;
+  --measured-focus-ring-light: #005fcc;
+  --measured-focus-ring-mobile: #e59700;
+  --measured-hairline: inset 0px 0px 0px 1px rgba(53, 65, 90, 0.2);
+  --measured-switch-thumb-shadow: 0px 0px 0px 0.5px rgba(64, 79, 109, 0.06), 0px 1px 2px 0px rgba(21, 30, 130, 0.12), 0px 2px 4px 0px rgba(21, 30, 130, 0.06);
+  --measured-control-transition: 100ms;
+  --measured-pressed-scale: 0.99;
+  --text-primary: var(--color-neutral-ink);
+  --text-muted: var(--color-neutral-muted);
+  --text-on-action: #ffffff;
+  --surface-page: var(--color-neutral-white);
+  --surface-card: var(--color-neutral-white);
+  --surface-footer: var(--color-neutral-footer-fade);
+  --action-primary-default: var(--color-brand-purple);
+  --action-primary-hover: var(--color-brand-purple-hover);
+  --action-primary-pressed: var(--color-brand-purple-pressed);
+  --state-hover: var(--color-neutral-wash-hover);
+  --state-pressed: var(--color-neutral-wash-pressed);
+  --border-hairline: var(--color-neutral-hairline);
+  --scrim: var(--color-neutral-scrim);
+  --component-button-height: 40px;
+  --component-button-cta-height: 56px;
+  --component-field-height: 38px;
+  --component-field-search-height: 46px;
+  --component-switch-height: 24px;
+  --component-navcontrol-height: 32px;
+  --component-menurow-height: 42px;
+  --component-header-height: 80px;
+  --component-header-height-mobile: 80px;
+  --component-flyout-height: 478px;
+  --component-plancard-height: 353px;
+  --component-accordionrow-height: 64px;
+  --component-categorycard-height: 80px;
+  --component-authcard-height: 348px;
+  --sg-sans: "Canva Sans", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Canva Sans", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --text-primary: rgba(255, 255, 255, 0.898);
+  --text-strong: #ffffff;
+  --text-on-action: var(--color-neutral-ink);
+  --surface-page: #16171d;
+  --action-ghost-default: rgba(255, 255, 255, 0);
+  --action-ghost-hover: rgba(255, 255, 255, 0.07);
+  --action-ghost-pressed: rgba(255, 255, 255, 0.15);
+  --action-ghost-tint: rgba(163, 112, 252, 0.2);
+  --action-secondary-default: rgba(255, 255, 255, 0.898);
+  --action-secondary-hover: #ffffff;
+  --action-secondary-pressed: rgba(255, 255, 255, 0.8);
+  --border-ghost: rgba(255, 255, 255, 0.2);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, var(--color-neutral-ink, #0f1015)); background: var(--surface-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #0f1015); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #0f1015); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: #1a1630; padding: 12px; border-radius: 12px; }
+.pal.dark .nm, .pal.dark .vl { color: rgba(255, 255, 255, 0.898); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); overflow: hidden; background: var(--surface-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 18px; height: 64px; padding: 0 12px 0 22px; font-size: 14px; color: rgba(255, 255, 255, 0.898); }
+.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.band { background: linear-gradient(160deg, #7d2ae8 0%, #5a3ef0 45%, #00c4cc 130%); color: rgba(255, 255, 255, 0.898); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 40px); padding: 0 16px; font-size: 14px; font-weight: 600; border-radius: var(--radius-button, 12px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-primary, var(--color-brand-purple, #8b3dff)); color: var(--text-on-action, #fff); }
+.btn.ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 1px var(--border-ghost, rgba(255, 255, 255, 0.2)); border-radius: var(--radius-header-control, 10px); height: 32px; }
+.btn.secondary { background: var(--action-secondary, rgba(255, 255, 255, 0.898)); color: var(--text-on-action, #0f1015); border-radius: var(--radius-header-control, 10px); height: 32px; }
+.btn.outline { background: transparent; color: var(--color-neutral-ink, #0f1015); box-shadow: inset 0 0 0 1px var(--border-hairline, rgba(53, 65, 90, 0.2)); }
+.hero { color: rgba(255, 255, 255, 0.898); padding: 64px 40px 80px; font: 400 56px/1.1 var(--sg-serif); letter-spacing: .01em; text-align: center; }
+.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: rgba(255, 255, 255, 0.898); margin: 16px auto 22px; max-width: 46ch; }
+.hero .big-cta { height: var(--component-button-cta-height, 56px); padding: 0 20px; border-radius: var(--radius-cta, 20px); font-size: 16px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); padding: 14px; font-size: 13px; background: #fff; border-radius: var(--radius-card, 16px); }
+.tile .img { height: 120px; background: #eee; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: 8px; }
+.tile b { display: block; font: 400 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.tile .price { font: 500 26px/1.2 var(--sg-sans); margin: 10px 0 2px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #0f1015); opacity: .65; font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: #fff; border-radius: 999px; padding: 4px; gap: 4px; font-size: 15px; box-shadow: inset 0 0 0 1px var(--border-hairline, rgba(53, 65, 90, 0.2)); }
+.toggle span { padding: 8px 22px; border-radius: 999px; }
+.toggle .on { background: var(--action-primary, var(--color-brand-purple, #8b3dff)); color: #fff; }
+.switch { display: inline-block; width: 40px; height: 24px; border-radius: 999px; background: var(--action-primary, var(--color-brand-purple, #8b3dff)); position: relative; vertical-align: middle; }
+.switch i { position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: #fff; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Canva style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Canva, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the Canva purple ramp measured off the real actions (#8b3dff fill, #7630d7 hover, #612dae pressed) and the declared StyleX hues, the #0f1015 ink and translucent white layers the dark band paints, the ink-wash hover states, the inset hairline ring, Canva Sans, and the 9999px pills next to the 12px control radius. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from canva.com on 2026-11-12, signed out, in headless Chromium — the capture was served the Singapore region, so prices render S$. The editor, Brand Kit and dashboards behind the auth card are a documented boundary. Canva Sans is a licensed served face and is not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">On home the header and hero sit inside <code>.theme.dark</code> over a purple-to-teal media band: the wordmark, the Design / Product / Plans / Business / Education / Help flyout triggers, a ghost Sign up and a 90%-white Log in. The 56px Start designing CTA carries the same 90% white fill with ink text at a 20px radius.</p>
+  <div class="mock band">
+    <div class="navbar"><span class="wm">Canva</span><span>Design</span><span>Product</span><span>Plans</span><span>Business</span><span>Education</span><span>Help</span><span class="sp"></span><span class="btn ghost">Sign up</span><span class="btn secondary">Log in</span></div>
+    <div class="hero">What will you design today?<small>Make AI-powered social posts, videos, presentations, and more with Canva.</small><span class="btn secondary big-cta">Start designing</span></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing (served S$ in the Singapore region) puts the audience tabs and the Monthly/Yearly switch — a 40x24 purple pill — above white 16px plan cards; each card's action is the purple 40px button. The comparison rows sit on the 14% ink wash at a 14px radius.</p>
+  <div class="mock" style="padding:20px">
+    <div style="text-align:center;margin-bottom:18px"><span class="toggle"><span class="on">Individuals and business</span><span>Education</span></span></div>
+    <div style="text-align:center;margin-bottom:18px;font-size:14px">Monthly <span class="switch"><i></i></span> Yearly <span class="note" style="display:inline-block;background:var(--action-primary,var(--color-brand-purple,#8b3dff));color:#fff;border-radius:999px;padding:2px 8px;font-size:12px">Save from 16%</span></div>
+    <div class="grid">
+      <div class="tile"><b>Free</b><span class="sub">Design anything and bring your ideas to life.</span><div class="price">S$0</div><span class="sub">/year for one person</span></div>
+      <div class="tile"><b>Pro</b><span class="sub">Unlock premium content and AI features.</span><div class="price">S$165</div><span class="sub">/year for one person</span></div>
+      <div class="tile"><b>Business</b><span class="sub">Create content faster, market smarter.</span><div class="price">S$250</div><span class="sub">/year per person</span></div>
+    </div>
+    <div style="margin-top:18px"><span class="btn primary">Start a free trial</span> <span class="btn outline">Contact Sales</span></div>
+  </div>
+
+  <h2 class="sh">The auth card</h2>
+  <p class="lead">/login centres a white card over the template collage: Google / Facebook / email / another-way actions — secondary buttons whose only border is the inset rgba(53,65,90,0.2) hairline ring — then the purple Continue. Measured, never used.</p>
+  <div class="mock" style="padding:24px;display:flex;justify-content:center;background:#d9d3e8">
+    <div style="background:#fff;border-radius:16px;padding:24px;width:320px">
+      <b style="font:600 20px/1.3 var(--sg-sans)">Log in or sign up in seconds</b>
+      <p class="note" style="margin:6px 0 14px">Use your email or another service to continue with Canva (it's free)!</p>
+      <div style="display:grid;gap:8px"><span class="btn outline">Continue with Google</span><span class="btn outline">Continue with Facebook</span><span class="btn outline">Continue with email</span><span class="btn primary">Continue</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The core set carries the measured ink/white neutrals and the purple ramp (measured off the actions, var-referenced where a StyleX variable resolves the same value); the declared status hues come from the hashed StyleX layer. Light roles alias the palette; the "dark" set is the translucent-white state set the <code>.theme.dark</code> band paints — a painted surface, not a user toggle.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Tabs and the billing switch are 9999px pills; buttons, links, fields and cards take 12px; header controls 10px; the hero CTA 20px; comparison rows 14px; plan cards 16px and the mega-menu column 32px on its left corners. Borders are rare — secondary actions draw a 1px inset hairline as box-shadow instead.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">One family everywhere text is styled: <code>Canva Sans</code> — 400 display and body, 500 menu rows and prices, 600 every button and nav label. The ramp runs 80/88 hero and 64/70.4 page titles down to 14/22 controls and 12/20 plan meta. Samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the StyleX custom-property layer off the cross-origin bundles and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"sans":{"v":"\"Canva Sans\", \"IBM Plex Sans Arabic\", \"Noto Sans Variable\", \"Noto Sans\", -apple-system, \"system-ui\", \"Segoe UI\", Helvetica, Arial, sans-serif","t":"fontFamily","s":"computed fontFamily of plan-cta default (raw/components-computed.json); the @font-face blocks are served from static.canva.com (raw/css-vars.json fonts)","d":"The one family the styled surface paints: Canva Sans, falling back to system sans."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of hero-sub default (raw/components-computed.json)","d":"Body and display weight (400)."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of m-nav-item default (raw/components-computed.json)","d":"The 500 weight on menu rows, footer links and plan prices."},"semibold":{"v":600,"t":"fontWeight","s":"computed fontWeight of plan-cta default (raw/components-computed.json)","d":"The 600 weight on every button, nav label and section label."}},"size":{"display-hero":{"v":"80px","t":"dimension","s":"computed fontSize of hero-title default (raw/components-computed.json)","d":"The 80px hero display (home)."},"display":{"v":"64px","t":"dimension","s":"computed fontSize of pricing-h1 default (raw/components-computed.json)","d":"The 64px page-title display (pricing, templates)."},"display-mobile":{"v":"45px","t":"dimension","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The 45px display at 390 wide."},"h2":{"v":"56px","t":"dimension","s":"computed fontSize of section-h2 default (raw/components-computed.json)","d":"The 56px section heading."},"card-title":{"v":"28px","t":"dimension","s":"computed fontSize of tool-panel default (raw/components-computed.json)","d":"The 28px card/panel title (tool panel, feature card)."},"price":{"v":"28.8px","t":"dimension","s":"computed fontSize of plan-price default (raw/components-computed.json)","d":"The ~29px plan price figure."},"lede":{"v":"24px","t":"dimension","s":"computed fontSize of hero-sub default (raw/components-computed.json)","d":"The 24px hero lede / card titles."},"menu-item":{"v":"21px","t":"dimension","s":"computed fontSize of m-nav-item default (raw/components-computed.json)","d":"The 21px mobile-menu rows."},"section-label":{"v":"18px","t":"dimension","s":"computed fontSize of feature-accordion default (raw/components-computed.json)","d":"The 18px comparison-row / tab label."},"body":{"v":"16px","t":"dimension","s":"computed fontSize of hero-cta default (raw/components-computed.json)","d":"The 16px body/button size."},"control":{"v":"14px","t":"dimension","s":"computed fontSize of plan-cta default (raw/components-computed.json)","d":"The 14px control/nav text."},"meta":{"v":"12px","t":"dimension","s":"computed fontSize of plan-card default (raw/components-computed.json)","d":"The 12px plan-card meta text."}},"lineHeight":{"display-hero":{"v":"88px","t":"dimension","s":"computed lineHeight of hero-title default (raw/components-computed.json)","d":"Hero display leading (88px on 80px)."},"display":{"v":"70.4px","t":"dimension","s":"computed lineHeight of pricing-h1 default (raw/components-computed.json)","d":"Page-title leading (70.4px on 64px)."},"h2":{"v":"61.6px","t":"dimension","s":"computed lineHeight of section-h2 default (raw/components-computed.json)","d":"Heading leading (61.6px on 56px)."},"card-title":{"v":"35px","t":"dimension","s":"computed lineHeight of tool-panel default (raw/components-computed.json)","d":"Card-title leading (35px on 28px)."},"lede":{"v":"33.6px","t":"dimension","s":"computed lineHeight of hero-sub default (raw/components-computed.json)","d":"Lede leading (33.6px on 24px)."},"control":{"v":"22px","t":"dimension","s":"computed lineHeight of plan-cta default (raw/components-computed.json)","d":"Control leading (22px on 14px)."},"meta":{"v":"20px","t":"dimension","s":"computed lineHeight of plan-card default (raw/components-computed.json)","d":"Meta leading (20px on 12px)."}}},"color":{"brand":{"purple":{"v":"#8b3dff","t":"color","s":"css-var --8jnd6g (light); computed backgroundColor of plan-cta default (raw/components-computed.json); css-var --8jnd6g","d":"The Canva purple #8b3dff: the Sign up pill, every plan CTA, the billing switch and the mobile Log in fill."},"purple-hover":{"v":"#7630d7","t":"color","s":"css-var ---2QwGw (light); computed backgroundColor of plan-cta hover (raw/components-computed.json); css-var ---2QwGw","d":"The #7630d7 hover step every purple button takes."},"purple-pressed":{"v":"#612dae","t":"color","s":"css-var --KgLrHA (light); computed backgroundColor of plan-cta pressed (raw/components-computed.json); css-var --KgLrHA","d":"The #612dae pressed step."},"purple-deep":{"v":"#4a2e7e","t":"color","s":"css-var --GhUolA (light); css-var --GhUolA resolved light (raw/css-vars.json)","d":"The declared deep purple #4a2e7e in the StyleX layer."},"gradient":{"v":[{"color":"#00c4cc","position":0},{"color":"#7d2ae8","position":1}],"t":"gradient","s":"css-var --9v5PLg resolved light (raw/css-vars.json): the #00c4cc -> #7d2ae8 brand gradient the Canva logo mark carries","d":"The teal-to-purple Canva brand gradient."}},"status":{"error":{"v":"#db142c","t":"color","s":"css-var --43wRQw (light); css-var --43wRQw resolved light (raw/css-vars.json)","d":"The declared error red #db142c."},"warning-text":{"v":"#ad5a00","t":"color","s":"css-var --Am6Phw (light); css-var --Am6Phw resolved light (raw/css-vars.json)","d":"The declared warning text #ad5a00."},"info":{"v":"#3d8bff","t":"color","s":"css-var --4DkvNQ (light); css-var --4DkvNQ resolved light (raw/css-vars.json)","d":"The declared info blue #3d8bff."}},"neutral":{"ink":{"v":"#0f1015","t":"color","s":"computed color of oauth-button default (raw/components-computed.json)","d":"The #0f1015 ink: all body text, button labels on white fills, field borders' colour base."},"white":{"v":"#ffffff","t":"color","s":"computed ancestor-white of search-field default (raw/components-computed.json)","d":"The #ffffff surface: page field, plan cards, flyout panel, auth card, the switch thumb."},"muted":{"v":"rgba(16, 18, 25, 0.698)","t":"color","s":"computed muted-text of plan-card default (raw/components-computed.json)","d":"The rgba(16,18,25,0.698) secondary text (plan card labels, flyout description)."},"footer-fade":{"v":"#f6f7f8","t":"color","s":"computed footer-bg of footer default (raw/components-computed.json)","d":"The #f6f7f8 the footer fades to."},"wash-hover":{"v":"rgba(64, 79, 109, 0.06)","t":"color","s":"computed backgroundColor of oauth-button hover (raw/components-computed.json)","d":"The rgba(64,79,109,0.06) hover wash on secondary actions and tabs."},"wash-pressed":{"v":"rgba(57, 70, 96, 0.14)","t":"color","s":"computed backgroundColor of oauth-button pressed (raw/components-computed.json)","d":"The rgba(57,70,96,0.14) pressed wash on secondary actions and accordion rows."},"hairline":{"v":"rgba(53, 65, 90, 0.2)","t":"color","s":"computed hairline of oauth-button default (raw/components-computed.json)","d":"The rgba(53,65,90,0.2) 1px inset ring secondary buttons and fields carry instead of a border."},"scrim":{"v":"rgba(19, 22, 32, 0.6)","t":"color","s":"css-var --6Hmmng (light); css-var --6Hmmng resolved light (raw/css-vars.json)","d":"The rgba(19,22,32,0.6) overlay the StyleX layer declares for scrims."}}},"radius":{"button":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of plan-cta default (raw/components-computed.json)","d":"The 12px radius on buttons, links, fields and cards."},"header-control":{"v":"10px","t":"dimension","s":"computed borderTopLeftRadius of signup-cta default (raw/components-computed.json)","d":"The 10px radius on header actions."},"cta":{"v":"20px","t":"dimension","s":"computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)","d":"The 20px radius on the hero CTA."},"row":{"v":"14px","t":"dimension","s":"computed borderTopLeftRadius of feature-accordion default (raw/components-computed.json)","d":"The 14px radius on comparison rows."},"pill":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of tool-tab default (raw/components-computed.json)","d":"The 9999px pill on tabs and the billing switch."},"flyout-panel":{"v":"32px","t":"dimension","s":"painted layer radius inside nav-dropdown (raw/components-computed.json): '32px 0px 0px 32px'","d":"The 32px radius the mega-menu's white column paints on its left corners."}},"measured":{"focus-ring-dark":{"v":"#99c8ff","t":"color","s":"computed outlineColor of signup-cta focus-visible (raw/components-computed.json)","d":"The #99c8ff light-blue keyboard ring on the dark band (1-2px auto)."},"focus-ring-light":{"v":"#005fcc","t":"color","s":"computed outlineColor of plan-cta focus-visible (raw/components-computed.json)","d":"The #005fcc blue keyboard ring on light surfaces (1px auto)."},"focus-ring-mobile":{"v":"#e59700","t":"color","s":"computed outlineColor of m-nav-item focus-visible (raw/components-computed.json)","d":"The #e59700 amber keyboard ring inside the mobile menu (1px auto)."},"hairline":{"v":[{"color":"rgba(53, 65, 90, 0.2)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","inset":true}],"t":"shadow","s":"computed boxShadow of oauth-button default (raw/components-computed.json)","d":"The inset 1px rgba(53,65,90,0.2) ring secondary buttons and fields draw instead of a border."},"switch-thumb-shadow":{"v":[{"color":"rgba(64, 79, 109, 0.06)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"0.5px","inset":false},{"color":"rgba(21, 30, 130, 0.12)","offsetX":"0px","offsetY":"1px","blur":"2px","spread":"0px","inset":false},{"color":"rgba(21, 30, 130, 0.06)","offsetX":"0px","offsetY":"2px","blur":"4px","spread":"0px","inset":false}],"t":"shadow","s":"painted layer shadow inside billing-switch default (raw/components-computed.json)","d":"The layered elevation the switch thumb paints."},"control-transition":{"v":"100ms","t":"duration","s":"computed transition of hero-cta default (raw/components-computed.json)","d":"The 0.1s control transition (background-color, box-shadow, color) with a 0.07s transform. (background-color, box-shadow, color, transform)"},"pressed-scale":{"v":0.99,"t":"number","s":"pressed rect / default rect of hero-cta (raw/components-computed.json)","d":"The ~0.99 scale a pressed button takes."}}},"light":{"text":{"primary":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the core palette","d":"Body and display ink on light."},"muted":{"v":"{color.neutral.muted}","t":"color","s":"role alias over the core palette","d":"Secondary text on light."},"on":{"action":{"v":"#ffffff","t":"color","s":"computed color of plan-cta / oauth-button labels (raw/components-computed.json)","d":"White labels on the purple fill."}}},"surface":{"page":{"v":"{color.neutral.white}","t":"color","s":"role alias over the core palette","d":"The white page field."},"card":{"v":"{color.neutral.white}","t":"color","s":"role alias over the core palette","d":"Plan cards, the flyout panel, the auth card."},"footer":{"v":"{color.neutral.footer-fade}","t":"color","s":"role alias over the core palette","d":"The footer's #f6f7f8 fade."}},"action":{"primary":{"default":{"v":"{color.brand.purple}","t":"color","s":"role alias over the core palette","d":"The #8b3dff action fill."},"hover":{"v":"{color.brand.purple-hover}","t":"color","s":"role alias over the core palette","d":"The hover step."},"pressed":{"v":"{color.brand.purple-pressed}","t":"color","s":"role alias over the core palette","d":"The pressed step."}}},"state":{"hover":{"v":"{color.neutral.wash-hover}","t":"color","s":"role alias over the core palette","d":"The 6% ink wash on hover."},"pressed":{"v":"{color.neutral.wash-pressed}","t":"color","s":"role alias over the core palette","d":"The 14% ink wash on pressed."}},"border":{"hairline":{"v":"{color.neutral.hairline}","t":"color","s":"role alias over the core palette","d":"The inset hairline ring on secondary actions."}},"scrim":{"v":"{color.neutral.scrim}","t":"color","s":"role alias over the core palette","d":"The declared 60% ink scrim."},"component":{"button":{"height":{"v":"40px","t":"dimension","s":"computed height of plan-cta default (raw/components-computed.json)","d":"The 40px standard button height (plan CTAs, auth buttons, mobile actions)."}},"button-cta":{"height":{"v":"56px","t":"dimension","s":"computed height of hero-cta default (raw/components-computed.json)","d":"The 56px hero CTA height."}},"field":{"height":{"v":"38px","t":"dimension","s":"computed height of username-input default (raw/components-computed.json)","d":"The 38px auth-field height."}},"field-search":{"height":{"v":"46px","t":"dimension","s":"computed height of search-field default (raw/components-computed.json)","d":"The 46px template-search field."}},"switch":{"height":{"v":"24px","t":"dimension","s":"computed height of billing-switch default (raw/components-computed.json)","d":"The 24px billing-switch pill (40 wide)."}},"navcontrol":{"height":{"v":"32px","t":"dimension","s":"computed height of nav-trigger default (raw/components-computed.json)","d":"The 32px header controls."}},"menurow":{"height":{"v":"42px","t":"dimension","s":"computed height of m-nav-item default (raw/components-computed.json)","d":"The 42px mobile-menu row."}},"header":{"height":{"v":"80px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The 80px desktop header."},"height-mobile":{"v":"80px","t":"dimension","s":"computed height of m-header default (raw/components-computed.json)","d":"The 80px mobile header."}},"flyout":{"height":{"v":"478px","t":"dimension","s":"computed height of nav-dropdown default (raw/components-computed.json)","d":"The 478px mega-menu panel."}},"plancard":{"height":{"v":"353px","t":"dimension","s":"computed height of plan-card default (raw/components-computed.json)","d":"The 353px plan card (measured inner column; the white surface is ~308 wide, 16px radius)."}},"accordionrow":{"height":{"v":"64px","t":"dimension","s":"computed height of feature-accordion default (raw/components-computed.json)","d":"The 64px comparison-row height."}},"categorycard":{"height":{"v":"80px","t":"dimension","s":"computed height of category-card default (raw/components-computed.json)","d":"The 80px template-category card."}},"authcard":{"height":{"v":"348px","t":"dimension","s":"computed height of auth-card default (raw/components-computed.json)","d":"The ~350px auth card."}}}},"dark":{"text":{"primary":{"v":"rgba(255, 255, 255, 0.898)","t":"color","s":"computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)","d":"The rgba(255,255,255,0.898) on-dark text — white at 90%, never pure."},"strong":{"v":"#ffffff","t":"color","s":"computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)","d":"Pure white reserved for the nav triggers' labels."},"on":{"action":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the core palette","d":"Ink labels on the white fills."}}},"surface":{"page":{"v":"#16171d","t":"color","s":"Reconstruction: entered by hand at capture time as the .theme.dark surface; raw/css-vars.json resolves no variable to it","d":"The darkest surface the .dark layer declares; the hero band itself is a gradient media layer, not a flat fill — see patterns.md."}},"action":{"ghost":{"default":{"v":"rgba(255, 255, 255, 0)","t":"color","s":"computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)","d":"Ghost buttons on dark start fully transparent."},"hover":{"v":"rgba(255, 255, 255, 0.07)","t":"color","s":"computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)","d":"The 7% white fill a dark ghost button takes on hover (signup-cta)."},"pressed":{"v":"rgba(255, 255, 255, 0.15)","t":"color","s":"computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)","d":"The 15% white fill on pressed (nav triggers, ghost buttons)."},"tint":{"v":"rgba(163, 112, 252, 0.2)","t":"color","s":"computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)","d":"The 20% purple-tint hover the nav triggers take."}},"secondary":{"default":{"v":"rgba(255, 255, 255, 0.898)","t":"color","s":"computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)","d":"The 90% white fill the secondary buttons on dark carry (Log in, hero CTA, Explore)."},"hover":{"v":"#ffffff","t":"color","s":"computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)","d":"Hover takes the white fill to 100%."},"pressed":{"v":"rgba(255, 255, 255, 0.8)","t":"color","s":"computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)","d":"Pressed drops the fill to 80%."}}},"border":{"ghost":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"computed colors of signup-cta / login-link / nav-trigger / hero-cta states over the dark band (raw/components-computed.json)","d":"The 20% white inset ring ghost buttons carry (signup-cta shadow)."}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the .theme.dark band)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Canva</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+{
+  "capturedAt": "2026-11-19",
+  "harness": "Grok Build",
+  "model": "grok-4.7",
+  "browser": "T3 preview tab tab_2g_b476fa69-d865-4d9c-9974-6281ced1c8e8",
+  "screenshotNote": "preview_snapshot failed twice with: The browser is not producing screenshot frames. For a desktop tab, show or restore the T3 Code window and try again. No PNG was invented. Headless Playwright was not launched.",
+  "viewport": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {"width": 1169, "height": 731, "scale": 1},
+    "note": "Fill viewport of the preview pane. Not a 1440 or 390 capture."
+  },
+  "pages": {
+    "sg-home": {
+      "requested": "https://www.paypal.com/",
+      "landed": "https://www.paypal.com/sg/home",
+      "title": "PayPal Open | PayPal SG",
+      "challenge": false,
+      "themeClass": "paypal60 paypal60-palette",
+      "colorScheme": "normal"
+    },
+    "us-home": {
+      "requested": "https://www.paypal.com/us/home",
+      "landed": "https://www.paypal.com/us/home",
+      "title": "Pay, Send and Save Money with PayPal | PayPal US",
+      "challenge": false
+    },
+    "signin": {
+      "url": "https://www.paypal.com/signin",
+      "title": "Log in to your PayPal account",
+      "challenge": false,
+      "stylesheet": "https://www.paypalobjects.com/web/res/b72/3131b63734daa69c612ef62879b13/css/contextualLoginElementalUIv5_1.css",
+      "submitted": false
+    },
+    "account-selection": {
+      "url": "https://www.paypal.com/us/webapps/mpp/account-selection",
+      "title": "Sign up for PayPal | Personal & Business Accounts | PayPal US",
+      "challenge": false,
+      "getStartedHref": "https://www.paypal.com/welcome/signup",
+      "note": "Signup wall. Get Started was not followed. No card, bank, phone, or KYC field was entered."
+    }
+  },
+  "marketing": {
+    "rootBackground": "rgb(241, 239, 234)",
+    "page": "rgb(255, 255, 255)",
+    "ink": "rgb(0, 0, 0)",
+    "navyPlate": "rgb(0, 41, 145)",
+    "navyText": "rgb(255, 255, 255)",
+    "cyanPlate": "rgb(96, 205, 255)",
+    "tertiaryPlate": "rgb(245, 247, 250)",
+    "cookieBanner": "rgb(240, 242, 249)",
+    "linkOnLight": "rgb(0, 102, 245)",
+    "linkOnNavy": "rgb(96, 205, 255)",
+    "phoneLink": "rgb(0, 102, 245)",
+    "iconButton": "rgb(104, 106, 109)",
+    "primaryButton": {
+      "background": "rgb(0, 0, 0)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "700",
+      "lineHeight": "24px",
+      "letterSpacing": "-0.24px",
+      "padding": "12px 20px",
+      "height": 48,
+      "borderRadius": "1000px",
+      "fontFamily": "PayPal Pro Text VF, Helvetica, Arial, sans-serif",
+      "focusOutline": "rgb(0, 102, 245) solid 2px",
+      "focusOutlineOffset": "2px",
+      "transition": "padding, margin, width, height 0.3s cubic-bezier(0.4, 1.2, 0.2, 1)"
+    },
+    "secondaryButton": {
+      "background": "rgba(5, 55, 130, 0.08)",
+      "color": "rgb(0, 0, 0)",
+      "padding": "12px 20px",
+      "height": 48,
+      "borderRadius": "1000px",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 1px inset",
+      "fontWeight": "700",
+      "letterSpacing": "-0.24px"
+    },
+    "cookieAccept": {
+      "background": "rgba(255, 255, 255, 0.7)",
+      "color": "rgb(0, 0, 0)",
+      "border": "2px solid rgb(207, 211, 216)",
+      "borderRadius": "1000px",
+      "padding": "10px 30px",
+      "height": 48,
+      "fontFamily": "PayPalOpen-Medium",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "letterSpacing": "-0.28px"
+    },
+    "type": {
+      "bodyFamily": "PayPal Pro Text VF, Helvetica, Arial, sans-serif",
+      "bodySize": "16px",
+      "bodyLineHeight": "18.4px",
+      "bodyWeight": "400",
+      "headlineFamily": "PayPal Pro, Century Gothic, Helvetica, Arial, sans-serif",
+      "sgH1": {"size": "60.3281px", "lineHeight": "66.3609px", "letterSpacing": "-1.80984px", "weight": "900", "class": "heading-text-size-headline-2"},
+      "usH1": {"size": "51.0771px", "lineHeight": "56.1848px", "letterSpacing": "-1.53231px", "weight": "900", "class": "heading-text-size-headline-3"},
+      "displaySpan": {"size": "118.757px", "weight": "900", "color": "rgb(255, 255, 255)"},
+      "subhead": {"size": "22.6993px", "lineHeight": "27.2391px", "letterSpacing": "-0.453986px", "weight": "900"},
+      "paragraph": {"size": "16.6473px", "lineHeight": "24.971px", "letterSpacing": "-0.24971px", "weight": "400"},
+      "signupHeadline4": {"size": "43.3923px", "lineHeight": "47.7315px", "letterSpacing": "-1.30177px", "weight": "900"}
+    },
+    "plates": {
+      "primary": "rgb(255, 255, 255)",
+      "secondary": "rgb(0, 0, 0)",
+      "accent-1": "rgb(96, 205, 255)",
+      "accent-3": "rgb(0, 41, 145)",
+      "tertiary-1": "rgb(245, 247, 250)"
+    },
+    "accountCard": {
+      "padding": "32px",
+      "borderRadius": "24px",
+      "background": "transparent over tertiary-1 plate"
+    },
+    "sectionPaddingTopSamples": ["39.25px", "58.875px", "78.5px", "116.9px"],
+    "stylesheet": "https://www.paypalobjects.com/marketing/pp-com-components-pds60/themes/paypal60-DBt27BDW.css"
+  },
+  "login": {
+    "htmlBackground": "rgb(255, 255, 255)",
+    "bodyColor": "rgb(0, 20, 53)",
+    "bodyFont": "pp-open-regular, Helvetica Neue, Arial, sans-serif",
+    "card": {
+      "class": "contentContainer activeContent contentContainerBordered",
+      "width": 460,
+      "padding": "30px 46px 50px",
+      "border": "1px solid rgb(234, 236, 237)",
+      "borderRadius": "12px",
+      "background": "transparent",
+      "x": 355,
+      "y": 120
+    },
+    "heading": {
+      "text": "Log in to your PayPal account",
+      "font": "pp-open-regular",
+      "size": "24px",
+      "lineHeight": "32px",
+      "weight": "400",
+      "color": "rgb(0, 20, 53)"
+    },
+    "email": {
+      "name": "login_email",
+      "type": "email",
+      "placeholder": "Email or mobile number",
+      "background": "rgb(255, 255, 255)",
+      "borderRest": "0px",
+      "borderRadius": "6px",
+      "padding": "20px 12px 8px",
+      "height": 64,
+      "width": 364,
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "focusOutline": "rgb(9, 127, 245) solid 2px",
+      "focusShadow": "rgb(255, 255, 255) 0px 0px 0px 2px",
+      "focusBorder": "1px rgb(207, 211, 216)",
+      "labelColor": "rgb(108, 115, 120)"
+    },
+    "next": {
+      "background": "rgb(5, 81, 181)",
+      "border": "2px solid rgb(5, 81, 181)",
+      "color": "rgb(255, 255, 255)",
+      "font": "pp-open-medium",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "lineHeight": "21px",
+      "padding": "12px 32px",
+      "height": 48,
+      "borderRadius": "100px",
+      "width": 366
+    },
+    "passkeyAndSignup": {
+      "background": "transparent",
+      "border": "2px solid rgb(0, 0, 0)",
+      "color": "rgb(0, 0, 0)",
+      "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 2px inset",
+      "borderRadius": "100px",
+      "height": 48,
+      "padding": "12px 32px",
+      "fontWeight": "500"
+    },
+    "link": {
+      "color": "rgb(0, 112, 224)",
+      "font": "pp-open-medium",
+      "fontSize": "16px"
+    },
+    "footerMeta": {
+      "color": "rgb(84, 93, 104)",
+      "fontSize": "14px",
+      "selectedWeight": "700"
+    }
+  },
+  "declared": {
+    "source": "paypal60-DBt27BDW.css and helpers-D6s78pYR.css, public paypalobjects.com",
+    "fontFamilyBase": "PayPal Pro Text VF, Helvetica, Arial, sans-serif",
+    "fontFamilyHeadline": "PayPal Pro, Helvetica Neue, Arial, sans-serif",
+    "fontWeightBase": 400,
+    "fontWeightStrong": 700,
+    "fontWeightHeadline": 900,
+    "letterSpacingBase": "-0.015em",
+    "buttonLgHeight": "3rem",
+    "buttonLgPaddingY": "0.75rem",
+    "buttonLgPaddingX": "1.25rem",
+    "borderRadius": "1.5rem",
+    "cardContentBorderRadius": "1.5rem",
+    "iconButtonFallback": "#001c64",
+    "paypal60IconButtonFallback": "#000000",
+    "mediaControlLegacy": "#003087",
+    "mediaControlHover": "#0070e0",
+    "mediaControlActive": "#001c64"
+  }
+}

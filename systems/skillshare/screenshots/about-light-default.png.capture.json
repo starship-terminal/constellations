@@ -1,0 +1,25 @@
+{
+  "capturedAt": "2026-11-18T18:28:27.002Z",
+  "requestedViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "devicePixelRatio": 2,
+  "innerWidth": 1440,
+  "innerHeight": 900,
+  "visualViewport": {
+    "width": 1440,
+    "height": 900,
+    "scale": 1
+  },
+  "document": {
+    "scrollWidth": 1440,
+    "scrollHeight": 2053
+  },
+  "png": {
+    "width": 2880,
+    "height": 1800
+  },
+  "fullPage": false,
+  "note": "Headless Chromium. Preview browser returned: The browser is not producing screenshot frames. Cookie/consent overlay hidden, not answered."
+}

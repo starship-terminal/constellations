@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polar style guide</title>
+<style>
+:root {
+  --color-polar-50: #d9d9d9;
+  --color-polar-100: #c9c9c9;
+  --color-polar-200: #adadad;
+  --color-polar-300: #9e9e9e;
+  --color-polar-400: #858585;
+  --color-polar-500: #757575;
+  --color-polar-600: #292929;
+  --color-polar-700: #212121;
+  --color-polar-800: #181818;
+  --color-polar-900: #111111;
+  --color-polar-950: #090909;
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-200: #bedbff;
+  --color-blue-300: #8ec5ff;
+  --color-blue-400: #50a2ff;
+  --color-blue-500: #2b7fff;
+  --color-blue-600: #155dfc;
+  --color-blue-700: #1447e6;
+  --color-blue-900: #1c398e;
+  --color-blue-950: #162556;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-red-400: #ff6467;
+  --color-red-500: #fb2c36;
+  --color-red-600: #e7000b;
+  --color-green-500: #00bc7d;
+  --color-amber-500: #fe9a00;
+  --color-yellow-500: #f0b100;
+  --font-family-sans: "PP Neue Montreal", Inter, sans-serif;
+  --font-family-display: "PP Neue Montreal", InterDisplay, sans-serif;
+  --font-family-mono: GeistMono, monospace;
+  --font-family-docs: Inter, -apple-system, "system-ui", "Segoe UI", system-ui, sans-serif;
+  --font-family-docsMono: "Paper Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-weight-regular: 450;
+  --font-weight-medium: 500;
+  --font-weight-button: 550;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 30px;
+  --font-size-4xl: 36px;
+  --font-size-5xl: 60px;
+  --font-size-6xl: 72px;
+  --font-leading-body: 24px;
+  --font-leading-button: 20px;
+  --font-leading-h1: 45px;
+  --font-leading-h2: 41-25px;
+  --font-leading-display: 72px;
+  --font-leading-pricing: 75px;
+  --font-tracking-body: 0-24px;
+  --font-tracking-button: 0-14px;
+  --radius-xs: 2px;
+  --radius-sm: 5-6px;
+  --radius-md: 7-6px;
+  --radius-lg: 9-6px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-4xl: 32px;
+  --radius-pill: 9999px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --motion-duration-fast: 150ms;
+  --motion-duration-accordion: 200ms;
+  --motion-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-out: cubic-bezier(0, 0, 0.2, 1);
+  --surface-page: #ffffff;
+  --surface-raised: #ffffff;
+  --surface-sunken: #f3f4f6;
+  --surface-header: #ffffff;
+  --text-primary: #000000;
+  --text-secondary: #3e3e3e;
+  --text-onAccent: #ffffff;
+  --accent: #166534;
+  --border-default: #eeeeee;
+  --status-danger: #fb2c36;
+  --status-success: #166534;
+  color-scheme: light;
+}
+[data-mode="dark"] {
+  --surface-page: #181818;
+  --surface-raised: #181818;
+  --surface-sunken: #111111;
+  --surface-header: #090909;
+  --text-primary: #ffffff;
+  --text-secondary: #757575;
+  --text-onAccent: #d9d9d9;
+  --accent: #155dfc;
+  --border-default: #212121;
+  --status-danger: #fb2c36;
+  --status-success: #00bc7d;
+  --component-button-primary-bg: #ffffff;
+  --component-button-primary-text: #000000;
+  --component-button-primary-radius: 9999px;
+  --component-button-primary-padding: 12px;
+  --component-button-primary-height: 40px;
+  --component-button-ghost-bg: transparent;
+  --component-button-ghost-text: #ffffff;
+  --component-button-ghost-radius: 9999px;
+  --component-button-ghost-height: 40px;
+  --component-button-secondary-bg: #212121;
+  --component-button-secondary-text: #ffffff;
+  --component-button-secondary-radius: 9999px;
+  --component-button-secondary-height: 40px;
+  --component-field-email-bg: #181818;
+  --component-field-email-text: #ffffff;
+  --component-field-email-radius: 12px;
+  --component-field-email-height: 40px;
+  --component-field-email-padding: 8px;
+  --component-nav-height: 72px;
+  --component-nav-padding: 16px;
+  --component-code-bg: #181818;
+  --component-code-text: #a6accd;
+  --component-code-radius: 16px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--surface-page); color: var(--text-primary); font: 450 16px/24px Inter, sans-serif; }
+header { display: flex; align-items: center; gap: 16px; padding: 16px 48px; background: var(--surface-header); }
+h1 { font: 400 30px/41.25px Inter, sans-serif; margin: 0; }
+main { padding: 32px 48px 64px; max-width: 1100px; }
+h2 { font: 400 30px/41.25px Inter, sans-serif; margin: 40px 0 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 140px; }
+.sw i { display: block; height: 56px; border-radius: 12px; border: 1px solid var(--border-default); }
+.sw span { display: block; font-size: 12px; line-height: 16px; margin-top: 6px; color: var(--text-secondary); }
+button.primary { background: var(--component-button-primary-bg); color: var(--component-button-primary-text); border: 0; border-radius: 9999px; height: 40px; padding: 12px 16px; font: 550 14px/20px Inter, sans-serif; letter-spacing: 0.14px; }
+button.ghost { background: transparent; color: var(--component-button-ghost-text); border: 0; border-radius: 9999px; height: 40px; padding: 12px 20px; font: 550 14px/20px Inter, sans-serif; }
+button.secondary { background: var(--component-button-secondary-bg); color: var(--component-button-secondary-text); border: 1px solid var(--border-default); border-radius: 9999px; height: 40px; padding: 12px 20px; font: 550 14px/20px Inter, sans-serif; }
+input { background: var(--component-field-email-bg); color: var(--component-field-email-text); border: 1px solid var(--border-default); border-radius: 12px; height: 40px; padding: 8px 12px; font: 450 14px/20px Inter, sans-serif; width: 352px; }
+pre { background: var(--component-code-bg); color: var(--component-code-text); border: 1px solid var(--border-default); border-radius: 16px; padding: 12px 16px; font: 450 14px/24px ui-monospace, monospace; }
+.toggle { margin-left: auto; background: transparent; color: inherit; border: 1px solid var(--border-default); border-radius: 9999px; padding: 8px 14px; }
+p.note { color: var(--text-secondary); max-width: 70ch; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Polar</h1>
+  <button class="ghost" type="button">Sign in</button>
+  <button class="primary" type="button">Get Started</button>
+  <button class="toggle" type="button" id="theme">Theme</button>
+</header>
+<main>
+  <p class="note">Rendered from tokens.json. Marketing chrome is dark. The light set is the docs theme measured after clicking Switch to light theme on /docs/introduction.</p>
+  <h2>Colour</h2>
+  <div class="row" id="swatches"></div>
+  <h2>Buttons and field</h2>
+  <div class="row">
+    <button class="primary" type="button">Get Started</button>
+    <button class="ghost" type="button">Sign in</button>
+    <button class="secondary" type="button">Sign in with GitHub</button>
+  </div>
+  <p></p>
+  <input placeholder="Email" aria-label="Email">
+  <h2>Code</h2>
+  <pre>/plugin install polar --marketplace polarsource/agent-toolkit</pre>
+</main>
+<script>
+const names = ["surface-page","surface-raised","surface-sunken","surface-header","text-primary","text-secondary","accent","border-default","status-danger","status-success"];
+const root = document.getElementById("swatches");
+for (const n of names) {
+  const d = document.createElement("div");
+  d.className = "sw";
+  d.innerHTML = "<i></i><span></span>";
+  d.querySelector("i").style.background = "var(--" + n + ")";
+  d.querySelector("span").textContent = n;
+  root.appendChild(d);
+}
+document.getElementById("theme").addEventListener("click", () => {
+  const html = document.documentElement;
+  html.dataset.mode = html.dataset.mode === "dark" ? "light" : "dark";
+});
+</script>
+</body>
+</html>

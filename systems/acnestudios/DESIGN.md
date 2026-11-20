@@ -149,6 +149,7 @@ Measured states, crops and the full inventory: [components.md](components.md), [
 
 ### What to distrust (from README.md)
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - The capture is of the Singapore storefront (`/sg/en/`): prices are SGD, the nav and promo copy are the region's. Other regions may serve different campaigns and layouts.
 - Mobile `m-*` readings cover layout and the menu drawer only; a phone has no hover/focus to measure, and the 390 capture took one drawer open.
 - Several components were re-measured after selector fixes (logo, hero wordmark, menu drawer); components whose `run` predates that fix carry their original capture time, and any component the selectors still miss is marked `missing` in `raw/components-computed.json` rather than re-dated.

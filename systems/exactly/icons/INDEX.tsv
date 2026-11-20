@@ -1,0 +1,16 @@
+file	name	hash	rendered sizes	viewBox	source	seen on	next to
+logo-on-image.svg	logo-on-image	8f38c80e	24x24	0 0 24 24	inline	home	Logo
+wordmark-on-image.svg	wordmark-on-image	4aad616e	86x24	0 0 85.383 24	inline	home	LogoText
+laurel-left.svg	laurel-left	66da9c11	28x56	0 0 27.98 56	inline	home, mobile-home, pricing	Section Header/Buttons
+laurel-right.svg	laurel-right	c14f8a2a	28x56	0 0 27.98 56	inline	home, mobile-home, pricing	Section Header/Buttons
+plan-glyph-1.svg	plan-glyph-1	46c8a36b	60x60	0 0 60 60	inline	home, mobile-home, pricing	Icon
+plan-glyph-2.svg	plan-glyph-2	e95ae15c	64x64	0 0 64 64	inline	home, mobile-home, pricing	Icon
+plan-glyph-3.svg	plan-glyph-3	42d343e4	63x63	0 0 63 63	inline	home, mobile-home, pricing	Icon
+dot.svg	dot	109cb641	6x6	0 0 6 6	background data-URI	home	Dot
+logo-on-light.svg	logo-on-light	bab7849c	24x24	0 0 24 24	inline	book-a-demo, case-studies, help-center, help-center-frequently-asked-questions, industries, pricing, showcase	Logo
+wordmark-on-light.svg	wordmark-on-light	10676e44	86x24	0 0 85.383 24	inline	book-a-demo, case-studies, help-center, help-center-frequently-asked-questions, industries, mobile-home, pricing, showcase	LogoText; LogoWrap
+plus.svg	plus	1515d398	23x23	0 0 22.403 22.4	inline	pricing, showcase	Plus
+plus-c1cd28e8.svg	plus-c1cd28e8	c1cd28e8	23x23	0 0 22.403 22.4	inline	pricing	Plus
+desktop.svg	desktop	7d9bb3d9	91x16	0 0 90.667 16	background data-URI	pricing	Desktop
+plus-d7dee377.svg	plus-d7dee377	d7dee377	20x20	0 0 19.914 19.911	inline	industries	Plus
+search.svg	search	465dfd47	15x15	0 0 15.068 15.067	background data-URI	help-center, help-center-frequently-asked-questions	Search

@@ -13,6 +13,7 @@ import type {
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { readStyleExport, type ExportVariant } from "./style-exports";
+import { parseJson, pyJsonStringify } from "./pyjson";
 import { hasUnresolved, tokenHex, tokenLeaves, tokenResolver } from "./tokens";
 import {
   contained,
@@ -20,6 +21,7 @@ import {
   mediaMime,
   readJson,
   readText,
+  hasFile,
   referoMedia,
   remoteUrl,
   repoRoot,
@@ -131,11 +133,9 @@ async function normalize(
     videoFallback: measured
       ? null
       : cdnUrl(row.videoRemote) || remoteUrl(meta?.video_url),
-    iconFallback: measured
-      ? null
-      : remoteUrl(row.source_url || meta?.source_url)
-        ? `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&size=128&url=${encodeURIComponent(row.source_url || meta?.source_url)}`
-        : null,
+    // Only the favicon Refero recorded. A favicon service fallback would tell
+    // that service which private library entries are being browsed.
+    iconFallback: measured ? null : remoteUrl(meta?.favicon_url),
     icon: measured
       ? await imageUrl(row.preview?.icon || row.icon)
       : await referoMedia(`/refero-media/favicons/${row.slug}.png`, null),
@@ -178,8 +178,9 @@ const STAMP_FILES = [
   "web/data/thumbs",
 ];
 const MEDIA_FOLDERS = ["shots", "posters", "favicons", "videos"];
-const MAX_CACHE_AGE = 5 * 60_000;
-async function sourceStamp(): Promise<string> {
+export const MAX_CACHE_AGE = 5 * 60_000;
+/** Changes when the catalogs, generated data or media mirror change. */
+export async function sourceStamp(): Promise<string> {
   const root = repoRoot(),
     media = mediaRoot();
   const stats = await Promise.all(
@@ -318,7 +319,7 @@ function displayValue(value: unknown): string {
   if (hex) return hex;
   // A list is a font stack or an easing, shown the way catalog.py looks it up.
   if (Array.isArray(value)) return value.map(String).join(", ");
-  return JSON.stringify(value);
+  return pyJsonStringify(value);
 }
 // Aliases resolve inside the token's own set, then `core`, then the root, and
 // legacy `value` leaves read like `$value` ones, matching tools/catalog.py.
@@ -537,18 +538,27 @@ export async function readExport(
     if (source !== "refero") return null;
     return readStyleExport(slug, format as ExportFormat, variant);
   }
+  const file = exportFile(source, slug, format as ExportFormat);
+  return file ? readText(file) : null;
+}
+function exportFile(
+  source: string,
+  slug: string,
+  format: ExportFormat,
+): string | null {
   if (source === "refero" || format === "DESIGN.md" || format === "tokens.json")
-    return readText(`${source}/${slug}/${format}`);
+    return `${source}/${slug}/${format}`;
   // Existing catalog exports resolve aliases with the library's own builder.
-  if (format === "variables.css")
-    return readText(`web/data/export/${slug}.css`);
+  if (format === "variables.css") return `web/data/export/${slug}.css`;
   return null;
 }
+// Existence only: reading every export to test for it read whole files.
 async function exportLinks(item: LibraryItem): Promise<Record<string, string>> {
   const links: Record<string, string> = {};
   await Promise.all(
     formats.map(async (format) => {
-      if ((await readExport(item.id, format)) !== null)
+      const file = exportFile(item.source, item.slug, format);
+      if (file && (await hasFile(file)))
         links[format] =
           `/api/library/${item.source}/${item.slug}/export?format=${encodeURIComponent(format)}`;
     }),
@@ -560,10 +570,9 @@ async function referoStyleMedia(
   slug: string,
   meta: Raw | null,
   entity: Raw | null,
-  sourceUrl: string | null,
 ): Promise<ReferenceMedia[]> {
   const media: ReferenceMedia[] = [];
-  const candidates: Record<string, Raw> = entity?.media || {
+  const listed: Record<string, Raw> = entity?.media || {
     shot: {
       local: `/refero-media/shots/${slug}.jpg`,
       remote: meta?.screenshot_url,
@@ -586,13 +595,15 @@ async function referoStyleMedia(
     },
     favicon: {
       local: `/refero-media/favicons/${slug}.png`,
-      remote:
-        meta?.favicon_url ||
-        (sourceUrl
-          ? `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&size=128&url=${encodeURIComponent(sourceUrl)}`
-          : null),
+      remote: meta?.favicon_url,
     },
   };
+  // tools/catalog.py's generated media point a favicon's remote at a favicon
+  // service, which would learn the style being browsed. Keep only the one
+  // Refero recorded.
+  const candidates: Record<string, Raw> = listed.favicon
+    ? { ...listed, favicon: { ...listed.favicon, remote: meta?.favicon_url } }
+    : listed;
   const labels: Record<string, string> = {
     shot: "Full page",
     poster: "Page recording poster",
@@ -662,22 +673,25 @@ export async function getReferenceMedia(
   ]);
   return {
     reference,
-    media: await referoStyleMedia(
-      slug,
-      meta,
-      entity,
-      remoteUrl(meta?.source_url || entity?.source_url),
-    ),
+    media: await referoStyleMedia(slug, meta, entity),
   };
 }
 export async function getReference(id: string): Promise<LibraryDetail | null> {
   const parsed = parseReferenceId(id);
   if (!parsed) return null;
-  const items = await withReferenceCategories(await allItems()),
+  // Only same-source references can be related, so only they need categories.
+  const items = await withReferenceCategories(
+      (await allItems()).filter((i) => i.source === parsed.source),
+    ),
     item = items.find((i) => i.id === id);
   if (!item) return null;
   const { source, slug } = parsed;
-  const tokens = (await readJson<Raw>(`${source}/${slug}/tokens.json`)) || {};
+  // Parsed so a float written `1.0` prints as Python prints it.
+  const tokenText = await readText(`${source}/${slug}/tokens.json`);
+  let tokens: Raw = {};
+  try {
+    tokens = (tokenText && (parseJson(tokenText) as Raw)) || {};
+  } catch {}
   const values = resolvedTokens(tokens);
   let media: ReferenceMedia[] = [],
     descriptionLong = item.description,
@@ -702,7 +716,11 @@ export async function getReference(id: string): Promise<LibraryDetail | null> {
     media = await packageMedia(slug, row);
     measured = await measuredDetail(slug, row, media);
     // Preserve individual evidence labels. Package-level "measured" describes the capture source, not every value.
-    const readme = await readText(`systems/${slug}/README.md`);
+    // measuredDetail has usually read the README already.
+    const readme =
+      measured.readmePath === "README.md" && measured.readme
+        ? measured.readme
+        : await readText(`systems/${slug}/README.md`);
     if (readme)
       guidelines = readme
         .split("\n")
@@ -718,7 +736,7 @@ export async function getReference(id: string): Promise<LibraryDetail | null> {
     const design = ds || entity?.ds || {};
     sourceUrl = remoteUrl(meta?.source_url || entity?.source_url);
     descriptionLong = design.description || item.description;
-    media = await referoStyleMedia(slug, meta, entity, sourceUrl);
+    media = await referoStyleMedia(slug, meta, entity);
     const row = refero.get(slug) || {};
     const similar = entity?.similar || design.similar || [];
     interpreted = {

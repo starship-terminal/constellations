@@ -1,7 +1,7 @@
 """The /api/ route handlers behind the gallery chat. api.py delegates here for
-every request under /api/; the published static site never sees any of it (it
-drops the gallery and runs no Python), and local browsing gets the same routes
-from the Next.js app.
+every request under /api/ on the home-server deployment, where nginx serves
+the docs site statically from site/ and proxies only /api/ to Python; local
+browsing gets the same routes from the Next.js app.
 
   GET  /api/status           {"ok": true, "envProvider": bool}
   GET  /api/mcp              405 — streamable HTTP is POST-only here
@@ -13,8 +13,10 @@ from the Next.js app.
   GET  /api/install.sh       cli/install.sh with @DS_BASE@ filled from the
                              request's forwarded Host/proto
   POST /api/provider/test    {api, base_url, api_key, key_header?, models_url?}
-                             (https only, http for loopback; models_url must
-                             share base_url's origin; redirects refused)
+                             (https to a known model API or a host listed in
+                             DESIGN_SYSTEMS_PROVIDER_HOSTS, http only for a
+                             listed loopback host; models_url must share
+                             base_url's origin; redirects refused)
                              -> {ok, models:[{id,label}], error?} for the
                              settings page's test-gated model field
   POST /api/chat             {messages, provider?} -> {reply, results, media}
@@ -83,6 +85,9 @@ def _base_url(handler) -> str:
         return f"{proto}://{host}"
     addr = getattr(handler.server, "server_address", ("127.0.0.1", 80))
     return f"http://{addr[0]}:{addr[1]}"
+
+
+MCP_BODY_LIMIT = 256_000  # POST /api/mcp; web/proxy.ts holds the same cap
 
 
 def _body(handler, cap: int = 128_000) -> dict | None:
@@ -224,7 +229,12 @@ def handle_post(handler) -> bool:
             n = int(handler.headers.get("content-length") or 0)
         except ValueError:
             n = 0
-        if n <= 0 or n > 256_000:
+        if n > MCP_BODY_LIMIT:
+            _reply(handler, 413, {"jsonrpc": "2.0", "id": None,
+                                  "error": {"code": -32600,
+                                            "message": f"request body exceeds the {MCP_BODY_LIMIT}-byte limit"}})
+            return True
+        if n <= 0:
             _reply(handler, 400, {"jsonrpc": "2.0", "id": None,
                                   "error": {"code": -32600, "message": "a JSON-RPC body is required"}})
             return True
@@ -234,13 +244,11 @@ def handle_post(handler) -> bool:
             _reply(handler, 400, {"jsonrpc": "2.0", "id": None,
                                   "error": {"code": -32700, "message": "unparseable JSON"}})
             return True
-        mcp = _load("mcp")
-        msgs = raw if isinstance(raw, list) else [raw]
-        replies = [r for r in (mcp.handle(m) for m in msgs if isinstance(m, dict)) if r]
-        if not replies:
+        out = _load("mcp").handle_batch(raw)
+        if out is None:
             _empty(handler, 202)
-            return True
-        _reply(handler, 200, replies[0] if isinstance(raw, dict) else replies)
+        else:
+            _reply(handler, 200, out)
         return True
     chat = _load("chat")
     if path == "/api/provider/test":

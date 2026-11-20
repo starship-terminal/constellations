@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nudea style guide</title>
+<style>
+  :root {
+    --cotton: #fbfaf2;
+    --raven: #333333;
+    --grid: #d3d2cc;
+    --red: #ad2c2c;
+    --display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --ui: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--cotton); color: var(--raven); font: 300 14px/20px var(--display); letter-spacing: 0.28px; }
+  header, main { max-width: 960px; margin: 0 auto; padding: 40px 40px 0; }
+  h1 { font: 300 36px/46px var(--display); letter-spacing: 0.72px; margin: 0 0 8px; }
+  h2 { font: 300 24px/34px var(--display); letter-spacing: 0.48px; margin: 40px 0 12px; }
+  p.note { max-width: 62ch; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .swatch i { display: block; height: 72px; border: 1px solid var(--grid); }
+  .swatch span { display: block; margin-top: 6px; font: 400 12px/22px var(--ui); letter-spacing: 0.96px; text-transform: uppercase; }
+  .type p { margin: 8px 0; }
+  .ui { font: 400 12px/22px var(--ui); letter-spacing: 0.96px; text-transform: uppercase; }
+  button.primary, a.ghost {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 50px; padding: 0 20px; border-radius: 100px; border: 1px solid var(--raven);
+    font: 400 12px/22px var(--ui); letter-spacing: 0.96px; text-transform: uppercase;
+    text-decoration: none;
+  }
+  button.primary { background: var(--raven); color: var(--cotton); height: 50px; }
+  a.ghost { background: transparent; color: var(--raven); height: 40px; }
+  .sizes { display: flex; width: 500px; max-width: 100%; margin: 12px 0; }
+  .sizes span { flex: 1; height: 55px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--grid); font: 400 13px/22px var(--ui); }
+  .sizes span.on { background: var(--raven); color: var(--cotton); border-radius: 10px 0 0 10px; }
+  .sizes span:last-child { border-radius: 0 10px 10px 0; }
+  .tag { display: inline-block; background: var(--red); color: var(--cotton); border-radius: 5px; padding: 0 7px; height: 20px; font: 400 10px/20px var(--ui); letter-spacing: 0.2px; }
+  .bar { background: var(--raven); color: var(--cotton); font: 300 13px/30px var(--ui); letter-spacing: 0.26px; text-align: center; }
+  footer { padding: 40px; font: 300 12px/22px var(--ui); letter-spacing: 0.96px; text-transform: uppercase; }
+</style>
+</head>
+<body>
+  <div class="bar">Black Friday: Up to 75% off sitewide</div>
+  <header>
+    <h1>Nudea</h1>
+    <p class="note">Public signed-out store, measured 2026-11-19. Abril Text and Neue Haas Grotesk are licensed and are not loaded here. The serif below is a system stand-in. Values come from tokens.json.</p>
+  </header>
+  <main>
+    <h2>Colour</h2>
+    <div class="row">
+      <div class="swatch"><i style="background:#fbfaf2"></i><span>Cotton #fbfaf2</span></div>
+      <div class="swatch"><i style="background:#333333"></i><span>Raven #333333</span></div>
+      <div class="swatch"><i style="background:#d3d2cc"></i><span>Grid #d3d2cc</span></div>
+      <div class="swatch"><i style="background:#ad2c2c"></i><span>Red #ad2c2c</span></div>
+      <div class="swatch"><i style="background:#efeee7"></i><span>Dark cotton #efeee7</span></div>
+      <div class="swatch"><i style="background:#a04b2d"></i><span>Brick #a04b2d</span></div>
+      <div class="swatch"><i style="background:#f2d3bc"></i><span>Nude #f2d3bc</span></div>
+      <div class="swatch"><i style="background:#8a8b5b"></i><span>Olive #8a8b5b</span></div>
+    </div>
+    <h2>Type</h2>
+    <div class="type">
+      <p style="font-size:36px;line-height:46px;letter-spacing:0.72px;margin:0">A good day starts with good underwear</p>
+      <p style="font-size:24px;line-height:34px;letter-spacing:0.48px">The Classic Flannel PJ Set</p>
+      <p>Cosy button down shirt and trouser set in super soft organic cotton flannel.</p>
+      <p class="ui">Collection: Nudea bras</p>
+    </div>
+    <h2>Controls</h2>
+    <p><button class="primary" type="button">Pre-order</button></p>
+    <p><a class="ghost" href="#sizes">Shop now</a></p>
+    <p><span class="tag">Save 29%</span></p>
+    <div class="sizes" id="sizes"><span class="on">XS</span><span>S</span><span>M</span><span>L</span><span>XL</span></div>
+  </main>
+  <footer>About · Stockists · Bra recycling · Delivery</footer>
+</body>
+</html>

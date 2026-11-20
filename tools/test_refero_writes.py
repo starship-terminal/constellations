@@ -3,6 +3,7 @@ atomic files, a renamed style's folder, the LFS pointer guard and the catalog
 refresh after labelling. No network: page fetches and the API are patched.
 Run with `make test`."""
 import json
+import sqlite3
 import sys
 import tempfile
 import unittest
@@ -14,6 +15,7 @@ TOOLS = Path(__file__).resolve().parent
 sys.path.insert(0, str(TOOLS / "refero"))
 import classify  # noqa: E402
 import fetch  # noqa: E402
+import dump as refero_dump  # noqa: E402
 
 RESULT = {"meta": {"url": "https://acme.example", "extractedAt": "2026-01-01"},
           "designSystem": {"theme": "light", "northStar": "Move fast"}}
@@ -64,6 +66,28 @@ class FetchWritesTest(ReferoTmp):
         meta = json.loads((self.refero / "acme-labs" / "meta.json").read_text())
         self.assertEqual(meta["slug"], "acme-labs")
 
+    def test_a_refetch_keeps_the_export_columns(self):
+        """A --force refetch updates the fetched columns in place; the export
+        columns stay until cmd_export rewrites them, even if that export fails."""
+        self.run_fetch("Acme")
+        db = sqlite3.connect(self.refero / "refero.db")
+        db.execute("UPDATE styles SET variables_css='a', theme_css='b', tokens_json='c', "
+                   "design_system_json='d', prompt_txt='e' WHERE uuid=?", (UUID,))
+        db.commit()
+        rowid = db.execute("SELECT rowid FROM styles WHERE uuid=?", (UUID,)).fetchone()
+        db.close()
+        self.run_fetch("Acme Labs")
+        db = sqlite3.connect(self.refero / "refero.db")
+        try:
+            row = db.execute("SELECT slug, name, variables_css, theme_css, tokens_json, "
+                             "design_system_json, prompt_txt FROM styles WHERE uuid=?",
+                             (UUID,)).fetchone()
+            self.assertEqual(row, ("acme-labs", "Acme Labs", "a", "b", "c", "d", "e"))
+            self.assertEqual(db.execute("SELECT rowid FROM styles WHERE uuid=?",
+                                        (UUID,)).fetchone(), rowid)
+        finally:
+            db.close()
+
     def test_the_catalog_is_written_atomically(self):
         self.run_fetch("Acme")
         with mock.patch("sys.stdout"):
@@ -71,6 +95,50 @@ class FetchWritesTest(ReferoTmp):
         catalog = json.loads((self.refero / "catalog.json").read_text())
         self.assertEqual([s["slug"] for s in catalog["styles"]], ["acme"])
         self.assertEqual(self.tmp_files(), [])
+
+
+class WriteAtomicTest(ReferoTmp):
+    """Every tools/refero writer shares dump.write_atomic: a temp file unique
+    to the call, mode 0644, removed when the write fails."""
+
+    def test_every_writer_uses_the_one_helper(self):
+        import coverage
+        import fetch_collections
+        import index_similar
+        for mod in (fetch, coverage, fetch_collections, index_similar):
+            self.assertIs(mod.write_atomic, refero_dump.write_atomic, mod.__name__)
+
+    def test_a_failed_rename_leaves_the_file_and_no_temp(self):
+        self.refero.mkdir()
+        path = self.refero / "meta.json"
+        path.write_text("old")
+        with mock.patch.object(refero_dump.os, "replace", side_effect=OSError("disk")), \
+                self.assertRaises(OSError):
+            fetch.write_atomic(path, "new")
+        self.assertEqual(path.read_text(), "old")
+        self.assertEqual(sorted(p.name for p in self.refero.iterdir()), ["meta.json"])
+
+    def test_temp_names_are_unique_and_the_mode_is_0644(self):
+        import os
+        self.refero.mkdir()
+        path = self.refero / "meta.json"
+        temps = []
+        real = refero_dump.os.replace
+
+        def record(src, dst):
+            temps.append(Path(src).name)
+            return real(src, dst)
+        old = os.umask(0o077)
+        try:
+            with mock.patch.object(refero_dump.os, "replace", side_effect=record):
+                fetch.write_atomic(path, "a")
+                fetch.write_atomic(path, "b")
+        finally:
+            os.umask(old)
+        self.assertEqual(len(set(temps)), 2)
+        self.assertNotIn("meta.json.tmp", temps)
+        self.assertEqual(path.stat().st_mode & 0o777, 0o644)
+        self.assertEqual(path.read_text(), "b")
 
 
 class ClassifyWritesTest(ReferoTmp):
@@ -144,6 +212,13 @@ class ClassifyWritesTest(ReferoTmp):
             fetch.cmd_catalog()
         self.classify_main(({"acme": self.LABELS}, [], None))
         self.assertEqual(self.catalog_row(), ("devtools", "minimal", ["saas"]))
+
+    def test_a_labelling_run_refreshes_the_text_dump(self):
+        self.run_fetch("Acme")
+        self.classify_main(({"acme": self.LABELS}, [], None))
+        row = json.loads((self.refero / ".dump" / "styles" / f"{UUID}.json").read_text())
+        self.assertEqual(row["product_type"], "devtools")
+        self.assertEqual(refero_dump.compare(self.refero / "refero.db"), [])
 
 
 if __name__ == "__main__":

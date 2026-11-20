@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voicenotes style guide</title>
+<style>
+:root {
+  --page: #FAF9F5;
+  --surface: #FFFFFF;
+  --sand: #F2F1ED;
+  --quiet: #E6E5E0;
+  --text: #0D0D0D;
+  --muted: #717171;
+  --on-accent: #FFFFFF;
+  --border: rgba(13, 13, 13, 0.1);
+  --accent: #0D0D0D;
+  --link: #0088FF;
+  --success-bg: #E6F9EB;
+  --success-text: #006119;
+  --wash: #EAF2F8;
+  --radius-card: 16px;
+  --radius-pill: 9999px;
+  --sans: Inter, -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+  --serif: "P22 Mackinac Pro", Georgia, "Times New Roman", serif;
+  --display: "Instrument Serif", Georgia, serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px var(--sans); }
+.wrap { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+h1 { font-family: var(--serif); font-weight: 400; font-size: 48px; line-height: 56px; letter-spacing: -1.4px; margin: 0 0 8px; }
+h2 { font-family: var(--display); font-weight: 400; font-size: 40px; line-height: 44px; letter-spacing: -0.8px; margin: 40px 0 12px; }
+p.lead { max-width: 62ch; color: var(--text); font-size: 18px; line-height: 28px; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.sw { background: var(--surface); border-radius: 12px; padding: 12px; border: 1px solid var(--border); }
+.sw i { display: block; height: 48px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 8px; }
+.sw b { display: block; font-size: 13px; }
+.sw span { color: var(--muted); font-size: 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 12px 0 24px; }
+button, .btn { font-family: var(--sans); border-radius: var(--radius-pill); cursor: pointer; }
+.btn-nav { background: var(--accent); color: var(--on-accent); border: 0; font-size: 14px; line-height: 20px; padding: 12px 20px; height: 36px; }
+.btn-hero { background: var(--accent); color: var(--on-accent); border: 0; font-size: 15px; line-height: 20px; padding: 12px 24px; height: 46px; }
+.btn-line { background: transparent; color: var(--text); border: 1px solid var(--accent); font-size: 15px; padding: 12px 24px; height: 46px; }
+.btn-quiet { background: var(--quiet); color: var(--text); border: 1px solid rgba(34, 34, 34, 0.08); font-size: 16px; height: 44px; padding: 0 20px; }
+.field { width: 306px; height: 48px; border-radius: 16px; border: 2px solid transparent; background: rgba(13, 13, 13, 0.05); padding: 0 16px; font: 400 14px/20px var(--sans); color: var(--text); }
+.field:focus { outline: none; border-color: var(--text); }
+.card { width: 306px; background: var(--surface); border-radius: 16px; padding: 40px 24px; }
+.card h3 { margin: 0 0 16px; font-size: 24px; line-height: 32px; font-weight: 500; text-align: center; }
+.provider { width: 100%; height: 44px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); margin-bottom: 8px; font-size: 14px; }
+.badge { background: var(--success-bg); color: var(--success-text); border-radius: 48px; font-size: 12px; padding: 4px 8px; }
+.plan { background: var(--surface); border: 1px solid rgba(34, 34, 34, 0.08); border-radius: 4px; padding: 16px 16px 28px; width: 220px; }
+.plan .price { font-family: var(--serif); font-size: 36px; line-height: 44px; letter-spacing: -2px; }
+.note { color: var(--muted); font-size: 13px; max-width: 70ch; }
+a { color: var(--link); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Voicenotes</h1>
+  <p class="lead">Public marketing styles measured on voicenotes.com on 19 November 2026. One light theme. Proprietary faces fall back to Georgia and Inter.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="sw"><i style="background:#FAF9F5"></i><b>page</b><span>#FAF9F5</span></div>
+    <div class="sw"><i style="background:#FFFFFF"></i><b>surface</b><span>#FFFFFF</span></div>
+    <div class="sw"><i style="background:#F2F1ED"></i><b>sand</b><span>#F2F1ED</span></div>
+    <div class="sw"><i style="background:#0D0D0D"></i><b>text / accent</b><span>#0D0D0D</span></div>
+    <div class="sw"><i style="background:#717171"></i><b>muted</b><span>#717171</span></div>
+    <div class="sw"><i style="background:#0088FF"></i><b>link</b><span>#0088FF</span></div>
+    <div class="sw"><i style="background:#E6F9EB"></i><b>success</b><span>#E6F9EB / #006119</span></div>
+    <div class="sw"><i style="background:#EAF2F8"></i><b>wash</b><span>#EAF2F8</span></div>
+  </div>
+
+  <h2>Type</h2>
+  <p style="font-family:var(--serif);font-size:48px;line-height:56px;letter-spacing:-1.4px;margin:0">The notetaker for your confidential meetings.</p>
+  <p class="note">Home h1 at 1169px: P22 Mackinac, 48px / 56px / -1.4px. The class asks for 60px above that width.</p>
+  <p style="font-family:var(--display);font-size:60px;line-height:60px;letter-spacing:-1.2px;margin:16px 0">Simple as it gets.</p>
+  <p class="note">Home h2: Instrument Serif, 60px / 60px / -1.2px, #222222.</p>
+
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="btn-nav">Start for free</button>
+    <button class="btn-hero">Book a demo</button>
+    <button class="btn-line">Start for free</button>
+    <button class="btn-quiet">Get started</button>
+  </div>
+  <p class="note">Nav primary is 36px tall, 14px type, pill. Hero buttons are 46px, 15px Inter SemiBold. Pricing quiet buttons are #E6E5E0, 44px.</p>
+
+  <h2>Login</h2>
+  <div class="card">
+    <h3>Welcome back!</h3>
+    <button class="provider">Continue with Email</button>
+    <input class="field" placeholder="Email Address" aria-label="Email Address">
+  </div>
+  <p class="note">Modal card is 450px, white, 16px radius, 40px 24px padding. Fields are 48px, 16px radius, 5% black fill. Focus border is #0D0D0D. Password and SSO were not submitted.</p>
+
+  <h2>Pricing</h2>
+  <div class="row">
+    <div class="plan">
+      <div>Pro <span class="badge">2 months free</span></div>
+      <div class="price">$7.50</div>
+      <button class="btn-nav">Get started</button>
+    </div>
+  </div>
+  <p class="note">Plan cards are white, 4px radius, 1px border at 8% of #222. Prices are Mackinac 36px / 44px / -2px.</p>
+</div>
+</body>
+</html>

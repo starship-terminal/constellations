@@ -1,0 +1,586 @@
+{
+  "capturedAt": "2026-11-19",
+  "method": "getComputedStyle in the T3 preview browser. preview_snapshot failed twice with 'The browser is not producing screenshot frames.' Headless Playwright returned Cloudflare 403 'Just a moment...' and was stopped. Screenshots in this package are reconstructions drawn from these boxes.",
+  "home-light-1440": {
+    "url": "https://medium.com/",
+    "viewport": "1440x900 dpr 2",
+    "body": {
+      "bg": "#ffffff",
+      "color": "#242424",
+      "font": "Times"
+    },
+    "wordmark": {
+      "x": 124,
+      "y": 26,
+      "w": 112,
+      "h": 19,
+      "svgViewBox": "0 0 719 160",
+      "renderedFill": "var(--color-fg-neutral-primary) via .bv path",
+      "authoredFill": "#242424"
+    },
+    "nav-link": {
+      "font": "sohne, Helvetica Neue, Helvetica, Arial, sans-serif",
+      "size": "14px",
+      "weight": "400",
+      "lh": "20px",
+      "color": "#242424",
+      "example": "Membership 79x18 at y=29"
+    },
+    "button-get-started": {
+      "bg": "#191919",
+      "color": "#ffffff",
+      "border": "1px solid #191919",
+      "radius": "1386px",
+      "pad": "8px 16px",
+      "font": "sohne",
+      "size": "14px",
+      "weight": "400",
+      "lh": "20px",
+      "h": 38,
+      "w": 104,
+      "x": 1212,
+      "y": 19,
+      "transition": "background-color 0.3s linear, color 0.3s linear"
+    },
+    "button-get-started-hover": {
+      "bg": "#080808",
+      "color": "#ffffff",
+      "border": "1px solid #242424"
+    },
+    "button-get-started-focus": {
+      "outline": "rgb(153, 200, 255) auto 1px",
+      "theme": "dark measurement of the same control"
+    },
+    "hero-h2": {
+      "text": "Human stories & ideas",
+      "font": "gt-super, Georgia, Cambria, Times New Roman, Times, serif",
+      "size": "120px",
+      "weight": "400",
+      "lh": "100px",
+      "ls": "-6.6px",
+      "color": "#000000",
+      "x": 124,
+      "y": 306,
+      "w": 720,
+      "h": 200
+    },
+    "hero-h3": {
+      "text": "A place to read, write, and deepen your understanding",
+      "font": "sohne",
+      "size": "22px",
+      "weight": "400",
+      "lh": "28px",
+      "color": "#242424",
+      "x": 124,
+      "y": 554,
+      "w": 1192,
+      "h": 28
+    },
+    "button-start-reading": {
+      "bg": "#191919",
+      "color": "#ffffff",
+      "border": "1px solid #191919",
+      "radius": "1980px",
+      "pad": "8px 20px",
+      "font": "sohne",
+      "size": "20px",
+      "weight": "400",
+      "lh": "28px",
+      "h": 46,
+      "w": 196,
+      "x": 124,
+      "y": 630
+    },
+    "gaps": {
+      "heroToSub": 48,
+      "subToStart": 48
+    },
+    "footer-link": {
+      "font": "medium-content-sans-serif-font, -apple-system, system-ui, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif",
+      "size": "16px",
+      "weight": "400",
+      "color": "#242424",
+      "y": 856
+    }
+  },
+  "home-dark-1440": {
+    "url": "https://medium.com/",
+    "body": {
+      "bg": "#171717",
+      "color": "#e5e5e5"
+    },
+    "button-get-started": {
+      "bg": "#ffffff",
+      "color": "#121212",
+      "border": "1px solid #ffffff",
+      "radius": "1386px",
+      "pad": "8px 16px",
+      "h": 38
+    },
+    "button-get-started-hover": {
+      "bg": "#f2f2f2",
+      "color": "#121212",
+      "border": "1px solid #d2d2d2"
+    },
+    "hero-h2": {
+      "font": "gt-super",
+      "size": "measured on phone dark as 80px; desktop dark hero size not remeasured after theme switch of the 1440 home",
+      "colorToken": "--color-fg-neutral-primary #e5e5e5"
+    },
+    "wordmarkComputedFill": "#e5e5e5"
+  },
+  "home-dark-390": {
+    "url": "https://medium.com/",
+    "viewport": "390x844 dpr 2 prefers-color-scheme dark",
+    "body": {
+      "bg": "#171717"
+    },
+    "wordmark": {
+      "x": 24,
+      "y": 26,
+      "w": 112,
+      "h": 19
+    },
+    "button-get-started": {
+      "x": 262,
+      "y": 19,
+      "w": 104,
+      "h": 38,
+      "bg": "#ffffff",
+      "color": "#121212",
+      "radius": "1386px",
+      "pad": "8px 16px",
+      "size": "14px",
+      "font": "sohne"
+    },
+    "hero-h2": {
+      "text": "Human stories & ideas",
+      "font": "gt-super",
+      "size": "80px",
+      "weight": "400",
+      "lh": "72px",
+      "ls": "-4.4px",
+      "color": "#ffffff",
+      "x": 24,
+      "y": 262,
+      "w": 253,
+      "h": 216
+    },
+    "pagePad": 24
+  },
+  "membership-light-1440": {
+    "url": "https://medium.com/membership",
+    "hero": {
+      "text": "Support human stories",
+      "font": "gt-super",
+      "size": "85px",
+      "weight": "400",
+      "lh": "88px",
+      "ls": "-4.675px",
+      "color": "#000000",
+      "w": 807,
+      "h": 88,
+      "y": 151
+    },
+    "sub": {
+      "font": "sohne",
+      "size": "22px",
+      "color": "#6b6b6b",
+      "lh": "28px",
+      "w": 540
+    },
+    "story-title": {
+      "font": "gt-super",
+      "size": "32px",
+      "lh": "36px",
+      "ls": "-1.12px",
+      "color": "#000000",
+      "w": 456
+    },
+    "section": {
+      "text": "Why membership?",
+      "font": "gt-super",
+      "size": "70px",
+      "lh": "74px",
+      "ls": "-3.5px"
+    },
+    "feature": {
+      "text": "Reward writers",
+      "font": "gt-super",
+      "size": "48px",
+      "lh": "52px",
+      "ls": "-1.92px"
+    },
+    "sign-in": {
+      "bg": "transparent",
+      "color": "#242424",
+      "border": "1px solid #242424",
+      "radius": "1386px",
+      "pad": "8px 16px",
+      "h": 38,
+      "size": "14px",
+      "font": "sohne"
+    },
+    "sign-up": {
+      "bg": "#191919",
+      "color": "#ffffff",
+      "border": "1px solid #191919",
+      "radius": "1386px",
+      "pad": "8px 16px",
+      "h": 38,
+      "size": "14px"
+    },
+    "get-started": {
+      "bg": "#191919",
+      "color": "#ffffff",
+      "radius": "1584px",
+      "pad": "8px 20px",
+      "h": 42,
+      "size": "16px",
+      "lh": "24px",
+      "font": "sohne"
+    },
+    "view-plans": {
+      "bg": "transparent",
+      "color": "#242424",
+      "border": "1px solid #242424",
+      "radius": "1584px",
+      "pad": "8px 20px",
+      "h": 42,
+      "size": "16px"
+    }
+  },
+  "about-light-1440": {
+    "url": "https://medium.com/about",
+    "hero": {
+      "text": "Everyone has a story to tell",
+      "font": "gt-super",
+      "size": "85px",
+      "lh": "88px",
+      "ls": "-4.675px",
+      "color": "#ffffff",
+      "w": 680,
+      "y": 207,
+      "note": "white type over a dark hero band on an otherwise white page"
+    },
+    "sign-in": {
+      "bg": "transparent",
+      "color": "#ffffff",
+      "radius": "1386px",
+      "pad": "8px 16px",
+      "size": "14px",
+      "font": "sohne"
+    },
+    "sign-up": {
+      "bg": "#ffffff",
+      "color": "#242424",
+      "radius": "1386px",
+      "pad": "8px 16px",
+      "size": "14px",
+      "font": "sohne"
+    }
+  },
+  "signin-light-1440": {
+    "url": "https://medium.com/m/signin",
+    "title": {
+      "text": "Welcome back.",
+      "font": "gt-super",
+      "size": "28px",
+      "weight": "400",
+      "color": "#000000",
+      "x": 630,
+      "y": 158,
+      "w": 181,
+      "h": 32
+    },
+    "oauth": {
+      "bg": "#ffffff",
+      "color": "#242424",
+      "border": "1px solid #242424",
+      "radius": "1584px",
+      "pad": "8px",
+      "h": 42,
+      "w": 300,
+      "x": 570,
+      "size": "16px",
+      "font": "sohne",
+      "gap": 16
+    },
+    "email-step": {
+      "title": {
+        "text": "Sign in with email",
+        "font": "gt-super",
+        "size": "28px",
+        "color": "#000000"
+      },
+      "label": {
+        "text": "Your email",
+        "font": "sohne",
+        "size": "14px",
+        "color": "#242424"
+      },
+      "field": {
+        "bg": "#f2f2f2",
+        "radius": "4px",
+        "pad": "8px 12px",
+        "h": 38,
+        "w": 360,
+        "border": "1px solid transparent",
+        "font": "sohne",
+        "size": "14px",
+        "placeholder": "Enter your email address"
+      },
+      "field-focus": {
+        "focused": true,
+        "typed": false,
+        "border": "1px solid transparent",
+        "outline": "none",
+        "bg": "#f2f2f2"
+      },
+      "continue": {
+        "bg": "#191919",
+        "color": "#ffffff",
+        "border": "1px solid #191919",
+        "radius": "1386px",
+        "pad": "8px 16px",
+        "h": 38,
+        "w": 90,
+        "size": "14px",
+        "font": "sohne"
+      },
+      "back": {
+        "font": "Times",
+        "size": "16px",
+        "color": "#242424"
+      }
+    },
+    "legal": {
+      "font": "sohne",
+      "size": "11px",
+      "color": "#6b6b6b"
+    },
+    "notPressed": [
+      "Google",
+      "LinkedIn",
+      "Facebook",
+      "Apple",
+      "X",
+      "Continue",
+      "Create one"
+    ]
+  },
+  "blog-light-1440": {
+    "url": "https://medium.com/blog",
+    "title": {
+      "text": "The Medium Blog",
+      "font": "sohne",
+      "size": "32px",
+      "weight": "500",
+      "ls": "-0.448px",
+      "color": "#242424"
+    },
+    "card-title": {
+      "font": "sohne",
+      "size": "20px",
+      "weight": "500",
+      "color": "#242424"
+    }
+  },
+  "story-light-1440": {
+    "url": "https://medium.com/blog/dark-mode-for-medium-is-finally-here-002977326982",
+    "h1": {
+      "text": "Dark mode for Medium is finally here",
+      "font": "sohne",
+      "size": "42px",
+      "weight": "700",
+      "lh": "52px",
+      "ls": "-0.462px",
+      "color": "#242424",
+      "w": 680
+    },
+    "kicker": {
+      "font": "sohne",
+      "size": "22px",
+      "weight": "400",
+      "lh": "28px",
+      "color": "#6b6b6b",
+      "w": 680
+    },
+    "body": {
+      "font": "source-serif-pro",
+      "size": "20px",
+      "weight": "400",
+      "lh": "32px",
+      "ls": "-0.06px",
+      "color": "#242424",
+      "w": 680
+    },
+    "caption": {
+      "font": "sohne",
+      "size": "14px",
+      "lh": "20px",
+      "color": "#6b6b6b",
+      "maxWidth": "728px"
+    },
+    "column": 680
+  },
+  "plans-light-1440": {
+    "url": "https://medium.com/plans",
+    "h1": {
+      "font": "gt-super",
+      "size": "48px",
+      "weight": "400",
+      "ls": "-1.92px",
+      "color": "#000000"
+    },
+    "plan-name": {
+      "font": "sohne",
+      "size": "20px",
+      "weight": "500",
+      "color": "#242424"
+    },
+    "price": {
+      "font": "sohne",
+      "size": "16px",
+      "weight": "400",
+      "color": "#242424",
+      "examples": [
+        "$5/month",
+        "$15/month"
+      ]
+    },
+    "badge": {
+      "text": "Welcome Offer",
+      "bg": "#ffc017",
+      "color": "#242424",
+      "radius": "8px",
+      "pad": "4px 8px",
+      "h": 28,
+      "font": "medium-content-sans-serif-font",
+      "size": "14px on the span"
+    },
+    "billing-monthly": {
+      "bg": "transparent",
+      "border": "1px solid #242424",
+      "radius": "4px 0 0 4px",
+      "pad": "12px 24px 10px",
+      "h": 72,
+      "w": 139,
+      "font": "medium-content-sans-serif-font",
+      "size": "16px",
+      "color": "#242424"
+    },
+    "billing-annual": {
+      "bg": "#f9f9f9",
+      "border": "1px solid #e5e5e5",
+      "radius": "0 4px 4px 0",
+      "pad": "12px 24px 10px",
+      "h": 72,
+      "w": 141
+    },
+    "select": {
+      "bg": "#191919",
+      "color": "#ffffff",
+      "border": "1px solid #191919",
+      "radius": "1386px",
+      "pad": "8px 16px",
+      "h": 38,
+      "w": 262,
+      "size": "14px",
+      "font": "sohne",
+      "notPressed": true
+    }
+  },
+  "plans-dark-390": {
+    "url": "https://medium.com/plans",
+    "viewport": "390x844",
+    "body": {
+      "bg": "#171717"
+    },
+    "h1": {
+      "font": "gt-super",
+      "size": "32px",
+      "weight": "400",
+      "color": "#ffffff",
+      "x": 24,
+      "y": 157,
+      "w": 342,
+      "h": 108
+    },
+    "plan-name": {
+      "font": "sohne",
+      "size": "20px",
+      "weight": "500",
+      "color": "#e5e5e5"
+    },
+    "select": {
+      "bg": "#ffffff",
+      "color": "#121212",
+      "radius": "1386px",
+      "h": 38,
+      "w": 276,
+      "x": 57,
+      "y": 706,
+      "size": "14px",
+      "font": "sohne"
+    }
+  },
+  "help": {
+    "url": "https://help.medium.com/hc/en-us",
+    "note": "Zendesk help center, separate from medium.com tokens. oklch values converted with canvas fillStyle.",
+    "viewport": "1440x900 after resize settled",
+    "fonts": {
+      "display": "GT Super Text, ui-serif, New York, Charter, Georgia, serif",
+      "ui": "Sohne, system-ui, -apple-system, system-ui, Segoe UI, sans-serif"
+    },
+    "h1": {
+      "size": "60px",
+      "weight": "400",
+      "colorLight": "#242424"
+    },
+    "search": {
+      "h": 60,
+      "w": 702,
+      "pad": "1px 20px 1px 52px",
+      "font": "Sohne",
+      "size": "18px",
+      "wrap": {
+        "bgDark": "#171717",
+        "border": "1px solid oklch(0.58 0 0)",
+        "radius": "20px",
+        "h": 62,
+        "w": 704
+      }
+    },
+    "tokens": {
+      "bg-base": {
+        "light": "#ffffff",
+        "dark": "#121212"
+      },
+      "bg-surface": {
+        "light": "#f9f9f9",
+        "dark": "#171717"
+      },
+      "text-primary": {
+        "light": "#242424",
+        "dark": "#d2d2d2"
+      },
+      "text-secondary": {
+        "light": "#6b6b6b",
+        "dark": "#929292"
+      },
+      "border-strong": {
+        "light": "#242424",
+        "dark": "#d2d2d2"
+      },
+      "interactive": {
+        "light": "#242424",
+        "dark": "#d2d2d2"
+      },
+      "status-success": {
+        "light": "#17891a",
+        "dark": "#6bb667"
+      }
+    }
+  }
+}

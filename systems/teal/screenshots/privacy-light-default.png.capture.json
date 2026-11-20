@@ -1,0 +1,21 @@
+{
+  "capturedAt": "2026-11-19T03:02:00Z",
+  "sourceUrl": "https://www.tealhq.com/privacy-policy",
+  "requestedViewport": {
+    "width": 1440,
+    "height": 900,
+    "devicePixelRatio": 2
+  },
+  "measured": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1
+    }
+  },
+  "note": "Headless Chromium. This URL loaded without a Cloudflare challenge. www.tealhq.com/ and app.tealhq.com returned a Cloudflare block in the same browser, so this is the only page PNG.",
+  "screenshotFrames": "T3 preview returned: The browser is not producing screenshot frames."
+}

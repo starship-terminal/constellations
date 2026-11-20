@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Todoist style guide</title>
+<style>
+  body { margin: 0; background: #fefdfc; color: #25221e; font-family: Inter, Helvetica, Arial, sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 32px 24px 64px; }
+  h1 { font-family: Graphik, Helvetica, Arial, sans-serif; font-weight: 600; letter-spacing: -0.01em; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  td { border-bottom: 1px solid rgba(37,34,30,.12); padding: 8px 6px; vertical-align: middle; }
+  .sw { display: inline-block; width: 28px; height: 28px; border-radius: 6px; border: 1px solid rgba(37,34,30,.18); }
+  .btn { display: inline-block; background: #e34432; color: #fff; border-radius: 15px; padding: 12px 16px; font-weight: 600; text-decoration: none; }
+  .btn2 { display: inline-block; background: rgba(37,34,30,.07); color: #25221e; border-radius: 8px; padding: 9px 14px; font-weight: 600; text-decoration: none; margin-left: 8px; }
+  .card { background: #fff; border: 1px solid rgba(37,34,30,.12); border-radius: 10px; padding: 24px 32px; margin-top: 24px; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Todoist</h1>
+  <p>Public marketing and signed-out login. Values from tokens.json. Light only.</p>
+  <p><a class="btn" href="#tokens">Start for free</a><a class="btn2" href="#tokens">Get started</a></p>
+  <div class="card">
+    <strong>Beginner</strong>
+    <p>Start organizing your life for free</p>
+  </div>
+  <h2>Type</h2>
+  <p style="font-weight:600;font-size:55px;line-height:63.25px;letter-spacing:-0.55px;margin:12px 0">display · The task system</p><p style="font-weight:600;font-size:31px;line-height:1.28;letter-spacing:-0.01em;margin:12px 0">plan-name · The task system</p><p style="font-weight:500;font-size:20.5px;line-height:32.8px;letter-spacing:0;margin:12px 0">lede · The task system</p><p style="font-weight:500;font-size:15.5px;line-height:20.925px;letter-spacing:0.155px;margin:12px 0">nav · The task system</p><p style="font-weight:600;font-size:18.5px;line-height:25.9px;letter-spacing:0.185px;margin:12px 0">button · The task system</p><p style="font-weight:700;font-size:32px;line-height:1;letter-spacing:0;margin:12px 0">app-title · The task system</p><p style="font-weight:700;font-size:18px;line-height:36px;letter-spacing:0;margin:12px 0">app-button · The task system</p><p style="font-weight:400;font-size:12px;line-height:21px;letter-spacing:0;margin:12px 0">app-label · The task system</p>
+  <h2 id="tokens">Light tokens</h2>
+  <table><tr><td><span class="sw" style="background:#fefdfc"></span></td><td><code>background-page</code></td><td><code>#fefdfc</code></td></tr>
+<tr><td><span class="sw" style="background:#ffffff"></span></td><td><code>background-surface</code></td><td><code>#ffffff</code></td></tr>
+<tr><td><span class="sw" style="background:#fcfaf8"></span></td><td><code>background-muted</code></td><td><code>#fcfaf8</code></td></tr>
+<tr><td><span class="sw" style="background:#e34432"></span></td><td><code>background-action</code></td><td><code>#e34432</code></td></tr>
+<tr><td><span class="sw" style="background:#cf3520"></span></td><td><code>background-action-hover</code></td><td><code>#cf3520</code></td></tr>
+<tr><td><span class="sw" style="background:#25221e12"></span></td><td><code>background-secondary</code></td><td><code>#25221e12</code></td></tr>
+<tr><td><span class="sw" style="background:rgba(0,0,0,.4)"></span></td><td><code>background-overlay</code></td><td><code>rgba(0,0,0,.4)</code></td></tr>
+<tr><td><span class="sw" style="background:#25221e"></span></td><td><code>text-primary</code></td><td><code>#25221e</code></td></tr>
+<tr><td><span class="sw" style="background:#25221ea8"></span></td><td><code>text-secondary</code></td><td><code>#25221ea8</code></td></tr>
+<tr><td><span class="sw" style="background:#25221e7d"></span></td><td><code>text-tertiary</code></td><td><code>#25221e7d</code></td></tr>
+<tr><td><span class="sw" style="background:#ffffff"></span></td><td><code>text-on-action</code></td><td><code>#ffffff</code></td></tr>
+<tr><td><span class="sw" style="background:#d33322"></span></td><td><code>text-link</code></td><td><code>#d33322</code></td></tr>
+<tr><td><span class="sw" style="background:#202020"></span></td><td><code>text-app</code></td><td><code>#202020</code></td></tr>
+<tr><td><span class="sw" style="background:#666"></span></td><td><code>text-app-muted</code></td><td><code>#666</code></td></tr>
+<tr><td><span class="sw" style="background:#25221e2e"></span></td><td><code>border-card</code></td><td><code>#25221e2e</code></td></tr>
+<tr><td><span class="sw" style="background:#e5e5e5"></span></td><td><code>border-field</code></td><td><code>#e5e5e5</code></td></tr>
+<tr><td><span class="sw" style="background:#b8b8b8"></span></td><td><code>border-focus</code></td><td><code>#b8b8b8</code></td></tr>
+<tr><td></td><td><code>shadow-focus-ring</code></td><td><code>0 0 0 4px #e1f0f4, 0 0 0 1px #579ed8</code></td></tr>
+<tr><td><span class="sw" style="background:#dc4c3e"></span></td><td><code>status-danger</code></td><td><code>#dc4c3e</code></td></tr>
+<tr><td><span class="sw" style="background:#eb8909"></span></td><td><code>status-warning</code></td><td><code>#eb8909</code></td></tr>
+<tr><td><span class="sw" style="background:#058527"></span></td><td><code>status-success</code></td><td><code>#058527</code></td></tr>
+<tr><td><span class="sw" style="background:#316fea"></span></td><td><code>status-info</code></td><td><code>#316fea</code></td></tr>
+<tr><td><span class="sw" style="background:#e44232"></span></td><td><code>brand-primary-hex</code></td><td><code>#e44232</code></td></tr>
+<tr><td><span class="sw" style="background:#ee5244"></span></td><td><code>brand-cta-hover-hex</code></td><td><code>#ee5244</code></td></tr>
+<tr><td><span class="sw" style="background:#d1453b"></span></td><td><code>brand-cta-active-hex</code></td><td><code>#d1453b</code></td></tr>
+<tr><td><span class="sw" style="background:#d33322"></span></td><td><code>brand-app-action</code></td><td><code>#d33322</code></td></tr>
+<tr><td><span class="sw" style="background:#c3392c"></span></td><td><code>brand-app-action-hover</code></td><td><code>#c3392c</code></td></tr>
+<tr><td><span class="sw" style="background:#dc4c3e"></span></td><td><code>brand-priority-1</code></td><td><code>#dc4c3e</code></td></tr>
+<tr><td><span class="sw" style="background:#eb8909"></span></td><td><code>brand-priority-2</code></td><td><code>#eb8909</code></td></tr>
+<tr><td><span class="sw" style="background:#2a67e2"></span></td><td><code>brand-priority-3</code></td><td><code>#2a67e2</code></td></tr>
+<tr><td><span class="sw" style="background:#999"></span></td><td><code>brand-priority-4</code></td><td><code>#999</code></td></tr>
+<tr><td><span class="sw" style="background:#e34432"></span></td><td><code>component-button-primary-background</code></td><td><code>#e34432</code></td></tr>
+<tr><td><span class="sw" style="background:#ffffff"></span></td><td><code>component-button-primary-text</code></td><td><code>#ffffff</code></td></tr>
+<tr><td></td><td><code>component-button-primary-radius</code></td><td><code>15px</code></td></tr>
+<tr><td></td><td><code>component-button-primary-padding-block</code></td><td><code>12px</code></td></tr>
+<tr><td></td><td><code>component-button-primary-padding-inline</code></td><td><code>16px</code></td></tr>
+<tr><td></td><td><code>component-button-primary-height</code></td><td><code>64px</code></td></tr>
+<tr><td><span class="sw" style="background:#25221e12"></span></td><td><code>component-button-secondary-background</code></td><td><code>#25221e12</code></td></tr>
+<tr><td><span class="sw" style="background:#25221e"></span></td><td><code>component-button-secondary-text</code></td><td><code>#25221e</code></td></tr>
+<tr><td></td><td><code>component-button-secondary-radius</code></td><td><code>8px</code></td></tr>
+<tr><td><span class="sw" style="background:#ffffff"></span></td><td><code>component-field-background</code></td><td><code>#ffffff</code></td></tr>
+<tr><td><span class="sw" style="background:#202020"></span></td><td><code>component-field-text</code></td><td><code>#202020</code></td></tr>
+<tr><td></td><td><code>component-field-radius</code></td><td><code>6px</code></td></tr>
+<tr><td></td><td><code>component-field-height</code></td><td><code>65px</code></td></tr>
+</table>
+</main>
+</body>
+</html>

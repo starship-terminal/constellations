@@ -1,0 +1,2007 @@
+{
+  "component": {
+    "footer": {
+      "zoom-h": {
+        "description": "The zoom pill in the footer.",
+        "source": "measured zoom-btn rect.h (raw/components-computed.json)",
+        "type": "dimension",
+        "value": "36px"
+      }
+    },
+    "library": {
+      "width": {
+        "description": "The library panel width.",
+        "source": "measured lib-panel rect.w (raw/components-computed.json)",
+        "type": "dimension",
+        "value": "294px"
+      }
+    },
+    "menu": {
+      "item-h": {
+        "description": "A dropdown menu row.",
+        "source": "measured menu-item rect.h (raw/components-computed.json)",
+        "type": "dimension",
+        "value": "32px"
+      },
+      "item-radius": {
+        "description": "Menu-row corner.",
+        "source": "measured menu-item borderTopLeftRadius (raw/components-computed.json)",
+        "type": "dimension",
+        "value": "6px"
+      }
+    },
+    "mobile": {
+      "actions-h": {
+        "description": "The phone compact-shape-actions bar.",
+        "source": "measured m-shape-actions rect.h (raw/components-computed.json)",
+        "type": "dimension",
+        "value": "43.19px"
+      },
+      "toolbar-h": {
+        "description": "The phone toolbar height.",
+        "source": "measured m-toolbar rect.h (raw/components-computed.json)",
+        "type": "dimension",
+        "value": "44px"
+      }
+    },
+    "props": {
+      "width": {
+        "description": "The left properties sidebar width.",
+        "source": "measured props-panel rect.w (raw/components-computed.json)",
+        "type": "dimension",
+        "value": "195px"
+      }
+    },
+    "toolbar": {
+      "button": {
+        "description": "Square tool button \u2014 36px inside the 44px island.",
+        "source": "measured tool-rect rect.w (raw/components-computed.json)",
+        "type": "dimension",
+        "value": "36px"
+      },
+      "island-h": {
+        "description": "The floating toolbar Island height \u2014 44px of 36px buttons + padding.",
+        "source": "measured tool-island rect.h (raw/components-computed.json)",
+        "type": "dimension",
+        "value": "44px"
+      },
+      "pad": {
+        "description": "Island padding around the buttons.",
+        "source": "measured tool-island paddingTop (raw/components-computed.json)",
+        "type": "dimension",
+        "value": "4px"
+      },
+      "radius": {
+        "description": "The island's outer corner.",
+        "source": "measured tool-island borderTopLeftRadius (raw/components-computed.json)",
+        "type": "dimension",
+        "value": "8px"
+      }
+    },
+    "welcome": {
+      "width": {
+        "description": "The welcome sheet width on the canvas.",
+        "source": "measured welcome-panel rect.w (raw/components-computed.json)",
+        "type": "dimension",
+        "value": "1408px"
+      }
+    }
+  },
+  "core": {
+    "color": {
+      "gray": {
+        "10": {
+          "description": "The neutral ramp (10 near-white to 100 near-black); theme-invariant \u2014 dark rebinds the roles that point into it.",
+          "type": "color",
+          "var": "--color-gray-10"
+        },
+        "100": {
+          "description": "The neutral ramp (10 near-white to 100 near-black); theme-invariant \u2014 dark rebinds the roles that point into it.",
+          "type": "color",
+          "var": "--color-gray-100"
+        },
+        "20": {
+          "description": "The neutral ramp (10 near-white to 100 near-black); theme-invariant \u2014 dark rebinds the roles that point into it.",
+          "type": "color",
+          "var": "--color-gray-20"
+        },
+        "30": {
+          "description": "The neutral ramp (10 near-white to 100 near-black); theme-invariant \u2014 dark rebinds the roles that point into it.",
+          "type": "color",
+          "var": "--color-gray-30"
+        },
+        "40": {
+          "description": "The neutral ramp (10 near-white to 100 near-black); theme-invariant \u2014 dark rebinds the roles that point into it.",
+          "type": "color",
+          "var": "--color-gray-40"
+        },
+        "50": {
+          "description": "The neutral ramp (10 near-white to 100 near-black); theme-invariant \u2014 dark rebinds the roles that point into it.",
+          "type": "color",
+          "var": "--color-gray-50"
+        },
+        "60": {
+          "description": "The neutral ramp (10 near-white to 100 near-black); theme-invariant \u2014 dark rebinds the roles that point into it.",
+          "type": "color",
+          "var": "--color-gray-60"
+        },
+        "70": {
+          "description": "The neutral ramp (10 near-white to 100 near-black); theme-invariant \u2014 dark rebinds the roles that point into it.",
+          "type": "color",
+          "var": "--color-gray-70"
+        },
+        "80": {
+          "description": "The neutral ramp (10 near-white to 100 near-black); theme-invariant \u2014 dark rebinds the roles that point into it.",
+          "type": "color",
+          "var": "--color-gray-80"
+        },
+        "85": {
+          "description": "The neutral ramp (10 near-white to 100 near-black); theme-invariant \u2014 dark rebinds the roles that point into it.",
+          "type": "color",
+          "var": "--color-gray-85"
+        },
+        "90": {
+          "description": "The neutral ramp (10 near-white to 100 near-black); theme-invariant \u2014 dark rebinds the roles that point into it.",
+          "type": "color",
+          "var": "--color-gray-90"
+        }
+      }
+    },
+    "duration": {
+      "control": {
+        "description": "The control-state transition.",
+        "source": "measured tool-rect transitionDuration",
+        "type": "duration",
+        "value": "0s"
+      }
+    },
+    "font": {
+      "family": {
+        "display": {
+          "description": "The hand-drawn face: welcome logo and default canvas handwriting.",
+          "source": "computed fontFamily of welcome-logo default (raw/components-computed.json)",
+          "type": "fontFamily",
+          "value": "Excalifont, Xiaolai"
+        },
+        "mono": {
+          "description": "The monospace face for code elements and keybindings.",
+          "source": "Reconstruction: entered by hand at capture time; no measured element or @font-face in raw/ holds it",
+          "type": "fontFamily",
+          "value": "\"Cascadia\", ui-monospace, monospace"
+        },
+        "ui": {
+          "description": "The declared UI stack \u2014 Assistant over the system sanses.",
+          "source": "css-var --ui-font",
+          "type": "fontFamily",
+          "var": "--ui-font"
+        }
+      },
+      "lineHeight": {
+        "control": {
+          "description": "The 16px/24px input line height (menu rows compute 'normal').",
+          "source": "measured cmdk-input lineHeight (raw/components-computed.json)",
+          "type": "dimension",
+          "value": "24px"
+        }
+      },
+      "size": {
+        "body": {
+          "description": "Menu row text.",
+          "source": "measured menu-item fontSize (raw/components-computed.json)",
+          "type": "dimension",
+          "value": "14px"
+        },
+        "heading": {
+          "description": "The 18px welcome heading.",
+          "source": "measured welcome-heading fontSize (raw/components-computed.json)",
+          "type": "dimension",
+          "value": "18px"
+        },
+        "hint": {
+          "description": "Small UI text (hints, footers).",
+          "source": "measured welcome-panel fontSize (raw/components-computed.json)",
+          "type": "dimension",
+          "value": "16px"
+        },
+        "keyhint": {
+          "description": "Shortcut keycap text.",
+          "source": "measured keycap fontSize (raw/components-computed.json)",
+          "type": "dimension",
+          "value": "14px"
+        },
+        "label": {
+          "description": "The 12px sidebar property labels and small buttons.",
+          "source": "measured prop-label fontSize (raw/components-computed.json)",
+          "type": "dimension",
+          "value": "12px"
+        },
+        "logo": {
+          "description": "The 36px hand-drawn welcome wordmark.",
+          "source": "measured welcome-logo fontSize (raw/components-computed.json)",
+          "type": "dimension",
+          "value": "36px"
+        }
+      },
+      "weight": {
+        "button": {
+          "description": "Control label weight.",
+          "source": "measured export-png fontWeight",
+          "type": "fontWeight",
+          "value": 600
+        }
+      }
+    },
+    "radius": {
+      "control": {
+        "description": "Tool-button corner inside the island.",
+        "source": "measured tool-rect borderRadius (raw/components-computed.json)",
+        "type": "dimension",
+        "value": "8px"
+      },
+      "lg": {
+        "description": "The declared corner radii \u2014 6px controls, 8px cards/islands.",
+        "type": "dimension",
+        "var": "--border-radius-lg"
+      },
+      "md": {
+        "description": "The declared corner radii \u2014 6px controls, 8px cards/islands.",
+        "type": "dimension",
+        "var": "--border-radius-md"
+      }
+    },
+    "shadow": {
+      "chat-msg": {
+        "description": "The collaboration chat bubble shadow.",
+        "source": "css-var --chat-msg-shadow (parsed)",
+        "type": "shadow",
+        "value": [
+          {
+            "blur": "2px",
+            "color": "rgba(0, 0, 0, 0.1)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "spread": "0px"
+          }
+        ]
+      },
+      "island": {
+        "description": "The floating-toolbar card shadow \u2014 hairline + soft lift.",
+        "source": "css-var --shadow-island (parsed)",
+        "type": "shadow",
+        "value": [
+          {
+            "blur": "1px",
+            "color": "rgba(0, 0, 0, 0.17)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "spread": "0px"
+          },
+          {
+            "blur": "3px",
+            "color": "rgba(0, 0, 0, 0.08)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "spread": "0px"
+          },
+          {
+            "blur": "14px",
+            "color": "rgba(0, 0, 0, 0.05)",
+            "offsetX": "0px",
+            "offsetY": "7px",
+            "spread": "0px"
+          }
+        ]
+      },
+      "island-stronger": {
+        "description": "The stronger island variant.",
+        "source": "css-var --shadow-island-stronger (parsed)",
+        "type": "shadow",
+        "value": [
+          {
+            "blur": "1px",
+            "color": "rgba(0, 0, 0, 0.17)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "spread": "0px"
+          },
+          {
+            "blur": "3px",
+            "color": "rgba(0, 0, 0, 0.08)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "spread": "0px"
+          },
+          {
+            "blur": "14px",
+            "color": "rgba(0, 0, 0, 0.18)",
+            "offsetX": "0px",
+            "offsetY": "7px",
+            "spread": "0px"
+          }
+        ]
+      },
+      "library-dropdown": {
+        "description": "The library overflow menu shadow.",
+        "source": "css-var --library-dropdown-shadow (parsed)",
+        "type": "shadow",
+        "value": [
+          {
+            "blur": "6px",
+            "color": "rgba(0, 0, 0, 0.01)",
+            "offsetX": "0px",
+            "offsetY": "15px",
+            "spread": "0px"
+          },
+          {
+            "blur": "5px",
+            "color": "rgba(0, 0, 0, 0.05)",
+            "offsetX": "0px",
+            "offsetY": "8px",
+            "spread": "0px"
+          },
+          {
+            "blur": "4px",
+            "color": "rgba(0, 0, 0, 0.09)",
+            "offsetX": "0px",
+            "offsetY": "4px",
+            "spread": "0px"
+          },
+          {
+            "blur": "2px",
+            "color": "rgba(0, 0, 0, 0.1)",
+            "offsetX": "0px",
+            "offsetY": "1px",
+            "spread": "0px"
+          },
+          {
+            "blur": "0px",
+            "color": "rgba(0, 0, 0, 0.1)",
+            "offsetX": "0px",
+            "offsetY": "0px",
+            "spread": "0px"
+          }
+        ]
+      },
+      "modal": {
+        "description": "The dialog drop shadow \u2014 also the sidebar's.",
+        "source": "css-var --modal-shadow (parsed)",
+        "type": "shadow",
+        "value": [
+          {
+            "blur": "80px",
+            "color": "rgba(0, 0, 0, 0.07)",
+            "offsetX": "0px",
+            "offsetY": "100px",
+            "spread": "0px"
+          },
+          {
+            "blur": "33.4221px",
+            "color": "rgba(0, 0, 0, 0.05)",
+            "offsetX": "0px",
+            "offsetY": "41.7776px",
+            "spread": "0px"
+          },
+          {
+            "blur": "17.869px",
+            "color": "rgba(0, 0, 0, 0.043)",
+            "offsetX": "0px",
+            "offsetY": "22.3363px",
+            "spread": "0px"
+          },
+          {
+            "blur": "10.0172px",
+            "color": "rgba(0, 0, 0, 0.035)",
+            "offsetX": "0px",
+            "offsetY": "12.5216px",
+            "spread": "0px"
+          },
+          {
+            "blur": "5.32008px",
+            "color": "rgba(0, 0, 0, 0.027)",
+            "offsetX": "0px",
+            "offsetY": "6.6501px",
+            "spread": "0px"
+          },
+          {
+            "blur": "2.21381px",
+            "color": "rgba(0, 0, 0, 0.02)",
+            "offsetX": "0px",
+            "offsetY": "2.76726px",
+            "spread": "0px"
+          }
+        ]
+      },
+      "sidebar": {
+        "description": "The library/properties panel elevation.",
+        "source": "css-var --sidebar-shadow (parsed)",
+        "type": "shadow",
+        "value": [
+          {
+            "blur": "80px",
+            "color": "rgba(0, 0, 0, 0.07)",
+            "offsetX": "0px",
+            "offsetY": "100px",
+            "spread": "0px"
+          },
+          {
+            "blur": "33.4221px",
+            "color": "rgba(0, 0, 0, 0.05)",
+            "offsetX": "0px",
+            "offsetY": "41.7776px",
+            "spread": "0px"
+          },
+          {
+            "blur": "17.869px",
+            "color": "rgba(0, 0, 0, 0.043)",
+            "offsetX": "0px",
+            "offsetY": "22.3363px",
+            "spread": "0px"
+          },
+          {
+            "blur": "10.0172px",
+            "color": "rgba(0, 0, 0, 0.035)",
+            "offsetX": "0px",
+            "offsetY": "12.5216px",
+            "spread": "0px"
+          },
+          {
+            "blur": "5.32008px",
+            "color": "rgba(0, 0, 0, 0.027)",
+            "offsetX": "0px",
+            "offsetY": "6.6501px",
+            "spread": "0px"
+          },
+          {
+            "blur": "2.21381px",
+            "color": "rgba(0, 0, 0, 0.02)",
+            "offsetX": "0px",
+            "offsetY": "2.76726px",
+            "spread": "0px"
+          }
+        ]
+      }
+    },
+    "size": {
+      "avatar": {
+        "description": "Collaborator avatar.",
+        "type": "dimension",
+        "var": "--avatar-size"
+      },
+      "button": {
+        "description": "Standard square tool/icon button (32px).",
+        "type": "dimension",
+        "var": "--default-button-size"
+      },
+      "button-lg": {
+        "description": "Large button \u2014 the 36px toolbar controls.",
+        "type": "dimension",
+        "var": "--lg-button-size"
+      },
+      "icon": {
+        "description": "Standard inline icon.",
+        "type": "dimension",
+        "var": "--default-icon-size"
+      },
+      "icon-lg": {
+        "description": "Large toolbar icon.",
+        "type": "dimension",
+        "var": "--lg-icon-size"
+      },
+      "mobile-action": {
+        "description": "Phone-size action button.",
+        "type": "dimension",
+        "var": "--mobile-action-button-size"
+      },
+      "slider-thumb": {
+        "description": "Range-thumb diameter.",
+        "type": "dimension",
+        "var": "--slider-thumb-size"
+      }
+    },
+    "space": {
+      "avatarlist-gap": {
+        "description": "Declared spacing \u2014 the 4px factor and the shell paddings.",
+        "type": "dimension",
+        "var": "--avatarList-gap"
+      },
+      "container-x": {
+        "description": "Declared spacing \u2014 the 4px factor and the shell paddings.",
+        "type": "dimension",
+        "var": "--container-padding-x"
+      },
+      "container-y": {
+        "description": "Declared spacing \u2014 the 4px factor and the shell paddings.",
+        "type": "dimension",
+        "var": "--container-padding-y"
+      },
+      "editor-pad": {
+        "description": "Declared spacing \u2014 the 4px factor and the shell paddings.",
+        "type": "dimension",
+        "var": "--editor-container-padding"
+      },
+      "factor": {
+        "description": "Declared spacing \u2014 the 4px factor and the shell paddings.",
+        "type": "dimension",
+        "var": "--space-factor"
+      },
+      "safe-bottom": {
+        "description": "Declared spacing \u2014 the 4px factor and the shell paddings.",
+        "type": "dimension",
+        "var": "--sab"
+      },
+      "safe-left": {
+        "description": "Declared spacing \u2014 the 4px factor and the shell paddings.",
+        "type": "dimension",
+        "var": "--sal"
+      },
+      "safe-right": {
+        "description": "Declared spacing \u2014 the 4px factor and the shell paddings.",
+        "type": "dimension",
+        "var": "--sar"
+      },
+      "safe-top": {
+        "description": "Declared spacing \u2014 the 4px factor and the shell paddings.",
+        "type": "dimension",
+        "var": "--sat"
+      },
+      "userlist-pad": {
+        "description": "Declared spacing \u2014 the 4px factor and the shell paddings.",
+        "type": "dimension",
+        "var": "--userList-padding"
+      }
+    },
+    "zindex": {
+      "canvas": {
+        "description": "The declared stacking order \u2014 canvas 1, UI layers, menus 110, modal 1000, toast 999999.",
+        "type": "number",
+        "var": "--zIndex-canvas"
+      },
+      "canvasButtons": {
+        "description": "The declared stacking order \u2014 canvas 1, UI layers, menus 110, modal 1000, toast 999999.",
+        "type": "number",
+        "var": "--zIndex-canvasButtons"
+      },
+      "cursorHint": {
+        "description": "The declared stacking order \u2014 canvas 1, UI layers, menus 110, modal 1000, toast 999999.",
+        "type": "number",
+        "var": "--zIndex-cursorHint"
+      },
+      "eyeDropperBackdrop": {
+        "description": "The declared stacking order \u2014 canvas 1, UI layers, menus 110, modal 1000, toast 999999.",
+        "type": "number",
+        "var": "--zIndex-eyeDropperBackdrop"
+      },
+      "eyeDropperPreview": {
+        "description": "The declared stacking order \u2014 canvas 1, UI layers, menus 110, modal 1000, toast 999999.",
+        "type": "number",
+        "var": "--zIndex-eyeDropperPreview"
+      },
+      "fileDropOverlay": {
+        "description": "The declared stacking order \u2014 canvas 1, UI layers, menus 110, modal 1000, toast 999999.",
+        "type": "number",
+        "var": "--zIndex-fileDropOverlay"
+      },
+      "hyperlinkContainer": {
+        "description": "The declared stacking order \u2014 canvas 1, UI layers, menus 110, modal 1000, toast 999999.",
+        "type": "number",
+        "var": "--zIndex-hyperlinkContainer"
+      },
+      "interactiveCanvas": {
+        "description": "The declared stacking order \u2014 canvas 1, UI layers, menus 110, modal 1000, toast 999999.",
+        "type": "number",
+        "var": "--zIndex-interactiveCanvas"
+      },
+      "layerUI": {
+        "description": "The declared stacking order \u2014 canvas 1, UI layers, menus 110, modal 1000, toast 999999.",
+        "type": "number",
+        "var": "--zIndex-layerUI"
+      },
+      "modal": {
+        "description": "The declared stacking order \u2014 canvas 1, UI layers, menus 110, modal 1000, toast 999999.",
+        "type": "number",
+        "var": "--zIndex-modal"
+      },
+      "popup": {
+        "description": "The declared stacking order \u2014 canvas 1, UI layers, menus 110, modal 1000, toast 999999.",
+        "type": "number",
+        "var": "--zIndex-popup"
+      },
+      "svgLayer": {
+        "description": "The declared stacking order \u2014 canvas 1, UI layers, menus 110, modal 1000, toast 999999.",
+        "type": "number",
+        "var": "--zIndex-svgLayer"
+      },
+      "toast": {
+        "description": "The declared stacking order \u2014 canvas 1, UI layers, menus 110, modal 1000, toast 999999.",
+        "type": "number",
+        "var": "--zIndex-toast"
+      },
+      "ui-bottom": {
+        "description": "The declared stacking order \u2014 canvas 1, UI layers, menus 110, modal 1000, toast 999999.",
+        "type": "number",
+        "var": "--zIndex-ui-bottom"
+      },
+      "ui-context-menu": {
+        "description": "The declared stacking order \u2014 canvas 1, UI layers, menus 110, modal 1000, toast 999999.",
+        "type": "number",
+        "var": "--zIndex-ui-context-menu"
+      },
+      "ui-library": {
+        "description": "The declared stacking order \u2014 canvas 1, UI layers, menus 110, modal 1000, toast 999999.",
+        "type": "number",
+        "var": "--zIndex-ui-library"
+      },
+      "ui-main-menu": {
+        "description": "The declared stacking order \u2014 canvas 1, UI layers, menus 110, modal 1000, toast 999999.",
+        "type": "number",
+        "var": "--zIndex-ui-main-menu"
+      },
+      "ui-styles-popup": {
+        "description": "The declared stacking order \u2014 canvas 1, UI layers, menus 110, modal 1000, toast 999999.",
+        "type": "number",
+        "var": "--zIndex-ui-styles-popup"
+      },
+      "ui-top": {
+        "description": "The declared stacking order \u2014 canvas 1, UI layers, menus 110, modal 1000, toast 999999.",
+        "type": "number",
+        "var": "--zIndex-ui-top"
+      },
+      "viewportStatusFrame": {
+        "description": "The declared stacking order \u2014 canvas 1, UI layers, menus 110, modal 1000, toast 999999.",
+        "type": "number",
+        "var": "--zIndex-viewportStatusFrame"
+      },
+      "wysiwyg": {
+        "description": "The declared stacking order \u2014 canvas 1, UI layers, menus 110, modal 1000, toast 999999.",
+        "type": "number",
+        "var": "--zIndex-wysiwyg"
+      }
+    }
+  },
+  "dark": {
+    "color": {
+      "badge": {
+        "bg": {
+          "description": "The green badge pill fill.",
+          "type": "color",
+          "var": "--background-color-badge"
+        },
+        "text": {
+          "description": "Badge ink.",
+          "type": "color",
+          "var": "--color-badge"
+        }
+      },
+      "border": {
+        "default": {
+          "description": "The default control border (declared = surface-high).",
+          "source": "css-var --default-border-color (declared as var(--color-surface-high) and kept as an alias)",
+          "type": "color",
+          "value": "{color.surface.high}"
+        },
+        "dialog": {
+          "description": "Dialog edge.",
+          "type": "color",
+          "var": "--dialog-border-color"
+        },
+        "input": {
+          "description": "Field border.",
+          "type": "color",
+          "var": "--input-border-color"
+        },
+        "list": {
+          "description": "List row hairline.",
+          "type": "color",
+          "var": "--list-border-color"
+        },
+        "outline": {
+          "description": "The stronger outline.",
+          "type": "color",
+          "var": "--color-border-outline"
+        },
+        "outline-variant": {
+          "description": "The softer outline.",
+          "type": "color",
+          "var": "--color-border-outline-variant"
+        },
+        "subtle": {
+          "description": "The faint hairline (gray-20 light / gray-80 dark).",
+          "type": "color",
+          "var": "--color-outline"
+        }
+      },
+      "brand": {
+        "active": {
+          "type": "color",
+          "var": "--color-brand-active"
+        },
+        "contrast-offset": {
+          "type": "color",
+          "var": "--color-primary-contrast-offset"
+        },
+        "darker": {
+          "type": "color",
+          "var": "--color-primary-darker"
+        },
+        "darkest": {
+          "type": "color",
+          "var": "--color-primary-darkest"
+        },
+        "default": {
+          "description": "The signature violet \u2014 accent, selection, active radio fills.",
+          "type": "color",
+          "var": "--color-primary"
+        },
+        "hover": {
+          "type": "color",
+          "var": "--color-brand-hover"
+        },
+        "light": {
+          "description": "The soft violet wash behind selected swatches.",
+          "type": "color",
+          "var": "--color-primary-light"
+        },
+        "light-darker": {
+          "type": "color",
+          "var": "--color-primary-light-darker"
+        },
+        "on-primary-container": {
+          "description": "Ink on the primary-container fill.",
+          "type": "color",
+          "var": "--color-on-primary-container"
+        },
+        "primary-container": {
+          "description": "The primary container fill.",
+          "type": "color",
+          "var": "--color-surface-primary-container"
+        },
+        "promo": {
+          "description": "The Excalidraw+ promo accent (declared = primary).",
+          "source": "css-var --color-promo (declared as var(--color-primary) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.default}"
+        },
+        "selection": {
+          "description": "Canvas selection / highlight accent.",
+          "type": "color",
+          "var": "--color-selection"
+        }
+      },
+      "canvas": {
+        "default-bg": {
+          "description": "The canvas default background \u2014 white / near-black.",
+          "type": "color",
+          "var": "--default-bg-color"
+        }
+      },
+      "danger": {
+        "background": {
+          "description": "The pink danger wash.",
+          "type": "color",
+          "var": "--color-danger-background"
+        },
+        "color": {
+          "description": "Danger text.",
+          "type": "color",
+          "var": "--color-danger-color"
+        },
+        "dark": {
+          "type": "color",
+          "var": "--color-danger-dark"
+        },
+        "darker": {
+          "type": "color",
+          "var": "--color-danger-darker"
+        },
+        "darkest": {
+          "type": "color",
+          "var": "--color-danger-darkest"
+        },
+        "default": {
+          "description": "The red danger accent.",
+          "type": "color",
+          "var": "--color-danger"
+        },
+        "icon-background": {
+          "type": "color",
+          "var": "--color-danger-icon-background"
+        },
+        "icon-color": {
+          "type": "color",
+          "var": "--color-danger-icon-color"
+        }
+      },
+      "disabled": {
+        "description": "Disabled ink/icon (gray-40 light / gray-70 dark).",
+        "type": "color",
+        "var": "--color-disabled"
+      },
+      "focus": {
+        "highlight": {
+          "description": "The focus-highlight wash \u2014 sky light / blue dark.",
+          "type": "color",
+          "var": "--focus-highlight-color"
+        }
+      },
+      "icon": {
+        "fill": {
+          "description": "Icon ink (declared = on-surface).",
+          "source": "css-var --icon-fill-color (declared as var(--color-on-surface) and kept as an alias)",
+          "type": "color",
+          "value": "{color.text.primary}"
+        },
+        "green": {
+          "description": "The success-green icon fill.",
+          "type": "color",
+          "var": "--icon-green-fill-color"
+        },
+        "white": {
+          "description": "The 'white' icon \u2014 inverts to near-black in dark.",
+          "type": "color",
+          "var": "--color-icon-white"
+        }
+      },
+      "keybinding": {
+        "description": "The shortcut-hint gray (gray-40 light / gray-60 dark).",
+        "type": "color",
+        "var": "--keybinding-color"
+      },
+      "link": {
+        "active": {
+          "type": "color",
+          "var": "--link-color-active"
+        },
+        "default": {
+          "description": "Inline link blue.",
+          "type": "color",
+          "var": "--link-color"
+        },
+        "hover": {
+          "type": "color",
+          "var": "--link-color-hover"
+        }
+      },
+      "logo": {
+        "icon": {
+          "description": "The logo glyph (declared = primary).",
+          "source": "css-var --color-logo-icon (declared as var(--color-primary) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.default}"
+        },
+        "text": {
+          "description": "The logo wordmark ink.",
+          "type": "color",
+          "var": "--color-logo-text"
+        }
+      },
+      "mobile-action": {
+        "bg": {
+          "description": "Translucent phone action fill.",
+          "type": "color",
+          "var": "--mobile-action-button-bg"
+        }
+      },
+      "muted": {
+        "background": {
+          "type": "color",
+          "var": "--color-muted-background"
+        },
+        "background-darker": {
+          "type": "color",
+          "var": "--color-muted-background-darker"
+        },
+        "darker": {
+          "type": "color",
+          "var": "--color-muted-darker"
+        },
+        "darkest": {
+          "type": "color",
+          "var": "--color-muted-darkest"
+        },
+        "default": {
+          "description": "Muted gray fill \u2014 gray-30 light / gray-80 dark.",
+          "type": "color",
+          "var": "--color-muted"
+        }
+      },
+      "overlay": {
+        "bg": {
+          "description": "The modal scrim \u2014 35% ink light, 65% dark.",
+          "type": "color",
+          "var": "--overlay-bg-color"
+        }
+      },
+      "popup": {
+        "bg": {
+          "description": "Popover surface (= island bg).",
+          "type": "color",
+          "var": "--popup-bg-color"
+        },
+        "bg-secondary": {
+          "description": "Secondary popover surface.",
+          "type": "color",
+          "var": "--popup-secondary-bg-color"
+        },
+        "text": {
+          "type": "color",
+          "var": "--popup-text-color"
+        },
+        "text-inverted": {
+          "type": "color",
+          "var": "--popup-text-inverted-color"
+        }
+      },
+      "select": {
+        "highlight": {
+          "description": "The blue selection highlight.",
+          "type": "color",
+          "var": "--select-highlight-color"
+        }
+      },
+      "slider": {
+        "thumb": {
+          "description": "The range thumb (gray-80 both themes).",
+          "type": "color",
+          "var": "--color-slider-thumb"
+        },
+        "track": {
+          "description": "The range track.",
+          "type": "color",
+          "var": "--color-slider-track"
+        }
+      },
+      "success": {
+        "contrast": {
+          "type": "color",
+          "var": "--color-success-contrast"
+        },
+        "contrast-active": {
+          "type": "color",
+          "var": "--color-success-contrast-active"
+        },
+        "contrast-hover": {
+          "type": "color",
+          "var": "--color-success-contrast-hover"
+        },
+        "darker": {
+          "type": "color",
+          "var": "--color-success-darker"
+        },
+        "darkest": {
+          "type": "color",
+          "var": "--color-success-darkest"
+        },
+        "default": {
+          "description": "The green success fill.",
+          "type": "color",
+          "var": "--color-success"
+        },
+        "text": {
+          "type": "color",
+          "var": "--color-success-text"
+        }
+      },
+      "surface": {
+        "high": {
+          "description": "Hover/active fills, hairline borders.",
+          "type": "color",
+          "var": "--color-surface-high"
+        },
+        "low": {
+          "description": "Field background (ExcTextField, RadioGroup off).",
+          "type": "color",
+          "var": "--color-surface-low"
+        },
+        "lowest": {
+          "description": "The deepest surface \u2014 the page ground and on-brand ink.",
+          "type": "color",
+          "var": "--color-surface-lowest"
+        },
+        "mid": {
+          "description": "The mid-step surface.",
+          "type": "color",
+          "var": "--color-surface-mid"
+        }
+      },
+      "text": {
+        "primary": {
+          "description": "Primary ink \u2014 also --text-primary-color and --icon-fill-color.",
+          "type": "color",
+          "var": "--color-on-surface"
+        },
+        "warning": {
+          "description": "Ink on the warning fill.",
+          "type": "color",
+          "var": "--color-text-warning"
+        }
+      },
+      "warning": {
+        "color": {
+          "description": "Ink on warning (primary text light / gray-80 dark).",
+          "type": "color",
+          "var": "--color-warning-color"
+        },
+        "dark": {
+          "type": "color",
+          "var": "--color-warning-dark"
+        },
+        "darker": {
+          "type": "color",
+          "var": "--color-warning-darker"
+        },
+        "darkest": {
+          "type": "color",
+          "var": "--color-warning-darkest"
+        },
+        "default": {
+          "description": "The amber warning fill.",
+          "type": "color",
+          "var": "--color-warning"
+        },
+        "icon-background": {
+          "type": "color",
+          "var": "--color-warning-icon-background"
+        },
+        "icon-color": {
+          "type": "color",
+          "var": "--color-warning-icon-color"
+        }
+      }
+    },
+    "control": {
+      "avatar": {
+        "border": {
+          "description": "Avatar ring.",
+          "type": "color",
+          "var": "--avatar-border-color"
+        }
+      },
+      "button": {
+        "active-bg": {
+          "description": "Button pressed fill.",
+          "source": "css-var --button-active-bg (declared as var(--color-surface-high) and kept as an alias)",
+          "type": "color",
+          "value": "{color.surface.high}"
+        },
+        "active-border": {
+          "description": "Pressed button edge (= brand-active).",
+          "source": "css-var --button-active-border (declared as var(--color-brand-active) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.active}"
+        },
+        "destructive-bg": {
+          "description": "Destructive hover wash.",
+          "type": "color",
+          "var": "--button-destructive-bg-color"
+        },
+        "destructive-color": {
+          "description": "Destructive ink.",
+          "type": "color",
+          "var": "--button-destructive-color"
+        },
+        "gray-1": {
+          "description": "Neutral button step 1 \u2014 flips dark in dark theme.",
+          "type": "color",
+          "var": "--button-gray-1"
+        },
+        "gray-2": {
+          "type": "color",
+          "var": "--button-gray-2"
+        },
+        "gray-3": {
+          "type": "color",
+          "var": "--button-gray-3"
+        },
+        "hover-bg": {
+          "description": "Button hover fill (declared = surface-high).",
+          "source": "css-var --button-hover-bg (declared as var(--color-surface-high) and kept as an alias)",
+          "type": "color",
+          "value": "{color.surface.high}"
+        },
+        "special-active-bg": {
+          "description": "The green 'special' active fill (e.g. theme choice).",
+          "type": "color",
+          "var": "--button-special-active-bg-color"
+        }
+      },
+      "export": {
+        "preview-border": {
+          "description": "The export preview pane edge.",
+          "type": "color",
+          "var": "--ImageExportModal-preview-border"
+        }
+      },
+      "field": {
+        "bg": {
+          "description": "ExcTextField fill (= surface-low).",
+          "source": "css-var --ExcTextField--background (declared as var(--color-surface-low) and kept as an alias)",
+          "type": "color",
+          "value": "{color.surface.low}"
+        },
+        "border": {
+          "description": "Field border.",
+          "type": "color",
+          "var": "--ExcTextField--border"
+        },
+        "border-active": {
+          "description": "Field focus border (= brand-active).",
+          "source": "css-var --ExcTextField--border-active (declared as var(--color-brand-active) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.active}"
+        },
+        "border-hover": {
+          "description": "Field hover border (= brand-hover).",
+          "source": "css-var --ExcTextField--border-hover (declared as var(--color-brand-hover) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.hover}"
+        },
+        "label": {
+          "description": "Field label ink.",
+          "source": "css-var --ExcTextField--label-color (declared as var(--color-on-surface) and kept as an alias)",
+          "type": "color",
+          "value": "{color.text.primary}"
+        },
+        "placeholder": {
+          "description": "Placeholder gray.",
+          "type": "color",
+          "var": "--ExcTextField--placeholder"
+        },
+        "readonly-bg": {
+          "description": "Read-only field fill.",
+          "source": "css-var --ExcTextField--readonly--background (declared as var(--color-surface-high) and kept as an alias)",
+          "type": "color",
+          "value": "{color.surface.high}"
+        },
+        "readonly-border": {
+          "type": "color",
+          "var": "--ExcTextField--readonly--border"
+        },
+        "readonly-text": {
+          "source": "css-var --ExcTextField--readonly--color (declared as var(--color-on-surface) and kept as an alias)",
+          "type": "color",
+          "value": "{color.text.primary}"
+        },
+        "text": {
+          "description": "Field ink (= on-surface).",
+          "source": "css-var --ExcTextField--color (declared as var(--color-on-surface) and kept as an alias)",
+          "type": "color",
+          "value": "{color.text.primary}"
+        }
+      },
+      "input": {
+        "bg": {
+          "description": "Native input fill.",
+          "type": "color",
+          "var": "--input-bg-color"
+        },
+        "hover-bg": {
+          "type": "color",
+          "var": "--input-hover-bg-color"
+        },
+        "label": {
+          "type": "color",
+          "var": "--input-label-color"
+        }
+      },
+      "island": {
+        "bg": {
+          "description": "The floating-toolbar/popover card surface.",
+          "type": "color",
+          "var": "--island-bg-color"
+        },
+        "bg-alt": {
+          "description": "The alternate island surface.",
+          "type": "color",
+          "var": "--island-bg-color-alt"
+        }
+      },
+      "radio": {
+        "bg": {
+          "description": "Segmented-control track (= island bg).",
+          "type": "color",
+          "var": "--RadioGroup-background"
+        },
+        "border": {
+          "description": "Track hairline (= surface-high).",
+          "type": "color",
+          "var": "--RadioGroup-border"
+        },
+        "choice-off-bg": {
+          "type": "color",
+          "var": "--RadioGroup-choice-background-off"
+        },
+        "choice-off-bg-active": {
+          "source": "css-var --RadioGroup-choice-background-off-active (declared as var(--color-surface-high) and kept as an alias)",
+          "type": "color",
+          "value": "{color.surface.high}"
+        },
+        "choice-off-text": {
+          "description": "Unselected segment ink (= primary).",
+          "source": "css-var --RadioGroup-choice-color-off (declared as var(--color-primary) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.default}"
+        },
+        "choice-off-text-hover": {
+          "source": "css-var --RadioGroup-choice-color-off-hover (declared as var(--color-brand-hover) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.hover}"
+        },
+        "choice-on-bg": {
+          "description": "Selected segment fill (= primary).",
+          "type": "color",
+          "var": "--RadioGroup-choice-background-on"
+        },
+        "choice-on-bg-active": {
+          "source": "css-var --RadioGroup-choice-background-on-active (declared as var(--color-brand-active) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.active}"
+        },
+        "choice-on-bg-hover": {
+          "source": "css-var --RadioGroup-choice-background-on-hover (declared as var(--color-brand-hover) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.hover}"
+        },
+        "choice-on-text": {
+          "description": "Ink on the selected segment.",
+          "type": "color",
+          "var": "--RadioGroup-choice-color-on"
+        }
+      },
+      "scrollbar": {
+        "thumb": {
+          "description": "Scrollbar thumb (light declares it as button-gray-2; dark declares its own value).",
+          "type": "color",
+          "var": "--scrollbar-thumb"
+        },
+        "thumb-hover": {
+          "type": "color",
+          "var": "--scrollbar-thumb-hover"
+        }
+      },
+      "sidebar": {
+        "bg": {
+          "description": "Panel surface (= island bg).",
+          "type": "color",
+          "var": "--sidebar-bg-color"
+        },
+        "border": {
+          "description": "Panel hairline (= surface-high).",
+          "source": "css-var --sidebar-border-color (declared as var(--color-surface-high) and kept as an alias)",
+          "type": "color",
+          "value": "{color.surface.high}"
+        }
+      },
+      "switch": {
+        "active": {
+          "source": "css-var --Switch-active-background (declared as var(--color-brand-active) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.active}"
+        },
+        "disabled": {
+          "source": "css-var --Switch-disabled-color (declared as var(--color-border-outline) and kept as an alias)",
+          "type": "color",
+          "value": "{color.border.outline}"
+        },
+        "disabled-border": {
+          "source": "css-var --Switch-disabled-border (declared as var(--color-border-outline-variant) and kept as an alias)",
+          "type": "color",
+          "value": "{color.border.outline-variant}"
+        },
+        "disabled-toggled": {
+          "source": "css-var --Switch-disabled-toggled-background (declared as var(--color-border-outline-variant) and kept as an alias)",
+          "type": "color",
+          "value": "{color.border.outline-variant}"
+        },
+        "hover": {
+          "source": "css-var --Switch-hover-background (declared as var(--color-brand-hover) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.hover}"
+        },
+        "thumb": {
+          "description": "Switch thumb (= on-surface).",
+          "source": "css-var --Switch-thumb-background (declared as var(--color-on-surface) and kept as an alias)",
+          "type": "color",
+          "value": "{color.text.primary}"
+        },
+        "track": {
+          "description": "Switch track (= island bg).",
+          "type": "color",
+          "var": "--Switch-track-background"
+        }
+      },
+      "userlist": {
+        "collaborators-border": {
+          "type": "color",
+          "var": "--userlist-collaborators-border-color"
+        },
+        "hint-bg": {
+          "description": "Collaborator list hint surface.",
+          "type": "color",
+          "var": "--userlist-hint-bg-color"
+        },
+        "hint-heading": {
+          "type": "color",
+          "var": "--userlist-hint-heading-color"
+        },
+        "hint-text": {
+          "type": "color",
+          "var": "--userlist-hint-text-color"
+        }
+      }
+    }
+  },
+  "light": {
+    "color": {
+      "badge": {
+        "bg": {
+          "description": "The green badge pill fill.",
+          "type": "color",
+          "var": "--background-color-badge"
+        },
+        "text": {
+          "description": "Badge ink.",
+          "type": "color",
+          "var": "--color-badge"
+        }
+      },
+      "border": {
+        "default": {
+          "description": "The default control border (declared = surface-high).",
+          "source": "css-var --default-border-color (declared as var(--color-surface-high) and kept as an alias)",
+          "type": "color",
+          "value": "{color.surface.high}"
+        },
+        "dialog": {
+          "description": "Dialog edge.",
+          "type": "color",
+          "var": "--dialog-border-color"
+        },
+        "input": {
+          "description": "Field border.",
+          "type": "color",
+          "var": "--input-border-color"
+        },
+        "list": {
+          "description": "List row hairline.",
+          "type": "color",
+          "var": "--list-border-color"
+        },
+        "outline": {
+          "description": "The stronger outline.",
+          "type": "color",
+          "var": "--color-border-outline"
+        },
+        "outline-variant": {
+          "description": "The softer outline.",
+          "type": "color",
+          "var": "--color-border-outline-variant"
+        },
+        "subtle": {
+          "description": "The faint hairline (gray-20 light / gray-80 dark).",
+          "type": "color",
+          "var": "--color-outline"
+        }
+      },
+      "brand": {
+        "active": {
+          "type": "color",
+          "var": "--color-brand-active"
+        },
+        "contrast-offset": {
+          "type": "color",
+          "var": "--color-primary-contrast-offset"
+        },
+        "darker": {
+          "type": "color",
+          "var": "--color-primary-darker"
+        },
+        "darkest": {
+          "type": "color",
+          "var": "--color-primary-darkest"
+        },
+        "default": {
+          "description": "The signature violet \u2014 accent, selection, active radio fills.",
+          "type": "color",
+          "var": "--color-primary"
+        },
+        "hover": {
+          "type": "color",
+          "var": "--color-brand-hover"
+        },
+        "light": {
+          "description": "The soft violet wash behind selected swatches.",
+          "type": "color",
+          "var": "--color-primary-light"
+        },
+        "light-darker": {
+          "type": "color",
+          "var": "--color-primary-light-darker"
+        },
+        "on-primary-container": {
+          "description": "Ink on the primary-container fill.",
+          "type": "color",
+          "var": "--color-on-primary-container"
+        },
+        "primary-container": {
+          "description": "The primary container fill.",
+          "type": "color",
+          "var": "--color-surface-primary-container"
+        },
+        "promo": {
+          "description": "The Excalidraw+ promo accent (declared = primary).",
+          "source": "css-var --color-promo (declared as var(--color-primary) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.default}"
+        },
+        "selection": {
+          "description": "Canvas selection / highlight accent.",
+          "type": "color",
+          "var": "--color-selection"
+        }
+      },
+      "canvas": {
+        "default-bg": {
+          "description": "The canvas default background \u2014 white / near-black.",
+          "type": "color",
+          "var": "--default-bg-color"
+        }
+      },
+      "danger": {
+        "background": {
+          "description": "The pink danger wash.",
+          "type": "color",
+          "var": "--color-danger-background"
+        },
+        "color": {
+          "description": "Danger text.",
+          "type": "color",
+          "var": "--color-danger-color"
+        },
+        "dark": {
+          "type": "color",
+          "var": "--color-danger-dark"
+        },
+        "darker": {
+          "type": "color",
+          "var": "--color-danger-darker"
+        },
+        "darkest": {
+          "type": "color",
+          "var": "--color-danger-darkest"
+        },
+        "default": {
+          "description": "The red danger accent.",
+          "type": "color",
+          "var": "--color-danger"
+        },
+        "icon-background": {
+          "type": "color",
+          "var": "--color-danger-icon-background"
+        },
+        "icon-color": {
+          "type": "color",
+          "var": "--color-danger-icon-color"
+        }
+      },
+      "disabled": {
+        "description": "Disabled ink/icon (gray-40 light / gray-70 dark).",
+        "type": "color",
+        "var": "--color-disabled"
+      },
+      "focus": {
+        "highlight": {
+          "description": "The focus-highlight wash \u2014 sky light / blue dark.",
+          "type": "color",
+          "var": "--focus-highlight-color"
+        }
+      },
+      "icon": {
+        "fill": {
+          "description": "Icon ink (declared = on-surface).",
+          "source": "css-var --icon-fill-color (declared as var(--color-on-surface) and kept as an alias)",
+          "type": "color",
+          "value": "{color.text.primary}"
+        },
+        "green": {
+          "description": "The success-green icon fill.",
+          "type": "color",
+          "var": "--icon-green-fill-color"
+        },
+        "white": {
+          "description": "The 'white' icon \u2014 inverts to near-black in dark.",
+          "type": "color",
+          "var": "--color-icon-white"
+        }
+      },
+      "keybinding": {
+        "description": "The shortcut-hint gray (gray-40 light / gray-60 dark).",
+        "type": "color",
+        "var": "--keybinding-color"
+      },
+      "link": {
+        "active": {
+          "type": "color",
+          "var": "--link-color-active"
+        },
+        "default": {
+          "description": "Inline link blue.",
+          "type": "color",
+          "var": "--link-color"
+        },
+        "hover": {
+          "type": "color",
+          "var": "--link-color-hover"
+        }
+      },
+      "logo": {
+        "icon": {
+          "description": "The logo glyph (declared = primary).",
+          "source": "css-var --color-logo-icon (declared as var(--color-primary) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.default}"
+        },
+        "text": {
+          "description": "The logo wordmark ink.",
+          "type": "color",
+          "var": "--color-logo-text"
+        }
+      },
+      "mobile-action": {
+        "bg": {
+          "description": "Translucent phone action fill.",
+          "type": "color",
+          "var": "--mobile-action-button-bg"
+        }
+      },
+      "muted": {
+        "background": {
+          "type": "color",
+          "var": "--color-muted-background"
+        },
+        "background-darker": {
+          "type": "color",
+          "var": "--color-muted-background-darker"
+        },
+        "darker": {
+          "type": "color",
+          "var": "--color-muted-darker"
+        },
+        "darkest": {
+          "type": "color",
+          "var": "--color-muted-darkest"
+        },
+        "default": {
+          "description": "Muted gray fill \u2014 gray-30 light / gray-80 dark.",
+          "type": "color",
+          "var": "--color-muted"
+        }
+      },
+      "overlay": {
+        "bg": {
+          "description": "The modal scrim \u2014 35% ink light, 65% dark.",
+          "type": "color",
+          "var": "--overlay-bg-color"
+        }
+      },
+      "popup": {
+        "bg": {
+          "description": "Popover surface (= island bg).",
+          "type": "color",
+          "var": "--popup-bg-color"
+        },
+        "bg-secondary": {
+          "description": "Secondary popover surface.",
+          "type": "color",
+          "var": "--popup-secondary-bg-color"
+        },
+        "text": {
+          "type": "color",
+          "var": "--popup-text-color"
+        },
+        "text-inverted": {
+          "type": "color",
+          "var": "--popup-text-inverted-color"
+        }
+      },
+      "select": {
+        "highlight": {
+          "description": "The blue selection highlight.",
+          "type": "color",
+          "var": "--select-highlight-color"
+        }
+      },
+      "slider": {
+        "thumb": {
+          "description": "The range thumb (gray-80 both themes).",
+          "type": "color",
+          "var": "--color-slider-thumb"
+        },
+        "track": {
+          "description": "The range track.",
+          "type": "color",
+          "var": "--color-slider-track"
+        }
+      },
+      "success": {
+        "contrast": {
+          "type": "color",
+          "var": "--color-success-contrast"
+        },
+        "contrast-active": {
+          "type": "color",
+          "var": "--color-success-contrast-active"
+        },
+        "contrast-hover": {
+          "type": "color",
+          "var": "--color-success-contrast-hover"
+        },
+        "darker": {
+          "type": "color",
+          "var": "--color-success-darker"
+        },
+        "darkest": {
+          "type": "color",
+          "var": "--color-success-darkest"
+        },
+        "default": {
+          "description": "The green success fill.",
+          "type": "color",
+          "var": "--color-success"
+        },
+        "text": {
+          "type": "color",
+          "var": "--color-success-text"
+        }
+      },
+      "surface": {
+        "high": {
+          "description": "Hover/active fills, hairline borders.",
+          "type": "color",
+          "var": "--color-surface-high"
+        },
+        "low": {
+          "description": "Field background (ExcTextField, RadioGroup off).",
+          "type": "color",
+          "var": "--color-surface-low"
+        },
+        "lowest": {
+          "description": "The deepest surface \u2014 the page ground and on-brand ink.",
+          "type": "color",
+          "var": "--color-surface-lowest"
+        },
+        "mid": {
+          "description": "The mid-step surface.",
+          "type": "color",
+          "var": "--color-surface-mid"
+        }
+      },
+      "text": {
+        "primary": {
+          "description": "Primary ink \u2014 also --text-primary-color and --icon-fill-color.",
+          "type": "color",
+          "var": "--color-on-surface"
+        },
+        "warning": {
+          "description": "Ink on the warning fill.",
+          "type": "color",
+          "var": "--color-text-warning"
+        }
+      },
+      "warning": {
+        "color": {
+          "description": "Ink on warning (primary text light / gray-80 dark).",
+          "type": "color",
+          "var": "--color-warning-color"
+        },
+        "dark": {
+          "type": "color",
+          "var": "--color-warning-dark"
+        },
+        "darker": {
+          "type": "color",
+          "var": "--color-warning-darker"
+        },
+        "darkest": {
+          "type": "color",
+          "var": "--color-warning-darkest"
+        },
+        "default": {
+          "description": "The amber warning fill.",
+          "type": "color",
+          "var": "--color-warning"
+        },
+        "icon-background": {
+          "type": "color",
+          "var": "--color-warning-icon-background"
+        },
+        "icon-color": {
+          "type": "color",
+          "var": "--color-warning-icon-color"
+        }
+      }
+    },
+    "control": {
+      "avatar": {
+        "border": {
+          "description": "Avatar ring.",
+          "type": "color",
+          "var": "--avatar-border-color"
+        }
+      },
+      "button": {
+        "active-bg": {
+          "description": "Button pressed fill.",
+          "source": "css-var --button-active-bg (declared as var(--color-surface-high) and kept as an alias)",
+          "type": "color",
+          "value": "{color.surface.high}"
+        },
+        "active-border": {
+          "description": "Pressed button edge (= brand-active).",
+          "source": "css-var --button-active-border (declared as var(--color-brand-active) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.active}"
+        },
+        "destructive-bg": {
+          "description": "Destructive hover wash.",
+          "type": "color",
+          "var": "--button-destructive-bg-color"
+        },
+        "destructive-color": {
+          "description": "Destructive ink.",
+          "type": "color",
+          "var": "--button-destructive-color"
+        },
+        "gray-1": {
+          "description": "Neutral button step 1 \u2014 flips dark in dark theme.",
+          "type": "color",
+          "var": "--button-gray-1"
+        },
+        "gray-2": {
+          "type": "color",
+          "var": "--button-gray-2"
+        },
+        "gray-3": {
+          "type": "color",
+          "var": "--button-gray-3"
+        },
+        "hover-bg": {
+          "description": "Button hover fill (declared = surface-high).",
+          "source": "css-var --button-hover-bg (declared as var(--color-surface-high) and kept as an alias)",
+          "type": "color",
+          "value": "{color.surface.high}"
+        },
+        "special-active-bg": {
+          "description": "The green 'special' active fill (e.g. theme choice).",
+          "type": "color",
+          "var": "--button-special-active-bg-color"
+        }
+      },
+      "export": {
+        "preview-border": {
+          "description": "The export preview pane edge.",
+          "type": "color",
+          "var": "--ImageExportModal-preview-border"
+        }
+      },
+      "field": {
+        "bg": {
+          "description": "ExcTextField fill (= surface-low).",
+          "source": "css-var --ExcTextField--background (declared as var(--color-surface-low) and kept as an alias)",
+          "type": "color",
+          "value": "{color.surface.low}"
+        },
+        "border": {
+          "description": "Field border.",
+          "type": "color",
+          "var": "--ExcTextField--border"
+        },
+        "border-active": {
+          "description": "Field focus border (= brand-active).",
+          "source": "css-var --ExcTextField--border-active (declared as var(--color-brand-active) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.active}"
+        },
+        "border-hover": {
+          "description": "Field hover border (= brand-hover).",
+          "source": "css-var --ExcTextField--border-hover (declared as var(--color-brand-hover) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.hover}"
+        },
+        "label": {
+          "description": "Field label ink.",
+          "source": "css-var --ExcTextField--label-color (declared as var(--color-on-surface) and kept as an alias)",
+          "type": "color",
+          "value": "{color.text.primary}"
+        },
+        "placeholder": {
+          "description": "Placeholder gray.",
+          "type": "color",
+          "var": "--ExcTextField--placeholder"
+        },
+        "readonly-bg": {
+          "description": "Read-only field fill.",
+          "source": "css-var --ExcTextField--readonly--background (declared as var(--color-surface-high) and kept as an alias)",
+          "type": "color",
+          "value": "{color.surface.high}"
+        },
+        "readonly-border": {
+          "type": "color",
+          "var": "--ExcTextField--readonly--border"
+        },
+        "readonly-text": {
+          "source": "css-var --ExcTextField--readonly--color (declared as var(--color-on-surface) and kept as an alias)",
+          "type": "color",
+          "value": "{color.text.primary}"
+        },
+        "text": {
+          "description": "Field ink (= on-surface).",
+          "source": "css-var --ExcTextField--color (declared as var(--color-on-surface) and kept as an alias)",
+          "type": "color",
+          "value": "{color.text.primary}"
+        }
+      },
+      "input": {
+        "bg": {
+          "description": "Native input fill.",
+          "type": "color",
+          "var": "--input-bg-color"
+        },
+        "hover-bg": {
+          "type": "color",
+          "var": "--input-hover-bg-color"
+        },
+        "label": {
+          "type": "color",
+          "var": "--input-label-color"
+        }
+      },
+      "island": {
+        "bg": {
+          "description": "The floating-toolbar/popover card surface.",
+          "type": "color",
+          "var": "--island-bg-color"
+        },
+        "bg-alt": {
+          "description": "The alternate island surface.",
+          "type": "color",
+          "var": "--island-bg-color-alt"
+        }
+      },
+      "radio": {
+        "bg": {
+          "description": "Segmented-control track (= island bg).",
+          "type": "color",
+          "var": "--RadioGroup-background"
+        },
+        "border": {
+          "description": "Track hairline (= surface-high).",
+          "type": "color",
+          "var": "--RadioGroup-border"
+        },
+        "choice-off-bg": {
+          "type": "color",
+          "var": "--RadioGroup-choice-background-off"
+        },
+        "choice-off-bg-active": {
+          "source": "css-var --RadioGroup-choice-background-off-active (declared as var(--color-surface-high) and kept as an alias)",
+          "type": "color",
+          "value": "{color.surface.high}"
+        },
+        "choice-off-text": {
+          "description": "Unselected segment ink (= primary).",
+          "source": "css-var --RadioGroup-choice-color-off (declared as var(--color-primary) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.default}"
+        },
+        "choice-off-text-hover": {
+          "source": "css-var --RadioGroup-choice-color-off-hover (declared as var(--color-brand-hover) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.hover}"
+        },
+        "choice-on-bg": {
+          "description": "Selected segment fill (= primary).",
+          "type": "color",
+          "var": "--RadioGroup-choice-background-on"
+        },
+        "choice-on-bg-active": {
+          "source": "css-var --RadioGroup-choice-background-on-active (declared as var(--color-brand-active) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.active}"
+        },
+        "choice-on-bg-hover": {
+          "source": "css-var --RadioGroup-choice-background-on-hover (declared as var(--color-brand-hover) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.hover}"
+        },
+        "choice-on-text": {
+          "description": "Ink on the selected segment.",
+          "type": "color",
+          "var": "--RadioGroup-choice-color-on"
+        }
+      },
+      "scrollbar": {
+        "thumb": {
+          "description": "Scrollbar thumb (light declares it as button-gray-2; dark declares its own value).",
+          "source": "css-var --scrollbar-thumb (declared as var(--button-gray-2) and kept as an alias)",
+          "type": "color",
+          "value": "{control.button.gray-2}"
+        },
+        "thumb-hover": {
+          "source": "css-var --scrollbar-thumb-hover (declared as var(--button-gray-3) and kept as an alias)",
+          "type": "color",
+          "value": "{control.button.gray-3}"
+        }
+      },
+      "sidebar": {
+        "bg": {
+          "description": "Panel surface (= island bg).",
+          "type": "color",
+          "var": "--sidebar-bg-color"
+        },
+        "border": {
+          "description": "Panel hairline (= surface-high).",
+          "source": "css-var --sidebar-border-color (declared as var(--color-surface-high) and kept as an alias)",
+          "type": "color",
+          "value": "{color.surface.high}"
+        }
+      },
+      "switch": {
+        "active": {
+          "source": "css-var --Switch-active-background (declared as var(--color-brand-active) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.active}"
+        },
+        "disabled": {
+          "source": "css-var --Switch-disabled-color (declared as var(--color-border-outline) and kept as an alias)",
+          "type": "color",
+          "value": "{color.border.outline}"
+        },
+        "disabled-border": {
+          "source": "css-var --Switch-disabled-border (declared as var(--color-border-outline-variant) and kept as an alias)",
+          "type": "color",
+          "value": "{color.border.outline-variant}"
+        },
+        "disabled-toggled": {
+          "source": "css-var --Switch-disabled-toggled-background (declared as var(--color-border-outline-variant) and kept as an alias)",
+          "type": "color",
+          "value": "{color.border.outline-variant}"
+        },
+        "hover": {
+          "source": "css-var --Switch-hover-background (declared as var(--color-brand-hover) and kept as an alias)",
+          "type": "color",
+          "value": "{color.brand.hover}"
+        },
+        "thumb": {
+          "description": "Switch thumb (= on-surface).",
+          "source": "css-var --Switch-thumb-background (declared as var(--color-on-surface) and kept as an alias)",
+          "type": "color",
+          "value": "{color.text.primary}"
+        },
+        "track": {
+          "description": "Switch track (= island bg).",
+          "type": "color",
+          "var": "--Switch-track-background"
+        }
+      },
+      "userlist": {
+        "collaborators-border": {
+          "type": "color",
+          "var": "--userlist-collaborators-border-color"
+        },
+        "hint-bg": {
+          "description": "Collaborator list hint surface.",
+          "type": "color",
+          "var": "--userlist-hint-bg-color"
+        },
+        "hint-heading": {
+          "type": "color",
+          "var": "--userlist-hint-heading-color"
+        },
+        "hint-text": {
+          "type": "color",
+          "var": "--userlist-hint-text-color"
+        }
+      }
+    }
+  }
+}

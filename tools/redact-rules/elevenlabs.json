@@ -1,0 +1,11 @@
+{
+ "_note": "Rules for systems/elevenlabs. A fully public signed-out capture: no owner data on any surface. The auth card's email/password fields were focused and filled once with throwaway sample text, then cleared; nothing was submitted and no account exists. The home TTS playground's textarea was typed into once for the shot pass. All names, prices and copy in the screenshots are ElevenLabs' published public-page content. The OCR email net is kept with example.com allowed.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@example\\.com$",
+   "@example\\.org$"
+  ]
+ },
+ "families": []
+}

@@ -4,12 +4,12 @@ import {
   themeInitScript,
 } from "@/components/appearance";
 import type { Metadata } from "next";
-import { AppShell } from "@/components/shell";
+import { AppShell, sidebarInitScript } from "@/components/shell";
 import "./globals.css";
 export const metadata: Metadata = {
   title: {
-    default: "Design Studio · Design research",
-    template: "%s · Design Studio",
+    default: "Constellations · Design research",
+    template: "%s · Constellations",
   },
   description:
     "A personal design research workspace. Explore references, inspect their details, and collect your thinking.",
@@ -31,6 +31,7 @@ export default function RootLayout({
       <body>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <script dangerouslySetInnerHTML={{ __html: iconInitScript }} />
+        <script dangerouslySetInnerHTML={{ __html: sidebarInitScript }} />
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>

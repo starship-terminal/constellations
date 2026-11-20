@@ -1,0 +1,5 @@
+role	file	note
+site-icon	../icon.png	128px PNG from https://mymind.com/apple-touch-icon.png via tools/fetch_icon.py
+wordmark	gap	Header logo is an inline SVG. Not extracted. Screenshot frames were unavailable.
+play	gap	Home play control is an inline SVG path. Not extracted.
+hamburger	gap	Phone header .hamburger, 50 by 36px, background #e2e6ee. Glyph not extracted.

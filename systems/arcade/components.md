@@ -8,7 +8,7 @@ How to read an entry:
 
 - A colour is its value followed by the palette token in [tokens.json](tokens.json) with the same value, when there is one. Text is written family size/line-height weight, then its colour, for example `SF Pro 14/21 500, #21252e`, and is read from the first text node inside the component.
 - The state table has one row per state that differs. The first row lists every value; later rows list only what changes. A state with the same values as the first is named in its label, for example "default (same: focus-visible)". When the root paints nothing, "Child layers" names the first nodes inside it that do.
-- Crops are images of the component read from the live page, in [components/crops/](components/crops) (126 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
+- Crops are images of the component read from the live page, in [components/crops/](components/crops) (125 files, named `{component}-{state}.png`, at 2x). Screenshots are in [screenshots/](screenshots).
 
 ## Discovery list
 
@@ -465,9 +465,9 @@ The Talk to sales submit. Measured, never pressed. Read as `form-submit` on the 
 
 | State | Values (later rows list only what changes from the first row) |
 |---|---|
-| default (same: hover, focus-visible, pressed) | size 414 x 40; padding 0px 12px; radius 12px; background #000000 `brand.900`; text Inter Variable 14/20 500, #ffffff `brand.white`; transition background-color 0.15s ease |
+| default (same: hover, pressed) | size 414 x 40; padding 0px 12px; radius 12px; background #000000 `brand.900`; text Inter Variable 14/20 500, #ffffff `brand.white`; transition background-color 0.15s ease |
 
-![Submit button default](components/crops/form-submit-default.png) ![Submit button hover](components/crops/form-submit-hover.png) ![Submit button focus-visible](components/crops/form-submit-focus-visible.png) ![Submit button pressed](components/crops/form-submit-pressed.png)
+![Submit button default](components/crops/form-submit-default.png) ![Submit button hover](components/crops/form-submit-hover.png) ![Submit button pressed](components/crops/form-submit-pressed.png)
 
 ### Footer
 

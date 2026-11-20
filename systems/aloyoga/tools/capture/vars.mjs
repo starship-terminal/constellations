@@ -19,7 +19,7 @@
 // Bins (Tailwind v4 + shadcn naming):
 //   theme     the Tailwind v4 theme layer: --color-*, --font-*, --text-*,
 //             --spacing, --radius-*, --shadow-*, --ease-*, --animate-* ...
-//   app       the semantic layer appwrite declares on :root/.dark/html:
+//   app       the semantic layer the site declares on :root/.dark/html:
 //             --background/--foreground/--card/--primary/.../ --border, --ring,
 //             --chart-*, --sidebar-*, --code-*, --selection-*, --brand-*,
 //             --tone*, --editor-*, --network-globe-*
@@ -60,7 +60,7 @@ const result = await probe.evaluate((sheets) => {
     for (const r of list) {
       if (r.type === CSSRule.FONT_FACE_RULE) {
         const o = { file };
-        for (let i = 0; i < r.style.length; i++) o[r.style[i]] = r.style.getPropertyValue(r.style[i]).trim();
+        for (let i = 0; i < r.style.length; i++) o[r.style[i]] = noUrl(r.style.getPropertyValue(r.style[i]).trim());
         fonts.push(o);
         continue;
       }

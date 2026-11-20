@@ -1,0 +1,37 @@
+{
+  "signupHover": {
+    "color": "rgb(11, 18, 21)",
+    "bg": "rgb(80, 207, 147)",
+    "border": "rgb(80, 207, 147)",
+    "bw": "1px",
+    "shadow": "none",
+    "outline": "rgb(86, 32, 193) none 0px",
+    "td": "none",
+    "opacity": "1"
+  },
+  "googleHover": {
+    "color": "rgb(11, 18, 21)",
+    "bg": "rgba(11, 18, 21, 0.04)",
+    "border": "rgb(57, 70, 73)",
+    "bw": "1px",
+    "shadow": "none",
+    "outline": "rgb(11, 18, 21) none 0px",
+    "td": "none",
+    "opacity": "1"
+  },
+  "emailHover": {
+    "color": "rgb(86, 32, 193)",
+    "bg": "rgba(85, 218, 155, 0.04)",
+    "border": "rgb(86, 32, 193)",
+    "bw": "0px",
+    "shadow": "none",
+    "outline": "rgb(86, 32, 193) none 0px",
+    "td": "underline",
+    "opacity": "1"
+  },
+  "signupRest": {
+    "color": "rgb(0, 0, 0)",
+    "bg": "rgb(85, 218, 155)",
+    "border": "rgb(85, 218, 155)"
+  }
+}

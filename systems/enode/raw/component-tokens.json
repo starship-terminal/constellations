@@ -1,0 +1,2380 @@
+{
+  "_about": "The token tree build_tokens.py turns into tokens.json. enode.com declares its design-token layer in the inline app-css bundle (raw/css-vars.json): theme-invariant scales under core.* and a [data-mode]-switching semantic layer emitted under both light.* and dark.* so each scope resolves its own value. Measured roles alias to the declared values where they match.",
+  "core": {
+    "font": {
+      "family": {
+        "sans": {
+          "var": "--font-sans",
+          "type": "fontFamily",
+          "description": "Enode Sans VF — every heading, control and body."
+        },
+        "sansFeatureSettings": {
+          "value": "normal",
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --font-sans--font-feature-settings",
+          "description": "The declared `--font-sans--font-feature-settings`."
+        },
+        "mono": {
+          "var": "--font-mono",
+          "type": "fontFamily",
+          "description": "Enode Mono VF — product demo and code frames."
+        },
+        "monoFeatureSettings": {
+          "value": "\"zero\" 1",
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --font-mono--font-feature-settings",
+          "description": "The declared `--font-mono--font-feature-settings`."
+        }
+      },
+      "weight": {
+        "light": {
+          "value": 300,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --font-weight-light",
+          "description": "The declared `--font-weight-light`."
+        },
+        "medium": {
+          "value": 500,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --font-weight-medium",
+          "description": "The declared `--font-weight-medium`."
+        },
+        "body": {
+          "value": 470,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-body--font-weight",
+          "description": "The declared `--text-body--font-weight`."
+        },
+        "body-lg": {
+          "value": 470,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-body-lg--font-weight",
+          "description": "The declared `--text-body-lg--font-weight`."
+        },
+        "button": {
+          "value": 490,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-button--font-weight",
+          "description": "The declared `--text-button--font-weight`."
+        },
+        "button-secondary": {
+          "value": 500,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-button-secondary--font-weight",
+          "description": "The declared `--text-button-secondary--font-weight`."
+        },
+        "display": {
+          "value": 500,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-display--font-weight",
+          "description": "The declared `--text-display--font-weight`."
+        },
+        "fine": {
+          "value": 475,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-fine--font-weight",
+          "description": "The declared `--text-fine--font-weight`."
+        },
+        "h1": {
+          "value": 500,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-h1--font-weight",
+          "description": "The declared `--text-h1--font-weight`."
+        },
+        "h2": {
+          "value": 510,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-h2--font-weight",
+          "description": "The declared `--text-h2--font-weight`."
+        },
+        "h3": {
+          "value": 520,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-h3--font-weight",
+          "description": "The declared `--text-h3--font-weight`."
+        },
+        "label": {
+          "value": 450,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-label--font-weight",
+          "description": "The declared `--text-label--font-weight`."
+        },
+        "lead": {
+          "value": 500,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-lead--font-weight",
+          "description": "The declared `--text-lead--font-weight`."
+        },
+        "masthead": {
+          "value": 475,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-masthead--font-weight",
+          "description": "The declared `--text-masthead--font-weight`."
+        },
+        "quote": {
+          "value": 450,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-quote--font-weight",
+          "description": "The declared `--text-quote--font-weight`."
+        },
+        "quote-lg": {
+          "value": 450,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-quote-lg--font-weight",
+          "description": "The declared `--text-quote-lg--font-weight`."
+        },
+        "standfirst": {
+          "value": 470,
+          "type": "fontWeight",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-standfirst--font-weight",
+          "description": "The declared `--text-standfirst--font-weight`."
+        }
+      },
+      "size": {
+        "2xl": {
+          "var": "--text-2xl",
+          "type": "dimension",
+          "responsive": null
+        },
+        "body": {
+          "var": "--text-body",
+          "type": "dimension",
+          "responsive": null
+        },
+        "body-lg": {
+          "var": "--text-body-lg",
+          "type": "dimension",
+          "responsive": null
+        },
+        "button": {
+          "var": "--text-button",
+          "type": "dimension",
+          "responsive": null
+        },
+        "button-secondary": {
+          "var": "--text-button-secondary",
+          "type": "dimension",
+          "responsive": null
+        },
+        "display": {
+          "var": "--text-display",
+          "type": "dimension",
+          "responsive": "2.125rem under 48rem"
+        },
+        "fine": {
+          "var": "--text-fine",
+          "type": "dimension",
+          "responsive": null
+        },
+        "h1": {
+          "var": "--text-h1",
+          "type": "dimension",
+          "responsive": "1.875rem under 48rem"
+        },
+        "h2": {
+          "var": "--text-h2",
+          "type": "dimension",
+          "responsive": "1.5625rem under 48rem"
+        },
+        "h3": {
+          "var": "--text-h3",
+          "type": "dimension",
+          "responsive": null
+        },
+        "label": {
+          "var": "--text-label",
+          "type": "dimension",
+          "responsive": null
+        },
+        "lead": {
+          "var": "--text-lead",
+          "type": "dimension",
+          "responsive": null
+        },
+        "lede": {
+          "var": "--text-lede",
+          "type": "dimension",
+          "responsive": "1.5rem under 48rem"
+        },
+        "masthead": {
+          "var": "--text-masthead",
+          "type": "dimension",
+          "responsive": "fluid — apply `clamp(2.125rem, 1.211rem + 3.9vw, 4.25rem)`; the px value resolves it at 1440 x 900 (measured 34.586px at 390 x 844)"
+        },
+        "quote": {
+          "var": "--text-quote",
+          "type": "dimension",
+          "responsive": "1.125rem under 48rem"
+        },
+        "quote-lg": {
+          "var": "--text-quote-lg",
+          "type": "dimension",
+          "responsive": "1.5rem under 48rem"
+        },
+        "sm": {
+          "var": "--text-sm",
+          "type": "dimension",
+          "responsive": null
+        },
+        "standfirst": {
+          "var": "--text-standfirst",
+          "type": "dimension",
+          "responsive": "fluid — apply `clamp(1.5rem, .866rem + 2.7vw, 2.5rem)`; the px value resolves it at 1440 x 900"
+        },
+        "measured": {
+          "masthead": {
+            "value": "{font.size.masthead}",
+            "type": "dimension",
+            "source": "computed fontSize of hero-h1 default (raw/components-computed.json); matches declared --text-masthead",
+            "description": "The 68px hero masthead — aliases --text-masthead."
+          },
+          "body": {
+            "value": "{font.size.body}",
+            "type": "dimension",
+            "source": "computed fontSize of stat-card default (raw/components-computed.json); matches declared --text-body",
+            "description": "The stat-card copy size."
+          }
+        }
+      },
+      "lineHeight": {
+        "normal": {
+          "value": 1.5,
+          "type": "number",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --leading-normal",
+          "description": "The declared `--leading-normal` line-height ratio."
+        },
+        "relaxed": {
+          "value": 1.625,
+          "type": "number",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --leading-relaxed",
+          "description": "The declared `--leading-relaxed` line-height ratio."
+        },
+        "snug": {
+          "value": 1.375,
+          "type": "number",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --leading-snug",
+          "description": "The declared `--leading-snug` line-height ratio."
+        },
+        "tight": {
+          "value": 1.25,
+          "type": "number",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --leading-tight",
+          "description": "The declared `--leading-tight` line-height ratio."
+        },
+        "2xl": {
+          "value": 1.3333,
+          "type": "number",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-2xl--line-height",
+          "description": "The declared `--text-2xl--line-height` line-height ratio."
+        },
+        "body": {
+          "value": 1.45,
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-body--line-height",
+          "description": "The declared `--text-body--line-height`."
+        },
+        "body-lg": {
+          "value": 1.55,
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-body-lg--line-height",
+          "description": "The declared `--text-body-lg--line-height`."
+        },
+        "button": {
+          "value": 1.5,
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-button--line-height",
+          "description": "The declared `--text-button--line-height`."
+        },
+        "button-secondary": {
+          "value": 1.5,
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-button-secondary--line-height",
+          "description": "The declared `--text-button-secondary--line-height`."
+        },
+        "display": {
+          "value": 1.05,
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-display--line-height",
+          "description": "The declared `--text-display--line-height`."
+        },
+        "fine": {
+          "value": 1.45,
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-fine--line-height",
+          "description": "The declared `--text-fine--line-height`."
+        },
+        "h1": {
+          "value": 1.15,
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-h1--line-height",
+          "description": "The declared `--text-h1--line-height`."
+        },
+        "h2": {
+          "value": 1.2,
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-h2--line-height",
+          "description": "The declared `--text-h2--line-height`."
+        },
+        "h3": {
+          "value": 1.25,
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-h3--line-height",
+          "description": "The declared `--text-h3--line-height`."
+        },
+        "label": {
+          "value": 1.4,
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-label--line-height",
+          "description": "The declared `--text-label--line-height`."
+        },
+        "lead": {
+          "value": 1.35,
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-lead--line-height",
+          "description": "The declared `--text-lead--line-height`."
+        },
+        "lede": {
+          "value": 1.25,
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-lede--line-height",
+          "description": "The declared `--text-lede--line-height`."
+        },
+        "masthead": {
+          "value": 1.05,
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-masthead--line-height",
+          "description": "The declared `--text-masthead--line-height`."
+        },
+        "quote": {
+          "value": 1.5,
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-quote--line-height",
+          "description": "The declared `--text-quote--line-height`."
+        },
+        "quote-lg": {
+          "value": 1.3,
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-quote-lg--line-height",
+          "description": "The declared `--text-quote-lg--line-height`."
+        },
+        "sm": {
+          "value": 1.4286,
+          "type": "number",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-sm--line-height",
+          "description": "The declared `--text-sm--line-height` line-height ratio."
+        },
+        "standfirst": {
+          "value": 1.15,
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-standfirst--line-height",
+          "description": "The declared `--text-standfirst--line-height`."
+        }
+      },
+      "tracking": {
+        "wide": {
+          "value": "0.4375px",
+          "type": "dimension",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --tracking-wide",
+          "description": "The declared `--tracking-wide`."
+        },
+        "button": {
+          "value": "0.078125px",
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-button--letter-spacing",
+          "description": "The declared `--text-button--letter-spacing`."
+        },
+        "button-secondary": {
+          "value": "0.078125px",
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-button-secondary--letter-spacing",
+          "description": "The declared `--text-button-secondary--letter-spacing`."
+        },
+        "display": {
+          "value": "-.015em",
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-display--letter-spacing",
+          "description": "The declared `--text-display--letter-spacing`."
+        },
+        "h1": {
+          "value": "-.015em",
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-h1--letter-spacing",
+          "description": "The declared `--text-h1--letter-spacing`."
+        },
+        "h2": {
+          "value": "-.01em",
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-h2--letter-spacing",
+          "description": "The declared `--text-h2--letter-spacing`."
+        },
+        "h3": {
+          "value": "-.005em",
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-h3--letter-spacing",
+          "description": "The declared `--text-h3--letter-spacing`."
+        },
+        "label": {
+          "value": "-.005em",
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-label--letter-spacing",
+          "description": "The declared `--text-label--letter-spacing`."
+        },
+        "masthead": {
+          "value": "-.02em",
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-masthead--letter-spacing",
+          "description": "The declared `--text-masthead--letter-spacing`."
+        },
+        "quote": {
+          "value": "-.005em",
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-quote--letter-spacing",
+          "description": "The declared `--text-quote--letter-spacing`."
+        },
+        "quote-lg": {
+          "value": "-.01em",
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-quote-lg--letter-spacing",
+          "description": "The declared `--text-quote-lg--letter-spacing`."
+        },
+        "standfirst": {
+          "value": "-.015em",
+          "type": "other",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --text-standfirst--letter-spacing",
+          "description": "The declared `--text-standfirst--letter-spacing`."
+        }
+      }
+    },
+    "color": {
+      "brand": {
+        "100": {
+          "value": "#e4fed2",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-100",
+          "description": "The declared `--color-brand-100`."
+        },
+        "125": {
+          "value": "#d8ffbd",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-125",
+          "description": "The declared `--color-brand-125`."
+        },
+        "150": {
+          "value": "#cfffad",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-150",
+          "description": "The declared `--color-brand-150`."
+        },
+        "175": {
+          "value": "#c4ff99",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-175",
+          "description": "The declared `--color-brand-175`."
+        },
+        "200": {
+          "value": "#b8fc88",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-200",
+          "description": "The declared `--color-brand-200`."
+        },
+        "225": {
+          "value": "#b0f87c",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-225",
+          "description": "The declared `--color-brand-225`."
+        },
+        "250": {
+          "value": "#a9ee77",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-250",
+          "description": "The declared `--color-brand-250`."
+        },
+        "275": {
+          "value": "#99e467",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-275",
+          "description": "The declared `--color-brand-275`."
+        },
+        "300": {
+          "value": "#80cb57",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-300",
+          "description": "The declared `--color-brand-300`."
+        },
+        "350": {
+          "value": "#6ab04a",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-350",
+          "description": "The declared `--color-brand-350`."
+        },
+        "450": {
+          "value": "#55973b",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-450",
+          "description": "The declared `--color-brand-450`."
+        },
+        "525": {
+          "value": "#3f7d2c",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-525",
+          "description": "The declared `--color-brand-525`."
+        },
+        "625": {
+          "value": "#265f1b",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-625",
+          "description": "The declared `--color-brand-625`."
+        },
+        "700": {
+          "value": "#10450c",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-700",
+          "description": "The declared `--color-brand-700`."
+        },
+        "75": {
+          "value": "#f0fde8",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-75",
+          "description": "The declared `--color-brand-75`."
+        },
+        "800": {
+          "value": "#022c06",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-800",
+          "description": "The declared `--color-brand-800`."
+        },
+        "825": {
+          "value": "#022204",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-brand-825",
+          "description": "The declared `--color-brand-825`."
+        }
+      },
+      "gray": {
+        "100": {
+          "value": "#f4f2f1",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-100",
+          "description": "The declared `--color-gray-100`."
+        },
+        "125": {
+          "value": "#efedeb",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-125",
+          "description": "The declared `--color-gray-125`."
+        },
+        "150": {
+          "value": "#e8e5e3",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-150",
+          "description": "The declared `--color-gray-150`."
+        },
+        "175": {
+          "value": "#dcd8d6",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-175",
+          "description": "The declared `--color-gray-175`."
+        },
+        "200": {
+          "value": "#cfcbc9",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-200",
+          "description": "The declared `--color-gray-200`."
+        },
+        "225": {
+          "value": "#c5c1bf",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-225",
+          "description": "The declared `--color-gray-225`."
+        },
+        "300": {
+          "value": "#b0adab",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-300",
+          "description": "The declared `--color-gray-300`."
+        },
+        "350": {
+          "value": "#a19d9b",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-350",
+          "description": "The declared `--color-gray-350`."
+        },
+        "475": {
+          "value": "#6e6a68",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-475",
+          "description": "The declared `--color-gray-475`."
+        },
+        "600": {
+          "value": "#595654",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-600",
+          "description": "The declared `--color-gray-600`."
+        },
+        "650": {
+          "value": "#4c4948",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-650",
+          "description": "The declared `--color-gray-650`."
+        },
+        "700": {
+          "value": "#403c3b",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-700",
+          "description": "The declared `--color-gray-700`."
+        },
+        "75": {
+          "value": "#f8f7f7",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-75",
+          "description": "The declared `--color-gray-75`."
+        },
+        "750": {
+          "value": "#32302f",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-750",
+          "description": "The declared `--color-gray-750`."
+        },
+        "800": {
+          "value": "#252322",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-800",
+          "description": "The declared `--color-gray-800`."
+        },
+        "850": {
+          "value": "#151413",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-850",
+          "description": "The declared `--color-gray-850`."
+        }
+      },
+      "grayAlpha": {
+        "100": {
+          "value": "rgba(21, 20, 19, 0.055)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-100",
+          "description": "The declared `--color-gray-alpha-100`."
+        },
+        "125": {
+          "value": "rgba(21, 20, 19, 0.08)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-125",
+          "description": "The declared `--color-gray-alpha-125`."
+        },
+        "150": {
+          "value": "rgba(21, 20, 19, 0.11)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-150",
+          "description": "The declared `--color-gray-alpha-150`."
+        },
+        "175": {
+          "value": "rgba(21, 20, 19, 0.165)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-175",
+          "description": "The declared `--color-gray-alpha-175`."
+        },
+        "200": {
+          "value": "rgba(21, 20, 19, 0.22)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-200",
+          "description": "The declared `--color-gray-alpha-200`."
+        },
+        "225": {
+          "value": "rgba(21, 20, 19, 0.263)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-225",
+          "description": "The declared `--color-gray-alpha-225`."
+        },
+        "300": {
+          "value": "rgba(21, 20, 19, 0.35)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-300",
+          "description": "The declared `--color-gray-alpha-300`."
+        },
+        "350": {
+          "value": "rgba(21, 20, 19, 0.416)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-350",
+          "description": "The declared `--color-gray-alpha-350`."
+        },
+        "475": {
+          "value": "rgba(21, 20, 19, 0.63)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-475",
+          "description": "The declared `--color-gray-alpha-475`."
+        },
+        "600": {
+          "value": "rgba(21, 20, 19, 0.718)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-600",
+          "description": "The declared `--color-gray-alpha-600`."
+        },
+        "650": {
+          "value": "rgba(21, 20, 19, 0.773)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-650",
+          "description": "The declared `--color-gray-alpha-650`."
+        },
+        "700": {
+          "value": "rgba(21, 20, 19, 0.827)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-700",
+          "description": "The declared `--color-gray-alpha-700`."
+        },
+        "75": {
+          "value": "rgba(21, 20, 19, 0.03)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-75",
+          "description": "The declared `--color-gray-alpha-75`."
+        },
+        "750": {
+          "value": "rgba(21, 20, 19, 0.882)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-750",
+          "description": "The declared `--color-gray-alpha-750`."
+        },
+        "800": {
+          "value": "rgba(21, 20, 19, 0.933)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-800",
+          "description": "The declared `--color-gray-alpha-800`."
+        },
+        "850": {
+          "value": "#151413",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-gray-alpha-850",
+          "description": "The declared `--color-gray-alpha-850`."
+        }
+      },
+      "whiteAlpha": {
+        "100": {
+          "value": "rgba(255, 255, 255, 0.945)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-100",
+          "description": "The declared `--color-white-alpha-100`."
+        },
+        "125": {
+          "value": "rgba(255, 255, 255, 0.92)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-125",
+          "description": "The declared `--color-white-alpha-125`."
+        },
+        "150": {
+          "value": "rgba(255, 255, 255, 0.89)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-150",
+          "description": "The declared `--color-white-alpha-150`."
+        },
+        "175": {
+          "value": "rgba(255, 255, 255, 0.835)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-175",
+          "description": "The declared `--color-white-alpha-175`."
+        },
+        "200": {
+          "value": "rgba(255, 255, 255, 0.78)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-200",
+          "description": "The declared `--color-white-alpha-200`."
+        },
+        "225": {
+          "value": "rgba(255, 255, 255, 0.737)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-225",
+          "description": "The declared `--color-white-alpha-225`."
+        },
+        "300": {
+          "value": "rgba(255, 255, 255, 0.65)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-300",
+          "description": "The declared `--color-white-alpha-300`."
+        },
+        "350": {
+          "value": "rgba(255, 255, 255, 0.584)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-350",
+          "description": "The declared `--color-white-alpha-350`."
+        },
+        "475": {
+          "value": "rgba(255, 255, 255, 0.37)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-475",
+          "description": "The declared `--color-white-alpha-475`."
+        },
+        "600": {
+          "value": "rgba(255, 255, 255, 0.282)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-600",
+          "description": "The declared `--color-white-alpha-600`."
+        },
+        "650": {
+          "value": "rgba(255, 255, 255, 0.227)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-650",
+          "description": "The declared `--color-white-alpha-650`."
+        },
+        "700": {
+          "value": "rgba(255, 255, 255, 0.173)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-700",
+          "description": "The declared `--color-white-alpha-700`."
+        },
+        "75": {
+          "value": "rgba(255, 255, 255, 0.97)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-75",
+          "description": "The declared `--color-white-alpha-75`."
+        },
+        "750": {
+          "value": "rgba(255, 255, 255, 0.118)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-750",
+          "description": "The declared `--color-white-alpha-750`."
+        },
+        "800": {
+          "value": "rgba(255, 255, 255, 0.067)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-800",
+          "description": "The declared `--color-white-alpha-800`."
+        },
+        "850": {
+          "value": "rgba(255, 255, 255, 0)",
+          "type": "color",
+          "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white-alpha-850",
+          "description": "The declared `--color-white-alpha-850`."
+        }
+      },
+      "white": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-white",
+        "description": "Pure white — secondary surface, pill ink on dark buttons."
+      },
+      "black": {
+        "value": "#000000",
+        "type": "color",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-black",
+        "description": "Pure black."
+      },
+      "deepBlack": {
+        "value": "#161514",
+        "type": "color",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-deep-black",
+        "description": "The warm near-black of the dark showcase (#161514)."
+      },
+      "warmGrey": {
+        "value": "#efedec",
+        "type": "color",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-warm-grey",
+        "description": "The warm off-white surface (#efedec)."
+      },
+      "enodeGreen": {
+        "value": "#b0f87d",
+        "type": "color",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-enode-green",
+        "description": "The brand green (#b0f87d) — accent, node sign, focus ring base."
+      },
+      "enodeGreenDeep": {
+        "value": "#99e467",
+        "type": "color",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-enode-green-deep",
+        "description": "A deeper brand green (#99e467)."
+      },
+      "enodeGreenMid": {
+        "value": "#a9ee77",
+        "type": "color",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-enode-green-mid",
+        "description": "A mid brand green (#a9ee77)."
+      },
+      "enodeGreenSoft": {
+        "value": "#c5ff9b",
+        "type": "color",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-enode-green-soft",
+        "description": "A soft brand green (#c5ff9b)."
+      },
+      "enodeGreenSoftest": {
+        "value": "#cfffad",
+        "type": "color",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-enode-green-softest",
+        "description": "The softest brand green (#cfffad)."
+      },
+      "signalBrand": {
+        "value": "#b0f87c",
+        "type": "color",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-signal-brand",
+        "description": "The signal brand green — control link/focus ring source."
+      },
+      "controlLink": {
+        "value": "#b0f87c",
+        "type": "color",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-control-link",
+        "description": "The declared control link colour (brand green)."
+      },
+      "controlFocusRing": {
+        "value": "#b0f87c",
+        "type": "color",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-control-focus-ring",
+        "description": "The declared keyboard focus ring (brand green)."
+      },
+      "transparent": {
+        "value": "rgba(0, 0, 0, 0)",
+        "type": "color",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-transparent",
+        "description": "Fully transparent."
+      },
+      "current": {
+        "value": "currentcolor",
+        "type": "other",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --color-current",
+        "description": "currentColor passthrough."
+      }
+    },
+    "spacing": {
+      "base": {
+        "value": "4px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --spacing",
+        "description": "The declared `--spacing`."
+      }
+    },
+    "radius": {
+      "full": {
+        "value": "33554400px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --radius-full",
+        "description": "The declared `--radius-full` — `calc(infinity * 1px)`, which Chromium resolves to 33554400px (effectively a full pill)."
+      },
+      "lg": {
+        "value": "10px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --radius-lg",
+        "description": "The declared `--radius-lg`."
+      },
+      "md": {
+        "value": "6px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --radius-md",
+        "description": "The declared `--radius-md`."
+      },
+      "none": {
+        "value": 0,
+        "type": "other",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --radius-none",
+        "description": "The declared `--radius-none`."
+      },
+      "sm": {
+        "value": "4px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --radius-sm",
+        "description": "The declared `--radius-sm`."
+      },
+      "xs": {
+        "value": "2px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --radius-xs",
+        "description": "The declared `--radius-xs`."
+      },
+      "cta": {
+        "value": "{radius.full}",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of nav-cta default (raw/components-computed.json); matches declared --radius-full",
+        "description": "The fully-rounded CTA pill radius (radius-full)."
+      },
+      "navPill": {
+        "value": "{radius.sm}",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of nav-link default (raw/components-computed.json); matches declared --radius-sm",
+        "description": "The 4px nav-pill radius (rounded-sm → radius-sm)."
+      },
+      "menu": {
+        "value": "{radius.lg}",
+        "type": "dimension",
+        "source": "the painted radius of nav-panel's rounded child default (raw/components-computed.json paint list); matches declared --radius-lg",
+        "description": "The mega-menu panel corner radius — read from the painted rounded-lg child; the wrapper itself is unrounded."
+      },
+      "statCard": {
+        "value": "{radius.md}",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of stat-card default (raw/components-computed.json); matches declared --radius-md",
+        "description": "The stat-card corner radius."
+      },
+      "field": {
+        "value": "{radius.md}",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of field-firstname default (raw/components-computed.json); matches declared --radius-md",
+        "description": "The contact field radius."
+      }
+    },
+    "container": {
+      "2xl": {
+        "value": "672px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --container-2xl",
+        "description": "The declared `--container-2xl`."
+      },
+      "3xl": {
+        "value": "768px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --container-3xl",
+        "description": "The declared `--container-3xl`."
+      },
+      "4xl": {
+        "value": "896px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --container-4xl",
+        "description": "The declared `--container-4xl`."
+      },
+      "5xl": {
+        "value": "1024px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --container-5xl",
+        "description": "The declared `--container-5xl`."
+      },
+      "lg": {
+        "value": "512px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --container-lg",
+        "description": "The declared `--container-lg`."
+      },
+      "md": {
+        "value": "448px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --container-md",
+        "description": "The declared `--container-md`."
+      },
+      "sm": {
+        "value": "384px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --container-sm",
+        "description": "The declared `--container-sm`."
+      },
+      "xl": {
+        "value": "576px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --container-xl",
+        "description": "The declared `--container-xl`."
+      },
+      "xs": {
+        "value": "320px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --container-xs",
+        "description": "The declared `--container-xs`."
+      }
+    },
+    "layout": {
+      "gridMax": {
+        "value": "1308px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --grid-max",
+        "description": "The 1308px content grid maximum."
+      },
+      "gridInset": {
+        "value": "40px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --grid-inset",
+        "description": "The grid side inset — 40px at 1440; 24px from 48rem, narrower below.",
+        "responsive": "1.5rem from 48rem; 2.5rem from 64rem (resolved at 1440 x 900)"
+      },
+      "gutterBase": {
+        "value": "20px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --gutter-base",
+        "description": "The 20px base gutter."
+      },
+      "gutterTight": {
+        "value": "8px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --gutter-tight",
+        "description": "The 8px tight gutter."
+      },
+      "heroMediaOvershoot": {
+        "value": "48px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --hero-media-overshoot",
+        "description": "The 48px the hero media panel overshoots."
+      },
+      "enablerGridShift": {
+        "value": 0.13,
+        "type": "number",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --enabler-grid-shift",
+        "description": "The declared `--enabler-grid-shift`."
+      }
+    },
+    "breakpoint": {
+      "md": {
+        "value": "768px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --breakpoint-md",
+        "description": "The declared `--breakpoint-md`."
+      }
+    },
+    "aspect": {
+      "video": {
+        "value": "16 / 9",
+        "type": "other",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --aspect-video",
+        "description": "The declared `--aspect-video`."
+      }
+    },
+    "blur": {
+      "md": {
+        "value": "12px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --blur-md",
+        "description": "The declared `--blur-md`."
+      },
+      "sm": {
+        "value": "8px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --blur-sm",
+        "description": "The declared `--blur-sm`."
+      },
+      "xl": {
+        "value": "24px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --blur-xl",
+        "description": "The declared `--blur-xl`."
+      }
+    },
+    "easing": {
+      "in": {
+        "value": "cubic-bezier(.4, 0, 1, 1)",
+        "type": "cubicBezier",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --ease-in",
+        "description": "The declared `--ease-in`."
+      },
+      "in-out": {
+        "value": "cubic-bezier(.4, 0, .2, 1)",
+        "type": "cubicBezier",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --ease-in-out",
+        "description": "The declared `--ease-in-out`."
+      },
+      "out": {
+        "value": "cubic-bezier(0, 0, .2, 1)",
+        "type": "cubicBezier",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --ease-out",
+        "description": "The declared `--ease-out`."
+      },
+      "default": {
+        "value": "cubic-bezier(.4, 0, .2, 1)",
+        "type": "cubicBezier",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --default-transition-timing-function",
+        "description": "The declared `--default-transition-timing-function`."
+      }
+    },
+    "duration": {
+      "default": {
+        "value": "0.15s",
+        "type": "duration",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --default-transition-duration",
+        "description": "The declared `--default-transition-duration`."
+      },
+      "themeFade": {
+        "value": "0.4s",
+        "type": "duration",
+        "source": "declared design-system variable in the site's inline app-css bundle (raw/css-vars.json): --theme-fade-duration",
+        "description": "The 0.4s cross-fade duration applied when [data-mode] scopes swap (declared on html)."
+      }
+    },
+    "motion": {
+      "control": {
+        "value": "color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1), transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), translate 0.15s cubic-bezier(0.4, 0, 0.2, 1), scale 0.15s cubic-bezier(0.4, 0, 0.2, 1), rotate 0.15s cubic-bezier(0.4, 0, 0.2, 1), filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), -webkit-backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 0.15s cubic-bezier(0.4, 0, 0.2, 1), display 0.15s cubic-bezier(0.4, 0, 0.2, 1), content-visibility 0.15s cubic-bezier(0.4, 0, 0.2, 1), overlay 0.15s cubic-bezier(0.4, 0, 0.2, 1), pointer-events 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+        "type": "other",
+        "source": "computed transition of nav-cta default (raw/components-computed.json); the declared --default-transition-duration/.4-0-.2-1 pair",
+        "description": "The 0.15s transition on pills and controls."
+      }
+    }
+  },
+  "light": {
+    "color": {
+      "background": {
+        "glass": {
+          "thick": {
+            "var": "--color-background-glass-thick",
+            "type": "color"
+          },
+          "thin": {
+            "var": "--color-background-glass-thin",
+            "type": "color"
+          }
+        },
+        "primary": {
+          "var": "--color-background-primary",
+          "type": "color"
+        },
+        "secondary": {
+          "var": "--color-background-secondary",
+          "type": "color"
+        }
+      },
+      "border": {
+        "primary": {
+          "default": {
+            "var": "--color-border-primary",
+            "type": "color"
+          },
+          "hover": {
+            "var": "--color-border-primary-hover",
+            "type": "color"
+          }
+        },
+        "secondary": {
+          "default": {
+            "var": "--color-border-secondary",
+            "type": "color"
+          },
+          "hover": {
+            "var": "--color-border-secondary-hover",
+            "type": "color"
+          }
+        }
+      },
+      "browser": {
+        "bar": {
+          "var": "--color-browser-bar",
+          "type": "color"
+        },
+        "dot": {
+          "default": {
+            "var": "--color-browser-dot",
+            "type": "color"
+          },
+          "edge": {
+            "var": "--color-browser-dot-edge",
+            "type": "color"
+          }
+        },
+        "hairline": {
+          "var": "--color-browser-hairline",
+          "type": "color"
+        },
+        "pill": {
+          "default": {
+            "var": "--color-browser-pill",
+            "type": "color"
+          },
+          "edge": {
+            "var": "--color-browser-pill-edge",
+            "type": "color"
+          }
+        },
+        "ring": {
+          "var": "--color-browser-ring",
+          "type": "color"
+        },
+        "screen": {
+          "var": "--color-browser-screen",
+          "type": "color"
+        },
+        "tab": {
+          "divider": {
+            "var": "--color-browser-tab-divider",
+            "type": "color"
+          }
+        },
+        "tabbar": {
+          "var": "--color-browser-tabbar",
+          "type": "color"
+        },
+        "url": {
+          "default": {
+            "var": "--color-browser-url",
+            "type": "color"
+          },
+          "icon": {
+            "var": "--color-browser-url-icon",
+            "type": "color"
+          }
+        }
+      },
+      "button": {
+        "ink": {
+          "var": "--color-button-ink",
+          "type": "color"
+        }
+      },
+      "card": {
+        "background": {
+          "default": {
+            "var": "--color-card-background",
+            "type": "color"
+          },
+          "highlighted": {
+            "var": "--color-card-background-highlighted",
+            "type": "color"
+          },
+          "hover": {
+            "var": "--color-card-background-hover",
+            "type": "color"
+          }
+        },
+        "hairline": {
+          "default": {
+            "var": "--color-card-hairline",
+            "type": "color"
+          },
+          "highlighted": {
+            "var": "--color-card-hairline-highlighted",
+            "type": "color"
+          },
+          "hover": {
+            "default": {
+              "var": "--color-card-hairline-hover",
+              "type": "color"
+            },
+            "overlay": {
+              "var": "--color-card-hairline-hover-overlay",
+              "type": "color"
+            }
+          }
+        }
+      },
+      "diagram": {
+        "grid": {
+          "dot": {
+            "var": "--color-diagram-grid-dot",
+            "type": "color"
+          }
+        },
+        "node": {
+          "background": {
+            "var": "--color-diagram-node-background",
+            "type": "color"
+          },
+          "hairline": {
+            "var": "--color-diagram-node-hairline",
+            "type": "color"
+          }
+        },
+        "surface": {
+          "background": {
+            "var": "--color-diagram-surface-background",
+            "type": "color"
+          },
+          "hairline": {
+            "var": "--color-diagram-surface-hairline",
+            "type": "color"
+          }
+        }
+      },
+      "foreground": {
+        "primary": {
+          "var": "--color-foreground-primary",
+          "type": "color"
+        },
+        "secondary": {
+          "var": "--color-foreground-secondary",
+          "type": "color"
+        },
+        "tertiary": {
+          "var": "--color-foreground-tertiary",
+          "type": "color"
+        }
+      },
+      "line": {
+        "primary": {
+          "var": "--color-line-primary",
+          "type": "color"
+        },
+        "subtle": {
+          "var": "--color-line-subtle",
+          "type": "color"
+        }
+      },
+      "nav": {
+        "ink": {
+          "default": {
+            "var": "--color-nav-ink",
+            "type": "color"
+          },
+          "active": {
+            "var": "--color-nav-ink-active",
+            "type": "color"
+          }
+        }
+      },
+      "node": {
+        "default": {
+          "var": "--color-node",
+          "type": "color"
+        },
+        "dim": {
+          "var": "--color-node-dim",
+          "type": "color"
+        }
+      },
+      "phone": {
+        "bezel": {
+          "var": "--color-phone-bezel",
+          "type": "color"
+        },
+        "indicator": {
+          "var": "--color-phone-indicator",
+          "type": "color"
+        },
+        "ink": {
+          "var": "--color-phone-ink",
+          "type": "color"
+        },
+        "notch": {
+          "var": "--color-phone-notch",
+          "type": "color"
+        },
+        "ring": {
+          "var": "--color-phone-ring",
+          "type": "color"
+        },
+        "screen": {
+          "default": {
+            "var": "--color-phone-screen",
+            "type": "color"
+          },
+          "inset": {
+            "var": "--color-phone-screen-inset",
+            "type": "color"
+          }
+        },
+        "skeleton": {
+          "var": "--color-phone-skeleton",
+          "type": "color"
+        }
+      },
+      "text": {
+        "primary": {
+          "var": "--color-text-primary",
+          "type": "color"
+        },
+        "secondary": {
+          "var": "--color-text-secondary",
+          "type": "color"
+        },
+        "tertiary": {
+          "var": "--color-text-tertiary",
+          "type": "color"
+        }
+      },
+      "visual": {
+        "background": {
+          "default": {
+            "var": "--color-visual-background",
+            "type": "color"
+          },
+          "hover": {
+            "var": "--color-visual-background-hover",
+            "type": "color"
+          }
+        },
+        "diagram": {
+          "accent": {
+            "var": "--color-visual-diagram-accent",
+            "type": "color"
+          },
+          "grid": {
+            "dot": {
+              "var": "--color-visual-diagram-grid-dot",
+              "type": "color"
+            }
+          },
+          "group": {
+            "background": {
+              "primary": {
+                "var": "--color-visual-diagram-group-background-primary",
+                "type": "color"
+              }
+            },
+            "hairline": {
+              "primary": {
+                "var": "--color-visual-diagram-group-hairline-primary",
+                "type": "color"
+              }
+            }
+          },
+          "ink": {
+            "muted": {
+              "var": "--color-visual-diagram-ink-muted",
+              "type": "color"
+            },
+            "on": {
+              "fill": {
+                "var": "--color-visual-diagram-ink-on-fill",
+                "type": "color"
+              }
+            },
+            "primary": {
+              "var": "--color-visual-diagram-ink-primary",
+              "type": "color"
+            },
+            "secondary": {
+              "var": "--color-visual-diagram-ink-secondary",
+              "type": "color"
+            },
+            "tertiary": {
+              "var": "--color-visual-diagram-ink-tertiary",
+              "type": "color"
+            }
+          },
+          "node": {
+            "background": {
+              "hover": {
+                "var": "--color-visual-diagram-node-background-hover",
+                "type": "color"
+              },
+              "primary": {
+                "var": "--color-visual-diagram-node-background-primary",
+                "type": "color"
+              },
+              "secondary": {
+                "var": "--color-visual-diagram-node-background-secondary",
+                "type": "color"
+              },
+              "tertiary": {
+                "var": "--color-visual-diagram-node-background-tertiary",
+                "type": "color"
+              }
+            },
+            "hairline": {
+              "alpha": {
+                "var": "--color-visual-diagram-node-hairline-alpha",
+                "type": "color"
+              },
+              "hover": {
+                "var": "--color-visual-diagram-node-hairline-hover",
+                "type": "color"
+              },
+              "primary": {
+                "var": "--color-visual-diagram-node-hairline-primary",
+                "type": "color"
+              },
+              "secondary": {
+                "var": "--color-visual-diagram-node-hairline-secondary",
+                "type": "color"
+              }
+            }
+          },
+          "section": {
+            "background": {
+              "primary": {
+                "var": "--color-visual-diagram-section-background-primary",
+                "type": "color"
+              }
+            },
+            "hairline": {
+              "primary": {
+                "var": "--color-visual-diagram-section-hairline-primary",
+                "type": "color"
+              }
+            }
+          },
+          "sign": {
+            "fill": {
+              "quiet": {
+                "var": "--color-visual-diagram-sign-fill-quiet",
+                "type": "color"
+              }
+            },
+            "on": {
+              "accent": {
+                "var": "--color-visual-diagram-sign-on-accent",
+                "type": "color"
+              },
+              "fill": {
+                "var": "--color-visual-diagram-sign-on-fill",
+                "type": "color"
+              },
+              "quiet": {
+                "var": "--color-visual-diagram-sign-on-quiet",
+                "type": "color"
+              }
+            },
+            "primary": {
+              "var": "--color-visual-diagram-sign-primary",
+              "type": "color"
+            },
+            "secondary": {
+              "var": "--color-visual-diagram-sign-secondary",
+              "type": "color"
+            },
+            "tertiary": {
+              "var": "--color-visual-diagram-sign-tertiary",
+              "type": "color"
+            }
+          },
+          "title": {
+            "background": {
+              "hover": {
+                "var": "--color-visual-diagram-title-background-hover",
+                "type": "color"
+              }
+            }
+          }
+        },
+        "motif": {
+          "brand": {
+            "var": "--color-visual-motif-brand",
+            "type": "color"
+          },
+          "grid": {
+            "var": "--color-visual-motif-grid",
+            "type": "color"
+          },
+          "line": {
+            "var": "--color-visual-motif-line",
+            "type": "color"
+          },
+          "mark": {
+            "var": "--color-visual-motif-mark",
+            "type": "color"
+          }
+        },
+        "well": {
+          "var": "--color-visual-well",
+          "type": "color"
+        }
+      }
+    },
+    "shadow": {
+      "browser": {
+        "dot": {
+          "var": "--shadow-browser-dot",
+          "type": "other"
+        }
+      },
+      "visual": {
+        "well": {
+          "hairline": {
+            "var": "--shadow-visual-well-hairline",
+            "type": "other"
+          },
+          "inset": {
+            "var": "--shadow-visual-well-inset",
+            "type": "other"
+          }
+        }
+      }
+    },
+    "showcase": {
+      "flush": {
+        "default": {
+          "var": "--showcase-flush",
+          "type": "color"
+        },
+        "line": {
+          "var": "--showcase-flush-line",
+          "type": "color"
+        }
+      }
+    },
+    "text": {
+      "ink": {
+        "value": "{color.gray.800}",
+        "type": "color",
+        "source": "computed color of hero-h1 default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.gray.800",
+        "description": "The near-black ink on display copy, headings and card text."
+      },
+      "nav-ink": {
+        "value": "{color.nav.ink.default}",
+        "type": "color",
+        "source": "computed color of nav-link default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.nav.ink.default",
+        "description": "The translucent nav-pill ink."
+      },
+      "stat-ink": {
+        "value": "{color.gray.800}",
+        "type": "color",
+        "source": "computed color of stat-card default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.gray.800",
+        "description": "The stat-card figure ink."
+      }
+    },
+    "action": {
+      "cta-fill": {
+        "value": "{color.gray.800}",
+        "type": "color",
+        "source": "computed backgroundColor of nav-cta default (raw/components-computed.json); matches declared color.gray.800",
+        "description": "The dark fill of the 'Talk to our team' pill CTAs."
+      },
+      "cta-ink": {
+        "value": "{color.white}",
+        "type": "color",
+        "source": "computed color of nav-cta default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.white",
+        "description": "The white text on the dark CTA pill."
+      }
+    },
+    "border": {
+      "cta-outline": {
+        "value": "{color.border.primary.default}",
+        "type": "color",
+        "source": "the inset box-shadow layer painted on hero-cta2 default (raw/components-computed.json); matches declared color.border.primary.default",
+        "description": "The translucent inset ring of the 'Explore our platform' secondary pill — a 1px inset shadow; its border-width is 0."
+      },
+      "focus-ring": {
+        "value": "{color.brand.225}",
+        "type": "color",
+        "source": "computed focus ring (outline 2px solid) of nav-link focus-visible (raw/components-computed.json); matches declared color.brand.225",
+        "description": "The brand-green keyboard focus ring (focus-visible:outline-control-focus-ring)."
+      }
+    },
+    "background": {
+      "page": {
+        "value": "{color.brand.75}",
+        "type": "color",
+        "source": "the <html> element's inline style --color-page-background:var(--color-brand-75); visible as the mint field behind every marketing page (screenshots/home-light-*.png)",
+        "description": "The mint page field — brand-75, set inline on <html>."
+      }
+    }
+  },
+  "dark": {
+    "color": {
+      "background": {
+        "glass": {
+          "thick": {
+            "var": "--color-background-glass-thick",
+            "type": "color"
+          },
+          "thin": {
+            "var": "--color-background-glass-thin",
+            "type": "color"
+          }
+        },
+        "primary": {
+          "var": "--color-background-primary",
+          "type": "color"
+        },
+        "secondary": {
+          "var": "--color-background-secondary",
+          "type": "color"
+        }
+      },
+      "border": {
+        "primary": {
+          "default": {
+            "var": "--color-border-primary",
+            "type": "color"
+          },
+          "hover": {
+            "var": "--color-border-primary-hover",
+            "type": "color"
+          }
+        },
+        "secondary": {
+          "default": {
+            "var": "--color-border-secondary",
+            "type": "color"
+          },
+          "hover": {
+            "var": "--color-border-secondary-hover",
+            "type": "color"
+          }
+        }
+      },
+      "browser": {
+        "bar": {
+          "var": "--color-browser-bar",
+          "type": "color"
+        },
+        "dot": {
+          "default": {
+            "var": "--color-browser-dot",
+            "type": "color"
+          },
+          "edge": {
+            "var": "--color-browser-dot-edge",
+            "type": "color"
+          }
+        },
+        "hairline": {
+          "var": "--color-browser-hairline",
+          "type": "color"
+        },
+        "pill": {
+          "default": {
+            "var": "--color-browser-pill",
+            "type": "color"
+          },
+          "edge": {
+            "var": "--color-browser-pill-edge",
+            "type": "color"
+          }
+        },
+        "ring": {
+          "var": "--color-browser-ring",
+          "type": "color"
+        },
+        "screen": {
+          "var": "--color-browser-screen",
+          "type": "color"
+        },
+        "tab": {
+          "divider": {
+            "var": "--color-browser-tab-divider",
+            "type": "color"
+          }
+        },
+        "tabbar": {
+          "var": "--color-browser-tabbar",
+          "type": "color"
+        },
+        "url": {
+          "default": {
+            "var": "--color-browser-url",
+            "type": "color"
+          },
+          "icon": {
+            "var": "--color-browser-url-icon",
+            "type": "color"
+          }
+        }
+      },
+      "button": {
+        "ink": {
+          "var": "--color-button-ink",
+          "type": "color"
+        }
+      },
+      "card": {
+        "background": {
+          "default": {
+            "var": "--color-card-background",
+            "type": "color"
+          },
+          "highlighted": {
+            "var": "--color-card-background-highlighted",
+            "type": "color"
+          },
+          "hover": {
+            "var": "--color-card-background-hover",
+            "type": "color"
+          }
+        },
+        "hairline": {
+          "default": {
+            "var": "--color-card-hairline",
+            "type": "color"
+          },
+          "highlighted": {
+            "var": "--color-card-hairline-highlighted",
+            "type": "color"
+          },
+          "hover": {
+            "default": {
+              "var": "--color-card-hairline-hover",
+              "type": "color"
+            },
+            "overlay": {
+              "var": "--color-card-hairline-hover-overlay",
+              "type": "color"
+            }
+          }
+        }
+      },
+      "diagram": {
+        "grid": {
+          "dot": {
+            "var": "--color-diagram-grid-dot",
+            "type": "color"
+          }
+        },
+        "node": {
+          "background": {
+            "var": "--color-diagram-node-background",
+            "type": "color"
+          },
+          "hairline": {
+            "var": "--color-diagram-node-hairline",
+            "type": "color"
+          }
+        },
+        "surface": {
+          "background": {
+            "var": "--color-diagram-surface-background",
+            "type": "color"
+          },
+          "hairline": {
+            "var": "--color-diagram-surface-hairline",
+            "type": "color"
+          }
+        }
+      },
+      "foreground": {
+        "primary": {
+          "var": "--color-foreground-primary",
+          "type": "color"
+        },
+        "secondary": {
+          "var": "--color-foreground-secondary",
+          "type": "color"
+        },
+        "tertiary": {
+          "var": "--color-foreground-tertiary",
+          "type": "color"
+        }
+      },
+      "line": {
+        "primary": {
+          "var": "--color-line-primary",
+          "type": "color"
+        },
+        "subtle": {
+          "var": "--color-line-subtle",
+          "type": "color"
+        }
+      },
+      "nav": {
+        "ink": {
+          "default": {
+            "var": "--color-nav-ink",
+            "type": "color"
+          },
+          "active": {
+            "var": "--color-nav-ink-active",
+            "type": "color"
+          }
+        }
+      },
+      "node": {
+        "default": {
+          "var": "--color-node",
+          "type": "color"
+        },
+        "dim": {
+          "var": "--color-node-dim",
+          "type": "color"
+        }
+      },
+      "phone": {
+        "bezel": {
+          "var": "--color-phone-bezel",
+          "type": "color"
+        },
+        "indicator": {
+          "var": "--color-phone-indicator",
+          "type": "color"
+        },
+        "ink": {
+          "var": "--color-phone-ink",
+          "type": "color"
+        },
+        "notch": {
+          "var": "--color-phone-notch",
+          "type": "color"
+        },
+        "ring": {
+          "var": "--color-phone-ring",
+          "type": "color"
+        },
+        "screen": {
+          "default": {
+            "var": "--color-phone-screen",
+            "type": "color"
+          },
+          "inset": {
+            "var": "--color-phone-screen-inset",
+            "type": "color"
+          }
+        },
+        "skeleton": {
+          "var": "--color-phone-skeleton",
+          "type": "color"
+        }
+      },
+      "text": {
+        "primary": {
+          "var": "--color-text-primary",
+          "type": "color"
+        },
+        "secondary": {
+          "var": "--color-text-secondary",
+          "type": "color"
+        },
+        "tertiary": {
+          "var": "--color-text-tertiary",
+          "type": "color"
+        }
+      },
+      "visual": {
+        "background": {
+          "default": {
+            "var": "--color-visual-background",
+            "type": "color"
+          },
+          "hover": {
+            "var": "--color-visual-background-hover",
+            "type": "color"
+          }
+        },
+        "diagram": {
+          "accent": {
+            "var": "--color-visual-diagram-accent",
+            "type": "color"
+          },
+          "grid": {
+            "dot": {
+              "var": "--color-visual-diagram-grid-dot",
+              "type": "color"
+            }
+          },
+          "group": {
+            "background": {
+              "primary": {
+                "var": "--color-visual-diagram-group-background-primary",
+                "type": "color"
+              }
+            },
+            "hairline": {
+              "primary": {
+                "var": "--color-visual-diagram-group-hairline-primary",
+                "type": "color"
+              }
+            }
+          },
+          "ink": {
+            "muted": {
+              "var": "--color-visual-diagram-ink-muted",
+              "type": "color"
+            },
+            "on": {
+              "fill": {
+                "var": "--color-visual-diagram-ink-on-fill",
+                "type": "color"
+              }
+            },
+            "primary": {
+              "var": "--color-visual-diagram-ink-primary",
+              "type": "color"
+            },
+            "secondary": {
+              "var": "--color-visual-diagram-ink-secondary",
+              "type": "color"
+            },
+            "tertiary": {
+              "var": "--color-visual-diagram-ink-tertiary",
+              "type": "color"
+            }
+          },
+          "node": {
+            "background": {
+              "hover": {
+                "var": "--color-visual-diagram-node-background-hover",
+                "type": "color"
+              },
+              "primary": {
+                "var": "--color-visual-diagram-node-background-primary",
+                "type": "color"
+              },
+              "secondary": {
+                "var": "--color-visual-diagram-node-background-secondary",
+                "type": "color"
+              },
+              "tertiary": {
+                "var": "--color-visual-diagram-node-background-tertiary",
+                "type": "color"
+              }
+            },
+            "hairline": {
+              "alpha": {
+                "var": "--color-visual-diagram-node-hairline-alpha",
+                "type": "color"
+              },
+              "hover": {
+                "var": "--color-visual-diagram-node-hairline-hover",
+                "type": "color"
+              },
+              "primary": {
+                "var": "--color-visual-diagram-node-hairline-primary",
+                "type": "color"
+              },
+              "secondary": {
+                "var": "--color-visual-diagram-node-hairline-secondary",
+                "type": "color"
+              }
+            }
+          },
+          "section": {
+            "background": {
+              "primary": {
+                "var": "--color-visual-diagram-section-background-primary",
+                "type": "color"
+              }
+            },
+            "hairline": {
+              "primary": {
+                "var": "--color-visual-diagram-section-hairline-primary",
+                "type": "color"
+              }
+            }
+          },
+          "sign": {
+            "fill": {
+              "quiet": {
+                "var": "--color-visual-diagram-sign-fill-quiet",
+                "type": "color"
+              }
+            },
+            "on": {
+              "accent": {
+                "var": "--color-visual-diagram-sign-on-accent",
+                "type": "color"
+              },
+              "fill": {
+                "var": "--color-visual-diagram-sign-on-fill",
+                "type": "color"
+              },
+              "quiet": {
+                "var": "--color-visual-diagram-sign-on-quiet",
+                "type": "color"
+              }
+            },
+            "primary": {
+              "var": "--color-visual-diagram-sign-primary",
+              "type": "color"
+            },
+            "secondary": {
+              "var": "--color-visual-diagram-sign-secondary",
+              "type": "color"
+            },
+            "tertiary": {
+              "var": "--color-visual-diagram-sign-tertiary",
+              "type": "color"
+            }
+          },
+          "title": {
+            "background": {
+              "hover": {
+                "var": "--color-visual-diagram-title-background-hover",
+                "type": "color"
+              }
+            }
+          }
+        },
+        "motif": {
+          "brand": {
+            "var": "--color-visual-motif-brand",
+            "type": "color"
+          },
+          "grid": {
+            "var": "--color-visual-motif-grid",
+            "type": "color"
+          },
+          "line": {
+            "var": "--color-visual-motif-line",
+            "type": "color"
+          },
+          "mark": {
+            "var": "--color-visual-motif-mark",
+            "type": "color"
+          }
+        },
+        "well": {
+          "var": "--color-visual-well",
+          "type": "color"
+        }
+      }
+    },
+    "shadow": {
+      "browser": {
+        "dot": {
+          "var": "--shadow-browser-dot",
+          "type": "other"
+        }
+      },
+      "visual": {
+        "well": {
+          "hairline": {
+            "var": "--shadow-visual-well-hairline",
+            "type": "other"
+          },
+          "inset": {
+            "var": "--shadow-visual-well-inset",
+            "type": "other"
+          }
+        }
+      }
+    },
+    "showcase": {
+      "flush": {
+        "default": {
+          "var": "--showcase-flush",
+          "type": "color"
+        },
+        "line": {
+          "var": "--showcase-flush-line",
+          "type": "color"
+        }
+      }
+    },
+    "background": {
+      "panel": {
+        "value": "{color.gray.850}",
+        "type": "color",
+        "source": "computed backgroundColor of dark-showcase default (raw/components-computed.json); matches declared color.gray.850",
+        "description": "The near-black showcase panel fill inside the light page."
+      }
+    },
+    "text": {
+      "ink": {
+        "value": "{color.enodeGreen}",
+        "type": "color",
+        "source": "computed color of demo-card default — the first text node's reading where the kit recorded one (raw/components-computed.json); matches declared color.enodeGreen",
+        "description": "The brand-green label ink inside the dark showcase (the demo diagram's PRODUCING/CHARGING/BALANCING metrics)."
+      }
+    }
+  },
+  "component": {
+    "topbar-height": {
+      "value": "58px",
+      "type": "dimension",
+      "source": "measured h of mkt-header default (raw/components-computed.json)",
+      "description": "The 58px marketing header bar."
+    },
+    "logo-width": {
+      "value": "81.83px",
+      "type": "dimension",
+      "source": "measured w of mkt-logo default (raw/components-computed.json)",
+      "description": "The ~82px Enode wordmark."
+    },
+    "nav-pill-height": {
+      "value": "34px",
+      "type": "dimension",
+      "source": "measured h of nav-link default (raw/components-computed.json)",
+      "description": "The 34px nav pills."
+    },
+    "cta-height": {
+      "value": "32px",
+      "type": "dimension",
+      "source": "measured h of nav-cta default (raw/components-computed.json)",
+      "description": "The 32px CTA pills."
+    },
+    "mega-menu-width": {
+      "value": "1120px",
+      "type": "dimension",
+      "source": "measured w of nav-panel default (raw/components-computed.json)",
+      "description": "The open mega-menu panel width."
+    },
+    "mega-menu-height": {
+      "value": "290px",
+      "type": "dimension",
+      "source": "measured h of nav-panel default (raw/components-computed.json)",
+      "description": "The open mega-menu panel height."
+    },
+    "hero-masthead-width": {
+      "value": "1024px",
+      "type": "dimension",
+      "source": "measured w of hero-h1 default (raw/components-computed.json)",
+      "description": "The hero masthead measure (max-w)."
+    },
+    "stat-card-width": {
+      "value": "396px",
+      "type": "dimension",
+      "source": "measured w of stat-card default (raw/components-computed.json)",
+      "description": "The stat-card width."
+    },
+    "stat-card-height": {
+      "value": "184px",
+      "type": "dimension",
+      "source": "measured h of stat-card default (raw/components-computed.json)",
+      "description": "The stat-card height."
+    },
+    "showcase-height": {
+      "value": "765px",
+      "type": "dimension",
+      "source": "measured h of dark-showcase default (raw/components-computed.json)",
+      "description": "The dark showcase panel height on the home hero."
+    },
+    "field-height": {
+      "value": "48.09px",
+      "type": "dimension",
+      "source": "measured h of field-firstname default (raw/components-computed.json)",
+      "description": "The 48px contact field height."
+    },
+    "textarea-height": {
+      "value": "100.28px",
+      "type": "dimension",
+      "source": "measured h of field-inquiry default (raw/components-computed.json)",
+      "description": "The ~100px inquiry textarea height."
+    },
+    "send-width": {
+      "value": "129.91px",
+      "type": "dimension",
+      "source": "measured w of send-btn default (raw/components-computed.json)",
+      "description": "The 'Send message' pill width."
+    },
+    "visual-frame-width": {
+      "value": "304px",
+      "type": "dimension",
+      "source": "measured w of visual-frame default (raw/components-computed.json)",
+      "description": "The product visual-frame tile width."
+    },
+    "mobile-topbar-height": {
+      "value": "60px",
+      "type": "dimension",
+      "source": "measured h of m-topbar default (raw/components-computed.json)",
+      "description": "The 60px phone top bar."
+    },
+    "mobile-menu-size": {
+      "value": "36px",
+      "type": "dimension",
+      "source": "measured w of m-menu-btn default (raw/components-computed.json)",
+      "description": "The 36px round mobile menu button."
+    },
+    "login": {
+      "panel-width": {
+        "value": "600px",
+        "type": "dimension",
+        "source": "measured w of login-panel default on platform.enode.com/login (raw/components-computed.json)",
+        "description": "The 600px light sign-in panel."
+      },
+      "panel-height": {
+        "value": "900px",
+        "type": "dimension",
+        "source": "measured h of login-panel default on platform.enode.com/login (raw/components-computed.json)",
+        "description": "The panel height."
+      },
+      "panel-ink": {
+        "value": "{color.gray.800}",
+        "type": "color",
+        "source": "computed color of login-panel default on platform.enode.com/login (raw/components-computed.json); matches declared color.gray.800",
+        "description": "The panel ink — the login form side paints light."
+      },
+      "field-bg": {
+        "value": "{color.white}",
+        "type": "color",
+        "source": "computed backgroundColor of login-field default on platform.enode.com/login (raw/components-computed.json); matches declared color.white",
+        "description": "The white e-mail field fill."
+      },
+      "field-ink": {
+        "value": "{color.gray.800}",
+        "type": "color",
+        "source": "computed color of login-field default on platform.enode.com/login (raw/components-computed.json); matches declared color.gray.800",
+        "description": "The field text ink."
+      },
+      "field-height": {
+        "value": "41px",
+        "type": "dimension",
+        "source": "measured h of login-field default on platform.enode.com/login (raw/components-computed.json)",
+        "description": "The e-mail field height."
+      },
+      "submit-fill": {
+        "value": "{color.gray.800}",
+        "type": "color",
+        "source": "computed backgroundColor of login-submit default on platform.enode.com/login (raw/components-computed.json); matches declared color.gray.800",
+        "description": "The dark 'Log in' button fill."
+      },
+      "submit-ink": {
+        "value": "{color.white}",
+        "type": "color",
+        "source": "computed color of login-submit default on platform.enode.com/login (raw/components-computed.json); matches declared color.white",
+        "description": "The button text."
+      },
+      "submit-height": {
+        "value": "32px",
+        "type": "dimension",
+        "source": "measured h of login-submit default on platform.enode.com/login (raw/components-computed.json)",
+        "description": "The button height."
+      },
+      "sso-ink": {
+        "value": "{color.gray.800}",
+        "type": "color",
+        "source": "computed color of login-sso default on platform.enode.com/login (raw/components-computed.json); matches declared color.gray.800",
+        "description": "The 'Continue with SAML SSO' link ink."
+      }
+    }
+  }
+}

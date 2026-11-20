@@ -1,0 +1,15 @@
+{
+  "page": "https://www.sonarworks.com/",
+  "measuredAt": "2026-11-19",
+  "tool": "T3 preview_evaluate on the attached live page",
+  "innerWidth": 1169,
+  "innerHeight": 731,
+  "devicePixelRatio": 2,
+  "visualViewport": {
+    "width": 1169,
+    "height": 731,
+    "scale": 1
+  },
+  "colorScheme": "normal",
+  "note": "Requested 1440 and 390 were not applied. preview_snapshot failed with: The browser is not producing screenshot frames. Widths below are the CSS viewport that was actually measured."
+}

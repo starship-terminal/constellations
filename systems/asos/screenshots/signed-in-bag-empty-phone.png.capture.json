@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-20T14:58:00Z",
+  "screenshot": "signed-in-bag-empty-phone.png",
+  "requested": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 390,
+      "height": 844,
+      "scale": 1
+    }
+  },
+  "png": {
+    "width": 780,
+    "height": 1688
+  },
+  "note": "Measured window.innerWidth 390. Bag panel scrollWidth was 500, so the empty-bag content clips.",
+  "theme": "light",
+  "quantized": "256-colour sRGB via systems/asos/tools/capture/quantize.py"
+}

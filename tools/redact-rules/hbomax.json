@@ -1,0 +1,15 @@
+{
+  "_note": "Rules for systems/hbomax. Public signed-out capture of www.hbomax.com/sg/en: no surface paints machine-private data — nothing was signed into, typed, searched or submitted. The privacy policy and corp-info pages publish WarnerMedia/HBO contact addresses as marketing copy; hbomax.com and wbd.com are the product's public domains, allowed.",
+  "families": [],
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@hbomax\\.com$",
+      "@max\\.com$",
+      "@wbd\\.com$",
+      "@warnermedia\\.com$",
+      "@hbo\\.com$",
+      "@example\\.com$"
+    ]
+  }
+}

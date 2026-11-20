@@ -1,0 +1,169 @@
+{
+  "captured": "2026-11-18",
+  "method": "Attached T3 preview browser (existing logged-in profile). Not a new headless Playwright session. Account kaichen@agentmail.to was created in that tab and confirmed with the color code from the Coolors mail.",
+  "viewportDesktopCss": {"width": 1169, "height": 731, "dpr": 2},
+  "viewportMobileCss": {"width": 390, "height": 844, "dpr": 2},
+  "pages": [
+    {
+      "url": "https://coolors.co/",
+      "title": "Coolors - The super fast color palettes generator!",
+      "signedIn": true,
+      "bodyClass": "is-logged route-homepage"
+    },
+    {
+      "url": "https://coolors.co/generate",
+      "title": "Create a Palette - Coolors",
+      "signedIn": true,
+      "note": "Redirected to a five-color palette URL. Spacebar cycles palettes. A terms modal and a first-run Hello modal were accepted before the generator chrome was readable."
+    },
+    {
+      "url": "https://coolors.co/palettes/popular",
+      "title": "Popular Color Palettes - Coolors",
+      "signedIn": true,
+      "widths": ["1169 desktop computed type", "390 mobile computed type and layout"]
+    }
+  ],
+  "home": {
+    "body": {
+      "fontFamily": "Inter, sans-serif",
+      "fontSize": "15px",
+      "fontWeight": "450",
+      "lineHeight": "15px",
+      "color": "rgb(10, 10, 10)",
+      "backgroundColor": "rgb(255, 255, 255)"
+    },
+    "header": {
+      "height": "60px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "boxShadow": "rgba(0, 0, 0, 0.07) 0px 1px 0px 0px"
+    },
+    "h1": {
+      "text": "The super fast color palettes generator!",
+      "fontFamily": "Inter, sans-serif",
+      "fontSize": "93.52px",
+      "fontWeight": "800",
+      "lineHeight": "84.168px",
+      "letterSpacing": "-3.2732px",
+      "color": "rgb(10, 10, 10)",
+      "box": {"x": 82, "y": 140, "w": 503, "h": 252}
+    },
+    "lede": {
+      "fontSize": "20px",
+      "fontWeight": "450",
+      "lineHeight": "26px",
+      "color": "rgb(10, 10, 10)"
+    },
+    "primaryButton": {
+      "text": "Start the Generator",
+      "class": "btn btn--primary btn--m btn--inline",
+      "backgroundColor": "rgb(37, 99, 235)",
+      "color": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "lineHeight": "46px",
+      "borderRadius": "10px",
+      "padding": "0px 21px",
+      "box": {"w": 189, "h": 46}
+    },
+    "grayButton": {
+      "text": "Explore 10M+ Palettes",
+      "class": "btn btn--gray btn--m btn--inline",
+      "backgroundColor": "rgba(0, 0, 0, 0.06)",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "borderRadius": "10px",
+      "box": {"w": 212, "h": 46}
+    },
+    "headerTools": {
+      "class": "btn btn--s btn--transparent",
+      "color": "rgb(0, 0, 0)",
+      "fontSize": "15px",
+      "fontWeight": "500",
+      "borderRadius": "8px",
+      "height": "36px",
+      "padding": "0px 12px"
+    },
+    "goPro": {
+      "class": "btn btn--accent-transparent btn--s",
+      "color": "rgb(236, 72, 153)",
+      "fontSize": "15px",
+      "fontWeight": "500",
+      "borderRadius": "8px",
+      "height": "36px"
+    },
+    "stylesheet": "https://coolors.co/assets/css/dist/style.min.css?v=64",
+    "googleFontsHref": "https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Mono:wght@400;700&display=swap",
+    "tailwindRampNote": ":root declares Tailwind-like --color-primary-50 through --color-primary-950 and slate/gray/zinc ramps. The painted primary button is rgb(37, 99, 235), which matches --color-primary-600 (#2563eb), not --color-primary-500."
+  },
+  "generator": {
+    "urlExample": "https://coolors.co/293f14-386c0b-38a700-31d843-3eff8b",
+    "columns": 5,
+    "columnSize": {"w": 234, "h": 615},
+    "hex": {
+      "fontSize": "30px",
+      "fontWeight": "600",
+      "letterSpacing": "0.9px",
+      "fontFamily": "Inter, sans-serif",
+      "colorOnDark": "rgb(255, 255, 255)",
+      "colorOnLight": "rgb(0, 0, 0)"
+    },
+    "name": {
+      "class": "generator_color_color-info",
+      "fontSize": "11.2px",
+      "fontWeight": "600",
+      "letterSpacing": "0.448px"
+    },
+    "hint": {
+      "text": "Press the spacebar to generate color palettes!",
+      "fontSize": "15px",
+      "fontWeight": "450",
+      "color": "rgb(82, 82, 82)"
+    },
+    "toolbarButton": {
+      "class": "btn btn--s btn--transparent",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "height": "36px"
+    },
+    "measuredSwatches": [
+      {"hex": "293F14", "name": "Black Forest", "backgroundColor": "rgb(41, 63, 20)", "hexColor": "rgb(255, 255, 255)"},
+      {"hex": "386C0B", "name": "Green", "backgroundColor": "rgb(56, 108, 11)", "hexColor": "rgb(255, 255, 255)"},
+      {"hex": "38A700", "name": "Bright Fern", "backgroundColor": "rgb(56, 167, 0)", "hexColor": "rgb(255, 255, 255)"},
+      {"hex": "31D843", "name": "Malachite", "backgroundColor": "rgb(49, 216, 67)", "hexColor": "rgb(0, 0, 0)"},
+      {"hex": "3EFF8B", "name": "Spring Green", "backgroundColor": "rgb(62, 255, 139)", "hexColor": "rgb(0, 0, 0)"}
+    ]
+  },
+  "explore": {
+    "desktopH1": {"fontSize": "70px", "fontWeight": "800", "lineHeight": "77px", "letterSpacing": "-2.45px", "color": "rgb(10, 10, 10)"},
+    "mobileH1": {"fontSize": "50px", "fontWeight": "800", "letterSpacing": "-1.75px", "color": "rgb(10, 10, 10)", "width": 330},
+    "mobileLede": {"fontSize": "20px", "fontWeight": "450", "color": "rgb(82, 82, 82)"},
+    "search": {
+      "placeholder": "Search with colors, topics, styles or hex values...",
+      "fontSize": "16px",
+      "color": "rgb(10, 10, 10)",
+      "height": "39px"
+    },
+    "mobileCard": {"class": "palette-card", "swatchRowHeight": 104, "cardHeight": 150, "sideInset": 30}
+  },
+  "modal": {
+    "class": "modal_element",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderRadius": "14px",
+    "boxShadow": "rgba(0, 0, 0, 0.07) 0px 0px 0px 1px",
+    "primaryButton": {"text": "Let's go!", "backgroundColor": "rgb(37, 99, 235)", "borderRadius": "10px", "fontSize": "16px", "fontWeight": "600", "height": 46}
+  },
+  "confirmEmail": {
+    "title": "Confirm your email",
+    "fieldId": "passcode_code",
+    "submitId": "passcode_submit-btn",
+    "note": "Coolors calls the confirmation a color code. The code itself is account mail, not a design token, and is not stored in this package."
+  },
+  "gaps": [
+    "Pro checkout was not opened and was not submitted.",
+    "Saved palettes and account settings were not walked.",
+    "No dark theme toggle was found on the pages that loaded. Only light was measured.",
+    "A full mobile screenshot of /palettes/popular was blocked by a founder welcome modal, then the preview browser stopped painting frames. Mobile type and layout numbers above were computed at 390x844 before that.",
+    "Icon set was not extracted. icon.png is the measured wordmark, cropped from the desktop generator screenshot."
+  ]
+}

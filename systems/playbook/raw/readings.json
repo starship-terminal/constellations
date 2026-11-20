@@ -1,0 +1,19 @@
+{
+  "captured": "2026-11-19",
+  "viewportPreview": {
+    "innerWidth": 1169,
+    "innerHeight": 731,
+    "devicePixelRatio": 2,
+    "visualViewport": {
+      "width": 1169,
+      "height": 731,
+      "scale": 1
+    }
+  },
+  "pages": {
+    "home": "https://www.playbook.com/",
+    "pricing": "https://www.playbook.com/pricing/",
+    "login": "https://www.playbook.com/login/ redirected to https://www.playbook.com/sign-in"
+  },
+  "note": "Computed styles were read in the T3 preview tab. Screenshots were taken in headless Playwright because the preview tab returned: The browser is not producing screenshot frames."
+}

@@ -1,0 +1,745 @@
+{
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1
+  },
+  "theme": "dark",
+  "url": "https://copilot.com/",
+  "components": {
+    "link": {
+      "states": {
+        "default": {
+          "style": {
+            "display": "inline-flex",
+            "boxSizing": "border-box",
+            "width": "108.656px",
+            "height": "32px",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "gap": "8px",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgba(255, 255, 255, 0.87)",
+            "fontFamily": "SegoeSans, SegoeUI, \"Segoe UI\", -apple-system, \"system-ui\", Helvetica, Arial, sans-serif",
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "lineHeight": "22px",
+            "letterSpacing": "normal",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgba(255, 255, 255, 0.87)",
+            "borderRadius": "0px",
+            "boxShadow": "none",
+            "outline": "rgba(255, 255, 255, 0.87) none 0px",
+            "outlineOffset": "0px",
+            "opacity": "1",
+            "cursor": "pointer",
+            "transitionProperty": "all",
+            "transitionDuration": "0.2s",
+            "transitionTimingFunction": "ease",
+            "textDecorationLine": "none",
+            "_box": {
+              "x": 100,
+              "y": 1373,
+              "w": 109,
+              "h": 32
+            },
+            "_text": "Go to Chat",
+            "_cls": "module-cta"
+          },
+          "source": "https://copilot.com/ computed, desktop 1440, colorScheme dark, 2026-11-19"
+        }
+      }
+    },
+    "button-download": {
+      "states": {
+        "default": {
+          "style": {
+            "display": "flex",
+            "boxSizing": "border-box",
+            "width": "108.5px",
+            "height": "38px",
+            "paddingTop": "10px",
+            "paddingRight": "14px",
+            "paddingBottom": "10px",
+            "paddingLeft": "14px",
+            "gap": "normal",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "color": "rgb(36, 36, 36)",
+            "fontFamily": "SegoeSans, SegoeUI, \"Segoe UI\", -apple-system, \"system-ui\", Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgba(0, 0, 0, 0)",
+            "borderRadius": "10px",
+            "boxShadow": "rgba(0, 0, 0, 0.12) 0px 1px 0px 0px",
+            "outline": "rgb(36, 36, 36) none 0px",
+            "outlineOffset": "0px",
+            "opacity": "1",
+            "cursor": "pointer",
+            "transitionProperty": "transform, background-color, box-shadow, -webkit-transform, -moz-transform, -o-transform, -webkit-box-shadow, -moz-box-shadow",
+            "transitionDuration": "0.12s, 0.12s, 0.12s, 0.12s, 0.12s, 0.12s, 0.12s, 0.12s",
+            "transitionTimingFunction": "ease, ease, ease, ease, ease, ease, ease, ease",
+            "textDecorationLine": "none",
+            "_box": {
+              "x": 360,
+              "y": 751,
+              "w": 109,
+              "h": 38
+            },
+            "_text": "For Windows",
+            "_cls": "module-download-cta"
+          },
+          "source": "https://copilot.com/ computed, desktop 1440, colorScheme dark, 2026-11-19"
+        },
+        "hover": {
+          "style": {
+            "display": "flex",
+            "boxSizing": "border-box",
+            "width": "108.5px",
+            "height": "38px",
+            "paddingTop": "10px",
+            "paddingRight": "14px",
+            "paddingBottom": "10px",
+            "paddingLeft": "14px",
+            "gap": "normal",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(255, 255, 255)",
+            "fontFamily": "SegoeSans, SegoeUI, \"Segoe UI\", -apple-system, \"system-ui\", Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgb(255, 255, 255)",
+            "borderRadius": "10px",
+            "boxShadow": "rgba(0, 0, 0, 0.12) 0px 1px 0px 0px",
+            "outline": "rgb(255, 255, 255) solid 1px",
+            "outlineOffset": "-1px",
+            "opacity": "1",
+            "cursor": "pointer",
+            "transitionProperty": "transform, background-color, box-shadow, -webkit-transform, -moz-transform, -o-transform, -webkit-box-shadow, -moz-box-shadow",
+            "transitionDuration": "0.12s, 0.12s, 0.12s, 0.12s, 0.12s, 0.12s, 0.12s, 0.12s",
+            "transitionTimingFunction": "ease, ease, ease, ease, ease, ease, ease, ease",
+            "textDecorationLine": "none",
+            "_box": {
+              "x": 360,
+              "y": 751,
+              "w": 109,
+              "h": 38
+            },
+            "_text": "For Windows",
+            "_cls": "module-download-cta"
+          },
+          "source": "https://copilot.com/ computed, desktop 1440, colorScheme dark, 2026-11-19"
+        }
+      }
+    },
+    "button-secondary": {
+      "states": {
+        "default": {
+          "style": {
+            "display": "flex",
+            "boxSizing": "border-box",
+            "width": "117.266px",
+            "height": "46px",
+            "paddingTop": "12px",
+            "paddingRight": "24px",
+            "paddingBottom": "12px",
+            "paddingLeft": "24px",
+            "gap": "8px",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgba(255, 255, 255, 0.87)",
+            "fontFamily": "SegoeSans, SegoeUI, \"Segoe UI\", -apple-system, \"system-ui\", Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "600",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderTopWidth": "2px",
+            "borderTopStyle": "solid",
+            "borderTopColor": "rgb(133, 133, 133)",
+            "borderRadius": "8px",
+            "boxShadow": "none",
+            "outline": "rgba(255, 255, 255, 0.87) none 0px",
+            "outlineOffset": "0px",
+            "opacity": "1",
+            "cursor": "pointer",
+            "transitionProperty": "background-color, color, border-color",
+            "transitionDuration": "0.2s, 0.2s, 0.2s",
+            "transitionTimingFunction": "ease, ease, ease",
+            "textDecorationLine": "none",
+            "_box": {
+              "x": 1251,
+              "y": 986,
+              "w": 117,
+              "h": 46
+            },
+            "_text": "Expand all",
+            "_cls": "faq-expand-all"
+          },
+          "source": "https://copilot.com/ computed, desktop 1440, colorScheme dark, 2026-11-19"
+        },
+        "hover": {
+          "style": {
+            "display": "flex",
+            "boxSizing": "border-box",
+            "width": "117.266px",
+            "height": "46px",
+            "paddingTop": "12px",
+            "paddingRight": "24px",
+            "paddingBottom": "12px",
+            "paddingLeft": "24px",
+            "gap": "8px",
+            "backgroundColor": "rgb(255, 255, 255)",
+            "color": "rgb(36, 36, 36)",
+            "fontFamily": "SegoeSans, SegoeUI, \"Segoe UI\", -apple-system, \"system-ui\", Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "600",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderTopWidth": "2px",
+            "borderTopStyle": "solid",
+            "borderTopColor": "rgb(255, 255, 255)",
+            "borderRadius": "8px",
+            "boxShadow": "none",
+            "outline": "rgb(36, 36, 36) none 0px",
+            "outlineOffset": "0px",
+            "opacity": "1",
+            "cursor": "pointer",
+            "transitionProperty": "background-color, color, border-color",
+            "transitionDuration": "0.2s, 0.2s, 0.2s",
+            "transitionTimingFunction": "ease, ease, ease",
+            "textDecorationLine": "none",
+            "_box": {
+              "x": 1251,
+              "y": 427,
+              "w": 117,
+              "h": 46
+            },
+            "_text": "Expand all",
+            "_cls": "faq-expand-all"
+          },
+          "source": "https://copilot.com/ computed, desktop 1440, colorScheme dark, 2026-11-19"
+        },
+        "focus": {
+          "style": {
+            "display": "flex",
+            "boxSizing": "border-box",
+            "width": "117.266px",
+            "height": "46px",
+            "paddingTop": "12px",
+            "paddingRight": "24px",
+            "paddingBottom": "12px",
+            "paddingLeft": "24px",
+            "gap": "8px",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgba(255, 255, 255, 0.87)",
+            "fontFamily": "SegoeSans, SegoeUI, \"Segoe UI\", -apple-system, \"system-ui\", Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "600",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderTopWidth": "2px",
+            "borderTopStyle": "solid",
+            "borderTopColor": "rgb(133, 133, 133)",
+            "borderRadius": "8px",
+            "boxShadow": "none",
+            "outline": "rgba(255, 255, 255, 0.87) none 0px",
+            "outlineOffset": "0px",
+            "opacity": "1",
+            "cursor": "pointer",
+            "transitionProperty": "background-color, color, border-color",
+            "transitionDuration": "0.2s, 0.2s, 0.2s",
+            "transitionTimingFunction": "ease, ease, ease",
+            "textDecorationLine": "none",
+            "_box": {
+              "x": 1251,
+              "y": 427,
+              "w": 117,
+              "h": 46
+            },
+            "_text": "Expand all",
+            "_cls": "faq-expand-all"
+          },
+          "source": "https://copilot.com/ computed, desktop 1440, colorScheme dark, 2026-11-19"
+        }
+      }
+    },
+    "accordion": {
+      "states": {
+        "collapsed": {
+          "style": {
+            "display": "grid",
+            "boxSizing": "border-box",
+            "width": "1296px",
+            "height": "32px",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "gap": "normal",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(255, 255, 255)",
+            "fontFamily": "SegoeSans, SegoeUI, \"Segoe UI\", -apple-system, \"system-ui\", Helvetica, Arial, sans-serif",
+            "fontSize": "13.3333px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 0px",
+            "outlineOffset": "0px",
+            "opacity": "1",
+            "cursor": "pointer",
+            "transitionProperty": "background",
+            "transitionDuration": "0.2s",
+            "transitionTimingFunction": "ease-in-out",
+            "textDecorationLine": "none",
+            "_box": {
+              "x": 72,
+              "y": 546,
+              "w": 1296,
+              "h": 32
+            },
+            "_text": "01/ One Microsoft Copilot experience across work and life",
+            "_cls": "faq-question-button"
+          },
+          "source": "https://copilot.com/ computed, desktop 1440, colorScheme dark, 2026-11-19"
+        },
+        "expanded": {
+          "style": {
+            "display": "grid",
+            "boxSizing": "border-box",
+            "width": "1296px",
+            "height": "32px",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "gap": "normal",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(255, 255, 255)",
+            "fontFamily": "SegoeSans, SegoeUI, \"Segoe UI\", -apple-system, \"system-ui\", Helvetica, Arial, sans-serif",
+            "fontSize": "13.3333px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(255, 255, 255) none 0px",
+            "outlineOffset": "0px",
+            "opacity": "1",
+            "cursor": "pointer",
+            "transitionProperty": "background",
+            "transitionDuration": "0.2s",
+            "transitionTimingFunction": "ease-in-out",
+            "textDecorationLine": "none",
+            "_box": {
+              "x": 72,
+              "y": 546,
+              "w": 1296,
+              "h": 32
+            },
+            "_text": "01/ One Microsoft Copilot experience across work and life",
+            "_cls": "faq-question-button"
+          },
+          "source": "https://copilot.com/ computed, desktop 1440, colorScheme dark, 2026-11-19"
+        }
+      }
+    },
+    "accordion-answer": {
+      "states": {
+        "expanded": {
+          "style": {
+            "display": "none",
+            "boxSizing": "border-box",
+            "width": "auto",
+            "height": "auto",
+            "paddingTop": "16px",
+            "paddingRight": "24px",
+            "paddingBottom": "24px",
+            "paddingLeft": "232px",
+            "gap": "normal",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgba(255, 255, 255, 0.87)",
+            "fontFamily": "SegoeSans, SegoeUI, \"Segoe UI\", -apple-system, \"system-ui\", Helvetica, Arial, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgba(255, 255, 255, 0.87)",
+            "borderRadius": "0px",
+            "boxShadow": "none",
+            "outline": "rgba(255, 255, 255, 0.87) none 0px",
+            "outlineOffset": "0px",
+            "opacity": "1",
+            "cursor": "auto",
+            "transitionProperty": "all",
+            "transitionDuration": "0.3s",
+            "transitionTimingFunction": "ease-in-out",
+            "textDecorationLine": "none",
+            "_box": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "_text": "Use Microsoft Copilot across work and life in a single experience, available on ",
+            "_cls": "faq-answer"
+          },
+          "source": "https://copilot.com/ computed, desktop 1440, colorScheme dark, 2026-11-19"
+        }
+      }
+    },
+    "heading": {
+      "states": {
+        "hero": {
+          "style": {
+            "display": "block",
+            "boxSizing": "border-box",
+            "width": "521.562px",
+            "height": "99.5938px",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "24px",
+            "paddingLeft": "0px",
+            "gap": "normal",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgba(255, 255, 255, 0.87)",
+            "fontFamily": "SegoeSerifDisplay, Georgia, \"Times New Roman\", serif",
+            "fontSize": "72px",
+            "fontWeight": "400",
+            "lineHeight": "75.6px",
+            "letterSpacing": "-0.5px",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgba(255, 255, 255, 0.87)",
+            "borderRadius": "0px",
+            "boxShadow": "none",
+            "outline": "rgba(255, 255, 255, 0.87) none 0px",
+            "outlineOffset": "0px",
+            "opacity": "1",
+            "cursor": "auto",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "textDecorationLine": "none",
+            "_box": {
+              "x": 135,
+              "y": 261,
+              "w": 522,
+              "h": 100
+            },
+            "_text": "Sign into Copilot",
+            "_cls": "newexp-hero-title-bebop copilotcom-hero-reveal-title"
+          },
+          "source": "https://copilot.com/ computed, desktop 1440, colorScheme dark, 2026-11-19"
+        },
+        "section": {
+          "style": {
+            "display": "block",
+            "boxSizing": "border-box",
+            "width": "1296px",
+            "height": "48px",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "0px",
+            "paddingLeft": "0px",
+            "gap": "normal",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgba(255, 255, 255, 0.87)",
+            "fontFamily": "SegoeSans, SegoeUI, \"Segoe UI\", -apple-system, \"system-ui\", Helvetica, Arial, sans-serif",
+            "fontSize": "40px",
+            "fontWeight": "400",
+            "lineHeight": "48px",
+            "letterSpacing": "-1.2px",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgba(255, 255, 255, 0.87)",
+            "borderRadius": "0px",
+            "boxShadow": "none",
+            "outline": "rgba(255, 255, 255, 0.87) none 0px",
+            "outlineOffset": "0px",
+            "opacity": "1",
+            "cursor": "auto",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "textDecorationLine": "none",
+            "_box": {
+              "x": 72,
+              "y": 806,
+              "w": 1296,
+              "h": 48
+            },
+            "_text": "One Copilot for every part of your day",
+            "_cls": "modules-title copilotcom-modules-tabs-title"
+          },
+          "source": "https://copilot.com/ computed, desktop 1440, colorScheme dark, 2026-11-19"
+        }
+      }
+    },
+    "text": {
+      "states": {
+        "hero-subtitle": {
+          "style": {
+            "display": "block",
+            "boxSizing": "border-box",
+            "width": "583.188px",
+            "height": "84.4375px",
+            "paddingTop": "0px",
+            "paddingRight": "0px",
+            "paddingBottom": "24px",
+            "paddingLeft": "0px",
+            "gap": "normal",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgba(255, 255, 255, 0.63)",
+            "fontFamily": "SegoeSans, SegoeUI, \"Segoe UI\", -apple-system, \"system-ui\", Helvetica, Arial, sans-serif",
+            "fontSize": "21.6px",
+            "fontWeight": "400",
+            "lineHeight": "30.24px",
+            "letterSpacing": "-0.6px",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgba(255, 255, 255, 0.63)",
+            "borderRadius": "0px",
+            "boxShadow": "none",
+            "outline": "rgba(255, 255, 255, 0.63) none 0px",
+            "outlineOffset": "0px",
+            "opacity": "1",
+            "cursor": "auto",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "textDecorationLine": "none",
+            "_box": {
+              "x": 104,
+              "y": 361,
+              "w": 583,
+              "h": 84
+            },
+            "_text": "Chat to find answers, create content, and complete tasks with AI that understand",
+            "_cls": "newexp-hero-subtitle-bebop copilotcom-hero-reveal-subtitle"
+          },
+          "source": "https://copilot.com/ computed, desktop 1440, colorScheme dark, 2026-11-19"
+        }
+      }
+    },
+    "nav": {
+      "states": {
+        "default": {
+          "style": {
+            "display": "block",
+            "boxSizing": "border-box",
+            "width": "1440px",
+            "height": "54px",
+            "paddingTop": "0px",
+            "paddingRight": "72px",
+            "paddingBottom": "0px",
+            "paddingLeft": "72px",
+            "gap": "normal",
+            "backgroundColor": "rgb(31, 31, 31)",
+            "color": "rgba(255, 255, 255, 0.87)",
+            "fontFamily": "SegoeUI, Helvetica, Arial, sans-serif",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgba(255, 255, 255, 0.87)",
+            "borderRadius": "0px",
+            "boxShadow": "none",
+            "outline": "rgba(255, 255, 255, 0.87) none 0px",
+            "outlineOffset": "0px",
+            "opacity": "1",
+            "cursor": "auto",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "textDecorationLine": "none",
+            "_box": {
+              "x": 0,
+              "y": 0,
+              "w": 1440,
+              "h": 54
+            },
+            "_text": "Copilot Features Download Plans and Pricing Sign in ME",
+            "_cls": "uhf-header uhf-breakpoint--desktop uhf-theme--light"
+          },
+          "source": "https://copilot.com/ computed, desktop 1440, colorScheme dark, 2026-11-19"
+        }
+      }
+    },
+    "nav-link": {
+      "states": {
+        "default": {
+          "style": {
+            "display": "flex",
+            "boxSizing": "border-box",
+            "width": "74.3594px",
+            "height": "54px",
+            "paddingTop": "0px",
+            "paddingRight": "8px",
+            "paddingBottom": "0px",
+            "paddingLeft": "8px",
+            "gap": "normal",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgba(255, 255, 255, 0.87)",
+            "fontFamily": "\"Segoe UI\", SegoeUI, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+            "fontSize": "13px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgba(255, 255, 255, 0.87)",
+            "borderRadius": "0px",
+            "boxShadow": "none",
+            "outline": "rgba(255, 255, 255, 0.87) none 0px",
+            "outlineOffset": "0px",
+            "opacity": "1",
+            "cursor": "pointer",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "textDecorationLine": "none",
+            "_box": {
+              "x": 391,
+              "y": 0,
+              "w": 74,
+              "h": 54
+            },
+            "_text": "Download",
+            "_cls": "uhf-nav-item uhf-nav-link"
+          },
+          "source": "https://copilot.com/ computed, desktop 1440, colorScheme dark, 2026-11-19"
+        }
+      }
+    },
+    "footer": {
+      "states": {
+        "default": {
+          "style": {
+            "display": "block",
+            "boxSizing": "border-box",
+            "width": "1440px",
+            "height": "70px",
+            "paddingTop": "24px",
+            "paddingRight": "72px",
+            "paddingBottom": "24px",
+            "paddingLeft": "72px",
+            "gap": "normal",
+            "backgroundColor": "rgb(31, 31, 31)",
+            "color": "rgb(222, 222, 222)",
+            "fontFamily": "SegoeSans, SegoeUI, \"Segoe UI\", -apple-system, \"system-ui\", Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "normal",
+            "letterSpacing": "normal",
+            "borderTopWidth": "1px",
+            "borderTopStyle": "solid",
+            "borderTopColor": "rgba(255, 255, 255, 0.282)",
+            "borderRadius": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(222, 222, 222) none 0px",
+            "outlineOffset": "0px",
+            "opacity": "1",
+            "cursor": "auto",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "textDecorationLine": "none",
+            "_box": {
+              "x": 0,
+              "y": 2666,
+              "w": 1440,
+              "h": 70
+            },
+            "_text": "English (United States) Your Privacy Choices Privacy Consumer Health Policy Term",
+            "_cls": "thin-footer"
+          },
+          "source": "https://copilot.com/ computed, desktop 1440, colorScheme dark, 2026-11-19"
+        }
+      }
+    },
+    "footer-link": {
+      "states": {
+        "default": {
+          "style": {
+            "display": "flex",
+            "boxSizing": "border-box",
+            "width": "auto",
+            "height": "auto",
+            "paddingTop": "8px",
+            "paddingRight": "16px",
+            "paddingBottom": "8px",
+            "paddingLeft": "16px",
+            "gap": "8px",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(222, 222, 222)",
+            "fontFamily": "SegoeSans, SegoeUI, \"Segoe UI\", -apple-system, \"system-ui\", Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px",
+            "letterSpacing": "normal",
+            "borderTopWidth": "0px",
+            "borderTopStyle": "none",
+            "borderTopColor": "rgb(222, 222, 222)",
+            "borderRadius": "0px",
+            "boxShadow": "none",
+            "outline": "rgb(222, 222, 222) none 0px",
+            "outlineOffset": "0px",
+            "opacity": "1",
+            "cursor": "pointer",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "textDecorationLine": "none",
+            "_box": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "_text": "Afrikaans (Suid-Afrika)",
+            "_cls": "language-picker__item"
+          },
+          "source": "https://copilot.com/ computed, desktop 1440, colorScheme dark, 2026-11-19"
+        }
+      }
+    },
+    "menu": {
+      "states": {
+        "open": {
+          "style": {
+            "backgroundColor": "rgb(43, 43, 43)",
+            "color": "rgba(255, 255, 255, 0.87)",
+            "borderRadius": "0px",
+            "boxShadow": "none",
+            "padding": "0px",
+            "fontSize": "16px",
+            "fontFamily": "SegoeUI, Helvetica, Arial, sans-serif",
+            "cls": "uhf-dropdown-menu"
+          },
+          "source": "features dropdown computed, 2026-11-19"
+        }
+      }
+    }
+  },
+  "capturedAt": "2026-11-18T16:33:33.554Z"
+}

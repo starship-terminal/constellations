@@ -1,0 +1,3683 @@
+{
+  "_about": "The token tree build_tokens.py turns into tokens.json. delphi.co declares its design-token layer in its stylesheets (raw/css-vars.json): theme-invariant scales under core.* and every theme-switching name — Radix-style palette steps, shadcn semantics and Delphi's --fg-*/--surface-*/--mind-* roles — emitted under both light.* and dark.* so each theme resolves its own value. The dark theme is declared, never painted while signed out. Measured roles alias to the declared values where they match.",
+  "core": {
+    "font": {
+      "family": {
+        "ui": {
+          "value": "\"Delphi Inter\", \"Delphi Inter Fallback\", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+          "type": "fontFamily",
+          "source": "computed fontFamily of chat-input default (raw/components-computed.json)",
+          "description": "Delphi Inter — every UI control, body and meta text."
+        },
+        "display": {
+          "value": "\"Delphi Pythia\", \"Delphi Pythia Fallback\", ui-serif, Georgia, \"Times New Roman\", serif",
+          "type": "fontFamily",
+          "source": "computed fontFamily of hero-h1 default (raw/components-computed.json)",
+          "description": "Delphi Pythia — the serif display face (hero 50px, names 34px, quotes 18px, badges 10px)."
+        }
+      },
+      "weight": {
+        "regular": {
+          "value": 400,
+          "type": "fontWeight",
+          "source": "computed fontWeight of chat-input default (raw/components-computed.json)",
+          "description": "400 — body and field text."
+        },
+        "book": {
+          "value": 450,
+          "type": "fontWeight",
+          "source": "computed fontWeight of share-btn default (raw/components-computed.json)",
+          "description": "450 — the profile Share pill."
+        },
+        "medium": {
+          "value": 500,
+          "type": "fontWeight",
+          "source": "computed fontWeight of signin-btn default (raw/components-computed.json)",
+          "description": "500 — pill buttons, chips and card actions."
+        },
+        "semibold": {
+          "value": 600,
+          "type": "fontWeight",
+          "source": "computed fontWeight of exp-name default (raw/components-computed.json)",
+          "description": "600 — expert names and credential badges."
+        },
+        "declared": {
+          "bold": {
+            "value": 700,
+            "type": "other",
+            "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-bold",
+            "description": "The declared `--font-weight-bold`."
+          },
+          "light": {
+            "value": 300,
+            "type": "other",
+            "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-light",
+            "description": "The declared `--font-weight-light`."
+          },
+          "medium": {
+            "value": 500,
+            "type": "other",
+            "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-medium",
+            "description": "The declared `--font-weight-medium`."
+          },
+          "normal": {
+            "value": 400,
+            "type": "other",
+            "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-normal",
+            "description": "The declared `--font-weight-normal`."
+          },
+          "semibold": {
+            "value": 600,
+            "type": "other",
+            "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --font-weight-semibold",
+            "description": "The declared `--font-weight-semibold`."
+          }
+        }
+      },
+      "size": {
+        "2xl": {
+          "value": "1.5rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-2xl",
+          "description": "The declared `--text-2xl`."
+        },
+        "3xl": {
+          "value": "1.875rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-3xl",
+          "description": "The declared `--text-3xl`."
+        },
+        "4xl": {
+          "value": "2.25rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-4xl",
+          "description": "The declared `--text-4xl`."
+        },
+        "5xl": {
+          "value": "3rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-5xl",
+          "description": "The declared `--text-5xl`."
+        },
+        "6xl": {
+          "value": "3.75rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-6xl",
+          "description": "The declared `--text-6xl`."
+        },
+        "7xl": {
+          "value": "4.5rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-7xl",
+          "description": "The declared `--text-7xl`."
+        },
+        "8xl": {
+          "value": "6rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-8xl",
+          "description": "The declared `--text-8xl`."
+        },
+        "9xl": {
+          "value": "8rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-9xl",
+          "description": "The declared `--text-9xl`."
+        },
+        "base": {
+          "value": "1rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-base",
+          "description": "The declared `--text-base`."
+        },
+        "lg": {
+          "value": "1.125rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-lg",
+          "description": "The declared `--text-lg`."
+        },
+        "sm": {
+          "value": ".875rem",
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-sm",
+          "description": "The declared `--text-sm`."
+        },
+        "xl": {
+          "value": "1.25rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-xl",
+          "description": "The declared `--text-xl`."
+        },
+        "xs": {
+          "value": ".75rem",
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-xs",
+          "description": "The declared `--text-xs`."
+        },
+        "measured": {
+          "badge": {
+            "value": "10px",
+            "type": "fontSize",
+            "source": "computed fontSize of srch-badge default (raw/components-computed.json)",
+            "description": "The 10px uppercase credential badge (Pythia 600)."
+          },
+          "xs": {
+            "value": "12px",
+            "type": "fontSize",
+            "source": "computed fontSize of chat-terms default (raw/components-computed.json)",
+            "description": "The 12px terms/helper line under the composer."
+          },
+          "sm": {
+            "value": "13px",
+            "type": "fontSize",
+            "source": "computed fontSize of m-signin default (raw/components-computed.json)",
+            "description": "The 13px mobile sign-in link."
+          },
+          "control": {
+            "value": "14px",
+            "type": "fontSize",
+            "source": "computed fontSize of signin-btn default (raw/components-computed.json)",
+            "description": "The 14px pill-button, chip and nav-topic label."
+          },
+          "body": {
+            "value": "16px",
+            "type": "fontSize",
+            "source": "computed fontSize of chat-name default (raw/components-computed.json)",
+            "description": "The 16px body, card and profile text."
+          },
+          "lg": {
+            "value": "18px",
+            "type": "fontSize",
+            "source": "computed fontSize of hero-search default (raw/components-computed.json)",
+            "description": "The 18px ask fields, quotes and section headings."
+          },
+          "section": {
+            "value": "20px",
+            "type": "fontSize",
+            "source": "computed fontSize of section-h2 default (raw/components-computed.json)",
+            "description": "The 20px marketing section heading."
+          },
+          "mobile-display": {
+            "value": "32px",
+            "type": "fontSize",
+            "source": "computed fontSize of m-h1 default (raw/components-computed.json)",
+            "description": "The 32px mobile display size at 390px."
+          },
+          "name": {
+            "value": "34px",
+            "type": "fontSize",
+            "source": "computed fontSize of exp-name default (raw/components-computed.json)",
+            "description": "The 34px expert display name (Pythia 600)."
+          },
+          "display": {
+            "value": "50px",
+            "type": "fontSize",
+            "source": "computed fontSize of hero-h1 default (raw/components-computed.json)",
+            "description": "The 50px Pythia display on home and discover."
+          }
+        }
+      },
+      "lineHeight": {
+        "2xl": {
+          "value": "calc(2/1.5)",
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-2xl--line-height",
+          "description": "The declared `--text-2xl--line-height`."
+        },
+        "3xl": {
+          "value": "calc(2.25/1.875)",
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-3xl--line-height",
+          "description": "The declared `--text-3xl--line-height`."
+        },
+        "4xl": {
+          "value": "calc(2.5/2.25)",
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-4xl--line-height",
+          "description": "The declared `--text-4xl--line-height`."
+        },
+        "5xl": {
+          "value": 1,
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-5xl--line-height",
+          "description": "The declared `--text-5xl--line-height`."
+        },
+        "6xl": {
+          "value": 1,
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-6xl--line-height",
+          "description": "The declared `--text-6xl--line-height`."
+        },
+        "7xl": {
+          "value": 1,
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-7xl--line-height",
+          "description": "The declared `--text-7xl--line-height`."
+        },
+        "8xl": {
+          "value": 1,
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-8xl--line-height",
+          "description": "The declared `--text-8xl--line-height`."
+        },
+        "9xl": {
+          "value": 1,
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-9xl--line-height",
+          "description": "The declared `--text-9xl--line-height`."
+        },
+        "base": {
+          "value": "calc(1.5/1)",
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-base--line-height",
+          "description": "The declared `--text-base--line-height`."
+        },
+        "lg": {
+          "value": "calc(1.75/1.125)",
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-lg--line-height",
+          "description": "The declared `--text-lg--line-height`."
+        },
+        "sm": {
+          "value": "calc(1.25/.875)",
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-sm--line-height",
+          "description": "The declared `--text-sm--line-height`."
+        },
+        "xl": {
+          "value": "calc(1.75/1.25)",
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-xl--line-height",
+          "description": "The declared `--text-xl--line-height`."
+        },
+        "xs": {
+          "value": "calc(1/.75)",
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --text-xs--line-height",
+          "description": "The declared `--text-xs--line-height`."
+        },
+        "normal": {
+          "value": 1.5,
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --leading-normal",
+          "description": "The declared `--leading-normal`."
+        },
+        "relaxed": {
+          "value": 1.625,
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --leading-relaxed",
+          "description": "The declared `--leading-relaxed`."
+        },
+        "snug": {
+          "value": 1.375,
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --leading-snug",
+          "description": "The declared `--leading-snug`."
+        },
+        "tight": {
+          "value": 1.25,
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --leading-tight",
+          "description": "The declared `--leading-tight`."
+        }
+      },
+      "tracking": {
+        "normal": {
+          "value": "0em",
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --tracking-normal",
+          "description": "The declared `--tracking-normal`."
+        },
+        "tight": {
+          "value": "-.025em",
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --tracking-tight",
+          "description": "The declared `--tracking-tight`."
+        },
+        "wide": {
+          "value": ".025em",
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --tracking-wide",
+          "description": "The declared `--tracking-wide`."
+        },
+        "widest": {
+          "value": ".1em",
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --tracking-widest",
+          "description": "The declared `--tracking-widest`."
+        }
+      }
+    },
+    "color": {
+      "amber": {
+        "400": {
+          "value": "#ffb900",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-amber-400",
+          "description": "The declared `--color-amber-400`."
+        },
+        "600": {
+          "value": "#e17100",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-amber-600",
+          "description": "The declared `--color-amber-600`."
+        }
+      },
+      "black": {
+        "value": "#000000",
+        "type": "color",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-black",
+        "description": "The declared `--color-black`."
+      },
+      "emerald": {
+        "500": {
+          "value": "#00bc7d",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-emerald-500",
+          "description": "The declared `--color-emerald-500`."
+        },
+        "600": {
+          "value": "#009966",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-emerald-600",
+          "description": "The declared `--color-emerald-600`."
+        }
+      },
+      "green": {
+        "400": {
+          "value": "#05df72",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-green-400",
+          "description": "The declared `--color-green-400`."
+        }
+      },
+      "neutral": {
+        "100": {
+          "value": "#f5f5f5",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-neutral-100",
+          "description": "The declared `--color-neutral-100`."
+        },
+        "200": {
+          "value": "#e5e5e5",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-neutral-200",
+          "description": "The declared `--color-neutral-200`."
+        },
+        "300": {
+          "value": "#d4d4d4",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-neutral-300",
+          "description": "The declared `--color-neutral-300`."
+        },
+        "400": {
+          "value": "#a1a1a1",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-neutral-400",
+          "description": "The declared `--color-neutral-400`."
+        },
+        "500": {
+          "value": "#737373",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-neutral-500",
+          "description": "The declared `--color-neutral-500`."
+        },
+        "600": {
+          "value": "#525252",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-neutral-600",
+          "description": "The declared `--color-neutral-600`."
+        },
+        "800": {
+          "value": "#262626",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-neutral-800",
+          "description": "The declared `--color-neutral-800`."
+        },
+        "900": {
+          "value": "#171717",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-neutral-900",
+          "description": "The declared `--color-neutral-900`."
+        },
+        "950": {
+          "value": "#0a0a0a",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-neutral-950",
+          "description": "The declared `--color-neutral-950`."
+        }
+      },
+      "red": {
+        "300": {
+          "value": "#ffa2a2",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-red-300",
+          "description": "The declared `--color-red-300`."
+        },
+        "400": {
+          "value": "#ff6467",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-red-400",
+          "description": "The declared `--color-red-400`."
+        },
+        "500": {
+          "value": "#fb2c36",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-red-500",
+          "description": "The declared `--color-red-500`."
+        },
+        "600": {
+          "value": "#e7000b",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-red-600",
+          "description": "The declared `--color-red-600`."
+        }
+      },
+      "rose": {
+        "500": {
+          "value": "#ff2056",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-rose-500",
+          "description": "The declared `--color-rose-500`."
+        }
+      },
+      "sky": {
+        "600": {
+          "value": "#0084d1",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-sky-600",
+          "description": "The declared `--color-sky-600`."
+        }
+      },
+      "slate": {
+        "300": {
+          "value": "#cad5e2",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-slate-300",
+          "description": "The declared `--color-slate-300`."
+        },
+        "400": {
+          "value": "#90a1b9",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-slate-400",
+          "description": "The declared `--color-slate-400`."
+        },
+        "500": {
+          "value": "#62748e",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-slate-500",
+          "description": "The declared `--color-slate-500`."
+        },
+        "600": {
+          "value": "#45556c",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-slate-600",
+          "description": "The declared `--color-slate-600`."
+        },
+        "700": {
+          "value": "#314158",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-slate-700",
+          "description": "The declared `--color-slate-700`."
+        },
+        "800": {
+          "value": "#1d293d",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-slate-800",
+          "description": "The declared `--color-slate-800`."
+        },
+        "900": {
+          "value": "#0f172b",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-slate-900",
+          "description": "The declared `--color-slate-900`."
+        }
+      },
+      "tangerine": {
+        "9": {
+          "value": "#fd5400",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-tangerine-9",
+          "description": "The declared `--color-tangerine-9`."
+        }
+      },
+      "white": {
+        "value": "#ffffff",
+        "type": "color",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-white",
+        "description": "The declared `--color-white`."
+      },
+      "zinc": {
+        "200": {
+          "value": "#e4e4e7",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-zinc-200",
+          "description": "The declared `--color-zinc-200`."
+        },
+        "300": {
+          "value": "#d4d4d8",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-zinc-300",
+          "description": "The declared `--color-zinc-300`."
+        },
+        "400": {
+          "value": "#9f9fa9",
+          "type": "color",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --color-zinc-400",
+          "description": "The declared `--color-zinc-400`."
+        }
+      }
+    },
+    "size": {
+      "container": {
+        "2xl": {
+          "value": "42rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --container-2xl",
+          "description": "The declared `--container-2xl`."
+        },
+        "3xl": {
+          "value": "48rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --container-3xl",
+          "description": "The declared `--container-3xl`."
+        },
+        "4xl": {
+          "value": "56rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --container-4xl",
+          "description": "The declared `--container-4xl`."
+        },
+        "5xl": {
+          "value": "64rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --container-5xl",
+          "description": "The declared `--container-5xl`."
+        },
+        "6xl": {
+          "value": "72rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --container-6xl",
+          "description": "The declared `--container-6xl`."
+        },
+        "lg": {
+          "value": "32rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --container-lg",
+          "description": "The declared `--container-lg`."
+        },
+        "md": {
+          "value": "28rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --container-md",
+          "description": "The declared `--container-md`."
+        },
+        "sm": {
+          "value": "24rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --container-sm",
+          "description": "The declared `--container-sm`."
+        },
+        "xl": {
+          "value": "36rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --container-xl",
+          "description": "The declared `--container-xl`."
+        },
+        "xs": {
+          "value": "20rem",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --container-xs",
+          "description": "The declared `--container-xs`."
+        }
+      }
+    },
+    "breakpoint": {
+      "2xl": {
+        "value": "96rem",
+        "type": "dimension",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --breakpoint-2xl",
+        "description": "The declared `--breakpoint-2xl`."
+      },
+      "xl": {
+        "value": "80rem",
+        "type": "dimension",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --breakpoint-xl",
+        "description": "The declared `--breakpoint-xl`."
+      }
+    },
+    "radius": {
+      "xl": {
+        "value": "14px",
+        "type": "dimension",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --radius-xl",
+        "description": "The declared `--radius-xl`."
+      },
+      "xs": {
+        "value": ".125rem",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --radius-xs",
+        "description": "The declared `--radius-xs`."
+      },
+      "default": {
+        "value": ".625rem",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --radius",
+        "description": "The declared `--radius`."
+      },
+      "badge": {
+        "value": "6px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of srch-badge default (raw/components-computed.json)",
+        "description": "The 6px credential-badge radius."
+      },
+      "chip": {
+        "value": "18px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of suggested-chip default (raw/components-computed.json)",
+        "description": "The 18px suggested-question chip."
+      },
+      "card-sm": {
+        "value": "20px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of m-topic-card default (raw/components-computed.json)",
+        "description": "The 20px mobile topic card and experience item."
+      },
+      "card": {
+        "value": "24px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of topic-card default (raw/components-computed.json)",
+        "description": "The 24px topic/gallery card."
+      },
+      "button": {
+        "value": "26px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of create-cta default (raw/components-computed.json)",
+        "description": "The 26px button/dialog radius — CTAs, dialog actions, expert cards, Share."
+      },
+      "flip": {
+        "value": "28px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of persp-flip default (raw/components-computed.json)",
+        "description": "The 28px perspective flip card."
+      },
+      "pill": {
+        "value": "calc(infinity * 1px)",
+        "type": "other",
+        "source": "computed borderTopLeftRadius of mic-btn default (raw/components-computed.json)",
+        "description": "The full-pill (calc(infinity * 1px)) on round and topic buttons."
+      }
+    },
+    "duration": {
+      "enter": {
+        "value": "0.14s",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --duration-enter",
+        "description": "The declared `--duration-enter`."
+      },
+      "exit": {
+        "value": "0.09s",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --duration-exit",
+        "description": "The declared `--duration-exit`."
+      },
+      "move": {
+        "value": "0.22s",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --duration-move",
+        "description": "The declared `--duration-move`."
+      }
+    },
+    "easing": {
+      "in": {
+        "value": "cubic-bezier(.4,0,1,1)",
+        "type": "cubicBezier",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --ease-in",
+        "description": "The declared `--ease-in`."
+      },
+      "in-out": {
+        "value": "cubic-bezier(.4,0,.2,1)",
+        "type": "cubicBezier",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --ease-in-out",
+        "description": "The declared `--ease-in-out`."
+      },
+      "in-out-quart": {
+        "value": "cubic-bezier(.77,0,.175,1)",
+        "type": "cubicBezier",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --ease-in-out-quart",
+        "description": "The declared `--ease-in-out-quart`."
+      },
+      "out": {
+        "value": "cubic-bezier(0,0,.2,1)",
+        "type": "cubicBezier",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --ease-out",
+        "description": "The declared `--ease-out`."
+      },
+      "out-quart": {
+        "value": "cubic-bezier(.165,.84,.44,1)",
+        "type": "cubicBezier",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --ease-out-quart",
+        "description": "The declared `--ease-out-quart`."
+      },
+      "out-quint": {
+        "value": "cubic-bezier(.23,1,.32,1)",
+        "type": "cubicBezier",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --ease-out-quint",
+        "description": "The declared `--ease-out-quint`."
+      }
+    },
+    "motion": {
+      "arrive": {
+        "value": "arrive .3s cubic-bezier(.23,1,.32,1).15s backwards",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --animate-arrive",
+        "description": "The declared `--animate-arrive`."
+      },
+      "lean-in-left": {
+        "value": "lean-in-left 1.4s cubic-bezier(.65,0,.35,1)infinite",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --animate-lean-in-left",
+        "description": "The declared `--animate-lean-in-left`."
+      },
+      "lean-in-right": {
+        "value": "lean-in-right 1.4s cubic-bezier(.65,0,.35,1)infinite",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --animate-lean-in-right",
+        "description": "The declared `--animate-lean-in-right`."
+      },
+      "ping": {
+        "value": "ping 1s cubic-bezier(0,0,.2,1)infinite",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --animate-ping",
+        "description": "The declared `--animate-ping`."
+      },
+      "pulse": {
+        "value": "pulse 2s cubic-bezier(.4,0,.6,1)infinite",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --animate-pulse",
+        "description": "The declared `--animate-pulse`."
+      },
+      "spin": {
+        "value": "spin 1s linear infinite",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --animate-spin",
+        "description": "The declared `--animate-spin`."
+      },
+      "typing-dot": {
+        "value": "typing-dot 1s linear infinite",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --animate-typing-dot",
+        "description": "The declared `--animate-typing-dot`."
+      },
+      "typing-dot-wave": {
+        "value": "typing-dot-wave 1.7s ease-in-out infinite",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --animate-typing-dot-wave",
+        "description": "The declared `--animate-typing-dot-wave`."
+      },
+      "control": {
+        "value": "color, background-color, border-color, box-shadow, transform, opacity 0.15s cubic-bezier(0.165, 0.84, 0.44, 1)",
+        "type": "other",
+        "source": "computed transition of create-cta default (raw/components-computed.json)",
+        "description": "The measured control transition."
+      }
+    },
+    "blur": {
+      "2xl": {
+        "value": "40px",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --blur-2xl",
+        "description": "The declared `--blur-2xl`."
+      },
+      "3xl": {
+        "value": "64px",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --blur-3xl",
+        "description": "The declared `--blur-3xl`."
+      },
+      "md": {
+        "value": "12px",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --blur-md",
+        "description": "The declared `--blur-md`."
+      },
+      "sm": {
+        "value": "8px",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --blur-sm",
+        "description": "The declared `--blur-sm`."
+      },
+      "xl": {
+        "value": "24px",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --blur-xl",
+        "description": "The declared `--blur-xl`."
+      },
+      "xs": {
+        "value": "4px",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --blur-xs",
+        "description": "The declared `--blur-xs`."
+      }
+    },
+    "zIndex": {
+      "dropdown": {
+        "value": 100,
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --z-dropdown",
+        "description": "The declared `--z-dropdown`."
+      },
+      "modal": {
+        "value": 200,
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --z-modal",
+        "description": "The declared `--z-modal`."
+      },
+      "toast": {
+        "value": 400,
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --z-toast",
+        "description": "The declared `--z-toast`."
+      },
+      "tooltip": {
+        "value": 300,
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --z-tooltip",
+        "description": "The declared `--z-tooltip`."
+      }
+    },
+    "default": {
+      "transition-duration": {
+        "value": "0.15s",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --default-transition-duration",
+        "description": "The declared `--default-transition-duration`."
+      },
+      "transition-timing-function": {
+        "value": "cubic-bezier(.4,0,.2,1)",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --default-transition-timing-function",
+        "description": "The declared `--default-transition-timing-function`."
+      }
+    },
+    "shadow": {
+      "drop": {
+        "sm": {
+          "value": "rgba(0, 0, 0, 0.15) 0px 1px 2px 0px",
+          "type": "other",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --drop-shadow-sm",
+          "description": "The declared `--drop-shadow-sm`."
+        }
+      },
+      "dialog": {
+        "value": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.243135 -0.000696592 0.00753608 / 0.05) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.1) 0px 8px 10px -6px",
+        "type": "other",
+        "source": "computed boxShadow of signin-dialog default (raw/components-computed.json)",
+        "description": "The layered shadow the sign-in dialog carries."
+      }
+    },
+    "aspect": {
+      "video": {
+        "value": "16/9",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --aspect-video",
+        "description": "The declared `--aspect-video`."
+      }
+    },
+    "border": {
+      "hairline": {
+        "width": {
+          "value": "1px",
+          "type": "dimension",
+          "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --border-hairline",
+          "description": "The declared `--border-hairline`."
+        }
+      }
+    },
+    "destructive": {
+      "value": "#e5484d",
+      "type": "color",
+      "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --destructive",
+      "description": "The declared `--destructive`."
+    },
+    "dock": {
+      "rest": {
+        "value": "0px",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --dock-rest",
+        "description": "The declared `--dock-rest`."
+      }
+    },
+    "head": {
+      "climb": {
+        "value": "0px",
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --head-climb",
+        "description": "The declared `--head-climb`."
+      }
+    },
+    "info": {
+      "value": "#0090ff",
+      "type": "color",
+      "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --info",
+      "description": "The declared `--info`."
+    },
+    "person": {
+      "preview": {
+        "fade": {
+          "bottom": {
+            "value": "0px",
+            "type": "other",
+            "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --person-preview-fade-bottom",
+            "description": "The declared `--person-preview-fade-bottom`."
+          },
+          "top": {
+            "value": "0px",
+            "type": "other",
+            "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --person-preview-fade-top",
+            "description": "The declared `--person-preview-fade-top`."
+          }
+        }
+      }
+    },
+    "quote": {
+      "glow": {
+        "value": 1,
+        "type": "other",
+        "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --quote-glow",
+        "description": "The declared `--quote-glow`."
+      }
+    },
+    "silk": {
+      "100": {
+        "lvh": {
+          "dvh": {
+            "pct": {
+              "value": "900px",
+              "type": "other",
+              "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --silk-100-lvh-dvh-pct",
+              "description": "The declared `--silk-100-lvh-dvh-pct`."
+            }
+          }
+        }
+      }
+    },
+    "spacing": {
+      "value": ".25rem",
+      "type": "other",
+      "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --spacing",
+      "description": "The declared `--spacing`."
+    },
+    "success": {
+      "value": "#30a46c",
+      "type": "color",
+      "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --success",
+      "description": "The declared `--success`."
+    },
+    "warning": {
+      "value": "#ffc53d",
+      "type": "color",
+      "source": "declared design-system variable in the site stylesheet (raw/css-vars.json): --warning",
+      "description": "The declared `--warning`."
+    }
+  },
+  "light": {
+    "accent": {
+      "default": {
+        "var": "--accent",
+        "type": "color"
+      },
+      "foreground": {
+        "var": "--accent-foreground",
+        "type": "color"
+      }
+    },
+    "color": {
+      "amber": {
+        "1": {
+          "var": "--amber-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--amber-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--amber-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--amber-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--amber-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--amber-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--amber-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--amber-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--amber-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--amber-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--amber-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--amber-9",
+          "type": "color"
+        }
+      },
+      "blue": {
+        "1": {
+          "var": "--blue-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--blue-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--blue-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--blue-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--blue-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--blue-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--blue-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--blue-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--blue-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--blue-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--blue-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--blue-9",
+          "type": "color"
+        }
+      },
+      "brown": {
+        "1": {
+          "var": "--brown-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--brown-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--brown-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--brown-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--brown-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--brown-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--brown-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--brown-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--brown-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--brown-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--brown-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--brown-9",
+          "type": "color"
+        }
+      },
+      "tangerine": {
+        "3": {
+          "default": {
+            "var": "--color-tangerine-3",
+            "type": "color"
+          },
+          "oklch": {
+            "var": "--tangerine-3-oklch",
+            "type": "other"
+          }
+        },
+        "1": {
+          "oklch": {
+            "var": "--tangerine-1-oklch",
+            "type": "other"
+          }
+        },
+        "10": {
+          "oklch": {
+            "var": "--tangerine-10-oklch",
+            "type": "other"
+          }
+        },
+        "11": {
+          "oklch": {
+            "var": "--tangerine-11-oklch",
+            "type": "other"
+          }
+        },
+        "12": {
+          "oklch": {
+            "var": "--tangerine-12-oklch",
+            "type": "other"
+          }
+        },
+        "2": {
+          "oklch": {
+            "var": "--tangerine-2-oklch",
+            "type": "other"
+          }
+        },
+        "4": {
+          "oklch": {
+            "var": "--tangerine-4-oklch",
+            "type": "other"
+          }
+        },
+        "5": {
+          "oklch": {
+            "var": "--tangerine-5-oklch",
+            "type": "other"
+          }
+        },
+        "6": {
+          "oklch": {
+            "var": "--tangerine-6-oklch",
+            "type": "other"
+          }
+        },
+        "7": {
+          "oklch": {
+            "var": "--tangerine-7-oklch",
+            "type": "other"
+          }
+        },
+        "8": {
+          "oklch": {
+            "var": "--tangerine-8-oklch",
+            "type": "other"
+          }
+        },
+        "9": {
+          "oklch": {
+            "var": "--tangerine-9-oklch",
+            "type": "other"
+          }
+        }
+      },
+      "crimson": {
+        "1": {
+          "var": "--crimson-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--crimson-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--crimson-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--crimson-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--crimson-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--crimson-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--crimson-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--crimson-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--crimson-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--crimson-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--crimson-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--crimson-9",
+          "type": "color"
+        }
+      },
+      "cyan": {
+        "1": {
+          "var": "--cyan-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--cyan-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--cyan-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--cyan-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--cyan-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--cyan-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--cyan-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--cyan-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--cyan-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--cyan-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--cyan-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--cyan-9",
+          "type": "color"
+        }
+      },
+      "gold": {
+        "1": {
+          "var": "--gold-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--gold-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--gold-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--gold-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--gold-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--gold-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--gold-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--gold-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--gold-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--gold-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--gold-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--gold-9",
+          "type": "color"
+        }
+      },
+      "grass": {
+        "1": {
+          "var": "--grass-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--grass-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--grass-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--grass-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--grass-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--grass-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--grass-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--grass-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--grass-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--grass-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--grass-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--grass-9",
+          "type": "color"
+        }
+      },
+      "green": {
+        "1": {
+          "var": "--green-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--green-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--green-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--green-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--green-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--green-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--green-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--green-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--green-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--green-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--green-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--green-9",
+          "type": "color"
+        }
+      },
+      "indigo": {
+        "1": {
+          "var": "--indigo-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--indigo-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--indigo-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--indigo-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--indigo-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--indigo-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--indigo-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--indigo-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--indigo-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--indigo-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--indigo-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--indigo-9",
+          "type": "color"
+        }
+      },
+      "jade": {
+        "1": {
+          "var": "--jade-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--jade-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--jade-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--jade-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--jade-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--jade-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--jade-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--jade-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--jade-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--jade-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--jade-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--jade-9",
+          "type": "color"
+        }
+      },
+      "plum": {
+        "1": {
+          "var": "--plum-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--plum-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--plum-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--plum-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--plum-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--plum-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--plum-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--plum-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--plum-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--plum-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--plum-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--plum-9",
+          "type": "color"
+        }
+      },
+      "red": {
+        "1": {
+          "var": "--red-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--red-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--red-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--red-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--red-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--red-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--red-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--red-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--red-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--red-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--red-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--red-9",
+          "type": "color"
+        }
+      },
+      "ruby": {
+        "1": {
+          "var": "--ruby-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--ruby-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--ruby-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--ruby-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--ruby-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--ruby-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--ruby-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--ruby-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--ruby-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--ruby-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--ruby-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--ruby-9",
+          "type": "color"
+        }
+      },
+      "sand": {
+        "1": {
+          "var": "--sand-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--sand-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--sand-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--sand-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--sand-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--sand-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--sand-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--sand-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--sand-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--sand-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--sand-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--sand-9",
+          "type": "color"
+        }
+      },
+      "teal": {
+        "1": {
+          "var": "--teal-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--teal-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--teal-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--teal-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--teal-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--teal-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--teal-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--teal-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--teal-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--teal-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--teal-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--teal-9",
+          "type": "color"
+        }
+      },
+      "tomato": {
+        "1": {
+          "var": "--tomato-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--tomato-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--tomato-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--tomato-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--tomato-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--tomato-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--tomato-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--tomato-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--tomato-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--tomato-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--tomato-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--tomato-9",
+          "type": "color"
+        }
+      },
+      "violet": {
+        "1": {
+          "var": "--violet-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--violet-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--violet-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--violet-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--violet-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--violet-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--violet-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--violet-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--violet-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--violet-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--violet-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--violet-9",
+          "type": "color"
+        }
+      },
+      "yellow": {
+        "1": {
+          "var": "--yellow-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--yellow-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--yellow-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--yellow-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--yellow-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--yellow-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--yellow-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--yellow-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--yellow-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--yellow-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--yellow-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--yellow-9",
+          "type": "color"
+        }
+      }
+    },
+    "avatar": {
+      "shadow": {
+        "default": {
+          "var": "--avatar-shadow",
+          "type": "other"
+        },
+        "inset": {
+          "var": "--avatar-shadow-inset",
+          "type": "other"
+        }
+      }
+    },
+    "background": {
+      "default": {
+        "var": "--background",
+        "type": "color"
+      },
+      "page": {
+        "value": "{background.default}",
+        "type": "color",
+        "source": "declared --background (raw/css-vars.json resolved.light); no computed reading of the page field (seen in screenshots/*-light-*.png); matches declared --background",
+        "description": "The white field the whole public surface paints."
+      },
+      "card": {
+        "value": "{card.default}",
+        "type": "color",
+        "source": "computed backgroundColor of disc-card default (raw/components-computed.json); matches declared --card",
+        "description": "The white card field (result and gallery cards match --card/--popover)."
+      },
+      "warm": {
+        "value": "#f7f3f0",
+        "type": "color",
+        "source": "computed backgroundColor of topic-card default (raw/components-computed.json)",
+        "description": "The #f7f3f0 warm field on the topic/ask cards."
+      },
+      "chip": {
+        "value": "{input}",
+        "type": "color",
+        "source": "computed backgroundColor of suggested-chip default (raw/components-computed.json); matches declared input",
+        "description": "The ~10% ink chip fill on suggested questions, nav topics and dialog alternatives."
+      },
+      "badge": {
+        "value": "rgba(33, 32, 28, 0.06)",
+        "type": "color",
+        "source": "computed backgroundColor of srch-badge default (raw/components-computed.json)",
+        "description": "The ~6% ink fill behind credential badges."
+      }
+    },
+    "border": {
+      "default": {
+        "var": "--border",
+        "type": "color"
+      },
+      "hairline": {
+        "value": "rgba(33, 32, 28, 0.09)",
+        "type": "color",
+        "source": "computed borderTopColor of disc-card default (raw/components-computed.json)",
+        "description": "The ~12% ink hairline around cards and fields."
+      },
+      "card-border": {
+        "value": "rgba(141, 141, 134, 0.2)",
+        "type": "color",
+        "source": "computed borderTopColor of srch-expert-card default (raw/components-computed.json)",
+        "description": "The ~20% ink border on result cards."
+      },
+      "focus": {
+        "value": "{ring}",
+        "type": "color",
+        "source": "computed borderTopColor of signin-btn focus-visible (raw/components-computed.json); matches declared --ring",
+        "description": "The orange focus-visible border on buttons (matches --ring/--brand-accent); cards take an ink outline instead."
+      }
+    },
+    "brand": {
+      "accent": {
+        "var": "--brand-accent",
+        "type": "color"
+      }
+    },
+    "bubble": {
+      "accent": {
+        "var": "--bubble-accent",
+        "type": "color"
+      }
+    },
+    "card": {
+      "default": {
+        "var": "--card",
+        "type": "color"
+      },
+      "foreground": {
+        "var": "--card-foreground",
+        "type": "color"
+      }
+    },
+    "chart": {
+      "1": {
+        "var": "--chart-1",
+        "type": "color"
+      },
+      "2": {
+        "var": "--chart-2",
+        "type": "color"
+      },
+      "3": {
+        "var": "--chart-3",
+        "type": "color"
+      },
+      "4": {
+        "var": "--chart-4",
+        "type": "color"
+      },
+      "5": {
+        "var": "--chart-5",
+        "type": "color"
+      }
+    },
+    "fg": {
+      "error": {
+        "var": "--fg-error",
+        "type": "color"
+      },
+      "high": {
+        "var": "--fg-high",
+        "type": "color"
+      },
+      "info": {
+        "var": "--fg-info",
+        "type": "color"
+      },
+      "inverted": {
+        "var": "--fg-inverted",
+        "type": "color"
+      },
+      "low": {
+        "var": "--fg-low",
+        "type": "color"
+      },
+      "mid": {
+        "var": "--fg-mid",
+        "type": "color"
+      },
+      "placeholder": {
+        "var": "--fg-placeholder",
+        "type": "color"
+      },
+      "success": {
+        "var": "--fg-success",
+        "type": "color"
+      },
+      "warning": {
+        "var": "--fg-warning",
+        "type": "color"
+      }
+    },
+    "foreground": {
+      "default": {
+        "var": "--foreground",
+        "type": "color"
+      }
+    },
+    "input": {
+      "var": "--input",
+      "type": "color"
+    },
+    "mind": {
+      "eternal": {
+        "var": "--mind-eternal",
+        "type": "color"
+      },
+      "expert": {
+        "var": "--mind-expert",
+        "type": "color"
+      },
+      "legendary": {
+        "var": "--mind-legendary",
+        "type": "color"
+      },
+      "master": {
+        "var": "--mind-master",
+        "type": "color"
+      },
+      "novice": {
+        "var": "--mind-novice",
+        "type": "color"
+      },
+      "sage": {
+        "var": "--mind-sage",
+        "type": "color"
+      },
+      "skilled": {
+        "var": "--mind-skilled",
+        "type": "color"
+      }
+    },
+    "muted": {
+      "default": {
+        "var": "--muted",
+        "type": "color"
+      },
+      "foreground": {
+        "var": "--muted-foreground",
+        "type": "color"
+      }
+    },
+    "overlay": {
+      "var": "--overlay",
+      "type": "color"
+    },
+    "popover": {
+      "default": {
+        "var": "--popover",
+        "type": "color"
+      },
+      "foreground": {
+        "var": "--popover-foreground",
+        "type": "color"
+      }
+    },
+    "primary": {
+      "default": {
+        "var": "--primary",
+        "type": "color"
+      },
+      "foreground": {
+        "var": "--primary-foreground",
+        "type": "color"
+      }
+    },
+    "ring": {
+      "var": "--ring",
+      "type": "color"
+    },
+    "secondary": {
+      "default": {
+        "var": "--secondary",
+        "type": "color"
+      },
+      "foreground": {
+        "var": "--secondary-foreground",
+        "type": "color"
+      }
+    },
+    "sidebar": {
+      "default": {
+        "var": "--sidebar",
+        "type": "color"
+      },
+      "accent": {
+        "default": {
+          "var": "--sidebar-accent",
+          "type": "color"
+        },
+        "foreground": {
+          "var": "--sidebar-accent-foreground",
+          "type": "color"
+        }
+      },
+      "border": {
+        "var": "--sidebar-border",
+        "type": "color"
+      },
+      "foreground": {
+        "var": "--sidebar-foreground",
+        "type": "color"
+      },
+      "primary": {
+        "default": {
+          "var": "--sidebar-primary",
+          "type": "color"
+        },
+        "foreground": {
+          "var": "--sidebar-primary-foreground",
+          "type": "color"
+        }
+      },
+      "ring": {
+        "var": "--sidebar-ring",
+        "type": "color"
+      }
+    },
+    "surface": {
+      "primary": {
+        "var": "--surface-primary",
+        "type": "color"
+      },
+      "secondary": {
+        "var": "--surface-secondary",
+        "type": "color"
+      }
+    },
+    "text": {
+      "ink": {
+        "value": "{fg.high}",
+        "type": "color",
+        "source": "computed color of hero-h1 default (raw/components-computed.json); matches declared --fg-high",
+        "description": "The #21201c ink — headings and body text (matches --fg-high/--foreground)."
+      },
+      "mid": {
+        "value": "{fg.mid}",
+        "type": "color",
+        "source": "computed color of nav-topic default (raw/components-computed.json); matches declared --fg-mid",
+        "description": "The #63635e mid text — nav topics, pills, helper copy (matches --fg-mid)."
+      },
+      "low": {
+        "value": "{fg.low}",
+        "type": "color",
+        "source": "computed color of m-signin default (raw/components-computed.json); matches declared --fg-low",
+        "description": "The #82827c low text — bylines and the mobile sign-in (matches --fg-low)."
+      },
+      "strong": {
+        "value": "#161615",
+        "type": "color",
+        "source": "computed color of exp-section default (raw/components-computed.json)",
+        "description": "The #161615 near-black on profile section headings."
+      },
+      "on-dark": {
+        "value": "#f0eae4",
+        "type": "color",
+        "source": "computed color of persp-quote default (raw/components-computed.json)",
+        "description": "The #f0eae4 quote text painted on the dark perspective flip cards."
+      }
+    },
+    "action": {
+      "accent": {
+        "value": "{brand.accent}",
+        "type": "color",
+        "source": "computed backgroundColor of create-cta default (raw/components-computed.json); matches declared --brand-accent",
+        "description": "The #fd5400 orange — Create Your Delphi, Expand, Send (matches --brand-accent/--ring/--chart-1/--bubble-accent)."
+      },
+      "accent-fg": {
+        "value": "{primary.foreground}",
+        "type": "color",
+        "source": "computed color of create-cta default (raw/components-computed.json); matches declared --primary-foreground",
+        "description": "White text on the orange accent."
+      },
+      "dark-button": {
+        "value": "{primary.default}",
+        "type": "color",
+        "source": "computed backgroundColor of dialog-google default (raw/components-computed.json); matches declared --primary",
+        "description": "The #21201c near-black fill on primary dialog actions (matches --primary)."
+      },
+      "share": {
+        "value": "rgba(33, 32, 28, 0.1)",
+        "type": "color",
+        "source": "computed backgroundColor of share-btn default (raw/components-computed.json)",
+        "description": "The ~10% dark-ink fill on the profile Share pill."
+      }
+    }
+  },
+  "dark": {
+    "accent": {
+      "default": {
+        "var": "--accent",
+        "type": "color"
+      },
+      "foreground": {
+        "var": "--accent-foreground",
+        "type": "color"
+      }
+    },
+    "color": {
+      "amber": {
+        "1": {
+          "var": "--amber-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--amber-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--amber-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--amber-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--amber-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--amber-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--amber-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--amber-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--amber-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--amber-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--amber-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--amber-9",
+          "type": "color"
+        }
+      },
+      "blue": {
+        "1": {
+          "var": "--blue-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--blue-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--blue-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--blue-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--blue-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--blue-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--blue-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--blue-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--blue-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--blue-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--blue-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--blue-9",
+          "type": "color"
+        }
+      },
+      "brown": {
+        "1": {
+          "var": "--brown-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--brown-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--brown-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--brown-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--brown-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--brown-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--brown-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--brown-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--brown-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--brown-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--brown-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--brown-9",
+          "type": "color"
+        }
+      },
+      "tangerine": {
+        "3": {
+          "default": {
+            "var": "--color-tangerine-3",
+            "type": "color"
+          },
+          "oklch": {
+            "var": "--tangerine-3-oklch",
+            "type": "other"
+          }
+        },
+        "1": {
+          "oklch": {
+            "var": "--tangerine-1-oklch",
+            "type": "other"
+          }
+        },
+        "10": {
+          "oklch": {
+            "var": "--tangerine-10-oklch",
+            "type": "other"
+          }
+        },
+        "11": {
+          "oklch": {
+            "var": "--tangerine-11-oklch",
+            "type": "other"
+          }
+        },
+        "12": {
+          "oklch": {
+            "var": "--tangerine-12-oklch",
+            "type": "other"
+          }
+        },
+        "2": {
+          "oklch": {
+            "var": "--tangerine-2-oklch",
+            "type": "other"
+          }
+        },
+        "4": {
+          "oklch": {
+            "var": "--tangerine-4-oklch",
+            "type": "other"
+          }
+        },
+        "5": {
+          "oklch": {
+            "var": "--tangerine-5-oklch",
+            "type": "other"
+          }
+        },
+        "6": {
+          "oklch": {
+            "var": "--tangerine-6-oklch",
+            "type": "other"
+          }
+        },
+        "7": {
+          "oklch": {
+            "var": "--tangerine-7-oklch",
+            "type": "other"
+          }
+        },
+        "8": {
+          "oklch": {
+            "var": "--tangerine-8-oklch",
+            "type": "other"
+          }
+        },
+        "9": {
+          "oklch": {
+            "var": "--tangerine-9-oklch",
+            "type": "other"
+          }
+        }
+      },
+      "crimson": {
+        "1": {
+          "var": "--crimson-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--crimson-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--crimson-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--crimson-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--crimson-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--crimson-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--crimson-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--crimson-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--crimson-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--crimson-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--crimson-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--crimson-9",
+          "type": "color"
+        }
+      },
+      "cyan": {
+        "1": {
+          "var": "--cyan-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--cyan-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--cyan-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--cyan-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--cyan-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--cyan-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--cyan-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--cyan-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--cyan-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--cyan-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--cyan-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--cyan-9",
+          "type": "color"
+        }
+      },
+      "gold": {
+        "1": {
+          "var": "--gold-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--gold-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--gold-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--gold-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--gold-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--gold-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--gold-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--gold-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--gold-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--gold-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--gold-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--gold-9",
+          "type": "color"
+        }
+      },
+      "grass": {
+        "1": {
+          "var": "--grass-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--grass-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--grass-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--grass-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--grass-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--grass-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--grass-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--grass-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--grass-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--grass-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--grass-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--grass-9",
+          "type": "color"
+        }
+      },
+      "green": {
+        "1": {
+          "var": "--green-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--green-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--green-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--green-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--green-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--green-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--green-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--green-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--green-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--green-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--green-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--green-9",
+          "type": "color"
+        }
+      },
+      "indigo": {
+        "1": {
+          "var": "--indigo-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--indigo-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--indigo-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--indigo-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--indigo-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--indigo-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--indigo-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--indigo-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--indigo-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--indigo-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--indigo-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--indigo-9",
+          "type": "color"
+        }
+      },
+      "jade": {
+        "1": {
+          "var": "--jade-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--jade-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--jade-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--jade-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--jade-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--jade-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--jade-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--jade-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--jade-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--jade-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--jade-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--jade-9",
+          "type": "color"
+        }
+      },
+      "plum": {
+        "1": {
+          "var": "--plum-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--plum-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--plum-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--plum-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--plum-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--plum-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--plum-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--plum-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--plum-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--plum-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--plum-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--plum-9",
+          "type": "color"
+        }
+      },
+      "red": {
+        "1": {
+          "var": "--red-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--red-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--red-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--red-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--red-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--red-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--red-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--red-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--red-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--red-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--red-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--red-9",
+          "type": "color"
+        }
+      },
+      "ruby": {
+        "1": {
+          "var": "--ruby-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--ruby-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--ruby-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--ruby-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--ruby-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--ruby-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--ruby-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--ruby-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--ruby-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--ruby-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--ruby-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--ruby-9",
+          "type": "color"
+        }
+      },
+      "sand": {
+        "1": {
+          "var": "--sand-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--sand-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--sand-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--sand-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--sand-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--sand-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--sand-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--sand-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--sand-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--sand-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--sand-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--sand-9",
+          "type": "color"
+        }
+      },
+      "teal": {
+        "1": {
+          "var": "--teal-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--teal-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--teal-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--teal-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--teal-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--teal-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--teal-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--teal-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--teal-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--teal-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--teal-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--teal-9",
+          "type": "color"
+        }
+      },
+      "tomato": {
+        "1": {
+          "var": "--tomato-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--tomato-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--tomato-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--tomato-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--tomato-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--tomato-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--tomato-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--tomato-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--tomato-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--tomato-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--tomato-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--tomato-9",
+          "type": "color"
+        }
+      },
+      "violet": {
+        "1": {
+          "var": "--violet-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--violet-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--violet-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--violet-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--violet-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--violet-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--violet-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--violet-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--violet-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--violet-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--violet-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--violet-9",
+          "type": "color"
+        }
+      },
+      "yellow": {
+        "1": {
+          "var": "--yellow-1",
+          "type": "color"
+        },
+        "10": {
+          "var": "--yellow-10",
+          "type": "color"
+        },
+        "11": {
+          "var": "--yellow-11",
+          "type": "color"
+        },
+        "12": {
+          "var": "--yellow-12",
+          "type": "color"
+        },
+        "2": {
+          "var": "--yellow-2",
+          "type": "color"
+        },
+        "3": {
+          "var": "--yellow-3",
+          "type": "color"
+        },
+        "4": {
+          "var": "--yellow-4",
+          "type": "color"
+        },
+        "5": {
+          "var": "--yellow-5",
+          "type": "color"
+        },
+        "6": {
+          "var": "--yellow-6",
+          "type": "color"
+        },
+        "7": {
+          "var": "--yellow-7",
+          "type": "color"
+        },
+        "8": {
+          "var": "--yellow-8",
+          "type": "color"
+        },
+        "9": {
+          "var": "--yellow-9",
+          "type": "color"
+        }
+      }
+    },
+    "avatar": {
+      "shadow": {
+        "default": {
+          "var": "--avatar-shadow",
+          "type": "other"
+        },
+        "inset": {
+          "var": "--avatar-shadow-inset",
+          "type": "other"
+        }
+      }
+    },
+    "background": {
+      "default": {
+        "var": "--background",
+        "type": "color"
+      }
+    },
+    "border": {
+      "default": {
+        "var": "--border",
+        "type": "color"
+      }
+    },
+    "brand": {
+      "accent": {
+        "var": "--brand-accent",
+        "type": "color"
+      }
+    },
+    "bubble": {
+      "accent": {
+        "var": "--bubble-accent",
+        "type": "color"
+      }
+    },
+    "card": {
+      "default": {
+        "var": "--card",
+        "type": "color"
+      },
+      "foreground": {
+        "var": "--card-foreground",
+        "type": "color"
+      }
+    },
+    "chart": {
+      "1": {
+        "var": "--chart-1",
+        "type": "color"
+      },
+      "2": {
+        "var": "--chart-2",
+        "type": "color"
+      },
+      "3": {
+        "var": "--chart-3",
+        "type": "color"
+      },
+      "4": {
+        "var": "--chart-4",
+        "type": "color"
+      },
+      "5": {
+        "var": "--chart-5",
+        "type": "color"
+      }
+    },
+    "fg": {
+      "error": {
+        "var": "--fg-error",
+        "type": "color"
+      },
+      "high": {
+        "var": "--fg-high",
+        "type": "color"
+      },
+      "info": {
+        "var": "--fg-info",
+        "type": "color"
+      },
+      "inverted": {
+        "var": "--fg-inverted",
+        "type": "color"
+      },
+      "low": {
+        "var": "--fg-low",
+        "type": "color"
+      },
+      "mid": {
+        "var": "--fg-mid",
+        "type": "color"
+      },
+      "placeholder": {
+        "var": "--fg-placeholder",
+        "type": "color"
+      },
+      "success": {
+        "var": "--fg-success",
+        "type": "color"
+      },
+      "warning": {
+        "var": "--fg-warning",
+        "type": "color"
+      }
+    },
+    "foreground": {
+      "default": {
+        "var": "--foreground",
+        "type": "color"
+      }
+    },
+    "input": {
+      "var": "--input",
+      "type": "color"
+    },
+    "mind": {
+      "eternal": {
+        "var": "--mind-eternal",
+        "type": "color"
+      },
+      "expert": {
+        "var": "--mind-expert",
+        "type": "color"
+      },
+      "legendary": {
+        "var": "--mind-legendary",
+        "type": "color"
+      },
+      "master": {
+        "var": "--mind-master",
+        "type": "color"
+      },
+      "novice": {
+        "var": "--mind-novice",
+        "type": "color"
+      },
+      "sage": {
+        "var": "--mind-sage",
+        "type": "color"
+      },
+      "skilled": {
+        "var": "--mind-skilled",
+        "type": "color"
+      }
+    },
+    "muted": {
+      "default": {
+        "var": "--muted",
+        "type": "color"
+      },
+      "foreground": {
+        "var": "--muted-foreground",
+        "type": "color"
+      }
+    },
+    "overlay": {
+      "var": "--overlay",
+      "type": "color"
+    },
+    "popover": {
+      "default": {
+        "var": "--popover",
+        "type": "color"
+      },
+      "foreground": {
+        "var": "--popover-foreground",
+        "type": "color"
+      }
+    },
+    "primary": {
+      "default": {
+        "var": "--primary",
+        "type": "color"
+      },
+      "foreground": {
+        "var": "--primary-foreground",
+        "type": "color"
+      }
+    },
+    "ring": {
+      "var": "--ring",
+      "type": "color"
+    },
+    "secondary": {
+      "default": {
+        "var": "--secondary",
+        "type": "color"
+      },
+      "foreground": {
+        "var": "--secondary-foreground",
+        "type": "color"
+      }
+    },
+    "sidebar": {
+      "default": {
+        "var": "--sidebar",
+        "type": "color"
+      },
+      "accent": {
+        "default": {
+          "var": "--sidebar-accent",
+          "type": "color"
+        },
+        "foreground": {
+          "var": "--sidebar-accent-foreground",
+          "type": "color"
+        }
+      },
+      "border": {
+        "var": "--sidebar-border",
+        "type": "color"
+      },
+      "foreground": {
+        "var": "--sidebar-foreground",
+        "type": "color"
+      },
+      "primary": {
+        "default": {
+          "var": "--sidebar-primary",
+          "type": "color"
+        },
+        "foreground": {
+          "var": "--sidebar-primary-foreground",
+          "type": "color"
+        }
+      },
+      "ring": {
+        "var": "--sidebar-ring",
+        "type": "color"
+      }
+    },
+    "surface": {
+      "primary": {
+        "var": "--surface-primary",
+        "type": "color"
+      },
+      "secondary": {
+        "var": "--surface-secondary",
+        "type": "color"
+      }
+    }
+  },
+  "component": {
+    "topbar-height": {
+      "value": "64px",
+      "type": "dimension",
+      "source": "measured h of mkt-header default (raw/components-computed.json)",
+      "description": "The 64px public top bar."
+    },
+    "logo-width": {
+      "value": "91.5px",
+      "type": "dimension",
+      "source": "measured w of mkt-logo default (raw/components-computed.json)",
+      "description": "The 91.5px header wordmark."
+    },
+    "search-field-width": {
+      "value": "624px",
+      "type": "dimension",
+      "source": "measured w of hero-search default (raw/components-computed.json)",
+      "description": "The 624px hero ask field."
+    },
+    "query-field-width": {
+      "value": "664px",
+      "type": "dimension",
+      "source": "measured w of srch-field default (raw/components-computed.json)",
+      "description": "The 664px results query field."
+    },
+    "dialog-width": {
+      "value": "448px",
+      "type": "dimension",
+      "source": "measured w of signin-dialog default (raw/components-computed.json)",
+      "description": "The 448px sign-in dialog."
+    },
+    "dialog-button-width": {
+      "value": "400px",
+      "type": "dimension",
+      "source": "measured w of dialog-google default (raw/components-computed.json)",
+      "description": "The 400px dialog action."
+    },
+    "topic-card-width": {
+      "value": "346.66px",
+      "type": "dimension",
+      "source": "measured w of topic-card default (raw/components-computed.json)",
+      "description": "The ~347px topic card."
+    },
+    "flip-card-width": {
+      "value": "272px",
+      "type": "dimension",
+      "source": "measured w of persp-card default (raw/components-computed.json)",
+      "description": "The 272px perspective flip card."
+    },
+    "expert-card-width": {
+      "value": "672px",
+      "type": "dimension",
+      "source": "measured w of srch-expert-card default (raw/components-computed.json)",
+      "description": "The 672px search result card."
+    },
+    "chat-input-width": {
+      "value": "592px",
+      "type": "dimension",
+      "source": "measured w of chat-input default (raw/components-computed.json)",
+      "description": "The 592px composer field."
+    },
+    "send-size": {
+      "value": "48px",
+      "type": "dimension",
+      "source": "measured w of chat-send default (raw/components-computed.json)",
+      "description": "The 48px round send button."
+    },
+    "scroll-pill": {
+      "value": "30.4px",
+      "type": "dimension",
+      "source": "measured w of scroll-bottom default (raw/components-computed.json)",
+      "description": "The ~30px scroll-to-bottom pill."
+    },
+    "portrait": {
+      "value": "110px",
+      "type": "dimension",
+      "source": "measured w of exp-portrait default (raw/components-computed.json)",
+      "description": "The 110px expert portrait."
+    },
+    "mobile-topbar-height": {
+      "value": "64px",
+      "type": "dimension",
+      "source": "measured h of m-header default (raw/components-computed.json)",
+      "description": "The 64px phone top bar."
+    }
+  }
+}

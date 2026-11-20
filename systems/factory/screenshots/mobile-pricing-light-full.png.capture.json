@@ -1,0 +1,130 @@
+{
+ "schemaVersion": 1,
+ "capturedAt": "2026-11-13T23:43:52.504Z",
+ "screenshot": "mobile-pricing-light-full.png",
+ "sanitizedSourceUrl": "https://factory.com/pricing",
+ "requested": {
+  "viewport": {
+   "width": 390,
+   "height": 844
+  },
+  "deviceScaleFactor": 2
+ },
+ "configuredViewport": {
+  "width": 390,
+  "height": 844
+ },
+ "actual": {
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "devicePixelRatio": 2,
+  "theme": {
+   "classes": [],
+   "attributes": {
+    "data-theme": "light"
+   },
+   "colorScheme": "light"
+  },
+  "visualViewport": {
+   "width": 390,
+   "height": 844,
+   "scale": 1,
+   "offsetLeft": 0,
+   "offsetTop": 0,
+   "pageLeft": 0,
+   "pageTop": 0
+  },
+  "documentSize": {
+   "width": 390,
+   "height": 5439
+  },
+  "scroll": {
+   "x": 0,
+   "y": 0
+  }
+ },
+ "capture": {
+  "mode": "stitchedParts",
+  "scale": "device",
+  "clip": {
+   "x": 0,
+   "y": 0,
+   "width": 390,
+   "height": 5439
+  }
+ },
+ "png": {
+  "width": 780,
+  "height": 10878
+ },
+ "dimensionCheck": {
+  "status": "pass",
+  "expected": {
+   "width": 780,
+   "height": 10878
+  },
+  "basis": "stitchedParts"
+ },
+ "visualReview": {
+  "status": "pending",
+  "note": "Inspect the final image for complete, settled contents; dimensions alone cannot accept it."
+ },
+ "cropCoordinates": {
+  "status": "unverified",
+  "note": "Do not derive crop or masking boxes from requested size or assume DOM rectangles align with this PNG."
+ },
+ "stitchedFrom": [
+  "mobile-pricing-light-full.part0.png",
+  "mobile-pricing-light-full.part1.png",
+  "mobile-pricing-light-full.part2.png",
+  "mobile-pricing-light-full.part3.png",
+  "mobile-pricing-light-full.part4.png",
+  "mobile-pricing-light-full.part5.png",
+  "mobile-pricing-light-full.part6.png"
+ ],
+ "partClip": [
+  {
+   "x": 0,
+   "y": 0,
+   "width": 390,
+   "height": 844
+  },
+  {
+   "x": 0,
+   "y": 844,
+   "width": 390,
+   "height": 844
+  },
+  {
+   "x": 0,
+   "y": 1688,
+   "width": 390,
+   "height": 844
+  },
+  {
+   "x": 0,
+   "y": 2532,
+   "width": 390,
+   "height": 844
+  },
+  {
+   "x": 0,
+   "y": 3376,
+   "width": 390,
+   "height": 844
+  },
+  {
+   "x": 0,
+   "y": 4220,
+   "width": 390,
+   "height": 844
+  },
+  {
+   "x": 0,
+   "y": 5064,
+   "width": 390,
+   "height": 375
+  }
+ ],
+ "intendedHeight": 5439
+}

@@ -131,6 +131,31 @@ for name in sorted(n for n in R if n.startswith("--")):
 
 # ------------------------------------------------------------- light roles
 
+def _norm(v):
+    """rgb()/rgba() -> #hex, or rgba(r, g, b, a) when translucent."""
+    m = re.fullmatch(r"rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\)", (v or "").strip())
+    if not m:
+        return (v or "").strip().lower()
+    r, g, b, a = m.groups()
+    if a is None or float(a) >= 1:
+        return "#%02x%02x%02x" % (int(float(r)), int(float(g)), int(float(b)))
+    return f"rgba({int(float(r))}, {int(float(g))}, {int(float(b))}, {'%g' % float(a)})"
+
+
+def _rd(reads, prop):
+    """The computed value every (component, state) named here reads; refuse a missing or stale
+    component and readings that disagree, instead of typing the value in."""
+    vals = set()
+    for comp, state in reads:
+        c = C[comp]
+        if c.get("missing") or c.get("recaptureMissed"):
+            raise KeyError(comp)
+        vals.add(_norm(c["states"][state]["style"][prop]))
+    if len(vals) != 1:
+        raise ValueError(f"{reads} {prop}: readings differ: {sorted(vals)}")
+    return vals.pop()
+
+
 LIGHT = [
     ("page", var("--color-white", description="The page field: pure white.")),
     ("surface", var("--color-beige", description="The warm ARKET beige (#faf8f3): notice and promo bands, editorial washes.")),
@@ -146,7 +171,10 @@ LIGHT = [
     ("danger", var("--color-red", description="Sale/error red (#d80404).")),
     ("success", var("--color-green", description="Confirmation green (#389d47), e.g. the location notice check.")),
     ("info", var("--color-blue", description="Informational blue.")),
-    ("focus-ring", {"value": "#005fcc", "type": "color",
+    ("focus-ring", {"value": _rd([(k, "focus-visible") for k, c in C.items()
+                                  if "style" in (c.get("states", {}).get("focus-visible") or {})
+                                  and c["states"]["focus-visible"].get("via") != "focus failed"
+                                  and not c.get("missing") and not c.get("recaptureMissed")], "outlineColor"), "type": "color",
                     "source": "computed outlineColor on keyboard focus (raw/components-computed.json); arket.com declares no :focus-visible style of its own, so this is the browser's default 1px auto ring, not a product token",
                     "description": "The browser-default 1px #005fcc auto outline every measured control shows on keyboard focus."}),
     ("overlay", var("--color-overlay-beige", description="The warm dimmer behind drawers and dialogs (rgba(164,155,112,0.2)).")),
@@ -176,7 +204,8 @@ def tstyle(key, comp, state, desc):
         "fontSize": s["fontSize"],
         "lineHeight": s["lineHeight"],
         "fontWeight": int(s["fontWeight"]),
-        "letterSpacing": "0em" if s.get("letterSpacing") in (None, "normal") else s["letterSpacing"],
+        # computed "normal" is no tracking; DTCG wants a px or rem dimension, so 0px, not 0em
+        "letterSpacing": "0px" if s.get("letterSpacing") in (None, "normal") else s["letterSpacing"],
     }, f"computed type of {comp} {state} (raw/components-computed.json); {desc}"
 
 

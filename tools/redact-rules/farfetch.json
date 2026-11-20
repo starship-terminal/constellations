@@ -1,0 +1,14 @@
+{
+ "_note": "Rules for systems/farfetch. A fully public signed-out capture of archived farfetch.com pages: no owner data on any surface — nothing was filled with real data (the search and newsletter fields got the throwaway test text the capture kit types and then clears), nothing was submitted, signed into or bought. Brand names, prices and product copy in the screenshots are FARFETCH's published public-page content. The OCR email net is kept, with example.com, the product's own domain and the Wayback Machine's domain allowed (archived pages can carry wayback chrome addresses).",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@example\\.com$",
+   "@example\\.org$",
+   "@farfetch\\.com$",
+   "@farfetch\\.net$",
+   "@archive\\.org$"
+  ]
+ },
+ "families": []
+}

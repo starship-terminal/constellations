@@ -1,0 +1,13 @@
+{
+  "_note": "Grammarly: signed-out marketing and free-tool capture, nothing typed was kept. The emails the OCR finds are the sign-in field's own placeholder (name@example.com, typed and deleted by the kit) and Grammarly's published contact addresses printed on the pages — product copy, not an account's address; allowed below as whole addresses only.",
+  "ocr": {
+    "email_allow": [
+      "name@example\\.com",
+      "sales@grammarly\\.com",
+      "support@grammarly\\.com",
+      "press@grammarly\\.com",
+      "partners@grammarly\\.com",
+      "edu@grammarly\\.com"
+    ]
+  }
+}

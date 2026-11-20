@@ -59,11 +59,11 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Cookie consent card](#cookie-consent-card) | 343 x 447.9 | 1px solid #000000 `color.black` | 2px | #000000 `color.black` | none | 0 |
-| [Location dialog](#location-dialog) | 538 x 900 | 1px solid #767676 `color.grey.dark` | 2px | #ffffff `color.white` | none | 0 |
+| [Cookie consent card](#cookie-consent-card) | 343 x 447.9 | - | - | #ffffff `color.white` | rgba(0, 0, 0, 0.2) 0px 4px 16px 0px | 0 |
+| [Location dialog](#location-dialog) | 538 x 900 | - | - | #ffffff `color.white` | none | 0 |
 | [Filter panel, open](#filter-panel-open) | 538 x 900 | - | - | #ffffff `color.white` | none | 0 |
-| [Cart drawer, empty](#cart-drawer-empty) | 538 x 900 | - | 2px | #000000 `color.black` | none | 0 |
-| [Product card](#product-card) | 357 x 109.5 | 1px solid #eaeae8 `color.grey.mid` | 2px | #272a3e | none | 0 |
+| [Cart drawer, empty](#cart-drawer-empty) | 538 x 900 | - | - | #ffffff `color.white` | none | 0 |
+| [Product card](#product-card) | 357 x 109.5 | - | - | transparent | none | 0 |
 | [Search field](#search-field) | 680 x 40 | - | 4px | #f9f9f9 `color.grey.light.extra` | none | 0px 48px 0px 44px |
 | [Email field](#email-field) | 624 x 60 | 1px solid #767676 `color.grey.dark` | - | #ffffff `color.white` | none | 8px 8px 10px 15px |
 
@@ -628,7 +628,7 @@ No standalone SVG icon set was lifted on this pass; the icons in the crops and s
 - **Product pages (PDP).** Akamai answers every /en-ww/product/<slug>-<id>/ URL with 403 for this client, document and RSC fetch alike, so no PDP was captured; PDP-looking values come from the listing cards instead. **The /en-ww/ root** is blocked the same way at capture time; the women landing /en-ww/women/ stands in for it.
 - **The account behind the gate.** /en-ww/account/ stops at the Login/Signup gate; no sign-in was attempted. Checkout, the filled cart and wishlist contents were never reached.
 - **Anything that buys, sends, submits or signs in.** Nothing was added to the bag, no consent or location answer was given, no form was submitted. Quick-add buttons were measured under a forced card hover, never pressed.
-- **Anything that sends, submits or signs in.** No form was submitted, no prompt was sent, no account was created. The contact-sales .ds-input fields were focused and one sample value typed and deleted, never submitted.
+- **Anything that sends, submits or signs in.** No form was submitted, no prompt was sent, no account was created. Fields clicked into (and, where a `filled` state exists, typed into and cleared), never submitted: `location-search`, `search-field`, `gate-field`.
 
 ### States
 

@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fable style guide</title>
+<meta name="description" content="Fable design tokens and the public surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Inter", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "Heldane Display", heldane, Georgia, "Times New Roman", serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-graphite-600, #1b1a1b); background: var(--color-white-100, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-graphite-600, #1b1a1b); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-graphite-300, #b1acaf); }
+.lead { max-width: 62ch; color: var(--color-graphite-600, #1b1a1b); opacity: .8; }
+.note { font-size: 13px; color: var(--color-graphite-600, #1b1a1b); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-graphite-600, #1b1a1b); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-graphite-300, #b1acaf); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-graphite-600, #1b1a1b); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-graphite-300, #b1acaf); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-graphite-600, #1b1a1b); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-graphite-300, #b1acaf); overflow: hidden; background: var(--color-white-100, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-headerHeight, 60px); padding: 0 12px 0 22px; font-size: 14px; color: var(--color-pearl-extra-light, #f7f4ee); background: var(--color-forest-200, #064c37); }
+.navbar.light-bar { color: var(--color-graphite-600, #1b1a1b); background: var(--color-white-100, #fff); border-bottom: 1px solid var(--color-graphite-200, #e1e0e1); }
+.navbar .wm { font-family: var(--sg-serif); font-weight: 700; font-size: 20px; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-marketingPillH, 52px); padding: 0 22px; font-size: 14px; font-weight: 600; border-radius: var(--component-marketingPillRadius, 60px); border: 2px solid transparent; font-family: var(--sg-sans); }
+.btn.darkpill { background: var(--component-skin-marketing-marketingPillFill, #292229); border-color: var(--component-skin-marketing-marketingPillFill, #292229); color: var(--color-white-100, #fff); }
+.btn.whitepill { background: var(--color-white-100, #fff); border-color: var(--color-white-100, #fff); color: var(--color-quote-theme-6, #161015); }
+.btn.cat { height: var(--component-catalogButtonH, 52px); border-radius: var(--radius-full, 9999px); border-width: 1px; background: var(--color-graphite-600, #1b1a1b); border-color: var(--color-graphite-600, #1b1a1b); color: var(--color-white-100, #fff); }
+.btn.cat.ghost { background: transparent; color: var(--color-graphite-600, #1b1a1b); }
+.hero { color: var(--color-pearl-extra-light, #f7f4ee); padding: 72px 40px; font: 500 var(--font-size-masthead, 72px)/var(--font-lineHeight-masthead, 62px) var(--sg-serif); text-align: left; background: var(--color-forest-200, #064c37); }
+.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); margin: 18px 0 22px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-graphite-300, #b1acaf); padding: 14px; font-size: 13px; background: #fff; }
+.tile b { display: block; font: 700 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.chip { display: inline-flex; align-items: center; height: var(--component-genrePillH, 46px); padding: 0 18px; border-radius: var(--radius-full, 9999px); border: 1px solid var(--color-graphite-300, #b1acaf); background: var(--color-white-100, #fff); font-size: 14px; color: var(--color-graphite-600, #1b1a1b); }
+.disc { position: relative; padding: 64px 40px; color: var(--color-pearl-extra-light, #f7f4ee); background: var(--color-forest-500, #06120e); }
+.disc::before { content: ""; position: absolute; inset: 0; background: var(--component-skin-discover-wallScrim, radial-gradient(120% 95% at 50% 32%, rgba(12, 92, 66, 0.85), rgba(0, 0, 0, 0) 64%)); }
+.disc h3 { position: relative; font: 500 var(--font-size-discoverTitle, 64px)/1.08 var(--sg-serif); margin: 0 0 26px; }
+.disc .field { position: relative; display: flex; align-items: center; width: var(--component-discoverFieldW, 420px); max-width: 100%; height: var(--component-discoverFieldH, 60px); border-radius: var(--component-marketingPillRadius, 60px); background: var(--color-white-100, #fff); color: var(--color-quote-theme-6, #161015); padding: 0 24px; font-size: 14px; box-shadow: var(--component-skin-discover-fieldShadow, rgba(12, 12, 12, 0.45) 0px 10px 34px 0px); }
+.disc .pills { position: relative; margin-top: 16px; display: flex; gap: 10px; }
+.disc .fpill { display: inline-flex; align-items: center; height: var(--component-discoverPillH, 50px); padding: 0 18px; border-radius: 999px; background: var(--component-skin-discover-discoverPillFill, #042119); color: var(--component-skin-discover-discoverPillInk, #c5c1c5); font-size: 14px; font-weight: 500; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-graphite-300, #b1acaf); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-graphite-300, #b1acaf); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-graphite-600, #1b1a1b); opacity: .65; font-family: var(--sg-mono); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Fable style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Fable, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the site's declared <code>--color-graphite/pearl/forest/olive/royal-*</code> palette scales, the <code>--color-*-fade-*</code> alpha ramps, the 12 <code>--color-quote-theme-*</code> reader colours, the <code>--color-background-*</code>/<code>--color-text-*</code>/<code>--color-border-*</code>/<code>--color-line-*</code> semantic roles that the stylesheet redeclares under a scoped <code>.dark</code> class, the Heldane Display + Inter pairing (with PalmerLakePrint and DesMontilles accents and seven reader list faces), the <code>--radius-*</code> scale up to the 9999px pill, the above/below shadow steps, and the measured component sizes. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from fable.co on 2026-11-14, signed out, in headless Chromium. Everything behind an account — joined clubs, the reader, lists, checkout — is a documented boundary; the sign-in form was measured, never submitted. Heldane Display and Inter are served faces and are not loaded here: samples fall back to system serif/sans.</p>
+
+  <h2 class="sh">The marketing skin</h2>
+  <p class="lead">The emotion-styled marketing pages paint cream ink over deep forest bands: the 60px header floats on the hero, the masthead runs 72px Heldane Display medium (46px on the phone), and the calls to action are 60px-radius pills — white with <code>quote-theme-6</code> ink or the named graphite <code>#292229</code> fill.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">Fable</span><span>Clubs</span><span>Books</span><span>Library</span><span>Blog</span><span class="sp"></span><span>Sign in</span><span class="btn darkpill" style="height:40px">Get the app</span></div>
+    <div class="hero">The modern app<br>for every reader<small>Book clubs, a reader and a store in one.</small><span class="btn whitepill">Get the app</span></div>
+  </div>
+
+  <h2 class="sh">The catalog skin</h2>
+  <p class="lead">The product surfaces (<code>/clubs</code>, <code>/books</code>, <code>/book/*</code>, <code>/club/*</code>) are CSS modules on white: the same 60px header in graphite ink, heldane mastheads, 9999px pill buttons and chips, hairline <code>graphite-300</code> borders and the declared royal <code>--color-focus</code> ring.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar light-bar"><span class="wm">Fable</span><span>Clubs</span><span>Books</span><span>Library</span><span>Blog</span><span class="sp"></span><span class="btn cat" style="height:40px;padding:0 18px">Join the club</span></div>
+    <div style="padding:26px 40px">
+      <div style="font:700 var(--font-size-pageTitle,58px)/var(--font-lineHeight-detailTitle,48px) var(--sg-serif);color:var(--color-graphite-600,#1b1a1b);margin-bottom:14px">Find your people</div>
+      <span class="chip">Fantasy</span> <span class="chip">Romance</span> <span class="chip">Sci-fi</span>
+      <div style="margin-top:18px"><span class="btn cat">Get Heated Rivalry</span> <span class="btn cat ghost">Add to list</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The discover cover wall</h2>
+  <p class="lead">/discover is the one page painted dark signed out: a drifting wall of book covers under the forest radial-gradient scrim, the cream 64px headline, a white 420px search field with a heavy drop shadow, and forest-400 pills with muted <code>#c5c1c5</code> ink.</p>
+  <div class="mock disc">
+    <h3>Find new books to obsess over</h3>
+    <div class="field">Search for a book you love…</div>
+    <div class="pills"><span class="fpill">Random</span><span class="fpill">What is this?</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared scales: warm <code>pearl-*</code> neutrals and <code>graphite-*</code> inks, the signature <code>forest-*</code> greens, plus olive/royal/iris/coral/rose/scarlet/amber ramps, the <code>*-fade-*</code> alpha partners and the 12 <code>quote-theme-*</code> reader colours. The semantic <code>--color-background-*</code>/<code>--color-text-*</code>/<code>--color-border-*</code>/<code>--color-line-*</code> roles resolve in the light set; the dark set resolves the same names through the declared <code>.dark</code> scope. Measured roles alias the declared values they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">The declared <code>--radius-0..40</code> scale plus <code>--radius-full</code> 9999px — catalog pills, chips and buttons run full-round; the emotion skin uses literal 60px pills and a 44px text-input shell. Controls transition over 0.15s ease in the catalog skin and 0.2s on the marketing skin; the marketing club card zooms to scale(1.01) over 0.4s ease-in-out.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Heldane Display (<code>heldane</code>, 400/500/700) carries every masthead — 80px marketing displays, 72px hero (46px on the phone), 58px page titles, 46px detail titles, 64px on /discover — and Inter carries controls, body and captions; PalmerLakePrint and DesMontilles are the note/script accents, and seven <code>--font-list-*</code> faces theme the reader's lists. Sizes below are measured; samples fall back to system serif/sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --color-*/--font-*/--radius-* variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, opened, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the scoped .dark surface — declared, not painted publicly)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.border || {}).width || {}, 'border.width.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.breakpoint || {}, 'breakpoint.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.animate || {}, 'animate.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}), 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  // Aliases are set-relative: {font.size.body} and the palette scales live
+  // under TOK.core, semantic roles under TOK.light / TOK.dark. Try each root.
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Fable</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

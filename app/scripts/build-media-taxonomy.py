@@ -110,7 +110,10 @@ UX_RULES = [
     ("ux-search", r"(?:search|searching)", "Searching"),
     ("ux-filter-sort", r"(?:filters?|sorting|sort)", "Filter & Sorting"),
     ("ux-calendar", r"calendar", "Calendar"),
-    ("ux-chat", r"(?:chat|messages?)", "Chat & Messages"),
+    # A bare "message" token on a form capture is the contact/sales textarea,
+    # not a chat surface: field-message, contact-message, c-message,
+    # cf7-message, sales-message and message-field stay out of Chat & Messages.
+    ("ux-chat", r"(?:chat|(?<!contact-)(?<!cf7-)(?<!field-)(?<!sales-)(?<!form-)(?<!c-)messages?(?!-field))", "Chat & Messages"),
     ("ux-comments", r"comments?", "Comments"),
     ("ux-share", r"share", "Share"),
     ("ux-user-menu", r"(?:user-menu|account-menu)", "User Menu"),
@@ -144,7 +147,7 @@ def term_id(group: str, label: str) -> str:
 
 
 def build() -> dict:
-    snapshot = json.loads((ROOT / "app/src/data/refero-catalog-taxonomy.json").read_text())
+    snapshot = json.loads((ROOT / "app/src/data/refero-catalog-taxonomy.json").read_text(encoding="utf-8"))
     terms = {g["id"]: {t["label"]: term_id(g["id"], t["label"]) for t in g["terms"]} for g in snapshot["groups"]}
     rules = {}
     for scope, definitions in [("page", PAGE_RULES), ("ui", UI_RULES), ("ux", UX_RULES)]:
@@ -175,6 +178,14 @@ def build() -> dict:
                     for rule_id, expression, original_label in entries:
                         label = "Home" if original_label == "Home Page" and prefix == "ios" else original_label
                         if label not in terms[group] or not re.search(rf"(?:^|-)(?:{expression})(?:-|$)", name):
+                            continue
+                        # forhers filenames this capture added that match a rule
+                        # without being that control. Accordion and menu toggles
+                        # are triggers, not switches. "pill" in wegovy-pill is
+                        # the medicine, not a chip. Other packages are unchanged.
+                        if system["slug"] == "forhers" and rule_id == "ui-toggle" and re.search(r"(?:^|-)(?:accordion-toggle|menu-toggle)(?:-|$)", name):
+                            continue
+                        if system["slug"] == "forhers" and rule_id == "ui-chips" and re.search(r"(?:^|-)wegovy-pill(?:-|$)", name):
                             continue
                         if group == page_group:
                             # A profile button or account menu on another page
@@ -207,13 +218,38 @@ def build() -> dict:
     }
 
 
+
+def matches_base(result: dict, committed: dict) -> bool:
+    """True when GitHub is checking a pull request and the committed seed is the
+    exact derivation of the packages it names, leaving out only packages this
+    pull request adds or main gained after the branch started.
+
+    The seed is re-derived from the merge's own catalog rows and files, never
+    taken from the branch, so a hand-edited seed, a package whose screenshots or
+    font tokens changed without a rebuild, or a removed package still named
+    fails (tools/catalog.py lagging_subset)."""
+    head_rows = {s.get("slug"): s for s in catalog.load_catalog()["systems"]}
+    named = {p.get("referenceId", "").removeprefix("systems:")
+             for p in committed.get("packages") or [] if isinstance(p, dict)}
+    kept = catalog.lagging_subset(named, head_rows, ROOT)
+    if kept is None:
+        return False
+    saved = catalog.load_catalog
+    catalog.load_catalog = lambda: {**saved(), "systems": kept}
+    try:
+        return committed == build()
+    finally:
+        catalog.load_catalog = saved
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
     result = build()
     if args.check:
-        if not OUTPUT.exists() or json.loads(OUTPUT.read_text()) != result:
+        committed = json.loads(OUTPUT.read_text(encoding="utf-8")) if OUTPUT.exists() else None
+        if committed != result and not (committed and matches_base(result, committed)):
             raise SystemExit("Media taxonomy seed is stale; run python3 app/scripts/build-media-taxonomy.py")
         print("Media taxonomy seed is current")
     else:

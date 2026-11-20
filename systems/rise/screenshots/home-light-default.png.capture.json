@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-11-18T18:05:44.116Z",
+  "screenshot": "home-light-default.png",
+  "sanitizedSourceUrl": "https://risecalendar.com/",
+  "requested": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "deviceScaleFactor": 2
+  },
+  "actual": {
+    "innerWidth": 1440,
+    "innerHeight": 900,
+    "devicePixelRatio": 2,
+    "title": "Rise — Projects, tasks, time. Together.",
+    "theme": {
+      "colorScheme": "normal",
+      "classes": []
+    },
+    "visualViewport": {
+      "width": 1440,
+      "height": 900,
+      "scale": 1,
+      "offsetLeft": 0,
+      "offsetTop": 0
+    },
+    "documentSize": {
+      "width": 1440,
+      "height": 14054
+    }
+  },
+  "png": {
+    "width": 2880,
+    "height": 28108
+  },
+  "capture": {
+    "mode": "fullPage",
+    "scale": "device"
+  },
+  "note": "Headless Playwright. Preview browser returned: The browser is not producing screenshot frames.",
+  "visualReview": {
+    "status": "pending"
+  }
+}

@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dock style guide</title>
+<meta name="description" content="Dock design tokens and the public signed-out surface's components, rendered from tokens.json with the declared --ds-*/--color-* layer values and the measured computed styles.">
+<style>
+:root {
+  --font-family-nav: DockWebflowNavigation, Arial, sans-serif;
+  --font-family-home: DockWebflowHome, Arial, sans-serif;
+  --font-family-roobert: Roobert, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-size-display-demo: 80.64px;
+  --font-size-display-customers: 70px;
+  --font-size-display-hero: 62px;
+  --font-size-display: 60px;
+  --font-size-display-mobile: 29.25px;
+  --font-size-h1-templates: 38px;
+  --font-size-card-title: 20px;
+  --font-size-price: 19px;
+  --font-size-section-label: 18px;
+  --font-size-menu-item-mobile: 18px;
+  --font-size-body: 16px;
+  --font-size-menu: 15.5px;
+  --font-size-group: 14.5px;
+  --font-size-control-auth: 14px;
+  --font-size-field: 14px;
+  --font-size-meta: 12.5px;
+  --font-lineHeight-display-hero: 70.4px;
+  --font-lineHeight-display: 64px;
+  --font-lineHeight-display-customers: 72px;
+  --font-lineHeight-menu-item-mobile: 21.6px;
+  --font-lineHeight-card-title: 28px;
+  --font-lineHeight-price: 24px;
+  --font-lineHeight-control: 19.2px;
+  --font-lineHeight-body: 22.4px;
+  --font-lineHeight-menu: 20px;
+  --font-lineHeight-control-auth: 16.8px;
+  --font-lineHeight-meta: 15px;
+  --color-brand-blue: #0068f9;
+  --color-brand-blue-hover: #0060eb;
+  --color-brand-blue-pressed: #005fe4;
+  --color-brand-blue-deep: #002fa6;
+  --color-brand-royal: #4058ff;
+  --color-brand-blue-light: #afdeff;
+  --color-brand-blue-soft: #e5f4ff;
+  --color-brand-blue-tint: #d5ecff;
+  --color-brand-green: #22aba0;
+  --color-brand-pink: #ff93e8;
+  --color-brand-purple: #7000f9;
+  --color-brand-sky: #4db5ff;
+  --color-brand-warm: #e49a52;
+  --color-brand-yellow: #ebd94d;
+  --color-neutral-ink: #121722;
+  --color-neutral-ink-auth: #1a202c;
+  --color-neutral-white: #ffffff;
+  --color-neutral-muted: rgba(18, 23, 34, 0.8);
+  --color-neutral-surface-subtle: #f7f7f8;
+  --color-neutral-wash-hover: #f8f8f8;
+  --color-neutral-wash-pressed: #f2f2f3;
+  --color-neutral-hairline: rgba(18, 23, 34, 0.2);
+  --color-neutral-border: #dedfe3;
+  --color-neutral-base-200: #faf9f7;
+  --color-neutral-base-300: #efefef;
+  --space-1: 4px;
+  --space-1-5: 6px;
+  --space-2: 8px;
+  --space-2-5: 10px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-14: 56px;
+  --radius-pill: 100px;
+  --radius-menu-item: 8px;
+  --radius-auth-control: 4px;
+  --radius-auth-field: 4px;
+  --radius-menu-panel: 19.1px;
+  --radius-hero-art: 18.93px;
+  --radius-popular-col: 12px;
+  --radius-filter-pill: 60px;
+  --radius-field: 6px;
+  --radius-item: 8px;
+  --radius-pill-var: 100px;
+  --measured-focus-ring: rgba(18, 23, 34, 0.6);
+  --measured-focus-ring-blue: #0068f9;
+  --measured-focus-ring-on-blue: rgba(18, 23, 34, 0.6);
+  --measured-ring-on-blue: inset 0px 0px 0px 0.5px rgba(77, 181, 255, 0.3);
+  --measured-ring-primary: inset 0px 0px 0px 0.5px rgba(11, 68, 147, 0.4);
+  --measured-hairline: inset 0px 0px 0px 0.5px rgba(18, 23, 34, 0.2);
+  --measured-field-ring: inset 0px 0px 0px 1px rgba(18, 23, 34, 0.1);
+  --measured-control-shadow: 0px 0.5px 1px 0px rgba(0, 0, 0, 0.08), inset 0px -1px 0px 0px rgba(18, 23, 34, 0.1), inset 0px 0px 0px 0.5px rgba(18, 23, 34, 0.15);
+  --measured-control-transition: 140ms;
+  --measured-duration-fast: 140ms;
+  --measured-duration-menu: 240ms;
+  --measured-ease-menu: cubic-bezier(0.22, 1.0, 0.36, 1.0);
+  --text-primary-default: var(--color-neutral-ink);
+  --text-primary-auth: var(--color-neutral-ink-auth);
+  --text-muted: var(--color-neutral-muted);
+  --text-on-action: #ffffff;
+  --surface-page: var(--color-neutral-white);
+  --surface-card: var(--color-neutral-white);
+  --surface-subtle: var(--color-neutral-surface-subtle);
+  --surface-tint: var(--color-brand-blue-tint);
+  --action-primary-default: var(--color-brand-blue);
+  --action-primary-hover: var(--color-brand-blue-hover);
+  --action-primary-pressed: var(--color-brand-blue-pressed);
+  --action-auth: var(--color-brand-royal);
+  --state-hover: var(--color-neutral-wash-hover);
+  --state-pressed: var(--color-neutral-wash-pressed);
+  --border-default: var(--color-neutral-border);
+  --border-hairline: var(--color-neutral-hairline);
+  --focus-ring-default: rgba(18, 23, 34, 0.6);
+  --focus-ring-blue: var(--color-brand-blue);
+  --component-header-height: 70.1875px;
+  --component-header-height-mobile: 76px;
+  --component-navcontrol-height: 38.1875px;
+  --component-navcta-height: 38.1875px;
+  --component-menurow-height: 40px;
+  --component-menurow-mobile-height: 56px;
+  --component-menupanel-height: 258px;
+  --component-menupanel-mobile-height: 386px;
+  --component-ctabutton-height: 44.5938px;
+  --component-plancta-height: 40px;
+  --component-filter-height: 36px;
+  --component-field-auth-height: 36px;
+  --component-button-auth-height: 36px;
+  --component-field-demo-height: 48px;
+  --component-plancard-height: 300px;
+  --component-faqrow-height: 80px;
+  --component-authcard-height: 322.797px;
+  --component-sticky-height: 152px;
+  --sg-sans: Roobert, "DockWebflowHome", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: Roobert, "DockWebflowHome", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --text-primary: #ffffff;
+  --text-on-action: #ffffff;
+  --surface-band: var(--color-brand-blue-deep);
+  --surface-pane: #242d7d;
+  --action-ghost-default: rgba(0, 0, 0, 0);
+  --action-ghost-hover: rgba(255, 255, 255, 0.06);
+  --action-ghost-pressed: rgba(255, 255, 255, 0.1);
+  --action-primary: var(--color-brand-blue);
+  --border-ghost: rgba(77, 181, 255, 0.4);
+  --focus-ring: rgba(18, 23, 34, 0.6);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, var(--color-neutral-ink, #0f1015)); background: var(--surface-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #0f1015); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #0f1015); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: #1a1630; padding: 12px; border-radius: 12px; }
+.pal.dark .nm, .pal.dark .vl { color: rgba(255, 255, 255, 0.898); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); overflow: hidden; background: var(--surface-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 18px; height: 64px; padding: 0 12px 0 22px; font-size: 14px; color: rgba(255, 255, 255, 0.898); }
+.navbar .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.band { background: linear-gradient(160deg, var(--color-brand-blue-deep, #002fa6) 0%, #0d44c8 100%); color: #fff; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height, 40px); padding: 0 16px; font-size: 14px; font-weight: 600; border-radius: var(--radius-button, 12px); border: 1px solid transparent; }
+.btn.primary { background: var(--action-primary, var(--color-brand-purple, #8b3dff)); color: var(--text-on-action, #fff); }
+.btn.ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 1px var(--border-ghost, rgba(255, 255, 255, 0.2)); border-radius: var(--radius-header-control, 10px); height: 32px; }
+.btn.secondary { background: var(--action-secondary, rgba(255, 255, 255, 0.898)); color: var(--text-on-action, #0f1015); border-radius: var(--radius-header-control, 10px); height: 32px; }
+.btn.outline { background: transparent; color: var(--color-neutral-ink, #0f1015); box-shadow: inset 0 0 0 1px var(--border-hairline, rgba(53, 65, 90, 0.2)); }
+.hero { color: rgba(255, 255, 255, 0.898); padding: 64px 40px 80px; font: 400 56px/1.1 var(--sg-serif); letter-spacing: .01em; text-align: center; }
+.hero small { display: block; font: 400 18px/1.5 var(--sg-sans); color: rgba(255, 255, 255, 0.898); margin: 16px auto 22px; max-width: 46ch; }
+.hero .big-cta { height: var(--component-button-cta-height, 56px); padding: 0 20px; border-radius: var(--radius-cta, 20px); font-size: 16px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); padding: 14px; font-size: 13px; background: #fff; border-radius: var(--radius-card, 16px); }
+.tile .img { height: 120px; background: #eee; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: 8px; }
+.tile b { display: block; font: 400 18px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+.tile .price { font: 500 26px/1.2 var(--sg-sans); margin: 10px 0 2px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #0f1015); opacity: .65; font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: #fff; border-radius: 999px; padding: 4px; gap: 4px; font-size: 15px; box-shadow: inset 0 0 0 1px var(--border-hairline, rgba(53, 65, 90, 0.2)); }
+.toggle span { padding: 8px 22px; border-radius: 999px; }
+.toggle .on { background: var(--action-primary, var(--color-brand-purple, #8b3dff)); color: #fff; }
+.switch { display: inline-block; width: 40px; height: 24px; border-radius: 999px; background: var(--action-primary, var(--color-brand-purple, #8b3dff)); position: relative; vertical-align: middle; }
+.switch i { position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: #fff; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Dock style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Dock, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the Dock blue ramp measured off the real actions (#0068f9 fill, #0060eb hover, #005fe4 pressed) and the declared --color-* hues, the #121722 ink, the ~#f8f8f9 control washes, the 0.5px inset hairline ring, the #002fa6 hero band with its white-alpha ghost states, the three Roobert-derived families, and the 100px pills next to the 4-6px auth radii. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from dock.us on 2026-11-13, signed out, in headless Chromium. The workspace behind auth.dock.us is a documented boundary. Roobert / DockWebflow* are licensed served faces and are not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The header is a <code>dock-site-header</code> web component on a white bar: the wordmark, the Product / Resources dropdown triggers, Pricing and Customers links, Log in, a white Request-demo pill and the blue Start-for-free pill — all 100px pills at ~38px. Below it the hero opens on the #002fa6 blue band with a 62px white display, a ghost Request-demo action and the blue Start-for-free CTA.</p>
+  <div class="mock">
+    <div class="navbar" style="color:var(--color-neutral-ink,#121722);height:70px"><span class="wm">dock</span><span>Product</span><span>Pricing</span><span>Customers</span><span>Resources</span><span class="sp"></span><span style="font-size:14px">Log in</span><span class="btn outline" style="height:38px;border-radius:100px">Request demo</span><span class="btn primary" style="height:38px;border-radius:100px;background:var(--action-primary,var(--color-brand-blue,#0068f9))">Start for free</span></div>
+    <div class="band" style="border-radius:0"><div class="hero" style="color:#fff;padding:56px 40px 72px">Build high-performing sales teams<small style="color:#fff">Train your reps, organize your content, and collaborate with buyers all in one place.</small><span class="btn" style="height:44px;border-radius:100px;background:var(--action-primary,var(--color-brand-blue,#0068f9));color:#fff;margin-right:8px">Start for free</span><span class="btn ghost" style="height:44px;border-radius:100px;color:#fff;box-shadow:inset 0 0 0 1px var(--border-ghost,rgba(77,181,255,.4))">Request demo</span></div></div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing lays the plan columns — Free / Standard / Premium / Enterprise — above the feature-comparison table; each plan's action is a 40px white or blue 100px-pill button, the popular column takes a #f7f7f8 fill with a 12px top radius, and a sticky summary bar pins under the header while scrolling.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile"><b>Free</b><span class="sub">For getting started</span><div class="price">$0</div><span class="sub">forever</span><div style="margin-top:10px"><span class="btn outline" style="height:40px;border-radius:100px">Get started</span></div></div>
+      <div class="tile"><b>Standard</b><span class="sub">For growing teams</span><div class="price">$350</div><span class="sub">per month</span><div style="margin-top:10px"><span class="btn outline" style="height:40px;border-radius:100px">Get started</span></div></div>
+      <div class="tile" style="background:var(--surface-subtle,#f7f7f8)"><b>Premium</b><span class="sub">For scaling revenue teams</span><div class="price">$1,000</div><span class="sub">per month, billed annually</span><div style="margin-top:10px"><span class="btn primary" style="height:40px;border-radius:100px;background:var(--action-primary,var(--color-brand-blue,#0068f9))">Get started</span></div></div>
+      <div class="tile"><b>Enterprise</b><span class="sub">For large organizations</span><div class="price">Custom</div><span class="sub">annual contract</span><div style="margin-top:10px"><span class="btn outline" style="height:40px;border-radius:100px">Talk to sales</span></div></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The auth card</h2>
+  <p class="lead">auth.dock.us/login centres a white Chakra card on a radial light field: a workspace-subdomain field with its <code>.dock.us</code> suffix and the royal-blue #4058ff Continue at a 4px radius. The signup card adds a deep-blue testimonial pane, OAuth actions, an email field and the Turnstile widget. Measured, never used.</p>
+  <div class="mock" style="padding:24px;display:flex;justify-content:center;background:#f6f7fb">
+    <div style="background:#fff;border-radius:8px;padding:24px;width:320px;box-shadow:0 2px 8px rgba(18,23,34,.08)">
+      <b style="font:600 18px/1.3 var(--sg-sans)">Sign in to your Dock</b>
+      <p class="note" style="margin:6px 0 14px">Enter your Dock URL</p>
+      <div style="display:flex;border-radius:var(--radius-auth-field,4px);border:1px solid var(--border-default,#dedfe3);overflow:hidden;margin-bottom:12px"><span style="flex:1;padding:8px 10px;font-size:14px;color:#888">Subdomain</span><span style="padding:8px 10px;font-size:14px;background:#f7f7f8;color:var(--color-neutral-ink,#121722)">.dock.us</span></div>
+      <div><span class="btn" style="width:100%;height:36px;border-radius:var(--radius-auth-control,4px);background:var(--action-auth,var(--color-brand-royal,#4058ff));color:#fff">Continue</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The core set carries the measured #121722 ink/white neutrals and the #0068f9 blue ramp (measured off the actions, var-referenced where a marketing variable resolves the same value); the declared illustration accents come from the --color-* layer. Light roles alias the palette; the "dark" set is the deep-blue islands the light site paints — the hero band and the signup pane — not a user toggle.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Nav controls, CTAs and filter pills are 100px pills; the mega-menu viewport paints 19px, the hero artwork 18.9px, the popular column 12px top corners, mega-menu items 8px, the filter pill 60px, HubSpot fields 6px and Chakra controls/fields 4-6px. Borders are rare — white controls draw a 0.5px inset hairline as box-shadow instead.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Three painted families: <code>DockWebflowNavigation</code> on the header/footer/menus, <code>DockWebflowHome</code> on the home hero and sections, and <code>Roobert</code> on pricing, customers, templates, /demo and the auth app — 400 body, 500 controls, 600 display, 700 the big customer numbers. The ramp runs ~81/84 display on /demo and 62/70.4 home hero down to 14/16.8 auth controls and 12.5/15 trust badges. Samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the --ds-*/--color-* custom-property layer off the same-origin Webflow bundles and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and opened states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"nav":{"v":"DockWebflowNavigation, Arial, sans-serif","t":"fontFamily","s":"computed fontFamily of nav-trigger default (raw/components-computed.json); the @font-face blocks are same-origin Webflow CDN Roobert woff2 (raw/css-vars.json fonts)","d":"DockWebflowNavigation (a subset Roobert build): the header, footer and menu layer."},"home":{"v":"DockWebflowHome, Arial, sans-serif","t":"fontFamily","s":"computed fontFamily of hero-title default (raw/components-computed.json); the @font-face blocks are same-origin Webflow CDN Roobert woff2 (raw/css-vars.json fonts)","d":"DockWebflowHome: the home hero and section display layer."},"roobert":{"v":"Roobert, sans-serif","t":"fontFamily","s":"computed fontFamily of pricing-h1 default (raw/components-computed.json); the @font-face blocks are same-origin Webflow CDN Roobert woff2 (raw/css-vars.json fonts)","d":"Roobert: pricing, customers, templates, /demo and the auth app — the product face."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of footer-link default (raw/components-computed.json)","d":"Body and link weight (400)."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of nav-trigger default (raw/components-computed.json)","d":"The 500 weight on controls, nav labels and plan names."},"semibold":{"v":600,"t":"fontWeight","s":"computed fontWeight of hero-title default (raw/components-computed.json)","d":"The 600 weight on hero and page display text."},"bold":{"v":700,"t":"fontWeight","s":"computed fontWeight of customers-h1 default (raw/components-computed.json)","d":"The 700 weight on the customers/templates display and the selected filter pill."}},"size":{"display-demo":{"v":"80.64px","t":"dimension","s":"computed fontSize of demo-h1 default (raw/components-computed.json)","d":"The ~81px display on /demo."},"display-customers":{"v":"70px","t":"dimension","s":"computed fontSize of customers-h1 default (raw/components-computed.json)","d":"The 70px display on /customers."},"display-hero":{"v":"62px","t":"dimension","s":"computed fontSize of hero-title default (raw/components-computed.json)","d":"The 62px home hero display."},"display":{"v":"60px","t":"dimension","s":"computed fontSize of pricing-h1 default (raw/components-computed.json)","d":"The 60px page-title display (pricing)."},"display-mobile":{"v":"29.25px","t":"dimension","s":"computed fontSize of m-hero default (raw/components-computed.json)","d":"The ~29px hero at 390 wide."},"h1-templates":{"v":"38px","t":"dimension","s":"computed fontSize of templates-h1 default (raw/components-computed.json)","d":"The 38px templates heading."},"card-title":{"v":"20px","t":"dimension","s":"computed fontSize of plan-name default (raw/components-computed.json)","d":"The 20px plan/card title."},"price":{"v":"19px","t":"dimension","s":"computed fontSize of plan-price default (raw/components-computed.json)","d":"The 19px plan price figure."},"section-label":{"v":"18px","t":"dimension","s":"computed fontSize of section-h2 default (raw/components-computed.json)","d":"The 18px section label."},"menu-item-mobile":{"v":"18px","t":"dimension","s":"computed fontSize of m-nav-item default (raw/components-computed.json)","d":"The 18px mobile-menu rows."},"body":{"v":"16px","t":"dimension","s":"computed fontSize of header default (raw/components-computed.json)","d":"The 16px body/nav size."},"menu":{"v":"15.5px","t":"dimension","s":"computed fontSize of menu-link default (raw/components-computed.json); the 2026-11-12 run did not find menu-link, so these are its 2026-11-13 states (recaptureMissed); recapture needed","d":"The 15.5px menu link size."},"group":{"v":"14.5px","t":"dimension","s":"computed fontSize of menu-group default (raw/components-computed.json)","d":"The 14.5px menu group heading."},"control-auth":{"v":"14px","t":"dimension","s":"computed fontSize of continue-btn default (raw/components-computed.json)","d":"The 14px auth control size."},"field":{"v":"14px","t":"dimension","s":"computed fontSize of signup-field default (raw/components-computed.json)","d":"The 14px auth field text."},"meta":{"v":"12.5px","t":"dimension","s":"computed fontSize of trust-badge default (raw/components-computed.json)","d":"The 12.5px trust-badge/meta size."}},"lineHeight":{"display-hero":{"v":"70.4px","t":"dimension","s":"computed lineHeight of hero-title default (raw/components-computed.json)","d":"Hero leading (70.4px on 62px)."},"display":{"v":"64px","t":"dimension","s":"computed lineHeight of pricing-h1 default (raw/components-computed.json)","d":"Page-title leading (64px on 60px)."},"display-customers":{"v":"72px","t":"dimension","s":"computed lineHeight of customers-h1 default (raw/components-computed.json)","d":"Customers display leading (72px on 70px)."},"menu-item-mobile":{"v":"21.6px","t":"dimension","s":"computed lineHeight of m-nav-item default (raw/components-computed.json)","d":"Mobile-menu leading (21.6px on 18px)."},"card-title":{"v":"28px","t":"dimension","s":"computed lineHeight of plan-name default (raw/components-computed.json)","d":"Card-title leading (28px on 20px)."},"price":{"v":"24px","t":"dimension","s":"computed lineHeight of plan-price default (raw/components-computed.json)","d":"Price leading (24px on 19px)."},"control":{"v":"19.2px","t":"dimension","s":"computed lineHeight of nav-trigger default (raw/components-computed.json)","d":"Control leading (19.2px on 16px)."},"body":{"v":"22.4px","t":"dimension","s":"computed lineHeight of footer-link default (raw/components-computed.json)","d":"Body/link leading (22.4px on 16px)."},"menu":{"v":"20px","t":"dimension","s":"computed lineHeight of menu-link default (raw/components-computed.json); the 2026-11-12 run did not find menu-link, so these are its 2026-11-13 states (recaptureMissed); recapture needed","d":"Menu leading (20px on 15.5px)."},"control-auth":{"v":"16.8px","t":"dimension","s":"computed lineHeight of continue-btn default (raw/components-computed.json)","d":"Auth control leading (16.8px on 14px)."},"meta":{"v":"15px","t":"dimension","s":"computed lineHeight of trust-badge default (raw/components-computed.json)","d":"Meta leading (15px on 12.5px)."}}},"color":{"brand":{"blue":{"v":"#0068f9","t":"color","s":"css-var --de-blue (light); computed backgroundColor of nav-cta default (raw/components-computed.json); css-var --de-blue","d":"The Dock blue #0068f9: Start-for-free pill, plan CTA, Copy prompt, demo submit — every primary action."},"blue-hover":{"v":"#0060eb","t":"color","s":"css-var --color-blue-hover (light); computed backgroundColor of nav-cta hover (raw/components-computed.json); css-var --color-blue-hover","d":"The #0060eb hover step every blue button takes."},"blue-pressed":{"v":"#005fe4","t":"color","s":"css-var --ds-blue-active (light); computed backgroundColor of nav-cta pressed (raw/components-computed.json); css-var --ds-blue-active","d":"The #005fe4 pressed step."},"blue-deep":{"v":"#002fa6","t":"color","s":"css-var --color-blue-deep (light); css-var --color-blue-deep resolved light (raw/css-vars.json)","d":"The declared #002fa6 deep blue of the home hero; also the base of its oklch gradient."},"royal":{"v":"#4058ff","t":"color","s":"css-var --royal-blue (light); css-var --royal-blue resolved light (raw/css-vars.json)","d":"The auth app's royal blue #4058ff (--royal-blue): the Chakra button fill on auth.dock.us."},"blue-light":{"v":"#afdeff","t":"color","s":"css-var --color-blue-light (light); css-var --color-blue-light resolved light (raw/css-vars.json)","d":"The declared light blue --color-blue-light #afdeff."},"blue-soft":{"v":"#e5f4ff","t":"color","s":"css-var --color-blue-soft (light); css-var --color-blue-soft resolved light (raw/css-vars.json)","d":"The declared soft blue --color-blue-soft #e5f4ff."},"blue-tint":{"v":"#d5ecff","t":"color","s":"css-var --_anchor---colors--blue-100 (light); css-var --_anchor---colors--blue-100 resolved light (raw/css-vars.json)","d":"The selected-filter pill fill #d5ecff (_anchor blue-100)."},"green":{"v":"#22aba0","t":"color","s":"css-var --color-green (light); css-var --color-green resolved light (raw/css-vars.json)","d":"The declared illustration green --color-green #22aba0."},"pink":{"v":"#ff93e8","t":"color","s":"css-var --color-pink (light); css-var --color-pink resolved light (raw/css-vars.json)","d":"The declared illustration pink --color-pink #ff93e8."},"purple":{"v":"#7000f9","t":"color","s":"css-var --color-purple (light); css-var --color-purple resolved light (raw/css-vars.json)","d":"The declared illustration purple --color-purple #7000f9."},"sky":{"v":"#4db5ff","t":"color","s":"css-var --color-sky (light); css-var --color-sky resolved light (raw/css-vars.json)","d":"The declared illustration sky --color-sky #4db5ff; its 40% alpha is the ghost ring on the blue band."},"warm":{"v":"#e49a52","t":"color","s":"css-var --color-warm (light); css-var --color-warm resolved light (raw/css-vars.json)","d":"The declared warm accent --color-warm #e49a52."},"yellow":{"v":"#ebd94d","t":"color","s":"css-var --color-yellow (light); css-var --color-yellow resolved light (raw/css-vars.json)","d":"The declared yellow accent --color-yellow #ebd94d."}},"neutral":{"ink":{"v":"#121722","t":"color","s":"computed color of nav-trigger default (raw/components-computed.json)","d":"The #121722 ink: all body text and labels (--black)."},"ink-auth":{"v":"#1a202c","t":"color","s":"computed color of login-card default (raw/components-computed.json)","d":"The auth app's #1a202c ink (Chakra gray-800)."},"white":{"v":"#ffffff","t":"color","s":"computed ancestor-white of header default (raw/components-computed.json)","d":"The #ffffff surface: header bar, menu viewport, plan cards, auth cards."},"muted":{"v":"rgba(18, 23, 34, 0.8)","t":"color","s":"computed color of trust-badge default (raw/components-computed.json)","d":"The rgba(18,23,34,0.8) secondary text (trust badges, meta)."},"surface-subtle":{"v":"#f7f7f8","t":"color","s":"computed popular-col of pr-sticky default (raw/components-computed.json)","d":"The #f7f7f8 fill the popular plan column paints."},"wash-hover":{"v":"#f8f8f8","t":"color","s":"computed backgroundColor of nav-link hover (raw/components-computed.json)","d":"The ~#f8f8f9 hover wash on header controls."},"wash-pressed":{"v":"#f2f2f3","t":"color","s":"computed backgroundColor of nav-demo pressed (raw/components-computed.json)","d":"The ~#f2f2f3 pressed wash on header controls."},"hairline":{"v":"rgba(18, 23, 34, 0.2)","t":"color","s":"computed hairline of nav-demo default (raw/components-computed.json)","d":"The 0.5px inset rgba(18,23,34,0.2) ring white controls draw instead of a border."},"border":{"v":"#dedfe3","t":"color","s":"css-var --ds-border (light); css-var --ds-border resolved light (raw/css-vars.json)","d":"The --ds-border hairline the pricing sticky bar and menu dividers paint."},"base-200":{"v":"#faf9f7","t":"color","s":"css-var --_anchor---colors--base-200 (light); css-var --_anchor---colors--base-200 resolved light (raw/css-vars.json)","d":"The _anchor base-200 off-white page field."},"base-300":{"v":"#efefef","t":"color","s":"css-var --_anchor---colors--base-300 (light); css-var --_anchor---colors--base-300 resolved light (raw/css-vars.json)","d":"The _anchor base-300 subtle fill."}}},"space":{"1":{"v":"4px","t":"dimension","s":"css-var --space-1 (light); css-var --space-1 resolved light (raw/css-vars.json)","d":"The 4px base step."},"1-5":{"v":"6px","t":"dimension","s":"css-var --space-1-5 (light); css-var --space-1-5 resolved light (raw/css-vars.json)","d":"The 6px step."},"2":{"v":"8px","t":"dimension","s":"css-var --space-2 (light); css-var --space-2 resolved light (raw/css-vars.json)","d":"The 8px step."},"2-5":{"v":"10px","t":"dimension","s":"css-var --space-2-5 (light); css-var --space-2-5 resolved light (raw/css-vars.json)","d":"The 10px step."},"3":{"v":"12px","t":"dimension","s":"css-var --space-3 (light); css-var --space-3 resolved light (raw/css-vars.json)","d":"The 12px step."},"4":{"v":"16px","t":"dimension","s":"css-var --space-4 (light); css-var --space-4 resolved light (raw/css-vars.json)","d":"The 16px step."},"6":{"v":"24px","t":"dimension","s":"css-var --space-6 (light); css-var --space-6 resolved light (raw/css-vars.json)","d":"The 24px step."},"8":{"v":"32px","t":"dimension","s":"css-var --space-8 (light); css-var --space-8 resolved light (raw/css-vars.json)","d":"The 32px step."},"10":{"v":"40px","t":"dimension","s":"css-var --space-10 (light); css-var --space-10 resolved light (raw/css-vars.json)","d":"The 40px step."},"14":{"v":"56px","t":"dimension","s":"css-var --space-14 (light); css-var --space-14 resolved light (raw/css-vars.json)","d":"The 56px step."}},"radius":{"pill":{"v":"100px","t":"dimension","s":"computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)","d":"The 100px pill on nav controls, CTAs and filter pills."},"menu-item":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of menu-link default (raw/components-computed.json); the 2026-11-12 run did not find menu-link, so these are its 2026-11-13 states (recaptureMissed); recapture needed","d":"The 8px radius on mega-menu items."},"auth-control":{"v":"4px","t":"dimension","s":"computed borderTopLeftRadius of continue-btn default (raw/components-computed.json)","d":"The 4px radius on the auth app's buttons."},"auth-field":{"v":"4px","t":"dimension","s":"computed borderTopLeftRadius of signup-field default (raw/components-computed.json)","d":"The 4px radius on auth fields."},"menu-panel":{"v":"19.1px","t":"dimension","s":"painted layer radius inside nav-dropdown (raw/components-computed.json): '19.1px'","d":"The ~19px radius the mega-menu viewport paints."},"hero-art":{"v":"18.93px","t":"dimension","s":"painted layer radius inside hero-card (raw/components-computed.json): '18.93px'","d":"The ~19px radius the hero artwork frame paints."},"popular-col":{"v":"12px","t":"dimension","s":"painted layer radius inside pr-sticky (raw/components-computed.json): '12px 12px 0px 0px'","d":"The 12px top radius on the popular plan column."},"filter-pill":{"v":"60px","t":"dimension","s":"painted layer radius inside filter-radio (raw/components-computed.json): '60px'","d":"The 60px radius on the selected filter pill."},"field":{"v":"6px","t":"dimension","s":"painted layer radius inside demo-field (raw/components-computed.json): '6px'","d":"The 6px radius on HubSpot form fields."},"item":{"v":"8px","t":"dimension","s":"css-var --radius-item (light); css-var --radius-item resolved light (raw/css-vars.json)","d":"The declared 8px item radius."},"pill-var":{"v":"100px","t":"dimension","s":"css-var --radius-pill (light); css-var --radius-pill resolved light (raw/css-vars.json)","d":"The declared 100px pill radius."}},"measured":{"focus-ring":{"v":"rgba(18, 23, 34, 0.6)","t":"color","s":"computed outlineColor of mcp-copy focus-visible (raw/components-computed.json)","d":"The 2px rgba(18,23,34,0.6) ink keyboard outline on light controls."},"focus-ring-blue":{"v":"#0068f9","t":"color","s":"computed outlineColor of plan-cta focus-visible (raw/components-computed.json)","d":"The 2px #0068f9 keyboard outline on pricing buttons."},"focus-ring-on-blue":{"v":"rgba(18, 23, 34, 0.6)","t":"color","s":"computed outlineColor of hero-cta focus-visible (raw/components-computed.json)","d":"The keyboard outline over the blue band."},"ring-on-blue":{"v":[{"color":"rgba(77, 181, 255, 0.3)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"0.5px","inset":true}],"t":"shadow","s":"computed boxShadow of hero-cta default (raw/components-computed.json)","d":"The 0.5px inset rgba(77,181,255,0.4) sky ring primary buttons paint on the band."},"ring-primary":{"v":[{"color":"rgba(11, 68, 147, 0.4)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"0.5px","inset":true}],"t":"shadow","s":"computed boxShadow of nav-cta default (raw/components-computed.json)","d":"The 0.5px inset rgba(11,68,147,0.4) deep-blue ring the primary action paints."},"hairline":{"v":[{"color":"rgba(18, 23, 34, 0.2)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"0.5px","inset":true}],"t":"shadow","s":"computed boxShadow of nav-demo default (raw/components-computed.json)","d":"The 0.5px inset rgba(18,23,34,0.2) ring white controls draw instead of a border."},"field-ring":{"v":[{"color":"rgba(18, 23, 34, 0.1)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"1px","inset":true}],"t":"shadow","s":"painted layer shadow inside demo-field default (raw/components-computed.json)","d":"The 1px inset rgba(18,23,34,0.1) ring the HubSpot fields draw."},"control-shadow":{"v":[{"color":"rgba(0, 0, 0, 0.08)","offsetX":"0px","offsetY":"0.5px","blur":"1px","spread":"0px","inset":false},{"color":"rgba(18, 23, 34, 0.1)","offsetX":"0px","offsetY":"-1px","blur":"0px","spread":"0px","inset":true},{"color":"rgba(18, 23, 34, 0.15)","offsetX":"0px","offsetY":"0px","blur":"0px","spread":"0.5px","inset":true}],"t":"shadow","s":"computed boxShadow of plan-cta default (raw/components-computed.json)","d":"The pricing button's layered shadow (0.5px drop + ink hairline)."},"control-transition":{"v":"140ms","t":"duration","s":"computed transition of nav-cta default (raw/components-computed.json)","d":"The control transition duration. (background-color, box-shadow)"},"duration-fast":{"v":"140ms","t":"duration","s":"css-var --duration-fast (light); css-var --duration-fast resolved light (raw/css-vars.json)","d":"The declared .14s fast duration."},"duration-menu":{"v":"240ms","t":"duration","s":"css-var --duration-menu (light); css-var --duration-menu resolved light (raw/css-vars.json)","d":"The declared .24s menu duration."},"ease-menu":{"v":[0.22,1.0,0.36,1.0],"t":"cubicBezier","s":"css-var --ease-menu (light); css-var --ease-menu resolved light (raw/css-vars.json)","d":"The declared menu easing cubic-bezier(.22,1,.36,1)."}}},"light":{"text":{"primary":{"default":{"v":"{color.neutral.ink}","t":"color","s":"role alias over the core palette","d":"Body and display ink on light."},"auth":{"v":"{color.neutral.ink-auth}","t":"color","s":"role alias over the core palette","d":"The auth app's #1a202c ink."}},"muted":{"v":"{color.neutral.muted}","t":"color","s":"role alias over the core palette","d":"Secondary text at 80% ink."},"on":{"action":{"v":"#ffffff","t":"color","s":"computed color of nav-cta default (raw/components-computed.json)","d":"White labels on the blue fills."}}},"surface":{"page":{"v":"{color.neutral.white}","t":"color","s":"role alias over the core palette","d":"The white page field."},"card":{"v":"{color.neutral.white}","t":"color","s":"role alias over the core palette","d":"Menu viewport, plan cards, auth cards."},"subtle":{"v":"{color.neutral.surface-subtle}","t":"color","s":"role alias over the core palette","d":"The #f7f7f8 popular-column fill."},"tint":{"v":"{color.brand.blue-tint}","t":"color","s":"role alias over the core palette","d":"The #d5ecff selected filter pill."}},"action":{"primary":{"default":{"v":"{color.brand.blue}","t":"color","s":"role alias over the core palette","d":"The #0068f9 action fill."},"hover":{"v":"{color.brand.blue-hover}","t":"color","s":"role alias over the core palette","d":"The #0060eb hover step."},"pressed":{"v":"{color.brand.blue-pressed}","t":"color","s":"role alias over the core palette","d":"The #005fe4 pressed step."}},"auth":{"v":"{color.brand.royal}","t":"color","s":"role alias over the core palette","d":"The auth app's #4058ff Chakra fill."}},"state":{"hover":{"v":"{color.neutral.wash-hover}","t":"color","s":"role alias over the core palette","d":"The ~#f8f8f9 control hover wash."},"pressed":{"v":"{color.neutral.wash-pressed}","t":"color","s":"role alias over the core palette","d":"The ~#f2f2f3 control pressed wash."}},"border":{"default":{"v":"{color.neutral.border}","t":"color","s":"role alias over the core palette","d":"The #dedfe3 hairline."},"hairline":{"v":"{color.neutral.hairline}","t":"color","s":"role alias over the core palette","d":"The inset 0.5px ring white controls carry instead of a border."}},"focus":{"ring":{"default":{"v":"rgba(18, 23, 34, 0.6)","t":"color","s":"computed outlineColor of mcp-copy focus-visible (raw/components-computed.json)","d":"The 2px 60%-ink keyboard outline on light surfaces."},"blue":{"v":"{color.brand.blue}","t":"color","s":"role alias over the core palette","d":"The 2px #0068f9 keyboard outline on the pricing buttons."}}},"component":{"header":{"height":{"v":"70.1875px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The ~70px desktop header bar."},"height-mobile":{"v":"76px","t":"dimension","s":"computed height of m-header default (raw/components-computed.json)","d":"The 76px mobile header."}},"navcontrol":{"height":{"v":"38.1875px","t":"dimension","s":"computed height of nav-trigger default (raw/components-computed.json)","d":"The ~38px header controls."}},"navcta":{"height":{"v":"38.1875px","t":"dimension","s":"computed height of nav-cta default (raw/components-computed.json)","d":"The ~38px header actions."}},"menurow":{"height":{"v":"40px","t":"dimension","s":"computed height of menu-link default (raw/components-computed.json); the 2026-11-12 run did not find menu-link, so these are its 2026-11-13 states (recaptureMissed); recapture needed","d":"The 40px mega-menu link row."}},"menurow-mobile":{"height":{"v":"56px","t":"dimension","s":"computed height of m-nav-item default (raw/components-computed.json)","d":"The 56px mobile-menu row."}},"menupanel":{"height":{"v":"258px","t":"dimension","s":"computed height of nav-dropdown default (raw/components-computed.json)","d":"The 258px mega-menu panel."}},"menupanel-mobile":{"height":{"v":"386px","t":"dimension","s":"computed height of m-menu-open default (raw/components-computed.json)","d":"The ~386px opened mobile menu panel."}},"ctabutton":{"height":{"v":"44.5938px","t":"dimension","s":"computed height of hero-cta default (raw/components-computed.json)","d":"The ~45px hero CTA height."}},"plancta":{"height":{"v":"40px","t":"dimension","s":"computed height of plan-cta default (raw/components-computed.json)","d":"The 40px pricing button."}},"filter":{"height":{"v":"36px","t":"dimension","s":"computed height of filter-radio default (raw/components-computed.json)","d":"The 36px filter pill."}},"field-auth":{"height":{"v":"36px","t":"dimension","s":"computed height of subdomain-field default (raw/components-computed.json)","d":"The 36px auth field."}},"button-auth":{"height":{"v":"36px","t":"dimension","s":"computed height of continue-btn default (raw/components-computed.json)","d":"The 36px auth button."}},"field-demo":{"height":{"v":"48px","t":"dimension","s":"computed height of demo-field default (raw/components-computed.json)","d":"The 48px HubSpot field."}},"plancard":{"height":{"v":"300px","t":"dimension","s":"computed height of plan-card default (raw/components-computed.json)","d":"The ~300px plan column."}},"faqrow":{"height":{"v":"80px","t":"dimension","s":"computed height of faq-item default (raw/components-computed.json)","d":"The 80px pricing FAQ row."}},"authcard":{"height":{"v":"322.797px","t":"dimension","s":"computed height of login-card default (raw/components-computed.json)","d":"The ~323px login card."}},"sticky":{"height":{"v":"152px","t":"dimension","s":"computed height of pr-sticky default (raw/components-computed.json)","d":"The 152px sticky plan bar."}}}},"dark":{"text":{"primary":{"v":"#ffffff","t":"color","s":"computed color of hero-title default (raw/components-computed.json)","d":"White text on the deep-blue band (hero headline, ghost labels)."},"on":{"action":{"v":"#ffffff","t":"color","s":"computed color of hero-cta default (raw/components-computed.json)","d":"White labels on the blue fill."}}},"surface":{"band":{"v":"{color.brand.blue-deep}","t":"color","s":"role alias over the core palette","d":"The #002fa6 hero band; the page-placeholder gradient runs to oklch(0.397 0.194 263.2)."},"pane":{"v":"#242d7d","t":"color","s":"Reconstruction: entered by hand at capture time from the auth signup pane's background; no reading in raw/ holds it","d":"The auth signup's testimonial pane base (radial-gradient #242d7d -> #3542af)."}},"action":{"ghost":{"default":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"computed backgroundColor of hero-demo default (raw/components-computed.json)","d":"Ghost buttons on the band start fully transparent (hero Request demo)."},"hover":{"v":"rgba(255, 255, 255, 0.06)","t":"color","s":"computed backgroundColor of hero-demo hover (raw/components-computed.json)","d":"The 6% white fill a band ghost button takes on hover."},"pressed":{"v":"rgba(255, 255, 255, 0.1)","t":"color","s":"computed backgroundColor of hero-demo pressed (raw/components-computed.json)","d":"The 10% white fill on pressed."}},"primary":{"v":"{color.brand.blue}","t":"color","s":"role alias over the core palette","d":"The #0068f9 primary fill reads the same on the band."}},"border":{"ghost":{"v":"rgba(77, 181, 255, 0.4)","t":"color","s":"computed boxShadow of hero-demo default (raw/components-computed.json)","d":"The 0.5px inset sky ring ghost and primary buttons on the band carry (--color-sky at 40%)."}},"focus":{"ring":{"v":"rgba(18, 23, 34, 0.6)","t":"color","s":"computed outlineColor of hero-cta focus-visible (raw/components-computed.json)","d":"The same 2px 60%-ink keyboard outline paints over the band."}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the .theme.dark band)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  // This package stores the space scale under core.space (spacing is the
+  // older kit's name; keep both so a renamed group never silently empties).
+  for (const [n, t] of flat(TOK.core.space || TOK.core.spacing || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  // Dock's shadows live under core.measured (inset rings + the plan-cta
+  // layered shadow) typed 'shadow', not under a core.shadow group.
+  const shadows = flat(TOK.core.shadow || {}, 'shadow.').concat(
+    flat(TOK.core.measured || {}, 'measured.').filter(([, t]) => t.t === 'shadow'));
+  for (const [n, t] of shadows) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => (x.inset ? 'inset ' : '') + x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.spread + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Dock</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

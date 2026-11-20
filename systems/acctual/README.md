@@ -12,7 +12,7 @@ Acctual's product (the invoicing app at app.acctual.com) is a different surface;
 | [style-guide.html](style-guide.html) | One self-contained page that renders every token and the main components (the frosted nav pill, the capsule buttons, the count pill and check bullets, a persona card, fee rows, the FAQ accordion, a dark panel, the footer) with the real values, states side by side |
 | [components.md](components.md) | The discovery list of every page and view, one entry per component (49) written in tokens with crops of the real product, the shared values (focus, pressed, motion, layout grid, card shapes), the icon index, and the Gaps |
 | [patterns.md](patterns.md) | How the components combine: the shared shell, the centred-hero marketing page, the programmatic landing page, the legal text page, forms and consent handling, and the mobile fold |
-| [components/crops/](components/crops) | 89 element screenshots, `{component}-{state}.png`, at 2x |
+| [components/crops/](components/crops) | 88 element screenshots, `{component}-{state}.png`, at 2x |
 | [icons/](icons) | 54 SVGs lifted from the pages (the wordmark, the menu trigger, the fee and persona marks, social marks), named by role in [icons/INDEX.tsv](icons/INDEX.tsv). Acctual's property, kept for reference only |
 | [screenshots/](screenshots) | 30 `{page}-light-{state}.png` captures. Desktop shots are 1440 x 900 at 1x; `-full` shots are whole pages at the same width; `mobile-*` shots are 390 wide at 2x. The mobile home also keeps the opened-menu state |
 | [raw/](raw) | The unprocessed readings: the resolved `--token-<uuid>` custom properties (`css-vars.json`), per-component computed styles (`components-computed.json`, and `measurements.md` built from it), the token tree the builder reads (`component-tokens.json`), and page geometry at four widths (`layout.json`). The unquantised screenshot originals and their `.capture.json` sidecars are working evidence, not committed (see Rebuild for how `public.mjs` re-takes them) |
@@ -97,6 +97,7 @@ Screenshots were lazily scrolled to settle lazy content, then stored quantised t
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **Screenshots are 256-colour PNGs.** Gradients and photography band slightly; read exact colours from tokens.json or the raw files.
 - **Focus rings are the browser's.** Where the site declares no `:focus-visible` style, the measured 1px `#005fcc` auto ring is headless Chromium's default, not a product choice.
 - **`pressed` is forced `:active`,** not a real mousedown; Framer's sheet paints links `#ff0000` under it.
@@ -169,7 +170,7 @@ PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/public.mjs
 PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/measure.mjs home pricing mobile
 ```
 
-`public.mjs` re-takes the screenshot set into `raw/full` (full-page shots tile at 8 chunks max); `python3 tools/capture/quantize.py raw/full` stitches and stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs`, `layout.mjs` and `icons.mjs` rewrite their raw or icon files whole. `lib.mjs` holds the shared helpers, including the overlay sweep, the offscreen-element filtering and the `navigator.webdriver` masking.
+`public.mjs` re-takes the screenshot set into `raw/full` (full-page shots tile at 8 chunks max); `python3 tools/capture/quantize.py raw/full` stitches and stores the quantised copies in `screenshots/`. `measure.mjs` takes page names and merges into `raw/components-computed.json`; `node tools/capture/public/build-measurements.mjs` then rewrites `raw/measurements.md`. `vars.mjs`, `layout.mjs` and `icons.mjs` rewrite their raw or icon files whole. `lib.mjs` holds the shared helpers, including the overlay sweep and the offscreen-element filtering (it no longer masks `navigator.webdriver`).
 
 ## Use in Figma
 

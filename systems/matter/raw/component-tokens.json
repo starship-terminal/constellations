@@ -1,0 +1,216 @@
+{
+  "_about": "Matter's public token tree. Declared --mr-* variables become var leaves. Painted values without a variable are measured leaves.",
+  "core": {
+    "color": {
+      "black": {
+        "var": "--mr-color-black",
+        "type": "color"
+      },
+      "dark-2": {
+        "var": "--mr-color-dark-2",
+        "type": "color"
+      },
+      "dark-3": {
+        "var": "--mr-color-dark-3",
+        "type": "color"
+      },
+      "gray": {
+        "var": "--mr-color-gray",
+        "type": "color"
+      },
+      "gray-light": {
+        "var": "--mr-color-gray-light",
+        "type": "color"
+      },
+      "light-2": {
+        "var": "--mr-color-light-2",
+        "type": "color"
+      },
+      "light-3": {
+        "var": "--mr-color-light-3",
+        "type": "color"
+      },
+      "white": {
+        "var": "--mr-color-white",
+        "type": "color"
+      },
+      "blurple": {
+        "var": "--mr-color-blurple",
+        "type": "color"
+      },
+      "content-200": {
+        "var": "--mr-content-200",
+        "type": "color"
+      },
+      "content-300": {
+        "var": "--mr-content-300",
+        "type": "color"
+      },
+      "content-400": {
+        "var": "--mr-content-400",
+        "type": "color"
+      }
+    },
+    "font": {
+      "family": {
+        "system": {
+          "var": "--mr-font-system",
+          "type": "fontFamily"
+        },
+        "camphor": {
+          "value": "MR-Camphor, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+          "type": "fontFamily",
+          "source": "computed font-family on the marketing h1, raw/components-computed.json hero-h1 (MR-Camphor, loaded from the site)"
+        }
+      }
+    },
+    "radius": {
+      "s": {
+        "var": "--mr-border-radius-s",
+        "type": "dimension"
+      },
+      "m": {
+        "var": "--mr-border-radius-m",
+        "type": "dimension"
+      },
+      "pill": {
+        "value": "100px",
+        "type": "dimension",
+        "source": "computed border-radius on GetMatterCTAButton (100px pill)"
+      }
+    },
+    "spacing": {
+      "hero": {
+        "var": "--mr-spacer-hero",
+        "type": "dimension"
+      },
+      "hero-text": {
+        "var": "--mr-spacer-hero-text",
+        "type": "dimension"
+      },
+      "xl": {
+        "var": "--mr-spacer-xl",
+        "type": "dimension"
+      },
+      "xxl": {
+        "var": "--mr-spacer-xxl",
+        "type": "dimension"
+      },
+      "margin-s": {
+        "var": "--mr-horizontal-margin-s",
+        "type": "dimension"
+      },
+      "margin-m": {
+        "var": "--mr-horizontal-margin-m",
+        "type": "dimension"
+      }
+    },
+    "layout": {
+      "column": {
+        "var": "--mr-column",
+        "type": "dimension"
+      },
+      "bp-mobile": {
+        "var": "--mr-bp-mobile",
+        "type": "dimension"
+      },
+      "bp-tablet": {
+        "var": "--mr-bp-tablet-portrait",
+        "type": "dimension"
+      },
+      "bp-laptop-small": {
+        "var": "--mr-bp-laptop-small",
+        "type": "dimension"
+      },
+      "bp-laptop-medium": {
+        "var": "--mr-bp-laptop-medium",
+        "type": "dimension"
+      },
+      "phone-width": {
+        "var": "--mr-phone-width",
+        "type": "dimension"
+      },
+      "logos-width": {
+        "var": "--mr-logos-width",
+        "type": "dimension"
+      },
+      "col-13": {
+        "var": "--mr-col-13",
+        "type": "dimension"
+      }
+    }
+  },
+  "light": {
+    "page": {
+      "var": "--mr-color-white",
+      "type": "color"
+    },
+    "surface": {
+      "var": "--mr-color-light-2",
+      "type": "color"
+    },
+    "text": {
+      "var": "--mr-content-400",
+      "type": "color"
+    },
+    "muted": {
+      "var": "--mr-color-gray",
+      "type": "color"
+    },
+    "accent": {
+      "var": "--mr-color-blurple",
+      "type": "color"
+    },
+    "border": {
+      "var": "--mr-color-gray-light",
+      "type": "color"
+    }
+  },
+  "dark": {
+    "page": {
+      "var": "--mr-color-black",
+      "type": "color"
+    },
+    "surface": {
+      "var": "--mr-color-dark-2",
+      "type": "color"
+    },
+    "text": {
+      "var": "--mr-color-white",
+      "type": "color"
+    },
+    "muted": {
+      "var": "--mr-color-gray",
+      "type": "color"
+    },
+    "accent": {
+      "var": "--mr-color-blurple",
+      "type": "color"
+    },
+    "border": {
+      "var": "--mr-color-dark-3",
+      "type": "color"
+    }
+  },
+  "component": {
+    "button": {
+      "radius": {
+        "value": "100px",
+        "type": "dimension",
+        "source": "computed border-radius on the header Get Matter pill"
+      },
+      "font-size": {
+        "value": "14px",
+        "type": "dimension",
+        "source": "computed font-size on the header Get Matter pill"
+      }
+    },
+    "header": {
+      "height": {
+        "value": "62px",
+        "type": "dimension",
+        "source": "measured header height on getmatter.com at 1440"
+      }
+    }
+  }
+}

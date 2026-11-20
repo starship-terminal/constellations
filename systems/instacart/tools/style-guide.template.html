@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instacart style guide</title>
+<meta name="description" content="Instacart IDS tokens and the public surfaces' components, rendered from tokens.json.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: var(--font-family-sans, "Instacart Sans", Arial, sans-serif);
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-text, #242529); background: var(--color-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 40px/1.15 var(--sg-sans); margin: 0 0 8px; letter-spacing: -0.02em; }
+h2.sh { font: 600 13px/1 var(--sg-sans); letter-spacing: 0; text-transform: none; color: var(--color-muted, #72767e); margin: 48px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-border, #e8e9eb); }
+.lead { max-width: 68ch; color: var(--color-muted, #72767e); }
+.note { font-size: 13px; color: var(--color-muted, #72767e); max-width: 68ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 600 12px/1 var(--sg-sans); color: var(--color-muted, #72767e); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 180px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-border, #e8e9eb); display: inline-flex; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-muted, #72767e); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv span { color: var(--color-muted, #72767e); }
+.mock { border: 1px solid var(--color-border, #e8e9eb); border-radius: 12px; overflow: hidden; background: #fff; }
+.hero { background: var(--color-hero, #003d29); color: #fff; padding: 28px 24px; display: flex; gap: 24px; align-items: center; }
+.hero h3 { margin: 0 0 12px; font: 700 28px/1.15 var(--sg-sans); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-primary-height, 40px); padding: 0 18px; border-radius: var(--component-button-primary-radius, 20px); border: 1px solid transparent; font: var(--typography-button, 400 16px/24px var(--sg-sans)); line-height: 1; }
+.btn.primary { background: var(--color-accent, #108910); color: #fff; }
+.btn.lg { height: var(--component-button-primary-height-lg, 56px); padding: 0 28px; border-radius: var(--component-button-primary-radius-lg, 28px); }
+.btn.secondary { background: #fff; color: var(--color-text, #242529); border-color: var(--color-border, #e8e9eb); }
+.nav { display: flex; align-items: center; gap: 12px; padding: 12px 16px; }
+.mark { font-weight: 700; color: var(--color-hero, #003d29); }
+.search { flex: 1; height: 40px; border-radius: 999px; border: 1px solid var(--color-border, #e8e9eb); background: var(--color-surface, #f7f5f0); padding: 0 16px; color: var(--color-muted, #72767e); }
+.chips { display: flex; gap: 8px; padding: 16px; flex-wrap: wrap; }
+.chip { height: 32px; padding: 0 14px; border-radius: 999px; background: #f6f7f8; border: 0; font: var(--typography-label, 600 14px/20px var(--sg-sans)); line-height: 32px; }
+.chip.on { background: #242529; color: #fff; }
+.deal { display: inline-block; background: var(--color-deal, #ffdc23); font: 700 12px/1 var(--sg-sans); padding: 4px 6px; }
+.card { border: 1px solid var(--color-border, #e8e9eb); border-radius: 12px; padding: 12px; width: 220px; }
+.card b { display: block; margin-bottom: 4px; }
+.card small { color: var(--color-success, #108910); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Instacart</h1>
+  <p class="note">Generated from <code>tokens.json</code>. Swatches are tokens. The boxed mocks are reconstructions drawn with those tokens, not captured pixels. Real pixels are in <code>screenshots/</code>.</p>
+
+  <h2 class="sh">Chrome and hero</h2>
+  <p class="lead">The marketing header is white: carrot wordmark, pill search, outlined Log in, green Sign up. The homepage hero is the forest band (#003D29) with a green pill. Login sits on the warm wash (#F7F5F0) with a white card.</p>
+  <div class="mock">
+    <div class="nav"><span class="mark">instacart</span><div class="search">Search products and stores</div><span class="btn secondary">Log in</span><span class="btn primary">Sign up</span></div>
+    <div class="hero"><div><h3>Order groceries for delivery or pickup today</h3><span class="btn primary lg">Sign up to get $0 delivery fee</span></div></div>
+  </div>
+
+  <h2 class="sh">Store cards and chips</h2>
+  <div class="mock">
+    <div class="chips"><span class="chip on">All</span><span class="chip">EBT</span><span class="chip">Fastest</span><span class="chip">Offers</span><span class="deal">No markups</span></div>
+    <div style="display:flex;gap:12px;padding:0 16px 16px">
+      <div class="card"><b>Safeway</b><small>Delivery by 9:00am</small><div style="margin-top:10px"><span class="btn primary">Add</span></div></div>
+      <div class="card"><b>Costco</b><small>Delivery by 3:45pm</small></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Space, radius, type</h2>
+  <div id="spacing-out" class="kv"></div>
+  <div id="type-out"></div>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+(function palette() {
+  let h = '';
+  for (const setname of ['core', 'light']) {
+    for (const [g, grp] of Object.entries(TOK[setname] || {})) {
+      const items = (grp && grp.t ? [[setname + '.' + g, grp]] : flat(grp, setname + '.' + g + '.')).filter(([, t]) => t.t === 'color');
+      if (!items.length) continue;
+      h += `<div class="pal-h">${esc(setname)}.${esc(g)}</div><div class="pal">`;
+      for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+      h += '</div>';
+    }
+  }
+  $('#roles-out').innerHTML = h;
+})();
+(function spacing() {
+  let m = '';
+  for (const group of ['space', 'radius', 'opacity', 'font']) {
+    for (const [n, t] of flat(TOK.core[group] || {}, group + '.')) {
+      const v = Array.isArray(t.v) ? t.v.join(', ') : (typeof t.v === 'object' ? JSON.stringify(t.v) : t.v);
+      m += `<div><b>${esc(n)}</b> <span>${esc(v)}</span></div>`;
+    }
+  }
+  for (const [n, t] of flat((TOK.core.motion || {}).easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 48))}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+  let type = '';
+  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
+    const v = t.v || {};
+    type += `<div class="tr" style="font:${esc(v.fontWeight)} ${esc(v.fontSize)}/${esc(v.lineHeight)} var(--sg-sans)">${esc(n)}</div>`;
+  }
+  $('#type-out').innerHTML = type;
+})();
+</script>
+</body>
+</html>

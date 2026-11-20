@@ -256,7 +256,8 @@ async function home() {
   for (let y = 0; y < 3000; y += 700) { await page.evaluate((yy) => scrollTo(0, yy), y); await page.waitForTimeout(220); }
   await page.evaluate(() => scrollTo(0, 0)); await page.waitForTimeout(800);
   const h = G.hero;
-  await S('sotd-heading', q('h1, h2, [class*="heading" i]').filter({ hasText: /site of the day|nominees/i }).filter({ visible: true }).first(), ['default'], { group: h, title: 'Section heading', desc: '"Site of the Day" heading over the first card.', sel: ':has-text("Site of the Day")' });
+  // a heading element only: [class*=heading] caught the whole Site of the Day block
+  await S('sotd-heading', q('h1, h2, h3').filter({ hasText: /site of the day|nominees/i }).filter({ visible: true }).first(), ['default'], { group: h, title: 'Section heading', desc: '"Site of the Day" heading over the first card.', sel: ':has-text("Site of the Day")' });
   const cardLink = q('a.figure-rollover__link').filter({ visible: true }).first();
   const cardBox = cardLink.locator('xpath=ancestor::*[self::figure or contains(@class,"item") or self::li][1]');
   await S('site-card', cardBox, ['default', 'hover'], { group: h, title: 'Site card', desc: 'A winning-site card: screenshot, title, author and rollover actions.', sel: 'ancestor of a.figure-rollover__link' });
@@ -320,7 +321,8 @@ async function collections() {
   ranPages.add('collections');
   const g = G.collections;
   await S('coll-title', q('h1').filter({ hasText: /\S/ }).filter({ visible: true }).first(), ['default'], { group: g, title: 'Collections title', sel: 'h1' }, { noScroll: true });
-  await S('coll-card', q('a[href*="/collections/"]').filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Collection card', desc: 'A curated-collection card. Measured, never followed.', sel: 'a[href*="/collections/"]' });
+  // a card has an image: the first collections link was the Reset filters button
+  await S('coll-card', q('a[href*="/collections/"]').filter({ has: q('img') }).filter({ visible: true }).first(), ['default', 'hover'], { group: g, title: 'Collection card', desc: 'A curated-collection card. Measured, never followed.', sel: 'a[href*="/collections/"]' });
   save();
 }
 

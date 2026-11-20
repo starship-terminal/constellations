@@ -1,0 +1,12 @@
+{
+  "match": true,
+  "button": {
+    "td": "0s",
+    "tp": "none",
+    "an": "none"
+  },
+  "navbar": {
+    "td": "0.3s",
+    "tp": "transform"
+  }
+}

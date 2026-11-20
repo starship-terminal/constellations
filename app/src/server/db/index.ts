@@ -15,7 +15,19 @@ import {
   taxonomyStore,
   mediaTaxonomyMigration,
   seedMediaTaxonomy,
+  seedNewCuratedCategories,
+  seedNewCuratedMediaTerms,
+  seedLedgerMigration,
+  backfillSeedLedger,
+  topUpSeeds,
+  pruneRemovedSeeds,
+  referencesWithoutMedia,
+  mediaTermsRevisionMigration,
 } from "./taxonomy";
+import { packageTopUps } from "./package-top-ups";
+
+/** The schema version this build writes. A newer store is refused. */
+export const RESEARCH_DB_VERSION = 45;
 
 // Versioned migrations apply atomically, and never touch the canonical library.
 const migrations = [
@@ -76,7 +88,7 @@ export async function createResearchStore(directory: string) {
     const version = Number(
       (await tx.execute("PRAGMA user_version")).rows[0].user_version,
     );
-    if (version > 5)
+    if (version > RESEARCH_DB_VERSION)
       throw new Error("Research database was created by a newer application.");
     if (version === 0) {
       for (const sql of migrations) await tx.execute(sql);
@@ -105,6 +117,66 @@ export async function createResearchStore(directory: string) {
       await seedMediaTaxonomy(tx);
       await tx.execute("PRAGMA user_version = 5");
     }
+    if (version < 6) {
+      // The v4/v5 seeds run once, guarded, so a store already at v5 never saw
+      // curated rows added to the seed JSON since. Top up only references and
+      // media the user has not labelled; manual choices are never overwritten.
+      // Media is topped up only for packages with no media rows at all, so
+      // rows a user cleared on a labelled package stay cleared.
+      await seedNewCuratedCategories(tx);
+      await seedNewCuratedMediaTerms(tx, await referencesWithoutMedia(tx));
+      await tx.execute("PRAGMA user_version = 6");
+    }
+    if (version < 7) {
+      // The top-up is idempotent: a store already at v6 never re-seeds, so
+      // curated rows added to the seed JSON since (new packages' category
+      // and media assignments) would never arrive. Re-running it seeds only
+      // references the user has not labelled; manual choices are never
+      // overwritten.
+      await seedNewCuratedCategories(tx);
+      await seedNewCuratedMediaTerms(tx, await referencesWithoutMedia(tx));
+      await tx.execute("PRAGMA user_version = 7");
+    }
+    if (version < 8) {
+      // Same one-shot top-up: a store already at v7 never re-seeds, so
+      // curated rows added to the seed JSON since (new packages' category
+      // and media assignments) would never arrive. Idempotent; manual
+      // choices are never overwritten.
+      await seedNewCuratedCategories(tx);
+      await seedNewCuratedMediaTerms(tx, await referencesWithoutMedia(tx));
+      await tx.execute("PRAGMA user_version = 8");
+    }
+    // v9-v43: one top-up per package batch, listed in package-top-ups.ts.
+    for (const step of packageTopUps) {
+      if (version >= step.version) continue;
+      await seedNewCuratedCategories(tx, new Set(step.references));
+      await seedNewCuratedMediaTerms(tx, new Set(step.references));
+      for (const media of step.media ?? [])
+        await seedNewCuratedMediaTerms(
+          tx,
+          new Set([media.reference]),
+          new Set(media.ids),
+        );
+      await tx.execute(`PRAGMA user_version = ${step.version}`);
+    }
+    if (version < 44) {
+      // The per-package top-ups above end here. The seed ledger records what
+      // each store has been offered, and topUpSeeds below offers the rest.
+      for (const statement of seedLedgerMigration) await tx.execute(statement);
+      await backfillSeedLedger(tx, version);
+      await tx.execute("PRAGMA user_version = 44");
+    }
+    if (version < 45) {
+      for (const statement of mediaTermsRevisionMigration)
+        await tx.execute(statement);
+      await tx.execute("PRAGMA user_version = 45");
+    }
+    // Every open: seed rows for packages and media the seed JSON gained since
+    // this store last opened. Never add a per-package migration for this.
+    await topUpSeeds(tx);
+    // Every open, in the same transaction: remove the seed rows of packages
+    // the library no longer has. User state is never touched.
+    await pruneRemovedSeeds(tx);
     await tx.commit();
   } catch (error) {
     await tx.rollback();
@@ -349,15 +421,6 @@ export async function createResearchStore(directory: string) {
         .from(schema.settings)
         .where(eq(schema.settings.id, "provider"));
       return row ? parseSettings(row.value) : {};
-    },
-    async saveSettings(value: Record<string, unknown>) {
-      await db
-        .insert(schema.settings)
-        .values({ id: "provider", value: JSON.stringify(value) })
-        .onConflictDoUpdate({
-          target: schema.settings.id,
-          set: { value: JSON.stringify(value) },
-        });
     },
     // Read-modify-write inside one write transaction so concurrent updates
     // cannot merge a stale row back over another request's change.

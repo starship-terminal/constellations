@@ -26,7 +26,14 @@ percentage, a colour that depends on currentColor) is listed under the set's
 that points at nothing and a dimension that is not one px or rem length. Deterministic: same
 inputs, same bytes.
 """
-import json, math, pathlib, re
+import json, math, os, pathlib, re
+
+# PRODUCT (adapt): name the product here once every part marked PRODUCT (adapt) is rewritten
+# for it. While this is None the script stops: the kit's copy is Claude's example and would
+# write Claude's values. KIT_EXAMPLE=1 runs the example as it is.
+ADAPTED_FOR = None
+if ADAPTED_FOR is None and not os.environ.get("KIT_EXAMPLE"):
+    raise SystemExit("build_tokens.py is the kit's Claude example, not adapted: rewrite the parts marked PRODUCT (adapt), then set ADAPTED_FOR")
 
 HERE = pathlib.Path(__file__).resolve().parent.parent
 RAW = HERE / "raw"
@@ -248,7 +255,9 @@ for name in sorted(RES["light"]):
     if name.startswith("--cds-role-") and RES["light"][name]["kind"] == "color":
         leaf = name[len("--cds-role-"):]
         role, _, step = leaf.partition("-")
-        assert RES["dark"][name]["value"] == RES["light"][name]["value"], name
+        if RES["dark"][name]["value"] != RES["light"][name]["value"]:   # not assert: python3 -O strips it
+            raise SystemExit(f"{name}: the role colour differs between the themes "
+                             f"({RES['light'][name]['value']} light, {RES['dark'][name]['value']} dark), so it cannot sit in core")
         val = alias_or_literal(name, "light", color(RES["light"][name]["value"]), [core_index])
         put(core, ["color", "role", role, step or "base"], tok(val, "color", src(name, "light")))
         core_index[name] = "color.role.%s.%s" % (role, step or "base")
@@ -376,6 +385,18 @@ for name in sorted(RES["light"]):
         tw[name[2:]] = tok(px(r["value"]), "dimension", "css-var %s (Tailwind v4 theme layer)" % name)
 tw["$description"] = "The Tailwind v4 theme the utility classes read: a 4px spacing unit, the container widths (max-w-2xl is the 672 home composer, the transcript is 48rem) and the radius scale."
 core["tailwind"] = tw
+
+# motion, as measured on the page: durations, easing curves, which properties transition, animations and
+# @keyframes, and what prefers-reduced-motion: reduce changes (raw/motion.json, written by
+# tools/capture/motion-probe.mjs; motion.py is the product-free mapping). A package that has not run the
+# probe has no motion group. The product's own named scales above (`duration`, `easing`) stay as they are:
+# those are semantic names read from its variables, while `motion` is what its elements actually run.
+if (RAW / "motion.json").exists():
+    import sys
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+    import motion
+    core["motion"], motion_not_core = motion.build(json.loads((RAW / "motion.json").read_text()))
+    not_core += motion_not_core
 
 # ---------------------------------------------------------------- themed sets
 

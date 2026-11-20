@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cron.com style guide</title>
+<meta name="description" content="cron.com design tokens and the public signed-out surface's components, rendered from tokens.json with the declared --gray*/--chronos var layer and the measured computed styles.">
+<style>
+:root {
+  --font-family-sans: Helvetica Neue,Helvetica,Arial,sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-size-display: 140px;
+  --font-size-m-display: 80px;
+  --font-size-h1: 40px;
+  --font-size-post-h1: 32px;
+  --font-size-h2: 24px;
+  --font-size-body: 22px;
+  --font-size-content: 16px;
+  --font-size-nav: 22px;
+  --font-size-footer: 13px;
+  --font-size-display-lh: 126px;
+  --font-size-display-ls: -3px;
+  --color-gray-10: #fcfcfc;
+  --color-gray-100: #e5e5e5;
+  --color-gray-150: #d9d9d9;
+  --color-gray-200: #cccccc;
+  --color-gray-30: #f7f7f7;
+  --color-gray-300: #b3b3b3;
+  --color-gray-400: #999999;
+  --color-gray-50: #f2f2f2;
+  --color-gray-500: #808080;
+  --color-gray-550: #737373;
+  --color-gray-600: #666666;
+  --color-gray-650: #595959;
+  --color-gray-70: #ededed;
+  --color-gray-700: #4d4d4d;
+  --color-gray-750: #404040;
+  --color-gray-800: #333333;
+  --color-gray-850: #262626;
+  --color-gray-870: #1f1f1f;
+  --color-gray-900: #1a1a1a;
+  --color-brand-chronos: #ff4700;
+  --color-brand-chronos-gradient: linear-gradient(#fa6c38,#f44e25);
+  --color-brand-primary-100: #ffcdb3;
+  --color-brand-primary-700: #ca3800;
+  --color-named-eclipse: #000000;
+  --color-named-snow: #ffffff;
+  --color-named-dieter: #eeeeee;
+  --color-named-urushi: #282828;
+  --color-semantic-red-100: #f8c4c7;
+  --color-semantic-red-500: #ed4556;
+  --radius-pill: 9999px;
+  --radius-banner: 4px;
+  --shadow-low: rgba(0, 0, 0, 0.1) 0px 1px 1px 0px, rgba(0, 0, 0, 0.08) 0px 2px 4px 0px, rgba(0, 0, 0, 0.06) 0px 4px 12px 0px;
+  --shadow-high: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px, rgba(0, 0, 0, 0.06) 0px 4px 8px 0px, rgba(0, 0, 0, 0.08) 0px 8px 16px 0px, rgba(0, 0, 0, 0.1) 0px 16px 32px 0px, rgba(0, 0, 0, 0.12) 0px 32px 64px 0px;
+  --shadow-glow: 0px 0px 100px rgba(255, 71, 0, 0.2);
+  --shadow-glow-hover: 0px 0px 25px 0px rgba(255, 71, 0, 0.4);
+  --shadow-banner: rgba(255, 71, 0, 0.5) 0px 0px 0px 0.5px inset, rgba(255, 72, 0, 0.2) 0px 0px 28px 0px;
+  --spacing-header-h: 120px;
+  --spacing-content-max: 1000px;
+  --spacing-entry-w: 676px;
+  --spacing-footer-h: 180px;
+  --motion-duration: 0.175s;
+  --opacity-disabled: 0.33;
+  --layout-z-popover: 10;
+  --color-background-page: #ffffff;
+  --color-background-object-highlight: #ededed;
+  --color-background-material: #ffffff;
+  --color-text-text: #1a1a1a;
+  --color-text-meta: #616161;
+  --color-text-object: #999999;
+  --color-action-accent: #ff4700;
+  --color-border-border: #e5e5e5;
+  --component-header-height: 120px;
+  --component-logotype-height: 40px;
+  --component-signup-height: 46px;
+  --component-banner-height: 45px;
+  --component-hero-size: 140px;
+  --component-entry-width: 676px;
+  --component-footer-height: 180px;
+  --component-m-header-height: 96px;
+  --component-m-menu-height: 768px;
+  --component-m-signup-width: 342px;
+  --component-nav-link-size: 22px;
+  --component-button-signup-glow: {'default': var(---boxShadow----rgba-255--71--0--0-2--0px-0px-100px-0px-), 'hover': var(---boxShadow----rgba-255--71--0--0-4--0px-0px-25px-0px-), 'pressed': var(---boxShadow----rgba-255--71--0--0-4--0px-0px-25px-0px-)};
+  --component-meta-color: var(--color-text-meta);
+  --sg-sans: "euclidCircularALightWebS", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "euclidCircularALightWebS", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --color-background-page: #161412;
+  --color-background-footer: #0f0d0a;
+  --color-text-text: #cccccc;
+  --color-text-strong: #ffffff;
+  --color-text-on-accent: #ffffff;
+  --color-action-accent: #ff4700;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--light-color-text-text-primary, #000); background: var(--light-color-background-surface-1, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.1 var(--sg-serif); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #0f1015); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #0f1015); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--color-brand-ink, #030302); padding: 12px; border-radius: 12px; }
+.pal.dark .nm, .pal.dark .vl { color: rgba(255, 255, 255, 0.898); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); overflow: hidden; background: var(--surface-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 20px; height: var(--component-spacing-header-h, 52px); padding: 0 10px 0 18px; font-size: 16px; color: var(--color-brand-ink, #030302); background: #fff; border-radius: var(--radius-nav, 26px); box-shadow: 0 1px 3px rgba(3,3,2,.08); margin: 12px 18px; }
+.navbar .wm { font-weight: 800; font-size: 18px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.navbar .link { color: var(--color-brand-ink, #030302); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-height-large, 48px); padding: 0 24px; font-size: 16px; font-weight: 500; border-radius: var(--radius-full, 9999px); border: 1px solid transparent; }
+.btn.primary { background: var(--light-color-action-primary, #030302); color: var(--light-color-text-on-primary, #fff); height: var(--component-button-height-nav, 36px); font-size: 14px; }
+.btn.light { background: var(--light-color-background-card, #fff); color: var(--color-brand-ink, #030302); box-shadow: 0 1px 4px rgba(3,3,2,.12); }
+.btn.outline { background: transparent; color: var(--color-brand-ink, #030302); box-shadow: inset 0 0 0 1px var(--light-color-border-border, rgba(3,3,2,.09)); }
+.hero { color: var(--color-brand-ink, #030302); padding: 96px 40px 90px; font: 400 52px/1 var(--sg-serif); text-align: center; background: linear-gradient(180deg, #bfe0ee 0%, #dceef7 60%, var(--light-color-background-page, #fcf9f7) 100%); }
+.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); color: var(--light-color-text-muted-foreground, rgba(3,3,2,.5)); margin: 18px auto 26px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--light-color-border-border, rgba(3,3,2,.09)); padding: 18px; font-size: 13px; background: var(--light-color-background-card, #fff); border-radius: var(--radius-2xl, 16px); }
+.tile .img { height: 100px; background: var(--light-color-background-muted, rgba(3,3,2,.04)); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: var(--radius-default, 10px); }
+.tile b { display: block; font: 400 20px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .price { font: 400 40px/1.1 var(--sg-serif); margin: 8px 0 2px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--light-color-border-border, rgba(3,3,2,.09)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-border, #e0e0e0); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #171717); opacity: .65; font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: var(--light-color-background-muted, rgba(3,3,2,.04)); border-radius: var(--radius-full, 9999px); padding: 4px; gap: 0; font-size: 16px; }
+.toggle span { padding: 10px 28px; border-radius: var(--radius-full, 9999px); font-weight: 500; color: var(--color-brand-ink, #030302); }
+.toggle .on { background: var(--light-color-background-card, #fff); box-shadow: 0 1px 3px rgba(3,3,2,.12); }
+</style>
+</head>
+<body>
+<main>
+  <h1>cron.com style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">cron.com, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the #cafc00 lime brand, the #1e1e1e primary pill fills on white text, the white page with its #161616 promo bar, the 12-hue category palette, and Euclid Circular A at 600 for every heading. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from cron.com on 2026-11-12, signed out, in headless Chromium. The app behind Login and Sign up was never entered — the marketing home, /blog, /changelog and a blog post are the public surface, and nothing was submitted or signed into. Helvetica Neue is a system face — samples render in it directly.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A 120px dark header carries the Cron wordmark, Blog / Changelog / Docs / Login links and the 46px #ff4700 Sign up pill glowing under --glow; a #161412 banner below it announces the Notion Calendar rebrand. The home hero sets at 140px Helvetica Neue 700 on #161412; the light content pages hold 40px index headings, 676px article entries and 16px body copy.</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm">Cron</span><span class="link">Blog</span><span class="link">Changelog</span><span class="link">Docs</span><span class="sp"></span><span class="link">Login</span><span class="btn primary" style="height:46px;font-size:22px;border-radius:9999px">Sign up</span></div>
+    <div class="hero" style="background:var(--light-color-background-surface-1,#fff);font-family:var(--sg-sans);font-weight:600">UI kits, templates and fonts<br>made by real designers<small>4,000+ packs for Figma, Framer, Webflow and code by 570+ independent designers.</small><span class="btn primary" style="height:46px;font-size:16px;border-radius:10px">Get full access</span> <span class="btn" style="height:46px;font-size:16px;border-radius:10px;background:var(--light-color-action-secondary,#efefef);color:#000">Browse the catalog</span></div>
+  </div>
+
+  <h2 class="sh">The catalog</h2>
+  <p class="lead">/components and /catalog run a 259px library list (34px rows on a 4-7% ink fill) beside an asset grid: filters sit in 30px fields and cards carry a title, a live count and a "from $N" price under a 16:9 preview.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile" style="border-radius:10px"><div class="img" style="border-radius:6px"></div><b style="font-family:var(--sg-sans);font-weight:500;font-size:18px">Blank 3 Pro</b><span class="sub">UI kit — from $89</span></div>
+      <div class="tile" style="border-radius:10px"><div class="img" style="border-radius:6px"></div><b style="font-family:var(--sg-sans);font-weight:500;font-size:18px">ElementX</b><span class="sub">Design system — from $78</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The dark furniture</h2>
+  <p class="lead">Cron splits in two: the marketing home is a dark #161412 surface with #ccc text, white links and the #ff4700 Sign up pill glowing under the declared --glow var; /blog, /changelog and the posts are a light Next.js app — white page, #1a1a1a text, the same orange on every link, and the declared 14-step --gray10..--gray900 ramp underneath.</p>
+  <div class="mock" style="padding:24px;background:var(--color-brand-ink,#030302);border-radius:var(--radius-3xl,24px)">
+    <div style="color:#fff;font:600 28px/1.2 var(--sg-sans);margin-bottom:14px">One plan opens all of them.</div>
+    <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:rgba(255,255,255,.8)"><span>Download app</span><span>Careers</span><span>Terms</span><span>Privacy</span><span>Instagram</span><span>X</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The core set carries the brand (#cafc00 lime, #063bf5 circa), the 12-hue --category-* palette, the --catalog-tint-* chips, --status-*/--indicators-*/--viz-* and the toast skin; the light roles alias the --background-*/--text-icons-*/--stroke-* semantic layer. A real dark set ships too — resolved under data-theme=dark.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Cron keeps one radius language: 9999px on the Sign up pill, 4px on the rebrand banner, 16px on post media (full-bleed on mobile). Type is Helvetica Neue end to end — the hero sets at 140px/90% with -3px tracking, 80px under the mobile breakpoint.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">One family: <code>Euclid Circular A</code> carries everything — 600 on every heading (68px hero, 40px prices, 38px mobile), 500 on buttons and card titles, 400 on body/nav text, 13-16px sizes throughout. Samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --color-* and semantic layer off the same-origin Next.js sheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"sans":{"v":"Helvetica Neue,Helvetica,Arial,sans-serif","t":"fontFamily","s":"css-var --sans-serif-font (light); css-var --sans-serif-font resolved (raw/css-vars.json); every measured component computes Helvetica Neue","d":"Helvetica Neue, Helvetica, Arial, sans-serif — every surface."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of post-body default (raw/components-computed.json)","d":"Measured 400 — body copy."},"medium":{"v":500,"t":"fontWeight","s":"computed fontWeight of nav-link default (raw/components-computed.json)","d":"Measured 500 — nav, links, buttons."},"bold":{"v":700,"t":"fontWeight","s":"computed fontWeight of hero-h1 default (raw/components-computed.json)","d":"Measured 700 — headings, the wordmark weight."}},"size":{"display":{"v":"140px","t":"fontSize","s":"computed fontSize of hero-h1 default (raw/components-computed.json)","d":"The 140px home hero (-3px tracking, 90% leading)."},"m-display":{"v":"80px","t":"fontSize","s":"computed fontSize of m-heading default (raw/components-computed.json)","d":"The 80px mobile hero."},"h1":{"v":"40px","t":"fontSize","s":"computed fontSize of blog-h1 default (raw/components-computed.json)","d":"The 40px index heading (blog/changelog)."},"post-h1":{"v":"32px","t":"fontSize","s":"computed fontSize of post-h1 default (raw/components-computed.json)","d":"The 32px article title."},"h2":{"v":"24px","t":"fontSize","s":"computed fontSize of feature-h2 default (raw/components-computed.json)","d":"The 24px feature title."},"body":{"v":"22px","t":"fontSize","s":"computed fontSize of hero-sub default (raw/components-computed.json)","d":"The 22px home body size."},"content":{"v":"16px","t":"fontSize","s":"computed fontSize of post-body default (raw/components-computed.json)","d":"The 16px content-page body size."},"nav":{"v":"22px","t":"fontSize","s":"computed fontSize of nav-link default (raw/components-computed.json)","d":"The 22px nav link size."},"footer":{"v":"13px","t":"fontSize","s":"computed fontSize of footer-link default (raw/components-computed.json)","d":"The 13px footer size."},"display-lh":{"v":"126px","t":"other","s":"computed lineHeight of hero-h1 default (raw/components-computed.json)","d":"The hero's 90% line-height."},"display-ls":{"v":"-3px","t":"other","s":"computed letterSpacing of hero-h1 default (raw/components-computed.json)","d":"The hero's -3px tracking."}}},"color":{"gray":{"10":{"v":"#fcfcfc","t":"color","s":"css-var --gray10 (light); css-var --gray10 resolved (raw/css-vars.json)","d":"The --gray10 neutral step."},"100":{"v":"#e5e5e5","t":"color","s":"css-var --gray100 (light); css-var --gray100 resolved (raw/css-vars.json)","d":"The --gray100 neutral step."},"150":{"v":"#d9d9d9","t":"color","s":"css-var --gray150 (light); css-var --gray150 resolved (raw/css-vars.json)","d":"The --gray150 neutral step."},"200":{"v":"#cccccc","t":"color","s":"css-var --gray200 (light); css-var --gray200 resolved (raw/css-vars.json)","d":"The --gray200 neutral step."},"30":{"v":"#f7f7f7","t":"color","s":"css-var --gray30 (light); css-var --gray30 resolved (raw/css-vars.json)","d":"The --gray30 neutral step."},"300":{"v":"#b3b3b3","t":"color","s":"css-var --gray300 (light); css-var --gray300 resolved (raw/css-vars.json)","d":"The --gray300 neutral step."},"400":{"v":"#999999","t":"color","s":"css-var --gray400 (light); css-var --gray400 resolved (raw/css-vars.json)","d":"The --gray400 neutral step."},"50":{"v":"#f2f2f2","t":"color","s":"css-var --gray50 (light); css-var --gray50 resolved (raw/css-vars.json)","d":"The --gray50 neutral step."},"500":{"v":"#808080","t":"color","s":"css-var --gray500 (light); css-var --gray500 resolved (raw/css-vars.json)","d":"The --gray500 neutral step."},"550":{"v":"#737373","t":"color","s":"css-var --gray550 (light); css-var --gray550 resolved (raw/css-vars.json)","d":"The --gray550 neutral step."},"600":{"v":"#666666","t":"color","s":"css-var --gray600 (light); css-var --gray600 resolved (raw/css-vars.json)","d":"The --gray600 neutral step."},"650":{"v":"#595959","t":"color","s":"css-var --gray650 (light); css-var --gray650 resolved (raw/css-vars.json)","d":"The --gray650 neutral step."},"70":{"v":"#ededed","t":"color","s":"css-var --gray70 (light); css-var --gray70 resolved (raw/css-vars.json)","d":"The --gray70 neutral step."},"700":{"v":"#4d4d4d","t":"color","s":"css-var --gray700 (light); css-var --gray700 resolved (raw/css-vars.json)","d":"The --gray700 neutral step."},"750":{"v":"#404040","t":"color","s":"css-var --gray750 (light); css-var --gray750 resolved (raw/css-vars.json)","d":"The --gray750 neutral step."},"800":{"v":"#333333","t":"color","s":"css-var --gray800 (light); css-var --gray800 resolved (raw/css-vars.json)","d":"The --gray800 neutral step."},"850":{"v":"#262626","t":"color","s":"css-var --gray850 (light); css-var --gray850 resolved (raw/css-vars.json)","d":"The --gray850 neutral step."},"870":{"v":"#1f1f1f","t":"color","s":"css-var --gray870 (light); css-var --gray870 resolved (raw/css-vars.json)","d":"The --gray870 neutral step."},"900":{"v":"#1a1a1a","t":"color","s":"css-var --gray900 (light); css-var --gray900 resolved (raw/css-vars.json)","d":"The --gray900 neutral step."}},"brand":{"chronos":{"v":"#ff4700","t":"color","s":"css-var --chronos (light); css-var --chronos resolved (raw/css-vars.json)","d":"The #ff4700 brand orange — Sign up fill, every link on the content pages."},"chronos-gradient":{"v":"linear-gradient(#fa6c38,#f44e25)","t":"other","s":"css-var --chronos-gradient (light); css-var --chronos-gradient resolved (raw/css-vars.json)","d":"The declared linear-gradient(#fa6c38, #f44e25) brand gradient."},"primary-100":{"v":"#ffcdb3","t":"color","s":"css-var --primary100 (light); css-var --primary100 resolved (raw/css-vars.json)","d":"The #ffcdb3 light orange step."},"primary-700":{"v":"#ca3800","t":"color","s":"css-var --primary700 (light); css-var --primary700 resolved (raw/css-vars.json)","d":"The #ca3800 dark orange step."}},"named":{"eclipse":{"v":"#000000","t":"color","s":"css-var --eclipse (light); css-var --eclipse resolved (raw/css-vars.json)","d":"#000000 — the named black."},"snow":{"v":"#ffffff","t":"color","s":"css-var --snow (light); css-var --snow resolved (raw/css-vars.json)","d":"#ffffff — the named white."},"dieter":{"v":"#eeeeee","t":"color","s":"css-var --dieter (light); css-var --dieter resolved (raw/css-vars.json)","d":"#eeeeee — the named light fill."},"urushi":{"v":"#282828","t":"color","s":"css-var --urushi (light); css-var --urushi resolved (raw/css-vars.json)","d":"#282828 — the named dark fill."}},"semantic":{"red-100":{"v":"#f8c4c7","t":"color","s":"css-var --semantic-red100 (light); css-var --semantic-red100 resolved (raw/css-vars.json)","d":"Declared #f8c4c7 light red."},"red-500":{"v":"#ed4556","t":"color","s":"css-var --semantic-red500 (light); css-var --semantic-red500 resolved (raw/css-vars.json)","d":"Declared #ed4556 red."}}},"radius":{"pill":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of signup-btn default (raw/components-computed.json)","d":"The 9999px pill (Sign up, integration chips)."},"banner":{"v":"4px","t":"dimension","s":"computed borderTopLeftRadius of banner default (raw/components-computed.json)","d":"The 4px banner radius."}},"shadow":{"low":{"v":"rgba(0, 0, 0, 0.1) 0px 1px 1px 0px, rgba(0, 0, 0, 0.08) 0px 2px 4px 0px, rgba(0, 0, 0, 0.06) 0px 4px 12px 0px","t":"other","s":"css-var --elevation-low resolved (raw/css-vars.json)","d":"The declared low elevation."},"high":{"v":"rgba(0, 0, 0, 0.06) 0px 2px 4px 0px, rgba(0, 0, 0, 0.06) 0px 4px 8px 0px, rgba(0, 0, 0, 0.08) 0px 8px 16px 0px, rgba(0, 0, 0, 0.1) 0px 16px 32px 0px, rgba(0, 0, 0, 0.12) 0px 32px 64px 0px","t":"other","s":"css-var --elevation-high resolved (raw/css-vars.json)","d":"The declared high elevation."},"glow":{"v":"0px 0px 100px rgba(255, 71, 0, 0.2)","t":"other","s":"css-var --glow declared on .primary-link-button.glow (raw/css-vars.json)","d":"The Sign up pill's orange glow — 0 0 100px 20% at rest, 0 0 25px 40% on hover."},"glow-hover":{"v":"0px 0px 25px 0px rgba(255, 71, 0, 0.4)","t":"other","s":"css-var --glow-hover declared on .primary-link-button.glow (raw/css-vars.json)","d":"The Sign up pill's orange glow — 0 0 100px 20% at rest, 0 0 25px 40% on hover."},"banner":{"v":"rgba(255, 71, 0, 0.5) 0px 0px 0px 0.5px inset, rgba(255, 72, 0, 0.2) 0px 0px 28px 0px","t":"other","s":"computed boxShadow of banner default (raw/components-computed.json)","d":"The rebrand banner's inset 0.5px orange ring + 28px 20% glow."}},"spacing":{"header-h":{"v":"120px","t":"dimension","s":"computed rect height of site-header default (raw/components-computed.json)","d":"The 120px desktop header."},"content-max":{"v":"1000px","t":"dimension","s":"Reconstruction: entered by hand at capture time; raw/css-vars.json holds no .content max-width rule","d":"The .content max-width (1000px; 800px under 1000px viewport)."},"entry-w":{"v":"676px","t":"dimension","s":"computed rect width of post-entry default (raw/components-computed.json)","d":"The 676px article column width."},"footer-h":{"v":"180px","t":"dimension","s":"computed rect height of footer default (raw/components-computed.json)","d":"The 180px footer."}},"motion":{"duration":{"v":"0.175s","t":"other","s":"css-var --animation-duration-default (light); css-var --animation-duration-default resolved (raw/css-vars.json)","d":"The declared 0.175s default duration (Sign up glow, banner shadow)."}},"opacity":{"disabled":{"v":0.33,"t":"other","s":"css-var --disabled-opacity (light); css-var --disabled-opacity resolved (raw/css-vars.json)","d":"The declared 0.33 disabled opacity."}},"layout":{"z-popover":{"v":10,"t":"other","s":"css-var --z-index-popover (light); css-var --z-index-popover resolved (raw/css-vars.json)","d":"The declared popover z-index (10)."}}},"light":{"color":{"background":{"page":{"v":"#ffffff","t":"color","s":"css-var --snow (light); css-var --snow resolved (raw/css-vars.json)","d":"The white content-page fill."},"object-highlight":{"v":"#ededed","t":"color","s":"css-var --object-highlight-bg (light); css-var --object-highlight-bg resolved (raw/css-vars.json)","d":"The #ededed highlighted object fill."},"material":{"v":"#ffffff","t":"color","s":"css-var --material-default (light); css-var --material-default resolved (raw/css-vars.json)","d":"The #fff material surface."}},"text":{"text":{"v":"#1a1a1a","t":"color","s":"css-var --text-default (light); css-var --text-default resolved (raw/css-vars.json)","d":"The #1a1a1a body text."},"meta":{"v":"#616161","t":"color","s":"css-var --ratio (light); css-var --ratio resolved (raw/css-vars.json)","d":"The #616161 meta/date text."},"object":{"v":"#999999","t":"color","s":"css-var --object-default (light); css-var --object-default resolved (raw/css-vars.json)","d":"The #999 object/icon tone."}},"action":{"accent":{"v":"#ff4700","t":"color","s":"css-var --chronos (light); css-var --chronos resolved (raw/css-vars.json)","d":"The #ff4700 link/action orange."}},"border":{"border":{"v":"#e5e5e5","t":"color","s":"css-var --object-border (light); css-var --object-border resolved (raw/css-vars.json)","d":"The #e5e5e5 object border."}}},"component":{"header-height":{"v":"120px","t":"dimension","s":"computed h of site-header default (raw/components-computed.json)","d":"The 120px desktop header."},"logotype-height":{"v":"40px","t":"dimension","s":"computed h of logotype default (raw/components-computed.json)","d":"The 40px logotype."},"signup-height":{"v":"46px","t":"dimension","s":"computed h of signup-btn default (raw/components-computed.json)","d":"The 46px Sign up pill."},"banner-height":{"v":"45px","t":"dimension","s":"computed h of banner default (raw/components-computed.json)","d":"The 44-45px rebrand banner."},"hero-size":{"v":"140px","t":"fontSize","s":"computed fontSize of hero-h1 default (raw/components-computed.json)","d":"The 140px hero."},"entry-width":{"v":"676px","t":"dimension","s":"computed w of post-entry default (raw/components-computed.json)","d":"The 676px article column."},"footer-height":{"v":"180px","t":"dimension","s":"computed h of footer default (raw/components-computed.json)","d":"The 180px footer."},"m-header-height":{"v":"96px","t":"dimension","s":"computed h of m-header default (raw/components-computed.json)","d":"The ~96px mobile header."},"m-menu-height":{"v":"768px","t":"dimension","s":"computed h of m-menu-open default (raw/components-computed.json)","d":"The 736px opened nav overlay."},"m-signup-width":{"v":"342px","t":"dimension","s":"computed w of m-signup-btn default (raw/components-computed.json)","d":"The ~342px full-width mobile Sign up."},"nav-link-size":{"v":"22px","t":"fontSize","s":"computed fontSize of nav-link default (raw/components-computed.json)","d":"Nav link 22px."},"button":{"signup-glow":{"v":{"default":{"boxShadow":"rgba(255, 71, 0, 0.2) 0px 0px 100px 0px"},"hover":{"boxShadow":"rgba(255, 71, 0, 0.4) 0px 0px 25px 0px"},"pressed":{"boxShadow":"rgba(255, 71, 0, 0.4) 0px 0px 25px 0px"}},"t":"other","s":"computed boxShadow of signup-btn default/hover/pressed (raw/components-computed.json)","d":"The Sign up pill's glow track: 0 0 100px 20% orange at rest, tightening to 0 0 25px 40% on hover."}},"meta-color":{"v":"{color.text.meta}","t":"color","s":"alias of color.text.meta (the declared --ratio #616161)","d":"The #616161 meta/date tone — the entries' dates render it; the post-meta element itself computed #000."}}},"dark":{"color":{"background":{"page":{"v":"#161412","t":"color","s":"computed backgroundColor of m-menu-open default (raw/components-computed.json)","d":"The #161412 dark page fill (also the banner's)."},"footer":{"v":"#0f0d0a","t":"color","s":"computed backgroundColor of footer default (raw/components-computed.json)","d":"The #0f0d0a footer band."}},"text":{"text":{"v":"#cccccc","t":"color","s":"computed color of site-header default (raw/components-computed.json)","d":"The #ccc body text on dark."},"strong":{"v":"#ffffff","t":"color","s":"computed color of nav-link default (raw/components-computed.json)","d":"The #fff strong text/links on dark."},"on-accent":{"v":"#ffffff","t":"color","s":"computed color of signup-btn default (raw/components-computed.json)","d":"White text on the orange fill."}},"action":{"accent":{"v":"#ff4700","t":"color","s":"computed backgroundColor of signup-btn default (raw/components-computed.json)","d":"The #ff4700 Sign up / accent fill on dark."}}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => (s !== null && typeof s === 'object' ? JSON.stringify(s) : String(s)).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the .theme.dark band)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — creative market</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

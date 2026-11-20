@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perplexity style guide</title>
+<style>
+:root {
+  --page: #fbfbfb;
+  --surface: #ffffff;
+  --text: #0b2833;
+  --muted: rgba(11, 40, 51, 0.75);
+  --accent: #016a71;
+  --border: rgba(11, 40, 51, 0.15);
+  --solid: #252525;
+  --solid-text: #fbfbfb;
+  --positive: #016b1d;
+  --negative: #a23544;
+  --warning: #97431a;
+  --soft: rgba(28, 28, 28, 0.035);
+  --radius: 8px;
+  --pill: 9999px;
+  color-scheme: light;
+}
+[data-mode="dark"] {
+  --page: #15171b;
+  --surface: #1b1d21;
+  --text: #dbdee3;
+  --muted: rgba(219, 222, 227, 0.65);
+  --accent: #4e99a3;
+  --border: rgba(219, 222, 227, 0.14);
+  --solid: #dbdee3;
+  --solid-text: #15171b;
+  --positive: #539e55;
+  --negative: #dc6973;
+  --warning: #d57141;
+  --soft: rgba(219, 222, 227, 0.06);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 400 16px/24px ui-sans-serif, system-ui, -apple-system, sans-serif; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+header { display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+h1 { font-size: 28px; font-weight: 500; letter-spacing: -0.02em; margin: 0; }
+h2 { font-size: 16px; font-weight: 600; margin: 40px 0 12px; }
+p { color: var(--muted); max-width: 70ch; }
+button.toggle { border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: var(--pill); padding: 8px 16px; font: inherit; cursor: pointer; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; }
+.sw { width: 132px; }
+.sw i { display: block; height: 56px; border-radius: var(--radius); border: 1px solid var(--border); }
+.sw span { display: block; font-size: 12px; margin-top: 6px; }
+.panel { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-top: 16px; }
+.pill { display: inline-flex; align-items: center; height: 36px; padding: 0 16px; border-radius: var(--pill); font-size: 14px; font-weight: 500; }
+.solid { background: var(--solid); color: var(--solid-text); }
+.outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.accent { background: var(--accent); color: #fff; }
+.ghost { background: transparent; color: var(--text); }
+.field { margin-top: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 16px; }
+.field .ph { color: var(--muted); }
+.chips { display: flex; gap: 8px; margin-top: 12px; }
+.chip { height: 32px; border-radius: var(--pill); padding: 0 12px; display: inline-flex; align-items: center; font-size: 14px; background: var(--soft); }
+.badge { display: inline-flex; height: 24px; align-items: center; padding: 0 8px; border-radius: 6px; background: #c6e2e3; color: #016a71; font-size: 12px; font-weight: 500; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+td, th { text-align: left; padding: 8px 0; border-bottom: 1px solid var(--border); }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Perplexity</h1>
+  <button class="toggle" type="button" onclick="document.documentElement.dataset.mode = document.documentElement.dataset.mode === 'dark' ? 'light' : 'dark'">Theme</button>
+</header>
+<p>Public signed-out surfaces, measured 19 November 2026. Light values are the product home and the hub. Dark values are the product home under a dark preference. The hub did not switch.</p>
+
+<h2>Colour</h2>
+<div class="row">
+  <div class="sw"><i style="background:var(--page)"></i><span>page</span></div>
+  <div class="sw"><i style="background:var(--surface)"></i><span>surface</span></div>
+  <div class="sw"><i style="background:var(--text)"></i><span>text</span></div>
+  <div class="sw"><i style="background:var(--muted)"></i><span>muted</span></div>
+  <div class="sw"><i style="background:var(--accent)"></i><span>accent</span></div>
+  <div class="sw"><i style="background:var(--border)"></i><span>border</span></div>
+  <div class="sw"><i style="background:var(--positive)"></i><span>positive</span></div>
+  <div class="sw"><i style="background:var(--negative)"></i><span>negative</span></div>
+  <div class="sw"><i style="background:var(--warning)"></i><span>warning</span></div>
+</div>
+
+<h2>Type</h2>
+<div class="panel">
+  <div style="font-size:26px;line-height:39px;letter-spacing:-0.13px;font-weight:400">What do you want to know?</div>
+  <p style="margin:8px 0 0">Product heading, measured 26px / 39px / 400 on the light home. The token role hero is the authored --ui-heading-hero, 46px, which this screen does not use.</p>
+</div>
+
+<h2>Controls</h2>
+<div class="panel">
+  <div class="row">
+    <span class="pill solid">Get started</span>
+    <span class="pill outline">Select</span>
+    <span class="pill accent">Accent</span>
+    <span class="pill ghost">Sign In</span>
+    <span class="badge">Popular</span>
+  </div>
+  <div class="field">
+    <div class="ph">Ask anything...</div>
+    <div class="chips">
+      <span class="chip">Search</span>
+      <span class="chip">Computer</span>
+    </div>
+  </div>
+</div>
+
+<h2>Scales</h2>
+<table>
+  <tr><th>Radius</th><td>2, 4, 6, 8, 10, 12, 16, 20, 24, 9999</td></tr>
+  <tr><th>Spacing</th><td>1, 2, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48, 96 px, from the rem scale at 16px</td></tr>
+  <tr><th>Easing</th><td><code>cubic-bezier(.22, 1, .36, 1)</code> and four more on the product root</td></tr>
+</table>
+</div>
+</body>
+</html>

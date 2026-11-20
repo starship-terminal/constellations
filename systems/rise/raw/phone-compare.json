@@ -1,0 +1,14 @@
+{
+  "innerWidth": 390,
+  "h1": {
+    "fontSize": "30px",
+    "letterSpacing": "-1.5px",
+    "lineHeight": "36px"
+  },
+  "cta": {
+    "fontSize": "18px",
+    "pad": "8px 24px",
+    "h": "46px",
+    "bg": "rgb(113, 97, 236)"
+  }
+}

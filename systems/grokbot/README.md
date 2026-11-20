@@ -60,7 +60,7 @@ Read [components.md](components.md) for the component inventory; [patterns.md](p
 | light | 20.46:1 pass | 21.00:1 pass | 3.40:1 fail | 3.49:1 fail |
 | dark | 18.42:1 pass | 13.93:1 pass | 6.19:1 pass | 4.68:1 pass |
 
-6 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.color.focus.caret` #436AF2; `light.color.focus.caret` #436BF1.
+6 of 8 pairs pass 4.5:1 (WCAG AA for body text), the pairs the scorecard's F15 check grades. Focus tokens: `dark.color.focus.caret` #436AF2 (Sampled, not measured); `light.color.focus.caret` #436BF1 (Sampled, not measured).
 
 <!-- brief:end -->
 
@@ -97,13 +97,13 @@ Grok Bot is a native app, so there is no CSS. Each screen was captured as the iP
 | Method in readings.json | Label in tokens.json | What it gives |
 |---|---|---|
 | `fill`, the box's dominant colour covering 90% or more of it | Sampled | An exact flat surface |
-| `fill` under 90% (glass, a gradient, a thin mark) | Derived | The dominant pixel; the description gives the share |
+| `fill` under 90% (glass, a gradient, a thin mark) | Sampled | The dominant pixel, not an exact fill; the description gives the share |
 | `text`, the anti-aliased pixel furthest from the fill | Sampled (text) | A glyph colour; the true value is the same or slightly further from the fill |
 | `bbox`, `extent`, `find` | Sampled | Sizes and positions exact to the pixel (half a point) |
 | `diag`, the inset along a corner's diagonal | Derived | A corner radius, plus or minus 2 pt |
 | `cap`, a capital's ink height less a pixel of anti-aliasing, at a 0.72 em cap height | Derived | A font size, plus or minus 1 pt |
 | `lines`, the pitch of text bands | Derived | A line height |
-| By eye | Derived | Font weights |
+| By eye | Reconstruction | Font weights |
 | Not determinable | Not captured | The font family |
 
 Scale steps (spacing, radii, the 52 pt field) are Derived from the readings named in each token's description. Where a role was read in dark only (the owner's bubble, the code block), the light token is Derived and says what it was filled from.

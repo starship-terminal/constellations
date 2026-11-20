@@ -1,0 +1,516 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. elevenlabs.io's public surface is a Next.js + Tailwind 4 app whose custom-property layer (raw/css-vars.json — the --f-* type ramp, --spacing-*/--section-*/--rounded-* layout vars, --eggshell page field, the font stacks and the shadcn triplets) is var-referenced where it declares a value, and measured computed values (raw/components-computed.json) cover the ink/eggshell/white neutrals, the black-pill action ramp, the state layers, the focus rings, the Waldenburg/Inter/Geist-Mono families and the pill/card radii. Every public surface painted light — no dark theme, no dark island — so the export holds core + light only.",
+ "core": {
+  "font": {
+   "family": {
+    "display": {
+     "value": "Waldenburg, \"Waldenburg Fallback\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-title default (raw/components-computed.json); the @font-face blocks are served from eleven-public-cdn.elevenlabs.io (raw/css-vars.json fonts)",
+     "description": "The Waldenburg display family on the hero headline and headings."
+    },
+    "sans": {
+     "value": "Inter, \"Inter Fallback\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of nav-trigger default (raw/components-computed.json); the @font-face blocks are served from eleven-public-cdn.elevenlabs.io (raw/css-vars.json fonts)",
+     "description": "The UI sans the nav, buttons and body text paint (Inter/Waldenburg as the page serves it)."
+    },
+    "mono": {
+     "value": "\"Geist Mono\",\"Geist Mono Fallback\"",
+     "type": "fontFamily",
+     "source": "declared --font-geist-mono on .__variable_7e8bea (raw/css-vars.json theme rules)",
+     "description": "The monospace stack (Geist Mono) for code."
+    }
+   },
+   "weight": {
+    "regular": {
+     "value": 400,
+     "type": "fontWeight",
+     "source": "computed fontWeight of hero-sub default (raw/components-computed.json)",
+     "description": "The regular body/lede weight."
+    },
+    "medium": {
+     "value": 400,
+     "type": "fontWeight",
+     "source": "computed fontWeight of nav-trigger default (raw/components-computed.json)",
+     "description": "The medium weight on nav items and controls."
+    },
+    "semibold": {
+     "value": 400,
+     "type": "fontWeight",
+     "source": "computed fontWeight of plan-cta default (raw/components-computed.json)",
+     "description": "The semibold weight on button labels."
+    }
+   },
+   "size": {
+    "display-hero": {
+     "type": "dimension",
+     "value": "48px",
+     "source": "computed fontSize of hero-title default (raw/components-computed.json)",
+     "description": "The hero display size."
+    },
+    "display": {
+     "type": "dimension",
+     "value": "48px",
+     "source": "computed fontSize of pricing-h1 default (raw/components-computed.json)",
+     "description": "The page-title display (pricing)."
+    },
+    "display-tts": {
+     "type": "dimension",
+     "value": "36px",
+     "source": "computed fontSize of tts-display default (raw/components-computed.json)",
+     "description": "The product-page display (text-to-speech)."
+    },
+    "display-mobile": {
+     "type": "dimension",
+     "value": "36px",
+     "source": "computed fontSize of m-hero default (raw/components-computed.json)",
+     "description": "The display size at 390 wide."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of section-h2 default (raw/components-computed.json)",
+     "description": "The section heading."
+    },
+    "page-title": {
+     "type": "dimension",
+     "value": "48px",
+     "source": "computed fontSize of api-h1 default (raw/components-computed.json)",
+     "description": "The API page title."
+    },
+    "lede": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of hero-sub default (raw/components-computed.json)",
+     "description": "The hero lede."
+    },
+    "body": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of tts-textarea default (raw/components-computed.json)",
+     "description": "The playground textarea/body size."
+    },
+    "menu-item": {
+     "type": "dimension",
+     "value": "14px",
+     "source": "computed fontSize of m-nav-item default (raw/components-computed.json)",
+     "description": "The mobile-menu rows."
+    },
+    "control": {
+     "type": "dimension",
+     "value": "16px",
+     "source": "computed fontSize of plan-cta default (raw/components-computed.json)",
+     "description": "The control/button text."
+    },
+    "meta": {
+     "type": "dimension",
+     "value": "13px",
+     "source": "computed fontSize of plan-badge default (raw/components-computed.json)",
+     "description": "The small meta/badge text."
+    },
+    "price": {
+     "type": "dimension",
+     "value": "20px",
+     "source": "computed fontSize of plan-price default (raw/components-computed.json)",
+     "description": "The plan price figure."
+    }
+   },
+   "lineHeight": {
+    "display-hero": {
+     "type": "dimension",
+     "value": "52px",
+     "source": "computed lineHeight of hero-title default (raw/components-computed.json)",
+     "description": "Hero display leading."
+    },
+    "display": {
+     "type": "dimension",
+     "value": "52px",
+     "source": "computed lineHeight of pricing-h1 default (raw/components-computed.json)",
+     "description": "Page-title leading."
+    },
+    "h2": {
+     "type": "dimension",
+     "value": "24px",
+     "source": "computed lineHeight of section-h2 default (raw/components-computed.json)",
+     "description": "Heading leading."
+    },
+    "lede": {
+     "type": "dimension",
+     "value": "24px",
+     "source": "computed lineHeight of hero-sub default (raw/components-computed.json)",
+     "description": "Lede leading."
+    },
+    "body": {
+     "type": "dimension",
+     "value": "24px",
+     "source": "computed lineHeight of tts-textarea default (raw/components-computed.json)",
+     "description": "Body leading."
+    },
+    "control": {
+     "type": "dimension",
+     "value": "24px",
+     "source": "computed lineHeight of plan-cta default (raw/components-computed.json)",
+     "description": "Control leading."
+    }
+   }
+  },
+  "color": {
+   "brand": {
+    "ink": {
+     "type": "color",
+     "source": "computed backgroundColor of signup-cta default (raw/components-computed.json)",
+     "description": "The near-black action fill: the Sign up pill, every plan CTA, the playground Play button.",
+     "value": "#000000"
+    },
+    "ink-hover": {
+     "type": "color",
+     "source": "computed backgroundColor of signup-cta hover (raw/components-computed.json)",
+     "description": "The hover step the black pills take.",
+     "value": "#44403b"
+    },
+    "ink-pressed": {
+     "type": "color",
+     "source": "computed backgroundColor of signup-cta pressed (raw/components-computed.json)",
+     "description": "The pressed step.",
+     "value": "#44403b"
+    },
+    "accent": {
+     "value": "#2b7fff",
+     "type": "color",
+     "source": "declared caret-color #2b7fff on the Tailwind utility class .caret-focus (raw/css-vars.json palette); the blue of the gradients and links",
+     "description": "The blue accent (Tailwind blue-500) the gradients, links and interactive UI paint."
+    },
+    "destructive": {
+     "value": "#ef4444",
+     "type": "color",
+     "source": "css-var --shadcn-destructive resolved light (raw/css-vars.json): an 'H S% L%' channel triplet converted here",
+     "description": "The declared destructive red (hsl 0 84.2% 60.2%)."
+    },
+    "ring": {
+     "value": "#0a0a0a",
+     "type": "color",
+     "source": "css-var --shadcn-ring resolved light (raw/css-vars.json): an 'H S% L%' channel triplet converted here",
+     "description": "The declared focus-ring colour (hsl 0 0% 3.9% — near-black)."
+    }
+   },
+   "neutral": {
+    "ink": {
+     "value": "#000000",
+     "type": "color",
+     "source": "computed color of nav-link default (raw/components-computed.json)",
+     "description": "The near-black ink on nav text, headings and button labels."
+    },
+    "muted": {
+     "value": "#777169",
+     "type": "color",
+     "source": "computed color of menu-link default (raw/components-computed.json); menu-link: read from the wrong element (its default and pressed states caught a same-href link far down the page, not the flyout's); recapture needed",
+     "description": "The warm grey on flyout links, the product pill, the billing select and secondary text."
+    },
+    "white": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed backgroundColor of signin-card default (raw/components-computed.json)",
+     "description": "The #ffffff surface: cards, the flyout panel, the auth card."
+    },
+    "wash-hover": {
+     "value": "rgba(41, 37, 36, 0.05)",
+     "type": "color",
+     "source": "painted bg of nav-link hover's inner layer (raw/components-computed.json paint)",
+     "description": "The 5% warm-ink wash a nav item's inner chip takes on hover."
+    },
+    "wash-pressed": {
+     "value": "rgba(0, 0, 0, 0.043)",
+     "type": "color",
+     "source": "painted bg of oauth-google pressed's inner layer (raw/components-computed.json paint)",
+     "description": "The deeper wash a ghost/OAuth button takes on pressed (nav items keep the hover wash)."
+    },
+    "eggshell": {
+     "var": "--eggshell",
+     "type": "color",
+     "source": "css-var --eggshell resolved light (raw/css-vars.json)",
+     "description": "The #FDFCFC eggshell page field."
+    },
+    "page-bg": {
+     "var": "--page-background-color",
+     "type": "color",
+     "source": "css-var --page-background-color resolved light (raw/css-vars.json)",
+     "description": "The page background role, bound to --eggshell."
+    },
+    "border": {
+     "value": "#e5e5e5",
+     "type": "color",
+     "source": "css-var --shadcn-border resolved light (raw/css-vars.json): an 'H S% L%' channel triplet converted here",
+     "description": "The declared hairline border grey (hsl 0 0% 89.8%)."
+    }
+   }
+  },
+  "radius": {
+   "pill": {
+    "value": "9999px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of signup-cta default (raw/components-computed.json)",
+    "description": "The pill radius on buttons and CTAs (likely 9999px)."
+   },
+   "button-ghost": {
+    "value": "9999px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of contact-sales default (raw/components-computed.json)",
+    "description": "The ghost-button radius."
+   },
+   "field": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of email-field default (raw/components-computed.json)",
+    "description": "The auth-field radius."
+   },
+   "tab": {
+    "value": "9999px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of tool-tab default (raw/components-computed.json)",
+    "description": "The showcase-tab radius."
+   },
+   "card": {
+    "var": "--rounded-card",
+    "type": "dimension",
+    "source": "css-var --rounded-card resolved light (raw/css-vars.json)",
+    "description": "The declared card radius."
+   },
+   "card-sm": {
+    "var": "--rounded-card-sm",
+    "type": "dimension",
+    "source": "css-var --rounded-card-sm resolved light (raw/css-vars.json)",
+    "description": "The declared small-card radius."
+   }
+  },
+  "space": {
+   "inset": {
+    "var": "--spacing-inset",
+    "type": "dimension",
+    "source": "css-var --spacing-inset resolved light (raw/css-vars.json)",
+    "description": "The declared inset padding (1.25rem)."
+   },
+   "gutter": {
+    "var": "--spacing-gutter",
+    "type": "dimension",
+    "source": "css-var --spacing-gutter resolved light (raw/css-vars.json)",
+    "description": "The declared content gutter."
+   },
+   "section-md": {
+    "var": "--section-py-md",
+    "type": "dimension",
+    "source": "css-var --section-py-md resolved light (raw/css-vars.json)",
+    "description": "The declared medium section vertical padding (5rem at desktop)."
+   }
+  },
+  "measured": {
+   "focus-ring-light": {
+    "value": "#2b7fff",
+    "type": "color",
+    "source": "computed outlineColor of signup-cta focus-visible (raw/components-computed.json)",
+    "description": "The keyboard focus ring on light surfaces."
+   },
+   "focus-ring-nav": {
+    "value": "#2b7fff",
+    "type": "color",
+    "source": "painted outline of nav-trigger focus-visible's inner layer (raw/components-computed.json paint): 1px solid rgb(43, 127, 255) offset 2px",
+    "description": "The keyboard ring on nav controls — drawn on the inner chip, not the root (whose 2px outline stays transparent)."
+   },
+   "control-transition": {
+    "value": "0.15s",
+    "type": "duration",
+    "source": "computed transition of plan-cta default (raw/components-computed.json)",
+    "description": "The control transition (background-color etc.). (background-color, color, box-shadow, border-color)"
+   },
+   "pressed-scale": {
+    "value": 0.98,
+    "type": "number",
+    "source": "pressed rect / default rect of plan-cta (raw/components-computed.json)",
+    "description": "The scale a pressed button takes."
+   }
+  }
+ },
+ "light": {
+  "text": {
+   "primary": {
+    "value": "{color.neutral.ink}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Body and display ink on light."
+   },
+   "muted": {
+    "value": "{color.neutral.muted}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Secondary text on light."
+   },
+   "on": {
+    "action": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed color of the ink action labels (raw/components-computed.json)",
+     "description": "White labels on the ink fill."
+    }
+   }
+  },
+  "surface": {
+   "page": {
+    "value": "{color.neutral.eggshell}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The #FDFCFC eggshell page field."
+   },
+   "card": {
+    "value": "{color.neutral.white}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "Cards, the flyout panel, the auth card."
+   }
+  },
+  "action": {
+   "primary": {
+    "default": {
+     "value": "{color.brand.ink}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The near-black action fill."
+    },
+    "hover": {
+     "value": "{color.brand.ink-hover}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The hover step."
+    },
+    "pressed": {
+     "value": "{color.brand.ink-pressed}",
+     "type": "color",
+     "source": "role alias over the core palette",
+     "description": "The pressed step."
+    }
+   }
+  },
+  "accent": {
+   "value": "{color.brand.accent}",
+   "type": "color",
+   "source": "role alias over the core palette",
+   "description": "The blue accent on gradients, links and interactive UI."
+  },
+  "border": {
+   "value": "{color.neutral.border}",
+   "type": "color",
+   "source": "role alias over the core palette",
+   "description": "The hairline border grey."
+  },
+  "state": {
+   "hover": {
+    "value": "{color.neutral.wash-hover}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The hover wash on ghost controls."
+   },
+   "pressed": {
+    "value": "{color.neutral.wash-pressed}",
+    "type": "color",
+    "source": "role alias over the core palette",
+    "description": "The pressed wash."
+   }
+  }
+ },
+ "dark": {},
+ "component": {
+  "button": {
+   "height": {
+    "type": "dimension",
+    "value": "44px",
+    "source": "computed height of plan-cta default (raw/components-computed.json)",
+    "description": "The standard button height (plan CTAs)."
+   }
+  },
+  "button-nav": {
+   "height": {
+    "type": "dimension",
+    "value": "36px",
+    "source": "computed height of signup-cta default (raw/components-computed.json)",
+    "description": "The header action height."
+   }
+  },
+  "field": {
+   "height": {
+    "type": "dimension",
+    "value": "46px",
+    "source": "computed height of email-field default (raw/components-computed.json)",
+    "description": "The auth-field height."
+   }
+  },
+  "field-playground": {
+   "height": {
+    "type": "dimension",
+    "value": "136px",
+    "source": "computed height of tts-textarea default (raw/components-computed.json)",
+    "description": "The playground textarea height."
+   }
+  },
+  "navcontrol": {
+   "height": {
+    "type": "dimension",
+    "value": "36px",
+    "source": "computed height of nav-trigger default (raw/components-computed.json)",
+    "description": "The header control height."
+   }
+  },
+  "menurow": {
+   "height": {
+    "type": "dimension",
+    "value": "44px",
+    "source": "computed height of m-nav-item default (raw/components-computed.json)",
+    "description": "The mobile-menu row."
+   }
+  },
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "36px",
+    "source": "computed height of nav default (raw/components-computed.json)",
+    "description": "The desktop nav height."
+   },
+   "height-mobile": {
+    "type": "dimension",
+    "value": "36px",
+    "source": "computed height of m-header default (raw/components-computed.json)",
+    "description": "The mobile header height."
+   }
+  },
+  "flyout": {
+   "height": {
+    "type": "dimension",
+    "value": "565.5px",
+    "source": "computed height of nav-dropdown default (raw/components-computed.json)",
+    "description": "The Products flyout panel height."
+   }
+  },
+  "plancard": {
+   "height": {
+    "type": "dimension",
+    "value": "739px",
+    "source": "computed height of plan-card default (raw/components-computed.json)",
+    "description": "The plan card height."
+   }
+  },
+  "authcard": {
+   "height": {
+    "type": "dimension",
+    "value": "519px",
+    "source": "computed height of signin-card default (raw/components-computed.json)",
+    "description": "The sign-in card height."
+   }
+  },
+  "playgroundcard": {
+   "height": {
+    "type": "dimension",
+    "value": "208px",
+    "source": "computed height of tts-card default (raw/components-computed.json)",
+    "description": "The playground card height."
+   }
+  }
+ }
+}

@@ -60,7 +60,7 @@ Values that apply across entries, from the measurement files.
 
 | Card | Size | Border | Radius | Background | Shadow | Padding |
 |---|---|---|---|---|---|---|
-| [Plan card](#plan-card) | 420 x 691.42 | - | 6px | #1e1e24 `color.ink.800` | none | 30px 20px |
+| [Plan card](#plan-card) | 420 x 691.42 | - | - | #ffffff `color.brand.white` | none | 30px 20px |
 | [Prompt box](#prompt-box) | 555 x 150 | - | 8px | #ffffff `color.brand.white` | none | 0 |
 | [Build-type tile](#build-type-tile) | 120 x 66 | - | 4px | #f9f7f4 `color.surface.cardWarm` | none | 14px 12px |
 

@@ -1,0 +1,1950 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. endless.app declares a shadcn-style token layer in its Tailwind v4 theme — semantic roles that re-bind under .dark, the --mode-*/--label-*/--chart-*/--series-* product palettes, and Tailwind's own type/radius/container/ease scales. Declared variables become var leaves resolved per theme; font stacks, the card shadow, the focus ring and component geometry are measured leaves from raw/components-computed.json.",
+ "core": {
+  "font": {
+   "family": {
+    "sans": {
+     "value": "\"TikTok Sans\", system-ui, arial",
+     "type": "fontFamily",
+     "source": "computed fontFamily of header default (raw/components-computed.json)",
+     "description": "TikTok Sans: the product face everywhere — headings, body, nav and buttons."
+    },
+    "mono": {
+     "value": "\"Geist Mono\", \"Geist Mono Fallback\"",
+     "type": "fontFamily",
+     "source": "computed fontFamily of mcp-code default (raw/components-computed.json)",
+     "description": "Geist Mono: code snippets, the MCP install command and numeric/readout text."
+    }
+   },
+   "weight": {
+    "normal": {
+     "var": "--font-weight-normal",
+     "type": "fontWeight",
+     "description": "400 body weight."
+    },
+    "medium": {
+     "var": "--font-weight-medium",
+     "type": "fontWeight",
+     "description": "500 heading, button and label weight."
+    },
+    "semibold": {
+     "var": "--font-weight-semibold",
+     "type": "fontWeight",
+     "description": "600 — CTA buttons and docs headings."
+    }
+   },
+   "size": {
+    "xs": {
+     "var": "--text-xs",
+     "type": "dimension",
+     "description": "Declared --text-xs step of the Tailwind ramp (12px)."
+    },
+    "sm": {
+     "var": "--text-sm",
+     "type": "dimension",
+     "description": "Declared --text-sm step of the Tailwind ramp (14px)."
+    },
+    "base": {
+     "var": "--text-base",
+     "type": "dimension",
+     "description": "Declared --text-base step of the Tailwind ramp (16px)."
+    },
+    "lg": {
+     "var": "--text-lg",
+     "type": "dimension",
+     "description": "Declared --text-lg step of the Tailwind ramp (18px)."
+    },
+    "xl": {
+     "var": "--text-xl",
+     "type": "dimension",
+     "description": "Declared --text-xl step of the Tailwind ramp (20px)."
+    },
+    "2xl": {
+     "var": "--text-2xl",
+     "type": "dimension",
+     "description": "Declared --text-2xl step of the Tailwind ramp (24px)."
+    },
+    "3xl": {
+     "var": "--text-3xl",
+     "type": "dimension",
+     "description": "Declared --text-3xl step of the Tailwind ramp (30px)."
+    },
+    "4xl": {
+     "var": "--text-4xl",
+     "type": "dimension",
+     "description": "Declared --text-4xl step of the Tailwind ramp (36px)."
+    },
+    "5xl": {
+     "var": "--text-5xl",
+     "type": "dimension",
+     "description": "Declared --text-5xl step of the Tailwind ramp (48px)."
+    },
+    "display": {
+     "value": "59.2px",
+     "type": "dimension",
+     "source": "computed fontSize of hero-title default (raw/components-computed.json)",
+     "description": "The home hero display size (59.2px — a fluid clamp, not a declared step)."
+    },
+    "display-mobile": {
+     "value": "37.6px",
+     "type": "dimension",
+     "source": "computed fontSize of m-hero default (raw/components-computed.json)",
+     "description": "The hero display size at 390px (37.6px)."
+    },
+    "docs-h1": {
+     "value": "28px",
+     "type": "dimension",
+     "source": "computed fontSize of docs-h1 default (raw/components-computed.json)",
+     "description": "The docs page heading (28px)."
+    },
+    "lede": {
+     "value": "18px",
+     "type": "dimension",
+     "source": "computed fontSize of hero-lede default (raw/components-computed.json)",
+     "description": "The hero lede (18px)."
+    }
+   },
+   "lineHeight": {
+    "xs": {
+     "var": "--text-xs--line-height",
+     "type": "number",
+     "description": "Declared line-height ratio for --text-xs (calc(1 / .75))."
+    },
+    "sm": {
+     "var": "--text-sm--line-height",
+     "type": "number",
+     "description": "Declared line-height ratio for --text-sm (calc(1.25 / .875))."
+    },
+    "base": {
+     "var": "--text-base--line-height",
+     "type": "number",
+     "description": "Declared line-height ratio for --text-base (calc(1.5 / 1))."
+    },
+    "lg": {
+     "var": "--text-lg--line-height",
+     "type": "number",
+     "description": "Declared line-height ratio for --text-lg (calc(1.75 / 1.125))."
+    },
+    "xl": {
+     "var": "--text-xl--line-height",
+     "type": "number",
+     "description": "Declared line-height ratio for --text-xl (calc(1.75 / 1.25))."
+    },
+    "2xl": {
+     "var": "--text-2xl--line-height",
+     "type": "number",
+     "description": "Declared line-height ratio for --text-2xl (calc(2 / 1.5))."
+    },
+    "3xl": {
+     "var": "--text-3xl--line-height",
+     "type": "number",
+     "description": "Declared line-height ratio for --text-3xl (calc(2.25 / 1.875))."
+    },
+    "4xl": {
+     "var": "--text-4xl--line-height",
+     "type": "number",
+     "description": "Declared line-height ratio for --text-4xl (calc(2.5 / 2.25))."
+    },
+    "5xl": {
+     "var": "--text-5xl--line-height",
+     "type": "number",
+     "description": "Declared line-height ratio for --text-5xl (1)."
+    },
+    "tight": {
+     "var": "--leading-tight",
+     "type": "number",
+     "description": "Declared --leading-tight (1.25)."
+    },
+    "snug": {
+     "var": "--leading-snug",
+     "type": "number",
+     "description": "Declared --leading-snug (1.375)."
+    },
+    "normal": {
+     "var": "--leading-normal",
+     "type": "number",
+     "description": "Declared --leading-normal (1.5)."
+    },
+    "relaxed": {
+     "var": "--leading-relaxed",
+     "type": "number",
+     "description": "Declared --leading-relaxed (1.625)."
+    },
+    "display": {
+     "value": "63.936px",
+     "type": "dimension",
+     "source": "computed lineHeight of hero-title default (raw/components-computed.json)",
+     "description": "The display leading as a length (63.9px on 59.2px)."
+    },
+    "lede": {
+     "value": "29.25px",
+     "type": "dimension",
+     "source": "computed lineHeight of hero-lede default (raw/components-computed.json)",
+     "description": "The lede leading (29.25px on 18px)."
+    }
+   },
+   "tracking": {
+    "tighter": {
+     "value": "-0.8px",
+     "type": "dimension",
+     "source": "css-var --tracking-tighter (light)",
+     "description": "Declared --tracking-tighter = -.05em (em tracking scales with font size; the value here is the 16px-base equivalent)."
+    },
+    "tight": {
+     "value": "-0.4px",
+     "type": "dimension",
+     "source": "css-var --tracking-tight (light)",
+     "description": "Declared --tracking-tight = -.025em (em tracking scales with font size; the value here is the 16px-base equivalent)."
+    },
+    "normal": {
+     "var": "--tracking-normal",
+     "type": "dimension",
+     "description": "Declared --tracking-normal (0px)."
+    },
+    "wide": {
+     "var": "--tracking-wide",
+     "type": "dimension",
+     "description": "Declared --tracking-wide (0.390625px)."
+    },
+    "wider": {
+     "var": "--tracking-wider",
+     "type": "dimension",
+     "description": "Declared --tracking-wider (0.796875px)."
+    },
+    "display": {
+     "value": "-1.8944px",
+     "type": "dimension",
+     "source": "computed letterSpacing of hero-title default (raw/components-computed.json)",
+     "description": "The display tracking (-1.89px on the 59.2px hero)."
+    },
+    "h1": {
+     "value": "-1.2px",
+     "type": "dimension",
+     "source": "computed letterSpacing of pricing-h1 default (raw/components-computed.json)",
+     "description": "The h1 tracking (-2.4px on 48px titles)."
+    },
+    "h2": {
+     "value": "-0.9px",
+     "type": "dimension",
+     "source": "computed letterSpacing of h2-section default (raw/components-computed.json)",
+     "description": "The h2 tracking (-0.9px on 36px)."
+    }
+   },
+   "type": {
+    "display": {
+     "$type": "typography",
+     "$value": {
+      "fontFamily": "\"TikTok Sans\", system-ui, arial",
+      "fontSize": "59.2px",
+      "lineHeight": "63.936px",
+      "fontWeight": 500,
+      "letterSpacing": "-1.8944px"
+     },
+     "$description": "The home hero display (59.2px medium, tight tracking).",
+     "$extensions": {
+      "source": "computed type of hero-title default (raw/components-computed.json)"
+     }
+    },
+    "display-mobile": {
+     "$type": "typography",
+     "$value": {
+      "fontFamily": "\"TikTok Sans\", system-ui, arial",
+      "fontSize": "37.6px",
+      "lineHeight": "40.608px",
+      "fontWeight": 500,
+      "letterSpacing": "-1.2032px"
+     },
+     "$description": "The hero display at 390px (37.6px).",
+     "$extensions": {
+      "source": "computed type of m-hero default (raw/components-computed.json)"
+     }
+    },
+    "h1": {
+     "$type": "typography",
+     "$value": {
+      "fontFamily": "\"TikTok Sans\", system-ui, arial",
+      "fontSize": "48px",
+      "lineHeight": "60px",
+      "fontWeight": 500,
+      "letterSpacing": "-1.2px"
+     },
+     "$description": "Page titles (48px medium, -2.4px).",
+     "$extensions": {
+      "source": "computed type of pricing-h1 default (raw/components-computed.json)"
+     }
+    },
+    "h2": {
+     "$type": "typography",
+     "$value": {
+      "fontFamily": "\"TikTok Sans\", system-ui, arial",
+      "fontSize": "36px",
+      "lineHeight": "40px",
+      "fontWeight": 500,
+      "letterSpacing": "-0.9px"
+     },
+     "$description": "Section headings (36px medium, -0.9px).",
+     "$extensions": {
+      "source": "computed type of h2-section default (raw/components-computed.json)"
+     }
+    },
+    "h3": {
+     "$type": "typography",
+     "$value": {
+      "fontFamily": "\"TikTok Sans\", system-ui, arial",
+      "fontSize": "18px",
+      "lineHeight": "28px",
+      "fontWeight": 600,
+      "letterSpacing": "0px"
+     },
+     "$description": "Card/sub headings (18px semibold).",
+     "$extensions": {
+      "source": "computed type of plan-name default (raw/components-computed.json)"
+     }
+    },
+    "body": {
+     "$type": "typography",
+     "$value": {
+      "fontFamily": "\"TikTok Sans\", system-ui, arial",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "fontWeight": 400,
+      "letterSpacing": "0px"
+     },
+     "$description": "Body text (16px/24px regular).",
+     "$extensions": {
+      "source": "computed type of header default (raw/components-computed.json)"
+     }
+    },
+    "small": {
+     "$type": "typography",
+     "$value": {
+      "fontFamily": "\"TikTok Sans\", system-ui, arial",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "fontWeight": 400,
+      "letterSpacing": "0px"
+     },
+     "$description": "Small text (14px/20px) — nav, buttons, fields.",
+     "$extensions": {
+      "source": "computed type of nav-link default (raw/components-computed.json)"
+     }
+    },
+    "lede": {
+     "$type": "typography",
+     "$value": {
+      "fontFamily": "\"TikTok Sans\", system-ui, arial",
+      "fontSize": "18px",
+      "lineHeight": "29.25px",
+      "fontWeight": 400,
+      "letterSpacing": "0px"
+     },
+     "$description": "The hero lede (18px/29.25px at 75% ink).",
+     "$extensions": {
+      "source": "computed type of hero-lede default (raw/components-computed.json)"
+     }
+    },
+    "docs-h1": {
+     "$type": "typography",
+     "$value": {
+      "fontFamily": "\"TikTok Sans\", system-ui, arial",
+      "fontSize": "28px",
+      "lineHeight": "42px",
+      "fontWeight": 600,
+      "letterSpacing": "0px"
+     },
+     "$description": "Docs page heading (28px semibold).",
+     "$extensions": {
+      "source": "computed type of docs-h1 default (raw/components-computed.json)"
+     }
+    },
+    "code": {
+     "$type": "typography",
+     "$value": {
+      "fontFamily": "\"Geist Mono\", \"Geist Mono Fallback\"",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "fontWeight": 400,
+      "letterSpacing": "0px"
+     },
+     "$description": "Code (Geist Mono 14px/20px).",
+     "$extensions": {
+      "source": "computed type of mcp-code default (raw/components-computed.json)"
+     }
+    }
+   }
+  },
+  "color": {
+   "brand": {
+    "accent": {
+     "var": "--accent",
+     "type": "color",
+     "description": "Endless sky #01bcff: the brand accent, focus ring and chart/label seed."
+    },
+    "landing-action": {
+     "var": "--color-landing-action",
+     "type": "color",
+     "description": "Landing action blue #11a8ff."
+    },
+    "ring": {
+     "var": "--ring",
+     "type": "color",
+     "description": "The focus/interactive ring (same value as accent)."
+    }
+   },
+   "tailwind": {
+    "blue-600": {
+     "var": "--color-blue-600",
+     "type": "color",
+     "description": "Tailwind blue 600."
+    },
+    "sky-600": {
+     "var": "--color-sky-600",
+     "type": "color",
+     "description": "Tailwind sky 600."
+    },
+    "green-600": {
+     "var": "--color-green-600",
+     "type": "color",
+     "description": "Tailwind green 600."
+    },
+    "orange-600": {
+     "var": "--color-orange-600",
+     "type": "color",
+     "description": "Tailwind orange 600."
+    },
+    "pink-600": {
+     "var": "--color-pink-600",
+     "type": "color",
+     "description": "Tailwind pink 600."
+    },
+    "purple-600": {
+     "var": "--color-purple-600",
+     "type": "color",
+     "description": "Tailwind purple 600."
+    },
+    "neutral-800": {
+     "var": "--color-neutral-800",
+     "type": "color",
+     "description": "Tailwind neutral 800."
+    },
+    "black": {
+     "var": "--color-black",
+     "type": "color",
+     "description": "Pure black."
+    },
+    "white": {
+     "var": "--color-white",
+     "type": "color",
+     "description": "Pure white."
+    }
+   },
+   "label": {
+    "blue": {
+     "var": "--label-blue",
+     "type": "color",
+     "description": "Declared --label-blue (#65b2f1): a tag/label hue, identical on both themes."
+    },
+    "gray": {
+     "var": "--label-gray",
+     "type": "color",
+     "description": "Declared --label-gray (#bebebe): a tag/label hue, identical on both themes."
+    },
+    "green": {
+     "var": "--label-green",
+     "type": "color",
+     "description": "Declared --label-green (#64cf80): a tag/label hue, identical on both themes."
+    },
+    "orange": {
+     "var": "--label-orange",
+     "type": "color",
+     "description": "Declared --label-orange (#fc9e47): a tag/label hue, identical on both themes."
+    },
+    "pink": {
+     "var": "--label-pink",
+     "type": "color",
+     "description": "Declared --label-pink (#f594c3): a tag/label hue, identical on both themes."
+    },
+    "purple": {
+     "var": "--label-purple",
+     "type": "color",
+     "description": "Declared --label-purple (#b692f2): a tag/label hue, identical on both themes."
+    },
+    "red": {
+     "var": "--label-red",
+     "type": "color",
+     "description": "Declared --label-red (#fa6863): a tag/label hue, identical on both themes."
+    },
+    "yellow": {
+     "var": "--label-yellow",
+     "type": "color",
+     "description": "Declared --label-yellow (#f3d350): a tag/label hue, identical on both themes."
+    }
+   }
+  },
+  "radius": {
+   "md": {
+    "var": "--radius-md",
+    "type": "dimension",
+    "description": "Declared --radius-md (8px): nav links, small buttons, fields."
+   },
+   "lg": {
+    "var": "--radius-lg",
+    "type": "dimension",
+    "description": "Declared --radius-lg = --radius (12px): chips, cards, CTAs."
+   },
+   "xl": {
+    "var": "--radius-xl",
+    "type": "dimension",
+    "description": "Declared --radius-xl (16px): plan/blog cards."
+   },
+   "2xl": {
+    "var": "--radius-2xl",
+    "type": "dimension",
+    "description": "Declared --radius-2xl (20px): the composer, model cards, brand tiles."
+   },
+   "icon": {
+    "var": "--radius-icon",
+    "type": "other",
+    "description": "The app-icon corner radius (22.5%, the Apple icon mask)."
+   },
+   "pill": {
+    "value": "9999px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of mode-tab default (raw/components-computed.json)",
+    "description": "The fully-round pill on filter chips and the billing toggle (the browser computes rounded-full as 3.35544e+07px; stored here as the practical 9999px)."
+   }
+  },
+  "easing": {
+   "out": {
+    "var": "--ease-out",
+    "type": "cubicBezier",
+    "description": "ease-out (0,0,.2,1)."
+   },
+   "out-expo": {
+    "var": "--ease-out-expo",
+    "type": "cubicBezier",
+    "description": "ease-out-expo (.16,1,.3,1)."
+   },
+   "pop": {
+    "var": "--ease-pop",
+    "type": "cubicBezier",
+    "description": "ease-pop (.32,.72,0,1)."
+   },
+   "snappy": {
+    "var": "--ease-snappy",
+    "type": "cubicBezier",
+    "description": "ease-snappy (.2,0,0,1)."
+   },
+   "standard": {
+    "var": "--ease-standard",
+    "type": "cubicBezier",
+    "description": "ease-standard (.22,1,.36,1)."
+   },
+   "default": {
+    "var": "--default-transition-timing-function",
+    "type": "cubicBezier",
+    "description": "The default transition curve (.4,0,.2,1)."
+   }
+  },
+  "duration": {
+   "default": {
+    "var": "--default-transition-duration",
+    "type": "duration",
+    "description": "The default transition duration (150ms)."
+   },
+   "hover": {
+    "var": "--transition-duration-hover",
+    "type": "duration",
+    "description": "Hover transitions (150ms)."
+   },
+   "enter": {
+    "var": "--transition-duration-enter",
+    "type": "duration",
+    "description": "Element entrances (200ms)."
+   },
+   "slow": {
+    "var": "--transition-duration-slow",
+    "type": "duration",
+    "description": "Slow transitions (300ms)."
+   }
+  },
+  "spacing": {
+   "base": {
+    "var": "--spacing",
+    "type": "dimension",
+    "description": "The Tailwind spacing unit (4px); all gutters are multiples of it."
+   }
+  },
+  "layout": {
+   "container": {
+    "xs": {
+     "var": "--container-xs",
+     "type": "dimension",
+     "description": "Declared --container-xs max-width (320px)."
+    },
+    "sm": {
+     "var": "--container-sm",
+     "type": "dimension",
+     "description": "Declared --container-sm max-width (384px)."
+    },
+    "md": {
+     "var": "--container-md",
+     "type": "dimension",
+     "description": "Declared --container-md max-width (448px)."
+    },
+    "lg": {
+     "var": "--container-lg",
+     "type": "dimension",
+     "description": "Declared --container-lg max-width (512px)."
+    },
+    "xl": {
+     "var": "--container-xl",
+     "type": "dimension",
+     "description": "Declared --container-xl max-width (576px)."
+    },
+    "2xl": {
+     "var": "--container-2xl",
+     "type": "dimension",
+     "description": "Declared --container-2xl max-width (672px)."
+    },
+    "3xl": {
+     "var": "--container-3xl",
+     "type": "dimension",
+     "description": "Declared --container-3xl max-width (768px)."
+    },
+    "4xl": {
+     "var": "--container-4xl",
+     "type": "dimension",
+     "description": "Declared --container-4xl max-width (896px)."
+    },
+    "5xl": {
+     "var": "--container-5xl",
+     "type": "dimension",
+     "description": "Declared --container-5xl max-width (1024px)."
+    },
+    "6xl": {
+     "var": "--container-6xl",
+     "type": "dimension",
+     "description": "Declared --container-6xl max-width (1152px)."
+    }
+   },
+   "perspective": {
+    "normal": {
+     "var": "--perspective-normal",
+     "type": "dimension",
+     "description": "Declared --perspective-normal (500px)."
+    },
+    "distant": {
+     "var": "--perspective-distant",
+     "type": "dimension",
+     "description": "Declared --perspective-distant (1200px)."
+    }
+   }
+  },
+  "shadow": {
+   "card": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.06)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "1px"
+     },
+     {
+      "color": "rgba(0, 0, 0, 0.06)",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "2px",
+      "spread": "-1px"
+     },
+     {
+      "color": "rgba(0, 0, 0, 0.04)",
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "4px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of composer default (raw/components-computed.json)",
+    "description": "The floating-card elevation (a 1px 6% keyline ring plus 1px/2px umbrae): composer, tool panel, plan CTA."
+   },
+   "drop-sm": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.15)",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "2px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --drop-shadow-sm (light)",
+    "description": "Declared drop-shadow filter sm (15% black, 1px 2px)."
+   },
+   "drop-md": {
+    "value": [
+     {
+      "color": "rgba(0, 0, 0, 0.12)",
+      "offsetX": "0px",
+      "offsetY": "3px",
+      "blur": "3px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --drop-shadow-md (light)",
+    "description": "Declared drop-shadow filter md (12% black, 3px 3px)."
+   },
+   "focus-ring": {
+    "value": [
+     {
+      "color": "rgba(1, 188, 255, 0.3)",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "blur": "0px",
+      "spread": "3px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of nav-signin focus-visible (raw/components-computed.json)",
+    "description": "The 3px 30% accent ring buttons paint on keyboard focus (plus an accent border)."
+   }
+  },
+  "zIndex": {
+   "dropdown": {
+    "value": 40,
+    "type": "number",
+    "source": "css-var --z-index-dropdown (light)",
+    "description": "Declared dropdown/menu z-index (40); the sticky header also paints z-40."
+   }
+  },
+  "blur": {
+   "xs": {
+    "var": "--blur-xs",
+    "type": "dimension",
+    "description": "Declared --blur-xs (4px)."
+   },
+   "sm": {
+    "var": "--blur-sm",
+    "type": "dimension",
+    "description": "Declared --blur-sm (8px)."
+   },
+   "md": {
+    "var": "--blur-md",
+    "type": "dimension",
+    "description": "Declared --blur-md (12px)."
+   }
+  },
+  "measured": {
+   "focus-ring": {
+    "value": "{color.brand.accent}",
+    "type": "color",
+    "source": "computed focus-visible borderTopColor of nav-signin, nav-cta, send-btn == --ring (raw/components-computed.json)",
+    "description": "The keyboard focus ring: the accent sky #01bcff as a 3px 30% ring plus an accent border."
+   },
+   "focus-ring-width": {
+    "value": "3px",
+    "type": "dimension",
+    "source": "computed boxShadow spread of nav-signin focus-visible (raw/components-computed.json)",
+    "description": "The 3px focus ring spread."
+   },
+   "field-fill": {
+    "value": "rgba(229, 229, 229, 0.5)",
+    "type": "color",
+    "source": "computed backgroundColor of field-name default (raw/components-computed.json)",
+    "description": "The translucent field fill the contact/tool inputs paint (≈47% neutral grey)."
+   },
+   "header-veil": {
+    "value": "rgba(252, 252, 252, 0.9)",
+    "type": "color",
+    "source": "computed backgroundColor of header default (raw/components-computed.json)",
+    "description": "The sticky header's translucent veil (≈90% page field, backdrop-blurred)."
+   },
+   "link-transition": {
+    "value": "0.15s",
+    "type": "duration",
+    "source": "computed transition of nav-link default (raw/components-computed.json)",
+    "description": "The 150ms colour transition on nav links and buttons. (color, background-color, border-color, outline-color, text-decoration-color, fil)"
+   }
+  }
+ },
+ "light": {
+  "background": {
+   "var": "--background",
+   "type": "color",
+   "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+   "description": "The page field (#fcfcfc light / #000000 dark)."
+  },
+  "foreground": {
+   "var": "--foreground",
+   "type": "color",
+   "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+   "description": "Body and heading ink."
+  },
+  "card": {
+   "default": {
+    "var": "--card",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Card fills (#ffffff / #171717)."
+   },
+   "foreground": {
+    "var": "--card-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Text on cards."
+   }
+  },
+  "popover": {
+   "default": {
+    "var": "--popover",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Popover/menu surfaces."
+   },
+   "foreground": {
+    "var": "--popover-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Text on popovers."
+   }
+  },
+  "primary": {
+   "default": {
+    "var": "--primary",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "The primary fill (#171717 / #e5e5e5) — buttons, active pills."
+   },
+   "foreground": {
+    "var": "--primary-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Text on the primary fill."
+   }
+  },
+  "secondary": {
+   "default": {
+    "var": "--secondary",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Secondary fills (#f5f5f5 / #262626)."
+   },
+   "foreground": {
+    "var": "--secondary-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Text on secondary fills."
+   }
+  },
+  "muted": {
+   "default": {
+    "var": "--muted",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Muted surfaces (#f5f5f5 / #262626)."
+   },
+   "foreground": {
+    "var": "--muted-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Secondary text (#6e6e6e / #a1a1a1)."
+   },
+   "hover": {
+    "var": "--muted-hover",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Muted hover fill (light #f5f5f5 / dark 50% #262626)."
+   }
+  },
+  "accent": {
+   "default": {
+    "var": "--accent",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "The accent sky #01bcff (identical in both themes)."
+   },
+   "foreground": {
+    "var": "--accent-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Text on the accent (#fafafa / #0a0a0a)."
+   }
+  },
+  "destructive": {
+   "default": {
+    "var": "--destructive",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Destructive red (#d40c1a / #f75e54)."
+   },
+   "foreground": {
+    "var": "--destructive-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Text on the destructive fill."
+   },
+   "border": {
+    "var": "--destructive-border",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Destructive border."
+   },
+   "ring": {
+    "var": "--destructive-ring",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Destructive focus ring (20–40% red)."
+   },
+   "subtle": {
+    "var": "--destructive-subtle",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Destructive tint fill (10–20% red)."
+   }
+  },
+  "success": {
+   "default": {
+    "var": "--success",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Success green (#037650 / #00bc7d)."
+   },
+   "foreground": {
+    "var": "--success-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Text on the success fill."
+   }
+  },
+  "warning": {
+   "default": {
+    "var": "--warning",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Warning amber (#a16601 / #fe9a00)."
+   },
+   "foreground": {
+    "var": "--warning-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Text on the warning fill."
+   },
+   "content": {
+    "var": "--warning-content",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Warning text/icon on light tints."
+   },
+   "icon": {
+    "var": "--warning-icon",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Warning icon colour."
+   },
+   "border": {
+    "var": "--warning-border",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Warning border."
+   },
+   "subtle": {
+    "default": {
+     "var": "--warning-subtle",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Warning tint fill."
+    },
+    "hover": {
+     "var": "--warning-subtle-hover",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Warning tint hover."
+    }
+   }
+  },
+  "highlight": {
+   "default": {
+    "var": "--highlight",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Highlight yellow (#f7cc4b / #efa30f)."
+   },
+   "foreground": {
+    "var": "--highlight-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Text on the highlight."
+   }
+  },
+  "border": {
+   "var": "--border",
+   "type": "color",
+   "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+   "description": "Hairline borders (#e5e5e5 / 10% white)."
+  },
+  "input": {
+   "var": "--input",
+   "type": "color",
+   "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+   "description": "Field borders (#e5e5e5 / 15% white)."
+  },
+  "ring": {
+   "var": "--ring",
+   "type": "color",
+   "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+   "description": "The interactive ring — accent sky (identical in both themes)."
+  },
+  "hairline": {
+   "var": "--hairline",
+   "type": "color",
+   "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+   "description": "The 5–10% hairline (dividers, underlines)."
+  },
+  "paper": {
+   "var": "--paper",
+   "type": "color",
+   "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+   "description": "The paper/print surface (white)."
+  },
+  "overlay": {
+   "default": {
+    "var": "--overlay",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "The overlay/scrim colour (black)."
+   },
+   "foreground": {
+    "var": "--overlay-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Text on the scrim (white)."
+   }
+  },
+  "surface": {
+   "sunken": {
+    "var": "--surface-sunken",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "The sunken surface (white / black)."
+   },
+   "bubble": {
+    "var": "--surface-bubble",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "The chat-bubble surface (#f5f5f5 / 60% #262626)."
+   },
+   "control": {
+    "var": "--surface-control",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Control fill (#f5f5f5 / #171717)."
+   },
+   "mention": {
+    "var": "--surface-mention",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "The mention/chip surface (#e5e5e5 / #040404)."
+   }
+  },
+  "sidebar": {
+   "default": {
+    "var": "--sidebar",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Docs/sidebar field."
+   },
+   "foreground": {
+    "default": {
+     "var": "--sidebar-foreground",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Sidebar text."
+    },
+    "muted": {
+     "var": "--sidebar-foreground-muted",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Muted sidebar text."
+    }
+   },
+   "primary": {
+    "default": {
+     "var": "--sidebar-primary",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Sidebar primary fill."
+    },
+    "foreground": {
+     "var": "--sidebar-primary-foreground",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Text on the sidebar primary."
+    }
+   },
+   "accent": {
+    "default": {
+     "var": "--sidebar-accent",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Sidebar hover/accent fill."
+    },
+    "foreground": {
+     "var": "--sidebar-accent-foreground",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Text on the sidebar accent."
+    }
+   },
+   "border": {
+    "var": "--sidebar-border",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Sidebar hairline."
+   },
+   "ring": {
+    "var": "--sidebar-ring",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Sidebar focus ring."
+   }
+  },
+  "palette": {
+   "mode": {
+    "image": {
+     "default": {
+      "var": "--mode-image",
+      "type": "color",
+      "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+      "description": "Image-mode hue (blue)."
+     },
+     "foreground": {
+      "var": "--mode-image-foreground",
+      "type": "color",
+      "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+      "description": "Text on image-mode."
+     }
+    },
+    "video": {
+     "default": {
+      "var": "--mode-video",
+      "type": "color",
+      "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+      "description": "Video-mode hue (purple)."
+     },
+     "foreground": {
+      "var": "--mode-video-foreground",
+      "type": "color",
+      "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+      "description": "Text on video-mode."
+     }
+    },
+    "audio": {
+     "default": {
+      "var": "--mode-audio",
+      "type": "color",
+      "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+      "description": "Audio-mode hue (orange)."
+     },
+     "foreground": {
+      "var": "--mode-audio-foreground",
+      "type": "color",
+      "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+      "description": "Text on audio-mode."
+     }
+    },
+    "3d": {
+     "default": {
+      "var": "--mode-3d",
+      "type": "color",
+      "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+      "description": "3D-mode hue (teal)."
+     },
+     "foreground": {
+      "var": "--mode-3d-foreground",
+      "type": "color",
+      "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+      "description": "Text on 3D-mode."
+     }
+    }
+   },
+   "series": {
+    "1": {
+     "var": "--series-1",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart series 1 (blue)."
+    },
+    "2": {
+     "var": "--series-2",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart series 2 (orange)."
+    },
+    "3": {
+     "var": "--series-3",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart series 3 (green)."
+    },
+    "4": {
+     "var": "--series-4",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart series 4 (amber)."
+    },
+    "5": {
+     "var": "--series-5",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart series 5 (pink)."
+    },
+    "other": {
+     "var": "--series-other",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart series for the rest (grey)."
+    }
+   },
+   "chart": {
+    "1": {
+     "var": "--chart-1",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart grey ramp 1."
+    },
+    "2": {
+     "var": "--chart-2",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart grey ramp 2."
+    },
+    "3": {
+     "var": "--chart-3",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart grey ramp 3."
+    },
+    "4": {
+     "var": "--chart-4",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart grey ramp 4."
+    },
+    "5": {
+     "var": "--chart-5",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart grey ramp 5."
+    }
+   }
+  },
+  "gradient-sky": {
+   "value": [
+    {
+     "color": "#05d1ff",
+     "position": 0.0
+    },
+    {
+     "color": "#84e9ff",
+     "position": 0.5
+    },
+    {
+     "color": "#ffffff",
+     "position": 1.0
+    }
+   ],
+   "type": "gradient",
+   "source": "css-var --gradient-sky (light; lab stops converted to sRGB)",
+   "description": "The hero sky wash (light): pale blue to white, top to bottom."
+  }
+ },
+ "dark": {
+  "background": {
+   "var": "--background",
+   "type": "color",
+   "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+   "description": "The page field (#fcfcfc light / #000000 dark)."
+  },
+  "foreground": {
+   "var": "--foreground",
+   "type": "color",
+   "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+   "description": "Body and heading ink."
+  },
+  "card": {
+   "default": {
+    "var": "--card",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Card fills (#ffffff / #171717)."
+   },
+   "foreground": {
+    "var": "--card-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Text on cards."
+   }
+  },
+  "popover": {
+   "default": {
+    "var": "--popover",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Popover/menu surfaces."
+   },
+   "foreground": {
+    "var": "--popover-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Text on popovers."
+   }
+  },
+  "primary": {
+   "default": {
+    "var": "--primary",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "The primary fill (#171717 / #e5e5e5) — buttons, active pills."
+   },
+   "foreground": {
+    "var": "--primary-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Text on the primary fill."
+   }
+  },
+  "secondary": {
+   "default": {
+    "var": "--secondary",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Secondary fills (#f5f5f5 / #262626)."
+   },
+   "foreground": {
+    "var": "--secondary-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Text on secondary fills."
+   }
+  },
+  "muted": {
+   "default": {
+    "var": "--muted",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Muted surfaces (#f5f5f5 / #262626)."
+   },
+   "foreground": {
+    "var": "--muted-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Secondary text (#6e6e6e / #a1a1a1)."
+   },
+   "hover": {
+    "var": "--muted-hover",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Muted hover fill (light #f5f5f5 / dark 50% #262626)."
+   }
+  },
+  "accent": {
+   "default": {
+    "var": "--accent",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "The accent sky #01bcff (identical in both themes)."
+   },
+   "foreground": {
+    "var": "--accent-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Text on the accent (#fafafa / #0a0a0a)."
+   }
+  },
+  "destructive": {
+   "default": {
+    "var": "--destructive",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Destructive red (#d40c1a / #f75e54)."
+   },
+   "foreground": {
+    "var": "--destructive-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Text on the destructive fill."
+   },
+   "border": {
+    "var": "--destructive-border",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Destructive border."
+   },
+   "ring": {
+    "var": "--destructive-ring",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Destructive focus ring (20–40% red)."
+   },
+   "subtle": {
+    "var": "--destructive-subtle",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Destructive tint fill (10–20% red)."
+   }
+  },
+  "success": {
+   "default": {
+    "var": "--success",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Success green (#037650 / #00bc7d)."
+   },
+   "foreground": {
+    "var": "--success-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Text on the success fill."
+   }
+  },
+  "warning": {
+   "default": {
+    "var": "--warning",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Warning amber (#a16601 / #fe9a00)."
+   },
+   "foreground": {
+    "var": "--warning-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Text on the warning fill."
+   },
+   "content": {
+    "var": "--warning-content",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Warning text/icon on light tints."
+   },
+   "icon": {
+    "var": "--warning-icon",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Warning icon colour."
+   },
+   "border": {
+    "var": "--warning-border",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Warning border."
+   },
+   "subtle": {
+    "default": {
+     "var": "--warning-subtle",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Warning tint fill."
+    },
+    "hover": {
+     "var": "--warning-subtle-hover",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Warning tint hover."
+    }
+   }
+  },
+  "highlight": {
+   "default": {
+    "var": "--highlight",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Highlight yellow (#f7cc4b / #efa30f)."
+   },
+   "foreground": {
+    "var": "--highlight-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Text on the highlight."
+   }
+  },
+  "border": {
+   "var": "--border",
+   "type": "color",
+   "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+   "description": "Hairline borders (#e5e5e5 / 10% white)."
+  },
+  "input": {
+   "var": "--input",
+   "type": "color",
+   "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+   "description": "Field borders (#e5e5e5 / 15% white)."
+  },
+  "ring": {
+   "var": "--ring",
+   "type": "color",
+   "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+   "description": "The interactive ring — accent sky (identical in both themes)."
+  },
+  "hairline": {
+   "var": "--hairline",
+   "type": "color",
+   "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+   "description": "The 5–10% hairline (dividers, underlines)."
+  },
+  "paper": {
+   "var": "--paper",
+   "type": "color",
+   "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+   "description": "The paper/print surface (white)."
+  },
+  "overlay": {
+   "default": {
+    "var": "--overlay",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "The overlay/scrim colour (black)."
+   },
+   "foreground": {
+    "var": "--overlay-foreground",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Text on the scrim (white)."
+   }
+  },
+  "surface": {
+   "sunken": {
+    "var": "--surface-sunken",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "The sunken surface (white / black)."
+   },
+   "bubble": {
+    "var": "--surface-bubble",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "The chat-bubble surface (#f5f5f5 / 60% #262626)."
+   },
+   "control": {
+    "var": "--surface-control",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Control fill (#f5f5f5 / #171717)."
+   },
+   "mention": {
+    "var": "--surface-mention",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "The mention/chip surface (#e5e5e5 / #040404)."
+   }
+  },
+  "sidebar": {
+   "default": {
+    "var": "--sidebar",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Docs/sidebar field."
+   },
+   "foreground": {
+    "default": {
+     "var": "--sidebar-foreground",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Sidebar text."
+    },
+    "muted": {
+     "var": "--sidebar-foreground-muted",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Muted sidebar text."
+    }
+   },
+   "primary": {
+    "default": {
+     "var": "--sidebar-primary",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Sidebar primary fill."
+    },
+    "foreground": {
+     "var": "--sidebar-primary-foreground",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Text on the sidebar primary."
+    }
+   },
+   "accent": {
+    "default": {
+     "var": "--sidebar-accent",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Sidebar hover/accent fill."
+    },
+    "foreground": {
+     "var": "--sidebar-accent-foreground",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Text on the sidebar accent."
+    }
+   },
+   "border": {
+    "var": "--sidebar-border",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Sidebar hairline."
+   },
+   "ring": {
+    "var": "--sidebar-ring",
+    "type": "color",
+    "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+    "description": "Sidebar focus ring."
+   }
+  },
+  "palette": {
+   "mode": {
+    "image": {
+     "default": {
+      "var": "--mode-image",
+      "type": "color",
+      "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+      "description": "Image-mode hue (blue)."
+     },
+     "foreground": {
+      "var": "--mode-image-foreground",
+      "type": "color",
+      "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+      "description": "Text on image-mode."
+     }
+    },
+    "video": {
+     "default": {
+      "var": "--mode-video",
+      "type": "color",
+      "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+      "description": "Video-mode hue (purple)."
+     },
+     "foreground": {
+      "var": "--mode-video-foreground",
+      "type": "color",
+      "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+      "description": "Text on video-mode."
+     }
+    },
+    "audio": {
+     "default": {
+      "var": "--mode-audio",
+      "type": "color",
+      "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+      "description": "Audio-mode hue (orange)."
+     },
+     "foreground": {
+      "var": "--mode-audio-foreground",
+      "type": "color",
+      "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+      "description": "Text on audio-mode."
+     }
+    },
+    "3d": {
+     "default": {
+      "var": "--mode-3d",
+      "type": "color",
+      "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+      "description": "3D-mode hue (teal)."
+     },
+     "foreground": {
+      "var": "--mode-3d-foreground",
+      "type": "color",
+      "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+      "description": "Text on 3D-mode."
+     }
+    }
+   },
+   "series": {
+    "1": {
+     "var": "--series-1",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart series 1 (blue)."
+    },
+    "2": {
+     "var": "--series-2",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart series 2 (orange)."
+    },
+    "3": {
+     "var": "--series-3",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart series 3 (green)."
+    },
+    "4": {
+     "var": "--series-4",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart series 4 (amber)."
+    },
+    "5": {
+     "var": "--series-5",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart series 5 (pink)."
+    },
+    "other": {
+     "var": "--series-other",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart series for the rest (grey)."
+    }
+   },
+   "chart": {
+    "1": {
+     "var": "--chart-1",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart grey ramp 1."
+    },
+    "2": {
+     "var": "--chart-2",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart grey ramp 2."
+    },
+    "3": {
+     "var": "--chart-3",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart grey ramp 3."
+    },
+    "4": {
+     "var": "--chart-4",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart grey ramp 4."
+    },
+    "5": {
+     "var": "--chart-5",
+     "type": "color",
+     "source": "declared shadcn-style role on the Tailwind v4 theme layer",
+     "description": "Chart grey ramp 5."
+    }
+   }
+  },
+  "gradient-sky": {
+   "value": [
+    {
+     "color": "#001218",
+     "position": 0.0
+    },
+    {
+     "color": "#010b20",
+     "position": 0.5
+    },
+    {
+     "color": "#0a1a2a",
+     "position": 1.0
+    }
+   ],
+   "type": "gradient",
+   "source": "css-var --gradient-sky (dark; lab stops converted to sRGB)",
+   "description": "The hero sky wash (dark): deep blue-black gradient."
+  }
+ },
+ "component": {
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "56px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The 56px sticky marketing header."
+   },
+   "height-mobile": {
+    "type": "dimension",
+    "value": "56px",
+    "source": "computed height of m-header default (raw/components-computed.json)",
+    "description": "The 56px mobile header."
+   }
+  },
+  "button": {
+   "height-sm": {
+    "type": "dimension",
+    "value": "32px",
+    "source": "computed height of nav-cta default (raw/components-computed.json)",
+    "description": "Small buttons (32px: header CTA, nav, pills, icon rows)."
+   },
+   "height-md": {
+    "type": "dimension",
+    "value": "36px",
+    "source": "computed height of tool-generate default (raw/components-computed.json)",
+    "description": "Medium buttons (36px: tool Generate, model pill)."
+   },
+   "height-lg": {
+    "type": "dimension",
+    "value": "52px",
+    "source": "computed height of send-btn default (raw/components-computed.json)",
+    "description": "Large buttons (52px: Send, plan CTA)."
+   },
+   "padding-x-sm": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "computed paddingLeft of nav-cta default (raw/components-computed.json)",
+    "description": "Small-button horizontal padding (16px)."
+   },
+   "padding-x-lg": {
+    "type": "dimension",
+    "value": "28px",
+    "source": "computed paddingLeft of send-btn default (raw/components-computed.json)",
+    "description": "Large-button horizontal padding (28px)."
+   },
+   "radius-sm": {
+    "type": "dimension",
+    "value": "8px",
+    "source": "computed borderTopLeftRadius of nav-cta default (raw/components-computed.json)",
+    "description": "Small-button radius (8px)."
+   },
+   "radius-md": {
+    "type": "dimension",
+    "value": "12px",
+    "source": "computed borderTopLeftRadius of send-btn default (raw/components-computed.json)",
+    "description": "Standard button radius (12px)."
+   }
+  },
+  "icon-button": {
+   "size": {
+    "type": "dimension",
+    "value": "36px",
+    "source": "computed height of m-menu-button default (raw/components-computed.json)",
+    "description": "The 36px square icon button (the phone-width Menu button)."
+   },
+   "size-sm": {
+    "type": "dimension",
+    "value": "32px",
+    "source": "computed height of theme-toggle default (raw/components-computed.json)",
+    "description": "The 32px icon button (theme toggle)."
+   }
+  },
+  "nav-link": {
+   "height": {
+    "type": "dimension",
+    "value": "32px",
+    "source": "computed height of nav-link default (raw/components-computed.json)",
+    "description": "Header nav link height (32px)."
+   }
+  },
+  "field": {
+   "height": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of field-name default (raw/components-computed.json)",
+    "description": "Text field height (40px; textarea 64px min)."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "8px",
+    "source": "computed borderTopLeftRadius of field-name default (raw/components-computed.json)",
+    "description": "Field radius (8px)."
+   },
+   "width": {
+    "type": "dimension",
+    "value": "640px",
+    "source": "computed width of field-name default (raw/components-computed.json)",
+    "description": "The contact form's 640px field measure."
+   }
+  },
+  "search": {
+   "height": {
+    "type": "dimension",
+    "value": "32px",
+    "source": "computed height of models-search default (raw/components-computed.json)",
+    "description": "Compact search/doc-search field (32–36px)."
+   }
+  },
+  "card": {
+   "radius": {
+    "type": "dimension",
+    "value": "16px",
+    "source": "computed borderTopLeftRadius of plan-card default (raw/components-computed.json)",
+    "description": "Plan/blog card radius (16px)."
+   },
+   "radius-lg": {
+    "type": "dimension",
+    "value": "20px",
+    "source": "computed borderTopLeftRadius of model-card default (raw/components-computed.json)",
+    "description": "Large tile radius (20px: model cards, brand tiles, composer)."
+   },
+   "padding": {
+    "type": "dimension",
+    "value": "24px",
+    "source": "computed paddingTop of plan-card default (raw/components-computed.json)",
+    "description": "Card padding (24px)."
+   },
+   "width-plan": {
+    "type": "dimension",
+    "value": "273px",
+    "source": "computed width of plan-card default (raw/components-computed.json)",
+    "description": "Plan card width (273px)."
+   },
+   "width-model": {
+    "type": "dimension",
+    "value": "354.656px",
+    "source": "computed width of model-card default (raw/components-computed.json)",
+    "description": "Model card width (≈355px)."
+   }
+  },
+  "composer": {
+   "width": {
+    "type": "dimension",
+    "value": "660px",
+    "source": "computed width of composer default (raw/components-computed.json)",
+    "description": "The hero prompt composer width (660px)."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "20px",
+    "source": "computed borderTopLeftRadius of composer default (raw/components-computed.json)",
+    "description": "Composer radius (20px)."
+   },
+   "padding-x": {
+    "type": "dimension",
+    "value": "20px",
+    "source": "computed paddingLeft of composer-input default (raw/components-computed.json)",
+    "description": "Composer inner padding (20px)."
+   }
+  },
+  "form": {
+   "width": {
+    "type": "dimension",
+    "value": "640px",
+    "source": "computed width of contact-form default (raw/components-computed.json)",
+    "description": "The contact form column (640px)."
+   }
+  },
+  "sidebar": {
+   "width": {
+    "type": "dimension",
+    "value": "268px",
+    "source": "computed width of docs-sidebar default (raw/components-computed.json)",
+    "description": "The docs sidebar (268px)."
+   }
+  },
+  "menu-panel": {
+   "width": {
+    "type": "dimension",
+    "value": "390px",
+    "source": "computed width of m-menu-open default (raw/components-computed.json)",
+    "description": "The mobile menu panel (full 390px width)."
+   }
+  },
+  "swatch": {
+   "width": {
+    "type": "dimension",
+    "value": "285.328px",
+    "source": "computed width of brand-swatch default (raw/components-computed.json)",
+    "description": "Brand colour swatch tile (285px)."
+   }
+  }
+ }
+}

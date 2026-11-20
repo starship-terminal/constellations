@@ -1,0 +1,13 @@
+{
+  "_note": "Rules for systems/gumroad. Public signed-out capture of gumroad.com and one creator subdomain: no surface paints machine-private data - nothing was signed into, typed, searched, bought or submitted. Marketing and footer copy may publish Gumroad's own support/sales addresses on its public domains; the captured checkout URL carries the product's public option key only.",
+  "families": [],
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@gumroad\\.com$",
+      "@gumroad\\.io$",
+      "support@gumroad\\.com",
+      "@example\\.com$"
+    ]
+  }
+}

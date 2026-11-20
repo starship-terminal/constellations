@@ -1,10 +1,11 @@
 # Run the repo's freshness gates and tests on every push to main and every pull
-# request. pages.yml only watches the site's inputs, so without this a commit that
-# forgot `make brief`/`make grade` (a systems/**, catalog.json or tools change,
-# say) ran no CI at all. `make check` covers catalog.json, Brief sections,
+# request, so a commit that forgot `make brief`/`make grade` (a systems/**,
+# catalog.json or tools change, say) fails here. `make check` covers catalog.json, Brief sections,
 # scorecard data and scripted grades, and every README's Health section.
-# `make test` runs the tools' tests and every package's own tests; the checkout
-# has no Git LFS content, so tests that read a real screenshot or refero.db skip.
+# `make test` runs the tools' tests and every package's own tests. The checkout
+# skips Git LFS smudge, so tests that read a real screenshot or refero.db skip.
+# The docs job builds the site the home server serves. It runs beside the tests
+# so a green check does not wait out the site build.
 name: Check
 on:
   push:
@@ -12,17 +13,95 @@ on:
   pull_request:
 permissions:
   contents: read
+# A new push to a pull request replaces the run still queued or running for
+# its older commit, so only the newest commit holds a runner. Nothing waits on
+# the older result: the checks that count are the ones on the head commit.
+# Pushes to main each get a group of their own (the commit SHA), so no run on
+# main is ever cancelled or held back by a later merge.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+          lfs: false
+        env:
+          GIT_LFS_SKIP_SMUDGE: 1
+      # make check compares generated files to the base catalog. A depth-1
+      # pull-request checkout has the merge commit only, so fetch the base.
+      - name: Fetch the pull request base and head
+        if: github.event_name == 'pull_request'
+        run: |
+          git fetch --depth=1 origin "${{ github.base_ref }}:refs/remotes/origin/${{ github.base_ref }}"
+          git fetch --depth=1 origin "${{ github.event.pull_request.head.sha }}:refs/pr-head"
+          echo "GITHUB_HEAD_SHA=refs/pr-head" >> "$GITHUB_ENV"
       - uses: actions/setup-python@v6
         with:
           python-version: "3.13"
       - run: make check
       # Pillow, numpy and markdown, so the package tests that need Pillow run
-      # instead of reporting a skip.
+      # instead of reporting a skip. tesseract, so tools/test_redact_images.py
+      # OCRs a real image: that test fails rather than skips when CI is set and
+      # tesseract is missing.
+      - name: Install the tools' Python dependencies and tesseract
+        run: |
+          pip install -r requirements.txt -r tools/requirements-capture.txt
+          sudo apt-get update -q
+          sudo apt-get install -y -q tesseract-ocr
+      - run: make test
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+          lfs: false
+        env:
+          GIT_LFS_SKIP_SMUDGE: 1
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      # The docs site the home server serves: scorecard pages, then site.py.
+      # Nothing else in CI builds it, so a broken page or renderer fails here.
+      - name: Install the site builder's dependencies
+        run: pip install -r requirements.txt
+      - name: Build the docs site
+        run: make docs
+      - name: The docs site never ships the gallery
+        run: test ! -e site/gallery
+  # The kit's browser tests (tools/test_kit_privacy.py SnapshotInABrowser,
+  # tools/test_kit_capture.py MeasureArgs) skip without Playwright, so make test
+  # never runs them. This job installs the version the capture kit uses
+  # (~/.design-systems/pw, docs/CAPTURE.md) with Chromium only, beside the check
+  # job so the browser download does not lengthen it.
+  kit-browser:
+    # Playwright 1.55.0 has no Chromium build for ubuntu-latest (26.04), so this job
+    # stays on 24.04 until the kit moves to a newer Playwright.
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+          lfs: false
+        env:
+          GIT_LFS_SKIP_SMUDGE: 1
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Install Playwright 1.55.0 and Chromium
+        run: |
+          npm install --no-save --prefix "$RUNNER_TEMP/pw" playwright@1.55.0
+          "$RUNNER_TEMP/pw/node_modules/.bin/playwright" install --with-deps chromium
+          echo "PLAYWRIGHT=$RUNNER_TEMP/pw/node_modules/playwright/index.mjs" >> "$GITHUB_ENV"
       - name: Install the tools' Python dependencies
         run: pip install -r requirements.txt -r tools/requirements-capture.txt
-      - run: make test
+      - name: Run the kit's browser tests
+        # -v so the log shows each test ran rather than skipped.
+        run: cd tools && python -m unittest -v test_kit_privacy.SnapshotInABrowser test_kit_capture.MeasureArgs test_kit_capture.IconPaint

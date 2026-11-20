@@ -17,6 +17,7 @@ import catalog  # noqa: E402
 
 SIGNED_IN = HERE / "kit" / "capture" / "signed-in"
 NODE = shutil.which("node")
+PW = os.environ.get("PLAYWRIGHT") or str(Path.home() / ".design-systems/pw/node_modules/playwright/index.mjs")
 
 
 def load(path, name):
@@ -40,16 +41,35 @@ SIGNED = [
     "https://app.example.test/cb?code=abc",
     "https://app.example.test/cb?id_token=abc",
     "https://proxy.example.test/?u=https%3A%2F%2Fx%2Fy.png%3Ftoken%3Dabc",
+    "https://maps.example.test/embed?q=x&key=AIzaFAKEKEY",
+    "https://api.example.test/v1?api_key=abc", "https://api.example.test/v1?apikey=abc",
+    "https://app.example.test/cb?oauth_token=abc", "https://app.example.test/x?auth_token=abc",
+    "https://app.example.test/x?csrf_token=abc", "https://app.example.test/x#jwt=abc",
+    "https://app.example.test/x?session=abc", "https://app.example.test/x?client_secret=abc",
+    "https://cdn.example.test/v.mp4?hdnts=exp=1~acl=x", "https://cdn.example.test/v.mp4?__token__=abc",
+    "https://api.example.test/v1?api-key=abc", "https://api.example.test/v1?access_key=abc",
+    "https://app.example.test/x?session_id=abc", "https://app.example.test/x?sessionid=abc",
+    "https://cdn.example.test/v.mp4?hmac=abc", "https://app.example.test/x?xsrf_token=abc",
+    "https://app.example.test/x?session_token=abc", "https://api.example.test/v1?api_token=abc",
+    "https://acct.example.test/c/f.png?sas_token=abc",
+    "https://app.example.test/cb?refresh_token=abc", "https://app.example.test/x?auth=abc",
 ]
 PLAIN = [
     "https://example.test/page?unit=7",
     "https://example.test/a?tokenizer=1&sigma=2&codec=h264",
+    "https://example.test/a?keyword=x&monkey=1&sessions=3&jwtx=1",
     "https://example.test/docs#tokens",
     "color:#fff",
 ]
 
 
 class SharedList(unittest.TestCase):
+    def test_every_listed_name_has_a_signed_example(self):
+        # so dropping a name from the list cannot pass silently
+        spec = json.loads((SIGNED_IN / "signed-params.json").read_text())
+        for name in spec["params"]:
+            self.assertTrue(any(re.search(r"(?:[?&#]|%3F|%26|%23)(?:amp;)?" + re.escape(name) + r"(?:=|%3D)", u) for u in SIGNED), name)
+
     def test_every_reader_flags_the_same_urls(self):
         for u in SIGNED:
             self.assertTrue(catalog.SIGNED_URL.search(u), u)
@@ -84,6 +104,26 @@ class SharedList(unittest.TestCase):
                     self.assertIn("LEAK", res.stderr)
                     self.assertNotIn("Jane", res.stderr)
 
+    def test_unsnap_refuses_a_missing_snapshot_and_a_label_that_is_a_path(self):
+        with tempfile.TemporaryDirectory() as d:
+            redact = Path(d) / "r.json"
+            redact.write_text(json.dumps({"replace": [["Jane Doe", "gi", "A User"]]}))
+            out = Path(d) / "out"
+            for body, why in [("not a snapshot", "no SNAPSTART"),
+                              ("SNAPSTART" + json.dumps({"label": "Jane Doe/../x", "url": "https://x/"}) + "SNAPMETA<p>ok</p>SNAPEND", "not a plain name"),
+                              ("SNAPSTART" + json.dumps({"label": "../escaped", "url": "https://x/"}) + "SNAPMETA<p>ok</p>SNAPEND", "not a plain name"),
+                              ("SNAPSTART" + json.dumps({"label": "a/b", "url": "https://x/"}) + "SNAPMETA<p>ok</p>SNAPEND", "not a plain name"),
+                              ("SNAPSTART" + json.dumps({"label": "..", "url": "https://x/"}) + "SNAPMETA<p>ok</p>SNAPEND", "not a plain name")]:
+                snap = Path(d) / "snap.txt"
+                snap.write_text(body)
+                res = subprocess.run([sys.executable, str(SIGNED_IN / "unsnap.py"), str(snap), str(out)],
+                                     capture_output=True, text=True, env={**os.environ, "SNAP_REDACT": str(redact)})
+                self.assertNotEqual(res.returncode, 0, body)
+                self.assertIn(why, res.stderr, body)
+                self.assertNotIn("Traceback", res.stderr)
+                self.assertNotIn("Jane", res.stderr)   # a refused label is never echoed
+            self.assertFalse((Path(d) / "escaped.html").exists())
+
     def test_unsnap_finds_an_accented_name_in_the_metadata(self):
         with tempfile.TemporaryDirectory() as d:
             redact = Path(d) / "r.json"
@@ -115,6 +155,11 @@ RAW_PICK = re.compile(r"\b(?:o|out)\[(\w+)\] ?= ?(?:\w+(?:\[\1\]|\.getPropertyVa
 # A single value read raw: p.backgroundImage.slice(…), content: p.content, a resolved custom property.
 RAW_READ = re.compile(r"\b(?:p|q|pc|c|cs|a|b)\.(?:backgroundImage|content)\.(?:slice|replace)\(|\bcontent: (?:p|q|pc|a|b)\.content\b"
                       r"|\bout\.vars\[\w+\] = (?!noUrl\()")
+# The same two shapes under any target name (style[p] = cs[p], vars[k]=bs.getPropertyValue(k),
+# v[n] = (body.getPropertyValue(n) || ...)), for the kit only: RAW_PICK and RAW_READ above name the
+# targets the package copies use, and many package copies (kit-ports.md in the audit) still read raw.
+WIDE_PICK = re.compile(r"\b[\w.]+\[(\w+)\] ?= ?\w+\[\1\](?![\w.(]|\s*[-+*/%])")
+WIDE_PROP = re.compile(r"\b[\w.]+\[[\w.]+\] ?= ?\(?(?:[\w.]+\.)?getPropertyValue\((?![\'\"])")
 NO_URL_DEF = re.compile(r"\bnoUrl = \(v\)")
 NO_URL_USE = re.compile(r"\bnoUrl\(")
 
@@ -158,27 +203,40 @@ def capture_scripts_recording_raw_urls(root):
     return bad
 
 
+def kit_scripts_recording_raw_values(root):
+    """(path, reason) for each of the kit's own capture scripts that copies a computed value or a
+    custom property into a map raw, whatever the map is called. Kit only: see WIDE_PICK."""
+    bad = []
+    root = Path(root)
+    for path in sorted(root.glob("tools/kit/capture/**/*")):
+        if path.suffix not in (".mjs", ".js") or path.name.startswith("test_"):
+            continue
+        src = path.read_text()
+        rel = str(path.relative_to(root))
+        if "getComputedStyle" in src and URL_PROPS.search(src):
+            bad += [(rel, "raw pick " + m.group(0)) for m in WIDE_PICK.finditer(src)]
+        bad += [(rel, "raw custom property " + m.group(0)) for m in WIDE_PROP.finditer(src)]
+    for rel in ("tools/kit/capture/vars.mjs", "tools/kit/capture/electron/shot.mjs"):
+        bad += [(rel, f"custom property read without noUrl at line {n}") for n in vars_reads_without_no_url((root / rel).read_text())]
+        bad += [(rel, f"noUrl used with no definition in scope at line {n}") for n in no_url_scope_errors((root / rel).read_text())]
+    return bad
+
+
 # vars.mjs reads every custom property a stylesheet declares and the value each resolves to. A custom
 # property can hold a url() with a signed or per-account query, so each read of one (any
-# getPropertyValue(name) with a computed name) goes through noUrl. A @font-face descriptor is the one
-# read left alone: its src names the font files.
-PROP_READ = re.compile(r"getPropertyValue\((?!['\"])")
-PROP_READ_SAFE = re.compile(r"noUrl\((?:[\w.]+(?:\([\w.]*\))?\.)*getPropertyValue\((?!['\"])")
+# getPropertyValue(name) with a computed name) goes through noUrl. So does an @font-face rule's src
+# (and the descriptors copied in a loop), which names the font files and can carry the same query.
+# A literal name other than 'src' (font-family, font-weight...) holds no URL and is left alone.
+PROP_READ = re.compile(r"getPropertyValue\((?!['\"](?!src['\"]))")
+SRC_ID = re.compile(r"srcId\((?:[\w.]+\.)*getPropertyValue\('src'\)\)")
+PROP_READ_SAFE = re.compile(r"noUrl\((?:[\w.]+(?:\([\w.]*\))?\.)*getPropertyValue\((?!['\"](?!src['\"]))")
 
 
 def vars_reads_without_no_url(src):
-    """Line numbers in a vars.mjs source where a custom property's value is read without noUrl."""
-    bad, font = [], None   # font: the indent of the @font-face branch the line is inside, if any
-    for n, line in enumerate(src.splitlines(), 1):
-        ind = len(line) - len(line.lstrip())
-        if font is not None and line.strip() and (ind <= font or line.strip().startswith("continue")):
-            font = None
-        if "FONT_FACE_RULE" in line and line.rstrip().endswith("{"):
-            font = ind
-            continue
-        if font is None and len(PROP_READ.findall(line)) != len(PROP_READ_SAFE.findall(line)):
-            bad.append(n)
-    return bad
+    """Line numbers in a vars.mjs source where a custom property's or font-face src's value is read without noUrl."""
+    # srcId(...) only hashes a src (queries cut) to tell two faces apart; the hash is never recorded as a value.
+    lines = [SRC_ID.sub("", line) for line in src.splitlines()]
+    return [n for n, line in enumerate(lines, 1) if len(PROP_READ.findall(line)) != len(PROP_READ_SAFE.findall(line))]
 
 
 def vars_scripts_recording_raw_values(root):
@@ -199,6 +257,56 @@ def js_block(path, start, end):
     i = next(n for n, l in enumerate(lines) if l.lstrip().startswith(start))
     j = next(n for n in range(i, len(lines)) if lines[n].lstrip().startswith(end))
     return "\n".join(lines[i:j + 1])
+
+
+@unittest.skipIf(NODE is None, "node is not on PATH")
+class ConsoleScrub(unittest.TestCase):
+    """Package captures commit their logs (raw/*.log), and a Playwright error quotes the locator it failed on
+    and, on navigation, the page URL. Each capture script that prints such errors runs here in a scratch copy of
+    the kit, with a stub Playwright whose launch throws an error carrying two queries, and must print the
+    message without them."""
+    SCRIPTS = ["icons.mjs", "layout.mjs", "motion-probe.mjs", "public/measure.mjs", "public/public.mjs", "signed-in/measure.mjs"]
+
+    def test_every_script_prints_errors_without_their_queries(self):
+        for rel in self.SCRIPTS:
+            with self.subTest(script=rel), tempfile.TemporaryDirectory() as d:
+                d = Path(d)
+                capture = d / "pkg/tools/capture"
+                shutil.copytree(HERE / "kit/capture", capture, ignore=shutil.ignore_patterns("test_*", "native"))
+                stub = d / "playwright-stub.mjs"
+                stub.write_text("const launch = async () => { throw new Error(\"page.goto: net::ERR_FAILED at "
+                                "https://cdn.example.test/a.png?token=SECRET1 waiting for locator('img[src=\\\"/b.png?sig=SECRET2\\\"]')\"); };\n"
+                                "export const chromium = { launch, connectOverCDP: launch };\nexport default { chromium };\n")
+                snaps = d / "snaps"
+                snaps.mkdir()
+                (snaps / "home-dark.html").write_text("<html><head><style>:root{--a:1px}</style></head><body></body></html>")
+                # every page copy the signed-in specs name, with the metadata snapshot.js writes beside it
+                labels = set(re.findall(r"snap: '([^']+)'", (HERE / "kit/capture/signed-in/measure.mjs").read_text())) | {"home-dark"}
+                for label in labels:
+                    (snaps / f"{label}.html").write_text("<html><body></body></html>")
+                    (snaps / f"{label}.json").write_text('{"url": "https://x.test/", "w": 1440, "h": 900}')
+                env = {**os.environ, "PLAYWRIGHT": stub.as_uri(), "KIT_EXAMPLE": "1", "SNAPS": str(snaps), "RAW": str(d / "raw"),
+                       "HOME": str(d / "home"), "USERPROFILE": str(d / "home")}
+                res = subprocess.run([NODE, str(capture / rel)], capture_output=True, text=True, cwd=d, timeout=60, env=env)
+                out = res.stdout + res.stderr
+                self.assertNotEqual(res.returncode, 0, out[-1500:])
+                self.assertIn("cdn.example.test/a.png", out, out[-1500:])   # the error was printed
+                for secret in ("SECRET1", "SECRET2", "token=", "sig="):
+                    self.assertNotIn(secret, out, out[-1500:])
+
+    def test_scrub_console_cleans_strings_and_errors(self):
+        mod = (HERE / "kit/capture/no-query.mjs").as_uri()
+        script = (f"import({json.dumps(mod)}).then(({{ scrubConsole }}) => {{ scrubConsole();"
+                  "console.log('failed', 'img[src=\"/a?sig=S1\"]', 3); console.error(new Error('at /b?token=S2'));"
+                  "console.warn('ok /c'); })")
+        res = subprocess.run([NODE, "-e", script], capture_output=True, text=True, timeout=30)
+        self.assertEqual(res.returncode, 0, res.stderr)
+        out = res.stdout + res.stderr
+        self.assertIn('failed img[src="/a"] 3', res.stdout)
+        self.assertIn("at /b", res.stderr)
+        self.assertIn("ok /c", res.stderr)
+        self.assertNotIn("S1", out)
+        self.assertNotIn("S2", out)
 
 
 class PackageCaptureScripts(unittest.TestCase):
@@ -222,6 +330,23 @@ class PackageCaptureScripts(unittest.TestCase):
             self.assertTrue(RAW_READ.search(raw), raw)
         self.assertFalse(RAW_READ.search("out.vars[n] = noUrl(v);"))
 
+    def test_kit_scripts_record_no_value_raw_under_any_name(self):
+        # The Electron route wrote every custom property raw as v[n] = (body.getPropertyValue(n) || ...),
+        # a target name the package-wide patterns above do not know.
+        self.assertEqual(kit_scripts_recording_raw_values(HERE.parent), [])
+
+    def test_the_wide_patterns_catch_each_shape(self):
+        for raw in ("for (const p of PROPS) style[p] = cs[p];", "vars[k]=bs.getPropertyValue(k)",
+                    "for (const n of names) v[n] = (body.getPropertyValue(n) || html.getPropertyValue(n)).trim();",
+                    "out.vars[n] = root.getPropertyValue(n).trim();"):
+            self.assertTrue(WIDE_PICK.search(raw) or WIDE_PROP.search(raw), raw)
+        for ok in ("style[p] = noUrl(cs[p]);", "vars[k] = noUrl(bs.getPropertyValue(k));", "v[n] = read(n);",
+                   "o[k] = c.getPropertyValue('font-family');", "seen[k] = seen[k] + 1;", "o[p] = cs[p].slice(0, 9);"):
+            self.assertFalse(WIDE_PICK.search(ok) or WIDE_PROP.search(ok), ok)
+        # the line every package's electron/shot.mjs still carries, which the vars lint flags too
+        self.assertEqual(vars_reads_without_no_url(
+            "  for (const n of [...names].sort()) v[n] = (body.getPropertyValue(n) || html.getPropertyValue(n)).trim();"), [1])
+
     def test_every_vars_script_records_custom_properties_through_no_url(self):
         # Declared values (props[k], decls, root/dark) and resolved ones (raw, resolved[w], theme) alike.
         self.assertEqual(vars_scripts_recording_raw_values(HERE.parent), [])
@@ -238,15 +363,52 @@ class PackageCaptureScripts(unittest.TestCase):
             self.assertEqual(vars_reads_without_no_url(raw), [1], raw)
         for ok in ("props[k] = noUrl(r.style.getPropertyValue(k).trim());", "const raw = noUrl(getComputedStyle(el).getPropertyValue(name).trim());",
                    "return Object.fromEntries(ns.map((n) => [n, noUrl(cs.getPropertyValue(n).trim())]));",
-                   "ff.push({ family: r.style.getPropertyValue('font-family'), src: r.style.getPropertyValue('src') });"):
+                   "ff.push({ family: r.style.getPropertyValue('font-family'), src: noUrl(r.style.getPropertyValue('src')) });",
+                   "for (let i = 0; i < r.style.length; i++) o[r.style[i]] = noUrl(r.style.getPropertyValue(r.style[i]).trim());"):
             self.assertEqual(vars_reads_without_no_url(ok), [], ok)
-        font = "if (r.type === CSSRule.FONT_FACE_RULE) {\n  const o = { file };\n  for (const k of r.style) o[k] = r.style.getPropertyValue(k).trim();\n}"
-        self.assertEqual(vars_reads_without_no_url(font), [])
-        # a read just after the font branch runs on every other rule, so it is not exempt
-        after = "if (r.type === CSSRule.FONT_FACE_RULE) {\n  fonts.push(1);\n  continue;\n}\nprops[k] = r.style.getPropertyValue(k);"
-        self.assertEqual(vars_reads_without_no_url(after), [5])
-        after = "if (r.type === CSSRule.FONT_FACE_RULE) {\n  fonts.push(1);\n  continue;\n  props[k] = r.style.getPropertyValue(k);\n}"
-        self.assertEqual(vars_reads_without_no_url(after), [4])
+        # a font-face src is read through noUrl like any other value: raw, by literal name or in a loop, is flagged
+        for raw in ("ff.push({ family: r.style.getPropertyValue('font-family'), src: r.style.getPropertyValue('src') });",
+                    "if (r.type === CSSRule.FONT_FACE_RULE) {\n  const o = { file };\n  for (const k of r.style) o[k] = r.style.getPropertyValue(k).trim();\n}"):
+            self.assertNotEqual(vars_reads_without_no_url(raw), [], raw)
+        self.assertEqual(vars_reads_without_no_url("const o = { family: r.style.getPropertyValue('font-family') };"), [])
+        self.assertEqual(vars_reads_without_no_url("ff.push({ src: noUrl(r.style.getPropertyValue('src')), sid: srcId(r.style.getPropertyValue('src')) });"), [])
+        self.assertEqual(vars_reads_without_no_url("ff.push({ src: noUrl(r.style.getPropertyValue('src')), sid: r.style.getPropertyValue('src') });"), [1])
+
+    def test_vars_scripts_record_no_raw_font_urls(self):
+        # A font response URL, a font-face cssText and a link href can carry a signed query: font URL lists
+        # keep the path only (bare()), cssText goes through noUrl, an href keeps origin and path.
+        root = HERE.parent
+        raw = re.compile(r"fonts\.(?:push|add)\((?!bare\(|o\))|fontfaces\.push\((?!noUrl\()|(?<!hrefPath\()\bm\.getAttribute\('href'\)")
+        bad = []
+        for path in sorted([*root.glob("systems/*/tools/capture/**/vars.mjs"), root / "tools/kit/capture/vars.mjs"]):
+            for n, line in enumerate(path.read_text().splitlines(), 1):
+                if raw.search(line):
+                    bad.append(f"{path.relative_to(root)}:{n}")
+        self.assertEqual(bad, [])
+        for slug in ("brilliant", "coursera"):
+            self.assertIn("bare(", (root / f"systems/{slug}/tools/capture/vars.mjs").read_text())
+
+    def test_a_placeholder_is_recorded_as_a_placeholder_and_every_text_through_no_email(self):
+        for path in (SIGNED_IN / "measure.mjs", HERE / "kit/capture/public/lib.mjs"):
+            src = path.read_text()
+            text = [l for l in src.splitlines() if re.match(r"\s*text: ", l)]
+            self.assertTrue(text, path)
+            for line in text:
+                self.assertNotIn("placeholder", line, path)   # a field's placeholder is not its text
+                self.assertIn("noEmail(", line, path)
+            for line in (l for l in src.splitlines() if "out.placeholder = {" in l or "text: tn.textContent" in l):
+                self.assertIn("noEmail(", line, path)
+            self.assertRegex(src, r"out\.placeholder = \{ text: noEmail\(", path)
+
+    def test_placeholder_fallback_goes_through_no_url(self):
+        # The composer placeholder falls back to the ::before content, a computed value that can be a url().
+        root = HERE.parent
+        bad = []
+        for path in sorted([*root.glob("systems/*/tools/capture/**/measure.mjs"), SIGNED_IN / "measure.mjs"]):
+            for n, line in enumerate(path.read_text().splitlines(), 1):
+                if re.search(r"data-placeholder'\) \|\| b\.content", line):
+                    bad.append(f"{path.relative_to(root)}:{n}")
+        self.assertEqual(bad, [])
 
     def test_each_callback_needs_its_own_no_url(self):
         two = ("const HELPERS = () => {\n  const noUrl = (v) => v;\n  const box = (el) => noUrl(el);\n};\n"
@@ -265,7 +427,7 @@ class JavaScriptHalves(unittest.TestCase):
         return json.loads(res.stdout)
 
     def test_snapshot_cuts_every_signed_query_and_keeps_plain_ones(self):
-        src = js_block(SIGNED_IN / "snapshot.js", "const SIGNED_PARAMS", "const cutSigned")
+        src = js_block(SIGNED_IN / "snapshot.js", "const SIGNED_PARAMS", "const cutSignedUrl")
         got = self.node(src + f"\nconsole.log(JSON.stringify({json.dumps(SIGNED + PLAIN)}.map((u) => [SIGNED.test(u), cutSigned(u)])))")
         for u, (flag, cut) in zip(SIGNED + PLAIN, got):
             self.assertEqual(flag, bool(catalog.SIGNED_URL.search(u)), u)   # the same regex as the python side
@@ -291,6 +453,42 @@ class JavaScriptHalves(unittest.TestCase):
         got = self.node(src + f"\nconsole.log(JSON.stringify({json.dumps(list(cases))}.map(cutSigned)))")
         self.assertEqual(got, list(cases.values()))
 
+    def test_cut_signed_url_reads_a_semicolon_inside_a_url_query(self):
+        # cutSigned stops a query at ";name:" because that starts the next CSS declaration, which is right
+        # for a style attribute and a stylesheet. In any other attribute the ; and : are part of the URL,
+        # so the signed parameter after them was left in (unsnap.py then refused the copy). cutSignedUrl
+        # has no declaration rule, and the attribute pass uses it for every attribute except style.
+        src = js_block(SIGNED_IN / "snapshot.js", "const SIGNED_PARAMS", "const cutSignedUrl")
+        url_cases = {
+            '<img data-src="https://x/p?options=a;b:c&token=abc">': '<img data-src="https://x/p">',
+            'https://x/p?a=1;b:2&X-Amz-Signature=abc': 'https://x/p',
+            'https://x/p?crop=(0,0)&token=abc': 'https://x/p',
+            'https://x/p?a=1&amp;token=abc': 'https://x/p',
+            'https://x/p?unit=7;b:2': 'https://x/p?unit=7;b:2',
+            'https://x/p?page=2#top': 'https://x/p?page=2#top',
+            # a ) or , before a ; is still inside the query: only whitespace, a quote, < > or { } end it
+            '<img data-src="https://x/p?crop=(0,0);b:c&token=abc">': '<img data-src="https://x/p">',
+            'https://x/p?crop=(0,0),b:c&token=abc': 'https://x/p',
+            'https://x/a.png?sig=1 1x, https://x/b.png 2x': 'https://x/a.png 1x, https://x/b.png 2x',
+        }
+        got = self.node(src + f"\nconsole.log(JSON.stringify({json.dumps(list(url_cases))}.map(cutSignedUrl)))")
+        self.assertEqual(got, list(url_cases.values()))
+        # the style-attribute rule is unchanged: it still stops at ;name: so a colour's # never runs into a later url()
+        style = {
+            'color:#fff;background:url(https://x/p.png?sig=1)': 'color:#fff;background:url(https://x/p.png)',
+            'https://x/p?a=1;b:2&token=abc': 'https://x/p?a=1;b:2&token=abc',   # the case cutSignedUrl exists for
+        }
+        got = self.node(src + f"\nconsole.log(JSON.stringify({json.dumps(list(style))}.map(cutSigned)))")
+        self.assertEqual(got, list(style.values()))
+        # on CSS text it can cut more than cutSigned (it runs from a colour's # through the url() and on), never less
+        for css in ('color:#fff;background:url(https://x/p.png?sig=1);margin:0', 'background:url(https://x/p.png?sig=1);color:red', 'background:url(https://x/p.png?sig=1), url(https://x/q.png?token=a)'):
+            got = self.node(src + f"\nconsole.log(JSON.stringify([cutSignedUrl({json.dumps(css)})]))")
+            self.assertFalse(catalog.SIGNED_URL.search(got[0]), got)
+
+    def test_snapshot_attribute_pass_uses_the_url_only_cut_for_non_style_attributes(self):
+        src = (SIGNED_IN / "snapshot.js").read_text()
+        self.assertIn("(a.name === 'style' ? cutSigned : cutSignedUrl)(a.value)", src)
+
     def test_measured_styles_record_no_url(self):
         for path in (SIGNED_IN / "measure.mjs", HERE / "kit/capture/public/lib.mjs"):
             src = js_block(path, "const noUrl", "const noUrl")
@@ -301,6 +499,134 @@ class JavaScriptHalves(unittest.TestCase):
                             "noUrl(\"url('https://x/a\\\\'b(2).png?sig=1')\"), noUrl('url(https://x/p.png?sig=1), none')]))")
             self.assertEqual(got, ['url(…), linear-gradient(red, blue)', 'url("data:image/svg+xml,abc")', 'url(#clip)', 'auto', 3,
                                    'url(…) no-repeat', 'url(…)', 'url(…), none'], path)
+
+    def test_electron_vars_record_no_url_or_query(self):
+        # shot.mjs writes every root custom property beside the screenshot; a signed-in app can set one
+        # to an avatar or asset URL that carries a signature.
+        shot = (HERE / "kit/capture/electron/shot.mjs").read_text()
+        src = next(l.strip() for l in shot.splitlines() if l.strip().startswith("const noUrl = "))
+        self.assertIn("vars.vars = scrubQueries(vars.vars);", shot)   # the recorded values go through no-query.mjs
+        mod = (HERE / "kit/capture/no-query.mjs").as_uri()
+        self.assertEqual(re.search(r"const noUrl = .*?: v\);", src).group(0),
+                         re.search(r"const noUrl = .*?: v\);", (HERE / "kit/capture/vars.mjs").read_text()).group(0))
+        cases = {
+            'url("https://cdn.example.test/a.png?X-Amz-Signature=1")': 'url(…)',
+            '"https://cdn.example.test/a.png?token=abc"': '"https://cdn.example.test/a.png"',
+            'https://cdn.example.test/a.png#access_token=abc': 'https://cdn.example.test/a.png',
+            '"https://cdn.example.test/a(1).png?token=abc"': '"https://cdn.example.test/a(1).png"',
+            '"https://cdn.example.test/a.png?crop=(0,0)&token=abc"': '"https://cdn.example.test/a.png"',
+            'https://cdn.example.test/a.png?crop=(0,0)&token=abc 2x': 'https://cdn.example.test/a.png',   # fails closed: over-cut
+            'avatar?token=secret': 'avatar',
+            '//cdn.example.test/avatar.png?token=secret': '//cdn.example.test/avatar.png',
+            '"//cdn.example.test/a.png#access_token=abc"': '"//cdn.example.test/a.png"',
+            'image-set("//cdn.example.test/a.png?sig=1" 1x, //cdn.example.test/b.png?sig=2 2x)': 'image-set("//cdn.example.test/a.png" 1x, //cdn.example.test/b.png',
+            '/media/avatar.png?token=secret': '/media/avatar.png',
+            '"avatar.png?sig=abc"': '"avatar.png"',
+            '/avatar.png?crop=(0,0)&token=secret': '/avatar.png',
+            'avatar(1).png?token=secret': 'avatar(1).png',
+            'calc(100% - 2px)': 'calc(100% - 2px)',
+            'url(data:image/svg+xml,abc) no-repeat': 'url(data:image/svg+xml,abc) no-repeat',
+            '#5e6ad2': '#5e6ad2',
+            '0 1px 2px rgba(0, 0, 0, 0.1)': '0 1px 2px rgba(0, 0, 0, 0.1)',
+            '': '',
+        }
+        script = (f"import({json.dumps(mod)}).then(({{ noQuery }}) => {{ {src}\n"
+                  f"console.log(JSON.stringify({json.dumps(list(cases))}.map((v) => noQuery(noUrl(v))))); }})")
+        got = self.node(script)
+        self.assertEqual(got, list(cases.values()))
+        for v in got:
+            self.assertFalse(catalog.SIGNED_URL.search(v), v)
+        # body's own value wins whenever it has one, a blank override included; html's is the fallback
+        page = {"H": {"--a": " red", "--b": " blue", "--c": "url(https://x.test/a.png?sig=1)"}, "B": {"--a": " ", "--b": ""}}
+        stub = (f"const VALUES = {json.dumps(page)}; const document = {{ documentElement: 'H', body: 'B' }};\n"
+                "const getComputedStyle = (e) => ({ getPropertyValue: (n) => VALUES[e][n] ?? '' });\n")
+        src = js_block(HERE / "kit/capture/electron/shot.mjs", "const noUrl", "const read")
+        got = self.node(stub + src + "\nconsole.log(JSON.stringify(['--a', '--b', '--c'].map(read)))")
+        self.assertEqual(got, ["", "blue", "url(…)"])
+
+    def test_the_no_query_node_tests_pass(self):
+        # tools/kit/capture/test_no_query.mjs: the full case table, and keys that clean alike being merged
+        # the TAP reporter is named: node picks the spec reporter by itself on CI, whose counts read "ℹ pass 5"
+        res = subprocess.run([NODE, "--test", "--test-reporter=tap", str(HERE / "kit/capture/test_no_query.mjs")],
+                             capture_output=True, text=True, timeout=60)
+        self.assertEqual(res.returncode, 0, res.stdout[-3000:] + res.stderr[-1000:])
+        self.assertRegex(res.stdout, r"(?m)^# pass [1-9]")
+        self.assertRegex(res.stdout, r"(?m)^# fail 0$")
+
+    def test_vars_mjs_writes_its_output_through_the_query_scrub(self):
+        # vars.mjs records declared and resolved values and selectors; noUrl only sees url(), so a bare,
+        # scheme-relative or relative URL with a query kept it until the whole output went through scrubQueries.
+        src = (HERE / "kit/capture/vars.mjs").read_text()
+        self.assertIn("const saved = scrubQueries(out);", src)
+        self.assertIn("JSON.stringify(saved, null, 1)", src)
+        self.assertIn("from './no-query.mjs'", src)
+
+    @unittest.skipIf(not Path(PW).is_file(), "the capture Playwright is not installed")
+    def test_vars_mjs_prints_no_query_either(self):
+        # Train 19: the saved JSON was scrubbed, but the console summary printed the raw selector map, and
+        # package captures commit their console output (raw/*.log). Run vars.mjs on a page copy holding a
+        # selector with a query, and look for the id in both the file and stdout.
+        with tempfile.TemporaryDirectory() as d:
+            pkg, snaps = Path(d) / "pkg", Path(d) / "snaps"
+            (pkg / "tools/capture").mkdir(parents=True)
+            snaps.mkdir()
+            for f in ("vars.mjs", "no-query.mjs"):
+                shutil.copy(HERE / "kit/capture" / f, pkg / "tools/capture" / f)
+            (snaps / "home.html").write_text('<html><head><style>img[src="/avatar?account_id=12345"]{--avatar-size:32px}'
+                                             ' a[href=/u?session=abc]{--link:#00f} :root{--bg:#fff}</style></head><body></body></html>')
+            res = subprocess.run([NODE, str(pkg / "tools/capture/vars.mjs")], capture_output=True, text=True, timeout=120,
+                                 env={**os.environ, "SNAPS": str(snaps), "PLAYWRIGHT": PW, "KIT_EXAMPLE": "1"})
+            self.assertEqual(res.returncode, 0, res.stderr[-2000:])
+            saved = (pkg / "raw/css-vars.json").read_text()
+        self.assertIn('img[src=\\"/avatar\\"]', saved)
+        self.assertIn('img[src="/avatar"]', res.stdout)   # the printed map is the scrubbed one
+        for out in (saved, res.stdout, res.stderr):
+            self.assertNotIn("12345", out)
+            self.assertNotIn("account_id", out)
+            self.assertNotIn("session=", out)
+
+    def test_electron_shot_prints_no_query_in_its_errors(self):
+        src = (HERE / "kit/capture/electron/shot.mjs").read_text()
+        for line in (l for l in src.splitlines() if "console.error(`" in l and "${" in l):
+            self.assertIn("noQuery(", line, line)
+
+    def test_measure_scripts_write_every_string_through_the_email_mask(self):
+        # Greptile on PR 1298: styleOf masked text, but attrs['aria-label'] (and an error or a selector)
+        # still reached components-computed.json with the address in it
+        for path in (SIGNED_IN / "measure.mjs", HERE / "kit/capture/public/measure.mjs"):
+            src = path.read_text()
+            writes = [l for l in src.splitlines() if "writeFileSync(OUT" in l]
+            self.assertTrue(writes, path)
+            for line in writes:
+                self.assertIn(", noEmails, 1)", line, path)
+            block = js_block(path, "const EMAIL", "const noEmails")
+            got = self.node(block + "\nconsole.log(JSON.stringify({ attrs: { 'aria-label': 'Switch to person.name@example.co' }, "
+                            "error: 'toggle refused: A \"a@b.example\"', n: 3, list: ['x', 'y@z.test'] }, noEmails))")
+            self.assertEqual(got, {"attrs": {"aria-label": "Switch to <email>"}, "error": 'toggle refused: A "<email>"', "n": 3, "list": ["x", "<email>"]}, path)
+        self.assertIn("(out.attrs ||= {})[a] = noEmail(el.getAttribute(a))", (SIGNED_IN / "measure.mjs").read_text())
+
+    def test_recorded_text_masks_email_addresses(self):
+        # finding 11e-22: a sign-in field's placeholder showed the product's inbox, and styleOf recorded it
+        for path in (SIGNED_IN / "measure.mjs", HERE / "kit/capture/public/lib.mjs"):
+            src = js_block(path, "const noEmail = ", "const noEmail = ")
+            got = self.node(src + "\nconsole.log(JSON.stringify(["
+                            "noEmail('Email hello.team+news@example.co.uk to join'), noEmail('first.last@sub.example.com'),"
+                            "noEmail('Sign in'), noEmail('@handle and a@b'), noEmail(null)]))")
+            self.assertEqual(got, ["Email <email> to join", "<email>", "Sign in", "@handle and a@b", None], path)
+
+    def test_font_face_ids_tell_apart_files_the_masked_src_cannot(self):
+        # noUrl turns every font file URL into url(…), so two faces of one family, weight and style that
+        # differ only in the file would share a key and one would be dropped. srcId hashes the src with
+        # its queries cut, and goes in the key only.
+        root = HERE.parent
+        lines = {line.strip() for slug in ("airbnb", "airtable", "anam", "anthropic", "expedia", "gauth", "refero-design")
+                 for line in (root / f"systems/{slug}/tools/capture/vars.mjs").read_text().splitlines() if line.lstrip().startswith("const srcId = ")}
+        self.assertEqual(len(lines), 1, "every copy carries the same srcId")
+        a, b, c = ('url("https://x.test/a.woff2?X-Amz-Signature=1") format("woff2")', 'url("https://x.test/b.woff2") format("woff2")',
+                   'url("https://x.test/a.woff2?X-Amz-Signature=2") format("woff2")')
+        got = self.node(next(iter(lines)) + f"\nconsole.log(JSON.stringify([{json.dumps(a)}, {json.dumps(b)}, {json.dumps(c)}].map(srcId)))")
+        self.assertNotEqual(got[0], got[1])
+        self.assertEqual(got[0], got[2])
 
     def test_vars_no_url_reads_authored_tokens(self):
         # A declared custom property keeps its authored tokens (unlike a computed value, which the
@@ -317,6 +643,10 @@ class JavaScriptHalves(unittest.TestCase):
             'URL(#clip)': 'URL(#clip)',
             'url("data:image/svg+xml,abc")': 'url("data:image/svg+xml,abc")',
             '4px': '4px',
+            # an @font-face src: the file URLs go, the format hints and local() names stay
+            'url("https://x.test/f.woff2?X-Amz-Signature=1") format("woff2"), url(https://x.test/f.woff?token=a) format("woff")':
+                'url(…) format("woff2"), url(…) format("woff")',
+            'local("Inter"), url(data:font/woff2;base64,AAAA) format("woff2")': 'local("Inter"), url(data:font/woff2;base64,AAAA) format("woff2")',
         }
         got = self.node(src + f"\nconsole.log(JSON.stringify({json.dumps(list(cases))}.map(noUrl)))")
         self.assertEqual(got, list(cases.values()))
@@ -449,14 +779,28 @@ console.log(JSON.stringify(out));
 
 
 
-@unittest.skipIf(NODE is None or not Path(PLAYWRIGHT).is_file(), "node or the capture Playwright is not installed")
+@unittest.skipIf(NODE is None, "node is not on PATH")
 class RawShotsStayOutOfTheRepo(unittest.TestCase):
     def test_public_capture_needs_a_scratch_dir_outside_a_package(self):
+        # A copy of the capture tree in a scratch package, with a stand-in Playwright whose launch throws:
+        # if the RAW guard ever regressed, this fails without opening a browser, reaching the network or
+        # writing into the checkout. So it needs no Playwright and runs in CI too.
         env = {k: v for k, v in os.environ.items() if k != "RAW"}
-        res = subprocess.run([NODE, str(HERE / "kit/capture/public/public.mjs")], capture_output=True, text=True,
-                             timeout=60, env={**env, "PLAYWRIGHT": PLAYWRIGHT})
-        self.assertEqual(res.returncode, 2, res.stderr)
-        self.assertIn("set RAW=", res.stderr)
+        with tempfile.TemporaryDirectory() as d:
+            capture = Path(d) / "pkg" / "tools" / "capture"
+            shutil.copytree(HERE / "kit/capture", capture, ignore=shutil.ignore_patterns("test_*", "native"))
+            stub = Path(d) / "playwright-stub.mjs"
+            stub.write_text("const launch = () => { throw new Error('stub Playwright: no browser in this test'); };\n"
+                            "export const chromium = { launch, connectOverCDP: launch };\nexport default { chromium };\n")
+            res = subprocess.run([NODE, str(capture / "public/public.mjs")], capture_output=True, text=True, cwd=d,
+                                 timeout=60, env={**env, "PLAYWRIGHT": stub.as_uri(), "KIT_EXAMPLE": "1",
+                                                  "HOME": str(Path(d) / "home"), "USERPROFILE": str(Path(d) / "home")})
+            self.assertEqual(res.returncode, 2, res.stderr)
+            self.assertIn("set RAW=", res.stderr)
+            self.assertNotIn("stub Playwright", res.stderr)
+            self.assertEqual(sorted(p.name for p in (Path(d) / "pkg").iterdir()), ["tools"])   # nothing written
+            # a regressed guard would default to ~/.design-systems/<slug>/raw-shots: HOME points in here
+            self.assertFalse((Path(d) / "home").exists())
         src = (HERE / "kit/capture/public/public.mjs").read_text()
         self.assertIn("'.design-systems', path.basename(PKG), 'raw-shots'", src)
         self.assertNotIn("raw/full/", src)

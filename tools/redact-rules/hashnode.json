@@ -1,0 +1,12 @@
+{
+  "_note": "Rules for systems/hashnode. Public signed-out capture of hashnode.com and townhall.hashnode.com: no surface paints machine-private data - nothing was signed into, typed, searched or submitted. Public author names, handles and avatars on posts/cards are published content and are kept. hashnode.com publishes its own public contact addresses on the legal/support pages; @hashnode.com is the product's public domain, allowed.",
+  "families": [],
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@hashnode\\.com$",
+      "@townhall\\.hashnode\\.com$",
+      "@example\\.com$"
+    ]
+  }
+}

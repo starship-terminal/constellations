@@ -1,37 +1,25 @@
 import { expect, test } from "vitest";
-import type { ScreenItem } from "@/contracts/screens";
-import { sampleBrowseScreens } from "@/features/home-browse-data";
+import { browseParams, browseSections } from "@/features/home-browse-data";
 
-const screen = (reference: string, index: number) =>
-  ({
-    id: `${reference}-${index}`,
-    reference: { id: `systems:${reference}` },
-    media: { id: `${reference}-${index}` },
-  }) as unknown as ScreenItem;
-const ids = (items: ScreenItem[]) => items.map((item) => item.id);
-
-test("rotates across products before repeating one, in first-seen order", () => {
-  const items = [
-    screen("a", 0),
-    screen("a", 1),
-    screen("a", 2),
-    screen("b", 0),
-    screen("c", 0),
-    screen("c", 1),
-  ];
-  expect(ids(sampleBrowseScreens(items, 5))).toEqual([
-    "a-0",
-    "b-0",
-    "c-0",
-    "a-1",
-    "c-1",
-  ]);
+test("no search shows up twice for the same kind of capture", () => {
+  const seen = new Set<string>();
+  for (const section of browseSections)
+    for (const choice of section.choices) {
+      const key = `${section.kind}:${choice}`;
+      expect(seen.has(key), key).toBe(false);
+      seen.add(key);
+    }
 });
 
-test("stops at the limit mid-round and when every product is used up", () => {
-  const items = [screen("a", 0), screen("b", 0), screen("a", 1)];
-  expect(ids(sampleBrowseScreens(items, 1))).toEqual(["a-0"]);
-  expect(ids(sampleBrowseScreens(items))).toEqual(["a-0", "b-0", "a-1"]);
-  expect(sampleBrowseScreens([], 8)).toEqual([]);
-  expect(sampleBrowseScreens(items, 0)).toEqual([]);
+test("the server samples the eight cards; the page shows them as sent", () => {
+  const params = browseParams(browseSections[0], "Settings", "mobile");
+  expect(Object.fromEntries(params)).toEqual({
+    q: "Settings",
+    kind: "screenshot",
+    scope: "media",
+    limit: "8",
+    perProduct: "2",
+    platform: "mobile",
+  });
+  expect(browseParams(browseSections[2], "Menu").has("platform")).toBe(false);
 });

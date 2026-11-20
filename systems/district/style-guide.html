@@ -1,0 +1,1111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>District style guide</title>
+<meta name="description" content="District design tokens and the public booking surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-ui: BeVietnamPro, sans-serif;
+  --font-family-display: PassengerSerif;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 32px;
+  --font-size-4xl: 40px;
+  --font-size-base: 14px;
+  --font-size-lg: 16px;
+  --font-size-sm: 12px;
+  --font-size-xl: 18px;
+  --font-size-xs: 10px;
+  --font-size-measured-label: var(--font-size-base);
+  --font-size-measured-body: var(--font-size-lg);
+  --font-size-measured-price: var(--font-size-lg);
+  --font-size-measured-section: 28px;
+  --font-size-measured-display: var(--font-size-4xl);
+  --font-lineHeight-2xl: 32px;
+  --font-lineHeight-3xl: 40px;
+  --font-lineHeight-base: 20px;
+  --font-lineHeight-lg: 24px;
+  --font-lineHeight-sm: 16px;
+  --font-lineHeight-xl: 28px;
+  --font-lineHeight-xs: 16px;
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --color-black-alpha-16: rgba(0, 0, 0, 0.16);
+  --color-black-alpha-24: rgba(0, 0, 0, 0.24);
+  --color-black-alpha-32: rgba(0, 0, 0, 0.32);
+  --color-black-alpha-40: rgba(0, 0, 0, 0.4);
+  --color-black-alpha-48: rgba(0, 0, 0, 0.48);
+  --color-black-alpha-56: rgba(0, 0, 0, 0.56);
+  --color-black-alpha-64: rgba(0, 0, 0, 0.64);
+  --color-black-alpha-72: rgba(0, 0, 0, 0.72);
+  --color-black-alpha-8: rgba(0, 0, 0, 0.08);
+  --color-black-alpha-80: rgba(0, 0, 0, 0.8);
+  --color-black-alpha-88: rgba(0, 0, 0, 0.88);
+  --color-blue-100: #e2f1fe;
+  --color-blue-150: #cee7fd;
+  --color-blue-200: #a7d4fb;
+  --color-blue-300: #62b2f8;
+  --color-blue-400: #45a4f7;
+  --color-blue-50: #f5faff;
+  --color-blue-500: #2a96f4;
+  --color-blue-600: #0b70d5;
+  --color-blue-700: #08529b;
+  --color-blue-800: #143152;
+  --color-blue-900: #021831;
+  --color-border-brand: #6444e4;
+  --color-brand-district-black: #000000;
+  --color-brand-district-pink: #e13ff3;
+  --color-brand-district-purple: #6444e4;
+  --color-brand-district-purple-secondary: #9988dc;
+  --color-brand-pure-white: #ffffff;
+  --color-button-brand-background: #6d49fd;
+  --color-button-brand-label: #f7f7f7;
+  --color-button-outline-bg-hover: rgba(0, 0, 0, 0.08);
+  --color-button-outline-bg-pressed: rgba(0, 0, 0, 0.16);
+  --color-button-outline-border-disabled: #8b8b93;
+  --color-button-outline-text: #131316;
+  --color-button-outline-text-disabled: #8b8b93;
+  --color-button-secondary-background-disabled: rgba(0, 0, 0, 0.08);
+  --color-button-text-tertiary: #77777e;
+  --color-ember-100: #f9dbd2;
+  --color-ember-150: #f6cdc0;
+  --color-ember-200: #f2b09c;
+  --color-ember-300: #f09275;
+  --color-ember-400: #e96f49;
+  --color-ember-50: #fdf4f1;
+  --color-ember-500: #da572f;
+  --color-ember-600: #ad401f;
+  --color-ember-700: #823017;
+  --color-ember-800: #57200f;
+  --color-ember-900: #2b1008;
+  --color-gradient-blue: #e2f1fe;
+  --color-gradient-purple: #eae5ff;
+  --color-gradient-red: #ffebef;
+  --color-gradient-yellow: #f9f4dc;
+  --color-green-100: #dcf9e6;
+  --color-green-150: #caf6d9;
+  --color-green-200: #a7f1c0;
+  --color-green-300: #73e89a;
+  --color-green-400: #58e487;
+  --color-green-50: #f2fdf6;
+  --color-green-500: #23e764;
+  --color-green-600: #1abc50;
+  --color-green-700: #158e3e;
+  --color-green-800: #095322;
+  --color-green-900: #042f12;
+  --color-grey-100: #f1f1f2;
+  --color-grey-150: #cfcfd3;
+  --color-grey-200: #bfbfc4;
+  --color-grey-250: #a5a5ac;
+  --color-grey-300: #8b8b93;
+  --color-grey-400: #77777e;
+  --color-grey-50: #f7f7f7;
+  --color-grey-500: #545459;
+  --color-grey-600: #3b3b3f;
+  --color-grey-700: #2c2c2e;
+  --color-grey-800: #1e1e20;
+  --color-grey-900: #131316;
+  --color-icon-brand: #6444e4;
+  --color-peach-100: #fee6e6;
+  --color-peach-150: #fccfcf;
+  --color-peach-200: #f9b8b8;
+  --color-peach-300: #f5a3a3;
+  --color-peach-400: #ff7f7f;
+  --color-peach-50: #fff5f5;
+  --color-peach-500: #ee7373;
+  --color-peach-600: #ab3131;
+  --color-peach-700: #7a1f1f;
+  --color-peach-800: #590d0d;
+  --color-peach-900: #2e0707;
+  --color-pink-100: #fdecfb;
+  --color-pink-150: #fcd9f6;
+  --color-pink-200: #f9b3eb;
+  --color-pink-300: #f566d8;
+  --color-pink-400: #f449d1;
+  --color-pink-50: #fef5fd;
+  --color-pink-500: #f42acc;
+  --color-pink-600: #d110aa;
+  --color-pink-700: #9c1180;
+  --color-pink-800: #5c0a4b;
+  --color-pink-900: #25041e;
+  --color-purple-100: #eae5ff;
+  --color-purple-150: #d5ccff;
+  --color-purple-200: #bcaefe;
+  --color-purple-300: #8972fe;
+  --color-purple-400: #6d49fd;
+  --color-purple-50: #f6f4ff;
+  --color-purple-500: #5631ed;
+  --color-purple-600: #401cce;
+  --color-purple-700: #371ba7;
+  --color-purple-800: #231268;
+  --color-purple-900: #160d3b;
+  --color-red-100: #ffebef;
+  --color-red-150: #ffd7df;
+  --color-red-200: #fea4b6;
+  --color-red-300: #fc618a;
+  --color-red-400: #fb4173;
+  --color-red-50: #fff5f7;
+  --color-red-500: #f42a60;
+  --color-red-600: #ca1646;
+  --color-red-700: #960d32;
+  --color-red-800: #61051e;
+  --color-red-900: #30030f;
+  --color-semantics-dark-background-negative-strong: #ff3d38;
+  --color-semantics-dark-background-negative-weak: #ffebef;
+  --color-semantics-dark-background-neutral-inverse: #414244;
+  --color-semantics-dark-background-neutral-medium: #9d9ea0;
+  --color-semantics-dark-background-neutral-strong: #dfe0e2;
+  --color-semantics-dark-background-neutral-weak: #606163;
+  --color-semantics-dark-background-notice-strong: #ff8c01;
+  --color-semantics-dark-background-notice-weak: #fff8e1;
+  --color-semantics-dark-background-offset-medium: #202020;
+  --color-semantics-dark-background-offset-strong: #303030;
+  --color-semantics-dark-background-offset-weak: #202020;
+  --color-semantics-dark-background-positive-strong: #00a657;
+  --color-semantics-dark-background-positive-weak: #e3f6ec;
+  --color-semantics-dark-background-primary-strong: #0079be;
+  --color-semantics-dark-background-primary-weak: #001d33;
+  --color-semantics-dark-background-universal-inverse-strong: #101010;
+  --color-semantics-dark-background-universal-strong: #ffffff;
+  --color-semantics-dark-border-negative-strong: #ff3d38;
+  --color-semantics-dark-border-neutral-inverse: #f4f5f7;
+  --color-semantics-dark-border-neutral-medium: #606163;
+  --color-semantics-dark-border-neutral-strong: #9d9ea0;
+  --color-semantics-dark-border-neutral-weak: #414244;
+  --color-semantics-dark-border-notice-strong: #ff8c01;
+  --color-semantics-dark-border-positive-strong: #00a657;
+  --color-semantics-dark-border-primary-strong: #00abf4;
+  --color-semantics-dark-brand-primary-strong: #0079be;
+  --color-semantics-dark-brand-secondary-strong: #012a72;
+  --color-semantics-dark-button-pressed-background: #00599d;
+  --color-semantics-dark-extended-dim: #e0f5fd;
+  --color-semantics-dark-extended-dull: rgba(7, 11, 39, 0.05);
+  --color-semantics-dark-extended-pale: #e7f1f8;
+  --color-semantics-dark-icon-negative-strong: #ff3d38;
+  --color-semantics-dark-icon-neutral-inverse: #101010;
+  --color-semantics-dark-icon-neutral-medium: #9d9ea0;
+  --color-semantics-dark-icon-neutral-strong: #dfe0e2;
+  --color-semantics-dark-icon-neutral-variant: #b5c9ff;
+  --color-semantics-dark-icon-neutral-weak: #606163;
+  --color-semantics-dark-icon-notice-strong: #ff8c01;
+  --color-semantics-dark-icon-positive-strong: #00a657;
+  --color-semantics-dark-icon-primary-strong: #00abf4;
+  --color-semantics-dark-icon-secondary-strong: #f4f5f7;
+  --color-semantics-dark-icon-universal-inverse-strong: #101010;
+  --color-semantics-dark-icon-universal-strong: #ffffff;
+  --color-semantics-dark-overlay-strong: rgba(16, 16, 16, 0.89);
+  --color-semantics-dark-overlay-weak: rgba(16, 16, 16, 0.39);
+  --color-semantics-dark-pastel-01-strong: #4d49b8;
+  --color-semantics-dark-pastel-01-weak: #e6e5ff;
+  --color-semantics-dark-pastel-02-strong: #326691;
+  --color-semantics-dark-pastel-02-weak: #d5e7f6;
+  --color-semantics-dark-pastel-03-strong: #147361;
+  --color-semantics-dark-pastel-03-weak: #daf4ef;
+  --color-semantics-dark-pastel-04-strong: #009954;
+  --color-semantics-dark-pastel-04-weak: #d9ffee;
+  --color-semantics-dark-pastel-05-strong: #3e5513;
+  --color-semantics-dark-pastel-05-weak: #cedcb4;
+  --color-semantics-dark-pastel-06-strong: #97770c;
+  --color-semantics-dark-pastel-06-weak: #fff8e1;
+  --color-semantics-dark-pastel-07-strong: #6f503c;
+  --color-semantics-dark-pastel-07-weak: #ffe8d9;
+  --color-semantics-dark-pastel-08-strong: #a52b2b;
+  --color-semantics-dark-pastel-08-weak: #ffe1e1;
+  --color-semantics-dark-pastel-09-strong: #b83380;
+  --color-semantics-dark-pastel-09-weak: #ffe5f4;
+  --color-semantics-dark-pastel-10-strong: #84161d;
+  --color-semantics-dark-pastel-10-weak: #f9c9cc;
+  --color-semantics-dark-pastel-11-strong: #7649b8;
+  --color-semantics-dark-pastel-11-weak: #f0e6ff;
+  --color-semantics-dark-pastel-12-strong: #a749b8;
+  --color-semantics-dark-pastel-12-weak: #f1d5f6;
+  --color-semantics-dark-selection-selection: rgba(223, 224, 226, 0.16);
+  --color-semantics-dark-surface-level-1: #101010;
+  --color-semantics-dark-surface-level-2: #303030;
+  --color-semantics-dark-surface-level-3: #202020;
+  --color-semantics-dark-switch-thumb-disabled-off: #9d9ea0;
+  --color-semantics-dark-switch-thumb-disabled-on: #9d9ea0;
+  --color-semantics-dark-switch-thumb-enabled-off: #ffffff;
+  --color-semantics-dark-switch-thumb-enabled-on: #ffffff;
+  --color-semantics-dark-switch-track-disabled-off: #303030;
+  --color-semantics-dark-switch-track-disabled-on: #414244;
+  --color-semantics-dark-switch-track-enabled-off: #414244;
+  --color-semantics-dark-switch-track-enabled-on: #0079be;
+  --color-semantics-dark-text-negative-strong: #ff3d38;
+  --color-semantics-dark-text-neutral-inverse: #101010;
+  --color-semantics-dark-text-neutral-medium: #9d9ea0;
+  --color-semantics-dark-text-neutral-moderate: #cacaca;
+  --color-semantics-dark-text-neutral-strong: #dfe0e2;
+  --color-semantics-dark-text-neutral-variant: #b5c9ff;
+  --color-semantics-dark-text-neutral-weak: #606163;
+  --color-semantics-dark-text-notice-strong: #ff8c01;
+  --color-semantics-dark-text-positive-strong: #00a657;
+  --color-semantics-dark-text-primary-strong: #00abf4;
+  --color-semantics-dark-text-universal-inverse-strong: #101010;
+  --color-semantics-dark-text-universal-strong: #ffffff;
+  --color-semantics-dark-vivid-01-strong: #1399ad;
+  --color-semantics-dark-vivid-01-weak: #034e5c;
+  --color-semantics-dark-vivid-02-strong: #119e4d;
+  --color-semantics-dark-vivid-02-weak: #244f32;
+  --color-semantics-dark-vivid-03-strong: #99781c;
+  --color-semantics-dark-vivid-03-weak: #594e2f;
+  --color-semantics-dark-vivid-04-strong: #856b05;
+  --color-semantics-dark-vivid-05-strong: #b85ca7;
+  --color-semantics-dark-vivid-06-strong: #db326b;
+  --color-semantics-dark-vivid-06-weak: #e34646;
+  --color-semantics-dark-vivid-07-strong: #4a75ff;
+  --color-semantics-dark-vivid-07-weak: #3281e8;
+  --color-semantics-light-background-negative-strong: #fd5154;
+  --color-semantics-light-background-negative-weak: #ffebef;
+  --color-semantics-light-background-neutral-inverse: #ffffff;
+  --color-semantics-light-background-neutral-medium: #7e7e7e;
+  --color-semantics-light-background-neutral-strong: #101010;
+  --color-semantics-light-background-neutral-weak: #e0e0e0;
+  --color-semantics-light-background-notice-strong: #ff9d00;
+  --color-semantics-light-background-notice-weak: #fff8e1;
+  --color-semantics-light-background-offset-medium: #e0f5fd;
+  --color-semantics-light-background-offset-strong: #e7f1f8;
+  --color-semantics-light-background-offset-weak: #f5f9fe;
+  --color-semantics-light-background-positive-strong: #21c179;
+  --color-semantics-light-background-positive-weak: #e3f6ec;
+  --color-semantics-light-background-primary-strong: #00b8f5;
+  --color-semantics-light-background-primary-weak: #e0f5fd;
+  --color-semantics-light-background-universal-inverse-strong: #101010;
+  --color-semantics-light-background-universal-strong: #ffffff;
+  --color-semantics-light-border-negative-strong: #fd5154;
+  --color-semantics-light-border-neutral-inverse: #ffffff;
+  --color-semantics-light-border-neutral-medium: #7e7e7e;
+  --color-semantics-light-border-neutral-strong: #101010;
+  --color-semantics-light-border-neutral-weak: #e0e0e0;
+  --color-semantics-light-border-notice-strong: #ff9d00;
+  --color-semantics-light-border-positive-strong: #21c179;
+  --color-semantics-light-border-primary-strong: #00b8f5;
+  --color-semantics-light-brand-primary-strong: #00b8f5;
+  --color-semantics-light-brand-secondary-strong: #012a72;
+  --color-semantics-light-button-pressed-background: #009de5;
+  --color-semantics-light-extended-dim: #e0f5fd;
+  --color-semantics-light-extended-dull: rgba(7, 11, 39, 0.05);
+  --color-semantics-light-extended-pale: #e7f1f8;
+  --color-semantics-light-icon-negative-strong: #fd5154;
+  --color-semantics-light-icon-neutral-inverse: #ffffff;
+  --color-semantics-light-icon-neutral-medium: #7e7e7e;
+  --color-semantics-light-icon-neutral-strong: #101010;
+  --color-semantics-light-icon-neutral-variant: #101010;
+  --color-semantics-light-icon-neutral-weak: #cacaca;
+  --color-semantics-light-icon-notice-strong: #ff9d00;
+  --color-semantics-light-icon-positive-strong: #21c179;
+  --color-semantics-light-icon-primary-strong: #00b8f5;
+  --color-semantics-light-icon-secondary-strong: #012a72;
+  --color-semantics-light-icon-universal-inverse-strong: #101010;
+  --color-semantics-light-icon-universal-strong: #ffffff;
+  --color-semantics-light-overlay-strong: rgba(16, 16, 16, 0.698);
+  --color-semantics-light-overlay-weak: rgba(16, 16, 16, 0.13);
+  --color-semantics-light-pastel-01-strong: #4d49b8;
+  --color-semantics-light-pastel-01-weak: #e6e5ff;
+  --color-semantics-light-pastel-02-strong: #326691;
+  --color-semantics-light-pastel-02-weak: #d5e7f6;
+  --color-semantics-light-pastel-03-strong: #147361;
+  --color-semantics-light-pastel-03-weak: #daf4ef;
+  --color-semantics-light-pastel-04-strong: #009954;
+  --color-semantics-light-pastel-04-weak: #d9ffee;
+  --color-semantics-light-pastel-05-strong: #3e5513;
+  --color-semantics-light-pastel-05-weak: #cedcb4;
+  --color-semantics-light-pastel-06-strong: #97770c;
+  --color-semantics-light-pastel-06-weak: #fff8e1;
+  --color-semantics-light-pastel-07-strong: #6f503c;
+  --color-semantics-light-pastel-07-weak: #ffe8d9;
+  --color-semantics-light-pastel-08-strong: #a52b2b;
+  --color-semantics-light-pastel-08-weak: #ffe1e1;
+  --color-semantics-light-pastel-09-strong: #b83380;
+  --color-semantics-light-pastel-09-weak: #ffe5f4;
+  --color-semantics-light-pastel-10-strong: #84161d;
+  --color-semantics-light-pastel-10-weak: #f9c9cc;
+  --color-semantics-light-pastel-11-strong: #7649b8;
+  --color-semantics-light-pastel-11-weak: #f0e6ff;
+  --color-semantics-light-pastel-12-strong: #a749b8;
+  --color-semantics-light-pastel-12-weak: #f1d5f6;
+  --color-semantics-light-selection-selection: rgba(7, 11, 39, 0.07);
+  --color-semantics-light-surface-level-1: #ffffff;
+  --color-semantics-light-surface-level-2: #ffffff;
+  --color-semantics-light-surface-level-3: #fafafa;
+  --color-semantics-light-switch-thumb-disabled-off: #ffffff;
+  --color-semantics-light-switch-thumb-disabled-on: #ffffff;
+  --color-semantics-light-switch-thumb-enabled-off: #ffffff;
+  --color-semantics-light-switch-thumb-enabled-on: #ffffff;
+  --color-semantics-light-switch-track-disabled-off: #f4f5f7;
+  --color-semantics-light-switch-track-disabled-on: #e0f5fd;
+  --color-semantics-light-switch-track-enabled-off: #e0e0e0;
+  --color-semantics-light-switch-track-enabled-on: #00b8f5;
+  --color-semantics-light-text-negative-strong: #fd5154;
+  --color-semantics-light-text-neutral-inverse: #ffffff;
+  --color-semantics-light-text-neutral-medium: #7e7e7e;
+  --color-semantics-light-text-neutral-moderate: #414244;
+  --color-semantics-light-text-neutral-strong: #101010;
+  --color-semantics-light-text-neutral-variant: #101010;
+  --color-semantics-light-text-neutral-weak: #cacaca;
+  --color-semantics-light-text-notice-strong: #ff9d00;
+  --color-semantics-light-text-positive-strong: #21c179;
+  --color-semantics-light-text-primary-strong: #00b8f5;
+  --color-semantics-light-text-universal-inverse-strong: #101010;
+  --color-semantics-light-text-universal-strong: #ffffff;
+  --color-semantics-light-vivid-01-strong: #56ccde;
+  --color-semantics-light-vivid-01-weak: #e0f6fa;
+  --color-semantics-light-vivid-02-strong: #27ae5f;
+  --color-semantics-light-vivid-02-weak: #c2e6cd;
+  --color-semantics-light-vivid-03-strong: #e5c97c;
+  --color-semantics-light-vivid-03-weak: #f0deae;
+  --color-semantics-light-vivid-04-strong: #fed533;
+  --color-semantics-light-vivid-05-strong: #f495e3;
+  --color-semantics-light-vivid-06-strong: #b3325d;
+  --color-semantics-light-vivid-06-weak: #eb5757;
+  --color-semantics-light-vivid-07-strong: #223368;
+  --color-semantics-light-vivid-07-weak: #2f81ed;
+  --color-sub-title-text: #8b8123;
+  --color-surface-disabled: rgba(247, 247, 247, 0);
+  --color-text-brand: #6444e4;
+  --color-text-tertiary: #77777e;
+  --color-text-theme: #f7f7f7;
+  --color-theme-black: #131316;
+  --color-theme-full-transparent: rgba(247, 247, 247, 0);
+  --color-theme-purple: #6e52fa;
+  --color-theme-purple-border: rgba(110, 82, 250, 0.21);
+  --color-theme-white: #f7f7f7;
+  --color-white-alpha-16: rgba(255, 255, 255, 0.16);
+  --color-white-alpha-24: rgba(255, 255, 255, 0.24);
+  --color-white-alpha-32: rgba(255, 255, 255, 0.32);
+  --color-white-alpha-40: rgba(255, 255, 255, 0.4);
+  --color-white-alpha-48: rgba(255, 255, 255, 0.48);
+  --color-white-alpha-56: rgba(255, 255, 255, 0.56);
+  --color-white-alpha-64: rgba(255, 255, 255, 0.64);
+  --color-white-alpha-72: rgba(255, 255, 255, 0.72);
+  --color-white-alpha-8: rgba(255, 255, 255, 0.08);
+  --color-white-alpha-80: rgba(255, 255, 255, 0.8);
+  --color-white-alpha-88: rgba(255, 255, 255, 0.88);
+  --color-yellow-100: #f9f4dc;
+  --color-yellow-150: #f8f0bf;
+  --color-yellow-200: #f4e89a;
+  --color-yellow-300: #ebdf6f;
+  --color-yellow-400: #e8d954;
+  --color-yellow-50: #fcfaed;
+  --color-yellow-500: #e4d33a;
+  --color-yellow-600: #b8a91e;
+  --color-yellow-700: #847915;
+  --color-yellow-800: #585004;
+  --color-yellow-900: #322a01;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-4: 4px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-72: 72px;
+  --space-8: 8px;
+  --space-80: 80px;
+  --typography-body1-fontSize: 16px;
+  --typography-body1-fontWeight: 400;
+  --typography-body1-letterSpacing: 0px;
+  --typography-body1-lineHeight: 24px;
+  --typography-body2-fontSize: 14px;
+  --typography-body2-fontWeight: 400;
+  --typography-body2-letterSpacing: 0px;
+  --typography-body2-lineHeight: 22px;
+  --typography-body3-fontSize: 12px;
+  --typography-body3-fontWeight: 400;
+  --typography-body3-letterSpacing: 0px;
+  --typography-body3-lineHeight: 18px;
+  --typography-display1-fontSize: 64px;
+  --typography-display1-fontWeight: 700;
+  --typography-display1-letterSpacing: -.05rem;
+  --typography-display1-lineHeight: 72px;
+  --typography-display2-fontSize: 48px;
+  --typography-display2-fontWeight: 700;
+  --typography-display2-letterSpacing: -.04rem;
+  --typography-display2-lineHeight: 56px;
+  --typography-display3-fontSize: 36px;
+  --typography-display3-fontWeight: 700;
+  --typography-display3-letterSpacing: -.04rem;
+  --typography-display3-lineHeight: 42px;
+  --typography-headline1-fontSize: 32px;
+  --typography-headline1-fontWeight: 700;
+  --typography-headline1-letterSpacing: -.04rem;
+  --typography-headline1-lineHeight: 40px;
+  --typography-headline2-fontSize: 28px;
+  --typography-headline2-fontWeight: 700;
+  --typography-headline2-letterSpacing: -.03rem;
+  --typography-headline2-lineHeight: 34px;
+  --typography-headline3-fontSize: 24px;
+  --typography-headline3-fontWeight: 700;
+  --typography-headline3-letterSpacing: -.02rem;
+  --typography-headline3-lineHeight: 30px;
+  --typography-label1-fontSize: 14px;
+  --typography-label1-fontWeight: 500;
+  --typography-label1-letterSpacing: 0px;
+  --typography-label1-lineHeight: 18px;
+  --typography-label2-fontSize: 12px;
+  --typography-label2-fontWeight: 500;
+  --typography-label2-letterSpacing: 0px;
+  --typography-label2-lineHeight: 16px;
+  --typography-label3-fontSize: 11px;
+  --typography-label3-fontWeight: 500;
+  --typography-label3-letterSpacing: 0px;
+  --typography-label3-lineHeight: 14px;
+  --typography-title-with-separator-fontSize: 12px;
+  --typography-title-with-separator-fontWeight: 500;
+  --typography-title-with-separator-letterSpacing: 1.1875px;
+  --typography-title-with-separator-lineHeight: 14px;
+  --typography-title1-fontSize: 22px;
+  --typography-title1-fontWeight: 600;
+  --typography-title1-letterSpacing: -.01rem;
+  --typography-title1-lineHeight: 28px;
+  --typography-title2-fontSize: 18px;
+  --typography-title2-fontWeight: 600;
+  --typography-title2-letterSpacing: -.01rem;
+  --typography-title2-lineHeight: 22px;
+  --typography-title3-fontSize: 16px;
+  --typography-title3-fontWeight: 600;
+  --typography-title3-letterSpacing: -.01rem;
+  --typography-title3-lineHeight: 20px;
+  --typography-title4-fontSize: 14px;
+  --typography-title4-fontWeight: 600;
+  --typography-title4-letterSpacing: 0px;
+  --typography-title4-lineHeight: 18px;
+  --typography-weight-bold: 700;
+  --typography-weight-medium: 500;
+  --typography-weight-regular: 400;
+  --typography-weight-semibold: 600;
+  --size-page-max-width: 1280px;
+  --radius-chip: 6px;
+  --radius-tab-mobile: 8px;
+  --radius-cta: 12px;
+  --radius-pill: 9999px;
+  --shadow-badge: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px;
+  --motion-control: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --component-nav-bar: 75px;
+  --component-nav-mark: 108px;
+  --component-category-tab: 84px;
+  --component-search: 28px;
+  --component-movie-card: 197.33px;
+  --component-artist-card: 190px;
+  --component-venue-card: 236px;
+  --component-filter-chip: 56px;
+  --component-footer: 410.5px;
+  --component-book-cta: 162.97px;
+  --component-show-card: 296px;
+  --component-mobile-bar: 390px;
+  --component-mobile-card: 364px;
+  --color-background-blur: rgba(208, 208, 208, 0.3);
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f1f1f2;
+  --color-border-accent-blue: #45a4f7;
+  --color-border-accent-ember: #ad401f;
+  --color-border-accent-green: #1abc50;
+  --color-border-accent-pink: #f449d1;
+  --color-border-accent-purple: #6d49fd;
+  --color-border-accent-red: #fb4173;
+  --color-border-accent-yellow: #b8a91e;
+  --color-border-card-primary: rgba(0, 0, 0, 0.08);
+  --color-border-card-secondary: rgba(0, 0, 0, 0.08);
+  --color-border-disabled: #bfbfc4;
+  --color-border-error: #823017;
+  --color-border-intense: rgba(0, 0, 0, 0.24);
+  --color-border-inverse: #77777e;
+  --color-border-moderate-default: rgba(0, 0, 0, 0.16);
+  --color-border-moderate-inverse: rgba(255, 255, 255, 0.16);
+  --color-border-selection: #1e1e20;
+  --color-border-subtle: rgba(0, 0, 0, 0.08);
+  --color-border-success: #158e3e;
+  --color-border-warning: #b8a91e;
+  --color-button-error-background: #f9dbd2;
+  --color-button-outline-border: #131316;
+  --color-button-primary-background-default: #131316;
+  --color-button-primary-background-disabled: #cfcfd3;
+  --color-button-primary-background-pressed: #1e1e20;
+  --color-button-primary-icon-default: #f1f1f2;
+  --color-button-primary-icon-disabled: #8b8b93;
+  --color-button-primary-icon-pressed: #cfcfd3;
+  --color-button-primary-label-default: #f7f7f7;
+  --color-button-primary-label-disabled: #8b8b93;
+  --color-button-primary-label-pressed: #f1f1f2;
+  --color-button-secondary-background-default: #ffffff;
+  --color-button-secondary-background-pressed: rgba(0, 0, 0, 0.08);
+  --color-button-secondary-border-default: #1e1e20;
+  --color-button-secondary-border-disabled: #a5a5ac;
+  --color-button-secondary-border-pressed: #545459;
+  --color-button-secondary-icon-default: #2c2c2e;
+  --color-button-secondary-icon-disabled: #8b8b93;
+  --color-button-secondary-icon-pressed: #3b3b3f;
+  --color-button-secondary-label-default: #131316;
+  --color-button-secondary-label-disabled: #8b8b93;
+  --color-button-secondary-label-pressed: #2c2c2e;
+  --color-button-success-background: #dcf9e6;
+  --color-button-tertiary-background-default: rgba(0, 0, 0, 0.08);
+  --color-button-tertiary-background-disabled: rgba(0, 0, 0, 0.08);
+  --color-button-tertiary-background-pressed: rgba(0, 0, 0, 0.16);
+  --color-button-tertiary-icon-default: #2c2c2e;
+  --color-button-tertiary-icon-disabled: #77777e;
+  --color-button-tertiary-icon-pressed: #3b3b3f;
+  --color-button-tertiary-label-default: #131316;
+  --color-button-tertiary-label-disabled: #77777e;
+  --color-button-tertiary-label-pressed: #2c2c2e;
+  --color-button-text-icon-default: #2c2c2e;
+  --color-button-text-icon-disabled: #bfbfc4;
+  --color-button-text-icon-pressed: #3b3b3f;
+  --color-button-text-label-default: #131316;
+  --color-button-text-label-disabled: #bfbfc4;
+  --color-button-text-label-pressed: #3b3b3f;
+  --color-button-warning-background: #f8f0bf;
+  --color-icon-accent-blue: #2a96f4;
+  --color-icon-accent-ember: #da572f;
+  --color-icon-accent-green: #23e764;
+  --color-icon-accent-peach: #ee7373;
+  --color-icon-accent-pink: #f42acc;
+  --color-icon-accent-purple: #5631ed;
+  --color-icon-accent-red: #f42a60;
+  --color-icon-accent-yellow: #e4d33a;
+  --color-icon-disabled: #bfbfc4;
+  --color-icon-error: #da572f;
+  --color-icon-inverse: #f7f7f7;
+  --color-icon-offer: #5631ed;
+  --color-icon-primary: #1e1e20;
+  --color-icon-quaternary: #545459;
+  --color-icon-secondary: #2c2c2e;
+  --color-icon-success: #1abc50;
+  --color-icon-tertiary: #3b3b3f;
+  --color-icon-vertical-activities: #da572f;
+  --color-icon-vertical-dining: #f42a60;
+  --color-icon-vertical-event: #e4d33a;
+  --color-icon-vertical-movie: #2a96f4;
+  --color-icon-warning: #847915;
+  --color-surface-accent-blue: #cee7fd;
+  --color-surface-accent-ember: #f6cdc0;
+  --color-surface-accent-green: #caf6d9;
+  --color-surface-accent-pink: #fcd9f6;
+  --color-surface-accent-purple: #d5ccff;
+  --color-surface-accent-red: #ffd7df;
+  --color-surface-accent-yellow: #f8f0bf;
+  --color-surface-error: #f9dbd2;
+  --color-surface-inverse: #131316;
+  --color-surface-offer-gradient-end: #bcaefe;
+  --color-surface-offer-gradient-start: #401cce;
+  --color-surface-offer-primary: #6d49fd;
+  --color-surface-offer-secondary: rgba(64, 28, 206, 0.2);
+  --color-surface-primary: #ffffff;
+  --color-surface-secondary: #f1f1f2;
+  --color-surface-selection: rgba(0, 0, 0, 0.08);
+  --color-surface-success: #dcf9e6;
+  --color-surface-transparent-default: rgba(0, 0, 0, 0.08);
+  --color-surface-transparent-secondary: rgba(0, 0, 0, 0.48);
+  --color-surface-warning: #f8f0bf;
+  --color-text-accent-blue: #143152;
+  --color-text-accent-ember: #57200f;
+  --color-text-accent-green: #095322;
+  --color-text-accent-pink: #5c0a4b;
+  --color-text-accent-purple: #231268;
+  --color-text-accent-red: #61051e;
+  --color-text-accent-yellow: #847915;
+  --color-text-disabled: #bfbfc4;
+  --color-text-error: #ad401f;
+  --color-text-inverse: #f7f7f7;
+  --color-text-offer: #6d49fd;
+  --color-text-primary: #131316;
+  --color-text-quaternary: #a5a5ac;
+  --color-text-secondary: #545459;
+  --color-text-success: #158e3e;
+  --color-text-transparent: rgba(0, 0, 0, 0.88);
+  --color-text-warning: #b8a91e;
+  --background-page: var(--color-background-primary);
+  --background-selected: var(--color-gradient-purple);
+  --background-footer: var(--color-grey-800);
+  --text-ink: var(--color-text-primary);
+  --text-muted: var(--color-text-secondary);
+  --text-on-accent: var(--color-text-accent-purple);
+  --action-primary: var(--color-button-primary-background-default);
+  --action-on-primary: var(--color-brand-pure-white);
+  --border-hairline: var(--color-border-subtle);
+  --border-chip-line: var(--color-border-intense);
+  --sg-sans: "BeVietnamPro", ui-sans-serif, system-ui, sans-serif;
+  --sg-serif: "PassengerSerif", "BeVietnamPro", Georgia, serif;
+  --sg-mono: "gg mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+.light {
+  --color-background-blur: rgba(208, 208, 208, 0.3);
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f1f1f2;
+  --color-border-accent-blue: #45a4f7;
+  --color-border-accent-ember: #ad401f;
+  --color-border-accent-green: #1abc50;
+  --color-border-accent-pink: #f449d1;
+  --color-border-accent-purple: #6d49fd;
+  --color-border-accent-red: #fb4173;
+  --color-border-accent-yellow: #b8a91e;
+  --color-border-card-primary: rgba(0, 0, 0, 0.08);
+  --color-border-card-secondary: rgba(0, 0, 0, 0.08);
+  --color-border-disabled: #bfbfc4;
+  --color-border-error: #823017;
+  --color-border-intense: rgba(0, 0, 0, 0.24);
+  --color-border-inverse: #77777e;
+  --color-border-moderate-default: rgba(0, 0, 0, 0.16);
+  --color-border-moderate-inverse: rgba(255, 255, 255, 0.16);
+  --color-border-selection: #1e1e20;
+  --color-border-subtle: rgba(0, 0, 0, 0.08);
+  --color-border-success: #158e3e;
+  --color-border-warning: #b8a91e;
+  --color-button-error-background: #f9dbd2;
+  --color-button-outline-border: #131316;
+  --color-button-primary-background-default: #131316;
+  --color-button-primary-background-disabled: #cfcfd3;
+  --color-button-primary-background-pressed: #1e1e20;
+  --color-button-primary-icon-default: #f1f1f2;
+  --color-button-primary-icon-disabled: #8b8b93;
+  --color-button-primary-icon-pressed: #cfcfd3;
+  --color-button-primary-label-default: #f7f7f7;
+  --color-button-primary-label-disabled: #8b8b93;
+  --color-button-primary-label-pressed: #f1f1f2;
+  --color-button-secondary-background-default: #ffffff;
+  --color-button-secondary-background-pressed: rgba(0, 0, 0, 0.08);
+  --color-button-secondary-border-default: #1e1e20;
+  --color-button-secondary-border-disabled: #a5a5ac;
+  --color-button-secondary-border-pressed: #545459;
+  --color-button-secondary-icon-default: #2c2c2e;
+  --color-button-secondary-icon-disabled: #8b8b93;
+  --color-button-secondary-icon-pressed: #3b3b3f;
+  --color-button-secondary-label-default: #131316;
+  --color-button-secondary-label-disabled: #8b8b93;
+  --color-button-secondary-label-pressed: #2c2c2e;
+  --color-button-success-background: #dcf9e6;
+  --color-button-tertiary-background-default: rgba(0, 0, 0, 0.08);
+  --color-button-tertiary-background-disabled: rgba(0, 0, 0, 0.08);
+  --color-button-tertiary-background-pressed: rgba(0, 0, 0, 0.16);
+  --color-button-tertiary-icon-default: #2c2c2e;
+  --color-button-tertiary-icon-disabled: #77777e;
+  --color-button-tertiary-icon-pressed: #3b3b3f;
+  --color-button-tertiary-label-default: #131316;
+  --color-button-tertiary-label-disabled: #77777e;
+  --color-button-tertiary-label-pressed: #2c2c2e;
+  --color-button-text-icon-default: #2c2c2e;
+  --color-button-text-icon-disabled: #bfbfc4;
+  --color-button-text-icon-pressed: #3b3b3f;
+  --color-button-text-label-default: #131316;
+  --color-button-text-label-disabled: #bfbfc4;
+  --color-button-text-label-pressed: #3b3b3f;
+  --color-button-warning-background: #f8f0bf;
+  --color-icon-accent-blue: #2a96f4;
+  --color-icon-accent-ember: #da572f;
+  --color-icon-accent-green: #23e764;
+  --color-icon-accent-peach: #ee7373;
+  --color-icon-accent-pink: #f42acc;
+  --color-icon-accent-purple: #5631ed;
+  --color-icon-accent-red: #f42a60;
+  --color-icon-accent-yellow: #e4d33a;
+  --color-icon-disabled: #bfbfc4;
+  --color-icon-error: #da572f;
+  --color-icon-inverse: #f7f7f7;
+  --color-icon-offer: #5631ed;
+  --color-icon-primary: #1e1e20;
+  --color-icon-quaternary: #545459;
+  --color-icon-secondary: #2c2c2e;
+  --color-icon-success: #1abc50;
+  --color-icon-tertiary: #3b3b3f;
+  --color-icon-vertical-activities: #da572f;
+  --color-icon-vertical-dining: #f42a60;
+  --color-icon-vertical-event: #e4d33a;
+  --color-icon-vertical-movie: #2a96f4;
+  --color-icon-warning: #847915;
+  --color-surface-accent-blue: #cee7fd;
+  --color-surface-accent-ember: #f6cdc0;
+  --color-surface-accent-green: #caf6d9;
+  --color-surface-accent-pink: #fcd9f6;
+  --color-surface-accent-purple: #d5ccff;
+  --color-surface-accent-red: #ffd7df;
+  --color-surface-accent-yellow: #f8f0bf;
+  --color-surface-error: #f9dbd2;
+  --color-surface-inverse: #131316;
+  --color-surface-offer-gradient-end: #bcaefe;
+  --color-surface-offer-gradient-start: #401cce;
+  --color-surface-offer-primary: #6d49fd;
+  --color-surface-offer-secondary: rgba(64, 28, 206, 0.2);
+  --color-surface-primary: #ffffff;
+  --color-surface-secondary: #f1f1f2;
+  --color-surface-selection: rgba(0, 0, 0, 0.08);
+  --color-surface-success: #dcf9e6;
+  --color-surface-transparent-default: rgba(0, 0, 0, 0.08);
+  --color-surface-transparent-secondary: rgba(0, 0, 0, 0.48);
+  --color-surface-warning: #f8f0bf;
+  --color-text-accent-blue: #143152;
+  --color-text-accent-ember: #57200f;
+  --color-text-accent-green: #095322;
+  --color-text-accent-pink: #5c0a4b;
+  --color-text-accent-purple: #231268;
+  --color-text-accent-red: #61051e;
+  --color-text-accent-yellow: #847915;
+  --color-text-disabled: #bfbfc4;
+  --color-text-error: #ad401f;
+  --color-text-inverse: #f7f7f7;
+  --color-text-offer: #6d49fd;
+  --color-text-primary: #131316;
+  --color-text-quaternary: #a5a5ac;
+  --color-text-secondary: #545459;
+  --color-text-success: #158e3e;
+  --color-text-transparent: rgba(0, 0, 0, 0.88);
+  --color-text-warning: #b8a91e;
+  --background-page: var(--color-background-primary);
+  --background-selected: var(--color-gradient-purple);
+  --background-footer: var(--color-grey-800);
+  --text-ink: var(--color-text-primary);
+  --text-muted: var(--color-text-secondary);
+  --text-on-accent: var(--color-text-accent-purple);
+  --action-primary: var(--color-button-primary-background-default);
+  --action-on-primary: var(--color-brand-pure-white);
+  --border-hairline: var(--color-border-subtle);
+  --border-chip-line: var(--color-border-intense);
+}
+[data-mode="dark"], .dark {
+  --color-background-blur: rgba(0, 0, 0, 0.4);
+  --color-background-primary: #131316;
+  --color-background-secondary: #1e1e20;
+  --color-border-accent-blue: #143152;
+  --color-border-accent-ember: #57200f;
+  --color-border-accent-green: #095322;
+  --color-border-accent-pink: #5c0a4b;
+  --color-border-accent-purple: #371ba7;
+  --color-border-accent-red: #61051e;
+  --color-border-accent-yellow: #585004;
+  --color-border-card-primary: #1e1e20;
+  --color-border-card-secondary: #2c2c2e;
+  --color-border-disabled: #3b3b3f;
+  --color-border-error: #f09275;
+  --color-border-intense: rgba(255, 255, 255, 0.24);
+  --color-border-inverse: #545459;
+  --color-border-moderate-default: rgba(255, 255, 255, 0.16);
+  --color-border-moderate-inverse: rgba(0, 0, 0, 0.16);
+  --color-border-selection: #f7f7f7;
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-border-success: #73e89a;
+  --color-border-warning: #ebdf6f;
+  --color-button-error-background: #57200f;
+  --color-button-outline-border: #f7f7f7;
+  --color-button-primary-background-default: #f7f7f7;
+  --color-button-primary-background-disabled: #3b3b3f;
+  --color-button-primary-background-pressed: #f1f1f2;
+  --color-button-primary-icon-default: #131316;
+  --color-button-primary-icon-disabled: #77777e;
+  --color-button-primary-icon-pressed: #131316;
+  --color-button-primary-label-default: #131316;
+  --color-button-primary-label-disabled: #77777e;
+  --color-button-primary-label-pressed: #131316;
+  --color-button-secondary-background-default: rgba(255, 255, 255, 0.08);
+  --color-button-secondary-background-pressed: rgba(255, 255, 255, 0.16);
+  --color-button-secondary-border-default: #f7f7f7;
+  --color-button-secondary-border-disabled: #545459;
+  --color-button-secondary-border-pressed: #f1f1f2;
+  --color-button-secondary-icon-default: #f7f7f7;
+  --color-button-secondary-icon-disabled: #77777e;
+  --color-button-secondary-icon-pressed: #f1f1f2;
+  --color-button-secondary-label-default: #f7f7f7;
+  --color-button-secondary-label-disabled: #77777e;
+  --color-button-secondary-label-pressed: #f1f1f2;
+  --color-button-success-background: #042f12;
+  --color-button-tertiary-background-default: rgba(255, 255, 255, 0.08);
+  --color-button-tertiary-background-disabled: rgba(255, 255, 255, 0.08);
+  --color-button-tertiary-background-pressed: rgba(255, 255, 255, 0.16);
+  --color-button-tertiary-icon-default: #f7f7f7;
+  --color-button-tertiary-icon-disabled: #8b8b93;
+  --color-button-tertiary-icon-pressed: #f1f1f2;
+  --color-button-tertiary-label-default: #f7f7f7;
+  --color-button-tertiary-label-disabled: #8b8b93;
+  --color-button-tertiary-label-pressed: #f1f1f2;
+  --color-button-text-icon-default: #f7f7f7;
+  --color-button-text-icon-disabled: #545459;
+  --color-button-text-icon-pressed: #bfbfc4;
+  --color-button-text-label-default: #f7f7f7;
+  --color-button-text-label-disabled: #545459;
+  --color-button-text-label-pressed: #bfbfc4;
+  --color-button-warning-background: #322a01;
+  --color-icon-accent-blue: #45a4f7;
+  --color-icon-accent-ember: #e96f49;
+  --color-icon-accent-green: #58e487;
+  --color-icon-accent-peach: #ff7f7f;
+  --color-icon-accent-pink: #f449d1;
+  --color-icon-accent-purple: #8972fe;
+  --color-icon-accent-red: #fb4173;
+  --color-icon-accent-yellow: #e8d954;
+  --color-icon-disabled: #545459;
+  --color-icon-error: #f09275;
+  --color-icon-inverse: #131316;
+  --color-icon-offer: #6d49fd;
+  --color-icon-primary: #f7f7f7;
+  --color-icon-quaternary: #77777e;
+  --color-icon-secondary: #cfcfd3;
+  --color-icon-success: #58e487;
+  --color-icon-tertiary: #8b8b93;
+  --color-icon-vertical-activities: #e96f49;
+  --color-icon-vertical-dining: #fb4173;
+  --color-icon-vertical-event: #e8d954;
+  --color-icon-vertical-movie: #45a4f7;
+  --color-icon-warning: #ebdf6f;
+  --color-surface-accent-blue: #08529b;
+  --color-surface-accent-ember: #823017;
+  --color-surface-accent-green: #158e3e;
+  --color-surface-accent-pink: #9c1180;
+  --color-surface-accent-purple: #371ba7;
+  --color-surface-accent-red: #960d32;
+  --color-surface-accent-yellow: #847915;
+  --color-surface-error: #57200f;
+  --color-surface-inverse: #f7f7f7;
+  --color-surface-offer-gradient-end: #6d49fd;
+  --color-surface-offer-gradient-start: #6d49fd;
+  --color-surface-offer-primary: #5631ed;
+  --color-surface-offer-secondary: rgba(109, 73, 253, 0.2);
+  --color-surface-primary: #1e1e20;
+  --color-surface-secondary: #2c2c2e;
+  --color-surface-selection: rgba(255, 255, 255, 0.08);
+  --color-surface-success: #042f12;
+  --color-surface-transparent-default: rgba(255, 255, 255, 0.08);
+  --color-surface-transparent-secondary: rgba(255, 255, 255, 0.48);
+  --color-surface-warning: #322a01;
+  --color-text-accent-blue: #cee7fd;
+  --color-text-accent-ember: #f6cdc0;
+  --color-text-accent-green: #caf6d9;
+  --color-text-accent-pink: #fcd9f6;
+  --color-text-accent-purple: #d5ccff;
+  --color-text-accent-red: #ffd7df;
+  --color-text-accent-yellow: #f8f0bf;
+  --color-text-disabled: #545459;
+  --color-text-error: #f09275;
+  --color-text-inverse: #131316;
+  --color-text-offer: #bcaefe;
+  --color-text-primary: #f7f7f7;
+  --color-text-quaternary: #545459;
+  --color-text-secondary: #a5a5ac;
+  --color-text-success: #58e487;
+  --color-text-transparent: rgba(255, 255, 255, 0.64);
+  --color-text-warning: #ebdf6f;
+  --background-page: var(--color-background-primary);
+  --background-nav: var(--color-background-primary);
+  --border-hairline: var(--color-border-subtle);
+  --text-ink: var(--color-text-primary);
+  --surface-card: rgba(0, 0, 0, 0);
+}
+[data-mode="dark"] body { background: #121214; color: #efeff1; }
+[data-mode="dark"] h2.sh, [data-mode="dark"] .lead, [data-mode="dark"] .note, [data-mode="dark"] .pal-h, [data-mode="dark"] .sw .vl, [data-mode="dark"] .kv span, [data-mode="dark"] .tr .tv { color: #efeff1; }
+[data-mode="dark"] .mock { background: #121214; }
+#mode { position: fixed; top: 12px; right: 12px; z-index: 10; font: 500 12px/1 var(--sg-sans); border: 1px solid currentColor; border-radius: 999px; background: transparent; color: inherit; padding: 8px 14px; cursor: pointer; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-neutral-ink, #000); background: var(--color-neutral-paper, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 40px/1.2 var(--sg-serif); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, #ddd); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #000); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, #ddd); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #000); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-hairline, #ddd); overflow: hidden; background: var(--color-neutral-paper, #fff); }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px; background: var(--color-background-primary, #fff); }
+.pill { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 18px; border-radius: var(--radius-pill, 9999px); border: 1px solid var(--color-border-subtle, rgba(0,0,0,.08)); background: transparent; color: var(--color-text-primary, #131316); font: 500 16px var(--sg-sans); }
+.pill.on { background: var(--color-surface-secondary, #f1f1f2); }
+.card { border-radius: var(--radius-chip, 8px); border: 1px solid var(--color-border-card-primary, rgba(0,0,0,.08)); background: var(--color-surface-primary, #fff); padding: 16px; color: var(--color-text-primary, #131316); }
+.card h3 { font: 600 20px/1.4 var(--sg-sans); letter-spacing: -0.01em; margin: 0 0 4px; color: var(--color-text-primary, #131316); }
+.card p { font: 400 14px/1.45 var(--sg-sans); color: var(--color-text-secondary, #545459); margin: 0 0 12px; }
+.card .members { font: 400 14px var(--sg-sans); color: var(--color-text-primary, #131316); }
+.card .members i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--color-icon-success, #1abc50); margin-right: 6px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: 44px; padding: 0 24px; font-size: 16px; font-weight: 500; border-radius: var(--radius-cta, 9999px); border: 1px solid transparent; }
+.btn.primary { background: var(--color-button-primary-background-default, #131316); color: var(--color-text-inverse, #f7f7f7); }
+.btn.small { height: 36px; font-size: 14px; }
+.btn.nav { background: var(--color-surface-offer-primary, #6d49fd); color: var(--color-text-inverse, #f7f7f7); border-radius: var(--radius-pill, 9999px); height: 39px; padding: 0 18px; }
+.hero { color: var(--color-text-inverse, #f7f7f7); padding: 40px; font: 700 40px/1.1 var(--sg-serif); letter-spacing: -0.01em; background: linear-gradient(135deg, var(--color-surface-offer-gradient-start, #401cce), var(--color-surface-offer-gradient-end, #bcaefe)); }
+.hero small { display: block; font: 400 20px/1.4 var(--sg-sans); color: var(--color-text-inverse, #f7f7f7); opacity: .9; margin: 12px auto 20px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border-card-line, rgba(151,151,159,.12)); padding: 14px; font-size: 13px; background: var(--background-card, #202024); border-radius: var(--radius-card, 8px); color: var(--text-ink, #efeff1); }
+.tile b { display: block; font: 600 14px/1.4 var(--sg-sans); margin-bottom: 4px; }
+.tile .sub { color: var(--text-muted, #96979e); font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--color-neutral-hairline, #ddd); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-hairline, #ddd); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #000); opacity: .65; font-family: var(--sg-mono); }
+.search { display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 16px; border-radius: var(--radius-control, 12px); background: var(--background-selected, rgba(151,151,159,.12)); font: 400 16px var(--sg-sans); color: var(--text-muted, #96979e); }
+.field { display: block; width: 100%; height: 40px; padding: 0 12px; border-radius: var(--radius-field, 3px); border: 1px solid var(--border-card-line, rgba(151,151,159,.2)); background: var(--background-field, rgba(0,0,0,.12)); font: 400 16px var(--sg-sans); color: var(--text-ink, #efeff1); }
+</style>
+</head>
+<body>
+<button id="mode" type="button" aria-pressed="false">Dark</button>
+<main>
+  <h1>District style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">District, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the declared District Design System layer (the <code>--color-&lt;hue&gt;-&lt;step&gt;</code> scales and the semantic <code>--color-background-*</code>/<code>--color-surface-*</code>/<code>--color-border-*</code>/<code>--color-icon-*</code>/<code>--color-text-*</code>/<code>--color-button-*</code>/<code>--color-gradient-*</code> roles, resolved under <code>html[data-theme=light|dark]</code>), the measured type ramp, and the #6e52fa theme purple. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from district.in on 2026-11-15, signed out, in headless Chromium. The public pages paint the light theme by default; the dark pass flips the product's own <code>html[data-theme=dark]</code> attribute, so both themes are real paint. Booking and payment gate on the Zomato account — the Book, Proceed and filter controls were measured, never pressed. BeVietnamPro and PassengerSerif are served faces and are not loaded here: samples fall back to system fonts.</p>
+
+  <h2 class="sh">The category tabs</h2>
+  <p class="lead">The top tab row: 36px-tall links, the active tab underlined in theme purple over the white bar.</p>
+  <div class="mock" style="padding:20px">
+    <div class="pills">
+      <span class="pill on">For you</span>
+      <span class="pill">Dining</span>
+      <span class="pill">Movies</span>
+      <span class="pill">Events</span>
+      <span class="pill">Comedy</span>
+    </div>
+  </div>
+
+  <h2 class="sh">The booking card</h2>
+  <p class="lead">Movie cards are poster-forward tiles: rounded artwork, a semibold title, certificate chip (U / UA13+) and language; event cards add date, venue and a ₹ price line.</p>
+  <div class="mock" style="padding:20px">
+    <div class="card" style="max-width:220px">
+      <h3>Ramayana</h3>
+      <p>U · Hindi · 2h 54m</p>
+      <span class="members"><i></i>₹1499 onwards</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Search and booking</h2>
+  <p class="lead">The nav search affordance is a 28px glyph; the ticket page carries date pills, a ₹ price line and the primary Book CTA — measured, never pressed.</p>
+  <div class="mock" style="padding:20px">
+    <span class="search">Search movies, events and more</span>
+    <div style="height:16px"></div>
+    <div class="card" style="max-width:400px;background:var(--background-panel,#26282c)">
+      <input class="field" placeholder="Pick a date">
+      <div style="height:10px"></div>
+      <span class="btn primary" style="width:100%">Book</span>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The declared layer carries the full DDS hue scales under color.* (grey, purple, pink, blue, red, yellow, green, ember, peach) and the semantic roles (<code>--color-background-*</code>, <code>--color-surface-*</code>, <code>--color-border-*</code>, <code>--color-icon-*</code>, <code>--color-text-*</code>, <code>--color-button-*</code>, <code>--color-gradient-*</code>) resolved per theme — html[data-theme=light] is the default paint, data-theme=dark the measured dark pass. Measured roles alias the declared values they match.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">Controls are 12px (pills, CTAs, search), cards and auth 8px, chips 10px, the marketing nav pill 16px and the Nitro card a 96px slab. Hairlines are rgba(151,151,159,0.12) on cards and rgba(255,255,255,0.08) on the auth submit; focus rings are 2px #6aa8f4 (app) or #5865f2 (marketing).</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Served faces: <code>BeVietnamPro</code> for every UI string (nav, cards, filters, prices) and <code>PassengerSerif</code> for display headings. Sizes are the measured steps; samples fall back to system fonts.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared variables from the live stylesheets (4,400+ resolved per theme) and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"ui":{"v":"BeVietnamPro, sans-serif","t":"fontFamily","s":"computed fontFamily of nv-tab default (raw/components-computed.json)","d":"BeVietnamPro — every UI string: tabs, cards, filters, prices."},"display":{"v":"PassengerSerif","t":"fontFamily","s":"declared @font-face in the served stylesheets (raw/css-vars.json)","d":"PassengerSerif — the served display serif (declared @font-face, weights 300-700; headings fall back to ui-sans-serif when it has not painted)."}},"size":{"2xl":{"v":"24px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-size-2xl","d":"The declared `--font-size-2xl`."},"3xl":{"v":"32px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-size-3xl","d":"The declared `--font-size-3xl`."},"4xl":{"v":"40px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-size-4xl","d":"The declared `--font-size-4xl`."},"base":{"v":"14px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-size-base","d":"The declared `--font-size-base`."},"lg":{"v":"16px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-size-lg","d":"The declared `--font-size-lg`."},"sm":{"v":"12px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-size-sm","d":"The declared `--font-size-sm`."},"xl":{"v":"18px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-size-xl","d":"The declared `--font-size-xl`."},"xs":{"v":"10px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-size-xs","d":"The declared `--font-size-xs`."},"measured":{"label":{"v":"{font.size.base}","t":"fontSize","s":"computed fontSize of nv-tab default (raw/components-computed.json); matches declared --font-size-base","d":"The 14px tab, chip and price-adjacent label."},"body":{"v":"{font.size.lg}","t":"fontSize","s":"computed fontSize of mc-title default (raw/components-computed.json); matches declared --font-size-lg","d":"The 16px card title and body text."},"price":{"v":"{font.size.lg}","t":"fontSize","s":"computed fontSize of ev-price default (raw/components-computed.json); matches declared --font-size-lg","d":"The 16px bold price line."},"section":{"v":"28px","t":"fontSize","s":"computed fontSize of tk-h1 default (raw/components-computed.json)","d":"The 24px section/ticket heading."},"display":{"v":"{font.size.4xl}","t":"fontSize","s":"computed fontSize of ev-h1 default (raw/components-computed.json); matches declared --font-size-4xl; ev-h1 caught an off-screen carousel slide title, not the listing heading (read from the wrong element; recapture needed)","d":"The 40px listing display heading."}}},"lineHeight":{"2xl":{"v":"32px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --line-height-2xl","d":"The declared `--line-height-2xl`."},"3xl":{"v":"40px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --line-height-3xl","d":"The declared `--line-height-3xl`."},"base":{"v":"20px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --line-height-base","d":"The declared `--line-height-base`."},"lg":{"v":"24px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --line-height-lg","d":"The declared `--line-height-lg`."},"sm":{"v":"16px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --line-height-sm","d":"The declared `--line-height-sm`."},"xl":{"v":"28px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --line-height-xl","d":"The declared `--line-height-xl`."},"xs":{"v":"16px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --line-height-xs","d":"The declared `--line-height-xs`."}},"weight":{"bold":{"v":700,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-bold","d":"The declared `--font-bold`."},"medium":{"v":500,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-medium","d":"The declared `--font-medium`."},"regular":{"v":400,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-regular","d":"The declared `--font-regular`."},"semibold":{"v":600,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --font-semibold","d":"The declared `--font-semibold`."}}},"color":{"black-alpha":{"16":{"v":"rgba(0, 0, 0, 0.16)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-black-alpha-16","d":"The declared `--color-black-alpha-16`."},"24":{"v":"rgba(0, 0, 0, 0.24)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-black-alpha-24","d":"The declared `--color-black-alpha-24`."},"32":{"v":"rgba(0, 0, 0, 0.32)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-black-alpha-32","d":"The declared `--color-black-alpha-32`."},"40":{"v":"rgba(0, 0, 0, 0.4)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-black-alpha-40","d":"The declared `--color-black-alpha-40`."},"48":{"v":"rgba(0, 0, 0, 0.48)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-black-alpha-48","d":"The declared `--color-black-alpha-48`."},"56":{"v":"rgba(0, 0, 0, 0.56)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-black-alpha-56","d":"The declared `--color-black-alpha-56`."},"64":{"v":"rgba(0, 0, 0, 0.64)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-black-alpha-64","d":"The declared `--color-black-alpha-64`."},"72":{"v":"rgba(0, 0, 0, 0.72)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-black-alpha-72","d":"The declared `--color-black-alpha-72`."},"8":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-black-alpha-8","d":"The declared `--color-black-alpha-8`."},"80":{"v":"rgba(0, 0, 0, 0.8)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-black-alpha-80","d":"The declared `--color-black-alpha-80`."},"88":{"v":"rgba(0, 0, 0, 0.88)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-black-alpha-88","d":"The declared `--color-black-alpha-88`."}},"blue":{"100":{"v":"#e2f1fe","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-blue-100","d":"The declared `--color-blue-100`."},"150":{"v":"#cee7fd","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-blue-150","d":"The declared `--color-blue-150`."},"200":{"v":"#a7d4fb","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-blue-200","d":"The declared `--color-blue-200`."},"300":{"v":"#62b2f8","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-blue-300","d":"The declared `--color-blue-300`."},"400":{"v":"#45a4f7","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-blue-400","d":"The declared `--color-blue-400`."},"50":{"v":"#f5faff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-blue-50","d":"The declared `--color-blue-50`."},"500":{"v":"#2a96f4","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-blue-500","d":"The declared `--color-blue-500`."},"600":{"v":"#0b70d5","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-blue-600","d":"The declared `--color-blue-600`."},"700":{"v":"#08529b","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-blue-700","d":"The declared `--color-blue-700`."},"800":{"v":"#143152","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-blue-800","d":"The declared `--color-blue-800`."},"900":{"v":"#021831","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-blue-900","d":"The declared `--color-blue-900`."}},"border-brand":{"v":"#6444e4","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-border-brand","d":"The declared `--color-border-brand`."},"brand-district-black":{"v":"#000000","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-brand-district-black","d":"The declared `--color-brand-district-black`."},"brand-district-pink":{"v":"#e13ff3","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-brand-district-pink","d":"The declared `--color-brand-district-pink`."},"brand-district-purple":{"v":"#6444e4","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-brand-district-purple","d":"The declared `--color-brand-district-purple`."},"brand-district-purple-secondary":{"v":"#9988dc","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-brand-district-purple-secondary","d":"The declared `--color-brand-district-purple-secondary`."},"brand-pure-white":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-brand-pure-white","d":"The declared `--color-brand-pure-white`."},"button-brand-background":{"v":"#6d49fd","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-button-brand-background","d":"The declared `--color-button-brand-background`."},"button-brand-label":{"v":"#f7f7f7","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-button-brand-label","d":"The declared `--color-button-brand-label`."},"button-outline-bg-hover":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-button-outline-bg-hover","d":"The declared `--color-button-outline-bg-hover`."},"button-outline-bg-pressed":{"v":"rgba(0, 0, 0, 0.16)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-button-outline-bg-pressed","d":"The declared `--color-button-outline-bg-pressed`."},"button-outline-border-disabled":{"v":"#8b8b93","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-button-outline-border-disabled","d":"The declared `--color-button-outline-border-disabled`."},"button-outline-text":{"v":"#131316","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-button-outline-text","d":"The declared `--color-button-outline-text`."},"button-outline-text-disabled":{"v":"#8b8b93","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-button-outline-text-disabled","d":"The declared `--color-button-outline-text-disabled`."},"button-secondary-background-disabled":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-button-secondary-background-disabled","d":"The declared `--color-button-secondary-background-disabled`."},"button-text-tertiary":{"v":"#77777e","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-button-text-tertiary","d":"The declared `--color-button-text-tertiary`."},"ember":{"100":{"v":"#f9dbd2","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-ember-100","d":"The declared `--color-ember-100`."},"150":{"v":"#f6cdc0","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-ember-150","d":"The declared `--color-ember-150`."},"200":{"v":"#f2b09c","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-ember-200","d":"The declared `--color-ember-200`."},"300":{"v":"#f09275","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-ember-300","d":"The declared `--color-ember-300`."},"400":{"v":"#e96f49","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-ember-400","d":"The declared `--color-ember-400`."},"50":{"v":"#fdf4f1","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-ember-50","d":"The declared `--color-ember-50`."},"500":{"v":"#da572f","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-ember-500","d":"The declared `--color-ember-500`."},"600":{"v":"#ad401f","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-ember-600","d":"The declared `--color-ember-600`."},"700":{"v":"#823017","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-ember-700","d":"The declared `--color-ember-700`."},"800":{"v":"#57200f","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-ember-800","d":"The declared `--color-ember-800`."},"900":{"v":"#2b1008","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-ember-900","d":"The declared `--color-ember-900`."}},"gradient-blue":{"v":"#e2f1fe","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-gradient-blue","d":"The declared `--color-gradient-blue`."},"gradient-purple":{"v":"#eae5ff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-gradient-purple","d":"The declared `--color-gradient-purple`."},"gradient-red":{"v":"#ffebef","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-gradient-red","d":"The declared `--color-gradient-red`."},"gradient-yellow":{"v":"#f9f4dc","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-gradient-yellow","d":"The declared `--color-gradient-yellow`."},"green":{"100":{"v":"#dcf9e6","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-green-100","d":"The declared `--color-green-100`."},"150":{"v":"#caf6d9","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-green-150","d":"The declared `--color-green-150`."},"200":{"v":"#a7f1c0","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-green-200","d":"The declared `--color-green-200`."},"300":{"v":"#73e89a","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-green-300","d":"The declared `--color-green-300`."},"400":{"v":"#58e487","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-green-400","d":"The declared `--color-green-400`."},"50":{"v":"#f2fdf6","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-green-50","d":"The declared `--color-green-50`."},"500":{"v":"#23e764","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-green-500","d":"The declared `--color-green-500`."},"600":{"v":"#1abc50","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-green-600","d":"The declared `--color-green-600`."},"700":{"v":"#158e3e","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-green-700","d":"The declared `--color-green-700`."},"800":{"v":"#095322","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-green-800","d":"The declared `--color-green-800`."},"900":{"v":"#042f12","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-green-900","d":"The declared `--color-green-900`."}},"grey":{"100":{"v":"#f1f1f2","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-grey-100","d":"The declared `--color-grey-100`."},"150":{"v":"#cfcfd3","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-grey-150","d":"The declared `--color-grey-150`."},"200":{"v":"#bfbfc4","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-grey-200","d":"The declared `--color-grey-200`."},"250":{"v":"#a5a5ac","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-grey-250","d":"The declared `--color-grey-250`."},"300":{"v":"#8b8b93","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-grey-300","d":"The declared `--color-grey-300`."},"400":{"v":"#77777e","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-grey-400","d":"The declared `--color-grey-400`."},"50":{"v":"#f7f7f7","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-grey-50","d":"The declared `--color-grey-50`."},"500":{"v":"#545459","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-grey-500","d":"The declared `--color-grey-500`."},"600":{"v":"#3b3b3f","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-grey-600","d":"The declared `--color-grey-600`."},"700":{"v":"#2c2c2e","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-grey-700","d":"The declared `--color-grey-700`."},"800":{"v":"#1e1e20","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-grey-800","d":"The declared `--color-grey-800`."},"900":{"v":"#131316","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-grey-900","d":"The declared `--color-grey-900`."}},"icon-brand":{"v":"#6444e4","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-icon-brand","d":"The declared `--color-icon-brand`."},"peach":{"100":{"v":"#fee6e6","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-peach-100","d":"The declared `--color-peach-100`."},"150":{"v":"#fccfcf","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-peach-150","d":"The declared `--color-peach-150`."},"200":{"v":"#f9b8b8","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-peach-200","d":"The declared `--color-peach-200`."},"300":{"v":"#f5a3a3","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-peach-300","d":"The declared `--color-peach-300`."},"400":{"v":"#ff7f7f","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-peach-400","d":"The declared `--color-peach-400`."},"50":{"v":"#fff5f5","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-peach-50","d":"The declared `--color-peach-50`."},"500":{"v":"#ee7373","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-peach-500","d":"The declared `--color-peach-500`."},"600":{"v":"#ab3131","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-peach-600","d":"The declared `--color-peach-600`."},"700":{"v":"#7a1f1f","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-peach-700","d":"The declared `--color-peach-700`."},"800":{"v":"#590d0d","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-peach-800","d":"The declared `--color-peach-800`."},"900":{"v":"#2e0707","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-peach-900","d":"The declared `--color-peach-900`."}},"pink":{"100":{"v":"#fdecfb","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-pink-100","d":"The declared `--color-pink-100`."},"150":{"v":"#fcd9f6","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-pink-150","d":"The declared `--color-pink-150`."},"200":{"v":"#f9b3eb","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-pink-200","d":"The declared `--color-pink-200`."},"300":{"v":"#f566d8","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-pink-300","d":"The declared `--color-pink-300`."},"400":{"v":"#f449d1","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-pink-400","d":"The declared `--color-pink-400`."},"50":{"v":"#fef5fd","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-pink-50","d":"The declared `--color-pink-50`."},"500":{"v":"#f42acc","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-pink-500","d":"The declared `--color-pink-500`."},"600":{"v":"#d110aa","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-pink-600","d":"The declared `--color-pink-600`."},"700":{"v":"#9c1180","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-pink-700","d":"The declared `--color-pink-700`."},"800":{"v":"#5c0a4b","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-pink-800","d":"The declared `--color-pink-800`."},"900":{"v":"#25041e","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-pink-900","d":"The declared `--color-pink-900`."}},"purple":{"100":{"v":"#eae5ff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-purple-100","d":"The declared `--color-purple-100`."},"150":{"v":"#d5ccff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-purple-150","d":"The declared `--color-purple-150`."},"200":{"v":"#bcaefe","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-purple-200","d":"The declared `--color-purple-200`."},"300":{"v":"#8972fe","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-purple-300","d":"The declared `--color-purple-300`."},"400":{"v":"#6d49fd","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-purple-400","d":"The declared `--color-purple-400`."},"50":{"v":"#f6f4ff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-purple-50","d":"The declared `--color-purple-50`."},"500":{"v":"#5631ed","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-purple-500","d":"The declared `--color-purple-500`."},"600":{"v":"#401cce","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-purple-600","d":"The declared `--color-purple-600`."},"700":{"v":"#371ba7","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-purple-700","d":"The declared `--color-purple-700`."},"800":{"v":"#231268","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-purple-800","d":"The declared `--color-purple-800`."},"900":{"v":"#160d3b","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-purple-900","d":"The declared `--color-purple-900`."}},"red":{"100":{"v":"#ffebef","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-red-100","d":"The declared `--color-red-100`."},"150":{"v":"#ffd7df","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-red-150","d":"The declared `--color-red-150`."},"200":{"v":"#fea4b6","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-red-200","d":"The declared `--color-red-200`."},"300":{"v":"#fc618a","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-red-300","d":"The declared `--color-red-300`."},"400":{"v":"#fb4173","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-red-400","d":"The declared `--color-red-400`."},"50":{"v":"#fff5f7","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-red-50","d":"The declared `--color-red-50`."},"500":{"v":"#f42a60","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-red-500","d":"The declared `--color-red-500`."},"600":{"v":"#ca1646","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-red-600","d":"The declared `--color-red-600`."},"700":{"v":"#960d32","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-red-700","d":"The declared `--color-red-700`."},"800":{"v":"#61051e","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-red-800","d":"The declared `--color-red-800`."},"900":{"v":"#30030f","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-red-900","d":"The declared `--color-red-900`."}},"semantics-dark-background-negative-strong":{"v":"#ff3d38","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-background-negative-strong","d":"The declared `--color-semantics-dark-background-negative-strong`."},"semantics-dark-background-negative-weak":{"v":"#ffebef","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-background-negative-weak","d":"The declared `--color-semantics-dark-background-negative-weak`."},"semantics-dark-background-neutral-inverse":{"v":"#414244","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-background-neutral-inverse","d":"The declared `--color-semantics-dark-background-neutral-inverse`."},"semantics-dark-background-neutral-medium":{"v":"#9d9ea0","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-background-neutral-medium","d":"The declared `--color-semantics-dark-background-neutral-medium`."},"semantics-dark-background-neutral-strong":{"v":"#dfe0e2","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-background-neutral-strong","d":"The declared `--color-semantics-dark-background-neutral-strong`."},"semantics-dark-background-neutral-weak":{"v":"#606163","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-background-neutral-weak","d":"The declared `--color-semantics-dark-background-neutral-weak`."},"semantics-dark-background-notice-strong":{"v":"#ff8c01","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-background-notice-strong","d":"The declared `--color-semantics-dark-background-notice-strong`."},"semantics-dark-background-notice-weak":{"v":"#fff8e1","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-background-notice-weak","d":"The declared `--color-semantics-dark-background-notice-weak`."},"semantics-dark-background-offset-medium":{"v":"#202020","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-background-offset-medium","d":"The declared `--color-semantics-dark-background-offset-medium`."},"semantics-dark-background-offset-strong":{"v":"#303030","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-background-offset-strong","d":"The declared `--color-semantics-dark-background-offset-strong`."},"semantics-dark-background-offset-weak":{"v":"#202020","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-background-offset-weak","d":"The declared `--color-semantics-dark-background-offset-weak`."},"semantics-dark-background-positive-strong":{"v":"#00a657","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-background-positive-strong","d":"The declared `--color-semantics-dark-background-positive-strong`."},"semantics-dark-background-positive-weak":{"v":"#e3f6ec","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-background-positive-weak","d":"The declared `--color-semantics-dark-background-positive-weak`."},"semantics-dark-background-primary-strong":{"v":"#0079be","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-background-primary-strong","d":"The declared `--color-semantics-dark-background-primary-strong`."},"semantics-dark-background-primary-weak":{"v":"#001d33","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-background-primary-weak","d":"The declared `--color-semantics-dark-background-primary-weak`."},"semantics-dark-background-universal-inverse-strong":{"v":"#101010","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-background-universal-inverse-strong","d":"The declared `--color-semantics-dark-background-universal-inverse-strong`."},"semantics-dark-background-universal-strong":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-background-universal-strong","d":"The declared `--color-semantics-dark-background-universal-strong`."},"semantics-dark-border-negative-strong":{"v":"#ff3d38","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-border-negative-strong","d":"The declared `--color-semantics-dark-border-negative-strong`."},"semantics-dark-border-neutral-inverse":{"v":"#f4f5f7","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-border-neutral-inverse","d":"The declared `--color-semantics-dark-border-neutral-inverse`."},"semantics-dark-border-neutral-medium":{"v":"#606163","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-border-neutral-medium","d":"The declared `--color-semantics-dark-border-neutral-medium`."},"semantics-dark-border-neutral-strong":{"v":"#9d9ea0","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-border-neutral-strong","d":"The declared `--color-semantics-dark-border-neutral-strong`."},"semantics-dark-border-neutral-weak":{"v":"#414244","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-border-neutral-weak","d":"The declared `--color-semantics-dark-border-neutral-weak`."},"semantics-dark-border-notice-strong":{"v":"#ff8c01","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-border-notice-strong","d":"The declared `--color-semantics-dark-border-notice-strong`."},"semantics-dark-border-positive-strong":{"v":"#00a657","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-border-positive-strong","d":"The declared `--color-semantics-dark-border-positive-strong`."},"semantics-dark-border-primary-strong":{"v":"#00abf4","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-border-primary-strong","d":"The declared `--color-semantics-dark-border-primary-strong`."},"semantics-dark-brand-primary-strong":{"v":"#0079be","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-brand-primary-strong","d":"The declared `--color-semantics-dark-brand-primary-strong`."},"semantics-dark-brand-secondary-strong":{"v":"#012a72","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-brand-secondary-strong","d":"The declared `--color-semantics-dark-brand-secondary-strong`."},"semantics-dark-button-pressed-background":{"v":"#00599d","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-button-pressed-background","d":"The declared `--color-semantics-dark-button-pressed-background`."},"semantics-dark-extended-dim":{"v":"#e0f5fd","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-extended-dim","d":"The declared `--color-semantics-dark-extended-dim`."},"semantics-dark-extended-dull":{"v":"rgba(7, 11, 39, 0.05)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-extended-dull","d":"The declared `--color-semantics-dark-extended-dull`."},"semantics-dark-extended-pale":{"v":"#e7f1f8","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-extended-pale","d":"The declared `--color-semantics-dark-extended-pale`."},"semantics-dark-icon-negative-strong":{"v":"#ff3d38","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-icon-negative-strong","d":"The declared `--color-semantics-dark-icon-negative-strong`."},"semantics-dark-icon-neutral-inverse":{"v":"#101010","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-icon-neutral-inverse","d":"The declared `--color-semantics-dark-icon-neutral-inverse`."},"semantics-dark-icon-neutral-medium":{"v":"#9d9ea0","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-icon-neutral-medium","d":"The declared `--color-semantics-dark-icon-neutral-medium`."},"semantics-dark-icon-neutral-strong":{"v":"#dfe0e2","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-icon-neutral-strong","d":"The declared `--color-semantics-dark-icon-neutral-strong`."},"semantics-dark-icon-neutral-variant":{"v":"#b5c9ff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-icon-neutral-variant","d":"The declared `--color-semantics-dark-icon-neutral-variant`."},"semantics-dark-icon-neutral-weak":{"v":"#606163","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-icon-neutral-weak","d":"The declared `--color-semantics-dark-icon-neutral-weak`."},"semantics-dark-icon-notice-strong":{"v":"#ff8c01","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-icon-notice-strong","d":"The declared `--color-semantics-dark-icon-notice-strong`."},"semantics-dark-icon-positive-strong":{"v":"#00a657","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-icon-positive-strong","d":"The declared `--color-semantics-dark-icon-positive-strong`."},"semantics-dark-icon-primary-strong":{"v":"#00abf4","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-icon-primary-strong","d":"The declared `--color-semantics-dark-icon-primary-strong`."},"semantics-dark-icon-secondary-strong":{"v":"#f4f5f7","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-icon-secondary-strong","d":"The declared `--color-semantics-dark-icon-secondary-strong`."},"semantics-dark-icon-universal-inverse-strong":{"v":"#101010","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-icon-universal-inverse-strong","d":"The declared `--color-semantics-dark-icon-universal-inverse-strong`."},"semantics-dark-icon-universal-strong":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-icon-universal-strong","d":"The declared `--color-semantics-dark-icon-universal-strong`."},"semantics-dark-overlay-strong":{"v":"rgba(16, 16, 16, 0.89)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-overlay-strong","d":"The declared `--color-semantics-dark-overlay-strong`."},"semantics-dark-overlay-weak":{"v":"rgba(16, 16, 16, 0.39)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-overlay-weak","d":"The declared `--color-semantics-dark-overlay-weak`."},"semantics-dark-pastel-01-strong":{"v":"#4d49b8","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-01-strong","d":"The declared `--color-semantics-dark-pastel-01-strong`."},"semantics-dark-pastel-01-weak":{"v":"#e6e5ff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-01-weak","d":"The declared `--color-semantics-dark-pastel-01-weak`."},"semantics-dark-pastel-02-strong":{"v":"#326691","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-02-strong","d":"The declared `--color-semantics-dark-pastel-02-strong`."},"semantics-dark-pastel-02-weak":{"v":"#d5e7f6","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-02-weak","d":"The declared `--color-semantics-dark-pastel-02-weak`."},"semantics-dark-pastel-03-strong":{"v":"#147361","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-03-strong","d":"The declared `--color-semantics-dark-pastel-03-strong`."},"semantics-dark-pastel-03-weak":{"v":"#daf4ef","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-03-weak","d":"The declared `--color-semantics-dark-pastel-03-weak`."},"semantics-dark-pastel-04-strong":{"v":"#009954","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-04-strong","d":"The declared `--color-semantics-dark-pastel-04-strong`."},"semantics-dark-pastel-04-weak":{"v":"#d9ffee","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-04-weak","d":"The declared `--color-semantics-dark-pastel-04-weak`."},"semantics-dark-pastel-05-strong":{"v":"#3e5513","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-05-strong","d":"The declared `--color-semantics-dark-pastel-05-strong`."},"semantics-dark-pastel-05-weak":{"v":"#cedcb4","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-05-weak","d":"The declared `--color-semantics-dark-pastel-05-weak`."},"semantics-dark-pastel-06-strong":{"v":"#97770c","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-06-strong","d":"The declared `--color-semantics-dark-pastel-06-strong`."},"semantics-dark-pastel-06-weak":{"v":"#fff8e1","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-06-weak","d":"The declared `--color-semantics-dark-pastel-06-weak`."},"semantics-dark-pastel-07-strong":{"v":"#6f503c","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-07-strong","d":"The declared `--color-semantics-dark-pastel-07-strong`."},"semantics-dark-pastel-07-weak":{"v":"#ffe8d9","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-07-weak","d":"The declared `--color-semantics-dark-pastel-07-weak`."},"semantics-dark-pastel-08-strong":{"v":"#a52b2b","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-08-strong","d":"The declared `--color-semantics-dark-pastel-08-strong`."},"semantics-dark-pastel-08-weak":{"v":"#ffe1e1","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-08-weak","d":"The declared `--color-semantics-dark-pastel-08-weak`."},"semantics-dark-pastel-09-strong":{"v":"#b83380","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-09-strong","d":"The declared `--color-semantics-dark-pastel-09-strong`."},"semantics-dark-pastel-09-weak":{"v":"#ffe5f4","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-09-weak","d":"The declared `--color-semantics-dark-pastel-09-weak`."},"semantics-dark-pastel-10-strong":{"v":"#84161d","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-10-strong","d":"The declared `--color-semantics-dark-pastel-10-strong`."},"semantics-dark-pastel-10-weak":{"v":"#f9c9cc","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-10-weak","d":"The declared `--color-semantics-dark-pastel-10-weak`."},"semantics-dark-pastel-11-strong":{"v":"#7649b8","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-11-strong","d":"The declared `--color-semantics-dark-pastel-11-strong`."},"semantics-dark-pastel-11-weak":{"v":"#f0e6ff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-11-weak","d":"The declared `--color-semantics-dark-pastel-11-weak`."},"semantics-dark-pastel-12-strong":{"v":"#a749b8","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-12-strong","d":"The declared `--color-semantics-dark-pastel-12-strong`."},"semantics-dark-pastel-12-weak":{"v":"#f1d5f6","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-pastel-12-weak","d":"The declared `--color-semantics-dark-pastel-12-weak`."},"semantics-dark-selection-selection":{"v":"rgba(223, 224, 226, 0.16)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-selection-selection","d":"The declared `--color-semantics-dark-selection-selection`."},"semantics-dark-surface-level":{"1":{"v":"#101010","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-surface-level-1","d":"The declared `--color-semantics-dark-surface-level-1`."},"2":{"v":"#303030","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-surface-level-2","d":"The declared `--color-semantics-dark-surface-level-2`."},"3":{"v":"#202020","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-surface-level-3","d":"The declared `--color-semantics-dark-surface-level-3`."}},"semantics-dark-switch-thumb-disabled-off":{"v":"#9d9ea0","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-switch-thumb-disabled-off","d":"The declared `--color-semantics-dark-switch-thumb-disabled-off`."},"semantics-dark-switch-thumb-disabled-on":{"v":"#9d9ea0","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-switch-thumb-disabled-on","d":"The declared `--color-semantics-dark-switch-thumb-disabled-on`."},"semantics-dark-switch-thumb-enabled-off":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-switch-thumb-enabled-off","d":"The declared `--color-semantics-dark-switch-thumb-enabled-off`."},"semantics-dark-switch-thumb-enabled-on":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-switch-thumb-enabled-on","d":"The declared `--color-semantics-dark-switch-thumb-enabled-on`."},"semantics-dark-switch-track-disabled-off":{"v":"#303030","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-switch-track-disabled-off","d":"The declared `--color-semantics-dark-switch-track-disabled-off`."},"semantics-dark-switch-track-disabled-on":{"v":"#414244","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-switch-track-disabled-on","d":"The declared `--color-semantics-dark-switch-track-disabled-on`."},"semantics-dark-switch-track-enabled-off":{"v":"#414244","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-switch-track-enabled-off","d":"The declared `--color-semantics-dark-switch-track-enabled-off`."},"semantics-dark-switch-track-enabled-on":{"v":"#0079be","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-switch-track-enabled-on","d":"The declared `--color-semantics-dark-switch-track-enabled-on`."},"semantics-dark-text-negative-strong":{"v":"#ff3d38","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-text-negative-strong","d":"The declared `--color-semantics-dark-text-negative-strong`."},"semantics-dark-text-neutral-inverse":{"v":"#101010","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-text-neutral-inverse","d":"The declared `--color-semantics-dark-text-neutral-inverse`."},"semantics-dark-text-neutral-medium":{"v":"#9d9ea0","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-text-neutral-medium","d":"The declared `--color-semantics-dark-text-neutral-medium`."},"semantics-dark-text-neutral-moderate":{"v":"#cacaca","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-text-neutral-moderate","d":"The declared `--color-semantics-dark-text-neutral-moderate`."},"semantics-dark-text-neutral-strong":{"v":"#dfe0e2","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-text-neutral-strong","d":"The declared `--color-semantics-dark-text-neutral-strong`."},"semantics-dark-text-neutral-variant":{"v":"#b5c9ff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-text-neutral-variant","d":"The declared `--color-semantics-dark-text-neutral-variant`."},"semantics-dark-text-neutral-weak":{"v":"#606163","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-text-neutral-weak","d":"The declared `--color-semantics-dark-text-neutral-weak`."},"semantics-dark-text-notice-strong":{"v":"#ff8c01","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-text-notice-strong","d":"The declared `--color-semantics-dark-text-notice-strong`."},"semantics-dark-text-positive-strong":{"v":"#00a657","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-text-positive-strong","d":"The declared `--color-semantics-dark-text-positive-strong`."},"semantics-dark-text-primary-strong":{"v":"#00abf4","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-text-primary-strong","d":"The declared `--color-semantics-dark-text-primary-strong`."},"semantics-dark-text-universal-inverse-strong":{"v":"#101010","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-text-universal-inverse-strong","d":"The declared `--color-semantics-dark-text-universal-inverse-strong`."},"semantics-dark-text-universal-strong":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-text-universal-strong","d":"The declared `--color-semantics-dark-text-universal-strong`."},"semantics-dark-vivid-01-strong":{"v":"#1399ad","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-vivid-01-strong","d":"The declared `--color-semantics-dark-vivid-01-strong`."},"semantics-dark-vivid-01-weak":{"v":"#034e5c","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-vivid-01-weak","d":"The declared `--color-semantics-dark-vivid-01-weak`."},"semantics-dark-vivid-02-strong":{"v":"#119e4d","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-vivid-02-strong","d":"The declared `--color-semantics-dark-vivid-02-strong`."},"semantics-dark-vivid-02-weak":{"v":"#244f32","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-vivid-02-weak","d":"The declared `--color-semantics-dark-vivid-02-weak`."},"semantics-dark-vivid-03-strong":{"v":"#99781c","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-vivid-03-strong","d":"The declared `--color-semantics-dark-vivid-03-strong`."},"semantics-dark-vivid-03-weak":{"v":"#594e2f","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-vivid-03-weak","d":"The declared `--color-semantics-dark-vivid-03-weak`."},"semantics-dark-vivid-04-strong":{"v":"#856b05","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-vivid-04-strong","d":"The declared `--color-semantics-dark-vivid-04-strong`."},"semantics-dark-vivid-05-strong":{"v":"#b85ca7","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-vivid-05-strong","d":"The declared `--color-semantics-dark-vivid-05-strong`."},"semantics-dark-vivid-06-strong":{"v":"#db326b","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-vivid-06-strong","d":"The declared `--color-semantics-dark-vivid-06-strong`."},"semantics-dark-vivid-06-weak":{"v":"#e34646","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-vivid-06-weak","d":"The declared `--color-semantics-dark-vivid-06-weak`."},"semantics-dark-vivid-07-strong":{"v":"#4a75ff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-vivid-07-strong","d":"The declared `--color-semantics-dark-vivid-07-strong`."},"semantics-dark-vivid-07-weak":{"v":"#3281e8","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-dark-vivid-07-weak","d":"The declared `--color-semantics-dark-vivid-07-weak`."},"semantics-light-background-negative-strong":{"v":"#fd5154","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-background-negative-strong","d":"The declared `--color-semantics-light-background-negative-strong`."},"semantics-light-background-negative-weak":{"v":"#ffebef","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-background-negative-weak","d":"The declared `--color-semantics-light-background-negative-weak`."},"semantics-light-background-neutral-inverse":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-background-neutral-inverse","d":"The declared `--color-semantics-light-background-neutral-inverse`."},"semantics-light-background-neutral-medium":{"v":"#7e7e7e","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-background-neutral-medium","d":"The declared `--color-semantics-light-background-neutral-medium`."},"semantics-light-background-neutral-strong":{"v":"#101010","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-background-neutral-strong","d":"The declared `--color-semantics-light-background-neutral-strong`."},"semantics-light-background-neutral-weak":{"v":"#e0e0e0","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-background-neutral-weak","d":"The declared `--color-semantics-light-background-neutral-weak`."},"semantics-light-background-notice-strong":{"v":"#ff9d00","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-background-notice-strong","d":"The declared `--color-semantics-light-background-notice-strong`."},"semantics-light-background-notice-weak":{"v":"#fff8e1","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-background-notice-weak","d":"The declared `--color-semantics-light-background-notice-weak`."},"semantics-light-background-offset-medium":{"v":"#e0f5fd","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-background-offset-medium","d":"The declared `--color-semantics-light-background-offset-medium`."},"semantics-light-background-offset-strong":{"v":"#e7f1f8","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-background-offset-strong","d":"The declared `--color-semantics-light-background-offset-strong`."},"semantics-light-background-offset-weak":{"v":"#f5f9fe","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-background-offset-weak","d":"The declared `--color-semantics-light-background-offset-weak`."},"semantics-light-background-positive-strong":{"v":"#21c179","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-background-positive-strong","d":"The declared `--color-semantics-light-background-positive-strong`."},"semantics-light-background-positive-weak":{"v":"#e3f6ec","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-background-positive-weak","d":"The declared `--color-semantics-light-background-positive-weak`."},"semantics-light-background-primary-strong":{"v":"#00b8f5","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-background-primary-strong","d":"The declared `--color-semantics-light-background-primary-strong`."},"semantics-light-background-primary-weak":{"v":"#e0f5fd","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-background-primary-weak","d":"The declared `--color-semantics-light-background-primary-weak`."},"semantics-light-background-universal-inverse-strong":{"v":"#101010","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-background-universal-inverse-strong","d":"The declared `--color-semantics-light-background-universal-inverse-strong`."},"semantics-light-background-universal-strong":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-background-universal-strong","d":"The declared `--color-semantics-light-background-universal-strong`."},"semantics-light-border-negative-strong":{"v":"#fd5154","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-border-negative-strong","d":"The declared `--color-semantics-light-border-negative-strong`."},"semantics-light-border-neutral-inverse":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-border-neutral-inverse","d":"The declared `--color-semantics-light-border-neutral-inverse`."},"semantics-light-border-neutral-medium":{"v":"#7e7e7e","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-border-neutral-medium","d":"The declared `--color-semantics-light-border-neutral-medium`."},"semantics-light-border-neutral-strong":{"v":"#101010","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-border-neutral-strong","d":"The declared `--color-semantics-light-border-neutral-strong`."},"semantics-light-border-neutral-weak":{"v":"#e0e0e0","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-border-neutral-weak","d":"The declared `--color-semantics-light-border-neutral-weak`."},"semantics-light-border-notice-strong":{"v":"#ff9d00","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-border-notice-strong","d":"The declared `--color-semantics-light-border-notice-strong`."},"semantics-light-border-positive-strong":{"v":"#21c179","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-border-positive-strong","d":"The declared `--color-semantics-light-border-positive-strong`."},"semantics-light-border-primary-strong":{"v":"#00b8f5","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-border-primary-strong","d":"The declared `--color-semantics-light-border-primary-strong`."},"semantics-light-brand-primary-strong":{"v":"#00b8f5","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-brand-primary-strong","d":"The declared `--color-semantics-light-brand-primary-strong`."},"semantics-light-brand-secondary-strong":{"v":"#012a72","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-brand-secondary-strong","d":"The declared `--color-semantics-light-brand-secondary-strong`."},"semantics-light-button-pressed-background":{"v":"#009de5","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-button-pressed-background","d":"The declared `--color-semantics-light-button-pressed-background`."},"semantics-light-extended-dim":{"v":"#e0f5fd","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-extended-dim","d":"The declared `--color-semantics-light-extended-dim`."},"semantics-light-extended-dull":{"v":"rgba(7, 11, 39, 0.05)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-extended-dull","d":"The declared `--color-semantics-light-extended-dull`."},"semantics-light-extended-pale":{"v":"#e7f1f8","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-extended-pale","d":"The declared `--color-semantics-light-extended-pale`."},"semantics-light-icon-negative-strong":{"v":"#fd5154","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-icon-negative-strong","d":"The declared `--color-semantics-light-icon-negative-strong`."},"semantics-light-icon-neutral-inverse":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-icon-neutral-inverse","d":"The declared `--color-semantics-light-icon-neutral-inverse`."},"semantics-light-icon-neutral-medium":{"v":"#7e7e7e","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-icon-neutral-medium","d":"The declared `--color-semantics-light-icon-neutral-medium`."},"semantics-light-icon-neutral-strong":{"v":"#101010","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-icon-neutral-strong","d":"The declared `--color-semantics-light-icon-neutral-strong`."},"semantics-light-icon-neutral-variant":{"v":"#101010","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-icon-neutral-variant","d":"The declared `--color-semantics-light-icon-neutral-variant`."},"semantics-light-icon-neutral-weak":{"v":"#cacaca","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-icon-neutral-weak","d":"The declared `--color-semantics-light-icon-neutral-weak`."},"semantics-light-icon-notice-strong":{"v":"#ff9d00","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-icon-notice-strong","d":"The declared `--color-semantics-light-icon-notice-strong`."},"semantics-light-icon-positive-strong":{"v":"#21c179","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-icon-positive-strong","d":"The declared `--color-semantics-light-icon-positive-strong`."},"semantics-light-icon-primary-strong":{"v":"#00b8f5","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-icon-primary-strong","d":"The declared `--color-semantics-light-icon-primary-strong`."},"semantics-light-icon-secondary-strong":{"v":"#012a72","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-icon-secondary-strong","d":"The declared `--color-semantics-light-icon-secondary-strong`."},"semantics-light-icon-universal-inverse-strong":{"v":"#101010","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-icon-universal-inverse-strong","d":"The declared `--color-semantics-light-icon-universal-inverse-strong`."},"semantics-light-icon-universal-strong":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-icon-universal-strong","d":"The declared `--color-semantics-light-icon-universal-strong`."},"semantics-light-overlay-strong":{"v":"rgba(16, 16, 16, 0.698)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-overlay-strong","d":"The declared `--color-semantics-light-overlay-strong`."},"semantics-light-overlay-weak":{"v":"rgba(16, 16, 16, 0.13)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-overlay-weak","d":"The declared `--color-semantics-light-overlay-weak`."},"semantics-light-pastel-01-strong":{"v":"#4d49b8","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-01-strong","d":"The declared `--color-semantics-light-pastel-01-strong`."},"semantics-light-pastel-01-weak":{"v":"#e6e5ff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-01-weak","d":"The declared `--color-semantics-light-pastel-01-weak`."},"semantics-light-pastel-02-strong":{"v":"#326691","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-02-strong","d":"The declared `--color-semantics-light-pastel-02-strong`."},"semantics-light-pastel-02-weak":{"v":"#d5e7f6","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-02-weak","d":"The declared `--color-semantics-light-pastel-02-weak`."},"semantics-light-pastel-03-strong":{"v":"#147361","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-03-strong","d":"The declared `--color-semantics-light-pastel-03-strong`."},"semantics-light-pastel-03-weak":{"v":"#daf4ef","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-03-weak","d":"The declared `--color-semantics-light-pastel-03-weak`."},"semantics-light-pastel-04-strong":{"v":"#009954","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-04-strong","d":"The declared `--color-semantics-light-pastel-04-strong`."},"semantics-light-pastel-04-weak":{"v":"#d9ffee","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-04-weak","d":"The declared `--color-semantics-light-pastel-04-weak`."},"semantics-light-pastel-05-strong":{"v":"#3e5513","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-05-strong","d":"The declared `--color-semantics-light-pastel-05-strong`."},"semantics-light-pastel-05-weak":{"v":"#cedcb4","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-05-weak","d":"The declared `--color-semantics-light-pastel-05-weak`."},"semantics-light-pastel-06-strong":{"v":"#97770c","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-06-strong","d":"The declared `--color-semantics-light-pastel-06-strong`."},"semantics-light-pastel-06-weak":{"v":"#fff8e1","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-06-weak","d":"The declared `--color-semantics-light-pastel-06-weak`."},"semantics-light-pastel-07-strong":{"v":"#6f503c","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-07-strong","d":"The declared `--color-semantics-light-pastel-07-strong`."},"semantics-light-pastel-07-weak":{"v":"#ffe8d9","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-07-weak","d":"The declared `--color-semantics-light-pastel-07-weak`."},"semantics-light-pastel-08-strong":{"v":"#a52b2b","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-08-strong","d":"The declared `--color-semantics-light-pastel-08-strong`."},"semantics-light-pastel-08-weak":{"v":"#ffe1e1","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-08-weak","d":"The declared `--color-semantics-light-pastel-08-weak`."},"semantics-light-pastel-09-strong":{"v":"#b83380","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-09-strong","d":"The declared `--color-semantics-light-pastel-09-strong`."},"semantics-light-pastel-09-weak":{"v":"#ffe5f4","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-09-weak","d":"The declared `--color-semantics-light-pastel-09-weak`."},"semantics-light-pastel-10-strong":{"v":"#84161d","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-10-strong","d":"The declared `--color-semantics-light-pastel-10-strong`."},"semantics-light-pastel-10-weak":{"v":"#f9c9cc","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-10-weak","d":"The declared `--color-semantics-light-pastel-10-weak`."},"semantics-light-pastel-11-strong":{"v":"#7649b8","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-11-strong","d":"The declared `--color-semantics-light-pastel-11-strong`."},"semantics-light-pastel-11-weak":{"v":"#f0e6ff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-11-weak","d":"The declared `--color-semantics-light-pastel-11-weak`."},"semantics-light-pastel-12-strong":{"v":"#a749b8","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-12-strong","d":"The declared `--color-semantics-light-pastel-12-strong`."},"semantics-light-pastel-12-weak":{"v":"#f1d5f6","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-pastel-12-weak","d":"The declared `--color-semantics-light-pastel-12-weak`."},"semantics-light-selection-selection":{"v":"rgba(7, 11, 39, 0.07)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-selection-selection","d":"The declared `--color-semantics-light-selection-selection`."},"semantics-light-surface-level":{"1":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-surface-level-1","d":"The declared `--color-semantics-light-surface-level-1`."},"2":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-surface-level-2","d":"The declared `--color-semantics-light-surface-level-2`."},"3":{"v":"#fafafa","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-surface-level-3","d":"The declared `--color-semantics-light-surface-level-3`."}},"semantics-light-switch-thumb-disabled-off":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-switch-thumb-disabled-off","d":"The declared `--color-semantics-light-switch-thumb-disabled-off`."},"semantics-light-switch-thumb-disabled-on":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-switch-thumb-disabled-on","d":"The declared `--color-semantics-light-switch-thumb-disabled-on`."},"semantics-light-switch-thumb-enabled-off":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-switch-thumb-enabled-off","d":"The declared `--color-semantics-light-switch-thumb-enabled-off`."},"semantics-light-switch-thumb-enabled-on":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-switch-thumb-enabled-on","d":"The declared `--color-semantics-light-switch-thumb-enabled-on`."},"semantics-light-switch-track-disabled-off":{"v":"#f4f5f7","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-switch-track-disabled-off","d":"The declared `--color-semantics-light-switch-track-disabled-off`."},"semantics-light-switch-track-disabled-on":{"v":"#e0f5fd","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-switch-track-disabled-on","d":"The declared `--color-semantics-light-switch-track-disabled-on`."},"semantics-light-switch-track-enabled-off":{"v":"#e0e0e0","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-switch-track-enabled-off","d":"The declared `--color-semantics-light-switch-track-enabled-off`."},"semantics-light-switch-track-enabled-on":{"v":"#00b8f5","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-switch-track-enabled-on","d":"The declared `--color-semantics-light-switch-track-enabled-on`."},"semantics-light-text-negative-strong":{"v":"#fd5154","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-text-negative-strong","d":"The declared `--color-semantics-light-text-negative-strong`."},"semantics-light-text-neutral-inverse":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-text-neutral-inverse","d":"The declared `--color-semantics-light-text-neutral-inverse`."},"semantics-light-text-neutral-medium":{"v":"#7e7e7e","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-text-neutral-medium","d":"The declared `--color-semantics-light-text-neutral-medium`."},"semantics-light-text-neutral-moderate":{"v":"#414244","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-text-neutral-moderate","d":"The declared `--color-semantics-light-text-neutral-moderate`."},"semantics-light-text-neutral-strong":{"v":"#101010","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-text-neutral-strong","d":"The declared `--color-semantics-light-text-neutral-strong`."},"semantics-light-text-neutral-variant":{"v":"#101010","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-text-neutral-variant","d":"The declared `--color-semantics-light-text-neutral-variant`."},"semantics-light-text-neutral-weak":{"v":"#cacaca","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-text-neutral-weak","d":"The declared `--color-semantics-light-text-neutral-weak`."},"semantics-light-text-notice-strong":{"v":"#ff9d00","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-text-notice-strong","d":"The declared `--color-semantics-light-text-notice-strong`."},"semantics-light-text-positive-strong":{"v":"#21c179","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-text-positive-strong","d":"The declared `--color-semantics-light-text-positive-strong`."},"semantics-light-text-primary-strong":{"v":"#00b8f5","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-text-primary-strong","d":"The declared `--color-semantics-light-text-primary-strong`."},"semantics-light-text-universal-inverse-strong":{"v":"#101010","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-text-universal-inverse-strong","d":"The declared `--color-semantics-light-text-universal-inverse-strong`."},"semantics-light-text-universal-strong":{"v":"#ffffff","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-text-universal-strong","d":"The declared `--color-semantics-light-text-universal-strong`."},"semantics-light-vivid-01-strong":{"v":"#56ccde","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-vivid-01-strong","d":"The declared `--color-semantics-light-vivid-01-strong`."},"semantics-light-vivid-01-weak":{"v":"#e0f6fa","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-vivid-01-weak","d":"The declared `--color-semantics-light-vivid-01-weak`."},"semantics-light-vivid-02-strong":{"v":"#27ae5f","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-vivid-02-strong","d":"The declared `--color-semantics-light-vivid-02-strong`."},"semantics-light-vivid-02-weak":{"v":"#c2e6cd","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-vivid-02-weak","d":"The declared `--color-semantics-light-vivid-02-weak`."},"semantics-light-vivid-03-strong":{"v":"#e5c97c","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-vivid-03-strong","d":"The declared `--color-semantics-light-vivid-03-strong`."},"semantics-light-vivid-03-weak":{"v":"#f0deae","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-vivid-03-weak","d":"The declared `--color-semantics-light-vivid-03-weak`."},"semantics-light-vivid-04-strong":{"v":"#fed533","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-vivid-04-strong","d":"The declared `--color-semantics-light-vivid-04-strong`."},"semantics-light-vivid-05-strong":{"v":"#f495e3","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-vivid-05-strong","d":"The declared `--color-semantics-light-vivid-05-strong`."},"semantics-light-vivid-06-strong":{"v":"#b3325d","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-vivid-06-strong","d":"The declared `--color-semantics-light-vivid-06-strong`."},"semantics-light-vivid-06-weak":{"v":"#eb5757","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-vivid-06-weak","d":"The declared `--color-semantics-light-vivid-06-weak`."},"semantics-light-vivid-07-strong":{"v":"#223368","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-vivid-07-strong","d":"The declared `--color-semantics-light-vivid-07-strong`."},"semantics-light-vivid-07-weak":{"v":"#2f81ed","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-semantics-light-vivid-07-weak","d":"The declared `--color-semantics-light-vivid-07-weak`."},"sub-title-text":{"v":"#8b8123","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-sub-title-text","d":"The declared `--color-sub-title-text`."},"surface-disabled":{"v":"rgba(247, 247, 247, 0)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-surface-disabled","d":"The declared `--color-surface-disabled`."},"text-brand":{"v":"#6444e4","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-text-brand","d":"The declared `--color-text-brand`."},"text-tertiary":{"v":"#77777e","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-text-tertiary","d":"The declared `--color-text-tertiary`."},"text-theme":{"v":"#f7f7f7","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-text-theme","d":"The declared `--color-text-theme`."},"theme-black":{"v":"#131316","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-theme-black","d":"The declared `--color-theme-black`."},"theme-full-transparent":{"v":"rgba(247, 247, 247, 0)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-theme-full-transparent","d":"The declared `--color-theme-full-transparent`."},"theme-purple":{"v":"#6e52fa","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-theme-purple","d":"The declared `--color-theme-purple`."},"theme-purple-border":{"v":"rgba(110, 82, 250, 0.21)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-theme-purple-border","d":"The declared `--color-theme-purple-border`."},"theme-white":{"v":"#f7f7f7","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-theme-white","d":"The declared `--color-theme-white`."},"white-alpha":{"16":{"v":"rgba(255, 255, 255, 0.16)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-white-alpha-16","d":"The declared `--color-white-alpha-16`."},"24":{"v":"rgba(255, 255, 255, 0.24)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-white-alpha-24","d":"The declared `--color-white-alpha-24`."},"32":{"v":"rgba(255, 255, 255, 0.32)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-white-alpha-32","d":"The declared `--color-white-alpha-32`."},"40":{"v":"rgba(255, 255, 255, 0.4)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-white-alpha-40","d":"The declared `--color-white-alpha-40`."},"48":{"v":"rgba(255, 255, 255, 0.48)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-white-alpha-48","d":"The declared `--color-white-alpha-48`."},"56":{"v":"rgba(255, 255, 255, 0.56)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-white-alpha-56","d":"The declared `--color-white-alpha-56`."},"64":{"v":"rgba(255, 255, 255, 0.64)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-white-alpha-64","d":"The declared `--color-white-alpha-64`."},"72":{"v":"rgba(255, 255, 255, 0.72)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-white-alpha-72","d":"The declared `--color-white-alpha-72`."},"8":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-white-alpha-8","d":"The declared `--color-white-alpha-8`."},"80":{"v":"rgba(255, 255, 255, 0.8)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-white-alpha-80","d":"The declared `--color-white-alpha-80`."},"88":{"v":"rgba(255, 255, 255, 0.88)","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-white-alpha-88","d":"The declared `--color-white-alpha-88`."}},"yellow":{"100":{"v":"#f9f4dc","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-yellow-100","d":"The declared `--color-yellow-100`."},"150":{"v":"#f8f0bf","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-yellow-150","d":"The declared `--color-yellow-150`."},"200":{"v":"#f4e89a","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-yellow-200","d":"The declared `--color-yellow-200`."},"300":{"v":"#ebdf6f","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-yellow-300","d":"The declared `--color-yellow-300`."},"400":{"v":"#e8d954","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-yellow-400","d":"The declared `--color-yellow-400`."},"50":{"v":"#fcfaed","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-yellow-50","d":"The declared `--color-yellow-50`."},"500":{"v":"#e4d33a","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-yellow-500","d":"The declared `--color-yellow-500`."},"600":{"v":"#b8a91e","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-yellow-600","d":"The declared `--color-yellow-600`."},"700":{"v":"#847915","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-yellow-700","d":"The declared `--color-yellow-700`."},"800":{"v":"#585004","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-yellow-800","d":"The declared `--color-yellow-800`."},"900":{"v":"#322a01","t":"color","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --color-yellow-900","d":"The declared `--color-yellow-900`."}}},"space":{"12":{"v":"12px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --space-12","d":"The declared `--space-12`."},"16":{"v":"16px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --space-16","d":"The declared `--space-16`."},"20":{"v":"20px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --space-20","d":"The declared `--space-20`."},"24":{"v":"24px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --space-24","d":"The declared `--space-24`."},"32":{"v":"32px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --space-32","d":"The declared `--space-32`."},"4":{"v":"4px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --space-4","d":"The declared `--space-4`."},"40":{"v":"40px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --space-40","d":"The declared `--space-40`."},"48":{"v":"48px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --space-48","d":"The declared `--space-48`."},"56":{"v":"56px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --space-56","d":"The declared `--space-56`."},"64":{"v":"64px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --space-64","d":"The declared `--space-64`."},"72":{"v":"72px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --space-72","d":"The declared `--space-72`."},"8":{"v":"8px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --space-8","d":"The declared `--space-8`."},"80":{"v":"80px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --space-80","d":"The declared `--space-80`."}},"typography":{"body1":{"fontSize":{"v":"16px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-body1-font-size","d":"The declared `--typography-scale-body1-font-size`."},"fontWeight":{"v":400,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-body1-font-weight","d":"The declared `--typography-scale-body1-font-weight`."},"letterSpacing":{"v":"0px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-body1-letter-spacing","d":"The declared `--typography-scale-body1-letter-spacing`."},"lineHeight":{"v":"24px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-body1-line-height","d":"The declared `--typography-scale-body1-line-height`."}},"body2":{"fontSize":{"v":"14px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-body2-font-size","d":"The declared `--typography-scale-body2-font-size`."},"fontWeight":{"v":400,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-body2-font-weight","d":"The declared `--typography-scale-body2-font-weight`."},"letterSpacing":{"v":"0px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-body2-letter-spacing","d":"The declared `--typography-scale-body2-letter-spacing`."},"lineHeight":{"v":"22px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-body2-line-height","d":"The declared `--typography-scale-body2-line-height`."}},"body3":{"fontSize":{"v":"12px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-body3-font-size","d":"The declared `--typography-scale-body3-font-size`."},"fontWeight":{"v":400,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-body3-font-weight","d":"The declared `--typography-scale-body3-font-weight`."},"letterSpacing":{"v":"0px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-body3-letter-spacing","d":"The declared `--typography-scale-body3-letter-spacing`."},"lineHeight":{"v":"18px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-body3-line-height","d":"The declared `--typography-scale-body3-line-height`."}},"display1":{"fontSize":{"v":"64px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-display1-font-size","d":"The declared `--typography-scale-display1-font-size`."},"fontWeight":{"v":700,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-display1-font-weight","d":"The declared `--typography-scale-display1-font-weight`."},"letterSpacing":{"v":"-.05rem","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-display1-letter-spacing","d":"The declared `--typography-scale-display1-letter-spacing`."},"lineHeight":{"v":"72px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-display1-line-height","d":"The declared `--typography-scale-display1-line-height`."}},"display2":{"fontSize":{"v":"48px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-display2-font-size","d":"The declared `--typography-scale-display2-font-size`."},"fontWeight":{"v":700,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-display2-font-weight","d":"The declared `--typography-scale-display2-font-weight`."},"letterSpacing":{"v":"-.04rem","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-display2-letter-spacing","d":"The declared `--typography-scale-display2-letter-spacing`."},"lineHeight":{"v":"56px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-display2-line-height","d":"The declared `--typography-scale-display2-line-height`."}},"display3":{"fontSize":{"v":"36px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-display3-font-size","d":"The declared `--typography-scale-display3-font-size`."},"fontWeight":{"v":700,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-display3-font-weight","d":"The declared `--typography-scale-display3-font-weight`."},"letterSpacing":{"v":"-.04rem","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-display3-letter-spacing","d":"The declared `--typography-scale-display3-letter-spacing`."},"lineHeight":{"v":"42px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-display3-line-height","d":"The declared `--typography-scale-display3-line-height`."}},"headline1":{"fontSize":{"v":"32px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-headline1-font-size","d":"The declared `--typography-scale-headline1-font-size`."},"fontWeight":{"v":700,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-headline1-font-weight","d":"The declared `--typography-scale-headline1-font-weight`."},"letterSpacing":{"v":"-.04rem","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-headline1-letter-spacing","d":"The declared `--typography-scale-headline1-letter-spacing`."},"lineHeight":{"v":"40px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-headline1-line-height","d":"The declared `--typography-scale-headline1-line-height`."}},"headline2":{"fontSize":{"v":"28px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-headline2-font-size","d":"The declared `--typography-scale-headline2-font-size`."},"fontWeight":{"v":700,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-headline2-font-weight","d":"The declared `--typography-scale-headline2-font-weight`."},"letterSpacing":{"v":"-.03rem","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-headline2-letter-spacing","d":"The declared `--typography-scale-headline2-letter-spacing`."},"lineHeight":{"v":"34px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-headline2-line-height","d":"The declared `--typography-scale-headline2-line-height`."}},"headline3":{"fontSize":{"v":"24px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-headline3-font-size","d":"The declared `--typography-scale-headline3-font-size`."},"fontWeight":{"v":700,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-headline3-font-weight","d":"The declared `--typography-scale-headline3-font-weight`."},"letterSpacing":{"v":"-.02rem","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-headline3-letter-spacing","d":"The declared `--typography-scale-headline3-letter-spacing`."},"lineHeight":{"v":"30px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-headline3-line-height","d":"The declared `--typography-scale-headline3-line-height`."}},"label1":{"fontSize":{"v":"14px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-label1-font-size","d":"The declared `--typography-scale-label1-font-size`."},"fontWeight":{"v":500,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-label1-font-weight","d":"The declared `--typography-scale-label1-font-weight`."},"letterSpacing":{"v":"0px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-label1-letter-spacing","d":"The declared `--typography-scale-label1-letter-spacing`."},"lineHeight":{"v":"18px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-label1-line-height","d":"The declared `--typography-scale-label1-line-height`."}},"label2":{"fontSize":{"v":"12px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-label2-font-size","d":"The declared `--typography-scale-label2-font-size`."},"fontWeight":{"v":500,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-label2-font-weight","d":"The declared `--typography-scale-label2-font-weight`."},"letterSpacing":{"v":"0px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-label2-letter-spacing","d":"The declared `--typography-scale-label2-letter-spacing`."},"lineHeight":{"v":"16px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-label2-line-height","d":"The declared `--typography-scale-label2-line-height`."}},"label3":{"fontSize":{"v":"11px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-label3-font-size","d":"The declared `--typography-scale-label3-font-size`."},"fontWeight":{"v":500,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-label3-font-weight","d":"The declared `--typography-scale-label3-font-weight`."},"letterSpacing":{"v":"0px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-label3-letter-spacing","d":"The declared `--typography-scale-label3-letter-spacing`."},"lineHeight":{"v":"14px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-label3-line-height","d":"The declared `--typography-scale-label3-line-height`."}},"title-with-separator":{"fontSize":{"v":"12px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title-with-separator-font-size","d":"The declared `--typography-scale-title-with-separator-font-size`."},"fontWeight":{"v":500,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title-with-separator-font-weight","d":"The declared `--typography-scale-title-with-separator-font-weight`."},"letterSpacing":{"v":"1.1875px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title-with-separator-letter-spacing","d":"The declared `--typography-scale-title-with-separator-letter-spacing`."},"lineHeight":{"v":"14px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title-with-separator-line-height","d":"The declared `--typography-scale-title-with-separator-line-height`."}},"title1":{"fontSize":{"v":"22px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title1-font-size","d":"The declared `--typography-scale-title1-font-size`."},"fontWeight":{"v":600,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title1-font-weight","d":"The declared `--typography-scale-title1-font-weight`."},"letterSpacing":{"v":"-.01rem","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title1-letter-spacing","d":"The declared `--typography-scale-title1-letter-spacing`."},"lineHeight":{"v":"28px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title1-line-height","d":"The declared `--typography-scale-title1-line-height`."}},"title2":{"fontSize":{"v":"18px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title2-font-size","d":"The declared `--typography-scale-title2-font-size`."},"fontWeight":{"v":600,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title2-font-weight","d":"The declared `--typography-scale-title2-font-weight`."},"letterSpacing":{"v":"-.01rem","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title2-letter-spacing","d":"The declared `--typography-scale-title2-letter-spacing`."},"lineHeight":{"v":"22px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title2-line-height","d":"The declared `--typography-scale-title2-line-height`."}},"title3":{"fontSize":{"v":"16px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title3-font-size","d":"The declared `--typography-scale-title3-font-size`."},"fontWeight":{"v":600,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title3-font-weight","d":"The declared `--typography-scale-title3-font-weight`."},"letterSpacing":{"v":"-.01rem","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title3-letter-spacing","d":"The declared `--typography-scale-title3-letter-spacing`."},"lineHeight":{"v":"20px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title3-line-height","d":"The declared `--typography-scale-title3-line-height`."}},"title4":{"fontSize":{"v":"14px","t":"fontSize","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title4-font-size","d":"The declared `--typography-scale-title4-font-size`."},"fontWeight":{"v":600,"t":"fontWeight","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title4-font-weight","d":"The declared `--typography-scale-title4-font-weight`."},"letterSpacing":{"v":"0px","t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title4-letter-spacing","d":"The declared `--typography-scale-title4-letter-spacing`."},"lineHeight":{"v":"18px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-scale-title4-line-height","d":"The declared `--typography-scale-title4-line-height`."}},"weight":{"bold":{"v":700,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-weight-bold","d":"The declared `--typography-weight-bold`."},"medium":{"v":500,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-weight-medium","d":"The declared `--typography-weight-medium`."},"regular":{"v":400,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-weight-regular","d":"The declared `--typography-weight-regular`."},"semibold":{"v":600,"t":"other","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --typography-weight-semibold","d":"The declared `--typography-weight-semibold`."}}},"size":{"page-max-width":{"v":"1280px","t":"dimension","s":"declared design-system variable in the site stylesheet (raw/css-vars.json): --page-max-width","d":"The declared `--page-max-width`."}},"radius":{"chip":{"v":"6px","t":"dimension","s":"computed borderTopLeftRadius of mv-chip default (raw/components-computed.json)","d":"The 6px filter-chip radius."},"tab-mobile":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of m-tab default (raw/components-computed.json)","d":"The 8px mobile tab radius."},"cta":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of tk-book default (raw/components-computed.json)","d":"The 12px Book-tickets CTA radius."},"pill":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of nv-tab default (raw/components-computed.json)","d":"The 9999px category-tab pill radius."}},"shadow":{"badge":{"v":"rgba(0, 0, 0, 0.25) 0px 4px 4px 0px","t":"other","s":"paint layer of the artist-page show-card badge (raw/components-computed.json)","d":"The show-card badge's painted shadow — a 4px drop at 25% black; every other public reading reported transparent or none."}},"motion":{"control":{"v":"all 0.2s cubic-bezier(0.4, 0, 0.2, 1)","t":"other","s":"computed transition of nv-tab default (raw/components-computed.json)","d":"The measured nv-tab transition (0.2s)."}},"component":{"nav-bar":{"v":"75px","t":"dimension","s":"measured h of nv-bar default (raw/components-computed.json)","d":"The 75px app top bar."},"nav-mark":{"v":"108px","t":"dimension","s":"measured w of nv-mark default (raw/components-computed.json)","d":"The 108x44 District mark."},"category-tab":{"v":"84px","t":"dimension","s":"measured w of nv-tab default (raw/components-computed.json)","d":"The 84x36 category tab pill."},"search":{"v":"28px","t":"dimension","s":"measured w of nv-search default (raw/components-computed.json)","d":"The 28x28 search affordance."},"movie-card":{"v":"197.33px","t":"dimension","s":"measured w of mc-card default (raw/components-computed.json)","d":"The 197x348 movie card."},"artist-card":{"v":"190px","t":"dimension","s":"measured w of ar-card default (raw/components-computed.json)","d":"The 190x222 circular artist card."},"venue-card":{"v":"236px","t":"dimension","s":"measured w of ev-card default (raw/components-computed.json)","d":"The 236x325 venue/event card."},"filter-chip":{"v":"56px","t":"dimension","s":"measured w of mv-chip default (raw/components-computed.json)","d":"The 56x32 filter chip."},"footer":{"v":"410.5px","t":"dimension","s":"measured h of ft-bar default (raw/components-computed.json)","d":"The ~410px sitemap footer."},"book-cta":{"v":"162.97px","t":"dimension","s":"measured w of tk-book default (raw/components-computed.json)","d":"The 163x52 Book-tickets button."},"show-card":{"v":"296px","t":"dimension","s":"measured w of at-show default (raw/components-computed.json)","d":"The 296x544 artist-page show card."},"mobile-bar":{"v":"390px","t":"dimension","s":"measured w of m-bar default (raw/components-computed.json)","d":"The 390x60 phone app bar."},"mobile-card":{"v":"364px","t":"dimension","s":"measured w of m-card default (raw/components-computed.json)","d":"The 364x272 phone content card."}}},"light":{"color":{"background":{"blur":{"v":"rgba(208, 208, 208, 0.3)","t":"color","s":"css-var --color-background-blur (light)"},"primary":{"v":"#ffffff","t":"color","s":"css-var --color-background-primary (light)"},"secondary":{"v":"#f1f1f2","t":"color","s":"css-var --color-background-secondary (light)"}},"border":{"accent":{"blue":{"v":"#45a4f7","t":"color","s":"css-var --color-border-accent-blue (light)"},"ember":{"v":"#ad401f","t":"color","s":"css-var --color-border-accent-ember (light)"},"green":{"v":"#1abc50","t":"color","s":"css-var --color-border-accent-green (light)"},"pink":{"v":"#f449d1","t":"color","s":"css-var --color-border-accent-pink (light)"},"purple":{"v":"#6d49fd","t":"color","s":"css-var --color-border-accent-purple (light)"},"red":{"v":"#fb4173","t":"color","s":"css-var --color-border-accent-red (light)"},"yellow":{"v":"#b8a91e","t":"color","s":"css-var --color-border-accent-yellow (light)"}},"card":{"primary":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --color-border-card-primary (light)"},"secondary":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --color-border-card-secondary (light)"}},"disabled":{"v":"#bfbfc4","t":"color","s":"css-var --color-border-disabled (light)"},"error":{"v":"#823017","t":"color","s":"css-var --color-border-error (light)"},"intense":{"v":"rgba(0, 0, 0, 0.24)","t":"color","s":"css-var --color-border-intense (light)"},"inverse":{"v":"#77777e","t":"color","s":"css-var --color-border-inverse (light)"},"moderate":{"default":{"v":"rgba(0, 0, 0, 0.16)","t":"color","s":"css-var --color-border-moderate (light)"},"inverse":{"v":"rgba(255, 255, 255, 0.16)","t":"color","s":"css-var --color-border-moderate-inverse (light)"}},"selection":{"v":"#1e1e20","t":"color","s":"css-var --color-border-selection (light)"},"subtle":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --color-border-subtle (light)"},"success":{"v":"#158e3e","t":"color","s":"css-var --color-border-success (light)"},"warning":{"v":"#b8a91e","t":"color","s":"css-var --color-border-warning (light)"}},"button":{"error":{"background":{"v":"#f9dbd2","t":"color","s":"css-var --color-button-error-background (light)"}},"outline":{"border":{"v":"#131316","t":"color","s":"css-var --color-button-outline-border (light)"}},"primary":{"background":{"default":{"v":"#131316","t":"color","s":"css-var --color-button-primary-background (light)"},"disabled":{"v":"#cfcfd3","t":"color","s":"css-var --color-button-primary-background-disabled (light)"},"pressed":{"v":"#1e1e20","t":"color","s":"css-var --color-button-primary-background-pressed (light)"}},"icon":{"default":{"v":"#f1f1f2","t":"color","s":"css-var --color-button-primary-icon (light)"},"disabled":{"v":"#8b8b93","t":"color","s":"css-var --color-button-primary-icon-disabled (light)"},"pressed":{"v":"#cfcfd3","t":"color","s":"css-var --color-button-primary-icon-pressed (light)"}},"label":{"default":{"v":"#f7f7f7","t":"color","s":"css-var --color-button-primary-label (light)"},"disabled":{"v":"#8b8b93","t":"color","s":"css-var --color-button-primary-label-disabled (light)"},"pressed":{"v":"#f1f1f2","t":"color","s":"css-var --color-button-primary-label-pressed (light)"}}},"secondary":{"background":{"default":{"v":"#ffffff","t":"color","s":"css-var --color-button-secondary-background (light)"},"pressed":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --color-button-secondary-background-pressed (light)"}},"border":{"default":{"v":"#1e1e20","t":"color","s":"css-var --color-button-secondary-border (light)"},"disabled":{"v":"#a5a5ac","t":"color","s":"css-var --color-button-secondary-border-disabled (light)"},"pressed":{"v":"#545459","t":"color","s":"css-var --color-button-secondary-border-pressed (light)"}},"icon":{"default":{"v":"#2c2c2e","t":"color","s":"css-var --color-button-secondary-icon (light)"},"disabled":{"v":"#8b8b93","t":"color","s":"css-var --color-button-secondary-icon-disabled (light)"},"pressed":{"v":"#3b3b3f","t":"color","s":"css-var --color-button-secondary-icon-pressed (light)"}},"label":{"default":{"v":"#131316","t":"color","s":"css-var --color-button-secondary-label (light)"},"disabled":{"v":"#8b8b93","t":"color","s":"css-var --color-button-secondary-label-disabled (light)"},"pressed":{"v":"#2c2c2e","t":"color","s":"css-var --color-button-secondary-label-pressed (light)"}}},"success":{"background":{"v":"#dcf9e6","t":"color","s":"css-var --color-button-success-background (light)"}},"tertiary":{"background":{"default":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --color-button-tertiary-background (light)"},"disabled":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --color-button-tertiary-background-disabled (light)"},"pressed":{"v":"rgba(0, 0, 0, 0.16)","t":"color","s":"css-var --color-button-tertiary-background-pressed (light)"}},"icon":{"default":{"v":"#2c2c2e","t":"color","s":"css-var --color-button-tertiary-icon (light)"},"disabled":{"v":"#77777e","t":"color","s":"css-var --color-button-tertiary-icon-disabled (light)"},"pressed":{"v":"#3b3b3f","t":"color","s":"css-var --color-button-tertiary-icon-pressed (light)"}},"label":{"default":{"v":"#131316","t":"color","s":"css-var --color-button-tertiary-label (light)"},"disabled":{"v":"#77777e","t":"color","s":"css-var --color-button-tertiary-label-disabled (light)"},"pressed":{"v":"#2c2c2e","t":"color","s":"css-var --color-button-tertiary-label-pressed (light)"}}},"text":{"icon":{"default":{"v":"#2c2c2e","t":"color","s":"css-var --color-button-text-icon (light)"},"disabled":{"v":"#bfbfc4","t":"color","s":"css-var --color-button-text-icon-disabled (light)"},"pressed":{"v":"#3b3b3f","t":"color","s":"css-var --color-button-text-icon-pressed (light)"}},"label":{"default":{"v":"#131316","t":"color","s":"css-var --color-button-text-label (light)"},"disabled":{"v":"#bfbfc4","t":"color","s":"css-var --color-button-text-label-disabled (light)"},"pressed":{"v":"#3b3b3f","t":"color","s":"css-var --color-button-text-label-pressed (light)"}}},"warning":{"background":{"v":"#f8f0bf","t":"color","s":"css-var --color-button-warning-background (light)"}}},"icon":{"accent":{"blue":{"v":"#2a96f4","t":"color","s":"css-var --color-icon-accent-blue (light)"},"ember":{"v":"#da572f","t":"color","s":"css-var --color-icon-accent-ember (light)"},"green":{"v":"#23e764","t":"color","s":"css-var --color-icon-accent-green (light)"},"peach":{"v":"#ee7373","t":"color","s":"css-var --color-icon-accent-peach (light)"},"pink":{"v":"#f42acc","t":"color","s":"css-var --color-icon-accent-pink (light)"},"purple":{"v":"#5631ed","t":"color","s":"css-var --color-icon-accent-purple (light)"},"red":{"v":"#f42a60","t":"color","s":"css-var --color-icon-accent-red (light)"},"yellow":{"v":"#e4d33a","t":"color","s":"css-var --color-icon-accent-yellow (light)"}},"disabled":{"v":"#bfbfc4","t":"color","s":"css-var --color-icon-disabled (light)"},"error":{"v":"#da572f","t":"color","s":"css-var --color-icon-error (light)"},"inverse":{"v":"#f7f7f7","t":"color","s":"css-var --color-icon-inverse (light)"},"offer":{"v":"#5631ed","t":"color","s":"css-var --color-icon-offer (light)"},"primary":{"v":"#1e1e20","t":"color","s":"css-var --color-icon-primary (light)"},"quaternary":{"v":"#545459","t":"color","s":"css-var --color-icon-quaternary (light)"},"secondary":{"v":"#2c2c2e","t":"color","s":"css-var --color-icon-secondary (light)"},"success":{"v":"#1abc50","t":"color","s":"css-var --color-icon-success (light)"},"tertiary":{"v":"#3b3b3f","t":"color","s":"css-var --color-icon-tertiary (light)"},"vertical":{"activities":{"v":"#da572f","t":"color","s":"css-var --color-icon-vertical-activities (light)"},"dining":{"v":"#f42a60","t":"color","s":"css-var --color-icon-vertical-dining (light)"},"event":{"v":"#e4d33a","t":"color","s":"css-var --color-icon-vertical-event (light)"},"movie":{"v":"#2a96f4","t":"color","s":"css-var --color-icon-vertical-movie (light)"}},"warning":{"v":"#847915","t":"color","s":"css-var --color-icon-warning (light)"}},"surface":{"accent":{"blue":{"v":"#cee7fd","t":"color","s":"css-var --color-surface-accent-blue (light)"},"ember":{"v":"#f6cdc0","t":"color","s":"css-var --color-surface-accent-ember (light)"},"green":{"v":"#caf6d9","t":"color","s":"css-var --color-surface-accent-green (light)"},"pink":{"v":"#fcd9f6","t":"color","s":"css-var --color-surface-accent-pink (light)"},"purple":{"v":"#d5ccff","t":"color","s":"css-var --color-surface-accent-purple (light)"},"red":{"v":"#ffd7df","t":"color","s":"css-var --color-surface-accent-red (light)"},"yellow":{"v":"#f8f0bf","t":"color","s":"css-var --color-surface-accent-yellow (light)"}},"error":{"v":"#f9dbd2","t":"color","s":"css-var --color-surface-error (light)"},"inverse":{"v":"#131316","t":"color","s":"css-var --color-surface-inverse (light)"},"offer":{"gradient":{"end":{"v":"#bcaefe","t":"color","s":"css-var --color-surface-offer-gradient-end (light)"},"start":{"v":"#401cce","t":"color","s":"css-var --color-surface-offer-gradient-start (light)"}},"primary":{"v":"#6d49fd","t":"color","s":"css-var --color-surface-offer-primary (light)"},"secondary":{"v":"rgba(64, 28, 206, 0.2)","t":"color","s":"css-var --color-surface-offer-secondary (light)"}},"primary":{"v":"#ffffff","t":"color","s":"css-var --color-surface-primary (light)"},"secondary":{"v":"#f1f1f2","t":"color","s":"css-var --color-surface-secondary (light)"},"selection":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --color-surface-selection (light)"},"success":{"v":"#dcf9e6","t":"color","s":"css-var --color-surface-success (light)"},"transparent":{"default":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"css-var --color-surface-transparent (light)"},"secondary":{"v":"rgba(0, 0, 0, 0.48)","t":"color","s":"css-var --color-surface-transparent-secondary (light)"}},"warning":{"v":"#f8f0bf","t":"color","s":"css-var --color-surface-warning (light)"}},"text":{"accent":{"blue":{"v":"#143152","t":"color","s":"css-var --color-text-accent-blue (light)"},"ember":{"v":"#57200f","t":"color","s":"css-var --color-text-accent-ember (light)"},"green":{"v":"#095322","t":"color","s":"css-var --color-text-accent-green (light)"},"pink":{"v":"#5c0a4b","t":"color","s":"css-var --color-text-accent-pink (light)"},"purple":{"v":"#231268","t":"color","s":"css-var --color-text-accent-purple (light)"},"red":{"v":"#61051e","t":"color","s":"css-var --color-text-accent-red (light)"},"yellow":{"v":"#847915","t":"color","s":"css-var --color-text-accent-yellow (light)"}},"disabled":{"v":"#bfbfc4","t":"color","s":"css-var --color-text-disabled (light)"},"error":{"v":"#ad401f","t":"color","s":"css-var --color-text-error (light)"},"inverse":{"v":"#f7f7f7","t":"color","s":"css-var --color-text-inverse (light)"},"offer":{"v":"#6d49fd","t":"color","s":"css-var --color-text-offer (light)"},"primary":{"v":"#131316","t":"color","s":"css-var --color-text-primary (light)"},"quaternary":{"v":"#a5a5ac","t":"color","s":"css-var --color-text-quaternary (light)"},"secondary":{"v":"#545459","t":"color","s":"css-var --color-text-secondary (light)"},"success":{"v":"#158e3e","t":"color","s":"css-var --color-text-success (light)"},"transparent":{"v":"rgba(0, 0, 0, 0.88)","t":"color","s":"css-var --color-text-transparent (light)"},"warning":{"v":"#b8a91e","t":"color","s":"css-var --color-text-warning (light)"}}},"background":{"page":{"v":"{color.background.primary}","t":"color","s":"declared --color-background-primary (raw/css-vars.json resolved.light); no computed reading of the light page field (seen in screenshots/home-default.png); matches declared --color-background-primary","d":"The white field every public page paints (matches --color-background-primary)."},"selected":{"v":"{color.gradient-purple}","t":"color","s":"computed backgroundColor of nv-tab-active default (raw/components-computed.json); matches declared color.gradient-purple","d":"The #eae5ff selected category-tab fill (matches --color-purple-100/--color-gradient-purple)."},"footer":{"v":"{color.grey.800}","t":"color","s":"computed backgroundColor of ft-bar default (raw/components-computed.json); matches declared color.grey.800","d":"The #1e1e20 sitemap footer slab (matches --color-grey-800)."}},"text":{"ink":{"v":"{color.text.primary}","t":"color","s":"computed color of nv-search default (raw/components-computed.json); matches declared --color-text-primary","d":"The #131316 ink on headings, prices and body text (matches --color-text-primary)."},"muted":{"v":"{color.text.secondary}","t":"color","s":"computed color of nv-tab default (raw/components-computed.json); matches declared --color-text-secondary","d":"The #545459 muted ink on inactive category tabs (matches --color-text-secondary/--color-grey-500)."},"on-accent":{"v":"{color.text.accent.purple}","t":"color","s":"computed color of nv-tab-active default (raw/components-computed.json); matches declared --color-text-accent-purple","d":"The #231268 deep-purple label on the selected tab (matches --color-text-accent-purple/--color-purple-800)."}},"action":{"primary":{"v":"{color.button.primary.background.default}","t":"color","s":"computed backgroundColor of tk-book default (raw/components-computed.json); matches declared --color-button-primary-background","d":"The #131316 Book-tickets CTA (matches --color-button-primary-background)."},"on-primary":{"v":"{color.brand-pure-white}","t":"color","s":"computed label colour of tk-book default (raw/components-computed.json); matches declared color.brand-pure-white","d":"The #f7f7f7 label on the Book CTA (matches --color-button-primary-label)."}},"border":{"hairline":{"v":"{color.border.subtle}","t":"color","s":"computed borderBottomColor of nv-bar default (raw/components-computed.json); matches declared --color-border-subtle","d":"The black@8% hairline under the app bar (matches --color-border-subtle)."},"chip-line":{"v":"{color.border.intense}","t":"color","s":"computed borderBottomColor of mv-chip default (raw/components-computed.json); matches declared --color-border-intense","d":"The black@24% filter-chip border (matches --color-border-intense)."}}},"dark":{"color":{"background":{"blur":{"v":"rgba(0, 0, 0, 0.4)","t":"color","s":"css-var --color-background-blur (dark)"},"primary":{"v":"#131316","t":"color","s":"css-var --color-background-primary (dark)"},"secondary":{"v":"#1e1e20","t":"color","s":"css-var --color-background-secondary (dark)"}},"border":{"accent":{"blue":{"v":"#143152","t":"color","s":"css-var --color-border-accent-blue (dark)"},"ember":{"v":"#57200f","t":"color","s":"css-var --color-border-accent-ember (dark)"},"green":{"v":"#095322","t":"color","s":"css-var --color-border-accent-green (dark)"},"pink":{"v":"#5c0a4b","t":"color","s":"css-var --color-border-accent-pink (dark)"},"purple":{"v":"#371ba7","t":"color","s":"css-var --color-border-accent-purple (dark)"},"red":{"v":"#61051e","t":"color","s":"css-var --color-border-accent-red (dark)"},"yellow":{"v":"#585004","t":"color","s":"css-var --color-border-accent-yellow (dark)"}},"card":{"primary":{"v":"#1e1e20","t":"color","s":"css-var --color-border-card-primary (dark)"},"secondary":{"v":"#2c2c2e","t":"color","s":"css-var --color-border-card-secondary (dark)"}},"disabled":{"v":"#3b3b3f","t":"color","s":"css-var --color-border-disabled (dark)"},"error":{"v":"#f09275","t":"color","s":"css-var --color-border-error (dark)"},"intense":{"v":"rgba(255, 255, 255, 0.24)","t":"color","s":"css-var --color-border-intense (dark)"},"inverse":{"v":"#545459","t":"color","s":"css-var --color-border-inverse (dark)"},"moderate":{"default":{"v":"rgba(255, 255, 255, 0.16)","t":"color","s":"css-var --color-border-moderate (dark)"},"inverse":{"v":"rgba(0, 0, 0, 0.16)","t":"color","s":"css-var --color-border-moderate-inverse (dark)"}},"selection":{"v":"#f7f7f7","t":"color","s":"css-var --color-border-selection (dark)"},"subtle":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --color-border-subtle (dark)"},"success":{"v":"#73e89a","t":"color","s":"css-var --color-border-success (dark)"},"warning":{"v":"#ebdf6f","t":"color","s":"css-var --color-border-warning (dark)"}},"button":{"error":{"background":{"v":"#57200f","t":"color","s":"css-var --color-button-error-background (dark)"}},"outline":{"border":{"v":"#f7f7f7","t":"color","s":"css-var --color-button-outline-border (dark)"}},"primary":{"background":{"default":{"v":"#f7f7f7","t":"color","s":"css-var --color-button-primary-background (dark)"},"disabled":{"v":"#3b3b3f","t":"color","s":"css-var --color-button-primary-background-disabled (dark)"},"pressed":{"v":"#f1f1f2","t":"color","s":"css-var --color-button-primary-background-pressed (dark)"}},"icon":{"default":{"v":"#131316","t":"color","s":"css-var --color-button-primary-icon (dark)"},"disabled":{"v":"#77777e","t":"color","s":"css-var --color-button-primary-icon-disabled (dark)"},"pressed":{"v":"#131316","t":"color","s":"css-var --color-button-primary-icon-pressed (dark)"}},"label":{"default":{"v":"#131316","t":"color","s":"css-var --color-button-primary-label (dark)"},"disabled":{"v":"#77777e","t":"color","s":"css-var --color-button-primary-label-disabled (dark)"},"pressed":{"v":"#131316","t":"color","s":"css-var --color-button-primary-label-pressed (dark)"}}},"secondary":{"background":{"default":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --color-button-secondary-background (dark)"},"pressed":{"v":"rgba(255, 255, 255, 0.16)","t":"color","s":"css-var --color-button-secondary-background-pressed (dark)"}},"border":{"default":{"v":"#f7f7f7","t":"color","s":"css-var --color-button-secondary-border (dark)"},"disabled":{"v":"#545459","t":"color","s":"css-var --color-button-secondary-border-disabled (dark)"},"pressed":{"v":"#f1f1f2","t":"color","s":"css-var --color-button-secondary-border-pressed (dark)"}},"icon":{"default":{"v":"#f7f7f7","t":"color","s":"css-var --color-button-secondary-icon (dark)"},"disabled":{"v":"#77777e","t":"color","s":"css-var --color-button-secondary-icon-disabled (dark)"},"pressed":{"v":"#f1f1f2","t":"color","s":"css-var --color-button-secondary-icon-pressed (dark)"}},"label":{"default":{"v":"#f7f7f7","t":"color","s":"css-var --color-button-secondary-label (dark)"},"disabled":{"v":"#77777e","t":"color","s":"css-var --color-button-secondary-label-disabled (dark)"},"pressed":{"v":"#f1f1f2","t":"color","s":"css-var --color-button-secondary-label-pressed (dark)"}}},"success":{"background":{"v":"#042f12","t":"color","s":"css-var --color-button-success-background (dark)"}},"tertiary":{"background":{"default":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --color-button-tertiary-background (dark)"},"disabled":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --color-button-tertiary-background-disabled (dark)"},"pressed":{"v":"rgba(255, 255, 255, 0.16)","t":"color","s":"css-var --color-button-tertiary-background-pressed (dark)"}},"icon":{"default":{"v":"#f7f7f7","t":"color","s":"css-var --color-button-tertiary-icon (dark)"},"disabled":{"v":"#8b8b93","t":"color","s":"css-var --color-button-tertiary-icon-disabled (dark)"},"pressed":{"v":"#f1f1f2","t":"color","s":"css-var --color-button-tertiary-icon-pressed (dark)"}},"label":{"default":{"v":"#f7f7f7","t":"color","s":"css-var --color-button-tertiary-label (dark)"},"disabled":{"v":"#8b8b93","t":"color","s":"css-var --color-button-tertiary-label-disabled (dark)"},"pressed":{"v":"#f1f1f2","t":"color","s":"css-var --color-button-tertiary-label-pressed (dark)"}}},"text":{"icon":{"default":{"v":"#f7f7f7","t":"color","s":"css-var --color-button-text-icon (dark)"},"disabled":{"v":"#545459","t":"color","s":"css-var --color-button-text-icon-disabled (dark)"},"pressed":{"v":"#bfbfc4","t":"color","s":"css-var --color-button-text-icon-pressed (dark)"}},"label":{"default":{"v":"#f7f7f7","t":"color","s":"css-var --color-button-text-label (dark)"},"disabled":{"v":"#545459","t":"color","s":"css-var --color-button-text-label-disabled (dark)"},"pressed":{"v":"#bfbfc4","t":"color","s":"css-var --color-button-text-label-pressed (dark)"}}},"warning":{"background":{"v":"#322a01","t":"color","s":"css-var --color-button-warning-background (dark)"}}},"icon":{"accent":{"blue":{"v":"#45a4f7","t":"color","s":"css-var --color-icon-accent-blue (dark)"},"ember":{"v":"#e96f49","t":"color","s":"css-var --color-icon-accent-ember (dark)"},"green":{"v":"#58e487","t":"color","s":"css-var --color-icon-accent-green (dark)"},"peach":{"v":"#ff7f7f","t":"color","s":"css-var --color-icon-accent-peach (dark)"},"pink":{"v":"#f449d1","t":"color","s":"css-var --color-icon-accent-pink (dark)"},"purple":{"v":"#8972fe","t":"color","s":"css-var --color-icon-accent-purple (dark)"},"red":{"v":"#fb4173","t":"color","s":"css-var --color-icon-accent-red (dark)"},"yellow":{"v":"#e8d954","t":"color","s":"css-var --color-icon-accent-yellow (dark)"}},"disabled":{"v":"#545459","t":"color","s":"css-var --color-icon-disabled (dark)"},"error":{"v":"#f09275","t":"color","s":"css-var --color-icon-error (dark)"},"inverse":{"v":"#131316","t":"color","s":"css-var --color-icon-inverse (dark)"},"offer":{"v":"#6d49fd","t":"color","s":"css-var --color-icon-offer (dark)"},"primary":{"v":"#f7f7f7","t":"color","s":"css-var --color-icon-primary (dark)"},"quaternary":{"v":"#77777e","t":"color","s":"css-var --color-icon-quaternary (dark)"},"secondary":{"v":"#cfcfd3","t":"color","s":"css-var --color-icon-secondary (dark)"},"success":{"v":"#58e487","t":"color","s":"css-var --color-icon-success (dark)"},"tertiary":{"v":"#8b8b93","t":"color","s":"css-var --color-icon-tertiary (dark)"},"vertical":{"activities":{"v":"#e96f49","t":"color","s":"css-var --color-icon-vertical-activities (dark)"},"dining":{"v":"#fb4173","t":"color","s":"css-var --color-icon-vertical-dining (dark)"},"event":{"v":"#e8d954","t":"color","s":"css-var --color-icon-vertical-event (dark)"},"movie":{"v":"#45a4f7","t":"color","s":"css-var --color-icon-vertical-movie (dark)"}},"warning":{"v":"#ebdf6f","t":"color","s":"css-var --color-icon-warning (dark)"}},"surface":{"accent":{"blue":{"v":"#08529b","t":"color","s":"css-var --color-surface-accent-blue (dark)"},"ember":{"v":"#823017","t":"color","s":"css-var --color-surface-accent-ember (dark)"},"green":{"v":"#158e3e","t":"color","s":"css-var --color-surface-accent-green (dark)"},"pink":{"v":"#9c1180","t":"color","s":"css-var --color-surface-accent-pink (dark)"},"purple":{"v":"#371ba7","t":"color","s":"css-var --color-surface-accent-purple (dark)"},"red":{"v":"#960d32","t":"color","s":"css-var --color-surface-accent-red (dark)"},"yellow":{"v":"#847915","t":"color","s":"css-var --color-surface-accent-yellow (dark)"}},"error":{"v":"#57200f","t":"color","s":"css-var --color-surface-error (dark)"},"inverse":{"v":"#f7f7f7","t":"color","s":"css-var --color-surface-inverse (dark)"},"offer":{"gradient":{"end":{"v":"#6d49fd","t":"color","s":"css-var --color-surface-offer-gradient-end (dark)"},"start":{"v":"#6d49fd","t":"color","s":"css-var --color-surface-offer-gradient-start (dark)"}},"primary":{"v":"#5631ed","t":"color","s":"css-var --color-surface-offer-primary (dark)"},"secondary":{"v":"rgba(109, 73, 253, 0.2)","t":"color","s":"css-var --color-surface-offer-secondary (dark)"}},"primary":{"v":"#1e1e20","t":"color","s":"css-var --color-surface-primary (dark)"},"secondary":{"v":"#2c2c2e","t":"color","s":"css-var --color-surface-secondary (dark)"},"selection":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --color-surface-selection (dark)"},"success":{"v":"#042f12","t":"color","s":"css-var --color-surface-success (dark)"},"transparent":{"default":{"v":"rgba(255, 255, 255, 0.08)","t":"color","s":"css-var --color-surface-transparent (dark)"},"secondary":{"v":"rgba(255, 255, 255, 0.48)","t":"color","s":"css-var --color-surface-transparent-secondary (dark)"}},"warning":{"v":"#322a01","t":"color","s":"css-var --color-surface-warning (dark)"}},"text":{"accent":{"blue":{"v":"#cee7fd","t":"color","s":"css-var --color-text-accent-blue (dark)"},"ember":{"v":"#f6cdc0","t":"color","s":"css-var --color-text-accent-ember (dark)"},"green":{"v":"#caf6d9","t":"color","s":"css-var --color-text-accent-green (dark)"},"pink":{"v":"#fcd9f6","t":"color","s":"css-var --color-text-accent-pink (dark)"},"purple":{"v":"#d5ccff","t":"color","s":"css-var --color-text-accent-purple (dark)"},"red":{"v":"#ffd7df","t":"color","s":"css-var --color-text-accent-red (dark)"},"yellow":{"v":"#f8f0bf","t":"color","s":"css-var --color-text-accent-yellow (dark)"}},"disabled":{"v":"#545459","t":"color","s":"css-var --color-text-disabled (dark)"},"error":{"v":"#f09275","t":"color","s":"css-var --color-text-error (dark)"},"inverse":{"v":"#131316","t":"color","s":"css-var --color-text-inverse (dark)"},"offer":{"v":"#bcaefe","t":"color","s":"css-var --color-text-offer (dark)"},"primary":{"v":"#f7f7f7","t":"color","s":"css-var --color-text-primary (dark)"},"quaternary":{"v":"#545459","t":"color","s":"css-var --color-text-quaternary (dark)"},"secondary":{"v":"#a5a5ac","t":"color","s":"css-var --color-text-secondary (dark)"},"success":{"v":"#58e487","t":"color","s":"css-var --color-text-success (dark)"},"transparent":{"v":"rgba(255, 255, 255, 0.64)","t":"color","s":"css-var --color-text-transparent (dark)"},"warning":{"v":"#ebdf6f","t":"color","s":"css-var --color-text-warning (dark)"}}},"background":{"page":{"v":"{color.background.primary}","t":"color","s":"computed backgroundColor of dk-body default (raw/components-computed.json); matches declared --color-background-primary","d":"The #131316 field the pages repaint under data-theme=dark (matches --color-background-primary dark)."},"nav":{"v":"{color.background.primary}","t":"color","s":"computed backgroundColor of dk-nav default (raw/components-computed.json); matches declared --color-background-primary","d":"The #131316 nav bar under dark."}},"border":{"hairline":{"v":"{color.border.subtle}","t":"color","s":"computed borderBottomColor of dk-nav default (raw/components-computed.json); matches declared --color-border-subtle","d":"The white@8% hairline under the dark app bar (matches --color-border-subtle dark)."}},"text":{"ink":{"v":"{color.text.primary}","t":"color","s":"computed color of dk-nav default, the repainted nav ink under data-theme=dark (raw/components-computed.json); matches declared --color-text-primary","d":"The #f7f7f7 ink the dark theme paints on its text roles (matches --color-text-primary dark)."}},"surface":{"card":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"computed backgroundColor of dk-card default (raw/components-computed.json)","d":"The card surface under dark (transparent over the #131316 field here)."}}}};
+const $ = (s) => document.querySelector(s);
+// The light/dark toggle. Both themes are real paint signed out — the
+// marketing light and the app's .theme-darker — so flipping data-mode swaps
+// every token var and the samples below repaint for real.
+$('#mode').addEventListener('click', () => {
+  const on = document.documentElement.getAttribute('data-mode') === 'dark';
+  document.documentElement.setAttribute('data-mode', on ? '' : 'dark');
+  $('#mode').textContent = on ? 'Dark' : 'Light';
+  $('#mode').setAttribute('aria-pressed', on ? 'false' : 'true');
+});
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  // The shared colour layer is wider than color.*: always.*, ansi.*,
+  // background.* and other invariant colour vars live at their natural paths.
+  const shared = {};
+  for (const [n, t] of flat(TOK.core || {}, '')) {
+    if (t.t !== 'color' || n.startsWith('color.') || n.startsWith('component')) continue;
+    (shared[n.split('.')[0]] = shared[n.split('.')[0]] || []).push([n, t]);
+  }
+  for (const g of Object.keys(shared).sort()) {
+    h += `<div class="pal-h">${esc(g)}.*</div><div class="pal">`;
+    for (const [n, t] of shared[g]) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the app surfaces\' .theme-darker paint)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // Each set's custom properties only resolve inside its own scope (.light
+    // re-declares the shared names :root holds), or a dark page repaint turns
+    // the "light roles" palette dark.
+    h += `<div class="pal-h">${label}</div><div class="pal ${setname}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.space || {}, 'space.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  let node = TOK.core || TOK, seen = [];
+  for (const k of m[1].split('.')) { node = node && node[k]; seen.push(k); }
+  return node && node.v !== undefined ? resolveVal(node.v, (depth || 0) + 1) : v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const v = resolveVal(t.v).trim();
+    const m = /^([\d.]+)(px|rem|em)$/.exec(v);
+    const size = m ? `min(${m[1]}${m[2]}, 44px)` : '13px';
+    h += `<div class="tr"><span class="ts" style="font-size:${size}">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — District</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

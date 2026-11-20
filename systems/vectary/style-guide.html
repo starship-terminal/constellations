@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vectary style guide</title>
+<style>
+  :root {
+    --page: #f0f0f0;
+    --surface: #ffffff;
+    --text: #252525;
+    --muted: #595959;
+    --action: #222222;
+    --on-action: #f7f7f7;
+    --stroke: #949494;
+    --banner: #fbd302;
+    --accent: #6100ff;
+    --footer: #0b0b0b;
+    --field: #f1f1f1;
+  }
+  body { margin: 0; background: var(--page); color: var(--text); font-family: Inter, sans-serif; letter-spacing: -0.03em; }
+  main { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+  h1 { font-family: "Fira Sans", sans-serif; font-weight: 300; font-size: 60px; line-height: 60px; letter-spacing: -2px; margin: 0 0 12px; }
+  h2 { font-family: "Fira Sans", sans-serif; font-weight: 300; font-size: 36px; line-height: 45px; letter-spacing: -0.96px; margin: 40px 0 12px; }
+  p { font-weight: 300; font-size: 16px; line-height: 24px; color: var(--muted); max-width: 42rem; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0; }
+  .swatch { width: 140px; background: var(--surface); border-radius: 8px; overflow: hidden; border: 1px solid var(--stroke); }
+  .swatch i { display: block; height: 64px; }
+  .swatch span { display: block; padding: 8px 10px; font-size: 12px; }
+  button, .btn { font: 400 14px/21px Inter, sans-serif; letter-spacing: -0.42px; border-radius: 8px; padding: 6px 16px; }
+  .primary { background: var(--action); color: var(--on-action); border: 1px solid var(--action); }
+  .outline { background: var(--surface); color: var(--text); border: 1px solid var(--stroke); padding: 8px 20px; }
+  .pill { background: var(--banner); color: #000; border-radius: 999px; padding: 4px 8px; font-size: 9px; font-weight: 700; }
+  .field { background: var(--field); border: 0; border-radius: 12px; height: 44px; padding: 4px 12px; width: 280px; font: 400 14px Inter, sans-serif; }
+  .card { background: var(--surface); border: 1px solid #d0d0d0; border-radius: 20px; padding: 24px; width: 240px; }
+  .price { font-size: 36px; font-weight: 600; letter-spacing: -0.1px; margin: 8px 0; }
+  .banner { background: var(--banner); color: var(--text); font-size: 12px; padding: 8px 16px; }
+  footer { background: var(--footer); color: #949494; padding: 24px; font-size: 14px; margin-top: 40px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="banner">Announcement bar, #fbd302, 12px Inter</div>
+  <h1>From AI-accelerated ideation</h1>
+  <p>Vectary is an online design platform. This page uses the measured tokens only.</p>
+  <div class="row">
+    <button class="primary">Create account</button>
+    <button class="outline">Let's talk</button>
+    <span class="pill">BETA</span>
+  </div>
+  <h2>Colour</h2>
+  <div class="row">
+    <div class="swatch"><i style="background:#f0f0f0"></i><span>page #f0f0f0</span></div>
+    <div class="swatch"><i style="background:#ffffff"></i><span>surface #ffffff</span></div>
+    <div class="swatch"><i style="background:#222222"></i><span>action #222222</span></div>
+    <div class="swatch"><i style="background:#252525"></i><span>text #252525</span></div>
+    <div class="swatch"><i style="background:#595959"></i><span>muted #595959</span></div>
+    <div class="swatch"><i style="background:#949494"></i><span>stroke #949494</span></div>
+    <div class="swatch"><i style="background:#fbd302"></i><span>banner #fbd302</span></div>
+    <div class="swatch"><i style="background:#6100ff"></i><span>accent #6100ff</span></div>
+  </div>
+  <h2>Field and plan</h2>
+  <div class="row">
+    <input class="field" placeholder="Email" aria-label="Email specimen">
+    <div class="card">
+      <div>Starter</div>
+      <div class="price">$15</div>
+      <button class="primary">Get started</button>
+    </div>
+  </div>
+</main>
+<footer>Footer #0b0b0b, type #949494</footer>
+</body>
+</html>

@@ -1,0 +1,5 @@
+role	file	note
+mark	icons/mark.svg	Nav mark, black spiral on the orange tile
+wordmark	icons/wordmark.svg	Footer wordmark from the public Sanity SVG
+chevron-down	icons/chevron-down.svg	Nav menu chevron, white at 60 percent
+arrow-right	icons/arrow-right.svg	Migrate link arrow, orange-500

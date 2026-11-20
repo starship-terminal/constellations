@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClassPass style guide</title>
+<meta name="description" content="ClassPass (classpass.com) design tokens and the public site's components, rendered from tokens.json with the measured values.">
+<style>
+:root {
+  --color-paper-0: #ffffff;
+  --color-blue-100: #c0e0ff;
+  --color-blue-400: #1a5ee5;
+  --color-blue-500: #0055ff;
+  --color-blue-600: #004de6;
+  --color-blue-700: #0044cc;
+  --color-gray-100: #f7f7f7;
+  --color-gray-200: #e7e7e7;
+  --color-gray-300: #d6d6d6;
+  --color-gray-400: #999999;
+  --color-gray-500: #757575;
+  --color-ink-750: #040404;
+  --color-ink-800: #111111;
+  --color-ink-900: #000000;
+  --color-yellow-300: #fce172;
+  --color-black-alpha-8: rgba(0, 0, 0, 0.08);
+  --color-black-alpha-10: rgba(0, 0, 0, 0.1);
+  --color-blue-alpha-10: rgba(1, 85, 254, 0.1);
+  --measured-walk-slide-ink: #000000;
+  --measured-oauth-border: #d6d6d6;
+  --font-family-ui: norms, sans-serif;
+  --font-family-display: circuit, sans-serif;
+  --font-size-display: 60px;
+  --font-size-hero: 40px;
+  --font-size-h2: 24px;
+  --font-size-sub: 20px;
+  --font-size-faq: 18px;
+  --font-size-body: 16px;
+  --font-size-nav: 14px;
+  --font-size-price: 36px;
+  --surface-page: var(--color-paper-0);
+  --surface-card: var(--color-paper-0);
+  --surface-dark: var(--color-ink-900);
+  --text-primary: var(--color-ink-900);
+  --text-muted: var(--color-gray-400);
+  --text-placeholder: var(--color-gray-500);
+  --text-onDark: var(--color-paper-0);
+  --text-onAccent: var(--color-paper-0);
+  --text-accent: var(--color-blue-500);
+  --link: var(--color-blue-400);
+  --accent: var(--color-blue-500);
+  --accentHover: var(--color-blue-600);
+  --accentPressed: var(--color-blue-700);
+  --accentSoft: var(--color-blue-100);
+  --promo: var(--color-yellow-300);
+  --fill-ink: var(--color-ink-800);
+  --fill-inkHover: var(--color-ink-750);
+  --navHover: var(--color-gray-100);
+  --scrim-card: var(--color-black-alpha-8);
+  --border-subtle: var(--color-gray-200);
+  --border-control: var(--color-gray-300);
+  --border-card: var(--color-black-alpha-10);
+  --border-focusField: var(--color-blue-400);
+  --focus: var(--color-blue-500);
+  --shadow-card: 0px 5px 16px 0px rgba(1, 85, 254, 0.1);
+  --component-control-heightCta: 40px;
+  --component-control-heightNav: 53px;
+  --component-control-heightButton: 48px;
+  --component-control-heightField: 42px;
+  --component-control-heightSearch: 64px;
+  --component-control-heightFilter: 38px;
+  --component-control-heightPill: 20px;
+  --component-control-radiusPill: 9999px;
+  --component-control-radiusField: 4px;
+  --component-control-radiusSearch: 20px;
+  --component-control-radiusFilter: 16px;
+  --component-card-radiusPlan: 18px;
+  --component-card-radiusPlanInner: 14px;
+  --component-card-radiusVenue: 5px;
+  --component-card-radiusHero: 25px;
+  --component-card-radiusPanel: 8px;
+  --component-header-height: 64px;
+  --component-footer-height: 581px;
+  --component-banner-height: 48px;
+
+  --sg-sans: var(--font-family-ui, "TT Norms Pro", -apple-system, BlinkMacSystemFont, "SF Pro", system-ui, sans-serif);
+  --sg-display: var(--font-family-display, "Circuit", Impact, "Arial Narrow", sans-serif);
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-primary, #000); background: var(--surface-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 44px/1.1 var(--sg-display); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted, #999); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-subtle, #e7e7e7); }
+.lead { max-width: 62ch; color: var(--text-muted, #999); }
+.note { font-size: 13px; color: var(--text-muted, #999); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted, #999); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-subtle, #e7e7e7); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-muted, #999); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-muted, #999); }
+/* ---- site mock ---- */
+.mock { border: 1px solid var(--border-subtle, #e7e7e7); border-radius: 16px; overflow: hidden; background: var(--surface-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-header-height, 64px); padding: 0 20px; background: var(--surface-card, #fff); border-bottom: 1px solid var(--border-subtle, #e7e7e7); font-size: var(--font-size-nav, 14px); }
+.navbar .wm { font: 700 15px/1 var(--sg-sans); letter-spacing: .02em; color: var(--accent, #0055ff); }
+.navbar .sp { flex: 1; }
+.navbar .lnk { padding: 0 4px; }
+.navbar .lnk:hover { background: var(--navHover, #f7f7f7); border-radius: 6px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-control-heightButton, 48px); padding: 0 22px; border-radius: var(--component-control-radiusPill, 9999px); font-size: var(--font-size-body, 16px); font-weight: 500; border: 0; }
+.btn.outline { background: var(--surface-card, #fff); border: 1px solid var(--border-control, #d6d6d6); color: var(--text-primary, #000); }
+.btn.accent { background: var(--accent, #0055ff); color: var(--text-onAccent, #fff); }
+.btn.accent:hover { background: var(--accentHover, #004de6); }
+.btn.ink { background: var(--fill-ink, #111); color: var(--text-onDark, #fff); }
+.hero { background: var(--surface-page, #fff); color: var(--text-primary, #000); padding: 64px 40px 56px; font: 400 var(--font-size-hero, 40px)/1.15 var(--sg-display); letter-spacing: 0; text-align: center; }
+.hero .rot { color: var(--accent, #0055ff); }
+.hero small { display: block; font: 400 var(--font-size-sub, 20px)/1.6 var(--sg-sans); color: var(--text-primary, #000); margin: 18px auto 24px; max-width: 46ch; }
+.hero .row { display: flex; gap: 10px; justify-content: center; }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; padding: 20px; }
+.plan { border-radius: var(--component-card-radiusPlan, 18px); padding: 0 0 22px; background: var(--surface-card, #fff); font-size: 13px; color: var(--text-primary, #000); box-shadow: var(--shadow-card, 0 5px 16px rgba(1,85,254,.1)); overflow: hidden; }
+.plan .band { background: var(--accentSoft, #c0e0ff); border-radius: var(--component-card-radiusPlanInner, 14px); padding: 18px 22px 14px; margin: 6px; }
+.plan .tag { display: inline-block; background: var(--accentSoft, #c0e0ff); border-radius: 14px; padding: 2px 10px; font: 500 12px/1.6 var(--sg-sans); color: var(--text-primary, #000); }
+.plan .price { font: 700 var(--font-size-price, 36px)/1 var(--sg-sans); margin: 8px 22px 14px; }
+.plan .price small { font: 400 16px/1 var(--sg-sans); color: var(--text-muted, #999); }
+.plan .btn { width: calc(100% - 44px); margin: 0 22px; height: var(--component-control-heightCta, 40px); }
+.promobar { background: var(--promo, #fce172); color: var(--text-primary, #000); padding: 13px 20px; font: 500 13px/1.4 var(--sg-sans); text-align: center; }
+.footbar { background: var(--surface-dark, #000); color: var(--text-onDark, #fff); padding: 18px 20px; font-size: 13px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-subtle, #e7e7e7); padding: 6px 14px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>ClassPass style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The mock is a reconstruction from tokens, not captured pixels — the real captures are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+
+  <h2 class="sh">ClassPass, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>. classpass.com declares no design-token CSS variables (its four custom properties are carousel-dot colours and framework internals), so the whole palette is measured on the painted chrome: the ClassPass blue accent ramp, the near-black ink ramp, the neutral greys, the promo yellow and the translucent scrims. One light theme; the footer is a black island inside it, not a dark theme.</p>
+  <p class="note">Read from classpass.com on 2026-11-16, signed out, in headless Chromium; the TrustArc consent overlay was hidden, never answered. /login's card and /walkthrough's carousel were measured as boundaries — nothing was signed into, searched for, booked or submitted. The site geo-localizes: prices were captured in SGD.</p>
+
+  <h2 class="sh">The site chrome</h2>
+  <p class="lead">A white page under a white header bar; the blue pill carries the "Get 14 days free" CTA. The hero is Circuit display type over the white ground — "One app for" followed by the rotating activity word.</p>
+  <div class="mock">
+    <div class="navbar"><span class="wm">classpass</span><span class="lnk">Products</span><span class="lnk">For businesses</span><span class="sp"></span><span class="lnk">Log in</span><span class="btn accent" style="height:40px">Get 14 days free</span></div>
+    <div class="hero">One app for <span class="rot">fitness</span>
+      <small>Join ClassPass today to access thousands of top-rated studios, gyms, salons, and spas.</small>
+      <div class="row"><span class="btn accent">Get 14 days free</span><span class="btn ink">See all plans</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Plans</h2>
+  <p class="lead">The plan carousel's white cards carry a light-blue tinted band, a pill tag and the ClassPass-blue CTA — under a brand-tinted shadow.</p>
+  <div class="mock">
+    <div class="plans">
+      <div class="plan"><div class="band"><span class="tag">DEFAULT</span><div style="font:500 20px/1.4 var(--sg-sans);margin-top:8px">19 credits</div></div><div class="price">SGD 19 <small>/mo</small></div><span class="btn accent">Get 14 days free</span></div>
+      <div class="plan"><div class="band"><span class="tag">DEFAULT</span><div style="font:500 20px/1.4 var(--sg-sans);margin-top:8px">45 credits</div></div><div class="price">SGD 99 <small>/mo</small></div><span class="btn accent">Get 14 days free</span></div>
+    </div>
+    <div class="promobar">The mobile promo banner's yellow strip.</div>
+    <div class="footbar">The black footer island, the only dark surface in the light theme.</div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The ground is <code>light.surface.page</code> (<code>color.paper.0</code>, #fff) with white cards; body ink is <code>color.ink.900</code>. The CTA is <code>light.accent</code> #0055ff (<code>color.blue.500</code>), stepping to #004de6 on hover and #0044cc pressed; the plan pill is <code>color.blue.100</code> #c0e0ff, the promo banner <code>color.yellow.300</code> #fce172, and muted text <code>color.gray.400</code> #999.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Component metrics</h2>
+  <p class="lead">Measured boxes: the 40/48px button heights, the 64px search box, the 9999px pill radius against 4px field, 16px filter and 18px plan-card corners, and the header and footer blocks at 1440px.</p>
+  <div id="layout-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2>
+  <table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read CSS variables from the live stylesheet and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, filled and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"color":{"paper":{"0":{"v":"#ffffff","t":"color","s":"computed backgroundColor of page-ground default (raw/components-computed.json)","d":"White — the html element's painted ground and the card fills."}},"blue":{"100":{"v":"#c0e0ff","t":"color","s":"computed paint.0.bg of plan-pill default (raw/components-computed.json)","d":"The soft light-blue plan pill (and the plan card's tinted area)."},"400":{"v":"#1a5ee5","t":"color","s":"computed color of signin-forgot default (raw/components-computed.json)","d":"The link blue — 'Forgot password?', and the focused field border."},"500":{"v":"#0055ff","t":"color","s":"computed backgroundColor of universal-cta default (raw/components-computed.json)","d":"The ClassPass accent — CTAs, links, the star rating."},"600":{"v":"#004de6","t":"color","s":"computed backgroundColor of universal-cta hover (raw/components-computed.json)","d":"The accent's hover step."},"700":{"v":"#0044cc","t":"color","s":"computed backgroundColor of universal-cta pressed (raw/components-computed.json)","d":"The accent's pressed step."}},"gray":{"100":{"v":"#f7f7f7","t":"color","s":"computed backgroundColor of nav-item hover (raw/components-computed.json)","d":"The nav item's hover/focus wash."},"200":{"v":"#e7e7e7","t":"color","s":"computed paint.0.border of signin-email default (raw/components-computed.json)","d":"The sign-in field and search-field hairline."},"300":{"v":"#d6d6d6","t":"color","s":"computed paint.0.border of filter-pill default (raw/components-computed.json)","d":"Control borders on the filter pills, panels and OAuth buttons."},"400":{"v":"#999999","t":"color","s":"computed textStyle.color of venue-card default (raw/components-computed.json)","d":"Muted text — the venue card's secondary line."},"500":{"v":"#757575","t":"color","s":"computed placeholder.color of search-field default (raw/components-computed.json)","d":"Placeholder text in the search comboboxes."}},"ink":{"750":{"v":"#040404","t":"color","s":"computed paint.0.bg of walk-cta hover (raw/components-computed.json)","d":"The dark button's hover step."},"800":{"v":"#111111","t":"color","s":"computed paint.0.bg of walk-cta default (raw/components-computed.json)","d":"The near-black button fill (walkthrough Next, CMS CTAs)."},"900":{"v":"#000000","t":"color","s":"computed backgroundColor of footer default (raw/components-computed.json)","d":"Black — body text and the footer field."}},"yellow":{"300":{"v":"#fce172","t":"color","s":"computed backgroundColor of m-banner default (raw/components-computed.json)","d":"The mobile promo banner's yellow."}},"black-alpha":{"8":{"v":"rgba(0, 0, 0, 0.08)","t":"color","s":"computed paint.0.bg of hero-card default (raw/components-computed.json)","d":"The 8% black scrim on the hero card."},"10":{"v":"rgba(0, 0, 0, 0.1)","t":"color","s":"computed paint.0.border of venue-card default (raw/components-computed.json)","d":"The venue card's 10% hairline."}},"blue-alpha":{"10":{"v":"rgba(1, 85, 254, 0.1)","t":"color","s":"computed boxShadow of plan-slide default (raw/components-computed.json)","d":"The brand-tinted shadow under the plan card."}}},"measured":{"walk-slide-ink":{"v":"#000000","t":"color","s":"computed textStyle.color of walk-slide default (raw/components-computed.json)","d":"The walkthrough slide's 20px medium label ink."},"oauth-border":{"v":"#d6d6d6","t":"color","s":"computed paint.0.border of signin-apple default (raw/components-computed.json)","d":"The OAuth buttons' border grey."}},"font":{"family":{"ui":{"v":"norms, sans-serif","t":"fontFamily","s":"computed fontFamily of nav-item default (raw/components-computed.json)","d":"TT Norms Pro ('norms') across the UI: nav, body copy, controls."},"display":{"v":"circuit, sans-serif","t":"fontFamily","s":"computed fontFamily of plans-h1 default (raw/components-computed.json)","d":"Circuit, the condensed display face of the hero and plan headings."}},"size":{"display":{"v":"60px","t":"dimension","s":"computed fontSize of plans-h1 default (raw/components-computed.json)","d":"The 60px plan/display heading (62.4px line-height)."},"hero":{"v":"40px","t":"dimension","s":"computed fontSize of hero-title default (raw/components-computed.json)","d":"The hero heading's 36px line — the rotating word paints on an inner span."},"h2":{"v":"24px","t":"dimension","s":"computed fontSize of section-title default (raw/components-computed.json); stale: kept from an earlier run (the 2026-11-16 recapture did not find section-title)","d":"Section headings, 24px at 28.8px."},"sub":{"v":"20px","t":"dimension","s":"computed fontSize of hero-sub default (raw/components-computed.json)","d":"The hero subtitle, 20px."},"faq":{"v":"18px","t":"dimension","s":"computed fontSize of faq-question default (raw/components-computed.json)","d":"FAQ questions, 18px."},"body":{"v":"16px","t":"dimension","s":"computed fontSize of footer-link default (raw/components-computed.json)","d":"Body copy and footer links, 16px."},"nav":{"v":"14px","t":"dimension","s":"computed fontSize of nav-item default (raw/components-computed.json)","d":"Nav labels, 14px."},"price":{"v":"36px","t":"dimension","s":"computed fontSize of plan-price default (raw/components-computed.json)","d":"Plan prices, 36px at weight 700."}}}},"light":{"surface":{"page":{"v":"{color.paper.0}","t":"color","s":"computed backgroundColor of page-ground default (raw/components-computed.json); same value as core.color.paper.0","d":"The white page ground — painted by the html element (body itself is transparent)."},"card":{"v":"{color.paper.0}","t":"color","s":"computed paint.0.bg of plan-slide default (raw/components-computed.json); same value as core.color.paper.0","d":"The card fill: plan slides, venue rows, filter panels, search box."},"dark":{"v":"{color.ink.900}","t":"color","s":"computed backgroundColor of footer default (raw/components-computed.json); same value as core.color.ink.900","d":"The black island: the site footer on every page."}},"text":{"primary":{"v":"{color.ink.900}","t":"color","s":"computed color of page-ground default (raw/components-computed.json); same value as core.color.ink.900","d":"Body and heading ink on the light pages."},"muted":{"v":"{color.gray.400}","t":"color","s":"computed textStyle.color of venue-card default (raw/components-computed.json); same value as core.color.gray.400","d":"Secondary text — the venue card's muted line."},"placeholder":{"v":"{color.gray.500}","t":"color","s":"computed placeholder.color of search-field default (raw/components-computed.json); same value as core.color.gray.500","d":"Placeholder text inside the search comboboxes."},"onDark":{"v":"{color.paper.0}","t":"color","s":"computed color of footer default (raw/components-computed.json); same value as core.color.paper.0","d":"Text painted on the black footer."},"onAccent":{"v":"{color.paper.0}","t":"color","s":"computed color of universal-cta default (raw/components-computed.json); same value as core.color.paper.0","d":"Text painted on the blue CTA."},"accent":{"v":"{color.blue.500}","t":"color","s":"computed textStyle.color of filter-pill default (raw/components-computed.json); same value as core.color.blue.500","d":"Blue text — the filter pills' labels and the star rating."}},"link":{"v":"{color.blue.400}","t":"color","s":"computed color of signin-forgot default (raw/components-computed.json); same value as core.color.blue.400","d":"The sign-in page's link blue."},"accent":{"v":"{color.blue.500}","t":"color","s":"computed backgroundColor of universal-cta default (raw/components-computed.json); same value as core.color.blue.500","d":"The ClassPass blue CTA fill."},"accentHover":{"v":"{color.blue.600}","t":"color","s":"computed backgroundColor of universal-cta hover (raw/components-computed.json); same value as core.color.blue.600","d":"The CTA's hover step."},"accentPressed":{"v":"{color.blue.700}","t":"color","s":"computed backgroundColor of universal-cta pressed (raw/components-computed.json); same value as core.color.blue.700","d":"The CTA's pressed step."},"accentSoft":{"v":"{color.blue.100}","t":"color","s":"computed paint.0.bg of plan-pill default (raw/components-computed.json); same value as core.color.blue.100","d":"The light-blue plan pill and tinted plan area."},"promo":{"v":"{color.yellow.300}","t":"color","s":"computed backgroundColor of m-banner default (raw/components-computed.json); same value as core.color.yellow.300","d":"The mobile promo banner's yellow."},"fill":{"ink":{"v":"{color.ink.800}","t":"color","s":"computed paint.0.bg of walk-cta default (raw/components-computed.json); same value as core.color.ink.800","d":"The near-black button fill (walkthrough Next, CMS CTAs)."},"inkHover":{"v":"{color.ink.750}","t":"color","s":"computed paint.0.bg of walk-cta hover (raw/components-computed.json); same value as core.color.ink.750","d":"The dark button's hover step."}},"navHover":{"v":"{color.gray.100}","t":"color","s":"computed backgroundColor of nav-item hover (raw/components-computed.json); same value as core.color.gray.100","d":"The nav item's hover/focus wash."},"scrim":{"card":{"v":"{color.black-alpha.8}","t":"color","s":"computed paint.0.bg of hero-card default (raw/components-computed.json); same value as core.color.black-alpha.8","d":"The 8% black scrim on the hero card."}},"border":{"subtle":{"v":"{color.gray.200}","t":"color","s":"computed paint.0.border of signin-email default (raw/components-computed.json); same value as core.color.gray.200","d":"The field hairline — sign-in and search inputs."},"control":{"v":"{color.gray.300}","t":"color","s":"computed paint.0.border of filter-pill default (raw/components-computed.json); same value as core.color.gray.300","d":"The 1px border on pills, panels, OAuth buttons and the search box."},"card":{"v":"{color.black-alpha.10}","t":"color","s":"computed paint.0.border of venue-card default (raw/components-computed.json); same value as core.color.black-alpha.10","d":"The venue card's 10% black hairline."},"focusField":{"v":"{color.blue.400}","t":"color","s":"computed borderTopColor of signin-email focused (raw/components-computed.json); same value as core.color.blue.400","d":"The blue the sign-in fields' border switches to when focused."}},"focus":{"v":"{color.blue.500}","t":"color","s":"computed outlineColor of universal-cta focus-visible (raw/components-computed.json); same value as core.color.blue.500","d":"The designed focus ring on the blue controls (2px solid). Many text controls keep the browser's auto ring instead (#101010) — recorded per entry."},"shadow":{"card":{"v":[{"offsetX":"0px","offsetY":"5px","blur":"16px","spread":"0px","color":"rgba(1, 85, 254, 0.1)"}],"t":"shadow","s":"computed boxShadow of plan-slide default (raw/components-computed.json)","d":"The brand-tinted drop shadow under the plan card."}},"component":{"control":{"heightCta":{"v":"40px","t":"dimension","s":"computed height of universal-cta default (raw/components-computed.json)","d":"The blue CTA height."},"heightNav":{"v":"53px","t":"dimension","s":"computed height of nav-cta default (raw/components-computed.json)","d":"The header CTA pill's height."},"heightButton":{"v":"48px","t":"dimension","s":"computed height of signin-submit default (raw/components-computed.json)","d":"The full-width button height (sign-in submit, OAuth buttons, walkthrough Next)."},"heightField":{"v":"42px","t":"dimension","s":"computed height of signin-email default (raw/components-computed.json)","d":"The sign-in field height."},"heightSearch":{"v":"64px","t":"dimension","s":"computed height of search-box default (raw/components-computed.json)","d":"The search box height."},"heightFilter":{"v":"38px","t":"dimension","s":"computed height of filter-pill default (raw/components-computed.json)","d":"The filter pill height."},"heightPill":{"v":"20px","t":"dimension","s":"computed height of plan-pill default (raw/components-computed.json)","d":"The plan-pill tag height."},"radiusPill":{"v":"9999px","t":"dimension","s":"computed paint.0.radius of signin-submit default (raw/components-computed.json)","d":"Buttons are fully rounded."},"radiusField":{"v":"4px","t":"dimension","s":"computed paint.0.radius of signin-email default (raw/components-computed.json)","d":"Field corners are 4px."},"radiusSearch":{"v":"20px","t":"dimension","s":"computed paint.1.radius of search-box default (raw/components-computed.json)","d":"The search box's 20px corner."},"radiusFilter":{"v":"16px","t":"dimension","s":"computed paint.0.radius of filter-pill default (raw/components-computed.json)","d":"Filter pill corners, 16px."}},"card":{"radiusPlan":{"v":"18px","t":"dimension","s":"computed paint.0.radius of plan-slide default (raw/components-computed.json)","d":"The plan card's 18px corner."},"radiusPlanInner":{"v":"14px","t":"dimension","s":"computed paint.1.radius of plan-slide default (raw/components-computed.json)","d":"The tinted plan area's 14px corner."},"radiusVenue":{"v":"5px","t":"dimension","s":"computed paint.1.radius of venue-card default (raw/components-computed.json)","d":"The venue card's 5px corner."},"radiusHero":{"v":"25px","t":"dimension","s":"computed paint.0.radius of hero-card default (raw/components-computed.json)","d":"The hero card's 25px corner."},"radiusPanel":{"v":"8px","t":"dimension","s":"computed paint.0.radius of filter-panel default (raw/components-computed.json)","d":"The filter panel's 8px corner."}},"header":{"height":{"v":"64px","t":"dimension","s":"computed height of header default (raw/components-computed.json)","d":"The header bar at 1440px."}},"footer":{"height":{"v":"581px","t":"dimension","s":"computed height of footer default (raw/components-computed.json)","d":"The footer block at 1440px."}},"banner":{"height":{"v":"48px","t":"dimension","s":"computed height of m-banner default (raw/components-computed.json)","d":"The mobile promo banner's height."}}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  const roles = flat(TOK.light || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+  if (roles.length) {
+    h += `<div class="pal-h">light roles</div><div class="pal">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function layout() {
+  let m = '';
+  for (const [n, t] of flat(TOK.light && TOK.light.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#layout-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+</script>
+</body>
+</html>

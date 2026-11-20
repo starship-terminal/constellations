@@ -1,0 +1,1081 @@
+{
+ "_about": "Kitchen Stories public magazine tokens. One light theme. Newspack theme colours and WPDS scales from css-vars.json; component sizes from computed styles.",
+ "core": {
+  "font": {
+   "family": {
+    "sans": {
+     "var": "--wp--preset--font-family--newspack-body",
+     "type": "fontFamily",
+     "source": "css-var --wp--preset--font-family--newspack-body resolved (raw/css-vars.json)",
+     "description": "Plus Jakarta Sans, the body face the magazine paints."
+    },
+    "display": {
+     "var": "--wp--preset--font-family--newspack-header",
+     "type": "fontFamily",
+     "source": "css-var --wp--preset--font-family--newspack-header resolved (raw/css-vars.json)",
+     "description": "Plus Jakarta Sans, the header preset."
+    },
+    "system": {
+     "var": "--wpds-typography-font-family-body",
+     "type": "fontFamily",
+     "source": "css-var --wpds-typography-font-family-body resolved (raw/css-vars.json)",
+     "description": "The WordPress Design System system stack, used where the theme does not override."
+    },
+    "mono": {
+     "var": "--wpds-typography-font-family-mono",
+     "type": "fontFamily",
+     "source": "css-var --wpds-typography-font-family-mono resolved (raw/css-vars.json)",
+     "description": "The WPDS monospace stack."
+    }
+   },
+   "size": {
+    "theme-base": {
+     "var": "--newspack-theme-font-size-base",
+     "type": "dimension",
+     "source": "css-var --newspack-theme-font-size-base resolved (raw/css-vars.json)",
+     "description": "Declared type size --newspack-theme-font-size-base."
+    },
+    "theme-base-sm": {
+     "var": "--newspack-theme-font-size-base-sm",
+     "type": "dimension",
+     "source": "css-var --newspack-theme-font-size-base-sm resolved (raw/css-vars.json)",
+     "description": "Declared type size --newspack-theme-font-size-base-sm."
+    },
+    "theme-lg": {
+     "var": "--newspack-theme-font-size-lg",
+     "type": "dimension",
+     "source": "css-var --newspack-theme-font-size-lg resolved (raw/css-vars.json)",
+     "description": "Declared type size --newspack-theme-font-size-lg."
+    },
+    "theme-md": {
+     "var": "--newspack-theme-font-size-md",
+     "type": "dimension",
+     "source": "css-var --newspack-theme-font-size-md resolved (raw/css-vars.json)",
+     "description": "Declared type size --newspack-theme-font-size-md."
+    },
+    "theme-ratio": {
+     "var": "--newspack-theme-font-size-ratio",
+     "type": "dimension",
+     "source": "css-var --newspack-theme-font-size-ratio resolved (raw/css-vars.json)",
+     "description": "Declared type size --newspack-theme-font-size-ratio."
+    },
+    "theme-sm": {
+     "var": "--newspack-theme-font-size-sm",
+     "type": "dimension",
+     "source": "css-var --newspack-theme-font-size-sm resolved (raw/css-vars.json)",
+     "description": "Declared type size --newspack-theme-font-size-sm."
+    },
+    "theme-xl": {
+     "var": "--newspack-theme-font-size-xl",
+     "type": "dimension",
+     "source": "css-var --newspack-theme-font-size-xl resolved (raw/css-vars.json)",
+     "description": "Declared type size --newspack-theme-font-size-xl."
+    },
+    "theme-xs": {
+     "var": "--newspack-theme-font-size-xs",
+     "type": "dimension",
+     "source": "css-var --newspack-theme-font-size-xs resolved (raw/css-vars.json)",
+     "description": "Declared type size --newspack-theme-font-size-xs."
+    },
+    "theme-xxl": {
+     "var": "--newspack-theme-font-size-xxl",
+     "type": "dimension",
+     "source": "css-var --newspack-theme-font-size-xxl resolved (raw/css-vars.json)",
+     "description": "Declared type size --newspack-theme-font-size-xxl."
+    },
+    "theme-xxs": {
+     "var": "--newspack-theme-font-size-xxs",
+     "type": "dimension",
+     "source": "css-var --newspack-theme-font-size-xxs resolved (raw/css-vars.json)",
+     "description": "Declared type size --newspack-theme-font-size-xxs."
+    },
+    "theme-xxxl": {
+     "var": "--newspack-theme-font-size-xxxl",
+     "type": "dimension",
+     "source": "css-var --newspack-theme-font-size-xxxl resolved (raw/css-vars.json)",
+     "description": "Declared type size --newspack-theme-font-size-xxxl."
+    },
+    "theme-xxxxl": {
+     "var": "--newspack-theme-font-size-xxxxl",
+     "type": "dimension",
+     "source": "css-var --newspack-theme-font-size-xxxxl resolved (raw/css-vars.json)",
+     "description": "Declared type size --newspack-theme-font-size-xxxxl."
+    },
+    "theme-xxxxxl": {
+     "var": "--newspack-theme-font-size-xxxxxl",
+     "type": "dimension",
+     "source": "css-var --newspack-theme-font-size-xxxxxl resolved (raw/css-vars.json)",
+     "description": "Declared type size --newspack-theme-font-size-xxxxxl."
+    },
+    "wp-preset-font-size-huge": {
+     "var": "--wp--preset--font-size--huge",
+     "type": "dimension",
+     "source": "css-var --wp--preset--font-size--huge resolved (raw/css-vars.json)",
+     "description": "Declared type size --wp--preset--font-size--huge."
+    },
+    "wp-preset-font-size-large": {
+     "var": "--wp--preset--font-size--large",
+     "type": "dimension",
+     "source": "css-var --wp--preset--font-size--large resolved (raw/css-vars.json)",
+     "description": "Declared type size --wp--preset--font-size--large."
+    },
+    "wp-preset-font-size-medium": {
+     "var": "--wp--preset--font-size--medium",
+     "type": "dimension",
+     "source": "css-var --wp--preset--font-size--medium resolved (raw/css-vars.json)",
+     "description": "Declared type size --wp--preset--font-size--medium."
+    },
+    "wp-preset-font-size-normal": {
+     "var": "--wp--preset--font-size--normal",
+     "type": "dimension",
+     "source": "css-var --wp--preset--font-size--normal resolved (raw/css-vars.json)",
+     "description": "Declared type size --wp--preset--font-size--normal."
+    },
+    "wp-preset-font-size-small": {
+     "var": "--wp--preset--font-size--small",
+     "type": "dimension",
+     "source": "css-var --wp--preset--font-size--small resolved (raw/css-vars.json)",
+     "description": "Declared type size --wp--preset--font-size--small."
+    },
+    "wp-preset-font-size-x-large": {
+     "var": "--wp--preset--font-size--x-large",
+     "type": "dimension",
+     "source": "css-var --wp--preset--font-size--x-large resolved (raw/css-vars.json)",
+     "description": "Declared type size --wp--preset--font-size--x-large."
+    },
+    "wpds-2xl": {
+     "var": "--wpds-typography-font-size-2xl",
+     "type": "dimension",
+     "source": "css-var --wpds-typography-font-size-2xl resolved (raw/css-vars.json)",
+     "description": "Declared type size --wpds-typography-font-size-2xl."
+    },
+    "wpds-lg": {
+     "var": "--wpds-typography-font-size-lg",
+     "type": "dimension",
+     "source": "css-var --wpds-typography-font-size-lg resolved (raw/css-vars.json)",
+     "description": "Declared type size --wpds-typography-font-size-lg."
+    },
+    "wpds-md": {
+     "var": "--wpds-typography-font-size-md",
+     "type": "dimension",
+     "source": "css-var --wpds-typography-font-size-md resolved (raw/css-vars.json)",
+     "description": "Declared type size --wpds-typography-font-size-md."
+    },
+    "wpds-sm": {
+     "var": "--wpds-typography-font-size-sm",
+     "type": "dimension",
+     "source": "css-var --wpds-typography-font-size-sm resolved (raw/css-vars.json)",
+     "description": "Declared type size --wpds-typography-font-size-sm."
+    },
+    "wpds-xl": {
+     "var": "--wpds-typography-font-size-xl",
+     "type": "dimension",
+     "source": "css-var --wpds-typography-font-size-xl resolved (raw/css-vars.json)",
+     "description": "Declared type size --wpds-typography-font-size-xl."
+    },
+    "wpds-xs": {
+     "var": "--wpds-typography-font-size-xs",
+     "type": "dimension",
+     "source": "css-var --wpds-typography-font-size-xs resolved (raw/css-vars.json)",
+     "description": "Declared type size --wpds-typography-font-size-xs."
+    }
+   }
+  },
+  "radius": {
+   "lg": {
+    "var": "--wpds-border-radius-lg",
+    "type": "dimension",
+    "source": "css-var --wpds-border-radius-lg resolved (raw/css-vars.json)",
+    "description": "WPDS radius --wpds-border-radius-lg."
+   },
+   "md": {
+    "var": "--wpds-border-radius-md",
+    "type": "dimension",
+    "source": "css-var --wpds-border-radius-md resolved (raw/css-vars.json)",
+    "description": "WPDS radius --wpds-border-radius-md."
+   },
+   "sm": {
+    "var": "--wpds-border-radius-sm",
+    "type": "dimension",
+    "source": "css-var --wpds-border-radius-sm resolved (raw/css-vars.json)",
+    "description": "WPDS radius --wpds-border-radius-sm."
+   },
+   "xl": {
+    "var": "--wpds-border-radius-xl",
+    "type": "dimension",
+    "source": "css-var --wpds-border-radius-xl resolved (raw/css-vars.json)",
+    "description": "WPDS radius --wpds-border-radius-xl."
+   },
+   "xs": {
+    "var": "--wpds-border-radius-xs",
+    "type": "dimension",
+    "source": "css-var --wpds-border-radius-xs resolved (raw/css-vars.json)",
+    "description": "WPDS radius --wpds-border-radius-xs."
+   }
+  },
+  "borderWidth": {
+   "focus": {
+    "var": "--wpds-border-width-focus",
+    "type": "dimension",
+    "source": "css-var --wpds-border-width-focus resolved (raw/css-vars.json)",
+    "description": "WPDS border width --wpds-border-width-focus."
+   },
+   "lg": {
+    "var": "--wpds-border-width-lg",
+    "type": "dimension",
+    "source": "css-var --wpds-border-width-lg resolved (raw/css-vars.json)",
+    "description": "WPDS border width --wpds-border-width-lg."
+   },
+   "md": {
+    "var": "--wpds-border-width-md",
+    "type": "dimension",
+    "source": "css-var --wpds-border-width-md resolved (raw/css-vars.json)",
+    "description": "WPDS border width --wpds-border-width-md."
+   },
+   "sm": {
+    "var": "--wpds-border-width-sm",
+    "type": "dimension",
+    "source": "css-var --wpds-border-width-sm resolved (raw/css-vars.json)",
+    "description": "WPDS border width --wpds-border-width-sm."
+   },
+   "xs": {
+    "var": "--wpds-border-width-xs",
+    "type": "dimension",
+    "source": "css-var --wpds-border-width-xs resolved (raw/css-vars.json)",
+    "description": "WPDS border width --wpds-border-width-xs."
+   }
+  },
+  "component": {
+   "header": {
+    "height": {
+     "value": "84.7656px",
+     "type": "dimension",
+     "source": "measured header default height (raw/components-computed.json)",
+     "description": "height of header."
+    }
+   },
+   "search-field": {
+    "height": {
+     "value": "41.9688px",
+     "type": "dimension",
+     "source": "measured search-field default height (raw/components-computed.json)",
+     "description": "height of search-field."
+    }
+   },
+   "nav-link": {
+    "size": {
+     "value": "15px",
+     "type": "dimension",
+     "source": "measured nav-link default fontSize (raw/components-computed.json)",
+     "description": "size of nav-link."
+    }
+   },
+   "recipe-h1": {
+    "size": {
+     "value": "32px",
+     "type": "dimension",
+     "source": "measured recipe-h1 default fontSize (raw/components-computed.json)",
+     "description": "size of recipe-h1."
+    }
+   },
+   "card-title": {
+    "size": {
+     "value": "38px",
+     "type": "dimension",
+     "source": "measured card-title default fontSize (raw/components-computed.json)",
+     "description": "size of card-title."
+    }
+   }
+  }
+ },
+ "light": {
+  "page": {
+   "var": "--newspack-theme-color-bg-body",
+   "type": "color",
+   "source": "css-var --newspack-theme-color-bg-body resolved (raw/css-vars.json)",
+   "description": "Page background."
+  },
+  "surface": {
+   "var": "--newspack-theme-color-bg-light",
+   "type": "color",
+   "source": "css-var --newspack-theme-color-bg-light resolved (raw/css-vars.json)",
+   "description": "Light surface behind panels."
+  },
+  "surface-input": {
+   "var": "--newspack-theme-color-bg-input",
+   "type": "color",
+   "source": "css-var --newspack-theme-color-bg-input resolved (raw/css-vars.json)",
+   "description": "Field background."
+  },
+  "header": {
+   "var": "--newspack-header-color",
+   "type": "color",
+   "source": "css-var --newspack-header-color resolved (raw/css-vars.json)",
+   "description": "Header bar background."
+  },
+  "footer": {
+   "var": "--newspack-footer-color",
+   "type": "color",
+   "source": "css-var --newspack-footer-color resolved (raw/css-vars.json)",
+   "description": "Footer background, the warm #fff5ea band."
+  },
+  "ink": {
+   "var": "--newspack-theme-color-text-main",
+   "type": "color",
+   "source": "css-var --newspack-theme-color-text-main resolved (raw/css-vars.json)",
+   "description": "Primary text."
+  },
+  "ink-strong": {
+   "var": "--newspack-primary-color",
+   "type": "color",
+   "source": "css-var --newspack-primary-color resolved (raw/css-vars.json)",
+   "description": "Primary brand ink, #212121."
+  },
+  "muted": {
+   "var": "--newspack-theme-color-text-light",
+   "type": "color",
+   "source": "css-var --newspack-theme-color-text-light resolved (raw/css-vars.json)",
+   "description": "Secondary text."
+  },
+  "hover": {
+   "var": "--newspack-theme-color-text-hover",
+   "type": "color",
+   "source": "css-var --newspack-theme-color-text-hover resolved (raw/css-vars.json)",
+   "description": "Text hover."
+  },
+  "link": {
+   "var": "--newspack-theme-color-link",
+   "type": "color",
+   "source": "css-var --newspack-theme-color-link resolved (raw/css-vars.json)",
+   "description": "Link colour."
+  },
+  "border": {
+   "var": "--newspack-theme-color-border",
+   "type": "color",
+   "source": "css-var --newspack-theme-color-border resolved (raw/css-vars.json)",
+   "description": "Default border."
+  },
+  "border-light": {
+   "var": "--newspack-theme-color-border-light",
+   "type": "color",
+   "source": "css-var --newspack-theme-color-border-light resolved (raw/css-vars.json)",
+   "description": "Lighter border."
+  },
+  "highlight": {
+   "var": "--newspack-theme-color-highlight",
+   "type": "color",
+   "source": "css-var --newspack-theme-color-highlight resolved (raw/css-vars.json)",
+   "description": "Highlight yellow."
+  },
+  "cta": {
+   "var": "--newspack-cta-color",
+   "type": "color",
+   "source": "css-var --newspack-cta-color resolved (raw/css-vars.json)",
+   "description": "Call-to-action red."
+  },
+  "cta-text": {
+   "var": "--newspack-cta-contrast-color",
+   "type": "color",
+   "source": "css-var --newspack-cta-contrast-color resolved (raw/css-vars.json)",
+   "description": "Text on the call-to-action."
+  },
+  "on-primary": {
+   "var": "--newspack-primary-contrast-color",
+   "type": "color",
+   "source": "css-var --newspack-primary-contrast-color resolved (raw/css-vars.json)",
+   "description": "Text on the primary ink."
+  },
+  "dark": {
+   "var": "--newspack-theme-color-bg-dark",
+   "type": "color",
+   "source": "css-var --newspack-theme-color-bg-dark resolved (raw/css-vars.json)",
+   "description": "Dark surface used inside the light theme."
+  },
+  "alert-red": {
+   "var": "--newspack-theme-color-alert-red",
+   "type": "color",
+   "source": "css-var --newspack-theme-color-alert-red resolved (raw/css-vars.json)",
+   "description": "Alert red."
+  },
+  "alert-green": {
+   "var": "--newspack-theme-color-alert-green",
+   "type": "color",
+   "source": "css-var --newspack-theme-color-alert-green resolved (raw/css-vars.json)",
+   "description": "Alert green."
+  },
+  "alert-yellow": {
+   "var": "--newspack-theme-color-alert-yellow",
+   "type": "color",
+   "source": "css-var --newspack-theme-color-alert-yellow resolved (raw/css-vars.json)",
+   "description": "Alert yellow."
+  },
+  "button-hover": {
+   "var": "--newspack-theme-color-bg-button-hover",
+   "type": "color",
+   "source": "css-var --newspack-theme-color-bg-button-hover resolved (raw/css-vars.json)",
+   "description": "Button hover fill."
+  },
+  "menu": {
+   "var": "--newspack-primary-menu-color",
+   "type": "color",
+   "source": "css-var --newspack-primary-menu-color resolved (raw/css-vars.json)",
+   "description": "Primary menu surface."
+  },
+  "wpds": {
+   "background": {
+    "interactive": {
+     "brand": {
+      "strong": {
+       "var": "--wpds-color-background-interactive-brand-strong",
+       "type": "color",
+       "source": "css-var --wpds-color-background-interactive-brand-strong resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-interactive-brand-strong."
+      },
+      "strong-active": {
+       "var": "--wpds-color-background-interactive-brand-strong-active",
+       "type": "color",
+       "source": "css-var --wpds-color-background-interactive-brand-strong-active resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-interactive-brand-strong-active."
+      },
+      "strong-disabled": {
+       "var": "--wpds-color-background-interactive-brand-strong-disabled",
+       "type": "color",
+       "source": "css-var --wpds-color-background-interactive-brand-strong-disabled resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-interactive-brand-strong-disabled."
+      },
+      "weak": {
+       "var": "--wpds-color-background-interactive-brand-weak",
+       "type": "color",
+       "source": "css-var --wpds-color-background-interactive-brand-weak resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-interactive-brand-weak."
+      },
+      "weak-active": {
+       "var": "--wpds-color-background-interactive-brand-weak-active",
+       "type": "color",
+       "source": "css-var --wpds-color-background-interactive-brand-weak-active resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-interactive-brand-weak-active."
+      },
+      "weak-disabled": {
+       "var": "--wpds-color-background-interactive-brand-weak-disabled",
+       "type": "color",
+       "source": "css-var --wpds-color-background-interactive-brand-weak-disabled resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-interactive-brand-weak-disabled."
+      }
+     },
+     "error": {
+      "var": "--wpds-color-background-interactive-error",
+      "type": "color",
+      "source": "css-var --wpds-color-background-interactive-error resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-interactive-error."
+     },
+     "error-active": {
+      "var": "--wpds-color-background-interactive-error-active",
+      "type": "color",
+      "source": "css-var --wpds-color-background-interactive-error-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-interactive-error-active."
+     },
+     "error-disabled": {
+      "var": "--wpds-color-background-interactive-error-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-background-interactive-error-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-interactive-error-disabled."
+     },
+     "error-strong": {
+      "var": "--wpds-color-background-interactive-error-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-background-interactive-error-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-interactive-error-strong."
+     },
+     "error-strong-active": {
+      "var": "--wpds-color-background-interactive-error-strong-active",
+      "type": "color",
+      "source": "css-var --wpds-color-background-interactive-error-strong-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-interactive-error-strong-active."
+     },
+     "error-strong-disabled": {
+      "var": "--wpds-color-background-interactive-error-strong-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-background-interactive-error-strong-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-interactive-error-strong-disabled."
+     },
+     "error-weak": {
+      "var": "--wpds-color-background-interactive-error-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-background-interactive-error-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-interactive-error-weak."
+     },
+     "error-weak-active": {
+      "var": "--wpds-color-background-interactive-error-weak-active",
+      "type": "color",
+      "source": "css-var --wpds-color-background-interactive-error-weak-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-interactive-error-weak-active."
+     },
+     "error-weak-disabled": {
+      "var": "--wpds-color-background-interactive-error-weak-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-background-interactive-error-weak-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-interactive-error-weak-disabled."
+     },
+     "neutral": {
+      "strong": {
+       "var": "--wpds-color-background-interactive-neutral-strong",
+       "type": "color",
+       "source": "css-var --wpds-color-background-interactive-neutral-strong resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-interactive-neutral-strong."
+      },
+      "strong-active": {
+       "var": "--wpds-color-background-interactive-neutral-strong-active",
+       "type": "color",
+       "source": "css-var --wpds-color-background-interactive-neutral-strong-active resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-interactive-neutral-strong-active."
+      },
+      "strong-disabled": {
+       "var": "--wpds-color-background-interactive-neutral-strong-disabled",
+       "type": "color",
+       "source": "css-var --wpds-color-background-interactive-neutral-strong-disabled resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-interactive-neutral-strong-disabled."
+      },
+      "weak": {
+       "var": "--wpds-color-background-interactive-neutral-weak",
+       "type": "color",
+       "source": "css-var --wpds-color-background-interactive-neutral-weak resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-interactive-neutral-weak."
+      },
+      "weak-active": {
+       "var": "--wpds-color-background-interactive-neutral-weak-active",
+       "type": "color",
+       "source": "css-var --wpds-color-background-interactive-neutral-weak-active resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-interactive-neutral-weak-active."
+      },
+      "weak-disabled": {
+       "var": "--wpds-color-background-interactive-neutral-weak-disabled",
+       "type": "color",
+       "source": "css-var --wpds-color-background-interactive-neutral-weak-disabled resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-interactive-neutral-weak-disabled."
+      }
+     }
+    },
+    "surface": {
+     "brand": {
+      "var": "--wpds-color-background-surface-brand",
+      "type": "color",
+      "source": "css-var --wpds-color-background-surface-brand resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-surface-brand."
+     },
+     "caution": {
+      "var": "--wpds-color-background-surface-caution",
+      "type": "color",
+      "source": "css-var --wpds-color-background-surface-caution resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-surface-caution."
+     },
+     "caution-weak": {
+      "var": "--wpds-color-background-surface-caution-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-background-surface-caution-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-surface-caution-weak."
+     },
+     "error": {
+      "var": "--wpds-color-background-surface-error",
+      "type": "color",
+      "source": "css-var --wpds-color-background-surface-error resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-surface-error."
+     },
+     "error-weak": {
+      "var": "--wpds-color-background-surface-error-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-background-surface-error-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-surface-error-weak."
+     },
+     "info": {
+      "var": "--wpds-color-background-surface-info",
+      "type": "color",
+      "source": "css-var --wpds-color-background-surface-info resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-surface-info."
+     },
+     "info-weak": {
+      "var": "--wpds-color-background-surface-info-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-background-surface-info-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-surface-info-weak."
+     },
+     "neutral": {
+      "var": "--wpds-color-background-surface-neutral",
+      "type": "color",
+      "source": "css-var --wpds-color-background-surface-neutral resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-surface-neutral."
+     },
+     "neutral-strong": {
+      "var": "--wpds-color-background-surface-neutral-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-background-surface-neutral-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-surface-neutral-strong."
+     },
+     "neutral-weak": {
+      "var": "--wpds-color-background-surface-neutral-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-background-surface-neutral-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-surface-neutral-weak."
+     },
+     "success": {
+      "var": "--wpds-color-background-surface-success",
+      "type": "color",
+      "source": "css-var --wpds-color-background-surface-success resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-surface-success."
+     },
+     "success-weak": {
+      "var": "--wpds-color-background-surface-success-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-background-surface-success-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-surface-success-weak."
+     },
+     "warning": {
+      "var": "--wpds-color-background-surface-warning",
+      "type": "color",
+      "source": "css-var --wpds-color-background-surface-warning resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-surface-warning."
+     },
+     "warning-weak": {
+      "var": "--wpds-color-background-surface-warning-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-background-surface-warning-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-surface-warning-weak."
+     }
+    },
+    "thumb": {
+     "brand": {
+      "var": "--wpds-color-background-thumb-brand",
+      "type": "color",
+      "source": "css-var --wpds-color-background-thumb-brand resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-thumb-brand."
+     },
+     "brand-active": {
+      "var": "--wpds-color-background-thumb-brand-active",
+      "type": "color",
+      "source": "css-var --wpds-color-background-thumb-brand-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-thumb-brand-active."
+     },
+     "brand-disabled": {
+      "var": "--wpds-color-background-thumb-brand-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-background-thumb-brand-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-thumb-brand-disabled."
+     },
+     "neutral": {
+      "disabled": {
+       "var": "--wpds-color-background-thumb-neutral-disabled",
+       "type": "color",
+       "source": "css-var --wpds-color-background-thumb-neutral-disabled resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-thumb-neutral-disabled."
+      },
+      "weak": {
+       "var": "--wpds-color-background-thumb-neutral-weak",
+       "type": "color",
+       "source": "css-var --wpds-color-background-thumb-neutral-weak resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-thumb-neutral-weak."
+      },
+      "weak-active": {
+       "var": "--wpds-color-background-thumb-neutral-weak-active",
+       "type": "color",
+       "source": "css-var --wpds-color-background-thumb-neutral-weak-active resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-thumb-neutral-weak-active."
+      },
+      "weak-disabled": {
+       "var": "--wpds-color-background-thumb-neutral-weak-disabled",
+       "type": "color",
+       "source": "css-var --wpds-color-background-thumb-neutral-weak-disabled resolved (raw/css-vars.json)",
+       "description": "WPDS colour --wpds-color-background-thumb-neutral-weak-disabled."
+      }
+     }
+    },
+    "track": {
+     "neutral": {
+      "var": "--wpds-color-background-track-neutral",
+      "type": "color",
+      "source": "css-var --wpds-color-background-track-neutral resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-track-neutral."
+     },
+     "neutral-weak": {
+      "var": "--wpds-color-background-track-neutral-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-background-track-neutral-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-background-track-neutral-weak."
+     }
+    }
+   },
+   "foreground": {
+    "content": {
+     "caution": {
+      "var": "--wpds-color-foreground-content-caution",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-content-caution resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-content-caution."
+     },
+     "caution-weak": {
+      "var": "--wpds-color-foreground-content-caution-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-content-caution-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-content-caution-weak."
+     },
+     "error": {
+      "var": "--wpds-color-foreground-content-error",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-content-error resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-content-error."
+     },
+     "error-weak": {
+      "var": "--wpds-color-foreground-content-error-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-content-error-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-content-error-weak."
+     },
+     "info": {
+      "var": "--wpds-color-foreground-content-info",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-content-info resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-content-info."
+     },
+     "info-weak": {
+      "var": "--wpds-color-foreground-content-info-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-content-info-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-content-info-weak."
+     },
+     "neutral": {
+      "var": "--wpds-color-foreground-content-neutral",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-content-neutral resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-content-neutral."
+     },
+     "neutral-weak": {
+      "var": "--wpds-color-foreground-content-neutral-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-content-neutral-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-content-neutral-weak."
+     },
+     "success": {
+      "var": "--wpds-color-foreground-content-success",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-content-success resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-content-success."
+     },
+     "success-weak": {
+      "var": "--wpds-color-foreground-content-success-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-content-success-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-content-success-weak."
+     },
+     "warning": {
+      "var": "--wpds-color-foreground-content-warning",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-content-warning resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-content-warning."
+     },
+     "warning-weak": {
+      "var": "--wpds-color-foreground-content-warning-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-content-warning-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-content-warning-weak."
+     }
+    },
+    "interactive": {
+     "brand": {
+      "var": "--wpds-color-foreground-interactive-brand",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-brand resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-brand."
+     },
+     "brand-active": {
+      "var": "--wpds-color-foreground-interactive-brand-active",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-brand-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-brand-active."
+     },
+     "brand-disabled": {
+      "var": "--wpds-color-foreground-interactive-brand-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-brand-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-brand-disabled."
+     },
+     "brand-strong": {
+      "var": "--wpds-color-foreground-interactive-brand-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-brand-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-brand-strong."
+     },
+     "brand-strong-active": {
+      "var": "--wpds-color-foreground-interactive-brand-strong-active",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-brand-strong-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-brand-strong-active."
+     },
+     "brand-strong-disabled": {
+      "var": "--wpds-color-foreground-interactive-brand-strong-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-brand-strong-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-brand-strong-disabled."
+     },
+     "error": {
+      "var": "--wpds-color-foreground-interactive-error",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-error resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-error."
+     },
+     "error-active": {
+      "var": "--wpds-color-foreground-interactive-error-active",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-error-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-error-active."
+     },
+     "error-disabled": {
+      "var": "--wpds-color-foreground-interactive-error-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-error-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-error-disabled."
+     },
+     "error-strong": {
+      "var": "--wpds-color-foreground-interactive-error-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-error-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-error-strong."
+     },
+     "error-strong-active": {
+      "var": "--wpds-color-foreground-interactive-error-strong-active",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-error-strong-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-error-strong-active."
+     },
+     "error-strong-disabled": {
+      "var": "--wpds-color-foreground-interactive-error-strong-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-error-strong-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-error-strong-disabled."
+     },
+     "neutral": {
+      "var": "--wpds-color-foreground-interactive-neutral",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-neutral resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-neutral."
+     },
+     "neutral-active": {
+      "var": "--wpds-color-foreground-interactive-neutral-active",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-neutral-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-neutral-active."
+     },
+     "neutral-disabled": {
+      "var": "--wpds-color-foreground-interactive-neutral-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-neutral-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-neutral-disabled."
+     },
+     "neutral-strong": {
+      "var": "--wpds-color-foreground-interactive-neutral-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-neutral-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-neutral-strong."
+     },
+     "neutral-strong-active": {
+      "var": "--wpds-color-foreground-interactive-neutral-strong-active",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-neutral-strong-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-neutral-strong-active."
+     },
+     "neutral-strong-disabled": {
+      "var": "--wpds-color-foreground-interactive-neutral-strong-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-neutral-strong-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-neutral-strong-disabled."
+     },
+     "neutral-weak": {
+      "var": "--wpds-color-foreground-interactive-neutral-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-neutral-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-neutral-weak."
+     },
+     "neutral-weak-active": {
+      "var": "--wpds-color-foreground-interactive-neutral-weak-active",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-neutral-weak-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-neutral-weak-active."
+     },
+     "neutral-weak-disabled": {
+      "var": "--wpds-color-foreground-interactive-neutral-weak-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-foreground-interactive-neutral-weak-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-foreground-interactive-neutral-weak-disabled."
+     }
+    }
+   },
+   "stroke": {
+    "focus": {
+     "var": "--wpds-color-stroke-focus",
+     "type": "color",
+     "source": "css-var --wpds-color-stroke-focus resolved (raw/css-vars.json)",
+     "description": "WPDS colour --wpds-color-stroke-focus."
+    },
+    "interactive": {
+     "brand": {
+      "var": "--wpds-color-stroke-interactive-brand",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-interactive-brand resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-interactive-brand."
+     },
+     "brand-active": {
+      "var": "--wpds-color-stroke-interactive-brand-active",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-interactive-brand-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-interactive-brand-active."
+     },
+     "brand-disabled": {
+      "var": "--wpds-color-stroke-interactive-brand-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-interactive-brand-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-interactive-brand-disabled."
+     },
+     "error": {
+      "var": "--wpds-color-stroke-interactive-error",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-interactive-error resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-interactive-error."
+     },
+     "error-active": {
+      "var": "--wpds-color-stroke-interactive-error-active",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-interactive-error-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-interactive-error-active."
+     },
+     "error-disabled": {
+      "var": "--wpds-color-stroke-interactive-error-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-interactive-error-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-interactive-error-disabled."
+     },
+     "error-strong": {
+      "var": "--wpds-color-stroke-interactive-error-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-interactive-error-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-interactive-error-strong."
+     },
+     "neutral": {
+      "var": "--wpds-color-stroke-interactive-neutral",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-interactive-neutral resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-interactive-neutral."
+     },
+     "neutral-active": {
+      "var": "--wpds-color-stroke-interactive-neutral-active",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-interactive-neutral-active resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-interactive-neutral-active."
+     },
+     "neutral-disabled": {
+      "var": "--wpds-color-stroke-interactive-neutral-disabled",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-interactive-neutral-disabled resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-interactive-neutral-disabled."
+     },
+     "neutral-strong": {
+      "var": "--wpds-color-stroke-interactive-neutral-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-interactive-neutral-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-interactive-neutral-strong."
+     }
+    },
+    "surface": {
+     "brand": {
+      "var": "--wpds-color-stroke-surface-brand",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-brand resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-brand."
+     },
+     "brand-strong": {
+      "var": "--wpds-color-stroke-surface-brand-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-brand-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-brand-strong."
+     },
+     "caution": {
+      "var": "--wpds-color-stroke-surface-caution",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-caution resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-caution."
+     },
+     "caution-strong": {
+      "var": "--wpds-color-stroke-surface-caution-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-caution-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-caution-strong."
+     },
+     "error": {
+      "var": "--wpds-color-stroke-surface-error",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-error resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-error."
+     },
+     "error-strong": {
+      "var": "--wpds-color-stroke-surface-error-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-error-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-error-strong."
+     },
+     "info": {
+      "var": "--wpds-color-stroke-surface-info",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-info resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-info."
+     },
+     "info-strong": {
+      "var": "--wpds-color-stroke-surface-info-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-info-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-info-strong."
+     },
+     "neutral": {
+      "var": "--wpds-color-stroke-surface-neutral",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-neutral resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-neutral."
+     },
+     "neutral-strong": {
+      "var": "--wpds-color-stroke-surface-neutral-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-neutral-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-neutral-strong."
+     },
+     "neutral-weak": {
+      "var": "--wpds-color-stroke-surface-neutral-weak",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-neutral-weak resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-neutral-weak."
+     },
+     "success": {
+      "var": "--wpds-color-stroke-surface-success",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-success resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-success."
+     },
+     "success-strong": {
+      "var": "--wpds-color-stroke-surface-success-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-success-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-success-strong."
+     },
+     "warning": {
+      "var": "--wpds-color-stroke-surface-warning",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-warning resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-warning."
+     },
+     "warning-strong": {
+      "var": "--wpds-color-stroke-surface-warning-strong",
+      "type": "color",
+      "source": "css-var --wpds-color-stroke-surface-warning-strong resolved (raw/css-vars.json)",
+      "description": "WPDS colour --wpds-color-stroke-surface-warning-strong."
+     }
+    }
+   }
+  }
+ },
+ "dark": {},
+ "component": {}
+}

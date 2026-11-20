@@ -1,0 +1,20 @@
+{
+  "families": [
+    {
+      "name": "sample address in the meeting illustration",
+      "files": ["screenshots/mobile-home-light-full.png"],
+      "rects": [[590, 15120, 720, 15180, "solid"]]
+    }
+  ],
+  "ocr": {
+    "emails": true,
+    "net": true,
+    "email_allow": [
+      "^kaichen@agentmail\\.to$",
+      "^kaichen@agentmail\\.t$",
+      "^kaichen@agentm$",
+      "^assistant@krisp\\.ai$",
+      "^assistant@krisp\\.aito$"
+    ]
+  }
+}

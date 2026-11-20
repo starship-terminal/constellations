@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<title>Pocket style guide</title>
+<style>
+  :root {
+    --canvas: #fff;
+    --text: #1a1a1a;
+    --muted: #666;
+    --line: #d9d9d9;
+    --accent: #008078;
+    --sans: "Graphik Web","Helvetica Neue",Helvetica,Arial,Sans-Serif;
+    --serif: "Doyle",Garamond,Times,Serif;
+  }
+  html[data-theme="dark"] {
+    --canvas: #1a1a1a;
+    --text: #f2f2f2;
+    --muted: #8c8c8c;
+    --line: #404040;
+    --accent: #00ccc0;
+  }
+  body { margin: 0; background: var(--canvas); color: var(--text);
+    font-family: "Graphik Web","Helvetica Neue",Helvetica,Arial,Sans-Serif; font-size: 16px; line-height: 24px; }
+  main { max-width: 1128px; margin: 0 auto; padding: 48px 40px 80px; }
+  h1 { font-family: var(--serif); font-size: 38px; line-height: 42.75px; font-weight: 700; margin: 0 0 8px; }
+  h2 { font-family: var(--serif); font-size: 24px; line-height: 28.8px; margin: 40px 0 16px; }
+  p.note { color: var(--muted); max-width: 62ch; }
+  button.theme { border: 1px solid var(--text); background: var(--canvas); color: var(--text);
+    border-radius: 8px; padding: 8px 16px; font: inherit; cursor: pointer; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+  .swatch { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .swatch i { display: block; height: 48px; }
+  .swatch code, .swatch span { display: block; padding: 4px 8px; font-size: 12px; }
+  .type { border-bottom: 1px solid var(--line); padding: 12px 0; }
+  .type code { color: var(--muted); font-size: 12px; }
+  .buttons { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  a.btn { display: inline-block; border-radius: 8px; padding: 16px 24px; font-size: 20px;
+    line-height: 30px; text-decoration: none; }
+  a.primary { background: #008078; color: #fff;
+    border: 1px solid #008078; }
+  a.secondary { background: var(--canvas); color: var(--text); border: 1px solid var(--text); }
+  a.btn:focus-visible { outline: 1px auto #009990; outline-offset: 1px; }
+</style>
+</head>
+<body>
+<main>
+  <button class="theme" type="button" id="theme">Dark tokens</button>
+  <h1>Pocket</h1>
+  <p class="note">Public shutdown page, 2026-11-19. Light values were computed on getpocket.com/home. Dark values are the stylesheet’s .colormode-dark declarations. The page did not paint dark.</p>
+  <h2>Type</h2>
+  <div class="type" style="font-family:&quot;Doyle&quot;,Garamond,Times,Serif;font-size:38px;font-weight:700;line-height:42.75px"><code>display</code> 38px / 42.75px · 700<br>So long, farewell</div><div class="type" style="font-family:&quot;Doyle&quot;,Garamond,Times,Serif;font-size:24px;font-weight:700;line-height:28.8px"><code>section</code> 24px / 28.8px · 700<br>So long, farewell</div><div class="type" style="font-family:&quot;Graphik Web&quot;,&quot;Helvetica Neue&quot;,Helvetica,Arial,Sans-Serif;font-size:20px;font-weight:400;line-height:30px"><code>lede</code> 20px / 30px · 400<br>So long, farewell</div><div class="type" style="font-family:&quot;Graphik Web&quot;,&quot;Helvetica Neue&quot;,Helvetica,Arial,Sans-Serif;font-size:16px;font-weight:400;line-height:24px"><code>body</code> 16px / 24px · 400<br>So long, farewell</div><div class="type" style="font-family:&quot;Graphik Web&quot;,&quot;Helvetica Neue&quot;,Helvetica,Arial,Sans-Serif;font-size:40px;font-weight:700;line-height:48px"><code>error-title</code> 40px / 48px · 700<br>So long, farewell</div><div class="type" style="font-family:&quot;Graphik Web&quot;,&quot;Helvetica Neue&quot;,Helvetica,Arial,Sans-Serif;font-size:20px;font-weight:400;line-height:30px"><code>error-body</code> 20px / 30px · 400<br>So long, farewell</div>
+  <h2>Buttons</h2>
+  <div class="buttons">
+    <a class="btn primary" href="#primary">Contact Support</a>
+    <a class="btn secondary" href="#secondary">Additional details</a>
+  </div>
+  <h2>Colour</h2>
+  <div class="swatches" id="swatches"><div class="swatch"><i style="background:#fff"></i><code>canvas</code><span>#fff</span></div>
+<div class="swatch"><i style="background:#1a1a1a"></i><code>text.primary</code><span>#1a1a1a</span></div>
+<div class="swatch"><i style="background:#666"></i><code>text.secondary</code><span>#666</span></div>
+<div class="swatch"><i style="background:#8c8c8c"></i><code>text.tertiary</code><span>#8c8c8c</span></div>
+<div class="swatch"><i style="background:#008078"></i><code>text.link-hover</code><span>#008078</span></div>
+<div class="swatch"><i style="background:#004d48"></i><code>text.link-pressed</code><span>#004d48</span></div>
+<div class="swatch"><i style="background:#3668ff"></i><code>text.accent</code><span>#3668ff</span></div>
+<div class="swatch"><i style="background:#008078"></i><code>action.primary</code><span>#008078</span></div>
+<div class="swatch"><i style="background:#004d48"></i><code>action.primary-hover</code><span>#004d48</span></div>
+<div class="swatch"><i style="background:#e8f7f6"></i><code>action.primary-subdued</code><span>#e8f7f6</span></div>
+<div class="swatch"><i style="background:#fff"></i><code>action.primary-text</code><span>#fff</span></div>
+<div class="swatch"><i style="background:#1a1a1a"></i><code>action.secondary</code><span>#1a1a1a</span></div>
+<div class="swatch"><i style="background:#1a1a1a"></i><code>action.secondary-hover</code><span>#1a1a1a</span></div>
+<div class="swatch"><i style="background:#f2f2f2"></i><code>action.secondary-hover-text</code><span>#f2f2f2</span></div>
+<div class="swatch"><i style="background:#1a1a1a"></i><code>action.secondary-text</code><span>#1a1a1a</span></div>
+<div class="swatch"><i style="background:#ef4056"></i><code>action.brand</code><span>#ef4056</span></div>
+<div class="swatch"><i style="background:#901424"></i><code>action.brand-hover</code><span>#901424</span></div>
+<div class="swatch"><i style="background:#fdf2f5"></i><code>action.brand-subdued</code><span>#fdf2f5</span></div>
+<div class="swatch"><i style="background:#fff"></i><code>action.brand-text</code><span>#fff</span></div>
+<div class="swatch"><i style="background:#009990"></i><code>action.focus</code><span>#009990</span></div>
+<div class="swatch"><i style="background:#8c8c8c"></i><code>form.border</code><span>#8c8c8c</span></div>
+<div class="swatch"><i style="background:#333"></i><code>form.border-hover</code><span>#333</span></div>
+<div class="swatch"><i style="background:#008078"></i><code>form.focus-label</code><span>#008078</span></div>
+<div class="swatch"><i style="background:#1a1a1a"></i><code>form.text</code><span>#1a1a1a</span></div>
+<div class="swatch"><i style="background:#666"></i><code>form.text-secondary</code><span>#666</span></div>
+<div class="swatch"><i style="background:#333"></i><code>divider.primary</code><span>#333</span></div>
+<div class="swatch"><i style="background:#8c8c8c"></i><code>divider.secondary</code><span>#8c8c8c</span></div>
+<div class="swatch"><i style="background:#d9d9d9"></i><code>divider.tertiary</code><span>#d9d9d9</span></div>
+<div class="swatch"><i style="background:#f9f9fb"></i><code>surface.active</code><span>#f9f9fb</span></div>
+<div class="swatch"><i style="background:#f3f3f3"></i><code>surface.empty</code><span>#f3f3f3</span></div>
+<div class="swatch"><i style="background:#fff"></i><code>surface.popover</code><span>#fff</span></div>
+<div class="swatch"><i style="background:#fff"></i><code>surface.drawer</code><span>#fff</span></div>
+<div class="swatch"><i style="background:#1a1a1a"></i><code>surface.tooltip</code><span>#1a1a1a</span></div>
+<div class="swatch"><i style="background:#b24000"></i><code>error</code><span>#b24000</span></div></div>
+</main>
+<script>
+  const light = "\u003cdiv class=\"swatch\">\u003ci style=\"background:#fff\">\u003c/i>\u003ccode>canvas\u003c/code>\u003cspan>#fff\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#1a1a1a\">\u003c/i>\u003ccode>text.primary\u003c/code>\u003cspan>#1a1a1a\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#666\">\u003c/i>\u003ccode>text.secondary\u003c/code>\u003cspan>#666\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#8c8c8c\">\u003c/i>\u003ccode>text.tertiary\u003c/code>\u003cspan>#8c8c8c\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#008078\">\u003c/i>\u003ccode>text.link-hover\u003c/code>\u003cspan>#008078\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#004d48\">\u003c/i>\u003ccode>text.link-pressed\u003c/code>\u003cspan>#004d48\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#3668ff\">\u003c/i>\u003ccode>text.accent\u003c/code>\u003cspan>#3668ff\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#008078\">\u003c/i>\u003ccode>action.primary\u003c/code>\u003cspan>#008078\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#004d48\">\u003c/i>\u003ccode>action.primary-hover\u003c/code>\u003cspan>#004d48\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#e8f7f6\">\u003c/i>\u003ccode>action.primary-subdued\u003c/code>\u003cspan>#e8f7f6\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#fff\">\u003c/i>\u003ccode>action.primary-text\u003c/code>\u003cspan>#fff\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#1a1a1a\">\u003c/i>\u003ccode>action.secondary\u003c/code>\u003cspan>#1a1a1a\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#1a1a1a\">\u003c/i>\u003ccode>action.secondary-hover\u003c/code>\u003cspan>#1a1a1a\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#f2f2f2\">\u003c/i>\u003ccode>action.secondary-hover-text\u003c/code>\u003cspan>#f2f2f2\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#1a1a1a\">\u003c/i>\u003ccode>action.secondary-text\u003c/code>\u003cspan>#1a1a1a\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#ef4056\">\u003c/i>\u003ccode>action.brand\u003c/code>\u003cspan>#ef4056\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#901424\">\u003c/i>\u003ccode>action.brand-hover\u003c/code>\u003cspan>#901424\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#fdf2f5\">\u003c/i>\u003ccode>action.brand-subdued\u003c/code>\u003cspan>#fdf2f5\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#fff\">\u003c/i>\u003ccode>action.brand-text\u003c/code>\u003cspan>#fff\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#009990\">\u003c/i>\u003ccode>action.focus\u003c/code>\u003cspan>#009990\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#8c8c8c\">\u003c/i>\u003ccode>form.border\u003c/code>\u003cspan>#8c8c8c\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#333\">\u003c/i>\u003ccode>form.border-hover\u003c/code>\u003cspan>#333\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#008078\">\u003c/i>\u003ccode>form.focus-label\u003c/code>\u003cspan>#008078\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#1a1a1a\">\u003c/i>\u003ccode>form.text\u003c/code>\u003cspan>#1a1a1a\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#666\">\u003c/i>\u003ccode>form.text-secondary\u003c/code>\u003cspan>#666\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#333\">\u003c/i>\u003ccode>divider.primary\u003c/code>\u003cspan>#333\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#8c8c8c\">\u003c/i>\u003ccode>divider.secondary\u003c/code>\u003cspan>#8c8c8c\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#d9d9d9\">\u003c/i>\u003ccode>divider.tertiary\u003c/code>\u003cspan>#d9d9d9\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#f9f9fb\">\u003c/i>\u003ccode>surface.active\u003c/code>\u003cspan>#f9f9fb\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#f3f3f3\">\u003c/i>\u003ccode>surface.empty\u003c/code>\u003cspan>#f3f3f3\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#fff\">\u003c/i>\u003ccode>surface.popover\u003c/code>\u003cspan>#fff\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#fff\">\u003c/i>\u003ccode>surface.drawer\u003c/code>\u003cspan>#fff\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#1a1a1a\">\u003c/i>\u003ccode>surface.tooltip\u003c/code>\u003cspan>#1a1a1a\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#b24000\">\u003c/i>\u003ccode>error\u003c/code>\u003cspan>#b24000\u003c/span>\u003c/div>";
+  const dark = "\u003cdiv class=\"swatch\">\u003ci style=\"background:#1a1a1a\">\u003c/i>\u003ccode>canvas\u003c/code>\u003cspan>#1a1a1a\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#f2f2f2\">\u003c/i>\u003ccode>text.primary\u003c/code>\u003cspan>#f2f2f2\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#8c8c8c\">\u003c/i>\u003ccode>text.secondary\u003c/code>\u003cspan>#8c8c8c\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#737373\">\u003c/i>\u003ccode>text.tertiary\u003c/code>\u003cspan>#737373\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#00a69c\">\u003c/i>\u003ccode>text.link-hover\u003c/code>\u003cspan>#00a69c\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#00d9cc\">\u003c/i>\u003ccode>text.link-pressed\u003c/code>\u003cspan>#00d9cc\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#95d2ff\">\u003c/i>\u003ccode>text.accent\u003c/code>\u003cspan>#95d2ff\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#008078\">\u003c/i>\u003ccode>action.primary\u003c/code>\u003cspan>#008078\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#004d48\">\u003c/i>\u003ccode>action.primary-hover\u003c/code>\u003cspan>#004d48\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#00403c\">\u003c/i>\u003ccode>action.primary-subdued\u003c/code>\u003cspan>#00403c\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#fff\">\u003c/i>\u003ccode>action.primary-text\u003c/code>\u003cspan>#fff\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#f2f2f2\">\u003c/i>\u003ccode>action.secondary\u003c/code>\u003cspan>#f2f2f2\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#f2f2f2\">\u003c/i>\u003ccode>action.secondary-hover\u003c/code>\u003cspan>#f2f2f2\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#1a1a1a\">\u003c/i>\u003ccode>action.secondary-hover-text\u003c/code>\u003cspan>#1a1a1a\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#f2f2f2\">\u003c/i>\u003ccode>action.secondary-text\u003c/code>\u003cspan>#f2f2f2\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#ef4056\">\u003c/i>\u003ccode>action.brand\u003c/code>\u003cspan>#ef4056\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#901424\">\u003c/i>\u003ccode>action.brand-hover\u003c/code>\u003cspan>#901424\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#6c000e\">\u003c/i>\u003ccode>action.brand-subdued\u003c/code>\u003cspan>#6c000e\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#fff\">\u003c/i>\u003ccode>action.brand-text\u003c/code>\u003cspan>#fff\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#00ccc0\">\u003c/i>\u003ccode>action.focus\u003c/code>\u003cspan>#00ccc0\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#737373\">\u003c/i>\u003ccode>form.border\u003c/code>\u003cspan>#737373\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#ccc\">\u003c/i>\u003ccode>form.border-hover\u003c/code>\u003cspan>#ccc\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#00a69c\">\u003c/i>\u003ccode>form.focus-label\u003c/code>\u003cspan>#00a69c\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#f2f2f2\">\u003c/i>\u003ccode>form.text\u003c/code>\u003cspan>#f2f2f2\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#8c8c8c\">\u003c/i>\u003ccode>form.text-secondary\u003c/code>\u003cspan>#8c8c8c\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#ccc\">\u003c/i>\u003ccode>divider.primary\u003c/code>\u003cspan>#ccc\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#737373\">\u003c/i>\u003ccode>divider.secondary\u003c/code>\u003cspan>#737373\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#404040\">\u003c/i>\u003ccode>divider.tertiary\u003c/code>\u003cspan>#404040\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#333\">\u003c/i>\u003ccode>surface.active\u003c/code>\u003cspan>#333\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#333\">\u003c/i>\u003ccode>surface.empty\u003c/code>\u003cspan>#333\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#333\">\u003c/i>\u003ccode>surface.popover\u003c/code>\u003cspan>#333\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#333\">\u003c/i>\u003ccode>surface.drawer\u003c/code>\u003cspan>#333\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#f2f2f2\">\u003c/i>\u003ccode>surface.tooltip\u003c/code>\u003cspan>#f2f2f2\u003c/span>\u003c/div>\n\u003cdiv class=\"swatch\">\u003ci style=\"background:#e55300\">\u003c/i>\u003ccode>error\u003c/code>\u003cspan>#e55300\u003c/span>\u003c/div>";
+  document.getElementById("theme").addEventListener("click", () => {
+    const html = document.documentElement;
+    const next = html.dataset.theme === "light" ? "dark" : "light";
+    html.dataset.theme = next;
+    document.getElementById("swatches").innerHTML = next === "dark" ? dark : light;
+    document.getElementById("theme").textContent = next === "dark" ? "Light tokens" : "Dark tokens";
+  });
+</script>
+</body>
+</html>

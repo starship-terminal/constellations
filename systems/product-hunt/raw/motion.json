@@ -1,0 +1,37 @@
+{
+  "source": "Stylesheet rules and computed transitions on https://www.producthunt.com/newsletters, light, 1440 CSS px, 2026-11-18. prefers-reduced-motion was not emulated. matchMedia('(prefers-reduced-motion: reduce)') was false.",
+  "computed": {
+    "header-nav-link": {
+      "transitionProperty": "all",
+      "transitionDuration": "300ms",
+      "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)"
+    }
+  },
+  "declaredAnimations": [
+    {"name": "fade-in", "duration": "150ms", "easing": "ease-out", "selector": ".animate-[fade-in_150ms_ease-out]"},
+    {"name": "fade-in", "duration": "180ms", "easing": "ease-out", "selector": ".animate-[fade-in_180ms_ease-out]"},
+    {"name": "fade-in", "duration": "200ms", "easing": "cubic-bezier(0.23, 1, 0.32, 1)", "selector": ".animate-[fade-in_200ms_cubic-bezier(0.23,1,0.32,1)_both]"},
+    {"name": "fade-in", "duration": "300ms", "easing": "ease-in-out", "selector": ".animate-fade-in"},
+    {"name": "modal-in", "duration": "300ms", "easing": "ease", "selector": ".animate-modal-in"},
+    {"name": "pop-in", "duration": "300ms", "easing": "cubic-bezier(0.34, 1.56, 0.64, 1)", "selector": ".animate-pop-in"},
+    {"name": "rise-in", "duration": "300ms", "easing": "cubic-bezier(0.23, 1, 0.32, 1)", "selector": ".animate-rise-in"},
+    {"name": "shimmer", "duration": "900ms", "easing": "ease-in-out", "iteration": "infinite", "selector": ".animate-[shimmer_0.9s_ease-in-out_infinite]"}
+  ],
+  "keyframes": {
+    "fade-in": [{"offset": "0%", "opacity": "0"}, {"offset": "100%", "opacity": "1"}],
+    "modal-in": [{"offset": "0%", "opacity": "0", "transform": "translateY(10px) scale(0.98)"}, {"offset": "100%", "opacity": "1", "transform": "none"}],
+    "pop-in": [{"offset": "0%", "opacity": "0", "transform": "scale(0.25)"}, {"offset": "100%", "opacity": "1", "transform": "none"}],
+    "rise-in": [{"offset": "0%", "opacity": "0", "transform": "translateY(6px)"}, {"offset": "100%", "opacity": "1", "transform": "none"}],
+    "shimmer": [{"offset": "0%", "transform": "translate(-100%)"}, {"offset": "100%", "transform": "translate(100%)"}]
+  },
+  "reducedMotion": {
+    "authoredRules": 50,
+    "sample": [
+      {"selector": ".motion-reduce\\:transition-none", "declaration": "transition-property: none"},
+      {"selector": ".motion-reduce\\:animate-none", "declaration": "animation: none"},
+      {"selector": ".Fyhhja_panelIn, .Fyhhja_panelOut", "declaration": "animation: none"},
+      {"selector": ".N_6bGW_feedRow", "declaration": "transition: none !important"}
+    ],
+    "verdict": "honours, from authored rules. Not verified by emulation."
+  }
+}

@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fourthwall style guide</title>
+<meta name="description" content="Fourthwall design tokens and the public marketing, catalogue, docs and help surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Suisse Intl", "Suisse Int'l", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-display: Saans, "Suisse Intl", ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+.ink {
+/*SET:ink*/
+}
+.catalog {
+/*SET:catalog*/
+}
+.catalogDark {
+/*SET:catalogDark*/
+}
+.signup {
+/*SET:signup*/
+}
+.docs {
+/*SET:docs*/
+}
+.docsDark {
+/*SET:docsDark*/
+}
+.help {
+/*SET:help*/
+}
+.helpDark {
+/*SET:helpDark*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--_primitives-color-ink-default, #0a0a0a); background: var(--_primitives-color-paper-default, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 435 38px/1.2 var(--sg-display); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--_primitives-color-ink-default, #0a0a0a); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--gs-200, #f2f2f2); }
+.lead { max-width: 62ch; color: var(--_primitives-color-ink-default, #0a0a0a); opacity: .8; }
+.note { font-size: 13px; color: var(--_primitives-color-ink-default, #0a0a0a); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--_primitives-color-ink-default, #0a0a0a); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+/* A non-light strip's values only read on its own field: the ink/dark-role
+   names resolve to near-white inks, invisible on the white page. */
+.pal.ink { background: var(--_surface-bg-page, var(--gs-900, #1b1d19)); color: var(--_surface-text-body, #f2f2f2); padding: 12px; border-radius: 10px; }
+.pal.catalogDark { background: var(--bg-primary-default, #101010); color: var(--text-primary-default, #f2f2f2); padding: 12px; border-radius: 10px; }
+.pal.docsDark { background: var(--surface-card, #0f1117); color: var(--text-ink, #fff); padding: 12px; border-radius: 10px; }
+.pal.helpDark { background: var(--ifm-background-color, #1b1b1d); color: #fff; padding: 12px; border-radius: 10px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--gs-400, #e3e2e1); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: inherit; opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--gs-200, #f2f2f2); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: inherit; opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--gs-200, #f2f2f2); overflow: hidden; background: var(--_primitives-color-paper-default, #fff); }
+.navbar { display: flex; align-items: center; gap: 22px; height: var(--component-nav-height, 64px); padding: 0 12px 0 22px; font-size: 15px; color: var(--_primitives-color-ink-default, #0a0a0a); background: var(--_primitives-color-paper-default, #fff); box-shadow: var(--gs-200, #f2f2f2) 0 1px 0 0; }
+.navbar .wm { font: 465 17px/1 var(--sg-display); letter-spacing: -0.01em; }
+.navbar .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-nav-cta-height, 36px); padding: 0 16px; font-size: var(--_primitives-font-size-body-fluid-md, 15px); font-weight: 465; border-radius: var(--_primitives-radius-lg, 12px); border: 1px solid transparent; }
+.btn.primary { background: var(--_surface-bg-action, var(--_primitives-color-ink-default, #0a0a0a)); color: var(--_surface-text-action, #fff); }
+.btn.ghost { border-color: var(--gs-400, #e3e2e1); color: var(--_primitives-color-ink-default, #0a0a0a); }
+.btn.small { height: var(--component-nav-cta-height, 34px); border-radius: var(--_primitives-radius-lg, 12px); font-size: 13px; }
+.btn.blue { background: var(--b-500, #0042ff); color: #fff; }
+.hero { color: var(--_primitives-color-ink-default, #0a0a0a); padding: 72px 40px; font: 435 var(--_primitives-font-size-display-xl, 57.5px)/1.05 var(--sg-display); letter-spacing: -0.02em; text-align: left; background: var(--_primitives-color-paper-default, #fff); }
+.hero small { display: block; font: 400 var(--_primitives-font-size-body-fluid-md, 17px)/var(--_primitives-line-height-relaxed, 1.65) var(--sg-sans); color: var(--_primitives-color-ink-default, #0a0a0a); opacity: .72; margin: 16px 0 22px; max-width: 46ch; }
+.tag { display: inline-block; padding: 4px 14px; border-radius: 40px; background: var(--_primitives-color-paper-default, #fff); border: 1px solid var(--gs-300, #eaeae9); font-size: 12px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--gs-700, #40413d); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--gs-200, #f2f2f2); padding: 24px; font-size: 13px; background: var(--_surface-surface-bg-subtle-default, var(--gs-100, #fff)); border-radius: var(--_primitives-radius-lg, 12px); }
+.tile .img { height: 140px; background: var(--gs-200, #f2f2f2); border-radius: 8px; margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--gs-600, #696963); }
+.tile b { display: block; font: 465 18px/1.25 var(--sg-display); margin-bottom: 4px; color: var(--_primitives-color-ink-default, #0a0a0a); }
+.tile .sub { opacity: .65; font-size: 12px; color: var(--gs-600, #696963); }
+.tile.dark, .ink .tile { background: var(--_surface-bg-page, var(--gs-1000, #0a0a0a)); border-color: var(--gs-800, #272825); color: var(--_surface-text-body, #f2f2f2); }
+.ink .tile b, .ink .tile .sub { color: var(--_surface-text-heading, #f2f2f2); }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--gs-200, #f2f2f2); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--gs-200, #f2f2f2); }
+.tr .ts { font-family: var(--sg-display); }
+.tr .tv { font-size: 12px; color: inherit; opacity: .65; font-family: var(--sg-mono); }
+.field { width: 320px; height: 42px; border: 1px solid var(--input-border-default, var(--gs-400, #e3e2e1)); border-radius: var(--_primitives-radius-lg, 12px); background: var(--input-bg-default, #fff); color: var(--text-primary-default, #0a0a0a); padding: 0 12px; font-size: 14px; }
+.field::placeholder { color: var(--text-secondary-default, #8e8e89); }
+.badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 500; background: var(--b-100, #f2f5fe); color: var(--b-500, #0042ff); }
+.seg { display: inline-flex; border-radius: 999px; background: var(--gs-200, #f2f2f2); padding: 4px; font-size: 13px; }
+.seg span { padding: 6px 14px; border-radius: 999px; color: var(--gs-700, #40413d); }
+.seg span.on { background: var(--_primitives-color-ink-default, #0a0a0a); color: #fff; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Fourthwall style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Fourthwall, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the marketing Webflow layer (<code>--_primitives---*</code> primitives, <code>--_surface---*</code> roles, the flat <code>--gs*</code>/<code>--b*</code>/<code>--g*</code>/<code>--r*</code>/<code>--y*</code> ramps and <code>--twitch</code>), the on-ink scope classes the dark sections carry, the catalogue design system's <code>--color-*</code>/<code>--bg-*</code>/<code>--text-*</code>/<code>--space-*</code> vocabulary resolved through <code>light-dark()</code> in both schemes, the auth shell's own resolutions, the Mintlify docs' <code>--gray-*</code>/<code>--primary*</code> pair and the Docusaurus help's <code>--ifm-*</code>/<code>--fw-*</code> pair — each set emitted under its own scope class. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from fourthwall.com, products.fourthwall.com, docs.fourthwall.com, help.fourthwall.com and the /get-started auth shell, signed out, in headless Chromium. Everything post-login is a documented boundary; the catalogue's dark branch is declared through light-dark() and was resolved under a forced colour-scheme probe (the catalogue ships no theme toggle — declared, not painted), docs dark by its own "Change theme preference" menu and help dark by its own colour-mode toggle. Suisse Intl and Saans are served faces, not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The fixed nav pairs the wordmark with Features (mega-menu), Product catalog, Pricing and Learn, Log in and the "Start now" pill — an ink button on the paper surface. The hero runs the Saans display masthead with the near-black 12px-radius CTA; sections are labelled by small caps brows and the dark bands are the sheet's own on-ink scopes.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">Fourthwall</span><span>Features ▾</span><span>Product catalog</span><span>Pricing</span><span>Learn ▾</span><span class="sp"></span><span>Log in</span><span class="btn small primary">Start now</span></div>
+    <div class="hero">One platform for premium products and branded shops.<small>Easy to start. Ready to grow.</small><span class="btn primary">Start now</span></div>
+  </div>
+
+  <h2 class="sh">Tiles, plans and the dark sections</h2>
+  <p class="lead">Marketing tiles sit on the paper field with hairline borders inside 12px radii; the same tile under an on-ink scope repaints with the dark <code>--_surface---*</code> values (the <code>.tile.dark</code> mock below uses the ink set). The billing toggle is an ink-pill segmented control.</p>
+  <div class="mock" style="padding:20px">
+    <div class="grid">
+      <div class="tile"><div class="img">tile</div><b>Hundreds of products</b><span class="sub">Print-on-demand, no minimums.</span></div>
+      <div class="tile"><div class="img">plan</div><b>Pro — $15/mo</b><span class="sub">The mid plan on the yearly toggle.</span></div>
+    </div>
+    <div class="ink" style="margin-top:12px"><div class="tile dark"><b>Make something worth buying</b><span class="sub">The on-ink closing band.</span></div></div>
+    <div style="margin-top:14px"><span class="seg"><span class="on">Pay yearly</span><span>Pay monthly</span></span> <span class="badge">Best seller</span></div>
+  </div>
+
+  <h2 class="sh">The catalogue surface</h2>
+  <p class="lead">products.fourthwall.com paints the design system proper: <code>--color-*</code> ramps and semantic <code>--bg-*</code>/<code>--text-*</code>/<code>--border-*</code>/<code>--input-*</code>/<code>--button-*</code> roles declared as <code>light-dark()</code> pairs — the <code>.catalog</code> scope carries the light side here. The auth shell at /get-started re-declares the same DS.</p>
+  <div class="catalog" style="padding:20px;border:1px solid var(--border-primary-default,#e3e2e1);background:var(--bg-primary-default,#fff);color:var(--text-primary-default,#0a0a0a)">
+    <div class="grid">
+      <div class="tile" style="background:var(--surface-card,#fff);border:1px solid var(--border-primary-default,#e3e2e1);color:var(--text-primary-default,#0a0a0a)"><div class="img" style="background:var(--bg-secondary-default,#f2f2f2);color:var(--text-secondary-default,#696963)">product</div><b style="color:var(--text-primary-default,#0a0a0a)">Comfort Colors 1717</b><span class="sub" style="color:var(--text-secondary-default,#696963)">From $15.45 · 16 colours</span></div>
+    </div>
+    <div style="margin-top:14px"><input class="field" placeholder="Search products" style="background:var(--input-bg-default,#fff);border-color:var(--input-border-default,#e3e2e1);color:var(--text-primary-default,#0a0a0a)"> <span class="btn primary" style="background:var(--bg-primary-invert,#0a0a0a);color:var(--text-primary-invert,#fff)">Sign in to design</span></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The marketing layer runs the gs grey ramp (gs1000 ink → gs0 paper) with the b/g/r/y accent ramps and the Twitch purple; the catalogue carries its own --color-* ramps with light-dark() pairs; Mintlify and Docusaurus bring their gray scales. Each non-light strip below is scoped so its own variables paint it.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">The marketing primitives declare an 8–64px space scale and a radius ramp (lg is the 12px tile/button radius); the catalogue adds its --space-* and --radius-* scales and --motion-* durations. Measured component sizes follow.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Suisse Intl carries body and UI at the unusual 420–480 weights the primitives declare; Saans carries the display mastheads. The catalogue sets "Suisse Int'l" plus a mono, Mintlify Inter + Paper Mono, Docusaurus its Suisse stack. Samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared palette variables from the live stylesheets and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9_-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+// Each surface set's swatches must be painted inside its own scope class or
+// the values resolve to the marketing light layer.
+const SURFACES = [
+  ['core', 'marketing :root layer', ''],
+  ['light', 'marketing measured roles', ''],
+  ['ink', 'on-ink scoped values (dark sections)', ' ink'],
+  ['catalog', 'catalogue/auth DS (light)', ' catalog'],
+  ['catalogDark', 'catalogue declared dark branch (forced colour-scheme probe, never painted)', ' catalogDark'],
+  ['signup', 'auth shell overrides', ' signup'],
+  ['docs', 'docs (Mintlify light)', ' docs'],
+  ['docsDark', 'docs under html.dark', ' docsDark'],
+  ['help', 'help (Docusaurus light)', ' help'],
+  ['helpDark', 'help under data-theme=dark', ' helpDark'],
+];
+
+(function palette() {
+  let h = '';
+  for (const [setname, label, scope] of SURFACES) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color');
+    if (!roles.length) continue;
+    h += `<div class="pal-h">${label}</div><div class="pal${scope}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  const groups = { '_primitives.space': 'marketing space', '_primitives.radius': 'marketing radius', 'space': 'catalogue space', 'radius': 'catalogue radius', 'motion': 'catalogue motion', '_rhythm': 'marketing rhythm', '_primitives.layout': 'layout' };
+  for (const [setname] of SURFACES) {
+    for (const [n, t] of flat(TOK[setname] || {}, '')) {
+      if (!['dimension', 'duration', 'cubicBezier'].includes(t.t)) continue;
+      m += `<div><b>${esc(setname === 'core' ? n : setname + '.' + n)}</b> <span>${esc(Array.isArray(t.v) ? 'cubic-bezier(' + t.v.join(', ') + ')' : t.v)}</span></div>`;
+    }
+  }
+  const fmt = (v) => Array.isArray(v) ? v.map(fmt).join(', ') : (v && typeof v === 'object' ? Object.entries(v).map(([k, x]) => k + ' ' + fmt(x)).join(' ') : String(v));
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) { const s = fmt(t.v); m += `<div><b>${esc(n)}</b> <span>${esc(s.length > 90 ? s.slice(0, 90) + '…' : s)}</span></div>`; }
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [setname] of SURFACES) {
+    for (const [n, t] of flat(TOK[setname] || {}, '')) {
+      if (t.t !== 'shadow' && !(n.includes('shadow'))) continue;
+      e += `<div><b>${esc(setname === 'core' ? n : setname + '.' + n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+    }
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK.ink, TOK.catalog, TOK.catalogDark, TOK.signup, TOK.docs, TOK.docsDark, TOK.help, TOK.helpDark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  const seen = new Set();
+  for (const setname of ['core', 'catalog', 'docs', 'help']) {
+    for (const [n, t] of flat(TOK[setname] || {}, '')) {
+      if (!/(font[.-]?size|size\.)|_primitives\.font\.size/.test(n) || !/px|rem|em/.test(String(resolveVal(t.v)))) continue;
+      const px = parseFloat(resolveVal(t.v));
+      if (!px || px > 120) continue;
+      const key = setname + '.' + n;
+      if (seen.has(key)) continue; seen.add(key);
+      h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px, 44)}px">${esc(setname === 'core' ? n : key)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+    }
+  }
+  for (const [n, t] of flat(TOK.core._primitives?.line?.height || {}, '_primitives.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core._primitives?.weight || {}, '_primitives.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Fourthwall</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const setname of ['core', 'catalog', 'docs', 'help']) {
+    for (const [n, t] of flat(TOK[setname] || {}, '')) {
+      if (t.t !== 'fontFamily' && !/font[.-]?family|family\./.test(n)) continue;
+      f += `<div><b>${esc(setname === 'core' ? n : setname + '.' + n)}</b> <span>${esc(t.v)}</span></div>`;
+    }
+  }
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

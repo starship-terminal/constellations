@@ -1,0 +1,42 @@
+{
+  "captured": "2026-11-19",
+  "harness": "Grok Build",
+  "model": "grok-4.7",
+  "route": "public-web",
+  "previewBrowser": "T3 preview_open loaded https://programa.design/ and preview_evaluate read computed styles. preview_snapshot returned: The browser is not producing screenshot frames.",
+  "screenshots": "Headless Playwright Chromium, public marketing pages only. Login and register returned 403 Forbidden in headless Chrome, so those screenshots were not kept. Login and register styles were read in the T3 preview browser, which loaded both pages without a Cloudflare challenge.",
+  "viewports": {
+    "previewDesktop": {
+      "innerWidth": 1169,
+      "innerHeight": 731,
+      "devicePixelRatio": 2,
+      "visualViewportScale": 1
+    },
+    "previewResizedDesktop": {
+      "innerWidth": 1440,
+      "innerHeight": 900,
+      "devicePixelRatio": 2
+    },
+    "previewPhone": {
+      "innerWidth": 390,
+      "innerHeight": 844,
+      "devicePixelRatio": 2
+    },
+    "playwright": {
+      "desktop": "1440x900",
+      "phone": "390x844",
+      "deviceScaleFactor": 2,
+      "png": "2x CSS viewport"
+    }
+  },
+  "prefersColorScheme": "dark on the preview machine; the marketing pages stayed light. html has no theme class. body class on home: bg-backgrounds-base nn-header-glass-light nn-header-transparent-on-top nn-header-style-glass-light",
+  "deployment": "dpl_7GvfXppcVSHrZqFr8f2knHJGYKZw",
+  "notEntered": [
+    "No email was typed into login or register.",
+    "No password was typed.",
+    "Register includes a reCAPTCHA textarea and a password field, so the email-only signup rule stopped before submit.",
+    "Continue with Google, Continue with Trimble, and Continue with Xero were not clicked.",
+    "No card, phone, or company SSO was entered.",
+    "The Typeform iframe on /contact-us was not filled."
+  ]
+}

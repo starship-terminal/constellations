@@ -1,0 +1,11 @@
+{
+  "_note": "Rules for systems/docusign. A fully public signed-out capture: no owner data on any surface. Sample text 'alex@example.com' and 'Alex Sample' was typed into fields for state crops and deleted; nothing was submitted and no account exists. All names, prices and copy in the screenshots are DocuSign's published public-page content. The OCR email net is kept with example.com allowed. name@company.com is DocuSign's own workEmail placeholder.",
+  "ocr": {
+    "emails": true,
+    "email_allow": [
+      "@example\\.com$",
+      "@company\\.com$"
+    ]
+  },
+  "families": []
+}

@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fourmula style guide</title>
+<meta name="description" content="Fourmula design tokens and the public surfaces' components, rendered from tokens.json with the declared and measured values.">
+<style>
+:root {
+  --font-family-marketing: "Sf Pro Display", Arial, sans-serif;
+  --font-family-app: sfProFont, "sfProFont Fallback";
+  --font-family-appSystem: ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-size-marketing-h1: 73.1875px;
+  --font-size-marketing-h2: 99.8125px;
+  --font-size-marketing-h2-5: 53.2188px;
+  --font-size-marketing-h3: 43.25px;
+  --font-size-marketing-h4: 29.9375px;
+  --font-size-marketing-body1: 14.9688px;
+  --font-size-marketing-body2: 13.2969px;
+  --font-size-marketing-body3: 16.625px;
+  --font-size-marketing-button: 14.125px;
+  --font-size-marketing-title1: 13.2969px;
+  --font-size-marketing-title2: 11.6406px;
+  --font-size-marketing-title3: 19.9531px;
+  --font-size-marketing-tag: 14.9688px;
+  --font-size-marketing-tagSmall: 14.9688px;
+  --font-size-marketing-smallText1: 9.96875px;
+  --font-size-marketing-smallText2: 8.3125px;
+  --font-size-app-2lg: 24px;
+  --font-size-app-2xl: 52px;
+  --font-size-app-2xs: 9px;
+  --font-size-app-l: 28px;
+  --font-size-app-lg: 22px;
+  --font-size-app-m: 18px;
+  --font-size-app-md: 16px;
+  --font-size-app-sm: 14px;
+  --font-size-app-xl: 32px;
+  --font-size-app-xs: 12px;
+  --font-size-measured-hero: 73.1963px;
+  --font-size-measured-section: 99.8131px;
+  --font-size-measured-step: 53.2336px;
+  --font-size-measured-legal: 73.1963px;
+  --font-size-measured-navOverlay: 19.9626px;
+  --font-size-measured-control: 14.1402px;
+  --font-size-measured-chrome: 14.4px;
+  --font-size-measured-bodyLegal: 14.972px;
+  --font-size-measured-heroMobile: 40.3092px;
+  --font-size-measured-controlMobile: 17.1314px;
+  --font-size-measured-appDisplay: 52px;
+  --font-size-measured-appControl: 14px;
+  --font-size-measured-appMeta: 12px;
+  --font-lineHeight-app2Xl: 1.3333;
+  --font-lineHeight-appLg: 1.5556;
+  --font-lineHeight-appSm: 1.4286;
+  --font-lineHeight-appXl: 1.4;
+  --font-lineHeight-appXs: 1.3333;
+  --font-lineHeight-hero: 68.8045px;
+  --font-lineHeight-section: 99.8131px;
+  --font-lineHeight-control: 16.9682px;
+  --font-lineHeight-navOverlay: 29.9439px;
+  --font-tracking-appNormal: 0px;
+  --font-tracking-appTighter: -.05em;
+  --font-tracking-hero: -2.19589px;
+  --font-tracking-section: -2.99439px;
+  --font-tracking-step: -1.59701px;
+  --font-tracking-legal: -1.33084px;
+  --font-tracking-navOverlay: -0.174739px;
+  --font-tracking-control: -0.282804px;
+  --font-tracking-appDisplay: -2.08px;
+  --appColor-accent-500: #ff6b02;
+  --appColor-accent-600: #f94a00;
+  --appColor-alert-warning: #e093b2;
+  --appColor-base-100: #ffffff;
+  --appColor-base-200: #f2f2f2;
+  --appColor-base-500: #b0b4ba;
+  --appColor-base-600: #686a6e;
+  --appColor-base-625: #444547;
+  --appColor-base-650: #202020;
+  --appColor-base-700: #1a1a1a;
+  --appColor-base-750: #1e1e1e;
+  --appColor-base-800: #111111;
+  --appColor-base-900: #020108;
+  --appColor-blue-100: #dbeafe;
+  --appColor-blue-500: #2b7fff;
+  --appColor-error: #ff173f;
+  --appColor-error-500: #e82e1d;
+  --appColor-error-light: #ff9592;
+  --appColor-gray-600: #4a5565;
+  --appColor-invalid: #f63c34;
+  --appColor-neutral-alpha-3: rgba(0, 0, 51, 0.06);
+  --appColor-overlay-black-50: rgba(0, 0, 0, 0.5);
+  --appColor-overlay-black-alpha-1: rgba(0, 0, 0, 0.05);
+  --appColor-red-500: #fb2c36;
+  --appColor-success: #46fea5;
+  --appColor-success-500: #0fa359;
+  --appColor-valid: #31cb4b;
+  --appColor-white: #ffffff;
+  --spacing-app: 4px;
+  --radius-app-2xl: 16px;
+  --radius-app-3xl: 24px;
+  --radius-app-4xl: 28px;
+  --radius-app-5xl: 32px;
+  --radius-app-7xl: 40px;
+  --radius-app-lg: 8px;
+  --radius-app-md: 6px;
+  --radius-app-sm: 4px;
+  --radius-app-xl: 12px;
+  --container-3xs: 256px;
+  --container-md: 448px;
+  --container-xl: 576px;
+  --container-xs: 320px;
+  --blur-2xl: 40px;
+  --blur-lg: 16px;
+  --blur-md: 12px;
+  --blur-sm: 8px;
+  --blur-xl: 24px;
+  --easing-appIn-Out: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --easing-appOut: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --easing-appDefault: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --easing-marketingControl: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --duration-appDefault: 150ms;
+  --duration-marketingControl: 200ms;
+  --animate-appPulse: pulse 2s cubic-bezier(.4,0,.6,1)infinite;
+  --heroSlider-tx: 0%;
+  --heroSlider-ty: 0%;
+  --heroSlider-txend: 0%;
+  --heroSlider-tyend: -100%;
+  --heroSlider-txMobile: 0%;
+  --heroSlider-tyMobile: 0%;
+  --heroSlider-txendMobile: -100%;
+  --heroSlider-tyendMobile: 0%;
+  --heroSlider-dotsSize: 1rem;
+  --heroSlider-dotsGap: 1rem;
+  --heroSlider-dotsSizeMobile: 0.5rem;
+  --heroSlider-dotsGapMobile: 0.5rem;
+  --fluid-userZoom: 1;
+  --component-marketing-header-height: 92.48px;
+  --component-marketing-header-side-pad: 26.6168px;
+  --component-marketing-menu-pill-width: 78.48px;
+  --component-marketing-menu-pill-height: 35.23px;
+  --component-marketing-icon-btn: 26.61px;
+  --component-marketing-counter-chip: 26.61px;
+  --component-marketing-cta-width: 101.81px;
+  --component-marketing-cta-height: 39.92px;
+  --component-marketing-cta-radius: 1317.53px;
+  --component-marketing-ai-btn: 53.22px;
+  --component-marketing-chip-radius: 6.65421px;
+  --component-marketing-icon-ring: 26.6168px;
+  --component-marketing-hero-h1-width: 485.36px;
+  --component-marketing-nav-overlay-height: 528.98px;
+  --component-marketing-nav-link-height: 29.95px;
+  --component-marketing-faq-height: 75.02px;
+  --component-marketing-faq-open-height: 118.02px;
+  --component-marketing-faq-side-pad: 26.6168px;
+  --component-marketing-footer-height: 811.78px;
+  --component-marketing-cookie-accept-width: 150.39px;
+  --component-marketing-cookie-check-radius: 19.9626px;
+  --component-marketing-legal-pad-top: 106.467px;
+  --component-marketing-mobile-header-height: 104.11px;
+  --component-marketing-mobile-menu-pill: 42.69px;
+  --component-marketing-mobile-nav-overlay: 499.7px;
+  --component-marketing-mobile-faq-height: 94.69px;
+  --component-app-menu-btn: 32px;
+  --component-app-create-btn: 32px;
+  --component-app-signin-btn: 32px;
+  --component-app-start-h1-width: 432.33px;
+  --component-app-start-cta: 40px;
+  --component-app-auth-card-width: 384px;
+  --component-app-auth-card-height: 468.8px;
+  --component-app-auth-card-radius: 28px;
+  --component-app-auth-card-border: #1a1a1a;
+  --component-app-auth-card-bg: #111111;
+  --component-app-auth-card-backdrop: blur(24px);
+  --component-app-auth-card-pad-x: 32px;
+  --component-app-auth-card-gap: 24px;
+  --component-app-field-height: 48px;
+  --component-app-field-width-email: 286px;
+  --component-app-google-height: 40px;
+  --component-app-submit-height: 40px;
+  --component-app-submit-radius: 9999px;
+  --component-app-back-height: 32px;
+  --component-app-eye-size: 16px;
+  --component-app-accent-fill: #ff6b02;
+  --component-app-accent-ink: #020108;
+  --component-app-accent-tint: rgba(255, 107, 2, 0.2);
+  --component-app-accent-disabled: rgba(255, 107, 2, 0.15);
+  --component-app-muted-ink: #686a6e;
+  --component-app-dim-ink: #b0b4ba;
+  --component-app-ghost-fill: rgba(255, 255, 255, 0.05);
+  --component-app-link-accent: #ff6b02;
+  --component-app-reco-dialog-width: 480px;
+  --component-app-reco-dialog-radius: 28px;
+  --component-app-dialog-bg: #1e1e1e;
+  --component-app-what-dialog-width: 880px;
+  --component-app-upload-height: 40px;
+  --component-app-shopify-cta-width: 152px;
+  --component-app-cancel-width: 131px;
+  --component-app-dash-link-opacity: 0.3;
+  --component-app-signedin-chip: 25px;
+  --component-app-format-item-height: 60px;
+  --component-app-format-item-radius: 16px;
+  --component-app-format-item-bg: #1a1a1a;
+  --component-app-format-item-ink: #ff6b02;
+  --component-app-format-video-opacity: 0.5;
+  --component-app-start-bottom-width: 591px;
+  --component-app-start-bottom-radius: 12px;
+  --component-app-start-header-width: 123px;
+  --motion-duration-100ms: 100ms;
+  --motion-duration-default-transition-duration: 150ms;
+  --motion-duration-200ms: 200ms;
+  --motion-duration-250ms: 250ms;
+  --motion-duration-300ms: 300ms;
+  --motion-duration-500ms: 500ms;
+  --motion-duration-spinner-animation-duration: 800ms;
+  --motion-duration-1000ms: 1000ms;
+  --motion-duration-1500ms: 1500ms;
+  --motion-duration-24000ms: 24000ms;
+  --motion-duration-5000000ms: 5000000ms;
+  --motion-easing-bezier-0-25-0-46-0-45-0-94: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --motion-easing-default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-easing-ease-in-out-2: cubic-bezier(0.42, 0, 0.58, 1);
+  --motion-easing-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --motion-easing-linear: cubic-bezier(0, 0, 1, 1);
+  --background-page: #ffffff;
+  --background-surface: #f7f7f7;
+  --background-menu: #020108;
+  --background-dots: #d9d9d9;
+  --background-pageFade: rgba(255, 255, 255, 0);
+  --background-aiButton: #ffffff;
+  --background-chip: #ffffff;
+  --background-counter: rgba(255, 255, 255, 0.2);
+  --background-outlineFill: #d9d9d9;
+  --text-ink: #020108;
+  --text-muted: rgba(2, 1, 8, 0.64);
+  --text-dim: rgba(2, 1, 8, 0.5);
+  --text-faint: rgba(2, 1, 8, 0.3);
+  --text-hairlineInk: rgba(2, 1, 8, 0.2);
+  --text-overlayLink: var(--text-ink);
+  --border-rule: #d7d7d6;
+  --border-menuLine: rgba(255, 255, 255, 0.2);
+  --border-hairline: rgba(2, 1, 8, 0.2);
+  --border-iconRing: rgba(2, 1, 8, 0.2);
+  --border-toggleRing: rgba(255, 255, 255, 0.2);
+  --action-fill: #020108;
+  --action-ink: #ffffff;
+  --action-fillInverse: #ffffff;
+  --action-inkInverse: #020108;
+  color-scheme: light;
+  --sg-sans: "Sf Pro Display", sfProFont, ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --background-page: #020108;
+  --background-surface: #111111;
+  --background-menu: #272727;
+  --background-dots: #1a1a1a;
+  --background-pageFade: rgba(2, 1, 8, 0);
+  --text-ink: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.64);
+  --text-dim: rgba(255, 255, 255, 0.5);
+  --text-faint: rgba(255, 255, 255, 0.3);
+  --text-hairlineInk: rgba(255, 255, 255, 0.2);
+  --text-overlayLink: var(--text-ink);
+  --border-rule: #2a2a30;
+  --border-menuLine: rgba(255, 255, 255, 0.2);
+  --action-fill: #ffffff;
+  --action-ink: #020108;
+  --action-fillInverse: #ffffff;
+  --action-inkInverse: #020108;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-ink, #020108); background: var(--background-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 500 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.03em; color: var(--text-ink, #020108); }
+h2.sh { font: 700 12px/1 var(--sg-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--text-dim, rgba(2,1,8,.5)); margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-rule, #d7d7d6); }
+.lead { max-width: 62ch; color: var(--text-ink, #020108); opacity: .85; }
+.note { font-size: 13px; color: var(--text-muted, rgba(2,1,8,.64)); max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 700 11px/1 var(--sg-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--text-dim, rgba(2,1,8,.5)); opacity: .75; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-hairline, rgba(2,1,8,.2)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text-muted, rgba(2,1,8,.64)); }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--border-hairline, rgba(2,1,8,.2)); background: var(--background-surface, #f7f7f7); font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text-muted, rgba(2,1,8,.64)); }
+/* ---- toggle ---- */
+.mode { display: inline-flex; align-items: center; gap: 10px; font: 500 13px/1 var(--sg-sans); color: var(--text-muted, rgba(2,1,8,.64)); user-select: none; cursor: pointer; }
+.mode input { position: absolute; opacity: 0; }
+.mode .trk { width: 36px; height: 20px; border-radius: 9999px; background: var(--background-surface, #f7f7f7); border: 1px solid var(--border-hairline, rgba(2,1,8,.2)); position: relative; transition: background .2s; }
+.mode .trk::after { content: ""; position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: var(--action-fill, #020108); transition: transform .2s; }
+.mode input:checked + .trk::after { transform: translateX(16px); }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border-hairline, rgba(2,1,8,.2)); border-radius: 12px; overflow: hidden; background: var(--background-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 18px; height: var(--component-marketing-header-height, 92.48px); padding: 0 var(--component-marketing-header-side-pad, 26.62px); font-size: 14px; font-weight: 500; color: var(--text-ink, #020108); background: var(--background-page, #fff); border-bottom: 1px solid var(--border-rule, #d7d7d6); }
+.navbar .wm { font-weight: 600; font-size: 17px; letter-spacing: -0.02em; color: var(--text-ink, #020108); }
+.navbar .sp { flex: 1; }
+/* The menu fill lifts to #272727 in the dark paint while its label stays a
+   constant white on the real site, so the ink is the inverse fill, not
+   action.ink (which flips to near-black and would be unreadable on #272727). */
+.menu-pill { display: inline-flex; align-items: center; gap: 10px; height: var(--component-marketing-menu-pill-height, 35.23px); padding: 0 14px; border-radius: 9999px; background: var(--background-menu, #020108); color: var(--action-fillInverse, #fff); font-size: 13px; }
+.menu-pill .dot2 { width: 16px; height: 16px; border-radius: 50%; border: 1px solid var(--border-menuLine, rgba(255,255,255,.2)); display: inline-block; }
+.menu-pill .count { font: 400 11px/1 var(--sg-mono); padding: 4px 7px; border-radius: 9999px; background: var(--background-counter, rgba(255,255,255,.2)); }
+.icon-btn { display: inline-flex; align-items: center; justify-content: center; width: var(--component-marketing-icon-btn, 26.61px); height: var(--component-marketing-icon-btn, 26.61px); border-radius: var(--component-marketing-icon-ring, 26.62px); border: 1px solid var(--border-iconRing, rgba(2,1,8,.2)); color: var(--text-ink, #020108); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-marketing-cta-height, 39.92px); padding: 0 20px; font-size: 14px; font-weight: 500; letter-spacing: -0.02em; border-radius: 9999px; border: 1px solid transparent; }
+.btn.primary { background: var(--action-fill, #020108); color: var(--action-ink, #fff); }
+.btn.outline { background: var(--background-outlineFill, #d9d9d9); color: var(--text-ink, #020108); border-color: var(--border-hairline, rgba(2,1,8,.2)); }
+.hero { color: var(--text-ink, #020108); padding: 64px 40px 72px; font: 400 var(--font-size-measured-hero, 73.2px)/0.94 var(--sg-sans); letter-spacing: -0.03em; text-align: left; background: var(--background-page, #fff); }
+.hero .dim { color: var(--text-muted, rgba(2,1,8,.64)); }
+.hero small { display: block; font: 400 15px/1.5 var(--sg-sans); color: var(--text-dim, rgba(2,1,8,.5)); margin-top: 20px; max-width: 46ch; }
+/* The real chip paints --mainbg (background.page) under --fonts-100
+   (text.ink): white-on-ink in the dark paint, ink-on-white in the light
+   paint. The dark set has no background.chip token, so pairing page+ink is
+   what the site does — a light-only chip fill would go white-on-white. */
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 5px 13px; border-radius: var(--component-marketing-chip-radius, 6.65px); border: 1px solid var(--border-hairline, rgba(2,1,8,.2)); background: var(--background-page, #fff); font-size: 14px; color: var(--text-ink, #020108); }
+.faq-row { display: flex; align-items: center; justify-content: space-between; height: var(--component-marketing-faq-height, 75.02px); padding: 0 var(--component-marketing-faq-side-pad, 26.62px); border-bottom: 1px solid var(--border-rule, #d7d7d6); font-size: 20px; color: var(--text-ink, #020108); background: var(--background-page, #fff); }
+.faq-row .plus { font-size: 20px; color: var(--text-muted, rgba(2,1,8,.64)); }
+.faq-row.open { height: var(--component-marketing-faq-open-height, 118.02px); align-items: flex-start; padding-top: 26px; }
+.faq-row .ans { font-size: 14px; color: var(--text-muted, rgba(2,1,8,.64)); max-width: 40ch; }
+/* ---- the app sign-in (dark-only Next.js/Tailwind app) ---- */
+.auth { display: flex; flex-direction: column; align-items: center; gap: 18px; padding: 44px 20px; background: var(--appColor-base-900, #020108); }
+.appbar { display: flex; align-items: center; gap: 10px; width: min(560px, 100%); }
+.appbar .mark { width: 28px; height: 28px; border-radius: 50%; background: var(--appColor-base-100, #fff); color: var(--appColor-base-900, #020108); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; }
+.appbar .sp { flex: 1; }
+.abtn { display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: 9999px; font-size: 14px; }
+.abtn.solid { background: var(--component-app-accent-fill, #ff6b02); color: var(--component-app-accent-ink, #020108); }
+.abtn.tint { background: var(--component-app-accent-tint, rgba(255,107,2,.2)); color: var(--appColor-accent-500, #ff6b02); }
+.acard { width: var(--component-app-auth-card-width, 384px); max-width: 100%; background: var(--component-app-auth-card-bg, #111111); border: 1px solid var(--component-app-auth-card-border, #1a1a1a); border-radius: var(--component-app-auth-card-radius, 28px); padding: 24px var(--component-app-auth-card-pad-x, 32px); backdrop-filter: var(--component-app-auth-card-backdrop, blur(24px)); color: var(--appColor-base-100, #fff); display: flex; flex-direction: column; gap: var(--component-app-auth-card-gap, 24px); font-family: var(--sg-sans); }
+.acard h3 { font: 500 20px/1.3 var(--sg-sans); color: var(--appColor-base-100, #fff); margin: 0; text-align: center; }
+.acard .gbtn { display: flex; align-items: center; justify-content: center; height: var(--component-app-google-height, 40px); border-radius: 9999px; background: var(--component-app-accent-tint, rgba(255,107,2,.2)); color: var(--appColor-accent-500, #ff6b02); font-size: 14px; font-weight: 500; }
+.acard .or { display: flex; align-items: center; gap: 14px; font-size: 12px; color: var(--component-app-muted-ink, #686a6e); }
+.acard .or::before, .acard .or::after { content: ""; flex: 1; border-top: 1px solid var(--component-app-auth-card-border, #1a1a1a); }
+.acard .field { height: var(--component-app-field-height, 48px); border-radius: 9999px; border: 1px solid var(--component-app-auth-card-border, #1a1a1a); background: var(--appColor-base-900, #020108); display: flex; align-items: center; padding: 0 20px; font-size: 14px; color: var(--component-app-muted-ink, #686a6e); }
+.acard .forgot { text-align: center; font-size: 12px; color: var(--component-app-muted-ink, #686a6e); text-decoration: underline; }
+.acard .go { height: var(--component-app-submit-height, 40px); border-radius: var(--component-app-submit-radius, 9999px); background: var(--component-app-accent-fill, #ff6b02); color: var(--component-app-accent-ink, #020108); display: flex; align-items: center; justify-content: center; font-weight: 500; font-size: 14px; }
+.acard .foot { text-align: center; font-size: 12px; color: var(--component-app-muted-ink, #686a6e); }
+.acard .foot b { color: var(--component-app-link-accent, #ff6b02); font-weight: 500; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-hairline, rgba(2,1,8,.2)); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border-rule, #d7d7d6); }
+.tr .ts { font-family: var(--sg-sans); }
+.tr .tv { font-size: 12px; color: var(--text-muted, rgba(2,1,8,.64)); font-family: var(--sg-mono); }
+.format-radio { display: inline-flex; gap: 4px; }
+.format-radio span { display: inline-flex; align-items: center; height: var(--component-app-format-item-height, 60px); padding: 0 20px; border-radius: var(--component-app-format-item-radius, 16px); background: var(--component-app-format-item-bg, #1a1a1a); color: var(--component-app-dim-ink, #b0b4ba); font-size: 15px; }
+.format-radio .on { color: var(--component-app-format-item-ink, #ff6b02); border: 2px solid var(--component-app-format-item-bg, #1a1a1a); }
+.format-radio .off { opacity: var(--component-app-format-video-opacity, .5); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Fourmula style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.
+  <label class="mode" style="float:right;margin-top:-34px"><input type="checkbox" id="theme"><span class="trk"></span>Dark</label></p>
+
+  <h2 class="sh">Fourmula, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the marketing site's small declared Webflow layer (the fluid <code>--_fonts---*</code> ramp, the <code>--fonts-*</code> alpha ink scale, the themed <code>--mainbg</code>/<code>--secondbg</code>/<code>--lines</code>/<code>--menu*</code> colours), the app's whole declared Tailwind v4 <code>@theme</code> (<code>--color-base-*</code>/<code>--color-accent-*</code>, <code>--text-*</code> 9–52px, <code>--radius-*</code> 4–40px, <code>--spacing</code> 4px, <code>--ease-*</code>, <code>--blur-*</code>), and the measured component geometry and painted roles. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from fourmula.ai on 2026-11-16, signed out, in headless Chromium. The marketing site has a real dark paint — the Dark toggle above switches the roles panel between the two sets; the class names are inverted on the site (<code>.body.dark</code> paints light, plain <code>.body</code> paints dark, behind the <code>isDarkMode</code> localStorage key). Sf Pro Display and the app's sfProFont are proprietary faces not loaded here: samples fall back to system fonts. app.fourmula.ai (/start, /auth, /project/create-pdp) is a separate dark-only Tailwind app measured as a boundary — its declared ramp lives under <code>appColor.*</code>/<code>font.size.app.*</code>/<code>radius.app.*</code> and its measured values under <code>component.app.*</code>.</p>
+
+  <h2 class="sh">The marketing chrome</h2>
+  <p class="lead">The 92.5px header pairs the wordmark with a dark Menu pill that carries the moon toggle and a translucent counter (white at 20%), a 26.6px account ring, and the ~40px ink-filled "Get started" CTA — full pills throughout (the site spells the radius as a fluid ~1318px). The hero sets "Your catalog, instantly re-shot." at a painted 73.2px (the fluid scale reads wider than the declared h1 step); the second line paints the 64% muted ink. FAQ rows are 75px hairline-ruled rows that grow to ~118px open.</p>
+  <div class="mock" style="padding:0">
+    <div class="navbar"><span class="wm">✳ Fourmula</span><span class="sp"></span><span class="menu-pill">☰ Menu <span class="dot2"></span><span class="count">0%</span></span><span class="icon-btn">◉</span><span class="btn primary">Get started</span></div>
+    <div class="hero">Your catalog,<br><span class="dim">instantly re-shot.</span><small>AI product photography for e-commerce brands — studio shots, lifestyle scenes and PDP-ready assets from a single upload.</small><span class="chip">↻ studio</span>&nbsp;<span class="chip">lifestyle</span>&nbsp;<span class="chip">PDP</span></div>
+    <div class="faq-row"><span>What can AI FOURMULA create for my brand?</span><span class="plus">+</span></div>
+    <div class="faq-row open"><span>How fast do I get results?<div class="ans">Upload once, pick a look, and assets generate in minutes — the marketing site's own copy, measured open.</div></span><span class="plus">−</span></div>
+  </div>
+
+  <h2 class="sh">The app sign-in (a different system)</h2>
+  <p class="lead">app.fourmula.ai is a separate dark-only Next.js/Tailwind app that shares no token layer with the marketing site: a 384px card at 28px radius (rounded-4xl) on <code>#111</code> over a photo grid, a <code>#ff6b02</code> accent on primary actions and accent/20% tint fills on secondary pills, 48px fields, and full-pill controls — all measured, never submitted.</p>
+  <div class="auth">
+    <div class="appbar"><span class="mark">✳</span><span class="sp"></span><span class="abtn solid">＋ Create asset</span><span class="abtn tint">Sign in</span></div>
+    <div class="acard"><h3>Sign in</h3><div class="gbtn">G&nbsp; Continue with Google</div><div class="or">or</div><div class="field">Email address</div><div class="field">Password</div><div class="forgot">Forgot password?</div><div class="go">Sign in</div><div class="foot">Don't have an account? <b>Sign up</b></div></div>
+  </div>
+
+  <h2 class="sh">The PDP generator</h2>
+  <p class="lead">/project/create-pdp is reachable signed out: the 60px "Static content / Video content" radio pair on 16px cards — the selected paints the accent ink, Video stays disabled at 0.5 — 40px accent-filled and accent-tint pills, and the 28px rounded dialogs ("What can I upload?", "What's a PDP"). Nothing uploads, connects or generates.</p>
+  <div class="auth" style="flex-direction:row;justify-content:center">
+    <span class="format-radio"><span class="on">▣ Static content</span><span class="off">▢ Video content</span></span>
+    <span class="abtn tint" style="height:40px">Recommendations</span>
+    <span class="abtn solid" style="height:40px">＋ Upload Main Image</span>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The marketing site inverts: light paint is ink <code>#020108</code> on <code>#fff</code> with ink-filled CTAs, dark paint is white on <code>#020108</code> with white-filled CTAs; hairlines and muted inks are the <code>--fonts-*</code> alpha scale and <code>--lines</code>/<code>--menu-colors</code>. The app's declared ramp is the <code>base-100…900</code> neutral stack with the <code>#ff6b02</code> accent.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing, radius and motion</h2>
+  <p class="lead">The app's declared 4px spacing base and 4–40px radius steps; the marketing site paints fluid radii (~1318px pills, 6.65px chips, 26.6px icon rings). Controls transition over the measured 0.2s ease on marketing and the declared 150ms cubic-bezier(.4,0,.2,1) in the app; the site ignores prefers-reduced-motion (337 moving elements kept running).</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Two faces: <code>"Sf Pro Display", Arial</code> on the marketing site and <code>sfProFont, "sfProFont Fallback"</code> in the app — both proprietary SF Pro builds that fall back to system sans here. The marketing ramp is fluid-rem: the declared steps resolve to 7.37–88.59px at 1440 while headings paint 73.2/99.8/53.2px (and 40.3px on the phone); the app is a fixed declared 9–52px ramp. Tracking is negative throughout.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the declared --_fonts---*/--fonts-*/--mainbg variables and the app's --color-*/--text-*/--radius-* theme layer from the live stylesheets and resolved them on a probe document in both painted themes</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, open, selected, focused and filled states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"font":{"family":{"marketing":{"v":"\"Sf Pro Display\", Arial, sans-serif","t":"fontFamily","s":"css-var --_font-family---font-family (light)","d":"The declared marketing face: \"Sf Pro Display\", Arial, sans-serif — headings, buttons and nav paint it; plain wrapper chrome falls back to Arial."},"app":{"v":"sfProFont, \"sfProFont Fallback\"","t":"fontFamily","s":"computed fontFamily of app-menu-btn default on app.fourmula.ai (raw/components-computed.json); the local next/font face the app's @theme layer declares","d":"The app's SF Pro face, served as the local sfProFont family with its metrics fallback."},"appSystem":{"v":"ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"","t":"fontFamily","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --font-sans","d":"The app's declared --font-sans — the Tailwind default stack behind the local sfProFont face."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"css-var --_font-family---regular (light)","d":"The declared marketing regular (400)."},"medium":{"v":500,"t":"fontWeight","s":"css-var --_font-family---medium (light)","d":"The declared marketing medium (500) — nav overlay links, legal titles, the app's /start heading and medium-weight buttons paint it."}},"size":{"marketing":{"h1":{"v":"73.1875px","t":"dimension","s":"css-var --_fonts---h1 (light)","d":"The declared marketing h1 step (resolved fluid-rem at 1440)."},"h2":{"v":"99.8125px","t":"dimension","s":"css-var --_fonts---h2 (light)","d":"The declared marketing h2 step."},"h2-5":{"v":"53.2188px","t":"dimension","s":"css-var --_fonts---h2-5 (light)","d":"The declared marketing h2-5 step."},"h3":{"v":"43.25px","t":"dimension","s":"css-var --_fonts---h3 (light)","d":"The declared marketing h3 step."},"h4":{"v":"29.9375px","t":"dimension","s":"css-var --_fonts---h4 (light)","d":"The declared marketing h4 step."},"body1":{"v":"14.9688px","t":"dimension","s":"css-var --_fonts---body-1 (light)","d":"The declared body-1 step."},"body2":{"v":"13.2969px","t":"dimension","s":"css-var --_fonts---body-2 (light)","d":"The declared body-2 step."},"body3":{"v":"16.625px","t":"dimension","s":"css-var --_fonts---body-3 (light)","d":"The declared body-3 step."},"button":{"v":"14.125px","t":"dimension","s":"css-var --_fonts---btn (light)","d":"The declared button step."},"title1":{"v":"13.2969px","t":"dimension","s":"css-var --_fonts---title-1 (light)","d":"The declared title-1 step."},"title2":{"v":"11.6406px","t":"dimension","s":"css-var --_fonts---title-2 (light)","d":"The declared title-2 step."},"title3":{"v":"19.9531px","t":"dimension","s":"css-var --_fonts---title-3 (light)","d":"The declared title-3 step."},"tag":{"v":"14.9688px","t":"dimension","s":"css-var --_fonts---tag (light)","d":"The declared tag step."},"tagSmall":{"v":"14.9688px","t":"dimension","s":"css-var --_fonts---tag-small (light)","d":"The declared small tag step."},"smallText1":{"v":"9.96875px","t":"dimension","s":"css-var --_fonts---small-text-1 (light)","d":"The declared small-text-1 step."},"smallText2":{"v":"8.3125px","t":"dimension","s":"css-var --_fonts---small-text-2 (light)","d":"The declared small-text-2 step."}},"app":{"2lg":{"v":"24px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-2lg","d":"The app's declared `--text-2lg`."},"2xl":{"v":"52px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-2xl","d":"The app's declared `--text-2xl`."},"2xs":{"v":"9px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-2xs","d":"The app's declared `--text-2xs`."},"l":{"v":"28px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-l","d":"The app's declared `--text-l`."},"lg":{"v":"22px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-lg","d":"The app's declared `--text-lg`."},"m":{"v":"18px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-m","d":"The app's declared `--text-m`."},"md":{"v":"16px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-md","d":"The app's declared `--text-md`."},"sm":{"v":"14px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-sm","d":"The app's declared `--text-sm`."},"xl":{"v":"32px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-xl","d":"The app's declared `--text-xl`."},"xs":{"v":"12px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-xs","d":"The app's declared `--text-xs`."}},"measured":{"hero":{"v":"73.1963px","t":"dimension","s":"computed fontSize of hero-h1 default (raw/components-computed.json)","d":"The 73.2px painted hero masthead at 1440 — the resolved --_fonts---h1 step at the capture width."},"section":{"v":"99.8131px","t":"dimension","s":"computed fontSize of section-h2 default (raw/components-computed.json)","d":"The 99.8px painted section heading at 1440."},"step":{"v":"53.2336px","t":"dimension","s":"computed fontSize of step-h3 default (raw/components-computed.json)","d":"The 53.2px how-it-works step heading."},"legal":{"v":"73.1963px","t":"dimension","s":"computed fontSize of legal-title default (raw/components-computed.json)","d":"The 73.2px legal page title."},"navOverlay":{"v":"19.9626px","t":"dimension","s":"computed fontSize of nav-overlay-link default (raw/components-computed.json)","d":"The 20px menu-overlay link."},"control":{"v":"14.1402px","t":"dimension","s":"computed fontSize of header-cta default (raw/components-computed.json)","d":"The 14.1px marketing button size."},"chrome":{"v":"14.4px","t":"dimension","s":"computed fontSize of mkt-header default (raw/components-computed.json)","d":"The 14.4px default on header chrome (Arial fallback zone)."},"bodyLegal":{"v":"14.972px","t":"dimension","s":"computed fontSize of legal-body default (raw/components-computed.json)","d":"The 15px legal body size."},"heroMobile":{"v":"40.3092px","t":"dimension","s":"computed fontSize of m-hero-h1 default (raw/components-computed.json)","d":"The 40.3px mobile hero masthead at 390 wide."},"controlMobile":{"v":"17.1314px","t":"dimension","s":"computed fontSize of m-step-cta default (raw/components-computed.json)","d":"The 17.1px mobile button size."},"appDisplay":{"v":"52px","t":"dimension","s":"computed fontSize of start-h1 default (raw/components-computed.json)","d":"The app's 52px /start heading (--text-2xl)."},"appControl":{"v":"14px","t":"dimension","s":"computed fontSize of app-create-btn default (raw/components-computed.json)","d":"The app's 14px control size (--text-sm)."},"appMeta":{"v":"12px","t":"dimension","s":"computed fontSize of auth-forgot default (raw/components-computed.json)","d":"The app's 12px meta size (--text-xs)."}}},"lineHeight":{"app2Xl":{"v":1.3333,"t":"number","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-2xl--line-height","d":"The app's declared `--text-2xl--line-height` line-height ratio."},"appLg":{"v":1.5556,"t":"number","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-lg--line-height","d":"The app's declared `--text-lg--line-height` line-height ratio."},"appSm":{"v":1.4286,"t":"number","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-sm--line-height","d":"The app's declared `--text-sm--line-height` line-height ratio."},"appXl":{"v":1.4,"t":"number","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-xl--line-height","d":"The app's declared `--text-xl--line-height` line-height ratio."},"appXs":{"v":1.3333,"t":"number","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --text-xs--line-height","d":"The app's declared `--text-xs--line-height` line-height ratio."},"hero":{"v":"68.8045px","t":"dimension","s":"computed lineHeight of hero-h1 default (raw/components-computed.json)","d":"The 68.8px hero line-height (~0.94)."},"section":{"v":"99.8131px","t":"dimension","s":"computed lineHeight of section-h2 default (raw/components-computed.json)","d":"The 99.8px section line-height (1:1)."},"control":{"v":"16.9682px","t":"dimension","s":"computed lineHeight of header-cta default (raw/components-computed.json)","d":"The 17px button line-height."},"navOverlay":{"v":"29.9439px","t":"dimension","s":"computed lineHeight of nav-overlay-link default (raw/components-computed.json)","d":"The 29.9px overlay-link line-height."}},"tracking":{"appNormal":{"v":"0px","t":"other","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --tracking-normal","d":"The app's declared `--tracking-normal`."},"appTighter":{"v":"-.05em","t":"other","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --tracking-tighter","d":"The app's declared `--tracking-tighter`."},"hero":{"v":"-2.19589px","t":"other","s":"computed letterSpacing of hero-h1 default (raw/components-computed.json)","d":"The -2.2px hero tracking."},"section":{"v":"-2.99439px","t":"other","s":"computed letterSpacing of section-h2 default (raw/components-computed.json)","d":"The -3px section tracking."},"step":{"v":"-1.59701px","t":"other","s":"computed letterSpacing of step-h3 default (raw/components-computed.json)","d":"The -1.6px step tracking."},"legal":{"v":"-1.33084px","t":"other","s":"computed letterSpacing of legal-title default (raw/components-computed.json)","d":"The -1.33px legal title tracking."},"navOverlay":{"v":"-0.174739px","t":"other","s":"computed letterSpacing of nav-overlay-link default (raw/components-computed.json)","d":"The -0.17px overlay-link tracking."},"control":{"v":"-0.282804px","t":"other","s":"computed letterSpacing of header-cta default (raw/components-computed.json)","d":"The -0.28px button tracking."},"appDisplay":{"v":"-2.08px","t":"other","s":"computed letterSpacing of start-h1 default (raw/components-computed.json)","d":"The -2.08px (-4%) app display tracking."}}},"appColor":{"accent-500":{"v":"#ff6b02","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-accent-500","d":"The app's declared `--color-accent-500`."},"accent-600":{"v":"#f94a00","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-accent-600","d":"The app's declared `--color-accent-600`."},"alert-warning":{"v":"#e093b2","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-alert-warning","d":"The app's declared `--color-alert-warning`."},"base-100":{"v":"#ffffff","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-base-100","d":"The app's declared `--color-base-100`."},"base-200":{"v":"#f2f2f2","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-base-200","d":"The app's declared `--color-base-200`."},"base-500":{"v":"#b0b4ba","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-base-500","d":"The app's declared `--color-base-500`."},"base-600":{"v":"#686a6e","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-base-600","d":"The app's declared `--color-base-600`."},"base-625":{"v":"#444547","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-base-625","d":"The app's declared `--color-base-625`."},"base-650":{"v":"#202020","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-base-650","d":"The app's declared `--color-base-650`."},"base-700":{"v":"#1a1a1a","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-base-700","d":"The app's declared `--color-base-700`."},"base-750":{"v":"#1e1e1e","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-base-750","d":"The app's declared `--color-base-750`."},"base-800":{"v":"#111111","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-base-800","d":"The app's declared `--color-base-800`."},"base-900":{"v":"#020108","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-base-900","d":"The app's declared `--color-base-900`."},"blue-100":{"v":"#dbeafe","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-blue-100","d":"The app's declared `--color-blue-100`."},"blue-500":{"v":"#2b7fff","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-blue-500","d":"The app's declared `--color-blue-500`."},"error":{"v":"#ff173f","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-error","d":"The app's declared `--color-error`."},"error-500":{"v":"#e82e1d","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-error-500","d":"The app's declared `--color-error-500`."},"error-light":{"v":"#ff9592","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-error-light","d":"The app's declared `--color-error-light`."},"gray-600":{"v":"#4a5565","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-gray-600","d":"The app's declared `--color-gray-600`."},"invalid":{"v":"#f63c34","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-invalid","d":"The app's declared `--color-invalid`."},"neutral-alpha-3":{"v":"rgba(0, 0, 51, 0.06)","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-neutral-alpha-3","d":"The app's declared `--color-neutral-alpha-3`."},"overlay-black-50":{"v":"rgba(0, 0, 0, 0.5)","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-overlay-black-50","d":"The app's declared `--color-overlay-black-50`."},"overlay-black-alpha-1":{"v":"rgba(0, 0, 0, 0.05)","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-overlay-black-alpha-1","d":"The app's declared `--color-overlay-black-alpha-1`."},"red-500":{"v":"#fb2c36","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-red-500","d":"The app's declared `--color-red-500`."},"success":{"v":"#46fea5","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-success","d":"The app's declared `--color-success`."},"success-500":{"v":"#0fa359","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-success-500","d":"The app's declared `--color-success-500`."},"valid":{"v":"#31cb4b","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-valid","d":"The app's declared `--color-valid`."},"white":{"v":"#ffffff","t":"color","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --color-white","d":"The app's declared `--color-white`."}},"spacing":{"app":{"v":"4px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --spacing","d":"The app's declared `--spacing`."}},"radius":{"app":{"2xl":{"v":"16px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --radius-2xl","d":"The app's declared `--radius-2xl`."},"3xl":{"v":"24px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --radius-3xl","d":"The app's declared `--radius-3xl`."},"4xl":{"v":"28px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --radius-4xl","d":"The app's declared `--radius-4xl`."},"5xl":{"v":"32px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --radius-5xl","d":"The app's declared `--radius-5xl`."},"7xl":{"v":"40px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --radius-7xl","d":"The app's declared `--radius-7xl`."},"lg":{"v":"8px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --radius-lg","d":"The app's declared `--radius-lg`."},"md":{"v":"6px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --radius-md","d":"The app's declared `--radius-md`."},"sm":{"v":"4px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --radius-sm","d":"The app's declared `--radius-sm`."},"xl":{"v":"12px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --radius-xl","d":"The app's declared `--radius-xl`."}}},"container":{"3xs":{"v":"256px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --container-3xs","d":"The app's declared `--container-3xs`."},"md":{"v":"448px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --container-md","d":"The app's declared `--container-md`."},"xl":{"v":"576px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --container-xl","d":"The app's declared `--container-xl`."},"xs":{"v":"320px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --container-xs","d":"The app's declared `--container-xs`."}},"blur":{"2xl":{"v":"40px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --blur-2xl","d":"The app's declared `--blur-2xl`."},"lg":{"v":"16px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --blur-lg","d":"The app's declared `--blur-lg`."},"md":{"v":"12px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --blur-md","d":"The app's declared `--blur-md`."},"sm":{"v":"8px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --blur-sm","d":"The app's declared `--blur-sm`."},"xl":{"v":"24px","t":"dimension","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --blur-xl","d":"The app's declared `--blur-xl`."}},"easing":{"appIn-Out":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --ease-in-out","d":"The app's declared `--ease-in-out`."},"appOut":{"v":[0.0,0.0,0.2,1.0],"t":"cubicBezier","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --ease-out","d":"The app's declared `--ease-out`."},"appDefault":{"v":[0.4,0.0,0.2,1.0],"t":"cubicBezier","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --default-transition-timing-function","d":"The app's declared `--default-transition-timing-function`."},"marketingControl":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":"computed transitionTimingFunction of header-cta default (raw/components-computed.json)","d":"The plain `ease` curve on marketing controls."}},"duration":{"appDefault":{"v":"150ms","t":"duration","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --default-transition-duration","d":"The app's declared `--default-transition-duration`."},"marketingControl":{"v":"200ms","t":"duration","s":"computed transitionDuration of header-cta default (raw/components-computed.json)","d":"The 0.2s control transition on the marketing site's buttons and pills."}},"animate":{"appPulse":{"v":"pulse 2s cubic-bezier(.4,0,.6,1)infinite","t":"other","s":"declared custom property in the app's Tailwind v4 @theme layer (raw/css-vars-app.json): --animate-pulse","d":"The app's declared `--animate-pulse`."}},"heroSlider":{"tx":{"v":"0%","t":"other","s":"declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --tx on .hero__slider__row \u003c@media (min-width: 992px)>","d":"The hero logo-strip translate variable (the desktop direction under >=992px)."},"ty":{"v":"0%","t":"other","s":"declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --ty on .hero__slider__row \u003c@media (min-width: 992px)>","d":"The hero logo-strip translate variable (the desktop direction under >=992px)."},"txend":{"v":"0%","t":"other","s":"declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --tx-end on .hero__slider__row \u003c@media (min-width: 992px)>","d":"The hero logo-strip translate variable (the desktop direction under >=992px)."},"tyend":{"v":"-100%","t":"other","s":"declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --ty-end on .hero__slider__row \u003c@media (min-width: 992px)>","d":"The hero logo-strip translate variable (the desktop direction under >=992px)."},"txMobile":{"v":"0%","t":"other","s":"declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --tx on .hero__slider__row \u003c@media (max-width: 991px)>","d":"The hero logo-strip translate variable (the phone direction under \u003c=991px)."},"tyMobile":{"v":"0%","t":"other","s":"declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --ty on .hero__slider__row \u003c@media (max-width: 991px)>","d":"The hero logo-strip translate variable (the phone direction under \u003c=991px)."},"txendMobile":{"v":"-100%","t":"other","s":"declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --tx-end on .hero__slider__row \u003c@media (max-width: 991px)>","d":"The hero logo-strip translate variable (the phone direction under \u003c=991px)."},"tyendMobile":{"v":"0%","t":"other","s":"declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --ty-end on .hero__slider__row \u003c@media (max-width: 991px)>","d":"The hero logo-strip translate variable (the phone direction under \u003c=991px)."},"dotsSize":{"v":"1rem","t":"other","s":"declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --dot-size on .dots-field \u003c@media (min-width: 768px)>","d":"The dotted-background field's dot/gap size (the desktop grid at >=768px)."},"dotsGap":{"v":"1rem","t":"other","s":"declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --dot-gap on .dots-field \u003c@media (min-width: 768px)>","d":"The dotted-background field's dot/gap size (the desktop grid at >=768px)."},"dotsSizeMobile":{"v":"0.5rem","t":"other","s":"declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --dot-size on .dots-field \u003c@media (max-width: 767px)>","d":"The dotted-background field's dot/gap size (the denser half-size under 768px)."},"dotsGapMobile":{"v":"0.5rem","t":"other","s":"declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --dot-gap on .dots-field \u003c@media (max-width: 767px)>","d":"The dotted-background field's dot/gap size (the denser half-size under 768px)."}},"fluid":{"userZoom":{"v":1,"t":"number","s":"declared custom property in the marketing site's Webflow css bundle (raw/css-vars.json): --user-zoom","d":"The declared `--user-zoom`."}},"component":{"marketing":{"header-height":{"v":"92.48px","t":"dimension","s":"measured h of mkt-header default (raw/components-computed.json)","d":"The 92.5px marketing header band."},"header-side-pad":{"v":"26.6168px","t":"dimension","s":"computed paddingLeft of mkt-header default (raw/components-computed.json)","d":"The header's ~26.6px side padding."},"menu-pill-width":{"v":"78.48px","t":"dimension","s":"measured w of menu-pill default (raw/components-computed.json)","d":"The ~78px Menu pill width."},"menu-pill-height":{"v":"35.23px","t":"dimension","s":"measured h of menu-pill default (raw/components-computed.json)","d":"The ~35px header pill height."},"icon-btn":{"v":"26.61px","t":"dimension","s":"measured h of theme-toggle default (raw/components-computed.json)","d":"The 26.6px square header icon buttons (theme toggle, account)."},"counter-chip":{"v":"26.61px","t":"dimension","s":"measured h of prc-counter default (raw/components-computed.json)","d":"The 26.6px header counter chip."},"cta-width":{"v":"101.81px","t":"dimension","s":"measured w of header-cta default (raw/components-computed.json)","d":"The ~102px header CTA width."},"cta-height":{"v":"39.92px","t":"dimension","s":"measured h of header-cta default (raw/components-computed.json)","d":"The ~39.9px marketing CTA height."},"cta-radius":{"v":"1317.53px","t":"dimension","s":"computed borderTopLeftRadius of header-cta default (raw/components-computed.json)","d":"The fluid ~1318px radius — a full pill at any height."},"ai-btn":{"v":"53.22px","t":"dimension","s":"measured h of ai-btn default (raw/components-computed.json)","d":"The 53.2px circular hero AI button."},"chip-radius":{"v":"6.65421px","t":"dimension","s":"computed borderTopLeftRadius of hero-word default (raw/components-computed.json)","d":"The 6.65px rotating-word chip radius."},"icon-ring":{"v":"26.6168px","t":"dimension","s":"computed borderTopLeftRadius of account-link default (raw/components-computed.json)","d":"The 26.6px account-icon ring radius."},"hero-h1-width":{"v":"485.36px","t":"dimension","s":"measured w of hero-h1 default (raw/components-computed.json)","d":"The ~485px hero masthead line width."},"nav-overlay-height":{"v":"528.98px","t":"dimension","s":"measured h of nav-overlay opened (raw/components-computed.json)","d":"The ~529px open menu overlay."},"nav-link-height":{"v":"29.95px","t":"dimension","s":"measured h of nav-overlay-link default (raw/components-computed.json)","d":"The ~30px menu-overlay link row."},"faq-height":{"v":"75.02px","t":"dimension","s":"measured h of faq-item default (raw/components-computed.json)","d":"The 75px FAQ row at rest."},"faq-open-height":{"v":"118.02px","t":"dimension","s":"measured h of faq-item opened (raw/components-computed.json)","d":"The ~118px open FAQ row."},"faq-side-pad":{"v":"26.6168px","t":"dimension","s":"computed paddingLeft of faq-item default (raw/components-computed.json)","d":"The 26.6px FAQ row padding."},"footer-height":{"v":"811.78px","t":"dimension","s":"measured h of footer default (raw/components-computed.json)","d":"The ~812px footer."},"cookie-accept-width":{"v":"150.39px","t":"dimension","s":"measured w of cookie-accept default (raw/components-computed.json)","d":"The ~150px consent Accept-all button."},"cookie-check-radius":{"v":"19.9626px","t":"dimension","s":"computed borderTopLeftRadius of cookie-check default (raw/components-computed.json)","d":"The ~20px consent checkbox card radius."},"legal-pad-top":{"v":"106.467px","t":"dimension","s":"computed paddingTop of legal-section default (raw/components-computed.json)","d":"The ~106px legal section top padding."},"mobile-header-height":{"v":"104.11px","t":"dimension","s":"measured h of m-header default (raw/components-computed.json)","d":"The ~104px phone header."},"mobile-menu-pill":{"v":"42.69px","t":"dimension","s":"measured h of m-menu-pill default (raw/components-computed.json)","d":"The ~42.7px phone menu pill."},"mobile-nav-overlay":{"v":"499.7px","t":"dimension","s":"measured h of m-nav-overlay opened (raw/components-computed.json)","d":"The ~56px phone menu overlay row."},"mobile-faq-height":{"v":"94.69px","t":"dimension","s":"measured h of m-faq-item default (raw/components-computed.json)","d":"The ~95px phone FAQ row."}},"app":{"menu-btn":{"v":"32px","t":"dimension","s":"measured h of app-menu-btn default on app.fourmula.ai (raw/components-computed.json)","d":"The 32px square app menu button."},"create-btn":{"v":"32px","t":"dimension","s":"measured h of app-create-btn default on app.fourmula.ai (raw/components-computed.json)","d":"The 32px \"Create asset\" pill height."},"signin-btn":{"v":"32px","t":"dimension","s":"measured h of app-signin-btn default on app.fourmula.ai (raw/components-computed.json)","d":"The 32px \"Sign in\" pill height."},"start-h1-width":{"v":"432.33px","t":"dimension","s":"measured w of start-h1 default on app.fourmula.ai (raw/components-computed.json)","d":"The ~432px /start heading width."},"start-cta":{"v":"40px","t":"dimension","s":"measured h of start-cta default on app.fourmula.ai (raw/components-computed.json)","d":"The 40px /start CTA height."},"auth-card-width":{"v":"384px","t":"dimension","s":"measured w of auth-card default on app.fourmula.ai (raw/components-computed.json)","d":"The 384px sign-in card."},"auth-card-height":{"v":"468.8px","t":"dimension","s":"measured h of auth-card default on app.fourmula.ai (raw/components-computed.json)","d":"The ~469px sign-in card height."},"auth-card-radius":{"v":"28px","t":"dimension","s":"computed borderTopLeftRadius of auth-card default (raw/components-computed.json)","d":"The 28px card radius (rounded-4xl)."},"auth-card-border":{"v":"#1a1a1a","t":"color","s":"computed borderTopColor of auth-card default (raw/components-computed.json)","d":"The #1a1a1a card border (--color-base-700)."},"auth-card-bg":{"v":"#111111","t":"color","s":"computed backgroundColor of auth-card default (raw/components-computed.json)","d":"The #111111 card fill (--color-base-800)."},"auth-card-backdrop":{"v":"blur(24px)","t":"other","s":"computed backdropFilter of auth-card default (raw/components-computed.json)","d":"The blur(24px) card backdrop (--blur-xl)."},"auth-card-pad-x":{"v":"32px","t":"dimension","s":"computed paddingLeft of auth-card default (raw/components-computed.json)","d":"The 32px card side padding."},"auth-card-gap":{"v":"24px","t":"dimension","s":"computed gap of auth-card default (raw/components-computed.json)","d":"The 24px card section gap."},"field-height":{"v":"48px","t":"dimension","s":"measured h of auth-field-email default on app.fourmula.ai (raw/components-computed.json)","d":"The 48px auth field height."},"field-width-email":{"v":"286px","t":"dimension","s":"measured w of auth-field-email default on app.fourmula.ai (raw/components-computed.json)","d":"The ~286px email field width."},"google-height":{"v":"40px","t":"dimension","s":"measured h of auth-google default on app.fourmula.ai (raw/components-computed.json)","d":"The 40px Google button height."},"submit-height":{"v":"40px","t":"dimension","s":"measured h of auth-submit default on app.fourmula.ai (raw/components-computed.json)","d":"The 40px Sign-in submit height."},"submit-radius":{"v":"9999px","t":"dimension","s":"computed borderTopLeftRadius of auth-submit default (raw/components-computed.json)","d":"The full-pill submit (Tailwind rounded-full)."},"back-height":{"v":"32px","t":"dimension","s":"measured h of auth-back default on app.fourmula.ai (raw/components-computed.json)","d":"The 32px Back pill height."},"eye-size":{"v":"16px","t":"dimension","s":"measured h of auth-eye default on app.fourmula.ai (raw/components-computed.json)","d":"The 16px password-visibility icon."},"accent-fill":{"v":"#ff6b02","t":"color","s":"computed backgroundColor of auth-submit default (raw/components-computed.json)","d":"The #ff6b02 accent fill on primary actions (--color-accent-500)."},"accent-ink":{"v":"#020108","t":"color","s":"computed color of auth-submit default (raw/components-computed.json)","d":"The #020108 ink on the accent fill."},"accent-tint":{"v":"rgba(255, 107, 2, 0.2)","t":"color","s":"computed backgroundColor of auth-google default (raw/components-computed.json)","d":"The accent-at-20% translucent fill on secondary pills (painted oklab ≈ #ff6b02 at 20%)."},"accent-disabled":{"v":"rgba(255, 107, 2, 0.15)","t":"color","s":"computed backgroundColor of pdp-start-bottom default (raw/components-computed.json)","d":"The accent-at-15% fill on the not-ready Start generation submit."},"muted-ink":{"v":"#686a6e","t":"color","s":"computed color of auth-forgot default (raw/components-computed.json)","d":"The #686a6e meta ink (--color-base-600)."},"dim-ink":{"v":"#b0b4ba","t":"color","s":"computed color of auth-back default (raw/components-computed.json)","d":"The #b0b4ba secondary ink (--color-base-500)."},"ghost-fill":{"v":"rgba(255, 255, 255, 0.05)","t":"color","s":"computed backgroundColor of auth-back default (raw/components-computed.json)","d":"The white-at-5% fill on the Back pill."},"link-accent":{"v":"#ff6b02","t":"color","s":"computed color of auth-switch default (raw/components-computed.json)","d":"The #ff6b02 accent link ink."},"reco-dialog-width":{"v":"480px","t":"dimension","s":"measured w of pdp-reco-dialog default on app.fourmula.ai (raw/components-computed.json)","d":"The 480px Recommendations (What can I upload?) dialog."},"reco-dialog-radius":{"v":"28px","t":"dimension","s":"computed borderTopLeftRadius of pdp-reco-dialog default (raw/components-computed.json)","d":"The 28px dialog radius (rounded-4xl)."},"dialog-bg":{"v":"#1e1e1e","t":"color","s":"computed backgroundColor of pdp-reco-dialog default (raw/components-computed.json)","d":"The #1e1e1e dialog fill (--color-base-750)."},"what-dialog-width":{"v":"880px","t":"dimension","s":"measured w of pdp-what-dialog default on app.fourmula.ai (raw/components-computed.json)","d":"The 880px What's-a-PDP explainer dialog."},"upload-height":{"v":"40px","t":"dimension","s":"measured h of pdp-upload default on app.fourmula.ai (raw/components-computed.json)","d":"The 40px Upload Main Image button."},"shopify-cta-width":{"v":"152px","t":"dimension","s":"measured w of pdp-shopify-cta default on app.fourmula.ai (raw/components-computed.json)","d":"The 152px Check connection pill."},"cancel-width":{"v":"131px","t":"dimension","s":"measured w of pdp-cancel default on app.fourmula.ai (raw/components-computed.json)","d":"The 131px Cancel and close pill."},"dash-link-opacity":{"v":0.3,"t":"number","s":"computed opacity of pdp-dash-link default (raw/components-computed.json)","d":"The 0.3 faded Dashboard link."},"signedin-chip":{"v":"25px","t":"dimension","s":"measured h of pdp-signedin-chip default on app.fourmula.ai (raw/components-computed.json)","d":"The 25px Signed-in requirement chip."},"format-item-height":{"v":"60px","t":"dimension","s":"measured h of pdp-format-static default on app.fourmula.ai (raw/components-computed.json)","d":"The 60px Static/Video content radio row."},"format-item-radius":{"v":"16px","t":"dimension","s":"computed borderTopLeftRadius of pdp-format-static default (raw/components-computed.json)","d":"The 16px radio-card radius (rounded-2xl)."},"format-item-bg":{"v":"#1a1a1a","t":"color","s":"computed backgroundColor of pdp-format-static default (raw/components-computed.json)","d":"The #1a1a1a radio-card fill (--color-base-700)."},"format-item-ink":{"v":"#ff6b02","t":"color","s":"computed color of pdp-format-static default (raw/components-computed.json)","d":"The accent ink on the selected radio."},"format-video-opacity":{"v":0.5,"t":"number","s":"computed opacity of pdp-format-video default (raw/components-computed.json)","d":"The 0.5 disabled Video-content radio."},"start-bottom-width":{"v":"591px","t":"dimension","s":"measured w of pdp-start-bottom default on app.fourmula.ai (raw/components-computed.json)","d":"The ~591px full-width footer submit."},"start-bottom-radius":{"v":"12px","t":"dimension","s":"computed borderTopLeftRadius of pdp-start-bottom default (raw/components-computed.json)","d":"The 12px footer-submit radius (rounded-xl)."},"start-header-width":{"v":"123px","t":"dimension","s":"measured w of pdp-start-header default on app.fourmula.ai (raw/components-computed.json)","d":"The 123px header Start generation submit."}}},"motion":{"duration":{"100ms":{"v":"100ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"default-transition-duration":{"v":"150ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--default-transition-duration"},"d":"Custom property --default-transition-duration, declared on :root, :host."},"200ms":{"v":"200ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 985 elements."},"250ms":{"v":"250ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"300ms":{"v":"300ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"500ms":{"v":"500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"spinner-animation-duration":{"v":"800ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--spinner-animation-duration"},"d":"Custom property --spinner-animation-duration, declared on .spinner."},"1000ms":{"v":"1000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"1500ms":{"v":"1500ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."},"24000ms":{"v":"24000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 6 elements."},"5000000ms":{"v":"5000000ms","t":"duration","s":{"evidence":"Measured","capture":"raw/motion.json#declared"},"d":"Declared in a state rule, not seen running at rest."}},"easing":{"bezier-0_25-0_46-0_45-0_94":{"v":[0.25,0.46,0.45,0.94],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#pages"}},"default-transition-timing-function":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--default-transition-timing-function"},"d":"Custom property --default-transition-timing-function, declared on :root, :host."},"ease":{"v":[0.25,0.1,0.25,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `ease`, expanded to its control points."},"ease-in-out":{"v":[0.4,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-in-out"},"d":"Custom property --ease-in-out, declared on :root, :host."},"ease-in-out-2":{"v":[0.42,0,0.58,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#declared"},"d":"The keyword `ease-in-out`, expanded to its control points."},"ease-out":{"v":[0,0,0.2,1],"t":"cubicBezier","s":{"evidence":"Measured","capture":"raw/motion.json#customProperties/--ease-out"},"d":"Custom property --ease-out, declared on :root, :host."},"linear":{"v":[0,0,1,1],"t":"cubicBezier","s":{"evidence":"Derived","capture":"raw/motion.json#pages"},"d":"The keyword `linear`, expanded to its control points."}},"transition":{"tw-gradient-from-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 78 elements."},"tw-gradient-to-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 78 elements."},"tw-gradient-via-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 78 elements."},"webkit-text-decoration-color-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 78 elements."},"background-color-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 78 elements."},"border-color-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 78 elements."},"color-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 78 elements."},"fill-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 78 elements."},"outline-color-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 78 elements."},"stroke-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 78 elements."},"text-decoration-color-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 78 elements."},"opacity-200ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 49 elements."},"all-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 30 elements."},"opacity-200ms-ease":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 29 elements."},"tw-gradient-from-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"tw-gradient-to-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"tw-gradient-via-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"webkit-backdrop-filter-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"webkit-text-decoration-color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"all-200ms-bezier-0_25-0_46-0_45-0_94":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_25-0_46-0_45-0_94}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"backdrop-filter-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"background-color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"background-color-200ms-bezier-0_25-0_46-0_45-0_94":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.bezier-0_25-0_46-0_45-0_94}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"border-color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"box-shadow-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"content-visibility-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"display-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"fill-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"filter-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"opacity-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"outline-color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"overlay-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"pointer-events-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"rotate-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"scale-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"stroke-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"text-decoration-color-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"transform-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"translate-150ms-default-transition-timing-function":{"v":{"duration":"{motion.duration.default-transition-duration}","delay":"0ms","timingFunction":"{motion.easing.default-transition-timing-function}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 4 elements."},"opacity-250ms-ease":{"v":{"duration":"{motion.duration.250ms}","delay":"0ms","timingFunction":"{motion.easing.ease}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 3 elements."},"tw-gradient-from-200ms-ease-out":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"tw-gradient-to-200ms-ease-out":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"tw-gradient-via-200ms-ease-out":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"webkit-text-decoration-color-200ms-ease-out":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"background-color-200ms-ease-out":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"border-color-200ms-ease-out":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"color-200ms-ease-out":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"fill-200ms-ease-out":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"outline-color-200ms-ease-out":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"stroke-200ms-ease-out":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."},"text-decoration-color-200ms-ease-out":{"v":{"duration":"{motion.duration.200ms}","delay":"0ms","timingFunction":"{motion.easing.ease-out}"},"t":"transition","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Read at rest on 1 element."}},"animation":{"columnanima":{"v":{"name":"columnanima","duration":"{motion.duration.24000ms}","delay":"0ms","timingFunction":"{motion.easing.linear}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `columnanima`."},"hero-row":{"v":{"name":"hero-row","duration":"{motion.duration.24000ms}","delay":"0ms","timingFunction":"{motion.easing.linear}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `hero-row`."},"marquee":{"v":{"name":"marquee","duration":"{motion.duration.24000ms}","delay":"0ms","timingFunction":"{motion.easing.linear}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `marquee`."},"spinstep":{"v":{"name":"spinStep","duration":"{motion.duration.1000ms}","delay":"0ms","timingFunction":"steps(8, end)","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `spinStep`."},"spinner-leaf-fade":{"v":{"name":"spinner-leaf-fade","duration":"{motion.duration.spinner-animation-duration}","delay":"-800ms","timingFunction":"{motion.easing.linear}","iterationCount":"infinite","direction":"normal","fillMode":"none"},"t":"animation","s":{"evidence":"Measured","capture":"raw/motion.json#pages"},"d":"Animation `spinner-leaf-fade`."}}}},"light":{"background":{"page":{"v":"#ffffff","t":"color","s":"css-var --mainbg (light)","d":"The declared page field. Resolved under the light (the .body.dark paint) declarations."},"surface":{"v":"#f7f7f7","t":"color","s":"css-var --secondbg (light)","d":"The declared secondary surface. Resolved under the light (the .body.dark paint) declarations."},"menu":{"v":"#020108","t":"color","s":"css-var --menu (light)","d":"The declared menu/overlay fill — the page ink in light, a lifted #272727 in dark. Resolved under the light (the .body.dark paint) declarations."},"dots":{"v":"#d9d9d9","t":"color","s":"css-var --dots-pattern (light)","d":"The declared dots-pattern ink. Resolved under the light (the .body.dark paint) declarations."},"pageFade":{"v":"rgba(255, 255, 255, 0)","t":"color","s":"css-var --mainbg-gradient (light)","d":"The declared transparent page-gradient stop used for fade-outs. Resolved under the light (the .body.dark paint) declarations."},"aiButton":{"v":"#ffffff","t":"color","s":"computed backgroundColor of ai-btn default (raw/components-computed.json)","d":"The white circular AI-button fill on the hero band."},"chip":{"v":"#ffffff","t":"color","s":"computed backgroundColor of hero-word default (raw/components-computed.json)","d":"The white rotating-word chip in the hero masthead."},"counter":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"computed backgroundColor of prc-counter default (raw/components-computed.json)","d":"The translucent header counter chip (white at 20% — the --menu-colors value)."},"outlineFill":{"v":"#d9d9d9","t":"color","s":"computed backgroundColor of cookie-settings default (raw/components-computed.json)","d":"The #d9d9d9 outline-button fill in the consent layer."}},"text":{"ink":{"v":"#020108","t":"color","s":"css-var --fonts-100 (light)","d":"The declared 100% ink. Resolved under the light (the .body.dark paint) declarations."},"muted":{"v":"rgba(2, 1, 8, 0.64)","t":"color","s":"css-var --fonts-64 (light)","d":"The declared 64% ink. Resolved under the light (the .body.dark paint) declarations."},"dim":{"v":"rgba(2, 1, 8, 0.5)","t":"color","s":"css-var --fonts-50 (light)","d":"The declared 50% ink. Resolved under the light (the .body.dark paint) declarations."},"faint":{"v":"rgba(2, 1, 8, 0.3)","t":"color","s":"css-var --fonts-30 (light)","d":"The declared 30% ink. Resolved under the light (the .body.dark paint) declarations."},"hairlineInk":{"v":"rgba(2, 1, 8, 0.2)","t":"color","s":"css-var --fonts-20 (light)","d":"The declared 20% ink — also the hairline borders paint. Resolved under the light (the .body.dark paint) declarations."},"overlayLink":{"v":"{text.ink}","t":"color","s":"the menu overlay links paint the declared --fonts-100 ink (nav-overlay-link color, raw/components-computed.json)","d":"The menu-overlay link ink (the declared --fonts-100)."}},"border":{"rule":{"v":"#d7d7d6","t":"color","s":"css-var --lines (light)","d":"The declared hairline rule colour (FAQ rows, section dividers). Resolved under the light (the .body.dark paint) declarations."},"menuLine":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"css-var --menu-colors (light)","d":"The declared overlay hairline (white at 20% in both paints). Resolved under the light (the .body.dark paint) declarations."},"hairline":{"v":"rgba(2, 1, 8, 0.2)","t":"color","s":"computed borderTopColor of hero-word default (raw/components-computed.json)","d":"The chip/icon hairline — the --fonts-20 ink alpha."},"iconRing":{"v":"rgba(2, 1, 8, 0.2)","t":"color","s":"computed borderTopColor of account-link default (raw/components-computed.json)","d":"The account-icon ring border."},"toggleRing":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"computed borderTopColor of theme-toggle default (raw/components-computed.json)","d":"The theme-toggle ring border."}},"action":{"fill":{"v":"#020108","t":"color","s":"computed backgroundColor of header-cta default (raw/components-computed.json)","d":"The painted CTA fill — the page ink in light (#020108), white in dark."},"ink":{"v":"#ffffff","t":"color","s":"computed color of header-cta default (raw/components-computed.json)","d":"The ink on the filled CTA — the inversion of the page ink."},"fillInverse":{"v":"#ffffff","t":"color","s":"computed backgroundColor of step-cta default (raw/components-computed.json)","d":"The inverse CTA fill on the dark how-it-works band inside the light page (white pill on ink)."},"inkInverse":{"v":"#020108","t":"color","s":"computed color of step-cta default (raw/components-computed.json)","d":"The ink on the inverse CTA."}}},"dark":{"background":{"page":{"v":"#020108","t":"color","s":"css-var --mainbg (dark)","d":"The declared page field. Resolved under the dark (the plain .body paint) declarations."},"surface":{"v":"#111111","t":"color","s":"css-var --secondbg (dark)","d":"The declared secondary surface. Resolved under the dark (the plain .body paint) declarations."},"menu":{"v":"#272727","t":"color","s":"css-var --menu (dark)","d":"The declared menu/overlay fill — the page ink in light, a lifted #272727 in dark. Resolved under the dark (the plain .body paint) declarations."},"dots":{"v":"#1a1a1a","t":"color","s":"css-var --dots-pattern (dark)","d":"The declared dots-pattern ink. Resolved under the dark (the plain .body paint) declarations."},"pageFade":{"v":"rgba(2, 1, 8, 0)","t":"color","s":"css-var --mainbg-gradient (dark)","d":"The declared transparent page-gradient stop used for fade-outs. Resolved under the dark (the plain .body paint) declarations."}},"text":{"ink":{"v":"#ffffff","t":"color","s":"css-var --fonts-100 (dark)","d":"The declared 100% ink. Resolved under the dark (the plain .body paint) declarations."},"muted":{"v":"rgba(255, 255, 255, 0.64)","t":"color","s":"css-var --fonts-64 (dark)","d":"The declared 64% ink. Resolved under the dark (the plain .body paint) declarations."},"dim":{"v":"rgba(255, 255, 255, 0.5)","t":"color","s":"css-var --fonts-50 (dark)","d":"The declared 50% ink. Resolved under the dark (the plain .body paint) declarations."},"faint":{"v":"rgba(255, 255, 255, 0.3)","t":"color","s":"css-var --fonts-30 (dark)","d":"The declared 30% ink. Resolved under the dark (the plain .body paint) declarations."},"hairlineInk":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"css-var --fonts-20 (dark)","d":"The declared 20% ink — also the hairline borders paint. Resolved under the dark (the plain .body paint) declarations."},"overlayLink":{"v":"{text.ink}","t":"color","s":"the menu overlay links paint the declared --fonts-100 ink (nav-overlay-link color, raw/components-computed.json)","d":"The menu-overlay link ink (the declared --fonts-100)."}},"border":{"rule":{"v":"#2a2a30","t":"color","s":"css-var --lines (dark)","d":"The declared hairline rule colour (FAQ rows, section dividers). Resolved under the dark (the plain .body paint) declarations."},"menuLine":{"v":"rgba(255, 255, 255, 0.2)","t":"color","s":"css-var --menu-colors (dark)","d":"The declared overlay hairline (white at 20% in both paints). Resolved under the dark (the plain .body paint) declarations."}},"action":{"fill":{"v":"#ffffff","t":"color","s":"computed backgroundColor of header-cta-dark default (raw/components-computed.json)","d":"The painted CTA fill — the page ink in light (#020108), white in dark."},"ink":{"v":"#020108","t":"color","s":"computed color of header-cta-dark default (raw/components-computed.json)","d":"The ink on the filled CTA — the inversion of the page ink."},"fillInverse":{"v":"#ffffff","t":"color","s":"computed backgroundColor of step-cta-dark default (raw/components-computed.json)","d":"The inverse CTA fill on the dark how-it-works band inside the light page (white pill on ink)."},"inkInverse":{"v":"#020108","t":"color","s":"computed color of step-cta-dark default (raw/components-computed.json)","d":"The ink on the inverse CTA."}}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [grp0, grpTree] of [['color', TOK.core.color || {}], ['appColor', TOK.core.appColor || {}]]) {
+    for (const [g, grp] of Object.entries(grpTree)) {
+      const items = (grp && grp.t ? [[grp0 + '.' + g, grp]] : flat(grp, grp0 + '.' + g + '.')).filter(([, t]) => t.t === 'color');
+      if (!items.length) continue;
+      h += `<div class="pal-h">${esc(grp0)}.${esc(g)}</div><div class="pal">`;
+      for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+      h += '</div>';
+    }
+  }
+  // The roles panel obeys the Dark toggle: fourmula.ai ships a real dark
+  // paint (.body vs .body.dark), so both sets have values to show.
+  const rolesHost = () => {
+    const dark = document.documentElement.dataset.mode === 'dark';
+    const roles = flat(TOK[dark ? 'dark' : 'light'] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    let hh = `<div class="pal-h">${dark ? 'dark roles (.body)' : 'light roles (.body.dark)'}</div>`;
+    if (!roles.length) return hh + `<p class="note">Empty — no ${dark ? 'dark' : 'light'} token set.</p>`;
+    hh += `<div class="pal${dark ? ' dark' : ''}">`;
+    for (const [n, t] of roles) hh += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    return hh + '</div>';
+  };
+  const host = document.createElement('div');
+  host.id = 'roles-panel';
+  $('#roles-out').insertAdjacentHTML('beforeend', h);
+  $('#roles-out').appendChild(host);
+  const refill = () => { host.innerHTML = rolesHost(); };
+  refill();
+  document.getElementById('theme').addEventListener('change', function () {
+    document.documentElement.dataset.mode = this.checked ? 'dark' : '';
+    refill();
+  });
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.container || {}, 'container.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.duration || {}, 'duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  for (const [n, t] of flat(TOK.core.animate || {}, 'animate.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.blur || {}, 'blur.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const setname of ['light', 'dark']) {
+    for (const [n, t] of flat((TOK[setname] || {}).shadow || {}, `${setname}.shadow.`)) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.component || {}).app || {}, 'component.app.')) {
+    if (/shadow|glow|backdrop/.test(n)) e += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 110))}</span></div>`;
+  }
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b> <span>the public surfaces paint no drop shadows — depth comes from blur and fills</span></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).duration || {}, 'motion.duration.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  for (const [n, t] of flat((TOK.core.motion || {}).animation || {}, 'motion.animation.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(JSON.stringify(t.v)).slice(0, 90))}</span></div>`;
+  for (const [n, t] of flat((TOK.core.heroSlider || {}), 'heroSlider.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  for (const [n, t] of flat((TOK.core.fluid || {}), 'fluid.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 90))}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+const resolveVal = (v, depth) => {
+  if (depth > 6 || typeof v !== 'string') return v;
+  const m = v.match(/^\{(.+)\}$/);
+  if (!m) return v;
+  for (const root of [TOK.core, TOK.light, TOK.dark, TOK]) {
+    let node = root;
+    for (const k of m[1].split('.')) node = node && node[k];
+    if (node && node.v !== undefined) return resolveVal(node.v, (depth || 0) + 1);
+  }
+  return v;
+};
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(resolveVal(t.v));
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Fourmula</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).tracking || {}, 'font.tracking.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

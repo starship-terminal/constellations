@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>deel.com style guide</title>
+<meta name="description" content="deel.com design tokens and the public marketing surface's components, rendered from tokens.json with measured computed styles (the site declares only --font-* vars on :root).">
+<style>
+:root {
+/*CORE*/
+/*LIGHT*/
+  --sg-sans: "Inter", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-serif: "BagossCondensedFont", "Arial Narrow", "Helvetica Neue Condensed", Impact, sans-serif;
+  --sg-pill: "BagossStandardVF", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+/*DARK*/
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text-body, rgba(0,0,0,.87)); background: var(--background-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 400 40px/1.1 var(--sg-serif); margin: 0 0 4px; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); }
+.lead { max-width: 62ch; color: var(--color-neutral-ink, #0f1015); opacity: .8; }
+.note { font-size: 13px; color: var(--color-neutral-ink, #0f1015); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--color-neutral-ink, #0f1015); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: var(--color-brand-ink, #030302); padding: 12px; border-radius: 12px; }
+.pal.dark .nm, .pal.dark .vl { color: rgba(255, 255, 255, 0.898); }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+.bx { display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 64px; border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); background: #fff; font: 500 11px/1.4 var(--sg-mono); text-align: center; margin: 0 8px 8px 0; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--color-neutral-ink, #0f1015); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--color-neutral-hairline, rgba(53, 65, 90, 0.2)); overflow: hidden; background: var(--surface-page, #fff); }
+.navbar { display: flex; align-items: center; gap: 20px; height: var(--component-nav-height, 65px); padding: 0 10px 0 18px; font-size: 16px; color: var(--color-brand-ink, #030302); background: #fff; border-radius: var(--radius-nav, 26px); box-shadow: 0 1px 3px rgba(3,3,2,.08); margin: 12px 18px; }
+.navbar .wm { font-weight: 800; font-size: 18px; letter-spacing: -0.02em; }
+.navbar .sp { flex: 1; }
+.navbar .link { color: var(--color-brand-ink, #030302); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-load-more-height, 38px); padding: 0 24px; font-size: 16px; font-weight: 500; border-radius: var(--radius-full, 9999px); border: 1px solid transparent; }
+.btn.primary { background: var(--text-ink, #1b1b1b); color: var(--text-on-dark, #fff); height: var(--component-nav-demo-height, 40px); font-size: 14px; font-family: var(--sg-pill); border-radius: var(--radius-pill, 200px); }
+.btn.light { background: var(--background-field-surface, #fff); color: var(--color-brand-ink, #030302); box-shadow: 0 1px 4px rgba(3,3,2,.12); }
+.btn.outline { background: transparent; color: var(--color-brand-ink, #030302); box-shadow: inset 0 0 0 1px var(--border-hairline-dark, #2e2e32); }
+.hero { color: var(--color-brand-ink, #030302); padding: 96px 40px 90px; font: 400 52px/1 var(--sg-serif); text-align: center; background: linear-gradient(180deg, #bfe0ee 0%, #dceef7 60%, var(--background-page, #fff) 100%); }
+.hero small { display: block; font: 400 16px/1.5 var(--sg-sans); color: var(--text-muted-foreground, rgba(3,3,2,.5)); margin: 18px auto 26px; max-width: 46ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 0 4px; }
+.tile { border: 1px solid var(--border-hairline-dark, #2e2e32); padding: 18px; font-size: 13px; background: var(--background-field-surface, #fff); border-radius: var(--radius-2xl, 16px); }
+.tile .img { height: 100px; background: var(--background-page, #fff); margin-bottom: 10px; display: flex; align-items: flex-end; padding: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border-radius: var(--radius-default, 10px); }
+.tile b { display: block; font: 400 20px/1.25 var(--sg-serif); margin-bottom: 4px; }
+.tile .price { font: 400 40px/1.1 var(--sg-serif); margin: 8px 0 2px; }
+.tile .sub { opacity: .65; font-size: 12px; }
+table.cmp { border-collapse: collapse; font-size: 14px; }
+table.cmp td, table.cmp th { border: 1px solid var(--border-hairline-dark, #2e2e32); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--color-neutral-border, #e0e0e0); }
+.tr .ts { font-family: var(--sg-serif); }
+.tr .tv { font-size: 12px; color: var(--color-neutral-ink, #171717); opacity: .65; font-family: var(--sg-mono); }
+.toggle { display: inline-flex; background: var(--background-page, #fff); border-radius: var(--radius-full, 9999px); padding: 4px; gap: 0; font-size: 16px; }
+.toggle span { padding: 10px 28px; border-radius: var(--radius-full, 9999px); font-weight: 500; color: var(--color-brand-ink, #030302); }
+.toggle .on { background: var(--background-field-surface, #fff); box-shadow: 0 1px 3px rgba(3,3,2,.12); }
+</style>
+</head>
+<body>
+<main>
+  <h1>deel.com style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">deel.com, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the #1b1b1b ink and promo strip, the #201547 purple hero panel, the #b1d8fc sky accent chip, the #faf4ee cream details, and BagossCondensed display over an Inter/BagossStandardVF UI. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from deel.com on 2026-11-13, signed out, in headless Chromium. The product lives behind app.deel.com — an authenticated boundary never reached; Book a demo, Claim offer and Log in were measured, never followed, and the Cookiebot banner was hidden, never answered. Inter and the Bagoss cuts are served by the site; samples fall back to system faces.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">A 64px #1b1b1b promo strip (a #b1d8fc SPECIAL OFFER chip, a white Claim-offer pill, a close control) sits over an 80px white nav: the 78px wordmark, 15px/500 BagossStandardVF dropdown items, Pricing, EN, Log in and a 118x40 #1b1b1b Book-a-demo pill.</p>
+  <div class="mock" style="background:#fff;padding:0">
+    <div style="display:flex;align-items:center;gap:10px;height:64px;padding:0 20px;background:var(--background-promo-strip,#1b1b1b);color:#fff;font-size:12px"><span style="background:var(--action-accent-chip,#b1d8fc);color:var(--text-ink,#1b1b1b);border-radius:var(--radius-chip,2px);padding:4px 8px;font-weight:600;letter-spacing:.04em">SPECIAL OFFER</span><span>Get 3 months free of PEO*</span><span class="sp" style="flex:1"></span><span class="btn" style="height:32px;font-size:12px;font-weight:500;padding:0 12px;border-radius:var(--radius-pill,200px);background:#fff;color:var(--text-ink,#1b1b1b);font-family:var(--sg-pill)">Claim offer</span><span style="color:#fff;opacity:.8">&#10005;</span></div>
+    <div class="navbar" style="height:80px;border-radius:0;margin:0;box-shadow:none;background:var(--background-page,#fff)"><span class="wm" style="font-weight:800;font-size:20px;color:var(--text-ink,#1b1b1b)">deel.</span><span class="link" style="font-family:var(--sg-pill);font-size:15px;font-weight:500;color:var(--text-ink,#1b1b1b)">Solutions &#9662;</span><span class="link" style="font-family:var(--sg-pill);font-size:15px;font-weight:500;color:var(--text-ink,#1b1b1b)">Use cases &#9662;</span><span class="link" style="font-family:var(--sg-pill);font-size:15px;font-weight:500;color:var(--text-ink,#1b1b1b)">Pricing</span><span class="sp"></span><span class="link" style="font-family:var(--sg-pill);font-size:15px;color:var(--text-ink,#1b1b1b)">EN</span><span class="link" style="font-family:var(--sg-pill);font-size:15px;color:var(--text-ink,#1b1b1b)">Log in</span><span class="btn primary">Book a demo</span></div>
+  </div>
+
+  <h2 class="sh">The purple hero</h2>
+  <p class="lead">The home opens on a 732px #201547 purple panel: a 60px/500 white BagossCondensed headline, five glass action tiles (4%-white fill, 10%-white hairline, 12px radius) that switch a preview panel, and the 375x51 rounded-full white Book-a-demo pill.</p>
+  <div class="mock" style="padding:56px 40px;background:var(--background-hero-panel,#201547);text-align:center">
+    <div style="color:#fff;font:500 52px/1.05 var(--sg-serif);letter-spacing:-.3px">Hire, manage, pay, &amp; equip<br>anyone, anywhere.</div>
+    <div style="display:flex;gap:10px;justify-content:center;margin:26px 0">
+      <span style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-card,12px);color:#fff;font:600 14px var(--sg-sans);padding:14px 20px">Hire anywhere</span>
+      <span style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-card,12px);color:#fff;font:600 14px var(--sg-sans);padding:14px 20px">Run payroll</span>
+      <span style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-card,12px);color:#fff;font:600 14px var(--sg-sans);padding:14px 20px">Secure visas</span>
+      <span style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-card,12px);color:#fff;font:600 14px var(--sg-sans);padding:14px 20px">Ship equipment</span>
+    </div>
+    <span class="btn" style="height:51px;font-size:18px;font-weight:600;border-radius:var(--radius-full,9999px);background:#fff;color:var(--text-ink,#1b1b1b);width:375px;max-width:100%">Book a demo</span>
+  </div>
+
+  <h2 class="sh">Pricing and accordions</h2>
+  <p class="lead">/pricing/ runs 56px BagossCondensed on a dark hero into 459x928 white tier cards on elevation-2dp — a 16px #b1d8fc top strip, a full-width #1b1b1b pill CTA — then a MUI FAQ accordion whose 952x80 summary rows split on a 16%-cream hairline.</p>
+  <div class="mock" style="padding:20px;display:flex;gap:16px;align-items:flex-start">
+    <div style="width:260px;background:#fff;border-radius:var(--radius-card,12px);box-shadow:var(--shadow-card,0 1px 3px rgba(0,0,0,.12));overflow:hidden">
+      <div style="height:16px;background:var(--action-accent-chip,#b1d8fc)"></div>
+      <div style="padding:18px"><b style="font:500 22px var(--sg-serif);color:var(--text-ink,#1b1b1b)">Hire employees</b><div class="sub" style="font:400 13px var(--sg-sans);opacity:.6;margin:6px 0 14px">Most popular</div><span class="btn primary" style="width:100%">Book a demo</span></div>
+    </div>
+    <div style="flex:1;background:var(--background-hero-panel,#201547);border-radius:var(--radius-card,12px);padding:4px 18px">
+      <div style="display:flex;justify-content:space-between;align-items:center;height:80px;border-bottom:1px solid rgba(250,244,238,.16);font:440 24px var(--sg-serif);color:var(--text-cream,#faf4ee)"><span>What is Deel?</span><span style="width:32px;height:32px;border-radius:50%;background:rgba(250,244,238,.4);display:inline-flex;align-items:center;justify-content:center;color:var(--text-cream,#faf4ee)">+</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;height:80px;font:440 24px var(--sg-serif);color:var(--text-cream,#faf4ee)"><span>How does pricing work?</span><span style="width:32px;height:32px;border-radius:50%;background:rgba(250,244,238,.4);display:inline-flex;align-items:center;justify-content:center;color:var(--text-cream,#faf4ee)">+</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The light roles carry the measured palette — #1b1b1b ink, #201547 hero purple, #141414 video-card dark, #b1d8fc sky accents, #faf4ee cream text and hairlines, rgba(0,0,0,.87) MUI body text. The page paints one theme; the dark set is empty.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead">A rounded design: 2px chips, 12px cards and tiles, 200px small pills, full-radius hero CTAs and a 50% hamburger circle. The measured component set below holds nav/banner/hero/card sizes.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows</h2>
+  <div id="elev-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Three voices: <code>Inter</code> for UI and body (16px/400 copy, 18px/600 CTAs, 14px/600 tiles), <code>BagossStandardVF</code> for nav items and small pill buttons (14-15px/500) and <code>BagossCondensedFont</code> for every display heading (hero 60px/500, sections 44px, the 160px about numeral). Samples fall back to system faces.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read computed styles off the live Next.js + MUI DOM on every captured route</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed and opened (dropdown, drawer, accordion) states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = /*TOKENS*/null;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.color || {})) {
+    const items = (grp && grp.t ? [['color.' + g, grp]] : flat(grp, 'color.' + g + '.')).filter(([, t]) => t.t === 'color');
+    if (!items.length) continue;
+    h += `<div class="pal-h">color.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the .theme.dark band)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color' && !n.startsWith('component'));
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacing || {}, 'spacing.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.border || {}, 'border.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.easing || {}, 'easing.')) m += `<div><b>${esc(n)}</b> <span>cubic-bezier(${esc(t.v.join ? t.v.join(', ') : t.v)})</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.measured || {}, 'measured.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.light.component || {}), 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat((TOK.core.font || {}).size || {}, 'font.size.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} — The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  for (const [n, t] of flat((TOK.core.font || {}).lineHeight || {}, 'font.lineHeight.')) h += `<div class="tr"><span class="ts">${esc(n)}</span><span class="tv">${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat((TOK.core.font || {}).weight || {}, 'font.weight.')) h += `<div class="tr"><span class="ts" style="font-weight:${esc(t.v)}">${esc(n)} — Hire anyone, anywhere</span><span class="tv">${esc(t.v)}</span></div>`;
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat((TOK.core.font || {}).family || {}, 'font.family.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

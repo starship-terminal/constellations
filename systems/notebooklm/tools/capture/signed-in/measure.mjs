@@ -238,7 +238,7 @@ function styleOf(el, props) {
   const pp = el.querySelector('[contenteditable=true] p[data-placeholder], [contenteditable=true] p.is-editor-empty') || (el.matches('p[data-placeholder]') ? el : null);
   if (pp) {
     const b = getComputedStyle(pp, '::before');
-    out.placeholder = { text: pp.getAttribute('data-placeholder') || b.content, color: b.color, opacity: b.opacity, fontSize: b.fontSize, lineHeight: b.lineHeight, float: b.cssFloat, height: b.height };
+    out.placeholder = { text: pp.getAttribute('data-placeholder') || noUrl(b.content).slice(0, 80), color: b.color, opacity: b.opacity, fontSize: b.fontSize, lineHeight: b.lineHeight, float: b.cssFloat, height: b.height };
   }
   const svg = el.tagName.toLowerCase() === 'svg' ? el : [...el.querySelectorAll('svg')].find((s) => s.getBoundingClientRect().width > 1);
   if (svg) {
@@ -378,7 +378,7 @@ async function measureSnap(browser, label, specs, out) {
   } catch (e) {
     log('  ! open failed', label, e.message.split('\n')[0]);
     await ctx.close();
-    return;
+    return false;
   }
   const rest = { x: meta.w - 2, y: Math.round(meta.h / 2) };
   await page.evaluate(() => window.__saveScroll());
@@ -511,11 +511,16 @@ async function measureSnap(browser, label, specs, out) {
         if (spec.crop !== false) {
           try { s.crop = await crop(loc, name, spec.pad ?? 8); } catch (e) { s.cropError = String(e.message || e).slice(0, 120); }
         }
-        c.states[state] = { theme, snapshot: label, ...s, via };
+        c.states[state] = { theme, snapshot: label, ...s, via, read: RUN };
+        out._meta.read = RUN; // a reading succeeded in this run
         if (job.find !== spec.find) (c.selectors ||= {})[state] = job.find.toString();
         log('  ', name, `${s.rect.w}x${s.rect.h}`, via.slice(0, 50));
       } catch (e) {
-        c.states[state] = { theme, snapshot: label, error: String(e.message || e).slice(0, 200) };
+        // A state that fails on a rerun keeps the reading an earlier run took and says it failed now,
+        // instead of replacing a good reading with an error.
+        const prev = (earlier.get(spec.key) || {})[state];
+        const error = String(e.message || e).slice(0, 200);
+        c.states[state] = prev && !prev.error ? { ...prev, recaptureError: error, recaptureRun: RUN } : { theme, snapshot: label, error, read: RUN };
         log('  !', name, String(e.message || e).slice(0, 120));
       } finally {
         await page.mouse.up().catch(() => {});
@@ -525,17 +530,28 @@ async function measureSnap(browser, label, specs, out) {
     }
   }
   await ctx.close();
+  return true;
 }
 
 // ---------------------------------------------------------------- main
 
 const out = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : {};
+// _meta.read keeps the earlier date until this run reads a state, so a rerun that
+// fails throughout never redates old readings; _meta.lastAttempt is this run's
+// date. Each state carries its own `read` date; states kept from before per-state
+// dates existed take the earlier _meta.read.
+const RUN = new Date().toLocaleDateString('en-CA');
+const PRIOR_READ = out._meta && out._meta.read;
+for (const c of Object.values(out.components || {})) {
+  for (const st of Object.values((c && c.states) || {})) if (st && typeof st === 'object' && !st.read && PRIOR_READ) st.read = PRIOR_READ;
+}
 // NotebookLM (adapt): every dark copy is measured again in light, from the same file.
 const hasCopy = (label) => fs.existsSync(path.join(SNAPS, `${label.replace(/#light$/, '')}.json`));
 const copiesOf = (snap) => [snap, ...(/-dark(?=-|$)/.test(snap) ? [snap + '#light'] : [])];
 const labels = [...new Set(SPECS.flatMap((s) => jobsFor(s).flatMap((j) => copiesOf(j.snap))))].filter((l) => hasCopy(l) && (!ONLY.length || ONLY.includes(l.replace(/#light$/, ''))));
 out._meta = {
-  read: '2026-10-17',
+  read: PRIOR_READ || RUN,   // moves to this run's date once a state is read
+  lastAttempt: RUN,
   source: 'Static, redacted copies of the signed-in notebook.google.com web app (tools/capture/signed-in/snapshot.js) with every same-origin stylesheet inlined, loaded from file:// in headless Chromium; Google Fonts and gstatic come through a local cache. Nothing was requested from notebook.google.com itself.',
   viewport: '1440x900 (the mobile-* copies 390x844), deviceScaleFactor 2',
   themes: 'Every copy was taken in dark. Light is the same copy with the body class dark-theme swapped for light-theme, which is what the in-app Light mode does. Dark states have plain names; light states are `light`, `light-<state>`. Every state records `theme` and `snapshot`.',
@@ -554,7 +570,9 @@ out._meta = {
 out.components ??= {};
 fs.mkdirSync(CROPS, { recursive: true });
 
-// Build the per-snapshot job lists, resetting the states that will be re-measured.
+// Build the per-snapshot job lists. The states a copy re-measures are cleared only once that copy has
+// opened (see the worker below), so a copy that fails to open keeps its earlier readings (finding
+// 12-10; the kit's signed-in measure.mjs does the same).
 const bySnap = new Map();
 for (const spec of SPECS) {
   const c = (out.components[spec.key] ??= { states: {} });
@@ -564,7 +582,6 @@ for (const spec of SPECS) {
   for (const job of jobs) {
     for (const copy of copiesOf(job.snap)) {
       if (!labels.includes(copy)) continue;
-      delete c.states[/#light$/.test(copy) ? (job.state === 'default' ? 'light' : `light-${job.state}`) : job.state];
       if (!bySnap.has(copy)) bySnap.set(copy, []);
       bySnap.get(copy).push({ spec, job });
     }
@@ -573,6 +590,10 @@ for (const spec of SPECS) {
 
 const browser = await chromium.launch();
 const queue = [...bySnap.keys()].sort();
+// Earlier readings of the states a copy in flight is re-measuring, by component. save() writes them
+// wherever no new reading exists yet, so while workers run, the file on disk never loses one.
+const earlier = new Map();
+const stateOf = (copy, job) => (LIGHT(copy) ? (job.state === 'default' ? 'light' : `light-${job.state}`) : job.state);
 const save = () => {
   // Stable order: components in SPECS order, states in the order the spec lists them, dark then light.
   const comps = {};
@@ -580,8 +601,10 @@ const save = () => {
     const c = out.components[spec.key];
     const names = jobsFor(spec).map((j) => j.state);
     const ordered = {};
-    for (const n of names) if (c.states[n]) ordered[n] = c.states[n];
-    for (const n of names) { const l = n === 'default' ? 'light' : `light-${n}`; if (c.states[l]) ordered[l] = c.states[l]; }
+    const prev = earlier.get(spec.key) || {};
+    const pick = (n) => c.states[n] || prev[n];
+    for (const n of names) if (pick(n)) ordered[n] = pick(n);
+    for (const n of names) { const l = n === 'default' ? 'light' : `light-${n}`; if (pick(l)) ordered[l] = pick(l); }
     comps[spec.key] = { ...c, states: ordered };
   }
   fs.writeFileSync(OUT, JSON.stringify({ _meta: out._meta, components: comps }, null, 1) + '\n');
@@ -590,7 +613,28 @@ await Promise.all(Array.from({ length: Math.min(CONC, queue.length) }, async () 
   while (queue.length) {
     const label = queue.shift();
     log('open', label, `(${bySnap.get(label).length} jobs x 2 themes)`);
-    await measureSnap(browser, label, bySnap.get(label), out);
+    // This copy's earlier readings move to `earlier` for the run: replaced once the copy opened and
+    // was measured, put back if it never opened, the run threw, or the state was skipped (hover on a
+    // 390 copy).
+    const jobs = bySnap.get(label), kept = [];
+    for (const { spec, job } of jobs) {
+      const st = out.components[spec.key].states, n = stateOf(label, job);
+      if (!(n in st)) continue;
+      if (!earlier.has(spec.key)) earlier.set(spec.key, {});
+      earlier.get(spec.key)[n] = st[n];
+      kept.push([spec.key, n]);
+      delete st[n];
+    }
+    let opened = false;
+    try {
+      opened = await measureSnap(browser, label, jobs, out);
+    } catch (e) {
+      log('  ! measuring failed', label, String(e.message || e).split('\n')[0]);
+    }
+    for (const [key, n] of kept) {
+      out.components[key].states[n] ??= earlier.get(key)[n];
+      delete earlier.get(key)[n];
+    }
     save();
   }
 }));
@@ -598,4 +642,4 @@ await browser.close();
 save();
 const all = SPECS.map((sp) => out.components[sp.key]);
 const states = all.flatMap((c) => Object.values(c.states));
-log(`${all.length} components, ${states.length} states (${states.filter((s) => s.error).length} errors, ${states.filter((s) => s.skipped).length} skipped)`);
+log(`${all.length} components, ${states.length} states (${states.filter((s) => s.error).length} errors, ${states.filter((s) => s.skipped).length} skipped, ${states.filter((s) => s.recaptureError).length} kept from an earlier run because this rerun failed)`);

@@ -1,0 +1,2424 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. dribbble.com's declared token layer is the Shoelace --sl-* set (its --sl-color-primary-* ramp re-bound to the Dribbble pink) harvested into raw/css-vars.json; the Rails-era mini-master styles that paint most of the signed-out surface hold their values inline, so they are measured leaves from raw/components-computed.json. Declared variables become var leaves; painted colours, geometry and the Mona Sans stack are measured leaves. The dark set names the ink surfaces painted inside the light page (dark pills, the certified chip), not a user theme.",
+ "core": {
+  "font": {
+   "family": {
+    "sans": {
+     "value": "\"Mona Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of hero-title default (raw/components-computed.json)",
+     "description": "Mona Sans: headings, body, nav, buttons — the product stack."
+    },
+    "shoelace-sans": {
+     "var": "--sl-font-sans",
+     "type": "fontFamily",
+     "description": "The Shoelace sans fallback stack (declared)."
+    },
+    "shoelace-serif": {
+     "var": "--sl-font-serif",
+     "type": "fontFamily",
+     "description": "The Shoelace serif stack (declared)."
+    },
+    "shoelace-mono": {
+     "var": "--sl-font-mono",
+     "type": "fontFamily",
+     "description": "The Shoelace mono stack (declared)."
+    }
+   },
+   "face": {
+    "mona-sans": {
+     "value": "Mona Sans",
+     "type": "fontFamily",
+     "source": "@font-face declared in https://cdn.dribbble.com/assets/designer-search-ea497002012e3714d974bac78ce90a918933e4bcaaf413cd58379be6cc0d424b.css (raw/css-vars.json)",
+     "description": "Served face Mona Sans 200 900 (provenance: the font file, not a stack)."
+    },
+    "wf-visual-sans": {
+     "value": "WF Visual Sans",
+     "type": "fontFamily",
+     "source": "@font-face declared in https://cdn.dribbble.com/assets/designer-search-ea497002012e3714d974bac78ce90a918933e4bcaaf413cd58379be6cc0d424b.css (raw/css-vars.json)",
+     "description": "Served face WF Visual Sans 600 (provenance: the font file, not a stack)."
+    },
+    "inter-regular": {
+     "value": "Inter Regular",
+     "type": "fontFamily",
+     "source": "@font-face declared in https://cdn.dribbble.com/assets/designer-search-ea497002012e3714d974bac78ce90a918933e4bcaaf413cd58379be6cc0d424b.css (raw/css-vars.json)",
+     "description": "Served face Inter Regular normal (provenance: the font file, not a stack)."
+    },
+    "inter-semibold": {
+     "value": "Inter Semibold",
+     "type": "fontFamily",
+     "source": "@font-face declared in https://cdn.dribbble.com/assets/designer-search-ea497002012e3714d974bac78ce90a918933e4bcaaf413cd58379be6cc0d424b.css (raw/css-vars.json)",
+     "description": "Served face Inter Semibold 600 (provenance: the font file, not a stack)."
+    },
+    "walsheim": {
+     "value": "Walsheim",
+     "type": "fontFamily",
+     "source": "@font-face declared in https://cdn.dribbble.com/assets/designer-search-ea497002012e3714d974bac78ce90a918933e4bcaaf413cd58379be6cc0d424b.css (raw/css-vars.json)",
+     "description": "Served face Walsheim 400 (provenance: the font file, not a stack)."
+    },
+    "ibm-plex-mono": {
+     "value": "IBM Plex Mono",
+     "type": "fontFamily",
+     "source": "@font-face declared in https://fonts.googleapis.com/css2 (raw/css-vars.json)",
+     "description": "Served face IBM Plex Mono 500 (provenance: the font file, not a stack)."
+    },
+    "source-serif-4": {
+     "value": "Source Serif 4",
+     "type": "fontFamily",
+     "source": "@font-face declared in https://fonts.googleapis.com/css2 (raw/css-vars.json)",
+     "description": "Served face Source Serif 4 600 (provenance: the font file, not a stack)."
+    }
+   },
+   "size": {
+    "2x-small": {
+     "var": "--sl-font-size-2x-small",
+     "type": "dimension",
+     "description": "Declared --sl-font-size-2x-small."
+    },
+    "x-small": {
+     "var": "--sl-font-size-x-small",
+     "type": "dimension",
+     "description": "Declared --sl-font-size-x-small."
+    },
+    "small": {
+     "var": "--sl-font-size-small",
+     "type": "dimension",
+     "description": "Declared --sl-font-size-small."
+    },
+    "medium": {
+     "var": "--sl-font-size-medium",
+     "type": "dimension",
+     "description": "Declared --sl-font-size-medium."
+    },
+    "large": {
+     "var": "--sl-font-size-large",
+     "type": "dimension",
+     "description": "Declared --sl-font-size-large."
+    },
+    "x-large": {
+     "var": "--sl-font-size-x-large",
+     "type": "dimension",
+     "description": "Declared --sl-font-size-x-large."
+    },
+    "2x-large": {
+     "var": "--sl-font-size-2x-large",
+     "type": "dimension",
+     "description": "Declared --sl-font-size-2x-large."
+    },
+    "3x-large": {
+     "var": "--sl-font-size-3x-large",
+     "type": "dimension",
+     "description": "Declared --sl-font-size-3x-large."
+    },
+    "4x-large": {
+     "var": "--sl-font-size-4x-large",
+     "type": "dimension",
+     "description": "Declared --sl-font-size-4x-large."
+    },
+    "hero": {
+     "value": "52px",
+     "type": "dimension",
+     "source": "computed fontSize of hero-title default (raw/components-computed.json)",
+     "description": "The 52px Mona Sans hero."
+    },
+    "h1-page": {
+     "value": "32px",
+     "type": "dimension",
+     "source": "computed fontSize of search-h1 default (raw/components-computed.json)",
+     "description": "The page h1 (search/directory title)."
+    },
+    "body": {
+     "value": "14px",
+     "type": "dimension",
+     "source": "computed fontSize of designer-meta default (raw/components-computed.json)",
+     "description": "The 14px card meta text."
+    },
+    "meta": {
+     "value": "12px",
+     "type": "dimension",
+     "source": "computed fontSize of stat-count default (raw/components-computed.json)",
+     "description": "The 12-13px count/tag size."
+    },
+    "mobile-hero": {
+     "value": "27px",
+     "type": "dimension",
+     "source": "computed fontSize of m-hero default (raw/components-computed.json)",
+     "description": "The hero size at 390px."
+    }
+   },
+   "lineHeight": {
+    "denser": {
+     "var": "--sl-line-height-denser",
+     "type": "number",
+     "description": "Declared --sl-line-height-denser."
+    },
+    "dense": {
+     "var": "--sl-line-height-dense",
+     "type": "number",
+     "description": "Declared --sl-line-height-dense."
+    },
+    "normal": {
+     "var": "--sl-line-height-normal",
+     "type": "number",
+     "description": "Declared --sl-line-height-normal."
+    },
+    "loose": {
+     "var": "--sl-line-height-loose",
+     "type": "number",
+     "description": "Declared --sl-line-height-loose."
+    },
+    "looser": {
+     "var": "--sl-line-height-looser",
+     "type": "number",
+     "description": "Declared --sl-line-height-looser."
+    },
+    "hero": {
+     "value": "62.4px",
+     "type": "dimension",
+     "source": "computed lineHeight of hero-title default (raw/components-computed.json)",
+     "description": "The hero leading (62.4px on 52px)."
+    }
+   },
+   "tracking": {
+    "denser": {
+     "value": -0.03,
+     "type": "number",
+     "source": "css-var --sl-letter-spacing-denser (light); declared value -.03em is em",
+     "description": "Declared --sl-letter-spacing-denser as an em multiplier on font size."
+    },
+    "dense": {
+     "value": -0.015,
+     "type": "number",
+     "source": "css-var --sl-letter-spacing-dense (light); declared value -.015em is em",
+     "description": "Declared --sl-letter-spacing-dense as an em multiplier on font size."
+    },
+    "normal": {
+     "value": 0,
+     "type": "number",
+     "source": "css-var --sl-letter-spacing-normal (light); declared 'normal' — the font's own spacing",
+     "description": "Declared --sl-letter-spacing-normal ('normal'): zero extra tracking."
+    },
+    "loose": {
+     "value": 0.075,
+     "type": "number",
+     "source": "css-var --sl-letter-spacing-loose (light); declared value .075em is em",
+     "description": "Declared --sl-letter-spacing-loose as an em multiplier on font size."
+    },
+    "looser": {
+     "value": 0.15,
+     "type": "number",
+     "source": "css-var --sl-letter-spacing-looser (light); declared value .15em is em",
+     "description": "Declared --sl-letter-spacing-looser as an em multiplier on font size."
+    }
+   },
+   "weight": {
+    "light": {
+     "var": "--sl-font-weight-light",
+     "type": "fontWeight",
+     "description": "Declared --sl-font-weight-light."
+    },
+    "normal": {
+     "var": "--sl-font-weight-normal",
+     "type": "fontWeight",
+     "description": "Declared --sl-font-weight-normal."
+    },
+    "semibold": {
+     "var": "--sl-font-weight-semibold",
+     "type": "fontWeight",
+     "description": "Declared --sl-font-weight-semibold."
+    },
+    "bold": {
+     "var": "--sl-font-weight-bold",
+     "type": "fontWeight",
+     "description": "Declared --sl-font-weight-bold."
+    },
+    "hero": {
+     "value": 600,
+     "type": "fontWeight",
+     "source": "computed fontWeight of hero-title default (raw/components-computed.json)",
+     "description": "The 600 hero weight."
+    },
+    "button": {
+     "value": 600,
+     "type": "fontWeight",
+     "source": "computed fontWeight of login-btn default (raw/components-computed.json)",
+     "description": "The button label weight."
+    }
+   }
+  },
+  "color": {
+   "pink": {
+    "50": {
+     "var": "--sl-color-primary-50",
+     "type": "color",
+     "description": "Declared --sl-color-primary-50 — the Shoelace primary ramp re-bound to the Dribbble pink (#fef8fa)."
+    },
+    "100": {
+     "var": "--sl-color-primary-100",
+     "type": "color",
+     "description": "Declared --sl-color-primary-100 — the Shoelace primary ramp re-bound to the Dribbble pink (#fce7ef)."
+    },
+    "200": {
+     "var": "--sl-color-primary-200",
+     "type": "color",
+     "description": "Declared --sl-color-primary-200 — the Shoelace primary ramp re-bound to the Dribbble pink (#fad4e3)."
+    },
+    "300": {
+     "var": "--sl-color-primary-300",
+     "type": "color",
+     "description": "Declared --sl-color-primary-300 — the Shoelace primary ramp re-bound to the Dribbble pink (#f8bfd5)."
+    },
+    "400": {
+     "var": "--sl-color-primary-400",
+     "type": "color",
+     "description": "Declared --sl-color-primary-400 — the Shoelace primary ramp re-bound to the Dribbble pink (#f4a2c2)."
+    },
+    "500": {
+     "var": "--sl-color-primary-500",
+     "type": "color",
+     "description": "Declared --sl-color-primary-500 — the Shoelace primary ramp re-bound to the Dribbble pink (#ea4c89)."
+    },
+    "600": {
+     "var": "--sl-color-primary-600",
+     "type": "color",
+     "description": "Declared --sl-color-primary-600 — the Shoelace primary ramp re-bound to the Dribbble pink (#e44a85)."
+    },
+    "700": {
+     "var": "--sl-color-primary-700",
+     "type": "color",
+     "description": "Declared --sl-color-primary-700 — the Shoelace primary ramp re-bound to the Dribbble pink (#bb3d6e)."
+    },
+    "800": {
+     "var": "--sl-color-primary-800",
+     "type": "color",
+     "description": "Declared --sl-color-primary-800 — the Shoelace primary ramp re-bound to the Dribbble pink (#9b325b)."
+    },
+    "900": {
+     "var": "--sl-color-primary-900",
+     "type": "color",
+     "description": "Declared --sl-color-primary-900 — the Shoelace primary ramp re-bound to the Dribbble pink (#6f2441)."
+    },
+    "950": {
+     "var": "--sl-color-primary-950",
+     "type": "color",
+     "description": "Declared --sl-color-primary-950 — the Shoelace primary ramp re-bound to the Dribbble pink (#451628)."
+    }
+   },
+   "neutral": {
+    "0": {
+     "var": "--sl-color-neutral-0",
+     "type": "color",
+     "description": "Declared --sl-color-neutral-0."
+    },
+    "50": {
+     "var": "--sl-color-neutral-50",
+     "type": "color",
+     "description": "Declared --sl-color-neutral-50."
+    },
+    "100": {
+     "var": "--sl-color-neutral-100",
+     "type": "color",
+     "description": "Declared --sl-color-neutral-100."
+    },
+    "200": {
+     "var": "--sl-color-neutral-200",
+     "type": "color",
+     "description": "Declared --sl-color-neutral-200."
+    },
+    "300": {
+     "var": "--sl-color-neutral-300",
+     "type": "color",
+     "description": "Declared --sl-color-neutral-300."
+    },
+    "400": {
+     "var": "--sl-color-neutral-400",
+     "type": "color",
+     "description": "Declared --sl-color-neutral-400."
+    },
+    "500": {
+     "var": "--sl-color-neutral-500",
+     "type": "color",
+     "description": "Declared --sl-color-neutral-500."
+    },
+    "600": {
+     "var": "--sl-color-neutral-600",
+     "type": "color",
+     "description": "Declared --sl-color-neutral-600."
+    },
+    "700": {
+     "var": "--sl-color-neutral-700",
+     "type": "color",
+     "description": "Declared --sl-color-neutral-700."
+    },
+    "800": {
+     "var": "--sl-color-neutral-800",
+     "type": "color",
+     "description": "Declared --sl-color-neutral-800."
+    },
+    "900": {
+     "var": "--sl-color-neutral-900",
+     "type": "color",
+     "description": "Declared --sl-color-neutral-900."
+    },
+    "950": {
+     "var": "--sl-color-neutral-950",
+     "type": "color",
+     "description": "Declared --sl-color-neutral-950."
+    },
+    "1000": {
+     "var": "--sl-color-neutral-1000",
+     "type": "color",
+     "description": "Declared --sl-color-neutral-1000."
+    }
+   },
+   "gray": {
+    "50": {
+     "var": "--sl-color-gray-50",
+     "type": "color",
+     "description": "Declared --sl-color-gray-50."
+    },
+    "100": {
+     "var": "--sl-color-gray-100",
+     "type": "color",
+     "description": "Declared --sl-color-gray-100."
+    },
+    "200": {
+     "var": "--sl-color-gray-200",
+     "type": "color",
+     "description": "Declared --sl-color-gray-200."
+    },
+    "300": {
+     "var": "--sl-color-gray-300",
+     "type": "color",
+     "description": "Declared --sl-color-gray-300."
+    },
+    "400": {
+     "var": "--sl-color-gray-400",
+     "type": "color",
+     "description": "Declared --sl-color-gray-400."
+    },
+    "500": {
+     "var": "--sl-color-gray-500",
+     "type": "color",
+     "description": "Declared --sl-color-gray-500."
+    },
+    "600": {
+     "var": "--sl-color-gray-600",
+     "type": "color",
+     "description": "Declared --sl-color-gray-600."
+    },
+    "700": {
+     "var": "--sl-color-gray-700",
+     "type": "color",
+     "description": "Declared --sl-color-gray-700."
+    },
+    "800": {
+     "var": "--sl-color-gray-800",
+     "type": "color",
+     "description": "Declared --sl-color-gray-800."
+    },
+    "900": {
+     "var": "--sl-color-gray-900",
+     "type": "color",
+     "description": "Declared --sl-color-gray-900."
+    },
+    "950": {
+     "var": "--sl-color-gray-950",
+     "type": "color",
+     "description": "Declared --sl-color-gray-950."
+    }
+   },
+   "hue": {
+    "red": {
+     "50": {
+      "var": "--sl-color-red-50",
+      "type": "color",
+      "description": "Declared --sl-color-red-50."
+     },
+     "100": {
+      "var": "--sl-color-red-100",
+      "type": "color",
+      "description": "Declared --sl-color-red-100."
+     },
+     "200": {
+      "var": "--sl-color-red-200",
+      "type": "color",
+      "description": "Declared --sl-color-red-200."
+     },
+     "300": {
+      "var": "--sl-color-red-300",
+      "type": "color",
+      "description": "Declared --sl-color-red-300."
+     },
+     "400": {
+      "var": "--sl-color-red-400",
+      "type": "color",
+      "description": "Declared --sl-color-red-400."
+     },
+     "500": {
+      "var": "--sl-color-red-500",
+      "type": "color",
+      "description": "Declared --sl-color-red-500."
+     },
+     "600": {
+      "var": "--sl-color-red-600",
+      "type": "color",
+      "description": "Declared --sl-color-red-600."
+     },
+     "700": {
+      "var": "--sl-color-red-700",
+      "type": "color",
+      "description": "Declared --sl-color-red-700."
+     },
+     "800": {
+      "var": "--sl-color-red-800",
+      "type": "color",
+      "description": "Declared --sl-color-red-800."
+     },
+     "900": {
+      "var": "--sl-color-red-900",
+      "type": "color",
+      "description": "Declared --sl-color-red-900."
+     },
+     "950": {
+      "var": "--sl-color-red-950",
+      "type": "color",
+      "description": "Declared --sl-color-red-950."
+     }
+    },
+    "orange": {
+     "50": {
+      "var": "--sl-color-orange-50",
+      "type": "color",
+      "description": "Declared --sl-color-orange-50."
+     },
+     "100": {
+      "var": "--sl-color-orange-100",
+      "type": "color",
+      "description": "Declared --sl-color-orange-100."
+     },
+     "200": {
+      "var": "--sl-color-orange-200",
+      "type": "color",
+      "description": "Declared --sl-color-orange-200."
+     },
+     "300": {
+      "var": "--sl-color-orange-300",
+      "type": "color",
+      "description": "Declared --sl-color-orange-300."
+     },
+     "400": {
+      "var": "--sl-color-orange-400",
+      "type": "color",
+      "description": "Declared --sl-color-orange-400."
+     },
+     "500": {
+      "var": "--sl-color-orange-500",
+      "type": "color",
+      "description": "Declared --sl-color-orange-500."
+     },
+     "600": {
+      "var": "--sl-color-orange-600",
+      "type": "color",
+      "description": "Declared --sl-color-orange-600."
+     },
+     "700": {
+      "var": "--sl-color-orange-700",
+      "type": "color",
+      "description": "Declared --sl-color-orange-700."
+     },
+     "800": {
+      "var": "--sl-color-orange-800",
+      "type": "color",
+      "description": "Declared --sl-color-orange-800."
+     },
+     "900": {
+      "var": "--sl-color-orange-900",
+      "type": "color",
+      "description": "Declared --sl-color-orange-900."
+     },
+     "950": {
+      "var": "--sl-color-orange-950",
+      "type": "color",
+      "description": "Declared --sl-color-orange-950."
+     }
+    },
+    "amber": {
+     "50": {
+      "var": "--sl-color-amber-50",
+      "type": "color",
+      "description": "Declared --sl-color-amber-50."
+     },
+     "100": {
+      "var": "--sl-color-amber-100",
+      "type": "color",
+      "description": "Declared --sl-color-amber-100."
+     },
+     "200": {
+      "var": "--sl-color-amber-200",
+      "type": "color",
+      "description": "Declared --sl-color-amber-200."
+     },
+     "300": {
+      "var": "--sl-color-amber-300",
+      "type": "color",
+      "description": "Declared --sl-color-amber-300."
+     },
+     "400": {
+      "var": "--sl-color-amber-400",
+      "type": "color",
+      "description": "Declared --sl-color-amber-400."
+     },
+     "500": {
+      "var": "--sl-color-amber-500",
+      "type": "color",
+      "description": "Declared --sl-color-amber-500."
+     },
+     "600": {
+      "var": "--sl-color-amber-600",
+      "type": "color",
+      "description": "Declared --sl-color-amber-600."
+     },
+     "700": {
+      "var": "--sl-color-amber-700",
+      "type": "color",
+      "description": "Declared --sl-color-amber-700."
+     },
+     "800": {
+      "var": "--sl-color-amber-800",
+      "type": "color",
+      "description": "Declared --sl-color-amber-800."
+     },
+     "900": {
+      "var": "--sl-color-amber-900",
+      "type": "color",
+      "description": "Declared --sl-color-amber-900."
+     },
+     "950": {
+      "var": "--sl-color-amber-950",
+      "type": "color",
+      "description": "Declared --sl-color-amber-950."
+     }
+    },
+    "yellow": {
+     "50": {
+      "var": "--sl-color-yellow-50",
+      "type": "color",
+      "description": "Declared --sl-color-yellow-50."
+     },
+     "100": {
+      "var": "--sl-color-yellow-100",
+      "type": "color",
+      "description": "Declared --sl-color-yellow-100."
+     },
+     "200": {
+      "var": "--sl-color-yellow-200",
+      "type": "color",
+      "description": "Declared --sl-color-yellow-200."
+     },
+     "300": {
+      "var": "--sl-color-yellow-300",
+      "type": "color",
+      "description": "Declared --sl-color-yellow-300."
+     },
+     "400": {
+      "var": "--sl-color-yellow-400",
+      "type": "color",
+      "description": "Declared --sl-color-yellow-400."
+     },
+     "500": {
+      "var": "--sl-color-yellow-500",
+      "type": "color",
+      "description": "Declared --sl-color-yellow-500."
+     },
+     "600": {
+      "var": "--sl-color-yellow-600",
+      "type": "color",
+      "description": "Declared --sl-color-yellow-600."
+     },
+     "700": {
+      "var": "--sl-color-yellow-700",
+      "type": "color",
+      "description": "Declared --sl-color-yellow-700."
+     },
+     "800": {
+      "var": "--sl-color-yellow-800",
+      "type": "color",
+      "description": "Declared --sl-color-yellow-800."
+     },
+     "900": {
+      "var": "--sl-color-yellow-900",
+      "type": "color",
+      "description": "Declared --sl-color-yellow-900."
+     },
+     "950": {
+      "var": "--sl-color-yellow-950",
+      "type": "color",
+      "description": "Declared --sl-color-yellow-950."
+     }
+    },
+    "lime": {
+     "50": {
+      "var": "--sl-color-lime-50",
+      "type": "color",
+      "description": "Declared --sl-color-lime-50."
+     },
+     "100": {
+      "var": "--sl-color-lime-100",
+      "type": "color",
+      "description": "Declared --sl-color-lime-100."
+     },
+     "200": {
+      "var": "--sl-color-lime-200",
+      "type": "color",
+      "description": "Declared --sl-color-lime-200."
+     },
+     "300": {
+      "var": "--sl-color-lime-300",
+      "type": "color",
+      "description": "Declared --sl-color-lime-300."
+     },
+     "400": {
+      "var": "--sl-color-lime-400",
+      "type": "color",
+      "description": "Declared --sl-color-lime-400."
+     },
+     "500": {
+      "var": "--sl-color-lime-500",
+      "type": "color",
+      "description": "Declared --sl-color-lime-500."
+     },
+     "600": {
+      "var": "--sl-color-lime-600",
+      "type": "color",
+      "description": "Declared --sl-color-lime-600."
+     },
+     "700": {
+      "var": "--sl-color-lime-700",
+      "type": "color",
+      "description": "Declared --sl-color-lime-700."
+     },
+     "800": {
+      "var": "--sl-color-lime-800",
+      "type": "color",
+      "description": "Declared --sl-color-lime-800."
+     },
+     "900": {
+      "var": "--sl-color-lime-900",
+      "type": "color",
+      "description": "Declared --sl-color-lime-900."
+     },
+     "950": {
+      "var": "--sl-color-lime-950",
+      "type": "color",
+      "description": "Declared --sl-color-lime-950."
+     }
+    },
+    "green": {
+     "50": {
+      "var": "--sl-color-green-50",
+      "type": "color",
+      "description": "Declared --sl-color-green-50."
+     },
+     "100": {
+      "var": "--sl-color-green-100",
+      "type": "color",
+      "description": "Declared --sl-color-green-100."
+     },
+     "200": {
+      "var": "--sl-color-green-200",
+      "type": "color",
+      "description": "Declared --sl-color-green-200."
+     },
+     "300": {
+      "var": "--sl-color-green-300",
+      "type": "color",
+      "description": "Declared --sl-color-green-300."
+     },
+     "400": {
+      "var": "--sl-color-green-400",
+      "type": "color",
+      "description": "Declared --sl-color-green-400."
+     },
+     "500": {
+      "var": "--sl-color-green-500",
+      "type": "color",
+      "description": "Declared --sl-color-green-500."
+     },
+     "600": {
+      "var": "--sl-color-green-600",
+      "type": "color",
+      "description": "Declared --sl-color-green-600."
+     },
+     "700": {
+      "var": "--sl-color-green-700",
+      "type": "color",
+      "description": "Declared --sl-color-green-700."
+     },
+     "800": {
+      "var": "--sl-color-green-800",
+      "type": "color",
+      "description": "Declared --sl-color-green-800."
+     },
+     "900": {
+      "var": "--sl-color-green-900",
+      "type": "color",
+      "description": "Declared --sl-color-green-900."
+     },
+     "950": {
+      "var": "--sl-color-green-950",
+      "type": "color",
+      "description": "Declared --sl-color-green-950."
+     }
+    },
+    "emerald": {
+     "50": {
+      "var": "--sl-color-emerald-50",
+      "type": "color",
+      "description": "Declared --sl-color-emerald-50."
+     },
+     "100": {
+      "var": "--sl-color-emerald-100",
+      "type": "color",
+      "description": "Declared --sl-color-emerald-100."
+     },
+     "200": {
+      "var": "--sl-color-emerald-200",
+      "type": "color",
+      "description": "Declared --sl-color-emerald-200."
+     },
+     "300": {
+      "var": "--sl-color-emerald-300",
+      "type": "color",
+      "description": "Declared --sl-color-emerald-300."
+     },
+     "400": {
+      "var": "--sl-color-emerald-400",
+      "type": "color",
+      "description": "Declared --sl-color-emerald-400."
+     },
+     "500": {
+      "var": "--sl-color-emerald-500",
+      "type": "color",
+      "description": "Declared --sl-color-emerald-500."
+     },
+     "600": {
+      "var": "--sl-color-emerald-600",
+      "type": "color",
+      "description": "Declared --sl-color-emerald-600."
+     },
+     "700": {
+      "var": "--sl-color-emerald-700",
+      "type": "color",
+      "description": "Declared --sl-color-emerald-700."
+     },
+     "800": {
+      "var": "--sl-color-emerald-800",
+      "type": "color",
+      "description": "Declared --sl-color-emerald-800."
+     },
+     "900": {
+      "var": "--sl-color-emerald-900",
+      "type": "color",
+      "description": "Declared --sl-color-emerald-900."
+     },
+     "950": {
+      "var": "--sl-color-emerald-950",
+      "type": "color",
+      "description": "Declared --sl-color-emerald-950."
+     }
+    },
+    "teal": {
+     "50": {
+      "var": "--sl-color-teal-50",
+      "type": "color",
+      "description": "Declared --sl-color-teal-50."
+     },
+     "100": {
+      "var": "--sl-color-teal-100",
+      "type": "color",
+      "description": "Declared --sl-color-teal-100."
+     },
+     "200": {
+      "var": "--sl-color-teal-200",
+      "type": "color",
+      "description": "Declared --sl-color-teal-200."
+     },
+     "300": {
+      "var": "--sl-color-teal-300",
+      "type": "color",
+      "description": "Declared --sl-color-teal-300."
+     },
+     "400": {
+      "var": "--sl-color-teal-400",
+      "type": "color",
+      "description": "Declared --sl-color-teal-400."
+     },
+     "500": {
+      "var": "--sl-color-teal-500",
+      "type": "color",
+      "description": "Declared --sl-color-teal-500."
+     },
+     "600": {
+      "var": "--sl-color-teal-600",
+      "type": "color",
+      "description": "Declared --sl-color-teal-600."
+     },
+     "700": {
+      "var": "--sl-color-teal-700",
+      "type": "color",
+      "description": "Declared --sl-color-teal-700."
+     },
+     "800": {
+      "var": "--sl-color-teal-800",
+      "type": "color",
+      "description": "Declared --sl-color-teal-800."
+     },
+     "900": {
+      "var": "--sl-color-teal-900",
+      "type": "color",
+      "description": "Declared --sl-color-teal-900."
+     },
+     "950": {
+      "var": "--sl-color-teal-950",
+      "type": "color",
+      "description": "Declared --sl-color-teal-950."
+     }
+    },
+    "cyan": {
+     "50": {
+      "var": "--sl-color-cyan-50",
+      "type": "color",
+      "description": "Declared --sl-color-cyan-50."
+     },
+     "100": {
+      "var": "--sl-color-cyan-100",
+      "type": "color",
+      "description": "Declared --sl-color-cyan-100."
+     },
+     "200": {
+      "var": "--sl-color-cyan-200",
+      "type": "color",
+      "description": "Declared --sl-color-cyan-200."
+     },
+     "300": {
+      "var": "--sl-color-cyan-300",
+      "type": "color",
+      "description": "Declared --sl-color-cyan-300."
+     },
+     "400": {
+      "var": "--sl-color-cyan-400",
+      "type": "color",
+      "description": "Declared --sl-color-cyan-400."
+     },
+     "500": {
+      "var": "--sl-color-cyan-500",
+      "type": "color",
+      "description": "Declared --sl-color-cyan-500."
+     },
+     "600": {
+      "var": "--sl-color-cyan-600",
+      "type": "color",
+      "description": "Declared --sl-color-cyan-600."
+     },
+     "700": {
+      "var": "--sl-color-cyan-700",
+      "type": "color",
+      "description": "Declared --sl-color-cyan-700."
+     },
+     "800": {
+      "var": "--sl-color-cyan-800",
+      "type": "color",
+      "description": "Declared --sl-color-cyan-800."
+     },
+     "900": {
+      "var": "--sl-color-cyan-900",
+      "type": "color",
+      "description": "Declared --sl-color-cyan-900."
+     },
+     "950": {
+      "var": "--sl-color-cyan-950",
+      "type": "color",
+      "description": "Declared --sl-color-cyan-950."
+     }
+    },
+    "sky": {
+     "50": {
+      "var": "--sl-color-sky-50",
+      "type": "color",
+      "description": "Declared --sl-color-sky-50."
+     },
+     "100": {
+      "var": "--sl-color-sky-100",
+      "type": "color",
+      "description": "Declared --sl-color-sky-100."
+     },
+     "200": {
+      "var": "--sl-color-sky-200",
+      "type": "color",
+      "description": "Declared --sl-color-sky-200."
+     },
+     "300": {
+      "var": "--sl-color-sky-300",
+      "type": "color",
+      "description": "Declared --sl-color-sky-300."
+     },
+     "400": {
+      "var": "--sl-color-sky-400",
+      "type": "color",
+      "description": "Declared --sl-color-sky-400."
+     },
+     "500": {
+      "var": "--sl-color-sky-500",
+      "type": "color",
+      "description": "Declared --sl-color-sky-500."
+     },
+     "600": {
+      "var": "--sl-color-sky-600",
+      "type": "color",
+      "description": "Declared --sl-color-sky-600."
+     },
+     "700": {
+      "var": "--sl-color-sky-700",
+      "type": "color",
+      "description": "Declared --sl-color-sky-700."
+     },
+     "800": {
+      "var": "--sl-color-sky-800",
+      "type": "color",
+      "description": "Declared --sl-color-sky-800."
+     },
+     "900": {
+      "var": "--sl-color-sky-900",
+      "type": "color",
+      "description": "Declared --sl-color-sky-900."
+     },
+     "950": {
+      "var": "--sl-color-sky-950",
+      "type": "color",
+      "description": "Declared --sl-color-sky-950."
+     }
+    },
+    "blue": {
+     "50": {
+      "var": "--sl-color-blue-50",
+      "type": "color",
+      "description": "Declared --sl-color-blue-50."
+     },
+     "100": {
+      "var": "--sl-color-blue-100",
+      "type": "color",
+      "description": "Declared --sl-color-blue-100."
+     },
+     "200": {
+      "var": "--sl-color-blue-200",
+      "type": "color",
+      "description": "Declared --sl-color-blue-200."
+     },
+     "300": {
+      "var": "--sl-color-blue-300",
+      "type": "color",
+      "description": "Declared --sl-color-blue-300."
+     },
+     "400": {
+      "var": "--sl-color-blue-400",
+      "type": "color",
+      "description": "Declared --sl-color-blue-400."
+     },
+     "500": {
+      "var": "--sl-color-blue-500",
+      "type": "color",
+      "description": "Declared --sl-color-blue-500."
+     },
+     "600": {
+      "var": "--sl-color-blue-600",
+      "type": "color",
+      "description": "Declared --sl-color-blue-600."
+     },
+     "700": {
+      "var": "--sl-color-blue-700",
+      "type": "color",
+      "description": "Declared --sl-color-blue-700."
+     },
+     "800": {
+      "var": "--sl-color-blue-800",
+      "type": "color",
+      "description": "Declared --sl-color-blue-800."
+     },
+     "900": {
+      "var": "--sl-color-blue-900",
+      "type": "color",
+      "description": "Declared --sl-color-blue-900."
+     },
+     "950": {
+      "var": "--sl-color-blue-950",
+      "type": "color",
+      "description": "Declared --sl-color-blue-950."
+     }
+    },
+    "indigo": {
+     "50": {
+      "var": "--sl-color-indigo-50",
+      "type": "color",
+      "description": "Declared --sl-color-indigo-50."
+     },
+     "100": {
+      "var": "--sl-color-indigo-100",
+      "type": "color",
+      "description": "Declared --sl-color-indigo-100."
+     },
+     "200": {
+      "var": "--sl-color-indigo-200",
+      "type": "color",
+      "description": "Declared --sl-color-indigo-200."
+     },
+     "300": {
+      "var": "--sl-color-indigo-300",
+      "type": "color",
+      "description": "Declared --sl-color-indigo-300."
+     },
+     "400": {
+      "var": "--sl-color-indigo-400",
+      "type": "color",
+      "description": "Declared --sl-color-indigo-400."
+     },
+     "500": {
+      "var": "--sl-color-indigo-500",
+      "type": "color",
+      "description": "Declared --sl-color-indigo-500."
+     },
+     "600": {
+      "var": "--sl-color-indigo-600",
+      "type": "color",
+      "description": "Declared --sl-color-indigo-600."
+     },
+     "700": {
+      "var": "--sl-color-indigo-700",
+      "type": "color",
+      "description": "Declared --sl-color-indigo-700."
+     },
+     "800": {
+      "var": "--sl-color-indigo-800",
+      "type": "color",
+      "description": "Declared --sl-color-indigo-800."
+     },
+     "900": {
+      "var": "--sl-color-indigo-900",
+      "type": "color",
+      "description": "Declared --sl-color-indigo-900."
+     },
+     "950": {
+      "var": "--sl-color-indigo-950",
+      "type": "color",
+      "description": "Declared --sl-color-indigo-950."
+     }
+    },
+    "violet": {
+     "50": {
+      "var": "--sl-color-violet-50",
+      "type": "color",
+      "description": "Declared --sl-color-violet-50."
+     },
+     "100": {
+      "var": "--sl-color-violet-100",
+      "type": "color",
+      "description": "Declared --sl-color-violet-100."
+     },
+     "200": {
+      "var": "--sl-color-violet-200",
+      "type": "color",
+      "description": "Declared --sl-color-violet-200."
+     },
+     "300": {
+      "var": "--sl-color-violet-300",
+      "type": "color",
+      "description": "Declared --sl-color-violet-300."
+     },
+     "400": {
+      "var": "--sl-color-violet-400",
+      "type": "color",
+      "description": "Declared --sl-color-violet-400."
+     },
+     "500": {
+      "var": "--sl-color-violet-500",
+      "type": "color",
+      "description": "Declared --sl-color-violet-500."
+     },
+     "600": {
+      "var": "--sl-color-violet-600",
+      "type": "color",
+      "description": "Declared --sl-color-violet-600."
+     },
+     "700": {
+      "var": "--sl-color-violet-700",
+      "type": "color",
+      "description": "Declared --sl-color-violet-700."
+     },
+     "800": {
+      "var": "--sl-color-violet-800",
+      "type": "color",
+      "description": "Declared --sl-color-violet-800."
+     },
+     "900": {
+      "var": "--sl-color-violet-900",
+      "type": "color",
+      "description": "Declared --sl-color-violet-900."
+     },
+     "950": {
+      "var": "--sl-color-violet-950",
+      "type": "color",
+      "description": "Declared --sl-color-violet-950."
+     }
+    },
+    "purple": {
+     "50": {
+      "var": "--sl-color-purple-50",
+      "type": "color",
+      "description": "Declared --sl-color-purple-50."
+     },
+     "100": {
+      "var": "--sl-color-purple-100",
+      "type": "color",
+      "description": "Declared --sl-color-purple-100."
+     },
+     "200": {
+      "var": "--sl-color-purple-200",
+      "type": "color",
+      "description": "Declared --sl-color-purple-200."
+     },
+     "300": {
+      "var": "--sl-color-purple-300",
+      "type": "color",
+      "description": "Declared --sl-color-purple-300."
+     },
+     "400": {
+      "var": "--sl-color-purple-400",
+      "type": "color",
+      "description": "Declared --sl-color-purple-400."
+     },
+     "500": {
+      "var": "--sl-color-purple-500",
+      "type": "color",
+      "description": "Declared --sl-color-purple-500."
+     },
+     "600": {
+      "var": "--sl-color-purple-600",
+      "type": "color",
+      "description": "Declared --sl-color-purple-600."
+     },
+     "700": {
+      "var": "--sl-color-purple-700",
+      "type": "color",
+      "description": "Declared --sl-color-purple-700."
+     },
+     "800": {
+      "var": "--sl-color-purple-800",
+      "type": "color",
+      "description": "Declared --sl-color-purple-800."
+     },
+     "900": {
+      "var": "--sl-color-purple-900",
+      "type": "color",
+      "description": "Declared --sl-color-purple-900."
+     },
+     "950": {
+      "var": "--sl-color-purple-950",
+      "type": "color",
+      "description": "Declared --sl-color-purple-950."
+     }
+    },
+    "fuchsia": {
+     "50": {
+      "var": "--sl-color-fuchsia-50",
+      "type": "color",
+      "description": "Declared --sl-color-fuchsia-50."
+     },
+     "100": {
+      "var": "--sl-color-fuchsia-100",
+      "type": "color",
+      "description": "Declared --sl-color-fuchsia-100."
+     },
+     "200": {
+      "var": "--sl-color-fuchsia-200",
+      "type": "color",
+      "description": "Declared --sl-color-fuchsia-200."
+     },
+     "300": {
+      "var": "--sl-color-fuchsia-300",
+      "type": "color",
+      "description": "Declared --sl-color-fuchsia-300."
+     },
+     "400": {
+      "var": "--sl-color-fuchsia-400",
+      "type": "color",
+      "description": "Declared --sl-color-fuchsia-400."
+     },
+     "500": {
+      "var": "--sl-color-fuchsia-500",
+      "type": "color",
+      "description": "Declared --sl-color-fuchsia-500."
+     },
+     "600": {
+      "var": "--sl-color-fuchsia-600",
+      "type": "color",
+      "description": "Declared --sl-color-fuchsia-600."
+     },
+     "700": {
+      "var": "--sl-color-fuchsia-700",
+      "type": "color",
+      "description": "Declared --sl-color-fuchsia-700."
+     },
+     "800": {
+      "var": "--sl-color-fuchsia-800",
+      "type": "color",
+      "description": "Declared --sl-color-fuchsia-800."
+     },
+     "900": {
+      "var": "--sl-color-fuchsia-900",
+      "type": "color",
+      "description": "Declared --sl-color-fuchsia-900."
+     },
+     "950": {
+      "var": "--sl-color-fuchsia-950",
+      "type": "color",
+      "description": "Declared --sl-color-fuchsia-950."
+     }
+    },
+    "pink": {
+     "50": {
+      "var": "--sl-color-pink-50",
+      "type": "color",
+      "description": "Declared --sl-color-pink-50."
+     },
+     "100": {
+      "var": "--sl-color-pink-100",
+      "type": "color",
+      "description": "Declared --sl-color-pink-100."
+     },
+     "200": {
+      "var": "--sl-color-pink-200",
+      "type": "color",
+      "description": "Declared --sl-color-pink-200."
+     },
+     "300": {
+      "var": "--sl-color-pink-300",
+      "type": "color",
+      "description": "Declared --sl-color-pink-300."
+     },
+     "400": {
+      "var": "--sl-color-pink-400",
+      "type": "color",
+      "description": "Declared --sl-color-pink-400."
+     },
+     "500": {
+      "var": "--sl-color-pink-500",
+      "type": "color",
+      "description": "Declared --sl-color-pink-500."
+     },
+     "600": {
+      "var": "--sl-color-pink-600",
+      "type": "color",
+      "description": "Declared --sl-color-pink-600."
+     },
+     "700": {
+      "var": "--sl-color-pink-700",
+      "type": "color",
+      "description": "Declared --sl-color-pink-700."
+     },
+     "800": {
+      "var": "--sl-color-pink-800",
+      "type": "color",
+      "description": "Declared --sl-color-pink-800."
+     },
+     "900": {
+      "var": "--sl-color-pink-900",
+      "type": "color",
+      "description": "Declared --sl-color-pink-900."
+     },
+     "950": {
+      "var": "--sl-color-pink-950",
+      "type": "color",
+      "description": "Declared --sl-color-pink-950."
+     }
+    },
+    "rose": {
+     "50": {
+      "var": "--sl-color-rose-50",
+      "type": "color",
+      "description": "Declared --sl-color-rose-50."
+     },
+     "100": {
+      "var": "--sl-color-rose-100",
+      "type": "color",
+      "description": "Declared --sl-color-rose-100."
+     },
+     "200": {
+      "var": "--sl-color-rose-200",
+      "type": "color",
+      "description": "Declared --sl-color-rose-200."
+     },
+     "300": {
+      "var": "--sl-color-rose-300",
+      "type": "color",
+      "description": "Declared --sl-color-rose-300."
+     },
+     "400": {
+      "var": "--sl-color-rose-400",
+      "type": "color",
+      "description": "Declared --sl-color-rose-400."
+     },
+     "500": {
+      "var": "--sl-color-rose-500",
+      "type": "color",
+      "description": "Declared --sl-color-rose-500."
+     },
+     "600": {
+      "var": "--sl-color-rose-600",
+      "type": "color",
+      "description": "Declared --sl-color-rose-600."
+     },
+     "700": {
+      "var": "--sl-color-rose-700",
+      "type": "color",
+      "description": "Declared --sl-color-rose-700."
+     },
+     "800": {
+      "var": "--sl-color-rose-800",
+      "type": "color",
+      "description": "Declared --sl-color-rose-800."
+     },
+     "900": {
+      "var": "--sl-color-rose-900",
+      "type": "color",
+      "description": "Declared --sl-color-rose-900."
+     },
+     "950": {
+      "var": "--sl-color-rose-950",
+      "type": "color",
+      "description": "Declared --sl-color-rose-950."
+     }
+    }
+   },
+   "status": {
+    "danger": {
+     "50": {
+      "var": "--sl-color-danger-50",
+      "type": "color",
+      "description": "Declared --sl-color-danger-50 — a ramp step, never painted signed out."
+     },
+     "100": {
+      "var": "--sl-color-danger-100",
+      "type": "color",
+      "description": "Declared --sl-color-danger-100 — a ramp step, never painted signed out."
+     },
+     "200": {
+      "var": "--sl-color-danger-200",
+      "type": "color",
+      "description": "Declared --sl-color-danger-200 — a ramp step, never painted signed out."
+     },
+     "300": {
+      "var": "--sl-color-danger-300",
+      "type": "color",
+      "description": "Declared --sl-color-danger-300 — a ramp step, never painted signed out."
+     },
+     "400": {
+      "var": "--sl-color-danger-400",
+      "type": "color",
+      "description": "Declared --sl-color-danger-400 — a ramp step, never painted signed out."
+     },
+     "500": {
+      "var": "--sl-color-danger-500",
+      "type": "color",
+      "description": "Declared --sl-color-danger-500 — a ramp step, never painted signed out."
+     },
+     "600": {
+      "var": "--sl-color-danger-600",
+      "type": "color",
+      "description": "Declared --sl-color-danger-600 — a ramp step, never painted signed out."
+     },
+     "700": {
+      "var": "--sl-color-danger-700",
+      "type": "color",
+      "description": "Declared --sl-color-danger-700 — a ramp step, never painted signed out."
+     }
+    },
+    "success": {
+     "50": {
+      "var": "--sl-color-success-50",
+      "type": "color",
+      "description": "Declared --sl-color-success-50 — a ramp step, never painted signed out."
+     },
+     "100": {
+      "var": "--sl-color-success-100",
+      "type": "color",
+      "description": "Declared --sl-color-success-100 — a ramp step, never painted signed out."
+     },
+     "200": {
+      "var": "--sl-color-success-200",
+      "type": "color",
+      "description": "Declared --sl-color-success-200 — a ramp step, never painted signed out."
+     },
+     "300": {
+      "var": "--sl-color-success-300",
+      "type": "color",
+      "description": "Declared --sl-color-success-300 — a ramp step, never painted signed out."
+     },
+     "400": {
+      "var": "--sl-color-success-400",
+      "type": "color",
+      "description": "Declared --sl-color-success-400 — a ramp step, never painted signed out."
+     },
+     "500": {
+      "var": "--sl-color-success-500",
+      "type": "color",
+      "description": "Declared --sl-color-success-500 — a ramp step, never painted signed out."
+     },
+     "600": {
+      "var": "--sl-color-success-600",
+      "type": "color",
+      "description": "Declared --sl-color-success-600 — a ramp step, never painted signed out."
+     },
+     "700": {
+      "var": "--sl-color-success-700",
+      "type": "color",
+      "description": "Declared --sl-color-success-700 — a ramp step, never painted signed out."
+     }
+    },
+    "warning": {
+     "50": {
+      "var": "--sl-color-warning-50",
+      "type": "color",
+      "description": "Declared --sl-color-warning-50 — a ramp step, never painted signed out."
+     },
+     "100": {
+      "var": "--sl-color-warning-100",
+      "type": "color",
+      "description": "Declared --sl-color-warning-100 — a ramp step, never painted signed out."
+     },
+     "200": {
+      "var": "--sl-color-warning-200",
+      "type": "color",
+      "description": "Declared --sl-color-warning-200 — a ramp step, never painted signed out."
+     },
+     "300": {
+      "var": "--sl-color-warning-300",
+      "type": "color",
+      "description": "Declared --sl-color-warning-300 — a ramp step, never painted signed out."
+     },
+     "400": {
+      "var": "--sl-color-warning-400",
+      "type": "color",
+      "description": "Declared --sl-color-warning-400 — a ramp step, never painted signed out."
+     },
+     "500": {
+      "var": "--sl-color-warning-500",
+      "type": "color",
+      "description": "Declared --sl-color-warning-500 — a ramp step, never painted signed out."
+     },
+     "600": {
+      "var": "--sl-color-warning-600",
+      "type": "color",
+      "description": "Declared --sl-color-warning-600 — a ramp step, never painted signed out."
+     },
+     "700": {
+      "var": "--sl-color-warning-700",
+      "type": "color",
+      "description": "Declared --sl-color-warning-700 — a ramp step, never painted signed out."
+     }
+    }
+   },
+   "measured": {
+    "ink": {
+     "value": "#0d0c22",
+     "type": "color",
+     "source": "computed color of hero-title default (raw/components-computed.json)",
+     "description": "The #0d0c22 near-black product ink (headings, body)."
+    },
+    "ink-deep": {
+     "value": "#0d0c22",
+     "type": "color",
+     "source": "computed bg of login-btn default (raw/components-computed.json)",
+     "description": "The #0d0c22 deep ink the dark pills fill."
+    },
+    "ink-on-dark": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed color of login-btn default (raw/components-computed.json)",
+     "description": "White text on the dark pills."
+    },
+    "muted": {
+     "value": "#3a3546",
+     "type": "color",
+     "source": "computed color of designer-meta default (raw/components-computed.json)",
+     "description": "The #3a3546 muted meta tone."
+    },
+    "muted-2": {
+     "value": "#6e6d7a",
+     "type": "color",
+     "source": "computed color of profile-stat default (raw/components-computed.json)",
+     "description": "The #6e6d7a lighter muted stat tone."
+    },
+    "pink": {
+     "value": "#ea4c89",
+     "type": "color",
+     "source": "computed bg of search-go default (raw/components-computed.json)",
+     "description": "The #ea4c89 Dribbble pink: search Go, accents, PRO badges."
+    },
+    "pink-hover": {
+     "value": "#ec5e95",
+     "type": "color",
+     "source": "computed bg of search-go hover (raw/components-computed.json)",
+     "description": "The hover tint on the pink action."
+    },
+    "promo-surface": {
+     "value": "rgba(244, 215, 243, 0.3)",
+     "type": "color",
+     "source": "computed bg of promo-banner default (raw/components-computed.json)",
+     "description": "The rgba(244, 215, 243, 0.3) promo-strip fill."
+    },
+    "chip-surface": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed bg of skill-chip default (raw/components-computed.json)",
+     "description": "The light skill-chip fill."
+    },
+    "chip-dark": {
+     "value": "#3a3546",
+     "type": "color",
+     "source": "computed bg of skill-chip-dark default (raw/components-computed.json)",
+     "description": "The dark certified-chip fill (Webflow Expert)."
+    },
+    "chip-dark-text": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed color of skill-chip-dark default (raw/components-computed.json)",
+     "description": "Text on the dark certified chip."
+    },
+    "field-bg": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed bg of email-field default (raw/components-computed.json)",
+     "description": "The auth field fill."
+    },
+    "field-border": {
+     "value": "rgba(219, 218, 222, 0.9)",
+     "type": "color",
+     "source": "computed borderTopColor of email-field default (raw/components-computed.json)",
+     "description": "The auth field border tone."
+    },
+    "pill-border": {
+     "value": "#0d0c22",
+     "type": "color",
+     "source": "computed borderTopColor of login-btn default (raw/components-computed.json)",
+     "description": "The dark pill's painted 1px border (same ink as its fill)."
+    },
+    "pink-text": {
+     "value": "#ea4c89",
+     "type": "color",
+     "source": "computed color of the text node inside hero-accent default (raw/components-computed.json)",
+     "description": "The pink the rotating hero word paints."
+    },
+    "link": {
+     "value": "#060318",
+     "type": "color",
+     "source": "computed color of menu-link default (raw/components-computed.json)",
+     "description": "The header dropdown link ink."
+    },
+    "footer-bg": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed bg of footer default (raw/components-computed.json)",
+     "description": "The footer field, if painted."
+    },
+    "footer-text": {
+     "value": "#0d0c22",
+     "type": "color",
+     "source": "computed color of footer-link default (raw/components-computed.json)",
+     "description": "The footer link tone."
+    },
+    "page": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed page-bg of promo-banner default (raw/components-computed.json)",
+     "description": "The white page field."
+    },
+    "surface": {
+     "value": "#ffffff",
+     "type": "color",
+     "source": "computed paint of designer-card default (raw/components-computed.json)",
+     "description": "Card white."
+    },
+    "border": {
+     "value": "rgba(219, 218, 222, 0.9)",
+     "type": "color",
+     "source": "computed borderTopColor of email-field default (raw/components-computed.json)",
+     "description": "The field hairline rgba(219, 218, 222, 0.9)."
+    }
+   }
+  },
+  "radius": {
+   "small": {
+    "var": "--sl-border-radius-small",
+    "type": "dimension",
+    "description": "Declared --sl-border-radius-small (2px)."
+   },
+   "medium": {
+    "var": "--sl-border-radius-medium",
+    "type": "dimension",
+    "description": "Declared --sl-border-radius-medium (4px)."
+   },
+   "large": {
+    "var": "--sl-border-radius-large",
+    "type": "dimension",
+    "description": "Declared --sl-border-radius-large (8px)."
+   },
+   "x-large": {
+    "var": "--sl-border-radius-x-large",
+    "type": "dimension",
+    "description": "Declared --sl-border-radius-x-large (16px)."
+   },
+   "circle": {
+    "value": "50%",
+    "type": "other",
+    "source": "css-var --sl-border-radius-circle (light)",
+    "description": "Declared --sl-border-radius-circle (50%): a percentage radius — half the element's own size, not a fixed length."
+   },
+   "pill": {
+    "var": "--sl-border-radius-pill",
+    "type": "dimension",
+    "description": "Declared --sl-border-radius-pill."
+   },
+   "card": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "computed borderRadius of div.shot-thumbnail-overlay inside shot-card default (raw/components-computed.json)",
+    "description": "The 8px shot-card radius."
+   },
+   "field": {
+    "value": "8px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of email-field default (raw/components-computed.json)",
+    "description": "The input radius."
+   },
+   "search": {
+    "value": "12px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of home-search default (raw/components-computed.json)",
+    "description": "The big search field radius (12px)."
+   },
+   "button-pill": {
+    "value": "1e+07px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of login-btn default (raw/components-computed.json)",
+    "description": "The pill radius on header/dark buttons: a 10000000px cap, so the ends are fully round."
+   },
+   "chip": {
+    "value": "1e+07px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of tag-chip default (raw/components-computed.json)",
+    "description": "The tag-chip radius."
+   },
+   "search-go": {
+    "value": "50%",
+    "type": "other",
+    "source": "computed borderTopLeftRadius of search-go default (raw/components-computed.json)",
+    "description": "The pink Go circle (50%). A percentage radius — relative to the element's own size."
+   }
+  },
+  "duration": {
+   "x-slow": {
+    "var": "--sl-transition-x-slow",
+    "type": "duration",
+    "description": "Declared --sl-transition-x-slow."
+   },
+   "slow": {
+    "var": "--sl-transition-slow",
+    "type": "duration",
+    "description": "Declared --sl-transition-slow."
+   },
+   "medium": {
+    "var": "--sl-transition-medium",
+    "type": "duration",
+    "description": "Declared --sl-transition-medium."
+   },
+   "fast": {
+    "var": "--sl-transition-fast",
+    "type": "duration",
+    "description": "Declared --sl-transition-fast."
+   },
+   "x-fast": {
+    "var": "--sl-transition-x-fast",
+    "type": "duration",
+    "description": "Declared --sl-transition-x-fast."
+   }
+  },
+  "spacing": {
+   "3x-small": {
+    "var": "--sl-spacing-3x-small",
+    "type": "dimension",
+    "description": "Declared --sl-spacing-3x-small."
+   },
+   "2x-small": {
+    "var": "--sl-spacing-2x-small",
+    "type": "dimension",
+    "description": "Declared --sl-spacing-2x-small."
+   },
+   "x-small": {
+    "var": "--sl-spacing-x-small",
+    "type": "dimension",
+    "description": "Declared --sl-spacing-x-small."
+   },
+   "small": {
+    "var": "--sl-spacing-small",
+    "type": "dimension",
+    "description": "Declared --sl-spacing-small."
+   },
+   "medium": {
+    "var": "--sl-spacing-medium",
+    "type": "dimension",
+    "description": "Declared --sl-spacing-medium."
+   },
+   "large": {
+    "var": "--sl-spacing-large",
+    "type": "dimension",
+    "description": "Declared --sl-spacing-large."
+   },
+   "x-large": {
+    "var": "--sl-spacing-x-large",
+    "type": "dimension",
+    "description": "Declared --sl-spacing-x-large."
+   },
+   "2x-large": {
+    "var": "--sl-spacing-2x-large",
+    "type": "dimension",
+    "description": "Declared --sl-spacing-2x-large."
+   },
+   "3x-large": {
+    "var": "--sl-spacing-3x-large",
+    "type": "dimension",
+    "description": "Declared --sl-spacing-3x-large."
+   },
+   "4x-large": {
+    "var": "--sl-spacing-4x-large",
+    "type": "dimension",
+    "description": "Declared --sl-spacing-4x-large."
+   }
+  },
+  "border": {
+   "width": {
+    "input": {
+     "var": "--sl-input-border-width",
+     "type": "dimension",
+     "description": "Declared --sl-input-border-width."
+    },
+    "panel": {
+     "var": "--sl-panel-border-width",
+     "type": "dimension",
+     "description": "Declared --sl-panel-border-width."
+    }
+   }
+  },
+  "zIndex": {
+   "drawer": {
+    "var": "--sl-z-index-drawer",
+    "type": "number",
+    "description": "Declared --sl-z-index-drawer."
+   },
+   "dialog": {
+    "var": "--sl-z-index-dialog",
+    "type": "number",
+    "description": "Declared --sl-z-index-dialog."
+   },
+   "dropdown": {
+    "var": "--zi-dropdown",
+    "type": "number",
+    "description": "Declared --zi-dropdown (1000)."
+   },
+   "toast": {
+    "var": "--sl-z-index-toast",
+    "type": "number",
+    "description": "Declared --sl-z-index-toast."
+   },
+   "tooltip": {
+    "var": "--sl-z-index-tooltip",
+    "type": "number",
+    "description": "Declared --sl-z-index-tooltip."
+   },
+   "header": {
+    "var": "--zi-header",
+    "type": "number",
+    "description": "Declared --zi-header (9996): the site nav layer."
+   },
+   "filter": {
+    "var": "--zi-filter",
+    "type": "number",
+    "description": "Declared --zi-filter (1000)."
+   },
+   "jobs-bg-effect": {
+    "var": "--zi-jobs-bg-effect",
+    "type": "number",
+    "description": "Declared --zi-jobs-bg-effect (10)."
+   },
+   "playbook-head": {
+    "var": "--zi-playbook-head",
+    "type": "number",
+    "description": "Declared --zi-playbook-head (2)."
+   }
+  },
+  "dribbble": {
+   "button": {
+    "height": {
+     "var": "--btn-height",
+     "type": "dimension",
+     "description": "Declared --btn-height (40px): the standard button height."
+    },
+    "font-size": {
+     "var": "--btn-font-size",
+     "type": "dimension",
+     "description": "Declared --btn-font-size (13px)."
+    },
+    "padding": {
+     "var": "--btn-padding",
+     "type": "dimension",
+     "description": "Declared --btn-padding (20px horizontal)."
+    },
+    "icon-size": {
+     "var": "--btn-icon-size",
+     "type": "dimension",
+     "description": "Declared --btn-icon-size (16px)."
+    },
+    "bg": {
+     "var": "--btn-bg-color",
+     "type": "color",
+     "description": "Declared --btn-bg-color (#0d0c22): the dark pill fill."
+    },
+    "bg-hover": {
+     "var": "--btn-bg-color-hover",
+     "type": "color",
+     "description": "Declared --btn-bg-color-hover (#3d3d4e)."
+    },
+    "border": {
+     "var": "--btn-border-color",
+     "type": "color",
+     "description": "Declared --btn-border-color (the fill colour)."
+    },
+    "border-hover": {
+     "var": "--btn-border-color-hover",
+     "type": "color",
+     "description": "Declared --btn-border-color-hover."
+    },
+    "text": {
+     "var": "--btn-text-color",
+     "type": "color",
+     "description": "Declared --btn-text-color (white)."
+    },
+    "text-hover": {
+     "var": "--btn-text-color-hover",
+     "type": "color",
+     "description": "Declared --btn-text-color-hover (white)."
+    }
+   },
+   "nav": {
+    "height": {
+     "var": "--site-nav-height",
+     "type": "dimension",
+     "description": "Declared --site-nav-height (92px with the announcement strip; 58px bare)."
+    },
+    "gutter": {
+     "var": "--site-nav-gutter",
+     "type": "dimension",
+     "description": "Declared --site-nav-gutter (40px)."
+    },
+    "search-height": {
+     "var": "--site-nav-search-height",
+     "type": "dimension",
+     "description": "Declared --site-nav-search-height (56px)."
+    },
+    "link-hover": {
+     "var": "--site-nav-link-hover-color",
+     "type": "color",
+     "description": "Declared --site-nav-link-hover-color (#7b7194)."
+    }
+   },
+   "header": {
+    "total-height": {
+     "var": "--total-header-height",
+     "type": "dimension",
+     "description": "Declared --total-header-height (nav + flash + announcement = 92px)."
+    }
+   },
+   "banner": {
+    "gutter": {
+     "var": "--banner-gutter",
+     "type": "dimension",
+     "description": "Declared --banner-gutter (72px at desktop)."
+    }
+   },
+   "input": {
+    "padding-left": {
+     "var": "--input-padding-left",
+     "type": "dimension",
+     "description": "Declared --input-padding-left (12px)."
+    },
+    "padding-right": {
+     "var": "--input-padding-right",
+     "type": "dimension",
+     "description": "Declared --input-padding-right (12px)."
+    }
+   },
+   "clearable-input": {
+    "size": {
+     "var": "--clearable-input-size",
+     "type": "dimension",
+     "description": "Declared --clearable-input-size (16px)."
+    },
+    "padding": {
+     "var": "--clearable-input-padding",
+     "type": "dimension",
+     "description": "Declared --clearable-input-padding (8px)."
+    }
+   },
+   "attachment": {
+    "max-height": {
+     "var": "--attachment-max-height",
+     "type": "dimension",
+     "description": "Declared --attachment-max-height (252px)."
+    },
+    "min-height": {
+     "var": "--attachment-min-height",
+     "type": "dimension",
+     "description": "Declared --attachment-min-height (100px)."
+    }
+   }
+  },
+  "layout": {
+   "container-max-home": {
+    "value": "1650px",
+    "type": "dimension",
+    "source": "declared --container-max-width on .home-header (raw/css-vars.json)",
+    "description": "Declared --container-max-width on .home-header (1650px)."
+   },
+   "container-max-designers": {
+    "value": "1622px",
+    "type": "dimension",
+    "source": "declared --container-max-width on body#designers (raw/css-vars.json)",
+    "description": "Declared --container-max-width on the designers directory body (1622px)."
+   },
+   "container-gutter": {
+    "value": "72px",
+    "type": "dimension",
+    "source": "declared --container-gutter on .container2--large-fill (raw/css-vars.json)",
+    "description": "Declared --container-gutter at ≥1200px (72px)."
+   }
+  },
+  "shadow": {
+   "x-small": {
+    "value": [
+     {
+      "color": "rgba(113, 113, 122, 0.06)",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "2px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --sl-shadow-x-small (light)",
+    "description": "Declared --sl-shadow-x-small."
+   },
+   "small": {
+    "value": [
+     {
+      "color": "rgba(113, 113, 122, 0.12)",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "2px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --sl-shadow-small (light)",
+    "description": "Declared --sl-shadow-small."
+   },
+   "medium": {
+    "value": [
+     {
+      "color": "rgba(113, 113, 122, 0.12)",
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "4px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --sl-shadow-medium (light)",
+    "description": "Declared --sl-shadow-medium."
+   },
+   "large": {
+    "value": [
+     {
+      "color": "rgba(113, 113, 122, 0.12)",
+      "offsetX": "0px",
+      "offsetY": "2px",
+      "blur": "8px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --sl-shadow-large (light)",
+    "description": "Declared --sl-shadow-large."
+   },
+   "x-large": {
+    "value": [
+     {
+      "color": "rgba(113, 113, 122, 0.12)",
+      "offsetX": "0px",
+      "offsetY": "4px",
+      "blur": "16px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "css-var --sl-shadow-x-large (light)",
+    "description": "Declared --sl-shadow-x-large."
+   },
+   "card": {
+    "value": [
+     {
+      "color": "rgba(18, 22, 25, 0.02)",
+      "offsetX": "0px",
+      "offsetY": "1px",
+      "blur": "10px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of designer-card default (raw/components-computed.json)",
+    "description": "The designer-card elevation."
+   },
+   "dropdown": {
+    "value": [
+     {
+      "color": "rgba(27, 32, 50, 0.1)",
+      "offsetX": "0px",
+      "offsetY": "15px",
+      "blur": "50px",
+      "spread": "0px"
+     }
+    ],
+    "type": "shadow",
+    "source": "computed boxShadow of nav-dropdown default (raw/components-computed.json)",
+    "description": "The header dropdown elevation."
+   }
+  },
+  "focusRing": {
+   "color": {
+    "var": "--sl-focus-ring-color",
+    "type": "color",
+    "description": "Declared --sl-focus-ring-color."
+   },
+   "width": {
+    "var": "--sl-focus-ring-width",
+    "type": "dimension",
+    "description": "Declared --sl-focus-ring-width."
+   },
+   "offset": {
+    "var": "--sl-focus-ring-offset",
+    "type": "dimension",
+    "description": "Declared --sl-focus-ring-offset."
+   },
+   "style": {
+    "value": "solid",
+    "type": "fontFamily",
+    "source": "css-var --sl-focus-ring-style (light)",
+    "description": "Declared --sl-focus-ring-style (the 'solid' keyword; typed fontFamily only to carry a plain string)."
+   },
+   "measured": {
+    "color": {
+     "value": "#f3afe4",
+     "type": "color",
+     "source": "computed outline of login-btn focus-visible (raw/components-computed.json)",
+     "description": "The 2px solid #f3afe4 keyboard-focus outline."
+    },
+    "width": {
+     "value": "2px",
+     "type": "dimension",
+     "source": "computed outlineWidth of login-btn focus-visible (raw/components-computed.json)",
+     "description": "The focus outline width."
+    }
+   }
+  },
+  "measured": {
+   "dropdown-transition": {
+    "value": "0.2s",
+    "type": "duration",
+    "source": "computed transition of nav-dropdown default (raw/components-computed.json)",
+    "description": "The Explore dropdown open transition. (opacity, visibility, transform, -webkit-transform)"
+   }
+  }
+ },
+ "light": {
+  "color": {
+   "page": {
+    "value": "{color.measured.page}",
+    "type": "color",
+    "source": "measured role off the live page (raw/components-computed.json)",
+    "description": "The white page field."
+   },
+   "surface": {
+    "value": "{color.measured.surface}",
+    "type": "color",
+    "source": "measured role off the live page (raw/components-computed.json)",
+    "description": "Card and panel white."
+   },
+   "surface-alt": {
+    "value": "{color.measured.promo-surface}",
+    "type": "color",
+    "source": "measured role off the live page (raw/components-computed.json)",
+    "description": "The promo/chip rgba(244, 215, 243, 0.3) tint."
+   },
+   "text": {
+    "value": "{color.measured.ink}",
+    "type": "color",
+    "source": "measured role off the live page (raw/components-computed.json)",
+    "description": "The #0d0c22 product ink."
+   },
+   "muted": {
+    "value": "{color.measured.muted}",
+    "type": "color",
+    "source": "measured role off the live page (raw/components-computed.json)",
+    "description": "The #3a3546 muted text."
+   },
+   "accent": {
+    "value": "{color.measured.pink}",
+    "type": "color",
+    "source": "measured role off the live page (raw/components-computed.json)",
+    "description": "The #ea4c89 Dribbble pink."
+   },
+   "accent-hover": {
+    "value": "{color.measured.pink-hover}",
+    "type": "color",
+    "source": "measured role off the live page (raw/components-computed.json)",
+    "description": "The pink hover tint."
+   },
+   "on-accent": {
+    "value": "{color.measured.ink-on-dark}",
+    "type": "color",
+    "source": "measured role off the live page (raw/components-computed.json)",
+    "description": "White on pink and on the dark pills."
+   },
+   "border": {
+    "value": "{color.measured.border}",
+    "type": "color",
+    "source": "measured role off the live page (raw/components-computed.json)",
+    "description": "The rgba(219, 218, 222, 0.9) field/card hairline."
+   },
+   "link": {
+    "value": "{color.measured.link}",
+    "type": "color",
+    "source": "measured role off the live page (raw/components-computed.json)",
+    "description": "The link ink (same near-black, underlined on hover)."
+   }
+  }
+ },
+ "dark": {
+  "color": {
+   "surface": {
+    "value": "{color.measured.ink-deep}",
+    "type": "color",
+    "source": "role alias over the palette",
+    "description": "The dark pill fill (#0d0c22)."
+   },
+   "text": {
+    "value": "{color.measured.ink-on-dark}",
+    "type": "color",
+    "source": "role alias over the palette",
+    "description": "Text on the ink pills."
+   },
+   "surface-chip": {
+    "value": "{color.measured.chip-dark}",
+    "type": "color",
+    "source": "role alias over the palette",
+    "description": "The dark certified-chip fill."
+   }
+  }
+ },
+ "component": {
+  "header": {
+   "height": {
+    "type": "dimension",
+    "value": "92px",
+    "source": "computed height of header default (raw/components-computed.json)",
+    "description": "The desktop header height."
+   },
+   "height-mobile": {
+    "type": "dimension",
+    "value": "58px",
+    "source": "computed height of m-header default (raw/components-computed.json)",
+    "description": "The mobile header height."
+   }
+  },
+  "logo": {
+   "width": {
+    "type": "dimension",
+    "value": "89px",
+    "source": "computed width of logo default (raw/components-computed.json)",
+    "description": "The script wordmark width."
+   }
+  },
+  "button": {
+   "height": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of login-btn default (raw/components-computed.json)",
+    "description": "The dark pill button height."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "1e+07px",
+    "source": "computed borderTopLeftRadius of login-btn default (raw/components-computed.json)",
+    "description": "The pill radius."
+   }
+  },
+  "nav-link": {
+   "height": {
+    "type": "dimension",
+    "value": "30px",
+    "source": "computed height of nav-link default (raw/components-computed.json)",
+    "description": "Nav item height."
+   }
+  },
+  "dropdown": {
+   "width": {
+    "type": "dimension",
+    "value": "230px",
+    "source": "computed width of nav-dropdown default (raw/components-computed.json)",
+    "description": "The Explore dropdown panel width."
+   }
+  },
+  "hero-title": {
+   "width": {
+    "type": "dimension",
+    "value": "618px",
+    "source": "computed width of hero-title default (raw/components-computed.json)",
+    "description": "The hero heading measure."
+   }
+  },
+  "hero-cta": {
+   "height": {
+    "type": "dimension",
+    "value": "49px",
+    "source": "computed height of hero-cta default (raw/components-computed.json)",
+    "description": "The Start-Your-Project-Brief pill height."
+   }
+  },
+  "search": {
+   "height": {
+    "type": "dimension",
+    "value": "54px",
+    "source": "computed height of home-search default (raw/components-computed.json)",
+    "description": "The big search field height."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "12px",
+    "source": "computed borderTopLeftRadius of home-search default (raw/components-computed.json)",
+    "description": "The big search field radius."
+   }
+  },
+  "search-go": {
+   "size": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of search-go default (raw/components-computed.json)",
+    "description": "The 40px pink Go circle."
+   }
+  },
+  "chip": {
+   "height": {
+    "type": "dimension",
+    "value": "31px",
+    "source": "computed height of tag-chip default (raw/components-computed.json)",
+    "description": "The tag-chip height."
+   }
+  },
+  "shot-card": {
+   "width": {
+    "type": "dimension",
+    "value": "297px",
+    "source": "computed width of shot-card default (raw/components-computed.json)",
+    "description": "The shot-card width in the feed."
+   }
+  },
+  "wall-cta": {
+   "height": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of wall-cta default (raw/components-computed.json)",
+    "description": "The Sign-up-to-continue pill height."
+   }
+  },
+  "designer-card": {
+   "width": {
+    "type": "dimension",
+    "value": "1238px",
+    "source": "computed width of designer-card default (raw/components-computed.json)",
+    "description": "The directory designer-card width."
+   }
+  },
+  "designer-cta": {
+   "height": {
+    "type": "dimension",
+    "value": "40px",
+    "source": "computed height of designer-cta default (raw/components-computed.json)",
+    "description": "The Get-in-touch pill height."
+   }
+  },
+  "skill-chip": {
+   "height": {
+    "type": "dimension",
+    "value": "31px",
+    "source": "computed height of skill-chip default (raw/components-computed.json)",
+    "description": "The skill-chip height."
+   }
+  },
+  "auth-card": {
+   "width": {
+    "type": "dimension",
+    "value": "1024px",
+    "source": "computed width of login-card default (raw/components-computed.json)",
+    "description": "The login card width."
+   }
+  },
+  "field": {
+   "height": {
+    "type": "dimension",
+    "value": "47px",
+    "source": "computed height of email-field default (raw/components-computed.json)",
+    "description": "Auth input height."
+   },
+   "radius": {
+    "type": "dimension",
+    "value": "8px",
+    "source": "computed borderTopLeftRadius of email-field default (raw/components-computed.json)",
+    "description": "Auth input radius."
+   }
+  },
+  "continue": {
+   "height": {
+    "type": "dimension",
+    "value": "48px",
+    "source": "computed height of continue-btn default (raw/components-computed.json)",
+    "description": "The Continue button height."
+   }
+  },
+  "footer": {
+   "height": {
+    "type": "dimension",
+    "value": "508px",
+    "source": "computed height of footer default (raw/components-computed.json)",
+    "description": "The footer block height."
+   }
+  }
+ }
+}

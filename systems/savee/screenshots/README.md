@@ -1,0 +1,1 @@
+No screenshots. `preview_snapshot` returned "The browser is not producing screenshot frames" on the home tab, twice. Measurements from `preview_evaluate` were kept. No frames were invented. Headless Playwright was not used.

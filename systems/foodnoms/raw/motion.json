@@ -1,0 +1,588 @@
+{
+ "_meta": {
+  "readAt": "2026-11-16",
+  "probe": "page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page",
+  "source": "public pages, headless Chromium, read at rest",
+  "notes": "Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial."
+ },
+ "summary": {
+  "moving": 125,
+  "removed": 0,
+  "reduced": 0,
+  "kept": 125,
+  "partial": 0,
+  "increased": 0,
+  "added": 0,
+  "behaviour": "ignores",
+  "loops": []
+ },
+ "pages": {
+  "page-1": {
+   "url": "https://foodnoms.com/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 1244,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 19,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 19,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "ignores",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.44, 0, 0.56, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.44, 0, 0.56, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 400,
+       "to": 400
+      }
+     ],
+     "count": 19,
+     "nodes": [
+      "a.framer-text.framer-styles-preset-277bjg"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "__framer-editorbar-spinner-spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [],
+   "declared": [
+    {
+     "selector": ".framer-15Llx .framer-styles-preset-277bjg:not(.rich-text-wrapper), .framer-15Llx .framer-styles-preset-277bjg.rich-text-wrapper a",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.44, 0, 0.56, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#-editorbar-label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".-editorbar-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "__framer-editorbar-spinner-spin",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    }
+   ],
+   "customProperties": []
+  },
+  "page-2": {
+   "url": "https://foodnoms.com/plus",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 423,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 19,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 19,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "ignores",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.44, 0, 0.56, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.44, 0, 0.56, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 400,
+       "to": 400
+      }
+     ],
+     "count": 19,
+     "nodes": [
+      "a.framer-text.framer-styles-preset-277bjg"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "__framer-editorbar-spinner-spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [],
+   "declared": [
+    {
+     "selector": ".framer-15Llx .framer-styles-preset-277bjg:not(.rich-text-wrapper), .framer-15Llx .framer-styles-preset-277bjg.rich-text-wrapper a",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.44, 0, 0.56, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#-editorbar-label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".-editorbar-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "__framer-editorbar-spinner-spin",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    }
+   ],
+   "customProperties": []
+  },
+  "page-3": {
+   "url": "https://foodnoms.com/help",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 492,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 68,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 68,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "ignores",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.44, 0, 0.56, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.44, 0, 0.56, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 400,
+       "to": 400
+      }
+     ],
+     "count": 68,
+     "nodes": [
+      "a.framer-text.framer-styles-preset-277bjg",
+      "a.framer-text.framer-styles-preset-ksvyhk"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "__framer-blink-input",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "__framer-editorbar-spinner-spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [],
+   "declared": [
+    {
+     "selector": ".framer-15Llx .framer-styles-preset-277bjg:not(.rich-text-wrapper), .framer-15Llx .framer-styles-preset-277bjg.rich-text-wrapper a",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.44, 0, 0.56, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".-search-modal-container input:focus",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "__framer-blink-input",
+       "durationMs": 10,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".framer-RKu5j .framer-styles-preset-ksvyhk:not(.rich-text-wrapper), .framer-RKu5j .framer-styles-preset-ksvyhk.rich-text-wrapper a",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.44, 0, 0.56, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#-editorbar-label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".-editorbar-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "__framer-editorbar-spinner-spin",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    }
+   ],
+   "customProperties": []
+  },
+  "page-4": {
+   "url": "https://foodnoms.com/news",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 316,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 19,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 19,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "ignores",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.44, 0, 0.56, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.44, 0, 0.56, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 400,
+       "to": 400
+      }
+     ],
+     "count": 19,
+     "nodes": [
+      "a.framer-text.framer-styles-preset-277bjg"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "__framer-editorbar-spinner-spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [],
+   "declared": [
+    {
+     "selector": ".framer-15Llx .framer-styles-preset-277bjg:not(.rich-text-wrapper), .framer-15Llx .framer-styles-preset-277bjg.rich-text-wrapper a",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.44, 0, 0.56, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#-editorbar-label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".-editorbar-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "__framer-editorbar-spinner-spin",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    }
+   ],
+   "customProperties": []
+  }
+ }
+}

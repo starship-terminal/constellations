@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Squarespace style guide</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #ffffff; color: #000000; font: 400 15px/21px Clarkson, Helvetica, sans-serif; }
+  header, main { max-width: 960px; margin: 0 auto; padding: 32px 24px; }
+  h1 { font-weight: 300; font-size: 56px; line-height: 60px; letter-spacing: -2.24px; margin: 0 0 8px; }
+  h2 { font-size: 20px; font-weight: 500; margin: 36px 0 12px; }
+  p.lead { color: #666666; max-width: 68ch; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .sw { display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: center; }
+  .sw i { width: 44px; height: 44px; border-radius: 4px; box-shadow: inset 0 0 0 1px #e7e7e7; display: block; }
+  .sw b, .ty .k { display: block; font-size: 12px; }
+  .sw span, .ty small { color: #666666; font-size: 12px; font-weight: 400; }
+  .ty { display: grid; grid-template-columns: 200px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px solid #e7e7e7; align-items: baseline; }
+  .sp { display: flex; align-items: center; gap: 12px; margin: 6px 0; }
+  .sp i { height: 12px; background: #0072f0; display: block; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; height: 60px; padding: 23px 28px; border-radius: 4px; background: #000; color: #fff; font: 500 14px/14px Clarkson, Helvetica, sans-serif; letter-spacing: 0; text-transform: uppercase; border: 0; }
+  .btn-inv { display: inline-flex; align-items: center; justify-content: center; height: 60px; padding: 23px 28px; border-radius: 4px; background: #fff; color: #000; font: 500 14px/14px Clarkson, Helvetica, sans-serif; text-transform: uppercase; border: 0; box-shadow: inset 0 0 0 1px #e7e7e7; }
+  .login { display: inline-flex; align-items: center; justify-content: center; height: 44px; width: 327px; background: #f2f2f2; color: #b7b7b7; font: 500 12px/22px Clarkson, Helvetica, sans-serif; letter-spacing: 0.5px; text-transform: uppercase; border: 0; }
+  .oauth { display: flex; align-items: center; height: 55px; width: 327px; padding: 0 22px; border: 1px solid #000; background: transparent; color: #000; font: 500 14px/22px Clarkson, Helvetica, sans-serif; }
+  .field { width: 327px; border-bottom: 1px solid #e7e7e7; padding: 11px 0; color: #666666; font: 500 9.75px/16px Clarkson, Helvetica, sans-serif; letter-spacing: 0.75px; text-transform: uppercase; }
+  .field b { display: block; margin-top: 8px; color: #0e0e0e; font: 400 14px/22px Clarkson, Helvetica, sans-serif; letter-spacing: 0; text-transform: none; }
+  .row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .stack { display: grid; gap: 12px; justify-items: start; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Squarespace</h1>
+  <p class="lead">Public marketing and signed-out login chrome, measured 2026-11-19. Clarkson is not bundled, so specimens fall back to Helvetica.</p>
+</header>
+<main>
+  <h2>Colour</h2>
+  <div class="grid"><div class="sw"><i style="background:#ffffff"></i><div><b>page</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#000000"></i><div><b>ink</b><span>#000000</span></div></div>
+<div class="sw"><i style="background:#0e0e0e"></i><div><b>ink-soft</b><span>#0e0e0e</span></div></div>
+<div class="sw"><i style="background:#666666"></i><div><b>muted</b><span>#666666</span></div></div>
+<div class="sw"><i style="background:#5a5a5a"></i><div><b>muted-2</b><span>#5a5a5a</span></div></div>
+<div class="sw"><i style="background:#898989"></i><div><b>gray</b><span>#898989</span></div></div>
+<div class="sw"><i style="background:#adadad"></i><div><b>silver</b><span>#adadad</span></div></div>
+<div class="sw"><i style="background:#b7b7b7"></i><div><b>disabled</b><span>#b7b7b7</span></div></div>
+<div class="sw"><i style="background:#f2f2f2"></i><div><b>disabled-fill</b><span>#f2f2f2</span></div></div>
+<div class="sw"><i style="background:#dddddd"></i><div><b>hover</b><span>#dddddd</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><b>inverse</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#0072f0"></i><div><b>accent</b><span>#0072f0</span></div></div>
+<div class="sw"><i style="background:#242424"></i><div><b>promo</b><span>#242424</span></div></div>
+<div class="sw"><i style="background:#e7e7e7"></i><div><b>line</b><span>#e7e7e7</span></div></div>
+<div class="sw"><i style="background:#e7e7e7"></i><div><b>line-hairline</b><span>#e7e7e7</span></div></div>
+<div class="sw"><i style="background:#0e0e0e"></i><div><b>focus</b><span>#0e0e0e</span></div></div>
+<div class="sw"><i style="background:#c32d38"></i><div><b>error</b><span>#c32d38</span></div></div>
+<div class="sw"><i style="background:#ffffff"></i><div><b>surface</b><span>#ffffff</span></div></div>
+<div class="sw"><i style="background:#f9f9f9"></i><div><b>surface-muted</b><span>#f9f9f9</span></div></div>
+<div class="sw"><i style="background:#000000"></i><div><b>scrim</b><span>#000000</span></div></div>
+<div class="sw"><i style="background:#000000"></i><div><b>wash</b><span>#000000</span></div></div>
+<div class="sw"><i style="background:#000000"></i><div><b>toggle-track</b><span>#000000</span></div></div></div>
+  <h2>Type</h2>
+  <div class="ty"><div class="k">hero<small>64px / 66.56px · 300</small></div><div style="font-family:Clarkson, Helvetica, sans-serif;font-size:64px;font-weight:300;line-height:66.56px;letter-spacing:-3.84px">A website makes it real</div></div>
+<div class="ty"><div class="k">hero-mobile<small>42.41px / 44.10px · 300</small></div><div style="font-family:Clarkson, Helvetica, sans-serif;font-size:42.41px;font-weight:300;line-height:44.10px;letter-spacing:-2.54px">A website makes it real</div></div>
+<div class="ty"><div class="k">display<small>56px / 60.48px · 300</small></div><div style="font-family:Clarkson, Helvetica, sans-serif;font-size:56px;font-weight:300;line-height:60.48px;letter-spacing:-2.24px">A website makes it real</div></div>
+<div class="ty"><div class="k">title<small>56px / 56px · 400</small></div><div style="font-family:Clarkson, Helvetica, sans-serif;font-size:56px;font-weight:400;line-height:56px;letter-spacing:-2.24px">A website makes it real</div></div>
+<div class="ty"><div class="k">section<small>32px / 34.56px · 400</small></div><div style="font-family:Clarkson, Helvetica, sans-serif;font-size:32px;font-weight:400;line-height:34.56px;letter-spacing:-1.28px">A website makes it real</div></div>
+<div class="ty"><div class="k">login-title<small>22px / 28px · 600</small></div><div style="font-family:Clarkson, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:22px;font-weight:600;line-height:28px;letter-spacing:0px">A website makes it real</div></div>
+<div class="ty"><div class="k">nav<small>14px / 14px · 500</small></div><div style="font-family:Clarkson, Helvetica, sans-serif;font-size:14px;font-weight:500;line-height:14px;letter-spacing:0px">A website makes it real</div></div>
+<div class="ty"><div class="k">button<small>14px / 14px · 500</small></div><div style="font-family:Clarkson, Helvetica, sans-serif;font-size:14px;font-weight:500;line-height:14px;letter-spacing:0px">A website makes it real</div></div>
+<div class="ty"><div class="k">body<small>15px / 21px · 400</small></div><div style="font-family:Clarkson, Helvetica, sans-serif;font-size:15px;font-weight:400;line-height:21px;letter-spacing:-0.015px">A website makes it real</div></div>
+<div class="ty"><div class="k">lede<small>16px / 22.4px · 400</small></div><div style="font-family:Clarkson, Helvetica, sans-serif;font-size:16px;font-weight:400;line-height:22.4px;letter-spacing:0px">A website makes it real</div></div>
+<div class="ty"><div class="k">plan<small>20px / 24px · 500</small></div><div style="font-family:Clarkson, Helvetica, sans-serif;font-size:20px;font-weight:500;line-height:24px;letter-spacing:-0.2px">A website makes it real</div></div>
+<div class="ty"><div class="k">field-label<small>9.75px / 16px · 500</small></div><div style="font-family:Clarkson, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:9.75px;font-weight:500;line-height:16px;letter-spacing:0.75px">A website makes it real</div></div>
+<div class="ty"><div class="k">field<small>14px / 22px · 400</small></div><div style="font-family:Clarkson, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:14px;font-weight:400;line-height:22px;letter-spacing:0px">A website makes it real</div></div>
+<div class="ty"><div class="k">caption<small>12px / 22px · 500</small></div><div style="font-family:Clarkson, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:12px;font-weight:500;line-height:22px;letter-spacing:0.5px">A website makes it real</div></div>
+  <h2>Radius</h2>
+  <div class="grid"><div class="sw"><i style="background:#000000;border-radius:0px"></i><div><b>none</b><span>0px</span></div></div>
+<div class="sw"><i style="background:#000000;border-radius:4px"></i><div><b>control</b><span>4px</span></div></div>
+<div class="sw"><i style="background:#000000;border-radius:6px"></i><div><b>search</b><span>6px</span></div></div>
+<div class="sw"><i style="background:#000000;border-radius:8px"></i><div><b>input</b><span>8px</span></div></div>
+<div class="sw"><i style="background:#000000;border-radius:24px"></i><div><b>card</b><span>24px</span></div></div>
+<div class="sw"><i style="background:#000000;border-radius:120px"></i><div><b>pill</b><span>120px</span></div></div>
+<div class="sw"><i style="background:#000000;border-radius:1000px"></i><div><b>toggle</b><span>1000px</span></div></div></div>
+  <h2>Space</h2>
+  <div class="sp"><i style="width:2px"></i><span>2 · 2px</span></div>
+<div class="sp"><i style="width:4px"></i><span>4 · 4px</span></div>
+<div class="sp"><i style="width:16px"></i><span>16 · 16px</span></div>
+<div class="sp"><i style="width:23px"></i><span>23 · 23px</span></div>
+<div class="sp"><i style="width:24px"></i><span>24 · 24px</span></div>
+<div class="sp"><i style="width:28px"></i><span>28 · 28px</span></div>
+<div class="sp"><i style="width:32px"></i><span>32 · 32px</span></div>
+<div class="sp"><i style="width:40px"></i><span>40 · 40px</span></div>
+<div class="sp"><i style="width:60px"></i><span>60 · 60px</span></div>
+<div class="sp"><i style="width:72px"></i><span>72 · 72px</span></div>
+<div class="sp"><i style="width:80px"></i><span>80 · 80px</span></div>
+  <h2>Controls</h2>
+  <div class="stack">
+    <div class="row"><span class="btn">Get started</span><span class="btn-inv">Get started</span></div>
+    <div class="field">Email address<b>name@example.com</b></div>
+    <span class="login">Log in</span>
+    <span class="oauth">Continue with Google</span>
+  </div>
+</main>
+</body>
+</html>

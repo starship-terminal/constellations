@@ -1,0 +1,1138 @@
+{
+ "_about": "The token tree build_tokens.py turns into tokens.json. cron.com's public surface splits in two: the dark marketing home (literal CSS, measured computed values) and the light Next.js content pages whose declared var layer (raw/css-vars.json: the 14-step gray ramp, --chronos brand, --elevation-*, --material-*/--object-* roles) is var-referenced wherever it names a value.",
+ "core": {
+  "font": {
+   "family": {
+    "sans": {
+     "value": "ABCDiatype, -apple-system, \"system-ui\", \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif",
+     "type": "fontFamily",
+     "source": "computed fontFamily of every measured component (raw/components-computed.json); @font-face faces for ABCDiatype are declared in the app sheets (raw/css-vars.json)",
+     "description": "ABCDiatype — the product's own face on every surface."
+    },
+    "fallback": {
+     "var": "--font-sans",
+     "type": "fontFamily",
+     "source": "css-var --font-sans resolved (raw/css-vars.json)",
+     "description": "The Tailwind system-ui stack that backs the ABCDiatype chain."
+    }
+   },
+   "weight": {
+    "regular": {
+     "value": "400",
+     "type": "fontWeight",
+     "source": "computed fontWeight of nav-button default (raw/components-computed.json)",
+     "description": "Measured 400 — body copy, icon glyphs."
+    },
+    "medium": {
+     "value": "500",
+     "type": "fontWeight",
+     "source": "computed fontWeight of signin-btn default (raw/components-computed.json)",
+     "description": "Measured 500 — buttons, tabs, headings, titles."
+    },
+    "semibold": {
+     "var": "--font-weight-semibold",
+     "type": "fontWeight",
+     "source": "css-var --font-weight-semibold resolved (raw/css-vars.json)",
+     "description": "The declared 600 weight."
+    },
+    "bold": {
+     "var": "--font-weight-bold",
+     "type": "fontWeight",
+     "source": "css-var --font-weight-bold resolved (raw/css-vars.json)",
+     "description": "The declared 700 weight."
+    }
+   },
+   "size": {
+    "title": {
+     "var": "--text-2xl",
+     "type": "fontSize",
+     "source": "css-var --text-2xl resolved (raw/css-vars.json)",
+     "description": "The 24px item/curation title. Declared --text-2xl."
+    },
+    "body": {
+     "var": "--text-base",
+     "type": "fontSize",
+     "source": "css-var --text-base resolved (raw/css-vars.json)",
+     "description": "The 16px base size. Declared --text-base."
+    },
+    "field": {
+     "var": "--text-sm",
+     "type": "fontSize",
+     "source": "css-var --text-sm resolved (raw/css-vars.json)",
+     "description": "The 14px field/meta size. Declared --text-sm."
+    },
+    "label": {
+     "var": "--text-xs",
+     "type": "fontSize",
+     "source": "css-var --text-xs resolved (raw/css-vars.json)",
+     "description": "The 12px chip/label size. Declared --text-xs."
+    },
+    "teaser": {
+     "var": "--text-xl",
+     "type": "fontSize",
+     "source": "css-var --text-xl resolved (raw/css-vars.json)",
+     "description": "The 20px TasteScope teaser. Declared --text-xl."
+    },
+    "lg": {
+     "var": "--text-lg",
+     "type": "fontSize",
+     "source": "css-var --text-lg resolved (raw/css-vars.json)",
+     "description": "The 18px step."
+    },
+    "xl": {
+     "var": "--text-xl",
+     "type": "fontSize",
+     "source": "css-var --text-xl resolved (raw/css-vars.json)",
+     "description": "The 20px step."
+    },
+    "3xl": {
+     "var": "--text-3xl",
+     "type": "fontSize",
+     "source": "css-var --text-3xl resolved (raw/css-vars.json)",
+     "description": "The 30px step."
+    },
+    "4xl": {
+     "var": "--text-4xl",
+     "type": "fontSize",
+     "source": "css-var --text-4xl resolved (raw/css-vars.json)",
+     "description": "The 36px step."
+    },
+    "5xl": {
+     "var": "--text-5xl",
+     "type": "fontSize",
+     "source": "css-var --text-5xl resolved (raw/css-vars.json)",
+     "description": "The 48px step."
+    }
+   }
+  },
+  "color": {
+   "curater": {
+    "background": {
+     "var": "--Curater-background",
+     "type": "color",
+     "source": "css-var --Curater-background resolved (raw/css-vars.json)",
+     "description": "The --Curater-background product-namespace value."
+    },
+    "cyan-light": {
+     "var": "--Curater-cyan-light",
+     "type": "color",
+     "source": "css-var --Curater-cyan-light resolved (raw/css-vars.json)",
+     "description": "The --Curater-cyan-light product-namespace value."
+    },
+    "gray-100": {
+     "var": "--Curater-gray-100",
+     "type": "color",
+     "source": "css-var --Curater-gray-100 resolved (raw/css-vars.json)",
+     "description": "The --Curater-gray-100 product-namespace value."
+    },
+    "gray-200": {
+     "var": "--Curater-gray-200",
+     "type": "color",
+     "source": "css-var --Curater-gray-200 resolved (raw/css-vars.json)",
+     "description": "The --Curater-gray-200 product-namespace value."
+    },
+    "gray-dark": {
+     "var": "--Curater-gray-dark",
+     "type": "color",
+     "source": "css-var --Curater-gray-dark resolved (raw/css-vars.json)",
+     "description": "The --Curater-gray-dark product-namespace value."
+    },
+    "gray-light": {
+     "var": "--Curater-gray-light",
+     "type": "color",
+     "source": "css-var --Curater-gray-light resolved (raw/css-vars.json)",
+     "description": "The --Curater-gray-light product-namespace value."
+    },
+    "gray-medium": {
+     "var": "--Curater-gray-medium",
+     "type": "color",
+     "source": "css-var --Curater-gray-medium resolved (raw/css-vars.json)",
+     "description": "The --Curater-gray-medium product-namespace value."
+    },
+    "gray-muted": {
+     "var": "--Curater-gray-muted",
+     "type": "color",
+     "source": "css-var --Curater-gray-muted resolved (raw/css-vars.json)",
+     "description": "The --Curater-gray-muted product-namespace value."
+    },
+    "green": {
+     "var": "--Curater-green",
+     "type": "color",
+     "source": "css-var --Curater-green resolved (raw/css-vars.json)",
+     "description": "The --Curater-green product-namespace value."
+    },
+    "green-background": {
+     "var": "--Curater-green-background",
+     "type": "color",
+     "source": "css-var --Curater-green-background resolved (raw/css-vars.json)",
+     "description": "The --Curater-green-background product-namespace value."
+    },
+    "green-dark": {
+     "var": "--Curater-green-dark",
+     "type": "color",
+     "source": "css-var --Curater-green-dark resolved (raw/css-vars.json)",
+     "description": "The --Curater-green-dark product-namespace value."
+    },
+    "pink": {
+     "var": "--Curater-pink",
+     "type": "color",
+     "source": "css-var --Curater-pink resolved (raw/css-vars.json)",
+     "description": "The --Curater-pink product-namespace value."
+    },
+    "pink-light": {
+     "var": "--Curater-pink-light",
+     "type": "color",
+     "source": "css-var --Curater-pink-light resolved (raw/css-vars.json)",
+     "description": "The --Curater-pink-light product-namespace value."
+    },
+    "red": {
+     "var": "--Curater-red",
+     "type": "color",
+     "source": "css-var --Curater-red resolved (raw/css-vars.json)",
+     "description": "The --Curater-red product-namespace value."
+    },
+    "red-dark": {
+     "var": "--Curater-red-dark",
+     "type": "color",
+     "source": "css-var --Curater-red-dark resolved (raw/css-vars.json)",
+     "description": "The --Curater-red-dark product-namespace value."
+    },
+    "red-light": {
+     "var": "--Curater-red-light",
+     "type": "color",
+     "source": "css-var --Curater-red-light resolved (raw/css-vars.json)",
+     "description": "The --Curater-red-light product-namespace value."
+    },
+    "yellow": {
+     "var": "--Curater-yellow",
+     "type": "color",
+     "source": "css-var --Curater-yellow resolved (raw/css-vars.json)",
+     "description": "The --Curater-yellow product-namespace value."
+    },
+    "yellow-light": {
+     "var": "--Curater-yellow-light",
+     "type": "color",
+     "source": "css-var --Curater-yellow-light resolved (raw/css-vars.json)",
+     "description": "The --Curater-yellow-light product-namespace value."
+    }
+   },
+   "selection": {
+    "aqua": {
+     "var": "--Curater-selection-aqua",
+     "type": "color",
+     "source": "css-var --Curater-selection-aqua resolved (raw/css-vars.json)",
+     "description": "Tag/curation accent --Curater-selection-aqua — the 9-hue selection palette."
+    },
+    "blue": {
+     "var": "--Curater-selection-blue",
+     "type": "color",
+     "source": "css-var --Curater-selection-blue resolved (raw/css-vars.json)",
+     "description": "Tag/curation accent --Curater-selection-blue — the 9-hue selection palette."
+    },
+    "green": {
+     "var": "--Curater-selection-green",
+     "type": "color",
+     "source": "css-var --Curater-selection-green resolved (raw/css-vars.json)",
+     "description": "Tag/curation accent --Curater-selection-green — the 9-hue selection palette."
+    },
+    "lavender": {
+     "var": "--Curater-selection-lavender",
+     "type": "color",
+     "source": "css-var --Curater-selection-lavender resolved (raw/css-vars.json)",
+     "description": "Tag/curation accent --Curater-selection-lavender — the 9-hue selection palette."
+    },
+    "lightblue": {
+     "var": "--Curater-selection-lightblue",
+     "type": "color",
+     "source": "css-var --Curater-selection-lightblue resolved (raw/css-vars.json)",
+     "description": "Tag/curation accent --Curater-selection-lightblue — the 9-hue selection palette."
+    },
+    "orange": {
+     "var": "--Curater-selection-orange",
+     "type": "color",
+     "source": "css-var --Curater-selection-orange resolved (raw/css-vars.json)",
+     "description": "Tag/curation accent --Curater-selection-orange — the 9-hue selection palette."
+    },
+    "pink": {
+     "var": "--Curater-selection-pink",
+     "type": "color",
+     "source": "css-var --Curater-selection-pink resolved (raw/css-vars.json)",
+     "description": "Tag/curation accent --Curater-selection-pink — the 9-hue selection palette."
+    },
+    "red": {
+     "var": "--Curater-selection-red",
+     "type": "color",
+     "source": "css-var --Curater-selection-red resolved (raw/css-vars.json)",
+     "description": "Tag/curation accent --Curater-selection-red — the 9-hue selection palette."
+    },
+    "yellow": {
+     "var": "--Curater-selection-yellow",
+     "type": "color",
+     "source": "css-var --Curater-selection-yellow resolved (raw/css-vars.json)",
+     "description": "Tag/curation accent --Curater-selection-yellow — the 9-hue selection palette."
+    }
+   },
+   "tailwind": {
+    "amber-500": {
+     "var": "--color-amber-500",
+     "type": "color",
+     "source": "css-var --color-amber-500 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-amber-500."
+    },
+    "amber-600": {
+     "var": "--color-amber-600",
+     "type": "color",
+     "source": "css-var --color-amber-600 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-amber-600."
+    },
+    "amber-950": {
+     "var": "--color-amber-950",
+     "type": "color",
+     "source": "css-var --color-amber-950 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-amber-950."
+    },
+    "black": {
+     "var": "--color-black",
+     "type": "color",
+     "source": "css-var --color-black resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-black."
+    },
+    "blue-200": {
+     "var": "--color-blue-200",
+     "type": "color",
+     "source": "css-var --color-blue-200 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-blue-200."
+    },
+    "blue-50": {
+     "var": "--color-blue-50",
+     "type": "color",
+     "source": "css-var --color-blue-50 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-blue-50."
+    },
+    "blue-600": {
+     "var": "--color-blue-600",
+     "type": "color",
+     "source": "css-var --color-blue-600 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-blue-600."
+    },
+    "blue-700": {
+     "var": "--color-blue-700",
+     "type": "color",
+     "source": "css-var --color-blue-700 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-blue-700."
+    },
+    "emerald-500": {
+     "var": "--color-emerald-500",
+     "type": "color",
+     "source": "css-var --color-emerald-500 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-emerald-500."
+    },
+    "gray-50": {
+     "var": "--color-gray-50",
+     "type": "color",
+     "source": "css-var --color-gray-50 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-gray-50."
+    },
+    "gray-600": {
+     "var": "--color-gray-600",
+     "type": "color",
+     "source": "css-var --color-gray-600 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-gray-600."
+    },
+    "green-100": {
+     "var": "--color-green-100",
+     "type": "color",
+     "source": "css-var --color-green-100 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-green-100."
+    },
+    "green-200": {
+     "var": "--color-green-200",
+     "type": "color",
+     "source": "css-var --color-green-200 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-green-200."
+    },
+    "green-50": {
+     "var": "--color-green-50",
+     "type": "color",
+     "source": "css-var --color-green-50 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-green-50."
+    },
+    "green-500": {
+     "var": "--color-green-500",
+     "type": "color",
+     "source": "css-var --color-green-500 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-green-500."
+    },
+    "green-600": {
+     "var": "--color-green-600",
+     "type": "color",
+     "source": "css-var --color-green-600 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-green-600."
+    },
+    "green-700": {
+     "var": "--color-green-700",
+     "type": "color",
+     "source": "css-var --color-green-700 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-green-700."
+    },
+    "green-800": {
+     "var": "--color-green-800",
+     "type": "color",
+     "source": "css-var --color-green-800 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-green-800."
+    },
+    "neutral-100": {
+     "var": "--color-neutral-100",
+     "type": "color",
+     "source": "css-var --color-neutral-100 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-neutral-100."
+    },
+    "neutral-200": {
+     "var": "--color-neutral-200",
+     "type": "color",
+     "source": "css-var --color-neutral-200 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-neutral-200."
+    },
+    "neutral-400": {
+     "var": "--color-neutral-400",
+     "type": "color",
+     "source": "css-var --color-neutral-400 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-neutral-400."
+    },
+    "neutral-500": {
+     "var": "--color-neutral-500",
+     "type": "color",
+     "source": "css-var --color-neutral-500 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-neutral-500."
+    },
+    "orange-200": {
+     "var": "--color-orange-200",
+     "type": "color",
+     "source": "css-var --color-orange-200 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-orange-200."
+    },
+    "orange-50": {
+     "var": "--color-orange-50",
+     "type": "color",
+     "source": "css-var --color-orange-50 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-orange-50."
+    },
+    "orange-500": {
+     "var": "--color-orange-500",
+     "type": "color",
+     "source": "css-var --color-orange-500 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-orange-500."
+    },
+    "orange-600": {
+     "var": "--color-orange-600",
+     "type": "color",
+     "source": "css-var --color-orange-600 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-orange-600."
+    },
+    "orange-700": {
+     "var": "--color-orange-700",
+     "type": "color",
+     "source": "css-var --color-orange-700 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-orange-700."
+    },
+    "purple-200": {
+     "var": "--color-purple-200",
+     "type": "color",
+     "source": "css-var --color-purple-200 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-purple-200."
+    },
+    "purple-50": {
+     "var": "--color-purple-50",
+     "type": "color",
+     "source": "css-var --color-purple-50 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-purple-50."
+    },
+    "purple-600": {
+     "var": "--color-purple-600",
+     "type": "color",
+     "source": "css-var --color-purple-600 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-purple-600."
+    },
+    "purple-700": {
+     "var": "--color-purple-700",
+     "type": "color",
+     "source": "css-var --color-purple-700 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-purple-700."
+    },
+    "purple-800": {
+     "var": "--color-purple-800",
+     "type": "color",
+     "source": "css-var --color-purple-800 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-purple-800."
+    },
+    "red-50": {
+     "var": "--color-red-50",
+     "type": "color",
+     "source": "css-var --color-red-50 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-red-50."
+    },
+    "red-500": {
+     "var": "--color-red-500",
+     "type": "color",
+     "source": "css-var --color-red-500 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-red-500."
+    },
+    "red-600": {
+     "var": "--color-red-600",
+     "type": "color",
+     "source": "css-var --color-red-600 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-red-600."
+    },
+    "white": {
+     "var": "--color-white",
+     "type": "color",
+     "source": "css-var --color-white resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-white."
+    },
+    "yellow-200": {
+     "var": "--color-yellow-200",
+     "type": "color",
+     "source": "css-var --color-yellow-200 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-yellow-200."
+    },
+    "yellow-50": {
+     "var": "--color-yellow-50",
+     "type": "color",
+     "source": "css-var --color-yellow-50 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-yellow-50."
+    },
+    "yellow-500": {
+     "var": "--color-yellow-500",
+     "type": "color",
+     "source": "css-var --color-yellow-500 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-yellow-500."
+    },
+    "yellow-600": {
+     "var": "--color-yellow-600",
+     "type": "color",
+     "source": "css-var --color-yellow-600 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-yellow-600."
+    },
+    "yellow-700": {
+     "var": "--color-yellow-700",
+     "type": "color",
+     "source": "css-var --color-yellow-700 resolved (raw/css-vars.json)",
+     "description": "Tailwind palette step --color-yellow-700."
+    }
+   },
+   "chart": {
+    "1": {
+     "var": "--chart-1",
+     "type": "color",
+     "source": "css-var --chart-1 resolved (raw/css-vars.json)",
+     "description": "Chart hue --chart-1."
+    },
+    "2": {
+     "var": "--chart-2",
+     "type": "color",
+     "source": "css-var --chart-2 resolved (raw/css-vars.json)",
+     "description": "Chart hue --chart-2."
+    },
+    "3": {
+     "var": "--chart-3",
+     "type": "color",
+     "source": "css-var --chart-3 resolved (raw/css-vars.json)",
+     "description": "Chart hue --chart-3."
+    },
+    "4": {
+     "var": "--chart-4",
+     "type": "color",
+     "source": "css-var --chart-4 resolved (raw/css-vars.json)",
+     "description": "Chart hue --chart-4."
+    },
+    "5": {
+     "var": "--chart-5",
+     "type": "color",
+     "source": "css-var --chart-5 resolved (raw/css-vars.json)",
+     "description": "Chart hue --chart-5."
+    }
+   }
+  },
+  "radius": {
+   "pill": {
+    "value": "9999px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of signin-btn default (raw/components-computed.json)",
+    "description": "The 9999px pill (CTAs, chips, nav icons, item menu)."
+   },
+   "card": {
+    "value": "24px",
+    "type": "dimension",
+    "source": "computed borderTopLeftRadius of trend-card default (raw/components-computed.json)",
+    "description": "The 24px trend-card radius (declared --radius-2xl is 20px; the card computes 24px)."
+   },
+   "lg": {
+    "var": "--radius-lg",
+    "type": "dimension",
+    "source": "css-var --radius-lg resolved (raw/css-vars.json)",
+    "description": "The declared 12px radius."
+   },
+   "md": {
+    "var": "--radius-md",
+    "type": "dimension",
+    "source": "css-var --radius-md resolved (raw/css-vars.json)",
+    "description": "The declared 8px radius."
+   },
+   "sm": {
+    "var": "--radius-sm",
+    "type": "dimension",
+    "source": "css-var --radius-sm resolved (raw/css-vars.json)",
+    "description": "The declared 6px radius."
+   },
+   "base": {
+    "var": "--radius",
+    "type": "dimension",
+    "source": "css-var --radius resolved (raw/css-vars.json)",
+    "description": "The declared 10px base radius."
+   },
+   "xl": {
+    "var": "--radius-xl",
+    "type": "dimension",
+    "source": "css-var --radius-xl resolved (raw/css-vars.json)",
+    "description": "The declared 16px radius."
+   }
+  },
+  "shadow": {
+   "sm": {
+    "value": "rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+    "type": "other",
+    "source": "css-var --shadow-sm resolved (raw/css-vars.json)",
+    "description": "The 1px/2px 5% card shadow on pills."
+   },
+   "md": {
+    "value": "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px",
+    "type": "other",
+    "source": "css-var --shadow-md resolved (raw/css-vars.json)",
+    "description": "The 4px/6px 10% shadow."
+   },
+   "xl": {
+    "value": "rgba(0, 0, 0, 0.04) 0px 2px 4px -1px, rgba(0, 0, 0, 0.12) 0px 12px 32px -4px",
+    "type": "other",
+    "source": "css-var --shadow-xl resolved (raw/css-vars.json)",
+    "description": "The paired 2px/4px + wide shadow."
+   },
+   "card-lift": {
+    "value": "rgba(0, 0, 0, 0.02) 0px 14px 54px 0px",
+    "type": "other",
+    "source": "computed boxShadow of trend-card default (raw/components-computed.json)",
+    "description": "The trend card's soft lift: rgba(0,0,0,0.02) 0 14px 54px."
+   }
+  },
+  "spacing": {
+   "1": {
+    "var": "--space-1",
+    "type": "dimension",
+    "source": "css-var --space-1 resolved (raw/css-vars.json)",
+    "description": "The --space-1 step (4px base)."
+   },
+   "10": {
+    "var": "--space-10",
+    "type": "dimension",
+    "source": "css-var --space-10 resolved (raw/css-vars.json)",
+    "description": "The --space-10 step (4px base)."
+   },
+   "12": {
+    "var": "--space-12",
+    "type": "dimension",
+    "source": "css-var --space-12 resolved (raw/css-vars.json)",
+    "description": "The --space-12 step (4px base)."
+   },
+   "2": {
+    "var": "--space-2",
+    "type": "dimension",
+    "source": "css-var --space-2 resolved (raw/css-vars.json)",
+    "description": "The --space-2 step (4px base)."
+   },
+   "3": {
+    "var": "--space-3",
+    "type": "dimension",
+    "source": "css-var --space-3 resolved (raw/css-vars.json)",
+    "description": "The --space-3 step (4px base)."
+   },
+   "4": {
+    "var": "--space-4",
+    "type": "dimension",
+    "source": "css-var --space-4 resolved (raw/css-vars.json)",
+    "description": "The --space-4 step (4px base)."
+   },
+   "5": {
+    "var": "--space-5",
+    "type": "dimension",
+    "source": "css-var --space-5 resolved (raw/css-vars.json)",
+    "description": "The --space-5 step (4px base)."
+   },
+   "6": {
+    "var": "--space-6",
+    "type": "dimension",
+    "source": "css-var --space-6 resolved (raw/css-vars.json)",
+    "description": "The --space-6 step (4px base)."
+   },
+   "8": {
+    "var": "--space-8",
+    "type": "dimension",
+    "source": "css-var --space-8 resolved (raw/css-vars.json)",
+    "description": "The --space-8 step (4px base)."
+   },
+   "unit": {
+    "var": "--spacing",
+    "type": "dimension",
+    "source": "css-var --spacing resolved (raw/css-vars.json)",
+    "description": "The 4px spacing unit."
+   },
+   "curation-detail": {
+    "var": "--spacing-curation-detail",
+    "type": "dimension",
+    "source": "css-var --spacing-curation-detail resolved (raw/css-vars.json)",
+    "description": "The 56px detail-pane spacing."
+   },
+   "header-h": {
+    "var": "--header-height",
+    "type": "dimension",
+    "source": "css-var --header-height resolved (raw/css-vars.json)",
+    "description": "The 56px header."
+   },
+   "mobile-bar-h": {
+    "var": "--mobile-bar-height",
+    "type": "dimension",
+    "source": "css-var --mobile-bar-height resolved (raw/css-vars.json)",
+    "description": "The 56px mobile bar."
+   },
+   "sidebar-w": {
+    "var": "--sidebar-width",
+    "type": "dimension",
+    "source": "css-var --sidebar-width resolved (raw/css-vars.json)",
+    "description": "The 80px sidebar."
+   },
+   "content-w": {
+    "var": "--centered-content-width",
+    "type": "dimension",
+    "source": "css-var --centered-content-width resolved (raw/css-vars.json)",
+    "description": "The 480px centred column."
+   }
+  },
+  "motion": {
+   "fast": {
+    "var": "--transition-fast",
+    "type": "other",
+    "source": "css-var --transition-fast resolved (raw/css-vars.json)",
+    "description": ".15s expo-out."
+   },
+   "normal": {
+    "var": "--transition-normal",
+    "type": "other",
+    "source": "css-var --transition-normal resolved (raw/css-vars.json)",
+    "description": ".2s expo-out."
+   },
+   "slow": {
+    "var": "--transition-slow",
+    "type": "other",
+    "source": "css-var --transition-slow resolved (raw/css-vars.json)",
+    "description": ".3s expo-out."
+   },
+   "slower": {
+    "var": "--transition-slower",
+    "type": "other",
+    "source": "css-var --transition-slower resolved (raw/css-vars.json)",
+    "description": ".5s expo-out."
+   },
+   "ease-expo": {
+    "var": "--ease-out-expo",
+    "type": "other",
+    "source": "css-var --ease-out-expo resolved (raw/css-vars.json)",
+    "description": "cubic-bezier(.19,1,.22,1)."
+   },
+   "default-duration": {
+    "var": "--default-transition-duration",
+    "type": "other",
+    "source": "css-var --default-transition-duration resolved (raw/css-vars.json)",
+    "description": "The 0.15s Tailwind default."
+   },
+   "default-easing": {
+    "var": "--default-transition-timing-function",
+    "type": "other",
+    "source": "css-var --default-transition-timing-function resolved (raw/css-vars.json)",
+    "description": "The default easing."
+   }
+  },
+  "layout": {
+   "dropdown": {
+    "var": "--z-dropdown",
+    "type": "other",
+    "source": "css-var --z-dropdown resolved (raw/css-vars.json)",
+    "description": "Z-index layer --z-dropdown."
+   },
+   "fixed": {
+    "var": "--z-fixed",
+    "type": "other",
+    "source": "css-var --z-fixed resolved (raw/css-vars.json)",
+    "description": "Z-index layer --z-fixed."
+   },
+   "modal": {
+    "var": "--z-modal",
+    "type": "other",
+    "source": "css-var --z-modal resolved (raw/css-vars.json)",
+    "description": "Z-index layer --z-modal."
+   },
+   "overlay": {
+    "var": "--z-overlay",
+    "type": "other",
+    "source": "css-var --z-overlay resolved (raw/css-vars.json)",
+    "description": "Z-index layer --z-overlay."
+   },
+   "popover": {
+    "var": "--z-popover",
+    "type": "other",
+    "source": "css-var --z-popover resolved (raw/css-vars.json)",
+    "description": "Z-index layer --z-popover."
+   },
+   "sidebar": {
+    "var": "--z-sidebar",
+    "type": "other",
+    "source": "css-var --z-sidebar resolved (raw/css-vars.json)",
+    "description": "Z-index layer --z-sidebar."
+   },
+   "sticky": {
+    "var": "--z-sticky",
+    "type": "other",
+    "source": "css-var --z-sticky resolved (raw/css-vars.json)",
+    "description": "Z-index layer --z-sticky."
+   },
+   "tooltip": {
+    "var": "--z-tooltip",
+    "type": "other",
+    "source": "css-var --z-tooltip resolved (raw/css-vars.json)",
+    "description": "Z-index layer --z-tooltip."
+   }
+  }
+ },
+ "light": {
+  "color": {
+   "background": {
+    "page": {
+     "var": "--background",
+     "type": "color",
+     "source": "css-var --background resolved (raw/css-vars.json)",
+     "description": "The #ffffff app page fill."
+    },
+    "surface": {
+     "var": "--card",
+     "type": "color",
+     "source": "css-var --card resolved (raw/css-vars.json)",
+     "description": "The #ffffff card surface."
+    },
+    "app-field": {
+     "var": "--Curater-background",
+     "type": "color",
+     "source": "css-var --Curater-background resolved (raw/css-vars.json)",
+     "description": "The #f2f2f2 field — active/hover fills and the app backdrop."
+    },
+    "muted-fill": {
+     "var": "--muted",
+     "type": "color",
+     "source": "css-var --muted resolved (raw/css-vars.json)",
+     "description": "The #f4f4f5 muted fill."
+    },
+    "accent-fill": {
+     "var": "--accent",
+     "type": "color",
+     "source": "css-var --accent resolved (raw/css-vars.json)",
+     "description": "The #f4f4f5 accent fill."
+    },
+    "popover": {
+     "var": "--popover",
+     "type": "color",
+     "source": "css-var --popover resolved (raw/css-vars.json)",
+     "description": "The #ffffff popover surface."
+    },
+    "sidebar": {
+     "var": "--sidebar",
+     "type": "color",
+     "source": "css-var --sidebar resolved (raw/css-vars.json)",
+     "description": "The #fafafa sidebar surface."
+    },
+    "hover-fill": {
+     "value": "{color.curater.background}",
+     "type": "color",
+     "source": "computed backgroundColor of signin-btn hover equals {color.curater.background} (raw/components-computed.json + raw/css-vars.json)",
+     "description": "The #f2f2f2 hover/active fill — Curater background."
+    }
+   },
+   "text": {
+    "text": {
+     "var": "--foreground",
+     "type": "color",
+     "source": "css-var --foreground resolved (raw/css-vars.json)",
+     "description": "The #09090b ink."
+    },
+    "text-strong": {
+     "var": "--primary",
+     "type": "color",
+     "source": "css-var --primary resolved (raw/css-vars.json)",
+     "description": "The #18181b primary ink."
+    },
+    "muted": {
+     "var": "--muted-foreground",
+     "type": "color",
+     "source": "css-var --muted-foreground resolved (raw/css-vars.json)",
+     "description": "The #71717b muted text (nav icons at rest, meta)."
+    },
+    "accent-text": {
+     "var": "--accent-foreground",
+     "type": "color",
+     "source": "css-var --accent-foreground resolved (raw/css-vars.json)",
+     "description": "The #18181b text on accent."
+    },
+    "popover-text": {
+     "var": "--popover-foreground",
+     "type": "color",
+     "source": "css-var --popover-foreground resolved (raw/css-vars.json)",
+     "description": "The #09090b popover ink."
+    },
+    "on-primary": {
+     "var": "--primary-foreground",
+     "type": "color",
+     "source": "css-var --primary-foreground resolved (raw/css-vars.json)",
+     "description": "The #fafafa text on primary."
+    },
+    "secondary-text": {
+     "value": "{color.curater.gray-medium}",
+     "type": "color",
+     "source": "computed color of login-btn default equals {color.curater.gray-medium} (raw/components-computed.json + raw/css-vars.json)",
+     "description": "The #7c7c7c 'Log in or sign up' label — Curater gray-medium."
+    },
+    "label": {
+     "value": "{color.curater.gray-light}",
+     "type": "color",
+     "source": "computed color of curated-label default equals {color.curater.gray-light} (raw/components-computed.json + raw/css-vars.json)",
+     "description": "The #afafaf 'Curated by' micro-label — Curater gray-light."
+    }
+   },
+   "border": {
+    "border": {
+     "var": "--border",
+     "type": "color",
+     "source": "css-var --border resolved (raw/css-vars.json)",
+     "description": "The #eeeef1 hairline."
+    },
+    "input": {
+     "var": "--input",
+     "type": "color",
+     "source": "css-var --input resolved (raw/css-vars.json)",
+     "description": "The #e4e4e7 input hairline."
+    },
+    "ring": {
+     "var": "--ring",
+     "type": "color",
+     "source": "css-var --ring resolved (raw/css-vars.json)",
+     "description": "The #d4d4d8 focus ring."
+    },
+    "sidebar-border": {
+     "var": "--sidebar-border",
+     "type": "color",
+     "source": "css-var --sidebar-border resolved (raw/css-vars.json)",
+     "description": "The #e4e4e7 sidebar hairline."
+    }
+   },
+   "action": {
+    "destructive": {
+     "var": "--destructive",
+     "type": "color",
+     "source": "css-var --destructive resolved (raw/css-vars.json)",
+     "description": "The #e7000b destructive."
+    }
+   }
+  }
+ },
+ "dark": {},
+ "component": {
+  "nav-rail-height": {
+   "value": 328,
+   "type": "dimension",
+   "source": "computed h of nav-rail default (raw/components-computed.json)",
+   "description": "The 328px desktop nav rail."
+  },
+  "nav-button": {
+   "value": 48,
+   "type": "dimension",
+   "source": "computed h of nav-button default (raw/components-computed.json)",
+   "description": "The 48px round nav button."
+  },
+  "nav-active-fill": {
+   "value": "#f2f2f2",
+   "type": "color",
+   "source": "computed bg of nav-button-active default (raw/components-computed.json)",
+   "description": "The #f2f2f2 active nav fill."
+  },
+  "signin-height": {
+   "value": 58,
+   "type": "dimension",
+   "source": "computed h of signin-btn default (raw/components-computed.json)",
+   "description": "The 58px sign-in pill."
+  },
+  "signin-width": {
+   "value": 259.45,
+   "type": "dimension",
+   "source": "computed w of signin-btn default (raw/components-computed.json)",
+   "description": "The ~259px sign-in pill width."
+  },
+  "signin-fill": {
+   "value": "#ffffff",
+   "type": "color",
+   "source": "computed bg of signin-btn default (raw/components-computed.json); computed as oklch(1 0 0), written as sRGB",
+   "description": "The white pill fill."
+  },
+  "save-height": {
+   "value": 28,
+   "type": "dimension",
+   "source": "computed h of save-btn default (raw/components-computed.json)",
+   "description": "The 28px Save chip."
+  },
+  "search-width": {
+   "value": 170,
+   "type": "dimension",
+   "source": "computed w of search-field default (raw/components-computed.json)",
+   "description": "The 170px revealed search field."
+  },
+  "tab-height": {
+   "value": 40,
+   "type": "dimension",
+   "source": "computed h of tab-button default (raw/components-computed.json)",
+   "description": "The 40px feed tab."
+  },
+  "theme-card": {
+   "value": 271,
+   "type": "dimension",
+   "source": "computed h of theme-card default (raw/components-computed.json)",
+   "description": "The 271px theme tile."
+  },
+  "trend-card": {
+   "value": 492.39,
+   "type": "dimension",
+   "source": "computed h of trend-card default (raw/components-computed.json)",
+   "description": "The ~492px trend card."
+  },
+  "trend-card-radius": {
+   "value": "24px",
+   "type": "dimension",
+   "source": "computed borderTopLeftRadius of trend-card default (raw/components-computed.json)",
+   "description": "The 24px trend-card radius."
+  },
+  "sso-width": {
+   "value": 350,
+   "type": "dimension",
+   "source": "computed w of sso-btn default (raw/components-computed.json)",
+   "description": "The 350px Google SSO button."
+  },
+  "back-button": {
+   "value": 36,
+   "type": "dimension",
+   "source": "computed h of back-btn default (raw/components-computed.json)",
+   "description": "The 36px back control."
+  },
+  "options-button": {
+   "value": 32,
+   "type": "dimension",
+   "source": "computed h of options-btn default (raw/components-computed.json)",
+   "description": "The 32px options control."
+  },
+  "tastescope-height": {
+   "value": 42,
+   "type": "dimension",
+   "source": "computed h of tastescope-btn default (raw/components-computed.json)",
+   "description": "The ~42px TasteScope header button."
+  },
+  "profile-item": {
+   "value": 380.27,
+   "type": "dimension",
+   "source": "computed h of profile-item default (raw/components-computed.json)",
+   "description": "The ~380px profile item tile."
+  },
+  "item-menu": {
+   "value": 28,
+   "type": "dimension",
+   "source": "computed h of item-menu default (raw/components-computed.json)",
+   "description": "The 28px item menu button."
+  },
+  "m-nav-bar": {
+   "value": 40,
+   "type": "dimension",
+   "source": "computed h of m-nav-rail default (raw/components-computed.json)",
+   "description": "The 40px mobile nav bar."
+  },
+  "m-nav-button": {
+   "value": 40,
+   "type": "dimension",
+   "source": "computed h of m-nav-button default (raw/components-computed.json)",
+   "description": "The 40px mobile nav button."
+  },
+  "taste-panel": {
+   "value": 256,
+   "type": "dimension",
+   "source": "computed w of taste-desc default (raw/components-computed.json)",
+   "description": "The 256px TasteScope teaser column."
+  },
+  "taste-canvas": {
+   "value": 1360,
+   "type": "dimension",
+   "source": "computed w of taste-canvas default (raw/components-computed.json)",
+   "description": "The 1360px BrandGlobe canvas."
+  },
+  "state-track": {
+   "button-state-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "oklch(1 0 0)",
+      "color": "oklch(0.141 0.005 285.823)",
+      "transform": "none"
+     },
+     "hover": {
+      "backgroundColor": "rgb(242, 242, 242)",
+      "color": "oklch(0.21 0.006 285.885)",
+      "transform": "none"
+     },
+     "pressed": {
+      "backgroundColor": "rgb(242, 242, 242)",
+      "color": "oklch(0.21 0.006 285.885)",
+      "transform": "matrix(1, 0, 0, 1, 0, 2)"
+     }
+    },
+    "source": "computed styles of signin-btn default/hover/pressed (raw/components-computed.json)",
+    "description": "Sign-in pill: white at rest, #f2f2f2 on hover, sinks 2px (translateY) when pressed; 2px #d4d4d8 focus ring."
+   },
+   "icon-state-track": {
+    "type": "other",
+    "value": {
+     "default": {
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "color": "oklch(0.552 0.016 285.938)",
+      "transform": "none"
+     },
+     "hover": {
+      "backgroundColor": "oklch(0.967 0.001 286.375)",
+      "color": "oklch(0.141 0.005 285.823)",
+      "transform": "none"
+     },
+     "pressed": {
+      "backgroundColor": "oklch(0.967 0.001 286.375)",
+      "color": "oklch(0.141 0.005 285.823)",
+      "transform": "none"
+     }
+    },
+    "source": "computed styles of nav-button default/hover/pressed (raw/components-computed.json)",
+    "description": "Nav icon: transparent at rest, #f4f4f5 fill + ink on hover/pressed; the active page's icon keeps the #f2f2f2 fill."
+   }
+  },
+  "focus-ring": {
+   "value": "2px solid oklch(0.871 0.006 286.286) offset 2px",
+   "type": "other",
+   "source": "computed outline of save-btn focus-visible (raw/components-computed.json)",
+   "description": "2px solid #d4d4d8 (--ring), 2px offset — identical on every measured control."
+  }
+ }
+}

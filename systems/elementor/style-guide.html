@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elementor style guide</title>
+<meta name="description" content="Elementor design tokens and the public signed-out surface's components, rendered from tokens.json with the declared CSS custom properties and the measured computed styles.">
+<style>
+:root {
+  --palette-kernel-black: #000000;
+  --palette-blank-canvas-white: #ffffff;
+  --palette-transparent: rgba(0, 0, 0, 0);
+  --palette-grey-200: #f6f6f6;
+  --palette-grey-300: #ebebeb;
+  --palette-grey-400: #d5dadf;
+  --palette-grey-500: #d1d1d1;
+  --palette-grey-600: #b5b5b5;
+  --palette-grey-700: #484848;
+  --palette-grey-800: #212121;
+  --palette-neon-loop: #ed01ee;
+  --palette-pink-200: #ff7be5;
+  --palette-pink-200-hover: #ffa8ee;
+  --palette-pixel-blush: #f2adf3;
+  --palette-syntax-glow: #fae4fa;
+  --palette-startup-lime: #d5ff45;
+  --palette-seedling-spark: #82f545;
+  --palette-vision-violet: #9800ff;
+  --palette-founder-forest: #00452e;
+  --palette-codeberry: #620856;
+  --palette-deep-burgundy: #290027;
+  --palette-blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);
+  --palette-electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);
+  --palette-luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);
+  --globalColor-primary: #000000;
+  --globalColor-secondary: #54595F;
+  --globalColor-text: #7A7A7A;
+  --globalColor-accent: #61CE70;
+  --fontFamily-roobert: 'Roobert', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --fontFamily-roboto: Roboto, sans-serif;
+  --typeScale-display: 88px;
+  --typeScale-section: 24px;
+  --typeScale-planPrice: 40px;
+  --typeScale-body: 16px;
+  --typeScale-small: 14px;
+  --spacePrimitive-104: 104px;
+  --spacePrimitive-112: 112px;
+  --spacePrimitive-12: 12px;
+  --spacePrimitive-120: 120px;
+  --spacePrimitive-128: 128px;
+  --spacePrimitive-144: 144px;
+  --spacePrimitive-16: 16px;
+  --spacePrimitive-160: 160px;
+  --spacePrimitive-20: 20px;
+  --spacePrimitive-24: 24px;
+  --spacePrimitive-32: 32px;
+  --spacePrimitive-40: 40px;
+  --spacePrimitive-48: 48px;
+  --spacePrimitive-56: 56px;
+  --spacePrimitive-64: 64px;
+  --spacePrimitive-72: 72px;
+  --spacePrimitive-8: 8px;
+  --spacePrimitive-80: 80px;
+  --spacePrimitive-88: 88px;
+  --spacePrimitive-96: 96px;
+  --spaceScale-lg100: 96px;
+  --spaceScale-lg200: 112px;
+  --spaceScale-lg300: 144px;
+  --spaceScale-lg400: 160px;
+  --spaceScale-md100: 48px;
+  --spaceScale-md200: 56px;
+  --spaceScale-md300: 64px;
+  --spaceScale-md400: 88px;
+  --spaceScale-sm100: 12px;
+  --spaceScale-sm200: 16px;
+  --spaceScale-sm300: 24px;
+  --spaceScale-sm400: 32px;
+  --spaceScale-sm500: 40px;
+  --radius-field: 4px;
+  --radius-control: 8px;
+  --radius-card: 16px;
+  --radius-planCard: 8px;
+  --radius-pill: 24px;
+  --shadow-header: rgba(0, 0, 0, 0.05) 0px 0px 15.008px 3.008px;
+  --motion-button: 0.2s ease;
+  --motion-link: 0.3s ease-in-out;
+  --motion-panel: 0.5s ease;
+  --component-headerHeight: 72px;
+  --component-buttonHeight: 48px;
+  --component-heroButtonHeight: 48px;
+  --component-fieldHeight: 40.4062px;
+  --component-fieldBorder: 1px solid #d1d1d1;
+  --component-planCtaBorder: 2px solid #000000;
+  --component-checkboxSize: 16px;
+  --page: var(--palette-blank-canvas-white);
+  --surface: var(--palette-grey-200);
+  --surfaceRaised: var(--palette-blank-canvas-white);
+  --text: var(--palette-kernel-black);
+  --textStrong: var(--palette-grey-800);
+  --textMuted: #7a7a7a;
+  --iconMuted: #69727d;
+  --border: var(--palette-grey-500);
+  --borderStrong: var(--palette-kernel-black);
+  --accent: var(--palette-kernel-black);
+  --accentOn: var(--palette-blank-canvas-white);
+  --accentHover: var(--palette-neon-loop);
+  --tintHover: var(--palette-syntax-glow);
+  --focusRing: #005fcc;
+  --focusRingWidth: 2px;
+  --link: #0000ee;
+  --menuPanel: var(--palette-blank-canvas-white);
+  --fieldSurface: var(--palette-blank-canvas-white);
+  --overlayScrim: rgba(0, 0, 0, 0.4);
+  --sg-sans: "Roobert", ui-sans-serif, system-ui, "Helvetica Neue", Arial, sans-serif;
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+  --page: var(--palette-kernel-black);
+  --surface: var(--palette-kernel-black);
+  --text: var(--palette-blank-canvas-white);
+  --textMuted: var(--palette-grey-200);
+  --accent: var(--palette-blank-canvas-white);
+  --accentOn: var(--palette-kernel-black);
+  --border: var(--palette-grey-700);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--text, var(--palette-kernel-black, #000)); background: var(--page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 600 40px/1.2 var(--sg-sans); margin: 0 0 4px; letter-spacing: -0.02em; }
+h2.sh { font: 500 12px/1 var(--sg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text, #000); opacity: .65; margin: 56px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--border, #d1d1d1); }
+.lead { max-width: 62ch; color: var(--text, #000); opacity: .8; }
+.note { font-size: 13px; color: var(--text, #000); opacity: .65; max-width: 62ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 500 11px/1 var(--sg-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--text, #000); opacity: .6; margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.pal.dark { background: #000; padding: 12px; border-radius: 12px; }
+.pal.dark .nm, .pal.dark .vl { color: #fff; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 168px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border, #d1d1d1); display: inline-flex; flex: 0 0 auto; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--text, #000); opacity: .65; }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv b { font-weight: 500; }
+.kv span { color: var(--text, #000); opacity: .65; }
+/* ---- mocks ---- */
+.mock { border: 1px solid var(--border, #d1d1d1); overflow: hidden; background: var(--page, #fff); }
+.hdr { display: flex; align-items: center; gap: 18px; height: var(--component-headerHeight, 72px); padding: 0 12px 0 20px; margin: 18px; background: #fff; border-radius: var(--radius-pill, 24px); box-shadow: var(--shadow-header); font-size: 16px; color: var(--palette-grey-800, #212121); }
+.hdr .wm { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; color: #000; }
+.hdr .nl { padding: 8.96px 16px; border-radius: var(--radius-control, 8px); }
+.hdr .nl:hover { background: var(--tintHover, #fae4fa); }
+.hdr .sp { flex: 1; }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-buttonHeight, 48px); padding: 0 24px; font: 500 18px/1 var(--sg-sans); letter-spacing: -0.36px; border-radius: var(--radius-control, 8px); border: none; color: #fff; background: var(--accent, #000); transition: background-color 0.2s ease; }
+.btn:hover { background: var(--accentHover, #ed01ee); }
+.btn.outline { background: transparent; color: #000; box-shadow: inset 0 0 0 2px var(--borderStrong, #000); height: 56px; }
+.btn.outline:hover { background: var(--accentHover, #ed01ee); color: #fff; box-shadow: inset 0 0 0 2px var(--accentHover, #ed01ee); }
+.dark-isl { background: var(--palette-kernel-black, #000); color: #fff; padding: 72px 40px 80px; }
+.dark-isl .hero { font: 600 56px/1.1 var(--sg-sans); letter-spacing: -0.88px; color: #fff; }
+.dark-isl .lede { font: 400 20px/28px var(--sg-sans); color: var(--palette-grey-200, #f6f6f6); margin: 16px 0 22px; max-width: 46ch; }
+.dark-isl .btn { background: #fff; color: #000; }
+.dark-isl .btn:hover { background: var(--accentHover, #ed01ee); color: #fff; }
+.mega { display: grid; grid-template-columns: 1fr 343px; gap: 12px; margin: 18px; padding: 24px; background: #fff; border-radius: var(--radius-pill, 24px); box-shadow: var(--shadow-header); }
+.mega .col a { display: block; padding: 16px; border-radius: var(--radius-control, 8px); font: 600 14px/22.4px var(--sg-sans); color: #000; text-decoration: none; }
+.mega .col a:hover { background: var(--tintHover, #fae4fa); }
+.mega .feat { border-radius: var(--radius-control, 8px); background: linear-gradient(297deg, #620856 9.99%, #1b0317 60.15%); color: #fff; padding: 40px 24px; font: 400 14px/22.4px var(--sg-sans); letter-spacing: .7px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.plan { border: 1px solid var(--border, #d1d1d1); border-radius: var(--radius-planCard, 8px); padding: 24px; background: #fff; }
+.plan .nm { font: 600 20px/32px var(--sg-sans); }
+.plan .price { font: 600 40px/40px var(--sg-sans); margin: 12px 0 4px; }
+.plan .per { font: 400 14px/1.4 var(--sg-sans); color: #000; opacity: .7; }
+.plan .btn { width: 100%; margin-top: 16px; }
+.twrap { display: inline-flex; background: var(--palette-grey-300, #ebebeb); border-radius: var(--radius-control, 8px); padding: 4px; gap: 4px; font: 700 16px/34px var(--sg-sans); }
+.twrap span { padding: 0 22px; border-radius: var(--radius-control, 8px); color: var(--palette-grey-800, #212121); }
+.twrap .on { background: #fff; }
+.frow { display: flex; gap: 10px; align-items: baseline; padding: 6px 0; font: 400 14px/19.6px var(--sg-sans); color: var(--palette-grey-800, #212121); }
+.frow::before { content: "\2713"; font-weight: 700; }
+.field { display: block; width: 100%; height: 40.4px; padding: 8px; margin: 8px 0; border: var(--component-fieldBorder, 1px solid #d1d1d1); border-radius: var(--radius-field, 4px); font: 400 16px/22.4px var(--sg-sans); background: #fff; color: #000; }
+.field:focus { border-color: #000; box-shadow: 0 0 6px 0 #e2e2e2; outline: none; }
+textarea.field { height: 107.6px; }
+.ck { display: flex; align-items: center; gap: 8px; font: 400 14px/22.4px var(--sg-sans); margin: 12px 0; }
+.ck i { width: var(--component-checkboxSize, 16px); height: var(--component-checkboxSize, 16px); border: 1px solid var(--border, #d1d1d1); display: inline-block; background: #fff; }
+.faq-row { display: flex; justify-content: space-between; align-items: center; padding: 20px 80px 20px 0; border-bottom: 1px solid var(--border, #d1d1d1); font: 700 20px/28px var(--sg-sans); color: var(--palette-grey-800, #212121); }
+.faq-row .x { font-weight: 400; font-size: 24px; }
+.ftr { background: #000; color: #fff; padding: 48px 96px; display: flex; flex-wrap: wrap; gap: 48px; }
+.ftr .col { min-width: 140px; }
+.ftr b { display: block; font: 700 14px/19.6px var(--sg-sans); color: #fff; margin-bottom: 12px; }
+.ftr a { display: block; font: 400 14px/19.6px var(--sg-sans); color: var(--palette-grey-200, #f6f6f6); text-decoration: none; padding: 4px 0; }
+.ftr a:hover { text-decoration: underline; }
+.cmp { border-collapse: collapse; font-size: 14px; }
+.cmp td, .cmp th { border: 1px solid var(--border, #d1d1d1); padding: 6px 14px; text-align: left; }
+.tr { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 8px 0; border-bottom: 1px solid var(--border, #d1d1d1); }
+.tr .tv { font-size: 12px; color: var(--text, #000); opacity: .65; font-family: var(--sg-mono); }
+.focus-demo { outline: 2px auto var(--focusRing, #005fcc); outline-offset: 2px; }
+/* Phone layout: the mocks are reconstructions, so on a narrow screen they
+   stack and wrap rather than clip inside .mock's hidden overflow. */
+@media (max-width: 720px) {
+  main { padding: 24px 14px 72px; }
+  .hdr { flex-wrap: wrap; height: auto; padding: 12px 16px; row-gap: 8px; }
+  .mega { grid-template-columns: 1fr; padding: 16px; margin: 12px; }
+  .form-mock { grid-template-columns: 1fr !important; }
+  .ftr { padding: 32px 24px; gap: 24px; }
+  .faq-row { padding-right: 16px; }
+  .dark-isl { padding: 48px 20px 56px; }
+  .dark-isl .hero { font-size: 36px; }
+  .twrap { font-size: 14px; }
+}
+</style>
+</head>
+<body>
+<main>
+  <h1>Elementor style guide</h1>
+  <p class="note">Generated from <code>tokens.json</code>; every swatch, radius and shadow below is a token, not a restated number. The boxed page mocks are reconstructions drawn with those tokens, not captured pixels.</p>
+
+  <h2 class="sh">Elementor, measured</h2>
+  <p class="lead">Every value on this page is a CSS custom property generated from <code>tokens.json</code>: the <code>--Kernel-Black</code>/<code>--Blank-Canvas-White</code> pair the whole site is typed in, the grey ramp, the Neon-Loop magenta every primary action rebounds to on hover, the Syntax-Glow tint behind hovered menu items, the three marketing gradients, the declared <code>--e-global-color-*</code> set, Roobert's scale, and the 4/8/16/24 radius ladder. The real pixels are in <code>screenshots/</code> and <code>components/crops/</code>.</p>
+  <p class="note">Read from elementor.com on 2026-11-13, signed out, in headless Chromium at 1440x900 and 390x844. The editor, the my.elementor.com dashboard, checkout and account creation are documented boundaries, not captured. Roobert is a self-hosted licensed face and is not loaded here: samples fall back to system sans.</p>
+
+  <h2 class="sh">The chrome</h2>
+  <p class="lead">The header floats as a white 24px-radius pill, 72px tall on desktop (64px at 390 wide), carrying the wordmark, the Products mega-menu trigger, Agency/Enterprise/Pricing/App-Builder links, a language selector, Log in, and the black 48px Get-started action. Triggers and menu items tint Syntax-Glow on hover; every primary fill rebounds to Neon-Loop.</p>
+  <div class="mock">
+    <div class="hdr"><span class="wm">elementor</span><span class="nl">Products</span><span class="nl">Agency</span><span class="nl">Enterprise</span><span class="nl">Pricing</span><span class="sp"></span><span>En</span><span class="nl">Log in</span><span class="btn">Get started</span></div>
+  </div>
+
+  <h2 class="sh">The dark islands</h2>
+  <p class="lead">One light page paints <code>.dark-mode</code> islands: the photo hero, the dark card sections and the footer. Under that class the same named vars re-bind - Kernel-Black to #fff, Blank-Canvas-White to #000 - so the hero headline reads white and the inverted Get-started pill paints Blank-Canvas-White.</p>
+  <div class="mock dark-isl">
+    <div class="hero">Build sites that move the web forward</div>
+    <div class="lede">The website builder for WordPress, measured signed out.</div>
+    <span class="btn">Get started</span>
+  </div>
+
+  <h2 class="sh">The mega-menu</h2>
+  <p class="lead">The Products trigger opens a full-width white panel under the same 24px radius and header shadow: product link columns whose rows tint Syntax-Glow on hover, and a featured tile painting the Codeberry gradient.</p>
+  <div class="mock">
+    <div class="mega">
+      <div class="col"><a href="#">Website Builder</a><a href="#">AI Site Planner</a><a href="#">Image Optimizer</a><a href="#">Hosting</a></div>
+      <div class="feat">Agent Ready Scanner<br>Scan your site for AI-agent readiness.</div>
+    </div>
+  </div>
+
+  <h2 class="sh">Pricing</h2>
+  <p class="lead">/pricing puts a grey-well variant toggle above white plan cards: an 8px-radius tile with a 1px Grey-500 border, a 20px/600 plan name, a 40px/600 price and a 56px Buy-now drawn as a 2px black outline that fills Neon-Loop on hover. Feature rows carry a drawn check.</p>
+  <div class="mock" style="padding:20px">
+    <div style="text-align:center;margin-bottom:18px"><span class="twrap"><span class="on">Essential</span><span>Advanced Solo</span><span>Advanced</span></span></div>
+    <div class="grid">
+      <div class="plan"><div class="nm">Essential</div><div class="price">$4.99</div><div class="per">/month billed yearly</div><span class="btn outline">Buy now</span></div>
+      <div class="plan"><div class="nm">Advanced Solo</div><div class="price">$6.99</div><div class="per">/month billed yearly</div>
+        <div class="frow">1 site</div><div class="frow">25K visits</div><div class="frow">10GB storage</div>
+        <span class="btn outline">Buy now</span></div>
+      <div class="plan"><div class="nm">Advanced</div><div class="price">$9.99</div><div class="per">/month billed yearly</div><span class="btn outline">Buy now</span></div>
+    </div>
+  </div>
+
+  <h2 class="sh">The contact form</h2>
+  <p class="lead">A contact-option card (Grey-200 fill that lifts to a 1px black ring on hover) opens an Elementor popup: 4px-radius fields on a 1px Grey-500 border that tightens to black with a soft grey glow on focus, a 16px acceptance checkbox, and the black 48px submit. Measured, never submitted.</p>
+  <div class="mock form-mock" style="padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div style="background:var(--surface,#f6f6f6);border-radius:var(--radius-card,16px);padding:32px 24px;font:600 24px/31.2px var(--sg-sans)">Legal department inquiries</div>
+    <div>
+      <input class="field" placeholder="Full name">
+      <input class="field" placeholder="Email">
+      <textarea class="field" placeholder="How can we help?"></textarea>
+      <span class="ck"><i></i> I accept the terms</span>
+      <span class="btn focus-demo">Submit</span>
+    </div>
+  </div>
+
+  <h2 class="sh">FAQ and footer</h2>
+  <p class="lead">/faq heads the page at 72px/600 with -0.72px tracking; each accordion row is a 20px/700 question with a drawn plus that rotates open. The footer is the last dark island: white 14px link columns over Kernel-Black.</p>
+  <div class="mock">
+    <div style="padding:0 24px"><div class="faq-row"><span>Is Elementor compatible with my theme?</span><span class="x">+</span></div><div class="faq-row"><span>Can I use Elementor for free?</span><span class="x">+</span></div></div>
+    <div class="ftr"><div class="col"><b>Products</b><a href="#">Website Builder</a><a href="#">Hosting</a><a href="#">AI tools</a></div><div class="col"><b>Company</b><a href="#">About</a><a href="#">Careers</a><a href="#">Contact</a></div><div class="col"><b>Resources</b><a href="#">Help center</a><a href="#">Blog</a><a href="#">FAQ</a></div></div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <p class="lead">The core set is the site's own variable layer read off <code>:root</code> and the darkscope rules: the Kernel-Black / Blank-Canvas-White axis, the Grey ramp, the Neon-Loop action pink with its hover, the Syntax-Glow tint, the Startup-Lime / Seedling-Spark / Vision-Violet / Founder-Forest accents and the three named gradients. <code>globalColor</code> is the declared <code>--e-global-color-*</code> kit palette. Light roles alias the palette; the dark set is the island re-binding, not a user toggle.</p>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Spacing and radius</h2>
+  <p class="lead"><code>spacePrimitive</code> is the measured pixel ladder (the 8px grid runs 8-160); <code>spaceScale</code> names the section padding bands small through large. Radius runs fields at 4px, controls and plan cards at 8px, cards at 16px and the floating header, mega-menu and pills at 24px.</p>
+  <div id="spacing-out" class="kv"></div>
+
+  <h2 class="sh">Shadows and motion</h2>
+  <p class="lead">One measured shadow: the floating header's 5% black 15px blur with a 3px spread. Motion is short - 0.2s ease on button fills, 0.3s on links and toggles, 0.5s on panels.</p>
+  <div id="elev-out" class="kv"></div>
+  <div id="motion-out" class="kv"></div>
+
+  <h2 class="sh">Type</h2>
+  <p class="lead">Roobert everywhere the surface is styled: 88/96.8 600 display with -0.88px tracking on the hero, 72/79.2 on the FAQ page, 24/31.2 section titles, 18px/500 buttons with -0.36px, 16/22.4 nav and fields, 14px lists and footer. Roboto serves the editor-side chrome. Samples fall back to system sans.</p>
+  <div id="type-out"></div>
+  <div id="fam-out" class="kv"></div>
+
+  <h2 class="sh">Measured extras</h2>
+  <div id="meas-out" class="kv"></div>
+
+  <h2 class="sh">How the values were read</h2><table class="cmp"><tr><th>Original</th><th>Improved</th></tr><tr><td>Capture screenshots</td><td>Read the site's own custom-property layer (<code>:root</code>, <code>.dark-mode *</code>, kit vars) and computed styles on the elements</td></tr><tr><td>No states</td><td>Hover, focus-visible, pressed, focused, filled and open states measured per component</td></tr><tr><td>No provenance</td><td>Every token names its variable or the measurement it came from</td></tr></table>
+</main>
+<script>
+const TOK = {"core":{"palette":{"kernel-black":{"v":"#000000","t":"color","s":"css-var --Kernel-Black; declared :root; .elementor-8316433 .elementor-element.elementor-element-265389f *; .dark-mode *","d":"#000000: the text and primary-action fill; rebounds to #fff inside .dark-mode islands"},"blank-canvas-white":{"v":"#ffffff","t":"color","s":"css-var --Blank-Canvas-White; declared :root; .elementor-8316433 .elementor-element.elementor-element-265389f *; .elementor-8316433 .elementor-element.elementor-element-265389f .dsm-btn-wrapper:is(:hover, :focus-visible)","d":"#ffffff: the page field and text-on-dark; rebounds to #000 inside .dark-mode islands"},"transparent":{"v":"rgba(0, 0, 0, 0)","t":"color","s":"css-var --Transparent; declared :root","d":"fully transparent"},"grey-200":{"v":"#f6f6f6","t":"color","s":"css-var --Grey-200; declared :root","d":"the neutral ramp step; Grey-800 #212121 is the strong text, Grey-500 #d1d1d1 the field border, Grey-200 #f6f6f6 the subtle surface"},"grey-300":{"v":"#ebebeb","t":"color","s":"css-var --Grey-300; declared :root","d":"the neutral ramp step; Grey-800 #212121 is the strong text, Grey-500 #d1d1d1 the field border, Grey-200 #f6f6f6 the subtle surface"},"grey-400":{"v":"#d5dadf","t":"color","s":"css-var --Grey-400; declared :root","d":"the neutral ramp step; Grey-800 #212121 is the strong text, Grey-500 #d1d1d1 the field border, Grey-200 #f6f6f6 the subtle surface"},"grey-500":{"v":"#d1d1d1","t":"color","s":"css-var --Grey-500; declared :root","d":"the neutral ramp step; Grey-800 #212121 is the strong text, Grey-500 #d1d1d1 the field border, Grey-200 #f6f6f6 the subtle surface"},"grey-600":{"v":"#b5b5b5","t":"color","s":"css-var --Grey-600; declared :root","d":"the neutral ramp step; Grey-800 #212121 is the strong text, Grey-500 #d1d1d1 the field border, Grey-200 #f6f6f6 the subtle surface"},"grey-700":{"v":"#484848","t":"color","s":"css-var --Grey-700; declared :root","d":"the neutral ramp step; Grey-800 #212121 is the strong text, Grey-500 #d1d1d1 the field border, Grey-200 #f6f6f6 the subtle surface"},"grey-800":{"v":"#212121","t":"color","s":"css-var --Grey-800; declared :root; .elementor-8316433 .elementor-element.elementor-element-265389f *; .dark-mode *","d":"the neutral ramp step; Grey-800 #212121 is the strong text, Grey-500 #d1d1d1 the field border, Grey-200 #f6f6f6 the subtle surface"},"neon-loop":{"v":"#ed01ee","t":"color","s":"css-var --Neon-Loop; declared :root","d":"#ed01ee: the magenta hover state on every dark button"},"pink-200":{"v":"#ff7be5","t":"color","s":"css-var --Pink-200; declared :root","d":"#ff7be5: accent pink (badges, highlights)"},"pink-200-hover":{"v":"#ffa8ee","t":"color","s":"css-var --Pink-200-hover; declared :root","d":"#ffa8ee: its hover step"},"pixel-blush":{"v":"#f2adf3","t":"color","s":"css-var --Pixel-Blush; declared :root","d":"#f2adf3: blush surface"},"syntax-glow":{"v":"#fae4fa","t":"color","s":"css-var --Syntax-Glow; declared :root","d":"#fae4fa: the pale-magenta hover tint on nav triggers and menu links"},"startup-lime":{"v":"#d5ff45","t":"color","s":"css-var --Startup-Lime; declared :root","d":"#d5ff45: lime highlight (the stat/label chips)"},"seedling-spark":{"v":"#82f545","t":"color","s":"css-var --Seedling-Spark; declared :root","d":"#82f545: its deeper step"},"vision-violet":{"v":"#9800ff","t":"color","s":"css-var --Vision-Violet; declared :root","d":"#9800ff: violet accent"},"founder-forest":{"v":"#00452e","t":"color","s":"css-var --Founder-Forest; declared :root","d":"#00452e: deep green accent"},"codeberry":{"v":"#620856","t":"color","s":"css-var --Codeberry; declared :root","d":"#620856: deep purple (menu feature tile gradient)"},"deep-burgundy":{"v":"#290027","t":"color","s":"css-var --Deep-Burgundy; declared :root","d":"#290027: darkest purple (the feature tile gradient edge)"},"blush-bordeaux":{"v":"linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%)","t":"other","s":"css-var --wp--preset--gradient--blush-bordeaux; declared :root; :root","d":"named brand gradient (declared, angle/stops in raw/css-vars.json)"},"electric-grass":{"v":"linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%)","t":"other","s":"css-var --wp--preset--gradient--electric-grass; declared :root; :root","d":"named brand gradient (declared)"},"luminous-dusk":{"v":"linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%)","t":"other","s":"css-var --wp--preset--gradient--luminous-dusk; declared :root; :root","d":"named brand gradient (declared)"}},"globalColor":{"primary":{"v":"#000000","t":"color","s":"css-var --e-global-color-primary (.elementor-kit-35)"},"secondary":{"v":"#54595F","t":"color","s":"css-var --e-global-color-secondary (.elementor-kit-35)"},"text":{"v":"#7A7A7A","t":"color","s":"css-var --e-global-color-text (.elementor-kit-35)"},"accent":{"v":"#61CE70","t":"color","s":"css-var --e-global-color-accent (.elementor-kit-35)"}},"fontFamily":{"roobert":{"v":"'Roobert', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif","t":"fontFamily","s":"css-var --Roobert; declared :root; :root; :root; measured as the computed fontFamily on headings, buttons and form fields"},"roboto":{"v":"Roboto, sans-serif","t":"fontFamily","s":"declared: fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700 pulled by the page CSS"}},"typeScale":{"display":{"v":"88px","t":"dimension","s":"computed fontSize on the hero h1 (Roobert 600)"},"section":{"v":"24px","t":"dimension","s":"computed fontSize on the section h2"},"planPrice":{"v":"40px","t":"dimension","s":"computed fontSize on the plan price figure"},"body":{"v":"16px","t":"dimension","s":"computed fontSize on body copy (faq-answer)"},"small":{"v":"14px","t":"dimension","s":"computed fontSize on small copy (mobile nav items)"}},"spacePrimitive":{"104":{"v":"104px","t":"dimension","s":"css-var --s104; declared :root; :root; spacing primitive"},"112":{"v":"112px","t":"dimension","s":"css-var --s112; declared :root; :root; spacing primitive"},"12":{"v":"12px","t":"dimension","s":"css-var --s12; declared :root; :root; spacing primitive"},"120":{"v":"120px","t":"dimension","s":"css-var --s120; declared :root; :root; spacing primitive"},"128":{"v":"128px","t":"dimension","s":"css-var --s128; declared :root; :root; spacing primitive"},"144":{"v":"144px","t":"dimension","s":"css-var --s144; declared :root; :root; spacing primitive"},"16":{"v":"16px","t":"dimension","s":"css-var --s16; declared :root; :root; spacing primitive"},"160":{"v":"160px","t":"dimension","s":"css-var --s160; declared :root; :root; spacing primitive"},"20":{"v":"20px","t":"dimension","s":"css-var --s20; declared :root; :root; spacing primitive"},"24":{"v":"24px","t":"dimension","s":"css-var --s24; declared :root; :root; spacing primitive"},"32":{"v":"32px","t":"dimension","s":"css-var --s32; declared :root; :root; spacing primitive"},"40":{"v":"40px","t":"dimension","s":"css-var --s40; declared :root; :root; spacing primitive"},"48":{"v":"48px","t":"dimension","s":"css-var --s48; declared :root; :root; spacing primitive"},"56":{"v":"56px","t":"dimension","s":"css-var --s56; declared :root; :root; spacing primitive"},"64":{"v":"64px","t":"dimension","s":"css-var --s64; declared :root; :root; spacing primitive"},"72":{"v":"72px","t":"dimension","s":"css-var --s72; declared :root; :root; spacing primitive"},"8":{"v":"8px","t":"dimension","s":"css-var --s8; declared :root; :root; spacing primitive"},"80":{"v":"80px","t":"dimension","s":"css-var --s80; declared :root; :root; spacing primitive"},"88":{"v":"88px","t":"dimension","s":"css-var --s88; declared :root; :root; spacing primitive"},"96":{"v":"96px","t":"dimension","s":"css-var --s96; declared :root; :root; spacing primitive"}},"spaceScale":{"lg100":{"v":"96px","t":"dimension","s":"css-var --lg100; declared :root; :root @media (max-width: 1024px); :root @media (max-width: 767px); re-mapped smaller at the 1024px and 767px breakpoints (raw/css-vars.json)"},"lg200":{"v":"112px","t":"dimension","s":"css-var --lg200; declared :root; :root @media (max-width: 1024px); :root @media (max-width: 767px); re-mapped smaller at the 1024px and 767px breakpoints (raw/css-vars.json)"},"lg300":{"v":"144px","t":"dimension","s":"css-var --lg300; declared :root; :root @media (max-width: 1024px); :root @media (max-width: 767px); re-mapped smaller at the 1024px and 767px breakpoints (raw/css-vars.json)"},"lg400":{"v":"160px","t":"dimension","s":"css-var --lg400; declared :root; :root @media (max-width: 1024px); :root @media (max-width: 767px); re-mapped smaller at the 1024px and 767px breakpoints (raw/css-vars.json)"},"md100":{"v":"48px","t":"dimension","s":"css-var --md100; declared :root; :root @media (max-width: 1024px); :root @media (max-width: 767px); re-mapped smaller at the 1024px and 767px breakpoints (raw/css-vars.json)"},"md200":{"v":"56px","t":"dimension","s":"css-var --md200; declared :root; :root @media (max-width: 1024px); :root @media (max-width: 767px); re-mapped smaller at the 1024px and 767px breakpoints (raw/css-vars.json)"},"md300":{"v":"64px","t":"dimension","s":"css-var --md300; declared :root; :root @media (max-width: 1024px); :root; re-mapped smaller at the 1024px and 767px breakpoints (raw/css-vars.json)"},"md400":{"v":"88px","t":"dimension","s":"css-var --md400; declared :root; :root @media (max-width: 1024px); :root @media (max-width: 767px); re-mapped smaller at the 1024px and 767px breakpoints (raw/css-vars.json)"},"sm100":{"v":"12px","t":"dimension","s":"css-var --sm100; declared :root; :root @media (max-width: 1024px); :root; re-mapped smaller at the 1024px and 767px breakpoints (raw/css-vars.json)"},"sm200":{"v":"16px","t":"dimension","s":"css-var --sm200; declared :root; :root @media (max-width: 1024px); :root; re-mapped smaller at the 1024px and 767px breakpoints (raw/css-vars.json)"},"sm300":{"v":"24px","t":"dimension","s":"css-var --sm300; declared :root; :root @media (max-width: 1024px); :root; re-mapped smaller at the 1024px and 767px breakpoints (raw/css-vars.json)"},"sm400":{"v":"32px","t":"dimension","s":"css-var --sm400; declared :root; :root @media (max-width: 1024px); :root @media (max-width: 767px); re-mapped smaller at the 1024px and 767px breakpoints (raw/css-vars.json)"},"sm500":{"v":"40px","t":"dimension","s":"css-var --sm500; declared :root; :root @media (max-width: 1024px); :root @media (max-width: 767px); re-mapped smaller at the 1024px and 767px breakpoints (raw/css-vars.json)"}},"radius":{"field":{"v":"4px","t":"dimension","s":"computed borderRadius on the contact form inputs"},"control":{"v":"8px","t":"dimension","s":"computed borderRadius on the Get-started pill / Submit"},"card":{"v":"16px","t":"dimension","s":"computed borderRadius on the dsm card tiles (stat tile, contact card, menu feature tile)"},"planCard":{"v":"8px","t":"dimension","s":"computed borderRadius on the pricing plan card"},"pill":{"v":"24px","t":"dimension","s":"computed borderRadius on the header pill bar"}},"shadow":{"header":{"v":"rgba(0, 0, 0, 0.05) 0px 0px 15.008px 3.008px","t":"shadow","s":"computed boxShadow on the header pill bar"}},"motion":{"button":{"v":"0.2s ease","t":"other","s":"computed transition (background-color) on hero-cta default: the dsm primary buttons"},"link":{"v":"0.3s ease-in-out","t":"other","s":"computed transition (opacity) on nav-login default: the header links"},"panel":{"v":"0.5s ease","t":"other","s":"computed transition (grid-template-rows) on faq-answer default: the FAQ answer reveal (the mobile menu's max-height runs 0.3s)"}},"component":{"headerHeight":{"v":"72px","t":"dimension","s":"computed height on the header pill bar"},"buttonHeight":{"v":"48px","t":"dimension","s":"computed height on the header Get-started pill"},"heroButtonHeight":{"v":"48px","t":"dimension","s":"computed height on the hero Get-started pill"},"fieldHeight":{"v":"40.4062px","t":"dimension","s":"computed height on the name input"},"fieldBorder":{"v":"1px solid #d1d1d1","t":"other","s":"computed border on the contact form inputs"},"planCtaBorder":{"v":"2px solid #000000","t":"other","s":"computed border on the outline Buy-now button"},"checkboxSize":{"v":"16px","t":"dimension","s":"computed size of the acceptance checkbox"}}},"light":{"page":{"v":"{palette.blank-canvas-white}","t":"color","s":"declared --Blank-Canvas-White (resolved on :root, raw/css-vars.json); html/body compute to transparent, so the page shows this white"},"surface":{"v":"{palette.grey-200}","t":"color","s":"computed backgroundColor on contact-card (the Key-contact-options tile), /contact"},"surfaceRaised":{"v":"{palette.blank-canvas-white}","t":"color","s":"computed backgroundColor on the header pill bar, header.elementor-location-header"},"text":{"v":"{palette.kernel-black}","t":"color","s":"computed color on the page headings/buttons (contact-h1, nav-cta, plan-cta) — Kernel-Black"},"textStrong":{"v":"{palette.grey-800}","t":"color","s":"computed color on FAQ answers, the nav trigger and mobile nav items — Grey-800 #212121"},"textMuted":{"v":"#7a7a7a","t":"color","s":"declared --e-global-color-text on .elementor-kit-35 (the kit's text global, raw/css-vars.json theme rules)"},"iconMuted":{"v":"#69727d","t":"color","s":"computed color on the footer social icons at rest"},"border":{"v":"{palette.grey-500}","t":"color","s":"computed borderTopColor on the form fields — Grey-500 #d1d1d1"},"borderStrong":{"v":"{palette.kernel-black}","t":"color","s":"computed borderTopColor on a focused field and the outline plan-cta — Kernel-Black"},"accent":{"v":"{palette.kernel-black}","t":"color","s":"computed backgroundColor on the Get-started pill and Submit — Kernel-Black"},"accentOn":{"v":"{palette.blank-canvas-white}","t":"color","s":"computed color on the Get-started pill"},"accentHover":{"v":"{palette.neon-loop}","t":"color","s":"computed backgroundColor on hover of the Get-started pill, Submit and the plan CTA — Neon-Loop"},"tintHover":{"v":"{palette.syntax-glow}","t":"color","s":"computed hover background on the nav trigger and mega-menu links — Syntax-Glow"},"focusRing":{"v":"#005fcc","t":"color","s":"computed outlineColor on keyboard focus — the browser focus ring the site leaves in place"},"focusRingWidth":{"v":"2px","t":"dimension","s":"computed outlineWidth on keyboard focus"},"link":{"v":"#0000ee","t":"color","s":"computed color on the plain header link — the unvisited-link blue elementor.com leaves unset"},"menuPanel":{"v":"{palette.blank-canvas-white}","t":"color","s":"the opened mega-menu panel's first painted layer (nav-dropdown paint[0] bg; radius 24px, ::before hairline #d1d1d1, the header pill's shadow)"},"fieldSurface":{"v":"{palette.blank-canvas-white}","t":"color","s":"computed backgroundColor on the contact form inputs"},"overlayScrim":{"v":"rgba(0, 0, 0, 0.4)","t":"color","s":"observed on the contact form popup: the page dims behind the open dialog (the modal layer's backdrop; the crop shows the dimmed page)"}},"dark":{"page":{"v":"{palette.kernel-black}","t":"color","s":"computed backgroundColor on .dsm-footer and the hero stage (section.dark-mode) — Kernel-Black"},"surface":{"v":"{palette.kernel-black}","t":"color","s":"computed backgroundColor on the dark stat card (the 22M+ tile)"},"text":{"v":"{palette.blank-canvas-white}","t":"color","s":"computed color on the hero headline and dark-section headings — --Kernel-Black rebound to #fff"},"textMuted":{"v":"{palette.grey-200}","t":"color","s":"computed color on the hero lede — Grey-200"},"accent":{"v":"{palette.blank-canvas-white}","t":"color","s":"declared --Kernel-Black resolved in the .dark-mode scope (raw/css-vars.json): dsm-button-primary reads it (the white Get-started pill in the hero)"},"accentOn":{"v":"{palette.kernel-black}","t":"color","s":"declared --Blank-Canvas-White resolved in the .dark-mode scope (raw/css-vars.json): the pill's text"},"border":{"v":"{palette.grey-700}","t":"color","s":"declared --Grey-700 resolved in the .dark-mode scope (raw/css-vars.json), the scale step for hairlines on dark ground"}}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+
+(function palette() {
+  let h = '';
+  for (const [g, grp] of Object.entries(TOK.core.palette ? { palette: TOK.core.palette, globalColor: TOK.core.globalColor || {} } : {})) {
+    const items = (grp && grp.t ? [[g, grp]] : flat(grp, g + '.')).filter(([, t]) => t.t === 'color' || t.t === 'other');
+    if (!items.length) continue;
+    h += `<div class="pal-h">core.${esc(g)}</div><div class="pal">`;
+    for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  for (const [setname, label] of [['light', 'light roles'], ['dark', 'dark roles (the .dark-mode islands)']]) {
+    const roles = flat(TOK[setname] || {}, '').filter(([n, t]) => t.t === 'color');
+    if (!roles.length) continue;
+    // The dark set's custom properties only resolve inside a .dark scope:
+    // swatch dots must live under it or they paint the light values/unset.
+    h += `<div class="pal-h">${label}</div><div class="pal${setname === 'dark' ? ' dark' : ''}">`;
+    for (const [n, t] of roles) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+    h += '</div>';
+  }
+  $('#roles-out').innerHTML = h;
+})();
+
+(function spacing() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.spacePrimitive || {}, 'spacePrimitive.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.spaceScale || {}, 'spaceScale.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  for (const [n, t] of flat(TOK.core.radius || {}, 'radius.')) m += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+})();
+
+(function elev() {
+  let e = '';
+  for (const [n, t] of flat(TOK.core.shadow || {}, 'shadow.')) e += `<div><b>${esc(n)}</b> <span>${esc(Array.isArray(t.v) ? t.v.map(x => x.offsetX + ' ' + x.offsetY + ' ' + x.blur + ' ' + x.color).join(', ') : t.v)}</span></div>`;
+  $('#elev-out').innerHTML = e || '<div><b>none measured</b></div>';
+})();
+
+(function motion() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.motion || {}, 'motion.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  $('#motion-out').innerHTML = m;
+})();
+
+(function meas() {
+  let m = '';
+  for (const [n, t] of flat(TOK.core.component || {}, 'component.')) m += `<div><b>${esc(n)}</b> <span>${esc(typeof t.v === 'object' ? JSON.stringify(t.v) : t.v)}</span></div>`;
+  $('#meas-out').innerHTML = m;
+})();
+
+(function type() {
+  let h = '';
+  for (const [n, t] of flat(TOK.core.typeScale || {}, 'typeScale.')) {
+    const px = parseFloat(t.v);
+    h += `<div class="tr"><span class="ts" style="font-size:${Math.min(px || 13, 44)}px">${esc(n)} - The quick brown fox</span><span class="tv">${esc(t.v)}</span></div>`;
+  }
+  $('#type-out').innerHTML = h;
+  let f = '';
+  for (const [n, t] of flat(TOK.core.fontFamily || {}, 'fontFamily.')) f += `<div><b>${esc(n)}</b> <span>${esc(t.v)}</span></div>`;
+  $('#fam-out').innerHTML = f;
+})();
+</script>
+</body>
+</html>

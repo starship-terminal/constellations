@@ -2,7 +2,7 @@
 
 A token set and component reference for Arcade's public marketing site (https://www.arcade.software), a Webflow build selling an AI video generator for marketing teams. Use it to build a web page or marketing surface that borrows its look: a pure-white page, black-on-white chrome, Inter Display 56px display lines over Inter Variable UI, black 12px-radius pill CTAs, `#f4f4f4` 24px plan cards, a hairline `#e5e7eb` border system, pastel `--card-bg-*` washes, and a `#2142e7` brand blue kept for the demo pages. It was captured signed out, in headless Chromium at 1440 x 900 (mobile pages at 390 x 844) on 2026-11-10.
 
-It holds 28 screenshots across nine desktop routes and three phone routes — home, /pricing, /product/interactive-demo, /agents, /enterprise, /ai-video-examples, /blog, /changelog, /contact-sales — plus transient states (prompt suggestion applied, spotlight quote advanced, FAQ open, the mobile menu), and 49 measured components with 126 states and one crop each. The product itself (the demo editor, agents) sits behind sign-up and was never reached: the app is recorded as a boundary, and nothing here claims its functionality (see [components.md](components.md) > Gaps).
+It holds 28 screenshots across nine desktop routes and three phone routes — home, /pricing, /product/interactive-demo, /agents, /enterprise, /ai-video-examples, /blog, /changelog, /contact-sales — plus transient states (prompt suggestion applied, spotlight quote advanced, FAQ open, the mobile menu), and 49 measured components with 126 states and 125 crops. The product itself (the demo editor, agents) sits behind sign-up and was never reached: the app is recorded as a boundary, and nothing here claims its functionality (see [components.md](components.md) > Gaps).
 
 This package contains no Arcade code, and none of its artwork has been redrawn. The screenshots, video stills and visual system they show belong to Arcade ([docs/RIGHTS.md](../../docs/RIGHTS.md)). Borrow structure and proportions, not the logo, artwork or brand assets.
 
@@ -14,7 +14,7 @@ This package contains no Arcade code, and none of its artwork has been redrawn. 
 | [style-guide.html](style-guide.html) | Every token rendered, with site mockups built only from the tokens (nav bar, hero + prompt composer + chips, plan cards, FAQ rows, contact fields). Open it from disk |
 | [components.md](components.md) | 49 components, each with its measured values per state and crops of the real page, then a Gaps section |
 | [patterns.md](patterns.md) | The nav/hero/prompt/scatter/pricing/forms/footer patterns the marketing pages compose |
-| [components/crops/](components/crops) | 126 element crops, `{component}-{state}.png`, cut from the live page by `tools/capture/public/measure.mjs` |
+| [components/crops/](components/crops) | 125 element crops, `{component}-{state}.png`, cut from the live page by `tools/capture/public/measure.mjs` |
 | [screenshots/](screenshots) | 28 captures, `{page}-light-{state}.png` at 1440 x 900 (`-full` whole pages) and `mobile-*` at 780 wide, quantised to 256 colours |
 | [raw/](raw) | `components-computed.json` (every measured value per state), `measurements.md` (the same as tables), `css-vars.json` (the Webflow `:root` custom properties), `component-tokens.json` (the token spec), `full/` (the unquantised captures with `.capture.json` sidecars) |
 | [tools/](tools) | `capture/` (`public/`: lib, public tour, measure, build-measurements; `vars.mjs`, `screenshot.mjs`, `quantize.py`, `css-colour.mjs`, `safe-url.mjs`) and the builders (`build_component_tokens.py`, `build_tokens.py`, `build_components_md.py`, `build_style_guide.py`, `token_checks.py`, `style-guide.template.html`) |
@@ -51,7 +51,7 @@ Fonts: `core.font.family.display` is Inter Display, then 2 fallbacks; `core.font
 
 ### Using components
 
-Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 126 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
+Read [components.md](components.md) for the component inventory; [patterns.md](patterns.md) for how components combine into screens; 125 element crops in [components/crops/](components/crops); [style-guide.html](style-guide.html), which renders every token and the main components.
 
 ### Accessibility
 
@@ -101,6 +101,7 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 ## What to distrust
 
+- **Readings past a masked bot signal.** The committed screenshots and readings were taken with `navigator.webdriver` masked, the flag bot checks read to spot automation. The capture scripts no longer mask it (not run since), so a recapture may record a walled route as a boundary instead of a reading.
 - **The app is absent.** Sign up / Log in lead to the product behind an account; no editor, agent or dashboard screen is in this package — only the marketing site that links to it.
 - **The brand blue is not the site's main action colour.** On the marketing surface every primary CTA is black `ink`; `--primary-*` shows on the demo pages (url-to-demo button, signup pair) and in links. Do not paint primary actions blue.
 - **Hover values are mild.** Nav ghosts lift to a 6%-black wash and black CTAs to `#404040`; pressed states shrink ~3% (a Webflow transform). Nothing changes colour.
@@ -149,8 +150,8 @@ Layout ([docs/PACKAGE.md](../../docs/PACKAGE.md)): no `icons/` (the icon extract
 
 ```sh
 cd systems/arcade
-PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/public.mjs      # screenshots -> raw/full/
-python3 tools/capture/quantize.py raw/full                                         # 256-colour PNGs -> screenshots/
+PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/public.mjs      # screenshots -> ~/.design-systems/arcade/raw-shots/ (outside the repo)
+python3 tools/capture/quantize.py ~/.design-systems/arcade/raw-shots                                         # 256-colour PNGs -> screenshots/
 PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/public/measure.mjs     # raw/components-computed.json + components/crops/
 node tools/capture/public/build-measurements.mjs                                   # raw/measurements.md
 PLAYWRIGHT=/path/to/playwright/index.mjs node tools/capture/vars.mjs               # raw/css-vars.json

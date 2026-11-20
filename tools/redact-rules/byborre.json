@@ -1,0 +1,17 @@
+{
+ "_note": "Rules for systems/byborre. A fully public signed-out capture. BYBORRE's published sales inbox is allowed by its exact address. The contact page's person cards show a named staff member's direct work email address and phone number: the email is painted out of the person-card crop (one family below) and the phone wherever it renders. raw/components-computed.json records both masked ([email], [phone]) by the capture lib's styleOf.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "^sales@byborre\\.com$"
+  ]
+ },
+ "families": [
+  {
+   "name": "person-card staff email",
+   "files": ["components/crops/person-card-default.png"],
+   "size": [[604, 336]],
+   "rects": [[10, 212, 470, 264, "rows"]]
+  }
+ ]
+}

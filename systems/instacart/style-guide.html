@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instacart style guide</title>
+<meta name="description" content="Instacart IDS tokens and the public surfaces' components, rendered from tokens.json.">
+<style>
+:root {
+  --color-brand-primary-extra-light: #f6fdf6;
+  --color-brand-primary-light: #e9fbe9;
+  --color-brand-primary-regular: #108910;
+  --color-brand-primary-dark: #0d720d;
+  --color-brand-primary-extra-dark: #0a610a;
+  --color-brand-secondary-light: #edf7f4;
+  --color-brand-secondary-regular: #003d29;
+  --color-brand-secondary-dark: #003121;
+  --color-brand-secondary-extra-dark: #001810;
+  --color-brand-tertiary-light: #f7f5f0;
+  --color-brand-tertiary-regular: #faf1e5;
+  --color-brand-tertiary-dark: #efe9e1;
+  --color-brand-plus-extra-light: #ffd7e8;
+  --color-brand-plus-light: #b00074;
+  --color-brand-plus-regular: #750046;
+  --color-brand-plus-dark: #5e0038;
+  --color-brand-plus-extra-dark: #46002a;
+  --color-brand-max-light: #ffdc23;
+  --color-brand-max-dark: #242529;
+  --color-grayscale-00: #ffffff;
+  --color-grayscale-10: #f6f7f8;
+  --color-grayscale-20: #e8e9eb;
+  --color-grayscale-30: #c7c8cd;
+  --color-grayscale-40: #8f939b;
+  --color-grayscale-50: #72767e;
+  --color-grayscale-60: #56595e;
+  --color-grayscale-70: #343538;
+  --color-grayscale-80: #242529;
+  --color-grayscale-90: #191a1c;
+  --color-grayscale-99: #0b0c0d;
+  --color-feedback-alert-regular: #ffa500;
+  --color-feedback-alert-light: #ffbe1d;
+  --color-feedback-detrimental-light: #fef0f0;
+  --color-feedback-detrimental-regular: #de3534;
+  --color-feedback-detrimental-dark: #bb1c1b;
+  --color-feedback-detrimental-extra-dark: #ac1615;
+  --color-feedback-success-light: #e9fbe9;
+  --color-feedback-success-regular: #108910;
+  --color-feedback-success-dark: #0d720d;
+  --color-feedback-success-extra-dark: #0a610a;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --radius-0: 0px;
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-24: 24px;
+  --opacity-light: 0.08;
+  --opacity-border: 0.12;
+  --opacity-regular: 0.16;
+  --opacity-dark: 0.24;
+  --font-family-sans: Instacart Sans, Instacart Sans Fallback, Arial, sans-serif;
+  --font-family-contrast: Instacart Contrast, Instacart Contrast Fallback, Arial, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --typography-body: var(--font-weight-regular) 16px/24px var(--font-family-sans);
+  --typography-label: var(--font-weight-semibold) 14px/20px var(--font-family-sans);
+  --typography-button: var(--font-weight-regular) 16px/24px var(--font-family-sans);
+  --typography-heading: var(--font-weight-bold) 32px/40px var(--font-family-sans);
+  --typography-display: var(--font-weight-bold) 48px/56px var(--font-family-sans);
+  --motion-easing-smooth: linear(0, 0.159 3.3%, 0.29 6.5%, 0.41 10%, 0.515 13.7%, 0.608 17.7%, 0.686 21.9%, 0.754 26.5%, 0.812 31.6%, 0.858 36.9%, 0.896 42.7%, 0.95 56.4%, 0.98 74.2%, 1);
+  --motion-easing-elevated: linear(0, 0.006 1.2%, 0.026 2.5%, 0.111 5.5%, 0.591 16.8%, 0.785 22.3%, 0.859 25%, 0.918 27.7%, 0.965 30.5%, 1.002 33.5%, 1.038 38.7%, 1.049 44.9%, 1.004 72.8%, 1);
+  --motion-easing-bounce: linear(0, 0.007 1%, 0.031 2.1%, 0.132 4.6%, 0.676 13.5%, 0.888 17.7%, 0.964 19.7%, 1.026 21.8%, 1.071 23.9%, 1.102 26.2%, 1.119 29.2%, 1.115 32.7%, 1.017 47.2%, 0.988 56%, 1);
+  --color-page: #ffffff;
+  --color-surface: #f7f5f0;
+  --color-text: #242529;
+  --color-muted: #72767e;
+  --color-accent: #108910;
+  --color-accent-ink: #ffffff;
+  --color-on-accent: #ffffff;
+  --color-border: #e8e9eb;
+  --color-hero: #003d29;
+  --color-hero-ink: #ffffff;
+  --color-link: #108910;
+  --color-deal: #ffdc23;
+  --color-danger: #de3534;
+  --color-danger-surface: #fef0f0;
+  --color-success: #108910;
+  --color-warning: #ffa500;
+  --color-focus: #108910;
+  --component-button-primary-background: var(--color-accent);
+  --component-button-primary-text: var(--color-on-accent);
+  --component-button-primary-radius: 20px;
+  --component-button-primary-height: 40px;
+  --component-button-primary-height-lg: 56px;
+  --component-button-primary-radius-lg: 28px;
+  --component-button-secondary-background: var(--color-page);
+  --component-button-secondary-text: var(--color-text);
+  --component-button-secondary-border: var(--color-border);
+  --component-search-height: 56px;
+  --component-search-radius: 28px;
+  --component-card-radius: 12px;
+  --component-card-background: var(--color-page);
+  --component-chip-height: 32px;
+  --component-chip-radius: 999px;
+  --component-field-height: 48px;
+  --component-field-radius: 8px;
+  --sg-sans: var(--font-family-sans, "Instacart Sans", Arial, sans-serif);
+  --sg-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+[data-mode="dark"], .dark {
+
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 16px/1.5 var(--sg-sans); color: var(--color-text, #242529); background: var(--color-page, #fff); }
+main { max-width: 1100px; margin: 0 auto; padding: 32px 24px 96px; }
+h1 { font: 700 40px/1.15 var(--sg-sans); margin: 0 0 8px; letter-spacing: -0.02em; }
+h2.sh { font: 600 13px/1 var(--sg-sans); letter-spacing: 0; text-transform: none; color: var(--color-muted, #72767e); margin: 48px 0 0; padding-bottom: 10px; border-bottom: 1px solid var(--color-border, #e8e9eb); }
+.lead { max-width: 68ch; color: var(--color-muted, #72767e); }
+.note { font-size: 13px; color: var(--color-muted, #72767e); max-width: 68ch; }
+code { font-family: var(--sg-mono); font-size: .9em; }
+.pal-h { font: 600 12px/1 var(--sg-sans); color: var(--color-muted, #72767e); margin: 18px 0 6px; }
+.pal { display: flex; flex-wrap: wrap; gap: 8px; }
+.sw { display: flex; align-items: center; gap: 8px; min-width: 180px; }
+.sw .dot { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-border, #e8e9eb); display: inline-flex; }
+.sw .dot i { width: 100%; height: 100%; border-radius: 50%; display: block; }
+.sw .nm { font: 500 11px/1.3 var(--sg-mono); }
+.sw .vl { font: 400 11px/1.3 var(--sg-mono); color: var(--color-muted, #72767e); }
+.kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 4px 24px; font: 400 12px/1.8 var(--sg-mono); }
+.kv span { color: var(--color-muted, #72767e); }
+.mock { border: 1px solid var(--color-border, #e8e9eb); border-radius: 12px; overflow: hidden; background: #fff; }
+.hero { background: var(--color-hero, #003d29); color: #fff; padding: 28px 24px; display: flex; gap: 24px; align-items: center; }
+.hero h3 { margin: 0 0 12px; font: 700 28px/1.15 var(--sg-sans); }
+.btn { display: inline-flex; align-items: center; justify-content: center; height: var(--component-button-primary-height, 40px); padding: 0 18px; border-radius: var(--component-button-primary-radius, 20px); border: 1px solid transparent; font: var(--typography-button, 400 16px/24px var(--sg-sans)); line-height: 1; }
+.btn.primary { background: var(--color-accent, #108910); color: #fff; }
+.btn.lg { height: var(--component-button-primary-height-lg, 56px); padding: 0 28px; border-radius: var(--component-button-primary-radius-lg, 28px); }
+.btn.secondary { background: #fff; color: var(--color-text, #242529); border-color: var(--color-border, #e8e9eb); }
+.nav { display: flex; align-items: center; gap: 12px; padding: 12px 16px; }
+.mark { font-weight: 700; color: var(--color-hero, #003d29); }
+.search { flex: 1; height: 40px; border-radius: 999px; border: 1px solid var(--color-border, #e8e9eb); background: var(--color-surface, #f7f5f0); padding: 0 16px; color: var(--color-muted, #72767e); }
+.chips { display: flex; gap: 8px; padding: 16px; flex-wrap: wrap; }
+.chip { height: 32px; padding: 0 14px; border-radius: 999px; background: #f6f7f8; border: 0; font: var(--typography-label, 600 14px/20px var(--sg-sans)); line-height: 32px; }
+.chip.on { background: #242529; color: #fff; }
+.deal { display: inline-block; background: var(--color-deal, #ffdc23); font: 700 12px/1 var(--sg-sans); padding: 4px 6px; }
+.card { border: 1px solid var(--color-border, #e8e9eb); border-radius: 12px; padding: 12px; width: 220px; }
+.card b { display: block; margin-bottom: 4px; }
+.card small { color: var(--color-success, #108910); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Instacart</h1>
+  <p class="note">Generated from <code>tokens.json</code>. Swatches are tokens. The boxed mocks are reconstructions drawn with those tokens, not captured pixels. Real pixels are in <code>screenshots/</code>.</p>
+
+  <h2 class="sh">Chrome and hero</h2>
+  <p class="lead">The marketing header is white: carrot wordmark, pill search, outlined Log in, green Sign up. The homepage hero is the forest band (#003D29) with a green pill. Login sits on the warm wash (#F7F5F0) with a white card.</p>
+  <div class="mock">
+    <div class="nav"><span class="mark">instacart</span><div class="search">Search products and stores</div><span class="btn secondary">Log in</span><span class="btn primary">Sign up</span></div>
+    <div class="hero"><div><h3>Order groceries for delivery or pickup today</h3><span class="btn primary lg">Sign up to get $0 delivery fee</span></div></div>
+  </div>
+
+  <h2 class="sh">Store cards and chips</h2>
+  <div class="mock">
+    <div class="chips"><span class="chip on">All</span><span class="chip">EBT</span><span class="chip">Fastest</span><span class="chip">Offers</span><span class="deal">No markups</span></div>
+    <div style="display:flex;gap:12px;padding:0 16px 16px">
+      <div class="card"><b>Safeway</b><small>Delivery by 9:00am</small><div style="margin-top:10px"><span class="btn primary">Add</span></div></div>
+      <div class="card"><b>Costco</b><small>Delivery by 3:45pm</small></div>
+    </div>
+  </div>
+
+  <h2 class="sh">Palette</h2>
+  <div id="roles-out"></div>
+
+  <h2 class="sh">Space, radius, type</h2>
+  <div id="spacing-out" class="kv"></div>
+  <div id="type-out"></div>
+</main>
+<script>
+const TOK = {"core":{"color":{"brand":{"primary":{"extra-light":{"v":"#f6fdf6","t":"color","s":"css-var --ids-color-brand-primary-extra-light (light)","d":"Primary green wash."},"light":{"v":"#e9fbe9","t":"color","s":"css-var --ids-color-brand-primary-light (light)","d":"Primary green light, also the success light."},"regular":{"v":"#108910","t":"color","s":"css-var --ids-color-brand-primary-regular (light)","d":"Instacart green. Primary buttons and the wordmark."},"dark":{"v":"#0d720d","t":"color","s":"css-var --ids-color-brand-primary-dark (light)","d":"Primary green pressed / dark."},"extra-dark":{"v":"#0a610a","t":"color","s":"css-var --ids-color-brand-primary-extra-dark (light)","d":"Primary green extra dark."}},"secondary":{"light":{"v":"#edf7f4","t":"color","s":"css-var --ids-color-brand-secondary-light (light)","d":"Forest wash."},"regular":{"v":"#003d29","t":"color","s":"css-var --ids-color-brand-secondary-regular (light)","d":"Forest green. Hero band and wordmark ink."},"dark":{"v":"#003121","t":"color","s":"css-var --ids-color-brand-secondary-dark (light)","d":"Forest dark."},"extra-dark":{"v":"#001810","t":"color","s":"css-var --ids-color-brand-secondary-extra-dark (light)","d":"Forest extra dark."}},"tertiary":{"light":{"v":"#f7f5f0","t":"color","s":"css-var --ids-color-brand-tertiary-light (light)","d":"Warm page wash behind the login card."},"regular":{"v":"#faf1e5","t":"color","s":"css-var --ids-color-brand-tertiary-regular (light)","d":"Warm cream."},"dark":{"v":"#efe9e1","t":"color","s":"css-var --ids-color-brand-tertiary-dark (light)","d":"Warm cream dark."}},"plus":{"extra-light":{"v":"#ffd7e8","t":"color","s":"css-var --ids-color-brand-plus-extra-light (light)","d":"Instacart+ pink wash."},"light":{"v":"#b00074","t":"color","s":"css-var --ids-color-brand-plus-light (light)","d":"Instacart+ pink."},"regular":{"v":"#750046","t":"color","s":"css-var --ids-color-brand-plus-regular (light)","d":"Instacart+ magenta."},"dark":{"v":"#5e0038","t":"color","s":"css-var --ids-color-brand-plus-dark (light)","d":"Instacart+ magenta dark."},"extra-dark":{"v":"#46002a","t":"color","s":"css-var --ids-color-brand-plus-extra-dark (light)","d":"Instacart+ magenta extra dark."}},"max":{"light":{"v":"#ffdc23","t":"color","s":"css-var --ids-color-brand-max-light (light)","d":"Max yellow. Deal badges."},"dark":{"v":"#242529","t":"color","s":"css-var --ids-color-brand-max-dark (light)","d":"Max ink, same as grayscale 80."}}},"grayscale":{"00":{"v":"#ffffff","t":"color","s":"css-var --ids-color-system-grayscale-00 (light)","d":"White."},"10":{"v":"#f6f7f8","t":"color","s":"css-var --ids-color-system-grayscale-10 (light)","d":"Near-white surface."},"20":{"v":"#e8e9eb","t":"color","s":"css-var --ids-color-system-grayscale-20 (light)","d":"Hairline and chip fill."},"30":{"v":"#c7c8cd","t":"color","s":"css-var --ids-color-system-grayscale-30 (light)","d":"Disabled and placeholder."},"40":{"v":"#8f939b","t":"color","s":"css-var --ids-color-system-grayscale-40 (light)","d":"Muted icon."},"50":{"v":"#72767e","t":"color","s":"css-var --ids-color-system-grayscale-50 (light)","d":"Secondary text."},"60":{"v":"#56595e","t":"color","s":"css-var --ids-color-system-grayscale-60 (light)","d":"Supporting text."},"70":{"v":"#343538","t":"color","s":"css-var --ids-color-system-grayscale-70 (light)","d":"Strong text."},"80":{"v":"#242529","t":"color","s":"css-var --ids-color-system-grayscale-80 (light)","d":"Near-black heading."},"90":{"v":"#191a1c","t":"color","s":"css-var --ids-color-system-grayscale-90 (light)","d":"Darker ink."},"99":{"v":"#0b0c0d","t":"color","s":"css-var --ids-color-system-grayscale-99 (light)","d":"Blackest ink."}},"feedback":{"alert":{"regular":{"v":"#ffa500","t":"color","s":"css-var --ids-color-system-feedback-alert-regular (light)","d":"Alert orange."},"light":{"v":"#ffbe1d","t":"color","s":"css-var --ids-color-system-feedback-alert-light (light)","d":"Alert yellow."}},"detrimental":{"light":{"v":"#fef0f0","t":"color","s":"css-var --ids-color-system-feedback-detrimental-light (light)","d":"Error wash."},"regular":{"v":"#de3534","t":"color","s":"css-var --ids-color-system-feedback-detrimental-regular (light)","d":"Error red."},"dark":{"v":"#bb1c1b","t":"color","s":"css-var --ids-color-system-feedback-detrimental-dark (light)","d":"Error red dark."},"extra-dark":{"v":"#ac1615","t":"color","s":"css-var --ids-color-system-feedback-detrimental-extra-dark (light)","d":"Error red extra dark."}},"success":{"light":{"v":"#e9fbe9","t":"color","s":"css-var --ids-color-system-feedback-success-light (light)","d":"Success wash. Same value as primary light."},"regular":{"v":"#108910","t":"color","s":"css-var --ids-color-system-feedback-success-regular (light)","d":"Success green. Same value as primary regular."},"dark":{"v":"#0d720d","t":"color","s":"css-var --ids-color-system-feedback-success-dark (light)","d":"Success dark."},"extra-dark":{"v":"#0a610a","t":"color","s":"css-var --ids-color-system-feedback-success-extra-dark (light)","d":"Success extra dark."}}}},"space":{"4":{"v":"4px","t":"dimension","s":"css-var --ids-system-space-4 (light)","d":"4px step."},"8":{"v":"8px","t":"dimension","s":"css-var --ids-system-space-8 (light)","d":"8px step."},"12":{"v":"12px","t":"dimension","s":"css-var --ids-system-space-12 (light)","d":"12px step."},"16":{"v":"16px","t":"dimension","s":"css-var --ids-system-space-16 (light)","d":"16px step."},"24":{"v":"24px","t":"dimension","s":"css-var --ids-system-space-24 (light)","d":"24px step."},"32":{"v":"32px","t":"dimension","s":"css-var --ids-system-space-32 (light)","d":"32px step."},"40":{"v":"40px","t":"dimension","s":"css-var --ids-system-space-40 (light)","d":"40px step."},"48":{"v":"48px","t":"dimension","s":"css-var --ids-system-space-48 (light)","d":"48px step."}},"radius":{"0":{"v":"0px","t":"dimension","s":"css-var --ids-system-radius-0 (light)","d":"Square."},"4":{"v":"4px","t":"dimension","s":"css-var --ids-system-radius-4 (light)","d":"Tight radius."},"8":{"v":"8px","t":"dimension","s":"css-var --ids-system-radius-8 (light)","d":"Control radius."},"12":{"v":"12px","t":"dimension","s":"css-var --ids-system-radius-12 (light)","d":"Card radius."},"24":{"v":"24px","t":"dimension","s":"css-var --ids-system-radius-24 (light)","d":"Large radius. Pills use a full radius beyond this step."}},"opacity":{"light":{"v":0.08,"t":"number","s":"css-var --ids-opacity-light (light)","d":"0.08 overlay."},"border":{"v":0.12,"t":"number","s":"css-var --ids-opacity-border (light)","d":"0.12 hairline."},"regular":{"v":0.16,"t":"number","s":"css-var --ids-opacity-regular (light)","d":"0.16."},"dark":{"v":0.24,"t":"number","s":"css-var --ids-opacity-dark (light)","d":"0.24."}},"font":{"family":{"sans":{"v":"Instacart Sans, Instacart Sans Fallback, Arial, sans-serif","t":"fontFamily","s":"computed fontFamily of body (raw/css-vars.json body)","d":"The consumer UI face. Self-hosted variable woff2, Arial fallback."},"contrast":{"v":"Instacart Contrast, Instacart Contrast Fallback, Arial, sans-serif","t":"fontFamily","s":"@font-face Instacart Contrast (raw/css-vars.json fonts)","d":"Display face declared beside Instacart Sans. Not the body default."}},"weight":{"regular":{"v":400,"t":"fontWeight","s":"computed fontWeight of body (raw/css-vars.json body)","d":"Body."},"medium":{"v":500,"t":"fontWeight","s":"Reconstruction — entered by hand at capture time, no raw reading behind it (no captured element paints 500; the price line paints 600)","d":"Labels and prices."},"semibold":{"v":600,"t":"fontWeight","s":"computed fontWeight of chip-default (raw/components-computed.json); price-default matches","d":"Chips and prices."},"bold":{"v":700,"t":"fontWeight","s":"Reconstruction — entered by hand at capture time, no raw reading behind it (no heading was measured)","d":"Headings."}}},"typography":{"body":{"v":{"fontFamily":"{font.family.sans}","fontSize":"16px","fontWeight":"{font.weight.regular}","lineHeight":"24px"},"t":"typography","s":"computed fontSize and lineHeight of login-card-default (raw/components-computed.json); body computes 16px, line-height normal","d":"Default body."},"label":{"v":{"fontFamily":"{font.family.sans}","fontSize":"14px","fontWeight":"{font.weight.semibold}","lineHeight":"20px"},"t":"typography","s":"computed fontSize, fontWeight and lineHeight of chip-default (raw/components-computed.json): the chip element's own style","d":"Chip label."},"button":{"v":{"fontFamily":"{font.family.sans}","fontSize":"16px","fontWeight":"{font.weight.regular}","lineHeight":"24px"},"t":"typography","s":"computed fontSize, fontWeight and lineHeight of button-continue-default (raw/components-computed.json): the button element's own style; this capture recorded no separate text-node reading","d":"Primary button label."},"heading":{"v":{"fontFamily":"{font.family.sans}","fontSize":"32px","fontWeight":"{font.weight.bold}","lineHeight":"40px"},"t":"typography","s":"Reconstruction — entered by hand at capture time, no raw reading behind it (homepage section titles were not measured)","d":"Section heading."},"display":{"v":{"fontFamily":"{font.family.sans}","fontSize":"48px","fontWeight":"{font.weight.bold}","lineHeight":"56px"},"t":"typography","s":"Reconstruction — entered by hand at capture time, no raw reading behind it (the grocery-delivery hero was not measured)","d":"Marketing display."}},"motion":{"easing":{"smooth":{"v":"linear(0, 0.159 3.3%, 0.29 6.5%, 0.41 10%, 0.515 13.7%, 0.608 17.7%, 0.686 21.9%, 0.754 26.5%, 0.812 31.6%, 0.858 36.9%, 0.896 42.7%, 0.95 56.4%, 0.98 74.2%, 1)","t":"other","s":"css-var --smooth-easing-function (light, resolved)","d":"Default press and fade. Resolved linear() spring. The stylesheet fallback, when linear() is unsupported, is cubic-bezier."},"elevated":{"v":"linear(0, 0.006 1.2%, 0.026 2.5%, 0.111 5.5%, 0.591 16.8%, 0.785 22.3%, 0.859 25%, 0.918 27.7%, 0.965 30.5%, 1.002 33.5%, 1.038 38.7%, 1.049 44.9%, 1.004 72.8%, 1)","t":"other","s":"css-var --elevated-easing-function (light, resolved)","d":"Overshoot for elevated motion. Resolved linear() spring. The stylesheet fallback, when linear() is unsupported, is cubic-bezier."},"bounce":{"v":"linear(0, 0.007 1%, 0.031 2.1%, 0.132 4.6%, 0.676 13.5%, 0.888 17.7%, 0.964 19.7%, 1.026 21.8%, 1.071 23.9%, 1.102 26.2%, 1.119 29.2%, 1.115 32.7%, 1.017 47.2%, 0.988 56%, 1)","t":"other","s":"css-var --bounce-easing-function (light, resolved)","d":"Stronger overshoot. Resolved linear() spring. The stylesheet fallback, when linear() is unsupported, is cubic-bezier."}}}},"light":{"color":{"page":{"v":"#ffffff","t":"color","s":"css-var --ids-color-system-grayscale-00 (light)","d":"Page. Marketing pages are white; login sits on tertiary light."},"surface":{"v":"#f7f5f0","t":"color","s":"css-var --ids-color-brand-tertiary-light (light)","d":"Warm wash behind auth cards and some marketing bands."},"text":{"v":"#242529","t":"color","s":"css-var --ids-color-system-grayscale-80 (light)","d":"Primary ink. Headings and store names."},"muted":{"v":"#72767e","t":"color","s":"css-var --ids-color-system-grayscale-50 (light)","d":"Secondary ink. Meta and placeholders."},"accent":{"v":"#108910","t":"color","s":"css-var --ids-color-brand-primary-regular (light)","d":"Primary action fill."},"accent-ink":{"v":"#ffffff","t":"color","s":"css-var --ids-color-system-grayscale-00 (light)","d":"Label on the primary fill."},"on-accent":{"v":"#ffffff","t":"color","s":"css-var --ids-color-system-grayscale-00 (light)","d":"Text on primary green."},"border":{"v":"#e8e9eb","t":"color","s":"css-var --ids-color-system-grayscale-20 (light)","d":"Default hairline and field border."},"hero":{"v":"#003d29","t":"color","s":"css-var --ids-color-brand-secondary-regular (light)","d":"Homepage hero band."},"hero-ink":{"v":"#ffffff","t":"color","s":"css-var --ids-color-system-grayscale-00 (light)","d":"Text on the hero band."},"link":{"v":"#108910","t":"color","s":"css-var --ids-color-brand-primary-regular (light)","d":"Inline links on marketing pages."},"deal":{"v":"#ffdc23","t":"color","s":"css-var --ids-color-brand-max-light (light)","d":"Yellow deal and highlight chips."},"danger":{"v":"#de3534","t":"color","s":"css-var --ids-color-system-feedback-detrimental-regular (light)","d":"Error text and fills."},"danger-surface":{"v":"#fef0f0","t":"color","s":"css-var --ids-color-system-feedback-detrimental-light (light)","d":"Error wash."},"success":{"v":"#108910","t":"color","s":"css-var --ids-color-system-feedback-success-regular (light)","d":"Delivery-time green."},"warning":{"v":"#ffa500","t":"color","s":"css-var --ids-color-system-feedback-alert-regular (light)","d":"Alert orange."},"focus":{"v":"#108910","t":"color","s":"css-var --ids-color-brand-primary-regular (light)","d":"Focus ring colour observed on the email field."}},"component":{"button":{"primary":{"background":{"v":"{color.accent}","t":"color","s":"alias of accent; measured Sign up and Continue"},"text":{"v":"{color.on-accent}","t":"color","s":"alias of on-accent"},"radius":{"v":"20px","t":"dimension","s":"computed borderTopLeftRadius of button-primary-default (raw/components-computed.json); button-continue-default paints 28px on its 56px height","d":"Half the 40px height: a pill. The 56px Continue paints 28px, also half its height."},"height":{"v":"40px","t":"dimension","s":"computed height of button-primary-default (raw/components-computed.json); the header Sign up","d":"Header primary height."},"height-lg":{"v":"56px","t":"dimension","s":"computed height of button-continue-default (raw/components-computed.json); the login Continue","d":"Auth primary height."},"radius-lg":{"v":"28px","t":"dimension","s":"computed borderTopLeftRadius of button-continue-default (raw/components-computed.json); the login Continue","d":"The 56px Continue's corner: half its height, a pill."}},"secondary":{"background":{"v":"{color.page}","t":"color","s":"alias of page"},"text":{"v":"{color.text}","t":"color","s":"alias of text"},"border":{"v":"{color.border}","t":"color","s":"alias of border"}}},"search":{"height":{"v":"56px","t":"dimension","s":"computed height of search-default (raw/components-computed.json); the homepage search","d":"Header search height."},"radius":{"v":"28px","t":"dimension","s":"computed borderTopLeftRadius of search-default (raw/components-computed.json)","d":"Half the 56px height: a pill."}},"card":{"radius":{"v":"12px","t":"dimension","s":"css-var --ids-system-radius-12 (light); the store-card and login-card readings paint 0px on the element measured, so no card reading holds it","d":"Card radius."},"background":{"v":"{color.page}","t":"color","s":"alias of page"}},"chip":{"height":{"v":"32px","t":"dimension","s":"computed height of chip-default (raw/components-computed.json); the EBT chip","d":"Filter chip height."},"radius":{"v":"999px","t":"dimension","s":"computed borderTopLeftRadius of chip-default (raw/components-computed.json)","d":"Filter chip radius."}},"field":{"height":{"v":"48px","t":"dimension","s":"computed height of text-field-default (raw/components-computed.json); the login email field","d":"Text field height."},"radius":{"v":"8px","t":"dimension","s":"computed borderTopLeftRadius of text-field-default (raw/components-computed.json); matches --ids-system-radius-8","d":"Field radius."}}}},"dark":{}};
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const cssname = (p) => '--' + p.replace(/\./g, '-').replace(/[^a-zA-Z0-9-]/g, '-');
+const flat = (node, prefix = '') => Object.entries(node || {}).flatMap(([k, v]) => v && v.t ? [[prefix + k, v]] : (v && typeof v === 'object' ? flat(v, prefix + k + '.') : []));
+(function palette() {
+  let h = '';
+  for (const setname of ['core', 'light']) {
+    for (const [g, grp] of Object.entries(TOK[setname] || {})) {
+      const items = (grp && grp.t ? [[setname + '.' + g, grp]] : flat(grp, setname + '.' + g + '.')).filter(([, t]) => t.t === 'color');
+      if (!items.length) continue;
+      h += `<div class="pal-h">${esc(setname)}.${esc(g)}</div><div class="pal">`;
+      for (const [n, t] of items) h += `<div class="sw"><span class="dot"><i style="background:var(${cssname(n)})"></i></span><div><div class="nm">${esc(n)}</div><div class="vl">${esc(t.v)}</div></div></div>`;
+      h += '</div>';
+    }
+  }
+  $('#roles-out').innerHTML = h;
+})();
+(function spacing() {
+  let m = '';
+  for (const group of ['space', 'radius', 'opacity', 'font']) {
+    for (const [n, t] of flat(TOK.core[group] || {}, group + '.')) {
+      const v = Array.isArray(t.v) ? t.v.join(', ') : (typeof t.v === 'object' ? JSON.stringify(t.v) : t.v);
+      m += `<div><b>${esc(n)}</b> <span>${esc(v)}</span></div>`;
+    }
+  }
+  for (const [n, t] of flat((TOK.core.motion || {}).easing || {}, 'motion.easing.')) m += `<div><b>${esc(n)}</b> <span>${esc(String(t.v).slice(0, 48))}</span></div>`;
+  $('#spacing-out').innerHTML = m;
+  let type = '';
+  for (const [n, t] of flat(TOK.core.typography || {}, 'typography.')) {
+    const v = t.v || {};
+    type += `<div class="tr" style="font:${esc(v.fontWeight)} ${esc(v.fontSize)}/${esc(v.lineHeight)} var(--sg-sans)">${esc(n)}</div>`;
+  }
+  $('#type-out').innerHTML = type;
+})();
+</script>
+</body>
+</html>

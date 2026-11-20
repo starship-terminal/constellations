@@ -1,0 +1,1894 @@
+{
+  "_about": "The token tree build_tokens.py turns into tokens.json. Equals' public surface is three sites: the equals.com marketing pages (light only, --brand-* palette and .accent--*/.label--* body themes), the go.equals.com sign-in card (light, --color-* Tailwind-style ramps) and the docs.equals.com Mintlify docs (light and dark, --primary/--gray-*/--background-* semantics). Declared scales under core.*; the marketing and sign-in roles under light.*; the docs roles under both light.* and dark.* (Mintlify's dark is a real theme). Measured roles alias the declared values they match.",
+  "core": {
+    "color": {
+      "brand": {
+        "amber": {
+          "var": "--brand-amber",
+          "type": "color",
+          "description": "The declared `--brand-amber` — the marketing brand scale."
+        },
+        "aquamarine": {
+          "var": "--brand-aquamarine",
+          "type": "color",
+          "description": "The declared `--brand-aquamarine` — the marketing brand scale."
+        },
+        "black": {
+          "var": "--brand-black",
+          "type": "color",
+          "description": "The declared `--brand-black` — the marketing brand scale."
+        },
+        "blue": {
+          "var": "--brand-blue",
+          "type": "color",
+          "description": "The declared `--brand-blue` — the marketing brand scale."
+        },
+        "glacier": {
+          "var": "--brand-glacier",
+          "type": "color",
+          "description": "The declared `--brand-glacier` — the marketing brand scale."
+        },
+        "green": {
+          "var": "--brand-green",
+          "type": "color",
+          "description": "The declared `--brand-green` — the marketing brand scale."
+        },
+        "grey-1": {
+          "var": "--brand-grey-1",
+          "type": "color",
+          "description": "The declared `--brand-grey-1` — the marketing brand scale."
+        },
+        "grey-2": {
+          "var": "--brand-grey-2",
+          "type": "color",
+          "description": "The declared `--brand-grey-2` — the marketing brand scale."
+        },
+        "grey-3": {
+          "var": "--brand-grey-3",
+          "type": "color",
+          "description": "The declared `--brand-grey-3` — the marketing brand scale."
+        },
+        "grey-4": {
+          "var": "--brand-grey-4",
+          "type": "color",
+          "description": "The declared `--brand-grey-4` — the marketing brand scale."
+        },
+        "grey-5": {
+          "var": "--brand-grey-5",
+          "type": "color",
+          "description": "The declared `--brand-grey-5` — the marketing brand scale."
+        },
+        "orchid": {
+          "var": "--brand-orchid",
+          "type": "color",
+          "description": "The declared `--brand-orchid` — the marketing brand scale."
+        },
+        "peach": {
+          "var": "--brand-peach",
+          "type": "color",
+          "description": "The declared `--brand-peach` — the marketing brand scale."
+        },
+        "purple": {
+          "var": "--brand-purple",
+          "type": "color",
+          "description": "The declared `--brand-purple` — the marketing brand scale."
+        },
+        "sky": {
+          "var": "--brand-sky",
+          "type": "color",
+          "description": "The declared `--brand-sky` — the marketing brand scale."
+        },
+        "white": {
+          "var": "--brand-white",
+          "type": "color",
+          "description": "The declared `--brand-white` — the marketing brand scale."
+        },
+        "yellow": {
+          "var": "--brand-yellow",
+          "type": "color",
+          "description": "The declared `--brand-yellow` — the marketing brand scale."
+        }
+      },
+      "app": {
+        "background": {
+          "var": "--color-background",
+          "type": "color",
+          "description": "The declared `--color-background` — the app's Tailwind-style palette."
+        },
+        "black": {
+          "var": "--color-black",
+          "type": "color",
+          "description": "The declared `--color-black` — the app's Tailwind-style palette."
+        },
+        "blue": {
+          "100": {
+            "var": "--color-blue-100",
+            "type": "color",
+            "description": "The declared `--color-blue-100` — the app's Tailwind-style palette."
+          },
+          "200": {
+            "var": "--color-blue-200",
+            "type": "color",
+            "description": "The declared `--color-blue-200` — the app's Tailwind-style palette."
+          },
+          "300": {
+            "var": "--color-blue-300",
+            "type": "color",
+            "description": "The declared `--color-blue-300` — the app's Tailwind-style palette."
+          },
+          "400": {
+            "var": "--color-blue-400",
+            "type": "color",
+            "description": "The declared `--color-blue-400` — the app's Tailwind-style palette."
+          },
+          "50": {
+            "var": "--color-blue-50",
+            "type": "color",
+            "description": "The declared `--color-blue-50` — the app's Tailwind-style palette."
+          },
+          "500": {
+            "var": "--color-blue-500",
+            "type": "color",
+            "description": "The declared `--color-blue-500` — the app's Tailwind-style palette."
+          },
+          "600": {
+            "var": "--color-blue-600",
+            "type": "color",
+            "description": "The declared `--color-blue-600` — the app's Tailwind-style palette."
+          },
+          "700": {
+            "var": "--color-blue-700",
+            "type": "color",
+            "description": "The declared `--color-blue-700` — the app's Tailwind-style palette."
+          },
+          "800": {
+            "var": "--color-blue-800",
+            "type": "color",
+            "description": "The declared `--color-blue-800` — the app's Tailwind-style palette."
+          },
+          "900": {
+            "var": "--color-blue-900",
+            "type": "color",
+            "description": "The declared `--color-blue-900` — the app's Tailwind-style palette."
+          }
+        },
+        "cyan": {
+          "100": {
+            "var": "--color-cyan-100",
+            "type": "color",
+            "description": "The declared `--color-cyan-100` — the app's Tailwind-style palette."
+          },
+          "200": {
+            "var": "--color-cyan-200",
+            "type": "color",
+            "description": "The declared `--color-cyan-200` — the app's Tailwind-style palette."
+          },
+          "300": {
+            "var": "--color-cyan-300",
+            "type": "color",
+            "description": "The declared `--color-cyan-300` — the app's Tailwind-style palette."
+          },
+          "400": {
+            "var": "--color-cyan-400",
+            "type": "color",
+            "description": "The declared `--color-cyan-400` — the app's Tailwind-style palette."
+          },
+          "50": {
+            "var": "--color-cyan-50",
+            "type": "color",
+            "description": "The declared `--color-cyan-50` — the app's Tailwind-style palette."
+          },
+          "500": {
+            "var": "--color-cyan-500",
+            "type": "color",
+            "description": "The declared `--color-cyan-500` — the app's Tailwind-style palette."
+          },
+          "600": {
+            "var": "--color-cyan-600",
+            "type": "color",
+            "description": "The declared `--color-cyan-600` — the app's Tailwind-style palette."
+          },
+          "700": {
+            "var": "--color-cyan-700",
+            "type": "color",
+            "description": "The declared `--color-cyan-700` — the app's Tailwind-style palette."
+          },
+          "800": {
+            "var": "--color-cyan-800",
+            "type": "color",
+            "description": "The declared `--color-cyan-800` — the app's Tailwind-style palette."
+          },
+          "900": {
+            "var": "--color-cyan-900",
+            "type": "color",
+            "description": "The declared `--color-cyan-900` — the app's Tailwind-style palette."
+          }
+        },
+        "emerald": {
+          "500": {
+            "var": "--color-emerald-500",
+            "type": "color",
+            "description": "The declared `--color-emerald-500` — the app's Tailwind-style palette."
+          }
+        },
+        "green": {
+          "100": {
+            "var": "--color-green-100",
+            "type": "color",
+            "description": "The declared `--color-green-100` — the app's Tailwind-style palette."
+          },
+          "200": {
+            "var": "--color-green-200",
+            "type": "color",
+            "description": "The declared `--color-green-200` — the app's Tailwind-style palette."
+          },
+          "300": {
+            "var": "--color-green-300",
+            "type": "color",
+            "description": "The declared `--color-green-300` — the app's Tailwind-style palette."
+          },
+          "400": {
+            "var": "--color-green-400",
+            "type": "color",
+            "description": "The declared `--color-green-400` — the app's Tailwind-style palette."
+          },
+          "50": {
+            "var": "--color-green-50",
+            "type": "color",
+            "description": "The declared `--color-green-50` — the app's Tailwind-style palette."
+          },
+          "500": {
+            "var": "--color-green-500",
+            "type": "color",
+            "description": "The declared `--color-green-500` — the app's Tailwind-style palette."
+          },
+          "600": {
+            "var": "--color-green-600",
+            "type": "color",
+            "description": "The declared `--color-green-600` — the app's Tailwind-style palette."
+          },
+          "700": {
+            "var": "--color-green-700",
+            "type": "color",
+            "description": "The declared `--color-green-700` — the app's Tailwind-style palette."
+          },
+          "800": {
+            "var": "--color-green-800",
+            "type": "color",
+            "description": "The declared `--color-green-800` — the app's Tailwind-style palette."
+          },
+          "900": {
+            "var": "--color-green-900",
+            "type": "color",
+            "description": "The declared `--color-green-900` — the app's Tailwind-style palette."
+          }
+        },
+        "grey": {
+          "100": {
+            "var": "--color-grey-100",
+            "type": "color",
+            "description": "The declared `--color-grey-100` — the app's Tailwind-style palette."
+          },
+          "150": {
+            "var": "--color-grey-150",
+            "type": "color",
+            "description": "The declared `--color-grey-150` — the app's Tailwind-style palette."
+          },
+          "200": {
+            "var": "--color-grey-200",
+            "type": "color",
+            "description": "The declared `--color-grey-200` — the app's Tailwind-style palette."
+          },
+          "25": {
+            "var": "--color-grey-25",
+            "type": "color",
+            "description": "The declared `--color-grey-25` — the app's Tailwind-style palette."
+          },
+          "300": {
+            "var": "--color-grey-300",
+            "type": "color",
+            "description": "The declared `--color-grey-300` — the app's Tailwind-style palette."
+          },
+          "400": {
+            "var": "--color-grey-400",
+            "type": "color",
+            "description": "The declared `--color-grey-400` — the app's Tailwind-style palette."
+          },
+          "50": {
+            "var": "--color-grey-50",
+            "type": "color",
+            "description": "The declared `--color-grey-50` — the app's Tailwind-style palette."
+          },
+          "500": {
+            "var": "--color-grey-500",
+            "type": "color",
+            "description": "The declared `--color-grey-500` — the app's Tailwind-style palette."
+          },
+          "600": {
+            "var": "--color-grey-600",
+            "type": "color",
+            "description": "The declared `--color-grey-600` — the app's Tailwind-style palette."
+          },
+          "700": {
+            "var": "--color-grey-700",
+            "type": "color",
+            "description": "The declared `--color-grey-700` — the app's Tailwind-style palette."
+          },
+          "800": {
+            "var": "--color-grey-800",
+            "type": "color",
+            "description": "The declared `--color-grey-800` — the app's Tailwind-style palette."
+          },
+          "900": {
+            "var": "--color-grey-900",
+            "type": "color",
+            "description": "The declared `--color-grey-900` — the app's Tailwind-style palette."
+          }
+        },
+        "orange": {
+          "100": {
+            "var": "--color-orange-100",
+            "type": "color",
+            "description": "The declared `--color-orange-100` — the app's Tailwind-style palette."
+          },
+          "200": {
+            "var": "--color-orange-200",
+            "type": "color",
+            "description": "The declared `--color-orange-200` — the app's Tailwind-style palette."
+          },
+          "300": {
+            "var": "--color-orange-300",
+            "type": "color",
+            "description": "The declared `--color-orange-300` — the app's Tailwind-style palette."
+          },
+          "400": {
+            "var": "--color-orange-400",
+            "type": "color",
+            "description": "The declared `--color-orange-400` — the app's Tailwind-style palette."
+          },
+          "50": {
+            "var": "--color-orange-50",
+            "type": "color",
+            "description": "The declared `--color-orange-50` — the app's Tailwind-style palette."
+          },
+          "500": {
+            "var": "--color-orange-500",
+            "type": "color",
+            "description": "The declared `--color-orange-500` — the app's Tailwind-style palette."
+          },
+          "600": {
+            "var": "--color-orange-600",
+            "type": "color",
+            "description": "The declared `--color-orange-600` — the app's Tailwind-style palette."
+          },
+          "700": {
+            "var": "--color-orange-700",
+            "type": "color",
+            "description": "The declared `--color-orange-700` — the app's Tailwind-style palette."
+          },
+          "800": {
+            "var": "--color-orange-800",
+            "type": "color",
+            "description": "The declared `--color-orange-800` — the app's Tailwind-style palette."
+          },
+          "900": {
+            "var": "--color-orange-900",
+            "type": "color",
+            "description": "The declared `--color-orange-900` — the app's Tailwind-style palette."
+          }
+        },
+        "pink": {
+          "100": {
+            "var": "--color-pink-100",
+            "type": "color",
+            "description": "The declared `--color-pink-100` — the app's Tailwind-style palette."
+          },
+          "200": {
+            "var": "--color-pink-200",
+            "type": "color",
+            "description": "The declared `--color-pink-200` — the app's Tailwind-style palette."
+          },
+          "300": {
+            "var": "--color-pink-300",
+            "type": "color",
+            "description": "The declared `--color-pink-300` — the app's Tailwind-style palette."
+          },
+          "400": {
+            "var": "--color-pink-400",
+            "type": "color",
+            "description": "The declared `--color-pink-400` — the app's Tailwind-style palette."
+          },
+          "50": {
+            "var": "--color-pink-50",
+            "type": "color",
+            "description": "The declared `--color-pink-50` — the app's Tailwind-style palette."
+          },
+          "500": {
+            "var": "--color-pink-500",
+            "type": "color",
+            "description": "The declared `--color-pink-500` — the app's Tailwind-style palette."
+          },
+          "600": {
+            "var": "--color-pink-600",
+            "type": "color",
+            "description": "The declared `--color-pink-600` — the app's Tailwind-style palette."
+          },
+          "700": {
+            "var": "--color-pink-700",
+            "type": "color",
+            "description": "The declared `--color-pink-700` — the app's Tailwind-style palette."
+          },
+          "800": {
+            "var": "--color-pink-800",
+            "type": "color",
+            "description": "The declared `--color-pink-800` — the app's Tailwind-style palette."
+          },
+          "900": {
+            "var": "--color-pink-900",
+            "type": "color",
+            "description": "The declared `--color-pink-900` — the app's Tailwind-style palette."
+          }
+        },
+        "primary": {
+          "var": "--color-primary",
+          "type": "color",
+          "description": "The declared `--color-primary` — the app's Tailwind-style palette."
+        },
+        "purple": {
+          "100": {
+            "var": "--color-purple-100",
+            "type": "color",
+            "description": "The declared `--color-purple-100` — the app's Tailwind-style palette."
+          },
+          "200": {
+            "var": "--color-purple-200",
+            "type": "color",
+            "description": "The declared `--color-purple-200` — the app's Tailwind-style palette."
+          },
+          "300": {
+            "var": "--color-purple-300",
+            "type": "color",
+            "description": "The declared `--color-purple-300` — the app's Tailwind-style palette."
+          },
+          "400": {
+            "var": "--color-purple-400",
+            "type": "color",
+            "description": "The declared `--color-purple-400` — the app's Tailwind-style palette."
+          },
+          "50": {
+            "var": "--color-purple-50",
+            "type": "color",
+            "description": "The declared `--color-purple-50` — the app's Tailwind-style palette."
+          },
+          "500": {
+            "var": "--color-purple-500",
+            "type": "color",
+            "description": "The declared `--color-purple-500` — the app's Tailwind-style palette."
+          },
+          "600": {
+            "var": "--color-purple-600",
+            "type": "color",
+            "description": "The declared `--color-purple-600` — the app's Tailwind-style palette."
+          },
+          "700": {
+            "var": "--color-purple-700",
+            "type": "color",
+            "description": "The declared `--color-purple-700` — the app's Tailwind-style palette."
+          },
+          "800": {
+            "var": "--color-purple-800",
+            "type": "color",
+            "description": "The declared `--color-purple-800` — the app's Tailwind-style palette."
+          },
+          "900": {
+            "var": "--color-purple-900",
+            "type": "color",
+            "description": "The declared `--color-purple-900` — the app's Tailwind-style palette."
+          }
+        },
+        "red": {
+          "100": {
+            "var": "--color-red-100",
+            "type": "color",
+            "description": "The declared `--color-red-100` — the app's Tailwind-style palette."
+          },
+          "200": {
+            "var": "--color-red-200",
+            "type": "color",
+            "description": "The declared `--color-red-200` — the app's Tailwind-style palette."
+          },
+          "300": {
+            "var": "--color-red-300",
+            "type": "color",
+            "description": "The declared `--color-red-300` — the app's Tailwind-style palette."
+          },
+          "400": {
+            "var": "--color-red-400",
+            "type": "color",
+            "description": "The declared `--color-red-400` — the app's Tailwind-style palette."
+          },
+          "50": {
+            "var": "--color-red-50",
+            "type": "color",
+            "description": "The declared `--color-red-50` — the app's Tailwind-style palette."
+          },
+          "500": {
+            "var": "--color-red-500",
+            "type": "color",
+            "description": "The declared `--color-red-500` — the app's Tailwind-style palette."
+          },
+          "600": {
+            "var": "--color-red-600",
+            "type": "color",
+            "description": "The declared `--color-red-600` — the app's Tailwind-style palette."
+          },
+          "700": {
+            "var": "--color-red-700",
+            "type": "color",
+            "description": "The declared `--color-red-700` — the app's Tailwind-style palette."
+          },
+          "800": {
+            "var": "--color-red-800",
+            "type": "color",
+            "description": "The declared `--color-red-800` — the app's Tailwind-style palette."
+          },
+          "900": {
+            "var": "--color-red-900",
+            "type": "color",
+            "description": "The declared `--color-red-900` — the app's Tailwind-style palette."
+          }
+        },
+        "shadow": {
+          "var": "--color-shadow",
+          "type": "color",
+          "description": "The declared `--color-shadow` — the app's Tailwind-style palette."
+        },
+        "teal": {
+          "100": {
+            "var": "--color-teal-100",
+            "type": "color",
+            "description": "The declared `--color-teal-100` — the app's Tailwind-style palette."
+          },
+          "200": {
+            "var": "--color-teal-200",
+            "type": "color",
+            "description": "The declared `--color-teal-200` — the app's Tailwind-style palette."
+          },
+          "300": {
+            "var": "--color-teal-300",
+            "type": "color",
+            "description": "The declared `--color-teal-300` — the app's Tailwind-style palette."
+          },
+          "400": {
+            "var": "--color-teal-400",
+            "type": "color",
+            "description": "The declared `--color-teal-400` — the app's Tailwind-style palette."
+          },
+          "50": {
+            "var": "--color-teal-50",
+            "type": "color",
+            "description": "The declared `--color-teal-50` — the app's Tailwind-style palette."
+          },
+          "500": {
+            "var": "--color-teal-500",
+            "type": "color",
+            "description": "The declared `--color-teal-500` — the app's Tailwind-style palette."
+          },
+          "600": {
+            "var": "--color-teal-600",
+            "type": "color",
+            "description": "The declared `--color-teal-600` — the app's Tailwind-style palette."
+          },
+          "700": {
+            "var": "--color-teal-700",
+            "type": "color",
+            "description": "The declared `--color-teal-700` — the app's Tailwind-style palette."
+          },
+          "800": {
+            "var": "--color-teal-800",
+            "type": "color",
+            "description": "The declared `--color-teal-800` — the app's Tailwind-style palette."
+          },
+          "900": {
+            "var": "--color-teal-900",
+            "type": "color",
+            "description": "The declared `--color-teal-900` — the app's Tailwind-style palette."
+          }
+        },
+        "white": {
+          "var": "--color-white",
+          "type": "color",
+          "description": "The declared `--color-white` — the app's Tailwind-style palette."
+        },
+        "yellow": {
+          "100": {
+            "var": "--color-yellow-100",
+            "type": "color",
+            "description": "The declared `--color-yellow-100` — the app's Tailwind-style palette."
+          },
+          "200": {
+            "var": "--color-yellow-200",
+            "type": "color",
+            "description": "The declared `--color-yellow-200` — the app's Tailwind-style palette."
+          },
+          "300": {
+            "var": "--color-yellow-300",
+            "type": "color",
+            "description": "The declared `--color-yellow-300` — the app's Tailwind-style palette."
+          },
+          "400": {
+            "var": "--color-yellow-400",
+            "type": "color",
+            "description": "The declared `--color-yellow-400` — the app's Tailwind-style palette."
+          },
+          "50": {
+            "var": "--color-yellow-50",
+            "type": "color",
+            "description": "The declared `--color-yellow-50` — the app's Tailwind-style palette."
+          },
+          "500": {
+            "var": "--color-yellow-500",
+            "type": "color",
+            "description": "The declared `--color-yellow-500` — the app's Tailwind-style palette."
+          },
+          "600": {
+            "var": "--color-yellow-600",
+            "type": "color",
+            "description": "The declared `--color-yellow-600` — the app's Tailwind-style palette."
+          },
+          "700": {
+            "var": "--color-yellow-700",
+            "type": "color",
+            "description": "The declared `--color-yellow-700` — the app's Tailwind-style palette."
+          },
+          "800": {
+            "var": "--color-yellow-800",
+            "type": "color",
+            "description": "The declared `--color-yellow-800` — the app's Tailwind-style palette."
+          },
+          "900": {
+            "var": "--color-yellow-900",
+            "type": "color",
+            "description": "The declared `--color-yellow-900` — the app's Tailwind-style palette."
+          }
+        }
+      },
+      "docs": {
+        "gray": {
+          "100": {
+            "var": "--gray-100",
+            "type": "color",
+            "description": "The declared `--gray-100` — the docs grey ramp."
+          },
+          "200": {
+            "var": "--gray-200",
+            "type": "color",
+            "description": "The declared `--gray-200` — the docs grey ramp."
+          },
+          "300": {
+            "var": "--gray-300",
+            "type": "color",
+            "description": "The declared `--gray-300` — the docs grey ramp."
+          },
+          "400": {
+            "var": "--gray-400",
+            "type": "color",
+            "description": "The declared `--gray-400` — the docs grey ramp."
+          },
+          "50": {
+            "var": "--gray-50",
+            "type": "color",
+            "description": "The declared `--gray-50` — the docs grey ramp."
+          },
+          "500": {
+            "var": "--gray-500",
+            "type": "color",
+            "description": "The declared `--gray-500` — the docs grey ramp."
+          },
+          "600": {
+            "var": "--gray-600",
+            "type": "color",
+            "description": "The declared `--gray-600` — the docs grey ramp."
+          },
+          "700": {
+            "var": "--gray-700",
+            "type": "color",
+            "description": "The declared `--gray-700` — the docs grey ramp."
+          },
+          "800": {
+            "var": "--gray-800",
+            "type": "color",
+            "description": "The declared `--gray-800` — the docs grey ramp."
+          },
+          "900": {
+            "var": "--gray-900",
+            "type": "color",
+            "description": "The declared `--gray-900` — the docs grey ramp."
+          },
+          "950": {
+            "var": "--gray-950",
+            "type": "color",
+            "description": "The declared `--gray-950` — the docs grey ramp."
+          }
+        },
+        "primary": {
+          "var": "--primary",
+          "type": "color",
+          "description": "The declared `--primary`."
+        },
+        "primary-light": {
+          "var": "--primary-light",
+          "type": "color",
+          "description": "The declared `--primary-light`."
+        },
+        "primary-dark": {
+          "var": "--primary-dark",
+          "type": "color",
+          "description": "The declared `--primary-dark`."
+        },
+        "tooltip-foreground": {
+          "var": "--tooltip-foreground",
+          "type": "color",
+          "description": "The declared `--tooltip-foreground`."
+        }
+      }
+    },
+    "font": {
+      "family": {
+        "unica": {
+          "var": "--font-unica",
+          "type": "fontFamily",
+          "description": "Unica77 — the marketing body/UI face (nav, lede, buttons, workbook mockup)."
+        },
+        "serif-condensed": {
+          "var": "--font-serif-condensed",
+          "type": "fontFamily",
+          "description": "Serrif Condensed — the marketing display face ('What's after Excel?', 'ARR Dashboard')."
+        },
+        "fono": {
+          "var": "--font-fono",
+          "type": "fontFamily",
+          "description": "Aeonik Fono — the monospaced eyebrow labels ('1. TRUST')."
+        },
+        "sans-serif": {
+          "var": "--font-sans-serif",
+          "type": "fontFamily",
+          "description": "Aeonik Pro — the declared sans stack behind Unica77."
+        },
+        "lato": {
+          "var": "--font-lato",
+          "type": "fontFamily",
+          "description": "Lato — a declared secondary stack."
+        },
+        "inter": {
+          "var": "--font-inter",
+          "type": "fontFamily",
+          "description": "Inter — declared; the docs body/UI face."
+        },
+        "hubspot": {
+          "var": "--font-hubspot",
+          "type": "fontFamily",
+          "description": "HubSpot Sans — a declared mockup face."
+        },
+        "anthropic-sans": {
+          "var": "--font-anthropic-sans",
+          "type": "fontFamily",
+          "description": "Anthropic Sans — a declared mockup face (the Claude demo)."
+        },
+        "anthropic-serif": {
+          "var": "--font-anthropic-serif",
+          "type": "fontFamily",
+          "description": "Anthropic Serif — a declared mockup face."
+        },
+        "app": {
+          "var": "--font-app",
+          "type": "fontFamily",
+          "description": "neue-haas-unica — the go.equals.com app face (the sign-in card)."
+        },
+        "mono": {
+          "var": "--font-mono",
+          "type": "fontFamily",
+          "description": "JetBrains Mono — the app's declared mono stack."
+        },
+        "paper-mono": {
+          "var": "--font-paper-mono",
+          "type": "fontFamily",
+          "description": "Paper Mono — the docs code face."
+        },
+        "default-mono": {
+          "var": "--default-mono-font-family",
+          "type": "fontFamily",
+          "description": "The docs' declared default mono stack (Paper Mono first)."
+        }
+      },
+      "weight": {
+        "normal": {
+          "var": "--font-weight-normal",
+          "type": "fontWeight",
+          "description": "400 — body and UI text everywhere."
+        },
+        "medium": {
+          "var": "--font-weight-medium",
+          "type": "fontWeight",
+          "description": "500 — the workbook mockup's cell labels, docs code."
+        },
+        "semibold": {
+          "var": "--font-weight-semibold",
+          "type": "fontWeight",
+          "description": "600 — docs headings."
+        },
+        "bold": {
+          "var": "--font-weight-bold",
+          "type": "fontWeight",
+          "description": "700 — declared."
+        },
+        "extrabold": {
+          "var": "--font-weight-extrabold",
+          "type": "fontWeight",
+          "description": "800 — declared."
+        }
+      },
+      "size": {
+        "tab": {
+          "value": "11px",
+          "type": "dimension",
+          "source": "computed fontSize of wb-sheet-tab default (raw/components-computed.json)",
+          "description": "The 11px workbook sheet-tab label."
+        },
+        "app": {
+          "value": "12px",
+          "type": "dimension",
+          "source": "computed fontSize of signin-continue default (raw/components-computed.json)",
+          "description": "The 12px go.equals.com app text — sign-in field, submit, footer."
+        },
+        "cell": {
+          "value": "12px",
+          "type": "dimension",
+          "source": "computed fontSize of wb-cell default (raw/components-computed.json)",
+          "description": "The 12px workbook cell label."
+        },
+        "small": {
+          "value": "14px",
+          "type": "dimension",
+          "source": "computed fontSize of mkt-nav-link default (raw/components-computed.json)",
+          "description": "The 14px marketing UI size — nav links, eyebrow labels, buttons, plan features' chrome."
+        },
+        "field": {
+          "value": "16px",
+          "type": "dimension",
+          "source": "computed fontSize of hero-email default (raw/components-computed.json)",
+          "description": "The 16px field and plan-feature text."
+        },
+        "body": {
+          "value": "24px",
+          "type": "dimension",
+          "source": "computed fontSize of faq-question default (raw/components-computed.json)",
+          "description": "The 18px marketing body size (plan cards, FAQ, header text)."
+        },
+        "docs-body": {
+          "value": "18px",
+          "type": "dimension",
+          "source": "computed fontSize of docs-para default (raw/components-computed.json)",
+          "description": "The 18px docs paragraph size."
+        },
+        "lede": {
+          "value": "24px",
+          "type": "dimension",
+          "source": "computed fontSize of hero-sub default (raw/components-computed.json)",
+          "description": "The 24px hero lede and use-case lede."
+        },
+        "signin-display": {
+          "value": "30px",
+          "type": "dimension",
+          "source": "computed fontSize of signin-heading default (raw/components-computed.json)",
+          "description": "The 30px 'Sign in to Equals' card heading — Serrif Condensed inside the app."
+        },
+        "docs-h1": {
+          "value": "36px",
+          "type": "dimension",
+          "source": "computed fontSize of docs-h1 default (raw/components-computed.json)",
+          "description": "The 36px docs page heading."
+        },
+        "section": {
+          "value": "48px",
+          "type": "dimension",
+          "source": "computed fontSize of section-h2 default (raw/components-computed.json)",
+          "description": "The 48px marketing section heading; also the mobile display size."
+        },
+        "mobile-display": {
+          "value": "48px",
+          "type": "dimension",
+          "source": "computed fontSize of m-hero-h1 default (raw/components-computed.json)",
+          "description": "The 48px display at 390px."
+        },
+        "display": {
+          "value": "110px",
+          "type": "dimension",
+          "source": "computed fontSize of hero-h1 default (raw/components-computed.json)",
+          "description": "The 110px marketing display ('What's after Excel?', 'ARR Dashboard')."
+        }
+      },
+      "lineHeight": {
+        "tight": {
+          "var": "--leading-tight",
+          "type": "number",
+          "description": "1.25 — declared tight leading."
+        },
+        "normal": {
+          "var": "--leading-normal",
+          "type": "number",
+          "description": "1.5 — declared normal leading."
+        },
+        "relaxed": {
+          "var": "--leading-relaxed",
+          "type": "number",
+          "description": "1.625 — declared relaxed leading."
+        },
+        "display": {
+          "value": "110px",
+          "type": "dimension",
+          "source": "computed lineHeight of hero-h1 default (raw/components-computed.json)",
+          "description": "The 110px/110px display's own leading (ratio 1)."
+        },
+        "label": {
+          "value": "24px",
+          "type": "dimension",
+          "source": "computed lineHeight of section-label default (raw/components-computed.json)",
+          "description": "The eyebrow's 24px line on 14px."
+        },
+        "body": {
+          "value": "32px",
+          "type": "dimension",
+          "source": "computed lineHeight of faq-question default (raw/components-computed.json)",
+          "description": "The 24px marketing body line on 18px."
+        },
+        "lede": {
+          "value": "32px",
+          "type": "dimension",
+          "source": "computed lineHeight of hero-sub default (raw/components-computed.json)",
+          "description": "The 32px lede line on 24px."
+        },
+        "docs-body": {
+          "value": "28px",
+          "type": "dimension",
+          "source": "computed lineHeight of docs-para default (raw/components-computed.json)",
+          "description": "The 28px docs paragraph line on 18px."
+        },
+        "app": {
+          "value": "15px",
+          "type": "dimension",
+          "source": "computed lineHeight of signin-continue default (raw/components-computed.json)",
+          "description": "The app's tight 15-16px control leading."
+        }
+      },
+      "tracking": {
+        "tighter": {
+          "var": "--tracking-tighter",
+          "type": "other",
+          "description": "-0.05em — declared."
+        },
+        "tight": {
+          "var": "--tracking-tight",
+          "type": "other",
+          "description": "-0.025em — declared."
+        },
+        "wide": {
+          "var": "--tracking-wide",
+          "type": "other",
+          "description": "0.025em — declared."
+        },
+        "display": {
+          "value": "-2.2px",
+          "type": "dimension",
+          "source": "computed letterSpacing of hero-h1 default (raw/components-computed.json)",
+          "description": "The display's -0.02em tightening (-2.2px on 110px)."
+        },
+        "body": {
+          "value": "-0.09px",
+          "type": "dimension",
+          "source": "computed letterSpacing of mkt-nav-link default (raw/components-computed.json)",
+          "description": "The marketing UI's -0.005em (-0.09px on 14-18px)."
+        },
+        "label": {
+          "value": "0.28px",
+          "type": "dimension",
+          "source": "computed letterSpacing of section-label default (raw/components-computed.json)",
+          "description": "The eyebrow's +0.02em (+0.28px on 14px)."
+        },
+        "caption": {
+          "value": "0.18px",
+          "type": "dimension",
+          "source": "computed letterSpacing of wb-cell default (raw/components-computed.json)",
+          "description": "The mockup caption's +0.015em (+0.18px)."
+        }
+      }
+    },
+    "size": {
+      "header": {
+        "var": "--header-height",
+        "type": "dimension",
+        "description": "The declared 52px marketing header (measured 52 desktop, 53 mobile)."
+      },
+      "banner": {
+        "var": "--banner-height",
+        "type": "dimension",
+        "description": "The declared 0px promo banner slot."
+      },
+      "base": {
+        "var": "--spacing",
+        "type": "dimension",
+        "description": "The docs/Tailwind 4px spacing base."
+      },
+      "radius-xl": {
+        "var": "--radius-xl",
+        "type": "dimension",
+        "description": "The declared 12px extra-large radius (docs nav items, the mega-menu, the workbook mockup)."
+      },
+      "container": {
+        "2xl": {
+          "var": "--container-2xl",
+          "type": "dimension",
+          "description": "The declared `--container-2xl` docs container width."
+        },
+        "3xl": {
+          "var": "--container-3xl",
+          "type": "dimension",
+          "description": "The declared `--container-3xl` docs container width."
+        },
+        "4xl": {
+          "var": "--container-4xl",
+          "type": "dimension",
+          "description": "The declared `--container-4xl` docs container width."
+        },
+        "5xl": {
+          "var": "--container-5xl",
+          "type": "dimension",
+          "description": "The declared `--container-5xl` docs container width."
+        },
+        "6xl": {
+          "var": "--container-6xl",
+          "type": "dimension",
+          "description": "The declared `--container-6xl` docs container width."
+        },
+        "lg": {
+          "var": "--container-lg",
+          "type": "dimension",
+          "description": "The declared `--container-lg` docs container width."
+        },
+        "sm": {
+          "var": "--container-sm",
+          "type": "dimension",
+          "description": "The declared `--container-sm` docs container width."
+        },
+        "xl": {
+          "var": "--container-xl",
+          "type": "dimension",
+          "description": "The declared `--container-xl` docs container width."
+        },
+        "xs": {
+          "var": "--container-xs",
+          "type": "dimension",
+          "description": "The declared `--container-xs` docs container width."
+        }
+      }
+    },
+    "radius": {
+      "control": {
+        "value": "4px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of wb-toolbar-button default (raw/components-computed.json)",
+        "description": "The 4px toolbar-button radius inside the workbook mockup."
+      },
+      "small": {
+        "value": "6px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of docs-code default (raw/components-computed.json)",
+        "description": "The 6px inline-code and menu-item radius."
+      },
+      "field": {
+        "value": "8px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of signin-email default (raw/components-computed.json)",
+        "description": "The 8px sign-in field and submit radius."
+      },
+      "card": {
+        "value": "12px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of mkt-menu default (raw/components-computed.json)",
+        "description": "The 12px card/menu/mockup radius (matches declared --radius-xl)."
+      },
+      "cta": {
+        "value": "60px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of hero-cta default (raw/components-computed.json)",
+        "description": "The 60px pill radius of the marketing CTAs."
+      },
+      "pill": {
+        "value": "9999px",
+        "type": "dimension",
+        "source": "computed borderTopLeftRadius of docs-search default (raw/components-computed.json)",
+        "description": "The 9999px fully-round radius of the docs search/assistant pills."
+      }
+    },
+    "shadow": {
+      "menu": {
+        "value": "rgba(0, 0, 0, 0.1) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0.05) 0px 2px 8px -2px, rgba(0, 0, 0, 0.15) 0px 8px 24px -4px",
+        "type": "other",
+        "source": "computed boxShadow of mkt-menu default (raw/components-computed.json)",
+        "description": "The three-layer card shadow the mega-menu carries (0.5px ring + soft drop + larger drop)."
+      },
+      "card": {
+        "value": "rgba(38, 38, 38, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.2) 0px 2px 8px -4px",
+        "type": "other",
+        "source": "computed boxShadow of wb-mockup default (raw/components-computed.json)",
+        "description": "The ring + drop pair the workbook mockup carries."
+      },
+      "pressed": {
+        "value": "rgba(0, 0, 0, 0.17) 0px 1px 3px 0px inset",
+        "type": "other",
+        "source": "computed boxShadow of hero-cta pressed (raw/components-computed.json)",
+        "description": "The 1px 3px inset shadow a marketing CTA draws when active."
+      },
+      "popup": {
+        "var": "--twoslash-popup-shadow",
+        "type": "other",
+        "description": "The docs' declared code-popup shadow."
+      }
+    },
+    "motion": {
+      "duration": {
+        "var": "--default-transition-duration",
+        "type": "duration",
+        "description": "The declared 150ms default transition duration."
+      },
+      "easing": {
+        "var": "--default-transition-timing-function",
+        "type": "cubicBezier",
+        "description": "The declared default curve (ease-in-out)."
+      },
+      "ease-in": {
+        "var": "--ease-in",
+        "type": "cubicBezier",
+        "description": "The declared ease-in curve."
+      },
+      "ease-out": {
+        "var": "--ease-out",
+        "type": "cubicBezier",
+        "description": "The declared ease-out curve."
+      },
+      "ease-in-out": {
+        "var": "--ease-in-out",
+        "type": "cubicBezier",
+        "description": "The declared ease-in-out curve."
+      },
+      "control": {
+        "value": "background-color 0.15s ease-out",
+        "type": "other",
+        "source": "computed transition of hero-cta default (raw/components-computed.json)",
+        "description": "The marketing button's transition."
+      }
+    },
+    "breakpoint": {
+      "max-1100": {
+        "value": "1100px",
+        "type": "dimension",
+        "source": "`@media (max-width: 1100px)` in a public stylesheet (raw/css-vars.json rules)",
+        "description": "A declared breakpoint in the public CSS."
+      },
+      "max-767": {
+        "value": "767px",
+        "type": "dimension",
+        "source": "`@media (max-width: 767px)` in a public stylesheet (raw/css-vars.json rules)",
+        "description": "A declared breakpoint in the public CSS."
+      },
+      "min-1024": {
+        "value": "1024px",
+        "type": "dimension",
+        "source": "`@media (width >= 1024px)` in a public stylesheet (raw/css-vars.json rules)",
+        "description": "A declared breakpoint in the public CSS."
+      },
+      "min-640": {
+        "value": "640px",
+        "type": "dimension",
+        "source": "`@media (width >= 640px)` in a public stylesheet (raw/css-vars.json rules)",
+        "description": "A declared breakpoint in the public CSS."
+      }
+    }
+  },
+  "light": {
+    "docs": {
+      "surface": {
+        "var": "--background-light",
+        "type": "color",
+        "description": "The declared `--background-light`."
+      },
+      "border": {
+        "var": "--default-border-color",
+        "type": "color",
+        "description": "The declared `--default-border-color`."
+      },
+      "primary": {
+        "var": "--primary",
+        "type": "color",
+        "description": "The declared `--primary`."
+      },
+      "twoslash": {
+        "border-color": {
+          "var": "--twoslash-border-color",
+          "type": "color"
+        },
+        "code-font-size": {
+          "var": "--twoslash-code-font-size",
+          "type": "other"
+        },
+        "cursor-color": {
+          "var": "--twoslash-cursor-color",
+          "type": "color"
+        },
+        "docs-tag-style": {
+          "var": "--twoslash-docs-tag-style",
+          "type": "other"
+        },
+        "error-bg": {
+          "var": "--twoslash-error-bg",
+          "type": "color"
+        },
+        "error-color": {
+          "var": "--twoslash-error-color",
+          "type": "color"
+        },
+        "highlighted-bg": {
+          "var": "--twoslash-highlighted-bg",
+          "type": "color"
+        },
+        "highlighted-border": {
+          "var": "--twoslash-highlighted-border",
+          "type": "color"
+        },
+        "popup-bg": {
+          "var": "--twoslash-popup-bg",
+          "type": "color"
+        },
+        "popup-shadow": {
+          "var": "--twoslash-popup-shadow",
+          "type": "other"
+        },
+        "tag-annotate-bg": {
+          "var": "--twoslash-tag-annotate-bg",
+          "type": "color"
+        },
+        "tag-annotate-color": {
+          "var": "--twoslash-tag-annotate-color",
+          "type": "color"
+        },
+        "tag-bg": {
+          "var": "--twoslash-tag-bg",
+          "type": "color"
+        },
+        "tag-color": {
+          "var": "--twoslash-tag-color",
+          "type": "color"
+        },
+        "tag-warn-bg": {
+          "var": "--twoslash-tag-warn-bg",
+          "type": "color"
+        },
+        "tag-warn-color": {
+          "var": "--twoslash-tag-warn-color",
+          "type": "color"
+        },
+        "text-size": {
+          "var": "--twoslash-text-size",
+          "type": "other"
+        },
+        "underline-color": {
+          "var": "--twoslash-underline-color",
+          "type": "other"
+        },
+        "unmatched-color": {
+          "var": "--twoslash-unmatched-color",
+          "type": "color"
+        },
+        "warn-bg": {
+          "var": "--twoslash-warn-bg",
+          "type": "color"
+        },
+        "warn-color": {
+          "var": "--twoslash-warn-color",
+          "type": "color"
+        }
+      },
+      "text": {
+        "value": "{color.docs.gray.900}",
+        "type": "color",
+        "source": "computed color of docs-h1 default (raw/components-computed.json); matches declared color.docs.gray.900",
+        "description": "The docs heading ink (#1a181d, grey-900)."
+      },
+      "body-text": {
+        "value": "{color.docs.gray.700}",
+        "type": "color",
+        "source": "computed color of docs-para default (raw/components-computed.json); matches declared color.docs.gray.700",
+        "description": "The docs paragraph colour (#424045, grey-700)."
+      },
+      "muted": {
+        "value": "{color.docs.gray.500}",
+        "type": "color",
+        "source": "computed color of docs-sidebar default (raw/components-computed.json); matches declared color.docs.gray.500",
+        "description": "The docs rail/meta colour (#737176, grey-500)."
+      },
+      "nav-hover": {
+        "value": "rgba(120, 57, 229, 0.1)",
+        "type": "color",
+        "source": "computed backgroundColor of docs-nav-item default (raw/components-computed.json); the browser painted oklab(0.529224 0.0935356 -0.219964 / 0.1), converted here",
+        "description": "The active nav item's primary tint (the browser paints it in oklab: ~primary at 10%)."
+      },
+      "code-text": {
+        "value": "#101828",
+        "type": "color",
+        "source": "computed color of docs-code default (raw/components-computed.json); the browser painted oklch(0.21 0.034 264.665), converted here",
+        "description": "The dark-navy inline-code ink (painted in oklch)."
+      },
+      "code-bg": {
+        "value": "rgba(241, 239, 245, 0.5)",
+        "type": "color",
+        "source": "computed backgroundColor of docs-code default (raw/components-computed.json); the browser painted oklab(0.955295 0.00433394 -0.00702435 / 0.5), converted here",
+        "description": "The near-white 50% code chip fill."
+      },
+      "field": {
+        "value": "rgba(13, 11, 17, 0.03)",
+        "type": "color",
+        "source": "computed backgroundColor of docs-search default (raw/components-computed.json); the browser painted oklab(0.155089 0.0065295 -0.0112347 / 0.03), converted here",
+        "description": "The 3%-ink search field wash."
+      },
+      "focus": {
+        "value": "{color.app.primary}",
+        "type": "color",
+        "source": "the outline 1px auto focus ring of docs-search focus-visible (raw/components-computed.json outline/boxShadow); matches declared color.app.primary",
+        "description": "The primary outline the docs search draws on keyboard focus."
+      }
+    },
+    "marketing": {
+      "surface": {
+        "value": "{color.brand.grey-1}",
+        "type": "color",
+        "source": "computed backgroundColor of mkt-header default (raw/components-computed.json); matches declared color.brand.grey-1",
+        "description": "The cream #FAF9F5 marketing field."
+      },
+      "text": {
+        "value": "{color.brand.black}",
+        "type": "color",
+        "source": "computed color of faq-question default (raw/components-computed.json); matches declared color.brand.black",
+        "description": "The near-black marketing ink."
+      },
+      "muted": {
+        "value": "{color.brand.grey-5}",
+        "type": "color",
+        "source": "computed placeholder colour of hero-email default (raw/components-computed.json); matches declared color.brand.grey-5",
+        "description": "The 60%-black placeholder/muted marketing text."
+      },
+      "line": {
+        "value": "rgba(0, 0, 0, 0.1)",
+        "type": "color",
+        "source": "computed borderTopColor of faq default (raw/components-computed.json)",
+        "description": "The 10%-black hairline the FAQ dividers draw."
+      },
+      "card": {
+        "value": "{color.brand.grey-1}",
+        "type": "color",
+        "source": "computed backgroundColor of plan-card default (raw/components-computed.json); matches declared color.brand.grey-1",
+        "description": "The cream plan-card field (same as the page — the cards separate by layout, not colour)."
+      },
+      "menu-surface": {
+        "value": "{color.brand.white}",
+        "type": "color",
+        "source": "computed backgroundColor of mkt-menu default (raw/components-computed.json); matches declared color.brand.white",
+        "description": "The white mega-menu surface."
+      },
+      "menu-hover": {
+        "value": "{color.brand.grey-2}",
+        "type": "color",
+        "source": "computed backgroundColor of mkt-menu-item hover (raw/components-computed.json); matches declared color.brand.grey-2",
+        "description": "The 5%-black hover wash on menu items."
+      },
+      "accent": {
+        "orchid": {
+          "background": {
+            "value": "#b074ce",
+            "type": "color",
+            "source": "css-var --accent-background resolved on .accent--orchid (raw/css-vars.json resolved.accents)",
+            "description": "The orchid accent fill — CTAs, hero pills, section bands on .accent--orchid pages."
+          },
+          "on": {
+            "value": "#000000",
+            "type": "color",
+            "source": "css-var --accent-color resolved on .accent--orchid (raw/css-vars.json resolved.accents)",
+            "description": "Text and icons painted on the orchid accent."
+          }
+        },
+        "violet": {
+          "background": {
+            "value": "#b074ce",
+            "type": "color",
+            "source": "css-var --accent-background resolved on .accent--violet (raw/css-vars.json resolved.accents)",
+            "description": "The violet accent fill — CTAs, hero pills, section bands on .accent--violet pages."
+          },
+          "on": {
+            "value": "#000000",
+            "type": "color",
+            "source": "css-var --accent-color resolved on .accent--violet (raw/css-vars.json resolved.accents)",
+            "description": "Text and icons painted on the violet accent."
+          }
+        },
+        "green": {
+          "background": {
+            "value": "#20a277",
+            "type": "color",
+            "source": "css-var --accent-background resolved on .accent--green (raw/css-vars.json resolved.accents)",
+            "description": "The green accent fill — CTAs, hero pills, section bands on .accent--green pages."
+          },
+          "light": {
+            "value": "#85fac1",
+            "type": "color",
+            "source": "css-var --accent-light-background resolved on .accent--green (raw/css-vars.json resolved.accents)",
+            "description": "The lighter green wash behind accent-tinted areas."
+          },
+          "on": {
+            "value": "#ffffff",
+            "type": "color",
+            "source": "css-var --accent-color resolved on .accent--green (raw/css-vars.json resolved.accents)",
+            "description": "Text and icons painted on the green accent."
+          }
+        },
+        "amber": {
+          "background": {
+            "value": "#ff3716",
+            "type": "color",
+            "source": "css-var --accent-background resolved on .accent--amber (raw/css-vars.json resolved.accents)",
+            "description": "The amber accent fill — CTAs, hero pills, section bands on .accent--amber pages."
+          },
+          "light": {
+            "value": "#ffcc91",
+            "type": "color",
+            "source": "css-var --accent-light-background resolved on .accent--amber (raw/css-vars.json resolved.accents)",
+            "description": "The lighter amber wash behind accent-tinted areas."
+          },
+          "on": {
+            "value": "#000000",
+            "type": "color",
+            "source": "css-var --accent-color resolved on .accent--amber (raw/css-vars.json resolved.accents)",
+            "description": "Text and icons painted on the amber accent."
+          }
+        },
+        "blue": {
+          "background": {
+            "value": "#0000bb",
+            "type": "color",
+            "source": "css-var --accent-background resolved on .accent--blue (raw/css-vars.json resolved.accents)",
+            "description": "The blue accent fill — CTAs, hero pills, section bands on .accent--blue pages."
+          },
+          "light": {
+            "value": "#c4f2f7",
+            "type": "color",
+            "source": "css-var --accent-light-background resolved on .accent--blue (raw/css-vars.json resolved.accents)",
+            "description": "The lighter blue wash behind accent-tinted areas."
+          },
+          "on": {
+            "value": "#ffffff",
+            "type": "color",
+            "source": "css-var --accent-color resolved on .accent--blue (raw/css-vars.json resolved.accents)",
+            "description": "Text and icons painted on the blue accent."
+          }
+        },
+        "purple": {
+          "background": {
+            "value": "#611848",
+            "type": "color",
+            "source": "css-var --accent-background resolved on .accent--purple (raw/css-vars.json resolved.accents)",
+            "description": "The purple accent fill — CTAs, hero pills, section bands on .accent--purple pages."
+          },
+          "on": {
+            "value": "#ffffff",
+            "type": "color",
+            "source": "css-var --accent-color resolved on .accent--purple (raw/css-vars.json resolved.accents)",
+            "description": "Text and icons painted on the purple accent."
+          }
+        },
+        "black": {
+          "background": {
+            "value": "#000000",
+            "type": "color",
+            "source": "css-var --accent-background resolved on .accent--black (raw/css-vars.json resolved.accents)",
+            "description": "The black accent fill — CTAs, hero pills, section bands on .accent--black pages."
+          },
+          "on": {
+            "value": "#ffffff",
+            "type": "color",
+            "source": "css-var --accent-color resolved on .accent--black (raw/css-vars.json resolved.accents)",
+            "description": "Text and icons painted on the black accent."
+          }
+        }
+      },
+      "label": {
+        "amber": {
+          "value": "#ff3716",
+          "type": "color",
+          "source": "css-var --section-label-color resolved on .label--amber (raw/css-vars.json resolved.accents)",
+          "description": "The eyebrow-label colour on .label--amber pages."
+        },
+        "peach": {
+          "value": "#ffcc91",
+          "type": "color",
+          "source": "css-var --section-label-color resolved on .label--peach (raw/css-vars.json resolved.accents)",
+          "description": "The eyebrow-label colour on .label--peach pages."
+        },
+        "green": {
+          "value": "#20a277",
+          "type": "color",
+          "source": "css-var --section-label-color resolved on .label--green (raw/css-vars.json resolved.accents)",
+          "description": "The eyebrow-label colour on .label--green pages."
+        },
+        "blue": {
+          "value": "#0000bb",
+          "type": "color",
+          "source": "css-var --section-label-color resolved on .label--blue (raw/css-vars.json resolved.accents)",
+          "description": "The eyebrow-label colour on .label--blue pages."
+        },
+        "orchid": {
+          "value": "#b074ce",
+          "type": "color",
+          "source": "css-var --section-label-color resolved on .label--orchid (raw/css-vars.json resolved.accents)",
+          "description": "The eyebrow-label colour on .label--orchid pages."
+        }
+      },
+      "action": {
+        "hover": {
+          "value": "#9b66b5",
+          "type": "color",
+          "source": "computed backgroundColor of hero-cta hover (raw/components-computed.json); the browser-resolved color-mix of the orchid accent",
+          "description": "The darker accent the marketing CTA lifts to on hover."
+        }
+      }
+    },
+    "signin": {
+      "canvas": {
+        "value": "{color.app.background}",
+        "type": "color",
+        "source": "css-var --color-background behind the sign-in card (raw/css-vars.json); matches declared color.app.background",
+        "description": "The #fcfcfc app canvas behind the sign-in card (declared --color-background, app grey-25)."
+      },
+      "heading": {
+        "value": "{color.brand.black}",
+        "type": "color",
+        "source": "computed color of signin-heading default (raw/components-computed.json); matches declared color.brand.black",
+        "description": "The card heading ink."
+      },
+      "text": {
+        "value": "{color.app.grey.800}",
+        "type": "color",
+        "source": "computed color of signin-email default (raw/components-computed.json); matches declared color.app.grey.800",
+        "description": "The field text colour (app grey-800)."
+      },
+      "field": {
+        "value": "{color.app.grey.100}",
+        "type": "color",
+        "source": "computed backgroundColor of signin-email default (raw/components-computed.json); matches declared color.app.grey.100",
+        "description": "The #f5f5f5 sign-in field fill (app grey-100)."
+      },
+      "placeholder": {
+        "value": "{color.app.grey.400}",
+        "type": "color",
+        "source": "computed placeholder colour of signin-email default (raw/components-computed.json); matches declared color.app.grey.400",
+        "description": "The #a3a3a3 placeholder (app grey-400)."
+      },
+      "focus": {
+        "value": "{color.app.purple.600}",
+        "type": "color",
+        "source": "computed borderTopColor of signin-email focused (raw/components-computed.json); matches declared color.app.purple.600",
+        "description": "The #7c3aed border the field draws when focused (app purple-600)."
+      },
+      "action": {
+        "value": "{color.app.purple.600}",
+        "type": "color",
+        "source": "computed backgroundColor of signin-continue default (raw/components-computed.json); matches declared color.app.purple.600",
+        "description": "The #7c3aed Continue submit fill (app purple-600)."
+      },
+      "action-hover": {
+        "value": "{color.app.purple.700}",
+        "type": "color",
+        "source": "computed backgroundColor of signin-continue hover (raw/components-computed.json); matches declared color.app.purple.700",
+        "description": "The #6d28d9 hover (app purple-700)."
+      },
+      "on-action": {
+        "value": "{color.brand.white}",
+        "type": "color",
+        "source": "computed color of signin-continue default (raw/components-computed.json); matches declared color.brand.white",
+        "description": "White text on the submit."
+      },
+      "muted": {
+        "value": "{color.app.grey.500}",
+        "type": "color",
+        "source": "computed color of signin-footer default (raw/components-computed.json); matches declared color.app.grey.500",
+        "description": "The #737373 footer copy (app grey-500)."
+      }
+    }
+  },
+  "dark": {
+    "docs": {
+      "surface": {
+        "var": "--background-dark",
+        "type": "color",
+        "description": "The declared `--background-dark`."
+      },
+      "border": {
+        "var": "--default-border-color",
+        "type": "color",
+        "description": "The declared `--default-border-color`."
+      },
+      "primary": {
+        "var": "--primary",
+        "type": "color",
+        "description": "The declared `--primary`."
+      },
+      "twoslash": {
+        "border-color": {
+          "var": "--twoslash-border-color",
+          "type": "color"
+        },
+        "code-font-size": {
+          "var": "--twoslash-code-font-size",
+          "type": "other"
+        },
+        "cursor-color": {
+          "var": "--twoslash-cursor-color",
+          "type": "color"
+        },
+        "docs-tag-style": {
+          "var": "--twoslash-docs-tag-style",
+          "type": "other"
+        },
+        "error-bg": {
+          "var": "--twoslash-error-bg",
+          "type": "color"
+        },
+        "error-color": {
+          "var": "--twoslash-error-color",
+          "type": "color"
+        },
+        "highlighted-bg": {
+          "var": "--twoslash-highlighted-bg",
+          "type": "color"
+        },
+        "highlighted-border": {
+          "var": "--twoslash-highlighted-border",
+          "type": "color"
+        },
+        "popup-bg": {
+          "var": "--twoslash-popup-bg",
+          "type": "color"
+        },
+        "popup-shadow": {
+          "var": "--twoslash-popup-shadow",
+          "type": "other"
+        },
+        "tag-annotate-bg": {
+          "var": "--twoslash-tag-annotate-bg",
+          "type": "color"
+        },
+        "tag-annotate-color": {
+          "var": "--twoslash-tag-annotate-color",
+          "type": "color"
+        },
+        "tag-bg": {
+          "var": "--twoslash-tag-bg",
+          "type": "color"
+        },
+        "tag-color": {
+          "var": "--twoslash-tag-color",
+          "type": "color"
+        },
+        "tag-warn-bg": {
+          "var": "--twoslash-tag-warn-bg",
+          "type": "color"
+        },
+        "tag-warn-color": {
+          "var": "--twoslash-tag-warn-color",
+          "type": "color"
+        },
+        "text-size": {
+          "var": "--twoslash-text-size",
+          "type": "other"
+        },
+        "underline-color": {
+          "var": "--twoslash-underline-color",
+          "type": "other"
+        },
+        "unmatched-color": {
+          "var": "--twoslash-unmatched-color",
+          "type": "color"
+        },
+        "warn-bg": {
+          "var": "--twoslash-warn-bg",
+          "type": "color"
+        },
+        "warn-color": {
+          "var": "--twoslash-warn-color",
+          "type": "color"
+        }
+      },
+      "text": {
+        "value": "{color.docs.gray.200}",
+        "type": "color",
+        "source": "computed color of d-docs-h1 default (raw/components-computed.json); matches declared color.docs.gray.200",
+        "description": "The docs dark heading ink (#e2e0e5, grey-200)."
+      },
+      "body-text": {
+        "value": "{color.docs.gray.400}",
+        "type": "color",
+        "source": "computed color of d-docs-para default (raw/components-computed.json); matches declared color.docs.gray.400",
+        "description": "The docs dark paragraph colour (#a2a0a5, grey-400)."
+      },
+      "muted": {
+        "value": "{color.docs.gray.400}",
+        "type": "color",
+        "source": "computed color of d-docs-sidebar default (raw/components-computed.json); matches declared color.docs.gray.400",
+        "description": "The docs dark rail/meta colour (#a2a0a5, grey-400)."
+      },
+      "nav-hover": {
+        "value": "rgba(120, 57, 229, 0.1)",
+        "type": "color",
+        "source": "computed backgroundColor of d-docs-nav-item default (raw/components-computed.json); the browser painted oklab(0.529224 0.0935356 -0.219964 / 0.1), converted here",
+        "description": "The active nav item's primary tint on dark (~primary at 10%, painted in oklab)."
+      },
+      "code-text": {
+        "value": "{color.docs.gray.200}",
+        "type": "color",
+        "source": "computed color of d-docs-code default (raw/components-computed.json); matches declared color.docs.gray.200",
+        "description": "The near-white code ink (#e2e0e5, grey-200)."
+      },
+      "code-bg": {
+        "value": "rgba(255, 255, 255, 0.05)",
+        "type": "color",
+        "source": "computed backgroundColor of d-docs-code default (raw/components-computed.json); the browser painted oklab(0.999994 0.0000455678 0.0000200868 / 0.05), converted here",
+        "description": "The 5%-white code chip fill on dark."
+      },
+      "field": {
+        "value": "rgba(255, 255, 255, 0.03)",
+        "type": "color",
+        "source": "computed backgroundColor of d-docs-search default (raw/components-computed.json); the browser painted oklab(0.999994 0.0000455678 0.0000200868 / 0.03), converted here",
+        "description": "The 3%-white search field wash on dark."
+      },
+      "focus": {
+        "value": "{color.app.primary}",
+        "type": "color",
+        "source": "the outline 1px auto focus ring of d-docs-search focus-visible (raw/components-computed.json outline/boxShadow); matches declared color.app.primary",
+        "description": "The primary outline on dark."
+      },
+      "line": {
+        "value": "rgba(255, 255, 255, 0.1)",
+        "type": "color",
+        "source": "computed borderRightColor of d-docs-sidebar default (raw/components-computed.json); the browser painted oklab(0.999994 0.0000455678 0.0000200868 / 0.1), converted here",
+        "description": "The 10%-white rail hairline on dark."
+      }
+    }
+  },
+  "component": {
+    "header-height": {
+      "value": "52px",
+      "type": "dimension",
+      "source": "measured h of mkt-header default (raw/components-computed.json)",
+      "description": "The 52px marketing header (matches declared --header-height)."
+    },
+    "mobile-header-height": {
+      "value": "53px",
+      "type": "dimension",
+      "source": "measured h of m-header default (raw/components-computed.json)",
+      "description": "The 53px phone header."
+    },
+    "hero-field-height": {
+      "value": "56px",
+      "type": "dimension",
+      "source": "measured h of hero-email default (raw/components-computed.json)",
+      "description": "The 56px hero email capture."
+    },
+    "mobile-field-height": {
+      "value": "52px",
+      "type": "dimension",
+      "source": "measured h of m-email default (raw/components-computed.json)",
+      "description": "The 52px phone email capture."
+    },
+    "signin-field-height": {
+      "value": "30px",
+      "type": "dimension",
+      "source": "measured h of signin-email default (raw/components-computed.json)",
+      "description": "The 30px sign-in field."
+    },
+    "signin-card-width": {
+      "value": "300px",
+      "type": "dimension",
+      "source": "measured w of signin-card default (raw/components-computed.json)",
+      "description": "The 300px sign-in card."
+    },
+    "cta-height": {
+      "value": "44px",
+      "type": "dimension",
+      "source": "measured h of hero-cta default (raw/components-computed.json)",
+      "description": "The 44px hero CTA."
+    },
+    "plan-cta-height": {
+      "value": "42px",
+      "type": "dimension",
+      "source": "measured h of plan-cta default (raw/components-computed.json)",
+      "description": "The 42px plan-card action row."
+    },
+    "app-submit-height": {
+      "value": "27px",
+      "type": "dimension",
+      "source": "measured h of signin-continue default (raw/components-computed.json)",
+      "description": "The 27px Continue submit."
+    },
+    "menu-width": {
+      "value": "633.76px",
+      "type": "dimension",
+      "source": "measured w of mkt-menu default (raw/components-computed.json)",
+      "description": "The ~634px use-cases mega-menu."
+    },
+    "nav-item-height": {
+      "value": "32px",
+      "type": "dimension",
+      "source": "measured h of docs-nav-item default (raw/components-computed.json)",
+      "description": "The 32px docs nav item."
+    },
+    "search-height": {
+      "value": "36px",
+      "type": "dimension",
+      "source": "measured h of docs-search default (raw/components-computed.json)",
+      "description": "The 36px docs search pill."
+    },
+    "theme-button": {
+      "value": "30px",
+      "type": "dimension",
+      "source": "measured h of docs-theme-btn default (raw/components-computed.json)",
+      "description": "The 30px docs theme button."
+    },
+    "docs-sidebar-width": {
+      "value": "288px",
+      "type": "dimension",
+      "source": "measured w of docs-sidebar default (raw/components-computed.json)",
+      "description": "The 288px docs rail."
+    },
+    "plan-card-width": {
+      "value": "421.33px",
+      "type": "dimension",
+      "source": "measured w of plan-card default (raw/components-computed.json)",
+      "description": "The ~421px plan card."
+    },
+    "workbook-mockup": {
+      "value": "980px",
+      "type": "dimension",
+      "source": "measured w of wb-mockup default (raw/components-computed.json)",
+      "description": "The 980x640 workbook mockup frame."
+    },
+    "sheet-tab-height": {
+      "value": "32px",
+      "type": "dimension",
+      "source": "measured h of wb-sheet-tab default (raw/components-computed.json)",
+      "description": "The 32px mockup sheet tab."
+    },
+    "hamburger": {
+      "value": "40px",
+      "type": "dimension",
+      "source": "measured h of m-hamburger default (raw/components-computed.json)",
+      "description": "The 40px phone hamburger hit area."
+    }
+  },
+  "_gaps": [
+    {
+      "token": "light.marketing.focus",
+      "why": "mkt-nav-link focus-visible paints no focus ring of its own: outline 1px auto #101010 is the browser's default auto ring, and no box-shadow layer has a spread"
+    },
+    {
+      "token": "light.signin.card",
+      "why": "signin-card default computes a transparent backgroundColor (rgba(0, 0, 0, 0)) and paints no fill of its own"
+    }
+  ]
+}

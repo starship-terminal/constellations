@@ -1,0 +1,13 @@
+{
+ "_note": "Rules for systems/buymeacoffee. A fully public signed-out capture: no owner data on any surface. The login Email field and the creator Name field were each filled once with throwaway values (name@example.com, Ada), then cleared; nothing was submitted. The creator names, supporter names, tweets and addresses visible in screenshots are published public-page content. The OCR email net is kept with example.com and the product's own addresses allowed.",
+ "ocr": {
+  "emails": true,
+  "email_allow": [
+   "@example\\.com$",
+   "@example\\.org$",
+   "@buymeacoffee\\.com$",
+   "@buymeacoff\\.ee$"
+  ]
+ },
+ "families": []
+}

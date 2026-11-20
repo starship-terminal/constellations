@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wynde style guide</title>
+<style>
+  :root {
+    --page: #ffffff;
+    --ink: #000000;
+    --ink-soft: #181818;
+    --muted: #505459;
+    --footer: #4c5259;
+    --secondary-label: #2b2b2b;
+    --hero: #edf1f5;
+    --secondary: #dadfe5;
+    --feature: #cbf0ff;
+    --quote: #edf0f4;
+    --team: #f7511c;
+    --enterprise: #00528d;
+    --audience: #00604a;
+    --audience-text: #efffb7;
+    --reports: #012b4b;
+    --reports-text: #def0ff;
+    --fade: #a2a6ab;
+    --ui: Inter, "Inter Placeholder", sans-serif;
+    --display: "Suisse Int'l Bold", "Suisse Int'l Bold Placeholder", sans-serif;
+    --price: "Suisse Int'l Medium", "Suisse Int'l Medium Placeholder", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--ink); font: 400 16px/24px var(--ui); }
+  main { max-width: 1105px; margin: 0 auto; padding: 32px; }
+  h1 { font: 400 44px/50px var(--display); letter-spacing: -0.44px; margin: 0 0 8px; }
+  h2 { font: 500 18px/27px var(--ui); margin: 32px 0 12px; }
+  p { color: var(--muted); max-width: 70ch; }
+  .swatches { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .chip { height: 64px; border-radius: 20px; }
+  .name { font-size: 12px; line-height: 16px; color: var(--footer); margin-top: 4px; }
+  .hero {
+    background: var(--hero);
+    border-radius: 24px;
+    padding: 32px;
+    margin-top: 24px;
+  }
+  .display { font: 400 68px/64px var(--display); letter-spacing: -2.04px; color: var(--ink); margin: 0; }
+  .lede { font: 500 18px/28px var(--ui); letter-spacing: -0.18px; color: var(--muted); }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 48px; padding: 12px 20px; border-radius: 52px; border: 0;
+    font: 600 20px/20px var(--ui); letter-spacing: -0.2px; text-decoration: none;
+  }
+  .btn.primary { background: #000; color: #fff; }
+  .btn.secondary { background: var(--secondary); color: var(--secondary-label); }
+  .navbtn {
+    display: inline-flex; align-items: center; height: 31px; padding: 2px 8px;
+    border-radius: 38px; font: 500 15px/27px var(--ui); text-decoration: none;
+  }
+  .navbtn.login { background: var(--hero); color: var(--ink-soft); }
+  .navbtn.go { background: #000; color: #fff; }
+  .cards { display: flex; gap: 16px; flex-wrap: wrap; }
+  .card { background: #fff; border-radius: 20px; padding: 24px 20px; width: 240px; }
+  .card .plan { font: 500 18px/16px var(--ui); }
+  .card .price { font: 400 28px/16px var(--price); letter-spacing: 0.56px; margin-top: 8px; }
+  .band { border-radius: 24px; padding: 32px; margin-top: 16px; }
+  .band h3 { margin: 0; font: 400 36px/43px var(--display); letter-spacing: -0.36px; }
+  footer.note { margin-top: 32px; font-size: 13px; color: var(--footer); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Wynde</h1>
+  <p>Public marketing tokens, measured on wynde.io on 19 November 2026. One theme. Suisse Int'l is named and not loaded here, so display type falls back.</p>
+
+  <h2>Colour</h2>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#ffffff;box-shadow:inset 0 0 0 1px #edf1f5"></div><div class="name">page #ffffff</div></div>
+    <div class="swatch"><div class="chip" style="background:#edf1f5"></div><div class="name">hero #edf1f5</div></div>
+    <div class="swatch"><div class="chip" style="background:#dadfe5"></div><div class="name">secondary #dadfe5</div></div>
+    <div class="swatch"><div class="chip" style="background:#cbf0ff"></div><div class="name">feature #cbf0ff</div></div>
+    <div class="swatch"><div class="chip" style="background:#000000"></div><div class="name">ink #000000</div></div>
+    <div class="swatch"><div class="chip" style="background:#505459"></div><div class="name">muted #505459</div></div>
+    <div class="swatch"><div class="chip" style="background:#4c5259"></div><div class="name">footer #4c5259</div></div>
+    <div class="swatch"><div class="chip" style="background:#f7511c"></div><div class="name">team #f7511c</div></div>
+    <div class="swatch"><div class="chip" style="background:#00528d"></div><div class="name">enterprise #00528d</div></div>
+    <div class="swatch"><div class="chip" style="background:#00604a"></div><div class="name">audience #00604a</div></div>
+    <div class="swatch"><div class="chip" style="background:#efffb7"></div><div class="name">audience text #efffb7</div></div>
+    <div class="swatch"><div class="chip" style="background:#012b4b"></div><div class="name">reports #012b4b</div></div>
+    <div class="swatch"><div class="chip" style="background:#def0ff"></div><div class="name">reports text #def0ff</div></div>
+  </div>
+
+  <div class="hero">
+    <p class="display">Take the guesswork out</p>
+    <p class="lede">Wynde is a platform for modern product teams to swiftly validate UX solutions and find the right participants for your study</p>
+    <div class="row">
+      <a class="btn primary">Get started for free</a>
+      <a class="btn secondary">Book a demo</a>
+    </div>
+    <div class="row">
+      <a class="navbtn login">Log in</a>
+      <a class="navbtn go">Get started for free</a>
+    </div>
+  </div>
+
+  <h2>Pricing cards</h2>
+  <div class="cards">
+    <div class="card"><div class="plan" style="color:#4c5259">Start</div><div class="price">Free</div></div>
+    <div class="card"><div class="plan" style="color:#f7511c">Team</div><div class="price">$175 / mo</div></div>
+    <div class="card"><div class="plan" style="color:#00528d">Enterprise</div><div class="price">Talk to us</div></div>
+  </div>
+
+  <div class="band" style="background:#00604a"><h3 style="color:#efffb7">Reach the right audience, everytime.</h3></div>
+  <div class="band" style="background:#012b4b"><h3 style="color:#def0ff">Get detailed reports</h3></div>
+
+  <footer class="note">Values are the computed colours from raw/home.json. This page does not load Suisse Int'l.</footer>
+</main>
+</body>
+</html>

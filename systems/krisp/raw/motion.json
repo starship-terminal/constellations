@@ -1,0 +1,4912 @@
+{
+ "_meta": {
+  "readAt": "2026-11-18",
+  "probe": "page.emulateMedia({ reducedMotion }): 'no-preference' then 'reduce', same elements, same page",
+  "source": "public pages, headless Chromium, read at rest",
+  "notes": "Computed transitions and animations are read at rest; rules in :hover and other state selectors appear under `declared`. Outcome per element: removed (every transition and animation ends at or under 1 ms), reduced, kept, partial."
+ },
+ "summary": {
+  "moving": 290,
+  "removed": 0,
+  "reduced": 0,
+  "kept": 290,
+  "partial": 0,
+  "increased": 0,
+  "added": 0,
+  "behaviour": "ignores",
+  "loops": [
+   "bgRotate",
+   "krisp-spin",
+   "spinner_inner"
+  ]
+ },
+ "pages": {
+  "page-1": {
+   "url": "https://krisp.ai/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 1694,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 162,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 162,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "ignores",
+    "loops": [
+     "bgRotate",
+     "krisp-spin",
+     "spinner_inner"
+    ]
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 75,
+     "nodes": [
+      "div.mobile_banner_outer",
+      "span",
+      "div"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 500,
+        "delayMs": 200,
+        "easing": "cubic-bezier(0.12, 0.23, 0.5, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 500,
+        "delayMs": 200,
+        "easing": "cubic-bezier(0.12, 0.23, 0.5, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      }
+     ],
+     "count": 11,
+     "nodes": [
+      "div.quote_icon.show-after-visible.from-bottom",
+      "div.item_wrapper.show-after-visible.from-right-bottom",
+      "p.subtitle.show-after-visible.from-top"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 500,
+        "delayMs": 100,
+        "easing": "cubic-bezier(0.12, 0.23, 0.5, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 500,
+        "delayMs": 100,
+        "easing": "cubic-bezier(0.12, 0.23, 0.5, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      }
+     ],
+     "count": 8,
+     "nodes": [
+      "p.show-after-visible.from-top.td1",
+      "div.item_wrapper.show-after-visible.from-left-bottom",
+      "h3.text_gradient.gradient_purple.show-after-visible"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "max-height",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "max-height",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "max-height",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 7,
+     "nodes": [
+      "div.faq_answer"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 7,
+     "nodes": [
+      "div.sub_menu_title_holder",
+      "input.seek_bar"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 500,
+        "delayMs": 90,
+        "easing": "cubic-bezier(0.12, 0.23, 0.5, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 500,
+        "delayMs": 90,
+        "easing": "cubic-bezier(0.12, 0.23, 0.5, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      }
+     ],
+     "count": 6,
+     "nodes": [
+      "h2.text_gradient.gradient_purple.show-after-visible",
+      "h2.text_gradient.gradient_orange.show-after-visible",
+      "h2.text_gradient.gradient_blue.show-after-visible"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 5,
+     "nodes": [
+      "span",
+      "section"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "spinner_inner",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "spinner_inner",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "spinner_inner",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500,
+       "loops": true
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "div"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "svg[role=img]"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 250,
+       "to": 250
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "div.ot-acc-grpcntr.ot-acc-txt"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 500,
+        "delayMs": 300,
+        "easing": "cubic-bezier(0.12, 0.23, 0.5, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 500,
+        "delayMs": 300,
+        "easing": "cubic-bezier(0.12, 0.23, 0.5, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "div.user.show-after-visible.from-top",
+      "p.show-after-visible.from-top.td3",
+      "div.icons_row.show-after-visible.td3"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "bgRotate",
+        "durationMs": 3000,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "bgRotate",
+        "durationMs": 3000,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "bgRotate",
+       "outcome": "kept",
+       "from": 3000,
+       "to": 3000,
+       "loops": true
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "div.item_wrapper.active::before"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "span.ot-switch-nob"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 400,
+       "to": 400
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "span.ot-switch-nob::before"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "max-height",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.15, 0.85, 0.25, 1)"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "max-height",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.15, 0.85, 0.25, 1)"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "max-height",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      },
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "div.sub_menu_inner"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "span.sub_menu_opener"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "onetrust-fade-in",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "ease-in-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "onetrust-fade-in",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "ease-in-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "onetrust-fade-in",
+       "outcome": "kept",
+       "from": 400,
+       "to": 400
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div.onetrust-pc-dark-filter.ot-hide.ot-fade-in",
+      "div.otPcCenter.ot-hide.ot-fade-in"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 500,
+        "delayMs": 400,
+        "easing": "cubic-bezier(0.12, 0.23, 0.5, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 500,
+        "delayMs": 400,
+        "easing": "cubic-bezier(0.12, 0.23, 0.5, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div.icons_row.show-after-visible.td4",
+      "div.item.show-after-visible.from-left"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 500,
+        "delayMs": 800,
+        "easing": "cubic-bezier(0.12, 0.23, 0.5, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 500,
+        "delayMs": 800,
+        "easing": "cubic-bezier(0.12, 0.23, 0.5, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div.item_wrapper.show-after-visible.from-left-top",
+      "div.item_wrapper.show-after-visible.from-right-top"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 100,
+       "to": 100
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "button"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 500,
+        "delayMs": 500,
+        "easing": "cubic-bezier(0.12, 0.23, 0.5, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 500,
+        "delayMs": 500,
+        "easing": "cubic-bezier(0.12, 0.23, 0.5, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.icons_row.show-after-visible.td5"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 500,
+        "delayMs": 600,
+        "easing": "cubic-bezier(0.12, 0.23, 0.5, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 500,
+        "delayMs": 600,
+        "easing": "cubic-bezier(0.12, 0.23, 0.5, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.icons_row.show-after-visible.td6"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "border-width",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "border-radius",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "transform",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "background",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": [
+       {
+        "name": "krisp-spin",
+        "durationMs": 3000,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "border-width",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "border-radius",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "box-shadow",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "transform",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "background",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": [
+       {
+        "name": "krisp-spin",
+        "durationMs": 3000,
+        "delayMs": 0,
+        "easing": "linear",
+        "iterationCount": "infinite",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "border-width",
+       "outcome": "kept",
+       "from": 250,
+       "to": 250
+      },
+      {
+       "kind": "transition",
+       "key": "border-radius",
+       "outcome": "kept",
+       "from": 250,
+       "to": 250
+      },
+      {
+       "kind": "transition",
+       "key": "box-shadow",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 250,
+       "to": 250
+      },
+      {
+       "kind": "transition",
+       "key": "background",
+       "outcome": "kept",
+       "from": 250,
+       "to": 250
+      },
+      {
+       "kind": "animation",
+       "key": "krisp-spin",
+       "outcome": "kept",
+       "from": 3000,
+       "to": 3000,
+       "loops": true
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "a.hero_pill"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.overlay_blur"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 8000,
+        "delayMs": 0,
+        "easing": "linear"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 8000,
+        "delayMs": 0,
+        "easing": "linear"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 8000,
+       "to": 8000
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "div.slick-track"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "krisp-spin",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": []
+      }
+     ],
+     "properties": []
+    },
+    {
+     "name": "bgRotate",
+     "steps": [
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "spinner_inner",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "tp_drift_left",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "tp_drift_right",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "onetrust-fade-in",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ot-go-spin",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "ot-go-spin",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".tp_track",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".tp_row",
+     "declarations": {
+      "overflow-x": "auto"
+     }
+    }
+   ],
+   "declared": [
+    {
+     "selector": "#hero .hero_container .hero_pills_wrapper .hero_pill",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-width",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "border-radius",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "transform",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "background",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": [
+      {
+       "name": "krisp-spin",
+       "durationMs": 3000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#hero .scroll_cta",
+     "context": [],
+     "transitions": [
+      {
+       "property": "border-width",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "border-radius",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "transform",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "background",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": [
+      {
+       "name": "krisp-spin",
+       "durationMs": 3000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#hero.hero_flex_container .flex_img_holder .hero_overlay_btn",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#hero .hero_container .hero_pills_wrapper .hero_pill",
+     "context": [
+      "@media screen and (max-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "border-width",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "border-radius",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "box-shadow",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "transform",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "background",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": [
+      {
+       "name": "krisp-spin",
+       "durationMs": 3000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#hero .flex_img_holder .hero_sound_btn",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "body .overlay_blur",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "body .modal",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "body header.new .header_inner .burger span",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "body header.new .header_inner .nav_holder > ul li.has_sub_menu .sub_menu_wrapper .sub_menu_inner",
+     "context": [],
+     "transitions": [
+      {
+       "property": "max-height",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.15, 0.85, 0.25, 1)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "transform",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "body header.new .header_inner .nav_holder > ul li.has_sub_menu .sub_menu_wrapper .sub_menu_inner .sub_menu_title_holder",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "body header.new .header_inner .nav_holder > ul li:hover .sub_menu_wrapper .sub_menu_inner",
+     "context": [],
+     "transitions": [
+      {
+       "property": "max-height",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "ease-out"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "transform",
+       "durationMs": 500,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "body header.new .header_inner .nav_holder > ul li:hover .sub_menu_wrapper .sub_menu_inner .sub_menu_title_holder",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 800,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "body header.new .header_inner .nav_holder > ul li:hover .sub_menu_wrapper .sub_menu_inner .sub_menu_items",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 800,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "body header.new .header_inner .nav_holder > ul li > a .sub_menu_opener",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#mob_menu",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#mob_menu .mob_menu_inner .nav_holder ul li .sub_menu_wrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".input_wrapper.input_hidden",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".input_wrapper .placeholder",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .animate-after-visible",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 500,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 500,
+       "easing": "cubic-bezier(0.12, 0.23, 0.5, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible.td0",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 90
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible.td1",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 100
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible.td2",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 200
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible.td3",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 300
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible.td4",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 400
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible.td5",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 500
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible.td6",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 600
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible.td7",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 700
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible.td8",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 800
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .animate-after-visible-desktop",
+     "context": [
+      "@media screen and (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 500,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible-desktop",
+     "context": [
+      "@media screen and (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 500,
+       "easing": "cubic-bezier(0.12, 0.23, 0.5, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible-desktop.td0",
+     "context": [
+      "@media screen and (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 90
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible-desktop.td1",
+     "context": [
+      "@media screen and (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 100
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible-desktop.td2",
+     "context": [
+      "@media screen and (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 200
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible-desktop.td3",
+     "context": [
+      "@media screen and (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 300
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible-desktop.td4",
+     "context": [
+      "@media screen and (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 400
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible-desktop.td5",
+     "context": [
+      "@media screen and (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 500
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible-desktop.td6",
+     "context": [
+      "@media screen and (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 600
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".mobile_banner_outer",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".fixed_nav_container .highlight",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".feature_container .features_content_container .items .item_wrapper::before",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "unset",
+       "durationRaw": "unset",
+       "easing": "unset",
+       "iterationCount": "unset",
+       "direction": "unset",
+       "fillMode": "unset",
+       "playState": "unset"
+      }
+     ]
+    },
+    {
+     "selector": ".feature_container .features_content_container .items .item_wrapper *",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".feature_container .features_content_container .items .item_wrapper.active::before",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "bgRotate",
+       "durationMs": 3000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".player_container .player_inner .player_wrapper .controls .play_button .loading_state .loading .loading_spinner .spinner_inner div",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "spinner_inner",
+       "durationMs": 500,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".player_container .player_inner .player_wrapper .controls .switch_outer .switch_wrapper .noise_cancellation_switch.switch span",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".player_container .player_inner .player_wrapper .progress input[type=\"range\"]",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".testimonial.dark .testimonial_card_outer .gradient_box",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 500,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".testimonial .testimonial_card_outer",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 500,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".tp_row:hover .tp_track, .tp_row:focus-within .tp_track, .tp_row.is_dragging .tp_track",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "playState": "paused"
+      }
+     ]
+    },
+    {
+     "selector": ".tp_shift",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 180,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".tp_track",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "durationRaw": "calc(var(--tp-set, 8) * 12s)",
+       "easing": "linear",
+       "iterationCount": "infinite"
+      }
+     ],
+     "viaVar": true
+    },
+    {
+     "selector": ".tp_row--left .tp_track",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "tp_drift_left"
+      }
+     ]
+    },
+    {
+     "selector": ".tp_row--right .tp_track",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "tp_drift_right"
+      }
+     ]
+    },
+    {
+     "selector": ".testimonial_portrait_card .tp_media img",
+     "context": [],
+     "transitions": [
+      {
+       "property": "filter",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".faqs_wrapper .faq_item",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".faqs_wrapper .faq_item .faq_question::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".faqs_wrapper .faq_item .faq_answer",
+     "context": [],
+     "transitions": [
+      {
+       "property": "max-height",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk.ot-fade-in, .onetrust-pc-dark-filter.ot-fade-in, #onetrust-banner-sdk.ot-fade-in, .ot-confirm-dialog-overlay.ot-fade-in",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "onetrust-fade-in",
+       "durationMs": 400,
+       "easing": "ease-in-out"
+      }
+     ]
+    },
+    {
+     "selector": "#ot-sdk-btn.ot-sdk-show-settings, #ot-sdk-btn.optanon-show-settings",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-banner-sdk div.ot-go-modal-overlay:not(.ot-hide) .ot-go-modal-buttons .ot-go-modal-submit .ot-go-btn-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ot-go-spin",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#onetrust-banner-sdk .banner-option-header .ot-arrow-container",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-banner-sdk .banner-option-details",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk div.ot-go-modal-overlay:not(.ot-hide) .ot-go-modal-buttons .ot-go-modal-submit .ot-go-btn-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ot-go-spin",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-switch-nob",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-switch-nob::before",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-arw-cntr .ot-arw",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-arw-cntr svg",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-arw",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk #filter-btn-handler",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk #ot-fltr-modal",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-cat-item > button[aria-expanded=\"false\"] ~ .ot-acc-txt, #onetrust-pc-sdk .ot-acc-cntr > button[aria-expanded=\"false\"] ~ .ot-acc-txt, #onetrust-pc-sdk li > button[aria-expanded=\"fa",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-cat-item > button[aria-expanded=\"true\"] ~ .ot-acc-txt, #onetrust-pc-sdk .ot-acc-cntr > button[aria-expanded=\"true\"] ~ .ot-acc-txt, #onetrust-pc-sdk li > button[aria-expanded=\"true",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-vnd-item > button[aria-expanded=\"false\"] ~ .ot-acc-txt",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-vnd-item > button[aria-expanded=\"true\"] ~ .ot-acc-txt",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#ot-sdk-btn.ot-sdk-show-settings",
+     "context": [],
+     "transitions": [
+      {
+       "property": "unset",
+       "durationRaw": "unset",
+       "easing": "unset"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#ot-sdk-btn.ot-sdk-show-settings:hover",
+     "context": [],
+     "transitions": [
+      {
+       "property": "unset",
+       "durationRaw": "unset",
+       "easing": "unset"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".go1656994552",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 750,
+       "delayMs": 0,
+       "easing": "linear(0 0%, 0.006 1.1%, 0.023 2.2%, 0.096 4.8%, 0.532 15.4%, 0.72 21%, 0.793 23.85%, 0.853 26.7%, 0.902 29.8667%, 0.941 33.0333%, 0.968 36.2%, 0.987 39.7%, 1 43.7%, 1.007 48.3%, 1.009 55.3%, 1.002 78.2%, 1 100%)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".go456419034",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".go3128134379",
+     "context": [],
+     "transitions": [
+      {
+       "property": "max-height",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".go3508454897",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "linear(0 0%, 0.006 1.15%, 0.022 2.3%, 0.091 5.1%, 0.18 7.6%, 0.508 16.3%, 0.607 19.325%, 0.691 22.35%, 0.762 25.375%, 0.822 28.4%, 0.872 31.75%, 0.912 35.1%, 0.944 38.9%, 0.968 43%, 0.985 47.6%, 0.996 53.1%, 1.001 58.4%, 1.003 65.1%, 1 100%)"
+      }
+     ],
+     "animations": []
+    }
+   ],
+   "customProperties": []
+  },
+  "page-2": {
+   "url": "https://krisp.ai/pricing/",
+   "matchMedia": {
+    "normal": false,
+    "reduce": true
+   },
+   "scanned": 2781,
+   "capped": false,
+   "unreadableSheets": 0,
+   "sheetsTruncated": {
+    "declared": false,
+    "reducedRules": false,
+    "customProperties": false
+   },
+   "summary": {
+    "moving": 128,
+    "removed": 0,
+    "reduced": 0,
+    "kept": 128,
+    "partial": 0,
+    "increased": 0,
+    "added": 0,
+    "behaviour": "ignores",
+    "loops": []
+   },
+   "groups": [
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 57,
+     "nodes": [
+      "div.mobile_banner_outer",
+      "span",
+      "div"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 500,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 500,
+       "to": 500
+      }
+     ],
+     "count": 19,
+     "nodes": [
+      "div.testimonial_card_outer"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "color",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 250,
+       "to": 250
+      }
+     ],
+     "count": 8,
+     "nodes": [
+      "strong",
+      "span",
+      "span.billing_label"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "max-height",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "max-height",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease-in-out"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "max-height",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      },
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 7,
+     "nodes": [
+      "div.faq_answer"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 150,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 150,
+       "to": 150
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "svg[role=img]"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 250,
+        "delayMs": 0,
+        "easing": "ease-out"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 250,
+       "to": 250
+      }
+     ],
+     "count": 4,
+     "nodes": [
+      "div.ot-acc-grpcntr.ot-acc-txt"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "span.ot-switch-nob"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 400,
+       "to": 400
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "span.ot-switch-nob::before"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "border-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "border-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "a.outline.outline--thin"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "max-height",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.15, 0.85, 0.25, 1)"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "max-height",
+        "durationMs": 600,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.15, 0.85, 0.25, 1)"
+       },
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       },
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease-in"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "max-height",
+       "outcome": "kept",
+       "from": 600,
+       "to": 600
+      },
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      },
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "div.sub_menu_inner"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "div.sub_menu_title_holder"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "opacity",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "opacity",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "div.overlay_blur",
+      "div.modal.pricing_detail_modal"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 300,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 300,
+       "to": 300
+      }
+     ],
+     "count": 3,
+     "nodes": [
+      "span.sub_menu_opener"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "onetrust-fade-in",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "ease-in-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "onetrust-fade-in",
+        "durationMs": 400,
+        "delayMs": 0,
+        "easing": "ease-in-out",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "onetrust-fade-in",
+       "outcome": "kept",
+       "from": 400,
+       "to": 400
+      }
+     ],
+     "count": 2,
+     "nodes": [
+      "div.onetrust-pc-dark-filter.ot-hide.ot-fade-in",
+      "div.otPcCenter.ot-hide.ot-fade-in"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "pill_squash",
+        "durationMs": 450,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "reduced": {
+      "transitions": [],
+      "animations": [
+       {
+        "name": "pill_squash",
+        "durationMs": 450,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "iterationCount": "1",
+        "direction": "normal",
+        "fillMode": "none",
+        "playState": "running"
+       }
+      ]
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "animation",
+       "key": "pill_squash",
+       "outcome": "kept",
+       "from": 450,
+       "to": 450
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "span.nav_active_pill_inner"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 100,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 100,
+       "to": 100
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "button"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "all",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "all",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "section"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "background-color",
+        "durationMs": 200,
+        "delayMs": 0,
+        "easing": "ease"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "background-color",
+       "outcome": "kept",
+       "from": 200,
+       "to": 200
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "a"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 350,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "width",
+        "durationMs": 350,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 350,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       },
+       {
+        "property": "width",
+        "durationMs": 350,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 350,
+       "to": 350
+      },
+      {
+       "kind": "transition",
+       "key": "width",
+       "outcome": "kept",
+       "from": 350,
+       "to": 350
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "span.billing_active_pill"
+     ]
+    },
+    {
+     "base": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 450,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+       },
+       {
+        "property": "width",
+        "durationMs": 450,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "reduced": {
+      "transitions": [
+       {
+        "property": "transform",
+        "durationMs": 450,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+       },
+       {
+        "property": "width",
+        "durationMs": 450,
+        "delayMs": 0,
+        "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+       }
+      ],
+      "animations": []
+     },
+     "outcome": "kept",
+     "items": [
+      {
+       "kind": "transition",
+       "key": "transform",
+       "outcome": "kept",
+       "from": 450,
+       "to": 450
+      },
+      {
+       "kind": "transition",
+       "key": "width",
+       "outcome": "kept",
+       "from": 450,
+       "to": 450
+      }
+     ],
+     "count": 1,
+     "nodes": [
+      "span.nav_active_pill.is_moving"
+     ]
+    }
+   ],
+   "keyframes": [
+    {
+     "name": "pill_squash",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "40%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "78%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "shimmer",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "background-position-x",
+        "background-position-y"
+       ]
+      }
+     ],
+     "properties": [
+      "background-position-x",
+      "background-position-y"
+     ]
+    },
+    {
+     "name": "logos_marquee_slide",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "tp_drift_left",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "tp_drift_right",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "onetrust-fade-in",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "opacity"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "opacity"
+       ]
+      }
+     ],
+     "properties": [
+      "opacity"
+     ]
+    },
+    {
+     "name": "ot-go-spin",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    },
+    {
+     "name": "ot-go-spin",
+     "steps": [
+      {
+       "offset": "0%",
+       "properties": [
+        "transform"
+       ]
+      },
+      {
+       "offset": "100%",
+       "properties": [
+        "transform"
+       ]
+      }
+     ],
+     "properties": [
+      "transform"
+     ]
+    }
+   ],
+   "reducedMotionRules": [
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".logos_container.logos_marquee .logos_track",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".tp_track",
+     "declarations": {
+      "animation-duration": "auto",
+      "animation-timing-function": "ease",
+      "animation-delay": "0s",
+      "animation-iteration-count": "1",
+      "animation-direction": "normal",
+      "animation-fill-mode": "none",
+      "animation-play-state": "running",
+      "animation-name": "none",
+      "animation-timeline": "auto",
+      "animation-range-start": "normal",
+      "animation-range-end": "normal"
+     }
+    },
+    {
+     "media": "@media (prefers-reduced-motion: reduce)",
+     "selector": ".tp_row",
+     "declarations": {
+      "overflow-x": "auto"
+     }
+    }
+   ],
+   "declared": [
+    {
+     "selector": "body .overlay_blur",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "body .modal",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "body header.new .header_inner .burger span",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "body header.new .header_inner .nav_holder > ul li.has_sub_menu .sub_menu_wrapper .sub_menu_inner",
+     "context": [],
+     "transitions": [
+      {
+       "property": "max-height",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.15, 0.85, 0.25, 1)"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "transform",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "body header.new .header_inner .nav_holder > ul li.has_sub_menu .sub_menu_wrapper .sub_menu_inner .sub_menu_title_holder",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "body header.new .header_inner .nav_holder > ul li:hover .sub_menu_wrapper .sub_menu_inner",
+     "context": [],
+     "transitions": [
+      {
+       "property": "max-height",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "ease-out"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "transform",
+       "durationMs": 500,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "body header.new .header_inner .nav_holder > ul li:hover .sub_menu_wrapper .sub_menu_inner .sub_menu_title_holder",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 800,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "body header.new .header_inner .nav_holder > ul li:hover .sub_menu_wrapper .sub_menu_inner .sub_menu_items",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 800,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "body header.new .header_inner .nav_holder > ul li > a .sub_menu_opener",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#mob_menu",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#mob_menu .mob_menu_inner .nav_holder ul li .sub_menu_wrapper",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".pricing_navigation_container .navigation_inner .nav_active_pill.is_moving .nav_active_pill_inner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "pill_squash",
+       "durationMs": 450,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+       "iterationCount": "1",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".pricing_navigation_container .navigation_inner.pill_ready .nav_active_pill",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 450,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+      },
+      {
+       "property": "width",
+       "durationMs": 450,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.22, 1, 0.36, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".pricing_navigation_container .navigation_inner a .label_holder strong",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".pricing_navigation_container .navigation_inner a .label_holder span",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".comparison_table .comparison_sticky_header",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".pricing_columns_container .switcher_wrapper .switch_inner.billing_toggle.pill_ready .billing_active_pill",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 350,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      },
+      {
+       "property": "width",
+       "durationMs": 350,
+       "delayMs": 0,
+       "easing": "cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".pricing_columns_container .switcher_wrapper .switch_inner.billing_toggle .billing_option .billing_label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "color",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".pricing_columns_container .switcher_wrapper .switch_inner .toggle label",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".pricing_columns_container .switcher_wrapper .switch_inner .toggle label span",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".pricing_columns_container .pricing_product_container .plan_grid_container .plan_holder .has_tooltip .tooltip",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".pricing_columns_container .pricing_product_container .plan_grid_container .plan_holder.loading.loading::after",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "shimmer",
+       "durationMs": 1500,
+       "delayMs": 0,
+       "easing": "ease",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".pricing_columns_container .pricing_product_container .plan_grid_container .plan_holder .btn_wrapper a.outline.outline--thin",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "border-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      },
+      {
+       "property": "color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".pricing_navigation_container .navigation_scroller",
+     "context": [
+      "@media screen and (max-width: 767px)"
+     ],
+     "transitions": [],
+     "animations": [],
+     "scrollBehavior": "smooth"
+    },
+    {
+     "selector": ".input_wrapper.input_hidden",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".input_wrapper .placeholder",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .animate-after-visible",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 500,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 500,
+       "easing": "cubic-bezier(0.12, 0.23, 0.5, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible.td0",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 90
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible.td1",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 100
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible.td2",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 200
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible.td3",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 300
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible.td4",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 400
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible.td5",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 500
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible.td6",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 600
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible.td7",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 700
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible.td8",
+     "context": [],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 800
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .animate-after-visible-desktop",
+     "context": [
+      "@media screen and (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 500,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible-desktop",
+     "context": [
+      "@media screen and (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 500,
+       "easing": "cubic-bezier(0.12, 0.23, 0.5, 1)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible-desktop.td0",
+     "context": [
+      "@media screen and (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 90
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible-desktop.td1",
+     "context": [
+      "@media screen and (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 100
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible-desktop.td2",
+     "context": [
+      "@media screen and (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 200
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible-desktop.td3",
+     "context": [
+      "@media screen and (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 300
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible-desktop.td4",
+     "context": [
+      "@media screen and (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 400
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible-desktop.td5",
+     "context": [
+      "@media screen and (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 500
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".js .show-after-visible-desktop.td6",
+     "context": [
+      "@media screen and (min-width: 768px)"
+     ],
+     "transitions": [
+      {
+       "property": "(base #0)",
+       "delayMs": 600
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".mobile_banner_outer",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".logos_container.logos_marquee .logos_track",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "logos_marquee_slide",
+       "durationMs": 60000,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": ".logos_container.logos_marquee:hover .logos_track",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "playState": "paused"
+      }
+     ]
+    },
+    {
+     "selector": ".logos_container.logos_wall .logos_row--reverse .logos_track",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "direction": "reverse"
+      }
+     ]
+    },
+    {
+     "selector": ".logos_container.logos_wall .item img",
+     "context": [],
+     "transitions": [
+      {
+       "property": "filter",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".recognition_box .rb_cta a",
+     "context": [],
+     "transitions": [
+      {
+       "property": "background-color",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".faqs_wrapper .faq_item",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".faqs_wrapper .faq_item .faq_question::after",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".faqs_wrapper .faq_item .faq_answer",
+     "context": [],
+     "transitions": [
+      {
+       "property": "max-height",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in-out"
+      },
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".testimonial.dark .testimonial_card_outer .gradient_box",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 500,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".testimonial .testimonial_card_outer",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 500,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".tp_row:hover .tp_track, .tp_row:focus-within .tp_track, .tp_row.is_dragging .tp_track",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "playState": "paused"
+      }
+     ]
+    },
+    {
+     "selector": ".tp_shift",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 180,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".tp_track",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "(base #0)",
+       "durationRaw": "calc(var(--tp-set, 8) * 12s)",
+       "easing": "linear",
+       "iterationCount": "infinite"
+      }
+     ],
+     "viaVar": true
+    },
+    {
+     "selector": ".tp_row--left .tp_track",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "tp_drift_left"
+      }
+     ]
+    },
+    {
+     "selector": ".tp_row--right .tp_track",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "tp_drift_right"
+      }
+     ]
+    },
+    {
+     "selector": ".testimonial_portrait_card .tp_media img",
+     "context": [],
+     "transitions": [
+      {
+       "property": "filter",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".toggle_banner .toggle_container .toggle",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".toggle_banner .toggle_container .toggle *",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk.ot-fade-in, .onetrust-pc-dark-filter.ot-fade-in, #onetrust-banner-sdk.ot-fade-in, .ot-confirm-dialog-overlay.ot-fade-in",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "onetrust-fade-in",
+       "durationMs": 400,
+       "easing": "ease-in-out"
+      }
+     ]
+    },
+    {
+     "selector": "#ot-sdk-btn.ot-sdk-show-settings, #ot-sdk-btn.optanon-show-settings",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-banner-sdk div.ot-go-modal-overlay:not(.ot-hide) .ot-go-modal-buttons .ot-go-modal-submit .ot-go-btn-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ot-go-spin",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#onetrust-banner-sdk .banner-option-header .ot-arrow-container",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-banner-sdk .banner-option-details",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk div.ot-go-modal-overlay:not(.ot-hide) .ot-go-modal-buttons .ot-go-modal-submit .ot-go-btn-spinner",
+     "context": [],
+     "transitions": [],
+     "animations": [
+      {
+       "name": "ot-go-spin",
+       "durationMs": 600,
+       "delayMs": 0,
+       "easing": "linear",
+       "iterationCount": "infinite",
+       "direction": "normal",
+       "fillMode": "none",
+       "playState": "running"
+      }
+     ]
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-switch-nob",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-switch-nob::before",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 400,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-arw-cntr .ot-arw",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 150,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-arw-cntr svg",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-arw",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk #filter-btn-handler",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk #ot-fltr-modal",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 200,
+       "delayMs": 0,
+       "easing": "ease"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-cat-item > button[aria-expanded=\"false\"] ~ .ot-acc-txt, #onetrust-pc-sdk .ot-acc-cntr > button[aria-expanded=\"false\"] ~ .ot-acc-txt, #onetrust-pc-sdk li > button[aria-expanded=\"fa",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-cat-item > button[aria-expanded=\"true\"] ~ .ot-acc-txt, #onetrust-pc-sdk .ot-acc-cntr > button[aria-expanded=\"true\"] ~ .ot-acc-txt, #onetrust-pc-sdk li > button[aria-expanded=\"true",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-vnd-item > button[aria-expanded=\"false\"] ~ .ot-acc-txt",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 250,
+       "delayMs": 0,
+       "easing": "ease-out"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#onetrust-pc-sdk .ot-vnd-item > button[aria-expanded=\"true\"] ~ .ot-acc-txt",
+     "context": [],
+     "transitions": [
+      {
+       "property": "all",
+       "durationMs": 100,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#ot-sdk-btn.ot-sdk-show-settings",
+     "context": [],
+     "transitions": [
+      {
+       "property": "unset",
+       "durationRaw": "unset",
+       "easing": "unset"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": "#ot-sdk-btn.ot-sdk-show-settings:hover",
+     "context": [],
+     "transitions": [
+      {
+       "property": "unset",
+       "durationRaw": "unset",
+       "easing": "unset"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".go1656994552",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 750,
+       "delayMs": 0,
+       "easing": "linear(0 0%, 0.006 1.1%, 0.023 2.2%, 0.096 4.8%, 0.532 15.4%, 0.72 21%, 0.793 23.85%, 0.853 26.7%, 0.902 29.8667%, 0.941 33.0333%, 0.968 36.2%, 0.987 39.7%, 1 43.7%, 1.007 48.3%, 1.009 55.3%, 1.002 78.2%, 1 100%)"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".go456419034",
+     "context": [],
+     "transitions": [
+      {
+       "property": "opacity",
+       "durationMs": 300,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".go3128134379",
+     "context": [],
+     "transitions": [
+      {
+       "property": "max-height",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "ease-in"
+      }
+     ],
+     "animations": []
+    },
+    {
+     "selector": ".go3508454897",
+     "context": [],
+     "transitions": [
+      {
+       "property": "transform",
+       "durationMs": 1000,
+       "delayMs": 0,
+       "easing": "linear(0 0%, 0.006 1.15%, 0.022 2.3%, 0.091 5.1%, 0.18 7.6%, 0.508 16.3%, 0.607 19.325%, 0.691 22.35%, 0.762 25.375%, 0.822 28.4%, 0.872 31.75%, 0.912 35.1%, 0.944 38.9%, 0.968 43%, 0.985 47.6%, 0.996 53.1%, 1.001 58.4%, 1.003 65.1%, 1 100%)"
+      }
+     ],
+     "animations": []
+    }
+   ],
+   "customProperties": []
+  }
+ }
+}

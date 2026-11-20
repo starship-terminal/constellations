@@ -1,0 +1,20 @@
+import { BASE, UA, launch, patch, open } from './lib.mjs';
+const { browser } = await launch();
+const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, userAgent: UA, colorScheme: 'dark' });
+await patch(ctx);
+const p = await ctx.newPage();
+await open(p, BASE + '/explore', { wait: 9000 });
+await p.waitForTimeout(2500);
+const b = p.locator('header button').filter({ hasText: /^\s*Products\s*$/ }).first();
+await b.click({ timeout: 5000 }).catch(() => b.evaluate(e => e.click()));
+await p.waitForTimeout(1500);
+const info = await p.evaluate(() => {
+  const dump = (el) => { const r = el.getBoundingClientRect(); return `${el.tagName.toLowerCase()}.${String(el.className).split(' ').slice(0,6).join(' ')} ${r.width|0}x${r.height|0}@${r.x|0},${r.y|0} role=${el.getAttribute('role')||''}`; };
+  const link = [...document.querySelectorAll('a')].find((a) => /serverless|compute|inference/i.test(a.getAttribute('href')||'') && a.getBoundingClientRect().width > 50);
+  if (!link) return { link: 'none' };
+  const chain = [];
+  for (let n = link, i = 0; n && i < 8; n = n.parentElement, i++) chain.push(dump(n));
+  return { link: dump(link), chain };
+});
+console.log(JSON.stringify(info, null, 1));
+await ctx.close(); await browser.close();

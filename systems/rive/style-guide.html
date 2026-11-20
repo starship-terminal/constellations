@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Rive style guide</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Orbitron:wght@500;600;800;900&display=swap">
+<style>
+  :root {
+    --page: #000000;
+    --surface: #141414;
+    --text: #ffffff;
+    --muted: #ffffffbf;
+    --accent: #ffa41c;
+    --border: #ffffff17;
+    --action: #ffffff;
+    --action-text: #000000;
+    --focus: #ffa41c;
+    --danger: #d42a1f;
+  }
+  html[data-theme="light"] {
+    --page: #ffffff;
+    --surface: #ffffff;
+    --text: #000000;
+    --muted: #555555;
+    --accent: #1f6fe5;
+    --border: #00000033;
+    --action: #1f6fe5;
+    --action-text: #ffffff;
+    --focus: #b86e00;
+    --danger: #d42a1f;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); color: var(--text); font: 14px/1.5 Inter, system-ui, sans-serif; }
+  header, main { width: min(960px, calc(100% - 48px)); margin: 0 auto; }
+  header { display: flex; justify-content: space-between; align-items: center; padding: 32px 0; }
+  h1 { font-family: Orbitron, Inter, sans-serif; font-weight: 800; letter-spacing: -0.01em; font-size: 32px; margin: 0; }
+  h2 { font-family: Orbitron, Inter, sans-serif; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; margin: 40px 0 12px; }
+  button.toggle { background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 2px; padding: 8px 12px; font: 12px/1 JetBrains Mono, ui-monospace, monospace; letter-spacing: 0.08em; }
+  .swatches, .radii { display: flex; flex-wrap: wrap; gap: 12px; }
+  .swatch { width: 140px; }
+  .swatch i { display: block; height: 48px; border-radius: 4px; border: 1px solid var(--border); }
+  .swatch span, .swatch code, .space span { display: block; color: var(--muted); font-size: 12px; }
+  .type { padding: 8px 0; border-bottom: 1px solid var(--border); }
+  .type b { display: block; font: 11px/1.4 Inter, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .radius { width: 120px; height: 64px; border: 1px solid var(--border); display: flex; align-items: end; padding: 8px; }
+  .space { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
+  .space i { height: 8px; background: var(--accent); display: block; }
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin: 12px 0; }
+  .cta { background: #ffffff; color: #000000; border-radius: 4px; padding: 5px 9px 6px; font: 500 12px/15.6px ui-monospace, monospace; letter-spacing: 1.2px; text-transform: uppercase; box-shadow: 0px 0px 0px 1px #ffffff1a; text-decoration: none; }
+  .auth { background: #1f6fe5; color: white; border: 0; border-radius: 2px; height: 44px; padding: 0 16px; font: 500 12px/16px Orbitron, sans-serif; letter-spacing: 0.96px; text-transform: uppercase; }
+  .field { background: var(--surface); color: var(--text); border: 1px solid #00000033; border-radius: 2px; height: 44px; padding: 0 12px; font: 16px Inter, sans-serif; width: 240px; }
+  .ghost { background: #ffffff0d; color: var(--text); border-radius: 4px; padding: 5px 9px 6px; box-shadow: 0px 0px 0px 1px #ffffff26; }
+  .note { color: var(--muted); max-width: 62ch; }
+</style>
+</head>
+<body>
+<header>
+  <h1>RIVE</h1>
+  <button class="toggle" type="button" onclick="document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'">TOGGLE THEME</button>
+</header>
+<main>
+  <p class="note">Values from the public site and the signed-out login, measured 2026-11-19. Dark is the marketing page. Light is the login panel.</p>
+  <h2>Colour</h2>
+  <div class="swatches"><div class="swatch"><i style="background:#000000"></i><span>black</span><code>#000000</code></div><div class="swatch"><i style="background:#ffffff"></i><span>white</span><code>#ffffff</code></div><div class="swatch"><i style="background:#ffa41c"></i><span>amber</span><code>#ffa41c</code></div><div class="swatch"><i style="background:#b86e00"></i><span>amberDeep</span><code>#b86e00</code></div><div class="swatch"><i style="background:#f6c566"></i><span>amberSoft</span><code>#f6c566</code></div><div class="swatch"><i style="background:#3084ff"></i><span>blue</span><code>#3084ff</code></div><div class="swatch"><i style="background:#5a9dff"></i><span>blueHover</span><code>#5a9dff</code></div><div class="swatch"><i style="background:#1f6fe5"></i><span>authBlue</span><code>#1f6fe5</code></div><div class="swatch"><i style="background:#1a5bc4"></i><span>authBlueHover</span><code>#1a5bc4</code></div><div class="swatch"><i style="background:#33a7ff"></i><span>sky</span><code>#33a7ff</code></div><div class="swatch"><i style="background:#19f2ff"></i><span>cyan</span><code>#19f2ff</code></div><div class="swatch"><i style="background:#4cbe9c"></i><span>green</span><code>#4cbe9c</code></div><div class="swatch"><i style="background:#71ff19"></i><span>lime</span><code>#71ff19</code></div><div class="swatch"><i style="background:#f30058"></i><span>magenta</span><code>#f30058</code></div><div class="swatch"><i style="background:#ff483c"></i><span>red</span><code>#ff483c</code></div><div class="swatch"><i style="background:#d42a1f"></i><span>danger</span><code>#d42a1f</code></div><div class="swatch"><i style="background:#ff3b58"></i><span>signalRed</span><code>#ff3b58</code></div><div class="swatch"><i style="background:#3c2b4b"></i><span>canvas</span><code>#3c2b4b</code></div><div class="swatch"><i style="background:#303030"></i><span>pageGrey</span><code>#303030</code></div><div class="swatch"><i style="background:#222222"></i><span>ink</span><code>#222222</code></div><div class="swatch"><i style="background:#555555"></i><span>label</span><code>#555555</code></div><div class="swatch"><i style="background:#666666"></i><span>faint</span><code>#666666</code></div><div class="swatch"><i style="background:#aaaaaa"></i><span>footerLink</span><code>#aaaaaa</code></div><div class="swatch"><i style="background:#999999"></i><span>legal</span><code>#999999</code></div><div class="swatch"><i style="background:#dfe0e3"></i><span>ctaHover</span><code>#dfe0e3</code></div><div class="swatch"><i style="background:#1d1d1d"></i><span>planFace</span><code>#1d1d1d</code></div><div class="swatch"><i style="background:#141414"></i><span>card</span><code>#141414</code></div><div class="swatch"><i style="background:#1d1d1d"></i><span>field</span><code>#1d1d1d</code></div><div class="swatch"><i style="background:#323232"></i><span>divider</span><code>#323232</code></div><div class="swatch"><i style="background:#0e0c0b"></i><span>docsPage</span><code>#0e0c0b</code></div><div class="swatch"><i style="background:#e6e3df"></i><span>docsText</span><code>#e6e3df</code></div><div class="swatch"><i style="background:#a6a39f"></i><span>docsMuted</span><code>#a6a39f</code></div><div class="swatch"><i style="background:#2d2a26"></i><span>docsBorder</span><code>#2d2a26</code></div><div class="swatch"><i style="background:#faf7f3"></i><span>docsGray50</span><code>#faf7f3</code></div><div class="swatch"><i style="background:#f5f3ee"></i><span>docsGray100</span><code>#f5f3ee</code></div><div class="swatch"><i style="background:#d5d3ce"></i><span>docsGray300</span><code>#d5d3ce</code></div><div class="swatch"><i style="background:#777470"></i><span>docsGray500</span><code>#777470</code></div><div class="swatch"><i style="background:#575550"></i><span>docsGray600</span><code>#575550</code></div><div class="swatch"><i style="background:#46433f"></i><span>docsGray700</span><code>#46433f</code></div><div class="swatch"><i style="background:#1e1b17"></i><span>docsGray900</span><code>#1e1b17</code></div><div class="swatch"><i style="background:#110f0b"></i><span>docsGray950</span><code>#110f0b</code></div><div class="swatch"><i style="background:#444444"></i><span>textDisabled</span><code>#444444</code></div><div class="swatch"><i style="background:#cccccc"></i><span>textValue</span><code>#cccccc</code></div><div class="swatch"><i style="background:#f1f1f1"></i><span>textLight</span><code>#f1f1f1</code></div><div class="swatch"><i style="background:#e0e0e0"></i><span>textSecondary</span><code>#e0e0e0</code></div><div class="swatch"><i style="background:#ffffffd9"></i><span>white85</span><code>#ffffffd9</code></div><div class="swatch"><i style="background:#ffffffbf"></i><span>white75</span><code>#ffffffbf</code></div><div class="swatch"><i style="background:#ffffff0d"></i><span>white05</span><code>#ffffff0d</code></div><div class="swatch"><i style="background:#ffffffe6"></i><span>white90</span><code>#ffffffe6</code></div><div class="swatch"><i style="background:#ffffff17"></i><span>hairline</span><code>#ffffff17</code></div><div class="swatch"><i style="background:#ffffff26"></i><span>hairlineStrong</span><code>#ffffff26</code></div><div class="swatch"><i style="background:#00000033"></i><span>authBorder</span><code>#00000033</code></div><div class="swatch"><i style="background:#00000066"></i><span>authBorderHover</span><code>#00000066</code></div></div>
+  <h2>Type</h2>
+  <div class="type" style="font-family:Orbitron, Inter, system-ui, sans-serif;font-size:48px;font-weight:900;line-height:48.96px;letter-spacing:-1.44px"><b>display</b> 48px / 900<span>Agent speed. Artist control.</span></div><div class="type" style="font-family:Orbitron, Inter, system-ui, sans-serif;font-size:34px;font-weight:900;line-height:36.72px;letter-spacing:-0.34px"><b>headline</b> 34px / 900<span>Agent speed. Artist control.</span></div><div class="type" style="font-family:Orbitron, Inter, system-ui, sans-serif;font-size:32px;font-weight:800;line-height:38px;letter-spacing:-0.32px"><b>authTitle</b> 32px / 800<span>Agent speed. Artist control.</span></div><div class="type" style="font-family:Orbitron, Inter, system-ui, sans-serif;font-size:32px;font-weight:600;line-height:36.8px;letter-spacing:0.64px"><b>price</b> 32px / 600<span>Agent speed. Artist control.</span></div><div class="type" style="font-family:Orbitron, Inter, system-ui, sans-serif;font-size:20px;font-weight:600;line-height:23px;letter-spacing:0.4px"><b>planName</b> 20px / 600<span>Agent speed. Artist control.</span></div><div class="type" style="font-family:Tomorrow, system-ui, sans-serif;font-size:36px;font-weight:600;line-height:36px;letter-spacing:0px"><b>docsTitle</b> 36px / 600<span>Agent speed. Artist control.</span></div><div class="type" style="font-family:Inter, system-ui, sans-serif;font-size:16px;font-weight:400;line-height:24.8px;letter-spacing:0px"><b>body</b> 16px / 400<span>Agent speed. Artist control.</span></div><div class="type" style="font-family:Inter, system-ui, sans-serif;font-size:15px;font-weight:400;line-height:23.25px;letter-spacing:0px"><b>bodySmall</b> 15px / 400<span>Agent speed. Artist control.</span></div><div class="type" style="font-family:Inter, system-ui, sans-serif;font-size:14px;font-weight:400;line-height:20px;letter-spacing:0px"><b>ui</b> 14px / 400<span>Agent speed. Artist control.</span></div><div class="type" style="font-family:Inter, system-ui, sans-serif;font-size:12px;font-weight:500;line-height:15px;letter-spacing:0.96px"><b>label</b> 12px / 500<span>Agent speed. Artist control.</span></div><div class="type" style="font-family:PragmataPro, ui-monospace, monospace;font-size:12px;font-weight:500;line-height:15.6px;letter-spacing:1.2px"><b>button</b> 12px / 500<span>Agent speed. Artist control.</span></div><div class="type" style="font-family:Orbitron, Inter, system-ui, sans-serif;font-size:12px;font-weight:500;line-height:16px;letter-spacing:0.96px"><b>authButton</b> 12px / 500<span>Agent speed. Artist control.</span></div><div class="type" style="font-family:Inter, system-ui, sans-serif;font-size:16px;font-weight:400;line-height:16px;letter-spacing:0px"><b>field</b> 16px / 400<span>Agent speed. Artist control.</span></div><div class="type" style="font-family:JetBrains Mono, ui-monospace, monospace;font-size:11px;font-weight:400;line-height:11px;letter-spacing:0.88px"><b>code</b> 11px / 400<span>Agent speed. Artist control.</span></div>
+  <h2>Radius</h2>
+  <div class="radii"><div class="radius" style="border-radius:2px"><span>auth 2px</span></div><div class="radius" style="border-radius:4px"><span>control 4px</span></div><div class="radius" style="border-radius:8px"><span>card 8px</span></div><div class="radius" style="border-radius:12px"><span>search 12px</span></div></div>
+  <h2>Spacing</h2>
+  <div class="space"><i style="width:2px"></i><span>2 2px</span></div><div class="space"><i style="width:4px"></i><span>4 4px</span></div><div class="space"><i style="width:5px"></i><span>5 5px</span></div><div class="space"><i style="width:6px"></i><span>6 6px</span></div><div class="space"><i style="width:9px"></i><span>9 9px</span></div><div class="space"><i style="width:10px"></i><span>10 10px</span></div><div class="space"><i style="width:12px"></i><span>12 12px</span></div><div class="space"><i style="width:14px"></i><span>14 14px</span></div><div class="space"><i style="width:16px"></i><span>16 16px</span></div><div class="space"><i style="width:20px"></i><span>20 20px</span></div><div class="space"><i style="width:32px"></i><span>32 32px</span></div><div class="space"><i style="width:40px"></i><span>40 40px</span></div><div class="space"><i style="width:48px"></i><span>48 48px</span></div><div class="space"><i style="width:60px"></i><span>60 60px</span></div><div class="space"><i style="width:64px"></i><span>64 64px</span></div>
+  <h2>Controls</h2>
+  <div class="row">
+    <a class="cta" href="#cta">Get started</a>
+    <span class="ghost">Copy</span>
+    <button class="auth" type="button">Log in</button>
+    <input class="field" placeholder="Email or username" aria-label="Email or username">
+  </div>
+</main>
+</body>
+</html>
